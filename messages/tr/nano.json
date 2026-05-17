@@ -3350,5 +3350,305 @@
         ]
       }
     }
+  },
+  "template-chinese-radical-learning": {
+    "category": "Çin Radikal Öğrenimi",
+    "description": "Çocuk dostu Çin radikal posteri, radikalin anlamını ve Pinyin ile İngilizce ile birlikte 8 örnek karakteri gösterir - başlangıç seviyesindeki Mandarin öğrenicileri ve ESL öğretmenleri için mükemmel.",
+    "title": "Çin Radikal Öğrenimi Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, suluboya kağıdı tarzında bir Çin radikal öğrenim posteri oluşturur. Düzen, sol üstte 'Yaygın Çin Radikalleri' etiketi, büyük bir turuncu radikal karakteri ve eşleşen bir karikatür simgesi, radikalin anlamının açıklaması ve sağ tarafta radikali içeren 8 örnek karakterin yer aldığı bir sütun içerir; her biri Pinyin ve İngilizce çeviri ile birlikte.",
+        "who": "Mandarin öğretmenleri, ESL/CSL eğitmenleri, evde eğitim veren ebeveynler, Çince öğrenenler ve TikTok veya Xiaohongshu'da eğitim içerikleri üretenler için uygundur.",
+        "how": [
+          "Bir radikal seçin (纟 ipek, 口 ağız, 雨 yağmur, 艹 bitki, 亻 insan, 火 ateş, 女 kadın).",
+          "4K suluboya tarzında bir Çin radikal öğrenim posteri oluşturun."
+        ],
+        "prompts": [
+          "火 (ateş) için 8 örnek karakter ile çocuk dostu bir Çin radikal posteri oluşturun.",
+          "Pinyin ve İngilizce ile suluboya 女 (kadın) radikal öğrenim grafiği oluşturun.",
+          "Karikatür simgesi ve örneklerle 纟 (ipek) için bir Çin radikal posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-houseplant-care-guide-infographic": {
+    "category": "Saksı Bitkisi Bakım Kılavuzları",
+    "description": "Bir saksı bitkisi için temiz modern bir bakım kılavuzu infografiği - sulama, toprak ve ışık bir bakışta, artı sağlık ipuçları ve önerilen bir araç seti. Bitki ebeveynleri için harika.",
+    "title": "Saksı Bitkisi Bakım Kılavuzu İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, belirli bir saksı bitkisi için minimalist düz illüstrasyon tarzında bir bakım kılavuzu oluşturur. Düzen, 'SENİN [BITKİ] BAKIM KILAVUZUN' başlığını, bir saksıda bitkinin merkezi karikatür illüstrasyonunu ve üç etiketli bölümü içerir: Temel Hayatta Kalma Kılavuzu (sulama, toprak, ışık), Sağlık ve Refah İpuçları ve Önerilen Araç Seti - her biri basit simgeler ve kısa metinlerle.",
+        "who": "Bitki dükkanları, iç mekan bahçeciliği yaratıcıları, bitki ebeveyni etkileyicileri, ev dekoru blog yazarları ve saksı malzemeleri veya büyüme kitleri satan markalar için uygundur.",
+        "how": [
+          "Bir saksı bitkisi seçin (Monstera, Yılan Bitkisi, Pothos, Barış Zambağı, Çalgı Yaprağı İğdesi, ZZ Bitkisi).",
+          "4K minimalist saksı bitkisi bakım kılavuzu infografiği oluşturun."
+        ],
+        "prompts": [
+          "Sulama, toprak ve ışık ipuçları ile bir Monstera bakım kılavuzu infografiği oluşturun.",
+          "Minimalist düz illüstrasyon tarzında bir Pothos saksı bitkisi bakım posteri oluşturun.",
+          "Araç seti önerileri ile bir Yılan Bitkisi bakım kılavuzu oluşturun."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-educational": {
+    "category": "Tarihsel Figür Eğitim Posterleri",
+    "description": "Büyük bilim insanları, besteciler, sanatçılar, yazarlar veya filozofların vintage ders kitabı tarzında posteri - illüstrasyon portreleri, isimler ve ana katkılar tek bir uyumlu sepya düzeninde.",
+    "title": "Tarihsel Figür Eğitim Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen tarihsel figürler alanında vintage bir eğitim posteri oluşturur. Düzen, her bir figürün ismi ve ana katkılarının kısa bir özeti ile birlikte illüstrasyon portrelerinin bir ızgarasını içerir; bu portreler, temalı arka plan unsurları (icatlar, sanat eserleri, kitaplar) ve dekoratif kaydırma etiketleri ile çevrilidir - hepsi sepya, eski kağıt ders kitabı estetiğinde.",
+        "who": "Tarih öğretmenleri, müze eğitmenleri, evde eğitim veren ebeveynler, kütüphaneciler ve çalışma yardımları, sınıf dekoru veya eğitim sosyal içerik üreten yaratıcılar için uygundur.",
+        "how": [
+          "Bir tema veya alan seçin (Bilim İnsanları, Besteciler, Sanatçılar, Yazarlar, Filozoflar).",
+          "Tarihsel figürlerin 4K vintage ders kitabı tarzında eğitim posteri oluşturun."
+        ],
+        "prompts": [
+          "İllüstrasyon portreleri ve katkılar ile büyük Bilim İnsanları için vintage bir poster oluşturun.",
+          "Ünlü Bestecilerin eserleri ile sepya tonunda bir eğitim posteri oluşturun.",
+          "Portreler ve ana fikirlerle bir ders kitabı tarzında Filozoflar posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-cultural-festival-poster": {
+    "category": "Kültürel Festival Posterleri",
+    "description": "Geleneksel bir festival için vintage halk sanatı posteri — anahtar etkinlikleri gösteren illüstrasyonlar, bir Anahtar Noktalar kutusu, dekoratif kenarlıklar ve sıcak sepya tonlarında kültürel semboller.",
+    "title": "Kültürel Festival Eğitim Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, geleneksel bir festival için vintage tarzda bir eğitim posteri oluşturur. Düzen, cesur bir festival başlığı, anahtar etkinlikleri gösteren iki illüstrasyon paneli, madde işaretli gerçekler içeren bir 'Anahtar Noktalar' kutusu ve temalı kültürel sembollerle dekoratif kenarlıklar içerir — hepsi sıcak sepya tonlarında ve detaylı halk sanatı çizgileriyle tasarlanmıştır.",
+        "who": "Kültür ve seyahat yaratıcıları, dil öğretmenleri, tarih eğitmenleri, müze sergileri, festival etkinlik organizatörleri ve seyahat blogu ile turizm markaları için uygundur.",
+        "how": [
+          "Bir festival seçin (Ejderha Botu Festivali, Hanami Festivali, Ölüler Günü, Diwali, Songkran Festivali).",
+          "4K vintage halk sanatı kültürel festival posteri oluşturun."
+        ],
+        "prompts": [
+          "İllüstrasyonlu etkinliklerle bir Ölüler Günü vintage eğitim posteri oluşturun.",
+          "Anahtar noktalarla birlikte halk sanatı sepya tarzında bir Diwali festivali posteri oluşturun.",
+          "Geleneksel dekoratif kenarlıklarla bir Ejderha Botu Festivali posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-nutrition-food-guide-poster": {
+    "category": "Beslenme Gıda Rehberleri",
+    "description": "Beslenme temalı temiz gerçekçi gıda infografik posteri — besin açısından zengin gıdaların etiketli fotoğrafları ve renk kodlu kategoriler. Sağlık, wellness ve gıda blogu içeriği için idealdir.",
+    "title": "Beslenme Gıda Rehberi Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, minimalist bir beslenme gıda rehberi posteri oluşturur. Düzen, kısa bir sağlık faydaları açıklamasıyla büyük bir tema başlığı, çeşitli besin açısından zengin gıdaların gerçekçi fotoğrafları ve adlarıyla etiketlenmiş, açık nötr bir arka planda yer alır ve kolay tarama için altta renk kodlu kategoriler (meyveler, sebzeler, proteinler) içerir.",
+        "who": "Beslenme uzmanları, diyetisyenler, fitness ve wellness yaratıcıları, sağlık gıda markaları, yemek hazırlama koçları ve sağlıklı beslenme müfredatı oluşturan eğitimciler için uygundur.",
+        "how": [
+          "Bir beslenme teması seçin (Kan Oluşturucu Gıdalar, Göz Sağlığı için Gıdalar, Yüksek Proteinli Gıdalar, Antioksidan Zengin Gıdalar, C Vitamini Güç Merkezleri).",
+          "4K gerçekçi beslenme gıda rehberi posteri oluşturun."
+        ],
+        "prompts": [
+          "Etiketli gıda fotoğraflarıyla bir Antioksidan Zengin Gıdalar infografik posteri oluşturun.",
+          "Kategori renk kodlamasıyla birlikte bir Yüksek Proteinli Gıdalar beslenme rehberi posteri oluşturun.",
+          "Minimalist tarzda Göz Sağlığı için Gıdalar eğitim posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-sports-technique-guide": {
+    "category": "Spor Teknik Rehberleri",
+    "description": "Retro vintage tarzda spor teknik posteri — etiketli vücut parçaları ve kırmızı hareket okları ile illüstrasyonlu paneller. Spor koçları, beden eğitimi öğretmenleri ve eğitim içeriği yaratıcıları için mükemmel.",
+    "title": "Vintage Spor Teknik Rehberi",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir spor tekniği üzerine retro bir eğitim posteri oluşturur. Düzen, cesur bir '[SPOR] Bilgisi' başlığı ve her biri etiketli vücut parçaları ve formu gösteren kırmızı hareket okları içeren illüstrasyon teknik panellerinin bir ızgarasını içerir — hepsi temiz bir ızgara kompozisyonunda yaşlı kağıt dokusunda.",
+        "who": "Spor koçları, beden eğitimi öğretmenleri, fitness yaratıcıları, dojo ve dövüş sanatları okulları, eğitim programı tasarımcıları ve atletik marka içerik pazarlamacıları için uygundur.",
+        "how": [
+          "Bir spor seçin (Basketbol, Karate, Tenis, Judo, Yüzme, Futbol).",
+          "4K vintage retro spor teknik rehberi posteri oluşturun."
+        ],
+        "prompts": [
+          "Etiketli vücut parçaları ve hareket oklarıyla bir Karate teknik rehberi posteri oluşturun.",
+          "Yaşlı kağıt ders kitabı tarzında bir vintage Tenis beceri posteri oluşturun.",
+          "Kırmızı hareket okları ve etiketlerle bir Yüzme teknik rehberi posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-anatomy-cut-guide": {
+    "category": "Anatomi & Kesim Rehberleri",
+    "description": "Vintage tarzı eğitim posteri, bir hayvanın anatomisini et kesimleri ve mutfak kullanımları ile etiketlenmiş olarak gösterir - kasaplar, şefler, gıda eğitmenleri ve BBQ meraklıları için mükemmel.",
+    "title": "Hayvan Anatomisi & Et Kesim Rehberi Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir hayvanın anatomisini ana et kesimlerine eşleştiren vintage tarzı bir eğitim posteri oluşturur. Düzen, etiketlenmiş kesim bölümlerine işaret eden çizgilerle detaylı bir tam vücut illüstrasyonu içerir, ayrıca her kesim için yaygın hazırlıklar, önerilen pişirme yöntemleri ve mutfak kullanım durumlarını açıklayan yan paneller bulunur.",
+        "who": "Kasaplar ve et dükkanları, menülerde veya sosyal medyada paylaşım yapan restoranlar, mutfak eğitmenleri, BBQ / tütsü meraklıları ve anlaşılır açıklayıcı içerik oluşturan gıda blog yazarları için uygundur.",
+        "how": [
+          "Bir hayvan veya ürün seçin (Sığır, Koyun, Domuz, Tavuk, Kahve Çekirdeği).",
+          "4K vintage tarzı anatomik + kesim rehberi posteri oluşturun."
+        ],
+        "prompts": [
+          "Etiketlenmiş kesimlerle vintage Sığır anatomisi ve kesim rehberi posteri oluşturun.",
+          "Klasik ders kitabı tarzında bir Koyun kesim rehberi posteri oluşturun.",
+          "Pişirme yöntemi önerileri ile birlikte bir Tavuk kesim rehberi posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-home-lifestyle-guide-infographic": {
+    "category": "Ev & Yaşam Rehberleri",
+    "description": "Sıcak, illüstrasyonlarla dolu 8 panelli infografik, okuyucuları adım adım bir yaşam alışkanlığına yönlendirir - yatak bakımı, fitness rutinleri, bahçecilik, verimlilik. Dostane, Pinterest'e uygun format.",
+    "title": "Ev & Yaşam Rehberi İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, sıcak, illüstrasyonlarla dolu bir yaşam rehberi infografiği oluşturur. Düzen, her biri bir ana adımı gerçekleştiren bir illüstrasyon ile kısa bir başlığı eşleştiren 8 panelden oluşan bir ızgara içerir. Yumuşak palet, el çizimi simgeler, dekoratif kenarlıklar ve net bir konu başlığı.",
+        "who": "Yaşam tarzı yaratıcıları, wellness koçları, ev bakım markaları, ebeveynlik blog yazarları, verimlilik etkileyicileri ve Pinterest veya karusel dostu nasıl yapılır içeriği yayınlayan herkes için uygundur.",
+        "how": [
+          "Bir rehber konusu seçin (Yatak Bakımı, Sağlıklı Beslenme, Fitness Rutini, Bahçecilik Rehberi, Verimlilik İpuçları).",
+          "4K illüstrasyonlu 8 panelli yaşam rehberi infografiği oluşturun."
+        ],
+        "prompts": [
+          "8 illüstrasyonlu adım içeren bir Yatak Bakımı yaşam infografiği oluşturun.",
+          "Sıcak tonlarda bir Fitness Rutini illüstrasyonlu rehber poster oluşturun.",
+          "Günlük alışkanlıklar ve simgelerle bir Verimlilik İpuçları infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-vintage-travel-scrapbook-poster": {
+    "category": "Seyahat Anı Defteri Posterleri",
+    "description": "Bir seyahat destinasyonu için el çizimi vintage anı defteri sayfası — polaroid tarzı fotoğraflar, simgeler, yemek çizimleri, ulaşım damgaları, suluboya sıçramaları. Seyahat günlüğü ve gezi içeriği için harika.",
+    "title": "Vintage Seyahat Anı Defteri Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen bir destinasyon için vintage el çizimi bir seyahat anı defteri sayfası oluşturur. Düzen, suluboya sıçramaları ile yırtık kağıt arka planı, büyük el yazısı başlık, simgelerin polaroid tarzı anlık görüntüleri, yerel yemek çizimleri, ulaşım bileti damgaları ve dekoratif kağıt bant unsurları içerir.",
+        "who": "Seyahat blog yazarları, gezi planlayıcıları, turizm ofisleri, günlük tutma meraklıları ve nostaljik seyahat içeriği oluşturan Instagram / Pinterest yaratıcıları için uygundur.",
+        "how": [
+          "Bir destinasyon seçin (Langkawi, Riga, Phnom Penh, Stockholm, Sydney).",
+          "Destinasyon için 4K vintage seyahat anı defteri posteri oluşturun."
+        ],
+        "prompts": [
+          "Simgelerin çizimleri ile vintage Stockholm seyahat anı defteri sayfası oluşturun.",
+          "Yemek illüstrasyonları ve damgalar ile Phnom Penh seyahat günlüğü posteri oluşturun.",
+          "Polaroidler ve suluboya sıçramaları ile Sydney seyahat anı defteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-national-culture-history-infographic": {
+    "category": "Ulusal Kültür ve Tarih Posterleri",
+    "description": "Bir ülke için kapsamlı akvarel tarzında infografik — simgeler, tarihi dönemlerin zaman çizelgesi, kültürel semboller, mutfak ve temel miras sütunları. Eğitimciler ve seyahat içerikleri için tasarlandı.",
+    "title": "Ulusal Kültür ve Tarih İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen bir ülke için ayrıntılı bir kültürel ve tarihi infografik poster oluşturur. Düzen, ikonik simgelerin ve doğal manzaraların üstte yer alan akvarel illüstrasyonunu, önemli tarihi dönemlerin yatay zaman çizelgesini, ülke genelini / haritasını, kültürel sembolleri ve sanat, mutfak ve değer miras sütunları için özel bölümleri içerir.",
+        "who": "Tarih ve coğrafya öğretmenleri, müze sergileri, seyahat içerik üreticileri, bir ülkenin kültürünü öğrenen dil öğrencileri ve destinasyon rehberleri üreten turizm markaları için uygundur.",
+        "how": [
+          "Bir ülke seçin (Japonya, Birleşik Krallık, Fransa, İtalya, Çin).",
+          "4K akvarel tarzında ulusal kültür ve tarih infografiği oluşturun."
+        ],
+        "prompts": [
+          "Zaman çizelgesi ile bir Japonya ulusal kültür ve tarih infografiği oluşturun.",
+          "Simgeler ve mutfak ile bir Fransa kültürel miras posteri oluşturun.",
+          "Akvarel tarzında bir İtalya tarihi ve kültür infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-watercolor-world-map-illustration": {
+    "category": "Akvarelle Dünya Haritaları",
+    "description": "Bir kıtanın akvarel tarzında, çocuk kitabı havasında bir haritası — ülke sınırları, simgeler, yerel hayvanlar, kültürel semboller, pusula gülü, okyanus illüstrasyonları. Sınıflar ve kreşler için dostça.",
+    "title": "Akvarel Kıta / Dünya Haritası",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen bir kıtanın akvarel ile illüstre edilmiş haritasını oluşturur. Kıtanın sınırları, her ülkenin adıyla etiketlenmiş yumuşak akvarel tonlarıyla doldurulur. İkonik simgeler, yerel hayvanlar ve kültürel semboller her bölgeye dağılmıştır; okyanus illüstrasyonları deniz canlıları, gemiler ve dalgalar ile birlikte bir pusula gülü içerir.",
+        "who": "İlkokul ve ortaokul coğrafya öğretmenleri, çocuk odası dekor markaları, evde eğitim yapan ebeveynler, seyahat temalı kreş tasarımı ve eğitim yayıncıları için uygundur.",
+        "how": [
+          "Bir kıta seçin (Afrika, Avrupa, Asya, Güney Amerika, Okyanusya, Kuzey Amerika).",
+          "4K akvarel kıta haritası oluşturun."
+        ],
+        "prompts": [
+          "Yerel hayvanlar ve simgelerle birlikte Afrika'nın akvarel haritasını oluşturun.",
+          "Çocuklar için kültürel sembollerle dolu bir Avrupa illüstrasyon haritası oluşturun.",
+          "Deniz canlıları ve bir pusula ile birlikte akvarel Güney Amerika haritası oluşturun."
+        ]
+      }
+    }
+  },
+  "template-watercolor-theme-collage-illustration": {
+    "category": "Akvarelle Temalı Kolajlar",
+    "description": "Tek bir tema etrafında çerçeveli panellerden oluşan sıcak bir akvarel kolaj — kış ritüelleri, yaz havası, sonbahar hasadı. Yaşam tarzı ve mevsimsel içerikler için mükemmel bir ruh tahtası sanatı.",
+    "title": "Akvarelle Temalı Kolaj İllüstrasyonu",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, tek bir tema etrafında sıcak bir akvarel kolaj illüstrasyonu oluşturur. Düzen, her biri temayla bağlantılı farklı bir sahneyi gösteren, açık bir arka planda birden fazla çerçeveli panel içerir — yakın çekimler, aksesuarlar, atmosfer çekimleri, karakterler — yumuşak fırça çalışmasıyla ve tutarlı bir paletle işlenmiştir.",
+        "who": "Yaşam tarzı yaratıcıları, mevsimsel içerik yayıncıları, marka ruh tahtaları, baskı talebine dayalı duvar sanatı satan illüstratörler ve temalı özellik yayını oluşturan editoryal tasarımcılar için uygundur.",
+        "how": [
+          "Bir tema seçin (Sıcak Kış, Yaz Havası, Müzik Tutkunları, Sonbahar Hasadı, Bahar Pikniği).",
+          "4K akvarelle temalı kolaj illüstrasyonu oluşturun."
+        ],
+        "prompts": [
+          "Sıcak çerçeveli panellerle bir Sonbahar Hasadı akvarel kolajı oluşturun.",
+          "Sıcak Kış akvarel ruh tahtası illüstrasyonu oluşturun.",
+          "Sıcak paletle bir Yaz Havası akvarelle temalı kolaj oluşturun."
+        ]
+      }
+    }
+  },
+  "template-vintage-stamp-collection-illustration": {
+    "category": "Vintage Pul Koleksiyonu Posterleri",
+    "description": "Seçilen bir konu etrafında nostaljik el çizimi vintage pul sayfası — kuşlar, kelebekler, dağ florası, okyanus yaşamı. Her pul paneli başlık metni ve dekoratif kenarlıklarla illüstre edilmiştir.",
+    "title": "Vintage Pul Koleksiyonu İllüstrasyonu",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen bir konu etrafında nostaljik bir vintage pul sayfası illüstrasyonu oluşturur. Düzen, dokulu bir kağıt arka planda dengeli bir ızgara içinde düzenlenmiş birden fazla dikdörtgen pul paneli içerir; her panel klasik gravür tarzında başlık metni, değer işaretleri ve dekoratif perforasyonlu kenarlıklarla tasarlanmıştır.",
+        "who": "Nostaljik içerik oluşturan doğa yaratıcıları, vintage estetik duvar sanatı satan ev dekor markaları, pul meraklıları ve kartpostal yayıncıları için uygundur.",
+        "how": [
+          "Bir koleksiyon başlığı seçin (Bahçe Kuşları, Böcekler ve Kelebekler, Dağ Florası, Okyanus Yaşamı, Orman Botanikleri).",
+          "4K vintage pul koleksiyonu illüstrasyonu oluşturun."
+        ],
+        "prompts": [
+          "Bahçe Kuşları vintage pul koleksiyonu illüstrasyonu oluşturun.",
+          "Klasik gravür tarzında bir Okyanus Yaşamı pul sayfası oluşturun.",
+          "Dekoratif kenarlıklarla bir Orman Botanikleri vintage pul koleksiyonu oluşturun."
+        ]
+      }
+    }
+  },
+  "template-watercolor-travel-journal-collage": {
+    "category": "Akvarel Seyahat Günlükleri",
+    "description": "Bir keşif teması etrafında inşa edilmiş etkileyici akvarel seyahat günlükleri kolajı — orman, dağ, kıyı, çöl. Açık defter merkezi, eskizler, haritalar ve macera detayları ile.",
+    "title": "Akvarel Seyahat Günlüğü Kolajı",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir keşif teması etrafında etkileyici bir akvarel seyahat-günlüğü kolajı oluşturur. Düzen, merkezi odak olarak açık vintage bir defteri, etrafında el çizimi haritalar, manzara eskizleri, yerel flora ve fauna, keşif ekipmanı illüstrasyonları ve el yazısı tipografisi ile yazılmış günlük girişleri ile çevreler. Genel olarak yumuşak akvarel yıkamaları.",
+        "who": "Seyahat blog yazarları, açık hava ve macera markaları, keşif tur operatörleri, günlük oluşturucuları ve etkileyici uzun biçimli seyahat içeriği oluşturan yaşam tarzı yayıncıları için uygundur.",
+        "how": [
+          "Bir keşif teması seçin (Orman Keşfi, Dağ Macerası, Kıyı Keşfi, Sonbahar Ormanı Yürüyüşü, Çöl Yürüyüşü).",
+          "4K akvarel seyahat günlükleri kolajı oluşturun."
+        ],
+        "prompts": [
+          "Bir Dağ Macerası akvarel seyahat günlükleri kolajı oluşturun.",
+          "Etkileyici akvarel tarzında bir Kıyı Keşfi günlük sayfası oluşturun.",
+          "Haritalar ve hayvan eskizleri ile bir Orman Keşfi seyahat günlüğü oluşturun."
+        ]
+      }
+    }
+  },
+  "template-manga-artist-infographic-poster": {
+    "category": "Manga Sanatçısı İnfografikleri",
+    "description": "Efsanevi bir manga yaratıcısını kutlayan canlı anime tarzı infografik poster — portre, imza eserler, kariyer zaman çizelgesi, ikonik karakterler, imza tarzı. Manga / anime hayran içeriği için hazırlandı.",
+    "title": "Manga Sanatçısı İnfografik Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, efsanevi bir manga yaratıcısı için canlı bir anime tarzı infografik posteri oluşturur. Düzen, sanatçının çizim masasında merkezi bir portresini, imza eser başlıklarını, bir kariyer zaman çizelgesini, ikonik karakter cameo'larını ve sanatçının imza tarzını ve görsel ticari markalarını tanımlayan açıklamaları içerir — hepsi cesur hücre gölgeli illüstrasyonla.",
+        "who": "Manga ve anime hayran yaratıcıları, manga yayıncıları, anime temalı ürün markaları, medya çalışmaları öğretmenleri için kütüphane / sınıf dekoru ve Otaku içerik kanalları için uygundur.",
+        "how": [
+          "Bir yaratıcı seçin (Akira Toriyama, Eiichiro Oda, Rumiko Takahashi, Masashi Kishimoto, Makoto Shinkai, Yoshihiro Togashi).",
+          "4K anime tarzı manga sanatçısı infografik posteri oluşturun."
+        ],
+        "prompts": [
+          "Bir Akira Toriyama manga yaratıcısı infografik posteri oluşturun.",
+          "Bir Eiichiro Oda kariyer zaman çizelgesi manga sanatçısı posteri oluşturun.",
+          "Onun imza tarzını kutlayan bir Makoto Shinkai infografik posteri oluşturun."
+        ]
+      }
+    }
   }
 }

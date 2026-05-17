@@ -18,15 +18,13 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { useState } from 'react';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
-import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components/BreadcrumbNavigation";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
-import FAQSection from "@/app/[locale]/(public)/blog/[slug]/components/FAQSection";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
+import NanoBananaExamples from "@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples";
 
 // Helper function to decode HTML entities (server-safe)
 function decodeHTMLEntities(text: string): string {
@@ -99,21 +97,12 @@ function MBTICharacterCard({ character, type, traits, prompt }: {
 
 // Main component
 export default function MBTICharacterGeneratorPage() {
-  const [activeTab, setActiveTab] = useState('basics');
   const t = useTranslations('MBTICharacterGeneratorGuide');
   const locale = useLocale();
 
   return (
     <div className="pt-10 pb-8">
       {/* Breadcrumb Navigation */}
-      <BreadcrumbNavigation 
-        items={[
-          { name: "Home", href: "/" },
-          { name: "Blog", href: "/blog" },
-          { name: t('hero.title'), href: `/blog/mbti-character-generator` }
-        ]}
-      />
-      
       <article className="prose prose-base md:prose-lg">
         {/* Hero Section */}
         <div className="relative mb-8">
@@ -124,23 +113,6 @@ export default function MBTICharacterGeneratorPage() {
           <p className="text-xl text-gray-600 mt-4">
             {t('hero.subtitle')}
           </p>
-        </div>
-
-        {/* Author info */}
-        <div className="flex items-center mb-8">
-          <div className="relative w-10 h-10 rounded-full overflow-hidden mr-3">
-            <CdnImage
-              src="/images/team/author.jpg"
-              alt="AI Research Team"
-              width={40}
-              height={40}
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <p className="font-medium text-gray-900">Curify AI Team</p>
-            <p className="text-sm text-gray-500">AI Research Team</p>
-          </div>
         </div>
 
         {/* Introduction */}
@@ -166,30 +138,16 @@ export default function MBTICharacterGeneratorPage() {
           </div>
         </div>
 
-        {/* SEO Keywords Section */}
-        <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-yellow-800 mb-3">Target Keywords</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <span className="font-semibold text-yellow-700">mbti generator:</span>
-              <span className="text-yellow-600 ml-2">(SV: 110, KD: 9%)</span>
-            </div>
-            <div>
-              <span className="font-semibold text-yellow-700">yellowstone mbti:</span>
-              <span className="text-yellow-600 ml-2">(SV: 40, KD: 5%)</span>
-            </div>
-          </div>
-        </div>
-
         {/* Table of Contents */}
-        <TableOfContents 
+        <TableOfContents
           headings={[
             { level: "2", text: t('tabs.basics'), id: "basics" },
+            { level: "2", text: t('universes.title'), id: "universes" },
             { level: "2", text: t('tabs.yellowstone'), id: "yellowstone" },
+            { level: "2", text: t('beyond.title'), id: "beyond" },
             { level: "2", text: t('tabs.techniques'), id: "techniques" },
             { level: "2", text: t('tabs.advanced'), id: "advanced" },
             { level: "2", text: t('benefits.title'), id: "benefits" },
-            { level: "2", text: t('tabs.faq'), id: "faq" },
             { level: "2", text: t('conclusion.title'), id: "conclusion" }
           ]}
         />
@@ -205,28 +163,8 @@ export default function MBTICharacterGeneratorPage() {
           {t('protip')}
         </ProTip>
 
-        {/* Tab Navigation */}
-        <div className="border-b border-gray-200 mb-8">
-          <nav className="-mb-px flex space-x-8">
-            {['basics', 'yellowstone', 'techniques', 'advanced'].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`py-2 px-1 border-b-2 font-medium text-sm ${
-                  activeTab === tab
-                    ? 'border-blue-500 text-blue-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                }`}
-              >
-                {t(`tabs.${tab}`)}
-              </button>
-            ))}
-          </nav>
-        </div>
-
-        {/* Basics Tab */}
-        {activeTab === 'basics' && (
-          <section className="my-16">
+        {/* Basics Section */}
+        <section id="basics" className="my-16">
             <div className="text-center mb-10">
               <span className="inline-block px-3 py-1 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full mb-4">
                 GETTING STARTED
@@ -273,11 +211,22 @@ export default function MBTICharacterGeneratorPage() {
               </div>
             </div>
           </section>
-        )}
 
-        {/* Yellowstone Tab */}
-        {activeTab === 'yellowstone' && (
-          <section className="my-16">
+        {/* Universes Section — all 12 universe MBTI templates */}
+        <section id="universes" className="my-16">
+          <div className="text-center mb-10">
+            <span className="inline-block px-3 py-1 text-sm font-semibold text-indigo-700 bg-indigo-100 rounded-full mb-4">
+              UNIVERSE TEMPLATES
+            </span>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">{t('universes.title')}</h2>
+            <p className="text-gray-700 max-w-2xl mx-auto">{t('universes.description')}</p>
+            <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full mt-4"></div>
+          </div>
+          <NanoBananaExamples locale={locale} blogSlug="mbti-character-generator-universe" />
+        </section>
+
+        {/* Yellowstone Section — kept as a deep-dive case study */}
+        <section id="yellowstone" className="my-16">
             <div className="text-center mb-10">
               <span className="inline-block px-3 py-1 text-sm font-semibold text-purple-700 bg-purple-100 rounded-full mb-4">
                 YELLOWSTONE CASE STUDIES
@@ -322,11 +271,22 @@ export default function MBTICharacterGeneratorPage() {
               <ListPoints points={t.raw('yellowstone.analysis.points')} />
             </div>
           </section>
-        )}
 
-        {/* Techniques Tab */}
-        {activeTab === 'techniques' && (
-          <section className="my-16">
+        {/* Beyond Single Characters — grid / contrast / relationship / stereotype / animal */}
+        <section id="beyond" className="my-16">
+          <div className="text-center mb-10">
+            <span className="inline-block px-3 py-1 text-sm font-semibold text-amber-700 bg-amber-100 rounded-full mb-4">
+              BEYOND SINGLE CHARACTERS
+            </span>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">{t('beyond.title')}</h2>
+            <p className="text-gray-700 max-w-2xl mx-auto">{t('beyond.description')}</p>
+            <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full mt-4"></div>
+          </div>
+          <NanoBananaExamples locale={locale} blogSlug="mbti-character-generator-beyond" />
+        </section>
+
+        {/* Techniques Section */}
+        <section id="techniques" className="my-16">
             <div className="text-center mb-10">
               <span className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full mb-4">
                 ADVANCED TECHNIQUES
@@ -376,11 +336,9 @@ export default function MBTICharacterGeneratorPage() {
               </div>
             </div>
           </section>
-        )}
 
-        {/* Advanced Tab */}
-        {activeTab === 'advanced' && (
-          <section className="my-16">
+        {/* Advanced / Professional Use Section */}
+        <section id="advanced" className="my-16">
             <div className="text-center mb-10">
               <span className="inline-block px-3 py-1 text-sm font-semibold text-red-700 bg-red-100 rounded-full mb-4">
                 PROFESSIONAL APPLICATIONS
@@ -435,7 +393,6 @@ export default function MBTICharacterGeneratorPage() {
               </div>
             </div>
           </section>
-        )}
 
         {/* Benefits Section */}
         <section className="my-16 bg-gradient-to-br from-gray-50 to-blue-50 py-12 px-6 rounded-3xl">
@@ -483,44 +440,8 @@ export default function MBTICharacterGeneratorPage() {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section id="faq" className="my-16">
-          <div className="text-center mb-10">
-            <span className="inline-block px-3 py-1 text-sm font-semibold text-purple-700 bg-purple-100 rounded-full mb-4">
-              FREQUENTLY ASKED QUESTIONS
-            </span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Frequently Asked Questions</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
-          </div>
-          
-          <FAQSection 
-            faqs={[
-              {
-                question: "What is the accuracy of AI-generated MBTI characters?",
-                answer: "AI-generated MBTI characters can achieve high accuracy when provided with detailed prompts and specific contexts. The key is to include clear personality traits, behavioral patterns, and situational responses in your prompts."
-              },
-              {
-                question: "Can I use these characters for commercial projects?",
-                answer: "Yes, characters generated using Curify's Nano Banana can be used for commercial projects, including novels, games, and marketing campaigns. However, ensure your characters are original and not direct copies of copyrighted material."
-              },
-              {
-                question: "How do I ensure character consistency across different scenes?",
-                answer: "Use iterative refinement by testing your character in various scenarios and maintaining consistent personality traits. Reference the core MBTI characteristics and decision-making patterns throughout your story."
-              },
-              {
-                question: "What MBTI types work best for protagonists?",
-                answer: "While any MBTI type can make a compelling protagonist, ENFP, ISTJ, ENTJ, and ISFP types often provide good balance of relatability and dramatic potential for storytelling."
-              },
-              {
-                question: "Can I combine multiple MBTI traits for complex characters?",
-                answer: "Yes, real people often exhibit traits from multiple MBTI types. You can create more nuanced characters by blending cognitive functions or showing character development that shifts emphasis between different traits."
-              }
-            ]}
-          />
-        </section>
-
         {/* Conclusion */}
-        <section className="my-16">
+        <section id="conclusion" className="my-16">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
             <h2 className="text-3xl font-bold mb-4">{t('conclusion.title')}</h2>
             <p className="text-lg">{t('conclusion.description')}</p>
@@ -530,13 +451,12 @@ export default function MBTICharacterGeneratorPage() {
 
       {/* Related Blogs */}
       <RelatedBlogs currentSlug="mbti-character-generator" locale={locale} />
-      
+
       {/* Structured Data for SEO */}
       <StructuredData
         title={t('hero.title')}
         description={t('hero.subtitle')}
         publishDate="2026-04-20"
-        author="Curify AI Team"
         image="/images/advi.webp"
         url="/blog/mbti-character-generator"
         readTime="12 min read"

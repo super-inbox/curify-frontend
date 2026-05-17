@@ -1,9 +1,17 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { toSlug } from "@/lib/nano_utils";
+
+// Template metadata is fully bundled (nano_templates.json + nano_inspiration.json)
+// and only changes on redeploy, so cache the rendered page forever — the next
+// deploy invalidates the Full Route Cache automatically. Avoids pointless ISR
+// rebuilds every 4h with byte-identical output.
+export const revalidate = false;
 
 import ExampleImagesGrid from "./ExampleImagesGrid";
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 
@@ -81,6 +89,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     fallbackTitle: `${fallbackTitle} | Nano Template`,
     fallbackDescription,
   });
+}
+
+export async function generateStaticParams() {
+  // Pre-render every known template at deploy time (en + zh) so bot
+  // crawlers land on pre-baked HTML with no function exec.
+  const mod = (await import("@/public/data/nano_templates.json")) as unknown as {
+    default: Array<{ id: string }>;
+  };
+  const locales = ["en", "zh"];
+  return locales.flatMap((locale) =>
+    mod.default.map((t) => ({
+      locale,
+      slug: toSlug(t.id),
+    }))
+  );
 }
 
 export default async function NanoTemplatePage({ params }: Props) {
@@ -167,12 +190,19 @@ export default async function NanoTemplatePage({ params }: Props) {
       </div>
 
 
+      {/* Use-case chips — mobile only; desktop already gets them via the
+          top SiteTopBar / EntryBar. */}
+      <section className="mt-4 lg:hidden">
+        <UseCaseChipsRow />
+      </section>
+
       <section className="mt-8">
 <ExampleImagesGrid
           items={section2Images}
           locale={pageLocale}
           maxRows={2}
           batch={!!template.batch}
+          desktopOpensExample
         />
 </section>
 

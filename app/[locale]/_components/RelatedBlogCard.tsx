@@ -5,6 +5,7 @@ import CdnImage from './CdnImage';
 import { DynamicThumbnail } from '@/app/[locale]/(public)/blog/[slug]/components/DynamicThumbnail';
 import { useTranslations } from 'next-intl';
 import blogsData from '@/public/data/blogs.json';
+import { useClickTracking } from '@/services/useTracking';
 
 interface BlogPost {
   slug: string;
@@ -29,16 +30,20 @@ export default function RelatedBlogCard({ blog, locale, category }: RelatedBlogC
   const blogData = blogsData.find((b: any) => b.slug === blog.slug) as any;
   const useMermaidThumbnail = blogData?.useMermaidThumbnail || false;
   const thumbnailType = blogData?.thumbnailType || '';
-  
-  // Debug logging
-  console.log('Blog slug:', blog.slug);
-  console.log('Blog data:', blogData);
-  console.log('useMermaidThumbnail:', useMermaidThumbnail);
-  console.log('thumbnailType:', thumbnailType);
-  
+
+  // Track related-blog clicks so the admin funnel can answer "does
+  // related-articles deliver across-category navigation, or just same-
+  // category churn?". content_id is greppable: related-blog:<slug>.
+  const trackClick = useClickTracking(
+    `related-blog:${blog.slug}`,
+    'menu_link',
+    'cards'
+  );
+
   return (
     <Link
       href={`/${locale}/blog/${blog.slug}`}
+      onClick={trackClick}
       className="group block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 hover:border-blue-300"
     >
       <div className="relative h-48 w-full overflow-hidden">

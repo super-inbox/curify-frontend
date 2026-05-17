@@ -50,9 +50,11 @@ const DEFAULT_MODEL = "gpt-4o-mini";
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const out = { dryRun: false, limit: Infinity, idsFilter: null, model: DEFAULT_MODEL };
+  const out = { dryRun: false, limit: Infinity, idsFilter: null, model: DEFAULT_MODEL, includeAll: false, skipMbti: false };
   for (const a of args) {
     if (a === "--dry-run") out.dryRun = true;
+    else if (a === "--include-all") out.includeAll = true;
+    else if (a === "--skip-mbti") out.skipMbti = true;
     else if (a.startsWith("--limit=")) out.limit = parseInt(a.split("=")[1], 10);
     else if (a.startsWith("--ids=")) out.idsFilter = new Set(a.split("=")[1].split(","));
     else if (a.startsWith("--model=")) out.model = a.split("=")[1];
@@ -163,7 +165,34 @@ async function main() {
   const nanoEn = readJson(NANO_I18N_EN) || {};
   const existing = readJson(EXAMPLE_I18N_EN) || {};
 
-  const allowed = inspirations.filter((d) => d.allow_i18n);
+  // Default: only allow_i18n=true examples (10-locale primary content).
+  // --include-all also includes allow_i18n=false examples so EN/ZH thin
+  // example pages get unique descriptions for the indexing bucket
+  // ("Crawled - currently not indexed"). Non-en/zh variants of
+  // allow_i18n=false are still noindex'd by the example page, so the
+  // generated copy only affects the EN/ZH indexable surface.
+  let allowed = args.includeAll
+    ? inspirations
+    : inspirations.filter((d) => d.allow_i18n);
+
+  // --skip-mbti excludes MBTI templates (template id contains "mbti" OR
+  // template topics include "mbti" / "personality"). Useful when the
+  // base prompt risks hallucinating MBTI types for examples whose ID
+  // doesn't carry an explicit type token (e.g., Hulk -> ENFP nonsense).
+  // Run MBTI templates with a tightened prompt in a follow-up pass.
+  if (args.skipMbti) {
+    const mbtiTpls = new Set();
+    for (const t of templates) {
+      const topics = t.topics || [];
+      if ((t.id && t.id.includes("mbti")) || topics.includes("mbti") || topics.includes("personality")) {
+        mbtiTpls.add(t.id);
+      }
+    }
+    const before = allowed.length;
+    allowed = allowed.filter((d) => !mbtiTpls.has(d.template_id));
+    console.log(`--skip-mbti: dropped ${before - allowed.length} MBTI examples (${mbtiTpls.size} templates).`);
+  }
+
   const REQUIRED = ["title", "metaDescription", "description"];
 
   const candidates = allowed
@@ -174,7 +203,7 @@ async function main() {
     });
 
   console.log(`Total inspirations: ${inspirations.length}`);
-  console.log(`allow_i18n: true: ${allowed.length}`);
+  console.log(`In scope (${args.includeAll ? "all" : "allow_i18n=true only"}): ${allowed.length}`);
   console.log(`Existing entries (any field): ${Object.keys(existing).length}`);
   console.log(`Entries needing generation: ${candidates.length}`);
   console.log(`Model: ${args.model}`);

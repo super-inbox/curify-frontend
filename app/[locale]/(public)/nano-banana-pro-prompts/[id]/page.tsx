@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 import CdnImage from "../../../_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
@@ -10,6 +11,13 @@ import PromptTagChips from "./PromptTagChips";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPrompt } from "@/types/nanoPrompts";
 import PromptCard from "../PromptCard";
+import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
+import { getTopicsForTag, getTemplatesForTopic } from "@/lib/topicRegistry";
+import { nanoRegistry } from "@/lib/nano_utils";
+import { buildNanoFeedCards } from "@/lib/nano_page_data";
+import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
+
+const TEMPLATE_CARDS_CAP = 30;
 
 // Cache the prompt detail page for 4 hours with ISR. Prompts rarely
 // change and the page does a backend fetch per render, so caching
@@ -103,6 +111,36 @@ export default async function PromptDetailPage({
   const canonicalPath = buildPromptPath(DEFAULT_CONTENT_LOCALE, prompt.id);
 
   const related = Array.isArray(prompt.related) ? prompt.related : [];
+
+  // Reverse-map: gather Tier-1 topics from this prompt's tags, then pull
+  // templates touching those topics. Same shape as the tag page section.
+  // Prompts whose tags don't appear in TOPIC_GALLERY_TAG skip the section.
+  const contentLocale = resolveContentLocale(locale);
+  const promptTags = Array.isArray(prompt.tags) ? prompt.tags : [];
+  const mappedTopics = new Set<string>();
+  for (const tag of promptTags) {
+    for (const t of getTopicsForTag(tag)) mappedTopics.add(t);
+  }
+  let templateCards: ReturnType<typeof buildNanoFeedCards> = [];
+  if (mappedTopics.size > 0) {
+    const allowed = new Set<string>();
+    for (const topicId of mappedTopics) {
+      for (const t of getTemplatesForTopic(topicId)) allowed.add(t.id);
+    }
+    if (allowed.size > 0) {
+      const tNano = await getTranslations({ locale, namespace: "nano" });
+      const translateNano = makeSafeTranslator(tNano);
+      const all = buildNanoFeedCards(nanoRegistry, contentLocale, {
+        perTemplateMaxImages: 2,
+        strictLocale: false,
+        translate: translateNano,
+        limit: 200,
+      });
+      templateCards = all
+        .filter((c) => allowed.has(c.template_id))
+        .slice(0, TEMPLATE_CARDS_CAP);
+    }
+  }
 
   const nextPrompt = related.length > 0 ? related[0] : null;
   const prevPrompt = related.length > 1 ? related[related.length - 1] : null;
@@ -226,6 +264,26 @@ export default async function PromptDetailPage({
                 <PromptCard key={p.id} prompt={p} />
               ))}
             </div>
+          </section>
+        )}
+
+        {templateCards.length > 0 && (
+          <section className="mt-12">
+            <div className="mb-3">
+              <h2 className="text-lg font-bold text-neutral-900">
+                Related Templates
+              </h2>
+              <p className="mt-1 text-sm text-neutral-600">
+                Generate your own prompts in these template formats.
+              </p>
+            </div>
+            <NanoTemplateDetailClient
+              locale={locale}
+              otherNanoCards={templateCards}
+              showReproduce={false}
+              showOtherTemplates={true}
+              showOtherTemplateTitle={false}
+            />
           </section>
         )}
       </main>

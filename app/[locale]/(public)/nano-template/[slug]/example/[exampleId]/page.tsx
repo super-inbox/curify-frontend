@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import ExampleRightColumn from "./ExampleRightColumn";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
@@ -30,10 +31,12 @@ import {
   resolveLocalizedExampleCopy,
 } from "@/lib/nano_page_data";
 
-// Cache example detail pages for 4 hours with ISR — example data
-// rarely changes after publication and the page builds a heavy data
-// graph (template view, prevNext, similar items, etc.) per render.
-export const revalidate = 14400;
+// Example data is entirely bundled (nano_inspiration.json) and only
+// changes on redeploy. generateStaticParams (below) pre-builds every
+// example at deploy, and revalidate=false keeps the Full Route Cache
+// pinned until the next deploy. Avoids pointless 4h rebuilds with
+// byte-identical output.
+export const revalidate = false;
 
 type PageParams = {
   locale: string;
@@ -61,14 +64,14 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
   );
   const category = fallbackCopy.category;
 
-  // allow_i18n entries get example-specific localized SEO copy from
-  // messages/<locale>/example.json. Other entries use the template-level
-  // i18n fallback (which renders the template's title for every example
-  // and is fine for non-indexed locales).
+  // Always read example.json regardless of allow_i18n. We've backfilled
+  // unique descriptions for ~1,275 non-allow_i18n examples; rendering
+  // them improves the visible page even for locales we don't index.
+  // The allow_i18n flag still gates *indexing* below (hreflang +
+  // noindex), so non-allow_i18n examples on non-en/zh stay noindex'd
+  // — they just look better to the visitors who do reach them.
   const allowI18n = !!example.allow_i18n;
-  const exampleI18n = allowI18n
-    ? await getExampleI18n(example.id, ctx.contentLocale)
-    : null;
+  const exampleI18n = await getExampleI18n(example.id, ctx.contentLocale);
   const title = exampleI18n?.title || fallbackCopy.title;
   const bodyDescription = exampleI18n?.description || null;
   const metaDescription = exampleI18n?.metaDescription || null;
@@ -197,6 +200,14 @@ export async function generateMetadata({
   // fallbacks (thin) — noindex them to avoid SEO penalties for thin content.
   const noindex = !allowI18n && rawLocale !== "en" && rawLocale !== "zh";
 
+  // When noindex'd, point canonical at the EN version (the page Google
+  // should actually index) instead of self. A noindex page that
+  // canonicals to itself sends conflicting signals — Google ends up
+  // classifying it as "Duplicate without user-selected canonical".
+  // EN uses no locale prefix (localePrefix: as-needed).
+  const canonicalLocale = noindex ? "en" : rawLocale;
+  const canonicalPath = canonicalLocale === "en" ? route : `/${canonicalLocale}${route}`;
+
   return {
     title: `${title} — Nano Banana Prompt Generator`,
     description,
@@ -206,7 +217,7 @@ export async function generateMetadata({
       images: ogImage ? [{ url: ogImage }] : undefined,
     },
     alternates: {
-      canonical: `/${rawLocale}${route}`,
+      canonical: canonicalPath,
       languages,
     },
     robots: noindex ? { index: false, follow: true } : undefined,
@@ -270,7 +281,7 @@ export default async function NanoExampleDetailPage({
             />
           ) : (
             <Link
-              href={`/${rawLocale}/nano-template/${slug}/carousel/${rawExampleId}?media=image`}
+              href={`/${rawLocale}/carousel/template-example/${slug}/${rawExampleId}?media=image`}
               className="block h-full w-full cursor-zoom-in"
               aria-label="Open image in carousel"
             >
@@ -307,13 +318,18 @@ export default async function NanoExampleDetailPage({
         }
       />
 
+      {/* Mobile-only use-case chips — desktop sees them in the top SiteTopBar. */}
+      <section className="mt-4 lg:hidden">
+        <UseCaseChipsRow />
+      </section>
+
       <section className="mt-8">
         {similarItems.length > 0 && (
           <>
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More like this
             </h2>
-            <ExampleImagesGrid items={similarItems} locale={pageLocale} maxRows={2} />
+            <ExampleImagesGrid items={similarItems} locale={pageLocale} maxRows={2} desktopOpensExample />
           </>
         )}
         {similarItems.length === 0 && gridItems.length > 0 && (
@@ -321,7 +337,7 @@ export default async function NanoExampleDetailPage({
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More from this template
             </h2>
-            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} />
+            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} desktopOpensExample />
           </>
         )}
 

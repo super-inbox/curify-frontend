@@ -1,13 +1,28 @@
 import { Metadata } from 'next';
-import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { getCanonicalUrl, getLanguagesMap } from '@/lib/canonical';
 import { SITE_URL } from '@/lib/constants';
 import PromptCard from '../../PromptCard';
 import { nanoPromptsService } from '@/services/nanoPrompts';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
-import { toOgLocale } from '@/lib/locale_utils';
+import { toOgLocale, resolveContentLocale, makeSafeTranslator } from '@/lib/locale_utils';
 import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
 import CategoriesSection from "@/app/[locale]/_components/NanoBananaPromptsTags";
+import { getTopicsForTag, getTemplatesForTopic } from '@/lib/topicRegistry';
+import { nanoRegistry } from '@/lib/nano_utils';
+import { buildNanoFeedCards } from '@/lib/nano_page_data';
+import NanoTemplateDetailClient from '@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient';
+
+const PROMPTS_VISIBLE_CAP = 30;
+const TEMPLATE_CARDS_CAP = 30;
+
+// Canonical tag set from the bundled metadata. Stale/removed tags
+// (e.g. "east asian" pre-restore) used to render as soft-404s and
+// burn impressions in Search Console — now we 404 on unknown tags.
+const CANONICAL_TAGS = new Set<string>(
+  nanoMetadata.metadata.tags.map((t) => t.tag)
+);
 
 // Cache tag listing pages for 4 hours with ISR — listings rarely
 // change and bot crawls hit these often.
@@ -34,6 +49,12 @@ async function getTagEntry(tag: string): Promise<TagEntry> {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const tag = decodeURIComponent(slug);
+  if (!CANONICAL_TAGS.has(tag)) {
+    return {
+      title: 'Tag Not Found',
+      robots: { index: false, follow: false },
+    };
+  }
   const entry = await getTagEntry(tag);
 
   const title = entry.title ?? tag;
@@ -110,6 +131,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TagPage({ params }: Props) {
   const { locale, slug } = await params;
   const tag = decodeURIComponent(slug);
+  if (!CANONICAL_TAGS.has(tag)) notFound();
   const entry = await getTagEntry(tag);
 
   const title = entry.title ?? tag;
@@ -118,15 +140,49 @@ export default async function TagPage({ params }: Props) {
 
   let prompts: NanoPromptBase[] = [];
   try {
-    prompts = await nanoPromptsService.getNanoPromptsByTag(tag);
+    prompts = await nanoPromptsService.getNanoPromptsByTag(tag, {
+      limit: PROMPTS_VISIBLE_CAP,
+    });
   } catch (err) {
     console.error('Error fetching prompts for tag:', tag, err);
+  }
+
+  // Reverse-map: which Tier-1 topics roll up from this gallery tag? If
+  // any, surface a "Templates exploring [tag]" row below the prompt grid
+  // using the same NanoInspirationRow shape topics pages use. Tags not in
+  // the mapping (≈half of the 151 gallery tags as of today) skip the
+  // section entirely.
+  const contentLocale = resolveContentLocale(locale);
+  const mappedTopics = getTopicsForTag(tag);
+  let templateCards: ReturnType<typeof buildNanoFeedCards> = [];
+  if (mappedTopics.length > 0) {
+    const allowed = new Set<string>();
+    for (const topicId of mappedTopics) {
+      for (const t of getTemplatesForTopic(topicId)) allowed.add(t.id);
+    }
+    if (allowed.size > 0) {
+      const tNano = await getTranslations({ locale, namespace: 'nano' });
+      const translateNano = makeSafeTranslator(tNano);
+      const all = buildNanoFeedCards(nanoRegistry, contentLocale, {
+        perTemplateMaxImages: 2,
+        strictLocale: false,
+        translate: translateNano,
+        limit: 200, // generous pre-filter; we filter by template_id next
+      });
+      templateCards = all
+        .filter((c) => allowed.has(c.template_id))
+        .slice(0, TEMPLATE_CARDS_CAP);
+    }
   }
 
   const categories = nanoMetadata.metadata.tags.map((t) => ({
     category: t.tag,
     count: t.count,
   }));
+  // True per-tag count from the bundled metadata, not from the (capped)
+  // API response.
+  const totalForTag =
+    nanoMetadata.metadata.tags.find((t) => t.tag === tag)?.count ?? prompts.length;
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -158,7 +214,7 @@ export default async function TagPage({ params }: Props) {
             )}
 
             <p className="mt-2 text-sm text-gray-400">
-              {prompts.length} prompt{prompts.length !== 1 ? 's' : ''}
+              {totalForTag} prompt{totalForTag !== 1 ? 's' : ''}
             </p>
           </header>
 
@@ -176,6 +232,26 @@ export default async function TagPage({ params }: Props) {
                 <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} />
               ))}
             </div>
+          )}
+
+          {templateCards.length > 0 && (
+            <section className="mt-12">
+              <div className="mb-3">
+                <h2 className="text-lg font-bold text-neutral-900">
+                  Templates exploring &ldquo;{title}&rdquo;
+                </h2>
+                <p className="mt-1 text-sm text-neutral-600">
+                  Generate your own prompts in these template formats.
+                </p>
+              </div>
+              <NanoTemplateDetailClient
+                locale={locale}
+                otherNanoCards={templateCards}
+                showReproduce={false}
+                showOtherTemplates={true}
+                showOtherTemplateTitle={false}
+              />
+            </section>
           )}
         </div>
       </div>

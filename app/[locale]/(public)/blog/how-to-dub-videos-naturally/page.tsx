@@ -21,7 +21,6 @@ import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
-import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components/BreadcrumbNavigation";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import FAQSection from "@/app/[locale]/(public)/blog/[slug]/components/FAQSection";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
@@ -66,14 +65,6 @@ export default function HowToDubVideosNaturallyPage() {
   return (
     <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
       {/* Breadcrumb Navigation */}
-      <BreadcrumbNavigation 
-        items={[
-          { name: "Home", href: "/" },
-          { name: "Blog", href: "/blog" },
-          { name: t('hero.title'), href: `/blog/how-to-dub-videos-naturally` }
-        ]}
-      />
-      
       <div className="prose prose-base md:prose-lg">
         {/* Hero Section */}
         <div className="relative mb-8">

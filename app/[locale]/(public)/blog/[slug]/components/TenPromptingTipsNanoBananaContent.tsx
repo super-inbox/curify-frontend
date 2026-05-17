@@ -3,6 +3,7 @@ import PromptBox from "./PromptBox";
 import TableOfContents from "./TableOfContents";
 import FAQSection from "./FAQSection";
 import StructuredData from "./StructuredData";
+import NanoBananaExamples from "../NanoBananaExamples";
 import Head from 'next/head';
 
 interface TenPromptingTipsNanoBananaContentProps {
@@ -15,16 +16,16 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
   // Generate headings for table of contents
   const headings = [
     { level: 'H2', text: t("whyNanoBananaTitle"), id: 'why-nano-banana' },
-    { level: 'H2', text: t("tip1Title"), id: 'tip-1-identity' },
-    { level: 'H2', text: t("tip2Title"), id: 'tip-2-benefits' },
-    { level: 'H2', text: t("tip3Title"), id: 'tip-3-audience' },
-    { level: 'H2', text: t("tip4Title"), id: 'tip-4-tone' },
-    { level: 'H2', text: t("tip5Title"), id: 'tip-5-storytelling' },
-    { level: 'H2', text: t("tip6Title"), id: 'tip-6-metaphors' },
-    { level: 'H2', text: t("tip7Title"), id: 'tip-7-sensory' },
-    { level: 'H2', text: t("tip8Title"), id: 'tip-8-structure' },
-    { level: 'H2', text: t("tip9Title"), id: 'tip-9-variety' },
-    { level: 'H2', text: t("tip10Title"), id: 'tip-10-refinement' },
+    { level: 'H2', text: t("tip1Title"), id: 'tip-1-gallery' },
+    { level: 'H2', text: t("tip2Title"), id: 'tip-2-remix' },
+    { level: 'H2', text: t("tip3Title"), id: 'tip-3-specificity' },
+    { level: 'H2', text: t("tip4Title"), id: 'tip-4-tags' },
+    { level: 'H2', text: t("tip5Title"), id: 'tip-5-params' },
+    { level: 'H2', text: t("tip6Title"), id: 'tip-6-iteration' },
+    { level: 'H2', text: t("tip7Title"), id: 'tip-7-workspace' },
+    { level: 'H2', text: t("tip8Title"), id: 'tip-8-batch' },
+    { level: 'H2', text: t("tip9Title"), id: 'tip-9-language' },
+    { level: 'H2', text: t("tip10Title"), id: 'tip-10-credits' },
     { level: 'H2', text: t("toolsTitle"), id: 'tools-section' },
     { level: 'H2', text: t("templatesTitle"), id: 'templates-section' },
     { level: 'H2', text: t("curifyTitle"), id: 'curify-section' },
@@ -83,7 +84,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         </section>
       )}
       
-      <section id="tip-1-identity">
+      <section id="tip-1-gallery">
         <h2 className="text-2xl font-bold mb-4">{t("tip1Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
@@ -101,7 +102,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         )}
       </section>
 
-      <section id="tip-2-benefits">
+      <section id="tip-2-remix">
         <h2 className="text-2xl font-bold mb-4">{t("tip2Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
@@ -119,7 +120,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         )}
       </section>
 
-      <section id="tip-3-audience">
+      <section id="tip-3-specificity">
         <h2 className="text-2xl font-bold mb-4">{t("tip3Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
@@ -137,7 +138,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         )}
       </section>
 
-      <section id="tip-4-tone">
+      <section id="tip-4-tags">
         <h2 className="text-2xl font-bold mb-4">{t("tip4Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
@@ -155,7 +156,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         )}
       </section>
 
-      <section id="tip-5-storytelling">
+      <section id="tip-5-params">
         <h2 className="text-2xl font-bold mb-4">{t("tip5Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
@@ -173,7 +174,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         )}
       </section>
 
-      <section id="tip-6-metaphors">
+      <section id="tip-6-iteration">
         <h2 className="text-2xl font-bold mb-4">{t("tip6Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
@@ -191,7 +192,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         )}
       </section>
 
-      <section id="tip-7-sensory">
+      <section id="tip-7-workspace">
         <h2 className="text-2xl font-bold mb-4">{t("tip7Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
@@ -209,7 +210,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         )}
       </section>
 
-      <section id="tip-8-structure">
+      <section id="tip-8-batch">
         <h2 className="text-2xl font-bold mb-4">{t("tip8Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
@@ -227,7 +228,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         )}
       </section>
 
-      <section id="tip-9-variety">
+      <section id="tip-9-language">
         <h2 className="text-2xl font-bold mb-4">{t("tip9Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
@@ -245,7 +246,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         )}
       </section>
 
-      <section id="tip-10-refinement">
+      <section id="tip-10-credits">
         <h2 className="text-2xl font-bold mb-4">{t("tip10Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
@@ -274,21 +275,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
       </section>
 
       <section id="templates-section">
-        <h2 className="text-2xl font-bold mb-4">{t("templatesSectionTitle")}</h2>
-        
-        <PromptBox 
-          title={t("storytellingTemplateTitle")}
-          promptText={t("storytellingTemplateContent")}
-        >
-          <pre dangerouslySetInnerHTML={{ __html: t("storytellingTemplateDisplay") }} />
-        </PromptBox>
-
-        <PromptBox 
-          title={t("tip1PromptTitle")}
-          promptText={t("identityTemplateContent")}
-        >
-          <pre dangerouslySetInnerHTML={{ __html: t("identityTemplateDisplay") }} />
-        </PromptBox>
+        <NanoBananaExamples locale={locale} blogSlug="10-prompting-tips-nano-banana" />
       </section>
 
       <section id="curify-section">

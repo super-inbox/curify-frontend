@@ -1,5 +1,3 @@
-import nanoTemplates from "@/public/data/nano_templates.json";
-import nanoImages from "@/public/data/nano_inspiration.json";
 import { getTranslations } from "next-intl/server";
 
 import {
@@ -11,6 +9,7 @@ import {
   getTemplateView,
   getTemplateViewWithTranslations,
   nanoTemplateI18nKey,
+  nanoRegistry,
 } from "@/lib/nano_utils";
 
 import {
@@ -48,9 +47,11 @@ export async function buildNanoPageContext(localeStr: string, slug: string) {
   const contentLocale: PageLocale = resolveContentLocale(localeStr);
   const templateId = slugToTemplateId(slug);
 
-  const templates = nanoTemplates as unknown as RawTemplate[];
-  const images = nanoImages as unknown as RawNanoImageRecord[];
-  const reg = buildNanoRegistry(templates, images);
+  // Reuse the module-level nanoRegistry built once when nano_utils.ts is
+  // imported, instead of rebuilding from the 1.5MB JSON on every page
+  // render. nano_templates.json and nano_inspiration.json are bundled
+  // and only change on redeploy, so the singleton is always correct.
+  const reg = nanoRegistry;
 
   const nanoMessagesRaw = await loadNanoMessages(localeStr);
   const localizedRawEntry = nanoMessagesRaw?.[templateId];
@@ -164,20 +165,31 @@ export function buildNanoFeedCards(
     strictLocale?: boolean;
     translate?: TranslateFn;
     useCaseSlugs?: string[];
+    /**
+     * Stop building cards once `limit` is reached. Each card is ~1-3 KB
+     * JSON in the SSR HTML; on surfaces that only render the top N cards
+     * (e.g. NanoInspirationRow defaults to 5×5 = 25 visible), the rest
+     * is pure payload waste. Pass a limit matching the visible cap with
+     * a small safety buffer for exclude filters / locale fallbacks.
+     */
+    limit?: number;
   }
 ): NanoInspirationCardType[] {
   const perTemplateMaxImages = opts?.perTemplateMaxImages ?? 6;
   const strictLocale = opts?.strictLocale ?? true;
   const t = opts?.translate;
   const useCaseSlugs = opts?.useCaseSlugs;
+  const limit = opts?.limit;
 
   const out: NanoInspirationCardType[] = [];
 
   const sortedTemplates = [...reg.templates].sort(
     (a, b) => (b.rank_score ?? 1) - (a.rank_score ?? 1)
   );
-  
+
   for (const raw of sortedTemplates) {
+    if (limit !== undefined && out.length >= limit) break;
+
     if (useCaseSlugs?.length) {
       const rawUseCases: string[] = (raw as RawTemplate & { use_cases?: string[] }).use_cases ?? [];
       if (!useCaseSlugs.some((uc) => rawUseCases.includes(uc))) continue;
@@ -266,6 +278,12 @@ export function buildNanoTemplateDetailData(
   return { template, cards };
 }
 
+// NanoInspirationRow defaults to 5 cols × 5 rows = 25 visible. Build 30
+// cards: 25 + a small buffer to absorb the excludeTemplateId filter and
+// any locale fallbacks dropping a card. Everything beyond was pure HTML
+// payload waste — the "Other templates" surface never shows See more.
+const OTHER_TEMPLATES_CARD_LIMIT = 30;
+
 export function buildOtherTemplateCards(
   reg: ReturnType<typeof buildNanoRegistry>,
   contentLocale: PageLocale,
@@ -276,6 +294,7 @@ export function buildOtherTemplateCards(
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: translateNano,
+    limit: OTHER_TEMPLATES_CARD_LIMIT,
   }).filter((c) => c.template_id !== excludeTemplateId);
 }
 

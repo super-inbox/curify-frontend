@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import BlogShareBar from "./BlogShareBar";
+import BlogTopBar from "./_components/BlogTopBar";
 
 export async function generateMetadata({
   params,
@@ -35,12 +36,13 @@ export default async function BlogLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  await params;
+  const { locale } = await params;
 
   return (
     <main className="min-h-screen bg-[#FDFDFD] px-4 pt-4 pb-10 md:px-8 lg:px-12">
       <div className="mx-auto w-full max-w-[1400px]">
         <div className="min-w-0">
+          <BlogTopBar locale={locale} />
           {children}
           <BlogShareBar />
         </div>

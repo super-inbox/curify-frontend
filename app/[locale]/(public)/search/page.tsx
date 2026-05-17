@@ -117,6 +117,18 @@ function bigramHitThreshold(n: number): number {
   return 3;
 }
 
+// Token-in-blob check with word boundaries for ASCII tokens.
+//   - CJK tokens use substring (Chinese has no word boundaries).
+//   - ASCII tokens require non-alnum boundaries on both sides so short
+//     queries like "met" don't match inside "metropolitan" / "metallic".
+function tokenInBlob(blob: string, t: string): boolean {
+  if (!t) return false;
+  // Any CJK character → substring (covers bigrams and full CJK tokens).
+  if (/[一-龥]/.test(t)) return blob.includes(t);
+  const escaped = t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`).test(blob);
+}
+
 // Returns: { primaryHits, bigramHits, allPrimary }
 //   allPrimary  → true when every primary token appears in the blob
 //   bigramHits  → number of CJK bigrams that appear (only set when the
@@ -126,7 +138,7 @@ function scoreBlob(
   tokens: { primary: string[]; bigrams: string[] }
 ): { primaryHits: number; bigramHits: number; allPrimary: boolean } {
   let primaryHits = 0;
-  for (const t of tokens.primary) if (blob.includes(t)) primaryHits++;
+  for (const t of tokens.primary) if (tokenInBlob(blob, t)) primaryHits++;
   let bigramHits = 0;
   for (const t of tokens.bigrams) if (blob.includes(t)) bigramHits++;
   return {
@@ -278,6 +290,11 @@ export default async function SearchPage({ params, searchParams }: Props) {
     params?: Record<string, unknown>;
     locales?: Record<string, { title?: string; category?: string }>;
     tags?: string[];
+    // Hidden synonyms list — fed into the search blob, never user-visible.
+    // Populated by scripts/enrich_search_aliases.cjs (gpt-4o-mini) for
+    // cross-language terms users type that don't appear in title/params
+    // (e.g. zh "鲜花" on a herbal-lily record).
+    search_aliases?: string[];
   };
 
   // Free-text match across id, template_id, tags, params (e.g. character_name,
@@ -292,7 +309,14 @@ export default async function SearchPage({ params, searchParams }: Props) {
   type ScoredInspiration = { rec: InspRecord; score: number; strict: boolean };
   const allScored: ScoredInspiration[] = [];
   for (const r of nanoInspiration as InspRecord[]) {
-    if (matchedTemplateIdsByI18n.has(r.template_id)) {
+    // Only auto-elevate child inspirations when the parent template was
+    // matched via STRICT i18n (every primary token / enough bigrams).
+    // Auto-elevating under relaxed-template matches floods results when a
+    // common short token (e.g. "met") substring-matches many template
+    // blobs — every child inspiration gets force-promoted to score 100
+    // and the precise hit gets drowned out. Inspirations under
+    // relaxed-template matches still get scored on their own blob below.
+    if (strictTemplateMatches.has(r.template_id)) {
       allScored.push({ rec: r, score: 100, strict: true });
       continue;
     }
@@ -305,6 +329,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
         r.id,
         r.template_id,
         ...(r.tags ?? []),
+        ...(r.search_aliases ?? []),
         ...Object.values(r.params ?? {}),
         ...localeFields,
       ]
@@ -374,7 +399,9 @@ export default async function SearchPage({ params, searchParams }: Props) {
   let galleryPrompts: NanoPromptBase[] = [];
   if (NANO_PROMPT_TAG_SET.has(query)) {
     try {
-      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(query);
+      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(query, {
+        limit: 12,
+      });
     } catch (err) {
       console.error("Failed to fetch gallery prompts for tag", query, err);
     }

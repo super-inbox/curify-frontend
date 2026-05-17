@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { notFound } from "next/navigation";
 import RelatedBlogs from "@/app/[locale]/_components/RelatedBlogs";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import NanoBananaExamples from "./NanoBananaExamples";
 import { blogPosts, availableKeys } from "./utils/blog-config";
 import { formatContent } from "./utils/content-formatters";
@@ -293,6 +294,9 @@ export default async function BlogPostPage({
         {slug === '10-prompting-tips-nano-banana' && (
           <TenPromptingTipsNanoBananaContent slug={slug} t={safeT} locale={locale} />
         )}
+        {slug === 'curify-nano-banana-template-tips' && (
+          <TenPromptingTipsNanoBananaContent slug={slug} t={safeT} locale={locale} />
+        )}
         {slug === '10-prompting-tips-video-generation' && (
           <TenPromptingTipsVideoGenerationContent slug={slug} t={safeT} arrayData={arrayData} locale={locale} />
         )}
@@ -380,6 +384,14 @@ export default async function BlogPostPage({
           />
         )}
       </div>
+
+      {/* Unified CTA — picks the right tool / coaching / contact target based
+          on the post's category. Renders nothing if the category has no CTA
+          configured (e.g. nano-template / learning-education, which already
+          embed their own template grids). */}
+      {blogConfig.category && (
+        <BlogCTACard category={blogConfig.category} locale={locale} />
+      )}
 
       {/* Related Blogs */}
       <RelatedBlogs currentSlug={slug} locale={locale} />

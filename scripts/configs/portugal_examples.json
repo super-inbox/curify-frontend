@@ -1,0 +1,62 @@
+[
+  {
+    "template_id": "template-series-travel",
+    "params": { "destination_name": "Portugal", "trip_duration": "4" },
+    "topics": ["portugal"],
+    "id_suffix": "portugal-4"
+  },
+  {
+    "template_id": "template-city-miniature",
+    "params": { "City Name": "Lisbon" },
+    "topics": ["portugal"],
+    "id_suffix": "portugal-lisbon"
+  },
+  {
+    "template_id": "template-country-top10-travel-destinations",
+    "params": { "country_name": "Portugal" },
+    "topics": ["portugal"],
+    "id_suffix": "portugal"
+  },
+  {
+    "template_id": "template-country-souvenirs-watercolor",
+    "params": { "country_name": "Portugal" },
+    "topics": ["portugal"],
+    "id_suffix": "portugal"
+  },
+  {
+    "template_id": "template-recipe",
+    "params": { "dish_name": "Pastel de Nata" },
+    "topics": ["portugal", "food-and-drink"],
+    "id_suffix": "portugal-pastel-de-nata"
+  },
+  {
+    "template_id": "template-cuisine-food-vocab-poster",
+    "params": { "cuisine_theme": "Portuguese Cuisine" },
+    "topics": ["portugal", "food-and-drink"],
+    "id_suffix": "portugal-cuisine"
+  },
+  {
+    "template_id": "template-food",
+    "params": { "food_name": "Bacalhau" },
+    "topics": ["portugal", "food-and-drink"],
+    "id_suffix": "portugal-bacalhau"
+  },
+  {
+    "template_id": "template-world-landmark-vintage-info-poster",
+    "params": { "landmark_name": "Belem Tower" },
+    "topics": ["portugal", "architecture"],
+    "id_suffix": "portugal-belem-tower"
+  },
+  {
+    "template_id": "template-intangible-heritage",
+    "params": { "craft_name": "Portuguese Azulejo Tile Art" },
+    "topics": ["portugal"],
+    "id_suffix": "portugal-azulejo"
+  },
+  {
+    "template_id": "template-cultural-relic-retro-infographic",
+    "params": { "cultural_relic": "Jeronimos Monastery" },
+    "topics": ["portugal", "architecture"],
+    "id_suffix": "portugal-jeronimos-monastery"
+  }
+]

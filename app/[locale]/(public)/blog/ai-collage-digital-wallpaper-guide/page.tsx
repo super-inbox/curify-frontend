@@ -5,9 +5,9 @@ import Link from 'next/link';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
-import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components/BreadcrumbNavigation";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
+import NanoBananaExamples from "@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples";
 
 export default function AICollageWallpaperGuide() {
   const t = useTranslations('blog.aiCollageDigitalWallpaperGuide');
@@ -24,10 +24,6 @@ export default function AICollageWallpaperGuide() {
 
   return (
     <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
-      <BreadcrumbNavigation items={[
-        { name: 'Blog', href: '/blog' },
-        { name: t('title'), href: '/blog/ai-collage-digital-wallpaper-guide' }
-      ]} />
       <StructuredData 
         title={t('title')}
         description={t('metaDescription')}
@@ -124,6 +120,10 @@ export default function AICollageWallpaperGuide() {
         <section id="advanced-techniques" className="mb-8">
           <h2 className="text-2xl font-bold mb-4">{t('advancedTitle')}</h2>
           <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: t('advancedContent') }} />
+        </section>
+
+        <section className="mb-8">
+          <NanoBananaExamples locale={locale} blogSlug="ai-collage-digital-wallpaper-guide" />
         </section>
 
         <section className="mb-8">

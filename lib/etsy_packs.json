@@ -1,0 +1,31 @@
+{
+  "$schema_note": "Etsy SKU registry. One entry per listing. Blob path is the versioned Azure path; bump version + path together when rotating after a leak. The 'secret' field is intentionally null in v1 of this design — the redemption endpoint reads it and skips token verification when null. When you later want per-SKU rotation without leaving an asset open, set secret to a long random string and pass ?t=<secret> in the Etsy PDF URL. Code paths handle both modes from day one.",
+  "packs": [
+    {
+      "sku": "mbti-character",
+      "title": "MBTI Character Pack: Marvel, Ghibli & Friends (100 Personality Cards)",
+      "description": "100 printable 3:4 character portraits assigned by MBTI personality type. Covers 66 Marvel heroes, 23 Studio Ghibli characters, and 11 from Friends. Use for personality quizzes, classroom decor, or fan-art reference.",
+      "cover_image": "/images/nano_insp/template-mbti-marvel-en-captainamerica.jpg",
+      "card_count": 100,
+      "file_size_mb": 147,
+      "blob_path": "packs/sku/mbti-character/pack-v1.zip",
+      "version": 1,
+      "etsy_listing_url": null,
+      "active": true,
+      "secret": null
+    },
+    {
+      "sku": "vocabulary",
+      "title": "Kids English-Chinese Bilingual Vocabulary Cards (108 Flashcards)",
+      "description": "108 printable bilingual vocabulary flashcards for early-childhood English-Chinese learning. Covers 12 themed topics — animals, food, nature, family, transportation, weather, body, emotions, celebrations, school, space, and life cycles. Each card has 8 vocab items with pinyin pronunciation.",
+      "cover_image": "/images/nano_insp/template-vocabulary-fruits-en-zh.jpg",
+      "card_count": 108,
+      "file_size_mb": 84,
+      "blob_path": "packs/sku/vocabulary/pack-v1.zip",
+      "version": 1,
+      "etsy_listing_url": null,
+      "active": true,
+      "secret": null
+    }
+  ]
+}

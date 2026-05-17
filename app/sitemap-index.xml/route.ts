@@ -12,10 +12,17 @@ const CHILD_SITEMAPS: Array<{ path: string; lastmod: string }> = [
   // pages to localized locales only (fixes "Duplicate without
   // user-selected canonical" reports for non-en/zh URLs).
   { path: "/sitemap.xml",          lastmod: "2026-05-08T00:00:00.000Z" },
-  { path: "/sitemap-blogs.xml",    lastmod: "2026-05-04T00:00:00.000Z" },
-  // Bumped 2026-05-07 — 260 example pages gained per-locale SEO copy
-  // (title / description / metaDescription) and 8 new locale URL variants.
-  { path: "/sitemap-examples.xml", lastmod: "2026-05-07T00:00:00.000Z" },
+  // Bumped 2026-05-15 — split 10-prompting-tips-nano-banana into two
+  // posts: kept the slug + title with new prompting-fundamentals content,
+  // added curify-nano-banana-template-tips for the original template-walk-
+  // through content (commit splits the SEO title from the on-page topic).
+  { path: "/sitemap-blogs.xml",    lastmod: "2026-05-15T00:00:00.000Z" },
+  // Bumped 2026-05-14 — 1,275 additional non-MBTI example pages gained
+  // per-locale SEO copy in messages/<locale>/example.json (commit
+  // 2f43a2e). The child sitemap's per-URL lastmods now flag ~1,540
+  // entries (260 original + 1,275 new) as bumped, so Google should
+  // re-crawl the en + zh variants and refresh the indexed copy.
+  { path: "/sitemap-examples.xml", lastmod: "2026-05-14T00:00:00.000Z" },
 ];
 
 export async function GET() {
@@ -36,7 +43,7 @@ ${entries}
   return new NextResponse(xml, {
     headers: {
       "Content-Type": "application/xml",
-      "Cache-Control": "public, max-age=3600",
+      "Cache-Control": "public, s-maxage=300, stale-while-revalidate=3600",
     },
   });
 }

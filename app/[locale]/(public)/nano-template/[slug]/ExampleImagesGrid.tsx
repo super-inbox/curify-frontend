@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Download, Play, Sparkles } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
@@ -48,12 +49,29 @@ function useCols() {
 
 // ── Card ────────────────────────────────────────────────────────────────────
 
+// Cap how many ids ride the URL. 40 covers the typical visible window
+// without busting browser URL limits (~8KB). Slides beyond #40 fall
+// back to the template-scoped order inside the carousel page.
+const CAROUSEL_IDS_CAP = 40;
+
 function ExampleImageCard({
   item,
   locale,
+  carouselContext,
+  desktopOpensExample = false,
 }: {
   item: Item;
   locale: string;
+  carouselContext: string; // pre-encoded "&from=...&ids=..."
+  /**
+   * When true, the tile click on desktop (≥ lg breakpoint, 1024px) routes
+   * to /nano-template/[slug]/example/[exampleId] instead of the carousel.
+   * Mobile keeps the carousel entry. Set on surfaces where the carousel
+   * is fighting the conversion funnel (template detail + example detail
+   * pages, where the carousel acts as a viewer of last resort and the
+   * example page actually converts at ~37%).
+   */
+  desktopOpensExample?: boolean;
 }) {
   const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
   const { trackVideoClick } = useVideoTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
@@ -78,7 +96,17 @@ function ExampleImageCard({
     return `/${locale}/nano-template/${toSlug(item.templateId)}${qs}#reproduce`;
   })();
 
-  const carouselHref = `/${locale}/nano-template/${toSlug(item.templateId)}/carousel/${encodeURIComponent(item.id)}?media=${hasVideo ? "video" : "image"}`;
+  // Append &from=<grid pathname> and &ids=<grid order> so the carousel
+  // (a) sequences slides in the same order the user saw on the grid,
+  // (b) closes back to the originating page rather than the template-
+  //     scoped example detail. carouselContext is computed once in the
+  //     parent so every card on this grid shares the same slice.
+  const carouselHref = `/${locale}/carousel/template-example/${toSlug(item.templateId)}/${encodeURIComponent(item.id)}?media=${hasVideo ? "video" : "image"}${carouselContext}`;
+
+  // Desktop variant: skip the carousel, go straight to the example detail
+  // page. Same URL pattern as the share URL but locale-prefixed for the
+  // app router.
+  const examplePageHref = `/${locale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`;
 
   const shareUrl = `${SITE_URL}/${locale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`;
 
@@ -107,36 +135,71 @@ function ExampleImageCard({
     }
   };
 
+  // Two Link wrappers exist only when desktopOpensExample is on — one
+  // visible <lg (mobile), one ≥lg (desktop). The duplicated CdnImage is
+  // fine: Next.js will only request the asset once thanks to the src dedup,
+  // and only one of the two anchors is in the layout tree at any viewport.
+  const inner = (
+    <>
+      <CdnImage
+        src={item.preview}
+        alt={item.title || item.id}
+        className="aspect-[3/4] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+        loading="lazy"
+      />
+      {hasVideo && (
+        <span
+          aria-label="Has video"
+          className="pointer-events-none absolute left-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-black/55 text-white shadow-sm backdrop-blur-sm"
+        >
+          <Play className="h-3.5 w-3.5 fill-current" />
+        </span>
+      )}
+      <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-4 opacity-0 transition-colors duration-200 group-hover:bg-black/20 group-hover:opacity-100">
+        <span className="rounded-full bg-white/90 px-4 py-1.5 text-xs font-bold text-neutral-900 shadow backdrop-blur-sm">
+          {hasVideo ? "Play video →" : "View prompt →"}
+        </span>
+      </div>
+    </>
+  );
+
+  const tileOnClick = () => {
+    trackClick();
+    if (hasVideo) trackVideoClick();
+  };
+
   return (
     <div className="group rounded-3xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-      <Link
-        href={carouselHref}
-        onClick={() => {
-          trackClick();
-          if (hasVideo) trackVideoClick();
-        }}
-        className="block relative overflow-hidden rounded-t-3xl"
-      >
-        <CdnImage
-          src={item.preview}
-          alt={item.title || item.id}
-          className="aspect-[3/4] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-          loading="lazy"
-        />
-        {hasVideo && (
-          <span
-            aria-label="Has video"
-            className="pointer-events-none absolute left-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-black/55 text-white shadow-sm backdrop-blur-sm"
+      {desktopOpensExample ? (
+        <>
+          {/* Mobile: carousel (Pinterest-style binge stays available) */}
+          <Link
+            href={carouselHref}
+            onClick={tileOnClick}
+            className="block lg:hidden relative overflow-hidden rounded-t-3xl"
           >
-            <Play className="h-3.5 w-3.5 fill-current" />
-          </span>
-        )}
-        <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-4 opacity-0 transition-colors duration-200 group-hover:bg-black/20 group-hover:opacity-100">
-          <span className="rounded-full bg-white/90 px-4 py-1.5 text-xs font-bold text-neutral-900 shadow backdrop-blur-sm">
-            {hasVideo ? "Play video →" : "View prompt →"}
-          </span>
-        </div>
-      </Link>
+            {inner}
+          </Link>
+          {/* Desktop: skip carousel, send to example detail (~37% replicate
+              rate vs ~4% in the carousel). Only enabled on template + example
+              pages where the carousel was eating conversion. */}
+          <Link
+            href={examplePageHref}
+            onClick={tileOnClick}
+            className="hidden lg:block relative overflow-hidden rounded-t-3xl"
+          >
+            {inner}
+          </Link>
+        </>
+      ) : (
+        <Link
+          href={carouselHref}
+          onClick={tileOnClick}
+          className="block relative overflow-hidden rounded-t-3xl"
+        >
+          {inner}
+        </Link>
+      )}
 
       <div className="flex items-center justify-between px-3 py-2">
         {item.batch ? (
@@ -144,7 +207,7 @@ function ExampleImageCard({
             type="button"
             onClick={handleDownload}
             disabled={isDownloading}
-            className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-1 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-200 disabled:opacity-60"
+            className="flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900 disabled:opacity-60"
           >
             <Download className="h-3.5 w-3.5" />
             {isDownloading ? t("downloadingPack") : t("downloadPack")}
@@ -158,7 +221,7 @@ function ExampleImageCard({
             className="flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
           >
             <Sparkles className="h-3.5 w-3.5" />
-            Remix this
+            {t("remixThis")}
           </Link>
         )}
         <ShareButton
@@ -180,11 +243,14 @@ export default function ExampleImagesGrid({
   maxRows = 3,
   locale = "en",
   batch = false,
+  desktopOpensExample = false,
 }: {
   items: Item[];
   maxRows?: number;
   locale?: string;
   batch?: boolean;
+  /** See ExampleImageCard — bypasses the carousel on desktop. */
+  desktopOpensExample?: boolean;
 }) {
   const cols = useCols();
   const limit = cols * maxRows;
@@ -193,14 +259,31 @@ export default function ExampleImagesGrid({
 
   const visible = expanded ? items : items.slice(0, limit);
 
+  // Pre-compute the carousel context string (from + ids) once per render
+  // so every card on this grid shares the same slice. usePathname /
+  // useSearchParams give us the current page URL to return to on close.
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const carouselContext = useMemo(() => {
+    const qs = searchParams?.toString();
+    const from = `${pathname}${qs ? `?${qs}` : ""}`;
+    const ids = items.slice(0, CAROUSEL_IDS_CAP).map((it) => it.id).join(",");
+    return `&from=${encodeURIComponent(from)}&ids=${encodeURIComponent(ids)}`;
+  }, [pathname, searchParams, items]);
+
   return (
     <div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
         {visible.map((it) => (
           <ExampleImageCard
             key={it.id}
-            item={{ ...it, batch }}
+            // Per-item batch wins (topic-page mixed-template grids stamp
+            // each item with its parent template's flag); grid-level
+            // batch is the fallback for single-template surfaces.
+            item={{ ...it, batch: it.batch ?? batch }}
             locale={locale}
+            carouselContext={carouselContext}
+            desktopOpensExample={desktopOpensExample}
           />
         ))}
       </div>

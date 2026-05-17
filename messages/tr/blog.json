@@ -671,7 +671,6 @@
       }
     ],
     "translateYoutubevideo": {
-      "title": "YouTube Videolarını Çevirmenin Yolu: Tam Adım Adım Kılavuz",
       "date": "4 Mart 2026",
       "readTime": "12 dk okuma",
       "intro": "YouTube videolarını etkili bir şekilde AI destekli araçlar ve teknikler kullanarak nasıl çevireceğinizi öğrenin. İçeriğinizi birden fazla dilde erişilebilir hale getirerek küresel kitlelere ulaşın.",
@@ -695,7 +694,8 @@
       "conclusionTitle": "Sonuç",
       "conclusionContent": "YouTube video çevirisi, küresel içerik üreticileri için gereklidir. Doğru araçlar ve yaklaşım ile dünya genelindeki izleyicilere etkili bir şekilde ulaşabilirsiniz.",
       "seoKeywords": "youtube videosunu nasıl çevireceğiniz, youtube videolarını çevirin, AI video çevirmeni, youtube video çevirisi, video altyazı çevirisi, çok dilli video içeriği, youtube video dublajı, küresel video stratejisi, Curify video çevirmeni",
-      "metaDescription": "AI araçlarıyla YouTube videolarını nasıl çevireceğinizi öğrenin. Adım adım kılavuz, video çevirisi, altyazılar, dublaj ve içeriğinizle küresel kitlelere ulaşmak için en iyi araçları kapsar."
+      "title": "2026'da YouTube Videolarını Nasıl Çevirirsiniz (Altyazı, Dublaj, Seslendirme)",
+      "metaDescription": "2026'da YouTube videolarınızı çevirmek için üç yol — altyazılar, AI dublaj, tam seslendirme — her biri için en iyi araçlar ve adım adım kurulum."
     },
     "preserveFacialFeaturesAiGeneration": {
       "title": "AI Üretiminde Yüz Özellikleri Nasıl Korunur: Nihai Tutarlı Karakter Kılavuzu",
@@ -925,7 +925,6 @@
       "step5Content": "Son aşama, üretilen sesi orijinal video ile bilgisayarla görme teknikleri kullanarak senkronize eder. Sistemimiz, 50ms tolerans içinde mükemmel ses-görüntü hizalamasını sağlamak için yüz noktalarını ve ağız hareketlerini analiz eder.\n\n**Python Uygulama Detayları:**\n```python\n# Bilgisayarla görme kullanarak dudak senkronizasyonu\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# Nokta tespiti için yüz ağını başlat\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# Video karelerinden ağız noktalarını çıkar\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # Ağız noktaları\n        mouth_landmarks.append(mouth_points)\n\n# Sesi görsel ipuçlarıyla senkronize et\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# Son senkronize videoyu oluştur\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\nSenkronizasyon sistemi, konuşma desenlerini ağız hareketleriyle eşleştirmek için dinamik zaman bozulma algoritmalarını kullanarak, orijinal videonun görsel bütünlüğünü koruyan kesintisiz dublajlı içerik oluşturur."
     },
     "aiYoutubeVideoTranslator": {
-      "title": "AI YouTube Video Çevirmeni: En İyi Araçlar ve Yöntemler 2026",
       "date": "4 Mart 2026",
       "readTime": "11 dk okuma",
       "intro": "2026'da mevcut en iyi AI YouTube video çevirmenlerini ve yöntemlerini keşfedin. Özellikleri, fiyatlandırmaları ve etkinlikleri karşılaştırarak ihtiyaçlarınıza uygun çözümü seçin.",
@@ -949,7 +948,8 @@
       "conclusionTitle": "Sonuç",
       "conclusionContent": "AI YouTube video çevirmenleri, içerik yerelleştirmesinde devrim yaratarak her boyuttaki yaratıcılar için erişilebilir hale getirdi.",
       "seoKeywords": "AI youtube videosunu çevir, AI YouTube video çevirmeni, youtube videolarını otomatik olarak çevir, AI video çevirisi, youtube video dublajı AI, çok dilli AI çevirmeni, yapay zeka video çevirisi, Curify AI çevirmeni",
-      "metaDescription": "AI youtube video çevirme araçlarının nasıl çalıştığını öğrenin. En iyi AI YouTube video çevirmenlerini, adım adım yöntemleri keşfedin ve yapay zeka ile küresel kitlelere otomatik olarak nasıl ulaşacağınızı öğrenin."
+      "title": "AI YouTube Video Çevirisi: En İyi Araçlar, Yöntemler ve Sonuçlar 2026",
+      "metaDescription": "2026'da AI ile YouTube videolarını çevirin: en iyi araçları karşılaştırın, hangi yöntemlerin küresel kitlelere ulaştığını görün ve yaratıcılar için gerçekten sonuç verenleri öğrenin."
     },
     "whatIsVoiceCloning": {
       "title": "Ses Klonlama Nedir? AI Ses Teknolojisini Anlamak",
@@ -973,10 +973,9 @@
       "conclusionTitle": "Sonuç",
       "conclusionContent": "Ses klonlama teknolojisi, içerik oluşturmayı dönüştürüyor ancak sorumlu kullanım ve etik hususları gerektiriyor.",
       "seoKeywords": "ses klonlama nedir, f5-tts ses klonlama, elevenlabs profesyonel ses klonlama, AI ses klonlama, sentetik ses teknolojisi, ses klonlama etiği, AI ses üretici, metinden konuşmaya AI, sinirsel konuşma sentezi, Curify ses klonlama, etik AI ses sistemleri",
-      "metaDescription": "2026'da ses klonlama nedir? F5-TTS ve ElevenLabs profesyonel ses klonlamanın nasıl çalıştığını, AI ses iş akışlarındaki kullanım alanlarını ve Curify'nin ses klonlamayı video dublajı hatlarına nasıl entegre ettiğini öğrenin."
+      "metaDescription": "Ses klonlama nedir, gerçekten? F5-TTS ve ElevenLabs gibi AI'ların sentetik sesler nasıl oluşturduğunu öğrenin — ve sürekli duyduğunuz robotik, uyumsuz sesin nedenini keşfedin."
     },
     "voiceCloningTools": {
-      "title": "En İyi Ses Klonlama Araçları: F5-TTS, ElevenLabs ve Daha Fazlası",
       "date": "4 Mart 2026",
       "readTime": "8 dk okuma",
       "intro": "Bugün mevcut en iyi ses klonlama araçlarını karşılaştırın. Hangi aracın ihtiyaçlarınıza uygun özellikler, kalite ve fiyat sunduğunu öğrenin.",
@@ -996,8 +995,6 @@
       "ctaLink": "Curify'nin Ses Araçlarını Deneyin",
       "conclusionTitle": "Sonuç",
       "conclusionContent": "Doğru ses klonlama aracı, belirli ihtiyaçlarınıza, bütçenize ve etik hususlara bağlıdır.",
-      "seoKeywords": "ses klonlama araçları 2026, en iyi AI ses klonlama yazılımı, F5‑TTS vs ElevenLabs, Curify ses klonlama, AI ses sentezi karşılaştırması, açık kaynak TTS, sıfırdan ses klonlama, sinirsel ses sentezi karşılaştırmaları, dublaj otomasyon araçları, çok dilli ses yerelleştirme",
-      "metaDescription": "2026'nın en iyi ses klonlama araçlarını keşfedin. F5‑TTS, ElevenLabs ve Curify'yi gerçekçilik, hız ve uyum açısından karşılaştırarak iş akışınız için ideal AI ses klonlama ve dublaj çözümünü bulun.",
       "galleryTitle": "Ses A/B galerinizin doğru şekilde oluşturulması",
       "galleryContent": "Güvenilir bir dinleme galerisi, paydaşların ticari değişimleri bir bakışta görmesine yardımcı olur.\n- Referans kaydı: her yerel hedef için ses sahibinizden 10-20 saniye temiz konuşma kaydedin; 48 kHz WAV; oda tonu eklenmiş. Dosyalarla birlikte onay belgelerini kaydedin.\n- Senaryo başına üçlü: her yerel için her test senaryosunda üç dosya oluşturun—Referans (insan), F5-TTS sıfırdan, ve Ticari TTS. Yayınlamadan önce ses seviyesini eşleştirin (-16 LUFS platformlar için).\n- Barındırma ve adlandırma: kayıpsız ana dosyaları saklayın ve 192 kbps AAC önizlemeleri yayınlayın. en_es_lesson1_ref.wav, en_es_lesson1_f5.wav, en_es_lesson1_com.wav gibi tutarlı bir şema kullanın.\n- Dinleme notları: yorumları spesifik tutun—patlayıcılar (p, b), sibilantlar (s, sh), nefes/gürültü eşiği ve prosodi hizalaması. Dudak senkronizasyonunu etkileyecek zamanlama uyumsuzluklarını işaretleyin.\n\nİki hızlı kılavuz: test ifadelerini 30 saniyenin altında tutun, kayma azaltmak için; WER karşılaştırmalarının elma-elma olması için senaryolar arasında noktalama işaretlerini ve sayıları normalize edin.",
       "PipelineTitle": "YouTube, TikTok ve eğitim hatları için entegrasyon",
@@ -1009,10 +1006,12 @@
       "TemplateTitle": "Kopyalayabileceğiniz şablonlar ve kontrol listeleri",
       "TemplateContent": "Yayın kriterleri (gerekirse uyarlayın):- Kalite: WER ≤ yerel başına eşik; UTMOS (sistem düzeyi) kabul bandınız içinde; duyulabilir kesme yok; ağız kapanmaları kahraman çekimlerinde 2-3 kare içinde hizalanır.- Gecikme & maliyet: kararlı durum RTF SLA'nızı karşılar; maliyet/dk bütçe içinde.\n- Uyum: dosyada onay belgeleri; açıklamalar uygulandı; köken günlükleri arşiv için dışa aktarıldı. Dakika başına maliyet hesaplayıcısı için girdiler: \n- GPU $/saat (veya API $/1M karakter) - Ölçülen RTF ve ortalama klip uzunluğu \n- Dilde kelime/dakika ve karakter/kelime varsayımları \n- Eşzamanlılık seviyesi ve beklenen günlük hacim QC rubrik alıntısı (puan 1-5): anlaşılırlık, ton eşleşmesi, prosodi, sibilant/patlayıcı işleme, zamanlama hizalaması, gürültü eşiği ve genel doğallık. Yorumları eyleme geçirilebilir tutun—“00:07'de yumuşatılmış ‘s’; gürültüyü %10 azaltın” çok daha faydalıdır, “robotik ses çıkarıyor”dan.",
       "ReferencesTitle": "Referanslar",
-      "ReferencesContent": "- Mimari ve kod: Bakımcıların belgeleri [**SWivid/F5‑TTS GitHub deposu**](https://github.com/SWivid/F5-TTS) (Mart 2026'da erişildi) ve [**OpenReview F5‑TTS makalesi (2025)**](https://openreview.net/forum?id=JiX2DuTkeU) akış eşleştirme TTS ve sıfırdan klonlama için temel sağlar.\n- Karşılaştırma yöntemleri: ByteDance’in [**seed‑tts‑eval kılavuzu (2025)**](https://github.com/BytedanceSpeech/seed-tts-eval); Whisper büyük-v3 yapılandırma tartışmaları [**Whisper deposunda (2025)**](https://github.com/openai/whisper/discussions/1762); MOS benzeri puanlama [**UTMOS (VoiceMOS 2022)**](https://github.com/sarulab-speech/UTMOS22) aracılığıyla.\n- Platform politikaları: YouTube çok dilli ses ve inceleme akışı **Otomatik Dublaj Yardımı (2026)**; ifadeci otomatik dublaj genişlemesi [**YouTube blogunda (2026)**](https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/) tanımlanmıştır; AI açıklama gereksinimleri **YouTube’un politika sayfasında (2026)** özetlenmiştir; TikTok’un tek parça sesi [**Sesler Yardım sayfasında (2026)**](https://support.tiktok.com/en/using-tiktok/creating-videos/sounds) belgelenmiştir.\n- Uyum: FCC’nin AI sesleri ve robokollar üzerindeki duruşu [**2024 Açıklayıcı Karar**](https://www.fcc.gov/document/fcc-declares-ai-generated-voices-robocalls-illegal) üzerinde.\n- Fiyatlandırma referansları: [**Azure Speech (2026)**](https://azure.microsoft.com/en-us/pricing/details/speech/), [**AWS Polly (2026)**](https://aws.amazon.com/jp/polly/pricing/), [**ElevenLabs API (2026)**](https://elevenlabs.io/pricing/api) ve [**Google Cloud TTS fiyatlandırma indeksi**](https://cloud.google.com/text-to-speech/pricing) üzerindeki resmi oran belgeleri."
+      "ReferencesContent": "- Mimari ve kod: Bakımcıların belgeleri [**SWivid/F5‑TTS GitHub deposu**](https://github.com/SWivid/F5-TTS) (Mart 2026'da erişildi) ve [**OpenReview F5‑TTS makalesi (2025)**](https://openreview.net/forum?id=JiX2DuTkeU) akış eşleştirme TTS ve sıfırdan klonlama için temel sağlar.\n- Karşılaştırma yöntemleri: ByteDance’in [**seed‑tts‑eval kılavuzu (2025)**](https://github.com/BytedanceSpeech/seed-tts-eval); Whisper büyük-v3 yapılandırma tartışmaları [**Whisper deposunda (2025)**](https://github.com/openai/whisper/discussions/1762); MOS benzeri puanlama [**UTMOS (VoiceMOS 2022)**](https://github.com/sarulab-speech/UTMOS22) aracılığıyla.\n- Platform politikaları: YouTube çok dilli ses ve inceleme akışı **Otomatik Dublaj Yardımı (2026)**; ifadeci otomatik dublaj genişlemesi [**YouTube blogunda (2026)**](https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/) tanımlanmıştır; AI açıklama gereksinimleri **YouTube’un politika sayfasında (2026)** özetlenmiştir; TikTok’un tek parça sesi [**Sesler Yardım sayfasında (2026)**](https://support.tiktok.com/en/using-tiktok/creating-videos/sounds) belgelenmiştir.\n- Uyum: FCC’nin AI sesleri ve robokollar üzerindeki duruşu [**2024 Açıklayıcı Karar**](https://www.fcc.gov/document/fcc-declares-ai-generated-voices-robocalls-illegal) üzerinde.\n- Fiyatlandırma referansları: [**Azure Speech (2026)**](https://azure.microsoft.com/en-us/pricing/details/speech/), [**AWS Polly (2026)**](https://aws.amazon.com/jp/polly/pricing/), [**ElevenLabs API (2026)**](https://elevenlabs.io/pricing/api) ve [**Google Cloud TTS fiyatlandırma indeksi**](https://cloud.google.com/text-to-speech/pricing) üzerindeki resmi oran belgeleri.",
+      "title": "En İyi AI Ses Klonlama Araçları 2026: F5-TTS vs ElevenLabs Test Edildi",
+      "seoKeywords": "en iyi ses klonlama araçları 2026, f5-tts vs elevenlabs, ai ses klonlama karşılaştırması, openvoice incelemesi, ses klonlama yazılımı, ai ses üretici, ses klonlama karşılaştırmaları",
+      "metaDescription": "Baş başa karşılaştırıldı: F5-TTS, ElevenLabs, OpenVoice ve Curify'nin gerçekçilik, hız, diller ve fiyat açısından performansı. İş akışınız için doğru ses klonlama aracını bulun."
     },
     "f5TtsVoiceCloning": {
-      "title": "F5-TTS Ses Klonlama: Profesyonel AI Ses Çözümleri",
       "date": "4 Mart 2026",
       "readTime": "7 dk okuma",
       "intro": "F5-TTS ses klonlama teknolojisini ve bunun profesyonel AI ses çözümlerini nasıl sağladığını keşfedin. Özellikler, uygulamalar ve uygulama hakkında bilgi edinin.",
@@ -1032,8 +1031,9 @@
       "ctaLink": "Curify'nin F5-TTS Çözümünü Deneyin",
       "conclusionTitle": "Sonuç",
       "conclusionContent": "F5-TTS, talepkar uygulamalar için profesyonel kalitede sonuçlar sunan ses klonlama teknolojisinin en son halini temsil eder.",
-      "seoKeywords": "F5‑TTS ses klonlama, açık kaynak TTS, AI ses klonlama 2026, metinden konuşmaya klonlama, etik ses sentezi, F5‑TTS eğitimi, ses klonlama hattı",
-      "metaDescription": "2026'da F5‑TTS ses klonlamanın nasıl çalıştığını öğrenin: temiz örneklerden ve metin istemlerinden etik, profesyonel AI ses üretimine kadar. Kontrol listeleri ve kullanım alanlarıyla tam kılavuz."
+      "title": "F5-TTS AI Ses İncelemesi: Gerçekten ElevenLabs'ı Geçiyor mu?",
+      "seoKeywords": "f5-tts incelemesi, f5-tts vs elevenlabs, açık kaynak ses klonlama, ücretsiz ai ses klonlama, f5-tts karşılaştırması, sinirsel tts karşılaştırması, ai ses klonlama 2026",
+      "metaDescription": "F5-TTS, ElevenLabs kalitesinde ses klonlamayı ücretsiz sunuyor. Baş başa test ettik — açık kaynak rakibinin üretime hazır olup olmadığını burada öğrenin."
     },
     "aslVideoTranslator": {
       "title": "ASL Video Çevirmeni: İşaret Dili Çeviri Araçları",
@@ -1298,79 +1298,71 @@
       "metaDescription": "AI video transkripsiyon boru hattı mimarisine teknik derin dalış. Geliştiriciler ve AI mühendisleri için ASR, zorunlu hizalama, konuşmacı ayrıştırma ve üretim sistemi tasarımı hakkında kapsamlı bir rehber."
     },
     "tenPromptingTipsNanoBanana": {
-      "title": "Nano Banana için 10 İkna Edici İpucu: AI İçerik Üretiminde Ustalaşın",
+      "title": "Nano Banana için İpuçları: Yaratıcılar için 10 Prompt Yazma Yöntemi",
       "slug": "10-prompting-tips-nano-banana",
-      "metaDescription": "Nano banana ikna edici ifadelerini 10 uzman ipucu ile ustalaşın. İçerik üretimi, görseller ve daha fazlası için etkili AI ikna edici ifadeleri oluşturmayı öğrenin, kalite kontrol optimizasyonu ile.",
-      "date": "23 Mart 2026",
-      "readTime": "8 dk okuma",
-      "intro": "Nano banana ikna edici ifade becerilerinizi geliştirmeye hazır mısınız? Bu 10 uzman ipucu—10k+ üretim sürecinde kanıtlanmış—daha etkili nano banana ikna edici ifadeleri oluşturmanıza yardımcı olacak ve daha iyi içerik, görseller ve sonuçlar üretecektir. Her ipucu, çıktı kalitesinde %3.7 iyileşme ve %47 daha yüksek etkileşim gösteren kalite kontrol (Q.C.) metrikleri ile optimize edilmiştir.\n\nGörsel kompozisyonlar oluştururken, anlatı akışları inşa ederken veya AI model yanıtlarını ince ayar yaparken, nano banana ikna edici ifadelerini ustalaşmak, ton, yapı ve performans üzerinde eşsiz bir kontrol sağlar. Bunu yaratıcı çıktılar için hassas mühendislik olarak düşünün—kompakt, veri odaklı ve yüksek derecede tekrarlanabilir.\n\nBu kılavuzdaki her teknik, kapsamlı deneyler ve A/B testleri ile desteklenmektedir, böylece öğrendiklerinizin ölçülebilir performans kazançlarına dönüşmesini sağlarsınız. Küçük ikna edici ifade varyasyonlarının, uyum, özgünlük ve etkileşimde büyük değişiklikler üretebileceğini keşfedeceksiniz—token maliyetlerini veya karmaşıklığı artırmadan.\n\nSonunda, sadece işe yarayan değil, aynı zamanda ölçeklenebilen ikna edici ifadeleri nasıl tasarlayacağınızı anlayacaksınız—yazım, tasarım ve üretken modelleme bağlamlarında tutarlı, üretim kalitesinde sonuçlar elde etmenin kapılarını açacaksınız. Bu, gerçek bir nano banana ikna edici ifade mimarı olma yolunda bir sonraki adımınız.",
-      "tip1Title": "1. Nano Banana Kimliğini Tanımlayın",
-      "tip1Content": "**Nano Banana'nın ne olduğunu açıkça tanımlayarak başlayın**. Gelecekten bir meyve mi, bir teknoloji ürünü mü yoksa benzersiz bir tarif mi? AI'nin temel özelliklerini anlamasına yardımcı olmak için boyut, görünüm, doku, tat veya işlevsellik gibi detaylar sağlayın. **Q.C. Kontrolü**: İkna edici ifadeniz, nano banana'nın görsel özelliklerini ve kimliğini net bir şekilde belirtiyor mu?\n\n**İkna Edici İfade Örneği**: \"Nano Banana'yı tanımlayan bir blog yazısı girişi yazın, parmağınızdan daha büyük olmayan, karamel-vanilya tadında genetik olarak değiştirilmiş küçük bir muz.\"",
-      "tip2Title": "2. Ana Faydaları Vurgulayın",
-      "tip2Content": "**Ana faydaları veya satış noktalarını belirleyin**. İster pratiklik, besin değeri, sürdürülebilirlik veya yenilik olsun, bu noktaların içeriğin merkezinde olduğundan emin olun. **Q.C. Kontrolü**: Nano Banana'nızı öne çıkaran ana faydaları vurguladınız mı?\n\n**İkna Edici İfade Örneği**: \"Yoğun profesyoneller ve hareket halindeki çocuklar için Nano Banana'nın pratiklik faktörüne odaklanan bir bölüm taslağı oluşturun.\"",
-      "tip3Title": "3. Hedef Kitleyi Belirleyin",
-      "tip3Content": "**Kimin için yazdığınızı net bir şekilde tanımlayın**. Hedef kitlenizin ilgi alanlarını, ihtiyaçlarını ve dilini bilmek, AI'nin içeriğin tonunu ve stilini uygun şekilde uyarlamasına yardımcı olur. **Q.C. Kontrolü**: İkna edici ifadeniz, hedef kitleyi yeterince detaylı bir şekilde belirtiyor mu?\n\n**İkna Edici İfade Örneği**: \"Sağlıklı yaşamı benimseyen ve benzersiz atıştırmalıkları seven genç yetişkinlere yönelik, Nano Banana hakkında eğlenceli ve neşeli bir blog yazısı yazın.\"",
-      "tip4Title": "4. Tutarlı Bir Ton ve Stil Benimseyin",
-      "tip4Content": "**İstenilen ton ve yazım stilini tanımlayın**. İster samimi, bilgilendirici, mizahi, ikna edici veya yaratıcı olsun, AI'ye genel hissiyat hakkında rehberlik etmek, tutarlılığı sağlar. **Q.C. Kontrolü**: İçeriğiniz için tam olarak belirttiğiniz ton ve stil var mı?\n\n**İkna Edici İfade Örneği**: \"Nano Banana'nın şaşırtıcı tadını sergileyen, hafif, esprili bir tonla bir blog yazısı yazın.\"",
-      "tip5Title": "5. Hikaye Anlatım Unsurlarını Ekleyin",
-      "tip5Content": "**AI'nin hikaye anlatımını dahil etmesini teşvik edin**. Nano Banana'yı canlandıran ve içeriği daha ilgi çekici hale getiren anekdotlar, senaryolar veya hayali kullanım durumları isteyin. **Q.C. Kontrolü**: İçeriği ilişkilendirilebilir kılan hikaye anlatım unsurlarını içeren bir ikna edici ifadeniz var mı?\n\n**İkna Edici İfade Örneği**: \"Blog yazısının açılışı için, Nano Banana ile bir günü hayal ederek hikaye odaklı bir başlangıç oluşturun—sabah kahvaltısından öğle enerjisi artışına kadar.\"",
-      "tip6Title": "6. Mekanizmalar ve Benzetmeler Kullanın",
-      "tip6Content": "**AI'yi yaratıcı dil kullanmaya teşvik edin**. Nano Banana'yı tanıdık şeylerle karşılaştırmak, okuyucuların benzersiz niteliklerini daha iyi görselleştirmesine ve anlamasına yardımcı olur. **Q.C. Kontrolü**: Soyut kavramların anlaşılmasını artıran benzetmeler eklediniz mi?\n\n**İkna Edici İfade Örneği**: \"Nano Banana'nın tadını klasik tatlılar gibi crème brûlée veya vanilyalı dondurma ile karşılaştıran benzetmeler önerin.\"",
-      "tip7Title": "7. Duyusal Detayları Dahil Edin",
-      "tip7Content": "**Duyusal tanımlamalar isteyin**—Nano Banana'nın görünümü, kokusu, tadı, hissi ve hatta sesi nasıldır? Bu, içeriği daha sürükleyici ve canlı hale getirir. **Q.C. Kontrolü**: Birden fazla duyuyu etkileyen duyusal detaylar içeren bir ikna edici ifadeniz var mı?\n\n**İkna Edici İfade Örneği**: \"Nano Banana yemenin duyusal deneyimini tanımlayın: kabuğunu soyduğunuzda çıkan aroma, ilk ısırık, dilinizdeki doku ve tat.\"",
-      "tip8Title": "8. Okunabilirlik İçin Yapılandırın",
-      "tip8Content": "**İkna edici ifadenizi mantıklı bölümlere ayırın**—giriş, ana noktalar, faydalar, tarifler/kullanımlar ve sonuç. Bu, AI'nin iyi organize edilmiş içerik üretmesine yardımcı olur. **Q.C. Kontrolü**: İçerik organizasyonu için net bir yapı sağladınız mı?\n\n**İkna Edici İfade Örneği**: \"Aşağıdaki bölümleri içeren bir blog yazısı için bir taslak oluşturun: Giriş, Nano Banana Nedir?, En İyi 3 Faydası, Nano Banana'yı Yeme Yaratıcı Yollar, Sonuç.\"",
-      "tip9Title": "9. İçerik Türlerinde Çeşitlilik İsteyin",
-      "tip9Content": "**Standart tanımlayıcı yazılara bağlı kalmayın**. Liste yazıları, tarifler, karşılaştırmalı makaleler veya kurgusal röportajlar gibi farklı formatlar isteyin. **Q.C. Kontrolü**: İlginç tutmak için çeşitli içerik formatlarını belirten bir ikna edici ifadeniz var mı?\n\n**İkna Edici İfade Örneği**: \"'Nano Banana'yı Yemeklerinizde Kullanmanın 5 Beklenmedik Yolu' başlıklı bir liste yazısı oluşturun.\"",
-      "tip10Title": "10. İyileştirin ve Tekrar Edin",
-      "tip10Content": "**İlk AI çıktısını bir taslak olarak değerlendirin**. Belirli paragrafları iyileştirmek, detay eklemek, tonu değiştirmek veya harekete geçirme çağrısını güçlendirmek için sonraki ikna edici ifadeleri kullanın. **Q.C. Kontrolü**: Sürekli iyileştirme için bir süreç belirlediniz mi?\n\n**İkna Edici İfade Örneği**: \"Oluşturulan yazının sonucunu, okuyucuları Nano Banana'yı denemeye davet eden daha güçlü bir harekete geçirme çağrısı ile yeniden yazın.\"",
-      "toolsTitle": "Temel Nano Banana İkna Edici İfade Araçları",
-      "toolsContent": "**Nano banana ikna edici ifadeleri için profesyonel araç seti**:\n- **İkna Edici İfade Kütüphanesi**: Önceden test edilmiş nano banana ikna edici ifade şablonları\n- **Kalite Kontrol Aracı**: Otomatik Q.C. doğrulaması\n- **Performans Takip Aracı**: İkna edici ifade başarı oranlarını izleme\n- **SEO Optimizasyon Aracı**: Anahtar kelime entegrasyon araçları\n\nProfesyonel nano banana ikna edici ifadeleri için ihtiyacınız olan her şey.",
-      "curifyTitle": "Curify'nin Nano Banana İkna Edici İfade Optimizasyonu",
-      "curifyContent": "Curify, nano banana ikna edici ifadelerinizi geliştirir:\n- **Gerçek zamanlı Q.C. doğrulaması**\n- **Performans analitiği**\n- **İkna edici ifadeler için A/B testi**\n- **SEO optimizasyon önerileri**\n\nVeri odaklı içgörülerle iyi ikna edici ifadeleri harika hale getirin.",
-      "ctaText": "Daha İyi Nano Banana İkna Edici İfadeleri Oluşturmaya Başlayın",
-      "ctaLink": "Curify'nin İkna Edici İfade Araçlarını Deneyin",
-      "conclusionTitle": "Bugün Nano Banana İkna Edici İfadelerini Ustalaşın",
-      "conclusionContent": "Bu ikna edici ifade ipuçlarını uygulayarak, AI'yi etkili bir şekilde kullanarak blogunuz için \"Nano Banana\" etrafında yüksek kaliteli, ilgi çekici ve ilgili içerikler oluşturabilirsiniz. Bu 10 ipucu, yerleşik Q.C. optimizasyonu ile nano banana ikna edici ifadelerinizi temel seviyeden profesyonel seviyeye yükseltecektir. Unutmayın: net niyet, yapılandırılmış yaklaşım ve sürekli iyileştirme başarı için anahtardır. Bu stratejileri bugün uygulamaya başlayın ve AI tarafından üretilen içeriğinizin dramatik bir şekilde iyileştiğini görün.",
-      "whyNanoBananaTitle": "Neden Nano Banana? Önemli Gerçek Dünya Uygulamaları",
-      "whyNanoBananaContent": "**Nano Banana sadece yaratıcı bir egzersiz değil—farklı endüstrilerde gerçek içerik oluşturma zorluklarını çözen çok yönlü bir çerçeve.** Bu kavramsal yaklaşım, belirginliği yaratıcı özgürlükle birleştirdiği için değerli olduğunu kanıtladı ve AI modellerini eğitmek ve tutarlı, yüksek kaliteli çıktılar üretmek için idealdir.\n\n **Gerçek Dünya Uygulamaları: Nano Banana'nın çok yönlü çerçevesi, pazarlama, e-ticaret, eğitim ve yaratıcı endüstrilerde içerik oluşturmayı dönüştürerek yaratıcılığı artıran belirli kısıtlamalar sağlar ve üretim süresini %60 azaltırken, etkileşimi %47'ye kadar artıran tutarlı, yüksek kaliteli çıktılar sağlar.**\n\n**Pazarlama ve Reklam**\n- **Ürün lansmanları**: Nano Banana istemleri, kampanyalar arasında tutarlı marka anlatıları oluşturmaya yardımcı olur\n- **Sosyal medya içeriği**: Birleşik ses ve görsel stil ile ilgi çekici gönderiler üretir\n- **E-posta pazarlama**: %2.3 daha yüksek dönüşüm oranları ile kişiselleştirilmiş içerik üretir\n- **Marka hikayesi**: Hedef demografiklerle yankı uyandıran uyumlu anlatılar geliştirir\n\n**E-ticaret ve Perakende**\n- **Ürün açıklamaları**: Dönüşümü %34 artıran ayrıntılı, SEO optimize edilmiş açıklamalar oluşturur\n- **Kategori sayfaları**: Kullanıcı navigasyonunu ve SEO'yu iyileştiren kapsamlı içerik üretir\n- **Müşteri desteği**: Tutarlı yardım belgeleri ve SSS yanıtları geliştirir\n- **Kişiselleştirilmiş öneriler**: Kullanıcı davranışına ve tercihlerine göre içerik özelleştirir\n\n**Eğitim ve Eğitim**\n- **Kurs oluşturma**: Açık öğrenme hedefleri ile yapılandırılmış eğitim içeriği geliştirir\n- **Kurumsal eğitim**: Tutarlı oryantasyon materyalleri ve uyum belgeleri üretir\n- **E-öğrenme modülleri**: Etkileşimli içerik oluşturarak etkileşimi %47 artırır\n- **Bilgi tabanları**: Destek taleplerini %28 azaltan kapsamlı belgeler oluşturur\n\n**Yaratıcı Endüstriler**\n- **İçerik pazarlama**: Blog yazıları, makaleler ve düşünce liderliği parçaları üretir\n- **Video senaryoları**: YouTube, TikTok ve kurumsal videolar için ilgi çekici anlatılar oluşturur\n- **Tasarım brifingleri**: Yaratıcı ekipler ve ajanslar için ayrıntılı spesifikasyonlar oluşturur\n- **Marka kılavuzları**: Kapsamlı stil kılavuzları ve kullanım belgeleri geliştirir\n\n**Teknik Belgeler**\n- **API belgeleri**: Geliştiriciler için net, yapılandırılmış teknik kılavuzlar üretir\n- **Kullanıcı kılavuzları**: Görsel unsurlarla adım adım talimatlar oluşturur\n- **Sürüm notları**: Ürün güncellemeleri için tutarlı iletişim sağlar\n- **Uyum belgeleri**: Doğru terminoloji ile düzenleyici ve yasal içerik geliştirir\n\n **Neden Genel İstemlerden Daha İyi Çalışıyor?**\n\n**Belirginlik Çerçevesi**\nNano Banana, yaratıcılığı gerçekten artıran somut kısıtlamalar sağlar:\n- **Tanımlı parametreler**: Boyut, renk, doku ve işlev net sınırlar oluşturur\n- **Duyusal sabitleyiciler**: Görsel ve dokunsal detaylar soyut kavramları somutlaştırır\n- **Duygusal bağlam**: Yerleşik anlatı unsurları insani bir önem ekler\n- **Ölçeklenebilir yapı**: Çerçeve, basit açıklamalardan karmaşık anlatılara uyum sağlar\n\n**Kalite Kontrol Faydaları**\n- **Tutarlı çıktı**: Aynı çerçeve, farklı AI modelleri arasında birleşik sonuçlar üretir\n- **Daha hızlı yineleme**: Önceden tanımlanmış unsurlar, istem mühendisliği süresini %60 azaltır\n- **Daha iyi işbirliği**: Ekipler, ortak bir dil kullanarak istemleri paylaşabilir ve geliştirebilir\n- **Ölçülebilir sonuçlar**: Yerleşik Q.C. kontrolleri, nesnel kalite metrikleri sağlar\n\n**Sektöre Özgü Avantajlar**\n\n**Pazarlama Ekipleri İçin**: Nano Banana istemleri, içerik oluşturma süresini saatlerden dakikalara düşürürken, tüm kanallarda marka sesi tutarlılığını korur.\n\n**E-ticaret İçin**: Nano Banana çerçevesi ile oluşturulan ürün açıklamaları %34 daha yüksek dönüşüm oranları ve %2.1 daha iyi SEO performansı gösterir.\n\n**Eğitim İçin**: Bu yaklaşım kullanılarak oluşturulan eğitim materyalleri %47 daha yüksek etkileşim ve %28 daha iyi bilgi tutma gösterir.\n\n**Yaratıcı Ajanslar İçin**: Müşteri teslimatları daha tutarlı hale gelir, revizyon döngülerini %40 azaltır ve müşteri memnuniyet puanlarını artırır.\n\nÇerçevenin gücü, belirginlik ile yaratıcılığı sağlamak için yeterince spesifik, esneklik sağlamak için yeterince esnek ve ekipler ve projeler arasında ölçeklenmek için yeterince yapılandırılmış olmasında yatmaktadır.",
-      "templatesTitle": "Örnek İstem Şablonları",
-      "faq1Question": "Nano Banana istemi nedir?",
-      "faq1Answer": "Nano Banana istemi, belirli bir alanı yaratıcı özgürlükle birleştiren etkili AI istemleri oluşturmak için özel bir çerçevedir. 'Nano banana' kavramı, tutarlı, yüksek kaliteli AI tarafından üretilen içerik sunan kesin, kompakt ve yüksek derecede tekrarlanabilir istem mühendisliğini simgeleyen bir metafor olarak kullanılır.",
-      "faq2Question": "Nano Banana isteminde Kalite Kontrol (K.K.) nasıl çalışır?",
-      "faq2Answer": "Nano Banana isteminde Kalite Kontrol, istem oluşturma sürecinin her aşamasında yerleşik doğrulama kontrollerini içerir. Her ipucu, istemlerinizin netlik, kesinlik ve etkinlik için belirli kriterleri karşıladığından emin olan K.K. kontrolleri içerir. Bu sistematik yaklaşım, çıktı kalitesinde %3.7 iyileşme ve %47 daha yüksek etkileşim sağladığı kanıtlanmıştır.",
-      "faq3Question": "Nano Banana istemini herhangi bir AI modeli için kullanabilir miyim?",
-      "faq3Answer": "Evet! Nano Banana istemi modelden bağımsızdır ve GPT-4, Claude, Gemini ve diğerleri dahil olmak üzere farklı AI platformlarında çalışır. Çerçeve, model spesifik özellikler yerine istem yapısına ve kesinliğine odaklanarak farklı AI sistemleri arasında yüksek derecede çok yönlü ve ölçeklenebilir hale getirir.",
-      "faq4Question": "Hangi sektörler Nano Banana isteminden en çok fayda sağlar?",
-      "faq4Answer": "Nano Banana istemi, pazarlama, e-ticaret, eğitim, yaratıcı endüstriler ve teknik belgeler gibi alanlarda değerli olduğunu kanıtlamıştır. Bu yaklaşımı kullanan şirketler, içerik oluşturma süresinin %60 daha hızlı, dönüşüm oranlarının %34 daha yüksek olduğunu ve tüm içerik türlerinde marka tutarlılığının önemli ölçüde iyileştiğini bildirmektedir.",
-      "faq5Question": "Nano Banana istemini ustalaşmak ne kadar sürer?",
-      "faq5Answer": "Çoğu kullanıcı, bu teknikleri kullanarak ilk 10-15 istemlerinde hemen iyileşmeler görmektedir. Tam ustalık genellikle 2-3 hafta süren sürekli pratik gerektirir, ancak yinelemeli iyileştirme süreci (İpucu #10) zamanla istem becerilerinizi sürekli olarak geliştirmenize yardımcı olur.",
-      "tip1ExampleTitle": "İpucu 1: Nano Banana Kimliğini Tanımlayın - Örnek İstem",
-      "tip1Example": "Nano Banana'yı sadece 2 cm uzunluğunda, ışık altında hafif altın renginde parlayan, zengin karamelize bir lezzete sahip, muz pudingi ve crème brûlée karışımına benzeyen bir tropik meyve olarak tanımlayın.",
-      "tip1PromptTitle": "İpucu 1: Nano Banana Kimliğini Tanımlayın",
+      "metaDescription": "Google'ın Nano Banana'sı (Gemini görüntü üretimi) için 10 pratik prompt yazma ipucu: konu çerçeveleme, aydınlatma, lens dili, kompozisyon, renk, en-boy oranı, olumsuz promptlar ve çok aşamalı sohbet düzenleme akışı.",
+      "date": "15 Mayıs 2026",
+      "readTime": "9 dk okuma",
       "author": "Curify Studio",
       "baseUrl": "https://curify-ai.com/blog/",
-      "nanoBananaProPromptsUrl": "http://localhost:3000/nano-banana-pro-prompts",
-      "templatesSectionTitle": "Örnek İstem Şablonları",
-      "storytellingTemplateTitle": "İpucu 5: Hikaye Anlatımı Unsurları",
-      "storytellingTemplateContent": "Bir Nano Banana anlatısı oluşturun:\n\nHikaye Yapısı:\n- Karakter: [protagonist description]\n- Mekan: [environment/context]\n- Çatışma: [challenge/problem]\n- Yolculuk: [process/transformation]\n- Çözüm: [outcome/solution]\n- Tema: [core message]\n\nAnlatı Unsurları:\n- Geçmiş Hikaye: [character history/motivation]\n- Duyusal detaylar: [visual/auditory/tactile descriptions]\n- Duygusal yay: [feeling progression]\n- Diyalog: [character interactions/speech]\n- Semboller: [metaphorical elements]\n- Tempo: [tension and release timing]\n\nKarakter Gelişimi:\n- Protagonist: [main character profile]\n- Destekleyici karakterler: [secondary roles]\n- Karakter yay: [transformation journey]\n- İlişkiler: [interpersonal dynamics]\n- Motivasyonlar: [driving forces]\n- Kusurlar/Güçlü Yönler: [character complexity]\n\nMekan Detayları:\n- Zaman dilimi: [historical/future/fantasy]\n- Lokasyon: [specific environment]\n- Atmosfer: [mood and feeling]\n- Dünya inşası: [context and rules]\n- Duyusal çevre: [sounds, smells, textures]\n\nHikaye Çerçevesi:\n\"[Karakteri [setting] içinde [conflict] ile karşılaşırken tanıtan açılış kancası. [journey events] aracılığıyla, [resolution] ile sonuçlanan [Nano Banana element] keşfederler. Hikaye, [theme] keşfederken [tone] ve [pacing] korur.\"",
-      "identityTemplateContent": "Detaylı bir Nano Banana kimliği tanımı oluşturun:\n- Köken bağlamı (biyoteknoloji, uzay tarımı, zanaat markası)\n- Fonksiyonel özellikler (kendiliğinden olgunlaşma, vitaminler, özel özellikler)\n- Görsel spesifikasyonlar (boyut oranları, şekil detayları, renk gradyanları)\n- Malzeme özellikleri (doku, yüzey, aroma profili)\n- Sembolik veya metaforik anlam\n\nK.K. Kontrolü: Birisi bir görüntü olmadan Nano Banana'yı hemen görselleştirebilir mi?\n\n**Temel Şablon**:\n\"Nano Banana'yı [biyoteknoloji ile üretilmiş/biyoteknoloji ile yetiştirilmiş/uzayda yetiştirilmiş/zanaat ile yapılmış] tropik bir meyve olarak tanımlayın; [size specification] olan, [color description] ile [texture details] ve [aroma profile] içeren. [unique characteristic] onu [primary benefit] yapar.\"",
-      "storytellingTemplateDisplay": "<strong>Bir Nano Banana anlatısı oluşturun:</strong>\n\n<strong>Hikaye Yapısı:</strong>\n- <strong>Karakter:</strong> [protagonist description]\n- <strong>Mekan:</strong> [environment/context]\n- <strong>Çatışma:</strong> [challenge/problem]\n- <strong>Yolculuk:</strong> [process/transformation]\n- <strong>Çözüm:</strong> [outcome/solution]\n- <strong>Tema:</strong> [core message]\n\n<strong>Anlatı Unsurları:</strong>\n- <strong>Geçmiş Hikaye:</strong> [character history/motivation]\n- <strong>Duyusal detaylar:</strong> [visual/auditory/tactile descriptions]\n- <strong>Duygusal yay:</strong> [feeling progression]\n- <strong>Diyalog:</strong> [character interactions/speech]\n- <strong>Semboller:</strong> [metaphorical elements]\n- <strong>Tempo:</strong> [tension and release timing]\n\n<strong>Karakter Gelişimi:</strong>\n- <strong>Protagonist:</strong> [main character profile]\n- <strong>Destekleyici karakterler:</strong> [secondary roles]\n- <strong>Karakter yay:</strong> [transformation journey]\n- <strong>İlişkiler:</strong> [interpersonal dynamics]\n- <strong>Motivasyonlar:</strong> [driving forces]\n- <strong>Kusurlar/Güçlü Yönler:</strong> [character complexity]\n\n<strong>Mekan Detayları:</strong>\n- <strong>Zaman dilimi:</strong> [historical/future/fantasy]\n- <strong>Lokasyon:</strong> [specific environment]\n- <strong>Atmosfer:</strong> [mood and feeling]\n- <strong>Dünya inşası:</strong> [context and rules]\n- <strong>Duyusal çevre:</strong> [sounds, smells, textures]\n\n<strong>Hikaye Çerçevesi:</strong>\n\"[Karakteri [setting] içinde [conflict] ile karşılaşırken tanıtan açılış kancası. [journey events] aracılığıyla, [Nano Banana element] keşfederler ve [resolution] ile sonuçlanır. Hikaye, [theme] keşfederken [tone] ve [pacing] korur.\"",
-      "identityTemplateDisplay": "<strong>Detaylı bir Nano Banana kimliği tanımı oluşturun:</strong>\n- <strong>Köken bağlamı</strong> (biyoteknoloji, uzay tarımı, zanaat markası)\n- <strong>Fonksiyonel özellikler</strong> (kendiliğinden olgunlaşma, vitaminler, özel özellikler)\n- <strong>Görsel spesifikasyonlar</strong> (boyut oranları, şekil detayları, renk gradyanları)\n- <strong>Malzeme özellikleri</strong> (doku, yüzey, aroma profili)\n- <strong>Sembolik veya metaforik anlam</strong>\n\n<strong>K.K. Kontrolü:</strong> Birisi bir görüntü olmadan Nano Banana'yı hemen görselleştirebilir mi?\n\n<strong>Temel Şablon:</strong>\n\"Nano Banana'yı [biyoteknoloji ile üretilmiş/biyoteknoloji ile yetiştirilmiş/uzayda yetiştirilmiş/zanaat ile yapılmış] tropik bir meyve olarak tanımlayın; [size specification] olan, [color description] ile [texture details] ve [aroma profile] içeren. [unique characteristic] onu [primary benefit] yapar.\"",
-      "tip2Example": "Herhangi bir şablon sayfasında, beğendiğiniz kompozisyona sahip bir örneği ilham galerisi içinde bulun. \"Bunu Remixle\" butonuna tıklayın. O görüntüyü üreten tam parametre değerlerini göreceksiniz. Şimdi sadece konuya özgü parametreleri (isim, konu, kelime) değiştirin, diğer her şeyi aynı tutun. Üretin — içeriğinizle aynı kalitede sonuç alacaksınız.",
-      "tip3Example": "Şablon: tarif kartı. Zayıf: \"makarna yemeği, İtalyan, kremalı\". Güçlü: \"tagliatelle al tartufo — el yapımı yumurta makarnası, siyah trüf rendesi, parmigiano ve kahverengi tereyağı sosu, Umbria, İtalya\". İkinci versiyon, modelin doğru ve iştah açıcı bir sonuç üretmesi için yeterli özgüllük sağlıyor.",
-      "tip4Example": "Marka kimliğiniz temiz mürekkep illüstrasyon tarzı kullanıyorsa, şablonları `mürekkep` konu etiketiyle filtreleyin. O gruptaki tüm şablonlar, içeriğinizin serisine tutarlı bir görsel işleme kazandırarak çizgi sanat tarzı çıktılar üretecektir.",
-      "tip5Example": "Bir kelime bilgisi poster şablonunda, sadece \"kelime kategorisi\" parametresini \"hayvanlar\"dan \"mutfak aletleri\"ne değiştirmeyi deneyin, başka hiçbir şeyi değiştirmeden. Düzen stili aynı kalırsa ama konu değişirse, o parametre saf bir içerik parametresidir. Eğer düzen de değişirse, o da bir stil parametresi olarak işlev görüyor — bilmekte fayda var.",
-      "tip6Example": "\"Akvarelle\" veya \"mürekkep\" ile eğitim gönderileriniz için daha iyi sonuçlar alıp almadığınızı test ediyorsunuz. Tüm parametreler aynı olan iki üretim oluşturun, sadece stil parametresi farklı olsun. Karşılaştırın — şimdi hangi stilin içeriğinize daha iyi uyduğuna dair net verileriniz var.",
-      "tip7Example": "Bir kelime bilgisi poster şablonunu inceledikten sonra, en görsel olarak çekici bulduğunuz 3 örneği kaydedin. Daha sonra yeni bir kelime bilgisi gönderisi oluşturmanız gerektiğinde, Çalışma Alanınızı açın, o kaydedilmiş örneklerden birini bulun, örnek sayfasına tıklayın ve bildiğiniz çalışacak parametrelerle başlamak için Remixleyin.",
-      "tip8Example": "Bir kişilik tipi makalesi için 6 MBTI karakter illüstrasyonu mu arıyorsunuz? Toplu olarak etkinleştirilmiş bir MBTI şablonunun olup olmadığını kontrol edin. Eğer varsa, tüm türleri eşleşen bir stil ile anında almak için İndirme Paketi'ni kullanın — üretim kredisi gerekmez.",
-      "tip9Example": "Hava durumu kelime bilgisi dersi için, `kelime bilgisi` ve `öğrenme` etiketli bir kelime bilgisi poster şablonu kullanın. Kelime grubunu \"hava terimleri,\" hedef dili İspanyolca ve kaynak dili İngilizce olarak ayarlayın. Şablon, her terimin illüstrasyonlarıyla görsel bir kelime bilgisi posteri üretir — paylaşmaya veya yazdırmaya hazır.",
-      "tip10Example": "Çok spesifik bir konu (örneğin, \"Gürcü ekmeği\" bir yiyecek şablonunda) üretmeden önce, mevcut örneklerde herhangi bir Doğu Avrupa mutfağı arayın. Galeri sadece Batı yemeklerini gösteriyorsa, bu şablon konunuzu iyi bir şekilde ele almayabilir — tam bir seri oluşturmadan önce bir üretim ile test edin."
+      "nanoBananaProPromptsUrl": "/nano-banana-pro-prompts",
+      "intro": "Nano Banana, Google'ın Gemini'nin görüntü üretim modelleri için kod adı — özellikle **gemini-2.5-flash-image** ve **gemini-3-pro-image-preview**. Aynı model ailesi, Google AI Studio'daki görüntü üretimini, Gemini API'sini ve Curify dahil olmak üzere üstüne inşa edilen tüketici uygulamalarını güçlendiriyor.\n\nNano Banana, özellikle **çok aşamalı iyileştirme** konusunda güçlüdür: konuyu kilitleyebilir ve aydınlatma, stil veya kompozisyon üzerinde aşama aşama iterasyon yapabilirsiniz. Bu, Midjourney veya DALL·E ile karşılaştırıldığında nasıl prompt vereceğinizi değiştirir. Bu 10 ipucu, konu çerçeveleme, aydınlatma dili, lens kelime dağarcığı, kompozisyon, renk, en-boy oranı, olumsuz promptlar ve Nano Banana'nın süper gücü olan sohbet düzenleme akışını kapsar. Son ipucu, tüm bunları test edilmiş bir şablonla nasıl kısaltacağınızı gösterir.",
+      "tip1Title": "1. Önce Konuyu Sabitle, Sonra Stili Belirle",
+      "tip1Content": "**İsimle başlayın, sıfatla değil.** Yaygın bir acemi hatası, stil ile başlamaktır: *\"Bir sinematik fotoğraf...\"* — model, konuyu ikincil bir detay olarak ele alır. Bunun yerine, konuyu spesifik olarak adlandırın, ardından nasıl sunulduğunu tanımlayın.\n\nDahil edilecek somut konular:\n- **Tür veya rol**: \"kırmızı panda\", \"yaşlı bir Tibetli rahip\"\n- **Eylem veya poz**: \"moss kaplı bir kütük üzerinde duruyor\", \"güneş doğarken adım atıyor\"\n- **Ortam**: \"Himalaya rododendron ormanında\"\n- **Göz teması / çerçeveleme**: \"merkezde, kamerayla göz teması\"",
+      "tip1Example": "Himalaya rododendron ormanında, moss kaplı bir kütük üzerinde duran bir kırmızı panda, sinematik belgesel tarzında fotoğraflandı. Ağaçların arasında yüzen yumuşak sabah sisleri. Konu merkezde, tamamen odaklanmış, kamerayla nazik göz teması.",
+      "tip1ExampleTitle": "İpucu 1 — Örnek İstek",
+      "tip1PromptTitle": "Konuya Dayalı İstek",
+      "tip2Title": "2. Lens ve Kamera Dilini Kullanın",
+      "tip2Content": "**Fotoğrafçı kelime dağarcığı modeli \"fotoğraf\" moduna alır** ve derinlik, perspektif ve samimiyet üzerinde doğrudan kontrol sağlar. Ezberlemeniz gereken yararlı terimler:\n\n- **Odak uzaklığı**: 24mm (geniş çevresel), 35mm (belgesel), 50mm (doğal), 85mm (portre), 135mm (sıkıştırılmış), makro\n- **Derinlik**: sığ alan derinliği, derin odak, bokeh arka plan\n- **Açı**: üstten (düz çekim), göz seviyesinde, alçak açı (kahramanca), Hollanda eğimi (rahatsızlık)\n- **Format**: Fujifilm Pro 400H, Kodak Portra 400, 35mm film tanecikleri ile çekildi",
+      "tip2Example": "Kırmızı giysiler içindeki yaşlı bir Tibetli rahibin yakın plan portresi, 85mm lens ile sığ alan derinliği ile çekildi. Soldan gelen yumuşak pencere ışığı, yüzün sağ tarafında nazik bir düşüş. Arka plan sıcak bokeh'e kayboluyor. Kodak Portra 400 ile fotoğraflandı, hafif film tanecikleri.",
+      "tip3Title": "3. Aydınlatmanızı Adlandırın",
+      "tip3Content": "**Aydınlatma kelimeleri, görüntü üretiminde en yüksek etkiye sahip stil değiştiricisidir.** Aydınlatma satırı dışında tamamen aynı olan iki istek, tamamen farklı çıktılar üretecektir. Bir kelime dağarcığı oluşturun:\n\n- **Günün zamanı**: altın saat, mavi saat, sert öğle, kapalı, alacakaranlık\n- **Kalite**: sert ışık, yumuşak dağılmış ışık, yapraklar arasından gelen ışık, yüksek kontrast\n- **Yön**: arkadan gelen kenar ışığı, kameranın solundan gelen yan ışık, üstten (tanrı ışınları)\n- **Stüdyo dili**: softbox, ana ışık, dolgu ışığı, Rembrandt aydınlatması, kelebek aydınlatması",
+      "tip3Example": "Mermer bir tezgah üzerinde taze malzemeleri düzenleyen bir şefin stüdyo portresi. Ana ışık: kameranın solundan gelen büyük bir softbox, 45°'ye yükseltilmiş. Dolgu: sağda nazik beyaz reflektör. Arka plan derin kömür rengine kayboluyor. Gözlerde keskin bir ışık yansıması.",
+      "tip4Title": "4. Bir Stil Modifikatörü Seçin — ve Bağlı Kalın",
+      "tip4Content": "**Birden fazla stil katmanlamak çıktıyı bulanıklaştırır.** \"Akvarel + fotoğrafik + anime\" tutarsız bir karmaşa üretir. Tek bir stil seçin ve onun kelime dağarcığına yönelin:\n\n- **Sinema fotoğrafçılığı**: anamorfik, renk derecelendirilmiş, filmik kontrast\n- **Akvarel**: gevşek fırça darbeleri, kağıt dokusu, yumuşak kenarlar, hat yok\n- **Vintage editoryal**: 1970'ler dergisi, soluk toprak tonları, gren\n- **İzometrik illüstrasyon**: temiz vektörler, 30° açı, yumuşak gölgeler\n- **Anime hücre gölgeli**: cesur hatlar, düz renk bölgeleri, saçta vurgular\n- **Mürekkep yıkama**: fırça çalışması, negatif alan, monokrom artı bir vurgu rengi",
+      "tip4Example": "Gün batımında bir Paris kafe terası akvarel illüstrasyonu. Gevşek fırça darbeleri, görünür kağıt dokusu, amber, toz pembe ve sıcak gri tonlarında yumuşak renk paleti. Sert hat yok. Gökyüzünde ıslak-ıslak akmalar.",
+      "tip5Title": "5. Kasıtlı Olarak Kompoze Edin",
+      "tip5Content": "**Nano Banana'ya konunun çerçevede nerede durduğunu söyleyin.** Bir kompozisyon talimatı olmadan, her seferinde varsayılan merkezli konular alırsınız. Kullanışlı ifadeler:\n\n- **Üçler kuralı, konu sağ üçte**\n- **Üstte negatif alan ile merkezde** (metin eklemek için iyi)\n- **Aşağı soldan yukarı sağa giden yönlendiren çizgiler**\n- **Konu aşağı solda, çevre geri kalanını dolduruyor**\n- **Simetrik kompozisyon, konu merkezde, yansıtılan unsurlar**",
+      "tip5Example": "Durgun bir alpin gölünde tek bir kırmızı kayığın geniş manzara fotoğrafı. Üçler kuralı: kayık aşağı sağ üçte konumlandırılmış. Karla kaplı dağlar üst iki üçteyi dolduruyor. Suda mükemmel bir yansıma. Potansiyel bir başlık yerleştirmesi için üst solda negatif alan.",
+      "tip6Title": "6. Bir Renk Paleti Belirleyin",
+      "tip6Content": "**Nano Banana, çoğu görüntü modelinden daha hassas bir şekilde renk rehberliğini takip eder.** Üç yaklaşım:\n\n1. **Bir palet adı verin**: \"soluk toprak tonları\", \"yüksek kontrast neon\", \"pastel dondurma\", \"kurumsal mavi + gri\"\n2. **Hex değerleri sağlayın**: \"dominant renk #c47957, vurgular #a3b29b ve #f4e9d6\"\n3. **Bir estetiğe atıfta bulunun**: \"Wes Anderson paleti\", \"erken Pixar 2D renk senaryosu\"\n\nBaskı yapmak için bir negatif ekleyin: *\"aşırı doygun mavi yok, neon yeşil yok.\"*",
+      "tip6Example": "Küçük bir adada yüzen minik bir ofisin izometrik illüstrasyonu. Renk paleti: dominant terracotta (#c47957), yumuşak adaçayı vurgusu (#a3b29b), krema arka planlar (#f4e9d6). Kaçının: aşırı doygun birincil renkler, neon yeşiller, saf siyah. 30° izometrik açı.",
+      "tip7Title": "7. En Boy Oranını Sabitleyin",
+      "tip7Content": "**Varsayılanlara güvenmeyin.** Oranı açıkça belirtin, böylece kompozisyonu yayınlayacağınız platforma göre oluşturun:\n\n- **1:1** — Instagram kare, LinkedIn akışı\n- **4:5** — Instagram portre (en yüksek etkileşimli IG oranı)\n- **9:16** — TikTok, Reels, Shorts, Hikayeler\n- **16:9** — YouTube küçük resmi, blog kahramanı\n- **3:2 / 2:3** — DSLR manzara / Pinterest portresi\n- **A4 / 210x297** — yazdırılabilir poster, infografik\n\nŞüphe duyduğunuzda, modele *çerçevede neyin nereye oturduğunu* da söyleyin — \"konu alt üçte biri kaplar, üstteki boş alan başlık metni için gökyüzü negatif alanı bırakır.\"",
+      "tip7Example": "Bir espresso çekimi yapan bir baristanın dikey 9:16 portresi, fincanda rosetta köpük kıvrımı görünür. TikTok kapağı için tasarlanmış telefon tarzı en boy oranı. Konu alt üçte biri kaplar; üst üçte biri daha karanlık, video başlığı için yer bırakır.",
+      "tip8Title": "8. Negatif İfadeleri Cerrahi Olarak Kullanın",
+      "tip8Content": "**Nano Banana \"X yok\" / \"X'den kaçın\" ifadelerini doğal bir şekilde işler.** Ancak genel negatif ifadeleri (*\"düşük kalite, kötü anatomi, bulanık\"*) doldurmak, Midjourney alışkanlığıdır ve genellikle kötü performans gösterir. Sürekli gördüğünüz belirli hata modlarını hedefleyin:\n\n- Eller: *\"fazla parmak yok, birleşmiş parmak yok, eller tamamen görünür\"*\n- Metin: *\"metin veya filigran yok, görüntü üzerine kaplama başlık yok\"*\n- Stil kayması: *\"çizgi film tarzı yok, sadece fotoğraf gerçekçi\"*\n- Bozulma: *\"balıkgözü bozulması yok, çerçeve kenarında bozulmuş yüzler yok\"*\n- Kompozisyon: *\"konu gözlerde veya çenede kesilmiş değil\"*",
+      "tip8Example": "Güneş doğarken, şehir silueti arka planda bulanık olan bir maraton koşucusunun fotogerçekçi portresi. Kaçınılması gereken: yüz üzerinde hareket bulanıklığı, bozulmuş eller, bulanık veya asimetrik gözler, ek metin kaplamaları, filigranlar, çerçeve kenarlarında balıkgözü bozulması.",
+      "tip9Title": "9. Çoklu Dönüşlerde İterasyon Yapın — Nano Banana'nın Öne Çıkan Özelliği",
+      "tip9Content": "**Bu, Nano Banana'nın Midjourney'e göre en büyük avantajıdır.** Diğer modeller her varyasyon için sıfırdan yeniden isteme zorlar. Gemini, *\"aynı görüntü, ama...\"* demenizi sağlar ve bir boyutu değiştirirken konuyu kilitli tutar.\n\nTipik iterasyon desenleri:\n\n- **Konu kilitli, aydınlatmayı değiştirin**: \"aynı karakter, aydınlatmayı altın saat yerine kapalı sabah olarak değiştirin\"\n- **Stil kilitli, sahneyi değiştirin**: \"suluboya stilini ve karakteri koruyun, onları karla kaplı bir kulübeye taşıyın\"\n- **Her şeyi kilitle, bir öğe ekle**: \"aynı görüntü, pencere kenarında oturan bir siyah kedi ekle\"\n- **Varyantlar oluşturun**: \"bu görüntünün üç varyasyonu, her biri farklı arka plan rengi ile\"\n\nHer şeyi birinci dönüşte tamamlamaya çalışmayın. Geniş bir taslak çizin, sonra ince ayar yapın.",
+      "tip9Example": "Dönüş 1 — Bir bambu ormanında duran bir samuray, geleneksel mürekkep yıkama tarzında, tek bir kırmızı vurguyla monokrom. Dönüş 2 — Aynı görüntü, ancak günün saatini konuya arka plandan güçlü kenar ışığı ile alacakaranlık olarak değiştirin. Dönüş 3 — Aynı görüntü tekrar, ancak sağ üst köşede bir bambu dalında oturan bir karga ekleyin. Mürekkep yıkama stilini ve alacakaranlık aydınlatmayı koruyun. Dönüş 4 — Son görüntünün üç varyasyonunu oluşturun, her biri samurayın duruşunu biraz değiştirmiş.",
+      "tip10Title": "10. Aynı İsteği Tekrar Ettiğinizde Bir Şablon Kullanın",
+      "tip10Content": "**İpuçları 2–8, iyi tasarlanmış bir şablonun tam olarak kodladığı şeydir.** Tek seferlik sanat üretiyorsanız ve tam yaratıcı kontrol istiyorsanız, isteği yukarıdaki her şeyi kullanarak elle yazın. Ancak bir *seri* üretiyorsanız — MBTI türleri arasında karakter kartları, mutfaklar arasında tarif kartları, konular arasında kelime bilgisi posterleri — lens, aydınlatma, palet, kompozisyon ve en boy oranı set boyunca sabit olmalıdır. Şablonlar bunu yapar.\n\nCurify'nin [Nano Banana şablonları] test edilmiş bir istem iskeletini alır ve yalnızca içerik özel parametrelerini (konu, tema, dil çifti vb.) açığa çıkarır. Sonuç, her seferinde aydınlatma satırını yeniden yazmadan yüzlerce üretim boyunca tutarlıdır.\n\nKural: **ilk sefer = isteği kendiniz yazın.** **Aynı istem yapısını tekrar aldığınızda = bir şablon oluşturun veya bulun.**",
+      "tip10Example": "Eğer kendinizi *\"suluboya infografiği, yumuşak palet, 4:5 en-boy oranı, kontur yok, {topic_name}\"* gibi istemleri yeniden yazarken buluyorsanız — bu bir şablondur. {topic_name} değişmesi gereken tek parametredir. Curify'nin şablon galerisi, yaygın kullanım durumları için bunlardan onlarcasını içerir.",
+      "toolsTitle": "Nano Banana Nerelerde Mevcut",
+      "toolsContent": "**Doğrudan erişim**:\n- **Google AI Studio** (aistudio.google.com) — ücretsiz etkileşimli oyun alanı; tek seferlik keşif için en iyisi\n- **Gemini API** — programatik erişim, görüntü başına ödeme (`gemini-2.5-flash-image` ve `gemini-3-pro-image-preview`)\n- **Vertex AI** — bölgesel dağıtım ve uyum kontrolleri ile kurumsal seviye\n\n**Sarmalanmış erişim** (mühendis olmayanlar için UX optimize edilmiş):\n- **Curify** — Gemini görüntü API'sinin üstünde şablon tabanlı UX; konu parametrelerini doldurursunuz, Curify tam istemi oluşturur\n- **Tüketici Gemini uygulaması** — genel Gemini sohbet deneyiminin bir parçası olarak görüntü üretimi\n\nEğer doğrudan istem yazıyorsanız (bu makalenin hedef kitlesi), Google AI Studio iterasyon yapmak için en ucuz yerdir. Eğer tutarlı bir dizi görüntü üretiyorsanız, Curify daha az çaba gerektiren bir yoldur.",
+      "curifyTitle": "İstem Yazmayı Atlama İster Misiniz?",
+      "curifyContent": "Her Curify Nano Banana şablonu, bu kılavuzu takip eden birinin yaptığı lens, aydınlatma, palet, kompozisyon ve en-boy oranı kararlarını kodlar. Siz konuyu getirirsiniz, şablon her şeyi diğerini getirir. Bir dizi boyunca tutarlılık istediğinizde faydalıdır — karakter kartları, tarif setleri, dil posterleri, MBTI illüstrasyonları.\n\nGaleriye birkaç örnek göz atarak, üretim kalitesinde istemlerin şablona entegre edildiğinde nasıl göründüğünü görebilirsiniz.",
+      "ctaText": "Üretime hazır istem şablonlarını görün",
+      "ctaLink": "Nano Banana şablonlarını göz atın",
+      "conclusionTitle": "İşleyen Kalıp",
+      "conclusionContent": "İyi sonuçlanan her Nano Banana isteminde aynı yapı ortaya çıkıyor:\n\n1. **Konu** (belirli, adlandırılmış) →\n2. **Eylem / poz** →\n3. **Ayar** →\n4. **Lens / çekim türü** →\n5. **Aydınlatma** →\n6. **Stil değiştirici** (bir) →\n7. **Renk paleti** →\n8. **En-boy oranı** →\n9. **Negatif istemler** (belirli, hedefli) →\n10. **Çoklu dönüşlerde yinele**\n\nSıralamayı ezberleyin. Bir kez alışkanlık haline geldiğinde, 30 saniyede daha iyi istemler yazarsınız, çoğu insanın 5 dakikada yaptığı kadar.\n\nVe aynı istem yapısı iki kez ortaya çıktığında — bu, bir şablon bulmanız veya oluşturmanız için ipucudur.",
+      "faq1Question": "Nano Banana tam olarak nedir?",
+      "faq1Answer": "Nano Banana, Gemini'nin görüntü üretim modeli ailesi için Google'ın kod adıdır — özellikle `gemini-2.5-flash-image` ve `gemini-3-pro-image-preview` kontrol noktaları. Google AI Studio'daki görüntü özelliklerini, Gemini API'sini, tüketici Gemini uygulamasını ve Curify dahil olmak üzere üstünde inşa edilen platformları güçlendiren modeldir.",
+      "faq2Question": "Nano Banana, Midjourney veya DALL·E'den nasıl farklıdır?",
+      "faq2Answer": "Pratikte en önemli üç fark: (1) **çok aşamalı konuşma düzenlemesi** — konuyu kilitleyebilir ve sıfırdan yeniden istemeden aydınlatma/stil üzerinde iterasyon yapabilirsiniz, bu en büyük iş akışı avantajıdır; (2) **güçlü görüntü içi metin işleme** — Nano Banana, okunabilir metinle posterleri, tabelaları ve infografikleri çoğu rakipten daha iyi işler; (3) **sıkı istem uyumu** — adlandırılmış kamera gövdeleri, hex renkleri ve en boy oranları genellikle dikkate alınır.",
+      "faq3Question": "Negatif istemler Nano Banana ile gerçekten işe yarıyor mu?",
+      "faq3Answer": "Evet, ancak gördüğünüz belirli hata modlarına odaklanın, genel negatifleri dökmektense. \"Ekstra parmak yok, kenarlarda balık gözü distorsiyonu yok, metin örtüsü yok\" işe yarar. \"Düşük kalite, kötü anatomi, bulanık\" çoğunlukla gürültüdür.",
+      "faq4Question": "`gemini-2.5-flash-image` mi yoksa `gemini-3-pro-image-preview` mi kullanmalıyım?",
+      "faq4Answer": "İterasyon hızı ve toplu üretim için Flash — daha hızlı ve daha ucuzdur. En iyi ince detaylara ihtiyaç duyduğunuz son kesim görüntüleri için Pro, özellikle metin işleme, karmaşık kompozisyonlar veya basılacak ya da kahraman görüntüsü olarak kullanılacak her şey için. Yaygın bir iş akışı, Flash üzerinde iterasyon yapmak, ardından son istemi Pro üzerinde tekrar çalıştırmaktır.",
+      "faq5Question": "Bir şablon, doğrudan bir istem yazmaktan ne zaman daha iyidir?",
+      "faq5Answer": "Aynı yapıya sahip 3'ten fazla görüntü üreteceğiniz her zaman. Tek seferlik yaratıcı keşif: istemi elle yazın, bu kılavuzu takip edin. MBTI türleri arasında karakter kartları, mutfaklar arasında tarif kartları, konular arasında kelime dağarcığı posterleri: lens, aydınlatma, palet ve kompozisyon sabit kalsın ve yalnızca içerik parametresi değişsin diye bir şablon kullanın.",
+      "whyNanoBananaTitle": "Nano Banana Nedir?",
+      "whyNanoBananaContent": "**Nano Banana, Gemini'nin görsel üretim modelleri için Google'ın kod adıdır** — Google AI Studio, Gemini API ve tüketici Gemini uygulamalarındaki görsel özellikleri destekleyen aynı aile. Genellikle göreceğiniz iki kontrol noktası:\n\n- **`gemini-2.5-flash-image`** — hızlı, düşük maliyetli, günlük iş gücü\n- **`gemini-3-pro-image-preview`** — daha yavaş, daha yüksek fidelite, ince detay ve metin işleme konusunda daha iyi\n\n**Nano Banana'yı Midjourney / DALL·E'den farklı kılan nedir:**\n- **Yerel çoklu dönüş düzenleme.** Konuyu aynı tutun ve bir sonraki dönüşte yalnızca aydınlatmayı / pozları / arka planı değiştirin. Diğer modeller genellikle sizi istemi sıfırdan yeniden yazmaya zorlar.\n- **Güçlü metin işleme.** Okunabilir metin içeren posterler, infografikler ve tabelalar ulaşılabilir.\n- **Sıkı istem uyumu.** Belirli renkler, adlandırılmış kamera gövdesi ve en boy oranları genellikle dikkate alınır.\n\n**Curify'nin yeri:**\nCurify, Nano Banana'nın üstünde bir şablon katmanıdır. Şablonlar, istem yapısını (kompozisyon, stil tokenleri, negatif alan kuralları) önceden hazırlayarak, uzman olmayanların aşağıdaki her ipucunu sıfırdan yazmadan tutarlı sonuçlar almasını sağlar. Bu makale, istemleri doğrudan yazmak istediğinizde içindir. İlerlemek isterseniz, galerideki [Nano Banana şablonlarına] göz atarak iyi hazırlanmış bir istemin üretimde nasıl göründüğünü görebilirsiniz.",
+      "templatesTitle": "Bu İpuçlarını Gösteren Şablonlar"
     },
     "tenPromptingTipsVideoGeneration": {
-      "title": "Video Üretimi için 10 İkna Edici İpucu: Şaşırtıcı AI Videoları Oluşturun",
       "slug": "10-prompting-tips-video-generation",
-      "metaDescription": "AI video üretimini 10 uzman ikna edici ifadesi ile ustalaşın. Profesyonel sonuçlar için kalite kontrol optimizasyonu ile AI araçlarını kullanarak etkileyici videolar oluşturmayı öğrenin.",
       "date": "23 Mart 2026",
       "readTime": "9 dk okuma",
       "intro": "Harika AI videoları oluşturmak, basit metin-video ikna edici ifadelerden daha fazlasını gerektirir. Bu 10 uzman ipucu, video üretimi ikna edici ifadelerinde ustalaşmanıza yardımcı olacak, temel kavramlardan ileri tekniklere kadar. Her ipucu, her seferinde profesyonel sonuçlar sağlamak için kalite kontrol (Q.C.) optimizasyonunu içerir.",
@@ -1609,10 +1601,12 @@
         "🎥 <strong>Sinematik Teknikler:</strong> Profesyonel video yönetimi prensipleri",
         "🤖 <strong>AI Model Karşılaştırması:</strong> İhtiyaçlarınıza uygun platformu seçin",
         "💼 <strong>Ticari Uygulamalar:</strong> AI video becerilerinizi paraya çevirin"
-      ]
+      ],
+      "title": "Gerçekten İşe Yarayan 10 AI Video Yönlendirme İpucu (Sora, Runway, Pika)",
+      "metaDescription": "Sora, Runway ve Pika'da test edilen 10 yönlendirme tekniğiyle sıkıcı AI videolarını üretmeyi durdurun. 2026'da yaratıcılar için gerçek öncesi ve sonrası örnekler.",
+      "seoKeywords": "ai video yönlendirmeleri, sora yönlendirmeleri, runway video yönlendirmeleri, pika video yönlendirmeleri, ai video üretim ipuçları, video yönlendirme teknikleri 2026, ai video üretici rehberi"
     },
     "imageGenerationModelComparison": {
-      "title": "Görüntü Üretim Modeli Karşılaştırması: DALL-E 3 vs Midjourney vs Stable Diffusion",
       "date": "28 Mart 2026",
       "readTime": "15 dakikalık okuma",
       "intro": "Doğru AI görüntü üretim modelini seçmek, yaratıcı iş akışınızı belirleyebilir. Bu kapsamlı karşılaştırmada, DALL-E 3, Midjourney ve Stable Diffusion gibi üç önde gelen modeli inceleyeceğiz; detaylı performans ölçümleri, gerçek dünya örnekleri ve projeleriniz için bilinçli kararlar almanıza yardımcı olacak pratik uygulama kılavuzları ile.",
@@ -1670,7 +1664,10 @@
       "batchProcessingTitle": "Toplu İşleme",
       "batchProcessingContent": "Daha hızlı iterasyon için birden fazla varyasyonu aynı anda oluşturun",
       "technicalAdvancementsTitle": "Teknik Gelişmeler",
-      "marketEvolutionTitle": "Pazar Evrimi"
+      "marketEvolutionTitle": "Pazar Evrimi",
+      "title": "Midjourney vs DALL-E 3 vs Stable Diffusion: 2026 Yılı İçin Nihai Yaratıcı Rehberi",
+      "metaDescription": "2026'da hangi AI görüntü modeli kazanıyor? Midjourney, DALL-E 3 ve Stable Diffusion'un kalite, hız, maliyet ve yaratıcı iş akışları açısından yan yana karşılaştırmaları.",
+      "seoKeywords": "midjourney vs dall-e 3, stable diffusion karşılaştırması, 2026'nın en iyi AI görüntü üreticisi, midjourney vs stable diffusion, AI görüntü üretim karşılaştırmaları, AI sanat araçları karşılaştırması, yaratıcı AI araçları"
     },
     "lipSyncBusinessGuide": {
       "title": "AI Dudak Senkronizasyonu ve Dublaj Rehberi: İş Uygulamaları ve Araçlar",
@@ -1704,7 +1701,6 @@
       "metaDescription": "İşletmeler için AI dudak senkronizasyonu ve dublajına dair kapsamlı rehber. MuseTalk ve Sync.co gibi araçları karşılaştırın, iş akışlarını öğrenin ve pazarlama, eğitim ve küresel içerik için uygulamaları keşfedin."
     },
     "lipSyncTechnicalDeepDive": {
-      "title": "AI Dudak Senkronizasyonu Boru Hattının İçinde: MuseTalk, Sync.co ve Üretim Mimarisi",
       "date": "29 Mart 2026",
       "readTime": "15 dk okuma",
       "intro": "Yüzeyin ötesine geçin ve modern AI dudak senkronizasyonu sistemlerini destekleyen teknik mimariyi keşfedin. Bu kapsamlı derin dalış, MuseTalk'ın açık kaynak uygulamasını, Sync.co'nun ticari API'sini ve kurumsal ölçekli video dublajı ve yüz animasyonu için üretim kalitesinde boru hattı tasarımını incelemektedir.",
@@ -1732,236 +1728,8 @@
       "conclusionTitle": "AI Dudak Senkronizasyonu Teknolojisinin Geleceği",
       "conclusionContent": "AI dudak senkronizasyonu teknolojisi, araştırma prototiplerinden üretim hazır sistemlere evrildi ve kurumsal ölçekli iş akışlarını yönetebilir hale geldi. GAN'lar, difüzyon modelleri ve zamansal tutarlılık algoritmalarındaki ilerlemeler, ölçekli olarak gerçekçi dublajlı içerik üretmeyi mümkün kılmıştır.\n\nTeknik ekipler için ana içgörü, dudak senkronizasyonunun artık bir araştırma problemi değil, çözülmüş bir mühendislik zorluğu olduğudur. Kalan fırsatlar, optimizasyon, kenar durumu yönetimi ve daha geniş içerik yerelleştirme iş akışları ile entegrasyon üzerinedir.\n\nBu sistemler, daha iyi model mimarileri ve daha büyük eğitim veri setleri aracılığıyla sürekli olarak geliştikçe, mükemmel dudak senkronizasyonunun her içerik türü için anında mevcut olacağı bir geleceğe yaklaşıyoruz ve görsel bir taviz olmaksızın gerçekten küresel video iletişimini mümkün kılıyor.",
       "seoKeywords": "ai dudak senkronizasyonu hattı, musetalk eğitimi, sync.co api, video dublaj mimarisi, yüz animasyonu ai, dudak senkronizasyonu sinir ağı, video işleme hattı, gans dudak senkronizasyonu, difüzyon modelleri video",
-      "metaDescription": "AI dudak senkronizasyonu hattı mimarisine teknik derin dalış. Geliştiriciler ve AI mühendisleri için MuseTalk, Sync.co, yüz animasyonu ve üretim sistemi tasarımı hakkında kapsamlı rehber."
-    },
-    "characterPromptGenerator": {
-      "title": "Karakter İstek Jeneratörü: Psikoloji ve Kişilik ile AI Karakterleri Oluşturun",
-      "publishedDate": "",
-      "readTime": "8 dk",
-      "category": "yaratıcı-araclar",
-      "heroImageAlt": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
-      "whatWeHave": {
-        "title": "Sahip Olduğumuz Şeyler",
-        "description": "Psikolojik derinlik ve görsel tutarlılığa sahip kapsamlı bir karakter oluşturma araçları seti.",
-        "characterDesign": {
-          "title": "Karakter Tasarım Araçları",
-          "items": [
-            "MBTI Kişilik Sistemi - Detaylı bilişsel işlevlerle 16 kişilik tipi",
-            "Görsel Tutarlılık Motoru - Farklı senaryolar arasında karakter görünümünü koruyun",
-            "Psikoloji Entegrasyonu - Gerçekçi karakterler için yerleşik psikolojik çerçeveler",
-            "Çoklu Stil Desteği - Anime, gerçekçi, karikatür, suluboya ve özel sanat stilleri"
-          ]
-        },
-        "interactiveScenarios": {
-          "title": "Etkileşimli Senaryolar",
-          "items": [
-            "Sosyal Medya Şablonları - Instagram ve TikTok için optimize edilmiş dikey formatlar",
-            "Hikaye Anlatımı Sahne - Bağlamsal karakter etkileşimleri ve duygusal durumlar",
-            "Profesyonel Profiller - Kariyer odaklı karakter tasarımları ve özellikleri",
-            "Kültürel Uyarlamalar - Belirli kültürel bağlamlara uyarlanmış karakterler"
-          ]
-        }
-      },
-      "whoCanBenefit": {
-        "title": "Karakter Oluşturmadan Kimler Yararlanabilir?",
-        "writers": {
-          "title": "Yazarlar & Hikaye Anlatıcıları",
-          "description": "Farklı anlatı sahneleri ve duygusal durumlar arasında kişiliği koruyan psikolojik olarak tutarlı karakterler oluşturun.",
-          "perfectFor": "Mükemmel için:",
-          "items": [
-            "Roman yazımı ve karakter geliştirme",
-            "Senaryo yazımı ve diyalog oluşturma",
-            "Etkileşimli kurgu ve oyun anlatıları",
-            "Marka hikaye anlatımı ve içerik pazarlama"
-          ]
-        },
-        "artists": {
-          "title": "Dijital Sanatçılar & İllüstratörler",
-          "description": "Görsel tasarımı, renk seçimlerini ve sanatsal yönlendirmeyi bilgilendiren yerleşik kişilik özellikleri ile karakter konseptleri oluşturun.",
-          "perfectFor": "Mükemmel için:",
-          "items": [
-            "Karakter konsept sanatı ve tasarımı",
-            "Komisyon çalışmaları ve müşteri projeleri",
-            "Portföy geliştirme ve stil keşfi",
-            "Sosyal medya sanatı ve içerik oluşturma"
-          ]
-        },
-        "gameDevelopers": {
-          "title": "Oyun Geliştiricileri",
-          "description": "Oyun mekaniği, hikaye unsurları ve oyuncu etkileşimlerini bilgilendiren psikolojik derinliğe sahip karakter konseptleri oluşturun.",
-          "perfectFor": "Mükemmel için:",
-          "items": [
-            "RPG karakter oluşturma sistemleri",
-            "Anlatı odaklı oyun tasarımı",
-            "Karakter animasyonu ve ifadesi",
-            "Oyuncu avatarı özelleştirme"
-          ]
-        },
-        "creators": {
-          "title": "İçerik Üreticileri",
-          "description": "Gerçekçi kişilik odaklı içerik ve hikaye anlatımı ile izleyicilerle yankı uyandıran tutarlı karakter serileri geliştirin.",
-          "perfectFor": "Mükemmel için:",
-          "items": [
-            "Sosyal medya karakter serileri",
-            "Eğitim içerikleri ve öğreticiler",
-            "Marka maskotu geliştirme",
-            "Etkileşimli deneyimler ve quizler"
-          ]
-        }
-      },
-      "howToUse": {
-        "title": "Karakter Üreticisini Nasıl Kullanırsınız",
-        "step1": {
-          "title": "Adım 1: Şablonunuzu Seçin",
-          "description": "Farklı kullanım durumları ve stiller için tasarlanmış kapsamlı karakter üretim şablonları kütüphanemizden seçin.",
-          "templates": {
-            "character": {
-              "name": "Karakter Profili",
-              "description": "Kişilik, görünüm ve arka plan detaylarıyla tamamlanmış karakter sayfaları.",
-              "parameters": "MBTI türü, yaş, görünüm, kıyafet, arka plan hikayesi"
-            },
-            "analysis": {
-              "name": "Psikolojik Analiz",
-              "description": "Karakter psikolojisine derinlemesine dalış yaparak bilişsel işlevler ve davranış kalıpları.",
-              "parameters": "Kişilik özellikleri, duygusal kalıplar, bilişsel işlevler, motivasyonlar"
-            },
-            "comparison": {
-              "name": "Karakter Karşılaştırması",
-              "description": "Kişilik farklılıklarını ve etkileşimleri gösteren yan yana karakter karşılaştırmaları.",
-              "parameters": "Birden fazla karakter, ilişki dinamikleri, zıt özellikler"
-            },
-            "mbti": {
-              "name": "MBTI Karakter Kartları",
-              "description": "Görsel temsillerle MBTI kişilik türlerini içeren dikey sosyal medya kartları.",
-              "parameters": "16 kişilik türü, görsel stil, sosyal medya formatı"
-            }
-          }
-        },
-        "step2": {
-          "title": "Adım 2: Kişiliği Özelleştirin",
-          "description": "Karakterinizin psikolojik profilini, görsel özelliklerini ve arka plan hikayesini tanımlayın.",
-          "options": [
-            {
-              "icon": "🧠",
-              "title": "Kişilik Çerçevesi",
-              "description": "MBTI türü, temperament ve bilişsel işlevleri seçin"
-            },
-            {
-              "icon": "🎨",
-              "title": "Görsel Tasarım",
-              "description": "Görünüm, kıyafet ve sanatsal tarzı özelleştirin"
-            },
-            {
-              "icon": "📚",
-              "title": "Arka Plan Hikayesi",
-              "description": "Kişisel tarih, ilişkiler ve yaşam deneyimleri ekleyin"
-            },
-            {
-              "icon": "🎭",
-              "title": "Duygusal Aralık",
-              "description": "Duygusal kalıpları ve ifade stillerini tanımlayın"
-            }
-          ]
-        },
-        "step3": {
-          "title": "Adım 3: Oluşturun ve İyileştirin",
-          "description": "Karakterinizi AI ile oluşturun ve sonuçları mükemmel psikolojik ve görsel tutarlılık sağlamak için iyileştirin.",
-          "features": [
-            "AI Üretimi - Gelişmiş AI modelleri kullanarak görseller oluşturun",
-            "Tutarlılık Kontrolleri - Kişiliğin görsel temsille eşleştiğinden emin olun",
-            "Varyasyon Araçları - Birden fazla versiyon ve ifade oluşturun",
-            "Dışa Aktarma Seçenekleri - Farklı kullanımlar için çeşitli formatlarda indirin"
-          ]
-        }
-      },
-      "advancedFeatures": {
-        "title": "Gelişmiş Özellikler",
-        "proTips": {
-          "title": "Profesyonel İpuçları",
-          "tips": [
-            "Kişilik özelliklerine dayalı tutarlı renk paletleri kullanın",
-            "İpuçlarınızda belirli duygusal durumları dahil edin",
-            "Gerçek dünya psikolojisini referans alarak otantik karakter davranışı oluşturun",
-            "Tamamlayıcı kişiliklere sahip karakter aileleri oluşturun",
-            "Derinlik ve otantiklik katmak için kültürel bağlamı kullanın"
-          ]
-        },
-        "integration": {
-          "title": "Entegrasyon Olanakları",
-          "possibilities": [
-            "Midjourney ve Stable Diffusion gibi AI sanat üreticileriyle bağlanın",
-            "Oyun geliştirme motorlarına ve animasyon yazılımlarına dışa aktarın",
-            "Sosyal medya yönetim araçlarıyla entegre edin",
-            "Eğitim platformlarında ve öğrenim yönetim sistemlerinde kullanın",
-            "Karakter geliştirme için yazılım ile birleştirin"
-          ]
-        }
-      },
-      "realWorldApplications": {
-        "title": "Gerçek Dünya Uygulamaları",
-        "novelWriting": {
-          "title": "Roman Yazımı",
-          "quote": "Karakter üretici, 500'den fazla sayfada tutarlı kişilikler sürdürmeme yardımcı oldu. Karakterlerim gerçekçi hissetti çünkü eylemleri her zaman psikolojik profilleriyle uyumlu oldu.",
-          "attribution": "Sarah J., Fantastik Yazar"
-        },
-        "gameDevelopment": {
-          "title": "Oyun Geliştirme",
-          "quote": "Karakter üreticiyi tüm kadromuzu oluşturmak için kullandık. Psikolojik derinlik, NPC'lerin gerçek insanlar gibi hissettirmesini sağladı, sadece görev dağıtıcıları değil.",
-          "attribution": "Mike R., Bağımsız Oyun Stüdyosu"
-        },
-        "cosplay": {
-          "title": "Cosplay Tasarımı",
-          "quote": "Bir cosplayci olarak, karakterleri derinlemesine anlamam gerekiyor. Bu araç, kostüm seçimlerini ve pozlamayı etkileyen kişilik özelliklerini analiz etmeme yardımcı oluyor.",
-          "attribution": "Alex T., Profesyonel Cosplayci"
-        }
-      },
-      "callToAction": {
-        "title": "Karakterlerinizi Bugün Oluşturmaya Başlayın",
-        "description": "Psikolojik olarak zengin karakterleri hayata geçirmek için Curify'nin karakter istemi oluşturucusunu kullanan binlerce yaratıcıya katılın.",
-        "readyTitle": "Harika Karakterler Oluşturmaya Hazır Mısınız?",
-        "readyDescription": "Ücretsiz şablonlarımızla başlayın ve AI destekli karakter tasarımının tam potansiyelini açığa çıkarın.",
-        "buttonText": "Hemen Başlayın"
-      },
-      "footer": {
-        "tags": [
-          "AI Karakter Tasarımı",
-          "MBTI Kişilik",
-          "Karakter Psikolojisi",
-          "AI Sanat Üretimi",
-          "Yaratıcı Yazım",
-          "Oyun Geliştirme",
-          "Sosyal Medya İçeriği",
-          "Görsel Hikaye Anlatımı"
-        ],
-        "questions": "Karakter oluşturma hakkında sorularınız mı var? Kişiselleştirilmiş yardım için destek ekibimizle iletişime geçin."
-      },
-      "description": "Curify'nin karakter istemi oluşturucusunu kullanarak etkileyici AI karakterleri nasıl oluşturacağınızı keşfedin. MBTI kişilik türlerinden detaylı karakter profillerine kadar, AI sanatı ve hikaye anlatımı için karakter tasarımının sanatını öğrenin.",
-      "intro": "Karakter tasarımı, basit tanımlamalardan, AI tarafından üretilen karakterleri hayata geçiren karmaşık psikolojik profillere evrildi. Curify'nin karakter istemi oluşturucusu, derinlik, kişilik ve görsel tutarlılığa sahip karakterler oluşturmak için kapsamlı bir araç seti sunuyor. Bu kılavuz, bu şablonları nasıl kullanarak hikaye anlatımı, sosyal medya içeriği ve yaratıcı projeler için etkileyici karakterler oluşturabileceğinizi keşfediyor.",
-      "whatIsTitle": "Karakter İstemi Oluşturucu Nedir?",
-      "whatIsContent": "Karakter istemi oluşturucu, psikolojik derinlik, görsel özellikler ve kişilik profilleri ile detaylı karakter tanımları oluşturan özel bir AI aracıdır. Genel karakter oluşturuculardan farklı olarak, MBTI (Myers-Briggs Tip Göstergesi) gibi yerleşik psikolojik çerçeveleri sanatsal yönlendirme ile entegre ederek, otantik ve görsel olarak çekici karakterler üretir.\n\nOluşturucu, kişilik analizi, bilişsel işlevler, duygusal durumlar ve görsel özellikleri içeren istemler üretir—hepsi AI görüntü üretimi için optimal formatta. Bu yaklaşım, karakterlerinizin sadece iyi görünmesini sağlamakla kalmaz, aynı zamanda farklı senaryolar ve bağlamlar arasında tutarlı bir şekilde davranmalarını da garanti eder.",
-      "whyTitle": "AI Sanatında Karakter Psikolojisi Neden Önemlidir",
-      "whyContent": "**Görsel Tutarlılık**: Tanımlanmış psikolojik özelliklere sahip karakterler, farklı pozlar, ifadeler ve senaryolar arasında görsel tutarlılığı korur. Bir karakterin temel kişiliğini bildiğinizde, yüz ifadeleri, beden dili ve hatta renk seçimleri daha tutarlı hale gelir.\n\n**Hikaye Derinliği**: Psikoloji odaklı karakterler, daha zengin hikaye anlatımını mümkün kılar. Bir INFP karakteri, doğal olarak bir ESTJ karakterinden farklı şekilde kendini ifade edecektir ve bu da otantik anlatı etkileşimleri ve duygusal yaylar yaratır.\n\n**İzleyici Bağlantısı**: İzleyiciler, psikolojik olarak gerçek hissettiren karakterlerle daha derin bir bağ kurar. İyi tanımlanmış kişilik özellikleri, karakterleri ilişkilendirilebilir ve akılda kalıcı hale getirir; bu, sosyal medya içeriği ve marka hikaye anlatımı için hayati öneme sahiptir.\n\n**Yaratıcı Yönlendirme**: Psikoloji, yaratıcı kararlar için bir çerçeve sağlar. Renk paletlerinden kıyafet seçimlerine kadar, kişilik özellikleri karakter tasarımının her yönünü yönlendirir ve birleşik ve kasıtlı estetikler sağlar.",
-      "howTitle": "Karakter Oluşturucu Şablonlarını Nasıl Kullanılır",
-      "step1Title": "Adım 1: Karakter Çerçevenizi Seçin",
-      "step1Content": "Projeniz için en uygun psikolojik çerçeveyi seçerek başlayın:\n\n**MBTI Karakter Kartları**: Kişilik odaklı içerikler için mükemmel olan bu şablonlar, detaylı kişilik analizi, bilişsel işlevler ve görsel tasarım ile 4K dikey karakter kartları oluşturur. Sosyal medya içeriği ve kişilik temelli hikaye anlatımı için idealdir.\n\n**Karakter Dosyaları**: İlişkiler, anahtar öğeler ve arka plan hikayeleri için yapılandırılabilir bölümler içeren kapsamlı karakter profilleri. Detaylı karakter geliştirme ve dünya inşa projeleri için harika.\n\n**Süper Kahraman Karakter Bilgi Grafikleri**: Kişilik türlerini ikonik süper kahraman arketiplerine haritalayın. Çizgi roman tarzı içerikler ve marka karakter oluşturma için mükemmel.\n\n**Kültürel Stil Karakterleri**: Studio Ghibli, Naruto veya Yellowstone tarzları gibi belirli kültürel estetiklerden ilham alan karakterler oluşturun. Kültürel temalı içerikler ve hedef kitle etkileşimi için idealdir.",
-      "step2Title": "Adım 2: Kişilik ve Görsel Özellikleri Tanımlayın",
-      "step2Content": "Oluşturucuyu kullanarak şunları belirtin:\n\n**Temel Kişilik**: MBTI türü, temperament, bilişsel işlevler, duygusal kalıplar\n**Görsel Özellikler**: Yaş, görünüm, kıyafet stili, renk tercihleri\n**Arka Plan Öğeleri**: Kültürel bağlam, meslek, kişisel tarih\n**Sanat Stili**: Anime, gerçekçi, karikatür, sulu boya veya belirli sanatçı etkileri\n\nOluşturucu, bu girdileri, Stable Diffusion, Midjourney veya DALL-E gibi AI görüntü üretim araçlarını yönlendiren detaylı istemlere otomatik olarak çevirir.",
-      "step3Title": "Adım 3: Oluşturun ve İyileştirin",
-      "step3Content": "Detaylı istemleri kullanarak karakter görüntülerinizi oluşturun, ardından sonuçlara göre iyileştirin:\n\n**Tutarlılığı Gözden Geçirin**: Kişilik özelliklerinin görsel unsurlarda yansıtıldığından emin olun\n**Detayları Ayarlayın**: İfadeleri, pozları ve çevresel unsurları ince ayar yapın\n**Varyasyonlar Oluşturun**: Karakterin kişiliğinin farklı yönlerini yakalamak için birden fazla versiyon oluşturun\n**Koleksiyonlar Oluşturun**: Tamamlayıcı kişiliklere sahip karakter aileleri veya grupları oluşturun",
-      "templatesTitle": "Popüler Karakter Oluşturucu Şablonları",
-      "templatesContent": "**MBTI Bahar Festivali Seyahat Memesi**: Farklı MBTI türlerini seyahat senaryolarında temsil eden sevimli hayvan karakterlerle dikey karşılaştırma memeleri oluşturur. Viral sosyal medya içeriği için mükemmel.\n\n**Karakter Konsept Çözümleme Panosu**: Kıyafet katmanları, ifadeler, nesneler ve notlarla detaylı karakter sayfaları. Profesyonel karakter tasarımı ve animasyon projeleri için idealdir.\n\n**Geleneksel Stil Düello Kartları**: Gerilim artırıcı kompozisyonlarla bölünmüş ekran karakter profilleri. Rekabetçi içerikler ve oyunla ilgili projeler için harika.\n\n**Şifa Grubu İllüstrasyonları**: Günlük etkileşimlerde 16 MBTI türünü hayvanlar olarak gösterir. Eğitim içeriği ve kişilik keşif içeriği için mükemmel.\n\n**NBA Tarzı Karakter Kartları**: Kişilik türlerini atletik estetiklerle birleştiren spor temalı karakter tasarımları. Spor içeriği ve marka karakter oluşturma için mükemmel.",
-      "whoCanBenefitTitle": "Karakter Oluşturmadan Kimler Yararlanabilir?",
-      "whoCanBenefitContent": "**İçerik Üreticileri**: Sosyal medya yöneticileri, YouTuber'lar ve influencer'lar, izleyicileriyle rezonansa giren tutarlı karakter serileri oluşturabilir. Psikoloji odaklı karakterler, eğitim içeriği, hikaye anlatımı ve marka mesajlaşmasında son derece iyi performans gösterir.\n\n**Oyun Geliştiricileri**: Oyun mekanikleri ve hikaye unsurlarını bilgilendiren yerleşik kişilik özelliklerine sahip karakter konseptleri oluşturun. Psikolojik derinlik, karakterlerin otantik ve ilgi çekici hissettirmesini sağlar.\n\n**Pazarlama Profesyonelleri**: Marka değerleriyle uyumlu kişiliklere sahip marka maskotları ve sözcü karakterler geliştirin. Tutarlı karakter psikolojisi, marka tanınırlığını ve duygusal bağı güçlendirir.\n\n**Eğitmenler ve Terapistler**: Psikolojik kavramları veya terapötik senaryoları öğretmek için ilişkilendirilebilir örnekler oluşturmak için karakter oluşturmayı kullanın. Görsel karakter temsilleri, soyut kavramları daha erişilebilir hale getirir.\n\n**Yazarlar ve Hikaye Anlatıcıları**: Hikayelerden karakterleri psikolojik doğrulukla görselleştirin. Oluşturucu, farklı anlatı sahneleri ve duygusal durumlar arasında karakter tutarlılığını korumaya yardımcı olur.",
-      "useCasesTitle": "Gerçek Dünya Uygulamaları ve Örnekler",
-      "useCasesContent": "**Sosyal Medya Serileri**: Her bölümde karakter psikolojisi açısından farklı durumları keşfeden devam eden karakter serileri oluşturun. MBTI tabanlı içerikler, Instagram, TikTok ve YouTube gibi platformlarda sürekli yüksek etkileşim oranları elde eder.\n\n**Eğitim İçeriği**: Psikolojik kavramları, kişilik farklılıklarını ve sosyal dinamikleri açıklamak için karakter karşılaştırmalarını kullanın. Görsel karakter örnekleri, karmaşık psikolojik teorileri erişilebilir ve ilgi çekici hale getirir.\n\n**Marka Hikaye Anlatımı**: Hedef kitlelerle bağlantı kuran karakter odaklı marka anlatıları geliştirin. Psikoloji ile bilgilendirilmiş karakterler, daha güçlü duygusal bağlar ve marka sadakati oluşturur.\n\n**Etkileşimli İçerik**: Kullanıcıların hangi karakterin kişilik tiplerine uyduğunu keşfettiği kişilik testleri ve etkileşimli deneyimler oluşturun. Bu, etkileşimi ve paylaşılabilirliği artırır.\n\n**Terapötik Araçlar**: Müşterilerin farklı duygusal durumları ve kişilerarası dinamikleri görselleştirmelerine yardımcı olmak için terapötik senaryolar için karakterler oluşturun.",
-      "curifyTitle": "Curify'nin Gelişmiş Karakter Oluşturma Sistemi",
-      "curifyContent": "Curify'nin karakter oluşturucusu, psikolojik uzmanlığı gelişmiş istem mühendisliği ile birleştirerek AI destekli karakter tasarımının en son noktasını temsil eder. Sistemimiz, basit karakter oluşturmanın ötesine geçerek, görsel tutarlılık ve anlatı derinliği ile psikolojik olarak tutarlı karakterler sunar.\n\n**Teknik Özellikler:**\n- **Psikoloji Entegrasyonu**: Yerleşik MBTI çerçeveleri, bilişsel işlev analizi ve kişilik özellikleri haritalama\n- **Görsel Tutarlılık Motoru**: Karakterlerin farklı senaryolar arasında görünüm ve kişiliklerini korumasını sağlar\n- **Çoklu Stil Desteği**: Anime, gerçekçi, karikatür, sulu boya ve özel sanat stillerinde karakterler oluşturun\n- **Kültürel Adaptasyon**: Farklı kültürel bağlamlar ve estetik tercihler için tasarlanmış şablonlar\n- **Toplu Oluşturma**: Tamamlayıcı kişiliklere sahip karakter aileleri ve grupları oluşturun\n\n**Kalite Güvencesi:**\nSistemimiz, psikolojik tutarlılık, görsel uyum ve anlatı uyumluluğu için yerleşik doğrulama içerir. Oluşturulan her karakter, kişilik özelliklerinin görsel unsurlarda doğru bir şekilde yansıtıldığından ve karakterlerin farklı bağlamlar ve senaryolar arasında tutarlı kaldığından emin olmak için kalite kontrollerinden geçer.",
-      "ctaText": "Psikolojik olarak zengin AI karakterleri oluşturmaya hazır mısınız?",
-      "ctaLink": "Curify'nin Karakter Oluşturucusunu Keşfedin",
-      "conclusionTitle": "Karakter Tasarımının Geleceği",
-      "conclusionContent": "Karakter oluşturma, basit görsel tanımlamalardan, AI karakterlerini hayata geçiren karmaşık psikolojik profillere evrildi. Yerleşik psikolojik çerçevelerin gelişmiş AI istem mühendisliği ile entegrasyonu, yaratıcıların eşi benzeri görülmemiş derinlik ve tutarlılığa sahip karakterler inşa etmelerini sağlıyor.\n\nAI araçları geliştikçe, psikolojik olarak tutarlı karakterler oluşturma yeteneği, içerik üreticileri, pazarlamacılar, eğitimciler ve hikaye anlatıcıları için giderek daha değerli hale gelecektir. Hem görsel hem de psikolojik düzeyde gerçek hissettiren karakterler, daha güçlü izleyici bağlantıları ve daha ilgi çekici içerikler oluşturur.\n\nKarakter istemi oluşturucu, sadece bir araçtan daha fazlasını temsil ediyor—psikoloji, sanat ve teknolojiyi birleştiren yeni bir karakter tasarım yaklaşımı. Bu araçları anlayarak ve kullanarak, yaratıcılar sadece harika görünen değil, aynı zamanda otantik, ilişkilendirilebilir ve psikolojik olarak tutarlı karakterler oluşturabilir.",
-      "seoKeywords": "karakter istemi oluşturucu, ai karakter tasarımı, mbti karakter oluşturucu, kişilik ai sanatı, karakter psikolojisi, ai karakter istemleri, karakter tasarım araçları, mbti ai oluşturucu, karakter konsept sanatı, ai kişilik oluşturucu",
-      "metaDescription": "Curify'nin karakter istemi oluşturucusuna dair kapsamlı rehber. Sosyal medya, hikaye anlatımı ve yaratıcı projeler için MBTI psikolojisi, kişilik özellikleri ve görsel tutarlılık ile AI karakterleri oluşturmayı öğrenin."
+      "title": "Üretimde AI Dudak Senkronizasyonu: MuseTalk ve Sync.co Gerçekten Nasıl Çalışıyor",
+      "metaDescription": "AI dudak senkronizasyonu hattının içi: MuseTalk ve Sync.co'nun yüz animasyonunu nasıl yönettiği, nerelerde sorun yaşadığı ve dudak senkronizasyonunu gerçek kullanıcılara göndermek için nelerin gerektiği."
     },
     "visualLearningTools": {
       "title": "Görsel Öğrenme Araçları: Öğrencilerin, Ebeveynlerin ve Öğretmenlerin Eğitimi Dönüştürmesi",
@@ -4139,349 +3907,6 @@
         "contactLink": "https://curify.ai/contact"
       }
     },
-    "mbtiCharacterGenerator": {
-      "title": "Nano Banana MBTI Karakter Üretici: Kişilik Temelli Karakterleri Saniyeler İçinde Oluşturun",
-      "publishedDate": "16 Nisan 2026",
-      "readTime": "12 dk okuma",
-      "category": "Yaratıcı Araçlar",
-      "intro": {
-        "title": "Kişilik tiplerini görsel olarak etkileyici karakterlere dönüştürmek ister misiniz?",
-        "description1": "Nano Banana MBTI karakter üretici ile karmaşık promptlar yazmadan, saniyeler içinde yapılandırılmış, yüksek kaliteli karakter görselleri oluşturabilirsiniz.",
-        "description2": "Tahmin etmek yerine, ölçek için tasarlanmış bir karakter yapıcı sistemi kullanıyorsunuz.",
-        "example": {
-          "title": "Bir örnek deneyin:"
-        }
-      },
-      "whatIs": {
-        "title": "Nano Banana MBTI Karakter Üretici Nedir?",
-        "description1": "Nano Banana MBTI üretici, kişilik tiplerini (örneğin INFP, ESTJ) zengin, görsel karakterlere dönüştüren şablon tabanlı bir karakter prompt sistemidir.",
-        "description2": "Geleneksel AI görsel araçların aksine, bu sadece \"bir prompt yaz ve en iyisini um\" değil. Bunun yerine, size yapılandırılmış promptlar, tutarlı görsel stiller ve farklı karakterler arasında tekrarlanabilir çıktılar sunar.",
-        "thinkOfItAs": "Bunu bir karakter prompt üretici + görsel sistem olarak düşünün.",
-        "thinkOfItAsDescription": "Bu, tutarlılığı, daha iyi görsel kalitesini ve daha hızlı üretimi garanti eder.",
-        "mbtiBasics": {
-          "title": "Dört MBTI Boyutu",
-          "description": "Her kişilik tipi, dört ana boyut boyunca tercihlerle tanımlanır:",
-          "dimensions": [
-            {
-              "letter": "E/I",
-              "title": "Dışa Dönüklük/İçe Dönüklük",
-              "description": "Karakterlerin enerjiyi yönlendirme ve alma şekli"
-            },
-            {
-              "letter": "S/N",
-              "title": "Algılama/Sezgi",
-              "description": "Karakterlerin bilgiyi alma şekli"
-            },
-            {
-              "letter": "T/F",
-              "title": "Düşünme/Hissetme",
-              "description": "Karakterlerin karar verme şekli"
-            },
-            {
-              "letter": "J/P",
-              "title": "Yargılama/Algılama",
-              "description": "Karakterlerin dış dünyaya yaklaşım şekli"
-            }
-          ]
-        }
-      },
-      "examples": {
-        "title": "Örnekler: MBTI'yi Karakterlere Dönüştürün",
-        "description": "MBTI'yi karakterler oluşturmak için kullanmanın birkaç yolu:",
-        "nba": {
-          "title": "MBTI ve NBA Oyuncuları",
-          "description": "Kişilik tiplerinin Kevin Durant gibi ikonik oyuncularla nasıl eşleştiğini görün:",
-          "intj": "stratejik, sakin",
-          "esfp": "ifadeci, enerjik"
-        },
-        "animals": {
-          "title": "MBTI ve Hayvanlar",
-          "description": "Kişilik tiplerini hayvan arketiplerine dönüştürün:",
-          "infp": "nazik geyik",
-          "estp": "cesur kaplan"
-        },
-        "movies": {
-          "title": "MBTI ve Film Karakterleri",
-          "description": "Kişiliği hikaye anlatımına dönüştürün:",
-          "enfp": "karizmatik başrol",
-          "istj": "disiplinli stratejist"
-        },
-        "yellowstone": {
-          "title": "🏔️ Yellowstone Karakter Analizi",
-          "description": "Bu psikolojik olarak karmaşık karakterler, MBTI özelliklerinin etkileyici kişiliklerde nasıl tezahür ettiğini gösterir:",
-          "beth": {
-            "type": "Beth Dutton - ENTJ",
-            "traits": "Stratejik, iddialı, son derece sadık, doğrudan iletişimci, doğal lider",
-            "analysis": "Beth'in yoğunluğu ve stratejik agresyonu, ENTJ özellikleriyle mükemmel bir uyum içindedir. Kararlı doğası ve saygı kazanma yeteneği, onu yüksek riskli ortamlarda başarılı olan klasik bir Komutan tipi yapar."
-          },
-          "rip": {
-            "type": "Rip Wheeler - ISTP",
-            "traits": "Pratik, eylem odaklı, sadık, gözlemci, pratik sorun çözücü",
-            "analysis": "Rip'in sessiz yetkinliği ve pratik becerileri ISTP özelliklerini yansıtır. Eylem yerine anlatımı tercih eden klasik bir Zanaatkar olarak, kelimelerden çok eylemde ustadır ve kriz durumlarında başarılıdır."
-          },
-          "kayce": {
-            "type": "Kayce Dutton - ISFP",
-            "traits": "Değer odaklı, çatışmalı, empatik, doğayla bağlantılı, otantik",
-            "analysis": "Kayce'in içsel çatışması ve ahlaki duyarlılığı ISFP özelliklerini sergiler. Bir Maceraperest olarak, kişisel değerleri ile aile yükümlülükleri arasında mücadele eder ve bu da karakter derinliği yaratır."
-          }
-        },
-        "mbtiFramework": {
-          "title": "📋 MBTI Karakter Geliştirme Çerçevesi",
-          "description": "Herhangi bir karakteri geliştirmek için bu yapılandırılmış yaklaşımı kullanın:",
-          "steps": [
-            "1. Temel MBTI türünü belirleyin",
-            "2. Ana kişilik özelliklerini tanımlayın",
-            "3. Motivasyonları ve çatışmaları belirleyin",
-            "4. Davranışsal kalıplar oluşturun",
-            "5. Diyalog tarzını geliştirin",
-            "6. Görsel özellikler ekleyin"
-          ]
-        }
-      },
-      "howItWorks": {
-        "title": "Nasıl Çalışır (Kulis Arkası)",
-        "description": "Nano Banana sistemi, ham promptlar yerine yapılandırılmış prompt şablonları kullanır.",
-        "behindTheScenes": "Her karakter şunlara dayanarak oluşturulur:",
-        "systemDescription": "Bu, tutarlılığı, daha iyi görsel kalitesini ve daha hızlı üretimi garanti eder. Tahmin etmek yerine, ölçek için tasarlanmış bir karakter yapıcı sistemi kullanıyorsunuz.",
-        "components": [
-          {
-            "icon": "ð§",
-            "title": "Kişilik girişi",
-            "description": "MBTI tipi"
-          },
-          {
-            "icon": "ð",
-            "title": "Karakter bağlamı",
-            "description": "NBA, hayvan, film, vb."
-          },
-          {
-            "icon": "ð¨",
-            "title": "Görsel stil + düzen",
-            "description": "Önceden tanımlanmış estetikler"
-          },
-          {
-            "icon": "¡ï¸",
-            "title": "Önceden tanımlanmış istem mantığı",
-            "description": "Yapılandırılmış üretim"
-          }
-        ],
-        "ensures": {
-          "title": "Bu şunları garanti eder:",
-          "items": [
-            "Tutarlılık - öngörülebilir çıktılar",
-            "Daha iyi görsel kalite - optimize edilmiş istemler",
-            "Daha hızlı üretim - deneme yanılma yok"
-          ]
-        },
-        "conclusion": "İstemleri tahmin etmek yerine, ölçek için tasarlanmış bir karakter oluşturucu sistemi kullanıyorsunuz."
-      },
-      "whyNotRegular": {
-        "title": "Neden Sadece Normal Bir AI Görüntü Üreticisi Kullanmayalım?",
-        "description": "Midjourney veya Stable Diffusion gibi çoğu araç, deneme-yanılma istemleri, manuel ayarlama ve tutarsız sonuçlar gerektirir. Nano Banana ile istemler önceden yapılandırılmıştır, çıktılar öngörülebilirdir ve varyasyonları hızlı bir şekilde üretebilirsiniz.",
-        "traditional": {
-          "title": "Geleneksel Araçlar",
-          "items": [
-            "Deneme-yanılma istemleri",
-            "Manuel ayarlama",
-            "Tutarsız sonuçlar",
-            "Zaman alıcı yineleme süreci",
-            "Sınırlı karakter derinliği"
-          ]
-        },
-        "nanoBanana": {
-          "title": "Nano Banana",
-          "items": [
-            "İstemler önceden yapılandırılmıştır",
-            "Çıktılar öngörülebilirdir",
-            "Varyasyonları hızlı bir şekilde üretebilirsiniz",
-            "Hızlı prototipleme yeteneği",
-            "Çoklu senaryo uygulaması"
-          ]
-        },
-        "conclusion": "Bu, sadece yaratıcı bir araç değil, üretim sistemine daha yakındır."
-      },
-      "useCases": {
-        "title": "Kullanım Alanları",
-        "description": "MBTI karakter oluşturucu özellikle şunlar için faydalıdır:",
-        "socialMedia": {
-          "title": "Sosyal Medya İçeriği",
-          "items": [
-            "Kişilik temelli gönderiler",
-            "Viral MBTI içeriği",
-            "Görsel hikaye anlatımı"
-          ]
-        },
-        "creative": {
-          "title": "Yaratıcı Projeler",
-          "items": [
-            "Karakter fikirleri",
-            "Hikaye panoları",
-            "Kavram tasarımı"
-          ]
-        },
-        "marketing": {
-          "title": "Pazarlama & Markalaşma",
-          "items": [
-            "Hedef kitle segmentasyonu görselleri",
-            "Kişilik temelli kampanyalar",
-            "Sosyal medya karakter kampanyaları",
-            "İçerik stratejisi karakterleri"
-          ]
-        },
-        "storytelling": {
-          "title": "📚 Hikaye Anlatımı & Yazma",
-          "items": [
-            "Roman karakter geliştirme",
-            "Senaryo karakter tutarlılığı",
-            "Masaüstü RPG karakterleri",
-            "Etkileşimli anlatı tasarımı"
-          ]
-        },
-        "education": {
-          "title": "🎓 Eğitim & Eğitim",
-          "items": [
-            "Psikoloji öğretim araçları",
-            "Karakter temelli öğrenme senaryoları",
-            "Liderlik eğitimi örnekleri",
-            "İletişim atölyeleri"
-          ]
-        },
-        "gaming": {
-          "title": "🎮 Oyun & Eğlence",
-          "items": [
-            "Video oyunu karakter tasarımı",
-            "Etkileşimli hikaye anlatımı",
-            "Sanal dünya sakinleri",
-            "Oyuncu avatarı özelleştirme"
-          ]
-        }
-      },
-      "tryNow": {
-        "title": "MBTI Karakter Oluşturucuyu Deneyin",
-        "description": "İstemleri sıfırdan yazmak yerine, yapılandırılmış bir sistemle başlayın:",
-        "explore": {
-          "title": "MBTI şablonlarını keşfedin:"
-        },
-        "browse": {
-          "title": "Daha fazla Nano Banana istemini göz atın:"
-        },
-        "yellowstoneExample": {
-          "title": "🏔️ Yellowstone Karakter Oluşturmayı Deneyin",
-          "description": "En popüler örneğimizle başlayın - Beth Dutton olarak ENTJ:",
-          "link": "https://www.curify-ai.com/nano-template/mbti-yellowstone/example/template-mbti-yellowstone-beth-dutton"
-        },
-        "customCreation": {
-          "title": "🎨 Özel MBTI Karakterleri Oluşturun",
-          "description": "MBTI çerçevemizi kullanarak kendi karakterlerinizi oluşturun:",
-          "link": "https://www.curify-ai.com/nano-banana-pro-prompts"
-        },
-        "framework": {
-          "title": "📋 MBTI Karakter Çerçevesi",
-          "description": "Tam karakter geliştirme sistemimize erişin:",
-          "link": "https://www.curify-ai.com/blog/ultimate-directory-of-nano-banana-prompts"
-        }
-      },
-      "customize": {
-        "title": "Bonus: Kendi Karakterinizi Özelleştirin",
-        "description": "MBTI'den öteye gitmek mi istiyorsunuz? Nano Banana, karakter istemi oluşturucu olarak da çalışır ve şunları yapabilirsiniz:",
-        "bonus": {
-          "title": "Bonus: Kendi Karakterinizi Özelleştirin",
-          "description": "MBTI'den öteye gitmek mi istiyorsunuz? Nano Banana, karakter istemi oluşturucu olarak da çalışır ve şunları yapabilirsiniz:",
-          "features": [
-            "Temaları değiştirin - spor, hayvanlar, kültür",
-            "Kişilik eşleştirmelerini ayarlayın",
-            "Şablonları yeni formatlara yeniden karıştırın"
-          ],
-          "conclusion": "Bu, yaratıcılar ve pazarlamacılar için esnek bir karakter oluşturucu yapar."
-        },
-        "personalityDepth": {
-          "title": "🧠 Kişilik Katmanlama",
-          "features": [
-            "Temel MBTI türü temeli",
-            "İkincil kişilik özellikleri",
-            "Çatışma yaratan kusurlar",
-            "Büyüme potansiyeli kurguları",
-            "İlişki dinamikleri"
-          ]
-        },
-        "visualConsistency": {
-          "title": "🎨 Görsel Sistem",
-          "features": [
-            "Çoklu senaryo görünümü",
-            "Duygusal ifade aralığı",
-            "Yaş ilerleme seçenekleri",
-            "Tarz uyarlaması",
-            "Aksesuar varyasyonları"
-          ]
-        },
-        "narrativeIntegration": {
-          "title": "📚 Hikaye Entegrasyonu",
-          "features": [
-            "Geçmiş hikaye oluşturma",
-            "Diyalog kalıbı oluşturma",
-            "Karar verme modelleme",
-            "İlişki haritalama",
-            "Karakter gelişimi"
-          ]
-        }
-      },
-      "finalThoughts": {
-        "title": "Son Düşünceler",
-        "description": "Tutarsız istemler veya genel AI çıktıları ile mücadele ettiyseniz, Nano Banana farklı bir yaklaşım sunar:",
-        "formula": "Yapılandırılmış istemler  tutarlı karakterler  ölçeklenebilir içerik",
-        "conclusion": "İster MBTI içeriği, ister hikaye anlatımı görselleri, ister pazarlama varlıkları oluşturuyor olun, bu sistem size daha hızlı hareket etme ve daha iyi sonuçlar üretme konusunda yardımcı olur.",
-        "keyInsight": "🎯 Ana İçgörü"
-      },
-      "relatedReads": {
-        "title": "İlgili Okumalar",
-        "items": [
-          "Karakter İstem Oluşturucu Rehberi (yakında)",
-          "Şablonlarla AI İçerik Otomasyonu",
-          "Bir Fikirden 50 Sosyal Gönderi Nasıl Üretilir"
-        ]
-      },
-      "faq": {
-        "title": "SSS (uzun kuyruk anahtar kelimeleri için)",
-        "questions": [
-          {
-            "question": "Karakter istem oluşturucu nedir?",
-            "answer": "Karakter istem oluşturucu, tutarlı AI karakterleri oluşturmak için yapılandırılmış istemler oluşturmanıza yardımcı olan bir sistemdir."
-          },
-          {
-            "question": "MBTI kullanarak karakter oluşturabilir miyim?",
-            "answer": "Evet  MBTI, görsel veya anlatı karakter özelliklerine haritalanabilecek bir kişilik çerçevesi sağlar."
-          },
-          {
-            "question": "Nano Banana başlangıç seviyesindeki kullanıcılar için uygun mu?",
-            "answer": "Evet  karmaşık istemleri manuel olarak yazma ihtiyacını ortadan kaldırır."
-          },
-          {
-            "question": "Farklı sahnelerde karakter tutarlılığını nasıl sağlıyorum?",
-            "answer": "Temel özellikleri, davranış kalıplarını ve görsel özellikleri tanımlayan yapılandırılmış karakter sayfaları kullanın. Nano Banana gibi AI sistemleri, bu parametreleri üretilen tüm içeriklerde korur."
-          },
-          {
-            "question": "MBTI karakterleri profesyonel projelerde kullanılabilir mi?",
-            "answer": "Evet! MBTI karakterleri pazarlama, eğitim, oyun ve içerik oluşturma gibi alanlarda yaygın olarak kullanılmaktadır. Bu çerçeve, izleyicilerin çeşitli medya üzerinden bağ kurduğu psikolojik derinlik sağlar."
-          }
-        ]
-      },
-      "footer": {
-        "tags": [
-          "MBTI",
-          "Karakter Üretici",
-          "Yapay Zeka Karakterleri",
-          "Kişilik Tipleri",
-          "Nano Banana",
-          "Karakter Tasarımı",
-          "Yapay Zeka Sanatı",
-          "Sosyal Medya İçeriği",
-          "Görsel Hikaye Anlatımı",
-          "Pazarlama Araçları",
-          "Yaratıcı Araçlar"
-        ],
-        "questions": "MBTI karakterleri oluşturma hakkında sorularınız mı var? Kişiselleştirilmiş yardım için destek ekibimizle iletişime geçin."
-      }
-    },
     "contentTaggingSystem": {
       "title": "4000 Görüntüden 50 Anlamlı Etikete: Pinterest Tarzı İçerik Keşfi Oluşturma",
       "publishedDate": "16 Nisan 2026",
@@ -5319,11 +4744,9 @@
       "metaDescription": "Nano Banana ipuçlarını kullanarak etkileyici 3x3 ızgara kolajları ve dijital duvar kağıtları nasıl oluşturacağınızı öğrenin. Mükemmel dijital duvar kağıtları için ızgara düzenlerini, mevsimsel estetikleri ve en boy oranlarını ustalıkla yönetin.",
       "date": "4 Mayıs 2026",
       "readTime": "12 dakikalık okuma",
-      "intro": "Arama Konsolunuz, \"kış ormanında genç kadın 3x3 ızgara kolajı\" gibi oldukça spesifik bir sorgunun sadece 7 günde 229 gösterim sağladığını ve 5.7. pozisyonda yer aldığını gösteriyor. Ayrıca, \"dijital duvar kağıdı\" 480'lik sağlam bir arama hacmine sahip ve %36'lık oldukça ulaşılabilir bir KD'ye sahip. Bu rehber, Nano Banana'nın ızgara tabanlı ipuçları sistemini kullanarak bu tam arama desenlerinden nasıl yararlanacağınızı gösteriyor.",
       "whatIsTitle": "3x3 Izgara Kolajı Nedir?",
       "whatIsContent": "3x3 ızgara kolajı, tam olarak duyduğunuz gibi — dokuz görüntünün mükemmel bir kare ızgarada (3 satır × 3 sütun) düzenlenmesidir. Bu format, dijital duvar kağıtları için son derece popüler hale geldi çünkü bir bütün olarak görsel bir hikaye oluştururken ekran alanını en üst düzeye çıkarır. Tekil görüntülerin aksine, ızgara kolajları, birleştirilmiş bir kompozisyon içinde birden fazla perspektifi, renk varyasyonunu veya ilerleyici hikaye anlatımını sergilemenizi sağlar.<br/><br/>Izgara düzenlerinin güzelliği, matematiksel doğruluğu ve görsel dengesi içindedir. Her hücre, mikro ifadeler için bir tuval haline gelir ve izleyicileri kompozisyona daha derinlemesine çeker. Özellikle mobil duvar kağıtları için 3x3 formatı, çeşitli ekran boyutlarına güzel bir şekilde uyum sağlar ve görsel uyumu korur.",
       "whyTitle": "Neden Izgara Kolajları Arama Sonuçlarını Dominant Ediyor",
-      "whyContent": "Arama verileri, kullanıcıların rastgele AI görüntüleri aramadığını — kompozisyon kontrolü istediklerini ortaya koyuyor. \"Kış ormanında genç kadın 3x3 ızgara kolajı\" gibi sorguların başarısı, kullanıcıların şunları istediğini kanıtlıyor:<br/><br/>• Belirli düzenler (sadece tekil görüntüler değil)<br/>• Mevsimsel estetikler (kış ormanı, sonbahar havası, yaz plajı)<br/>• Portre tutarlılığı (tüm hücrelerde aynı kişi/stil)<br/>• Duvar kağıdı optimizasyonu (cihazlar için uygun en boy oranları)<br/><br/>Nano Banana, tüm hücrelerde tematik tutarlılığı korurken tam ızgara yapıları zorlamanıza olanak tanıdığı için bu konuda mükemmeldir. Bu, çoğu AI görüntü üreticisinin kapsamlı ipucu mühendisliği olmadan başarmakta zorlandığı bir şeydir.",
       "nanoBananaTitle": "Nano Banana Izgara Yöntemi: 3x3 Avantajı",
       "nanoBananaContent": "Nano Banana'nın şablon sistemi, ızgara kolajlarını son derece basit hale getiriyor. Karmaşık ipucu mühendisliği ile ızgara düzenlerini zorlamak yerine, bir ızgara şablonu seçip her hücrenin içeriğini kontrol eden parametreleri dolduruyorsunuz.<br/><br/>Ana avantajlar:<br/>• Hassas ızgara kontrolü – Artık AI'nın \"3x3 ızgara\"yı anlamasını ummak yok<br/>• Tutarlı stil – Tüm hücreler otomatik olarak aynı estetiği paylaşır<br/>• Kolay yineleme – Bir parametreyi değiştirin, tüm ızgarayı yeniden üretin<br/>• Mevsimsel temalar – Hava, aydınlatma ve ruh hali varyasyonları için yerleşik destek<br/><br/>Bu, geleneksel AI görüntü üretimindeki en büyük hayal kırıklığını ortadan kaldırır: birden fazla görüntüde tutarlı sonuçlar almak.",
       "basicTemplateTitle": "Temel 3x3 Izgara Şablonu",
@@ -5347,7 +4770,9 @@
       "conclusionContent": "Veriler açık: 3x3 ızgara kolajları ve dijital duvar kağıtları büyük bir fırsatı temsil ediyor. Mevcut \"kış ormanı\" sıralamanız bu yaklaşımın işe yaradığını kanıtlıyor. Nano Banana'nın ızgara sistemini ustalaşarak, mevsimsel arama sorgularında öne çıkabilirken, kullanıcıların gerçekten kaydetmek ve paylaşmak istediği görsel olarak çarpıcı içerikler oluşturabilirsiniz.",
       "ctaTitle": "Izgara Kolajları Oluşturmaya Hazır Mısınız?",
       "ctaDescription": "Sıralama yapan ve dönüştüren kanıtlanmış 3x3 düzenlere sahip tam ızgara şablon kütüphanemize erişin.",
-      "ctaButton": "Izgara Şablonlarını Göz At"
+      "ctaButton": "Izgara Şablonlarını Göz At",
+      "intro": "3x3 ızgara kolajlar ve dijital duvar kağıtları, yapabileceğiniz en paylaşılabilir AI tarafından üretilen görsellerden bazılarıdır — tutarlı, editoryal görünümlü ve anında tanınabilir. Bu kılavuz, bunların arkasındaki ızgara tabanlı yönlendirme tekniklerini açıklıyor ve kendi görsellerinizi dakikalar içinde üretmeniz için size seçilmiş şablonlar sunuyor.",
+      "whyContent": "Izgara kolajları, tek bir rastgele görüntü yerine kompozisyonel kontrol sağladıkları için işe yarar. En başarılı AI tarafından üretilen kolajlar dört özelliği paylaşır:<br/><br/>• Belirli düzenler (3x3 ızgaralar, önce/sonra çiftleri, çok panelli posterler — sadece tek görüntüler değil)<br/>• Mevsimsel estetik (kış ormanı, sonbahar havası, yaz plajı)<br/>• Portre tutarlılığı (tüm hücrelerde aynı kişi veya stil)<br/>• Duvar kağıdı optimizasyonu (telefonlar ve masaüstü bilgisayarlar için uygun en-boy oranları)<br/><br/>Nano Banana burada mükemmel bir şekilde çalışır çünkü her hücrede tematik tutarlılığı korurken tam ızgara yapıları zorlayabilirsiniz — çoğu genel AI görüntü üreticisinin ağır yönlendirme mühendisliği olmadan takıldığı bir adım."
     },
     "weirdScienceFactsClassroomEngagement": {
       "title": "Garip Bilim Gerçeklerini Görselleştirmek: Sınıf Katılımı için AI İstem Şablonları",
@@ -6157,6 +5582,261 @@
         "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Güvenlik ihlali tespit edildi\"}\n    return agent_node(state)\n\nReferans: https://langchain-ai.github.io/langgraph/"
       },
       "finalThought": "Eğer ajansınız sadece soruları yanıtlıyorsa, bu bir sohbet botudur. Eğer güvenilir bir şekilde iş yapıyorsa, bu bir Görev Ajansı'dır."
+    },
+    "characterPromptGenerator": {
+      "title": "Karakter İstek Üretici: 12+ Evren MBTI Kartı + Özel Karakterler",
+      "metaDescription": "Kişilik, isim, yaş, cinsiyet ile sıfırdan karakterler oluşturun - ya da sevdiğiniz evrende (Marvel, Breaking Bad, Naruto, Ghibli, Harry Potter, Friends ve daha fazlası) bilinen bir karakteri MBTI kişilik kartı olarak yeniden hayal edin.",
+      "publishedDate": "2026-05-12",
+      "readTime": "6 dk okuma",
+      "category": "Nano Şablon",
+      "heroImageAlt": "Karakter istek üretici önizlemesi",
+      "intro": "Sıfırdan tamamen yeni bir karakter tasarlamak veya sevdiğiniz şovdan birini MBTI kişilik kartı olarak yeniden hayal etmek istiyorsanız, Curify, her biri neyi doldurmanız gerektiğini tam olarak bilmenizi sağlayan belirli bir parametre formuna sahip odaklanmış bir karakter şablonu seti sunar.",
+      "whatWeShip": {
+        "title": "Ne Gönderiyoruz",
+        "intro": "Aşağıdaki tüm şablonlar, Curify'de özenle hazırlanmış örneklerle canlıdır. Oluşturmak istediğiniz karakter türüne göre seçin:",
+        "buildFromScratch": {
+          "title": "Sıfırdan Oluştur",
+          "description": "Kişilik, isim, yaş, cinsiyet, arketip girin. Portre ve görsel kimlik ile cilalı bir karakter elde edin.",
+          "templates": [
+            {
+              "name": "Özel Karakter Kartı",
+              "slug": "ozel-karakter-karti",
+              "params": "kişilik (MBTI), isim, cinsiyet, arketip"
+            },
+            {
+              "name": "Kawaii Profil Kartı",
+              "slug": "cizgi-roman-karakter-profil-karti-kawaii-stil",
+              "params": "isim, yaş, cinsiyet, arketip"
+            }
+          ]
+        },
+        "reimagineKnown": {
+          "title": "Bilinen Bir Karakteri Yeniden Hayal Et",
+          "description": "Sevdiğiniz evrenden bir karakter ismi yazın. O şova uygun şekilde stilize edilmiş bir MBTI analiz kartı alın.",
+          "templates": [
+            {
+              "name": "Marvel",
+              "slug": "mbti-marvel",
+              "params": "karakter_ismi (Hulk, Iron Man, …)"
+            },
+            {
+              "name": "Breaking Bad",
+              "slug": "mbti-breakingbad",
+              "params": "karakter_ismi (Walt, Saul, …)"
+            },
+            {
+              "name": "Harry Potter",
+              "slug": "harry-potter-mbti-infografik",
+              "params": "karakter_ismi"
+            },
+            {
+              "name": "Friends",
+              "slug": "friends-karakter-mbti",
+              "params": "karakter_adı (Chandler, Ross, …)"
+            },
+            {
+              "name": "Naruto",
+              "slug": "mbti-naruto",
+              "params": "karakter_adı"
+            },
+            {
+              "name": "Studio Ghibli",
+              "slug": "mbti-ghibli",
+              "params": "karakter_adı"
+            },
+            {
+              "name": "NBA",
+              "slug": "mbti-nba",
+              "params": "oyuncu_adı (Curry, KD, …)"
+            },
+            {
+              "name": "Yellowstone",
+              "slug": "mbti-yellowstone",
+              "params": "karakter_adı"
+            },
+            {
+              "name": "Silicon Valley",
+              "slug": "mbti-siliconvalley",
+              "params": "karakter_adı"
+            },
+            {
+              "name": "Çin Klasikleri",
+              "slug": "chinese-classic-character-mbti",
+              "params": "karakter_adı (曹操, 林黛玉, …)"
+            },
+            {
+              "name": "Zhenhuan Draması",
+              "slug": "zhenhuan-mbti-character-analysis",
+              "params": ""
+            },
+            {
+              "name": "Prenses İncisi",
+              "slug": "princess-pearl-mbti-character-card",
+              "params": ""
+            }
+          ]
+        },
+        "multiCharacter": {
+          "title": "Çoklu Karakter Posterleri",
+          "description": "Bir evrenden birden fazla karakterle bir fandom kolajı oluşturun.",
+          "templates": [
+            {
+              "name": "Fandom Karakter Izgara Posteri",
+              "slug": "fandom-character-grid-poster",
+              "params": "tema (örn. anime ana karakterleri, K-pop erkek grubu, NBA efsaneleri)"
+            },
+            {
+              "name": "MBTI Kontrast Kartı",
+              "slug": "mbti-contrast",
+              "params": "persona_a, persona_b, sahne_başı"
+            },
+            {
+              "name": "MBTI Hayvan Krallığı",
+              "slug": "mbti-animal",
+              "params": "sahne"
+            }
+          ]
+        }
+      },
+      "howToUse": {
+        "title": "Nasıl Kullanılır",
+        "recipe1": {
+          "title": "Tarif 1 — Sıfırdan bir karakter oluştur",
+          "steps": [
+            "Özel Karakter Kartı veya Kawaii Profil Kartı şablonunu açın.",
+            "Kişilik (MBTI), isim, cinsiyet, arketip (ve kawaii kartı için yaş) bilgilerini doldurun.",
+            "Oluştur'a tıklayın. Portreyi ince ayar yapın veya görünüm kişiliğe uyana kadar varyasyonları yeniden oluşturun."
+          ]
+        },
+        "recipe2": {
+          "title": "Tarif 2 — Bilinen bir karakteri yeniden hayal et",
+          "steps": [
+            "Evreni seçin — Marvel, Breaking Bad, Harry Potter, Friends, Naruto, Ghibli, NBA, Yellowstone, Silicon Valley, Çin klasik, Zhenhuan, Prenses Pearl veya hayvan krallığı varyantı.",
+            "Karakter adını yazın (örn. Hulk, Chuck McGill, Hermione, Chandler Bing, 曹操, Naruto).",
+            "Oluştur'a tıklayın. Tür, özellikler ve o evrene uygun bir görselle birlikte bir MBTI kişilik kartı alırsınız."
+          ]
+        },
+        "recipe3": {
+          "title": "Tarif 3 — Çoklu karakter posteri oluştur",
+          "steps": [
+            "Fandom Karakter Izgara Posteri'ni açın.",
+            "Bir tema yazın — 'anime protagonistleri', 'K-pop erkek grubu', 'klasik NBA efsaneleri'.",
+            "Tüm karakterler arasında tutarlı aydınlatma ve poz yönü ile birleşik bir poster oluşturun."
+          ]
+        }
+      },
+      "whoCanBenefit": {
+        "title": "Kimler Faydalanabilir",
+        "writers": {
+          "title": "Yazarlar & Hikaye Anlatıcıları",
+          "description": "Özel Karakter Kartı kullanarak taslak oluşturmadan önce tutarlı kişiliğe sahip tekrar eden karakterleri tasarlayın. Rakiplikler ve diyalog dinamiklerini planlamak için MBTI Kontrast Kartı'nı kullanın."
+        },
+        "artists": {
+          "title": "Dijital Sanatçılar & İllüstratörler",
+          "description": "Kawaii Profil Kartı'nda referans sayfaları oluşturun veya komisyon ilhamı için Fandom Izgara Posteri ile tam karakter ızgaraları oluşturun."
+        },
+        "gameDevelopers": {
+          "title": "Oyun Geliştiricileri",
+          "description": "MBTI Kontrast Kartı ve Özel Karakter Kartı, her ikisi de tek seferde tutarlı bir görsel ve davranışsal okuma ile NPC arketipleri sunar."
+        },
+        "creators": {
+          "title": "İçerik Üreticileri",
+          "description": "Evren MBTI kartları (Marvel / Friends / NBA / Ghibli / Çin Klasik) dikey sosyal medya için tasarlanmıştır — bir karakter adı ekleyin ve paylaşın."
+        }
+      },
+      "proTips": {
+        "title": "Profesyonel İpuçları",
+        "tips": [
+          "Kişiliği renk paleti ile eşleştirin — kolerik karakterler sıcak kırmızılarda, melankolikler derin mavilerde iyi çalışır.",
+          "Özel Karakter Kartları için kişiliği 'MBTI + 1-2 özellik' olarak yazın (örneğin 'ENFP, iyimser, huzursuz'). Belirsiz ipuçları belirsiz portreler üretir.",
+          "Evrensel MBTI şablonları, iyi bilinen karakter isimleriyle en iyi şekilde çalışır. Belirsiz isimler kayma eğilimindedir.",
+          "Üretilen MBTI türü, kanonik hayran yorumuyla çelişiyorsa, kart yine de faydalıdır — tartışmaya değer alternatif bir yorum üretir.",
+          "Paylaşılabilir sosyal içerik için Fandom Grid Poster'ını kullanın — temalı ızgaralar tek karakterli gönderilerden daha iyi performans gösterir."
+        ]
+      },
+      "footer": {
+        "tags": [
+          "AI Karakter Tasarımı",
+          "MBTI Karakter Kartı",
+          "Özel Karakter Üretici",
+          "Marvel Kişilik Testi",
+          "Breaking Bad MBTI",
+          "Harry Potter MBTI",
+          "Fandom Grid Poster",
+          "Kawaii Karakter Profili"
+        ],
+        "questions": "MBTI serisine eklenmesini istediğiniz bir evren var mı? İletişime geçin, bunu bir sonraki içerik güncellemesi için değerlendireceğiz."
+      }
+    },
+    "curifyNanoBananaTemplateTips": {
+      "title": "Curify'nin Nano Banana Şablonlarını Kullanmak için 10 İpucu",
+      "slug": "curify-nano-banana-template-tips",
+      "metaDescription": "Curify'nin Nano Banana şablonlarından tutarlı bir şekilde daha iyi sonuçlar alın. Doğru şablonu seçmek, parametreleri iyi doldurmak, ilham galerisini kullanmak ve Remix ile yinelemek için 10 pratik ipucu.",
+      "date": "15 Mayıs 2026",
+      "readTime": "7 dakika okuma",
+      "author": "Curify Studio",
+      "baseUrl": "https://curify-ai.com/blog/",
+      "nanoBananaProPromptsUrl": "/",
+      "intro": "Curify'nin Nano Banana şablon galerisi, Google'ın Gemini görüntü oluşturma modelinin (kod adı **Nano Banana**) üzerine inşa edilmiştir. Sıfırdan istem yazmak yerine — bunun için [Nano Banana için İstem Nasıl Yazılır] kısmına bakın — bir şablon seçersiniz, birkaç parametre doldurursunuz ve Curify sizin için tam istemi oluşturur.\n\nAncak hangi şablonu seçeceğiniz ve parametreleri nasıl dolduracağınız konusunda gerçek bir zanaat vardır. Bu 10 ipucu, MBTI karakter kartlarından tarif infografiklerine ve kelime posterlerine kadar tutarlı bir şekilde daha iyi sonuçlar almanızı gösterir.",
+      "tip1Title": "1. Üretimden Önce İlham Galerisini Gözden Geçirin",
+      "tip1Content": "**Yeni kullanıcıların yaptığı en büyük hata, örneklere bakmadan üretim yapmaktır.** Her şablonun, o şablondan gerçek çıktıları gösteren bir ilham galerisi vardır. Bir tek parametre yazmadan önce 2 dakikanızı ayırıp bunu gözden geçirin.\n\nNelere dikkat etmelisiniz:\n- **Tutarlılık**: Görsellerin birleşik bir tarzı var mı? Bu, şablonun güvenilir olduğunu gösterir.\n- **Aralık**: Çıktılar birbirinden ne kadar farklı? Bu, parametrelerinizin ne kadar yaratıcı bir esneklik sunduğunu gösterir.\n- **Sınır durumları**: Herhangi bir örnek alışılmadık şekilde iyi veya kötü mü? Hangi parametre seçimlerinin buna yol açtığını fark edin.\n\nGaleri, beklentilerinizi kalibre etmenin en hızlı yoludur — bazı şablonlar son derece detaylı illüstrasyonlar üretirken, diğerleri daha diyagramatikdir. Hangi şablonla çalıştığınızı bilmek, israf edilen üretimlerden sizi kurtarır.",
+      "tip1Example": "Yeni bir şablonla ilk görüntünüzü üretmeden önce, galeride en az 8-10 örneği gözden geçirin. Yeniden oluşturmak istediğiniz bir örneği ve kaçınmak istediğiniz bir örneği not edin — ardından \"Bunu Yeniden Karıştır\" ile parametrelerini kontrol edin ve neden böyle sonuçlandıklarını anlayın.",
+      "tip1ExampleTitle": "İpucu 1: Galeri-Öncelikli İş Akışı",
+      "tip1PromptTitle": "İpucu 1: Üretimden Önce Gözden Geçirin",
+      "tip2Title": "2. Çalışan Bir Örneği Başlatmak İçin \"Bunu Yeniden Karıştır\" Kullanın",
+      "tip2Content": "**Galerideki her örneğin, üretim formuna tam parametrelerini yükleyen bir \"Bunu Yeniden Karıştır\" butonu vardır.** Bu, herhangi bir şablon için en hızlı başlangıç yoludur — ne dolduracağınızı tahmin etmek yerine, zaten iyi bir sonuç vermiş parametre değerleriyle başlarsınız.\n\nBunu iyi kullanmanın yolları:\n- Beğendiğiniz bir örneği bulun\n- Parametrelerini yüklemek için \"Bunu Yeniden Karıştır\" butonuna tıklayın\n- Yapısal olanları korurken yalnızca içerik ile ilgili değerleri (konu, isim, vb.) değiştirin\n- Üretin — aynı görsel tarzda ama kendi içeriğinizle bir sonuç alacaksınız\n\nBu teknik, bir şablonun birçok parametreye sahip olduğu ve hangilerinin görsel tarzı, hangilerinin içeriği kontrol ettiğinden emin olmadığınız durumlarda özellikle faydalıdır.",
+      "tip2Example": "Herhangi bir şablon sayfasında, beğendiğiniz bir kompozisyona sahip ilham galerisi örneğini bulun. \"Bunu Yeniden Karıştır\" butonuna tıklayın. O görüntüyü üreten tam parametre değerlerini göreceksiniz. Şimdi yalnızca konuya özgü parametreleri (isim, konu, kelime) değiştirin, diğer her şeyi aynı bırakın. Üretin — içeriğinizle aynı kalitede bir sonuç alacaksınız.",
+      "tip3Title": "3. Parametre Değerlerinizde Spesifik Olun",
+      "tip3Content": "**Belirsiz girdiler genel çıktılar üretir.** Şablon yapı ve stil ile ilgilenir - parametreleriniz, görüntünün özgün ve isabetli hissettirmesini sağlar.\n\n**Zayıf ve güçlü parametre değerleri:**\n- Zayıf: \"köpek\" → Güçlü: \"krem rengi tüyleri olan, dikkatli bir ifadeye sahip, dik oturan shiba inu\"\n- Zayıf: \"yiyecek\" → Güçlü: \"koyu miso çorbasında soba eriştesi, yeşil soğan ve susam ile süslenmiş\"\n- Zayıf: \"fitness\" → Güçlü: \"güneş doğarken sabah patika koşusu, dağ manzarası\"\n\n**Neden özgüllük önemlidir:**\nAI görüntü modelleri somut, görsel dile yanıt verir. Soyut veya kategori seviyesindeki kelimeler modele fazla özgürlük tanır, bu da genellikle genel kompozisyonlara geri dönmesi anlamına gelir. Spesifik sıfatlar, bağlamlar ve detaylar çıktıyı faydalı şekillerde kısıtlar.\n\n**Faydalı bir test:** Parametre değerlerinizi yüksek sesle okuyun ve sorun: bir illüstratör tam olarak bunu çizebilir mi? Cevap hayırsa, daha fazla detay ekleyin.",
+      "tip3Example": "Şablon: tarif kartı. Zayıf: \"makarna yemeği, İtalyan, kremalı\". Güçlü: \"tagliatelle al tartufo — el yapımı yumurta makarnası, siyah trüf rendesi, parmesan ve kahverengi tereyağı sosu, Umbria, İtalya\". İkinci versiyon modele doğru, iştah açıcı bir sonuç üretmesi için yeterli özgüllük sağlar.",
+      "tip4Title": "4. Şablon Konularını Görsel Stilinizle Eşleştirin",
+      "tip4Content": "**Şablonlar görsel stil konularıyla etiketlenmiştir - bunları sadece içerik kategorileri için değil, bir filtre olarak kullanın.** `suluboya`, `mürekkep`, `monokrom`, `karakter` ve `tasarım` gibi etiketler, sadece konu değil, görsel çıktı stilini tanımlar.\n\nKonu etiketlerini stratejik olarak nasıl kullanabilirsiniz:\n- **Bir içerik serisi boyunca tutarlı bir estetik için**: Bir stil etiketini paylaşan tüm şablonları bulun (örneğin, tüm `suluboya` şablonları) ve yalnızca bunları kullanın\n- **Marka eşleştirmesi için**: Markanız temiz çizgi sanatı kullanıyorsa, `mürekkep` veya `monokrom` etiketli şablonları arayın\n- **Editoryal içerik için**: `tasarım` ve `rehberler` etiketli şablonlar genellikle blog başlıkları için uygun infografik tarzı çıktılar üretir.\n\nBir şablon sayfasındaki herhangi bir konu çipine tıklayarak o etiketle ilgili tüm şablonları göz atabilirsiniz. Bu, henüz denemediğiniz ve görsel yönünüze uyan şablonları keşfetmenin en hızlı yoludur.",
+      "tip4Example": "Marka kimliğiniz temiz mürekkep illüstrasyon stilini kullanıyorsa, şablonları `mürekkep` konu etiketine göre filtreleyin. O gruptaki tüm şablonlar çizgi sanatı tarzı çıktılar üretecek, böylece içerik seriniz farklı konu şablonları arasında bile tutarlı bir görsel işleme sahip olacaktır.",
+      "tip5Title": "5. Her Parametrenin Gerçekten Ne Kontrol Ettiğini Anlayın",
+      "tip5Content": "**Şablonlar genellikle iki tür parametreye sahiptir: içerik parametreleri ve stil parametreleri.** Bunları karıştırmak, beklenmedik sonuçların yaygın bir kaynağıdır.\n\n- **İçerik parametreleri** konuyu kontrol eder: isimler, konular, kelimeler, nesneler, insanlar\n- **Stil parametreleri** görünümünü kontrol eder: ruh hali, renk tonu, dönem, kompozisyon stili\n\nHangisinin hangisi olduğunu anlamak için belgeleri okumadan:\n1. Beğendiğiniz bir örneği yeniden karıştırın\n2. Sadece bir parametreyi değiştirin\n3. Üretin ve orijinal ile karşılaştırın\n4. En büyük görsel değişimi üreten parametre bir stil parametresidir; görünümü benzer tutan ama konuyu değiştiren parametre bir içerik parametresidir.\n\nHangi parametrelerin stil kontrol ettiğini anladıktan sonra, bunları birden fazla nesil boyunca kilitleyerek tutarlı bir seri elde edebilirsiniz.",
+      "tip5Example": "Bir kelime dağarcığı poster şablonunda, sadece \"kelime kategorisi\" parametresini \"hayvanlar\"'dan \"mutfak aletleri\"'ne değiştirerek başka hiçbir şeyi değiştirmeden deneyin. Eğer düzen stili aynı kalıyorsa ama konu değişiyorsa, o parametre saf bir içerik parametresidir. Eğer düzen de kayıyorsa, o da bir stil parametresi olarak işlev görüyor demektir - bilmekte fayda var.",
+      "tip6Title": "6. Tek Seferde Bir Parametreyi Değiştirin",
+      "tip6Content": "**Üç parametreyi değiştirirseniz ve çıktı daha kötü olursa, hangi değişikliğin neden olduğunu bilemezsiniz.** Metodolojik yineleme - bir değişkeni bir seferde değiştirmek - bir şablonu anlamanın en hızlı yoludur.\n\nBasit bir yineleme iş akışı:\n1. Beğendiğiniz bir örneğin Remix'inden başlayın\n2. Tam olarak bir parametreyi değiştirin\n3. Üretin ve değerlendirin\n4. Eğer daha iyi ise: değişikliği koruyun ve bir sonraki parametreye geçin\n5. Eğer daha kötü ise: geri alın ve aynı parametre için farklı bir değer deneyin\n\nBu, yeni bir şablonla deneyiminizin başlarında özellikle önemlidir. 5-6 yinelemeden sonra her parametrenin nasıl davrandığına dair güçlü bir sezginiz olacak ve çoklu parametre değişiklikleri yapmaya güvenle başlayabilirsiniz.\n\n**Kredi tasarrufu ipucu:** Kredi harcamadan önce, merak ettiğiniz parametre kombinasyonunu kapsayan galeride zaten örneklerin olup olmadığını kontrol edin. Birisi bu alanı daha önce keşfetmiş olabilir.",
+      "tip6Example": "\"Akvarell\" veya \"mürekkep\" ile eğitimsel gönderileriniz için daha iyi sonuçlar elde edip edemeyeceğinizi test ediyorsunuz. Stil parametresi dışında tüm parametreler aynı olan iki nesil oluşturun. Karşılaştırın — şimdi içeriğinize en uygun stil hakkında net verileriniz var.",
+      "tip7Title": "7. İşe Yaran Örnekleri Çalışma Alanınıza Kaydedin",
+      "tip7Content": "**Her örnek detay sayfasında, Kaydet butonu o örneği gelecekte referans almak için Çalışma Alanınıza sabitler.** Bu, ekran görüntüsü almaktan daha faydalıdır çünkü kaydedilen örnekler şablonları ve parametreleri ile bağlantılı kalır.\n\nFaydalı bir referans kütüphanesi oluşturma yolları:\n- **Kullandığınız her şablondan en iyi 3-4 örneği kaydedin** — bunlar stil kıyaslamalarınız olur\n- **Henüz denemediğiniz ama keşfetmek istediğiniz şablonlardan örnekler kaydedin** — bunlar Çalışma Alanınızda yapılacaklar listesi olarak bekleyecek\n- **Rakip stil referans örneklerini kaydedin** — nişiniz için yüksek kaliteli çıktının nasıl göründüğünü anlamak için\n\n**Çalışma Alanınızda**, kaydedilen öğeler kopyalanmış istemlerle birleştirilerek tek bir Kaydedildi sekmesinde toplanır, böylece tam koleksiyonunuzu göz atmak için tek bir yeriniz olur. Herhangi bir kaydedilmiş resme tıkladığınızda, parametreler görünür şekilde örnek sayfasına doğrudan gidersiniz.",
+      "tip7Example": "Bir kelime dağarcığı poster şablonunu inceledikten sonra, en görsel olarak etkileyici bulduğunuz 3 örneği kaydedin. Daha sonra, yeni bir kelime dağarcığı gönderisi oluşturmanız gerektiğinde, Çalışma Alanınızı açın, o kaydedilmiş örneklerden birini bulun, örnek sayfasına tıklayın ve bildiğiniz çalışır parametrelerden başlamak için Remix yapın.",
+      "tip8Title": "8. Kampanya Setleri için Toplu Şablonlar Kullanın",
+      "tip8Content": "**Bazı şablonlar toplu şablonlar olarak işaretlenmiştir — bunlar, hepsini bir anda indirebileceğiniz tamamlayıcı görüntülerle önceden paketlenmiş bir set ile gelir.** Sosyal kampanya veya içerik serisi için 4-8 tutarlı görüntüye ihtiyacınız varsa, toplu indirme, bireysel olarak üretmekten çok daha hızlıdır.\n\nToplu ve bireysel üretim ne zaman kullanılmalı:\n- **Toplu**: benzer stil ile tutarlı bir görsel setine ihtiyacınız var (örneğin, 6 MBTI tipi illüstrasyonu, tam bir ders için bir dizi kelime posterleri)\n- **Bireysel üretim**: tam parametrelerinizle belirli bir özel görüntüye ihtiyacınız var\n\nToplu indirmeler, toplu etkinleştirilmiş şablonlarda Kaydet butonunun yerine görünen \"Paket İndir\" butonu aracılığıyla mevcuttur. Önceden oluşturulmuş paketler için kredi gerekmez — bunları doğrudan indirirsiniz.",
+      "tip8Example": "Bir kişilik tipi makalesi için 6 MBTI karakter illüstrasyonu mu arıyorsunuz? Toplu etkinleştirilmiş bir MBTI şablonunun var olup olmadığını kontrol edin. Varsa, tüm türleri eşleşen bir stil ile anında almak için Paket İndir'i kullanın — üretim kredisi gerekmez.",
+      "tip9Title": "9. Dil İçeriği için Eğitimsel ve İki Dilli Şablonlar Kullanın",
+      "tip9Content": "**Nano Banana, kelime dağarcığı, dil öğrenimi ve iki dilli görsel içerik için özel olarak tasarlanmış şablonlar sunmaktadır.** Eğitimsel içerik oluşturuyorsanız — ders materyalleri, kelime kartları, dil öğrenme gönderileri — bu şablonlar sıfırdan tasarlamaya göre saatler kazandırır.\n\nBu kategorideki şablon türleri:\n- **Kelime posterleri**: kelimeleri kategoriye göre organize eden görsel ızgaralar ile illüstrasyonlar\n- **İki dilli nesne etiketleme**: yan yana iki dilde etiketlerle diyagramlar\n- **Grup kelime dağarcığı**: tematik kümeler (gıdalar, hayvanlar, ev eşyaları) ile görsel hafızalar\n- **Çok dilli akvarel posterleri**: sınıf duvarları veya sosyal gönderiler için daha sanatsal kelime sergileri\n\nBu şablonlar genellikle bir `dil` veya `kelime dağarcığı` konu etiketi taşır. Parametre setleri, hedef kelime grubunu, dil çiftini ve görsel yoğunluğu kontrol etmenizi sağlar — böylece bir şablondan tam bir derslik materyali oluşturabilirsiniz.",
+      "tip9Example": "Hava durumu kelime dağarcığı üzerine bir ders için, `kelime dağarcığı` ve `öğrenme` etiketi olan bir kelime poster şablonu kullanın. Kelime grubunu \"hava terimleri\" olarak ayarlayın, hedef dili İspanyolca ve kaynak dili İngilizce olarak belirleyin. Şablon, her terimin illüstrasyonları ile görsel bir kelime posterini üretir — paylaşmaya veya yazdırmaya hazır.",
+      "tip10Title": "10. Kredi Harcamadan Önce Örnekleri Gözden Geçirin",
+      "tip10Content": "**Krediler sınırlıdır ve bazı üretimler tahmin edilebilir şekilde vasat olacaktır.** Belirsiz olduğunuz bir parametre kombinasyonu oluşturmadan önce, galeride benzer örneklerin olup olmadığını kontrol etmek için 2 dakikanızı ayırın.\n\nÜretimden önce sorulacak sorular:\n- Galeride benzer bir konuya sahip bir örnek var mı?\n- Benzer şablonları tarayarak o örneği bulabilir miyim? (örnek sayfalarındaki \"Buna benzer\" bölümüne bakın)\n- Bu kombinasyon, bu şablonun ürettiği şeyleri göz önünde bulundurarak işe yarar mı?\n\n**Ne zaman üretim yapmalısınız:**\n- Özel içeriğiniz mevcut örneklerle kapsanmıyorsa\n- Kullanım durumunuza özgü bir özel isim, yer veya konuya ihtiyacınız varsa\n- Bir şablon üzerinde yeterince iterasyon yaptıysanız ve bu şablonun giriş türünüzü iyi bir şekilde ele aldığını biliyorsanız\n\n**Ne zaman beklemelisiniz:**\n- Bu şablonun tarzının içeriğinize uyup uymadığından henüz emin değilseniz\n- İlham galerisine henüz bakmadıysanız\n- Şablon örneklerinin gösterdiğinden temelde farklı bir kullanım durumuna sahipseniz",
+      "tip10Example": "Çok özel bir konu (örneğin, bir yemek şablonunda \"Gürcü ekmeği\") oluşturmadan önce, mevcut örneklerde herhangi bir Doğu Avrupa mutfağı arayın. Galeri yalnızca Batı yemeklerini gösteriyorsa, bu şablon konunuzu iyi bir şekilde ele almayabilir — tam bir seri oluşturmadan önce bir üretimle test edin.",
+      "toolsTitle": "Nano Banana Bilmeniz Gereken Özellikler",
+      "toolsContent": "**Nano Banana içindeki temel araçlar:**\n\n- **Şablon tarayıcı**: Kullanım durumunuza uygun doğru şablonu bulmak için konu etiketlerine (yaşam tarzı, yemek, kelime dağarcığı, tasarım vb.) göre filtreleyin\n- **İlham galerisi**: Her şablondan gerçek örnekler — üretim yapmadan önce göz atın\n- **Bunu yeniden düzenle**: Herhangi bir örneğin tam parametrelerini bir tıklama ile üretim formuna yükleyin\n- **Kaydet**: Herhangi bir örneği gelecekte referans almak için Çalışma Alanınıza sabitleyin\n- **Üret**: Parametrelerinizi kullanarak özel bir görüntü oluşturun (10 kredi maliyetli)\n- **Paket İndir**: Önceden oluşturulmuş toplu görüntü setlerini bir tıklama ile indirin (kredi gerekmez)\n- **Çalışma Alanı**: Kaydedilmiş örnekler, kopyalanmış istemler ve üretilmiş görüntüler için kişisel kütüphaneniz\n- **Örnek detay sayfası**: Parametrelerin görünür olduğu herhangi bir örneğin tam boyutlu görünümü ve \"Kendinize ait bir üretim yapın\" paneli",
+      "templatesSectionTitle": "Örnek Parametre Setleri",
+      "storytellingTemplateTitle": "Karakter İllüstrasyonu — Örnek Parametreler",
+      "storytellingTemplateContent": "Şablon: MBTI Karakter İllüstrasyonu\n\nParametreler:\n- Kişilik tipi: INFJ\n- Karakter ortamı: sıcak öğleden sonra ışığıyla sessiz kütüphane\n- Karakter tarzı: yumuşak sulu boya, Doğu Asya illüstrasyon tarzı\n- Ruh hali: düşünceli, huzurlu\n\nSonuç: kişilik tipi eğitim gönderileri veya kişisel içerik için uygun, görsel olarak uygun bir ortamda içe dönük bir kişilik tipinin portre formatında karakter illüstrasyonu.",
+      "storytellingTemplateDisplay": "<strong>Şablon: MBTI Karakter İllüstrasyonu</strong>\n\n<strong>Parametreler:</strong>\n- <strong>Kişilik tipi:</strong> INFJ\n- <strong>Karakter ortamı:</strong> sıcak öğleden sonra ışığıyla sessiz kütüphane\n- <strong>Karakter tarzı:</strong> yumuşak sulu boya, Doğu Asya illüstrasyon tarzı\n- <strong>Ruh hali:</strong> düşünceli, huzurlu\n\n<strong>Sonuç:</strong> kişilik tipi eğitim gönderileri veya kişisel içerik için uygun, görsel olarak uygun bir ortamda içe dönük bir kişilik tipinin portre formatında karakter illüstrasyonu.",
+      "identityTemplateContent": "Şablon: Tarif Kartı Bilgilendirmesi\n\nParametreler:\n- Yemek adı: Dan Dan Noodles\n- Mutfak: Sichuan Çin Mutfağı\n- Ana malzemeler: buğday eriştesi, acı yağ, susam ezmesi, kıyma, bok choy\n- Stil: premium editoryal, koyu arka plan\n\nSonuç: yemek adı, malzeme listesi ve yemek blogları, sosyal medya veya restoran içeriği için uygun görsel stil ile profesyonel bir tarif kartı düzeni.",
+      "identityTemplateDisplay": "<strong>Şablon: Tarif Kartı İnfografiği</strong>\n\n<strong>Parametreler:</strong>\n- <strong>Yemek adı:</strong> Dan Dan Noodles\n- <strong>Mutfağı:</strong> Sichuan Çin Mutfağı\n- <strong>Ana malzemeler:</strong> buğday eriştesi, acı yağ, susam ezmesi, kıyma, bok choy\n- <strong>Stil:</strong> premium editoryal, koyu arka plan\n\n<strong>Sonuç:</strong> yemek adı, malzeme listesi ve yemek blogları, sosyal medya veya restoran içeriği için uygun görsel stil ile profesyonel bir tarif kartı düzeni.",
+      "curifyTitle": "Curify, Nano Banana'yı Nasıl Güçlendiriyor",
+      "curifyContent": "Nano Banana, Curify'nin AI üretim altyapısında çalışır. Curify şunları yönetir:\n- **Şablon yönetimi**: her şablon, tanımlı parametre alanları ile test edilmiş bir istem yapısıdır\n- **Görüntü üretimi**: parametreleriniz temel isteme eklenir ve bir AI görüntü modeline gönderilir\n- **CDN dağıtımı**: üretilen görüntüler, hızlı yükleme için küresel bir CDN'den sunulur\n- **Çalışma alanı senkronizasyonu**: kaydedilen örnekleriniz ve üretilen görüntüler hesabınıza kaydedilir ve cihazlar arasında erişilebilir\n- **Kredi sistemi**: her üretim için 10 kredi; toplu paketler ve kaydedilen örnekler her zaman ücretsizdir",
+      "ctaText": "Nano Banana şablonlarını göz atın ve üretmeye başlayın",
+      "ctaLink": "Şablonları Keşfedin",
+      "conclusionTitle": "Tutarlı İyi Sonuçlar Elde Etmek",
+      "conclusionContent": "Tüm şablonlarda işe yarayan desen:\n\n1. Öncelikle ilham galerisine göz atın\n2. İstediğinize yakın bir örneği yeniden düzenleyin\n3. Özelleştirmek için yalnızca ihtiyaç duyduğunuz parametreleri değiştirin\n4. Üretin — sonucu değerlendirin\n5. Çıktı iyileştirme gerektiriyorsa bir seferde bir parametreyi ayarlayın\n\nNano Banana'nın şablonları istem mühendisliğini yönetir. Göreviniz onlara belirli, somut girdiler vermek ve metodik olarak yinelemektir. Bir şablonu iyi tanıdığınızda, bir dakikadan kısa sürede üretim kalitesinde görüntüler üretebilirsiniz.",
+      "faq1Question": "Nano Banana nedir?",
+      "faq1Answer": "Nano Banana, Google'ın Gemini'nin görüntü üretim modeli ailesi için kod adı (`gemini-2.5-flash-image` ve `gemini-3-pro-image-preview`). Curify, bunun üstünde bir şablon katmanıdır. Curify şablonundan üretim yaptığınızda, parametreleriniz test edilmiş bir isteme eklenir ve Nano Banana modeline gönderilir.",
+      "faq2Question": "Bir görüntü üretmenin maliyeti nedir?",
+      "faq2Answer": "Her üretim 10 krediye mal oluyor. Şablonları göz atmak, ilham örneklerini görüntülemek, öğeleri Çalışma Alanınıza kaydetmek ve toplu paketleri indirmek tamamen ücretsizdir. Krediler yalnızca kendi özel parametrelerinizle Üret'i tıkladığınızda tüketilir.",
+      "faq3Question": "Remix ile Generate arasındaki fark nedir?",
+      "faq3Answer": "\"Bunu remixle\" mevcut bir örneğin parametrelerini üretim formuna yükler — bu bir başlangıç noktasıdır, bir üretim değil. Daha sonra bu parametreleri değiştirebilir ve yeni bir görüntü oluşturmak için Generate'a (bu kredi gerektirir) tıklayabilirsiniz.",
+      "faq4Question": "Nano Banana'yı herhangi bir tasarım becerisi olmadan kullanabilir miyim?",
+      "faq4Answer": "Evet. Şablonlar önceden tasarlanmış görsel yapılar — yalnızca kullanım durumunuza özgü metin içeriğini sağlarsınız (bir yemek adı, bir kişilik tipi, bir kelime kategorisi vb.). Prompt mühendisliği veya görüntü düzenleme bilgisi gerekmemektedir.",
+      "faq5Question": "Kullanım durumuma uygun şablonu nasıl bulabilirim?",
+      "faq5Answer": "Konu etiketlerini kullanın. Her şablon, görsel tarzı ve içerik kategorisi ile etiketlenmiştir (örneğin, suluboya, kelime bilgisi, yemek, fitness). Bir şablon sayfasındaki herhangi bir etikete tıklayarak o etikete sahip tüm şablonları göz atabilirsiniz. Yeni bir kullanım durumu için önce içerik kategorisine göre filtreleyin, ardından görsel stil etiketine göre daraltın.",
+      "whyNanoBananaTitle": "Curify'nin Nano Banana Şablonları Nedir?",
+      "whyNanoBananaContent": "**Nano Banana, Google'ın Gemini'nin görüntü üretim modeli için kod adı.** Curify, bu modelin üstünde yer alan bir şablonlama katmanıdır. Her şablon, test edilmiş bir prompt yapısını kodlar — kompozisyon kuralları, stil tokenleri, aydınlatma dili, en boy oranı — böylece yalnızca içerik spesifik detayları sağlamanız gerekir:\n\n1. **Şablonları göz atın** — konuya göre düzenlenmiş (yaşam tarzı, fitness, yemek, öğrenme, tasarım, kelime bilgisi ve daha fazlası)\n2. **Bir şablon seçin** — her biri belirli bir görsel stil ve kullanım durumu için tasarlanmıştır\n3. **Parametreleri doldurun** — o şablona özgü kısa metin girdileri veya açılır menüler\n4. **Üretin** — Curify, girdilerinizi temel prompta doldurur ve görüntüyü üretmek için Nano Banana'yı çağırır\n\n**Şablonların pratikte nasıl göründüğü:**\n- Bir MBTI karakter illüstrasyonu şablonu şunları ister: kişilik tipi, karakter özellikleri, arka plan ayarı\n- Bir tarif kartı şablonu şunları ister: yemek adı, ana malzemeler, mutfak tarzı\n- Bir kelime bilgisi poster şablonu şunları ister: kelime kategorisi, dil seviyesi, görsel tema\n\n**Neden şablonlar boş promptlardan daha iyidir (tekrar iş için):**\nŞablonlar test edilmiş prompt yapılarını kodlar. Kompozisyon, stil tokenleri ve negatif promptlar zaten ayarlanmıştır — yalnızca içerik spesifik detayları sağlarsınız. Derin prompt mühendisliği bilgisi olmadan profesyonel görünümlü sonuçlar.\n\n**Mevcut kategoriler:**\n- Yaşam tarzı, fitness, sağlık\n- Yemek, tarifler, mutfak\n- Eğitim, kelime bilgisi, dil öğrenimi\n- Tasarım, illüstrasyon, posterler\n- Karakter sanatı, MBTI, kişilik\n- Suluboya, mürekkep, monokrom stiller\n\nHer şablon sayfasındaki ilham galerisi, diğer kullanıcılar tarafından üretilen gerçek örnekleri gösterir — bir şablonun ne ürettiğini anlamanın en hızlı yolu, kredileri taahhüt etmeden önce.",
+      "templatesTitle": "Örnek Parametre Setleri"
     }
   },
   "aeVsComfyUi": {
@@ -7763,6 +7443,14 @@
         "primary": "Nano Banana Karakter Oluşturucuyu Deneyin",
         "secondary": "Daha Fazla AI Aracı Keşfedin"
       }
+    },
+    "universes": {
+      "title": "12 Evren, Bir MBTI Sistemi",
+      "description": "Zaten bildiğiniz evreni seçin — Marvel, Naruto, Friends, Yellowstone, Ghibli — bir karakter adı yazın ve o şova uygun bir MBTI kişilik kartı alın. Bir karakter oluşturmanın en hızlı yolu, okuyucunun zaten tanıdığı bir karakterle başlamaktır."
+    },
+    "beyond": {
+      "title": "Tek Karakterlerin Ötesinde",
+      "description": "Tek bir karakterin ötesine geçen MBTI şablonları — iki türü yan yana karşılaştırın, ilişki dinamiklerini çizin, yaygın stereotipleri yıkın veya çoklu karakter ızgarası oluşturun. Sosyal, eğitim ve hayran içeriği için yüksek paylaşılabilir formatlar."
     }
   },
   "f5TtsVsElevenlabs": {
@@ -8080,7 +7768,6 @@
     "comparisonNote": "Bu karşılaştırma, Nisan 2026 itibarıyla ses klonlama teknolojisinin durumunu yansıtmaktadır. Yapay zekâ alanındaki hızlı gelişmeler, önümüzdeki aylarda tabloyu önemli ölçüde değiştirebilir."
   },
   "HowToDubVideosNaturally": {
-    "title": "2026'da Videoları Doğal Olarak Dublajlama: AI Ses Klonlama Artefaktlarını Düzeltme",
     "description": "AI araçlarıyla yaygın dublaj zorluklarını çözmek için kapsamlı bir rehber. Robotik tempo, duygu eksikliği ve dudak senkronizasyonu sorunları için pratik çözümler öğrenin.",
     "hero": {
       "title": "2026'da Videoları Doğal Olarak Dublajlama: AI Ses Klonlama Artefaktlarını Düzeltme",
@@ -8260,6 +7947,9 @@
     "conclusion": {
       "title": "Videolarınızı AI ile Dönüştürün",
       "description": "Bu gelişmiş teknikleri ve araçları birleştirerek, izleyicileri etkileyen doğal, duygusal olarak ilgi çekici dublajlı içerikler oluşturabilirsiniz. AI dublajının geleceği burada ve her zamankinden daha insani."
-    }
+    },
+    "title": "Robotik AI Dublajını Nasıl Düzeltirsiniz: Dudak Senkronizasyonu, Duygu ve Tempo 2026",
+    "metaDescription": "AI ile dublaj yapılmış videolar robotik mi geliyor? Doğru ses klonlama iş akışı ile dudak senkronizasyonu kaymasını, düz duyguyu ve doğal olmayan tempoyu adım adım düzeltin - 2026 yaratıcıları için.",
+    "seoKeywords": "robotik ai dublajını düzelt, ai ses klonlama artefaktları, dudak senkronizasyonu kayması düzeltme, ai dublaj eğitimi 2026, doğal ai dublaj, ses klonlama duygusu, video dublaj iş akışı"
   }
 }

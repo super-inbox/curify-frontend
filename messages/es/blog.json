@@ -681,7 +681,6 @@
       }
     ],
     "translateYoutubevideo": {
-      "title": "Cómo traducir videos de YouTube: guía completa paso a paso",
       "date": "4 de marzo de 2026",
       "readTime": "12 min de lectura",
       "intro": "Aprende a traducir videos de YouTube de manera efectiva utilizando herramientas y técnicas impulsadas por IA. Llega a audiencias globales haciendo que tu contenido sea accesible en múltiples idiomas.",
@@ -705,7 +704,8 @@
       "conclusionTitle": "Conclusión",
       "conclusionContent": "La traducción de videos de YouTube es esencial para creadores de contenido globales. Con las herramientas y el enfoque adecuados, puedes llegar efectivamente a audiencias en todo el mundo.",
       "seoKeywords": "cómo traducir video de youtube, traducir videos de youtube, traductor de video AI, traducción de video de youtube, traducción de subtítulos de video, contenido de video multilingüe, doblaje de video de youtube, estrategia de video global, traductor de video Curify",
-      "metaDescription": "Aprende a traducir videos de YouTube con herramientas de IA. La guía paso a paso cubre la traducción de videos, subtítulos, doblaje y las mejores herramientas para alcanzar audiencias globales con tu contenido."
+      "title": "Cómo Traducir Videos de YouTube en 2026 (Subtítulos, Doblaje, Voz en Off)",
+      "metaDescription": "Tres formas de traducir tus videos de YouTube en 2026: subtítulos, doblaje con IA, voz en off completa, con las mejores herramientas para cada uno y configuración paso a paso."
     },
     "translateYoutubeVideoToEnglish": {
       "title": "Traducir videos de YouTube al inglés: soluciones impulsadas por IA",
@@ -739,7 +739,6 @@
       "step5Content": "La etapa final sincroniza el audio generado con el video original utilizando técnicas de visión por computadora. Nuestro sistema analiza puntos de referencia faciales y movimientos de la boca para asegurar una alineación audio-visual perfecta dentro de una tolerancia de 50 ms.\n\n**Detalles de Implementación en Python:**\n```python\n# Alineación de sincronización labial usando visión por computadora\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# Inicializar malla facial para detección de puntos de referencia\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# Extraer puntos de referencia de la boca de los fotogramas de video\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # Puntos de referencia de la boca\n        mouth_landmarks.append(mouth_points)\n\n# Sincronizar audio con señales visuales\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# Generar video final sincronizado\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\nEl sistema de sincronización utiliza algoritmos de alineación temporal dinámica para emparejar patrones de habla con movimientos de la boca, creando contenido doblado sin costuras que mantiene la integridad visual del video original."
     },
     "aiYoutubeVideoTranslator": {
-      "title": "Traductor de videos de YouTube por IA: mejores herramientas y métodos 2026",
       "date": "4 de marzo de 2026",
       "readTime": "11 min de lectura",
       "intro": "Explora los mejores traductores de videos de YouTube por IA y métodos disponibles en 2026. Compara características, precios y efectividad para elegir la solución adecuada para tus necesidades.",
@@ -763,7 +762,8 @@
       "conclusionTitle": "Conclusión",
       "conclusionContent": "Los traductores de video de YouTube AI han revolucionado la localización de contenido, haciéndola accesible para creadores de todos los tamaños.",
       "seoKeywords": "traducir video de youtube con IA, traductor de video de youtube AI, traducir videos de youtube automáticamente, traducción de video AI, doblaje de video de youtube AI, traductor AI multilingüe, traducción de video con inteligencia artificial, traductor AI Curify",
-      "metaDescription": "Aprende cómo funcionan las herramientas de traducción de video de youtube con IA. Descubre los mejores traductores de video de youtube AI, métodos paso a paso y cómo alcanzar automáticamente audiencias globales con inteligencia artificial."
+      "title": "Traducción de Videos de YouTube con IA: Mejores Herramientas, Métodos y Resultados 2026",
+      "metaDescription": "Traduce videos de YouTube con IA en 2026: compara las mejores herramientas, ve qué métodos alcanzan audiencias globales y aprende qué realmente ofrece resultados para los creadores."
     },
     "whatIsVoiceCloning": {
       "title": "¿Qué es la Clonación de Voz? Entendiendo la Tecnología de Voz AI",
@@ -787,10 +787,9 @@
       "conclusionTitle": "Conclusión",
       "conclusionContent": "La tecnología de clonación de voz está transformando la creación de contenido mientras requiere un uso responsable y consideraciones éticas.",
       "seoKeywords": "qué es la clonación de voz, clonación de voz f5-tts, clonación de voz profesional de elevenlabs, clonación de voz AI, tecnología de voz sintética, ética de la clonación de voz, generador de voz AI, texto a voz AI, síntesis de voz neural, clonación de voz Curify, sistemas de voz AI éticos",
-      "metaDescription": "¿Qué es la clonación de voz en 2026? Aprende cómo funcionan la clonación de voz F5-TTS y ElevenLabs, sus casos de uso en flujos de trabajo de audio AI y cómo Curify integra la clonación de voz en pipelines de doblaje de video."
+      "metaDescription": "¿Qué es realmente la clonación de voz? Aprende cómo la IA como F5-TTS y ElevenLabs crean voces sintéticas y qué causa el audio robótico y desafinado que sigues escuchando."
     },
     "voiceCloningTools": {
-      "title": "Mejores Herramientas de Clonación de Voz: F5-TTS, ElevenLabs y Más",
       "date": "4 de marzo de 2026",
       "readTime": "8 min de lectura",
       "intro": "Compara las mejores herramientas de clonación de voz disponibles hoy. Descubre qué herramienta ofrece las características, calidad y precios que se ajustan a tus necesidades.",
@@ -810,8 +809,6 @@
       "ctaLink": "Prueba las Herramientas de Voz de Curify",
       "conclusionTitle": "Conclusión",
       "conclusionContent": "La herramienta de clonación de voz adecuada depende de tus necesidades específicas, presupuesto y consideraciones éticas.",
-      "seoKeywords": "herramientas de clonación de voz 2026, mejor software de clonación de voz AI, F5‑TTS vs ElevenLabs, clonación de voz Curify, comparación de síntesis de voz AI, TTS de código abierto, clonación de voz de cero disparos, benchmarks de síntesis de voz neural, herramientas de automatización de doblaje, localización de voz multilingüe",
-      "metaDescription": "Descubre las mejores herramientas de clonación de voz de 2026. Compara F5‑TTS, ElevenLabs y Curify en realismo, velocidad y cumplimiento para encontrar la solución ideal de clonación de voz y doblaje AI para tu flujo de trabajo.",
       "galleryTitle": "Construye tu galería de audio A/B de la manera correcta",
       "galleryContent": "Una galería de escucha creíble ayuda a los interesados a percibir los compromisos de un vistazo.\n- Captura de referencia: graba de 10 a 20 segundos de habla clara de tu propietario de voz por cada localidad objetivo; 48 kHz WAV; con tono de sala. Registra los artefactos de consentimiento junto a los archivos.\n- Tripletas por guion: para cada guion de prueba en cada localidad, genera tres archivos: Referencia (humano), F5-TTS cero-shot y TTS Comercial. Igualar el volumen (-16 LUFS para plataformas) antes de publicar.\n- Alojamiento y nombramiento: almacena masters sin pérdida y publica avances de 192 kbps AAC. Usa un esquema consistente como en_es_leccion1_ref.wav, en_es_leccion1_f5.wav, en_es_leccion1_com.wav.\n- Notas de escucha: mantén los comentarios específicos: explosiones (p, b), sibilantes (s, sh), piso de respiración/ruido y alineación de prosodia. Marca desajustes de tiempo que afectarán la sincronización labial.\n\nDos pautas rápidas: mantén las expresiones de prueba por debajo de 30 segundos para reducir el desvío; normaliza la puntuación y los números en todos los guiones para que las comparaciones de WER sean manzanas con manzanas.",
       "PipelineTitle": "Integración para YouTube, TikTok y pipelines educativos",
@@ -823,10 +820,12 @@
       "TemplateTitle": "Plantillas y listas de verificación que puedes copiar",
       "TemplateContent": "Criterios de lanzamiento (adapta según sea necesario):- Calidad: WER ≤ tu umbral por localidad; UTMOS (nivel del sistema) dentro de tu banda de aceptación; sin recortes audibles; los cierres labiales se alinean dentro de 2-3 fotogramas en tomas principales.- Latencia y costo: el RTF en estado estable cumple con tu SLA; costo/minuto dentro del presupuesto.\n- Cumplimiento: artefactos de consentimiento en archivo; divulgaciones aplicadas; registros de procedencia exportados para archivo. Entradas para un calculador de costo por minuto: \n- GPU $/hora (o API $/1M caracteres) - RTF medido y longitud promedio de clip \n- Suposiciones de palabras/minuto y caracteres/palabra por idioma \n- Nivel de concurrencia y volumen diario esperado Excerpto de rúbrica de QC (puntaje 1-5): inteligibilidad, coincidencia de timbre, prosodia, manejo de sibilantes/explosiones, alineación de tiempo, piso de ruido y naturalidad general. Mantén los comentarios accionables: “suavizar ‘s’ en 00:07; reducir el ruido en un 10%” es mucho más útil que “suena robótico.”",
       "ReferencesTitle": "Referencias",
-      "ReferencesContent": "- Arquitectura y código: La documentación de los mantenedores en el [**repositorio de GitHub de SWivid/F5‑TTS**](https://github.com/SWivid/F5-TTS) (accedido en marzo de 2026) y el [**documento de F5‑TTS de OpenReview (2025)**](https://openreview.net/forum?id=JiX2DuTkeU) proporcionan la base para el TTS de coincidencia de flujo y clonación cero-shot.\n- Métodos de evaluación: La guía de [**seed‑tts‑eval de ByteDance (2025)**](https://github.com/BytedanceSpeech/seed-tts-eval); discusiones sobre la configuración de Whisper large‑v3 en [**el repositorio de Whisper (2025)**](https://github.com/openai/whisper/discussions/1762); puntuación tipo MOS a través de [**UTMOS (VoiceMOS 2022)**](https://github.com/sarulab-speech/UTMOS22).\n- Políticas de plataforma: audio multilingüe de YouTube y flujo de revisión en **Ayuda de Doblaje Automático (2026)**; expansión de doblaje automático expresivo descrita en [**el blog de YouTube (2026)**](https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/); requisitos de divulgación de IA resumidos en **la página de política de YouTube (2026)**; audio de pista única de TikTok documentado en [**la página de ayuda de sonidos (2026)**](https://support.tiktok.com/en/using-tiktok/creating-videos/sounds).\n- Cumplimiento: La postura de la FCC sobre voces de IA y llamadas automáticas en [**la Resolución Declarativa de 2024**](https://www.fcc.gov/document/fcc-declares-ai-generated-voices-robocalls-illegal).\n- Referencias de precios: Documentos de tarifas oficiales en [**Azure Speech (2026)**](https://azure.microsoft.com/en-us/pricing/details/speech/), [**AWS Polly (2026)**](https://aws.amazon.com/jp/polly/pricing/), [**API de ElevenLabs (2026)**](https://elevenlabs.io/pricing/api), y [**índice de precios de Google Cloud TTS**](https://cloud.google.com/text-to-speech/pricing)."
+      "ReferencesContent": "- Arquitectura y código: La documentación de los mantenedores en el [**repositorio de GitHub de SWivid/F5‑TTS**](https://github.com/SWivid/F5-TTS) (accedido en marzo de 2026) y el [**documento de F5‑TTS de OpenReview (2025)**](https://openreview.net/forum?id=JiX2DuTkeU) proporcionan la base para el TTS de coincidencia de flujo y clonación cero-shot.\n- Métodos de evaluación: La guía de [**seed‑tts‑eval de ByteDance (2025)**](https://github.com/BytedanceSpeech/seed-tts-eval); discusiones sobre la configuración de Whisper large‑v3 en [**el repositorio de Whisper (2025)**](https://github.com/openai/whisper/discussions/1762); puntuación tipo MOS a través de [**UTMOS (VoiceMOS 2022)**](https://github.com/sarulab-speech/UTMOS22).\n- Políticas de plataforma: audio multilingüe de YouTube y flujo de revisión en **Ayuda de Doblaje Automático (2026)**; expansión de doblaje automático expresivo descrita en [**el blog de YouTube (2026)**](https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/); requisitos de divulgación de IA resumidos en **la página de política de YouTube (2026)**; audio de pista única de TikTok documentado en [**la página de ayuda de sonidos (2026)**](https://support.tiktok.com/en/using-tiktok/creating-videos/sounds).\n- Cumplimiento: La postura de la FCC sobre voces de IA y llamadas automáticas en [**la Resolución Declarativa de 2024**](https://www.fcc.gov/document/fcc-declares-ai-generated-voices-robocalls-illegal).\n- Referencias de precios: Documentos de tarifas oficiales en [**Azure Speech (2026)**](https://azure.microsoft.com/en-us/pricing/details/speech/), [**AWS Polly (2026)**](https://aws.amazon.com/jp/polly/pricing/), [**API de ElevenLabs (2026)**](https://elevenlabs.io/pricing/api), y [**índice de precios de Google Cloud TTS**](https://cloud.google.com/text-to-speech/pricing).",
+      "title": "Mejores Herramientas de Clonación de Voz con IA 2026: F5-TTS vs ElevenLabs Probadas",
+      "seoKeywords": "mejores herramientas de clonación de voz 2026, f5-tts vs elevenlabs, comparación de clonación de voz con ia, revisión de openvoice, software de clonación de voz, generador de voz con ia, benchmarks de clonación de voz",
+      "metaDescription": "Comparados cara a cara: F5-TTS, ElevenLabs, OpenVoice y Curify en realismo, velocidad, idiomas y precio. Encuentra la herramienta de clonación de voz adecuada para tu flujo de trabajo."
     },
     "f5TtsVoiceCloning": {
-      "title": "Clonación de Voz F5-TTS: Soluciones Profesionales de Voz AI",
       "date": "4 de marzo de 2026",
       "readTime": "7 min de lectura",
       "intro": "Descubre la tecnología de clonación de voz F5-TTS y cómo permite soluciones profesionales de voz AI. Aprende sobre características, aplicaciones e implementación.",
@@ -846,8 +845,9 @@
       "ctaLink": "Prueba la Solución F5-TTS de Curify",
       "conclusionTitle": "Conclusión",
       "conclusionContent": "F5-TTS representa la vanguardia de la tecnología de clonación de voz, ofreciendo resultados de calidad profesional para aplicaciones exigentes.",
-      "seoKeywords": "clonación de voz F5‑TTS, TTS de código abierto, clonación de voz AI 2026, clonación de texto a voz, síntesis de voz ética, tutorial de F5‑TTS, pipeline de clonación de voz",
-      "metaDescription": "Aprende cómo funciona la clonación de voz F5‑TTS en 2026: desde muestras limpias y mensajes de texto hasta generación de voz AI ética y profesional. Guía completa con listas de verificación y casos de uso."
+      "title": "Revisión de Voz de IA F5-TTS: ¿Realmente Supera a ElevenLabs?",
+      "seoKeywords": "revisión de f5-tts, f5-tts vs elevenlabs, clonación de voz de código abierto, clonación de voz con ia gratuita, benchmark de f5-tts, comparación de tts neuronal, clonación de voz con ia 2026",
+      "metaDescription": "F5-TTS promete clonación de voz de calidad ElevenLabs de forma gratuita. Lo probamos cara a cara: aquí está si el contendiente de código abierto está listo para producción."
     },
     "aslVideoTranslator": {
       "title": "Traductor de Video ASL: Herramientas de Traducción de Lengua de Señas",
@@ -1110,79 +1110,71 @@
       "metaDescription": "Profundización técnica en la arquitectura de la tubería de transcripción de video AI. Guía completa sobre ASR, alineación forzada, diarización de hablantes y diseño de sistemas de producción para desarrolladores e ingenieros de IA."
     },
     "tenPromptingTipsNanoBanana": {
-      "title": "10 Consejos de Prompts para Nano Banana: Domina la Generación de Contenido AI",
-      "slug": "10-prompting-tips-nano-banana",
-      "metaDescription": "Domina el prompting de nano banana con 10 consejos de expertos. Aprende a crear prompts efectivos de AI para generación de contenido, imágenes y más con optimización de control de calidad.",
-      "date": "23 de marzo de 2026",
-      "readTime": "8 min de lectura",
-      "intro": "¿Listo para mejorar tus habilidades de prompting de nano banana? Estos 10 consejos de expertos—probados en más de 10k generaciones—te ayudarán a crear prompts de nano banana más efectivos que generen mejor contenido, imágenes y resultados. Hemos optimizado cada consejo con métricas de control de calidad (Q.C.) que muestran una mejora de 3.7x en la calidad de salida y un 47% más de compromiso.\n\nYa sea que estés creando composiciones visuales, construyendo flujos narrativos o ajustando las respuestas del modelo de AI, dominar el prompting de nano banana te brinda un control inigualable sobre el tono, la estructura y el rendimiento. Piensa en ello como ingeniería de precisión para salidas creativas—compactas, basadas en datos y altamente repetibles.\n\nCada técnica en esta guía está respaldada por una extensa experimentación y pruebas A/B, asegurando que lo que aprendas se traduzca en ganancias de rendimiento medibles. Descubrirás cómo pequeñas variaciones en los prompts pueden producir cambios importantes en coherencia, originalidad y compromiso—sin aumentar los costos de tokens o la complejidad.\n\nAl final, entenderás cómo diseñar prompts que no solo funcionen sino que escalen—desbloqueando resultados consistentes de calidad profesional en escritura, diseño y contextos de modelado generativo. Este es tu próximo paso para convertirte en un verdadero arquitecto de prompts de nano banana.",
-      "tip1Title": "1. Define la Identidad de Nano Banana",
-      "tip1Content": "**Comienza describiendo claramente qué es Nano Banana**. ¿Es una fruta futurista, un producto tecnológico o una receta única? Proporciona detalles como tamaño, apariencia, textura, sabor o funcionalidad para ayudar a la AI a entender sus atributos centrales. **Verificación de Q.C.**: ¿Tu prompt especifica claramente las características visuales y la identidad de la nano banana?\n\n**Ejemplo de Prompt**: \"Escribe una introducción de blog describiendo Nano Banana, una banana pequeña y genéticamente modificada con sabor a caramelo-vainilla, no más grande que tu dedo meñique.\"",
-      "tip2Title": "2. Destaca los Beneficios Clave",
-      "tip2Content": "**Identifica los principales beneficios o puntos de venta**. Ya sea conveniencia, valor nutricional, sostenibilidad o novedad, asegúrate de que estos puntos sean centrales en el contenido. **Verificación de Q.C.**: ¿Has enfatizado los beneficios clave que hacen que tu nano banana se destaque?\n\n**Ejemplo de Prompt**: \"Redacta una sección enfocada en el factor de conveniencia de Nano Banana para profesionales ocupados y niños en movimiento.\"",
-      "tip3Title": "3. Especifica el Público Objetivo",
-      "tip3Content": "**Define claramente para quién estás escribiendo**. Conocer los intereses, necesidades y lenguaje de tu audiencia ayuda a la AI a adaptar el tono y estilo del contenido de manera apropiada. **Verificación de Q.C.**: ¿Tu prompt especifica el público objetivo con suficiente detalle?\n\n**Ejemplo de Prompt**: \"Escribe un blog divertido y optimista sobre Nano Banana dirigido a millennials conscientes de la salud que aman los snacks únicos.\"",
-      "tip4Title": "4. Adopta un Tono y Estilo Consistentes",
-      "tip4Content": "**Define el tono y estilo de escritura deseados**. Ya sea conversacional, informativo, humorístico, persuasivo o creativo, guiar a la AI sobre la sensación general asegura consistencia. **Verificación de Q.C.**: ¿Has especificado el tono y estilo exactos para tu contenido?\n\n**Ejemplo de Prompt**: \"Escribe un blog en un tono ligero y ingenioso, mostrando el sorprendente sabor de Nano Banana.\"",
-      "tip5Title": "5. Inyecta Elementos Narrativos",
-      "tip5Content": "**Anima a la AI a incorporar narración**. Pide anécdotas, escenarios o casos de uso imaginativos que den vida a Nano Banana y hagan el contenido más atractivo. **Verificación de Q.C.**: ¿Tu prompt incluye elementos narrativos que hacen que el contenido sea relatable?\n\n**Ejemplo de Prompt**: \"Crea una apertura impulsada por la historia para el blog, imaginando un día con Nano Banana—desde el desayuno sobre la marcha hasta un impulso de energía a mediodía.\"",
-      "tip6Title": "6. Usa Metáforas y Analogías",
-      "tip6Content": "**Pide a la AI que use lenguaje creativo**. Comparar Nano Banana con cosas familiares ayuda a los lectores a visualizar y entender mejor sus cualidades únicas. **Verificación de Q.C.**: ¿Has incluido metáforas que mejoren la comprensión de conceptos abstractos?\n\n**Ejemplo de Prompt**: \"Sugiere metáforas comparando el sabor de Nano Banana con postres clásicos como crème brûlée o helado de vainilla.\"",
-      "tip7Title": "7. Incorpora Detalles Sensoriales",
-      "tip7Content": "**Pide descripciones sensoriales**—¿cómo se ve, huele, sabe, siente e incluso suena Nano Banana? Esto hace que el contenido sea más inmersivo y vívido. **Verificación de Q.C.**: ¿Tu prompt incluye detalles sensoriales que involucran múltiples sentidos?\n\n**Ejemplo de Prompt**: \"Describe la experiencia sensorial de comer una Nano Banana: el aroma al pelarla, el primer bocado, la textura y el sabor en tu lengua.\"",
-      "tip8Title": "8. Estructura para la Legibilidad",
-      "tip8Content": "**Descompón tu prompt en secciones lógicas**—introducción, puntos principales, beneficios, recetas/usos y conclusión. Esto ayuda a la AI a generar contenido bien organizado. **Verificación de Q.C.**: ¿Has proporcionado una estructura clara para la organización del contenido?\n\n**Ejemplo de Prompt**: \"Genera un esquema para un blog con estas secciones: Introducción, ¿Qué es Nano Banana?, Los 3 Principales Beneficios, Formas Creativas de Comer Nano Banana, Conclusión.\"",
-      "tip9Title": "9. Pide Variedad en los Tipos de Contenido",
-      "tip9Content": "**No te limites a publicaciones descriptivas estándar**. Pide diferentes formatos como listas, recetas, artículos de comparación o entrevistas ficticias. **Verificación de Q.C.**: ¿Tu prompt especifica formatos de contenido variados para mantener las cosas interesantes?\n\n**Ejemplo de Prompt**: \"Crea un blog en formato de lista: '5 Formas Inesperadas de Usar Nano Banana en Tus Comidas.'\"",
-      "tip10Title": "10. Refina e Itera",
-      "tip10Content": "**Trata la salida inicial de la AI como un borrador**. Usa prompts posteriores para refinar párrafos específicos, agregar detalles, cambiar el tono o fortalecer el llamado a la acción. **Verificación de Q.C.**: ¿Has establecido un proceso para la mejora iterativa?\n\n**Ejemplo de Prompt**: \"Reescribe la conclusión de la publicación generada para incluir un llamado a la acción más fuerte invitando a los lectores a probar Nano Banana.\"",
-      "toolsTitle": "Herramientas Esenciales para Prompts de Nano Banana",
-      "toolsContent": "**Kit de herramientas profesional para prompting de nano banana**:\n- **Biblioteca de Prompts**: Plantillas de prompts de nano banana preprobadas\n- **Verificador de Calidad**: Validación automática de Q.C.\n- **Rastreador de Rendimiento**: Monitorea las tasas de éxito de los prompts\n- **Optimizador SEO**: Herramientas de integración de palabras clave\n\nTodo lo que necesitas para un prompting profesional de nano banana.",
-      "curifyTitle": "Optimización de Prompts de Nano Banana de Curify",
-      "curifyContent": "Curify mejora tu prompting de nano banana con:\n- **Validación de Q.C. en tiempo real**\n- **Análisis de rendimiento**\n- **Pruebas A/B para prompts**\n- **Sugerencias de optimización SEO**\n\nTransforma buenos prompts en grandes con información basada en datos.",
-      "ctaText": "Comienza a Crear Mejores Prompts de Nano Banana",
-      "ctaLink": "Prueba las Herramientas de Prompts de Curify",
-      "conclusionTitle": "Domina el Prompting de Nano Banana Hoy",
-      "conclusionContent": "Al aplicar estos consejos de prompting, puedes aprovechar la AI de manera efectiva para crear contenido de alta calidad, atractivo y relevante centrado en el concepto único de \"Nano Banana\" para tu blog. Estos 10 consejos con optimización de Q.C. incorporada elevarán tu prompting de nano banana de básico a profesional. Recuerda: la intención clara, el enfoque estructurado y la mejora continua son claves para el éxito. Comienza a implementar estas estrategias hoy y observa cómo mejora drásticamente tu contenido generado por AI.",
-      "whyNanoBananaTitle": "¿Por qué Nano Banana? Aplicaciones del Mundo Real que Importan",
-      "whyNanoBananaContent": "**Nano Banana no es solo un ejercicio creativo—es un marco versátil que resuelve desafíos reales de creación de contenido en diversas industrias.** Este enfoque conceptual ha demostrado ser valioso porque combina especificidad con libertad creativa, haciéndolo ideal para entrenar modelos de IA y generar salidas consistentes y de alta calidad.\n\n **Aplicaciones del Mundo Real: El marco versátil de Nano Banana transforma la creación de contenido en marketing, comercio electrónico, educación e industrias creativas al proporcionar restricciones específicas que mejoran la creatividad mientras aseguran salidas consistentes y de alta calidad que reducen el tiempo de producción en un 60% y mejoran el compromiso en hasta un 47%. **\n\n**Marketing y Publicidad**\n- **Lanzamientos de productos**: Los prompts de Nano Banana ayudan a crear narrativas de marca consistentes en campañas\n- **Contenido en redes sociales**: Genera publicaciones atractivas con una voz y estilo visual unificados\n- **Email marketing**: Produce contenido personalizado que convierte a tasas 2.3 veces más altas\n- **Narración de marca**: Desarrolla narrativas cohesivas que resuenan con los demográficos objetivo\n\n**Comercio Electrónico y Retail**\n- **Descripciones de productos**: Crea descripciones detalladas y optimizadas para SEO que aumentan la conversión en un 34%\n- **Páginas de categoría**: Genera contenido integral que mejora la navegación del usuario y SEO\n- **Soporte al cliente**: Desarrolla documentación de ayuda y respuestas a preguntas frecuentes consistentes\n- **Recomendaciones personalizadas**: Adapta contenido basado en el comportamiento y preferencias del usuario\n\n**Educación y Capacitación**\n- **Creación de cursos**: Desarrolla contenido educativo estructurado con objetivos de aprendizaje claros\n- **Capacitación corporativa**: Genera materiales de incorporación y documentación de cumplimiento consistentes\n- **Módulos de e-learning**: Crea contenido interactivo que mejora el compromiso en un 47%\n- **Bases de conocimiento**: Construye documentación integral que reduce los tickets de soporte en un 28%\n\n**Industrias Creativas**\n- **Marketing de contenido**: Produce publicaciones de blog, artículos y piezas de liderazgo de pensamiento\n- **Guiones de video**: Genera narrativas atractivas para YouTube, TikTok y videos corporativos\n- **Briefs de diseño**: Crea especificaciones detalladas para equipos creativos y agencias\n- **Guías de marca**: Desarrolla guías de estilo y documentación de uso completas\n\n**Documentación Técnica**\n- **Documentación de API**: Genera guías técnicas claras y estructuradas para desarrolladores\n- **Manuales de usuario**: Crea instrucciones paso a paso con elementos visuales\n- **Notas de lanzamiento**: Produce comunicación consistente para actualizaciones de productos\n- **Documentos de cumplimiento**: Desarrolla contenido regulatorio y legal con la terminología adecuada\n\n **¿Por qué funciona mejor que los prompts genéricos?**\n\n**Marco de Especificidad**\nNano Banana proporciona restricciones concretas que realmente mejoran la creatividad:\n- **Parámetros definidos**: Tamaño, color, textura y función crean límites claros\n- **Anclajes sensoriales**: Detalles visuales y táctiles anclan conceptos abstractos\n- **Contexto emocional**: Elementos narrativos incorporados añaden relevancia humana\n- **Estructura escalable**: El marco se adapta desde descripciones simples hasta narrativas complejas\n\n**Beneficios de Control de Calidad**\n- **Salida consistente**: El mismo marco produce resultados unificados a través de diferentes modelos de IA\n- **Iteración más rápida**: Elementos predefinidos reducen el tiempo de ingeniería de prompts en un 60%\n- **Mejor colaboración**: Los equipos pueden compartir y refinar prompts utilizando un lenguaje común\n- **Resultados medibles**: Los controles de calidad incorporados proporcionan métricas objetivas de calidad\n\n**Ventajas Específicas de la Industria**\n\n**Para Equipos de Marketing**: Los prompts de Nano Banana reducen el tiempo de creación de contenido de horas a minutos mientras mantienen la consistencia de la voz de la marca en todos los canales.\n\n**Para Comercio Electrónico**: Las descripciones de productos generadas con el marco de Nano Banana muestran tasas de conversión un 34% más altas y un rendimiento SEO 2.1 veces mejor.\n\n**Para Educación**: Los materiales de capacitación creados utilizando este enfoque demuestran un 47% más de compromiso y un 28% mejor retención del conocimiento.\n\n**Para Agencias Creativas**: Los entregables para clientes se vuelven más consistentes, reduciendo los ciclos de revisión en un 40% y mejorando las puntuaciones de satisfacción del cliente.\n\nEl poder del marco radica en su equilibrio: lo suficientemente específico para asegurar consistencia, lo suficientemente flexible para permitir creatividad y lo suficientemente estructurado para escalar entre equipos y proyectos.",
-      "templatesTitle": "Ejemplos de Plantillas de Prompts",
-      "faq1Question": "¿Qué es la sincronización de Nano Banana?",
-      "faq1Answer": "La sincronización de Nano Banana es un marco especializado para crear prompts efectivos de IA que combina especificidad con libertad creativa. Utiliza el concepto de un 'nano banana' como metáfora para la ingeniería de prompts precisa, compacta y altamente repetible que entrega contenido generado por IA consistente y de alta calidad.",
-      "faq2Question": "¿Cómo funciona el Control de Calidad (C.C.) en la sincronización de Nano Banana?",
-      "faq2Answer": "El Control de Calidad en la sincronización de Nano Banana implica verificaciones de validación integradas en cada paso de la creación de prompts. Cada consejo incluye verificaciones de C.C. que aseguran que tus prompts cumplan con criterios específicos de claridad, especificidad y efectividad. Este enfoque sistemático ha demostrado entregar una mejora de 3.7x en la calidad de salida y un 47% más de compromiso.",
-      "faq3Question": "¿Puedo usar la sincronización de Nano Banana para cualquier modelo de IA?",
-      "faq3Answer": "¡Sí! La sincronización de Nano Banana es agnóstica al modelo y funciona en diferentes plataformas de IA, incluyendo GPT-4, Claude, Gemini y otros. El marco se centra en la estructura y especificidad del prompt en lugar de características específicas del modelo, lo que lo hace altamente versátil y escalable en diferentes sistemas de IA.",
-      "faq4Question": "¿Qué industrias se benefician más de la sincronización de Nano Banana?",
-      "faq4Answer": "La sincronización de Nano Banana ha demostrado ser valiosa en marketing, comercio electrónico, educación, industrias creativas y documentación técnica. Las empresas que utilizan este enfoque informan una creación de contenido un 60% más rápida, tasas de conversión un 34% más altas y una consistencia de marca significativamente mejorada en todos los tipos de contenido.",
-      "faq5Question": "¿Cuánto tiempo se tarda en dominar la sincronización de Nano Banana?",
-      "faq5Answer": "La mayoría de los usuarios ven mejoras inmediatas dentro de sus primeros 10-15 prompts utilizando estas técnicas. El dominio completo generalmente toma de 2 a 3 semanas de práctica constante, pero el proceso de refinamiento iterativo (Consejo #10) te ayuda a mejorar continuamente tus habilidades de prompting con el tiempo.",
-      "tip1ExampleTitle": "Consejo 1: Define la Identidad de Nano Banana - Ejemplo de Prompt",
-      "tip1Example": "Describe Nano Banana como una fruta tropical diseñada biotecnológicamente que mide solo 2 cm de largo, brillando débilmente en dorado bajo la luz, con un rico sabor caramelizado que sabe a una mezcla de pudín de plátano y crème brûlée.",
-      "tip1PromptTitle": "Consejo 1: Define la Identidad de Nano Banana",
+      "title": "Cómo Escribir Prompts para Nano Banana: 10 Consejos para Creadores",
+      "slug": "10-consejos-de-prompting-nano-banana",
+      "metaDescription": "10 consejos prácticos para escribir prompts para Nano Banana de Google (generación de imágenes Gemini): enmarcado del sujeto, iluminación, lenguaje de lentes, composición, color, relación de aspecto, prompts negativos y el flujo de edición conversacional de múltiples turnos.",
+      "date": "15 de mayo de 2026",
+      "readTime": "9 min de lectura",
       "author": "Curify Studio",
       "baseUrl": "https://curify-ai.com/blog/",
-      "nanoBananaProPromptsUrl": "http://localhost:3000/nano-banana-pro-prompts",
-      "templatesSectionTitle": "Ejemplos de Plantillas de Prompts",
-      "storytellingTemplateTitle": "Consejo 5: Elementos de Narración",
-      "storytellingTemplateContent": "Crea una narrativa de Nano Banana con:\n\nEstructura de la Historia:\n- Personaje: [descripción del protagonista]\n- Configuración: [entorno/contexto]\n- Conflicto: [desafío/problema]\n- Viaje: [proceso/transformación]\n- Resolución: [resultado/solución]\n- Tema: [mensaje central]\n\nElementos Narrativos:\n- Historia de fondo: [historia/motivación del personaje]\n- Detalles sensoriales: [descripciones visuales/auditivas/táctiles]\n- Arco emocional: [progresión de sentimientos]\n- Diálogo: [interacciones/discurso del personaje]\n- Simbolismo: [elementos metafóricos]\n- Ritmo: [tempos de tensión y liberación]\n\nDesarrollo de Personajes:\n- Protagonista: [perfil del personaje principal]\n- Personajes secundarios: [roles secundarios]\n- Arco del personaje: [viaje de transformación]\n- Relaciones: [dinámicas interpersonales]\n- Motivaciones: [fuerzas impulsoras]\n- Defectos/Fortalezas: [complejidad del personaje]\n\nDetalles de la Configuración:\n- Período de tiempo: [histórico/futuro/fantasía]\n- Ubicación: [entorno específico]\n- Atmósfera: [estado de ánimo y sentimiento]\n- Construcción del mundo: [contexto y reglas]\n- Entorno sensorial: [sonidos, olores, texturas]\n\nMarco de la Trama:\n\"[Gancho de apertura que presenta a [personaje] en [configuración] enfrentando [conflicto]. A través de [eventos del viaje], descubren [elemento de Nano Banana] que conduce a [resolución]. La historia explora [tema] mientras mantiene [tono] y [ritmo].\"",
-      "identityTemplateContent": "Crea una descripción detallada de la identidad de Nano Banana que incluya:\n- Contexto de origen (biotecnología, agricultura alienígena, marca artesanal)\n- Cualidades funcionales (auto maduración, vitaminas, características especiales)\n- Especificaciones visuales (proporciones de tamaño, detalles de forma, gradientes de color)\n- Propiedades materiales (textura, acabado, perfil de aroma)\n- Significado simbólico o metafórico\n\nVerificación de C.C.: ¿Alguien visualizaría inmediatamente Nano Banana sin una imagen?\n\n**Plantilla Básica**:\n\"Describe Nano Banana como una fruta tropical [diseñada biotecnológicamente/cultivada biotecnológicamente/cultivada alienígenamente/creada artesanalmente] que mide [especificación de tamaño], con [descripción de color] y [detalles de textura] y [perfil de aroma]. Su [característica única] la hace [beneficio principal].\"",
-      "storytellingTemplateDisplay": "<strong>Crea una narrativa de Nano Banana con:</strong>\n\n<strong>Estructura de la Historia:</strong>\n- <strong>Personaje:</strong> [descripción del protagonista]\n- <strong>Configuración:</strong> [entorno/contexto]\n- <strong>Conflicto:</strong> [desafío/problema]\n- <strong>Viaje:</strong> [proceso/transformación]\n- <strong>Resolución:</strong> [resultado/solución]\n- <strong>Tema:</strong> [mensaje central]\n\n<strong>Elementos Narrativos:</strong>\n- <strong>Historia de fondo:</strong> [historia/motivación del personaje]\n- <strong>Detalles sensoriales:</strong> [descripciones visuales/auditivas/táctiles]\n- <strong>Arco emocional:</strong> [progresión de sentimientos]\n- <strong>Diálogo:</strong> [interacciones/discurso del personaje]\n- <strong>Simbolismo:</strong> [elementos metafóricos]\n- <strong>Ritmo:</strong> [tempos de tensión y liberación]\n\n<strong>Desarrollo de Personajes:</strong>\n- <strong>Protagonista:</strong> [perfil del personaje principal]\n- <strong>Personajes secundarios:</strong> [roles secundarios]\n- <strong>Arco del personaje:</strong> [viaje de transformación]\n- <strong>Relaciones:</strong> [dinámicas interpersonales]\n- <strong>Motivaciones:</strong> [fuerzas impulsoras]\n- <strong>Defectos/Fortalezas:</strong> [complejidad del personaje]\n\n<strong>Detalles de la Configuración:</strong>\n- <strong>Período de tiempo:</strong> [histórico/futuro/fantasía]\n- <strong>Ubicación:</strong> [entorno específico]\n- <strong>Atmósfera:</strong> [estado de ánimo y sentimiento]\n- <strong>Construcción del mundo:</strong> [contexto y reglas]\n- <strong>Entorno sensorial:</strong> [sonidos, olores, texturas]\n\n<strong>Marco de la Trama:</strong>\n\"[Gancho de apertura que presenta a [personaje] en [configuración] enfrentando [conflicto]. A través de [eventos del viaje], descubren [elemento de Nano Banana] que conduce a [resolución]. La historia explora [tema] mientras mantiene [tono] y [ritmo].\"",
-      "identityTemplateDisplay": "<strong>Crea una descripción detallada de la identidad de Nano Banana que incluya:</strong>\n- <strong>Contexto de origen</strong> (biotecnología, agricultura alienígena, marca artesanal)\n- <strong>Cualidades funcionales</strong> (auto maduración, vitaminas, características especiales)\n- <strong>Especificaciones visuales</strong> (proporciones de tamaño, detalles de forma, gradientes de color)\n- <strong>Propiedades materiales</strong> (textura, acabado, perfil de aroma)\n- <strong>Significado simbólico o metafórico</strong>\n\n<strong>Verificación de C.C.:</strong> ¿Alguien visualizaría inmediatamente Nano Banana sin una imagen?\n\n<strong>Plantilla Básica:</strong>\n\"Describe Nano Banana como una fruta tropical [diseñada biotecnológicamente/cultivada biotecnológicamente/cultivada alienígenamente/creada artesanalmente] que mide [especificación de tamaño], con [descripción de color] y [detalles de textura] y [perfil de aroma]. Su [característica única] la hace [beneficio principal].\"",
-      "tip2Example": "En cualquier página de plantilla, encuentra un ejemplo en la galería de inspiración cuya composición te guste. Haz clic en \"Remix this.\" Verás los valores de parámetros exactos que produjeron esa imagen. Ahora cambia solo los parámetros específicos del sujeto (nombre, tema, palabra) mientras mantienes todo lo demás igual. Genera — obtendrás la misma calidad con tu contenido.",
-      "tip3Example": "Plantilla: tarjeta de receta. Débil: \"plato de pasta, italiano, cremoso\". Fuerte: \"tagliatelle al tartufo — pasta de huevo hecha a mano con virutas de trufa negra, parmigiano y una salsa de mantequilla marrón, de Umbría, Italia\". La segunda versión le da al modelo suficiente especificidad para producir un resultado preciso y apetitoso.",
-      "tip4Example": "Si la identidad de tu marca utiliza un estilo de ilustración de tinta limpia, filtra las plantillas por la etiqueta de tema `ink`. Todas las plantillas en ese grupo producirán salidas de estilo de arte lineal, dando a tu serie de contenido un tratamiento visual consistente incluso a través de diferentes plantillas de sujeto.",
-      "tip5Example": "En una plantilla de cartel de vocabulario, intenta cambiar solo el parámetro de \"categoría de palabra\" de \"animales\" a \"herramientas de cocina\" sin cambiar nada más. Si el estilo de diseño se mantiene igual pero el sujeto cambia, ese parámetro es un parámetro de contenido puro. Si el diseño también cambia, está actuando como un parámetro de estilo también — algo útil de saber.",
-      "tip6Example": "Estás probando si \"acuarela\" o \"tinta\" produce mejores resultados para tus publicaciones educativas. Crea dos generaciones con todos los parámetros idénticos excepto el parámetro de estilo. Compara — ahora tienes datos claros sobre qué estilo se adapta mejor a tu contenido.",
-      "tip7Example": "Después de navegar por una plantilla de cartel de vocabulario, guarda los 3 ejemplos que encuentres más visualmente atractivos. Más tarde, cuando necesites crear una nueva publicación de vocabulario, abre tu Espacio de Trabajo, encuentra uno de esos ejemplos guardados, haz clic en su página de ejemplo y Remix para comenzar desde parámetros que ya sabes que funcionan.",
-      "tip8Example": "¿Buscas 6 ilustraciones de personajes MBTI para un artículo sobre tipos de personalidad? Verifica si existe una plantilla MBTI habilitada para lotes. Si es así, usa Descargar Paquete para obtener todos los tipos en un estilo coincidente al instante — no se necesitan créditos de generación.",
-      "tip9Example": "Para una lección sobre vocabulario del clima, usa una plantilla de cartel de vocabulario etiquetada `vocabulary` y `learning`. Establece el grupo de palabras en \"términos meteorológicos,\" el idioma objetivo en español y el idioma de origen en inglés. La plantilla produce un cartel visual de vocabulario con ilustraciones de cada término — listo para publicar o imprimir.",
-      "tip10Example": "Antes de generar un tema muy específico (por ejemplo, \"pan georgiano\" en una plantilla de comida), busca en los ejemplos existentes cualquier cocina de Europa del Este. Si la galería solo muestra comida occidental, esta plantilla podría no manejar tu tema tan bien — prueba con una generación antes de comprometerte a una serie completa."
+      "nanoBananaProPromptsUrl": "/nano-banana-pro-prompts",
+      "intro": "Nano Banana es el nombre en clave de Google para los modelos de generación de imágenes de Gemini — específicamente **gemini-2.5-flash-image** y **gemini-3-pro-image-preview**. La misma familia de modelos impulsa la generación de imágenes en Google AI Studio, la API de Gemini y aplicaciones de consumo construidas sobre ella, incluyendo Curify.\n\nNano Banana es especialmente fuerte en **refinamiento de múltiples turnos**: puedes fijar el sujeto e iterar sobre la iluminación, el estilo o la composición turno a turno. Eso cambia cómo lo prompts en comparación con Midjourney o DALL·E. Estos 10 consejos cubren el enmarcado del sujeto, el lenguaje de iluminación, el vocabulario de lentes, la composición, el color, la relación de aspecto, los prompts negativos y el flujo de edición conversacional que es el superpoder de Nano Banana. El último consejo muestra cómo acortar todo esto con una plantilla probada.",
+      "tip1Title": "1. Ancla el Sujeto Primero, Estilo Segundo",
+      "tip1Content": "**Comienza con el sustantivo, no con el modificador.** Un error común de principiantes es empezar con el estilo: *\"Foto cinematográfica de un...\"* — el modelo trata el sujeto como un detalle secundario. En su lugar, nombra el sujeto específicamente y luego describe cómo se representa.\n\nSeñales de sujeto concreto a incluir:\n- **Especie o rol**: \"un panda rojo\", \"un anciano monje tibetano\"\n- **Acción o pose**: \"de pie sobre un tronco cubierto de musgo\", \"en medio de un paso al amanecer\"\n- **Entorno**: \"en un bosque de rododendros del Himalaya\"\n- **Contacto visual / encuadre**: \"centrado, contacto visual con la cámara\"",
+      "tip1Example": "Un panda rojo de pie sobre un tronco cubierto de musgo en un bosque de rododendros del Himalaya, fotografiado en un estilo documental cinematográfico. Suave niebla de la mañana temprano flotando entre los árboles. El sujeto está centrado, completamente enfocado, con un suave contacto visual con la cámara.",
+      "tip1ExampleTitle": "Consejo 1 — Ejemplo de Prompt",
+      "tip1PromptTitle": "Prompt Anclado en el Sujeto",
+      "tip2Title": "2. Usa Lenguaje de Lentes y Cámaras",
+      "tip2Content": "**El vocabulario del fotógrafo pone al modelo en modo \"foto\"** y te da control directo sobre la profundidad, perspectiva e intimidad. Tokens útiles para memorizar:\n\n- **Longitud focal**: 24mm (amplio ambiental), 35mm (documental), 50mm (natural), 85mm (retrato), 135mm (comprimido), macro\n- **Profundidad**: profundidad de campo superficial, enfoque profundo, fondo bokeh\n- **Ángulo**: desde arriba (flat-lay), a nivel de los ojos, ángulo bajo (heroico), inclinación holandesa (inquietud)\n- **Formato**: disparado en Fujifilm Pro 400H, Kodak Portra 400, grano de película de 35mm",
+      "tip2Example": "Retrato en primer plano de un anciano monje tibetano en túnicas rojas, disparado con un lente de 85mm con profundidad de campo superficial. Suave luz de ventana desde la izquierda, caída suave en el lado derecho de la cara. El fondo se desvanece a un cálido bokeh. Fotografiado en Kodak Portra 400, grano de película sutil.",
+      "tip3Title": "3. Nombra Tu Iluminación",
+      "tip3Content": "**Las palabras de iluminación son el modificador de estilo de mayor apalancamiento en la generación de imágenes.** Dos prompts idénticos excepto por la línea de iluminación producirán resultados muy diferentes. Construye un vocabulario:\n\n- **Hora del día**: hora dorada, hora azul, mediodía duro, nublado, crepúsculo\n- **Calidad**: luz dura, luz suave difusa, luz moteada (a través de las hojas), alto contraste\n- **Dirección**: luz de contorno desde atrás, luz lateral desde la izquierda de la cámara, desde arriba (rayos divinos)\n- **Lenguaje de estudio**: softbox, luz principal, luz de relleno, iluminación Rembrandt, iluminación mariposa",
+      "tip3Example": "Retrato de estudio de un chef organizando ingredientes frescos en una encimera de mármol. Luz principal: un gran softbox desde la izquierda de la cámara, elevado a 45°. Relleno: sutil reflector blanco a la derecha. El fondo se desvanece a un carbón profundo. Brillante destello en los ojos.",
+      "tip4Title": "4. Elige un modificador de estilo — y comprométete",
+      "tip4Content": "**Superponer más de un estilo confunde el resultado.** \"Acuarela + fotorrealista + anime\" produce un desastre incoherente. Elige un solo estilo y adéntrate en su vocabulario:\n\n- **Fotografía cinematográfica**: anamórfico, con gradación de color, contraste fílmico\n- **Acuarela**: pinceladas sueltas, textura de papel, bordes suaves, sin contornos\n- **Editorial vintage**: revista de los años 70, tonos tierra apagados, grano\n- **Ilustración isométrica**: vectores limpios, ángulo de 30°, sombras suaves\n- **Anime con sombreado cel**: contornos audaces, regiones de color plano, brillo en el cabello\n- **Lavado de tinta**: trabajo de pincel, espacio negativo, monocromo más un color de acento",
+      "tip4Example": "Ilustración en acuarela de una terraza de café parisina al atardecer. Pinceladas sueltas, textura de papel visible, paleta de colores cálidos suaves de ámbar, rosa polvoriento y gris cálido. Sin contornos duros. Difuminados húmedos en el cielo.",
+      "tip5Title": "5. Compón deliberadamente",
+      "tip5Content": "**Dile a Nano Banana dónde se encuentra el sujeto en el encuadre.** Sin una instrucción de composición, obtendrás sujetos centrados por defecto cada vez. Frases útiles:\n\n- **Regla de tercios, sujeto en el tercio derecho**\n- **Centrado con espacio negativo arriba** (bueno para agregar texto)\n- **Líneas guía desde la esquina inferior izquierda a la superior derecha**\n- **Sujeto en la esquina inferior izquierda, el entorno llena el resto**\n- **Composición simétrica, sujeto centrado, elementos reflejados**",
+      "tip5Example": "Fotografía de paisaje amplio de un solo bote rojo en un tranquilo lago alpino. Regla de tercios: bote posicionado en el tercio inferior derecho. Montañas cubiertas de nieve llenan los dos tercios superiores. Reflejo perfecto en el agua. Espacio negativo en la esquina superior izquierda para una posible superposición de título.",
+      "tip6Title": "6. Especifica una paleta de colores",
+      "tip6Content": "**Nano Banana sigue la guía de color más precisamente que la mayoría de los modelos de imagen.** Tres enfoques:\n\n1. **Nombra una paleta**: \"tonos tierra apagados\", \"neón de alto contraste\", \"helado pastel\", \"azul corporativo + gris\"\n2. **Proporciona valores hexadecimales**: \"color dominante #c47957, acentos #a3b29b y #f4e9d6\"\n3. **Referencia una estética**: \"paleta de Wes Anderson\", \"guion de color 2D de Pixar temprano\"\n\nAgrega un negativo para lo que se debe suprimir: *\"sin azules sobresaturados, sin verdes neón.\"*",
+      "tip6Example": "Ilustración isométrica de una pequeña oficina flotando en una pequeña isla. Paleta de colores: terracota dominante (#c47957), acento de salvia suave (#a3b29b), fondos crema (#f4e9d6). Evitar: primarios sobresaturados, verdes neón, negro puro. Ángulo isométrico de 30°.",
+      "tip7Title": "7. Fija la relación de aspecto",
+      "tip7Content": "**No te fíes de los valores predeterminados.** Especifica la relación explícitamente para que la composición esté diseñada para la plataforma en la que publicarás:\n\n- **1:1** — Cuadrado de Instagram, feed de LinkedIn\n- **4:5** — Retrato de Instagram (la relación de IG con mayor compromiso)\n- **9:16** — TikTok, Reels, Shorts, Stories\n- **16:9** — Miniatura de YouTube, héroe del blog\n- **3:2 / 2:3** — Paisaje DSLR / Retrato de Pinterest\n- **A4 / 210x297** — Póster imprimible, infografía\n\nCuando tengas dudas, también indica al modelo *qué encaja dónde* en el marco — \"el sujeto ocupa los dos tercios inferiores, con espacio negativo del cielo arriba para el texto de la leyenda.\"",
+      "tip7Example": "Retrato vertical 9:16 de un barista preparando un espresso, con un remolino de espuma rosetta visible en la taza. Relación de aspecto estilo teléfono destinada a una portada de TikTok. El sujeto ocupa los dos tercios inferiores; el tercio superior es más oscuro, dejando espacio para un título de video.",
+      "tip8Title": "8. Usa Prompts Negativos de Manera Quirúrgica",
+      "tip8Content": "**Nano Banana maneja \"sin X\" / \"evitar X\" de manera natural.** Pero llenar de negativos genéricos (*\"baja calidad, mala anatomía, borroso\"*) es un hábito de culto a la carga de Midjourney y tiende a tener un rendimiento inferior. Apunta a los modos de falla específicos que sigues viendo:\n\n- Manos: *\"sin dedos extra, sin dedos fusionados, manos completamente visibles\"*\n- Texto: *\"sin texto ni marcas de agua, sin subtítulos superpuestos en la imagen\"*\n- Deriva de estilo: *\"sin estilo de caricatura, solo fotorealista\"*\n- Distorsión: *\"sin distorsión de ojo de pez, sin caras distorsionadas cerca del borde del marco\"*\n- Composición: *\"sin sujeto recortado en los ojos o la barbilla\"*",
+      "tip8Example": "Retrato fotorealista de un corredor de maratón en medio de una zancada al amanecer, con el horizonte de la ciudad borroso detrás. Evitar: desenfoque de movimiento en la cara, manos distorsionadas, ojos borrosos o asimétricos, superposiciones de texto suplementario, marcas de agua, distorsión de ojo de pez en los bordes del marco.",
+      "tip9Title": "9. Itera en Múltiples Turnos — La Función Asesina de Nano Banana",
+      "tip9Content": "**Esta es la mayor ventaja de Nano Banana sobre Midjourney.** Otros modelos te obligan a volver a pedir desde cero para cada variación. Gemini te permite decir *\"misma imagen, pero...\"* y mantener el sujeto bloqueado mientras cambias una dimensión.\n\nPatrones de iteración típicos:\n\n- **Bloquear sujeto, variar iluminación**: \"mismo personaje, cambia la iluminación a una mañana nublada en lugar de la hora dorada\"\n- **Bloquear estilo, variar escena**: \"mantén el estilo acuarela y el personaje, muévelos a una cabaña cubierta de nieve\"\n- **Bloquear todo, agregar un elemento**: \"misma imagen, agrega un gato negro sentado en el alféizar de la ventana\"\n- **Generar variantes**: \"tres variaciones de esta imagen, cada una con un color de fondo diferente\"\n\nNo intentes lograr todo en el turno 1. Esboza de manera amplia, luego refina.",
+      "tip9Example": "Turno 1 — Un samurái de pie en un bosque de bambú, estilo de tinta tradicional, monocromo con un solo acento rojo.\nTurno 2 — Misma imagen, pero cambia la hora del día a crepúsculo con una fuerte luz de contorno desde detrás del sujeto.\nTurno 3 — Misma imagen nuevamente, pero agrega un cuervo posado en una rama de bambú en la esquina superior derecha. Mantén el estilo de tinta y la iluminación del crepúsculo.\nTurno 4 — Genera tres variaciones de la imagen final, cada una con la postura del samurái ligeramente alterada.",
+      "tip10Title": "10. Usa una Plantilla Cuando el Mismo Prompt se Repite",
+      "tip10Content": "**Los consejos 2–8 son exactamente lo que una plantilla bien diseñada codifica.** Si estás generando arte único y deseas control creativo total, escribe el prompt a mano utilizando todo lo anterior. Pero si estás produciendo una *serie* — tarjetas de personajes a través de tipos MBTI, tarjetas de recetas a través de cocinas, carteles de vocabulario a través de temas — el lente, la iluminación, la paleta, la composición y la relación de aspecto deben estar fijos en el conjunto. Eso es lo que hacen las plantillas.\n\nLas [plantillas de Nano Banana] de Curify toman un esqueleto de prompt probado y exponen solo los parámetros específicos del contenido (sujeto, tema, par de idiomas, etc). El resultado es consistente a través de cientos de generaciones sin que tengas que volver a escribir la línea de iluminación cada vez.\n\nRegla general: **primera vez = escribe el prompt tú mismo.** **Segunda vez que uses la misma estructura de prompt = construye o encuentra una plantilla.**",
+      "tip10Example": "Si te encuentras reescribiendo indicaciones como *\"infografía en acuarela, paleta suave, relación de aspecto 4:5, sin contornos, {topic_name}\"* — eso es una plantilla. El {topic_name} es el único parámetro que debería cambiar entre generaciones. La galería de plantillas de Curify tiene docenas de estas para casos de uso comunes.",
+      "toolsTitle": "Dónde está disponible Nano Banana",
+      "toolsContent": "**Acceso directo**:\n- **Google AI Studio** (aistudio.google.com) — parque de juegos interactivo gratuito; mejor para exploraciones puntuales\n- **Gemini API** — acceso programático, pago por imagen (`gemini-2.5-flash-image` y `gemini-3-pro-image-preview`)\n- **Vertex AI** — nivel empresarial con implementación regional y controles de cumplimiento\n\n**Acceso envuelto** (UX optimizado para no ingenieros):\n- **Curify** — UX basada en plantillas sobre la API de imágenes de Gemini; tú llenas los parámetros del sujeto, Curify construye la indicación completa\n- **Aplicación Consumer Gemini** — generación de imágenes como parte de la experiencia general de chat de Gemini\n\nSi estás escribiendo indicaciones directamente (la audiencia de este artículo), Google AI Studio es el lugar más barato para iterar. Si estás produciendo una serie de imágenes consistentes, Curify es el camino de menor esfuerzo.",
+      "curifyTitle": "¿Quieres saltarte la escritura de indicaciones?",
+      "curifyContent": "Cada plantilla de Curify Nano Banana codifica decisiones de lente, iluminación, paleta, composición y relación de aspecto tomadas por alguien que ya siguió esta guía. Tú traes el sujeto, la plantilla trae todo lo demás. Útil cuando deseas consistencia a través de una serie — tarjetas de personajes, conjuntos de recetas, carteles de idiomas, ilustraciones MBTI.\n\nExplora algunos ejemplos en la galería para ver cómo lucen las indicaciones listas para producción cuando están integradas en una plantilla.",
+      "ctaText": "Ver plantillas de indicaciones listas para producción",
+      "ctaLink": "Explorar plantillas de Nano Banana",
+      "conclusionTitle": "El patrón que funciona",
+      "conclusionContent": "En cada indicación de Nano Banana que resulta bien, aparece la misma estructura:\n\n1. **Sujeto** (específico, nombrado) →\n2. **Acción / pose** →\n3. **Configuración** →\n4. **Tipo de lente / toma** →\n5. **Iluminación** →\n6. **Modificador de estilo** (uno) →\n7. **Paleta de colores** →\n8. **Relación de aspecto** →\n9. **Indicaciones negativas** (específicas, dirigidas) →\n10. **Iterar en múltiples turnos**\n\nMemoriza el orden. Una vez que sea un hábito, escribirás mejores indicaciones en 30 segundos que la mayoría de las personas en 5 minutos de ajustes.\n\nY cuando la misma estructura de indicación aparece dos veces — esa es tu señal para encontrar o construir una plantilla.",
+      "faq1Question": "¿Qué es exactamente Nano Banana?",
+      "faq1Answer": "Nano Banana es el nombre en clave de Google para la familia de modelos de generación de imágenes de Gemini, específicamente los puntos de control `gemini-2.5-flash-image` y `gemini-3-pro-image-preview`. Es el modelo que impulsa las funciones de imagen en Google AI Studio, la API de Gemini, la aplicación de consumo de Gemini y las plataformas construidas sobre ella, incluyendo Curify.",
+      "faq2Question": "¿En qué se diferencia Nano Banana de Midjourney o DALL·E?",
+      "faq2Answer": "Tres diferencias son las más importantes en la práctica: (1) **edición conversacional de múltiples turnos**: puedes bloquear el sujeto e iterar sobre la iluminación/estilo sin volver a solicitar desde cero, lo que es la mayor ventaja en el flujo de trabajo; (2) **renderizado de texto en imagen fuerte**: Nano Banana maneja carteles, señalización e infografías con texto legible mejor que la mayoría de los competidores; (3) **estricta adherencia a los prompts**: los cuerpos de cámara nombrados, los colores hexadecimales y las relaciones de aspecto suelen ser respetados.",
+      "faq3Question": "¿Funcionan realmente los prompts negativos con Nano Banana?",
+      "faq3Answer": "Sí, pero apunta a modos de fallo específicos que estás viendo en lugar de volcar negativos genéricos. \"Sin dedos extra, sin distorsión de ojo de pez en los bordes, sin superposición de texto\" funciona. \"Baja calidad, mala anatomía, borroso\" es principalmente ruido.",
+      "faq4Question": "¿Debería usar `gemini-2.5-flash-image` o `gemini-3-pro-image-preview`?",
+      "faq4Answer": "Flash para velocidad de iteración y generación masiva: es más rápido y más barato. Pro para imágenes de corte final donde necesitas el mejor detalle fino, especialmente para renderizado de texto, composiciones complejas o cualquier cosa que se imprimirá o usará como imagen principal. Un flujo de trabajo común es iterar en Flash, luego volver a ejecutar el prompt final en Pro para el que se conservará.",
+      "faq5Question": "¿Cuándo es mejor usar una plantilla que escribir un prompt directamente?",
+      "faq5Answer": "Siempre que produzcas más de ~3 imágenes con la misma estructura. Exploración creativa única: escribe el prompt a mano, sigue esta guía. Una serie de tarjetas de personajes a través de tipos MBTI, tarjetas de recetas a través de cocinas, carteles de vocabulario a través de temas: usa una plantilla para que la lente, la iluminación, la paleta y la composición estén fijas y solo cambie el parámetro de contenido.",
+      "whyNanoBananaTitle": "¿Qué es Nano Banana?",
+      "whyNanoBananaContent": "**Nano Banana es el nombre en clave de Google para los modelos de generación de imágenes de Gemini** — la misma familia que impulsa las funciones de imagen en Google AI Studio, la API de Gemini y las aplicaciones de consumidor de Gemini. Los dos puntos de control que típicamente verás:\n\n- **`gemini-2.5-flash-image`** — rápido, de menor costo, el caballo de batalla cotidiano\n- **`gemini-3-pro-image-preview`** — más lento, mayor fidelidad, mejor en detalles finos y renderizado de texto\n\n**Lo que hace a Nano Banana diferente de Midjourney / DALL·E:**\n- **Edición nativa de múltiples turnos.** Mantén el sujeto igual y cambia solo la iluminación / pose / fondo en el siguiente turno. Otros modelos generalmente te obligan a reescribir el aviso desde cero.\n- **Fuerte renderizado de texto.** Carteles, infografías y señalización con texto legible están al alcance.\n- **Fidelidad estricta al aviso.** Colores específicos, cuerpos de cámara nombrados y relaciones de aspecto suelen ser respetados.\n\n**Dónde encaja Curify:**\nCurify es una capa de plantillas sobre Nano Banana. Las plantillas preconfiguran la estructura del aviso (composición, tokens de estilo, reglas de espacio negativo) para que los no expertos obtengan resultados consistentes sin tener que escribir cada consejo a continuación desde cero. Este artículo es para cuando deseas escribir avisos directamente. Si prefieres avanzar, explora algunas de las [plantillas de Nano Banana] en la galería para ver cómo se ve un aviso bien elaborado en producción.",
+      "templatesTitle": "Plantillas que Demuestran Estos Consejos"
     },
     "tenPromptingTipsVideoGeneration": {
-      "title": "10 Consejos de Prompts para Generación de Video: Crea Videos AI Impresionantes",
       "slug": "10-prompting-tips-video-generation",
-      "metaDescription": "Domina la generación de videos AI con 10 consejos de prompting de expertos. Aprende a crear videos impresionantes utilizando herramientas de AI con optimización de control de calidad para resultados profesionales.",
       "date": "23 de marzo de 2026",
       "readTime": "9 min de lectura",
       "intro": "Crear videos AI increíbles va más allá de simples prompts de texto a video. Estos 10 consejos de expertos te ayudarán a dominar el prompting de generación de video, desde conceptos básicos hasta técnicas avanzadas. Cada consejo incluye optimización de control de calidad (Q.C.) para asegurar resultados profesionales cada vez.",
@@ -1421,10 +1413,12 @@
         "🎥 <strong>Técnicas Cinemáticas:</strong> Principios de dirección de video profesional",
         "🤖 <strong>Comparación de Modelos de IA:</strong> Elige la plataforma adecuada para tus necesidades",
         "💼 <strong>Aplicaciones Comerciales:</strong> Monetiza tus habilidades de video con IA"
-      ]
+      ],
+      "title": "10 Consejos de Prompts de Video con IA que Realmente Funcionan (Sora, Runway, Pika)",
+      "metaDescription": "10 técnicas de prompts probadas en Sora, Runway y Pika para dejar de generar videos aburridos con IA. Ejemplos reales de antes y después para creadores en 2026.",
+      "seoKeywords": "prompts de video con ia, prompts de sora, prompts de video de runway, prompts de video de pika, consejos de generación de video con ia, técnicas de prompts de video 2026, guía de creadores de video con ia"
     },
     "imageGenerationModelComparison": {
-      "title": "Comparación de Modelos de Generación de Imágenes: DALL-E 3 vs Midjourney vs Stable Diffusion",
       "date": "28 de marzo de 2026",
       "readTime": "15 min de lectura",
       "intro": "Elegir el modelo de generación de imágenes por IA adecuado puede hacer o deshacer tu flujo de trabajo creativo. En esta comparación integral, examinaremos tres modelos líderes—DALL-E 3, Midjourney y Stable Diffusion—con benchmarks de rendimiento detallados, ejemplos del mundo real y guías de implementación prácticas para ayudarte a tomar decisiones informadas para tus proyectos.",
@@ -1482,7 +1476,10 @@
       "batchProcessingTitle": "Procesamiento por Lotes",
       "batchProcessingContent": "Genera múltiples variaciones simultáneamente para una iteración más rápida",
       "technicalAdvancementsTitle": "Avances Técnicos",
-      "marketEvolutionTitle": "Evolución del Mercado"
+      "marketEvolutionTitle": "Evolución del Mercado",
+      "title": "Midjourney vs DALL-E 3 vs Stable Diffusion: La Guía Definitiva para Creadores 2026",
+      "metaDescription": "¿Qué modelo de imagen AI gana en 2026? Comparativas lado a lado de Midjourney vs DALL-E 3 vs Stable Diffusion en calidad, velocidad, costo y flujos de trabajo de creadores.",
+      "seoKeywords": "midjourney vs dall-e 3, comparación de stable diffusion, mejor generador de imágenes AI 2026, midjourney vs stable diffusion, benchmarks de generación de imágenes AI, comparación de herramientas de arte AI, herramientas AI para creadores"
     },
     "lipSyncBusinessGuide": {
       "title": "Guía de Sincronización Labial y Doblaje AI: Aplicaciones y Herramientas Empresariales",
@@ -1516,7 +1513,6 @@
       "metaDescription": "Guía completa sobre sincronización labial y doblaje AI para empresas. Compara herramientas como MuseTalk y Sync.co, aprende flujos de trabajo y descubre aplicaciones para marketing, capacitación y contenido global."
     },
     "lipSyncTechnicalDeepDive": {
-      "title": "Dentro del Pipeline de Sincronización Labial AI: MuseTalk, Sync.co y Arquitectura de Producción",
       "date": "29 de marzo de 2026",
       "readTime": "Lectura de 15 min",
       "intro": "Ve más allá de la superficie y explora la arquitectura técnica que impulsa los modernos sistemas de sincronización labial AI. Este profundo análisis examina la implementación de código abierto de MuseTalk, la API comercial de Sync.co y el diseño de pipeline de grado de producción para doblaje de video a escala empresarial.",
@@ -1544,236 +1540,8 @@
       "conclusionTitle": "El Futuro de la Tecnología de Sincronización de Labios con IA",
       "conclusionContent": "La tecnología de sincronización de labios con IA ha evolucionado de prototipos de investigación a sistemas listos para producción que pueden manejar flujos de trabajo a escala empresarial. La combinación de avances en GANs, modelos de difusión y algoritmos de consistencia temporal ha hecho posible generar contenido doblado realista a gran escala.\n\nPara los equipos técnicos, la clave es que la sincronización de labios ahora es un desafío de ingeniería resuelto en lugar de un problema de investigación. Las oportunidades restantes radican en la optimización, el manejo de casos extremos y la integración con flujos de trabajo de localización de contenido más amplios.\n\nA medida que estos sistemas continúan mejorando a través de mejores arquitecturas de modelos y conjuntos de datos de entrenamiento más grandes, nos estamos acercando a un futuro donde la sincronización de labios perfecta está disponible instantáneamente para cualquier tipo de contenido, permitiendo una comunicación de video verdaderamente global sin compromisos visuales.",
       "seoKeywords": "pipeline de sincronización de labios IA, tutorial musetalk, api sync.co, arquitectura de doblaje de video, animación facial IA, red neuronal de sincronización de labios, pipeline de procesamiento de video, gans sincronización de labios, modelos de difusión video",
-      "metaDescription": "Profundización técnica en la arquitectura del pipeline de sincronización de labios IA. Guía completa sobre MuseTalk, Sync.co, animación facial y diseño de sistemas de producción para desarrolladores e ingenieros de IA."
-    },
-    "characterPromptGenerator": {
-      "title": "Generador de Sugerencias de Personajes: Crea Personajes AI con Psicología y Personalidad",
-      "publishedDate": "",
-      "readTime": "8 mins",
-      "category": "herramientas-para-creadores",
-      "heroImageAlt": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
-      "whatWeHave": {
-        "title": "Lo Que Tenemos",
-        "description": "Un conjunto completo de herramientas de generación de personajes con profundidad psicológica y consistencia visual.",
-        "characterDesign": {
-          "title": "Herramientas de Diseño de Personajes",
-          "items": [
-            "Sistema de Personalidad MBTI - 16 tipos de personalidad con funciones cognitivas detalladas",
-            "Motor de Consistencia Visual - Mantiene la apariencia del personaje en diferentes escenarios",
-            "Integración Psicológica - Marcos psicológicos integrados para personajes auténticos",
-            "Soporte Multi-Estilo - Anime, realista, caricatura, acuarela y estilos artísticos personalizados"
-          ]
-        },
-        "interactiveScenarios": {
-          "title": "Escenarios Interactivos",
-          "items": [
-            "Plantillas para Redes Sociales - Formatos verticales optimizados para Instagram y TikTok",
-            "Escenas de Narración - Interacciones contextuales de personajes y estados emocionales",
-            "Perfiles Profesionales - Diseños y atributos de personajes enfocados en la carrera",
-            "Adaptaciones Culturales - Personajes adaptados a contextos culturales específicos"
-          ]
-        }
-      },
-      "whoCanBenefit": {
-        "title": "¿Quién Puede Beneficiarse de la Generación de Personajes?",
-        "writers": {
-          "title": "Escritores y Narradores",
-          "description": "Crea personajes psicológicamente consistentes que mantienen la personalidad en diferentes escenas narrativas y estados emocionales.",
-          "perfectFor": "Perfecto para:",
-          "items": [
-            "Escritura de novelas y desarrollo de personajes",
-            "Escritura de guiones y creación de diálogos",
-            "Ficción interactiva y narrativas de juegos",
-            "Narración de marcas y marketing de contenido"
-          ]
-        },
-        "artists": {
-          "title": "Artistas Digitales e Ilustradores",
-          "description": "Genera conceptos de personajes con rasgos de personalidad integrados que informan el diseño visual, las elecciones de color y la dirección artística.",
-          "perfectFor": "Perfecto para:",
-          "items": [
-            "Arte y diseño de conceptos de personajes",
-            "Trabajo por encargo y proyectos de clientes",
-            "Desarrollo de portafolios y exploración de estilos",
-            "Arte para redes sociales y creación de contenido"
-          ]
-        },
-        "gameDevelopers": {
-          "title": "Desarrolladores de Juegos",
-          "description": "Crea conceptos de personajes con profundidad psicológica que informan mecánicas de juego, elementos de historia e interacciones con los jugadores.",
-          "perfectFor": "Perfecto para:",
-          "items": [
-            "Sistemas de creación de personajes RPG",
-            "Diseño de juegos impulsado por la narrativa",
-            "Animación y expresión de personajes",
-            "Personalización de avatares de jugadores"
-          ]
-        },
-        "creators": {
-          "title": "Creadores de Contenido",
-          "description": "Desarrolla series de personajes consistentes que resuenen con las audiencias a través de contenido y narración impulsados por la personalidad auténtica.",
-          "perfectFor": "Perfecto para:",
-          "items": [
-            "Serie de personajes en redes sociales",
-            "Contenido educativo y tutoriales",
-            "Desarrollo de mascotas de marca",
-            "Experiencias interactivas y cuestionarios"
-          ]
-        }
-      },
-      "howToUse": {
-        "title": "Cómo Usar el Generador de Personajes",
-        "step1": {
-          "title": "Paso 1: Elige Tu Plantilla",
-          "description": "Selecciona de nuestra completa biblioteca de plantillas de generación de personajes diseñadas para diferentes casos de uso y estilos.",
-          "templates": {
-            "character": {
-              "name": "Perfil de Personaje",
-              "description": "Hojas de personaje completas con detalles de personalidad, apariencia y antecedentes.",
-              "parameters": "Tipo MBTI, edad, apariencia, vestimenta, historia de fondo"
-            },
-            "analysis": {
-              "name": "Análisis Psicológico",
-              "description": "Profundiza en la psicología del personaje con funciones cognitivas y patrones de comportamiento.",
-              "parameters": "Rasgos de personalidad, patrones emocionales, funciones cognitivas, motivaciones"
-            },
-            "comparison": {
-              "name": "Comparación de Personajes",
-              "description": "Comparaciones de personajes lado a lado que muestran diferencias de personalidad e interacciones.",
-              "parameters": "Múltiples personajes, dinámicas de relación, rasgos contrastantes"
-            },
-            "mbti": {
-              "name": "Tarjetas de Personaje MBTI",
-              "description": "Tarjetas verticales para redes sociales que presentan tipos de personalidad MBTI con representaciones visuales.",
-              "parameters": "16 tipos de personalidad, estilo visual, formato para redes sociales"
-            }
-          }
-        },
-        "step2": {
-          "title": "Paso 2: Personaliza la Personalidad",
-          "description": "Define el perfil psicológico de tu personaje, rasgos visuales e historia de fondo utilizando nuestra interfaz intuitiva.",
-          "options": [
-            {
-              "icon": "🧠",
-              "title": "Marco de Personalidad",
-              "description": "Elige tipo MBTI, temperamento y funciones cognitivas"
-            },
-            {
-              "icon": "🎨",
-              "title": "Diseño Visual",
-              "description": "Personaliza apariencia, vestimenta y estilo artístico"
-            },
-            {
-              "icon": "📚",
-              "title": "Historia de Fondo",
-              "description": "Agrega historia personal, relaciones y experiencias de vida"
-            },
-            {
-              "icon": "🎭",
-              "title": "Rango Emocional",
-              "description": "Define patrones emocionales y estilos de expresión"
-            }
-          ]
-        },
-        "step3": {
-          "title": "Paso 3: Generar y Refinar",
-          "description": "Genera tu personaje con IA y refina los resultados para lograr una perfecta consistencia psicológica y visual.",
-          "features": [
-            "Generación IA - Crea imágenes utilizando modelos de IA avanzados",
-            "Verificaciones de Consistencia - Asegura que la personalidad coincida con la representación visual",
-            "Herramientas de Variación - Genera múltiples versiones y expresiones",
-            "Opciones de Exportación - Descarga en varios formatos para diferentes usos"
-          ]
-        }
-      },
-      "advancedFeatures": {
-        "title": "Características Avanzadas",
-        "proTips": {
-          "title": "Consejos Profesionales",
-          "tips": [
-            "Usa paletas de colores consistentes basadas en rasgos de personalidad",
-            "Incluye estados emocionales específicos en tus indicaciones",
-            "Referencia la psicología del mundo real para un comportamiento auténtico del personaje",
-            "Crea familias de personajes con personalidades complementarias",
-            "Usa el contexto cultural para agregar profundidad y autenticidad"
-          ]
-        },
-        "integration": {
-          "title": "Posibilidades de Integración",
-          "possibilities": [
-            "Conéctate con generadores de arte IA como Midjourney y Stable Diffusion",
-            "Exporta a motores de desarrollo de juegos y software de animación",
-            "Integra con herramientas de gestión de redes sociales",
-            "Úsalo en plataformas educativas y sistemas de gestión de aprendizaje",
-            "Combina con software de escritura para el desarrollo de personajes"
-          ]
-        }
-      },
-      "realWorldApplications": {
-        "title": "Aplicaciones en el Mundo Real",
-        "novelWriting": {
-          "title": "Escritura de Novelas",
-          "quote": "El generador de personajes me ayudó a mantener personalidades consistentes a lo largo de más de 500 páginas. Mis personajes se sentían reales porque sus acciones siempre estaban alineadas con sus perfiles psicológicos.",
-          "attribution": "Sarah J., Autora de Fantasía"
-        },
-        "gameDevelopment": {
-          "title": "Desarrollo de Juegos",
-          "quote": "Usamos el generador de personajes para crear todo nuestro elenco. La profundidad psicológica hizo que los NPCs se sintieran como personas reales, no solo dispensadores de misiones.",
-          "attribution": "Mike R., Estudio de Juegos Indie"
-        },
-        "cosplay": {
-          "title": "Diseño de Cosplay",
-          "quote": "Como cosplayer, necesito entender a los personajes en profundidad. Esta herramienta me ayuda a analizar los rasgos de personalidad que influyen en las elecciones de vestuario y en las poses.",
-          "attribution": "Alex T., Cosplayer Profesional"
-        }
-      },
-      "callToAction": {
-        "title": "Comienza a Crear Tus Personajes Hoy",
-        "description": "Únete a miles de creadores que utilizan el generador de prompts de personajes de Curify para dar vida a personajes psicológicamente ricos.",
-        "readyTitle": "¿Listo para Crear Personajes Increíbles?",
-        "readyDescription": "Comienza con nuestras plantillas gratuitas y desbloquea todo el potencial del diseño de personajes asistido por IA.",
-        "buttonText": "Empieza Ahora"
-      },
-      "footer": {
-        "tags": [
-          "Diseño de Personajes IA",
-          "Personalidad MBTI",
-          "Psicología del Personaje",
-          "Generación de Arte IA",
-          "Escritura Creativa",
-          "Desarrollo de Juegos",
-          "Contenido para Redes Sociales",
-          "Narración Visual"
-        ],
-        "questions": "¿Tienes preguntas sobre la generación de personajes? Contacta a nuestro equipo de soporte para asistencia personalizada."
-      },
-      "description": "Descubre cómo crear personajes IA atractivos utilizando el generador de prompts de personajes de Curify. Desde tipos de personalidad MBTI hasta perfiles de personajes detallados, aprende el arte del diseño de personajes para arte IA y narración.",
-      "intro": "El diseño de personajes ha evolucionado de descripciones simples a perfiles psicológicos sofisticados que dan vida a personajes generados por IA. El generador de prompts de personajes de Curify ofrece un conjunto integral de herramientas para crear personajes con profundidad, personalidad y consistencia visual. Esta guía explora cómo puedes aprovechar estas plantillas para crear personajes atractivos para narración, contenido en redes sociales y proyectos creativos.",
-      "whatIsTitle": "¿Qué es el Generador de Prompts de Personajes?",
-      "whatIsContent": "El generador de prompts de personajes es una herramienta de IA especializada que crea descripciones detalladas de personajes con profundidad psicológica, rasgos visuales y perfiles de personalidad. A diferencia de los creadores de personajes genéricos, integra marcos psicológicos establecidos como MBTI (Indicador de Tipo Myers-Briggs) con dirección artística para producir personajes que se sienten auténticos y visualmente atractivos.\n\nEl generador produce prompts que incluyen análisis de personalidad, funciones cognitivas, estados emocionales y características visuales, todo formateado para una generación óptima de imágenes IA. Este enfoque asegura que tus personajes no solo se vean bien, sino que también se comporten de manera coherente en diferentes escenarios y contextos.",
-      "whyTitle": "Por Qué la Psicología del Personaje Importa en el Arte IA",
-      "whyContent": "**Consistencia Visual**: Los personajes con rasgos psicológicos definidos mantienen consistencia visual en diferentes poses, expresiones y escenarios. Cuando conoces la personalidad central de un personaje, sus expresiones faciales, lenguaje corporal e incluso elecciones de color se vuelven más coherentes.\n\n**Profundidad Narrativa**: Los personajes impulsados por la psicología permiten una narración más rica. Un personaje INFP se expresará de manera diferente a un personaje ESTJ, creando interacciones narrativas auténticas y arcos emocionales.\n\n**Conexión con la Audiencia**: Los espectadores se conectan más profundamente con personajes que se sienten psicológicamente reales. Los rasgos de personalidad bien definidos hacen que los personajes sean identificables y memorables, esenciales para el contenido en redes sociales y la narración de marcas.\n\n**Dirección Creativa**: La psicología proporciona un marco para decisiones creativas. Desde paletas de colores hasta elecciones de vestuario, los rasgos de personalidad guían cada aspecto del diseño de personajes, asegurando una estética unificada e intencionada.",
-      "howTitle": "Cómo Usar las Plantillas del Generador de Personajes",
-      "step1Title": "Paso 1: Elige Tu Marco de Personaje",
-      "step1Content": "Comienza seleccionando el marco psicológico que mejor se adapte a tu proyecto:\n\n**Tarjetas de Personaje MBTI**: Perfectas para contenido impulsado por la personalidad, estas plantillas crean tarjetas de personaje verticales en 4K con análisis de personalidad detallado, funciones cognitivas y diseño visual. Ideales para contenido en redes sociales y narración basada en la personalidad.\n\n**Dossieres de Personajes**: Perfiles de personajes completos con secciones configurables para relaciones, elementos clave e historias de fondo. Geniales para el desarrollo detallado de personajes y proyectos de construcción de mundos.\n\n**Infografías de Personajes Superhéroes**: Mapea tipos de personalidad en arquetipos icónicos de superhéroes. Excelentes para contenido de estilo cómic y creación de personajes de marca.\n\n**Personajes de Estilo Cultural**: Crea personajes inspirados en estéticas culturales específicas como los estilos de Studio Ghibli, Naruto o Yellowstone. Perfectos para contenido temático cultural y compromiso con audiencias específicas.",
-      "step2Title": "Paso 2: Define Rasgos de Personalidad y Visuales",
-      "step2Content": "Utiliza el generador para especificar:\n\n**Personalidad Central**: Tipo MBTI, temperamento, funciones cognitivas, patrones emocionales\n**Características Visuales**: Edad, apariencia, estilo de ropa, preferencias de color\n**Elementos de Fondo**: Contexto cultural, profesión, historia personal\n**Estilo Artístico**: Anime, realista, caricatura, acuarela o influencias de artistas específicos\n\nEl generador traduce automáticamente estas entradas en prompts detallados que guían herramientas de generación de imágenes IA como Stable Diffusion, Midjourney o DALL-E.",
-      "step3Title": "Paso 3: Generar y Refinar",
-      "step3Content": "Genera las imágenes de tus personajes utilizando los prompts detallados, luego refina según los resultados:\n\n**Revisar Consistencia**: Verifica que los rasgos de personalidad se reflejen en los elementos visuales\n**Ajustar Detalles**: Ajusta expresiones, poses y elementos ambientales\n**Crear Variaciones**: Genera múltiples versiones para capturar diferentes aspectos de la personalidad del personaje\n**Construir Colecciones**: Crea familias o grupos de personajes con personalidades complementarias",
-      "templatesTitle": "Plantillas Populares del Generador de Personajes",
-      "templatesContent": "**Meme de Viaje de Primavera MBTI**: Crea memes de comparación verticales con personajes de animales adorables que representan diferentes tipos MBTI en escenarios de viaje. Perfecto para contenido viral en redes sociales.\n\n**Tablero de Desglose de Concepto de Personaje**: Hojas de personaje detalladas con capas de vestuario, expresiones, accesorios y anotaciones. Ideal para diseño profesional de personajes y proyectos de animación.\n\n**Tarjetas de Duelo de Estilo Tradicional**: Perfiles de personajes en pantalla dividida con composiciones que maximizan la tensión. Geniales para contenido competitivo y proyectos relacionados con juegos.\n\n**Ilustraciones de Grupo de Sanación**: 16 tipos MBTI como animales en interacciones cotidianas. Perfecto para contenido educativo y exploración de la personalidad.\n\n**Tarjetas de Personaje al Estilo NBA**: Diseños de personajes con temática deportiva que combinan tipos de personalidad con estéticas atléticas. Excelentes para contenido deportivo y creación de personajes de marca.",
-      "whoCanBenefitTitle": "¿Quién Puede Beneficiarse de la Generación de Personajes?",
-      "whoCanBenefitContent": "**Creadores de Contenido**: Los gerentes de redes sociales, YouTubers e influencers pueden crear series de personajes consistentes que resuenen con su audiencia. Los personajes impulsados por la psicología funcionan excepcionalmente bien en contenido educativo, narración y mensajes de marca.\n\n**Desarrolladores de Juegos**: Crea conceptos de personajes con rasgos de personalidad incorporados que informen la mecánica de juego y los elementos de la historia. La profundidad psicológica asegura que los personajes se sientan auténticos y atractivos.\n\n**Profesionales de Marketing**: Desarrolla mascotas de marca y personajes portavoces con personalidades que se alineen con los valores de la marca. La psicología de personajes consistente fortalece el reconocimiento de marca y la conexión emocional.\n\n**Educadores y Terapeutas**: Utiliza la generación de personajes para crear ejemplos identificables para enseñar conceptos psicológicos o escenarios terapéuticos. Las representaciones visuales de personajes hacen que los conceptos abstractos sean más accesibles.\n\n**Escritores y Narradores**: Visualiza personajes de historias con precisión psicológica. El generador ayuda a mantener la consistencia de los personajes a través de diferentes escenas narrativas y estados emocionales.",
-      "useCasesTitle": "Aplicaciones y Ejemplos del Mundo Real",
-      "useCasesContent": "**Series en Redes Sociales**: Crea series de personajes continuas donde cada episodio explora diferentes situaciones a través del lente de la psicología del personaje. El contenido basado en MBTI logra consistentemente altas tasas de participación en plataformas como Instagram, TikTok y YouTube.\n\n**Contenido Educativo**: Utiliza comparaciones de personajes para explicar conceptos psicológicos, diferencias de personalidad y dinámicas sociales. Los ejemplos visuales de personajes hacen que teorías psicológicas complejas sean accesibles y atractivas.\n\n**Narración de Marca**: Desarrolla narrativas de marca impulsadas por personajes que conecten con audiencias objetivo. Los personajes informados por la psicología crean lazos emocionales más fuertes y lealtad a la marca.\n\n**Contenido Interactivo**: Crea cuestionarios de personalidad y experiencias interactivas donde los usuarios descubren qué personaje coincide con su tipo de personalidad. Esto impulsa la participación y la compartibilidad.\n\n**Herramientas Terapéuticas**: Genera personajes para escenarios terapéuticos, ayudando a los clientes a visualizar y comprender diferentes estados emocionales y dinámicas interpersonales.",
-      "curifyTitle": "Sistema Avanzado de Generación de Personajes de Curify",
-      "curifyContent": "El generador de personajes de Curify representa la vanguardia del diseño de personajes asistido por IA, combinando experiencia psicológica con ingeniería de prompts avanzada. Nuestro sistema va más allá de la simple creación de personajes para ofrecer personajes psicológicamente coherentes con consistencia visual y profundidad narrativa.\n\n**Características Técnicas:**\n- **Integración Psicológica**: Marcos MBTI incorporados, análisis de funciones cognitivas y mapeo de rasgos de personalidad\n- **Motor de Consistencia Visual**: Asegura que los personajes mantengan su apariencia y personalidad en diferentes escenarios\n- **Soporte Multi-Estilo**: Genera personajes en anime, realista, caricatura, acuarela y estilos artísticos personalizados\n- **Adaptación Cultural**: Plantillas diseñadas para diferentes contextos culturales y preferencias estéticas\n- **Generación por Lotes**: Crea familias y grupos de personajes con personalidades complementarias\n\n**Aseguramiento de Calidad:**\nNuestro sistema incluye validación incorporada para consistencia psicológica, coherencia visual y compatibilidad narrativa. Cada personaje generado pasa por controles de calidad para asegurar que los rasgos de personalidad se reflejen correctamente en los elementos visuales y que los personajes permanezcan consistentes en diferentes contextos y escenarios.",
-      "ctaText": "¿Listo para crear personajes IA psicológicamente ricos?",
-      "ctaLink": "Explora el Generador de Personajes de Curify",
-      "conclusionTitle": "El Futuro del Diseño de Personajes",
-      "conclusionContent": "La generación de personajes ha evolucionado de descripciones visuales simples a perfiles psicológicos sofisticados que dan vida a personajes IA. La integración de marcos psicológicos establecidos con ingeniería avanzada de prompts IA permite a los creadores construir personajes con una profundidad y consistencia sin precedentes.\n\nA medida que las herramientas de IA continúan avanzando, la capacidad de crear personajes psicológicamente coherentes se volverá cada vez más valiosa para creadores de contenido, marketers, educadores y narradores. Los personajes que se sienten reales en niveles visuales y psicológicos crean conexiones más fuertes con la audiencia y contenido más atractivo.\n\nEl generador de prompts de personajes representa más que una herramienta: es un nuevo enfoque para el diseño de personajes que une psicología, arte y tecnología. Al comprender y aprovechar estas herramientas, los creadores pueden construir personajes que no solo se ven increíbles, sino que también se sienten auténticos, identificables y psicológicamente consistentes.",
-      "seoKeywords": "generador de prompts de personajes, diseño de personajes IA, creador de personajes MBTI, arte de personalidad IA, psicología del personaje, prompts de personajes IA, herramientas de diseño de personajes, generador IA MBTI, arte conceptual de personajes, generador de personalidad IA",
-      "metaDescription": "Guía completa del generador de prompts de personajes de Curify. Aprende a crear personajes IA con psicología MBTI, rasgos de personalidad y consistencia visual para redes sociales, narración y proyectos creativos."
+      "title": "Sincronización Labial con IA en Producción: Cómo Funcionan Realmente MuseTalk y Sync.co",
+      "metaDescription": "Dentro del pipeline de sincronización labial con IA: cómo MuseTalk y Sync.co manejan la animación facial, dónde fallan y qué se necesita para enviar sincronización labial a usuarios reales."
     },
     "visualLearningTools": {
       "title": "Herramientas de Aprendizaje Visual: Cómo Estudiantes, Padres y Maestros Pueden Transformar la Educación",
@@ -3951,349 +3719,6 @@
         "contactLink": "https://curify.ai/contact"
       }
     },
-    "mbtiCharacterGenerator": {
-      "title": "Generador de Personajes MBTI de Nano Banana: Crea Personajes Basados en Personalidades en Segundos",
-      "publishedDate": "16 de abril de 2026",
-      "readTime": "12 min de lectura",
-      "category": "Herramientas para Creadores",
-      "intro": {
-        "title": "¿Quieres convertir tipos de personalidad en personajes visualmente atractivos?",
-        "description1": "Con el generador de personajes MBTI de Nano Banana, puedes crear visuales de personajes estructurados y de alta calidad en segundos, sin necesidad de escribir prompts complejos desde cero.",
-        "description2": "En lugar de adivinar prompts, estás utilizando un sistema de creación de personajes diseñado para escalar.",
-        "example": {
-          "title": "Prueba un ejemplo:"
-        }
-      },
-      "whatIs": {
-        "title": "¿Qué es un Generador de Personajes MBTI de Nano Banana?",
-        "description1": "El generador MBTI de Nano Banana es un sistema de prompts de personajes basado en plantillas que transforma tipos de personalidad (como INFP, ESTJ) en personajes visuales ricos.",
-        "description2": "A diferencia de las herramientas de imagen AI tradicionales, esto no es solo \"escribe un prompt y espera lo mejor.\" En su lugar, te proporciona prompts estructurados, estilos visuales consistentes y resultados repetibles en diferentes personajes.",
-        "thinkOfItAs": "Piénsalo como un generador de prompts de personajes + sistema visual combinado.",
-        "thinkOfItAsDescription": "Esto asegura consistencia, mejor calidad visual y generación más rápida.",
-        "mbtiBasics": {
-          "title": "Las Cuatro Dimensiones MBTI",
-          "description": "Cada tipo de personalidad se define por preferencias en cuatro dimensiones clave:",
-          "dimensions": [
-            {
-              "letter": "E/I",
-              "title": "Extraversión/Introversión",
-              "description": "Cómo los personajes dirigen y reciben energía"
-            },
-            {
-              "letter": "S/N",
-              "title": "Sensación/Intuición",
-              "description": "Cómo los personajes reciben información"
-            },
-            {
-              "letter": "T/F",
-              "title": "Pensamiento/Sentimiento",
-              "description": "Cómo los personajes toman decisiones"
-            },
-            {
-              "letter": "J/P",
-              "title": "Juicio/Percepción",
-              "description": "Cómo los personajes se acercan al mundo exterior"
-            }
-          ]
-        }
-      },
-      "examples": {
-        "title": "Ejemplos: Convierte MBTI en Personajes",
-        "description": "Aquí hay algunas formas en que puedes usar MBTI para generar personajes:",
-        "nba": {
-          "title": "MBTI Ã Jugadores de NBA",
-          "description": "Ve cómo los tipos de personalidad se relacionan con jugadores icónicos como Kevin Durant:",
-          "intj": "estratégico, compuesto",
-          "esfp": "expresivo, enérgico"
-        },
-        "animals": {
-          "title": "MBTI Ã Animales",
-          "description": "Convierte tipos de personalidad en arquetipos animales:",
-          "infp": "ciervo gentil",
-          "estp": "tigre audaz"
-        },
-        "movies": {
-          "title": "MBTI Ã Personajes de Películas",
-          "description": "Relaciona la personalidad con la narración:",
-          "enfp": "protagonista carismático",
-          "istj": "estratega disciplinado"
-        },
-        "yellowstone": {
-          "title": "🏔️ Análisis de Personajes de Yellowstone",
-          "description": "Estos personajes psicológicamente complejos demuestran cómo se manifiestan los rasgos MBTI en personalidades atractivas:",
-          "beth": {
-            "type": "Beth Dutton - ENTJ",
-            "traits": "Estratega, asertiva, leal, comunicadora directa, líder natural",
-            "analysis": "La intensidad y agresividad estratégica de Beth se alinean perfectamente con los rasgos ENTJ. Su naturaleza decisiva y su capacidad para ganar respeto la convierten en un tipo Comandante clásico que prospera en entornos de alta presión."
-          },
-          "rip": {
-            "type": "Rip Wheeler - ISTP",
-            "traits": "Práctico, orientado a la acción, leal, observador, solucionador de problemas práctico",
-            "analysis": "La competencia silenciosa y las habilidades prácticas de Rip reflejan las características ISTP. Es el clásico Artesano que muestra en lugar de contar, prefiriendo la acción sobre las palabras y sobresaliendo en situaciones de crisis."
-          },
-          "kayce": {
-            "type": "Kayce Dutton - ISFP",
-            "traits": "Impulsado por valores, conflictuado, empático, conectado con la naturaleza, auténtico",
-            "analysis": "El conflicto interno y la sensibilidad moral de Kayce muestran rasgos ISFP. Como Aventurero, lucha entre valores personales y obligaciones familiares, creando una profundidad de carácter atractiva."
-          }
-        },
-        "mbtiFramework": {
-          "title": "📋 Marco de Desarrollo de Personajes MBTI",
-          "description": "Utiliza este enfoque estructurado para desarrollar cualquier personaje:",
-          "steps": [
-            "1. Identificar el tipo MBTI central",
-            "2. Definir rasgos de personalidad clave",
-            "3. Establecer motivaciones y conflictos",
-            "4. Crear patrones de comportamiento",
-            "5. Desarrollar estilo de diálogo",
-            "6. Añadir características visuales"
-          ]
-        }
-      },
-      "howItWorks": {
-        "title": "Cómo Funciona (Detrás de Escenas)",
-        "description": "El sistema Nano Banana utiliza plantillas de prompts estructurados en lugar de prompts en bruto.",
-        "behindTheScenes": "Cada personaje se genera en base a:",
-        "systemDescription": "Esto asegura consistencia, mejor calidad visual y generación más rápida. En lugar de adivinar prompts, estás utilizando un sistema de creación de personajes diseñado para escalar.",
-        "components": [
-          {
-            "icon": "ð§",
-            "title": "Entrada de personalidad",
-            "description": "tipo MBTI"
-          },
-          {
-            "icon": "ð",
-            "title": "Contexto del personaje",
-            "description": "NBA, animal, película, etc."
-          },
-          {
-            "icon": "ð¨",
-            "title": "Estilo visual + diseño",
-            "description": "Estéticas predefinidas"
-          },
-          {
-            "icon": " - ",
-            "title": "Lógica de aviso predefinida",
-            "description": "Generación estructurada"
-          }
-        ],
-        "ensures": {
-          "title": "Esto asegura:",
-          "items": [
-            "Consistencia - resultados predecibles",
-            "Mejor calidad visual - avisos optimizados",
-            "Generación más rápida - sin prueba y error"
-          ]
-        },
-        "conclusion": "En lugar de adivinar avisos, estás utilizando un sistema de creación de personajes diseñado para escalar."
-      },
-      "whyNotRegular": {
-        "title": "¿Por qué no usar solo un generador de imágenes AI regular?",
-        "description": "La mayoría de las herramientas como Midjourney o Stable Diffusion requieren avisos de prueba y error, ajuste manual y resultados inconsistentes. Con Nano Banana, los avisos están preestructurados, los resultados son predecibles y puedes generar variaciones rápidamente.",
-        "traditional": {
-          "title": "Herramientas Tradicionales",
-          "items": [
-            "Avisos de prueba y error",
-            "Ajuste manual",
-            "Resultados inconsistentes",
-            "Proceso de iteración que consume tiempo",
-            "Profundidad de carácter limitada"
-          ]
-        },
-        "nanoBanana": {
-          "title": "Nano Banana",
-          "items": [
-            "Los avisos están preestructurados",
-            "Los resultados son predecibles",
-            "Puedes generar variaciones rápidamente",
-            "Capacidad de prototipado rápido",
-            "Aplicación en múltiples escenarios"
-          ]
-        },
-        "conclusion": "Está más cerca de un sistema de producción, no solo de una herramienta creativa."
-      },
-      "useCases": {
-        "title": "Casos de Uso",
-        "description": "El generador de personajes MBTI es especialmente útil para:",
-        "socialMedia": {
-          "title": "Contenido para Redes Sociales",
-          "items": [
-            "Publicaciones basadas en personalidad",
-            "Contenido MBTI viral",
-            "Narración visual"
-          ]
-        },
-        "creative": {
-          "title": "Proyectos Creativos",
-          "items": [
-            "Ideación de personajes",
-            "Storyboard",
-            "Diseño de conceptos"
-          ]
-        },
-        "marketing": {
-          "title": "Marketing y Branding",
-          "items": [
-            "Visuales de segmentación de audiencia",
-            "Campañas basadas en personas",
-            "Campañas de personajes en redes sociales",
-            "Personajes para estrategia de contenido"
-          ]
-        },
-        "storytelling": {
-          "title": "📚 Narración y Escritura",
-          "items": [
-            "Desarrollo de personajes de novela",
-            "Consistencia de personajes en guiones",
-            "Personajes de RPG de mesa",
-            "Diseño de narrativas interactivas"
-          ]
-        },
-        "education": {
-          "title": "🎓 Educación y Capacitación",
-          "items": [
-            "Herramientas de enseñanza de psicología",
-            "Escenarios de aprendizaje basados en personajes",
-            "Ejemplos de capacitación en liderazgo",
-            "Talleres de comunicación"
-          ]
-        },
-        "gaming": {
-          "title": "🎮 Juegos y Entretenimiento",
-          "items": [
-            "Diseño de personajes para videojuegos",
-            "Narración interactiva",
-            "Habitantes de mundos virtuales",
-            "Personalización de avatares de jugador"
-          ]
-        }
-      },
-      "tryNow": {
-        "title": "Prueba el Generador de Personajes MBTI",
-        "description": "En lugar de escribir avisos desde cero, comienza con un sistema estructurado:",
-        "explore": {
-          "title": "Explora plantillas MBTI:"
-        },
-        "browse": {
-          "title": "Explora más avisos de Nano Banana:"
-        },
-        "yellowstoneExample": {
-          "title": "🏔️ Prueba la Generación de Personajes de Yellowstone",
-          "description": "Comienza con nuestro ejemplo más popular: Beth Dutton como ENTJ:",
-          "link": "https://www.curify-ai.com/nano-template/mbti-yellowstone/example/template-mbti-yellowstone-beth-dutton"
-        },
-        "customCreation": {
-          "title": "🎨 Crea Personajes MBTI Personalizados",
-          "description": "Crea tus propios personajes utilizando nuestro marco MBTI:",
-          "link": "https://www.curify-ai.com/nano-banana-pro-prompts"
-        },
-        "framework": {
-          "title": "📋 Marco de Personajes MBTI",
-          "description": "Accede a nuestro sistema completo de desarrollo de personajes:",
-          "link": "https://www.curify-ai.com/blog/ultimate-directory-of-nano-banana-prompts"
-        }
-      },
-      "customize": {
-        "title": "Bono: Personaliza tu propio personaje",
-        "description": "¿Quieres ir más allá del MBTI? Nano Banana también funciona como un generador de avisos de personajes donde puedes:",
-        "bonus": {
-          "title": "Bono: Personaliza tu propio personaje",
-          "description": "¿Quieres ir más allá del MBTI? Nano Banana también funciona como un generador de avisos de personajes donde puedes:",
-          "features": [
-            "Cambiar temas - deportes, animales, cultura",
-            "Ajustar mapeos de personalidad",
-            "Remixar plantillas en nuevos formatos"
-          ],
-          "conclusion": "Esto lo convierte en un creador de personajes flexible para creadores y marketers."
-        },
-        "personalityDepth": {
-          "title": "🧠 Capas de Personalidad",
-          "features": [
-            "Fundamento del tipo MBTI principal",
-            "Rasgos de personalidad secundarios",
-            "Defectos que generan conflicto",
-            "Arcos de potencial de crecimiento",
-            "Dinámicas de relación"
-          ]
-        },
-        "visualConsistency": {
-          "title": "🎨 Sistema Visual",
-          "features": [
-            "Apariencia en múltiples escenarios",
-            "Rango de expresión emocional",
-            "Opciones de progresión de edad",
-            "Adaptación de estilo",
-            "Variaciones de accesorios"
-          ]
-        },
-        "narrativeIntegration": {
-          "title": "📚 Integración de Historia",
-          "features": [
-            "Generación de antecedentes",
-            "Creación de patrones de diálogo",
-            "Modelado de toma de decisiones",
-            "Mapeo de relaciones",
-            "Desarrollo de arcos de personajes"
-          ]
-        }
-      },
-      "finalThoughts": {
-        "title": "Pensamientos Finales",
-        "description": "Si alguna vez has tenido problemas con avisos inconsistentes o resultados genéricos de AI, Nano Banana ofrece un enfoque diferente:",
-        "formula": "Avisos estructurados  personajes consistentes  contenido escalable",
-        "conclusion": "Ya sea que estés creando contenido MBTI, visuales de narración o activos de marketing, este sistema te ayuda a moverte más rápido  y producir mejores resultados.",
-        "keyInsight": "🎯 La Perspectiva Clave"
-      },
-      "relatedReads": {
-        "title": "Lecturas Relacionadas",
-        "items": [
-          "Guía del Generador de Avisos de Personajes (próximamente)",
-          "Automatización de Contenido AI con Plantillas",
-          "Cómo Generar 50 Publicaciones Sociales a partir de Una Idea"
-        ]
-      },
-      "faq": {
-        "title": "FAQ (para palabras clave de cola larga)",
-        "questions": [
-          {
-            "question": "¿Qué es un generador de avisos de personajes?",
-            "answer": "Un generador de avisos de personajes es un sistema que te ayuda a crear avisos estructurados para generar personajes AI consistentes."
-          },
-          {
-            "question": "¿Puedo usar MBTI para crear personajes?",
-            "answer": "Sí  MBTI proporciona un marco de personalidad que puede ser mapeado en rasgos de personajes visuales o narrativos."
-          },
-          {
-            "question": "¿Es Nano Banana adecuado para principiantes?",
-            "answer": "Sí  elimina la necesidad de escribir avisos complejos manualmente."
-          },
-          {
-            "question": "¿Cómo aseguro la consistencia de los personajes en diferentes escenas?",
-            "answer": "Utiliza hojas de personajes estructuradas que definan rasgos principales, patrones de comportamiento y características visuales. Los sistemas de IA como Nano Banana mantienen estos parámetros en todo el contenido generado."
-          },
-          {
-            "question": "¿Se pueden usar personajes MBTI para proyectos profesionales?",
-            "answer": "¡Sí! Los personajes MBTI se utilizan ampliamente en marketing, educación, juegos y creación de contenido. El marco proporciona profundidad psicológica con la que las audiencias se conectan a través de varios medios."
-          }
-        ]
-      },
-      "footer": {
-        "tags": [
-          "MBTI",
-          "Generador de Personajes",
-          "Personajes AI",
-          "Tipos de Personalidad",
-          "Nano Banana",
-          "Diseño de Personajes",
-          "Arte AI",
-          "Contenido para Redes Sociales",
-          "Narración Visual",
-          "Herramientas de Marketing",
-          "Herramientas para Creadores"
-        ],
-        "questions": "¿Tienes preguntas sobre la creación de personajes MBTI? Contacta a nuestro equipo de soporte para asistencia personalizada."
-      }
-    },
     "contentTaggingSystem": {
       "title": "De 4000 Imágenes a 50 Etiquetas Significativas: Construyendo un Descubrimiento de Contenido al Estilo Pinterest",
       "publishedDate": "16 de abril de 2026",
@@ -5695,11 +5120,9 @@
       "metaDescription": "Aprende a crear impresionantes collages de cuadrícula 3x3 y fondos de pantalla digitales utilizando prompts de Nano Banana. Domina los diseños de cuadrícula, estéticas estacionales y proporciones para fondos de pantalla digitales perfectos.",
       "date": "4 de mayo de 2026",
       "readTime": "12 min de lectura",
-      "intro": "Tu Consola de Búsqueda muestra que la consulta altamente específica \"collage de cuadrícula 3x3 de joven en bosque invernal\" generó 229 impresiones en solo 7 días, clasificándose en la posición 5.7. Además, \"fondo de pantalla digital\" tiene un volumen de búsqueda sólido de 480 con un KD muy alcanzable del 36%. Esta guía te muestra cómo capitalizar estos patrones de búsqueda exactos utilizando el sistema de prompts basado en cuadrícula de Nano Banana.",
       "whatIsTitle": "¿Qué es un Collage de Cuadrícula 3x3?",
       "whatIsContent": "Un collage de cuadrícula 3x3 es exactamente lo que suena: nueve imágenes dispuestas en una cuadrícula cuadrada perfecta (3 filas × 3 columnas). Este formato se ha vuelto increíblemente popular para fondos de pantalla digitales porque crea una historia visual cohesiva mientras maximiza el espacio en pantalla. A diferencia de las imágenes individuales, los collages de cuadrícula te permiten mostrar múltiples perspectivas, variaciones de color o narrativas progresivas dentro de una composición unificada.<br/><br/>La belleza de los diseños de cuadrícula radica en su precisión matemática y equilibrio visual. Cada celda se convierte en un lienzo para micro-expresiones, creando un rico tapiz que atrae a los espectadores más profundamente en la composición. Para fondos de pantalla móviles específicamente, el formato 3x3 se adapta maravillosamente a varios tamaños de pantalla mientras mantiene la armonía visual.",
       "whyTitle": "Por qué los Collages de Cuadrícula Dominan los Resultados de Búsqueda",
-      "whyContent": "Los datos de búsqueda revelan que los usuarios no solo buscan imágenes aleatorias de IA, sino que quieren control compositivo. El éxito de consultas como \"collage en cuadrícula 3x3 de una joven en un bosque invernal\" demuestra que los usuarios quieren:<br/><br/>• Diseños específicos (no solo imágenes individuales)<br/>• Estéticas estacionales (bosque invernal, vibras otoñales, playa de verano)<br/>• Consistencia en retratos (la misma persona/estilo en todas las celdas)<br/>• Optimización de fondos de pantalla (proporciones adecuadas para dispositivos)<br/><br/>Nano Banana sobresale en esto porque puedes forzar estructuras de cuadrícula exactas mientras mantienes la consistencia temática en todas las celdas. Esto es algo con lo que la mayoría de los generadores de imágenes de IA luchan sin una ingeniería de prompts extensa.",
       "nanoBananaTitle": "Método de Cuadrícula de Nano Banana: La Ventaja 3x3",
       "nanoBananaContent": "El sistema de plantillas de Nano Banana hace que los collages en cuadrícula sean increíblemente sencillos. En lugar de luchar con una ingeniería de prompts compleja para forzar diseños de cuadrícula, seleccionas una plantilla de cuadrícula y llenas los parámetros que controlan el contenido de cada celda.<br/><br/>Las principales ventajas:<br/>• Control preciso de la cuadrícula – No más esperar que la IA entienda \"cuadrícula 3x3\"<br/>• Estilo consistente – Todas las celdas comparten automáticamente la misma estética<br/>• Iteración fácil – Cambia un parámetro, regenera toda la cuadrícula<br/>• Temas estacionales – Soporte incorporado para variaciones de clima, iluminación y estado de ánimo<br/><br/>Esto elimina la mayor frustración con la generación de imágenes de IA tradicional: obtener resultados consistentes en múltiples imágenes.",
       "basicTemplateTitle": "Plantilla Básica de Cuadrícula 3x3",
@@ -5723,7 +5146,9 @@
       "conclusionContent": "Los datos son claros: los collages en cuadrícula 3x3 y los fondos de pantalla digitales representan una gran oportunidad. Tu clasificación existente de \"bosque invernal\" prueba que este enfoque funciona. Al dominar el sistema de cuadrícula de Nano Banana, puedes dominar las consultas de búsqueda estacionales mientras creas contenido visualmente impresionante que los usuarios realmente quieren guardar y compartir.",
       "ctaTitle": "¿Listo para Crear Collages en Cuadrícula?",
       "ctaDescription": "Accede a nuestra biblioteca completa de plantillas de cuadrícula con diseños 3x3 probados que clasifican y convierten.",
-      "ctaButton": "Explorar Plantillas de Cuadrícula"
+      "ctaButton": "Explorar Plantillas de Cuadrícula",
+      "intro": "Los collages en cuadrícula de 3x3 y los fondos de pantalla digitales son algunos de los visuales generados por IA más compartibles que puedes crear: coherentes, con apariencia editorial y fácilmente reconocibles. Esta guía explica las técnicas de prompting basadas en cuadrículas y te señala plantillas curadas para que puedas producir las tuyas en minutos.",
+      "whyContent": "Los collages en cuadrícula funcionan porque te dan control compositivo en lugar de una sola imagen aleatoria. Los collages generados por IA más exitosos comparten cuatro características:<br/><br/>• Diseños específicos (cuadrículas de 3x3, pares de antes/después, carteles multipanel — no solo imágenes individuales)<br/>• Estéticas estacionales (bosque invernal, vibras de otoño, playa de verano)<br/>• Consistencia en retratos (la misma persona o estilo en todas las celdas)<br/>• Optimización de fondos de pantalla (proporciones adecuadas para teléfonos y escritorios)<br/><br/>Nano Banana sobresale aquí porque puedes forzar estructuras de cuadrícula exactas mientras mantienes la consistencia temática en cada celda, un paso en el que la mayoría de los generadores de imágenes de IA generales tropiezan sin una ingeniería de prompting intensa."
     },
     "weirdScienceFactsClassroomEngagement": {
       "title": "Visualizando Datos Científicos Raros: Plantillas de Prompts de IA para la Participación en el Aula",
@@ -6165,6 +5590,261 @@
         "text": "Genera Looks de Moda con Nano Banana",
         "url": "https://www.curify-ai.com/tools"
       }
+    },
+    "characterPromptGenerator": {
+      "title": "Generador de Prompts de Personajes: 12+ Tarjetas MBTI del Universo + Personajes Personalizados",
+      "metaDescription": "Crea personajes desde cero con personalidad, nombre, edad, género, o reimagina un personaje conocido como una tarjeta de personalidad MBTI en tu universo favorito (Marvel, Breaking Bad, Naruto, Ghibli, Harry Potter, Friends y más).",
+      "publishedDate": "2026-05-12",
+      "readTime": "6 min de lectura",
+      "category": "Plantilla Nano",
+      "heroImageAlt": "Vista previa del generador de prompts de personajes",
+      "intro": "Ya sea que quieras diseñar un personaje completamente nuevo desde cero o reimaginar a alguien de tu programa favorito como una tarjeta de personalidad MBTI, Curify ofrece un conjunto enfocado de plantillas de personajes, cada una con un formulario de parámetros específico para que sepas exactamente qué llenar.",
+      "whatWeShip": {
+        "title": "Lo Que Ofrecemos",
+        "intro": "Todas las plantillas a continuación están disponibles en Curify con ejemplos seleccionados. Elige según el tipo de personaje que quieras construir:",
+        "buildFromScratch": {
+          "title": "Construir Desde Cero",
+          "description": "Ingresa personalidad, nombre, edad, género, arquetipo. Obtén un personaje pulido con retrato e identidad visual.",
+          "templates": [
+            {
+              "name": "Tarjeta de Personaje Personalizado",
+              "slug": "tarjeta-personaje-personalizado",
+              "params": "personalidad (MBTI), nombre, género, arquetipo"
+            },
+            {
+              "name": "Tarjeta de Perfil Kawaii",
+              "slug": "tarjeta-perfil-personaje-dibujos-animados-estilo-kawaii",
+              "params": "nombre, edad, género, arquetipo"
+            }
+          ]
+        },
+        "reimagineKnown": {
+          "title": "Reimaginar un Personaje Conocido",
+          "description": "Escribe un nombre de personaje de tu universo favorito. Obtén una tarjeta de análisis MBTI estilizada para ese programa.",
+          "templates": [
+            {
+              "name": "Marvel",
+              "slug": "mbti-marvel",
+              "params": "character_name (Hulk, Iron Man, …)"
+            },
+            {
+              "name": "Breaking Bad",
+              "slug": "mbti-breakingbad",
+              "params": "character_name (Walt, Saul, …)"
+            },
+            {
+              "name": "Harry Potter",
+              "slug": "harry-potter-mbti-infographic",
+              "params": "character_name"
+            },
+            {
+              "name": "Friends",
+              "slug": "friends-character-mbti",
+              "params": "nombre_personaje (Chandler, Ross, …)"
+            },
+            {
+              "name": "Naruto",
+              "slug": "mbti-naruto",
+              "params": "nombre_personaje"
+            },
+            {
+              "name": "Studio Ghibli",
+              "slug": "mbti-ghibli",
+              "params": "nombre_personaje"
+            },
+            {
+              "name": "NBA",
+              "slug": "mbti-nba",
+              "params": "nombre_jugador (Curry, KD, …)"
+            },
+            {
+              "name": "Yellowstone",
+              "slug": "mbti-yellowstone",
+              "params": "nombre_personaje"
+            },
+            {
+              "name": "Silicon Valley",
+              "slug": "mbti-siliconvalley",
+              "params": "nombre_personaje"
+            },
+            {
+              "name": "Clásico Chino",
+              "slug": "chinese-classic-character-mbti",
+              "params": "nombre_personaje (曹操, 林黛玉, …)"
+            },
+            {
+              "name": "Drama Zhenhuan",
+              "slug": "zhenhuan-mbti-character-analysis",
+              "params": ""
+            },
+            {
+              "name": "Princesa Perla",
+              "slug": "princess-pearl-mbti-character-card",
+              "params": ""
+            }
+          ]
+        },
+        "multiCharacter": {
+          "title": "Pósters de Múltiples Personajes",
+          "description": "Crea un collage de fandom con múltiples personajes de un mismo universo.",
+          "templates": [
+            {
+              "name": "Póster de Cuadrícula de Personajes de Fandom",
+              "slug": "fandom-character-grid-poster",
+              "params": "tema (por ejemplo, protagonistas de anime, grupo de chicos K-pop, leyendas de la NBA)"
+            },
+            {
+              "name": "Tarjeta de Contraste MBTI",
+              "slug": "mbti-contrast",
+              "params": "persona_a, persona_b, título_escena"
+            },
+            {
+              "name": "Reino Animal MBTI",
+              "slug": "mbti-animal",
+              "params": "escena"
+            }
+          ]
+        }
+      },
+      "howToUse": {
+        "title": "Cómo Usar",
+        "recipe1": {
+          "title": "Receta 1 — Crea un personaje desde cero",
+          "steps": [
+            "Abre la plantilla de Tarjeta de Personaje Personalizado o Tarjeta de Perfil Kawaii.",
+            "Completa la personalidad (MBTI), nombre, género, arquetipo (y edad para la tarjeta kawaii).",
+            "Haz clic en Generar. Refina el retrato o regenera variaciones hasta que la apariencia coincida con la personalidad."
+          ]
+        },
+        "recipe2": {
+          "title": "Receta 2 — Reimagina un personaje conocido",
+          "steps": [
+            "Elige el universo — Marvel, Breaking Bad, Harry Potter, Friends, Naruto, Ghibli, NBA, Yellowstone, Silicon Valley, clásico chino, Zhenhuan, Princesa Perla, o la variante del reino animal.",
+            "Escribe el nombre del personaje (por ejemplo, Hulk, Chuck McGill, Hermione, Chandler Bing, 曹操, Naruto).",
+            "Haz clic en Generar. Obtendrás una tarjeta de personalidad MBTI con tipo, rasgos y un estilo visual acorde a ese universo."
+          ]
+        },
+        "recipe3": {
+          "title": "Receta 3 — Crea un póster de múltiples personajes",
+          "steps": [
+            "Abre el Póster de Cuadrícula de Personajes de Fandom.",
+            "Escribe un tema — 'protagonistas de anime', 'grupo de chicos K-pop', 'leyendas clásicas de la NBA'.",
+            "Genera un póster unificado con iluminación y dirección de pose consistentes en todos los personajes."
+          ]
+        }
+      },
+      "whoCanBenefit": {
+        "title": "Quién Puede Beneficiarse",
+        "writers": {
+          "title": "Escritores & Narradores",
+          "description": "Usa la Tarjeta de Personaje Personalizado para diseñar miembros recurrentes del elenco con personalidad consistente antes de redactar. Usa la Tarjeta de Contraste MBTI para planificar rivalidades y dinámicas de diálogo."
+        },
+        "artists": {
+          "title": "Artistas Digitales & Ilustradores",
+          "description": "Crea hojas de referencia en la Tarjeta de Perfil Kawaii, o genera cuadrículas de personajes completas con el Póster de Cuadrícula de Fandom para inspiración de comisiones."
+        },
+        "gameDevelopers": {
+          "title": "Desarrolladores de Juegos",
+          "description": "La Tarjeta de Contraste MBTI y la Tarjeta de Personaje Personalizado ofrecen arquetipos de NPC con una lectura visual y de comportamiento coherente de un solo vistazo."
+        },
+        "creators": {
+          "title": "Creadores de Contenido",
+          "description": "Las tarjetas MBTI del universo (Marvel / Friends / NBA / Ghibli / Clásico Chino) están diseñadas para redes sociales verticales — introduce un nombre de personaje y publica."
+        }
+      },
+      "proTips": {
+        "title": "Consejos Profesionales",
+        "tips": [
+          "Combina la personalidad con la paleta de colores — los personajes coléricos funcionan en rojos cálidos, los melancólicos en azules profundos.",
+          "Para las tarjetas de personaje personalizadas, escribe la personalidad como 'MBTI + 1–2 rasgos' (por ejemplo, 'ENFP, optimista, inquieto'). Los prompts vagos producen retratos vagos.",
+          "Las plantillas de MBTI del universo funcionan mejor con nombres de personajes conocidos. Los nombres oscuros tienden a desviarse.",
+          "Si el tipo de MBTI generado no coincide con la lectura canónica de los fans, la tarjeta sigue siendo útil: produce una interpretación alternativa que vale la pena discutir.",
+          "Usa el cartel de la cuadrícula de fandom para contenido social compartible: las cuadrículas temáticas superan a las publicaciones de un solo personaje."
+        ]
+      },
+      "footer": {
+        "tags": [
+          "Diseño de Personajes AI",
+          "Tarjeta de Personaje MBTI",
+          "Generador de Personajes Personalizados",
+          "Test de Personalidad Marvel",
+          "MBTI de Breaking Bad",
+          "MBTI de Harry Potter",
+          "Cartel de Cuadrícula de Fandom",
+          "Perfil de Personaje Kawaii"
+        ],
+        "questions": "¿Tienes un universo que te gustaría agregar a la alineación de MBTI? Contáctanos y lo consideraremos para la próxima entrega de contenido."
+      }
+    },
+    "curifyNanoBananaTemplateTips": {
+      "title": "10 Consejos para Usar las Plantillas de Nano Banana de Curify",
+      "slug": "curify-nano-banana-template-tips",
+      "metaDescription": "Obtén resultados consistentemente mejores de las plantillas de Nano Banana de Curify. 10 consejos prácticos para elegir la plantilla adecuada, llenar bien los parámetros, usar la galería de inspiración e iterar con Remix.",
+      "date": "15 de mayo de 2026",
+      "readTime": "7 min de lectura",
+      "author": "Curify Studio",
+      "baseUrl": "https://curify-ai.com/blog/",
+      "nanoBananaProPromptsUrl": "/",
+      "intro": "La galería de plantillas Nano Banana de Curify está construida sobre el modelo de generación de imágenes Gemini de Google (nombre en clave **Nano Banana**). En lugar de escribir indicaciones desde cero — consulta [Cómo Escribir Indicaciones para Nano Banana] para eso — eliges una plantilla, llenas algunos parámetros y Curify construye la indicación completa por ti.\n\nPero aún hay un verdadero arte en *cuál* plantilla eliges y *cómo* llenas sus parámetros. Estos 10 consejos te muestran cómo obtener resultados consistentemente mejores — desde tarjetas de personajes MBTI hasta infografías de recetas y carteles de vocabulario.",
+      "tip1Title": "1. Navega por la Galería de Inspiración Antes de Generar",
+      "tip1Content": "**El mayor error que cometen los nuevos usuarios es generar antes de mirar ejemplos.** Cada plantilla tiene una galería de inspiración que muestra resultados reales de esa plantilla. Dedica 2 minutos a desplazarte por ella antes de escribir un solo parámetro.\n\nQué buscar:\n- **Consistencia**: ¿Tienen las imágenes un estilo unificado? Eso te dice que la plantilla es confiable.\n- **Variedad**: ¿Qué tan diferentes son los resultados entre sí? Esto te muestra cuánta libertad creativa tienen tus parámetros.\n- **Casos extremos**: ¿Hay ejemplos inusualmente buenos o malos? Nota qué elecciones de parámetros llevaron a eso.\n\nLa galería también es la forma más rápida de calibrar tus expectativas — algunas plantillas producen ilustraciones muy detalladas, otras son más diagramáticas. Saber con qué estás trabajando te ahorra generaciones desperdiciadas.",
+      "tip1Example": "Antes de generar tu primera imagen con una nueva plantilla, haz clic en al menos 8–10 ejemplos en la galería. Nota un ejemplo que te gustaría recrear y uno que te gustaría evitar — luego verifica sus parámetros con \"Remix this\" para entender por qué resultaron así.",
+      "tip1ExampleTitle": "Consejo 1: Flujo de Trabajo Primero en la Galería",
+      "tip1PromptTitle": "Consejo 1: Navega Antes de Generar",
+      "tip2Title": "2. Usa \"Remix This\" para Comenzar Desde un Ejemplo Funcional",
+      "tip2Content": "**Cada ejemplo en la galería tiene un botón \"Remix this\" que carga sus parámetros exactos en el formulario de generación.** Este es el camino de incorporación más rápido para cualquier plantilla — en lugar de adivinar qué llenar, comienzas desde valores de parámetros que ya produjeron un buen resultado.\n\nCómo usarlo bien:\n- Encuentra un ejemplo cuyo estilo o composición te guste\n- Haz clic en \"Remix this\" para cargar sus parámetros\n- Cambia solo los valores específicos del contenido (el sujeto, nombre, tema, etc.) mientras mantienes los estructurales\n- Genera — obtendrás un resultado en el mismo estilo visual pero con tu contenido\n\nEsta técnica es especialmente útil cuando una plantilla tiene muchos parámetros y no estás seguro de cuáles controlan el estilo visual frente al contenido.",
+      "tip2Example": "En cualquier página de plantilla, encuentra un ejemplo en la galería de inspiración cuya composición te guste. Haz clic en \"Remix this.\" Verás los valores exactos de los parámetros que produjeron esa imagen. Ahora cambia solo los parámetros específicos del sujeto (nombre, tema, palabra) mientras mantienes todo lo demás igual. Genera — obtendrás la misma calidad con tu contenido.",
+      "tip3Title": "3. Sé Específico en Tus Valores de Parámetros",
+      "tip3Content": "**Las entradas vagas producen resultados genéricos.** La plantilla maneja la estructura y el estilo; tus parámetros son lo que hace que la imagen se sienta original y precisa.\n\n**Valores de parámetros débiles vs. fuertes:**\n- Débil: \"perro\" → Fuerte: \"shiba inu con pelaje crema, expresión alerta, sentado erguido\"\n- Débil: \"comida\" → Fuerte: \"fideos soba en caldo de miso oscuro, adornados con cebollín y sésamo\"\n- Débil: \"fitness\" → Fuerte: \"carrera matutina por sendero al amanecer, paisaje montañoso\"\n\n**Por qué la especificidad importa:**\nLos modelos de imagen de IA responden a un lenguaje visual concreto. Palabras abstractas o de nivel de categoría le dan al modelo demasiada libertad, lo que a menudo significa que recurre a composiciones genéricas. Adjetivos, contextos y detalles específicos restringen la salida de maneras útiles.\n\n**Una prueba útil:** Lee tus valores de parámetros en voz alta y pregunta: ¿podría un ilustrador dibujar exactamente esto? Si la respuesta es no, añade más detalles.",
+      "tip3Example": "Plantilla: tarjeta de receta. Débil: \"plato de pasta, italiano, cremoso\". Fuerte: \"tagliatelle al tartufo — pasta de huevo hecha a mano con virutas de trufa negra, parmigiano y una salsa de mantequilla marrón, de Umbría, Italia\". La segunda versión le da al modelo suficiente especificidad para producir un resultado preciso y apetitoso.",
+      "tip4Title": "4. Alinea los Temas de la Plantilla con Tu Estilo Visual",
+      "tip4Content": "**Las plantillas están etiquetadas con temas de estilo visual; úsalas como un filtro, no solo para categorías de contenido.** Etiquetas como `acuarela`, `tinta`, `monocromo`, `personaje` y `diseño` describen el estilo de salida visual, no solo el tema.\n\nCómo usar las etiquetas de tema estratégicamente:\n- **Para una estética consistente en una serie de contenido**: Encuentra todas las plantillas que compartan una etiqueta de estilo (por ejemplo, todas las plantillas `acuarela`) y usa esas exclusivamente\n- **Para coincidencia de marca**: Si tu marca utiliza arte lineal limpio, busca plantillas etiquetadas como `tinta` o `monocromo`\n- **Para contenido editorial**: Las plantillas etiquetadas como `diseño` y `guías` a menudo producen salidas de estilo infográfico adecuadas para encabezados de blog\n\nPuedes hacer clic en cualquier chip de tema en una página de plantilla para explorar todas las plantillas con esa etiqueta. Esta es la forma más rápida de descubrir plantillas que aún no has probado y que se ajustan a tu dirección visual.",
+      "tip4Example": "Si la identidad de tu marca utiliza un estilo de ilustración de tinta limpio, filtra las plantillas por la etiqueta de tema `tinta`. Todas las plantillas en ese grupo producirán salidas de estilo de arte lineal, dando a tu serie de contenido un tratamiento visual consistente incluso a través de diferentes plantillas de tema.",
+      "tip5Title": "5. Entiende Qué Controla Realmente Cada Parámetro",
+      "tip5Content": "**Las plantillas suelen tener dos tipos de parámetros: parámetros de contenido y parámetros de estilo.** Mezclarlos es una fuente común de resultados inesperados.\n\n- **Los parámetros de contenido** controlan el sujeto: nombres, temas, palabras, objetos, personas\n- **Los parámetros de estilo** controlan cómo se ve: estado de ánimo, tono de color, período de tiempo, estilo de composición\n\nPara averiguar cuál es cuál sin leer la documentación:\n1. Remixea un ejemplo que te guste\n2. Cambia solo un parámetro a la vez\n3. Genera y compara con el original\n4. El parámetro que produce el mayor cambio visual es un parámetro de estilo; el que cambia el sujeto pero mantiene el aspecto similar es un parámetro de contenido\n\nUna vez que entiendas qué parámetros controlan el estilo, puedes bloquearlos a través de múltiples generaciones para obtener una serie consistente.",
+      "tip5Example": "En una plantilla de cartel de vocabulario, intenta cambiar solo el parámetro de \"categoría de palabra\" de \"animales\" a \"herramientas de cocina\" sin cambiar nada más. Si el estilo de diseño se mantiene igual pero el sujeto cambia, ese parámetro es un parámetro de contenido puro. Si el diseño también cambia, está actuando como un parámetro de estilo también; algo útil de saber.",
+      "tip6Title": "6. Varía Un Parámetro a la Vez Al Iterar",
+      "tip6Content": "**Si cambias tres parámetros y el resultado es peor, no sabes qué cambio lo causó.** La iteración metódica —cambiando una variable a la vez— es el camino más rápido para entender una plantilla.\n\nUn flujo de trabajo de iteración simple:\n1. Comienza desde un remix de un ejemplo que te guste\n2. Cambia exactamente un parámetro\n3. Genera y evalúa\n4. Si es mejor: mantén el cambio y pasa al siguiente parámetro\n5. Si es peor: revierte y prueba un valor diferente para el mismo parámetro\n\nEsto es especialmente importante al principio de tu experiencia con una nueva plantilla. Después de 5–6 iteraciones, tendrás una fuerte intuición sobre cómo se comporta cada parámetro, y podrás comenzar a hacer cambios de múltiples parámetros con confianza.\n\n**Consejo para ahorrar créditos:** Antes de gastar créditos generando, verifica si ya hay ejemplos en la galería que cubran la combinación de parámetros que te interesa. Alguien puede haber explorado ya ese territorio.",
+      "tip6Example": "Estás probando si \"acuarela\" o \"tinta\" producen mejores resultados para tus publicaciones educativas. Crea dos generaciones con todos los parámetros idénticos excepto el parámetro de estilo. Compara: ahora tienes datos claros sobre qué estilo se adapta mejor a tu contenido.",
+      "tip7Title": "7. Guarda Ejemplos Que Funcionan en Tu Espacio de Trabajo",
+      "tip7Content": "**En cualquier página de detalle de ejemplo, el botón Guardar fija ese ejemplo en tu Espacio de Trabajo para referencia futura.** Esto es más útil que tomar capturas de pantalla porque los ejemplos guardados permanecen vinculados a su plantilla y parámetros.\n\nCómo construir una biblioteca de referencia útil:\n- **Guarda los 3–4 mejores ejemplos de cada plantilla que uses** — estos se convierten en tus puntos de referencia de estilo\n- **Guarda ejemplos de plantillas que aún no has probado** pero que quieres explorar — esperarán en tu espacio de trabajo como una lista de tareas\n- **Guarda ejemplos de referencia de estilo de competidores** para entender cómo son los resultados de alta calidad en tu nicho\n\n**En tu Espacio de Trabajo**, los elementos guardados se combinan con los mensajes copiados en una sola pestaña Guardados, así que tienes un lugar para navegar por tu colección completa. Hacer clic en cualquier imagen guardada te lleva directamente a su página de ejemplo con los parámetros visibles.",
+      "tip7Example": "Después de explorar una plantilla de cartel de vocabulario, guarda los 3 ejemplos que encuentres más visualmente atractivos. Más tarde, cuando necesites crear una nueva publicación de vocabulario, abre tu Espacio de Trabajo, encuentra uno de esos ejemplos guardados, haz clic en su página de ejemplo y Remix para comenzar desde parámetros que ya sabes que funcionan.",
+      "tip8Title": "8. Usa Plantillas por Lotes para Conjuntos de Campañas",
+      "tip8Content": "**Algunas plantillas están marcadas como plantillas por lotes — estas vienen con un conjunto preempaquetado de imágenes complementarias que puedes descargar todo de una vez.** Si necesitas de 4 a 8 imágenes consistentes para una campaña social o serie de contenido, una descarga por lotes es dramáticamente más rápida que generar individualmente.\n\nCuándo usar generación por lotes vs. individual:\n- **Lote**: necesitas un conjunto consistente de visuales con un estilo similar (por ejemplo, 6 ilustraciones de tipos MBTI, una serie de carteles de vocabulario para una lección completa)\n- **Generar individual**: necesitas una imagen personalizada específica con tus parámetros exactos\n\nLas descargas por lotes están disponibles a través del botón \"Descargar Paquete\" que aparece en lugar del botón Guardar en plantillas habilitadas para lotes. No se necesitan créditos para los paquetes preconstruidos: simplemente los descargas directamente.",
+      "tip8Example": "¿Buscas 6 ilustraciones de personajes MBTI para un artículo sobre tipos de personalidad? Verifica si existe una plantilla MBTI habilitada para lotes. Si es así, usa Descargar Paquete para obtener todos los tipos en un estilo coincidente al instante — no se necesitan créditos de generación.",
+      "tip9Title": "9. Usa Plantillas Educativas y Bilingües para Contenido de Idiomas",
+      "tip9Content": "**Nano Banana tiene una fuerte selección de plantillas diseñadas específicamente para vocabulario, aprendizaje de idiomas y contenido visual bilingüe.** Si creas contenido educativo — materiales de lección, tarjetas de vocabulario, publicaciones de aprendizaje de idiomas — estas plantillas ahorran horas en comparación con diseñar desde cero.\n\nTipos de plantillas en esta categoría:\n- **Carteles de vocabulario**: cuadrículas visuales que organizan palabras por categoría con ilustraciones\n- **Etiquetado de objetos bilingües**: diagramas con etiquetas en dos idiomas lado a lado\n- **Vocabulario grupal**: clusters temáticos (comidas, animales, artículos del hogar) con mnemotecnias visuales\n- **Carteles de acuarela multilingües**: exhibiciones de vocabulario más artísticas adecuadas para paredes de aula o publicaciones sociales\n\nEstas plantillas a menudo tienen una etiqueta de tema `idioma` o `vocabulario`. Los conjuntos de parámetros te permiten controlar el grupo de palabras objetivo, el par de idiomas y la densidad visual, por lo que puedes construir todo el material de una lección a partir de una sola plantilla.",
+      "tip9Example": "Para una lección sobre vocabulario del clima, usa una plantilla de cartel de vocabulario etiquetada `vocabulario` y `aprendizaje`. Establece el grupo de palabras en \"términos meteorológicos\", el idioma objetivo en español y el idioma de origen en inglés. La plantilla produce un cartel de vocabulario visual con ilustraciones de cada término — listo para publicar o imprimir.",
+      "tip10Title": "10. Revisa ejemplos antes de gastar créditos en casos extremos",
+      "tip10Content": "**Los créditos son finitos y algunas generaciones serán predeciblemente mediocres.** Antes de generar una combinación de parámetros sobre la que no estás seguro, dedica 2 minutos a comprobar si ya existen ejemplos similares en la galería.\n\nPreguntas que hacer antes de generar:\n- ¿Ya hay un ejemplo con un tema similar en la galería?\n- ¿Puedo encontrar ese ejemplo navegando por plantillas similares? (revisa la sección \"Más como este\" en las páginas de ejemplos)\n- ¿Es probable que esta combinación funcione dado lo que he visto que produce esta plantilla?\n\n**Cuándo generar:**\n- Tu contenido específico no está cubierto por ejemplos existentes\n- Necesitas un nombre, lugar o tema personalizado que sea único para tu caso de uso\n- Has iterado lo suficiente en una plantilla para saber que maneja bien tu tipo de entrada\n\n**Cuándo esperar:**\n- No estás seguro de si el estilo de esta plantilla se ajusta a tu contenido\n- Aún no has mirado la galería de inspiración\n- Tienes un caso de uso fundamentalmente diferente al que muestran los ejemplos de la plantilla",
+      "tip10Example": "Antes de generar un tema muy específico (por ejemplo, \"pan georgiano\" en una plantilla de comida), busca en los ejemplos existentes cualquier cocina de Europa del Este. Si la galería solo muestra comida occidental, esta plantilla podría no manejar tu tema tan bien: prueba con una generación antes de comprometerte a una serie completa.",
+      "toolsTitle": "Características de Nano Banana que debes conocer",
+      "toolsContent": "**Herramientas principales dentro de Nano Banana:**\n\n- **Navegador de plantillas**: Filtra por etiquetas de tema (estilo de vida, comida, vocabulario, diseño, etc.) para encontrar la plantilla adecuada para tu caso de uso\n- **Galería de inspiración**: Ejemplos reales de cada plantilla: navega antes de generar\n- **Remix esto**: Carga los parámetros exactos de cualquier ejemplo en el formulario de generación con un clic\n- **Guardar**: Fija cualquier ejemplo en tu espacio de trabajo para referencia futura\n- **Generar**: Crea una imagen personalizada usando tus parámetros (costo 10 créditos)\n- **Descargar paquete**: Descarga con un clic de conjuntos de imágenes por lotes preconstruidos (no se necesitan créditos)\n- **Espacio de trabajo**: Tu biblioteca personal de ejemplos guardados, mensajes copiados e imágenes generadas\n- **Página de detalle del ejemplo**: Vista en tamaño completo de cualquier ejemplo con parámetros visibles y un panel de \"Genera el tuyo\"",
+      "templatesSectionTitle": "Conjuntos de parámetros de ejemplo",
+      "storytellingTemplateTitle": "Ilustración de Personaje — Parámetros de Ejemplo",
+      "storytellingTemplateContent": "Plantilla: Ilustración de Personaje MBTI\n\nParámetros:\n- Tipo de personalidad: INFJ\n- Configuración del personaje: biblioteca tranquila con luz cálida de la tarde\n- Estilo del personaje: acuarela suave, estilo de ilustración del Este Asiático\n- Estado de ánimo: contemplativo, pacífico\n\nResultado: una ilustración de personaje en formato retrato de un tipo de personalidad introvertido en un entorno visualmente apropiado, adecuado para publicaciones educativas sobre tipos de personalidad o contenido personal.",
+      "storytellingTemplateDisplay": "<strong>Plantilla: Ilustración de Personaje MBTI</strong>\n\n<strong>Parámetros:</strong>\n- <strong>Tipo de personalidad:</strong> INFJ\n- <strong>Configuración del personaje:</strong> biblioteca tranquila con luz cálida de la tarde\n- <strong>Estilo del personaje:</strong> acuarela suave, estilo de ilustración del Este Asiático\n- <strong>Estado de ánimo:</strong> contemplativo, pacífico\n\n<strong>Resultado:</strong> una ilustración de personaje en formato retrato de un tipo de personalidad introvertido en un entorno visualmente apropiado, adecuado para publicaciones educativas sobre tipos de personalidad o contenido personal.",
+      "identityTemplateContent": "Plantilla: Infografía de Tarjeta de Receta\n\nParámetros:\n- Nombre del plato: Fideos Dan Dan\n- Cocina: Sichuan China\n- Ingredientes clave: fideos de trigo, aceite de chile, pasta de sésamo, cerdo molido, bok choy\n- Estilo: editorial premium, fondo oscuro\n\nResultado: un diseño profesional de tarjeta de receta con el nombre del plato, lista de ingredientes y estilo visual apropiado para blogs de comida, redes sociales o contenido de restaurantes.",
+      "identityTemplateDisplay": "<strong>Plantilla: Tarjeta de Receta Infográfica</strong>\n\n<strong>Parámetros:</strong>\n- <strong>Nombre del plato:</strong> Fideos Dan Dan\n- <strong>Cocina:</strong> Sichuan China\n- <strong>Ingredientes clave:</strong> fideos de trigo, aceite de chile, pasta de sésamo, cerdo molido, bok choy\n- <strong>Estilo:</strong> editorial premium, fondo oscuro\n\n<strong>Resultado:</strong> un diseño profesional de tarjeta de receta con el nombre del plato, lista de ingredientes y estilo visual apropiado para blogs de comida, redes sociales o contenido de restaurantes.",
+      "curifyTitle": "Cómo Curify Potencia Nano Banana",
+      "curifyContent": "Nano Banana funciona con la infraestructura de generación de IA de Curify. Curify maneja:\n- **Gestión de plantillas**: cada plantilla es una estructura de prompt probada con espacios de parámetros definidos\n- **Generación de imágenes**: tus parámetros se insertan en el prompt base y se envían a un modelo de imagen de IA\n- **Entrega CDN**: las imágenes generadas se sirven desde una CDN global para una carga rápida\n- **Sincronización de espacio de trabajo**: tus ejemplos guardados e imágenes generadas se almacenan en tu cuenta y son accesibles en todos los dispositivos\n- **Sistema de créditos**: 10 créditos por generación; los paquetes por lotes y ejemplos guardados siempre son gratuitos para acceder",
+      "ctaText": "Explora las plantillas de Nano Banana y comienza a generar",
+      "ctaLink": "Explorar Plantillas",
+      "conclusionTitle": "Obteniendo Resultados Consistentemente Buenos",
+      "conclusionContent": "El patrón que funciona en todas las plantillas:\n\n1. Navega primero por la galería de inspiración\n2. Remixea un ejemplo cercano a lo que deseas\n3. Cambia solo los parámetros que necesitas personalizar\n4. Genera — evalúa el resultado\n5. Ajusta un parámetro a la vez si la salida necesita refinamiento\n\nLas plantillas de Nano Banana manejan la ingeniería de prompts. Tu trabajo es darles entradas específicas y concretas e iterar metódicamente. Una vez que conozcas bien una plantilla, puedes generar imágenes de calidad de producción en menos de un minuto.",
+      "faq1Question": "¿Qué es Nano Banana?",
+      "faq1Answer": "Nano Banana es el nombre en clave de Google para la familia de modelos de generación de imágenes de Gemini (`gemini-2.5-flash-image` y `gemini-3-pro-image-preview`). Curify es una capa de plantillas encima de ello. Cuando generas desde una plantilla de Curify, tus parámetros se insertan en un prompt probado y se envían al modelo de Nano Banana.",
+      "faq2Question": "¿Cuánto cuesta generar una imagen?",
+      "faq2Answer": "Cada generación cuesta 10 créditos. Navegar por plantillas, ver ejemplos de inspiración, guardar elementos en tu espacio de trabajo y descargar paquetes por lotes son gratuitos. Los créditos solo se consumen cuando haces clic en Generar con tus propios parámetros personalizados.",
+      "faq3Question": "¿Cuál es la diferencia entre Remix y Generar?",
+      "faq3Answer": "\"Remix this\" carga los parámetros de un ejemplo existente en el formulario de generación; es un punto de partida, no una generación. Luego puedes modificar esos parámetros y hacer clic en Generar (lo que cuesta créditos) para producir una nueva imagen con tus entradas personalizadas.",
+      "faq4Question": "¿Puedo usar Nano Banana sin habilidades de diseño?",
+      "faq4Answer": "Sí. Las plantillas son estructuras visuales pre-diseñadas; solo debes proporcionar el contenido textual específico para tu caso de uso (un nombre de plato, un tipo de personalidad, una categoría de palabras, etc.). No se requiere conocimiento de ingeniería de prompts o edición de imágenes.",
+      "faq5Question": "¿Cómo encuentro la plantilla adecuada para mi caso de uso?",
+      "faq5Answer": "Usa las etiquetas de tema. Cada plantilla está etiquetada con su estilo visual y categoría de contenido (por ejemplo, acuarela, vocabulario, comida, fitness). Haz clic en cualquier etiqueta en una página de plantilla para navegar por todas las plantillas con esa etiqueta. Para un nuevo caso de uso, filtra primero por categoría de contenido y luego estrecha por etiqueta de estilo visual.",
+      "whyNanoBananaTitle": "¿Qué son las plantillas Nano Banana de Curify?",
+      "whyNanoBananaContent": "**Nano Banana es el nombre en clave de Google para el modelo de generación de imágenes de Gemini.** Curify es una capa de plantillas que se sitúa sobre ese modelo. Cada plantilla codifica una estructura de prompt probada: reglas de composición, tokens de estilo, lenguaje de iluminación, relación de aspecto, por lo que solo tienes que proporcionar los detalles específicos del contenido:\n\n1. **Navegar por plantillas** — organizadas por tema (estilo de vida, fitness, comida, aprendizaje, diseño, vocabulario y más)\n2. **Elegir una plantilla** — cada una está diseñada para un estilo visual y caso de uso específico\n3. **Completar parámetros** — entradas de texto cortas o menús desplegables específicos para esa plantilla\n4. **Generar** — Curify llena tus entradas en el prompt base y llama a Nano Banana para producir la imagen\n\n**Cómo lucen las plantillas en la práctica:**\n- Una plantilla de ilustración de personaje MBTI pide: tipo de personalidad, rasgos de carácter, entorno de fondo\n- Una plantilla de tarjeta de receta pide: nombre del plato, ingredientes clave, estilo de cocina\n- Una plantilla de cartel de vocabulario pide: categoría de palabras, nivel de idioma, tema visual\n\n**Por qué las plantillas superan a los prompts en blanco (para trabajos repetidos):**\nLas plantillas codifican estructuras de prompt probadas. La composición, los tokens de estilo y los prompts negativos ya están ajustados; solo debes proporcionar los detalles específicos del contenido. Resultados de aspecto profesional sin un profundo conocimiento de ingeniería de prompts.\n\n**Categorías disponibles:**\n- Estilo de vida, fitness, bienestar\n- Comida, recetas, cocina\n- Educación, vocabulario, aprendizaje de idiomas\n- Diseño, ilustración, carteles\n- Arte de personajes, MBTI, personalidad\n- Estilos de acuarela, tinta, monocromo\n\nLa galería de inspiración en cada página de plantilla muestra ejemplos reales generados por otros usuarios; la forma más rápida de entender lo que realmente produce una plantilla antes de comprometer créditos.",
+      "templatesTitle": "Conjuntos de Parámetros de Ejemplo"
     }
   },
   "aeVsComfyUi": {
@@ -7771,10 +7451,17 @@
         "primary": "Prueba el Generador de Personajes Nano Banana",
         "secondary": "Explora Más Herramientas de IA"
       }
+    },
+    "universes": {
+      "title": "12 Universos, Un Sistema MBTI",
+      "description": "Elige el universo que ya conoces — Marvel, Naruto, Friends, Yellowstone, Ghibli — escribe un nombre de personaje y obtén una tarjeta de personalidad MBTI estilizada para ese programa. La forma más rápida de generar un personaje es comenzar desde uno que un lector ya reconozca."
+    },
+    "beyond": {
+      "title": "Más Allá de Personajes Únicos",
+      "description": "Plantillas MBTI que van más allá de un solo personaje — compara dos tipos lado a lado, traza dinámicas de relación, rompe estereotipos comunes o construye una cuadrícula de múltiples personajes. Formatos altamente compartibles para contenido social, educativo y de fans."
     }
   },
   "HowToDubVideosNaturally": {
-    "title": "Cómo Duplicar Videos de Forma Natural en 2026: Solucionando Artefactos de Clonación de Voz de IA",
     "description": "Una guía completa para resolver desafíos comunes de doblaje con herramientas de IA. Aprende soluciones prácticas para el ritmo robótico, la falta de emoción y los problemas de sincronización labial.",
     "hero": {
       "title": "Cómo Duplicar Videos de Forma Natural en 2026: Solucionando Artefactos de Clonación de Voz de IA",
@@ -7954,6 +7641,9 @@
     "conclusion": {
       "title": "Transforma tu Doblaje de Video con IA",
       "description": "Al combinar estas técnicas y herramientas avanzadas, puedes crear contenido doblado natural y emocionalmente atractivo que cautive a las audiencias. El futuro del doblaje con IA está aquí, y es más humano que nunca."
-    }
+    },
+    "title": "Cómo arreglar el doblaje robótico de IA: sincronización labial, emoción y ritmo en 2026",
+    "metaDescription": "¿Los videos doblados por IA suenan robóticos? Arregla el deslizamiento de sincronización labial, la emoción plana y el ritmo antinatural con el flujo de trabajo adecuado de clonación de voz — paso a paso para creadores de 2026.",
+    "seoKeywords": "arreglar doblaje robótico de ia, artefactos de clonación de voz de ia, arreglo de deslizamiento de sincronización labial, tutorial de doblaje de ia 2026, doblaje de ia natural, emoción de clonación de voz, flujo de trabajo de doblaje de video"
   }
 }

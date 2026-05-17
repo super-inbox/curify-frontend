@@ -1,0 +1,119 @@
+{
+  "_note": "Seed topic-name strings grouped by SUBJECT_TAG (topic_tag_mappings.json). Used as input to scripts/generate_template_examples.cjs for kid-friendly vocabulary and learning templates. Add new seeds here, then regenerate scripts/configs/vocabulary_kids_topics.json (or any future per-template config) from this single source of truth.",
+  "animals": [
+    "Forest Animals",
+    "Ocean Animals",
+    "Farm Animals",
+    "Zoo Animals",
+    "Insects and Bugs",
+    "Pets at Home",
+    "Birds of the World",
+    "Reptiles and Amphibians",
+    "Dinosaur Names",
+    "Polar Animals",
+    "Deep Sea Creatures",
+    "Baby Animals"
+  ],
+  "nature": [
+    "Trees and Leaves",
+    "Flowers in the Garden",
+    "Mountains and Hills",
+    "Rivers and Lakes",
+    "Beach and Seashore",
+    "Plants and Seeds",
+    "Mushrooms and Fungi",
+    "Four Seasons"
+  ],
+  "space": [
+    "Planets of the Solar System",
+    "Things in Outer Space",
+    "Astronaut Gear",
+    "Constellations",
+    "Moon Phases",
+    "Galaxies and Stars"
+  ],
+  "weather": [
+    "Types of Weather",
+    "Clouds in the Sky",
+    "Stormy Weather",
+    "Rainbow Colors",
+    "Hot and Cold Day",
+    "Things in the Sky"
+  ],
+  "evolution": [
+    "Stages of Human Life",
+    "Dinosaur Eras",
+    "Caterpillar to Butterfly",
+    "Frog Life Cycle",
+    "Seed to Tree"
+  ],
+  "food-and-drink": [
+    "Fruits",
+    "Vegetables",
+    "Breakfast Foods",
+    "Desserts",
+    "Drinks",
+    "Snacks",
+    "Kitchen Tools",
+    "Herbs and Spices",
+    "Dairy Products",
+    "Bread and Bakery",
+    "Pasta and Noodles",
+    "World Cuisines"
+  ],
+  "family": [
+    "Family Members",
+    "Jobs and Occupations",
+    "Daily Routines",
+    "Household Items",
+    "Rooms in a House",
+    "Furniture",
+    "Things in the Kitchen",
+    "Things in the Bathroom"
+  ],
+  "school": [
+    "Classroom Objects",
+    "School Subjects",
+    "Stationery and Supplies",
+    "Sports at School",
+    "Musical Instruments",
+    "Shapes and Colors",
+    "Numbers and Counting"
+  ],
+  "transportation": [
+    "Cars and Trucks",
+    "Public Transport",
+    "Boats and Ships",
+    "Airplanes and Helicopters",
+    "Bikes and Wheels",
+    "Emergency Vehicles",
+    "Road Signs",
+    "Construction Vehicles"
+  ],
+  "celebration": [
+    "Birthday Party",
+    "Christmas",
+    "Halloween",
+    "Easter",
+    "Lunar New Year",
+    "Weddings",
+    "Thanksgiving",
+    "Mid-Autumn Festival"
+  ],
+  "body": [
+    "Body Parts",
+    "Face Parts",
+    "Five Senses",
+    "Hands and Fingers",
+    "Going to the Doctor",
+    "Healthy Habits",
+    "Body Movements"
+  ],
+  "emotions": [
+    "Basic Emotions",
+    "Facial Expressions",
+    "Feelings and Moods",
+    "Happy and Sad Words",
+    "Calm and Excited"
+  ]
+}
