@@ -116,16 +116,6 @@ export default function YoutubeTranslationContent({ slug, t, locale }: YoutubeTr
             __html: formatContent(t("curifyContent"))
           }} 
         />
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-800">
-            🎯 {t("ctaText")} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
-          </p>
-          <div className="mt-3 space-y-2">
-            <p className="text-green-700 text-sm">
-              🔗 Also try: <a href={getSubtitleGeneratorUrl(locale)} className="text-blue-600 hover:underline">Bilingual Subtitles</a> | <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline">Video Dubbing</a>
-            </p>
-          </div>
-        </div>
       </section>
 
       <section>

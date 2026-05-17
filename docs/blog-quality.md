@@ -1,6 +1,6 @@
 # Blog Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-17 (after P0 + coverage-gap sweep). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
+_Last updated: 2026-05-17 (after CTA consolidation + category reassignments). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
 
 ## Framing
 
@@ -10,6 +10,54 @@ Two parallel tracks:
 2. **Significant content rewrites** — replace AI-marketing fluff with original prose anchored in actual Curify capabilities (real templates, real tool URLs, real example pages). One post per commit; expect to touch hero, sections, and remove ungrounded "benefit list" boilerplate.
 
 Both tracks share the same i18n fan-out: edit `messages/en/blog.json`, delete the stale `title` field in each non-en locale, run `scripts/i18n_autotranslate.cjs --base en --files blog --write`, bump `lastmod` in `public/data/blogs.json`.
+
+---
+
+## Today's progress (2026-05-17, second push — CTA consolidation)
+
+### CTA refactor — done
+
+**The duplicate-CTA problem closed.** Stripped the in-body 🎯 ctaText/ctaLink callout from 11 content components in `app/[locale]/(public)/blog/[slug]/components/` (VoiceCloningContent, YoutubeTranslationContent, VideoTranscriptionContent, LipSyncContent, LipSyncTechnicalContent, TenPromptingTipsVideoGenerationContent, NanoTemplateContent, NanoBananaContent, TenPromptingTipsNanoBananaContent, SeriesInfographicVsNotebookLMContent, AslTranslationContent, GenericBlogContent). Now `BlogCTACard` is the single source of truth for the bottom-of-post CTA.
+
+**Three dedicated-folder pages switched to BlogCTACard.** `weird-science-facts-classroom-engagement`, `mbti-relationship-style-visualizer`, and `ai-collage-digital-wallpaper-guide` each had their own bespoke "Browse X Templates" CTA — all linking to nano-template grids (weak per user). Replaced with `<BlogCTACard />` so they inherit the unified strong-target mapping.
+
+**Expanded `BlogCTACard.tsx` mapping** (`app/[locale]/_components/BlogCTACard.tsx`):
+
+| Category | Primary | Secondary |
+| --- | --- | --- |
+| `video-translation-dubbing` / `video-dubbing` | Try Video Dubbing → `/tools/video-dubbing` | Partner with us → `/contact` |
+| `creator-tools` | Per-post tool (e.g. `/tools/video-transcription`) or `/tools` index | _none_ |
+| `ds-ai-engineering` | Book AI / DS Coaching → MentorCruise | Partner with us → `/contact` |
+| `content-automation` | Talk to us about a pilot → `/contact` | Book 15 min → Calendly direct link |
+| `nano-template` _(new)_ | Partner on custom templates → `/contact` | Browse Creator Tools → `/tools` |
+| `learning-education` _(new)_ | Partner on edtech → `/contact` | Browse Creator Tools → `/tools` |
+
+Per-post creator-tools overrides live in a small `CREATOR_TOOL_OVERRIDES` table at the top of `BlogCTACard.tsx`. Adds for: `video-transcription-business-guide` → `/tools/video-transcription`, `10-prompting-tips-video-generation` → `/tools/video-dubbing`. Others to fill in as the tool catalog grows.
+
+### Category reassignments (4 slugs)
+
+| Slug | Was | Now |
+| --- | --- | --- |
+| `video-transcription-technical-deep-dive` | ds-ai-engineering | **video-translation-dubbing** |
+| `lip-sync-technical-deep-dive` | ds-ai-engineering | **video-translation-dubbing** |
+| `ai-content-production-system` | ds-ai-engineering | **content-automation** |
+| `content-tagging-system` | content-automation | **ds-ai-engineering** |
+
+The two technical deep-dives belong with the dubbing tool's primary CTA (creators who arrive on the deep-dive page are still in the dubbing funnel). The production-system post is a content-automation pitch. The tagging-system post is an engineering deep-dive that should send readers to MentorCruise rather than a content-automation pilot.
+
+### Server-side exception fix
+
+`ContentTaggingSystemContent.tsx` was throwing on render because 5 of its 7 iterable keys (`keyInsight.methods`, `pinterestPlatform.templateTags.geoTags.examples`, `…languageTags.examples`, `finalThought.systems`, `footer.tags`) are missing in `messages/en/blog.json` (the EN content never authored those sub-trees, and `Object.entries(undefined)` throws). Replaced every raw read with a `safeRaw` / `safeEntries` / `safeArray` helper that returns `[]` instead of crashing.
+
+Authoring those missing sub-trees is a separate content task — flagged for the next P2 sweep.
+
+### lastmod sweep
+Bumped `lastmod` to 2026-05-17 for **all 57 categorised catalog entries**. Justified: every blog with a category had its visible bottom-of-post CTA layout change today (either lost the duplicate in-body box, or newly gained a `BlogCTACard` block in nano-template / learning-education, or had its category reassigned).
+
+### Discovered while doing this
+- **The dedicated-folder set is actually 5 posts, not 3:** `how-to-dub-videos-naturally`, `mbti-character-generator`, `mbti-relationship-style-visualizer`, **`weird-science-facts-classroom-engagement`**, **`ai-collage-digital-wallpaper-guide`**. Each has its own `app/[locale]/(public)/blog/<slug>/page.tsx`. The two new finds also bypass `BlogCTACard` until we wire it explicitly — done today for both.
+- **`StandardBlogPost.tsx` is unimported dead code.** No slug routes to it; ignored for the CTA strip.
+- **`messages/en/blog.json:contentTaggingSystem.threeLayerApproach.layer3`** has F5-TTS comparison fields leaked into it (e.g. `finalVerdict: "For video dubbing and translation in 2026, ElevenLabs wins…"`). i18n cross-contamination from some prior batch. The page doesn't render those, but the data is junk and should be cleaned during the dup-consolidation pass.
 
 ---
 
@@ -133,58 +181,45 @@ Each pair likely shares ~70%+ content — drop one and 301-redirect:
 ## CTA section review
 
 ### Current mapping (`app/[locale]/_components/BlogCTACard.tsx`)
-| Category | CTA(s) | Target |
+**Refactored 2026-05-17.** Single source of truth for the bottom-of-post CTA — no in-body duplicates, no nano-template grid links.
+
+| Category | Primary | Secondary |
 | --- | --- | --- |
-| `video-translation-dubbing` / `video-dubbing` | Try Video Dubbing | `/tools/video-dubbing` |
-| `creator-tools` | Browse Creator Tools | `/tools` |
-| `ds-ai-engineering` | Book AI / DS Coaching | `mentorcruise.com/mentor/jaywang/` (external) |
-| `content-automation` | Email + Visit Contact Page | `mailto:team@curify-ai.com` + `/contact` |
-| `nano-template` | _(none)_ | — |
-| `learning-education` | _(none)_ | — |
+| `video-translation-dubbing` / `video-dubbing` | Try Video Dubbing → `/tools/video-dubbing` | Partner with us → `/contact` |
+| `creator-tools` | Per-post tool override (e.g. `/tools/video-transcription`) or `/tools` index | _none_ |
+| `ds-ai-engineering` | Book AI / DS Coaching → MentorCruise (external) | Partner with us → `/contact` |
+| `content-automation` | Talk to us about a pilot → `/contact` | Book 15 min → Calendly (external) |
+| `nano-template` | Partner on custom templates → `/contact` | Browse Creator Tools → `/tools` |
+| `learning-education` | Partner on edtech → `/contact` | Browse Creator Tools → `/tools` |
 
 Click tracking: `content_id = blog-cta:<category>:<cta-id>`, `content_type = menu_link`. Greppable in the admin Actions panel.
 
-### Gaps / concerns
-1. **`nano-template` (8+ posts) has no CTA card.** Original rationale: "the post already embeds a template grid; no second ask." Fair, but the template grid drives _remix_, not signup or use-case discovery. Add a soft CTA → `/use-cases` ("Find Your Use Case") so visitors can self-route to the persona page that fits.
-2. **`learning-education` (5 posts) has no CTA card.** Map to **`/use-cases/for-parents`** by default, or pick **`/use-cases/for-esl-learners`** for ESL-focused posts. Affected: `visualLearningTools`, `viralLearningContent`, `whatIsInfographics`, `weirdScienceFactsClassroomEngagement`, `bilingual-ai-flashcards-early-childhood-education`, plus `seriesInfographicVsNotebookLM`.
-3. **`creator-tools` CTA is generic** — every creator post sends to `/tools` index. Per-post targeting would lift CTR: `tenPromptingTipsVideoGeneration` → `/tools/video-dubbing`; `imageToNarrativeVideo` → its actual tool page if it exists; otherwise persona via `/use-cases/for-creators`.
-4. **`ds-ai-engineering` → MentorCruise only.** Strong personal-brand CTA, but some posts in this category are engineering deep-dives that earn _partnership_ leads (e.g. `contentTaggingSystem`, `aiContentProductionSystem`, `video_translation_eval`). Add `/contact` as a secondary "Partner with us" CTA.
-5. **`content-automation` → mailto + /contact.** Heavy-handed "talk to sales" framing for exploratory readers. Consider replacing the mailto with `/use-cases/for-marketers` for top-of-funnel posts.
-6. **Single bottom-of-post placement.** Long posts (e.g. `preserveFacialFeaturesAiGeneration` at 190 keys, `f5TtsVsElevenlabs` at 144) likely lose readers before the CTA. Cheap upgrade: an inline mid-post strip anchored after the first major section.
-7. **Generic header copy** — `Take the next step` / `Putting what you read into practice`. Category-specific copy will resonate better:
-   - ds-ai-engineering → "Get unstuck. Book a 1:1 session."
-   - content-automation → "Run this in production?"
-   - video-* → "Try this on your own video."
+Per-post creator-tools overrides table (`CREATOR_TOOL_OVERRIDES` in `BlogCTACard.tsx`): add an entry whenever a creator-tools post maps to a specific tool. Currently wired for `video-transcription-business-guide`, `10-prompting-tips-video-generation`. Worth filling in as the tool catalog grows.
 
-### Suggested revised CTA map
-```
-nano-template       → /use-cases  ("Find your use case")
-learning-education  → /use-cases/for-parents  (default; per-post override for ESL)
-video-*             → /tools/video-dubbing  (unchanged)
-creator-tools       → /use-cases/for-creators  (default; per-post override for known tools)
-ds-ai-engineering   → MentorCruise (primary) + /contact (secondary, "Partner with us")
-content-automation  → /contact (primary) + email (secondary)
-```
+### Gaps / concerns — _resolved 2026-05-17 unless noted_
+1. ~~`nano-template` has no CTA card.~~ Now maps to `/contact` (primary) + `/tools` (secondary).
+2. ~~`learning-education` has no CTA card.~~ Now maps to `/contact` (primary) + `/tools` (secondary).
+3. ~~`creator-tools` CTA is generic.~~ Per-post override table added; expand as new posts ship.
+4. ~~`ds-ai-engineering` → MentorCruise only.~~ Added `/contact` secondary.
+5. ~~`content-automation` → mailto + /contact.~~ Replaced mailto with Calendly direct link (still secondary to `/contact`).
+6. **Single bottom-of-post placement.** Still true. Long posts (`preserveFacialFeaturesAiGeneration` at 190 keys, `f5TtsVsElevenlabs` at 144) probably lose readers before the CTA. Cheap upgrade: an inline mid-post strip anchored after the first major section. Open.
+7. **Generic header copy** — `Take the next step` / `Putting what you read into practice`. Category-specific copy would resonate better. Open.
 
 ---
 
 ## Next-up shortlist
 
-1. **Duplicate consolidation** — pick canonical of the 4 dup pairs (`ugc-video-translation-…` kebab vs camel; `aiCollageDigitalWallpaperGuide` vs `gridCollageAiPrompts`; `f5TtsVoiceCloning` vs `f5TtsVsElevenlabs`; `videoTranscriptionTechnicalDeepDive` vs `translateYoutubeVideoToEnglish`); 301 the dead slug; update internal links. Also resolve the `video_translation_eval` orphan namespace.
-2. **P1 fluff rewrite — top 5 by Search Console impressions.** Candidate list (highest-impact first, but verify against SC):
+1. **Duplicate consolidation** — pick canonical of the 4 dup pairs (`ugc-video-translation-…` kebab vs camel; `aiCollageDigitalWallpaperGuide` vs `gridCollageAiPrompts`; `f5TtsVoiceCloning` vs `f5TtsVsElevenlabs`; `videoTranscriptionTechnicalDeepDive` vs `translateYoutubeVideoToEnglish`); 301 the dead slug; update internal links. Also resolve the `video_translation_eval` orphan namespace **and the F5-TTS contamination in `contentTaggingSystem.threeLayerApproach.layer3`** that surfaced today.
+2. **Author the missing `contentTaggingSystem` sub-trees** — `keyInsight.methods`, `pinterestPlatform.templateTags.geoTags.examples`, `…languageTags.examples`, `finalThought.systems`, `footer.tags`. The page no longer crashes, but those sections render empty until authored.
+3. **P1 fluff rewrite — top 5 by Search Console impressions.** Candidate list (highest-impact first, but verify against SC):
    - `nanoBananaPromptEcosystem` (keyword-stuffed intro — high impressions on "nano banana prompts")
    - `chineseCostumeHistoryInfographic` (boilerplate "Comprehensive guide to…")
    - `videoTranscriptionBusinessGuide` (boilerplate "Learn how to transcribe…")
    - `lipSyncBusinessGuide` (boilerplate "Discover how AI lip sync…")
    - `imageToNarrativeVideo` ("Transform static images into compelling…")
-3. **CTA wiring expansion** — extend `BlogCTACard.tsx`:
-   - Add `nano-template` → `/use-cases` ("Find your use case").
-   - Add `learning-education` → `/use-cases/for-parents` (default; ESL variant for the appropriate posts).
-   - Switch `creator-tools` from `/tools` index to `/use-cases/for-creators` (with per-post overrides).
-   - Add secondary `/contact` for `ds-ai-engineering` posts that are engineering-heavy (e.g. `contentTaggingSystem`, `aiContentProductionSystem`).
-   - Category-specific header copy (replace generic "Take the next step").
-4. **P0 / P1 CTR follow-up** — after 2026-06-01, re-pull Search Console for the 10 bleeders rewritten in `0803aab` and the 3 P0 rewrites from today. Lift > 2× CTR ⇒ the playbook is working; lift flat ⇒ try a stronger framing or a different position-rank cohort.
-5. **P2 audit pass** — skim the ~20 P2 bodies. If anchored in real templates and tools, leave alone; otherwise add to a future P1 list.
+4. **CTA polish (still open)** — inline mid-post CTA strip on long posts (190+ key bodies); category-specific header copy to replace generic "Take the next step". See [CTA review](#cta-section-review) gaps 6-7.
+5. **P0 / P1 CTR follow-up** — after 2026-06-01, re-pull Search Console for the 10 bleeders rewritten in `0803aab` and the 3 P0 rewrites from today. Lift > 2× CTR ⇒ the playbook is working; lift flat ⇒ try a stronger framing or a different position-rank cohort.
+6. **P2 audit pass** — skim the ~20 P2 bodies. If anchored in real templates and tools, leave alone; otherwise add to a future P1 list.
 
 ---
 

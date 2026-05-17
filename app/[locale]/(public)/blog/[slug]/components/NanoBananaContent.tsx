@@ -72,11 +72,6 @@ export default function NanoBananaContent({ slug, t, locale }: NanoBananaContent
             __html: formatNanoBananaContent(t("curifyContent"))
           }} 
         />
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-800">
-            🎯 {t("ctaText")} <a href="http://localhost:3000/nano-banana-pro-prompts" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
-          </p>
-        </div>
       </section>
 
       <section>

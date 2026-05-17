@@ -126,17 +126,6 @@ export default function NanoTemplateContent({ slug, t, locale }: NanoTemplateCon
       <section>
         <h2 className="text-2xl font-bold mb-4">{t("curifyTitle")}</h2>
         <p className="mb-4">{t("curifyContent")}</p>
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-800">
-            🎯 {t("ctaText")}{" "}
-            <a
-              href={getTemplateUrl(slug, locale)}
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              {t("ctaLink")}
-            </a>
-          </p>
-        </div>
       </section>
 
       <section>

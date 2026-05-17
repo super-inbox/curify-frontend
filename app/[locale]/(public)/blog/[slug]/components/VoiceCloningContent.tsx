@@ -135,20 +135,6 @@ export default function VoiceCloningContent({ slug, t, locale }: VoiceCloningCon
           />
         </section>
       )}
-
-      <section>
-        <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
-          <p className="text-purple-800">
-            🎯 {t("ctaText")} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
-          </p>
-          <div className="mt-3 space-y-2">
-            <p className="text-purple-700 text-sm">
-              🔗 Also try: <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline">Video Dubbing</a> | <a href={getSubtitleGeneratorUrl(locale)} className="text-blue-600 hover:underline">Subtitle Generator</a>
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section>
         <h2 className="text-2xl font-bold mb-4">{t("conclusionTitle")}</h2>
         <div 

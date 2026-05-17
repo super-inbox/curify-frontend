@@ -351,11 +351,6 @@ section_title: "Overview: Core Conflict"`}
         <p className="text-gray-700 leading-relaxed mb-4">
           {t("conclusionContent2", "The key is understanding your audience and distribution channels. Visual learners scrolling through Instagram? Go with infographics. Commuters listening to podcasts? NotebookLM is your answer. And for maximum impact? Use both.")}
         </p>
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-800">
-            🎯 {t("ctaText", "Ready to create stunning series infographics?")} <a href="https://www.curify-ai.com/nano-template/series-infographic" className="text-blue-600 hover:underline font-semibold" target="_blank" rel="noopener noreferrer">{t("ctaLink", "Try Nano Banana Series Infographic Generator")}</a>
-          </p>
-        </div>
       </section>
 
       {/* SEO Keywords */}

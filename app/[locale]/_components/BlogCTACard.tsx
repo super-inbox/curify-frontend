@@ -1,16 +1,24 @@
 "use client";
 
 // Unified blog CTA card, rendered just above Related Articles. Picks the
-// right call-to-action based on the post's category. Click logging fires
-// via useClickTracking so the admin funnel can answer "which blog
-// categories actually drive tool / coaching / contact engagement."
+// right call-to-action(s) based on the post's category — primary + optional
+// secondary, never linking to a nano-template grid (those drive remix, not
+// signup / coaching / contact). Click logging fires via useClickTracking
+// so the admin funnel can answer "which blog categories actually drive
+// tool / coaching / contact engagement."
+//
+// Per-post `creator-tools` overrides let posts about a specific tool route
+// to that tool's page instead of the generic /tools index. Add an entry to
+// CREATOR_TOOL_OVERRIDES below when a post has a clear tool match.
 
 import Link from "next/link";
-import { Mail, ExternalLink, Wrench, GraduationCap, MessageCircle } from "lucide-react";
+import { Mail, ExternalLink, Wrench, GraduationCap, MessageCircle, Calendar } from "lucide-react";
 import { useClickTracking } from "@/services/useTracking";
 
 type Props = {
   category: string;
+  /** Slug enables per-post creator-tools target overrides. */
+  slug?: string;
   locale: string;
 };
 
@@ -23,11 +31,34 @@ type CTA = {
   Icon: React.ComponentType<{ className?: string }>;
 };
 
-// Category → CTAs. A category can produce multiple CTAs (content-automation
-// renders both an email link and a contact-page link). Categories not listed
-// here render nothing — keeps the section out of the way on nano-template /
-// learning-education posts that already have their own template embeds.
-function ctasFor(category: string, locale: string): CTA[] {
+// Slugs in `creator-tools` that have a more specific tool target than
+// the generic /tools index. Anything not listed falls through to /tools.
+const CREATOR_TOOL_OVERRIDES: Record<string, { href: string; label: string }> = {
+  "video-transcription-business-guide": {
+    href: "/tools/video-transcription",
+    label: "Try Video Transcription",
+  },
+  "10-prompting-tips-video-generation": {
+    href: "/tools/video-dubbing",
+    label: "Try Video Dubbing",
+  },
+  "image-to-narrative-video": {
+    href: "/tools",
+    label: "Browse Creator Tools",
+  },
+  "image-generation-model-comparison": {
+    href: "/tools",
+    label: "Browse Creator Tools",
+  },
+};
+
+const MENTORCRUISE = "https://mentorcruise.com/mentor/jaywang/";
+const CALENDLY = "https://calendly.com/qqwjq9916/15-minute-meeting";
+
+// Category → CTAs. Each category gets a primary plus an optional secondary,
+// so the reader has a strong fork without scrolling past a weak nano-template
+// link. Categories not listed render nothing.
+function ctasFor(category: string, locale: string, slug?: string): CTA[] {
   switch (category) {
     case "video-translation-dubbing":
     case "video-dubbing":
@@ -40,18 +71,31 @@ function ctasFor(category: string, locale: string): CTA[] {
           href: `/${locale}/tools/video-dubbing`,
           Icon: Wrench,
         },
+        {
+          id: "contact-partner",
+          label: "Partner with us",
+          description:
+            "Custom dubbing pipeline, voice cloning at scale, or enterprise use case.",
+          href: `/${locale}/contact`,
+          Icon: MessageCircle,
+        },
       ];
-    case "creator-tools":
+
+    case "creator-tools": {
+      const override = slug ? CREATOR_TOOL_OVERRIDES[slug] : undefined;
       return [
         {
-          id: "creator-tools-index",
-          label: "Browse Creator Tools",
-          description:
-            "Bilingual subtitles, video summaries, transcript extraction, and more.",
-          href: `/${locale}/tools`,
+          id: override ? `creator-tool-${slug}` : "creator-tools-index",
+          label: override?.label ?? "Browse Creator Tools",
+          description: override
+            ? "Open the exact tool this post walks through."
+            : "Bilingual subtitles, video summaries, transcript extraction, and more.",
+          href: `/${locale}${override?.href ?? "/tools"}`,
           Icon: Wrench,
         },
       ];
+    }
+
     case "ds-ai-engineering":
       return [
         {
@@ -59,30 +103,79 @@ function ctasFor(category: string, locale: string): CTA[] {
           label: "Book AI / DS Coaching",
           description:
             "1:1 sessions with Jay Wang on MentorCruise — AI strategy, data science, ML engineering.",
-          href: "https://mentorcruise.com/mentor/jaywang/",
+          href: MENTORCRUISE,
           external: true,
           Icon: GraduationCap,
         },
-      ];
-    case "content-automation":
-      return [
         {
-          id: "contact-email",
-          label: "Email team@curify-ai.com",
-          description:
-            "Ask about a content-automation pilot, custom pipeline, or partnership.",
-          href: "mailto:team@curify-ai.com",
-          external: true,
-          Icon: Mail,
-        },
-        {
-          id: "contact-page",
-          label: "Visit Contact Page",
-          description: "Other ways to reach us.",
+          id: "contact-partner",
+          label: "Partner with us",
+          description: "Engineering partnership, pipeline review, or paid pilot.",
           href: `/${locale}/contact`,
           Icon: MessageCircle,
         },
       ];
+
+    case "content-automation":
+      return [
+        {
+          id: "contact-page",
+          label: "Talk to us about a pilot",
+          description:
+            "Custom content-automation pipelines, scale-out, or partnership.",
+          href: `/${locale}/contact`,
+          Icon: MessageCircle,
+        },
+        {
+          id: "calendly-15min",
+          label: "Book 15 min",
+          description: "Direct calendar link with Jay.",
+          href: CALENDLY,
+          external: true,
+          Icon: Calendar,
+        },
+      ];
+
+    case "nano-template":
+      return [
+        {
+          id: "contact-template-partner",
+          label: "Partner on custom templates",
+          description:
+            "Brand-aligned template packs, edtech IP licensing, or a private template library.",
+          href: `/${locale}/contact`,
+          Icon: MessageCircle,
+        },
+        {
+          id: "tools-index",
+          label: "Browse Creator Tools",
+          description:
+            "Video dubbing, subtitles, and the other tools that pair with the template gallery.",
+          href: `/${locale}/tools`,
+          Icon: Wrench,
+        },
+      ];
+
+    case "learning-education":
+      return [
+        {
+          id: "contact-edtech",
+          label: "Partner on edtech",
+          description:
+            "K-5 vocabulary engines, bilingual content packs, or classroom-deploy pilots.",
+          href: `/${locale}/contact`,
+          Icon: MessageCircle,
+        },
+        {
+          id: "tools-index",
+          label: "Browse Creator Tools",
+          description:
+            "Subtitling, dubbing, transcription — the tools educators use day to day.",
+          href: `/${locale}/tools`,
+          Icon: Wrench,
+        },
+      ];
+
     default:
       return [];
   }
@@ -132,8 +225,8 @@ function CtaButton({ cta, category }: { cta: CTA; category: string }) {
   );
 }
 
-export default function BlogCTACard({ category, locale }: Props) {
-  const ctas = ctasFor(category, locale);
+export default function BlogCTACard({ category, slug, locale }: Props) {
+  const ctas = ctasFor(category, locale, slug);
   if (ctas.length === 0) return null;
   return (
     <section className="mt-12 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
