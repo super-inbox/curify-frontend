@@ -1,13 +1,14 @@
 # Blog Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-17 (after CTA consolidation + category reassignments). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
+_Last updated: 2026-05-17 (added layout & visual polish track + reprioritized shortlist). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
 
 ## Framing
 
-Two parallel tracks:
+Three parallel tracks:
 
 1. **Stop the bleeders** — surgical title + `metaDescription` rewrites driven by Search Console for high-impression / low-CTR URLs at positions ~6-12. No body changes; one sweep per 5-10 posts; bump `lastmod` so the sitemap signals a re-crawl.
 2. **Significant content rewrites** — replace AI-marketing fluff with original prose anchored in actual Curify capabilities (real templates, real tool URLs, real example pages). One post per commit; expect to touch hero, sections, and remove ungrounded "benefit list" boilerplate.
+3. **Layout & visual polish** — uniform basic layout across every blog and the feed: no giant hero images, relaxed reading width, consistent alignment, CTA card themed in light-purple + light-blue. Affects every reader on every blog, so the impact compounds across the whole catalog rather than being per-URL.
 
 Both tracks share the same i18n fan-out: edit `messages/en/blog.json`, delete the stale `title` field in each non-en locale, run `scripts/i18n_autotranslate.cjs --base en --files blog --write`, bump `lastmod` in `public/data/blogs.json`.
 
@@ -209,17 +210,40 @@ Per-post creator-tools overrides table (`CREATOR_TOOL_OVERRIDES` in `BlogCTACard
 
 ## Next-up shortlist
 
-1. **Duplicate consolidation** — pick canonical of the 4 dup pairs (`ugc-video-translation-…` kebab vs camel; `aiCollageDigitalWallpaperGuide` vs `gridCollageAiPrompts`; `f5TtsVoiceCloning` vs `f5TtsVsElevenlabs`; `videoTranscriptionTechnicalDeepDive` vs `translateYoutubeVideoToEnglish`); 301 the dead slug; update internal links. Also resolve the `video_translation_eval` orphan namespace **and the F5-TTS contamination in `contentTaggingSystem.threeLayerApproach.layer3`** that surfaced today.
-2. **Author the missing `contentTaggingSystem` sub-trees** — `keyInsight.methods`, `pinterestPlatform.templateTags.geoTags.examples`, `…languageTags.examples`, `finalThought.systems`, `footer.tags`. The page no longer crashes, but those sections render empty until authored.
-3. **P1 fluff rewrite — top 5 by Search Console impressions.** Candidate list (highest-impact first, but verify against SC):
-   - `nanoBananaPromptEcosystem` (keyword-stuffed intro — high impressions on "nano banana prompts")
-   - `chineseCostumeHistoryInfographic` (boilerplate "Comprehensive guide to…")
-   - `videoTranscriptionBusinessGuide` (boilerplate "Learn how to transcribe…")
-   - `lipSyncBusinessGuide` (boilerplate "Discover how AI lip sync…")
-   - `imageToNarrativeVideo` ("Transform static images into compelling…")
-4. **CTA polish (still open)** — inline mid-post CTA strip on long posts (190+ key bodies); category-specific header copy to replace generic "Take the next step". See [CTA review](#cta-section-review) gaps 6-7.
-5. **P0 / P1 CTR follow-up** — after 2026-06-01, re-pull Search Console for the 10 bleeders rewritten in `0803aab` and the 3 P0 rewrites from today. Lift > 2× CTR ⇒ the playbook is working; lift flat ⇒ try a stronger framing or a different position-rank cohort.
-6. **P2 audit pass** — skim the ~20 P2 bodies. If anchored in real templates and tools, leave alone; otherwise add to a future P1 list.
+Reprioritized 2026-05-17 after the CTA consolidation push. Top of list is now the layout streamline — it touches every reader on every blog and undergirds everything else (rewrites, CTA visual polish, mid-post inline CTA).
+
+### 1. Layout & visual polish — _new top priority_
+Uniform basic layout across every blog (both `[slug]` pipeline and dedicated-folder pages) and the blog feed page. Scope:
+
+- **No giant hero images** at the top of posts. Drop the floated `max-w-sm` hero from `app/[locale]/(public)/blog/[slug]/page.tsx` (and the equivalent in each dedicated-folder page). Either remove entirely, shrink to an inline thumbnail next to the title, or hoist to a true edge-to-edge banner if the image is worth that real estate — pick one pattern and apply everywhere.
+- **Relaxed reading width** on every blog body and the feed. Today the `<article>` runs to whatever the parent provides; cap it for readable line length (~ 65-75 ch) on the body, keep the hero/feed cards on a wider container. Affected:
+  - `[slug]/page.tsx` body article wrapper
+  - The 5 dedicated-folder pages (`how-to-dub-videos-naturally`, `mbti-character-generator`, `mbti-relationship-style-visualizer`, `weird-science-facts-classroom-engagement`, `ai-collage-digital-wallpaper-guide`)
+  - Blog feed page (`app/[locale]/(public)/blog/page.tsx` if it exists, or the listing wrapped elsewhere)
+- **Consistent alignment.** Pick one and apply: most blog body text left-aligned, headings left-aligned, CTA / hero strips centered, captions left under image. Today there's a mix of `text-center` and default-left blocks across components.
+- **CTA card theme — light purple + light blue.** `BlogCTACard.tsx` currently uses `border-blue-200` / `from-blue-50 to-white`. Rework to a two-tone light-purple + light-blue scheme (e.g. left card light-blue, right card light-purple; or unified gradient `from-purple-50 to-blue-50`). Keep the existing icon + tracking wiring.
+
+Owner judgement call on each — these are design choices, not mechanical fixes. **Folds in the previously-separate "CTA polish (inline mid-post, category-specific headers)" item**, since both need to land in the same design pass.
+
+### 2. Duplicate consolidation
+Pick canonical of the 4 dup pairs (`ugc-video-translation-…` kebab vs camel; `aiCollageDigitalWallpaperGuide` vs `gridCollageAiPrompts`; `f5TtsVoiceCloning` vs `f5TtsVsElevenlabs`; `videoTranscriptionTechnicalDeepDive` vs `translateYoutubeVideoToEnglish`); 301 the dead slug; update internal links. Also resolve the `video_translation_eval` orphan namespace **and the F5-TTS contamination in `contentTaggingSystem.threeLayerApproach.layer3`** that surfaced today.
+
+### 3. Author the missing `contentTaggingSystem` sub-trees
+`keyInsight.methods`, `pinterestPlatform.templateTags.geoTags.examples`, `…languageTags.examples`, `finalThought.systems`, `footer.tags`. The page no longer crashes, but those sections render empty until authored.
+
+### 4. P1 fluff rewrite — top 5 by Search Console impressions
+Candidate list (highest-impact first, but verify against SC):
+- `nanoBananaPromptEcosystem` (keyword-stuffed intro — high impressions on "nano banana prompts")
+- `chineseCostumeHistoryInfographic` (boilerplate "Comprehensive guide to…")
+- `videoTranscriptionBusinessGuide` (boilerplate "Learn how to transcribe…")
+- `lipSyncBusinessGuide` (boilerplate "Discover how AI lip sync…")
+- `imageToNarrativeVideo` ("Transform static images into compelling…")
+
+### 5. P0 / P1 CTR follow-up
+After 2026-06-01, re-pull Search Console for the 10 bleeders rewritten in `0803aab` and the 3 P0 rewrites from today. Lift > 2× CTR ⇒ the playbook is working; lift flat ⇒ try a stronger framing or a different position-rank cohort.
+
+### 6. P2 audit pass
+Skim the ~20 P2 bodies. If anchored in real templates and tools, leave alone; otherwise add to a future P1 list.
 
 ---
 
