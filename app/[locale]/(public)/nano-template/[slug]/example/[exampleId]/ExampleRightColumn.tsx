@@ -23,9 +23,6 @@ import { useTracking } from "@/services/useTracking";
 const CREDITS_COST = 10;
 
 type Props = {
-  chipTopics?: string[];
-  chipExampleTopics?: string[];
-  chipCategory?: string;
   title: string;
   description?: string;
   templateId: string;
@@ -39,12 +36,21 @@ type Props = {
   batchEnabled: boolean;
   examplePageUrl: string;
   existingExamples?: ExistingExampleRef[];
+  /** Persona chips to surface below the action bar. Derived from the
+   *  parent template's tier-1 topic via getUseCasesForTopics on the
+   *  server. Empty/undefined hides the row. */
+  useCaseFilter?: readonly string[];
+  /** When set, render the topic capsule row + H1 title inside the
+   *  column. The example page leaves these unset because its hero now
+   *  hoists the title and chips above the grid; the carousel sidebar
+   *  passes them since the sidebar has no separate header. */
+  chipTopics?: string[];
+  chipExampleTopics?: string[];
+  chipCategory?: string;
+  showHeader?: boolean;
 };
 
 export default function ExampleRightColumn({
-  chipTopics,
-  chipExampleTopics,
-  chipCategory,
   title,
   description,
   templateId,
@@ -58,6 +64,11 @@ export default function ExampleRightColumn({
   batchEnabled,
   examplePageUrl,
   existingExamples = [],
+  useCaseFilter,
+  chipTopics,
+  chipExampleTopics,
+  chipCategory,
+  showHeader,
 }: Props) {
   const [form, setForm] = useState<Record<string, string>>(initialParams);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
@@ -106,12 +117,13 @@ export default function ExampleRightColumn({
     } catch {}
   };
 
-  const mergedTopics = [...new Set([...(chipTopics ?? []), ...(chipExampleTopics ?? [])])];
+  const mergedTopics = showHeader
+    ? [...new Set([...(chipTopics ?? []), ...(chipExampleTopics ?? [])])]
+    : [];
 
   return (
-    <div className="flex flex-col gap-3 lg:min-h-[520px]">
-      {/* Meta chips */}
-      {(mergedTopics.length > 0 || chipCategory) ? (
+    <div className="flex flex-col gap-3">
+      {showHeader && (mergedTopics.length > 0 || chipCategory) ? (
         <div className="flex flex-wrap items-center gap-2">
           {mergedTopics.length > 0 && (
             <TopicNavRow
@@ -133,16 +145,18 @@ export default function ExampleRightColumn({
         </div>
       ) : null}
 
-      {/* Title */}
-      <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
-        {title}
-      </h1>
+      {showHeader ? (
+        <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
+          {title}
+        </h1>
+      ) : null}
 
       {/* Localized description kept in DOM (sr-only) for SEO + screen
           readers but invisible visually — matches the topic page pattern.
-          Removes the bulky paragraph from the right column without losing
-          the per-locale text Google needs to differentiate the 10
-          allow_i18n locale pages. */}
+          When the hero hoists the H1 + topic capsules above the grid
+          (showHeader=false on the example page), we still keep the
+          per-locale description here so Google has unique text for each
+          of the 10 allow_i18n locale pages. */}
       {description ? <p className="sr-only whitespace-pre-line">{description}</p> : null}
 
       {/* Generate your own — param inputs */}
@@ -222,16 +236,6 @@ export default function ExampleRightColumn({
         />
       </section>
 
-      {/* Use-case chips — let users pivot to a relevant persona landing
-          if the example fits a different audience than the template
-          page they came from. */}
-      <div className="border-t border-neutral-100 pt-3">
-        <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-          Use this example for
-        </div>
-        <UseCaseChipsRow />
-      </div>
-
       {/* Duplicate warning */}
       {duplicateWarning && (
         <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
@@ -307,6 +311,18 @@ export default function ExampleRightColumn({
           />
         )}
       </div>
+
+      {/* Use-case chips — after the primary action bar so the persona
+          nav is a secondary fork, not above the CTA. Filter derives
+          from the template's tier-1 topic. */}
+      {(useCaseFilter?.length ?? 0) > 0 && (
+        <div className="border-t border-neutral-100 pt-3">
+          <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+            Use this example for
+          </div>
+          <UseCaseChipsRow filterTo={useCaseFilter} />
+        </div>
+      )}
 
       {/* Generated image result */}
       {generatedImageUrl && (

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
 import { USE_CASES, getUseCaseBySlug } from "@/lib/use-cases";
-import { getToolBySlug } from "@/lib/tools-registry";
+import { getToolBySlug, type ToolDef } from "@/lib/tools-registry";
 import {
   type RawTemplate,
   type RawNanoImageRecord,
@@ -85,15 +85,9 @@ export default async function UseCasePage({ params }: Props) {
     try { return t(key as never) ?? key; } catch { return key; }
   };
 
-  const toolCards = useCase.toolSlugs
+  const tools: ToolDef[] = useCase.toolSlugs
     .map((toolSlug) => getToolBySlug(toolSlug))
-    .filter(Boolean)
-    .map((tool) => ({
-      slug: tool!.slug,
-      title: safeT(tool!.i18n.titleKey),
-      description: safeT(tool!.i18n.descKey),
-      href: localeStr === "en" ? `/tools/${tool!.slug}` : `/${localeStr}/tools/${tool!.slug}`,
-    }));
+    .filter((t): t is ToolDef => Boolean(t));
 
   const learningMaterials =
     slug === "for-parents"
@@ -115,7 +109,7 @@ export default async function UseCasePage({ params }: Props) {
     <UseCaseClient
       slug={useCase.slug}
       nanoCards={nanoCards}
-      toolCards={toolCards}
+      tools={tools}
       learningMaterials={learningMaterials}
     />
   );

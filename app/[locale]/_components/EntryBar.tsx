@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { ENTRY_BAR_ITEMS } from "@/lib/entry_bar";
 import { getCanonicalPath } from "@/lib/canonical";
 import { useClickTracking } from "@/services/useTracking";
+import UseCaseChipsRow from "./UseCaseChipsRow";
 
 type Props = {
   locale: string;
@@ -66,6 +67,14 @@ export default function EntryBar({ locale, className }: Props) {
         {ENTRY_BAR_ITEMS.map((item) => (
           <EntryBarItem key={item.id} item={item} locale={locale} />
         ))}
+      </div>
+
+      {/* Second row — persona nav, restored alongside the tier-1 topic
+          capsules. The "Explore by Use Case:" lead-in label is opt-in
+          via showQuestion so visitors immediately understand what the
+          chips mean instead of seeing six unlabeled persona pills. */}
+      <div className="mt-2">
+        <UseCaseChipsRow showQuestion />
       </div>
     </section>
   );

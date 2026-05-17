@@ -183,32 +183,37 @@ export default function ExamplePromptHero({
     <>
       <Breadcrumbs items={breadcrumbs} />
 
+      {/* Page header — H1 and topic capsules sit on the same row so the
+          hoisted header is a single horizontal band above the hero,
+          letting the image card / right-column collapse to their content
+          height. Wraps on narrow viewports. */}
+      <header className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+        <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
+          {title}
+        </h1>
+        {metaChips ? (
+          <div className="flex flex-wrap items-center gap-2">{metaChips}</div>
+        ) : null}
+      </header>
+
       <section className={["relative", className].filter(Boolean).join(" ")}>
         <DesktopPrevNext prevNext={prevNext} trackingId={trackingId} />
 
         {/* Image card sized at 85% of the prior hero width (1.05fr →
-            0.89fr). Height is a minimum of 442 px but stretches to match
-            the right column's natural height (lg:items-stretch + h-full),
-            so on the example page — where the right column is taller —
-            the image card grows to align all the way down to the action
-            bar. On the prompt-detail page the right column is shorter,
-            so the min-h-442 floor kicks in for both columns. */}
+            0.89fr). Both columns stretch to match (lg:items-stretch).
+            Floor of 440 px matches the travel-beijing example layout
+            (2 param rows + 1-line prompt + action bar + use-case chips,
+            with mt-auto pushing the action bar down), so the gallery
+            prompt page — which has a shorter natural column — gets the
+            same hero height as the example page rather than collapsing. */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.89fr)_minmax(0,1.2fr)] lg:items-stretch">
-          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-full lg:min-h-[442px]">
+          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-full lg:min-h-[440px]">
             {image}
           </div>
 
-          <div className="flex flex-col gap-4 lg:min-h-[442px]">
+          <div className="flex flex-col gap-4">
             {rightColumnContent ? rightColumnContent : (
               <>
-                {metaChips ? (
-                  <div className="flex flex-wrap items-center gap-2">{metaChips}</div>
-                ) : null}
-
-                <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
-                  {title}
-                </h1>
-
                 {description ? (
                   <DescriptionClamp text={description} lines={2} />
                 ) : null}

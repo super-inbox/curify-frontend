@@ -10,6 +10,7 @@ import ExampleRightColumn from "./ExampleRightColumn";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
+import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
 
@@ -52,6 +53,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
 
   const templateView = getTemplateView(ctx.reg, ctx.templateId, ctx.contentLocale);
   const templateTopics = templateView?.topics ?? [];
+  const templateUseCases = templateView?.use_cases ?? [];
   const templateBatch = templateView?.batch ?? false;
   const templateParameters = templateView?.parameters ?? [];
   const templateAllowGeneration = templateView?.allow_generation ?? false;
@@ -131,6 +133,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     prevNext,
     otherNanoCards,
     templateTopics,
+    templateUseCases,
     templateBatch,
     templateParameters,
     templateAllowGeneration,
@@ -247,6 +250,7 @@ export default async function NanoExampleDetailPage({
     prevNext,
     otherNanoCards,
     templateTopics,
+    templateUseCases,
     templateBatch,
     templateParameters,
     templateAllowGeneration,
@@ -257,6 +261,32 @@ export default async function NanoExampleDetailPage({
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
 
+  const mergedTopics = [
+    ...new Set([...(templateTopics ?? []), ...(exampleTopics ?? [])]),
+  ];
+  const metaChips =
+    mergedTopics.length > 0 || category ? (
+      <>
+        {mergedTopics.length > 0 && (
+          <TopicNavRow
+            locale={rawLocale}
+            topics={mergedTopics}
+            className="mb-0"
+            showDisabled={false}
+            size="small"
+          />
+        )}
+        {category && (
+          <Link
+            href={`/${rawLocale}/nano-template/${slug}`}
+            className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
+          >
+            {category}
+          </Link>
+        )}
+      </>
+    ) : null;
+
   return (
     <main className="mx-auto max-w-[1400px] px-4 py-2 sm:px-6 lg:px-8">
       <ExamplePromptHero
@@ -264,6 +294,7 @@ export default async function NanoExampleDetailPage({
         prompt={prompt}
         trackingId={example.id}
         prevNext={prevNext}
+        metaChips={metaChips}
         breadcrumbs={[
           { label: "Home", href: `/${rawLocale}` },
           { label: category || slug, href: `/${rawLocale}/nano-template/${slug}` },
@@ -297,9 +328,6 @@ export default async function NanoExampleDetailPage({
         }
         rightColumnContent={
           <ExampleRightColumn
-            chipTopics={templateTopics}
-            chipExampleTopics={exampleTopics}
-            chipCategory={category}
             title={title}
             description={bodyDescription ?? undefined}
             templateId={templateId}
@@ -313,6 +341,7 @@ export default async function NanoExampleDetailPage({
             batchEnabled={templateBatch}
             examplePageUrl={examplePageUrl}
             existingExamples={existingExamples}
+            useCaseFilter={templateUseCases}
           />
         }
       />
