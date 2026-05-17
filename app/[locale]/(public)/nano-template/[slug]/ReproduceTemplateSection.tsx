@@ -18,7 +18,7 @@ import {
 } from "@/lib/nano_prompt_utils";
 
 const COLLAPSED_PARAM_ROWS = 3;
-const COLLAPSED_PROMPT_ROWS = 3;
+const COLLAPSED_PROMPT_ROWS = 1;
 
 export type SampleImage = {
   url: string;
@@ -339,7 +339,7 @@ export default function ReproduceTemplateSection(props: {
                   <div className="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-600">
                     {t("reproduce.previewLabel")}
                   </div>
-                  <pre className={`whitespace-pre-wrap text-sm leading-relaxed text-neutral-800 overflow-hidden${!showFullPrompt ? " line-clamp-3" : ""}`}>
+                  <pre className={`whitespace-pre-wrap text-sm leading-relaxed text-neutral-800 overflow-hidden${!showFullPrompt ? " line-clamp-1" : ""}`}>
                     {promptText}
                   </pre>
                   {shouldFoldPrompt && (

@@ -176,11 +176,11 @@ export default function ExamplePromptHero({
       <section className={["relative", className].filter(Boolean).join(" ")}>
         <DesktopPrevNext prevNext={prevNext} trackingId={trackingId} />
 
-        {/* Image card sized at 85% of the prior 520px hero — keeps the
-            image visible without dominating the fold. The right column
-            mirrors the same min-height so the prompt / description
+        {/* Image card sized at 85% of the prior hero — both height (520 →
+            442 px) and width (1.05fr → 0.89fr of the grid). The right
+            column mirrors the same min-height so the prompt / description
             section bottoms out at the same line as the image card. */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:items-stretch">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.89fr)_minmax(0,1.2fr)] lg:items-stretch">
           <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[442px]">
             {image}
           </div>
@@ -215,7 +215,7 @@ export default function ExamplePromptHero({
                   ) : (
                     <PromptPreviewBlock
                       text={prompt}
-                      collapsedRows={3}
+                      collapsedRows={1}
                       expandable={true}
                       containerClassName="rounded-2xl border border-neutral-200 bg-neutral-50"
                       preClassName="text-neutral-800"

@@ -217,7 +217,7 @@ export default function ExampleRightColumn({
         <PromptBreakdown
           prompt={basePrompt}
           params={form}
-          collapsedMaxHeight={80}
+          collapsedMaxHeight={30}
         />
       </section>
 
