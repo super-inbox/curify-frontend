@@ -1,6 +1,6 @@
 # Search Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-18 (item 2 — low-result logging — shipped). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `scripts/enrich_search_aliases.cjs`, or `scripts/lib/auto_tag.cjs`._
+_Last updated: 2026-05-18 (item 1 — search_aliases top-up audit — shipped). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `scripts/enrich_search_aliases.cjs`, `scripts/topup_search_aliases.py`, or `scripts/lib/auto_tag.cjs`._
 
 ## Framing
 
@@ -24,7 +24,8 @@ Tracks are interleaved but distinct. Recall fixes ship in `search/page.tsx` (tok
 | 2026-05-15 | `a203ce6` | Catch-up `search_aliases` enrichment for 97 newly-added inspirations | Same script, re-run after a content drop. |
 | 2026-05-15 | `ee1e5cc` | Share the enricher with the daily auto-tag pipeline (`scripts/lib/auto_tag.cjs`) | Future content drops auto-enrich; no separate maintenance step. |
 | 2026-05-17 | `7df4425` | **Strip structured-syntax noise from query tokenizer** (P0 fix #1) | Tokenizer was preserving meta-words (`topics`, `theme`, `insights`, `highlights`) and punctuation (`: = ·`) as literal tokens. Strict-AND failed; relaxed-OR inflated past threshold. Identified by the Reddit-search-comparison eval. |
-| 2026-05-18 | _(pending push)_ | **Low-result query logging** (shortlist item 2) | New `search_low_result` action type fires from `SearchResultsClient` when total results across grid + matched templates + gallery prompts is 1-2 (threshold = 3). `contentId` carries the query + result count so admin can rank queries by how close they are to the threshold. Existing `search_noresult` event continues to fire for zero-result queries unchanged. Backend SQL panel extension still needed (`curify-studio`) to surface "Low-result queries (last 14 days)" in admin. |
+| 2026-05-18 | `fe3a4d7` | **Low-result query logging** (shortlist item 2) | New `search_low_result` action type fires from `SearchResultsClient` when total results across grid + matched templates + gallery prompts is 1-2 (threshold = 3). `contentId` carries the query + result count so admin can rank queries by how close they are to the threshold. Existing `search_noresult` event continues to fire for zero-result queries unchanged. Backend SQL panel extension still needed (`curify-studio`) to surface "Low-result queries (last 14 days)" in admin. |
+| 2026-05-18 | _(pending push)_ | **`search_aliases` top-up audit** (shortlist item 1) | Appended targeted aliases to 775 inspirations across 48 templates in 6 families — per-country MBTI / culture (23 templates → `global`, `world`, `international`, `cross-cultural`, `country`, plus zh equivalents), synonym / advanced-expression (3 → `theory`, `linguistics`, `synonym`, `antonym`, `advanced expressions`, etc.), travel / destination (13 → `remote`, `destination`, `hidden gems`, `city escape`, `weekend getaway`), expat / lifestyle culture (5 → `expat`, `living abroad`, `cross-cultural living`), spring / aesthetic / watercolor (11 → `spring`, `aesthetic`, `floral`, `botanical`, plus `唯美` / `春天` covering the 2026-05-18 `唯美春天` report), photorealistic portrait / ID photo (3 → `证件照`, `passport photo`, `headshot`, plus `身份证照`, `id photo style` covering the `证件照` report). ~11,841 alias entries added net of dedup. Reproducible via `scripts/topup_search_aliases.py`. |
 
 ---
 
@@ -87,17 +88,21 @@ Re-pull on/after 2026-05-22 (see `project_search_ctr_followup.md`).
 
 ## Next-up shortlist
 
-### 1. P0 fix #2 — `search_aliases` top-up audit
-The tokenizer change is necessary but not sufficient for themes 5, 9. Audit and extend `search_aliases` on the template families the analyst expected to surface:
+### ~~1. P0 fix #2 — `search_aliases` top-up audit~~ ✓ shipped 2026-05-18
+First pass complete via `scripts/topup_search_aliases.py`. Appended targeted aliases to **775 inspirations across 48 templates** in 6 families:
 
-- **Per-country MBTI / culture cards** — add `global`, `world`, `international`, `cross-cultural`, `country`.
-- **Synonym / advanced-expression templates** — add `theory`, `linguistics`, `synonym theory`, `advanced expressions`, `one-word-many-meanings`.
-- **Travel destination / map templates** — add `remote`, `destination`, `off-the-beaten-path`, `hidden gems`.
-- **Expat / lifestyle culture cards** — add `expat`, `expatriate`, `living abroad`, `cross-cultural living`.
-- **Spring / aesthetic seasonal templates** — add zh aliases `唯美`, `春天`, `美感`, `aesthetic`, `spring` (covers the 2026-05-18 `唯美春天` no-result report).
-- **Photorealistic portrait templates** — add zh aliases `证件照`, `身份证照`, `id photo`, `passport photo`, `头像` (covers the 2026-05-18 `证件照` report, partially; the rest is content gap).
+| Family | Templates | Aliases appended (en + zh) |
+| --- | --- | --- |
+| Per-country MBTI / culture | 23 | `global`, `world`, `international`, `cross-cultural`, `country`, `global influence` + zh equivalents |
+| Synonym / advanced-expression | 3 | `theory`, `linguistics`, `synonym`, `antonym`, `advanced expressions`, `one-word-many-meanings`, `word theory`, `language theory` + zh |
+| Travel / destination | 13 | `remote`, `destination`, `off-the-beaten-path`, `hidden gems`, `weekend getaway`, `city escape`, `itinerary`, `escapes` + zh (`远程目的地`, `隐藏景点`, `小众景点`) |
+| Expat / lifestyle culture | 5 | `expat`, `expatriate`, `living abroad`, `cross-cultural living`, `china expat` + zh (`外籍`, `海外生活`, `在华外籍`) |
+| Spring / aesthetic / watercolor | 11 | `spring`, `aesthetic`, `floral`, `flower`, `botanical`, `spring flowers`, `watercolor spring` + zh (`春天`, `唯美`, `唯美春天`, `美感`, `花卉`, `植物`) — covers the 2026-05-18 `唯美春天` user report |
+| Photorealistic portrait / ID photo | 3 | `ID photo`, `passport photo`, `headshot`, `professional headshot`, `id photo style`, `retouched portrait` + zh (`证件照`, `身份证照`, `护照照`, `头像`, `证件 风格头像`) — covers the 2026-05-18 `证件照` user report |
 
-Re-run `scripts/enrich_search_aliases.cjs` with targeted slug filter if it supports one; otherwise hand-edit the affected slugs in `nano_inspiration.json` and `nano_templates.json`.
+11,841 alias entries added net of dedup. The family list + aliases are captured at the top of `scripts/topup_search_aliases.py`, so the next pass — once item 2's low-result logging accumulates a week of data — can rerun the script with refreshed family/alias tables.
+
+Open follow-up: **727 templates aren't in any of the 6 families.** The next audit pass should rank failing queries from the new low-result logging and add new families as needed. Expect content gaps as well (e.g. `证件照` is a partial match — there's no dedicated ID-photo template in the catalog).
 
 ### ~~2. Low-result query logging~~ ✓ shipped 2026-05-18 (frontend side)
 Frontend instrumentation landed. `SearchResultsClient` now fires:
