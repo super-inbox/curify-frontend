@@ -185,23 +185,6 @@ export default function SearchResultsClient({
         </div>
       )}
 
-      {/* Related topic chips */}
-      {relatedTopics.length > 0 && (
-        <div className="mb-6 flex flex-wrap gap-2">
-          <span className="text-sm text-neutral-500 self-center">Browse:</span>
-          {relatedTopics.map((s) => (
-            <Link
-              key={s.slug}
-              href={chipHref(s, locale)}
-              className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
-            >
-              {s.emoji && <span>{s.emoji}</span>}
-              {renderLabel(s.slug, s.label)}
-            </Link>
-          ))}
-        </div>
-      )}
-
       <p className="mb-5 text-sm text-neutral-500">
         {hasResults
           ? `Results for "${query}"`
@@ -282,6 +265,26 @@ export default function SearchResultsClient({
             </section>
           )}
         </>
+      )}
+
+      {/* Related-query chips — moved to the bottom so the page leads
+          with actual results / the rewrite hint, and the "what else
+          could I look at" fork sits as a soft footer for users who
+          scrolled past everything without converting. */}
+      {relatedTopics.length > 0 && (
+        <div className="mt-12 flex flex-wrap gap-2 border-t border-neutral-200 pt-8">
+          <span className="text-sm text-neutral-500 self-center">Browse:</span>
+          {relatedTopics.map((s) => (
+            <Link
+              key={s.slug}
+              href={chipHref(s, locale)}
+              className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
+            >
+              {s.emoji && <span>{s.emoji}</span>}
+              {renderLabel(s.slug, s.label)}
+            </Link>
+          ))}
+        </div>
       )}
     </div>
   );
