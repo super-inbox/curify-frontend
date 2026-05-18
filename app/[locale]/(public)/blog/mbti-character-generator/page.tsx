@@ -102,7 +102,7 @@ export default function MBTICharacterGeneratorPage() {
   const locale = useLocale();
 
   return (
-    <div className="mx-auto max-w-4xl pt-10 pb-8 px-4 md:px-6">
+    <div className="mx-auto max-w-7xl pt-10 pb-8 px-4 md:px-6">
       <article className="prose prose-base md:prose-lg max-w-none">
         {/* Hero — plain bold heading + subtitle (was a gradient-blur halo
             + gradient-clip title, dropped per docs/blog-quality.md polish
@@ -136,7 +136,6 @@ export default function MBTICharacterGeneratorPage() {
             { level: "2", text: t('beyond.title'), id: "beyond" },
             { level: "2", text: t('tabs.techniques'), id: "techniques" },
             { level: "2", text: t('tabs.advanced'), id: "advanced" },
-            { level: "2", text: t('benefits.title'), id: "benefits" },
             { level: "2", text: t('conclusion.title'), id: "conclusion" }
           ]}
         />
@@ -231,26 +230,12 @@ export default function MBTICharacterGeneratorPage() {
                 traits={t.raw('yellowstone.beth.traits')}
                 prompt={t('yellowstone.beth.prompt')}
               />
-              
+
               <MBTICharacterCard
                 character="Rip Wheeler"
                 type="ISTP"
                 traits={t.raw('yellowstone.rip.traits')}
                 prompt={t('yellowstone.rip.prompt')}
-              />
-              
-              <MBTICharacterCard
-                character="John Dutton"
-                type="ENTJ"
-                traits={t.raw('yellowstone.john.traits')}
-                prompt={t('yellowstone.john.prompt')}
-              />
-              
-              <MBTICharacterCard
-                character="Kayce Dutton"
-                type="ISFP"
-                traits={t.raw('yellowstone.kayce.traits')}
-                prompt={t('yellowstone.kayce.prompt')}
               />
             </div>
 
@@ -383,58 +368,15 @@ export default function MBTICharacterGeneratorPage() {
             </div>
           </section>
 
-        {/* Benefits Section */}
-        <section className="my-16 bg-gradient-to-br from-gray-50 to-blue-50 py-12 px-6 rounded-3xl">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <span className="inline-block px-3 py-1 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full mb-4">
-                {t('benefits.subtitle')}
-              </span>
-              <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                {t('benefits.title')}
-              </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            <div className="space-y-6">
-              <ul className="space-y-4">
-                {[
-                  {
-                    title: t('benefits.accuracy.title'),
-                    description: t('benefits.accuracy.description')
-                  },
-                  {
-                    title: t('benefits.efficiency.title'),
-                    description: t('benefits.efficiency.description')
-                  },
-                  {
-                    title: t('benefits.consistency.title'),
-                    description: t('benefits.consistency.description')
-                  },
-                  {
-                    title: t('benefits.creativity.title'),
-                    description: t('benefits.creativity.description')
-                  }
-                ].map((benefit, index) => (
-                  <li key={index} className="flex items-start">
-                    <svg className="h-6 w-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <div>
-                      <strong>{benefit.title}</strong> - {benefit.description}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Conclusion */}
+        {/* Conclusion — plain close, no gradient banner. The
+            BlogCTACard below carries the next-step action. */}
         <section id="conclusion" className="my-16">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-            <h2 className="text-3xl font-bold mb-4">{t('conclusion.title')}</h2>
-            <p className="text-lg">{t('conclusion.description')}</p>
-          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            {t('conclusion.title')}
+          </h2>
+          <p className="text-lg text-gray-700">
+            {t('conclusion.description')}
+          </p>
         </section>
       </article>
 

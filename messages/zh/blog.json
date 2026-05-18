@@ -7013,213 +7013,6 @@
     "metaDescription": "AI唇同步管道架构的技术深度探讨。MuseTalk、Sync.co、面部动画和生产系统设计的完整指南，面向开发人员和AI工程师。",
     "updated": true
   },
-  "MBTICharacterGenerator": {
-    "title": "终极AI MBTI角色生成器指南（包含黄石示例）| Curify",
-    "description": "了解如何使用AI生成准确的MBTI角色个性，使用黄石示例。发现角色发展的高级提示技术。"
-  },
-  "MBTICharacterGeneratorGuide": {
-    "title": "终极AI MBTI角色生成器指南（包含黄石示例）| Curify",
-    "description": "了解如何使用AI生成准确的MBTI角色个性，使用黄石示例。发现角色发展的高级提示技术。",
-    "hero": {
-      "title": "终极AI MBTI角色生成器指南",
-      "subtitle": "利用AI驱动的角色发展，使用黄石的标志性个性作为蓝图，转变您的创作过程"
-    },
-    "introduction": {
-      "paragraph1": "虽然您已经发布了Nano Banana MBTI角色生成器，但下一步是&lt;strong&gt;使工具与特定用户意图对齐&lt;/strong&gt;。搜索者不仅仅在寻找通用的MBTI生成器——他们想要分析、重建或角色扮演他们已经知道的角色，通常以“Rip Wheeler是什么MBTI？”或“Beth Dutton个性类型”等查询开始。这表明从抽象的个性探索转向&lt;strong&gt;应用角色建模&lt;/strong&gt;，用户期望输出感觉可识别、准确且立即可用。黄石提供了一个完美的切入点：一个高参与度的系列，具有独特的、心理丰富的角色，与MBTI原型清晰对应。例如，Beth的强烈和战略性攻击与ENTJ特征紧密相连，而Kayce的内心冲突和道德敏感性反映了ISFP的特征。这些强烈的个性信号使用户更容易根据自己的解释验证生成的输出，从而增加对工具的信任。通过将Nano Banana的生成能力锚定在这些熟悉的角色上，您减少了用户的认知负担——他们不必从头开始想象抽象特征。相反，他们可以&lt;strong&gt;逆向工程他们已经理解的个性&lt;/strong&gt;，然后将其扩展到新的场景、原创角色或RPG设置。这将工具从一个新奇的生成器转变为&lt;strong&gt;实用的创意助手&lt;/strong&gt;，用于讲故事、粉丝理论创作和角色驱动的世界构建。",
-      "paragraph2": "本综合指南向创作者、作家和RPG玩家展示如何利用Curify的Nano Banana生成&lt;strong&gt;高度准确、上下文感知的角色个性&lt;/strong&gt;，基于MBTI类型。该指南不仅停留在表面标签，而是逐步讲解如何将每个MBTI档案转化为可操作的特征——决策模式、对话风格、情感触发和人际动态——以便生成的角色在不同场景中感觉一致且可信。使用黄石角色作为实际示例，我们展示了如何&lt;strong&gt;将MBTI输出锚定在可识别的个性中&lt;/strong&gt;，然后将这些模式扩展到原创角色创作、粉丝小说或桌面RPG活动中。例如，用户可以从Beth Dutton风格的ENTJ原型开始，并将其改编为企业反派，或将Rip Wheeler风格的ISTP档案发展为道德复杂的RPG伙伴。通过将逐步生成工作流程与已经吸引搜索兴趣的流行文化参考相结合，本指南旨在&lt;strong&gt;捕捉高意图的长尾流量&lt;/strong&gt;，同时提供即时的创意价值。读者不仅了解MBTI类型的含义——他们还学习如何将其操作化为可以在故事、游戏或内容创作管道中使用的完全实现的角色。"
-    },
-    "tags": {
-      "mbtiGenerator": "MBTI生成器",
-      "yellowstoneMBTI": "黄石MBTI",
-      "characterDevelopment": "角色发展"
-    },
-    "protip": "从特定的MBTI类型和真实角色示例开始，以训练AI的个性模式，然后生成原创角色。",
-    "tabs": {
-      "basics": "MBTI基础",
-      "yellowstone": "黄石示例",
-      "techniques": "高级技术",
-      "advanced": "专业使用",
-      "faq": "常见问题"
-    },
-    "basics": {
-      "title": "理解MBTI以生成角色",
-      "whatIsMBTI": {
-        "title": "什么是MBTI？",
-        "description": "迈尔斯-布里格斯类型指标是一种个性框架，根据四个关键维度将人们分类为16种不同的个性类型。该系统为创建一致、可信的角色提供了极好的基础。"
-      },
-      "aiGeneration": {
-        "title": "AI驱动的MBTI角色生成",
-        "description": "使用Curify的Nano Banana，您可以生成详细的角色档案，准确反映MBTI个性特征，包括行为、对话模式和决策倾向。",
-        "basicPrompt": {
-          "title": "基本角色提示结构",
-          "example": "为[MBTI_TYPE]个性类型生成角色档案。包括他们的核心特征、沟通风格、决策过程和在[CONTEXT]中的典型行为。",
-          "explanation": "这个简单的结构为AI提供了创建一致角色个性所需的基本信息。"
-        }
-      }
-    },
-    "yellowstone": {
-      "title": "黄石角色作为MBTI模板",
-      "beth": {
-        "traits": [
-          "大胆",
-          "果断",
-          "竞争性",
-          "快速反应",
-          "足智多谋",
-          "直接沟通"
-        ],
-        "prompt": "生成一个30多岁、在高风险商业环境中工作的ESTP女性角色。包括敏锐的机智、战略思维和保护家庭的忠诚。她应该自信，偶尔无情，但有隐藏的脆弱。"
-      },
-      "rip": {
-        "traits": [
-          "忠诚",
-          "有条理",
-          "负责任",
-          "传统",
-          "保护性",
-          "行动导向"
-        ],
-        "prompt": "创建一个ISTJ男性角色，他是一个忠诚的保护者和执行者。包括强烈的责任感、实用的问题解决能力和坚定的忠诚。他应该安静但强大，拥有严格的道德准则和保护本能。"
-      },
-      "john": {
-        "traits": [
-          "自然领导者",
-          "战略性",
-          "果断",
-          "有远见",
-          "权威",
-          "家庭导向"
-        ],
-        "prompt": "生成一个ENTJ角色，作为一个强大的家庭家长和商业领袖。包括战略思维、指挥气场和复杂的家庭动态。他应该果断、有远见，但背负着责任和遗产的重担。"
-      },
-      "kayce": {
-        "traits": [
-          "以价值为导向",
-          "适应能力强",
-          "忠诚",
-          "避免冲突",
-          "有原则",
-          "情感深度"
-        ],
-        "prompt": "创建一个ISFP角色，夹在家庭忠诚和个人价值之间。包括强烈的道德指南针、情感敏感性和内心冲突。他应该有技能、深思熟虑，但在竞争优先事项中挣扎。"
-      },
-      "analysis": {
-        "title": "为什么这些例子有效",
-        "description": "《黄石》中的角色提供了完美的MBTI原型，因为他们在高风险情况下体现了明确的人格特征，使他们成为AI角色生成的理想模板。",
-        "points": [
-          "每个角色在不同场景中表现出一致的MBTI行为",
-          "他们的动机和决策模式清晰可见",
-          "该剧为压力下的人格表达提供了丰富的背景",
-          "这些原型在各种类型和环境中表现良好"
-        ]
-      }
-    },
-    "techniques": {
-      "title": "高级提示技术",
-      "detailedPrompts": {
-        "title": "创建详细的角色档案",
-        "description": "通过结合详细的人格框架和上下文元素来提升角色生成。",
-        "structure": {
-          "title": "全面的提示结构",
-          "elements": [
-            "核心MBTI类型和认知功能",
-            "背景和生活经历",
-            "当前的上下文和环境",
-            "具体场景和挑战",
-            "关系动态和沟通风格"
-          ]
-        },
-        "example": "为一个最近创办可持续时尚品牌的ENFP企业家生成详细的角色档案。包括他们的创作过程、如何应对商业挑战、他们的社交风格以及在工作与生活平衡中的个人挣扎。展示他们在趋势识别中的外向直觉和在道德决策中的内向情感。包括对话示例和内心独白片段。"
-      },
-      "iterativeRefinement": {
-        "title": "迭代角色发展",
-        "description": "使用多步骤方法来完善和提升您的AI生成角色。",
-        "steps": {
-          "step1": {
-            "title": "生成基础档案",
-            "description": "从一个广泛的MBTI聚焦提示开始，以建立角色的核心个性。"
-          },
-          "step2": {
-            "title": "添加具体上下文",
-            "description": "通过添加具体场景、关系和环境因素来完善角色。"
-          },
-          "step3": {
-            "title": "测试和完善",
-            "description": "将角色置于各种情境中以测试一致性并完善人格特征。"
-          }
-        }
-      }
-    },
-    "advanced": {
-      "title": "专业应用",
-      "useCases": {
-        "title": "专业用例",
-        "writers": {
-          "title": "小说作家",
-          "description": "创建一致的、多维的角色，推动引人入胜的叙事"
-        },
-        "rpg": {
-          "title": "RPG游戏主持人",
-          "description": "生成具有独特个性的NPC，以实现沉浸式角色扮演体验"
-        },
-        "marketing": {
-          "title": "市场营销团队",
-          "description": "为目标活动开发品牌角色和客户画像"
-        },
-        "psychology": {
-          "title": "心理学学生",
-          "description": "通过基于角色的学习场景探索人格类型"
-        }
-      },
-      "bestPractices": {
-        "title": "AI角色生成的最佳实践",
-        "points": [
-          "始终指定角色所处的上下文和环境",
-          "包括强项和弱项，以实现真实的人格",
-          "使用具体场景测试角色一致性",
-          "根据生成的结果进行迭代和完善",
-          "结合多个MBTI见解以创造复杂角色",
-          "在不同上下文中保持角色一致性"
-        ]
-      }
-    },
-    "benefits": {
-      "subtitle": "为什么选择AI驱动的MBTI生成",
-      "title": "AI MBTI角色生成的关键好处",
-      "accuracy": {
-        "title": "心理准确性",
-        "description": "基于大量人格数据训练的AI模型生成的人物与既定的MBTI框架始终保持一致"
-      },
-      "efficiency": {
-        "title": "时间效率",
-        "description": "在几秒钟内生成详细的角色档案，而不是花费数小时进行手动角色开发和研究"
-      },
-      "consistency": {
-        "title": "角色一致性",
-        "description": "在所有故事场景和上下文中保持一致的人格特征、行为和决策模式"
-      },
-      "creativity": {
-        "title": "增强创造力",
-        "description": "探索新的角色可能性和人格组合，激发新的叙事方法和故事"
-      }
-    },
-    "conclusion": {
-      "title": "今天就开始创造引人入胜的角色",
-      "description": "借助Curify的Nano Banana和这些MBTI角色生成技术，您拥有创建丰富、一致角色所需的一切，能够吸引观众。无论您是在写小说、开发RPG活动，还是创建市场营销角色，AI驱动的角色生成将改变您的创作过程。",
-      "cta": {
-        "primary": "尝试Nano Banana角色生成器",
-        "secondary": "探索更多AI工具"
-      }
-    },
-    "universes": {
-      "title": "12 个宇宙，一个 MBTI 系统",
-      "description": "选择你已经熟悉的宇宙 — 漫威、火影忍者、老友记、黄石、吉卜力 — 输入角色名称，获取与该节目风格相符的 MBTI 人格卡。生成角色的最快方式是从读者已经认识的角色开始。"
-    },
-    "beyond": {
-      "title": "超越单一角色",
-      "description": "超越单一角色的 MBTI 模板 — 并排比较两种类型，绘制关系动态，打破常见刻板印象，或构建多角色网格。适合社交、教育和粉丝内容的高度可分享格式。"
-    }
-  },
   "HowToDubVideosNaturally": {
     "description": "一份全面的指南，解决使用AI工具时常见的配音挑战。学习针对机械节奏、缺乏情感和口型同步问题的实用解决方案。",
     "hero": {
@@ -7404,5 +7197,188 @@
     "title": "如何修复机器人工智能配音：2026年的口型同步、情感与节奏",
     "metaDescription": "人工智能配音的视频听起来像机器人？通过正确的声音克隆工作流程修复口型同步漂移、情感平淡和不自然的节奏——为2026年的创作者提供逐步指导。",
     "seoKeywords": "修复机器人工智能配音, 人工智能声音克隆伪影, 口型同步漂移修复, 人工智能配音教程2026, 自然人工智能配音, 声音克隆情感, 视频配音工作流程"
+  },
+  "MBTICharacterGenerator": {
+    "title": "MBTI 性格生成器：适用于 Marvel、NBA、吉卜力、黄石公园等的视觉个性卡 | Curify",
+    "description": "为您已知的任何角色生成 3:4 MBTI 个性卡。10 个宇宙模板（Marvel、NBA、硅谷、绝命毒师、吉卜力、黄石公园、火影忍者、动物，以及通用的 16 种类型）和 382 个可重混的示例。"
+  },
+  "MBTICharacterGeneratorGuide": {
+    "title": "MBTI 性格生成器：适用于 Marvel、NBA、吉卜力、黄石公园等的视觉个性卡 | Curify",
+    "description": "为您已知的任何角色生成 3:4 MBTI 个性卡。10 个宇宙模板（Marvel、NBA、硅谷、绝命毒师、吉卜力、黄石公园、火影忍者、动物，以及通用的 16 种类型）和 382 个可重混的示例。",
+    "hero": {
+      "title": "MBTI 性格生成器：您已知角色的视觉卡片",
+      "subtitle": "选择一个宇宙 — Marvel、NBA、硅谷、绝命毒师、吉卜力、黄石公园、火影忍者或动物 — 输入角色名称，获取一张与该节目风格相符的 3:4 MBTI 个性卡。"
+    },
+    "introduction": {
+      "paragraph1": "大多数 MBTI 生成器搜索并不是从 \"给我一个随机个性\" 开始的。它们是从一个特定名称开始的：&lt;strong&gt;\"Rip Wheeler 的 MBTI 是什么？\"&lt;/strong&gt;、\"Beth Dutton 个性类型\"、\"Hulk MBTI\"。人们想要的是对他们已知的某个人的个性解读，而不是 16 种原型的测验。Curify 的 MBTI 生成器正是围绕这一意图构建的。每个模板都是一个单一宇宙的视觉设计师 — 黄石公园、Marvel、绝命毒师、吉卜力、NBA、硅谷、火影忍者 — 输出的是一张您可以保存、分享或拼接成系列的垂直 3:4 个性卡。",
+      "paragraph2": "本页面介绍了我们提供的 10 个宇宙模板、网站上已有的 382 个可用角色示例，以及两个非宇宙模板（&lt;strong&gt;对比&lt;/strong&gt;用于类型对比，&lt;strong&gt;刻板印象与现实&lt;/strong&gt;用于您在社交媒体上看到的生动反应格式卡片）。下面画廊部分中的每个示例都是一键重混 — 选择最接近的角色，交换名称，您就有了一张卡片。"
+    },
+    "tags": {
+      "mbtiGenerator": "MBTI 生成器",
+      "yellowstoneMBTI": "黄石公园 MBTI",
+      "characterDevelopment": "角色发展"
+    },
+    "protip": "获得良好 MBTI 卡片的最快途径：从读者已经认识的角色开始。黄石公园、Marvel 和绝命毒师模板都预先输入了角色类型 — 您只需输入名称。",
+    "tabs": {
+      "basics": "工作原理",
+      "yellowstone": "黄石公园示例",
+      "techniques": "深入了解",
+      "advanced": "使用案例",
+      "faq": "常见问题"
+    },
+    "basics": {
+      "title": "MBTI 卡片生成器的工作原理",
+      "whatIsMBTI": {
+        "title": "四个维度，十六种类型",
+        "description": "MBTI 将人们分为 16 种类型，基于四个二元维度：外向/内向（能量来源）、感觉/直觉（如何获取信息）、思考/情感（如何做出决策）、判断/知觉（如何接触外部世界）。生成器输出的卡片标注了所有四个维度，并展示了与类型相关的认知功能。"
+      },
+      "aiGeneration": {
+        "title": "选择一个宇宙，输入一个名称，获取一张卡片",
+        "description": "每个模板都是一个单一宇宙的视觉设计师（黄石公园风格、Marvel 漫画矢量、NBA 收藏卡、绝命毒师粗犷工业风）。用户输入的仅是角色名称。系统会填写 MBTI 类型、认知功能、特征、标志性道具和风格 — 输出是一张您可以保存、分享或拼接成系列的垂直 3:4 图像。",
+        "basicPrompt": {
+          "title": "用户实际输入的内容",
+          "example": "character_name: \"Beth Dutton\" → template-mbti-yellowstone\n→ 3:4 卡片：ENTJ + 认知功能 + 4 个核心特征 + 九型人格 + 乡村牧场风格",
+          "explanation": "用户提供一个字段 — 角色名称。模板处理其余部分。这就是为什么生成器对读者已经认识的角色效果良好：MBTI 类型和特征的分配是基于现有系列中的可观察行为，而不是从提示中虚构出来的。"
+        }
+      }
+    },
+    "yellowstone": {
+      "title": "两个黄石公园示例（模板中还有 11 个）",
+      "beth": {
+        "traits": [
+          "大胆",
+          "果断",
+          "竞争性",
+          "反应迅速",
+          "足智多谋",
+          "直接沟通"
+        ],
+        "prompt": "character_name: \"Beth Dutton\"\ntemplate: template-mbti-yellowstone\n→ 3:4 性格卡片: ENTJ + 4 积极功能 + 核心特征 + 九型人格 + 乡村牧场风格"
+      },
+      "rip": {
+        "traits": [
+          "忠诚",
+          "有条理",
+          "负责任",
+          "传统",
+          "保护性强",
+          "以行动为导向"
+        ],
+        "prompt": "character_name: \"Rip Wheeler\"\ntemplate: template-mbti-yellowstone\n→ 3:4 性格卡片: ISTP + 4 积极功能 + 核心特征 + 九型人格 + 乡村牧场风格"
+      },
+      "analysis": {
+        "title": "为什么是这两位",
+        "description": "Beth (ENTJ) 和 Rip (ISTP) 是推动本页面大多数搜索查询的两个角色——\"Beth Dutton 性格类型\"，\"Rip Wheeler 是什么 MBTI\"。黄石模板提供了 9 个预设角色（John Dutton, Kayce Dutton, Jamie Dutton, Jimmy Hurdstrom, Lloyd Pierce, Monica Dutton, Teeter, Thomas Rainwater, Walker），并且底层模板接受任何其他黄石角色名称。",
+        "points": [
+          "模板中有 11 个黄石角色，每个角色呈现为带有乡村牧场风格的 3:4 卡片",
+          "基于系列中可观察行为的预设 MBTI 分配——不是虚构的",
+          "每张卡片包括积极功能、核心特征、九型人格和结束标语",
+          "浏览完整的黄石图库，或通过更换角色名称重新混合任何卡片"
+        ]
+      }
+    },
+    "techniques": {
+      "title": "深入探讨",
+      "detailedPrompts": {
+        "title": "当默认卡片不够时",
+        "description": "每个模板允许您覆盖自动填充的字段，如果默认输出不太正确——当您想要突出不太常见的特征、特定的签名引用或与默认不同的九型人格类型时非常有用。",
+        "structure": {
+          "title": "您可以覆盖的内容",
+          "elements": [
+            "MBTI 类型——如果您不同意该角色的默认分配",
+            "积极功能——卡片上显示的四个（主导、辅助、第三、劣势）",
+            "核心特征——卡片底部的 4-5 个特征标签",
+            "签名引用——提取到引用框中（绝命毒师和黄石模板）",
+            "九型人格类型——在底部部分作为单独图表显示"
+          ]
+        },
+        "example": "character_name: \"Saul Goodman\"\ntemplate: template-mbti-breakingbad\nmbti_type: \"ENTP\"\nsignature_quote: \"你没有为这个意外情况做计划吗？我的意思是，童子军有一个座右铭...\"\ntrait_1: \"机智\"\ntrait_2: \"适应性强\"\ntrait_3: \"有说服力\""
+      },
+      "iterativeRefinement": {
+        "title": "三种迭代方式",
+        "description": "如果第一张卡片不合适，通常三个调整就足够了。",
+        "steps": {
+          "step1": {
+            "title": "更换宇宙",
+            "description": "同一角色在漫威与绝命毒师风格中可能有不同的表现。如果绝命毒师的粗犷外观不合适，漫威的漫画矢量模板通常适用。"
+          },
+          "step2": {
+            "title": "覆盖 MBTI 类型",
+            "description": "默认分配基于系列中的可观察行为，但合理的人会有不同看法。如果你想要 INTJ 而默认是 ENTJ，请明确传递 mbti_type。"
+          },
+          "step3": {
+            "title": "覆盖特征",
+            "description": "底部的 4-5 个特征标签承载了大部分卡片的阅读内容。交换其中两个通常会改变整体印象。"
+          }
+        }
+      }
+    },
+    "advanced": {
+      "title": "谁在使用这个",
+      "useCases": {
+        "title": "我们在日志中看到的具体用例",
+        "writers": {
+          "title": "粉丝理论帖子",
+          "description": "Reddit / Tumblr 线程讨论角色的 MBTI。卡片是帖子构建的视觉中心。"
+        },
+        "rpg": {
+          "title": "桌面 NPC 表",
+          "description": "游戏主持人打印 3:4 卡片作为主要 NPC 的快速个性参考——认知功能面板也作为角色扮演指导。"
+        },
+        "marketing": {
+          "title": "角色推介演示文稿",
+          "description": "品牌团队使用对比模板在一张幻灯片上并排比较两个客户角色。"
+        },
+        "psychology": {
+          "title": "教学辅助工具",
+          "description": "刻板印象与现实卡片作为课堂提示，讨论 MBTI 类型如何在网上被夸张化。"
+        }
+      },
+      "bestPractices": {
+        "title": "常见的误区",
+        "points": [
+          "不要与宇宙模板对抗——选择角色实际生活的宇宙，而不是最接近你审美偏好的那个。",
+          "如果角色不知名，可以退回到通用的 16 种类型模板——它不需要著名的知识产权来锚定卡片。",
+          "对比模板需要两个 MBTI 类型作为输入，而不是两个角色名称——先选择类型，然后将角色写入特征字段。",
+          "动物 MBTI 卡片在儿童和教育内容中效果惊人——这种抽象消除了类型分配的政治性。"
+        ]
+      }
+    },
+    "benefits": {
+      "subtitle": "",
+      "title": "",
+      "accuracy": {
+        "title": "",
+        "description": ""
+      },
+      "efficiency": {
+        "title": "",
+        "description": ""
+      },
+      "consistency": {
+        "title": "",
+        "description": ""
+      },
+      "creativity": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "conclusion": {
+      "title": "从你已经知道的角色开始",
+      "description": "选择你已经熟悉的宇宙，输入角色名称，然后从那里进行重新创作。越接近真实可识别的人物，卡片所需的调整就越少。",
+      "cta": {
+        "primary": "尝试 Nano Banana 角色生成器",
+        "secondary": "探索更多 AI 工具"
+      }
+    },
+    "universes": {
+      "title": "10 个宇宙，一个 MBTI 系统",
+      "description": "选择你已经了解的宇宙 — 漫威（66 个例子）、NBA（30）、硅谷（42）、绝命毒师（24）、吉卜力（23）、火影忍者（14）、黄石公园（11）、动物（49），加上通用的 16 类型模板（75）和老友记。输入角色名称，获得一个与该节目风格相符的 3:4 性格卡。"
+    },
+    "beyond": {
+      "title": "两个不是单角色的模板",
+      "description": "类型对比卡（27 个例子）和刻板印象与现实反应格式卡（16 个例子） — 都是为社交帖子、教育幻灯片和粉丝内容而设计的，其中一个角色并不是合适的单位。"
+    }
   }
 }
