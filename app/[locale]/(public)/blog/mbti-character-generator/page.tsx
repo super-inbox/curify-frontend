@@ -20,6 +20,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
@@ -101,41 +102,29 @@ export default function MBTICharacterGeneratorPage() {
   const locale = useLocale();
 
   return (
-    <div className="pt-10 pb-8">
-      {/* Breadcrumb Navigation */}
-      <article className="prose prose-base md:prose-lg">
-        {/* Hero Section */}
-        <div className="relative mb-8">
-          <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-20"></div>
-          <h1 className="relative text-3xl md:text-5xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+    <div className="mx-auto max-w-4xl pt-10 pb-8 px-4 md:px-6">
+      <article className="prose prose-base md:prose-lg max-w-none">
+        {/* Hero — plain bold heading + subtitle (was a gradient-blur halo
+            + gradient-clip title, dropped per docs/blog-quality.md polish
+            pass). */}
+        <header className="mb-10">
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3 text-gray-900">
             {t('hero.title')}
           </h1>
-          <p className="text-xl text-gray-600 mt-4">
+          <p className="text-lg text-gray-600">
             {t('hero.subtitle')}
           </p>
-        </div>
+        </header>
 
-        {/* Introduction */}
-        <div className="prose prose-lg max-w-none mb-12">
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-100 mb-8">
-            <p className="text-lg text-gray-600 mb-4"
-              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph1')) }}
-            />
-            <p className="text-lg text-gray-700 mb-4"
-              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph2')) }}
-            />
-            <div className="flex flex-wrap gap-4 mt-6">
-              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                {t('tags.mbtiGenerator')}
-              </span>
-              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
-                {t('tags.yellowstoneMBTI')}
-              </span>
-              <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-                {t('tags.characterDevelopment')}
-              </span>
-            </div>
-          </div>
+        {/* Introduction — plain prose paragraphs (was a gradient card with
+            three decorative tag chips, dropped per polish pass). */}
+        <div className="mb-12 space-y-4">
+          <p className="text-lg text-gray-700"
+            dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph1')) }}
+          />
+          <p className="text-lg text-gray-700"
+            dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph2')) }}
+          />
         </div>
 
         {/* Table of Contents */}
@@ -448,6 +437,14 @@ export default function MBTICharacterGeneratorPage() {
           </div>
         </section>
       </article>
+
+      {/* CTA — slug-level override in BlogCTACard.tsx points at /topics/character
+          + creators playbook (per the 22-click reader-intent finding). */}
+      <BlogCTACard
+        category="nano-template"
+        slug="mbti-character-generator"
+        locale={locale}
+      />
 
       {/* Related Blogs */}
       <RelatedBlogs currentSlug="mbti-character-generator" locale={locale} />
