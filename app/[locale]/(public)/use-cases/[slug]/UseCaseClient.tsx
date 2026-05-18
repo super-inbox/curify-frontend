@@ -4,6 +4,7 @@ import { useCallback, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useAtomValue, useSetAtom } from "jotai";
 import { Download } from "lucide-react";
+import { Link as IntlLink } from "@/i18n/navigation";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
@@ -14,7 +15,7 @@ import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import type { ToolDef } from "@/lib/tools-registry";
-import { USE_CASES, PERSONA_BLOG_CATEGORIES } from "@/lib/use-cases";
+import { USE_CASES, PERSONA_BLOG_CATEGORIES, getUseCaseBySlug } from "@/lib/use-cases";
 
 type LearningMaterial = {
   templateId: string;
@@ -27,6 +28,30 @@ type LearningMaterial = {
 };
 
 const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3"] as const;
+
+// Use cases that have an explainer video pair under /public/video/.
+// File naming convention: `use-case-{key}-{en|cn}.mp4`. Extend this map
+// when a new pair is uploaded; pages without an entry simply skip the
+// video column and the hero text takes the full row width.
+const USE_CASE_VIDEO_KEY: Record<string, string> = {
+  "for-designers": "design",
+  "for-parents": "parents",
+};
+
+function UseCaseVideo({ videoKey, lang }: { videoKey: string; lang: "en" | "cn" }) {
+  const src = `/video/use-case-${videoKey}-${lang}.mp4`;
+  return (
+    <div className="w-full overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 shadow-sm">
+      <video
+        src={src}
+        controls
+        playsInline
+        preload="metadata"
+        className="aspect-video w-full bg-black"
+      />
+    </div>
+  );
+}
 
 function LearningMaterialCard({ material }: { material: LearningMaterial }) {
   const t = useTranslations("actionButtons");
@@ -61,7 +86,7 @@ function LearningMaterialCard({ material }: { material: LearningMaterial }) {
   };
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+    <div className="flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
       {material.coverImage ? (
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
           <CdnImage
@@ -76,19 +101,19 @@ function LearningMaterialCard({ material }: { material: LearningMaterial }) {
         // a soft purple-tinted swatch with a Download glyph so the card
         // still reads as visual rather than three lines of text.
         <div className="relative flex aspect-[4/3] w-full items-center justify-center bg-gradient-to-br from-purple-50 to-purple-100">
-          <Download className="h-12 w-12 text-purple-300" />
+          <Download className="h-8 w-8 text-purple-300" />
         </div>
       )}
-      <div className="flex flex-1 flex-col gap-3 p-5">
-        <div className="text-base font-bold text-neutral-900">{material.title}</div>
-        <div className="line-clamp-3 text-sm text-neutral-500">{material.description}</div>
+      <div className="flex flex-1 flex-col gap-2 p-3">
+        <div className="line-clamp-2 text-sm font-semibold text-neutral-900">{material.title}</div>
+        <div className="line-clamp-2 text-xs text-neutral-500">{material.description}</div>
         <button
           type="button"
           onClick={handleDownload}
           disabled={isDownloading}
-          className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60"
+          className="mt-auto inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-full bg-purple-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-purple-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          <Download className="h-4 w-4" />
+          <Download className="h-3.5 w-3.5" />
           {isDownloading ? t("downloadingPack") : t("downloadPack")}
         </button>
       </div>
@@ -114,6 +139,13 @@ export default function UseCaseClient({
   // P0 #3 — blog categories that match this persona. Drives the
   // "Related reading" block at the bottom. See docs/interconnection.md.
   const relatedBlogCategories = PERSONA_BLOG_CATEGORIES[slug] ?? [];
+  // B2B pages get a "Built for teams" badge + a one-line "APIs available
+  // on request" note in the hero. Visible packaging = the dev-shop
+  // guardrail (see docs/interconnection.md "B2B tier").
+  const isB2B = getUseCaseBySlug(slug)?.tier === "b2b";
+  // Optional explainer video on the right side of the hero. Only the
+  // slugs in USE_CASE_VIDEO_KEY have a video pair under /public/video/.
+  const videoKey = USE_CASE_VIDEO_KEY[slug];
   const user = useAtomValue(userAtom);
   const setDrawerState = useSetAtom(drawerAtom);
   const requireAuth = useCallback(() => {
@@ -124,15 +156,24 @@ export default function UseCaseClient({
 
   return (
     <main className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 lg:px-8">
-      {/* Hero */}
-      <section className="mb-10">
+      {/* Hero — text block + optional explainer video side by side on
+          lg+, stacked on smaller. Single max-w on the text section so
+          title, subtitle, description, bullets, and the B2B API line
+          share one consistent reading column. */}
+      <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-start">
+      <section className="max-w-3xl lg:flex-1">
+        {isB2B && (
+          <span className="mb-3 inline-flex items-center rounded-full border border-purple-300 bg-purple-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-purple-800">
+            {tGlobal("interconnection.builtForTeams")}
+          </span>
+        )}
         <h1 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
           {title}
         </h1>
         <p className="mt-3 text-lg font-semibold text-purple-700">
           {t(`${slug}.subtitle` as never)}
         </p>
-        <p className="mt-3 max-w-2xl text-base text-neutral-600">
+        <p className="mt-3 text-base text-neutral-600">
           {t(`${slug}.description` as never)}
         </p>
 
@@ -144,7 +185,27 @@ export default function UseCaseClient({
             </li>
           ))}
         </ul>
+
+        {isB2B && (
+          <p className="mt-5 text-sm font-medium text-neutral-700">
+            <span aria-hidden="true" className="mr-1.5">⚡</span>
+            {tGlobal("interconnection.apiAvailable")}{" "}
+            <IntlLink
+              href="/contact"
+              className="font-semibold text-purple-700 underline-offset-2 hover:underline"
+            >
+              {tGlobal("interconnection.apiContactCTA")}
+            </IntlLink>
+          </p>
+        )}
       </section>
+
+        {videoKey && (
+          <div className="w-full lg:w-[460px] lg:flex-shrink-0">
+            <UseCaseVideo videoKey={videoKey} lang={locale === "zh" ? "cn" : "en"} />
+          </div>
+        )}
+      </div>
 
       {/* Learning Materials (for-parents) or Tools (other use cases) */}
       {learningMaterials && learningMaterials.length > 0 ? (
@@ -152,7 +213,7 @@ export default function UseCaseClient({
           <h2 className="mb-4 text-xl font-bold text-neutral-900">
             {t("learningMaterialsHeading")}
           </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {learningMaterials.map((m) => (
               <LearningMaterialCard key={m.templateId} material={m} />
             ))}

@@ -210,25 +210,27 @@
     },
     "useCasesQuestion": "按使用场景探索：",
     "useCases": {
-      "for-marketers": "营销人员",
+      "for-marketers": "营销与代运营",
       "for-parents": "家长",
-      "for-esl-learners": "ESL学习者",
+      "for-esl-learners": "ESL 学习者",
       "for-creators": "创作者",
-      "for-designers": "为设计师",
-      "for-publishers": "为出版商"
+      "for-designers": "设计师",
+      "for-publishers": "教育科技与出版",
+      "for-dtc-brands": "DTC 出海品牌",
+      "for-programmatic-seo": "程序化 SEO"
     }
   },
   "useCasePage": {
     "toolsHeading": "工具",
     "templatesHeading": "{title}的模板",
     "for-marketers": {
-      "title": "营销人员",
-      "subtitle": "内容生产效率提升10倍",
-      "description": "无需猜测什么有效。几分钟内将一个想法变成数十个高效视觉内容和视频——无需设计技能，无需提示词工程。",
-      "bullet0": "从单一想法批量生成内容",
-      "bullet1": "将图片转化为短视频",
-      "bullet2": "跨平台复用内容",
-      "bullet3": "下载即用的内容包"
+      "title": "面向营销与增长代运营",
+      "subtitle": "用现有10人团队的人力，服务50个客户",
+      "description": "代运营的瓶颈是人力规模化——直到它不再是。把白标内容工厂交给每位客户经理：输入品牌资料，输出一个月的多平台原生内容，覆盖旅行、生活方式、设计与产品垂类。同一个工程师服务全部50个客户。利润线性增长，人头不变。",
+      "bullet0": "白标内容引擎——你的品牌、你的客户、你的交付",
+      "bullet1": "按账户配置品牌资料：调性、风格、配色、排期",
+      "bullet2": "开箱覆盖旅行 · 生活方式 · 设计 · 产品垂类",
+      "bullet3": "打包形态：按席位授权 或 按托管账户分层——挑模式，不做定制保底"
     },
     "for-parents": {
       "title": "家长",
@@ -269,18 +271,39 @@
       "bullet3": "带水印的预览用于SEO + 干净的原件用于付费下载"
     },
     "for-publishers": {
-      "title": "为出版商和教育科技",
-      "subtitle": "从一个标题扩展到十个表面",
-      "description": "适合儿童书籍出版商和K-5教育科技平台——将一个标题转变为双语词汇包、角色阵容MBTI变体、课堂海报和社交卡。或者为您的平台的应用内生成授权语言词汇引擎。相同角色，10倍表面；相同引擎，两种集成形状。",
-      "bullet0": "格式扩展：一个标题 → 卡片 · 海报 · 社交 · 课堂",
-      "bullet1": "K-5词汇引擎，涵盖动物 · 自然 · 太空 · 家庭 · 交通",
-      "bullet2": "流行文化MBTI框架，准备好IP嵌入（漫威/吉卜力风格）",
-      "bullet3": "双语版本（en-zh / en-es / en-ja / en-ko），无需翻译团队"
+      "title": "面向教育科技与儿童出版",
+      "subtitle": "工业级内容流水线——插画师三个月的活，一个周末交付",
+      "description": "外包插画师画一套 500 张词汇卡需要数月。我们的引擎只需几小时。同一套角色铺到卡片、海报、教室装饰与社交——一个标题，十个表面。或者授权底层词汇引擎，让你自己的平台用 en / es / zh / ja / ko 生成 K-5 内容，双语版本开箱可用，不再需要翻译团队。",
+      "bullet0": "K-5 词汇引擎，覆盖动物 · 自然 · 太空 · 家庭 · 交通（30+ 模板，5 种语言）",
+      "bullet1": "格式扩展：一个标题 → 卡片 · 海报 · 社交 · 教室装饰",
+      "bullet2": "双语版本（en-zh / en-es / en-ja / en-ko）—— 无需翻译团队",
+      "bullet3": "打包形态：白标引擎授权 或 全托管内容包订阅——挑形态，不留半成品"
+    },
+    "for-dtc-brands": {
+      "title": "面向跨境出海品牌与 DTC 独立站",
+      "subtitle": "一张产品图 → 100 张滑动停留场景，自动排期到 Pinterest / Instagram / TikTok / X",
+      "description": "跨境电商的生死取决于每日社媒产量。别再等设计外包一周交五张生活场景图。一张产品图进入引擎，午饭前 100 张风格化场景——咖啡馆、花园、儿童房、度假、节日、季节——干净无水印地排期分发到四大平台。为 ROAS 服务，不为作品集服务。",
+      "bullet0": "从一张产品图批量生成 100+ 生活方式 / 场景变体",
+      "bullet1": "针对 Pinterest / Instagram / TikTok / X 美学的风格预设",
+      "bullet2": "内建 SMM 队列，自动排期分发四大平台",
+      "bullet3": "打包形态：500 图 / 2,000 图 / 不限量月度分层——固定范围，不做定制开发"
+    },
+    "for-programmatic-seo": {
+      "title": "面向程序化 SEO 站群运营者",
+      "subtitle": "我们自己跑了 5,500 页的 hub-and-spoke 生成器——现在你也可以",
+      "description": "长尾关键词页面没有原创配图与编辑级排版就拿不到排名。我们知道——Curify 自己就建了 5,500 页，你现在读的就是其中一个 hub。授权同一套生成器：批量生成的 hero 图、schema 感知的页面模板、内链网状结构。联盟营销站、垂类门户（旅游、留学、育儿）、本地 SEO 矩阵——挑你的细分，生成页面，等待收录。",
+      "bullet0": "Hub-and-spoke 生成器，内置内链网状结构",
+      "bullet1": "每页原创 hero 图——告别免版税滤镜与瘦内容惩罚",
+      "bullet2": "Schema 感知模板，开箱支持 AffiliateProduct / FAQ / HowTo 标记",
+      "bullet3": "打包形态：托管生成器 或 自托管 Docker——固定范围的 CMS 适配器，不做重写"
     }
   },
   "interconnection": {
     "whoItsFor": "适合谁",
     "relatedTools": "相关工具",
-    "relatedReading": "相关阅读"
+    "relatedReading": "相关阅读",
+    "builtForTeams": "面向团队打造",
+    "apiAvailable": "可按需提供 API。",
+    "apiContactCTA": "我们来聊聊范围 →"
   }
 }

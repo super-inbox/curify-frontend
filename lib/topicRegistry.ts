@@ -406,17 +406,21 @@ export function getGalleryTag(topicId: string): string | undefined {
 
 // Tier-1 topic → persona chip slugs shown on reproduce/example surfaces.
 // Mapping is deliberate, not topic-derived: each tier-1 implies which
-// audiences will recognize value in those templates. Keep in sync with the
-// 6 chip definitions in UseCaseChipsRow.
+// audiences will recognize value in those templates. Keep in sync with
+// USE_CASES in lib/use-cases.ts.
+//
+// for-programmatic-seo is intentionally absent — it's a horizontal engine
+// play (hub-and-spoke generator), not a vertical template browser, so it
+// wouldn't be served by a "templates for travel" feed.
 const TIER1_USE_CASES: Record<string, readonly string[]> = {
   character:   ["for-creators", "for-designers"],
   personality: ["for-creators", "for-designers"],
   language:    ["for-parents", "for-esl-learners", "for-publishers"],
   learning:    ["for-parents", "for-creators", "for-publishers"],
-  travel:      ["for-creators", "for-marketers"],
-  lifestyle:   ["for-creators", "for-marketers"],
-  design:      ["for-marketers", "for-designers"],
-  product:     ["for-marketers", "for-designers"],
+  travel:      ["for-creators", "for-marketers", "for-dtc-brands"],
+  lifestyle:   ["for-creators", "for-marketers", "for-dtc-brands"],
+  design:      ["for-marketers", "for-designers", "for-dtc-brands"],
+  product:     ["for-marketers", "for-designers", "for-dtc-brands"],
 };
 
 /** Persona chips appropriate for a template/example, derived from its

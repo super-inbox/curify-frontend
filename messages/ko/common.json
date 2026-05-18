@@ -208,27 +208,29 @@
       "language": "언어",
       "travel": "여행 & 문화"
     },
-    "useCasesQuestion": "사용 사례별 탐색:",
+    "useCasesQuestion": "사용 사례별로 둘러보기:",
     "useCases": {
-      "for-marketers": "마케터용",
-      "for-parents": "부모용",
-      "for-esl-learners": "ESL 학습자용",
-      "for-creators": "크리에이터용",
-      "for-designers": "디자이너를 위한",
-      "for-publishers": "출판사를 위한"
+      "for-marketers": "그로스 에이전시",
+      "for-parents": "부모",
+      "for-esl-learners": "ESL 학습자",
+      "for-creators": "크리에이터",
+      "for-designers": "디자이너",
+      "for-publishers": "EdTech & 출판사",
+      "for-dtc-brands": "DTC 브랜드",
+      "for-programmatic-seo": "프로그래매틱 SEO"
     }
   },
   "useCasePage": {
     "toolsHeading": "도구",
     "templatesHeading": "{title}을 위한 템플릿",
     "for-marketers": {
-      "title": "마케터용",
-      "subtitle": "콘텐츠를 10배 빠르게 생성·확장·게시",
-      "description": "무엇이 효과적인지 추측하는 것을 멈추세요. 하나의 아이디어로 몇 분 안에 수십 개의 고성과 비주얼과 영상을 만드세요.",
-      "bullet0": "하나의 아이디어에서 콘텐츠 일괄 생성",
-      "bullet1": "이미지를 숏폼 영상으로 변환",
-      "bullet2": "플랫폼을 넘나들며 콘텐츠 재활용",
-      "bullet3": "바로 게시 가능한 콘텐츠 팩 다운로드"
+      "title": "For Marketing & Growth Agencies",
+      "subtitle": "Serve 50 clients with the headcount you have for 10",
+      "description": "Agency scaling is people-scaling — until it isn’t. Hand each account manager a white-labeled content factory: brief in a brand profile, get back a month of platform-native posts across travel, lifestyle, design, and product verticals. The same engineer ships for all 50 clients. Margin scales linearly; headcount doesn’t.",
+      "bullet0": "White-label content engine — your brand, your client, your delivery",
+      "bullet1": "Per-account brand profiles: tone, style, palette, posting schedule",
+      "bullet2": "Covers travel · lifestyle · design · product verticals out of the box",
+      "bullet3": "Packaged as: per-seat license OR per-managed-account tier — pick a model, no custom retainer"
     },
     "for-parents": {
       "title": "부모용",
@@ -269,18 +271,39 @@
       "bullet3": "SEO를 위한 워터마크 미리보기 + 유료 다운로드를 위한 깨끗한 원본"
     },
     "for-publishers": {
-      "title": "출판사 및 에드테크를 위한",
-      "subtitle": "하나의 제목에서 열 개의 표면으로 형식 확장",
-      "description": "어린이 도서 출판사와 K-5 에드테크 플랫폼을 위한 — 하나의 제목을 이중 언어 어휘 팩, 캐릭터 캐스트 MBTI 변형, 교실 포스터 및 소셜 카드로 변환하세요. 또는 플랫폼의 인앱 생성을 위한 언어 어휘 엔진을 라이센스하세요. 동일한 캐릭터, 10배의 표면; 동일한 엔진, 두 가지 통합 형태.",
-      "bullet0": "형식 확장: 하나의 제목 → 카드 · 포스터 · 소셜 · 교실",
-      "bullet1": "동물 · 자연 · 우주 · 가족 · 교통 수단에 걸친 K-5 어휘 엔진",
-      "bullet2": "IP 드롭인 준비된 대중문화 MBTI 프레임워크 (마블 / 지브리 스타일)",
-      "bullet3": "번역 팀 없이 이중 언어 판 (en-zh / en-es / en-ja / en-ko)"
+      "title": "For EdTech & Children’s Publishers",
+      "subtitle": "Industrial-grade content pipeline — what your illustrator ships in 3 months, ship in a weekend",
+      "description": "Outsourced illustrators take months to deliver a 500-card vocabulary set. Our engine takes hours. Same characters across cards, posters, classroom decor, and social — one title, ten surfaces. Or license the underlying vocabulary engine so your own platform can generate K-5 content in en / es / zh / ja / ko, bilingual editions included, no translator team required.",
+      "bullet0": "K-5 vocabulary engine across animals · nature · space · family · transportation (30+ templates, 5 languages)",
+      "bullet1": "Format extension: one title → cards · posters · social · classroom decor",
+      "bullet2": "Bilingual editions (en-zh / en-es / en-ja / en-ko) — no translator team",
+      "bullet3": "Packaged as: white-label engine license OR done-for-you pack subscription — pick a shape, no half-builds"
+    },
+    "for-dtc-brands": {
+      "title": "For DTC Brands & Cross-Border Ecommerce",
+      "subtitle": "One product photo → 100 scroll-stopping scenes, auto-scheduled to Pinterest, Instagram, TikTok, X",
+      "description": "Cross-border ecommerce lives or dies by daily social volume. Stop waiting on a design contractor to ship five lifestyle shots a week. One product photo enters our engine; a hundred styled scenes — café, garden, kids’ room, vacation, seasonal — come out, watermark-clean and scheduled across four platforms before lunch. Built to move ROAS, not to win portfolio awards.",
+      "bullet0": "Batch-generate 100+ lifestyle / scene variants from one product photo",
+      "bullet1": "Style presets matched to Pinterest / Instagram / TikTok / X aesthetics",
+      "bullet2": "Auto-schedule across four platforms via the built-in SMM queue",
+      "bullet3": "Packaged as: 500-image / 2,000-image / unlimited monthly tiers — fixed scope, no custom dev"
+    },
+    "for-programmatic-seo": {
+      "title": "For Programmatic SEO Builders",
+      "subtitle": "We ran our own 5,500-page hub-and-spoke generator — now you can run yours",
+      "description": "Long-tail keyword pages don’t rank without original imagery and editorial layout. We know — we built 5,500 of them for Curify itself, and you’re reading one of the hubs right now. License the same generator: batch-generated hero imagery, schema-aware page templates, internal-link mesh. Affiliate sites, vertical portals (travel, study-abroad, parenting), local-SEO networks — pick your niche, generate the pages, get indexed.",
+      "bullet0": "Hub-and-spoke generator with built-in internal-link mesh",
+      "bullet1": "Original hero imagery per page — no royalty-free filler, no thin-content penalty",
+      "bullet2": "Schema-aware templates ready for AffiliateProduct / FAQ / HowTo markup",
+      "bullet3": "Packaged as: hosted generator OR self-hosted Docker — fixed-scope CMS adapter, no custom rewrites"
     }
   },
   "interconnection": {
     "whoItsFor": "대상",
     "relatedTools": "관련 도구",
-    "relatedReading": "관련 읽기"
+    "relatedReading": "관련 읽기",
+    "builtForTeams": "Built for teams",
+    "apiAvailable": "APIs available on request.",
+    "apiContactCTA": "Let’s talk scope →"
   }
 }
