@@ -260,7 +260,8 @@
         "date": "2026年3月29日",
         "readTime": "10分で読めます",
         "tag": "Video Dubbing",
-        "image": "/images/office.webp"
+        "image": "/images/office.webp",
+        "thumbnailType": "ビデオ文字起こしビジネス"
       },
       {
         "slug": "lip-sync-technical-deep-dive",
@@ -506,7 +507,13 @@
         "date": "April 16, 2026",
         "readTime": "10 min read",
         "tag": "Content Automation",
-        "image": "/images/jay.webp"
+        "image": "/images/jay.webp",
+        "category": "ナノテンプレート",
+        "relatedLinks": [
+          "ナノバナナプロンプトの究極ディレクトリ",
+          "ナノバナナのための10のプロンプトヒント",
+          "ナノバナナプロンプトエコシステム"
+        ]
       },
       {
         "slug": "ai-content-distribution-system",
@@ -824,7 +831,6 @@
       "title": "YouTube動画を英語に翻訳する：AI駆動のソリューション",
       "date": "2026年3月4日",
       "readTime": "10分で読めます",
-      "intro": "高度なAI技術を使用して、YouTube動画を英語に翻訳する方法を発見しましょう。あなたのコンテンツを世界中の英語を話すオーディエンスにアクセス可能にします。",
       "whatIsTitle": "なぜ英語に翻訳するのか？",
       "whatIsContent": "英語はビジネスとエンターテインメントのグローバルな言語です。コンテンツを英語に翻訳することで、大規模なオーディエンスの可能性が開かれ、発見性が向上します。",
       "whyTitle": "英語翻訳の利点",
@@ -849,7 +855,8 @@
       "step4Title": "ステージ 4: 音声合成とクローン作成",
       "step4Content": "翻訳されたテキストは、元の話者の音声特性を保持する高度なテキスト読み上げ（TTS）モデルを使用して自然な音声に変換されます。当社のパイプラインは、Tacotron 2スタイルのアーキテクチャとニューラルボコーダーを組み合わせて、高忠実度の音声生成を実現しています。\n\n**Python 実装の詳細:**\n```python\n# Tacotron 2 + WaveRNNを使用した音声合成\nfrom tacotron2 import Tacotron2\nfrom wavernn import WaveRNN\nfrom voice_cloning import VoiceEncoder, VoiceCloner\n\n# 元の音声から話者の特性を抽出\nvoice_encoder = VoiceEncoder()\nspeaker_embedding = voice_encoder.embed(original_speech)\n\n# 話者の特性を持つTTSモデルを初期化\ntacotron = Tacotron2(\n    embedding_dim=512,\n    encoder_dim=256,\n    decoder_dim=256,\n    n_mels=80\n)\n\n# 翻訳されたテキストからメルスペクトログラムを生成\nwith torch.no_grad():\n    mel_output = tacotron.inference(\n        text=translated_text,\n        speaker_embedding=speaker_embedding,\n        attention_alignment=True\n    )\n\n# ニューラルボコーダーを使用して波形に変換\nvocoder = WaveRNN()\naudio_output = vocoder.generate(mel_output)\n```\n\n音声クローンシステムは、音色、ピッチ、抑揚パターンをエンコードする256次元の話者埋め込みをキャプチャします。これにより、自然な音声特性を維持しながら、言語を超えた一貫した音声再現が可能になります。",
       "step5Title": "ステージ 5: リップシンクとビデオの整合",
-      "step5Content": "最終ステージでは、生成された音声と元のビデオをコンピュータビジョン技術を使用して同期させます。当社のシステムは、顔のランドマークと口の動きを分析し、50msの許容範囲内で完璧な音声と映像の整合を確保します。\n\n**Python 実装の詳細:**\n```python\n# コンピュータビジョンを使用したリップシンクの整合\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# ランドマーク検出のための顔メッシュを初期化\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# ビデオフレームから口のランドマークを抽出\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # 口のランドマーク\n        mouth_landmarks.append(mouth_points)\n\n# 視覚的な手がかりと音声を同期\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# 最終的な同期ビデオを生成\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\n同期システムは、音声パターンと口の動きを一致させるために動的時間伸縮アルゴリズムを使用し、元のビデオの視覚的な整合性を維持しながら、シームレスな吹き替えコンテンツを作成します。"
+      "step5Content": "最終ステージでは、生成された音声と元のビデオをコンピュータビジョン技術を使用して同期させます。当社のシステムは、顔のランドマークと口の動きを分析し、50msの許容範囲内で完璧な音声と映像の整合を確保します。\n\n**Python 実装の詳細:**\n```python\n# コンピュータビジョンを使用したリップシンクの整合\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# ランドマーク検出のための顔メッシュを初期化\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# ビデオフレームから口のランドマークを抽出\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # 口のランドマーク\n        mouth_landmarks.append(mouth_points)\n\n# 視覚的な手がかりと音声を同期\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# 最終的な同期ビデオを生成\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\n同期システムは、音声パターンと口の動きを一致させるために動的時間伸縮アルゴリズムを使用し、元のビデオの視覚的な整合性を維持しながら、シームレスな吹き替えコンテンツを作成します。",
+      "intro": "YouTubeビデオの翻訳は一つのモデルではなく、5段階のパイプラインです。この詳細な解説では、Curifyがどのように段階を連結するかを説明します：音声をバックグラウンドミュージックから分離し、WhisperXで文字起こしを行い、トランスクリプトをターゲット言語に翻訳し、F5-TTSで元の話者の声をクローンし、[/tools/video-dubbing](/tools/video-dubbing)を介してリップアラインドダビングでビデオを再レンダリングします。各段階には統合する前に理解すべき失敗モードがあります。別の言語での字幕のみが必要な場合は、より軽量な[/tools/translate-subtitles](/tools/translate-subtitles)が1ステップでそれをカバーします。この投稿は、完全な多言語ビデオパイプラインを構築する人々のためのものです。"
     },
     "aiYoutubeVideoTranslator": {
       "date": "2026年3月4日",
@@ -1221,7 +1228,6 @@
     "videoTranscriptionTechnicalDeepDive": {
       "title": "深掘り：転写技術の概要",
       "description": "AIエージェントとワークフローの違い、そしてCurifyが両者を組み合わせて最適なクリエイティブオートメーションを実現する方法を探ります。",
-      "intro": "基本的な転写ツールを超えて、現代の動画転写システムを支える技術アーキテクチャを発見してください。この包括的な深掘りでは、音声分離、音声認識から強制アラインメント、話者識別まで、Curifyの完全なパイプラインを分解し、AIが生の動画を正確な転写に変換する方法を示します。",
       "whatIsTitle": "エンドツーエンドの動画転写パイプライン",
       "whatIsContent": "生の動画コンテンツを構造化された時間同期テキストに変換する生産グレードの動画転写パイプラインは、複数の高度な処理ステージを通じて実現されます。完全なワークフロー：動画 → 音声抽出 → セグメンテーション → ASR（自動音声認識） → アラインメント → 話者識別 → ポストプロセッシング。\n\n各ステージは特定の技術的課題に対処します：音声抽出は音声トラックを分離し、セグメンテーションは長い音声を管理可能なチャンクに分割し、ASRは音声をテキストに変換し、アラインメントは単語レベルのタイムスタンプを提供し、識別は誰がいつ話したかを特定し、ポストプロセッシングは最終出力をクリーンアップしフォーマットします。\n\nCurifyのパイプラインのような現代のシステムは、Conv-TasNetを音声分離に、WhisperXを音声認識に、話者識別のための高度なクラスタリングアルゴリズムを組み合わせることで、困難な条件でも95％以上の精度を達成します。この技術的深掘りでは、各コンポーネントとその統合戦略を探ります。",
       "whyTitle": "転写における技術アーキテクチャの重要性",
@@ -1250,7 +1256,8 @@
       "conclusionTitle": "動画転写技術の未来",
       "conclusionContent": "ビデオ転写技術は、基本的な音声認識システムから、ニューラルネットワーク、音声処理、最適化技術の進歩を組み合わせた高度なマルチステージパイプラインへと進化しました。Curifyのパイプラインのような現代のシステムは、音声分離のためのConv-TasNet、転写のためのWhisperX、そして高度な品質保証が生産グレードのワークフローに統合できることを示しています。\n\n技術チームや開発者にとっての重要なポイントは、ビデオ転写はもはや研究の問題ではなく、解決されたエンジニアリングの課題であるということです。残された機会は、基本的な技術的制限ではなく、最適化、エッジケース、統合にあります。これらのシステムがより良いモデルアーキテクチャと大規模なトレーニングデータセットを通じて改善され続ける中で、あらゆるコンテンツタイプに対して完璧な転写がスケールで利用可能になる未来に近づいています。\n\nここで説明されている技術アーキテクチャは2026年の最先端を代表していますが、この分野は急速に進化し続けています。リアルタイム転写、ゼロショットスピーカー識別、自動コンテンツ要約は、ビデオコンテンツの処理と分析へのアプローチをさらに変革する新たな能力として既に現れています。",
       "seoKeywords": "ビデオ転写パイプライン, 音声認識パイプライン, ASRビデオ処理, 音声からテキストパイプライン, スピーカーダイアライゼーションビデオ, 強制アライメント転写, ウィスパー転写パイプライン, 音声セグメンテーション転写, 多言語転写AI",
-      "metaDescription": "AIビデオ転写パイプラインアーキテクチャの技術的深掘り。開発者とAIエンジニアのためのASR、強制アライメント、スピーカーダイアライゼーション、そして生産システム設計に関する完全ガイド。"
+      "metaDescription": "AIビデオ転写パイプラインアーキテクチャの技術的深掘り。開発者とAIエンジニアのためのASR、強制アライメント、スピーカーダイアライゼーション、そして生産システム設計に関する完全ガイド。",
+      "intro": "ほとんどの文字起こしツールは音声からテキストへの変換で止まります。この詳細な解説では、Curifyの完全な文字起こしパイプラインを紹介します：音声がバックグラウンドミュージックから分離される方法、WhisperXがクリーントラックに対してどのように動作するか、スピーカーダイアライゼーションが重なり合う声をどのように分割するか、強制アラインメントがトランスクリプトに単語レベルのタイムスタンプを戻す方法、そして出力が[/tools/video-transcript-generator](/tools/video-transcript-generator)で下流の字幕、ダビング、翻訳ツールを駆動できるようにする方法です。SRTをダウンロードするだけでなく、文字起こしをより大きなパイプラインに統合したい場合、これはほとんどのブログ投稿がスキップするレイヤーです。"
     },
     "tenPromptingTipsNanoBanana": {
       "title": "Nano Bananaのプロンプトを書く方法：クリエイターのための10のヒント",

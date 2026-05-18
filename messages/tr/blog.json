@@ -256,7 +256,8 @@
         "date": "29 Mart 2026",
         "readTime": "15 dk okuma",
         "tag": "DS & AI Engineering",
-        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg"
+        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg",
+        "thumbnailType": "video-transkripsiyon-iş"
       },
       {
         "slug": "image-generation-model-comparison",
@@ -357,7 +358,13 @@
         "date": "March 4, 2026",
         "readTime": "7 min read",
         "tag": "Video Dubbing",
-        "image": "/images/bea9f86a7e2ae4df3497a4241bc71a1d_thumb_1765977242819.jpg"
+        "image": "/images/bea9f86a7e2ae4df3497a4241bc71a1d_thumb_1765977242819.jpg",
+        "category": "yaratıcı-araclar",
+        "relatedLinks": [
+          "nano-banana-prompt-ekosistemi",
+          "10-prompting-tips-nano-banana",
+          "karakter-prompt-jeneratörü"
+        ]
       },
       {
         "slug": "translate-youtube-video",
@@ -463,7 +470,13 @@
         "image": "/images/sevenimages.webp",
         "slug": "yaratıcı-ai-aracları-websiteleri",
         "title": "İlham Tükenmesini Sonlandırmak İçin 6 Gerçek Yaratıcı & AI Araçları Web Sitesi",
-        "readTime": "8 dk okuma"
+        "readTime": "8 dk okuma",
+        "category": "nano-template",
+        "relatedLinks": [
+          "nano-banana-prompts-ultimate-dizini",
+          "10-prompting-tips-nano-banana",
+          "nano-banana-prompt-ekosistemi"
+        ]
       },
       {
         "slug": "gorsel-ogrenme-araclari",
@@ -904,7 +917,6 @@
       "title": "YouTube Videolarını İngilizceye Çevirin: AI Destekli Çözümler",
       "date": "4 Mart 2026",
       "readTime": "10 dk okuma",
-      "intro": "Gelişmiş AI teknolojisi kullanarak YouTube videolarını İngilizceye nasıl çevireceğinizi keşfedin. İçeriğinizi dünya çapında İngilizce konuşan kitlelere erişilebilir hale getirin.",
       "whatIsTitle": "Neden İngilizceye Çevirmeliyiz?",
       "whatIsContent": "İngilizce, iş ve eğlence için küresel bir dildir. İçeriğinizi İngilizceye çevirmek, büyük bir izleyici potansiyeli açar ve keşfedilebilirliği artırır.",
       "whyTitle": "İngilizce Çevirinin Faydaları",
@@ -929,7 +941,8 @@
       "step4Title": "Aşama 4: Ses Sentezi ve Klonlama",
       "step4Content": "Çevrilen metin, orijinal konuşmacının ses özelliklerini koruyan gelişmiş metinden sese (TTS) modelleri kullanılarak doğal bir ses haline dönüştürülür. Pipeline'ımız, yüksek kaliteli ses üretimi için Tacotron 2 tarzı mimarileri ve sinirsel vocoder'ları birleştirir.\n\n**Python Uygulama Detayları:**\n```python\n# Tacotron 2 + WaveRNN kullanarak ses sentezi\nfrom tacotron2 import Tacotron2\nfrom wavernn import WaveRNN\nfrom voice_cloning import VoiceEncoder, VoiceCloner\n\n# Orijinal ses kaydından konuşmacı özelliklerini çıkar\nvoice_encoder = VoiceEncoder()\nspeaker_embedding = voice_encoder.embed(original_speech)\n\n# Konuşmacı özellikleri ile TTS modelini başlat\ntacotron = Tacotron2(\n    embedding_dim=512,\n    encoder_dim=256,\n    decoder_dim=256,\n    n_mels=80\n)\n\n# Çevrilen metinden mel-spektrogram oluştur\nwith torch.no_grad():\n    mel_output = tacotron.inference(\n        text=translated_text,\n        speaker_embedding=speaker_embedding,\n        attention_alignment=True\n    )\n\n# Sinirsel vocoder kullanarak dalga formuna dönüştür\nvocoder = WaveRNN()\naudio_output = vocoder.generate(mel_output)\n```\n\nSes klonlama sistemi, timbre, tonlama ve prosodi desenlerini kodlayan 256 boyutlu konuşmacı gömme verilerini yakalar. Bu, doğal konuşma özelliklerini korurken diller arasında tutarlı ses üretimi sağlar.",
       "step5Title": "Aşama 5: Dudak Senkronizasyonu ve Video Hizalaması",
-      "step5Content": "Son aşama, üretilen sesi orijinal video ile bilgisayarla görme teknikleri kullanarak senkronize eder. Sistemimiz, 50ms tolerans içinde mükemmel ses-görüntü hizalamasını sağlamak için yüz noktalarını ve ağız hareketlerini analiz eder.\n\n**Python Uygulama Detayları:**\n```python\n# Bilgisayarla görme kullanarak dudak senkronizasyonu\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# Nokta tespiti için yüz ağını başlat\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# Video karelerinden ağız noktalarını çıkar\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # Ağız noktaları\n        mouth_landmarks.append(mouth_points)\n\n# Sesi görsel ipuçlarıyla senkronize et\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# Son senkronize videoyu oluştur\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\nSenkronizasyon sistemi, konuşma desenlerini ağız hareketleriyle eşleştirmek için dinamik zaman bozulma algoritmalarını kullanarak, orijinal videonun görsel bütünlüğünü koruyan kesintisiz dublajlı içerik oluşturur."
+      "step5Content": "Son aşama, üretilen sesi orijinal video ile bilgisayarla görme teknikleri kullanarak senkronize eder. Sistemimiz, 50ms tolerans içinde mükemmel ses-görüntü hizalamasını sağlamak için yüz noktalarını ve ağız hareketlerini analiz eder.\n\n**Python Uygulama Detayları:**\n```python\n# Bilgisayarla görme kullanarak dudak senkronizasyonu\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# Nokta tespiti için yüz ağını başlat\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# Video karelerinden ağız noktalarını çıkar\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # Ağız noktaları\n        mouth_landmarks.append(mouth_points)\n\n# Sesi görsel ipuçlarıyla senkronize et\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# Son senkronize videoyu oluştur\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\nSenkronizasyon sistemi, konuşma desenlerini ağız hareketleriyle eşleştirmek için dinamik zaman bozulma algoritmalarını kullanarak, orijinal videonun görsel bütünlüğünü koruyan kesintisiz dublajlı içerik oluşturur.",
+      "intro": "Bir YouTube videosunu çevirmek tek bir model değildir - beş aşamalı bir süreçtir. Bu derinlemesine inceleme, Curify'nin aşamaları nasıl zincirlediğini kapsar: sesi arka plandaki müzikten ayırmak, WhisperX ile transkripti oluşturmak, transkripti hedef dile çevirmek, orijinal konuşmacının sesini F5-TTS ile klonlamak ve videoyu dudak uyumlu dublaj ile yeniden işlemek için [/tools/video-dubbing](/tools/video-dubbing). Her aşamanın, entegre etmeden önce anlamaya değer kendi hata modları vardır. Eğer sadece başka bir dilde altyazı istiyorsanız, daha hafif [/tools/translate-subtitles](/tools/translate-subtitles) bunu tek bir adımda kapsar; bu yazı tam çok dilli video sürecini inşa edenler içindir."
     },
     "aiYoutubeVideoTranslator": {
       "date": "4 Mart 2026",
@@ -1301,7 +1314,6 @@
     "videoTranscriptionTechnicalDeepDive": {
       "title": "Derinlemesine: Transkripsiyon Teknik Genel Bakışı",
       "description": "AI ajanları ve iş akışları arasındaki farkı keşfedin ve Curify'nin her ikisini nasıl birleştirdiğini öğrenin.",
-      "intro": "Temel transkripsiyon araçlarının ötesine geçin ve modern video transkripsiyon sistemlerini destekleyen teknik mimariyi keşfedin. Bu kapsamlı derin dalış, Curify'nin tam boru hattını - ses ayrıştırma ve konuşma tanıma ile zorunlu hizalama ve konuşmacı ayrıştırma - ayrıntılı olarak inceleyerek, AI'nın ham videoyu mükemmel zamanlanmış, doğru transkriptlere nasıl dönüştürdüğünü gösterir.",
       "whatIsTitle": "Uçtan Uca Video Transkripsiyon Boru Hattı",
       "whatIsContent": "Üretim düzeyinde bir video transkripsiyon boru hattı, ham video içeriğini yapılandırılmış, zaman senkronize metne dönüştürmek için birden fazla sofistike işleme aşamasından geçer. Tam iş akışı: Video → Ses çıkarımı → Segmentasyon → ASR (Otomatik Konuşma Tanıma) → Hizalama → Konuşmacı Ayrıştırma → Son işlem.\n\nHer aşama, belirli teknik zorlukları ele alır: ses çıkarımı, konuşma parçasını izole eder, segmentasyon, uzun sesleri yönetilebilir parçalara böler, ASR konuşmayı metne dönüştürür, hizalama kelime düzeyinde zaman damgaları sağlar, ayrıştırma, kimin ne zaman konuştuğunu tanımlar ve son işlem, nihai çıktıyı temizler ve biçimlendirir.\n\nModern sistemler, Curify'nin boru hattı gibi, zorlu koşullarda bile %95'ten fazla doğruluk elde etmek için ses ayrıştırma için Conv-TasNet, konuşma tanıma için WhisperX ve konuşmacı tanımlama için gelişmiş kümeleme algoritmalarını birleştirir. Bu teknik derin dalış, her bileşeni ve entegrasyon stratejilerini keşfeder.",
       "whyTitle": "Neden Teknik Mimari Transkripsiyon İçin Önemlidir",
@@ -1330,7 +1342,8 @@
       "conclusionTitle": "Video Transkripsiyon Teknolojisinin Geleceği",
       "conclusionContent": "Video transkripsiyon teknolojisi, temel konuşma tanıma sistemlerinden, sinir ağları, ses işleme ve optimizasyon tekniklerindeki ilerlemeleri birleştiren karmaşık çok aşamalı boru hatlarına evrildi. Curify'nin boru hattı gibi modern sistemler, ses ayrımı için Conv-TasNet, transkripsiyon için WhisperX ve gelişmiş kalite güvencesinin üretim kalitesindeki iş akışlarına nasıl entegre edilebileceğini göstermektedir.\n\nTeknik ekipler ve geliştiriciler için önemli olan, video transkripsiyonunun artık bir araştırma sorunu değil, çözülmüş bir mühendislik zorluğu olduğudur. Kalan fırsatlar, temel teknoloji sınırlamaları yerine optimizasyon, kenar durumları ve entegrasyonda yatmaktadır. Bu sistemler, daha iyi model mimarileri ve daha büyük eğitim veri setleri aracılığıyla geliştikçe, her içerik türü için ölçeklenebilir mükemmel transkripsiyonun mümkün olduğu bir geleceğe yaklaşıyoruz.\n\nBurada tanımlanan teknik mimari, 2026'daki mevcut en iyi durumu temsil etmektedir, ancak alan hızla evrilmeye devam etmektedir. Gerçek zamanlı transkripsiyon, sıfırdan konuşmacı tanımlama ve otomatik içerik özetleme, video içerik işleme ve analizine yaklaşımımızı daha da dönüştürecek olan yeni yeteneklerdir.",
       "seoKeywords": "video transkripsiyon boru hattı, konuşma tanıma boru hattı, asr video işleme, konuşmadan metne boru hattı, konuşmacı ayrıştırma video, zorunlu hizalama transkripsiyonu, fısıldama transkripsiyon boru hattı, ses segmentasyonu transkripsiyonu, çok dilli transkripsiyon yapay zeka",
-      "metaDescription": "AI video transkripsiyon boru hattı mimarisine teknik derin dalış. Geliştiriciler ve AI mühendisleri için ASR, zorunlu hizalama, konuşmacı ayrıştırma ve üretim sistemi tasarımı hakkında kapsamlı bir rehber."
+      "metaDescription": "AI video transkripsiyon boru hattı mimarisine teknik derin dalış. Geliştiriciler ve AI mühendisleri için ASR, zorunlu hizalama, konuşmacı ayrıştırma ve üretim sistemi tasarımı hakkında kapsamlı bir rehber.",
+      "intro": "Çoğu transkripsiyon aracı konuşmadan metne kadar durur. Bu derinlemesine inceleme, Curify'nin tam transkripsiyon sürecini yürütür: sesin arka plandaki müzikten nasıl ayrıldığı, WhisperX'in temizlenmiş parça üzerinde nasıl çalıştığı, konuşmacı diarizasyonunun örtüşen sesleri nasıl ayırdığı ve zorunlu hizalamanın kelime düzeyinde zaman damgalarını transkripte nasıl geri koyduğu, böylece çıktı aşağı akıştaki altyazı, dublaj ve çeviri araçlarını [/tools/video-transcript-generator](/tools/video-transcript-generator) yönlendirebilir. Eğer transkripsiyonu daha büyük bir sürece entegre etmek istiyorsanız, sadece bir SRT indirmek yerine, çoğu blog yazısının atladığı katman budur."
     },
     "tenPromptingTipsNanoBanana": {
       "title": "Nano Banana için İpuçları: Yaratıcılar için 10 Prompt Yazma Yöntemi",
