@@ -1,0 +1,1018 @@
+{
+  "generated_at": "2026-05-18",
+  "langs": [
+    "en-ko",
+    "en-ja",
+    "en-es",
+    "en-fr"
+  ],
+  "vocab_themes": [
+    "Numbers and Counting",
+    "Rainbow Colors",
+    "Fruits",
+    "Vegetables",
+    "Farm Animals",
+    "Family Members",
+    "Body Parts",
+    "Weather",
+    "Daily Routines",
+    "Breakfast Foods"
+  ],
+  "scenes": [
+    "Park",
+    "Restaurant",
+    "Classroom",
+    "Kitchen",
+    "Beach",
+    "Library",
+    "Hospital",
+    "Grocery Store",
+    "Airport",
+    "Living Room"
+  ],
+  "count": 75,
+  "skipped_already_exist": [
+    "template-vocabulary-english-korean-family-members",
+    "template-vocabulary-english-japanese-fruits",
+    "template-vocabulary-english-japanese-family-members",
+    "template-vocabulary-english-spanish-family-members",
+    "template-vocabulary-english-french-daily-routines"
+  ],
+  "entries": [
+    {
+      "id": "template-vocabulary-english-korean-numbers-and-counting",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ko",
+        "topic_name": "Numbers and Counting"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-korean-numbers-and-counting.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-korean-numbers-and-counting-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-korean-rainbow-colors",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ko",
+        "topic_name": "Rainbow Colors"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-korean-rainbow-colors.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-korean-rainbow-colors-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-korean-fruits",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ko",
+        "topic_name": "Fruits"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-korean-fruits.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-korean-fruits-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-korean-vegetables",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ko",
+        "topic_name": "Vegetables"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-korean-vegetables.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-korean-vegetables-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-korean-farm-animals",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ko",
+        "topic_name": "Farm Animals"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-korean-farm-animals.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-korean-farm-animals-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-korean-body-parts",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ko",
+        "topic_name": "Body Parts"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-korean-body-parts.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-korean-body-parts-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-korean-weather",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ko",
+        "topic_name": "Weather"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-korean-weather.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-korean-weather-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-korean-daily-routines",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ko",
+        "topic_name": "Daily Routines"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-korean-daily-routines.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-korean-daily-routines-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-korean-breakfast-foods",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ko",
+        "topic_name": "Breakfast Foods"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-korean-breakfast-foods.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-korean-breakfast-foods-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-japanese-numbers-and-counting",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ja",
+        "topic_name": "Numbers and Counting"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-japanese-numbers-and-counting.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-japanese-numbers-and-counting-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-japanese-rainbow-colors",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ja",
+        "topic_name": "Rainbow Colors"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-japanese-rainbow-colors.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-japanese-rainbow-colors-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-japanese-vegetables",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ja",
+        "topic_name": "Vegetables"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-japanese-vegetables.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-japanese-vegetables-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-japanese-farm-animals",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ja",
+        "topic_name": "Farm Animals"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-japanese-farm-animals.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-japanese-farm-animals-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-japanese-body-parts",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ja",
+        "topic_name": "Body Parts"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-japanese-body-parts.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-japanese-body-parts-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-japanese-weather",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ja",
+        "topic_name": "Weather"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-japanese-weather.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-japanese-weather-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-japanese-daily-routines",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ja",
+        "topic_name": "Daily Routines"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-japanese-daily-routines.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-japanese-daily-routines-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-japanese-breakfast-foods",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-ja",
+        "topic_name": "Breakfast Foods"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-japanese-breakfast-foods.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-japanese-breakfast-foods-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-spanish-numbers-and-counting",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-es",
+        "topic_name": "Numbers and Counting"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-spanish-numbers-and-counting.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-spanish-numbers-and-counting-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-spanish-rainbow-colors",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-es",
+        "topic_name": "Rainbow Colors"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-spanish-rainbow-colors.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-spanish-rainbow-colors-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-spanish-fruits",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-es",
+        "topic_name": "Fruits"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-spanish-fruits.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-spanish-fruits-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-spanish-vegetables",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-es",
+        "topic_name": "Vegetables"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-spanish-vegetables.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-spanish-vegetables-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-spanish-farm-animals",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-es",
+        "topic_name": "Farm Animals"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-spanish-farm-animals.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-spanish-farm-animals-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-spanish-body-parts",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-es",
+        "topic_name": "Body Parts"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-spanish-body-parts.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-spanish-body-parts-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-spanish-weather",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-es",
+        "topic_name": "Weather"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-spanish-weather.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-spanish-weather-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-spanish-daily-routines",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-es",
+        "topic_name": "Daily Routines"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-spanish-daily-routines.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-spanish-daily-routines-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-spanish-breakfast-foods",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-es",
+        "topic_name": "Breakfast Foods"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-spanish-breakfast-foods.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-spanish-breakfast-foods-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-french-numbers-and-counting",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-fr",
+        "topic_name": "Numbers and Counting"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-french-numbers-and-counting.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-french-numbers-and-counting-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-french-rainbow-colors",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-fr",
+        "topic_name": "Rainbow Colors"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-french-rainbow-colors.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-french-rainbow-colors-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-french-fruits",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-fr",
+        "topic_name": "Fruits"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-french-fruits.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-french-fruits-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-french-vegetables",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-fr",
+        "topic_name": "Vegetables"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-french-vegetables.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-french-vegetables-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-french-farm-animals",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-fr",
+        "topic_name": "Farm Animals"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-french-farm-animals.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-french-farm-animals-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-french-family-members",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-fr",
+        "topic_name": "Family Members"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-french-family-members.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-french-family-members-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-french-body-parts",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-fr",
+        "topic_name": "Body Parts"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-french-body-parts.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-french-body-parts-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-french-weather",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-fr",
+        "topic_name": "Weather"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-french-weather.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-french-weather-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-vocabulary-english-french-breakfast-foods",
+      "template_id": "template-vocabulary",
+      "params": {
+        "language_pair": "en-fr",
+        "topic_name": "Breakfast Foods"
+      },
+      "expected_image": "/images/nano_insp/template-vocabulary-english-french-breakfast-foods.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-vocabulary-english-french-breakfast-foods-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-korean-park",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ko",
+        "scene_type": "Park"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-korean-park.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-korean-park-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-korean-restaurant",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ko",
+        "scene_type": "Restaurant"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-korean-restaurant.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-korean-restaurant-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-korean-classroom",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ko",
+        "scene_type": "Classroom"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-korean-classroom.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-korean-classroom-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-korean-kitchen",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ko",
+        "scene_type": "Kitchen"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-korean-kitchen.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-korean-kitchen-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-korean-beach",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ko",
+        "scene_type": "Beach"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-korean-beach.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-korean-beach-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-korean-library",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ko",
+        "scene_type": "Library"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-korean-library.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-korean-library-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-korean-hospital",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ko",
+        "scene_type": "Hospital"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-korean-hospital.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-korean-hospital-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-korean-grocery-store",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ko",
+        "scene_type": "Grocery Store"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-korean-grocery-store.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-korean-grocery-store-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-korean-airport",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ko",
+        "scene_type": "Airport"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-korean-airport.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-korean-airport-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-korean-living-room",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ko",
+        "scene_type": "Living Room"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-korean-living-room.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-korean-living-room-prev.jpg",
+      "topics_seed": [
+        "english-ko"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-japanese-park",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ja",
+        "scene_type": "Park"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-japanese-park.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-japanese-park-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-japanese-restaurant",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ja",
+        "scene_type": "Restaurant"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-japanese-restaurant.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-japanese-restaurant-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-japanese-classroom",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ja",
+        "scene_type": "Classroom"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-japanese-classroom.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-japanese-classroom-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-japanese-kitchen",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ja",
+        "scene_type": "Kitchen"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-japanese-kitchen.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-japanese-kitchen-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-japanese-beach",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ja",
+        "scene_type": "Beach"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-japanese-beach.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-japanese-beach-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-japanese-library",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ja",
+        "scene_type": "Library"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-japanese-library.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-japanese-library-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-japanese-hospital",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ja",
+        "scene_type": "Hospital"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-japanese-hospital.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-japanese-hospital-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-japanese-grocery-store",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ja",
+        "scene_type": "Grocery Store"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-japanese-grocery-store.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-japanese-grocery-store-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-japanese-airport",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ja",
+        "scene_type": "Airport"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-japanese-airport.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-japanese-airport-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-japanese-living-room",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-ja",
+        "scene_type": "Living Room"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-japanese-living-room.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-japanese-living-room-prev.jpg",
+      "topics_seed": [
+        "english-ja"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-spanish-park",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-es",
+        "scene_type": "Park"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-spanish-park.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-spanish-park-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-spanish-restaurant",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-es",
+        "scene_type": "Restaurant"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-spanish-restaurant.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-spanish-restaurant-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-spanish-classroom",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-es",
+        "scene_type": "Classroom"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-spanish-classroom.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-spanish-classroom-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-spanish-kitchen",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-es",
+        "scene_type": "Kitchen"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-spanish-kitchen.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-spanish-kitchen-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-spanish-beach",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-es",
+        "scene_type": "Beach"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-spanish-beach.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-spanish-beach-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-spanish-library",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-es",
+        "scene_type": "Library"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-spanish-library.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-spanish-library-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-spanish-hospital",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-es",
+        "scene_type": "Hospital"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-spanish-hospital.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-spanish-hospital-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-spanish-grocery-store",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-es",
+        "scene_type": "Grocery Store"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-spanish-grocery-store.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-spanish-grocery-store-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-spanish-airport",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-es",
+        "scene_type": "Airport"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-spanish-airport.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-spanish-airport-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-spanish-living-room",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-es",
+        "scene_type": "Living Room"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-spanish-living-room.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-spanish-living-room-prev.jpg",
+      "topics_seed": [
+        "english-es"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-french-park",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-fr",
+        "scene_type": "Park"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-french-park.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-french-park-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-french-restaurant",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-fr",
+        "scene_type": "Restaurant"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-french-restaurant.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-french-restaurant-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-french-classroom",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-fr",
+        "scene_type": "Classroom"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-french-classroom.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-french-classroom-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-french-kitchen",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-fr",
+        "scene_type": "Kitchen"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-french-kitchen.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-french-kitchen-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-french-beach",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-fr",
+        "scene_type": "Beach"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-french-beach.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-french-beach-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-french-library",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-fr",
+        "scene_type": "Library"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-french-library.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-french-library-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-french-hospital",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-fr",
+        "scene_type": "Hospital"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-french-hospital.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-french-hospital-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-french-grocery-store",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-fr",
+        "scene_type": "Grocery Store"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-french-grocery-store.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-french-grocery-store-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-french-airport",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-fr",
+        "scene_type": "Airport"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-french-airport.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-french-airport-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    },
+    {
+      "id": "template-word-scene-english-french-living-room",
+      "template_id": "template-word-scene",
+      "params": {
+        "language_pair": "en-fr",
+        "scene_type": "Living Room"
+      },
+      "expected_image": "/images/nano_insp/template-word-scene-english-french-living-room.jpg",
+      "expected_preview": "/images/nano_insp_preview/template-word-scene-english-french-living-room-prev.jpg",
+      "topics_seed": [
+        "english-fr"
+      ]
+    }
+  ]
+}
