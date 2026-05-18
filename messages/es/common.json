@@ -213,7 +213,9 @@
       "for-marketers": "Para Marketers",
       "for-parents": "Para Padres",
       "for-esl-learners": "Para Estudiantes de ESL",
-      "for-creators": "Para Creadores"
+      "for-creators": "Para Creadores",
+      "for-designers": "Para Diseñadores",
+      "for-publishers": "Para Editores"
     }
   },
   "useCasePage": {
@@ -255,6 +257,30 @@
       "bullet2": "Convierte imágenes en videos con voz y subtítulos",
       "bullet3": "Descarga y remezcla contenido en lote"
     },
-    "learningMaterialsHeading": "Materiales de Aprendizaje"
+    "learningMaterialsHeading": "Materiales de Aprendizaje",
+    "exploreOtherHeading": "Explora otros casos de uso",
+    "for-designers": {
+      "title": "Para Diseñadores",
+      "subtitle": "Paquetes imprimibles de Etsy / Pinterest a velocidad de producción",
+      "description": "Para ilustradores freelance y vendedores de paquetes imprimibles — no diseñadores de marca / logotipo / UI. Hacemos las categorías de alto volumen impulsadas por la estética: mapas de acuarela y álbumes de recortes, series de sellos vintage, fan-art MBTI de cultura pop, conjuntos de carteles de decoración de aula, tableros de moda. Genera una serie de 50 piezas en una tarde; envíala como un paquete pago la misma noche.",
+      "bullet0": "Mapas de acuarela, álbumes de recortes vintage, series de sellos — la estética de Etsy",
+      "bullet1": "Fan-art MBTI de cultura pop (Marvel · Ghibli · NBA · Harry Potter · Manga)",
+      "bullet2": "Imprimibles de decoración de aula — tarjetas de vocabulario, guías de anatomía, carteles de historia",
+      "bullet3": "Vistas previas con marca de agua para SEO + originales limpios para descargas pagadas"
+    },
+    "for-publishers": {
+      "title": "Para Editores y Edtech",
+      "subtitle": "Extensión de formato de un título a diez superficies",
+      "description": "Para editores de libros infantiles y plataformas edtech K-5 — convierte un título en paquetes de vocabulario bilingües, variantes MBTI de personajes, carteles de aula y tarjetas sociales. O licencia el motor de vocabulario de idiomas para la generación en la app de tu plataforma. Mismos personajes, 10× las superficies; mismo motor, dos formas de integración.",
+      "bullet0": "Extensión de formato: un título → tarjetas · carteles · social · aula",
+      "bullet1": "Motor de vocabulario K-5 en animales · naturaleza · espacio · familia · transporte",
+      "bullet2": "Marcos MBTI de cultura pop listos para integración de IP (estilo Marvel / Ghibli)",
+      "bullet3": "Ediciones bilingües (en-zh / en-es / en-ja / en-ko) sin un equipo de traductores"
+    }
+  },
+  "interconnection": {
+    "whoItsFor": "Para quién es",
+    "relatedTools": "Herramientas relacionadas",
+    "relatedReading": "Lectura relacionada"
   }
 }

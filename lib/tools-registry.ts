@@ -259,3 +259,37 @@ export function groupTools(): Record<ToolGroupId, ToolDef[]> {
     { video: [], image: [], audio: [] } as Record<ToolGroupId, ToolDef[]>
   );
 }
+
+/** Same-group sibling tools (excluding the current one and any coming-soon
+ *  entries). Powers the "Related tools" block on each tool detail page. */
+export function getSiblingTools(slug: string, max = 3): ToolDef[] {
+  const current = getToolBySlug(slug);
+  if (!current) return [];
+  return TOOL_REGISTRY
+    .filter(
+      (t) =>
+        t.slug !== slug &&
+        t.groupId === current.groupId &&
+        t.status !== "coming_soon"
+    )
+    .slice(0, max);
+}
+
+// Tool slug → blog categories to surface as "Related reading" on each
+// tool detail page. Source of truth: docs/interconnection.md (Tool slug
+// → Blog categories table). Keep in sync when adding a new tool.
+export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
+  "video-dubbing":               ["video-translation-dubbing", "video-dubbing"],
+  "bilingual-subtitles":         ["video-translation-dubbing", "creator-tools"],
+  "voice-clone":                 ["video-translation-dubbing"],
+  "speech-translator":           ["video-translation-dubbing"],
+  "video-transcript-generator":  ["creator-tools", "video-translation-dubbing"],
+  "youtube-subtitle-downloader": ["creator-tools", "video-translation-dubbing"],
+  "video-subtitle-extractor":    ["creator-tools", "video-translation-dubbing"],
+  "translate-subtitles":         ["video-translation-dubbing"],
+  "video-summarizer":            ["creator-tools"],
+  "storyboard-generator":        ["creator-tools"],
+  "image-translation":           ["video-translation-dubbing", "creator-tools"],
+  "manga-translation":           ["video-translation-dubbing"],
+  "style-transfer":              ["creator-tools", "nano-template"],
+};

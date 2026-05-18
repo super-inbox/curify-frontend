@@ -55,10 +55,114 @@ const CREATOR_TOOL_OVERRIDES: Record<string, { href: string; label: string }> = 
 const MENTORCRUISE = "https://mentorcruise.com/mentor/jaywang/";
 const CALENDLY = "https://calendly.com/qqwjq9916/15-minute-meeting";
 
+// Per-post full-override table. When a high-traffic post deserves a
+// fundamentally different CTA than its category default (not just a
+// different tool URL), list the explicit CTA array here. ctasFor()
+// picks this up before the category switch. Hrefs are path-only and
+// get locale-prefixed at use site; external URLs pass through.
+//
+// Driven by the GSC top-traffic list in docs/interconnection.md (P1
+// internal-link strength audit). Add an entry when a category default
+// sends a top-clicked post somewhere noticeably off-intent — e.g. an
+// MBTI generator post under nano-template currently defaults to
+// /contact ("Partner on custom templates"), but the actual reader wants
+// MBTI templates, not a partnership form.
+type OverrideCTA = Omit<CTA, "href"> & { href: string };
+const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
+  // 25+ clicks across locales; readers came for character templates.
+  // Default creator-tools CTA sends to /tools (video tools), wrong audience.
+  "character-prompt-generator": [
+    {
+      id: "character-templates",
+      label: "Browse Character Templates",
+      description:
+        "Custom + MBTI + universe-specific cards — every template referenced in this post is one click away.",
+      href: "/topics/character",
+      Icon: Wrench,
+    },
+    {
+      id: "use-cases-for-creators",
+      label: "Creators playbook",
+      description: "Persona page with the tools and reads creators actually use.",
+      href: "/use-cases/for-creators",
+      Icon: MessageCircle,
+    },
+  ],
+  // 22 clicks; reader intent is "show me MBTI templates," not "partner with us."
+  "mbti-character-generator": [
+    {
+      id: "character-templates",
+      label: "Browse MBTI Templates",
+      description:
+        "All 16 personality cards plus universe-specific MBTI sets — Marvel, Ghibli, NBA, Harry Potter, Friends, more.",
+      href: "/topics/character",
+      Icon: Wrench,
+    },
+    {
+      id: "use-cases-for-creators",
+      label: "Creators playbook",
+      description: "Persona page with the tools and reads creators actually use.",
+      href: "/use-cases/for-creators",
+      Icon: MessageCircle,
+    },
+  ],
+  // 11+ clicks (ko locale especially); readers want to try the prompt patterns,
+  // not a partnership conversation.
+  "10-prompting-tips-nano-banana": [
+    {
+      id: "character-templates",
+      label: "Try the templates",
+      description:
+        "Browse the character + lifestyle + learning catalogs — every prompt pattern from the post is already wired up.",
+      href: "/topics/character",
+      Icon: Wrench,
+    },
+    {
+      id: "tools-index",
+      label: "Browse Creator Tools",
+      description:
+        "Video dubbing, subtitles, transcription — pair the prompts with the production tools.",
+      href: "/tools",
+      Icon: Wrench,
+    },
+  ],
+  // Top-of-page-3 traffic; this post drives interest in design / collage
+  // templates, not a partnership form.
+  "ai-collage-digital-wallpaper-guide": [
+    {
+      id: "design-templates",
+      label: "Browse Design Templates",
+      description:
+        "3×3 grid collages, vintage scrapbooks, poster series — every template family the post references.",
+      href: "/topics/design",
+      Icon: Wrench,
+    },
+    {
+      id: "use-cases-for-designers",
+      label: "Designers playbook",
+      description:
+        "Persona page for freelance illustrators and printable-pack sellers.",
+      href: "/use-cases/for-designers",
+      Icon: MessageCircle,
+    },
+  ],
+};
+
 // Category → CTAs. Each category gets a primary plus an optional secondary,
 // so the reader has a strong fork without scrolling past a weak nano-template
 // link. Categories not listed render nothing.
 function ctasFor(category: string, locale: string, slug?: string): CTA[] {
+  // Per-post complete override wins. Path-only hrefs get locale-prefixed
+  // here; external URLs (http, mailto) pass through unchanged.
+  if (slug && BLOG_POST_OVERRIDES[slug]) {
+    return BLOG_POST_OVERRIDES[slug].map((c) => ({
+      ...c,
+      href:
+        c.external || /^[a-z]+:/i.test(c.href)
+          ? c.href
+          : `/${locale}${c.href}`,
+    }));
+  }
   switch (category) {
     case "video-translation-dubbing":
     case "video-dubbing":

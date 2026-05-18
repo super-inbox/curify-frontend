@@ -2,7 +2,7 @@
 
 import { ChangeEvent } from "react";
 
-export type LanguagePairValue = "en-zh" | "en-es" | "en-ko" | "en-ja";
+export type LanguagePairValue = "en-zh" | "en-es" | "en-ko" | "en-ja" | "en-fr";
 
 export const SUPPORTED_LANGUAGE_PAIRS: ReadonlyArray<{
   value: LanguagePairValue;
@@ -12,6 +12,7 @@ export const SUPPORTED_LANGUAGE_PAIRS: ReadonlyArray<{
   { value: "en-es", label: "English ↔ Spanish" },
   { value: "en-ko", label: "English ↔ Korean" },
   { value: "en-ja", label: "English ↔ Japanese" },
+  { value: "en-fr", label: "English ↔ French" },
 ];
 
 const DEFAULT_VALUE: LanguagePairValue = "en-zh";

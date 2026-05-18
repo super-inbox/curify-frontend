@@ -213,7 +213,9 @@
       "for-marketers": "Pazarlamacılar İçin",
       "for-parents": "Ebeveynler İçin",
       "for-esl-learners": "ESL Öğrencileri İçin",
-      "for-creators": "İçerik Üreticileri İçin"
+      "for-creators": "İçerik Üreticileri İçin",
+      "for-designers": "Tasarımcılar için",
+      "for-publishers": "Yayıncılar için"
     }
   },
   "useCasePage": {
@@ -255,6 +257,30 @@
       "bullet2": "Görselleri ses ve altyazıyla videoya dönüştürün",
       "bullet3": "İçerikleri toplu indirin ve remixleyin"
     },
-    "learningMaterialsHeading": "Öğrenme Materyalleri"
+    "learningMaterialsHeading": "Öğrenme Materyalleri",
+    "exploreOtherHeading": "Diğer kullanım senaryolarını keşfedin",
+    "for-designers": {
+      "title": "Tasarımcılar için",
+      "subtitle": "Etsy / Pinterest baskı paketleri üretim hızında",
+      "description": "Serbest illüstratörler ve baskı paketi satıcıları için — marka / logo / UI tasarımcıları için değil. Yüksek hacimli estetik odaklı kategorileri yapıyoruz: suluboya haritalar ve anı defterleri, vintage pul serileri, pop kültürü MBTI hayran sanatı, sınıf dekoru poster setleri, moda ruhu panoları. Bir öğleden sonra 50 parçalık bir seri oluşturun; aynı gece ücretli paket olarak gönderin.",
+      "bullet0": "Suluboya haritalar, vintage anı defterleri, pul serileri — Etsy estetiği",
+      "bullet1": "Pop kültürü MBTI hayran sanatı (Marvel · Ghibli · NBA · Harry Potter · Manga)",
+      "bullet2": "Sınıf dekoru baskıları — kelime kartları, anatomi kılavuzları, tarih posterleri",
+      "bullet3": "SEO için filigranlı önizlemeler + ücretli indirmeler için temiz orijinaller"
+    },
+    "for-publishers": {
+      "title": "Yayıncılar ve Edtech için",
+      "subtitle": "Bir başlıktan on yüzeye format uzantısı",
+      "description": "Çocuk kitapları yayıncıları ve K-5 edtech platformları için — bir başlığı iki dilli kelime paketlerine, karakter kadrosu MBTI varyantlarına, sınıf posterlerine ve sosyal kartlara dönüştürün. Ya da platformunuzun uygulama içi üretimi için dil kelime motorunu lisanslayın. Aynı karakterler, 10 kat yüzey; aynı motor, iki entegrasyon şekli.",
+      "bullet0": "Format uzantısı: bir başlık → kartlar · posterler · sosyal · sınıf",
+      "bullet1": "K-5 kelime motoru hayvanlar · doğa · uzay · aile · ulaşım",
+      "bullet2": "IP ekleme için hazır pop kültürü MBTI çerçeveleri (Marvel / Ghibli tarzı)",
+      "bullet3": "Çevirmen ekibi olmadan iki dilli baskılar (en-zh / en-es / en-ja / en-ko)"
+    }
+  },
+  "interconnection": {
+    "whoItsFor": "Kime hitap ediyor",
+    "relatedTools": "İlgili araçlar",
+    "relatedReading": "İlgili okumalar"
   }
 }

@@ -213,7 +213,9 @@
       "for-marketers": "Pour les Marketeurs",
       "for-parents": "Pour les Parents",
       "for-esl-learners": "Pour les Apprenants ESL",
-      "for-creators": "Pour les Créateurs"
+      "for-creators": "Pour les Créateurs",
+      "for-designers": "Pour les designers",
+      "for-publishers": "Pour les éditeurs"
     }
   },
   "useCasePage": {
@@ -255,6 +257,30 @@
       "bullet2": "Convertissez des images en vidéos avec voix et sous-titres",
       "bullet3": "Téléchargez et remixez du contenu en lot"
     },
-    "learningMaterialsHeading": "Matériaux Pédagogiques"
+    "learningMaterialsHeading": "Matériaux Pédagogiques",
+    "exploreOtherHeading": "Explorer d'autres cas d'utilisation",
+    "for-designers": {
+      "title": "Pour les designers",
+      "subtitle": "Packs imprimables Etsy / Pinterest à vitesse de production",
+      "description": "Pour les illustrateurs freelance et les vendeurs de packs imprimables — pas pour les designers de marque / logo / UI. Nous faisons les catégories à fort volume axées sur l'esthétique : cartes aquarelles et albums de souvenirs, séries de timbres vintage, fan-art MBTI de culture pop, ensembles d'affiches de décoration de classe, tableaux d'humeur de mode. Générez une série de 50 pièces en un après-midi ; expédiez-la en tant que pack payant le même soir.",
+      "bullet0": "Cartes aquarelles, albums de souvenirs vintage, séries de timbres — l'esthétique Etsy",
+      "bullet1": "Fan-art MBTI de culture pop (Marvel · Ghibli · NBA · Harry Potter · Manga)",
+      "bullet2": "Imprimables de décoration de classe — cartes de vocabulaire, guides d'anatomie, affiches d'histoire",
+      "bullet3": "Aperçus filigranés pour le SEO + originaux propres pour les téléchargements payants"
+    },
+    "for-publishers": {
+      "title": "Pour les éditeurs et Edtech",
+      "subtitle": "Extension de format d'un titre à dix surfaces",
+      "description": "Pour les éditeurs de livres pour enfants et les plateformes Edtech K-5 — transformez un titre en packs de vocabulaire bilingues, variantes MBTI de personnages, affiches de classe et cartes sociales. Ou licencez le moteur de vocabulaire linguistique pour la génération in-app de votre plateforme. Même personnages, 10× les surfaces ; même moteur, deux formes d'intégration.",
+      "bullet0": "Extension de format : un titre → cartes · affiches · social · classe",
+      "bullet1": "Moteur de vocabulaire K-5 sur les animaux · la nature · l'espace · la famille · le transport",
+      "bullet2": "Cadres MBTI de culture pop prêts pour intégration IP (style Marvel / Ghibli)",
+      "bullet3": "Éditions bilingues (en-zh / en-es / en-ja / en-ko) sans équipe de traducteurs"
+    }
+  },
+  "interconnection": {
+    "whoItsFor": "Pour qui c'est",
+    "relatedTools": "Outils connexes",
+    "relatedReading": "Lectures connexes"
   }
 }

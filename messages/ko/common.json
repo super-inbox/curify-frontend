@@ -213,7 +213,9 @@
       "for-marketers": "마케터용",
       "for-parents": "부모용",
       "for-esl-learners": "ESL 학습자용",
-      "for-creators": "크리에이터용"
+      "for-creators": "크리에이터용",
+      "for-designers": "디자이너를 위한",
+      "for-publishers": "출판사를 위한"
     }
   },
   "useCasePage": {
@@ -255,6 +257,30 @@
       "bullet2": "이미지를 음성 & 자막 포함 영상으로 변환",
       "bullet3": "콘텐츠 일괄 다운로드 및 리믹스"
     },
-    "learningMaterialsHeading": "학습 자료"
+    "learningMaterialsHeading": "학습 자료",
+    "exploreOtherHeading": "다른 사용 사례 탐색",
+    "for-designers": {
+      "title": "디자이너를 위한",
+      "subtitle": "Etsy / Pinterest 인쇄 가능한 팩을 생산 속도로",
+      "description": "프리랜서 일러스트레이터와 인쇄 팩 판매자를 위한 — 브랜드 / 로고 / UI 디자이너가 아닙니다. 우리는 고볼륨 미적 중심 카테고리를 다룹니다: 수채화 지도와 스크랩북, 빈티지 스탬프 시리즈, 대중문화 MBTI 팬 아트, 교실 장식 포스터 세트, 패션 무드 보드. 오후에 50개 시리즈를 생성하고, 같은 날 밤 유료 팩으로 배송하세요.",
+      "bullet0": "수채화 지도, 빈티지 스크랩북, 스탬프 시리즈 — Etsy 미학",
+      "bullet1": "대중문화 MBTI 팬 아트 (마블 · 지브리 · NBA · 해리포터 · 만화)",
+      "bullet2": "교실 장식 인쇄물 — 어휘 카드, 해부학 가이드, 역사 포스터",
+      "bullet3": "SEO를 위한 워터마크 미리보기 + 유료 다운로드를 위한 깨끗한 원본"
+    },
+    "for-publishers": {
+      "title": "출판사 및 에드테크를 위한",
+      "subtitle": "하나의 제목에서 열 개의 표면으로 형식 확장",
+      "description": "어린이 도서 출판사와 K-5 에드테크 플랫폼을 위한 — 하나의 제목을 이중 언어 어휘 팩, 캐릭터 캐스트 MBTI 변형, 교실 포스터 및 소셜 카드로 변환하세요. 또는 플랫폼의 인앱 생성을 위한 언어 어휘 엔진을 라이센스하세요. 동일한 캐릭터, 10배의 표면; 동일한 엔진, 두 가지 통합 형태.",
+      "bullet0": "형식 확장: 하나의 제목 → 카드 · 포스터 · 소셜 · 교실",
+      "bullet1": "동물 · 자연 · 우주 · 가족 · 교통 수단에 걸친 K-5 어휘 엔진",
+      "bullet2": "IP 드롭인 준비된 대중문화 MBTI 프레임워크 (마블 / 지브리 스타일)",
+      "bullet3": "번역 팀 없이 이중 언어 판 (en-zh / en-es / en-ja / en-ko)"
+    }
+  },
+  "interconnection": {
+    "whoItsFor": "대상",
+    "relatedTools": "관련 도구",
+    "relatedReading": "관련 읽기"
   }
 }
