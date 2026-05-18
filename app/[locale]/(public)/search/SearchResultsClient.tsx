@@ -35,6 +35,11 @@ type Props = {
   relatedTopics: SuggestionEntry[];
   matchedTemplates: NanoInspirationCardType[];
   galleryPrompts: NanoPromptBase[];
+  /** LLM-rewritten queries used to expand the result set when the
+   *  original returned <3 results. Empty when the original was rich
+   *  enough or when the rewriter was unavailable. Surfaced to the
+   *  user via a "Showing results for: …" hint above the grid. */
+  usedRewrites?: string[];
 };
 
 // Compute the href for a SuggestionEntry chip — honors `href` overrides
@@ -56,6 +61,7 @@ export default function SearchResultsClient({
   relatedTopics,
   matchedTemplates,
   galleryPrompts,
+  usedRewrites = [],
 }: Props) {
   const [input, setInput] = useState(query);
   const router = useRouter();
@@ -117,23 +123,32 @@ export default function SearchResultsClient({
   useEffect(() => {
     const q = query.trim();
     if (!q) return;
+    // Server-side LLM rewrite runs BEFORE these arrays are populated, so
+    // totalResults already reflects the post-rewrite count. We fire the
+    // no-result / low-result events only when the rewrite either was not
+    // applied or did not recover the query — the admin's failing-query
+    // backlog stays focused on "tried everything and still empty."
+    // When the rewrite DID run (usedRewrites.length > 0), append a
+    // "|rw=1" marker so admin can split "thin after LLM rescue attempt"
+    // from "thin without rescue attempt" without a second event.
+    const rwSuffix = usedRewrites.length > 0 ? "|rw=1" : "";
     if (totalResults === 0) {
       track({
-        contentId: q,
+        contentId: q + rwSuffix,
         contentType: "topic_capsule",
         actionType: "search_noresult",
       });
     } else if (totalResults < LOW_RESULT_THRESHOLD) {
       // Encode the count in contentId so admin can rank queries by how
       // close they are to the threshold without joining against another
-      // table. Format: "<query>|n=<count>".
+      // table. Format: "<query>|n=<count>[ |rw=1]".
       track({
-        contentId: `${q}|n=${totalResults}`,
+        contentId: `${q}|n=${totalResults}${rwSuffix}`,
         contentType: "topic_capsule",
         actionType: "search_low_result",
       });
     }
-  }, [query, totalResults, track]);
+  }, [query, totalResults, usedRewrites.length, track]);
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6 lg:px-8">
@@ -155,6 +170,20 @@ export default function SearchResultsClient({
           Search
         </button>
       </form>
+
+      {/* LLM-rewrite hint — surfaced only when the original query was
+          thin and the rewriter contributed at least one alternate
+          phrasing. Shows the rewrites in dim text so the reader knows
+          we expanded the search instead of "showing different stuff". */}
+      {usedRewrites.length > 0 && hasResults && (
+        <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
+          <span className="font-semibold">Few results for &ldquo;{query}&rdquo;.</span>{" "}
+          Also showing results for:{" "}
+          <span className="font-mono text-amber-800">
+            {usedRewrites.join(", ")}
+          </span>
+        </div>
+      )}
 
       {/* Related topic chips */}
       {relatedTopics.length > 0 && (
