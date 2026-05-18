@@ -792,7 +792,6 @@
       "title": "中国服装历史：朝代时尚演变的技术分析",
       "date": "2026年2月26日",
       "readTime": "15分钟阅读",
-      "intro": "全面的中国服装历史指南——朝代时尚演变、纺织分析技术、文化象征框架，以及遗产文档的数字保存方法。立即阅读。",
       "whatIsTitle": "理解中国服装遗产系统",
       "whatIsContent": "中国服装历史代表了一个连续的4000年纺织传统，涵盖技术创新、社会分层和文化表达。该系统整合了材料科学（丝绸培养、染料化学）、社会信号（等级指标、区域身份）和美学原则（色彩理论、图案象征）。每个朝代都贡献了独特的创新，同时保持核心文化的连续性，创建了一个全面的框架来理解东亚时尚的发展。",
       "dynastiesTitle": "朝代服装演变：技术分析",
@@ -806,18 +805,19 @@
       "toolsTitle": "数字文档与分析技术",
       "toolsContent": "现代服装文档采用：3D摄影测量用于准确的服装建模（±2mm公差），多光谱成像用于染料分析，XRF（X射线荧光）用于颜料识别，以及AI驱动的图案识别用于图案分类。数据库系统整合考古发现、文本来源和博物馆藏品，实现95%以上的交叉引用准确率。机器学习模型根据纺织特征和构造技术预测日期准确性在±15年内。",
       "curifyTitle": "Curify的中国服装文档平台",
-      "curifyContent": "Curify的服装分析系统将历史服装处理为综合数字文档。我们的平台具有：使用高光谱成像进行自动化纺织成分分析，跨10,000多种历史图案的图案识别，支持170多种语言的文化背景生成，以及符合博物馆文档标准（CIDOC-CRM）。该系统在朝代分类中实现98%的准确率，并支持教育用途的AR/VR应用。",
       "ctaText": "记录服装遗产？",
       "ctaLink": "尝试 Curify 的服装分析模板",
       "conclusionTitle": "结论",
-      "conclusionContent": "中国服装历史代表了一种复杂的文化技术系统，结合了材料科学、社会信号和艺术表达。通过先进的数字文档和分析方法，我们可以保护这一遗产，同时在时尚设计、文化教育和历史研究中实现当代应用。",
       "metaDescription": "生成 AI 信息图，追溯从唐朝到现代时尚的中国服饰。为教育工作者、博物馆和创作者提供可重混的模板。",
       "seoKeywords": [
         "中国服饰历史",
         "AI 信息图",
         "朝代时尚",
         "文化遗产可视化"
-      ]
+      ],
+      "intro": "追溯中国服装4000年的历史，通过一张可打印的信息图 — 每个朝代的服饰、丝绸和染色技术的演变，以及如何使用Curify的[template-costume](/nano-template/template-costume)和[template-ethnic-costume-deconstruction-board](/nano-template/template-ethnic-costume-deconstruction-board)生成自己的朝代对比海报。为博物馆教育工作者、历史教师和制作短格式时尚历史的创作者而设计。",
+      "curifyContent": "Curify提供两个与服装历史相关的模板：[template-costume](/nano-template/template-costume)生成特定朝代服饰的单人肖像，[template-ethnic-costume-deconstruction-board](/nano-template/template-ethnic-costume-deconstruction-board)生成标注的平面图，展示面料、配饰和轮廓。无论哪种输出都是可编辑文本 — 更换朝代参数并重新生成，以并排比较两个时代，或分叉提示以指定地区（汉 / 唐 / 明 / 清）和职业（官员、学者、商人）以获得更细致的变体。",
+      "conclusionContent": "对于课堂或博物馆使用，您不需要在一张信息图中包含每个朝代。使用template-costume为每个朝代生成一张，并将它们按顺序放在幻灯片中，让对比讲述故事 — 汉代丝绸与唐代锦缎、明代结构化长袍与清代宫廷服饰。解构板变体是可打印的讲义：学生可以看到平铺的面料、配饰和轮廓。"
     },
     "nanoBananaPromptEcosystem": {
       "title": "Nano Banana 提示生态系统",

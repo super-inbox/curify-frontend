@@ -2248,7 +2248,7 @@
       ],
       "date": "February 26, 2026",
       "readTime": "15 min read",
-      "intro": "Comprehensive guide to Chinese costume history—dynastic fashion evolution, textile analysis techniques, cultural symbolism frameworks, and digital preservation methods for heritage documentation. Read now.",
+      "intro": "Tracing 4,000 years of Chinese clothing across one printable infographic — what each dynasty wore, how silk and dyeing technology evolved, and how to generate your own dynasty-comparison poster using Curify's [template-costume](/nano-template/template-costume) and [template-ethnic-costume-deconstruction-board](/nano-template/template-ethnic-costume-deconstruction-board). Built for museum educators, history teachers, and creators making short-form fashion history.",
       "whatIsTitle": "Understanding Chinese Costume Heritage Systems",
       "whatIsContent": "Chinese costume history represents a continuous 4,000-year textile tradition encompassing technological innovation, social stratification, and cultural expression. The system integrates material science (silk cultivation, dye chemistry), social signaling (rank indicators, regional identity), and aesthetic principles (color theory, pattern symbolism). Each dynasty contributed distinct innovations while maintaining core cultural continuity, creating a comprehensive framework for understanding East Asian fashion development.",
       "dynastiesTitle": "Dynastic Costume Evolution: Technical Analysis",
@@ -2262,11 +2262,11 @@
       "toolsTitle": "Digital Documentation and Analysis Technologies",
       "toolsContent": "Modern costume documentation employs: 3D photogrammetry for accurate garment modeling (±2mm tolerance), multispectral imaging for dye analysis, XRF (X-ray fluorescence) for pigment identification, and AI-powered pattern recognition for motif classification. Database systems integrate archaeological findings, textual sources, and museum collections, achieving 95%+ cross-referencing accuracy. Machine learning models predict dating accuracy within ±15 years based on textile characteristics and construction techniques.",
       "curifyTitle": "Curify's Chinese Costume Documentation Platform",
-      "curifyContent": "Curify's costume analysis system processes historical garments into comprehensive digital documentation. Our platform features: automated textile composition analysis using hyperspectral imaging, pattern recognition across 10,000+ historical motifs, cultural context generation with 170+ language support, and compliance with museum documentation standards (CIDOC-CRM). The system achieves 98% accuracy in dynasty classification and supports AR/VR applications for educational use.",
+      "curifyContent": "Curify ships two templates relevant to costume history: [template-costume](/nano-template/template-costume) generates a single-figure portrait in dynasty-specific dress, and [template-ethnic-costume-deconstruction-board](/nano-template/template-ethnic-costume-deconstruction-board) produces a labeled flat-lay breaking out fabric, accessories, and silhouette. Either output is editable text — swap the dynasty parameter and re-generate to compare two eras side-by-side, or fork the prompt to specify region (Han / Tang / Ming / Qing) and occupation (court official, scholar, merchant) for finer-grained variants.",
       "ctaText": "Document costume heritage?",
       "ctaLink": "Try Curify's Costume Analysis Templates",
       "conclusionTitle": "Conclusion",
-      "conclusionContent": "Chinese costume history represents a sophisticated cultural technology system combining material science, social signaling, and artistic expression. Through advanced digital documentation and analysis methods, we can preserve this heritage while enabling contemporary applications in fashion design, cultural education, and historical research."
+      "conclusionContent": "For classroom or museum use you don't need every dynasty in one infographic. Generate one per dynasty using template-costume, sequence them in slides, and let the contrast tell the story — Han silk against Tang brocade, Ming structured robes against Qing court regalia. The deconstruction board variant is the printable handout: students see fabric, accessories, and silhouette laid out flat."
     },
     "tenPromptingTipsVideoGeneration": {
       "title": "10 AI Video Prompting Tips That Actually Work (Sora, Runway, Pika)",
