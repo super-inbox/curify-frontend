@@ -1,6 +1,6 @@
 # Blog Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-17 (added layout & visual polish track + reprioritized shortlist). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
+_Last updated: 2026-05-18 (shipped top-5 P1 rewrites + added 2 new DS/AI posts; corrected dedicated-folder count from 5 to 31). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
 
 ## Framing
 
@@ -11,6 +11,46 @@ Three parallel tracks:
 3. **Layout & visual polish** — uniform basic layout across every blog and the feed: no giant hero images, relaxed reading width, consistent alignment, CTA card themed in light-purple + light-blue. Affects every reader on every blog, so the impact compounds across the whole catalog rather than being per-URL.
 
 Both tracks share the same i18n fan-out: edit `messages/en/blog.json`, delete the stale `title` field in each non-en locale, run `scripts/i18n_autotranslate.cjs --base en --files blog --write`, bump `lastmod` in `public/data/blogs.json`.
+
+---
+
+## Today's progress (2026-05-18) — P1 rewrites + 2 new DS/AI posts
+
+### P1 fluff rewrite — top 5 done (one commit each)
+Sequenced by Search Console impression volume (verified against Pages.csv, which reordered the doc's prior candidate list — `nano-banana-prompt-ecosystem` had been listed first but actually ranked 4th by impressions). All five common changes: dropped unverified accuracy claims (95% / 90% / 98% / "10k+ creators"), dropped enterprise / marketing-grade adjectives, anchored every "Curify section" in real tool slugs or template ids, ended every conclusion with concrete next-step framing instead of "essential for modern businesses".
+
+| Commit | Post | SC impr (28d) | Fields touched |
+| --- | --- | --: | --- |
+| `9c8fe83` | video-transcription-business-guide | 265 | intro + meta + curifyContent + conclusion |
+| `b533c55` | lip-sync-business-guide | 211 | intro + curifyContent + conclusion |
+| `db74b3e` | chinese-costume-history-infographic | 197 | intro + curifyContent + conclusion |
+| `b5925db` | nano-banana-prompt-ecosystem | 47 | title + intro + meta + curifyContent + conclusion |
+| `250e2b6` | image-to-narrative-video | 0 | intro only (body deferred until SC re-crawl) |
+
+Tool slugs / template ids the rewrites now cite:
+- `/tools/video-transcript-generator`, `/tools/video-dubbing`, `/tools/translate-subtitles`, `/tools/bilingual-subtitles`
+- `template-costume`, `template-ethnic-costume-deconstruction-board`
+
+### Two new authored posts — ds-ai-engineering category
+Commit `225e2f7` adds two DS/AI engineering essays from PDFs the user dropped into the repo root. Both flow through the standard `[slug]` pipeline via `GenericBlogContent` (no dedicated route folder), and both auto-inherit the existing `BlogCTACard` mapping for `ds-ai-engineering` (MentorCruise coaching primary + `/contact` secondary). i18n auto-fanned out to 9 non-en locales.
+
+| Slug | Frame | Curify anchors |
+| --- | --- | --- |
+| `ai-reshaping-data-workflow` | How AI reshapes each layer of the data workflow (acquisition / storage / analysis / application); Assistant-vs-Agent share by domain | `/nano-template`, `/nano-banana-pro-prompts`, `/tools/video-transcript-generator`, `/tools/video-dubbing`, `/tools/translate-subtitles` |
+| `ml-engineer-vs-ai-engineer` | Two value structures (revenue engine vs capability engine); 4-section compare on business value, technical focus, org dependency, personal fit | `/nano-banana-pro-prompts`, `/tools/video-dubbing`, `/tools/voice-clone` |
+
+Cross-linked into `aiPlatform.relatedLinks`; `aiPlatform.lastmod` bumped to 2026-05-18. Hero images (`/images/ai-dataworkflow.jpg`, `/images/mle-vs-ai.jpg`) synced to `gs://curify-static/images/` via `gsutil cp` (per the repo's `public/images/` gitignore convention — image bytes live on the CDN, not in git).
+
+### Memory entry corrected
+`feedback_blog_slug_pipeline.md` had said "at least one dedicated-folder page". Actual count is **31 dedicated `page.tsx` folders**, **13 of which also have `layout.tsx`**. Updated the memory entry with discovery commands so future sessions don't repeat the count error. The doc's separate "5 dedicated-folder pages that needed BlogCTACard wiring" subset is intentionally narrower — that working subset stays unchanged.
+
+### Coverage stats (post-push)
+| Metric | 2026-05-17 close | 2026-05-18 close |
+| --- | --: | --: |
+| Real posts with `metaDescription` | 48 / 54 | **50 / 56** (2 new posts shipped with meta) |
+| Catalog entries with `lastmod` | 36 / 57 | **43 / 59** (5 P1 rewrites + 2 new posts + 1 aiPlatform cross-link bump) |
+| Significant content rewrites done | 5 | **10** |
+| P1 fluff list candidates remaining | 5 | **0** (top-5 all done; SC re-pull will surface next cohort) |
 
 ---
 
@@ -232,19 +272,19 @@ Pick canonical of the 4 dup pairs (`ugc-video-translation-…` kebab vs camel; `
 `keyInsight.methods`, `pinterestPlatform.templateTags.geoTags.examples`, `…languageTags.examples`, `finalThought.systems`, `footer.tags`. The page no longer crashes, but those sections render empty until authored.
 
 ### 4. P1 fluff rewrite — top 5 by Search Console impressions
-Candidate list (highest-impact first, but verify against SC):
-- `nanoBananaPromptEcosystem` (keyword-stuffed intro — high impressions on "nano banana prompts")
-- `chineseCostumeHistoryInfographic` (boilerplate "Comprehensive guide to…")
-- `videoTranscriptionBusinessGuide` (boilerplate "Learn how to transcribe…")
-- `lipSyncBusinessGuide` (boilerplate "Discover how AI lip sync…")
-- `imageToNarrativeVideo` ("Transform static images into compelling…")
+**All five shipped 2026-05-18.** See [Today's progress](#todays-progress-2026-05-18--p1-rewrites--2-new-dsai-posts) for commits + per-post fields touched. Next P1 cohort is gated on the post-2026-06-01 SC re-pull — most current P2 candidates are likely the right next batch once we see which positions moved.
 
 ### 5. P0 / P1 CTR follow-up
-After 2026-06-01, re-pull Search Console for the 10 bleeders rewritten in `0803aab` and the 3 P0 rewrites from today. Lift > 2× CTR ⇒ the playbook is working; lift flat ⇒ try a stronger framing or a different position-rank cohort.
+After 2026-06-01, re-pull Search Console for **15 rewritten posts**:
+- 10 bleeders rewritten in `0803aab` + `bb5a8b2` + `4d24885`
+- 3 P0 rewrites from 2026-05-17 (`mbiRelationshipStyleVisualizer`, `weirdScienceFactsClassroomEngagement`, `whatIsInfographics`)
+- ~~3 P1 rewrites from~~ **5 P1 rewrites from 2026-05-18** (`9c8fe83`, `b533c55`, `db74b3e`, `b5925db`, `250e2b6`)
+
+Lift > 2× CTR ⇒ the playbook is working; lift flat ⇒ try a stronger framing or a different position-rank cohort.
 
 ### 6. P2 audit pass
-Skim the ~20 P2 bodies. If anchored in real templates and tools, leave alone; otherwise add to a future P1 list.
+Skim the ~20 P2 bodies. If anchored in real templates and tools, leave alone; otherwise add to a future P1 list. The SC re-pull at #5 will reveal which P2 posts now matter most.
 
 ---
 
-_Track sources used for this audit: `git log --since=2026-05-10`, `public/data/blogs.json`, `messages/en/blog.json`, `app/[locale]/_components/BlogCTACard.tsx`, commits `0803aab` and `ac14131`._
+_Track sources used for this audit: `git log --since=2026-05-10`, `public/data/blogs.json`, `messages/en/blog.json`, `app/[locale]/_components/BlogCTACard.tsx`, commits `0803aab`, `ac14131`, `9c8fe83`, `b533c55`, `db74b3e`, `b5925db`, `250e2b6`, `225e2f7`._

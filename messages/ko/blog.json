@@ -260,7 +260,8 @@
         "date": "2026년 3월 29일",
         "readTime": "10분 읽기",
         "tag": "Video Dubbing",
-        "image": "/images/office.webp"
+        "image": "/images/office.webp",
+        "thumbnailType": "비디오-전사-비즈니스"
       },
       {
         "slug": "lip-sync-technical-deep-dive",
@@ -506,7 +507,13 @@
         "date": "April 20, 2026",
         "readTime": "20 min read",
         "tag": "Nano Template",
-        "image": "/images/logbook.webp"
+        "image": "/images/logbook.webp",
+        "category": "나노-템플릿",
+        "relatedLinks": [
+          "나노 바나나 프롬프트의 궁극적인 디렉토리",
+          "10가지 프롬프트 팁 - 나노 바나나",
+          "나노 바나나 프롬프트 생태계"
+        ]
       },
       {
         "slug": "content-tagging-system",
@@ -824,7 +831,6 @@
       "title": "YouTube 동영상을 영어로 번역하기: AI 기반 솔루션",
       "date": "2026년 3월 4일",
       "readTime": "10분 읽기",
-      "intro": "고급 AI 기술을 사용하여 YouTube 동영상을 영어로 번역하는 방법을 알아보세요. 전 세계 영어 사용 청중에게 콘텐츠를 제공하세요.",
       "whatIsTitle": "왜 영어로 번역해야 할까요?",
       "whatIsContent": "영어는 비즈니스와 엔터테인먼트의 글로벌 언어입니다. 콘텐츠를 영어로 번역하면 방대한 청중 잠재력을 열고 발견 가능성을 높입니다.",
       "whyTitle": "영어 번역의 이점",
@@ -849,7 +855,8 @@
       "step4Title": "4단계: 음성 합성 및 클로닝",
       "step4Content": "번역된 텍스트는 원래 화자의 음성 특성을 유지하는 고급 텍스트-음성 변환(TTS) 모델을 사용하여 자연스러운 음성으로 변환됩니다. 우리의 파이프라인은 Tacotron 2 스타일 아키텍처와 신경 음성 합성기를 결합하여 고충실도의 오디오 생성을 제공합니다.\n\n**파이썬 구현 세부사항:**\n```python\n# Tacotron 2 + WaveRNN을 이용한 음성 합성\nfrom tacotron2 import Tacotron2\nfrom wavernn import WaveRNN\nfrom voice_cloning import VoiceEncoder, VoiceCloner\n\n# 원본 오디오에서 화자 특성 추출\nvoice_encoder = VoiceEncoder()\nspeaker_embedding = voice_encoder.embed(original_speech)\n\n# 화자 특성으로 TTS 모델 초기화\ntacotron = Tacotron2(\n    embedding_dim=512,\n    encoder_dim=256,\n    decoder_dim=256,\n    n_mels=80\n)\n\n# 번역된 텍스트에서 멜 스펙트로그램 생성\nwith torch.no_grad():\n    mel_output = tacotron.inference(\n        text=translated_text,\n        speaker_embedding=speaker_embedding,\n        attention_alignment=True\n    )\n\n# 신경 음성 합성기를 사용하여 파형으로 변환\nvocoder = WaveRNN()\naudio_output = vocoder.generate(mel_output)\n```\n\n음성 클로닝 시스템은 음색, 음높이 및 억양 패턴을 인코딩하는 256차원 화자 임베딩을 캡처합니다. 이를 통해 자연스러운 음성 특성을 유지하면서 언어 간 일관된 음성 재생이 가능합니다.",
       "step5Title": "5단계: 립싱크 및 비디오 정렬",
-      "step5Content": "최종 단계에서는 컴퓨터 비전 기술을 사용하여 생성된 오디오와 원본 비디오를 동기화합니다. 우리의 시스템은 얼굴 랜드마크와 입 움직임을 분석하여 50ms의 허용 오차 내에서 완벽한 오디오-비주얼 정렬을 보장합니다.\n\n**파이썬 구현 세부사항:**\n```python\n# 컴퓨터 비전을 이용한 립싱크 정렬\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# 랜드마크 감지를 위한 얼굴 메쉬 초기화\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# 비디오 프레임에서 입 랜드마크 추출\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # 입 랜드마크\n        mouth_landmarks.append(mouth_points)\n\n# 시각적 신호에 따라 오디오 동기화\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# 최종 동기화된 비디오 생성\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\n동기화 시스템은 동적 시간 왜곡 알고리즘을 사용하여 음성 패턴과 입 움직임을 일치시켜 원본 비디오의 시각적 무결성을 유지하는 매끄러운 더빙 콘텐츠를 생성합니다."
+      "step5Content": "최종 단계에서는 컴퓨터 비전 기술을 사용하여 생성된 오디오와 원본 비디오를 동기화합니다. 우리의 시스템은 얼굴 랜드마크와 입 움직임을 분석하여 50ms의 허용 오차 내에서 완벽한 오디오-비주얼 정렬을 보장합니다.\n\n**파이썬 구현 세부사항:**\n```python\n# 컴퓨터 비전을 이용한 립싱크 정렬\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# 랜드마크 감지를 위한 얼굴 메쉬 초기화\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# 비디오 프레임에서 입 랜드마크 추출\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # 입 랜드마크\n        mouth_landmarks.append(mouth_points)\n\n# 시각적 신호에 따라 오디오 동기화\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# 최종 동기화된 비디오 생성\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\n동기화 시스템은 동적 시간 왜곡 알고리즘을 사용하여 음성 패턴과 입 움직임을 일치시켜 원본 비디오의 시각적 무결성을 유지하는 매끄러운 더빙 콘텐츠를 생성합니다.",
+      "intro": "YouTube 비디오 번역은 하나의 모델이 아닙니다 — 다섯 단계의 파이프라인입니다. 이 심층 분석에서는 Curify가 단계를 연결하는 방법을 다룹니다: 배경 음악에서 오디오를 분리하고, WhisperX로 전사하고, 전사를 목표 언어로 번역하고, F5-TTS로 원래 화자의 목소리를 복제하고, [/tools/video-dubbing](/tools/video-dubbing)를 통해 입에 맞춘 더빙으로 비디오를 다시 렌더링합니다. 각 단계는 통합하기 전에 이해할 가치가 있는 고유한 실패 모드를 가지고 있습니다. 다른 언어로 자막만 원하신다면, 더 간단한 [/tools/translate-subtitles](/tools/translate-subtitles)가 한 단계로 그것을 처리합니다; 이 게시물은 전체 다국어 비디오 파이프라인을 구축하는 사람들을 위한 것입니다."
     },
     "aiYoutubeVideoTranslator": {
       "date": "2026년 3월 4일",
@@ -1221,7 +1228,6 @@
     "videoTranscriptionTechnicalDeepDive": {
       "title": "심층 분석: 전사 기술 개요",
       "description": "AI 에이전트와 워크플로의 차이점 및 Curify가 최적의 창의적 자동화를 위해 두 가지를 결합하는 방법을 탐구합니다.",
-      "intro": "기본 전사 도구를 넘어 현대 비디오 전사 시스템을 지원하는 기술 아키텍처를 발견하세요. 이 포괄적인 심층 분석은 Curify의 완전한 파이프라인을 분해하여 오디오 분리 및 음성 인식에서 강제 정렬 및 화자 구분까지 보여주며, AI가 원시 비디오를 완벽하게 시간 동기화된 정확한 전사로 변환하는 방법을 설명합니다.",
       "whatIsTitle": "종단 간 비디오 전사 파이프라인",
       "whatIsContent": "생산 등급 비디오 전사 파이프라인은 원시 비디오 콘텐츠를 구조화된 시간 동기화된 텍스트로 변환하는 여러 정교한 처리 단계를 거칩니다. 전체 워크플로: 비디오 → 오디오 추출 → 세분화 → ASR (자동 음성 인식) → 정렬 → 화자 구분 → 후처리.\n\n각 단계는 특정 기술적 과제를 해결합니다: 오디오 추출은 음성 트랙을 분리하고, 세분화는 긴 오디오를 관리 가능한 청크로 나누며, ASR은 음성을 텍스트로 변환하고, 정렬은 단어 수준의 타임스탬프를 제공합니다. 화자 구분은 누가 언제 말했는지를 식별하고, 후처리는 최종 출력을 정리하고 형식을 지정합니다.\n\nCurify의 파이프라인과 같은 현대 시스템은 Conv-TasNet을 오디오 분리에, WhisperX를 음성 인식에, 고급 클러스터링 알고리즘을 화자 식별에 결합하여 도전적인 조건에서도 95% 이상의 정확도를 달성합니다. 이 기술 심층 분석은 각 구성 요소와 그 통합 전략을 탐구합니다.",
       "whyTitle": "전사에 대한 기술 아키텍처의 중요성",
@@ -1250,7 +1256,8 @@
       "conclusionTitle": "비디오 전사 기술의 미래",
       "conclusionContent": "비디오 전사 기술은 기본 음성 인식 시스템에서 신경망, 오디오 처리 및 최적화 기술의 발전을 결합한 정교한 다단계 파이프라인으로 발전했습니다. Curify의 파이프라인과 같은 현대 시스템은 오디오 분리를 위한 Conv-TasNet, 전사를 위한 WhisperX 및 고급 품질 보증이 생산 등급 워크플로에 통합될 수 있음을 보여줍니다.\n\n기술 팀과 개발자에게 핵심 요점은 비디오 전사가 더 이상 연구 문제이 아니라 해결된 엔지니어링 과제라는 것입니다. 남은 기회는 기본 기술 제한이 아닌 최적화, 엣지 케이스 및 통합에 있습니다. 이러한 시스템이 더 나은 모델 아키텍처와 더 큰 훈련 데이터 세트를 통해 계속 개선됨에 따라, 우리는 모든 콘텐츠 유형에 대해 완벽한 전사가 대규모로 제공되는 미래에 가까워지고 있습니다.\n\n여기에서 설명된 기술 아키텍처는 2026년 현재의 최첨단을 나타내지만, 이 분야는 계속해서 빠르게 발전하고 있습니다. 실시간 전사, 제로샷 화자 식별 및 자동 콘텐츠 요약은 비디오 콘텐츠 처리 및 분석 접근 방식을 더욱 변화시킬 새로운 기능으로 이미 등장하고 있습니다.",
       "seoKeywords": "비디오 전사 파이프라인, 음성 인식 파이프라인, ASR 비디오 처리, 음성 텍스트 파이프라인, 화자 분리 비디오, 강제 정렬 전사, Whisper 전사 파이프라인, 오디오 세분화 전사, 다국어 전사 AI",
-      "metaDescription": "AI 비디오 전사 파이프라인 아키텍처에 대한 기술 심층 분석. 개발자 및 AI 엔지니어를 위한 ASR, 강제 정렬, 화자 분리 및 생산 시스템 설계에 대한 완벽한 가이드."
+      "metaDescription": "AI 비디오 전사 파이프라인 아키텍처에 대한 기술 심층 분석. 개발자 및 AI 엔지니어를 위한 ASR, 강제 정렬, 화자 분리 및 생산 시스템 설계에 대한 완벽한 가이드.",
+      "intro": "대부분의 전사 도구는 음성을 텍스트로 변환하는 데 그칩니다. 이 심층 분석에서는 Curify의 전체 전사 파이프라인을 다룹니다: 오디오가 배경 음악에서 어떻게 분리되는지, WhisperX가 정리된 트랙에서 어떻게 작동하는지, 화자 분리가 겹치는 목소리를 어떻게 나누는지, 강제 정렬이 단어 수준의 타임스탬프를 전사에 다시 넣어 출력이 [/tools/video-transcript-generator](/tools/video-transcript-generator)에서 자막, 더빙 및 번역 도구를 구동할 수 있도록 하는 방법을 설명합니다. SRT를 다운로드하는 것뿐만 아니라 더 큰 파이프라인에 전사를 통합하고 싶다면, 이것은 대부분의 블로그 게시물이 건너뛰는 레이어입니다."
     },
     "tenPromptingTipsNanoBanana": {
       "title": "Nano Banana를 위한 프롬프트 작성 방법: 제작자를 위한 10가지 팁",
@@ -4073,19 +4080,7 @@
             "useCaseDesc": "예: 포스터, 아바타",
             "mood": "무드",
             "moodDesc": "예: 아늑한, 어두운"
-          },
-          "finalVerdict": "2026년 비디오 더빙 및 번역에서 ElevenLabs는 품질, 다국어 지원 및 사용 용이성에서 우승합니다. F5-TTS는 예산 제약이 있거나 상업적 제한 없이 무제한 생성을 요구하는 기술 사용자에게 놀라운 가치를 제공합니다.",
-          "gettingStarted": "시작하기 리소스",
-          "f5TtsSetup": "F5-TTS 설정",
-          "f5TtsSetupDesc": "공식 GitHub 저장소, 요구 사항, 설치 및 CLI 인터페이스",
-          "elevenLabsSetup": "ElevenLabs 설정",
-          "elevenLabsSetupDesc": "웹 대시보드, API 접근 및 빠른 시작 가이드",
-          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-          "themeDesc": "예: 판타지, 여행",
-          "useCase": "사용 사례",
-          "useCaseDesc": "예: 포스터, 아바타",
-          "mood": "무드",
-          "moodDesc": "예: 아늑한, 어두운"
+          }
         }
       },
       "keyInsight": {
@@ -4386,57 +4381,6 @@
       "conclusionTitle": "글로벌 콘텐츠 전략 변환",
       "conclusionContent": "UGC 비디오 번역은 제작자 경제 확장의 다음 경계를 나타냅니다. 고급 AI 번역과 문화적 지능 및 제작자 진정성 보존을 결합함으로써, 원본 콘텐츠의 성공을 유지하면서 글로벌로 콘텐츠를 확장할 수 있습니다."
     },
-    "ugcVideoTranslationScalingTiktoksShortsGlobalMarkets": {
-      "title": "UGC 비디오 번역: TikTok 및 Shorts를 글로벌 시장으로 확장하기",
-      "date": "2026년 4월 27일",
-      "readTime": "12분 읽기",
-      "tag": "비디오 번역",
-      "image": "/images/ugc-video-translation.webp",
-      "category": "video-translation",
-      "intro": "AI 번역을 사용하여 UGC(사용자 생성 콘텐츠) 비디오를 글로벌 시장으로 확장하는 방법을 배우세요. TikTok, Shorts, Reels를 번역하여 진정성과 참여도를 유지하면서 국제 시청자에게 도달하세요.",
-      "whatIsTitle": "UGC 비디오 번역이란?",
-      "whatIsContent": "UGC 비디오 번역은 사용자 생성 단폼 콘텐츠를 국제 시청자를 위해 적응시키는 과정입니다. 여기에는 UGC를 효과적으로 만드는 진정성 있고 원시적인 느낌을 유지하면서 오디오, 캡션 및 문화적 참조를 번역하는 것이 포함됩니다. AI 도구를 통해 수백 개의 비디오를 저렴한 비용으로 번역할 수 있게 되었습니다.",
-      "whyTitle": "왜 UGC 콘텐츠를 번역해야 하는가?",
-      "whyContent": "UGC 콘텐츠는 브랜드 생성 콘텐츠보다 4배 높은 클릭률을驱动합니다. UGC를 번역함으로써: 20억 명 이상의 비영어권 화자에게 도달하고, 새로운 콘텐츠를 만들지 않고 새로운 시장에 진출하고, 기존 크리에이터 파트너십에서 ROAS를 증가시키며, 모국어로 콘텐츠를 신뢰하는 글로벌 시청자와 진정성 있는 연결을 구축할 수 있습니다.",
-      "howTitle": "UGC 비디오를 대규모로 번역하는 방법",
-      "step1Title": "1단계: 콘텐츠 큐레이션 및 정리",
-      "step1Content": "참여 지표(조회수, 공유수, CTR)를 기반으로 고성과 UGC를 식별하세요. 제품 카테고리, 크리에이터, 성과 등급별로 콘텐츠를 정리하세요. 비디오에 원본 언어와 대상 시장 잠재력을 태그하세요. 최대 번역 ROI를 위해 시간 민감성 게시물보다 상시 유효 콘텐츠를 우선시하세요.",
-      "step2Title": "2단계: 자산 추출 및 준비",
-      "step2Content": "가용한 최고 품질로 소스 비디오를 다운로드하세요. FFmpeg나 Descript와 같은 도구를 사용하여 비디오에서 오디오를 분리하세요. 화면 텍스트와 캡션을 추출하세요. 각 콘텐츠의 톤, 맥락, 문화적 노트를 포착하는 번역 브리프 문서를 만드세요.",
-      "step3Title": "3단계: AI 번역 및 음성 클로닝",
-      "step3Content": "AI 음성 클로닝을 사용하여 언어 간에 크리에이터의 진정성을 유지하세요. Curify와 같은 도구는 원본 크리에이터의 목소리를 복제하고 50개 이상의 언어로 번역할 수 있습니다. 최상의 결과를 위해 음성 클로닝에 30초 이상의 깨끗한 오디오를 제공하세요. 문화적 정확성을 위해 네이티브 화자로 AI 번역을 항상 검토하세요.",
-      "step4Title": "4단계: 립싱크 및 시각적 적응",
-      "step4Content": "AI 립싱크 기술을 적용하여 번역된 오디오를 화자의 입술 움직임과 일치시키세요. 대상 언어의 화면 텍스트 오버레이와 캡션을 조정하세요. 문화적 민감성을 위해 재편집을 고려하세요(잘 번역되지 않는 지역 특정 참조 제거).",
-      "step5Title": "5단계: 현지화 및 규정 준수",
-      "step5Content": "현지 시장을 위해 CTA를 조정하세요(다른 전자상거래 플랫폼, 통화 등). 지역 광고 규정 및 공개 요구사항 준수를 보장하세요. 현지화된 해시태그와 키워드를 추가하세요. 전체 캠페인 출시 전에 네이티브 화자로 테스트하세요.",
-      "technicalTitle": "기술적 고려사항",
-      "timingTitle": "타이밍 및 페이싱",
-      "timingContent": "번역된 오디오는 원본보다 15-30% 더 길거나 짧을 수 있습니다. 비디오 페이싱을 조정하세요: 휴지를 자르고, 섹션을 빠르게 또는 느리게 하고, 타이밍 간격을 채우기 위해 B롤을 추가하세요. TikTok과 Shorts는 엄격한 지속 시간 제한이 있습니다 - 번역 버전이 플랫폼 제약 내에 맞는지 확인하세요.",
-      "emotionTitle": "감정 및 톤 보존",
-      "emotionContent": "UGC는 진정성 있는 감정에 크게 의존합니다. 번역 시: 원본 에너지 수준과 열정을 유지하고, 유머와 문화적 참조를 보존(또는 적절히 적응)하고, UGC를 정의하는 비공식적이고 대화적인 톤을 유지하세요. AI 감정 감지는 원본 감정과 일치하는 데 도움이 됩니다.",
-      "platformTitle": "플랫폼별 요구사항",
-      "platformContent": "각 플랫폼에는 고유한 고려사항이 있습니다: TikTok은 텍스트 안전 구역이 있는 수직 9:16 형식을 요구하고, YouTube Shorts는 매력적인 처음 3초와 모바일 최적화된 썸네일을 필요로 하며, Instagram Reels는 트렌드 오디오 통합과 해시태그 전략에서 혜택을 받습니다. 번역된 콘텐츠를 각 플랫폼의 알고리즘 선호도에 맞게 조정하세요.",
-      "toolsTitle": "추천 도구",
-      "toolsContent": "Curify: 음성 클로닝, 립싱크, 배치 처리를 갖춘 올인원 UGC 번역. ElevenLabs: 감정 제어가 있는 전문 음성 클로닝. HeyGen: 페이스리스 UGC용 AI 아바타 및 립싱크. Descript: 오디오 편집 및 전사 워크플로. CapCut: 20개 이상의 언어로 자동 캡션이 있는 모바일 친화적 편집.",
-      "monetizationTitle": "수익화 전략",
-      "monetizationContent": "번역된 UGC를 수익화하세요: 국제 제휴 프로그램(Amazon Associates, ShareASale 글로벌 네트워크), 현지화된 제품 드롭 및 예약, 지역 브랜드 파트너십 및 후원, 다른 브랜드가 라이선스하는 유료 UGC 라이브러리. 시장별로 성과를 추적하여 높은 전환율 지역에서 두 배로 늘리세요.",
-      "caseStudiesTitle": "성공 사례",
-      "caseStudy1Title": "뷰티 브랜드: 유럽 시장에서 3배 ROAS",
-      "caseStudy1Content": "DTC 뷰티 브랜드가 상위 50개 UGC TikTok을 프랑스어, 독일어, 스페인어로 번역했습니다. Curify의 음성 클로닝을 사용하여 크리에이터 목소리를 유지하고, 60일 내에 유럽 시장에서 3배 광고 지출 수익을 달성했습니다. 진정성 있는 크리에이터 에너지는 전통적인 더빙 콘텐츠보다 더 잘 번역되었습니다.",
-      "caseStudy2Title": "피트니스 앱: 번역된 Shorts에서 50만 다운로드",
-      "caseStudy2Content": "피트니스 앱이 영어 UGC를 포르투갈어, 일본어, 아랍어로 번역했습니다. 운동 용어를 현지화하고 문화적 참조를 적응시킴으로써 90일 내에 비영어권 시장에서 50만 개 이상의 앱 다운로드를 달성했습니다. 번역된 콘텐츠는 현지에서 만든 광고보다 40% 더 우수했습니다.",
-      "bestPracticesTitle": "UGC 번역을 위한 모범 사례",
-      "bestPracticesContent": "더 나은 음성 클로닝 결과를 위해 명확하고 액센트가 없는 발음을 가진 크리에이터를 선택하세요. 전체 라이브러리로 확장하기 전에 시장당 5-10개 비디오를 테스트하세요. 브랜드 특정 용어와 제품명의 번역 용어집을 유지하세요. 번역된 썸네일과 캡션을 A/B 테스트하세요. 대상 언어의 댓글에서 문화적 피드백을 모니터링하세요. 제품이나 메시징이 변경될 때 번역을 업데이트하세요.",
-      "conclusionTitle": "UGC 번역으로 글로벌 확장",
-      "conclusionContent": "UGC 비디오 번역은 글로벌 시장에 진입하는 가장 비용 효율적인 방법입니다. 음성 클로닝, 립싱크, 배치 처리용 AI 도구를 활용함으로써, 기존의 고성과 콘텐츠를 수십억 명의 새로운 잠재 고객에게 도달하도록 확장할 수 있습니다. 상위 10개 UGC 비디오로 시작하고, 2-3개 유망 시장으로 번역하고, 전체 규모 배포 전에 결과를 측정하세요.",
-      "metaDescription": "TikTok과 Shorts를 글로벌 시장으로 확장하기 — AI 번역 스택, 음성 클로닝 설정 및 UGC가 해외에서 실제로 전환되도록 하는 타이밍 트릭.",
-      "seoKeywords": [
-        "UGC 비디오 번역",
-        "TikTok 번역 AI",
-        "Shorts 글로벌 시장",
-        "비디오 더빙 제작자"
-      ]
-    },
     "aifacelesschannelpipeline": {
       "title": "2026년 AI 페이스리스 채널 파이프라인 구축 방법",
       "date": "2026년 4월 23일",
@@ -4478,327 +4422,6 @@
       "ctaLink": "/nano-banana",
       "conclusionTitle": "콘텐츠 제작의 미래는 시스템 주도형입니다",
       "conclusionContent": "AI 페이스리스 채널은 시스템 주도형 콘텐츠 제작으로의 전환을 강조합니다. 구조화된 워크플로우와 적절한 도구를 결합함으로써, 제작자는 품질을 유지하면서 출력 규모를 확장할 수 있습니다. 이점은 일관성, 반복, 그리고 스마트한 자동화 사용에서 나오며, 완전한 손쉬운 운영은 아닙니다."
-    },
-    "f5TtsVsElevenlabs": {
-      "title": "F5-TTS vs. ElevenLabs: 2026년 어떤 음성 클로닝 도구가 더 나은가?",
-      "description": "AI 도구를 사용하여 일반적인 더빙 문제를 해결하는 포괄적인 가이드입니다. 로봇 같은 속도, 감정 부족, 립싱크 문제에 대한 실용적인 솔루션을 배워보세요.",
-      "hero": {
-        "title": "2026년 자연스럽게 비디오 더빙하는 방법: AI 음성 클로닝 아티팩트 수정하기",
-        "subtitle": "AI 도구를 사용하여 일반적인 더빙 문제를 해결하는 포괄적인 가이드입니다. 로봇 같은 속도, 감정 부족, 립싱크 문제와 같은 고통 지점에 집중하세요."
-      },
-      "protip": "고품질 소스 오디오로 시작하고 항상 원어민과 함께 더빙된 콘텐츠를 테스트하여 AI가 놓칠 수 있는 미세한 아티팩트를 잡아내세요.",
-      "tabs": {
-        "problems": "일반적인 문제",
-        "solutions": "실용적인 솔루션",
-        "tools": "추천 도구",
-        "workflow": "단계별 워크플로우",
-        "advanced": "고급 기술",
-        "automation": "자동화 전략",
-        "conclusion": "결론"
-      },
-      "introduction": {
-        "paragraph1": "AI 비디오 더빙은 콘텐츠 제작에 혁신을 가져왔지만 &lt;strong&gt;로봇 아티팩트&lt;/strong&gt;와 &lt;strong&gt;부자연스러운 속도&lt;/strong&gt;는 여전히 많은 제작물에 문제를 일으킵니다. 2026년에는 이러한 문제를 극복할 수 있는 더 나은 도구와 기술이 있습니다. 핵심 문제는 대부분의 더빙 파이프라인이 음성을 단순한 기술적 레이어로 취급하는 데 있습니다. 많은 시스템이 여전히 평면적인 프로소디, 일관되지 않은 강조 및 잘못된 타이밍의 정지를 생성하여 음성이 현실적으로 들리더라도 몰입감을 깨뜨립니다. 시청자는 타이밍 불일치에 매우 민감합니다. 감정적 비트, 미세한 정지 또는 문장 강조가 시각적 퍼포먼스와 일치하지 않을 때 결과는 미세하게 '어색하게' 느껴지며, 그 이유를 설명할 수 없더라도 그렇습니다. 현대적인 접근 방식은 &lt;strong&gt;프로소디 제어 및 시간 정렬&lt;/strong&gt;에 집중하여 이 문제를 해결합니다. 음성을 선형적으로 생성하는 대신, 최신 모델은 리듬 인식 합성을 통합하여 제작자가 구와 음절 수준에서 속도를 제어할 수 있도록 합니다. 이를 통해 립 동작을 일치시키고, 극적인 정지를 유지하며, 원래 배우의 의도를 여러 언어에서 유지할 수 있습니다. 강제 정렬, 음소 수준 타이밍 및 참조 오디오 조건화와 같은 기술이 이제 고품질 파이프라인에서 표준이 되고 있습니다. 또 다른 주요 개선 사항은 &lt;strong&gt;맥락 인식 음성 모델링&lt;/strong&gt;에서 비롯됩니다. 각 라인을 고립적으로 생성하는 대신, 고급 시스템은 대화 기억을 유지하여 장면 간의 톤, 감정 상태 및 화자 역학을 추적합니다. 이는 톤 드리프트를 줄이고 캐릭터가 속삭이든, 논쟁하든, 설명하든 일관되게 들리도록 보장합니다. 내러티브 중심 콘텐츠의 경우, 이러한 변화만으로도 인식된 현실감이 크게 향상됩니다. 마지막으로 &lt;strong&gt;인간-루프 워크플로우&lt;/strong&gt;의 부상은 자동화와 품질 간의 격차를 좁혔습니다. 제작자는 이제 AI 생성과 경량 편집 레이어를 결합하여 정지를 미세 조정하고, 강조를 조정하거나 전체 클립 대신 특정 세그먼트를 재생성합니다. 이 하이브리드 접근 방식은 효율성과 창의적 제어의 균형을 맞추어 제작 팀이 더빙을 확장하면서도 스튜디오 수준의 결과를 달성할 수 있도록 합니다. 이러한 발전은 AI 더빙을 편리한 도구에서 &lt;strong&gt;제작 품질 솔루션&lt;/strong&gt;으로 이동시켜, 속도나 확장성을 희생하지 않고 여러 언어에서 자연스럽고 감정적으로 공감되는 퍼포먼스를 제공할 수 있게 합니다.",
-        "paragraph2": "이 가이드는 MuseTalk, Emotion TTS 및 고급 후처리 기술과 같은 최첨단 AI 도구를 사용하여 &lt;strong&gt;일반적인 더빙 문제를 수정하는 방법&lt;/strong&gt;을 보여줍니다. 우리는 기본 음성 생성 이상의 것을 다루어 AI 더빙 워크플로우에서 가장 지속적인 실패 지점을 해결합니다. 립싱크 드리프트, 단조로운 전달, 타이밍 불일치 및 감정적 평탄함을 다룹니다. MuseTalk를 사용하여 생성된 음성이 입술 움직임 및 얼굴 표정과 밀접하게 일치하도록 정확한 시각-오디오 정렬을 보장하는 방법을 배웁니다. 오디오 측면에서는 Emotion TTS 시스템을 활용하여 생성된 음성에 &lt;strong&gt;제어된 표현력&lt;/strong&gt;을 주입하는 방법을 설명합니다. 일반적인 프리셋에 의존하는 대신, 이 가이드는 긴장감, 빈정거림 또는 단일 라인 내의 미세한 감정 변화와 같은 의도를 반영하기 위해 피치 윤곽, 속도 및 강조를 조정하는 방법을 안내합니다. 이를 통해 '기술적으로 올바른' 오디오에서 인간적이고 맥락적으로 기반이 있는 퍼포먼스로 이동할 수 있습니다. 우리는 또한 최종 출력 품질에 중요한 차이를 만드는 &lt;strong&gt;고급 후처리 워크플로우&lt;/strong&gt;를 다룹니다. 여기에는 음소 수준 타이밍 조정, 정지 잘라내기 및 연장, 호흡 및 정지 삽입, EQ 매칭 및 음량 정상화와 같은 오디오 마스터링 기술이 포함되어 있어 더빙된 음성을 원래 사운드트랙에 원활하게 혼합할 수 있습니다. 이러한 도구와 기술을 통합하여 일관된 파이프라인을 구축함으로써, 시행착오에 의존하지 않고 더빙 문제를 체계적으로 진단하고 수정할 수 있습니다. 이는 일관되지 않은 AI 출력을 다듬고 제작 준비가 완료된 대화로 전환하는 데 도움이 됩니다."
-      },
-      "problems": {
-        "title": "일반적인 AI 더빙 문제",
-        "issues": [
-          {
-            "icon": "🤖",
-            "title": "로봇 같은 속도",
-            "description": "AI 생성 음성은 종종 자연스러운 리듬과 타이밍이 부족하여 기계적이고 분리된 느낌을 줍니다.",
-            "impact": "시청자 이탈",
-            "impactDescription": "부자연스러운 속도가 몰입을 방해하고 시청자 유지율을 최대 40%까지 감소시킵니다."
-          },
-          {
-            "icon": "😐",
-            "title": "감정의 미세한 차이 부족",
-            "description": "AI 음성은 미묘한 감정을 전달하는 데 어려움을 겪어 극적인 장면이 생동감이 떨어집니다.",
-            "impact": "감정적 단절",
-            "impactDescription": "감정적 신호가 부족하여 시청자가 캐릭터와 이야기와 연결되지 못합니다."
-          },
-          {
-            "icon": "👄",
-            "title": "입 모양 동기 불일치",
-            "description": "오디오와 시각적 입 움직임 간의 불일치가 불쾌한 계곡 효과를 만듭니다.",
-            "impact": "비현실적인 외관",
-            "impactDescription": "눈에 보이는 입 모양 동기 오류는 자연스러운 말의 환상을 즉시 깨뜨립니다."
-          }
-        ]
-      },
-      "solutions": {
-        "title": "실용적인 솔루션",
-        "methods": [
-          {
-            "icon": "🎭",
-            "title": "감정 강화 TTS",
-            "description": "적절한 감정을 음성에 주입할 수 있는 감정 인식 텍스트-음성 변환 모델을 사용합니다.",
-            "benefit": "자연스러운 감정 전달",
-            "benefitDescription": "표준 TTS에 비해 85% 더 자연스러운 감정 표현을 달성합니다.",
-            "promptTitle": "감정 강화 프롬프트",
-            "promptDescription": "AI가 감정적으로 미세한 음성을 생성하도록 안내하는 이 프롬프트를 사용하세요:",
-            "prompt": "[감정: 걱정, 따뜻함, 긴급] 톤으로 음성을 생성하세요. 쉼표 후 0.3초 일시 정지하고, 주요 감정 단어를 강조하며, 자연스러운 리듬을 위해 피치를 ±20% 변동시킵니다."
-          },
-          {
-            "icon": "⚡",
-            "title": "리듬 수정",
-            "description": "자연스러운 인간의 말 패턴에 맞추기 위해 AI 기반 타이밍 조정을 적용합니다.",
-            "benefit": "인간 같은 타이밍",
-            "benefitDescription": "지능적인 속도 조정을 통해 로봇 같은 아티팩트를 70% 줄입니다.",
-            "promptTitle": "리듬 수정 프롬프트",
-            "promptDescription": "로봇 같은 속도를 수정하기 위해 이 프롬프트를 사용하세요:",
-            "prompt": "음성 리듬을 분석하고 자연스러운 일시 정지를 삽입하세요: 마침표 후 0.5초, 쉼표 후 0.2초, 유기적인 흐름을 위해 단어 간격을 ±10% 변동시킵니다."
-          }
-        ]
-      },
-      "tools": {
-        "title": "추천 도구",
-        "cta": "도구 사용해보기",
-        "recommendations": [
-          {
-            "icon": "🎙️",
-            "title": "MuseTalk",
-            "description": "감정을 보존하고 자연스러운 타이밍을 가진 고급 음성 클로닝.",
-            "useCase": "캐릭터 음성에 최적",
-            "useCaseDescription": "장기 콘텐츠에서 일관된 캐릭터 음성을 유지하는 데 완벽합니다.",
-            "link": "https://musetalk.ai"
-          },
-          {
-            "icon": "🎭",
-            "title": "Emotion TTS",
-            "description": "감정 조절과 자연스러운 운율을 갖춘 전문 텍스트 음성 변환.",
-            "useCase": "감정 콘텐츠",
-            "useCaseDescription": "미세한 감정 변화를 요구하는 극적인 콘텐츠에 이상적입니다.",
-            "link": "https://emotiontts.ai"
-          },
-          {
-            "icon": "🎬",
-            "title": "LipSync Pro",
-            "description": "프레임 수준의 정밀도로 AI 기반 립싱크 수정.",
-            "useCase": "완벽한 입 맞춤",
-            "useCaseDescription": "전문 비디오 제작을 위한 픽셀 완벽 립싱크를 달성합니다.",
-            "link": "https://lipsyncpro.ai"
-          }
-        ]
-      },
-      "workflow": {
-        "title": "단계별 워크플로우",
-        "steps": [
-          {
-            "title": "소스 오디오 준비",
-            "description": "대상 음성의 고품질, 깨끗한 오디오 녹음으로 시작합니다.",
-            "action": "오디오 품질 검사",
-            "actionDescription": "48kHz 샘플링 주파수, 최소한의 배경 소음 및 일관된 음성 성능을 보장합니다.",
-            "promptTitle": "오디오 준비 프롬프트",
-            "promptDescription": "음성 클로닝을 위한 오디오 준비에 이 프롬프트를 사용하세요:",
-            "prompt": "깨끗한 오디오: 배경 소음 제거, -6dB로 정규화, 일관된 음성 톤 보장, WAV 48kHz 24비트로 내보내기."
-          },
-          {
-            "title": "감정을 담은 음성 클로닝",
-            "description": "MuseTalk를 사용하여 감정 인식 음성 모델을 생성합니다.",
-            "action": "음성 모델 훈련",
-            "actionDescription": "감정 태그와 타이밍 참조 샘플로 모델을 훈련합니다.",
-            "promptTitle": "음성 클로닝 프롬프트",
-            "promptDescription": "음성 클로닝을 위해 이 프롬프트를 사용하세요:",
-            "prompt": "감정 보존으로 음성을 클론합니다: 음성 패턴 분석, 감정 마커 추출, 타이밍 프로파일 생성."
-          },
-          {
-            "title": "더빙 오디오 생성",
-            "description": "감정이 강화된 음성 모델을 사용하여 음성을 생성합니다.",
-            "action": "오디오 생성",
-            "actionDescription": "최고의 결과를 위해 다양한 감정 강도로 여러 번 녹음합니다.",
-            "promptTitle": "오디오 생성 프롬프트",
-            "promptDescription": "자연스러운 오디오 생성을 위해 이 프롬프트를 사용하세요:",
-            "prompt": "음성을 생성합니다: 감정 프로파일 [행복, 걱정, 흥분] 적용, 자연스러운 일시 정지 삽입, 말하기 속도 ±15% 변동."
-          }
-        ]
-      },
-      "advanced": {
-        "title": "고급 기술",
-        "techniques": [
-          {
-            "icon": "🧠",
-            "title": "신경 프로소디 전이",
-            "description": "참조 오디오에서 자연스러운 음성 패턴을 AI 생성 음성으로 전이합니다.",
-            "benefit": "진정한 음성 패턴",
-            "benefitDescription": "음성 리듬과 억양에서 95% 자연스러움을 달성합니다.",
-            "promptTitle": "프로소디 전이 프롬프트",
-            "promptDescription": "프로소디 전이를 위해 이 프롬프트를 사용하세요:",
-            "prompt": "프로소디 패턴 추출: 피치 윤곽, 타이밍 패턴, 강세 강조 분석, 대상 음성에 적용."
-          },
-          {
-            "icon": "🎯",
-            "title": "맥락 인식 감정",
-            "description": "장면 맥락을 이해하고 감정을 조정하는 AI.",
-            "benefit": "장면에 적합한 감정",
-            "benefitDescription": "감정 톤을 비디오 콘텐츠와 대화 맥락에 자동으로 맞춥니다.",
-            "promptTitle": "맥락 인식 프롬프트",
-            "promptDescription": "맥락 인식 감정을 위해 이 프롬프트를 사용하세요:",
-            "prompt": "장면 맥락 분석: 감정 톤, 캐릭터 관계, 극적인 순간 식별, 음성을 조정합니다."
-          }
-        ]
-      },
-      "automation": {
-        "title": "자동화 전략",
-        "strategies": [
-          {
-            "icon": "⚙️",
-            "title": "배치 처리 파이프라인",
-            "description": "일관된 품질로 여러 비디오 파일을 처리하는 자동화된 워크플로우입니다.",
-            "result": "확대된 일관된 품질",
-            "resultDescription": "일관된 음성 품질과 감정 전달로 100개 이상의 비디오를 처리합니다."
-          },
-          {
-            "icon": "🔄",
-            "title": "품질 관리 자동화",
-            "description": "AI 기반 품질 검사로 더빙 문제를 자동으로 감지하고 표시합니다.",
-            "result": "수동 검토 감소",
-            "resultDescription": "인간 검토 전에 90%의 더빙 문제를 잡아내어 QC 시간을 70% 절약합니다."
-          }
-        ]
-      },
-      "conclusion": {
-        "title": "AI로 비디오 더빙을 혁신하세요",
-        "description": "이러한 고급 기술과 도구를 결합함으로써, 자연스럽고 감정적으로 매력적인 더빙 콘텐츠를 제작하여 관객을 사로잡을 수 있습니다. AI 더빙의 미래가 여기에 있으며, 그 어느 때보다 인간적입니다."
-      },
-      "publishedDate": "2026년 4월 27일",
-      "readTime": "12분 읽기",
-      "category": "비디오 더빙",
-      "altText": "음성 클로닝 및 더빙을 위한 F5-TTS와 ElevenLabs 비교",
-      "ultimateShowdown": "궁극의 대결: F5-TTS vs ElevenLabs",
-      "ultimateShowdownIntro": "AI 음성 클로닝의 빠르게 진화하는 세계에서 2026년 두 개의 이름이 두드러집니다: 혁신적인 오픈 소스 솔루션 F5-TTS와 확립된 상업적 강자 ElevenLabs. 하지만 비디오 더빙 프로젝트를 위해 진정으로 주목할 가치가 있는 것은 무엇일까요?",
-      "whyVoiceCloningIntro": "음성 클로닝 기술은 콘텐츠 제작을 혁신하여 제작자가 다국어 콘텐츠를 제작하고, 언어 간 일관된 브랜딩을 유지하며, 제작 비용을 획기적으로 줄일 수 있게 합니다. 이 두 가지 선도적인 솔루션을 깊이 살펴보겠습니다.",
-      "quickComparisonTable": "빠른 비교 표",
-      "feature": "특징",
-      "f5Tts": "F5-TTS",
-      "elevenLabs": "ElevenLabs",
-      "costModel": "비용 모델",
-      "f5TtsCost": "무료 (오픈 소스)",
-      "elevenLabsCost": "$5-1,320/월",
-      "voiceQuality": "음성 품질",
-      "f5TtsQuality": "85-90% 자연스러움",
-      "elevenLabsQuality": "92-96% 자연스러움",
-      "emotionRendering": "감정 표현",
-      "f5TtsEmotion": "우수 (흐름 일치)",
-      "elevenLabsEmotion": "우수한 (v3 오디오 태그)",
-      "latency": "지연 시간",
-      "f5TtsLatency": "2-5초",
-      "elevenLabsLatency": "0.5-2초 (플래시)",
-      "setupComplexity": "설치 복잡성",
-      "f5TtsSetup": "높음 (기술적)",
-      "elevenLabsSetup": "낮음 (웹 인터페이스)",
-      "commercialRights": "상업적 권리",
-      "f5TtsRights": "전체 (MIT 라이선스)",
-      "elevenLabsRights": "유료 플랜 필요",
-      "f5TtsChampion": "F5-TTS: 오픈 소스 챔피언",
-      "technicalArchitecture": "기술 아키텍처",
-      "f5TtsDescription": "F5-TTS (유창하고 충실한 음성을 흐름 일치로 모방하는 Fairytaler)는 오픈 소스 음성 합성의 혁신을 나타냅니다. ConvNeXt V2 아키텍처를 갖춘 확산 변환기 기반으로 구축되어 상업적 가격 없이 인상적인 품질을 제공합니다.",
-      "keyStrengths": "주요 강점",
-      "zeroCostOperation": "제로 비용 운영:",
-      "zeroCostDesc": "MIT 라이선스로 완전히 무료, 예산에 민감한 제작자에게 완벽",
-      "flowMatchingTech": "흐름 일치 기술:",
-      "flowMatchingDesc": "고급 추론 시간 흐름 단계 샘플링으로 성능 향상",
-      "zeroShotCloning": "제로 샷 클로닝:",
-      "zeroShotDesc": "미세 조정 없이 짧은 참조 클립에서 음성을 복제",
-      "fullControl": "전체 제어:",
-      "fullControlDesc": "모델 가중치 및 사용자 정의 옵션에 대한 완전한 접근",
-      "noUsageLimits": "사용 제한 없음:",
-      "noUsageDesc": "크레딧이나 제한 없이 무제한 콘텐츠 생성",
-      "limitationsDubbing": "비디오 더빙의 한계",
-      "criticalConsiderations": "⚠️ 중요한 고려 사항",
-      "higherLatency": "더 높은 지연 시간:",
-      "higherLatencyDesc": "2-5초 생성 시간이 실시간 워크플로에 영향을 미침",
-      "technicalSetup": "기술 설정:",
-      "technicalSetupDesc": "Python 환경, GPU 및 기술 전문 지식 필요",
-      "limitedMultilingual": "제한된 다국어 지원:",
-      "limitedMultilingualDesc": "주로 영어에 최적화됨",
-      "artifactingIssues": "아티팩트 문제:",
-      "artifactingDesc": "긴 구문에서 가끔 발생하는 로봇 아티팩트",
-      "noDubbingFeatures": "내장 더빙 기능 없음:",
-      "noDubbingDesc": "별도의 번역 도구와 통합해야 함",
-      "bestUseCases": "최고의 사용 사례",
-      "f5TtsUseCases": "F5-TTS는 기술 창작자, 연구자 및 비용이 주요 제약인 프로젝트에 적합합니다. 프로토타입 제작, 교육 콘텐츠 및 인프라를 관리할 기술적 능력이 있는 창작자에게 이상적입니다.",
-      "elevenLabsPowerhouse": "ElevenLabs: 상업적 강자",
-      "technicalExcellence": "기술적 우수성",
-      "elevenLabsDescription": "ElevenLabs는 창작자 친화적인 TTS 도구에서 포괄적인 오디오 인프라 플랫폼으로 발전했습니다. 그들의 독점 모델(eleven_flash_v2_5, eleven_multilingual_v2, eleven_v3)은 음성 품질과 자연스러움의 산업 표준을 설정합니다.",
-      "superiorQuality": "우수한 음성 품질:",
-      "superiorQualityDesc": "최소한의 아티팩트로 92-96% 자연스러움 평가",
-      "advancedEmotion": "고급 감정 제어:",
-      "advancedEmotionDesc": "정확한 감정 표현을 위한 v3 오디오 태그",
-      "subSecondLatency": "서브 세컨드 지연:",
-      "subSecondDesc": "Flash 모델로 실시간 애플리케이션 가능",
-      "comprehensiveLanguage": "포괄적인 언어 지원:",
-      "comprehensiveLanguageDesc": "29개 이상의 언어와 지역 변형",
-      "integratedDubbing": "통합 더빙 파이프라인:",
-      "integratedDubbingDesc": "내장된 번역 및 음성 보존",
-      "professionalCloning": "전문 음성 클로닝:",
-      "professionalCloningDesc": "스튜디오 품질을 위한 PVC(전문 음성 클로닝)",
-      "pricingBreakdown": "비디오 제작자를 위한 가격 분석",
-      "costAnalysis": "💰 비용 분석 (2026)",
-      "starterPlan": "스타터 ($5/월):",
-      "starterDesc": "30,000 크레딧 (~30분 TTS) - 상업적 사용을 위한 진입점",
-      "creatorPlan": "창작자 ($22/월):",
-      "creatorDesc": "100,000 크레딧 (~100분) + 전문 음성 클로닝",
-      "proPlan": "프로 ($99/월):",
-      "proDesc": "500,000 크레딧 (~500분) + 44.1kHz 오디오 출력",
-      "scalePlan": "스케일 ($330/월):",
-      "scaleDesc": "2M 크레딧 (~2000분) + 저지연 실시간",
-      "creditNote": "참고: 1 크레딧 = 1 문자 (다국어 v2), 플래시 모델의 경우 0.5 크레딧",
-      "elevenLabsUseCases": "ElevenLabs는 품질과 사용 용이성이 비용 고려 사항보다 중요한 전문 콘텐츠 제작자, 에이전시 및 비즈니스에 적합합니다. 특히 대량 더빙 프로젝트 및 상업적 응용 프로그램에 유용합니다.",
-      "headToHead": "정면 대 정면 기술 비교",
-      "emotionQuality": "감정 렌더링 품질",
-      "elevenLabsWins": "ElevenLabs가 결정적으로 승리합니다",
-      "emotionControlDesc": "감정 제어에서. 그들의 v3 오디오 태그 시스템은 내러티브 맥락, 감정 톤 및 표현 패턴에 대한 정밀한 제어를 허용합니다. 행복, 슬픔, 분노 또는 미세한 뉘앙스를 간단한 마크업 태그로 지정할 수 있습니다.",
-      "f5TtsEmotionDesc": "F5-TTS는 감정 표현을 위해 흐름 일치를 사용하며, 이는 기본 감정에는 잘 작동하지만 극적인 콘텐츠나 미세한 표현을 위한 세밀한 제어가 부족합니다.",
-      "latencyPerformance": "지연 성능",
-      "elevenLabsFlash": "ElevenLabs 플래시 모델",
-      "flashDesc": "0.5-2초의 생성 시간을 제공하여 실시간 응용 프로그램 및 대화형 워크플로에 적합합니다. 이는 타이밍 동기화가 필수적인 비디오 더빙에 중요합니다.",
-      "f5TtsLatencyDesc": "F5-TTS는 일반적으로 생성당 2-5초가 필요하여 창의적인 워크플로를 방해하고 실시간 미리보기를 불가능하게 만들 수 있습니다.",
-      "audioArtifacting": "오디오 아티팩트",
-      "elevenLabsArtifacting": "ElevenLabs는 긴 구간에서도 최소한의 아티팩트를 보여주며, 부드러운 전환과 일관된 음성 특성을 유지합니다. 그들의 전문 음성 클로닝은 확장된 콘텐츠 전반에 걸쳐 품질을 유지합니다.",
-      "f5TtsArtifacting": "F5-TTS는 복잡한 문장이나 익숙하지 않은 음성 조합에서 특히 가끔 로봇 같은 아티팩트를 생성할 수 있습니다. 이는 긴 더빙 프로젝트에서 더 눈에 띄게 됩니다.",
-      "multilingualCapabilities": "다국어 기능",
-      "elevenLabsDominates": "ElevenLabs가 지배합니다",
-      "multilingualDesc": "29개 이상의 언어, 지역 변형 및 코드 스위칭 기능을 갖춘 국제 콘텐츠를 위해. 그들의 더빙 파이프라인은 언어 간 음성 특성을 유지합니다.",
-      "f5TtsMultilingualDesc": "F5-TTS는 제한된 다국어 지원을 제공하며, 주로 영어에 최적화되어 있고 다른 언어에 대한 실험적 지원이 있습니다. 국제 더빙 프로젝트에는 적합하지 않습니다.",
-      "bottomLine": "결론: 어떤 것을 선택해야 할까요?",
-      "chooseF5Tts": "🎯 F5-TTS를 선택하세요:",
-      "f5TtsReason1": "예산이 주요 제약입니다",
-      "f5TtsReason2": "기술 전문 지식과 인프라가 있습니다",
-      "f5TtsReason3": "주로 영어로 작업하고 있습니다",
-      "f5TtsReason4": "크레딧 없이 무제한 생성을 원합니다",
-      "f5TtsReason5": "모델을 사용자 정의하고 수정하고 싶습니다",
-      "f5TtsReason6": "독점 솔루션을 구축하고 있습니다",
-      "chooseElevenLabs": "🚀 ElevenLabs를 선택하세요:",
-      "elevenLabsReason1": "품질과 자연스러움이 최우선입니다",
-      "elevenLabsReason2": "다국어 더빙 기능이 필요합니다",
-      "elevenLabsReason3": "실시간 또는 저지연 생성이 필요합니다",
-      "elevenLabsReason4": "전문적인 감정 조절을 원합니다",
-      "elevenLabsReason5": "관리되는 번거로움 없는 솔루션을 선호합니다",
-      "elevenLabsReason6": "빠듯한 기한이 있는 상업 프로젝트",
-      "hybridApproach": "하이브리드 접근법: 두 세계의 장점",
-      "hybridApproachDesc": "다양한 요구를 가진 전문 스튜디오를 위해, 프로토타입 및 테스트에는 F5-TTS를, 최종 제작 및 상업 프로젝트에는 ElevenLabs를 사용하는 것을 고려하세요. 이 접근법은 품질 기준을 유지하면서 비용 효율성을 극대화합니다.",
-      "decisionFactors": "귀하의 선택은 궁극적으로 특정 사용 사례, 예산 제약, 기술 전문성 및 품질 요구 사항에 따라 달라집니다. 두 도구 모두 음성 클로닝 기술의 최첨단을 대표하며, 각각 다른 시나리오에서 뛰어납니다.",
-      "f5TtsSetupTitle": "F5-TTS 시작하기",
-      "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-      "f5TtsRequirements": "Python 3.8+, 8GB+ VRAM을 가진 GPU 권장",
-      "f5TtsInstallation": "pip install f5-tts",
-      "f5TtsInterface": "명령줄 및 Python API 인터페이스",
-      "elevenLabsSetupTitle": "ElevenLabs 시작하기",
-      "elevenLabsWebsite": "https://elevenlabs.io",
-      "elevenLabsFreeTier": "무료 요금제 제공 (10,000자/월)",
-      "elevenLabsWebApi": "웹 인터페이스 및 REST API 접근",
-      "elevenLabsProfessionalPlan": "전문 요금제는 월 $5부터 시작합니다",
-      "finalRecommendation": "최종 추천",
-      "f5TtsFinalNote": "F5-TTS와 ElevenLabs는 현대 음성 클로닝 기술의 정점을 나타냅니다. 귀하의 선택은 특정 요구, 기술 능력 및 예산 고려 사항에 맞춰야 합니다. 음성 기술의 민주화는 창작자들이 이제 전문급 도구에 전례 없는 접근을 할 수 있게 합니다.",
-      "comparisonNote": "이 비교는 2026년 4월 기준 음성 클로닝 기술의 상태를 반영합니다. AI의 빠른 발전은 향후 몇 달 동안 경관을 크게 변화시킬 수 있습니다.",
-      "metaDescription": "2026년 F5-TTS와 ElevenLabs 비교 — 정확성, 자연스러움, 지연 시간, 비용. 나란히 비교한 벤치마크와 선택: 어떤 것을 프로덕션 오디오에 선택할지.",
-      "seoKeywords": [
-        "F5-TTS vs ElevenLabs",
-        "음성 클로닝 비교",
-        "AI 음성 도구 2026",
-        "TTS 벤치마크"
-      ]
     },
     "keyInsight": {
       "title": "핵심 통찰",
@@ -5064,55 +4687,6 @@
         "AI 비디오 파이프라인",
         "확산 워크플로우",
         "모션 그래픽 AI"
-      ]
-    },
-    "video_translation_eval": {
-      "title": "AI 비디오 번역 품질 평가",
-      "subtitle": "중요한 메트릭",
-      "description": "전사에서 음성 합성에 이르기까지 AI 비디오 번역 품질을 평가하기 위한 필수 메트릭을 발견하세요.",
-      "intro": "언어 간 비디오 번역은 작은 일이 아닙니다 — 전사, 번역, 음성 합성, 타이밍 등이 포함됩니다. Curify에서는 각 요소가 업계 표준을 충족하도록 보장하는 강력한 평가 파이프라인을 구축했습니다.",
-      "section1_title": "1. 전사 품질",
-      "section1_engine": "엔진: WhisperX",
-      "section1_metrics": [
-        "WER (단어 오류율)",
-        "구두점 F1 (표현력 및 가독성)"
-      ],
-      "section2_title": "2. 번역 품질",
-      "section2_engine": "엔진: Helsinki, MarianMT",
-      "section2_metrics": [
-        "BLEU (표준 메트릭)",
-        "COMET / chrF++ (의미적 유사성)",
-        "인간 리뷰: 유창성 + 적합성"
-      ],
-      "section3_title": "3. 음성 합성 품질",
-      "section3_engine": "엔진: XTTS / YourTTS",
-      "section3_metrics": [
-        "MOS (자연스러움, 유사성, 표현력)",
-        "화자 검증 정확도"
-      ],
-      "section4_title": "4. 정렬 및 립 싱크",
-      "section4_metrics": [
-        "세그먼트 지속 시간 불일치",
-        "Wav2Lip 싱크 신뢰도",
-        "시간적 드리프트 분석"
-      ],
-      "section5_title": "5. 의미 보존",
-      "section5_method": "우리는 LLM(예: GPT-4)을 사용하여 번역된 음성이 원래의 의미, 톤 및 감정을 유지하는지 판단합니다. 예시 프롬프트:",
-      "section5_prompt": "이 만다린 전사를 영어 음성 해설과 비교하세요. 톤, 의도 및 내용이 일치합니까? 1-5로 평가하고 설명하세요.",
-      "section6_title": "6. 사용자 피드백 및 GTM 검증",
-      "section6_metrics": [
-        "제품 카테고리에 적합한 음성 품질",
-        "시청자 유지 개선",
-        "초기 사용자(예: 1688 판매자)의 채택 의사"
-      ],
-      "closing": "Curify에서는 단순히 번역하는 것이 아니라, 언어 간의 스토리텔링, 감정 및 명확성을 보존합니다. 글로벌하게 목소리를 확장할 준비가 되었다면, 연락주세요.",
-      "available_locales": "게시물 사용 가능 언어: [EN] [ZH] [ES] [DE]",
-      "metaDescription": "비디오 번역은 단순한 번역 이상의 것입니다 — 필기, 음성, 타이밍 및 감정이 포함됩니다. Curify에서 AI 비디오 번역 품질을 평가하는 방법입니다.",
-      "seoKeywords": [
-        "비디오 번역 평가",
-        "AI 더빙 품질",
-        "번역 벤치마킹",
-        "비디오 QA"
       ]
     },
     "qaBotToTaskAgent": {
@@ -5439,138 +5013,6 @@
       "conclusionTitle": "결론",
       "conclusionPara1": "AI 비디오 더빙은 콘텐츠 현지화를 시간 소모적이고 비용이 많이 드는 과정에서 접근 가능하고 효율적인 워크플로우로 변화시켰습니다. 당신이 개인 제작자이든 글로벌 기업이든, 이러한 도구는 원래 콘텐츠의 품질과 감정적 영향을 유지하면서 전 세계 청중에게 도달할 수 있게 해줍니다.",
       "conclusionPara2": "기술이 계속 발전함에 따라 더욱 자연스러운 음성 합성, 더 나은 문화적 적응, 콘텐츠 제작 워크플로우와의 매끄러운 통합을 보게 될 것입니다. 글로벌 커뮤니케이션의 미래가 여기에 있으며, 모든 언어로 소통합니다."
-    },
-    "gridCollageAiPrompts": {
-      "title": "3x3 그리드 사진 콜라주 AI 프롬프트: 숲, 해변 & 도시 편집 룩",
-      "publishedDate": "2026년 5월 10일",
-      "readTime": "8분 읽기",
-      "category": "나노 템플릿",
-      "metaDescription": "AI 이미지 생성기를 위한 3x3 그리드 콜라주 프롬프트 복사-붙여넣기 — 겨울 숲, 여름 해변, 도시 편집, 카페 미학 등.",
-      "keywords": "3x3 그리드 콜라주, 사진 그리드 프롬프트, ai 사진 콜라주, 인스타그램 미학 프롬프트, 핀터레스트 미학 ai",
-      "audience": "핀터레스트 제작자, 인스타그램 미학 계정, 패션 블로거, 라이프스타일 콘텐츠 제작자.",
-      "heroTitle": "히어로 이미지",
-      "heroContent": "완성된 3x3 + 1단락 TL;DR. 모든 아홉 패널에서 완벽한 일관성을 유지하는 놀라운 3x3 그리드 콜라주를 AI로 만드세요.",
-      "whatIsTitle": "3x3 그리드 콜라주 프롬프트의 모습",
-      "whatIsContent": "구성: 주제 + 설정 + 계절 + 9개의 마이크로 포즈 + 조명 일관성 노트. 각 프롬프트는 전체 테마를 정의하면서 모든 패널 간의 시각적 조화를 보장합니다.",
-      "winterForestTitle": "겨울 숲 편집",
-      "winterForestDescription": "GSC 롱테일과 직접 일치합니다. 부드러운 파란 조명과 마법 같은 분위기의 신비로운 눈 덮인 소나무 숲.",
-      "winterForestPrompt": "겨울 숲 장면의 3x3 그리드. 패널 1: 넓은 숲 입구. 패널 2: 서리 낀 가지. 패널 3: 눈길. 패널 4: 얼어붙은 시내. 패널 5: 나무 사이로 비치는 햇빛. 패널 6: 동물 발자국. 패널 7: 서리 낀 솔방울. 패널 8: 안개가 피어오름. 패널 9: 나무 사이로 보이는 산 전망. 부드러운 파란색과 흰색 팔레트, 마법 같은 조명, 자연 사진 스타일.",
-      "summerBeachTitle": "여름 해변 황금 시간",
-      "summerBeachDescription": "황금 시간 조명과 편안한 휴가 분위기의 따뜻한 열대 해변 장면.",
-      "summerBeachPrompt": "여름 해변 장면의 3x3 그리드. 패널 1: 야자수 실루엣. 패널 2: 바다 파도. 패널 3: 해변 의자. 패널 4: 모래 속 조개. 패널 5: 열대 음료. 패널 6: 물로 가는 발자국. 패널 7: 해변 타올. 패널 8: 바다 수평선. 패널 9: 해변 배구. 따뜻한 오렌지색과 분홍색 팔레트, 황금 시간 조명.",
-      "autumnCafeTitle": "가을 도시 카페",
-      "autumnCafeDescription": "가을 색상과 따뜻하고 초대하는 분위기의 아늑한 도시 카페 장면.",
-      "autumnCafePrompt": "가을 카페 장면의 3x3 그리드. 패널 1: 커피 컵 김. 패널 2: 창문에 떨어지는 빗방울. 패널 3: 따뜻한 조명. 패널 4: 바깥의 가을 잎. 패널 5: 아늑한 내부. 패널 6: 커피를 만드는 바리스타. 패널 7: 테이블 위의 책. 패널 8: 거리 전망. 패널 9: 저녁 분위기. 따뜻한 갈색과 오렌지색 팔레트, 부드러운 조명.",
-      "springGardenTitle": "봄 정원 코티지코어",
-      "springGardenDescription": "신선한 봄 꽃과 자연적인 목가적 요소가 있는 로맨틱한 코티지코어 정원 장면.",
-      "springGardenPrompt": "봄 정원 장면의 3x3 그리드. 패널 1: 벚꽃. 패널 2: 봄비. 패널 3: 새싹. 패널 4: 꽃 위의 나비. 패널 5: 정원 길. 패널 6: 정원 도구. 패널 7: 비 오는 부츠. 패널 8: 새 둥지. 패널 9: 정원 소풍. 부드러운 파스텔 팔레트, 신선하고 공기 같은.",
-      "neonUrbanTitle": "네온 느와르 도시",
-      "neonUrbanDescription": "네온 조명, 그림자, 도시의 신비로운 분위기가 있는 극적인 도시 야경 장면.",
-      "neonUrbanPrompt": "네온 도시 장면의 3x3 그리드. 패널 1: 네온 사인 반사. 패널 2: 옥상에서 보는 도시 불빛. 패널 3: 교통 신호등의 흔적. 패널 4: 레스토랑 창. 패널 5: 거리 공연자. 패널 6: 상점 진열대. 패널 7: 비 오는 택시 불빛. 패널 8: 다리 조명. 패널 9: 바 입구. 깊은 파란색과 네온 색상.",
-      "minimalistStudioTitle": "미니멀리스트 스튜디오 (흰색 배경)",
-      "minimalistStudioDescription": "흰색 배경과 주제의 단순성에 초점을 맞춘 깨끗하고 미니멀한 스튜디오 샷.",
-      "minimalistStudioPrompt": "미니멀리스트 스튜디오 장면의 3x3 그리드. 패널 1: 단일 객체. 패널 2: 깨끗한 선. 패널 3: 음수 공간. 패널 4: 단순한 그림자. 패널 5: 순수한 흰색 배경. 패널 6: 미니멀한 구성. 패널 7: 미세한 질감. 패널 8: 기하학적 형태. 패널 9: 깨끗한 조명. 단색 흰색과 회색.",
-      "templateTitle": "재사용 가능한 프롬프트 템플릿",
-      "templateContent": "교환 가능한 필드를 주석 처리합니다; 스크린샷과 함께 템플릿-3x3-그리드-사진-콜라주 템플릿 페이지 링크를 삽입합니다. 템플릿 구조: [테마] + [설정] + [계절] + [9 패널 설명] + [조명] + [스타일].",
-      "consistencyTipsTitle": "9개 패널 간의 얼굴/의상 일관성을 유지하기 위한 팁",
-      "consistencyTips": [
-        "모든 패널에 대해 동일한 AI 모델과 설정을 사용하세요.",
-        "프롬프트에서 일관된 조명 설명을 유지하세요.",
-        "시각적 조화를 위해 정확한 색상 팔레트를 지정하세요.",
-        "캐릭터 일관성을 위해 preserve-facial-features-ai-generation 링크를 연결하세요.",
-        "카메라 각도와 거리를 일관되게 유지하세요."
-      ],
-      "moreDirectionsTitle": "시도해볼 더 많은 미적 방향",
-      "moreDirections": [
-        "사막의 일몰 + 보헤미안 스타일",
-        "도시 스트리트웨어 + 그래피티 배경",
-        "빈티지 도서관 + 학문적 미학",
-        "열대 낙원 + 리조트 웨어",
-        "산업적 로프트 + 미니멀리스트 디자인",
-        "산장 + 아늑한 겨울 의류",
-        "해변 집 + 해안 할머니 스타일",
-        "도시 옥상 + 저녁의 화려함",
-        "숲의 공터 + 요정코어 미학",
-        "현대 사무실 + 전문적인 복장",
-        "미술관 + 세련된 저녁 복장",
-        "시골 정원 + 로맨틱한 피크닉 스타일"
-      ],
-      "faqTitle": "자주 묻는 질문",
-      "faq": [
-        {
-          "question": "왜 3x3인가요?",
-          "answer": "3x3 그리드는 인스타그램의 정사각형 형식에 적합하며 모바일 장치에서 잘 작동하는 균형 잡힌 시각적 구성을 만듭니다."
-        },
-        {
-          "question": "2x2를 사용할 수 있나요?",
-          "answer": "네, 하지만 3x3은 더 많은 스토리텔링 기회를 제공하고 시각적 플랫폼에서 더 나은 참여를 유도합니다."
-        },
-        {
-          "question": "왜 같은 사람이 다르게 보이나요?",
-          "answer": "AI 변형은 자연스럽게 발생합니다. 일관된 프롬프트와 시드 값을 사용하면 더 나은 일관성을 얻을 수 있습니다."
-        },
-        {
-          "question": "개별 프레임으로 내보낼 수 있나요?",
-          "answer": "네, 대부분의 플랫폼은 소셜 미디어 게시물에서 개별 패널 내보내기를 허용합니다."
-        }
-      ],
-      "ctaTitle": "템플릿 열기",
-      "ctaDescription": "사용자 정의 가능한 테마와 스타일이 포함된 3x3 그리드 템플릿을 사용해보세요.",
-      "ctaButton": "그리드 템플릿 탐색",
-      "winterForestGridTitle": "🌲 겨울 숲 그리드 프롬프트",
-      "minimalistWinterTitle": "❄️ 미니멀리스트 겨울 그리드",
-      "tropicalBeachTitle": "🏖️ 열대 해변 그리드",
-      "nauticalBeachTitle": "🌊 해양 해변 그리드",
-      "streetFashionTitle": "🏙️ 스트리트 패션 그리드",
-      "nightCityTitle": "🌃 밤 도시 그리드",
-      "cohesiveColorPalettesTitle": "일관된 색상 팔레트 사용",
-      "cohesiveColorPalettesContent": "프롬프트에서 색상 조합을 명확하게 정의하세요. 특정 색상이나 분위기를 언급하여 아홉 개의 이미지가 조화롭게 작동하도록 하세요.",
-      "planCompositionTitle": "구성 계획하기",
-      "planCompositionContent": "아홉 개의 패널이 어떻게 흐를지를 생각해 보세요. 최대의 효과를 위해 그리드 전반에 걸쳐 연결되는 시각적 경로나 주제를 만드는 것을 고려하세요.",
-      "testIndividualPanelsTitle": "개별 패널 테스트하기",
-      "testIndividualPanelsContent": "전체 그리드에 적용하기 전에 프롬프트 구조를 테스트하기 위해 먼저 개별 패널을 생성하세요. 이는 시간을 절약하고 접근 방식을 다듬는 데 도움이 됩니다.",
-      "platformTableHeader": "플랫폼",
-      "gridSupportHeader": "그리드 지원",
-      "bestForHeader": "최고의 사용처",
-      "midjourneyName": "Midjourney",
-      "midjourneySupport": "⚠️ 제한적",
-      "midjourneyBest": "예술적 그리드",
-      "dalleName": "DALL-E 3",
-      "dalleSupport": "✅ 우수함",
-      "dalleBest": "정확한 레이아웃",
-      "stableDiffusionName": "Stable Diffusion",
-      "stableDiffusionSupport": "✅ 좋음",
-      "stableDiffusionBest": "맞춤형 워크플로우",
-      "conclusionTitle": "3x3 그리드 콜라주 만들기 시작하기",
-      "conclusionContent1": "3x3 그리드 콜라주는 시각적 스토리텔링을 위한 무한한 창의적 가능성을 제공합니다. Instagram을 위한 일관된 미학을 구축하든 디지털 아트를 위한 예술적 구성을 만들든, 이러한 프롬프트는 멋진 결과를 위한 기초를 제공합니다.",
-      "conclusionContent2": "성공의 열쇠는 일관성에 있습니다—모든 아홉 패널에서 동일한 조명, 색상 팔레트 및 시각적 스타일을 유지하면 주목을 끄는 전문적이고 세련된 모습을 만들어냅니다.",
-      "conclusionContent3": "다양한 주제와 접근 방식을 실험하여 창의적 비전에 가장 적합한 것을 발견하세요. 여기에서 공유된 템플릿과 기술은 여러분의 독특한 예술적 여정을 위한 출발점에 불과합니다.",
-      "conclusionContent4": "만들기를 시작할 준비가 되셨나요? 우리의 그리드 템플릿을 둘러보고 오늘 AI 기반 콜라주 모험을 시작하세요.",
-      "whyAiTitle": "왜 3x3 그리드 콜라주에 AI를 사용해야 할까요?",
-      "consistencyTitle": "완벽한 시각적 일관성",
-      "consistencyContent": "AI는 모든 패널이 동일한 조명, 색상 팔레트 및 스타일을 유지하도록 보장하여 일관되고 의도적인 전문적인 그리드를 만듭니다.",
-      "timeEfficiencyTitle": "신속한 생성 과정",
-      "timeEfficiencyContent": "수작업 사진 편집 및 구성 작업 대신 몇 분 만에 완전한 3x3 그리드를 생성하세요.",
-      "creativeFreedomTitle": "끝없는 창의적 가능성",
-      "creativeFreedomContent": "전통적인 사진으로는 만들기 어렵거나 불가능한 주제, 스타일 및 개념을 탐색하세요.",
-      "costEffectiveTitle": "예산 친화적인 솔루션",
-      "costEffectiveContent": "비싼 사진 촬영, 모델 또는 장소가 필요 없습니다. AI가 비용의 일부로 멋진 비주얼을 생성합니다.",
-      "seasonalTitle": "계절 및 주제 변형",
-      "seasonalDescription": "그리드 콜라주를 다양한 계절과 주제에 맞게 조정하여 연중 내내 신선하고 관련성 있는 콘텐츠를 유지하세요.",
-      "platformTitle": "플랫폼별 최적화",
-      "instagramTitle": "인스타그램 최적화",
-      "instagramContent": "3x3 그리드는 인스타그램의 정사각형 형식과 캐러셀 게시물에 완벽하게 맞아 플랫폼에서 참여도와 시각적 영향을 극대화합니다.",
-      "pinterestTitle": "핀터레스트 전략",
-      "pinterestContent": "수직 그리드 배열은 핀터레스트의 긴 형식에 매우 잘 작동하여 클릭률과 저장률을 높입니다.",
-      "websiteTitle": "웹사이트 통합",
-      "websiteContent": "그리드 콜라주를 히어로 이미지, 갤러리 섹션 또는 블로그 헤더로 사용하여 시각적으로 인상적인 웹 콘텐츠를 만드세요.",
-      "advancedTitle": "고급 기술",
-      "narrativeTitle": "시각적 내러티브 만들기",
-      "narrativeContent": "패널을 배열하여 그리드 전반에 걸쳐 이야기를 전달하고, 각 패널이 이전 패널을 기반으로 하여 일관된 내러티브 아크를 만듭니다.",
-      "colorProgressionTitle": "색상 진행 기술",
-      "colorProgressionContent": "패널 전반에 걸쳐 점진적인 색상 변화를 실험하세요. 차가운 색조에서 따뜻한 색조, 또는 밝은 색조에서 어두운 색조로 동적인 시각 효과를 만듭니다.",
-      "thematicTitle": "주제 연결",
-      "thematicContent": "그리드 전반에 걸쳐 반복되는 미세한 주제나 모티프를 통해 패널을 연결하여 시각적 의미의 깊은 층을 만듭니다."
     },
     "redCarpetAiLooks": {
       "title": "Nano Banana AI로 아이코닉한 레드 카펫 스타일 재현하기",

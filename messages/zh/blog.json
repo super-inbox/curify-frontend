@@ -262,7 +262,8 @@
         "date": "2026年3月29日",
         "readTime": "10分钟阅读",
         "tag": "Video Dubbing",
-        "image": "/images/office.webp"
+        "image": "/images/office.webp",
+        "thumbnailType": "视频转录业务"
       },
       {
         "slug": "lip-sync-technical-deep-dive",
@@ -508,7 +509,13 @@
         "date": "April 20, 2026",
         "readTime": "20 min read",
         "tag": "Nano Template",
-        "image": "/images/logbook.webp"
+        "image": "/images/logbook.webp",
+        "category": "纳米模板",
+        "relatedLinks": [
+          "纳米香蕉提示的终极目录",
+          "10个提示纳米香蕉",
+          "纳米香蕉提示生态系统"
+        ]
       },
       {
         "slug": "content-tagging-system",
@@ -898,327 +905,6 @@
       "title": "如何在2026年翻译YouTube视频（字幕、配音、旁白）",
       "metaDescription": "在2026年翻译YouTube视频的三种方法——字幕、AI配音、完整旁白——以及每种方法的最佳工具和逐步设置。"
     },
-    "f5TtsVsElevenlabs": {
-      "title": "如何在2026年自然地为视频配音：修复AI语音克隆伪影",
-      "description": "使用AI工具解决常见配音挑战的综合指南。学习机器人节奏、缺乏情感和唇形同步问题的实用解决方案。",
-      "hero": {
-        "title": "如何在2026年自然地为视频配音：修复AI语音克隆伪影",
-        "subtitle": "使用AI工具解决常见配音挑战的综合指南。专注于机器人节奏、缺乏情感和唇形同步问题等痛点。"
-      },
-      "protip": "从高质量源音频开始，并始终与母语者一起测试您的配音内容，以捕捉AI可能遗漏的细微伪影。",
-      "tabs": {
-        "problems": "常见问题",
-        "solutions": "实用解决方案",
-        "tools": "推荐工具",
-        "workflow": "分步工作流",
-        "advanced": "高级技术",
-        "automation": "自动化策略",
-        "conclusion": "结论"
-      },
-      "introduction": {
-        "paragraph1": "AI视频配音已经彻底改变了内容创作，但\\u003cstrong\\u003e机器人伪影\\u003c/strong\\u003e和\\u003cstrong\\u003e不自然的节奏\\u003c/strong\\u003e仍然困扰着许多制作。在2026年，我们有更好的工具和技术来克服这些挑战。核心问题在于大多数配音管道将语音视为纯粹的技术层而不是表演。许多系统仍然生成具有平坦韵律、不一致重音和时间不当停顿的音频，即使声音本身听起来很真实，也会破坏沉浸感。观众对时间不匹配非常敏感——当情感节拍、微停顿或句子重音与视觉表演不一致时，结果会让人感觉微妙地不对劲，即使他们无法说出原因。现代方法通过专注于\\u003cstrong\\u003e韵律控制和时序对齐\\u003c/strong\\u003e来解决这个问题。不是线性生成语音，较新的模型采用节奏感知合成，允许创作者在短语和音节级别控制节奏。这使得匹配唇部动作、保持戏剧性停顿和跨语言维护原始演员意图成为可能。强制对齐、音素级时间和参考音频条件等技术现在正在成为高质量管道的标准。另一个重大改进来自\\u003cstrong\\u003e上下文感知语音建模\\u003c/strong\\u003e。不是孤立地生成每一行，高级系统维护对话记忆——跨场景跟踪语调、情感状态和说话者动态。这减少了音调漂移，确保角色无论是低语、争论还是进行解说都听起来一致。对于叙事内容，这一转变本身就显著提高了感知的真实感。最后，\\u003cstrong\\u003e人在环工作流\\u003c/strong\\u003e的兴起缩小了自动化和质量之间的差距。创作者现在将AI生成与轻量级人工审查相结合，在保持效率的同时实现专业质量。",
-        "paragraph2": "本指南将向您展示如何使用MuseTalk、Emotion TTS和高级后处理技术等尖端AI工具\\u003cstrong\\u003e修复常见配音问题\\u003c/strong\\u003e。我们超越基本的语音生成，解决AI配音工作流中最持久的失败点——唇形同步漂移、单调表达、时间不匹配和情感平淡。您将学习如何使用MuseTalk进行精确的视觉-音频对齐，确保生成的语音轨道紧密匹配嘴部动作和面部表情，即使在快节奏或对话密集的场景中也是如此。在音频方面，我们分解如何利用Emotion TTS系统向生成的语音注入\\u003cstrong\\u003e受控的表现力\\u003c/strong\\u003e。本指南不是依赖通用预设，而是指导如何调整音高轮廓、节奏和重音以反映意图——无论是紧张、讽刺还是单行内的微妙情感变化。这使您能够从技术上正确的音频转向感觉人性化且上下文相关的表演。我们还涵盖了对最终输出质量至关重要的\\u003cstrong\\u003e高级后处理工作流\\u003c/strong\\u003e。这包括音素级时间调整、静音修剪和扩展、呼吸和停顿插入，以及音频母带制作技术，如EQ匹配和响度标准化，以将配音声音无缝混合到原声带中。通过将这些工具和技术组合成一个有凝聚力的管道，您将能够系统性地诊断和修复配音问题，而不是依赖试错——将不一致的AI输出转化为精良、制作就绪的对话。"
-      },
-      "problems": {
-        "title": "常见AI配音问题",
-        "issues": [
-          {
-            "icon": "🤖",
-            "title": "机器人节奏",
-            "description": "AI生成的语音通常缺乏自然的节奏和时间，使其听起来机械和脱离。",
-            "impact": "观众脱离",
-            "impactDescription": "不自然的节奏破坏沉浸感，将观众保留率降低多达40%。"
-          },
-          {
-            "icon": "😐",
-            "title": "缺乏情感细微差别",
-            "description": "AI语音难以传达微妙情感，使戏剧性场景显得平淡。",
-            "impact": "情感脱节",
-            "impactDescription": "缺少情感线索阻止观众与角色和故事建立联系。"
-          },
-          {
-            "icon": "👄",
-            "title": "唇形同步不匹配",
-            "description": "音频和视觉唇部动作之间的对齐不佳产生恐怖谷效应。",
-            "impact": "不真实的外观",
-            "impactDescription": "可见的唇形同步错误立即打破自然语音的幻觉。"
-          }
-        ]
-      },
-      "solutions": {
-        "title": "实用解决方案",
-        "methods": [
-          {
-            "icon": "🎭",
-            "title": "情感增强TTS",
-            "description": "使用能够向语音注入适当情感的感知情文字转语音模型。",
-            "benefit": "自然情感表达",
-            "benefitDescription": "与标准TTS相比，实现85%更自然的情感表达。",
-            "promptTitle": "情感增强提示",
-            "promptDescription": "使用此提示指导AI生成情感细微的语音：",
-            "prompt": "以[情感：关心、温暖、紧急]语调生成语音。逗号后暂停0.3秒，强调关键情感词，音高变化±20%以获得自然韵律。"
-          },
-          {
-            "icon": "⚡",
-            "title": "节奏校正",
-            "description": "应用AI驱动的时间调整以匹配自然人类语音模式。",
-            "benefit": "类人时间",
-            "benefitDescription": "通过智能节奏调整减少70%的机器人伪影。",
-            "promptTitle": "节奏校正提示",
-            "promptDescription": "使用此提示修复机器人节奏：",
-            "prompt": "分析语音节奏并插入自然停顿：句号后0.5秒，逗号后0.2秒，词间距变化±10%以获得有机流动。"
-          }
-        ]
-      },
-      "tools": {
-        "title": "推荐工具",
-        "cta": "尝试工具",
-        "recommendations": [
-          {
-            "icon": "🎙️",
-            "title": "MuseTalk",
-            "description": "具有情感保持和自然时间的高级语音克隆。",
-            "useCase": "最适合角色语音",
-            "useCaseDescription": "非常适合在长篇内容中保持一致的角色语音。",
-            "link": "https://musetalk.ai"
-          },
-          {
-            "icon": "🎭",
-            "title": "Emotion TTS",
-            "description": "具有情感控制和自然韵律的专业文字转语音。",
-            "useCase": "情感内容",
-            "useCaseDescription": "非常适合需要微妙情感变化的戏剧性内容。",
-            "link": "https://emotiontts.ai"
-          },
-          {
-            "icon": "🎬",
-            "title": "LipSync Pro",
-            "description": "具有帧级精度的AI驱动唇形同步校正。",
-            "useCase": "完美唇形对齐",
-            "useCaseDescription": "为专业视频制作实现像素级唇形同步。",
-            "link": "https://lipsyncpro.ai"
-          }
-        ]
-      },
-      "workflow": {
-        "title": "分步工作流",
-        "steps": [
-          {
-            "title": "准备源音频",
-            "description": "从目标语音的高质量、清晰音频录制开始。",
-            "action": "音频质量检查",
-            "actionDescription": "确保48kHz采样率、最小背景噪音和一致的声乐表演。",
-            "promptTitle": "音频准备提示",
-            "promptDescription": "使用此提示准备语音克隆的音频：",
-            "prompt": "清理音频：去除背景噪音，标准化到-6dB，确保一致的声乐音调，导出为WAV 48kHz 24位。"
-          },
-          {
-            "title": "用情感克隆语音",
-            "description": "使用MuseTalk创建情感感知语音模型。",
-            "action": "语音模型训练",
-            "actionDescription": "用情感标签和时间参考样本训练模型。",
-            "promptTitle": "语音克隆提示",
-            "promptDescription": "使用此提示进行语音克隆：",
-            "prompt": "克隆具有情感保持的语音：分析声乐模式，提取情感标记，创建时间配置文件。"
-          },
-          {
-            "title": "生成配音音频",
-            "description": "使用情感增强语音模型生成语音。",
-            "action": "音频生成",
-            "actionDescription": "生成具有不同情感强度的多个版本以获得最佳结果。",
-            "promptTitle": "音频生成提示",
-            "promptDescription": "使用此提示进行自然音频生成：",
-            "prompt": "生成语音：应用情感配置文件[快乐、关心、兴奋]，插入自然停顿，说话速度变化±15%。"
-          }
-        ]
-      },
-      "advanced": {
-        "title": "高级技术",
-        "techniques": [
-          {
-            "icon": "🧠",
-            "title": "神经韵律转移",
-            "description": "将自然语音模式从参考音频转移到AI生成的语音。",
-            "benefit": "真实语音模式",
-            "benefitDescription": "在语音节奏和语调方面实现95%的自然度。",
-            "promptTitle": "韵律转移提示",
-            "promptDescription": "使用此提示进行韵律转移：",
-            "prompt": "提取韵律模式：分析音高轮廓、时间模式、重音强调，应用到目标语音。"
-          },
-          {
-            "icon": "🎯",
-            "title": "上下文感知情感",
-            "description": "理解场景上下文并相应调整情感的AI。",
-            "benefit": "场景适当情感",
-            "benefitDescription": "自动将情感基调与视频内容和对话上下文匹配。",
-            "promptTitle": "上下文感知提示",
-            "promptDescription": "使用此提示进行上下文感知情感：",
-            "prompt": "分析场景上下文：识别情感基调、角色关系、戏剧性时刻，相应调整语音。"
-          }
-        ]
-      },
-      "automation": {
-        "title": "自动化策略",
-        "strategies": [
-          {
-            "icon": "⚙️",
-            "title": "批处理管道",
-            "description": "以一致质量处理多个视频文件的自动化工作流。",
-            "result": "大规模一致质量",
-            "resultDescription": "处理100+视频，保持一致的语音质量和情感表达。"
-          },
-          {
-            "icon": "🔄",
-            "title": "质量控制自动化",
-            "description": "AI驱动的质量检查，自动检测和标记配音问题。",
-            "result": "减少人工审查",
-            "resultDescription": "在人工审查前捕获90%的配音问题，节省70%的QC时间。"
-          }
-        ]
-      },
-      "conclusion": {
-        "title": "用AI转换您的视频配音",
-        "description": "通过结合这些高级技术和工具，您可以创建自然、情感吸引人的配音内容，吸引观众。AI配音的未来就在这里，它比以往任何时候都更加人性化。"
-      },
-      "publishedDate": "2026年4月27日",
-      "readTime": "12分钟阅读",
-      "category": "视频配音",
-      "altText": "F5-TTS vs ElevenLabs语音克隆和配音比较",
-      "ultimateShowdown": "终极对决：F5-TTS vs ElevenLabs",
-      "ultimateShowdownIntro": "在快速发展的AI语音克隆世界中，2026年有两个名字脱颖而出：F5-TTS，革命性的开源解决方案，和ElevenLabs，成熟的商业巨头。但对于视频配音项目，哪一个真正值得您关注？",
-      "whyVoiceCloningIntro": "语音克隆技术已经改变了内容创作，使创作者能够制作多语言内容，跨语言保持一致的品牌形象，并显著降低制作成本。让我们深入研究这两个领先的解决方案。",
-      "quickComparisonTable": "快速比较表",
-      "feature": "功能",
-      "f5Tts": "F5-TTS",
-      "elevenLabs": "ElevenLabs",
-      "costModel": "成本模式",
-      "f5TtsCost": "免费（开源）",
-      "elevenLabsCost": "$5-1,320/月",
-      "voiceQuality": "语音质量",
-      "f5TtsQuality": "85-90%自然",
-      "elevenLabsQuality": "92-96%自然",
-      "emotionRendering": "情感渲染",
-      "f5TtsEmotion": "良好（流匹配）",
-      "elevenLabsEmotion": "优秀（v3音频标签）",
-      "latency": "延迟",
-      "f5TtsLatency": "2-5秒",
-      "elevenLabsLatency": "0.5-2秒（Flash）",
-      "setupComplexity": "设置复杂性",
-      "f5TtsSetup": "高（技术）",
-      "elevenLabsSetup": "低（网页界面）",
-      "commercialRights": "商业权利",
-      "f5TtsRights": "完全（MIT许可证）",
-      "elevenLabsRights": "需要付费计划",
-      "f5TtsChampion": "F5-TTS：开源冠军",
-      "technicalArchitecture": "技术架构",
-      "f5TtsDescription": "F5-TTS（Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching）代表了开源语音合成的突破。基于Diffusion Transformer与ConvNeXt V2架构，它在不带商业价格标签的情况下提供令人印象深刻的品质。",
-      "keyStrengths": "关键优势",
-      "zeroCostOperation": "零成本操作：",
-      "zeroCostDesc": "完全免费，MIT许可证，非常适合预算有限的创作者",
-      "flowMatchingTech": "流匹配技术：",
-      "flowMatchingDesc": "高级推理时间流步骤采样提高性能",
-      "zeroShotCloning": "零样本克隆：",
-      "zeroShotDesc": "从短参考片段克隆语音，无需微调",
-      "fullControl": "完全控制：",
-      "fullControlDesc": "完全访问模型权重和自定义选项",
-      "noUsageLimits": "无使用限制：",
-      "noUsageDesc": "无限制生成内容，无需积分或限制",
-      "limitationsDubbing": "视频配音限制",
-      "criticalConsiderations": "⚠️ 关键考虑因素",
-      "higherLatency": "更高延迟：",
-      "higherLatencyDesc": "2-5秒生成时间影响实时工作流",
-      "technicalSetup": "技术设置：",
-      "technicalSetupDesc": "需要Python环境、GPU和技术专业知识",
-      "limitedMultilingual": "有限多语言支持：",
-      "limitedMultilingualDesc": "主要针对英语优化",
-      "artifactingIssues": "伪影问题：",
-      "artifactingDesc": "较长段落中偶尔出现机器人伪影",
-      "noDubbingFeatures": "无内置配音功能：",
-      "noDubbingDesc": "必须与单独的翻译工具集成",
-      "bestUseCases": "最佳使用案例",
-      "f5TtsUseCases": "F5-TTS非常适合技术创作者、研究人员和成本是主要限制的项目。它非常适合原型制作、教育内容和具有管理自己基础设施技术技能的创作者。",
-      "elevenLabsPowerhouse": "ElevenLabs：商业巨头",
-      "technicalExcellence": "技术卓越",
-      "elevenLabsDescription": "ElevenLabs已经从创作者友好的TTS工具发展为综合音频基础设施平台。他们的专有模型（eleven_flash_v2_5、eleven_multilingual_v2、eleven_v3）为语音质量和自然性设定了行业标准。",
-      "superiorQuality": "卓越语音质量：",
-      "superiorQualityDesc": "92-96%自然度评分，最少伪影",
-      "advancedEmotion": "高级情感控制：",
-      "advancedEmotionDesc": "v3音频标签用于精确情感表达",
-      "subSecondLatency": "亚秒延迟：",
-      "subSecondDesc": "Flash模型支持实时应用",
-      "comprehensiveLanguage": "全面语言支持：",
-      "comprehensiveLanguageDesc": "29+种语言及地区变体",
-      "integratedDubbing": "集成配音管道：",
-      "integratedDubbingDesc": "内置翻译和语音保持",
-      "professionalCloning": "专业语音克隆：",
-      "professionalCloningDesc": "PVC（专业语音克隆）用于录音室质量",
-      "pricingBreakdown": "视频创作者定价细分",
-      "costAnalysis": "💰 成本分析（2026）",
-      "starterPlan": "入门计划（$5/月）：",
-      "starterDesc": "30,000积分（约30分钟TTS）- 商业使用入门点",
-      "creatorPlan": "创作者计划（$22/月）：",
-      "creatorDesc": "100,000积分（约100分钟）+ 专业语音克隆",
-      "proPlan": "专业计划（$99/月）：",
-      "proDesc": "500,000积分（约500分钟）+ 44.1kHz音频输出",
-      "scalePlan": "扩展计划（$330/月）：",
-      "scaleDesc": "2M积分（约2000分钟）+ 低延迟实时",
-      "creditNote": "注意：1积分 = 1个字符（多语言v2），Flash模型0.5积分",
-      "elevenLabsUseCases": "ElevenLabs非常适合专业内容创作者、代理机构和质量和易用性超过成本考虑的企业。特别适用于高容量配音项目和商业应用。",
-      "headToHead": "正面技术比较",
-      "emotionQuality": "情感渲染质量",
-      "elevenLabsWins": "ElevenLabs决定性获胜",
-      "emotionControlDesc": "在情感控制方面。他们的v3音频标签系统允许精确控制叙事上下文、情感基调和表达模式。您可以指定快乐、悲伤、愤怒或简单的标记标签的细微差别。",
-      "f5TtsEmotionDesc": "F5-TTS依赖流匹配进行情感表达，这对基本情感效果很好，但缺乏戏剧性内容或微妙表演所需的精细控制。",
-      "latencyPerformance": "延迟性能",
-      "elevenLabsFlash": "ElevenLabs Flash模型",
-      "flashDesc": "提供0.5-2秒生成时间，使其适用于实时应用和交互式工作流。这对于时间同步至关重要的视频配音至关重要。",
-      "f5TtsLatencyDesc": "F5-TTS通常每次生成需要2-5秒，这可能破坏创意工作流并使实时预览不可能。",
-      "audioArtifacting": "音频伪影",
-      "elevenLabsArtifacting": "ElevenLabs即使在较长段落中也显示最少伪影，具有平滑过渡和一致的语音特征。他们的专业语音克隆在扩展内容中保持质量。",
-      "f5TtsArtifacting": "F5-TTS可能产生偶尔的机器人伪影，特别是在复杂句子或不熟悉的语音组合时。这些在较长配音项目中变得更加明显。",
-      "multilingualCapabilities": "多语言能力",
-      "elevenLabsDominates": "ElevenLabs主导",
-      "multilingualDesc": "国际内容，29+种语言、地区变体和代码切换能力。他们的配音管道跨语言保持语音特征。",
-      "f5TtsMultilingualDesc": "F5-TTS有限的多语言支持，主要针对英语优化，其他语言有实验性支持。不适合国际配音项目。",
-      "bottomLine": "底线：您应该选择哪个？",
-      "chooseF5Tts": "🎯 如果以下情况选择F5-TTS：",
-      "f5TtsReason1": "预算是您的主要限制",
-      "f5TtsReason2": "您具有技术专业知识和基础设施",
-      "f5TtsReason3": "您主要使用英语工作",
-      "f5TtsReason4": "您需要无积分限制的无限制生成",
-      "f5TtsReason5": "您想要自定义和修改模型",
-      "f5TtsReason6": "您正在构建专有解决方案",
-      "chooseElevenLabs": "🚀 如果以下情况选择ElevenLabs：",
-      "elevenLabsReason1": "质量和自然性是首要优先级",
-      "elevenLabsReason2": "您需要多语言配音能力",
-      "elevenLabsReason3": "您需要实时或低延迟生成",
-      "elevenLabsReason4": "您想要专业情感控制",
-      "elevenLabsReason5": "您更喜欢托管、无忧解决方案",
-      "elevenLabsReason6": "有紧迫截止日期的商业项目",
-      "hybridApproach": "混合方法：两全其美",
-      "hybridApproachDesc": "对于具有多样化需求的专业工作室，考虑同时使用两者：F5-TTS用于原型制作和测试，ElevenLabs用于最终制作和商业项目。这种方法在保持质量标准的同时最大化成本效率。",
-      "decisionFactors": "您的选择最终取决于您的特定用例、预算限制、技术专业知识和质量要求。两个工具都代表语音克隆技术的最前沿，在不同场景中各自表现出色。",
-      "f5TtsSetupTitle": "开始使用F5-TTS",
-      "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-      "f5TtsRequirements": "Python 3.8+，推荐8GB+ VRAM的GPU",
-      "f5TtsInstallation": "pip install f5-tts",
-      "f5TtsInterface": "命令行和Python API接口",
-      "elevenLabsSetupTitle": "开始使用ElevenLabs",
-      "elevenLabsWebsite": "https://elevenlabs.io",
-      "elevenLabsFreeTier": "可用免费层（10,000字符/月）",
-      "elevenLabsWebApi": "网页界面和REST API访问",
-      "elevenLabsProfessionalPlan": "专业计划从$5/月开始",
-      "finalRecommendation": "最终建议",
-      "f5TtsFinalNote": "F5-TTS和ElevenLabs都代表了现代语音克隆技术的顶峰。您的选择应与您的特定需求、技术能力和预算考虑保持一致。语音技术的民主化意味着创作者现在可以无与伦比地访问专业级工具。",
-      "comparisonNote": "此比较反映了截至2026年4月的语音克隆技术状态。AI的快速发展可能会在未来几个月显著改变格局。",
-      "metaDescription": "2026年F5-TTS与ElevenLabs的比较——准确性、自然性、延迟、成本。并排基准测试和选择：哪个更适合生产音频。",
-      "seoKeywords": [
-        "F5-TTS与ElevenLabs",
-        "语音克隆比较",
-        "2026年AI语音工具",
-        "TTS基准"
-      ]
-    },
     "preserveFacialFeaturesAiGeneration": {
       "title": "如何在AI生成中保持面部特征：终极一致性角色指南",
       "publishedDate": "2026年4月27日",
@@ -1426,7 +1112,6 @@
       "title": "如何将YouTube视频翻译成英语：AI指南2026",
       "date": "2026年3月10日",
       "readTime": "9分钟阅读",
-      "intro": "学习如何使用强大的AI翻译工具将YouTube视频翻译成英语。本逐步指南向您展示如何使您的内容对讲英语的观众可及，提升全球覆盖率，并通过准确的英语翻译改善SEO表现。",
       "whatIsTitle": "什么是YouTube视频英语翻译？",
       "whatIsContent": "YouTube视频英语翻译是将视频内容从任何语言转换为流利、自然的英语的过程。它远远超出了逐字翻译——现代AI驱动的系统解读语音语调、文化参考和情感背景，以确保意义和叙事保持真实。英语翻译通常包括三个主要步骤：准确转录口语对话，将其翻译成英语，同时保持语言细微差别，以及将结果同步为字幕或配音。\n \n英语是在线交流、商业和娱乐的全球语言，全球有超过15亿人说或理解英语。将您的视频翻译成英语立即提高了可及性和可发现性，使您的内容能够在YouTube、教育平台和社交媒体上接触全球观众。\n \n创作者和组织使用英语翻译与国际市场建立联系，扩大品牌影响力，并使学习材料和媒体更加包容。无论您是分享课程的教师、推广产品的品牌，还是吸引新粉丝的讲故事者——英语翻译确保您的信息超越语言界限产生共鸣。\n \n先进的翻译平台使用人工智能和自然语言处理（NLP）以卓越的速度和准确性自动化该过程。它们可以生成与原始节奏和语调完美契合的字幕、说明文字或英语配音。结果是专业质量的英语本地化内容，准备在几分钟内发布——无需手动转录或录音。\n \n通过将YouTube视频翻译成英语，您使您的内容能够参与全球对话，确保您的想法、专业知识和创造力对数字世界中最大的观众可及。",
       "whyTitle": "为什么要将YouTube视频翻译成英语？",
@@ -1451,7 +1136,8 @@
       "step4Title": "阶段 4：语音合成与克隆",
       "step4Content": "翻译后的文本通过先进的文本转语音（TTS）模型转换回自然听起来的语音，这些模型保留了原始说话者的声音特征。我们的流程使用结合了神经声码器的Tacotron 2风格架构，以生成高保真音频。\n\n**Python 实现细节：**\n```python\n# 使用 Tacotron 2 + WaveRNN 进行语音合成\nfrom tacotron2 import Tacotron2\nfrom wavernn import WaveRNN\nfrom voice_cloning import VoiceEncoder, VoiceCloner\n\n# 从原始音频中提取说话者特征\nvoice_encoder = VoiceEncoder()\nspeaker_embedding = voice_encoder.embed(original_speech)\n\n# 使用说话者特征初始化 TTS 模型\ntacotron = Tacotron2(\n    embedding_dim=512,\n    encoder_dim=256,\n    decoder_dim=256,\n    n_mels=80\n)\n\n# 从翻译文本生成梅尔谱图\nwith torch.no_grad():\n    mel_output = tacotron.inference(\n        text=translated_text,\n        speaker_embedding=speaker_embedding,\n        attention_alignment=True\n    )\n\n# 使用神经声码器转换为波形\nvocoder = WaveRNN()\naudio_output = vocoder.generate(mel_output)\n```\n\n语音克隆系统捕获256维的说话者嵌入，编码音色、音高和韵律模式。这使得在不同语言之间保持自然语音特征的一致语音再现成为可能。",
       "step5Title": "阶段 5：唇同步与视频对齐",
-      "step5Content": "最后阶段使用计算机视觉技术将生成的音频与原始视频同步。我们的系统分析面部特征点和口部动作，以确保在50毫秒的容差内实现完美的音视频对齐。\n\n**Python 实现细节：**\n```python\n# 使用计算机视觉进行唇同步对齐\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# 初始化面部网格以进行特征点检测\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# 从视频帧中提取口部特征点\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # 口部特征点\n        mouth_landmarks.append(mouth_points)\n\n# 将音频与视觉线索同步\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# 生成最终同步视频\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\n同步系统使用动态时间规整算法将语音模式与口部动作匹配，创建无缝配音内容，同时保持原始视频的视觉完整性。"
+      "step5Content": "最后阶段使用计算机视觉技术将生成的音频与原始视频同步。我们的系统分析面部特征点和口部动作，以确保在50毫秒的容差内实现完美的音视频对齐。\n\n**Python 实现细节：**\n```python\n# 使用计算机视觉进行唇同步对齐\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# 初始化面部网格以进行特征点检测\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# 从视频帧中提取口部特征点\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # 口部特征点\n        mouth_landmarks.append(mouth_points)\n\n# 将音频与视觉线索同步\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# 生成最终同步视频\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\n同步系统使用动态时间规整算法将语音模式与口部动作匹配，创建无缝配音内容，同时保持原始视频的视觉完整性。",
+      "intro": "翻译YouTube视频不是一个模型——而是一个五阶段的流程。这个深入探讨涵盖了Curify如何串联这些阶段：将音频与背景音乐分离，使用WhisperX进行转录，将转录文本翻译成目标语言，使用F5-TTS克隆原始说话者的声音，并通过[/tools/video-dubbing](/tools/video-dubbing)重新渲染带有口型对齐配音的视频。每个阶段都有其自身的故障模式，值得在集成之前了解。如果您只想要另一种语言的字幕，更轻量的[/tools/translate-subtitles](/tools/translate-subtitles)可以一步完成；这篇文章是为构建完整多语言视频流程的人准备的。"
     },
     "aiYoutubeVideoTranslator": {
       "date": "2026年3月10日",
@@ -1540,7 +1226,6 @@
     "videoTranscriptionTechnicalDeepDive": {
       "title": "深入探讨：转录技术概述",
       "description": "探索 AI 代理与工作流之间的区别，以及 Curify 如何将两者结合以实现最佳创意自动化。",
-      "intro": "超越基本的转录工具，发现驱动现代视频转录系统的技术架构。这个全面的深入探讨分解了 Curify 的完整管道——从音频分离和语音识别到强制对齐和说话者区分——展示了 AI 如何将原始视频转化为企业级的完美时序、准确的转录。",
       "whatIsTitle": "端到端视频转录管道",
       "whatIsContent": "生产级视频转录管道通过多个复杂的处理阶段将原始视频内容转化为结构化、时间同步的文本。完整的工作流程：视频 → 音频提取 → 分段 → ASR（自动语音识别） → 对齐 → 说话者区分 → 后处理。\n\n每个阶段解决特定的技术挑战：音频提取隔离语音轨道，分段将长音频分解为可管理的块，ASR 将语音转换为文本，对齐提供单词级时间戳，区分识别谁在何时说话，后处理清理和格式化最终输出。\n\n像 Curify 的管道这样的现代系统在挑战条件下也能实现 95% 以上的准确率，通过结合 Conv-TasNet 进行音频分离、WhisperX 进行语音识别和先进的聚类算法进行说话者识别。这个技术深入探讨探索了每个组件及其集成策略。",
       "whyTitle": "为什么技术架构对转录很重要",
@@ -1569,7 +1254,8 @@
       "conclusionTitle": "视频转录技术的未来",
       "conclusionContent": "视频转录技术已经从基本的语音识别系统演变为复杂的多阶段管道，结合了神经网络、音频处理和优化技术的进步。像 Curify 的管道这样的现代系统展示了如何将 Conv-TasNet 用于音频分离、WhisperX 用于转录以及先进的质量保证集成到生产级工作流中。\n\n对于技术团队和开发人员来说，关键的收获是视频转录不再是一个研究问题，而是一个解决的工程挑战。剩下的机会在于优化、边缘案例和集成，而不是根本技术限制。随着这些系统通过更好的模型架构和更大的训练数据集不断改进，我们正接近一个未来，在这个未来中，完美的转录可以在任何内容类型上大规模提供。\n\n这里描述的技术架构代表了 2026 年的最新技术，但该领域仍在快速发展。实时转录、零样本说话者识别和自动内容摘要已经成为新兴能力，将进一步改变我们处理和分析视频内容的方式。",
       "seoKeywords": "视频转录管道，语音识别管道，ASR 视频处理，语音转文本管道，说话者区分视频，强制对齐转录，Whisper 转录管道，音频分段转录，多语言转录 AI",
-      "metaDescription": "深入探讨 AI 视频转录管道架构。为开发人员和 AI 工程师提供 ASR、强制对齐、说话者区分和生产系统设计的完整指南。"
+      "metaDescription": "深入探讨 AI 视频转录管道架构。为开发人员和 AI 工程师提供 ASR、强制对齐、说话者区分和生产系统设计的完整指南。",
+      "intro": "大多数转录工具停留在语音转文本。这篇深入探讨讲解了Curify的完整转录流程：音频如何与背景音乐分离，WhisperX如何在清理后的音轨上运行，发言者分离如何分割重叠的声音，以及强制对齐如何将单词级时间戳重新放回转录文本中，以便输出可以驱动下游字幕、配音和翻译工具，位于[/tools/video-transcript-generator](/tools/video-transcript-generator)。如果您想将转录集成到更大的流程中，而不仅仅是下载SRT，这是大多数博客文章跳过的层级。"
     },
     "tenPromptingTipsNanoBanana": {
       "title": "如何为Nano Banana撰写提示：创作者的10个技巧",
@@ -4392,19 +4078,7 @@
             "useCaseDesc": "例如，海报，头像",
             "mood": "情绪",
             "moodDesc": "例如，舒适，黑暗"
-          },
-          "finalVerdict": "在2026年的视频配音和翻译中，ElevenLabs在质量、多语言支持和易用性方面胜出。F5-TTS为在预算限制内工作的技术用户或需要无限生成而不受商业限制的用户提供了令人难以置信的价值。",
-          "gettingStarted": "入门资源",
-          "f5TtsSetup": "F5-TTS设置",
-          "f5TtsSetupDesc": "官方GitHub存储库、要求、安装和CLI接口",
-          "elevenLabsSetup": "ElevenLabs设置",
-          "elevenLabsSetupDesc": "Web仪表板、API访问和快速入门指南",
-          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-          "themeDesc": "例如，幻想，旅行",
-          "useCase": "用例",
-          "useCaseDesc": "例如，海报，头像",
-          "mood": "心情",
-          "moodDesc": "例如，舒适，黑暗"
+          }
         }
       },
       "keyInsight": {
@@ -4704,57 +4378,6 @@
       "bestPracticesContent": "专注于保持创作者的真实性：保持原始能量水平，尊重文化背景，进行目标受众测试，优化每个平台的技术要求，并根据绩效指标进行迭代。目标是让翻译内容在每个市场中感觉本土化，同时保留病毒 DNA。",
       "conclusionTitle": "转变你的全球内容策略",
       "conclusionContent": "UGC 视频翻译代表了创作者经济扩展的下一个前沿。通过结合先进的 AI 翻译、文化智能和创作者真实性的保留，你可以在全球范围内扩展你的内容，同时保持使原始内容成功的病毒潜力。"
-    },
-    "ugcVideoTranslationScalingTiktoksShortsGlobalMarkets": {
-      "title": "UGC视频翻译：为全球市场扩展TikToks和短视频",
-      "date": "2026年4月27日",
-      "readTime": "12分钟阅读",
-      "tag": "视频翻译",
-      "image": "/images/ugc-video-translation.webp",
-      "category": "video-translation",
-      "intro": "学习如何使用AI翻译将UGC（用户生成内容）视频扩展到全球市场。翻译TikToks、短视频和Reels，在保持真实性和参与度的同时触达国际观众。",
-      "whatIsTitle": "什么是UGC视频翻译？",
-      "whatIsContent": "UGC视频翻译是将用户生成的短视频内容适应国际观众的过程。这包括翻译音频、字幕和文化参考，同时保持使UGC有效的真实、原始感觉。AI工具现在可以以可负担的价格翻译数百个视频。",
-      "whyTitle": "为什么要翻译UGC内容？",
-      "whyContent": "UGC内容驱动4倍高于品牌创建内容的点击率。通过翻译UGC，你可以：触达20亿+非英语使用者，在不创建新内容的情况下进入新市场，增加现有创作者合作的ROAS，并与信任母语内容的全球观众建立真实联系。",
-      "howTitle": "如何大规模翻译UGC视频",
-      "step1Title": "步骤1：策划和组织内容",
-      "step1Content": "根据参与指标（观看量、分享、CTR）识别高表现UGC。按产品类别、创作者和表现等级组织内容。为视频标记原始语言和目标市场潜力。为了最大化翻译ROI，优先考虑常青内容而非时效性内容。",
-      "step2Title": "步骤2：提取和准备资产",
-      "step2Content": "以可用最高质量下载源视频。使用FFmpeg或Descript等工具将音频与视频分离。提取屏幕文本和字幕。创建翻译简报文档，捕捉每个内容的语调、上下文和文化注意事项。",
-      "step3Title": "步骤3：AI翻译和语音克隆",
-      "step3Content": "使用AI语音克隆在语言间保持创作者的真实性。像Curify这样的工具可以克隆原始创作者的声音并翻译到50+种语言。为了获得最佳结果，为语音克隆提供30+秒的清晰音频。始终让母语使用者审查AI翻译以确保文化准确性。",
-      "step4Title": "步骤4：唇同步和视觉适应",
-      "step4Content": "应用AI唇同步技术使翻译音频与说话者的唇部动作匹配。调整目标语言的屏幕文本叠加和字幕。考虑为文化敏感性重新编辑（删除不能很好翻译的地区特定参考）。",
-      "step5Title": "步骤5：本地化和合规性",
-      "step5Content": "为本地市场调整CTA（不同的电子商务平台、货币等）。确保符合当地广告法规和披露要求。添加本地化标签和关键词。在完整活动发布前用母语使用者测试。",
-      "technicalTitle": "技术考虑因素",
-      "timingTitle": "时机和节奏",
-      "timingContent": "翻译音频可能比原始音频长15-30%或短15-30%。调整视频节奏：修剪停顿，加速或减慢部分，或添加B-roll来填补时机间隙。TikToks和短视频有严格的持续时间限制 - 确保翻译版本符合平台约束。",
-      "emotionTitle": "情感和语调保持",
-      "emotionContent": "UGC严重依赖真实情感。翻译时：保持原始能量水平和热情，保持幽默和文化参考（或适当适应），并保持定义UGC的非正式、对话语调。AI情感检测可以帮助匹配原始情感。",
-      "platformTitle": "平台特定要求",
-      "platformContent": "每个平台都有独特考虑：TikTok需要带文本安全区的垂直9:16格式，YouTube短视频需要引人注目的前3秒和移动优化缩略图，Instagram Reels受益于趋势音频集成和标签策略。将翻译内容适应每个平台的算法偏好。",
-      "toolsTitle": "推荐工具",
-      "toolsContent": "Curify：一体化UGC翻译，配备语音克隆、唇同步和批处理。ElevenLabs：带情感控制的专业语音克隆。HeyGen：用于无面孔UGC的AI头像和唇同步。Descript：音频编辑和转录工作流。CapCut：带20+语言自动字幕的移动友好编辑。",
-      "monetizationTitle": "变现策略",
-      "monetizationContent": "变现翻译UGC：国际联盟计划（Amazon Associates、ShareASale全球网络）、本地化产品投放和预订、区域品牌合作和赞助，以及其他品牌许可的付费UGC库。按市场跟踪表现以在高转化区域加倍投入。",
-      "caseStudiesTitle": "成功案例",
-      "caseStudy1Title": "美容品牌：欧洲市场3倍ROAS",
-      "caseStudy1Content": "一个DTC美容品牌将50个顶级UGC TikToks翻译成法语、德语和西班牙语。使用Curify的语音克隆保持创作者声音，他们在60天内在欧洲市场实现了3倍广告支出回报。真实创作者能量比传统配音内容翻译得更好。",
-      "caseStudy2Title": "健身应用：翻译短视频获得50万下载",
-      "caseStudy2Content": "一个健身应用将英语UGC翻译成葡萄牙语、日语和阿拉伯语。通过本地化健身术语和适应文化参考，他们在90天内从非英语市场获得了50万+应用下载。翻译内容比本地制作的广告表现好40%。",
-      "bestPracticesTitle": "UGC翻译的最佳实践",
-      "bestPracticesContent": "选择清晰、口音中性的演讲者以获得更好的语音克隆结果。在扩展到完整库之前，每个市场测试5-10个视频。维护品牌特定术语和产品名称的翻译词汇表。A/B测试翻译缩略图和字幕。监控目标语言评论中的文化反馈。当产品或信息更改时更新翻译。",
-      "conclusionTitle": "通过UGC翻译全球扩展",
-      "conclusionContent": "UGC视频翻译是进入全球市场的最具成本效益的方式。通过利用语音克隆、唇同步和批处理的AI工具，你可以扩展现有的高表现内容以触达数十亿新潜在客户。从你的前10个UGC视频开始，翻译到2-3个有希望的市场，并在全面部署前测量结果。",
-      "metaDescription": "将TikToks和Shorts扩展到全球市场——AI翻译堆栈、语音克隆设置和时机技巧，使UGC在海外真正转化。",
-      "seoKeywords": [
-        "UGC视频翻译",
-        "TikTok翻译AI",
-        "Shorts全球市场",
-        "视频配音创作者"
-      ]
     },
     "aifacelesschannelpipeline": {
       "title": "如何在 2026 年建立 AI 无面孔频道管道",
@@ -5062,55 +4685,6 @@
         "AI视频管道",
         "扩散工作流",
         "运动图形AI"
-      ]
-    },
-    "video_translation_eval": {
-      "title": "评估AI视频翻译质量",
-      "subtitle": "重要的指标",
-      "description": "发现评估AI视频翻译质量的基本指标，从转录到语音合成。",
-      "intro": "跨语言翻译视频并非易事——它涉及转录、翻译、语音合成、时间同步等。在Curify，我们建立了一个强大的评估流程，以确保每个作品符合行业标准。",
-      "section1_title": "1. 转录质量",
-      "section1_engine": "引擎：WhisperX",
-      "section1_metrics": [
-        "WER（字错误率）",
-        "标点F1（用于表现力和可读性）"
-      ],
-      "section2_title": "2. 翻译质量",
-      "section2_engine": "引擎：Helsinki, MarianMT",
-      "section2_metrics": [
-        "BLEU（标准指标）",
-        "COMET / chrF++（语义相似性）",
-        "人工审核：流畅性 + 适当性"
-      ],
-      "section3_title": "3. 语音合成质量",
-      "section3_engine": "引擎：XTTS / YourTTS",
-      "section3_metrics": [
-        "MOS（自然度、相似性、表现力）",
-        "说话人验证准确性"
-      ],
-      "section4_title": "4. 对齐与口型同步",
-      "section4_metrics": [
-        "片段时长不匹配",
-        "Wav2Lip同步置信度",
-        "时间漂移分析"
-      ],
-      "section5_title": "5. 语义保留",
-      "section5_method": "我们使用LLMs（如GPT-4）来判断翻译后的语音是否保留了原始的意义、语气和情感。示例提示：",
-      "section5_prompt": "将此普通话转录与英语配音进行比较。语气、意图和内容是否匹配？评分1-5并解释。",
-      "section6_title": "6. 用户反馈与GTM验证",
-      "section6_metrics": [
-        "适合产品类别的语音质量",
-        "观众留存率提升",
-        "早期用户（例如1688卖家）的接受意愿"
-      ],
-      "closing": "在Curify，我们不仅仅是翻译——我们在不同语言间保留故事、情感和清晰度。如果您准备好将您的声音扩展到全球，请与我们联系。",
-      "available_locales": "帖子可用语言：[EN] [ZH] [ES] [DE]",
-      "metaDescription": "翻译视频不仅仅是翻译——它还包括转录、语音、时机和情感。我们如何在Curify评估AI视频翻译质量。",
-      "seoKeywords": [
-        "视频翻译评估",
-        "AI配音质量",
-        "翻译基准测试",
-        "视频质量保证"
       ]
     },
     "qaBotToTaskAgent": {
@@ -5437,138 +5011,6 @@
       "conclusionTitle": "结论",
       "conclusionPara1": "AI 视频配音已将内容本地化从一个耗时、昂贵的过程转变为一个可访问、高效的工作流程。无论您是独立创作者还是全球企业，这些工具使您能够在保持原始内容质量和情感影响的同时，接触全球观众。",
       "conclusionPara2": "随着技术的不断进步，我们将看到更自然的语音合成、更好的文化适应和与内容创作工作流程的无缝集成。全球沟通的未来已经到来，它会说每一种语言。"
-    },
-    "gridCollageAiPrompts": {
-      "title": "3x3 网格照片拼贴 AI 提示：森林、海滩和城市编辑外观",
-      "publishedDate": "2026年5月10日",
-      "readTime": "8分钟阅读",
-      "category": "Nano 模板",
-      "metaDescription": "复制粘贴 3x3 网格拼贴提示，用于 AI 图像生成器——冬季森林、夏季海滩、城市编辑、咖啡馆美学等。",
-      "keywords": "3x3 网格拼贴，照片网格提示，AI 照片拼贴，Instagram 美学提示，Pinterest 美学 AI",
-      "audience": "Pinterest 创作者，Instagram 美学账户，时尚博主，生活方式内容创作者。",
-      "heroTitle": "英雄图像",
-      "heroContent": "一个完成的3x3 + 1段TL;DR。使用AI创建惊艳的3x3网格拼贴，确保九个面板之间的完美一致性。",
-      "whatIsTitle": "3x3网格拼贴提示的样子",
-      "whatIsContent": "结构：主题 + 背景 + 季节 + 9个微姿势 + 照明一致性说明。每个提示定义整体主题，同时确保所有面板之间的视觉和谐。",
-      "winterForestTitle": "冬季森林编辑",
-      "winterForestDescription": "直接匹配GSC长尾。神秘的雪覆盖的松树林，柔和的蓝色光线和魔幻的氛围。",
-      "winterForestPrompt": "冬季森林场景的3x3网格。面板1：宽阔的森林入口。面板2：结霜的树枝。面板3：雪路。面板4：冰冻的小溪。面板5：阳光透过树木。面板6：动物足迹。面板7：结霜的松果。面板8：升起的雾气。面板9：透过树木的山景。柔和的蓝白色调，魔幻的光线，自然摄影风格。",
-      "summerBeachTitle": "夏季海滩黄金时刻",
-      "summerBeachDescription": "温暖的热带海滩场景，日落时分的黄金时刻光线和轻松的度假氛围。",
-      "summerBeachPrompt": "夏季海滩场景的3x3网格。面板1：棕榈树剪影。面板2：海浪。面板3：沙滩椅。面板4：沙中的贝壳。面板5：热带饮料。面板6：通往水边的足迹。面板7：沙滩毛巾。面板8：海洋地平线。面板9：沙滩排球。温暖的橙色和粉色调，黄金时刻光线。",
-      "autumnCafeTitle": "秋季城市咖啡馆",
-      "autumnCafeDescription": "温馨的城市咖啡馆场景，秋季色彩和温暖、宜人的氛围。",
-      "autumnCafePrompt": "秋季咖啡馆场景的3x3网格。面板1：咖啡杯蒸汽。面板2：窗户上的雨滴。面板3：温暖的光线。面板4：外面的秋叶。面板5：舒适的室内。面板6：咖啡师制作咖啡。面板7：桌上的书。面板8：街景。面板9：黄昏氛围。温暖的棕色和橙色调，柔和的光线。",
-      "springGardenTitle": "春季花园乡村风",
-      "springGardenDescription": "浪漫的乡村花园场景，鲜花盛开，自然的田园元素。",
-      "springGardenPrompt": "春季花园场景的3x3网格。面板1：樱花。面板2：春雨。面板3：新绿叶。面板4：花上的蝴蝶。面板5：花园小径。面板6：园艺工具。面板7：雨靴。面板8：鸟巢。面板9：花园野餐。柔和的粉彩调，清新而通透。",
-      "neonUrbanTitle": "霓虹黑色城市",
-      "neonUrbanDescription": "戏剧性的城市夜景，霓虹灯、阴影和城市神秘氛围。",
-      "neonUrbanPrompt": "霓虹城市场景的3x3网格。面板1：霓虹标志反射。面板2：屋顶的城市灯光。面板3：交通灯轨迹。面板4：餐厅窗户。面板5：街头表演者。面板6：店面展示。面板7：雨中的出租车灯光。面板8：桥的照明。面板9：酒吧入口。深蓝色与霓虹色彩的碰撞。",
-      "minimalistStudioTitle": "极简工作室（白色背景）",
-      "minimalistStudioDescription": "干净的极简工作室拍摄，白色背景，专注于主题的简单性。",
-      "minimalistStudioPrompt": "极简工作室场景的3x3网格。面板1：单一物体。面板2：干净的线条。面板3：负空间。面板4：简单的阴影。面板5：纯白背景。面板6：极简构图。面板7：细腻的纹理。面板8：几何形状。面板9：干净的光线。单色白色和灰色。",
-      "templateTitle": "可重用的提示模板",
-      "templateContent": "注释哪些字段是可交换的；嵌入模板-3x3-网格-照片-拼贴模板页面链接和截图。模板结构：[主题] + [背景] + [季节] + [9个面板描述] + [照明] + [风格]。",
-      "consistencyTipsTitle": "保持9个面板之间面部/服装一致性的提示",
-      "consistencyTips": [
-        "对所有面板使用相同的AI模型和设置",
-        "在提示中保持一致的照明描述",
-        "指定确切的色彩调色板以确保视觉和谐",
-        "链接到preserve-facial-features-ai-generation以保持角色一致性",
-        "保持相机角度和距离一致"
-      ],
-      "moreDirectionsTitle": "更多美学方向可尝试",
-      "moreDirections": [
-        "沙漠日落 + 波希米亚风格",
-        "城市街头服饰 + 涂鸦背景",
-        "复古图书馆 + 学术美学",
-        "热带天堂 + 度假服",
-        "工业阁楼 + 极简设计",
-        "山间小屋 + 舒适冬装",
-        "海滨别墅 + 海岸奶奶风格",
-        "城市屋顶 + 晚间魅力",
-        "森林空地 + 精灵核心美学",
-        "现代办公室 + 职业装",
-        "艺术画廊 + 精致晚礼服",
-        "乡村花园 + 浪漫野餐风格"
-      ],
-      "faqTitle": "常见问题",
-      "faq": [
-        {
-          "question": "为什么特别是3x3？",
-          "answer": "3x3网格非常适合Instagram的方形格式，并创建在移动设备上效果良好的平衡视觉构图。"
-        },
-        {
-          "question": "我可以使用2x2吗？",
-          "answer": "可以，但3x3提供更多讲故事的机会，并在视觉平台上获得更好的互动。"
-        },
-        {
-          "question": "为什么同一个人看起来不同？",
-          "answer": "AI变体是自然发生的。使用一致的提示和种子值以获得更好的统一性。"
-        },
-        {
-          "question": "我可以导出为单独的帧吗？",
-          "answer": "可以，大多数平台允许单独面板导出，以便在社交媒体帖子中单独使用。"
-        }
-      ],
-      "ctaTitle": "打开模板",
-      "ctaDescription": "尝试我们的3x3网格模板，具有可自定义的主题和风格。",
-      "ctaButton": "浏览网格模板",
-      "winterForestGridTitle": "🌲 冬季森林网格提示",
-      "minimalistWinterTitle": "❄️ 极简冬季网格",
-      "tropicalBeachTitle": "🏖️ 热带海滩网格",
-      "nauticalBeachTitle": "🌊 航海海滩网格",
-      "streetFashionTitle": "🏙️ 街头时尚网格",
-      "nightCityTitle": "🌃 夜城网格",
-      "cohesiveColorPalettesTitle": "使用统一的色彩调色板",
-      "cohesiveColorPalettesContent": "在提示中明确定义您的色彩方案。提及特定的颜色或情绪，以确保所有九张图像和谐地协同工作。",
-      "planCompositionTitle": "规划您的构图",
-      "planCompositionContent": "考虑九个面板如何相互衔接。考虑创建视觉路径或主题，以在网格中连接，达到最大效果。",
-      "testIndividualPanelsTitle": "测试单个面板",
-      "testIndividualPanelsContent": "首先生成单个面板，以测试您的提示结构，然后再提交完整的网格。这可以节省时间并帮助您完善方法。",
-      "platformTableHeader": "平台",
-      "gridSupportHeader": "网格支持",
-      "bestForHeader": "最佳适用",
-      "midjourneyName": "Midjourney",
-      "midjourneySupport": "⚠️ 有限",
-      "midjourneyBest": "艺术网格",
-      "dalleName": "DALL-E 3",
-      "dalleSupport": "✅ 优秀",
-      "dalleBest": "精确布局",
-      "stableDiffusionName": "Stable Diffusion",
-      "stableDiffusionSupport": "✅ 良好",
-      "stableDiffusionBest": "自定义工作流程",
-      "conclusionTitle": "开始创建您的3x3网格拼贴",
-      "conclusionContent1": "3x3网格拼贴为视觉叙事提供了无尽的创意可能性。无论您是在为Instagram构建统一的美学，还是为数字艺术创作艺术构图，这些提示都为惊人的结果提供了基础。",
-      "conclusionContent2": "成功的关键在于一致性——在所有九个面板中保持相同的光线、色彩调色板和视觉风格，创造出专业、精致的外观，吸引注意。",
-      "conclusionContent3": "尝试不同的主题和方法，以发现最适合您创意愿景的内容。这里分享的模板和技术只是您独特艺术旅程的起点。",
-      "conclusionContent4": "准备开始创作了吗？浏览我们的网格模板，今天就开始您的AI驱动拼贴冒险。",
-      "whyAiTitle": "为什么使用AI进行3x3网格拼贴？",
-      "consistencyTitle": "完美的视觉一致性",
-      "consistencyContent": "AI确保每个面板保持相同的光线、色彩调色板和风格，创造出看起来专业且感觉统一和有意的网格。",
-      "timeEfficiencyTitle": "快速创建过程",
-      "timeEfficiencyContent": "在几分钟内生成完整的3x3网格，而不是数小时的手动照片编辑和构图工作。",
-      "creativeFreedomTitle": "无尽的创意可能性",
-      "creativeFreedomContent": "探索传统摄影难以或不可能创造的主题、风格和概念。",
-      "costEffectiveTitle": "经济实惠的解决方案",
-      "costEffectiveContent": "无需昂贵的拍摄、模特或场地——AI以极低的成本创造惊艳的视觉效果。",
-      "seasonalTitle": "季节性和主题变换",
-      "seasonalDescription": "根据不同的季节和主题调整您的网格拼贴，创造全年保持新鲜和相关的内容。",
-      "platformTitle": "平台特定优化",
-      "instagramTitle": "Instagram优化",
-      "instagramContent": "3x3网格完美适应Instagram的方形格式和轮播帖子，最大化平台上的参与度和视觉冲击力。",
-      "pinterestTitle": "Pinterest策略",
-      "pinterestContent": "垂直网格排列在Pinterest的高格式中表现极佳，提高点击率和保存率。",
-      "websiteTitle": "网站集成",
-      "websiteContent": "将网格拼贴用作主图像、画廊部分或博客标题，以创建视觉上引人注目的网页内容。",
-      "advancedTitle": "高级技术",
-      "narrativeTitle": "创建视觉叙事",
-      "narrativeContent": "排列面板以在网格中讲述一个故事，每个面板在前一个面板的基础上构建，形成一个连贯的叙事弧。",
-      "colorProgressionTitle": "颜色渐变技术",
-      "colorProgressionContent": "在面板之间实验渐变色彩变化——从冷色调到暖色调，或从浅色到深色——以获得动态视觉效果。",
-      "thematicTitle": "主题连接",
-      "thematicContent": "通过在网格中重复的微妙主题或动机连接面板，创造更深层次的视觉意义。"
     },
     "redCarpetAiLooks": {
       "title": "用Nano Banana AI重现标志性的红毯风格",

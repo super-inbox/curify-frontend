@@ -256,7 +256,8 @@
         "date": "29 Mart 2026",
         "readTime": "15 dk okuma",
         "tag": "DS & AI Engineering",
-        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg"
+        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg",
+        "thumbnailType": "video-transkripsiyon-iş"
       },
       {
         "slug": "image-generation-model-comparison",
@@ -357,7 +358,13 @@
         "date": "March 4, 2026",
         "readTime": "7 min read",
         "tag": "Video Dubbing",
-        "image": "/images/bea9f86a7e2ae4df3497a4241bc71a1d_thumb_1765977242819.jpg"
+        "image": "/images/bea9f86a7e2ae4df3497a4241bc71a1d_thumb_1765977242819.jpg",
+        "category": "yaratıcı-araclar",
+        "relatedLinks": [
+          "nano-banana-prompt-ekosistemi",
+          "10-prompting-tips-nano-banana",
+          "karakter-prompt-jeneratörü"
+        ]
       },
       {
         "slug": "translate-youtube-video",
@@ -463,7 +470,13 @@
         "image": "/images/sevenimages.webp",
         "slug": "yaratıcı-ai-aracları-websiteleri",
         "title": "İlham Tükenmesini Sonlandırmak İçin 6 Gerçek Yaratıcı & AI Araçları Web Sitesi",
-        "readTime": "8 dk okuma"
+        "readTime": "8 dk okuma",
+        "category": "nano-template",
+        "relatedLinks": [
+          "nano-banana-prompts-ultimate-dizini",
+          "10-prompting-tips-nano-banana",
+          "nano-banana-prompt-ekosistemi"
+        ]
       },
       {
         "slug": "gorsel-ogrenme-araclari",
@@ -904,7 +917,6 @@
       "title": "YouTube Videolarını İngilizceye Çevirin: AI Destekli Çözümler",
       "date": "4 Mart 2026",
       "readTime": "10 dk okuma",
-      "intro": "Gelişmiş AI teknolojisi kullanarak YouTube videolarını İngilizceye nasıl çevireceğinizi keşfedin. İçeriğinizi dünya çapında İngilizce konuşan kitlelere erişilebilir hale getirin.",
       "whatIsTitle": "Neden İngilizceye Çevirmeliyiz?",
       "whatIsContent": "İngilizce, iş ve eğlence için küresel bir dildir. İçeriğinizi İngilizceye çevirmek, büyük bir izleyici potansiyeli açar ve keşfedilebilirliği artırır.",
       "whyTitle": "İngilizce Çevirinin Faydaları",
@@ -929,7 +941,8 @@
       "step4Title": "Aşama 4: Ses Sentezi ve Klonlama",
       "step4Content": "Çevrilen metin, orijinal konuşmacının ses özelliklerini koruyan gelişmiş metinden sese (TTS) modelleri kullanılarak doğal bir ses haline dönüştürülür. Pipeline'ımız, yüksek kaliteli ses üretimi için Tacotron 2 tarzı mimarileri ve sinirsel vocoder'ları birleştirir.\n\n**Python Uygulama Detayları:**\n```python\n# Tacotron 2 + WaveRNN kullanarak ses sentezi\nfrom tacotron2 import Tacotron2\nfrom wavernn import WaveRNN\nfrom voice_cloning import VoiceEncoder, VoiceCloner\n\n# Orijinal ses kaydından konuşmacı özelliklerini çıkar\nvoice_encoder = VoiceEncoder()\nspeaker_embedding = voice_encoder.embed(original_speech)\n\n# Konuşmacı özellikleri ile TTS modelini başlat\ntacotron = Tacotron2(\n    embedding_dim=512,\n    encoder_dim=256,\n    decoder_dim=256,\n    n_mels=80\n)\n\n# Çevrilen metinden mel-spektrogram oluştur\nwith torch.no_grad():\n    mel_output = tacotron.inference(\n        text=translated_text,\n        speaker_embedding=speaker_embedding,\n        attention_alignment=True\n    )\n\n# Sinirsel vocoder kullanarak dalga formuna dönüştür\nvocoder = WaveRNN()\naudio_output = vocoder.generate(mel_output)\n```\n\nSes klonlama sistemi, timbre, tonlama ve prosodi desenlerini kodlayan 256 boyutlu konuşmacı gömme verilerini yakalar. Bu, doğal konuşma özelliklerini korurken diller arasında tutarlı ses üretimi sağlar.",
       "step5Title": "Aşama 5: Dudak Senkronizasyonu ve Video Hizalaması",
-      "step5Content": "Son aşama, üretilen sesi orijinal video ile bilgisayarla görme teknikleri kullanarak senkronize eder. Sistemimiz, 50ms tolerans içinde mükemmel ses-görüntü hizalamasını sağlamak için yüz noktalarını ve ağız hareketlerini analiz eder.\n\n**Python Uygulama Detayları:**\n```python\n# Bilgisayarla görme kullanarak dudak senkronizasyonu\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# Nokta tespiti için yüz ağını başlat\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# Video karelerinden ağız noktalarını çıkar\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # Ağız noktaları\n        mouth_landmarks.append(mouth_points)\n\n# Sesi görsel ipuçlarıyla senkronize et\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# Son senkronize videoyu oluştur\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\nSenkronizasyon sistemi, konuşma desenlerini ağız hareketleriyle eşleştirmek için dinamik zaman bozulma algoritmalarını kullanarak, orijinal videonun görsel bütünlüğünü koruyan kesintisiz dublajlı içerik oluşturur."
+      "step5Content": "Son aşama, üretilen sesi orijinal video ile bilgisayarla görme teknikleri kullanarak senkronize eder. Sistemimiz, 50ms tolerans içinde mükemmel ses-görüntü hizalamasını sağlamak için yüz noktalarını ve ağız hareketlerini analiz eder.\n\n**Python Uygulama Detayları:**\n```python\n# Bilgisayarla görme kullanarak dudak senkronizasyonu\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# Nokta tespiti için yüz ağını başlat\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# Video karelerinden ağız noktalarını çıkar\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # Ağız noktaları\n        mouth_landmarks.append(mouth_points)\n\n# Sesi görsel ipuçlarıyla senkronize et\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# Son senkronize videoyu oluştur\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\nSenkronizasyon sistemi, konuşma desenlerini ağız hareketleriyle eşleştirmek için dinamik zaman bozulma algoritmalarını kullanarak, orijinal videonun görsel bütünlüğünü koruyan kesintisiz dublajlı içerik oluşturur.",
+      "intro": "Bir YouTube videosunu çevirmek tek bir model değildir - beş aşamalı bir süreçtir. Bu derinlemesine inceleme, Curify'nin aşamaları nasıl zincirlediğini kapsar: sesi arka plandaki müzikten ayırmak, WhisperX ile transkripti oluşturmak, transkripti hedef dile çevirmek, orijinal konuşmacının sesini F5-TTS ile klonlamak ve videoyu dudak uyumlu dublaj ile yeniden işlemek için [/tools/video-dubbing](/tools/video-dubbing). Her aşamanın, entegre etmeden önce anlamaya değer kendi hata modları vardır. Eğer sadece başka bir dilde altyazı istiyorsanız, daha hafif [/tools/translate-subtitles](/tools/translate-subtitles) bunu tek bir adımda kapsar; bu yazı tam çok dilli video sürecini inşa edenler içindir."
     },
     "aiYoutubeVideoTranslator": {
       "date": "4 Mart 2026",
@@ -1301,7 +1314,6 @@
     "videoTranscriptionTechnicalDeepDive": {
       "title": "Derinlemesine: Transkripsiyon Teknik Genel Bakışı",
       "description": "AI ajanları ve iş akışları arasındaki farkı keşfedin ve Curify'nin her ikisini nasıl birleştirdiğini öğrenin.",
-      "intro": "Temel transkripsiyon araçlarının ötesine geçin ve modern video transkripsiyon sistemlerini destekleyen teknik mimariyi keşfedin. Bu kapsamlı derin dalış, Curify'nin tam boru hattını - ses ayrıştırma ve konuşma tanıma ile zorunlu hizalama ve konuşmacı ayrıştırma - ayrıntılı olarak inceleyerek, AI'nın ham videoyu mükemmel zamanlanmış, doğru transkriptlere nasıl dönüştürdüğünü gösterir.",
       "whatIsTitle": "Uçtan Uca Video Transkripsiyon Boru Hattı",
       "whatIsContent": "Üretim düzeyinde bir video transkripsiyon boru hattı, ham video içeriğini yapılandırılmış, zaman senkronize metne dönüştürmek için birden fazla sofistike işleme aşamasından geçer. Tam iş akışı: Video → Ses çıkarımı → Segmentasyon → ASR (Otomatik Konuşma Tanıma) → Hizalama → Konuşmacı Ayrıştırma → Son işlem.\n\nHer aşama, belirli teknik zorlukları ele alır: ses çıkarımı, konuşma parçasını izole eder, segmentasyon, uzun sesleri yönetilebilir parçalara böler, ASR konuşmayı metne dönüştürür, hizalama kelime düzeyinde zaman damgaları sağlar, ayrıştırma, kimin ne zaman konuştuğunu tanımlar ve son işlem, nihai çıktıyı temizler ve biçimlendirir.\n\nModern sistemler, Curify'nin boru hattı gibi, zorlu koşullarda bile %95'ten fazla doğruluk elde etmek için ses ayrıştırma için Conv-TasNet, konuşma tanıma için WhisperX ve konuşmacı tanımlama için gelişmiş kümeleme algoritmalarını birleştirir. Bu teknik derin dalış, her bileşeni ve entegrasyon stratejilerini keşfeder.",
       "whyTitle": "Neden Teknik Mimari Transkripsiyon İçin Önemlidir",
@@ -1330,7 +1342,8 @@
       "conclusionTitle": "Video Transkripsiyon Teknolojisinin Geleceği",
       "conclusionContent": "Video transkripsiyon teknolojisi, temel konuşma tanıma sistemlerinden, sinir ağları, ses işleme ve optimizasyon tekniklerindeki ilerlemeleri birleştiren karmaşık çok aşamalı boru hatlarına evrildi. Curify'nin boru hattı gibi modern sistemler, ses ayrımı için Conv-TasNet, transkripsiyon için WhisperX ve gelişmiş kalite güvencesinin üretim kalitesindeki iş akışlarına nasıl entegre edilebileceğini göstermektedir.\n\nTeknik ekipler ve geliştiriciler için önemli olan, video transkripsiyonunun artık bir araştırma sorunu değil, çözülmüş bir mühendislik zorluğu olduğudur. Kalan fırsatlar, temel teknoloji sınırlamaları yerine optimizasyon, kenar durumları ve entegrasyonda yatmaktadır. Bu sistemler, daha iyi model mimarileri ve daha büyük eğitim veri setleri aracılığıyla geliştikçe, her içerik türü için ölçeklenebilir mükemmel transkripsiyonun mümkün olduğu bir geleceğe yaklaşıyoruz.\n\nBurada tanımlanan teknik mimari, 2026'daki mevcut en iyi durumu temsil etmektedir, ancak alan hızla evrilmeye devam etmektedir. Gerçek zamanlı transkripsiyon, sıfırdan konuşmacı tanımlama ve otomatik içerik özetleme, video içerik işleme ve analizine yaklaşımımızı daha da dönüştürecek olan yeni yeteneklerdir.",
       "seoKeywords": "video transkripsiyon boru hattı, konuşma tanıma boru hattı, asr video işleme, konuşmadan metne boru hattı, konuşmacı ayrıştırma video, zorunlu hizalama transkripsiyonu, fısıldama transkripsiyon boru hattı, ses segmentasyonu transkripsiyonu, çok dilli transkripsiyon yapay zeka",
-      "metaDescription": "AI video transkripsiyon boru hattı mimarisine teknik derin dalış. Geliştiriciler ve AI mühendisleri için ASR, zorunlu hizalama, konuşmacı ayrıştırma ve üretim sistemi tasarımı hakkında kapsamlı bir rehber."
+      "metaDescription": "AI video transkripsiyon boru hattı mimarisine teknik derin dalış. Geliştiriciler ve AI mühendisleri için ASR, zorunlu hizalama, konuşmacı ayrıştırma ve üretim sistemi tasarımı hakkında kapsamlı bir rehber.",
+      "intro": "Çoğu transkripsiyon aracı konuşmadan metne kadar durur. Bu derinlemesine inceleme, Curify'nin tam transkripsiyon sürecini yürütür: sesin arka plandaki müzikten nasıl ayrıldığı, WhisperX'in temizlenmiş parça üzerinde nasıl çalıştığı, konuşmacı diarizasyonunun örtüşen sesleri nasıl ayırdığı ve zorunlu hizalamanın kelime düzeyinde zaman damgalarını transkripte nasıl geri koyduğu, böylece çıktı aşağı akıştaki altyazı, dublaj ve çeviri araçlarını [/tools/video-transcript-generator](/tools/video-transcript-generator) yönlendirebilir. Eğer transkripsiyonu daha büyük bir sürece entegre etmek istiyorsanız, sadece bir SRT indirmek yerine, çoğu blog yazısının atladığı katman budur."
     },
     "tenPromptingTipsNanoBanana": {
       "title": "Nano Banana için İpuçları: Yaratıcılar için 10 Prompt Yazma Yöntemi",
@@ -4153,19 +4166,7 @@
             "useCaseDesc": "örn., afiş, avatar",
             "mood": "Ruh hali",
             "moodDesc": "örn., rahat, karanlık"
-          },
-          "finalVerdict": "2026'da video dublajı ve çeviri için ElevenLabs kalite, çok dilli destek ve kullanım kolaylığı açısından öne çıkıyor. F5-TTS, bütçe kısıtlamaları içinde çalışan teknik kullanıcılar için muazzam bir değer sunuyor veya ticari kısıtlamalar olmadan sınırsız üretim gerektiriyor.",
-          "gettingStarted": "Başlarken Kaynaklar",
-          "f5TtsSetup": "F5-TTS Kurulumu",
-          "f5TtsSetupDesc": "Resmi GitHub Deposu, Gereksinimler, Kurulum ve CLI arayüzü",
-          "elevenLabsSetup": "ElevenLabs Kurulumu",
-          "elevenLabsSetupDesc": "Web Kontrol Paneli, API Erişimi ve Hızlı Başlangıç Kılavuzu",
-          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-          "themeDesc": "örneğin, fantezi, seyahat",
-          "useCase": "Kullanım durumu",
-          "useCaseDesc": "örneğin, afiş, avatar",
-          "mood": "Ruh hali",
-          "moodDesc": "örneğin, rahat, karanlık"
+          }
         }
       },
       "keyInsight": {
@@ -4466,57 +4467,6 @@
       "conclusionTitle": "Küresel İçerik Stratejinizi Dönüştürün",
       "conclusionContent": "UGC Video Çevirisi, içerik üretici ekonomisinin genişlemesinde bir sonraki sınırı temsil ediyor. Gelişmiş AI çevirisini kültürel zeka ve yaratıcı otantikliğini koruma ile birleştirerek, içeriğinizi küresel ölçekte ölçeklendirebilir ve orijinal içeriğinizin başarılı olmasını sağlayan viral potansiyeli koruyabilirsiniz."
     },
-    "ugcVideoTranslationScalingTiktoksShortsGlobalMarkets": {
-      "title": "UGC Video Çevirisi: TikTok ve Shorts'ları Küresel Pazarlar İçin Ölçeklendirme",
-      "date": "27 Nisan 2026",
-      "readTime": "12 dakika okuma",
-      "tag": "Video Çevirisi",
-      "image": "/images/ugc-video-translation.webp",
-      "category": "video-translation",
-      "intro": "AI çevirisini kullanarak UGC (Kullanıcı Oluşturulmuş İçerik) videolarını küresel pazarlara nasıl ölçeklendireceğinizi öğrenin. TikToks, Shorts ve Reels'leri çevirerek otantikliği ve etkileşimi korurken uluslararası izleyicilere ulaşın.",
-      "whatIsTitle": "UGC Video Çevirisi Nedir?",
-      "whatIsContent": "UGC video çevirisi, kullanıcı oluşturulmuş kısa biçimli içeriği uluslararası izleyiciler için uyarlama sürecidir. Bu, UGC'yi etkili kılan otantik, ham hissi korurken ses, altyazı ve kültürel referansları çevirmeyi içerir. AI araçları sayesinde yüzlerce video uygun fiyatla çevrilebilir hale geldi.",
-      "whyTitle": "Neden UGC İçeriğini Çevirmelisiniz?",
-      "whyContent": "UGC içeriği, marka oluşturulmuş içerikten 4 kat daha yüksek tıklama oranı sağlar. UGC'yi çevirerek: 2 milyar+ İngilizce olmayan konuşmacıya ulaşabilir, yeni içerik oluşturmadan yeni pazarlara girebilir, mevcut içerik üretici ortaklıklarında ROAS'ı artırabilir ve ana dillerinde içeriğe güvenen küresel izleyicilerle otantik bağlantılar kurabilirsiniz.",
-      "howTitle": "UGC Videolarını Büyük Ölçekte Nasıl Çevirilir",
-      "step1Title": "Adım 1: İçeriği Seçin ve Organize Edin",
-      "step1Content": "Etkileşim metriklerine (görüntüleme, paylaşım, CTR) göre yüksek performanslı UGC'yi belirleyin. İçeriği ürün kategorisine, içerik üreticiye ve performans katmanına göre organize edin. Videolara orijinal dil ve hedef pazar potansiyelini etiketleyin. Maksimum çeviri ROI için, zamana duyarlı gönderilerden çok evergreen içeriği önceliklendirin.",
-      "step2Title": "Adım 2: Varlıkları Çıkarın ve Hazırlayın",
-      "step2Content": "Kaynak videoları mevcut en yüksek kalitede indirin. FFmpeg veya Descript gibi araçları kullanarak videodan sesi ayırın. Ekran metnini ve altyazıları çıkarın. Her içeriğin tonunu, bağlamını ve kültürel notlarını yakalayan çeviri brif belgesi oluşturun.",
-      "step3Title": "Adım 3: AI Çevirisi ve Ses Klonlama",
-      "step3Content": "AI ses klonlamasını kullanarak diller arasında içerik üreticinin otantikliğini koruyun. Curify gibi araçlar orijinal içerik üreticinin sesini klonlayabilir ve 50+ dile çevirebilir. En iyi sonuçlar için, ses klonlamasına 30+ saniye temiz ses sağlayın. Kültürel doğruluk için AI çevirisini her zaman ana dil konuşanları tarafından incelettirin.",
-      "step4Title": "Adım 4: Dudak Senkronizasyonu ve Görsel Uyarlama",
-      "step4Content": "Çevrilmiş sesi konuşmacının dudak hareketleriyle eşleştirmek için AI dudak senkronizasyonu teknolojisini uygulayın. Hedef dildeki ekran metni kaplamalarını ve altyazıları ayarlayın. Kültürel hassasiyet için yeniden düzenlemeyi düşünün (iyi çevrilmeyen bölgesel referansları kaldırın).",
-      "step5Title": "Adım 5: Yerelleştirme ve Uygunluk",
-      "step5Content": "Yerel pazarlar için CTA'ları uyarlayın (farklı e-ticaret platformları, para birimleri vb.). Yerel reklam düzenlemelerine ve açıklama gereksinimlerine uyduğundan emin olun. Yerelleştirilmiş etiketler ve anahtar kelimeler ekleyin. Tam kampanya başlatmadan önce ana dil konuşanlarla test edin.",
-      "technicalTitle": "Teknik Hususlar",
-      "timingTitle": "Zamanlama ve Tempo",
-      "timingContent": "Çevrilmiş ses, orijinal sese göre %15-30 daha uzun veya daha kısa olabilir. Video temposunu ayarlayın: durakları kesin, bölümleri hızlandırın veya yavaşlatın, veya zamanlama boşluklarını doldurmak için B-roll ekleyin. TikToks ve Shorts'lar katı süre sınırlarına sahiptir - çevrilmiş sürümlerin platform kısıtlamaları içinde uyduğundan emin olun.",
-      "emotionTitle": "Duygu ve Ton Koruma",
-      "emotionContent": "UGC, duygusal otantikliğe büyük ölçüde güvenir. Çeviri sırasında: orijinal enerji seviyesini ve coşkuyu koruyun, mizahı ve kültürel referansları koruyun (veya uygun şekilde uyarlayın) ve UGC'yi tanımlayan gayriresmi, konuşma tonunu koruyun. AI duygu tespiti, orijinal duyguyu eşleştirmeye yardımcı olabilir.",
-      "platformTitle": "Platforma Özel Gereksinimler",
-      "platformContent": "Her platformun benzersiz hususları vardır: TikTok metin güvenli bölgeli dikey 9:16 format gerektirir, YouTube Shorts ilgi çekici ilk 3 saniye ve mobil optimize edilmiş küçük resimler gerektirir, Instagram Reels trend ses entegrasyonu ve etiket stratejisinden faydalanır. Çevrilmiş içeriği her platformun algoritma tercihlerine göre uyarlayın.",
-      "toolsTitle": "Önerilen Araçlar",
-      "toolsContent": "Curify: Ses klonlama, dudak senkronizasyonu ve parti işleme ile hepsi bir arada UGC çevirisi. ElevenLabs: Duygu kontrolü ile profesyonel ses klonlama. HeyGen: Yüzsüz UGC için AI avatarları ve dudak senkronizasyonu. Descript: Ses düzenleme ve transkripsiyon iş akışı. CapCut: 20+ dilde otomatik altyazı ile mobil dostu düzenleme.",
-      "monetizationTitle": "Para Kazanma Stratejileri",
-      "monetizationContent": "Çevrilmiş UGC'yi para kazandırın: uluslararası ortaklık programları (Amazon Associates, ShareASale küresel ağlar), yerelleştirilmiş ürün düşürmeleri ve ön siparişler, bölgesel marka ortaklıkları ve sponsorluklar, ve diğer markaların lisansladığı ücretli UGC kütüphaneleri. Pazar başına performansı takip ederek yüksek dönüşümlü bölgelerde iki katına çıkarın.",
-      "caseStudiesTitle": "Başarı Hikayeleri",
-      "caseStudy1Title": "Güzellik Markası: Avrupa Pazarlarında 3x ROAS",
-      "caseStudy1Content": "Bir DTC güzellik markası, 50 üst UGC TikTok'u Fransızca, Almanca ve İspanyolcaya çevirdi. Curify'nin ses klonlamasını kullanarak içerik üretici seslerini korudular, 60 gün içinde Avrupa pazarlarında 3x reklam harcama getirisi elde ettiler. Otantik içerik üretici enerjisi, geleneksel dublajlı içerikten daha iyi çevrildi.",
-      "caseStudy2Title": "Fitness Uygulaması: Çevrilmiş Shorts'lardan 500K İndirme",
-      "caseStudy2Content": "Bir fitness uygulaması İngilizce UGC'yi Portekizce, Japonca ve Arapçaya çevirdi. Egzersiz terminolojisini yerelleştirerek ve kültürel referansları uyarlayarak, 90 gün içinde İngilizce olmayan pazarlardan 500K+ uygulama indirmesi elde ettiler. Çevrilmiş içerik, yerel olarak oluşturulan reklamlardan %40 daha iyi performans gösterdi.",
-      "bestPracticesTitle": "UGC Çevirisi İçin En İyi Uygulamalar",
-      "bestPracticesContent": "Daha iyi ses klonlama sonuçları için net, aksansız konuşma olan içerik üreticilerini seçin. Tam kütüphaneye ölçeklendirmeden önce pazar başına 5-10 video test edin. Markaya özel terimler ve ürün adları için çeviri sözlüğü tutun. Çevrilmiş küçük resimleri ve altyazıları A/B test edin. Hedef dillerdeki yorumlarda kültürel geri bildirimi izleyin. Ürün veya mesajlaşma değiştiğinde çevirileri güncelleyin.",
-      "conclusionTitle": "UGC Çevirisi ile Küresel Ölçekte Büyüyün",
-      "conclusionContent": "UGC video çevirisi, küresel pazarlara girmenin en maliyet etkin yoludur. Ses klonlama, dudak senkronizasyonu ve parti işleme için AI araçlarından yararlanarak, mevcut yüksek performanslı içeriği milyarlarca yeni potansiyel müşteriye ulaşmak için ölçeklendirebilirsiniz. İlk 10 UGC videonuzla başlayın, 2-3 umut verici pazara çevirin ve tam ölçekli dağıtımdan önce sonuçları ölçün.",
-      "metaDescription": "TikTok'ları ve Shorts'ları küresel pazarlara ölçeklendirin — UGC'yi yurtdışında gerçekten dönüştüren AI çeviri yığını, ses klonlama ayarları ve zamanlama ipuçları.",
-      "seoKeywords": [
-        "UGC video çevirisi",
-        "TikTok çeviri AI",
-        "Shorts küresel pazarı",
-        "video dublajı yaratıcıları"
-      ]
-    },
     "aifacelesschannelpipeline": {
       "title": "2026'da AI Yüzsüz Kanal Hattı Nasıl Kurulur",
       "date": "23 Nisan 2026",
@@ -4558,327 +4508,6 @@
       "ctaLink": "/nano-banana",
       "conclusionTitle": "İçerik Üretiminin Geleceği Sistem Odaklıdır",
       "conclusionContent": "AI yüzsüz kanallar, sistem odaklı içerik üretimine doğru bir kaymayı vurgular. Yapılandırılmış iş akışlarını doğru araçlarla birleştirerek, yaratıcılar kaliteden ödün vermeden çıktıyı ölçeklendirebilir. Avantaj, tutarlılık, yineleme ve akıllı otomasyon kullanımıyla gelir—tamamen elden bırakma operasyonu değil."
-    },
-    "f5TtsVsElevenlabs": {
-      "title": "F5-TTS vs. ElevenLabs: Hangi Ses Klonlama Aracı 2026'da Daha İyi?",
-      "description": "AI araçlarıyla yaygın dublaj zorluklarını çözmek için kapsamlı bir rehber. Robotik tempolar, duygu eksikliği ve dudak senkronizasyonu sorunları için pratik çözümler öğrenin.",
-      "hero": {
-        "title": "2026'da Videoları Doğal Olarak Dublajlama: AI Ses Klonlama Artefaktlarını Düzeltme",
-        "subtitle": "AI araçlarıyla yaygın dublaj zorluklarını çözmek için kapsamlı bir rehber. Robotik tempolar, duygu eksikliği ve dudak senkronizasyonu sorunları gibi acı noktalar üzerine odaklanın."
-      },
-      "protip": "Yüksek kaliteli kaynak sesle başlayın ve her zaman dublajlı içeriğinizi yerel konuşmacılarla test edin, böylece AI'nın atlayabileceği ince artefaktları yakalayın.",
-      "tabs": {
-        "problems": "Yaygın Sorunlar",
-        "solutions": "Pratik Çözümler",
-        "tools": "Önerilen Araçlar",
-        "workflow": "Adım Adım İş Akışı",
-        "advanced": "İleri Teknikler",
-        "automation": "Otomasyon Stratejileri",
-        "conclusion": "Sonuç"
-      },
-      "introduction": {
-        "paragraph1": "Yapay zeka video dublajı içerik üretimini devrim niteliğinde değiştirdi, ancak &lt;strong&gt;robotik artefaktlar&lt;/strong&gt; ve &lt;strong&gt;doğal olmayan tempolar&lt;/strong&gt; hâlâ birçok prodüksiyonu rahatsız ediyor. 2026'da bu zorlukların üstesinden gelmek için daha iyi araçlar ve tekniklerimiz var. Temel sorun, çoğu dublaj hattının konuşmayı tamamen teknik bir katman olarak ele almasıdır, performans olarak değil. Birçok sistem hâlâ düz prosodi, tutarsız vurgu ve kötü zamanlanmış duraklamalarla ses üretmektedir, bu da sesin kendisi gerçekçi olsa bile, izleyicinin konsantrasyonunu bozar. İzleyiciler zamanlama uyumsuzluklarına karşı oldukça hassastır—duygusal vurgular, mikro-duraklamalar veya cümle vurguları görsel performansla uyumlu olmadığında, sonuç ince bir şekilde “yanlış” hissedilir, nedenini ifade edemeseler bile. Modern yaklaşımlar, &lt;strong&gt;prosodi kontrolü ve zamansal hizalama&lt;/strong&gt; üzerine odaklanarak bu durumu ele alır. Konuşmayı doğrusal olarak üretmek yerine, daha yeni modeller ritim farkındalığına sahip sentez kullanarak, yaratıcıların tempoyu ifade ve hece seviyesinde kontrol etmelerine olanak tanır. Bu, dudak hareketlerini eşleştirmeyi, dramatik duraklamaları korumayı ve orijinal aktörün niyetini diller arasında sürdürmeyi mümkün kılar. Zorlanmış hizalama, fonem düzeyinde zamanlama ve referans ses koşullandırma gibi teknikler artık yüksek kaliteli hatlarda standart hale gelmektedir. Bir diğer büyük iyileşme, &lt;strong&gt;bağlam farkındalığına sahip ses modelleme&lt;/strong&gt; ile gelmektedir. Her bir satırı izole bir şekilde üretmek yerine, ileri düzey sistemler konuşma belleğini korur—ton, duygusal durum ve sahneler arasındaki konuşmacı dinamiklerini takip eder. Bu, ton kaymasını azaltır ve bir karakterin fısıldarken, tartışırken veya anlatım yaparken tutarlı ses çıkarmasını sağlar. Anlatı ağırlıklı içerikler için, bu değişim tek başına algılanan gerçekçiliği önemli ölçüde artırır. Son olarak, &lt;strong&gt;insan döngüsünde iş akışlarının&lt;/strong&gt; artışı, otomasyon ile kalite arasındaki boşluğu kapatmıştır. Yaratıcılar artık AI üretimini hafif düzenleme katmanlarıyla birleştiriyor—duraklamaları ince ayar yapma, vurguları ayarlama veya tüm klipler yerine belirli bölümleri yeniden üretme. Bu hibrit yaklaşım, verimlilik ile yaratıcı kontrolü dengeleyerek prodüksiyon ekiplerinin dublajı ölçeklendirmesine olanak tanırken, stüdyo düzeyinde sonuçlar elde etmelerini sağlar. Birlikte, bu ilerlemeler AI dublajını bir kolaylık aracından &lt;strong&gt;prodüksiyon kalitesinde bir çözüme&lt;/strong&gt; dönüştürüyor, hız veya ölçeklenebilirlikten ödün vermeden doğal, duygusal olarak etkileyici performanslar sunabiliyor.",
-        "paragraph2": "Bu kılavuz, &lt;strong&gt;yaygın dublaj sorunlarını düzeltmeyi&lt;/strong&gt; keskin AI araçları olan MuseTalk, Emotion TTS ve ileri düzey son işleme teknikleri kullanarak nasıl yapacağınızı gösterecektir. Temel ses üretiminin ötesine geçerek, AI dublaj iş akışlarındaki en kalıcı hata noktalarını ele alıyoruz—dudak senkronizasyonu kayması, tekdüze teslimat, zamanlama uyumsuzlukları ve duygusal düzlük. MuseTalk'ı, üretilen konuşma parçalarının ağız hareketleri ve yüz ifadeleriyle yakından eşleşmesini sağlamak için kesin görsel-audio hizalaması için nasıl kullanacağınızı öğreneceksiniz, hızlı tempolu veya diyalog ağırlıklı sahnelerde bile. Ses tarafında, üretilen seslere &lt;strong&gt;kontrollü ifade&lt;/strong&gt; eklemek için Emotion TTS sistemlerini nasıl kullanacağınızı açıklıyoruz. Genel ön ayarları kullanmak yerine, kılavuz, niyeti yansıtacak şekilde ton konturlarını, tempoyu ve vurguyu ayarlamak için nasıl ayar yapacağınızı anlatıyor—bu gerilim, alay veya tek bir cümle içindeki ince duygusal değişimler olabilir. Bu, “teknik olarak doğru” seslerden insan gibi ve bağlamsal olarak yerleşik performanslara geçmenizi sağlar. Ayrıca, nihai çıktı kalitesinde kritik bir fark yaratan &lt;strong&gt;ileri düzey son işleme iş akışlarını&lt;/strong&gt; da ele alıyoruz. Bu, fonem düzeyinde zamanlama ayarlamaları, sessizlik kesme ve uzatma, nefes ve duraklama ekleme ve dublaj seslerini orijinal ses parçasına sorunsuz bir şekilde harmanlamak için EQ eşleştirme ve ses yüksekliği normalizasyonu gibi ses mastering tekniklerini içerir. Bu araçları ve teknikleri uyumlu bir hat içine birleştirerek, dublaj sorunlarını sistematik olarak teşhis etme ve düzeltme yeteneğine sahip olacaksınız, deneme yanılma yöntemine güvenmek yerine—tutarsız AI çıktılarından cilalı, prodüksiyon hazır diyaloglar oluşturacaksınız."
-      },
-      "problems": {
-        "title": "Yaygın AI Dublaj Sorunları",
-        "issues": [
-          {
-            "icon": "🤖",
-            "title": "Robotik Tempo",
-            "description": "AI tarafından üretilen konuşma genellikle doğal ritim ve zamanlamadan yoksundur, bu da mekanik ve kopuk bir ses çıkarmasına neden olur.",
-            "impact": "İzleyici Bağlantısızlığı",
-            "impactDescription": "Doğal olmayan tempo, konsantrasyonu bozar ve izleyici tutumunu %40'a kadar azaltır."
-          },
-          {
-            "icon": "😐",
-            "title": "Duygusal İncelik Eksikliği",
-            "description": "AI sesleri ince duyguları iletmekte zorlanır, bu da dramatik sahnelerin etkisini azaltır.",
-            "impact": "Duygusal Bağlantısızlık",
-            "impactDescription": "Eksik duygusal ipuçları, izleyicilerin karakterlerle ve hikaye ile bağlantı kurmasını engeller."
-          },
-          {
-            "icon": "👄",
-            "title": "Dudak Senkronizasyonu Uyuşmazlıkları",
-            "description": "Ses ve görsel dudak hareketleri arasındaki kötü hizalama, tuhaf bir vadi etkisi yaratır.",
-            "impact": "Gerçekçi Görünüm",
-            "impactDescription": "Görünür dudak senkronizasyonu hataları, doğal konuşma illüzyonunu hemen bozar."
-          }
-        ]
-      },
-      "solutions": {
-        "title": "Pratik Çözümler",
-        "methods": [
-          {
-            "icon": "🎭",
-            "title": "Duygu Artırıcı TTS",
-            "description": "Sese uygun duyguları ekleyebilen duygu farkındalığına sahip metinden sese modelleri kullanın.",
-            "benefit": "Doğal Duygusal Teslimat",
-            "benefitDescription": "Standart TTS'ye kıyasla %85 daha doğal duygusal ifade sağlar.",
-            "promptTitle": "Duygu Geliştirme İsteği",
-            "promptDescription": "AI'yi duygusal olarak nüanslı konuşma üretmesi için yönlendirmek üzere bu isteği kullanın:",
-            "prompt": "[duygu: endişeli, sıcak, acil] tonu ile konuşma üretin. Virgülden sonra 0.3s duraklayın, ana duygusal kelimeleri vurgulayın, doğal bir akış için tonlamayı ±%20 değiştirin."
-          },
-          {
-            "icon": "⚡",
-            "title": "Ritim Düzeltme",
-            "description": "Doğal insan konuşma kalıplarına uyum sağlamak için AI destekli zamanlama ayarlamaları uygulayın.",
-            "benefit": "İnsan Benzeri Zamanlama",
-            "benefitDescription": "Zeki zamanlama ayarlamaları ile robotik artefaktları %70 oranında azaltır.",
-            "promptTitle": "Ritim Düzeltme İsteği",
-            "promptDescription": "Robotik zamanlamayı düzeltmek için bu isteği kullanın:",
-            "prompt": "Konuşma ritmini analiz edin ve doğal duraklamalar ekleyin: Noktalardan sonra 0.5s, virgüllerden sonra 0.2s duraklayın, organik akış için kelime aralığını ±%10 değiştirin."
-          }
-        ]
-      },
-      "tools": {
-        "title": "Önerilen Araçlar",
-        "cta": "Aracı Deneyin",
-        "recommendations": [
-          {
-            "icon": "🎙️",
-            "title": "MuseTalk",
-            "description": "Duygu koruma ve doğal zamanlama ile gelişmiş ses klonlama.",
-            "useCase": "Karakter Sesleri İçin En İyisi",
-            "useCaseDescription": "Uzun biçimli içeriklerde tutarlı karakter seslerini korumak için mükemmel.",
-            "link": "https://musetalk.ai"
-          },
-          {
-            "icon": "🎭",
-            "title": "Duygu TTS",
-            "description": "Duygu kontrolü ve doğal prosodi ile özel metinden konuşmaya.",
-            "useCase": "Duygusal İçerik",
-            "useCaseDescription": "İnce duygusal varyasyonlar gerektiren dramatik içerikler için idealdir.",
-            "link": "https://emotiontts.ai"
-          },
-          {
-            "icon": "🎬",
-            "title": "LipSync Pro",
-            "description": "Kare düzeyinde hassasiyetle AI destekli dudak senkronizasyonu düzeltmesi.",
-            "useCase": "Mükemmel Dudak Hizalaması",
-            "useCaseDescription": "Profesyonel video prodüksiyonu için piksel mükemmel dudak senkronizasyonu sağlar.",
-            "link": "https://lipsyncpro.ai"
-          }
-        ]
-      },
-      "workflow": {
-        "title": "Adım Adım İş Akışı",
-        "steps": [
-          {
-            "title": "Kaynak Ses Hazırlama",
-            "description": "Hedef sesin yüksek kaliteli, temiz bir ses kaydı ile başlayın.",
-            "action": "Ses Kalitesi Kontrolü",
-            "actionDescription": "48kHz örnekleme hızı, minimum arka gürültü ve tutarlı vokal performansı sağlanmalıdır.",
-            "promptTitle": "Ses Hazırlama İsteği",
-            "promptDescription": "Ses klonlama için ses hazırlamak üzere bu isteği kullanın:",
-            "prompt": "Temiz ses: arka gürültüyü kaldırın, -6dB'ye normalize edin, tutarlı vokal tonunu sağlayın, WAV 48kHz 24-bit olarak dışa aktarın."
-          },
-          {
-            "title": "Duygu ile Ses Klonlama",
-            "description": "Duygusal farkındalığa sahip bir ses modeli oluşturmak için MuseTalk'ı kullanın.",
-            "action": "Ses Modeli Eğitimi",
-            "actionDescription": "Modeli duygu etiketleri ve zamanlama referans örnekleri ile eğitin.",
-            "promptTitle": "Ses Klonlama İsteği",
-            "promptDescription": "Ses klonlama için bu isteği kullanın:",
-            "prompt": "Duygu koruması ile sesi klonlayın: vokal desenleri analiz edin, duygusal işaretleri çıkarın, zamanlama profili oluşturun."
-          },
-          {
-            "title": "Dublajlı Ses Üretme",
-            "description": "Duygu artırılmış ses modelini kullanarak konuşma üretin.",
-            "action": "Ses Üretimi",
-            "actionDescription": "En iyi sonuçlar için farklı duygusal yoğunlukta birden fazla deneme üretin.",
-            "promptTitle": "Ses Üretimi İsteği",
-            "promptDescription": "Doğal ses üretimi için bu isteği kullanın:",
-            "prompt": "Konuşma üretin: duygu profili [mutlu, endişeli, heyecanlı] uygulayın, doğal duraklamalar ekleyin, konuşma hızını ±%15 değiştirin."
-          }
-        ]
-      },
-      "advanced": {
-        "title": "İleri Teknikler",
-        "techniques": [
-          {
-            "icon": "🧠",
-            "title": "Nöral Prosodi Transferi",
-            "description": "Doğal konuşma kalıplarını referans ses kaydından AI tarafından üretilen konuşmaya aktarın.",
-            "benefit": "Gerçekçi Konuşma Kalıpları",
-            "benefitDescription": "Konuşma ritmi ve tonlamasında %95 doğallık sağlar.",
-            "promptTitle": "Prosodi Transfer İsteği",
-            "promptDescription": "Bu istemi prosodi aktarımı için kullanın:",
-            "prompt": "Prosodi kalıplarını çıkarın: ton konturlarını, zamanlama kalıplarını, vurgu vurgusunu analiz edin, hedef konuşmaya uygulayın."
-          },
-          {
-            "icon": "🎯",
-            "title": "Bağlam Farkındalığına Sahip Duygu",
-            "description": "Sahne bağlamını anlayan ve duyguları buna göre ayarlayan AI.",
-            "benefit": "Sahneye Uygun Duygular",
-            "benefitDescription": "Duygusal tonu video içeriği ve diyalog bağlamıyla otomatik olarak eşleştirir.",
-            "promptTitle": "Bağlam Farkındalığına Sahip İstem",
-            "promptDescription": "Bu istemi bağlam farkındalığına sahip duygu için kullanın:",
-            "prompt": "Sahne bağlamını analiz edin: duygusal tonu, karakter ilişkilerini, dramatik anı belirleyin, sesi buna göre ayarlayın."
-          }
-        ]
-      },
-      "automation": {
-        "title": "Otomasyon Stratejileri",
-        "strategies": [
-          {
-            "icon": "⚙️",
-            "title": "Toplu İşleme Hattı",
-            "description": "Tutarlı kalite ile birden fazla video dosyasını işlemek için otomatik iş akışı.",
-            "result": "Ölçeklenebilir Tutarlı Kalite",
-            "resultDescription": "100'den fazla videoyu tutarlı ses kalitesi ve duygusal aktarım ile işleyin."
-          },
-          {
-            "icon": "🔄",
-            "title": "Kalite Kontrol Otomasyonu",
-            "description": "Dublaj sorunlarını otomatik olarak tespit etmek ve işaretlemek için AI destekli kalite kontrolleri.",
-            "result": "Azaltılmış Manuel İnceleme",
-            "resultDescription": "İnsan incelemeden önce dublaj sorunlarının %90'ını yakalayarak QC zamanının %70'ini tasarruf edin."
-          }
-        ]
-      },
-      "conclusion": {
-        "title": "Videonuzu AI ile Dublajda Dönüştürün",
-        "description": "Bu ileri düzey teknikler ve araçları birleştirerek, izleyicileri etkileyen doğal, duygusal olarak etkileyici dublajlı içerikler oluşturabilirsiniz. AI dublajının geleceği burada ve her zamankinden daha insani."
-      },
-      "publishedDate": "27 Nisan 2026",
-      "readTime": "12 dakika okuma",
-      "category": "Video Dublajı",
-      "altText": "Ses klonlama ve dublaj için F5-TTS ile ElevenLabs karşılaştırması",
-      "ultimateShowdown": "Sonuçta: F5-TTS ile ElevenLabs",
-      "ultimateShowdownIntro": "AI ses klonlama dünyasında hızla gelişen 2026'da iki isim öne çıkıyor: devrim niteliğindeki açık kaynak çözümü F5-TTS ve köklü ticari güç merkezi ElevenLabs. Ancak hangisi video dublaj projeleri için gerçekten dikkatinizi hak ediyor?",
-      "whyVoiceCloningIntro": "Ses klonlama teknolojisi içerik üretimini dönüştürdü, yaratıcıların çok dilli içerik üretmesine, diller arasında tutarlı marka imajı korumasına ve üretim maliyetlerini önemli ölçüde azaltmasına olanak tanıdı. Bu iki önde gelen çözümü derinlemesine inceleyelim.",
-      "quickComparisonTable": "Hızlı Karşılaştırma Tablosu",
-      "feature": "Özellik",
-      "f5Tts": "F5-TTS",
-      "elevenLabs": "ElevenLabs",
-      "costModel": "Maliyet Modeli",
-      "f5TtsCost": "Ücretsiz (Açık Kaynak)",
-      "elevenLabsCost": "$5-1,320/ay",
-      "voiceQuality": "Ses Kalitesi",
-      "f5TtsQuality": "%85-90 Doğal",
-      "elevenLabsQuality": "%92-96 Doğal",
-      "emotionRendering": "Duygu İşleme",
-      "f5TtsEmotion": "İyi (Akış Eşleştirme)",
-      "elevenLabsEmotion": "Mükemmel (v3 Ses Etiketleri)",
-      "latency": "Gecikme",
-      "f5TtsLatency": "2-5 saniye",
-      "elevenLabsLatency": "0.5-2 saniye (Flash)",
-      "setupComplexity": "Kurulum Karmaşıklığı",
-      "f5TtsSetup": "Yüksek (Teknik)",
-      "elevenLabsSetup": "Düşük (Web Arayüzü)",
-      "commercialRights": "Ticari Haklar",
-      "f5TtsRights": "Tam (MIT Lisansı)",
-      "elevenLabsRights": "Ücretli Plan Gerektirir",
-      "f5TtsChampion": "F5-TTS: Açık Kaynak Şampiyonu",
-      "technicalArchitecture": "Teknik Mimari",
-      "f5TtsDescription": "F5-TTS (Akış Eşleştirme ile Akıcı ve Sadık Konuşmayı Taklit Eden Fairytaler), açık kaynak ses sentezinde bir devrimdir. ConvNeXt V2 mimarisi ile bir Difüzyon Dönüştürücüsü üzerine inşa edilmiştir ve ticari fiyat etiketine ihtiyaç duymadan etkileyici bir kalite sunar.",
-      "keyStrengths": "Ana Güçlü Yönler",
-      "zeroCostOperation": "Sıfır Maliyetli Operasyon:",
-      "zeroCostDesc": "MIT lisansı ile tamamen ücretsiz, bütçe dostu yaratıcılar için mükemmel",
-      "flowMatchingTech": "Akış Eşleştirme Teknolojisi:",
-      "flowMatchingDesc": "Gelişmiş çıkarım zamanı akış adım örnekleme performansı artırır",
-      "zeroShotCloning": "Sıfırdan Klonlama:",
-      "zeroShotDesc": "Kısa referans kliplerden ince ayar yapmadan sesleri klonlayın",
-      "fullControl": "Tam Kontrol:",
-      "fullControlDesc": "Model ağırlıklarına ve özelleştirme seçeneklerine tam erişim",
-      "noUsageLimits": "Kullanım Sınırlaması Yok:",
-      "noUsageDesc": "Krediler veya kısıtlamalar olmadan sınırsız içerik üretin",
-      "limitationsDubbing": "Video Dublajı için Sınırlamalar",
-      "criticalConsiderations": "⚠️ Kritik Hususlar",
-      "higherLatency": "Daha Yüksek Gecikme:",
-      "higherLatencyDesc": "2-5 saniye üretim süresi gerçek zamanlı iş akışlarını etkiler",
-      "technicalSetup": "Teknik Kurulum:",
-      "technicalSetupDesc": "Python ortamı, GPU ve teknik uzmanlık gerektirir",
-      "limitedMultilingual": "Sınırlı Çok Dilli Destek:",
-      "limitedMultilingualDesc": "Temelde İngilizce için optimize edilmiştir",
-      "artifactingIssues": "Artifact Oluşum Sorunları:",
-      "artifactingDesc": "Daha uzun pasajlarda ara sıra robotik artefaktlar",
-      "noDubbingFeatures": "Yerleşik Dublaj Özellikleri Yok:",
-      "noDubbingDesc": "Ayrı çeviri araçları ile entegre edilmelidir",
-      "bestUseCases": "En İyi Kullanım Senaryoları",
-      "f5TtsUseCases": "F5-TTS, teknik yaratıcılar, araştırmacılar ve maliyetin ana kısıtlama olduğu projeler için mükemmeldir. Prototipleme, eğitim içeriği ve altyapılarını yönetme becerisine sahip yaratıcılar için idealdir.",
-      "elevenLabsPowerhouse": "ElevenLabs: Ticari Güç Merkezi",
-      "technicalExcellence": "Teknik Mükemmeliyet",
-      "elevenLabsDescription": "ElevenLabs, yaratıcı dostu bir TTS aracından kapsamlı bir ses altyapı platformuna evrildi. Kendilerine ait modeller (eleven_flash_v2_5, eleven_multilingual_v2, eleven_v3) ses kalitesi ve doğallığı için endüstri standardını belirliyor.",
-      "superiorQuality": "Üstün Ses Kalitesi:",
-      "superiorQualityDesc": "Minimum artefakt ile %92-96 doğallık derecesi",
-      "advancedEmotion": "Gelişmiş Duygu Kontrolü:",
-      "advancedEmotionDesc": "Hassas duygusal ifade için v3 Ses Etiketleri",
-      "subSecondLatency": "Alt Saniye Gecikmesi:",
-      "subSecondDesc": "Flash modeller gerçek zamanlı uygulamaları mümkün kılar",
-      "comprehensiveLanguage": "Kapsamlı Dil Desteği:",
-      "comprehensiveLanguageDesc": "29+ diller ve bölgesel varyantlar",
-      "integratedDubbing": "Entegre Dublaj Süreci:",
-      "integratedDubbingDesc": "Yerleşik çeviri ve ses koruma",
-      "professionalCloning": "Profesyonel Ses Klonlama:",
-      "professionalCloningDesc": "PVC (Profesyonel Ses Klonlama) stüdyo kalitesi için",
-      "pricingBreakdown": "Video Yaratıcıları için Fiyatlandırma Analizi",
-      "costAnalysis": "💰 Maliyet Analizi (2026)",
-      "starterPlan": "Başlangıç ($5/ay):",
-      "starterDesc": "30,000 kredi (~30 dakika TTS) - Ticari kullanım için giriş noktası",
-      "creatorPlan": "Yaratıcı ($22/ay):",
-      "creatorDesc": "100,000 kredi (~100 dakika) + Profesyonel Ses Klonlama",
-      "proPlan": "Pro ($99/ay):",
-      "proDesc": "500,000 kredi (~500 dakika) + 44.1kHz ses çıkışı",
-      "scalePlan": "Ölçek ($330/ay):",
-      "scaleDesc": "2M kredi (~2000 dakika) + Düşük gecikmeli gerçek zamanlı",
-      "creditNote": "Not: 1 kredi = 1 karakter (Çok Dilli v2), Flash modelleri için 0.5 kredi",
-      "elevenLabsUseCases": "ElevenLabs, kalite ve kullanım kolaylığının maliyet değerlendirmelerinden daha önemli olduğu profesyonel içerik yaratıcıları, ajanslar ve işletmeler için mükemmeldir. Yüksek hacimli dublaj projeleri ve ticari uygulamalar için özellikle değerlidir.",
-      "headToHead": "Baş Başa Teknik Karşılaştırma",
-      "emotionQuality": "Duygu Yansıtma Kalitesi",
-      "elevenLabsWins": "ElevenLabs kesin bir zafer kazanıyor",
-      "emotionControlDesc": "duygu kontrolünde. V3 Ses Etiketleri sistemi, anlatı bağlamı, duygusal ton ve ifade kalıpları üzerinde hassas kontrol sağlar. Mutluluk, üzüntü, öfke veya ince nüansları basit işaretleme etiketleri ile belirtebilirsiniz.",
-      "f5TtsEmotionDesc": "F5-TTS, duygusal ifadeler için Akış Eşleştirmeye dayanır, bu temel duygular için iyi çalışır ancak dramatik içerik veya ince performanslar için gereken ayrıntılı kontrolü sağlamaz.",
-      "latencyPerformance": "Gecikme Performansı",
-      "elevenLabsFlash": "ElevenLabs Flash modelleri",
-      "flashDesc": "0.5-2 saniye üretim süreleri sunar, bu da onları gerçek zamanlı uygulamalar ve etkileşimli iş akışları için uygun hale getirir. Bu, zamanlama senkronizasyonunun kritik olduğu video dublajı için hayati öneme sahiptir.",
-      "f5TtsLatencyDesc": "F5-TTS genellikle her üretim için 2-5 saniye gerektirir, bu da yaratıcı iş akışlarını kesintiye uğratabilir ve gerçek zamanlı önizlemeyi imkansız hale getirebilir.",
-      "audioArtifacting": "Ses Artefaktları",
-      "elevenLabsArtifacting": "ElevenLabs, daha uzun pasajlarda bile minimum artefakt gösterir, pürüzsüz geçişler ve tutarlı ses özellikleri ile. Profesyonel ses klonlamaları, uzun içerik boyunca kaliteyi korur.",
-      "f5TtsArtifacting": "F5-TTS, özellikle karmaşık cümleler veya alışılmadık fonetik kombinasyonlarla birlikte zaman zaman robotik artefaktlar üretebilir. Bu, daha uzun dublaj projelerinde daha belirgin hale gelir.",
-      "multilingualCapabilities": "Çok Dilli Yetenekler",
-      "elevenLabsDominates": "ElevenLabs öne çıkıyor",
-      "multilingualDesc": "29'dan fazla dil, bölgesel varyantlar ve kod değiştirme yetenekleri ile uluslararası içerik için. Dublaj hattı, diller arasında ses özelliklerini korur.",
-      "f5TtsMultilingualDesc": "F5-TTS sınırlı çok dilli destek sunar, esasen İngilizce için optimize edilmiştir ve diğer diller için deneysel destek vardır. Uluslararası dublaj projeleri için ideal değildir.",
-      "bottomLine": "Sonuç: Hangi Seçimi Yapmalısınız?",
-      "chooseF5Tts": "🎯 F5-TTS'yi Seçin Eğer:",
-      "f5TtsReason1": "Bütçeniz ana kısıtlamanızsa",
-      "f5TtsReason2": "Teknik uzmanlığınız ve altyapınız varsa",
-      "f5TtsReason3": "Esasen İngilizce üzerinde çalışıyorsanız",
-      "f5TtsReason4": "Kreditsiz sınırsız üretim istiyorsanız",
-      "f5TtsReason5": "Modeli özelleştirmek ve değiştirmek istiyorsanız",
-      "f5TtsReason6": "Özel bir çözüm geliştiriyorsanız",
-      "chooseElevenLabs": "🚀 ElevenLabs'ı Seçin Eğer:",
-      "elevenLabsReason1": "Kalite ve doğallık önceliklerinizse",
-      "elevenLabsReason2": "Çok dilli dublaj yeteneklerine ihtiyacınız varsa",
-      "elevenLabsReason3": "Gerçek zamanlı veya düşük gecikmeli üretim istiyorsanız",
-      "elevenLabsReason4": "Profesyonel duygu kontrolü istiyorsanız",
-      "elevenLabsReason5": "Yönetilen, zahmetsiz bir çözümü tercih ediyorsanız",
-      "elevenLabsReason6": "Sıkı zaman çizelgeleri olan ticari projeler",
-      "hybridApproach": "Hibrit Yaklaşım: Her İki Dünyanın En İyisi",
-      "hybridApproachDesc": "Farklı ihtiyaçlara sahip profesyonel stüdyolar için, her ikisini de kullanmayı düşünün: Prototipleme ve test için F5-TTS, nihai üretim ve ticari projeler için ElevenLabs. Bu yaklaşım, maliyet verimliliğini maksimize ederken kalite standartlarını korur.",
-      "decisionFactors": "Seçiminiz nihayetinde belirli kullanım durumunuza, bütçe kısıtlamalarınıza, teknik uzmanlığınıza ve kalite gereksinimlerinize bağlıdır. Her iki araç da ses klonlama teknolojisinin en son noktasını temsil eder, her biri farklı senaryolarda öne çıkar.",
-      "f5TtsSetupTitle": "F5-TTS ile Başlarken",
-      "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-      "f5TtsRequirements": "Python 3.8+, 8GB+ VRAM'li GPU önerilir",
-      "f5TtsInstallation": "pip install f5-tts",
-      "f5TtsInterface": "Komut satırı ve Python API arayüzleri",
-      "elevenLabsSetupTitle": "ElevenLabs ile Başlarken",
-      "elevenLabsWebsite": "https://elevenlabs.io",
-      "elevenLabsFreeTier": "Ücretsiz katman mevcut (10.000 karakter/ay)",
-      "elevenLabsWebApi": "Web arayüzü ve REST API erişimi",
-      "elevenLabsProfessionalPlan": "Profesyonel planlar ayda 5 $'dan başlıyor",
-      "finalRecommendation": "Son Tavsiye",
-      "f5TtsFinalNote": "Hem F5-TTS hem de ElevenLabs, modern ses klonlama teknolojisinin zirvesini temsil ediyor. Seçiminiz, özel ihtiyaçlarınız, teknik yetenekleriniz ve bütçe dikkate alarak uyum sağlamalıdır. Ses teknolojisinin demokratikleşmesi, yaratıcıların artık profesyonel düzeyde araçlara eşsiz erişim sağladığı anlamına geliyor.",
-      "comparisonNote": "Bu karşılaştırma, ses klonlama teknolojisinin durumu Nisan 2026 itibarıyla yansıtıyor. AI'daki hızlı ilerlemeler, önümüzdeki aylarda manzarayı önemli ölçüde değiştirebilir.",
-      "metaDescription": "F5-TTS ve ElevenLabs 2026'da — doğruluk, doğallık, gecikme, maliyet. Yan yana karşılaştırmalar ve karar: hangisini üretim sesleri için seçmeli.",
-      "seoKeywords": [
-        "F5-TTS ve ElevenLabs",
-        "ses klonlama karşılaştırması",
-        "AI ses araçları 2026",
-        "TTS karşılaştırması"
-      ]
     },
     "aiCollageDigitalWallpaperGuide": {
       "title": "Estetik AI Kolajları ve Dijital Duvar Kağıtları Nasıl Üretilir: Izgara İpucu Rehberi",
@@ -5137,138 +4766,6 @@
       "conclusionTitle": "Sonuç",
       "conclusionPara1": "AI video dublajı, içerik yerelleştirmeyi zaman alıcı ve maliyetli bir süreçten erişilebilir ve verimli bir iş akışına dönüştürdü. İster bireysel bir yaratıcı olun, ister küresel bir işletme, bu araçlar, orijinal içeriğinizin kalitesini ve duygusal etkisini korurken dünya çapında kitlelere ulaşmanızı sağlar.",
       "conclusionPara2": "Teknoloji geliştikçe, daha doğal ses sentezi, daha iyi kültürel uyum ve içerik oluşturma iş akışlarıyla sorunsuz entegrasyon göreceğiz. Küresel iletişimin geleceği burada ve her dili konuşuyor."
-    },
-    "gridCollageAiPrompts": {
-      "title": "3x3 Izgara Fotoğraf Kolajı AI İpuçları: Orman, Plaj ve Şehir Editoryal Görünümleri",
-      "publishedDate": "10 Mayıs 2026",
-      "readTime": "8 dk okuma",
-      "category": "Nano Şablon",
-      "metaDescription": "AI görüntü oluşturucular için 3x3 ızgara kolaj ipuçlarını kopyala-yapıştır yapın — kış ormanı, yaz plajı, kentsel editoryal, kafe estetiği ve daha fazlası.",
-      "keywords": "3x3 ızgara kolaj, fotoğraf ızgara ipuçları, ai fotoğraf kolajı, instagram estetik ipuçları, pinterest estetik ai",
-      "audience": "Pinterest yaratıcıları, Instagram estetik hesapları, moda blog yazarları, yaşam tarzı içerik oluşturucuları.",
-      "heroTitle": "Kahraman resmi",
-      "heroContent": "Bir tamamlanmış 3x3 + 1-paragraf TL;DR. Tüm dokuz panelde mükemmel tutarlılığı koruyan etkileyici 3x3 ızgara kolajları oluşturun.",
-      "whatIsTitle": "3x3 ızgara kolaj ipucu nasıl görünür",
-      "whatIsContent": "Yapı: konu + ortam + mevsim + 9 mikro-poz + aydınlatma tutarlılığı notu. Her ipucu genel temayı tanımlarken tüm panellerde görsel uyumu sağlar.",
-      "winterForestTitle": "Kış ormanı editoryali",
-      "winterForestDescription": "GSC uzun kuyrukla doğrudan eşleşir. Yumuşak mavi aydınlatma ve büyülü atmosferle kaplı mistik karla örtülü çam ormanları.",
-      "winterForestPrompt": "Kış ormanı manzaralarının 3x3 ızgarası. Panel 1: Geniş orman girişi. Panel 2: Buzlu dallar. Panel 3: Kar yolu. Panel 4: Donmuş dere. Panel 5: Ağaçların arasından gelen güneş ışığı. Panel 6: Hayvan izleri. Panel 7: Buzlu çam kozalakları. Panel 8: Yükselen sis. Panel 9: Ağaçların arasından dağ manzarası. Yumuşak mavi ve beyaz palet, büyülü aydınlatma, doğa fotoğrafçılığı tarzı.",
-      "summerBeachTitle": "Yaz plajı altın saati",
-      "summerBeachDescription": "Gün batımında sıcak tropikal plaj manzaraları, altın saat aydınlatması ve rahat tatil havası.",
-      "summerBeachPrompt": "Yaz plajı manzaralarının 3x3 ızgarası. Panel 1: Palmiye ağacı silueti. Panel 2: Okyanus dalgaları. Panel 3: Plaj sandalyeleri. Panel 4: Kumda deniz kabukları. Panel 5: Tropikal içecek. Panel 6: Suya giden ayak izleri. Panel 7: Plaj havlusu. Panel 8: Okyanus ufku. Panel 9: Plaj voleybolu. Sıcak turuncu ve pembe palet, altın saat aydınlatması.",
-      "autumnCafeTitle": "Sonbahar şehir kafesi",
-      "autumnCafeDescription": "Sonbahar renkleri ve sıcak, davetkar atmosferle rahat bir kentsel kafe manzarası.",
-      "autumnCafePrompt": "Sonbahar kafe manzaralarının 3x3 ızgarası. Panel 1: Kahve fincanı buharı. Panel 2: Penceredeki yağmur damlaları. Panel 3: Sıcak aydınlatma. Panel 4: Dışarıdaki sonbahar yaprakları. Panel 5: Rahat iç mekan. Panel 6: Barista kahve yapıyor. Panel 7: Masada kitap. Panel 8: Sokak manzarası. Panel 9: Akşam ambiyansı. Sıcak kahverengi ve turuncu palet, yumuşak aydınlatma.",
-      "springGardenTitle": "Bahar bahçesi cottagecore",
-      "springGardenDescription": "Romantik cottagecore bahçe manzaraları, taze bahar çiçekleri ve doğal, pastoral unsurlarla.",
-      "springGardenPrompt": "3x3 bahar bahçesi manzaraları. Panel 1: Kiraz çiçekleri. Panel 2: Bahar yağmuru. Panel 3: Yeni yeşil yapraklar. Panel 4: Çiçek üzerinde kelebek. Panel 5: Bahçe yolu. Panel 6: Bahçe aletleri. Panel 7: Yağmur botları. Panel 8: Kuş yuvası. Panel 9: Bahçe pikniği. Yumuşak pastel paleti, taze ve havadar.",
-      "neonUrbanTitle": "Neon noir kentsel",
-      "neonUrbanDescription": "Neon ışıklar, gölgeler ve kentsel gizem atmosferi ile dramatik şehir gece manzaraları.",
-      "neonUrbanPrompt": "3x3 neon kentsel manzaralar. Panel 1: Neon tabela yansıması. Panel 2: Çatıdan şehir ışıkları. Panel 3: Trafik ışığı izleri. Panel 4: Restoran penceresi. Panel 5: Sokak sanatçısı. Panel 6: Dükkan vitrinleri. Panel 7: Yağmurda taksi ışıkları. Panel 8: Köprü aydınlatması. Panel 9: Bar girişi. Derin mavi tonlar ve neon vurgular.",
-      "minimalistStudioTitle": "Minimalist stüdyo (beyaz arka plan)",
-      "minimalistStudioDescription": "Beyaz arka planlarla temiz, minimalist stüdyo çekimleri ve konu basitliğine odaklanma.",
-      "minimalistStudioPrompt": "3x3 minimalist stüdyo manzaraları. Panel 1: Tek nesne. Panel 2: Temiz hatlar. Panel 3: Negatif alan. Panel 4: Basit gölgeler. Panel 5: Saf beyaz arka plan. Panel 6: Minimal kompozisyon. Panel 7: İnce doku. Panel 8: Geometrik şekiller. Panel 9: Temiz aydınlatma. Monokrom beyaz ve gri.",
-      "templateTitle": "Yeniden kullanılabilir istem şablonu",
-      "templateContent": "Hangi alanların değiştirilebilir olduğunu belirtin; şablon-3x3-ızgara-fotoğraf-kolajı şablon sayfası bağlantısını bir ekran görüntüsü ile gömün. Şablon yapısı: [Tema] + [Ayar] + [Mevsim] + [9 Panel Açıklamaları] + [Aydınlatma] + [Stil].",
-      "consistencyTipsTitle": "9 panelde yüz / kıyafet tutarlılığını koruma ipuçları",
-      "consistencyTips": [
-        "Tüm paneller için aynı AI modelini ve ayarlarını kullanın",
-        "İstemlerde tutarlı aydınlatma açıklamaları koruyun",
-        "Görsel uyum için kesin renk paletlerini belirtin",
-        "Karakter tutarlılığı için preserve-facial-features-ai-generation bağlantısını ekleyin",
-        "Kamera açılarını ve mesafelerini tutarlı tutun"
-      ],
-      "moreDirectionsTitle": "Denemek için daha fazla estetik yön",
-      "moreDirections": [
-        "Çöl gün batımı + bohem tarz",
-        "Kentsel sokak modası + grafiti arka planı",
-        "Vintage kütüphane + akademik estetik",
-        "Tropikal cennet + tatil kıyafetleri",
-        "Endüstriyel loft + minimalist tasarım",
-        "Dağ kabini + rahat kış kıyafetleri",
-        "Plaj evi + kıyı büyükanneler tarzı",
-        "Şehir çatısı + akşam şıklığı",
-        "Orman açıklığı + peri estetiği",
-        "Modern ofis + profesyonel kıyafet",
-        "Sanat galerisi + sofistike akşam kıyafeti",
-        "Kırsal bahçe + romantik piknik tarzı"
-      ],
-      "faqTitle": "SSS",
-      "faq": [
-        {
-          "question": "Neden özellikle 3x3?",
-          "answer": "3x3 ızgaralar, Instagram'ın kare formatı için mükemmeldir ve mobil cihazlarda iyi çalışan dengeli görsel kompozisyonlar oluşturur."
-        },
-        {
-          "question": "2x2 kullanabilir miyim?",
-          "answer": "Evet, ancak 3x3 daha fazla hikaye anlatma fırsatı ve görsel platformlarda daha iyi etkileşim sağlar."
-        },
-        {
-          "question": "Aynı kişi neden farklı görünüyor?",
-          "answer": "Yapay zeka varyasyonları doğal olarak meydana gelir. Daha iyi bir tutarlılık için tutarlı istemler ve tohum değerleri kullanın."
-        },
-        {
-          "question": "Ayrı çerçeveler olarak dışa aktarabilir miyim?",
-          "answer": "Evet, çoğu platform sosyal medya gönderilerinde ayrı kullanım için bireysel panel dışa aktarmaya izin verir."
-        }
-      ],
-      "ctaTitle": "Şablonu Aç",
-      "ctaDescription": "Özelleştirilebilir temalar ve stillerle 3x3 ızgara şablonumuzu deneyin.",
-      "ctaButton": "Izgara Şablonlarını Gözden Geçir",
-      "winterForestGridTitle": "🌲 Kış Ormanı Izgara İsteği",
-      "minimalistWinterTitle": "❄️ Minimalist Kış Izgarası",
-      "tropicalBeachTitle": "🏖️ Tropikal Plaj Izgarası",
-      "nauticalBeachTitle": "🌊 Nautik Plaj Izgarası",
-      "streetFashionTitle": "🏙️ Sokak Modası Izgarası",
-      "nightCityTitle": "🌃 Gece Şehri Izgarası",
-      "cohesiveColorPalettesTitle": "Tutarlı Renk Paletleri Kullanın",
-      "cohesiveColorPalettesContent": "Renk şemanızı istemde açıkça tanımlayın. Dokuz görüntünün uyumlu bir şekilde çalışmasını sağlamak için belirli renkleri veya ruh hallerini belirtin.",
-      "planCompositionTitle": "Kompozisyonunuzu Planlayın",
-      "planCompositionContent": "Dokuz panelin nasıl bir araya geleceğini düşünün. Maksimum etki için ızgara boyunca bağlanan görsel yollar veya temalar oluşturmayı düşünün.",
-      "testIndividualPanelsTitle": "Bireysel Panelleri Test Edin",
-      "testIndividualPanelsContent": "Tam ızgaraya geçmeden önce istem yapınızı test etmek için önce bireysel paneller oluşturun. Bu, zaman kazandırır ve yaklaşımınızı geliştirmeye yardımcı olur.",
-      "platformTableHeader": "Platform",
-      "gridSupportHeader": "Izgara Desteği",
-      "bestForHeader": "En İyi",
-      "midjourneyName": "Midjourney",
-      "midjourneySupport": "⚠️ Sınırlı",
-      "midjourneyBest": "Sanatsal ızgaralar",
-      "dalleName": "DALL-E 3",
-      "dalleSupport": "✅ Mükemmel",
-      "dalleBest": "Kesin düzenler",
-      "stableDiffusionName": "Stable Diffusion",
-      "stableDiffusionSupport": "✅ İyi",
-      "stableDiffusionBest": "Özel iş akışları",
-      "conclusionTitle": "3x3 Kafes Kolajlarınızı Oluşturmaya Başlayın",
-      "conclusionContent1": "3x3 kafes kolajları, görsel hikaye anlatımı için sonsuz yaratıcı olanaklar sunar. İster Instagram için uyumlu bir estetik oluşturuyor olun, ister dijital sanat için sanatsal kompozisyonlar yaratıyor olun, bu istemler etkileyici sonuçlar için temel sağlar.",
-      "conclusionContent2": "Başarının anahtarı tutarlılıktadır—dokuz panelin tamamında aynı aydınlatmayı, renk paletini ve görsel stili korumak, dikkat çeken profesyonel bir görünüm yaratır.",
-      "conclusionContent3": "Farklı temalar ve yaklaşımlar ile denemeler yaparak yaratıcı vizyonunuz için en iyi olanı keşfedin. Burada paylaşılan şablonlar ve teknikler, benzersiz sanatsal yolculuğunuz için sadece başlangıç noktalarıdır.",
-      "conclusionContent4": "Oluşturmaya hazır mısınız? Kafes şablonlarımıza göz atın ve AI destekli kolaj maceranıza bugün başlayın.",
-      "whyAiTitle": "3x3 Kafes Kolajları İçin Neden AI Kullanmalısınız?",
-      "consistencyTitle": "Mükemmel Görsel Tutarlılık",
-      "consistencyContent": "AI, her panelin aynı aydınlatmayı, renk paletini ve stili korumasını sağlar, böylece profesyonel görünümlü, uyumlu ve kasıtlı kafesler oluşturur.",
-      "timeEfficiencyTitle": "Hızlı Oluşturma Süreci",
-      "timeEfficiencyContent": "Tam 3x3 kafesleri, saatler süren manuel fotoğraf düzenleme ve kompozisyon çalışmalarının yerine dakikalar içinde oluşturun.",
-      "creativeFreedomTitle": "Sonsuz Yaratıcı Olanaklar",
-      "creativeFreedomContent": "Geleneksel fotoğrafçılıkla yaratması zor veya imkansız olan temaları, stilleri ve kavramları keşfedin.",
-      "costEffectiveTitle": "Bütçe Dostu Çözüm",
-      "costEffectiveContent": "Pahalı fotoğraf çekimlerine, modellere veya mekanlara ihtiyaç yok—AI, maliyetin çok altında etkileyici görseller oluşturur.",
-      "seasonalTitle": "Mevsimsel ve Tematik Varyasyonlar",
-      "seasonalDescription": "Kafes kolajlarınızı farklı mevsimlere ve temalara uyarlayarak yıl boyunca taze ve ilgili içerikler oluşturun.",
-      "platformTitle": "Platforma Özel Optimizasyon",
-      "instagramTitle": "Instagram Optimizasyonu",
-      "instagramContent": "3x3 kafesler, Instagram'ın kare formatına ve kaydırmalı gönderilerine mükemmel bir şekilde uyar, platformda etkileşimi ve görsel etkiyi maksimize eder.",
-      "pinterestTitle": "Pinterest Stratejisi",
-      "pinterestContent": "Dikey kafes düzenlemeleri, Pinterest'in uzun formatı için son derece iyi çalışır, daha yüksek tıklama oranları ve kaydetmeler sağlar.",
-      "websiteTitle": "Web Sitesi Entegrasyonu",
-      "websiteContent": "Kafes kolajlarını kahraman görselleri, galeri bölümleri veya blog başlıkları olarak kullanarak görsel olarak çarpıcı web içeriği oluşturun.",
-      "advancedTitle": "Gelişmiş Teknikler",
-      "narrativeTitle": "Görsel Anlatılar Oluşturun",
-      "narrativeContent": "Panelleri düzenleyerek ızgara boyunca bir hikaye anlatın, her panel bir öncekine dayanarak tutarlı bir anlatı kurgusu oluşturur.",
-      "colorProgressionTitle": "Renk Geçiş Teknikleri",
-      "colorProgressionContent": "Paneller arasında soğuk tonlardan sıcak tonlara veya açık tonlardan koyu tonlara doğru kademeli renk değişimleri ile dinamik görsel efektler deneyin.",
-      "thematicTitle": "Tematik Bağlantılar",
-      "thematicContent": "Panelleri, ızgara boyunca tekrarlayan ince temalar veya motiflerle bağlayarak daha derin görsel anlam katmanları oluşturun."
     },
     "redCarpetAiLooks": {
       "title": "Nano Banana AI ile İkonik Kırmızı Halı Tarzlarını Yeniden Yaratın",
@@ -5621,55 +5118,6 @@
         "AI video boru hattı",
         "difüzyon iş akışı",
         "hareket grafikleri AI"
-      ]
-    },
-    "video_translation_eval": {
-      "title": "Yapay Zeka Video Çeviri Kalitesini Değerlendirme",
-      "subtitle": "Önemli Metrikler",
-      "description": "Transkripsiyondan ses sentezine kadar, yapay zeka video çeviri kalitesini değerlendirmek için gerekli metrikleri keşfedin.",
-      "intro": "Diller arasında video çevirisi yapmak kolay bir iş değil — transkripsiyon, çeviri, ses sentezi, zamanlama ve daha fazlasını içerir. Curify'de, her parçanın endüstri standartlarını karşıladığından emin olmak için sağlam bir değerlendirme süreci geliştirdik.",
-      "section1_title": "1. Transkripsiyon Kalitesi",
-      "section1_engine": "Motor: WhisperX",
-      "section1_metrics": [
-        "WER (Kelimeler Arası Hata Oranı)",
-        "Noktalama F1 (ifade gücü ve okunabilirlik için)"
-      ],
-      "section2_title": "2. Çeviri Kalitesi",
-      "section2_engine": "Motorlar: Helsinki, MarianMT",
-      "section2_metrics": [
-        "BLEU (standart metrik)",
-        "COMET / chrF++ (anlamsal benzerlik)",
-        "İnsan incelemesi: akıcılık + yeterlilik"
-      ],
-      "section3_title": "3. Ses Sentezi Kalitesi",
-      "section3_engine": "Motorlar: XTTS / YourTTS",
-      "section3_metrics": [
-        "MOS (Doğallık, benzerlik, ifade gücü)",
-        "Konuşmacı doğrulama doğruluğu"
-      ],
-      "section4_title": "4. Hizalama & Dudak Senkronizasyonu",
-      "section4_metrics": [
-        "Segment süresi uyumsuzluğu",
-        "Wav2Lip senkronizasyon güveni",
-        "Zamansal kayma analizi"
-      ],
-      "section5_title": "5. Anlamsal Koruma",
-      "section5_method": "Çevirilen konuşmanın orijinal anlamı, tonu ve duygusunu koruyup korumadığını değerlendirmek için LLM'leri (GPT-4 gibi) kullanıyoruz. Örnek istem:",
-      "section5_prompt": "Bu Mandarin transkriptini İngilizce seslendirme ile karşılaştırın. Ton, niyet ve içerik uyumlu mu? 1-5 arası puanlayın ve açıklayın.",
-      "section6_title": "6. Kullanıcı Geri Bildirimi & GTM Doğrulaması",
-      "section6_metrics": [
-        "Ürün kategorisine uygun ses kalitesi",
-        "İzleyici tutma iyileşmesi",
-        "Erken kullanıcıların benimseme istekliliği (örneğin, 1688 satıcıları)"
-      ],
-      "closing": "Curify'de sadece çeviri yapmıyoruz — hikaye anlatımını, duyguyu ve netliği diller arasında koruyoruz. Sesinizi küresel ölçekte ölçeklendirmeye hazırsanız, bizimle iletişime geçin.",
-      "available_locales": "Post mevcut diller: [EN] [ZH] [ES] [DE]",
-      "metaDescription": "Videoları çevirmek, sadece çeviri değildir — transkripsiyon, ses, zamanlama ve duygu içerir. Curify'de AI video çeviri kalitesini nasıl değerlendirdiğimiz.",
-      "seoKeywords": [
-        "video çeviri değerlendirmesi",
-        "AI dublaj kalitesi",
-        "çeviri karşılaştırması",
-        "video QA"
       ]
     },
     "qaBotToTaskAgent": {

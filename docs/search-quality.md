@@ -1,6 +1,6 @@
 # Search Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-18 (item 1 — search_aliases top-up audit — shipped). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `scripts/enrich_search_aliases.cjs`, `scripts/topup_search_aliases.py`, or `scripts/lib/auto_tag.cjs`._
+_Last updated: 2026-05-18 (item 3 — LLM query rewrite — shipped). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `lib/searchRewrite.ts`, `scripts/enrich_search_aliases.cjs`, `scripts/topup_search_aliases.py`, or `scripts/lib/auto_tag.cjs`._
 
 ## Framing
 
@@ -24,8 +24,9 @@ Tracks are interleaved but distinct. Recall fixes ship in `search/page.tsx` (tok
 | 2026-05-15 | `a203ce6` | Catch-up `search_aliases` enrichment for 97 newly-added inspirations | Same script, re-run after a content drop. |
 | 2026-05-15 | `ee1e5cc` | Share the enricher with the daily auto-tag pipeline (`scripts/lib/auto_tag.cjs`) | Future content drops auto-enrich; no separate maintenance step. |
 | 2026-05-17 | `7df4425` | **Strip structured-syntax noise from query tokenizer** (P0 fix #1) | Tokenizer was preserving meta-words (`topics`, `theme`, `insights`, `highlights`) and punctuation (`: = ·`) as literal tokens. Strict-AND failed; relaxed-OR inflated past threshold. Identified by the Reddit-search-comparison eval. |
-| 2026-05-18 | `fe3a4d7` | **Low-result query logging** (shortlist item 2) | New `search_low_result` action type fires from `SearchResultsClient` when total results across grid + matched templates + gallery prompts is 1-2 (threshold = 3). `contentId` carries the query + result count so admin can rank queries by how close they are to the threshold. Existing `search_noresult` event continues to fire for zero-result queries unchanged. Backend SQL panel extension still needed (`curify-studio`) to surface "Low-result queries (last 14 days)" in admin. |
-| 2026-05-18 | _(pending push)_ | **`search_aliases` top-up audit** (shortlist item 1) | Appended targeted aliases to 775 inspirations across 48 templates in 6 families — per-country MBTI / culture (23 templates → `global`, `world`, `international`, `cross-cultural`, `country`, plus zh equivalents), synonym / advanced-expression (3 → `theory`, `linguistics`, `synonym`, `antonym`, `advanced expressions`, etc.), travel / destination (13 → `remote`, `destination`, `hidden gems`, `city escape`, `weekend getaway`), expat / lifestyle culture (5 → `expat`, `living abroad`, `cross-cultural living`), spring / aesthetic / watercolor (11 → `spring`, `aesthetic`, `floral`, `botanical`, plus `唯美` / `春天` covering the 2026-05-18 `唯美春天` report), photorealistic portrait / ID photo (3 → `证件照`, `passport photo`, `headshot`, plus `身份证照`, `id photo style` covering the `证件照` report). ~11,841 alias entries added net of dedup. Reproducible via `scripts/topup_search_aliases.py`. |
+| 2026-05-18 | `fe3a4d7` | **Low-result query logging** (shortlist item 2) | New `search_lowresult` action type fires from `SearchResultsClient` when total results across grid + matched templates + gallery prompts is 1-2 (threshold = 3). `contentId` carries the query + result count so admin can rank queries by how close they are to the threshold. Existing `search_noresult` event continues to fire for zero-result queries unchanged. Backend SQL panel extension still needed (`curify-studio`) to surface "Low-result queries (last 14 days)" in admin. |
+| 2026-05-18 | `4aa1dad` | **`search_aliases` top-up audit** (shortlist item 1) | Appended targeted aliases to 775 inspirations across 48 templates in 6 families — per-country MBTI / culture (23 templates → `global`, `world`, `international`, `cross-cultural`, `country`, plus zh equivalents), synonym / advanced-expression (3 → `theory`, `linguistics`, `synonym`, `antonym`, `advanced expressions`, etc.), travel / destination (13 → `remote`, `destination`, `hidden gems`, `city escape`, `weekend getaway`), expat / lifestyle culture (5 → `expat`, `living abroad`, `cross-cultural living`), spring / aesthetic / watercolor (11 → `spring`, `aesthetic`, `floral`, `botanical`, plus `唯美` / `春天` covering the 2026-05-18 `唯美春天` report), photorealistic portrait / ID photo (3 → `证件照`, `passport photo`, `headshot`, plus `身份证照`, `id photo style` covering the `证件照` report). ~11,841 alias entries added net of dedup. Reproducible via `scripts/topup_search_aliases.py`. |
+| 2026-05-18 | _(pending push)_ | **LLM query rewrite** (shortlist item 3) | New module `lib/searchRewrite.ts` calls `gpt-4o-mini` server-side when the original query returns <3 strict-template hits. Up to 3 alternate phrasings per call, rescored against the catalog via a refactored `scoreQueryTokens` helper, results unioned with the original by inspiration id (max-score-wins). UI shows "Few results for X. Also showing results for: …" hint above the grid when the rewrite contributed. Tracking events (`search_noresult` / `search_lowresult`) now fire on the POST-rewrite count, so the admin failing-query backlog only surfaces queries the rewriter couldn't rescue. Process-local LRU cache (256 / 7-day) — Vercel KV upgrade deferred until traffic warrants. Requires `OPENAI_API_KEY` on Vercel — falls back to no-op when key is absent. |
 
 ---
 
@@ -107,26 +108,29 @@ Open follow-up: **727 templates aren't in any of the 6 families.** The next audi
 ### ~~2. Low-result query logging~~ ✓ shipped 2026-05-18 (frontend side)
 Frontend instrumentation landed. `SearchResultsClient` now fires:
 - `search_noresult` when total results = 0 (existing event, backward compat).
-- **NEW** `search_low_result` when total results is 1-2 (threshold = 3). `contentId` is `<query>|n=<count>` so admin can rank queries by how close they are to the threshold without joining against the results table.
+- **NEW** `search_lowresult` when total results is 1-2 (threshold = 3). `contentId` is `<query>|n=<count>` so admin can rank queries by how close they are to the threshold without joining against the results table.
 
 Total result count = `gridItems.length + matchedTemplates.length + galleryPrompts.length` (covers all three result surfaces, not just inspirations).
 
-**Backend follow-up (still open):** add a "Low-result queries (last 14 days)" panel to `curify-studio/curify_background/app/crud/admin.py` that surfaces both `search_noresult` and `search_low_result` events, grouped by query, sorted by frequency. Once that lands, the alias top-up audit (item 1) becomes data-driven rather than analyst-driven.
+**Backend follow-up (still open):** add a "Low-result queries (last 14 days)" panel to `curify-studio/curify_background/app/crud/admin.py` that surfaces both `search_noresult` and `search_lowresult` events, grouped by query, sorted by frequency. Once that lands, the alias top-up audit (item 1) becomes data-driven rather than analyst-driven.
 
-### 3. NEW — LLM query rewrite on no/low-result queries
-**Owner / priority TBD — pending your call.** Recall floor: when a query returns 0 or thin results, call `gpt-4o-mini` server-side to rewrite the query into 1-3 alternate phrasings, then re-match against the catalog. Returns the union of original + best-scoring rewrite.
+### ~~3. LLM query rewrite on no/low-result queries~~ ✓ shipped 2026-05-18
+**Recall floor.** When the original query returns fewer than `LOW_RESULT_THRESHOLD` (3) strict-template hits, the server calls `gpt-4o-mini` for 1-3 alternate phrasings, scores each rewrite against the catalog, and unions the results into the page.
 
-Constraints:
-- **Server-side only.** Cannot expose `OPENAI_API_KEY` to the browser. Run inside the search server component (the file is already a server component, `nanoPromptsService` calls Redis from there). Add the OpenAI call in the same path.
-- **Cache aggressively.** Same failed query shouldn't trigger an LLM call twice — cache results in Redis (or in a process-local LRU as a stop-gap) keyed by normalized query.
-- **Latency / cost.** `gpt-4o-mini` returns rewrites in ~300-500 ms. Cost ≈ $0.0001 per query. At today's traffic (~1-2 thin queries / day per the GSC baseline) this is negligible; at scale we'd want to throttle.
-- **Failure mode.** If the LLM call fails or returns no usable rewrite, fall back to current behavior (empty results page with "no matching topics — press Enter to search").
+Implementation:
+- New module `lib/searchRewrite.ts` — server-only. Inlines a compact catalog-context system prompt (templates we have: vocabulary, MBTI, infographics, travel, watercolor, portrait, etc.) so the model proposes catalog-aligned terms instead of generic alternates. 5s timeout, fails safe to an empty rewrite list.
+- `search/page.tsx` — refactored the strict/relaxed scoring loop into a `scoreQueryTokens` helper, called once for the original tokens and once per rewrite. Results merged by inspiration id (max score across passes), strict-template matches unioned, gallery prompts fetched for the first tag-matching rewrite when the original wasn't a tag.
+- `SearchResultsClient.tsx` — accepts a new `usedRewrites?: string[]` prop. When non-empty AND results landed, an amber-tinted hint renders above the grid: "Few results for &ldquo;…&rdquo;. Also showing results for: …" so the reader knows we expanded the search.
 
-The two 2026-05-18 reports are good test cases:
-- `唯美春天` → expected rewrites: "aesthetic spring", "春天插画", "spring flowers", "唯美 风景". The "春天" alias top-up (from item 1) gets us part of the way; LLM rewrite generalizes to queries we didn't pre-alias.
-- `证件照` → expected rewrites: "ID photo style portrait", "passport photo", "professional headshot", "证件 风格头像". If we have photorealistic-portrait templates and we alias them well (item 1), the rewrite recovers; if we don't, the rewrite still won't help and the query is a content gap.
+**Tracking is the post-rewrite count.** The `search_noresult` / `search_lowresult` events fire from `useEffect` on the FINAL `totalResults` — when the rewrite recovers the query (total ≥ 3), no event fires. The admin's failing-query backlog stays focused on "tried everything and still empty." When the rewrite ran but didn't recover, contentId gains a `|rw=1` suffix so admin can split "thin after rescue attempt" from "thin without rescue attempt."
 
-The script `scripts/enrich_search_aliases.cjs` already uses `gpt-4o-mini` for offline enrichment — the same prompt scaffolding can move into the request-time rewrite path.
+**Caching:** process-local LRU (256 entries, 7-day TTL) in `lib/searchRewrite.ts`. Vercel serverless invocations don't share memory so this saves nothing across requests in prod — it's mainly a dedupe inside a warm container and a free dev-mode win. Upgrade to Vercel KV or Upstash Redis once we have enough traffic to care.
+
+**Production env requirement.** `OPENAI_API_KEY` needs to be set on Vercel — add it via the Vercel dashboard. Without the key, `getClient()` returns null and the rewriter falls through to an empty list (no-op). No deployment breakage if the key is missing; rewrite just stops working.
+
+The two 2026-05-18 user reports are now the regression test:
+- `唯美春天` → rewriter should propose `watercolor spring flowers`, `春天插画`, `aesthetic spring` (or similar). Combined with the alias top-up these now resolve to watercolor / gardening / herbal templates.
+- `证件照` → rewriter should propose `passport photo portrait`, `professional headshot`, `证件 风格头像`. Hits the portrait-retouching templates.
 
 ### 4. P1 — Travel-intent ranker weighting (theme 12)
 Queries containing `city escapes`, `escapes`, `destinations`, `itinerary`, `travel`, `trip`, `weekend getaway` should weight toward templates tagged `travel` / `city` / `itinerary` and away from `architecture` (where 3D decorative landmark models live). Ranker tweak in `search/page.tsx`, not a content change.
@@ -161,6 +165,7 @@ Re-run the click-attribution SQL. Compare result_ctr_pct against the 5.5% baseli
 | Search page (tokenizer, matcher, redirect rules) | `app/[locale]/(public)/search/page.tsx` |
 | Search results client | `app/[locale]/(public)/search/SearchResultsClient.tsx` |
 | Suggestion entries (tier-1/2/3, aliases) | `lib/searchIndex.ts` |
+| LLM query rewriter (server-only, gpt-4o-mini) | `lib/searchRewrite.ts` |
 | `search_aliases` enrichment script | `scripts/enrich_search_aliases.cjs` |
 | Auto-tag pipeline (shared enricher) | `scripts/lib/auto_tag.cjs` |
 | Inspiration records (carry `search_aliases`) | `public/data/nano_inspiration.json` |

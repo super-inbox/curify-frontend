@@ -31,7 +31,7 @@ export type ActionType =
   | "download"
   | "search"
   | "search_noresult"
-  | "search_low_result"
+  | "search_lowresult"
   | "video_click"
   | "video_play";
 
