@@ -145,7 +145,7 @@ export default function SearchResultsClient({
       track({
         contentId: `${q}|n=${totalResults}${rwSuffix}`,
         contentType: "topic_capsule",
-        actionType: "search_low_result",
+        actionType: "search_lowresult",
       });
     }
   }, [query, totalResults, usedRewrites.length, track]);
