@@ -7407,5 +7407,56 @@
       "for-designers",
       "for-publishers"
     ]
-  }
+  },
+  {
+    "id": "template-regional-alcoholic-drinks-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Traditional Regional Drinks Infographic Creator) Create a fun, illustrated infographic poster titled '{region} Traditional Drinks'. Layout: A vibrant blue background with scattered stars, featuring multiple hand-drawn illustrations of bottles, glasses, and traditional vessels, each paired with a speech bubble containing the drink's name and description. Include the drink's name in both English and the local language where applicable. Style: Cute, cartoonish illustration aesthetic, bold outlines, soft colors, playful typography, clean and informative layout, direct image generation. Subject: '{region} traditional alcoholic drinks illustrated infographic'.",
+            "parameters": [
+                {
+                    "name": "region",
+                    "label": "Region/Country",
+                    "type": "text",
+                    "placeholder": ["Korean", "French", "Mexican", "Japanese", "Russian", "Italian", "Spanish"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-regional-alcoholic-drinks-infographic-korean-prev.jpg"
+},
+  {
+    "id": "template-fashion-shape-guide-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Fashion Style Guide Infographic Creator) Create a clean, helpful fashion guide poster titled '{topic}'. Layout: A soft pink sparkly background with clear rows for different categories (face shapes: oval, round, square, heart, diamond / body types: hourglass, pear, apple, rectangle, inverted triangle). Each section includes a reference illustration (face or body shape) paired with simple line-art icons of the most flattering styles, plus text labels. Include 'Most Flattering' sections and optional 'Avoid' sections. Style: Minimalist design, neutral brown text, soft pastels, clear typography, direct image generation. Subject: '{topic} fashion guide infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Fashion Guide Topic",
+                    "type": "text",
+                    "placeholder": ["Earrings for Face Shape", "Necklaces for Face Shape", "Belts for Body Type", "Hats for Face Shape", "Glasses for Face Shape", "Shoes for Body Type", "Colors for Skin Tone"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-fashion-shape-guide-infographic-glasses-for-face-shape-prev.jpg"
+},
+  {
+    "id": "template-country-dos-and-donts-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Country Culture Dos & Don'ts Infographic Creator) Create a whimsical, vintage-style travel poster titled 'Dos & Don'ts in {country_name}'. Layout: A split infographic with green 'Dos' and red 'Don'ts' sections, each featuring hand-drawn cartoon illustrations of cultural customs, etiquette, and taboos. Include the country flag at the top, a textured aged paper background, and speech bubbles/ icons to highlight rules. Style: Cute retro cartoon art, warm muted colors, friendly characters, clear and simple text, direct image generation. Subject: '{country_name} cultural etiquette dos and don'ts illustrated poster'.",
+            "parameters": [
+                {
+                    "name": "country_name",
+                    "label": "Country Name",
+                    "type": "text",
+                    "placeholder": ["Italy", "Korea", "France", "Japan", "Spain", "Thailand", "Germany"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-country-dos-and-donts-infographic-japan-prev.jpg"
+}
 ]
