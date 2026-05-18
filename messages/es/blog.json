@@ -3965,19 +3965,7 @@
             "useCaseDesc": "p. ej., cartel, avatar",
             "mood": "Estado de ánimo",
             "moodDesc": "p. ej., acogedor, oscuro"
-          },
-          "finalVerdict": "Para el doblaje y la traducción de videos en 2026, ElevenLabs gana en calidad, soporte multilingüe y facilidad de uso. F5-TTS ofrece un valor increíble para usuarios técnicos que trabajan dentro de restricciones presupuestarias o que requieren generación ilimitada sin restricciones comerciales.",
-          "gettingStarted": "Recursos para Comenzar",
-          "f5TtsSetup": "Configuración de F5-TTS",
-          "f5TtsSetupDesc": "Repositorio oficial de GitHub, requisitos, instalación e interfaz de CLI",
-          "elevenLabsSetup": "Configuración de ElevenLabs",
-          "elevenLabsSetupDesc": "Panel web, acceso a API y guía de inicio rápido",
-          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-          "themeDesc": "p.ej., fantasía, viaje",
-          "useCase": "Caso de uso",
-          "useCaseDesc": "p.ej., cartel, avatar",
-          "mood": "Estado de ánimo",
-          "moodDesc": "p.ej., acogedor, oscuro"
+          }
         }
       },
       "keyInsight": {
@@ -4787,55 +4775,6 @@
         "pipeline de video IA",
         "flujo de trabajo de difusión",
         "gráficos en movimiento IA"
-      ]
-    },
-    "video_translation_eval": {
-      "title": "Evaluando la Calidad de Traducción de Video por IA",
-      "subtitle": "Métricas que Importan",
-      "description": "Descubre las métricas esenciales para evaluar la calidad de traducción de video por IA, desde la transcripción hasta la síntesis de voz.",
-      "intro": "Traducir videos entre idiomas no es una tarea fácil: implica transcripción, traducción, síntesis de voz, sincronización y más. En Curify, hemos construido un robusto pipeline de evaluación para asegurar que cada pieza cumpla con los estándares de la industria.",
-      "section1_title": "1. Calidad de Transcripción",
-      "section1_engine": "Motor: WhisperX",
-      "section1_metrics": [
-        "WER (Tasa de Error de Palabras)",
-        "Puntuación F1 (para expresividad y legibilidad)"
-      ],
-      "section2_title": "2. Calidad de Traducción",
-      "section2_engine": "Motores: Helsinki, MarianMT",
-      "section2_metrics": [
-        "BLEU (métrica estándar)",
-        "COMET / chrF++ (similitud semántica)",
-        "Revisión humana: fluidez + adecuación"
-      ],
-      "section3_title": "3. Calidad de Síntesis de Voz",
-      "section3_engine": "Motores: XTTS / YourTTS",
-      "section3_metrics": [
-        "MOS (Naturalidad, similitud, expresividad)",
-        "Precisión de verificación de hablante"
-      ],
-      "section4_title": "4. Alineación y Sincronización Labial",
-      "section4_metrics": [
-        "Desajuste de duración de segmento",
-        "Confianza de sincronización Wav2Lip",
-        "Análisis de deriva temporal"
-      ],
-      "section5_title": "5. Preservación Semántica",
-      "section5_method": "Usamos LLMs (como GPT-4) para juzgar si el discurso traducido preserva el significado, tono y emoción originales. Ejemplo de prompt:",
-      "section5_prompt": "Compara esta transcripción en mandarín con la voz en inglés. ¿Coinciden el tono, la intención y el contenido? Califica del 1 al 5 y explica.",
-      "section6_title": "6. Retroalimentación de Usuarios y Validación GTM",
-      "section6_metrics": [
-        "Calidad de voz adecuada para la categoría de producto",
-        "Mejora en la retención de espectadores",
-        "Disposición a adoptar de los primeros usuarios (por ejemplo, vendedores de 1688)"
-      ],
-      "closing": "En Curify, no solo traducimos: preservamos la narración, la emoción y la claridad a través de los idiomas. Si estás listo para llevar tu voz a nivel global, contáctanos.",
-      "available_locales": "Publicación disponible en: [EN] [ZH] [ES] [DE]",
-      "metaDescription": "Traducir videos es más que traducción: es transcripción, voz, tiempo y emoción. Cómo evaluamos la calidad de la traducción de video IA en Curify.",
-      "seoKeywords": [
-        "evaluación de traducción de video",
-        "calidad de doblaje IA",
-        "benchmarking de traducción",
-        "QA de video"
       ]
     },
     "qaBotToTaskAgent": {

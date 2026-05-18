@@ -3870,19 +3870,7 @@
             "useCaseDesc": "z.B. Poster, Avatar",
             "mood": "Stimmung",
             "moodDesc": "z.B. gemütlich, dunkel"
-          },
-          "finalVerdict": "Für Video-Dubbing und Übersetzung im Jahr 2026 gewinnt ElevenLabs in Bezug auf Qualität, mehrsprachige Unterstützung und Benutzerfreundlichkeit. F5-TTS bietet unglaublichen Wert für technische Benutzer, die innerhalb von Budgetgrenzen arbeiten oder unbegrenzte Generierung ohne kommerzielle Einschränkungen benötigen.",
-          "gettingStarted": "Ressourcen zum Einstieg",
-          "f5TtsSetup": "F5-TTS Einrichtung",
-          "f5TtsSetupDesc": "Offizielles GitHub-Repository, Anforderungen, Installation und CLI-Schnittstelle",
-          "elevenLabsSetup": "ElevenLabs Einrichtung",
-          "elevenLabsSetupDesc": "Web-Dashboard, API-Zugriff und Schnellstartanleitung",
-          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-          "themeDesc": "z.B. Fantasy, Reisen",
-          "useCase": "Anwendungsfall",
-          "useCaseDesc": "z.B. Poster, Avatar",
-          "mood": "Stimmung",
-          "moodDesc": "z.B. Gemütlich, Dunkel"
+          }
         }
       },
       "keyInsight": {
@@ -4692,55 +4680,6 @@
         "KI-Video-Pipeline",
         "Diffusions-Workflow",
         "Motion Graphics KI"
-      ]
-    },
-    "video_translation_eval": {
-      "title": "Bewertung der Qualität der KI-Videoübersetzung",
-      "subtitle": "Wichtige Metriken",
-      "description": "Entdecken Sie die wesentlichen Metriken zur Bewertung der Qualität der KI-Videoübersetzung, von Transkription bis Sprachsynthese.",
-      "intro": "Videos über Sprachen hinweg zu übersetzen, ist keine kleine Aufgabe – es umfasst Transkription, Übersetzung, Sprachsynthese, Timing und mehr. Bei Curify haben wir eine robuste Bewertungs-Pipeline entwickelt, um sicherzustellen, dass jedes Stück den Branchenstandards entspricht.",
-      "section1_title": "1. Transkriptionsqualität",
-      "section1_engine": "Engine: WhisperX",
-      "section1_metrics": [
-        "WER (Wortfehlerquote)",
-        "Interpunktion F1 (für Ausdruck und Lesbarkeit)"
-      ],
-      "section2_title": "2. Übersetzungsqualität",
-      "section2_engine": "Engines: Helsinki, MarianMT",
-      "section2_metrics": [
-        "BLEU (Standardmetrik)",
-        "COMET / chrF++ (semantische Ähnlichkeit)",
-        "Menschliche Überprüfung: Flüssigkeit + Angemessenheit"
-      ],
-      "section3_title": "3. Sprachsynthesequalität",
-      "section3_engine": "Engines: XTTS / YourTTS",
-      "section3_metrics": [
-        "MOS (Natürlichkeit, Ähnlichkeit, Ausdruckskraft)",
-        "Genauigkeit der Sprecherverifizierung"
-      ],
-      "section4_title": "4. Ausrichtung & Lippen-Synchronisation",
-      "section4_metrics": [
-        "Segmentdauer-Mismatch",
-        "Wav2Lip Synchronisationskonfidenz",
-        "Analyse des zeitlichen Abdrifts"
-      ],
-      "section5_title": "5. Semantische Erhaltung",
-      "section5_method": "Wir verwenden LLMs (wie GPT-4), um zu beurteilen, ob die übersetzte Sprache die ursprüngliche Bedeutung, den Ton und die Emotion bewahrt. Beispielaufforderung:",
-      "section5_prompt": "Vergleichen Sie dieses Mandarin-Transkript mit dem englischen Voiceover. Stimmen Ton, Absicht und Inhalt überein? Bewerten Sie 1–5 und erklären Sie.",
-      "section6_title": "6. Benutzerfeedback & GTM-Validierung",
-      "section6_metrics": [
-        "Sprachqualität passend zur Produktkategorie",
-        "Verbesserung der Zuschauerbindung",
-        "Bereitschaft zur Annahme von frühen Nutzern (z. B. 1688 Verkäufer)"
-      ],
-      "closing": "Bei Curify übersetzen wir nicht nur – wir bewahren Geschichtenerzählen, Emotion und Klarheit über Sprachen hinweg. Wenn Sie bereit sind, Ihre Stimme global zu skalieren, kontaktieren Sie uns.",
-      "available_locales": "Beitrag verfügbar in: [EN] [ZH] [ES] [DE]",
-      "metaDescription": "Videos zu übersetzen ist mehr als nur Übersetzung – es ist Transkription, Stimme, Timing und Emotion. Wie wir die Qualität der KI-Videoübersetzung bei Curify bewerten.",
-      "seoKeywords": [
-        "Videoübersetzungsevaluation",
-        "KI-Dubbing-Qualität",
-        "Übersetzungsbenchmarking",
-        "Video QA"
       ]
     },
     "qaBotToTaskAgent": {

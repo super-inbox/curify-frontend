@@ -4078,19 +4078,7 @@
             "useCaseDesc": "例如，海报，头像",
             "mood": "情绪",
             "moodDesc": "例如，舒适，黑暗"
-          },
-          "finalVerdict": "在2026年的视频配音和翻译中，ElevenLabs在质量、多语言支持和易用性方面胜出。F5-TTS为在预算限制内工作的技术用户或需要无限生成而不受商业限制的用户提供了令人难以置信的价值。",
-          "gettingStarted": "入门资源",
-          "f5TtsSetup": "F5-TTS设置",
-          "f5TtsSetupDesc": "官方GitHub存储库、要求、安装和CLI接口",
-          "elevenLabsSetup": "ElevenLabs设置",
-          "elevenLabsSetupDesc": "Web仪表板、API访问和快速入门指南",
-          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-          "themeDesc": "例如，幻想，旅行",
-          "useCase": "用例",
-          "useCaseDesc": "例如，海报，头像",
-          "mood": "心情",
-          "moodDesc": "例如，舒适，黑暗"
+          }
         }
       },
       "keyInsight": {
@@ -4697,55 +4685,6 @@
         "AI视频管道",
         "扩散工作流",
         "运动图形AI"
-      ]
-    },
-    "video_translation_eval": {
-      "title": "评估AI视频翻译质量",
-      "subtitle": "重要的指标",
-      "description": "发现评估AI视频翻译质量的基本指标，从转录到语音合成。",
-      "intro": "跨语言翻译视频并非易事——它涉及转录、翻译、语音合成、时间同步等。在Curify，我们建立了一个强大的评估流程，以确保每个作品符合行业标准。",
-      "section1_title": "1. 转录质量",
-      "section1_engine": "引擎：WhisperX",
-      "section1_metrics": [
-        "WER（字错误率）",
-        "标点F1（用于表现力和可读性）"
-      ],
-      "section2_title": "2. 翻译质量",
-      "section2_engine": "引擎：Helsinki, MarianMT",
-      "section2_metrics": [
-        "BLEU（标准指标）",
-        "COMET / chrF++（语义相似性）",
-        "人工审核：流畅性 + 适当性"
-      ],
-      "section3_title": "3. 语音合成质量",
-      "section3_engine": "引擎：XTTS / YourTTS",
-      "section3_metrics": [
-        "MOS（自然度、相似性、表现力）",
-        "说话人验证准确性"
-      ],
-      "section4_title": "4. 对齐与口型同步",
-      "section4_metrics": [
-        "片段时长不匹配",
-        "Wav2Lip同步置信度",
-        "时间漂移分析"
-      ],
-      "section5_title": "5. 语义保留",
-      "section5_method": "我们使用LLMs（如GPT-4）来判断翻译后的语音是否保留了原始的意义、语气和情感。示例提示：",
-      "section5_prompt": "将此普通话转录与英语配音进行比较。语气、意图和内容是否匹配？评分1-5并解释。",
-      "section6_title": "6. 用户反馈与GTM验证",
-      "section6_metrics": [
-        "适合产品类别的语音质量",
-        "观众留存率提升",
-        "早期用户（例如1688卖家）的接受意愿"
-      ],
-      "closing": "在Curify，我们不仅仅是翻译——我们在不同语言间保留故事、情感和清晰度。如果您准备好将您的声音扩展到全球，请与我们联系。",
-      "available_locales": "帖子可用语言：[EN] [ZH] [ES] [DE]",
-      "metaDescription": "翻译视频不仅仅是翻译——它还包括转录、语音、时机和情感。我们如何在Curify评估AI视频翻译质量。",
-      "seoKeywords": [
-        "视频翻译评估",
-        "AI配音质量",
-        "翻译基准测试",
-        "视频质量保证"
       ]
     },
     "qaBotToTaskAgent": {

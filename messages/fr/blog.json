@@ -3894,19 +3894,7 @@
             "useCaseDesc": "par exemple, affiche, avatar",
             "mood": "Humeur",
             "moodDesc": "par exemple, confortable, sombre"
-          },
-          "finalVerdict": "Pour le doublage vidéo et la traduction en 2026, ElevenLabs l'emporte sur la qualité, le support multilingue et la facilité d'utilisation. F5-TTS offre une valeur incroyable pour les utilisateurs techniques travaillant avec des contraintes budgétaires ou nécessitant une génération illimitée sans restrictions commerciales.",
-          "gettingStarted": "Ressources pour commencer",
-          "f5TtsSetup": "Configuration de F5-TTS",
-          "f5TtsSetupDesc": "Dépôt GitHub officiel, exigences, installation et interface CLI",
-          "elevenLabsSetup": "Configuration d'ElevenLabs",
-          "elevenLabsSetupDesc": "Tableau de bord Web, accès API et guide de démarrage rapide",
-          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-          "themeDesc": "par exemple, fantasy, voyage",
-          "useCase": "Cas d'utilisation",
-          "useCaseDesc": "par exemple, affiche, avatar",
-          "mood": "Humeur",
-          "moodDesc": "par exemple, douillet, sombre"
+          }
         }
       },
       "keyInsight": {
@@ -4716,55 +4704,6 @@
         "pipeline vidéo IA",
         "workflow de diffusion",
         "graphismes animés IA"
-      ]
-    },
-    "video_translation_eval": {
-      "title": "Évaluation de la qualité de traduction vidéo IA",
-      "subtitle": "Métriques qui comptent",
-      "description": "Découvrez les métriques essentielles pour évaluer la qualité de la traduction vidéo IA, de la transcription à la synthèse vocale.",
-      "intro": "Traduire des vidéos entre les langues n'est pas une mince affaire — cela implique transcription, traduction, synthèse vocale, synchronisation, et plus encore. Chez Curify, nous avons construit un pipeline d'évaluation robuste pour garantir que chaque pièce respecte les normes de l'industrie.",
-      "section1_title": "1. Qualité de transcription",
-      "section1_engine": "Moteur : WhisperX",
-      "section1_metrics": [
-        "WER (Taux d'erreur de mots)",
-        "F1 de ponctuation (pour l'expressivité et la lisibilité)"
-      ],
-      "section2_title": "2. Qualité de traduction",
-      "section2_engine": "Moteurs : Helsinki, MarianMT",
-      "section2_metrics": [
-        "BLEU (métrique standard)",
-        "COMET / chrF++ (similarité sémantique)",
-        "Revue humaine : fluidité + adéquation"
-      ],
-      "section3_title": "3. Qualité de synthèse vocale",
-      "section3_engine": "Moteurs : XTTS / YourTTS",
-      "section3_metrics": [
-        "MOS (Naturel, similarité, expressivité)",
-        "Précision de vérification du locuteur"
-      ],
-      "section4_title": "4. Alignement & synchronisation labiale",
-      "section4_metrics": [
-        "Inadéquation de la durée des segments",
-        "Confiance de synchronisation Wav2Lip",
-        "Analyse de dérive temporelle"
-      ],
-      "section5_title": "5. Préservation sémantique",
-      "section5_method": "Nous utilisons des LLM (comme GPT-4) pour juger si la parole traduite préserve le sens, le ton et l'émotion d'origine. Exemple de prompt :",
-      "section5_prompt": "Comparez cette transcription en mandarin à la voix off en anglais. Le ton, l'intention et le contenu correspondent-ils ? Évaluez de 1 à 5 et expliquez.",
-      "section6_title": "6. Retours des utilisateurs & validation GTM",
-      "section6_metrics": [
-        "Qualité de la voix adaptée à la catégorie de produit",
-        "Amélioration de la rétention des spectateurs",
-        "Volonté d'adoption des premiers utilisateurs (par exemple, vendeurs 1688)"
-      ],
-      "closing": "Chez Curify, nous ne faisons pas que traduire — nous préservons la narration, l'émotion et la clarté à travers les langues. Si vous êtes prêt à étendre votre voix à l'échelle mondiale, contactez-nous.",
-      "available_locales": "Publication disponible en : [EN] [ZH] [ES] [DE]",
-      "metaDescription": "La traduction de vidéos est plus qu'une simple traduction — c'est de la transcription, de la voix, du timing et de l'émotion. Comment nous évaluons la qualité de la traduction vidéo IA chez Curify.",
-      "seoKeywords": [
-        "évaluation de la traduction vidéo",
-        "qualité de doublage IA",
-        "étalonnage de traduction",
-        "QA vidéo"
       ]
     },
     "qaBotToTaskAgent": {

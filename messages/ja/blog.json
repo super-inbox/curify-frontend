@@ -4080,19 +4080,7 @@
             "useCaseDesc": "例: ポスター、アバター",
             "mood": "ムード",
             "moodDesc": "例: 居心地の良い、暗い"
-          },
-          "finalVerdict": "2026年のビデオ吹き替えと翻訳では、ElevenLabsが品質、マルチリンガルサポート、使いやすさで勝ります。F5-TTSは、予算制約内で作業する技術ユーザーや商業制限なしで無制限の生成を必要とするユーザーにとって、驚くべき価値を提供します。",
-          "gettingStarted": "はじめにリソース",
-          "f5TtsSetup": "F5-TTSの設定",
-          "f5TtsSetupDesc": "公式GitHubリポジトリ、要件、インストール、CLIインターフェース",
-          "elevenLabsSetup": "ElevenLabsの設定",
-          "elevenLabsSetupDesc": "Webダッシュボード、APIアクセス、クイックスタートガイド",
-          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-          "themeDesc": "例：ファンタジー、旅行",
-          "useCase": "ユースケース",
-          "useCaseDesc": "例：ポスター、アバター",
-          "mood": "ムード",
-          "moodDesc": "例：居心地の良い、暗い"
+          }
         }
       },
       "keyInsight": {
@@ -4699,55 +4687,6 @@
         "AIビデオパイプライン",
         "拡散ワークフロー",
         "モーショングラフィックスAI"
-      ]
-    },
-    "video_translation_eval": {
-      "title": "AI動画翻訳品質の評価",
-      "subtitle": "重要な指標",
-      "description": "トランスクリプションから音声合成まで、AI動画翻訳品質を評価するための重要な指標を発見してください。",
-      "intro": "言語間での動画翻訳は簡単な作業ではありません — トランスクリプション、翻訳、音声合成、タイミングなどが含まれます。Curifyでは、各作品が業界基準を満たすことを保証するために、堅牢な評価パイプラインを構築しました。",
-      "section1_title": "1. トランスクリプション品質",
-      "section1_engine": "エンジン: WhisperX",
-      "section1_metrics": [
-        "WER（単語誤り率）",
-        "句読点F1（表現力と可読性のため）"
-      ],
-      "section2_title": "2. 翻訳品質",
-      "section2_engine": "エンジン: Helsinki, MarianMT",
-      "section2_metrics": [
-        "BLEU（標準指標）",
-        "COMET / chrF++（意味的類似性）",
-        "人間のレビュー: 流暢さ + 適切さ"
-      ],
-      "section3_title": "3. 音声合成品質",
-      "section3_engine": "エンジン: XTTS / YourTTS",
-      "section3_metrics": [
-        "MOS（自然さ、類似性、表現力）",
-        "スピーカー認証精度"
-      ],
-      "section4_title": "4. アライメント & リップシンク",
-      "section4_metrics": [
-        "セグメントの長さが一致しない",
-        "Wav2Lip同期信頼度",
-        "時間的ドリフト分析"
-      ],
-      "section5_title": "5. 意味の保持",
-      "section5_method": "私たちはLLM（GPT-4など）を使用して、翻訳されたスピーチが元の意味、トーン、感情を保持しているかどうかを判断します。例のプロンプト：",
-      "section5_prompt": "この中国語のトランスクリプトを英語のボイスオーバーと比較してください。トーン、意図、内容は一致していますか？1〜5で評価し、説明してください。",
-      "section6_title": "6. ユーザーフィードバックとGTM検証",
-      "section6_metrics": [
-        "製品カテゴリに適した音声品質",
-        "視聴者の保持率の改善",
-        "初期ユーザーからの採用意欲（例：1688の販売者）"
-      ],
-      "closing": "Curifyでは、単に翻訳するだけでなく、物語、感情、明確さを言語を超えて保持します。あなたの声をグローバルに拡大する準備ができたら、お問い合わせください。",
-      "available_locales": "投稿は以下の言語で利用可能です: [EN] [ZH] [ES] [DE]",
-      "metaDescription": "ビデオ翻訳は単なる翻訳以上のものです — 転写、音声、タイミング、感情が含まれます。CurifyでのAIビデオ翻訳品質の評価方法。",
-      "seoKeywords": [
-        "ビデオ翻訳評価",
-        "AI吹き替え品質",
-        "翻訳ベンチマーキング",
-        "ビデオQA"
       ]
     },
     "qaBotToTaskAgent": {

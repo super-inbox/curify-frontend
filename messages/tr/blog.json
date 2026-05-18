@@ -4166,19 +4166,7 @@
             "useCaseDesc": "örn., afiş, avatar",
             "mood": "Ruh hali",
             "moodDesc": "örn., rahat, karanlık"
-          },
-          "finalVerdict": "2026'da video dublajı ve çeviri için ElevenLabs kalite, çok dilli destek ve kullanım kolaylığı açısından öne çıkıyor. F5-TTS, bütçe kısıtlamaları içinde çalışan teknik kullanıcılar için muazzam bir değer sunuyor veya ticari kısıtlamalar olmadan sınırsız üretim gerektiriyor.",
-          "gettingStarted": "Başlarken Kaynaklar",
-          "f5TtsSetup": "F5-TTS Kurulumu",
-          "f5TtsSetupDesc": "Resmi GitHub Deposu, Gereksinimler, Kurulum ve CLI arayüzü",
-          "elevenLabsSetup": "ElevenLabs Kurulumu",
-          "elevenLabsSetupDesc": "Web Kontrol Paneli, API Erişimi ve Hızlı Başlangıç Kılavuzu",
-          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-          "themeDesc": "örneğin, fantezi, seyahat",
-          "useCase": "Kullanım durumu",
-          "useCaseDesc": "örneğin, afiş, avatar",
-          "mood": "Ruh hali",
-          "moodDesc": "örneğin, rahat, karanlık"
+          }
         }
       },
       "keyInsight": {
@@ -5130,55 +5118,6 @@
         "AI video boru hattı",
         "difüzyon iş akışı",
         "hareket grafikleri AI"
-      ]
-    },
-    "video_translation_eval": {
-      "title": "Yapay Zeka Video Çeviri Kalitesini Değerlendirme",
-      "subtitle": "Önemli Metrikler",
-      "description": "Transkripsiyondan ses sentezine kadar, yapay zeka video çeviri kalitesini değerlendirmek için gerekli metrikleri keşfedin.",
-      "intro": "Diller arasında video çevirisi yapmak kolay bir iş değil — transkripsiyon, çeviri, ses sentezi, zamanlama ve daha fazlasını içerir. Curify'de, her parçanın endüstri standartlarını karşıladığından emin olmak için sağlam bir değerlendirme süreci geliştirdik.",
-      "section1_title": "1. Transkripsiyon Kalitesi",
-      "section1_engine": "Motor: WhisperX",
-      "section1_metrics": [
-        "WER (Kelimeler Arası Hata Oranı)",
-        "Noktalama F1 (ifade gücü ve okunabilirlik için)"
-      ],
-      "section2_title": "2. Çeviri Kalitesi",
-      "section2_engine": "Motorlar: Helsinki, MarianMT",
-      "section2_metrics": [
-        "BLEU (standart metrik)",
-        "COMET / chrF++ (anlamsal benzerlik)",
-        "İnsan incelemesi: akıcılık + yeterlilik"
-      ],
-      "section3_title": "3. Ses Sentezi Kalitesi",
-      "section3_engine": "Motorlar: XTTS / YourTTS",
-      "section3_metrics": [
-        "MOS (Doğallık, benzerlik, ifade gücü)",
-        "Konuşmacı doğrulama doğruluğu"
-      ],
-      "section4_title": "4. Hizalama & Dudak Senkronizasyonu",
-      "section4_metrics": [
-        "Segment süresi uyumsuzluğu",
-        "Wav2Lip senkronizasyon güveni",
-        "Zamansal kayma analizi"
-      ],
-      "section5_title": "5. Anlamsal Koruma",
-      "section5_method": "Çevirilen konuşmanın orijinal anlamı, tonu ve duygusunu koruyup korumadığını değerlendirmek için LLM'leri (GPT-4 gibi) kullanıyoruz. Örnek istem:",
-      "section5_prompt": "Bu Mandarin transkriptini İngilizce seslendirme ile karşılaştırın. Ton, niyet ve içerik uyumlu mu? 1-5 arası puanlayın ve açıklayın.",
-      "section6_title": "6. Kullanıcı Geri Bildirimi & GTM Doğrulaması",
-      "section6_metrics": [
-        "Ürün kategorisine uygun ses kalitesi",
-        "İzleyici tutma iyileşmesi",
-        "Erken kullanıcıların benimseme istekliliği (örneğin, 1688 satıcıları)"
-      ],
-      "closing": "Curify'de sadece çeviri yapmıyoruz — hikaye anlatımını, duyguyu ve netliği diller arasında koruyoruz. Sesinizi küresel ölçekte ölçeklendirmeye hazırsanız, bizimle iletişime geçin.",
-      "available_locales": "Post mevcut diller: [EN] [ZH] [ES] [DE]",
-      "metaDescription": "Videoları çevirmek, sadece çeviri değildir — transkripsiyon, ses, zamanlama ve duygu içerir. Curify'de AI video çeviri kalitesini nasıl değerlendirdiğimiz.",
-      "seoKeywords": [
-        "video çeviri değerlendirmesi",
-        "AI dublaj kalitesi",
-        "çeviri karşılaştırması",
-        "video QA"
       ]
     },
     "qaBotToTaskAgent": {
