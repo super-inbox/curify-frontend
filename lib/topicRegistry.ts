@@ -404,6 +404,33 @@ export function getGalleryTag(topicId: string): string | undefined {
   return TOPIC_GALLERY_TAG[topicId];
 }
 
+// Tier-1 topic → persona chip slugs shown on reproduce/example surfaces.
+// Mapping is deliberate, not topic-derived: each tier-1 implies which
+// audiences will recognize value in those templates. Keep in sync with the
+// 6 chip definitions in UseCaseChipsRow.
+const TIER1_USE_CASES: Record<string, readonly string[]> = {
+  character:   ["for-creators", "for-designers"],
+  personality: ["for-creators", "for-designers"],
+  language:    ["for-parents", "for-esl-learners", "for-publishers"],
+  learning:    ["for-parents", "for-creators", "for-publishers"],
+  travel:      ["for-creators", "for-marketers"],
+  lifestyle:   ["for-creators", "for-marketers"],
+  design:      ["for-marketers", "for-designers"],
+  product:     ["for-marketers", "for-designers"],
+};
+
+/** Persona chips appropriate for a template/example, derived from its
+ *  tier-1 topic. First tier-1 ancestor found wins; empty list ⇒ no row. */
+export function getUseCasesForTopics(topicIds: readonly string[]): string[] {
+  for (const tp of topicIds) {
+    const ancestor = getTier1Ancestor(tp);
+    if (ancestor && TIER1_USE_CASES[ancestor]) {
+      return [...TIER1_USE_CASES[ancestor]];
+    }
+  }
+  return [];
+}
+
 /** Blog tag to filter blog posts for this topic page, if any. */
 export function getBlogTag(topicId: string): string | undefined {
   return TOPIC_BLOG_TAG[topicId];

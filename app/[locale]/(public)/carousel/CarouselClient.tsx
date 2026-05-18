@@ -721,6 +721,7 @@ export default function CarouselClient(props: Props) {
           <div className="px-4 py-4">
             <ExampleRightColumn
               key={slide.id}
+              showHeader
               chipTopics={(props as TemplateExampleProps).templateTopics}
               chipExampleTopics={slide.topics}
               chipCategory={slide.category}

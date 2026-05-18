@@ -8,6 +8,7 @@ import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/Tabl
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
 import NanoBananaExamples from "@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 export default function AICollageWallpaperGuide() {
   const t = useTranslations('blog.aiCollageDigitalWallpaperGuide');
@@ -136,17 +137,13 @@ export default function AICollageWallpaperGuide() {
           <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: t('conclusionContent') }} />
         </section>
 
-        <div className="mt-8 p-6 bg-blue-50 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4">{t('ctaTitle')}</h3>
-          <p className="mb-4">{t('ctaDescription')}</p>
-          <Link 
-            href={locale === "en" ? "/nano-banana-pro-prompts" : `/${locale}/nano-banana-pro-prompts`}
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-          >
-            {t('ctaButton')}
-          </Link>
-        </div>
       </div>
+
+      <BlogCTACard
+        category="nano-template"
+        slug="ai-collage-digital-wallpaper-guide"
+        locale={locale}
+      />
 
       <RelatedBlogs currentSlug="ai-collage-digital-wallpaper-guide" locale={locale} />
     </article>

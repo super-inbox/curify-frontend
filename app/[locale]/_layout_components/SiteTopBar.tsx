@@ -15,15 +15,37 @@ export default function SiteTopBar({ locale }: { locale: string }) {
 
   if (isBlogPage) return null;
 
+  // Hide the EntryBar (tier-1 topic capsules + use-case chip row) on
+  // template-detail, example-detail, and gallery-prompt-detail pages —
+  // those have their own in-page topic chips / use-case chips in the
+  // hero header, so the EntryBar duplicates them. Keep SearchBar and
+  // LocaleSwitcher visible.
+  //
+  // On every other page the EntryBar is always visible and lives in the
+  // sticky bar's flow. Earlier iterations tried scroll-driven folding —
+  // either reflow-flashed the page content on toggle (in-flow conditional
+  // render) or masked the content underneath (absolute positioning). The
+  // reading-area gain wasn't worth either trade-off, so the fold logic
+  // is gone.
+  const hideEntryBar =
+    /\/nano-template\/[^/]+/.test(pathname) ||
+    /\/nano-banana-pro-prompts\/\d+(?:\/|$)/.test(pathname);
+
   return (
     <div className="hidden lg:block sticky top-0 z-40 bg-[#FDFDFD]/95 backdrop-blur px-4 pt-3 pb-4">
-      <SearchBar locale={locale} />
-      <div className="mt-3 flex items-start gap-4">
+      {/* LocaleSwitcher lives in the SearchBar row so that hiding the
+          EntryBar collapses the sticky-bar height cleanly. */}
+      <div className="flex items-start gap-4">
         <div className="flex-1 min-w-0">
-          <EntryBar locale={locale} />
+          <SearchBar locale={locale} />
         </div>
         <LocaleSwitcher />
       </div>
+      {!hideEntryBar && (
+        <div className="mt-3">
+          <EntryBar locale={locale} />
+        </div>
+      )}
     </div>
   );
 }

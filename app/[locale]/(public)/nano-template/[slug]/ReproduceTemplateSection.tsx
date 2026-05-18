@@ -8,8 +8,10 @@ import Link from "next/link";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { toSlug } from "@/lib/nano_utils";
+import { getUseCasesForTopics } from "@/lib/topicRegistry";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 
 import {
@@ -18,7 +20,7 @@ import {
 } from "@/lib/nano_prompt_utils";
 
 const COLLAPSED_PARAM_ROWS = 3;
-const COLLAPSED_PROMPT_ROWS = 3;
+const COLLAPSED_PROMPT_ROWS = 1;
 
 export type SampleImage = {
   url: string;
@@ -38,6 +40,10 @@ export default function ReproduceTemplateSection(props: {
   const t = useTranslations("nanoTemplate");
 
   const params = template.parameters || [];
+  const templateUseCases = useMemo(
+    () => getUseCasesForTopics(template.topics ?? []),
+    [template.topics]
+  );
   const [form, setForm] = useState<Record<string, any>>({});
   const [dateRangeState, setDateRangeState] = useState<Record<string, { start: string; end: string }>>({});
   const [showAllParams, setShowAllParams] = useState(false);
@@ -339,7 +345,7 @@ export default function ReproduceTemplateSection(props: {
                   <div className="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-600">
                     {t("reproduce.previewLabel")}
                   </div>
-                  <pre className={`whitespace-pre-wrap text-sm leading-relaxed text-neutral-800 overflow-hidden${!showFullPrompt ? " line-clamp-3" : ""}`}>
+                  <pre className={`whitespace-pre-wrap text-sm leading-relaxed text-neutral-800 overflow-hidden${!showFullPrompt ? " line-clamp-1" : ""}`}>
                     {promptText}
                   </pre>
                   {shouldFoldPrompt && (
@@ -377,6 +383,18 @@ export default function ReproduceTemplateSection(props: {
                     templateId: template.template_id,
                   }}
                 />
+
+                {/* Use-case chips — derived from the template's tier-1
+                    topic. After the action bar so the persona nav is a
+                    secondary fork, not above the CTA. */}
+                {templateUseCases.length > 0 && (
+                  <div className="border-t border-neutral-100 pt-3">
+                    <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+                      Use this template for
+                    </div>
+                    <UseCaseChipsRow filterTo={templateUseCases} />
+                  </div>
+                )}
               </>
             )}
           </div>

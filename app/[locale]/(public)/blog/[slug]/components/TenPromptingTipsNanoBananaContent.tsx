@@ -286,11 +286,6 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
             __html: formatNanoBananaContent(t("curifyContent"))
           }} 
         />
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-800">
-            🎯 {t("ctaText")} <a href={t("nanoBananaProPromptsUrl")} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
-          </p>
-        </div>
       </section>
 
       <section id="conclusion-section">

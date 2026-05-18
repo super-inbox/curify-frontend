@@ -144,16 +144,6 @@ export default function AslTranslationContent({ slug, t, tEn, locale }: AslTrans
             __html: formatAslContent(safeT("curifyContent"))
           }} 
         />
-        <div className="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
-          <p className="text-indigo-800">
-            🎯 {safeT("ctaText")} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{safeT("ctaLink")}</a>
-          </p>
-          <div className="mt-3 space-y-2">
-            <p className="text-indigo-700 text-sm">
-              🔗 Also try: <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline">Video Dubbing</a> | <a href={getSubtitleGeneratorUrl(locale)} className="text-blue-600 hover:underline">Subtitle Generator</a>
-            </p>
-          </div>
-        </div>
       </section>
 
       <section>

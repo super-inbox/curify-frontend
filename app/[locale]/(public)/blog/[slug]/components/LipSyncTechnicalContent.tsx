@@ -107,11 +107,6 @@ export default function LipSyncTechnicalContent({ slug, t, locale }: LipSyncTech
             __html: formatContent(t("curifyContent"))
           }} 
         />
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-800">
-            🎯 {t("ctaText")} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
-          </p>
-        </div>
       </section>
 
       <section>

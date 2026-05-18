@@ -179,11 +179,6 @@ export default function GenericBlogContent({
             __html: hasKey("curifyContent") ? formatContent(safeT("curifyContent")) : "<p>Curify offers comprehensive solutions for content creators...</p>"
           }} 
         />
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-800">
-            ð¯ {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
-          </p>
-        </div>
       </section>
 
       <section>

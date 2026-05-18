@@ -5,11 +5,11 @@ import { Wand2 } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { fillPrompt } from "@/lib/nano_utils";
 import { normalizePrefills } from "@/lib/nano_prompt_utils";
@@ -22,9 +22,6 @@ import { useTracking } from "@/services/useTracking";
 const CREDITS_COST = 10;
 
 type Props = {
-  chipTopics?: string[];
-  chipExampleTopics?: string[];
-  chipCategory?: string;
   title: string;
   description?: string;
   templateId: string;
@@ -38,12 +35,21 @@ type Props = {
   batchEnabled: boolean;
   examplePageUrl: string;
   existingExamples?: ExistingExampleRef[];
+  /** Persona chips to surface below the action bar. Derived from the
+   *  parent template's tier-1 topic via getUseCasesForTopics on the
+   *  server. Empty/undefined hides the row. */
+  useCaseFilter?: readonly string[];
+  /** When set, render the topic capsule row + H1 title inside the
+   *  column. The example page leaves these unset because its hero now
+   *  hoists the title and chips above the grid; the carousel sidebar
+   *  passes them since the sidebar has no separate header. */
+  chipTopics?: string[];
+  chipExampleTopics?: string[];
+  chipCategory?: string;
+  showHeader?: boolean;
 };
 
 export default function ExampleRightColumn({
-  chipTopics,
-  chipExampleTopics,
-  chipCategory,
   title,
   description,
   templateId,
@@ -57,11 +63,17 @@ export default function ExampleRightColumn({
   batchEnabled,
   examplePageUrl,
   existingExamples = [],
+  useCaseFilter,
+  chipTopics,
+  chipExampleTopics,
+  chipCategory,
+  showHeader,
 }: Props) {
   const [form, setForm] = useState<Record<string, string>>(initialParams);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [generatedExampleId, setGeneratedExampleId] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [showFullPrompt, setShowFullPrompt] = useState(false);
 
   const [user] = useAtom(userAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
@@ -105,12 +117,13 @@ export default function ExampleRightColumn({
     } catch {}
   };
 
-  const mergedTopics = [...new Set([...(chipTopics ?? []), ...(chipExampleTopics ?? [])])];
+  const mergedTopics = showHeader
+    ? [...new Set([...(chipTopics ?? []), ...(chipExampleTopics ?? [])])]
+    : [];
 
   return (
-    <div className="flex flex-col gap-3 lg:min-h-[520px]">
-      {/* Meta chips */}
-      {(mergedTopics.length > 0 || chipCategory) ? (
+    <div className="flex flex-col gap-3">
+      {showHeader && (mergedTopics.length > 0 || chipCategory) ? (
         <div className="flex flex-wrap items-center gap-2">
           {mergedTopics.length > 0 && (
             <TopicNavRow
@@ -132,16 +145,18 @@ export default function ExampleRightColumn({
         </div>
       ) : null}
 
-      {/* Title */}
-      <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
-        {title}
-      </h1>
+      {showHeader ? (
+        <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
+          {title}
+        </h1>
+      ) : null}
 
       {/* Localized description kept in DOM (sr-only) for SEO + screen
           readers but invisible visually — matches the topic page pattern.
-          Removes the bulky paragraph from the right column without losing
-          the per-locale text Google needs to differentiate the 10
-          allow_i18n locale pages. */}
+          When the hero hoists the H1 + topic capsules above the grid
+          (showHeader=false on the example page), we still keep the
+          per-locale description here so Google has unique text for each
+          of the 10 allow_i18n locale pages. */}
       {description ? <p className="sr-only whitespace-pre-line">{description}</p> : null}
 
       {/* Generate your own — param inputs */}
@@ -206,7 +221,10 @@ export default function ExampleRightColumn({
         </div>
       )}
 
-      {/* Reactive prompt preview */}
+      {/* Reactive prompt preview — same format as ReproduceTemplateSection
+          on the template page: a single neutral-50 card with the filled
+          prompt clamped to one line and a Read more / Show less toggle.
+          No inline param-chips, no parameter table below. */}
       <section aria-labelledby="prompt-heading" className="flex flex-col">
         <h2
           id="prompt-heading"
@@ -214,11 +232,34 @@ export default function ExampleRightColumn({
         >
           Prompt
         </h2>
-        <PromptBreakdown
-          prompt={basePrompt}
-          params={form}
-          collapsedMaxHeight={80}
-        />
+        {(() => {
+          const promptText = (filledPrompt.trim() || basePrompt || "");
+          const promptLines = promptText ? promptText.split("\n") : [];
+          const shouldFold = promptLines.length > 1 || promptText.length > 150;
+          return (
+            <div className="rounded-xl bg-neutral-50 p-4">
+              <pre
+                className={`whitespace-pre-wrap text-sm leading-relaxed text-neutral-800 overflow-hidden${
+                  !showFullPrompt ? " line-clamp-1" : ""
+                }`}
+              >
+                {promptText}
+              </pre>
+              {shouldFold && (
+                <div className="mt-2 flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => setShowFullPrompt((v) => !v)}
+                    className="cursor-pointer text-sm font-semibold text-purple-600 hover:text-purple-700"
+                    aria-expanded={showFullPrompt}
+                  >
+                    {showFullPrompt ? "Show less" : "Read more"}
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        })()}
       </section>
 
       {/* Duplicate warning */}
@@ -296,6 +337,18 @@ export default function ExampleRightColumn({
           />
         )}
       </div>
+
+      {/* Use-case chips — after the primary action bar so the persona
+          nav is a secondary fork, not above the CTA. Filter derives
+          from the template's tier-1 topic. */}
+      {(useCaseFilter?.length ?? 0) > 0 && (
+        <div className="border-t border-neutral-100 pt-3">
+          <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+            Use this example for
+          </div>
+          <UseCaseChipsRow filterTo={useCaseFilter} />
+        </div>
+      )}
 
       {/* Generated image result */}
       {generatedImageUrl && (

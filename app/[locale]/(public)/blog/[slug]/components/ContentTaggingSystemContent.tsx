@@ -2,6 +2,30 @@ interface ContentTaggingSystemContentProps {
   tNamespace: any;
 }
 
+// next-intl `raw()` throws / returns undefined when the key is missing in
+// the current locale's blob. Several nested arrays on this page (e.g.
+// `keyInsight.methods`, `pinterestPlatform.templateTags.geoTags.examples`,
+// `finalThought.systems`, `footer.tags`) were never authored in EN, so the
+// raw lookup falls back to undefined and `Object.entries(undefined)` /
+// `.map` throws a server-side exception. This helper makes every raw read
+// safe by returning a typed-empty fallback instead.
+function safeRaw(tNamespace: any, key: string): any {
+  try {
+    const v = tNamespace?.raw?.(key);
+    return v ?? null;
+  } catch {
+    return null;
+  }
+}
+function safeEntries(tNamespace: any, key: string): [string, any][] {
+  const v = safeRaw(tNamespace, key);
+  return v && typeof v === "object" && !Array.isArray(v) ? Object.entries(v) : [];
+}
+function safeArray(tNamespace: any, key: string): any[] {
+  const v = safeRaw(tNamespace, key);
+  return Array.isArray(v) ? v : [];
+}
+
 export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggingSystemContentProps) {
   return (
     <div className="space-y-6">
@@ -44,9 +68,9 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
             <h3 className="text-xl font-semibold mb-3"> {tNamespace ? tNamespace("coreChallenges.nonDescriptive.title") : "Non-descriptive tags"}</h3>
             <p className="mb-4">{tNamespace ? tNamespace("coreChallenges.nonDescriptive.description") : ""}</p>
             <div className="space-y-2">
-              {tNamespace && tNamespace.raw ? Object.entries(tNamespace.raw('coreChallenges.nonDescriptive.examples')).map(([key, value]: [string, any]) => (
+              {safeEntries(tNamespace, 'coreChallenges.nonDescriptive.examples').map(([key, value]) => (
                 <p key={key} className="italic">"{value}"</p>
-              )) : null}
+              ))}
             </div>
             <p className="mt-4 font-semibold">{tNamespace ? tNamespace("coreChallenges.nonDescriptive.conclusion") : ""}</p>
           </div>
@@ -56,9 +80,9 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
             <p className="mb-4">{tNamespace ? tNamespace("coreChallenges.overlySpecific.description") : ""}</p>
             <p className="italic mb-4">"{tNamespace ? tNamespace("coreChallenges.overlySpecific.example") : ""}"</p>
             <ul className="space-y-1">
-              {tNamespace && tNamespace.raw ? Object.entries(tNamespace.raw('coreChallenges.overlySpecific.issues')).map(([key, value]: [string, any]) => (
+              {safeEntries(tNamespace, 'coreChallenges.overlySpecific.issues').map(([key, value]) => (
                 <li key={key}> {value}</li>
-              )) : null}
+              ))}
             </ul>
           </div>
 
@@ -215,12 +239,12 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
         <p className="mb-6">{tNamespace ? tNamespace("keyInsight.description") : ""}</p>
         
         <div className="grid md:grid-cols-3 gap-4">
-          {tNamespace && tNamespace.raw ? Object.entries(tNamespace.raw('keyInsight.methods')).map(([key, value]: [string, any]) => (
+          {safeEntries(tNamespace, 'keyInsight.methods').map(([key, value]) => (
             <div key={key} className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
               <p className="font-semibold">{value.title}</p>
               <p className="text-sm">{value.description}</p>
             </div>
-          )) : null}
+          ))}
         </div>
         
         <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg text-center">
@@ -275,9 +299,9 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
                 <p className="font-semibold">{tNamespace ? tNamespace("pinterestPlatform.templateTags.geoTags.title") : "Geographic Tags"}</p>
                 <p className="text-sm text-gray-600 mb-2">{tNamespace ? tNamespace("pinterestPlatform.templateTags.geoTags.description") : ""}</p>
                 <div className="flex flex-wrap gap-2">
-                  {tNamespace && tNamespace.raw ? tNamespace.raw('pinterestPlatform.templateTags.geoTags.examples').map((tag: string, index: number) => (
+                  {safeArray(tNamespace, 'pinterestPlatform.templateTags.geoTags.examples').map((tag: string, index: number) => (
                     <span key={index} className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded text-sm">{tag}</span>
-                  )) : null}
+                  ))}
                 </div>
               </div>
               
@@ -285,9 +309,9 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
                 <p className="font-semibold">{tNamespace ? tNamespace("pinterestPlatform.templateTags.languageTags.title") : "Language Tags"}</p>
                 <p className="text-sm text-gray-600 mb-2">{tNamespace ? tNamespace("pinterestPlatform.templateTags.languageTags.description") : ""}</p>
                 <div className="flex flex-wrap gap-2">
-                  {tNamespace && tNamespace.raw ? tNamespace.raw('pinterestPlatform.templateTags.languageTags.examples').map((tag: string, index: number) => (
+                  {safeArray(tNamespace, 'pinterestPlatform.templateTags.languageTags.examples').map((tag: string, index: number) => (
                     <span key={index} className="bg-green-100 dark:bg-green-900 px-2 py-1 rounded text-sm">{tag}</span>
-                  )) : null}
+                  ))}
                 </div>
               </div>
             </div>
@@ -313,9 +337,9 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
         <p className="mb-6">{tNamespace ? tNamespace("finalThought.description") : ""}</p>
         
         <div className="space-y-2">
-          {tNamespace && tNamespace.raw ? Object.entries(tNamespace.raw('finalThought.systems')).map(([key, value]: [string, any]) => (
+          {safeEntries(tNamespace, 'finalThought.systems').map(([key, value]) => (
             <p key={key}> {value}</p>
-          )) : null}
+          ))}
         </div>
         
         <div className="mt-6 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg text-center">
@@ -327,9 +351,9 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
 
       <footer className="border-t pt-8">
         <div className="flex flex-wrap gap-4 mb-6">
-          {tNamespace && tNamespace.raw ? tNamespace.raw('footer.tags').map((tag: string, index: number) => (
+          {safeArray(tNamespace, 'footer.tags').map((tag: string, index: number) => (
             <span key={index} className="bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full text-sm text-blue-800 dark:text-blue-100">{tag}</span>
-          )) : null}
+          ))}
         </div>
         
         <div className="text-white">

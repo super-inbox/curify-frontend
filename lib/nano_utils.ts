@@ -2,6 +2,7 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import { SUPPORTED_LOCALES } from "./generated/locales";
 import { PageLocale } from "@/lib/locale_utils";
+import { getUseCasesForTopics } from "./topicRegistry";
 
 export type TemplateParameter = {
   name: string;
@@ -29,7 +30,6 @@ export type RawTemplate = {
   >;
 
   cards?: Array<{ image_id: string; params: Record<string, any> }>;
-  use_cases?: string[];
 };
 
 export type RawNanoImageRecord = {
@@ -64,6 +64,7 @@ export type TemplateView = {
   category: string;
   description: string;
   topics: string[];
+  use_cases: string[];
   rank_score?: number;
   batch?: boolean;
   allow_generation?: boolean;
@@ -304,6 +305,7 @@ export function getTemplateView(
     category: "",
     description: "",
     topics: getTemplateTopics(raw),
+    use_cases: getUseCasesForTopics(getTemplateTopics(raw)),
     rank_score: raw.rank_score,
     batch: raw.batch,
     allow_generation: raw.allow_generation,

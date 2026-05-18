@@ -51,6 +51,7 @@ function UseCaseChip({ slug }: { slug: string }) {
 export default function UseCaseChipsRow({
   className,
   showQuestion = false,
+  filterTo,
 }: {
   className?: string;
   /**
@@ -59,8 +60,22 @@ export default function UseCaseChipsRow({
    * Callers can still opt back in if they want the lead-in label.
    */
   showQuestion?: boolean;
+  /**
+   * Limit the chip set to the given slugs (in the order given). Used on
+   * the prompt-detail page where the relevant audience is just creators
+   * + designers, not the full six personas.
+   */
+  filterTo?: readonly string[];
 }) {
   const t = useTranslations("entryBar");
+
+  const chips = filterTo
+    ? filterTo
+        .map((slug) => USE_CASES.find((uc) => uc.slug === slug))
+        .filter((x): x is (typeof USE_CASES)[number] => Boolean(x))
+    : USE_CASES;
+
+  if (chips.length === 0) return null;
 
   return (
     <div
@@ -74,7 +89,7 @@ export default function UseCaseChipsRow({
           {t("useCasesQuestion")}
         </span>
       )}
-      {USE_CASES.map((uc) => (
+      {chips.map((uc) => (
         <UseCaseChip key={uc.slug} slug={uc.slug} />
       ))}
     </div>

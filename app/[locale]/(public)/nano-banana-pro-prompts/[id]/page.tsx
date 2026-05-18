@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -199,6 +200,10 @@ export default async function PromptDetailPage({
           prompt={promptText}
           trackingId={String(prompt.id)}
           promptVariant="preview"
+          // Prompt-gallery audience is overwhelmingly creator + designer
+          // per the catalog audit — narrow the chip set so the affordance
+          // feels relevant instead of generic.
+          useCaseFilter={["for-creators", "for-designers"]}
           description={prompt.description || undefined}
           prevNext={prevNext}
           breadcrumbs={[
@@ -222,7 +227,15 @@ export default async function PromptDetailPage({
             />
           }
           image={
-            <div className="relative h-full min-h-[360px] w-full lg:min-h-0">
+            // Tile click opens the prompt in the carousel — same UX as
+            // the example page'/template-example carousel. Wrapping the
+            // image surface lets users zoom / scrub siblings without
+            // losing the detail page in their history.
+            <Link
+              href={`/${locale}/carousel/prompt-gallery/${prompt.id}`}
+              className="relative block h-full min-h-[360px] w-full cursor-zoom-in lg:min-h-0"
+              aria-label="Open image in carousel"
+            >
               <CdnImage
                 src={imageUrl}
                 alt={prompt.title}
@@ -230,7 +243,7 @@ export default async function PromptDetailPage({
                 className="object-contain"
                 priority
               />
-            </div>
+            </Link>
           }
           actionBar={
             <UnifiedActionBar
