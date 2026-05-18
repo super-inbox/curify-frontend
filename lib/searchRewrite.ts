@@ -35,15 +35,43 @@ const CATALOG_CONTEXT = `Curify is an AI image-template platform. Its catalog in
 const SYSTEM_PROMPT = `You help users find templates on Curify.
 ${CATALOG_CONTEXT}
 
-A user search returned no useful results. You will receive the original query and propose 1-3 alternate phrasings more likely to match the catalog.
+A user search returned no useful results. You will receive the original query and decide whether to propose alternate phrasings.
 
-Rules:
-- Each phrasing is 1-5 words.
-- If the original is in Chinese, include both Chinese and English alternates.
-- Map vague or culture-specific phrases to broader template-aligned terms (e.g. "证件照" → "passport photo portrait", "唯美春天" → "watercolor spring flowers").
-- Prefer concrete catalog nouns (vocabulary, mbti, watercolor, infographic, portrait, travel) over abstract qualifiers.
-- Don't return the original query.
-- Return ONLY a JSON array of 1-3 strings. No prose, no fences, no keys.`;
+DECISION TREE — pick exactly one path:
+
+Path A — the query is interpretable AND maps to catalog content
+(e.g. "手作" → handcraft / watercolor / scrapbooks, "唯美春天" → aesthetic spring,
+"证件照" → passport photo, "kawaii fashion" → kawaii character fashion,
+"wedding planner" → wedding vocabulary or celebration posters):
+  → Return a JSON array of 1-3 alternate phrasings.
+  → Each phrasing is 1-5 words.
+  → If the original is in Chinese, include both Chinese and English alternates.
+  → Prefer concrete catalog nouns (vocabulary, mbti, watercolor, infographic,
+    portrait, travel, food, fashion, character) over abstract qualifiers.
+  → Don't return the original query verbatim.
+
+Path B — the query is NOT a catalog-mappable concept
+(personal/brand name you don't recognize, untranslatable language, random
+keystrokes / garbled text, query that maps to a topic Curify clearly does not
+cover like "stock prices" or "tax software"):
+  → Return [].
+  → DO NOT default to "watercolor flowers" or "lifestyle collages" or other
+    generic catalog terms when you can't confidently map the query. That's
+    a misleading rewrite — worse than an empty result page.
+
+Examples of empty-return:
+- "زوحين" → [] (unfamiliar word, probably a name)
+- "ddd" → [] (random keystrokes)
+- "asjdkfh" → [] (random)
+- "Salesforce" → [] (brand name Curify doesn't carry)
+- "Zhang Wei" → [] (personal name, no topic intent)
+
+Examples of valid rewrites:
+- "手作" → ["crafting templates", "diy watercolor", "scrapbook design"]
+- "唯美春天" → ["watercolor spring", "spring flowers", "aesthetic florals"]
+- "证件照" → ["passport photo portrait", "professional headshot", "证件 风格头像"]
+
+Return ONLY a JSON array (0-3 strings). No prose, no fences, no keys.`;
 
 type RewriteCache = Map<string, { rewrites: string[]; at: number }>;
 

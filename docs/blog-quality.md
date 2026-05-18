@@ -1,6 +1,6 @@
 # Blog Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-18 (shipped top-5 P1 rewrites + added 2 new DS/AI posts; corrected dedicated-folder count from 5 to 31). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
+_Last updated: 2026-05-18 (second push — closed all 4 duplicate-consolidation pairs + the orphan namespace + the layer3 contamination, net −6,200 lines across `blog.json`). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
 
 ## Framing
 
@@ -11,6 +11,38 @@ Three parallel tracks:
 3. **Layout & visual polish** — uniform basic layout across every blog and the feed: no giant hero images, relaxed reading width, consistent alignment, CTA card themed in light-purple + light-blue. Affects every reader on every blog, so the impact compounds across the whole catalog rather than being per-URL.
 
 Both tracks share the same i18n fan-out: edit `messages/en/blog.json`, delete the stale `title` field in each non-en locale, run `scripts/i18n_autotranslate.cjs --base en --files blog --write`, bump `lastmod` in `public/data/blogs.json`.
+
+---
+
+## Today's progress (2026-05-18, second push — duplicate consolidation)
+
+The four pairs flagged in [Duplicates / orphans](#duplicates--orphans-to-consolidate) below + the `video_translation_eval` orphan + the `contentTaggingSystem.threeLayerApproach.layer3` F5-TTS contamination, all closed in one push. Net diff across `messages/*/blog.json` and dedicated-folder pages: **+185 / −6,386 lines** (≈ 6,200 lines of duplicate or junk content removed).
+
+| Commit | What | Resolution |
+| --- | --- | --- |
+| `e57377f` | Pair 1: `ugcVideoTranslationScalingTiktoksShortsGlobalMarkets` (camel) vs `ugc-video-translation-scaling-tiktoks-shorts-global-markets` (kebab) | Deleted the camel namespace from all 10 locales. Kebab is canonical (matches the slug). No URL to redirect. |
+| `a7011b7` | Pair 2: `gridCollageAiPrompts` vs `aiCollageDigitalWallpaperGuide` | Deleted `gridCollageAiPrompts` namespace + the `3x3-grid-collage-ai-prompts/` dedicated-folder page. Added 301 → `/blog/ai-collage-digital-wallpaper-guide` (base + locale-prefixed) in `next.config.ts`. |
+| `f11608f` | Pair 3: `f5TtsVsElevenlabs` (144 keys, no intro) vs `f5TtsVoiceCloning` (rewritten) | Deleted `f5TtsVsElevenlabs` namespace + the `f5-tts-vs-elevenlabs/` dedicated-folder page. GSC showed the voice-cloning slug at 22× the impressions of vs-elevenlabs — kept it canonical. Added 301 → `/blog/f5-tts-voice-cloning`. |
+| `7ef4e04` | Pair 4: `videoTranscriptionTechnicalDeepDive` vs `translateYoutubeVideoToEnglish` (shared "Go beyond basic …" intro template) | Kept both alive (different funnels — transcription is audio→text, translation is multimodal pipeline). Rewrote each intro to anchor in the specific stage of work it covers. i18n fanned to 9 non-en locales. |
+| `4355568` | Orphan + contamination cleanup | Deleted `video_translation_eval` orphan namespace (had no catalog entry) from all 10 locales. Cleared 12 F5-TTS-contamination keys from `contentTaggingSystem.threeLayerApproach.layer3` across all 10 locales (layer3 is now `{}`; `ContentTaggingSystemContent.tsx` was already safeguarded via `safeRaw` helpers in `ffb6bea`, so empty doesn't crash). |
+
+### Redirects shipped
+4 new entries in `next.config.ts` (base + `:locale` for each):
+- `/blog/3x3-grid-collage-ai-prompts` → `/blog/ai-collage-digital-wallpaper-guide`
+- `/blog/f5-tts-vs-elevenlabs` → `/blog/f5-tts-voice-cloning`
+
+### Dedicated-folder count drops to 29
+Removed `app/[locale]/(public)/blog/3x3-grid-collage-ai-prompts/` and `app/[locale]/(public)/blog/f5-tts-vs-elevenlabs/` (each had its own `page.tsx` + `content.tsx`). Was 31; now 29.
+
+### Coverage stats (post-push)
+| Metric | 2026-05-18 first push | 2026-05-18 close (after this push) |
+| --: | --: | --: |
+| Real posts with `metaDescription` | 50 / 56 | **46 / 52** (4 namespaces removed: 3 dup namespaces all had meta + 1 orphan had meta) |
+| Catalog entries with `lastmod` | 43 / 59 | **43 / 57** (2 catalog entries removed: `3x3-grid-collage-ai-prompts`, `f5-tts-vs-elevenlabs`) |
+| Duplicate / orphan pairs remaining | 4 + orphan + contamination | **0** |
+| Dedicated-folder pages | 31 | **29** |
+
+The 6 entries still missing meta are 5 shared keys (`metadata`, `footer`, `finalThought`, `keyInsight`, `pinterestPlatform`, `ruleOfThumb`) + 1 yet-to-identify — no real post is uncovered.
 
 ---
 
@@ -204,14 +236,14 @@ No fluffy intro to flag, but body untouched in the last sweep and unlikely to be
 `aiContentDistributionSystem`, `aiContentProductionSystem`, `creativeAiToolsWebsites`, `curifyNanoBananaTemplateTips` (newly split, worth a re-skim), `chineseHerbalMedicineVisualGuide`, `contentMultiplicationSystem`, `contentTaggingSystem` (intro is actually good — "When you have thousands of images…"), `preserveFacialFeaturesAiGeneration`, `nanoBananaDedicated`, `bestAiTools`, `visualLearningTools`, `viralLearningContent`, `aiVideoDubbingTutorial`, `emotionTtsMovie`, `curifyAiGrowthEngine`, `aeVsComfyUi`, `redCarpetAiLooks`, `seriesInfographicVsNotebookLM`, `nanoBananaDedicated`, `video_translation_eval`.
 
 ### Duplicates / orphans to consolidate
-Each pair likely shares ~70%+ content — drop one and 301-redirect:
+**Status: all 4 pairs + orphan + contamination closed 2026-05-18 (second push).** See [Today's progress (2026-05-18, second push)](#todays-progress-2026-05-18-second-push--duplicate-consolidation) for the commit-by-commit table.
 
-| Pair | Issue |
+| Pair | Resolution |
 | --- | --- |
-| `ugc-video-translation-scaling-tiktoks-shorts-global-markets` vs `ugcVideoTranslationScalingTiktoksShortsGlobalMarkets` | Kebab vs camel key — **same post twice** in `blog.json` |
-| `aiCollageDigitalWallpaperGuide` vs `gridCollageAiPrompts` | Both 3x3 grid collage posts — one is canonical, one is fluff |
-| `f5TtsVoiceCloning` (rewritten) vs `f5TtsVsElevenlabs` (144 keys, no intro) | Same comparison — consolidate |
-| `videoTranscriptionTechnicalDeepDive` vs `translateYoutubeVideoToEnglish` | Same boilerplate intro ("Go beyond basic … and discover the technical architecture…") — probably mass-generated from one template |
+| ~~`ugc-video-translation-scaling-tiktoks-shorts-global-markets` vs `ugcVideoTranslationScalingTiktoksShortsGlobalMarkets`~~ | Camel namespace deleted (`e57377f`). |
+| ~~`aiCollageDigitalWallpaperGuide` vs `gridCollageAiPrompts`~~ | `gridCollageAiPrompts` + folder deleted, 301 redirect added (`a7011b7`). |
+| ~~`f5TtsVoiceCloning` vs `f5TtsVsElevenlabs`~~ | `f5TtsVsElevenlabs` + folder deleted, 301 redirect added (`f11608f`). |
+| ~~`videoTranscriptionTechnicalDeepDive` vs `translateYoutubeVideoToEnglish`~~ | Both kept alive; intros differentiated by funnel (`7ef4e04`). |
 
 ### Coverage stats
 - **48 / 54 real posts** now have `metaDescription` (was 24 / 54 before 2026-05-17). Remaining 6 are 5 shared keys + 1 orphan kebab dup — no real post is uncovered.
@@ -266,7 +298,7 @@ Uniform basic layout across every blog (both `[slug]` pipeline and dedicated-fol
 Owner judgement call on each — these are design choices, not mechanical fixes. **Folds in the previously-separate "CTA polish (inline mid-post, category-specific headers)" item**, since both need to land in the same design pass.
 
 ### 2. Duplicate consolidation
-Pick canonical of the 4 dup pairs (`ugc-video-translation-…` kebab vs camel; `aiCollageDigitalWallpaperGuide` vs `gridCollageAiPrompts`; `f5TtsVoiceCloning` vs `f5TtsVsElevenlabs`; `videoTranscriptionTechnicalDeepDive` vs `translateYoutubeVideoToEnglish`); 301 the dead slug; update internal links. Also resolve the `video_translation_eval` orphan namespace **and the F5-TTS contamination in `contentTaggingSystem.threeLayerApproach.layer3`** that surfaced today.
+**All 4 pairs + orphan + contamination shipped 2026-05-18 (second push).** See [Today's progress](#todays-progress-2026-05-18-second-push--duplicate-consolidation) for the commit-by-commit table. Net cleanup: ~6,200 lines across `blog.json`, 2 dedicated-folder routes removed, 4 new 301 redirects in `next.config.ts`.
 
 ### 3. Author the missing `contentTaggingSystem` sub-trees
 `keyInsight.methods`, `pinterestPlatform.templateTags.geoTags.examples`, `…languageTags.examples`, `finalThought.systems`, `footer.tags`. The page no longer crashes, but those sections render empty until authored.
@@ -287,4 +319,4 @@ Skim the ~20 P2 bodies. If anchored in real templates and tools, leave alone; ot
 
 ---
 
-_Track sources used for this audit: `git log --since=2026-05-10`, `public/data/blogs.json`, `messages/en/blog.json`, `app/[locale]/_components/BlogCTACard.tsx`, commits `0803aab`, `ac14131`, `9c8fe83`, `b533c55`, `db74b3e`, `b5925db`, `250e2b6`, `225e2f7`._
+_Track sources used for this audit: `git log --since=2026-05-10`, `public/data/blogs.json`, `messages/en/blog.json`, `app/[locale]/_components/BlogCTACard.tsx`, commits `0803aab`, `ac14131`, `9c8fe83`, `b533c55`, `db74b3e`, `b5925db`, `250e2b6`, `225e2f7`, `e57377f`, `a7011b7`, `f11608f`, `7ef4e04`, `4355568`._

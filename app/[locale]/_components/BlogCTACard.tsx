@@ -285,7 +285,33 @@ function ctasFor(category: string, locale: string, slug?: string): CTA[] {
   }
 }
 
-function CtaButton({ cta, category }: { cta: CTA; category: string }) {
+// Two-tone CTA palette: first card light-purple (primary), rest light-blue.
+// Tailwind's JIT needs the class names to appear as literals, so we keep
+// the two variants in a static map instead of interpolating the color.
+const ACCENT_STYLES = {
+  purple: {
+    card:
+      "border-purple-200 bg-gradient-to-br from-purple-50 to-white hover:border-purple-400",
+    icon: "text-purple-700",
+  },
+  blue: {
+    card:
+      "border-blue-200 bg-gradient-to-br from-blue-50 to-white hover:border-blue-400",
+    icon: "text-blue-700",
+  },
+} as const;
+
+type Accent = keyof typeof ACCENT_STYLES;
+
+function CtaButton({
+  cta,
+  category,
+  accent,
+}: {
+  cta: CTA;
+  category: string;
+  accent: Accent;
+}) {
   // content_id is greppable in admin: blog-cta:<category>:<cta.id>
   const trackClick = useClickTracking(
     `blog-cta:${category}:${cta.id}`,
@@ -293,12 +319,12 @@ function CtaButton({ cta, category }: { cta: CTA; category: string }) {
     "cards"
   );
 
-  const className =
-    "group flex flex-col gap-2 rounded-xl border border-blue-200 bg-gradient-to-br from-blue-50 to-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-md";
+  const styles = ACCENT_STYLES[accent];
+  const className = `group flex flex-col gap-2 rounded-xl border ${styles.card} p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md`;
 
   const inner = (
     <>
-      <div className="flex items-center gap-2 text-blue-700">
+      <div className={`flex items-center gap-2 ${styles.icon}`}>
         <cta.Icon className="h-5 w-5" />
         <span className="text-base font-semibold">{cta.label}</span>
         {cta.external && (
@@ -347,8 +373,13 @@ export default function BlogCTACard({ category, slug, locale }: Props) {
             : "grid grid-cols-1 gap-4"
         }
       >
-        {ctas.map((cta) => (
-          <CtaButton key={cta.id} cta={cta} category={category} />
+        {ctas.map((cta, i) => (
+          <CtaButton
+            key={cta.id}
+            cta={cta}
+            category={category}
+            accent={i === 0 ? "purple" : "blue"}
+          />
         ))}
       </div>
     </section>

@@ -239,9 +239,9 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
-      <div className="mb-8">
-        <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
+    <article className="mx-auto max-w-3xl pt-20 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
+      <header className="mb-10">
+        <div className="mb-6 max-w-md rounded-lg overflow-hidden shadow">
           {useMermaidThumbnail ? (
             <DynamicThumbnail
               slug={thumbnailType || slug}
@@ -260,18 +260,18 @@ export default async function BlogPostPage({
             />
           )}
         </div>
-        
-        <h1 className="text-4xl font-bold mb-4">
+
+        <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
           {tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
         </h1>
-        
-        <div className="text-gray-600 mb-4">
+
+        <div className="text-sm text-gray-500">
           {tNamespace ? tNamespace(slug === 'mbti-character-generator' || slug === 'content-tagging-system' ? "publishedDate" : "date", { defaultValue: "Latest Article" }) : "Latest Article"} • {" "}
           {tNamespace ? tNamespace("readTime", { defaultValue: "5 min read" }) : "5 min read"}
         </div>
-      </div>
+      </header>
 
-      <div className="clear-both">
+      <div>
         {/* Dynamic content rendering based on slug */}
         {(slug.startsWith('translate-youtube-video') || slug === 'ai-youtube-video-translator' || slug === 'translate-youtube-video-to-english') && (
           <YoutubeTranslationContent slug={slug} t={safeT} locale={locale} />

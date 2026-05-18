@@ -6831,213 +6831,6 @@
     "seoKeywords": "pipeline de transcription vidéo, pipeline de reconnaissance vocale, traitement vidéo asr, pipeline de parole à texte, diarisation des locuteurs vidéo, alignement forcé transcription, pipeline de transcription whisper, segmentation audio transcription, transcription multilingue ia",
     "metaDescription": "Plongée technique dans l'architecture du pipeline de transcription vidéo AI. Guide complet sur l'ASR, l'alignement forcé, la diarisation des locuteurs et la conception du système de production pour les développeurs et les ingénieurs en IA."
   },
-  "MBTICharacterGenerator": {
-    "title": "Le guide ultime du générateur de personnages MBTI AI (avec des exemples de Yellowstone) | Curify",
-    "description": "Découvrez comment utiliser l'IA pour générer des personas de personnages MBTI précis en utilisant des exemples de Yellowstone. Découvrez des techniques de prompting avancées pour le développement de personnages."
-  },
-  "MBTICharacterGeneratorGuide": {
-    "title": "Le guide ultime du générateur de personnages MBTI AI (avec des exemples de Yellowstone) | Curify",
-    "description": "Découvrez comment utiliser l'IA pour générer des personas de personnages MBTI précis en utilisant des exemples de Yellowstone. Découvrez des techniques de prompting avancées pour le développement de personnages.",
-    "hero": {
-      "title": "Le guide ultime du générateur de personnages MBTI AI",
-      "subtitle": "Transformez votre processus créatif avec le développement de personnages alimenté par l'IA en utilisant les personnalités emblématiques de Yellowstone comme modèle"
-    },
-    "introduction": {
-      "paragraph1": "Bien que vous ayez déjà publié le générateur de personnages MBTI Nano Banana, la prochaine étape est de &lt;strong&gt;aligner l'outil avec l'intention spécifique des utilisateurs&lt;/strong&gt;. Les chercheurs ne cherchent pas seulement un générateur MBTI générique—ils veulent analyser, recréer ou jouer des personnages qu'ils connaissent déjà, souvent en commençant par des requêtes comme « Quel MBTI est Rip Wheeler ? » ou « Type de personnalité de Beth Dutton. » Cela signale un passage de l'exploration abstraite de la personnalité à &lt;strong&gt;la modélisation de personnages appliquée&lt;/strong&gt;, où les utilisateurs s'attendent à des résultats qui semblent reconnaissables, précis et immédiatement utilisables. Yellowstone fournit un point d'entrée parfait : une série à fort engagement avec des personnages distincts et psychologiquement riches qui correspondent clairement aux archétypes MBTI. Par exemple, l'intensité et l'agression stratégique de Beth s'alignent étroitement avec les traits ENTJ, tandis que le conflit interne et la sensibilité morale de Kayce reflètent un profil ISFP. Ces signaux de personnalité forts facilitent la validation des résultats générés par les utilisateurs par rapport à leurs propres interprétations, augmentant la confiance dans l'outil. En ancrant les capacités de génération de Nano Banana à ces personnages familiers, vous réduisez la charge cognitive pour les utilisateurs—ils n'ont pas à imaginer des traits abstraits à partir de zéro. Au lieu de cela, ils peuvent &lt;strong&gt;décomposer les personnalités qu'ils comprennent déjà&lt;/strong&gt; et ensuite les étendre à de nouveaux scénarios, personnages originaux ou paramètres RPG. Cela transforme l'outil d'un générateur de nouveauté en un &lt;strong&gt;assistant créatif pratique&lt;/strong&gt; pour la narration, la création de théories de fans et la construction de mondes axée sur les personnages.",
-      "paragraph2": "Ce guide complet montre aux créateurs, écrivains et joueurs de RPG comment tirer parti de Nano Banana de Curify pour générer des &lt;strong&gt;personas de personnages très précises et conscientes du contexte&lt;/strong&gt; basées sur les types MBTI. Plutôt que de s'arrêter à des étiquettes superficielles, le guide explique comment traduire chaque profil MBTI en traits exploitables—modèles de prise de décision, style de dialogue, déclencheurs émotionnels et dynamiques interpersonnelles—afin que les personnages générés soient cohérents et crédibles dans différents scénarios. En utilisant des personnages de Yellowstone comme exemples pratiques, nous démontrons comment &lt;strong&gt;ancrer les résultats MBTI dans des personnalités reconnaissables&lt;/strong&gt;, puis étendre ces modèles à la création de personnages originaux, à la fan fiction ou aux campagnes de RPG sur table. Par exemple, les utilisateurs peuvent commencer avec un archétype ENTJ de style Beth Dutton et l'adapter en un anti-héros d'entreprise, ou prendre un profil ISTP semblable à Rip Wheeler et l'évoluer en un compagnon RPG moralement complexe. En associant des flux de génération étape par étape à des références de la culture pop qui attirent déjà l'intérêt de recherche, ce guide est conçu pour &lt;strong&gt;capturer un trafic de longue traîne à forte intention&lt;/strong&gt; tout en offrant une valeur créative immédiate. Les lecteurs n'apprennent pas seulement ce que signifie un type MBTI—ils apprennent comment le rendre opérationnel en personnages pleinement réalisés qu'ils peuvent utiliser dans des histoires, des jeux ou des pipelines de création de contenu."
-    },
-    "tags": {
-      "mbtiGenerator": "Générateur MBTI",
-      "yellowstoneMBTI": "MBTI de Yellowstone",
-      "characterDevelopment": "Développement de personnages"
-    },
-    "protip": "Commencez par des types MBTI spécifiques et des exemples de personnages réels pour former l'IA sur les modèles de personnalité avant de générer des personnages originaux.",
-    "tabs": {
-      "basics": "Bases du MBTI",
-      "yellowstone": "Exemples de Yellowstone",
-      "techniques": "Techniques avancées",
-      "advanced": "Utilisation professionnelle",
-      "faq": "FAQ"
-    },
-    "basics": {
-      "title": "Comprendre le MBTI pour la génération de personnages",
-      "whatIsMBTI": {
-        "title": "Qu'est-ce que le MBTI ?",
-        "description": "L'indicateur de type Myers-Briggs est un cadre de personnalité qui catégorise les gens en 16 types de personnalité distincts basés sur quatre dimensions clés. Ce système fournit une excellente base pour créer des personnages cohérents et crédibles."
-      },
-      "aiGeneration": {
-        "title": "Génération de personnages MBTI alimentée par l'IA",
-        "description": "En utilisant Nano Banana de Curify, vous pouvez générer des profils de personnages détaillés qui reflètent avec précision les traits de personnalité MBTI, complets avec des comportements, des modèles de dialogue et des tendances de prise de décision.",
-        "basicPrompt": {
-          "title": "Structure de l'invite de personnage de base",
-          "example": "Générez un profil de personnage pour un type de personnalité [MBTI_TYPE]. Incluez leurs traits principaux, leur style de communication, leur processus de prise de décision et leurs comportements typiques dans [CONTEXT].",
-          "explanation": "Cette structure simple fournit à l'IA les informations essentielles nécessaires pour créer une personnalité de personnage cohérente."
-        }
-      }
-    },
-    "yellowstone": {
-      "title": "Personnages de Yellowstone comme modèles MBTI",
-      "beth": {
-        "traits": [
-          "Audacieuse",
-          "Décisive",
-          "Compétitive",
-          "Réactif",
-          "Ingénieuse",
-          "Communication directe"
-        ],
-        "prompt": "Générez un personnage féminin ESTP dans la trentaine, travaillant dans un environnement commercial à enjeux élevés. Incluez un esprit vif, une pensée stratégique et une loyauté familiale protectrice. Elle doit être confiante, parfois impitoyable, mais avec des vulnérabilités cachées."
-      },
-      "rip": {
-        "traits": [
-          "Loyal",
-          "Méthodique",
-          "Responsable",
-          "Traditionnel",
-          "Protecteur",
-          "Orienté action"
-        ],
-        "prompt": "Créez un personnage masculin ISTJ qui sert de protecteur loyal et d'exécuteur. Incluez un fort sens du devoir, des compétences pratiques en résolution de problèmes et une loyauté indéfectible. Il doit être calme mais redoutable, avec un code moral strict et des instincts protecteurs."
-      },
-      "john": {
-        "traits": [
-          "Leader naturel",
-          "Stratégique",
-          "Décisif",
-          "Visionnaire",
-          "Autoritaire",
-          "Axé sur la famille"
-        ],
-        "prompt": "Générez un personnage ENTJ en tant que puissant patriarche familial et leader d'entreprise. Incluez une pensée stratégique, une présence imposante et des dynamiques familiales complexes. Il doit être décisif, visionnaire, mais accablé par la responsabilité et l'héritage."
-      },
-      "kayce": {
-        "traits": [
-          "Axé sur les valeurs",
-          "Adaptable",
-          "Loyal",
-          "Évitant les conflits",
-          "Principé",
-          "Profondeur émotionnelle"
-        ],
-        "prompt": "Créez un personnage ISFP pris entre la loyauté familiale et les valeurs personnelles. Incluez une forte boussole morale, une sensibilité émotionnelle et un conflit interne. Il doit être compétent, réfléchi, mais en lutte avec des priorités concurrentes."
-      },
-      "analysis": {
-        "title": "Pourquoi ces exemples fonctionnent",
-        "description": "Les personnages de Yellowstone fournissent des archétypes MBTI parfaits car ils incarnent des traits de personnalité clairs dans des situations à enjeux élevés, ce qui en fait des modèles idéaux pour la génération de personnages IA.",
-        "points": [
-          "Chaque personnage affiche des comportements MBTI cohérents dans différents scénarios",
-          "Leurs motivations et leurs schémas de prise de décision sont clairement visibles",
-          "La série fournit un contexte riche pour l'expression de la personnalité sous pression",
-          "Ces archétypes se traduisent bien dans divers genres et contextes"
-        ]
-      }
-    },
-    "techniques": {
-      "title": "Techniques de prompt avancées",
-      "detailedPrompts": {
-        "title": "Création de profils de personnages détaillés",
-        "description": "Élevez votre génération de personnages en incorporant des cadres de personnalité détaillés et des éléments contextuels.",
-        "structure": {
-          "title": "Structure de prompt complète",
-          "elements": [
-            "Type MBTI de base et fonctions cognitives",
-            "Contexte et expériences de vie",
-            "Contexte et environnement actuels",
-            "Scénarios et défis spécifiques",
-            "Dynamiques relationnelles et style de communication"
-          ]
-        },
-        "example": "Générez un profil de personnage détaillé pour un entrepreneur ENFP qui a récemment lancé une marque de mode durable. Incluez leur processus créatif, comment ils gèrent les défis commerciaux, leur style de réseautage et leurs luttes personnelles avec l'équilibre travail-vie. Montrez leur intuition extravertie dans la détection des tendances et leur sentiment introverti dans la prise de décision éthique. Incluez des exemples de dialogue et des extraits de monologue intérieur."
-      },
-      "iterativeRefinement": {
-        "title": "Développement itératif de personnages",
-        "description": "Utilisez une approche en plusieurs étapes pour affiner et perfectionner vos personnages générés par IA.",
-        "steps": {
-          "step1": {
-            "title": "Générez le profil de base",
-            "description": "Commencez par un prompt large axé sur le MBTI pour établir la personnalité de base du personnage."
-          },
-          "step2": {
-            "title": "Ajoutez un contexte spécifique",
-            "description": "Affinez le personnage en ajoutant des scénarios spécifiques, des relations et des facteurs environnementaux."
-          },
-          "step3": {
-            "title": "Testez et affinez",
-            "description": "Placez le personnage dans diverses situations pour tester la cohérence et affiner les traits de personnalité."
-          }
-        }
-      }
-    },
-    "advanced": {
-      "title": "Applications professionnelles",
-      "useCases": {
-        "title": "Cas d'utilisation professionnels",
-        "writers": {
-          "title": "Écrivains de fiction",
-          "description": "Créez des personnages cohérents et multidimensionnels qui entraînent des récits captivants"
-        },
-        "rpg": {
-          "title": "Maîtres de jeu RPG",
-          "description": "Générez des PNJ avec des personnalités distinctes pour des expériences de jeu de rôle immersives"
-        },
-        "marketing": {
-          "title": "Équipes marketing",
-          "description": "Développez des personas de marque et des avatars clients pour des campagnes ciblées"
-        },
-        "psychology": {
-          "title": "Étudiants en psychologie",
-          "description": "Explorez les types de personnalité à travers des scénarios d'apprentissage basés sur des personnages"
-        }
-      },
-      "bestPractices": {
-        "title": "Meilleures pratiques pour la génération de personnages IA",
-        "points": [
-          "Spécifiez toujours le contexte et l'environnement dans lesquels le personnage évolue",
-          "Incluez à la fois les forces et les faiblesses pour des personnalités réalistes",
-          "Utilisez des scénarios spécifiques pour tester la cohérence des personnages",
-          "Itérez et affinez en fonction des résultats générés",
-          "Combinez plusieurs insights MBTI pour des personnages complexes",
-          "Maintenez la cohérence des personnages dans différents contextes"
-        ]
-      }
-    },
-    "benefits": {
-      "subtitle": "POURQUOI CHOISIR LA GÉNÉRATION MBTI ALIMENTÉE PAR L'IA",
-      "title": "Principaux Avantages de la Génération de Personnages MBTI par IA",
-      "accuracy": {
-        "title": "Précision Psychologique",
-        "description": "Les modèles d'IA formés sur des données de personnalité étendues génèrent des personnages qui s'alignent constamment avec les cadres MBTI établis"
-      },
-      "efficiency": {
-        "title": "Efficacité Temporelle",
-        "description": "Générez des profils de personnages détaillés en quelques secondes au lieu de passer des heures sur le développement et la recherche manuels de personnages"
-      },
-      "consistency": {
-        "title": "Cohérence des Personnages",
-        "description": "Maintenez des traits de personnalité, des comportements et des schémas de prise de décision cohérents dans tous les scénarios et contextes narratifs"
-      },
-      "creativity": {
-        "title": "Créativité Améliorée",
-        "description": "Explorez de nouvelles possibilités de personnages et des combinaisons de personnalités qui inspirent de nouvelles approches et récits narratifs"
-      }
-    },
-    "conclusion": {
-      "title": "Commencez à Créer des Personnages Captivants Aujourd'hui",
-      "description": "Avec le Nano Banana de Curify et ces techniques de génération de personnages MBTI, vous avez tout ce qu'il vous faut pour créer des personnages riches et cohérents qui captivent les audiences. Que vous écriviez de la fiction, développiez des campagnes RPG ou créiez des personas marketing, la génération de personnages alimentée par l'IA transformera votre processus créatif.",
-      "cta": {
-        "primary": "Essayez le Générateur de Personnages Nano Banana",
-        "secondary": "Explorez Plus d'Outils IA"
-      }
-    },
-    "universes": {
-      "title": "12 Universes, Un Système MBTI",
-      "description": "Choisissez l'univers que vous connaissez déjà — Marvel, Naruto, Friends, Yellowstone, Ghibli — tapez un nom de personnage et obtenez une carte de personnalité MBTI stylée pour cette émission. Le moyen le plus rapide de générer un personnage est de partir de l'un que le lecteur reconnaît déjà."
-    },
-    "beyond": {
-      "title": "Au-delà des Personnages Uniques",
-      "description": "Modèles MBTI qui vont au-delà d'un seul personnage — comparez deux types côte à côte, tracez des dynamiques relationnelles, brisez des stéréotypes courants ou construisez une grille multi-personnages. Formats très partageables pour le contenu social, éducatif et de fans."
-    }
-  },
   "HowToDubVideosNaturally": {
     "description": "Un guide complet pour résoudre les défis courants du doublage avec des outils IA. Apprenez des solutions pratiques pour le rythme robotique, le manque d'émotion et les problèmes de synchronisation labiale.",
     "hero": {
@@ -7222,5 +7015,188 @@
     "title": "Comment Corriger le Doublage AI Robotique : Synchronisation Labiale, Émotion & Rythme en 2026",
     "metaDescription": "Les vidéos doublées par AI sonnent robotiques ? Corrigez le décalage de synchronisation labiale, l'émotion plate et le rythme non naturel avec le bon flux de travail de clonage vocal — étape par étape pour les créateurs de 2026.",
     "seoKeywords": "corriger le doublage ai robotique, artefacts de clonage vocal ai, correction de décalage de synchronisation labiale, tutoriel de doublage ai 2026, doublage ai naturel, émotion de clonage vocal, flux de travail de doublage vidéo"
+  },
+  "MBTICharacterGenerator": {
+    "title": "Générateur de Personnages MBTI : Cartes de Personnalité Visuelles pour Marvel, NBA, Ghibli, Yellowstone, et Plus | Curify",
+    "description": "Générez une carte de personnalité MBTI 3:4 pour tout personnage que vous connaissez déjà. 10 modèles d'univers (Marvel, NBA, Silicon Valley, Breaking Bad, Ghibli, Yellowstone, Naruto, Animal, plus générique 16-types) avec 382 exemples fonctionnels à remixer."
+  },
+  "MBTICharacterGeneratorGuide": {
+    "title": "Générateur de Personnages MBTI : Cartes de Personnalité Visuelles pour Marvel, NBA, Ghibli, Yellowstone, et Plus | Curify",
+    "description": "Générez une carte de personnalité MBTI 3:4 pour tout personnage que vous connaissez déjà. 10 modèles d'univers (Marvel, NBA, Silicon Valley, Breaking Bad, Ghibli, Yellowstone, Naruto, Animal, plus générique 16-types) avec 382 exemples fonctionnels à remixer.",
+    "hero": {
+      "title": "Générateur de Personnages MBTI : Cartes Visuelles pour des Personnages que Vous Connaissez Déjà",
+      "subtitle": "Choisissez un univers — Marvel, NBA, Silicon Valley, Breaking Bad, Ghibli, Yellowstone, Naruto, ou Animal — tapez un nom de personnage, et obtenez une carte de personnalité MBTI 3:4 stylisée pour cette série."
+    },
+    "introduction": {
+      "paragraph1": "La plupart des recherches de générateurs MBTI ne commencent pas par \"donnez-moi une personnalité aléatoire.\" Elles commencent par un nom spécifique : &lt;strong&gt;\"Quel est le MBTI de Rip Wheeler ?\"&lt;/strong&gt;, \"type de personnalité de Beth Dutton\", \"MBTI de Hulk\". Les gens veulent une lecture de personnalité sur quelqu'un qu'ils connaissent déjà, pas un quiz de 16 archétypes. Le générateur MBTI de Curify est construit autour de cette intention. Chaque modèle est un designer visuel pour un seul univers — Yellowstone, Marvel, Breaking Bad, Ghibli, NBA, Silicon Valley, Naruto — et le résultat est une carte de personnalité verticale 3:4 que vous pouvez enregistrer, partager ou assembler en série.",
+      "paragraph2": "Cette page présente les 10 modèles d'univers que nous proposons, les 382 exemples de personnages fonctionnels déjà sur le site, et les deux modèles non-universels (&lt;strong&gt;contraste&lt;/strong&gt; pour des comparaisons type-vs-type, et &lt;strong&gt;stéréotype-vs-réalité&lt;/strong&gt; pour les cartes au format réaction percutant que vous voyez sur les réseaux sociaux). Chaque exemple dans les sections galerie ci-dessous est un remix en un clic — choisissez le personnage le plus proche, changez le nom, et vous avez une carte."
+    },
+    "tags": {
+      "mbtiGenerator": "Générateur MBTI",
+      "yellowstoneMBTI": "MBTI de Yellowstone",
+      "characterDevelopment": "Développement de Personnage"
+    },
+    "protip": "Le chemin le plus rapide vers une bonne carte MBTI : commencez par un personnage que les lecteurs reconnaissent déjà. Les modèles de Yellowstone, Marvel et Breaking Bad sont chacun pré-typés par personnage — vous n'avez qu'à taper le nom.",
+    "tabs": {
+      "basics": "Comment Ça Marche",
+      "yellowstone": "Exemples de Yellowstone",
+      "techniques": "Approfondir",
+      "advanced": "Cas d'utilisation",
+      "faq": "FAQ"
+    },
+    "basics": {
+      "title": "Comment fonctionne le générateur de cartes MBTI",
+      "whatIsMBTI": {
+        "title": "Quatre dimensions, seize types",
+        "description": "Le MBTI regroupe les gens en 16 types à partir de quatre dimensions binaires : Extraversion/Introversion (d'où vient l'énergie), Sensation/Intuition (comment l'information est perçue), Pensée/Sentiment (comment les décisions sont prises), Jugement/Perception (comment le monde extérieur est abordé). La carte générée étiquette les quatre dimensions et met en avant les fonctions cognitives associées au type."
+      },
+      "aiGeneration": {
+        "title": "Choisissez un univers, tapez un nom, obtenez une carte",
+        "description": "Chaque modèle est un designer visuel à univers unique (style ranch de Yellowstone, vectoriel de bande dessinée Marvel, carte de collection NBA, industriel gritty de Breaking Bad). L'entrée utilisateur est simplement le nom du personnage. Le système remplit le type MBTI, les fonctions cognitives, les traits, les accessoires signature et le style — le résultat est une image verticale au format 3:4 que vous pouvez enregistrer, partager ou assembler en une série.",
+        "basicPrompt": {
+          "title": "Ce que l'utilisateur tape réellement",
+          "example": "character_name: \"Beth Dutton\" → template-mbti-yellowstone\n→ carte 3:4 : ENTJ + fonctions cognitives + 4 traits principaux + enneagramme + style ranch rustique",
+          "explanation": "L'utilisateur fournit un champ — le nom du personnage. Le modèle s'occupe du reste. C'est pourquoi le générateur fonctionne bien pour les personnages que les lecteurs reconnaissent déjà : l'attribution du type MBTI et des traits est ancrée dans un comportement observable à travers une série existante, et non inventée à partir d'un prompt."
+        }
+      }
+    },
+    "yellowstone": {
+      "title": "Deux exemples de Yellowstone (11 autres dans le modèle)",
+      "beth": {
+        "traits": [
+          "Audacieuse",
+          "Décisive",
+          "Compétitive",
+          "Réactive",
+          "Ingénieuse",
+          "Communication directe"
+        ],
+        "prompt": "character_name: \"Beth Dutton\"\ntemplate: template-mbti-yellowstone\n→ carte de personnalité 3:4 : ENTJ + 4 fonctions cognitives + traits principaux + enneagramme + style ranch rustique"
+      },
+      "rip": {
+        "traits": [
+          "Loyal",
+          "Méthodique",
+          "Responsable",
+          "Traditionnel",
+          "Protecteur",
+          "Orienté action"
+        ],
+        "prompt": "character_name: \"Rip Wheeler\"\ntemplate: template-mbti-yellowstone\n→ carte de personnalité 3:4 : ISTP + 4 fonctions cognitives + traits principaux + enneagramme + style ranch rustique"
+      },
+      "analysis": {
+        "title": "Pourquoi ces deux",
+        "description": "Beth (ENTJ) et Rip (ISTP) sont les deux personnages qui génèrent la plupart des requêtes de recherche que cette page reçoit — \"type de personnalité de Beth Dutton\", \"Quel MBTI est Rip Wheeler\". Le modèle Yellowstone propose 9 autres personnages pré-typés (John Dutton, Kayce Dutton, Jamie Dutton, Jimmy Hurdstrom, Lloyd Pierce, Monica Dutton, Teeter, Thomas Rainwater, Walker) et le modèle sous-jacent accepte tout autre nom de personnage de Yellowstone.",
+        "points": [
+          "11 personnages de Yellowstone dans le modèle, chacun rendu sous forme de carte 3:4 avec le style ranch rustique",
+          "Attributions MBTI pré-typées basées sur un comportement observable à travers la série — non inventées",
+          "Chaque carte inclut des fonctions cognitives, des traits principaux, un enneagramme et un slogan de clôture",
+          "Parcourez la galerie complète de Yellowstone, ou remixe n'importe quelle carte en échangeant le nom du personnage"
+        ]
+      }
+    },
+    "techniques": {
+      "title": "Approfondir",
+      "detailedPrompts": {
+        "title": "Quand la carte par défaut n'est pas suffisante",
+        "description": "Chaque modèle vous permet de remplacer les champs auto-remplis si la sortie par défaut n'est pas tout à fait correcte — utile lorsque vous souhaitez mettre en avant un trait moins commun, une citation signature spécifique, ou un type d'ennéagramme différent de celui par défaut.",
+        "structure": {
+          "title": "Ce que vous pouvez remplacer",
+          "elements": [
+            "Type MBTI — si vous n'êtes pas d'accord avec l'attribution par défaut pour ce personnage",
+            "Fonctions cognitives — les quatre montrées sur la carte (dominante, auxiliaire, tertiaire, inférieure)",
+            "Traits principaux — les 4–5 étiquettes de traits en bas de la carte",
+            "Citation signature — intégrée dans la boîte de citation (modèles Breaking Bad et Yellowstone)",
+            "Type d'ennéagramme — montré dans la section inférieure sous forme de diagramme séparé"
+          ]
+        },
+        "example": "character_name: \"Saul Goodman\"\ntemplate: template-mbti-breakingbad\nmbti_type: \"ENTP\"\nsignature_quote: \"N'avez-vous pas prévu cette éventualité ? Je veux dire, les Boy Scouts ont un motto...\"\ntrait_1: \"Rapide d'esprit\"\ntrait_2: \"Adaptable\"\ntrait_3: \"Persuasif\""
+      },
+      "iterativeRefinement": {
+        "title": "Trois façons d'itérer",
+        "description": "Si la première carte ne fonctionne pas, trois ajustements suffisent généralement pour la corriger.",
+        "steps": {
+          "step1": {
+            "title": "Changer l'univers",
+            "description": "Le même personnage peut être perçu différemment dans le style Marvel par rapport à Breaking Bad. Si le look gritty de Breaking Bad ne convient pas, le modèle comic-vector de Marvel fonctionne souvent."
+          },
+          "step2": {
+            "title": "Remplacer le type MBTI",
+            "description": "Les attributions par défaut sont ancrées dans le comportement observable à travers la série, mais des personnes raisonnables peuvent être en désaccord. Passez mbti_type explicitement si vous voulez INTJ là où le défaut indique ENTJ."
+          },
+          "step3": {
+            "title": "Remplacer les traits",
+            "description": "Les 4–5 étiquettes de traits en bas portent la majeure partie de l'interprétation de la carte. Échanger deux d'entre elles change souvent toute l'impression."
+          }
+        }
+      }
+    },
+    "advanced": {
+      "title": "Qui utilise cela",
+      "useCases": {
+        "title": "Cas d'utilisation concrets que nous voyons dans les journaux",
+        "writers": {
+          "title": "Publications de théories de fans",
+          "description": "Discussions Reddit / Tumblr qui argumentent le MBTI d'un personnage. La carte est le visuel autour duquel le post est construit."
+        },
+        "rpg": {
+          "title": "Feuilles de PNJ de jeu de rôle",
+          "description": "Les MJ impriment la carte 3:4 comme référence rapide de personnalité pour les PNJ majeurs — le panneau des fonctions cognitives fait également office de guide de jeu de rôle."
+        },
+        "marketing": {
+          "title": "Présentations de persona",
+          "description": "Les équipes de marque utilisent le modèle de contraste pour comparer deux personas clients côte à côte sur une diapositive."
+        },
+        "psychology": {
+          "title": "Aides pédagogiques",
+          "description": "Les cartes stéréotype-vs-réalité fonctionnent comme des incitations en classe pour discuter de la façon dont les types MBTI sont caricaturés en ligne."
+        }
+      },
+      "bestPractices": {
+        "title": "Choses qui ont tendance à poser problème",
+        "points": [
+          "Ne luttez pas contre le modèle de l'univers — choisissez l'univers où le personnage vit réellement, pas celui qui est le plus proche de votre préférence esthétique",
+          "Si le personnage est obscur, revenez au modèle générique des 16 types — il n'a pas besoin d'une propriété intellectuelle célèbre pour ancrer la carte",
+          "Le modèle de contraste nécessite deux types MBTI comme entrée, pas deux noms de personnages — choisissez d'abord les types, puis écrivez les personnages dans les champs de traits",
+          "Les cartes MBTI animales fonctionnent étonnamment bien pour les enfants et le contenu éducatif — l'abstraction enlève la politique de l'attribution des types"
+        ]
+      }
+    },
+    "benefits": {
+      "subtitle": "",
+      "title": "",
+      "accuracy": {
+        "title": "",
+        "description": ""
+      },
+      "efficiency": {
+        "title": "",
+        "description": ""
+      },
+      "consistency": {
+        "title": "",
+        "description": ""
+      },
+      "creativity": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "conclusion": {
+      "title": "Commencez par un personnage que vous connaissez déjà",
+      "description": "Choisissez l'univers que vous suivez déjà, tapez le nom du personnage et remixez à partir de là. Plus vous commencez près d'une personnalité réelle reconnaissable, moins le travail de la carte sera important pour sembler juste.",
+      "cta": {
+        "primary": "Essayez le générateur de personnages Nano Banana",
+        "secondary": "Explorez plus d'outils IA"
+      }
+    },
+    "universes": {
+      "title": "10 Univers, Un Système MBTI",
+      "description": "Choisissez l'univers que vous connaissez déjà — Marvel (66 exemples), NBA (30), Silicon Valley (42), Breaking Bad (24), Ghibli (23), Naruto (14), Yellowstone (11), Animal (49), plus le modèle générique des 16 types (75) et Friends. Tapez un nom de personnage et obtenez une carte de personnalité 3:4 stylisée pour cette émission."
+    },
+    "beyond": {
+      "title": "Deux modèles qui ne sont pas à personnage unique",
+      "description": "Cartes de contraste type contre type (27 exemples) et cartes au format réaction stéréotype contre réalité (16 exemples) — les deux conçues pour des publications sociales, des diapositives éducatives et du contenu de fans où un personnage n'est pas la bonne unité."
+    }
   }
 }

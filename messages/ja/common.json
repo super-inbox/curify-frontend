@@ -208,27 +208,29 @@
       "language": "言語",
       "travel": "旅行＆文化"
     },
-    "useCasesQuestion": "ユースケースで探す：",
+    "useCasesQuestion": "ユースケースから探す:",
     "useCases": {
-      "for-marketers": "マーケター向け",
-      "for-parents": "保護者向け",
-      "for-esl-learners": "ESL学習者向け",
-      "for-creators": "クリエイター向け",
-      "for-designers": "デザイナー向け",
-      "for-publishers": "出版社向け"
+      "for-marketers": "グロースエージェンシー",
+      "for-parents": "保護者",
+      "for-esl-learners": "ESL 学習者",
+      "for-creators": "クリエイター",
+      "for-designers": "デザイナー",
+      "for-publishers": "EdTech・出版社",
+      "for-dtc-brands": "DTC ブランド",
+      "for-programmatic-seo": "プログラマティック SEO"
     }
   },
   "useCasePage": {
     "toolsHeading": "ツール",
     "templatesHeading": "{title}のテンプレート",
     "for-marketers": {
-      "title": "マーケター向け",
-      "subtitle": "コンテンツを10倍速で生成・スケール・公開",
-      "description": "何が効果的かを推測するのをやめましょう。1つのアイデアから数分で数十の高パフォーマンスなビジュアルやビデオを作成できます。",
-      "bullet0": "1つのアイデアからコンテンツを一括生成",
-      "bullet1": "画像をショート動画に変換",
-      "bullet2": "プラットフォームをまたいでコンテンツを再利用",
-      "bullet3": "すぐに投稿できるコンテンツパックをダウンロード"
+      "title": "For Marketing & Growth Agencies",
+      "subtitle": "Serve 50 clients with the headcount you have for 10",
+      "description": "Agency scaling is people-scaling — until it isn’t. Hand each account manager a white-labeled content factory: brief in a brand profile, get back a month of platform-native posts across travel, lifestyle, design, and product verticals. The same engineer ships for all 50 clients. Margin scales linearly; headcount doesn’t.",
+      "bullet0": "White-label content engine — your brand, your client, your delivery",
+      "bullet1": "Per-account brand profiles: tone, style, palette, posting schedule",
+      "bullet2": "Covers travel · lifestyle · design · product verticals out of the box",
+      "bullet3": "Packaged as: per-seat license OR per-managed-account tier — pick a model, no custom retainer"
     },
     "for-parents": {
       "title": "保護者向け",
@@ -269,18 +271,39 @@
       "bullet3": "SEO用の透かし入りプレビュー + 有料ダウンロード用のクリーンなオリジナル"
     },
     "for-publishers": {
-      "title": "出版社 & Edtech向け",
-      "subtitle": "1タイトルから10サーフェスへのフォーマット拡張",
-      "description": "子供向け書籍出版社やK-5のEdtechプラットフォーム向け — 1タイトルをバイリンガル語彙パック、キャラクターキャストのMBTIバリアント、教室ポスター、ソーシャルカードに変換します。または、プラットフォームのアプリ内生成用に言語語彙エンジンをライセンスします。同じキャラクター、10倍のサーフェス；同じエンジン、2つの統合形状。",
-      "bullet0": "フォーマット拡張：1タイトル → カード · ポスター · ソーシャル · 教室",
-      "bullet1": "動物 · 自然 · 宇宙 · 家族 · 交通のK-5語彙エンジン",
-      "bullet2": "IPドロップイン用のポップカルチャーMBTIフレームワーク（マーベル / ジブリスタイル）",
-      "bullet3": "翻訳者チームなしでのバイリンガル版（en-zh / en-es / en-ja / en-ko）"
+      "title": "For EdTech & Children’s Publishers",
+      "subtitle": "Industrial-grade content pipeline — what your illustrator ships in 3 months, ship in a weekend",
+      "description": "Outsourced illustrators take months to deliver a 500-card vocabulary set. Our engine takes hours. Same characters across cards, posters, classroom decor, and social — one title, ten surfaces. Or license the underlying vocabulary engine so your own platform can generate K-5 content in en / es / zh / ja / ko, bilingual editions included, no translator team required.",
+      "bullet0": "K-5 vocabulary engine across animals · nature · space · family · transportation (30+ templates, 5 languages)",
+      "bullet1": "Format extension: one title → cards · posters · social · classroom decor",
+      "bullet2": "Bilingual editions (en-zh / en-es / en-ja / en-ko) — no translator team",
+      "bullet3": "Packaged as: white-label engine license OR done-for-you pack subscription — pick a shape, no half-builds"
+    },
+    "for-dtc-brands": {
+      "title": "For DTC Brands & Cross-Border Ecommerce",
+      "subtitle": "One product photo → 100 scroll-stopping scenes, auto-scheduled to Pinterest, Instagram, TikTok, X",
+      "description": "Cross-border ecommerce lives or dies by daily social volume. Stop waiting on a design contractor to ship five lifestyle shots a week. One product photo enters our engine; a hundred styled scenes — café, garden, kids’ room, vacation, seasonal — come out, watermark-clean and scheduled across four platforms before lunch. Built to move ROAS, not to win portfolio awards.",
+      "bullet0": "Batch-generate 100+ lifestyle / scene variants from one product photo",
+      "bullet1": "Style presets matched to Pinterest / Instagram / TikTok / X aesthetics",
+      "bullet2": "Auto-schedule across four platforms via the built-in SMM queue",
+      "bullet3": "Packaged as: 500-image / 2,000-image / unlimited monthly tiers — fixed scope, no custom dev"
+    },
+    "for-programmatic-seo": {
+      "title": "For Programmatic SEO Builders",
+      "subtitle": "We ran our own 5,500-page hub-and-spoke generator — now you can run yours",
+      "description": "Long-tail keyword pages don’t rank without original imagery and editorial layout. We know — we built 5,500 of them for Curify itself, and you’re reading one of the hubs right now. License the same generator: batch-generated hero imagery, schema-aware page templates, internal-link mesh. Affiliate sites, vertical portals (travel, study-abroad, parenting), local-SEO networks — pick your niche, generate the pages, get indexed.",
+      "bullet0": "Hub-and-spoke generator with built-in internal-link mesh",
+      "bullet1": "Original hero imagery per page — no royalty-free filler, no thin-content penalty",
+      "bullet2": "Schema-aware templates ready for AffiliateProduct / FAQ / HowTo markup",
+      "bullet3": "Packaged as: hosted generator OR self-hosted Docker — fixed-scope CMS adapter, no custom rewrites"
     }
   },
   "interconnection": {
     "whoItsFor": "対象者",
     "relatedTools": "関連ツール",
-    "relatedReading": "関連資料"
+    "relatedReading": "関連資料",
+    "builtForTeams": "Built for teams",
+    "apiAvailable": "APIs available on request.",
+    "apiContactCTA": "Let’s talk scope →"
   }
 }

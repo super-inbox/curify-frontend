@@ -177,33 +177,38 @@
       "language": "Language",
       "travel": "Travel & Culture"
     },
-    "useCasesQuestion": "Explore by Use Case:",
+    "useCasesQuestion": "Explore by use cases for:",
     "useCases": {
-      "for-marketers": "For Marketers",
-      "for-parents": "For Parents",
-      "for-esl-learners": "For ESL Learners",
-      "for-creators": "For Creators",
-      "for-designers": "For Designers",
-      "for-publishers": "For Publishers"
+      "for-marketers": "Growth Agencies",
+      "for-parents": "Parents",
+      "for-esl-learners": "ESL Learners",
+      "for-creators": "Creators",
+      "for-designers": "Designers",
+      "for-publishers": "EdTech & Publishers",
+      "for-dtc-brands": "DTC Brands",
+      "for-programmatic-seo": "Programmatic SEO"
     }
   },
   "interconnection": {
     "whoItsFor": "Who it’s for",
     "relatedTools": "Related tools",
-    "relatedReading": "Related reading"
+    "relatedReading": "Related reading",
+    "builtForTeams": "Built for teams",
+    "apiAvailable": "APIs available on request.",
+    "apiContactCTA": "Let’s talk scope →"
   },
   "useCasePage": {
     "toolsHeading": "Tools",
     "templatesHeading": "Templates for {title}",
     "exploreOtherHeading": "Explore other use cases",
     "for-marketers": {
-      "title": "For Marketers",
-      "subtitle": "Generate, scale, and publish content 10x faster",
-      "description": "Stop guessing what works. Turn one idea into dozens of high-performing visuals and videos in minutes — no design skills, no prompt engineering.",
-      "bullet0": "Generate content batches from a single idea",
-      "bullet1": "Turn images into short-form videos",
-      "bullet2": "Repurpose content across platforms",
-      "bullet3": "Download ready-to-post content packs"
+      "title": "For Marketing & Growth Agencies",
+      "subtitle": "Serve 50 clients with the headcount you have for 10",
+      "description": "Agency scaling is people-scaling — until it isn’t. Hand each account manager a white-labeled content factory: brief in a brand profile, get back a month of platform-native posts across travel, lifestyle, design, and product verticals. The same engineer ships for all 50 clients. Margin scales linearly; headcount doesn’t.",
+      "bullet0": "White-label content engine — your brand, your client, your delivery",
+      "bullet1": "Per-account brand profiles: tone, style, palette, posting schedule",
+      "bullet2": "Covers travel · lifestyle · design · product verticals out of the box",
+      "bullet3": "Packaged as: per-seat license OR per-managed-account tier — pick a model, no custom retainer"
     },
     "for-parents": {
       "title": "For Parents",
@@ -242,13 +247,31 @@
       "bullet3": "Watermarked previews for SEO + clean originals for paid downloads"
     },
     "for-publishers": {
-      "title": "For Publishers & Edtech",
-      "subtitle": "Format extension from one title to ten surfaces",
-      "description": "For children's book publishers and K-5 edtech platforms — turn one title into bilingual vocabulary packs, character-cast MBTI variants, classroom posters, and social cards. Or license the language vocabulary engine for your platform's in-app generation. Same characters, 10× the surfaces; same engine, two integration shapes.",
-      "bullet0": "Format extension: one title → cards · posters · social · classroom",
-      "bullet1": "K-5 vocabulary engine across animals · nature · space · family · transportation",
-      "bullet2": "Pop-culture MBTI frameworks ready for IP drop-in (Marvel / Ghibli style)",
-      "bullet3": "Bilingual editions (en-zh / en-es / en-ja / en-ko) without a translator team"
+      "title": "For EdTech & Children’s Publishers",
+      "subtitle": "Industrial-grade content pipeline — what your illustrator ships in 3 months, ship in a weekend",
+      "description": "Outsourced illustrators take months to deliver a 500-card vocabulary set. Our engine takes hours. Same characters across cards, posters, classroom decor, and social — one title, ten surfaces. Or license the underlying vocabulary engine so your own platform can generate K-5 content in en / es / zh / ja / ko, bilingual editions included, no translator team required.",
+      "bullet0": "K-5 vocabulary engine across animals · nature · space · family · transportation (30+ templates, 5 languages)",
+      "bullet1": "Format extension: one title → cards · posters · social · classroom decor",
+      "bullet2": "Bilingual editions (en-zh / en-es / en-ja / en-ko) — no translator team",
+      "bullet3": "Packaged as: white-label engine license OR done-for-you pack subscription — pick a shape, no half-builds"
+    },
+    "for-dtc-brands": {
+      "title": "For DTC Brands & Cross-Border Ecommerce",
+      "subtitle": "One product photo → 100 scroll-stopping scenes, auto-scheduled to Pinterest, Instagram, TikTok, X",
+      "description": "Cross-border ecommerce lives or dies by daily social volume. Stop waiting on a design contractor to ship five lifestyle shots a week. One product photo enters our engine; a hundred styled scenes — café, garden, kids’ room, vacation, seasonal — come out, watermark-clean and scheduled across four platforms before lunch. Built to move ROAS, not to win portfolio awards.",
+      "bullet0": "Batch-generate 100+ lifestyle / scene variants from one product photo",
+      "bullet1": "Style presets matched to Pinterest / Instagram / TikTok / X aesthetics",
+      "bullet2": "Auto-schedule across four platforms via the built-in SMM queue",
+      "bullet3": "Packaged as: 500-image / 2,000-image / unlimited monthly tiers — fixed scope, no custom dev"
+    },
+    "for-programmatic-seo": {
+      "title": "For Programmatic SEO Builders",
+      "subtitle": "We ran our own 5,500-page hub-and-spoke generator — now you can run yours",
+      "description": "Long-tail keyword pages don’t rank without original imagery and editorial layout. We know — we built 5,500 of them for Curify itself, and you’re reading one of the hubs right now. License the same generator: batch-generated hero imagery, schema-aware page templates, internal-link mesh. Affiliate sites, vertical portals (travel, study-abroad, parenting), local-SEO networks — pick your niche, generate the pages, get indexed.",
+      "bullet0": "Hub-and-spoke generator with built-in internal-link mesh",
+      "bullet1": "Original hero imagery per page — no royalty-free filler, no thin-content penalty",
+      "bullet2": "Schema-aware templates ready for AffiliateProduct / FAQ / HowTo markup",
+      "bullet3": "Packaged as: hosted generator OR self-hosted Docker — fixed-scope CMS adapter, no custom rewrites"
     },
     "learningMaterialsHeading": "Learning Materials"
   },
