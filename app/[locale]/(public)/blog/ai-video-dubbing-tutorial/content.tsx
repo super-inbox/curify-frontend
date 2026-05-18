@@ -2,12 +2,15 @@
 
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
+import Link from 'next/link'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
+import NanoBananaExamples from '@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples'
 
 export default function BlogContent() {
   const locale = useLocale()
   const t = useTranslations('blog.aiVideoDubbingTutorial')
+  const localePrefix = locale === 'en' ? '' : `/${locale}`
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
@@ -58,28 +61,30 @@ export default function BlogContent() {
         </p>
       </section>
 
-      <section className="mb-8">
-        <h2 className="text-3xl font-semibold mb-4">{t('whyUseTitle')}</h2>
+      <section className="mb-8 not-prose">
+        <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white">{t('whyUseTitle')}</h2>
         
-        <h3 className="text-2xl font-semibold mb-3 mt-6">{t('speedTitle')}</h3>
-        <p className="mb-4">
-          {t('speedContent')}
-        </p>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">⚡ {t('speedTitle')}</h3>
+            <p className="text-gray-700 dark:text-gray-300">{t('speedContent')}</p>
+          </div>
 
-        <h3 className="text-2xl font-semibold mb-3 mt-6">{t('costTitle')}</h3>
-        <p className="mb-4">
-          {t('costContent')}
-        </p>
+          <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">💰 {t('costTitle')}</h3>
+            <p className="text-gray-700 dark:text-gray-300">{t('costContent')}</p>
+          </div>
 
-        <h3 className="text-2xl font-semibold mb-3 mt-6">{t('voiceTitle')}</h3>
-        <p className="mb-4">
-          {t('voiceContent')}
-        </p>
+          <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">🎙️ {t('voiceTitle')}</h3>
+            <p className="text-gray-700 dark:text-gray-300">{t('voiceContent')}</p>
+          </div>
 
-        <h3 className="text-2xl font-semibold mb-3 mt-6">{t('scalabilityTitle')}</h3>
-        <p className="mb-4">
-          {t('scalabilityContent')}
-        </p>
+          <div className="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">📈 {t('scalabilityTitle')}</h3>
+            <p className="text-gray-700 dark:text-gray-300">{t('scalabilityContent')}</p>
+          </div>
+        </div>
       </section>
 
       <section className="mb-8">
@@ -201,28 +206,35 @@ export default function BlogContent() {
         </div>
       </section>
 
-      <section className="mb-8">
-        <h2 className="text-3xl font-semibold mb-4">{t('useCasesTitle')}</h2>
+      <section className="mb-8 not-prose">
+        <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white">{t('useCasesTitle')}</h2>
         
-        <h3 className="text-2xl font-semibold mb-3 mt-6">{t('creatorsTitle')}</h3>
-        <p className="mb-4">
-          {t('creatorsContent')}
-        </p>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="border-l-4 border-blue-500 pl-5 py-2 bg-blue-50 dark:bg-blue-900/20 p-4 rounded-r-lg">
+            <h3 className="text-lg font-semibold mb-1">🎬 {t('creatorsTitle')}</h3>
+            <p className="text-sm text-gray-700 dark:text-gray-300">{t('creatorsContent')}</p>
+          </div>
 
-        <h3 className="text-2xl font-semibold mb-3 mt-6">{t('corporateTitle')}</h3>
-        <p className="mb-4">
-          {t('corporateContent')}
-        </p>
+          <div className="border-l-4 border-purple-500 pl-5 py-2 bg-purple-50 dark:bg-purple-900/20 p-4 rounded-r-lg">
+            <h3 className="text-lg font-semibold mb-1">🏢 {t('corporateTitle')}</h3>
+            <p className="text-sm text-gray-700 dark:text-gray-300">{t('corporateContent')}</p>
+          </div>
 
-        <h3 className="text-2xl font-semibold mb-3 mt-6">{t('elearningTitle')}</h3>
-        <p className="mb-4">
-          {t('elearningContent')}
-        </p>
+          <div className="border-l-4 border-green-500 pl-5 py-2 bg-green-50 dark:bg-green-900/20 p-4 rounded-r-lg">
+            <h3 className="text-lg font-semibold mb-1">📚 {t('elearningTitle')}</h3>
+            <p className="text-sm text-gray-700 dark:text-gray-300">{t('elearningContent')}</p>
+          </div>
 
-        <h3 className="text-2xl font-semibold mb-3 mt-6">{t('marketingTitle')}</h3>
-        <p className="mb-4">
-          {t('marketingContent')}
-        </p>
+          <div className="border-l-4 border-orange-500 pl-5 py-2 bg-orange-50 dark:bg-orange-900/20 p-4 rounded-r-lg">
+            <h3 className="text-lg font-semibold mb-1">📢 {t('marketingTitle')}</h3>
+            <p className="text-sm text-gray-700 dark:text-gray-300">{t('marketingContent')}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Live template cards */}
+      <section className="mb-10 not-prose">
+        <NanoBananaExamples locale={locale} blogSlug="ai-video-dubbing-tutorial" />
       </section>
 
       <section className="mb-8">
@@ -261,7 +273,6 @@ export default function BlogContent() {
           {t('conclusionPara2')}
         </p>
       </section>
-
       <RelatedBlogs currentSlug="ai-video-dubbing-tutorial" locale={locale} />
     </article>
   )
