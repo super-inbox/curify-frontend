@@ -131,6 +131,16 @@ const nextConfig: NextConfig = {
       // BlogCTACard explicitly and it has the cleaner namespace shape.
       { source: "/blog/3x3-grid-collage-ai-prompts", destination: "/blog/ai-collage-digital-wallpaper-guide", permanent: true },
       { source: `/:locale(${LOCALE_RE})/blog/3x3-grid-collage-ai-prompts`, destination: "/:locale/blog/ai-collage-digital-wallpaper-guide", permanent: true },
+
+      // Blog duplicate consolidation (docs/blog-quality.md pair 3): the
+      // F5-TTS vs ElevenLabs post overlaps the f5-tts-voice-cloning post
+      // by topic. GSC shows the voice-cloning slug at 3,970 impressions
+      // / 14 clicks vs vs-elevenlabs at 184 / 2 — 22x impression gap.
+      // Keeping f5-tts-voice-cloning as canonical; redirecting the
+      // ElevenLabs comparison to it preserves the 184 impressions
+      // worth of link equity.
+      { source: "/blog/f5-tts-vs-elevenlabs", destination: "/blog/f5-tts-voice-cloning", permanent: true },
+      { source: `/:locale(${LOCALE_RE})/blog/f5-tts-vs-elevenlabs`, destination: "/:locale/blog/f5-tts-voice-cloning", permanent: true },
       { source: "/subtitle-generator", destination: "/tools/bilingual-subtitles", permanent: true },
       { source: `/:locale(${LOCALE_RE})/subtitle-generator`, destination: "/:locale/tools/bilingual-subtitles", permanent: true },
       { source: "/video-translator", destination: "/tools/video-dubbing", permanent: true },
