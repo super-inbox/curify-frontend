@@ -346,6 +346,16 @@ Before implementation:
 
 Estimated: half-day end-to-end.
 
+## ✓ Shipped 2026-05-19
+
+- **Decisions 1, 2, 3 accepted.** Decision 4 (bilingual coverage) deferred — out of scope.
+- **`mood` and `seasonal`** added as tier-3 under `lifestyle`; **`lighting`** under `design`. Source: `lib/topic_tag_mappings.json`.
+- **EXTRA_TAG_TO_TOPICS extended with 45 entries** (proposal said 38; on second pass picked up bold / dynamic / tranquil / introspective / vibrant / morning / rainy / warm / vibrant colors that the cluster-by-cluster cuts had left below the line).
+- **Coverage:** 58.9% → **96.9%** of tag-occurrences mapped. 32 distinct tags remain unmapped (car, modern, sophisticated, etc. — too generic or domain-narrow to map without false positives).
+- **Decision #3 noise audit** shipped via `TAG_DENYLIST` in `scripts/regen_nanobanana_metadata.cjs`. Five ingestion artifacts (`none`, `subject`, `text`, `photograph`, `realistic`) now filtered at metadata regen time; canonical tag list dropped from 151 to 146.
+- **i18n display copy** added in EN, autotranslated to the other 9 locales via `scripts/i18n_autotranslate.cjs --files topics`.
+- **Audit script:** `scripts/audit_tag_coverage.py` parses the registry directly so re-runs after future map edits confirm coverage hasn't regressed.
+
 ## Where things live
 
 | Surface | Path |
