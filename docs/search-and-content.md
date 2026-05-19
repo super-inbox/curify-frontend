@@ -1,6 +1,6 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-05-19. Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-05-19 (priority list reordered after running `scripts/eval_search.cjs --rewrite` — alias top-up and gallery tag categorization rise to P0; admin panel work drops to P1). Owner: jay. Update after any push that touches the threads below or changes priority order._
 
 ## Why this doc exists
 
@@ -143,21 +143,32 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
 
 ## Cross-thread priorities (next 2-3 weeks)
 
-Ranked by how much each unblocks downstream. Items already in flight elsewhere are listed for cross-reference but don't reblock.
+Ranked by how much each unblocks downstream. Reprioritized 2026-05-19 after running `scripts/eval_search.cjs --rewrite` and reading the base-vs-union gap.
 
 ### P0
-1. **[thread a] Add the `SEARCH_LOWRESULT` panel to admin** (`curify-studio` backend, `app/crud/admin.py`). Half-day. Without it, every other thread-a alias top-up stays analyst-driven instead of data-driven.
+1. **[thread a] Eval-driven alias top-up batch**. The 2026-05-19 rewriter eval surfaced 6 queries that only land in `rich` because gpt-4o-mini rescued them — the templates exist, the alias index doesn't reach them on the original query. Each is an alias top-up opportunity, family-pattern same as the 2026-05-18 audit. Plus 3 borderline content gaps that are alias-fixable via adjacent templates. Run `scripts/topup_search_aliases.py` with new families:
+   - **wedding/marriage** (`wedding planner` 15 → 409, 27× lift): celebration / vocab-wedding templates.
+   - **antonym 反义 / english-chinese** (`反义词` 22 → 246, 11×): opposite-concept / kids-opposite templates.
+   - **animal-vocabulary cross-lingual** (`动物 词汇` 8 → 133, 17×): per-language animal vocab templates.
+   - **expression / phrase** (`language learning expressions` 10 → 186, 19×): dialogue + native-expressions templates.
+   - **english-chinese hyphenated** (`english-chinese` 0 → 259, rescue): bilingual vocab templates.
+   - **handcraft / diy / scrapbook** (`手作` 0 → 173, rescue): watercolor / scrapbook / craft templates.
+   - **world cuisines / comfort food** (`creative comfort food` 2 → 2, gap): aliasing world-cuisines templates closes the adjacent gap.
+   - **paper-cutting / kirigami** (`paper cutting` 1 → 1, gap): aliasing craft-tradition templates.
+   - **red-carpet / met-gala** (`met gala` 1 → 1, gap): aliasing fashion / celebrity templates.
 
-2. **[thread d] Extend `search_no_result_utils.py` to also harvest `SEARCH_LOWRESULT`**. Same query path, broader recall on demand signal. Cheap once P0 #1 lands (the SQL is similar).
+   Success criterion: re-run `scripts/eval_search.cjs` (without `--rewrite`) and observe `base_hits ≥ 3` on every query that previously needed the rewriter. 1-2 days.
+
+2. **[thread b] Gallery free-tag categorization proposal**. Today gallery prompts (`nano-banana-pro-prompts`) carry free `tags` only — no tier-1/2/3 hierarchy mapping. The topic registry already has tier-3 slots for: lifestyle fashion styles, language/learning subjects, design styles, travel geos, character MBTI types — plus tier-4 for kids vocabulary subjects. The proposal should: (a) audit top-N gallery tags by frequency, (b) propose a mapping from each to the closest existing tier-3/4 bucket (extend `EXTRA_TAG_TO_TOPICS` in `lib/topicRegistry.ts`), (c) flag the long tail that doesn't fit — either new tier-3 buckets or untagged. Deliverable: `docs/gallery-tag-taxonomy.md` with the proposal + decision queue. Half-day.
+
+3. **[thread c] Content drops: hongjie28-patch-4 + hongjie28-patch-2**. Per the daily-content-drop workflow (memory `project_daily_template_workflow.md`). Fetch each patch branch, wire 5 metadata fields, run i18n autotranslate, sync gallery with `--auto-tag`. After both land, re-run the eval to baseline how new templates shift the bottleneck list.
 
 ### P1
-3. **[thread b] Topic-aware Other Templates ranking + lower row count.** Replace global-rank fallback in `buildOtherTemplateCards` with topic-overlap ranking against the current template; cap the section at ~3 rows on `/nano-template/*` and `/nano-template/*/example/*` (currently ~5 rows of mostly-unrelated cards). Half-day. Single function + the two callers; other surfaces are unaffected. Open item Thread b #6.
+4. **[thread a] SEARCH_LOWRESULT admin panel** (`curify-studio` backend, `app/crud/admin.py`). The frontend ships the event (`8217070`), the Postgres enum has the value (migration ran 2026-05-18). But `crud/admin.py` lines 751-798 only aggregates `SEARCH_NORESULT`. Until this lands, low-result events accumulate in the DB but nobody surfaces them. Half-day. Demoted from P0 because the eval set now substitutes for production data on near-term alias work — but as soon as P0 #1 ships and we want fresh signal, this is back at the top.
 
-4. **[thread b] Split travel and culture into separate tier-1s.** Today `culture` is tier-2 under travel, forcing a false either/or. Promote it to tier-1 in `lib/topic_tag_mappings.json` + register in `topicRegistry` + add an EntryBar capsule. Then a targeted re-tag of templates currently labeled only `travel` that should also gain `culture`. Half-day for the structural change; the tagging audit fits the same window. Open item Thread b #5.
+5. **[thread d] Extend `search_no_result_utils.py` to also harvest `SEARCH_LOWRESULT`**. Same query path, broader demand signal. Cheap once P1 #4 lands.
 
-5. **[thread b] Tag-audit sampling script** (`scripts/audit_tags.py`). Prints 20 random samples per surface with parent-template tier-1 / topic consistency notes. Half-day. Catches tagging drift post-content-drop and ahead of next alias top-up.
-
-6. **[thread a] Precision/recall tightening from the eval gap**. Run `scripts/eval_search.cjs --rewrite` weekly; flag queries where rewriter union >> base (suggests alias under-coverage) or where rewriter recovers nothing despite a known content gap (suggests content-thread escalation). 30 min weekly cron.
+6. **[thread b] Tag-audit sampling script** (`scripts/audit_tags.py`). Prints 20 random samples per surface with parent-template tier-1 / topic consistency notes. Catches tagging drift post-content-drop. Especially useful after P0 #3 to verify the new content carries the expected topic tags.
 
 7. **[thread d] GSC adapter for proposals**. Once `Pages.csv` is in the loop, the demand signal compounds — search-quality misses + interconnection bleeders + GSC zero-CTR all feed one approval queue.
 
@@ -166,12 +177,17 @@ Ranked by how much each unblocks downstream. Items already in flight elsewhere a
 
 9. **[thread c] Seed-driven config regen helper** so subject_topic_seeds.json edits propagate automatically.
 
-10. **[thread b] Recommendation layer** built on tier-1 + tag + alias similarity. Half-week. Unlocks the carousel "similar templates" + gallery "more like this" + search alias regeneration use cases. Note: P1 item 3 (topic-overlap ranking in Other Templates) is the cheapest down-payment on this layer — same Jaccard idea, scoped to one surface.
+10. **[thread b] Recommendation layer** built on tier-1 + tag + alias similarity. Half-week. Unlocks the carousel "similar templates" + gallery "more like this" + search alias regeneration use cases. Note: the shipped topic-overlap ranking in Other Templates is the cheapest down-payment on this layer — same Jaccard idea, scoped to one surface.
 
 ### P3 / open-ended
 11. **[thread d] Approval-rate-per-source dashboard panel**. Calibrates which adapter cron slots to keep.
 
-12. **[thread b] Periodic gallery-tag ↔ topic-registry consistency audit**. Catch silent drift.
+12. **[thread b] Periodic gallery-tag ↔ topic-registry consistency audit**. Catch silent drift. Subsumed once P0 #2 ships and the gallery tags carry a tier mapping.
+
+### Recently shipped (2026-05-19)
+- **[thread b] Topic-aware Other Templates ranking** (`16040a1`) — `buildOtherTemplateCards` now ranks by topic-overlap with the current template, capped at 18 cards (~3 rows of 5) on `/nano-template/*` surfaces.
+- **[thread b] Travel + culture tier-1 split** (`5ec494f`) — `culture` promoted out of `EXPLICIT_CHILD_TOPICS.travel` to its own tier-1. New EntryBar capsule, persona mapping, all 10 locales updated.
+- **[thread a] Carousel use-case chip filtering** (`bb2406e`) — sidebar chips now derived from slide topics via `getUseCasesForTopics`, not the full 8-persona set.
 
 ---
 
