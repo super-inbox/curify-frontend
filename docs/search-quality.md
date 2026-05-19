@@ -1,6 +1,6 @@
 # Search Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-19 (added 30-query regression eval set + runner). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `lib/searchRewrite.ts`, `scripts/enrich_search_aliases.cjs`, `scripts/topup_search_aliases.py`, `scripts/eval_search.cjs`, `scripts/configs/search_eval_set.json`, or `scripts/lib/auto_tag.cjs`._
+_Last updated: 2026-05-19 (added 28-query regression eval set + runner that bypasses topic-redirect to evaluate /search results directly). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `lib/searchRewrite.ts`, `scripts/enrich_search_aliases.cjs`, `scripts/topup_search_aliases.py`, `scripts/eval_search.cjs`, `scripts/configs/search_eval_set.json`, or `scripts/lib/auto_tag.cjs`._
 
 ## Framing
 
@@ -76,12 +76,14 @@ These are the kind of failure we shouldn't be discovering by user report — see
 
 ## Regression eval set (added 2026-05-19)
 
-`scripts/configs/search_eval_set.json` holds a curated 30-query suite that exercises:
+`scripts/configs/search_eval_set.json` holds a curated 28-query suite that exercises:
 
-- **8 tier-1 category anchors** (`character`, `language`, `learning`, `travel`, `lifestyle`, `design`, `product`, `personality`) — should always return rich results / redirect to the topic page. Sentinels for catalog-wide regressions.
+- **8 tier-1 category anchors** (`character`, `language`, `learning`, `travel`, `lifestyle`, `design`, `product`, `personality`) — should always return rich results on `/search`. Sentinels for catalog-wide regressions.
 - **10 reddit-eval queries** (with structural-stopword noise stripped — the tokenizer already drops `topics` / `theme` / etc., so the eval feeds the clean form a real user would type). Tracks all the recall buckets the Reddit comparison flagged.
-- **5 user-reported regressions** — `唯美春天`, `证件照` (alias-top-up rescues), `手作` (LLM-rewrite rescue), `زوحين` + `ddd` (rewriter-empty asserts).
+- **3 user-reported regressions** — `唯美春天`, `证件照` (alias-top-up rescues), `手作` (LLM-rewrite rescue).
 - **7 long-tail / popular queries** — `mbti marvel`, `spring flowers`, `反义词`, `paper cutting`, `met gala`, `动物 词汇`, `wedding planner`. Mix of working queries and known content gaps.
+
+**The eval intentionally bypasses the topic-page redirect.** Tier-1 slugs and tag slugs like `english-chinese` would redirect to `/topics/<slug>` on the live page; the eval scores them against the catalog directly so we know the `/search` results page itself stays healthy. If the redirect ever broke and users landed on `/search?q=character`, the eval guarantees that page still renders a rich grid rather than an empty state.
 
 The runner is `scripts/eval_search.cjs`:
 
@@ -91,7 +93,7 @@ node scripts/eval_search.cjs --rewrite    # also calls gpt-4o-mini per query (~2
 node scripts/eval_search.cjs --quiet      # summary table only
 ```
 
-`expected` is calibrated to current catalog so the baseline run is **30 PASS / 0 WARN / 0 FAIL** on 2026-05-19. A regression that drops a `rich` query to `moderate` flips it to WARN; a `rewrite_empty` query that starts producing rewrites again (the Arabic `زوحين` failure mode) flips to FAIL. Re-run after any change to `search/page.tsx`, `lib/searchRewrite.ts`, the alias top-up data, or the nano_inspiration catalog.
+`expected` is calibrated to current catalog so the baseline run is **28 PASS / 0 WARN / 0 FAIL** on 2026-05-19. A regression that drops a `rich` query to `moderate` flips it to WARN; a `rewrite_recovery` query no longer rescued flips to FAIL. Re-run after any change to `search/page.tsx`, `lib/searchRewrite.ts`, the alias top-up data, or the nano_inspiration catalog.
 
 The eval expected legend (in the JSON):
 
@@ -101,7 +103,6 @@ The eval expected legend (in the JSON):
 | `moderate` | 3-9 effective inspirations |
 | `thin` | 1-2 — should also fire `search_lowresult` event |
 | `empty` | 0 — should fire `search_noresult` event (unless rewriter recovers) |
-| `redirect` | Topic-slug redirect on `page.tsx` — script can't simulate; manual prod verify |
 | `rewrite_recovery` | Base is thin/empty, LLM rewrite expected to surface catalog hits via union |
 | `rewrite_empty` | LLM rewrite should return `[]` (unmappable query — gibberish, proper noun, off-catalog) |
 

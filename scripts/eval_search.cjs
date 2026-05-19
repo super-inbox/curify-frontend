@@ -200,12 +200,11 @@ function verdict(expected, actualBucket, rewrites, unionHits, baseHits) {
     if (baseHits >= 3) return "PASS-noop";
     return rewrites.length > 0 && unionHits >= 3 ? "PASS" : "FAIL";
   }
-  if (expected === "redirect") {
-    // Script can't simulate the redirect path; this is a manual-verify
-    // case. Mark PASS-manual so the regression suite doesn't flag it,
-    // but the verdict text reminds reviewers to spot-check prod.
-    return "PASS-manual";
-  }
+  // Note: tier-1 topic slugs and tag slugs like `english-chinese`
+  // redirect on the live page, but the eval intentionally bypasses the
+  // redirect path and scores them against the catalog directly — we
+  // want to know /search would still render results if redirect were
+  // disabled. Their `expected` is set accordingly (rich / rewrite_recovery).
   return actualBucket === expected ? "PASS" : "WARN";
 }
 
