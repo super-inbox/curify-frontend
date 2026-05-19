@@ -175,7 +175,17 @@
     "speech_translator": {
       "title": "Traducteur de discours",
       "desc": "Traduisez le discours dans une autre langue avec une livraison naturelle."
-    }
+    },
+    "video_enhance": {
+      "title": "Amélioration vidéo",
+      "desc": "Restaurez les détails, la netteté et la clarté dans les vidéos d'archives, basse résolution ou compressées.",
+      "meta": {
+        "title": "Amélioration Vidéo IA | Restaurez les Vidéos d'Archives & Basse Résolution | Curify AI",
+        "description": "Découvrez une démonstration d'amélioration vidéo IA sur de véritables séquences d'archives. Curify restaure les détails, la netteté et la clarté dans les vidéos basse résolution et compressées — inscrivez-vous pour un accès anticipé."
+      }
+    },
+    "relatedReading": "Lisez comment cela fonctionne",
+    "whoItsFor": "Pour qui c'est"
   },
   "bilingual": {
     "metadata": {
@@ -531,6 +541,158 @@
         "educationBody": "Les départements de formation traduisent les vidéos d'intégration, les briefings de sécurité et l'éducation produit dans les langues locales. Une piste vocale naturelle améliore la rétention et l'engagement par rapport aux sous-titres seuls.",
         "businessTitle": "Pour les équipes de marketing international",
         "businessBody": "Les équipes marketing traduisent les vidéos de démonstration, les témoignages de clients et les enregistrements d'événements dans les langues des marchés cibles — permettant une communication cohérente à travers les régions sans coûts de production par marché."
+      }
+    }
+  },
+  "videoEnhance": {
+    "metadata": {
+      "title": "Amélioration Vidéo IA | Restaurez les Vidéos d'Archives & Basse Résolution | Curify AI",
+      "description": "Découvrez une démonstration d'amélioration vidéo IA sur de véritables séquences d'archives. Curify restaure les détails, la netteté et la clarté dans les vidéos basse résolution et compressées — inscrivez-vous pour un accès anticipé."
+    },
+    "title": "Amélioration Vidéo IA",
+    "description": "Restaurez les détails, la netteté et la clarté dans les vidéos basse résolution, compressées ou d'archives. Alternez entre les clips originaux et améliorés ci-dessous pour voir la restauration IA sur de véritables séquences.",
+    "example": "Exemple : un segment d'actualité des années 1970 sur la crise pétrolière — qualité de diffusion SD originale contre la version améliorée par IA.",
+    "cta": "Rejoindre l'Accès Anticipé",
+    "demo": {
+      "aria": "Démonstration d'amélioration vidéo avant / après",
+      "caption": "Utilisez le commutateur pour passer entre les séquences originales et la version améliorée par IA.",
+      "nowPlaying": "En cours de lecture : {lang}"
+    },
+    "why": {
+      "title": "Pourquoi Utiliser Curify pour l'Amélioration Vidéo ?",
+      "point1": "Restaure les détails dans les séquences d'archives, de diffusion et téléchargées par les utilisateurs où la résolution source est fixe.",
+      "point2": "Supprime les artefacts de compression et récupère la texture sans l'apparence trop accentuée et plastique que produisent la plupart des upscalers.",
+      "point3": "Fonctionne sur des clips de longueur complète — pas seulement des courts extraits — et maintient un mouvement naturel à travers les coupes et les panoramiques.",
+      "point4": "Démonstration uniquement aujourd'hui ; inscrivez-vous pour un accès anticipé afin de traiter vos propres séquences lorsque le pipeline s'ouvrira."
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "L'amélioration vidéo est-elle disponible aujourd'hui ?",
+      "a1": "Pas encore — cette page est une démonstration en cours sur des séquences d'archives. Le pipeline de production est en test privé. Inscrivez-vous pour un accès anticipé et nous vous contacterons lorsqu'il sera ouvert au téléchargement.",
+      "q2": "Sur quels types de vidéos l'amélioration fonctionne-t-elle le mieux ?",
+      "a2": "Elle fonctionne le mieux sur des séquences réelles qui ont perdu des détails à cause de la compression, d'une faible résolution source ou d'une perte de copie générationnelle — diffusions d'archives, anciennes vidéos personnelles, séquences de caméras de sécurité et contenu SD téléchargé en HD. Ce n'est pas un outil de restauration de visage ou de recréation générative — il restaure les détails qui existaient dans le signal source."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce que l'Amélioration Vidéo IA ?",
+        "p1": "L'amélioration vidéo IA reconstruit les détails visuels qui ont été perdus ou dégradés lors de l'enregistrement, de la compression ou de la transmission. Contrairement à un simple upscale de résolution, l'objectif n'est pas d'augmenter la taille des pixels — il s'agit de récupérer la texture, les contours et la gamme tonale qu'une capture de meilleure qualité de la même scène aurait produite.",
+        "p2": "Alors que les upscalers traditionnels interpolent entre les pixels existants (produisant une image plus douce ou accentuée mais plastique), les modèles modernes de restauration IA apprennent à partir de grands ensembles de données de séquences de faible et haute qualité appariées. Ils infèrent des détails haute résolution plausibles en fonction de ce que la scène sous-jacente contenait probablement — préservant le mouvement, l'éclairage et la texture de manière cohérente à travers les images.",
+        "p3": "La démonstration sur cette page améliore un extrait d'un segment d'actualité des années 1970. L'original est de qualité de diffusion SD avec la compression typique et la perte de chroma de l'époque. La version améliorée récupère les détails faciaux, la texture de la scène et la netteté des contours tout en conservant le grain de film et la palette de couleurs appropriés à l'époque."
+      },
+      "how": {
+        "title": "Comment Curify Aborde l'Amélioration Vidéo",
+        "p1": "L'amélioration vidéo de qualité production n'est pas un modèle unique — c'est un pipeline de modèles spécialisés qui gèrent chacun un mode de défaillance, séquencés de sorte que leurs corrections s'additionnent plutôt que de se contredire.",
+        "p2": "Étape 1 : Segmentation de scène et détection de plan. Le pipeline divise le clip aux frontières de scène afin que les paramètres de restauration par plan puissent s'adapter à l'éclairage, au mouvement et au contenu plutôt que de faire une moyenne sur l'ensemble du clip.",
+        "p3": "Étape 2 : Restauration image par image. La reconstruction des détails, le désentrelacement et la réduction du bruit sont appliqués en tenant compte des vecteurs de mouvement afin que les corrections restent temporellement cohérentes — les images ne clignotent pas entre les niveaux de détail à travers les coupes.",
+        "p4": "Étape 3 : Stabilisation temporelle. Un second passage lisse le scintillement résiduel, aligne les détails améliorés à travers les images et préserve le flou de mouvement naturel là où c'est intentionnel.",
+        "p5": "Étape 4 : Encodage conscient de la qualité. Le clip final est encodé avec un débit binaire et un choix de codec qui préservent le détail récupéré plutôt que de réintroduire les artefacts de compression que la restauration vient juste de supprimer."
+      },
+      "usecases": {
+        "title": "Qui utilise l'amélioration vidéo par IA ?",
+        "creatorsTitle": "Pour les créateurs et les producteurs de documentaires",
+        "creatorsBody": "Les producteurs travaillant avec des archives, des anciennes interviews ou des diffusions vintage utilisent l'amélioration pour amener le matériel source à une qualité qui tient sur les écrans modernes sans recréer l'apparence d'époque.",
+        "educationTitle": "Pour les équipes éducatives et d'archives",
+        "educationBody": "Les bibliothèques, musées et éditeurs éducatifs numérisent des collections de bandes et de films à la qualité d'origine enregistrée. L'amélioration récupère des détails qui permettent de projeter le même film, de l'intégrer dans des cours ou de le licencier sans le cadre apologétique 'désolé pour la qualité'.",
+        "businessTitle": "Pour les équipes de marque et de marketing",
+        "businessBody": "Les équipes marketing revisitent d'anciens actifs de marque — interviews de fondateurs, premières démonstrations de produits, spots de diffusion — et souhaitent les réutiliser dans des campagnes modernes. L'amélioration comble l'écart de qualité sans avoir à re-filmer, préservant l'histoire et les personnages d'origine."
+      }
+    }
+  },
+  "styleTransfer": {
+    "metadata": {
+      "title": "Transfert de Style IA pour Vidéo | Pixar, Ghibli, Anime | Curify AI",
+      "description": "Appliquez le style artistique de Pixar, Ghibli, anime ou toute autre référence à un clip vidéo réel. Le pipeline de transfert de style de Curify préserve le mouvement et l'identité tout en échangeant le langage visuel."
+    },
+    "title": "Transfert de Style IA pour Vidéo",
+    "description": "Appliquez le style artistique de Pixar, Ghibli, anime ou toute autre référence à une vidéo réelle — cohérence image par image, mouvement préservé, sujets reconnaissables. Regardez la démo ci-dessous pour un exemple.",
+    "example": "Exemple : un clip en prise de vue réelle re-stylisé dans un look pictural Ghibli, cohérent d'image à image sur l'ensemble du plan.",
+    "cta": "Rejoignez l'Accès Anticipé",
+    "why": {
+      "title": "Pourquoi utiliser Curify pour le transfert de style ?",
+      "point1": "Restylisation cohérente d'image — pas de scintillement ou de dérive d'identité entre les images, même à travers les coupes et les panoramiques.",
+      "point2": "Le style est défini par une image de référence ou un préréglage nommé (Pixar, Ghibli, anime, aquarelle, peinture à l'huile, etc.).",
+      "point3": "Les sujets restent reconnaissables — visages, accessoires et texte à l'écran survivent à la restylisation.",
+      "point4": "Démo uniquement aujourd'hui ; inscrivez-vous pour un accès anticipé afin de traiter vos propres séquences lorsque le pipeline sera ouvert."
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "Le transfert de style est-il disponible aujourd'hui ?",
+      "a1": "Pas encore — cette page montre une démo fonctionnelle sur un clip d'exemple. Le pipeline de production est en test privé. Inscrivez-vous pour un accès anticipé et nous vous contacterons lorsque l'upload sera ouvert.",
+      "q2": "Quels types de vidéos sources fonctionnent le mieux ?",
+      "a2": "Les séquences avec un cadrage stable, des sujets clairs et un premier plan défini fonctionnent le mieux. Le transfert de style est une restylisation créative, pas un échange de visages — les sujets restent reconnaissables mais le langage visuel change. Les séquences fortement compressées ou de basse résolution produiront un rendu plus bruité."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce que le Transfert de Style IA pour Vidéo ?",
+        "p1": "Le transfert de style prend une vidéo source et un style visuel cible — Pixar 3D, pictural Ghibli, art linéaire anime, aquarelle — et re-renderise le clip dans le style cible tout en préservant le mouvement original, le cadrage et l'identité des sujets. La sortie est une nouvelle vidéo, pas un filtre appliqué aux images originales.",
+        "p2": "Le transfert de style d'image existe depuis une décennie, mais la partie difficile pour la vidéo est la cohérence temporelle. Une restylisation naïve image par image scintille — chaque image est restylisée indépendamment, donc les couleurs et les textures tremblent alors que le modèle fait des choix différents sur des images adjacentes. Les pipelines modernes corrigent cela en se basant sur l'image précédente et en propageant les décisions de style à travers l'axe temporel.",
+        "p3": "La démo sur cette page montre un clip en prise de vue réelle re-stylisé dans un look pictural Ghibli. Le mouvement reste fluide, les visages restent reconnaissables et la palette de couleurs reste cohérente sur l'ensemble du plan."
+      },
+      "how": {
+        "title": "Comment Curify Aborde le Transfert de Style",
+        "p1": "Le transfert de style vidéo de qualité production est un pipeline d'étapes spécialisées, pas un simple appel de modèle. Chaque étape gère une partie du problème de cohérence temporelle afin que les corrections s'accumulent plutôt que de se contredire.",
+        "p2": "Étape 1 : Détection de plan et segmentation de scène. Le clip est divisé aux limites des plans afin que chaque plan obtienne ses propres paramètres de style et que le modèle ne soit pas demandé à maintenir la cohérence à travers une coupe non liée.",
+        "p3": "Étape 2 : Encodage de référence. Soit une image de référence de style soit un préréglage nommé est encodé dans un embedding de style cible qui pilote la restylisation.",
+        "p4": "Étape 3 : Restylisation cohérente d'image. Les images sont restylisées en tenant compte de l'image de sortie précédente, donc les couleurs, les textures et les poids de ligne restent cohérents à travers le mouvement.",
+        "p5": "Étape 4 : Lissage temporel et encodage conscient de la qualité. Un passage de scintillement résiduel nettoie les artefacts restants et le clip final est encodé à un débit binaire qui préserve le détail restylisé."
+      },
+      "usecases": {
+        "title": "Qui Utilise le Transfert de Style IA ?",
+        "creatorsTitle": "Pour les Animateurs et les Créateurs Indépendants",
+        "creatorsBody": "Les animateurs indépendants utilisent le transfert de style pour verrouiller un style visuel cohérent à travers des heures de séquences sans peindre chaque image à la main. Le résultat est le point de départ pour le nettoyage en aval, pas la livraison finale — mais cela réduit des jours de travail image par image à quelques minutes.",
+        "educationTitle": "Pour l'éducation et le contenu pour enfants",
+        "educationBody": "Les créateurs éducatifs traduisent des vidéos explicatives en direct en un style plus amical, pictural ou 3D pour les jeunes publics. Le même enregistrement peut être diffusé dans plusieurs registres visuels pour différentes tranches d'âge sans avoir besoin de refaire des prises.",
+        "businessTitle": "Pour les équipes de marque et de campagne",
+        "businessBody": "Les équipes marketing re-stylisent un seul tournage en direct en plusieurs variantes stylistiques — une version corporate propre, une version animée ludique, une version esthétique régionale — pour des tests A/B ou une publication multi-canal sans coût de production par variante."
+      }
+    }
+  },
+  "mangaTranslation": {
+    "metadata": {
+      "title": "Traduction de Manga AI | Traduisez des panneaux de bande dessinée avec mise en page préservée | Curify AI",
+      "description": "Traduisez des panneaux de manga, de bande dessinée et de webtoon en plus de 30 langues tout en conservant les formes de bulles originales, les polices et la mise en page des panneaux intactes. Démo uniquement — rejoignez l'accès anticipé."
+    },
+    "title": "Traduction de Manga AI",
+    "description": "Traduisez le texte dans des mangas, des bandes dessinées et des webtoons en plus de 30 langues tout en conservant les formes de bulles originales, les polices et la mise en page des panneaux intactes. Regardez la démo avant / après ci-dessous.",
+    "example": "Exemple : une page de manga en langue chinoise traduite en anglais et en espagnol avec la mise en page des bulles préservée.",
+    "cta": "Rejoignez l'accès anticipé",
+    "why": {
+      "title": "Pourquoi utiliser Curify pour la traduction de manga ?",
+      "point1": "Détecte chaque bulle de dialogue, boîte de narration et étiquette SFX — pas seulement les lignes de dialogue.",
+      "point2": "Reconstruit la typographie pour s'adapter à la bulle — les sauts de ligne, le poids de la police et l'orientation verticale / horizontale s'adaptent tous.",
+      "point3": "Préserve la mise en page des panneaux, la direction des pages et le placement des SFX afin que la page traduite se lise naturellement sur le marché cible.",
+      "point4": "Démo uniquement aujourd'hui ; inscrivez-vous pour un accès anticipé afin de traduire vos propres pages lorsque le pipeline s'ouvrira."
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "La traduction de manga est-elle disponible aujourd'hui ?",
+      "a1": "Pas encore — cette page est une démo fonctionnelle sur des pages d'exemple. Le pipeline de production est en test privé. Inscrivez-vous pour un accès anticipé et nous vous contacterons lorsqu'il sera ouvert pour le téléchargement.",
+      "q2": "Quelles langues sont prises en charge ?",
+      "a2": "Le couche de traduction prend en charge plus de 30 langues, y compris l'anglais, l'espagnol, le français, l'allemand, le japonais, le coréen, le chinois simplifié, le chinois traditionnel et l'arabe. La détection de langue est automatique du côté source ; la langue cible est le choix de l'utilisateur."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce que la traduction de manga AI ?",
+        "p1": "La traduction de manga est une tâche en plusieurs étapes : détecter le texte sur la page, reconnaître ce qu'il dit, le traduire dans la langue cible, et adapter la traduction dans l'espace de la bulle ou du panneau original sans casser la mise en page. La plupart des outils de traduction génériques ne gèrent que l'étape intermédiaire et produisent des pages inutilisables qui nécessitent une réorganisation complète.",
+        "p2": "La partie difficile n'est pas la qualité de la traduction — c'est la préservation de la mise en page. Une bulle de dialogue conçue pour un texte japonais vertical doit contenir une phrase anglaise beaucoup plus longue sans déborder, perdre l'ordre de lecture ou couvrir l'œuvre d'art. Les SFX (effets sonores) intégrés dans l'art du panneau sont encore plus difficiles : ils doivent être retirés proprement et redessinés dans la langue cible sans endommager le dessin sous-jacent.",
+        "p3": "La démo sur cette page montre une page d'exemple traduite de bout en bout avec la mise en page des bulles, les choix de polices et le placement des SFX tous préservés dans la sortie."
+      },
+      "how": {
+        "title": "Comment Curify aborde la traduction de manga",
+        "p1": "Le pipeline fonctionne en quatre étapes spécialisées, chacune gérant un mode de défaillance de l'approche naïve de traduction et de superposition.",
+        "p2": "Étape 1 : Détection des bulles et des régions de texte. Un modèle de vision identifie chaque bulle de dialogue, boîte de narration, étiquette SFX et région de texte flottante, avec des polygones de délimitation qui respectent la mise en page originale.",
+        "p3": "Étape 2 : OCR et reconnaissance de source. Le texte à l'intérieur de chaque région est reconnu — gérant les scripts verticaux, la calligraphie à la main et les polices SFX stylisées qui contrecarrent l'OCR généraliste.",
+        "p4": "Étape 3 : Traduction contextuelle. L'étape de traduction préserve la voix des personnages à travers les pages (de sorte que le même personnage parle de manière cohérente) et adapte les SFX aux conventions de la langue cible lorsque cela est approprié.",
+        "p5": "Étape 4 : Réaménagement typographique. Le texte traduit est réaffiché dans la bulle d'origine avec des sauts de ligne adaptatifs, un poids de police correspondant et un changement d'orientation (vertical → horizontal si nécessaire) afin que le résultat soit fluide dans le marché cible."
+      },
+      "usecases": {
+        "title": "Qui utilise la traduction de manga par IA ?",
+        "creatorsTitle": "Pour les créateurs de bandes dessinées et de webtoons indépendants",
+        "creatorsBody": "Les créateurs indépendants publient dans une langue et souhaitent atteindre des lecteurs dans d'autres langues sans payer de frais de localisation par page. La traduction automatisée produit un brouillon que le créateur (ou un traducteur communautaire) peut peaufiner, réduisant des semaines de travail de mise en page à quelques minutes.",
+        "educationTitle": "Pour l'apprentissage des langues et les éditions bilingues",
+        "educationBody": "Les enseignants de langues et les éditeurs d'éditions bilingues produisent des pages en langues alternées ou côte à côte à partir d'une seule source. Le pipeline de traduction produit une version préservée de la mise en page dans chaque langue cible, prête à être mise en forme pour l'édition bilingue finale.",
+        "businessTitle": "Pour les éditeurs de manga, de bandes dessinées et de webtoons",
+        "businessBody": "Les éditeurs localisent des titres de catalogue dans de nouveaux marchés où la traduction manuelle sous licence n'est pas rentable. La traduction automatisée rend viable une stratégie de localisation à long terme : chaque titre de catalogue devient un candidat pour une sortie sur un nouveau marché."
       }
     }
   }

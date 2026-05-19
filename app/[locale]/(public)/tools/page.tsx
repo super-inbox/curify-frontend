@@ -3,18 +3,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ToolsClient from "./ToolsClient";
-import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import { SITE_URL } from "@/lib/constants";
-
-import {
-  type RawTemplate,
-  type RawNanoImageRecord,
-  buildNanoRegistry,
-} from "@/lib/nano_utils";
-import { buildNanoFeedCards } from "@/lib/nano_page_data";
-import nanoTemplates from "@/public/data/nano_templates.json";
-import nanoImages from "@/public/data/nano_inspiration.json";
-import { resolveContentLocale } from "@/lib/locale_utils";
 
 export const dynamic = "force-dynamic";
 
@@ -65,41 +54,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: Props) {
-  const { locale: localeStr } = await params;
-
-  const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
-  const translateNano = (key: string): string => {
-    try {
-      return tNano(key as never) ?? "";
-    } catch {
-      return "";
-    }
-  };
-
-  const reg = buildNanoRegistry(
-    nanoTemplates as unknown as RawTemplate[],
-    nanoImages as unknown as RawNanoImageRecord[]
-  );
-
-  const nanoCards = buildNanoFeedCards(reg, resolveContentLocale(localeStr), {
-    perTemplateMaxImages: 2,
-    strictLocale: false,
-    translate: translateNano,
-  });
-
+export default async function Page(_props: Props) {
+  // Visual nano-templates block at the bottom was dropped 2026-05-19:
+  // /tools focuses on tools; /nano-template and /nano-banana-pro-prompts
+  // are the canonical surfaces for the visual template catalog. ToolsClient
+  // now stacks tools grid → latest blogs → use-case persona chips.
   return (
     <main className="min-h-screen">
       <ToolsClient />
-
-      <div className="mx-auto max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8">
-        <NanoTemplateDetailClient
-          locale={localeStr}          
-          otherNanoCards={nanoCards}
-          showReproduce={false}
-          showOtherTemplates={true}
-        />
-      </div>
     </main>
   );
 }

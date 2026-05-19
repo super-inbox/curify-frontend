@@ -5,6 +5,7 @@ import CdnImage from "../../_components/CdnImage";
 import { useTranslations } from "next-intl";
 import { useState, useMemo } from "react";
 import { useParams } from "next/navigation";
+import blogsData from "@/public/data/blogs.json";
 
 interface BlogPost {
   slug: string;
@@ -13,63 +14,37 @@ interface BlogPost {
   readTime: string;
   tag: string;
   image: string;
+  category?: string;
 }
 
-const PILLARS = [
-  {
-    id: "nano-template",
-    label: "Nano Template",
-    icon: "🍌",
-    description: "AI visual prompts, templates & lookbooks",
-    hub: "ultimate-directory-of-nano-banana-prompts",
-  },
-  {
-    id: "creator-tools",
-    label: "Creator Tools",
-    icon: "🎨",
-    description: "AI tools, workflows & creative pipelines",
-    hub: "best-ai-tools",
-  },
-  {
-    id: "video-translation-dubbing",
-    label: "Video Dubbing",
-    icon: "🎬",
-    description: "Video translation, dubbing & voice cloning",
-    hub: "ai-youtube-video-translator",
-  },
-  {
-    id: "content-automation",
-    label: "Content Automation",
-    icon: "⚙️",
-    description: "AI-driven content systems & distribution",
-    hub: "curify-ai-growth-engine",
-  },
-  {
-    id: "learning-education",
-    label: "Learning & Education",
-    icon: "📚",
-    description: "Visual learning tools for students & parents",
-    hub: "visual-learning-tools",
-  },
-  {
-    id: "ds-ai-engineering",
-    label: "DS & AI Engineering",
-    icon: "🔬",
-    description: "AI architecture, pipelines & platform design",
-    hub: "ai-content-production-system",
-  },
+// Pillar labels shown in the tag filter row — the order also controls
+// the filter pill order. Drop a pillar here to remove it from the
+// filter; the hub for each pillar is still a regular post in the feed
+// so it stays reachable.
+const PILLAR_LABELS = [
+  "Nano Template",
+  "Creator Tools",
+  "Video Dubbing",
+  "Content Automation",
+  "Learning & Education",
+  "DS & AI Engineering",
 ];
 
 export default function BlogListPage() {
   const t = useTranslations("blog");
   const { locale } = useParams() as { locale: string };
-  const blogPosts = t.raw("posts") as BlogPost[];
   const [selectedTag, setSelectedTag] = useState<string>("All");
 
-  const blogBySlug = useMemo(
-    () => new Map(blogPosts.map((p) => [p.slug, p])),
-    [blogPosts]
-  );
+  // public/data/blogs.json is the single source of truth for the feed
+  // catalog. The file is hand-curated and not strictly chronological,
+  // so sort by parsed date (most recent first) at render time.
+  const blogPosts = useMemo(() => {
+    return (blogsData as BlogPost[]).slice().sort((a, b) => {
+      const da = Date.parse(a.date) || 0;
+      const db = Date.parse(b.date) || 0;
+      return db - da;
+    });
+  }, []);
 
   const filteredPosts = useMemo(() => {
     if (selectedTag === "All") return blogPosts;
@@ -82,40 +57,11 @@ export default function BlogListPage() {
     <div className="pt-2 pb-16">
       <div className="mx-auto max-w-[1180px] px-4">
 
-        {/* ── Pillar Hub Section ───────────────────────────────────────── */}
-        <section className="mb-12">
-          <h1 className="mb-2 text-4xl font-bold text-neutral-900">{t("latestArticles")}</h1>
-          <p className="mb-8 text-neutral-500 text-base">Explore our 6 content pillars — each hub anchors a cluster of deep-dive articles.</p>
-
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            {PILLARS.map((pillar) => {
-              const hubPost = blogBySlug.get(pillar.hub);
-              return (
-                <Link
-                  key={pillar.id}
-                  href={hubPost ? blogHref(pillar.hub) : "#"}
-                  onClick={() => setSelectedTag(pillar.label)}
-                  className="group flex flex-col gap-2 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-purple-200 hover:shadow-md"
-                >
-                  <span className="text-2xl">{pillar.icon}</span>
-                  <span className="text-sm font-bold text-neutral-900 group-hover:text-purple-700 leading-tight">
-                    {pillar.label}
-                  </span>
-                  <span className="text-xs text-neutral-400 leading-snug">
-                    {pillar.description}
-                  </span>
-                  <span className="mt-auto text-[11px] font-semibold text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                    Read hub →
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
+        <h1 className="mb-6 text-4xl font-bold text-neutral-900">{t("latestArticles")}</h1>
 
         {/* ── Tag Filter ───────────────────────────────────────────────── */}
         <div className="mb-6 flex flex-wrap gap-2">
-          {["All", ...PILLARS.map((p) => p.label)].map((tag) => (
+          {["All", ...PILLAR_LABELS].map((tag) => (
             <button
               key={tag}
               onClick={() => setSelectedTag(tag)}

@@ -285,6 +285,83 @@ const EXTRA_TAG_TO_TOPICS: Record<string, string[]> = {
   kpop:              ["korea"],
   // → multi-country (east asian gallery tag spans japanese + kpop content)
   "east asian":      ["japan", "korea"],
+  // ---- 2026-05-19 gallery tag taxonomy P0 #2 — see docs/gallery-tag-taxonomy.md ----
+  // → mood (new tier-3 under lifestyle). The 12 highest-volume mood adjectives
+  //   in the gallery. Remaining mood-adjectives (introspective / glamorous /
+  //   sophisticated / tranquil / bold / dynamic / vibrant / relaxed) stay
+  //   unmapped as cosmetic until volume per-tag warrants the entry.
+  playful:           ["mood"],
+  confident:         ["mood"],
+  serene:            ["mood"],
+  cozy:              ["mood"],
+  joyful:            ["mood"],
+  intimate:          ["mood"],
+  vibrant:           ["mood"],
+  luxurious:         ["mood"],
+  stylish:           ["mood"],
+  contemplative:     ["mood"],
+  bold:              ["mood"],
+  energetic:         ["mood"],
+  dynamic:           ["mood"],
+  calm:              ["mood"],
+  tranquil:          ["mood"],
+  introspective:     ["mood"],
+  romantic:          ["mood"],
+  // → lighting (new tier-3 under design). golden hour was the 4th-highest
+  //   GSC tag page in the 13-day window — direct user demand. Carry both
+  //   the hyphenated and space form of natural light so the source-dataset
+  //   variance doesn't break the link.
+  "golden hour":     ["lighting"],
+  "soft-light":      ["lighting"],
+  "natural light":   ["lighting"],
+  "natural-light":   ["lighting"],
+  sunset:            ["lighting"],
+  bokeh:             ["lighting"],
+  twilight:          ["lighting"],
+  night:             ["lighting"],
+  morning:           ["lighting"],
+  // → seasonal (new tier-3 under lifestyle, sibling of nostalgia). `snowy
+  //   landscape` alone drove 502 GSC impressions in the 13-day window —
+  //   the highest single tag page. Map both `snowy` and `snowy landscape`
+  //   so the source-dataset variants both find the topic.
+  winter:            ["seasonal"],
+  summer:            ["seasonal"],
+  autumn:            ["seasonal"],
+  snowy:             ["seasonal"],
+  "snowy landscape": ["seasonal"],
+  rainy:             ["seasonal"],
+  christmas:         ["seasonal"],
+  festive:           ["seasonal"],
+  // → travel (scenery cluster — falls under tier-1 travel directly, no
+  //   tier-2 fits closely enough to introduce a new bucket for 165 prompts)
+  beach:             ["travel"],
+  forest:            ["travel"],
+  ocean:             ["travel"],
+  garden:            ["travel"],
+  nature:            ["travel"],
+  // → digital-canvas (color / material descriptors — all stylistic axes
+  //   adjacent to the existing artistic tier-3)
+  pastel:            ["digital-canvas"],
+  glossy:            ["digital-canvas"],
+  silver:            ["digital-canvas"],
+  gold:              ["digital-canvas"],
+  metallic:          ["digital-canvas"],
+  warm:              ["digital-canvas"],
+  "vibrant colors":  ["digital-canvas"],
+  // → photorealistic (siblings of the existing tier-3). The
+  //   REVERSE_MAP_EXCLUDED_TOPICS exclusion only affects topic-page →
+  //   tag-page direction, so adding tag-page → topic-page entries here
+  //   does not re-introduce the heterogeneity that exclusion guards against.
+  hyperrealistic:    ["photorealistic"],
+  "ultra realistic": ["photorealistic"],
+  // → style adjacencies
+  y2k:               ["vintage-retro"],
+  luxury:            ["high-fashion"],
+  // → subject adjacencies (cat → animal tier-3, sunglasses → fashion,
+  //   friends → relationship)
+  cat:               ["animal"],
+  sunglasses:        ["fashion"],
+  friends:           ["relationship"],
 };
 
 // Topics excluded from the reverse map only — their topic page still
@@ -418,6 +495,7 @@ const TIER1_USE_CASES: Record<string, readonly string[]> = {
   language:    ["for-parents", "for-esl-learners", "for-publishers"],
   learning:    ["for-parents", "for-creators", "for-publishers"],
   travel:      ["for-creators", "for-marketers", "for-dtc-brands"],
+  culture:     ["for-creators", "for-publishers", "for-designers"],
   lifestyle:   ["for-creators", "for-marketers", "for-dtc-brands"],
   design:      ["for-marketers", "for-designers", "for-dtc-brands"],
   product:     ["for-marketers", "for-designers", "for-dtc-brands"],

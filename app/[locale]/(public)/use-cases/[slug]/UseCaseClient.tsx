@@ -7,6 +7,7 @@ import { Download } from "lucide-react";
 import { Link as IntlLink } from "@/i18n/navigation";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import { templatePacksService } from "@/services/templatePacks";
@@ -35,19 +36,28 @@ const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3"] as const;
 // video column and the hero text takes the full row width.
 const USE_CASE_VIDEO_KEY: Record<string, string> = {
   "for-designers": "design",
-  "for-parents": "parents",
+  "for-parents":   "parents",
+  "for-creators":  "creators",
 };
 
 function UseCaseVideo({ videoKey, lang }: { videoKey: string; lang: "en" | "cn" }) {
+  // CdnVideo rewrites the /video/... path to the GCS bucket
+  // (gs://curify-static/video). The local public/video/ files are
+  // gitignored — only the CDN copy is served in production. Drop a
+  // new pair into public/video/ then run scripts/sync_large_assets.sh.
+  //
+  // Source videos are vertical (9:16, phone-shot / TikTok-Reels-style),
+  // so the container matches that aspect — using aspect-video (16:9)
+  // would either letterbox heavily or crop the video.
   const src = `/video/use-case-${videoKey}-${lang}.mp4`;
   return (
     <div className="w-full overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 shadow-sm">
-      <video
+      <CdnVideo
         src={src}
         controls
         playsInline
         preload="metadata"
-        className="aspect-video w-full bg-black"
+        className="aspect-[9/16] w-full bg-black"
       />
     </div>
   );
@@ -201,7 +211,7 @@ export default function UseCaseClient({
       </section>
 
         {videoKey && (
-          <div className="w-full lg:w-[460px] lg:flex-shrink-0">
+          <div className="mx-auto w-full max-w-[320px] lg:mx-0 lg:w-[280px] lg:flex-shrink-0">
             <UseCaseVideo videoKey={videoKey} lang={locale === "zh" ? "cn" : "en"} />
           </div>
         )}
