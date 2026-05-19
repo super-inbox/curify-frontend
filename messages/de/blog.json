@@ -7,6 +7,34 @@
     "latestArticles": "Neueste Artikel",
     "posts": [
       {
+        "slug": "ai-reshaping-data-workflow",
+        "title": "AI Is Reshaping the Data Workflow: From Assistant to Agent",
+        "date": "May 18, 2026",
+        "readTime": "8 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/ai-dataworkflow.jpg",
+        "category": "ds-ai-engineering",
+        "relatedLinks": [
+          "ml-engineer-vs-ai-engineer",
+          "aiPlatform",
+          "age_AI"
+        ]
+      },
+      {
+        "slug": "ml-engineer-vs-ai-engineer",
+        "title": "ML Engineer or AI Engineer? Two Career Paths, Two Value Structures",
+        "date": "May 18, 2026",
+        "readTime": "6 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/mle-vs-ai.jpg",
+        "category": "ds-ai-engineering",
+        "relatedLinks": [
+          "ai-reshaping-data-workflow",
+          "aiPlatform",
+          "age_AI"
+        ]
+      },
+      {
         "slug": "mbti-character-generator",
         "title": "Nano Banana MBTI Charaktergenerator: Erstelle in Sekunden charakterbasierte Figuren",
         "date": "April 20, 2026",
@@ -117,7 +145,7 @@
         "title": "Wie wir ein KI-Inhaltsproduktionssystem aufgebaut haben (nicht nur Werkzeuge)",
         "date": "April 8, 2026",
         "readTime": "12 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Content Automation",
         "image": "/images/contentai.webp"
       },
       {
@@ -185,7 +213,7 @@
         "title": "YouTube-Videos ins Englische übersetzen: KI-gestützte Lösungen",
         "date": "March 4, 2026",
         "readTime": "10 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/youtubev1.webp"
       },
       {
@@ -349,7 +377,7 @@
         "title": "Einblick in eine KI-Video-Transkriptionspipeline: ASR, Ausrichtung und Sprecher-Diarisation",
         "date": "19. März 2026",
         "readTime": "12 Min. Lesezeit",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/techicalpress.webp",
         "thumbnailType": "video-transkription-pipeline"
       },
@@ -404,7 +432,7 @@
         "title": "Einblick in die AI Lip Sync Pipeline: MuseTalk, Sync.co und Produktionsarchitektur",
         "date": "29. März 2026",
         "readTime": "15 Min. Lesezeit",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg",
         "category": "creator-tools",
         "relatedLinks": [

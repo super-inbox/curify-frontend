@@ -9,6 +9,34 @@
     "readMore": "Leer más",
     "posts": [
       {
+        "slug": "ai-reshaping-data-workflow",
+        "title": "AI Is Reshaping the Data Workflow: From Assistant to Agent",
+        "date": "May 18, 2026",
+        "readTime": "8 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/ai-dataworkflow.jpg",
+        "category": "ds-ai-engineering",
+        "relatedLinks": [
+          "ml-engineer-vs-ai-engineer",
+          "aiPlatform",
+          "age_AI"
+        ]
+      },
+      {
+        "slug": "ml-engineer-vs-ai-engineer",
+        "title": "ML Engineer or AI Engineer? Two Career Paths, Two Value Structures",
+        "date": "May 18, 2026",
+        "readTime": "6 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/mle-vs-ai.jpg",
+        "category": "ds-ai-engineering",
+        "relatedLinks": [
+          "ai-reshaping-data-workflow",
+          "aiPlatform",
+          "age_AI"
+        ]
+      },
+      {
         "slug": "aiPlatform",
         "title": "Practical AI Platform: How Mid-Sized Tech Companies Win with AI",
         "date": "30 de enero de 2026",
@@ -129,7 +157,7 @@
         "title": "Traducir videos de YouTube al inglés: soluciones impulsadas por IA",
         "date": "4 de marzo de 2026",
         "readTime": "10 min de lectura",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/youtubev1.webp"
       },
       {
@@ -564,7 +592,7 @@
         "title": "Cómo Construimos un Sistema de Producción de Contenido AI (No Solo Herramientas)",
         "date": "April 8, 2026",
         "readTime": "12 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Content Automation",
         "image": "/images/contentai.webp",
         "relatedLinks": [
           "cómo-doblar-vídeos-de-forma-natural",
@@ -643,7 +671,7 @@
         "title": "Dentro del Pipeline de Sincronización Labial AI: MuseTalk, Sync.co y Arquitectura de Producción",
         "date": "March 29, 2026",
         "readTime": "15 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg"
       },
       {
@@ -667,7 +695,7 @@
         "title": "Profundización: Visión técnica de la transcripción",
         "date": "March 19, 2026",
         "readTime": "12 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/techicalpress.webp"
       },
       {

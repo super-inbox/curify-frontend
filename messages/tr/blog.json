@@ -7,6 +7,34 @@
     "latestArticles": "Son Makaleler",
     "posts": [
       {
+        "slug": "ai-reshaping-data-workflow",
+        "title": "AI Is Reshaping the Data Workflow: From Assistant to Agent",
+        "date": "May 18, 2026",
+        "readTime": "8 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/ai-dataworkflow.jpg",
+        "category": "ds-ai-engineering",
+        "relatedLinks": [
+          "ml-engineer-vs-ai-engineer",
+          "aiPlatform",
+          "age_AI"
+        ]
+      },
+      {
+        "slug": "ml-engineer-vs-ai-engineer",
+        "title": "ML Engineer or AI Engineer? Two Career Paths, Two Value Structures",
+        "date": "May 18, 2026",
+        "readTime": "6 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/mle-vs-ai.jpg",
+        "category": "ds-ai-engineering",
+        "relatedLinks": [
+          "ai-reshaping-data-workflow",
+          "aiPlatform",
+          "age_AI"
+        ]
+      },
+      {
         "slug": "aiPlatform",
         "title": "Practical AI Platform: How Mid-Sized Tech Companies Win with AI",
         "date": "30 Ocak 2026",
@@ -183,7 +211,7 @@
         "title": "Bir AI İçerik Üretim Sistemi Nasıl Kurduk (Sadece Araçlar Değil)",
         "date": "April 8, 2026",
         "readTime": "12 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Content Automation",
         "image": "/images/contentai.webp"
       },
       {
@@ -255,7 +283,7 @@
         "title": "AI Dudak Senkronizasyonu Sürecinin İçinde: MuseTalk, Sync.co ve Üretim Mimarisi",
         "date": "29 Mart 2026",
         "readTime": "15 dk okuma",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg",
         "thumbnailType": "video-transkripsiyon-iş"
       },
@@ -299,7 +327,7 @@
         "title": "Derinlemesine: Transkripsiyon Teknik Genel Bakışı",
         "date": "March 19, 2026",
         "readTime": "12 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/techicalpress.webp"
       },
       {
@@ -385,7 +413,7 @@
         "title": "YouTube Videolarını İngilizceye Çevirin: AI Destekli Çözümler",
         "date": "March 4, 2026",
         "readTime": "10 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/youtubev1.webp",
         "category": "yaratıcı-araclar",
         "relatedLinks": [

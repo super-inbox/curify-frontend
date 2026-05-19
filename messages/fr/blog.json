@@ -7,6 +7,34 @@
     "latestArticles": "Derniers Articles",
     "posts": [
       {
+        "slug": "ai-reshaping-data-workflow",
+        "title": "AI Is Reshaping the Data Workflow: From Assistant to Agent",
+        "date": "May 18, 2026",
+        "readTime": "8 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/ai-dataworkflow.jpg",
+        "category": "ds-ai-engineering",
+        "relatedLinks": [
+          "ml-engineer-vs-ai-engineer",
+          "aiPlatform",
+          "age_AI"
+        ]
+      },
+      {
+        "slug": "ml-engineer-vs-ai-engineer",
+        "title": "ML Engineer or AI Engineer? Two Career Paths, Two Value Structures",
+        "date": "May 18, 2026",
+        "readTime": "6 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/mle-vs-ai.jpg",
+        "category": "ds-ai-engineering",
+        "relatedLinks": [
+          "ai-reshaping-data-workflow",
+          "aiPlatform",
+          "age_AI"
+        ]
+      },
+      {
         "slug": "how-to-dub-videos-naturally",
         "title": "How to Dub Videos Naturally in 2026: Fixing AI Voice Cloning Artifacts",
         "date": "April 20, 2026",
@@ -111,7 +139,7 @@
         "title": "Comment nous avons construit un système de production de contenu AI (pas seulement des outils)",
         "date": "April 8, 2026",
         "readTime": "12 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Content Automation",
         "image": "/images/contentai.webp"
       },
       {
@@ -159,7 +187,7 @@
         "title": "À l'Intérieur du Pipeline de Synchronisation Labiale IA : MuseTalk, Sync.co et Architecture de Production",
         "date": "March 29, 2026",
         "readTime": "15 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg"
       },
       {
@@ -210,7 +238,7 @@
         "title": "À l'intérieur d'un pipeline de transcription vidéo IA : ASR, alignement et diarisation des locuteurs",
         "date": "19 mars 2026",
         "readTime": "12 min de lecture",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/techicalpress.webp",
         "thumbnailType": "vidéo-transcription-pipeline"
       },
@@ -243,7 +271,7 @@
         "title": "Traduire des vidéos YouTube en anglais : Solutions alimentées par l'IA",
         "date": "March 4, 2026",
         "readTime": "10 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/youtubev1.webp"
       },
       {

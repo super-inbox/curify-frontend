@@ -7,6 +7,34 @@
     "latestArticles": "최신 기사",
     "posts": [
       {
+        "slug": "ai-reshaping-data-workflow",
+        "title": "AI Is Reshaping the Data Workflow: From Assistant to Agent",
+        "date": "May 18, 2026",
+        "readTime": "8 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/ai-dataworkflow.jpg",
+        "category": "ds-ai-engineering",
+        "relatedLinks": [
+          "ml-engineer-vs-ai-engineer",
+          "aiPlatform",
+          "age_AI"
+        ]
+      },
+      {
+        "slug": "ml-engineer-vs-ai-engineer",
+        "title": "ML Engineer or AI Engineer? Two Career Paths, Two Value Structures",
+        "date": "May 18, 2026",
+        "readTime": "6 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/mle-vs-ai.jpg",
+        "category": "ds-ai-engineering",
+        "relatedLinks": [
+          "ai-reshaping-data-workflow",
+          "aiPlatform",
+          "age_AI"
+        ]
+      },
+      {
         "slug": "aiPlatform",
         "title": "Practical AI Platform: How Mid-Sized Tech Companies Win with AI",
         "date": "2026년 1월 30일",
@@ -151,7 +179,7 @@
         "title": "YouTube 동영상을 영어로 번역하기: AI 기반 솔루션",
         "date": "March 4, 2026",
         "readTime": "10 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/youtubev1.webp"
       },
       {
@@ -224,7 +252,7 @@
         "title": "AI 비디오 전사 파이프라인 내부: ASR, 정렬 및 화자 분리",
         "date": "2026년 3월 19일",
         "readTime": "12분 읽기",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/techicalpress.webp",
         "thumbnailType": "비디오 전사 파이프라인"
       },
@@ -268,7 +296,7 @@
         "title": "AI 립싱크 파이프라인 내부: MuseTalk, Sync.co 및 프로덕션 아키텍처",
         "date": "2026년 3월 29일",
         "readTime": "15분 읽기",
-        "tag": "DS & AI Engineering",
+        "tag": "Video Dubbing",
         "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg",
         "thumbnailType": "비디오-전사-비즈니스"
       },
@@ -548,7 +576,7 @@
         "title": "AI 콘텐츠 제작 시스템을 어떻게 구축했는가 (단순한 도구가 아님)",
         "date": "April 8, 2026",
         "readTime": "12 min read",
-        "tag": "DS & AI Engineering",
+        "tag": "Content Automation",
         "image": "/images/contentai.webp",
         "category": "나노 템플릿",
         "relatedLinks": [
