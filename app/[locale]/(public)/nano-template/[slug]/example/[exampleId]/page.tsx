@@ -107,14 +107,15 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     currentExampleId: imageId,
   });
 
+  const exampleTopics: string[] = example.topics ?? [];
+
   const otherNanoCards = buildOtherTemplateCards(
     ctx.reg,
     ctx.contentLocale,
     ctx.translateNano,
-    ctx.templateId
+    ctx.templateId,
+    Array.from(new Set([...(exampleTopics ?? []), ...(templateTopics ?? [])]))
   );
-
-  const exampleTopics: string[] = example.topics ?? [];
 
   const existingExamples = imageViews.map((v) => ({ id: v.id, params: v.params }));
 

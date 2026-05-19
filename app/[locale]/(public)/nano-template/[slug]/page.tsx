@@ -155,7 +155,8 @@ export default async function NanoTemplatePage({ params }: Props) {
     reg,
     contentLocale,
     translateNano,
-    template.template_id
+    template.template_id,
+    templateTopics
   );
 
   // Tier 3 tag row: geo tags for lifestyle, language pairs for language, visual tags for design

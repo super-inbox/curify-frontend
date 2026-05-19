@@ -172,6 +172,12 @@ export function buildNanoFeedCards(
      * a small safety buffer for exclude filters / locale fallbacks.
      */
     limit?: number;
+    /**
+     * When provided, restrict the candidate pool to these template ids and
+     * iterate them in the given order (no internal rank_score re-sort).
+     * Used by "Other templates" to pre-score candidates by topic overlap.
+     */
+    templateIds?: string[];
   }
 ): NanoInspirationCardType[] {
   const perTemplateMaxImages = opts?.perTemplateMaxImages ?? 6;
@@ -179,12 +185,17 @@ export function buildNanoFeedCards(
   const t = opts?.translate;
   const useCaseSlugs = opts?.useCaseSlugs;
   const limit = opts?.limit;
+  const templateIds = opts?.templateIds;
 
   const out: NanoInspirationCardType[] = [];
 
-  const sortedTemplates = [...reg.templates].sort(
-    (a, b) => (b.rank_score ?? 1) - (a.rank_score ?? 1)
-  );
+  const sortedTemplates = templateIds
+    ? templateIds
+        .map((id) => reg.templates.find((tpl) => tpl.id === id))
+        .filter((tpl): tpl is (typeof reg.templates)[number] => Boolean(tpl))
+    : [...reg.templates].sort(
+        (a, b) => (b.rank_score ?? 1) - (a.rank_score ?? 1)
+      );
 
   for (const raw of sortedTemplates) {
     if (limit !== undefined && out.length >= limit) break;
@@ -276,24 +287,60 @@ export function buildNanoTemplateDetailData(
   return { template, cards };
 }
 
-// NanoInspirationRow defaults to 5 cols × 5 rows = 25 visible. Build 30
-// cards: 25 + a small buffer to absorb the excludeTemplateId filter and
-// any locale fallbacks dropping a card. Everything beyond was pure HTML
-// payload waste — the "Other templates" surface never shows See more.
-const OTHER_TEMPLATES_CARD_LIMIT = 30;
+// On /nano-template/<slug> and /nano-template/<slug>/example/<id> the
+// "Other templates" surface renders 3 rows of 5 (15 visible). Build 18
+// cards: 15 + a small buffer to absorb the excludeTemplateId filter and
+// any locale fallbacks dropping a card. The section never shows See more.
+const OTHER_TEMPLATES_CARD_LIMIT = 18;
 
+function normalizeTopicArray(topics?: string | string[]): string[] {
+  if (!topics) return [];
+  const arr = Array.isArray(topics)
+    ? topics
+    : topics.split(",").map((s) => s.trim());
+  return arr.map((s) => s.trim().toLowerCase()).filter(Boolean);
+}
+
+/**
+ * Pick candidates for the "Other templates" section. Ranks by topic-overlap
+ * with the current template first (shared-topic count desc), then by global
+ * rank_score as tiebreaker — so a niche but topically-related template
+ * outranks a high-rank template with no shared topics. Falls back to global
+ * rank when no current-template topics are provided.
+ *
+ * Called only from /nano-template/<slug>/page.tsx and the example page —
+ * other surfaces (topics, tools, tag, prompt) build their own card lists.
+ */
 export function buildOtherTemplateCards(
   reg: ReturnType<typeof buildNanoRegistry>,
   contentLocale: PageLocale,
   translateNano: (key: string) => string,
-  excludeTemplateId: string
+  excludeTemplateId: string,
+  currentTemplateTopics?: string[]
 ) {
+  const currentSet = new Set(normalizeTopicArray(currentTemplateTopics));
+
+  const ranked = reg.templates
+    .filter((tpl) => tpl.id !== excludeTemplateId)
+    .map((tpl) => {
+      const tplTopics = normalizeTopicArray(tpl.topics);
+      let overlap = 0;
+      for (const tp of tplTopics) if (currentSet.has(tp)) overlap += 1;
+      return { id: tpl.id, overlap, rank: tpl.rank_score ?? 1 };
+    })
+    .sort((a, b) => {
+      if (b.overlap !== a.overlap) return b.overlap - a.overlap;
+      return b.rank - a.rank;
+    })
+    .map((x) => x.id);
+
   return buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: translateNano,
     limit: OTHER_TEMPLATES_CARD_LIMIT,
-  }).filter((c) => c.template_id !== excludeTemplateId);
+    templateIds: ranked,
+  });
 }
 
 export function resolveLocalizedExampleCopy(
