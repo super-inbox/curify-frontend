@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-19",
+  "description": "30-query regression + coverage set for /search. Mix of (a) tier-1 category anchors, (b) Reddit-eval queries with structural-stopword noise stripped (the tokenizer fix already drops `topics` / `theme` etc, so the eval input uses the clean form a user would actually type), (c) user-reported bad cases as a regression suite, (d) long-tail queries we've tested. `expected` is calibrated to the current catalog so the run baselines as PASS=most; re-run scripts/eval_search.cjs after any change to search/page.tsx, lib/searchRewrite.ts, or scripts/topup_search_aliases.py and watch for verdicts shifting to WARN/FAIL.",
+  "expected_legend": {
+    "rich":              ">= 10 effective inspirations (strict if any; else relaxed-OR fallback)",
+    "moderate":          "3-9 effective inspirations",
+    "thin":              "1-2 — should also fire search_lowresult event",
+    "empty":             "0 — should fire search_noresult event (UNLESS rewriter recovers, in which case page renders rewrites and no event fires)",
+    "redirect":          "/topics/<slug> redirect on page.tsx — script can't simulate; verify manually in prod",
+    "rewrite_recovery":  "original is thin/empty, LLM rewrite is expected to surface catalog hits via union",
+    "rewrite_empty":     "LLM rewrite should return [] (unmappable query — gibberish, proper noun, off-catalog)"
+  },
+  "queries": [
+
+    { "query": "character",        "source": "tier1", "expected": "rich",     "notes": "Tier-1 topic slug; redirects to /topics/character on the live page" },
+    { "query": "language",         "source": "tier1", "expected": "rich",     "notes": "Tier-1 topic slug" },
+    { "query": "learning",         "source": "tier1", "expected": "rich",     "notes": "Tier-1 topic slug" },
+    { "query": "travel",           "source": "tier1", "expected": "rich",     "notes": "Tier-1 topic slug" },
+    { "query": "lifestyle",        "source": "tier1", "expected": "rich",     "notes": "Tier-1 topic slug" },
+    { "query": "design",           "source": "tier1", "expected": "rich",     "notes": "Tier-1 topic slug" },
+    { "query": "product",          "source": "tier1", "expected": "rich",     "notes": "Tier-1 topic slug" },
+    { "query": "personality",      "source": "tier1", "expected": "rich",     "notes": "Tier-1 topic slug (MBTI superset)" },
+
+    { "query": "historical character",            "source": "reddit", "expected": "rich",     "notes": "Was reddit theme 1 `historical · character_name`. Post-tokenizer-fix + alias top-up surfaces ~80+ via character/history templates" },
+    { "query": "future characters",               "source": "reddit", "expected": "rich",     "notes": "Was theme 3. Sci-fi/silicon-valley/AI templates" },
+    { "query": "homophones and homonyms",         "source": "reddit", "expected": "empty",    "notes": "Was theme 4. Real content gap — no homophone templates in catalog. Should fire search_noresult" },
+    { "query": "english-chinese",                 "source": "reddit", "expected": "redirect", "notes": "Topic slug — page.tsx redirects to /topics/english-chinese before catalog scoring. Script's catalog-scoring returns 0 but rewrites recover; manual prod verify the redirect still fires" },
+    { "query": "language learning expressions",   "source": "reddit", "expected": "rich",     "notes": "Was theme 7. Native-english-expressions + chinese-verb-opposite + kids-opposite-concept; relaxed-OR catches it" },
+    { "query": "global influence",                "source": "reddit", "expected": "rich",     "notes": "Was theme 9. Per-country MBTI / culture cards got `global` alias top-up — 400+ hits via bigram-on-alias" },
+    { "query": "remote destination",              "source": "reddit", "expected": "rich",     "notes": "Was theme 10. Travel destination / map templates aliased post-2026-05-18" },
+    { "query": "unique cultural experiences",     "source": "reddit", "expected": "empty",    "notes": "Was theme 11. Strict-AND on all 3 tokens too narrow; relaxed-OR also empty. Open gap — alias top-up candidate" },
+    { "query": "short city escapes",              "source": "reddit", "expected": "rich",     "notes": "Was theme 12. Relaxed-OR catches via `city` + `escapes`. Note the intent-mismatch concern (architectural 3D models surface instead of itineraries) — item 4 on shortlist" },
+    { "query": "creative comfort food",           "source": "reddit", "expected": "thin",     "notes": "Was theme 13. Only 2 hits via relaxed-OR. Open gap — needs world-cuisines alias top-up" },
+
+    { "query": "唯美春天",         "source": "user-report-2026-05-18", "expected": "rich",            "notes": "Was empty pre-alias-topup. Post-topup: 133+ hits via CJK bigram on 唯美 + 春天. Regression target." },
+    { "query": "证件照",           "source": "user-report-2026-05-18", "expected": "rich",            "notes": "Was empty pre-alias-topup. Post-topup: 16 hits via CJK bigram on 证件 + 件照 against portrait-retouching aliases. Regression target." },
+    { "query": "手作",             "source": "user-report-2026-05-18", "expected": "rewrite_recovery", "notes": "Original is empty (CJK 2-char, no bigrams). Rewriter proposes crafting/watercolor/scrapbook → union recovers ~170+ hits via relaxed-OR. Confirms rescue path." },
+    { "query": "زوحين",            "source": "user-report-2026-05-19", "expected": "rewrite_empty",   "notes": "Arabic — unfamiliar word, likely a name. Pre-prompt-fix the rewriter returned generic catalog defaults; post-fix should return []. Regression target." },
+    { "query": "ddd",              "source": "synthetic",              "expected": "rewrite_empty",   "notes": "Random keystrokes — rewriter should return []. Tracking event content_id should be `ddd|rw=1` (rescue attempted, failed)" },
+
+    { "query": "mbti marvel",      "source": "popular",  "expected": "rich",     "notes": "Direct template match — template-mbti-marvel has 66+ examples" },
+    { "query": "spring flowers",   "source": "popular",  "expected": "rich",     "notes": "Watercolor + gardening templates aliased to spring/flowers — bilingual cross-check for 唯美春天" },
+    { "query": "反义词",           "source": "popular",  "expected": "rich",     "notes": "Should hit chinese-verb-opposite + kids-opposite-concept via CJK bigram" },
+    { "query": "paper cutting",    "source": "popular",  "expected": "thin",     "notes": "Long-tail; only 1 hit today — open content gap" },
+    { "query": "met gala",         "source": "gsc-zero", "expected": "thin",     "notes": "From the 2026-05-15 0%-CTR list. Fashion + red-carpet templates exist but only 1 strict hit — open alias top-up candidate" },
+    { "query": "动物 词汇",        "source": "synthetic","expected": "moderate", "notes": "Multi-token zh: animal + vocabulary. 8 strict hits; rewriter brings to ~130. Watching for regressions" },
+    { "query": "wedding planner",  "source": "synthetic","expected": "rich",     "notes": "Should hit weddings vocab + celebration posters. Rewriter eval confirms wider recovery via relaxed-OR" }
+
+  ]
+}
