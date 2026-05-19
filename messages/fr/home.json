@@ -175,6 +175,14 @@
     "speech_translator": {
       "title": "Traducteur de discours",
       "desc": "Traduisez le discours dans une autre langue avec une livraison naturelle."
+    },
+    "video_enhance": {
+      "title": "Amélioration vidéo",
+      "desc": "Restaurez les détails, la netteté et la clarté dans les vidéos d'archives, basse résolution ou compressées.",
+      "meta": {
+        "title": "Amélioration Vidéo IA | Restaurez les Vidéos d'Archives & Basse Résolution | Curify AI",
+        "description": "Découvrez une démonstration d'amélioration vidéo IA sur de véritables séquences d'archives. Curify restaure les détails, la netteté et la clarté dans les vidéos basse résolution et compressées — inscrivez-vous pour un accès anticipé."
+      }
     }
   },
   "bilingual": {
@@ -531,6 +539,60 @@
         "educationBody": "Les départements de formation traduisent les vidéos d'intégration, les briefings de sécurité et l'éducation produit dans les langues locales. Une piste vocale naturelle améliore la rétention et l'engagement par rapport aux sous-titres seuls.",
         "businessTitle": "Pour les équipes de marketing international",
         "businessBody": "Les équipes marketing traduisent les vidéos de démonstration, les témoignages de clients et les enregistrements d'événements dans les langues des marchés cibles — permettant une communication cohérente à travers les régions sans coûts de production par marché."
+      }
+    }
+  },
+  "videoEnhance": {
+    "metadata": {
+      "title": "Amélioration Vidéo IA | Restaurez les Vidéos d'Archives & Basse Résolution | Curify AI",
+      "description": "Découvrez une démonstration d'amélioration vidéo IA sur de véritables séquences d'archives. Curify restaure les détails, la netteté et la clarté dans les vidéos basse résolution et compressées — inscrivez-vous pour un accès anticipé."
+    },
+    "title": "Amélioration Vidéo IA",
+    "description": "Restaurez les détails, la netteté et la clarté dans les vidéos basse résolution, compressées ou d'archives. Alternez entre les clips originaux et améliorés ci-dessous pour voir la restauration IA sur de véritables séquences.",
+    "example": "Exemple : un segment d'actualité des années 1970 sur la crise pétrolière — qualité de diffusion SD originale contre la version améliorée par IA.",
+    "cta": "Rejoindre l'Accès Anticipé",
+    "demo": {
+      "aria": "Démonstration d'amélioration vidéo avant / après",
+      "caption": "Utilisez le commutateur pour passer entre les séquences originales et la version améliorée par IA.",
+      "nowPlaying": "En cours de lecture : {lang}"
+    },
+    "why": {
+      "title": "Pourquoi Utiliser Curify pour l'Amélioration Vidéo ?",
+      "point1": "Restaure les détails dans les séquences d'archives, de diffusion et téléchargées par les utilisateurs où la résolution source est fixe.",
+      "point2": "Supprime les artefacts de compression et récupère la texture sans l'apparence trop accentuée et plastique que produisent la plupart des upscalers.",
+      "point3": "Fonctionne sur des clips de longueur complète — pas seulement des courts extraits — et maintient un mouvement naturel à travers les coupes et les panoramiques.",
+      "point4": "Démonstration uniquement aujourd'hui ; inscrivez-vous pour un accès anticipé afin de traiter vos propres séquences lorsque le pipeline s'ouvrira."
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "L'amélioration vidéo est-elle disponible aujourd'hui ?",
+      "a1": "Pas encore — cette page est une démonstration en cours sur des séquences d'archives. Le pipeline de production est en test privé. Inscrivez-vous pour un accès anticipé et nous vous contacterons lorsqu'il sera ouvert au téléchargement.",
+      "q2": "Sur quels types de vidéos l'amélioration fonctionne-t-elle le mieux ?",
+      "a2": "Elle fonctionne le mieux sur des séquences réelles qui ont perdu des détails à cause de la compression, d'une faible résolution source ou d'une perte de copie générationnelle — diffusions d'archives, anciennes vidéos personnelles, séquences de caméras de sécurité et contenu SD téléchargé en HD. Ce n'est pas un outil de restauration de visage ou de recréation générative — il restaure les détails qui existaient dans le signal source."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce que l'Amélioration Vidéo IA ?",
+        "p1": "L'amélioration vidéo IA reconstruit les détails visuels qui ont été perdus ou dégradés lors de l'enregistrement, de la compression ou de la transmission. Contrairement à un simple upscale de résolution, l'objectif n'est pas d'augmenter la taille des pixels — il s'agit de récupérer la texture, les contours et la gamme tonale qu'une capture de meilleure qualité de la même scène aurait produite.",
+        "p2": "Alors que les upscalers traditionnels interpolent entre les pixels existants (produisant une image plus douce ou accentuée mais plastique), les modèles modernes de restauration IA apprennent à partir de grands ensembles de données de séquences de faible et haute qualité appariées. Ils infèrent des détails haute résolution plausibles en fonction de ce que la scène sous-jacente contenait probablement — préservant le mouvement, l'éclairage et la texture de manière cohérente à travers les images.",
+        "p3": "La démonstration sur cette page améliore un extrait d'un segment d'actualité des années 1970. L'original est de qualité de diffusion SD avec la compression typique et la perte de chroma de l'époque. La version améliorée récupère les détails faciaux, la texture de la scène et la netteté des contours tout en conservant le grain de film et la palette de couleurs appropriés à l'époque."
+      },
+      "how": {
+        "title": "Comment Curify Aborde l'Amélioration Vidéo",
+        "p1": "L'amélioration vidéo de qualité production n'est pas un modèle unique — c'est un pipeline de modèles spécialisés qui gèrent chacun un mode de défaillance, séquencés de sorte que leurs corrections s'additionnent plutôt que de se contredire.",
+        "p2": "Étape 1 : Segmentation de scène et détection de plan. Le pipeline divise le clip aux frontières de scène afin que les paramètres de restauration par plan puissent s'adapter à l'éclairage, au mouvement et au contenu plutôt que de faire une moyenne sur l'ensemble du clip.",
+        "p3": "Étape 2 : Restauration image par image. La reconstruction des détails, le désentrelacement et la réduction du bruit sont appliqués en tenant compte des vecteurs de mouvement afin que les corrections restent temporellement cohérentes — les images ne clignotent pas entre les niveaux de détail à travers les coupes.",
+        "p4": "Étape 3 : Stabilisation temporelle. Un second passage lisse le scintillement résiduel, aligne les détails améliorés à travers les images et préserve le flou de mouvement naturel là où c'est intentionnel.",
+        "p5": "Étape 4 : Encodage conscient de la qualité. Le clip final est encodé avec un débit binaire et un choix de codec qui préservent le détail récupéré plutôt que de réintroduire les artefacts de compression que la restauration vient juste de supprimer."
+      },
+      "usecases": {
+        "title": "Qui utilise l'amélioration vidéo par IA ?",
+        "creatorsTitle": "Pour les créateurs et les producteurs de documentaires",
+        "creatorsBody": "Les producteurs travaillant avec des archives, des anciennes interviews ou des diffusions vintage utilisent l'amélioration pour amener le matériel source à une qualité qui tient sur les écrans modernes sans recréer l'apparence d'époque.",
+        "educationTitle": "Pour les équipes éducatives et d'archives",
+        "educationBody": "Les bibliothèques, musées et éditeurs éducatifs numérisent des collections de bandes et de films à la qualité d'origine enregistrée. L'amélioration récupère des détails qui permettent de projeter le même film, de l'intégrer dans des cours ou de le licencier sans le cadre apologétique 'désolé pour la qualité'.",
+        "businessTitle": "Pour les équipes de marque et de marketing",
+        "businessBody": "Les équipes marketing revisitent d'anciens actifs de marque — interviews de fondateurs, premières démonstrations de produits, spots de diffusion — et souhaitent les réutiliser dans des campagnes modernes. L'amélioration comble l'écart de qualité sans avoir à re-filmer, préservant l'histoire et les personnages d'origine."
       }
     }
   }

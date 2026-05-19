@@ -175,6 +175,14 @@
     "speech_translator": {
       "title": "Sprachübersetzer",
       "desc": "Übersetzen Sie Sprache in eine andere Sprache mit natürlicher Lieferung."
+    },
+    "video_enhance": {
+      "title": "Videoverbesserung",
+      "desc": "Stellen Sie Details, Schärfe und Klarheit in Archiv-, niedrigauflösenden oder komprimierten Videos wieder her.",
+      "meta": {
+        "title": "KI Videoverbesserung | Archiv- & Niedrigauflösende Videos Wiederherstellen | Curify AI",
+        "description": "Sehen Sie eine KI-Videoverbesserungsdemo mit echtem Archivmaterial. Curify stellt Details, Schärfe und Klarheit in niedrigauflösenden und komprimierten Videos wieder her – melden Sie sich für den frühen Zugang an."
+      }
     }
   },
   "bilingual": {
@@ -531,6 +539,60 @@
         "educationBody": "Schulungsabteilungen übersetzen Einarbeitungsvideos, Sicherheitsbriefings und Produktschulungen in die Landessprachen. Eine natürliche Sprachspur verbessert das Behalten und die Engagement im Vergleich zu Untertiteln allein.",
         "businessTitle": "Für internationale Marketingteams",
         "businessBody": "Marketingteams übersetzen Demovideos, Kundenreferenzen und Veranstaltungsaufzeichnungen in die Zielmarktsprache – und ermöglichen konsistente Botschaften über Regionen hinweg, ohne marktbezogene Produktionskosten."
+      }
+    }
+  },
+  "videoEnhance": {
+    "metadata": {
+      "title": "KI Videoverbesserung | Archiv- & Niedrigauflösende Videos Wiederherstellen | Curify AI",
+      "description": "Sehen Sie eine KI-Videoverbesserungsdemo mit echtem Archivmaterial. Curify stellt Details, Schärfe und Klarheit in niedrigauflösenden und komprimierten Videos wieder her – melden Sie sich für den frühen Zugang an."
+    },
+    "title": "KI Videoverbesserung",
+    "description": "Stellen Sie Details, Schärfe und Klarheit in niedrigauflösenden, komprimierten oder Archivvideos wieder her. Wechseln Sie zwischen den Original- und verbesserten Clips unten, um die KI-Wiederherstellung mit echtem Material zu sehen.",
+    "example": "Beispiel: ein Nachrichtenbeitrag aus den 1970er Jahren zur Ölkrise – originale SD-Broadcast-Qualität vs. die KI-verbesserte Version.",
+    "cta": "Frühen Zugang beitreten",
+    "demo": {
+      "aria": "Videoverbesserung Vorher/Nachher-Demo",
+      "caption": "Verwenden Sie den Schalter, um zwischen dem Originalmaterial und der KI-verbesserten Version zu wechseln.",
+      "nowPlaying": "Jetzt läuft: {lang}"
+    },
+    "why": {
+      "title": "Warum Curify für Videoverbesserung verwenden?",
+      "point1": "Stellt Details in Archiv-, Broadcast- und benutzergeladenem Material wieder her, wo die Quellauflösung festgelegt ist.",
+      "point2": "Entfernt Kompressionsartefakte und stellt Texturen wieder her, ohne den übermäßig geschärften, plastischen Look, den die meisten Upscaler erzeugen.",
+      "point3": "Funktioniert mit vollständigen Clips – nicht nur mit kurzen Abschnitten – und hält die Bewegung über Schnitte und Schwenks natürlich.",
+      "point4": "Heute nur als Demo; melden Sie sich für den frühen Zugang an, um Ihr eigenes Material zu verarbeiten, wenn die Pipeline geöffnet wird."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Ist die Videoverbesserung heute verfügbar?",
+      "a1": "Noch nicht – diese Seite ist eine funktionierende Demo mit Archivmaterial. Die Produktionspipeline befindet sich in privatem Test. Melden Sie sich für den frühen Zugang an, und wir werden Sie kontaktieren, wenn sie für Uploads geöffnet wird.",
+      "q2": "Auf welchen Arten von Videos funktioniert die Verbesserung am besten?",
+      "a2": "Sie funktioniert am besten mit echtem Material, das durch Kompression, niedrige Quellauflösung oder generationsbedingten Verlust an Detail verloren hat – Archivübertragungen, alte Heimvideos, Sicherheitskameramaterial und SD-Inhalte, die als HD hochgeladen wurden. Es ist kein Gesichtsrestaurations- oder generatives Rekreationstool – es stellt Details wieder her, die im Quellsignal vorhanden waren."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist KI Videoverbesserung?",
+        "p1": "KI-Videoverbesserung rekonstruiert visuelle Details, die während der Aufnahme, Kompression oder Übertragung verloren gegangen oder verschlechtert wurden. Im Gegensatz zu einer einfachen Auflösungssteigerung besteht das Ziel nicht darin, größere Pixel zu erzeugen – es geht darum, die Textur, Kanten und den Tonbereich wiederherzustellen, die eine qualitativ hochwertigere Aufnahme derselben Szene erzeugt hätte.",
+        "p2": "Wo traditionelle Upscaler zwischen vorhandenen Pixeln interpolieren (was ein weicheres oder geschärftes, aber plastisches Bild erzeugt), lernen moderne KI-Wiederherstellungsmodelle aus großen Datensätzen von gepaartem niedrig- und hochqualitativem Material. Sie schließen plausible hochauflösende Details basierend auf dem, was die zugrunde liegende Szene wahrscheinlich enthielt, und bewahren Bewegung, Beleuchtung und Textur kohärent über die Frames hinweg.",
+        "p3": "Die Demo auf dieser Seite verbessert einen Clip aus einem Nachrichtenbeitrag der 1970er Jahre. Das Original hat SD-Broadcast-Qualität mit den typischen Kompressions- und Chroma-Verlusten der Ära. Die verbesserte Version stellt Gesichtsdetails, Szenentextur und Kantenschärfe wieder her, während der filmtypische Korn und die Farbpalette der Ära intakt bleiben."
+      },
+      "how": {
+        "title": "Wie Curify Videoverbesserung angeht",
+        "p1": "Produktionsgerechte Videoverbesserung ist kein einzelnes Modell – es ist eine Pipeline von spezialisierten Modellen, die jeweils einen Fehlermodus behandeln, sequenziert, sodass ihre Korrekturen sich addieren, anstatt sich gegenseitig zu bekämpfen.",
+        "p2": "Schritt 1: Szenensegmentierung und Shot-Erkennung. Die Pipeline teilt den Clip an den Szenengrenzen, sodass die Wiederherstellungsparameter pro Shot sich an Beleuchtung, Bewegung und Inhalt anpassen können, anstatt über den gesamten Clip hinweg zu mitteln.",
+        "p3": "Schritt 2: Wiederherstellung pro Frame. Detailrekonstruktion, Entblockung und Rauschunterdrückung werden unter Berücksichtigung von Bewegungsvektoren angewendet, sodass die Korrekturen zeitlich konsistent bleiben – die Frames flackern nicht zwischen Detailstufen bei Schnitten.",
+        "p4": "Schritt 3: Temporale Stabilisierung. Ein zweiter Durchgang glättet verbleibendes Flackern, richtet verbesserte Details über die Frames hinweg aus und bewahrt natürliche Bewegungsunschärfe, wo dies beabsichtigt ist.",
+        "p5": "Schritt 4: Qualitätsbewusste Kodierung. Der finale Clip wird mit einer Bitrate und Codec-Wahl kodiert, die die wiederhergestellten Details bewahrt, anstatt die Kompressionsartefakte, die die Wiederherstellung gerade entfernt hat, wieder einzuführen."
+      },
+      "usecases": {
+        "title": "Wer nutzt die KI-Videoverbesserung?",
+        "creatorsTitle": "Für Kreative und Dokumentarproduzenten",
+        "creatorsBody": "Produzenten, die mit Archivmaterial, alten Interviews oder Vintage-Sendungen arbeiten, nutzen die Verbesserung, um das Ausgangsmaterial auf eine Qualität zu bringen, die auf modernen Displays Bestand hat, ohne den zeitgemäßen Look neu zu kreieren.",
+        "educationTitle": "Für Bildungs- und Archivteams",
+        "educationBody": "Bibliotheken, Museen und Bildungsanbieter digitalisieren Tape- und Filmsammlungen in der ursprünglich aufgenommenen Qualität. Die Verbesserung stellt Details wieder her, die es ermöglichen, dass dasselbe Filmmaterial projiziert, in Kursen eingebettet oder lizenziert werden kann, ohne den entschuldigenden 'Entschuldigung für die Qualität'-Rahmen.",
+        "businessTitle": "Für Marken- und Marketingteams",
+        "businessBody": "Marketingteams überarbeiten ältere Markenressourcen – Gründerinterviews, frühe Produktdemos, Werbespots – und möchten diese in modernen Kampagnen wiederverwenden. Die Verbesserung schließt die Qualitätslücke, ohne neu zu drehen, und bewahrt die ursprüngliche Geschichte und Charaktere."
       }
     }
   }

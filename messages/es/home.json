@@ -175,6 +175,14 @@
     "speech_translator": {
       "title": "Traductor de voz",
       "desc": "Traduce el habla a otro idioma con una entrega natural."
+    },
+    "video_enhance": {
+      "title": "Mejorar video",
+      "desc": "Restaura detalle, nitidez y claridad en video de archivo, de baja resolución o comprimido.",
+      "meta": {
+        "title": "Mejorar Video AI | Restaura Video de Archivo y de Baja Resolución | Curify AI",
+        "description": "Mira una demostración de mejora de video AI en metraje de archivo real. Curify restaura detalle, nitidez y claridad en video de baja resolución y comprimido — regístrate para acceso anticipado."
+      }
     }
   },
   "bilingual": {
@@ -531,6 +539,60 @@
         "educationBody": "Los departamentos de capacitación traducen videos de inducción, breves de seguridad y educación sobre productos a idiomas locales. Una pista de voz natural mejora la retención y el compromiso en comparación con solo subtítulos.",
         "businessTitle": "Para Equipos de Marketing Internacionales",
         "businessBody": "Los equipos de marketing traducen videos de demostración, testimonios de clientes y grabaciones de eventos a los idiomas del mercado objetivo, lo que permite un mensaje consistente en todas las regiones sin costos de producción por mercado."
+      }
+    }
+  },
+  "videoEnhance": {
+    "metadata": {
+      "title": "Mejorar Video AI | Restaura Video de Archivo y de Baja Resolución | Curify AI",
+      "description": "Mira una demostración de mejora de video AI en metraje de archivo real. Curify restaura detalle, nitidez y claridad en video de baja resolución y comprimido — regístrate para acceso anticipado."
+    },
+    "title": "Mejora de Video AI",
+    "description": "Restaura detalle, nitidez y claridad en video de baja resolución, comprimido o de archivo. Alterna entre los clips originales y mejorados a continuación para ver la restauración AI en metraje real.",
+    "example": "Ejemplo: un segmento de noticias de los años 70 sobre la crisis del petróleo — calidad de transmisión SD original vs la versión mejorada por AI.",
+    "cta": "Únete al Acceso Anticipado",
+    "demo": {
+      "aria": "Demostración de mejora de video antes / después",
+      "caption": "Usa el interruptor para cambiar entre el metraje original y la versión mejorada por AI.",
+      "nowPlaying": "Ahora reproduciendo: {lang}"
+    },
+    "why": {
+      "title": "¿Por qué usar Curify para la mejora de video?",
+      "point1": "Restaura detalle en metraje de archivo, transmisión y subido por usuarios donde la resolución de origen es fija.",
+      "point2": "Elimina artefactos de compresión y recupera textura sin el aspecto sobre-nitido y plástico que producen la mayoría de los escaladores.",
+      "point3": "Funciona en clips de larga duración — no solo en ráfagas cortas — y mantiene el movimiento natural a través de cortes y panorámicas.",
+      "point4": "Solo demostración hoy; regístrate para acceso anticipado para procesar tu propio metraje cuando se abra el pipeline."
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Está disponible la mejora de video hoy?",
+      "a1": "Aún no — esta página es una demostración en metraje de archivo. El pipeline de producción está en pruebas privadas. Regístrate para acceso anticipado y te contactaremos cuando se abra para subir.",
+      "q2": "¿En qué tipos de video funciona mejor la mejora?",
+      "a2": "Funciona mejor en metraje del mundo real que ha perdido detalle por compresión, baja resolución de origen o pérdida por copias generacionales — transmisiones de archivo, viejos videos caseros, metraje de cámaras de seguridad y contenido SD subido como HD. No es una herramienta de restauración facial o recreación generativa — restaura detalle que existía en la señal de origen."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué es la Mejora de Video AI?",
+        "p1": "La mejora de video AI reconstruye detalle visual que se perdió o degradó durante la grabación, compresión o transmisión. A diferencia de un simple escalado de resolución, el objetivo no son píxeles más grandes — se trata de recuperar la textura, los bordes y el rango tonal que una captura de mayor calidad de la misma escena habría producido.",
+        "p2": "Donde los escaladores tradicionales interpolan entre píxeles existentes (produciendo una imagen más suave o afilada pero plástica), los modelos modernos de restauración AI aprenden de grandes conjuntos de datos de metraje de baja y alta calidad emparejados. Inferen detalles de alta resolución plausibles basados en lo que la escena subyacente probablemente contenía — preservando el movimiento, la iluminación y la textura de manera coherente a través de los fotogramas.",
+        "p3": "La demostración en esta página mejora un clip de un segmento de noticias de los años 70. El original es de calidad de transmisión SD con la típica compresión y pérdida de croma de la época. La versión mejorada recupera detalle facial, textura de la escena y nitidez de los bordes mientras mantiene la grano de película y paleta de colores apropiados para la época."
+      },
+      "how": {
+        "title": "Cómo Curify Aborda la Mejora de Video",
+        "p1": "La mejora de video de grado de producción no es un solo modelo — es un pipeline de modelos especializados que cada uno maneja un modo de fallo, secuenciados para que sus correcciones se acumulen en lugar de pelear entre sí.",
+        "p2": "Paso 1: Segmentación de escenas y detección de tomas. El pipeline divide el clip en los límites de las escenas para que los parámetros de restauración por toma puedan adaptarse a la iluminación, el movimiento y el contenido en lugar de promediar a través de todo el clip.",
+        "p3": "Paso 2: Restauración cuadro por cuadro. Se aplican reconstrucción de detalles, eliminación de bloqueos y reducción de ruido con conciencia de los vectores de movimiento para que las correcciones se mantengan temporalmente consistentes: los cuadros no parpadean entre niveles de detalle a través de cortes.",
+        "p4": "Paso 3: Estabilización temporal. Un segundo pase suaviza el parpadeo residual, alinea el detalle mejorado a través de los cuadros y preserva el desenfoque de movimiento natural donde es intencional.",
+        "p5": "Paso 4: Codificación consciente de la calidad. El clip final se codifica con una elección de bitrate y códec que preserva el detalle recuperado en lugar de reintroducir los artefactos de compresión que la restauración acaba de eliminar."
+      },
+      "usecases": {
+        "title": "¿Quién utiliza la mejora de video con IA?",
+        "creatorsTitle": "Para creadores y productores de documentales",
+        "creatorsBody": "Los productores que trabajan con material de archivo, entrevistas antiguas o transmisiones vintage utilizan la mejora para llevar el material fuente a una calidad que se mantenga en pantallas modernas sin recrear la apariencia de la época.",
+        "educationTitle": "Para equipos de educación y archivo",
+        "educationBody": "Las bibliotecas, museos y editores educativos digitalizan colecciones de cintas y películas a la calidad original grabada. La mejora recupera detalles que permiten que el mismo metraje se proyecte, se incruste en cursos o se licencie sin el marco de 'disculpa por la calidad'.",
+        "businessTitle": "Para equipos de marca y marketing",
+        "businessBody": "Los equipos de marketing revisitan activos de marca más antiguos: entrevistas con fundadores, primeras demostraciones de productos, anuncios transmitidos, y quieren reutilizarlos en campañas modernas. La mejora cierra la brecha de calidad sin volver a grabar, preservando la historia y los personajes originales."
       }
     }
   }

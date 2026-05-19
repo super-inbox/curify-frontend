@@ -174,6 +174,14 @@
       "title": "Video summarizer",
       "desc": "Generate concise summaries and key takeaways from any video."
     },
+    "video_enhance": {
+      "title": "Video enhance",
+      "desc": "Restore detail, sharpness, and clarity in archival, low-resolution, or compressed video.",
+      "meta": {
+        "title": "AI Video Enhance | Restore Archival & Low-Res Video | Curify AI",
+        "description": "See an AI video enhancement demo on real archival footage. Curify restores detail, sharpness, and clarity in low-resolution and compressed video — sign up for early access."
+      }
+    },
     "storyboard_generator": {
       "title": "Storyboard generator",
       "desc": "Convert videos into scene-by-scene storyboard notes and prompts."
@@ -470,6 +478,60 @@
         "educationBody": "Training departments translate onboarding videos, safety briefings, and product education into local languages. A natural voice track improves retention and engagement compared to subtitles alone.",
         "businessTitle": "For International Marketing Teams",
         "businessBody": "Marketing teams translate demo videos, customer testimonials, and event recordings into target market languages — enabling consistent messaging across regions without per-market production costs."
+      }
+    }
+  },
+  "videoEnhance": {
+    "metadata": {
+      "title": "AI Video Enhance | Restore Archival & Low-Res Video | Curify AI",
+      "description": "See an AI video enhancement demo on real archival footage. Curify restores detail, sharpness, and clarity in low-resolution and compressed video — sign up for early access."
+    },
+    "title": "AI Video Enhancement",
+    "description": "Restore detail, sharpness, and clarity in low-resolution, compressed, or archival video. Toggle between the original and enhanced clips below to see the AI restoration on real footage.",
+    "example": "Example: a 1970s news segment on the oil crisis — original SD broadcast quality vs the AI-enhanced version.",
+    "cta": "Join Early Access",
+    "demo": {
+      "aria": "Video enhancement before / after demo",
+      "caption": "Use the toggle to switch between the original footage and the AI-enhanced version.",
+      "nowPlaying": "Now playing: {lang}"
+    },
+    "why": {
+      "title": "Why Use Curify for Video Enhancement?",
+      "point1": "Restores detail in archival, broadcast, and user-uploaded footage where source resolution is fixed.",
+      "point2": "Removes compression artifacts and recovers texture without the over-sharpened, plastic look most upscalers produce.",
+      "point3": "Works on full-length clips — not just short bursts — and keeps motion natural across cuts and pans.",
+      "point4": "Demo-only today; sign up for early access to run your own footage when the pipeline opens."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is video enhancement available today?",
+      "a1": "Not yet — this page is a working demo on archival footage. The production pipeline is in private testing. Sign up for early access and we will reach out when it opens for upload.",
+      "q2": "What kinds of video does enhancement work best on?",
+      "a2": "It performs best on real-world footage that has lost detail to compression, low source resolution, or generational copy loss — archival broadcasts, old home video, security camera footage, and SD content uploaded as HD. It is not a face-restoration or generative re-creation tool — it restores detail that existed in the source signal."
+    },
+    "deep": {
+      "what": {
+        "title": "What Is AI Video Enhancement?",
+        "p1": "AI video enhancement reconstructs visual detail that was lost or degraded during recording, compression, or transmission. Unlike a simple resolution upscale, the goal is not larger pixels — it is recovering the texture, edges, and tonal range that a higher-quality capture of the same scene would have produced.",
+        "p2": "Where traditional upscalers interpolate between existing pixels (producing a softer or sharpened-but-plastic image), modern AI restoration models learn from large datasets of paired low-quality and high-quality footage. They infer plausible high-resolution detail based on what the underlying scene most likely contained — preserving motion, lighting, and texture coherently across frames.",
+        "p3": "The demo on this page enhances a clip from a 1970s news segment. The original is SD broadcast quality with the typical compression and chroma loss of the era. The enhanced version recovers facial detail, scene texture, and edge sharpness while keeping the era-appropriate film grain and color palette intact."
+      },
+      "how": {
+        "title": "How Curify Approaches Video Enhancement",
+        "p1": "Production-grade video enhancement is not a single model — it is a pipeline of specialized models that each handle one failure mode, sequenced so their corrections compound rather than fight each other.",
+        "p2": "Step 1: Scene segmentation and shot detection. The pipeline splits the clip at scene boundaries so per-shot restoration parameters can adapt to lighting, motion, and content rather than averaging across the whole clip.",
+        "p3": "Step 2: Per-frame restoration. Detail reconstruction, deblocking, and denoising are applied with awareness of motion vectors so corrections stay temporally consistent — frames do not flicker between detail levels across cuts.",
+        "p4": "Step 3: Temporal stabilization. A second pass smooths residual flicker, aligns enhanced detail across frames, and preserves natural motion blur where intentional.",
+        "p5": "Step 4: Quality-aware encoding. The final clip is encoded with a bitrate and codec choice that preserves the recovered detail rather than re-introducing the compression artifacts the restoration just removed."
+      },
+      "usecases": {
+        "title": "Who Uses AI Video Enhancement?",
+        "creatorsTitle": "For Creators and Documentary Producers",
+        "creatorsBody": "Producers working with archival footage, old interviews, or vintage broadcasts use enhancement to bring source material up to a quality that holds up on modern displays without re-creating the era-appropriate look.",
+        "educationTitle": "For Education and Archive Teams",
+        "educationBody": "Libraries, museums, and educational publishers digitize tape and film collections at the original recorded quality. Enhancement recovers detail that lets the same footage be projected, embedded in courses, or licensed without the apologetic 'sorry for the quality' framing.",
+        "businessTitle": "For Brand and Marketing Teams",
+        "businessBody": "Marketing teams revisit older brand assets — founder interviews, early product demos, broadcast spots — and want to repurpose them in modern campaigns. Enhancement closes the quality gap without re-shooting, preserving the original story and characters."
       }
     }
   }

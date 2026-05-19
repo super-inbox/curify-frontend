@@ -162,6 +162,33 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Demo-only SEO landing — no backend pipeline yet. The blog post
+    // /blog/video-enhancement already drives search traffic in this
+    // capability space; the tool page closes the loop with a visible
+    // before/after demo (oil_crisis_original.mp4 vs oil_crisis_enhanced.mp4).
+    id: "video-enhance",
+    slug: "video-enhance",
+    groupId: "video",
+    status: "coming_soon",
+    job_type: "video_transcript",
+    namespace: "videoEnhance",
+    action: { type: "none" },
+    i18n: toolKeys("video_enhance"),
+    seo: seoKeys("video_enhance"),
+    demo: {
+      // Reusing the language-switch demo as a "before/after" toggle —
+      // arbitrary labels + emoji "flags". Default to enhanced so the
+      // wow-factor lands first.
+      type: "language_switch",
+      defaultLang: "enhanced",
+      languages: {
+        enhanced: { flag: "✨", video: "/video/oil_crisis_enhanced.mp4", label: "Enhanced" },
+        original: { flag: "🎞️", video: "/video/oil_crisis_original.mp4", label: "Original" },
+      },
+    },
+  },
+
+  {
     id: "storyboard-generator",
     slug: "storyboard-generator",
     groupId: "video",
@@ -288,6 +315,7 @@ export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
   "video-subtitle-extractor":    ["creator-tools", "video-translation-dubbing"],
   "translate-subtitles":         ["video-translation-dubbing"],
   "video-summarizer":            ["creator-tools"],
+  "video-enhance":               ["creator-tools", "video-translation-dubbing"],
   "storyboard-generator":        ["creator-tools"],
   "image-translation":           ["video-translation-dubbing", "creator-tools"],
   "manga-translation":           ["video-translation-dubbing"],

@@ -175,6 +175,14 @@
     "speech_translator": {
       "title": "Konuşma çevirmeni",
       "desc": "Konuşmayı doğal bir şekilde başka bir dile çevirin."
+    },
+    "video_enhance": {
+      "title": "Video geliştirme",
+      "desc": "Arşiv, düşük çözünürlüklü veya sıkıştırılmış videolardaki detay, keskinlik ve netliği geri kazandırın.",
+      "meta": {
+        "title": "AI Video Geliştirme | Arşiv & Düşük Çözünürlüklü Videoları Geri Kazanın | Curify AI",
+        "description": "Gerçek arşiv görüntüleri üzerinde bir AI video geliştirme demosu izleyin. Curify, düşük çözünürlüklü ve sıkıştırılmış videolardaki detay, keskinlik ve netliği geri kazandırır — erken erişim için kaydolun."
+      }
     }
   },
   "bilingual": {
@@ -592,12 +600,85 @@
       "displayName": "ESFP",
       "title": "ESFP — Her Ortamın Canıdır | MBTI Karakter Kartları",
       "description": "Gittikleri her yere enerji getiren spontane eğlenceliler. Ghibli, Breaking Bad, Friends ve spor dünyalarındaki ESFP karakterlerini keşfedin."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Konuşma Çevirisi Nedir?",
+        "p1": "AI konuşma çevirisi, kaynak dildeki konuşulan kelimeleri hedef dilde doğal konuşulan kelimelere dönüştürür — metin altyazıları göstermek yerine çevrilen dilde yeni bir ses parçası oluşturur.",
+        "p2": "Çıktı, sesinin çevrildiği, AI tarafından sentezlenmiş bir sesle değiştirilmiş orijinal video olan dublajlı bir videodur. Bu, video içeriğini uluslararası izleyicilere yerel olarak erişilebilir hale getirmenin en hızlı yoludur ve kayıt stüdyosu gerektirmez.",
+        "p3": "Curify'nin konuşma çevirmeni, arka plan gürültüsü, birden fazla konuşmacı, teknik kelime dağarcığı ve doğal konuşma temposunu 170'den fazla dilde işlemek için tasarlanmıştır."
+      },
+      "how": {
+        "title": "Curify Konuşmayı Nasıl Çevirir",
+        "p1": "Curify'nin konuşma çevirisi süreci, yüksek doğrulukta transkripsiyon, bağlama duyarlı çeviri ve doğal ses sentezini tek bir otomatik iş akışında birleştirir.",
+        "p2": "Adım 1: Konuşma, aksanları, alan kelime dağarcığını ve çoklu konuşmacı diyaloglarını işleyen üretim kalitesinde konuşma tanıma kullanılarak kaynak ses kaydından transkribe edilir.",
+        "p3": "Adım 2: Transkript, anlamı, tonu ve niyeti koruyan bağlama duyarlı modeller kullanılarak çevrilir — sadece kelime yerine kelime değişimi değil.",
+        "p4": "Adım 3: Doğal bir AI sesi, çevrilen metni hedef dilde sentezler, mümkün olduğunda orijinal tempo ve duygusal iletimi eşleştirir.",
+        "p5": "Adım 4: Sentezlenmiş ses parçası, videodaki orijinal sesi değiştirir ve tamamen dublajlı bir video dosyası alırsınız, yayınlamaya hazır."
+      },
+      "usecases": {
+        "title": "AI Konuşma Çevirisini Kim Kullanır?",
+        "creatorsTitle": "Küresel İçerik Üreticileri İçin",
+        "creatorsBody": "Üreticiler, içeriklerini yeniden kaydetmeden yeni dil pazarlarında izleyicilere ulaşmak için konuşma çevirisini kullanır. Tek bir yükleme, farklı bölgesel kanallar için hazır çok dilli dublajlı versiyonlar üretir.",
+        "educationTitle": "Kurumsal Eğitim ve E-Öğrenme İçin",
+        "educationBody": "Eğitim departmanları, oryantasyon videolarını, güvenlik brifinglerini ve ürün eğitimlerini yerel dillere çevirir. Doğal bir ses parçası, yalnızca altyazılara kıyasla bilgi tutma ve katılımı artırır.",
+        "businessTitle": "Uluslararası Pazarlama Ekipleri İçin",
+        "businessBody": "Pazarlama ekipleri, hedef pazar dillerine demo videoları, müşteri referansları ve etkinlik kayıtlarını çevirir — bölgeler arasında tutarlı mesajlaşmayı sağlarken pazar başına üretim maliyetlerini ortadan kaldırır."
+      }
     }
   },
-  "topicPage": {
-    "exampleImagesHeading": "Örnek Görseller",
-    "templatesHeading": "Şablonlar",
-    "subTopicsHeading": "Kategoriye göre gözat",
-    "exploreMoreHeading": "Daha fazla keşfet"
+  "videoEnhance": {
+    "metadata": {
+      "title": "AI Video Geliştirme | Arşiv & Düşük Çözünürlüklü Videoları Geri Kazanın | Curify AI",
+      "description": "Gerçek arşiv görüntüleri üzerinde bir AI video geliştirme demosu izleyin. Curify, düşük çözünürlüklü ve sıkıştırılmış videolardaki detay, keskinlik ve netliği geri kazandırır — erken erişim için kaydolun."
+    },
+    "title": "AI Video Geliştirme",
+    "description": "Düşük çözünürlüklü, sıkıştırılmış veya arşiv videolarındaki detay, keskinlik ve netliği geri kazandırın. Aşağıdaki orijinal ve geliştirilmiş klipler arasında geçiş yapmak için geçişi kullanın ve gerçek görüntülerde AI restorasyonunu görün.",
+    "example": "Örnek: 1970'lerdeki petrol krizi hakkında bir haber bölümü — orijinal SD yayın kalitesi ile AI geliştirilmiş versiyon.",
+    "cta": "Erken Erişime Katılın",
+    "demo": {
+      "aria": "Video geliştirme öncesi / sonrası demo",
+      "caption": "Orijinal görüntü ile AI geliştirilmiş versiyon arasında geçiş yapmak için geçişi kullanın.",
+      "nowPlaying": "Şu anda oynatılıyor: {lang}"
+    },
+    "why": {
+      "title": "Neden Curify'i Video Geliştirme için Kullanmalısınız?",
+      "point1": "Kaynak çözünürlüğü sabit olan arşiv, yayın ve kullanıcı tarafından yüklenen görüntülerdeki detayları geri kazandırır.",
+      "point2": "Sıkıştırma artefaktlarını kaldırır ve aşırı keskin, plastik görünüm oluşturmadan dokuyu geri kazanır.",
+      "point3": "Tam uzunlukta kliplerde çalışır — sadece kısa kesitlerde değil — ve kesimler ve panlar arasında hareketi doğal tutar.",
+      "point4": "Bugün sadece demo; boru hattı açıldığında kendi görüntülerinizi çalıştırmak için erken erişim için kaydolun."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Video geliştirme bugün mevcut mu?",
+      "a1": "Henüz değil — bu sayfa arşiv görüntüleri üzerinde çalışan bir demo. Üretim boru hattı özel test aşamasında. Erken erişim için kaydolun ve yükleme açıldığında sizinle iletişime geçeceğiz.",
+      "q2": "Hangi tür videolar geliştirme için en iyi sonuç verir?",
+      "a2": "Sıkıştırma, düşük kaynak çözünürlüğü veya nesil kopya kaybı nedeniyle detay kaybetmiş gerçek dünya görüntülerinde en iyi performansı gösterir — arşiv yayınları, eski ev videoları, güvenlik kameraları görüntüleri ve HD olarak yüklenen SD içerikler. Bu bir yüz yenileme veya üretken yeniden yaratma aracı değildir — kaynak sinyalde mevcut olan detayları geri kazandırır."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Video Geliştirme Nedir?",
+        "p1": "AI video geliştirme, kayıt, sıkıştırma veya iletim sırasında kaybolan veya bozulmuş görsel detayları yeniden yapılandırır. Basit bir çözünürlük artırmanın aksine, amaç daha büyük pikseller değil — aynı sahnenin daha yüksek kaliteli bir kaydının üreteceği doku, kenarlar ve ton aralığını geri kazanmaktır.",
+        "p2": "Geleneksel artırıcılar mevcut pikseller arasında ara değerleme yaparken (daha yumuşak veya keskin ama plastik bir görüntü üreterek), modern AI restorasyon modelleri, eşleşen düşük kaliteli ve yüksek kaliteli görüntülerden oluşan büyük veri setlerinden öğrenir. Temel sahnenin en olası içeriğine dayanarak makul yüksek çözünürlüklü detayları çıkarır — hareketi, aydınlatmayı ve dokuyu çerçeveler arasında tutarlı bir şekilde korur.",
+        "p3": "Bu sayfadaki demo, 1970'lerden bir haber segmentinden bir klibi geliştirir. Orijinal, dönemin tipik sıkıştırma ve renk kaybıyla SD yayın kalitesindedir. Geliştirilmiş versiyon, yüz detaylarını, sahne dokusunu ve kenar keskinliğini geri kazandırırken döneme uygun film grenini ve renk paletini korur."
+      },
+      "how": {
+        "title": "Curify Video Geliştirmeye Nasıl Yaklaşıyor",
+        "p1": "Üretim kalitesinde video geliştirme tek bir model değildir — her biri bir hata modunu ele alan özel modellerin bir boru hattıdır, düzeltmeleri birbiriyle çatışmak yerine birikimli hale getirecek şekilde sıralanmıştır.",
+        "p2": "Adım 1: Sahne segmentasyonu ve çekim tespiti. Boru hattı, klibi sahne sınırlarında böler, böylece her çekim için restorasyon parametreleri aydınlatma, hareket ve içerik ile uyum sağlayabilir, tüm klip boyunca ortalama almak yerine.",
+        "p3": "Adım 2: Kare bazında restorasyon. Detay yeniden yapılandırması, bloklama giderme ve gürültü azaltma, düzeltmelerin zamansal olarak tutarlı kalması için hareket vektörleriyle birlikte uygulanır — kesimler arasında detay seviyeleri arasında titreme olmaz.",
+        "p4": "Adım 3: Zamansal stabilizasyon. İkinci bir geçiş, kalıntı titremeyi düzeltir, geliştirilmiş detayları çerçeveler arasında hizalar ve kasıtlı yerlerde doğal hareket bulanıklığını korur.",
+        "p5": "Adım 4: Kalite farkındalığına sahip kodlama. Son klip, geri kazanılan detayları koruyan bir bit hızı ve codec seçimi ile kodlanır, restorasyonun yeni baştan eklediği sıkıştırma artefaktlarını yeniden getirmeden."
+      },
+      "usecases": {
+        "title": "AI Video Geliştirmeyi Kim Kullanıyor?",
+        "creatorsTitle": "Yaratıcılar ve Belgesel Yapımcıları İçin",
+        "creatorsBody": "Arşiv görüntüleri, eski röportajlar veya vintage yayınlarla çalışan yapımcılar, kaynak materyali modern ekranlarda tutarlı bir kaliteye getirmek için geliştirmeyi kullanır, döneme uygun görünümü yeniden yaratmadan.",
+        "educationTitle": "Eğitim ve Arşiv Ekipleri İçin",
+        "educationBody": "Kütüphaneler, müzeler ve eğitim yayıncıları, bant ve film koleksiyonlarını orijinal kayıt kalitesinde dijitalleştirir. Geliştirme, aynı görüntünün projeksiyonunu, kurslara gömülmesini veya lisanslanmasını sağlayan detayları geri kazandırır, 'kalite için özür dileriz' çerçevesini ortadan kaldırır.",
+        "businessTitle": "Marka ve Pazarlama Ekipleri İçin",
+        "businessBody": "Pazarlama ekipleri, eski marka varlıklarını — kurucu röportajları, erken ürün tanıtımları, yayın spotları — yeniden kullanmak ister. Geliştirme, yeniden çekim yapmadan kalite farkını kapatır, orijinal hikaye ve karakterleri korur."
+      }
+    }
   }
 }

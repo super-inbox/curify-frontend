@@ -269,16 +269,14 @@ export default async function VideoEnhancementPost({
 
         <footer className="pt-10 text-center">
           <p className="text-lg mb-4">
-            🚀 Want to enhance your videos using AI?
-            Try Curify Studio at{" "}
-            <a
-              href="https://www.curify-ai.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            See the before / after on real archival footage on the{" "}
+            <Link
+              href={`/${locale}/tools/video-enhance`}
               className="text-blue-600 underline font-semibold"
             >
-              curify-ai.com
-            </a>
+              Curify AI Video Enhance page
+            </Link>
+            {" "}— sign up for early access while the pipeline is in private testing.
           </p>
         </footer>
       </main>
