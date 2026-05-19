@@ -217,6 +217,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Demo-only SEO landing — no backend pipeline yet. Pre-built demo
+    // clip migrated from the old /tools "Upcoming products" strip.
     id: "manga-translation",
     slug: "manga-translation",
     groupId: "image",
@@ -226,9 +228,15 @@ export const TOOL_REGISTRY: ToolDef[] = [
     action: { type: "none" },
     i18n: toolKeys("manga_translation"),
     seo: seoKeys("manga_translation"),
+    demo: {
+      type: "single_video",
+      src: "/video/demo_mangaTranslation.mp4",
+    },
   },
 
   {
+    // Demo-only SEO landing — no backend pipeline yet. Pre-built demo
+    // clip migrated from the old /tools "Upcoming products" strip.
     id: "style-transfer",
     slug: "style-transfer",
     groupId: "image",
@@ -238,6 +246,10 @@ export const TOOL_REGISTRY: ToolDef[] = [
     action: { type: "none" },
     i18n: toolKeys("style_transfer"),
     seo: seoKeys("style_transfer"),
+    demo: {
+      type: "single_video",
+      src: "/video/demo_styleTransfer.mp4",
+    },
   },
 
   // =======================

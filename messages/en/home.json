@@ -203,7 +203,9 @@
       "desc": "Translate speech to another language with natural delivery."
     },
     "coming_soon": "Coming Soon",
-    "create": "Create"
+    "create": "Create",
+    "relatedReading": "Read about how it works",
+    "whoItsFor": "Who it's for"
   },
   "bilingual": {
     "metadata": {
@@ -532,6 +534,104 @@
         "educationBody": "Libraries, museums, and educational publishers digitize tape and film collections at the original recorded quality. Enhancement recovers detail that lets the same footage be projected, embedded in courses, or licensed without the apologetic 'sorry for the quality' framing.",
         "businessTitle": "For Brand and Marketing Teams",
         "businessBody": "Marketing teams revisit older brand assets — founder interviews, early product demos, broadcast spots — and want to repurpose them in modern campaigns. Enhancement closes the quality gap without re-shooting, preserving the original story and characters."
+      }
+    }
+  },
+  "styleTransfer": {
+    "metadata": {
+      "title": "AI Style Transfer for Video | Pixar, Ghibli, Anime | Curify AI",
+      "description": "Apply Pixar, Ghibli, anime, or any reference art style to a real-world video clip. Curify's style transfer pipeline preserves motion and identity while swapping the visual language."
+    },
+    "title": "AI Style Transfer for Video",
+    "description": "Apply Pixar, Ghibli, anime, or any reference art style to a real-world video — frame-by-frame consistency, preserved motion, recognizable subjects. Watch the demo below for an example.",
+    "example": "Example: a live-action clip restyled into a Ghibli painterly look, frame-coherent across the full shot.",
+    "cta": "Join Early Access",
+    "why": {
+      "title": "Why Use Curify for Style Transfer?",
+      "point1": "Frame-coherent restyling — no flicker or identity drift between frames, even across cuts and pans.",
+      "point2": "Style is set by a reference image or a named preset (Pixar, Ghibli, anime, watercolor, oil painting, etc.).",
+      "point3": "Subjects stay recognizable — faces, props, and on-screen text survive the restyle.",
+      "point4": "Demo-only today; sign up for early access to run your own footage when the pipeline opens."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is style transfer available today?",
+      "a1": "Not yet — this page shows a working demo on a sample clip. The production pipeline is in private testing. Sign up for early access and we will reach out when it opens for upload.",
+      "q2": "What kinds of source video work best?",
+      "a2": "Footage with steady framing, clear subjects, and a defined foreground works best. Style transfer is a creative restyle, not a face-swap — the subjects stay recognizable but the visual language changes. Highly compressed or low-resolution footage will produce noisier output."
+    },
+    "deep": {
+      "what": {
+        "title": "What Is AI Style Transfer for Video?",
+        "p1": "Style transfer takes a source video and a target visual style — Pixar 3D, Ghibli painterly, anime line art, watercolor — and re-renders the clip in the target style while preserving the original motion, framing, and subject identity. The output is a new video, not a filter applied to the original frames.",
+        "p2": "Image style transfer has been around for a decade, but the hard part for video is temporal coherence. A naive frame-by-frame restyle flickers — each frame is restyled independently, so colors and textures jitter as the model makes different choices on adjacent frames. Modern pipelines fix this by conditioning on the previous frame and propagating style decisions across the temporal axis.",
+        "p3": "The demo on this page shows a live-action clip restyled into a Ghibli painterly look. The motion stays smooth, faces stay recognizable, and the color palette stays consistent across the full shot."
+      },
+      "how": {
+        "title": "How Curify Approaches Style Transfer",
+        "p1": "Production-grade video style transfer is a pipeline of specialized stages, not a single model call. Each stage handles one part of the temporal-coherence problem so the corrections compound rather than fight each other.",
+        "p2": "Step 1: Shot detection and scene segmentation. The clip is split at shot boundaries so each shot gets its own style parameters and the model is not asked to maintain coherence across an unrelated cut.",
+        "p3": "Step 2: Reference encoding. Either a style reference image or a named preset is encoded into a target style embedding that drives the restyle.",
+        "p4": "Step 3: Frame-coherent restyling. Frames are restyled with awareness of the previous output frame, so colors, textures, and line weights stay consistent across motion.",
+        "p5": "Step 4: Temporal smoothing and quality-aware encoding. A residual flicker pass cleans any remaining artifacts and the final clip is encoded at a bitrate that preserves the restyled detail."
+      },
+      "usecases": {
+        "title": "Who Uses AI Style Transfer?",
+        "creatorsTitle": "For Animators and Indie Creators",
+        "creatorsBody": "Indie animators use style transfer to lock a consistent visual style across hours of footage without hand-painting every frame. The output is the starting point for downstream cleanup, not the final delivery — but it collapses days of frame-by-frame work into minutes.",
+        "educationTitle": "For Education and Children's Content",
+        "educationBody": "Educational creators translate live-action explainer videos into a friendlier painterly or 3D style for younger audiences. The same recording can ship in multiple visual registers for different age brackets without re-shooting.",
+        "businessTitle": "For Brand and Campaign Teams",
+        "businessBody": "Marketing teams restyle a single live-action shoot into multiple stylistic variants — a clean corporate cut, a playful animated cut, a regional aesthetic cut — for split testing or multi-channel publishing without per-variant production cost."
+      }
+    }
+  },
+  "mangaTranslation": {
+    "metadata": {
+      "title": "AI Manga Translation | Translate Comic Panels with Layout Preserved | Curify AI",
+      "description": "Translate manga, comic, and webtoon panels into 30+ languages while keeping the original bubble shapes, fonts, and panel layout intact. Demo-only — join early access."
+    },
+    "title": "AI Manga Translation",
+    "description": "Translate the text in manga, comics, and webtoons into 30+ languages while keeping the original bubble shapes, fonts, and panel layout intact. Watch the before / after demo below.",
+    "example": "Example: a Chinese-language manga page translated into English and Spanish with the bubble layout preserved.",
+    "cta": "Join Early Access",
+    "why": {
+      "title": "Why Use Curify for Manga Translation?",
+      "point1": "Detects every speech bubble, narration box, and SFX label — not just dialogue lines.",
+      "point2": "Rebuilds the typography to fit the bubble — line breaks, font weight, and vertical / horizontal orientation all adapt.",
+      "point3": "Preserves panel layout, page direction, and SFX placement so the translated page reads natively in the target market.",
+      "point4": "Demo-only today; sign up for early access to translate your own pages when the pipeline opens."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is manga translation available today?",
+      "a1": "Not yet — this page is a working demo on sample pages. The production pipeline is in private testing. Sign up for early access and we will reach out when it opens for upload.",
+      "q2": "What languages are supported?",
+      "a2": "The translation layer supports 30+ languages including English, Spanish, French, German, Japanese, Korean, Simplified Chinese, Traditional Chinese, and Arabic. Language detection is automatic on the source side; the target language is the user choice."
+    },
+    "deep": {
+      "what": {
+        "title": "What Is AI Manga Translation?",
+        "p1": "Manga translation is a multi-stage task: detect the text on the page, recognize what it says, translate it into the target language, fit the translation back into the original bubble or panel space without breaking the typesetting. Most generic translation tools handle only the middle step and produce unusable pages that need full re-layout.",
+        "p2": "The hard part is not translation quality — it is layout preservation. A speech bubble shaped for vertical Japanese text needs to hold a much longer English sentence without overflowing, losing reading order, or covering the artwork. SFX (sound effects) drawn into the panel art are even harder: they have to be removed cleanly and re-rendered in the target language without damaging the underlying drawing.",
+        "p3": "The demo on this page shows a sample page translated end-to-end with the bubble layout, font choices, and SFX placement all preserved in the output."
+      },
+      "how": {
+        "title": "How Curify Approaches Manga Translation",
+        "p1": "The pipeline runs four specialized stages, each handling one failure mode of the naïve translate-and-overlay approach.",
+        "p2": "Step 1: Bubble and text region detection. A vision model identifies every speech bubble, narration box, SFX label, and free-floating text region, with bounding polygons that respect the original layout.",
+        "p3": "Step 2: OCR and source recognition. The text inside each region is recognized — handling vertical scripts, hand-drawn lettering, and stylized SFX fonts that defeat general-purpose OCR.",
+        "p4": "Step 3: Context-aware translation. The translation step preserves character voice across pages (so the same character speaks consistently) and adapts SFX to target-language conventions where appropriate.",
+        "p5": "Step 4: Typographic re-layout. Translated text is re-rendered in the original bubble with adaptive line breaks, font weight matching, and orientation switching (vertical → horizontal where needed) so the output reads natively in the target market."
+      },
+      "usecases": {
+        "title": "Who Uses AI Manga Translation?",
+        "creatorsTitle": "For Indie Comic and Webtoon Creators",
+        "creatorsBody": "Indie creators publish in one language and want to reach readers in others without paying per-page localization fees. Automated translation produces a draft that the creator (or a community translator) can polish, collapsing weeks of layout work into minutes.",
+        "educationTitle": "For Language Learning and Bilingual Editions",
+        "educationBody": "Language teachers and bilingual-edition publishers produce side-by-side or alternating-language pages from a single source. The translation pipeline outputs a layout-preserved version in each target language, ready for typesetting into the final bilingual edition.",
+        "businessTitle": "For Manga, Comic, and Webtoon Publishers",
+        "businessBody": "Publishers localize backlist titles into new markets where licensed manual translation is uneconomical. Automated translation makes a long-tail localization strategy viable — every backlist title becomes a candidate for a new-market release."
       }
     }
   }

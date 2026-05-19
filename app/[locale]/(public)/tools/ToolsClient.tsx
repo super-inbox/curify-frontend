@@ -17,6 +17,8 @@ import { getToolById } from "@/lib/tools-registry"; // ✅ NEW
 
 import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
+import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import CreateNewModal from "./CreateNewModal";
 
 export default function ToolsClient() {
@@ -307,44 +309,29 @@ export default function ToolsClient() {
           </div>
         </section>
 
-        {/* Upcoming products */}
+        {/* Read about how it works — latest blogs from creator-tools +
+            video-translation-dubbing categories. Replaces the prior
+            "Upcoming products" video-demo strip; those demos now live on
+            their own /tools/<slug> pages (manga-translation, style-transfer). */}
         <section className="w-full mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">
-              {t("upcoming.title")}
-            </h2>
-            <p className="text-base sm:text-lg text-[var(--c2)]">
-              {t("upcoming.subtitle")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["styleTransfer", "mangaTranslation", "templatedVideo"].map((key, index) => {
-              const transcriptKey = `upcoming.${key}.transcript`;
-              return (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105 relative overflow-hidden flex flex-col"
-                >
-                  <h3 className="text-xl font-bold text-[var(--c1)] mb-3">
-                    {t(`upcoming.${key}.title`)}
-                  </h3>
-                  <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">
-                    {t(`upcoming.${key}.desc`)}
-                  </p>
-                  <CdnVideo
-                    className="rounded-lg shadow-md w-full mt-auto"
-                    controls
-                    loop
-                    src={`/video/demo_${key}.mp4`}
-                    aria-label={`Demo video for ${t(`upcoming.${key}.title`)}`}
-                  />
-                  <p className="text-xs text-gray-400 mt-2">
-                    {t("tools.hero.transcript_label")}: {transcriptKey}
-                  </p>
-                </div>
-              );
+          <RelatedBlogsByCategory
+            categories={["creator-tools", "video-translation-dubbing"]}
+            locale={locale}
+            max={3}
+            heading={t("tools.relatedReading", {
+              defaultValue: "Read about how it works",
             })}
+          />
+        </section>
+
+        {/* Who uses this — audience-targeted landing pages. Sits below
+            the tools grid (WHAT) and the blog row (WHY/HOW). */}
+        <section className="w-full mb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-6 text-center">
+            {t("tools.whoItsFor", { defaultValue: "Who it's for" })}
+          </h2>
+          <div className="flex justify-center">
+            <UseCaseChipsRow />
           </div>
         </section>
       </div>
