@@ -7407,5 +7407,66 @@
       "for-designers",
       "for-publishers"
     ]
-  }
+  },
+  {
+    "id": "template-food-photo-doodle-sticker-overlay",
+    "locales": {
+        "en": {
+            "base_prompt": "(Food Photo Doodle Overlay Creator) Take the provided food photograph and add cute, hand-drawn doodle-style overlays on top. Overlays include: handwritten-style food-themed quotes and captions, simple white outline doodles (stars, hearts, sparkles, arrows), kawaii-style food characters (toast, avocado, chicken legs, mango, chili pepper), speech bubbles, and decorative frames around dishes. Style: Soft, playful, Instagram-friendly aesthetic, clean white line art and pastel accents, whimsical and cozy vibe, layered over the original photo without obscuring the food, direct image generation.",
+            "parameters": []
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-food-photo-doodle-sticker-overlay-brunch-prev.jpg"
+},
+  {
+    "id": "template-mbti-in-love-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(MBTI Love Style Infographic Creator) Create a clean, minimalist infographic poster titled '{mbti_type} IN LOVE'. Layout: Centered low-poly cartoon character representing the MBTI type, surrounded by key personality traits, quotes, and phrases describing their behavior in love. Use gold/yellow and dark brown text on a plain white background, with floating heart icons around the character. Include the MBTI type at the bottom in a handwritten-style font. Style: Flat vector art aesthetic, simple geometric character design, playful yet bold typography, warm golden color scheme, direct image generation. Subject: '{mbti_type} personality type in love traits infographic'.",
+            "parameters": [
+                {
+                    "name": "mbti_type",
+                    "label": "MBTI Type",
+                    "type": "text",
+                    "placeholder": ["ISTP", "ENTJ", "INTP", "ENTP", "INFJ", "INTJ", "ISFP", "ESFJ"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-in-love-infographic-intp-prev.jpg"
+},
+  {
+    "id": "template-flowing-journey-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Flowing Journey Infographic Creator) Create a beautiful, modern infographic poster for the theme '{journey_theme}'. Layout: A smooth, wavy river-like path flowing vertically down the page, connecting multiple stages of the journey. Each stage includes a simple illustration, title, and short description. Use a cohesive color palette matching the theme, with soft gradients, minimalist vector-style art, and clean typography. Style: Calm, uplifting, and professional aesthetic, flat design with subtle gradients, whimsical yet informative, direct image generation. Subject: '{journey_theme} flowing journey infographic'.",
+            "parameters": [
+                {
+                    "name": "journey_theme",
+                    "label": "Journey Theme",
+                    "type": "text",
+                    "placeholder": ["Transforming Your Inner Dialogue", "Entrepreneurship Journey", "Morning Routine", "Learning Progression", "Career Journey"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-flowing-journey-infographic-career-journey-prev.jpg"
+},
+  {
+    "id": "template-regional-names-old-money-style",
+    "locales": {
+        "en": {
+            "base_prompt": "(Old Money Style Regional Names Poster Creator) Create a sophisticated, elegant poster titled '{region} Names'. Layout: Centered text sections for different sub-categories of names (e.g., languages/cultures within the region), each with a title and list of names. Accompanied by realistic, stylish portraits of men and women in classic old-money fashion (neutral tones: beige, cream, taupe, soft gold) placed around the text. Style: Dark marble-textured background, elegant serif typography, high-fashion editorial aesthetic, muted and luxurious color palette, clean minimalist layout, direct image generation. Subject: '{region} names old-money style infographic poster'.",
+            "parameters": [
+                {
+                    "name": "region",
+                    "label": "Region/Theme",
+                    "type": "text",
+                    "placeholder": ["Middle Eastern & African", "Latin American", "Asian", "Nordic", "European", "Old Money Boy/Girl Names"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-regional-names-old-money-style-western-male-prev.jpg"
+}
 ]
