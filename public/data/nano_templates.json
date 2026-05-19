@@ -7519,5 +7519,73 @@
         }
     },
     "og_image": "/images/nano_insp_preview/template-country-dos-and-donts-infographic-japan-prev.jpg"
+},
+  {
+    "id": "template-slang-week-recap-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Slang Capsule Week Recap Infographic Creator) Create a clean, vibrant educational infographic poster titled '{topic}'. Layout: Lined notebook-style background, with 6 slang terms arranged vertically, each with a colorful bold heading (including the word and its part of speech in parentheses), a short definition with key words underlined, and a small matching cartoon illustration on the right with a speech bubble showing an example sentence. Style: Playful handwritten-inspired typography, bright distinct colors for each heading, friendly cartoon characters with watercolor accents, clear easy-to-read text, cohesive color palette, direct high-quality image generation. Subject: '{topic} slang recap infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Slang Recap Topic",
+                    "type": "text",
+                    "placeholder": ["Gen Z Slang Weekly Recap", "Common Internet Slang", "Daily Chat Slang Guide", "TikTok Viral Slang", "Casual Conversation Slang", "Modern English Slang"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-slang-week-recap-infographic-ghosting-sus-salty-flex-rizz-delulu-prev.jpg"
+},
+  {
+    "id": "template-food-recipe-tip-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Food & Cooking Infographic Creator) Create a vibrant, educational infographic poster titled '{topic}'. Layout: Split-screen comparison (correct vs. incorrect use of the tip) with characters and speech bubbles, 4 detailed explanation blocks below with simple food illustrations, and a bold warning banner at the bottom. Style: Warm, colorful cartoon art style, cozy kitchen background, bold typography with high contrast, clear section dividers, friendly and approachable characters, direct high-quality image generation. Subject: '{topic} cooking tip infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Cooking/Food Infographic Topic",
+                    "type": "text",
+                    "placeholder": ["Lemon Balance in Cooking", "Rainbow Plate Nutrition", "Brunch Balance Guide", "Korean Food Spice Levels", "Comfort Food Smart Eating", "Salt Usage Tips"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-food-recipe-tip-infographic-brunch-balance-guide-prev.jpg"
+},
+  {
+    "id": "template-music-style-visual-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Music Style Visual Infographic Creator) Create a stylish atmospheric infographic poster titled '{music_style}'. Layout: Main core scene matching music tone, equipped with representative musical instruments, scene atmosphere, fashion elements and classic symbolic decorations, divided into feature introduction, style temperament and representative elements three clear layout modules. Style: High sense of artistic atmosphere, unified exclusive color matching, delicate texture rendering, fashionable layout design, soft comfortable tone, direct high-quality image generation. Subject: '{music_style} music style aesthetic infographic'.",
+            "parameters": [
+                {
+                    "name": "music_style",
+                    "label": "Music Style Theme",
+                    "type": "text",
+                    "placeholder": ["Retro Pop", "Romantic Jazz", "Cool HipHop", "Soft Folk", "Vintage Rock", "Ethereal Ambient"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-music-style-visual-infographic-rock-star-prev.jpg"
+},
+  {
+    "id": "template-kids-theme-fill-in-worksheet",
+    "locales": {
+        "en": {
+            "base_prompt": "(Kids Themed Fill-in-the-Blank Worksheet Creator) Create a bright, cheerful children's activity worksheet titled '{topic}'. Layout: 10 numbered sections with simple prompts and blank lines for answers, each paired with a cute hand-drawn cartoon illustration related to the theme. Use a light, friendly background with playful icons (stars, hearts, suns) and colorful section dividers. Style: Kid-friendly hand-drawn art, clear bold typography, simple and engaging design, direct high-quality image generation. Subject: '{topic} children's fill-in activity worksheet'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Worksheet Theme",
+                    "type": "text",
+                    "placeholder": ["Let Me Introduce Myself", "All About My Best Friend", "My Daily Routine", "My Dream Career", "My Favorite Things", "My Summer Vacation Plan", "My Weekend Activities"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-kids-theme-fill-in-worksheet-introduce-myself-prev.jpg"
 }
 ]
