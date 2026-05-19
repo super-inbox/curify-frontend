@@ -324,12 +324,27 @@
     "image": "/images/platformai.webp",
     "category": "ds-ai-engineering",
     "relatedLinks": [
-      "QA_Bot_to_Task",
-      "age_AI",
+      "ai-engineering-hard-truth",
       "ai-reshaping-data-workflow",
-      "ml-engineer-vs-ai-engineer"
+      "ml-engineer-vs-ai-engineer",
+      "QA_Bot_to_Task"
     ],
-    "lastmod": "2026-05-18"
+    "lastmod": "2026-05-19"
+  },
+  {
+    "slug": "ai-engineering-hard-truth",
+    "title": "From Probabilistic to Deterministic: Hard Truths About AI Engineering in Production",
+    "date": "May 19, 2026",
+    "readTime": "9 min read",
+    "tag": "DS & AI Engineering",
+    "image": "/images/ai-engineering-hard-truth.jpg",
+    "category": "ds-ai-engineering",
+    "relatedLinks": [
+      "ai-reshaping-data-workflow",
+      "ml-engineer-vs-ai-engineer",
+      "aiPlatform"
+    ],
+    "lastmod": "2026-05-19"
   },
   {
     "slug": "ai-reshaping-data-workflow",
@@ -340,11 +355,11 @@
     "image": "/images/ai-dataworkflow.jpg",
     "category": "ds-ai-engineering",
     "relatedLinks": [
+      "ai-engineering-hard-truth",
       "ml-engineer-vs-ai-engineer",
-      "aiPlatform",
-      "age_AI"
+      "aiPlatform"
     ],
-    "lastmod": "2026-05-18"
+    "lastmod": "2026-05-19"
   },
   {
     "slug": "ml-engineer-vs-ai-engineer",
@@ -355,11 +370,11 @@
     "image": "/images/mle-vs-ai.jpg",
     "category": "ds-ai-engineering",
     "relatedLinks": [
+      "ai-engineering-hard-truth",
       "ai-reshaping-data-workflow",
-      "aiPlatform",
-      "age_AI"
+      "aiPlatform"
     ],
-    "lastmod": "2026-05-18"
+    "lastmod": "2026-05-19"
   },
   {
     "slug": "how-to-dub-videos-naturally",
