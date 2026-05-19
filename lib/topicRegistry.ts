@@ -418,6 +418,7 @@ const TIER1_USE_CASES: Record<string, readonly string[]> = {
   language:    ["for-parents", "for-esl-learners", "for-publishers"],
   learning:    ["for-parents", "for-creators", "for-publishers"],
   travel:      ["for-creators", "for-marketers", "for-dtc-brands"],
+  culture:     ["for-creators", "for-publishers", "for-designers"],
   lifestyle:   ["for-creators", "for-marketers", "for-dtc-brands"],
   design:      ["for-marketers", "for-designers", "for-dtc-brands"],
   product:     ["for-marketers", "for-designers", "for-dtc-brands"],
