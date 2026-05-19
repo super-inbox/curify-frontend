@@ -5,6 +5,7 @@ import CdnImage from "../../_components/CdnImage";
 import { useTranslations } from "next-intl";
 import { useState, useMemo } from "react";
 import { useParams } from "next/navigation";
+import blogsData from "@/public/data/blogs.json";
 
 interface BlogPost {
   slug: string;
@@ -13,6 +14,7 @@ interface BlogPost {
   readTime: string;
   tag: string;
   image: string;
+  category?: string;
 }
 
 // Pillar labels shown in the tag filter row — the order also controls
@@ -31,8 +33,18 @@ const PILLAR_LABELS = [
 export default function BlogListPage() {
   const t = useTranslations("blog");
   const { locale } = useParams() as { locale: string };
-  const blogPosts = t.raw("posts") as BlogPost[];
   const [selectedTag, setSelectedTag] = useState<string>("All");
+
+  // public/data/blogs.json is the single source of truth for the feed
+  // catalog. The file is hand-curated and not strictly chronological,
+  // so sort by parsed date (most recent first) at render time.
+  const blogPosts = useMemo(() => {
+    return (blogsData as BlogPost[]).slice().sort((a, b) => {
+      const da = Date.parse(a.date) || 0;
+      const db = Date.parse(b.date) || 0;
+      return db - da;
+    });
+  }, []);
 
   const filteredPosts = useMemo(() => {
     if (selectedTag === "All") return blogPosts;

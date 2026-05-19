@@ -31,19 +31,9 @@ const generateBlogContent = (slug, title, category, readTime = "10 min read") =>
     ctaButton: `[Button Text]`
   };
 
-  // Add to posts array
-  const postEntry = {
-    slug: slug,
-    title: title,
-    date: "May 4, 2026",
-    readTime: readTime,
-    tag: category.charAt(0).toUpperCase() + category.slice(1),
-    image: `/images/${slug}.webp`,
-    category: category,
-    relatedLinks: []
-  };
-
-  blogJson.posts.push(postEntry);
+  // public/data/blogs.json is the single source of truth for feed
+  // metadata (post entry pushed below). messages/{locale}/blog.json
+  // now only carries the body-content namespace per slug.
   blogJson[slug] = translationKeys;
 
   // Add to blogs.json
