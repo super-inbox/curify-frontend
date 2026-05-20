@@ -1,6 +1,6 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-05-19 (priority list reordered after running `scripts/eval_search.cjs --rewrite` — alias top-up and gallery tag categorization rise to P0; admin panel work drops to P1). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-05-20 (P0 #1 eval-driven alias top-up + P0 #2 gallery tag taxonomy + P0 #3 content drops all shipped 2026-05-19/20; precision tightening pass + new prune/audit tools shipped 2026-05-20; eval set refreshed with 16 real user queries). Owner: jay. Update after any push that touches the threads below or changes priority order._
 
 ## Why this doc exists
 
@@ -184,10 +184,21 @@ Ranked by how much each unblocks downstream. Reprioritized 2026-05-19 after runn
 
 12. **[thread b] Periodic gallery-tag ↔ topic-registry consistency audit**. Catch silent drift. Subsumed once P0 #2 ships and the gallery tags carry a tier mapping.
 
-### Recently shipped (2026-05-19)
-- **[thread b] Topic-aware Other Templates ranking** (`16040a1`) — `buildOtherTemplateCards` now ranks by topic-overlap with the current template, capped at 18 cards (~3 rows of 5) on `/nano-template/*` surfaces.
-- **[thread b] Travel + culture tier-1 split** (`5ec494f`) — `culture` promoted out of `EXPLICIT_CHILD_TOPICS.travel` to its own tier-1. New EntryBar capsule, persona mapping, all 10 locales updated.
-- **[thread a] Carousel use-case chip filtering** (`bb2406e`) — sidebar chips now derived from slide topics via `getUseCasesForTopics`, not the full 8-persona set.
+### Recently shipped (2026-05-19 / 20)
+- **[thread a] P0 #1 eval-driven alias top-up** (`6ea0d36`) — `scripts/topup_search_aliases.py` extended with 9 new families closing the rewriter-dependency gap. 28-query eval shifted from "9 queries needing rewriter rescue" to "0 — all base-rich". Examples: `english-chinese` 0→301, `手作` 0→173, `met gala` 1→83, `wedding planner` 15→252.
+- **[thread b] P0 #2 gallery tag taxonomy** (`af42851`) — 3 new tier-3 buckets (`mood`, `lighting`, `seasonal`), 45 EXTRA_TAG_TO_TOPICS entries, plus a noise denylist filter in `scripts/regen_nanobanana_metadata.cjs`. Coverage lifted from 58.9% to 96.9% of tag-occurrences mapped. Audit tool `scripts/audit_tag_coverage.py` makes regression catchable.
+- **[thread c] P0 #3 content drops** (`cca9eee`) — 11 new templates from hongjie28-patch-2/4/5, +58 inspirations, +990 i18n strings, +63 CDN assets. Plus 10 wine-focused examples (`7727d3e`) closing the 葡萄酒 gap surfaced in a follow-up audit.
+- **[thread a] Precision tightening** (`33a625d`) — Relevance audit via new `scripts/eval_relevance_audit.cjs` surfaced template-level alias overspread. New companion script `scripts/prune_search_aliases.py` removes aliases from over-broad parents; `topup_search_aliases.py` gains `inspiration_filter` for re-attachment at inspiration granularity. Net: 16,936 alias entries pruned, 2,182 re-added at inspiration level. Precision wins: `global influence` 479→38, `wedding planner` 252→88, `动物 词汇` 310→166, `唯美春天` 133→58. Eval still 28/28 PASS.
+- **[thread a] Eval set refreshed** (commit pending) — Dropped 8 tier-1 anchor queries (those redirect to /topics/<slug> and surface no fresh signal), added 16 real production queries from admin search-log + GSC zero-CTR list (单词, 卡通, 吉伊卡哇, 家居装饰, 工程, 植物, 水果中文, 电商详情图, 自行车, 葡萄酒, 蔬菜, 词汇, 趣味经济学知识科普, 音乐, 食物, 香薰). Net 36 queries, all PASS at base scoring.
+
+### New tools (2026-05-20)
+| Tool | Purpose |
+| --- | --- |
+| `scripts/prune_search_aliases.py` | Remove specified aliases from inspirations under given template ids. Idempotent. Companion to `topup_search_aliases.py` for the tighten-and-reapply workflow. |
+| `topup_search_aliases.py` `inspiration_filter` | Per-family option: only inspirations whose `params.<field>` matches the listed patterns get the aliases. Lets us re-attach moved aliases at inspiration granularity. |
+| `scripts/eval_relevance_audit.cjs` | Per-query relevance audit. Reports distinct-template counts + top-4 templates per query for eyeball check. Used to detect alias overspread. |
+| `scripts/audit_tag_coverage.py` | Reports % of gallery-tag occurrences mapped to a topic via TOPIC_GALLERY_TAG + EXTRA_TAG_TO_TOPICS. Run after registry edits to confirm coverage didn't regress. |
+| `scripts/score_user_queries.cjs` | Ad-hoc scorer for individual queries. Prints hits + top-4 templates. Used when calibrating `expected` buckets in `search_eval_set.json`. |
 
 ---
 
@@ -197,7 +208,13 @@ Ranked by how much each unblocks downstream. Reprioritized 2026-05-19 after runn
 | --- | --- |
 | Search runbook (thread a) | `docs/search-quality.md` |
 | Search regression eval | `scripts/eval_search.cjs`, `scripts/configs/search_eval_set.json` |
+| Per-query relevance audit | `scripts/eval_relevance_audit.cjs` |
+| Ad-hoc query scorer | `scripts/score_user_queries.cjs` |
+| Alias top-up (template + inspiration level) | `scripts/topup_search_aliases.py` |
+| Alias prune (companion to top-up) | `scripts/prune_search_aliases.py` |
 | Topic registry (thread b) | `lib/topicRegistry.ts`, `lib/topic_tag_mappings.json` |
+| Gallery tag taxonomy (proposal + decisions) | `docs/gallery-tag-taxonomy.md` |
+| Gallery tag coverage audit | `scripts/audit_tag_coverage.py` |
 | Subject-topic seeds | `lib/subject_topic_seeds.json` |
 | Content drop runbook (thread c) | `docs/batch-generation.md` |
 | Daily drop workflow | memory `project_daily_template_workflow.md` |
