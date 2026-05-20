@@ -128,6 +128,16 @@ function parseArgs(argv) {
     supabase: false,
     pgUrl: defaultPgUrl,
     supabaseStatus: "APPROVED",
+    // When set, restrict the Supabase query to projects created on/after
+    // this date (`created_at >= $since`). Format: YYYY-MM-DD. Useful when
+    // back-filling a specific drop window without churning through the
+    // full APPROVED backlog.
+    since: null,
+    // When set, restrict the Supabase query to a small set of user_id
+    // values (comma-separated). Implies "precise lookup" — the status
+    // filter is skipped so the user can pick records from any status
+    // (e.g. APPROVED + COMPLETED) within the user-id whitelist.
+    userIds: null,
     // Default ON — every daily content drop should produce records that are
     // tier-3-tagged AND search-alias-enriched. Pass --no-auto-tag to skip
     // (e.g. when re-running a sync against records you already enriched).
@@ -147,6 +157,11 @@ function parseArgs(argv) {
     else if (a === "--supabase") out.supabase = true;
     else if (a.startsWith("--pg-url=")) out.pgUrl = a.split("=").slice(1).join("=");
     else if (a.startsWith("--supabase-status=")) out.supabaseStatus = a.split("=").slice(1).join("=");
+    else if (a.startsWith("--since=")) out.since = a.split("=").slice(1).join("=");
+    else if (a.startsWith("--user-ids=")) {
+      const raw = a.split("=").slice(1).join("=");
+      out.userIds = raw.split(",").map((s) => Number(s.trim())).filter((n) => Number.isInteger(n));
+    }
     else if (a === "--auto-tag") out.autoTag = true;            // explicit ON (default)
     else if (a === "--no-auto-tag") out.autoTag = false;        // opt out
     else if (a.startsWith("--auto-tag-model=")) out.autoTagModel = a.split("=").slice(1).join("=");
@@ -372,7 +387,7 @@ function countByTemplate(items) {
 
 // ===================== SUPABASE SOURCE =====================
 
-async function fetchSupabaseJobs(pgUrl, status) {
+async function fetchSupabaseJobs(pgUrl, opts) {
   if (!pg) {
     console.error("❌ Missing dependency: pg\n  Install it first: npm i pg\n  Then rerun the script.");
     process.exit(1);
@@ -383,10 +398,28 @@ async function fetchSupabaseJobs(pgUrl, status) {
     connectionTimeoutMillis: 10000,
   });
   await client.connect();
-  const res = await client.query(
-    `SELECT project_id, runtime_config FROM project WHERE job_settings_raw->>'job_type' = 'nano_template_generation' AND status = $1`,
-    [status]
-  );
+
+  const conditions = ["job_settings_raw->>'job_type' = 'nano_template_generation'"];
+  const params = [];
+
+  // When user-ids is provided treat it as a precise lookup — skip the
+  // status filter so records in any status (APPROVED / COMPLETED / etc.)
+  // within the user-id whitelist are picked up.
+  if (opts.userIds && opts.userIds.length > 0) {
+    params.push(opts.userIds);
+    conditions.push(`user_id = ANY($${params.length}::int[])`);
+  } else {
+    params.push(opts.status);
+    conditions.push(`status = $${params.length}`);
+  }
+
+  if (opts.since) {
+    params.push(opts.since);
+    conditions.push(`created_at >= $${params.length}`);
+  }
+
+  const sql = `SELECT project_id, runtime_config FROM project WHERE ${conditions.join(" AND ")}`;
+  const res = await client.query(sql, params);
   await client.end();
   return res.rows;
 }
@@ -533,8 +566,16 @@ async function main() {
 
     let jobs;
     try {
-      jobs = await fetchSupabaseJobs(args.pgUrl, args.supabaseStatus);
-      console.log(`📌 Found ${jobs.length} jobs with status="${args.supabaseStatus}"`);
+      jobs = await fetchSupabaseJobs(args.pgUrl, {
+        status: args.supabaseStatus,
+        since: args.since,
+        userIds: args.userIds,
+      });
+      const filterDesc = [];
+      if (args.userIds && args.userIds.length > 0) filterDesc.push(`user_ids=${args.userIds.join(",")}`);
+      else filterDesc.push(`status="${args.supabaseStatus}"`);
+      if (args.since) filterDesc.push(`since=${args.since}`);
+      console.log(`📌 Found ${jobs.length} jobs (${filterDesc.join(", ")})`);
     } catch (e) {
       console.error("❌ Failed to query Supabase:", e.message);
       jobs = [];
