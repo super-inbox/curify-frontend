@@ -2,7 +2,12 @@
 import type { ReactNode } from "react";
 import { groupTools } from "@/lib/tools-registry";
 
-export type ToolStatus = "create" | "coming_soon";
+// "demo" is a SEO landing page with a working demo + early-access CTA
+// but no backend pipeline yet. Card on /tools and card-button both
+// navigate to /tools/<slug>; the inside page is responsible for the
+// early-access conversion. Distinct from "coming_soon" which renders
+// as a disabled card with no destination.
+export type ToolStatus = "create" | "demo" | "coming_soon";
 export type ToolMode = "translation" | "subtitles";
 
 export type ToolItem = {

@@ -122,8 +122,8 @@ export default function ToolsClient() {
                   {group.items.map((tool) => {
                     const Card = (
                       <div
-                        className={`rounded-2xl shadow-lg p-5 flex flex-col justify-between 
-                        bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] 
+                        className={`group rounded-2xl shadow-lg p-5 flex flex-col justify-between
+                        bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)]
                         border border-gray-100 transition-shadow
                         ${
                           tool.href
@@ -157,6 +157,15 @@ export default function ToolsClient() {
                               <span className="ml-2 text-xs opacity-80">🔒</span>
                             )}
                           </button>
+                        ) : tool.status === "demo" ? (
+                          // Card itself is wrapped in a Link to the SEO page
+                          // (tool.href is set for demo tools by buildToolsHub),
+                          // so the inner element just needs to look button-like
+                          // for affordance. Lighter accent than Create to
+                          // signal "demo / early access" vs "live tool".
+                          <span className="mt-4 block w-full text-center px-4 py-2 rounded-lg font-semibold border border-purple-200 bg-purple-50 text-purple-700 transition-colors duration-200 group-hover:bg-purple-100 group-hover:border-purple-400">
+                            {t("tools.see_demo")}
+                          </span>
                         ) : (
                           <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
                             {t("tools.coming_soon")}
