@@ -7804,5 +7804,56 @@
       "for-parents",
       "for-publishers"
     ]
-  }
+  },
+  {
+    "id": "template-wine-variety-intro-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Wine Variety Introduction Infographic Creator) Create an elegant and exquisite popular science infographic poster titled '{wine_name}'. Layout: Clear multi-part layout including appearance feature display, taste description, drinking method and matching suggestions, equipped with fine wine bottle illustrations and scene decoration elements. Style: Advanced soft tone style, high-grade texture background, neat hierarchical font, simple atmospheric line drawing, comfortable visual sense, direct high-quality image generation. Subject: '{wine_name} wine knowledge introduction infographic'.",
+            "parameters": [
+                {
+                    "name": "wine_name",
+                    "label": "Wine Variety Name",
+                    "type": "text",
+                    "placeholder": ["Red Wine", "White Wine", "Champagne", "Whiskey", "Brandy", "Rum", "Tequila"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-wine-variety-intro-infographic-vodka-prev.jpg"
+},
+  {
+    "id": "template-mbti-comparison-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(MBTI Personality Comparison Infographic Creator) Create a humorous split-screen comparison infographic poster titled '{topic}'. Layout: Top section labeled 'Ideal/Expectation Scenario' with organized, focused characters, bottom section labeled 'Real/Chaotic Scenario' with exaggerated, relatable chaos. Each character is labeled with their MBTI type, paired with speech bubbles showing their classic responses. Style: Low-poly 3D cartoon art style, clean light background, bold colorful text headers, high-contrast colors, playful character expressions, direct high-quality image generation. Subject: '{topic} MBTI personality comparison meme infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "MBTI Scenario Topic",
+                    "type": "text",
+                    "placeholder": ["Group Chat Dynamics", "Deadline Work Scenario", "Party Socializing", "Problem Solving Styles", "Office Meeting Chaos", "Weekend Plans"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-problem-solving-prev.jpg"
+},
+  {
+    "id": "template-finance-comparison-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Finance & Money Infographic Creator) Create a vibrant, educational infographic poster titled '{topic}'. Layout: Split-screen comparison (two contrasting financial mindsets or actions) with cartoon characters and speech bubbles, key pros/cons bullet points below each side, plus simple icons like money trees, piggy banks, or charts, and a bold motivational banner at the bottom. Style: Bright, friendly cartoon art style, high-contrast red/green color coding, bold typography with thick outlines, clear section dividers, and approachable, relatable characters. Direct high-quality image generation. Subject: '{topic} finance comparison infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Finance/Money Topic",
+                    "type": "text",
+                    "placeholder": ["Saving vs Investing", "Debt vs Assets", "Employee vs Entrepreneur", "Spending vs Budgeting", "Active vs Passive Income", "Living Paycheck to Paycheck vs Building Wealth"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-finance-comparison-infographic-saving-vs-investing-prev.jpg"
+}
 ]
