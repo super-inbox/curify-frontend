@@ -108,6 +108,15 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   elegant:        "elegant",
   casual:         "casual",
   "high-fashion": "high fashion",
+  // ---- 2026-05-21 — gallery row for the new tier-2 topics that landed
+  // with the gallery tag taxonomy pass + the culture tier-1 split. Picks
+  // the single most-representative gallery tag per topic so the topic
+  // page surfaces a relevant prompt row even when the template set is
+  // still thin. -------------------------------------------------------
+  mood:                 "cozy",
+  lighting:             "golden hour",
+  seasonal:             "winter",
+  "cultural-festivals": "festive",
 };
 
 // Blog tag to pull posts for a topic page.
