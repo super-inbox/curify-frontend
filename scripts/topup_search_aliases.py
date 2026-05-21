@@ -4,8 +4,19 @@
 Appends targeted aliases to inspiration records under specific template
 families, without disturbing existing aliases. Idempotent — re-running
 is safe (dedup-by-string).
+
+Each family is `(template_ids, aliases [, inspiration_filter])`:
+- Without `inspiration_filter`: every inspiration under the listed
+  templates gets the aliases (template-level mode — high data
+  redundancy reduction, but heterogeneous templates need careful
+  curation).
+- With `inspiration_filter`: only inspirations whose
+  `params.<field>` matches any pattern (case-insensitive substring)
+  get the aliases (inspiration-level mode — for templates where the
+  alias only fits a subset of examples).
 """
 import json
+import re
 from collections import OrderedDict
 from pathlib import Path
 
@@ -17,19 +28,21 @@ P = REPO / 'public/data/nano_inspiration.json'
 # reports + 2026-05-18 user reports, captured in docs/search-quality.md.
 FAMILIES = OrderedDict([
     ('mbti_country', {
+        # Tightened 2026-05-20: dropped universe-specific MBTI templates
+        # (marvel/naruto/yellowstone/ghibli/friends/breaking bad/silicon
+        # valley/nba/harry-potter/zhenhuan/princess-pearl/mbti-generic/
+        # mbti-animal/mbti-contrast/mbti-stereotype-vs-reality/
+        # mbti-relationship/chinese-classic-character-mbti/pop-culture-
+        # matching-chart/city-mbti) — those carry MBTI-within-one-universe
+        # content, not cross-cultural / global-influence content. Aliases
+        # like "global influence" were producing 232+ false-positive hits.
+        # Kept only templates whose entire content is country/cross-
+        # cultural by construction.
         'templates': [
-            'template-mbti-animal','template-mbti-contrast','template-mbti-generic','template-mbti-marvel',
-            'template-mbti-nba','template-mbti-siliconvalley','template-mbti-breakingbad','template-mbti-naruto',
-            'template-mbti-yellowstone','template-mbti-ghibli','template-city-mbti',
-            'template-chinese-classic-character-mbti','template-friends-character-mbti',
-            'template-zhenhuan-mbti-character-analysis','template-princess-pearl-mbti-character-card',
-            'template-mbti-relationship-infographic','template-harry-potter-mbti-infographic',
-            'template-mbti-stereotype-vs-reality-infographic',
             'template-east-asian-culture-comparison-infographic',
             'template-country-top10-travel-destinations',
             'template-country-souvenirs-watercolor',
             'template-national-culture-history-infographic',
-            'template-pop-culture-matching-chart',
         ],
         'aliases': [
             'global','world','international','cross-cultural','country','global influence',
@@ -78,6 +91,11 @@ FAMILIES = OrderedDict([
         ],
     }),
     ('spring_aesthetic', {
+        # Tightened 2026-05-20: dropped template-herbal — it is medicinal
+        # botanical / scientific illustration, not aesthetic-spring vibes.
+        # Was driving 75 hits on `唯美春天` and 76 on `spring flowers`
+        # despite being off-intent (user wants watercolor / cozy / soft,
+        # not herb diagrams).
         'templates': [
             'template-watercolor-painting-tutorial-guide',
             'template-multilingual-vocabulary-poster-watercolor',
@@ -89,7 +107,6 @@ FAMILIES = OrderedDict([
             'template-watercolor-theme-collage-illustration',
             'template-watercolor-travel-journal-collage',
             'template-country-top10-travel-destinations',
-            'template-herbal',
         ],
         'aliases': [
             'spring','aesthetic','aesthetic spring','floral','flower','botanical',
@@ -112,17 +129,17 @@ FAMILIES = OrderedDict([
     # ---- 2026-05-19 eval-driven top-up (rewriter base->union lift > 10x
     # or content-gap adjacency on the 28-query regression set) -----------
     ('wedding_marriage', {
-        # `wedding planner` lifted from 15 base hits to 409 with the
-        # rewriter (27x). Templates already have wedding inspirations
-        # but no wedding-direction aliases on the parent.
+        # Tightened 2026-05-20: dropped template-vocabulary and
+        # template-multilingual-vocabulary-poster-watercolor — those
+        # cover hundreds of topic_names beyond weddings (Numbers, Body
+        # Parts, Weather, etc.). Wedding alias now re-attached at
+        # inspiration level via wedding_marriage_insp below.
         'templates': [
             'template-costume',
             'template-east-asian-culture-comparison-infographic',
             'template-fashion-before-after-outfit-annotation-card',
             'template-lifestyle-photo-grid',
             'template-relationship-advice-infographic',
-            'template-vocabulary',
-            'template-multilingual-vocabulary-poster-watercolor',
             'template-celebration-illustration-poster',
             'template-cultural-festival-poster',
         ],
@@ -134,12 +151,11 @@ FAMILIES = OrderedDict([
         ],
     }),
     ('antonym_chinese', {
-        # `反义词` lifted from 22 to 246 with rewriter (11x). Existing
-        # synonym_expressions family already aliases antonym/反义词, but
-        # template-mbti-contrast and word-comparison templates are
-        # missing from it. Also strengthens the en-zh side.
+        # Tightened 2026-05-20: dropped template-mbti-contrast — that
+        # template shows MBTI personality opposites (introvert vs
+        # extrovert), which is loose-coupled to LINGUISTIC antonyms.
+        # 27 false-positive hits on `反义词` per the relevance audit.
         'templates': [
-            'template-mbti-contrast',
             'template-chinese-verb-opposite-infographic',
             'template-kids-opposite-concept-education',
             'template-language-word-comparison-educational-poster',
@@ -153,15 +169,14 @@ FAMILIES = OrderedDict([
         ],
     }),
     ('animal_vocab_crosslingual', {
-        # `动物 词汇` lifted from 8 to 133 with rewriter (17x). Per-language
-        # animal vocab templates exist but the cross-lingual phrasing
-        # was not aliased.
+        # Tightened 2026-05-20: dropped template-vocabulary — too
+        # heterogeneous. Animal-themed vocab examples now matched via
+        # animal_vocab_insp inspiration-level filter below.
         'templates': [
             'template-species',
             'template-species-science',
             'template-dog-breed-retro-infographic',
             'template-mbti-animal',
-            'template-vocabulary',
             'template-cartoon-english-vocabulary-flashcards',
             'template-children-english-vocab-spelling',
             'template-detailed-vocab-flashcard',
@@ -197,10 +212,13 @@ FAMILIES = OrderedDict([
         ],
     }),
     ('english_chinese_bilingual', {
-        # `english-chinese` (hyphenated) lifted 0 to 259 — the rewriter
-        # rescues it because the catalog blob never carries the
-        # hyphenated form as a strict token. Aliasing the bilingual
-        # template set closes the gap without relying on rewriter.
+        # Tightened 2026-05-20: dropped template-vocabulary,
+        # template-detailed-vocab-flashcard, template-language-word-
+        # comparison-educational-poster, template-english-word-
+        # difference-infographic, template-multilingual-vocabulary-
+        # poster-watercolor — these templates carry many language pairs.
+        # En-zh examples now matched via english_chinese_insp
+        # inspiration-level filter (language_pair = en-zh).
         'templates': [
             'template-chinese-classic-character-mbti',
             'template-bilingual-object-structure-labeling',
@@ -209,11 +227,6 @@ FAMILIES = OrderedDict([
             'template-chinese-idiom-learning-card',
             'template-chinese-radical-learning',
             'template-cuisine-food-vocab-poster',
-            'template-vocabulary',
-            'template-detailed-vocab-flashcard',
-            'template-language-word-comparison-educational-poster',
-            'template-english-word-difference-infographic',
-            'template-multilingual-vocabulary-poster-watercolor',
         ],
         'aliases': [
             'english-chinese','english chinese','chinese english','chinese-english',
@@ -222,16 +235,18 @@ FAMILIES = OrderedDict([
         ],
     }),
     ('handcraft_diy_scrapbook', {
-        # `手作` (2-char CJK, no bigrams) lifted 0 to 173 via rewriter
-        # rescue. Aliasing the scrapbook / watercolor / collage / journal
-        # template family closes it directly.
+        # Tightened 2026-05-20: dropped template-multilingual-vocabulary-
+        # poster-watercolor — it is vocab-rendered-in-watercolor, not
+        # handcraft content. Handcraft alias now re-attached at
+        # inspiration level via handcraft_scrapbook_insp below for the
+        # few vocab examples whose topic_name actually mentions craft /
+        # journal / scrapbook.
         'templates': [
             'template-vintage-travel-scrapbook-poster',
             'template-watercolor-theme-collage-illustration',
             'template-watercolor-travel-journal-collage',
             'template-watercolor-painting-tutorial-guide',
             'template-watercolor-world-map-illustration',
-            'template-multilingual-vocabulary-poster-watercolor',
             'template-lifestyle-watercolor-infographic',
         ],
         'aliases': [
@@ -265,16 +280,15 @@ FAMILIES = OrderedDict([
         ],
     }),
     ('paper_cutting_kirigami', {
-        # `paper cutting` stayed at 1 hit. The intangible-heritage,
-        # cultural-relic, and guofeng templates are the natural
-        # adjacency — alias them with paper-art vocabulary.
+        # Tightened 2026-05-20: dropped template-clothing-evolution-
+        # poster — it is fashion / culture history, not paper-cutting.
+        # 17 false-positive hits on `paper cutting` per audit.
         'templates': [
             'template-intangible-heritage',
             'template-cultural-relic-retro-infographic',
             'template-guofeng-scroll',
             'template-solar-term',
             'template-east-asian-culture-comparison-infographic',
-            'template-clothing-evolution-poster',
             'template-national-culture-history-infographic',
         ],
         'aliases': [
@@ -307,30 +321,143 @@ FAMILIES = OrderedDict([
             '红毯','时装秀','礼服','晚礼服','高定','时尚晚会','颁奖典礼','明星红毯','奥斯卡','met 红毯',
         ],
     }),
+    # ---- 2026-05-20 inspiration-level top-up. Counterpart to the
+    # prune_search_aliases.py pass that removed these aliases from the
+    # over-broad parent templates. Here we re-attach the aliases only on
+    # inspirations whose params.topic_name actually matches the alias
+    # intent. -----------------------------------------------------------
+    ('wedding_marriage_insp', {
+        'templates': [
+            'template-vocabulary',
+            'template-multilingual-vocabulary-poster-watercolor',
+        ],
+        'inspiration_filter': {
+            'field': 'params.topic_name',
+            'patterns': [
+                'wedding','marriage','bride','bridal','ceremony','婚礼','结婚','婚纱','新娘',
+            ],
+        },
+        'aliases': [
+            'wedding','wedding planner','marriage','bride','groom','ceremony','vows',
+            'engagement','anniversary','bridal','wedding invitation','wedding card',
+            'wedding planning',
+            '婚礼','结婚','婚纱','新娘','新郎','婚庆','婚礼策划','婚礼请柬','周年纪念','订婚',
+        ],
+    }),
+    ('animal_vocab_insp', {
+        'templates': ['template-vocabulary'],
+        'inspiration_filter': {
+            'field': 'params.topic_name',
+            'patterns': [
+                'animal','pet','dog','cat','bird','farm','forest','ocean','butterfly',
+                'caterpillar','wildlife','insect','reptile','mammal','fish',
+                '动物','宠物','野生',
+            ],
+        },
+        'aliases': [
+            'animal vocabulary','animal vocab','animal words','animal flashcards','animal names',
+            'animals bilingual','animals english chinese','animal terms','animal kingdom',
+            '动物词汇','动物 词汇','动物 单词','动物 词卡','动物名称','动物 双语','物种 词汇',
+        ],
+    }),
+    ('english_chinese_insp', {
+        'templates': [
+            'template-vocabulary',
+            'template-multilingual-vocabulary-poster-watercolor',
+        ],
+        'inspiration_filter': {
+            'field': 'params.language_pair',
+            'patterns': ['en-zh','zh-en'],
+        },
+        'aliases': [
+            'english-chinese','english chinese','chinese english','chinese-english',
+            'en-zh','zh-en','bilingual english chinese','bilingual chinese english',
+            '中英','中英对照','中英 双语','英汉','汉英','双语','双语对照','en zh','zh en',
+        ],
+    }),
+    ('handcraft_scrapbook_insp', {
+        # Vocab cards generally aren't handcraft, but a few specifically
+        # cover crafting / scrapbook / journal as their topic_name.
+        'templates': [
+            'template-vocabulary',
+            'template-multilingual-vocabulary-poster-watercolor',
+        ],
+        'inspiration_filter': {
+            'field': 'params.topic_name',
+            'patterns': [
+                'craft','handmade','scrapbook','journal','collage','diy',
+                '手作','手工','手帐','拼贴','剪贴',
+            ],
+        },
+        'aliases': [
+            'handcraft','handmade','hand-crafted','diy','diy craft','crafting','crafts',
+            'scrapbook','scrapbooks','scrapbooking','collage craft','journal craft',
+            'art journal','watercolor crafting','craft tutorial',
+            '手作','手工','手工艺','手工制作','拼贴','剪贴簿','手帐','手作 教程','手工 拼贴',
+        ],
+    }),
 ])
+
+
+def _inspiration_matches_filter(rec: dict, flt: dict) -> bool:
+    """Check whether an inspiration's field contains any of the filter patterns.
+
+    flt is a dict with `field` (dotted path into the record, e.g.
+    'params.topic_name') and `patterns` (list of case-insensitive
+    substrings — match if any one appears in the field value). When the
+    field is missing or empty, the record does NOT match.
+    """
+    parts = flt['field'].split('.')
+    val = rec
+    for p in parts:
+        if not isinstance(val, dict):
+            return False
+        val = val.get(p)
+        if val is None:
+            return False
+    val_lc = str(val).lower()
+    return any(pat.lower() in val_lc for pat in flt['patterns'])
 
 
 def main():
     data = json.loads(P.read_text(encoding='utf-8'))
 
-    # template_id -> set of aliases to add (union across families)
-    add_by_tid: dict[str, set[str]] = {}
+    # Build two passes:
+    #   template_level: tid -> set(aliases)              # applies to every record under tid
+    #   inspiration_level: list of (templates, filter, aliases)  # filtered per-record
+    template_level: dict[str, set[str]] = {}
+    inspiration_level: list[tuple[set[str], dict, set[str]]] = []
     for fam in FAMILIES.values():
-        for tid in fam['templates']:
-            add_by_tid.setdefault(tid, set()).update(fam['aliases'])
+        flt = fam.get('inspiration_filter')
+        alias_set = set(fam['aliases'])
+        if flt is None:
+            for tid in fam['templates']:
+                template_level.setdefault(tid, set()).update(alias_set)
+        else:
+            inspiration_level.append((set(fam['templates']), flt, alias_set))
 
     total_added = 0
     touched_records = 0
     per_template_counts: dict[str, int] = {}
     for rec in data:
         tid = rec.get('template_id')
-        if tid not in add_by_tid:
-            continue
         existing = set(rec.get('search_aliases') or [])
-        new = add_by_tid[tid] - existing
+        new: set[str] = set()
+
+        # Template-level aliases
+        if tid in template_level:
+            new.update(template_level[tid] - existing)
+
+        # Inspiration-level aliases
+        for templates, flt, alias_set in inspiration_level:
+            if tid not in templates:
+                continue
+            if not _inspiration_matches_filter(rec, flt):
+                continue
+            new.update(alias_set - existing - new)
+
         if not new:
             continue
-        # Preserve original order; append new aliases at the end.
         rec['search_aliases'] = list(rec.get('search_aliases') or []) + sorted(new)
         total_added += len(new)
         touched_records += 1

@@ -1,6 +1,10 @@
 # Curify Frontend
 
-Curify Studio's frontend is a modern, scalable Next.js 13+ application designed for AI-powered video translation, dubbing, subtitle editing, and project management.
+Frontend source for **[Curify AI](https://www.curify-ai.com)** — an AI-powered visual content platform for video translation, dubbing, bilingual subtitles, video enhancement, MBTI character cards, and 170+ prompt-template galleries. Built on Next.js App Router with `next-intl` i18n across 10 locales.
+
+- Live product → <https://www.curify-ai.com>
+- Tools index → <https://www.curify-ai.com/tools>
+- Blog → <https://www.curify-ai.com/blog>
 
 ---
 
@@ -140,5 +144,9 @@ STRIPE_SECRET_KEY=...
 - ✅ **Modern UX** with Tailwind, blur/glass UI, and animation support
 
 ---
+
+## About Curify AI
+
+Curify AI ([curify-ai.com](https://www.curify-ai.com)) turns ideas into shareable visual content — MBTI character cards, prompt-template galleries, video dubbing and translation, bilingual subtitles, video enhancement. Maintained by [Jay Wang](https://www.linkedin.com/in/jay-jianqiang-wang-78a6726/) (also see [MentorCruise](https://mentorcruise.com/mentor/jaywang/) for 1:1 AI / DS engineering coaching).
 
 Curify Studio © 2025
