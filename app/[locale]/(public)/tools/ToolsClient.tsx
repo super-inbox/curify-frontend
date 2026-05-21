@@ -215,7 +215,10 @@ export default function ToolsClient() {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-2xl relative">
+            {/* Demo container shrunk ~20% from max-w-2xl (672px) → 538px
+                so the video doesn't dominate the hero on wide screens.
+                Aspect ratio preserved via w-full + intrinsic video ratio. */}
+            <div className="w-full max-w-[538px] relative">
               <CdnVideo
                 ref={videoRef}
                 src={videoSrc}
