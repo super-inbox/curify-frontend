@@ -3870,5 +3870,65 @@
         ]
       }
     }
+  },
+  "template-finance-comparison-infographic": {
+    "category": "Infographie de comparaison financière",
+    "description": "Infographie éducative sur l'argent comparant des concepts financiers clés — épargne vs investissement, dettes vs actifs, employé vs entrepreneur, revenu actif vs revenu passif. Style cartoon amical pour le contenu de finance personnelle.",
+    "title": "Infographie de comparaison de la finance et de l'argent",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie de comparaison éducative et dynamique sur un sujet financier choisi. La mise en page en écran partagé contraste deux concepts financiers avec des personnages de cartoon, des icônes simples, des statistiques clés et des résumés courts. Couleurs chaudes avec des titres en gras, une typographie claire et un encadrement accessible pour le contenu d'éducation financière pour débutants.",
+        "who": "Convient aux créateurs de finance personnelle, aux coachs en finance, aux marketeurs de néobanques construisant des campagnes éducatives, aux éditeurs d'entreprises créant des explications sur l'argent, et aux éducateurs en économie au lycée/à l'université.",
+        "how": [
+          "Choisissez un sujet de comparaison financière (Épargne vs Investissement, Dettes vs Actifs, Employé vs Entrepreneur, Dépenses vs Budget, Revenu Actif vs Revenu Passif).",
+          "Générez l'affiche infographique de comparaison."
+        ],
+        "prompts": [
+          "Générez une infographie de comparaison financière Épargne vs Investissement.",
+          "Créez une infographie sur l'argent Revenu Actif vs Revenu Passif.",
+          "Générez une affiche de comparaison Employé vs Entrepreneur."
+        ]
+      }
+    }
+  },
+  "template-mbti-group-comparison-infographic": {
+    "category": "Infographie de comparaison de groupe MBTI",
+    "description": "Comparaison humoristique en écran partagé de la façon dont les types MBTI se comportent dans des scénarios partagés — discussions de groupe, délais, réunions de bureau, résolution de problèmes. Personnages de cartoon brillants avec des légendes spécifiques à chaque personnalité.",
+    "title": "Infographie de comparaison de scénarios de groupe MBTI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une infographie humoristique montrant comment différents types MBTI se comportent dans un scénario de groupe choisi. Les panneaux séparés contrastent les types avec des poses de personnages de cartoon, des bulles de dialogue capturant le comportement signature de chaque type, et un titre de scénario unificateur. Palette de couleurs vives avec une typographie en gras et un style cartoon amical.",
+        "who": "Convient aux créateurs de contenu MBTI sur Instagram et TikTok, aux éditeurs de contenu de tests de personnalité, aux équipes RH construisant du contenu sur la dynamique d'équipe, et aux éducateurs enseignant la théorie de la personnalité.",
+        "how": [
+          "Choisissez un scénario de groupe (Dynamique de discussion de groupe, Scénario de travail avec délai, Socialisation lors d'une fête, Styles de résolution de problèmes, Chaos lors d'une réunion de bureau).",
+          "Générez l'infographie de comparaison de groupe MBTI."
+        ],
+        "prompts": [
+          "Générez une infographie de comparaison MBTI sur le Chaos lors d'une réunion de bureau.",
+          "Créez une affiche de scénario MBTI sur la Dynamique de discussion de groupe.",
+          "Générez une comparaison MBTI sur le Scénario de travail avec délai."
+        ]
+      }
+    }
+  },
+  "template-wine-variety-intro-infographic": {
+    "category": "Infographie d'introduction aux variétés de vin",
+    "description": "Infographie éducative élégante présentant une variété de vin ou de spiritueux — vin rouge, vin blanc, champagne, whisky, brandy. Notes de dégustation, accords mets et conseils de service sur un fond raffiné.",
+    "title": "Infographie éducative d'introduction aux variétés de vin",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative élégante présentant une variété de vin ou de spiritueux choisie. La mise en page couvre l'origine et les caractéristiques clés, les styles classiques et les producteurs notables, les notes de dégustation (couleur, arôme, palais), les accords mets et la température de service. Fond raffiné avec typographie serif et présentation de style sommelier.",
+        "who": "Convient aux blogueurs de vin, aux concepteurs de menus de restaurants et de bars, aux importateurs de vin construisant des supports éducatifs, aux créateurs de contenu sommelier, et aux éditeurs de style de vie construisant des guides de boissons.",
+        "how": [
+          "Choisissez une variété de vin (Vin rouge, Vin blanc, Champagne, Whisky, Brandy, Rosé, Sake).",
+          "Générez l'infographie d'introduction à la variété de vin."
+        ],
+        "prompts": [
+          "Générez une infographie d'introduction au Vin rouge avec des notes de dégustation.",
+          "Créez une affiche éducative sur la variété Champagne.",
+          "Générez une infographie d'introduction au Whisky avec des accords mets."
+        ]
+      }
+    }
   }
 }

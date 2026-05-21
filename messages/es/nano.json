@@ -3870,5 +3870,65 @@
         ]
       }
     }
+  },
+  "template-finance-comparison-infographic": {
+    "category": "Infografía de Comparación Financiera",
+    "description": "Infografía educativa sobre dinero que compara conceptos financieros clave: ahorro vs inversión, deuda vs activos, empleado vs emprendedor, ingreso activo vs ingreso pasivo. Estilo de caricatura amigable para contenido de finanzas personales.",
+    "title": "Infografía de Comparación de Finanzas y Dinero",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de comparación vibrante y educativa sobre un tema financiero elegido. El diseño de pantalla dividida contrasta dos conceptos financieros con personajes de caricatura, íconos simples, estadísticas clave y conclusiones breves. Colores cálidos con encabezados en negrita, tipografía clara y un marco accesible para contenido de alfabetización financiera para principiantes.",
+        "who": "Adecuado para creadores de finanzas personales, entrenadores de coaching financiero, comercializadores de neobancos que construyen campañas educativas, editores de negocios que crean explicaciones sobre dinero y educadores de economía de secundaria/universidad.",
+        "how": [
+          "Elige un tema de comparación financiera (Ahorro vs Inversión, Deuda vs Activos, Empleado vs Emprendedor, Gasto vs Presupuesto, Ingreso Activo vs Ingreso Pasivo).",
+          "Genera el cartel de infografía de comparación."
+        ],
+        "prompts": [
+          "Genera una infografía de comparación financiera de Ahorro vs Inversión.",
+          "Crea una infografía de dinero de Ingreso Activo vs Ingreso Pasivo.",
+          "Genera un cartel de comparación de Empleado vs Emprendedor."
+        ]
+      }
+    }
+  },
+  "template-mbti-group-comparison-infographic": {
+    "category": "Infografía de Comparación de Grupos MBTI",
+    "description": "Comparación humorística de pantalla dividida sobre cómo se comportan los tipos MBTI en escenarios compartidos: chats grupales, plazos, reuniones de oficina, resolución de problemas. Personajes de caricatura brillantes con subtítulos específicos de personalidad.",
+    "title": "Infografía de Comparación de Escenarios de Grupo MBTI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea una infografía humorística que muestra cómo se comportan diferentes tipos MBTI en un escenario grupal elegido. Los paneles divididos contrastan tipos con poses de personajes de caricatura, burbujas de diálogo que capturan el comportamiento característico de cada tipo y un título de escenario unificador. Paleta de colores brillantes con tipografía en negrita y estilo de caricatura amigable.",
+        "who": "Adecuado para creadores de Instagram y TikTok de MBTI, editores de contenido de pruebas de personalidad, equipos de recursos humanos que crean contenido sobre dinámicas de equipo y educadores que enseñan teoría de la personalidad.",
+        "how": [
+          "Elige un escenario grupal (Dinámicas de Chat Grupal, Escenario de Trabajo con Plazos, Socialización en Fiestas, Estilos de Resolución de Problemas, Caos en Reuniones de Oficina).",
+          "Genera la infografía de comparación de grupos MBTI."
+        ],
+        "prompts": [
+          "Genera una infografía de comparación MBTI sobre Caos en Reuniones de Oficina.",
+          "Crea un cartel de escenario de Dinámicas de Chat Grupal MBTI.",
+          "Genera una comparación MBTI sobre el Escenario de Trabajo con Plazos."
+        ]
+      }
+    }
+  },
+  "template-wine-variety-intro-infographic": {
+    "category": "Infografía de Introducción a Variedades de Vino",
+    "description": "Infografía educativa elegante que presenta una variedad de vino o licor: vino tinto, vino blanco, champán, whisky, brandy. Notas de cata, maridajes y consejos de servicio sobre un fondo refinado.",
+    "title": "Infografía Educativa de Introducción a Variedades de Vino",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa elegante que presenta una variedad de vino o licor elegida. El diseño cubre el origen y las características clave, estilos clásicos y productores notables, notas de cata (color, aroma, paladar), maridajes y temperatura de servicio. Fondo refinado con tipografía serif y una presentación al estilo de sommelier.",
+        "who": "Adecuado para bloggers de vino, diseñadores de menús de restaurantes y bares, importadores de vino que crean material educativo, creadores de contenido de sommeliers y editores de estilo de vida que crean guías de bebidas.",
+        "how": [
+          "Elige una variedad de vino (Vino Tinto, Vino Blanco, Champán, Whisky, Brandy, Rosado, Sake).",
+          "Genera la infografía de introducción a la variedad de vino."
+        ],
+        "prompts": [
+          "Genera una infografía de introducción al Vino Tinto con notas de cata.",
+          "Crea un cartel educativo sobre la variedad de Champán.",
+          "Genera una infografía de introducción al Whisky con maridajes."
+        ]
+      }
+    }
   }
 }

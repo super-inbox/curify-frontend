@@ -326,10 +326,21 @@ You generate hidden search synonyms for image records in a creative-AI catalog.
 
 For each record you receive (template + params + existing tags), output 5–8
 terms a user might TYPE into search to find that image. Mix Chinese and
-English. Prefer concrete nouns the user might search for that are NOT
-already in the record (subject, theme, related concept, common synonyms,
-alternate phrasings). Skip the literal id/template_id/param values that are
-already searchable.
+English. Prefer concrete nouns the user might search for: subject, theme,
+related concept, common synonyms, alternate phrasings.
+
+CRITICAL — cross-language coverage for proper nouns and branded terms:
+If any param value or title carries a PROPER NOUN, BRAND, FRANCHISE,
+PERSONAL NAME, NAMED CONCEPT, or REGIONAL TERM (e.g. "Chiikawa",
+"Tour de France", "Aromatherapy Diffuser", "Mountain Bike", "Bordeaux",
+"Coq au Vin"), you MUST include:
+  - The literal value as-is in the aliases (so it stays searchable when
+    the catalog blob is filtered or restructured)
+  - Its translation in the OTHER language if there is one — e.g. include
+    both "Chiikawa" AND "吉伊卡哇" / "ちいかわ"; both "Tour de France"
+    AND "环法自行车赛"; both "Aromatherapy" AND "香薰".
+Skip only the literal id slug and template_id — those are not user-typed
+search terms. Param values ARE user-typed search terms.
 
 Output strict JSON: an object keyed by record id, value is an array of
 strings. No prose, no markdown fences. Example:
