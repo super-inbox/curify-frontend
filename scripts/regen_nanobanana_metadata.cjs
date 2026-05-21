@@ -38,6 +38,14 @@ const TAG_DENYLIST = new Set([
   "text",
   "photograph",
   "realistic",
+  // 2026-05-21 — internal-only curation tag applied by
+  // scripts/tag_revealing_female.py. The tag stays on each prompt's
+  // `tags` array so the topic-page rendering layer can post-filter
+  // prompts carrying revealing imagery out of gallery rows (mood,
+  // lighting, seasonal, cultural-festivals, etc.), but we don't want
+  // a discoverable canonical tag listing page for it. Dropping it
+  // here keeps it out of the metadata-driven tag UI.
+  "revealing-female",
 ]);
 
 function countBy(entries, key) {

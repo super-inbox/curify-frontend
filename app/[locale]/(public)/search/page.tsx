@@ -474,9 +474,16 @@ export default async function SearchPage({ params, searchParams }: Props) {
   for (const candidate of galleryTagCandidates) {
     if (!NANO_PROMPT_TAG_SET.has(candidate)) continue;
     try {
-      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(candidate, {
-        limit: 12,
+      // Fetch 3x the visible cap so the post-filter has room to drop
+      // revealing-imagery prompts (marked with `revealing-female` by
+      // scripts/tag_revealing_female.py) while still landing on ~12
+      // family-friendly results.
+      const raw = await nanoPromptsService.getNanoPromptsByTag(candidate, {
+        limit: 36,
       });
+      galleryPrompts = raw
+        .filter((p) => !(p.tags ?? []).includes("revealing-female"))
+        .slice(0, 12);
       if (galleryPrompts.length > 0) break;
     } catch (err) {
       console.error("Failed to fetch gallery prompts for tag", candidate, err);
