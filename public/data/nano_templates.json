@@ -7929,5 +7929,29 @@
       "for-creators",
       "for-designers"
     ]
+  },
+  {
+    "id": "template-mbti-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(MBTI Personality Comparison Infographic Creator) Create a humorous split-screen comparison infographic poster titled '{topic}'. Layout: Top section labeled 'Ideal/Expectation Scenario' with organized, focused characters, bottom section labeled 'Real/Chaotic Scenario' with exaggerated, relatable chaos. Each character is labeled with their MBTI type, paired with speech bubbles showing their classic responses. Style: Low-poly 3D cartoon art style, clean light background, bold colorful text headers, high-contrast colors, playful character expressions, direct high-quality image generation. Subject: '{topic} MBTI personality comparison meme infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "MBTI Scenario Topic",
+            "type": "text",
+            "placeholder": [
+              "Group Chat Dynamics",
+              "Deadline Work Scenario",
+              "Party Socializing",
+              "Problem Solving Styles",
+              "Office Meeting Chaos",
+              "Weekend Plans"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-problem-solving-prev.jpg"
   }
 ]
