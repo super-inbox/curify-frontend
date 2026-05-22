@@ -161,103 +161,28 @@ function getOpenAIClient() {
   return _openaiClient;
 }
 
-// Pull the prompt + index settings from the live searchAugment module
-// so this script stays in sync with production behavior.
-const AUGMENT_SRC = fs.readFileSync(path.join(ROOT, "lib/searchAugment.ts"), "utf-8");
-const DESCRIPTION_CHAR_CAP = Number(AUGMENT_SRC.match(/DESCRIPTION_CHAR_CAP = (\d+)/)[1]);
-const EXAMPLES_CHAR_CAP = Number(AUGMENT_SRC.match(/EXAMPLES_CHAR_CAP = (\d+)/)[1]);
-const EXAMPLES_PER_TEMPLATE = Number(AUGMENT_SRC.match(/EXAMPLES_PER_TEMPLATE = (\d+)/)[1]);
-const MAX_PICKS = Number(AUGMENT_SRC.match(/MAX_PICKS = (\d+)/)[1]);
-
-const EN_NANO = JSON.parse(
-  fs.readFileSync(path.join(ROOT, "messages/en/nano.json"), "utf-8"),
-);
-
-// Build the same compact template index the production module builds.
-const VALID_TEMPLATE_IDS = new Set(TPL.map((t) => t.id));
-const TEMPLATE_INDEX = (() => {
-  const paramsByTpl = new Map();
-  const aliasByTpl = new Map();
-  for (const i of INSP) {
-    const tid = i.template_id;
-    if (!tid) continue;
-    let ps = paramsByTpl.get(tid);
-    if (!ps) { ps = new Set(); paramsByTpl.set(tid, ps); }
-    for (const v of Object.values(i.params || {})) {
-      if (typeof v === "string" && v.length > 0 && v.length <= 40) ps.add(v);
-    }
-    let bag = aliasByTpl.get(tid);
-    if (!bag) { bag = new Map(); aliasByTpl.set(tid, bag); }
-    for (const a of i.search_aliases || []) {
-      if (typeof a === "string" && a.length > 0 && a.length <= 40) {
-        bag.set(a, (bag.get(a) ?? 0) + 1);
-      }
-    }
-  }
-  const exMap = new Map();
-  for (const tid of new Set([...paramsByTpl.keys(), ...aliasByTpl.keys()])) {
-    const params = Array.from(paramsByTpl.get(tid) ?? []);
-    const topA = Array.from((aliasByTpl.get(tid) ?? new Map()).entries())
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, EXAMPLES_PER_TEMPLATE)
-      .map(([t]) => t);
-    const seen = new Set();
-    const terms = [];
-    for (const t of [...params, ...topA]) {
-      if (!seen.has(t)) { seen.add(t); terms.push(t); }
-    }
-    let j = terms.join(", ");
-    if (j.length > EXAMPLES_CHAR_CAP) {
-      j = j.slice(0, EXAMPLES_CHAR_CAP - 1).trimEnd() + "…";
-    }
-    exMap.set(tid, j);
-  }
-  const lines = TPL.map((t) => {
-    const topics = Array.isArray(t.topics)
-      ? t.topics
-      : String(t.topics ?? "").split(",").map((s) => s.trim()).filter(Boolean);
-    const i18n = EN_NANO[t.id] ?? {};
-    const raw = i18n.description ?? (t.locales?.en?.base_prompt ?? "");
-    const desc = raw.length > DESCRIPTION_CHAR_CAP
-      ? raw.slice(0, DESCRIPTION_CHAR_CAP - 1).trimEnd() + "…"
-      : raw;
-    const ex = exMap.get(t.id) ?? "";
-    return `${t.id} | ${topics.join(",")} | ${desc.replace(/\s+/g, " ")}${ex ? ` | Examples: ${ex}` : ""}`;
-  });
-  return lines.join("\n");
-})();
-
+// Pull the prompt from the live module so this script stays in sync.
 function getSystemPrompt() {
-  return AUGMENT_SRC
-    .match(/const SYSTEM_PROMPT = `([\s\S]*?)`;/)[1]
-    .replace("${TEMPLATE_INDEX}", TEMPLATE_INDEX)
-    .replace("${MAX_PICKS}", String(MAX_PICKS));
+  const mod = fs.readFileSync(path.join(ROOT, "lib/searchRewrite.ts"), "utf-8");
+  const ctx = mod.match(/const CATALOG_CONTEXT = `([\s\S]*?)`;/)[1];
+  const sys = mod.match(/const SYSTEM_PROMPT = `([\s\S]*?)`;/)[1];
+  return sys.replace("${CATALOG_CONTEXT}", ctx);
 }
 
-// Returns template_ids picked by the LLM (mirrors lib/searchAugment.ts).
 async function getRewrites(client, query) {
   const sys = getSystemPrompt();
   const res = await client.chat.completions.create({
     model: "gpt-4o-mini",
     temperature: 0.4,
-    max_tokens: 300,
+    max_tokens: 200,
     messages: [
       { role: "system", content: sys },
-      { role: "user", content: `Query: ${query}` },
+      { role: "user", content: `Original query: ${query}` },
     ],
   });
   const raw = res.choices?.[0]?.message?.content?.trim() ?? "";
   const cleaned = raw.replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/i, "").trim();
-  try {
-    const parsed = JSON.parse(cleaned);
-    if (!Array.isArray(parsed)) return [];
-    return parsed
-      .filter((x) => typeof x === "string")
-      .filter((x) => VALID_TEMPLATE_IDS.has(x))
-      .slice(0, MAX_PICKS);
-  } catch {
-    return [];
-  }
+  try { return JSON.parse(cleaned) ?? []; } catch { return []; }
 }
 
 // ---- Verdict logic (compare actual hits against expected) ----
@@ -297,14 +222,10 @@ async function main() {
     let rewrites = [];
     let unionIds = new Set(base.matchedIds);
     if (USE_REWRITE) {
-      // New behavior post-2026-05-22: getRewrites returns template_ids
-      // from the catalog-mapping augmenter, not query rewrite strings.
-      // Promote every inspiration under those template_ids as a strict
-      // match — same logic as app/[locale]/(public)/search/page.tsx.
       rewrites = await getRewrites(client, q.query);
-      const pickSet = new Set(rewrites);
-      for (const r of INSP) {
-        if (pickSet.has(r.template_id)) unionIds.add(r.id);
+      for (const rw of rewrites) {
+        const rs = scoreOnce(rw);
+        for (const id of rs.matchedIds) unionIds.add(id);
       }
     }
     const actualBucket = bucket(base.effectiveInsp);
