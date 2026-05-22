@@ -20,17 +20,37 @@ const MODEL = "gpt-4o-mini";
 const TIMEOUT_MS = 5_000;
 const MAX_REWRITES = 3;
 
-// Inlined catalog context. Kept compact because gpt-4o-mini handles short
-// system prompts faster. When the catalog drifts substantially (e.g. a
-// new tier-1 topic ships), update this block.
+// Inlined catalog context. Each bullet lists 3-8 concrete sub-examples
+// in parens so the LLM can extrapolate "the catalog has X, Y, Z
+// specifically" rather than reasoning from a brochure summary. Without
+// these sub-examples, weather / cultural-festival / cycling / wine /
+// aromatherapy queries got routed to Path B because the model didn't
+// realize the catalog covered them. CJK forms inlined for terms where
+// the Chinese name is the canonical user-typed query (`香薰`, `端午节`).
+//
+// Last refresh: 2026-05-22. Update when:
+//   - A new tier-1 topic ships
+//   - A new template family covers a concept users will search for
+//     (cycling, aromatherapy, wine, finance, etc.)
+//   - The rewriter eval surfaces a thin-query class that still routes
+//     to Path B despite content existing
 const CATALOG_CONTEXT = `Curify is an AI image-template platform. Its catalog includes:
-- Bilingual vocabulary flashcards (en-zh, en-ja, en-ko, en-es, en-fr) covering animals, food, family, body, weather, daily routines.
-- MBTI personality character cards across universes: Marvel, Studio Ghibli, NBA, Harry Potter, Friends, Naruto, Yellowstone, Silicon Valley, Breaking Bad, Princess Pearl, Zhenhuan.
-- Infographic posters: history, culture, science, learning, herbal medicine, evolution timelines, world cuisines.
-- Travel content: city posters, watercolor maps, region landmarks, itinerary guides, vintage travel scrapbooks.
-- Watercolor and aesthetic illustrations: flowers, botanical, scrapbooks, lifestyle collages.
-- Portraits: character profile cards, hairstyle recommendations, portrait retouching, lifestyle photo grids.
-- Topics by tier-1 group: character, language, learning, travel, lifestyle, design, product, personality.`;
+
+- Bilingual vocabulary flashcards (en-zh, en-ja, en-ko, en-es, en-fr) covering animals (cats, dogs, ocean animals, butterflies), food (fruits, vegetables, desserts, coffee, wine), family (parents, siblings), body (head, hands), weather (rain, snow, storms, sunny, windy), daily routines, sports/cycling, transportation (bikes, cars).
+
+- MBTI personality character cards across universes: Marvel, Studio Ghibli, NBA, Harry Potter, Friends, Naruto, Yellowstone, Silicon Valley, Breaking Bad, Princess Pearl, Zhenhuan — plus group-comparison scenarios (office meeting, group chat, weekend plans).
+
+- Infographic posters: history (eras, civilizations), culture (Lunar New Year, Diwali, Dragon Boat Festival 端午节, regional traditions), science (physics, biology, weather education), learning, herbal medicine, evolution timelines, world cuisines (regional dishes, comfort food), finance (saving vs investing, money comparison), wine varieties (red wine, champagne, sake), music styles (jazz, hip-hop, kpop, romantic, classical).
+
+- Travel content: city posters (Paris, Tokyo, Shanghai), watercolor maps, region landmarks, itinerary guides (packing, day trips, cycling tours), vintage travel scrapbooks, country dos-and-donts.
+
+- Watercolor and aesthetic illustrations: flowers (cherry blossom, lily, spring florals), botanical, scrapbooks, lifestyle collages, seasonal themes (cozy winter, summer beach), watercolor travel journals.
+
+- Portraits: character profile cards, hairstyle recommendations, portrait retouching (passport photos / ID photos / professional headshots), lifestyle photo grids, fashion try-on, costume / traditional dress (kimono, hanfu, hanbok, ethnic costume).
+
+- Lifestyle / design: aromatherapy 香薰 and home decor (interior mood boards, spa corner, scented candles, 精油), fashion (red carpet, met gala, jersey, ecommerce), pet care, fitness, kids worksheets.
+
+- Topics by tier-1 group: character, language, learning, travel, culture, lifestyle, design, product, personality. Tier-2 axes include mood (cozy, playful, serene, romantic), lighting (golden hour, soft light, sunset), seasonal (winter, summer, festive), cultural-festivals, costumes.`;
 
 const SYSTEM_PROMPT = `You help users find templates on Curify.
 ${CATALOG_CONTEXT}
