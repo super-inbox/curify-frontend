@@ -171,17 +171,17 @@ export default function SearchResultsClient({
         </button>
       </form>
 
-      {/* LLM-rewrite hint — surfaced only when the original query was
-          thin and the rewriter contributed at least one alternate
-          phrasing. Shows the rewrites in dim text so the reader knows
-          we expanded the search instead of "showing different stuff". */}
+      {/* LLM-rescue hint — surfaced only when the original query was
+          thin and the catalog-mapping augmenter contributed at least
+          one template. Shows the category names so the reader knows we
+          expanded the search rather than "showed different stuff".
+          Prop is still named `usedRewrites` for backward compat (it
+          now carries template category labels, not rewrite strings). */}
       {usedRewrites.length > 0 && hasResults && (
         <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
           <span className="font-semibold">Few results for &ldquo;{query}&rdquo;.</span>{" "}
-          Also showing results for:{" "}
-          <span className="font-mono text-amber-800">
-            {usedRewrites.join(", ")}
-          </span>
+          Also showing related templates:{" "}
+          <span className="text-amber-800">{usedRewrites.join(", ")}</span>
         </div>
       )}
 
