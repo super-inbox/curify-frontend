@@ -3870,5 +3870,85 @@
         ]
       }
     }
+  },
+  "template-finance-comparison-infographic": {
+    "category": "Finanzvergleich Infografik",
+    "description": "Bildungsinfografik über Geld, die wichtige finanzielle Konzepte vergleicht – Sparen vs Investieren, Schulden vs Vermögenswerte, Angestellter vs Unternehmer, aktives vs passives Einkommen. Freundlicher Cartoon-Stil für persönliche Finanzinhalte.",
+    "title": "Finanz- und Geldvergleich Infografik",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine lebendige, lehrreiche Vergleichsinfografik zu einem gewählten Finanzthema. Das Split-Screen-Layout kontrastiert zwei finanzielle Konzepte mit Cartoonfiguren, einfachen Symbolen, wichtigen Statistiken und kurzen Erkenntnissen. Warme Farben mit fetten Überschriften, klarer Typografie und ansprechendem Rahmen für Inhalte zur finanziellen Grundbildung.",
+        "who": "Geeignet für persönliche Finanzschaffende, Finanzcoaches, Neobank-Marketer, die Bildungskampagnen aufbauen, Verleger von Geschäftsinhalten, die Gelderklärungen erstellen, und Wirtschaftsdozenten an Schulen und Hochschulen.",
+        "how": [
+          "Wählen Sie ein Finanzvergleichsthema (Sparen vs Investieren, Schulden vs Vermögenswerte, Angestellter vs Unternehmer, Ausgaben vs Budgetierung, aktives vs passives Einkommen).",
+          "Generieren Sie das Vergleichsinfografik-Poster."
+        ],
+        "prompts": [
+          "Generieren Sie eine Finanzvergleichsinfografik zu Sparen vs Investieren.",
+          "Erstellen Sie eine Geldinfografik zu aktivem vs passivem Einkommen.",
+          "Generieren Sie ein Vergleichs-Poster zu Angestelltem vs Unternehmer."
+        ]
+      }
+    }
+  },
+  "template-mbti-group-comparison-infographic": {
+    "category": "MBTI Gruppenvergleich Infografik",
+    "description": "Humorvoller Split-Screen-Vergleich, wie sich MBTI-Typen in gemeinsamen Szenarien verhalten – Gruppen-Chats, Fristen, Bürositzungen, Problemlösung. Helle Cartoonfiguren mit typenspezifischen Beschriftungen.",
+    "title": "MBTI Gruppen-Szenario Vergleich Infografik",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine humorvolle Infografik, die zeigt, wie sich verschiedene MBTI-Typen in einem gewählten Gruppenszenario verhalten. Geteilte Panels kontrastieren Typen mit Cartoonfiguren, Sprechblasen, die das charakteristische Verhalten jedes Typs festhalten, und einem einheitlichen Szenario-Titel. Helle Farbpalette mit fetter Typografie und freundlichem Cartoon-Stil.",
+        "who": "Geeignet für MBTI Instagram- und TikTok-Schaffende, Verleger von Persönlichkeitstest-Inhalten, HR-Teams, die Inhalte zur Teamdynamik erstellen, und Pädagogen, die Persönlichkeitstheorie unterrichten.",
+        "how": [
+          "Wählen Sie ein Gruppenszenario (Dynamik im Gruppenchat, Fristen-Arbeits-Szenario, Party-Geselligkeit, Problemlösungsstile, Chaos bei Bürositzungen).",
+          "Generieren Sie die MBTI Gruppenvergleichsinfografik."
+        ],
+        "prompts": [
+          "Generieren Sie eine MBTI Vergleichsinfografik zum Chaos bei Bürositzungen.",
+          "Erstellen Sie ein Poster zum MBTI-Szenario der Dynamik im Gruppenchat.",
+          "Generieren Sie einen MBTI Vergleich zum Fristen-Arbeits-Szenario."
+        ]
+      }
+    }
+  },
+  "template-wine-variety-intro-infographic": {
+    "category": "Weinsorten Einführung Infografik",
+    "description": "Elegante Bildungsinfografik, die eine Wein- oder Spirituosenvarietät vorstellt – Rotwein, Weißwein, Champagner, Whiskey, Brandy. Verkostungsnotizen, Speiseempfehlungen und Serviertipps auf einem raffinierten Hintergrund.",
+    "title": "Bildungsinfografik zur Einführung in Weinsorten",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert eine elegante Bildungsinfografik, die eine gewählte Wein- oder Spirituosenvarietät vorstellt. Das Layout behandelt Herkunft und Hauptmerkmale, klassische Stile und bemerkenswerte Produzenten, Verkostungsnotizen (Farbe, Aroma, Geschmack), Speiseempfehlungen und Serviertemperatur. Raffinierter Hintergrund mit Serifenschrift und einer Sommelier-artigen Präsentation.",
+        "who": "Geeignet für Weinblogger, Restaurant- und Barkarten-Designer, Weinimporteure, die Bildungsmaterialien erstellen, Sommelier-Inhaltsschaffende und Lifestyle-Verleger, die Getränkeführer erstellen.",
+        "how": [
+          "Wählen Sie eine Weinsorte (Rotwein, Weißwein, Champagner, Whiskey, Brandy, Rosé, Sake).",
+          "Generieren Sie die Einführung in die Weinsorten-Infografik."
+        ],
+        "prompts": [
+          "Generieren Sie eine Einführung in Rotwein-Infografik mit Verkostungsnotizen.",
+          "Erstellen Sie ein Bildungsplakat zur Champagner-Varietät.",
+          "Generieren Sie eine Einführung in Whiskey-Infografik mit Speiseempfehlungen."
+        ]
+      }
+    }
+  },
+  "template-mbti-comparison-infographic": {
+    "category": "MBTI Vergleichs-Infografik",
+    "description": "Humorvolle Split-Screen MBTI-Infografik — Ideal vs Real-Szenario, MBTI-Typen mit klassischen Antworten in Sprechblasen, im Low-Poly 3D-Cartoon-Stil.",
+    "title": "MBTI Persönlichkeitsvergleich Meme-Infografik",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine humorvolle Split-Screen-Vergleichsinfografik zu einem gewählten MBTI-Szenario. Die obere Hälfte zeigt das Ideal/Erwartungsszenario mit organisierten, fokussierten Charakteren; die untere zeigt das Real/Chaotisch-Szenario mit übertriebenem, nachvollziehbarem Chaos. Jeder Charakter ist mit seinem MBTI-Typ beschriftet und hat eine Sprechblase mit seiner klassischen Antwort. Low-Poly 3D-Cartoon-Kunststil, sauberer heller Hintergrund, fettgedruckte, farbenfrohe Textüberschriften.",
+        "who": "Geeignet für MBTI Instagram- und TikTok-Meme-Ersteller, Verleger von Persönlichkeitstest-Inhalten, HR-Teams, die Teamdynamik-Inhalte erstellen, und Pädagogen, die Persönlichkeitstheorie durch Humor lehren.",
+        "how": [
+          "Wählen Sie ein MBTI-Szenario-Thema (Gruppenchat-Dynamik, Arbeitsfristen-Szenario, Party-Geselligkeit, Problemlösungsstile, Bürobesprechungschaos, Wochenendpläne).",
+          "Erstellen Sie die Ideal vs Real MBTI-Vergleichsinfografik."
+        ],
+        "prompts": [
+          "Erstellen Sie eine MBTI-Vergleichsinfografik zu Problemlösungsstilen.",
+          "Erstellen Sie ein MBTI-Persönlichkeits-Meme-Poster zu Wochenendplänen.",
+          "Erstellen Sie einen Vergleich Ideal vs Real zur Gruppenchat-Dynamik."
+        ]
+      }
+    }
   }
 }

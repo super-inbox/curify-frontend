@@ -18,7 +18,8 @@ export type ContentType =
   | "prev_next"
   | "mbti_quiz"
   | "page"
-  | "etsy_pack";
+  | "etsy_pack"
+  | "tool_card";
 
 export type ActionType =
   | "view"

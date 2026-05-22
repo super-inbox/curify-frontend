@@ -3,6 +3,7 @@
 
 import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import { useTracking } from "@/services/useTracking";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
 import {
   userAtom,
@@ -55,9 +56,18 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
   const setDrawer = useSetAtom(drawerAtom);
   const [, setModalState] = useAtom(modalAtom);
   const setCreateJobCtx = useSetAtom(createJobContextAtom);
+  const { trackAction } = useTracking();
 
   const handleTryItClick = () => {
     if (tool.action?.type !== "modal") return;
+
+    // Track the hero "Create" click — same tool_card content_type used
+    // by the ToolsGrid (related-tools / use-cases) and the /tools
+    // landing page so admin can fold all surfaces under one tool dim.
+    trackAction(
+      { contentId: tool.id, contentType: "tool_card", viewMode: "cards" },
+      "click",
+    );
 
     if (!user) {
       setDrawer("signin");

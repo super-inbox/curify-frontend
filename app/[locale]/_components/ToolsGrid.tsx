@@ -6,6 +6,11 @@
 //
 // Auth + modal wiring lives here (instead of being duplicated in each
 // caller) — every caller just passes a list of ToolDefs to render.
+//
+// Click tracking: every card click (whether the Link nav to /tools/<slug>
+// for demo/coming-soon, or the Create button modal open for create tools)
+// fires a single `tool_card` interaction event with the tool id. See
+// services/useTracking.ts ContentType enum.
 
 import { Link } from "@/i18n/navigation";
 import { useAtom } from "jotai";
@@ -19,6 +24,7 @@ import {
   createJobContextAtom,
 } from "@/app/atoms/atoms";
 import type { ToolDef } from "@/lib/tools-registry";
+import { useTracking } from "@/services/useTracking";
 
 type Props = {
   tools: ToolDef[];
@@ -38,8 +44,17 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
   const [, setDrawerState] = useAtom(drawerAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
   const t = useTranslations();
+  const { trackAction } = useTracking();
+
+  const trackToolClick = (toolId: string) => {
+    trackAction(
+      { contentId: toolId, contentType: "tool_card", viewMode: "cards" },
+      "click",
+    );
+  };
 
   const openToolModal = (tool: ToolDef) => {
+    trackToolClick(tool.id);
     if (!user) {
       setDrawerState("signin");
       return;
@@ -63,12 +78,13 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
         const desc = t(tool.i18n.descKey);
 
         const canCreate = tool.status === "create";
+        const isDemo = tool.status === "demo";
         const canNavigate = tool.status !== "coming_soon";
         const isModal = tool.action?.type === "modal";
 
         const card = (
           <div
-            className={`flex flex-col justify-between rounded-2xl border border-gray-100 bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] p-5 shadow-lg transition-shadow ${
+            className={`group flex flex-col justify-between rounded-2xl border border-gray-100 bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] p-5 shadow-lg transition-shadow ${
               canNavigate ? "cursor-pointer hover:shadow-xl" : ""
             }`}
           >
@@ -92,6 +108,15 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
                   <span className="ml-2 text-xs opacity-80">🔒</span>
                 )}
               </button>
+            ) : isDemo ? (
+              // Card itself is wrapped in <Link> below (canNavigate=true for
+              // demo tools), so this just needs to look button-like for
+              // affordance. Lighter purple accent signals "demo / early
+              // access" vs the bold gradient on Create — matches the /tools
+              // index treatment so the Related-tools row reads identically.
+              <span className="mt-4 block w-full rounded-lg border border-purple-200 bg-purple-50 px-4 py-2 text-center font-semibold text-purple-700 transition-colors duration-200 group-hover:border-purple-400 group-hover:bg-purple-100">
+                {t("tools.see_demo")}
+              </span>
             ) : (
               <p className="mt-4 text-center text-lg font-semibold italic text-blue-500">
                 {t("tools.coming_soon")}
@@ -105,6 +130,13 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
             <Link
               key={tool.id}
               href={`/tools/${tool.slug}`}
+              onClick={() => {
+                // For demo cards (canNavigate but not canCreate), the card
+                // click drives nav — fire tracking here. Create cards have
+                // a button inside that already tracks via openToolModal,
+                // so we'd double-count if we tracked here too. Guard.
+                if (!canCreate) trackToolClick(tool.id);
+              }}
               className="block hover:no-underline"
             >
               {card}

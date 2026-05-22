@@ -157,7 +157,8 @@
     "topics": [
       "travel",
       "kawaii",
-      "itinerary"
+      "itinerary",
+      "seasonal"
     ],
     "rank_score": 155,
     "base_rank_score": 120,
@@ -355,7 +356,8 @@
     "legacy_id": "template-recipe-zh",
     "topics": [
       "lifestyle",
-      "food"
+      "food",
+      "cultural-festivals"
     ],
     "rank_score": 82.4,
     "base_rank_score": 80,
@@ -644,7 +646,8 @@
     "legacy_id": "template-intangible-heritage-zh",
     "topics": [
       "culture",
-      "travel"
+      "travel",
+      "cultural-festivals"
     ],
     "rank_score": 73.15,
     "base_rank_score": 70,
@@ -739,7 +742,8 @@
     "legacy_id": "template-costume-zh",
     "topics": [
       "culture",
-      "travel"
+      "travel",
+      "costumes"
     ],
     "rank_score": 90.8,
     "batch": true,
@@ -1155,7 +1159,8 @@
     "og_image": "/images/nano_insp_preview/template-solar-term-zh-dongzhi-prev.jpg",
     "topics": [
       "culture",
-      "travel"
+      "travel",
+      "cultural-festivals"
     ],
     "rank_score": 83.9,
     "base_rank_score": 80,
@@ -1674,7 +1679,8 @@
     "legacy_id": "template-guofeng-scroll-zh",
     "topics": [
       "culture",
-      "travel"
+      "travel",
+      "costumes"
     ],
     "rank_score": 84.2,
     "base_rank_score": 80,
@@ -2741,7 +2747,7 @@
       "kawaii",
       "itinerary"
     ],
-    "rank_score": 101.45,
+    "rank_score": 99.95,
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-series-travel.mp4",
@@ -3468,7 +3474,8 @@
       "posters",
       "culture",
       "travel",
-      "kawaii"
+      "kawaii",
+      "costumes"
     ],
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-clothing-evolution-poster.mp4",
@@ -5779,7 +5786,8 @@
     "topics": [
       "travel",
       "culture",
-      "fashion"
+      "fashion",
+      "costumes"
     ],
     "base_rank_score": 90,
     "rank_score": 108.6,
@@ -6562,7 +6570,8 @@
     "topics": [
       "learning",
       "science",
-      "weather"
+      "weather",
+      "seasonal"
     ],
     "base_rank_score": 90,
     "rank_score": 94.75,
@@ -7028,7 +7037,8 @@
     "topics": [
       "culture",
       "posters",
-      "learning"
+      "learning",
+      "cultural-festivals"
     ],
     "base_rank_score": 90,
     "rank_score": 101.65,
@@ -7803,6 +7813,158 @@
     "use_cases": [
       "for-parents",
       "for-publishers"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Wine Variety Introduction Infographic Creator) Create an elegant and exquisite popular science infographic poster titled '{wine_name}'. Layout: Clear multi-part layout including appearance feature display, taste description, drinking method and matching suggestions, equipped with fine wine bottle illustrations and scene decoration elements. Style: Advanced soft tone style, high-grade texture background, neat hierarchical font, simple atmospheric line drawing, comfortable visual sense, direct high-quality image generation. Subject: '{wine_name} wine knowledge introduction infographic'.",
+        "parameters": [
+          {
+            "name": "wine_name",
+            "label": "Wine Variety Name",
+            "type": "text",
+            "placeholder": [
+              "Red Wine",
+              "White Wine",
+              "Champagne",
+              "Whiskey",
+              "Brandy",
+              "Rum",
+              "Tequila"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-wine-variety-intro-infographic-red-wine-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "food",
+      "guides",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 109,
+    "creation_date": "2026-05-21",
+    "use_cases": [
+      "for-creators",
+      "for-marketers",
+      "for-publishers"
+    ]
+  },
+  {
+    "id": "template-finance-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Finance & Money Infographic Creator) Create a vibrant, educational infographic poster titled '{topic}'. Layout: Split-screen comparison (two contrasting financial mindsets or actions) with cartoon characters and speech bubbles, key pros/cons bullet points below each side, plus simple icons like money trees, piggy banks, or charts, and a bold motivational banner at the bottom. Style: Bright, friendly cartoon art style, high-contrast red/green color coding, bold typography with thick outlines, clear section dividers, and approachable, relatable characters. Direct high-quality image generation. Subject: '{topic} finance comparison infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Finance/Money Topic",
+            "type": "text",
+            "placeholder": [
+              "Saving vs Investing",
+              "Debt vs Assets",
+              "Employee vs Entrepreneur",
+              "Spending vs Budgeting",
+              "Active vs Passive Income",
+              "Living Paycheck to Paycheck vs Building Wealth"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-finance-comparison-infographic-saving-vs-investing-prev.jpg",
+    "topics": [
+      "learning",
+      "product",
+      "posters",
+      "trending"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 109,
+    "creation_date": "2026-05-21",
+    "use_cases": [
+      "for-creators",
+      "for-marketers",
+      "for-publishers"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(MBTI Personality Comparison Infographic Creator) Create a humorous split-screen comparison infographic poster titled '{topic}'. Layout: Top section labeled 'Ideal/Expectation Scenario' with organized, focused characters, bottom section labeled 'Real/Chaotic Scenario' with exaggerated, relatable chaos. Each character is labeled with their MBTI type, paired with speech bubbles showing their classic responses. Style: Low-poly 3D cartoon art style, clean light background, bold colorful text headers, high-contrast colors, playful character expressions, direct high-quality image generation. Subject: '{topic} MBTI personality comparison meme infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "MBTI Scenario Topic",
+            "type": "text",
+            "placeholder": [
+              "Group Chat Dynamics",
+              "Deadline Work Scenario",
+              "Party Socializing",
+              "Problem Solving Styles",
+              "Office Meeting Chaos",
+              "Weekend Plans"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-group-chat-prev.jpg",
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison",
+      "groups"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 109,
+    "creation_date": "2026-05-21",
+    "use_cases": [
+      "for-creators",
+      "for-designers"
+    ]
+  },
+  {
+    "id": "template-mbti-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(MBTI Personality Comparison Infographic Creator) Create a humorous split-screen comparison infographic poster titled '{topic}'. Layout: Top section labeled 'Ideal/Expectation Scenario' with organized, focused characters, bottom section labeled 'Real/Chaotic Scenario' with exaggerated, relatable chaos. Each character is labeled with their MBTI type, paired with speech bubbles showing their classic responses. Style: Low-poly 3D cartoon art style, clean light background, bold colorful text headers, high-contrast colors, playful character expressions, direct high-quality image generation. Subject: '{topic} MBTI personality comparison meme infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "MBTI Scenario Topic",
+            "type": "text",
+            "placeholder": [
+              "Group Chat Dynamics",
+              "Deadline Work Scenario",
+              "Party Socializing",
+              "Problem Solving Styles",
+              "Office Meeting Chaos",
+              "Weekend Plans"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-problem-solving-prev.jpg",
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 110,
+    "creation_date": "2026-05-22",
+    "use_cases": [
+      "for-creators",
+      "for-designers"
     ]
   }
 ]

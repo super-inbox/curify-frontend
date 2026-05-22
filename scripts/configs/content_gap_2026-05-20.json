@@ -1,0 +1,97 @@
+[
+  {
+    "template_id": "template-fandom-character-grid-poster",
+    "params": { "theme": "Chiikawa" },
+    "topics": ["character", "anime", "groups", "design"],
+    "id_suffix": "chiikawa"
+  },
+  {
+    "template_id": "template-pop-culture-matching-chart",
+    "params": { "theme_name": "Chiikawa" },
+    "topics": ["character", "anime", "groups"],
+    "id_suffix": "chiikawa"
+  },
+  {
+    "template_id": "template-celebrity-movie-group-poster",
+    "params": { "star_movie_group": "Chiikawa Characters" },
+    "topics": ["character", "anime", "groups"],
+    "id_suffix": "chiikawa-characters"
+  },
+  {
+    "template_id": "template-mbti-generic",
+    "params": {
+      "mbti_topic": "MBTI personalities as Chiikawa characters",
+      "character_set": "Chiikawa kawaii characters"
+    },
+    "topics": ["character", "mbti", "anime", "personality"],
+    "id_suffix": "chiikawa"
+  },
+  {
+    "template_id": "template-vocabulary",
+    "params": { "language_pair": "en-ja", "topic_name": "Chiikawa Catchphrases" },
+    "topics": ["english-japanese", "vocabulary", "language"],
+    "id_suffix": "english-japanese-chiikawa-catchphrases"
+  },
+
+  {
+    "template_id": "template-product-poster",
+    "params": { "product_name": "Aromatherapy Diffuser" },
+    "topics": ["product", "posters", "lifestyle"],
+    "id_suffix": "aromatherapy-diffuser"
+  },
+  {
+    "template_id": "template-soft-decoration-design-guide",
+    "params": { "space_type": "Bedroom", "decor_style": "Aromatherapy Spa Retreat" },
+    "topics": ["lifestyle", "interior", "design", "guides"],
+    "id_suffix": "aromatherapy-spa-retreat-bedroom"
+  },
+  {
+    "template_id": "template-interior-design-mood-board-generator",
+    "params": { "space_type": "Aromatherapy Spa Corner" },
+    "topics": ["lifestyle", "interior", "design"],
+    "id_suffix": "aromatherapy-spa-corner"
+  },
+  {
+    "template_id": "template-herbal",
+    "params": { "herb_name": "Lavender" },
+    "topics": ["lifestyle", "nature", "guides", "learning"],
+    "id_suffix": "lavender-aromatherapy"
+  },
+  {
+    "template_id": "template-lifestyle-info-card",
+    "params": { "topic": "Aromatherapy Essential Oils" },
+    "topics": ["lifestyle", "guides", "design"],
+    "id_suffix": "aromatherapy-essential-oils"
+  },
+
+  {
+    "template_id": "template-product-poster",
+    "params": { "product_name": "Smart Cycling Computer" },
+    "topics": ["product", "posters", "lifestyle"],
+    "id_suffix": "smart-cycling-computer"
+  },
+  {
+    "template_id": "template-fashion-ecommerce",
+    "params": { "core_selling_point": "Aerodynamic and breathable cycling jersey for road and mountain biking" },
+    "topics": ["design", "mockups", "product", "fashion"],
+    "id_suffix": "cycling-jersey-aerodynamic"
+  },
+  {
+    "template_id": "template-vocabulary",
+    "params": { "language_pair": "en-es", "topic_name": "Cycling Vocabulary" },
+    "topics": ["english-spanish", "vocabulary", "language"],
+    "id_suffix": "english-spanish-cycling-vocabulary"
+  },
+  {
+    "template_id": "template-lifestyle-info-card",
+    "params": { "topic": "Bicycle Maintenance Basics" },
+    "topics": ["lifestyle", "guides", "design"],
+    "id_suffix": "bicycle-maintenance-basics"
+  },
+  {
+    "template_id": "template-historical-event-map-illustration",
+    "params": { "historical_event": "Tour de France 1903 First Race" },
+    "topics": ["travel", "learning", "history", "posters"],
+    "id_suffix": "tour-de-france-1903"
+  }
+]

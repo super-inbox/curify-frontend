@@ -81341,7 +81341,16 @@
       "新娘",
       "新郎",
       "结婚",
-      "订婚"
+      "订婚",
+      "端午节",
+      "端午",
+      "Dragon Boat Festival",
+      "duanwu",
+      "五月初五",
+      "龙舟节",
+      "tuen ng festival",
+      "zongzi",
+      "粽子节"
     ]
   },
   {
@@ -94068,6 +94077,1521 @@
       "科普教育",
       "人工智能",
       "进化论"
+    ]
+  },
+  {
+    "id": "template-bilingual-object-structure-labeling-mountain-bike",
+    "template_id": "template-bilingual-object-structure-labeling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-mountain-bike.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-mountain-bike-prev.jpg"
+    },
+    "params": {
+      "object_name": "Mountain Bike"
+    },
+    "locales": {
+      "en": {
+        "title": "Mountain Bike"
+      }
+    },
+    "topics": [
+      "language",
+      "vocabulary",
+      "photorealistic",
+      "transportation"
+    ],
+    "search_aliases": [
+      "山地车",
+      "自行车",
+      "运动器材",
+      "户外活动",
+      "骑行装备"
+    ]
+  },
+  {
+    "id": "template-bilingual-object-structure-labeling-road-bike",
+    "template_id": "template-bilingual-object-structure-labeling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-road-bike.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-road-bike-prev.jpg"
+    },
+    "params": {
+      "object_name": "Road Bike"
+    },
+    "locales": {
+      "en": {
+        "title": "Road Bike"
+      }
+    },
+    "topics": [
+      "language",
+      "vocabulary",
+      "photorealistic",
+      "transportation"
+    ],
+    "search_aliases": [
+      "公路车",
+      "自行车",
+      "运动器材",
+      "骑行",
+      "长途旅行"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-chinese-cycling-vocabulary",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-chinese-cycling-vocabulary.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-chinese-cycling-vocabulary-prev.jpg"
+    },
+    "params": {
+      "language_pair": "en-zh",
+      "topic_name": "Cycling Vocabulary"
+    },
+    "locales": {
+      "en": {
+        "title": "en-zh"
+      }
+    },
+    "topics": [
+      "language",
+      "vocabulary",
+      "kawaii",
+      "english-chinese",
+      "transportation"
+    ],
+    "search_aliases": [
+      "骑行术语",
+      "单车词汇",
+      "运动词汇",
+      "交通工具",
+      "学习卡片"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-french-bike-anatomy",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-french-bike-anatomy.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-french-bike-anatomy-prev.jpg"
+    },
+    "params": {
+      "language_pair": "en-fr",
+      "topic_name": "Bike Anatomy"
+    },
+    "locales": {
+      "en": {
+        "title": "en-fr"
+      }
+    },
+    "topics": [
+      "language",
+      "vocabulary",
+      "kawaii",
+      "english-french",
+      "transportation"
+    ],
+    "search_aliases": [
+      "自行车结构",
+      "法语词汇",
+      "运动器材",
+      "学习卡片",
+      "骑行知识"
+    ]
+  },
+  {
+    "id": "template-travel-packing-guide-infographic-cycling-tour-5-day",
+    "template_id": "template-travel-packing-guide-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-packing-guide-infographic-cycling-tour-5-day.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-packing-guide-infographic-cycling-tour-5-day-prev.jpg"
+    },
+    "params": {
+      "destination": "Cycling Tour",
+      "day_count": "5-Day",
+      "gender": "Unisex"
+    },
+    "locales": {
+      "en": {
+        "title": "Cycling Tour"
+      }
+    },
+    "topics": [
+      "travel",
+      "itinerary",
+      "guides"
+    ],
+    "search_aliases": [
+      "骑行旅行",
+      "行李清单",
+      "旅行准备",
+      "户外活动",
+      "五天行程"
+    ]
+  },
+  {
+    "id": "template-fashion-shape-guide-infographic-cycling-apparel-for-body-type",
+    "template_id": "template-fashion-shape-guide-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-shape-guide-infographic-cycling-apparel-for-body-type.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-shape-guide-infographic-cycling-apparel-for-body-type-prev.jpg"
+    },
+    "params": {
+      "topic": "Cycling Apparel for Body Type"
+    },
+    "locales": {
+      "en": {
+        "title": "Cycling Apparel for Body Type"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "fashion",
+      "guides",
+      "posters",
+      "athleisure"
+    ],
+    "search_aliases": [
+      "自行车服装",
+      "运动服饰",
+      "体型搭配",
+      "时尚建议",
+      "运动风格",
+      "配饰选择",
+      "骑行装备",
+      "服装指南"
+    ]
+  },
+  {
+    "id": "template-fandom-character-grid-poster-chiikawa",
+    "template_id": "template-fandom-character-grid-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fandom-character-grid-poster-chiikawa.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fandom-character-grid-poster-chiikawa-prev.jpg"
+    },
+    "params": {
+      "theme": "Chiikawa"
+    },
+    "locales": {
+      "en": {
+        "title": "Chiikawa"
+      }
+    },
+    "topics": [
+      "design",
+      "posters",
+      "character",
+      "film",
+      "cartoon",
+      "groups",
+      "anime",
+      "kawaii"
+    ],
+    "search_aliases": [
+      "角色海报",
+      "动漫角色",
+      "奇妙角色",
+      "粉丝文化",
+      "卡通人物",
+      "横幅设计",
+      "Chiikawa",
+      "chiikawa",
+      "吉伊卡哇",
+      "ちいかわ",
+      "Nagano",
+      "japanese kawaii",
+      "manga character",
+      "kawaii franchise"
+    ]
+  },
+  {
+    "id": "template-pop-culture-matching-chart-chiikawa",
+    "template_id": "template-pop-culture-matching-chart",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pop-culture-matching-chart-chiikawa.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pop-culture-matching-chart-chiikawa-prev.jpg"
+    },
+    "params": {
+      "theme_name": "Chiikawa"
+    },
+    "locales": {
+      "en": {
+        "title": "Chiikawa"
+      }
+    },
+    "topics": [
+      "character",
+      "film",
+      "anime",
+      "groups"
+    ],
+    "search_aliases": [
+      "流行文化",
+      "星座图表",
+      "生日匹配",
+      "吉卜力",
+      "动漫主题",
+      "趣味图表",
+      "Chiikawa",
+      "chiikawa",
+      "吉伊卡哇",
+      "ちいかわ",
+      "Nagano",
+      "japanese pop culture",
+      "kawaii anime"
+    ]
+  },
+  {
+    "id": "template-celebrity-movie-group-poster-chiikawa-characters",
+    "template_id": "template-celebrity-movie-group-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-celebrity-movie-group-poster-chiikawa-characters.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-celebrity-movie-group-poster-chiikawa-characters-prev.jpg"
+    },
+    "params": {
+      "star_movie_group": "Chiikawa Characters"
+    },
+    "locales": {
+      "en": {
+        "title": "Chiikawa Characters"
+      }
+    },
+    "topics": [
+      "character",
+      "film",
+      "groups",
+      "posters",
+      "anime"
+    ],
+    "search_aliases": [
+      "名人海报",
+      "电影角色",
+      "豪华设计",
+      "电影海报",
+      "角色拼贴",
+      "视觉艺术",
+      "Chiikawa",
+      "chiikawa",
+      "吉伊卡哇",
+      "ちいかわ",
+      "Nagano manga",
+      "kawaii cast",
+      "japanese anime"
+    ]
+  },
+  {
+    "id": "template-mbti-generic-chiikawa",
+    "template_id": "template-mbti-generic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-generic-chiikawa.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-chiikawa-prev.jpg"
+    },
+    "params": {
+      "mbti_topic": "MBTI personalities as Chiikawa characters",
+      "character_set": "Chiikawa kawaii characters"
+    },
+    "locales": {
+      "en": {
+        "title": "MBTI personalities as Chiikawa characters"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "groups",
+      "cartoon",
+      "anime",
+      "personality"
+    ],
+    "search_aliases": [
+      "性格测试",
+      "人格类型",
+      "卡通风格",
+      "个性比较",
+      "可爱角色",
+      "心理学",
+      "Chiikawa",
+      "chiikawa",
+      "吉伊卡哇",
+      "ちいかわ",
+      "kawaii MBTI",
+      "anime personality"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-japanese-chiikawa-catchphrases",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-japanese-chiikawa-catchphrases.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-japanese-chiikawa-catchphrases-prev.jpg"
+    },
+    "params": {
+      "language_pair": "en-ja",
+      "topic_name": "Chiikawa Catchphrases"
+    },
+    "locales": {
+      "en": {
+        "title": "en-ja"
+      }
+    },
+    "topics": [
+      "language",
+      "vocabulary",
+      "kawaii",
+      "english-japanese"
+    ],
+    "search_aliases": [
+      "双语学习",
+      "日常用语",
+      "语言卡片",
+      "学习工具",
+      "日语短语",
+      "教育资源",
+      "Chiikawa",
+      "chiikawa",
+      "吉伊卡哇",
+      "ちいかわ",
+      "japanese kawaii phrases",
+      "anime vocabulary"
+    ]
+  },
+  {
+    "id": "template-product-poster-aromatherapy-diffuser",
+    "template_id": "template-product-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-product-poster-aromatherapy-diffuser.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-product-poster-aromatherapy-diffuser-prev.jpg"
+    },
+    "params": {
+      "product_name": "Aromatherapy Diffuser"
+    },
+    "locales": {
+      "en": {
+        "title": "Aromatherapy Diffuser"
+      }
+    },
+    "topics": [
+      "product",
+      "posters",
+      "interior",
+      "lifestyle"
+    ],
+    "search_aliases": [
+      "香薰机",
+      "家居用品",
+      "舒适生活",
+      "空气清新器",
+      "家居装饰",
+      "放松氛围",
+      "香薰",
+      "精油",
+      "aromatherapy",
+      "essential oil diffuser",
+      "香薰精油"
+    ]
+  },
+  {
+    "id": "template-product-poster-smart-cycling-computer",
+    "template_id": "template-product-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-product-poster-smart-cycling-computer.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-product-poster-smart-cycling-computer-prev.jpg"
+    },
+    "params": {
+      "product_name": "Smart Cycling Computer"
+    },
+    "locales": {
+      "en": {
+        "title": "Smart Cycling Computer"
+      }
+    },
+    "topics": [
+      "product",
+      "posters",
+      "interior",
+      "lifestyle"
+    ],
+    "search_aliases": [
+      "智能骑行",
+      "健身设备",
+      "运动科技",
+      "自行车配件",
+      "骑行监测",
+      "户外运动"
+    ]
+  },
+  {
+    "id": "template-soft-decoration-design-guide-aromatherapy-spa-retreat-bedroom",
+    "template_id": "template-soft-decoration-design-guide",
+    "asset": {
+      "image_url": "/images/nano_insp/template-soft-decoration-design-guide-aromatherapy-spa-retreat-bedroom.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-soft-decoration-design-guide-aromatherapy-spa-retreat-bedroom-prev.jpg"
+    },
+    "params": {
+      "space_type": "Bedroom",
+      "decor_style": "Aromatherapy Spa Retreat"
+    },
+    "locales": {
+      "en": {
+        "title": "Bedroom"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "interior",
+      "photorealistic",
+      "design",
+      "guides"
+    ],
+    "search_aliases": [
+      "卧室设计",
+      "放松空间",
+      "色彩搭配",
+      "家具选择",
+      "装饰技巧",
+      "舒适氛围",
+      "香薰",
+      "精油",
+      "芳香",
+      "aromatherapy",
+      "essential oils",
+      "scented candle",
+      "香薰空间"
+    ]
+  },
+  {
+    "id": "template-interior-design-mood-board-generator-aromatherapy-spa-corner",
+    "template_id": "template-interior-design-mood-board-generator",
+    "asset": {
+      "image_url": "/images/nano_insp/template-interior-design-mood-board-generator-aromatherapy-spa-corner.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-interior-design-mood-board-generator-aromatherapy-spa-corner-prev.jpg"
+    },
+    "params": {
+      "space_type": "Aromatherapy Spa Corner"
+    },
+    "locales": {
+      "en": {
+        "title": "Aromatherapy Spa Corner"
+      }
+    },
+    "topics": [
+      "design",
+      "mockups",
+      "interior",
+      "photorealistic",
+      "lifestyle"
+    ],
+    "search_aliases": [
+      "水疗角落",
+      "室内设计",
+      "色彩板",
+      "纹理选择",
+      "家具概念",
+      "放松空间",
+      "香薰",
+      "精油",
+      "芳香",
+      "aromatherapy",
+      "spa corner",
+      "essential oils",
+      "香薰角落"
+    ]
+  },
+  {
+    "id": "template-herbal-lavender-aromatherapy",
+    "template_id": "template-herbal",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-lavender-aromatherapy.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-lavender-aromatherapy-prev.jpg"
+    },
+    "params": {
+      "herb_name": "Lavender"
+    },
+    "locales": {
+      "en": {
+        "title": "Lavender"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "lifestyle",
+      "nature",
+      "guides"
+    ],
+    "search_aliases": [
+      "草药",
+      "芳香疗法",
+      "植物特性",
+      "传统中药",
+      "自然疗法",
+      "健康益处",
+      "香薰",
+      "薰衣草",
+      "精油",
+      "aromatherapy",
+      "lavender essential oil",
+      "薰衣草精油",
+      "aromatherapy herb"
+    ]
+  },
+  {
+    "id": "template-lifestyle-info-card-aromatherapy-essential-oils",
+    "template_id": "template-lifestyle-info-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-lifestyle-info-card-aromatherapy-essential-oils.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-lifestyle-info-card-aromatherapy-essential-oils-prev.jpg"
+    },
+    "params": {
+      "topic": "Aromatherapy Essential Oils"
+    },
+    "locales": {
+      "en": {
+        "title": "Aromatherapy Essential Oils"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "guides",
+      "design"
+    ],
+    "search_aliases": [
+      "香薰油",
+      "放松",
+      "精油疗法",
+      "wellness",
+      "自然疗法",
+      "aroma therapy",
+      "健康生活",
+      "香气",
+      "香薰",
+      "精油",
+      "芳香疗法",
+      "essential oils",
+      "aromatherapy basics"
+    ]
+  },
+  {
+    "id": "template-lifestyle-info-card-bicycle-maintenance-basics",
+    "template_id": "template-lifestyle-info-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-lifestyle-info-card-bicycle-maintenance-basics.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-lifestyle-info-card-bicycle-maintenance-basics-prev.jpg"
+    },
+    "params": {
+      "topic": "Bicycle Maintenance Basics"
+    },
+    "locales": {
+      "en": {
+        "title": "Bicycle Maintenance Basics"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "guides",
+      "design",
+      "athleisure"
+    ],
+    "search_aliases": [
+      "自行车保养",
+      "修理工具",
+      "骑行技巧",
+      "车轮",
+      "维护指南",
+      "bicycle repair",
+      "骑行装备",
+      "安全检查"
+    ]
+  },
+  {
+    "id": "template-fashion-ecommerce-cycling-jersey-aerodynamic",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-cycling-jersey-aerodynamic.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-cycling-jersey-aerodynamic-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "Aerodynamic and breathable cycling jersey for road and mountain biking"
+    },
+    "locales": {
+      "en": {
+        "title": "Aerodynamic and breathable cycling jersey for road and mountain biking"
+      }
+    },
+    "topics": [
+      "design",
+      "mockups",
+      "product",
+      "fashion"
+    ],
+    "search_aliases": [
+      "骑行服",
+      "运动服装",
+      "透气材料",
+      "户外运动",
+      "cycling apparel",
+      "高性能",
+      "时尚运动",
+      "山地车"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-spanish-cycling-vocabulary",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-spanish-cycling-vocabulary.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-spanish-cycling-vocabulary-prev.jpg"
+    },
+    "params": {
+      "language_pair": "en-es",
+      "topic_name": "Cycling Vocabulary"
+    },
+    "locales": {
+      "en": {
+        "title": "en-es"
+      }
+    },
+    "topics": [
+      "language",
+      "vocabulary",
+      "kawaii",
+      "english-spanish",
+      "transportation"
+    ],
+    "search_aliases": [
+      "骑行词汇",
+      "西班牙语学习",
+      "单词卡",
+      "语言交换",
+      "bilingual learning",
+      "交通工具",
+      "英语西班牙语",
+      "词汇表"
+    ]
+  },
+  {
+    "id": "template-historical-event-map-illustration-tour-de-france-1903",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-tour-de-france-1903.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-tour-de-france-1903-prev.jpg"
+    },
+    "params": {
+      "historical_event": "Tour de France 1903 First Race"
+    },
+    "locales": {
+      "en": {
+        "title": "Tour de France 1903 First Race"
+      }
+    },
+    "topics": [
+      "learning",
+      "history",
+      "travel",
+      "posters",
+      "transportation"
+    ],
+    "search_aliases": [
+      "历史地图",
+      "自行车赛",
+      "法国旅游",
+      "赛道",
+      "纪念活动",
+      "historical illustration",
+      "运动历史",
+      "1903年"
+    ]
+  },
+  {
+    "id": "template-finance-comparison-infographic-debt-vs-assets",
+    "template_id": "template-finance-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-finance-comparison-infographic-debt-vs-assets.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-finance-comparison-infographic-debt-vs-assets-prev.jpg"
+    },
+    "params": {
+      "topic": "debt vs assets"
+    },
+    "locales": {
+      "en": {
+        "title": "debt vs assets"
+      }
+    },
+    "search_aliases": [
+      "debt vs assets",
+      "债务与资产",
+      "financial comparison",
+      "money infographic",
+      "personal finance",
+      "资产与负债",
+      "cartoon finance"
+    ]
+  },
+  {
+    "id": "template-finance-comparison-infographic-employee-vs-entrepreneur",
+    "template_id": "template-finance-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-finance-comparison-infographic-employee-vs-entrepreneur.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-finance-comparison-infographic-employee-vs-entrepreneur-prev.jpg"
+    },
+    "params": {
+      "topic": "employee vs entrepreneur"
+    },
+    "locales": {
+      "en": {
+        "title": "employee vs entrepreneur"
+      }
+    },
+    "search_aliases": [
+      "employee vs entrepreneur",
+      "员工与企业家",
+      "career comparison",
+      "financial infographic",
+      "personal finance",
+      "企业家与员工",
+      "cartoon finance"
+    ]
+  },
+  {
+    "id": "template-finance-comparison-infographic-saving-vs-investing",
+    "template_id": "template-finance-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-finance-comparison-infographic-saving-vs-investing.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-finance-comparison-infographic-saving-vs-investing-prev.jpg"
+    },
+    "params": {
+      "topic": "saving vs investing"
+    },
+    "locales": {
+      "en": {
+        "title": "saving vs investing"
+      }
+    },
+    "search_aliases": [
+      "saving vs investing",
+      "储蓄与投资",
+      "financial concepts",
+      "money infographic",
+      "personal finance",
+      "投资与储蓄",
+      "cartoon finance"
+    ]
+  },
+  {
+    "id": "template-finance-comparison-infographic-spending-vs-budgeting",
+    "template_id": "template-finance-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-finance-comparison-infographic-spending-vs-budgeting.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-finance-comparison-infographic-spending-vs-budgeting-prev.jpg"
+    },
+    "params": {
+      "topic": "spending vs budgeting"
+    },
+    "locales": {
+      "en": {
+        "title": "spending vs budgeting"
+      }
+    },
+    "search_aliases": [
+      "spending vs budgeting",
+      "支出与预算",
+      "financial planning",
+      "money infographic",
+      "personal finance",
+      "预算与支出",
+      "cartoon finance"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-group-chat-dynamics",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-group-chat-dynamics.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-group-chat-dynamics-prev.jpg"
+    },
+    "params": {
+      "topic": "Group Chat Dynamics"
+    },
+    "locales": {
+      "en": {
+        "title": "Group Chat Dynamics"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison",
+      "groups"
+    ],
+    "search_aliases": [
+      "群聊动态",
+      "MBTI群体行为",
+      "性格比较",
+      "group chat behavior",
+      "personality types",
+      "幽默插图",
+      "办公室沟通",
+      "社交场景"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-office-meeting-chaos",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-office-meeting-chaos.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-office-meeting-chaos-prev.jpg"
+    },
+    "params": {
+      "topic": "Office Meeting Chaos"
+    },
+    "locales": {
+      "en": {
+        "title": "Office Meeting Chaos"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison",
+      "groups"
+    ],
+    "search_aliases": [
+      "办公室会议混乱",
+      "MBTI群体行为",
+      "性格比较",
+      "office meeting behavior",
+      "personality types",
+      "幽默插图",
+      "团队合作",
+      "工作场景"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-party-socializing",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-party-socializing.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-party-socializing-prev.jpg"
+    },
+    "params": {
+      "topic": "Party Socializing"
+    },
+    "locales": {
+      "en": {
+        "title": "Party Socializing"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison",
+      "groups"
+    ],
+    "search_aliases": [
+      "派对社交",
+      "MBTI群体行为",
+      "性格比较",
+      "party behavior",
+      "personality types",
+      "幽默插图",
+      "社交活动",
+      "聚会场景"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-deadline-work-scenario",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-deadline-work-scenario.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-deadline-work-scenario-prev.jpg"
+    },
+    "params": {
+      "topic": "Deadline Work Scenario"
+    },
+    "locales": {
+      "en": {
+        "title": "Deadline Work Scenario"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison",
+      "groups"
+    ],
+    "search_aliases": [
+      "截止日期工作场景",
+      "MBTI群体行为",
+      "性格比较",
+      "deadline work",
+      "personality types",
+      "幽默插图",
+      "团队合作",
+      "工作压力"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-red-wine",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-red-wine.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-red-wine-prev.jpg"
+    },
+    "params": {
+      "wine_name": "Red Wine"
+    },
+    "locales": {
+      "en": {
+        "title": "Red Wine"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "guides",
+      "posters",
+      "elegant"
+    ],
+    "search_aliases": [
+      "红酒",
+      "红酒品种",
+      "wine variety",
+      "品酒笔记",
+      "食物搭配",
+      "优雅插图",
+      "饮品指南",
+      "酒类教育"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-white-wine",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-white-wine.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-white-wine-prev.jpg"
+    },
+    "params": {
+      "wine_name": "White Wine"
+    },
+    "locales": {
+      "en": {
+        "title": "White Wine"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "guides",
+      "posters",
+      "elegant"
+    ],
+    "search_aliases": [
+      "白葡萄酒",
+      "白酒",
+      "wine pairing",
+      "tasting notes",
+      "elegant infographic",
+      "food guides",
+      "lifestyle"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-champagne",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-champagne.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-champagne-prev.jpg"
+    },
+    "params": {
+      "wine_name": "Champagne"
+    },
+    "locales": {
+      "en": {
+        "title": "Champagne"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "guides",
+      "posters",
+      "elegant"
+    ],
+    "search_aliases": [
+      "香槟",
+      "champagne",
+      "sparkling wine",
+      "celebration drink",
+      "tasting notes",
+      "elegant infographic",
+      "food pairings"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-whiskey",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-whiskey.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-whiskey-prev.jpg"
+    },
+    "params": {
+      "wine_name": "Whiskey"
+    },
+    "locales": {
+      "en": {
+        "title": "Whiskey"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "guides",
+      "posters"
+    ],
+    "search_aliases": [
+      "威士忌",
+      "whiskey",
+      "whisky",
+      "tasting notes",
+      "cocktail guide",
+      "elegant infographic",
+      "food pairings"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-sake",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-sake.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-sake-prev.jpg"
+    },
+    "params": {
+      "wine_name": "Sake"
+    },
+    "locales": {
+      "en": {
+        "title": "Sake"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "guides",
+      "posters",
+      "culture"
+    ],
+    "search_aliases": [
+      "清酒",
+      "sake",
+      "Japanese rice wine",
+      "tasting notes",
+      "cultural drink",
+      "elegant infographic",
+      "food pairings",
+      "japanese rice wine",
+      "日本清酒",
+      "rice wine",
+      "酒类"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-deadline-scenario",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-deadline-scenario.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-deadline-scenario-prev.jpg"
+    },
+    "params": {
+      "topic": "deadline scenario"
+    },
+    "locales": {
+      "en": {
+        "title": "deadline scenario"
+      }
+    },
+    "search_aliases": [
+      "deadline scenario",
+      "截止日期场景",
+      "MBTI类型",
+      "幽默比较",
+      "团队合作",
+      "办公室场景"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-group-chat",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-group-chat.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-group-chat-prev.jpg"
+    },
+    "params": {
+      "topic": "group chat"
+    },
+    "locales": {
+      "en": {
+        "title": "group chat"
+      }
+    },
+    "search_aliases": [
+      "group chat",
+      "群聊",
+      "MBTI类型",
+      "幽默比较",
+      "社交场景",
+      "团队沟通"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-meeting-scenario",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-meeting-scenario.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-meeting-scenario-prev.jpg"
+    },
+    "params": {
+      "topic": "meeting scenario"
+    },
+    "locales": {
+      "en": {
+        "title": "meeting scenario"
+      }
+    },
+    "search_aliases": [
+      "meeting scenario",
+      "会议场景",
+      "MBTI类型",
+      "幽默比较",
+      "团队会议",
+      "办公室互动"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-party-expectation-reality",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-party-expectation-reality.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-party-expectation-reality-prev.jpg"
+    },
+    "params": {
+      "topic": "party expectation reality"
+    },
+    "locales": {
+      "en": {
+        "title": "party expectation reality"
+      }
+    },
+    "search_aliases": [
+      "party expectation reality",
+      "派对期望与现实",
+      "MBTI类型",
+      "幽默比较",
+      "社交活动",
+      "聚会场景"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-problem-solving",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-problem-solving.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-problem-solving-prev.jpg"
+    },
+    "params": {
+      "topic": "problem solving"
+    },
+    "locales": {
+      "en": {
+        "title": "problem solving"
+      }
+    },
+    "search_aliases": [
+      "problem solving",
+      "解决问题",
+      "MBTI类型",
+      "幽默比较",
+      "团队合作",
+      "办公室场景"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-gin",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-gin.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-gin-prev.jpg"
+    },
+    "params": {
+      "wine_name": "gin"
+    },
+    "locales": {
+      "en": {
+        "title": "gin"
+      }
+    },
+    "search_aliases": [
+      "gin",
+      "金酒",
+      "spirit",
+      "cocktail",
+      "饮品",
+      "酒类",
+      "tasting notes",
+      "food pairing"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-tequila",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-tequila.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-tequila-prev.jpg"
+    },
+    "params": {
+      "wine_name": "tequila"
+    },
+    "locales": {
+      "en": {
+        "title": "tequila"
+      }
+    },
+    "search_aliases": [
+      "tequila",
+      "龙舌兰",
+      "龙舌兰酒",
+      "spirit",
+      "mexican spirit",
+      "墨西哥",
+      "cocktail",
+      "酒类"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-vodka",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-vodka.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-vodka-prev.jpg"
+    },
+    "params": {
+      "wine_name": "vodka"
+    },
+    "locales": {
+      "en": {
+        "title": "vodka"
+      }
+    },
+    "search_aliases": [
+      "vodka",
+      "伏特加",
+      "spirit",
+      "cocktail",
+      "酒类",
+      "tasting notes",
+      "food pairing"
+    ]
+  },
+  {
+    "id": "template-mbti-comparison-infographic-problem-solving-styles",
+    "template_id": "template-mbti-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-comparison-infographic-problem-solving-styles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-comparison-infographic-problem-solving-styles-prev.jpg"
+    },
+    "params": {
+      "topic": "Problem Solving Styles"
+    },
+    "locales": {
+      "en": {
+        "title": "Problem Solving Styles"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "search_aliases": [
+      "问题解决风格",
+      "Problem Solving Styles",
+      "MBTI 性格",
+      "性格比较",
+      "幽默信息图",
+      "低多边形卡通风格",
+      "MBTI 类型"
+    ]
+  },
+  {
+    "id": "template-mbti-comparison-infographic-weekend-plans",
+    "template_id": "template-mbti-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-comparison-infographic-weekend-plans.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-comparison-infographic-weekend-plans-prev.jpg"
+    },
+    "params": {
+      "topic": "Weekend Plans"
+    },
+    "locales": {
+      "en": {
+        "title": "Weekend Plans"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "search_aliases": [
+      "周末计划",
+      "Weekend Plans",
+      "MBTI 性格",
+      "性格比较",
+      "幽默信息图",
+      "低多边形卡通风格",
+      "MBTI 类型"
+    ]
+  },
+  {
+    "id": "template-mbti-comparison-infographic-office-meeting-chaos",
+    "template_id": "template-mbti-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-comparison-infographic-office-meeting-chaos.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-comparison-infographic-office-meeting-chaos-prev.jpg"
+    },
+    "params": {
+      "topic": "Office Meeting Chaos"
+    },
+    "locales": {
+      "en": {
+        "title": "Office Meeting Chaos"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "search_aliases": [
+      "办公室会议混乱",
+      "Office Meeting Chaos",
+      "MBTI 性格",
+      "性格比较",
+      "幽默信息图",
+      "低多边形卡通风格",
+      "MBTI 类型"
+    ]
+  },
+  {
+    "id": "template-mbti-comparison-infographic-group-chat-dynamics",
+    "template_id": "template-mbti-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-comparison-infographic-group-chat-dynamics.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-comparison-infographic-group-chat-dynamics-prev.jpg"
+    },
+    "params": {
+      "topic": "Group Chat Dynamics"
+    },
+    "locales": {
+      "en": {
+        "title": "Group Chat Dynamics"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "search_aliases": [
+      "群聊动态",
+      "Group Chat Dynamics",
+      "MBTI 性格",
+      "性格比较",
+      "幽默信息图",
+      "低多边形卡通风格",
+      "MBTI 类型"
+    ]
+  },
+  {
+    "id": "template-regional-alcoholic-drinks-infographic-dragon-boat-festival",
+    "template_id": "template-regional-alcoholic-drinks-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-regional-alcoholic-drinks-infographic-dragon-boat-festival.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-regional-alcoholic-drinks-infographic-dragon-boat-festival-prev.jpg"
+    },
+    "params": {
+      "region": "Dragon Boat Festival"
+    },
+    "locales": {
+      "en": {
+        "title": "Dragon Boat Festival"
+      }
+    },
+    "topics": [
+      "travel",
+      "culture",
+      "food",
+      "posters",
+      "cultural-festivals",
+      "china"
+    ],
+    "search_aliases": [
+      "龙舟节",
+      "Dragon Boat Festival",
+      "中国传统饮品",
+      "traditional drinks",
+      "regional alcoholic drinks",
+      "文化节",
+      "饮酒文化",
+      "infographic",
+      "端午节",
+      "端午",
+      "duanwu",
+      "粽子",
+      "zongzi",
+      "龙舟",
+      "五月初五"
+    ]
+  },
+  {
+    "id": "template-food-recipe-tip-infographic-zongzi-dragon-boat",
+    "template_id": "template-food-recipe-tip-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-recipe-tip-infographic-zongzi-dragon-boat.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-recipe-tip-infographic-zongzi-dragon-boat-prev.jpg"
+    },
+    "params": {
+      "topic": "Zongzi Making for Dragon Boat Festival"
+    },
+    "locales": {
+      "en": {
+        "title": "Zongzi Making for Dragon Boat Festival"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "guides",
+      "posters",
+      "cultural-festivals"
+    ],
+    "search_aliases": [
+      "端午节",
+      "端午",
+      "Dragon Boat Festival",
+      "duanwu",
+      "粽子",
+      "zongzi",
+      "龙舟",
+      "龙舟节",
+      "五月初五"
     ]
   }
 ]

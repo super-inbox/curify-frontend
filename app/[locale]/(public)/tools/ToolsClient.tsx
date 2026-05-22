@@ -19,6 +19,7 @@ import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import { useTracking } from "@/services/useTracking";
 import CreateNewModal from "./CreateNewModal";
 
 export default function ToolsClient() {
@@ -52,6 +53,18 @@ export default function ToolsClient() {
 
   // ✅ buildToolsHub should now set onClick to call openToolModal(tool.id)
   const toolGroups = buildToolsHub({ t, openToolModal, locale });
+
+  // Single tool_card interaction event per click (covers both demo Link
+  // navigations and create-button modal opens). Matches the tracking
+  // wired into the shared ToolsGrid component so /tools, /tools/[slug]
+  // related-tools, and /use-cases/[slug] all log identically.
+  const { trackAction } = useTracking();
+  const trackToolClick = (toolId: string) => {
+    trackAction(
+      { contentId: toolId, contentType: "tool_card", viewMode: "cards" },
+      "click",
+    );
+  };
 
   // -------------------------
   // Language switching demo
@@ -146,6 +159,7 @@ export default function ToolsClient() {
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
+                              trackToolClick(tool.id);
                               // ✅ tool.onClick is auth-gated inside openToolModal
                               tool.onClick?.();
                             }}
@@ -178,7 +192,18 @@ export default function ToolsClient() {
                     // ✅ Otherwise (create tools), card click triggers modal open
                     if (tool.href) {
                       return (
-                        <Link key={tool.id} href={tool.href} className="block hover:no-underline">
+                        <Link
+                          key={tool.id}
+                          href={tool.href}
+                          onClick={() => {
+                            // Demo cards: track Link nav. Create cards have
+                            // a button inside that already tracks via the
+                            // onClick path, so guard to avoid double-count
+                            // when the whole-card button-wrapper also fires.
+                            if (tool.status !== "create") trackToolClick(tool.id);
+                          }}
+                          className="block hover:no-underline"
+                        >
                           {Card}
                         </Link>
                       );
@@ -190,7 +215,10 @@ export default function ToolsClient() {
                         <button
                           key={tool.id}
                           type="button"
-                          onClick={tool.onClick}
+                          onClick={() => {
+                            trackToolClick(tool.id);
+                            tool.onClick?.();
+                          }}
                           className="text-left"
                         >
                           {Card}
@@ -215,7 +243,10 @@ export default function ToolsClient() {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-2xl relative">
+            {/* Demo container shrunk ~20% from max-w-2xl (672px) → 538px
+                so the video doesn't dominate the hero on wide screens.
+                Aspect ratio preserved via w-full + intrinsic video ratio. */}
+            <div className="w-full max-w-[538px] relative">
               <CdnVideo
                 ref={videoRef}
                 src={videoSrc}

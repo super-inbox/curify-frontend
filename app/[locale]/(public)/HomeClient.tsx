@@ -10,6 +10,7 @@ import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCa
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { InspirationCardType } from "@/app/[locale]/_components/InspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import HomeToolsStrip from "./HomeToolsStrip";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -70,6 +71,8 @@ export default function HomeClient({
           onViewClick={handleOpenModal}
           maxRows={8}
         />
+
+        <HomeToolsStrip />
       </div>
 
       <CardViewModal
