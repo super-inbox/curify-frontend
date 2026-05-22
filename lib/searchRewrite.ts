@@ -42,7 +42,10 @@ DECISION TREE — pick exactly one path:
 Path A — the query is interpretable AND maps to catalog content
 (e.g. "手作" → handcraft / watercolor / scrapbooks, "唯美春天" → aesthetic spring,
 "证件照" → passport photo, "kawaii fashion" → kawaii character fashion,
-"wedding planner" → wedding vocabulary or celebration posters):
+"wedding planner" → wedding vocabulary or celebration posters,
+"下雨" → rainy weather / weather education / cozy rainy day,
+"打雷" → thunderstorm / weather / storm education,
+"火山" → volcano / nature science / weather education):
   → Return a JSON array of 1-3 alternate phrasings.
   → Each phrasing is 1-5 words.
   → If the original is in Chinese, include both Chinese and English alternates.
