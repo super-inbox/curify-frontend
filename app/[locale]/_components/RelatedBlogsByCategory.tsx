@@ -50,37 +50,13 @@ export default function RelatedBlogsByCategory({
 
   if (filtered.length === 0) return null;
 
-  // Translate post titles via the messages/<locale>/blog.json `posts` array,
-  // matching the localization pattern in RelatedBlogs.
-  const getLocalizedBlogData = (blog: BlogPost) => {
-    try {
-      const postsData = t.raw("posts") as unknown;
-      const localizedPosts = Array.isArray(postsData) ? (postsData as any[]) : [];
-      const localizedPost = localizedPosts?.find((p: any) => p.slug === blog.slug);
-      if (localizedPost) {
-        return {
-          ...blog,
-          title: localizedPost.title || blog.title,
-          date: localizedPost.date || blog.date,
-          readTime: localizedPost.readTime || blog.readTime,
-          tag: localizedPost.tag || blog.tag,
-        };
-      }
-    } catch {
-      /* fall through */
-    }
-    return blog;
-  };
-
-  const localized = filtered.map(getLocalizedBlogData);
-
   return (
     <section className="mt-12 pt-8 border-t border-gray-200">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
         {heading ?? t("relatedArticles", { defaultValue: "Related Articles" })}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {localized.map((blog) => (
+        {filtered.map((blog) => (
           <RelatedBlogCard
             key={blog.slug}
             blog={blog}
