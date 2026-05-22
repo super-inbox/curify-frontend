@@ -2,7 +2,7 @@
 "use client";
 
 import { useAtom } from "jotai";
-import { modalAtom, userAtom, createJobContextAtom } from "@/app/atoms/atoms";
+import { modalAtom, userAtom, drawerAtom, createJobContextAtom } from "@/app/atoms/atoms";
 import Modal from "../../_components/Modal";
 import Upload from "../../_components/Upload";
 import { useEffect, useRef, useState } from "react";
@@ -11,15 +11,18 @@ import BtnP from "../../_components/button/ButtonPrimary";
 import { useRouter } from "@/i18n/navigation";
 import { projectService } from "@/services/projects";
 import { videoService } from "@/services/video";
+import { authService } from "@/services/auth";
 import { getLangCode, languages } from "@/lib/language_utils";
 import type { SubtitleFormat, AudioOption } from "@/types/projects";
 import type { BackendJobType } from "@/types/projects";
 import { getJobUiConfig } from "@/lib/create-job-ui";
+import toast from "react-hot-toast";
 
 export default function CreateNewModal() {
   const router = useRouter();
   const [modalState, setModalState] = useAtom(modalAtom);
   const [user] = useAtom(userAtom);
+  const [, setDrawerState] = useAtom(drawerAtom);
 
   const [jobCtx] = useAtom(createJobContextAtom);
   const job_type: BackendJobType = (jobCtx?.job_type as BackendJobType) ?? "subtitle_only";
@@ -175,7 +178,31 @@ export default function CreateNewModal() {
       console.log("createProject payload JSON:", JSON.stringify(payload, null, 2));
       
       const newProject = await projectService.createProject(payload);
-    
+
+      // Thin auth probe before navigating to /magic/<id>. The page is
+      // server-gated by the middleware (middleware.ts:45-65) reading
+      // NextAuth session cookies, while createProject above used the
+      // localStorage Bearer token — the two auth surfaces can expire
+      // independently. When only the cookie is stale the API call
+      // succeeds (backend queues the job ✓) but the next navigation
+      // silently 302s the user back to the locale home. Hit getProfile
+      // first; if 401, services/api.ts:86-94 clears localStorage and
+      // dispatches `auth:expired`, and we surface the failure here so
+      // the user gets an explicit "session expired" toast instead of
+      // an unexplained bounce to home.
+      try {
+        await authService.getProfile();
+      } catch {
+        setModalState(null);
+        toast.error(
+          "Your job was submitted, but your session has expired. Please sign in again to track progress."
+        );
+        setDrawerState("signin");
+        setIsStarting(false);
+        isStartingRef.current = false;
+        return;
+      }
+
       setModalState(null);
       router.replace(`/magic/${newProject.project_id}`);
     } catch (error) {
