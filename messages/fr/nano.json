@@ -3930,5 +3930,25 @@
         ]
       }
     }
+  },
+  "template-mbti-comparison-infographic": {
+    "category": "Infographie de comparaison MBTI",
+    "description": "Infographie humoristique en écran partagé sur le MBTI — Scénario Idéal vs Réel, types MBTI avec des réponses classiques dans des bulles de dialogue, style cartoon 3D low-poly.",
+    "title": "Infographie de mème de comparaison de personnalité MBTI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie humoristique de comparaison en écran partagé sur un scénario MBTI choisi. La moitié supérieure montre le scénario Idéal/Attente avec des personnages organisés et concentrés ; la moitié inférieure montre le scénario Réel/Chaotique avec un chaos exagéré et relatable. Chaque personnage est étiqueté avec son type MBTI et associé à une bulle de dialogue montrant sa réponse classique. Style artistique cartoon 3D low-poly, fond clair et propre, en-têtes de texte colorés et audacieux.",
+        "who": "Convient aux créateurs de mèmes MBTI sur Instagram et TikTok, aux éditeurs de contenu sur les tests de personnalité, aux équipes RH construisant du contenu sur la dynamique d'équipe, et aux éducateurs enseignant la théorie de la personnalité à travers l'humour.",
+        "how": [
+          "Choisissez un sujet de scénario MBTI (Dynamiques de chat de groupe, Scénario de travail avec des délais, Socialisation lors de fêtes, Styles de résolution de problèmes, Chaos lors de réunions de bureau, Plans de week-end).",
+          "Générez l'infographie de comparaison MBTI Idéal vs Réel."
+        ],
+        "prompts": [
+          "Générez une infographie de comparaison MBTI sur les styles de résolution de problèmes.",
+          "Créez un poster de mème de personnalité MBTI sur les plans de week-end.",
+          "Générez une comparaison Idéal vs Réel sur les dynamiques de chat de groupe."
+        ]
+      }
+    }
   }
 }

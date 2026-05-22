@@ -95182,7 +95182,332 @@
       "tasting notes",
       "cultural drink",
       "elegant infographic",
-      "food pairings"
+      "food pairings",
+      "japanese rice wine",
+      "日本清酒",
+      "rice wine",
+      "酒类"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-deadline-scenario",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-deadline-scenario.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-deadline-scenario-prev.jpg"
+    },
+    "params": {
+      "topic": "deadline scenario"
+    },
+    "locales": {
+      "en": {
+        "title": "deadline scenario"
+      }
+    },
+    "search_aliases": [
+      "deadline scenario",
+      "截止日期场景",
+      "MBTI类型",
+      "幽默比较",
+      "团队合作",
+      "办公室场景"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-group-chat",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-group-chat.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-group-chat-prev.jpg"
+    },
+    "params": {
+      "topic": "group chat"
+    },
+    "locales": {
+      "en": {
+        "title": "group chat"
+      }
+    },
+    "search_aliases": [
+      "group chat",
+      "群聊",
+      "MBTI类型",
+      "幽默比较",
+      "社交场景",
+      "团队沟通"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-meeting-scenario",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-meeting-scenario.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-meeting-scenario-prev.jpg"
+    },
+    "params": {
+      "topic": "meeting scenario"
+    },
+    "locales": {
+      "en": {
+        "title": "meeting scenario"
+      }
+    },
+    "search_aliases": [
+      "meeting scenario",
+      "会议场景",
+      "MBTI类型",
+      "幽默比较",
+      "团队会议",
+      "办公室互动"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-party-expectation-reality",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-party-expectation-reality.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-party-expectation-reality-prev.jpg"
+    },
+    "params": {
+      "topic": "party expectation reality"
+    },
+    "locales": {
+      "en": {
+        "title": "party expectation reality"
+      }
+    },
+    "search_aliases": [
+      "party expectation reality",
+      "派对期望与现实",
+      "MBTI类型",
+      "幽默比较",
+      "社交活动",
+      "聚会场景"
+    ]
+  },
+  {
+    "id": "template-mbti-group-comparison-infographic-problem-solving",
+    "template_id": "template-mbti-group-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-group-comparison-infographic-problem-solving.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-problem-solving-prev.jpg"
+    },
+    "params": {
+      "topic": "problem solving"
+    },
+    "locales": {
+      "en": {
+        "title": "problem solving"
+      }
+    },
+    "search_aliases": [
+      "problem solving",
+      "解决问题",
+      "MBTI类型",
+      "幽默比较",
+      "团队合作",
+      "办公室场景"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-gin",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-gin.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-gin-prev.jpg"
+    },
+    "params": {
+      "wine_name": "gin"
+    },
+    "locales": {
+      "en": {
+        "title": "gin"
+      }
+    },
+    "search_aliases": [
+      "gin",
+      "金酒",
+      "spirit",
+      "cocktail",
+      "饮品",
+      "酒类",
+      "tasting notes",
+      "food pairing"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-tequila",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-tequila.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-tequila-prev.jpg"
+    },
+    "params": {
+      "wine_name": "tequila"
+    },
+    "locales": {
+      "en": {
+        "title": "tequila"
+      }
+    },
+    "search_aliases": [
+      "tequila",
+      "龙舌兰",
+      "龙舌兰酒",
+      "spirit",
+      "mexican spirit",
+      "墨西哥",
+      "cocktail",
+      "酒类"
+    ]
+  },
+  {
+    "id": "template-wine-variety-intro-infographic-vodka",
+    "template_id": "template-wine-variety-intro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-wine-variety-intro-infographic-vodka.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-wine-variety-intro-infographic-vodka-prev.jpg"
+    },
+    "params": {
+      "wine_name": "vodka"
+    },
+    "locales": {
+      "en": {
+        "title": "vodka"
+      }
+    },
+    "search_aliases": [
+      "vodka",
+      "伏特加",
+      "spirit",
+      "cocktail",
+      "酒类",
+      "tasting notes",
+      "food pairing"
+    ]
+  },
+  {
+    "id": "template-mbti-comparison-infographic-problem-solving-styles",
+    "template_id": "template-mbti-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-comparison-infographic-problem-solving-styles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-comparison-infographic-problem-solving-styles-prev.jpg"
+    },
+    "params": {
+      "topic": "Problem Solving Styles"
+    },
+    "locales": {
+      "en": {
+        "title": "Problem Solving Styles"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "search_aliases": [
+      "问题解决风格",
+      "Problem Solving Styles",
+      "MBTI 性格",
+      "性格比较",
+      "幽默信息图",
+      "低多边形卡通风格",
+      "MBTI 类型"
+    ]
+  },
+  {
+    "id": "template-mbti-comparison-infographic-weekend-plans",
+    "template_id": "template-mbti-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-comparison-infographic-weekend-plans.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-comparison-infographic-weekend-plans-prev.jpg"
+    },
+    "params": {
+      "topic": "Weekend Plans"
+    },
+    "locales": {
+      "en": {
+        "title": "Weekend Plans"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "search_aliases": [
+      "周末计划",
+      "Weekend Plans",
+      "MBTI 性格",
+      "性格比较",
+      "幽默信息图",
+      "低多边形卡通风格",
+      "MBTI 类型"
+    ]
+  },
+  {
+    "id": "template-mbti-comparison-infographic-office-meeting-chaos",
+    "template_id": "template-mbti-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-comparison-infographic-office-meeting-chaos.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-comparison-infographic-office-meeting-chaos-prev.jpg"
+    },
+    "params": {
+      "topic": "Office Meeting Chaos"
+    },
+    "locales": {
+      "en": {
+        "title": "Office Meeting Chaos"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "search_aliases": [
+      "办公室会议混乱",
+      "Office Meeting Chaos",
+      "MBTI 性格",
+      "性格比较",
+      "幽默信息图",
+      "低多边形卡通风格",
+      "MBTI 类型"
+    ]
+  },
+  {
+    "id": "template-mbti-comparison-infographic-group-chat-dynamics",
+    "template_id": "template-mbti-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-comparison-infographic-group-chat-dynamics.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-comparison-infographic-group-chat-dynamics-prev.jpg"
+    },
+    "params": {
+      "topic": "Group Chat Dynamics"
+    },
+    "locales": {
+      "en": {
+        "title": "Group Chat Dynamics"
+      }
+    },
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "search_aliases": [
+      "群聊动态",
+      "Group Chat Dynamics",
+      "MBTI 性格",
+      "性格比较",
+      "幽默信息图",
+      "低多边形卡通风格",
+      "MBTI 类型"
     ]
   }
 ]

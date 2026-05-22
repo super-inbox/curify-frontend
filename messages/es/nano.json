@@ -3930,5 +3930,25 @@
         ]
       }
     }
+  },
+  "template-mbti-comparison-infographic": {
+    "category": "Infografía de Comparación MBTI",
+    "description": "Infografía MBTI humorística de pantalla dividida — Escenario Ideal vs Real, tipos MBTI con respuestas clásicas en burbujas de diálogo, estilo de cartoon 3D de baja poligonización.",
+    "title": "Infografía Meme de Comparación de Personalidades MBTI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de comparación humorística de pantalla dividida sobre un escenario MBTI elegido. La mitad superior muestra el escenario Ideal/Expectativa con personajes organizados y enfocados; la parte inferior muestra el escenario Real/Caótico con un caos exagerado y relatable. Cada personaje está etiquetado con su tipo MBTI y emparejado con una burbuja de diálogo que muestra su respuesta clásica. Estilo de arte de cartoon 3D de baja poligonización, fondo claro y limpio, encabezados de texto coloridos y en negrita.",
+        "who": "Adecuado para creadores de memes de MBTI en Instagram y TikTok, editores de contenido de pruebas de personalidad, equipos de recursos humanos que construyen contenido sobre dinámicas de equipo y educadores que enseñan teoría de la personalidad a través del humor.",
+        "how": [
+          "Elige un tema de escenario MBTI (Dinámicas de Chat en Grupo, Escenario de Trabajo con Plazos, Socialización en Fiestas, Estilos de Resolución de Problemas, Caos en Reuniones de Oficina, Planes de Fin de Semana).",
+          "Genera la infografía de comparación MBTI Ideal vs Real."
+        ],
+        "prompts": [
+          "Genera una infografía de comparación MBTI de Estilos de Resolución de Problemas.",
+          "Crea un cartel de meme de personalidad MBTI de Planes de Fin de Semana.",
+          "Genera una comparación Ideal vs Real de Dinámicas de Chat en Grupo."
+        ]
+      }
+    }
   }
 }
