@@ -184,33 +184,33 @@ export default function UseCaseClient({
 
   return (
     <main className="mx-auto max-w-[1400px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">
-      {/* Top-right share — sits above the hero so it doesn't compete with
-          the title for the reader's first glance. Tracking via standard
-          contentType "page" + slug pattern. Bottom margin trimmed so the
-          share row doesn't push the H1 too far below the sticky topbar. */}
-      <div className="mb-2 flex justify-end">
-        <ShareButton
-          url={`/use-cases/${slug}`}
-          title={shareTitle}
-          text={shareText}
-          onShared={handleShareTracked}
-        />
-      </div>
-
       {/* Hero — text block + optional explainer video side by side on
           lg+, stacked on smaller. Single max-w on the text section so
           title, subtitle, description, bullets, and the B2B API line
-          share one consistent reading column. */}
-      <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-start">
+          share one consistent reading column. Share button sits on the
+          H1 line (right-aligned within the text section) instead of in
+          its own row above — tighter top whitespace, share affordance
+          stays adjacent to the title. */}
+      <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-20">
       <section className="max-w-3xl lg:flex-1">
         {isB2B && (
           <span className="mb-3 inline-flex items-center rounded-full border border-purple-300 bg-purple-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-purple-800">
             {tGlobal("interconnection.builtForTeams")}
           </span>
         )}
-        <h1 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-          {title}
-        </h1>
+        <div className="flex items-start justify-between gap-4">
+          <h1 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+            {title}
+          </h1>
+          <div className="flex-shrink-0 pt-1">
+            <ShareButton
+              url={`/use-cases/${slug}`}
+              title={shareTitle}
+              text={shareText}
+              onShared={handleShareTracked}
+            />
+          </div>
+        </div>
         <p className="mt-3 text-lg font-semibold text-purple-700">
           {t(`${slug}.subtitle` as never)}
         </p>
