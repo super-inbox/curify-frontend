@@ -4,18 +4,6 @@ import { NextResponse, type NextRequest } from "next/server";
 
 const intlMiddleware = createMiddleware(routing);
 
-// 🛡️ Define Protected Routes (path WITHOUT locale prefix)
-const protectedRoutes = ["/workspace", "/magic", "/project_details"];
-
-// Helper: read next-auth session token in dev/prod (http/https)
-function getSessionToken(req: NextRequest) {
-  return (
-    req.cookies.get("next-auth.session-token")?.value ||
-    req.cookies.get("__Secure-next-auth.session-token")?.value ||
-    null
-  );
-}
-
 export default function middleware(req: NextRequest) {
   const url = req.nextUrl;
 
@@ -27,44 +15,19 @@ export default function middleware(req: NextRequest) {
     return NextResponse.redirect(redirectUrl, { status: 308 });
   }
 
-  // 2) Parse optional locale prefix for downstream auth checks only.
-  const pathname = url.pathname;
-  const matched = pathname.match(/^\/([a-zA-Z]{2})(\/|$)/);
-  const locale = matched?.[1]?.toLowerCase();
-
-  const supportedLocales = (routing.locales || []).map((l) => l.toLowerCase());
-
-  // 3) Run i18n middleware
+  // 2) Run i18n middleware
   const res = intlMiddleware(req);
 
-  // 4) Pass pathname to layout
-  res.headers.set("x-pathname", pathname);
+  // 3) Pass pathname to layout
+  res.headers.set("x-pathname", url.pathname);
 
-  // 5) Auth gate (only for locale-prefixed routes)
-  // If you also want to protect non-locale routes, you can add another branch.
-  if (locale && supportedLocales.includes(locale)) {
-    const token = getSessionToken(req);
-
-    // Remove locale prefix robustly
-    // "/en/energy" -> "/energy"
-    // "/en" -> "/"
-    let pathWithoutLocale = pathname.replace(
-      new RegExp(`^/${locale}(/|$)`),
-      "$1"
-    );
-    if (pathWithoutLocale === "") pathWithoutLocale = "/";
-    if (!pathWithoutLocale.startsWith("/")) pathWithoutLocale = `/${pathWithoutLocale}`;
-
-    const isProtected = protectedRoutes.some(
-      (route) =>
-        pathWithoutLocale === route || pathWithoutLocale.startsWith(`${route}/`)
-    );
-
-    if (isProtected && !token) {
-      return NextResponse.redirect(new URL(`/${locale}`, req.url));
-    }
-  }
-
+  // 4) Auth is enforced client-side in app/[locale]/authProvider.tsx
+  // (PROTECTED_PREFIXES checks profile validity on mount). The
+  // previous server-side gate here read `next-auth.session-token`
+  // cookies that this app never sets — only EN routes were unaffected
+  // (the gate was scoped to locale-prefixed paths). For non-EN users
+  // the gate silently 302d every /workspace, /magic, and
+  // /project_details visit back to the locale home. Removed 2026-05-22.
   return res;
 }
 
