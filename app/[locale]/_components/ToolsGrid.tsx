@@ -6,6 +6,11 @@
 //
 // Auth + modal wiring lives here (instead of being duplicated in each
 // caller) — every caller just passes a list of ToolDefs to render.
+//
+// Click tracking: every card click (whether the Link nav to /tools/<slug>
+// for demo/coming-soon, or the Create button modal open for create tools)
+// fires a single `tool_card` interaction event with the tool id. See
+// services/useTracking.ts ContentType enum.
 
 import { Link } from "@/i18n/navigation";
 import { useAtom } from "jotai";
@@ -19,6 +24,7 @@ import {
   createJobContextAtom,
 } from "@/app/atoms/atoms";
 import type { ToolDef } from "@/lib/tools-registry";
+import { useTracking } from "@/services/useTracking";
 
 type Props = {
   tools: ToolDef[];
@@ -38,8 +44,17 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
   const [, setDrawerState] = useAtom(drawerAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
   const t = useTranslations();
+  const { trackAction } = useTracking();
+
+  const trackToolClick = (toolId: string) => {
+    trackAction(
+      { contentId: toolId, contentType: "tool_card", viewMode: "cards" },
+      "click",
+    );
+  };
 
   const openToolModal = (tool: ToolDef) => {
+    trackToolClick(tool.id);
     if (!user) {
       setDrawerState("signin");
       return;
@@ -115,6 +130,13 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
             <Link
               key={tool.id}
               href={`/tools/${tool.slug}`}
+              onClick={() => {
+                // For demo cards (canNavigate but not canCreate), the card
+                // click drives nav — fire tracking here. Create cards have
+                // a button inside that already tracks via openToolModal,
+                // so we'd double-count if we tracked here too. Guard.
+                if (!canCreate) trackToolClick(tool.id);
+              }}
               className="block hover:no-underline"
             >
               {card}
