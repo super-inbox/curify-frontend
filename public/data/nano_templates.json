@@ -7966,5 +7966,62 @@
       "for-creators",
       "for-designers"
     ]
-  }
+  },
+  {
+    "id": "template-cartoon-action-visual-guide-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Cartoon Action Visual Guide Infographic Creator) Create a fun, educational visual guide poster titled '{topic}'. Layout: 3x3 grid of 9 illustrations, each showing a specific action/concept related to the theme, labeled with bold text below each image. Style: Disney/Pixar-style 3D cartoon characters, clean white background, vibrant colors, simple motion lines/effects to show action, clear typography, friendly and approachable design, direct high-quality image generation. Subject: '{topic} visual guide infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Visual Guide Topic",
+                    "type": "text",
+                    "placeholder": ["Dance Styles", "Medical Tools", "Musical Performance", "Baking Techniques", "Sweet Dessert Techniques", "Body Language"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-cartoon-action-visual-guide-infographic-dance-styles-prev.jpg"
+},
+  {
+    "id": "template-historical-figure-profile-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Historical Figure Profile Infographic Creator) Create a vintage-style educational infographic poster titled '{topic}'. Layout: A 2x2 grid of profile cards, each with a portrait photo, name, birth/death dates, key contributions, and a small illustration of their most famous work/achievement. Background features a thematic scene related to the field (e.g., cityscape for architects, museum for painters, lab for scientists). Style: Warm sepia/vintage color palette, ornate decorative borders, classic serif typography, aged paper texture, elegant and scholarly design, direct high-quality image generation. Subject: '{topic} historical figure profile infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Historical Figure Topic",
+                    "type": "text",
+                    "placeholder": ["Great Architects & Their Buildings", "Famous Painters & Their Masterpieces", "Renowned Scientists & Their Discoveries", "Iconic Writers & Their Novels", "Legendary Composers & Their Works", "Famous Inventors & Their Inventions"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-historical-figure-profile-infographic-famous-painters-prev.jpg"
+},
+  {
+    "id": "template-product-theme-promotional-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Product & Theme Promotional Poster Creator) Create a vibrant, eye-catching promotional poster titled '{title_text}' in {language}. Layout: A central themed fantasy scene (like amusement park, beach carnival, or tech city) filled with product elements and dynamic action, topped with large 3D-style title text and a catchy tagline banner. Include floating product images, decorative elements (confetti, light effects, themed props), and vibrant color matching the theme. Style: Bright 3D illustration style, high-energy atmosphere, bold typography, sharp clean details, direct high-quality image generation. Subject: '{title_text} promotional poster'.",
+            "parameters": [
+                {
+                    "name": "title_text",
+                    "label": "Promotional Title",
+                    "type": "text",
+                    "placeholder": ["夏日狂欢零食总动员", "春日焕新美丽绽放", "科技狂欢至高立减", "守护成长每一步", "Summer Blast Sale"]
+                },
+                {
+                    "name": "language",
+                    "label": "Language Style",
+                    "type": "text",
+                    "placeholder": ["Chinese", "English", "Bilingual (Chinese & English)"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-product-theme-promotional-poster-summer-snack-festival-prev.jpg"
+}
 ]
