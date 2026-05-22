@@ -12,6 +12,7 @@ import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import { templatePacksService } from "@/services/templatePacks";
 import { useTracking } from "@/services/useTracking";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
@@ -156,6 +157,20 @@ export default function UseCaseClient({
   // Optional explainer video on the right side of the hero. Only the
   // slugs in USE_CASE_VIDEO_KEY have a video pair under /public/video/.
   const videoKey = USE_CASE_VIDEO_KEY[slug];
+  // Share button props — ShareButton auto-prepends curify-ai.com on
+  // relative URLs. Tracking uses contentType "page" + slug as
+  // contentId so analytics groups shares per persona page.
+  const { trackAction } = useTracking();
+  const shareTitle = title;
+  const shareText = t(`${slug}.subtitle` as never);
+  const shareTracking = {
+    contentId: slug,
+    contentType: "page" as const,
+  };
+  const handleShareTracked = useCallback(
+    () => trackAction(shareTracking, "share"),
+    [trackAction, shareTracking],
+  );
   const user = useAtomValue(userAtom);
   const setDrawerState = useSetAtom(drawerAtom);
   const requireAuth = useCallback(() => {
@@ -166,6 +181,18 @@ export default function UseCaseClient({
 
   return (
     <main className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 lg:px-8">
+      {/* Top-right share — sits above the hero so it doesn't compete with
+          the title for the reader's first glance. Tracking via standard
+          contentType "page" + slug pattern. */}
+      <div className="mb-4 flex justify-end">
+        <ShareButton
+          url={`/use-cases/${slug}`}
+          title={shareTitle}
+          text={shareText}
+          onShared={handleShareTracked}
+        />
+      </div>
+
       {/* Hero — text block + optional explainer video side by side on
           lg+, stacked on smaller. Single max-w on the text section so
           title, subtitle, description, bullets, and the B2B API line
@@ -281,6 +308,18 @@ export default function UseCaseClient({
           filterTo={USE_CASES.filter((uc) => uc.slug !== slug).map((uc) => uc.slug)}
         />
       </section>
+
+      {/* Bottom-left share — second chance to share once the reader has
+          scrolled the full page. Same ShareButton + tracking pattern as
+          the top-right placement so analytics counts both. */}
+      <div className="mt-8 flex justify-start">
+        <ShareButton
+          url={`/use-cases/${slug}`}
+          title={shareTitle}
+          text={shareText}
+          onShared={handleShareTracked}
+        />
+      </div>
     </main>
   );
 }
