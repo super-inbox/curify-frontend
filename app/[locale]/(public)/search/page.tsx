@@ -15,8 +15,7 @@ import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import { nanoRegistry } from "@/lib/nano_utils";
 import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import { tsToSc } from "@/lib/zh_normalize";
-import { augmentWithLLM } from "@/lib/searchAugment";
-import nanoMessagesEn from "@/messages/en/nano.json";
+import { rewriteQuery } from "@/lib/searchRewrite";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Threshold below which we trigger the LLM rewrite path. Matches the
@@ -377,50 +376,37 @@ export default async function SearchPage({ params, searchParams }: Props) {
   const inspirationById = new Map<string, ScoredInspiration>();
   for (const s of baseResult.scored) inspirationById.set(s.rec.id, s);
 
-  // LLM-driven catalog augmentation — only when the original query
-  // returned thin results (< LOW_RESULT_THRESHOLD). Replaces the older
-  // "ask LLM for rewrite strings, re-score lexically" approach (see
-  // lib/searchAugment.ts header). The LLM now picks template_ids
-  // directly from a compact catalog index, and we promote every
-  // inspiration under those templates as a strict match — no
-  // alias-coverage dependency.
-  //
-  // `usedRewrites` keeps its name for SearchResultsClient prop
-  // compatibility but now holds template category names (i18n
-  // titles / display strings) instead of rewrite query strings, so
-  // the "Also showing related templates: …" banner reads naturally.
+  // LLM query rewrite — only when the original query returned thin
+  // results (< LOW_RESULT_THRESHOLD across all surfaces). Each rewrite is
+  // re-scored against the catalog; results are unioned with the originals
+  // and the same precision/relaxed gating applies. We do NOT redirect to
+  // a topic page even if a rewrite happens to match one — that would
+  // override the user's intent. See lib/searchRewrite.ts for the prompt
+  // + cache + failure-mode contract.
   let usedRewrites: string[] = [];
-  let rescueTemplateIds: string[] = [];
   const initialThinCount =
     baseResult.scored.filter((s) => s.strict).length +
     matchedTemplateIdsByI18nUnion.size;
   if (initialThinCount < LOW_RESULT_THRESHOLD && query.length >= 2) {
-    const picks = await augmentWithLLM(query);
-    if (picks.length > 0) {
-      rescueTemplateIds = picks;
-      for (const tid of picks) {
-        strictTemplateMatchesUnion.add(tid);
-        matchedTemplateIdsByI18nUnion.add(tid);
-      }
-      // Promote every inspiration under the picked templates as a
-      // strict match. Score 100 mirrors the strict template-match
-      // bonus in scoreQueryTokens above.
-      const pickSet = new Set(picks);
-      for (const r of nanoInspiration as InspRecord[]) {
-        if (!pickSet.has(r.template_id)) continue;
-        const prev = inspirationById.get(r.id);
-        if (!prev || !prev.strict) {
-          inspirationById.set(r.id, { rec: r, score: 100, strict: true });
+    const rewrites = await rewriteQuery(query);
+    if (rewrites.length > 0) {
+      for (const rw of rewrites) {
+        const rwTokens = buildSearchTokens(rw);
+        const rwResult = scoreQueryTokens(rwTokens);
+        for (const id of rwResult.strictTpl) strictTemplateMatchesUnion.add(id);
+        for (const id of rwResult.tplByI18n) matchedTemplateIdsByI18nUnion.add(id);
+        for (const s of rwResult.scored) {
+          const prev = inspirationById.get(s.rec.id);
+          // Keep the max score per record across passes; promote strict
+          // if any pass saw it as strict so the strict-filter below
+          // doesn't drop a rewrite hit just because the original was
+          // relaxed.
+          if (!prev || s.score > prev.score || (s.strict && !prev.strict)) {
+            inspirationById.set(s.rec.id, s);
+          }
         }
       }
-      // Build user-facing labels for the banner from the i18n nano.json
-      // category / title. Falls back to the slug for any template that
-      // somehow lacks i18n copy.
-      const labelByTid = nanoMessagesEn as Record<string, { category?: string; title?: string } | undefined>;
-      usedRewrites = picks.map((tid) => {
-        const m = labelByTid[tid];
-        return m?.category ?? m?.title ?? tid;
-      });
+      usedRewrites = rewrites;
     }
   }
 
@@ -477,31 +463,14 @@ export default async function SearchPage({ params, searchParams }: Props) {
     matchedTemplateIdsAll.has(c.template_id)
   );
 
-  // Gallery prompts: fetch from Redis when the query (or one of its
-  // related signals) exactly matches a known nano-banana tag. Free-text
-  // queries skip this — we don't have a full-text search over gallery
-  // prompts yet. Candidate sources:
-  //   1. The original query (exact-match path).
-  //   2. Topics of the LLM-picked rescue templates (e.g. user typed
-  //      `唯美春天`, augmentWithLLM picked template-watercolor-*, its
-  //      topics include `watercolor` which IS a gallery tag).
-  const rescueTopics: string[] = rescueTemplateIds.flatMap((tid) => {
-    const t = (nanoTemplates as unknown as Array<{ id: string; topics?: string | string[] }>).find(
-      (x) => x.id === tid,
-    );
-    if (!t) return [];
-    const tp = t.topics;
-    if (Array.isArray(tp)) return tp;
-    return String(tp ?? "")
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean);
-  });
+  // Gallery prompts: fetch from Redis when the query exactly matches a
+  // known nano-banana tag. Free-text queries skip this — we don't have
+  // a full-text search over gallery prompts yet. When the original
+  // query doesn't match a tag but one of the LLM rewrites does (e.g.
+  // user typed `唯美春天`, rewrite produced `watercolor` which IS a
+  // known tag), fetch for the first matching rewrite.
   let galleryPrompts: NanoPromptBase[] = [];
-  const galleryTagCandidates = [
-    query,
-    ...rescueTopics.map((t) => t.toLowerCase().trim()),
-  ];
+  const galleryTagCandidates = [query, ...usedRewrites.map((r) => r.toLowerCase().trim())];
   for (const candidate of galleryTagCandidates) {
     if (!NANO_PROMPT_TAG_SET.has(candidate)) continue;
     try {
