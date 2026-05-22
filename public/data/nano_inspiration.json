@@ -81341,7 +81341,16 @@
       "新娘",
       "新郎",
       "结婚",
-      "订婚"
+      "订婚",
+      "端午节",
+      "端午",
+      "Dragon Boat Festival",
+      "duanwu",
+      "五月初五",
+      "龙舟节",
+      "tuen ng festival",
+      "zongzi",
+      "粽子节"
     ]
   },
   {
@@ -95508,6 +95517,81 @@
       "幽默信息图",
       "低多边形卡通风格",
       "MBTI 类型"
+    ]
+  },
+  {
+    "id": "template-regional-alcoholic-drinks-infographic-dragon-boat-festival",
+    "template_id": "template-regional-alcoholic-drinks-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-regional-alcoholic-drinks-infographic-dragon-boat-festival.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-regional-alcoholic-drinks-infographic-dragon-boat-festival-prev.jpg"
+    },
+    "params": {
+      "region": "Dragon Boat Festival"
+    },
+    "locales": {
+      "en": {
+        "title": "Dragon Boat Festival"
+      }
+    },
+    "topics": [
+      "travel",
+      "culture",
+      "food",
+      "posters",
+      "cultural-festivals",
+      "china"
+    ],
+    "search_aliases": [
+      "龙舟节",
+      "Dragon Boat Festival",
+      "中国传统饮品",
+      "traditional drinks",
+      "regional alcoholic drinks",
+      "文化节",
+      "饮酒文化",
+      "infographic",
+      "端午节",
+      "端午",
+      "duanwu",
+      "粽子",
+      "zongzi",
+      "龙舟",
+      "五月初五"
+    ]
+  },
+  {
+    "id": "template-food-recipe-tip-infographic-zongzi-dragon-boat",
+    "template_id": "template-food-recipe-tip-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-recipe-tip-infographic-zongzi-dragon-boat.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-recipe-tip-infographic-zongzi-dragon-boat-prev.jpg"
+    },
+    "params": {
+      "topic": "Zongzi Making for Dragon Boat Festival"
+    },
+    "locales": {
+      "en": {
+        "title": "Zongzi Making for Dragon Boat Festival"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "guides",
+      "posters",
+      "cultural-festivals"
+    ],
+    "search_aliases": [
+      "端午节",
+      "端午",
+      "Dragon Boat Festival",
+      "duanwu",
+      "粽子",
+      "zongzi",
+      "龙舟",
+      "龙舟节",
+      "五月初五"
     ]
   }
 ]
