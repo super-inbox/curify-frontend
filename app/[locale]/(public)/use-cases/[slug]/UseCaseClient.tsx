@@ -36,9 +36,12 @@ const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3"] as const;
 // when a new pair is uploaded; pages without an entry simply skip the
 // video column and the hero text takes the full row width.
 const USE_CASE_VIDEO_KEY: Record<string, string> = {
-  "for-designers": "design",
-  "for-parents":   "parents",
-  "for-creators":  "creators",
+  "for-designers":        "design",
+  "for-parents":          "parents",
+  "for-creators":         "creators",
+  "for-dtc-brands":       "dtc",
+  "for-publishers":       "publisher",
+  "for-programmatic-seo": "seo",
 };
 
 function UseCaseVideo({ videoKey, lang }: { videoKey: string; lang: "en" | "cn" }) {
@@ -180,11 +183,12 @@ export default function UseCaseClient({
   }, [user, setDrawerState]);
 
   return (
-    <main className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-[1400px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">
       {/* Top-right share — sits above the hero so it doesn't compete with
           the title for the reader's first glance. Tracking via standard
-          contentType "page" + slug pattern. */}
-      <div className="mb-4 flex justify-end">
+          contentType "page" + slug pattern. Bottom margin trimmed so the
+          share row doesn't push the H1 too far below the sticky topbar. */}
+      <div className="mb-2 flex justify-end">
         <ShareButton
           url={`/use-cases/${slug}`}
           title={shareTitle}
