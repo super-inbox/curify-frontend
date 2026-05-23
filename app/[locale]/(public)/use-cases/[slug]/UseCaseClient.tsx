@@ -18,6 +18,7 @@ import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import type { ToolDef } from "@/lib/tools-registry";
 import { USE_CASES, PERSONA_BLOG_CATEGORIES, getUseCaseBySlug } from "@/lib/use-cases";
+import useCaseTranscripts from "@/lib/use_case_transcripts.json";
 
 type LearningMaterial = {
   templateId: string;
@@ -44,7 +45,21 @@ const USE_CASE_VIDEO_KEY: Record<string, string> = {
   "for-programmatic-seo": "seo",
 };
 
-function UseCaseVideo({ videoKey, lang }: { videoKey: string; lang: "en" | "cn" }) {
+function UseCaseVideo({
+  videoKey,
+  lang,
+  transcript,
+  transcriptLabel,
+}: {
+  videoKey: string;
+  lang: "en" | "cn";
+  /** Locale-picked transcript text. Rendered inside a collapsed
+   *  <details> below the video so it stays crawlable by Google
+   *  (text inside closed details is indexed) without polluting
+   *  the hero's visual rhythm. Empty / missing → no accordion. */
+  transcript?: string;
+  transcriptLabel: string;
+}) {
   // CdnVideo rewrites the /video/... path to the GCS bucket
   // (gs://curify-static/video). The local public/video/ files are
   // gitignored — only the CDN copy is served in production. Drop a
@@ -54,15 +69,38 @@ function UseCaseVideo({ videoKey, lang }: { videoKey: string; lang: "en" | "cn" 
   // so the container matches that aspect — using aspect-video (16:9)
   // would either letterbox heavily or crop the video.
   const src = `/video/use-case-${videoKey}-${lang}.mp4`;
+  // Split on double-newline → paragraph; preserve single newlines as
+  // soft breaks via whitespace-pre-line so the CN block structure
+  // (multiple short lines per section) survives the render round-trip.
+  const paragraphs = transcript
+    ? transcript.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean)
+    : [];
+
   return (
-    <div className="w-full overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 shadow-sm">
-      <CdnVideo
-        src={src}
-        controls
-        playsInline
-        preload="metadata"
-        className="aspect-[9/16] w-full bg-black"
-      />
+    <div className="w-full">
+      <div className="overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 shadow-sm">
+        <CdnVideo
+          src={src}
+          controls
+          playsInline
+          preload="metadata"
+          className="aspect-[9/16] w-full bg-black"
+        />
+      </div>
+      {paragraphs.length > 0 && (
+        <details className="mt-3 rounded-lg border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-700">
+          <summary className="cursor-pointer select-none font-medium text-neutral-800 hover:text-purple-700">
+            {transcriptLabel}
+          </summary>
+          <div className="mt-3 space-y-3">
+            {paragraphs.map((p, i) => (
+              <p key={i} className="whitespace-pre-line leading-relaxed text-neutral-600">
+                {p}
+              </p>
+            ))}
+          </div>
+        </details>
+      )}
     </div>
   );
 }
@@ -243,7 +281,15 @@ export default function UseCaseClient({
 
         {videoKey && (
           <div className="mx-auto w-full max-w-[320px] lg:mx-0 lg:w-[280px] lg:flex-shrink-0">
-            <UseCaseVideo videoKey={videoKey} lang={locale === "zh" ? "cn" : "en"} />
+            <UseCaseVideo
+              videoKey={videoKey}
+              lang={locale === "zh" ? "cn" : "en"}
+              transcript={
+                (useCaseTranscripts as Record<string, { en?: string; cn?: string }>)
+                  [videoKey]?.[locale === "zh" ? "cn" : "en"]
+              }
+              transcriptLabel={tGlobal("interconnection.readTranscript")}
+            />
           </div>
         )}
       </div>
