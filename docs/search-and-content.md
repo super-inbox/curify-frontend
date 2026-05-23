@@ -105,6 +105,16 @@ A bug in any one thread can leak across — most often we discover the wrong thr
 - Daily-content-drop workflow (fetch hongjie28-patch-N → wire 5 metadata fields → i18n autotranslate → gallery sync with `--auto-tag`).
 - Recent batch: 75 low-language examples on 2026-05-18 (config `scripts/configs/low_languages_2026-05-18.json`).
 
+### Observed content gaps from SEARCH_NORESULT logs (review weekly)
+Live-prod failing queries that the catalog could theoretically host but does not yet, surfaced via the admin Search Queries panel and ad-hoc DB queries. The rewriter now routes most of these to Path A with substantive rewrites (post-2026-05-23 prompt patch), but generated CONTENT under those rewrites is still thin or missing. Worth a batch-gen pass when a cluster reaches 3+ events / week.
+
+| Query | First seen | Adjacent templates | Notes |
+| --- | --- | --- | --- |
+| `samurai` / `武士` | 2026-05-23 | template-fandom-character-grid-poster, template-historical-figure-profile-infographic, template-mbti-generic with character_set=samurai | Naruto MBTI exists but no samurai-named content. Could batch-gen 4-5 samurai character cards under fandom-grid + 1 historical-figure-profile of famous samurai. |
+| `genshin` / `原神` / `genshin impact` | 2026-05-23 | template-fandom-character-grid-poster, template-mbti-generic, template-pop-culture-matching-chart | Huge anime/game franchise. Could batch-gen 5-8 Genshin MBTI cards or fandom-grid examples. |
+| `accion` | 2026-05-23 | template-mbti-marvel, template-battle, template-mbti-nba (English `action` already returns 126 hits across 13 templates) | Spanish-language gap. The rewriter still doesn't translate `accion` → `action` cleanly (no accent → model treats as gibberish). Either alias-top-up to add `accion` directly to action-content inspirations, or accept as a Spanish-accent edge case. |
+
+
 ### Open items
 1. **Subject-seed-driven config regen.** When `subject_topic_seeds.json` changes, the affected config under `scripts/configs/` should regenerate automatically. Today it's a manual copy. A small helper `scripts/regen_seed_configs.py` that reads the seeds + a template-family mapping and emits the config files would close the loop.
 

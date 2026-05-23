@@ -50,7 +50,9 @@ const CATALOG_CONTEXT = `Curify is an AI image-template platform. Its catalog in
 
 - Lifestyle / design: aromatherapy 香薰 and home decor (interior mood boards, spa corner, scented candles, 精油), fashion (red carpet, met gala, jersey, ecommerce), pet care, fitness, kids worksheets.
 
-- Topics by tier-1 group: character, language, learning, travel, culture, lifestyle, design, product, personality. Tier-2 axes include mood (cozy, playful, serene, romantic), lighting (golden hour, soft light, sunset), seasonal (winter, summer, festive), cultural-festivals, costumes.`;
+- Topics by tier-1 group: character, language, learning, travel, culture, lifestyle, design, product, personality. Tier-2 axes include mood (cozy, playful, serene, romantic), lighting (golden hour, soft light, sunset), seasonal (winter, summer, festive), cultural-festivals, costumes.
+
+MBTI / fandom / historical / cultural-festival templates support ANY proper noun the user names — not just the universes shipped as example inspirations above. Genshin Impact, Bridgerton, Taylor Swift, Chiikawa, samurai legends, any country's wine variety, any regional festival can all be templated by the existing infrastructure.`;
 
 const SYSTEM_PROMPT = `You help users find templates on Curify.
 ${CATALOG_CONTEXT}
@@ -68,7 +70,9 @@ Path A — the query is interpretable AND maps to catalog content
 "火山" → volcano / nature science / weather education):
   → Return a JSON array of 1-3 alternate phrasings.
   → Each phrasing is 1-5 words.
-  → If the original is in Chinese, include both Chinese and English alternates.
+  → If the original is in any non-English language (Chinese, Spanish,
+    French, Japanese, Korean, etc.), include English alternates — the
+    template index is English-heavy and English rewrites match more.
   → Prefer concrete catalog nouns (vocabulary, mbti, watercolor, infographic,
     portrait, travel, food, fashion, character) over abstract qualifiers.
   → Don't return the original query verbatim.
@@ -82,12 +86,26 @@ cover like "stock prices" or "tax software"):
     generic catalog terms when you can't confidently map the query. That's
     a misleading rewrite — worse than an empty result page.
 
-Examples of empty-return:
-- "زوحين" → [] (unfamiliar word, probably a name)
+Examples of empty-return (use Path B ONLY when the query is clearly outside
+any visual / creative / cultural domain — NOT for pop-culture names you
+don't recognize, which the catalog CAN template via fandom-grid / MBTI):
+- "زوحين" → [] (random non-Latin letters that don't form a recognizable word)
 - "ddd" → [] (random keystrokes)
 - "asjdkfh" → [] (random)
-- "Salesforce" → [] (brand name Curify doesn't carry)
-- "Zhang Wei" → [] (personal name, no topic intent)
+- "Salesforce" → [] (business / enterprise software — not visual content)
+- "QuickBooks" → [] (accounting software — not visual content)
+- "Zhang Wei" → [] (private individual name, no public/cultural relevance)
+- "stock prices" → [] (finance data, not visual)
+- "tax software" → [] (business utility, not visual)
+
+CRITICAL: pop-culture names, anime / game franchises, celebrities, public
+figures, films, TV shows, fashion brands → ALWAYS Path A (template-mbti-*
+or template-fandom-character-grid-poster can handle them):
+- "Genshin Impact", "Genshin", "原神" → Path A (anime / fandom MBTI)
+- "Bridgerton" → Path A (period drama / regency fashion)
+- "Taylor Swift" → Path A (celebrity / music portrait)
+- "Stranger Things" → Path A (fandom MBTI / character grid)
+- "Chiikawa" → Path A (kawaii anime characters)
 
 Examples of valid rewrites:
 - "手作" → ["crafting templates", "diy watercolor", "scrapbook design"]
