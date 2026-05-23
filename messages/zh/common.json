@@ -306,5 +306,11 @@
     "builtForTeams": "面向团队打造",
     "apiAvailable": "可按需提供 API。",
     "apiContactCTA": "我们来聊聊范围 →"
+  },
+  "magic": {
+    "errors": {
+      "NO_SPEECH": "视频似乎没有可听的语音。我们无法转录手语或静默画面——请上传带有语音音频的视频。",
+      "default": "您的任务失败了。请重试或联系支持。"
+    }
   }
 }

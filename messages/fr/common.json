@@ -306,5 +306,11 @@
     "builtForTeams": "Built for teams",
     "apiAvailable": "APIs available on request.",
     "apiContactCTA": "Let’s talk scope →"
+  },
+  "magic": {
+    "errors": {
+      "NO_SPEECH": "La vidéo semble ne pas avoir de discours audible. Nous ne pouvons pas transcrire la langue des signes ou les séquences silencieuses - veuillez télécharger une vidéo avec un audio parlé.",
+      "default": "Votre tâche a échoué. Veuillez réessayer ou contacter le support."
+    }
   }
 }

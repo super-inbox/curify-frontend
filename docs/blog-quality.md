@@ -216,7 +216,7 @@ Same telltales we already rewrote on the P0 posts: openings like "Discover how�
 
 | Post | Telltale (first ~40 words of intro) |
 | --- | --- |
-| `whatIsInfographics` | Intro literally reads `"Latest Article"` — **broken / placeholder**, treat as P0 |
+| ~~`whatIsInfographics`~~ | ~~Intro literally reads `"Latest Article"` — **broken / placeholder**, treat as P0~~ — **fixed 2026-05-17** (see line above; intro now anchored in cross-medium use cases) |
 | `aslVideoTranslator` | "Learn how to translate ASL video using advanced AI tools and computer vision…" |
 | `bilingual-ai-flashcards-early-childhood-education` | "Learn how to generate highly visual bilingual AI flashcards…" |
 | `chineseCostumeHistoryInfographic` | "Comprehensive guide to Chinese costume history—dynastic fashion evolution, textile analysis techniques, cultural symbolism frameworks…" |

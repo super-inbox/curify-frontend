@@ -306,5 +306,11 @@
         "desc": "Create historical reversal infographic posters"
       }
     }
+  },
+  "magic": {
+    "errors": {
+      "NO_SPEECH": "The video appears to have no audible speech. We can't transcribe sign language or silent footage — please upload a video with spoken audio.",
+      "default": "Your job failed. Please try again or contact support."
+    }
   }
 }

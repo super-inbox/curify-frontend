@@ -306,5 +306,11 @@
     "builtForTeams": "Built for teams",
     "apiAvailable": "APIs available on request.",
     "apiContactCTA": "Let’s talk scope →"
+  },
+  "magic": {
+    "errors": {
+      "NO_SPEECH": "ビデオに音声がないようです。手話や無音の映像は文字起こしできません — 音声があるビデオをアップロードしてください。",
+      "default": "ジョブが失敗しました。再試行するか、サポートに連絡してください。"
+    }
   }
 }

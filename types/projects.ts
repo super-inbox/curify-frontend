@@ -70,6 +70,7 @@ export interface ProjectStatusUpdate {
   updated_at?: string;
   progress?: number;
   message?: string;
+  failure_code?: string | null;
   failure_reason?: string | null;
 }
 
