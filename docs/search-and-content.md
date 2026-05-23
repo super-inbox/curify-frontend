@@ -110,8 +110,8 @@ Live-prod failing queries that the catalog could theoretically host but does not
 
 | Query | First seen | Adjacent templates | Notes |
 | --- | --- | --- | --- |
-| `samurai` / `武士` | 2026-05-23 | template-fandom-character-grid-poster, template-historical-figure-profile-infographic, template-mbti-generic with character_set=samurai | Naruto MBTI exists but no samurai-named content. Could batch-gen 4-5 samurai character cards under fandom-grid + 1 historical-figure-profile of famous samurai. |
-| `genshin` / `原神` / `genshin impact` | 2026-05-23 | template-fandom-character-grid-poster, template-mbti-generic, template-pop-culture-matching-chart | Huge anime/game franchise. Could batch-gen 5-8 Genshin MBTI cards or fandom-grid examples. |
+| ~~`samurai` / `武士`~~ | 2026-05-23 | fandom-grid + historical-figure-profile + mbti-generic | ✅ Filled 2026-05-23 via `scripts/configs/samurai_genshin_2026-05-19.json` (3 records). All 5 query variants return 3 hits. |
+| ~~`genshin` / `原神` / `genshin impact`~~ | 2026-05-23 | fandom-grid + mbti-generic + pop-culture-matching-chart | ✅ Filled 2026-05-23 via `scripts/configs/samurai_genshin_2026-05-19.json` (3 records). All 3 query variants return 3 hits. |
 | `accion` | 2026-05-23 | template-mbti-marvel, template-battle, template-mbti-nba (English `action` already returns 126 hits across 13 templates) | Spanish-language gap. The rewriter still doesn't translate `accion` → `action` cleanly (no accent → model treats as gibberish). Either alias-top-up to add `accion` directly to action-content inspirations, or accept as a Spanish-accent edge case. |
 
 
