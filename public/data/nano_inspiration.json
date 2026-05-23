@@ -95680,5 +95680,407 @@
       "里程碑事件",
       "海报"
     ]
+  },
+  {
+    "id": "template-cartoon-action-visual-guide-infographic-baking",
+    "template_id": "template-cartoon-action-visual-guide-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cartoon-action-visual-guide-infographic-baking.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cartoon-action-visual-guide-infographic-baking-prev.jpg"
+    },
+    "params": {
+      "topic": "baking"
+    },
+    "locales": {
+      "en": {
+        "title": "baking"
+      }
+    },
+    "topics": [
+      "food-and-drink"
+    ],
+    "search_aliases": [
+      "baking",
+      "烘焙",
+      "cooking",
+      "food preparation",
+      "desserts",
+      "cake making",
+      "baking guide"
+    ]
+  },
+  {
+    "id": "template-cartoon-action-visual-guide-infographic-body-language",
+    "template_id": "template-cartoon-action-visual-guide-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cartoon-action-visual-guide-infographic-body-language.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cartoon-action-visual-guide-infographic-body-language-prev.jpg"
+    },
+    "params": {
+      "topic": "body language"
+    },
+    "locales": {
+      "en": {
+        "title": "body language"
+      }
+    },
+    "topics": [
+      "body"
+    ],
+    "search_aliases": [
+      "body language",
+      "肢体语言",
+      "nonverbal communication",
+      "gestures",
+      "expressions",
+      "communication skills"
+    ]
+  },
+  {
+    "id": "template-cartoon-action-visual-guide-infographic-dance-styles",
+    "template_id": "template-cartoon-action-visual-guide-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cartoon-action-visual-guide-infographic-dance-styles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cartoon-action-visual-guide-infographic-dance-styles-prev.jpg"
+    },
+    "params": {
+      "topic": "dance styles"
+    },
+    "locales": {
+      "en": {
+        "title": "dance styles"
+      }
+    },
+    "search_aliases": [
+      "dance styles",
+      "舞蹈风格",
+      "dance techniques",
+      "dance moves",
+      "choreography",
+      "performing arts"
+    ]
+  },
+  {
+    "id": "template-cartoon-action-visual-guide-infographic-medical-tools",
+    "template_id": "template-cartoon-action-visual-guide-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cartoon-action-visual-guide-infographic-medical-tools.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cartoon-action-visual-guide-infographic-medical-tools-prev.jpg"
+    },
+    "params": {
+      "topic": "medical tools"
+    },
+    "locales": {
+      "en": {
+        "title": "medical tools"
+      }
+    },
+    "topics": [
+      "body"
+    ],
+    "search_aliases": [
+      "medical tools",
+      "医疗工具",
+      "medical instruments",
+      "healthcare tools",
+      "surgical tools",
+      "medical equipment"
+    ]
+  },
+  {
+    "id": "template-cartoon-action-visual-guide-infographic-musical-performance",
+    "template_id": "template-cartoon-action-visual-guide-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cartoon-action-visual-guide-infographic-musical-performance.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cartoon-action-visual-guide-infographic-musical-performance-prev.jpg"
+    },
+    "params": {
+      "topic": "musical performance"
+    },
+    "locales": {
+      "en": {
+        "title": "musical performance"
+      }
+    },
+    "search_aliases": [
+      "musical performance",
+      "音乐表演",
+      "live music",
+      "concert",
+      "musical acts",
+      "performance art"
+    ]
+  },
+  {
+    "id": "template-cartoon-action-visual-guide-infographic-sweet-techniques",
+    "template_id": "template-cartoon-action-visual-guide-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cartoon-action-visual-guide-infographic-sweet-techniques.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cartoon-action-visual-guide-infographic-sweet-techniques-prev.jpg"
+    },
+    "params": {
+      "topic": "sweet techniques"
+    },
+    "locales": {
+      "en": {
+        "title": "sweet techniques"
+      }
+    },
+    "topics": [
+      "food-and-drink"
+    ],
+    "search_aliases": [
+      "甜点技巧",
+      "sweet techniques",
+      "baking techniques",
+      "dessert methods",
+      "food techniques",
+      "cooking tips",
+      "cartoon cooking guide"
+    ]
+  },
+  {
+    "id": "template-historical-figure-profile-infographic-famous-painters",
+    "template_id": "template-historical-figure-profile-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-figure-profile-infographic-famous-painters.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-figure-profile-infographic-famous-painters-prev.jpg"
+    },
+    "params": {
+      "topic": "famous painters"
+    },
+    "locales": {
+      "en": {
+        "title": "famous painters"
+      }
+    },
+    "search_aliases": [
+      "著名画家",
+      "famous painters",
+      "art history",
+      "painter profiles",
+      "famous artists",
+      "historical painters",
+      "artistic legends"
+    ]
+  },
+  {
+    "id": "template-historical-figure-profile-infographic-great-architects",
+    "template_id": "template-historical-figure-profile-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-figure-profile-infographic-great-architects.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-figure-profile-infographic-great-architects-prev.jpg"
+    },
+    "params": {
+      "topic": "great architects"
+    },
+    "locales": {
+      "en": {
+        "title": "great architects"
+      }
+    },
+    "search_aliases": [
+      "伟大建筑师",
+      "great architects",
+      "architectural history",
+      "architect profiles",
+      "famous architects",
+      "historical architects",
+      "design legends"
+    ]
+  },
+  {
+    "id": "template-historical-figure-profile-infographic-iconic-writers",
+    "template_id": "template-historical-figure-profile-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-figure-profile-infographic-iconic-writers.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-figure-profile-infographic-iconic-writers-prev.jpg"
+    },
+    "params": {
+      "topic": "iconic writers"
+    },
+    "locales": {
+      "en": {
+        "title": "iconic writers"
+      }
+    },
+    "search_aliases": [
+      "标志性作家",
+      "iconic writers",
+      "literary history",
+      "writer profiles",
+      "famous writers",
+      "historical writers",
+      "literary legends"
+    ]
+  },
+  {
+    "id": "template-historical-figure-profile-infographic-legendary-composers",
+    "template_id": "template-historical-figure-profile-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-figure-profile-infographic-legendary-composers.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-figure-profile-infographic-legendary-composers-prev.jpg"
+    },
+    "params": {
+      "topic": "legendary composers"
+    },
+    "locales": {
+      "en": {
+        "title": "legendary composers"
+      }
+    },
+    "search_aliases": [
+      "传奇作曲家",
+      "legendary composers",
+      "music history",
+      "composer profiles",
+      "famous composers",
+      "historical composers",
+      "musical legends"
+    ]
+  },
+  {
+    "id": "template-historical-figure-profile-infographic-renowned-scientists",
+    "template_id": "template-historical-figure-profile-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-figure-profile-infographic-renowned-scientists.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-figure-profile-infographic-renowned-scientists-prev.jpg"
+    },
+    "params": {
+      "topic": "renowned scientists"
+    },
+    "locales": {
+      "en": {
+        "title": "renowned scientists"
+      }
+    },
+    "search_aliases": [
+      "著名科学家",
+      "scientists",
+      "historical figures",
+      "infographic",
+      "vintage style",
+      "科学家",
+      "educational poster"
+    ]
+  },
+  {
+    "id": "template-product-theme-promotional-poster-baby-care-brand",
+    "template_id": "template-product-theme-promotional-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-product-theme-promotional-poster-baby-care-brand.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-product-theme-promotional-poster-baby-care-brand-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "baby care brand"
+      }
+    },
+    "topics": [
+      "kawaii"
+    ],
+    "search_aliases": [
+      "婴儿护理品牌",
+      "baby care brand",
+      "kawaii",
+      "promotional poster",
+      "product launch",
+      "ecommerce campaign",
+      "storefront banner"
+    ]
+  },
+  {
+    "id": "template-product-theme-promotional-poster-spring-beauty-festival",
+    "template_id": "template-product-theme-promotional-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-product-theme-promotional-poster-spring-beauty-festival.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-product-theme-promotional-poster-spring-beauty-festival-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "spring beauty festival"
+      }
+    },
+    "search_aliases": [
+      "春季美容节",
+      "spring beauty festival",
+      "promotional poster",
+      "seasonal theme",
+      "product launch",
+      "ecommerce campaign",
+      "storefront banner"
+    ]
+  },
+  {
+    "id": "template-product-theme-promotional-poster-summer-beach-sale",
+    "template_id": "template-product-theme-promotional-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-product-theme-promotional-poster-summer-beach-sale.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-product-theme-promotional-poster-summer-beach-sale-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "summer beach sale"
+      }
+    },
+    "search_aliases": [
+      "夏季海滩促销",
+      "summer beach sale",
+      "promotional poster",
+      "seasonal theme",
+      "product launch",
+      "ecommerce campaign",
+      "storefront banner"
+    ]
+  },
+  {
+    "id": "template-product-theme-promotional-poster-summer-snack-festival",
+    "template_id": "template-product-theme-promotional-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-product-theme-promotional-poster-summer-snack-festival.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-product-theme-promotional-poster-summer-snack-festival-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "summer snack festival"
+      }
+    },
+    "search_aliases": [
+      "夏季小吃节",
+      "summer snack festival",
+      "promotional poster",
+      "seasonal theme",
+      "product launch",
+      "ecommerce campaign",
+      "storefront banner"
+    ]
+  },
+  {
+    "id": "template-product-theme-promotional-poster-tech-gadget-sale",
+    "template_id": "template-product-theme-promotional-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-product-theme-promotional-poster-tech-gadget-sale.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-product-theme-promotional-poster-tech-gadget-sale-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "tech gadget sale"
+      }
+    },
+    "search_aliases": [
+      "科技产品促销",
+      "tech gadget sale",
+      "产品发布海报",
+      "电商活动海报",
+      "促销海报",
+      "季节性主题海报",
+      "商店横幅",
+      "产品销售宣传"
+    ]
   }
 ]

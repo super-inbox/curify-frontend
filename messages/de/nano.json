@@ -3950,5 +3950,66 @@
         ]
       }
     }
+  },
+  "template-cartoon-action-visual-guide-infographic": {
+    "category": "Cartoon Action Visual Guide",
+    "description": "Spaßiger, lehrreicher visueller Leitfaden zu einem gewählten Thema — Tanz, Backen, Musik, medizinische Werkzeuge, Sporttechniken — im freundlichen Cartoon-Stil mit klaren Schritt-für-Schritt-Aktionspanels.",
+    "title": "Cartoon Action Visual Guide Infographic",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt einen unterhaltsamen, lehrreichen visuellen Leitfaden zu einem gewählten handlungsorientierten Thema. Jedes Panel veranschaulicht eine spezifische Technik oder Bewegung mit Cartoonfiguren, klaren Anmerkungen und Schrittbeschriftungen. Freundlicher Cartoon-Kunststil, helle Farben, ansprechende Typografie — entwickelt für visuelle Lernende und kinderfreundliche Inhalte.",
+        "who": "Geeignet für Pädagogen, die praktische Fähigkeiten lehren, Content-Ersteller, die Erklärvideos erstellen, Kinderinhaltsverlage, Sport-/Tanz-/Koch-Influencer und kleine Unternehmen, die Techniken an Kunden vermitteln.",
+        "how": [
+          "Wählen Sie ein Thema für den visuellen Leitfaden (Tanzstile, medizinische Werkzeuge, musikalische Darbietungen, Backtechniken, süße Desserttechniken).",
+          "Generieren Sie die Cartoon-Action-Visual-Guide-Infografik."
+        ],
+        "prompts": [
+          "Generieren Sie eine Cartoon-Action-Visual-Guide-Infografik zu Tanzstilen.",
+          "Erstellen Sie ein visuelles Leitfaden-Poster zu Backtechniken.",
+          "Generieren Sie einen visuellen Leitfaden zur musikalischen Darbietung."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-profile-infographic": {
+    "category": "Infografik über historische Persönlichkeiten",
+    "description": "Lehrreiche Infografik im Vintage-Stil, die historische Persönlichkeiten und deren Werke profiliert — Architekten, Maler, Wissenschaftler, Schriftsteller, Komponisten — mit Porträts, Meisterwerken und wichtigen Fakten.",
+    "title": "Lehrreiche Infografik über historische Persönlichkeiten",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine lehrreiche Infografik im Vintage-Stil, die historische Persönlichkeiten (Architekten, Maler, Wissenschaftler, Schriftsteller, Komponisten) und deren bedeutende Beiträge profiliert. Das Layout kombiniert Porträts mit Beispielen ihrer Arbeiten, wichtigen Fakten, Epochenmarkierungen und Querverweisen zwischen den Persönlichkeiten. Warme Sepiatöne, zeitgemäße Typografie, Museumsposter-Feeling.",
+        "who": "Geeignet für Geschichtslehrer, Museumsteams, Biografie-Blogger, Homeschool-Curriculum-Entwickler und Content-Ersteller, die Wissenskarten-Serien veröffentlichen.",
+        "how": [
+          "Wählen Sie ein Thema über historische Persönlichkeiten (Große Architekten & ihre Gebäude, Berühmte Maler & ihre Meisterwerke, Renommierte Wissenschaftler & ihre Entdeckungen, Ikonische Schriftsteller & ihre Romane, Legendäre Komponisten & ihre Werke).",
+          "Generieren Sie die Infografik über historische Persönlichkeiten."
+        ],
+        "prompts": [
+          "Generieren Sie eine Infografik über renommierte Wissenschaftler und ihre Entdeckungen.",
+          "Erstellen Sie ein Poster über berühmte Maler und ihre Meisterwerke.",
+          "Generieren Sie eine lehrreiche Infografik über ikonische Schriftsteller und ihre Romane."
+        ]
+      }
+    }
+  },
+  "template-product-theme-promotional-poster": {
+    "category": "Produkt- & Themen-Werbeplakat",
+    "description": "Lebhaftes Werbeplakat für Produkteinführungen, Verkäufe oder saisonale Themen — unterstützt chinesischen, englischen oder zweisprachigen Titeltext. Ideal für E-Commerce-Kampagnen und Schaufensterbanner.",
+    "title": "Produkt-Themen-Werbeplakat",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein lebhaftes, auffälliges Werbeplakat zu einem gewählten Titel und Sprachstil. Das Layout kombiniert fette Titeltypografie, unterstützende Visuals, die zum Thema passen (Sommerverkauf, Frühjahrsneuerung, Technikpromotion, kindliches Wachstum), Produktmockups und einen Call-to-Action-Bereich. Drei Sprachmodi: Nur Chinesisch, Nur Englisch oder zweisprachig.",
+        "who": "Geeignet für E-Commerce-Händler, Social-Commerce-Verkäufer, Einzelhandelsmarketing-Teams, DTC-Marken-Designer und Content-Ersteller, die Kampagneninhalte für CN/EN-Märkte produzieren.",
+        "how": [
+          "Wählen Sie einen Werbetitel (夏日狂欢零食总动员, 春日焕新美丽绽放, 科技狂欢至高立减, 守护成长每一步, Summer Blast Sale).",
+          "Wählen Sie einen Sprachstil (Chinesisch, Englisch, Zweisprachig).",
+          "Generieren Sie das Werbeplakat."
+        ],
+        "prompts": [
+          "Generieren Sie ein zweisprachiges Werbeplakat zu 夏日狂欢零食总动员.",
+          "Erstellen Sie ein englisches Werbeplakat zu Summer Blast Sale.",
+          "Erstellen Sie ein 科技狂欢至高立减 chinesisches Werbeplakat."
+        ]
+      }
+    }
   }
 }

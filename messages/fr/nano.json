@@ -3950,5 +3950,66 @@
         ]
       }
     }
+  },
+  "template-cartoon-action-visual-guide-infographic": {
+    "category": "Guide Visuel d'Action en Dessin Animé",
+    "description": "Guide visuel éducatif amusant sur un sujet choisi — danse, pâtisserie, musique, outils médicaux, techniques sportives — dessiné dans un style de dessin animé amical avec des panneaux d'action clairs étape par étape.",
+    "title": "Infographie Guide Visuel d'Action en Dessin Animé",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère un guide visuel éducatif amusant sur un sujet orienté action choisi. Chaque panneau illustre une technique ou un mouvement spécifique à l'aide de personnages de dessin animé, avec des annotations claires et des étiquettes d'étape. Style artistique de dessin animé amical, couleurs vives, typographie accessible — conçu pour les apprenants visuels et le contenu adapté aux enfants.",
+        "who": "Convient aux éducateurs enseignant des compétences pratiques, aux créateurs de contenu réalisant des vidéos explicatives, aux éditeurs de contenu pour enfants, aux influenceurs dans les domaines du sport / danse / cuisine, et aux petites entreprises enseignant des techniques à leurs clients.",
+        "how": [
+          "Choisissez un sujet de guide visuel (Styles de Danse, Outils Médicaux, Performance Musicale, Techniques de Pâtisserie, Techniques de Desserts Sucrés).",
+          "Générez l'infographie du guide visuel d'action en dessin animé."
+        ],
+        "prompts": [
+          "Générez une infographie de guide visuel d'action en dessin animé sur les Styles de Danse.",
+          "Créez une affiche de guide visuel sur les Techniques de Pâtisserie.",
+          "Générez un guide visuel d'action sur la Performance Musicale."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-profile-infographic": {
+    "category": "Infographie Profil de Figure Historique",
+    "description": "Infographie éducative de style vintage profilant des figures historiques et leur travail — architectes, peintres, scientifiques, écrivains, compositeurs — avec des portraits, des chefs-d'œuvre et des faits clés.",
+    "title": "Infographie Éducative Profil de Figure Historique",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative de style vintage profilant des figures historiques (architectes, peintres, scientifiques, écrivains, compositeurs) et leurs contributions marquantes. La mise en page associe des portraits à des exemples de leur travail, des faits clés, des repères d'époque et des références croisées entre les figures. Tons sépia chauds, typographie appropriée à l'époque, ambiance d'affiche de musée.",
+        "who": "Convient aux éducateurs en histoire, aux équipes de contenu de musée, aux rédacteurs de blogs biographiques, aux concepteurs de programmes scolaires à domicile, et aux créateurs de contenu publiant des séries de cartes de connaissances.",
+        "how": [
+          "Choisissez un sujet de figure historique (Grands Architectes et Leurs Bâtiments, Peintres Célèbres et Leurs Chefs-d'œuvre, Scientifiques Renommés et Leurs Découvertes, Écrivains Iconiques et Leurs Romans, Compositeurs Légendaires et Leurs Œuvres).",
+          "Générez l'infographie de profil de figure historique."
+        ],
+        "prompts": [
+          "Générez une infographie sur les Scientifiques Renommés et Leurs Découvertes.",
+          "Créez une affiche de profil sur les Peintres Célèbres et Leurs Chefs-d'œuvre.",
+          "Générez une infographie éducative sur les Écrivains Iconiques et Leurs Romans."
+        ]
+      }
+    }
+  },
+  "template-product-theme-promotional-poster": {
+    "category": "Affiche Promotionnelle de Produit & Thème",
+    "description": "Affiche promotionnelle vibrante pour les lancements de produits, les ventes ou les thèmes saisonniers — prend en charge le texte de titre en chinois, anglais ou bilingue. Idéal pour les campagnes de commerce électronique et les bannières de vitrine.",
+    "title": "Affiche Promotionnelle de Thème de Produit",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche promotionnelle vibrante et accrocheuse autour d'un titre choisi et d'un style de langue. La mise en page combine une typographie de titre audacieuse, des visuels de soutien correspondant au thème (vente d'été, renouveau printanier, promotion technologique, croissance des enfants), des maquettes de produits et une section d'appel à l'action. Trois modes linguistiques : chinois uniquement, anglais uniquement ou bilingue.",
+        "who": "Convient aux commerçants de commerce électronique, aux vendeurs de commerce social, aux équipes de marketing de détail, aux concepteurs de marques DTC, et aux créateurs de contenu produisant des créations de campagne sur les marchés CN/EN.",
+        "how": [
+          "Choisissez un titre promotionnel (夏日狂欢零食总动员, 春日焕新美丽绽放, 科技狂欢至高立减, 守护成长每一步, Summer Blast Sale).",
+          "Choisissez un style de langue (Chinois, Anglais, Bilingue).",
+          "Générez l'affiche promotionnelle."
+        ],
+        "prompts": [
+          "Générez une affiche promotionnelle bilingue 夏日狂欢零食总动员.",
+          "Créez une affiche promotionnelle en anglais pour Summer Blast Sale.",
+          "Générez une affiche promotionnelle chinoise 科技狂欢至高立减."
+        ]
+      }
+    }
   }
 }
