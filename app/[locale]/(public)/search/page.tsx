@@ -318,7 +318,24 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // again per rewrite without duplicating the strict/relaxed two-pass.
   // Returns { scored, strictTplMatches, matchedTplIdsByI18n } for the
   // given tokens — caller merges across multiple calls when needed.
-  function scoreQueryTokens(tokens: ReturnType<typeof buildSearchTokens>) {
+  //
+  // `promoteAllUnderStrictTpl`:
+  //   - true  (default for the original-query pass): when a template's
+  //     blob strict-matches, ALL its inspirations are promoted to
+  //     score=100 strict. Gives broad recall: a query like "character"
+  //     that matches template-mbti-marvel's blob surfaces every Marvel
+  //     MBTI inspiration even if the literal token isn't in each one.
+  //   - false (for rewrite-pass scoring): inspirations must match the
+  //     query tokens IN THEIR OWN BLOB to be promoted. Stops a rewrite
+  //     like "watercolor flowers" from surfacing every inspiration
+  //     under a watercolor template, regardless of whether the specific
+  //     instance depicts flowers. Precision over recall — the right
+  //     trade for the rewrite path, because the rewrite is already a
+  //     reach beyond the original query.
+  function scoreQueryTokens(
+    tokens: ReturnType<typeof buildSearchTokens>,
+    promoteAllUnderStrictTpl: boolean = true,
+  ) {
     const bigramThr = bigramHitThreshold(tokens.bigrams.length);
     const relaxedThr = relaxedPrimaryThreshold(tokens.primary.length);
 
@@ -336,7 +353,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
 
     const scored: ScoredInspiration[] = [];
     for (const r of nanoInspiration as InspRecord[]) {
-      if (strictTpl.has(r.template_id)) {
+      if (promoteAllUnderStrictTpl && strictTpl.has(r.template_id)) {
         scored.push({ rec: r, score: 100, strict: true });
         continue;
       }
@@ -392,7 +409,11 @@ export default async function SearchPage({ params, searchParams }: Props) {
     if (rewrites.length > 0) {
       for (const rw of rewrites) {
         const rwTokens = buildSearchTokens(rw);
-        const rwResult = scoreQueryTokens(rwTokens);
+        // Inspiration-level matching only for rewrites — see the
+        // promoteAllUnderStrictTpl=false branch in scoreQueryTokens.
+        // Stops "watercolor flowers" from auto-promoting every
+        // inspiration under any watercolor template.
+        const rwResult = scoreQueryTokens(rwTokens, false);
         for (const id of rwResult.strictTpl) strictTemplateMatchesUnion.add(id);
         for (const id of rwResult.tplByI18n) matchedTemplateIdsByI18nUnion.add(id);
         for (const s of rwResult.scored) {
