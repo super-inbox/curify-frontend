@@ -80,7 +80,10 @@ export default function Magic() {
         }
 
         if (projectStatus === "FAILED") {
-          setError("Translation failed. Please try again.");
+          setError(
+            statusRes?.failure_reason ||
+              "Your job failed. Please try again or contact support."
+          );
           return;
         }
 
