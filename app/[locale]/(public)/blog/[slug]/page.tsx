@@ -239,7 +239,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article className="mx-auto max-w-3xl pt-20 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
+    <article className="mx-auto max-w-4xl pt-20 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
       <header className="mb-10">
         <div className="mb-6 max-w-md rounded-lg overflow-hidden shadow">
           {useMermaidThumbnail ? (
@@ -384,6 +384,13 @@ export default async function BlogPostPage({
           />
         )}
       </div>
+
+      {/* Optional template row — renders when the catalog entry has
+          `nanoTemplates`. Filters by groupKey prefix so each post only
+          surfaces the cards keyed to its own slug. */}
+      {blogData?.nanoTemplates?.length > 0 && (
+        <NanoBananaExamples locale={locale} blogSlug={slug} />
+      )}
 
       {/* Unified CTA — picks the right tool / coaching / contact target based
           on the post's category, with a per-slug override for creator-tools
