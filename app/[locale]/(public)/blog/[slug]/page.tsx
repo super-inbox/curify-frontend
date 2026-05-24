@@ -160,27 +160,41 @@ export default async function BlogPostPage({
 
   const currentKeys = availableKeys[blogConfig.namespace] || [];
 
-  // Safe translation helper that only accesses known keys
-  const safeT = (key: string, defaultValue = "") => {
+  // Safe translation helper that only accesses known keys. Accepts either a
+  // plain string default (legacy callers) or a next-intl-style options object
+  // `{ defaultValue: ... }`. Content components in this directory commonly use
+  // the options-object form to gate conditional rendering — e.g.
+  // `t("step4Title", { defaultValue: null }) && <Card />`. Without the unwrap
+  // below, missing keys returned the entire options object (truthy), causing
+  // empty step/section cards to render on posts that didn't define those keys.
+  const safeT = (key: string, defaultValueOrOptions: string | { defaultValue: unknown } = ""): string => {
+    const resolvedDefault =
+      defaultValueOrOptions && typeof defaultValueOrOptions === "object" && "defaultValue" in defaultValueOrOptions
+        ? defaultValueOrOptions.defaultValue
+        : defaultValueOrOptions;
+
     if (!currentKeys.includes(key)) {
-      return defaultValue;
+      // Cast preserves the consumer prop signature `(key, default?) => string`.
+      // When callers passed `{ defaultValue: null }` for conditional gating,
+      // the unwrapped null returns and is still falsy in JSX truthiness checks.
+      return resolvedDefault as string;
     }
-    
+
     // Use namespace-specific translations if available
     if (tNamespace) {
       try {
         const result = tNamespace(key);
         // If the result is the same as the key, it means translation wasn't found
         if (result === key) {
-          return defaultValue;
+          return resolvedDefault as string;
         }
         return result;
       } catch (error) {
-        return defaultValue;
+        return resolvedDefault as string;
       }
     }
-    
-    return defaultValue;
+
+    return resolvedDefault as string;
   };
 
   // Helper to check if a translation key exists
