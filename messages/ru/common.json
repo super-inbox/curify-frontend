@@ -305,6 +305,13 @@
     "relatedReading": "Связанное чтение",
     "builtForTeams": "Built for teams",
     "apiAvailable": "APIs available on request.",
-    "apiContactCTA": "Let’s talk scope →"
+    "apiContactCTA": "Let’s talk scope →",
+    "readTranscript": "Read transcript"
+  },
+  "magic": {
+    "errors": {
+      "NO_SPEECH": "В видео, похоже, нет слышимой речи. Мы не можем транскрибировать жестовый язык или немое видео — пожалуйста, загрузите видео с речевым аудио.",
+      "default": "Ваша задача не удалась. Пожалуйста, попробуйте снова или свяжитесь с поддержкой."
+    }
   }
 }

@@ -305,6 +305,13 @@
     "relatedReading": "İlgili okumalar",
     "builtForTeams": "Built for teams",
     "apiAvailable": "APIs available on request.",
-    "apiContactCTA": "Let’s talk scope →"
+    "apiContactCTA": "Let’s talk scope →",
+    "readTranscript": "Read transcript"
+  },
+  "magic": {
+    "errors": {
+      "NO_SPEECH": "Videoda duyulabilir bir konuşma yok gibi görünüyor. İşaret dilini veya sessiz görüntüleri transkribe edemiyoruz — lütfen konuşmalı bir ses içeren bir video yükleyin.",
+      "default": "İşleminiz başarısız oldu. Lütfen tekrar deneyin veya destekle iletişime geçin."
+    }
   }
 }

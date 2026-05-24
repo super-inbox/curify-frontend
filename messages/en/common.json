@@ -196,7 +196,8 @@
     "relatedReading": "Related reading",
     "builtForTeams": "Built for teams",
     "apiAvailable": "APIs available on request.",
-    "apiContactCTA": "Let’s talk scope →"
+    "apiContactCTA": "Let’s talk scope →",
+    "readTranscript": "Read transcript"
   },
   "useCasePage": {
     "toolsHeading": "Tools",
@@ -305,6 +306,12 @@
         "title": "What If History",
         "desc": "Create historical reversal infographic posters"
       }
+    }
+  },
+  "magic": {
+    "errors": {
+      "NO_SPEECH": "The video appears to have no audible speech. We can't transcribe sign language or silent footage — please upload a video with spoken audio.",
+      "default": "Your job failed. Please try again or contact support."
     }
   }
 }

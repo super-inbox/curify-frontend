@@ -48,7 +48,12 @@ export const TIER2_SUGGESTIONS: SuggestionEntry[] = [
   { slug: "sports",         label: "Sports",            emoji: "⚽", tier: 2, aliases: ["athletic", "athletics", "game", "soccer", "football"] },
   { slug: "architecture",   label: "Architecture",      emoji: "🏛️", tier: 2, aliases: ["building", "buildings", "structure", "landmark"] },
   { slug: "nostalgia",      label: "Nostalgia",         emoji: "📷", tier: 2, aliases: ["vintage", "retro", "classic", "old school"] },
-  { slug: "history",        label: "History",           emoji: "📜", tier: 2, aliases: ["historical", "past", "ancient", "era", "timeline"] },
+  // "timeline" intentionally NOT aliased to history — series-infographic /
+  // evolution / flowing-journey / clothing-evolution-poster are all
+  // timeline-shaped templates outside the history topic, and a "timeline"
+  // search should free-text-match all of them rather than redirecting to
+  // /topics/history.
+  { slug: "history",        label: "History",           emoji: "📜", tier: 2, aliases: ["historical", "past", "ancient", "era"] },
   { slug: "mbti",           label: "MBTI Personality",  emoji: "🧠", tier: 2, aliases: ["personality test", "personality type", "myers briggs"] },
   { slug: "dialogue",       label: "Dialogue Practice", emoji: "💬", tier: 2, aliases: ["conversation", "dialog", "chat"] },
   { slug: "beauty",         label: "Beauty & Skincare", emoji: "✨", tier: 2, aliases: ["skincare", "makeup", "cosmetic", "cosmetics"] },

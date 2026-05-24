@@ -3950,5 +3950,66 @@
         ]
       }
     }
+  },
+  "template-cartoon-action-visual-guide-infographic": {
+    "category": "Guía Visual de Acción en Caricatura",
+    "description": "Divertida guía visual educativa sobre un tema elegido — danza, repostería, música, herramientas médicas, técnicas deportivas — dibujada en un estilo de caricatura amigable con paneles de acción claros paso a paso.",
+    "title": "Infografía de Guía Visual de Acción en Caricatura",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una divertida guía visual educativa sobre un tema orientado a la acción. Cada panel ilustra una técnica o movimiento específico utilizando personajes de caricatura, con anotaciones claras y etiquetas de pasos. Estilo artístico de caricatura amigable, colores brillantes, tipografía accesible — diseñada para aprendices visuales y contenido apto para niños.",
+        "who": "Adecuado para educadores que enseñan habilidades prácticas, creadores de contenido que hacen videos explicativos, editores de contenido para niños, influencers de deportes / danza / cocina, y pequeñas empresas que enseñan técnicas a los clientes.",
+        "how": [
+          "Elige un tema para la guía visual (Estilos de Danza, Herramientas Médicas, Actuación Musical, Técnicas de Repostería, Técnicas de Postres Dulces).",
+          "Genera la infografía de guía visual de acción en caricatura."
+        ],
+        "prompts": [
+          "Genera una infografía de guía visual de acción en caricatura sobre Estilos de Danza.",
+          "Crea un cartel de guía visual sobre Técnicas de Repostería.",
+          "Genera una guía visual de acción sobre Actuación Musical."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-profile-infographic": {
+    "category": "Infografía de Perfil de Figura Histórica",
+    "description": "Infografía educativa de estilo vintage que perfila figuras históricas y su trabajo — arquitectos, pintores, científicos, escritores, compositores — con retratos, obras maestras y datos clave.",
+    "title": "Infografía Educativa de Perfil de Figura Histórica",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa de estilo vintage que perfila figuras históricas (arquitectos, pintores, científicos, escritores, compositores) y sus contribuciones destacadas. El diseño empareja retratos con ejemplos de su trabajo, datos clave, marcadores de época y referencias cruzadas entre figuras. Tonos sepia cálidos, tipografía apropiada para la época, sensación de cartel de museo.",
+        "who": "Adecuado para educadores de historia, equipos de contenido de museos, escritores de blogs biográficos, creadores de currículos para educación en casa, y creadores de contenido que publican series de tarjetas de conocimiento.",
+        "how": [
+          "Elige un tema de figura histórica (Grandes Arquitectos y Sus Edificios, Pintores Famosos y Sus Obras Maestras, Científicos Renombrados y Sus Descubrimientos, Escritores Icónicos y Sus Novelas, Compositores Legendarios y Sus Obras).",
+          "Genera la infografía de perfil de figura histórica."
+        ],
+        "prompts": [
+          "Genera una infografía sobre Científicos Renombrados y Sus Descubrimientos.",
+          "Crea un cartel de perfil sobre Pintores Famosos y Sus Obras Maestras.",
+          "Genera una infografía educativa sobre Escritores Icónicos y Sus Novelas."
+        ]
+      }
+    }
+  },
+  "template-product-theme-promotional-poster": {
+    "category": "Cartel Promocional de Producto y Tema",
+    "description": "Cartel promocional vibrante para lanzamientos de productos, ventas o temas estacionales — soporta texto de título en chino, inglés o bilingüe. Ideal para campañas de comercio electrónico y pancartas de tiendas.",
+    "title": "Cartel Promocional de Tema de Producto",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un cartel promocional vibrante y llamativo en torno a un título elegido y estilo de idioma. El diseño combina tipografía de título en negrita, visuales de apoyo que coinciden con el tema (venta de verano, renovación de primavera, promoción tecnológica, crecimiento infantil), maquetas de productos y una sección de llamada a la acción. Tres modos de idioma: solo chino, solo inglés o bilingüe.",
+        "who": "Adecuado para comerciantes de comercio electrónico, vendedores de comercio social, equipos de marketing minorista, diseñadores de marcas DTC, y creadores de contenido que producen creatividad de campaña en mercados CN/EN.",
+        "how": [
+          "Elige un título promocional (夏日狂欢零食总动员, 春日焕新美丽绽放, 科技狂欢至高立减, 守护成长每一步, Summer Blast Sale).",
+          "Elige un estilo de idioma (Chino, Inglés, Bilingüe).",
+          "Genera el cartel promocional."
+        ],
+        "prompts": [
+          "Genera un cartel promocional bilingüe de 夏日狂欢零食总动员.",
+          "Crea un cartel promocional en inglés de Summer Blast Sale.",
+          "Genera un cartel promocional chino de 科技狂欢至高立减."
+        ]
+      }
+    }
   }
 }

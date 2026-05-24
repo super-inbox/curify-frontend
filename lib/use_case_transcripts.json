@@ -1,0 +1,27 @@
+{
+  "_note": "Locale-aware video transcripts for the 6 use-case explainer videos. Keyed by the same {key} used in USE_CASE_VIDEO_KEY (lib/use-cases / app/[locale]/(public)/use-cases/[slug]/UseCaseClient.tsx). Rendered inside a collapsed <details> below each UseCaseVideo so the text is crawlable by Google (indexes inside closed details) without polluting the visual hero rhythm. Locale picker: zh → cn, otherwise → en.",
+  "dtc": {
+    "en": "Scale DTC Social Content with Curify\n\nTurn one product photo into hundreds of high-quality, watermark-free visuals in seconds — across multiple styles and formats.\n\nBuilt for global social platforms with ready-to-use templates, automated scheduling, and API support for batch operations.\n\nReduce design costs, scale content production, and accelerate overseas growth with AI-powered creative automation.",
+    "cn": "用 Curify，轻松解决跨境 DTC 社媒素材难题\n一张实拍图秒出百款高清场景图\n多风格全覆盖，无水印极速出图\n\n适配海外主流社媒，自带专属模板\n智能定时发布，全域精准曝光\n\n精简设计拉高投产，套餐灵活控本增效\n支持 API 批量运营\n低成本量产海量视觉，出海引流快人一步"
+  },
+  "seo": {
+    "en": "Curify — One Engine for Scalable Content and Programmatic SEO.\n\nTurn one idea into posters, flashcards, illustrations, multilingual dialogues, and more — generated instantly at scale. Produce original, commercial-ready content with no copyright concerns.\n\nBuilt for programmatic SEO from end to end. Generate structured pages, visual assets, internal links, and long-tail keyword content automatically to accelerate indexing and build sustainable organic traffic.\n\nFlexible deployment across cloud, on-premise, and API. Designed for education, brands, DTC, affiliate, and vertical content platforms — enabling low-cost, large-scale content production and faster growth.",
+    "cn": "Curify，一套引擎搞定规模化内容与 SEO 建站难题\n\n一个灵感秒变全场景商用资产\n一题多解矩阵生成，海报 / 闪卡 / 插画 / 多语种对话一键出\n原创素材无版权顾虑，全品类内容极速落地\n\n程序化 SEO 建站全链路适配\n自带枢纽辐射架构，批量生成主图、结构化页面与全自动内链\n长尾词页面快速收录，打造稳定流量矩阵\n\n多元场景灵活部署，云端 / 本地 / API 全支持\n教育、品牌、DTC、返利站、垂直门户全覆盖\n低成本规模化量产，内容与流量双增长快人一步"
+  },
+  "publisher": {
+    "en": "Curify accelerates educational content creation with AI. What once took illustrators and production teams months can now be created in minutes.\n\nGenerate large volumes of learning content quickly, consistently, and at scale, keep a unified visual style across every format. Bilingual learning materials and social media assets all from the same creative system, create multilingual content with ease.\n\nChoose from a growing library of educational templates covering language learning, science, culture, travel and early education. Flexible partnership options include AI engine licensing, content subscriptions and API integration.\n\nScale with Curify.",
+    "cn": "Curify，为教育内容创作按下加速键。\n\n传统创作耗时久效率低，插画师三个月工作量，借助 Curify 智能引擎，短时即可批量完成。\n\n统一 IP 画风，一套内容适配词汇卡、教学海报、社交配图等场景，实现全域复用。\n\n支持中英、英西、英日、英韩五大语种，轻松制作双语内容，节省翻译成本。\n\n多款主题模板全覆盖，内容一键多格式生成，适配各类教育出版需求。\n\n可选择引擎授权、内容订阅合作，亦可开放 API 接口,高效打造优质教育内容。"
+  },
+  "parents": {
+    "en": "I'd like to introduce Curify, a great platform for learning with your kids.\n\nOn Curify, you can make lovely flashcards to guide children's early education, generate and bulk download various vocabulary cards with one click, and play the cards with audio so your kid can listen by themselves.\n\nLearn today with Curify!",
+    "cn": "Curify 专为学习场景打造实用功能。\n\n家长批量制作童趣单词卡，轻松陪伴孩子语言启蒙;教师一键生成各类教学词卡，高效备课省心省力;学生也能快速整理词汇清单。\n\n软件支持一键生成朗读音频、批量下载词卡，快速制作优质学习资料，彻底告别繁琐低效的整理工作。"
+  },
+  "creators": {
+    "en": "I'd like to introduce Curify for expressing yourself and embracing a healthy life!\n\nWhen traveling, easily design travel plans, packing lists and delicate journals. For sports fans, create sports star posters, athlete profiles and basketball movement diagrams in one click.\n\nYou can also explore your personality, generate exclusive character portraits and lifestyle guides.\n\nExpress yourself with Curify!",
+    "cn": "热爱生活、玩转趣味创作，就用 Curify!\n\n出游旅行，轻松制作出行规划、收纳清单与精致旅行手账;\n热衷球类赛事，一键生成球星海报、球星 MBTI 图鉴和篮球动作分解图;\n闲暇探索自我，快速打造专属 MBTI 人设形象与生活习惯参考图，\n\n轻松解锁各类创意内容，满足你的全部创作乐趣。"
+  },
+  "design": {
+    "en": "I'd like to introduce Curify, a platform for creating professional-quality artworks!\n\nWith Curify, you can make e-commerce detail pages and commercial posters with ease, design idol posters, movie visuals and promotional graphics freely, generate character posters, creator introductions and anime group artworks.\n\nBring your ideas to life with Curify!",
+    "cn": "专业创意创作，就用 Curify!\n\n职场商务人士轻松制作电商详情页与商业产品海报;\n追星达人随心打造偶像海报、影视海报与影视宣传图文;\n动漫爱好者一键生成二次元角色海报、画师创作简介以及动漫人物群像图，\n\n高效打造各类高质量商用及兴趣创意视觉作品。"
+  }
+}

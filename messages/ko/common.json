@@ -305,6 +305,13 @@
     "relatedReading": "관련 읽기",
     "builtForTeams": "Built for teams",
     "apiAvailable": "APIs available on request.",
-    "apiContactCTA": "Let’s talk scope →"
+    "apiContactCTA": "Let’s talk scope →",
+    "readTranscript": "Read transcript"
+  },
+  "magic": {
+    "errors": {
+      "NO_SPEECH": "비디오에 들리는 음성이 없는 것 같습니다. 수화나 무음 영상을 전사할 수 없습니다. 음성이 있는 비디오를 업로드해 주세요.",
+      "default": "작업이 실패했습니다. 다시 시도하거나 지원팀에 문의해 주세요."
+    }
   }
 }
