@@ -4010,5 +4010,65 @@
         ]
       }
     }
+  },
+  "template-pet-life-journey-infographic": {
+    "category": "Pet Life Journey Infographic",
+    "description": "Warm 9-stage life journey infographic for any pet — from newborn to senior — with realistic photos, age labels, and key milestone descriptions. A must-read poster for new pet parents.",
+    "title": "Pet Life Journey Educational Infographic",
+    "content": {
+      "sections": {
+        "what": "This template generates an educational infographic that walks through a pet's full life journey in 9 photo-paired stages, from newborn to senior. Each stage carries an age label (1 week, 1 month, 1 year), a key milestone description, and a realistic photo of the pet at that age. Soft beige background, bold black typography, minimalist pet-care aesthetic.",
+        "who": "Suitable for pet content creators, veterinary educators, pet adoption / rescue organizations, pet product brands building owner-education content, and parents introducing a new pet to children.",
+        "how": [
+          "Pick a pet species (Cat, Dog, Hamster, Horse, Parrot, Rabbit, Guinea Pig, Fish).",
+          "Generate the 9-stage life journey infographic."
+        ],
+        "prompts": [
+          "Generate a Cat life journey infographic for new pet parents.",
+          "Create a Dog life stages educational poster.",
+          "Generate a Rabbit life journey infographic."
+        ]
+      }
+    }
+  },
+  "template-life-journey-curve-infographic": {
+    "category": "Life Journey Curve Infographic",
+    "description": "Warm vintage-style U-curve infographic mapping the emotional arc of a life journey — entrepreneurship, marriage, career, fitness, parenting, learning — with labeled stages and motivational takeaways.",
+    "title": "Life Journey Curve Educational Infographic",
+    "content": {
+      "sections": {
+        "what": "This template generates a warm educational infographic built around a U-shaped journey curve on a timeline. Stages are labeled (start, peak, drop, valley, recovery, success), each paired with a cartoon illustration, a short description, and a key takeaway. Y-axis tracks emotion or optimism level; bottom banner carries a motivational quote. Soft vintage illustration style, beige background, floral border accents.",
+        "who": "Suitable for self-improvement bloggers, coaches and therapists, career / fitness / parenting content creators, course instructors building module openers, and lifestyle publishers producing relatable narrative posters.",
+        "how": [
+          "Pick a life journey topic (Entrepreneurship, Marriage, Career, Fitness, Parenting, Learning).",
+          "Generate the U-curve life journey infographic."
+        ],
+        "prompts": [
+          "Generate an Entrepreneurship Journey Curve infographic.",
+          "Create a Marriage Satisfaction Curve poster.",
+          "Generate a Fitness Journey Curve educational infographic."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-habit-infographic": {
+    "category": "Lifestyle Habit Infographic",
+    "description": "Soft watercolor habit-building infographic with numbered tips, motivational sticky notes, and daily checklist elements — perfect for productivity, self-care, mindfulness, or fitness journeys.",
+    "title": "Lifestyle Habit Educational Infographic",
+    "content": {
+      "sections": {
+        "what": "This template generates an uplifting educational infographic centered on a habit-building theme. Layout: a hero illustration of a person practicing the habit, surrounded by numbered tip boxes with icons and descriptions, plus motivational sticky notes, book stacks, and daily checklist elements. Bottom banner carries key takeaways. Soft dreamy anime watercolor style, pastel palette tuned to the theme, encouraging hand-drawn typography.",
+        "who": "Suitable for productivity coaches, wellness creators, study-influencer accounts, self-improvement publishers, parenting and education writers, and brands producing aspirational lifestyle content.",
+        "how": [
+          "Pick a lifestyle habit topic (Productive Work Habits, Healthy Study Habits, Fitness Journey Guide, Mindful Living Tips, Self-Care Routine, Positive Mindset Habits).",
+          "Generate the lifestyle habit infographic."
+        ],
+        "prompts": [
+          "Generate a Productive Work Habits lifestyle infographic.",
+          "Create a Self-Care Routine watercolor poster.",
+          "Generate a Mindful Living Tips habit-building infographic."
+        ]
+      }
+    }
   }
 }

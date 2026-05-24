@@ -96287,5 +96287,315 @@
       "战斗",
       "历史"
     ]
+  },
+  {
+    "id": "template-life-journey-curve-infographic-career",
+    "template_id": "template-life-journey-curve-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-life-journey-curve-infographic-career.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-life-journey-curve-infographic-career-prev.jpg"
+    },
+    "params": {
+      "topic": "career"
+    },
+    "locales": {
+      "en": {
+        "title": "career"
+      }
+    },
+    "search_aliases": [
+      "职业",
+      "career",
+      "人生旅程",
+      "情感曲线",
+      "职业发展",
+      "生涯规划",
+      "温暖复古风格"
+    ]
+  },
+  {
+    "id": "template-life-journey-curve-infographic-entrepreneurship",
+    "template_id": "template-life-journey-curve-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-life-journey-curve-infographic-entrepreneurship.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-life-journey-curve-infographic-entrepreneurship-prev.jpg"
+    },
+    "params": {
+      "topic": "entrepreneurship"
+    },
+    "locales": {
+      "en": {
+        "title": "entrepreneurship"
+      }
+    },
+    "search_aliases": [
+      "创业",
+      "entrepreneurship",
+      "人生旅程",
+      "情感曲线",
+      "商业发展",
+      "企业家精神",
+      "温暖复古风格"
+    ]
+  },
+  {
+    "id": "template-life-journey-curve-infographic-fitness",
+    "template_id": "template-life-journey-curve-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-life-journey-curve-infographic-fitness.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-life-journey-curve-infographic-fitness-prev.jpg"
+    },
+    "params": {
+      "topic": "fitness"
+    },
+    "locales": {
+      "en": {
+        "title": "fitness"
+      }
+    },
+    "topics": [
+      "body"
+    ],
+    "search_aliases": [
+      "健身",
+      "fitness",
+      "身体健康",
+      "人生旅程",
+      "情感曲线",
+      "健康生活",
+      "温暖复古风格"
+    ]
+  },
+  {
+    "id": "template-life-journey-curve-infographic-learning",
+    "template_id": "template-life-journey-curve-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-life-journey-curve-infographic-learning.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-life-journey-curve-infographic-learning-prev.jpg"
+    },
+    "params": {
+      "topic": "learning"
+    },
+    "locales": {
+      "en": {
+        "title": "learning"
+      }
+    },
+    "topics": [
+      "school"
+    ],
+    "search_aliases": [
+      "学习",
+      "learning",
+      "教育",
+      "人生旅程",
+      "情感曲线",
+      "学校",
+      "温暖复古风格"
+    ]
+  },
+  {
+    "id": "template-life-journey-curve-infographic-marriage",
+    "template_id": "template-life-journey-curve-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-life-journey-curve-infographic-marriage.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-life-journey-curve-infographic-marriage-prev.jpg"
+    },
+    "params": {
+      "topic": "marriage"
+    },
+    "locales": {
+      "en": {
+        "title": "marriage"
+      }
+    },
+    "topics": [
+      "family"
+    ],
+    "search_aliases": [
+      "婚姻",
+      "marriage",
+      "家庭",
+      "人生旅程",
+      "情感曲线",
+      "伴侣关系",
+      "温暖复古风格"
+    ]
+  },
+  {
+    "id": "template-life-journey-curve-infographic-parenting",
+    "template_id": "template-life-journey-curve-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-life-journey-curve-infographic-parenting.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-life-journey-curve-infographic-parenting-prev.jpg"
+    },
+    "params": {
+      "topic": "parenting"
+    },
+    "locales": {
+      "en": {
+        "title": "parenting"
+      }
+    },
+    "topics": [
+      "family"
+    ],
+    "search_aliases": [
+      "parenting",
+      "育儿",
+      "family",
+      "life journey",
+      "emotional arc",
+      "教育信息图",
+      "parenting stages"
+    ]
+  },
+  {
+    "id": "template-pet-life-journey-infographic-cat",
+    "template_id": "template-pet-life-journey-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pet-life-journey-infographic-cat.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pet-life-journey-infographic-cat-prev.jpg"
+    },
+    "params": {
+      "pet_name": "cat"
+    },
+    "locales": {
+      "en": {
+        "title": "cat"
+      }
+    },
+    "topics": [
+      "casual"
+    ],
+    "search_aliases": [
+      "cat",
+      "猫",
+      "pet life journey",
+      "宠物生活旅程",
+      "new pet parents",
+      "infographic",
+      "cat milestones"
+    ]
+  },
+  {
+    "id": "template-pet-life-journey-infographic-dog",
+    "template_id": "template-pet-life-journey-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pet-life-journey-infographic-dog.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pet-life-journey-infographic-dog-prev.jpg"
+    },
+    "params": {
+      "pet_name": "dog"
+    },
+    "locales": {
+      "en": {
+        "title": "dog"
+      }
+    },
+    "topics": [
+      "casual"
+    ],
+    "search_aliases": [
+      "dog",
+      "狗",
+      "pet life journey",
+      "宠物生活旅程",
+      "new pet parents",
+      "infographic",
+      "dog milestones"
+    ]
+  },
+  {
+    "id": "template-pet-life-journey-infographic-hamster",
+    "template_id": "template-pet-life-journey-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pet-life-journey-infographic-hamster.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pet-life-journey-infographic-hamster-prev.jpg"
+    },
+    "params": {
+      "pet_name": "hamster"
+    },
+    "locales": {
+      "en": {
+        "title": "hamster"
+      }
+    },
+    "search_aliases": [
+      "hamster",
+      "仓鼠",
+      "pet life journey",
+      "宠物生活旅程",
+      "new pet parents",
+      "infographic",
+      "hamster milestones"
+    ]
+  },
+  {
+    "id": "template-pet-life-journey-infographic-horse",
+    "template_id": "template-pet-life-journey-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pet-life-journey-infographic-horse.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pet-life-journey-infographic-horse-prev.jpg"
+    },
+    "params": {
+      "pet_name": "horse"
+    },
+    "locales": {
+      "en": {
+        "title": "horse"
+      }
+    },
+    "search_aliases": [
+      "horse",
+      "马",
+      "pet life journey",
+      "宠物生活旅程",
+      "new pet parents",
+      "infographic",
+      "horse milestones"
+    ]
+  },
+  {
+    "id": "template-pet-life-journey-infographic-parrot",
+    "template_id": "template-pet-life-journey-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pet-life-journey-infographic-parrot.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pet-life-journey-infographic-parrot-prev.jpg"
+    },
+    "params": {
+      "pet_name": "parrot"
+    },
+    "locales": {
+      "en": {
+        "title": "parrot"
+      }
+    },
+    "search_aliases": [
+      "parrot",
+      "鹦鹉",
+      "pet life journey",
+      "pet infographic",
+      "pet milestones",
+      "新宠物父母",
+      "动物教育海报",
+      "宠物成长"
+    ]
+  },
+  {
+    "id": "template-pet-life-journey-infographic-rabbit",
+    "template_id": "template-pet-life-journey-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pet-life-journey-infographic-rabbit.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pet-life-journey-infographic-rabbit-prev.jpg"
+    },
+    "params": {
+      "pet_name": "rabbit"
+    },
+    "locales": {
+      "en": {
+        "title": "rabbit"
+      }
+    }
   }
 ]

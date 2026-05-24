@@ -4011,5 +4011,65 @@
         ]
       }
     }
+  },
+  "template-pet-life-journey-infographic": {
+    "category": "Infographie du parcours de vie des animaux de compagnie",
+    "description": "Infographie chaleureuse en 9 étapes du parcours de vie pour tout animal de compagnie — du nouveau-né au senior — avec des photos réalistes, des étiquettes d'âge et des descriptions des étapes clés. Un poster incontournable pour les nouveaux propriétaires d'animaux.",
+    "title": "Infographie éducative du parcours de vie des animaux de compagnie",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative qui retrace le parcours de vie complet d'un animal de compagnie en 9 étapes accompagnées de photos, du nouveau-né au senior. Chaque étape porte une étiquette d'âge (1 semaine, 1 mois, 1 an), une description de l'étape clé et une photo réaliste de l'animal à cet âge. Fond beige doux, typographie noire en gras, esthétique minimaliste de soins pour animaux.",
+        "who": "Convient aux créateurs de contenu pour animaux, aux éducateurs vétérinaires, aux organisations d'adoption / de sauvetage d'animaux, aux marques de produits pour animaux créant du contenu éducatif pour les propriétaires, et aux parents présentant un nouvel animal aux enfants.",
+        "how": [
+          "Choisissez une espèce d'animal (Chat, Chien, Hamster, Cheval, Perroquet, Lapin, Cobaye, Poisson).",
+          "Générez l'infographie du parcours de vie en 9 étapes."
+        ],
+        "prompts": [
+          "Générez une infographie du parcours de vie d'un chat pour les nouveaux propriétaires d'animaux.",
+          "Créez un poster éducatif sur les étapes de vie d'un chien.",
+          "Générez une infographie du parcours de vie d'un lapin."
+        ]
+      }
+    }
+  },
+  "template-life-journey-curve-infographic": {
+    "category": "Infographie de la courbe du parcours de vie",
+    "description": "Infographie chaleureuse de style vintage en U cartographiant l'arc émotionnel d'un parcours de vie — entrepreneuriat, mariage, carrière, fitness, parentalité, apprentissage — avec des étapes étiquetées et des enseignements motivants.",
+    "title": "Infographie éducative de la courbe du parcours de vie",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative chaleureuse construite autour d'une courbe de parcours en U sur une chronologie. Les étapes sont étiquetées (début, pic, chute, vallée, récupération, succès), chacune accompagnée d'une illustration de dessin animé, d'une courte description et d'un enseignement clé. L'axe Y suit le niveau d'émotion ou d'optimisme ; la bannière inférieure porte une citation motivante. Style d'illustration vintage doux, fond beige, accents de bordure florale.",
+        "who": "Convient aux blogueurs de développement personnel, aux coachs et thérapeutes, aux créateurs de contenu sur la carrière / le fitness / la parentalité, aux instructeurs de cours créant des ouvertures de module, et aux éditeurs de style de vie produisant des posters narratifs pertinents.",
+        "how": [
+          "Choisissez un sujet de parcours de vie (Entrepreneuriat, Mariage, Carrière, Fitness, Parentalité, Apprentissage).",
+          "Générez l'infographie de la courbe de parcours en U."
+        ],
+        "prompts": [
+          "Générez une infographie de la courbe du parcours entrepreneurial.",
+          "Créez un poster de la courbe de satisfaction du mariage.",
+          "Générez une infographie éducative de la courbe de parcours de fitness."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-habit-infographic": {
+    "category": "Infographie des habitudes de vie",
+    "description": "Infographie douce de construction d'habitudes en aquarelle avec des conseils numérotés, des notes autocollantes motivantes et des éléments de liste de contrôle quotidienne — parfaite pour la productivité, le bien-être, la pleine conscience ou les parcours de fitness.",
+    "title": "Infographie éducative des habitudes de vie",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative inspirante centrée sur un thème de construction d'habitudes. Mise en page : une illustration héroïque d'une personne pratiquant l'habitude, entourée de boîtes de conseils numérotées avec des icônes et des descriptions, plus des notes autocollantes motivantes, des piles de livres et des éléments de liste de contrôle quotidienne. La bannière inférieure porte des enseignements clés. Style aquarelle anime doux et rêveur, palette pastel accordée au thème, typographie dessinée à la main encourageante.",
+        "who": "Convient aux coachs de productivité, aux créateurs de bien-être, aux comptes d'influenceurs d'étude, aux éditeurs de développement personnel, aux écrivains sur la parentalité et l'éducation, et aux marques produisant du contenu de style de vie aspirant.",
+        "how": [
+          "Choisissez un sujet d'habitude de vie (Habitudes de travail productives, Habitudes d'étude saines, Guide de parcours de fitness, Conseils de vie consciente, Routine de soins personnels, Habitudes de mentalité positive).",
+          "Générez l'infographie des habitudes de vie."
+        ],
+        "prompts": [
+          "Générez une infographie de style de vie sur les habitudes de travail productives.",
+          "Créez un poster aquarelle de routine de soins personnels.",
+          "Générez une infographie de construction d'habitudes de conseils de vie consciente."
+        ]
+      }
+    }
   }
 }

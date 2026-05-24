@@ -4011,5 +4011,65 @@
         ]
       }
     }
+  },
+  "template-pet-life-journey-infographic": {
+    "category": "Evcil Hayvan Yaşam Yolculuğu Bilgilendirme Grafiği",
+    "description": "Herhangi bir evcil hayvan için sıcak 9 aşamalı yaşam yolculuğu grafiği — yenidoğandan yaşlıya — gerçekçi fotoğraflar, yaş etiketleri ve önemli kilometre taşları açıklamaları ile. Yeni evcil hayvan sahipleri için okunması gereken bir poster.",
+    "title": "Evcil Hayvan Yaşam Yolculuğu Eğitici Bilgilendirme Grafiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir evcil hayvanın tam yaşam yolculuğunu 9 fotoğraf eşleşmeli aşamada anlatan eğitici bir bilgilendirme grafiği oluşturur, yenidoğandan yaşlıya kadar. Her aşama bir yaş etiketi (1 hafta, 1 ay, 1 yıl), bir ana kilometre taşı açıklaması ve o yaşta evcil hayvanın gerçekçi bir fotoğrafını taşır. Yumuşak bej arka plan, kalın siyah tipografi, minimalist evcil hayvan bakımı estetiği.",
+        "who": "Evcil hayvan içerik üreticileri, veteriner eğitmenleri, evcil hayvan sahiplenme / kurtarma organizasyonları, sahip eğitimi içeriği oluşturan evcil hayvan ürün markaları ve çocuklara yeni bir evcil hayvan tanıtan ebeveynler için uygundur.",
+        "how": [
+          "Bir evcil hayvan türü seçin (Kedi, Köpek, Hamster, At, Papağan, Tavşan, Kobay, Balık).",
+          "9 aşamalı yaşam yolculuğu grafiğini oluşturun."
+        ],
+        "prompts": [
+          "Yeni evcil hayvan sahipleri için bir Kedi yaşam yolculuğu grafiği oluşturun.",
+          "Bir Köpek yaşam aşamaları eğitici posteri oluşturun.",
+          "Bir Tavşan yaşam yolculuğu grafiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-life-journey-curve-infographic": {
+    "category": "Yaşam Yolculuğu Eğrisi Bilgilendirme Grafiği",
+    "description": "Girişimcilik, evlilik, kariyer, fitness, ebeveynlik, öğrenme gibi yaşam yolculuğunun duygusal eğrisini haritalayan sıcak vintage tarzı U-eğrisi grafiği — etiketli aşamalar ve motive edici çıkarımlar ile.",
+    "title": "Yaşam Yolculuğu Eğrisi Eğitici Bilgilendirme Grafiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir zaman çizelgesi üzerinde U şeklinde bir yolculuk eğrisi etrafında inşa edilmiş sıcak bir eğitici bilgilendirme grafiği oluşturur. Aşamalar etiketlenmiştir (başlangıç, zirve, düşüş, vadi, iyileşme, başarı), her biri bir karikatür illüstrasyonu, kısa bir açıklama ve bir ana çıkarım ile eşleştirilmiştir. Y ekseni duygu veya iyimserlik seviyesini takip eder; alt banner motive edici bir alıntı taşır. Yumuşak vintage illüstrasyon tarzı, bej arka plan, çiçekli kenar süslemeleri.",
+        "who": "Kendini geliştirme blog yazarları, koçlar ve terapistler, kariyer / fitness / ebeveynlik içerik üreticileri, modül açılışları oluşturan kurs eğitmenleri ve ilişkilendirilebilir anlatı posterleri üreten yaşam tarzı yayıncıları için uygundur.",
+        "how": [
+          "Bir yaşam yolculuğu konusu seçin (Girişimcilik, Evlilik, Kariyer, Fitness, Ebeveynlik, Öğrenme).",
+          "U-eğrisi yaşam yolculuğu grafiğini oluşturun."
+        ],
+        "prompts": [
+          "Bir Girişimcilik Yolculuğu Eğrisi grafiği oluşturun.",
+          "Bir Evlilik Memnuniyeti Eğrisi posteri oluşturun.",
+          "Bir Fitness Yolculuğu Eğrisi eğitici bilgilendirme grafiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-habit-infographic": {
+    "category": "Yaşam Tarzı Alışkanlığı Bilgilendirme Grafiği",
+    "description": "Numaralı ipuçları, motive edici notlar ve günlük kontrol listesi unsurları ile yumuşak suluboya alışkanlık oluşturma grafiği — verimlilik, öz bakım, mindfulness veya fitness yolculukları için mükemmel.",
+    "title": "Yaşam Tarzı Alışkanlığı Eğitici Bilgilendirme Grafiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir alışkanlık oluşturma teması etrafında merkezlenmiş neşeli bir eğitici bilgilendirme grafiği oluşturur. Düzen: alışkanlığı uygulayan bir kişinin kahraman illüstrasyonu, numaralı ipucu kutuları, simgeler ve açıklamalar ile çevrili, ayrıca motive edici notlar, kitap yığınları ve günlük kontrol listesi unsurları. Alt banner ana çıkarımları taşır. Yumuşak hayali anime suluboya tarzı, temaya uygun pastel palet, cesaret verici el yazısı tipografi.",
+        "who": "Verimlilik koçları, sağlık yaratıcıları, çalışma etkileyici hesapları, kendini geliştirme yayıncıları, ebeveynlik ve eğitim yazarları ve aspirasyonel yaşam tarzı içeriği üreten markalar için uygundur.",
+        "how": [
+          "Bir yaşam tarzı alışkanlığı konusu seçin (Verimli Çalışma Alışkanlıkları, Sağlıklı Çalışma Alışkanlıkları, Fitness Yolculuğu Rehberi, Mindful Yaşam İpuçları, Öz Bakım Rutini, Pozitif Zihinseti Alışkanlıkları).",
+          "Yaşam tarzı alışkanlığı grafiğini oluşturun."
+        ],
+        "prompts": [
+          "Verimli Çalışma Alışkanlıkları yaşam grafiğini oluşturun.",
+          "Bir Öz Bakım Rutini suluboya posteri oluşturun.",
+          "Mindful Yaşam İpuçları alışkanlık oluşturma grafiğini oluşturun."
+        ]
+      }
+    }
   }
 }

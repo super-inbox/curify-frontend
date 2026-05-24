@@ -8088,5 +8088,121 @@
       "for-dtc-brands",
       "for-designers"
     ]
+  },
+  {
+    "id": "template-pet-life-journey-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Pet Life Journey Infographic Creator) Create an educational and warm infographic poster titled '{pet_name}'s life journey'. Layout: A clean grid layout with 9 stages of the pet's life (from newborn to senior), each paired with a realistic photo of the pet at that age, a clear label (e.g., '1 week', '1 month', '1 year old'), and a short description of key milestones. Add a subtitle like '({pet_name} parents must read this)' below the main title. Style: Soft beige background, simple bold black typography, clean and minimalist design, pet-focused and easy-to-read layout, direct high-quality image generation. Subject: '{pet_name} life stages infographic for pet owners'.",
+        "parameters": [
+          {
+            "name": "pet_name",
+            "label": "Pet/Animal Species",
+            "type": "text",
+            "placeholder": [
+              "Cat",
+              "Dog",
+              "Hamster",
+              "Horse",
+              "Parrot",
+              "Rabbit",
+              "Guinea Pig",
+              "Fish"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-pet-life-journey-infographic-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "learning",
+      "guides",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-24",
+    "use_cases": [
+      "for-creators",
+      "for-publishers",
+      "for-parents"
+    ]
+  },
+  {
+    "id": "template-life-journey-curve-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Life Journey Curve Infographic Creator) Create a warm, educational infographic poster titled '{topic}'. Layout: A U-shaped journey curve on a timeline with labeled stages (start, peak, drop, valley, recovery, success), each paired with cute cartoon illustrations, short descriptions, and key takeaway notes. Include a y-axis for emotion/optimism level and a bottom banner with a motivational quote. Style: Soft vintage illustration art style, warm beige background, floral border accents, clear bold typography, color-coded curve phases, friendly and approachable tone, direct high-quality image generation. Subject: '{topic} journey curve infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Life Journey Topic",
+            "type": "text",
+            "placeholder": [
+              "Entrepreneurship Journey Curve",
+              "Marriage Satisfaction Curve",
+              "Career Satisfaction Curve",
+              "Fitness Journey Curve",
+              "Parenting Satisfaction Curve",
+              "Learning Progress Curve"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-life-journey-curve-infographic-prev.jpg",
+    "topics": [
+      "learning",
+      "lifestyle",
+      "guides",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-24",
+    "use_cases": [
+      "for-creators",
+      "for-publishers",
+      "for-parents"
+    ]
+  },
+  {
+    "id": "template-lifestyle-habit-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Lifestyle Habit Infographic Creator) Create a warm, uplifting infographic poster titled '{topic}'. Layout: A centered illustration of a person practicing the habit, surrounded by numbered tip boxes with simple icons and descriptions, plus motivational sticky notes, book stacks, and daily checklist elements. Add a cheerful banner at the bottom with key takeaways. Style: Soft, dreamy anime watercolor art style, sunlit outdoor/cozy background, soft pastel color palette matching the theme, friendly hand-drawn elements, and encouraging typography. Direct high-quality image generation. Subject: '{topic} lifestyle habit guide infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Lifestyle Habit Topic",
+            "type": "text",
+            "placeholder": [
+              "Productive Work Habits",
+              "Healthy Study Habits",
+              "Fitness Journey Guide",
+              "Mindful Living Tips",
+              "Self-Care Routine",
+              "Positive Mindset Habits"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-cute-lifestyle-habit-infographic-productive-work-habits-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "learning",
+      "guides",
+      "design"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-24",
+    "use_cases": [
+      "for-creators",
+      "for-parents",
+      "for-publishers"
+    ]
   }
 ]
