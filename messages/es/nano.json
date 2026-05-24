@@ -4011,5 +4011,65 @@
         ]
       }
     }
+  },
+  "template-pet-life-journey-infographic": {
+    "category": "Infografía del Viaje de Vida de Mascotas",
+    "description": "Infografía cálida de 9 etapas del viaje de vida para cualquier mascota, desde recién nacido hasta senior, con fotos realistas, etiquetas de edad y descripciones de hitos clave. Un cartel imprescindible para nuevos dueños de mascotas.",
+    "title": "Infografía Educativa del Viaje de Vida de Mascotas",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa que recorre el viaje completo de vida de una mascota en 9 etapas emparejadas con fotos, desde recién nacido hasta senior. Cada etapa lleva una etiqueta de edad (1 semana, 1 mes, 1 año), una descripción de hito clave y una foto realista de la mascota a esa edad. Fondo beige suave, tipografía negra en negrita, estética minimalista de cuidado de mascotas.",
+        "who": "Adecuado para creadores de contenido sobre mascotas, educadores veterinarios, organizaciones de adopción/rescate de mascotas, marcas de productos para mascotas que crean contenido educativo para dueños y padres que presentan una nueva mascota a los niños.",
+        "how": [
+          "Elige una especie de mascota (Gato, Perro, Hámster, Caballo, Loro, Conejo, Cobaya, Pez).",
+          "Genera la infografía del viaje de vida de 9 etapas."
+        ],
+        "prompts": [
+          "Genera una infografía del viaje de vida de un Gato para nuevos dueños de mascotas.",
+          "Crea un cartel educativo sobre las etapas de vida de un Perro.",
+          "Genera una infografía del viaje de vida de un Conejo."
+        ]
+      }
+    }
+  },
+  "template-life-journey-curve-infographic": {
+    "category": "Infografía de Curva del Viaje de Vida",
+    "description": "Infografía cálida de estilo vintage en forma de U que mapea el arco emocional de un viaje de vida: emprendimiento, matrimonio, carrera, fitness, crianza, aprendizaje, con etapas etiquetadas y conclusiones motivacionales.",
+    "title": "Infografía Educativa de Curva del Viaje de Vida",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa cálida construida alrededor de una curva de viaje en forma de U en una línea de tiempo. Las etapas están etiquetadas (inicio, pico, caída, valle, recuperación, éxito), cada una emparejada con una ilustración de caricatura, una breve descripción y una conclusión clave. El eje Y rastrea el nivel de emoción u optimismo; el banner inferior lleva una cita motivacional. Estilo de ilustración vintage suave, fondo beige, acentos de borde floral.",
+        "who": "Adecuado para bloggers de auto-mejoramiento, coaches y terapeutas, creadores de contenido sobre carrera/fitness/crianza, instructores de cursos que crean aperturas de módulos y editores de estilo de vida que producen carteles narrativos relacionados.",
+        "how": [
+          "Elige un tema de viaje de vida (Emprendimiento, Matrimonio, Carrera, Fitness, Crianza, Aprendizaje).",
+          "Genera la infografía de curva de viaje de vida en forma de U."
+        ],
+        "prompts": [
+          "Genera una infografía de Curva del Viaje de Emprendimiento.",
+          "Crea un cartel de Curva de Satisfacción Matrimonial.",
+          "Genera una infografía educativa de Curva del Viaje de Fitness."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-habit-infographic": {
+    "category": "Infografía de Hábitos de Estilo de Vida",
+    "description": "Infografía suave de construcción de hábitos en acuarela con consejos numerados, notas adhesivas motivacionales y elementos de lista de verificación diaria, perfecta para productividad, autocuidado, atención plena o viajes de fitness.",
+    "title": "Infografía Educativa de Hábitos de Estilo de Vida",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa inspiradora centrada en un tema de construcción de hábitos. Diseño: una ilustración principal de una persona practicando el hábito, rodeada de cajas de consejos numerados con íconos y descripciones, además de notas adhesivas motivacionales, pilas de libros y elementos de lista de verificación diaria. El banner inferior lleva conclusiones clave. Estilo de acuarela de anime suave y soñador, paleta pastel ajustada al tema, tipografía dibujada a mano alentadora.",
+        "who": "Adecuado para coaches de productividad, creadores de bienestar, cuentas de influencers de estudio, editores de auto-mejoramiento, escritores de crianza y educación, y marcas que producen contenido aspiracional de estilo de vida.",
+        "how": [
+          "Elige un tema de hábito de estilo de vida (Hábitos de Trabajo Productivos, Hábitos de Estudio Saludables, Guía de Viaje de Fitness, Consejos de Vida Consciente, Rutina de Autocuidado, Hábitos de Mentalidad Positiva).",
+          "Genera la infografía de hábitos de estilo de vida."
+        ],
+        "prompts": [
+          "Genera una infografía de estilo de vida de Hábitos de Trabajo Productivos.",
+          "Crea un cartel de acuarela de Rutina de Autocuidado.",
+          "Genera una infografía de construcción de hábitos de Consejos de Vida Consciente."
+        ]
+      }
+    }
   }
 }

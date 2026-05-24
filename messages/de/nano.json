@@ -4011,5 +4011,65 @@
         ]
       }
     }
+  },
+  "template-pet-life-journey-infographic": {
+    "category": "Infografik zur Lebensreise von Haustieren",
+    "description": "Wärmende Infografik zur Lebensreise in 9 Phasen für jedes Haustier – von Neugeborenen bis Senioren – mit realistischen Fotos, Altersangaben und wichtigen Meilensteinbeschreibungen. Ein Muss für neue Haustiereltern.",
+    "title": "Bildungsinfografik zur Lebensreise von Haustieren",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine Bildungsinfografik, die die vollständige Lebensreise eines Haustiers in 9 foto-paarigen Phasen von Neugeborenen bis Senioren darstellt. Jede Phase trägt eine Altersangabe (1 Woche, 1 Monat, 1 Jahr), eine Beschreibung des wichtigsten Meilensteins und ein realistisches Foto des Haustiers in diesem Alter. Sanfter beiger Hintergrund, fettgedruckte schwarze Typografie, minimalistisches Haustierpflege-Ästhetik.",
+        "who": "Geeignet für Haustierinhaltsanbieter, veterinärmedizinische Ausbilder, Tieradoptions-/Rettungsorganisationen, Haustierproduktmarken, die Inhalte zur Aufklärung von Besitzern erstellen, und Eltern, die ein neues Haustier Kindern vorstellen.",
+        "how": [
+          "Wählen Sie eine Haustierart (Katze, Hund, Hamster, Pferd, Papagei, Kaninchen, Meerschweinchen, Fisch).",
+          "Generieren Sie die 9-phasige Lebensreise-Infografik."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zur Lebensreise von Katzen für neue Haustiereltern.",
+          "Erstellen Sie ein Bildungsplakat zu den Lebensphasen von Hunden.",
+          "Generieren Sie eine Infografik zur Lebensreise von Kaninchen."
+        ]
+      }
+    }
+  },
+  "template-life-journey-curve-infographic": {
+    "category": "Infografik zur Lebensreise-Kurve",
+    "description": "Wärmende Infografik im Vintage-Stil, die den emotionalen Verlauf einer Lebensreise abbildet – Unternehmertum, Ehe, Karriere, Fitness, Elternschaft, Lernen – mit beschrifteten Phasen und motivierenden Erkenntnissen.",
+    "title": "Bildungsinfografik zur Lebensreise-Kurve",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine warme Bildungsinfografik, die sich um eine U-förmige Reise-Kurve auf einer Zeitachse dreht. Phasen sind beschriftet (Beginn, Höhepunkt, Abfall, Tal, Erholung, Erfolg), jede mit einer Cartoon-Illustration, einer kurzen Beschreibung und einer wichtigen Erkenntnis. Die Y-Achse verfolgt das Emotionale oder Optimismusniveau; das untere Banner trägt ein motivierendes Zitat. Sanfter Vintage-Illustrationsstil, beiger Hintergrund, florale Randakzente.",
+        "who": "Geeignet für Selbstverbesserungs-Blogger, Coaches und Therapeuten, Inhalte zu Karriere/Fitness/Elternschaft, Kursleiter, die Modul-Einführungen erstellen, und Lifestyle-Publisher, die nachvollziehbare narrative Plakate produzieren.",
+        "how": [
+          "Wählen Sie ein Thema zur Lebensreise (Unternehmertum, Ehe, Karriere, Fitness, Elternschaft, Lernen).",
+          "Generieren Sie die U-Kurve Lebensreise-Infografik."
+        ],
+        "prompts": [
+          "Generieren Sie eine Infografik zur Unternehmertum-Reise-Kurve.",
+          "Erstellen Sie ein Plakat zur Ehezufriedenheit-Kurve.",
+          "Generieren Sie eine Bildungsinfografik zur Fitness-Reise-Kurve."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-habit-infographic": {
+    "category": "Infografik zu Lebensstilgewohnheiten",
+    "description": "Sanfte Aquarell-Infografik zum Gewohnheitsaufbau mit nummerierten Tipps, motivierenden Haftnotizen und täglichen Checklisten-Elementen – perfekt für Produktivität, Selbstpflege, Achtsamkeit oder Fitnessreisen.",
+    "title": "Bildungsinfografik zu Lebensstilgewohnheiten",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine aufbauende Bildungsinfografik, die sich um ein Thema zum Gewohnheitsaufbau dreht. Layout: eine Hauptillustration einer Person, die die Gewohnheit praktiziert, umgeben von nummerierten Tipp-Boxen mit Symbolen und Beschreibungen, plus motivierenden Haftnotizen, Bücherstapeln und täglichen Checklisten-Elementen. Das untere Banner trägt wichtige Erkenntnisse. Sanfter traumhafter Anime-Aquarellstil, pastellfarbene Palette, die auf das Thema abgestimmt ist, ermutigende handgezeichnete Typografie.",
+        "who": "Geeignet für Produktivitätscoaches, Wellness-Anbieter, Studien-Influencer-Konten, Verlage zur Selbstverbesserung, Autoren zu Elternschaft und Bildung sowie Marken, die inspirierende Lifestyle-Inhalte produzieren.",
+        "how": [
+          "Wählen Sie ein Thema zu Lebensstilgewohnheiten (Produktive Arbeitsgewohnheiten, Gesunde Lerngewohnheiten, Fitness-Reise-Leitfaden, Achtsame Lebens-Tipps, Selbstpflege-Routine, Positive Denkgewohnheiten).",
+          "Generieren Sie die Infografik zu Lebensstilgewohnheiten."
+        ],
+        "prompts": [
+          "Generieren Sie eine Infografik zu produktiven Arbeitsgewohnheiten.",
+          "Erstellen Sie ein Aquarellplakat zur Selbstpflege-Routine.",
+          "Generieren Sie eine Infografik zum Thema Achtsame Lebens-Tipps."
+        ]
+      }
+    }
   }
 }
