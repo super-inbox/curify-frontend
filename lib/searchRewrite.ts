@@ -112,6 +112,19 @@ Examples of valid rewrites:
 - "唯美春天" → ["watercolor spring", "spring flowers", "aesthetic florals"]
 - "证件照" → ["passport photo portrait", "professional headshot", "证件 风格头像"]
 
+LITERAL-NOUN RULE: a literal noun query (single object the user wants
+to see — 鲜花 fresh flowers, 蛋糕 cake, 戒指 ring, 蜡烛 candle, 茶具 teapot,
+水杯 cup, 帽子 hat) should be rewritten ONLY to other literal nouns or
+direct settings where that object appears — NOT to stylized variants
+("watercolor X" / "aesthetic X" / "X illustration") unless the user
+explicitly asked for a style. Stylizing a literal-noun query
+misleads users who wanted the actual object.
+- "鲜花" → ["bouquet", "flower arrangement", "cherry blossom"]  (concrete
+  forms of fresh flowers — bouquet, arrangement, specific blossoms —
+  NOT "watercolor flowers" or "floral aesthetic")
+- "戒指" → ["wedding ring", "jewelry design", "engagement ring"]
+- "蜡烛" → ["scented candle", "candle holder", "aromatherapy candle"]
+
 Return ONLY a JSON array (0-3 strings). No prose, no fences, no keys.`;
 
 type RewriteCache = Map<string, { rewrites: string[]; at: number }>;

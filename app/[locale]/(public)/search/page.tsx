@@ -539,9 +539,30 @@ export default async function SearchPage({ params, searchParams }: Props) {
     strictLocale: false,
     translate: translateNano,
   });
-  const matchedTemplates = allFeedCards.filter((c) =>
-    matchedTemplateIdsAll.has(c.template_id)
-  );
+  // For each template card, prefer the inspiration(s) that actually matched
+  // the query as the preview image — instead of buildNanoFeedCards default
+  // of the first inspirations by rank order. Makes "what surfaced" visible
+  // at a glance and lets the click prefill the form with the matched
+  // inspiration's params via sample_parameters.
+  const matchedInspsByTemplate = new Map<string, InspRecord[]>();
+  for (const r of inspirations) {
+    const existing = matchedInspsByTemplate.get(r.template_id);
+    if (existing) existing.push(r);
+    else matchedInspsByTemplate.set(r.template_id, [r]);
+  }
+  const matchedTemplates = allFeedCards
+    .filter((c) => matchedTemplateIdsAll.has(c.template_id))
+    .map((c) => {
+      const matched = matchedInspsByTemplate.get(c.template_id);
+      if (!matched || matched.length === 0) return c;
+      const top = matched.slice(0, 2);
+      return {
+        ...c,
+        image_urls: top.map((r) => r.asset.image_url),
+        preview_image_urls: top.map((r) => r.asset.preview_image_url ?? r.asset.image_url),
+        sample_parameters: (top[0]?.params as Record<string, unknown>) ?? c.sample_parameters,
+      };
+    });
 
   // Gallery prompts: fetch from Redis when the query exactly matches a
   // known nano-banana tag. Free-text queries skip this — we don't have
