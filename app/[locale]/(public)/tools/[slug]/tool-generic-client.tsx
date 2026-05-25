@@ -95,13 +95,18 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
         />
       ) : demo?.type === "single_video" ? (
         <>
+          {/* Cap at max-w-2xl (672px) and center within the wider
+              max-w-5xl main container. Demo source videos are 1080p
+              horizontal — letting them stretch to w-full at the
+              main-container width made them ~976px wide × ~549px
+              tall on desktop and dominated the page. */}
           <CdnVideo
-            className="w-full rounded-xl shadow mb-4"
+            className="w-full max-w-2xl mx-auto rounded-xl shadow mb-4"
             controls
             poster={demo.poster}
             src={demo.src}
           />
-          <p className="text-sm text-gray-500 mb-8">{t("example")}</p>
+          <p className="text-sm text-gray-500 mb-8 text-center">{t("example")}</p>
         </>
       ) : null}
 
