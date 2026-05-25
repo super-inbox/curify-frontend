@@ -29,7 +29,7 @@ export default function RelatedTagsSection({
           <MetaChipLink
             key={tag}
             href={`/${locale}/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`}
-            color="neutral"
+            color="blue"
             size="small"
           >
             {tag}
