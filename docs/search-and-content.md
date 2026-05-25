@@ -168,6 +168,16 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
 
    **Decision deferred:** whether Reddit stays a proposal source at all. If GSC + on-platform `search_no_result` + `search_lowresult` together cover the demand surface adequately, the cheaper move is to **demote Reddit to manual hot_topics.json refresh** (drop the misleading button OR rename to "Re-match: reddit") rather than build the crawler. Revisit when we run a per-source approval-rate audit (open item 3 in this thread).
 
+6. **Automate the no-result / low-result gap classifier** (filed 2026-05-25). Manually we've been doing the same workflow each time a user-reported query fails: classify whether the gap is **tech** (search algorithm — tokenizer, rewriter, matcher) or **content** (catalog gap), then ship a code fix or batch-gen drop. Recent examples: `snake / snakes / 蛇` (3 tech fixes in one feature), `samurai / genshin` (content gen), `鲜花` (rewriter prompt), `accion` (alias top-up). The work codifies that classification into a script that runs over an arbitrary window of `SEARCH_NORESULT` + `SEARCH_LOWRESULT` events and produces a markdown report with concrete suggested actions per query.
+
+   **Phase 1 (planned)**: one-shot classifier + markdown report. No admin UI integration. Six probes per query (plural stem, diacritic strip, CJK regression, compound-noun precision, LLM rewrite hit-check, LLM adjacent-templates suggestion) classify into 5 verdicts: `TECH_FIX` / `CONTENT_GAP_ALIASES` / `CONTENT_GAP_BATCH_GEN` / `OUT_OF_SCOPE` / `NEEDS_HUMAN`. Each verdict comes with a concrete suggested action (file to edit OR config to write). 2-3 day build; lives at `curify_background/app/utils/gap_classifier.py` + `curify_background/scripts/run_gap_analysis.py`; output reports under `curify-frontend/docs/gap-reports/<date>.md`. Success criterion: ≥75% verdict-matches-engineer-judgment precision on a 30-query manual eval set.
+
+   **Phase 2 (out of scope until Phase 1 lands)**: integrate verdicts into the proposals pipeline. Extend `search_no_result_utils.py` to emit two proposal types — `content_gap` (existing template_id+params shape) and `tech_gap` (new shape with query + fix_type + suggested diff). Approved `tech_gap` writes a spec to `docs/tech-gap-queue/` OR opens a draft PR via `gh` CLI.
+
+   **Full spec**: `docs/gap-classifier-phase1.md` — has the 6 probes spec'd in detail, output schema, day-by-day plan, success criteria. Read that before starting the build.
+
+   **Why this is high-leverage**: every gap-fix-feature in the last 2 weeks (snake / 鲜花 / accion / samurai / genshin / Chiikawa) followed the same workflow. Automating the classification step removes ~30 min of human triage per query and ensures consistent verdict criteria.
+
 ---
 
 ## Cross-thread priorities (next 2-3 weeks)
