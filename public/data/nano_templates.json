@@ -8204,5 +8204,157 @@
       "for-parents",
       "for-publishers"
     ]
+  },
+  {
+    "id": "template-english-grammar-wordlist-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(English Grammar Wordlist Infographic Creator) Create a colorful, educational infographic poster titled '{topic}'. Layout: A 2-column grid of 20 vocabulary pairs, each in a pastel-colored box with a simple cartoon illustration next to each word and a short definition. Add a fun decorative border with stars and dots, and a motivational footer banner. Style: Playful, kid-friendly cartoon art style, bright pastel colors, bold rounded typography, clear section dividers, simple icons, direct high-quality image generation. Subject: '{topic} English vocabulary learning infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "English Vocabulary Topic",
+            "type": "text",
+            "placeholder": [
+              "Common Homophones",
+              "Tricky Homophones",
+              "Common Homonyms",
+              "More Homophones",
+              "Essential Homophones",
+              "Confusing Word Pairs"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-grammar-wordlist-infographic-20-common-homonyms-prev.jpg",
+    "topics": [
+      "language",
+      "learning",
+      "vocabulary",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-25",
+    "use_cases": [
+      "for-esl-learners",
+      "for-parents",
+      "for-publishers"
+    ]
+  },
+  {
+    "id": "template-english-homograph-educational-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(English Homograph Educational Poster Creator) Create a clear, kid-friendly educational poster titled '{topic}'. Layout: A 2x3 grid of homograph word pairs, each showing two different meanings with simple cartoon illustrations, definitions, and example sentences. Add a bold title at the top and a solid-colored border. Style: Bright primary colors, clean cartoon art style, large easy-to-read text, simple icons, direct high-quality image generation. Subject: '{topic} English vocabulary learning poster'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Homograph Word Topic",
+            "type": "text",
+            "placeholder": [
+              "Common Homograph Words",
+              "Basic Homograph Pairs",
+              "Tricky Homograph Examples",
+              "Everyday Homographs",
+              "Beginner Homograph List",
+              "School Homograph Vocabulary"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-homograph-educational-poster-affect-converse-skied-prev.jpg",
+    "topics": [
+      "language",
+      "learning",
+      "vocabulary",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-25",
+    "use_cases": [
+      "for-esl-learners",
+      "for-parents",
+      "for-publishers"
+    ]
+  },
+  {
+    "id": "template-cultural-travel-journey-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Cultural Travel Journey Infographic Creator) Create a vibrant, educational infographic poster titled '{topic}'. Layout: Split-screen comparison of 'Before: Surface Tourism' vs 'Now: Cultural Immersion' with a curved 'Traveler's Journey' path connecting them. Left side shows generic, detached travel; right side shows authentic local experiences, community interactions, and hands-on activities. Include labeled illustrations, speech bubbles, and a 'Shaping the Future' footer. Style: Bright, friendly cartoon art style, clear section dividers, warm and inviting colors, simple icons, direct high-quality image generation. Subject: '{topic} cultural travel journey infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Cultural Travel Topic",
+            "type": "text",
+            "placeholder": [
+              "Indian Festival Immersion",
+              "European Market Exploration",
+              "Japanese Tea Culture",
+              "Moroccan Souk Experience",
+              "Buddhist Temple Retreat",
+              "Italian Culinary Immersion"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-cultural-travel-journey-infographic-andean-weaving-culture-prev.jpg",
+    "topics": [
+      "travel",
+      "culture",
+      "learning",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-25",
+    "use_cases": [
+      "for-creators",
+      "for-publishers",
+      "for-marketers"
+    ]
+  },
+  {
+    "id": "template-english-grammar-lesson",
+    "locales": {
+      "en": {
+        "base_prompt": "(English Grammar Lesson Poster Creator) Create a clean, kid-friendly educational poster titled '{topic}'. Layout: Top section with definition, middle section with example words and sentences, bottom section with more examples. Include a simple cartoon character illustration related to the topic. Style: Soft light blue color palette, minimalist flat illustration style, bold rounded typography, clear section dividers, direct high-quality image generation. Subject: '{topic} grammar lesson poster'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Grammar Lesson Topic",
+            "type": "text",
+            "placeholder": [
+              "Compound Words",
+              "Commas and Their Uses",
+              "Homophones and Homographs",
+              "Prefixes and Suffixes",
+              "Sentence Structure Basics",
+              "Common Grammar Mistakes"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-grammar-lesson-compound-words-prev.jpg",
+    "topics": [
+      "language",
+      "learning",
+      "vocabulary",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-25",
+    "use_cases": [
+      "for-esl-learners",
+      "for-parents",
+      "for-publishers"
+    ]
   }
 ]

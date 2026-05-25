@@ -4071,5 +4071,85 @@
         ]
       }
     }
+  },
+  "template-english-grammar-wordlist-infographic": {
+    "category": "Infographie de liste de vocabulaire de grammaire anglaise",
+    "description": "Infographie colorée de 20 paires de vocabulaire pour les salles de classe ESL — homophones, homonymes, paires de mots confus — avec des illustrations de dessins animés et de courtes définitions dans des boîtes pastel.",
+    "title": "Infographie éducative de liste de vocabulaire de grammaire anglaise",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une grille à 2 colonnes de 20 paires de vocabulaire anglais, chacune dans une boîte de couleur pastel avec une illustration de dessin animé et une courte définition. Bordures décoratives, typographie adaptée aux enfants, titre en gras — conçu comme matériel d'affichage pour la classe ou le coin d'étude.",
+        "who": "Convient aux enseignants ESL, aux tuteurs d'anglais, aux concepteurs de programmes scolaires à domicile, aux parents soutenant des enfants en âge de lire, et aux éditeurs EdTech produisant des matériaux d'étude gratuits.",
+        "how": [
+          "Choisissez un sujet de vocabulaire (Homophones courants, Homophones délicats, Homonymes courants, Paires de mots confus).",
+          "Générez l'infographie de la grille de 20 paires."
+        ],
+        "prompts": [
+          "Générez une infographie de liste de mots homophones courants.",
+          "Créez une affiche ESL de paires de mots confus.",
+          "Générez une infographie éducative sur les homonymes courants."
+        ]
+      }
+    }
+  },
+  "template-english-homograph-educational-poster": {
+    "category": "Affiche éducative sur les homographes anglais",
+    "description": "Grille 2x3 adaptée aux enfants de paires de mots homographes montrant les deux significations avec des illustrations de dessins animés, des définitions et des phrases d'exemple. Conçu pour les salles de classe ESL.",
+    "title": "Affiche éducative sur les homographes anglais",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche éducative propre autour d'un thème homographe. Mise en page : grille 2x3 de paires de mots homographes, chacune montrant deux significations différentes avec des illustrations de dessins animés, des définitions et des phrases d'exemple. Titre en gras en haut, pied de page décoratif, palette adaptée aux enfants.",
+        "who": "Convient aux enseignants ESL, aux enseignants d'anglais de l'école primaire, aux concepteurs de programmes scolaires à domicile, et aux parents aidant les enfants à maîtriser un vocabulaire délicat.",
+        "how": [
+          "Choisissez un sujet homographe (Mots homographes courants, Paires d'homographes de base, Exemples d'homographes délicats, Homographes quotidiens).",
+          "Générez l'affiche éducative sur les homographes."
+        ],
+        "prompts": [
+          "Générez une affiche éducative sur les mots homographes courants.",
+          "Créez une affiche ESL d'exemples d'homographes délicats.",
+          "Générez une affiche de classe sur les homographes quotidiens."
+        ]
+      }
+    }
+  },
+  "template-cultural-travel-journey-infographic": {
+    "category": "Infographie sur le voyage culturel",
+    "description": "Infographie vibrante de comparaison avant/après contrastant le tourisme de surface avec l'immersion culturelle — festivals indiens, culture du thé japonais, souks marocains, cuisine italienne — conçue pour un contenu de voyage lent et axé sur la culture.",
+    "title": "Infographie éducative sur le voyage culturel",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie de comparaison en écran partagé avec des panneaux 'Avant : Tourisme de surface' vs 'Maintenant : Immersion culturelle' reliés par un chemin courbé 'Voyageur'. Le côté gauche montre un voyage détaché générique ; le côté droit montre l'expérience d'immersion plus profonde. Couleurs vibrantes, icônes culturelles illustrées, typographie en gras — conçu pour ancrer le contenu de voyage axé sur la culture.",
+        "who": "Convient aux blogueurs de voyage, aux créateurs de contenu de voyage lent, aux agences de tourisme culturel, aux programmes d'études à l'étranger, aux éditeurs de tourisme religieux / culinaire, et aux parents planifiant des voyages en famille culturellement riches.",
+        "how": [
+          "Choisissez un sujet de voyage culturel (Immersion dans les festivals indiens, Culture du thé japonais, Expérience du souk marocain, Immersion culinaire italienne).",
+          "Générez l'infographie sur le voyage culturel."
+        ],
+        "prompts": [
+          "Générez une infographie de voyage culturel sur la culture du thé japonais.",
+          "Créez une affiche de voyage sur l'expérience du souk marocain.",
+          "Générez une infographie de voyage sur l'immersion culinaire italienne."
+        ]
+      }
+    }
+  },
+  "template-english-grammar-lesson": {
+    "category": "Affiche de leçon de grammaire anglaise",
+    "description": "Affiche de grammaire propre et adaptée aux enfants couvrant les mots composés, les virgules, les préfixes/suffixes, la structure des phrases et les erreurs courantes — mise en page en trois sections avec des exemples et des illustrations de dessins animés.",
+    "title": "Affiche éducative de leçon de grammaire anglaise",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche de leçon de grammaire propre et adaptée aux enfants avec trois sections : le haut contient la définition, le milieu contient des mots et des phrases d'exemple, le bas contient plus d'exemples. Comprend une illustration de personnage de dessin animé liée au sujet. Palette pastel, titres surdimensionnés, typographie facile à lire.",
+        "who": "Convient aux enseignants d'anglais de l'école primaire, aux tuteurs ESL, aux concepteurs de programmes scolaires à domicile, aux parents aidant avec les devoirs de grammaire et aux éditeurs EdTech expédiant des affiches prêtes pour la classe.",
+        "how": [
+          "Choisissez un sujet de leçon de grammaire (Mots composés, Virgules et leurs usages, Homophones et homographes, Préfixes et suffixes, Notions de base sur la structure des phrases, Erreurs courantes de grammaire).",
+          "Générez l'affiche de leçon de grammaire."
+        ],
+        "prompts": [
+          "Générez une affiche de leçon de grammaire sur les mots composés.",
+          "Créez une affiche éducative en anglais sur les préfixes et suffixes.",
+          "Générez une infographie de leçon de grammaire sur les virgules et leurs usages."
+        ]
+      }
+    }
   }
 }

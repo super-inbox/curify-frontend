@@ -4071,5 +4071,85 @@
         ]
       }
     }
+  },
+  "template-english-grammar-wordlist-infographic": {
+    "category": "İngilizce Dilbilgisi Kelime Listesi İnfografiği",
+    "description": "ESL sınıfları için renkli 20 çift kelime infografiği — homofonlar, homonimler, kafa karıştırıcı kelime çiftleri — pastel kutular içinde, karikatür illüstrasyonları ve kısa tanımlarla.",
+    "title": "İngilizce Dilbilgisi Kelime Listesi Eğitim İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, her biri pastel renkli kutuda karikatür illüstrasyonu ve kısa tanım ile 20 İngilizce kelime çiftinin 2 sütunlu bir ızgarasını oluşturur. Dekoratif kenarlıklar, çocuk dostu tipografi, kalın başlık — sınıf veya çalışma köşesi poster malzemesi olarak tasarlanmıştır.",
+        "who": "ESL öğretmenleri, İngilizce dil eğitmenleri, evde eğitim müfredatı hazırlayanlar, okuma çağındaki çocukları destekleyen ebeveynler ve ücretsiz çalışma materyalleri üreten EdTech yayıncıları için uygundur.",
+        "how": [
+          "Bir kelime konusu seçin (Yaygın Homofonlar, Zor Homofonlar, Yaygın Hominimler, Kafa Karıştırıcı Kelime Çiftleri).",
+          "20 çift ızgara infografiğini oluşturun."
+        ],
+        "prompts": [
+          "Yaygın Homofonlar kelime listesi infografiği oluşturun.",
+          "Kafa Karıştırıcı Kelime Çiftleri ESL posteri oluşturun.",
+          "Yaygın Hominimler eğitim infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-english-homograph-educational-poster": {
+    "category": "İngilizce Homograf Eğitim Posteri",
+    "description": "Çocuk dostu 2x3 ızgara homograf kelime çiftleri, her iki anlamı karikatür illüstrasyonları, tanımlar ve örnek cümlelerle gösterir. ESL sınıfları için tasarlanmıştır.",
+    "title": "İngilizce Homograf Eğitim Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir homograf teması etrafında temiz bir eğitim posteri oluşturur. Düzen: 2x3 ızgara homograf kelime çiftleri, her biri iki farklı anlamı karikatür illüstrasyonları, tanımlar ve örnek cümlelerle gösterir. Üstte kalın başlık, dekoratif alt kısım, çocuk dostu palet.",
+        "who": "ESL öğretmenleri, ilkokul İngilizce öğretmenleri, evde eğitim müfredatı hazırlayanlar ve çocukların zor kelimeleri öğrenmelerine yardımcı olan ebeveynler için uygundur.",
+        "how": [
+          "Bir homograf konusu seçin (Yaygın Homograf Kelimeler, Temel Homograf Çiftleri, Zor Homograf Örnekleri, Günlük Homograflar).",
+          "Homograf eğitim posterini oluşturun."
+        ],
+        "prompts": [
+          "Yaygın Homograf Kelimeler eğitim posteri oluşturun.",
+          "Zor Homograf Örnekleri ESL posteri oluşturun.",
+          "Günlük Homograflar sınıf posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-cultural-travel-journey-infographic": {
+    "category": "Kültürel Seyahat Yolculuğu İnfografiği",
+    "description": "Yüzey turizmini kültürel derinlik ile karşılaştıran canlı önce/sonra infografiği — Hint festivalleri, Japon çay kültürü, Fas pazarları, İtalyan mutfağı — yavaş seyahat ve kültür öncelikli içerik için tasarlanmıştır.",
+    "title": "Kültürel Seyahat Yolculuğu Eğitim İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, 'Önce: Yüzey Turizmi' ve 'Şimdi: Kültürel Derinlik' panelleri ile 'Seyahatçinin Yolculuğu' yolu ile bağlantılı bir bölünmüş ekran karşılaştırma infografiği oluşturur. Sol taraf genel, kopuk seyahati gösterir; sağ taraf daha derin bir deneyimi gösterir. Canlı renkler, illüstrasyonlu kültürel simgeler, kalın tipografi — kültür öncelikli seyahat içeriğini desteklemek için tasarlanmıştır.",
+        "who": "Seyahat blog yazarları, yavaş seyahat içerik üreticileri, kültürel turizm ajansları, yurtdışı eğitim programları, dini / mutfak turizmi yayıncıları ve kültürel zengin aile gezileri planlayan ebeveynler için uygundur.",
+        "how": [
+          "Bir kültürel seyahat konusu seçin (Hint Festivali Derinliği, Japon Çay Kültürü, Fas Pazarları Deneyimi, İtalyan Mutfak Derinliği).",
+          "Kültürel seyahat yolculuğu infografiğini oluşturun."
+        ],
+        "prompts": [
+          "Japon Çay Kültürü kültürel seyahat infografiği oluşturun.",
+          "Fas Pazarları Deneyimi seyahat posteri oluşturun.",
+          "İtalyan Mutfak Derinliği seyahat yolculuğu infografiğini oluşturun."
+        ]
+      }
+    }
+  },
+  "template-english-grammar-lesson": {
+    "category": "İngilizce Dilbilgisi Dersi Afişi",
+    "description": "Bileşik kelimeler, virgüller, ekler/ön ekler, cümle yapısı ve yaygın hataları kapsayan temiz, çocuk dostu bir dilbilgisi afişi — örnekler ve karikatür illüstrasyonları ile üç bölümlü düzen.",
+    "title": "İngilizce Dilbilgisi Dersi Eğitim Afişi",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, üç bölümden oluşan temiz, çocuk dostu bir dilbilgisi dersi afişi oluşturur: üst bölüm tanım, orta bölüm örnek kelimeler ve cümleler, alt bölüm daha fazla örnek içerir. Konuyla ilgili bir karikatür karakteri illüstrasyonu içerir. Pastel palet, büyük başlıklar, okunması kolay tipografi.",
+        "who": "İlkokul İngilizce öğretmenleri, ESL eğitmenleri, evde eğitim müfredatı hazırlayanlar, dilbilgisi ödevine yardımcı olan ebeveynler ve sınıfa hazır afişler gönderen EdTech yayıncıları için uygundur.",
+        "how": [
+          "Bir dilbilgisi dersi konusu seçin (Bileşik Kelimeler, Virgüller ve Kullanımları, Eş Sesli ve Eş Yazılı Kelimeler, Ekler ve Ön Ekler, Cümle Yapısı Temelleri, Yaygın Dilbilgisi Hataları).",
+          "Dilbilgisi dersi afişini oluşturun."
+        ],
+        "prompts": [
+          "Bir Bileşik Kelimeler dilbilgisi dersi afişi oluşturun.",
+          "Bir Ekler ve Ön Ekler İngilizce eğitim afişi oluşturun.",
+          "Bir Virgüller ve Kullanımları dilbilgisi dersi infografiği oluşturun."
+        ]
+      }
+    }
   }
 }
