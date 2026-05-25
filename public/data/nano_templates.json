@@ -1564,7 +1564,8 @@
               "ENFP",
               "INFP",
               "INTJ"
-            ]
+            ],
+            "default": "ISTJ"
           },
           {
             "name": "persona_b",
@@ -1575,7 +1576,8 @@
               "ISTJ",
               "ESTP",
               "INTP"
-            ]
+            ],
+            "default": "ENFP"
           },
           {
             "name": "scene_title",
@@ -1586,7 +1588,8 @@
               "候车时",
               "高铁上",
               "赶高铁"
-            ]
+            ],
+            "default": "春运打包"
           }
         ]
       },
@@ -1602,7 +1605,8 @@
               "ENFP",
               "INFP",
               "INTJ"
-            ]
+            ],
+            "default": "ISTJ"
           },
           {
             "name": "persona_b",
@@ -1613,7 +1617,8 @@
               "ISTJ",
               "ESTP",
               "INTP"
-            ]
+            ],
+            "default": "ENFP"
           },
           {
             "name": "scene_title",
@@ -1624,7 +1629,8 @@
               "waiting at the station",
               "on the train",
               "rushing to catch the train"
-            ]
+            ],
+            "default": "packing for travel"
           }
         ]
       }
@@ -1640,7 +1646,8 @@
     "rank_score": 80.75,
     "base_rank_score": 80,
     "intro_video_url": "/video/template_intro/template-mbti-contrast.mp4",
-    "creation_date": "2026-04-09"
+    "creation_date": "2026-04-09",
+    "allow_generation": true
   },
   {
     "id": "template-guofeng-scroll",
@@ -2892,7 +2899,8 @@
               "6",
               "5",
               "7"
-            ]
+            ],
+            "default": "6"
           },
           {
             "name": "gender",
@@ -2901,7 +2909,8 @@
             "placeholder": [
               "BOY",
               "GIRL"
-            ]
+            ],
+            "default": "BOY"
           },
           {
             "name": "hobbies_list",
@@ -2910,7 +2919,8 @@
             "placeholder": [
               "Piano, Basketball, Art & Drawing, LEGO & Coding, Swimming, Drums",
               "Violin, Ballet Dance, Art & Painting, Guzheng, Swimming, Drama & Theater"
-            ]
+            ],
+            "default": "Piano, Basketball, Art & Drawing, LEGO & Coding, Swimming, Drums"
           },
           {
             "name": "skills_list",
@@ -2919,7 +2929,8 @@
             "placeholder": [
               "Musical Sense, Coordination, Creativity, Logic Thinking, Teamwork, Focus",
               "Musical Literacy, Graceful Posture, Artistic Taste, Expression, Confidence, Coordination"
-            ]
+            ],
+            "default": "Musical Sense, Coordination, Creativity, Logic Thinking, Teamwork, Focus"
           }
         ]
       }
@@ -2935,7 +2946,8 @@
     ],
     "base_rank_score": 2,
     "intro_video_url": "/video/template_intro/template-child-hobby-skill.mp4",
-    "creation_date": "2026-04-15"
+    "creation_date": "2026-04-15",
+    "allow_generation": true
   },
   {
     "id": "template-detailed-vocab-flashcard",
@@ -2988,7 +3000,8 @@
             "placeholder": [
               "Male",
               "Female"
-            ]
+            ],
+            "default": "Male"
           },
           {
             "name": "personality_traits",
@@ -3000,7 +3013,8 @@
               "Sunny, energetic, romantic, sincere",
               "Passionate, straightforward, vivid, authentic",
               "Quiet, aloof, practical, independent"
-            ]
+            ],
+            "default": "Sunny, energetic, romantic, sincere"
           },
           {
             "name": "character_archetype",
@@ -3012,7 +3026,8 @@
               "Fiery Little Sun",
               "Radiant Fireworks Girl",
               "Cool and Wild Rose"
-            ]
+            ],
+            "default": "Fiery Little Sun"
           },
           {
             "name": "character_title",
@@ -3024,7 +3039,8 @@
               "Fiery Little Sun",
               "Radiant Fireworks Girl",
               "Cool and Wild Rose"
-            ]
+            ],
+            "default": "Fiery Little Sun"
           },
           {
             "name": "tags",
@@ -3036,7 +3052,8 @@
               "Sunny, Energetic, Romantic, Sincere",
               "Passionate, Straightforward, Vivid, Authentic, Joyful, Brave",
               "Cool, Taciturn, Wild, Cold on the Outside, Warm on the Inside"
-            ]
+            ],
+            "default": "Sunny, Energetic, Romantic, Sincere"
           },
           {
             "name": "character_name",
@@ -3048,7 +3065,8 @@
               "Cassian Vance",
               "Lyra Sparkfire",
               "Lyra Thorne"
-            ]
+            ],
+            "default": "Cassian Vance"
           }
         ]
       }
@@ -3064,7 +3082,8 @@
     ],
     "base_rank_score": 2,
     "intro_video_url": "/video/template_intro/template-custom-character-card.mp4",
-    "creation_date": "2026-04-15"
+    "creation_date": "2026-04-15",
+    "allow_generation": true
   },
   {
     "id": "template-detective-conan",
@@ -4445,7 +4464,8 @@
               "Mia",
               "Oliver",
               "Zoe"
-            ]
+            ],
+            "default": "Luna"
           },
           {
             "name": "age",
@@ -4457,7 +4477,8 @@
               "19",
               "22",
               "35"
-            ]
+            ],
+            "default": "8"
           },
           {
             "name": "gender",
@@ -4466,7 +4487,8 @@
             "placeholder": [
               "Female",
               "Male"
-            ]
+            ],
+            "default": "Female"
           },
           {
             "name": "theme",
@@ -4478,7 +4500,8 @@
               "Child",
               "Scholar",
               "Athlete"
-            ]
+            ],
+            "default": "Artist"
           }
         ]
       }
@@ -4492,7 +4515,8 @@
     "rank_score": 73.3,
     "base_rank_score": 70,
     "intro_video_url": "/video/template_intro/template-cartoon-character-profile-card-kawaii-style.mp4",
-    "creation_date": "2026-04-25"
+    "creation_date": "2026-04-25",
+    "allow_generation": true
   },
   {
     "id": "template-cartoon-english-vocabulary-flashcards",
@@ -5869,7 +5893,8 @@
               "Hiking Adventure",
               "Business Trip",
               "Weekend Getaway"
-            ]
+            ],
+            "default": "Beach Vacation"
           },
           {
             "name": "day_count",
@@ -5879,7 +5904,8 @@
               "3-Day",
               "5-Day",
               "7-Day"
-            ]
+            ],
+            "default": "5-Day"
           },
           {
             "name": "gender",
@@ -5889,7 +5915,8 @@
               "Women's",
               "Men's",
               "Unisex"
-            ]
+            ],
+            "default": "Unisex"
           }
         ]
       }
@@ -5903,7 +5930,8 @@
     "base_rank_score": 80,
     "rank_score": 81.05,
     "intro_video_url": "/video/template_intro/template-travel-packing-guide-infographic.mp4",
-    "creation_date": "2026-05-05"
+    "creation_date": "2026-05-05",
+    "allow_generation": true
   },
   {
     "id": "template-history-timeline-infographic",
@@ -6471,7 +6499,8 @@
               "Y2K",
               "Office Chic",
               "Athleisure"
-            ]
+            ],
+            "default": "Streetwear"
           },
           {
             "name": "style2",
@@ -6484,7 +6513,8 @@
               "Y2K",
               "Office Chic",
               "Athleisure"
-            ]
+            ],
+            "default": "Old Money"
           },
           {
             "name": "style3",
@@ -6497,7 +6527,8 @@
               "Y2K",
               "Office Chic",
               "Athleisure"
-            ]
+            ],
+            "default": "Cottagecore"
           },
           {
             "name": "style4",
@@ -6510,7 +6541,8 @@
               "Y2K",
               "Office Chic",
               "Athleisure"
-            ]
+            ],
+            "default": "Y2K"
           }
         ]
       }
@@ -6525,7 +6557,8 @@
     "creation_date": "2026-05-09",
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-chinese-idiom-learning-card",
