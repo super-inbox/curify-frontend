@@ -128,6 +128,9 @@ export default function NanoBananaProPromptsClient({
           <EmptyState />
         ) : (
           <>
+            <h2 className="mb-3 text-base font-semibold text-gray-900">
+              Popular images
+            </h2>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {prompts.map((prompt, i) => (
                 <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} />
