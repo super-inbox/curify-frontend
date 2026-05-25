@@ -1,0 +1,266 @@
+{
+  "_note": "Unified taxonomy: tier1/2/3 topic hierarchy + tier4 content-gen seeds + gallery tag → topic mapping. Consolidates the previous topic_tag_mappings.json + categorized_tags.json + subject_topic_seeds.json + the EXTRA_TAG_TO_TOPICS block in topicRegistry.ts. Single source of truth — lib/topicRegistry.ts, lib/searchIndex.ts, lib/relatedTags.ts, scripts/lib/auto_tag.cjs, scripts/generate_template_examples.cjs all read from here.",
+
+  "tier1": [
+    "character", "personality", "language", "learning",
+    "travel", "culture", "lifestyle", "design", "product"
+  ],
+
+  "tier2": {
+    "character":   ["mbti", "anime", "sports", "film", "relationship", "portrait", "comparison", "groups"],
+    "personality": [],
+    "language":    ["vocabulary", "dialogue", "expressions", "language-english", "english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
+    "travel":      ["food", "city", "itinerary", "seasonal"],
+    "culture":     ["food", "costumes", "cultural-festivals"],
+    "lifestyle":   ["fashion", "interior", "beauty", "animal", "fitness", "finance", "nostalgia", "guides", "mood"],
+    "learning":    ["science", "trending", "architecture", "history", "ai", "reading"],
+    "product":     [],
+    "design":      ["posters", "digital-canvas", "mockups", "lighting", "composition"]
+  },
+
+  "tier3": {
+    "personality": [
+      "mbti-intj", "mbti-intp", "mbti-entj", "mbti-entp",
+      "mbti-infj", "mbti-infp", "mbti-enfj", "mbti-enfp",
+      "mbti-istj", "mbti-isfj", "mbti-estj", "mbti-esfj",
+      "mbti-istp", "mbti-isfp", "mbti-estp", "mbti-esfp"
+    ],
+    "character": [
+      "mbti-intj", "mbti-intp", "mbti-entj", "mbti-entp",
+      "mbti-infj", "mbti-infp", "mbti-enfj", "mbti-enfp",
+      "mbti-istj", "mbti-isfj", "mbti-estj", "mbti-esfj",
+      "mbti-istp", "mbti-isfp", "mbti-estp", "mbti-esfp"
+    ],
+    "travel": [
+      "spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk",
+      "brazil", "vietnam", "singapore", "egypt", "australia", "italy",
+      "middle-east", "china", "germany", "greece", "russia", "united-states",
+      "iran", "portugal"
+    ],
+    "culture": [
+      "spain", "france", "india", "japan", "korea", "thailand", "mexico", "italy",
+      "middle-east", "china", "germany", "greece", "russia", "iran", "portugal",
+      "brazil", "vietnam", "egypt"
+    ],
+    "language": [
+      "animals", "nature", "space", "weather", "evolution",
+      "food-and-drink", "family", "school", "transportation",
+      "celebration", "body", "emotions"
+    ],
+    "design": [
+      "cartoon", "kawaii", "ink", "isometric", "photorealistic",
+      "monochrome", "watercolor"
+    ],
+    "learning": [
+      "animals", "nature", "space", "weather", "evolution",
+      "food-and-drink", "family", "school", "transportation",
+      "celebration", "body", "emotions"
+    ],
+    "lifestyle": [
+      "minimalist", "soft-girl", "edgy", "athleisure", "chic",
+      "vintage-retro", "elegant", "casual", "high-fashion"
+    ]
+  },
+
+  "tier4": {
+    "_note": "Leaf topic names grouped by their tier-3 subject. Input to scripts/generate_template_examples.cjs for content drops. Add new subjects here; existing code (auto-tag pipeline, search index) keys off the subject name in tier3.language / tier3.learning.",
+    "animals": [
+      "Forest Animals", "Ocean Animals", "Farm Animals", "Zoo Animals",
+      "Insects and Bugs", "Pets at Home", "Birds of the World",
+      "Reptiles and Amphibians", "Dinosaur Names", "Polar Animals",
+      "Deep Sea Creatures", "Baby Animals"
+    ],
+    "nature": [
+      "Trees and Leaves", "Flowers in the Garden", "Mountains and Hills",
+      "Rivers and Lakes", "Beach and Seashore", "Plants and Seeds",
+      "Mushrooms and Fungi", "Four Seasons"
+    ],
+    "space": [
+      "Planets of the Solar System", "Things in Outer Space", "Astronaut Gear",
+      "Constellations", "Moon Phases", "Galaxies and Stars"
+    ],
+    "weather": [
+      "Types of Weather", "Clouds in the Sky", "Stormy Weather",
+      "Rainbow Colors", "Hot and Cold Day", "Things in the Sky"
+    ],
+    "evolution": [
+      "Stages of Human Life", "Dinosaur Eras", "Caterpillar to Butterfly",
+      "Frog Life Cycle", "Seed to Tree"
+    ],
+    "food-and-drink": [
+      "Fruits", "Vegetables", "Breakfast Foods", "Desserts", "Drinks",
+      "Snacks", "Kitchen Tools", "Herbs and Spices", "Dairy Products",
+      "Bread and Bakery", "Pasta and Noodles", "World Cuisines"
+    ],
+    "family": [
+      "Family Members", "Jobs and Occupations", "Daily Routines",
+      "Household Items", "Rooms in a House", "Furniture",
+      "Things in the Kitchen", "Things in the Bathroom"
+    ],
+    "school": [
+      "Classroom Objects", "School Subjects", "Stationery and Supplies",
+      "Sports at School", "Musical Instruments", "Shapes and Colors",
+      "Numbers and Counting"
+    ],
+    "transportation": [
+      "Cars and Trucks", "Public Transport", "Boats and Ships",
+      "Airplanes and Helicopters", "Bikes and Wheels", "Emergency Vehicles",
+      "Road Signs", "Construction Vehicles"
+    ],
+    "celebration": [
+      "Birthday Party", "Christmas", "Halloween", "Easter", "Lunar New Year",
+      "Weddings", "Thanksgiving", "Mid-Autumn Festival"
+    ],
+    "body": [
+      "Body Parts", "Face Parts", "Five Senses", "Hands and Fingers",
+      "Going to the Doctor", "Healthy Habits", "Body Movements"
+    ],
+    "emotions": [
+      "Basic Emotions", "Facial Expressions", "Feelings and Moods",
+      "Happy and Sad Words", "Calm and Excited"
+    ],
+    "wellness": [
+      "Productive Work Habits", "Healthy Study Habits", "Self-Care Routine",
+      "Mindful Living Tips", "Positive Mindset Habits", "Morning Routine",
+      "Sleep Hygiene", "Stress Management", "Yoga for Beginners",
+      "Meditation Techniques", "Hydration Habits", "Mental Health Tips"
+    ],
+    "pets": [
+      "Cat Breeds", "Dog Breeds", "Pet Care Basics", "Pet Nutrition Guide",
+      "Pet Behavior Tips", "Small Mammals as Pets", "Exotic Pets",
+      "Reptile Pets", "Bird Care", "Fish Tank Setup", "Puppy Training",
+      "Senior Pet Care"
+    ],
+    "home-and-living": [
+      "Living Room Design Ideas", "Bedroom Decor Styles", "Kitchen Organization",
+      "Bathroom Renovation Tips", "Home Office Setup", "Outdoor Patio Design",
+      "Houseplant Selection", "Lighting Choices for Each Room",
+      "Wall Art and Decor Ideas", "Storage and Organization Solutions",
+      "Interior Color Palettes", "Minimalist Living Spaces"
+    ]
+  },
+
+  "_gallery_tag_to_topics_note": "Gallery-prompt tag → tier-2/tier-3 topic(s) it maps to. Used by (1) lib/topicRegistry.ts getTopicsForTag — tag-page surfaces templates from these topics; (2) lib/relatedTags.ts getRelatedTags — tags sharing a topic are siblings. Replaces the previous flat-list categorized_tags.json categories with topic-aligned destinations.",
+
+  "gallery_tag_to_topics": {
+    "playful":          ["mood"],
+    "confident":        ["mood"],
+    "joyful":           ["mood"],
+    "energetic":        ["mood"],
+    "calm":             ["mood"],
+    "bold":             ["mood"],
+    "carefree":         ["mood"],
+    "relaxed":          ["mood"],
+    "humorous":         ["mood"],
+    "cozy":             ["mood"],
+    "intimate":         ["mood"],
+    "romantic":         ["mood"],
+    "contemplative":    ["mood"],
+    "introspective":    ["mood"],
+    "serene":           ["mood"],
+    "tranquil":         ["mood"],
+    "soft":             ["mood"],
+    "captivating":      ["mood"],
+    "alluring":         ["mood"],
+    "natural":          ["mood"],
+    "vibrant":          ["mood"],
+    "luxurious":        ["mood"],
+    "stylish":          ["mood"],
+    "dynamic":          ["mood"],
+
+    "moody":            ["film"],
+    "dramatic":         ["film"],
+    "intense":          ["film"],
+    "mysterious":       ["film"],
+    "eerie":            ["film"],
+    "cinematic":        ["film"],
+    "editorial":        ["film"],
+    "documentary":      ["film"],
+
+    "nostalgic":        ["nostalgia"],
+
+    "illustration":     ["digital-canvas"],
+    "whimsical":        ["digital-canvas"],
+    "surreal":          ["digital-canvas"],
+    "abstract":         ["digital-canvas"],
+    "ethereal":         ["digital-canvas"],
+    "dreamy":           ["digital-canvas"],
+    "fairy":            ["digital-canvas"],
+    "artistic":         ["digital-canvas"],
+    "pastel":           ["digital-canvas"],
+    "glossy":           ["digital-canvas"],
+    "silver":           ["digital-canvas"],
+    "gold":             ["digital-canvas"],
+    "metallic":         ["digital-canvas"],
+    "warm":             ["digital-canvas"],
+    "vibrant colors":   ["digital-canvas"],
+
+    "hyperrealistic":   ["photorealistic"],
+    "ultra realistic":  ["photorealistic"],
+
+    "golden hour":      ["lighting"],
+    "soft-light":       ["lighting"],
+    "natural light":    ["lighting"],
+    "natural-light":    ["lighting"],
+    "sunset":           ["lighting"],
+    "bokeh":            ["lighting"],
+    "twilight":         ["lighting"],
+    "night":            ["lighting"],
+    "morning":          ["lighting"],
+
+    "winter":           ["seasonal"],
+    "summer":           ["seasonal"],
+    "autumn":           ["seasonal"],
+    "snowy":            ["seasonal"],
+    "snowy landscape":  ["seasonal"],
+    "rainy":            ["seasonal"],
+    "christmas":        ["seasonal"],
+    "festive":          ["seasonal"],
+
+    "landscape":        ["composition"],
+    "macro":            ["composition"],
+    "studio":           ["composition"],
+    "collage":          ["posters"],
+    "poster":           ["posters"],
+    "infographic":      ["posters"],
+    "informative":      ["posters"],
+    "grid":             ["posters"],
+
+    "woman":            ["portrait"],
+    "man":              ["portrait"],
+    "girl":             ["portrait"],
+    "human portrait":   ["portrait"],
+    "selfie":           ["portrait"],
+    "mirror selfie":    ["portrait"],
+    "model":            ["portrait"],
+    "closeup":          ["portrait"],
+    "silhouette":       ["portrait"],
+
+    "neon":             ["ai"],
+    "neon lights":      ["ai"],
+    "futuristic":       ["ai"],
+
+    "japanese":         ["japan"],
+    "kpop":             ["korea"],
+    "east asian":       ["japan", "korea"],
+
+    "beach":            ["travel"],
+    "forest":           ["travel"],
+    "ocean":            ["travel"],
+    "garden":           ["travel"],
+    "nature":           ["travel"],
+
+    "y2k":              ["vintage-retro"],
+    "luxury":           ["high-fashion"],
+
+    "cat":              ["animal"],
+    "sunglasses":       ["fashion"],
+    "friends":          ["relationship"]
+  },
+
+  "_reverse_map_excluded_topics_note": "Topics excluded from the reverse map only — their topic page still pulls a gallery row via TOPIC_GALLERY_TAG, but the tag page does NOT surface their templates. Use when a topic's template set is too heterogeneous to make a coherent Templates section.",
+
+  "reverse_map_excluded_topics": [
+    "photorealistic"
+  ]
+}

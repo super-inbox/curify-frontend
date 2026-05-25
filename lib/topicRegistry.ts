@@ -1,6 +1,6 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
-import topicTagMappings from "./topic_tag_mappings.json";
+import taxonomy from "./taxonomy.json";
 
 export type Topic = {
   id: string;
@@ -49,12 +49,15 @@ function normalizeTopicValues(value: unknown): string[] {
   return [];
 }
 
-// Source-of-truth data lives in lib/topic_tag_mappings.json so .cjs
-// scripts (e.g. scripts/sync_nano_inspiration.cjs auto-tagger) can
-// require the same mappings without duplicating them.
-const MBTI_TYPE_TAGS = topicTagMappings.MBTI_TYPE_TAGS;
-const TIER1_TAG_CHILDREN: Record<string, string[]> = topicTagMappings.TIER1_TAG_CHILDREN;
-const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = topicTagMappings.EXPLICIT_CHILD_TOPICS;
+// Source-of-truth data lives in lib/taxonomy.json so .cjs scripts
+// (e.g. scripts/sync_nano_inspiration.cjs auto-tagger) can require
+// the same mappings without duplicating them.
+const TIER1_TAG_CHILDREN: Record<string, string[]> = taxonomy.tier3;
+const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = taxonomy.tier2;
+// MBTI types and SUBJECT tags are derived views of the tier3 buckets —
+// kept as named constants because they are referenced by short name
+// in EXPLICIT_SIBLING_GROUPS below and by the auto-tag pipeline.
+const MBTI_TYPE_TAGS = TIER1_TAG_CHILDREN.personality;
 
 // Sibling groups for tag-style topics (shown as related tag chips at
 // the bottom of topic pages). Mirrors the per-Tier-1 tag lists since
@@ -251,165 +254,17 @@ export function getTopicIdsForTemplate(templateId: string): string[] {
 // page "related templates" section). Does NOT affect the topic page,
 // which still uses TOPIC_GALLERY_TAG one-way for its gallery row.
 //
-// Curated to cover the high-traffic gallery tags that TOPIC_GALLERY_TAG
-// missed. Add tags here when you want a Templates section without
-// pulling a new gallery list onto a topic page.
-const EXTRA_TAG_TO_TOPICS: Record<string, string[]> = {
-  // → portrait
-  woman:             ["portrait"],
-  man:               ["portrait"],
-  girl:              ["portrait"],
-  "human portrait":  ["portrait"],
-  selfie:            ["portrait"],
-  "mirror selfie":   ["portrait"],
-  model:             ["portrait"],
-  closeup:           ["portrait"],
-  silhouette:        ["portrait"],
-  // → digital-canvas (artistic)
-  illustration:      ["digital-canvas"],
-  whimsical:         ["digital-canvas"],
-  surreal:           ["digital-canvas"],
-  abstract:          ["digital-canvas"],
-  ethereal:          ["digital-canvas"],
-  dreamy:            ["digital-canvas"],
-  fairy:             ["digital-canvas"],
-  // → film (cinematic)
-  dramatic:          ["film"],
-  moody:             ["film"],
-  mysterious:        ["film"],
-  intense:           ["film"],
-  eerie:             ["film"],
-  editorial:         ["film"],
-  documentary:       ["film"],
-  // → ai (futuristic)
-  neon:              ["ai"],
-  "neon lights":     ["ai"],
-  // → posters
-  collage:           ["posters"],
-  poster:            ["posters"],
-  infographic:       ["posters"],
-  informative:       ["posters"],
-  grid:              ["posters"],
-  // → country topics
-  japanese:          ["japan"],
-  kpop:              ["korea"],
-  // → multi-country (east asian gallery tag spans japanese + kpop content)
-  "east asian":      ["japan", "korea"],
-  // ---- 2026-05-19 gallery tag taxonomy P0 #2 — see docs/gallery-tag-taxonomy.md ----
-  // → mood (new tier-3 under lifestyle). The 12 highest-volume mood adjectives
-  //   in the gallery. Remaining mood-adjectives (introspective / glamorous /
-  //   sophisticated / tranquil / bold / dynamic / vibrant / relaxed) stay
-  //   unmapped as cosmetic until volume per-tag warrants the entry.
-  playful:           ["mood"],
-  confident:         ["mood"],
-  serene:            ["mood"],
-  cozy:              ["mood"],
-  joyful:            ["mood"],
-  intimate:          ["mood"],
-  vibrant:           ["mood"],
-  luxurious:         ["mood"],
-  stylish:           ["mood"],
-  contemplative:     ["mood"],
-  bold:              ["mood"],
-  energetic:         ["mood"],
-  dynamic:           ["mood"],
-  calm:              ["mood"],
-  tranquil:          ["mood"],
-  introspective:     ["mood"],
-  romantic:          ["mood"],
-  // → lighting (new tier-3 under design). golden hour was the 4th-highest
-  //   GSC tag page in the 13-day window — direct user demand. Carry both
-  //   the hyphenated and space form of natural light so the source-dataset
-  //   variance doesn't break the link.
-  "golden hour":     ["lighting"],
-  "soft-light":      ["lighting"],
-  "natural light":   ["lighting"],
-  "natural-light":   ["lighting"],
-  sunset:            ["lighting"],
-  bokeh:             ["lighting"],
-  twilight:          ["lighting"],
-  night:             ["lighting"],
-  morning:           ["lighting"],
-  // → seasonal (new tier-3 under lifestyle, sibling of nostalgia). `snowy
-  //   landscape` alone drove 502 GSC impressions in the 13-day window —
-  //   the highest single tag page. Map both `snowy` and `snowy landscape`
-  //   so the source-dataset variants both find the topic.
-  winter:            ["seasonal"],
-  summer:            ["seasonal"],
-  autumn:            ["seasonal"],
-  snowy:             ["seasonal"],
-  "snowy landscape": ["seasonal"],
-  rainy:             ["seasonal"],
-  christmas:         ["seasonal"],
-  festive:           ["seasonal"],
-  // → travel (scenery cluster — falls under tier-1 travel directly, no
-  //   tier-2 fits closely enough to introduce a new bucket for 165 prompts)
-  beach:             ["travel"],
-  forest:            ["travel"],
-  ocean:             ["travel"],
-  garden:            ["travel"],
-  nature:            ["travel"],
-  // → digital-canvas (color / material descriptors — all stylistic axes
-  //   adjacent to the existing artistic tier-3)
-  pastel:            ["digital-canvas"],
-  glossy:            ["digital-canvas"],
-  silver:            ["digital-canvas"],
-  gold:              ["digital-canvas"],
-  metallic:          ["digital-canvas"],
-  warm:              ["digital-canvas"],
-  "vibrant colors":  ["digital-canvas"],
-  // → photorealistic (siblings of the existing tier-3). The
-  //   REVERSE_MAP_EXCLUDED_TOPICS exclusion only affects topic-page →
-  //   tag-page direction, so adding tag-page → topic-page entries here
-  //   does not re-introduce the heterogeneity that exclusion guards against.
-  hyperrealistic:    ["photorealistic"],
-  "ultra realistic": ["photorealistic"],
-  // → style adjacencies
-  y2k:               ["vintage-retro"],
-  luxury:            ["high-fashion"],
-  // → subject adjacencies (cat → animal tier-3, sunglasses → fashion,
-  //   friends → relationship)
-  cat:               ["animal"],
-  sunglasses:        ["fashion"],
-  friends:           ["relationship"],
-  // ---- 2026-05-25 pass-1 tag expansion — consolidate raw/categorized_tags.json
-  // overlap into existing buckets (mood / film / digital-canvas / nostalgia /
-  // ai) plus one new tier-3 `composition` under design. Additive only — no
-  // existing mapping moves; eval unchanged since EXTRA_TAG_TO_TOPICS only
-  // affects the tag-page → topic-page direction. See docs/search-and-content.md
-  // for the source-category-to-bucket mapping table.
-  // → mood (additions from mood_emotion + intimacy_warmth)
-  carefree:          ["mood"],
-  relaxed:           ["mood"],
-  humorous:          ["mood"],
-  soft:              ["mood"],
-  captivating:       ["mood"],
-  alluring:          ["mood"],
-  natural:           ["mood"],
-  // → film (canonical word for the cinematic bucket, from lighting_color)
-  cinematic:         ["film"],
-  // → digital-canvas (style descriptor, sibling of illustration)
-  artistic:          ["digital-canvas"],
-  // → nostalgia (atmosphere_tone — exact word-form match)
-  nostalgic:         ["nostalgia"],
-  // → ai (scene_setting → futuristic, sibling of neon)
-  futuristic:        ["ai"],
-  // → composition (new tier-3 under design; format / framing axis)
-  landscape:         ["composition"],
-  macro:             ["composition"],
-  studio:            ["composition"],
-};
+// Sourced from lib/taxonomy.json `gallery_tag_to_topics` (single
+// source of truth, also read by lib/relatedTags.ts for sibling
+// discovery). Edit there to add new tag-to-topic mappings.
+const EXTRA_TAG_TO_TOPICS: Record<string, string[]> = taxonomy.gallery_tag_to_topics;
 
 // Topics excluded from the reverse map only — their topic page still
 // pulls a gallery row via TOPIC_GALLERY_TAG, but the tag page does NOT
 // surface their templates. Use this when a topic's template set is too
 // heterogeneous to make a coherent "Templates exploring [tag]" section.
-const REVERSE_MAP_EXCLUDED_TOPICS = new Set<string>([
-  // Templates under photorealistic span food posters, home before/after,
-  // 3D maps, bilingual labeling — no shared aesthetic with the
-  // photorealistic gallery tag's portrait/scene photography.
-  "photorealistic",
-]);
+// Sourced from lib/taxonomy.json `reverse_map_excluded_topics`.
+const REVERSE_MAP_EXCLUDED_TOPICS = new Set<string>(taxonomy.reverse_map_excluded_topics);
 
 // Reverse index of TOPIC_GALLERY_TAG (topic → tag), merged with
 // EXTRA_TAG_TO_TOPICS. Built once at module load so the tag page can ask

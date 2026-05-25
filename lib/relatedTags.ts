@@ -1,23 +1,29 @@
-// Tag-category sibling lookup for the nano-banana prompt surface.
+// Tag-cluster sibling lookup for the nano-banana prompt surface.
 //
-// Source: lib/categorized_tags.json (productionized from raw/ on
-// 2026-05-25). The data is hand-curated category → tag[] mappings —
-// e.g. mood_emotion → [playful, confident, joyful, ...]. We invert it
-// once at module load so getRelatedTags(tag) returns the other tags
-// from the same category cluster.
+// Source: lib/taxonomy.json `gallery_tag_to_topics` (gallery tag →
+// tier-2/tier-3 topic[s] it maps to). Two tags are siblings when
+// they share at least one mapped topic — so the "Related Tags" chip
+// row on /nano-banana-pro-prompts/tag/[slug] and /[id] reflects the
+// same clustering used by getTopicsForTag in topicRegistry.ts.
 //
 // Used by /nano-banana-pro-prompts/tag/[slug] and
 // /nano-banana-pro-prompts/[id] to surface a "Related Tags" chip row.
 
-import categorizedTags from "./categorized_tags.json";
+import taxonomy from "./taxonomy.json";
 import nanoMetadata from "./generated/nanobanana_prompts_metadata.json";
 
-const CATEGORY_TO_TAGS: Record<string, string[]> = categorizedTags as Record<string, string[]>;
+const TAG_TO_TOPICS: Record<string, string[]> =
+  taxonomy.gallery_tag_to_topics as Record<string, string[]>;
 
-const TAG_TO_CATEGORY = new Map<string, string>();
-for (const [category, tags] of Object.entries(CATEGORY_TO_TAGS)) {
-  if (category === "uncategorized") continue;
-  for (const tag of tags) TAG_TO_CATEGORY.set(tag.toLowerCase(), category);
+// Build the reverse index once: topic → [tags that map to it]. Used to
+// find siblings (all tags sharing a topic with the query tag).
+const TOPIC_TO_TAGS = new Map<string, string[]>();
+for (const [tag, topics] of Object.entries(TAG_TO_TOPICS)) {
+  for (const topic of topics) {
+    const arr = TOPIC_TO_TAGS.get(topic);
+    if (arr) arr.push(tag);
+    else TOPIC_TO_TAGS.set(topic, [tag]);
+  }
 }
 
 // Canonical gallery tag set + count map — used to filter out related
@@ -30,8 +36,12 @@ const TAG_COUNT = new Map<string, number>(
 );
 const CANONICAL_TAGS = new Set<string>(NANO_TAGS.map((t) => t.tag.toLowerCase()));
 
-export function getCategoryForTag(tag: string): string | undefined {
-  return TAG_TO_CATEGORY.get(tag.toLowerCase());
+/** Returns the primary topic this gallery tag belongs to (first in the
+ *  mapping), or undefined if the tag is uncategorized. Useful for
+ *  displaying a one-word cluster label. */
+export function getTopicForTag(tag: string): string | undefined {
+  const topics = TAG_TO_TOPICS[tag.toLowerCase()];
+  return topics?.[0];
 }
 
 export type RelatedTagsOptions = {
@@ -46,11 +56,21 @@ export function getRelatedTags(
   opts: RelatedTagsOptions = {}
 ): string[] {
   const { limit = 12, liveOnly = true } = opts;
-  const category = TAG_TO_CATEGORY.get(tag.toLowerCase());
-  if (!category) return [];
-  const siblings = CATEGORY_TO_TAGS[category] ?? [];
+  const tagLower = tag.toLowerCase();
+  const topics = TAG_TO_TOPICS[tagLower];
+  if (!topics || topics.length === 0) return [];
+  // Union of siblings across all topics this tag maps to.
+  const seen = new Set<string>([tagLower]);
+  const siblings: string[] = [];
+  for (const topic of topics) {
+    for (const sib of TOPIC_TO_TAGS.get(topic) ?? []) {
+      const key = sib.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      siblings.push(sib);
+    }
+  }
   return siblings
-    .filter((t) => t.toLowerCase() !== tag.toLowerCase())
     .filter((t) => (liveOnly ? CANONICAL_TAGS.has(t.toLowerCase()) : true))
     .sort((a, b) => (TAG_COUNT.get(b.toLowerCase()) ?? 0) - (TAG_COUNT.get(a.toLowerCase()) ?? 0))
     .slice(0, limit);
