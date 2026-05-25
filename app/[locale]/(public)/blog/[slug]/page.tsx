@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
@@ -254,8 +255,26 @@ export default async function BlogPostPage({
 
   return (
     <article className="mx-auto max-w-6xl pt-20 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
-      <header className="mb-10">
-        <div className="mb-6 max-w-md rounded-lg overflow-hidden shadow">
+      <header className="mb-6">
+        <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
+          {tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+        </h1>
+
+        <div className="flex items-center justify-between gap-3 text-sm text-gray-500">
+          <div>
+            {tNamespace ? tNamespace(slug === 'mbti-character-generator' || slug === 'content-tagging-system' ? "publishedDate" : "date", { defaultValue: "Latest Article" }) : "Latest Article"} • {" "}
+            {tNamespace ? tNamespace("readTime", { defaultValue: "5 min read" }) : "5 min read"}
+          </div>
+          <ShareButton url={`/blog/${slug}`} compact />
+        </div>
+      </header>
+
+      {/* Body region with hero image floated right on desktop so text
+          wraps around it. On mobile the image renders centered above the
+          body in normal block flow. overflow-hidden on the wrapper acts
+          as a clearfix for the float. */}
+      <div className="overflow-hidden">
+        <div className="mb-4 mx-auto max-w-xs md:max-w-sm md:float-right md:ml-6 md:mx-0 rounded-lg overflow-hidden shadow">
           {useMermaidThumbnail ? (
             <DynamicThumbnail
               slug={thumbnailType || slug}
@@ -268,24 +287,13 @@ export default async function BlogPostPage({
             <CdnImage
               src={blogConfig.image}
               alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-              width={400}
-              height={250}
+              width={320}
+              height={200}
               className="rounded-lg object-cover"
             />
           )}
         </div>
 
-        <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
-          {tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-        </h1>
-
-        <div className="text-sm text-gray-500">
-          {tNamespace ? tNamespace(slug === 'mbti-character-generator' || slug === 'content-tagging-system' ? "publishedDate" : "date", { defaultValue: "Latest Article" }) : "Latest Article"} • {" "}
-          {tNamespace ? tNamespace("readTime", { defaultValue: "5 min read" }) : "5 min read"}
-        </div>
-      </header>
-
-      <div>
         {/* Dynamic content rendering based on slug */}
         {(slug.startsWith('translate-youtube-video') || slug === 'ai-youtube-video-translator' || slug === 'translate-youtube-video-to-english') && (
           <YoutubeTranslationContent slug={slug} t={safeT} locale={locale} />
