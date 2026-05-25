@@ -11,7 +11,7 @@ import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import { templatePacksService } from "@/services/templatePacks";
-import { useTracking } from "@/services/useTracking";
+import { useTracking, useVideoTracking } from "@/services/useTracking";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
@@ -46,11 +46,13 @@ const USE_CASE_VIDEO_KEY: Record<string, string> = {
 };
 
 function UseCaseVideo({
+  slug,
   videoKey,
   lang,
   transcript,
   transcriptLabel,
 }: {
+  slug: string;
   videoKey: string;
   lang: "en" | "cn";
   /** Locale-picked transcript text. Rendered inside a collapsed
@@ -60,6 +62,14 @@ function UseCaseVideo({
   transcript?: string;
   transcriptLabel: string;
 }) {
+  // Track video plays so use-case page engagement is measurable. Without
+  // this, /use-cases/[slug] looked like 0 key actions in the actions-per-
+  // route rollup despite being the primary engagement on these pages.
+  const { trackVideoPlay } = useVideoTracking(
+    `use-case-${slug}`,
+    "use_case_video",
+    "cards",
+  );
   // CdnVideo rewrites the /video/... path to the GCS bucket
   // (gs://curify-static/video). The local public/video/ files are
   // gitignored — only the CDN copy is served in production. Drop a
@@ -85,6 +95,7 @@ function UseCaseVideo({
           playsInline
           preload="metadata"
           className="aspect-[9/16] w-full bg-black"
+          onPlay={trackVideoPlay}
         />
       </div>
       {paragraphs.length > 0 && (
@@ -282,6 +293,7 @@ export default function UseCaseClient({
         {videoKey && (
           <div className="mx-auto w-full max-w-[320px] lg:mx-0 lg:w-[280px] lg:flex-shrink-0">
             <UseCaseVideo
+              slug={slug}
               videoKey={videoKey}
               lang={locale === "zh" ? "cn" : "en"}
               transcript={
