@@ -29,7 +29,7 @@ export default async function AgentsVsWorkflowsPost({
     <article className="pt-10 pb-8">
       <h1 className="text-4xl font-bold mb-8">🤖 Agents vs Workflows</h1>
 
-      <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
+      <div className="w-full h-64 md:h-80 mb-6 overflow-hidden rounded-xl shadow-lg">
         <CdnImage
           src="/images/agents-vs-workflows.jpg"
           alt="Agents vs workflows"

@@ -239,9 +239,9 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
+    <article className="max-w-[75ch] mx-auto pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
       <div className="mb-8">
-        <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
+        <div className="w-full h-64 md:h-80 mb-6 overflow-hidden rounded-xl shadow-lg">
           {useMermaidThumbnail ? (
             <DynamicThumbnail
               slug={thumbnailType || slug}

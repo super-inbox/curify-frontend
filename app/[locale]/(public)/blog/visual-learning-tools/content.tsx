@@ -6,7 +6,6 @@ import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 
 export default function BlogContent() {
   const t = useTranslations('blog.visualLearningTools')
-  const locale = 'en' // Standardized locale for consistency
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
@@ -368,7 +367,7 @@ export default function BlogContent() {
         </div>
       </footer>
 
-      <RelatedBlogs currentSlug="visual-learning-tools" locale={locale} maxRelated={2} />
+      <RelatedBlogs currentSlug="visual-learning-tools" locale={'en'} maxRelated={2} />
     </article>
   )
 }

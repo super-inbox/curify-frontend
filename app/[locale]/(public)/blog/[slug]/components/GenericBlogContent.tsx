@@ -1,9 +1,13 @@
+import InlineBlogCTA from "@/app/[locale]/_components/InlineBlogCTA";
+
 interface GenericBlogContentProps {
   hasKey: (key: string) => boolean;
   safeT: (key: string, defaultValue?: string) => string;
   formatContent: (content: string) => string;
   getVideoDubbingUrl: (locale: string) => string;
   locale: string;
+  category?: string;
+  slug?: string;
 }
 
 export default function GenericBlogContent({ 
@@ -11,7 +15,9 @@ export default function GenericBlogContent({
   safeT, 
   formatContent, 
   getVideoDubbingUrl, 
-  locale 
+  locale,
+  category,
+  slug
 }: GenericBlogContentProps) {
   return (
     <div className="space-y-6">
@@ -23,6 +29,11 @@ export default function GenericBlogContent({
         <h2 className="text-2xl font-bold mb-4">{hasKey("whatIsTitle") ? safeT("whatIsTitle") : "What is this?"}</h2>
         <p className="mb-4">{hasKey("whatIsContent") ? safeT("whatIsContent") : "Content description..."}</p>
       </section>
+
+      {/* Inline CTA after first h2 section */}
+      {category && (
+        <InlineBlogCTA category={category} slug={slug} locale={locale} />
+      )}
 
       {(hasKey("whyTitle") || hasKey("whyContent")) && (
         <section>

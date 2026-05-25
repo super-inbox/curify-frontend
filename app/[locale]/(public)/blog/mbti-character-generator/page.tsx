@@ -101,7 +101,7 @@ export default function MBTICharacterGeneratorPage() {
   const locale = useLocale();
 
   return (
-    <div className="pt-10 pb-8">
+    <div className="max-w-[75ch] mx-auto pt-10 pb-8">
       {/* Breadcrumb Navigation */}
       <article className="prose prose-base md:prose-lg">
         {/* Hero Section */}

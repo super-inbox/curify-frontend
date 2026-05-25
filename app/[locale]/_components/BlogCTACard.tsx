@@ -190,7 +190,7 @@ function CtaButton({ cta, category }: { cta: CTA; category: string }) {
   );
 
   const className =
-    "group flex flex-col gap-2 rounded-xl border border-blue-200 bg-gradient-to-br from-blue-50 to-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-md";
+    "group flex flex-col gap-2 rounded-xl border border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-purple-400 hover:shadow-md";
 
   const inner = (
     <>

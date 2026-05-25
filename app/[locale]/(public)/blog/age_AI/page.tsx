@@ -37,7 +37,7 @@ export default function AgeAiPost() {
         {t("heading")}
       </h1>
 
-      <div className="float-right ml-6 mb-6 max-w-sm rounded-lg overflow-hidden shadow-lg">
+      <div className="w-full h-64 md:h-80 mb-6 overflow-hidden rounded-xl shadow-lg">
         <CdnImage
           src="https://storage.googleapis.com/curify-static/1_ef4wcJrfRHv5laz-yVmYMA.webp"
           alt={t("imageAlt")}

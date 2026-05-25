@@ -5,7 +5,7 @@ import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 export default function BlogContent() {
   const t = useTranslations('blog.contentMultiplicationSystem')
-  const locale = 'en' // Standardized locale for consistency
+  
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
@@ -234,7 +234,7 @@ export default function BlogContent() {
         </div>
       </footer>
 
-      <RelatedBlogs currentSlug="content-multiplication-system" locale={locale} maxRelated={3} />
+      <RelatedBlogs currentSlug="content-multiplication-system" locale={'en'} maxRelated={3} />
     </article>
   )
 }
