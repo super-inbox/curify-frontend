@@ -133,7 +133,7 @@ sources              adapter (run_*)                    output
 ─────────────        ────────────────────────────        ───────────────────────
 template_gap         template_gap_utils                  high-rank-score templates with few examples
 search_no_result     search_no_result_utils              SEARCH_NORESULT queries from user_interactions
-reddit               reddit_utils                        crawled reddit threads on relevant subreddits
+reddit               reddit_utils                        re-LLMs a static hot_topics.json snapshot (no live crawler yet — see open item 5)
 (future) gsc         (not implemented)                   Google Search Console zero-CTR / no-result
 rss                  separate /rss/run endpoint          curated RSS feeds (not in the proposal router)
 ```
@@ -148,6 +148,25 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
 3. **Track approval rate per source.** Some sources will produce mostly noise (reddit thread title harvesting) vs mostly signal (template-gap top-quartile). A simple admin panel showing approval-rate-per-source-per-week would surface which adapters earn their cron slot. Cross-references with thread-c drop volume.
 
 4. **Trace the GSC `Pages.csv` data into the existing proposal flow.** Today `Pages.csv` is a manual export read for the interconnection audit (`docs/interconnection.md`). It could feed the `gsc` adapter once that's built. Half-day to wire as a one-shot script that ingests the latest CSV into the proposals blob.
+
+5. **Reddit adapter: missing live crawler + misleading admin button** (audit 2026-05-25). The "Run Source: reddit" button on the proposals admin page suggests it triggers a fresh crawl, but it actually only re-runs the LLM matcher against the same static `curify_background/app/assets/hot_topics.json` snapshot (last touched 2026-05-14). No Reddit-API code (PRAW / asyncpraw / reddit.com) exists anywhere in the repo — exhaustive grep confirms. After the first successful match-run, subsequent button presses produce ~0 new proposals because of the (phrase, template_id) dedupe key.
+
+   **What does work** in the pipeline (don't rebuild these):
+   - Batch LLM matching (gpt-4o-mini, 10 phrases/batch) at `proposal_matching.py`, shared with the `search_no_result` adapter
+   - Hallucinated template_id rejection (validates against the template set)
+   - 0.6 confidence cutoff + dedupe key (phrase + template_id) → safe re-runs
+   - Score formula `0.4 + 0.6 * confidence` anchored low because Reddit lacks quantified demand vs `search_no_result`'s event counts
+
+   **Gaps** (priority within this work item):
+   - **5.1 (P0):** ship a real crawler (`app/utils/reddit_crawler.py`, PRAW or asyncpraw, 6-8 high-signal subreddits — r/midjourney, r/MBTI, r/anime, r/Marvel, r/Wedding, r/PromptDesign as starter list). Call from `run_reddit()` BEFORE `_load_hot_topics()`: crawl → write → match. ~Half-day + Reddit API creds (script-app client_id + secret + user_agent in `.env`).
+   - **5.2 (P1):** pass tier1/tier2 context to the LLM matcher alongside each phrase (currently dropped). 1-hour edit to `proposal_matching._MATCH_PROMPT`. Improves match precision on short phrases ("MBTI computer habits" → mbti-generic).
+   - **5.3 (P1):** match-quality eval — sample N=50 surviving proposals, manual binary judge, baseline accuracy before any prompt tuning. Half-day.
+   - **5.4 (P2):** pre-filter candidate templates to the phrase's tier1/tier2 ancestry before sending to LLM. Currently the catalog blob embeds all 193 templates per call (~3-4K tokens). Cost scales linearly with catalog size.
+   - **5.5 (P3):** attach tier1 to proposal `topics` field (currently only tier2 — line 122 of `reddit_utils.py`); add subreddit/thread provenance to `source_ref` once crawler exists.
+
+   **Sanity check before building:** confirm whether a Reddit crawler lives in a different repo / location that a `curify-studio`-only grep would miss. The docstring's framing ("re-running the crawler in curify-studio/curify_background") is specific enough to suggest something existed at some point.
+
+   **Decision deferred:** whether Reddit stays a proposal source at all. If GSC + on-platform `search_no_result` + `search_lowresult` together cover the demand surface adequately, the cheaper move is to **demote Reddit to manual hot_topics.json refresh** (drop the misleading button OR rename to "Re-match: reddit") rather than build the crawler. Revisit when we run a per-source approval-rate audit (open item 3 in this thread).
 
 ---
 
