@@ -174,9 +174,9 @@ Ranked by how much each unblocks downstream. Reprioritized 2026-05-19 after runn
 3. **[thread c] Content drops: hongjie28-patch-4 + hongjie28-patch-2**. Per the daily-content-drop workflow (memory `project_daily_template_workflow.md`). Fetch each patch branch, wire 5 metadata fields, run i18n autotranslate, sync gallery with `--auto-tag`. After both land, re-run the eval to baseline how new templates shift the bottleneck list.
 
 ### P1
-4. **[thread a] SEARCH_LOWRESULT admin panel** (`curify-studio` backend, `app/crud/admin.py`). The frontend ships the event (`8217070`), the Postgres enum has the value (migration ran 2026-05-18). But `crud/admin.py` lines 751-798 only aggregates `SEARCH_NORESULT`. Until this lands, low-result events accumulate in the DB but nobody surfaces them. Half-day. Demoted from P0 because the eval set now substitutes for production data on near-term alias work — but as soon as P0 #1 ships and we want fresh signal, this is back at the top.
+4. ~~**[thread a] SEARCH_LOWRESULT admin panel**~~ ✅ Shipped 2026-05-25 (user-added). Both `SEARCH_NORESULT` and `SEARCH_LOWRESULT` events now carry weight=1 at query-level when aggregating in the admin portal — a query that fired either event once counts as one demand signal, not weighted by event volume per user.
 
-5. **[thread d] Extend `search_no_result_utils.py` to also harvest `SEARCH_LOWRESULT`**. Same query path, broader demand signal. Cheap once P1 #4 lands.
+5. **[thread d] Extend `search_no_result_utils.py` to also harvest `SEARCH_LOWRESULT`**. Same query path, broader demand signal. Cheap now that P1 #4 has shipped — same weight-1 query-level aggregation applies on the proposal-source side.
 
 6. **[thread b] Tag-audit sampling script** (`scripts/audit_tags.py`). Prints 20 random samples per surface with parent-template tier-1 / topic consistency notes. Catches tagging drift post-content-drop. Especially useful after P0 #3 to verify the new content carries the expected topic tags.
 
@@ -193,6 +193,12 @@ Ranked by how much each unblocks downstream. Reprioritized 2026-05-19 after runn
 11. **[thread d] Approval-rate-per-source dashboard panel**. Calibrates which adapter cron slots to keep.
 
 12. **[thread b] Periodic gallery-tag ↔ topic-registry consistency audit**. Catch silent drift. Subsumed once P0 #2 ships and the gallery tags carry a tier mapping.
+
+### Recently shipped (2026-05-23 / 25)
+- **[thread a] Snake-class tokenizer fixes** (`cdc6d7a`, 2026-05-25) — Two changes in `app/[locale]/(public)/search/page.tsx`. (1) English plural stem: single ASCII tokens ending in -s get singularized at tokenization time (snakes → snake, stories → story, boxes → box). Conservative suffix guard skips -ss/-us/-is/-os/-as. (2) Compound-noun precision guard in scoreQueryTokens: inspirations that strict-match only via their own blob (parent template did not match) require either topical-field reinforcement (template_id / tags / search_aliases) OR a whole-phrase param match (param tokens ⊆ query tokens). Stops query `snake` from being a strict hit on a snake-plant inspiration under a houseplant template that never mentions snakes. 36/36 eval PASS.
+- **[thread a] Rewriter prompt patches** (`e3047d2`, 2026-05-23) — Sharpened Path B examples to specifically business / accounting / private individuals; added a CRITICAL clause routing pop-culture / fandom / celebrity names always Path A (Genshin Impact, Bridgerton, Taylor Swift, Stranger Things, Chiikawa). Broadened the non-English language rule from Chinese-only to any non-English. Fixes routing failures on samurai, genshin, taylor swift type queries.
+- **[thread c] Samurai + Genshin content gap fill** (`13e30db`, 2026-05-23) — 6 examples via `scripts/configs/samurai_genshin_2026-05-19.json` (fandom-grid + historical-figure-profile + mbti-generic for samurai; fandom-grid + mbti-generic + pop-culture-matching-chart for Genshin). All 5 query variants (samurai, 武士, genshin, 原神, genshin impact) now return 3 hits.
+- **[thread c] Daily content drops** (`cd10ef0` 2026-05-23 + `b090079` 2026-05-24 + `bee2b98` 2026-05-25) — 10 new templates across patch-2 (twice) + patch-7. Patch-7 carried the recurring `111111[` corrupt prefix; wire script strips it programmatically. Now at 197 templates total.
 
 ### Recently shipped (2026-05-19 / 20)
 - **[thread a] P0 #1 eval-driven alias top-up** (`6ea0d36`) — `scripts/topup_search_aliases.py` extended with 9 new families closing the rewriter-dependency gap. 28-query eval shifted from "9 queries needing rewriter rescue" to "0 — all base-rich". Examples: `english-chinese` 0→301, `手作` 0→173, `met gala` 1→83, `wedding planner` 15→252.
