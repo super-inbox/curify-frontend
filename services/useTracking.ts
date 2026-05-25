@@ -19,7 +19,8 @@ export type ContentType =
   | "mbti_quiz"
   | "page"
   | "etsy_pack"
-  | "tool_card";
+  | "tool_card"
+  | "use_case_video";
 
 export type ActionType =
   | "view"

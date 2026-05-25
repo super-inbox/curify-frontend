@@ -36,15 +36,18 @@ const CdnVideo = forwardRef<HTMLVideoElement, CdnVideoProps>(
     // Auto-rewrite static CDN assets (no rewrite for external URLs)
     const finalSrc = cdn(src);
 
-    const handlePlay = () => {
-      if (!setWhoPlaying) return;
-    
-      const value = side ?? "";
-    
-      if (typeof setWhoPlaying === "function") {
-        setWhoPlaying(value as any);
+    const handlePlay = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+      // Internal side-by-side state (used by comparison videos)
+      if (setWhoPlaying) {
+        const value = side ?? "";
+        if (typeof setWhoPlaying === "function") {
+          setWhoPlaying(value as any);
+        }
       }
-    };    
+      // Chain the consumer's onPlay so tracking handlers (e.g. video_play
+      // via useVideoTracking) fire on use-case / demo videos.
+      onPlay?.(e);
+    };
 
     return (
       <video
