@@ -116,7 +116,7 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   mood:                 "cozy",
   lighting:             "golden hour",
   seasonal:             "winter",
-  composition:          "landscape",
+  composition:          "collage",
   "cultural-festivals": "festive",
 };
 
