@@ -116,6 +116,7 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   mood:                 "cozy",
   lighting:             "golden hour",
   seasonal:             "winter",
+  composition:          "collage",
   "cultural-festivals": "festive",
 };
 
@@ -371,6 +372,32 @@ const EXTRA_TAG_TO_TOPICS: Record<string, string[]> = {
   cat:               ["animal"],
   sunglasses:        ["fashion"],
   friends:           ["relationship"],
+  // ---- 2026-05-25 pass-1 tag expansion — consolidate raw/categorized_tags.json
+  // overlap into existing buckets (mood / film / digital-canvas / nostalgia /
+  // ai) plus one new tier-3 `composition` under design. Additive only — no
+  // existing mapping moves; eval unchanged since EXTRA_TAG_TO_TOPICS only
+  // affects the tag-page → topic-page direction. See docs/search-and-content.md
+  // for the source-category-to-bucket mapping table.
+  // → mood (additions from mood_emotion + intimacy_warmth)
+  carefree:          ["mood"],
+  relaxed:           ["mood"],
+  humorous:          ["mood"],
+  soft:              ["mood"],
+  captivating:       ["mood"],
+  alluring:          ["mood"],
+  natural:           ["mood"],
+  // → film (canonical word for the cinematic bucket, from lighting_color)
+  cinematic:         ["film"],
+  // → digital-canvas (style descriptor, sibling of illustration)
+  artistic:          ["digital-canvas"],
+  // → nostalgia (atmosphere_tone — exact word-form match)
+  nostalgic:         ["nostalgia"],
+  // → ai (scene_setting → futuristic, sibling of neon)
+  futuristic:        ["ai"],
+  // → composition (new tier-3 under design; format / framing axis)
+  landscape:         ["composition"],
+  macro:             ["composition"],
+  studio:            ["composition"],
 };
 
 // Topics excluded from the reverse map only — their topic page still

@@ -13,6 +13,11 @@ export type TemplateParameter = {
   type: "text" | "textarea" | "select" | "language_pair";
   placeholder?: string;
   options?: string[];
+  /** Optional pre-filled value. When present, the input renders with this
+   * value already populated so the user can hit Generate immediately
+   * (or edit before submitting). Used to drop effective param count on
+   * multi-param templates per the daily-content-drop workflow rule. */
+  default?: string;
 };
 
 export type TemplateCard = {
@@ -48,7 +53,17 @@ interface TemplateDetailPageProps {
 
 export function TemplateDetailPage({ template, templateCards, allTemplates, locale }: TemplateDetailPageProps) {
   const router = useRouter();
-  const [selectedParams, setSelectedParams] = useState<Record<string, string>>({});
+  // Initialize selectedParams with each param's `default` (if any). Lets
+  // multi-param templates ship generation-ready out of the box — user can
+  // edit any default before clicking Generate. Params without a default
+  // remain empty and continue to gate the isValid check.
+  const [selectedParams, setSelectedParams] = useState<Record<string, string>>(() => {
+    const initial: Record<string, string> = {};
+    template.parameters.forEach((p) => {
+      if (p.default) initial[p.name] = p.default;
+    });
+    return initial;
+  });
   const [selectedCardId, setSelectedCardId] = useState<string | null>(null);
 
   // Generate prompt with current parameters

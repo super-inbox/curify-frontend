@@ -146,6 +146,71 @@ const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
       Icon: MessageCircle,
     },
   ],
+  // B2B sales-narrative posts shaped like engineering deep-dives — readers
+  // come with buyer intent (EdTech / Publisher / Agency / ProgSEO). The
+  // category default (now content-automation for the first two, still
+  // ds-ai-engineering for the third) routes to /contact + Calendly OR
+  // MentorCruise + /contact, neither of which is the conversion path
+  // we built. Override each to its matching /use-cases/for-* page +
+  // Calendly direct so buyer-intent traffic gets the landing page that
+  // sells the pitch.
+  "multimodal-ai-educational-publishing": [
+    {
+      id: "use-cases-for-publishers",
+      label: "EdTech + Publishers playbook",
+      description:
+        "Format extension, K-5 vocab engine, bilingual editions, white-label license vs done-for-you packs — the buyer-side breakdown.",
+      href: "/use-cases/for-publishers",
+      Icon: MessageCircle,
+    },
+    {
+      id: "calendly-15min",
+      label: "Book a 15-min audit",
+      description:
+        "Direct calendar — map your existing content stack to where Curify fits, no demo.",
+      href: CALENDLY,
+      external: true,
+      Icon: Calendar,
+    },
+  ],
+  "ai-content-factory-for-agencies": [
+    {
+      id: "use-cases-for-marketers",
+      label: "Growth Agencies playbook",
+      description:
+        "White-label content engine — serve 50 clients with the headcount you have for 10. Per-seat or per-managed-account, no custom retainer.",
+      href: "/use-cases/for-marketers",
+      Icon: MessageCircle,
+    },
+    {
+      id: "calendly-15min",
+      label: "Book a 15-min audit",
+      description:
+        "Direct calendar — walk through your per-AM throughput ceiling and where the engine bundles in.",
+      href: CALENDLY,
+      external: true,
+      Icon: Calendar,
+    },
+  ],
+  "content-tagging-system": [
+    {
+      id: "use-cases-for-programmatic-seo",
+      label: "Programmatic SEO playbook",
+      description:
+        "Hub-and-spoke generator with original hero imagery — the productionization of the tagging architecture this post walks through.",
+      href: "/use-cases/for-programmatic-seo",
+      Icon: MessageCircle,
+    },
+    {
+      id: "calendly-15min",
+      label: "Book a 15-min audit",
+      description:
+        "Direct calendar — pipeline review of your existing SEO content stack, no demo.",
+      href: CALENDLY,
+      external: true,
+      Icon: Calendar,
+    },
+  ],
 };
 
 // Category → CTAs. Each category gets a primary plus an optional secondary,

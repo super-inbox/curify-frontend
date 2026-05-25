@@ -109,6 +109,28 @@ function buildSearchTokens(query: string): {
     .map((w) => w.trim())
     .filter((w) => w && !STOPWORDS.has(w));
 
+  // English plural stem: single ASCII primary token ending in `s` gets
+  // singularized so `snakes` matches records tagged `snake`. Conservative
+  // suffix guard skips already-singular forms (`-ss`, `-us`, `-is`, `-os`,
+  // `-as`) so we don't mangle `boss`, `lens`, `analysis`, `chaos`, `bias`.
+  // Handles three plural shapes: `-ies` → `-y` (stories → story); `-es`
+  // after sibilants (sx/ch/sh/zz) → strip `-es` (boxes → box, wishes →
+  // wish); else strip `-s`. A literal-plural record would be missed, but
+  // in practice tags lean singular for findability.
+  if (primary.length === 1) {
+    let t = primary[0];
+    if (/^[a-z]+s$/.test(t) && t.length >= 4 && !/(ss|us|is|os|as)$/.test(t)) {
+      if (/[bcdfghjklmnpqrtvwz]ies$/.test(t) && t.length >= 5) {
+        t = t.slice(0, -3) + "y";
+      } else if (/(ches|shes|xes|zzes)$/.test(t) && t.length >= 5) {
+        t = t.slice(0, -2);
+      } else {
+        t = t.slice(0, -1);
+      }
+      primary[0] = t;
+    }
+  }
+
   const bigrams: string[] = [];
   if (
     primary.length === 1 &&
@@ -352,6 +374,8 @@ export default async function SearchPage({ params, searchParams }: Props) {
     const tplByI18n = strictTpl.size > 0 ? strictTpl : relaxedTpl;
 
     const scored: ScoredInspiration[] = [];
+    // Pre-compute query-token set for the compound-noun guard below.
+    const queryTokenSet = new Set(tokens.primary);
     for (const r of nanoInspiration as InspRecord[]) {
       if (promoteAllUnderStrictTpl && strictTpl.has(r.template_id)) {
         scored.push({ rec: r, score: 100, strict: true });
@@ -374,7 +398,42 @@ export default async function SearchPage({ params, searchParams }: Props) {
           .join(" ")
       );
       const s = scoreBlob(blob, tokens);
-      if (s.allPrimary || s.bigramHits >= bigramThr) {
+      // Compound-noun precision guard: a single-token ASCII query that hits
+      // an inspiration ONLY because the token is one word inside a multi-word
+      // param value (e.g. `snake` matching `plant_name: "snake plant"`) gets
+      // demoted to relaxed unless the topical fields (template_id, tags,
+      // search_aliases) also carry the token. Phrase-collision matches are
+      // the main precision bug for short single-word queries against
+      // param-rich templates (houseplants, fashion, food).
+      let demoteToRelaxed = false;
+      if ((s.allPrimary || s.bigramHits >= bigramThr) && !strictTpl.has(r.template_id)) {
+        const topicalBlob = normalizeForSearch(
+          [r.template_id, ...(r.tags ?? []), ...(r.search_aliases ?? [])]
+            .filter((v): v is string => typeof v === "string" && v.length > 0)
+            .join(" ")
+        );
+        const topicalScore = scoreBlob(topicalBlob, tokens);
+        const topicalStrict =
+          topicalScore.allPrimary || topicalScore.bigramHits >= bigramThr;
+        if (!topicalStrict) {
+          // Topical fields don't carry the query — check whether any param
+          // value matches as a whole phrase (its tokens are a subset of the
+          // query tokens). Query "snake plant" vs param "snake plant" → ok;
+          // query "snake" vs param "snake plant" → demote.
+          let paramWholePhrase = false;
+          for (const pv of Object.values(r.params ?? {})) {
+            if (typeof pv !== "string" || !pv) continue;
+            const pvTokens = normalizeForSearch(pv).split(/\s+/).filter(Boolean);
+            if (pvTokens.length === 0) continue;
+            if (pvTokens.every((tok) => queryTokenSet.has(tok))) {
+              paramWholePhrase = true;
+              break;
+            }
+          }
+          if (!paramWholePhrase) demoteToRelaxed = true;
+        }
+      }
+      if ((s.allPrimary || s.bigramHits >= bigramThr) && !demoteToRelaxed) {
         scored.push({ rec: r, score: s.primaryHits + s.bigramHits, strict: true });
       } else if (s.primaryHits >= relaxedThr && relaxedThr > 0) {
         scored.push({ rec: r, score: s.primaryHits, strict: false });
@@ -480,9 +539,30 @@ export default async function SearchPage({ params, searchParams }: Props) {
     strictLocale: false,
     translate: translateNano,
   });
-  const matchedTemplates = allFeedCards.filter((c) =>
-    matchedTemplateIdsAll.has(c.template_id)
-  );
+  // For each template card, prefer the inspiration(s) that actually matched
+  // the query as the preview image — instead of buildNanoFeedCards default
+  // of the first inspirations by rank order. Makes "what surfaced" visible
+  // at a glance and lets the click prefill the form with the matched
+  // inspiration's params via sample_parameters.
+  const matchedInspsByTemplate = new Map<string, InspRecord[]>();
+  for (const r of inspirations) {
+    const existing = matchedInspsByTemplate.get(r.template_id);
+    if (existing) existing.push(r);
+    else matchedInspsByTemplate.set(r.template_id, [r]);
+  }
+  const matchedTemplates = allFeedCards
+    .filter((c) => matchedTemplateIdsAll.has(c.template_id))
+    .map((c) => {
+      const matched = matchedInspsByTemplate.get(c.template_id);
+      if (!matched || matched.length === 0) return c;
+      const top = matched.slice(0, 2);
+      return {
+        ...c,
+        image_urls: top.map((r) => r.asset.image_url),
+        preview_image_urls: top.map((r) => r.asset.preview_image_url ?? r.asset.image_url),
+        sample_parameters: (top[0]?.params as Record<string, unknown>) ?? c.sample_parameters,
+      };
+    });
 
   // Gallery prompts: fetch from Redis when the query exactly matches a
   // known nano-banana tag. Free-text queries skip this — we don't have

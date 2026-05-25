@@ -9,7 +9,9 @@ import type { NanoPromptBase } from '@/types/nanoPrompts';
 import { toOgLocale, resolveContentLocale, makeSafeTranslator } from '@/lib/locale_utils';
 import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
 import CategoriesSection from "@/app/[locale]/_components/NanoBananaPromptsTags";
+import RelatedTagsSection from "@/app/[locale]/_components/RelatedTagsSection";
 import { getTopicsForTag, getTemplatesForTopic } from '@/lib/topicRegistry';
+import { getRelatedTags } from '@/lib/relatedTags';
 import { nanoRegistry } from '@/lib/nano_utils';
 import { buildNanoFeedCards } from '@/lib/nano_page_data';
 import NanoTemplateDetailClient from '@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient';
@@ -219,6 +221,14 @@ export default async function TagPage({ params }: Props) {
           </header>
 
           <CategoriesSection categories={categories} currentTag={tag} />
+
+          <RelatedTagsSection
+            tags={getRelatedTags(tag, { limit: 12, liveOnly: true })}
+            locale={locale}
+            title={`Related to "${title}"`}
+            subtitle="Tags from the same category cluster."
+            className="mt-6 mb-2"
+          />
 
           {prompts.length === 0 ? (
             <div className="rounded-lg bg-white py-12 text-center shadow">

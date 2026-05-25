@@ -4071,5 +4071,85 @@
         ]
       }
     }
+  },
+  "template-english-grammar-wordlist-infographic": {
+    "category": "Infografía de Lista de Palabras de Gramática Inglesa",
+    "description": "Infografía colorida de vocabulario de 20 pares para aulas de ESL — homófonos, homónimos, pares de palabras confusas — en cajas de colores pastel con ilustraciones de dibujos animados y definiciones breves.",
+    "title": "Infografía Educativa de Lista de Palabras de Gramática Inglesa",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una cuadrícula de 2 columnas de 20 pares de vocabulario en inglés, cada uno en una caja de color pastel con una ilustración de dibujos animados y una definición breve. Bordes decorativos, tipografía amigable para niños, título en negrita — diseñada como material para carteles en el aula o en un rincón de estudio.",
+        "who": "Adecuado para maestros de ESL, tutores de inglés, creadores de currículos para educación en casa, padres que apoyan a niños en edad de lectura y editores de EdTech que producen materiales de estudio gratuitos.",
+        "how": [
+          "Elige un tema de vocabulario (Homófonos Comunes, Homófonos Difíciles, Homónimos Comunes, Pares de Palabras Confusas).",
+          "Genera la infografía de la cuadrícula de 20 pares."
+        ],
+        "prompts": [
+          "Genera una infografía de lista de palabras de Homófonos Comunes.",
+          "Crea un cartel de ESL de Pares de Palabras Confusas.",
+          "Genera una infografía educativa de Homónimos Comunes."
+        ]
+      }
+    }
+  },
+  "template-english-homograph-educational-poster": {
+    "category": "Cartel Educativo de Homógrafos en Inglés",
+    "description": "Cuadrícula amigable para niños de 2x3 de pares de palabras homógrafas mostrando ambos significados con ilustraciones de dibujos animados, definiciones y oraciones de ejemplo. Diseñado para aulas de ESL.",
+    "title": "Cartel Educativo de Homógrafos en Inglés",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un cartel educativo limpio en torno a un tema de homógrafos. Diseño: cuadrícula de 2x3 de pares de palabras homógrafas, cada una mostrando dos significados diferentes con ilustraciones de dibujos animados, definiciones y oraciones de ejemplo. Título en negrita en la parte superior, pie de página decorativo, paleta amigable para niños.",
+        "who": "Adecuado para maestros de ESL, maestros de inglés de primaria, creadores de currículos para educación en casa y padres que ayudan a los niños a dominar vocabulario complicado.",
+        "how": [
+          "Elige un tema de homógrafos (Palabras Homógrafas Comunes, Pares de Homógrafos Básicos, Ejemplos Difíciles de Homógrafos, Homógrafos Cotidianos).",
+          "Genera el cartel educativo de homógrafos."
+        ],
+        "prompts": [
+          "Genera un cartel educativo de Palabras Homógrafas Comunes.",
+          "Crea un cartel de ESL de Ejemplos Difíciles de Homógrafos.",
+          "Genera un cartel de aula de Homógrafos Cotidianos."
+        ]
+      }
+    }
+  },
+  "template-cultural-travel-journey-infographic": {
+    "category": "Infografía de Viaje Cultural",
+    "description": "Infografía vibrante de comparación antes/después que contrasta el turismo superficial con la inmersión cultural — festivales indios, cultura del té japonesa, souks marroquíes, cocina italiana — diseñada para contenido de viaje lento y centrado en la cultura.",
+    "title": "Infografía Educativa de Viaje Cultural",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de comparación de pantalla dividida con paneles de 'Antes: Turismo Superficial' vs 'Ahora: Inmersión Cultural' conectados por un camino curvado de 'Viaje del Viajero'. El lado izquierdo muestra un viaje genérico y desapegado; el lado derecho muestra la experiencia de inmersión más profunda. Colores vibrantes, íconos culturales ilustrados, tipografía en negrita — diseñada para anclar contenido de viaje centrado en la cultura.",
+        "who": "Adecuado para bloggers de viajes, creadores de contenido de viaje lento, agencias de turismo cultural, programas de estudio en el extranjero, editores de turismo religioso / culinario y padres que planifican viajes familiares culturalmente ricos.",
+        "how": [
+          "Elige un tema de viaje cultural (Inmersión en Festivales Indios, Cultura del Té Japonesa, Experiencia en Souk Marroquí, Inmersión Culinaria Italiana).",
+          "Genera la infografía de viaje cultural."
+        ],
+        "prompts": [
+          "Genera una infografía de viaje cultural de Cultura del Té Japonesa.",
+          "Crea un cartel de Experiencia en Souk Marroquí.",
+          "Genera una infografía de viaje cultural de Inmersión Culinaria Italiana."
+        ]
+      }
+    }
+  },
+  "template-english-grammar-lesson": {
+    "category": "Póster de Lección de Gramática en Inglés",
+    "description": "Póster de gramática limpio y amigable para niños que cubre palabras compuestas, comas, prefijos/sufijos, estructura de oraciones y errores comunes — diseño de tres secciones con ejemplos e ilustraciones de dibujos animados.",
+    "title": "Póster Educativo de Lección de Gramática en Inglés",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster de lección de gramática limpio y amigable para niños con tres secciones: la parte superior tiene la definición, la parte media tiene palabras y oraciones de ejemplo, la parte inferior tiene más ejemplos. Incluye una ilustración de un personaje de dibujos animados relacionado con el tema. Paleta de colores pastel, encabezados grandes, tipografía fácil de leer.",
+        "who": "Adecuado para maestros de inglés de primaria, tutores de ESL, creadores de currículos para educación en casa, padres que ayudan con la tarea de gramática y editores de EdTech que envían pósters listos para el aula.",
+        "how": [
+          "Elige un tema de lección de gramática (Palabras Compuestas, Comas y Sus Usos, Homófonos y Homógrafos, Prefijos y Sufijos, Fundamentos de la Estructura de Oraciones, Errores Comunes de Gramática).",
+          "Genera el póster de lección de gramática."
+        ],
+        "prompts": [
+          "Genera un póster de lección de gramática sobre Palabras Compuestas.",
+          "Crea un póster educativo en inglés sobre Prefijos y Sufijos.",
+          "Genera una infografía de lección de gramática sobre Comas y Sus Usos."
+        ]
+      }
+    }
   }
 }

@@ -55,7 +55,7 @@ export default function BlogListPage() {
 
   return (
     <div className="pt-2 pb-16">
-      <div className="mx-auto max-w-[1180px] px-4">
+      <div className="mx-auto max-w-[1400px] px-4">
 
         <h1 className="mb-6 text-4xl font-bold text-neutral-900">{t("latestArticles")}</h1>
 

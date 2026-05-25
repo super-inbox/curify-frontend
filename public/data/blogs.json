@@ -338,7 +338,7 @@
     "readTime": "10 min read",
     "tag": "DS & AI Engineering",
     "image": "/images/ai-content-factory-9-traits.jpg",
-    "category": "ds-ai-engineering",
+    "category": "content-automation",
     "relatedLinks": [
       "ai-engineering-hard-truth",
       "ai-reshaping-data-workflow",
@@ -599,7 +599,7 @@
     "relatedLinks": [
       "ai-youtube-video-translator"
     ],
-    "lastmod": "2026-05-17"
+    "lastmod": "2026-05-25"
   },
   {
     "slug": "asl-video-translator",
@@ -1392,12 +1392,105 @@
     "readTime": "12 min read",
     "tag": "DS & AI Engineering",
     "image": "/images/nano_insp/template-vocabulary-space.jpg",
-    "category": "ds-ai-engineering",
+    "category": "content-automation",
     "relatedLinks": [
       "ai-content-factory-for-agencies",
       "ai-engineering-hard-truth",
       "bilingual-ai-flashcards-early-childhood-education"
     ],
-    "lastmod": "2026-05-24"
+    "lastmod": "2026-05-24",
+    "nanoTemplates": [
+      {
+        "groupKey": "multimodal-ai-educational-publishing-vocabulary",
+        "template_id": "template-vocabulary",
+        "sample_parameters": {
+          "language_pair": "en-zh",
+          "topic_name": "Animal Actions"
+        },
+        "category": "Bilingual Vocabulary Flashcards",
+        "description": "Generate full topic sets of bilingual flashcards in one render — image + source word + target word + pronunciation on every card, consistent art direction across the set.",
+        "image_urls": [
+          "/images/nano_insp/template-vocabulary-animal-actions.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-vocabulary-animal-actions-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "multimodal-ai-educational-publishing-species-science",
+        "template_id": "template-species-science",
+        "sample_parameters": {
+          "species_name": "egret"
+        },
+        "category": "Scientific Reference Plates",
+        "description": "Photorealistic species reference plates with anatomical accuracy and bilingual annotation — ready for science textbooks, museum signage, or classroom posters.",
+        "image_urls": [
+          "/images/nano_insp/template-species-science-zh-egret.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-species-science-zh-egret-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "multimodal-ai-educational-publishing-weird-science",
+        "template_id": "template-weird-cold-knowledge-popular-science-card",
+        "sample_parameters": {
+          "science_topic": "blue whale"
+        },
+        "category": "Weird Science Fact Posters",
+        "description": "High-engagement bilingual science posters that surface surprising facts (octopus three hearts, Jupiter diamond rain, 3000-year-old honey) with strong visual hooks.",
+        "image_urls": [
+          "/images/nano_insp/template-weird-cold-knowledge-popular-science-card-blue-whale.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-weird-cold-knowledge-popular-science-card-blue-whale-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "multimodal-ai-educational-publishing-history-timeline",
+        "template_id": "template-history-timeline-infographic",
+        "sample_parameters": {
+          "timeline_topic": "apple inc"
+        },
+        "category": "History Timeline Infographics",
+        "description": "Linear evolution timelines with consistent art direction across all stops — companies, technologies, dynasties, species. One render produces the full timeline as a single image.",
+        "image_urls": [
+          "/images/nano_insp/template-history-timeline-infographic-apple-inc.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-history-timeline-infographic-apple-inc-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "multimodal-ai-educational-publishing-mbti-character",
+        "template_id": "template-mbti-marvel",
+        "sample_parameters": {
+          "character_name": "Hulk"
+        },
+        "category": "MBTI Character Series",
+        "description": "Character-driven series with locked universe styling — illustrators no longer carry the cross-page consistency burden; the template enforces it.",
+        "image_urls": [
+          "/images/nano_insp/template-mbti-marvel-en-marvel-hulk.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-mbti-marvel-en-marvel-hulk-prev.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "programmatic-seo-dtc-visual-first",
+    "title": "Programmatic SEO for DTC Brands: Why Visual-First Pages Beat Keyword-Stuffed Pages",
+    "date": "May 25, 2026",
+    "readTime": "12 min read",
+    "tag": "DS & AI Engineering",
+    "image": "/images/nano_insp/template-history-timeline-infographic-apple-inc.jpg",
+    "category": "ds-ai-engineering",
+    "relatedLinks": [
+      "ai-content-factory-for-agencies",
+      "multimodal-ai-educational-publishing",
+      "ai-engineering-hard-truth"
+    ],
+    "lastmod": "2026-05-25"
   }
 ]

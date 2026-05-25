@@ -160,27 +160,41 @@ export default async function BlogPostPage({
 
   const currentKeys = availableKeys[blogConfig.namespace] || [];
 
-  // Safe translation helper that only accesses known keys
-  const safeT = (key: string, defaultValue = "") => {
+  // Safe translation helper that only accesses known keys. Accepts either a
+  // plain string default (legacy callers) or a next-intl-style options object
+  // `{ defaultValue: ... }`. Content components in this directory commonly use
+  // the options-object form to gate conditional rendering — e.g.
+  // `t("step4Title", { defaultValue: null }) && <Card />`. Without the unwrap
+  // below, missing keys returned the entire options object (truthy), causing
+  // empty step/section cards to render on posts that didn't define those keys.
+  const safeT = (key: string, defaultValueOrOptions: string | { defaultValue: unknown } = ""): string => {
+    const resolvedDefault =
+      defaultValueOrOptions && typeof defaultValueOrOptions === "object" && "defaultValue" in defaultValueOrOptions
+        ? defaultValueOrOptions.defaultValue
+        : defaultValueOrOptions;
+
     if (!currentKeys.includes(key)) {
-      return defaultValue;
+      // Cast preserves the consumer prop signature `(key, default?) => string`.
+      // When callers passed `{ defaultValue: null }` for conditional gating,
+      // the unwrapped null returns and is still falsy in JSX truthiness checks.
+      return resolvedDefault as string;
     }
-    
+
     // Use namespace-specific translations if available
     if (tNamespace) {
       try {
         const result = tNamespace(key);
         // If the result is the same as the key, it means translation wasn't found
         if (result === key) {
-          return defaultValue;
+          return resolvedDefault as string;
         }
         return result;
       } catch (error) {
-        return defaultValue;
+        return resolvedDefault as string;
       }
     }
-    
-    return defaultValue;
+
+    return resolvedDefault as string;
   };
 
   // Helper to check if a translation key exists
@@ -239,7 +253,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article className="mx-auto max-w-3xl pt-20 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
+    <article className="mx-auto max-w-6xl pt-20 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
       <header className="mb-10">
         <div className="mb-6 max-w-md rounded-lg overflow-hidden shadow">
           {useMermaidThumbnail ? (
@@ -384,6 +398,13 @@ export default async function BlogPostPage({
           />
         )}
       </div>
+
+      {/* Optional template row — renders when the catalog entry has
+          `nanoTemplates`. Filters by groupKey prefix so each post only
+          surfaces the cards keyed to its own slug. */}
+      {blogData?.nanoTemplates?.length > 0 && (
+        <NanoBananaExamples locale={locale} blogSlug={slug} />
+      )}
 
       {/* Unified CTA — picks the right tool / coaching / contact target based
           on the post's category, with a per-slug override for creator-tools
