@@ -284,10 +284,19 @@ export default async function SearchPage({ params, searchParams }: Props) {
     // Only redirect when the substring match is unambiguous (single hit).
     if (containsQuery.length === 1) target = containsQuery[0];
   }
-  // If the full-query topic match was ambiguous or empty, try resolving
-  // a single primary token (e.g. "spain travel" → tokens [spain, travel],
-  // each is a topic — ambiguous, so fall through to free-text). But if
-  // exactly one token resolves to a topic, redirect there.
+  // Multi-token queries: only redirect when EVERY non-stopword token
+  // resolves to a topic AND they all resolve to the SAME topic (rare —
+  // e.g. an alias collision). Otherwise the unresolved tokens are
+  // content modifiers ("thai food" — `thai` is a cuisine modifier,
+  // `food` is a topic; redirecting to /topics/food strips the user's
+  // thai-specific intent). Falling through to free-text search lets
+  // the page render results that combine all tokens.
+  //
+  // The previous behavior — redirect when exactly one token resolves
+  // to a topic — over-redirected modifier+topic queries like
+  // `thai food`, `wedding flowers`, `japanese architecture` where the
+  // catalog has rich content for the intersection but the unresolved
+  // token (`thai`/`wedding`/`japanese`) was treated as noise.
   if (!target && tokens.primary.length > 1) {
     const tokenMatches = tokens.primary
       .map((tok) =>
@@ -298,11 +307,13 @@ export default async function SearchPage({ params, searchParams }: Props) {
           const localized = localizedTopics[s.slug]?.displayName?.toLowerCase();
           return !!localized && localized === tok;
         })
-      )
-      .filter((s): s is SuggestionEntry => !!s);
-    // Multi-topic match (e.g. spain + travel): leave both out of redirect
-    // and let the free-text path show a results page that surfaces both.
-    if (tokenMatches.length === 1) target = tokenMatches[0];
+      );
+    const allResolved = tokenMatches.every((s): s is SuggestionEntry => !!s);
+    const allSame =
+      allResolved &&
+      tokenMatches.length > 0 &&
+      tokenMatches.every((s) => s!.slug === tokenMatches[0]!.slug);
+    if (allSame) target = tokenMatches[0]!;
   }
   // searchFallback entries (nano-banana prompt tags) intentionally do NOT
   // redirect — they should land on this page so the user sees templates,
