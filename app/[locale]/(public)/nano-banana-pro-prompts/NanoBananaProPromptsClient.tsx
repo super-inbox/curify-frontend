@@ -8,6 +8,7 @@ import PromptCard from "./PromptCard";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
 import CategoriesSection from "@/app/[locale]/_components/NanoBananaPromptsTags";
+import PopularTagRows from "./PopularTagRows";
 
 
 type Pagination = {
@@ -24,6 +25,7 @@ interface Props {
   initialData: NanoPromptBase[] | null;
   error: string | null;
   staticCategories: TagCategory[];
+  popularTagRows: { tag: string; prompts: NanoPromptBase[] }[];
 }
 
 function dedupeById(prompts: NanoPromptBase[]): NanoPromptBase[] {
@@ -39,6 +41,7 @@ export default function NanoBananaProPromptsClient({
   initialData,
   error,
   staticCategories,
+  popularTagRows,
 }: Props) {
   const t = useTranslations("nanoGallery");
 
@@ -119,10 +122,15 @@ export default function NanoBananaProPromptsClient({
 
         <CategoriesSection categories={categories} currentTag="" />
 
+        <PopularTagRows rows={popularTagRows} />
+
         {prompts.length === 0 ? (
           <EmptyState />
         ) : (
           <>
+            <h2 className="mb-3 text-base font-semibold text-gray-900">
+              Popular images
+            </h2>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {prompts.map((prompt, i) => (
                 <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} />

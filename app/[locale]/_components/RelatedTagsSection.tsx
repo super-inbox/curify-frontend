@@ -1,3 +1,6 @@
+"use client";
+
+import { useClickTracking } from "@/services/useTracking";
 import MetaChipLink from "./MetaChipLink";
 
 type Props = {
@@ -7,6 +10,35 @@ type Props = {
   subtitle?: string;
   className?: string;
 };
+
+// Tracked chip so Related Tags adoption is measurable. Uses
+// content_type=tag_capsule (same as PromptTagChips) so the two
+// surfaces aggregate cleanly, with a distinct content_id prefix
+// (`nano_related_tags:` vs `nano_prompt_tags:`) so analytics can
+// separate "clicked the prompt's own tag" from "clicked a related
+// tag we proposed."
+function RelatedTagChip({
+  tag,
+  locale,
+}: {
+  tag: string;
+  locale: string;
+}) {
+  const handleClick = useClickTracking(
+    `nano_related_tags:${tag}`,
+    "tag_capsule",
+  );
+  return (
+    <MetaChipLink
+      href={`/${locale}/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`}
+      onClick={handleClick}
+      color="blue"
+      size="small"
+    >
+      {tag}
+    </MetaChipLink>
+  );
+}
 
 export default function RelatedTagsSection({
   tags,
@@ -26,14 +58,7 @@ export default function RelatedTagsSection({
       </div>
       <div className="flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <MetaChipLink
-            key={tag}
-            href={`/${locale}/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`}
-            color="blue"
-            size="small"
-          >
-            {tag}
-          </MetaChipLink>
+          <RelatedTagChip key={tag} tag={tag} locale={locale} />
         ))}
       </div>
     </section>

@@ -208,23 +208,18 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
             </h3>
             <p className="text-base">{t("deep.usecases.businessBody")}</p>
           </div>
+
+          {/* Persona chips — inverse lookup of USE_CASES[].toolSlugs (every
+              persona that lists this tool). Folded into the "Who Uses X"
+              section so the prose narrative and the chip-level fan-out
+              live as one cohesive surface instead of duplicate headings. */}
+          {personas.length > 0 && (
+            <div className="pt-4 border-t border-gray-100">
+              <UseCaseChipsRow filterTo={personas} />
+            </div>
+          )}
         </div>
       </section>
-
-      {/* ---------- P0 #1 interconnection footer ---------- */}
-
-      {/* P0 #1b — "Who it's for" persona chips. Inverse lookup of
-          USE_CASES[].toolSlugs: every persona that lists this tool. */}
-      {personas.length > 0 && (
-        <section className="mt-16">
-          <h2 className="mb-4 text-2xl font-semibold text-[var(--c1)]">
-            {tGlobal("interconnection.whoItsFor", {
-              defaultValue: "Who it’s for",
-            })}
-          </h2>
-          <UseCaseChipsRow filterTo={personas} />
-        </section>
-      )}
 
       {/* P0 #1c — sibling tools in the same group. Reuses ToolsGrid in a
           2-up layout to match the rest of the page width. */}
