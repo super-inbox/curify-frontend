@@ -3,7 +3,10 @@ const path = require("path");
 
 const INPUT_PATH = path.join(__dirname, "../public/data/nano_templates.json");
 const OUTPUT_JSON_PATH = path.join(__dirname, "../public/data/nano_templates.json");
-const BACKUP_PATH = path.join(__dirname, "../public/data/nano_templates.backup.json");
+// Backup written to /tmp so it does not ship to clients via public/.
+// git history is the canonical undo path; this is a belt-and-braces
+// snapshot in case a local run mutates nano_templates.json badly.
+const BACKUP_PATH = path.join("/tmp", `nano_templates.backup.${Date.now()}.json`);
 
 /**
  * Template ID -> topic ids (MULTI)
