@@ -14,9 +14,11 @@ import type { NanoPrompt } from "@/types/nanoPrompts";
 import PromptCard from "../PromptCard";
 import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import { getTopicsForTag, getTemplatesForTopic } from "@/lib/topicRegistry";
+import { getRelatedTagsForPrompt } from "@/lib/relatedTags";
 import { nanoRegistry } from "@/lib/nano_utils";
 import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
+import RelatedTagsSection from "@/app/[locale]/_components/RelatedTagsSection";
 
 const TEMPLATE_CARDS_CAP = 30;
 
@@ -264,6 +266,13 @@ export default async function PromptDetailPage({
               }}
             />
           }
+        />
+
+        <RelatedTagsSection
+          tags={getRelatedTagsForPrompt(promptTags, { limit: 12, liveOnly: true })}
+          locale={locale}
+          title="Related Tags"
+          subtitle="Tags from the same category clusters as this prompt."
         />
 
         {related.length > 0 && (
