@@ -17,26 +17,35 @@ export type UseCaseDef = {
 // Each persona's first tool is the headline ToolsGrid card on its use-case
 // page. The inverse lookup (which personas list a given tool) drives the
 // "Who it's for" chips on each tool detail page.
+// LIVE-ONLY mapping policy: toolSlugs here must point at tools that
+// are status="create" or status="demo" in lib/tools-registry.ts.
+// Coming-soon tools are excluded so chip clicks never land on a dead
+// page. When a coming-soon tool ships, add it back to whichever
+// persona lists it belongs in (audit in docs/interconnection.md).
+// Reviewed + tightened 2026-05-25.
 export const USE_CASES: UseCaseDef[] = [
   // --- Consumer / prosumer personas (SEO long-tail demand capture) ---
 
   // Parents play dubbed content for kids; subtitles help with reading.
   { slug: "for-parents",      tier: "consumer", toolSlugs: ["bilingual-subtitles", "video-dubbing"] },
 
-  // ESL learners watch listening practice with bilingual subtitles;
-  // voice-clone lets them hear their own writing read back.
-  { slug: "for-esl-learners", tier: "consumer", toolSlugs: ["bilingual-subtitles", "voice-clone"] },
+  // ESL learners practice listening with bilingual subtitles, transcribe
+  // for study notes, and use speech-translate for pronunciation help.
+  // voice-clone removed pending tool ship (status=coming_soon).
+  { slug: "for-esl-learners", tier: "consumer", toolSlugs: ["bilingual-subtitles", "speech-translator", "video-transcript-generator"] },
 
   // Creators ship dubbed shorts, add subtitles, do quick speech-translate
-  // for off-the-cuff captures.
-  { slug: "for-creators",     tier: "consumer", toolSlugs: ["video-dubbing", "bilingual-subtitles", "speech-translator"] },
+  // for off-the-cuff captures, generate transcripts for blog repurposing,
+  // summarize long-form for digests, clean up footage, and play with
+  // style-transfer for creative experimentation.
+  { slug: "for-creators",     tier: "consumer", toolSlugs: ["video-dubbing", "bilingual-subtitles", "speech-translator", "video-transcript-generator", "video-summarizer", "video-enhance", "style-transfer"] },
 
-  // Freelance illustrators selling on Etsy / Pinterest / Gumroad — watercolor
-  // and vintage-scrapbook printables, fan-art / MBTI character packs, classroom
-  // decor sets, fashion mood boards. NOT a fit for brand / logo / UI designers
-  // (the catalog has zero of those). No video tools yet match this audience —
-  // empty list is honest and lets the use-case page skip the tools section.
-  { slug: "for-designers",    tier: "consumer", toolSlugs: [] },
+  // Freelance illustrators selling on Etsy / Pinterest / Gumroad. The
+  // visual tools fit (style-transfer for mood boards / palette
+  // exploration; manga-translation for fan-art and cross-language
+  // illustration). Video tools are still not a fit. NOT a fit for brand
+  // / logo / UI designers (the catalog has zero of those).
+  { slug: "for-designers",    tier: "consumer", toolSlugs: ["style-transfer", "manga-translation"] },
 
   // --- B2B ICPs (cold-outreach + reference-deal surface) ---
   // Slug kept for SEO continuity; copy and toolSlugs rewritten to target
@@ -45,18 +54,24 @@ export const USE_CASES: UseCaseDef[] = [
   // Was "for-marketers" (solo / SMB voice). Now: marketing & growth
   // agencies — white-label content factory, serve 50 clients with the
   // headcount you have for 10. Tools broadened to reflect the multi-vertical
-  // breadth an agency ships across.
-  { slug: "for-marketers",    tier: "b2b",      toolSlugs: ["video-dubbing", "bilingual-subtitles", "speech-translator"] },
+  // breadth an agency ships across, including transcript and summary
+  // workflows for competitor monitoring and content repurposing.
+  { slug: "for-marketers",    tier: "b2b",      toolSlugs: ["video-dubbing", "bilingual-subtitles", "speech-translator", "video-transcript-generator", "video-summarizer"] },
 
   // Was generic "for-publishers". Now: EdTech & children's publishers —
   // industrial vocab pipeline + format extension + bilingual editions.
-  // voice-clone added for TTS audio companion to the K-5 vocab packs.
-  { slug: "for-publishers",   tier: "b2b",      toolSlugs: ["bilingual-subtitles", "voice-clone"] },
+  // video-dubbing covers audio-companion / video-version of print
+  // titles; video-transcript-generator for converting recorded
+  // lectures or read-alouds into print transcripts. voice-clone
+  // removed pending tool ship (status=coming_soon).
+  { slug: "for-publishers",   tier: "b2b",      toolSlugs: ["bilingual-subtitles", "video-dubbing", "video-transcript-generator"] },
 
-  // NEW. DTC / cross-border ecommerce — 1 product photo → 100 lifestyle
-  // scenes, auto-scheduled. image-translation + style-transfer are the
-  // core engine; video-dubbing covers their TikTok/Reels arm.
-  { slug: "for-dtc-brands",   tier: "b2b",      toolSlugs: ["image-translation", "style-transfer", "video-dubbing"] },
+  // NEW. DTC / cross-border ecommerce — style-transfer for 1-photo →
+  // many-scenes lifestyle generation; video-dubbing for TikTok/Reels;
+  // manga-translation for cross-border manga/comic merch SKUs.
+  // image-translation removed pending tool ship (status=coming_soon)
+  // — was the original headline tool, plan to restore once live.
+  { slug: "for-dtc-brands",   tier: "b2b",      toolSlugs: ["style-transfer", "video-dubbing", "manga-translation"] },
 
   // NEW. Programmatic SEO builders — hub-and-spoke generator with original
   // imagery. Horizontal engine play, NOT a template browser — empty
