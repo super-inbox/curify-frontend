@@ -178,6 +178,16 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
 
    **Why this is high-leverage**: every gap-fix-feature in the last 2 weeks (snake / 鲜花 / accion / samurai / genshin / Chiikawa) followed the same workflow. Automating the classification step removes ~30 min of human triage per query and ensures consistent verdict criteria.
 
+7. **Long-query bigram weighting in CJK matcher** (audit 2026-05-25). Long compound CJK queries like `适合日本秋季旅行的极简穿搭` (= "minimalist outfit for autumn travel in Japan") produce 12 bigrams but **zero strict catalog matches** — not because the concepts are missing (`日本: 48 records, 旅行: 218, 穿搭: 5, 秋季: 2`) but because no single record contains 3+ of the query's bigrams together AND the cross-boundary noise bigrams (`适合 / 合日 / 季旅 / 行的 / 的极 / 简穿`) dilute the signal. The rewriter rescues the query into a union of partial matches rather than the intersection the user typed.
+
+   **Two possible matcher-level fixes**:
+   - **(a) Noise filtering**: drop bigrams that don't appear in ≥N records (e.g., N=10) before computing threshold. For this query, would reduce from 12 bigrams to ~4 meaningful ones, dropping threshold from 3 to 2, surfacing records that match `日本+旅行` or `日本+穿搭`. Cleaner signal, narrow blast radius.
+   - **(b) LLM query decomposition**: for queries with >6 bigrams or >4 ASCII tokens, decompose to 2-3 concept clusters via gpt-4o-mini, score each, intersection-rank the results. Higher cost per query but handles arbitrarily-long compounds.
+
+   Both touch `app/[locale]/(public)/search/page.tsx` `scoreBlob` + `scoreQueryTokens`. Eval regression risk is real — many of the 36 regression queries are 2-4 char CJK where current behavior is correct.
+
+   **Priority**: medium-low. Long compound CJK queries are long-tail (most users type 2-6 chars). Worth tackling when the gap-classifier (open item 6) surfaces ≥10 such queries per week, which would justify the engineering cost. Until then, accept rewriter rescue as the best-available behavior.
+
 ---
 
 ## Cross-thread priorities (next 2-3 weeks)

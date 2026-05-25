@@ -96597,5 +96597,278 @@
         "title": "rabbit"
       }
     }
+  },
+  {
+    "id": "template-food-cuban-sandwich",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-cuban-sandwich.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-cuban-sandwich-prev.jpg"
+    },
+    "params": {
+      "food_name": "Cuban Sandwich"
+    },
+    "locales": {
+      "en": {
+        "title": "Cuban Sandwich"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "casual"
+    ],
+    "search_aliases": [
+      "Cuban Sandwich",
+      "古巴三明治",
+      "sandwich",
+      "food",
+      "lifestyle",
+      "cuisine",
+      "Cuban food"
+    ]
+  },
+  {
+    "id": "template-food-philly-cheesesteak",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-philly-cheesesteak.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-philly-cheesesteak-prev.jpg"
+    },
+    "params": {
+      "food_name": "Philly Cheesesteak"
+    },
+    "locales": {
+      "en": {
+        "title": "Philly Cheesesteak"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food"
+    ],
+    "search_aliases": [
+      "Philly Cheesesteak",
+      "费城奶酪牛排三明治",
+      "cheesesteak",
+      "sandwich",
+      "food",
+      "lifestyle",
+      "American cuisine"
+    ]
+  },
+  {
+    "id": "template-food-croque-monsieur",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-croque-monsieur.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-croque-monsieur-prev.jpg"
+    },
+    "params": {
+      "food_name": "Croque Monsieur"
+    },
+    "locales": {
+      "en": {
+        "title": "Croque Monsieur"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "casual"
+    ],
+    "search_aliases": [
+      "Croque Monsieur",
+      "法式火腿奶酪三明治",
+      "sandwich",
+      "food",
+      "lifestyle",
+      "French cuisine",
+      "casual meal"
+    ]
+  },
+  {
+    "id": "template-food-reuben-sandwich",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-reuben-sandwich.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-reuben-sandwich-prev.jpg"
+    },
+    "params": {
+      "food_name": "Reuben Sandwich"
+    },
+    "locales": {
+      "en": {
+        "title": "Reuben Sandwich"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "casual"
+    ],
+    "search_aliases": [
+      "Reuben Sandwich",
+      "鲁本三明治",
+      "sandwich",
+      "food",
+      "lifestyle",
+      "corned beef",
+      "casual meal"
+    ]
+  },
+  {
+    "id": "template-food-club-sandwich",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-club-sandwich.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-club-sandwich-prev.jpg"
+    },
+    "params": {
+      "food_name": "Club Sandwich"
+    },
+    "locales": {
+      "en": {
+        "title": "Club Sandwich"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "casual"
+    ],
+    "search_aliases": [
+      "Club Sandwich",
+      "俱乐部三明治",
+      "sandwich",
+      "food",
+      "lifestyle",
+      "layered sandwich",
+      "casual meal"
+    ]
+  },
+  {
+    "id": "template-food-blt",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-blt.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-blt-prev.jpg"
+    },
+    "params": {
+      "food_name": "BLT"
+    },
+    "locales": {
+      "en": {
+        "title": "BLT"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "casual"
+    ],
+    "search_aliases": [
+      "BLT",
+      "培根生菜番茄三明治",
+      "三明治",
+      "美食",
+      "快餐",
+      "食谱",
+      "生活方式"
+    ]
+  },
+  {
+    "id": "template-varieties-food-poster-classic-american-sandwiches",
+    "template_id": "template-varieties-food-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-varieties-food-poster-classic-american-sandwiches.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-varieties-food-poster-classic-american-sandwiches-prev.jpg"
+    },
+    "params": {
+      "food_theme": "Classic American Sandwiches"
+    },
+    "locales": {
+      "en": {
+        "title": "Classic American Sandwiches"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "posters",
+      "photorealistic",
+      "vintage-retro"
+    ],
+    "search_aliases": [
+      "经典美式三明治",
+      "American Sandwiches",
+      "三明治",
+      "美食海报",
+      "复古风格",
+      "生活方式",
+      "食物种类"
+    ]
+  },
+  {
+    "id": "template-varieties-food-poster-world-sandwiches",
+    "template_id": "template-varieties-food-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-varieties-food-poster-world-sandwiches.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-varieties-food-poster-world-sandwiches-prev.jpg"
+    },
+    "params": {
+      "food_theme": "World Sandwiches"
+    },
+    "locales": {
+      "en": {
+        "title": "World Sandwiches"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "posters",
+      "photorealistic"
+    ],
+    "search_aliases": [
+      "世界三明治",
+      "World Sandwiches",
+      "三明治",
+      "美食海报",
+      "生活方式",
+      "食物种类",
+      "国际美食"
+    ]
+  },
+  {
+    "id": "template-varieties-food-poster-breakfast-sandwiches",
+    "template_id": "template-varieties-food-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-varieties-food-poster-breakfast-sandwiches.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-varieties-food-poster-breakfast-sandwiches-prev.jpg"
+    },
+    "params": {
+      "food_theme": "Breakfast Sandwiches"
+    },
+    "locales": {
+      "en": {
+        "title": "Breakfast Sandwiches"
+      }
+    },
+    "topics": [
+      "lifestyle",
+      "food",
+      "posters",
+      "photorealistic"
+    ],
+    "search_aliases": [
+      "早餐三明治",
+      "Breakfast Sandwiches",
+      "三明治",
+      "美食海报",
+      "生活方式",
+      "食物种类",
+      "早午餐"
+    ]
   }
 ]
