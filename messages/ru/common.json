@@ -206,27 +206,32 @@
       "video": "Видео и Субтитры",
       "lifestyle": "Стиль жизни и Места",
       "language": "Язык",
-      "travel": "Путешествия и культура"
+      "travel": "Путешествия",
+      "culture": "Культура"
     },
-    "useCasesQuestion": "Обзор по сценарию использования:",
+    "useCasesQuestion": "Изучите по сценариям использования:",
     "useCases": {
-      "for-marketers": "Для маркетологов",
-      "for-parents": "Для родителей",
-      "for-esl-learners": "Для изучающих ESL",
-      "for-creators": "Для авторов"
+      "for-marketers": "Growth-агентства",
+      "for-parents": "Родители",
+      "for-esl-learners": "Изучающие ESL",
+      "for-creators": "Авторы",
+      "for-designers": "Дизайнеры",
+      "for-publishers": "EdTech и издатели",
+      "for-dtc-brands": "DTC-бренды",
+      "for-programmatic-seo": "Программатик SEO"
     }
   },
   "useCasePage": {
     "toolsHeading": "Инструменты",
     "templatesHeading": "Шаблоны для {title}",
     "for-marketers": {
-      "title": "Для маркетологов",
-      "subtitle": "Создавайте, масштабируйте и публикуйте контент в 10 раз быстрее",
-      "description": "Перестаньте гадать, что работает. Превращайте одну идею в десятки высокоэффективных визуалов и видео за минуты.",
-      "bullet0": "Генерируйте пакеты контента из одной идеи",
-      "bullet1": "Превращайте изображения в короткие видео",
-      "bullet2": "Переиспользуйте контент на разных платформах",
-      "bullet3": "Скачивайте готовые к публикации контент-паки"
+      "title": "For Marketing & Growth Agencies",
+      "subtitle": "Serve 50 clients with the headcount you have for 10",
+      "description": "Agency scaling is people-scaling — until it isn’t. Hand each account manager a white-labeled content factory: brief in a brand profile, get back a month of platform-native posts across travel, lifestyle, design, and product verticals. The same engineer ships for all 50 clients. Margin scales linearly; headcount doesn’t.",
+      "bullet0": "White-label content engine — your brand, your client, your delivery",
+      "bullet1": "Per-account brand profiles: tone, style, palette, posting schedule",
+      "bullet2": "Covers travel · lifestyle · design · product verticals out of the box",
+      "bullet3": "Packaged as: per-seat license OR per-managed-account tier — pick a model, no custom retainer"
     },
     "for-parents": {
       "title": "Для родителей",
@@ -255,6 +260,58 @@
       "bullet2": "Превращайте изображения в видео с голосом и субтитрами",
       "bullet3": "Пакетно скачивайте и ремиксируйте контент"
     },
-    "learningMaterialsHeading": "Учебные материалы"
+    "learningMaterialsHeading": "Учебные материалы",
+    "exploreOtherHeading": "Изучите другие варианты использования",
+    "for-designers": {
+      "title": "Для дизайнеров",
+      "subtitle": "Печатные наборы Etsy / Pinterest на скорости производства",
+      "description": "Для фриланс-иллюстраторов и продавцов печатных наборов — не для дизайнеров брендов / логотипов / интерфейсов. Мы занимаемся высокообъемными эстетически ориентированными категориями: акварельные карты и альбомы, винтажные серии марок, фан-арт MBTI по поп-культуре, наборы плакатов для классов, модные мудборды. Создайте серию из 50 элементов за одно послеобеденное время; отправьте ее как платный набор той же ночью.",
+      "bullet0": "Акварельные карты, винтажные альбомы, серии марок — эстетика Etsy",
+      "bullet1": "Фан-арт MBTI по поп-культуре (Marvel · Ghibli · NBA · Гарри Поттер · Манга)",
+      "bullet2": "Печатные материалы для классов — карточки с лексикой, руководства по анатомии, исторические плакаты",
+      "bullet3": "Предварительные просмотры с водяными знаками для SEO + чистые оригиналы для платных загрузок"
+    },
+    "for-publishers": {
+      "title": "For EdTech & Children’s Publishers",
+      "subtitle": "Industrial-grade content pipeline — what your illustrator ships in 3 months, ship in a weekend",
+      "description": "Outsourced illustrators take months to deliver a 500-card vocabulary set. Our engine takes hours. Same characters across cards, posters, classroom decor, and social — one title, ten surfaces. Or license the underlying vocabulary engine so your own platform can generate K-5 content in en / es / zh / ja / ko, bilingual editions included, no translator team required.",
+      "bullet0": "K-5 vocabulary engine across animals · nature · space · family · transportation (30+ templates, 5 languages)",
+      "bullet1": "Format extension: one title → cards · posters · social · classroom decor",
+      "bullet2": "Bilingual editions (en-zh / en-es / en-ja / en-ko) — no translator team",
+      "bullet3": "Packaged as: white-label engine license OR done-for-you pack subscription — pick a shape, no half-builds"
+    },
+    "for-dtc-brands": {
+      "title": "For DTC Brands & Cross-Border Ecommerce",
+      "subtitle": "One product photo → 100 scroll-stopping scenes, auto-scheduled to Pinterest, Instagram, TikTok, X",
+      "description": "Cross-border ecommerce lives or dies by daily social volume. Stop waiting on a design contractor to ship five lifestyle shots a week. One product photo enters our engine; a hundred styled scenes — café, garden, kids’ room, vacation, seasonal — come out, watermark-clean and scheduled across four platforms before lunch. Built to move ROAS, not to win portfolio awards.",
+      "bullet0": "Batch-generate 100+ lifestyle / scene variants from one product photo",
+      "bullet1": "Style presets matched to Pinterest / Instagram / TikTok / X aesthetics",
+      "bullet2": "Auto-schedule across four platforms via the built-in SMM queue",
+      "bullet3": "Packaged as: 500-image / 2,000-image / unlimited monthly tiers — fixed scope, no custom dev"
+    },
+    "for-programmatic-seo": {
+      "title": "For Programmatic SEO Builders",
+      "subtitle": "We ran our own 5,500-page hub-and-spoke generator — now you can run yours",
+      "description": "Long-tail keyword pages don’t rank without original imagery and editorial layout. We know — we built 5,500 of them for Curify itself, and you’re reading one of the hubs right now. License the same generator: batch-generated hero imagery, schema-aware page templates, internal-link mesh. Affiliate sites, vertical portals (travel, study-abroad, parenting), local-SEO networks — pick your niche, generate the pages, get indexed.",
+      "bullet0": "Hub-and-spoke generator with built-in internal-link mesh",
+      "bullet1": "Original hero imagery per page — no royalty-free filler, no thin-content penalty",
+      "bullet2": "Schema-aware templates ready for AffiliateProduct / FAQ / HowTo markup",
+      "bullet3": "Packaged as: hosted generator OR self-hosted Docker — fixed-scope CMS adapter, no custom rewrites"
+    }
+  },
+  "interconnection": {
+    "whoItsFor": "Для кого это",
+    "relatedTools": "Связанные инструменты",
+    "relatedReading": "Связанное чтение",
+    "builtForTeams": "Built for teams",
+    "apiAvailable": "APIs available on request.",
+    "apiContactCTA": "Let’s talk scope →",
+    "readTranscript": "Read transcript"
+  },
+  "magic": {
+    "errors": {
+      "NO_SPEECH": "В видео, похоже, нет слышимой речи. Мы не можем транскрибировать жестовый язык или немое видео — пожалуйста, загрузите видео с речевым аудио.",
+      "default": "Ваша задача не удалась. Пожалуйста, попробуйте снова или свяжитесь с поддержкой."
+    }
   }
 }

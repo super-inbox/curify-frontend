@@ -21,6 +21,33 @@ const path = require("path");
 const SRC = path.join(process.cwd(), "public", "data", "nanobanana.json");
 const OUT = path.join(process.cwd(), "lib", "generated", "nanobanana_prompts_metadata.json");
 
+// Tag values that are ingestion artifacts — meta-words about the prompt
+// rather than content tags. They carry no signal for topic-bridge lookups
+// (TOPIC_GALLERY_TAG / EXTRA_TAG_TO_TOPICS in lib/topicRegistry.ts) and
+// produce dead-end tag pages with no related templates. Dropped from the
+// metadata so the tag-listing page (/nano-banana-pro-prompts/tag/[slug])
+// stops surfacing them as canonical tags. The underlying prompt records
+// still carry the strings — this filter is metadata-side only.
+//
+// Added 2026-05-19 per docs/gallery-tag-taxonomy.md decision #3 (long-tail
+// noise audit at ingestion). Extend cautiously: only add values that
+// clearly mean "no tag" / "the prompt itself" / are too generic to filter.
+const TAG_DENYLIST = new Set([
+  "none",
+  "subject",
+  "text",
+  "photograph",
+  "realistic",
+  // 2026-05-21 — internal-only curation tag applied by
+  // scripts/tag_revealing_female.py. The tag stays on each prompt's
+  // `tags` array so the topic-page rendering layer can post-filter
+  // prompts carrying revealing imagery out of gallery rows (mood,
+  // lighting, seasonal, cultural-festivals, etc.), but we don't want
+  // a discoverable canonical tag listing page for it. Dropping it
+  // here keeps it out of the metadata-driven tag UI.
+  "revealing-female",
+]);
+
 function countBy(entries, key) {
   const map = new Map();
   for (const e of entries) {
@@ -41,6 +68,7 @@ function tagCounts(prompts) {
       if (typeof t !== "string" || !t) continue;
       const key = t.trim();
       if (!key || seen.has(key)) continue;
+      if (TAG_DENYLIST.has(key.toLowerCase())) continue;
       seen.add(key);
       map.set(key, (map.get(key) ?? 0) + 1);
     }

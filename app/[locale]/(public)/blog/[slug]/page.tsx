@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
@@ -160,27 +161,41 @@ export default async function BlogPostPage({
 
   const currentKeys = availableKeys[blogConfig.namespace] || [];
 
-  // Safe translation helper that only accesses known keys
-  const safeT = (key: string, defaultValue = "") => {
+  // Safe translation helper that only accesses known keys. Accepts either a
+  // plain string default (legacy callers) or a next-intl-style options object
+  // `{ defaultValue: ... }`. Content components in this directory commonly use
+  // the options-object form to gate conditional rendering — e.g.
+  // `t("step4Title", { defaultValue: null }) && <Card />`. Without the unwrap
+  // below, missing keys returned the entire options object (truthy), causing
+  // empty step/section cards to render on posts that didn't define those keys.
+  const safeT = (key: string, defaultValueOrOptions: string | { defaultValue: unknown } = ""): string => {
+    const resolvedDefault =
+      defaultValueOrOptions && typeof defaultValueOrOptions === "object" && "defaultValue" in defaultValueOrOptions
+        ? defaultValueOrOptions.defaultValue
+        : defaultValueOrOptions;
+
     if (!currentKeys.includes(key)) {
-      return defaultValue;
+      // Cast preserves the consumer prop signature `(key, default?) => string`.
+      // When callers passed `{ defaultValue: null }` for conditional gating,
+      // the unwrapped null returns and is still falsy in JSX truthiness checks.
+      return resolvedDefault as string;
     }
-    
+
     // Use namespace-specific translations if available
     if (tNamespace) {
       try {
         const result = tNamespace(key);
         // If the result is the same as the key, it means translation wasn't found
         if (result === key) {
-          return defaultValue;
+          return resolvedDefault as string;
         }
         return result;
       } catch (error) {
-        return defaultValue;
+        return resolvedDefault as string;
       }
     }
-    
-    return defaultValue;
+
+    return resolvedDefault as string;
   };
 
   // Helper to check if a translation key exists
@@ -239,9 +254,27 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article className="max-w-[75ch] mx-auto pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
-      <div className="mb-8">
-        <div className="w-full h-64 md:h-80 mb-6 overflow-hidden rounded-xl shadow-lg">
+    <article className="mx-auto max-w-6xl pt-4 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
+      <header className="mb-6">
+        <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
+          {tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+        </h1>
+
+        <div className="flex items-center justify-between gap-3 text-sm text-gray-500">
+          <div>
+            {tNamespace ? tNamespace(slug === 'mbti-character-generator' || slug === 'content-tagging-system' ? "publishedDate" : "date", { defaultValue: "Latest Article" }) : "Latest Article"} • {" "}
+            {tNamespace ? tNamespace("readTime", { defaultValue: "5 min read" }) : "5 min read"}
+          </div>
+          <ShareButton url={`/blog/${slug}`} compact />
+        </div>
+      </header>
+
+      {/* Body region with hero image floated right on desktop so text
+          wraps around it. On mobile the image renders centered above the
+          body in normal block flow. overflow-hidden on the wrapper acts
+          as a clearfix for the float. */}
+      <div className="overflow-hidden">
+        <div className="mb-4 mx-auto max-w-xs md:max-w-sm md:float-right md:ml-6 md:mx-0 rounded-lg overflow-hidden shadow">
           {useMermaidThumbnail ? (
             <DynamicThumbnail
               slug={thumbnailType || slug}
@@ -254,24 +287,13 @@ export default async function BlogPostPage({
             <CdnImage
               src={blogConfig.image}
               alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-              width={400}
-              height={250}
+              width={320}
+              height={200}
               className="rounded-lg object-cover"
             />
           )}
         </div>
-        
-        <h1 className="text-4xl font-bold mb-4">
-          {tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-        </h1>
-        
-        <div className="text-gray-600 mb-4">
-          {tNamespace ? tNamespace(slug === 'mbti-character-generator' || slug === 'content-tagging-system' ? "publishedDate" : "date", { defaultValue: "Latest Article" }) : "Latest Article"} • {" "}
-          {tNamespace ? tNamespace("readTime", { defaultValue: "5 min read" }) : "5 min read"}
-        </div>
-      </div>
 
-      <div className="clear-both">
         {/* Dynamic content rendering based on slug */}
         {(slug.startsWith('translate-youtube-video') || slug === 'ai-youtube-video-translator' || slug === 'translate-youtube-video-to-english') && (
           <YoutubeTranslationContent slug={slug} t={safeT} locale={locale} />
@@ -384,6 +406,13 @@ export default async function BlogPostPage({
           />
         )}
       </div>
+
+      {/* Optional template row — renders when the catalog entry has
+          `nanoTemplates`. Filters by groupKey prefix so each post only
+          surfaces the cards keyed to its own slug. */}
+      {blogData?.nanoTemplates?.length > 0 && (
+        <NanoBananaExamples locale={locale} blogSlug={slug} />
+      )}
 
       {/* Unified CTA — picks the right tool / coaching / contact target based
           on the post's category, with a per-slug override for creator-tools

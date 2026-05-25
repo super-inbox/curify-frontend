@@ -55,7 +55,7 @@ export default async function AIPlatform({
 
           <div className="float-right ml-6 mb-6 w-full max-w-md rounded-lg overflow-hidden shadow-lg">
             <CdnImage
-              src="https://storage.googleapis.com/curify-static/aiPlatform.png"
+              src="/images/aiPlatform.png"
               alt={t('imageAlt')}
               width={800}
               height={450}
@@ -518,17 +518,6 @@ export default async function AIPlatform({
                 {t('conclusion.callToAction')}
               </p>
             </div>
-          </div>
-        </section>
-
-        {/* Disclaimer */}
-        <section className="bg-gray-50 p-6 rounded-lg mt-8">
-          <h3 className="text-lg font-bold mb-3">{t('disclaimer.title')}</h3>
-          <div className="prose lg:prose-sm max-w-none">
-            <p className="text-sm text-gray-600 mb-2">{t('disclaimer.content')}</p>
-            <p className="text-xs text-gray-500 mt-4">
-              {t('disclaimer.author')} • {t('disclaimer.updated')}
-            </p>
           </div>
         </section>
 

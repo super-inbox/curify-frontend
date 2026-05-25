@@ -35,6 +35,11 @@ type Props = {
   relatedTopics: SuggestionEntry[];
   matchedTemplates: NanoInspirationCardType[];
   galleryPrompts: NanoPromptBase[];
+  /** LLM-rewritten queries used to expand the result set when the
+   *  original returned <3 results. Empty when the original was rich
+   *  enough or when the rewriter was unavailable. Surfaced to the
+   *  user via a "Showing results for: …" hint above the grid. */
+  usedRewrites?: string[];
 };
 
 // Compute the href for a SuggestionEntry chip — honors `href` overrides
@@ -56,6 +61,7 @@ export default function SearchResultsClient({
   relatedTopics,
   matchedTemplates,
   galleryPrompts,
+  usedRewrites = [],
 }: Props) {
   const [input, setInput] = useState(query);
   const router = useRouter();
@@ -104,20 +110,45 @@ export default function SearchResultsClient({
     router.push(`/${locale}/search?q=${encodeURIComponent(q.toLowerCase())}`);
   };
 
-  const hasResults =
-    gridItems.length > 0 || matchedTemplates.length > 0 || galleryPrompts.length > 0;
+  const totalResults =
+    gridItems.length + matchedTemplates.length + galleryPrompts.length;
+  const hasResults = totalResults > 0;
+  // Threshold below which a query is "thin" enough to flag for an alias
+  // top-up or content review. 3 catches queries that returned 1-2 items —
+  // a single accidental match isn't a useful result page. See
+  // docs/search-quality.md (item 2, low-result query logging).
+  const LOW_RESULT_THRESHOLD = 3;
 
   const { track } = useTracking();
   useEffect(() => {
     const q = query.trim();
-    if (q && !hasResults) {
+    if (!q) return;
+    // Server-side LLM rewrite runs BEFORE these arrays are populated, so
+    // totalResults already reflects the post-rewrite count. We fire the
+    // no-result / low-result events only when the rewrite either was not
+    // applied or did not recover the query — the admin's failing-query
+    // backlog stays focused on "tried everything and still empty."
+    // When the rewrite DID run (usedRewrites.length > 0), append a
+    // "|rw=1" marker so admin can split "thin after LLM rescue attempt"
+    // from "thin without rescue attempt" without a second event.
+    const rwSuffix = usedRewrites.length > 0 ? "|rw=1" : "";
+    if (totalResults === 0) {
       track({
-        contentId: q,
+        contentId: q + rwSuffix,
         contentType: "topic_capsule",
         actionType: "search_noresult",
       });
+    } else if (totalResults < LOW_RESULT_THRESHOLD) {
+      // Encode the count in contentId so admin can rank queries by how
+      // close they are to the threshold without joining against another
+      // table. Format: "<query>|n=<count>[ |rw=1]".
+      track({
+        contentId: `${q}|n=${totalResults}${rwSuffix}`,
+        contentType: "topic_capsule",
+        actionType: "search_lowresult",
+      });
     }
-  }, [query, hasResults, track]);
+  }, [query, totalResults, usedRewrites.length, track]);
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6 lg:px-8">
@@ -140,20 +171,17 @@ export default function SearchResultsClient({
         </button>
       </form>
 
-      {/* Related topic chips */}
-      {relatedTopics.length > 0 && (
-        <div className="mb-6 flex flex-wrap gap-2">
-          <span className="text-sm text-neutral-500 self-center">Browse:</span>
-          {relatedTopics.map((s) => (
-            <Link
-              key={s.slug}
-              href={chipHref(s, locale)}
-              className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
-            >
-              {s.emoji && <span>{s.emoji}</span>}
-              {renderLabel(s.slug, s.label)}
-            </Link>
-          ))}
+      {/* LLM-rewrite hint — surfaced only when the original query was
+          thin and the rewriter contributed at least one alternate
+          phrasing. Shows the rewrites in dim text so the reader knows
+          we expanded the search instead of "showing different stuff". */}
+      {usedRewrites.length > 0 && hasResults && (
+        <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
+          <span className="font-semibold">Few results for &ldquo;{query}&rdquo;.</span>{" "}
+          Also showing results for:{" "}
+          <span className="font-mono text-amber-800">
+            {usedRewrites.join(", ")}
+          </span>
         </div>
       )}
 
@@ -237,6 +265,26 @@ export default function SearchResultsClient({
             </section>
           )}
         </>
+      )}
+
+      {/* Related-query chips — moved to the bottom so the page leads
+          with actual results / the rewrite hint, and the "what else
+          could I look at" fork sits as a soft footer for users who
+          scrolled past everything without converting. */}
+      {relatedTopics.length > 0 && (
+        <div className="mt-12 flex flex-wrap gap-2 border-t border-neutral-200 pt-8">
+          <span className="text-sm text-neutral-500 self-center">Browse:</span>
+          {relatedTopics.map((s) => (
+            <Link
+              key={s.slug}
+              href={chipHref(s, locale)}
+              className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
+            >
+              {s.emoji && <span>{s.emoji}</span>}
+              {renderLabel(s.slug, s.label)}
+            </Link>
+          ))}
+        </div>
       )}
     </div>
   );

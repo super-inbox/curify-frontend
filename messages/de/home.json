@@ -9,6 +9,11 @@
     "hero": {
       "title": "Ideen entdecken | Visuell ausdrücken | Inhalte erstellen",
       "description": "Curify ist eine Plattform für visuelles Denken, die Trends, Ideen und Wissen in strukturierte, teilbare Inhalte verwandelt. Von Inspirationskarten und KI-Infografiken bis hin zu Untertiteln, Übersetzung und Lip-Sync-Synchronisation – wir verbinden Inspiration mit Produktion."
+    },
+    "toolsStrip": {
+      "title": "Werkzeuge, um es zum Leben zu erwecken",
+      "subtitle": "Nehmen Sie eine Vorlage und verwandeln Sie sie in ein funktionierendes Video, eine Übersetzung oder ein Design – oder probieren Sie eines unserer Demos aus.",
+      "seeAll": "Alle Werkzeuge anzeigen →"
     }
   },
   "coreFeatures": {
@@ -175,30 +180,37 @@
     "speech_translator": {
       "title": "Sprachübersetzer",
       "desc": "Übersetzen Sie Sprache in eine andere Sprache mit natürlicher Lieferung."
-    }
+    },
+    "video_enhance": {
+      "title": "Videoverbesserung",
+      "desc": "Stellen Sie Details, Schärfe und Klarheit in Archiv-, niedrigauflösenden oder komprimierten Videos wieder her.",
+      "meta": {
+        "title": "KI Videoverbesserung | Archiv- & Niedrigauflösende Videos Wiederherstellen | Curify AI",
+        "description": "Sehen Sie eine KI-Videoverbesserungsdemo mit echtem Archivmaterial. Curify stellt Details, Schärfe und Klarheit in niedrigauflösenden und komprimierten Videos wieder her – melden Sie sich für den frühen Zugang an."
+      }
+    },
+    "relatedReading": "Erfahren Sie, wie es funktioniert",
+    "whoItsFor": "Für wen es gedacht ist",
+    "see_demo": "Demo ansehen"
   },
   "bilingual": {
     "metadata": {
-      "title": "Kostenloser Generator für zweisprachige Untertitel | Curify AI",
-      "description": "Erstelle mit Curifys kostenlosem KI-Tool zweisprachige Untertitel für deine Videos. Ideal für YouTube, TikTok, Bildung und globale Creator."
+      "title": "Kostenloser Bilingualer Untertitelgenerator — Kein Wasserzeichen | Curify",
+      "description": "Kostenloser bilingualer Untertitelgenerator — kein Wasserzeichen bei Exporten, 170+ Sprachpaare, frame-genaue Zeitangaben. Entwickelt für YouTube, TikTok und Marketingvideos. Ein mehrsprachiges Asset, keine marktbezogenen Schnitte."
     },
-    "title": "Zweisprachige Untertitel leicht gemacht",
-    "description": "Erstelle automatisch Untertitel in zwei Sprachen mit Curifys KI‑Untertitel‑Engine. Ideal für Creator, Lehrkräfte und internationale Unternehmen.",
-    "example": "Beispiel: Jensen Huang erklärt die KI‑Strategie — automatisch erstellte englische und chinesische Untertitel.",
-    "cta": "Jetzt kostenlos ausprobieren",
     "why": {
-      "title": "Warum Curify für zweisprachige Untertitel?",
-      "point1": "Unterstützt über 170 Sprachen mit präziser Übersetzung.",
-      "point2": "Bewahrt Emotion, Ton und Timing.",
-      "point3": "Perfekt für YouTube, TikTok und Lehrvideos.",
-      "point4": "Exportiere fertige Untertiteldateien oder eingebettete Videos."
+      "title": "Warum Creator und Marketer Curify für Bilinguale Untertitel wählen",
+      "point1": "Kein Wasserzeichen auf exportierten Videos oder SRT — sauberes Output in der kostenlosen Stufe, kein Upgrade erforderlich, um ein Logo zu entfernen.",
+      "point2": "170+ Sprachpaare mit kontextbewusster Übersetzung, die Ton, Idiom und Fachvokabular bewahrt — keine wörtlichen Wortwechsel.",
+      "point3": "Frame-genaue Zeitangaben für gestapelte dualsprachige Tracks — lesbar bei mobilem Autoplay, wo 80% der Kurzformansichten stumm erfolgen.",
+      "point4": "Exportieren als SRT, ins Video einbrennen oder als Untertiteltrack einbetten — das Format wählen, das die Plattform benötigt, ohne neu zu rendern."
     },
     "faq": {
-      "title": "Häufige Fragen",
-      "q1": "Ist es wirklich kostenlos?",
-      "a1": "Ja, Curify bietet einen kostenlosen Plan mit monatlich begrenzten Untertitelminuten.",
-      "q2": "Kann ich die Untertitel nachträglich bearbeiten?",
-      "a2": "Natürlich. Du kannst Timing, Übersetzung und Stil anpassen, bevor du exportierst."
+      "title": "Häufig gestellte Fragen",
+      "q1": "Gibt es ein Wasserzeichen auf exportierten Videos oder Untertiteldateien?",
+      "a1": "Nein. Curifys kostenlose Stufe exportiert saubere Videos und SRT-Dateien ohne Wasserzeichen. Bezahlte Pläne fügen mehr monatliche Untertitelminuten hinzu, nicht die Entfernung des Wasserzeichens — was Sie im kostenlosen Plan versenden, ist das, was Sie im Pro-Plan versenden.",
+      "q2": "Kann ich Untertitel nach der Generierung bearbeiten?",
+      "a2": "Ja. Sie können die Zeitangaben anpassen, Übersetzungen in beiden Sprachen bearbeiten, den Untertiteltrack neu gestalten und erneut exportieren — alles vor der Veröffentlichung. Änderungen sind nicht destruktiv; der ursprünglich automatisch generierte Track bleibt verfügbar."
     },
     "deep": {
       "what": {
@@ -224,7 +236,11 @@
         "businessTitle": "Für globale Unternehmen",
         "businessBody": "Unternehmen nutzen zweisprachige Untertitel für Produktdemos, Investorenpräsentationen, Schulungsvideos und Marketingkampagnen. Anstatt separate lokalisierte Videos zu produzieren, können Sie ein einziges mehrsprachiges Asset bereitstellen – die Produktionskosten senken und die globale Reichweite erweitern."
       }
-    }
+    },
+    "title": "Kostenlose Bilinguale Untertitel für Videos — Kein Wasserzeichen, 170+ Sprachen",
+    "description": "Automatisch dualsprachige Untertitel für YouTube, TikTok, Marketingvideos und Bildungsinhalte generieren. Kostenlose Stufe ohne Wasserzeichen bei Exporten, genaue Zeitangaben für gestapelte Tracks und Übersetzungen, die die Absicht bewahren — nicht nur Worte. Ein mehrsprachiges Asset versenden, anstatt lokalisierte Schnitte pro Markt zu produzieren.",
+    "example": "Beispiel: Jensen Huang erklärt die KI-Strategie — Englisch + Chinesisch Untertitel automatisch generiert, kein Wasserzeichen beim Export.",
+    "cta": "Untertitel generieren — Kostenlos"
   },
   "videoDubbing": {
     "metadata": {
@@ -531,6 +547,158 @@
         "educationBody": "Schulungsabteilungen übersetzen Einarbeitungsvideos, Sicherheitsbriefings und Produktschulungen in die Landessprachen. Eine natürliche Sprachspur verbessert das Behalten und die Engagement im Vergleich zu Untertiteln allein.",
         "businessTitle": "Für internationale Marketingteams",
         "businessBody": "Marketingteams übersetzen Demovideos, Kundenreferenzen und Veranstaltungsaufzeichnungen in die Zielmarktsprache – und ermöglichen konsistente Botschaften über Regionen hinweg, ohne marktbezogene Produktionskosten."
+      }
+    }
+  },
+  "videoEnhance": {
+    "metadata": {
+      "title": "KI Videoverbesserung | Archiv- & Niedrigauflösende Videos Wiederherstellen | Curify AI",
+      "description": "Sehen Sie eine KI-Videoverbesserungsdemo mit echtem Archivmaterial. Curify stellt Details, Schärfe und Klarheit in niedrigauflösenden und komprimierten Videos wieder her – melden Sie sich für den frühen Zugang an."
+    },
+    "title": "KI Videoverbesserung",
+    "description": "Stellen Sie Details, Schärfe und Klarheit in niedrigauflösenden, komprimierten oder Archivvideos wieder her. Wechseln Sie zwischen den Original- und verbesserten Clips unten, um die KI-Wiederherstellung mit echtem Material zu sehen.",
+    "example": "Beispiel: ein Nachrichtenbeitrag aus den 1970er Jahren zur Ölkrise – originale SD-Broadcast-Qualität vs. die KI-verbesserte Version.",
+    "cta": "Frühen Zugang beitreten",
+    "demo": {
+      "aria": "Videoverbesserung Vorher/Nachher-Demo",
+      "caption": "Verwenden Sie den Schalter, um zwischen dem Originalmaterial und der KI-verbesserten Version zu wechseln.",
+      "nowPlaying": "Jetzt läuft: {lang}"
+    },
+    "why": {
+      "title": "Warum Curify für Videoverbesserung verwenden?",
+      "point1": "Stellt Details in Archiv-, Broadcast- und benutzergeladenem Material wieder her, wo die Quellauflösung festgelegt ist.",
+      "point2": "Entfernt Kompressionsartefakte und stellt Texturen wieder her, ohne den übermäßig geschärften, plastischen Look, den die meisten Upscaler erzeugen.",
+      "point3": "Funktioniert mit vollständigen Clips – nicht nur mit kurzen Abschnitten – und hält die Bewegung über Schnitte und Schwenks natürlich.",
+      "point4": "Heute nur als Demo; melden Sie sich für den frühen Zugang an, um Ihr eigenes Material zu verarbeiten, wenn die Pipeline geöffnet wird."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Ist die Videoverbesserung heute verfügbar?",
+      "a1": "Noch nicht – diese Seite ist eine funktionierende Demo mit Archivmaterial. Die Produktionspipeline befindet sich in privatem Test. Melden Sie sich für den frühen Zugang an, und wir werden Sie kontaktieren, wenn sie für Uploads geöffnet wird.",
+      "q2": "Auf welchen Arten von Videos funktioniert die Verbesserung am besten?",
+      "a2": "Sie funktioniert am besten mit echtem Material, das durch Kompression, niedrige Quellauflösung oder generationsbedingten Verlust an Detail verloren hat – Archivübertragungen, alte Heimvideos, Sicherheitskameramaterial und SD-Inhalte, die als HD hochgeladen wurden. Es ist kein Gesichtsrestaurations- oder generatives Rekreationstool – es stellt Details wieder her, die im Quellsignal vorhanden waren."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist KI Videoverbesserung?",
+        "p1": "KI-Videoverbesserung rekonstruiert visuelle Details, die während der Aufnahme, Kompression oder Übertragung verloren gegangen oder verschlechtert wurden. Im Gegensatz zu einer einfachen Auflösungssteigerung besteht das Ziel nicht darin, größere Pixel zu erzeugen – es geht darum, die Textur, Kanten und den Tonbereich wiederherzustellen, die eine qualitativ hochwertigere Aufnahme derselben Szene erzeugt hätte.",
+        "p2": "Wo traditionelle Upscaler zwischen vorhandenen Pixeln interpolieren (was ein weicheres oder geschärftes, aber plastisches Bild erzeugt), lernen moderne KI-Wiederherstellungsmodelle aus großen Datensätzen von gepaartem niedrig- und hochqualitativem Material. Sie schließen plausible hochauflösende Details basierend auf dem, was die zugrunde liegende Szene wahrscheinlich enthielt, und bewahren Bewegung, Beleuchtung und Textur kohärent über die Frames hinweg.",
+        "p3": "Die Demo auf dieser Seite verbessert einen Clip aus einem Nachrichtenbeitrag der 1970er Jahre. Das Original hat SD-Broadcast-Qualität mit den typischen Kompressions- und Chroma-Verlusten der Ära. Die verbesserte Version stellt Gesichtsdetails, Szenentextur und Kantenschärfe wieder her, während der filmtypische Korn und die Farbpalette der Ära intakt bleiben."
+      },
+      "how": {
+        "title": "Wie Curify Videoverbesserung angeht",
+        "p1": "Produktionsgerechte Videoverbesserung ist kein einzelnes Modell – es ist eine Pipeline von spezialisierten Modellen, die jeweils einen Fehlermodus behandeln, sequenziert, sodass ihre Korrekturen sich addieren, anstatt sich gegenseitig zu bekämpfen.",
+        "p2": "Schritt 1: Szenensegmentierung und Shot-Erkennung. Die Pipeline teilt den Clip an den Szenengrenzen, sodass die Wiederherstellungsparameter pro Shot sich an Beleuchtung, Bewegung und Inhalt anpassen können, anstatt über den gesamten Clip hinweg zu mitteln.",
+        "p3": "Schritt 2: Wiederherstellung pro Frame. Detailrekonstruktion, Entblockung und Rauschunterdrückung werden unter Berücksichtigung von Bewegungsvektoren angewendet, sodass die Korrekturen zeitlich konsistent bleiben – die Frames flackern nicht zwischen Detailstufen bei Schnitten.",
+        "p4": "Schritt 3: Temporale Stabilisierung. Ein zweiter Durchgang glättet verbleibendes Flackern, richtet verbesserte Details über die Frames hinweg aus und bewahrt natürliche Bewegungsunschärfe, wo dies beabsichtigt ist.",
+        "p5": "Schritt 4: Qualitätsbewusste Kodierung. Der finale Clip wird mit einer Bitrate und Codec-Wahl kodiert, die die wiederhergestellten Details bewahrt, anstatt die Kompressionsartefakte, die die Wiederherstellung gerade entfernt hat, wieder einzuführen."
+      },
+      "usecases": {
+        "title": "Wer nutzt die KI-Videoverbesserung?",
+        "creatorsTitle": "Für Kreative und Dokumentarproduzenten",
+        "creatorsBody": "Produzenten, die mit Archivmaterial, alten Interviews oder Vintage-Sendungen arbeiten, nutzen die Verbesserung, um das Ausgangsmaterial auf eine Qualität zu bringen, die auf modernen Displays Bestand hat, ohne den zeitgemäßen Look neu zu kreieren.",
+        "educationTitle": "Für Bildungs- und Archivteams",
+        "educationBody": "Bibliotheken, Museen und Bildungsanbieter digitalisieren Tape- und Filmsammlungen in der ursprünglich aufgenommenen Qualität. Die Verbesserung stellt Details wieder her, die es ermöglichen, dass dasselbe Filmmaterial projiziert, in Kursen eingebettet oder lizenziert werden kann, ohne den entschuldigenden 'Entschuldigung für die Qualität'-Rahmen.",
+        "businessTitle": "Für Marken- und Marketingteams",
+        "businessBody": "Marketingteams überarbeiten ältere Markenressourcen – Gründerinterviews, frühe Produktdemos, Werbespots – und möchten diese in modernen Kampagnen wiederverwenden. Die Verbesserung schließt die Qualitätslücke, ohne neu zu drehen, und bewahrt die ursprüngliche Geschichte und Charaktere."
+      }
+    }
+  },
+  "styleTransfer": {
+    "metadata": {
+      "title": "AI Style Transfer für Video | Pixar, Ghibli, Anime | Curify AI",
+      "description": "Wenden Sie den Stil von Pixar, Ghibli, Anime oder einem anderen Referenzkunststil auf einen realen Videoclip an. Der Stiltransfer-Pipeline von Curify bewahrt Bewegung und Identität, während die visuelle Sprache gewechselt wird."
+    },
+    "title": "AI Style Transfer für Video",
+    "description": "Wenden Sie den Stil von Pixar, Ghibli, Anime oder einem anderen Referenzkunststil auf ein reales Video an — konsistente Bild-für-Bild-Darstellung, bewahrte Bewegung, erkennbare Motive. Sehen Sie sich die Demo unten für ein Beispiel an.",
+    "example": "Beispiel: Ein Live-Action-Clip, der in einen Ghibli-malenden Look umgestaltet wurde, bildkohärent über die gesamte Aufnahme.",
+    "cta": "Frühzeitigen Zugang beitreten",
+    "why": {
+      "title": "Warum Curify für den Stiltransfer verwenden?",
+      "point1": "Bildkohärente Umgestaltung — kein Flimmern oder Identitätsdrift zwischen den Bildern, selbst bei Schnitten und Schwenks.",
+      "point2": "Der Stil wird durch ein Referenzbild oder ein benanntes Preset (Pixar, Ghibli, Anime, Aquarell, Ölmalerei usw.) festgelegt.",
+      "point3": "Motive bleiben erkennbar — Gesichter, Requisiten und Bildschirmtexte überstehen die Umgestaltung.",
+      "point4": "Heute nur als Demo; melden Sie sich für den frühen Zugang an, um Ihr eigenes Filmmaterial zu verwenden, wenn die Pipeline geöffnet wird."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Ist der Stiltransfer heute verfügbar?",
+      "a1": "Noch nicht — diese Seite zeigt eine funktionierende Demo auf einem Beispielclip. Die Produktionspipeline befindet sich in privatem Test. Melden Sie sich für den frühen Zugang an, und wir werden Sie kontaktieren, wenn sie für Uploads geöffnet wird.",
+      "q2": "Welche Arten von Quellvideos funktionieren am besten?",
+      "a2": "Aufnahmen mit stabiler Rahmung, klaren Motiven und einem definierten Vordergrund funktionieren am besten. Stiltransfer ist eine kreative Umgestaltung, kein Gesichtswechsel — die Motive bleiben erkennbar, aber die visuelle Sprache ändert sich. Stark komprimierte oder niedrig aufgelöste Aufnahmen erzeugen ein noisigeres Ergebnis."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist AI Style Transfer für Video?",
+        "p1": "Der Stiltransfer nimmt ein Quellvideo und einen Zielvisuellen Stil — Pixar 3D, Ghibli malend, Anime-Linienkunst, Aquarell — und rendert den Clip im Zielstil neu, während die ursprüngliche Bewegung, Rahmung und Identität des Motivs bewahrt werden. Das Ergebnis ist ein neues Video, kein Filter, der auf die ursprünglichen Bilder angewendet wird.",
+        "p2": "Der Bildstiltransfer gibt es seit einem Jahrzehnt, aber das Schwierige bei Videos ist die zeitliche Kohärenz. Eine naive Bild-für-Bild-Umgestaltung flimmert — jedes Bild wird unabhängig umgestaltet, sodass Farben und Texturen flackern, während das Modell unterschiedliche Entscheidungen für benachbarte Bilder trifft. Moderne Pipelines beheben dies, indem sie auf dem vorherigen Bild basieren und Stilentscheidungen über die zeitliche Achse propagieren.",
+        "p3": "Die Demo auf dieser Seite zeigt einen Live-Action-Clip, der in einen Ghibli-malenden Look umgestaltet wurde. Die Bewegung bleibt flüssig, Gesichter bleiben erkennbar, und die Farbpalette bleibt über die gesamte Aufnahme konsistent."
+      },
+      "how": {
+        "title": "Wie Curify den Stiltransfer angeht",
+        "p1": "Produktionsgerechter Video-Stiltransfer ist eine Pipeline aus spezialisierten Phasen, nicht ein einzelner Modellaufruf. Jede Phase behandelt einen Teil des Problems der zeitlichen Kohärenz, sodass die Korrekturen sich addieren, anstatt sich gegenseitig zu bekämpfen.",
+        "p2": "Schritt 1: Aufnahmeerkennung und Szenensegmentierung. Der Clip wird an den Aufnahmegrenzen aufgeteilt, sodass jede Aufnahme ihre eigenen Stilparameter erhält und das Modell nicht gebeten wird, Kohärenz über einen nicht verwandten Schnitt aufrechtzuerhalten.",
+        "p3": "Schritt 2: Referenzkodierung. Entweder ein Stilreferenzbild oder ein benanntes Preset wird in ein Zielstil-Embedding kodiert, das die Umgestaltung steuert.",
+        "p4": "Schritt 3: Bildkohärente Umgestaltung. Bilder werden mit dem Bewusstsein des vorherigen Ausgabebildes umgestaltet, sodass Farben, Texturen und Linienstärken über die Bewegung hinweg konsistent bleiben.",
+        "p5": "Schritt 4: Temporales Glätten und qualitätsbewusste Kodierung. Ein Restflimmerpass beseitigt verbleibende Artefakte, und der endgültige Clip wird mit einer Bitrate kodiert, die die umgestalteten Details bewahrt."
+      },
+      "usecases": {
+        "title": "Wer nutzt AI Style Transfer?",
+        "creatorsTitle": "Für Animator:innen und Indie-Schöpfer:innen",
+        "creatorsBody": "Indie-Animator nutzen den Stiltransfer, um einen konsistenten visuellen Stil über Stunden von Filmmaterial zu sichern, ohne jeden Frame von Hand zu malen. Das Ergebnis ist der Ausgangspunkt für die nachgelagerte Bereinigung, nicht die endgültige Lieferung – es reduziert jedoch Tage an Frame-für-Frame-Arbeit auf Minuten.",
+        "educationTitle": "Für Bildung und Kinderinhalte",
+        "educationBody": "Bildungsschaffende übersetzen Live-Action-Erklärvideos in einen freundlicheren malerischen oder 3D-Stil für jüngere Zielgruppen. Die gleiche Aufnahme kann in mehreren visuellen Registern für verschiedene Altersgruppen versendet werden, ohne neu zu drehen.",
+        "businessTitle": "Für Marken- und Kampagnenteams",
+        "businessBody": "Marketingteams stylen einen einzigen Live-Action-Dreh in mehrere stilistische Varianten um – einen klaren Unternehmensschnitt, einen verspielten animierten Schnitt, einen regionalen ästhetischen Schnitt – für Split-Tests oder Multi-Channel-Publishing ohne Produktionskosten pro Variante."
+      }
+    }
+  },
+  "mangaTranslation": {
+    "metadata": {
+      "title": "AI Manga Übersetzung | Comic-Panels mit erhaltenem Layout übersetzen | Curify AI",
+      "description": "Übersetzen Sie Manga-, Comic- und Webtoon-Panels in über 30 Sprachen, während die ursprünglichen Sprechblasenformen, Schriftarten und das Panel-Layout intakt bleiben. Nur Demo – treten Sie der frühen Zugangsphase bei."
+    },
+    "title": "AI Manga Übersetzung",
+    "description": "Übersetzen Sie den Text in Manga, Comics und Webtoons in über 30 Sprachen, während die ursprünglichen Sprechblasenformen, Schriftarten und das Panel-Layout intakt bleiben. Sehen Sie sich die Vorher-/Nachher-Demo unten an.",
+    "example": "Beispiel: Eine chinesischsprachige Manga-Seite, die ins Englische und Spanische übersetzt wurde, wobei das Sprechblasenlayout erhalten bleibt.",
+    "cta": "Frühen Zugang beitreten",
+    "why": {
+      "title": "Warum Curify für Manga-Übersetzung verwenden?",
+      "point1": "Erkennt jede Sprechblase, Erzählbox und SFX-Label – nicht nur Dialogzeilen.",
+      "point2": "Stellt die Typografie so wieder her, dass sie in die Blase passt – Zeilenumbrüche, Schriftgewicht und vertikale/horizontale Ausrichtung passen sich an.",
+      "point3": "Bewahrt das Panel-Layout, die Seitenrichtung und die SFX-Platzierung, sodass die übersetzte Seite im Zielmarkt nativ gelesen wird.",
+      "point4": "Heute nur Demo; melden Sie sich für den frühen Zugang an, um Ihre eigenen Seiten zu übersetzen, wenn die Pipeline geöffnet wird."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Ist die Manga-Übersetzung heute verfügbar?",
+      "a1": "Noch nicht – diese Seite ist eine Arbeitsdemo auf Musterseiten. Die Produktionspipeline befindet sich in privatem Test. Melden Sie sich für den frühen Zugang an, und wir werden Sie kontaktieren, wenn sie für Uploads geöffnet wird.",
+      "q2": "Welche Sprachen werden unterstützt?",
+      "a2": "Die Übersetzungsschicht unterstützt über 30 Sprachen, darunter Englisch, Spanisch, Französisch, Deutsch, Japanisch, Koreanisch, vereinfachtes Chinesisch, traditionelles Chinesisch und Arabisch. Die Spracherkennung erfolgt automatisch auf der Quellseite; die Zielsprache ist die Wahl des Benutzers."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist AI Manga Übersetzung?",
+        "p1": "Die Manga-Übersetzung ist eine mehrstufige Aufgabe: den Text auf der Seite erkennen, verstehen, was er sagt, ihn in die Zielsprache übersetzen und die Übersetzung wieder in den ursprünglichen Blasen- oder Panelraum einfügen, ohne die Schriftgestaltung zu brechen. Die meisten generischen Übersetzungstools bearbeiten nur den mittleren Schritt und produzieren unbrauchbare Seiten, die eine vollständige Neugestaltung benötigen.",
+        "p2": "Der schwierige Teil ist nicht die Übersetzungsqualität – es ist die Layoutbewahrung. Eine Sprechblase, die für vertikalen japanischen Text geformt ist, muss einen viel längeren englischen Satz halten, ohne überzulaufen, die Lesereihenfolge zu verlieren oder die Kunstwerke zu verdecken. SFX (Soundeffekte), die in die Panelkunst gezeichnet sind, sind noch schwieriger: Sie müssen sauber entfernt und in der Zielsprache neu gerendert werden, ohne die zugrunde liegende Zeichnung zu beschädigen.",
+        "p3": "Die Demo auf dieser Seite zeigt eine Musterseite, die von Anfang bis Ende übersetzt wurde, wobei das Sprechblasenlayout, die Schriftwahl und die SFX-Platzierung im Ergebnis erhalten bleiben."
+      },
+      "how": {
+        "title": "Wie Curify die Manga-Übersetzung angeht",
+        "p1": "Die Pipeline läuft in vier spezialisierten Phasen, die jeweils einen Fehlerfall des naiven Übersetzen-und-Überlagern-Ansatzes behandeln.",
+        "p2": "Schritt 1: Erkennung von Blasen- und Textregionen. Ein Vision-Modell identifiziert jede Sprechblase, Erzählbox, SFX-Label und frei schwebende Textregion mit Begrenzungspolygonen, die das ursprüngliche Layout respektieren.",
+        "p3": "Schritt 2: OCR und Quellenerkennung. Der Text in jeder Region wird erkannt – einschließlich vertikaler Schriften, handgezeichneter Schriftzüge und stilisierter SFX-Schriftarten, die allgemeine OCR überlisten.",
+        "p4": "Schritt 3: Kontextbewusste Übersetzung. Der Übersetzungsschritt bewahrt die Charakterstimme über Seiten hinweg (damit derselbe Charakter konsistent spricht) und passt SFX an die Konventionen der Zielsprache an, wo es angebracht ist.",
+        "p5": "Schritt 4: Typografische Neugestaltung. Der übersetzte Text wird in der ursprünglichen Sprechblase mit adaptiven Zeilenumbrüchen, passendem Schriftgewicht und Orientierungswechsel (vertikal → horizontal, wo nötig) neu gerendert, sodass der Output im Zielmarkt nativ gelesen wird."
+      },
+      "usecases": {
+        "title": "Wer nutzt die KI-Manga-Übersetzung?",
+        "creatorsTitle": "Für Indie-Comic- und Webtoon-Schöpfer",
+        "creatorsBody": "Indie-Schöpfer veröffentlichen in einer Sprache und möchten Leser in anderen erreichen, ohne pro Seite Lokalisierungsgebühren zu zahlen. Die automatisierte Übersetzung produziert einen Entwurf, den der Schöpfer (oder ein Community-Übersetzer) verfeinern kann, wodurch Wochen an Layoutarbeit in Minuten zusammengefasst werden.",
+        "educationTitle": "Für Sprachunterricht und zweisprachige Ausgaben",
+        "educationBody": "Sprachlehrer und Verlage von zweisprachigen Ausgaben erstellen nebeneinander oder abwechselndsprachige Seiten aus einer einzigen Quelle. Die Übersetzungs-Pipeline liefert eine layout-erhaltene Version in jeder Zielsprache, bereit für das Setzen in die endgültige zweisprachige Ausgabe.",
+        "businessTitle": "Für Manga-, Comic- und Webtoon-Verlage",
+        "businessBody": "Verlage lokalisieren Backlist-Titel in neue Märkte, in denen eine lizenzierte manuelle Übersetzung unwirtschaftlich ist. Automatisierte Übersetzung macht eine langfristige Lokalisierungsstrategie rentabel – jeder Backlist-Titel wird zu einem Kandidaten für eine Veröffentlichung im neuen Markt."
       }
     }
   }

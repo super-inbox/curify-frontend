@@ -1,26 +1,120 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useAtomValue, useSetAtom } from "jotai";
 import { Download } from "lucide-react";
+import { Link as IntlLink } from "@/i18n/navigation";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
+import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import { templatePacksService } from "@/services/templatePacks";
-import { useTracking } from "@/services/useTracking";
+import { useTracking, useVideoTracking } from "@/services/useTracking";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import type { ToolDef } from "@/lib/tools-registry";
-import { USE_CASES } from "@/lib/use-cases";
+import { USE_CASES, PERSONA_BLOG_CATEGORIES, getUseCaseBySlug } from "@/lib/use-cases";
+import useCaseTranscripts from "@/lib/use_case_transcripts.json";
 
 type LearningMaterial = {
   templateId: string;
   title: string;
   description: string;
+  /** Cover preview, resolved server-side from the first inspiration
+   *  record under the template. May be a relative path to /images/...
+   *  or an absolute CDN URL — CdnImage handles both. */
+  coverImage?: string;
 };
 
 const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3"] as const;
+
+// Use cases that have an explainer video pair under /public/video/.
+// File naming convention: `use-case-{key}-{en|cn}.mp4`. Extend this map
+// when a new pair is uploaded; pages without an entry simply skip the
+// video column and the hero text takes the full row width.
+const USE_CASE_VIDEO_KEY: Record<string, string> = {
+  "for-designers":        "design",
+  "for-parents":          "parents",
+  "for-creators":         "creators",
+  "for-dtc-brands":       "dtc",
+  "for-publishers":       "publisher",
+  "for-programmatic-seo": "seo",
+};
+
+function UseCaseVideo({
+  slug,
+  videoKey,
+  lang,
+  transcript,
+  transcriptLabel,
+}: {
+  slug: string;
+  videoKey: string;
+  lang: "en" | "cn";
+  /** Locale-picked transcript text. Rendered inside a collapsed
+   *  <details> below the video so it stays crawlable by Google
+   *  (text inside closed details is indexed) without polluting
+   *  the hero's visual rhythm. Empty / missing → no accordion. */
+  transcript?: string;
+  transcriptLabel: string;
+}) {
+  // Track video plays so use-case page engagement is measurable. Without
+  // this, /use-cases/[slug] looked like 0 key actions in the actions-per-
+  // route rollup despite being the primary engagement on these pages.
+  const { trackVideoPlay } = useVideoTracking(
+    `use-case-${slug}`,
+    "use_case_video",
+    "cards",
+  );
+  // CdnVideo rewrites the /video/... path to the GCS bucket
+  // (gs://curify-static/video). The local public/video/ files are
+  // gitignored — only the CDN copy is served in production. Drop a
+  // new pair into public/video/ then run scripts/sync_large_assets.sh.
+  //
+  // Source videos are vertical (9:16, phone-shot / TikTok-Reels-style),
+  // so the container matches that aspect — using aspect-video (16:9)
+  // would either letterbox heavily or crop the video.
+  const src = `/video/use-case-${videoKey}-${lang}.mp4`;
+  // Split on double-newline → paragraph; preserve single newlines as
+  // soft breaks via whitespace-pre-line so the CN block structure
+  // (multiple short lines per section) survives the render round-trip.
+  const paragraphs = transcript
+    ? transcript.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean)
+    : [];
+
+  return (
+    <div className="w-full">
+      <div className="overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 shadow-sm">
+        <CdnVideo
+          src={src}
+          controls
+          playsInline
+          preload="metadata"
+          className="aspect-[9/16] w-full bg-black"
+          onPlay={trackVideoPlay}
+        />
+      </div>
+      {paragraphs.length > 0 && (
+        <details className="mt-3 rounded-lg border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-700">
+          <summary className="cursor-pointer select-none font-medium text-neutral-800 hover:text-purple-700">
+            {transcriptLabel}
+          </summary>
+          <div className="mt-3 space-y-3">
+            {paragraphs.map((p, i) => (
+              <p key={i} className="whitespace-pre-line leading-relaxed text-neutral-600">
+                {p}
+              </p>
+            ))}
+          </div>
+        </details>
+      )}
+    </div>
+  );
+}
 
 function LearningMaterialCard({ material }: { material: LearningMaterial }) {
   const t = useTranslations("actionButtons");
@@ -55,18 +149,37 @@ function LearningMaterialCard({ material }: { material: LearningMaterial }) {
   };
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
-      <div className="text-base font-bold text-neutral-900">{material.title}</div>
-      <div className="text-sm text-neutral-500">{material.description}</div>
-      <button
-        type="button"
-        onClick={handleDownload}
-        disabled={isDownloading}
-        className="mt-auto inline-flex items-center gap-2 rounded-full bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60"
-      >
-        <Download className="h-4 w-4" />
-        {isDownloading ? t("downloadingPack") : t("downloadPack")}
-      </button>
+    <div className="flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
+      {material.coverImage ? (
+        <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
+          <CdnImage
+            src={material.coverImage}
+            alt={material.title}
+            fill
+            className="object-cover"
+          />
+        </div>
+      ) : (
+        // Fallback for templates that have no inspiration records yet —
+        // a soft purple-tinted swatch with a Download glyph so the card
+        // still reads as visual rather than three lines of text.
+        <div className="relative flex aspect-[4/3] w-full items-center justify-center bg-gradient-to-br from-purple-50 to-purple-100">
+          <Download className="h-8 w-8 text-purple-300" />
+        </div>
+      )}
+      <div className="flex flex-1 flex-col gap-2 p-3">
+        <div className="line-clamp-2 text-sm font-semibold text-neutral-900">{material.title}</div>
+        <div className="line-clamp-2 text-xs text-neutral-500">{material.description}</div>
+        <button
+          type="button"
+          onClick={handleDownload}
+          disabled={isDownloading}
+          className="mt-auto inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-full bg-purple-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-purple-700 disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          <Download className="h-3.5 w-3.5" />
+          {isDownloading ? t("downloadingPack") : t("downloadPack")}
+        </button>
+      </div>
     </div>
   );
 }
@@ -83,7 +196,33 @@ export default function UseCaseClient({
   learningMaterials?: LearningMaterial[];
 }) {
   const t = useTranslations("useCasePage");
+  const tGlobal = useTranslations();
+  const locale = useLocale();
   const title = t(`${slug}.title` as never);
+  // P0 #3 — blog categories that match this persona. Drives the
+  // "Related reading" block at the bottom. See docs/interconnection.md.
+  const relatedBlogCategories = PERSONA_BLOG_CATEGORIES[slug] ?? [];
+  // B2B pages get a "Built for teams" badge + a one-line "APIs available
+  // on request" note in the hero. Visible packaging = the dev-shop
+  // guardrail (see docs/interconnection.md "B2B tier").
+  const isB2B = getUseCaseBySlug(slug)?.tier === "b2b";
+  // Optional explainer video on the right side of the hero. Only the
+  // slugs in USE_CASE_VIDEO_KEY have a video pair under /public/video/.
+  const videoKey = USE_CASE_VIDEO_KEY[slug];
+  // Share button props — ShareButton auto-prepends curify-ai.com on
+  // relative URLs. Tracking uses contentType "page" + slug as
+  // contentId so analytics groups shares per persona page.
+  const { trackAction } = useTracking();
+  const shareTitle = title;
+  const shareText = t(`${slug}.subtitle` as never);
+  const shareTracking = {
+    contentId: slug,
+    contentType: "page" as const,
+  };
+  const handleShareTracked = useCallback(
+    () => trackAction(shareTracking, "share"),
+    [trackAction, shareTracking],
+  );
   const user = useAtomValue(userAtom);
   const setDrawerState = useSetAtom(drawerAtom);
   const requireAuth = useCallback(() => {
@@ -93,16 +232,38 @@ export default function UseCaseClient({
   }, [user, setDrawerState]);
 
   return (
-    <main className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 lg:px-8">
-      {/* Hero */}
-      <section className="mb-10">
-        <h1 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-          {title}
-        </h1>
+    <main className="mx-auto max-w-[1400px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">
+      {/* Hero — text block + optional explainer video side by side on
+          lg+, stacked on smaller. Single max-w on the text section so
+          title, subtitle, description, bullets, and the B2B API line
+          share one consistent reading column. Share button sits on the
+          H1 line (right-aligned within the text section) instead of in
+          its own row above — tighter top whitespace, share affordance
+          stays adjacent to the title. */}
+      <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-20">
+      <section className="max-w-3xl lg:flex-1">
+        {isB2B && (
+          <span className="mb-3 inline-flex items-center rounded-full border border-purple-300 bg-purple-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-purple-800">
+            {tGlobal("interconnection.builtForTeams")}
+          </span>
+        )}
+        <div className="flex items-start justify-between gap-4">
+          <h1 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+            {title}
+          </h1>
+          <div className="flex-shrink-0 pt-1">
+            <ShareButton
+              url={`/use-cases/${slug}`}
+              title={shareTitle}
+              text={shareText}
+              onShared={handleShareTracked}
+            />
+          </div>
+        </div>
         <p className="mt-3 text-lg font-semibold text-purple-700">
           {t(`${slug}.subtitle` as never)}
         </p>
-        <p className="mt-3 max-w-2xl text-base text-neutral-600">
+        <p className="mt-3 text-base text-neutral-600">
           {t(`${slug}.description` as never)}
         </p>
 
@@ -114,7 +275,36 @@ export default function UseCaseClient({
             </li>
           ))}
         </ul>
+
+        {isB2B && (
+          <p className="mt-5 text-sm font-medium text-neutral-700">
+            <span aria-hidden="true" className="mr-1.5">⚡</span>
+            {tGlobal("interconnection.apiAvailable")}{" "}
+            <IntlLink
+              href="/contact"
+              className="font-semibold text-purple-700 underline-offset-2 hover:underline"
+            >
+              {tGlobal("interconnection.apiContactCTA")}
+            </IntlLink>
+          </p>
+        )}
       </section>
+
+        {videoKey && (
+          <div className="mx-auto w-full max-w-[320px] lg:mx-0 lg:w-[280px] lg:flex-shrink-0">
+            <UseCaseVideo
+              slug={slug}
+              videoKey={videoKey}
+              lang={locale === "zh" ? "cn" : "en"}
+              transcript={
+                (useCaseTranscripts as Record<string, { en?: string; cn?: string }>)
+                  [videoKey]?.[locale === "zh" ? "cn" : "en"]
+              }
+              transcriptLabel={tGlobal("interconnection.readTranscript")}
+            />
+          </div>
+        )}
+      </div>
 
       {/* Learning Materials (for-parents) or Tools (other use cases) */}
       {learningMaterials && learningMaterials.length > 0 ? (
@@ -122,7 +312,7 @@ export default function UseCaseClient({
           <h2 className="mb-4 text-xl font-bold text-neutral-900">
             {t("learningMaterialsHeading")}
           </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {learningMaterials.map((m) => (
               <LearningMaterialCard key={m.templateId} material={m} />
             ))}
@@ -154,6 +344,21 @@ export default function UseCaseClient({
         </section>
       )}
 
+      {/* P0 #3 — Related reading from the blog categories that match
+          this persona. Sits between the templates grid and the sibling
+          persona chips so the page closes with content depth, then a
+          cross-link back into other personas. */}
+      {relatedBlogCategories.length > 0 && (
+        <RelatedBlogsByCategory
+          categories={relatedBlogCategories}
+          locale={locale}
+          max={6}
+          heading={tGlobal("interconnection.relatedReading", {
+            defaultValue: "Related reading",
+          })}
+        />
+      )}
+
       {/* Explore other use cases — cross-link to the five sibling
           persona pages. UseCaseChipsRow filters its source list to the
           slugs we pass, in order, and renders nothing if empty. */}
@@ -165,6 +370,18 @@ export default function UseCaseClient({
           filterTo={USE_CASES.filter((uc) => uc.slug !== slug).map((uc) => uc.slug)}
         />
       </section>
+
+      {/* Bottom-left share — second chance to share once the reader has
+          scrolled the full page. Same ShareButton + tracking pattern as
+          the top-right placement so analytics counts both. */}
+      <div className="mt-8 flex justify-start">
+        <ShareButton
+          url={`/use-cases/${slug}`}
+          title={shareTitle}
+          text={shareText}
+          onShared={handleShareTracked}
+        />
+      </div>
     </main>
   );
 }

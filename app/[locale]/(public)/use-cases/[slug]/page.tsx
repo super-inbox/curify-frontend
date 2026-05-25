@@ -89,6 +89,17 @@ export default async function UseCasePage({ params }: Props) {
     .map((toolSlug) => getToolBySlug(toolSlug))
     .filter((t): t is ToolDef => Boolean(t));
 
+  // Build a templateId -> first preview_image_url map once so each
+  // learningMaterial card can render a cover thumbnail without falling
+  // back to the un-illustrated "title + description + button" layout
+  // (user feedback: download cards looked blank).
+  const firstPreviewByTemplate = new Map<string, string>();
+  for (const img of nanoImages as unknown as RawNanoImageRecord[]) {
+    if (!firstPreviewByTemplate.has(img.template_id) && img.asset?.preview_image_url) {
+      firstPreviewByTemplate.set(img.template_id, img.asset.preview_image_url);
+    }
+  }
+
   const learningMaterials =
     slug === "for-parents"
       ? (nanoTemplates as unknown as RawTemplate[])
@@ -102,6 +113,7 @@ export default async function UseCasePage({ params }: Props) {
             templateId: t.id,
             title: translateNano(`${t.id}.category`),
             description: translateNano(`${t.id}.description`),
+            coverImage: firstPreviewByTemplate.get(t.id),
           }))
       : undefined;
 

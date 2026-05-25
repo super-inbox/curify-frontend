@@ -2,6 +2,7 @@ import { PageLocale } from "@/lib/locale_utils";
 import {
   nanoRegistry,
   fillPrompt,
+  getTemplateTopics,
   getTemplateView,
   getTemplateViewWithTranslations,
   toSlug,
@@ -255,9 +256,13 @@ export function buildCircularExampleNav(params: {
 }
 
 /**
- * Returns up to `limit` examples most similar to the given example by tag overlap.
- * Scores by intersection count; breaks ties with rarer shared tags counting more.
- * Caps at `maxPerTemplate` results per template to ensure cross-template diversity.
+ * Returns up to `limit` examples most similar to the given example by
+ * shared-signal overlap. Signals = inspiration tags ∪ inspiration topics
+ * ∪ parent-template topics, so an inspiration with no tags/topics of
+ * its own (common after an auto-tag pipeline run that did not enrich
+ * it) still finds neighbors through its template's topic membership.
+ * Same-template examples get a +2 bonus on top of signal overlap.
+ * Caps at `maxPerTemplate` per template for cross-template diversity.
  */
 export function getSimilarExamples(
   reg: NanoRegistry,
@@ -270,21 +275,46 @@ export function getSimilarExamples(
   const current = reg.imageById.get(currentId);
   if (!current) return [];
 
-  const currentTags = new Set<string>(current.tags ?? []);
-  if (currentTags.size === 0) return [];
+  const currentTemplate = reg.templateById.get(current.template_id);
+  const currentSignals = new Set<string>([
+    ...(current.tags ?? []),
+    ...(current.topics ?? []),
+    ...(currentTemplate ? getTemplateTopics(currentTemplate) : []),
+  ]);
+  if (currentSignals.size === 0) return [];
 
-  // Score every other image; same-template examples get a base score of 2
+  // Cache per-template topics so the candidate loop doesn't redo the
+  // normalize/dedupe work for every image in a multi-image template.
+  const templateTopicsCache = new Map<string, string[]>();
+  const topicsFor = (templateId: string): string[] => {
+    const cached = templateTopicsCache.get(templateId);
+    if (cached) return cached;
+    const tpl = reg.templateById.get(templateId);
+    const t = tpl ? getTemplateTopics(tpl) : [];
+    templateTopicsCache.set(templateId, t);
+    return t;
+  };
+
   const scored = reg.images
     .filter((img) => img.id !== currentId && img.asset?.image_url)
     .map((img) => {
-      const tagScore = (img.tags ?? []).filter((t) => currentTags.has(t)).length;
+      let signalScore = 0;
+      const seen = new Set<string>();
+      for (const sig of [
+        ...(img.tags ?? []),
+        ...(img.topics ?? []),
+        ...topicsFor(img.template_id),
+      ]) {
+        if (seen.has(sig)) continue;
+        seen.add(sig);
+        if (currentSignals.has(sig)) signalScore++;
+      }
       const sameTemplate = img.template_id === current.template_id ? 2 : 0;
-      return { img, score: tagScore + sameTemplate };
+      return { img, score: signalScore + sameTemplate };
     })
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score);
 
-  // Pick top results capped per template
   const perTemplateCount: Record<string, number> = {};
   const results: RawNanoImageRecord[] = [];
 

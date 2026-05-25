@@ -5,591 +5,6 @@
       "description": "AI 비디오 생성, 더빙, 스타일 변환 및 콘텐츠 제작의 미래에 대한 최신 기사를 읽어보세요."
     },
     "latestArticles": "최신 기사",
-    "posts": [
-      {
-        "slug": "aiPlatform",
-        "title": "Practical AI Platform: How Mid-Sized Tech Companies Win with AI",
-        "date": "2026년 1월 30일",
-        "readTime": "9분 읽기",
-        "tag": "DS & AI Engineering",
-        "image": "https://storage.googleapis.com/curify-static/platformai.webp",
-        "category": "크리에이터 도구",
-        "relatedLinks": [
-          "나노 바나나 프롬프트의 궁극적인 디렉토리",
-          "MBTI 캐릭터 생성기",
-          "캐릭터 프롬프트 생성기"
-        ]
-      },
-      {
-        "slug": "QA_Bot_to_Task",
-        "title": "QA 봇에서 태스크 에이전트로: 아키텍처 가이드",
-        "date": "2026년 1월 30일",
-        "readTime": "6분 읽기",
-        "tag": "DS & AI Engineering",
-        "image": "/images/qa-bot-architecture.jpg",
-        "category": "학습-교육",
-        "relatedLinks": [
-          "시각적-학습-도구",
-          "바이럴-학습-콘텐츠",
-          "나노-바나나-프롬프트-생태계"
-        ]
-      },
-      {
-        "slug": "age_AI",
-        "title": "AI 시대의 데이터 사이언스: 여전히 '가장 섹시한 직업'인가?",
-        "date": "2026년 1월 30일",
-        "readTime": "8분 읽기",
-        "tag": "DS & AI Engineering",
-        "image": "/images/data-science-ai-era.jpg",
-        "category": "비디오-번역-더빙",
-        "relatedLinks": [
-          "ai-유튜브-비디오-번역기",
-          "자연스럽게-비디오-더빙하는-방법",
-          "음성-클로닝이란"
-        ]
-      },
-      {
-        "slug": "storyboard-labeling",
-        "title": "원본 영상에서 스토리보드까지: AI 기반 비디오 분석",
-        "date": "2025년 12월 11일",
-        "readTime": "10분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/storyboard-labeling-with-ai.jpg",
-        "category": "제작자-도구",
-        "relatedLinks": [
-          "curify-ai-성장-엔진",
-          "나노-바나나-프롬프트-생태계",
-          "ai-콘텐츠-제작-시스템"
-        ]
-      },
-      {
-        "slug": "video-enhancement",
-        "title": "AI 비디오 향상: 스토리보드, 밈 캡션 및 SFX 자동화",
-        "date": "2025년 11월 18일",
-        "readTime": "7분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/video-enhancement-pipeline.png",
-        "category": "비디오 번역 더빙",
-        "relatedLinks": [
-          "AI 유튜브 비디오 번역기",
-          "자연스럽게 비디오 더빙하는 방법",
-          "음성 클로닝이란 무엇인가"
-        ]
-      },
-      {
-        "slug": "video-evaluation",
-        "title": "AI 비디오 번역 평가: 진정으로 중요한 지표",
-        "date": "2025년 11월 14일",
-        "readTime": "6분 읽기",
-        "tag": "Video Dubbing",
-        "image": "/images/video-translation-eval.jpg",
-        "category": "크리에이터 도구",
-        "relatedLinks": [
-          "Curify AI 성장 엔진",
-          "나노 바나나 프롬프트 생태계",
-          "AI 콘텐츠 제작 시스템"
-        ]
-      },
-      {
-        "slug": "storyboard-to-pipeline",
-        "title": "나만의 AI 기반 만화 애니메이션 제작: 단계별 가이드",
-        "date": "2025년 10월 28일",
-        "readTime": "5분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/ai-animation-pipeline.jpg"
-      },
-      {
-        "slug": "agents-vs-workflows",
-        "title": "파트 2: 에이전트 vs 워크플로우 – 제어에서 지능으로",
-        "date": "2025년 10월 28일",
-        "readTime": "6분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/agents-vs-workflows.jpg"
-      },
-      {
-        "slug": "ae-vs-comfyui",
-        "title": "파트 3: AE vs ComfyUI – 모션 디자인 vs 디퓨전 파이프라인",
-        "date": "2025년 10월 28일",
-        "readTime": "7분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/ae-vs-comfyui.jpg"
-      },
-      {
-        "slug": "ai-youtube-video-translator",
-        "title": "AI YouTube 동영상 번역기: 2026년 최고의 도구 및 방법",
-        "date": "March 4, 2026",
-        "readTime": "11 min read",
-        "tag": "Video Dubbing",
-        "image": "/images/youtube3.webp"
-      },
-      {
-        "slug": "asl-video-translator",
-        "title": "ASL 비디오 번역기: 수화 번역 도구",
-        "date": "March 4, 2026",
-        "readTime": "6 min read",
-        "tag": "Video Dubbing",
-        "image": "/images/aslvideov11.webp"
-      },
-      {
-        "slug": "f5-tts-voice-cloning",
-        "title": "F5-TTS 음성 복제: 전문 AI 음성 솔루션",
-        "date": "March 4, 2026",
-        "readTime": "7 min read",
-        "tag": "Video Dubbing",
-        "image": "/images/bea9f86a7e2ae4df3497a4241bc71a1d_thumb_1765977242819.jpg"
-      },
-      {
-        "slug": "translate-youtube-video",
-        "title": "How to Translate YouTube Videos: Complete Step-by-Step Guide",
-        "date": "March 4, 2026",
-        "readTime": "12 min read",
-        "tag": "Video Dubbing",
-        "image": "/images/youtubev2.webp"
-      },
-      {
-        "slug": "translate-youtube-video-to-english",
-        "title": "YouTube 동영상을 영어로 번역하기: AI 기반 솔루션",
-        "date": "March 4, 2026",
-        "readTime": "10 min read",
-        "tag": "DS & AI Engineering",
-        "image": "/images/youtubev1.webp"
-      },
-      {
-        "slug": "voice-cloning-tools",
-        "title": "최고의 음성 복제 도구: F5-TTS, ElevenLabs 및 기타",
-        "date": "March 4, 2026",
-        "readTime": "8 min read",
-        "tag": "Video Dubbing",
-        "image": "/images/voiceclone3.webp"
-      },
-      {
-        "slug": "what-is-voice-cloning",
-        "title": "음성 복제란 무엇인가? AI 음성 기술 이해하기",
-        "date": "March 4, 2026",
-        "readTime": "9 min read",
-        "tag": "Video Dubbing",
-        "image": "/images/voiceclone.webp"
-      },
-      {
-        "slug": "chinese-herbal-medicine-visual-guide",
-        "title": "중국 전통 약초: 전통 요법에 대한 완벽한 시각적 가이드",
-        "date": "2026년 2월 24일",
-        "readTime": "12분 읽기",
-        "tag": "Nano Template",
-        "image": "/images/nano_insp/template-herbal-zh-ginseng.jpg"
-      },
-      {
-        "slug": "evolution-timelines-visualization",
-        "title": "진화 타임라인: AI로 역사적 발전을 시각화하는 방법",
-        "date": "2026년 2월 25일",
-        "readTime": "10분 읽기",
-        "tag": "Nano Template",
-        "image": "/images/nano_insp/template-evolution-zh-chinese-social-changes.jpg"
-      },
-      {
-        "slug": "chinese-costume-history-infographic",
-        "title": "중국 의상 역사: 당나라에서 현대 패션까지",
-        "date": "2026년 2월 26일",
-        "readTime": "15분 읽기",
-        "tag": "Nano Template",
-        "image": "/images/nano_insp/template-costume-zh-tang-qixiong.jpg"
-      },
-      {
-        "slug": "creative-ai-tools-websites",
-        "title": "6 Creative AI Tool Websites to Beat Creator's Block",
-        "date": "2026년 3월 10일",
-        "readTime": "8분 읽기",
-        "tag": "Nano Template",
-        "image": "/images/sevenimages.webp"
-      },
-      {
-        "slug": "nano-banana-prompt-ecosystem",
-        "title": "Nano Banana Prompt Ecosystem",
-        "date": "2026년 3월 12일",
-        "readTime": "10분 읽기",
-        "tag": "Nano Template",
-        "image": "/images/nanobannanapromptblog.webp"
-      },
-      {
-        "slug": "video-transcription-business-guide",
-        "title": "비디오를 텍스트로 전사하는 방법 (YouTube, 회의 및 콘텐츠 제작자를 위한 AI 도구)",
-        "date": "2026년 3월 19일",
-        "readTime": "8분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/bussinesstranalayion.webp",
-        "thumbnailType": "비디오 전사 비즈니스"
-      },
-      {
-        "slug": "video-transcription-technical-deep-dive",
-        "title": "AI 비디오 전사 파이프라인 내부: ASR, 정렬 및 화자 분리",
-        "date": "2026년 3월 19일",
-        "readTime": "12분 읽기",
-        "tag": "DS & AI Engineering",
-        "image": "/images/techicalpress.webp",
-        "thumbnailType": "비디오 전사 파이프라인"
-      },
-      {
-        "slug": "10-prompting-tips-nano-banana",
-        "title": "나노 바나나를 위한 10가지 프롬프트 팁: AI 콘텐츠 생성 마스터하기",
-        "date": "2026년 3월 23일",
-        "readTime": "8분 읽기",
-        "tag": "Nano Template",
-        "image": "/images/book.webp"
-      },
-      {
-        "slug": "10-prompting-tips-video-generation",
-        "title": "비디오 생성을 위한 10가지 프롬프트 팁: 멋진 AI 비디오 만들기",
-        "date": "2026년 3월 23일",
-        "readTime": "9분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/tenprompt.webp",
-        "thumbnailType": "비디오 전사 비즈니스"
-      },
-      {
-        "slug": "image-generation-model-comparison",
-        "title": "이미지 생성 모델 비교: DALL-E 3 vs Midjourney vs Stable Diffusion",
-        "date": "2026년 3월 28일",
-        "readTime": "12분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/hardworker.webp",
-        "thumbnailType": "비디오 전사 파이프라인"
-      },
-      {
-        "slug": "lip-sync-business-guide",
-        "title": "AI 립싱크 및 더빙 가이드: 비즈니스 응용 프로그램 및 도구",
-        "date": "2026년 3월 29일",
-        "readTime": "10분 읽기",
-        "tag": "Video Dubbing",
-        "image": "/images/office.webp"
-      },
-      {
-        "slug": "lip-sync-technical-deep-dive",
-        "title": "AI 립싱크 파이프라인 내부: MuseTalk, Sync.co 및 프로덕션 아키텍처",
-        "date": "2026년 3월 29일",
-        "readTime": "15분 읽기",
-        "tag": "DS & AI Engineering",
-        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg",
-        "thumbnailType": "비디오-전사-비즈니스"
-      },
-      {
-        "slug": "character-prompt-generator",
-        "title": "캐릭터 프롬프트 생성기: AI 캐릭터 디자인에 대한 완벽 가이드",
-        "date": "2026년 3월 29일",
-        "readTime": "15분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
-        "thumbnailType": "비디오-전사-파이프라인"
-      },
-      {
-        "slug": "visual-learning-tools",
-        "title": "시각적 학습 도구: 학생, 부모 및 교사가 교육을 변화시키는 방법",
-        "date": "2026년 4월 1일",
-        "readTime": "10분 읽기",
-        "tag": "Learning & Education",
-        "image": "/images/nano_insp_preview/template-word-scene-zh-student-wizard-school-prev.jpg"
-      },
-      {
-        "slug": "best-ai-tools",
-        "title": "2026년 콘텐츠 제작자를 위한 10가지 최고의 AI 도구",
-        "date": "2026년 4월 2일",
-        "readTime": "12분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/midjorney.webp"
-      },
-      {
-        "slug": "nano-banana-dedicated",
-        "title": "나노 바나나 전용: 궁극의 AI 비디오 번역 플랫폼",
-        "date": "2026년 4월 2일",
-        "readTime": "12분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/lightsnano.webp"
-      },
-      {
-        "slug": "콘텐츠 곱셈 시스템",
-        "title": "1개의 아이디어를 30일 콘텐츠로 바꾸는 방법 (탈진 없이)",
-        "date": "2026년 4월 6일",
-        "readTime": "8분 읽기",
-        "tag": "콘텐츠 전략",
-        "image": "/images/thirtyday.webp",
-        "category": "크리에이터 도구",
-        "relatedLinks": [
-          "nano-banana-prompt-ecosystem",
-          "10-prompting-tips-nano-banana",
-          "character-prompt-generator"
-        ]
-      },
-      {
-        "slug": "바이럴 학습 콘텐츠",
-        "title": "바이럴 학습 콘텐츠 만드는 방법 (플래시카드, 대화 장면, 시각적 지식)",
-        "date": "2026년 4월 6일",
-        "readTime": "10분 읽기",
-        "tag": "학습 콘텐츠",
-        "image": "/images/learnContent.png",
-        "category": "크리에이터 도구",
-        "relatedLinks": [
-          "콘텐츠 곱셈 시스템",
-          "character-prompt-generator",
-          "visual-learning-tools"
-        ]
-      },
-      {
-        "slug": "ai-콘텐츠 생산 시스템",
-        "title": "AI 콘텐츠 생산 시스템을 구축한 방법 (도구뿐만 아니라)",
-        "date": "2026년 4월 8일",
-        "readTime": "12분 읽기",
-        "tag": "AI 아키텍처",
-        "image": "/images/aicontentproduction.webp",
-        "category": "ds-ai-engineering",
-        "relatedLinks": [
-          "aiPlatform",
-          "agents-vs-workflows",
-          "콘텐츠 곱셈 시스템"
-        ]
-      },
-      {
-        "slug": "ai-콘텐츠 배포 시스템",
-        "title": "AI 콘텐츠 배포 시스템을 구축한 방법 (X, Facebook & SEO)",
-        "date": "2026년 4월 8일",
-        "readTime": "10분 읽기",
-        "tag": "콘텐츠 마케팅",
-        "image": "/images/mermaigrapj.webp",
-        "category": "크리에이터 도구",
-        "relatedLinks": [
-          "ai-콘텐츠 생산 시스템",
-          "콘텐츠 곱셈 시스템",
-          "aiPlatform"
-        ]
-      },
-      {
-        "slug": "what-is-infographics",
-        "title": "인포그래픽이란 무엇이며 인포그래픽 카드는 어떻게 사용될 수 있나요?",
-        "date": "2026년 4월 9일",
-        "readTime": "12분 읽기",
-        "tag": "Learning & Education",
-        "image": "/images/infogragiccard.webp",
-        "category": "nano-banana-prompts",
-        "relatedLinks": [
-          "nano-banana-prompt-ecosystem",
-          "chinese-herbal-medicine-visual-guide",
-          "evolution-timelines-visualization"
-        ]
-      },
-      {
-        "slug": "image-to-narrative-video",
-        "title": "미니 도구: 이미지를 내러티브 비디오로 변환하기",
-        "date": "2026년 4월 9일",
-        "readTime": "12분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/iran.webp",
-        "category": "creator-tools",
-        "relatedLinks": [
-          "ai-content-production-system",
-          "viral-learning-content",
-          "visual-learning-tools"
-        ]
-      },
-      {
-        "slug": "series-infographic-vs-notebooklm",
-        "title": "시리즈 인포그래픽 vs Google NotebookLM: 시각적 vs 내러티브 콘텐츠",
-        "date": "2026년 4월 10일",
-        "readTime": "10분 읽기",
-        "tag": "Learning & Education",
-        "image": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-01-cover.jpg",
-        "category": "nano-banana-prompts",
-        "relatedLinks": [
-          "what-is-infographics",
-          "nano-banana-prompt-ecosystem",
-          "creative-ai-tools-websites"
-        ]
-      },
-      {
-        "slug": "emotion-tts-movie",
-        "title": "감정 TTS 영화: 내러티브를 더 감정적으로 만들어보세요",
-        "date": "2026년 4월 13일",
-        "readTime": "15분 읽기",
-        "tag": "Creator Tools",
-        "image": "/images/voices2.webp",
-        "category": "크리에이터 도구",
-        "relatedLinks": [
-          "AI 콘텐츠 제작 시스템",
-          "바이럴 학습 콘텐츠",
-          "비주얼 학습 도구"
-        ]
-      },
-      {
-        "slug": "curify-ai-growth-engine",
-        "title": "Curify AI 성장 엔진: UGC 제작자와 마케터를 위한 콘텐츠 제작 혁신",
-        "date": "2026년 4월 13일",
-        "readTime": "12분 읽기",
-        "tag": "Content Automation",
-        "image": "/images/growthengine.webp",
-        "category": "나노 바나나 프롬프트",
-        "relatedLinks": [
-          "인포그래픽이란?",
-          "나노 바나나 프롬프트 생태계",
-          "창의적인 AI 도구 웹사이트"
-        ]
-      },
-      {
-        "slug": "감정-tts-영화",
-        "title": "감정 TTS 영화: 당신의 내러티브를 더 감정적으로 만들기",
-        "date": "2026년 4월 13일",
-        "readTime": "15분 읽기",
-        "tag": "크리에이터 도구",
-        "image": "/images/voices2.webp",
-        "category": "크리에이터 도구",
-        "relatedLinks": [
-          "AI 콘텐츠 제작 시스템",
-          "바이럴 학습 콘텐츠",
-          "비주얼 학습 도구"
-        ]
-      },
-      {
-        "slug": "시리즈 인포그래픽 대 노트북LM",
-        "title": "시리즈 인포그래픽 대 Google NotebookLM: 비주얼 대 내러티브 콘텐츠",
-        "date": "2026년 4월 10일",
-        "readTime": "10분 읽기",
-        "tag": "Nano Banana 프롬프트",
-        "image": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-01-cover.jpg",
-        "category": "nano-banana-prompts",
-        "relatedLinks": [
-          "인포그래픽이란",
-          "nano-banana-prompt-ecosystem",
-          "창의적 AI 도구 웹사이트"
-        ]
-      },
-      {
-        "slug": "감정 TTS 영화",
-        "title": "감정 TTS 영화: 내러티브를 더 감정적으로 만들기",
-        "date": "2026년 4월 13일",
-        "readTime": "15분 읽기",
-        "tag": "크리에이터 도구",
-        "image": "/images/voices2.webp",
-        "category": "나노-바나나-프롬프트",
-        "relatedLinks": [
-          "나노-바나나-프롬프트-생태계",
-          "중국-한약-시각-가이드",
-          "진화-타임라인-시각화"
-        ]
-      },
-      {
-        "slug": "how-to-dub-videos-naturally",
-        "title": "How to Dub Videos Naturally in 2026: Fixing AI Voice Cloning Artifacts",
-        "date": "April 20, 2026",
-        "readTime": "15 min read",
-        "tag": "Video Dubbing",
-        "image": "/images/photoshoot.webp",
-        "category": "제작자-도구",
-        "relatedLinks": [
-          "ai-콘텐츠-제작-시스템",
-          "바이럴-학습-콘텐츠",
-          "시각적-학습-도구"
-        ]
-      },
-      {
-        "slug": "mbti-character-generator",
-        "title": "나노 바나나 MBTI 캐릭터 생성기: 몇 초 만에 성격 기반 캐릭터 만들기",
-        "date": "April 20, 2026",
-        "readTime": "12 min read",
-        "tag": "Nano Template",
-        "image": "/images/advi.webp",
-        "category": "나노-바나나-프롬프트",
-        "relatedLinks": [
-          "인포그래픽이란",
-          "나노-바나나-프롬프트-생태계",
-          "창의적-ai-도구-웹사이트"
-        ]
-      },
-      {
-        "slug": "ultimate-directory-of-nano-banana-prompts",
-        "title": "Ultimate Directory of Nano Banana Prompts",
-        "date": "April 20, 2026",
-        "readTime": "20 min read",
-        "tag": "Nano Template",
-        "image": "/images/logbook.webp"
-      },
-      {
-        "slug": "content-tagging-system",
-        "title": "4000개의 이미지에서 50개의 의미 있는 태그로: 핀터레스트 스타일 콘텐츠 발견 구축",
-        "date": "April 16, 2026",
-        "readTime": "10 min read",
-        "tag": "Content Automation",
-        "image": "/images/jay.webp",
-        "category": "나노 템플릿",
-        "relatedLinks": [
-          "나노 바나나 프롬프트의 궁극적인 디렉토리",
-          "나노 바나나를 위한 10가지 프롬프트 팁",
-          "나노 바나나 프롬프트 생태계"
-        ]
-      },
-      {
-        "slug": "ai-content-distribution-system",
-        "title": "AI 콘텐츠 배포 시스템을 어떻게 구축했는가 (X, Facebook & SEO)",
-        "date": "April 8, 2026",
-        "readTime": "10 min read",
-        "tag": "Content Automation",
-        "image": "/images/mermaigrapj.webp",
-        "category": "학습-교육",
-        "relatedLinks": [
-          "시각 학습 도구",
-          "이중 언어 AI 플래시카드 - 유아 교육",
-          "바이럴 학습 콘텐츠"
-        ]
-      },
-      {
-        "slug": "ai-content-production-system",
-        "title": "AI 콘텐츠 제작 시스템을 어떻게 구축했는가 (단순한 도구가 아님)",
-        "date": "April 8, 2026",
-        "readTime": "12 min read",
-        "tag": "DS & AI Engineering",
-        "image": "/images/contentai.webp",
-        "category": "나노 템플릿",
-        "relatedLinks": [
-          "나노 바나나 프롬프트의 궁극적인 디렉토리",
-          "MBTI 캐릭터 생성기",
-          "나노 바나나를 위한 10가지 프롬프트 팁"
-        ]
-      },
-      {
-        "slug": "content-multiplication-system",
-        "title": "1개의 아이디어를 30일 콘텐츠로 바꾸는 방법 (탈진 없이)",
-        "date": "April 6, 2026",
-        "readTime": "8 min read",
-        "tag": "Content Automation",
-        "image": "/images/thirtyday.webp",
-        "relatedLinks": [
-          "자연스럽게 비디오 더빙하는 방법",
-          "음성 클로닝이란?",
-          "유튜브 비디오 번역하기"
-        ]
-      },
-      {
-        "slug": "viral-learning-content",
-        "title": "바이럴 학습 콘텐츠 만들기 (플래시카드, 대화 장면, 시각적 지식)",
-        "date": "April 6, 2026",
-        "readTime": "10 min read",
-        "tag": "Learning & Education",
-        "image": "/images/learnContent.png",
-        "relatedLinks": [
-          "나노 바나나 프롬프트의 궁극적인 디렉토리",
-          "나노 바나나 프롬프트 생태계",
-          "창의적인 AI 도구 및 웹사이트"
-        ]
-      },
-      {
-        "slug": "레드카펫-ai-룩",
-        "title": "나노 바나나 AI로 메트 갈라, 오스카 및 칸 레드 카펫 룩 재현하기",
-        "date": "2026년 5월 10일",
-        "readTime": "10분 읽기",
-        "tag": "나노 템플릿",
-        "image": "/images/2b234839e1161a6d57af43e828efd3ec_thumb_1764263264241.jpg",
-        "relatedLinks": [
-          "나노 바나나 프롬프트의 궁극적인 디렉토리",
-          "나노 바나나 프롬프트 생태계",
-          "캐릭터 프롬프트 생성기"
-        ]
-      }
-    ],
     "translateYoutubevideo": {
       "date": "2026년 3월 4일",
       "readTime": "12분 읽기",
@@ -824,7 +239,6 @@
       "title": "YouTube 동영상을 영어로 번역하기: AI 기반 솔루션",
       "date": "2026년 3월 4일",
       "readTime": "10분 읽기",
-      "intro": "고급 AI 기술을 사용하여 YouTube 동영상을 영어로 번역하는 방법을 알아보세요. 전 세계 영어 사용 청중에게 콘텐츠를 제공하세요.",
       "whatIsTitle": "왜 영어로 번역해야 할까요?",
       "whatIsContent": "영어는 비즈니스와 엔터테인먼트의 글로벌 언어입니다. 콘텐츠를 영어로 번역하면 방대한 청중 잠재력을 열고 발견 가능성을 높입니다.",
       "whyTitle": "영어 번역의 이점",
@@ -849,7 +263,8 @@
       "step4Title": "4단계: 음성 합성 및 클로닝",
       "step4Content": "번역된 텍스트는 원래 화자의 음성 특성을 유지하는 고급 텍스트-음성 변환(TTS) 모델을 사용하여 자연스러운 음성으로 변환됩니다. 우리의 파이프라인은 Tacotron 2 스타일 아키텍처와 신경 음성 합성기를 결합하여 고충실도의 오디오 생성을 제공합니다.\n\n**파이썬 구현 세부사항:**\n```python\n# Tacotron 2 + WaveRNN을 이용한 음성 합성\nfrom tacotron2 import Tacotron2\nfrom wavernn import WaveRNN\nfrom voice_cloning import VoiceEncoder, VoiceCloner\n\n# 원본 오디오에서 화자 특성 추출\nvoice_encoder = VoiceEncoder()\nspeaker_embedding = voice_encoder.embed(original_speech)\n\n# 화자 특성으로 TTS 모델 초기화\ntacotron = Tacotron2(\n    embedding_dim=512,\n    encoder_dim=256,\n    decoder_dim=256,\n    n_mels=80\n)\n\n# 번역된 텍스트에서 멜 스펙트로그램 생성\nwith torch.no_grad():\n    mel_output = tacotron.inference(\n        text=translated_text,\n        speaker_embedding=speaker_embedding,\n        attention_alignment=True\n    )\n\n# 신경 음성 합성기를 사용하여 파형으로 변환\nvocoder = WaveRNN()\naudio_output = vocoder.generate(mel_output)\n```\n\n음성 클로닝 시스템은 음색, 음높이 및 억양 패턴을 인코딩하는 256차원 화자 임베딩을 캡처합니다. 이를 통해 자연스러운 음성 특성을 유지하면서 언어 간 일관된 음성 재생이 가능합니다.",
       "step5Title": "5단계: 립싱크 및 비디오 정렬",
-      "step5Content": "최종 단계에서는 컴퓨터 비전 기술을 사용하여 생성된 오디오와 원본 비디오를 동기화합니다. 우리의 시스템은 얼굴 랜드마크와 입 움직임을 분석하여 50ms의 허용 오차 내에서 완벽한 오디오-비주얼 정렬을 보장합니다.\n\n**파이썬 구현 세부사항:**\n```python\n# 컴퓨터 비전을 이용한 립싱크 정렬\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# 랜드마크 감지를 위한 얼굴 메쉬 초기화\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# 비디오 프레임에서 입 랜드마크 추출\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # 입 랜드마크\n        mouth_landmarks.append(mouth_points)\n\n# 시각적 신호에 따라 오디오 동기화\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# 최종 동기화된 비디오 생성\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\n동기화 시스템은 동적 시간 왜곡 알고리즘을 사용하여 음성 패턴과 입 움직임을 일치시켜 원본 비디오의 시각적 무결성을 유지하는 매끄러운 더빙 콘텐츠를 생성합니다."
+      "step5Content": "최종 단계에서는 컴퓨터 비전 기술을 사용하여 생성된 오디오와 원본 비디오를 동기화합니다. 우리의 시스템은 얼굴 랜드마크와 입 움직임을 분석하여 50ms의 허용 오차 내에서 완벽한 오디오-비주얼 정렬을 보장합니다.\n\n**파이썬 구현 세부사항:**\n```python\n# 컴퓨터 비전을 이용한 립싱크 정렬\nimport cv2\nimport mediapipe as mp\nfrom lip_sync_analyzer import LipSyncAnalyzer\nfrom audio_video_sync import AudioVideoSynchronizer\n\n# 랜드마크 감지를 위한 얼굴 메쉬 초기화\nface_mesh = mp.solutions.face_mesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.5,\n    min_tracking_confidence=0.5\n)\n\n# 비디오 프레임에서 입 랜드마크 추출\nmouth_landmarks = []\ncap = cv2.VideoCapture(video_path)\nwhile cap.isOpened():\n    ret, frame = cap.read()\n    if not ret:\n        break\n    \n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = face_mesh.process(rgb_frame)\n    \n    if results.multi_face_landmarks:\n        landmarks = results.multi_face_landmarks[0]\n        mouth_points = [landmarks.landmark[i] for i in range(13, 15)]  # 입 랜드마크\n        mouth_landmarks.append(mouth_points)\n\n# 시각적 신호에 따라 오디오 동기화\nsync_analyzer = LipSyncAnalyzer()\nalignment_data = sync_analyzer.align_audio_to_video(\n    audio_output,\n    mouth_landmarks,\n    video_fps=30,\n    tolerance_ms=50\n)\n\n# 최종 동기화된 비디오 생성\nsynchronizer = AudioVideoSynchronizer()\nfinal_video = synchronizer.create_synced_video(\n    video_path,\n    audio_output,\n    alignment_data\n)\n```\n\n동기화 시스템은 동적 시간 왜곡 알고리즘을 사용하여 음성 패턴과 입 움직임을 일치시켜 원본 비디오의 시각적 무결성을 유지하는 매끄러운 더빙 콘텐츠를 생성합니다.",
+      "intro": "YouTube 비디오 번역은 하나의 모델이 아닙니다 — 다섯 단계의 파이프라인입니다. 이 심층 분석에서는 Curify가 단계를 연결하는 방법을 다룹니다: 배경 음악에서 오디오를 분리하고, WhisperX로 전사하고, 전사를 목표 언어로 번역하고, F5-TTS로 원래 화자의 목소리를 복제하고, [/tools/video-dubbing](/tools/video-dubbing)를 통해 입에 맞춘 더빙으로 비디오를 다시 렌더링합니다. 각 단계는 통합하기 전에 이해할 가치가 있는 고유한 실패 모드를 가지고 있습니다. 다른 언어로 자막만 원하신다면, 더 간단한 [/tools/translate-subtitles](/tools/translate-subtitles)가 한 단계로 그것을 처리합니다; 이 게시물은 전체 다국어 비디오 파이프라인을 구축하는 사람들을 위한 것입니다."
     },
     "aiYoutubeVideoTranslator": {
       "date": "2026년 3월 4일",
@@ -960,35 +375,37 @@
       "conclusionContent": "F5-TTS는 음성 클로닝 기술의 최전선으로, 까다로운 애플리케이션을 위한 전문 품질의 결과를 제공합니다.",
       "title": "F5-TTS AI 음성 리뷰: 실제로 ElevenLabs를 이길 수 있을까요?",
       "seoKeywords": "f5-tts 리뷰, f5-tts vs elevenlabs, 오픈 소스 음성 클로닝, 무료 ai 음성 클로닝, f5-tts 벤치마크, 신경 tts 비교, ai 음성 클로닝 2026",
-      "metaDescription": "F5-TTS는 ElevenLabs 품질의 음성 클로닝을 무료로 약속합니다. 우리는 정면 대결을 테스트했습니다 — 오픈 소스 경쟁자가 실제 사용을 위한 준비가 되었는지 확인하세요."
+      "metaDescription": "F5-TTS는 ElevenLabs 품질의 음성 클로닝을 무료로 약속합니다. 우리는 정면 대결을 테스트했습니다 — 오픈 소스 경쟁자가 실제 사용을 위한 준비가 되었는지 확인하세요.",
+      "PipelineTitle": "F5-TTS 직접 실행하기: 설치, 라이센스, 빠른 시작",
+      "PipelineContent": "F5-TTS는 오픈 소스입니다. 생성당 비용을 지불하는 대신 로컬에서 실행하고 싶다면 GitHub 저장소(`SWivid/F5-TTS`)에서 설치, 예제 및 추론 스크립트를 확인하세요.\n\n**라이센스**: MIT, 상업적 사용을 허용하며 호출당 라이센스 비용이 없습니다. 프로덕션 배포 전에 현재 저장소 상태를 확인하세요 — 라이센스 조건은 주요 버전 간에 가끔 변경됩니다.\n\n**설치 경로**: 저장소를 클론하고, 의존성(PyTorch 및 몇 가지 오디오 라이브러리)을 설치한 후, CLI 진입점은 표준 추론과 음성 클로닝을 모두 다룹니다. CUDA 지원 GPU를 강력히 권장합니다 — CPU에서의 추론은 대략 10배 느리며, 프로토타입에는 괜찮지만 프로덕션 규모에서는 고통스러울 수 있습니다.\n\n**음성 클로닝 빠른 시작**: 제로샷 클로닝은 소스 언어로 된 5-15초의 참조 오디오 클립만 필요합니다. 참조 WAV와 목표 텍스트를 추론 CLI에 전달하세요; 모델은 클론된 음성으로 24kHz WAV를 생성합니다. 첫 번째 품질은 내레이션 및 설명 콘텐츠에 대해 프로덕션 수준으로 수용 가능합니다. 감정적이거나 캐릭터 전달을 위해서는 참조 클립 선택을 반복하거나 더 넓은 감정 범위를 가진 호스팅 API로 돌아가세요.\n\n**자체 호스팅 vs 호스팅 API — 선택 시기**:\n- *자체 호스팅 F5-TTS*: 생성당 비용이 중요한 고용량 프로덕션, 엄격한 데이터 거주 요구 사항 또는 맞춤형 미세 조정 필요.\n- *호스팅 API (ElevenLabs, Curify 등)*: 낮거나 간헐적인 볼륨, GPU 인프라 없음, 또는 오픈 소스 기준을 초과하는 감정 범위 옵션이 필요할 때.\n\n**하드웨어 스케치**: 중급 GPU(12GB+ VRAM) 하나로 추론을 편안하게 처리할 수 있습니다. 훈련이나 미세 조정은 더 많은 GPU와 원본 논문에서 설명한 데이터셋 준비가 필요합니다.\n\n아키텍처 세부 사항에 대한 정보는 비자기 회귀 흐름 일치 및 확산 변환기 백본을 포함하며, GitHub 저장소에서 링크된 원본 F5-TTS 논문이 정식 참조입니다."
     },
     "aslVideoTranslator": {
-      "title": "ASL 비디오 번역기: 수화 번역 도구",
       "date": "2026년 3월 4일",
       "readTime": "6분 읽기",
-      "intro": "수화와 구어 커뮤니티 간의 소통 격차를 해소하는 ASL 비디오 번역 기술을 탐구하세요.",
       "whatIsTitle": "ASL 비디오 번역이란?",
-      "whatIsContent": "ASL 비디오 번역은 AI를 사용하여 미국 수화와 영어 텍스트/구어 간의 변환을 수행하여 콘텐츠 접근성을 높입니다.",
       "whenNeededTitle": "ASL 번역이 필요한 경우는?",
-      "whenNeededContent": "교육 콘텐츠, 공공 서비스, 엔터테인먼트 및 청각 장애인 및 난청 청중을 대상으로 하는 모든 콘텐츠에 필수적입니다.",
       "howTitle": "ASL 번역 작동 방식",
       "howContent": "AI 모델은 수화 제스처, 얼굴 표정 및 맥락을 분석하여 텍스트 또는 구어로 정확한 번역을 제공합니다.",
       "toolsTitle": "ASL 번역 도구",
-      "toolsContent": "최신 도구는 컴퓨터 비전과 기계 학습을 사용하여 수화를 인식하고 번역의 정확성을 높입니다.",
       "curifyTitle": "Curify의 ASL 번역",
       "curifyContent": "Curify는 다양한 청중을 위한 접근성과 포용성에 중점을 둔 ASL 번역 기능을 제공합니다.",
       "ctaText": "귀하의 콘텐츠를 접근 가능하게 하시겠습니까?",
       "ctaLink": "Curify의 ASL 번역기를 사용해 보세요",
       "conclusionTitle": "결론",
-      "conclusionContent": "ASL 비디오 번역은 모든 청중이 청각 능력에 관계없이 도달할 수 있는 포괄적인 콘텐츠를 만드는 데 중요합니다.",
-      "step1Title": "1단계: ASL 비디오 준비하기",
-      "step1Content": "고품질 비디오 녹화로 시작하세요. 적절한 조명, 수화자의 명확한 프레임 및 최소한의 배경 방해 요소를 보장하세요. 수화자는 허리 위에서 보이도록 하고 손 움직임과 얼굴 표정을 위한 충분한 공간을 확보해야 합니다. 안정적인 카메라와 일관된 조명을 사용하여 AI 모델이 ASL 제스처를 정확하게 캡처할 수 있도록 도와주세요.",
       "step2Title": "2단계: ASL 비디오 번역기 선택하기",
-      "step2Content": "필요에 맞는 AI 기반 ASL 비디오 번역기를 선택하세요. 실시간 처리, 높은 정확도 및 다양한 수화 스타일을 지원하는 도구를 찾으세요. 전문 ASL 비디오 번역기는 다양한 수화 속도, 지역적 변형 및 최상의 결과를 위한 맥락 인식 번역을 처리해야 합니다.",
-      "step3Title": "3단계: 번역 처리 및 검토하기",
-      "step3Content": "비디오를 ASL 비디오 번역기에 업로드하고 AI가 수화 동작을 분석하도록 하세요. 시스템은 목표 형식(텍스트, 자막 또는 음성)으로 번역을 생성합니다. 특히 기술 용어나 미묘한 표현에 대해 정확성을 검토하세요. 일부 도구는 완벽한 결과를 위해 인간 편집을 허용합니다.",
       "seoKeywords": "asl 비디오 번역기, asl 비디오 번역, asl 비디오 번역하는 방법, 미국 수화 번역, AI 수화 번역기, 비디오 접근성 도구, ADA 준수, WCAG 접근성, 포괄적인 비디오 콘텐츠, 수화 비디오 변환기",
-      "metaDescription": "AI 도구를 사용하여 ASL 비디오를 번역하는 방법을 배우세요. ASL 비디오 번역, 접근성 요구 사항 및 청각 장애인을 위한 포괄적인 콘텐츠를 만드는 최고의 도구에 대한 완벽한 가이드입니다."
+      "title": "ASL 비디오 번역기: 2026년 AI 수화 인식이 작동하는 방식",
+      "intro": "대부분의 AI \"수화 번역기\"는 데모웨어입니다 — 이들은 실험실 조건에서 고립된 수화를 인식하고, 연속적인 실제 비디오에서는 작동하지 않습니다. 현재 기술이 할 수 있는 것과 접근 가능한 비디오 워크플로우가 요구하는 것 사이의 격차는 마케팅 카피가 인정하는 것보다 더 큽니다. 이 가이드는 실제로 작동하는 것, 여전히 연구 단계에 있는 것, 그리고 생산 준비가 완료된 ASL 번역 파이프라인의 구성 요소가 어떻게 생겼는지에 대한 솔직한 버전입니다.",
+      "whatIsContent": "ASL 비디오 번역은 수화 비디오를 서면 또는 구어 영어로 변환합니다. 작동하는 파이프라인은 순서대로 네 가지 작업을 수행합니다:\n\n**포즈 및 손 모양 추정**: MediaPipe Holistic 및 OpenPose와 같은 모델은 수화자의 손 키포인트, 신체 골격 및 얼굴 랜드마크를 프레임별로 추적합니다. 이는 잘 해결된 부분입니다.\n\n**연속 수화 분할**: 하나의 수화가 끝나는 지점과 다음 수화가 시작되는 지점을 식별합니다. 정지된 단어는 침묵으로 구분되지만, ASL 수화는 공동 발음(coarticulation)을 통해 서로 섞입니다 — 이는 수화 인식에서 가장 어려운 분할 문제입니다.\n\n**비수동 신호 캡처**: 눈썹 올리기, 머리 기울이기, 입 모양, 그리고 몸의 움직임은 ASL에서 문법적 의미를 전달합니다. 이들은 강조가 아니라 구문입니다. 예/아니오 질문은 올린 눈썹으로 신호를 보냅니다; 주제-댓글 전환은 머리 기울임으로 표시됩니다. NMS를 생략하면 번역이 무의미해집니다.\n\n**순서 번역**: ASL 문법은 주제-댓글 구조로, 주어-동사-목적어가 아닙니다. \"나는 가게에 갔다\"는 \"가게, 나 가다\"로 변환됩니다. seq2seq 모델은 단순히 단어를 대체하는 것이 아니라 재정렬을 처리해야 합니다. 대부분의 파이프라인이 부족한 부분입니다 — 그들은 생각별로 번역하지 않고 수화별로 번역합니다.\n\n어려운 부분은 고립된 수화를 인식하는 것이 아닙니다 — 그것은 작동합니다. 그것들을 적절한 속도로 관용적인 영어로 엮는 것이 어렵습니다.",
+      "whenNeededContent": "ASL 비디오 번역은 준수 기반 및 청중 기반 맥락에서 중요합니다:\n\n**ADA / 섹션 508 준수**: 연방 자금을 받는 연방 기관, 의료 제공자 및 교육 기관은 접근 가능한 비디오 콘텐츠를 제공해야 합니다. ASL 해석은 인간 또는 AI 지원으로 자막과 함께 도구 키트의 일부입니다.\n\n**WCAG 2.1 레벨 AA**: 국제 접근성 표준은 청각 장애인 및 난청인을 위한 동기화된 미디어 대안을 요구합니다. 자막은 대부분의 사용 사례를 처리하지만, ASL은 영어가 주요 수화 언어에 비해 제2 언어인 사용자에게 서비스를 제공하는 추가 레이어를 추가합니다.\n\n**청중 도달**: 미국에는 1500만 명 이상의 청각 장애인 및 난청 사용자들이 있습니다. 청각 커뮤니티 참여가 목표인 콘텐츠의 경우 — 단순한 준수가 아닌 — ASL 번역은 자막보다 더 나은 성과를 냅니다. 왜냐하면 ASL은 그 청중의 의미 있는 비율에 대한 주요 언어이기 때문입니다.\n\n**사전 녹화 vs 라이브**: 사전 녹화된 콘텐츠(기업 교육, 과정, 마케팅)는 더 높은 정확도의 오프라인 AI 파이프라인과 인간 검토를 사용할 수 있습니다. 라이브 번역(방송, 원격 의료, 고객 서비스)은 낮은 지연 예산과 높은 오류율을 가진 실시간 모델이 필요합니다.",
+      "step1Title": "1단계: AI가 실제로 읽을 수 있는 조건 캡처",
+      "step1Content": "캡처 품질은 모델 선택보다 파이프라인의 한계를 더 결정합니다. 이 부분을 잘못하면 후처리로는 해결할 수 없습니다.\n\n**프레이밍**: 수화자는 허리 위에서 보이도록 합니다. 손은 최대 확장 시 프레임을 벗어나지 않아야 합니다. 가슴 높이 카메라 각도의 16:9 프레임이 가장 잘 작동합니다.\n\n**조명**: 평면 전면 조명, 손이나 얼굴에 강한 그림자가 없어야 합니다. 역광을 피하십시오 — 실루엣이 있는 손은 포즈 추정을 파괴합니다. 변화하는 조명(구름이 지나가는 야외)은 피부 톤 기반 키포인트 추적기를 혼란스럽게 하므로 피하십시오.\n\n**배경**: 단색, 이상적으로는 수화자의 피부와 의복과 대조되는 단일 색조입니다. 패턴이 있는 배경은 현재 모델에서 손 분할 정확도를 15-30% 감소시킵니다.\n\n**프레임 속도**: 최소 30fps, 60fps가 권장됩니다. 빠른 수화, 특히 손가락 철자는 24fps에서 앨리어싱이 발생합니다.\n\n**해상도**: 최소 1080p. 낮은 해상도에서 손 세부 사항은 유사한 손 모양 간의 구별 정보를 잃습니다.\n\n**카메라 각도**: 단일 전방 카메라가 표준 입력입니다. 두 대의 카메라 세트업(전방 및 45도)은 가려진 손 모양에 도움이 되지만, 대부분의 현재 모델은 단일 뷰 입력만 수용할 수 있습니다 — 이는 인간 후편집 참조에 유용하지만 모델에는 유용하지 않습니다.",
+      "step2Content": "도구를 콘텐츠와 허용할 수 있는 정확도 기준에 맞추십시오. 실제로 중요한 평가 기준:\n\n**연속 수화 vs 고립 수화**: 대부분의 데모는 고립된 수화를 80-95% 정확도로 처리합니다. 연속 수화는 표준 벤치마크(RWTH-PHOENIX, How2Sign)에서 50-70%로 떨어집니다. 도구의 벤치마크 수치가 고립된 것이 아니라 연속 데이터에서 나온 것인지 확인하십시오.\n\n**NMS 처리**: 도구가 얼굴 표정 및 신체 자세 기능을 번역에 포함하는지, 아니면 범위 밖으로 처리하는지 물어보십시오. NMS 없이 번역하면 질문, 부정 및 주제-댓글 구조를 놓칩니다.\n\n**어휘 도메인**: 일반 목적 모델은 의료, 법률 및 기술 수화에 약합니다. 콘텐츠가 도메인 특정인 경우, 미세 조정 옵션이나 도메인 훈련된 변형이 있는 도구를 찾으십시오.\n\n**인간 개입 지원**: 생산 준비가 완료된 번역은 AI와 청각 장애인 검토자가 결합되어야 합니다. 도구는 검토자가 편집할 수 있는 형식(SRT, VTT 또는 독점 타임라인)으로 내보내야 합니다.\n\n**출력 형식**: 자막, 음성 해설 또는 텍스트 기록 — 번역이 소비되는 방식에 따라 선택하십시오.",
+      "step3Title": "3단계: 청각 장애인 검토자와 검토하기 — 인간 루프는 협상 불가",
+      "step3Content": "현재 AI ASL 번역은 연구 벤치마크에서 연속 수화에 대해 30-50%의 단어 오류율을 보이며, 실제 환경에서는 더 높습니다. 이는 검토 없이 배포할 수 있는 출력이 아닙니다.\n\n생산 루프:\n\n**1. AI가 선택한 형식(자막 또는 기록)으로 첫 번째 번역을 생성합니다.**\n\n**2. 청각 장애인 검토자가 정확성과 문화적 유창성을 위해 편집합니다.** 이는 선택 사항이 아닙니다. ASL 수업을 수강한 청각인 검토자도 의미를 변경하는 오류를 일관되게 놓칩니다. 처음부터 번역하는 데 걸리는 시간의 약 절반 정도를 청각 장애인 검토에 예산을 잡으십시오 — AI가 타이핑을 절약하지만, 검토는 실제 작업입니다.\n\n**3. ASL 문법을 평탄화한 글로스-영어 번역에서 미세한 수정을 다시 서명합니다.** 일부 검토자는 수정을 작성하기보다는 대체 버전을 녹화하는 것을 선호합니다.\n\n**4. 품질 기준 확인**: 준수 비디오의 경우, 모든 발화에서 단어 수준의 정확성과 의미 보존을 목표로 합니다. 인접 자막이 있는 마케팅 콘텐츠의 경우, AI 번역은 안전망이 될 수 있으며, 자막이 주요 접근성 작업을 수행합니다.",
+      "toolsContent": "오늘날의 주요 플랫폼, 성숙도와 범위에 대한 정직성을 기준으로 정렬:\n\n**Curify ASL 비디오 번역기**: 높은 정확도, 실시간 처리 및 비디오 워크플로우와의 원활한 통합을 갖춘 기업급 솔루션. 콘텐츠 제작자 및 교육 기관에 이상적입니다.\n\n**SignAll**: 헝가리 수화를 위해 처음 구축된 깊이 카메라 기반 인식으로 ASL 파일럿을 포함합니다. 고정 스테이션 설정(키오스크, 교실)에서 강한 정확도를 보입니다. 깊이 카메라 요구로 인해 임의 사용자 제출 비디오에는 덜 적용됩니다.\n\n**SLAIT.ai**: SignAll보다 더 가벼운 하드웨어 설정으로 RGB 전용 ASL 인식. 더 작은 어휘, 더 빠른 실시간 경로. 대화 및 고객 서비스 사용 사례를 위해 구축되었습니다.\n\n**OpenASL / Stanford How2Sign 데이터셋**: 오픈 연구 데이터셋 및 기준 모델. 제품이 아니며 — 사용자 정의 인식 파이프라인을 구축할 때 레이블이 있는 훈련 데이터가 필요할 때 유용합니다.\n\n**Google Live Transcribe 및 Project Gameface**: ASL 번역기가 아닌 인접 접근성 도구입니다. Live Transcribe는 실시간으로 음성을 텍스트로 변환하고; Project Gameface는 얼굴 제어 컴퓨팅을 가능하게 합니다. ASL 도구와 공급업체 목록에서 혼동되는 이유로 언급되었습니다.",
+      "conclusionContent": "ASL 비디오 번역은 2015년 기계 번역이 있었던 것과 같은 지점에 있습니다 — 초안 작성에는 충분하지만, 검토 없이 배포할 수는 없습니다. AI 출력을 시작점으로 간주하고 최종 제품으로 보지 마십시오. 확장하기 전에 워크플로우에 청각 장애인 검토 단계를 구축하십시오. 캡처 조건은 모델 선택보다 더 중요합니다 — 프레이밍, 조명 및 프레임 속도를 올바르게 설정하면 거의 모든 현대 도구가 사용 가능한 첫 번째 출력을 생성합니다.\n\n준수 기반 콘텐츠의 경우, 가장 안전한 경로는 AI와 인간 검토를 결합하고 자막을 주요 접근성 레이어로 사용하는 것입니다. 청중 기반 콘텐츠의 경우, ASL 번역을 선도하고 자막을 백업으로 두십시오. 콘텐츠 유형에 맞는 도구를 선택하고, 가장 시끄러운 마케팅 주장을 가진 도구가 아닌 것을 선택하십시오.",
+      "metaDescription": "ASL 비디오 번역은 수화가 연속적으로 진행되고 문법이 주제-댓글 순서를 따르며 의미가 비수동 신호에 존재하기 때문에 영어 자막보다 더 어렵습니다. 현대 AI 파이프라인이 실제로 이를 처리하는 방법, 오늘날 배송되는 도구 및 2026년 현재 이 분야의 위치에 대해 알아보십시오."
     },
     "howToTranslateAslVideo": {
       "title": "ASL 비디오 번역 방법: 완벽 가이드",
@@ -1071,40 +488,10 @@
         "AI 프롬프트 갤러리"
       ]
     },
-    "evolutionTimelinesVisualization": {
-      "title": "진화 타임라인: AI 기반 역사적 진행 시각화",
-      "date": "2026년 2월 25일",
-      "readTime": "10분 읽기",
-      "intro": "진화 타임라인 시각화에 대한 포괄적인 가이드—AI 기반 역사적 진행, 재현 가능한 벤치마킹 방법, 시공간 매핑 기술 및 교육 콘텐츠에 대한 준수 프레임워크. 지금 읽어보세요.",
-      "whatIsTitle": "진화 타임라인 시각화 시스템 이해하기",
-      "whatIsContent": "진화 타임라인 시각화는 시간적 진행을 공간적 배열에 매핑하여 복잡한 역사적 관계를 공간적 은유를 통해 이해할 수 있게 하는 정교한 데이터 시각화 방법론을 나타냅니다. 이 접근법은 연대기 데이터를 시각적 내러티브 기법과 결합하여 다차원 역사 정보를 접근 가능한 형식으로 전달하기 위해 등각 투영, 색상 코드화된 진행 및 상징적 표현을 활용합니다.",
-      "importanceTitle": "타임라인 시각화의 인지적 및 교육적 이점",
-      "importanceContent": "시각 인지에 대한 연구에 따르면, 타임라인 시각화는 텍스트 전용 형식에 비해 역사적 이해도를 40-60% 향상시킵니다. 시공간 매핑은 뇌의 시각 처리 능력을 활용하여 선형 내러티브에서 가려진 패턴, 인과 관계 및 시스템 변화를 식별합니다. 연구에 따르면 복잡한 역사적 데이터가 인터랙티브하고 다감각적인 타임라인 인터페이스를 통해 제시될 때, 기억 유지율이 최대 3배 향상되고 개념 습득이 더 빨라집니다.",
-      "techniquesTitle": "AI 기반 시각화 기술 및 방법론",
-      "techniquesContent": "현대 타임라인 생성은 여러 AI 기술을 사용합니다: 역사적 이미지 분석 및 분류를 위한 컴퓨터 비전, 사건 추출 및 요약을 위한 자연어 처리, 관계 매핑을 위한 그래프 신경망, 아이콘/심볼 생성을 위한 생성 모델. 등각 픽셀 아트 렌더링은 역사적 정확성을 유지하면서 일관된 시각적 언어를 제공합니다. 공간 진행 알고리즘은 레이아웃 밀도 및 정보 흐름을 최적화하여 사용자 테스트에서 95% 이상의 가독성 점수를 달성합니다. 자동 색상 이론 적용은 문화적 적합성과 접근성 준수를 보장합니다.",
-      "examplesTitle": "사례 연구: 성공적인 타임라인 구현",
-      "examplesContent": "중국 사회 변화 타임라인 (기원전 500년-2025년): 2,000개 이상의 역사적 사건을 처리하고, 기간 분류에서 92%의 정확도를 달성하며, 교차 문화적 패턴 인식을 보여줍니다. 교통 진화 타임라인 (1800-2025): 기술 사양, 경제 데이터 및 사회적 영향 지표를 통합하여 기술 채택과 GDP 성장 간의 85% 상관관계를 보여줍니다. 서양 미술 발전 타임라인 (르네상스-현대): 8개 운동에 걸쳐 15,000개의 예술 작품을 94%의 정확도로 분류하여 스타일 전이 분석 및 영향 매핑을 가능하게 합니다.",
-      "toolsTitle": "전문 타임라인 생성 도구 및 벤치마크",
-      "toolsContent": "기업 타임라인 플랫폼은 다음을 제공합니다: API(위키피디아, 학술 데이터베이스)에서 자동 데이터 수집, 88% F1 점수를 가진 자연어 사건 추출, 모순된 출처에 대한 갈등 해결, 170개 이상의 언어에 대한 다국어 지원. 성능 지표에는: 처리 시간(초당 10-50 사건), 정확도 지표(시간적 정밀도 ±2년, 맥락적 정확도 90% 이상), 확장성(타임라인당 10,000개 이상의 사건)이 포함됩니다. TimelineJS 및 D3.js와 같은 오픈 소스 대안은 상업적 성능의 70-80%를 달성하며 라이센스 비용이 없습니다.",
-      "curifyTitle": "Curify의 진화 타임라인 생성 플랫폼",
-      "curifyContent": "Curify의 AI 기반 타임라인 생성기는 비구조적 역사 데이터를 출판 준비가 된 시각화로 처리합니다. 우리의 시스템은 다음과 같은 기능을 갖추고 있습니다: 변환기 기반 모델을 사용한 자동 기간 감지, 글로벌 청중을 위한 문화적 맥락 적응, 교육 기준 준수(공통 핵심, IB), 여러 형식으로 내보내기(인터랙티브 웹, 인쇄 준비 PDF, AR 오버레이). 이 플랫폼은 역사적 분류에서 95% 이상의 정확도를 달성하며 교육 팀을 위한 실시간 협업을 지원합니다.",
-      "ctaText": "진화 타임라인을 생성하시겠습니까?",
-      "ctaLink": "Curify의 타임라인 템플릿 생성기를 사용해 보세요",
-      "conclusionTitle": "결론",
-      "conclusionContent": "진화 타임라인 시각화는 역사 교육 및 연구를 위한 중요한 도구로, 복잡한 시간적 데이터를 접근 가능한 시각적 내러티브로 변환합니다. AI 기반 자동화 및 엄격한 방법론적 기준을 통해, 교육 및 연구 응용 프로그램에 적합한 정확하고 매력적이며 문화적으로 민감한 역사적 시각화를 생성할 수 있습니다.",
-      "metaDescription": "AI로 진화 타임라인 인포그래픽을 만드세요 — 종, 기술, 패션, 왕조. 시각적 진행을 위한 편집 가능한 Nano Banana 템플릿.",
-      "seoKeywords": [
-        "진화 타임라인",
-        "AI 인포그래픽 템플릿",
-        "역사적 진행 시각화",
-        "타임라인 디자인 AI"
-      ]
-    },
     "chineseCostumeHistoryInfographic": {
       "title": "중국 의상 역사: 왕조 패션 진화의 기술적 분석",
       "date": "2026년 2월 26일",
       "readTime": "15분 읽기",
-      "intro": "중국 의상 역사에 대한 포괄적인 가이드—왕조 패션 진화, 섬유 분석 기술, 문화적 상징 체계 및 유산 문서화를 위한 디지털 보존 방법. 지금 읽어보세요.",
       "whatIsTitle": "중국 의상 유산 시스템 이해하기",
       "whatIsContent": "중국 의상 역사는 기술 혁신, 사회적 계층화 및 문화적 표현을 포함하는 4,000년의 지속적인 섬유 전통을 나타냅니다. 이 시스템은 물질 과학(실크 재배, 염료 화학), 사회적 신호(계급 지표, 지역 정체성) 및 미적 원칙(색상 이론, 패턴 상징)을 통합합니다. 각 왕조는 핵심 문화적 연속성을 유지하면서 독특한 혁신을 기여하여 동아시아 패션 발전을 이해하기 위한 포괄적인 프레임워크를 만듭니다.",
       "dynastiesTitle": "왕조 의상 진화: 기술적 분석",
@@ -1118,26 +505,24 @@
       "toolsTitle": "디지털 문서화 및 분석 기술",
       "toolsContent": "현대 의상 문서화는 다음을 사용합니다: 정확한 의상 모델링을 위한 3D 포토그래메트리(±2mm 허용 오차), 염료 분석을 위한 다스펙트럼 이미징, 색소 식별을 위한 XRF(엑스레이 형광), 모티프 분류를 위한 AI 기반 패턴 인식. 데이터베이스 시스템은 고고학적 발견, 텍스트 출처 및 박물관 컬렉션을 통합하여 95% 이상의 교차 참조 정확도를 달성합니다. 머신 러닝 모델은 섬유 특성과 건축 기술에 기반하여 ±15년 이내의 날짜 정확도를 예측합니다.",
       "curifyTitle": "Curify의 중국 의상 문서화 플랫폼",
-      "curifyContent": "Curify의 의상 분석 시스템은 역사적 의상을 포괄적인 디지털 문서로 처리합니다. 우리의 플랫폼은 다음과 같은 기능을 갖추고 있습니다: 하이퍼스펙트럼 이미징을 사용한 자동 섬유 구성 분석, 10,000개 이상의 역사적 모티프에 대한 패턴 인식, 170개 이상의 언어 지원을 통한 문화적 맥락 생성, 박물관 문서화 기준(CIDOC-CRM) 준수. 이 시스템은 왕조 분류에서 98%의 정확도를 달성하며 교육용 AR/VR 응용 프로그램을 지원합니다.",
       "ctaText": "의상 유산을 문서화하시겠습니까?",
       "ctaLink": "Curify의 의상 분석 템플릿을 사용해 보세요",
       "conclusionTitle": "결론",
-      "conclusionContent": "중국 의상 역사는 물질 과학, 사회적 신호 및 예술적 표현을 결합한 정교한 문화 기술 시스템을 나타냅니다. 고급 디지털 문서화 및 분석 방법을 통해, 우리는 이 유산을 보존하면서 패션 디자인, 문화 교육 및 역사 연구에서 현대적 응용을 가능하게 할 수 있습니다.",
       "metaDescription": "당나라부터 현대 패션까지 중국 의상을 추적하는 AI 인포그래픽을 생성하세요. 교육자, 박물관 및 창작자를 위한 리믹스 가능한 템플릿.",
       "seoKeywords": [
         "중국 의상 역사",
         "AI 인포그래픽",
         "왕조 패션",
         "문화유산 시각화"
-      ]
+      ],
+      "intro": "4,000년의 중국 의복 역사를 하나의 인포그래픽으로 추적합니다 — 각 왕조의 의상, 실크와 염색 기술의 발전, 그리고 Curify의 [template-costume](/nano-template/template-costume)와 [template-ethnic-costume-deconstruction-board](/nano-template/template-ethnic-costume-deconstruction-board)를 사용하여 나만의 왕조 비교 포스터를 생성하는 방법. 박물관 교육자, 역사 교사, 짧은 형식의 패션 역사를 만드는 창작자를 위해 제작되었습니다.",
+      "curifyContent": "Curify는 의상 역사와 관련된 두 가지 템플릿을 제공합니다: [template-costume](/nano-template/template-costume)는 왕조별 의상을 입은 단일 인물 초상을 생성하고, [template-ethnic-costume-deconstruction-board](/nano-template/template-ethnic-costume-deconstruction-board)는 원단, 액세서리 및 실루엣을 나열한 평면도를 생성합니다. 두 출력 모두 편집 가능한 텍스트입니다 — 왕조 매개변수를 교체하고 재생성하여 두 시대를 나란히 비교하거나, 프롬프트를 포크하여 지역(한 / 당 / 명 / 청) 및 직업(궁정 관리, 학자, 상인)을 지정하여 더 세밀한 변형을 만들 수 있습니다.",
+      "conclusionContent": "교실이나 박물관에서 사용하기 위해 모든 왕조를 하나의 인포그래픽에 담을 필요는 없습니다. template-costume을 사용하여 왕조별로 하나씩 생성하고, 슬라이드에 순서대로 배열하여 대비가 이야기를 전하도록 하세요 — 한나라의 실크와 당나라의 비단, 명나라의 구조화된 로브와 청나라의 궁정 의복. 해체 보드 변형은 인쇄 가능한 유인물입니다: 학생들은 원단, 액세서리 및 실루엣이 평면으로 배열된 것을 볼 수 있습니다."
     },
     "nanoBananaPromptEcosystem": {
-      "title": "Nano Banana Prompt Ecosystem",
       "slug": "nano-banana-prompt-ecosystem",
-      "metaDescription": "Nano Banana Prompt Ecosystem이 제품 중심의 SEO, 구조화된 프롬프트 및 분석 기반 최적화를 통해 AI 생성기를 구축하는 데 어떻게 도움이 되는지 알아보세요.",
       "date": "2026년 3월 12일",
       "readTime": "10분 읽기",
-      "intro": "Nano Banana Prompt Ecosystem이 AI 콘텐츠 생성 방식을 어떻게 변화시키는지 알아보세요. 제품 중심의 SEO 전략과 전문적으로 설계된 프롬프트 라이브러리를 통해 더 높은 순위를 차지하고 청중과 깊이 연결되는 콘텐츠를 제작할 수 있습니다.",
       "whatIsTitle": "Nano Banana Prompt Ecosystem이란?",
       "whatIsContent": "Nano Banana Prompt Ecosystem은 창작자, 마케터 및 개발자가 AI 생성 콘텐츠를 설계하고 관리하는 방식을 혁신하기 위해 구축된 지능형 프레임워크입니다. 정적 텍스트 입력을 제공하는 전통적인 프롬프트 라이브러리와 달리, Nano Banana는 검색 가시성, 사용자 참여 및 맥락적 정확성을 위해 미세 조정된 고성능 프롬프트의 큐레이션된 생동하는 시스템을 제공합니다. 각 프롬프트는 데이터 기반 연구와 실제 성과 메트릭스를 통해 제작되어, 귀하의 콘텐츠가 브랜드의 목소리와 일치하면서도 청중의 의도를 최적화하도록 보장합니다.\n\n생태계 내부에는 교육 자료, 기술 지침, 문화적 스토리텔링, 디자인 시각화 등 목적별로 분류된 구조화된 템플릿이 있습니다. 각 템플릿에는 AI가 명확하고 예측 가능하며 고품질의 출력을 생성하도록 안내하는 미리 정의된 톤, SEO 신호 및 레이아웃 논리가 포함되어 있습니다. 이는 생성된 콘텐츠가 단순히 지능적으로 들리는 것이 아니라 성능을 위해 구축되었음을 의미합니다.\n\nNano Banana를 사용하면 팀은 프롬프트 생성, 분석 추적 및 지속적인 최적화를 위한 확장 가능한 기반을 얻습니다. 콘텐츠 생성기를 구축하든, 마케팅 파이프라인을 관리하든, 새로운 비주얼을 실험하든, Nano Banana Prompt Ecosystem은 프롬프트를 추측에서 정밀하고 데이터 기반의 프로세스로 변환합니다. 창의성과 전략이 만나는 곳으로, 귀하의 목표에 맞춰 발전하는 의미 있고 발견 가능한 고임팩트 AI 콘텐츠를 제작할 수 있습니다.",
       "ecosystemTitle": "완전한 Nano Banana 콘텐츠 생태계",
@@ -1149,7 +534,6 @@
       "toolsTitle": "포함된 도구 및 리소스",
       "toolsContent": "Nano Banana Prompt Ecosystem의 모든 잠재력을 발휘할 수 있는 전문 도구 및 협업 리소스의 완전한 모음을 잠금 해제하세요. 프롬프트 템플릿을 넘어, 콘텐츠 품질, 가시성 및 워크플로우 효율성을 위해 구축된 강력한 도구 키트에 접근할 수 있습니다.\n\n포함된 리소스:\n- **프롬프트 템플릿 라이브러리**: 마케팅 카피, 인포그래픽, 기술 다이어그램, 교육 비주얼 및 창의적 자산과 같은 카테고리 전반에 걸쳐 수백 개의 즉시 사용 가능한 템플릿—모두 SEO 및 명확성을 위해 최적화되었습니다.\n- **최적화 가이드**: 더 높은 참여율, 낮은 이탈률 및 개선된 키워드 관련성과 같은 특정 목표를 위해 프롬프트를 개선하는 방법을 가르치는 단계별 플레이북입니다.\n- **성과 분석 대시보드**: 생성된 콘텐츠의 실시간 성과를 추적하고, 검색 순위를 측정하며, 사용자 참여를 분석하고, 프롬프트 변경이 결과에 미치는 영향을 시각화합니다.\n- **팀 협업 도구**: 워크플로우를 관리하고, 프롬프트 변형을 공유하며, 다중 프로젝트 확장을 위해 설계된 버전 관리 및 공유 작업 공간을 통해 팀을 정렬합니다.\n- **Curify 통합 패널**: 프롬프트 효율성, 키워드 범위 및 청중 반향을 평가하는 Curify의 분석 및 기계 학습 모델에 직접 접근합니다.\n- **버전 관리된 프롬프트 아카이브**: A/B 테스트, 감사 또는 이전 캠페인 전략을 재방문하기 위해 프롬프트 세트의 역사적 버전을 보관합니다.\n\n이 도구들은 콘텐츠 성과 데이터가 프롬프트 디자인 프로세스에 직접 피드백되어 시스템이 학습하고 적응하며 각 반복에서 더 똑똑해지도록 하는 지속적인 개선 루프를 생성합니다. 솔로 크리에이터, 스타트업 또는 기업 팀이든, Nano Banana 도구 세트는 콘텐츠 생성을 지능적이고 확장 가능한 작업으로 전환할 수 있도록 지원합니다.",
       "curifyTitle": "Curify가 귀하의 프롬프트 전략을 향상시키는 방법",
-      "curifyContent": "Curify는 Nano Banana Prompt Ecosystem의 힘을 증폭시키는 지능형 레이어입니다. 구조화된 프롬프트를 고급 AI 모델 및 실시간 분석 엔진과 원활하게 연결하여 생성된 콘텐츠의 모든 조각이 최대 잠재력으로 수행되도록 보장합니다. 지속적인 피드백 및 최적화를 통해 Curify는 프롬프트를 정적 입력에서 청중 행동, 참여 메트릭 및 SEO 성과로부터 학습하는 진화하는 자산으로 변환합니다.\n\nCurify를 통해 팀은 프롬프트 사용을 쉽게 구축, 맞춤화 및 확장할 수 있습니다. 이 플랫폼은 프롬프트 효과성, 키워드 범위, 톤 일관성 및 프로젝트 간 시각적 정렬에 대한 심층 통찰력을 제공합니다. 기계 학습 알고리즘은 어떤 프롬프트가 최고의 결과를 이끄는지 분석한 다음, 향후 출력을 향상시키기 위해 구조, 문구 및 초점의 개선을 제안합니다.\n\n콘텐츠 전략가에서 데이터 엔지니어에 이르기까지, Curify는 모든 역할이 데이터에 기반한 정보에 입각한 창의적 결정을 내릴 수 있도록 지원합니다. Nano Banana와의 통합은 콘텐츠 전략이 비즈니스 목표, 청중 프로필 및 AI 모델 업데이트와 일치하도록 보장합니다. 결과적으로 데이터와 창의성이 완벽하게 조화를 이루는 지속적으로 개선되는 통찰 기반 워크플로우가 만들어집니다.",
       "useCasesTitle": "사용 사례 및 성공 사례",
       "useCasesContent": "콘텐츠 팀이 Nano Banana 프롬프트를 사용하여 SEO 일관성을 유지하면서 콘텐츠 출력을 두 배로 늘리는 방법을 확인하세요. 제품 페이지를 자동화하는 기술 스타트업부터 매력적인 인포그래픽을 만드는 교육 회사까지, 산업 전반에 걸쳐 입증된 결과를 발견하세요.",
       "integrationTitle": "원활한 통합",
@@ -1163,7 +547,6 @@
       "ctaText": "AI 콘텐츠 전략을 변환할 준비가 되셨나요?",
       "ctaLink": "Nano Banana로 시작하기",
       "conclusionTitle": "AI 콘텐츠 전략을 변환할 준비가 되셨나요?",
-      "conclusionContent": "Nano Banana Prompt Ecosystem은 성공에 필요한 모든 것을 제공합니다: 제품 중심의 SEO 프레임워크, 전문적으로 설계된 프롬프트 라이브러리 및 강력한 분석 도구. 귀하의 AI 아이디어를 순위, 참여 및 전환을 이끄는 고성능 콘텐츠로 전환하세요. 오늘 여정을 시작하고 구조화된 SEO 최적화 프롬프트가 가져다주는 차이를 확인하세요.",
       "promptGuideTitle": "Nano Banana 프롬프트 가이드: 비주얼 템플릿을 위한 최고의 프롬프트 작성 방법",
       "promptGuideContent": "효과적인 AI 프롬프트 작성은 예술과 과학의 결합이며, Nano Banana 프롬프트 가이드는 이를 마스터하는 데 도움을 줍니다. 오늘날의 창의적 환경에서 프롬프트 엔지니어링은 단순히 AI에게 무엇을 만들라고 지시하는 것이 아니라, 모든 출력이 전문적으로 제작되고 브랜드에 맞도록 명확성, 구조 및 의도를 가지고 안내하는 것입니다.\n\n이 가이드는 Nano Banana의 비주얼 템플릿을 위한 프롬프트 설계 프로세스를 안내합니다. 초점 주제를 정의하고, 톤과 비주얼 스타일을 형성하며, 모델이 브랜드 아이덴티티와 진정으로 공감할 수 있는 이미지나 레이아웃을 생성하도록 돕는 맥락적 단서를 추가하는 방법을 배웁니다. '고성능' 프롬프트를 만드는 요소에 대해 깊이 파고듭니다: 명확한 목표, 설명적이면서도 효율적인 문구, 그리고 청중의 기대와의 정렬.\n\n역사적 인포그래픽을 만들든, 교육 일러스트레이션을 디자인하든, 제품 기능을 시각화하든, Nano Banana 프롬프트 가이드는 실행 가능한 프레임워크, 실제 예제 및 즉시 사용 가능한 템플릿을 제공합니다. 구조가 창의성에 미치는 영향을 발견하고, 구조화된 프롬프트가 참여, 공유 및 SEO 가시성을 최적화하는 비주얼로 이어지는 방법을 배웁니다.\n\n마지막으로, 창의적 전략가와 데이터 기반 프로듀서의 사고를 동시에 할 수 있는 방법을 배우게 됩니다. 모든 프롬프트를 AI 생성 성공을 위한 강력한 청사진으로 전환하세요.",
       "promptStructureTitle": "프롬프트 구조 이해하기",
@@ -1181,7 +564,12 @@
       "promptsByCategoryTitle": "## 카테고리별 나노 바나나 프롬프트 예시",
       "promptsByCategoryContent": "**사용 사례별로 정리된 나노 바나나 프롬프트 예시**. 귀하의 콘텐츠 유형에 맞는 **최고의 나노 바나나 프롬프트**를 찾아보세요:\n\n### 초상화 **나노 바나나 프롬프트**\n\"전통 도자기를 만드는 노인 일본 장인의 클로즈업 초상화, 따뜻한 작업실 조명, 다큐멘터리 스타일\"\n\n### 인포그래픽 **나노 바나나 프롬프트**\n\"재생 가능 에너지의 진화를 보여주는 타임라인 인포그래픽, 깔끔한 벡터 아이콘, 현대적인 데이터 시각화\"\n\n### 제품 **나노 바나나 프롬프트**\n\"극적인 측면 조명이 비치는 콘크리트 표면 위의 미니멀리스트 스니커즈 제품 사진, 스트리트웨어 미학\"\n\n### 애니메이션 **나노 바나나 프롬프트**\n\"네온 조명이 비치는 골목의 애니메이션 스타일 사이버펑크 해커, 역동적인 포즈, 세밀한 셀 셰이딩, 스튜디오 지브리 영향\"\n\n각 카테고리에는 성능 테스트를 거친 50개 이상의 **나노 바나나 프롬프트**가 포함되어 있습니다.",
       "howToWritePromptsTitle": "## 나노 바나나 프롬프트 작성 방법 (단계별)",
-      "howToWritePromptsContent": "우리의 4단계 공식을 사용하여 **최고의 나노 바나나 프롬프트**를 만들어보세요:\n\n1. **주제** (40%): \"나무 책상 위의 빈티지 타자기\"\n2. **스타일** (30%): \"필름 사진, 따뜻한 톤, 얕은 심도\"\n3. **조명** (20%): \"창문을 통해 비치는 황금 시간대의 햇빛\"\n4. **품질** (10%): \"8k, 초고화질, 전문적\"\n\n**완전한 나노 바나나 프롬프트 예시:**\n\"나무 책상 위의 빈티지 타자기, 필름 사진 스타일, 창문을 통해 비치는 황금 시간대의 햇빛, 8k 초고화질 전문적\"\n\n**전문가 팁:** 항상 품질 향상 요소(8k, 하이퍼 리얼리즘)와 조명 설명을 포함하여 3배 더 나은 결과를 얻으세요."
+      "howToWritePromptsContent": "우리의 4단계 공식을 사용하여 **최고의 나노 바나나 프롬프트**를 만들어보세요:\n\n1. **주제** (40%): \"나무 책상 위의 빈티지 타자기\"\n2. **스타일** (30%): \"필름 사진, 따뜻한 톤, 얕은 심도\"\n3. **조명** (20%): \"창문을 통해 비치는 황금 시간대의 햇빛\"\n4. **품질** (10%): \"8k, 초고화질, 전문적\"\n\n**완전한 나노 바나나 프롬프트 예시:**\n\"나무 책상 위의 빈티지 타자기, 필름 사진 스타일, 창문을 통해 비치는 황금 시간대의 햇빛, 8k 초고화질 전문적\"\n\n**전문가 팁:** 항상 품질 향상 요소(8k, 하이퍼 리얼리즘)와 조명 설명을 포함하여 3배 더 나은 결과를 얻으세요.",
+      "title": "Curify 나노 바나나 프롬프트 라이브러리: 4,000개 이상의 테스트된 이미지 프롬프트",
+      "metaDescription": "151개의 태그로 색인화된 4,000개 이상의 나노 바나나 프로 프롬프트와 172개의 매개변수화된 템플릿을 탐색하세요. 프롬프트를 복사하거나 템플릿을 포크하거나 자신만의 이중 언어 플래시카드 팩을 생성하세요.",
+      "intro": "Curify는 [/nano-banana-pro-prompts](/nano-banana-pro-prompts)에서 4,117개의 나노 바나나 프로 이미지 프롬프트와 [/nano-template](/nano-template)에서 172개의 재사용 가능한 템플릿을 호스팅합니다. 이 페이지는 라이브러리에 있는 내용, 프롬프트 구조, 일회성 프롬프트 복사와 매개변수화된 템플릿 실행 간의 선택 방법을 설명하는 색인입니다.",
+      "curifyContent": "[/nano-banana-pro-prompts](/nano-banana-pro-prompts)에서 모든 프롬프트는 실제 사용자가 생성하고 저장한 것입니다 — 큐레이션 극장도, 합성 시드 데이터도 없습니다. 이 코퍼스는 151개 카테고리(초상화, 캐릭터, 어휘, MBTI, 빈티지, 포토리얼리즘, 카와이 등)로 태그가 지정되어 있어 복사하기 전에 필요한 스타일로 필터링할 수 있습니다.\n\n[/nano-template](/nano-template)에서의 템플릿은 동일한 아이디어의 매개변수화된 버전입니다: 주제 / 언어 쌍 / 캐릭터 이름을 입력하면 대략 15초 안에 생성된 이미지를 받을 수 있습니다. 정확한 참조 이미지를 원할 때는 프롬프트를 사용하고, 변형을 생성하고 싶을 때는 템플릿을 사용하세요.",
+      "conclusionContent": "라이브러리는 갤러리 동기화 파이프라인을 통해 하루에 약 40개의 프롬프트가 추가됩니다. 자신의 미적 감각에 가장 가까운 태그 페이지를 북마크하세요 — 대부분의 제작자는 전체 색인을 탐색하기보다는 하나 또는 두 개의 태그에서 작업하게 됩니다. 적합한 프롬프트를 찾을 수 없다면 가장 가까운 템플릿을 포크하고 자신만의 결과를 생성하세요; 결과는 자동으로 갤러리에 추가됩니다."
     },
     "relatedArticles": "관련 기사",
     "readMore": "더 읽기",
@@ -1189,7 +577,6 @@
       "title": "비디오를 텍스트로 전사하는 방법 (YouTube, 회의 및 콘텐츠 제작자를 위한 AI 도구)",
       "date": "2026년 3월 19일",
       "readTime": "8분 읽기",
-      "intro": "YouTube, 회의 및 콘텐츠 제작을 위한 AI 도구를 사용하여 비디오를 텍스트로 전사하는 방법을 배워보세요. 95% 이상의 정확도로 음성을 텍스트로 변환하는 최고의 자동 전사 도구, AI 자막 생성기 및 워크플로를 발견하세요.",
       "whatIsTitle": "비디오 전사란 무엇인가요?",
       "whatIsContent": "비디오 전사는 비디오에서 말하는 내용을 서면 텍스트로 변환하는 과정으로, 비디오 콘텐츠의 검색 가능하고 접근 가능한 기록을 생성합니다. 현대의 AI 비디오 전사 도구는 95% 이상의 정확도로 비디오를 자동으로 텍스트로 전사할 수 있어 YouTube 제작자, 회의 주최자 및 콘텐츠 마케터에게 필수적입니다.\n\nAI 비디오 전사는 WhisperX와 같은 고급 음성 인식 모델을 통해 작동하여 오디오 트랙을 분석하고 시간 동기화된 전사를 생성합니다. 이러한 시스템은 여러 화자, 배경 소음 및 다양한 억양을 처리하면서 완벽한 자막 동기화를 위한 단어 수준의 타임스탬프를 생성합니다.\n\n콘텐츠 제작자에게 비디오 전사는 여러 가지 이점을 제공합니다: 검색 가능한 텍스트를 통한 SEO 개선, 청각 장애인을 위한 접근성 향상, 블로그 게시물, 소셜 미디어 클립 및 다국어 번역으로 콘텐츠 재사용의 기초를 제공합니다.",
       "whyTitle": "제작자가 비디오 전사가 필요한 이유",
@@ -1210,18 +597,18 @@
       "upsellTitle": "전사에서 번역, 더빙으로",
       "upsellContent": "비디오 전사는 콘텐츠 글로벌화 여정의 시작에 불과합니다. 정확한 전사가 완료되면 다음을 수행할 수 있습니다:\n\n1. **50개 이상의 언어로** 콘텐츠를 AI 번역을 사용하여 번역하세요.\n2. **여러 언어로** 자막을 자동으로 생성하세요.\n3. **음성 클로닝 기술**을 사용하여 AI 음성 더빙을 생성하세요.\n4. **글로벌 관객을 위한** 현지화된 버전을 게시하세요.\n\n이 완전한 워크플로는 단일 비디오를 다국어 콘텐츠 자산으로 변환하여 전 세계 수십억 명의 시청자에게 도달할 수 있게 합니다.",
       "curifyTitle": "Curify의 완벽한 비디오 전사 솔루션",
-      "curifyContent": "Curify는 최첨단 AI와 제작자 중심의 워크플로를 결합한 기업급 비디오 전사를 제공합니다. 우리의 플랫폼은 95% 이상의 정확도를 위해 WhisperX를 사용하며, 자동 화자 구분 및 번역 및 더빙 도구와의 원활한 통합을 제공합니다.\n\n**제작자 기능:**\n- **배치 처리**: 여러 비디오를 동시에 전사하세요.\n- **YouTube 통합**: YouTube 채널에서 직접 가져오기.\n- **자동 자막**: 완벽하게 시간 동기화된 SRT 파일 생성.\n- **다국어 지원**: 50개 이상의 언어로 콘텐츠 전사.\n- **화자 식별**: 서로 다른 화자를 자동으로 레이블 지정.\n- **품질 보증**: 내장된 신뢰도 점수 및 검토 도구.\n\n**워크플로 통합:**\nCurify는 전사를 번역 및 음성 클로닝에 직접 연결하여 전사에서 글로벌 콘텐츠로의 원활한 파이프라인을 생성합니다. 한 번 업로드하고 자동으로 전사, 번역 및 더빙하세요.",
       "ctaText": "AI로 비디오를 전사할 준비가 되셨나요?",
       "ctaLink": "Curify의 비디오 전사 사용해보기",
       "conclusionTitle": "오늘 비디오 전사를 시작하세요",
-      "conclusionContent": "비디오 전사는 도달 범위를 극대화하고 접근성을 개선하며 기존 비디오에서 더 많은 콘텐츠를 생성하고자 하는 콘텐츠 제작자에게 필수적이 되었습니다. AI 도구가 95% 이상의 정확도를 달성하고 처리 시간이 1시간당 5분 이내인 지금, 워크플로에 전사를 추가할 수 있는 최적의 시점입니다.",
       "seoKeywords": "비디오 전사, 비디오를 텍스트로 전사, AI 비디오 전사, YouTube 비디오 전사, 음성을 텍스트로 변환, YouTube 비디오 전사, 비디오를 텍스트로 변환기, 자동 전사 도구, AI 자막 생성기",
-      "metaDescription": "YouTube, 회의 및 콘텐츠 제작을 위한 AI 도구를 사용하여 비디오를 텍스트로 전사하는 방법을 배워보세요. 자동 전사, 자막 생성 및 음성-텍스트 워크플로에 대한 완벽한 가이드입니다."
+      "intro": "비디오 전사는 음성 텍스트를 추출하여 녹음된 오디오를 검색, 재사용 및 번역할 수 있게 합니다. 이 가이드는 실제 워크플로우를 안내합니다 — 비디오를 [/tools/video-transcript-generator](/tools/video-transcript-generator)에 업로드하고, AI가 추출하는 내용(발화자, 타임스탬프, 언어)과 결과 전사가 Curify의 더빙 및 자막 파이프라인에 어떻게 연결되는지를 설명합니다.",
+      "curifyContent": "[/tools/video-transcript-generator](/tools/video-transcript-generator)는 MP4, MOV 및 YouTube URL을 처리합니다. 전사는 발화자 전환 및 단어 수준의 타임스탬프와 함께 반환되어 동일한 출력이 [/tools/translate-subtitles](/tools/translate-subtitles), [/tools/video-dubbing](/tools/video-dubbing) 또는 [/tools/bilingual-subtitles](/tools/bilingual-subtitles)로 재업로드 없이 제공될 수 있습니다.\n\n**전사가 하류에서 전달하는 내용:**\n- 발화자 전환 — 더빙 도구가 여러 발화자가 있을 때 각기 다른 목소리를 유지할 수 있도록\n- 단어 수준의 타임스탬프 — 자막 정렬이 원본 타이밍과 일치하도록\n- 감지된 원본 언어 — 번역 도구가 입력 언어를 선언하지 않고도 알 수 있도록\n\n**하나의 파이프라인, 여러 출력.** 한 번 업로드하면 동일한 소스에서 전사, 더빙 비디오 및 이중 언어 자막 파일을 가져올 수 있습니다. 동일한 발화자 타임스탬프가 세 가지 모두를 구동합니다.",
+      "conclusionContent": "전사는 모든 하류 현지화 단계의 입력 레이어입니다. 이를 확보하면 새로운 언어로 더빙하는 데 며칠이 아닌 몇 분의 작업만 필요합니다 — 발화자 타임스탬프와 원본 언어 메타데이터가 이미 존재합니다. 이번 주에 비디오를 녹화했다면 다른 작업을 하기 전에 전사를 진행하세요; 이후 모든 작업(자막, 더빙, 재사용된 블로그 발췌)은 더 저렴해집니다.",
+      "metaDescription": "모든 비디오를 검색 가능한 전사로 변환하세요 — 지원되는 파일 형식, AI가 정확하게 처리하는 것과 잘못 처리하는 것, 그리고 전사가 Curify의 더빙 및 자막 워크플로우에 어떻게 연결되는지."
     },
     "videoTranscriptionTechnicalDeepDive": {
       "title": "심층 분석: 전사 기술 개요",
       "description": "AI 에이전트와 워크플로의 차이점 및 Curify가 최적의 창의적 자동화를 위해 두 가지를 결합하는 방법을 탐구합니다.",
-      "intro": "기본 전사 도구를 넘어 현대 비디오 전사 시스템을 지원하는 기술 아키텍처를 발견하세요. 이 포괄적인 심층 분석은 Curify의 완전한 파이프라인을 분해하여 오디오 분리 및 음성 인식에서 강제 정렬 및 화자 구분까지 보여주며, AI가 원시 비디오를 완벽하게 시간 동기화된 정확한 전사로 변환하는 방법을 설명합니다.",
       "whatIsTitle": "종단 간 비디오 전사 파이프라인",
       "whatIsContent": "생산 등급 비디오 전사 파이프라인은 원시 비디오 콘텐츠를 구조화된 시간 동기화된 텍스트로 변환하는 여러 정교한 처리 단계를 거칩니다. 전체 워크플로: 비디오 → 오디오 추출 → 세분화 → ASR (자동 음성 인식) → 정렬 → 화자 구분 → 후처리.\n\n각 단계는 특정 기술적 과제를 해결합니다: 오디오 추출은 음성 트랙을 분리하고, 세분화는 긴 오디오를 관리 가능한 청크로 나누며, ASR은 음성을 텍스트로 변환하고, 정렬은 단어 수준의 타임스탬프를 제공합니다. 화자 구분은 누가 언제 말했는지를 식별하고, 후처리는 최종 출력을 정리하고 형식을 지정합니다.\n\nCurify의 파이프라인과 같은 현대 시스템은 Conv-TasNet을 오디오 분리에, WhisperX를 음성 인식에, 고급 클러스터링 알고리즘을 화자 식별에 결합하여 도전적인 조건에서도 95% 이상의 정확도를 달성합니다. 이 기술 심층 분석은 각 구성 요소와 그 통합 전략을 탐구합니다.",
       "whyTitle": "전사에 대한 기술 아키텍처의 중요성",
@@ -1250,7 +637,8 @@
       "conclusionTitle": "비디오 전사 기술의 미래",
       "conclusionContent": "비디오 전사 기술은 기본 음성 인식 시스템에서 신경망, 오디오 처리 및 최적화 기술의 발전을 결합한 정교한 다단계 파이프라인으로 발전했습니다. Curify의 파이프라인과 같은 현대 시스템은 오디오 분리를 위한 Conv-TasNet, 전사를 위한 WhisperX 및 고급 품질 보증이 생산 등급 워크플로에 통합될 수 있음을 보여줍니다.\n\n기술 팀과 개발자에게 핵심 요점은 비디오 전사가 더 이상 연구 문제이 아니라 해결된 엔지니어링 과제라는 것입니다. 남은 기회는 기본 기술 제한이 아닌 최적화, 엣지 케이스 및 통합에 있습니다. 이러한 시스템이 더 나은 모델 아키텍처와 더 큰 훈련 데이터 세트를 통해 계속 개선됨에 따라, 우리는 모든 콘텐츠 유형에 대해 완벽한 전사가 대규모로 제공되는 미래에 가까워지고 있습니다.\n\n여기에서 설명된 기술 아키텍처는 2026년 현재의 최첨단을 나타내지만, 이 분야는 계속해서 빠르게 발전하고 있습니다. 실시간 전사, 제로샷 화자 식별 및 자동 콘텐츠 요약은 비디오 콘텐츠 처리 및 분석 접근 방식을 더욱 변화시킬 새로운 기능으로 이미 등장하고 있습니다.",
       "seoKeywords": "비디오 전사 파이프라인, 음성 인식 파이프라인, ASR 비디오 처리, 음성 텍스트 파이프라인, 화자 분리 비디오, 강제 정렬 전사, Whisper 전사 파이프라인, 오디오 세분화 전사, 다국어 전사 AI",
-      "metaDescription": "AI 비디오 전사 파이프라인 아키텍처에 대한 기술 심층 분석. 개발자 및 AI 엔지니어를 위한 ASR, 강제 정렬, 화자 분리 및 생산 시스템 설계에 대한 완벽한 가이드."
+      "metaDescription": "AI 비디오 전사 파이프라인 아키텍처에 대한 기술 심층 분석. 개발자 및 AI 엔지니어를 위한 ASR, 강제 정렬, 화자 분리 및 생산 시스템 설계에 대한 완벽한 가이드.",
+      "intro": "대부분의 전사 도구는 음성을 텍스트로 변환하는 데 그칩니다. 이 심층 분석에서는 Curify의 전체 전사 파이프라인을 다룹니다: 오디오가 배경 음악에서 어떻게 분리되는지, WhisperX가 정리된 트랙에서 어떻게 작동하는지, 화자 분리가 겹치는 목소리를 어떻게 나누는지, 강제 정렬이 단어 수준의 타임스탬프를 전사에 다시 넣어 출력이 [/tools/video-transcript-generator](/tools/video-transcript-generator)에서 자막, 더빙 및 번역 도구를 구동할 수 있도록 하는 방법을 설명합니다. SRT를 다운로드하는 것뿐만 아니라 더 큰 파이프라인에 전사를 통합하고 싶다면, 이것은 대부분의 블로그 게시물이 건너뛰는 레이어입니다."
     },
     "tenPromptingTipsNanoBanana": {
       "title": "Nano Banana를 위한 프롬프트 작성 방법: 제작자를 위한 10가지 팁",
@@ -1628,7 +1016,6 @@
       "title": "AI 립 싱크 및 더빙 가이드: 비즈니스 응용 프로그램 및 도구",
       "date": "2026년 3월 29일",
       "readTime": "10분 읽기",
-      "intro": "AI 립 싱크 및 더빙 기술이 비즈니스의 비디오 콘텐츠 제작을 어떻게 변화시키고 있는지 알아보세요. MuseTalk 및 Sync.co와 같은 도구에 대해 배우고, 실제 응용 프로그램을 탐색하며, 마케팅, 교육 및 글로벌 콘텐츠 배포를 위한 립 싱크 워크플로를 구현하는 방법을 이해하세요.",
       "whatIsTitle": "AI 립 싱크 및 더빙이란?",
       "whatIsContent": "AI 립 싱크 및 더빙 기술은 비디오 콘텐츠에서 음성 오디오와 시각적 입술 움직임을 자동으로 동기화하여 수동 애니메이션 없이 사실적인 더빙 버전을 생성합니다. 현대 시스템은 딥 러닝을 사용하여 얼굴 움직임을 분석하고, 정확한 립 싱크를 생성하며, 번역된 오디오와 완벽하게 일치하는 자연스러운 음성 애니메이션을 생성합니다.\n\n이 기술은 먼저 원본 비디오에서 얼굴 랜드마크와 입술 움직임을 추출한 다음, 신경망을 사용하여 번역된 또는 대체 오디오에 해당하는 새로운 입술 움직임을 생성합니다. MuseTalk와 Sync.co와 같은 상업적 API를 제공하는 고급 시스템은 전체 비디오를 자동으로 처리하여 화자의 자연스러운 표정과 머리 움직임을 유지하면서 입술 움직임만 변경합니다.\n\n비즈니스에 있어 이 기술은 신속한 콘텐츠 현지화, 비용 효율적인 비디오 제작 및 대규모로 개인화된 비디오 콘텐츠를 생성할 수 있는 능력을 제공합니다. 다양한 언어 또는 청중을 위해 비디오를 다시 촬영하는 대신, 기업은 기존 콘텐츠를 더빙하여 시각적 진정성을 유지할 수 있습니다.",
       "whyTitle": "비즈니스가 AI 립 싱크가 필요한 이유",
@@ -1647,13 +1034,14 @@
       "useCasesTitle": "비즈니스 응용 프로그램",
       "useCasesContent": "**마케팅 및 광고**: 다양한 시장을 위해 동일한 화자와 브랜드 아이덴티티를 유지하면서 비디오 광고의 현지화된 버전을 만드세요. 단일 광고 캠페인은 며칠 만에 20개 이상의 시장에 맞게 조정될 수 있습니다.\n\n**기업 교육**: 글로벌 팀을 위해 교육 비디오를 여러 언어로 더빙하세요. 다양한 인력 간의 이해를 보장하면서 강사의 진정성을 유지하세요.\n\n**E-러닝 및 교육**: 국제 학생을 위한 교육 콘텐츠를 변환하세요. 원래 강사의 존재를 보존하면서 학습자의 모국어로 콘텐츠를 접근 가능하게 만드세요.\n\n**제품 시연**: 재촬영 없이 현지화된 제품 데모 및 튜토리얼을 만드세요. 모든 시장 버전에서 동일한 발표자와 시각적 스타일을 유지하세요.\n\n**내부 커뮤니케이션**: 글로벌 팀을 위해 경영진 메시지, 회사 발표 및 HR 콘텐츠를 더빙하세요. 언어 선호를 존중하면서 일관된 메시지를 보장하세요.",
       "curifyTitle": "Curify의 비즈니스 립 싱크 솔루션",
-      "curifyContent": "Curify는 비즈니스 워크플로우를 위해 특별히 설계된 엔터프라이즈급 AI 립 싱크를 제공합니다. 우리의 플랫폼은 최첨단 신경망과 제작자 중심 도구를 결합하여 대규모로 전문 품질의 더빙 콘텐츠를 제공합니다.\n\n**비즈니스 기능:**\n- **배치 처리**: 여러 비디오와 언어를 동시에 처리\n- **API 통합**: 기존 시스템에서 립 싱크 워크플로우 자동화\n- **브랜드 음성 보존**: 언어 간 일관된 화자 아이덴티티 유지\n- **품질 보증**: 내장된 검토 도구 및 신뢰도 점수\n- **고해상도 출력**: 4K 및 전문 비디오 형식 지원\n- **맞춤 모델**: 최적의 결과를 위해 브랜드의 특정 화자에 대해 교육\n\n**워크플로우 통합:**\nCurify는 번역 서비스, 음성 클로닝 시스템 및 콘텐츠 관리 플랫폼에 직접 연결됩니다. 한 번 업로드하고, 번역하고, 오디오를 생성하고, 자동으로 동기화하여 글로벌 콘텐츠 배포를 위한 완전한 파이프라인을 만듭니다.",
       "ctaText": "글로벌 청중을 위한 비디오 콘텐츠를 변환할 준비가 되셨나요?",
       "ctaLink": "Curify의 AI 립 싱크 플랫폼을 사용해 보세요",
       "conclusionTitle": "오늘 글로벌 비디오 전략을 시작하세요",
-      "conclusionContent": "AI 립 싱크 기술은 기업이 전문 콘텐츠 배포를 위해 자신 있게 사용할 수 있을 만큼 성숙해졌습니다. 90% 이상의 사실성과 분당 $1 미만의 처리 비용을 달성하는 도구가 있는 지금이 비디오 현지화 전략을 구현하기에 가장 좋은 시점입니다. 비용 효율성, 속도 및 품질의 조합은 글로벌 시장에서 경쟁하는 기업에 필수적인 도구로 AI 립 싱크를 만듭니다.",
       "seoKeywords": "ai lip sync, 비디오 더빙, 자동 립 싱크, musetalk, sync.co, 비디오 현지화, ai 더빙, 비디오 번역, 기업 비디오 더빙, 마케팅 비디오 현지화",
-      "metaDescription": "비즈니스를 위한 AI 립 싱크 및 더빙에 대한 완벽한 가이드. MuseTalk 및 Sync.co와 같은 도구를 비교하고, 워크플로우를 배우고, 마케팅, 교육 및 글로벌 콘텐츠에 대한 응용 프로그램을 발견하세요."
+      "metaDescription": "비즈니스를 위한 AI 립 싱크 및 더빙에 대한 완벽한 가이드. MuseTalk 및 Sync.co와 같은 도구를 비교하고, 워크플로우를 배우고, 마케팅, 교육 및 글로벌 콘텐츠에 대한 응용 프로그램을 발견하세요.",
+      "intro": "AI 립싱크는 화자의 입 움직임을 더빙된 오디오에 맞춰 조정하여 번역된 비디오가 오버더빙된 것이 아니라 자연스럽게 느껴지도록 합니다. 이 가이드는 Curify의 [/tools/video-dubbing](/tools/video-dubbing) 파이프라인이 립싱크를 끝에서 끝까지 어떻게 실행하는지, MuseTalk와 Sync.co가 각각 잘하는 점, 그리고 기술이 여전히 미흡한 부분 — 긴 정지, 프로필 각도, 두꺼운 수염을 다룹니다.",
+      "curifyContent": "Curify의 [/tools/video-dubbing](/tools/video-dubbing)는 립싱크 렌더를 위해 MuseTalk를 감싸고 상류에서 음성 클론 합성을 체인으로 연결하여 단일 업로드로 더빙된 오디오와 립 정렬된 비디오를 생성합니다. 자막 파일은 [/tools/bilingual-subtitles](/tools/bilingual-subtitles)에서 동일한 전사로 생성되므로 더빙 + 자막이 일치합니다.\n\n**단일 업로드에서 파이프라인이 생성하는 것:**\n- 원래 화자와 유사한 클론 음성을 사용하여 목표 언어로 번역된 오디오\n- 새로운 오디오에 맞춰 입 움직임이 정렬된 재렌더링된 비디오\n- 더빙된 오디오와 일치하는 이중 언어 자막 파일\n\n**여전히 미흡한 부분:**\n- 화자가 입을 열거나 닫고 있는 긴 정지 — MuseTalk의 프레임 보간이 모호해짐\n- 프로필 또는 3/4 각도 — 모델은 정면 화자에 대해 많이 훈련됨\n- 두꺼운 수염이나 손과 얼굴의 가림 — 모델이 입 경계를 잃음\n\n정면에서 촬영된 토크 헤드 콘텐츠(인터뷰, 강의 녹화, 제품 데모)의 경우 출력은 게시 준비가 완료됩니다. 화자가 부분적으로 카메라에서 벗어난 다큐멘터리 스타일의 B-roll의 경우, 관련 컷을 다시 촬영하거나 [/tools/translate-subtitles](/tools/translate-subtitles)에서 자막 전용 현지화로 돌아가야 합니다.",
+      "conclusionContent": "립싱크는 더빙된 비디오가 전문적으로 보이는지 불편하게 보이는지를 결정하는 마지막 10%입니다. Curify의 파이프라인은 프로필 샷이나 빠른 말에 대해 완벽하지 않지만, 정면에서 촬영된 토크 헤드 콘텐츠의 경우 그대로 배포할 수 있습니다. 솔직한 프레임: 가지고 있는 콘텐츠를 더빙하고, 일부 샷은 다시 촬영해야 한다는 것을 받아들이며, 모델이 엣지 케이스를 처리할 때까지 나머지는 자막 전용 현지화를 통해 라우팅하세요."
     },
     "lipSyncTechnicalDeepDive": {
       "date": "2026년 3월 29일",
@@ -2944,7 +2332,6 @@
       "title": "미니 도구: 이미지를 내러티브 비디오로 변환하기",
       "date": "2026년 4월 9일",
       "readTime": "12분 읽기",
-      "intro": "정적인 이미지를 AI 기반 스토리텔링으로 매력적인 내러티브 비디오로 변환하세요. 우리의 혁신적인 미니 도구는 시각적 콘텐츠를 분석하고 일관된 스토리라인을 생성하여 정적인 이미지와 동적인 비디오 콘텐츠 간의 간극을 메우는 매력적인 비디오 콘텐츠를 만듭니다.",
       "whatIsTitle": "소개",
       "whatIsContent": "우리의 혁신적인 미니 도구는 고급 AI 기술을 사용하여 정적인 이미지를 매력적인 내러티브 비디오로 변환합니다. 시각적 콘텐츠를 분석하고 이미지 내의 객체, 맥락 및 감정을 식별한 후 일관된 스토리라인을 생성하여 정적인 비주얼을 생동감 있게 만듭니다. 최첨단 컴퓨터 비전 및 자연어 생성 모델을 활용하여 인간 같은 내레이션이나 캡션이 있는 동적인 비디오 시퀀스를 생성합니다. 그 결과는 시청자를 몰입시키고 감정적으로 연결시키는 매력적인 시청각 경험입니다. 교육 콘텐츠, 마케팅 캠페인, 소셜 미디어 스토리텔링 또는 예술 프로젝트에 사용되든, 이 도구는 누구나 수동 편집이나 스크립트 없이 전문적인 내러티브 비디오를 제작할 수 있게 합니다. 정적인 이미지와 동적인 비디오 스토리텔링 간의 간극을 메우며, 창작자, 교육자 및 브랜드가 메시지를 더 생생하고 기억에 남게 전달할 수 있도록 합니다.",
       "technicalTitle": "기술 구현",
@@ -3273,7 +2660,8 @@
         "AI 내러티브 비디오",
         "이미지 스토리텔링 AI",
         "이미지에서 비디오"
-      ]
+      ],
+      "intro": "Curify의 이미지-내러티브 미니 도구는 단일 이미지를 가져와 30초에서 60초 길이의 비디오를 생성합니다: 이미지를 분석하고, 프레임에 실제로 있는 내용을 기반으로 짧은 스크립트를 생성하며, 음성 클론으로 내레이션하고, 이를 공유 가능한 짧은 영상으로 엮습니다. 이 페이지에서는 도구가 잘하는 부분(초상화, 제품, 명확한 주제가 있는 장면), 어려움을 겪는 부분(콜라주 및 다중 주제 이미지), 그리고 여러 이미지를 긴 내러티브로 엮는 워크플로우를 다룹니다."
     },
     "whatIsInfographics": {
       "title": "인포그래픽이란 무엇이며 인포그래픽 카드의 사용 방법은?",
@@ -4073,19 +3461,7 @@
             "useCaseDesc": "예: 포스터, 아바타",
             "mood": "무드",
             "moodDesc": "예: 아늑한, 어두운"
-          },
-          "finalVerdict": "2026년 비디오 더빙 및 번역에서 ElevenLabs는 품질, 다국어 지원 및 사용 용이성에서 우승합니다. F5-TTS는 예산 제약이 있거나 상업적 제한 없이 무제한 생성을 요구하는 기술 사용자에게 놀라운 가치를 제공합니다.",
-          "gettingStarted": "시작하기 리소스",
-          "f5TtsSetup": "F5-TTS 설정",
-          "f5TtsSetupDesc": "공식 GitHub 저장소, 요구 사항, 설치 및 CLI 인터페이스",
-          "elevenLabsSetup": "ElevenLabs 설정",
-          "elevenLabsSetupDesc": "웹 대시보드, API 접근 및 빠른 시작 가이드",
-          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-          "themeDesc": "예: 판타지, 여행",
-          "useCase": "사용 사례",
-          "useCaseDesc": "예: 포스터, 아바타",
-          "mood": "무드",
-          "moodDesc": "예: 아늑한, 어두운"
+          }
         }
       },
       "keyInsight": {
@@ -4279,525 +3655,6 @@
         "AI 프롬프트 디렉토리",
         "나노 바나나 템플릿",
         "이미지 생성 프롬프트"
-      ]
-    },
-    "bilingual-ai-flashcards-early-childhood-education": {
-      "title": "조기 아동 교육을 위한 이중 언어 AI 플래시카드 생성",
-      "date": "2026년 4월 23일",
-      "readTime": "12분 읽기",
-      "tag": "학습 & 교육",
-      "image": "/images/flashcard.webp",
-      "category": "learning-education",
-      "intro": "Nano Banana를 사용하여 조기 아동 교육을 위한 시각적으로 뛰어난 이중 언어 AI 플래시카드를 생성하는 방법을 배우세요. 이 가이드는 부모와 교육자에게 친근한 일러스트와 이중 언어 어휘를 결합한 매력적인 “지식 카드”를 만드는 방법을 보여줍니다—조기 학습을 더 직관적이고 시각적이며 재미있게 만듭니다.",
-      "whatIsTitle": "이중 언어 AI 플래시카드란 무엇인가요?",
-      "whatIsContent": "이중 언어 AI 플래시카드는 명확한 일러스트와 두 가지 언어의 어휘를 결합한 시각적 학습 도구로, 아이들이 맥락을 통해 언어 능력을 키우는 데 도움을 줍니다. 전통적인 플래시카드와 달리 AI로 생성된 카드는 동물, 공룡 사실 또는 기초 어휘와 같은 주제에 즉시 맞춤화할 수 있어 다양한 학습 단계와 환경에 적응할 수 있습니다.",
-      "whyTitle": "왜 이것이 조기 아동 학습에 중요한가",
-      "whyContent": "대부분의 AI 교육 도구는 요약이나 노트 작성과 같은 텍스트 중심의 사용 사례에 집중합니다. 반면, 조기 아동 학습은 시각적이고 상호작용적이며 맥락 중심입니다. 일러스트가 포함된 이중 언어 '지식 카드'를 만드는 것은 실제로 필요한 부분을 채우며, 부모와 교육자들은 특히 이중 언어 가정에서 어휘를 가르치는 간단하고 매력적인 방법을 적극적으로 찾고 있습니다.",
-      "howTitle": "Nano Banana로 이중 언어 플래시카드 만들기",
-      "step1Title": "1단계: 시각적 학습 주제 선택",
-      "step1Content": "동물, 음식, 색상, 모양 또는 일상적인 물체와 같은 연령에 적합한 구체적인 주제로 시작하세요. 실제 맥락에 기반한 주제는 아이들이 더 강한 연관성을 형성하고 어휘를 더 효과적으로 기억하는 데 도움을 줍니다.",
-      "step2Title": "2단계: 일관된 일러스트 스타일 정의",
-      "step2Content": "Nano Banana를 사용하여 부드러운 형태, 밝은 색상 및 친근한 캐릭터로 반복 가능한 시각적 스타일을 설정하세요. 카드 간의 일관성은 인식을 개선하고 어린 학습자의 인지 부담을 줄입니다.",
-      "step3Title": "3단계: 이중 언어 어휘 명확하게 구조화",
-      "step3Content": "각 카드를 두 언어를 명확하게 제시하도록 디자인하세요. 여기에는 영어 + 스페인어, 영어 + 중국어 또는 기타 쌍과 선택적 발음 안내가 포함될 수 있습니다. 레이아웃을 간단하게 유지하여 시각적 요소가 의미의 주요 기준이 되도록 합니다.",
-      "step4Title": "4단계: 시각적 + 맥락 쌍을 유도",
-      "step4Content": "핵심은 단순한 물체가 아닌 장면을 유도하는 것입니다. 고립된 항목 대신, 맥락에서 개념을 보여주는 시각을 생성하세요(예: 사과를 먹고 있는 아이). 이는 이해를 강화하고 어휘를 더 기억에 남게 합니다.",
-      "step5Title": "5단계: 정확성과 명확성 검토",
-      "step5Content": "번역, 문화적 관련성 및 연령 적합성을 검증하세요. AI는 생성 속도를 높이지만, 인간의 검토는 카드가 정확하고 명확하며 실제 학습 시나리오에 효과적임을 보장합니다.",
-      "templatesTitle": "복사-붙여넣기 플래시카드 템플릿",
-      "templatesIntro": "이 템플릿을 사용하여 강력한 시각적 맥락을 가진 일관되고 고품질의 이중 언어 플래시카드를 생성하세요:",
-      "template1Title": "동물 지식 카드",
-      "template1Prompt": "자연 장면에서 동물을 특징으로 하는 10개의 유치원 플래시카드(3-5세)를 만드세요. 각 카드에는: 친근한 일러스트 동물, 영어 단어, 스페인어 번역 및 간단한 사실이 포함됩니다. 밝은 색상과 부드러운 형태를 사용하세요. 스타일: 어린이 그림책.",
-      "template2Title": "색상 및 모양 기초",
-      "template2Prompt": "실제 장면에서 모양을 보여주는 12개의 유아 플래시카드(2-4세)를 생성하세요(예: 빨간 공, 파란 정사각형 블록). 영어 단어, 프랑스어 번역 및 선택적 발음을 포함하세요. 스타일: 깨끗하고 몬테소리에서 영감을 받은 시각과 파스텔 색상.",
-      "template3Title": "맥락 속의 일상 어휘",
-      "template3Prompt": "일상적인 물체가 사용되는 모습을 보여주는 15개의 유치원 플래시카드(4-6세)를 만드세요(예: 양치질, 식사, 학교 가방). 영어 레이블, 중국어 문자 및 병음을 포함하세요. 스타일: 배경이 최소화된 간단하고 현실적인 장면.",
-      "benefitsTitle": "AI 생성 학습 카드의 이점",
-      "benefitsContent": "AI로 생성된 플래시카드는 시각적으로 일관된 학습 세트를 신속하게 생성하고, 언어 전환을 쉽게 하며, 콘텐츠 생산을 확장할 수 있게 합니다. 이들은 특히 시각적 학습자와 이중 언어 가정에 효과적이며, 단어를 이미지와 실제 맥락에 연결합니다.",
-      "toolsTitle": "지원 도구 및 리소스",
-      "toolsContent": "발음 도구, 원어민 검증 및 간단한 진행 추적 시스템으로 플래시카드를 향상시키세요. 이러한 추가 요소는 정확성을 보장하고 시간이 지남에 따라 구조화된 학습을 지원합니다.",
-      "bestPracticesTitle": "어린 학습자를 위한 모범 사례",
-      "bestPracticesContent": "카드를 간단하고 집중적으로 유지하세요: 텍스트를 제한하고, 명확한 시각을 사용하며, 혼잡함을 피하세요. 고대비 이미지를 우선시하고, 일관된 레이아웃과 주제 간 반복을 유지하세요. 학습을 강화하되 아이를 압도하지 않도록 카드를 정기적으로 교체하세요.",
-      "conclusionTitle": "AI로 시각적 학습 시스템 구축",
-      "conclusionContent": "AI는 조기 아동 교육에 맞춤화된 고품질의 시각 우선 학습 자료를 만드는 것을 실용적으로 만듭니다. 강력한 프롬프트와 일관된 디자인을 결합함으로써, 아이들이 배우는 방식에 진정으로 효과적인 이중 언어 플래시카드를 생성할 수 있습니다.",
-      "metaDescription": "AI로 아이들을 위한 이중 언어 플래시카드를 몇 분 안에 만드세요. 부모와 교사를 위한 단계별 프롬프트 — 동물, 색상, 숫자, 일상 루틴 등.",
-      "seoKeywords": [
-        "이중 언어 플래시카드",
-        "AI 플래시카드 아이들",
-        "ESL 유아 교육",
-        "AI 교육 템플릿"
-      ]
-    },
-    "ugc-video-translation-scaling-tiktoks-shorts-global-markets": {
-      "title": "UGC 비디오 번역: TikTok 및 Shorts를 글로벌 시장으로 확장하기",
-      "date": "2026년 4월 23일",
-      "readTime": "15분 읽기",
-      "tag": "비디오 더빙 및 번역",
-      "image": "/images/tiktok.webp",
-      "category": "video-translation-dubbing",
-      "hub": "ai-youtube-video-translator",
-      "architecture": {
-        "pillar": "기둥 3: 비디오 더빙 및 번역",
-        "status": "스포크",
-        "related_spokes": [
-          "translate-youtube-video",
-          "how-to-dub-videos-naturally",
-          "voice-cloning-tools",
-          "f5-tts-voice-cloning",
-          "asl-video-translator",
-          "lip-sync-business-guide"
-        ]
-      },
-      "content_architecture_plan": "Curify AI: 허브 및 스포크 콘텐츠 아키텍처\n\n여기 CMS 및 콘텐츠 캘린더에 쉽게 통합할 수 있도록 형식화된 전체 재구성 계획이 있습니다.\n기둥 1: Nano Banana 프롬프트 (시각적 핵심)\n허브 페이지 (기둥): ultimate-directory-of-nano-banana-prompts\n작업: 이를 마스터 시각 '룩북'으로 설정하세요. 모든 다른 프롬프트 관련 게시물은 이 URL에 링크하여 권위를 통합해야 합니다.\n카테고리 및 URL 라우팅: nano-template\n작업: 카테고리 슬러그를 nano-banana-prompts에서 nano-template로 변경하세요. 이는 시스템의 URL 라우팅과 SEO 일관성을 보장합니다.\n블로그 피벗 및 제목 변경:\n대상 기사: 10-prompting-tips-nano-banana\n이전 제목: Nano Banana를 위한 10가지 프롬프트 팁: AI 콘텐츠 생성 마스터하기\n새 최적화 제목: Nano Banana를 위한 프롬프트 작성 방법: 제작자를 위한 10가지 팁\n피벗 이유: 'nano banana를 위한 프롬프트 작성 방법'이라는 정확한 롱테일 쿼리를 직접 타겟팅하여 97% KD 헤드 용어와 경쟁하기보다는 높은 의도를 가진 사용자를 포착합니다.\n할당된 스포크 (허브에 링크):\nmbti-character-generator\nchinese-herbal-medicine-visual-guide\nevolution-timelines-visualization\nchinese-costume-history-infographic (작업: '문화'에서 'nano-template'로 재태그)\n\n기둥 2: 제작자 도구\n허브 페이지 (기둥): best-ai-tools\n작업: '2026년 콘텐츠 제작자를 위한 10가지 최고의 AI 도구'를 리스트 기사에서 포괄적인 기둥 페이지로 업그레이드하세요. 도구를 모달리티(이미지, 비디오, 오디오)별로 그룹화하고 개별 심층 리뷰로 링크하세요.\n카테고리 표준화: creator-tools\n작업: AI 도구 및 MBTI 생성기와 같은 비정상적인 태그를 이 통합된 카테고리로 통합하세요.\n블로그 피벗 및 제목 변경:\n대상 기사: storyboard-labeling\n이전 제목: 원시 영상에서 스토리보드로: AI 기반 비디오 분석\n새 피벗: 메타데이터와 소개를 워크플로우 효율성에 중점을 두고 재작성하세요. 콘텐츠를 아이디어에서 스토리보드 생성으로의 제작자 파이프라인 가속화에 맞춰 포지셔닝하세요.\n할당된 스포크 (허브에 링크):\ncharacter-prompt-generator\nimage-generation-model-comparison\nstoryboard-to-pipeline\ncreative-ai-tools-websites\n\n기둥 3: 비디오 더빙 및 번역\n허브 페이지 (기둥): ai-youtube-video-translator\n작업: 'AI YouTube 비디오 번역기: 2026년 최고의 도구 및 방법'을 비디오 번역, 클로닝 및 더빙의 전체 생태계를 다루는 중앙 허브로 확장하세요.\n카테고리 표준화: video-translation-dubbing\n작업: 비디오 번역, AI 더빙 및 비디오 향상을 이 단일 슬러그 아래로 병합하세요.\n블로그 피벗 및 제목 변경:\n대상 기사: what-is-voice-cloning\n이전 제목: 2026년 음성 클로닝이란? AI 음성 기술의 미래 설명\n새 최적화 제목: AI 음성 클로닝이란? 2026년 더빙 아티팩트 수정 방법\n피벗 이유: 순전히 정보 제공에서 문제 해결로 전환하여 일반 제작자의 고통 지점을 직접 다룹니다.\n할당된 스포크 (허브에 링크):\ntranslate-youtube-video\nhow-to-dub-videos-naturally\nvoice-cloning-tools\nf5-tts-voice-cloning\nasl-video-translator\nlip-sync-business-guide\n\n기둥 4: 콘텐츠 마케팅 및 자동화 시스템\n허브 페이지 (기둥): curify-ai-growth-engine\n작업: 'Curify AI 성장 엔진'을 콘텐츠 마케팅 및 다채널 확장을 위한 AI 활용에 대한 결정적인 가이드로 재포지셔닝하세요.\n카테고리 표준화: content-automation\n작업: 콘텐츠 전략 및 AI 플랫폼에서 적용 가능한 게시물을 이 통합된 태그로 이동하세요.\n블로그 피벗 및 제목 변경:\n대상 기사: content-tagging-system\n이전 제목: 4000개의 이미지에서 50개의 의미 있는 태그로: Pinterest 스타일 콘텐츠 발견 구축\n새 피벗: 비즈니스 가치와 SEO 성장에 대한 내러티브를 구성하세요. 구조화된 3단계 태깅 시스템(신호 추출, 후보 생성, 인간 정제)을 구현하는 것이 유기적 발견 및 시각적 피드 참여를 직접적으로 촉진하는 방법을 강조하세요.\n할당된 스포크 (허브에 링크):\ncontent-multiplication-system\nai-content-distribution-system\n\n기둥 5: 학습 및 교육\n허브 페이지 (기둥): visual-learning-tools\n작업: '시각적 학습 도구: 학생, 부모 및 교사가 교육을 변화시킬 수 있는 방법'을 교육 AI 응용 프로그램에 대한 마스터 가이드로 확장하세요.\n카테고리 표준화: learning-education\n작업: 높은 의도를 가진 교육 트래픽을 포착하기 위해 이 새로운 카테고리 슬러그를 생성하세요.\n블로그 피벗 및 제목 변경:\n대상 기사: viral-learning-content\n이전 제목: 바이럴 학습 콘텐츠 만들기(플래시카드, 대화 장면, 시각적 지식)\n새 피벗: 조기 아동 교육 응용 프로그램에 특히 중점을 두세요. AI를 사용하여 영어 어휘 '지식 카드'(동물, 공룡 및 학교 주제와 같은 주제 포함)를 생성하여 상호작용적이고 시각적으로 풍부한 가정 교육을 위한 프로세스를 자세히 설명하세요.\n할당된 스포크 (허브에 링크):\nwhat-is-infographics\nseries-infographic-vs-notebooklm\n\n기둥 6: DS 및 AI 엔지니어링, 플랫폼\n허브 페이지 (기둥): ai-content-production-system\n작업: 'AI 콘텐츠 생산 시스템을 구축한 방법(단순한 도구가 아님)'을 핵심 엔지니어링 선언문으로 활용하고 모든 고도로 기술적인 심층 분석으로 링크하세요.\n카테고리 표준화: ds-ai-engineering\n작업: 이 카테고리를 유지하세요. creator-tools 태그를 감사하고 과도하게 기술적인 아키텍처 게시물을 여기로 이동하세요.\n블로그 피벗 및 제목 변경:\n대상 기사: aiPlatform\n이전 제목: 实用的 AI 平台：中型科技公司如何用 AI 获胜\n새 피벗: 결정론적 인프라의 필요성에 중점을 두고 메타데이터 및 콘텐츠를 업데이트하세요. 특정 구현(예: 스키마 검증, 지역화된 콘텐츠를 위한 Redis를 통한 의미론적 캐싱, Ray를 활용한 다중 클라우드 GPU 스케줄링)을 자세히 설명하세요.\n할당된 스포크 (허브에 링크):\nQA_Bot_to_Task\nage_AI\ntranslate-youtube-video-to-english (기술 심층 분석)\nvideo-transcription-technical-deep-dive\nlip-sync-technical-deep-dive",
-      "intro": "긴 형식의 YouTube 비디오 번역을 위한 훌륭한 콘텐츠가 존재하지만, 현재의 제작자 경제는 짧은 형식의 사용자 생성 콘텐츠(UGC)에 의해 크게 주도되고 있습니다. 브랜드와 제작자들은 원래 제작자의 에너지를 잃지 않고 스페인어, 일본어 및 포르투갈어 시장으로 최고의 Shorts와 Reels를 밀어내고자 절실히 노력하고 있습니다.",
-      "whatIsTitle": "UGC 비디오 번역이란?",
-      "whatIsContent": "UGC 비디오 번역은 짧은 형식의 콘텐츠(TikTok, Instagram Reels, YouTube Shorts)를 글로벌 청중을 위해 현지화하는 과정으로, 제작자의 원래 에너지, 속도 및 감정적 전달을 보존합니다. 긴 형식의 콘텐츠 번역과 달리, 짧은 형식은 정확한 타이밍 보존, 트렌드의 문화적 적응 및 원래 콘텐츠의 성공을 이끈 바이럴 DNA 유지가 필요합니다.",
-      "whyTitle": "왜 짧은 형식의 콘텐츠에 집중해야 할까요?",
-      "whyContent": "제작자 경제는 극적으로 변화했습니다. 긴 형식의 콘텐츠도 여전히 중요하지만, 성장 엔진은 이제 짧은 형식의 UGC입니다. 자신의 바이럴 TikTok과 Shorts를 여러 언어로 성공적으로 번역하는 제작자는 도달 범위와 수익 잠재력을 10배로 늘릴 수 있습니다. 기술적 도전은 15-60초 클립에서 원래 제작자의 진정한 목소리와 감정적 억양을 유지하는 것입니다.",
-      "howTitle": "짧은 형식 번역의 기술적 뉘앙스",
-      "step1Title": "1단계: 원본 콘텐츠 DNA 분석",
-      "step1Content": "번역 전에 바이럴 요소를 식별하세요: 속도 패턴, 감정적 비트, 점프 컷, 사운드 동기화 포인트 및 문화적 참조. AI 분석을 사용하여 원래 콘텐츠를 매력적으로 만드는 타이밍 마커, 에너지 수준 및 감정적 전환을 추출하세요. 이 DNA는 번역 청사진이 됩니다.",
-      "step2Title": "2단계: 제작자 진정성을 위한 음성 클로닝",
-      "step2Content": "제작자의 고유한 음성 특성을 포착하는 음성 클론을 생성하세요: 음역대, 말하기 리듬, 감정적 억양 및 억양 패턴. 짧은 형식 콘텐츠의 경우, 고에너지 전달 패턴과 빠른 감정적 전환에 집중하세요. 음성 모델은 빠른 속도와 갑작스러운 에너지 변화를 처리해야 하며 로봇처럼 들리지 않아야 합니다.",
-      "step3Title": "3단계: 짧은 클립을 위한 립싱크 정밀도",
-      "step3Content": "원래 제작자의 입 움직임과 표정에 맞춰 프레임별 립싱크를 구현하세요. 짧은 형식 콘텐츠는 빠른 컷과 클로즈업 샷으로 인해 서브 프레임 정확도가 필요합니다. Curify의 향상된 립싱크 파이프라인을 사용하여 빠른 속도의 세그먼트와 감정적 순간 동안 자연스러운 입 움직임을 유지하세요.",
-      "step4Title": "4단계: 트렌드의 문화적 적응",
-      "step4Content": "언어뿐만 아니라 문화적 맥락도 현지화하세요: 트렌드 사운드, 밈 참조, 제스처 의미 및 플랫폼별 행동. 미국에서 바이럴인 것이 일본이나 브라질에서는 공감되지 않을 수 있습니다. 원래의 성공을 이끈 핵심 메시지와 오락 가치를 유지하면서 문화적 참조를 적응하세요.",
-      "step5Title": "5단계: 바이럴 잠재력에 대한 품질 보증",
-      "step5Content": "대상 시장의 원어민과 번역된 콘텐츠를 테스트하세요. 감정적 영향, 코미디 타이밍 및 문화적 공명을 확인합니다. A/B 테스트를 사용하여 다양한 감정 전달 및 속도 변화를 비교합니다. 번역된 콘텐츠가 원본의 공유 가능성과 참여 잠재력을 유지하도록 합니다.",
-      "technicalTitle": "고급 기술 고려사항",
-      "timingTitle": "마이크로 표현 보존",
-      "timingContent": "짧은 형식의 콘텐츠는 마이크로 표현과 순간적인 감정 변화를 의존합니다. 번역 파이프라인은 이러한 뉘앙스를 포착해야 합니다: 눈썹 올리기, 미세한 미소, 눈 움직임 및 의미를 전달하는 빠른 시선. 타이밍 정확성을 유지하기 위해 고프레임 속도 처리(60fps 이상)를 사용하세요.",
-      "emotionTitle": "감정적 억양 매핑",
-      "emotionContent": "원래 제작자의 감정 여정을 매핑하세요: 고조, 절정, 해결. 감정 TTS를 적용하여 대상 언어에서 이러한 감정적 비트를 보존합니다. 도전 과제는 언어 패턴을 조정하면서 진정한 감정 전달을 유지하는 것입니다.",
-      "platformTitle": "플랫폼별 최적화",
-      "platformContent": "각 플랫폼은 고유한 요구 사항이 있습니다: TikTok의 9:16 화면 비율, Instagram Reels의 수직 형식, YouTube Shorts의 알고리즘 선호도. 번역된 콘텐츠를 각 플랫폼의 기술 사양 및 청중 행동 패턴에 맞게 최적화하세요.",
-      "toolsTitle": "UGC 번역을 위한 필수 도구",
-      "toolsContent": "Curify의 전문 UGC 번역 파이프라인은 음성 클로닝, 립싱크 및 짧은 형식 콘텐츠를 위해 특별히 설계된 감정 TTS를 결합합니다. 이 시스템은 빠른 속도를 처리하고 제작자의 진정성을 유지하며 플랫폼 최적화 형식을 자동으로 출력합니다.",
-      "monetizationTitle": "글로벌 수익원 확장",
-      "monetizationContent": "번역된 UGC는 여러 수익화 채널을 열어줍니다: 국제 브랜드 거래, 현지화된 후원, 글로벌 광고 수익 및 크로스 플랫폼 청중 성장. 제작자는 시장 전반에 걸쳐 바이럴 잠재력을 유지하는 다국어 콘텐츠에 대해 프리미엄 요금을 요구할 수 있습니다.",
-      "caseStudiesTitle": "성공 사례: UGC 번역의 영향",
-      "caseStudy1Title": "패션 제작자: 스페인어 더빙으로 10배 도달",
-      "caseStudy1Content": "50만 팔로워를 가진 패션 제작자가 상위 10개 TikTok을 스페인어로 번역하여 500만 명의 추가 시청자에게 도달했습니다. 핵심은 그들의 에너지 넘치는 전달을 유지하고 라틴 아메리카 시장에 맞게 패션 참조를 조정하는 것이었습니다.",
-      "caseStudy2Title": "코미디 제작자: 일본 시장 돌파",
-      "caseStudy2Content": "스케치 콘텐츠를 전문으로 하는 코미디 제작자가 문화적 적응을 통해 일본에서 바이럴 성공을 거두었습니다. 번역된 콘텐츠는 코미디 타이밍을 유지하면서 일본의 유머 패턴과 문화적 참조를 통합했습니다.",
-      "bestPracticesTitle": "UGC 번역을 위한 모범 사례",
-      "bestPracticesContent": "제작자의 진정성 보존에 집중하세요: 원래 에너지 수준 유지, 문화적 맥락 존중, 대상 청중과 테스트, 각 플랫폼의 기술 요구 사항 최적화 및 성과 지표에 따라 반복합니다. 목표는 번역된 콘텐츠가 각 시장에 원주율을 느끼게 하면서 바이럴 DNA를 보존하는 것입니다.",
-      "conclusionTitle": "글로벌 콘텐츠 전략 변환",
-      "conclusionContent": "UGC 비디오 번역은 제작자 경제 확장의 다음 경계를 나타냅니다. 고급 AI 번역과 문화적 지능 및 제작자 진정성 보존을 결합함으로써, 원본 콘텐츠의 성공을 유지하면서 글로벌로 콘텐츠를 확장할 수 있습니다."
-    },
-    "ugcVideoTranslationScalingTiktoksShortsGlobalMarkets": {
-      "title": "UGC 비디오 번역: TikTok 및 Shorts를 글로벌 시장으로 확장하기",
-      "date": "2026년 4월 27일",
-      "readTime": "12분 읽기",
-      "tag": "비디오 번역",
-      "image": "/images/ugc-video-translation.webp",
-      "category": "video-translation",
-      "intro": "AI 번역을 사용하여 UGC(사용자 생성 콘텐츠) 비디오를 글로벌 시장으로 확장하는 방법을 배우세요. TikTok, Shorts, Reels를 번역하여 진정성과 참여도를 유지하면서 국제 시청자에게 도달하세요.",
-      "whatIsTitle": "UGC 비디오 번역이란?",
-      "whatIsContent": "UGC 비디오 번역은 사용자 생성 단폼 콘텐츠를 국제 시청자를 위해 적응시키는 과정입니다. 여기에는 UGC를 효과적으로 만드는 진정성 있고 원시적인 느낌을 유지하면서 오디오, 캡션 및 문화적 참조를 번역하는 것이 포함됩니다. AI 도구를 통해 수백 개의 비디오를 저렴한 비용으로 번역할 수 있게 되었습니다.",
-      "whyTitle": "왜 UGC 콘텐츠를 번역해야 하는가?",
-      "whyContent": "UGC 콘텐츠는 브랜드 생성 콘텐츠보다 4배 높은 클릭률을驱动합니다. UGC를 번역함으로써: 20억 명 이상의 비영어권 화자에게 도달하고, 새로운 콘텐츠를 만들지 않고 새로운 시장에 진출하고, 기존 크리에이터 파트너십에서 ROAS를 증가시키며, 모국어로 콘텐츠를 신뢰하는 글로벌 시청자와 진정성 있는 연결을 구축할 수 있습니다.",
-      "howTitle": "UGC 비디오를 대규모로 번역하는 방법",
-      "step1Title": "1단계: 콘텐츠 큐레이션 및 정리",
-      "step1Content": "참여 지표(조회수, 공유수, CTR)를 기반으로 고성과 UGC를 식별하세요. 제품 카테고리, 크리에이터, 성과 등급별로 콘텐츠를 정리하세요. 비디오에 원본 언어와 대상 시장 잠재력을 태그하세요. 최대 번역 ROI를 위해 시간 민감성 게시물보다 상시 유효 콘텐츠를 우선시하세요.",
-      "step2Title": "2단계: 자산 추출 및 준비",
-      "step2Content": "가용한 최고 품질로 소스 비디오를 다운로드하세요. FFmpeg나 Descript와 같은 도구를 사용하여 비디오에서 오디오를 분리하세요. 화면 텍스트와 캡션을 추출하세요. 각 콘텐츠의 톤, 맥락, 문화적 노트를 포착하는 번역 브리프 문서를 만드세요.",
-      "step3Title": "3단계: AI 번역 및 음성 클로닝",
-      "step3Content": "AI 음성 클로닝을 사용하여 언어 간에 크리에이터의 진정성을 유지하세요. Curify와 같은 도구는 원본 크리에이터의 목소리를 복제하고 50개 이상의 언어로 번역할 수 있습니다. 최상의 결과를 위해 음성 클로닝에 30초 이상의 깨끗한 오디오를 제공하세요. 문화적 정확성을 위해 네이티브 화자로 AI 번역을 항상 검토하세요.",
-      "step4Title": "4단계: 립싱크 및 시각적 적응",
-      "step4Content": "AI 립싱크 기술을 적용하여 번역된 오디오를 화자의 입술 움직임과 일치시키세요. 대상 언어의 화면 텍스트 오버레이와 캡션을 조정하세요. 문화적 민감성을 위해 재편집을 고려하세요(잘 번역되지 않는 지역 특정 참조 제거).",
-      "step5Title": "5단계: 현지화 및 규정 준수",
-      "step5Content": "현지 시장을 위해 CTA를 조정하세요(다른 전자상거래 플랫폼, 통화 등). 지역 광고 규정 및 공개 요구사항 준수를 보장하세요. 현지화된 해시태그와 키워드를 추가하세요. 전체 캠페인 출시 전에 네이티브 화자로 테스트하세요.",
-      "technicalTitle": "기술적 고려사항",
-      "timingTitle": "타이밍 및 페이싱",
-      "timingContent": "번역된 오디오는 원본보다 15-30% 더 길거나 짧을 수 있습니다. 비디오 페이싱을 조정하세요: 휴지를 자르고, 섹션을 빠르게 또는 느리게 하고, 타이밍 간격을 채우기 위해 B롤을 추가하세요. TikTok과 Shorts는 엄격한 지속 시간 제한이 있습니다 - 번역 버전이 플랫폼 제약 내에 맞는지 확인하세요.",
-      "emotionTitle": "감정 및 톤 보존",
-      "emotionContent": "UGC는 진정성 있는 감정에 크게 의존합니다. 번역 시: 원본 에너지 수준과 열정을 유지하고, 유머와 문화적 참조를 보존(또는 적절히 적응)하고, UGC를 정의하는 비공식적이고 대화적인 톤을 유지하세요. AI 감정 감지는 원본 감정과 일치하는 데 도움이 됩니다.",
-      "platformTitle": "플랫폼별 요구사항",
-      "platformContent": "각 플랫폼에는 고유한 고려사항이 있습니다: TikTok은 텍스트 안전 구역이 있는 수직 9:16 형식을 요구하고, YouTube Shorts는 매력적인 처음 3초와 모바일 최적화된 썸네일을 필요로 하며, Instagram Reels는 트렌드 오디오 통합과 해시태그 전략에서 혜택을 받습니다. 번역된 콘텐츠를 각 플랫폼의 알고리즘 선호도에 맞게 조정하세요.",
-      "toolsTitle": "추천 도구",
-      "toolsContent": "Curify: 음성 클로닝, 립싱크, 배치 처리를 갖춘 올인원 UGC 번역. ElevenLabs: 감정 제어가 있는 전문 음성 클로닝. HeyGen: 페이스리스 UGC용 AI 아바타 및 립싱크. Descript: 오디오 편집 및 전사 워크플로. CapCut: 20개 이상의 언어로 자동 캡션이 있는 모바일 친화적 편집.",
-      "monetizationTitle": "수익화 전략",
-      "monetizationContent": "번역된 UGC를 수익화하세요: 국제 제휴 프로그램(Amazon Associates, ShareASale 글로벌 네트워크), 현지화된 제품 드롭 및 예약, 지역 브랜드 파트너십 및 후원, 다른 브랜드가 라이선스하는 유료 UGC 라이브러리. 시장별로 성과를 추적하여 높은 전환율 지역에서 두 배로 늘리세요.",
-      "caseStudiesTitle": "성공 사례",
-      "caseStudy1Title": "뷰티 브랜드: 유럽 시장에서 3배 ROAS",
-      "caseStudy1Content": "DTC 뷰티 브랜드가 상위 50개 UGC TikTok을 프랑스어, 독일어, 스페인어로 번역했습니다. Curify의 음성 클로닝을 사용하여 크리에이터 목소리를 유지하고, 60일 내에 유럽 시장에서 3배 광고 지출 수익을 달성했습니다. 진정성 있는 크리에이터 에너지는 전통적인 더빙 콘텐츠보다 더 잘 번역되었습니다.",
-      "caseStudy2Title": "피트니스 앱: 번역된 Shorts에서 50만 다운로드",
-      "caseStudy2Content": "피트니스 앱이 영어 UGC를 포르투갈어, 일본어, 아랍어로 번역했습니다. 운동 용어를 현지화하고 문화적 참조를 적응시킴으로써 90일 내에 비영어권 시장에서 50만 개 이상의 앱 다운로드를 달성했습니다. 번역된 콘텐츠는 현지에서 만든 광고보다 40% 더 우수했습니다.",
-      "bestPracticesTitle": "UGC 번역을 위한 모범 사례",
-      "bestPracticesContent": "더 나은 음성 클로닝 결과를 위해 명확하고 액센트가 없는 발음을 가진 크리에이터를 선택하세요. 전체 라이브러리로 확장하기 전에 시장당 5-10개 비디오를 테스트하세요. 브랜드 특정 용어와 제품명의 번역 용어집을 유지하세요. 번역된 썸네일과 캡션을 A/B 테스트하세요. 대상 언어의 댓글에서 문화적 피드백을 모니터링하세요. 제품이나 메시징이 변경될 때 번역을 업데이트하세요.",
-      "conclusionTitle": "UGC 번역으로 글로벌 확장",
-      "conclusionContent": "UGC 비디오 번역은 글로벌 시장에 진입하는 가장 비용 효율적인 방법입니다. 음성 클로닝, 립싱크, 배치 처리용 AI 도구를 활용함으로써, 기존의 고성과 콘텐츠를 수십억 명의 새로운 잠재 고객에게 도달하도록 확장할 수 있습니다. 상위 10개 UGC 비디오로 시작하고, 2-3개 유망 시장으로 번역하고, 전체 규모 배포 전에 결과를 측정하세요.",
-      "metaDescription": "TikTok과 Shorts를 글로벌 시장으로 확장하기 — AI 번역 스택, 음성 클로닝 설정 및 UGC가 해외에서 실제로 전환되도록 하는 타이밍 트릭.",
-      "seoKeywords": [
-        "UGC 비디오 번역",
-        "TikTok 번역 AI",
-        "Shorts 글로벌 시장",
-        "비디오 더빙 제작자"
-      ]
-    },
-    "aifacelesschannelpipeline": {
-      "title": "2026년 AI 페이스리스 채널 파이프라인 구축 방법",
-      "date": "2026년 4월 23일",
-      "readTime": "18분 읽기",
-      "category": "제작자 도구",
-      "tag": "제작자 도구",
-      "image": "/images/facelesyoutube.webp",
-      "metaDescription": "2026년 확장 가능한 AI 페이스리스 채널 파이프라인 구축 방법을 배우세요. 일관된 비주얼 생성, 스크립트 자동화 및 Curify를 통한 비디오 제작 간소화.",
-      "seoKeywords": "ai 페이스리스 채널, 페이스리스 유튜브 채널 ai 도구, 틱톡 비디오 자동화, ai 콘텐츠 자동화, 페이스리스 비디오 제작",
-      "intro": "AI 기반 페이스리스 채널은 콘텐츠 생성 및 확장 방식을 재편하고 있습니다. 2026년에는 일관된 비주얼 생성, 구조화된 스크립팅 및 자동화를 결합하여 제작자가 카메라에 나타나지 않고도 고품질 콘텐츠를 제작할 수 있도록 합니다. 이 가이드는 Curify의 생태계를 사용하여 실용적이고 종합적인 파이프라인 구축 방법을 안내합니다. 여기에는 비주얼을 위한 Nano Banana, 내러티브 도구 및 자동화 워크플로가 포함됩니다.",
-      "whatIsTitle": "AI 페이스리스 채널 파이프라인이란?",
-      "whatIsContent": "AI 페이스리스 채널 파이프라인은 콘텐츠 생성—비주얼 생성에서 최종 비디오 출력까지—을 간소화하는 구조화된 워크플로입니다. 카메라에 나타날 필요 없이 수동 제작 대신 이러한 파이프라인은 AI 도구를 사용하여 브랜딩을 표준화하고 효율적으로 변형을 생성하며 일관성을 유지하면서 출력을 증가시킵니다.",
-      "whyTitle": "2026년 페이스리스 채널이 성장하는 이유",
-      "whyContent": "페이스리스 채널은 제작 시간, 비용 및 카메라 요구 사항과 같은 일반적인 병목 현상을 줄이기 때문에 인기를 얻고 있습니다. AI 도구는 제작자가 출력을 증가시키고 일관성을 유지하도록 도와주며, 이는 정기적인 게시를 보상하는 플랫폼 알고리즘과 잘 맞습니다. 완전히 손을 떼는 것은 아니지만, 이러한 시스템은 안정적인 콘텐츠 주기를 유지하는 것을 더 쉽게 만듭니다.",
-      "howTitle": "완전한 파이프라인 구축: 단계별",
-      "step1Title": "1단계: Nano Banana로 비주얼 아이덴티티 설정",
-      "step1Content": "일관된 비주얼 아이덴티티는 인식에 중요합니다. Nano Banana를 사용하여 브랜드의 비주얼 스타일—색상 팔레트, 톤 및 구성—을 정의하세요. 핵심 요소를 보존하면서 변형을 생성하는 재사용 가능한 프롬프트와 템플릿을 개발하여 콘텐츠가 게시물 전반에 걸쳐 일관성을 유지하도록 합니다.",
-      "step2Title": "2단계: 자동화된 스크립팅 시스템 개발",
-      "step2Content": "강력한 내러티브는 참여를 유도합니다. 교육, 스토리텔링 또는 뉴스와 같은 다양한 형식을 위한 구조화된 스크립팅 템플릿을 만드세요. AI를 사용하여 초안 작성, 트렌드 조사 및 주제 아이디어 생성을 지원하며, 브랜드 목소리와 정확성을 유지하기 위해 출력을 다듬습니다.",
-      "step3Title": "3단계: AI 음성 생성 및 오디오 제작 구현",
-      "step3Content": "음성은 채널의 톤을 정의합니다. 자연스러운 전달과 유연성을 제공하는 AI 음성 도구를 선택하세요. 콘텐츠 스타일에 맞는 음성 프로필을 구축하고 배경 음악 및 정리 도구로 오디오를 향상시켜 전문적인 품질을 유지합니다.",
-      "step4Title": "4단계: 비디오 조립 및 편집 자동화",
-      "step4Content": "AI 기반 비디오 도구를 사용하여 비주얼을 조립하고 내레이션을 동기화하며 브랜딩을 적용합니다. 짧은 형식 및 긴 형식 콘텐츠와 같은 다양한 형식을 위한 재사용 가능한 템플릿을 만드세요. 자동화는 속도, 전환 및 형식에 도움을 줄 수 있지만 품질 관리를 위해 수동 검토는 여전히 중요합니다.",
-      "step5Title": "5단계: 배포 자동화로 확장",
-      "step5Content": "배포는 성장의 핵심입니다. 플랫폼 전반에 걸쳐 게시하기 위해 일정 도구를 사용하고 타이밍을 최적화하세요. AI는 성과를 분석하고 개선 사항을 제안하는 데 도움을 줄 수 있지만, 참여—특히 답글 및 커뮤니티 상호작용—은 저품질 자동화를 피하기 위해 모니터링해야 합니다.",
-      "toolsTitle": "파이프라인을 위한 필수 도구",
-      "toolsContent": "기능적인 파이프라인은 여러 도구를 결합합니다: 일관된 비주얼을 위한 Nano Banana, 스크립팅을 위한 Curify의 내러티브 도구, 오디오를 위한 AI 음성 플랫폼, 조립을 위한 비디오 자동화 도구 및 배포를 위한 일정 시스템. 효율성은 이러한 구성 요소를 통합하여 일관된 워크플로를 만드는 데서 나옵니다.",
-      "curifyTitle": "페이스리스 채널에 Curify가 잘 맞는 이유",
-      "curifyContent": "Curify는 비주얼 생성, 스크립팅 및 자동화를 통합된 시스템으로 결합합니다. Nano Banana는 대규모로 일관된 비주얼을 지원하며, 내러티브 도구는 안정적인 브랜드 목소리를 유지하는 데 도움을 줍니다. 통합된 TTS 및 워크플로 자동화는 마찰을 줄여 여러 개의 분리된 도구를 조정하지 않고도 제작을 관리하기 쉽게 만듭니다.",
-      "monetizationTitle": "페이스리스 채널을 위한 수익화 전략",
-      "monetizationContent": "페이스리스 채널은 유연한 수익화 옵션을 제공합니다. 여러 틈새 시장을 타겟팅하고, 지속 가능한 콘텐츠를 제작하며, 광고, 후원, 제휴 및 디지털 제품을 위한 재고를 확장할 수 있습니다. 성공은 콘텐츠를 청중의 수요와 일치시키고 신뢰할 수 있는 배포를 구축하는 데 달려 있습니다.",
-      "examplesTitle": "성공적인 페이스리스 채널 사례",
-      "examplesContent": "최고 성과를 내는 페이스리스 채널은 종종 명확한 형식에 집중합니다: 애니메이션 설명, 큐레이션된 뉴스 또는 내러티브 스토리텔링. 그들은 일관된 비주얼, 강력한 스크립팅 및 규율 있는 게시를 결합합니다. 그들의 성공은 가시적인 제작자의 부재가 아니라 실행 품질에서 나옵니다.",
-      "metricsTitle": "추적할 주요 성과 지표",
-      "metricsContent": "참여율, 유지율, 콘텐츠 출력 및 제작 효율성과 같은 지표에 집중하세요. 형식이나 빈도의 변화가 성과에 미치는 영향을 모니터링하고, 게시된 비디오당 필요한 수동 노력을 추적하여 파이프라인의 효과성을 평가합니다.",
-      "scalingTitle": "고급 확장 전략",
-      "scalingContent": "파이프라인이 안정되면 전략적으로 확장하세요. 성과가 좋은 주제에 집중하고, 새로운 형식으로 실험하며, 다국어 콘텐츠를 고려하세요. 자동화에만 의존하지 말고 데이터를 사용하여 결정을 안내하고 복잡성이 증가함에 따라 감독을 유지하세요.",
-      "ctaText": "페이스리스 채널 시스템을 구축할 준비가 되셨나요?",
-      "ctaLink": "/nano-banana",
-      "conclusionTitle": "콘텐츠 제작의 미래는 시스템 주도형입니다",
-      "conclusionContent": "AI 페이스리스 채널은 시스템 주도형 콘텐츠 제작으로의 전환을 강조합니다. 구조화된 워크플로우와 적절한 도구를 결합함으로써, 제작자는 품질을 유지하면서 출력 규모를 확장할 수 있습니다. 이점은 일관성, 반복, 그리고 스마트한 자동화 사용에서 나오며, 완전한 손쉬운 운영은 아닙니다."
-    },
-    "f5TtsVsElevenlabs": {
-      "title": "F5-TTS vs. ElevenLabs: 2026년 어떤 음성 클로닝 도구가 더 나은가?",
-      "description": "AI 도구를 사용하여 일반적인 더빙 문제를 해결하는 포괄적인 가이드입니다. 로봇 같은 속도, 감정 부족, 립싱크 문제에 대한 실용적인 솔루션을 배워보세요.",
-      "hero": {
-        "title": "2026년 자연스럽게 비디오 더빙하는 방법: AI 음성 클로닝 아티팩트 수정하기",
-        "subtitle": "AI 도구를 사용하여 일반적인 더빙 문제를 해결하는 포괄적인 가이드입니다. 로봇 같은 속도, 감정 부족, 립싱크 문제와 같은 고통 지점에 집중하세요."
-      },
-      "protip": "고품질 소스 오디오로 시작하고 항상 원어민과 함께 더빙된 콘텐츠를 테스트하여 AI가 놓칠 수 있는 미세한 아티팩트를 잡아내세요.",
-      "tabs": {
-        "problems": "일반적인 문제",
-        "solutions": "실용적인 솔루션",
-        "tools": "추천 도구",
-        "workflow": "단계별 워크플로우",
-        "advanced": "고급 기술",
-        "automation": "자동화 전략",
-        "conclusion": "결론"
-      },
-      "introduction": {
-        "paragraph1": "AI 비디오 더빙은 콘텐츠 제작에 혁신을 가져왔지만 &lt;strong&gt;로봇 아티팩트&lt;/strong&gt;와 &lt;strong&gt;부자연스러운 속도&lt;/strong&gt;는 여전히 많은 제작물에 문제를 일으킵니다. 2026년에는 이러한 문제를 극복할 수 있는 더 나은 도구와 기술이 있습니다. 핵심 문제는 대부분의 더빙 파이프라인이 음성을 단순한 기술적 레이어로 취급하는 데 있습니다. 많은 시스템이 여전히 평면적인 프로소디, 일관되지 않은 강조 및 잘못된 타이밍의 정지를 생성하여 음성이 현실적으로 들리더라도 몰입감을 깨뜨립니다. 시청자는 타이밍 불일치에 매우 민감합니다. 감정적 비트, 미세한 정지 또는 문장 강조가 시각적 퍼포먼스와 일치하지 않을 때 결과는 미세하게 '어색하게' 느껴지며, 그 이유를 설명할 수 없더라도 그렇습니다. 현대적인 접근 방식은 &lt;strong&gt;프로소디 제어 및 시간 정렬&lt;/strong&gt;에 집중하여 이 문제를 해결합니다. 음성을 선형적으로 생성하는 대신, 최신 모델은 리듬 인식 합성을 통합하여 제작자가 구와 음절 수준에서 속도를 제어할 수 있도록 합니다. 이를 통해 립 동작을 일치시키고, 극적인 정지를 유지하며, 원래 배우의 의도를 여러 언어에서 유지할 수 있습니다. 강제 정렬, 음소 수준 타이밍 및 참조 오디오 조건화와 같은 기술이 이제 고품질 파이프라인에서 표준이 되고 있습니다. 또 다른 주요 개선 사항은 &lt;strong&gt;맥락 인식 음성 모델링&lt;/strong&gt;에서 비롯됩니다. 각 라인을 고립적으로 생성하는 대신, 고급 시스템은 대화 기억을 유지하여 장면 간의 톤, 감정 상태 및 화자 역학을 추적합니다. 이는 톤 드리프트를 줄이고 캐릭터가 속삭이든, 논쟁하든, 설명하든 일관되게 들리도록 보장합니다. 내러티브 중심 콘텐츠의 경우, 이러한 변화만으로도 인식된 현실감이 크게 향상됩니다. 마지막으로 &lt;strong&gt;인간-루프 워크플로우&lt;/strong&gt;의 부상은 자동화와 품질 간의 격차를 좁혔습니다. 제작자는 이제 AI 생성과 경량 편집 레이어를 결합하여 정지를 미세 조정하고, 강조를 조정하거나 전체 클립 대신 특정 세그먼트를 재생성합니다. 이 하이브리드 접근 방식은 효율성과 창의적 제어의 균형을 맞추어 제작 팀이 더빙을 확장하면서도 스튜디오 수준의 결과를 달성할 수 있도록 합니다. 이러한 발전은 AI 더빙을 편리한 도구에서 &lt;strong&gt;제작 품질 솔루션&lt;/strong&gt;으로 이동시켜, 속도나 확장성을 희생하지 않고 여러 언어에서 자연스럽고 감정적으로 공감되는 퍼포먼스를 제공할 수 있게 합니다.",
-        "paragraph2": "이 가이드는 MuseTalk, Emotion TTS 및 고급 후처리 기술과 같은 최첨단 AI 도구를 사용하여 &lt;strong&gt;일반적인 더빙 문제를 수정하는 방법&lt;/strong&gt;을 보여줍니다. 우리는 기본 음성 생성 이상의 것을 다루어 AI 더빙 워크플로우에서 가장 지속적인 실패 지점을 해결합니다. 립싱크 드리프트, 단조로운 전달, 타이밍 불일치 및 감정적 평탄함을 다룹니다. MuseTalk를 사용하여 생성된 음성이 입술 움직임 및 얼굴 표정과 밀접하게 일치하도록 정확한 시각-오디오 정렬을 보장하는 방법을 배웁니다. 오디오 측면에서는 Emotion TTS 시스템을 활용하여 생성된 음성에 &lt;strong&gt;제어된 표현력&lt;/strong&gt;을 주입하는 방법을 설명합니다. 일반적인 프리셋에 의존하는 대신, 이 가이드는 긴장감, 빈정거림 또는 단일 라인 내의 미세한 감정 변화와 같은 의도를 반영하기 위해 피치 윤곽, 속도 및 강조를 조정하는 방법을 안내합니다. 이를 통해 '기술적으로 올바른' 오디오에서 인간적이고 맥락적으로 기반이 있는 퍼포먼스로 이동할 수 있습니다. 우리는 또한 최종 출력 품질에 중요한 차이를 만드는 &lt;strong&gt;고급 후처리 워크플로우&lt;/strong&gt;를 다룹니다. 여기에는 음소 수준 타이밍 조정, 정지 잘라내기 및 연장, 호흡 및 정지 삽입, EQ 매칭 및 음량 정상화와 같은 오디오 마스터링 기술이 포함되어 있어 더빙된 음성을 원래 사운드트랙에 원활하게 혼합할 수 있습니다. 이러한 도구와 기술을 통합하여 일관된 파이프라인을 구축함으로써, 시행착오에 의존하지 않고 더빙 문제를 체계적으로 진단하고 수정할 수 있습니다. 이는 일관되지 않은 AI 출력을 다듬고 제작 준비가 완료된 대화로 전환하는 데 도움이 됩니다."
-      },
-      "problems": {
-        "title": "일반적인 AI 더빙 문제",
-        "issues": [
-          {
-            "icon": "🤖",
-            "title": "로봇 같은 속도",
-            "description": "AI 생성 음성은 종종 자연스러운 리듬과 타이밍이 부족하여 기계적이고 분리된 느낌을 줍니다.",
-            "impact": "시청자 이탈",
-            "impactDescription": "부자연스러운 속도가 몰입을 방해하고 시청자 유지율을 최대 40%까지 감소시킵니다."
-          },
-          {
-            "icon": "😐",
-            "title": "감정의 미세한 차이 부족",
-            "description": "AI 음성은 미묘한 감정을 전달하는 데 어려움을 겪어 극적인 장면이 생동감이 떨어집니다.",
-            "impact": "감정적 단절",
-            "impactDescription": "감정적 신호가 부족하여 시청자가 캐릭터와 이야기와 연결되지 못합니다."
-          },
-          {
-            "icon": "👄",
-            "title": "입 모양 동기 불일치",
-            "description": "오디오와 시각적 입 움직임 간의 불일치가 불쾌한 계곡 효과를 만듭니다.",
-            "impact": "비현실적인 외관",
-            "impactDescription": "눈에 보이는 입 모양 동기 오류는 자연스러운 말의 환상을 즉시 깨뜨립니다."
-          }
-        ]
-      },
-      "solutions": {
-        "title": "실용적인 솔루션",
-        "methods": [
-          {
-            "icon": "🎭",
-            "title": "감정 강화 TTS",
-            "description": "적절한 감정을 음성에 주입할 수 있는 감정 인식 텍스트-음성 변환 모델을 사용합니다.",
-            "benefit": "자연스러운 감정 전달",
-            "benefitDescription": "표준 TTS에 비해 85% 더 자연스러운 감정 표현을 달성합니다.",
-            "promptTitle": "감정 강화 프롬프트",
-            "promptDescription": "AI가 감정적으로 미세한 음성을 생성하도록 안내하는 이 프롬프트를 사용하세요:",
-            "prompt": "[감정: 걱정, 따뜻함, 긴급] 톤으로 음성을 생성하세요. 쉼표 후 0.3초 일시 정지하고, 주요 감정 단어를 강조하며, 자연스러운 리듬을 위해 피치를 ±20% 변동시킵니다."
-          },
-          {
-            "icon": "⚡",
-            "title": "리듬 수정",
-            "description": "자연스러운 인간의 말 패턴에 맞추기 위해 AI 기반 타이밍 조정을 적용합니다.",
-            "benefit": "인간 같은 타이밍",
-            "benefitDescription": "지능적인 속도 조정을 통해 로봇 같은 아티팩트를 70% 줄입니다.",
-            "promptTitle": "리듬 수정 프롬프트",
-            "promptDescription": "로봇 같은 속도를 수정하기 위해 이 프롬프트를 사용하세요:",
-            "prompt": "음성 리듬을 분석하고 자연스러운 일시 정지를 삽입하세요: 마침표 후 0.5초, 쉼표 후 0.2초, 유기적인 흐름을 위해 단어 간격을 ±10% 변동시킵니다."
-          }
-        ]
-      },
-      "tools": {
-        "title": "추천 도구",
-        "cta": "도구 사용해보기",
-        "recommendations": [
-          {
-            "icon": "🎙️",
-            "title": "MuseTalk",
-            "description": "감정을 보존하고 자연스러운 타이밍을 가진 고급 음성 클로닝.",
-            "useCase": "캐릭터 음성에 최적",
-            "useCaseDescription": "장기 콘텐츠에서 일관된 캐릭터 음성을 유지하는 데 완벽합니다.",
-            "link": "https://musetalk.ai"
-          },
-          {
-            "icon": "🎭",
-            "title": "Emotion TTS",
-            "description": "감정 조절과 자연스러운 운율을 갖춘 전문 텍스트 음성 변환.",
-            "useCase": "감정 콘텐츠",
-            "useCaseDescription": "미세한 감정 변화를 요구하는 극적인 콘텐츠에 이상적입니다.",
-            "link": "https://emotiontts.ai"
-          },
-          {
-            "icon": "🎬",
-            "title": "LipSync Pro",
-            "description": "프레임 수준의 정밀도로 AI 기반 립싱크 수정.",
-            "useCase": "완벽한 입 맞춤",
-            "useCaseDescription": "전문 비디오 제작을 위한 픽셀 완벽 립싱크를 달성합니다.",
-            "link": "https://lipsyncpro.ai"
-          }
-        ]
-      },
-      "workflow": {
-        "title": "단계별 워크플로우",
-        "steps": [
-          {
-            "title": "소스 오디오 준비",
-            "description": "대상 음성의 고품질, 깨끗한 오디오 녹음으로 시작합니다.",
-            "action": "오디오 품질 검사",
-            "actionDescription": "48kHz 샘플링 주파수, 최소한의 배경 소음 및 일관된 음성 성능을 보장합니다.",
-            "promptTitle": "오디오 준비 프롬프트",
-            "promptDescription": "음성 클로닝을 위한 오디오 준비에 이 프롬프트를 사용하세요:",
-            "prompt": "깨끗한 오디오: 배경 소음 제거, -6dB로 정규화, 일관된 음성 톤 보장, WAV 48kHz 24비트로 내보내기."
-          },
-          {
-            "title": "감정을 담은 음성 클로닝",
-            "description": "MuseTalk를 사용하여 감정 인식 음성 모델을 생성합니다.",
-            "action": "음성 모델 훈련",
-            "actionDescription": "감정 태그와 타이밍 참조 샘플로 모델을 훈련합니다.",
-            "promptTitle": "음성 클로닝 프롬프트",
-            "promptDescription": "음성 클로닝을 위해 이 프롬프트를 사용하세요:",
-            "prompt": "감정 보존으로 음성을 클론합니다: 음성 패턴 분석, 감정 마커 추출, 타이밍 프로파일 생성."
-          },
-          {
-            "title": "더빙 오디오 생성",
-            "description": "감정이 강화된 음성 모델을 사용하여 음성을 생성합니다.",
-            "action": "오디오 생성",
-            "actionDescription": "최고의 결과를 위해 다양한 감정 강도로 여러 번 녹음합니다.",
-            "promptTitle": "오디오 생성 프롬프트",
-            "promptDescription": "자연스러운 오디오 생성을 위해 이 프롬프트를 사용하세요:",
-            "prompt": "음성을 생성합니다: 감정 프로파일 [행복, 걱정, 흥분] 적용, 자연스러운 일시 정지 삽입, 말하기 속도 ±15% 변동."
-          }
-        ]
-      },
-      "advanced": {
-        "title": "고급 기술",
-        "techniques": [
-          {
-            "icon": "🧠",
-            "title": "신경 프로소디 전이",
-            "description": "참조 오디오에서 자연스러운 음성 패턴을 AI 생성 음성으로 전이합니다.",
-            "benefit": "진정한 음성 패턴",
-            "benefitDescription": "음성 리듬과 억양에서 95% 자연스러움을 달성합니다.",
-            "promptTitle": "프로소디 전이 프롬프트",
-            "promptDescription": "프로소디 전이를 위해 이 프롬프트를 사용하세요:",
-            "prompt": "프로소디 패턴 추출: 피치 윤곽, 타이밍 패턴, 강세 강조 분석, 대상 음성에 적용."
-          },
-          {
-            "icon": "🎯",
-            "title": "맥락 인식 감정",
-            "description": "장면 맥락을 이해하고 감정을 조정하는 AI.",
-            "benefit": "장면에 적합한 감정",
-            "benefitDescription": "감정 톤을 비디오 콘텐츠와 대화 맥락에 자동으로 맞춥니다.",
-            "promptTitle": "맥락 인식 프롬프트",
-            "promptDescription": "맥락 인식 감정을 위해 이 프롬프트를 사용하세요:",
-            "prompt": "장면 맥락 분석: 감정 톤, 캐릭터 관계, 극적인 순간 식별, 음성을 조정합니다."
-          }
-        ]
-      },
-      "automation": {
-        "title": "자동화 전략",
-        "strategies": [
-          {
-            "icon": "⚙️",
-            "title": "배치 처리 파이프라인",
-            "description": "일관된 품질로 여러 비디오 파일을 처리하는 자동화된 워크플로우입니다.",
-            "result": "확대된 일관된 품질",
-            "resultDescription": "일관된 음성 품질과 감정 전달로 100개 이상의 비디오를 처리합니다."
-          },
-          {
-            "icon": "🔄",
-            "title": "품질 관리 자동화",
-            "description": "AI 기반 품질 검사로 더빙 문제를 자동으로 감지하고 표시합니다.",
-            "result": "수동 검토 감소",
-            "resultDescription": "인간 검토 전에 90%의 더빙 문제를 잡아내어 QC 시간을 70% 절약합니다."
-          }
-        ]
-      },
-      "conclusion": {
-        "title": "AI로 비디오 더빙을 혁신하세요",
-        "description": "이러한 고급 기술과 도구를 결합함으로써, 자연스럽고 감정적으로 매력적인 더빙 콘텐츠를 제작하여 관객을 사로잡을 수 있습니다. AI 더빙의 미래가 여기에 있으며, 그 어느 때보다 인간적입니다."
-      },
-      "publishedDate": "2026년 4월 27일",
-      "readTime": "12분 읽기",
-      "category": "비디오 더빙",
-      "altText": "음성 클로닝 및 더빙을 위한 F5-TTS와 ElevenLabs 비교",
-      "ultimateShowdown": "궁극의 대결: F5-TTS vs ElevenLabs",
-      "ultimateShowdownIntro": "AI 음성 클로닝의 빠르게 진화하는 세계에서 2026년 두 개의 이름이 두드러집니다: 혁신적인 오픈 소스 솔루션 F5-TTS와 확립된 상업적 강자 ElevenLabs. 하지만 비디오 더빙 프로젝트를 위해 진정으로 주목할 가치가 있는 것은 무엇일까요?",
-      "whyVoiceCloningIntro": "음성 클로닝 기술은 콘텐츠 제작을 혁신하여 제작자가 다국어 콘텐츠를 제작하고, 언어 간 일관된 브랜딩을 유지하며, 제작 비용을 획기적으로 줄일 수 있게 합니다. 이 두 가지 선도적인 솔루션을 깊이 살펴보겠습니다.",
-      "quickComparisonTable": "빠른 비교 표",
-      "feature": "특징",
-      "f5Tts": "F5-TTS",
-      "elevenLabs": "ElevenLabs",
-      "costModel": "비용 모델",
-      "f5TtsCost": "무료 (오픈 소스)",
-      "elevenLabsCost": "$5-1,320/월",
-      "voiceQuality": "음성 품질",
-      "f5TtsQuality": "85-90% 자연스러움",
-      "elevenLabsQuality": "92-96% 자연스러움",
-      "emotionRendering": "감정 표현",
-      "f5TtsEmotion": "우수 (흐름 일치)",
-      "elevenLabsEmotion": "우수한 (v3 오디오 태그)",
-      "latency": "지연 시간",
-      "f5TtsLatency": "2-5초",
-      "elevenLabsLatency": "0.5-2초 (플래시)",
-      "setupComplexity": "설치 복잡성",
-      "f5TtsSetup": "높음 (기술적)",
-      "elevenLabsSetup": "낮음 (웹 인터페이스)",
-      "commercialRights": "상업적 권리",
-      "f5TtsRights": "전체 (MIT 라이선스)",
-      "elevenLabsRights": "유료 플랜 필요",
-      "f5TtsChampion": "F5-TTS: 오픈 소스 챔피언",
-      "technicalArchitecture": "기술 아키텍처",
-      "f5TtsDescription": "F5-TTS (유창하고 충실한 음성을 흐름 일치로 모방하는 Fairytaler)는 오픈 소스 음성 합성의 혁신을 나타냅니다. ConvNeXt V2 아키텍처를 갖춘 확산 변환기 기반으로 구축되어 상업적 가격 없이 인상적인 품질을 제공합니다.",
-      "keyStrengths": "주요 강점",
-      "zeroCostOperation": "제로 비용 운영:",
-      "zeroCostDesc": "MIT 라이선스로 완전히 무료, 예산에 민감한 제작자에게 완벽",
-      "flowMatchingTech": "흐름 일치 기술:",
-      "flowMatchingDesc": "고급 추론 시간 흐름 단계 샘플링으로 성능 향상",
-      "zeroShotCloning": "제로 샷 클로닝:",
-      "zeroShotDesc": "미세 조정 없이 짧은 참조 클립에서 음성을 복제",
-      "fullControl": "전체 제어:",
-      "fullControlDesc": "모델 가중치 및 사용자 정의 옵션에 대한 완전한 접근",
-      "noUsageLimits": "사용 제한 없음:",
-      "noUsageDesc": "크레딧이나 제한 없이 무제한 콘텐츠 생성",
-      "limitationsDubbing": "비디오 더빙의 한계",
-      "criticalConsiderations": "⚠️ 중요한 고려 사항",
-      "higherLatency": "더 높은 지연 시간:",
-      "higherLatencyDesc": "2-5초 생성 시간이 실시간 워크플로에 영향을 미침",
-      "technicalSetup": "기술 설정:",
-      "technicalSetupDesc": "Python 환경, GPU 및 기술 전문 지식 필요",
-      "limitedMultilingual": "제한된 다국어 지원:",
-      "limitedMultilingualDesc": "주로 영어에 최적화됨",
-      "artifactingIssues": "아티팩트 문제:",
-      "artifactingDesc": "긴 구문에서 가끔 발생하는 로봇 아티팩트",
-      "noDubbingFeatures": "내장 더빙 기능 없음:",
-      "noDubbingDesc": "별도의 번역 도구와 통합해야 함",
-      "bestUseCases": "최고의 사용 사례",
-      "f5TtsUseCases": "F5-TTS는 기술 창작자, 연구자 및 비용이 주요 제약인 프로젝트에 적합합니다. 프로토타입 제작, 교육 콘텐츠 및 인프라를 관리할 기술적 능력이 있는 창작자에게 이상적입니다.",
-      "elevenLabsPowerhouse": "ElevenLabs: 상업적 강자",
-      "technicalExcellence": "기술적 우수성",
-      "elevenLabsDescription": "ElevenLabs는 창작자 친화적인 TTS 도구에서 포괄적인 오디오 인프라 플랫폼으로 발전했습니다. 그들의 독점 모델(eleven_flash_v2_5, eleven_multilingual_v2, eleven_v3)은 음성 품질과 자연스러움의 산업 표준을 설정합니다.",
-      "superiorQuality": "우수한 음성 품질:",
-      "superiorQualityDesc": "최소한의 아티팩트로 92-96% 자연스러움 평가",
-      "advancedEmotion": "고급 감정 제어:",
-      "advancedEmotionDesc": "정확한 감정 표현을 위한 v3 오디오 태그",
-      "subSecondLatency": "서브 세컨드 지연:",
-      "subSecondDesc": "Flash 모델로 실시간 애플리케이션 가능",
-      "comprehensiveLanguage": "포괄적인 언어 지원:",
-      "comprehensiveLanguageDesc": "29개 이상의 언어와 지역 변형",
-      "integratedDubbing": "통합 더빙 파이프라인:",
-      "integratedDubbingDesc": "내장된 번역 및 음성 보존",
-      "professionalCloning": "전문 음성 클로닝:",
-      "professionalCloningDesc": "스튜디오 품질을 위한 PVC(전문 음성 클로닝)",
-      "pricingBreakdown": "비디오 제작자를 위한 가격 분석",
-      "costAnalysis": "💰 비용 분석 (2026)",
-      "starterPlan": "스타터 ($5/월):",
-      "starterDesc": "30,000 크레딧 (~30분 TTS) - 상업적 사용을 위한 진입점",
-      "creatorPlan": "창작자 ($22/월):",
-      "creatorDesc": "100,000 크레딧 (~100분) + 전문 음성 클로닝",
-      "proPlan": "프로 ($99/월):",
-      "proDesc": "500,000 크레딧 (~500분) + 44.1kHz 오디오 출력",
-      "scalePlan": "스케일 ($330/월):",
-      "scaleDesc": "2M 크레딧 (~2000분) + 저지연 실시간",
-      "creditNote": "참고: 1 크레딧 = 1 문자 (다국어 v2), 플래시 모델의 경우 0.5 크레딧",
-      "elevenLabsUseCases": "ElevenLabs는 품질과 사용 용이성이 비용 고려 사항보다 중요한 전문 콘텐츠 제작자, 에이전시 및 비즈니스에 적합합니다. 특히 대량 더빙 프로젝트 및 상업적 응용 프로그램에 유용합니다.",
-      "headToHead": "정면 대 정면 기술 비교",
-      "emotionQuality": "감정 렌더링 품질",
-      "elevenLabsWins": "ElevenLabs가 결정적으로 승리합니다",
-      "emotionControlDesc": "감정 제어에서. 그들의 v3 오디오 태그 시스템은 내러티브 맥락, 감정 톤 및 표현 패턴에 대한 정밀한 제어를 허용합니다. 행복, 슬픔, 분노 또는 미세한 뉘앙스를 간단한 마크업 태그로 지정할 수 있습니다.",
-      "f5TtsEmotionDesc": "F5-TTS는 감정 표현을 위해 흐름 일치를 사용하며, 이는 기본 감정에는 잘 작동하지만 극적인 콘텐츠나 미세한 표현을 위한 세밀한 제어가 부족합니다.",
-      "latencyPerformance": "지연 성능",
-      "elevenLabsFlash": "ElevenLabs 플래시 모델",
-      "flashDesc": "0.5-2초의 생성 시간을 제공하여 실시간 응용 프로그램 및 대화형 워크플로에 적합합니다. 이는 타이밍 동기화가 필수적인 비디오 더빙에 중요합니다.",
-      "f5TtsLatencyDesc": "F5-TTS는 일반적으로 생성당 2-5초가 필요하여 창의적인 워크플로를 방해하고 실시간 미리보기를 불가능하게 만들 수 있습니다.",
-      "audioArtifacting": "오디오 아티팩트",
-      "elevenLabsArtifacting": "ElevenLabs는 긴 구간에서도 최소한의 아티팩트를 보여주며, 부드러운 전환과 일관된 음성 특성을 유지합니다. 그들의 전문 음성 클로닝은 확장된 콘텐츠 전반에 걸쳐 품질을 유지합니다.",
-      "f5TtsArtifacting": "F5-TTS는 복잡한 문장이나 익숙하지 않은 음성 조합에서 특히 가끔 로봇 같은 아티팩트를 생성할 수 있습니다. 이는 긴 더빙 프로젝트에서 더 눈에 띄게 됩니다.",
-      "multilingualCapabilities": "다국어 기능",
-      "elevenLabsDominates": "ElevenLabs가 지배합니다",
-      "multilingualDesc": "29개 이상의 언어, 지역 변형 및 코드 스위칭 기능을 갖춘 국제 콘텐츠를 위해. 그들의 더빙 파이프라인은 언어 간 음성 특성을 유지합니다.",
-      "f5TtsMultilingualDesc": "F5-TTS는 제한된 다국어 지원을 제공하며, 주로 영어에 최적화되어 있고 다른 언어에 대한 실험적 지원이 있습니다. 국제 더빙 프로젝트에는 적합하지 않습니다.",
-      "bottomLine": "결론: 어떤 것을 선택해야 할까요?",
-      "chooseF5Tts": "🎯 F5-TTS를 선택하세요:",
-      "f5TtsReason1": "예산이 주요 제약입니다",
-      "f5TtsReason2": "기술 전문 지식과 인프라가 있습니다",
-      "f5TtsReason3": "주로 영어로 작업하고 있습니다",
-      "f5TtsReason4": "크레딧 없이 무제한 생성을 원합니다",
-      "f5TtsReason5": "모델을 사용자 정의하고 수정하고 싶습니다",
-      "f5TtsReason6": "독점 솔루션을 구축하고 있습니다",
-      "chooseElevenLabs": "🚀 ElevenLabs를 선택하세요:",
-      "elevenLabsReason1": "품질과 자연스러움이 최우선입니다",
-      "elevenLabsReason2": "다국어 더빙 기능이 필요합니다",
-      "elevenLabsReason3": "실시간 또는 저지연 생성이 필요합니다",
-      "elevenLabsReason4": "전문적인 감정 조절을 원합니다",
-      "elevenLabsReason5": "관리되는 번거로움 없는 솔루션을 선호합니다",
-      "elevenLabsReason6": "빠듯한 기한이 있는 상업 프로젝트",
-      "hybridApproach": "하이브리드 접근법: 두 세계의 장점",
-      "hybridApproachDesc": "다양한 요구를 가진 전문 스튜디오를 위해, 프로토타입 및 테스트에는 F5-TTS를, 최종 제작 및 상업 프로젝트에는 ElevenLabs를 사용하는 것을 고려하세요. 이 접근법은 품질 기준을 유지하면서 비용 효율성을 극대화합니다.",
-      "decisionFactors": "귀하의 선택은 궁극적으로 특정 사용 사례, 예산 제약, 기술 전문성 및 품질 요구 사항에 따라 달라집니다. 두 도구 모두 음성 클로닝 기술의 최첨단을 대표하며, 각각 다른 시나리오에서 뛰어납니다.",
-      "f5TtsSetupTitle": "F5-TTS 시작하기",
-      "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
-      "f5TtsRequirements": "Python 3.8+, 8GB+ VRAM을 가진 GPU 권장",
-      "f5TtsInstallation": "pip install f5-tts",
-      "f5TtsInterface": "명령줄 및 Python API 인터페이스",
-      "elevenLabsSetupTitle": "ElevenLabs 시작하기",
-      "elevenLabsWebsite": "https://elevenlabs.io",
-      "elevenLabsFreeTier": "무료 요금제 제공 (10,000자/월)",
-      "elevenLabsWebApi": "웹 인터페이스 및 REST API 접근",
-      "elevenLabsProfessionalPlan": "전문 요금제는 월 $5부터 시작합니다",
-      "finalRecommendation": "최종 추천",
-      "f5TtsFinalNote": "F5-TTS와 ElevenLabs는 현대 음성 클로닝 기술의 정점을 나타냅니다. 귀하의 선택은 특정 요구, 기술 능력 및 예산 고려 사항에 맞춰야 합니다. 음성 기술의 민주화는 창작자들이 이제 전문급 도구에 전례 없는 접근을 할 수 있게 합니다.",
-      "comparisonNote": "이 비교는 2026년 4월 기준 음성 클로닝 기술의 상태를 반영합니다. AI의 빠른 발전은 향후 몇 달 동안 경관을 크게 변화시킬 수 있습니다.",
-      "metaDescription": "2026년 F5-TTS와 ElevenLabs 비교 — 정확성, 자연스러움, 지연 시간, 비용. 나란히 비교한 벤치마크와 선택: 어떤 것을 프로덕션 오디오에 선택할지.",
-      "seoKeywords": [
-        "F5-TTS vs ElevenLabs",
-        "음성 클로닝 비교",
-        "AI 음성 도구 2026",
-        "TTS 벤치마크"
       ]
     },
     "keyInsight": {
@@ -5064,55 +3921,6 @@
         "AI 비디오 파이프라인",
         "확산 워크플로우",
         "모션 그래픽 AI"
-      ]
-    },
-    "video_translation_eval": {
-      "title": "AI 비디오 번역 품질 평가",
-      "subtitle": "중요한 메트릭",
-      "description": "전사에서 음성 합성에 이르기까지 AI 비디오 번역 품질을 평가하기 위한 필수 메트릭을 발견하세요.",
-      "intro": "언어 간 비디오 번역은 작은 일이 아닙니다 — 전사, 번역, 음성 합성, 타이밍 등이 포함됩니다. Curify에서는 각 요소가 업계 표준을 충족하도록 보장하는 강력한 평가 파이프라인을 구축했습니다.",
-      "section1_title": "1. 전사 품질",
-      "section1_engine": "엔진: WhisperX",
-      "section1_metrics": [
-        "WER (단어 오류율)",
-        "구두점 F1 (표현력 및 가독성)"
-      ],
-      "section2_title": "2. 번역 품질",
-      "section2_engine": "엔진: Helsinki, MarianMT",
-      "section2_metrics": [
-        "BLEU (표준 메트릭)",
-        "COMET / chrF++ (의미적 유사성)",
-        "인간 리뷰: 유창성 + 적합성"
-      ],
-      "section3_title": "3. 음성 합성 품질",
-      "section3_engine": "엔진: XTTS / YourTTS",
-      "section3_metrics": [
-        "MOS (자연스러움, 유사성, 표현력)",
-        "화자 검증 정확도"
-      ],
-      "section4_title": "4. 정렬 및 립 싱크",
-      "section4_metrics": [
-        "세그먼트 지속 시간 불일치",
-        "Wav2Lip 싱크 신뢰도",
-        "시간적 드리프트 분석"
-      ],
-      "section5_title": "5. 의미 보존",
-      "section5_method": "우리는 LLM(예: GPT-4)을 사용하여 번역된 음성이 원래의 의미, 톤 및 감정을 유지하는지 판단합니다. 예시 프롬프트:",
-      "section5_prompt": "이 만다린 전사를 영어 음성 해설과 비교하세요. 톤, 의도 및 내용이 일치합니까? 1-5로 평가하고 설명하세요.",
-      "section6_title": "6. 사용자 피드백 및 GTM 검증",
-      "section6_metrics": [
-        "제품 카테고리에 적합한 음성 품질",
-        "시청자 유지 개선",
-        "초기 사용자(예: 1688 판매자)의 채택 의사"
-      ],
-      "closing": "Curify에서는 단순히 번역하는 것이 아니라, 언어 간의 스토리텔링, 감정 및 명확성을 보존합니다. 글로벌하게 목소리를 확장할 준비가 되었다면, 연락주세요.",
-      "available_locales": "게시물 사용 가능 언어: [EN] [ZH] [ES] [DE]",
-      "metaDescription": "비디오 번역은 단순한 번역 이상의 것입니다 — 필기, 음성, 타이밍 및 감정이 포함됩니다. Curify에서 AI 비디오 번역 품질을 평가하는 방법입니다.",
-      "seoKeywords": [
-        "비디오 번역 평가",
-        "AI 더빙 품질",
-        "번역 벤치마킹",
-        "비디오 QA"
       ]
     },
     "qaBotToTaskAgent": {
@@ -5439,138 +4247,6 @@
       "conclusionTitle": "결론",
       "conclusionPara1": "AI 비디오 더빙은 콘텐츠 현지화를 시간 소모적이고 비용이 많이 드는 과정에서 접근 가능하고 효율적인 워크플로우로 변화시켰습니다. 당신이 개인 제작자이든 글로벌 기업이든, 이러한 도구는 원래 콘텐츠의 품질과 감정적 영향을 유지하면서 전 세계 청중에게 도달할 수 있게 해줍니다.",
       "conclusionPara2": "기술이 계속 발전함에 따라 더욱 자연스러운 음성 합성, 더 나은 문화적 적응, 콘텐츠 제작 워크플로우와의 매끄러운 통합을 보게 될 것입니다. 글로벌 커뮤니케이션의 미래가 여기에 있으며, 모든 언어로 소통합니다."
-    },
-    "gridCollageAiPrompts": {
-      "title": "3x3 그리드 사진 콜라주 AI 프롬프트: 숲, 해변 & 도시 편집 룩",
-      "publishedDate": "2026년 5월 10일",
-      "readTime": "8분 읽기",
-      "category": "나노 템플릿",
-      "metaDescription": "AI 이미지 생성기를 위한 3x3 그리드 콜라주 프롬프트 복사-붙여넣기 — 겨울 숲, 여름 해변, 도시 편집, 카페 미학 등.",
-      "keywords": "3x3 그리드 콜라주, 사진 그리드 프롬프트, ai 사진 콜라주, 인스타그램 미학 프롬프트, 핀터레스트 미학 ai",
-      "audience": "핀터레스트 제작자, 인스타그램 미학 계정, 패션 블로거, 라이프스타일 콘텐츠 제작자.",
-      "heroTitle": "히어로 이미지",
-      "heroContent": "완성된 3x3 + 1단락 TL;DR. 모든 아홉 패널에서 완벽한 일관성을 유지하는 놀라운 3x3 그리드 콜라주를 AI로 만드세요.",
-      "whatIsTitle": "3x3 그리드 콜라주 프롬프트의 모습",
-      "whatIsContent": "구성: 주제 + 설정 + 계절 + 9개의 마이크로 포즈 + 조명 일관성 노트. 각 프롬프트는 전체 테마를 정의하면서 모든 패널 간의 시각적 조화를 보장합니다.",
-      "winterForestTitle": "겨울 숲 편집",
-      "winterForestDescription": "GSC 롱테일과 직접 일치합니다. 부드러운 파란 조명과 마법 같은 분위기의 신비로운 눈 덮인 소나무 숲.",
-      "winterForestPrompt": "겨울 숲 장면의 3x3 그리드. 패널 1: 넓은 숲 입구. 패널 2: 서리 낀 가지. 패널 3: 눈길. 패널 4: 얼어붙은 시내. 패널 5: 나무 사이로 비치는 햇빛. 패널 6: 동물 발자국. 패널 7: 서리 낀 솔방울. 패널 8: 안개가 피어오름. 패널 9: 나무 사이로 보이는 산 전망. 부드러운 파란색과 흰색 팔레트, 마법 같은 조명, 자연 사진 스타일.",
-      "summerBeachTitle": "여름 해변 황금 시간",
-      "summerBeachDescription": "황금 시간 조명과 편안한 휴가 분위기의 따뜻한 열대 해변 장면.",
-      "summerBeachPrompt": "여름 해변 장면의 3x3 그리드. 패널 1: 야자수 실루엣. 패널 2: 바다 파도. 패널 3: 해변 의자. 패널 4: 모래 속 조개. 패널 5: 열대 음료. 패널 6: 물로 가는 발자국. 패널 7: 해변 타올. 패널 8: 바다 수평선. 패널 9: 해변 배구. 따뜻한 오렌지색과 분홍색 팔레트, 황금 시간 조명.",
-      "autumnCafeTitle": "가을 도시 카페",
-      "autumnCafeDescription": "가을 색상과 따뜻하고 초대하는 분위기의 아늑한 도시 카페 장면.",
-      "autumnCafePrompt": "가을 카페 장면의 3x3 그리드. 패널 1: 커피 컵 김. 패널 2: 창문에 떨어지는 빗방울. 패널 3: 따뜻한 조명. 패널 4: 바깥의 가을 잎. 패널 5: 아늑한 내부. 패널 6: 커피를 만드는 바리스타. 패널 7: 테이블 위의 책. 패널 8: 거리 전망. 패널 9: 저녁 분위기. 따뜻한 갈색과 오렌지색 팔레트, 부드러운 조명.",
-      "springGardenTitle": "봄 정원 코티지코어",
-      "springGardenDescription": "신선한 봄 꽃과 자연적인 목가적 요소가 있는 로맨틱한 코티지코어 정원 장면.",
-      "springGardenPrompt": "봄 정원 장면의 3x3 그리드. 패널 1: 벚꽃. 패널 2: 봄비. 패널 3: 새싹. 패널 4: 꽃 위의 나비. 패널 5: 정원 길. 패널 6: 정원 도구. 패널 7: 비 오는 부츠. 패널 8: 새 둥지. 패널 9: 정원 소풍. 부드러운 파스텔 팔레트, 신선하고 공기 같은.",
-      "neonUrbanTitle": "네온 느와르 도시",
-      "neonUrbanDescription": "네온 조명, 그림자, 도시의 신비로운 분위기가 있는 극적인 도시 야경 장면.",
-      "neonUrbanPrompt": "네온 도시 장면의 3x3 그리드. 패널 1: 네온 사인 반사. 패널 2: 옥상에서 보는 도시 불빛. 패널 3: 교통 신호등의 흔적. 패널 4: 레스토랑 창. 패널 5: 거리 공연자. 패널 6: 상점 진열대. 패널 7: 비 오는 택시 불빛. 패널 8: 다리 조명. 패널 9: 바 입구. 깊은 파란색과 네온 색상.",
-      "minimalistStudioTitle": "미니멀리스트 스튜디오 (흰색 배경)",
-      "minimalistStudioDescription": "흰색 배경과 주제의 단순성에 초점을 맞춘 깨끗하고 미니멀한 스튜디오 샷.",
-      "minimalistStudioPrompt": "미니멀리스트 스튜디오 장면의 3x3 그리드. 패널 1: 단일 객체. 패널 2: 깨끗한 선. 패널 3: 음수 공간. 패널 4: 단순한 그림자. 패널 5: 순수한 흰색 배경. 패널 6: 미니멀한 구성. 패널 7: 미세한 질감. 패널 8: 기하학적 형태. 패널 9: 깨끗한 조명. 단색 흰색과 회색.",
-      "templateTitle": "재사용 가능한 프롬프트 템플릿",
-      "templateContent": "교환 가능한 필드를 주석 처리합니다; 스크린샷과 함께 템플릿-3x3-그리드-사진-콜라주 템플릿 페이지 링크를 삽입합니다. 템플릿 구조: [테마] + [설정] + [계절] + [9 패널 설명] + [조명] + [스타일].",
-      "consistencyTipsTitle": "9개 패널 간의 얼굴/의상 일관성을 유지하기 위한 팁",
-      "consistencyTips": [
-        "모든 패널에 대해 동일한 AI 모델과 설정을 사용하세요.",
-        "프롬프트에서 일관된 조명 설명을 유지하세요.",
-        "시각적 조화를 위해 정확한 색상 팔레트를 지정하세요.",
-        "캐릭터 일관성을 위해 preserve-facial-features-ai-generation 링크를 연결하세요.",
-        "카메라 각도와 거리를 일관되게 유지하세요."
-      ],
-      "moreDirectionsTitle": "시도해볼 더 많은 미적 방향",
-      "moreDirections": [
-        "사막의 일몰 + 보헤미안 스타일",
-        "도시 스트리트웨어 + 그래피티 배경",
-        "빈티지 도서관 + 학문적 미학",
-        "열대 낙원 + 리조트 웨어",
-        "산업적 로프트 + 미니멀리스트 디자인",
-        "산장 + 아늑한 겨울 의류",
-        "해변 집 + 해안 할머니 스타일",
-        "도시 옥상 + 저녁의 화려함",
-        "숲의 공터 + 요정코어 미학",
-        "현대 사무실 + 전문적인 복장",
-        "미술관 + 세련된 저녁 복장",
-        "시골 정원 + 로맨틱한 피크닉 스타일"
-      ],
-      "faqTitle": "자주 묻는 질문",
-      "faq": [
-        {
-          "question": "왜 3x3인가요?",
-          "answer": "3x3 그리드는 인스타그램의 정사각형 형식에 적합하며 모바일 장치에서 잘 작동하는 균형 잡힌 시각적 구성을 만듭니다."
-        },
-        {
-          "question": "2x2를 사용할 수 있나요?",
-          "answer": "네, 하지만 3x3은 더 많은 스토리텔링 기회를 제공하고 시각적 플랫폼에서 더 나은 참여를 유도합니다."
-        },
-        {
-          "question": "왜 같은 사람이 다르게 보이나요?",
-          "answer": "AI 변형은 자연스럽게 발생합니다. 일관된 프롬프트와 시드 값을 사용하면 더 나은 일관성을 얻을 수 있습니다."
-        },
-        {
-          "question": "개별 프레임으로 내보낼 수 있나요?",
-          "answer": "네, 대부분의 플랫폼은 소셜 미디어 게시물에서 개별 패널 내보내기를 허용합니다."
-        }
-      ],
-      "ctaTitle": "템플릿 열기",
-      "ctaDescription": "사용자 정의 가능한 테마와 스타일이 포함된 3x3 그리드 템플릿을 사용해보세요.",
-      "ctaButton": "그리드 템플릿 탐색",
-      "winterForestGridTitle": "🌲 겨울 숲 그리드 프롬프트",
-      "minimalistWinterTitle": "❄️ 미니멀리스트 겨울 그리드",
-      "tropicalBeachTitle": "🏖️ 열대 해변 그리드",
-      "nauticalBeachTitle": "🌊 해양 해변 그리드",
-      "streetFashionTitle": "🏙️ 스트리트 패션 그리드",
-      "nightCityTitle": "🌃 밤 도시 그리드",
-      "cohesiveColorPalettesTitle": "일관된 색상 팔레트 사용",
-      "cohesiveColorPalettesContent": "프롬프트에서 색상 조합을 명확하게 정의하세요. 특정 색상이나 분위기를 언급하여 아홉 개의 이미지가 조화롭게 작동하도록 하세요.",
-      "planCompositionTitle": "구성 계획하기",
-      "planCompositionContent": "아홉 개의 패널이 어떻게 흐를지를 생각해 보세요. 최대의 효과를 위해 그리드 전반에 걸쳐 연결되는 시각적 경로나 주제를 만드는 것을 고려하세요.",
-      "testIndividualPanelsTitle": "개별 패널 테스트하기",
-      "testIndividualPanelsContent": "전체 그리드에 적용하기 전에 프롬프트 구조를 테스트하기 위해 먼저 개별 패널을 생성하세요. 이는 시간을 절약하고 접근 방식을 다듬는 데 도움이 됩니다.",
-      "platformTableHeader": "플랫폼",
-      "gridSupportHeader": "그리드 지원",
-      "bestForHeader": "최고의 사용처",
-      "midjourneyName": "Midjourney",
-      "midjourneySupport": "⚠️ 제한적",
-      "midjourneyBest": "예술적 그리드",
-      "dalleName": "DALL-E 3",
-      "dalleSupport": "✅ 우수함",
-      "dalleBest": "정확한 레이아웃",
-      "stableDiffusionName": "Stable Diffusion",
-      "stableDiffusionSupport": "✅ 좋음",
-      "stableDiffusionBest": "맞춤형 워크플로우",
-      "conclusionTitle": "3x3 그리드 콜라주 만들기 시작하기",
-      "conclusionContent1": "3x3 그리드 콜라주는 시각적 스토리텔링을 위한 무한한 창의적 가능성을 제공합니다. Instagram을 위한 일관된 미학을 구축하든 디지털 아트를 위한 예술적 구성을 만들든, 이러한 프롬프트는 멋진 결과를 위한 기초를 제공합니다.",
-      "conclusionContent2": "성공의 열쇠는 일관성에 있습니다—모든 아홉 패널에서 동일한 조명, 색상 팔레트 및 시각적 스타일을 유지하면 주목을 끄는 전문적이고 세련된 모습을 만들어냅니다.",
-      "conclusionContent3": "다양한 주제와 접근 방식을 실험하여 창의적 비전에 가장 적합한 것을 발견하세요. 여기에서 공유된 템플릿과 기술은 여러분의 독특한 예술적 여정을 위한 출발점에 불과합니다.",
-      "conclusionContent4": "만들기를 시작할 준비가 되셨나요? 우리의 그리드 템플릿을 둘러보고 오늘 AI 기반 콜라주 모험을 시작하세요.",
-      "whyAiTitle": "왜 3x3 그리드 콜라주에 AI를 사용해야 할까요?",
-      "consistencyTitle": "완벽한 시각적 일관성",
-      "consistencyContent": "AI는 모든 패널이 동일한 조명, 색상 팔레트 및 스타일을 유지하도록 보장하여 일관되고 의도적인 전문적인 그리드를 만듭니다.",
-      "timeEfficiencyTitle": "신속한 생성 과정",
-      "timeEfficiencyContent": "수작업 사진 편집 및 구성 작업 대신 몇 분 만에 완전한 3x3 그리드를 생성하세요.",
-      "creativeFreedomTitle": "끝없는 창의적 가능성",
-      "creativeFreedomContent": "전통적인 사진으로는 만들기 어렵거나 불가능한 주제, 스타일 및 개념을 탐색하세요.",
-      "costEffectiveTitle": "예산 친화적인 솔루션",
-      "costEffectiveContent": "비싼 사진 촬영, 모델 또는 장소가 필요 없습니다. AI가 비용의 일부로 멋진 비주얼을 생성합니다.",
-      "seasonalTitle": "계절 및 주제 변형",
-      "seasonalDescription": "그리드 콜라주를 다양한 계절과 주제에 맞게 조정하여 연중 내내 신선하고 관련성 있는 콘텐츠를 유지하세요.",
-      "platformTitle": "플랫폼별 최적화",
-      "instagramTitle": "인스타그램 최적화",
-      "instagramContent": "3x3 그리드는 인스타그램의 정사각형 형식과 캐러셀 게시물에 완벽하게 맞아 플랫폼에서 참여도와 시각적 영향을 극대화합니다.",
-      "pinterestTitle": "핀터레스트 전략",
-      "pinterestContent": "수직 그리드 배열은 핀터레스트의 긴 형식에 매우 잘 작동하여 클릭률과 저장률을 높입니다.",
-      "websiteTitle": "웹사이트 통합",
-      "websiteContent": "그리드 콜라주를 히어로 이미지, 갤러리 섹션 또는 블로그 헤더로 사용하여 시각적으로 인상적인 웹 콘텐츠를 만드세요.",
-      "advancedTitle": "고급 기술",
-      "narrativeTitle": "시각적 내러티브 만들기",
-      "narrativeContent": "패널을 배열하여 그리드 전반에 걸쳐 이야기를 전달하고, 각 패널이 이전 패널을 기반으로 하여 일관된 내러티브 아크를 만듭니다.",
-      "colorProgressionTitle": "색상 진행 기술",
-      "colorProgressionContent": "패널 전반에 걸쳐 점진적인 색상 변화를 실험하세요. 차가운 색조에서 따뜻한 색조, 또는 밝은 색조에서 어두운 색조로 동적인 시각 효과를 만듭니다.",
-      "thematicTitle": "주제 연결",
-      "thematicContent": "그리드 전반에 걸쳐 반복되는 미세한 주제나 모티프를 통해 패널을 연결하여 시각적 의미의 깊은 층을 만듭니다."
     },
     "redCarpetAiLooks": {
       "title": "Nano Banana AI로 아이코닉한 레드 카펫 스타일 재현하기",
@@ -5913,6 +4589,317 @@
       "whyNanoBananaTitle": "Curify의 Nano Banana 템플릿은 무엇인가요?",
       "whyNanoBananaContent": "**Nano Banana 자체는 Gemini의 이미지 생성 모델에 대한 Google의 코드명입니다.** Curify는 해당 모델 위에 있는 템플릿 레이어입니다. 각 템플릿은 테스트된 프롬프트 구조를 인코딩합니다 — 구성 규칙, 스타일 토큰, 조명 언어, 종횡비 — 따라서 콘텐츠에 특정한 세부 사항만 제공하면 됩니다:\n\n1. **템플릿 탐색** — 주제별로 정리됨 (라이프스타일, 피트니스, 음식, 학습, 디자인, 어휘 등)\n2. **템플릿 선택** — 각 템플릿은 특정 시각적 스타일과 사용 사례를 위해 설계됨\n3. **매개변수 입력** — 해당 템플릿에 특정한 짧은 텍스트 입력 또는 드롭다운\n4. **생성** — Curify가 입력을 기본 프롬프트에 채우고 Nano Banana를 호출하여 이미지를 생성\n\n**템플릿이 실제로 어떻게 보이는지:**\n- MBTI 캐릭터 일러스트 템플릿은 다음을 요청합니다: 성격 유형, 캐릭터 특성, 배경 설정\n- 레시피 카드 템플릿은 다음을 요청합니다: 요리 이름, 주요 재료, 요리 스타일\n- 어휘 포스터 템플릿은 다음을 요청합니다: 단어 카테고리, 언어 수준, 시각적 테마\n\n**템플릿이 빈 프롬프트보다 나은 이유(반복 작업을 위해):**\n템플릿은 테스트된 프롬프트 구조를 인코딩합니다. 구성, 스타일 토큰 및 부정적인 프롬프트는 이미 조정되어 있습니다 — 콘텐츠에 특정한 세부 사항만 제공하면 됩니다. 깊은 프롬프트 엔지니어링 지식 없이도 전문적인 결과를 얻을 수 있습니다.\n\n**사용 가능한 카테고리:**\n- 라이프스타일, 피트니스, 웰니스\n- 음식, 레시피, 요리\n- 교육, 어휘, 언어 학습\n- 디자인, 일러스트레이션, 포스터\n- 캐릭터 아트, MBTI, 성격\n- 수채화, 잉크, 단색 스타일\n\n각 템플릿 페이지의 영감 갤러리는 다른 사용자가 생성한 실제 예시를 보여줍니다 — 크레딧을 사용하기 전에 템플릿이 실제로 무엇을 생성하는지 이해하는 가장 빠른 방법입니다.",
       "templatesTitle": "예시 매개변수 세트"
+    },
+    "aiReshapingDataWorkflow": {
+      "title": "AI가 데이터 워크플로를 재편하고 있습니다: 어시스턴트에서 에이전트로",
+      "date": "2026년 5월 18일",
+      "readTime": "8분 읽기",
+      "intro": "데이터 워크플로는 10년 동안 놀라울 정도로 안정적이었습니다. 데이터 과학자, 분석가 또는 추천 엔지니어이든, 파이프라인은 대략적으로 동일하게 유지되었습니다: 수집 → 저장 → 분석 → 적용. AI는 이 워크플로를 가속화할 뿐만 아니라 각 레이어를 재편하기 시작하고 있습니다. 이제 진짜 질문은 AI가 데이터 작업을 변화시킬 것인가가 아니라, 어떤 부분이 명확하게 변화하고 있으며, 어떤 가정이 잘못될 것인가입니다.",
+      "whatIsTitle": "데이터 워크플로의 네 가지 레이어",
+      "whatIsContent": "다양한 도구, 다양한 산업 — 그러나 근본적으로 동일한 네 단계 구조: 데이터 생성 또는 수집, 저장, 분석, 통찰력 적용. 이 파이프라인은 지난 10년 동안 검색, 광고 및 추천 시스템을 상대적으로 변화 없이 지원해왔습니다. 변화한 것은 각 레이어가 대규모 모델과 에이전트에 의해 재편되고 있는 깊이입니다. 아래 섹션에서는 각 레이어를 살펴보고 합의(명확하게 변화하는 것)와 비합의(여전히 논의 중인 것)를 구분합니다.",
+      "howTitle": "각 레이어가 변화하는 방법",
+      "step1Title": "1. 데이터 수집 — 합성 데이터가 1급 소스가 되다",
+      "step1Content": "전통적으로 유용한 데이터는 실제 세계에서 나왔습니다: 로그, 거래, 센서, 설문조사. 그 가정은 깨지기 시작하고 있습니다. 이제 점점 더 많은 데이터가 수집되는 것이 아니라 생성되고 있습니다 — 페르소나 시뮬레이션, 행동 모델링, 합성 인터뷰, A/B 테스트 데이터 생성 및 강화 학습 훈련과 평가에 사용되는 시뮬레이션 환경을 통해.\n\n**합의:** 합성 데이터는 실제 데이터, 특히 콜드 스타트 문제, 드문 시나리오 및 개인 정보 보호가 제한된 환경에서 점점 더 보완될 것입니다.\n\n**비합의:** 모델이 점점 더 다른 모델이 생성한 데이터로 훈련될 때 어떤 일이 발생할까요? 합성 분포가 현실에서 점차 멀어지고 피드백 루프를 형성할까요?\n\n데이터 수집은 *수집*에서 *생성 + 보정*으로 이동하고 있습니다.",
+      "step2Title": "2. 데이터 저장 — 테이블에서 벡터 인프라로",
+      "step2Content": "전통적인 데이터 시스템은 구조화된 저장소를 중심으로 구축되었습니다: 관계형 데이터베이스, 데이터 웨어하우스 및 열 저장소. AI는 새로운 레이어를 도입합니다 — **벡터 표현**. 텍스트, 이미지, 비디오, 사용자 행동 궤적 및 지식 조각은 점점 더 임베딩으로 저장되어 의미 검색, 검색 보강 생성 및 다중 모드 추론을 지원합니다. FAISS, Milvus 및 Pinecone과 같은 벡터 데이터베이스는 핵심 인프라가 되고 있습니다.\n\n**합의:** 임베딩 기반 검색은 이제 표준 디자인 패턴입니다. RAG는 LLM을 독점 데이터에 접지하기 위한 기본 아키텍처입니다.\n\n**비합의:** 벡터가 결국 전통적인 저장소 레이어를 대체할까요? 아니면 원시 데이터 위에 인덱싱 레이어로 남을까요? 임베딩에서 원래 데이터를 충분히 재구성할 수 있어 벡터가 기본 저장소가 될 수 있을까요?\n\n현재로서는 임베딩이 저장소로서의 기능보다는 **지능형 접근 레이어**로서의 기능을 하고 있습니다. 그러나 그 레이어는 이미 데이터 접근 방식을 재편했습니다.",
+      "step3Title": "3. 데이터 분석 — SQL에서 대화형 탐색으로",
+      "step3Content": "분석 레이어는 가장 빠르게 변화하고 있습니다. 전통적인 워크플로는 다음과 같았습니다:\n\n문제 정의 → SQL → 기능 엔지니어링 → 모델링 → 해석\n\n오늘날 AI 시스템은 거의 모든 단계에서 도움을 줄 수 있습니다: LLM은 SQL을 자동 생성하고, 가설을 제안하며, 시각화를 구축하고, 기준 모델을 구성하고, 결과를 설명합니다. 분석가의 역할은 *쿼리 작성자*에서 *문제 정의자 및 검증자*로 이동합니다.\n\n**합의:** 모든 데이터 전문가는 곧 AI 어시스턴트와 함께 작업할 것입니다. 코파일럿과 채팅 기반 분석이 기본 요소가 되고 있습니다.\n\n**비합의:** 에이전트가 결국 전체 분석을 끝까지 수행할까요? 고객 지원에서는 에이전트가 이미 80%의 티켓을 처리할 수 있습니다. 데이터 분석은 더 어렵습니다 — 질문 자체가 종종 모호하고 목표가 조사 중에 변경됩니다. 자동화는 실행을 가속화하겠지만, 인간은 여전히 **문제를 정의하는 책임**을 질 가능성이 높습니다.",
+      "step4Title": "4. 데이터 적용 — 보고서에서 자율 시스템으로",
+      "step4Content": "마지막 단계 — 통찰력 적용 — 는 두 가지 측면에서 진화하고 있습니다.\n\n**보고서.** AI는 이미 보고서를 변형합니다: 자동 요약, 차트, 대시보드 및 텍스트, 이미지 및 비디오 전반에 걸친 프레젠테이션. 더 깊은 변화는 보고서가 더 이상 주기적으로 생성될 필요가 없다는 것입니다. 보고서는 지속적으로 생성되고 필요에 따라 생성될 수 있습니다. 진정한 생산성 향상은 \"더 빠르게 쓰는 것\"이 아니라 \"질문이 제기될 때 존재하는 보고서\"입니다.\n\n**자율 시스템.** 추천, 검색, 광고 및 자율 주행은 수작업으로 설계된 모듈식 파이프라인에서 모델 자체가 의사 결정 정책이 되는 엔드 투 엔드 모델로 이동하고 있습니다. 변화는 *기능 소비자*에서 *전략 생성자*로 이동하고 있습니다.",
+      "challengesTitle": "어시스턴트 대 에이전트 — 합의와 비합의",
+      "challengesContent": "하나의 새로운 합의: **어시스턴트와 에이전트는 장기적으로 공존할 것입니다.** 그러나 균형은 도메인에 따라 크게 다릅니다.\n\n| 도메인 | 어시스턴트 비율 | 에이전트 비율 |\n| --- | --- | --- |\n| 고객 지원 | 20% | 80% |\n| 데이터 분석 | 70% | 30% (불확실) |\n| 추천 정책 최적화 | 50% | 50% |\n| 자율 주행 | 10% | 90% |\n\n핵심 불확실성은 데이터 분석입니다. 문제 정의 자체가 가장 어려운 부분인 도메인에서는 에이전트가 루프를 닫는 데 어려움을 겪습니다. 가장 가능성이 높은 결과: 분석은 어시스턴트 중심으로 남아 있지만, 실행은 고도로 자동화됩니다. 인간은 문제를 정의하고, 에이전트는 탐색합니다.\n\n더 깊은 변화는 더 빠른 SQL이나 더 나은 대시보드가 아닙니다. 그것은 **워크플로를 누가 제어하는가**입니다. 우리는 *코드로서의 파이프라인*에서 *추론으로서의 워크플로*로 이동하고 있습니다 — 미리 정의된 단계를 실행하는 것에서 행동을 계획하고, 가설을 탐색하고, 반복하는 시스템으로 이동하고 있습니다.",
+      "curifyTitle": "Curify가 이 변화에서 차지하는 위치",
+      "curifyContent": "Curify는 *추론으로서의 워크플로* 패턴을 중심으로 구축되었습니다. 오늘 플랫폼에서의 세 가지 구체적인 예:\n\n- **워크플로로서의 콘텐츠 생성, 단일 샷이 아닌.** [/nano-template](/nano-template) 라이브러리는 프롬프트 → 이미지 생성 → 변형 태깅 → CDN 동기화의 172개 매개변수화된 템플릿으로 구성되어 있습니다 — 생성 워크플로, 일회성 프롬프트가 아닙니다.\n- **갤러리 레이어에서의 임베딩 기반 접근.** [/nano-banana-pro-prompts](/nano-banana-pro-prompts) 4,000개 이상의 프롬프트 코퍼스는 태그, 주제 및 의미적 유사성으로 검색할 수 있습니다 — 벡터 레이어가 접근 경로이며, 원시 JSON이 진실의 출처입니다.\n- **오디오 + 비디오 전사로서의 상류 입력.** [/tools/video-transcript-generator](/tools/video-transcript-generator) 는 [/tools/video-dubbing](/tools/video-dubbing) 및 [/tools/translate-subtitles](/tools/translate-subtitles)로 흐르는 화자 태그가 있는 전사를 출력합니다 — 하나의 입력이 세 개의 현지화된 출력을 이끄는 워크플로입니다.",
+      "conclusionTitle": "데이터 전문가를 위한 진짜 질문",
+      "conclusionContent": "전통적인 데이터 워크플로는 사라지지 않습니다. 그러나 진화하고 있습니다: 데이터 생성이 더 지능적으로 변하고, 저장이 더 의미 있게 변하며, 분석이 더 대화형으로 변하고, 응용이 더 자율적으로 변하고 있습니다.\n\n더 급진적인 비합의적 관점: 미래의 데이터 시스템은 두 가지로 나뉠 수 있습니다 — **인간이 해석할 수 있는 분석 시스템** (세상을 이해하기 위한)과 **블랙박스 최적화 시스템** (결과 최적화를 위한). 두 가지가 분리될 때, 데이터 전문가는 사라지지 않고 데이터 운영자가 아닌 *전략 해석자*가 됩니다.\n\n오늘날 모든 데이터 전문가에게 진짜 질문은 더 이상 \"SQL을 쓸 수 있습니까?\"가 아닙니다. 그것은: **AI 네이티브 워크플로를 설계할 수 있습니까?**",
+      "seoKeywords": "ai 데이터 워크플로, ai 데이터 파이프라인, llm 데이터 분석, ai 어시스턴트 대 에이전트, 벡터 데이터베이스, rag 파이프라인, 합성 데이터, ai 데이터 인프라, 데이터 과학의 미래, 추론으로서의 워크플로",
+      "metaDescription": "AI가 데이터 워크플로의 네 가지 레이어 — 수집, 저장, 분석, 적용 — 를 어떻게 재편하고 어시스턴트가 에이전트로 전환되는지. 변화 내부의 합의 및 비합의적 관점."
+    },
+    "mlEngineerVsAiEngineer": {
+      "title": "ML 엔지니어 또는 AI 엔지니어? 두 가지 경로, 두 가지 가치 구조",
+      "date": "2026년 5월 18일",
+      "readTime": "6분 읽기",
+      "intro": "다음 이동을 논의하는 많은 엔지니어들은 이를 이분법적으로 프레임하고 있습니다: 검색, 광고 또는 추천 시스템(전통적인 ML 엔지니어 경로)에서 작업해야 할까요, 아니면 LLM 기반 AI 애플리케이션 개발(새로운 AI 엔지니어 경로)로 이동해야 할까요? 이것은 전통적인 선택과 트렌디한 선택이 아닙니다. 같은 회사 내에서 두 가지 근본적으로 다른 가치 구조입니다.",
+      "whatIsTitle": "두 가지 다른 엔진",
+      "whatIsContent": "이 분할을 읽는 가장 간단한 방법: ML 엔지니어(검색 / 광고 / 추천)는 **수익 엔진**을 구축합니다. AI 엔지니어(LLM 애플리케이션)는 **능력 엔진**을 구축합니다. 두 가지 모두 필수적입니다. 그들은 서로 다른 것들을 최적화하고, 서로 다른 입력에 의존하며, 성공의 서로 다른 신호를 찾습니다. 다음 네 섹션에서는 비즈니스 가치, 기술적 초점, 조직적 의존성 및 개인적 적합성에 따라 이들을 비교하여 자신을 위치시킬 수 있습니다.",
+      "howTitle": "두 경로 비교",
+      "step1Title": "1. 비즈니스 가치 — 수익 엔진 대 역량 엔진",
+      "step1Content": "**ML (검색 / 광고 / 추천)**은 회사의 성장 엔진입니다. 일일 지표는 CTR, CVR, 유지율 및 수익 증가입니다. 영향은 측정 가능하고 폐쇄 루프입니다: A/B 테스트를 실행하고, 델타를 확인하고, 배포하거나 롤백합니다. 대부분의 인터넷 회사에서 이 팀은 핵심 이익 센터 내에 있습니다.\n\n**AI (LLM 애플리케이션)**은 조직의 역량과 효율성에 관한 것입니다: 고객 서비스 자동화, 콘텐츠 생성, 코파일럿 및 에이전트, 내부 워크플로 재설계. 가치는 비용 절감, 생산성 향상 및 새로운 제품 상호작용 패턴입니다. ROI는 실제로 존재하지만 광고 지출이나 추천 증가보다 측정하기 어렵습니다 — 이는 한 수익 라인보다는 조직 전반에 걸쳐 나타납니다.\n\n요약하자면: **ML은 수익 엔진을 구축합니다. AI는 역량 엔진을 구축합니다.**",
+      "step2Title": "2. 기술적 초점 — 모델 최적화 대 시스템 오케스트레이션",
+      "step2Content": "**검색 / 광고 / 추천 시스템**은 알고리즘 기반 최적화입니다. 핵심 영역은 검색, 순위 매기기, 특성 엔지니어링, 다목적 최적화 및 저지연 서비스입니다. 작업은 모든 사람의 급여를 지불하는 지표에 대해 마진 이익을 위한 복잡한 시스템의 지속적인 조정입니다 — +0.3%, +0.5%. 연구 논문의 SOTA는 벤치마크이지, 열망이 아닙니다.\n\n**AI 엔지니어링**은 시스템 통합 중심입니다. 핵심 영역은 프롬프트 설계, RAG 파이프라인, 모델 라우팅, 에이전트 프레임워크 및 워크플로 자동화입니다. 도전 과제는 보통 모델 자체가 아니라 — 주변 시스템이 API 준비가 되었는지, 데이터가 검색에 충분히 깨끗한지, 서비스가 신뢰할 수 있게 오케스트레이션될 수 있는지, 추론 비용이 통제되고 있는지입니다.",
+      "step3Title": "3. 조직 의존성",
+      "step3Content": "추천 시스템은 데이터 인프라와 실험 플랫폼이 성숙해지면 번창할 수 있습니다. 작동하는 A/B 플랫폼이 있는 회사에 합류한 ML 엔지니어는 분기 내에 영향을 미칠 수 있습니다.\n\nLLM 애플리케이션은 다릅니다. 그들의 성공은 **조직의 전반적인 디지털 성숙도**에 크게 의존합니다: 데이터 품질(검색 기반), 시스템 아키텍처(API 접근을 위한), 팀 간 통합(부서 간 워크플로 자동화를 위한). 이러한 기초가 없는 회사에 배치된 AI 엔지니어는 AI보다는 배관 작업에 대부분의 시간을 보낼 것입니다.\n\n이것이 동일한 채용이 한 회사에서는 성공하고 다른 회사에서는 지체될 수 있는 이유입니다.",
+      "step4Title": "4. 개인 적합성",
+      "step4Content": "**다음과 같은 경우 ML을 선호할 수 있습니다:** 모델링과 지표를 즐기고, 성능 차이에 깊은 관심이 있으며, 장기적인 시스템 최적화를 좋아하고, 돈을 인쇄하는 바늘을 움직이는 것에서 만족을 찾습니다.\n\n**다음과 같은 경우 AI 엔지니어링을 선호할 수 있습니다:** 처음부터 새로운 시스템을 구축하는 것을 즐기고, 자동화 및 워크플로 설계를 좋아하며, 아키텍처와 오케스트레이션 측면에서 생각하고, 지표를 0.3% 개선하기보다는 수동 단계를 제거하는 것에서 만족을 찾습니다.\n\n어느 경로도 다른 경로보다 더 \"미래 지향적\"이지 않습니다. 기술은 복합적입니다: AI 오케스트레이션을 배우는 ML 엔지니어는 높은 레버리지의 제품 빌더가 되고, 순위 매기기 및 특성 엔지니어링을 배우는 AI 엔지니어는 LLM을 정책으로 사용하는 차세대 추천 시스템을 배포할 수 있는 드문 사람이 됩니다.",
+      "curifyTitle": "Curify가 두 트랙에 어떻게 매핑되는지",
+      "curifyContent": "Curify의 프로덕션 스택은 두 트랙을 모두 포함합니다. ML 측면에서, [/nano-banana-pro-prompts](/nano-banana-pro-prompts)는 151개의 주제로 태그된 4,000개 이상의 프롬프트 코퍼스를 통해 순위 매기기 및 검색을 실행합니다 — 고전적인 추천 패턴입니다. AI 엔지니어링 측면에서, [/tools/video-dubbing](/tools/video-dubbing) 및 [일일 콘텐츠 드롭 파이프라인](https://www.curify-ai.com/tools)은 오케스트레이션된 워크플로입니다: 음성 클론 → 번역 → 립싱크 → CDN 업로드, 마지막에 [gpt-4o-mini](/tools/voice-clone)를 통한 자동 태깅이 있습니다. Curify에 기여하는 엔지니어들은 두 영역을 자주 넘나듭니다 — 경계는 이론적이지 않고 운영적입니다.",
+      "conclusionTitle": "트렌드가 아닌 엔진을 선택하세요",
+      "conclusionContent": "경력 이동성만 고려한다면, AI 엔지니어링이 현재 명백한 답처럼 보입니다. 그러나 더 유용한 프레임은: **어떤 엔진을 구축하고 싶습니까?** 수익 엔진은 회사가 돈을 버는 핵심입니다 — 역할은 지속 가능하고, 영향은 측정 가능하며, 작업은 깊이 기술적이고, 이 분야는 아직 끝나지 않았습니다. 역량 엔진은 회사가 비용을 절감하고 새로운 제품 표면을 여는 방법입니다 — 역할은 현재 더 뜨겁고, 승리는 조직 전반에 걸쳐 누적되며, 통합 작업은 회사의 복잡성과 함께 확장됩니다. 어느 선택도 잘못되지 않습니다. 잘못된 선택은 트렌드에 따라 선택하는 것이 아니라 실제로 어떤 종류의 엔진을 경력으로 구축하고 싶은지에 따라 선택하는 것입니다.",
+      "seoKeywords": "ml 엔지니어 대 ai 엔지니어, 머신러닝 경력, ai 엔지니어링 경력, llm 엔지니어링, 검색 순위 엔지니어, 추천 시스템 경력, ai 엔지니어 기술, ml 대 ai 역할, 프롬프트 엔지니어링 대 특성 엔지니어링",
+      "metaDescription": "ML 엔지니어(검색, 광고, 추천) 대 AI 엔지니어(LLM 애플리케이션)는 전통 대 트렌드 선택이 아닙니다 — 두 가지 다른 가치 구조입니다. 비즈니스 가치, 기술적 초점, 조직 의존성 및 개인 적합성을 비교하세요."
+    },
+    "aiEngineeringHardTruth": {
+      "title": "확률적에서 결정론적으로: 생산에서 AI 엔지니어링에 대한 어려운 진실",
+      "date": "2026년 5월 19일",
+      "readTime": "9분 읽기",
+      "intro": "2024-2025년에 생성적 AI를 시도한 대부분의 SMB 리더들은 같은 인상을 받았습니다: 슬롯 머신처럼 느껴진다는 것입니다. 데모는 마법 같았습니다. 생산 롤아웃은 동전 던지기와 같았습니다 — 한 번은 잘못된 JSON, 다음 번은 환각된 송장 번호, 세 번째는 $4,000의 월 청구서. 그들이 도달한 결론은 합리적이지만 잘못된 것이었습니다: \"AI는 아직 우리 비즈니스에 준비가 되어 있지 않다.\" 실제 결론은: 모델은 작동했습니다. 그 주위의 시스템은 작동하지 않았습니다. AI 엔지니어링 — 확률적 모델을 결정론적 시스템으로 전환하는 학문 — 이 그 격차를 메우는 것이며, 대부분의 SMB 파일럿은 이를 갖추지 못했습니다.",
+      "whatIsTitle": "왜 AI 파일럿이 슬롯 머신처럼 느껴지는가",
+      "whatIsContent": "대형 언어 모델은 본질적으로 확률 기계입니다. 같은 입력 프롬프트를 두 번 실행하면 두 개의 다른 출력을 생성할 수 있습니다. 이는 버그가 아닙니다 — 모델을 창의적이고 유용하게 만드는 것입니다. 하지만 이는 또한 단순한 통합이 반복적으로 신뢰할 수 있는 비즈니스 프로세스에 적합하지 않게 만드는 이유이기도 합니다.\n\n모든 SMB AI 파일럿에서 나타나는 다섯 가지 실패 모드는 예측 가능합니다:\n\n- **잘못된 JSON 출력.** 모델이 구조화된 응답을 반환하지만, 20번 호출 중 한 번은 다운스트림 파서를 깨뜨립니다. 파이프라인은 조용히 주문을 누락시키거나, 재고를 잘못 계산하거나, 승인 단계를 건너뜁니다.\n- **환각.** 모델이 존재하지 않는 고객 이름, 제품 SKU, 주문 날짜 또는 가격을 만들어냅니다. 챗봇에서는 짜증이 납니다. 자동 송장 발행이나 준수 단계에서는 비즈니스 리스크입니다.\n- **추론 드리프트.** 장기 실행 에이전트가 올바른 목표로 작업을 시작하지만 관련 없는 곳에서 끝납니다 — 맥락 창이 관련 없는 중간 출력으로 가득 차고 원래 목표가 사라집니다.\n- **맥락 폭발.** 2,000 토큰이 필요한 간단한 쿼리가 80,000으로 부풀어 오릅니다. 이전 모든 턴이 다시 전송되고 있기 때문입니다. 대기 시간이 3초에서 45초로 증가합니다.\n- **비용 폭주.** 파일럿은 10월에 $200로 작동했습니다. 12월에는 같은 워크플로우가 $4,000의 비용이 들었습니다. 트래픽이 20배 증가했지만 아무도 예산 경계를 설정하지 않았습니다.\n\n이러한 문제는 더 나은 프롬프트를 작성한다고 해결되지 않습니다. 모델 주위에 엔지니어링을 통해 해결됩니다 — 신뢰할 수 없는 제3자 API를 처리하는 방법과 같습니다.",
+      "howTitle": "AI를 결정론적으로 만드는 네 가지 엔지니어링 레이어",
+      "step1Title": "1. 스키마 검증, 자동 복구 및 대체",
+      "step1Content": "첫 번째 방어선. 시스템 경계를 넘는 모든 모델 출력은 다운스트림에서 사용되기 전에 스키마에 대해 검증됩니다. 검증이 실패하면 — 정기적으로 실패합니다 — 시스템은 오류를 발생시키지 않습니다. 자동 복구 패스를 실행합니다 (작은 모델이 잘못된 JSON을 수정하고, 더 엄격한 프롬프트로 재시도하거나, 유효한 하위 집합을 추출합니다) 그리고 복구가 실패하면 결정론적 기본값으로 돌아갑니다.\n\nSMB 소유자에게 이는 하루에 한 번 고객 메시지를 조용히 건너뛰는 챗봇과 모든 파싱 실패를 인간 검토 대기열로 표시하는 챗봇의 차이입니다. 모델 실패의 확률은 변하지 않습니다. 비즈니스 실패의 확률은 호출당 ~5%에서 <0.1%로 줄어듭니다.",
+      "step2Title": "2. 의미론적 캐싱 및 비용 제어",
+      "step2Content": "대부분의 AI 작업 부하는 많은 중복 작업을 포함합니다. 두 고객이 \"귀하의 반품 정책은 무엇입니까\"라는 질문을 약간 다른 단어로 합니다; 오늘날의 단순한 구현은 두 번의 모델 호출을 만듭니다. 의미론적 캐시 (최근 프롬프트에 대한 벡터 유사성 + 유사성이 임계값을 초과할 때 답변 재사용)는 이를 하나의 호출로 축소하여 사용자 경험을 변경하지 않고도 토큰 지출을 50-80% 줄입니다.\n\n이를 하드한 테넌트별 토큰 예산, 기능별 속도 제한 및 저위험 쿼리를 위한 작은 모델 라우팅 규칙과 결합하면 비용 폭주 문제가 발생하지 않습니다. \"AI가 너무 비쌌다\"는 거의 항상 누락된 비용 제어 레이어 때문이지, 비싼 모델 때문이 아닙니다.",
+      "step3Title": "3. 상태 기반 오케스트레이션 및 체크포인트 복구",
+      "step3Content": "다단계 워크플로우 — 초안 생성 → 검토 → 형식 지정 → 게시 — 는 추론 드리프트와 맥락 폭발이 실제로 발생하는 곳입니다. 해결책은 워크플로우를 상태 기계처럼 다루는 것입니다: 각 단계는 명시적인 입력, 명시적인 출력 및 체크포인트를 가집니다. 단계 2가 성공한 후 단계 3이 실패하면 시스템은 전체 에이전트를 다시 시작하는 대신 단계 2의 출력에서 재개합니다.\n\n이것이 30분 비디오 번역 파이프라인이 일시적인 API 타임아웃을 견디는 방법입니다: 이미 처리된 세그먼트는 처리된 상태로 유지되고, 실패한 세그먼트는 백오프와 함께 재시도되며, 사용자는 \"재개됨\"을 보고 \"다시 시작됨\"을 보지 않습니다.",
+      "step4Title": "4. 자동 평가 및 가시성",
+      "step4Content": "마지막 레이어는 대부분의 파일럿이 결코 도달하지 못하는 것입니다: 시스템이 시간이 지남에 따라 개선되고 있는지 악화되고 있는지를 아는 것입니다. 자동 평가 파이프라인은 모든 모델 출력을 중요한 차원에서 금본위 세트에 대해 점수화합니다 — 사실 정확성, 형식 준수, 비즈니스 정책 준수. 가시성은 대기 시간, 요청당 토큰 비용, 테넌트별 실패율 및 검증을 깨뜨린 실제 프롬프트를 캡처합니다.\n\n이것이 없으면 모든 모델 변경은 추측입니다. 이것이 있으면 리더는 다음과 같이 대답할 수 있습니다: \"지난주에 배포한 변경 사항이 환각을 줄였는가, 아니면 단지 더 빨라 보였는가?\" 이 질문은 AI 프로그램이 복합적으로 발전하는 것과 정체되는 것의 차이입니다.",
+      "challengesTitle": "생산 AI 인터뷰(및 생산 실패)가 실제로 테스트하는 것",
+      "challengesContent": "후보자나 공급자가 생산 AI 작업을 수행했는지 여부를 판단하는 유용한 신호가 있습니다. 진지한 팀이 묻는 질문은 프롬프트 기술에 관한 것이 아닙니다. 그들은:\n\n- 모델이 세 번 연속으로 잘못된 JSON을 반환합니다 — 사용자에게 무슨 일이 발생합니까?\n- 환각된 고객 이름이 잘못된 송장을 초래했습니다 — 시스템이 이를 전송하기 전에 어떻게 감지했습니까?\n- 토큰 청구서가 20배 증가했습니다 — 누락된 레이어는 무엇이었고, 어떻게 이를 제한할 것입니까?\n- 정책 변경 시 오래된 답변을 반환하지 않는 의미론적 캐시는 어떻게 구축합니까?\n- 장기 실행 에이전트가 12단계 중 7단계에서 실패했습니다 — 처음부터 다시 시작합니까, 아니면 6단계에서 재개합니까?\n- 에이전트의 출력이 프롬프트 변경 후 \"더 나은 느낌\"이 듭니다 — 실제로 개선되었는지 측정하는 방법은 무엇입니까?\n\n\"프롬프트를 조정하겠다\"로 시작하는 답변은 단서입니다: 이 사람은 데모를 만들었지 시스템을 만들지 않았습니다. 스키마 검증, 대체 계층, 비용 경계, 체크포인팅 및 평가 하네스에서 시작하는 답변이 생산 AI의 모습입니다.\n\n공급자나 채용 후보자를 평가하는 SMB 리더를 위해: 이 여섯 가지 질문을 직접 물어보십시오. 답변은 슬롯 머신을 사는 것인지 시스템을 사는 것인지 알려줍니다.",
+      "curifyTitle": "Curify에서의 상황",
+      "curifyContent": "이 레이어는 추상적이지 않습니다. Curify 콘텐츠 스택은 생산에서 모든 레이어를 실행합니다:\n\n- **스키마 검증기로서의 템플릿 엔진.** [/nano-template](/nano-template) 라이브러리는 모든 프롬프트가 입력 유형과 검증된 출력 구조를 가진 172개의 매개변수화된 템플릿입니다. 브랜드에 맞는 템플릿을 보내는 B2B 파트너는 매번 동일한 JSON 형태를 받습니다 — 모델은 자유 형식의 프롬프트를 보지 않으며, 사용자는 파싱 오류를 보지 않습니다.\n- **체크포인트가 있는 다단계 파이프라인.** [/tools/video-dubbing](/tools/video-dubbing)는 음성 클론 → 전사 → 번역 → 립싱크 → CDN 업로드입니다. 각 단계는 체크포인트를 가집니다; 립싱크에서의 실패는 음성을 다시 클론하지 않습니다.\n- **평가 루프에 의해 지원되는 의미론적 검색.** [/nano-banana-pro-prompts](/nano-banana-pro-prompts) 코퍼스는 태그 + 주제 + 임베딩 유사성 검색 뒤에 4,000개 이상의 프롬프트를 제공합니다; 모든 쿼리는 실제 세트에 대해 점수화되며 검색 품질 문서는 주마다 상승을 추적합니다.\n- **설계에 의한 비용 경계.** 기능별 토큰 예산, 저위험 쿼리를 위한 작은 모델 라우팅 및 의미론적 캐시 레이어는 트래픽이 증가함에 따라 월간 추론 비용을 평탄하게 유지합니다.\n\n패턴은 모든 SMB AI 배포가 필요로 하는 것과 동일합니다. 템플릿 엔진은 이를 시행하는 한 가지 방법일 뿐입니다 — 그러나 기본적인 원칙(스키마 우선, 체크포인트, 평가, 관찰)은 보편적입니다.",
+      "conclusionTitle": "당신의 AI 파일럿이 슬롯 머신처럼 느껴졌다면, 당신은 AI 엔지니어가 없었습니다",
+      "conclusionContent": "생성적 AI는 소프트웨어가 할 수 있는 것에서 진정한 단계 변화입니다. 2024-2025년에 실패한 대부분의 SMB 파일럿은 모델이 나빠서 실패한 것이 아닙니다. 그들은 그 주위에 결정론적 시스템을 구축한 사람이 없어서 실패했습니다. 확률적 출력을 신뢰할 수 있는 비즈니스 프로세스로 전환하는 작업 — 스키마 검증, 대체 계층, 의미론적 캐싱, 비용 제어, 상태 기반 오케스트레이션, 자동 평가, 가시성 — 이 AI 엔지니어링이 실제로 무엇인지입니다.\n\nAI가 \"우리는 아직 준비가 되지 않았다\"고 생각하고 떠난 SMB 소유자라면, 더 정확한 해석은: \"엔지니어링 레이어 없이는 우리에게 적합하지 않다\"입니다. 그 엔지니어링 레이어는 투자 가능하고, 반복 가능하며, 점점 더 잘 이해되고 있습니다. 향후 12개월 내에 이를 해결하는 기업은 최고의 프롬프트를 가진 기업이 아닐 것입니다. 그들은 모델 주위에 최고의 containment 시스템을 가진 기업이 될 것입니다.\n\nAI는 매 분기마다 더 똑똑해집니다. 자신의 비즈니스에서 AI를 신뢰할 수 있게 만드는 리더는 귀중한 자산이 됩니다.",
+      "metaDescription": "왜 SMB AI 파일럿이 슬롯 머신처럼 느껴지는지 — 그리고 확률적 모델을 결정론적 생산 시스템으로 전환하는 네 가지 엔지니어링 레이어(스키마 검증, 의미론적 캐싱, 상태 기반 오케스트레이션, 자동 평가).",
+      "seoKeywords": "ai 엔지니어링, 생산 ai, llm 생산, smb를 위한 ai, ai 엔지니어 인터뷰, 스키마 검증 llm, 의미론적 캐싱, ai 비용 제어, ai 가시성, 결정론적 ai 시스템, ai 파일럿 실패, ai 엔지니어링 레이어"
+    },
+    "aiContentFactoryForAgencies": {
+      "title": "AI 콘텐츠 공장: 마케팅 에이전시가 도구 구매를 중단하고 파이프라인 구축을 시작해야 하는 이유",
+      "date": "2026년 5월 22일",
+      "readTime": "10분 읽기",
+      "intro": "대부분의 마케팅 에이전시 소유자는 동일한 고객 수에서 같은 벽에 부딪힙니다. 11번째 계약이 체결되고, 두 명의 디자이너가 더 고용되면, 원래의 10개 계정에서 총 마진이 어 somehow 떨어집니다. 판매보다 더 빠르게 고용하면 굶주리고, 고용보다 더 빠르게 판매하면 품질이 무너집니다. \"경쟁력 있는\" 요금으로 작업의 가격을 책정하면 단위 경제는 결코 맞지 않습니다. 이것이 인간 확장성의 함정이며, 저가 소셜 게시 및 계절 포스터 작업을 수행하는 에이전시에게는 구조적 문제입니다 — 계획 문제와는 다릅니다. ChatGPT, Midjourney 및 SaaS 레이아웃 도구를 구매한다고 해서 이 문제를 해결할 수 없습니다. 단지 병목 현상을 \"디자이너 시간\"에서 \"디자이너 조정 프롬프트 시간\"으로 이동시킬 뿐입니다. 진정한 해결책은 완전히 다른 아키텍처입니다: 개별 직원이 이전 작업 흐름에서 더 빨라지도록 하려 하지 말고, 에이전시의 콘텐츠 생산을 고동시스템 추천 시스템처럼 운영하기 시작하십시오.",
+      "whatIsTitle": "왜 저가 소셜 패키지가 마진을 줄이는가",
+      "whatIsContent": "에이전시 관리 연구소의 55:25:20 규칙은 모든 건강한 에이전시가 지적하는 기준입니다: 조정된 총 수입의 55%는 인력에, 25%는 간접비에, 20%는 순이익으로 유지됩니다. 이 수치는 직원당 수익이 약 135,000달러에서 257,000달러 사이일 때 작동합니다. 이제 표준 SMB 소셜 미디어 계약을 살펴보십시오 — 두 개에서 세 개의 플랫폼에 대해 월 500달러에서 1,500달러, 8에서 12개의 게시물.\n\n수치를 솔직하게 계산하십시오. 1,000달러 계약은 대략 40시간의 청구 가능한 시간을 소모하며, 이 시간은 전략, 디자인, 카피, 일정, 고객과의 상호작용, 수정 및 QA를 포함해야 합니다. 주니어 디자이너가 주당 세 개의 계약을 처리하는 현실적인 시나리오는 없습니다. 대부분의 에이전시는 두 가지 방법 중 하나로 대처합니다:\n\n- **손실 리더 가격 책정.** 작은 계정을 손실로 수용하고, 나중에 프리미엄 서비스를 업셀하려고 합니다. 실제로 이는 브랜드를 손실 리더 가격에 고정시키고 업셀은 거의 발생하지 않습니다.\n- **조용한 미달성.** 계약된 게시물 수를 충족하지만 전략, QA 및 플랫폼 간 다듬기를 건너뜁니다.\n\n두 경로 모두 에이전시를 저가로 잠그고 직원들을 새로운 비즈니스 개발을 방해하는 배달 작업으로 몰아넣습니다. 단일 고객 집중도가 40%를 초과하면 하중 지지 벽이 되고, 소유자는 레버리지 비즈니스가 아닌 부풀려진 작업을 운영하게 됩니다.",
+      "howTitle": "추천 시스템에서 네 단계 아키텍처를 빌리기",
+      "step1Title": "1. 검색 — 의도가 창의적 브리프를 대체합니다",
+      "step1Content": "전통적인 흐름: 계정 관리자가 고객과 60분의 탐색 전화를 진행하고, 창의적 브리프를 작성한 후 전략가에게 전달하고, 전략가는 디자이너에게 전달합니다.\n\n파이프라인 흐름: 모든 고객은 구조화된 `작업 공간 프로필`을 가지고 있습니다 — 브랜드 색상은 헥스 코드로, 음성 설명자(권위 있는 / 장난기 있는 / 기술적인), 상위 세 가지 제공, 대상 청중 페르소나 사양, 지리적 맥락. 단일 캠페인 주제가 들어오면 (\"블랙 프라이데이 플래시 세일\"), 검색 레이어는 프로필을 조회하고, 선별된 템플릿 라이브러리에서 일치하는 템플릿 구조를 가져와 구조화된 의도 객체를 생성합니다. 탐색 전화는 필요 없습니다. 잘못 기억된 브랜드 가이드라인도 없습니다. 의도 레이어는 계층 구조를 인코딩하는 곳이기도 합니다: \"브랜드 준수는 항상 창의적 자유보다 우선한다,\" \"로고는 명확하고 방해받지 않아야 한다,\" \"플랫폼 CTA 관례는 카피 선호보다 우선한다.\" 이것이 AI 엔지니어들이 **의도 엔지니어링**이라고 부르는 것입니다 — 비즈니스 우선 순위를 시스템 자체에 인코딩하는 것입니다.",
+      "step2Title": "2. 필터링 — 분리된 렌더링이 의미 없는 텍스트 문제를 해결합니다",
+      "step2Content": "초기 \"자동 게시기\" 도구가 스스로를 망신시킨 이유는 초기 확산 모델이 타이포그래피에서 스스로를 망신시킨 이유와 동일합니다: 단일 엔드 투 엔드 이미지 모델이 질감 있는 배경에서 읽을 수 있는 영어를 렌더링하려고 하면, 마치 취한 네온 사인처럼 문자를 환각합니다. 생산 수정은 **분리된 렌더링**입니다 — 이미지 모델을 자신의 영역에 두고 (배경 아트, 질감 레이어, 일러스트 모티프 생성), 그런 다음 글꼴, 자간 및 경계 상자를 아는 결정론적 렌더러를 통해 타이포그래피를 합성합니다.\n\n다중 모드 검증(소규모 비전-언어 모델이 모든 렌더를 준수 여부를 확인 — 로고 존재, 깨진 텍스트 없음, 브랜드 헥스 허용 범위 내) 및 RLHF 조정된 미적 보상을 결합하면 필터 단계에서 인간 수정 루프가 완전히 제거됩니다. 포스터 생성에 대한 오픈 소스 기준선은 이제 렌더링된 출력에서 ~0.77 OCR F1을 기록합니다 — 즉, 시스템이 자신의 출력을 제공하기 전에 읽습니다. 디자이너는 모델의 카피 편집자가 되지 않습니다.",
+      "step3Title": "3. 점수 매기기 — 하나의 의도, 50개의 변형, 픽셀 완벽한 레이아웃",
+      "step3Content": "배경 아트가 검증되면 점수 매기기 단계는 사양에 따라 최종 자산을 조립합니다: 정확한 좌표에 배치된 벡터 로고, 플랫폼 관례에 맞게 크기 조정된 CTA 버튼, 인쇄를 위한 여백 설정, 수직 비디오 크롭을 위한 안전 구역 준수. 기술은 이름을 붙이면 평범합니다 — 비동기 작업 큐(Celery + Redis가 일반 스택)에 의해 구동되는 헤드리스 HTML/CSS/SVG 렌더러(예: Puppeteer 또는 Playwright 클러스터)입니다.\n\n흥미로운 점은 아키텍처적 결과입니다: 하나의 캠페인 의도가 아무도 포토샵을 열지 않고도 50개의 플랫폼 형태 변형으로 퍼집니다. 여기서 계정당 비용이 실제로 이동합니다. 이전에 40시간의 디자이너 시간을 소모했던 1,000달러 계약은 이제 몇 센트의 컴퓨팅 비용을 소모합니다. 에이전시가 11번째 고객을 추가하는 데 드는 추가 비용은 구성 행이며, 고용이 아닙니다.",
+      "step4Title": "4. 제공 — 자동 게시, 복사-붙여넣기가 아님",
+      "step4Content": "마지막 단계는 대부분의 \"에이전시를 위한 AI\" 콘텐츠가 중단되는 곳입니다 — 배포 없는 생성. 파이프라인은 완성된 자산과 플랫폼별 카피를 직접 게시 대기열로 밀어넣습니다: Instagram 및 Facebook용 Meta Graph API, Twitter용 X API, 긴 꼬리를 위한 Buffer 또는 n8n 흐름. 슬랙에서 전달된 스크린샷 없음, \"TikTok에 대체 텍스트를 추가할 수 있나요,\" 금요일 저녁에 다섯 개의 탭에 걸쳐 캡션을 복사-붙여넣기하는 급한 상황 없음.\n\n제공이 자동화되면 에이전시의 운영 모델이 변화합니다. 계정 관리자는 전략 및 계정 성장에 시간을 할애하고, 생산 시스템은 실행을 처리합니다. 손익계산서의 인원 수는 고객 수와 분리됩니다.",
+      "challengesTitle": "\"그냥 더 나은 프롬프트를 사용하세요\"가 여기서 작동하지 않는 이유",
+      "challengesContent": "자동화를 시도하는 대부분의 에이전시는 세 가지 장소 중 하나에서 실패합니다:\n\n- **도구 프레임 vs 시스템 프레임.** 그들은 AI를 더 빠른 직원으로 취급하고 작업 흐름을 재설계하지 않습니다. 디자이너는 \"프롬프트 작성\" 대신 \"디자인 수행\"을 하게 됩니다. 병목 현상은 이동하지만 줄어들지 않습니다.\n- **목표 이탈.** 의도 레이어가 브랜드 준수를 강제하지 않으면 에이전트는 측정하기 쉬운 것을 최적화하고 (클릭률, 생성 속도) 측정되지 않는 것을 조용히 희생합니다 (브랜드 일관성, 고객 신뢰). 몇 주 후, 시스템은 대규모 클릭베이트를 배송합니다.\n- **에스컬레이션 함정.** 에이전트가 잘못된 JSON, 읽을 수 없는 텍스트 또는 로고가 가려진 구성을 환각할 때마다 작업 흐름이 중단되고 인간이 정리해야 합니다. 그때 처리량은 인간의 검토 대역폭에 한정됩니다 — 시스템은 기술적으로 \"자동화\"되지만 실제로는 이전에 이를 수행했던 동일한 디자이너를 위해 작업을 대기열에 추가합니다.\n\nGartner는 2027년 말까지 40% 이상의 기업 에이전틱 AI 프로젝트가 취소될 것으로 예상합니다 — 모델이 나빠져서가 아니라 주변 아키텍처가 결코 구축되지 않았기 때문입니다. 해결책은 더 강력한 프롬프트가 아닙니다. 그것은 스키마 검증된 검색, 결정론적 렌더링, 자동 평가 및 관찰 가능성입니다 — 추천 시스템을 연구 데모에서 인프라로 전환한 동일한 엔지니어링 위생입니다.",
+      "curifyTitle": "Curify에서 이것이 어떻게 작동하는가",
+      "conclusionTitle": "10배 마진 도약은 프롬프트가 아닌 아키텍처에 있습니다",
+      "conclusionContent": "향후 2년 동안 확장하는 에이전시는 가장 똑똑한 프롬프트 엔지니어를 고용한 에이전시가 아닐 것입니다. 그들은 AI를 동일한 작업 흐름을 위한 더 빠른 도구로 생각하는 것을 중단하고, 콘텐츠 생산을 알려진 형태의 엔지니어링 문제로 생각하기 시작한 에이전시입니다 — 검색, 필터링, 점수 매기기, 제공.\n\n다음 10개의 계약을 바라보며 다음 10명의 고용을 조용히 두려워하는 에이전시 소유자가 물어야 할 질문은 \"어떤 AI 도구를 구매해야 할까요?\"가 아닙니다. 질문은: \"내 고객당 추가 비용이 인원 수 대신 구성 행이라면 내 손익계산서는 어떻게 보일까요?\"\n\n그 격차 — 프롬프트 엔지니어링 지주와 의도 엔지니어링 파이프라인 사이 — 는 다음 10년 동안 에이전시 마진이 구축되거나 잃어지는 곳입니다.",
+      "metaDescription": "마케팅 에이전시가 저가 소셜 계약에서 인간 확장성의 함정에 빠지는 이유와 네 단계 추천 시스템 아키텍처(검색, 필터링, 점수 매기기, 제공)를 차용하여 이를 해결하는 방법.",
+      "seoKeywords": "ai 콘텐츠 공장 에이전시, 마케팅 에이전시 확장, 성장 에이전시 자동화, 마케팅 에이전시를 위한 ai, 소셜 미디어 자동화, 에이전시 단위 경제, 화이트 라벨 ai 파이프라인, 에이전시 마진, 의도 엔지니어링, 프로그래밍 콘텐츠 생성, 에이전시 인간 확장성 함정, ai 마케팅 인프라",
+      "curifyContent": "위의 네 단계 패턴은 이론적이지 않습니다. Curify Studio 스택은 이를 엔드 투 엔드로 제공하며, 에이전시는 이를 화이트 라벨 백엔드로 사용할 수 있습니다:\n\n- **검색.** 작업 공간 프로필은 각 클라이언트의 브랜드 사양을 한 번 캡처하고 모든 하위 단계에 전달합니다. 캠페인 형식을 위한 `template-marketing`과 청중 세분화 변형을 위한 [`template-mbti`](/topics/character)라는 두 개의 큐레이션된 템플릿 라이브러리가 브리프 없이 구조를 제공합니다.\n- **필터링.** [/nano-template](/nano-template) 전반에 걸쳐 입력 유형이 있는 172개의 매개변수화된 프롬프트 템플릿이 모든 렌더링을 스키마 검증합니다. 모델은 자유 형식의 프롬프트를 보지 않으며, 에이전시는 파싱 오류를 보지 않습니다.\n- **점수 매기기.** 헤드리스 렌더링 레이어는 하나의 캠페인 의도를 50개의 플랫폼 크기 변형으로 분산시킵니다 — Instagram 정사각형, Story 세로, LinkedIn 가로, X 세로, 모두 병렬로.\n- **서비스 제공.** 해시 버킷 슬롯에 Twitter와 Facebook에 자동 게시; 비디오에 대한 동등한 더빙 및 배포 파이프라인은 [`/tools/video-dubbing`](/tools/video-dubbing)을 참조하십시오.\n\n에이전시에게는 화이트 라벨 레이어에서의 레버리지가 있습니다. 클라이언트는 에이전시 브랜드 대시보드에 로그인하고, 에이전시는 Curify의 파이프라인을 아래에서 운영하며, P&L의 인원 수는 클라이언트 수와 함께 증가하지 않습니다.\n\n<img src=\"https://cdn.curify-ai.com/images/ai-content-factory-timeline.jpg\" alt=\"마케팅 에이전시 진화 타임라인 — 인원 기반 제공에서 AI 기반 파이프라인으로, 2010년부터 2028년까지\" class=\"my-6 rounded-lg shadow-md w-full\" />"
+    },
+    "evolutionTimelinesVisualization": {
+      "title": "AI로 만든 진화 타임라인 인포그래픽: 발전을 읽기 쉽게 만드는 템플릿",
+      "metaDescription": "진화 타임라인 인포그래픽은 디자인이 독자가 한눈에 아크를 볼 수 있게 할 때 효과적입니다. 이 가이드는 종, 기술, 패션, 왕조의 해부학과 각 변형을 생성하는 AI 템플릿을 안내합니다.",
+      "seoKeywords": [
+        "진화 타임라인",
+        "AI 인포그래픽 템플릿",
+        "역사적 발전 시각화",
+        "타임라인 디자인 AI"
+      ],
+      "date": "2026년 2월 25일",
+      "readTime": "10분 읽기",
+      "intro": "진화 타임라인은 종, 기술, 패션, 왕조가 시간에 따라 어떻게 변화했는지를 단일 읽기 쉬운 이미지로 시각화합니다. 잘 만들어지면 \"이것은 어디서 왔는가?\"라는 질문에 한눈에 답할 수 있습니다. 잘못 만들어지면 읽어야 하는 복잡한 차트가 됩니다. 차이를 만드는 것은 대부분의 AI 도구가 대신하지 않는 소수의 디자인 선택입니다. 이 가이드는 실제 버전입니다: 형식이 실제로 하는 것, 알아야 할 변형, 그리고 각 변형을 생성하는 Nano Banana 템플릿입니다.",
+      "whatIsTitle": "진화 타임라인 시각화 시스템 이해하기",
+      "whatIsContent": "진화 타임라인은 각 단계를 단순히 레이블하는 것이 아니라 묘사하는 연대기 인포그래픽입니다. 독자는 변화의 형태를 봅니다 — 이전에 존재했던 종, 대체한 기술, 그 시대의 패션 실루엣 — 차트를 해석하지 않고도.\n\n읽기 쉬운 타임라인과 복잡한 타임라인을 구분하는 세 가지 디자인 선택:\n\n**수직 vs 수평 레이아웃**: 수평 타임라인은 긴 범위(천 년, 지질 시대)에 적합합니다. 수직 타임라인은 최근의 밀집된 역사(지난 50년의 기술)에 적합합니다. 시각 자료를 선택하기 전에 시간 범위 밀도에서 레이아웃을 선택하세요.\n\n**단계 묘사 스타일**: 작은 일러스트 초상화의 행은 텍스트가 많은 카드보다 더 빨리 읽힙니다. 각 단계는 썸네일 크기에서 시각적으로 구별되어야 합니다 — 만약 당신의 아이폰과 플립폰이 200픽셀에서 동일하게 보인다면, 타임라인은 실패한 것입니다.\n\n**전환 신호**: 눈은 변화의 속도에 대한 힌트가 필요합니다. 압축된 기간(빠른 진화)은 촘촘한 간격이나 화살표를 사용하고; 느린 기간은 여백을 사용합니다. 대부분의 AI 도구는 균일한 간격으로 기본 설정되어 이 정보를 잃습니다.",
+      "importanceTitle": "진화 타임라인이 다른 형식을 이기는 경우",
+      "importanceContent": "변화의 아크가 당신의 요점일 때 타임라인을 사용하세요, 상태 간의 비교가 아닙니다.\n\n**교육 콘텐츠**: \"자전거의 진화\"라는 교실 포스터는 자전거 모델 목록보다 더 잘 작동합니다. 독자는 같은 시선에서 벨로시페드, 페니파딩, 현대 프레임을 보게 되며 — 디자인 압력의 형태가 가시화됩니다.\n\n**대중문화 설명자**: \"전화기가 어떻게 얇아졌는지\" 또는 \"운동화가 어떻게 두꺼워졌는지\"는 타임라인으로 작동합니다. 독자의 기존 정신 모델이 공백을 채우고; 타임라인은 그들이 반쯤 기억한 것을 확인해 줍니다.\n\n**브랜드 스토리텔링**: 회사의 제품 진화를 타임라인으로 표현하면 텍스트 없이 창립자의 이야기를 전달합니다. 첫 번째 제품은 거칠어 보이고; 최신 제품은 세련되어 보입니다. 그 간극이 브랜드의 전체 이야기입니다.\n\n**타임라인이 실패하는 경우**: 비교 분석(어느 것이 더 나은지)은 차트에 속합니다. 진행 없이 순수한 사실(발명가 목록)은 표에 속합니다. 눈이 이동할 곳이 없다면, 타임라인이 필요하지 않습니다.",
+      "techniquesTitle": "알아야 할 세 가지 타임라인 변형",
+      "techniquesContent": "**초상화 정지점이 있는 선형 타임라인**: 각 단계는 단일 선에 배치된 일러스트 카드입니다(긴 범위에는 수평, 짧은 범위에는 수직). 종의 진화, 패션 시대, 왕조 역사에 가장 적합합니다. Nano Banana `template-history-timeline-infographic`는 모든 정지점에서 일관된 아트 디렉션으로 이 형식을 생성합니다.\n\n**분기 타임라인(클라도그램 스타일)**: 주제가 분기될 때 유용합니다 — 초기 포유류가 현대의 분류로 나뉘거나, 프로그래밍 언어가 현대의 후손으로 나뉘는 경우. 분기점이 정밀한 위치 지정을 필요로 하므로 AI로 렌더링하기가 더 어렵습니다. 생성 후 수동 배치가 일반적으로 필요합니다.\n\n**비교 타임라인**: 관련 있지만 구별된 발전을 보여주는 두 개의 평행 트랙(동서 왕조, 콘솔 대 PC 게임 하드웨어). 시간에 따라 위에서 아래로 읽고, 비교를 위해 왼쪽에서 오른쪽으로 읽습니다. 대부분의 AI 도구는 여기에서 어려움을 겪습니다; 2배 선형 타임라인 복합체로 취급하세요.",
+      "examplesTitle": "작동 예시",
+      "examplesContent": "**종의 진화**: 초기 개과에서 현대 개 품종으로. 선형 수평. 각 정지점은 고정된 아트 디렉션(배경 톤, 조명)의 한 종입니다. 주의해야 할 실패 모드: AI가 늑대와 치와와의 비율을 동일하게 제공합니다; 프롬프트에서 크기 신호를 지정하세요.\n\n**휴대폰 진화**: 1983년부터 2026년까지, 8-12 정지점. 수직은 소셜 미디어에서 스크린샷 스타일의 타임라인에 적합합니다. 실패 모드: AI가 허구의 중간 휴대폰을 발명합니다; 각 정지점을 특정 실제 모델 이름에 기반하여 고정하세요.\n\n**중국 왕조 진화**: 어려운 모드 — 상징적으로 풍부한 문화적 참조. Nano Banana `template-history-timeline-infographic`가 이와 비교하여 테스트되었습니다; 왕조 배경, 의상, 각 시대의 색상 팔레트는 명시적인 고정이 필요합니다. 혼란스러운 시대에 대한 프롬프트에서 실제 참조 이미지를 사용하세요(예: 당과 송을 구별하는 경우).\n\n**프로그래밍 언어 진화**: 포트란에서 러스트까지. 중간 밀도로 선형 수평(~20 정지점). 각 카드에는 작은 코드 스니펫이 필요합니다 — AI는 이 크기에서 그럴듯하게 보이지만 잘못된 코드를 생성합니다. 이미지 생성 후 수동으로 스니펫을 추가하세요.",
+      "toolsTitle": "도구와 그 거래",
+      "toolsContent": "**Curify Nano Banana `template-history-timeline-infographic`**: 하나의 프롬프트로 전체 타임라인을 단일 구성 이미지로 생성합니다. 모든 정지점에서 일관된 아트 디렉션이 주요 이점입니다 — 단계별 프롬프트 드리프트가 없습니다. 8-15 정지점의 선형 타임라인에 가장 적합합니다.\n\n**일반 이미지 생성기(Midjourney, DALL·E)**: 각 정지점마다 하나의 이미지를 생성한 후 Figma 또는 Canva에서 수동 레이아웃을 합니다. 각 정지점의 품질이 더 높지만 자동 일관성이 없습니다. 레이아웃 속도보다 아트 디렉션이 더 중요할 때 사용하세요.\n\n**Notebook LM 및 AI 연구 도구**: 연대기(무엇과 언제)를 생성하지만 시각 자료는 생성하지 않습니다. 시각 생성기와 함께 사용하세요. 연대기는 종종 오류가 발생하는 곳입니다 — 시각을 커밋하기 전에 날짜를 주요 출처와 대조하여 확인하세요.\n\n**전통적인 인포그래픽 도구(Venngage, Piktochart)**: 텍스트가 많은 정지점이 있는 미리 구축된 타임라인 템플릿. 생산 속도가 느리며; 시각 품질의 한계는 자산 라이브러리입니다. AI 네이티브 워크플로우에는 건너뛰세요.",
+      "curifyTitle": "Curify의 위치",
+      "curifyContent": "Curify의 `template-history-timeline-infographic`는 선형 진화 타임라인을 위한 생산 템플릿입니다 — 하나의 프롬프트, 하나의 이미지, 모든 정지점에서 일관된 아트 디렉션. 템플릿 매개변수는 주제와 범위를 제어하며; 렌더링은 레이아웃, 시대에 적합한 시각적 신호, 정지점 간 연속성을 처리합니다.\n\n템플릿 갤러리는 종의 진화, 기술 세대, 패션 시대, 왕조 타임라인 등 다양한 주제 도메인에서 실시간 예제를 제공합니다 — 작업 중인 프롬프트를 주제에 맞출 수 있습니다. 표준 템플릿이 부족할 경우(분기 나무, 다중 트랙 비교), Curify의 캐릭터 및 인포그래픽 템플릿을 각 정지점 생성기로 사용하고 플랫폼 외부에서 레이아웃을 구성하세요.",
+      "ctaText": "진화 타임라인 생성할까요?",
+      "ctaLink": "Curify의 타임라인 템플릿 생성기 사용해보기",
+      "conclusionTitle": "변형을 선택한 후 도구 선택",
+      "conclusionContent": "대부분의 실패한 진화 타임라인 프로젝트는 먼저 도구를 선택한 후 주제를 그에 맞추려 합니다. 효과적인 순서: 변화의 아크에 맞는 변형(선형, 분기, 비교)을 결정하고, 시간 범위 밀도에 따라 레이아웃 방향을 선택한 후, 해당 변형을 깔끔하게 생성하는 도구를 선택하세요.\n\n선형 타임라인의 경우, Curify Nano Banana 템플릿이 게시 가능한 이미지로 가는 가장 빠른 경로입니다. 분기 및 비교 변형의 경우, 도구 외부에서 구성할 것으로 예상하세요. 시각은 연대기만큼 좋습니다 — 먼저 날짜를 확인한 후 렌더링하세요."
+    },
+    "bilingual-ai-flashcards-early-childhood-education": {
+      "title": "유아기를 위한 이중 언어 AI 플래시카드: 2-5세에서 실제로 기억에 남는 템플릿",
+      "metaDescription": "유아는 새로운 단어가 기억에 남는 그림과 함께 도착할 때 가장 빠르게 어휘를 배웁니다. 이 가이드는 일관된 카드 패밀리를 생성하는 Nano Banana 플래시카드 템플릿, 2-5세에서 유지되는 주제, 그리고 어린 청중과 함께 실패하는 프롬프트 패턴을 안내합니다.",
+      "seoKeywords": [
+        "이중 언어 플래시카드",
+        "AI 플래시카드 어린이",
+        "ESL 유아기",
+        "AI 교육 템플릿"
+      ],
+      "date": "2026년 4월 23일",
+      "readTime": "12분 읽기",
+      "tag": "학습 및 교육",
+      "image": "/images/flashcard.webp",
+      "category": "learning-education",
+      "intro": "유아는 새로운 단어가 기억에 남는 그림과 함께 등장할 때 어휘를 가장 빠르게 배웁니다. 이중 언어 플래시카드 형식 — 같은 카드에 두 언어로 된 이미지와 단어 — 는 번역 단계를 제거하기 때문에 효과적입니다. 이 가이드는 실제적인 버전으로, 2-5세에서 실제로 유지되는 주제, 전체 주제에 걸쳐 일관된 카드 가족을 생성하는 Nano Banana 템플릿, 유아 청중에게 실패하는 프롬프트 패턴(그리고 그 이유)을 다룹니다.",
+      "whatIsTitle": "이중 언어 AI 플래시카드란 무엇인가요?",
+      "whatIsContent": "유아를 위한 이중 언어 플래시카드는 하나의 이미지와 단어 카드로, 하나의 시각적 요소가 두 언어로 된 같은 명사와 쌍을 이루는 카드입니다 — 일반적으로 가정 언어와 목표 언어입니다. 아이는 그림을 보고 두 단어를 듣고, 영어를 중개 언어로 사용하는 단계를 거치지 않고 연관성을 형성합니다.\n\n이 형식의 AI 버전은 DIY보다 두 가지를 더 빠르게 수행합니다: 주제 가족 전반에 걸쳐 일관된 일러스트레이션을 생성하고(모든 동물이 같은 스타일, 모든 과일이 같은 어깨 높이에서) 한 번에 하나의 카드가 아닌 전체 주제 세트를 생성합니다. 이점은 더 빠른 카드가 아니라 함께 어울리는 카드입니다. 이는 3세 아동에게는 더 중요합니다.\n\n카드가 성공적으로 전달되는지 여부를 결정하는 세 가지 요소가 있습니다:\n\n**썸네일 크기에서의 이미지 선명도**: 4cm 너비의 카드를 읽는 유아가 있습니다. 주제가 바쁘면 카드는 색상만으로 보입니다. 모든 카드를 축소하여 테스트하세요.\n\n**이미지와 경쟁하지 않는 단어 배치**: 단어는 위쪽, 이미지는 중앙, 두 번째 언어 단어는 아래쪽에 배치합니다. 아이의 시선은 먼저 이미지에, 그 다음에 단어에 닿아야 합니다.\n\n**카드당 단일 주제**: 두 동물이 한 카드에 있으면 \"동물\"을 가르치고 \"고양이\"나 \"개\"를 가르치지 않습니다. 5세 이하의 아이들은 일반화합니다; 카드는 단일 주제가 되어야 합니다.",
+      "whyTitle": "왜 이중 언어 카드가 번역 우선 앱보다 나은가요?",
+      "whyContent": "단어를 보여주고 번역을 요청하는 앱은 잘못된 루프를 설정합니다 — 아이는 번역하는 법을 배우고, 목표 언어로 생각하는 법을 배우지 않습니다. 이미지 우선 카드는 이 루프를 건너뜁니다.\n\n**공동 주의 순간**: 부모가 들고 있는 인쇄된 카드는 화면보다 낫습니다. 아이는 성인의 얼굴, 이미지, 성인의 입을 순서대로 봅니다. 화면은 이를 방해합니다. 7x10cm 크기로 잘 인쇄되는 카드를 생성하세요.\n\n**기계적이지 않은 반복**: 주제 가족(12마리 동물, 16가지 음식)은 부모가 순서를 바꾸고, 자신감을 높이기 위해 이미 알고 있는 카드를 섞고, 아이가 이전 카드를 마스터할 때 새로운 카드를 추가할 수 있게 합니다. 이를 선형화하는 앱은 아이가 스스로 하는 자연스러운 간격 반복을 죽입니다.\n\n**아이의 삶과 일치하는 어휘**: 도시의 아이를 위한 플래시카드 세트에는 지하철, 만두, 비둘기가 포함됩니다. 농촌 지역의 아이를 위한 세트에는 트랙터, 건초, 닭이 포함됩니다. 이점은 맞춤 주제이며, 미리 만들어진 덱이 아닙니다 — AI 생성이 실제로 선반 제품보다 뛰어난 부분입니다.",
+      "howTitle": "5단계 플래시카드 워크플로우",
+      "step1Title": "1단계: 아이가 이미 사용하는 주제 선택하기",
+      "step1Content": "2-5세의 어휘 유지력은 경험에 기반합니다. 가장 좋은 첫 주제: 가족 구성원, 음식(특히 아이가 이번 주에 먹는 것), 애완동물 및 즉각적인 환경의 동물, 신체 부위, 의류, 날씨 단어입니다. 이 나이에는 추상적인 범주(“감정”, “교통”)를 피하세요 — 아이가 4세를 지나면서 더 잘 유지됩니다.\n\n주제 크기: 세트당 8-16 카드. 작은 세트는 회전하기 쉽고, 큰 세트는 압도적입니다. 주제는 아이가 들고 다닐 수 있는 작은 상자에 들어가야 합니다.",
+      "step2Title": "2단계: 하나의 템플릿으로 카드 가족 생성하기",
+      "step2Content": "Nano Banana 플래시카드 템플릿(또는 세트를 위한 맞춤 Curify 템플릿)을 사용하여 전체 주제를 한 번에 생성하세요. 템플릿을 사용하는 목적 — 각 카드를 개별적으로 프롬프트하는 것과 비교하여 — 일관성입니다: 모든 동물이 같은 일러스트레이션 스타일, 같은 배경 톤, 주제와 여백의 비율이 동일합니다.\n\n강력한 템플릿 프롬프트는 아트 디렉션을 한 번 고정합니다: \"부드러운 셀 음영 일러스트레이션, 흰색 배경, 중앙에 단일 주제, 텍스트 오버레이 없음, 고른 조명\". 카드 간의 변수는 단어뿐입니다.",
+      "step3Title": "3단계: 이중 언어 단어 배치 추가하기",
+      "step3Content": "단어는 이미지 생성 후에 추가되며, 프롬프트에는 포함되지 않습니다. Nano Banana에서 AI로 생성된 텍스트는 플래시카드가 요구하는 작은 크기에서 신뢰할 수 없으며, 아이가 필요로 하는 타이포그래피 선택(고대비 산세리프, 넉넉한 글자 간격)은 레이아웃 도구에서 더 쉽게 제어할 수 있습니다.\n\n작동하는 레이아웃 패턴: 목표 언어 단어는 위쪽에 더 큰 두께로, 이미지는 카드 영역의 60%를 차지하며 중앙에 위치하고, 가정 언어 단어는 아래쪽에 더 작고 가벼운 두께로 배치합니다. 계층 구조는 어떤 언어가 목표인지 신호를 보냅니다.",
+      "step4Title": "4단계: 발음 오디오 추가하기 (선택 사항이지만 권장)",
+      "step4Content": "부모가 원어민이 아닌 언어의 경우, 카드마다 QR 코드로 오디오 파일을 첨부하세요. 주요 클라우드 제공업체의 무료 TTS는 유아 연령의 단어 발음에 대해 자연스럽게 들립니다 — Azure Neural, Google Cloud TTS 및 ElevenLabs 모두 작동합니다. 기계음 같은 무료 음성을 피하세요; 아이는 듣는 것을 모방합니다.\n\n목표 언어의 원어민인 부모의 경우: TTS가 아닌 본인의 목소리를 녹음하세요. 아이는 당신의 목소리를 인식하고 더 많이 참여합니다.",
+      "step5Title": "5단계: 인쇄, 테스트, 반복하기",
+      "step5Content": "7x10cm 또는 10x15cm 크기로 카드 스톡에 인쇄하세요. 작은 크기는 휴대성이 더 좋고, 큰 크기는 2세 이하의 아이가 다루기 더 쉽습니다. 아이와 함께 세트를 2주 동안 테스트하세요. 지속적으로 유지되지 않는 카드는 보통 다음과 같습니다:\n\n— 세트의 다른 카드와 시각적으로 유사함(기린과 사슴이 비슷하게 보임)\n— 프레임에서 주제가 너무 작음(확대하세요)\n— 아이가 실제로 일상에서 접하지 않는 어휘(교체하세요)\n\n실패하는 카드를 교체하고, 일관성을 유지하기 위해 같은 템플릿에서 다시 생성하며, 변경 사항만 다시 인쇄하세요.",
+      "templatesTitle": "사용할 수 있는 템플릿 프롬프트 3개",
+      "templatesIntro": "각 프롬프트는 시작점입니다 — 주제 명사와 아트 디렉션을 아이의 선호에 맞게 조정하세요. 세 가지 모두 Nano Banana 플래시카드 템플릿 가족을 위해 설계되었습니다.",
+      "template1Title": "동물 주제 (12 카드)",
+      "template1Prompt": "이중 언어 플래시카드, 흰색 배경에 중앙에 단일 동물의 부드러운 셀 음영 일러스트레이션, 다른 요소 없음, 텍스트 오버레이 없음, 부드러운 조명, 주제가 프레임의 60%를 차지합니다. 렌더링할 동물: 고양이, 개, 토끼, 말, 소, 돼지, 양, 닭, 오리, 물고기, 새, 쥐.",
+      "template2Title": "음식 주제 (8 카드)",
+      "template2Prompt": "이중 언어 플래시카드, 흰색 배경에 중앙에 단일 음식 항목의 수채화 일러스트레이션, 접시나 식기 없음, 텍스트 오버레이 없음, 부드러운 자연 조명, 썸네일 크기에서 인식 가능한 항목. 렌더링할 음식: 사과, 바나나, 빵, 쌀, 계란, 우유, 당근, 브로콜리.",
+      "template3Title": "신체 부위 주제 (10 카드)",
+      "template3Prompt": "이중 언어 플래시카드, 작은 화살표로 레이블이 붙은 단일 신체 부위의 명확한 다이어그램 스타일 일러스트레이션, 중립적인 피부 톤, 흰색 배경, 텍스트 오버레이 없음, 관련이 없는 경우 얼굴 표정 없음. 렌더링할 부위: 손, 발, 눈, 귀, 코, 입, 머리, 무릎, 팔꿈치, 손가락.",
+      "benefitsTitle": "앱이 하지 못하는 이 형식의 장점",
+      "benefitsContent": "**맞춤 어휘**: 앱은 아이에게 앱이 만들기로 결정한 카드 덱을 제공합니다. 생성된 세트는 아이에게 *그들의* 삶의 카드 덱을 제공합니다 — 가족의 특정 음식, 이름으로 불리는 봉제 인형, 실제로 보는 지역 동물들.\n\n**부모 주도 속도**: 부모가 새로운 카드를 추가할 시기, 숙련된 카드를 퇴출할 시기, 세트를 혼합할 시기를 결정합니다. 앱은 종종 잘못된 결정을 내립니다.\n\n**인쇄 내구성**: 카드 스톡 카드는 유아의 아침을 견딥니다. 태블릿은 그렇지 않습니다.\n\n**비용**: 하나의 템플릿 생성으로 12-16장의 카드를 몇 개의 이미지 크레딧 비용으로 생산합니다. 미리 만들어진 이중 언어 세트는 각각 $20-40입니다.",
+      "toolsTitle": "알아두면 좋은 동반 도구",
+      "toolsContent": "**Anki / Quizlet (5세 이상)**: 아이가 인쇄 단계에서 넘어갔을 경우 사용할 수 있는 간격 반복 앱입니다. 생성된 카드를 이미지 및 텍스트 쌍으로 가져옵니다. 2-4세의 경우, 여전히 인쇄가 우세합니다.\n\n**Canva, Figma, Affinity Publisher**: AI 생성 이미지에 이중 언어 단어를 배치합니다. Canva의 무료 계층은 16장 카드 세트를 쉽게 처리합니다. Word/Pages는 피하세요 — 카드 크기에서 글자 간격이 끔찍합니다.\n\n**Azure Neural TTS / ElevenLabs**: 목표 언어의 원어민이 아닌 부모를 위한 발음 오디오입니다. ElevenLabs는 가장 자연스러운 단어 전달을 제공하며, Azure는 대량으로 가장 저렴합니다.\n\n**Curify Nano Banana 플래시카드 템플릿**: 일관된 아트 방향을 가진 전체 주제 배치의 제작 템플릿입니다. 포인트는 일관성이지 속도가 아닙니다.",
+      "bestPracticesTitle": "피해야 할 일반적인 실수",
+      "bestPracticesContent": "**어수선한 일러스트**: AI는 배경 세부 사항(구름, 풀, 작은 새)을 추가하는 경향이 있습니다. 2-3세의 경우, 이를 제거하세요. 주제는 카드입니다.\n\n**명확함보다 귀여움**: 다섯 개의 꼬리를 가진 스타일화된 여우는 사랑스럽지만 \"여우\"를 가르치지 않습니다. 인식 가능한 것을 우선으로 하고, 귀여운 것을 두 번째로 하세요.\n\n**일관되지 않은 세트 아트 방향**: 포토리얼과 셀 음영을 혼합하면 가족 느낌이 깨집니다. 흐트러진 카드는 재생성하세요.\n\n**단일 캐릭터 반복**: 모든 카드에 같은 만화 아이를 넣지 마세요 — 아이는 \"그것은 카드의 소년\"이라고 일반화하며 명사를 배우지 않습니다. 주제로는 물체/동물을 사용하고, 사람은 주제가 사람일 때만 사용하세요.\n\n**가정 언어 건너뛰기**: 아이가 가정 언어 단어를 아는 것처럼 보여도 항상 카드에 두 언어를 포함하세요. 쌍이 포인트입니다.",
+      "conclusionTitle": "첫 번째 주제를 만들고 멈추세요",
+      "conclusionContent": "가장 큰 실수는 하나도 테스트하지 않고 200장의 카드를 생성하는 것입니다. 단일 12장 카드 주제로 시작하고, 인쇄하여 아이와 함께 2주 동안 사용한 후, 반복하세요. 아이가 좋아하는 카드는 *당신*의 아이에게 어떤 아트 방향이 효과적인지를 알려줍니다; 그에 따라 다음 주제를 만드세요.\n\n생성, 인쇄, 반복 — 이 순서로 진행하세요. AI가 제작 작업을 수행하고, 부모는 여전히 가르치는 역할을 합니다."
+    },
+    "aifacelesschannelpipeline": {
+      "title": "AI 페이스리스 채널 파이프라인: 주 5-10개의 비디오 뒤에 있는 실제 워크플로우",
+      "date": "2026년 4월 23일",
+      "readTime": "18분 읽기",
+      "category": "크리에이터 도구",
+      "tag": "크리에이터 도구",
+      "image": "/images/facelesyoutube.webp",
+      "metaDescription": "페이스리스 채널은 프롬프트가 아닌 파이프라인에서 확장됩니다. 이 가이드는 채널을 유지하는 실제 구성 요소 — 브랜드 잠금 시각 생성기, 내러티브 스크립트, 장기적으로 살아남는 음성 클로닝, 스케줄링 자동화 — 를 안내합니다.",
+      "seoKeywords": "ai 페이스리스 채널, 페이스리스 유튜브 채널 ai 도구, 틱톡 비디오 자동화, ai 콘텐츠 자동화, 페이스리스 비디오 제작",
+      "intro": "페이스리스 채널은 카메라 앞에 나타나지 않고 콘텐츠를 제공합니다 — 음성과 시각, 자동화가 결합됩니다. 대부분의 페이스리스 채널 가이드는 실제 파이프라인을 간과합니다; 주 5-10개의 비디오를 품질 저하 없이 생산하는 것은 구조적이며, \"모든 것을 위해 AI를 사용하세요\"가 아닙니다. 이 가이드는 진짜 버전입니다: 모든 비디오가 동일한 채널처럼 보이도록 유지하는 브랜드 잠금 시각 생성기, 비디오가 챗봇 작성처럼 느껴지지 않도록 하는 내러티브 패턴 스크립트 생성기, 10분 길이의 장기적인 비디오에서도 유지되는 음성 클로닝, 그리고 채널이 당신이 손대지 않는 주에도 게시를 유지하는 스케줄링 자동화입니다.",
+      "whatIsTitle": "AI 페이스리스 채널 파이프라인이란 무엇인가요?",
+      "whatIsContent": "페이스리스 AI 채널은 제작자가 카메라에 나타나지 않는 YouTube, TikTok 또는 Shorts 채널입니다. 비디오는 세 가지 제작 트랙이 병렬로 실행되어 구성됩니다:\n\n**비주얼 트랙**: 브랜드 일관된 스타일에 맞춘 이미지 또는 짧은 클립 생성. 모든 비디오에서 동일한 색상 팔레트, 동일한 캐릭터 아트 방향, 동일한 구성 어휘를 유지합니다. 이 제약이 없으면 채널은 \"다른 AI 도구\"로 읽힙니다.\n\n**오디오 트랙**: 클론된 합성 음성 또는 스톡 음성의 내레이션. 비디오 간에 음성이 변경되지 않으며 — 얼굴이 없는 상태에서 채널의 정체성입니다.\n\n**페이싱 트랙**: 편집. 컷, B-roll 삽입, 화면 텍스트, 음악. 이것이 시청자를 유지하는 페이스리스 채널과 스크롤되는 채널을 구분합니다.\n\n파이프라인은 단일 도구가 아닙니다. 하나의 일관된 브랜드 아래 세 가지 제작 트랙의 오케스트레이션입니다. 효과적인 페이스리스 채널은 운영이지 프롬프트가 아닙니다.",
+      "whyTitle": "\"그냥 AI를 사용하세요\"가 실패하는 이유",
+      "whyContent": "대부분의 페이스리스 채널 시도는 하나의 좋은 비디오를 만든 후 저하됩니다. 실패 모드는 예측 가능합니다:\n\n**비주얼 드리프트**: 프롬프트된 이미지는 비디오 간에 다양합니다. 비디오 10까지 채널은 인식 가능한 모양이 없습니다. 해결책: Nano Banana 템플릿(또는 동등한 잠금 스타일 생성기)을 사용하고, 자유 형식 프롬프트는 피하세요.\n\n**음성 피로**: 스톡 음성은 같은 청취자의 귀에서 여러 비디오 후에 로봇처럼 들립니다. 훈련 데이터가 약한 클론 음성은 장기적으로 저하됩니다. 해결책: 고품질 음성 클론에 투자하거나 채널의 첫 50개 비디오를 위해 단일 음성 배우를 고용하세요.\n\n**스크립트 동일성**: AI 생성 스크립트는 동일한 구조로 기울어집니다 (\"당신은 알고 있습니까... 연구 결과는... 결론적으로...\"). 시청자는 주의를 잃습니다. 해결책: 스크립트 생성기가 회전하는 내러티브 패턴의 작은 라이브러리(문제-전환-보상, 이해관계가 있는 목록, 전후)입니다.\n\n**스케줄링 규율 부족**: 원샷 비디오는 청중을 구축하지 않습니다. 해결책: 인간의 에너지가 아닌 콘텐츠 캘린더에 연결된 큐 및 게시 자동화입니다.",
+      "howTitle": "다섯 가지 구성 요소 파이프라인",
+      "step1Title": "1단계: 비주얼 아이덴티티 잠금",
+      "step1Content": "비디오를 제작하기 전에 채널의 시각적 브랜드를 정의하세요. 색상 팔레트(3-5색), 구성 어휘(중앙 주제 대 비중앙, 넓은 대 가까운), 일러스트 스타일(셀 음영, 3D 렌더링, 수채화, 포토리얼), 반복되는 시각 모티프(마스코트, 반복되는 프레임 요소, 시그니처 전환)를 설정하세요.\n\n이들을 Nano Banana 템플릿에 잠급니다. 템플릿은 채널의 시각적 계약이 됩니다 — 생성된 모든 이미지는 이에 부합합니다. 이 단계를 생략하면 채널은 다른 천 개의 채널처럼 보이는 \"AI 스타일\" 콘텐츠를 생성합니다.\n\n골드 스탠다드: 하나의 템플릿이 주제에 따라 영웅 샷, 전환 카드 및 B-roll 변형을 생성합니다. 변형 템플릿은 특별 형식(인터뷰, 목록 비디오, 내러티브 스토리)을 위해 주요 템플릿에서 분기됩니다.",
+      "step2Title": "2단계: 내러티브 패턴에서 스크립트 생성",
+      "step2Content": "페이스리스 채널의 목소리 — 사람처럼 느끼게 하는 요소는 스크립트 구조에서 나옵니다. 스크립트 생성기가 선택할 수 있는 5-10개의 내러티브 패턴 라이브러리를 구축하세요:\n\n**문제-전환-보상**: 30초 문제 설정, 30초 예상치 못한 전환, 나머지는 보상입니다.\n\n**이해관계가 있는 목록**: \"5 X가 Y\"지만 각 항목은 결과가 증가합니다.\n\n**전후 몽타주**: 두 상태, 그 사이의 다리는 비디오입니다.\n\n**조용한 전문가**: 시청자가 간단하다고 가정했던 주제에 대한 차분한 선언적 전달, 그것이 간단하지 않음을 드러냅니다.\n\n**핫 테이크**: 강한 의견, 방어된, 논란의 여지가 있는 결론.\n\n비디오당 하나의 패턴을 할당하세요. 스크립트 생성기는 주제, 훅 및 보상을 채웁니다. 패턴을 회전시켜 채널이 예측 가능하지 않도록 합니다.",
+      "step3Title": "3단계: 장기적인 생존을 위한 음성 클로닝",
+      "step3Content": "음성 클론은 문장 길이뿐만 아니라 비디오 길이에서도 자연스럽게 들려야 합니다. 두 가지 비협상 사항:\n\n**훈련 데이터 품질**: 목표 말하기 스타일의 깨끗한 소스 오디오 30-60분. 채널이 캐주얼하면 대화체 톤, 설명적이면 내러티브 톤. 깨끗하다는 것은: 단일 화자, 배경 음악 없음, 압축 아티팩트 없음, 다양한 문장 구조입니다. ElevenLabs Instant Voice는 1분에서 사용할 수 있는 클론을 제공하지만, 생성된 오디오가 90초 후에 저하됩니다. 그들의 Professional Voice Cloning은 소스가 몇 시간이 걸리지만 전체 비디오에서 품질을 유지합니다.\n\n**운율 제어**: 장기적인 형식은 일시 중지, 강조 변화 및 속도 변화를 필요로 합니다. F5-TTS와 ElevenLabs는 모두 SSML 또는 마커 기반 운율을 지원합니다. 처음 10개의 비디오에 대해 이를 손으로 작성하여 음성 클론이 잘하는 것을 배우세요 — 일단 알게 되면, 이를 요청할 수 있습니다.\n\nF5-TTS 오픈 소스는 기술 채널(내레이션, 설명)에서 품질이 경쟁력이 있지만 감정 전달에는 약합니다. ElevenLabs는 더 비싸지만 더 넓은 말하기 범위를 처리합니다.",
+      "step4Title": "4단계: 조립 및 페이싱",
+      "step4Content": "스크립트와 음성은 입력입니다. 편집은 시청자가 계속 보게 만드는 요소입니다.\n\n**Shorts/TikTok의 경우 2-4초마다 컷**: 페이싱이 형식입니다. 8초 정적 이미지 세그먼트가 있는 페이스리스 Short는 유지되지 않습니다.\n\n**YouTube 장기 형식의 경우 5-10초마다 컷**: 느린 페이싱이 작동합니다. 관객이 길이에 대해 자발적으로 선택했기 때문입니다. 그러나 시각적 변화 없이 15초를 초과하는 세그먼트는 없습니다.\n\n**훅을 위한 화면 텍스트**: 처음 3초는 훅을 다시 설명하는 텍스트 오버레이가 필요합니다. 페이스리스 채널은 비디오가 무엇에 관한 것인지 읽었다면 남아 있었을 시청자를 잃습니다. 번인 텍스트는 가장 저렴한 보험입니다.\n\n**음악 베드**: 비디오 전반에 걸쳐 일관된 음악 트랙은 브랜드 정체성을 확립합니다. 로열티 프리 라이브러리(Epidemic, Artlist, YouTube Audio Library)는 괜찮습니다 — 세 곡을 선택하고 회전하세요. 매 비디오마다 음악을 바꾸면 \"다른 채널\"로 읽힙니다.",
+      "step5Title": "5단계: Cadence에서 일정 설정 및 게시",
+      "step5Content": "주간 5-10 비디오 cadence는 큐 및 게시가 필요하며, 일회성 업로드가 아닙니다. 최소 2주 간의 여유가 있는 게시 일정을 설정하세요.\n\n**여유 전략**: 2주마다 배치를 생성합니다. 다음 14일의 비디오는 게시되기 전에 예약됩니다. 배치가 동일한 제약 조건 하에 생산되기 때문에 품질이 일관되게 유지됩니다.\n\n**크로스 포스팅**: 원본이 재사용을 위해 스크립트화된 경우, 하나의 긴 형식 YouTube 비디오는 5-10개의 Shorts/TikToks를 생성할 수 있습니다. 60초 이하의 하이라이트 세그먼트를 잘라내고, 제작 시 수직으로 재형식화하세요. 후속 작업이 아닙니다.\n\n**게시 자동화**: Buffer, Later, Hootsuite를 사용하여 크로스 플랫폼 예약을 합니다. 긴 형식의 경우 YouTube 네이티브 예약을 사용하세요. 중요한 규율은 일정 준수이며, 특정 도구는 거의 영향을 미치지 않습니다.",
+      "toolsTitle": "표준화할 가치가 있는 파이프라인 도구",
+      "toolsContent": "**비주얼 생성**: 브랜드 잠금 이미지 생성을 위한 Curify Nano Banana, 채널의 아트 방향을 규정하는 템플릿. 템플릿을 벗어난 맞춤 이미지를 위한 Midjourney.\n\n**스크립트 생성**: 내러티브 패턴 스크립트 생성을 위한 Claude, GPT-4o. 채널의 내러티브 라이브러리를 강제하는 시스템 프롬프트를 유지하세요.\n\n**음성 합성**: 채널의 플래그십 음성을 위한 ElevenLabs Professional Voice Cloning. 기술/설명 채널을 위한 예산 대안으로 F5-TTS. 제작 작업을 위해 무료 계층 음성을 피하세요.\n\n**비디오 조립**: 빠른 전환을 원할 경우 AI 지원 편집을 위한 Descript. 전체 제어를 위한 DaVinci Resolve 또는 Premiere Pro. Shorts 및 TikTok 네이티브 페이싱을 위한 CapCut.\n\n**일정 관리**: 크로스 플랫폼 자동화를 위한 Buffer, Later, Metricool. 긴 형식 전용 채널을 위한 YouTube 네이티브 예약.\n\n**자동화 연결**: 파이프라인을 끝까지 조정하는 Make.com(구 Integromat), Zapier 또는 사용자 정의 스크립트. 자동화 계층은 솔로 운영자가 에이전시와 다른 곳입니다.",
+      "curifyTitle": "Curify가 파이프라인에 적합한 이유",
+      "curifyContent": "Curify는 브랜드 잠금 비주얼 생성 계층을 제공합니다 — 이는 얼굴 없는 채널이 확장할 때 가장 먼저 실패하는 파이프라인의 일부입니다. Nano Banana 템플릿은 채널의 아트 방향을 고정하여 모든 이미지가 비디오, 주 및 운영자에 걸쳐 일관되게 유지됩니다.\n\n반복 캐릭터가 있는 채널(스토리 기반 애니메이션, 마스코트 주도 설명자)의 경우, Curify의 캐릭터 템플릿은 주제 변형에 걸쳐 일관된 렌더링을 생성합니다 — 동일한 캐릭터, 다른 장면. 이것은 얼굴 없는 채널 아트 방향의 가장 어려운 부분입니다; 이를 템플릿화하면 비디오별 드리프트가 제거됩니다.\n\n파이프라인의 나머지 부분(스크립트, 음성, 편집, 일정)은 비주얼 출력에 연결됩니다. Curify는 기초이며 전체 스택이 아닙니다 — 플랫폼은 비주얼 계층에 대해 의견이 있으며, 이는 대부분의 얼굴 없는 채널이 실패하는 곳입니다.",
+      "monetizationTitle": "수익화 현실",
+      "monetizationContent": "얼굴 없는 채널은 얼굴 있는 채널과 동일한 경로로 수익을 창출하지만 마찰이 다릅니다:\n\n**광고 수익 (AdSense, TikTok Creator Fund)**: 기준을 충족하면 이용 가능합니다. AdSense는 1,000회 조회수당 지급하며, 비율은 틈새에 따라 다릅니다. 금융, 기술 및 비즈니스 틈새는 일반 관심 CPM의 3-5배를 벌어들입니다. 필수: YouTube의 경우 1,000명의 구독자와 4,000시간의 시청 시간; TikTok의 경우 10,000명의 팔로워와 30일 내 100,000회의 조회수.\n\n**제휴**: 얼굴 없는 채널이 여기에서 뛰어납니다 — 추천이 객관적으로 느껴지기 때문에 호스트의 얼굴이 피치에 연결되지 않습니다. 틈새에 맞는 제휴 프로그램(Amazon Associates, ShareASale, Impact)이 일반 프로그램보다 더 잘 작동합니다.\n\n**스폰서십**: 얼굴 없는 채널에겐 더 어렵습니다. 스폰서는 인지 가능한 호스트를 원합니다. 가능하지만 먼저 채널 권위를 구축해야 합니다(200K+ 구독자, 일관된 참여).\n\n**제품 및 과정**: 얼굴 없는 채널에 가장 강력한 경로입니다. 채널이 주제를 가르치고, 제품이 가르친 내용을 확장합니다. 마진은 광고 수익보다 높고, 청중은 사전 자격이 있습니다.",
+      "examplesTitle": "연구할 가치가 있는 채널",
+      "examplesContent": "작동하는 세 가지 얼굴 없는 채널 원형:\n\n**설명 기술**: 잠금된 비주얼 스타일(종종 화이트보드 또는 다이어그램 기반), 차분한 내레이터 음성, 명확한 이해관계가 있는 스크립트. 예: 경제, 과학, 역사에 관한 설명 채널. 얼굴 없는 형식은 신뢰성이 내용에 있기 때문에 작동합니다, 인격이 아닙니다.\n\n**스토리 기반 애니메이션**: 비디오 전반에 걸쳐 반복 캐릭터, 잠금된 아트 방향, 캐릭터별 음성 연기(복제 또는 인간). 예: 잠자리 이야기 채널, 애니메이션 단편 채널. 캐릭터 생성이 일관되어야 하므로 시작하기 어렵습니다.\n\n**목록 및 순위**: 강력한 훅이 있는 빠른 컷 목록, B-roll 및 화면 텍스트. 예: 모든 틈새에서 \"상위 10개\" 채널. 구조가 엄격하기 때문에 시작하기 가장 쉽지만, 수십 개의 유사한 채널과 차별화하기 가장 어렵습니다.\n\n실패하는 채널은 일반적으로 네 번째 원형입니다: \"무작위 AI 콘텐츠\" — 잠금된 비주얼 스타일이 없고, 일관된 음성이 없으며, 반복 형식이 없습니다. 그들은 볼륨을 생산하지만 유지율은 없습니다.",
+      "metricsTitle": "채널 생존을 예측하는 메트릭",
+      "metricsContent": "허영 메트릭(조회수, 좋아요)은 주요 지표가 아닙니다. 첫 주부터 다음을 추적하세요:\n\n**평균 시청 지속 시간**: 비디오 길이의 30% 미만이면 알고리즘이 채널을 노출하지 않습니다. 긴 형식의 경우 50%+, Shorts의 경우 70%+를 목표로 하세요.\n\n**썸네일 클릭률**: 4% 미만은 약합니다. 강력한 얼굴 없는 채널은 8-12%에 도달합니다. 썸네일은 단일 가장 높은 레버리지 편집 포인트입니다.\n\n**구독자 대 조회수 비율**: 비디오가 10K 조회수를 얻고 0명의 새로운 구독자가 생기면, 채널은 시청자를 팔로워로 전환하지 못하고 있습니다 — 콘텐츠 품질은 괜찮지만 구독을 위한 훅이 부족합니다.\n\n**게시 일관성**: 장기 생존을 예측하는 단일 메트릭입니다. 6개월 동안 매주 게시하는 채널은 임계 질량에 도달합니다; 2주 동안 조용한 채널은 거의 회복하지 못합니다.",
+      "scalingTitle": "하나의 채널에서 네트워크로 확장",
+      "scalingContent": "하나의 채널이 수익성이 생기면 운영 패턴은 이식 가능합니다. 얼굴 없는 채널 네트워크 — 인접한 틈새의 3-10개 채널 — 는 주로 템플릿 재스킨 작업입니다.\n\n**템플릿 재스킨**: Nano Banana 템플릿, 내러티브 패턴 라이브러리, 음성 클론은 각 채널에 따라 교환 가능합니다. 파이프라인은 동일하게 유지됩니다.\n\n**크로스 채널 주제 재사용**: 한 번 조사된 주제는 서로 다른 프레이밍으로 2-3개 채널에 제공될 수 있습니다(예: 금융 주제는 개인 금융 채널, 기술 투자 채널 및 비즈니스 뉴스 채널에서 운영될 수 있습니다).\n\n**채널당 운영 비용**: 채널 추가의 한계 비용은 주당 운영자 시간이며, API 비용이 아닙니다. 세 번째 채널이 시작될 때 파트타임 편집자를 고용하세요; 그 이상으로 확장하려고 하지 마세요.",
+      "ctaText": "얼굴 없는 채널 시스템을 구축할 준비가 되셨나요?",
+      "ctaLink": "/nano-banana",
+      "conclusionTitle": "첫 비디오 전에 파이프라인 구축",
+      "conclusionContent": "얼굴 없는 채널에 효과적인 패턴은 대부분의 제작자가 시작하는 방식과 반대입니다. 먼저 파이프라인을 구축하세요 — 비주얼 템플릿, 스크립트 라이브러리, 음성 클론, 일정 — 그런 다음 제작하세요. 처음 10개의 비디오는 파이프라인을 테스트하는 것이지, 청중을 구축하는 것이 아닙니다.\n\n얼굴 없는 채널의 한계는 창의적이지 않습니다; 운영적입니다. 확장하는 채널은 인프라가 있는 채널입니다. 하나의 채널로 시작하고, 파이프라인을 잠그고, 첫 번째 채널이 자율 주행 중일 때만 네트워크로 확장하는 것을 고려하세요."
+    },
+    "ugc-video-translation-scaling-tiktoks-shorts-global-markets": {
+      "title": "UGC 비디오 번역: 짧은 형식 현지화가 긴 형식보다 더 어려운 이유",
+      "date": "2026년 4월 23일",
+      "readTime": "15분 읽기",
+      "tag": "비디오 더빙 및 번역",
+      "image": "/images/tiktok.webp",
+      "category": "video-translation-dubbing",
+      "intro": "긴 형식 YouTube 비디오 번역을 위한 훌륭한 콘텐츠가 존재하지만, 현재의 제작자 경제는 짧은 형식의 사용자 생성 콘텐츠(UGC)에 의해 크게 주도되고 있습니다. 브랜드와 제작자는 최상위 성과를 내는 Shorts와 Reels를 스페인어, 일본어 및 포르투갈어 시장으로 밀어내고 싶어하지만, 그들이 작동하게 만든 요소를 잃지 않기를 원합니다 — 그리고 표준 긴 형식 비디오 번역 파이프라인은 그 결과를 생성하지 않습니다. 짧은 형식 번역은 고유한 문제입니다: 페이싱은 농담이고, 감정적 비트는 훅이며, 평범한 더빙은 둘 다 죽입니다. 이 가이드는 짧은 형식 번역이 다른 스택을 필요로 하는 이유, 새로운 시장으로의 배송이 실제로 어떻게 보이는지, 실패 모드가 어디에서 나타나는지를 설명합니다.",
+      "whatIsTitle": "UGC 비디오 번역이란 무엇인가요?",
+      "whatIsContent": "UGC 비디오 번역은 짧은 형식 콘텐츠 — TikToks, Instagram Reels, YouTube Shorts — 를 다른 언어의 청중을 위해 현지화하면서 제작자의 원래 에너지, 페이싱 및 감정적 전달을 보존하는 것입니다. 형식 제약은 엄격합니다: 2-4초마다 컷, 첫 3초에 단일 훅, 더빙 버전이 동일한 타임스탬프에서 감정적 변화를 포착해야 합니다.\n\n짧은 형식 번역을 긴 형식과 구별짓는 세 가지 요소:\n\n**훅이 전체 비디오입니다**: 30초짜리 Reel은 첫 문장에 따라 생존하거나 사라집니다. 번역된 훅은 목표 언어의 리듬에 맞춰야 합니다 — 원본 언어에서 4초 걸리는 문자 번역이 목표 언어에서 6초 걸리면 이미 더빙 믹스 전에 실패한 것입니다.\n\n**페이싱은 원본 편집 포인트에 고정됩니다**: 긴 형식 번역은 더빙 타이밍을 단락 구분에 걸쳐 늘릴 수 있습니다. 짧은 형식은 여유가 없습니다 — 모든 컷, 화면 텍스트 공개 및 비트 드롭은 더빙된 오디오와 일치해야 합니다. 번역 파이프라인은 긴 형식 파이프라인보다 타이밍을 더 공격적으로 존중해야 합니다.\n\n**문화적 보정이 드러납니다**: 한 시장에서 작동하는 농담은 다른 시장에서는 실패합니다. 긴 형식은 문화적 마찰을 흡수하는 맥락을 설정할 공간이 있지만, 짧은 형식은 그렇지 않습니다.",
+      "whyTitle": "왜 짧은 형식 콘텐츠에 집중해야 하나요?",
+      "whyContent": "제작자 경제는 극적으로 변화했습니다. 긴 형식 콘텐츠도 여전히 중요하지만, 성장 엔진은 이제 짧은 형식 UGC입니다. 자신의 바이럴 TikToks와 Shorts를 여러 언어로 성공적으로 번역하는 제작자는 도달 범위와 수익화 잠재력을 10배로 늘릴 수 있습니다. 기술적 도전은 15-60초 클립에서 원래 제작자의 진정한 목소리와 감정적 억양을 유지하는 것입니다.",
+      "howTitle": "5단계 UGC 번역 파이프라인",
+      "step1Title": "1단계: 번역 전에 페이싱 마커 추출하기",
+      "step1Content": "번역 전에 바이럴 요소를 식별합니다: 페이싱 패턴, 감정적 비트, 점프 컷, 사운드 싱크 포인트 및 문화적 참조. 모든 편집 지점의 타임라인과 각 지점에서 오디오가 어떻게 작동하는지(후크, 설정, 반전, 보상)를 기록합니다. 번역은 동일한 타임스탬프에서 동일한 비트를 전달해야 하며, 그렇지 않으면 편집이 깨진 것처럼 보입니다.\n\n대부분의 장편 파이프라인은 타이밍 드리프트를 흡수할 수 있는 여유가 있기 때문에 이 단계를 건너뜁니다. 짧은 형식에서는 여유가 없으며, 마커를 미리 추출하면 번역자가 비트당 허용되는 음절 수를 알 수 있습니다.",
+      "step2Title": "2단계: 단어 수가 아닌 음절 예산으로 번역하기",
+      "step2Content": "표준 번역 도구는 단어 대 단어 정확성을 목표로 합니다. 짧은 형식은 음절 예산에 맞춘 번역이 필요합니다 — 5음절 영어 후크를 대체하기 위한 6음절 스페인어 후크는 2초 비트를 넘칩니다. 신경망 번역 단계는 목표 오디오 지속 시간을 인식해야 합니다.\n\n실용적인 접근법: 먼저 번역한 다음 소스 오디오 세그먼트에 대해 길이 검사를 실행합니다. 번역이 15% 이상 초과하면 단축하라는 지침으로 재생성합니다. 대부분의 클라우드 번역 API(구글, DeepL)는 상단에서 길이 제약을 통해 조정할 수 있습니다.\n\n길이 확장이 중요한 시장(영어 → 스페인어, 영어 → 포르투갈어는 일반적으로 20-30% 추가됨)에서는 더 엄격한 프롬프트가 필수적입니다. 목표 언어가 더 압축된 시장(영어 → 일본어는 30% 압축 가능)에서는 비트에서의 공백 위험이 있습니다.",
+      "step3Title": "3단계: 스톡 음성이 아닌 창작자의 목소리 복제하기",
+      "step3Content": "UGC 시청자는 채널이 아닌 창작자를 따릅니다. 더빙된 목소리는 창작자의 것이어야 하며, 합성되었지만 그들을 인식할 수 있어야 합니다. 여기서 짧은 형식 파이프라인은 기업 더빙과 크게 다릅니다.\n\n훈련 데이터: 언어 스타일당 60-120초의 깨끗한 창작자 오디오. ElevenLabs Professional Voice Cloning은 이 양에서 사용 가능한 결과를 생성하며, F5-TTS 오픈 소스는 낮은 예산에서 경쟁력이 있지만 감정 전달이 약합니다.\n\n비명백한 작업: 복제된 목소리는 감정 범위를 처리해야 합니다. 창작자 콘텐츠는 단일 30초 클립 내에서 캐주얼, 흥분, 비꼼, 진지함 사이를 오갑니다. 평범한 내레이션 오디오로 훈련된 목소리는 UGC 맥락에서 감정적으로 죽은 것처럼 들립니다. 창작자의 감정 범위를 포함하는 소스 자료로 훈련하세요.",
+      "step4Title": "4단계: 클로즈업 샷에 맞춰 립싱크하기",
+      "step4Content": "짧은 형식은 클로즈업 창작자 샷이 지배합니다 — 얼굴이 프레임의 60%를 차지합니다. 시청자의 시선은 입에 집중됩니다. 립싱크 불일치는 이 형식에서 다른 어떤 형식보다 더 눈에 띕니다.\n\nMuseTalk는 더빙된 오디오에 대해 합리적인 품질로 클로즈업 립싱크를 처리합니다. 상업 API(Sync.co, HeyGen 립싱크)는 더 선명한 결과를 생성하지만 비디오당 비용이 발생합니다. 대량 창작자 파이프라인의 경우, MuseTalk는 후반 작업 단계에 통합되어 표준이며, 프리미엄 창작자 출력의 경우 상업 API는 클립당 비용을 정당화할 가치가 있습니다.\n\n짧은 형식에서 립싱크가 여전히 미끄러지는 경우: 빠른 머리 회전, 프로필 각도, 손으로 입 가리기 제스처. 대부분의 창작자 콘텐츠는 30초 클립당 최소 하나의 이러한 요소를 포함합니다. 더빙은 이러한 순간에 수용 가능해야 하며, 완벽할 필요는 없습니다 — 대부분의 짧은 형식 시청자는 일시 정지하고 다시 재생하지 않습니다.",
+      "step5Title": "5단계: 현지화된 화면 텍스트 번인하기",
+      "step5Content": "화면 텍스트는 별도의 번역 과정입니다. 원본 텍스트 오버레이 — 펀치라인 공개, 제품 이름, 캡션 강조 —는 동일한 타임스탬프와 시각적 스타일로 목표 언어로 다시 렌더링되어야 합니다.\n\n대부분의 장편 번역 파이프라인은 화면 텍스트를 건너뜁니다. 짧은 형식에서는 불가능합니다 — 화면 텍스트는 종종 농담이나 후크의 30-50%를 차지합니다. 파이프라인은 원본 텍스트를 OCR하거나 추출하고, 번역하고, 동일한 글꼴/색상/애니메이션으로 다시 렌더링하고, 비디오에 다시 키를 입력해야 합니다.\n\n도구: Curify의 파이프라인은 오디오 더빙과 동일한 과정에서 이를 처리합니다. 수동 워크플로우는 After Effects 또는 DaVinci Resolve 텍스트 교체를 사용합니다. 지름길 — 원본 언어 텍스트를 남기고 자막 라인을 추가하는 것 —는 저예산 번역에 효과적이지만 비디오를 포트로 표시합니다.",
+      "technicalTitle": "고급 기술 고려사항",
+      "timingTitle": "타이밍 실패 모드",
+      "timingContent": "**오버플로우**: 번역된 오디오는 소스 오디오 세그먼트보다 길어집니다. 더빙이 다음 편집으로 흘러 들어가며 페이싱이 깨집니다. 2단계에서 잡아내세요(음절 예산). 복구: 더 짧은 재번역 또는 소스 세그먼트를 약간 잘라냅니다(최후의 수단 — 페이싱에 영향을 미침).\n\n**언더플로우**: 번역된 오디오는 소스보다 짧습니다. 더빙 후 공백이 생깁니다. 2단계에서 잡아내세요. 복구: 호흡 공간이나 자연스러운 정지로 패드, 절대 TTS 생성 필러로는 안 됩니다.\n\n**드리프트 축적**: 초기 세그먼트에서 작은 오버플로우가 누적됩니다. 클립 끝에서 오디오는 비주얼보다 반 비트 뒤처집니다. 클립 끝의 오디오-비디오 정렬 검사를 통해 잡아내세요. 복구: 세그먼트 수준이 아닌 프레임 수준 정렬로 재인코딩합니다.\n\n**후크 미스**: 처음 3초가 목표 언어에서 동일한 감정적 강도로 전달되지 않았습니다. 나머지와 관계없이 비디오가 저조합니다. 전체 더빙을 커밋하기 전에 처음 3초만 원어민 검토로 잡아내세요.",
+      "emotionTitle": "시장 간 감정 보정",
+      "emotionContent": "창작자의 감정 기준선은 시장에 따라 다릅니다. 미국 창작자의 고에너지 전달은 일본이나 독일 시장에서 인위적으로 읽힐 수 있으며, 일본의 무표정 전달은 브라질 포르투갈어 시장에서 평범하게 읽힙니다.\n\n보정할 세 가지 레버:\n\n**목소리 복제 훈련 믹스**: 목소리 복제를 위한 소스 오디오는 목표 시장에 맞는 전달 범위로 편향될 수 있습니다. 창작자의 더 절제된 콘텐츠로 훈련된 복제는 고에너지 콘텐츠로 훈련된 복제보다 일본에서 더 잘 전달됩니다.\n\n**번역 레지스터**: 텍스트 번역은 문자적 정확성과 독립적으로 공식/비공식 레지스터를 전환할 수 있습니다. 브라질 포르투갈어는 유럽 포르투갈어보다 더 친숙한 레지스터를 수용합니다; 멕시코 스페인어는 아르헨티나와 다릅니다.\n\n**페이싱 리믹스**: 일부 시장은 다른 시장보다 느린 전달을 보상합니다. 소스에 컷 사이에 공백이 있다면 더빙은 비주얼 타이밍을 깨지 않고 10-15% 느리게 페이싱할 수 있습니다. 독일 및 일본 시장은 라틴 아메리카 스페인 시장보다 느린 더빙 페이싱을 더 관대하게 수용합니다.",
+      "platformTitle": "플랫폼별 고려사항",
+      "platformContent": "**틱톡**: 알고리즘은 완료율을 무자비하게 보상합니다. 처음 3초에 5%의 시청자를 잃는 더빙은 원본과 다른 콘텐츠 조각입니다. 확장하기 전에 목표 시장에서 더빙된 버전의 후크를 테스트하세요.\n\n**인스타그램 릴스**: 길이에 대해 틱톡보다 약간 더 관대하지만(90초는 괜찮음), 피드 및 스토리로의 교차 프로모션은 더빙된 버전이 형식 변형이 필요함을 의미합니다. 하나의 더빙에서 세 가지 종횡비를 계획하세요.\n\n**유튜브 숏츠**: 알고리즘이 더 젊고 규칙이 아직 정착되지 않았습니다. 현재 가장 강력한 신호는 루프 시청(시청자가 숏츠를 끝까지 보고 다음을 기다림)입니다. 후크를 잘 잡은 더빙은 불균형한 배급을 받습니다. 첫 24시간 동안 공격적으로 테스트하세요; 유튜브 숏츠는 초기 성과가 좋은 콘텐츠를 보상합니다.\n\n**크로스 플랫폼 재사용**: 하나의 더빙된 소스는 원본이 9:16으로 촬영되었다면 세 플랫폼 모두에 제공될 수 있습니다. 소스가 16:9(유튜브 장편 클립을 숏츠로 전환)인 경우, 재프레임은 후속 작업 시간에 발생하며, 사후 생각이 아닙니다.",
+      "toolsTitle": "실제로 작동하는 도구",
+      "toolsContent": "**Curify UGC 번역 파이프라인**: 음성 복제, 립싱크 및 감정 인식 TTS를 하나의 과정으로 처리하며, 짧은 형식의 페이싱 제약을 위해 설계되었습니다. 시스템은 빠른 페이싱을 처리하고, 창작자의 진정성을 유지하며, 오디오 더빙과 동일한 과정에서 현지화된 화면 텍스트를 렌더링합니다.\n\n**ElevenLabs Professional Voice Cloning**: 감정 범위에 대한 최고급 목소리 복제 품질. 프리미엄 창작자 더빙에 필요합니다. 생산 규모에서 문자당 비용이 중요하므로 예산을 적절히 책정하세요.\n\n**F5-TTS**: 더 엄격한 예산에서 대량 작업을 위한 오픈 소스 대안. ElevenLabs보다 감정 범위가 약하지만 내러티브 또는 설명 창작자 콘텐츠에 대해 경쟁력이 있습니다.\n\n**MuseTalk**: 클로즈업 샷을 위한 오픈 소스 립싱크. 대부분의 UGC 형식에 대해 충분히 좋지만, 최고 예산 콘텐츠에 대한 상업 API만큼 선명하지 않습니다.\n\n**Sync.co, HeyGen 립싱크**: 더 선명한 결과를 제공하는 상업 립싱크 API, 클립당 가격 책정. 플래그십 비디오에 사용하고, 제작 가치가 비용을 정당화하는 상위 20% 콘텐츠에 예약하세요.\n\n**DeepL, Google Translate (조정됨)**: 길이 제약 및 레지스터 제어를 위한 프롬프트 엔지니어링 구조가 주위에 있는 표준 MT 엔진. 이 구조가 UGC에 작동하게 만드는 것이며, 그것 없이 원시 출력은 페이싱을 초과합니다.",
+      "monetizationTitle": "시장별 수익화",
+      "monetizationContent": "**스페인어 (LATAM)**: 영어 소스 창작자를 위한 가장 큰 확장 시장. 미국/영국보다 낮은 CPM이지만, 볼륨이 보상합니다. 제휴 마케팅 및 직접 창작자 간 후원은 광고 수익보다 더 효과적입니다.\n\n**브라질 포르투갈어**: 강력한 창작자 문화가 있는 높은 참여 시장. 낮은 CPM이지만 충성도 높은 청중. 소스 콘텐츠가 지속적인 참조 가치를 가진 경우 더빙할 가치가 있으며, 일회성 바이럴에는 적합하지 않습니다.\n\n**일본어**: 주소 가능한 시장은 작지만 구매력이 높습니다. 엄격한 문화적 보정이 필요합니다(위의 감정 보정 참조). 프리미엄 틈새(기술, 금융, 뷰티)에 대한 높은 가치.\n\n**유럽 시장 (독일어, 프랑스어, 이탈리아어)**: 높은 영어 유창성으로 인해 번역된 UGC의 수익이 감소하고 있습니다. 자막 원본이 더빙된 버전보다 종종 더 나은 성과를 냅니다. 창작자의 콘텐츠가 영어 자막으로 전달할 수 없는 지역 맥락에 특별히 고정되어 있을 때만 번역하세요.",
+      "caseStudiesTitle": "작업 예시",
+      "caseStudy1Title": "사례 1: 피트니스 창작자를 스페인어로 (LATAM)",
+      "caseStudy1Content": "원본: 고에너지 전달, 화면 텍스트 공개 및 3초 후크가 있는 45초 TikTok. 소스 청중: 미국 피트니스 커뮤니티.\n\n적용된 파이프라인: 감정 범위가 있는 90초의 창작자 오디오로 훈련된 목소리 복제. 멕시코 스페인어 레지스터에 맞춰 번역 조정(창작자의 기존 팔로워 기반이 멕시코 중심으로 기울어짐). 음절 예산으로 스크립트에서 하나의 필러 단어를 잘라내야 했습니다.\n\n결과: 더빙된 클립의 60%가 원본의 조회수 참여를 일치시키거나 초과했습니다. 저조한 40%는 패턴을 공유했습니다 — 그들은 번역이 문자 그대로 유지한 미국 특정 체육관 브랜드 참조에 의존했습니다. 교훈: 번역 시 지역 동등물로 대체하세요, 게시 후가 아닙니다.",
+      "caseStudy2Title": "사례 2: 요리 창작자를 일본어로",
+      "caseStudy2Content": "원본: 코믹한 고에너지 전달의 60초 릴스. 소스 청중: 호주.\n\n적용된 파이프라인: 창작자의 고에너지 TikTok보다 더 절제된 인스타그램 스토리 오디오로 훈련된 목소리 복제 — 일본의 전달 규범에 대한 의도적인 보정. 캐주얼 레지스터로 번역하며 코믹한 타이밍을 유지했습니다. 대화형 세그먼트(각 클립의 약 40%)에 대해 MuseTalk를 통한 립싱크.\n\n결과: 참여율은 소스 시장 수준의 약 30%에 도달했습니다 — 첫 시장 진입으로서는 양호합니다. 댓글 섹션 피드백은 더빙된 목소리가 자연스럽게 느껴졌다고 강조했습니다; 놓친 것은 호주 특정 음식 참조(베지마이트 농담, 팀탐 비교)였습니다. 교훈: 문화적 참조는 범주이며, 엣지 케이스가 아닙니다. 번역 과정에서 대체 계획을 세우세요.",
+      "bestPracticesTitle": "운영 모범 사례",
+      "bestPracticesContent": "**확장 전에 테스트**: 번역 주기를 확정하기 전에 목표 시장에서 두세 개의 파일럿을 실행하세요. 첫 주 동안 유지율, 완료율 및 댓글 감정을 관찰하세요.\n\n**원어민 QA**: 모든 더빙 비디오는 게시 전에 목표 시장의 원어민이 30초 검토합니다. 검토자는 번역의 이상함, 더빙 타이밍 및 문화적 실수를 표시합니다. 비디오당 비용을 지불하세요 — 이는 파이프라인에서 가장 저렴한 보험입니다.\n\n**댓글 섹션 모니터링**: 목표 시장 청중이 댓글에서 놓친 것을 알려줍니다. \"이 목소리는 X와 같지 않다\" 또는 \"농담이 번역되지 않았다\"는 패턴은 다음 파이프라인 조정의 신호입니다.\n\n**주제별이 아닌 시장별 배치**: 하나의 배치에서 스페인어로 10개의 더빙을 제작하는 것이 10개 시장에서 하나의 더빙을 제작하는 것보다 더 효율적입니다. 번역 프롬프트, 목소리 복제 및 문화적 보정은 따뜻합니다.",
+      "conclusionTitle": "짧은 형식 번역은 운영이지 일회성이 아니다",
+      "conclusionContent": "여러 시장으로 확장하는 창작자들은 번역을 마무리 단계가 아닌 생산 인프라로 취급합니다. 파이프라인은 창작자당 한 번 설정(목소리 복제, 번역 프롬프트, 문화적 보정)한 후 배치로 실행됩니다.\n\n대부분의 시도가 실패하는 곳: 짧은 형식을 장편의 작은 버전으로 취급합니다. 제약이 다르고, 실패 모드가 다르며, 요구되는 운영 규율이 더 높습니다. 일회성 TikTok 더빙은 백 개의 더빙과 동일한 설정 시간을 소요합니다 — 설정이 작업입니다.",
+      "metaDescription": "틱톡이나 쇼트를 번역하는 것은 유튜브의 긴 형식을 번역하는 것과 같은 문제가 아닙니다. 승리는 창작자의 에너지, 페이싱, 감정적 비트를 유지하는 데서 오며, 단순히 단어에 국한되지 않습니다. 파이프라인이 어떻게 다른지, 스페인어, 일본어, 포르투갈어로 배송되는 모습은 이렇습니다."
+    },
+    "multimodalAiEducationalPublishing": {
+      "title": "몇 달에서 몇 분으로: 이중 언어 교육 출판을 위한 다중 모드 AI 파이프라인",
+      "date": "2026년 5월 24일",
+      "readTime": "12분 읽기",
+      "metaDescription": "교육 출판은 여전히 수공예로 운영됩니다 — 이중 언어 워크북은 일러스트레이터, 번역가 및 성우 조정에 몇 달이 걸립니다. 해결책은 생성 AI가 아니라 결정론적 파이프라인 엔지니어링입니다. 구조화된 데이터를 몇 분 안에 복잡한 이중 언어 카드로 변환하는 아키텍처를 소개합니다.",
+      "intro": "이중 언어 일러스트 워크북은 일러스트레이터(3-6개월), 번역가 패스, 언어당 시간당 $150-$1,000의 음성 재능, 모든 것을 정렬할 데스크탑 퍼블리셔가 필요합니다. 세 가지 모드 × 여러 전문가 × 직렬 조정 = 인쇄 시대 이후로 변하지 않은 월 단위 리드 타임. 일러스트레이터를 생성 모델로 대체하면 더 빠른 결과를 얻을 수 있지만, 워크북이 아닌 캐릭터 드리프트, 아트 디렉션 불일치 및 신뢰할 수 없는 타이포그래피로 인해 확률적 AI는 시리즈 콘텐츠에 사용할 수 없습니다. 실제로 변화를 가져오는 것은 엔지니어링입니다: 확률적 모델을 결정론적 템플릿 뒤에 잠그고, 구조화된 데이터를 통해 라우팅하며, 동일한 브랜드 계약을 유지하는 오디오 및 비디오 파이프라인으로 출력을 연결합니다. 이 가이드는 작동 구현에서 아키텍처와 생산 수치를 안내합니다.",
+      "whatIsTitle": "\"결정론적 다중 모드 파이프라인\"이 실제로 의미하는 것",
+      "whatIsContent": "세 가지 핵심 단어:\n\n**결정론적**: 동일한 입력은 실행 간에 동일한 출력을 생성합니다. 시각적 템플릿은 시드, 아트 디렉션, 그리드 레이아웃, 타이포그래피, 색상 팔레트 및 종횡비를 잠급니다. 카드 #1과 카드 #1,000은 동일한 브랜드 계약을 준수합니다. 퍼블리셔는 계약을 한 번 결정하고 파이프라인은 이를 영원히 시행합니다.\n\n**다중 모드**: 이미지, 오디오 및 비디오 트랙은 하나의 구조화된 데이터 소스에서 렌더링됩니다. JSON 파일이나 스프레드시트의 단일 행은 플래시 카드 이미지 + 내레이터 오디오 + 슬라이드 비디오로 펼쳐지며 데이터는 다시 입력되지 않습니다. 데이터는 진실의 원천입니다; 모든 모드는 그것의 하류 렌더링입니다.\n\n**파이프라인**: 체크포인트 복구가 있는 상태 머신 오케스트레이션. 5단계에서의 실패는 1-4단계를 무효화하지 않습니다; 시스템은 마지막 좋은 체크포인트에서 다시 시도하며 토큰을 소모하거나 일관성을 깨지 않습니다. 100카드 세트는 수동 정리 없이 일시적인 TTS API 중단을 견딥니다.\n\n이 조합이 시리즈 생산을 가능하게 합니다. 전통적인 수공예와 순진한 생성 AI 실험은 동일한 이유로 시리즈 규모 작업에 실패합니다: 자산 간에 공유 계약이 없습니다. 결정론적 템플릿이 계약입니다.",
+      "howTitle": "구조화된 데이터에서 게시 자산으로의 4단계 파이프라인",
+      "step1Title": "1단계: 페이지가 아닌 구조화된 데이터 작성",
+      "step1Content": "입력은 자산당 JSON 객체(또는 스프레드시트 행)입니다. \"악기\" 이중 언어 플래시 카드 세트의 경우, 이는 8행 × `{english_word, target_language_word, pronunciation, category}`입니다. 어휘 기초를 위한 200행. 등급 독자 시리즈를 위한 1,000행.\n\n퍼블리셔의 작업은 페이지별 생산에서 **데이터 디자인**으로 전환됩니다 — 사전을 올바르게 만드는 것이 전체 창의적 작업입니다. 실제로 200개의 단어가 1학년 ESL 학습자에게 도움이 될까요? 8세 아동의 호기심을 자극하는 100개의 사실은 무엇일까요? 그 큐레이션은 출판 팀이 이미 잘하는 일입니다; 파이프라인은 그들의 대부분의 대역폭을 소비하던 생산 오버헤드를 흡수합니다.\n\n데이터가 존재하게 되면 나머지는 파이프라인의 문제입니다.",
+      "step2Title": "2단계: 잠긴 템플릿을 통해 렌더링(프롬프트가 아님)",
+      "step2Content": "시각적 템플릿 — Curify의 경우 `template-vocabulary`와 같은 Nano Banana 템플릿 — 는 엔진 내부에 시드, 아트 디렉션, 그리드 레이아웃, 타이포그래피, 색상 팔레트 및 종횡비가 하드코딩되어 있습니다. 사용자는 자유 형식의 프롬프트를 작성하지 않고 구조화된 데이터 행을 전달합니다.\n\n어휘 세트의 경우, `template-vocabulary`는 이중 언어 플래시 카드의 4×2 그리드를 생성합니다: 원어 단어, 목표 언어 단어, 발음 가이드, 그리고 카드마다 고정된 아트 스타일의 만화 일러스트. 한 번의 호출로 여덟 개의 카드가 생성됩니다. 내일 다른 데이터 행으로 호출된 동일한 템플릿은 동일한 세트에 시각적으로 속하는 카드를 생성합니다.\n\n동일한 패턴은 인접한 콘텐츠 유형을 처리합니다:\n- `template-species-science`는 해부학적으로 정확한 종 일러스트와 이중 언어 주석이 있는 포토리얼리스틱 과학 참조판을 위한 것입니다.\n- `weird-science-facts`는 높은 참여도를 가진 이중 언어 과학 포스터를 위한 것입니다 (목성의 다이아몬드 비, 문어의 세 개의 심장, 3,000년 된 꿀은 결코 상하지 않음).\n- `template-mbti-character`는 고정된 우주 스타일링을 가진 캐릭터 중심 시리즈를 위한 것입니다.\n- `template-history-timeline-infographic`는 진화 타임라인을 위한 것입니다.\n\n각 템플릿은 계약입니다: 한 번 호출하든 천 번 호출하든 출력은 동일한 브랜드 사양을 준수합니다.",
+      "step3Title": "3단계: 제로샷 크로스링구얼 음성 클로닝을 통한 내레이션",
+      "step3Content": "브랜드의 대변인 목소리의 60초 참조 클립이면 F5-TTS — 오픈 소스, 비자기 회귀 흐름 일치와 확산 변환기 백본 — 가 동일한 음성 정체성을 가진 어떤 목표 언어로도 클론 내레이션을 생성할 수 있습니다. 언어당 재녹음이 필요 없습니다. 시장당 별도의 성우도 필요 없습니다.\n\n내레이션 생성은 동일한 구조화된 데이터 입력에서 하류 단계로 실행됩니다. `english_word`, `target_language_word`, 및 `pronunciation` 필드는 오디오 합성을 직접 구동하며, 클론된 목소리는 브랜드의 대변인 정체성을 만다린어, 스페인어, 일본어 또는 기타 목표 지역으로 전달합니다.\n\n이것이 대체하는 것: $150-$1,000의 완성된 시간당 성우 세션, N개의 언어에 대해 곱해지고 N개의 재녹음에 대해 곱해집니다(업계 보고서는 종종 단일 10시간 오디오북에 대해 총 비용이 $800-$2,000에 달한다고 언급합니다). 비용은 언어 팩당 수천 달러에서 컴퓨팅 분으로 이동합니다.\n\n정직한 한계: 제로샷 클론의 감정 범위는 훈련된 성우가 제공하는 것보다 좁습니다. 내러티브 읽기 및 교육 제공에는 괜찮습니다. 극적인 공연 — 등급 독자 이야기의 캐릭터 목소리, 연극 장면 — 에 대해서는 파이프라인이 여전히 전문 음성 제공 또는 ElevenLabs Professional Voice Cloning의 더 넓은 표현 범위에서 이점을 얻습니다.",
+      "step4Title": "4단계: 자산 번들에서 비디오 조립",
+      "step4Content": "이미지 세트와 내레이션 오디오는 비디오 조립기로 흐릅니다. 두 가지 조립 모드:\n\n**슬라이드 형식 비디오** (어휘 및 과학 콘텐츠의 표준): 조립기는 브랜드 템플릿 기반 전환, 화면에 이중 언어 텍스트 오버레이 및 일관된 페이싱으로 이미지를 오디오에 연결합니다. 카드가 해당 내레이션과 동기화되어 나타나며, 전환은 오디오 파형의 리듬과 일치합니다; 브랜드 식별자(로고, 채널 카드 프레이밍)는 자동으로 오버레이됩니다.\n\n**토킹 헤드 비디오** (강사 주도 설명을 위한): MuseTalk 또는 Sync.co는 클론된 목소리와 발표자 비주얼의 립싱크 정렬을 처리합니다. 이중 채널 음성 및 자막 인식은 빠른 페이싱 콘텐츠에서도 정렬을 프레임 단위로 유지합니다.\n\n출력은 동일한 브랜드 계약을 유지하는 게시 준비 완료된 수직(3:4 또는 9:16 단기 배포용) 또는 수평(16:9 장기용) 비디오입니다. 동일한 데이터 행, 세 가지 모드, 하나의 진실의 원천.",
+      "challengesTitle": "순진한 접근 방식이 실패하는 곳",
+      "challengesContent": "세 가지 일반적인 실패 패턴과 수정 사항:\n\n**시리즈 간 캐릭터 드리프트**: Stable Diffusion 또는 Midjourney에 대한 자유 프롬프트 접근 방식은 사용 가능한 카드 #1과 시각적으로 관련 없는 카드 #2-100을 제공합니다. ControlNet, IP-Adapter 또는 Textual Inversion을 추가하면 캐릭터 정체성에는 도움이 되지만 타이포그래피, 그리드 레이아웃 및 브랜드 색상 드리프트는 해결되지 않습니다 — ComfyUI 노드 네트워크를 유지하는 것은 출판 편집자에게 잘못된 작업입니다. *수정*: 모델 내부의 매개변수 조정이 아닌 모델 위에 잠긴 템플릿입니다.\n\n**대규모에서의 오디오/비주얼 비동기**: 비주얼이 최종화된 후 내레이션을 생성하면 페이싱 및 타이밍 불일치가 발생합니다. *수정*: 동일한 구조화된 데이터 입력에서 두 가지 모드를 구동하고 렌더링된 미디어가 아닌 데이터 행에 연결된 이중 채널 음성 및 자막 인식을 통해 정렬합니다.\n\n**실패 시 상태 손실**: 긴 파이프라인은 어딘가에서 실패합니다. 모든 실패에서 처음부터 다시 구축하면 토큰이 소모되고, 재개된 실행 간의 일관성이 깨지며, 팀이 파이프라인을 신뢰하지 않도록 훈련됩니다. *수정*: 체크포인트 복구가 있는 상태 머신 오케스트레이션. 5단계에서의 실패는 4단계의 출력에서 재개되며 백오프 재시도; 운영자는 재시작이 아닌 계속 실행을 봅니다.\n\n이 수정 사항 중 어느 것도 모델 개선이 아닙니다. 그것들은 모델을 포장하는 방법에 대한 엔지니어링 선택입니다 — 이것이 일반 LLM 및 이미지 모델 업그레이드가 출판사의 시리즈 생산에 거의 영향을 미치지 않는 이유입니다.",
+      "curifyTitle": "Curify Studio가 파이프라인을 구현하는 방법",
+      "curifyContent": "Curify는 결정론적 템플릿 레이어(Nano Banana)와 다중 모드 조립 파이프라인을 생산 시스템으로 제공합니다. 템플릿 라이브러리는 가장 일반적인 교육 콘텐츠 형태를 다룹니다 — 이중 언어 어휘 플래시 카드, 과학 참조판, 기이한 과학 사실 포스터, MBTI 캐릭터 시리즈, 역사 타임라인 인포그래픽. 각 템플릿은 매개변수 기반이므로 퍼블리셔의 구조화된 데이터(JSON, 스프레드시트 또는 CMS 내보내기)는 재입력 없이 흐릅니다.\n\n오디오 레이어는 기본적으로 크로스 링구얼 클로닝을 위해 F5-TTS를 통합하고, 더 높은 감정 범위가 비용을 정당화하는 경우 ElevenLabs Professional Voice Cloning을 위한 후크를 제공합니다. 비디오 조립은 토킹 헤드 립싱크를 위해 MuseTalk를 사용하고 내레이션된 시각 콘텐츠를 위한 슬라이드 조립기를 사용합니다. 오케스트레이션 레이어는 상태, 재시도 및 체크포인트 복구를 처리하여 생산 파이프라인이 간헐적인 실패를 견딜 수 있도록 합니다.\n\n자신의 인프라를 운영하는 퍼블리셔나 표준 라이브러리 밖의 브랜드 계약을 가진 퍼블리셔를 위해 Curify는 맞춤형 템플릿 개발도 제공합니다. 템플릿 라이브러리는 확장 가능하며, 맞춤형 템플릿은 퍼블리셔의 고유한 브랜드 계약을 시행합니다, 일반적인 것이 아닙니다. 맞춤 작업에 대한 가격 및 참여는 좌석당 SaaS가 아닌 출판 경제에 맞춰 조정됩니다 — 목표는 템플릿을 장기 생산 자산으로 만드는 것이지 반복 구독 항목이 아닙니다.",
+      "conclusionTitle": "해자 이동: 생산 규모에서 데이터 디자인으로",
+      "conclusionContent": "출판 역사 대부분에서 경쟁 해자는 생산 규모였습니다 — 급여를 받는 일러스트레이터, 계약된 녹음 스튜디오, 학교 구역 출시일을 맞출 수 있는 생산 관리자. 결정론적 AI 파이프라인은 그 해자를 무너뜨립니다. 100개의 이중 언어 플래시 카드를 제작하거나 내레이션된 과학 설명 시리즈를 제작하는 비용은 자산당 거의 제로에 가깝습니다; 제로에 가까워지지 않는 것은 어떤 100개의 카드를 제작할지를 아는 것입니다.\n\n새로운 해자는 구조화된 데이터 디자인입니다: 어떤 어휘 세트를 구축할 것인지, 어떤 과학 사실을 어떤 학년 수준에 맞춰 표면화할 것인지, 교육 개념을 문화 간에 어떻게 현지화할 것인지. 그 작업은 큐레이터적이고 교육적이며 시장 분석적입니다 — 정확히 출판 팀이 이미 잘하는 일이며, 그들의 대부분의 대역폭을 소비하던 생산 오버헤드에서 해방됩니다.\n\nAI를 더 빠른 일러스트레이터로 취급하는 퍼블리셔는 더 빠른 결과를 얻을 것입니다. 템플릿 라이브러리를 생산 라인으로 취급하는 퍼블리셔 — 버전 관리, 테스트 및 엔지니어링 투자를 통해 확장된 — 는 수공예 모델이 따라올 수 없는 속도로 배송할 것입니다. 전략적 작업은 템플릿이 시행하는 계약과 그들을 통해 쏟아낼 데이터를 선택하는 것입니다.",
+      "seoKeywords": "교육 출판 AI, 다중 모드 콘텐츠 제작, 이중 언어 플래시 카드 AI, 결정론적 AI 파이프라인, F5-TTS 음성 클로닝, 교육 콘텐츠 자동화, 출판사를 위한 AI, Nano Banana 템플릿, 교육 AI 워크플로우, EdTech AI 파이프라인"
+    },
+    "programmaticSeoDtcVisualFirst": {
+      "title": "DTC 브랜드를 위한 프로그래매틱 SEO: 비주얼 우선 페이지가 키워드로 가득 찬 페이지보다 나은 이유",
+      "date": "2026년 5월 25일",
+      "readTime": "12분 읽기",
+      "metaDescription": "규모에 맞춰 프로그래매틱 SEO를 추구하는 DTC 브랜드는 두 가지 벽에 부딪힙니다: 순수 텍스트 페이지는 구글의 얇은 콘텐츠 필터를 유발하고, 스톡 사진 비주얼은 모든 랜딩 페이지를 교환 가능하게 만듭니다. 여기 장면별 비주얼을 차별화 요소로 하는 엔진의 아키텍처가 있습니다.",
+      "intro": "규모에 맞춰 프로그래매틱 SEO를 추구하는 DTC 브랜드는 결국 두 가지 벽에 부딪힙니다. 키워드 목록과 템플릿에서 자동 생성된 순수 텍스트 랜딩 페이지는 구글의 얇은 콘텐츠 분류기를 유발합니다. 2026년 알고리즘 파동은 이 패턴에 특히 가혹했습니다; 업계 데이터에 따르면 대략 **프로그램매틱 SEO 사이트의 3분의 1이 정리 작업 전후 12개월 동안 70-90%의 유기적 트래픽을 잃었습니다**. 살아남은 페이지가 순위를 매길 때, 모든 랜딩 페이지가 교환 가능하게 보이기 때문에 전환율이 낮습니다: 동일한 템플릿, 동일한 스톡 사진, 동일한 일반적인 히어로 샷. 해결책은 더 많은 콘텐츠가 아니라 *페이지별 더 나은 차별화*입니다. 이 가이드는 페이지별 비주얼이 차별화 요소인 프로그래매틱 SEO 엔진의 아키텍처를 안내합니다 — 생성된, 장면별, 페이지의 의도와 연결된 비주얼 — 그리고 쿼리 재작성과 제로 결과 마이닝이 파이프라인에 어떻게 기여하는지 설명합니다.",
+      "whatIsTitle": "\"비주얼 우선 프로그래매틱 SEO\"의 실제 의미",
+      "whatIsContent": "전통적인 프로그래매틱 SEO는 수평적으로 확장됩니다: 템플릿을 가져와 5,000개의 키워드 변형을 교체하고 5,000개의 페이지를 발행합니다. 텍스트는 변경되지만, 비주얼은 스톡 사진이거나 없을 수 있습니다. 둘 다 구글의 이미지-컨텍스트 점수에 낮은 가치 콘텐츠로 신호를 보냅니다 — 동일한 스톡 자산이 수천 개의 무관한 사이트에 나타나면 페이지는 템플릿화된 것으로 등록되고 쿼리에 대한 원본 답변으로 인식되지 않습니다. 2026년의 디인덱싱 파동은 이 패턴에 의존한 사이트를 잡아냈습니다.\n\n비주얼 우선 프로그래매틱 SEO는 초점을 전환합니다: 페이지별 비주얼은 1급 자산으로, 페이지의 구조화된 데이터 행과 텍스트에서 생성됩니다. 세 가지 주요 요소:\n\n**페이지별 생성된 비주얼**: 스톡이 아니고, 로고 크롭도 아닙니다. 페이지의 특정 주제와 연결된 실제 장면 — \"겨울에 트레일 러닝을 위한 신발\" 페이지는 일반적인 신발 샷이 아니라 겨울 트레일 러닝 비주얼을 얻습니다.\n\n**장면별 일관성**: 페이지 가족 내에서 (모든 러닝화 페이지, 모든 스킨케어 페이지), 비주얼은 아트 디렉션 계약을 공유합니다. 페이지별 주제가 달라지는 동안 브랜드 아이덴티티는 일관성을 유지합니다.\n\n**폐쇄 루프 파이프라인**: 의도 (페이지가 목표로 하는 쿼리) → 구조화된 데이터 (페이지의 매개변수) → 이미지 (장면별 렌더) → 페이지 (템플릿이 텍스트와 이미지를 함께 채웁니다). 동일한 데이터가 메타 이미지, 소셜 카드 및 페이지 내 히어로로 흐릅니다 — 하나의 진실의 출처입니다.",
+      "howTitle": "쿼리 마이닝에서 발행 페이지까지의 4단계 파이프라인",
+      "step1Title": "1단계: 키워드뿐만 아니라 쿼리 마이닝",
+      "step1Content": "표준 키워드 연구는 알려진 용어에 대한 검색량 데이터를 반환합니다. 규모에 맞춘 프로그래매틱 SEO는 다음 단계가 필요합니다: 제로 결과 마이닝 및 LLM 규모의 쿼리 재작성.\n\n**제로 결과 마이닝**: 기존 사이트 검색, GSC 내보내기 및 경쟁자 질문 마이닝 도구에서 사용자가 검색하고 이탈한 쿼리를 가져옵니다. 각 쿼리는 답변이 없는 문서화된 의도입니다. 중간 트래픽이 있는 DTC 브랜드의 경우, 이 표면만으로도 종종 5,000-20,000개의 고유 쿼리를 생성합니다.\n\n**LLM 기반 쿼리 재작성**: 시드 용어를 언어 모델에 통과시켜 의도에 따라 롱테일 변형을 표출하는 프롬프트를 사용합니다 (정보, 상업적 비교, 구매, 기술 질문). 현대의 의미론적 검색은 쿼리와 페이지를 공유 벡터 공간으로 투사하는 CLIP 스타일의 두 타워 임베딩을 사용하므로, *어린이용 작은 책상*을 목표로 하는 페이지는 *학교 연령 학습 테이블*에 대해 제로 문자 키워드 중복으로 순위를 매길 수 있습니다. 이는 전통적인 키워드 도구의 표면적 영역을 10-50배 증가시키지만 의도 레이블이 첨부됩니다.\n\n이 단계의 출력은 구조화된 CSV입니다: 페이지당 한 행, `{query, intent, suggested_template, target_visual_theme}` 열이 포함됩니다. 이것이 나머지 파이프라인이 읽는 진실의 출처입니다.",
+      "step2Title": "2단계: 비주얼을 1급 자산으로 작성",
+      "step2Content": "대부분의 프로그래매틱 SEO 파이프라인은 템플릿 렌더링 시 스톡 이미지를 추가합니다. 비주얼 우선은 이를 반전시킵니다: 페이지의 구조화된 데이터 행이 텍스트와 이미지를 함께 생성합니다.\n\n실용적인 접근법: 페이지 가족에 맞춰 Curify Nano Banana 템플릿(또는 동등한 템플릿)을 사용합니다. *일본에서의 가을 여행을 위한 미니멀리스트 의상*과 같은 롱테일 쿼리에 대해, 템플릿은 독특한 장면을 렌더링합니다 — 교토의 가을 단풍 배경, 미니멀리스트 의상 실루엣, 브랜드 고정 색상 — 일반적인 의류 히어로 샷으로 돌아가지 않습니다. *파타고니아에서의 겨울 트레일 러닝*으로 호출된 동일한 템플릿은 동일한 브랜드 계약 하에 다른 독특한 장면을 생성합니다.\n\n여기서 일관성 계약이 중요합니다. 없으면 5,000개의 생성된 비주얼이 5,000개의 서로 다른 사이트처럼 보입니다. 있으면 모든 페이지가 \"이 브랜드의 제품이 Y 맥락에 있는\" 것으로 읽히고 \"무작위 AI 이미지 #4,217\"가 아닙니다.",
+      "step3Title": "3단계: 두 트랙이 정렬된 페이지 렌더링",
+      "step3Content": "페이지 템플릿은 구조화된 데이터 행과 해당 비주얼을 수용합니다. 작동하는 프로그래매틱 SEO와 디인덱스 미끼를 구분하는 세 가지 규칙:\n\n**페이지별 가변 실질 콘텐츠** — 단순한 키워드 교체가 아닙니다. 본문은 쿼리에 답해야 하며, 템플릿을 채우지 않아야 합니다. 페이지의 특정 데이터(제품 특징, 치수, 재료, 맥락)를 인용할 수 있을 만큼 엄격한 LLM 프롬프트에서 200-400 단어를 생성합니다.\n\n**위쪽 절반에는 페이지별 비주얼이 포함됩니다** — 브랜드의 플래그십 제품의 히어로 사진이 아닙니다. 비주얼은 \"이 페이지가 내 쿼리에 해당하는가?\"라는 질문에 답합니다; 사용자가 아무것도 읽기 전에; 이는 체류 시간을 직접적으로 증가시킵니다. 체류 시간이 30초 미만인 페이지는 SpamBrain이 얇은 콘텐츠로 플래그를 지정하는 것입니다.\n\n**의도당 하나의 정규 URL** — 매개변수 확산 없음, 동일한 쿼리에 대해 경쟁하는 거의 중복 페이지 없음. 1단계의 쿼리 마이닝은 의도 중복 제거 목록을 생성해야 했습니다.",
+      "step4Title": "4단계: 성과 데이터로 루프 닫기",
+      "step4Content": "피드백 루프가 없는 프로그래매틱 SEO 엔진은 아무도 검색하지 않는 더 많은 페이지를 생성할 뿐입니다. 루프를 구축합니다:\n\n**GSC 및 분석에서 페이지별 CTR 및 체류 시간 추적**. 강한 노출이 있지만 낮은 CTR을 가진 페이지는 제목/메타 문제를 가지고 있습니다; 강한 CTR이지만 높은 이탈률을 가진 페이지는 콘텐츠 품질 문제를 가지고 있습니다. 이들은 서로 다른 수정이 필요합니다.\n\n**90일 후 제로 노출된 페이지를 폐기**합니다. 대부분의 프로그래매틱 SEO 세트는 70/30 비율을 가지고 있습니다: 30%의 페이지가 70%의 트래픽을 유도합니다. 긴 꼬리를 영원히 유지하지 마십시오 — 이는 도메인 권한을 희석하고 잘 문서화된 12개월 감소 곡선을 가속화합니다 (집회 → 사용자 신호 감소 → 알고리즘 강등 → 트래픽 절벽) 이는 대부분의 pSEO 사이트가 가지치기를 하지 않아 죽게 만들었습니다.\n\n**승리하는 것에 기반한 비주얼 아트 방향 반복**. 특정 장면 템플릿이 참여에서 지속적으로 다른 템플릿보다 성과가 좋다면, 그로부터 확장합니다. 성과가 좋지 않은 아트 방향은 폐기되거나 교체됩니다.\n\n이 루프는 프로그래매틱 SEO *엔진*과 일회성 프로그래매틱 SEO *캠페인*을 구분합니다. 대부분의 시도는 후자이며 빠르게 저하됩니다.",
+      "challengesTitle": "DTC 프로그래매틱 SEO가 실패하는 곳",
+      "challengesContent": "세 가지 실패 패턴과 그 수정:\n\n**얇은 콘텐츠 패널티**: 템플릿 교체와 실질적인 변형 없이 자동 생성된 페이지. 훌륭한 비주얼이 있더라도 본문은 실제로 쿼리에 답해야 합니다 — 50단어 단락 스피너가 아닙니다. *수정*: 페이지별 LLM 생성으로, 구조화된 데이터에서 특정 제품 특징, 치수, 재료 또는 사용 사례를 인용해야 하는 엄격한 프롬프트가 필요합니다.\n\n**세트 전반에 걸친 비주얼 동일성**: 각 렌더가 별도의 프롬프트일 때 아트 디렉션이 흐트러집니다. 50페이지가 지나면 브랜드 아이덴티티가 사라집니다. *수정*: 모든 렌더에 걸쳐 아트 디렉션, 팔레트 및 구성 어휘를 강제하는 고정 템플릿입니다.\n\n**크롤 예산 증발**: 500K 생성 페이지가 있는 사이트의 경우, Googlebot은 하루에 1,500-3,000개의 URL만 할당합니다. 더 나쁘게도, 2026년 시대의 검색 엔진은 URL 패턴과 메타데이터만으로 페이지 유용성을 예측하는 경량 모델을 통해 URL을 사전 필터링합니다 — 예측이 낮은 유용성인 경우 페이지는 크롤 대기열에 전혀 들어가지 않습니다. *수정*: 단계적 배포, 사이트맵 우선 출시, 브랜드의 높은 권위 페이지에서의 공격적인 내부 링크 및 URL 패턴만으로 템플릿 노이즈로 플래그되지 않을 만큼 강력한 비주얼 차별화입니다.",
+      "curifyTitle": "Curify가 파이프라인에 적합한 이유",
+      "curifyContent": "Curify는 파이프라인의 비주얼 레이어를 제공합니다 — 대부분의 DTC 프로그래매틱 SEO 시도가 건너뛰거나 스톡으로 넘기는 부분입니다. Nano Banana 템플릿 라이브러리는 DTC 브랜드가 필요로 하는 일반적인 비주얼 계약을 다룹니다: 제품-환경 샷, 라이프스타일 장면, 전후 구성, 설명 다이어그램, 비교 플레이트. 각 템플릿은 브랜드 아트 디렉션을 강제하여 페이지별 렌더가 수천 페이지에 걸쳐 일관성을 유지합니다.\n\n**작동 배포**: Curify의 자체 프로그래매틱 SEO 매트릭스는 롱테일 쿼리 마이닝에서 공급된 5,500개 이상의 템플릿 기반 랜딩 페이지 템플릿으로 구축되었습니다; 다국적 표면은 현재 약 13.3K URL이 구글에 색인되어 있으며, 대부분의 레거시 프로그래매틱 SEO 사이트를 디인덱스한 2026년 알고리즘 파동을 통과했습니다 — 각 페이지가 쿼리에 연결된 원본 비주얼 자산을 포함하고 있기 때문에, 다른 사이트가 사용하는 스톡 사진이 아닙니다.\n\n자신의 프로그래매틱 SEO 인프라를 운영하는 DTC 브랜드의 경우, Curify는 템플릿 엔진을 API로 노출합니다: 구조화된 데이터 행을 전달하면 매개변수에 맞춰 브랜드 일관성이 있는 이미지를 수신합니다. 템플릿 매개변수는 버전 관리되고 테스트 가능하므로, 하나의 템플릿에서 비주얼 계약을 개선하면 이를 사용하는 모든 하위 페이지가 개선됩니다. 표준 라이브러리에 맞지 않는 브랜드 계약에 대한 맞춤형 템플릿 개발이 가능합니다 — 브랜드에 고유한 제품 사진 스타일, 규제 카테고리 요구 사항 또는 국제 SKU 변형.",
+      "conclusionTitle": "더 많은 페이지를 발송하는 것을 중단하십시오. 더 나은 페이지를 발송하기 시작하십시오.",
+      "conclusionContent": "DTC 프로그래매틱 SEO의 방어선이 변화하고 있습니다. 지난 10년 동안 대부분의 승자는 페이지 수가 가장 많고 내부 링크가 가장 깨끗한 브랜드였습니다 — 규모가 방어선이었습니다. 2026년 알고리즘 파동은 그 방어선을 무너뜨렸습니다. 차세대 방어선은 *규모에 따른 페이지별 차별화*입니다: 5,000개의 랜딩 페이지가 각각 특정 쿼리에 대한 사려 깊은 답변처럼 보이는 브랜드가 50,000개의 페이지가 모두 템플릿으로 채워진 노이즈처럼 읽히는 브랜드를 이깁니다.\n\n비주얼 우선 프로그래매틱 SEO는 그 차별화로 가는 한 경로입니다. 파이프라인 구성 요소(쿼리 마이닝, 템플릿 기반 비주얼, 페이지별 LLM 본문 생성, 피드백 루프)는 모두 오늘날 사용할 수 있습니다; 작업은 이 가이드에서 설명하는 순서로 이들을 연결하는 것입니다. 카탈로그에서 상업적 의도가 가장 높은 페이지 가족을 선택하고, 해당 가족을 위해 파이프라인을 끝에서 끝까지 구축하고, 상승 효과를 입증한 후 인접 가족으로 확장하십시오. 첫날에 50,000페이지를 출시하려고 하지 마십시오.",
+      "seoKeywords": "프로그래매틱 SEO DTC, 비주얼 우선 SEO, AI 생성 랜딩 페이지, 프로그래매틱 SEO 엔진, 전자상거래 SEO 자동화, 얇은 콘텐츠 수정, 장면별 랜딩 페이지, Nano Banana 템플릿, NavBoost 체류 시간, CLIP 의미론적 검색 SEO"
     }
   },
   "aeVsComfyUi": {
@@ -7242,12 +6229,6 @@
           ]
         }
       ]
-    },
-    "disclaimer": {
-      "title": "면책 조항",
-      "content": "이 기사는 Curify AI의 실제 경험과 공개적으로 이용 가능한 산업 데이터를 기반으로 합니다. 결과는 특정 회사의 상황에 따라 다를 수 있습니다. AI 구현은 기술적, 조직적, 전략적 수준에서 복잡한 결정을 포함합니다. 실행 전에 충분한 타당성 평가 및 파일럿 테스트를 수행하는 것이 권장됩니다. 이 기사는 투자 조언이나 비즈니스 약속을 구성하지 않습니다.",
-      "author": "저자: Curify AI 기술 팀",
-      "updated": "최종 업데이트: 2026년 3월 17일"
     }
   },
   "agentsVsWorkflows": {
@@ -7321,213 +6302,6 @@
     "conclusionContent": "비디오 전사 기술은 기본 음성 인식 시스템에서 신경망, 오디오 처리 및 최적화 기술의 발전을 결합한 정교한 다단계 파이프라인으로 발전했습니다. Curify의 파이프라인과 같은 현대 시스템은 오디오 분리를 위한 Conv-TasNet, 전사를 위한 WhisperX 및 고급 품질 보증이 생산 품질 워크플로에 통합될 수 있음을 보여줍니다.\n\n기술 팀과 개발자에게 핵심 요점은 비디오 전사가 더 이상 연구 문제가 아니라 해결된 엔지니어링 과제라는 것입니다. 남은 기회는 기본 기술 제한이 아니라 최적화, 엣지 케이스 및 통합에 있습니다. 이러한 시스템이 더 나은 모델 아키텍처와 더 큰 훈련 데이터 세트를 통해 계속 개선됨에 따라, 우리는 모든 콘텐츠 유형에 대해 완벽한 전사가 대규모로 제공되는 미래에 가까워지고 있습니다.\n\n여기에서 설명된 기술 아키텍처는 2026년 현재의 최첨단을 나타내지만, 이 분야는 빠르게 진화하고 있습니다. 실시간 전사, 제로샷 화자 식별 및 자동 콘텐츠 요약은 우리가 비디오 콘텐츠 처리 및 분석에 접근하는 방식을 더욱 변화시킬 새로운 기능입니다.",
     "seoKeywords": "비디오 전사 파이프라인, 음성 인식 파이프라인, ASR 비디오 처리, 음성-텍스트 파이프라인, 화자 구분 비디오, 강제 정렬 전사, Whisper 전사 파이프라인, 오디오 세분화 전사, 다국어 전사 AI",
     "metaDescription": "AI 비디오 전사 파이프라인 아키텍처에 대한 기술 심층 분석. 개발자와 AI 엔지니어를 위한 ASR, 강제 정렬, 화자 구분 및 생산 시스템 설계에 대한 완전한 가이드."
-  },
-  "MBTICharacterGenerator": {
-    "title": "궁극의 AI MBTI 캐릭터 생성기 가이드 (옐로스톤 예시 포함) | Curify",
-    "description": "AI를 사용하여 옐로스톤 예시를 기반으로 정확한 MBTI 캐릭터 페르소나를 생성하는 방법을 배우세요. 캐릭터 개발을 위한 고급 프롬프트 기법을 발견하세요."
-  },
-  "MBTICharacterGeneratorGuide": {
-    "title": "궁극의 AI MBTI 캐릭터 생성기 가이드 (옐로스톤 예시 포함) | Curify",
-    "description": "AI를 사용하여 옐로스톤 예시를 기반으로 정확한 MBTI 캐릭터 페르소나를 생성하는 방법을 배우세요. 캐릭터 개발을 위한 고급 프롬프트 기법을 발견하세요.",
-    "hero": {
-      "title": "궁극의 AI MBTI 캐릭터 생성기 가이드",
-      "subtitle": "옐로스톤의 상징적인 인물들을 청사진으로 삼아 AI 기반 캐릭터 개발로 창의적인 프로세스를 변형하세요."
-    },
-    "introduction": {
-      "paragraph1": "Nano Banana MBTI 캐릭터 생성기를 이미 게시했지만, 다음 단계는 &lt;strong&gt;특정 사용자 의도에 도구를 맞추는 것&lt;/strong&gt;입니다. 검색자는 단순한 일반 MBTI 생성기를 찾고 있는 것이 아닙니다. 그들은 이미 알고 있는 캐릭터를 분석하고 재창조하거나 역할극을 하기를 원하며, 종종 “Rip Wheeler의 MBTI는 무엇인가요?” 또는 “Beth Dutton의 성격 유형”과 같은 질문으로 시작합니다. 이는 추상적인 성격 탐색에서 &lt;strong&gt;적용된 캐릭터 모델링&lt;/strong&gt;으로의 전환을 나타내며, 사용자는 인식 가능하고 정확하며 즉시 사용할 수 있는 출력을 기대합니다. 옐로스톤은 완벽한 진입점을 제공합니다: MBTI 원형에 깔끔하게 매핑되는 독특하고 심리적으로 풍부한 캐릭터가 있는 높은 참여 시리즈입니다. 예를 들어, Beth의 강렬함과 전략적 공격성은 ENTJ 특성과 밀접하게 일치하며, Kayce의 내적 갈등과 도덕적 민감성은 ISFP 프로필을 반영합니다. 이러한 강력한 성격 신호는 사용자가 생성된 출력을 자신의 해석과 비교하여 검증하기 쉽게 만들어 도구에 대한 신뢰를 높입니다. Nano Banana의 생성 기능을 이러한 친숙한 캐릭터에 고정함으로써 사용자의 인지 부담을 줄입니다. 그들은 추상적인 특성을 처음부터 상상할 필요가 없습니다. 대신, 그들은 &lt;strong&gt;이미 이해하고 있는 성격을 역설계&lt;/strong&gt;하고 이를 새로운 시나리오, 원래 캐릭터 또는 RPG 설정으로 확장할 수 있습니다. 이는 도구를 단순한 생성기에서 &lt;strong&gt;실용적인 창작 도우미&lt;/strong&gt;로 변모시켜 스토리텔링, 팬 이론 제작 및 캐릭터 중심의 세계 구축을 가능하게 합니다.",
-      "paragraph2": "이 포괄적인 가이드는 창작자, 작가 및 RPG 플레이어가 Curify의 Nano Banana를 활용하여 &lt;strong&gt;매우 정확하고 맥락 인식이 가능한 캐릭터 페르소나&lt;/strong&gt;를 MBTI 유형에 기반하여 생성하는 방법을 보여줍니다. 표면적인 레이블에 그치지 않고, 가이드는 각 MBTI 프로필을 실행 가능한 특성—의사 결정 패턴, 대화 스타일, 감정적 트리거 및 대인 관계 역학—으로 변환하는 방법을 안내하여 생성된 캐릭터가 다양한 시나리오에서 일관되고 믿을 수 있도록 합니다. 옐로스톤 캐릭터를 실용적인 예로 사용하여, 우리는 &lt;strong&gt;MBTI 출력을 인식 가능한 성격에 고정하는 방법&lt;/strong&gt;을 보여주고, 그런 다음 이러한 패턴을 원래 캐릭터 생성, 팬 픽션 또는 테이블탑 RPG 캠페인으로 확장합니다. 예를 들어, 사용자는 Beth Dutton 스타일의 ENTJ 원형으로 시작하여 이를 기업의 반영웅으로 변형하거나, Rip Wheeler와 유사한 ISTP 프로필을 도덕적으로 복잡한 RPG 동료로 발전시킬 수 있습니다. 단계별 생성 워크플로우와 이미 검색 관심을 끌고 있는 대중 문화 참조를 결합함으로써, 이 가이드는 &lt;strong&gt;높은 의도를 가진 롱테일 트래픽을 포착&lt;/strong&gt;하면서 즉각적인 창의적 가치를 제공합니다. 독자는 MBTI 유형이 무엇인지 배우는 것뿐만 아니라, 이를 스토리, 게임 또는 콘텐츠 생성 파이프라인에서 사용할 수 있는 완전히 실현된 캐릭터로 운영화하는 방법을 배웁니다."
-    },
-    "tags": {
-      "mbtiGenerator": "MBTI 생성기",
-      "yellowstoneMBTI": "옐로스톤 MBTI",
-      "characterDevelopment": "캐릭터 개발"
-    },
-    "protip": "AI에게 성격 패턴을 훈련시키기 위해 특정 MBTI 유형과 실제 캐릭터 예시로 시작한 후 원래 캐릭터를 생성하세요.",
-    "tabs": {
-      "basics": "MBTI 기초",
-      "yellowstone": "옐로스톤 예시",
-      "techniques": "고급 기법",
-      "advanced": "전문적 사용",
-      "faq": "자주 묻는 질문"
-    },
-    "basics": {
-      "title": "캐릭터 생성을 위한 MBTI 이해하기",
-      "whatIsMBTI": {
-        "title": "MBTI란 무엇인가요?",
-        "description": "마이어스-브릭스 유형 지표는 네 가지 주요 차원에 따라 사람들을 16개의 독특한 성격 유형으로 분류하는 성격 프레임워크입니다. 이 시스템은 일관되고 믿을 수 있는 캐릭터를 만드는 데 훌륭한 기초를 제공합니다."
-      },
-      "aiGeneration": {
-        "title": "AI 기반 MBTI 캐릭터 생성",
-        "description": "Curify의 Nano Banana를 사용하여 MBTI 성격 특성을 정확하게 반영하는 상세한 캐릭터 프로필을 생성할 수 있습니다. 행동, 대화 패턴 및 의사 결정 경향이 포함됩니다.",
-        "basicPrompt": {
-          "title": "기본 캐릭터 프롬프트 구조",
-          "example": "[MBTI_TYPE] 성격 유형에 대한 캐릭터 프로필을 생성하세요. 그들의 핵심 특성, 의사소통 스타일, 의사 결정 과정 및 [CONTEXT]에서의 전형적인 행동을 포함하세요.",
-          "explanation": "이 간단한 구조는 AI가 일관된 캐릭터 성격을 생성하는 데 필요한 필수 정보를 제공합니다."
-        }
-      }
-    },
-    "yellowstone": {
-      "title": "MBTI 템플릿으로서의 옐로스톤 캐릭터",
-      "beth": {
-        "traits": [
-          "대담한",
-          "결단력 있는",
-          "경쟁적인",
-          "빠른 사고",
-          "자원ful",
-          "직접적인 의사소통"
-        ],
-        "prompt": "30대 ESTP 여성 캐릭터를 생성하세요. 고위험 비즈니스 환경에서 일하며, 날카로운 재치, 전략적 사고, 보호적인 가족 충성을 포함해야 합니다. 그녀는 자신감이 넘치고 가끔 무자비하지만 숨겨진 취약점을 가지고 있어야 합니다."
-      },
-      "rip": {
-        "traits": [
-          "충성스러운",
-          "체계적인",
-          "책임감 있는",
-          "전통적인",
-          "보호적인",
-          "행동 지향적인"
-        ],
-        "prompt": "충성스러운 보호자이자 집행자로서의 ISTJ 남성 캐릭터를 생성하세요. 강한 의무감, 실용적인 문제 해결 능력, 변함없는 충성을 포함해야 합니다. 그는 조용하지만 강력하며, 엄격한 도덕 기준과 보호 본능을 가져야 합니다."
-      },
-      "john": {
-        "traits": [
-          "자연스러운 리더",
-          "전략적인",
-          "결단력 있는",
-          "비전 있는",
-          "권위 있는",
-          "가족 중심의"
-        ],
-        "prompt": "강력한 가족 가장이자 비즈니스 리더로서의 ENTJ 캐릭터를 생성하세요. 전략적 사고, 지배적인 존재감, 복잡한 가족 역학을 포함해야 합니다. 그는 결단력이 있고 비전이 있지만 책임과 유산에 짓눌려 있어야 합니다."
-      },
-      "kayce": {
-        "traits": [
-          "가치 중심의",
-          "적응력 있는",
-          "충성스러운",
-          "갈등 회피형",
-          "원칙적인",
-          "감정적 깊이"
-        ],
-        "prompt": "가족 충성과 개인적 가치 사이에서 갈등하는 ISFP 캐릭터를 생성하세요. 강한 도덕적 나침반, 감정적 민감성, 내부 갈등을 포함해야 합니다. 그는 능숙하고 사려 깊지만 경쟁하는 우선순리로 어려움을 겪고 있어야 합니다."
-      },
-      "analysis": {
-        "title": "왜 이 예시들이 효과적인가",
-        "description": "Yellowstone 캐릭터는 고위험 상황에서 명확한 성격 특성을 구현하기 때문에 완벽한 MBTI 전형을 제공합니다. 이는 AI 캐릭터 생성의 이상적인 템플릿이 됩니다.",
-        "points": [
-          "각 캐릭터는 다양한 시나리오에서 일관된 MBTI 행동을 보여줍니다.",
-          "그들의 동기와 의사결정 패턴이 명확하게 드러납니다.",
-          "이 쇼는 압박 속에서 성격 표현을 위한 풍부한 맥락을 제공합니다.",
-          "이러한 전형은 다양한 장르와 설정에 잘 적용됩니다."
-        ]
-      }
-    },
-    "techniques": {
-      "title": "고급 프롬프트 기법",
-      "detailedPrompts": {
-        "title": "상세한 캐릭터 프로필 생성",
-        "description": "상세한 성격 프레임워크와 맥락 요소를 포함하여 캐릭터 생성을 향상시키세요.",
-        "structure": {
-          "title": "포괄적인 프롬프트 구조",
-          "elements": [
-            "핵심 MBTI 유형 및 인지 기능",
-            "배경 및 삶의 경험",
-            "현재 맥락 및 환경",
-            "특정 시나리오 및 도전 과제",
-            "관계 역학 및 의사소통 스타일"
-          ]
-        },
-        "example": "최근 지속 가능한 패션 브랜드를 시작한 ENFP 기업가를 위한 상세한 캐릭터 프로필을 생성하세요. 그들의 창의적인 과정, 비즈니스 도전 과제를 처리하는 방법, 네트워킹 스타일, 일과 삶의 균형에 대한 개인적인 어려움을 포함해야 합니다. 트렌드 포착에서의 외향적 직관과 윤리적 의사결정에서의 내향적 감정을 보여주세요. 대화 예시와 내부 독백 스니펫을 포함하세요."
-      },
-      "iterativeRefinement": {
-        "title": "반복적인 캐릭터 개발",
-        "description": "AI 생성 캐릭터를 다듬고 완벽하게 하기 위해 다단계 접근 방식을 사용하세요.",
-        "steps": {
-          "step1": {
-            "title": "기본 프로필 생성",
-            "description": "캐릭터의 핵심 성격을 설정하기 위해 광범위한 MBTI 중심 프롬프트로 시작하세요."
-          },
-          "step2": {
-            "title": "특정 맥락 추가",
-            "description": "특정 시나리오, 관계 및 환경 요소를 추가하여 캐릭터를 다듬으세요."
-          },
-          "step3": {
-            "title": "테스트 및 다듬기",
-            "description": "다양한 상황에서 캐릭터를 배치하여 일관성을 테스트하고 성격 특성을 다듬으세요."
-          }
-        }
-      }
-    },
-    "advanced": {
-      "title": "전문적 응용",
-      "useCases": {
-        "title": "전문적 사용 사례",
-        "writers": {
-          "title": "소설 작가",
-          "description": "매력적인 내러티브를 이끄는 일관되고 다차원적인 캐릭터를 생성하세요."
-        },
-        "rpg": {
-          "title": "RPG 게임 마스터",
-          "description": "몰입감 있는 역할 놀이 경험을 위해 독특한 성격을 가진 NPC를 생성하세요."
-        },
-        "marketing": {
-          "title": "마케팅 팀",
-          "description": "대상 캠페인을 위한 브랜드 페르소나 및 고객 아바타를 개발하세요."
-        },
-        "psychology": {
-          "title": "심리학 학생",
-          "description": "캐릭터 기반 학습 시나리오를 통해 성격 유형을 탐구하세요."
-        }
-      },
-      "bestPractices": {
-        "title": "AI 캐릭터 생성을 위한 모범 사례",
-        "points": [
-          "캐릭터가 작동하는 맥락과 환경을 항상 명시하세요.",
-          "현실적인 성격을 위해 강점과 약점을 모두 포함하세요.",
-          "특정 시나리오를 사용하여 캐릭터 일관성을 테스트하세요.",
-          "생성된 결과를 기반으로 반복하고 다듬으세요.",
-          "복잡한 캐릭터를 위해 여러 MBTI 통찰을 결합하세요.",
-          "다양한 맥락에서 캐릭터 일관성을 유지하세요."
-        ]
-      }
-    },
-    "benefits": {
-      "subtitle": "AI 기반 MBTI 생성 선택 이유",
-      "title": "AI MBTI 캐릭터 생성의 주요 이점",
-      "accuracy": {
-        "title": "심리적 정확성",
-        "description": "광범위한 성격 데이터로 훈련된 AI 모델은 확립된 MBTI 프레임워크와 일관되게 맞는 캐릭터를 생성합니다."
-      },
-      "efficiency": {
-        "title": "시간 효율성",
-        "description": "수동 캐릭터 개발 및 연구에 소요되는 시간을 줄이고 몇 초 만에 상세한 캐릭터 프로필을 생성하세요."
-      },
-      "consistency": {
-        "title": "캐릭터 일관성",
-        "description": "모든 스토리 시나리오와 맥락에서 일관된 성격 특성, 행동 및 의사결정 패턴을 유지하세요."
-      },
-      "creativity": {
-        "title": "향상된 창의성",
-        "description": "신선한 스토리텔링 접근 방식과 내러티브에 영감을 주는 새로운 캐릭터 가능성과 성격 조합을 탐색하세요."
-      }
-    },
-    "conclusion": {
-      "title": "오늘 매력적인 캐릭터 만들기 시작하세요",
-      "description": "Curify의 Nano Banana와 이 MBTI 캐릭터 생성 기술을 통해 관객을 사로잡는 풍부하고 일관된 캐릭터를 만드는 데 필요한 모든 것을 갖추게 됩니다. 픽션을 쓰거나 RPG 캠페인을 개발하거나 마케팅 페르소나를 만드는 경우, AI 기반 캐릭터 생성이 창의적 프로세스를 변화시킬 것입니다.",
-      "cta": {
-        "primary": "Nano Banana 캐릭터 생성기 사용해보기",
-        "secondary": "더 많은 AI 도구 탐색하기"
-      }
-    },
-    "universes": {
-      "title": "12개의 유니버스, 하나의 MBTI 시스템",
-      "description": "이미 알고 있는 유니버스를 선택하세요 — 마블, 나루토, 프렌즈, 옐로스톤, 지브리 — 캐릭터 이름을 입력하면 해당 쇼 스타일의 MBTI 성격 카드를 얻을 수 있습니다. 독자가 이미 인식하는 캐릭터에서 시작하는 것이 가장 빠른 캐릭터 생성 방법입니다."
-    },
-    "beyond": {
-      "title": "단일 캐릭터를 넘어서",
-      "description": "단일 캐릭터를 넘어서는 MBTI 템플릿 — 두 유형을 나란히 비교하고, 관계 역학을 플롯하고, 일반적인 고정관념을 깨거나, 다중 캐릭터 그리드를 구축하세요. 소셜, 교육 및 팬 콘텐츠를 위한 매우 공유 가능한 형식입니다."
-    }
   },
   "HowToDubVideosNaturally": {
     "description": "AI 도구를 사용하여 일반적인 더빙 문제를 해결하는 포괄적인 가이드입니다. 로봇 같은 속도, 감정 부족, 립싱크 문제에 대한 실용적인 솔루션을 배우세요.",
@@ -7713,5 +6487,188 @@
     "title": "로봇 AI 더빙 수정하는 방법: 2026년의 입술 동기화, 감정 및 페이싱",
     "metaDescription": "AI 더빙된 비디오가 로봇처럼 들리나요? 올바른 음성 클로닝 워크플로우로 입술 동기화 드리프트, 평면 감정 및 부자연스러운 페이싱을 수정하세요 — 2026년 제작자를 위한 단계별 가이드.",
     "seoKeywords": "로봇 ai 더빙 수정, ai 음성 클로닝 아티팩트, 입술 동기화 드리프트 수정, ai 더빙 튜토리얼 2026, 자연스러운 ai 더빙, 음성 클로닝 감정, 비디오 더빙 워크플로우"
+  },
+  "MBTICharacterGenerator": {
+    "title": "MBTI 캐릭터 생성기: Marvel, NBA, Ghibli, Yellowstone 등 시각적 성격 카드 | Curify",
+    "description": "이미 알고 있는 캐릭터를 위한 3:4 MBTI 성격 카드를 생성하세요. 10개의 유니버스 템플릿(Marvel, NBA, 실리콘 밸리, 브레이킹 배드, Ghibli, Yellowstone, 나루토, 동물, 일반 16유형 포함)과 382개의 작업 예제가 제공됩니다."
+  },
+  "MBTICharacterGeneratorGuide": {
+    "title": "MBTI 캐릭터 생성기: Marvel, NBA, Ghibli, Yellowstone 등 시각적 성격 카드 | Curify",
+    "description": "이미 알고 있는 캐릭터를 위한 3:4 MBTI 성격 카드를 생성하세요. 10개의 유니버스 템플릿(Marvel, NBA, 실리콘 밸리, 브레이킹 배드, Ghibli, Yellowstone, 나루토, 동물, 일반 16유형 포함)과 382개의 작업 예제가 제공됩니다.",
+    "hero": {
+      "title": "MBTI 캐릭터 생성기: 이미 알고 있는 캐릭터를 위한 시각적 카드",
+      "subtitle": "유니버스를 선택하세요 — Marvel, NBA, 실리콘 밸리, 브레이킹 배드, Ghibli, Yellowstone, 나루토 또는 동물 — 캐릭터 이름을 입력하고 해당 쇼에 맞춘 3:4 MBTI 성격 카드를 받으세요."
+    },
+    "introduction": {
+      "paragraph1": "대부분의 MBTI 생성기 검색은 \"무작위 성격을 주세요\"로 시작하지 않습니다. 특정 이름으로 시작합니다: &lt;strong&gt;\"Rip Wheeler의 MBTI는 무엇인가요?\"&lt;/strong&gt;, \"Beth Dutton 성격 유형\", \"Hulk MBTI\". 사람들은 이미 알고 있는 누군가에 대한 성격 분석을 원하지, 16가지 전형 퀴즈를 원하지 않습니다. Curify의 MBTI 생성기는 이러한 의도에 맞춰 만들어졌습니다. 각 템플릿은 단일 유니버스를 위한 시각적 디자이너입니다 — Yellowstone, Marvel, 브레이킹 배드, Ghibli, NBA, 실리콘 밸리, 나루토 — 출력은 저장, 공유 또는 시리즈로 연결할 수 있는 세로 3:4 성격 카드입니다.",
+      "paragraph2": "이 페이지에서는 우리가 제공하는 10개의 유니버스 템플릿, 사이트에 이미 있는 382개의 작업 캐릭터 예제, 두 개의 비유니버스 템플릿(&lt;strong&gt;대조&lt;/strong&gt; 유형 간 비교를 위한 것과 &lt;strong&gt;고정관념 대 현실&lt;/strong&gt; 소셜 미디어에서 볼 수 있는 반응 형식 카드)을 안내합니다. 아래 갤러리 섹션의 모든 예제는 원클릭 리믹스입니다 — 가장 가까운 캐릭터를 선택하고 이름을 바꾸면 카드가 생성됩니다."
+    },
+    "tags": {
+      "mbtiGenerator": "MBTI 생성기",
+      "yellowstoneMBTI": "Yellowstone MBTI",
+      "characterDevelopment": "캐릭터 개발"
+    },
+    "protip": "좋은 MBTI 카드로 가는 가장 빠른 경로: 독자가 이미 인식하는 캐릭터에서 시작하세요. Yellowstone, Marvel, 브레이킹 배드 템플릿은 각각 캐릭터별로 미리 입력되어 있습니다 — 이름만 입력하면 됩니다.",
+    "tabs": {
+      "basics": "작동 방식",
+      "yellowstone": "Yellowstone 예제",
+      "techniques": "더 깊이 들어가기",
+      "advanced": "사용 사례",
+      "faq": "자주 묻는 질문"
+    },
+    "basics": {
+      "title": "MBTI 카드 생성기 작동 방식",
+      "whatIsMBTI": {
+        "title": "네 가지 차원, 열여섯 가지 유형",
+        "description": "MBTI는 사람들을 네 가지 이진 차원에서 16가지 유형으로 그룹화합니다: 외향성/내향성(에너지가 어디서 오는지), 감각/직관(정보를 어떻게 받아들이는지), 사고/감정(결정을 어떻게 내리는지), 판단/인식(외부 세계에 접근하는 방법). 생성기가 출력하는 카드는 네 가지 차원을 모두 레이블하고 해당 유형에 따른 인지 기능을 드러냅니다."
+      },
+      "aiGeneration": {
+        "title": "우주 선택, 이름 입력, 카드 받기",
+        "description": "각 템플릿은 단일 우주 비주얼 디자이너입니다(옐로스톤 목장 스타일, 마블 만화 벡터, NBA 수집 카드, 브레이킹 배드 거친 산업). 사용자 입력은 캐릭터 이름뿐입니다. 시스템은 MBTI 유형, 인지 기능, 특성, 시그니처 소품 및 스타일링을 채웁니다 — 출력은 저장, 공유 또는 시리즈로 연결할 수 있는 세로 3:4 이미지입니다.",
+        "basicPrompt": {
+          "title": "사용자가 실제로 입력하는 내용",
+          "example": "character_name: \"Beth Dutton\" → template-mbti-yellowstone\n→ 3:4 카드: ENTJ + 인지 기능 + 4가지 핵심 특성 + 에니어그램 + 소박한 목장 스타일링",
+          "explanation": "사용자는 하나의 필드 — 캐릭터 이름을 제공합니다. 템플릿이 나머지를 처리합니다. 이것이 생성기가 독자가 이미 인식하는 캐릭터에 잘 작동하는 이유입니다: MBTI 유형과 특성의 할당은 기존 시리즈의 관찰 가능한 행동에 기반하고, 프롬프트에서 발명된 것이 아닙니다."
+        }
+      }
+    },
+    "yellowstone": {
+      "title": "두 개의 옐로스톤 예시(템플릿에 11개 더 있음)",
+      "beth": {
+        "traits": [
+          "대담함",
+          "결단력",
+          "경쟁적",
+          "빠른 사고",
+          "자원ful",
+          "직접적인 의사소통"
+        ],
+        "prompt": "character_name: \"Beth Dutton\"\ntemplate: template-mbti-yellowstone\n→ 3:4 성격 카드: ENTJ + 4 인지 기능 + 핵심 특성 + 에니어그램 + 소박한 목장 스타일링"
+      },
+      "rip": {
+        "traits": [
+          "충성스러움",
+          "체계적",
+          "책임감",
+          "전통적",
+          "보호적",
+          "행동 지향적"
+        ],
+        "prompt": "character_name: \"Rip Wheeler\"\ntemplate: template-mbti-yellowstone\n→ 3:4 성격 카드: ISTP + 4 인지 기능 + 핵심 특성 + 에니어그램 + 소박한 목장 스타일링"
+      },
+      "analysis": {
+        "title": "왜 이 두 캐릭터인가",
+        "description": "Beth (ENTJ)와 Rip (ISTP)는 이 페이지에서 가장 많은 검색 쿼리를 유도하는 두 캐릭터입니다 — \"Beth Dutton 성격 유형\", \"Rip Wheeler의 MBTI는 무엇인가\". 옐로스톤 템플릿은 9개의 추가 사전 입력된 캐릭터(John Dutton, Kayce Dutton, Jamie Dutton, Jimmy Hurdstrom, Lloyd Pierce, Monica Dutton, Teeter, Thomas Rainwater, Walker)를 제공하며, 기본 템플릿은 다른 어떤 옐로스톤 캐릭터 이름도 수용합니다.",
+        "points": [
+          "템플릿에 11개의 옐로스톤 캐릭터가 있으며, 각각은 소박한 목장 스타일링으로 3:4 카드로 렌더링됩니다.",
+          "관찰 가능한 행동에 기반한 사전 입력된 MBTI 할당 — 발명된 것이 아님",
+          "각 카드는 인지 기능, 핵심 특성, 에니어그램 및 마무리 태그라인을 포함합니다.",
+          "전체 Yellowstone 갤러리를 탐색하거나 캐릭터 이름을 바꿔 카드를 리믹스하세요."
+        ]
+      }
+    },
+    "techniques": {
+      "title": "더 깊이 들어가기",
+      "detailedPrompts": {
+        "title": "기본 카드로는 부족할 때",
+        "description": "각 템플릿은 기본 출력이 완벽하지 않을 경우 자동으로 채워진 필드를 재정의할 수 있게 해줍니다. 덜 일반적인 특성을 드러내거나 특정 서명 인용구, 기본값과 다른 에니어그램 유형을 원할 때 유용합니다.",
+        "structure": {
+          "title": "재정의할 수 있는 것",
+          "elements": [
+            "MBTI 유형 — 해당 캐릭터의 기본 할당에 동의하지 않을 경우",
+            "인지 기능 — 카드에 표시된 네 가지 (주요, 보조, 제3, 열등)",
+            "핵심 특성 — 카드 하단의 4-5개 특성 레이블",
+            "서명 인용구 — 인용구 상자로 끌어온 것 (Breaking Bad 및 Yellowstone 템플릿)",
+            "에니어그램 유형 — 하단 섹션에 별도의 다이어그램으로 표시"
+          ]
+        },
+        "example": "character_name: \"Saul Goodman\"\ntemplate: template-mbti-breakingbad\nmbti_type: \"ENTP\"\nsignature_quote: \"이 비상 사태를 대비하지 않았나요? 소년 스카우트의 모토가 있잖아요...\"\ntrait_1: \"재치 있는\"\ntrait_2: \"적응력 있는\"\ntrait_3: \"설득력 있는\""
+      },
+      "iterativeRefinement": {
+        "title": "세 가지 반복 방법",
+        "description": "첫 번째 카드가 마음에 들지 않으면, 보통 세 가지 조정으로 해결할 수 있습니다.",
+        "steps": {
+          "step1": {
+            "title": "우주 바꾸기",
+            "description": "같은 캐릭터라도 Marvel과 Breaking Bad 스타일에 따라 다르게 읽힐 수 있습니다. Breaking Bad의 거친 모습이 맞지 않으면, Marvel 만화 벡터 템플릿이 종종 적합합니다."
+          },
+          "step2": {
+            "title": "MBTI 유형 재정의",
+            "description": "기본 할당은 시리즈 전반에 걸쳐 관찰 가능한 행동에 기반하지만, 합리적인 사람들은 동의하지 않습니다. 기본값이 ENTJ인 경우 INTJ를 원하면 mbti_type을 명시적으로 전달하세요."
+          },
+          "step3": {
+            "title": "특성 재정의",
+            "description": "하단의 4-5개 특성 레이블이 카드의 대부분을 차지합니다. 이 중 두 개를 바꾸면 전체 인상이 종종 달라집니다."
+          }
+        }
+      }
+    },
+    "advanced": {
+      "title": "누가 이걸 사용하나요",
+      "useCases": {
+        "title": "로그에서 확인되는 구체적인 사용 사례",
+        "writers": {
+          "title": "팬 이론 게시물",
+          "description": "캐릭터의 MBTI를 주장하는 Reddit / Tumblr 스레드. 카드는 게시물의 시각적 중심입니다."
+        },
+        "rpg": {
+          "title": "테이블탑 NPC 시트",
+          "description": "GM은 주요 NPC를 위한 빠른 성격 참조로 3:4 카드를 인쇄합니다. 인지 기능 패널은 역할극 안내로도 사용됩니다."
+        },
+        "marketing": {
+          "title": "페르소나 피치 덱",
+          "description": "브랜드 팀은 대비 템플릿을 사용하여 두 고객 페르소나를 한 슬라이드에 나란히 비교합니다."
+        },
+        "psychology": {
+          "title": "교수 보조 자료",
+          "description": "고정관념 대 현실 카드는 MBTI 유형이 온라인에서 어떻게 캐리커처화되는지 논의하기 위한 교실 프롬프트로 작용합니다."
+        }
+      },
+      "bestPractices": {
+        "title": "사람들이 자주 실수하는 것들",
+        "points": [
+          "우주 템플릿과 싸우지 마세요 — 캐릭터가 실제로 사는 우주를 선택하세요, 당신의 미적 선호와 가장 가까운 것이 아니라.",
+          "캐릭터가 잘 알려지지 않았다면, 일반적인 16타입 템플릿으로 돌아가세요 — 카드에 유명한 IP가 필요하지 않습니다.",
+          "대조 템플릿은 두 개의 MBTI 유형을 입력으로 필요로 하며, 두 개의 캐릭터 이름이 아닙니다 — 먼저 유형을 선택하고, 그 다음 특성 필드에 캐릭터를 작성하세요.",
+          "동물 MBTI 카드는 아이들과 교육 콘텐츠에 놀랍도록 잘 작동합니다 — 추상화가 유형 할당에서 정치적 요소를 제거합니다."
+        ]
+      }
+    },
+    "benefits": {
+      "subtitle": "",
+      "title": "",
+      "accuracy": {
+        "title": "",
+        "description": ""
+      },
+      "efficiency": {
+        "title": "",
+        "description": ""
+      },
+      "consistency": {
+        "title": "",
+        "description": ""
+      },
+      "creativity": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "conclusion": {
+      "title": "이미 아는 캐릭터로 시작하세요",
+      "description": "이미 알고 있는 우주를 선택하고, 캐릭터 이름을 입력한 후 거기서 리믹스하세요. 실제로 인지할 수 있는 성격에 가까울수록 카드가 올바르게 느끼기 위해 해야 할 작업이 줄어듭니다.",
+      "cta": {
+        "primary": "Nano Banana 캐릭터 생성기 사용해보기",
+        "secondary": "더 많은 AI 도구 탐색하기"
+      }
+    },
+    "universes": {
+      "title": "10개의 우주, 하나의 MBTI 시스템",
+      "description": "이미 알고 있는 우주를 선택하세요 — Marvel (66개 예시), NBA (30), Silicon Valley (42), Breaking Bad (24), Ghibli (23), Naruto (14), Yellowstone (11), Animal (49), 그리고 일반적인 16타입 템플릿 (75) 및 Friends. 캐릭터 이름을 입력하고 해당 쇼에 맞춰 스타일링된 3:4 성격 카드를 받으세요."
+    },
+    "beyond": {
+      "title": "단일 캐릭터가 아닌 두 개의 템플릿",
+      "description": "유형 대 유형 대조 카드 (27개 예시)와 고정관념 대 현실 반응 형식 카드 (16개 예시) — 둘 다 소셜 포스트, 교육 슬라이드 및 한 캐릭터가 적합하지 않은 팬 콘텐츠를 위해 제작되었습니다."
+    }
   }
 }

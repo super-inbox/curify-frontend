@@ -9,6 +9,11 @@
     "hero": {
       "title": "Fikirleri Keşfet | Görsel Olarak İfade Et | İçerik Oluştur",
       "description": "Curify, trendleri ve fikirleri yapılandırılmış görsel içeriğe dönüştürür. İlham kartlarından altyazı ve video çeviriye kadar."
+    },
+    "toolsStrip": {
+      "title": "Hayata geçirmek için araçlar",
+      "subtitle": "Bir şablonu çalışan bir video, çeviri veya tasarıma dönüştürün - ya da demolarımızdan birini deneyin.",
+      "seeAll": "Tüm araçları görün →"
     }
   },
   "coreFeatures": {
@@ -175,30 +180,37 @@
     "speech_translator": {
       "title": "Konuşma çevirmeni",
       "desc": "Konuşmayı doğal bir şekilde başka bir dile çevirin."
-    }
+    },
+    "video_enhance": {
+      "title": "Video geliştirme",
+      "desc": "Arşiv, düşük çözünürlüklü veya sıkıştırılmış videolardaki detay, keskinlik ve netliği geri kazandırın.",
+      "meta": {
+        "title": "AI Video Geliştirme | Arşiv & Düşük Çözünürlüklü Videoları Geri Kazanın | Curify AI",
+        "description": "Gerçek arşiv görüntüleri üzerinde bir AI video geliştirme demosu izleyin. Curify, düşük çözünürlüklü ve sıkıştırılmış videolardaki detay, keskinlik ve netliği geri kazandırır — erken erişim için kaydolun."
+      }
+    },
+    "relatedReading": "Nasıl çalıştığını okuyun",
+    "whoItsFor": "Kimin için",
+    "see_demo": "Demo Gör"
   },
   "bilingual": {
     "metadata": {
-      "title": "Ücretsiz İki Dilli Altyazı Oluşturucu | Curify AI",
-      "description": "Curify'ın ücretsiz yapay zeka destekli aracıyla videolarınız için iki dilli altyazılar oluşturun. YouTube, TikTok, eğitim ve küresel içerik oluşturucular için mükemmel."
+      "title": "Ücretsiz İki Dilli Altyazı Üretici — Filigransız | Curify",
+      "description": "Ücretsiz iki dilli altyazı üretici — dışa aktarımlarda filigran yok, 170'den fazla dil çifti, kare hassasiyetinde zamanlama. YouTube, TikTok ve pazarlama videoları için tasarlandı. Her pazar için kesimler yerine tek çok dilli varlık."
     },
-    "title": "İki Dilli Altyazılar Artık Çok Kolay",
-    "description": "Curify'ın yapay zeka altyazı motorunu kullanarak iki dilde otomatik olarak altyazı oluşturun. İçerik oluşturucular, eğitimciler ve küresel işletmeler için ideal.",
-    "example": "Örnek: Jensen Huang yapay zeka stratejisini açıklıyor — İngilizce + Çince altyazılar otomatik olarak oluşturuldu.",
-    "cta": "Ücretsiz Deneyin",
     "why": {
-      "title": "İki Dilli Altyazılar İçin Neden Curify'ı Seçmelisiniz?",
-      "point1": "Doğru çeviri ile 170'ten fazla dili destekler.",
-      "point2": "Duygusal tonu ve zamanlamayı korur.",
-      "point3": "YouTube, TikTok ve eğitim videoları için mükemmeldir.",
-      "point4": "Yayınlanmaya hazır altyazı dosyalarını veya gömülü videoları dışa aktarın."
+      "title": "Neden Yaratıcılar ve Pazarlamacılar İki Dilli Altyazılar için Curify'yi Seçiyor",
+      "point1": "Dışa aktarılan video veya SRT'de filigran yok — ücretsiz katmanda temiz çıktı, logoyu kaldırmak için yükseltme gerekmiyor.",
+      "point2": "Ton, deyim ve alan kelime dağarcığını koruyan bağlam odaklı çeviri ile 170'den fazla dil çifti — kelime değişimi değil.",
+      "point3": "Üst üste binen çift dilli parçalar için kare hassasiyetinde zamanlama — kısa biçimli görüntülemenin %80'inin sessiz gerçekleştiği mobil otomatik oynatmada okunabilir.",
+      "point4": "SRT olarak dışa aktarın, videoya gömün veya altyazı parçası olarak ekleyin — platformun ihtiyaç duyduğu formatı yeniden işleme yapmadan seçin."
     },
     "faq": {
       "title": "Sıkça Sorulan Sorular",
-      "q1": "Gerçekten ücretsiz mi?",
-      "a1": "Evet, Curify ayda sınırlı altyazı dakikası içeren ücretsiz bir plan sunar.",
-      "q2": "Oluşturduktan sonra altyazıları düzenleyebilir miyim?",
-      "a2": "Kesinlikle. Dışa aktarmadan önce zamanlamayı, çeviriyi ve stili ayarlayabilirsiniz."
+      "q1": "Dışa aktarılan videolar veya altyazı dosyalarında filigran var mı?",
+      "a1": "Hayır. Curify'nin ücretsiz katmanı filigransız temiz video ve SRT dosyaları dışa aktarır. Ücretli planlar daha fazla aylık altyazı dakikası ekler, filigran kaldırma değil — ücretsiz planda gönderdiğiniz, Pro planda da gönderdiğinizdir.",
+      "q2": "Altyazıları oluşturduktan sonra düzenleyebilir miyim?",
+      "a2": "Evet. Zamanlamayı ayarlayabilir, her iki dildeki çevirileri düzenleyebilir, altyazı parçasının stilini değiştirebilir ve yeniden dışa aktarabilirsiniz — hepsi yayınlamadan önce. Düzenlemeler yıkıcı değildir; orijinal otomatik oluşturulan parça mevcut kalır."
     },
     "deep": {
       "what": {
@@ -224,7 +236,11 @@
         "businessTitle": "Küresel İşletmeler İçin",
         "businessBody": "İşletmeler, ürün tanıtımları, yatırımcı sunumları, eğitim videoları ve pazarlama kampanyaları için ikili altyazıları kullanır. Ayrı yerelleştirilmiş videolar üretmek yerine, tek bir çok dilli varlık gönderebilir — üretim maliyetini azaltırken küresel erişimi artırır."
       }
-    }
+    },
+    "title": "Ücretsiz İki Dilli Altyazılar — Filigransız, 170'den Fazla Dil",
+    "description": "YouTube, TikTok, pazarlama videoları ve eğitim içeriği için çift dilli altyazıları otomatik olarak oluşturun. Dışa aktarımlarda filigran olmadan ücretsiz katman, üst üste binen parçalar için doğru zamanlama ve niyeti koruyan çeviri — sadece kelimeler değil. Her pazar için yerelleştirilmiş kesimler üretmek yerine tek bir çok dilli varlık gönderin.",
+    "example": "Örnek: Jensen Huang'ın AI stratejisini açıklaması — İngilizce + Çince altyazılar otomatik olarak oluşturuldu, dışa aktarımdan filigran yok.",
+    "cta": "Altyazı Oluştur — Ücretsiz"
   },
   "videoDubbing": {
     "metadata": {
@@ -592,12 +608,183 @@
       "displayName": "ESFP",
       "title": "ESFP — Her Ortamın Canıdır | MBTI Karakter Kartları",
       "description": "Gittikleri her yere enerji getiren spontane eğlenceliler. Ghibli, Breaking Bad, Friends ve spor dünyalarındaki ESFP karakterlerini keşfedin."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Konuşma Çevirisi Nedir?",
+        "p1": "AI konuşma çevirisi, kaynak dildeki konuşulan kelimeleri hedef dilde doğal konuşulan kelimelere dönüştürür — metin altyazıları göstermek yerine çevrilen dilde yeni bir ses parçası oluşturur.",
+        "p2": "Çıktı, sesinin çevrildiği, AI tarafından sentezlenmiş bir sesle değiştirilmiş orijinal video olan dublajlı bir videodur. Bu, video içeriğini uluslararası izleyicilere yerel olarak erişilebilir hale getirmenin en hızlı yoludur ve kayıt stüdyosu gerektirmez.",
+        "p3": "Curify'nin konuşma çevirmeni, arka plan gürültüsü, birden fazla konuşmacı, teknik kelime dağarcığı ve doğal konuşma temposunu 170'den fazla dilde işlemek için tasarlanmıştır."
+      },
+      "how": {
+        "title": "Curify Konuşmayı Nasıl Çevirir",
+        "p1": "Curify'nin konuşma çevirisi süreci, yüksek doğrulukta transkripsiyon, bağlama duyarlı çeviri ve doğal ses sentezini tek bir otomatik iş akışında birleştirir.",
+        "p2": "Adım 1: Konuşma, aksanları, alan kelime dağarcığını ve çoklu konuşmacı diyaloglarını işleyen üretim kalitesinde konuşma tanıma kullanılarak kaynak ses kaydından transkribe edilir.",
+        "p3": "Adım 2: Transkript, anlamı, tonu ve niyeti koruyan bağlama duyarlı modeller kullanılarak çevrilir — sadece kelime yerine kelime değişimi değil.",
+        "p4": "Adım 3: Doğal bir AI sesi, çevrilen metni hedef dilde sentezler, mümkün olduğunda orijinal tempo ve duygusal iletimi eşleştirir.",
+        "p5": "Adım 4: Sentezlenmiş ses parçası, videodaki orijinal sesi değiştirir ve tamamen dublajlı bir video dosyası alırsınız, yayınlamaya hazır."
+      },
+      "usecases": {
+        "title": "AI Konuşma Çevirisini Kim Kullanır?",
+        "creatorsTitle": "Küresel İçerik Üreticileri İçin",
+        "creatorsBody": "Üreticiler, içeriklerini yeniden kaydetmeden yeni dil pazarlarında izleyicilere ulaşmak için konuşma çevirisini kullanır. Tek bir yükleme, farklı bölgesel kanallar için hazır çok dilli dublajlı versiyonlar üretir.",
+        "educationTitle": "Kurumsal Eğitim ve E-Öğrenme İçin",
+        "educationBody": "Eğitim departmanları, oryantasyon videolarını, güvenlik brifinglerini ve ürün eğitimlerini yerel dillere çevirir. Doğal bir ses parçası, yalnızca altyazılara kıyasla bilgi tutma ve katılımı artırır.",
+        "businessTitle": "Uluslararası Pazarlama Ekipleri İçin",
+        "businessBody": "Pazarlama ekipleri, hedef pazar dillerine demo videoları, müşteri referansları ve etkinlik kayıtlarını çevirir — bölgeler arasında tutarlı mesajlaşmayı sağlarken pazar başına üretim maliyetlerini ortadan kaldırır."
+      }
     }
   },
-  "topicPage": {
-    "exampleImagesHeading": "Örnek Görseller",
-    "templatesHeading": "Şablonlar",
-    "subTopicsHeading": "Kategoriye göre gözat",
-    "exploreMoreHeading": "Daha fazla keşfet"
+  "videoEnhance": {
+    "metadata": {
+      "title": "AI Video Geliştirme | Arşiv & Düşük Çözünürlüklü Videoları Geri Kazanın | Curify AI",
+      "description": "Gerçek arşiv görüntüleri üzerinde bir AI video geliştirme demosu izleyin. Curify, düşük çözünürlüklü ve sıkıştırılmış videolardaki detay, keskinlik ve netliği geri kazandırır — erken erişim için kaydolun."
+    },
+    "title": "AI Video Geliştirme",
+    "description": "Düşük çözünürlüklü, sıkıştırılmış veya arşiv videolarındaki detay, keskinlik ve netliği geri kazandırın. Aşağıdaki orijinal ve geliştirilmiş klipler arasında geçiş yapmak için geçişi kullanın ve gerçek görüntülerde AI restorasyonunu görün.",
+    "example": "Örnek: 1970'lerdeki petrol krizi hakkında bir haber bölümü — orijinal SD yayın kalitesi ile AI geliştirilmiş versiyon.",
+    "cta": "Erken Erişime Katılın",
+    "demo": {
+      "aria": "Video geliştirme öncesi / sonrası demo",
+      "caption": "Orijinal görüntü ile AI geliştirilmiş versiyon arasında geçiş yapmak için geçişi kullanın.",
+      "nowPlaying": "Şu anda oynatılıyor: {lang}"
+    },
+    "why": {
+      "title": "Neden Curify'i Video Geliştirme için Kullanmalısınız?",
+      "point1": "Kaynak çözünürlüğü sabit olan arşiv, yayın ve kullanıcı tarafından yüklenen görüntülerdeki detayları geri kazandırır.",
+      "point2": "Sıkıştırma artefaktlarını kaldırır ve aşırı keskin, plastik görünüm oluşturmadan dokuyu geri kazanır.",
+      "point3": "Tam uzunlukta kliplerde çalışır — sadece kısa kesitlerde değil — ve kesimler ve panlar arasında hareketi doğal tutar.",
+      "point4": "Bugün sadece demo; boru hattı açıldığında kendi görüntülerinizi çalıştırmak için erken erişim için kaydolun."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Video geliştirme bugün mevcut mu?",
+      "a1": "Henüz değil — bu sayfa arşiv görüntüleri üzerinde çalışan bir demo. Üretim boru hattı özel test aşamasında. Erken erişim için kaydolun ve yükleme açıldığında sizinle iletişime geçeceğiz.",
+      "q2": "Hangi tür videolar geliştirme için en iyi sonuç verir?",
+      "a2": "Sıkıştırma, düşük kaynak çözünürlüğü veya nesil kopya kaybı nedeniyle detay kaybetmiş gerçek dünya görüntülerinde en iyi performansı gösterir — arşiv yayınları, eski ev videoları, güvenlik kameraları görüntüleri ve HD olarak yüklenen SD içerikler. Bu bir yüz yenileme veya üretken yeniden yaratma aracı değildir — kaynak sinyalde mevcut olan detayları geri kazandırır."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Video Geliştirme Nedir?",
+        "p1": "AI video geliştirme, kayıt, sıkıştırma veya iletim sırasında kaybolan veya bozulmuş görsel detayları yeniden yapılandırır. Basit bir çözünürlük artırmanın aksine, amaç daha büyük pikseller değil — aynı sahnenin daha yüksek kaliteli bir kaydının üreteceği doku, kenarlar ve ton aralığını geri kazanmaktır.",
+        "p2": "Geleneksel artırıcılar mevcut pikseller arasında ara değerleme yaparken (daha yumuşak veya keskin ama plastik bir görüntü üreterek), modern AI restorasyon modelleri, eşleşen düşük kaliteli ve yüksek kaliteli görüntülerden oluşan büyük veri setlerinden öğrenir. Temel sahnenin en olası içeriğine dayanarak makul yüksek çözünürlüklü detayları çıkarır — hareketi, aydınlatmayı ve dokuyu çerçeveler arasında tutarlı bir şekilde korur.",
+        "p3": "Bu sayfadaki demo, 1970'lerden bir haber segmentinden bir klibi geliştirir. Orijinal, dönemin tipik sıkıştırma ve renk kaybıyla SD yayın kalitesindedir. Geliştirilmiş versiyon, yüz detaylarını, sahne dokusunu ve kenar keskinliğini geri kazandırırken döneme uygun film grenini ve renk paletini korur."
+      },
+      "how": {
+        "title": "Curify Video Geliştirmeye Nasıl Yaklaşıyor",
+        "p1": "Üretim kalitesinde video geliştirme tek bir model değildir — her biri bir hata modunu ele alan özel modellerin bir boru hattıdır, düzeltmeleri birbiriyle çatışmak yerine birikimli hale getirecek şekilde sıralanmıştır.",
+        "p2": "Adım 1: Sahne segmentasyonu ve çekim tespiti. Boru hattı, klibi sahne sınırlarında böler, böylece her çekim için restorasyon parametreleri aydınlatma, hareket ve içerik ile uyum sağlayabilir, tüm klip boyunca ortalama almak yerine.",
+        "p3": "Adım 2: Kare bazında restorasyon. Detay yeniden yapılandırması, bloklama giderme ve gürültü azaltma, düzeltmelerin zamansal olarak tutarlı kalması için hareket vektörleriyle birlikte uygulanır — kesimler arasında detay seviyeleri arasında titreme olmaz.",
+        "p4": "Adım 3: Zamansal stabilizasyon. İkinci bir geçiş, kalıntı titremeyi düzeltir, geliştirilmiş detayları çerçeveler arasında hizalar ve kasıtlı yerlerde doğal hareket bulanıklığını korur.",
+        "p5": "Adım 4: Kalite farkındalığına sahip kodlama. Son klip, geri kazanılan detayları koruyan bir bit hızı ve codec seçimi ile kodlanır, restorasyonun yeni baştan eklediği sıkıştırma artefaktlarını yeniden getirmeden."
+      },
+      "usecases": {
+        "title": "AI Video Geliştirmeyi Kim Kullanıyor?",
+        "creatorsTitle": "Yaratıcılar ve Belgesel Yapımcıları İçin",
+        "creatorsBody": "Arşiv görüntüleri, eski röportajlar veya vintage yayınlarla çalışan yapımcılar, kaynak materyali modern ekranlarda tutarlı bir kaliteye getirmek için geliştirmeyi kullanır, döneme uygun görünümü yeniden yaratmadan.",
+        "educationTitle": "Eğitim ve Arşiv Ekipleri İçin",
+        "educationBody": "Kütüphaneler, müzeler ve eğitim yayıncıları, bant ve film koleksiyonlarını orijinal kayıt kalitesinde dijitalleştirir. Geliştirme, aynı görüntünün projeksiyonunu, kurslara gömülmesini veya lisanslanmasını sağlayan detayları geri kazandırır, 'kalite için özür dileriz' çerçevesini ortadan kaldırır.",
+        "businessTitle": "Marka ve Pazarlama Ekipleri İçin",
+        "businessBody": "Pazarlama ekipleri, eski marka varlıklarını — kurucu röportajları, erken ürün tanıtımları, yayın spotları — yeniden kullanmak ister. Geliştirme, yeniden çekim yapmadan kalite farkını kapatır, orijinal hikaye ve karakterleri korur."
+      }
+    }
+  },
+  "styleTransfer": {
+    "metadata": {
+      "title": "Video için AI Stil Transferi | Pixar, Ghibli, Anime | Curify AI",
+      "description": "Gerçek bir video klibine Pixar, Ghibli, anime veya herhangi bir referans sanat stilini uygulayın. Curify'nin stil transferi süreci, görsel dili değiştirirken hareketi ve kimliği korur."
+    },
+    "title": "Video için AI Stil Transferi",
+    "description": "Gerçek bir videoya Pixar, Ghibli, anime veya herhangi bir referans sanat stilini uygulayın — kare kare tutarlılık, korunan hareket, tanınabilir konular. Aşağıdaki demoyu izleyin.",
+    "example": "Örnek: bir canlı aksiyon klibi, tam çekim boyunca kare uyumlu bir Ghibli resim tarzına dönüştürülmüştür.",
+    "cta": "Erken Erişime Katılın",
+    "why": {
+      "title": "Neden Curify'yi Stil Transferi için Kullanmalısınız?",
+      "point1": "Kare uyumlu yeniden stil verme — kesimler ve kaydırmalar arasında bile kareler arasında titreme veya kimlik kayması yok.",
+      "point2": "Stil, bir referans görüntüsü veya adlandırılmış bir ön ayar (Pixar, Ghibli, anime, suluboya, yağlı boya vb.) ile belirlenir.",
+      "point3": "Konular tanınabilir kalır — yüzler, nesneler ve ekrandaki metin yeniden stil verme sırasında korunur.",
+      "point4": "Bugün sadece demo; boru hattı açıldığında kendi görüntülerinizi çalıştırmak için erken erişim için kaydolun."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Stil transferi bugün mevcut mu?",
+      "a1": "Henüz değil — bu sayfa bir örnek klipte çalışan bir demoyu gösteriyor. Üretim boru hattı özel test aşamasında. Erken erişim için kaydolun ve yükleme açıldığında sizinle iletişime geçeceğiz.",
+      "q2": "Hangi tür kaynak videolar en iyi sonucu verir?",
+      "a2": "Sabit çerçeveleme, net konular ve tanımlı bir ön plan içeren görüntüler en iyi sonucu verir. Stil transferi yaratıcı bir yeniden stil verme işlemidir, yüz değiştirme değildir — konular tanınabilir kalır ancak görsel dil değişir. Aşırı sıkıştırılmış veya düşük çözünürlüklü görüntüler daha gürültülü çıktılar üretecektir."
+    },
+    "deep": {
+      "what": {
+        "title": "Video için AI Stil Transferi Nedir?",
+        "p1": "Stil transferi, bir kaynak video ve bir hedef görsel stil alır — Pixar 3D, Ghibli resim tarzı, anime çizgi sanatı, suluboya — ve klibi hedef stil içinde yeniden işlerken orijinal hareketi, çerçevelemeyi ve konu kimliğini korur. Çıktı, orijinal karelere uygulanan bir filtre değil, yeni bir videodur.",
+        "p2": "Görüntü stil transferi on yıldır var, ancak video için zor kısım zamansal tutarlılıktır. Naif bir kare kare yeniden stil verme titrer — her kare bağımsız olarak yeniden stil verilir, bu nedenle renkler ve dokular, modelin bitişik karelerde farklı seçimler yapmasıyla titrer. Modern boru hatları, önceki kareye koşullandırarak ve stil kararlarını zamansal eksende yayarak bunu düzeltir.",
+        "p3": "Bu sayfadaki demo, bir canlı aksiyon klibini Ghibli resim tarzına dönüştürmektedir. Hareket pürüzsüz kalır, yüzler tanınabilir kalır ve renk paleti tam çekim boyunca tutarlı kalır."
+      },
+      "how": {
+        "title": "Curify Stil Transferine Nasıl Yaklaşıyor",
+        "p1": "Üretim kalitesinde video stil transferi, tek bir model çağrısı değil, özel aşamalardan oluşan bir boru hattıdır. Her aşama, zamansal tutarlılık sorununu ele alır, böylece düzeltmeler birbiriyle çatışmak yerine birleşir.",
+        "p2": "Adım 1: Çekim tespiti ve sahne segmentasyonu. Klip, her çekimin kendi stil parametrelerini alması için çekim sınırlarında bölünür ve modelin alakasız bir kesim arasında tutarlılığı koruması istenmez.",
+        "p3": "Adım 2: Referans kodlama. Ya bir stil referans görüntüsü ya da adlandırılmış bir ön ayar, yeniden stil vermeyi yönlendiren bir hedef stil gömme içine kodlanır.",
+        "p4": "Adım 3: Kare uyumlu yeniden stil verme. Kareler, önceki çıktı karesinin farkında olarak yeniden stil verilir, böylece renkler, dokular ve çizgi kalınlıkları hareket boyunca tutarlı kalır.",
+        "p5": "Adım 4: Zamansal düzeltme ve kaliteye duyarlı kodlama. Kalan titreme geçişi, kalan artefaktları temizler ve son klip, yeniden stil verilmiş detayı koruyan bir bit hızında kodlanır."
+      },
+      "usecases": {
+        "title": "AI Stil Transferini Kim Kullanır?",
+        "creatorsTitle": "Animatörler ve Bağımsız Yaratıcılar İçin",
+        "creatorsBody": "Bağımsız animatörler, her bir kareyi elle boyamadan saatlerce görüntüde tutarlı bir görsel stil elde etmek için stil transferini kullanır. Çıktı, aşağı akış temizliği için başlangıç noktasıdır, nihai teslimat değil — ancak günler süren kare kare çalışmayı dakikalar içinde tamamlar.",
+        "educationTitle": "Eğitim ve Çocuk İçeriği İçin",
+        "educationBody": "Eğitim içerik üreticileri, canlı aksiyon açıklayıcı videoları daha genç izleyiciler için daha dostça bir resimsel veya 3D stile dönüştürür. Aynı kayıt, yeniden çekim yapmadan farklı yaş grupları için birden fazla görsel kayıtla gönderilebilir.",
+        "businessTitle": "Marka ve Kampanya Ekipleri İçin",
+        "businessBody": "Pazarlama ekipleri, tek bir canlı aksiyon çekimini birden fazla stil varyasyonuna yeniden stilize eder — temiz bir kurumsal kesim, eğlenceli bir animasyon kesimi, bölgesel estetik kesim — bölünmüş test veya çok kanallı yayınlama için varyasyon başına üretim maliyeti olmadan."
+      }
+    }
+  },
+  "mangaTranslation": {
+    "metadata": {
+      "title": "AI Manga Çevirisi | Düzen Korunarak Çizgi Roman Panellerini Çevirin | Curify AI",
+      "description": "Manga, çizgi roman ve webtoon panellerini orijinal baloncuk şekilleri, yazı tipleri ve panel düzeni korunarak 30'dan fazla dile çevirin. Sadece demo — erken erişime katılın."
+    },
+    "title": "AI Manga Çevirisi",
+    "description": "Manga, çizgi roman ve webtoonlardaki metni orijinal baloncuk şekilleri, yazı tipleri ve panel düzeni korunarak 30'dan fazla dile çevirin. Aşağıdaki öncesi / sonrası demosunu izleyin.",
+    "example": "Örnek: Bir Çince manga sayfası, baloncuk düzeni korunarak İngilizce ve İspanyolcaya çevrildi.",
+    "cta": "Erken Erişime Katılın",
+    "why": {
+      "title": "Neden Curify'yi Manga Çevirisi İçin Kullanmalısınız?",
+      "point1": "Her konuşma balonunu, anlatım kutusunu ve SFX etiketini tespit eder — sadece diyalog satırlarını değil.",
+      "point2": "Baloncuk içine sığacak şekilde tipografiyi yeniden inşa eder — satır sonları, yazı tipi kalınlığı ve dikey / yatay yönlendirme hepsi uyum sağlar.",
+      "point3": "Panel düzenini, sayfa yönünü ve SFX yerleşimini korur, böylece çevrilen sayfa hedef pazarda doğal bir şekilde okunur.",
+      "point4": "Bugün sadece demo; boru hattı açıldığında kendi sayfalarınızı çevirmek için erken erişim için kaydolun."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Manga çevirisi bugün mevcut mu?",
+      "a1": "Henüz değil — bu sayfa örnek sayfalarda çalışan bir demo. Üretim boru hattı özel test aşamasında. Erken erişim için kaydolun ve yükleme açıldığında sizinle iletişime geçeceğiz.",
+      "q2": "Hangi diller destekleniyor?",
+      "a2": "Çeviri katmanı, İngilizce, İspanyolca, Fransızca, Almanca, Japonca, Korece, Basitleştirilmiş Çince, Geleneksel Çince ve Arapça dahil 30'dan fazla dili destekler. Dil tespiti kaynak tarafında otomatik; hedef dil kullanıcı seçimine bağlıdır."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Manga Çevirisi Nedir?",
+        "p1": "Manga çevirisi çok aşamalı bir görevdir: sayfadaki metni tespit et, ne söylediğini tanı, hedef dile çevir, çeviriyi orijinal baloncuk veya panel alanına yerleştirirken yazı düzenini bozmadan. Çoğu genel çeviri aracı yalnızca orta aşamayı ele alır ve tamamen yeniden düzenlenmesi gereken kullanılamaz sayfalar üretir.",
+        "p2": "Zor kısım çeviri kalitesi değil — düzenin korunmasıdır. Dikey Japonca metin için şekillendirilmiş bir konuşma balonunun, taşma olmadan, okuma sırasını kaybetmeden veya sanatı kapatmadan çok daha uzun bir İngilizce cümlesini tutması gerekir. Panele çizilmiş SFX (ses efektleri) daha da zordur: bunların temiz bir şekilde çıkarılması ve hedef dilde yeniden işlenmesi gerekir, alttaki çizime zarar vermeden.",
+        "p3": "Bu sayfadaki demo, baloncuk düzeni, yazı tipi seçimleri ve SFX yerleşimi korunarak uçtan uca çevrilen bir örnek sayfayı göstermektedir."
+      },
+      "how": {
+        "title": "Curify'nin Manga Çevirisine Yaklaşımı",
+        "p1": "Boru hattı, her biri naif çeviri ve üst üste bindirme yaklaşımının bir hata modunu ele alan dört özel aşamadan oluşur.",
+        "p2": "Adım 1: Baloncuk ve metin bölgesi tespiti. Bir görsel model, her konuşma balonunu, anlatım kutusunu, SFX etiketini ve serbest yüzen metin bölgesini tanımlar, orijinal düzeni dikkate alan sınırlayıcı çokgenlerle.",
+        "p3": "Adım 2: OCR ve kaynak tanıma. Her bölgedeki metin tanınır — dikey yazılar, elle çizilmiş yazılar ve genel amaçlı OCR'yi aşan stilize SFX yazı tiplerini işler.",
+        "p4": "Adım 3: Bağlama duyarlı çeviri. Çeviri aşaması, sayfalar arasında karakter sesini korur (yani aynı karakter tutarlı bir şekilde konuşur) ve SFX'i uygun olduğunda hedef dilin geleneklerine uydurur.",
+        "p5": "Adım 4: Tipografik yeniden düzenleme. Çevrilen metin, hedef pazarda doğal bir şekilde okunması için gerekli yerlerde dikeyden yataya geçiş, yazı tipi ağırlığı eşleştirme ve uyumlu satır sonları ile birlikte orijinal baloncukta yeniden işlenir."
+      },
+      "usecases": {
+        "title": "AI Manga Çevirisini Kim Kullanıyor?",
+        "creatorsTitle": "Bağımsız Çizgi Roman ve Webtoon Yaratıcıları İçin",
+        "creatorsBody": "Bağımsız yaratıcılar tek bir dilde yayın yapar ve sayfa başına yerelleştirme ücretleri ödemeden diğer dillerdeki okuyuculara ulaşmak ister. Otomatik çeviri, yaratıcı (veya bir topluluk çevirmeni) tarafından cilalanabilecek bir taslak üretir ve haftalarca süren düzenleme işini dakikalara indirir.",
+        "educationTitle": "Dil Öğrenimi ve İki Dilli Baskılar İçin",
+        "educationBody": "Dil öğretmenleri ve iki dilli baskı yayınevleri, tek bir kaynaktan yan yana veya dönüşümlü dil sayfaları üretir. Çeviri hattı, her hedef dilde düzen koruyan bir versiyon çıkarır ve son iki dilli baskıya hazır hale getirir.",
+        "businessTitle": "Manga, Çizgi Roman ve Webtoon Yayınevleri İçin",
+        "businessBody": "Yayınevleri, lisanslı manuel çevirinin ekonomik olmadığı yeni pazarlara eski yayınları yerelleştirir. Otomatik çeviri, uzun kuyruklu bir yerelleştirme stratejisini uygulanabilir hale getirir — her eski yayın, yeni pazar sürümü için bir aday haline gelir."
+      }
+    }
   }
 }

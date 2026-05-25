@@ -206,27 +206,32 @@
       "video": "비디오 & 자막",
       "lifestyle": "라이프스타일 & 장소",
       "language": "언어",
-      "travel": "여행 & 문화"
+      "travel": "여행",
+      "culture": "문화"
     },
-    "useCasesQuestion": "사용 사례별 탐색:",
+    "useCasesQuestion": "사용 사례별로 둘러보기:",
     "useCases": {
-      "for-marketers": "마케터용",
-      "for-parents": "부모용",
-      "for-esl-learners": "ESL 학습자용",
-      "for-creators": "크리에이터용"
+      "for-marketers": "그로스 에이전시",
+      "for-parents": "부모",
+      "for-esl-learners": "ESL 학습자",
+      "for-creators": "크리에이터",
+      "for-designers": "디자이너",
+      "for-publishers": "EdTech & 출판사",
+      "for-dtc-brands": "DTC 브랜드",
+      "for-programmatic-seo": "프로그래매틱 SEO"
     }
   },
   "useCasePage": {
     "toolsHeading": "도구",
     "templatesHeading": "{title}을 위한 템플릿",
     "for-marketers": {
-      "title": "마케터용",
-      "subtitle": "콘텐츠를 10배 빠르게 생성·확장·게시",
-      "description": "무엇이 효과적인지 추측하는 것을 멈추세요. 하나의 아이디어로 몇 분 안에 수십 개의 고성과 비주얼과 영상을 만드세요.",
-      "bullet0": "하나의 아이디어에서 콘텐츠 일괄 생성",
-      "bullet1": "이미지를 숏폼 영상으로 변환",
-      "bullet2": "플랫폼을 넘나들며 콘텐츠 재활용",
-      "bullet3": "바로 게시 가능한 콘텐츠 팩 다운로드"
+      "title": "For Marketing & Growth Agencies",
+      "subtitle": "Serve 50 clients with the headcount you have for 10",
+      "description": "Agency scaling is people-scaling — until it isn’t. Hand each account manager a white-labeled content factory: brief in a brand profile, get back a month of platform-native posts across travel, lifestyle, design, and product verticals. The same engineer ships for all 50 clients. Margin scales linearly; headcount doesn’t.",
+      "bullet0": "White-label content engine — your brand, your client, your delivery",
+      "bullet1": "Per-account brand profiles: tone, style, palette, posting schedule",
+      "bullet2": "Covers travel · lifestyle · design · product verticals out of the box",
+      "bullet3": "Packaged as: per-seat license OR per-managed-account tier — pick a model, no custom retainer"
     },
     "for-parents": {
       "title": "부모용",
@@ -255,6 +260,58 @@
       "bullet2": "이미지를 음성 & 자막 포함 영상으로 변환",
       "bullet3": "콘텐츠 일괄 다운로드 및 리믹스"
     },
-    "learningMaterialsHeading": "학습 자료"
+    "learningMaterialsHeading": "학습 자료",
+    "exploreOtherHeading": "다른 사용 사례 탐색",
+    "for-designers": {
+      "title": "디자이너를 위한",
+      "subtitle": "Etsy / Pinterest 인쇄 가능한 팩을 생산 속도로",
+      "description": "프리랜서 일러스트레이터와 인쇄 팩 판매자를 위한 — 브랜드 / 로고 / UI 디자이너가 아닙니다. 우리는 고볼륨 미적 중심 카테고리를 다룹니다: 수채화 지도와 스크랩북, 빈티지 스탬프 시리즈, 대중문화 MBTI 팬 아트, 교실 장식 포스터 세트, 패션 무드 보드. 오후에 50개 시리즈를 생성하고, 같은 날 밤 유료 팩으로 배송하세요.",
+      "bullet0": "수채화 지도, 빈티지 스크랩북, 스탬프 시리즈 — Etsy 미학",
+      "bullet1": "대중문화 MBTI 팬 아트 (마블 · 지브리 · NBA · 해리포터 · 만화)",
+      "bullet2": "교실 장식 인쇄물 — 어휘 카드, 해부학 가이드, 역사 포스터",
+      "bullet3": "SEO를 위한 워터마크 미리보기 + 유료 다운로드를 위한 깨끗한 원본"
+    },
+    "for-publishers": {
+      "title": "For EdTech & Children’s Publishers",
+      "subtitle": "Industrial-grade content pipeline — what your illustrator ships in 3 months, ship in a weekend",
+      "description": "Outsourced illustrators take months to deliver a 500-card vocabulary set. Our engine takes hours. Same characters across cards, posters, classroom decor, and social — one title, ten surfaces. Or license the underlying vocabulary engine so your own platform can generate K-5 content in en / es / zh / ja / ko, bilingual editions included, no translator team required.",
+      "bullet0": "K-5 vocabulary engine across animals · nature · space · family · transportation (30+ templates, 5 languages)",
+      "bullet1": "Format extension: one title → cards · posters · social · classroom decor",
+      "bullet2": "Bilingual editions (en-zh / en-es / en-ja / en-ko) — no translator team",
+      "bullet3": "Packaged as: white-label engine license OR done-for-you pack subscription — pick a shape, no half-builds"
+    },
+    "for-dtc-brands": {
+      "title": "For DTC Brands & Cross-Border Ecommerce",
+      "subtitle": "One product photo → 100 scroll-stopping scenes, auto-scheduled to Pinterest, Instagram, TikTok, X",
+      "description": "Cross-border ecommerce lives or dies by daily social volume. Stop waiting on a design contractor to ship five lifestyle shots a week. One product photo enters our engine; a hundred styled scenes — café, garden, kids’ room, vacation, seasonal — come out, watermark-clean and scheduled across four platforms before lunch. Built to move ROAS, not to win portfolio awards.",
+      "bullet0": "Batch-generate 100+ lifestyle / scene variants from one product photo",
+      "bullet1": "Style presets matched to Pinterest / Instagram / TikTok / X aesthetics",
+      "bullet2": "Auto-schedule across four platforms via the built-in SMM queue",
+      "bullet3": "Packaged as: 500-image / 2,000-image / unlimited monthly tiers — fixed scope, no custom dev"
+    },
+    "for-programmatic-seo": {
+      "title": "For Programmatic SEO Builders",
+      "subtitle": "We ran our own 5,500-page hub-and-spoke generator — now you can run yours",
+      "description": "Long-tail keyword pages don’t rank without original imagery and editorial layout. We know — we built 5,500 of them for Curify itself, and you’re reading one of the hubs right now. License the same generator: batch-generated hero imagery, schema-aware page templates, internal-link mesh. Affiliate sites, vertical portals (travel, study-abroad, parenting), local-SEO networks — pick your niche, generate the pages, get indexed.",
+      "bullet0": "Hub-and-spoke generator with built-in internal-link mesh",
+      "bullet1": "Original hero imagery per page — no royalty-free filler, no thin-content penalty",
+      "bullet2": "Schema-aware templates ready for AffiliateProduct / FAQ / HowTo markup",
+      "bullet3": "Packaged as: hosted generator OR self-hosted Docker — fixed-scope CMS adapter, no custom rewrites"
+    }
+  },
+  "interconnection": {
+    "whoItsFor": "대상",
+    "relatedTools": "관련 도구",
+    "relatedReading": "관련 읽기",
+    "builtForTeams": "Built for teams",
+    "apiAvailable": "APIs available on request.",
+    "apiContactCTA": "Let’s talk scope →",
+    "readTranscript": "Read transcript"
+  },
+  "magic": {
+    "errors": {
+      "NO_SPEECH": "비디오에 들리는 음성이 없는 것 같습니다. 수화나 무음 영상을 전사할 수 없습니다. 음성이 있는 비디오를 업로드해 주세요.",
+      "default": "작업이 실패했습니다. 다시 시도하거나 지원팀에 문의해 주세요."
+    }
   }
 }

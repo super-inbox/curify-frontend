@@ -108,6 +108,16 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   elegant:        "elegant",
   casual:         "casual",
   "high-fashion": "high fashion",
+  // ---- 2026-05-21 — gallery row for the new tier-2 topics that landed
+  // with the gallery tag taxonomy pass + the culture tier-1 split. Picks
+  // the single most-representative gallery tag per topic so the topic
+  // page surfaces a relevant prompt row even when the template set is
+  // still thin. -------------------------------------------------------
+  mood:                 "cozy",
+  lighting:             "golden hour",
+  seasonal:             "winter",
+  composition:          "collage",
+  "cultural-festivals": "festive",
 };
 
 // Blog tag to pull posts for a topic page.
@@ -285,6 +295,109 @@ const EXTRA_TAG_TO_TOPICS: Record<string, string[]> = {
   kpop:              ["korea"],
   // → multi-country (east asian gallery tag spans japanese + kpop content)
   "east asian":      ["japan", "korea"],
+  // ---- 2026-05-19 gallery tag taxonomy P0 #2 — see docs/gallery-tag-taxonomy.md ----
+  // → mood (new tier-3 under lifestyle). The 12 highest-volume mood adjectives
+  //   in the gallery. Remaining mood-adjectives (introspective / glamorous /
+  //   sophisticated / tranquil / bold / dynamic / vibrant / relaxed) stay
+  //   unmapped as cosmetic until volume per-tag warrants the entry.
+  playful:           ["mood"],
+  confident:         ["mood"],
+  serene:            ["mood"],
+  cozy:              ["mood"],
+  joyful:            ["mood"],
+  intimate:          ["mood"],
+  vibrant:           ["mood"],
+  luxurious:         ["mood"],
+  stylish:           ["mood"],
+  contemplative:     ["mood"],
+  bold:              ["mood"],
+  energetic:         ["mood"],
+  dynamic:           ["mood"],
+  calm:              ["mood"],
+  tranquil:          ["mood"],
+  introspective:     ["mood"],
+  romantic:          ["mood"],
+  // → lighting (new tier-3 under design). golden hour was the 4th-highest
+  //   GSC tag page in the 13-day window — direct user demand. Carry both
+  //   the hyphenated and space form of natural light so the source-dataset
+  //   variance doesn't break the link.
+  "golden hour":     ["lighting"],
+  "soft-light":      ["lighting"],
+  "natural light":   ["lighting"],
+  "natural-light":   ["lighting"],
+  sunset:            ["lighting"],
+  bokeh:             ["lighting"],
+  twilight:          ["lighting"],
+  night:             ["lighting"],
+  morning:           ["lighting"],
+  // → seasonal (new tier-3 under lifestyle, sibling of nostalgia). `snowy
+  //   landscape` alone drove 502 GSC impressions in the 13-day window —
+  //   the highest single tag page. Map both `snowy` and `snowy landscape`
+  //   so the source-dataset variants both find the topic.
+  winter:            ["seasonal"],
+  summer:            ["seasonal"],
+  autumn:            ["seasonal"],
+  snowy:             ["seasonal"],
+  "snowy landscape": ["seasonal"],
+  rainy:             ["seasonal"],
+  christmas:         ["seasonal"],
+  festive:           ["seasonal"],
+  // → travel (scenery cluster — falls under tier-1 travel directly, no
+  //   tier-2 fits closely enough to introduce a new bucket for 165 prompts)
+  beach:             ["travel"],
+  forest:            ["travel"],
+  ocean:             ["travel"],
+  garden:            ["travel"],
+  nature:            ["travel"],
+  // → digital-canvas (color / material descriptors — all stylistic axes
+  //   adjacent to the existing artistic tier-3)
+  pastel:            ["digital-canvas"],
+  glossy:            ["digital-canvas"],
+  silver:            ["digital-canvas"],
+  gold:              ["digital-canvas"],
+  metallic:          ["digital-canvas"],
+  warm:              ["digital-canvas"],
+  "vibrant colors":  ["digital-canvas"],
+  // → photorealistic (siblings of the existing tier-3). The
+  //   REVERSE_MAP_EXCLUDED_TOPICS exclusion only affects topic-page →
+  //   tag-page direction, so adding tag-page → topic-page entries here
+  //   does not re-introduce the heterogeneity that exclusion guards against.
+  hyperrealistic:    ["photorealistic"],
+  "ultra realistic": ["photorealistic"],
+  // → style adjacencies
+  y2k:               ["vintage-retro"],
+  luxury:            ["high-fashion"],
+  // → subject adjacencies (cat → animal tier-3, sunglasses → fashion,
+  //   friends → relationship)
+  cat:               ["animal"],
+  sunglasses:        ["fashion"],
+  friends:           ["relationship"],
+  // ---- 2026-05-25 pass-1 tag expansion — consolidate raw/categorized_tags.json
+  // overlap into existing buckets (mood / film / digital-canvas / nostalgia /
+  // ai) plus one new tier-3 `composition` under design. Additive only — no
+  // existing mapping moves; eval unchanged since EXTRA_TAG_TO_TOPICS only
+  // affects the tag-page → topic-page direction. See docs/search-and-content.md
+  // for the source-category-to-bucket mapping table.
+  // → mood (additions from mood_emotion + intimacy_warmth)
+  carefree:          ["mood"],
+  relaxed:           ["mood"],
+  humorous:          ["mood"],
+  soft:              ["mood"],
+  captivating:       ["mood"],
+  alluring:          ["mood"],
+  natural:           ["mood"],
+  // → film (canonical word for the cinematic bucket, from lighting_color)
+  cinematic:         ["film"],
+  // → digital-canvas (style descriptor, sibling of illustration)
+  artistic:          ["digital-canvas"],
+  // → nostalgia (atmosphere_tone — exact word-form match)
+  nostalgic:         ["nostalgia"],
+  // → ai (scene_setting → futuristic, sibling of neon)
+  futuristic:        ["ai"],
+  // → composition (new tier-3 under design; format / framing axis)
+  landscape:         ["composition"],
+  macro:             ["composition"],
+  studio:            ["composition"],
 };
 
 // Topics excluded from the reverse map only — their topic page still
@@ -406,17 +519,22 @@ export function getGalleryTag(topicId: string): string | undefined {
 
 // Tier-1 topic → persona chip slugs shown on reproduce/example surfaces.
 // Mapping is deliberate, not topic-derived: each tier-1 implies which
-// audiences will recognize value in those templates. Keep in sync with the
-// 6 chip definitions in UseCaseChipsRow.
+// audiences will recognize value in those templates. Keep in sync with
+// USE_CASES in lib/use-cases.ts.
+//
+// for-programmatic-seo is intentionally absent — it's a horizontal engine
+// play (hub-and-spoke generator), not a vertical template browser, so it
+// wouldn't be served by a "templates for travel" feed.
 const TIER1_USE_CASES: Record<string, readonly string[]> = {
   character:   ["for-creators", "for-designers"],
   personality: ["for-creators", "for-designers"],
   language:    ["for-parents", "for-esl-learners", "for-publishers"],
   learning:    ["for-parents", "for-creators", "for-publishers"],
-  travel:      ["for-creators", "for-marketers"],
-  lifestyle:   ["for-creators", "for-marketers"],
-  design:      ["for-marketers", "for-designers"],
-  product:     ["for-marketers", "for-designers"],
+  travel:      ["for-creators", "for-marketers", "for-dtc-brands"],
+  culture:     ["for-creators", "for-publishers", "for-designers"],
+  lifestyle:   ["for-creators", "for-marketers", "for-dtc-brands"],
+  design:      ["for-marketers", "for-designers", "for-dtc-brands"],
+  product:     ["for-marketers", "for-designers", "for-dtc-brands"],
 };
 
 /** Persona chips appropriate for a template/example, derived from its

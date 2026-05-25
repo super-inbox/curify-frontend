@@ -33,6 +33,7 @@ import { useIsMobileLikeDevice } from "@/lib/device";
 import { toSlug } from "@/lib/nano_utils";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
+import { getUseCasesForTopics } from "@/lib/topicRegistry";
 
 const PROMPT_PLACEHOLDER_IMAGE = "/images/default-prompt-image.jpg";
 
@@ -713,7 +714,17 @@ export default function CarouselClient(props: Props) {
       </div>
 
       {/* Right: info sidebar — desktop only. Per-mode content. */}
-      {mode === "template-example" && slide.kind === "template-example" && (
+      {mode === "template-example" && slide.kind === "template-example" && (() => {
+        const tProps = props as TemplateExampleProps;
+        // Derive use-case chips from the active slide's topics first,
+        // then fall back to the template's topics — same example → topic
+        // → use-case mapping used on ExampleRightColumn / template
+        // detail. Avoids rendering all 8 personas indiscriminately.
+        const slideUseCases = getUseCasesForTopics([
+          ...(slide.topics ?? []),
+          ...(tProps.templateTopics ?? []),
+        ]);
+        return (
         <aside
           className="hidden lg:flex lg:w-80 xl:w-96 shrink-0 flex-col overflow-y-auto bg-white text-neutral-900"
           onClick={stopPropagation}
@@ -722,31 +733,36 @@ export default function CarouselClient(props: Props) {
             <ExampleRightColumn
               key={slide.id}
               showHeader
-              chipTopics={(props as TemplateExampleProps).templateTopics}
+              chipTopics={tProps.templateTopics}
               chipExampleTopics={slide.topics}
               chipCategory={slide.category}
               title={slide.title}
               templateId={slide.templateId}
-              slug={(props as TemplateExampleProps).slug}
+              slug={tProps.slug}
               locale={locale}
-              parameters={(props as TemplateExampleProps).templateParameters}
-              allowGeneration={(props as TemplateExampleProps).templateAllowGeneration}
+              parameters={tProps.templateParameters}
+              allowGeneration={tProps.templateAllowGeneration}
               initialParams={slide.params}
               exampleId={slide.id}
-              basePrompt={(props as TemplateExampleProps).basePrompt}
-              batchEnabled={(props as TemplateExampleProps).templateBatch}
+              basePrompt={tProps.basePrompt}
+              batchEnabled={tProps.templateBatch}
               examplePageUrl={detailPageUrl}
-              existingExamples={(props as TemplateExampleProps).existingExamples}
+              existingExamples={tProps.existingExamples}
             />
             {/* Use-case chips — visible inside the carousel overlay (which
                 covers SiteTopBar / EntryBar entirely). Drops the leading
-                "I am a..." label since the sidebar is space-constrained. */}
-            <div className="mt-4 border-t border-neutral-200 pt-4">
-              <UseCaseChipsRow showQuestion={false} />
-            </div>
+                "I am a..." label since the sidebar is space-constrained.
+                Filtered to personas implied by the slide topic so a
+                travel slide doesn't surface ESL / parent chips. */}
+            {slideUseCases.length > 0 && (
+              <div className="mt-4 border-t border-neutral-200 pt-4">
+                <UseCaseChipsRow showQuestion={false} filterTo={slideUseCases} />
+              </div>
+            )}
           </div>
         </aside>
-      )}
+        );
+      })()}
 
       {mode === "prompt-gallery" && slide.kind === "prompt-gallery" && (
         <aside

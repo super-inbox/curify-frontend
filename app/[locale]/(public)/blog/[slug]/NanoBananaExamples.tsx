@@ -6,12 +6,25 @@ import { useAtomValue, useSetAtom } from "jotai";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import { PageLocale } from "@/lib/locale_utils";
-import blogToNanoTemplateMapping from "@/public/data/blog-to-nano-template-mapping.json";
+import blogsData from "@/public/data/blogs.json";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
 interface NanoBananaExamplesProps {
   locale: string;
+  /** Real blog slug (e.g. "character-prompt-generator") or a sub-group
+   *  key (e.g. "mbti-character-generator-universe") that prefixes one
+   *  or more groupKeys in the catalog's nanoTemplates arrays. */
   blogSlug?: string;
+}
+
+interface NanoTemplateCard {
+  groupKey: string;
+  template_id: string;
+  sample_parameters: Record<string, any>;
+  category: string;
+  description: string;
+  image_urls: string[];
+  preview_image_urls: string[];
 }
 
 export default function NanoBananaExamples({ locale, blogSlug }: NanoBananaExamplesProps) {
@@ -24,23 +37,28 @@ export default function NanoBananaExamples({ locale, blogSlug }: NanoBananaExamp
   }, [user, setDrawerState]);
   const onViewClick = () => {};
 
-  // Generate example cards from JSON mapping
-  const exampleCards: NanoInspirationCardType[] = Object.entries(blogToNanoTemplateMapping).map(([blogId, mapping]: [string, any]) => ({
-    id: `${mapping.template_id}-${blogId}`,
-    template_id: mapping.template_id,
+  // Flatten all nanoTemplates across the catalog into a single card pool.
+  // blogSlug filters by groupKey prefix, so both real slugs (single-card
+  // posts) and sub-group keys (mbti-character-generator-universe etc.)
+  // resolve cleanly.
+  const allCards = (blogsData as { nanoTemplates?: NanoTemplateCard[] }[])
+    .flatMap((blog) => blog.nanoTemplates || []);
+
+  const exampleCards: NanoInspirationCardType[] = allCards.map((card) => ({
+    id: card.groupKey,
+    template_id: card.template_id,
     language: locale as PageLocale,
-    category: mapping.category,
-    description: mapping.description,
-    image_urls: mapping.image_urls,
-    preview_image_urls: mapping.preview_image_urls,
-    sample_parameters: mapping.sample_parameters,
+    category: card.category,
+    description: card.description,
+    image_urls: card.image_urls,
+    preview_image_urls: card.preview_image_urls,
+    sample_parameters: card.sample_parameters,
     base_prompt: "",
-    topics: mapping.template_id === "template-travel" ? ["travel"] : ["learning"]
+    topics: card.template_id === "template-travel" ? ["travel"] : ["learning"],
   }));
 
-  // If blogSlug is provided, filter to show only relevant template
-  const filteredCards = blogSlug 
-    ? exampleCards.filter(card => card.id.includes(blogSlug))
+  const filteredCards = blogSlug
+    ? exampleCards.filter((card) => card.id.startsWith(blogSlug))
     : exampleCards;
 
   return (

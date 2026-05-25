@@ -55,10 +55,179 @@ const CREATOR_TOOL_OVERRIDES: Record<string, { href: string; label: string }> = 
 const MENTORCRUISE = "https://mentorcruise.com/mentor/jaywang/";
 const CALENDLY = "https://calendly.com/qqwjq9916/15-minute-meeting";
 
+// Per-post full-override table. When a high-traffic post deserves a
+// fundamentally different CTA than its category default (not just a
+// different tool URL), list the explicit CTA array here. ctasFor()
+// picks this up before the category switch. Hrefs are path-only and
+// get locale-prefixed at use site; external URLs pass through.
+//
+// Driven by the GSC top-traffic list in docs/interconnection.md (P1
+// internal-link strength audit). Add an entry when a category default
+// sends a top-clicked post somewhere noticeably off-intent — e.g. an
+// MBTI generator post under nano-template currently defaults to
+// /contact ("Partner on custom templates"), but the actual reader wants
+// MBTI templates, not a partnership form.
+type OverrideCTA = Omit<CTA, "href"> & { href: string };
+const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
+  // 25+ clicks across locales; readers came for character templates.
+  // Default creator-tools CTA sends to /tools (video tools), wrong audience.
+  "character-prompt-generator": [
+    {
+      id: "character-templates",
+      label: "Browse Character Templates",
+      description:
+        "Custom + MBTI + universe-specific cards — every template referenced in this post is one click away.",
+      href: "/topics/character",
+      Icon: Wrench,
+    },
+    {
+      id: "use-cases-for-creators",
+      label: "Creators playbook",
+      description: "Persona page with the tools and reads creators actually use.",
+      href: "/use-cases/for-creators",
+      Icon: MessageCircle,
+    },
+  ],
+  // 22 clicks; reader intent is "show me MBTI templates," not "partner with us."
+  "mbti-character-generator": [
+    {
+      id: "character-templates",
+      label: "Browse MBTI Templates",
+      description:
+        "All 16 personality cards plus universe-specific MBTI sets — Marvel, Ghibli, NBA, Harry Potter, Friends, more.",
+      href: "/topics/character",
+      Icon: Wrench,
+    },
+    {
+      id: "use-cases-for-creators",
+      label: "Creators playbook",
+      description: "Persona page with the tools and reads creators actually use.",
+      href: "/use-cases/for-creators",
+      Icon: MessageCircle,
+    },
+  ],
+  // 11+ clicks (ko locale especially); readers want to try the prompt patterns,
+  // not a partnership conversation.
+  "10-prompting-tips-nano-banana": [
+    {
+      id: "character-templates",
+      label: "Try the templates",
+      description:
+        "Browse the character + lifestyle + learning catalogs — every prompt pattern from the post is already wired up.",
+      href: "/topics/character",
+      Icon: Wrench,
+    },
+    {
+      id: "tools-index",
+      label: "Browse Creator Tools",
+      description:
+        "Video dubbing, subtitles, transcription — pair the prompts with the production tools.",
+      href: "/tools",
+      Icon: Wrench,
+    },
+  ],
+  // Top-of-page-3 traffic; this post drives interest in design / collage
+  // templates, not a partnership form.
+  "ai-collage-digital-wallpaper-guide": [
+    {
+      id: "design-templates",
+      label: "Browse Design Templates",
+      description:
+        "3×3 grid collages, vintage scrapbooks, poster series — every template family the post references.",
+      href: "/topics/design",
+      Icon: Wrench,
+    },
+    {
+      id: "use-cases-for-designers",
+      label: "Designers playbook",
+      description:
+        "Persona page for freelance illustrators and printable-pack sellers.",
+      href: "/use-cases/for-designers",
+      Icon: MessageCircle,
+    },
+  ],
+  // B2B sales-narrative posts shaped like engineering deep-dives — readers
+  // come with buyer intent (EdTech / Publisher / Agency / ProgSEO). The
+  // category default (now content-automation for the first two, still
+  // ds-ai-engineering for the third) routes to /contact + Calendly OR
+  // MentorCruise + /contact, neither of which is the conversion path
+  // we built. Override each to its matching /use-cases/for-* page +
+  // Calendly direct so buyer-intent traffic gets the landing page that
+  // sells the pitch.
+  "multimodal-ai-educational-publishing": [
+    {
+      id: "use-cases-for-publishers",
+      label: "EdTech + Publishers playbook",
+      description:
+        "Format extension, K-5 vocab engine, bilingual editions, white-label license vs done-for-you packs — the buyer-side breakdown.",
+      href: "/use-cases/for-publishers",
+      Icon: MessageCircle,
+    },
+    {
+      id: "calendly-15min",
+      label: "Book a 15-min audit",
+      description:
+        "Direct calendar — map your existing content stack to where Curify fits, no demo.",
+      href: CALENDLY,
+      external: true,
+      Icon: Calendar,
+    },
+  ],
+  "ai-content-factory-for-agencies": [
+    {
+      id: "use-cases-for-marketers",
+      label: "Growth Agencies playbook",
+      description:
+        "White-label content engine — serve 50 clients with the headcount you have for 10. Per-seat or per-managed-account, no custom retainer.",
+      href: "/use-cases/for-marketers",
+      Icon: MessageCircle,
+    },
+    {
+      id: "calendly-15min",
+      label: "Book a 15-min audit",
+      description:
+        "Direct calendar — walk through your per-AM throughput ceiling and where the engine bundles in.",
+      href: CALENDLY,
+      external: true,
+      Icon: Calendar,
+    },
+  ],
+  "content-tagging-system": [
+    {
+      id: "use-cases-for-programmatic-seo",
+      label: "Programmatic SEO playbook",
+      description:
+        "Hub-and-spoke generator with original hero imagery — the productionization of the tagging architecture this post walks through.",
+      href: "/use-cases/for-programmatic-seo",
+      Icon: MessageCircle,
+    },
+    {
+      id: "calendly-15min",
+      label: "Book a 15-min audit",
+      description:
+        "Direct calendar — pipeline review of your existing SEO content stack, no demo.",
+      href: CALENDLY,
+      external: true,
+      Icon: Calendar,
+    },
+  ],
+};
+
 // Category → CTAs. Each category gets a primary plus an optional secondary,
 // so the reader has a strong fork without scrolling past a weak nano-template
 // link. Categories not listed render nothing.
 function ctasFor(category: string, locale: string, slug?: string): CTA[] {
+  // Per-post complete override wins. Path-only hrefs get locale-prefixed
+  // here; external URLs (http, mailto) pass through unchanged.
+  if (slug && BLOG_POST_OVERRIDES[slug]) {
+    return BLOG_POST_OVERRIDES[slug].map((c) => ({
+      ...c,
+      href:
+        c.external || /^[a-z]+:/i.test(c.href)
+          ? c.href
+          : `/${locale}${c.href}`,
+    }));
+  }
   switch (category) {
     case "video-translation-dubbing":
     case "video-dubbing":
@@ -181,7 +350,33 @@ function ctasFor(category: string, locale: string, slug?: string): CTA[] {
   }
 }
 
-function CtaButton({ cta, category }: { cta: CTA; category: string }) {
+// Two-tone CTA palette: first card light-purple (primary), rest light-blue.
+// Tailwind's JIT needs the class names to appear as literals, so we keep
+// the two variants in a static map instead of interpolating the color.
+const ACCENT_STYLES = {
+  purple: {
+    card:
+      "border-purple-200 bg-gradient-to-br from-purple-50 to-white hover:border-purple-400",
+    icon: "text-purple-700",
+  },
+  blue: {
+    card:
+      "border-blue-200 bg-gradient-to-br from-blue-50 to-white hover:border-blue-400",
+    icon: "text-blue-700",
+  },
+} as const;
+
+type Accent = keyof typeof ACCENT_STYLES;
+
+function CtaButton({
+  cta,
+  category,
+  accent,
+}: {
+  cta: CTA;
+  category: string;
+  accent: Accent;
+}) {
   // content_id is greppable in admin: blog-cta:<category>:<cta.id>
   const trackClick = useClickTracking(
     `blog-cta:${category}:${cta.id}`,
@@ -189,12 +384,12 @@ function CtaButton({ cta, category }: { cta: CTA; category: string }) {
     "cards"
   );
 
-  const className =
-    "group flex flex-col gap-2 rounded-xl border border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-purple-400 hover:shadow-md";
+  const styles = ACCENT_STYLES[accent];
+  const className = `group flex flex-col gap-2 rounded-xl border ${styles.card} p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md`;
 
   const inner = (
     <>
-      <div className="flex items-center gap-2 text-blue-700">
+      <div className={`flex items-center gap-2 ${styles.icon}`}>
         <cta.Icon className="h-5 w-5" />
         <span className="text-base font-semibold">{cta.label}</span>
         {cta.external && (
@@ -243,8 +438,13 @@ export default function BlogCTACard({ category, slug, locale }: Props) {
             : "grid grid-cols-1 gap-4"
         }
       >
-        {ctas.map((cta) => (
-          <CtaButton key={cta.id} cta={cta} category={category} />
+        {ctas.map((cta, i) => (
+          <CtaButton
+            key={cta.id}
+            cta={cta}
+            category={category}
+            accent={i === 0 ? "purple" : "blue"}
+          />
         ))}
       </div>
     </section>

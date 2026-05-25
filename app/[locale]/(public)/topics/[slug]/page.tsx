@@ -176,14 +176,24 @@ export default async function Page({ params }: Props) {
     notFound();
   }
 
-  // Gallery prompts for this topic (if configured)
+  // Gallery prompts for this topic (if configured).
+  //
+  // Fetch ~3x the visible cap so the post-filter has room to drop
+  // revealing-imagery prompts (marked with the `revealing-female` tag
+  // by scripts/tag_revealing_female.py) while still landing on ~10
+  // family-friendly prompts. The exclusion is global — no topic in
+  // the current taxonomy needs to surface revealing imagery, so we
+  // skip the per-topic opt-in until that need actually appears.
   const galleryTag = getGalleryTag(slug);
   let galleryPrompts: NanoPromptBase[] = [];
   if (galleryTag) {
     try {
-      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(galleryTag, {
-        limit: 10,
+      const raw = await nanoPromptsService.getNanoPromptsByTag(galleryTag, {
+        limit: 30,
       });
+      galleryPrompts = raw
+        .filter((p) => !(p.tags ?? []).includes("revealing-female"))
+        .slice(0, 10);
     } catch {
       // gallery is non-critical; fail silently
     }
@@ -288,7 +298,7 @@ export default async function Page({ params }: Props) {
 
       {gridItems.length > 0 && (
         <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
-          <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} />
+          <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} desktopOpensExample />
         </section>
       )}
 

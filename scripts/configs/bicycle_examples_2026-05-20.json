@@ -1,0 +1,38 @@
+[
+  {
+    "template_id": "template-bilingual-object-structure-labeling",
+    "params": { "object_name": "Mountain Bike" },
+    "topics": ["language", "vocabulary", "photorealistic"],
+    "id_suffix": "mountain-bike"
+  },
+  {
+    "template_id": "template-bilingual-object-structure-labeling",
+    "params": { "object_name": "Road Bike" },
+    "topics": ["language", "vocabulary", "photorealistic"],
+    "id_suffix": "road-bike"
+  },
+  {
+    "template_id": "template-vocabulary",
+    "params": { "language_pair": "en-zh", "topic_name": "Cycling Vocabulary" },
+    "topics": ["english-chinese", "vocabulary", "language"],
+    "id_suffix": "english-chinese-cycling-vocabulary"
+  },
+  {
+    "template_id": "template-vocabulary",
+    "params": { "language_pair": "en-fr", "topic_name": "Bike Anatomy" },
+    "topics": ["english-french", "vocabulary", "language"],
+    "id_suffix": "english-french-bike-anatomy"
+  },
+  {
+    "template_id": "template-travel-packing-guide-infographic",
+    "params": { "destination": "Cycling Tour", "day_count": "5-Day", "gender": "Unisex" },
+    "topics": ["travel", "itinerary", "guides"],
+    "id_suffix": "cycling-tour-5-day"
+  },
+  {
+    "template_id": "template-fashion-shape-guide-infographic",
+    "params": { "topic": "Cycling Apparel for Body Type" },
+    "topics": ["lifestyle", "fashion", "guides", "posters"],
+    "id_suffix": "cycling-apparel-for-body-type"
+  }
+]

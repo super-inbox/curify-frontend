@@ -26,6 +26,11 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     path: "/topics/travel",
   },
   {
+    id: "culture",
+    emoji: "🏛️",
+    path: "/topics/culture",
+  },
+  {
     id: "lifestyle",
     emoji: "🌿",
     path: "/topics/lifestyle",

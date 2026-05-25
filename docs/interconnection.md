@@ -1,12 +1,29 @@
 # Blog ⇄ Use Case ⇄ Tool — Interconnection Audit & Plan
 
-_Last updated: 2026-05-17 (added Google traffic data + tool-to-tool layer; reprioritized). Owner: jay. Update after every push that touches `BlogCTACard.tsx`, `ToolsGrid.tsx`, `UseCaseClient.tsx`, `tool-generic-client.tsx`, or the registry files (`lib/use-cases.ts`, `lib/tools-registry.ts`)._
+_Last updated: 2026-05-18 (B2B tier added — 6 personas → 8 use cases, 2 rebrands + 2 new). Owner: jay. Update after every push that touches `BlogCTACard.tsx`, `ToolsGrid.tsx`, `UseCaseClient.tsx`, `tool-generic-client.tsx`, or the registry files (`lib/use-cases.ts`, `lib/tools-registry.ts`, `lib/topicRegistry.ts`)._
 
 ## Why this doc exists
 
 The blog catalog, the use-case landing pages, and the tools surface are the three GTM destinations. Today only the blog-side fans out cleanly (via `BlogCTACard`); the other two surfaces are largely dead-ends. A reader who lands on `/tools/video-dubbing` can't easily get to the relevant blog playbook; a reader on `/use-cases/for-marketers` has no path to a "how to ship distribution" post. That asymmetry caps the funnel: traffic compounds within one surface and leaks at the boundary.
 
 This doc is the single source of truth for the interconnection work — what fans out where, what's still a dead-end, and what mappings drive each fan-out.
+
+## Two-tier use-case model (added 2026-05-18)
+
+`/use-cases/*` now hosts **two distinct audiences in one surface** — the IA stays flat (no separate `/solutions` route) but each page declares its tier in `lib/use-cases.ts`:
+
+| Tier | Count | Slugs | Role |
+| --- | --- | --- | --- |
+| `consumer` | 4 | `for-parents`, `for-esl-learners`, `for-creators`, `for-designers` | SEO long-tail demand capture. Persona voice, discovery layout. |
+| `b2b` | 4 | `for-marketers`, `for-publishers`, `for-dtc-brands`, `for-programmatic-seo` | Cold-outreach + reference-deal surface. Buyer voice, "Built for teams" badge, packaged-tier bullet, "APIs available" CTA. |
+
+**Why the split exists.** Per the GTM argument that drove the rebrand: at the 0-traction stage, B2B cash flow (DTC brands, EdTech publishers, ProgSEO builders, growth agencies) funds C-side iteration. The C-side is the SEO layer; the B2B side is the revenue layer. Same URL space, same template, two voices, two intents.
+
+**Outbound counterpart.** The 4 B2B pages are the inbound surface. The cold-outreach pipeline (crawlers, lead lists, prompt builders) that gets those pages in front of buyers lives in [`~/curify-studio/docs/gtm-progress.md`](../../curify-studio/docs/gtm-progress.md) — keep the two in sync: when a B2B page's voice changes here, re-audit the matching `_build_*_prompt` in `send_annotated_emails.py` so emails and landing pages don't drift apart.
+
+**SEO continuity.** `for-marketers` and `for-publishers` slugs are kept (already indexed by Google) — only the content/voice was rewritten to target growth agencies and EdTech publishers respectively. No 301s needed.
+
+**Dev-shop guardrail (load-bearing).** Each B2B page's bullet3 is a packaged-tier line ("per-seat OR per-managed-account", "500/2,000/unlimited monthly", "white-label license OR done-for-you subscription", "hosted OR self-hosted Docker"). Visible packaging in the hero = no client can argue the engagement is open scope. If a future B2B page omits this, the dev-shop drift risk reopens.
 
 ---
 
@@ -61,8 +78,8 @@ Source: GSC export `Pages.csv` at the repo root (1,022 URLs total — 1,194 clic
 | --- | --- | --- | --- | --- | --- |
 | **Blog post** (`/blog/[slug]`) | RelatedBlogs widget | `BlogCTACard` ✓ | `BlogCTACard` ✓ (nano-template / learning-education) | embedded grids on a few posts | `BlogCTACard` ✓ |
 | **Tools index** (`/tools`) | — | tool cards (grouped video / image / audio) | — | — | — |
-| **Tool detail** (`/tools/[slug]`) | **— gap (P0 #1a)** | **— sibling-tool gap (P0 #1c)** — index only | **— gap (P0 #1b)** | — | — |
-| **Use case** (`/use-cases/[slug]`) | **— gap (P0 #3)** | `ToolsGrid` ✓ | sibling persona chips at the bottom ✓ | nano-template feed cards ✓ | — |
+| **Tool detail** (`/tools/[slug]`) | **`RelatedBlogsByCategory` ✓ (P0 #1a)** | **`ToolsGrid` of siblings ✓ (P0 #1c)** | **`UseCaseChipsRow` + linked "Who Uses" headers ✓ (P0 #1b)** | — | — |
+| **Use case** (`/use-cases/[slug]`) | **`RelatedBlogsByCategory` ✓ (P0 #3)** | `ToolsGrid` ✓ (now persona-tailored after P0 #2) | sibling persona chips at the bottom ✓ | nano-template feed cards ✓ | `/contact` link from "APIs available" line on B2B pages ✓ |
 
 **Three-line summary:**
 - Blogs already fan out to tools / use-cases / contact / mentor via `BlogCTACard`. Good.
@@ -80,6 +97,10 @@ Plus a data-side gap: `lib/use-cases.ts` currently has every persona mapped to t
 | 2026-05-17 | `ac14131` | `BlogCTACard.tsx` — per-category fan-out from blog posts to tool / contact / mentor. |
 | 2026-05-17 | `d6ca86a` | Expanded `BlogCTACard` mapping to cover nano-template + learning-education; introduced `ToolsGrid.tsx` so `/use-cases/[slug]` reuses the `/tools` card style. Plus 4 blog category reassignments. |
 | 2026-05-17 | `cb5a074` | Earlier blog metaDescription / lastmod sweep — not interconnection per se, but shipped the categorization that the BlogCTACard map keys off. |
+| 2026-05-17 | `4d2dbeb` | **P0 #1 + #2 shipped.** Per-persona tool ordering in `lib/use-cases.ts` (designers now an empty list — honest; publishers single tool). Tool detail page gains three outbound sections — "Who it’s for" persona chips, "Related tools" sibling-group grid, "Related reading" blog cards. Each "deep.usecases" subsection header on the tool page is now a Link to its persona use-case page so the in-prose "Who Uses X?" section gains the same fan-out. New helpers: `getPersonasForTool` in `lib/use-cases.ts`, `getSiblingTools` + `TOOL_BLOG_CATEGORIES` in `lib/tools-registry.ts`. New component: `RelatedBlogsByCategory.tsx` (sibling of `RelatedBlogs` that takes a categories list instead of a current-slug). 3 new i18n keys under `interconnection.*` fanned out to all 9 non-en locales. |
+| 2026-05-18 | `e07be2c` | **P0 #3 shipped.** `/use-cases/[slug]` now renders a "Related reading" block between the templates grid and the sibling persona chips, pulling from `PERSONA_BLOG_CATEGORIES` in `lib/use-cases.ts` (per `docs/interconnection.md` Persona → Blog categories table). Max 6 cards, sorted by `lastmod` desc. Reuses the `RelatedBlogsByCategory` component shipped with P0 #1. |
+| 2026-05-18 | _(pending push)_ | **P1 top-traffic CTA audit shipped.** `BlogCTACard.tsx` gains a per-post full-override mechanism (`BLOG_POST_OVERRIDES`). Four top-traffic posts now bypass their category default and route to higher-intent destinations: `character-prompt-generator` and `mbti-character-generator` → `/topics/character` + `/use-cases/for-creators`; `10-prompting-tips-nano-banana` → `/topics/character` + `/tools`; `ai-collage-digital-wallpaper-guide` → `/topics/design` + `/use-cases/for-designers`. `asl-video-translator` and `f5-tts-voice-cloning` already route well via category default and need no override. |
+| 2026-05-18 | _(pending push)_ | **B2B tier shipped — 6 → 8 use cases.** `lib/use-cases.ts` gains `tier: "consumer" \| "b2b"` on `UseCaseDef`. `for-marketers` rewritten as growth-agencies pitch; `for-publishers` rewritten as EdTech/publishers pitch (MBTI angle dropped — already covered by `for-designers`). Two new B2B slugs added: `for-dtc-brands` (1 product photo → 100 scenes, SMM-scheduled) and `for-programmatic-seo` (hub-and-spoke generator, "we ran 5,500 pages for ourselves"). `topicRegistry.TIER1_USE_CASES` extended so travel/lifestyle/design/product templates now surface on `for-dtc-brands`; `for-programmatic-seo` intentionally absent (horizontal engine, not a template browser). `UseCaseClient.tsx` conditionally renders a "Built for teams" badge + "APIs available on request → Let's talk scope" link to `/contact` when `tier === "b2b"`. EN copy added, fanned out to all 9 non-en locales (native ZH, EN fallback for de/es/fr/hi/ja/ko/ru/tr) via `scripts/add_b2b_use_cases_i18n.cjs`. |
 
 ---
 
@@ -99,6 +120,17 @@ These are the load-bearing data shapes. Whenever the catalog changes, these tabl
 
 Per-post creator-tools overrides table is `CREATOR_TOOL_OVERRIDES` in `BlogCTACard.tsx`. Two entries today: `video-transcription-business-guide → /tools/video-transcription`, `10-prompting-tips-video-generation → /tools/video-dubbing`. Grow it as new posts ship.
 
+**Per-post full-override table** is `BLOG_POST_OVERRIDES` in `BlogCTACard.tsx` — used when a high-traffic post deserves a fundamentally different CTA than its category default, not just a different tool URL. Current entries (driven by the GSC top-traffic audit):
+
+| Slug | Default (would-be) | Override primary | Override secondary |
+| --- | --- | --- | --- |
+| `character-prompt-generator` | `/tools` (creator-tools) | `/topics/character` | `/use-cases/for-creators` |
+| `mbti-character-generator` | `/contact` (nano-template) | `/topics/character` | `/use-cases/for-creators` |
+| `10-prompting-tips-nano-banana` | `/contact` (nano-template) | `/topics/character` | `/tools` |
+| `ai-collage-digital-wallpaper-guide` | `/contact` (nano-template) | `/topics/design` | `/use-cases/for-designers` |
+
+Add an entry when a top-clicked post's category default sends readers somewhere noticeably off-intent.
+
 ### Tool slug → Blog categories (new — needed by P0 #1)
 For the "Related reading" block on tool detail pages. Filters `public/data/blogs.json` server-side.
 
@@ -110,17 +142,21 @@ For the "Related reading" block on tool detail pages. Filters `public/data/blogs
 | `speech-translator` | `video-translation-dubbing` |
 | `video-transcription` | `creator-tools`, `video-translation-dubbing` |
 
-### Persona → Tool slugs (replacement for the current flat mapping in `lib/use-cases.ts`)
-| Persona | Tools (ordered by relevance) |
-| --- | --- |
-| `for-marketers` | `video-dubbing`, `bilingual-subtitles` |
-| `for-parents` | `bilingual-subtitles`, `video-dubbing` |
-| `for-esl-learners` | `bilingual-subtitles`, `voice-clone` |
-| `for-creators` | `video-dubbing`, `bilingual-subtitles`, `speech-translator` |
-| `for-designers` | _(empty — designers use templates, not video tools today)_ |
-| `for-publishers` | `bilingual-subtitles` |
+### Persona → Tool slugs (current in `lib/use-cases.ts`)
+| Slug | Tier | Tools (ordered by relevance) |
+| --- | --- | --- |
+| `for-parents` | consumer | `bilingual-subtitles`, `video-dubbing` |
+| `for-esl-learners` | consumer | `bilingual-subtitles`, `voice-clone` |
+| `for-creators` | consumer | `video-dubbing`, `bilingual-subtitles`, `speech-translator` |
+| `for-designers` | consumer | _(empty — designers use templates, not video tools today)_ |
+| `for-marketers` | b2b | `video-dubbing`, `bilingual-subtitles`, `speech-translator` _(agency multi-vertical breadth)_ |
+| `for-publishers` | b2b | `bilingual-subtitles`, `voice-clone` _(edtech adds TTS for K-5 vocab audio companion)_ |
+| `for-dtc-brands` | b2b | `image-translation`, `style-transfer`, `video-dubbing` |
+| `for-programmatic-seo` | b2b | _(empty — horizontal engine play; page leads with the meta "we built 5,500 of these for ourselves" angle, not a tool feed)_ |
 
-The `for-designers` empty list is deliberate. Render the persona chip on the tool-detail page only if the tool appears in any persona's list — designers don't show up under the video-dubbing "Who's it for" because they don't ship video.
+Two slugs intentionally have empty `toolSlugs`. The page renders the section only when the list is non-empty, so empty lists are honest — no fabricated tool fits.
+
+Render the persona chip on a tool-detail page only if the tool appears in any persona's list — e.g. designers don't show up under the video-dubbing "Who's it for" because they don't ship video.
 
 ### Tool slug → Sibling tools (new — needed by P0 #1c)
 
@@ -134,19 +170,34 @@ For the "Related tools" block on each tool detail page. Drives in-product tool-u
 
 Render top 3 same-group siblings, excluding the current tool. Cap at 3 to keep the section dense. Skip the section entirely if a group has only one tool (image / audio rule out today's `style-transfer` if only it ships, etc.).
 
-### Persona → Blog categories (new — needed by P0 #3)
+### Persona → Blog categories (current — needed by P0 #3)
 For the "Related reading" block on use-case pages.
 
-| Persona | Blog categories to surface |
-| --- | --- |
-| `for-marketers` | `content-automation`, `creator-tools` |
-| `for-parents` | `learning-education` |
-| `for-esl-learners` | `video-translation-dubbing`, `learning-education` |
-| `for-creators` | `creator-tools`, `nano-template` |
-| `for-designers` | `nano-template` |
-| `for-publishers` | `nano-template`, `learning-education` |
+| Slug | Tier | Blog categories to surface |
+| --- | --- | --- |
+| `for-parents` | consumer | `learning-education` |
+| `for-esl-learners` | consumer | `video-translation-dubbing`, `learning-education` |
+| `for-creators` | consumer | `creator-tools`, `nano-template` |
+| `for-designers` | consumer | `nano-template` |
+| `for-marketers` | b2b | `content-automation`, `creator-tools` |
+| `for-publishers` | b2b | `nano-template`, `learning-education` |
+| `for-dtc-brands` | b2b | `content-automation`, `creator-tools` |
+| `for-programmatic-seo` | b2b | `ds-ai-engineering`, `content-automation` |
 
 Top N (likely 3-6) by `lastmod` desc within those categories, rendered with the existing `RelatedBlogCard` component.
+
+### Tier-1 topic → Use case (current in `lib/topicRegistry.ts`)
+Drives the persona chip row on reproduce/example surfaces — which audiences will recognize value in a given template. Updated 2026-05-18 to add `for-dtc-brands` into the four commerce-adjacent tier-1s.
+
+| Tier-1 | Personas |
+| --- | --- |
+| `character`, `personality` | `for-creators`, `for-designers` |
+| `language` | `for-parents`, `for-esl-learners`, `for-publishers` |
+| `learning` | `for-parents`, `for-creators`, `for-publishers` |
+| `travel`, `lifestyle` | `for-creators`, `for-marketers`, **`for-dtc-brands`** |
+| `design`, `product` | `for-marketers`, `for-designers`, **`for-dtc-brands`** |
+
+`for-programmatic-seo` intentionally absent — horizontal engine play, no template browser fit.
 
 ---
 
@@ -154,7 +205,7 @@ Top N (likely 3-6) by `lastmod` desc within those categories, rendered with the 
 
 **Prioritization read of the GSC data:** Blog is the biggest acquisition surface (52% of impressions) and routes via `BlogCTACard` ✓. The next highest-leverage gaps are **tool detail outbound** (small surface but every visitor is at the bottom of the funnel, and today they hit a dead-end) and **fixing the persona→tools mapping data** (unblocks both tool-detail "Who it's for" and use-case `ToolsGrid` differentiation). Use-case → blog is real interconnection but ranks lower since use-case traffic is currently 1 click / 30 days.
 
-### P0 #1 — Tool detail pages get three outbound sections
+### ~~P0 #1 — Tool detail pages get three outbound sections~~ ✓ shipped 2026-05-17
 Edit `app/[locale]/(public)/tools/[slug]/tool-generic-client.tsx`. Add three sections above the existing "Why" / "FAQ" / "deep" blocks. **Biggest leverage point in this plan** — every tool visitor is at the bottom of the conversion funnel, today's tools surface gets 45 clicks / 1,859 impressions in 30 days, and every dead-end tool page wastes the intent.
 
 **#1a — Related reading.** Pull blog posts whose `category` is in the tool's category list (from the [Tool slug → Blog categories table](#tool-slug--blog-categories-new--needed-by-p0-1) above). Top 3 by `lastmod` desc. Reuse the `RelatedBlogs` component from `app/[locale]/(public)/blog/[slug]/page.tsx:397`. Lift the filter from the current-blog's category into a prop so the tool detail page can pass its own list.
@@ -163,7 +214,7 @@ Edit `app/[locale]/(public)/tools/[slug]/tool-generic-client.tsx`. Add three sec
 
 **#1c — Related tools.** Same-group sibling tools (3 max) from the [Tool slug → Sibling tools table](#tool-slug--sibling-tools-new--needed-by-p0-1c). Reuse the existing `ToolsGrid` component with a 3-column layout. Directly addresses the **tool-use-depth** gap — keeps users in the tool funnel instead of bouncing back to `/tools` index or leaving.
 
-### P0 #2 — Fix the flat persona→tools mapping in `lib/use-cases.ts`
+### ~~P0 #2 — Fix the flat persona→tools mapping in `lib/use-cases.ts`~~ ✓ shipped 2026-05-17
 **Pure data change. Prerequisite for P0 #1b** — the inverse-lookup on the tool detail page can't produce meaningful persona chips while every persona maps to the same two tools.
 
 Replace the current uniform `["video-dubbing", "bilingual-subtitles"]` per persona with the [Persona → Tool slugs table](#persona--tool-slugs-replacement-for-the-current-flat-mapping-in-libuse-casests) below.
@@ -173,13 +224,21 @@ After this lands:
 - The inverse-lookup on the tool detail page (#1b) becomes meaningful.
 - 5 minutes of edit time.
 
-### P0 #3 — Use case pages surface "Related reading"
+### ~~P0 #3 — Use case pages surface "Related reading"~~ ✓ shipped 2026-05-18
 Edit `app/[locale]/(public)/use-cases/[slug]/UseCaseClient.tsx`. Insert a "Related reading" block between the templates grid and the sibling persona chips at the bottom. 3-6 cards. Mapping from [Persona → Blog categories table](#persona--blog-categories-new--needed-by-p0-3).
 
 **Lower than #1 because use-case traffic is currently 1 click / 30 days** — this is "build for future demand," not "harvest current funnel." Worth shipping in the same week since it's quick and the symmetry matters once GSC starts indexing the persona pages.
 
-### P1 — Internal-link strength from high-traffic blog posts
-The five posts in [Top 5 single-page traffic sources](#google-traffic-context-may-2026-30-day-window) (especially `mbti-character-generator`, `character-prompt-generator`, `asl-video-translator`) deserve stronger-than-default cross-links — they're the actual entry points where GSC traffic compounds. Audit each top-clicked post's `BlogCTACard` resolution and make sure its category maps to the most relevant tool / use-case (not the generic `/contact` default). E.g. an MBTI post in `nano-template` category currently routes to `/contact + /tools`; for high-traffic MBTI posts a per-post override pointing at the actual MBTI templates would convert better than `/contact`.
+### ~~P1 — Internal-link strength from high-traffic blog posts~~ ✓ shipped 2026-05-18
+First-pass audit complete. The four worst-routed top-traffic posts (`character-prompt-generator`, `mbti-character-generator`, `10-prompting-tips-nano-banana`, `ai-collage-digital-wallpaper-guide`) now route via `BLOG_POST_OVERRIDES` to `/topics/character` or `/topics/design` plus a persona use-case — the actual destinations readers came for. `asl-video-translator` and `f5-tts-voice-cloning` already routed well via the `video-translation-dubbing` category default and got no override.
+
+Re-audit after the next GSC re-pull (4-week cadence) — if a freshly-trending post deserves the override treatment, add an entry to `BLOG_POST_OVERRIDES` in `BlogCTACard.tsx`.
+
+### P1 — B2B follow-on (after the 2026-05-18 tier-split)
+The 4 B2B pages are now live with one shared template + a "Built for teams" badge. Next moves to make them function as cold-outreach landing pages, not just SEO continuity:
+- **Blog → solutions overrides.** Extend `BLOG_POST_OVERRIDES` in `BlogCTACard.tsx` so that high-intent posts in `content-automation` and `ds-ai-engineering` can route to the matching B2B use-case page (e.g. ProgSEO engineering posts → `/use-cases/for-programmatic-seo`) instead of the default `/contact`. Today both default to `/contact`, which underleverages the ICP match.
+- **Tool detail → solutions strip.** Below the existing "Who it's for" persona chips on `/tools/[slug]`, add a 1-line "For teams: → /use-cases/for-dtc-brands · → /use-cases/for-marketers" strip filtered to B2B-tier matches. Same fan-out shape as the persona chips, narrower set.
+- **Locale validation.** B2B copy is EN-fallback in de/es/fr/hi/ja/ko/ru/tr (ZH is native). Once a non-EN B2B lead lands, prioritize that locale's translation before broader fan-out.
 
 ### P1 — Tools index surfaces persona chips per tool card
 On `/tools`, each tool card grows a small "for X / for Y" persona row at the bottom (deriving from `lib/use-cases.ts` reverse lookup). Visual polish; weaker ROI than fixing the dead-ends. Pairs naturally with P0 #2.
@@ -215,11 +274,15 @@ Per-post structured pointer that's stronger than the category default. Useful fo
 | Related blogs widget | `app/[locale]/_components/RelatedBlogs.tsx` (used in blog `[slug]/page.tsx`) |
 | Tool detail page | `app/[locale]/(public)/tools/[slug]/tool-generic-client.tsx` |
 | Use-case page | `app/[locale]/(public)/use-cases/[slug]/UseCaseClient.tsx` |
-| Use-case registry | `lib/use-cases.ts` |
+| Use-case registry (incl. `tier`, `toolSlugs`, `PERSONA_BLOG_CATEGORIES`) | `lib/use-cases.ts` |
 | Tools registry | `lib/tools-registry.ts` |
+| Tier-1 topic → persona mapping | `lib/topicRegistry.ts` (`TIER1_USE_CASES`) |
+| Use-case page i18n (incl. B2B copy + `interconnection.builtForTeams`/`apiAvailable`/`apiContactCTA`) | `messages/<locale>/common.json` |
+| B2B i18n fan-out helper (one-shot, kept for repeatability) | `scripts/add_b2b_use_cases_i18n.cjs` |
 | Blog catalog | `public/data/blogs.json` |
 | Blog i18n content | `messages/<locale>/blog.json` |
 | Sibling status docs | `docs/blog-quality.md`, `docs/search-quality.md` |
+| GTM outbound pipeline (crawlers + prompt builders → the 4 B2B pages) | `~/curify-studio/docs/gtm-progress.md` (sibling repo) |
 | GSC export (refresh monthly) | `Pages.csv` at repo root |
 
 ---

@@ -8,8 +8,9 @@ import { nanoPromptsService } from '@/services/nanoPrompts';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
 import { toOgLocale, resolveContentLocale, makeSafeTranslator } from '@/lib/locale_utils';
 import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
-import CategoriesSection from "@/app/[locale]/_components/NanoBananaPromptsTags";
+import RelatedTagsSection from "@/app/[locale]/_components/RelatedTagsSection";
 import { getTopicsForTag, getTemplatesForTopic } from '@/lib/topicRegistry';
+import { getRelatedTags } from '@/lib/relatedTags';
 import { nanoRegistry } from '@/lib/nano_utils';
 import { buildNanoFeedCards } from '@/lib/nano_page_data';
 import NanoTemplateDetailClient from '@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient';
@@ -175,10 +176,6 @@ export default async function TagPage({ params }: Props) {
     }
   }
 
-  const categories = nanoMetadata.metadata.tags.map((t) => ({
-    category: t.tag,
-    count: t.count,
-  }));
   // True per-tag count from the bundled metadata, not from the (capped)
   // API response.
   const totalForTag =
@@ -218,8 +215,6 @@ export default async function TagPage({ params }: Props) {
             </p>
           </header>
 
-          <CategoriesSection categories={categories} currentTag={tag} />
-
           {prompts.length === 0 ? (
             <div className="rounded-lg bg-white py-12 text-center shadow">
               <h3 className="text-sm font-medium text-gray-900">
@@ -233,6 +228,13 @@ export default async function TagPage({ params }: Props) {
               ))}
             </div>
           )}
+
+          <RelatedTagsSection
+            tags={getRelatedTags(tag, { limit: 12, liveOnly: true })}
+            locale={locale}
+            title={`Related to "${title}"`}
+            subtitle="Tags from the same category cluster."
+          />
 
           {templateCards.length > 0 && (
             <section className="mt-12">

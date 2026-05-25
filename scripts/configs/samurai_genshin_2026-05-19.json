@@ -1,0 +1,45 @@
+[
+  {
+    "template_id": "template-fandom-character-grid-poster",
+    "params": { "theme": "Famous Samurai of Japan" },
+    "topics": ["character", "history", "groups", "design"],
+    "id_suffix": "famous-samurai-japan"
+  },
+  {
+    "template_id": "template-historical-figure-profile-infographic",
+    "params": { "topic": "Legendary Samurai & Their Battles" },
+    "topics": ["learning", "history", "design"],
+    "id_suffix": "legendary-samurai-battles"
+  },
+  {
+    "template_id": "template-mbti-generic",
+    "params": {
+      "mbti_topic": "MBTI personalities as samurai warriors",
+      "character_set": "famous samurai of feudal Japan"
+    },
+    "topics": ["character", "mbti", "history", "personality"],
+    "id_suffix": "samurai-warriors"
+  },
+
+  {
+    "template_id": "template-fandom-character-grid-poster",
+    "params": { "theme": "Genshin Impact" },
+    "topics": ["character", "video game", "groups", "design"],
+    "id_suffix": "genshin-impact"
+  },
+  {
+    "template_id": "template-mbti-generic",
+    "params": {
+      "mbti_topic": "MBTI personalities as Genshin Impact characters",
+      "character_set": "Genshin Impact main playable characters"
+    },
+    "topics": ["character", "mbti", "video game", "personality"],
+    "id_suffix": "genshin-impact"
+  },
+  {
+    "template_id": "template-pop-culture-matching-chart",
+    "params": { "theme_name": "Genshin Impact" },
+    "topics": ["character", "video game", "groups"],
+    "id_suffix": "genshin-impact"
+  }
+]

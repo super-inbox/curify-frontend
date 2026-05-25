@@ -18,7 +18,9 @@ export type ContentType =
   | "prev_next"
   | "mbti_quiz"
   | "page"
-  | "etsy_pack";
+  | "etsy_pack"
+  | "tool_card"
+  | "use_case_video";
 
 export type ActionType =
   | "view"
@@ -31,6 +33,7 @@ export type ActionType =
   | "download"
   | "search"
   | "search_noresult"
+  | "search_lowresult"
   | "video_click"
   | "video_play";
 
@@ -58,6 +61,12 @@ const SESSION_KEY = "_curify_session_id";
 const LOCALE_PREFIX = /^\/[a-z]{2}(?=\/|$)/;
 
 const ROUTE_PATTERNS: [RegExp, string][] = [
+  // Carousel routes that actually exist under app/[locale]/(public)/carousel/.
+  // Match these BEFORE the generic /nano-template/* patterns so a path that
+  // happens to contain both segments doesn't fall through to the wrong one.
+  [/\/carousel\/prompt-gallery\/[^/]+$/,      "/carousel/prompt-gallery/[id]"],
+  [/\/carousel\/template-example\/[^/]+\/[^/]+$/, "/carousel/template-example/[slug]/[exampleId]"],
+  // Legacy carousel pattern — kept for any lingering links.
   [/\/nano-template\/[^/]+\/carousel\/[^/]+$/, "/nano-template/[slug]/carousel/[exampleId]"],
   [/\/nano-template\/[^/]+\/example\/[^/]+$/, "/nano-template/[slug]/example/[exampleId]"],
   [/\/nano-template\/[^/]+$/,                 "/nano-template/[slug]"],

@@ -74,7 +74,8 @@ export default function NanoTemplateDetailClient(props: {
           <NanoInspirationRow
             cards={otherNanoCards}
             requireAuth={requireAuth}
-            onViewClick={onViewClick}            
+            onViewClick={onViewClick}
+            maxRows={3}
             getRelatedScore={(card) => {
               return countCommonTopics(currentTopics, card.topics);
             }}

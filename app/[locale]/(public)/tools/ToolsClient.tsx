@@ -17,6 +17,9 @@ import { getToolById } from "@/lib/tools-registry"; // ✅ NEW
 
 import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
+import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import { useTracking } from "@/services/useTracking";
 import CreateNewModal from "./CreateNewModal";
 
 export default function ToolsClient() {
@@ -50,6 +53,18 @@ export default function ToolsClient() {
 
   // ✅ buildToolsHub should now set onClick to call openToolModal(tool.id)
   const toolGroups = buildToolsHub({ t, openToolModal, locale });
+
+  // Single tool_card interaction event per click (covers both demo Link
+  // navigations and create-button modal opens). Matches the tracking
+  // wired into the shared ToolsGrid component so /tools, /tools/[slug]
+  // related-tools, and /use-cases/[slug] all log identically.
+  const { trackAction } = useTracking();
+  const trackToolClick = (toolId: string) => {
+    trackAction(
+      { contentId: toolId, contentType: "tool_card", viewMode: "cards" },
+      "click",
+    );
+  };
 
   // -------------------------
   // Language switching demo
@@ -120,8 +135,8 @@ export default function ToolsClient() {
                   {group.items.map((tool) => {
                     const Card = (
                       <div
-                        className={`rounded-2xl shadow-lg p-5 flex flex-col justify-between 
-                        bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] 
+                        className={`group rounded-2xl shadow-lg p-5 flex flex-col justify-between
+                        bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)]
                         border border-gray-100 transition-shadow
                         ${
                           tool.href
@@ -144,6 +159,7 @@ export default function ToolsClient() {
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
+                              trackToolClick(tool.id);
                               // ✅ tool.onClick is auth-gated inside openToolModal
                               tool.onClick?.();
                             }}
@@ -155,6 +171,15 @@ export default function ToolsClient() {
                               <span className="ml-2 text-xs opacity-80">🔒</span>
                             )}
                           </button>
+                        ) : tool.status === "demo" ? (
+                          // Card itself is wrapped in a Link to the SEO page
+                          // (tool.href is set for demo tools by buildToolsHub),
+                          // so the inner element just needs to look button-like
+                          // for affordance. Lighter accent than Create to
+                          // signal "demo / early access" vs "live tool".
+                          <span className="mt-4 block w-full text-center px-4 py-2 rounded-lg font-semibold border border-purple-200 bg-purple-50 text-purple-700 transition-colors duration-200 group-hover:bg-purple-100 group-hover:border-purple-400">
+                            {t("tools.see_demo")}
+                          </span>
                         ) : (
                           <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
                             {t("tools.coming_soon")}
@@ -167,7 +192,18 @@ export default function ToolsClient() {
                     // ✅ Otherwise (create tools), card click triggers modal open
                     if (tool.href) {
                       return (
-                        <Link key={tool.id} href={tool.href} className="block hover:no-underline">
+                        <Link
+                          key={tool.id}
+                          href={tool.href}
+                          onClick={() => {
+                            // Demo cards: track Link nav. Create cards have
+                            // a button inside that already tracks via the
+                            // onClick path, so guard to avoid double-count
+                            // when the whole-card button-wrapper also fires.
+                            if (tool.status !== "create") trackToolClick(tool.id);
+                          }}
+                          className="block hover:no-underline"
+                        >
                           {Card}
                         </Link>
                       );
@@ -179,7 +215,10 @@ export default function ToolsClient() {
                         <button
                           key={tool.id}
                           type="button"
-                          onClick={tool.onClick}
+                          onClick={() => {
+                            trackToolClick(tool.id);
+                            tool.onClick?.();
+                          }}
                           className="text-left"
                         >
                           {Card}
@@ -204,7 +243,10 @@ export default function ToolsClient() {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-2xl relative">
+            {/* Demo container shrunk ~20% from max-w-2xl (672px) → 538px
+                so the video doesn't dominate the hero on wide screens.
+                Aspect ratio preserved via w-full + intrinsic video ratio. */}
+            <div className="w-full max-w-[538px] relative">
               <CdnVideo
                 ref={videoRef}
                 src={videoSrc}
@@ -307,44 +349,29 @@ export default function ToolsClient() {
           </div>
         </section>
 
-        {/* Upcoming products */}
+        {/* Read about how it works — latest blogs from creator-tools +
+            video-translation-dubbing categories. Replaces the prior
+            "Upcoming products" video-demo strip; those demos now live on
+            their own /tools/<slug> pages (manga-translation, style-transfer). */}
         <section className="w-full mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">
-              {t("upcoming.title")}
-            </h2>
-            <p className="text-base sm:text-lg text-[var(--c2)]">
-              {t("upcoming.subtitle")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["styleTransfer", "mangaTranslation", "templatedVideo"].map((key, index) => {
-              const transcriptKey = `upcoming.${key}.transcript`;
-              return (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105 relative overflow-hidden flex flex-col"
-                >
-                  <h3 className="text-xl font-bold text-[var(--c1)] mb-3">
-                    {t(`upcoming.${key}.title`)}
-                  </h3>
-                  <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">
-                    {t(`upcoming.${key}.desc`)}
-                  </p>
-                  <CdnVideo
-                    className="rounded-lg shadow-md w-full mt-auto"
-                    controls
-                    loop
-                    src={`/video/demo_${key}.mp4`}
-                    aria-label={`Demo video for ${t(`upcoming.${key}.title`)}`}
-                  />
-                  <p className="text-xs text-gray-400 mt-2">
-                    {t("tools.hero.transcript_label")}: {transcriptKey}
-                  </p>
-                </div>
-              );
+          <RelatedBlogsByCategory
+            categories={["creator-tools", "video-translation-dubbing"]}
+            locale={locale}
+            max={3}
+            heading={t("tools.relatedReading", {
+              defaultValue: "Read about how it works",
             })}
+          />
+        </section>
+
+        {/* Who uses this — audience-targeted landing pages. Sits below
+            the tools grid (WHAT) and the blog row (WHY/HOW). */}
+        <section className="w-full mb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-6 text-center">
+            {t("tools.whoItsFor", { defaultValue: "Who it's for" })}
+          </h2>
+          <div className="flex justify-center">
+            <UseCaseChipsRow />
           </div>
         </section>
       </div>

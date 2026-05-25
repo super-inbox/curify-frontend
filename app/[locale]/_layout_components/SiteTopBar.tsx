@@ -16,10 +16,13 @@ export default function SiteTopBar({ locale }: { locale: string }) {
   if (isBlogPage) return null;
 
   // Hide the EntryBar (tier-1 topic capsules + use-case chip row) on
-  // template-detail, example-detail, and gallery-prompt-detail pages —
-  // those have their own in-page topic chips / use-case chips in the
-  // hero header, so the EntryBar duplicates them. Keep SearchBar and
-  // LocaleSwitcher visible.
+  // template-detail, example-detail, gallery-prompt-detail, search
+  // results, and the tools surface — those have their own in-page
+  // navigation (in-hero topic chips / use-case chips for the detail
+  // pages, the "Browse:" related-queries row for /search, or the tool
+  // cards + "Who it's for" persona chips for /tools and /tools/[slug]),
+  // so the EntryBar duplicates them. Keep SearchBar and LocaleSwitcher
+  // visible.
   //
   // On every other page the EntryBar is always visible and lives in the
   // sticky bar's flow. Earlier iterations tried scroll-driven folding —
@@ -29,7 +32,9 @@ export default function SiteTopBar({ locale }: { locale: string }) {
   // is gone.
   const hideEntryBar =
     /\/nano-template\/[^/]+/.test(pathname) ||
-    /\/nano-banana-pro-prompts\/\d+(?:\/|$)/.test(pathname);
+    /\/nano-banana-pro-prompts\/\d+(?:\/|$)/.test(pathname) ||
+    /\/search(?:\/|$|\?)/.test(pathname) ||
+    /\/tools(?:\/|$|\?)/.test(pathname);
 
   return (
     <div className="hidden lg:block sticky top-0 z-40 bg-[#FDFDFD]/95 backdrop-blur px-4 pt-3 pb-4">

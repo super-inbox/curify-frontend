@@ -27,7 +27,12 @@ export default function GenericBlogContent({
       
       <section>
         <h2 className="text-2xl font-bold mb-4">{hasKey("whatIsTitle") ? safeT("whatIsTitle") : "What is this?"}</h2>
-        <p className="mb-4">{hasKey("whatIsContent") ? safeT("whatIsContent") : "Content description..."}</p>
+        <div
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{
+            __html: hasKey("whatIsContent") ? formatContent(safeT("whatIsContent")) : "<p>Content description...</p>",
+          }}
+        />
       </section>
 
       {/* Inline CTA after first h2 section */}
@@ -49,31 +54,36 @@ export default function GenericBlogContent({
             <div className="space-y-4">
               <div className="p-4 bg-blue-50 rounded-lg">
                 <h3 className="font-semibold mb-2">{safeT("step1Title")}</h3>
-                <p>{safeT("step1Content")}</p>
+                <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: formatContent(safeT("step1Content")) }} />
               </div>
               <div className="p-4 bg-blue-50 rounded-lg">
                 <h3 className="font-semibold mb-2">{safeT("step2Title")}</h3>
-                <p>{safeT("step2Content")}</p>
+                <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: formatContent(safeT("step2Content")) }} />
               </div>
               <div className="p-4 bg-blue-50 rounded-lg">
                 <h3 className="font-semibold mb-2">{safeT("step3Title")}</h3>
-                <p>{safeT("step3Content")}</p>
+                <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: formatContent(safeT("step3Content")) }} />
               </div>
               {hasKey("step4Title") && (
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <h3 className="font-semibold mb-2">{safeT("step4Title")}</h3>
-                  <p>{safeT("step4Content")}</p>
+                  <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: formatContent(safeT("step4Content")) }} />
                 </div>
               )}
               {hasKey("step5Title") && (
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <h3 className="font-semibold mb-2">{safeT("step5Title")}</h3>
-                  <p>{safeT("step5Content")}</p>
+                  <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: formatContent(safeT("step5Content")) }} />
                 </div>
               )}
             </div>
           ) : (
-            <p className="mb-4">{hasKey("howContent") ? safeT("howContent") : "Step-by-step process..."}</p>
+            <div
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{
+                __html: hasKey("howContent") ? formatContent(safeT("howContent")) : "<p>Step-by-step process...</p>",
+              }}
+            />
           )}
         </section>
       )}
@@ -161,7 +171,12 @@ export default function GenericBlogContent({
       {(hasKey("challengesTitle") || hasKey("challengesContent")) && (
         <section>
           <h2 className="text-2xl font-bold mb-4">{hasKey("challengesTitle") ? safeT("challengesTitle") : "Technical Challenges"}</h2>
-          <p className="mb-4">{hasKey("challengesContent") ? safeT("challengesContent") : "Challenges and solutions..."}</p>
+          <div
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{
+              __html: hasKey("challengesContent") ? formatContent(safeT("challengesContent")) : "<p>Challenges and solutions...</p>",
+            }}
+          />
         </section>
       )}
 
@@ -194,7 +209,12 @@ export default function GenericBlogContent({
 
       <section>
         <h2 className="text-2xl font-bold mb-4">{hasKey("conclusionTitle") ? safeT("conclusionTitle") : "Conclusion"}</h2>
-        <p>{hasKey("conclusionContent") ? safeT("conclusionContent") : "Start your journey with AI-powered content creation tools today."}</p>
+        <div
+          className="prose prose-lg max-w-none"
+          dangerouslySetInnerHTML={{
+            __html: hasKey("conclusionContent") ? formatContent(safeT("conclusionContent")) : "<p>Start your journey with AI-powered content creation tools today.</p>",
+          }}
+        />
       </section>
     </div>
   );

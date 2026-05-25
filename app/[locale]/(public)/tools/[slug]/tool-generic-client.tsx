@@ -1,7 +1,9 @@
 // app/[locale]/(public)/tools/[slug]/tool-generic-client.tsx
 "use client";
 
-import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { useTranslations, useLocale } from "next-intl";
+import { useTracking } from "@/services/useTracking";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
 import {
   userAtom,
@@ -11,9 +13,27 @@ import {
   clientMountedAtom,
 } from "@/app/atoms/atoms";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
-import { getToolBySlug } from "@/lib/tools-registry";
+import {
+  getToolBySlug,
+  getSiblingTools,
+  TOOL_BLOG_CATEGORIES,
+} from "@/lib/tools-registry";
+import { getPersonasForTool } from "@/lib/use-cases";
 import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVideoDemo";
+import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import CreateNewModal from "../CreateNewModal";
+
+// Map the existing "deep.usecases.X" subsection keys to the persona slugs
+// they describe, so each subsection's h3 becomes a link to the matching
+// /use-cases/<persona> landing page. Wraps a static text section in a
+// cross-link without rewriting the i18n content.
+const USECASE_SECTION_TO_PERSONA: Record<string, string> = {
+  creators: "for-creators",
+  education: "for-parents",
+  business: "for-marketers",
+};
 
 export default function ToolGenericClient({ slug }: { slug: string }) {
   const tool = getToolBySlug(slug);
@@ -21,15 +41,33 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
 
   const t = useTranslations(tool.namespace);
   const tGlobal = useTranslations();
+  // Locale string needed by RelatedBlogsByCategory and (less directly) for
+  // future per-locale routing inside the linked use-case headers.
+  const locale = useLocale();
+
+  // P0 #1 interconnection data — all server-deterministic, derived from
+  // the tool slug. See docs/interconnection.md.
+  const siblingTools = getSiblingTools(slug, 3);
+  const personas = getPersonasForTool(slug);
+  const relatedBlogCategories = TOOL_BLOG_CATEGORIES[slug] ?? [];
 
   const user = useAtomValue(userAtom);
   const clientMounted = useAtomValue(clientMountedAtom);
   const setDrawer = useSetAtom(drawerAtom);
   const [, setModalState] = useAtom(modalAtom);
   const setCreateJobCtx = useSetAtom(createJobContextAtom);
+  const { trackAction } = useTracking();
 
   const handleTryItClick = () => {
     if (tool.action?.type !== "modal") return;
+
+    // Track the hero "Create" click — same tool_card content_type used
+    // by the ToolsGrid (related-tools / use-cases) and the /tools
+    // landing page so admin can fold all surfaces under one tool dim.
+    trackAction(
+      { contentId: tool.id, contentType: "tool_card", viewMode: "cards" },
+      "click",
+    );
 
     if (!user) {
       setDrawer("signin");
@@ -57,13 +95,18 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
         />
       ) : demo?.type === "single_video" ? (
         <>
+          {/* Cap at max-w-2xl (672px) and center within the wider
+              max-w-5xl main container. Demo source videos are 1080p
+              horizontal — letting them stretch to w-full at the
+              main-container width made them ~976px wide × ~549px
+              tall on desktop and dominated the page. */}
           <CdnVideo
-            className="w-full rounded-xl shadow mb-4"
+            className="w-full max-w-2xl mx-auto rounded-xl shadow mb-4"
             controls
             poster={demo.poster}
             src={demo.src}
           />
-          <p className="text-sm text-gray-500 mb-8">{t("example")}</p>
+          <p className="text-sm text-gray-500 mb-8 text-center">{t("example")}</p>
         </>
       ) : null}
 
@@ -126,22 +169,87 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
         <div className="space-y-5">
           <h2 className="text-2xl font-semibold text-[var(--c1)]">{t("deep.usecases.title")}</h2>
 
+          {/* Each subsection header is now a link to the matching
+              /use-cases/<persona> landing page so the prose "Who Uses
+              X?" block gains the same persona-fan-out the chip row
+              below adds. USECASE_SECTION_TO_PERSONA holds the mapping. */}
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-[var(--c1)]">{t("deep.usecases.creatorsTitle")}</h3>
+            <h3 className="text-lg font-semibold text-[var(--c1)]">
+              <Link
+                href={`/use-cases/${USECASE_SECTION_TO_PERSONA.creators}`}
+                className="hover:text-purple-700 hover:underline"
+              >
+                {t("deep.usecases.creatorsTitle")} →
+              </Link>
+            </h3>
             <p className="text-base">{t("deep.usecases.creatorsBody")}</p>
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-[var(--c1)]">{t("deep.usecases.educationTitle")}</h3>
+            <h3 className="text-lg font-semibold text-[var(--c1)]">
+              <Link
+                href={`/use-cases/${USECASE_SECTION_TO_PERSONA.education}`}
+                className="hover:text-purple-700 hover:underline"
+              >
+                {t("deep.usecases.educationTitle")} →
+              </Link>
+            </h3>
             <p className="text-base">{t("deep.usecases.educationBody")}</p>
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-[var(--c1)]">{t("deep.usecases.businessTitle")}</h3>
+            <h3 className="text-lg font-semibold text-[var(--c1)]">
+              <Link
+                href={`/use-cases/${USECASE_SECTION_TO_PERSONA.business}`}
+                className="hover:text-purple-700 hover:underline"
+              >
+                {t("deep.usecases.businessTitle")} →
+              </Link>
+            </h3>
             <p className="text-base">{t("deep.usecases.businessBody")}</p>
           </div>
+
+          {/* Persona chips — inverse lookup of USE_CASES[].toolSlugs (every
+              persona that lists this tool). Folded into the "Who Uses X"
+              section so the prose narrative and the chip-level fan-out
+              live as one cohesive surface instead of duplicate headings. */}
+          {personas.length > 0 && (
+            <div className="pt-4 border-t border-gray-100">
+              <UseCaseChipsRow filterTo={personas} />
+            </div>
+          )}
         </div>
       </section>
+
+      {/* P0 #1c — sibling tools in the same group. Reuses ToolsGrid in a
+          2-up layout to match the rest of the page width. */}
+      {siblingTools.length > 0 && (
+        <section className="mt-12">
+          <h2 className="mb-4 text-2xl font-semibold text-[var(--c1)]">
+            {tGlobal("interconnection.relatedTools", {
+              defaultValue: "Related tools",
+            })}
+          </h2>
+          <ToolsGrid
+            tools={siblingTools}
+            gridClassName="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          />
+        </section>
+      )}
+
+      {/* P0 #1a — related reading from the blog categories the
+          tool maps to. Renders nothing if no posts match. */}
+      {relatedBlogCategories.length > 0 && (
+        <RelatedBlogsByCategory
+          categories={relatedBlogCategories}
+          locale={locale}
+          max={3}
+          heading={tGlobal("interconnection.relatedReading", {
+            defaultValue: "Related reading",
+          })}
+        />
+      )}
+
       <CreateNewModal />
     </main>
   );

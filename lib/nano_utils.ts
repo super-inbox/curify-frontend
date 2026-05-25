@@ -15,6 +15,12 @@ export type TemplateParameter = {
 export type RawTemplate = {
   id: string;
   topics?: string | string[];
+  /** Curated editorial intent — persona slugs this template surfaces on
+   *  (e.g. ["for-creators", "for-designers"]). When present, overrides
+   *  the topic-derived fallback in getUseCasesForTopics. Optional;
+   *  ~half the catalog is currently untagged and still uses topic
+   *  derivation. */
+  use_cases?: string[];
   rank_score?: number;
   batch?: boolean;
   allow_generation?: boolean;
@@ -305,7 +311,17 @@ export function getTemplateView(
     category: "",
     description: "",
     topics: getTemplateTopics(raw),
-    use_cases: getUseCasesForTopics(getTemplateTopics(raw)),
+    // Respect the explicit `use_cases` tag in nano_templates.json when
+    // present — that's the curated editorial intent ("this template
+    // belongs on persona X's page"). Fall back to topic-derived
+    // surfacing only for untagged templates so existing coverage
+    // doesn't regress. Pre-fix, the explicit tag was parsed but
+    // silently overwritten — DTC + designer + agency + creator pages
+    // were all over-surfacing 40-100+ off-topic templates per page
+    // (e.g. template-recipe on /use-cases/for-dtc-brands).
+    use_cases: raw.use_cases?.length
+      ? raw.use_cases
+      : getUseCasesForTopics(getTemplateTopics(raw)),
     rank_score: raw.rank_score,
     batch: raw.batch,
     allow_generation: raw.allow_generation,

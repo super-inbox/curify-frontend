@@ -1,0 +1,476 @@
+#!/usr/bin/env python3
+"""One-shot search_aliases top-up driven by docs/search-quality.md item 1.
+
+Appends targeted aliases to inspiration records under specific template
+families, without disturbing existing aliases. Idempotent — re-running
+is safe (dedup-by-string).
+
+Each family is `(template_ids, aliases [, inspiration_filter])`:
+- Without `inspiration_filter`: every inspiration under the listed
+  templates gets the aliases (template-level mode — high data
+  redundancy reduction, but heterogeneous templates need careful
+  curation).
+- With `inspiration_filter`: only inspirations whose
+  `params.<field>` matches any pattern (case-insensitive substring)
+  get the aliases (inspiration-level mode — for templates where the
+  alias only fits a subset of examples).
+"""
+import json
+import re
+from collections import OrderedDict
+from pathlib import Path
+
+REPO = Path('/Users/qqwjq/curify-frontend')
+P = REPO / 'public/data/nano_inspiration.json'
+
+# Family → (template_ids, aliases to append). Aliases mix EN + ZH so
+# users in either language can find the templates. Source: the analyst
+# reports + 2026-05-18 user reports, captured in docs/search-quality.md.
+FAMILIES = OrderedDict([
+    ('mbti_country', {
+        # Tightened 2026-05-20: dropped universe-specific MBTI templates
+        # (marvel/naruto/yellowstone/ghibli/friends/breaking bad/silicon
+        # valley/nba/harry-potter/zhenhuan/princess-pearl/mbti-generic/
+        # mbti-animal/mbti-contrast/mbti-stereotype-vs-reality/
+        # mbti-relationship/chinese-classic-character-mbti/pop-culture-
+        # matching-chart/city-mbti) — those carry MBTI-within-one-universe
+        # content, not cross-cultural / global-influence content. Aliases
+        # like "global influence" were producing 232+ false-positive hits.
+        # Kept only templates whose entire content is country/cross-
+        # cultural by construction.
+        'templates': [
+            'template-east-asian-culture-comparison-infographic',
+            'template-country-top10-travel-destinations',
+            'template-country-souvenirs-watercolor',
+            'template-national-culture-history-infographic',
+        ],
+        'aliases': [
+            'global','world','international','cross-cultural','country','global influence',
+            '全球','世界','国际','跨文化','国家','全球影响力',
+        ],
+    }),
+    ('synonym_expressions', {
+        'templates': [
+            'template-native-english-expressions',
+            'template-chinese-verb-opposite-infographic',
+            'template-kids-opposite-concept-education',
+        ],
+        'aliases': [
+            'theory','linguistics','synonym','antonym','advanced expressions',
+            'one-word-many-meanings','word theory','language theory',
+            '理论','同义词','反义词','语言学','高级表达','一词多义',
+        ],
+    }),
+    ('travel_destination', {
+        'templates': [
+            'template-travel','template-city-miniature','template-series-travel',
+            'template-3d-region-landmark-map','template-whimsical-travel-map',
+            'template-historical-event-map-illustration','template-national-theme-map-infographic',
+            'template-world-travel-map-illustration','template-country-top10-travel-destinations',
+            'template-travel-packing-guide-infographic','template-vintage-travel-scrapbook-poster',
+            'template-watercolor-world-map-illustration','template-watercolor-travel-journal-collage',
+        ],
+        'aliases': [
+            'remote','destination','off-the-beaten-path','hidden gems','weekend getaway',
+            'city escape','city escapes','escapes','itinerary','remote destination',
+            '远程目的地','城市探索','隐藏景点','小众景点','短途旅行','周末游','旅行行程',
+        ],
+    }),
+    ('expat_culture', {
+        'templates': [
+            'template-east-asian-culture-comparison-infographic',
+            'template-country-top10-travel-destinations',
+            'template-country-souvenirs-watercolor',
+            'template-national-culture-history-infographic',
+            'template-pop-culture-matching-chart',
+        ],
+        'aliases': [
+            'expat','expatriate','living abroad','cross-cultural living','expat lifestyle',
+            'china expat','expat insights',
+            '外籍','海外生活','跨文化生活','在华外籍','外国人生活',
+        ],
+    }),
+    ('spring_aesthetic', {
+        # Tightened 2026-05-20: dropped template-herbal — it is medicinal
+        # botanical / scientific illustration, not aesthetic-spring vibes.
+        # Was driving 75 hits on `唯美春天` and 76 on `spring flowers`
+        # despite being off-intent (user wants watercolor / cozy / soft,
+        # not herb diagrams).
+        'templates': [
+            'template-watercolor-painting-tutorial-guide',
+            'template-multilingual-vocabulary-poster-watercolor',
+            'template-CVC-english-word-coloring-flower-card',
+            'template-country-souvenirs-watercolor',
+            'template-lifestyle-watercolor-infographic',
+            'template-gardening-how-to-infographic',
+            'template-watercolor-world-map-illustration',
+            'template-watercolor-theme-collage-illustration',
+            'template-watercolor-travel-journal-collage',
+            'template-country-top10-travel-destinations',
+        ],
+        'aliases': [
+            'spring','aesthetic','aesthetic spring','floral','flower','botanical',
+            'spring flowers','watercolor spring','soft aesthetic',
+            '春天','唯美','唯美春天','美感','花卉','植物','春日','春季','水彩春天',
+        ],
+    }),
+    ('portrait_id_photo', {
+        'templates': [
+            'template-portrait-retouching-blueprint',
+            'template-hairstyle-color-recommendation',
+            'template-lifestyle-photo-grid',
+        ],
+        'aliases': [
+            'ID photo','passport photo','headshot','professional headshot','profile photo',
+            'id photo style','retouched portrait',
+            '证件照','身份证照','护照照','头像','证件 照','职业头像','证件 风格头像',
+        ],
+    }),
+    # ---- 2026-05-19 eval-driven top-up (rewriter base->union lift > 10x
+    # or content-gap adjacency on the 28-query regression set) -----------
+    ('wedding_marriage', {
+        # Tightened 2026-05-20: dropped template-vocabulary and
+        # template-multilingual-vocabulary-poster-watercolor — those
+        # cover hundreds of topic_names beyond weddings (Numbers, Body
+        # Parts, Weather, etc.). Wedding alias now re-attached at
+        # inspiration level via wedding_marriage_insp below.
+        'templates': [
+            'template-costume',
+            'template-east-asian-culture-comparison-infographic',
+            'template-fashion-before-after-outfit-annotation-card',
+            'template-lifestyle-photo-grid',
+            'template-relationship-advice-infographic',
+            'template-celebration-illustration-poster',
+            'template-cultural-festival-poster',
+        ],
+        'aliases': [
+            'wedding','wedding planner','marriage','bride','groom','ceremony','vows',
+            'engagement','anniversary','bridal','wedding invitation','wedding card',
+            'wedding planning',
+            '婚礼','结婚','婚纱','新娘','新郎','婚庆','婚礼策划','婚礼请柬','周年纪念','订婚',
+        ],
+    }),
+    ('antonym_chinese', {
+        # Tightened 2026-05-20: dropped template-mbti-contrast — that
+        # template shows MBTI personality opposites (introvert vs
+        # extrovert), which is loose-coupled to LINGUISTIC antonyms.
+        # 27 false-positive hits on `反义词` per the relevance audit.
+        'templates': [
+            'template-chinese-verb-opposite-infographic',
+            'template-kids-opposite-concept-education',
+            'template-language-word-comparison-educational-poster',
+            'template-english-word-difference-infographic',
+            'template-emotion-vs-emotion-illustration',
+        ],
+        'aliases': [
+            'antonym','antonyms','opposite','opposites','contrast pair','contrasting words',
+            'word contrast','bilingual antonym','english chinese opposite',
+            '反义','反义词','对比','反义中英','中英对照','中英对比','反义词卡','对比 词',
+        ],
+    }),
+    ('animal_vocab_crosslingual', {
+        # Tightened 2026-05-20: dropped template-vocabulary — too
+        # heterogeneous. Animal-themed vocab examples now matched via
+        # animal_vocab_insp inspiration-level filter below.
+        'templates': [
+            'template-species',
+            'template-species-science',
+            'template-dog-breed-retro-infographic',
+            'template-mbti-animal',
+            'template-cartoon-english-vocabulary-flashcards',
+            'template-children-english-vocab-spelling',
+            'template-detailed-vocab-flashcard',
+            'template-group-vocab-category',
+            'template-stick-figure-vocab',
+            'template-bilingual-object-structure-labeling',
+            'template-kids-vocabulary-poster',
+            'template-pet-care-guide',
+            'template-pet-safe-human-food-infographic',
+        ],
+        'aliases': [
+            'animal vocabulary','animal vocab','animal words','animal flashcards','animal names',
+            'animals bilingual','animals english chinese','animal terms','animal kingdom',
+            '动物词汇','动物 词汇','动物 单词','动物 词卡','动物名称','动物 双语','物种 词汇',
+        ],
+    }),
+    ('expression_phrase', {
+        # `language learning expressions` lifted 10 to 186 (19x). Templates
+        # already tagged `expressions` but their alias index is thin on
+        # the words a user actually types ("phrase", "idiom", "习语").
+        'templates': [
+            'template-english-top5-phrases',
+            'template-english-dialogue-scene',
+            'template-native-english-expressions',
+            'template-english-phrasal-verb',
+            'template-chinese-idiom-learning-card',
+        ],
+        'aliases': [
+            'expression','expressions','phrase','phrases','idiom','idioms','slang',
+            'native expressions','common phrases','daily expressions','everyday expressions',
+            'language learning expressions','phrasal verb','phrasal verbs',
+            '表达','短语','日常表达','常用表达','地道表达','习语','谚语','俚语','短语动词',
+        ],
+    }),
+    ('english_chinese_bilingual', {
+        # Tightened 2026-05-20: dropped template-vocabulary,
+        # template-detailed-vocab-flashcard, template-language-word-
+        # comparison-educational-poster, template-english-word-
+        # difference-infographic, template-multilingual-vocabulary-
+        # poster-watercolor — these templates carry many language pairs.
+        # En-zh examples now matched via english_chinese_insp
+        # inspiration-level filter (language_pair = en-zh).
+        'templates': [
+            'template-chinese-classic-character-mbti',
+            'template-bilingual-object-structure-labeling',
+            'template-chinese-character-learning-poster',
+            'template-chinese-verb-opposite-infographic',
+            'template-chinese-idiom-learning-card',
+            'template-chinese-radical-learning',
+            'template-cuisine-food-vocab-poster',
+        ],
+        'aliases': [
+            'english-chinese','english chinese','chinese english','chinese-english',
+            'en-zh','zh-en','bilingual english chinese','bilingual chinese english',
+            '中英','中英对照','中英 双语','英汉','汉英','双语','双语对照','en zh','zh en',
+        ],
+    }),
+    ('handcraft_diy_scrapbook', {
+        # Tightened 2026-05-20: dropped template-multilingual-vocabulary-
+        # poster-watercolor — it is vocab-rendered-in-watercolor, not
+        # handcraft content. Handcraft alias now re-attached at
+        # inspiration level via handcraft_scrapbook_insp below for the
+        # few vocab examples whose topic_name actually mentions craft /
+        # journal / scrapbook.
+        'templates': [
+            'template-vintage-travel-scrapbook-poster',
+            'template-watercolor-theme-collage-illustration',
+            'template-watercolor-travel-journal-collage',
+            'template-watercolor-painting-tutorial-guide',
+            'template-watercolor-world-map-illustration',
+            'template-lifestyle-watercolor-infographic',
+        ],
+        'aliases': [
+            'handcraft','handmade','hand-crafted','diy','diy craft','crafting','crafts',
+            'scrapbook','scrapbooks','scrapbooking','collage craft','journal craft',
+            'art journal','watercolor crafting','craft tutorial',
+            '手作','手工','手工艺','手工制作','拼贴','剪贴簿','手帐','手作 教程','手工 拼贴',
+        ],
+    }),
+    ('world_cuisines_comfort_food', {
+        # `creative comfort food` stayed thin (2 hits) even with rewriter.
+        # Adjacent-template gap closure: alias the world-cuisines /
+        # recipe template set with the comfort-food vocabulary.
+        'templates': [
+            'template-cuisine-food-vocab-poster',
+            'template-food',
+            'template-recipe',
+            'template-fruit',
+            'template-varieties-food-poster',
+            'template-premium-recipe-card-infographic',
+            'template-nutrition-food-guide-poster',
+            'template-anatomy-cut-guide',
+            'template-organ-health-food-guide-infographic',
+        ],
+        'aliases': [
+            'comfort food','creative comfort food','world cuisines','world cuisine',
+            'regional cuisine','traditional cuisine','traditional dish','signature dish',
+            'family recipe','home cooking','soul food','street food','national cuisine',
+            'cuisine guide','recipe inspiration',
+            '家常菜','美食','世界美食','各国美食','招牌菜','传统菜','慰藉美食','街头美食','家常 食谱',
+        ],
+    }),
+    ('paper_cutting_kirigami', {
+        # Tightened 2026-05-20: dropped template-clothing-evolution-
+        # poster — it is fashion / culture history, not paper-cutting.
+        # 17 false-positive hits on `paper cutting` per audit.
+        'templates': [
+            'template-intangible-heritage',
+            'template-cultural-relic-retro-infographic',
+            'template-guofeng-scroll',
+            'template-solar-term',
+            'template-east-asian-culture-comparison-infographic',
+            'template-national-culture-history-infographic',
+        ],
+        'aliases': [
+            'paper cutting','papercraft','paper craft','paper art','jianzhi','kirigami',
+            'origami','paper folding','traditional paper art','chinese paper cutting',
+            'decorative paper','paper silhouette','paper stencil',
+            '剪纸','折纸','纸艺','中国剪纸','纸雕','纸工艺','传统剪纸','纸艺 装饰',
+        ],
+    }),
+    ('fashion_red_carpet', {
+        # `met gala` stayed at 1 hit. Existing fashion templates cover
+        # outfit / styling but never alias the red-carpet / gala /
+        # couture vocabulary that the gsc-zero query uses.
+        'templates': [
+            'template-fashion-ecommerce',
+            'template-fashion-before-after-outfit-annotation-card',
+            'template-fashion-inspired-gown-design-sheet',
+            'template-personal-fashion-outfit-style-variations',
+            'template-ai-outfit-try-on-poster',
+            'template-clothing-evolution-poster',
+            'template-ethnic-costume-deconstruction-board',
+            'template-lifestyle-photo-grid',
+            'template-portrait-retouching-blueprint',
+            'template-hairstyle-color-recommendation',
+        ],
+        'aliases': [
+            'red carpet','met gala','gala','runway','fashion show','couture','haute couture',
+            'evening gown','ball gown','celebrity fashion','awards show','oscars',
+            'oscars red carpet','met gala outfit','formal wear','black tie',
+            '红毯','时装秀','礼服','晚礼服','高定','时尚晚会','颁奖典礼','明星红毯','奥斯卡','met 红毯',
+        ],
+    }),
+    # ---- 2026-05-20 inspiration-level top-up. Counterpart to the
+    # prune_search_aliases.py pass that removed these aliases from the
+    # over-broad parent templates. Here we re-attach the aliases only on
+    # inspirations whose params.topic_name actually matches the alias
+    # intent. -----------------------------------------------------------
+    ('wedding_marriage_insp', {
+        'templates': [
+            'template-vocabulary',
+            'template-multilingual-vocabulary-poster-watercolor',
+        ],
+        'inspiration_filter': {
+            'field': 'params.topic_name',
+            'patterns': [
+                'wedding','marriage','bride','bridal','ceremony','婚礼','结婚','婚纱','新娘',
+            ],
+        },
+        'aliases': [
+            'wedding','wedding planner','marriage','bride','groom','ceremony','vows',
+            'engagement','anniversary','bridal','wedding invitation','wedding card',
+            'wedding planning',
+            '婚礼','结婚','婚纱','新娘','新郎','婚庆','婚礼策划','婚礼请柬','周年纪念','订婚',
+        ],
+    }),
+    ('animal_vocab_insp', {
+        'templates': ['template-vocabulary'],
+        'inspiration_filter': {
+            'field': 'params.topic_name',
+            'patterns': [
+                'animal','pet','dog','cat','bird','farm','forest','ocean','butterfly',
+                'caterpillar','wildlife','insect','reptile','mammal','fish',
+                '动物','宠物','野生',
+            ],
+        },
+        'aliases': [
+            'animal vocabulary','animal vocab','animal words','animal flashcards','animal names',
+            'animals bilingual','animals english chinese','animal terms','animal kingdom',
+            '动物词汇','动物 词汇','动物 单词','动物 词卡','动物名称','动物 双语','物种 词汇',
+        ],
+    }),
+    ('english_chinese_insp', {
+        'templates': [
+            'template-vocabulary',
+            'template-multilingual-vocabulary-poster-watercolor',
+        ],
+        'inspiration_filter': {
+            'field': 'params.language_pair',
+            'patterns': ['en-zh','zh-en'],
+        },
+        'aliases': [
+            'english-chinese','english chinese','chinese english','chinese-english',
+            'en-zh','zh-en','bilingual english chinese','bilingual chinese english',
+            '中英','中英对照','中英 双语','英汉','汉英','双语','双语对照','en zh','zh en',
+        ],
+    }),
+    ('handcraft_scrapbook_insp', {
+        # Vocab cards generally aren't handcraft, but a few specifically
+        # cover crafting / scrapbook / journal as their topic_name.
+        'templates': [
+            'template-vocabulary',
+            'template-multilingual-vocabulary-poster-watercolor',
+        ],
+        'inspiration_filter': {
+            'field': 'params.topic_name',
+            'patterns': [
+                'craft','handmade','scrapbook','journal','collage','diy',
+                '手作','手工','手帐','拼贴','剪贴',
+            ],
+        },
+        'aliases': [
+            'handcraft','handmade','hand-crafted','diy','diy craft','crafting','crafts',
+            'scrapbook','scrapbooks','scrapbooking','collage craft','journal craft',
+            'art journal','watercolor crafting','craft tutorial',
+            '手作','手工','手工艺','手工制作','拼贴','剪贴簿','手帐','手作 教程','手工 拼贴',
+        ],
+    }),
+])
+
+
+def _inspiration_matches_filter(rec: dict, flt: dict) -> bool:
+    """Check whether an inspiration's field contains any of the filter patterns.
+
+    flt is a dict with `field` (dotted path into the record, e.g.
+    'params.topic_name') and `patterns` (list of case-insensitive
+    substrings — match if any one appears in the field value). When the
+    field is missing or empty, the record does NOT match.
+    """
+    parts = flt['field'].split('.')
+    val = rec
+    for p in parts:
+        if not isinstance(val, dict):
+            return False
+        val = val.get(p)
+        if val is None:
+            return False
+    val_lc = str(val).lower()
+    return any(pat.lower() in val_lc for pat in flt['patterns'])
+
+
+def main():
+    data = json.loads(P.read_text(encoding='utf-8'))
+
+    # Build two passes:
+    #   template_level: tid -> set(aliases)              # applies to every record under tid
+    #   inspiration_level: list of (templates, filter, aliases)  # filtered per-record
+    template_level: dict[str, set[str]] = {}
+    inspiration_level: list[tuple[set[str], dict, set[str]]] = []
+    for fam in FAMILIES.values():
+        flt = fam.get('inspiration_filter')
+        alias_set = set(fam['aliases'])
+        if flt is None:
+            for tid in fam['templates']:
+                template_level.setdefault(tid, set()).update(alias_set)
+        else:
+            inspiration_level.append((set(fam['templates']), flt, alias_set))
+
+    total_added = 0
+    touched_records = 0
+    per_template_counts: dict[str, int] = {}
+    for rec in data:
+        tid = rec.get('template_id')
+        existing = set(rec.get('search_aliases') or [])
+        new: set[str] = set()
+
+        # Template-level aliases
+        if tid in template_level:
+            new.update(template_level[tid] - existing)
+
+        # Inspiration-level aliases
+        for templates, flt, alias_set in inspiration_level:
+            if tid not in templates:
+                continue
+            if not _inspiration_matches_filter(rec, flt):
+                continue
+            new.update(alias_set - existing - new)
+
+        if not new:
+            continue
+        rec['search_aliases'] = list(rec.get('search_aliases') or []) + sorted(new)
+        total_added += len(new)
+        touched_records += 1
+        per_template_counts[tid] = per_template_counts.get(tid, 0) + 1
+
+    P.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    print(f'Touched {touched_records} inspirations across {len(per_template_counts)} templates')
+    print(f'Total alias entries added (deduped): {total_added}')
+    print()
+    print('Per-template inspiration counts:')
+    for tid in sorted(per_template_counts, key=lambda x: -per_template_counts[x]):
+        print(f'  {tid:<60s} {per_template_counts[tid]}')
+
+
+if __name__ == '__main__':
+    main()

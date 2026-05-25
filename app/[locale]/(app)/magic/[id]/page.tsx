@@ -1,6 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
 import Loading from "../Loading";
@@ -10,6 +11,7 @@ import { ProjectStatus } from "@/types/projects";
 export default function Magic() {
   const router = useRouter();
   const { id, locale } = useParams();
+  const t = useTranslations("magic.errors");
 
   const projectId = id as string;
   const localeStr = Array.isArray(locale) ? locale[0] : locale;
@@ -80,7 +82,14 @@ export default function Magic() {
         }
 
         if (projectStatus === "FAILED") {
-          setError("Translation failed. Please try again.");
+          const code = statusRes?.failure_code;
+          if (code && t.has(code)) {
+            setError(t(code));
+          } else if (statusRes?.failure_reason) {
+            setError(statusRes.failure_reason);
+          } else {
+            setError(t("default"));
+          }
           return;
         }
 

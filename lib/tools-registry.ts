@@ -162,6 +162,33 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Demo-only SEO landing — no backend pipeline yet. The blog post
+    // /blog/video-enhancement already drives search traffic in this
+    // capability space; the tool page closes the loop with a visible
+    // before/after demo (oil_crisis_original.mp4 vs oil_crisis_enhanced.mp4).
+    id: "video-enhance",
+    slug: "video-enhance",
+    groupId: "video",
+    status: "demo",
+    job_type: "video_transcript",
+    namespace: "videoEnhance",
+    action: { type: "page" },
+    i18n: toolKeys("video_enhance"),
+    seo: seoKeys("video_enhance"),
+    demo: {
+      // Reusing the language-switch demo as a "before/after" toggle —
+      // arbitrary labels + emoji "flags". Default to enhanced so the
+      // wow-factor lands first.
+      type: "language_switch",
+      defaultLang: "enhanced",
+      languages: {
+        enhanced: { flag: "✨", video: "/video/oil_crisis_enhanced.mp4", label: "Enhanced" },
+        original: { flag: "🎞️", video: "/video/oil_crisis_original.mp4", label: "Original" },
+      },
+    },
+  },
+
+  {
     id: "storyboard-generator",
     slug: "storyboard-generator",
     groupId: "video",
@@ -190,27 +217,39 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Demo-only SEO landing — no backend pipeline yet. Pre-built demo
+    // clip migrated from the old /tools "Upcoming products" strip.
     id: "manga-translation",
     slug: "manga-translation",
     groupId: "image",
-    status: "coming_soon",
+    status: "demo",
     job_type: "srt_translator",
     namespace: "mangaTranslation",
-    action: { type: "none" },
+    action: { type: "page" },
     i18n: toolKeys("manga_translation"),
     seo: seoKeys("manga_translation"),
+    demo: {
+      type: "single_video",
+      src: "/video/demo_mangaTranslation.mp4",
+    },
   },
 
   {
+    // Demo-only SEO landing — no backend pipeline yet. Pre-built demo
+    // clip migrated from the old /tools "Upcoming products" strip.
     id: "style-transfer",
     slug: "style-transfer",
     groupId: "image",
-    status: "coming_soon",
+    status: "demo",
     job_type: "srt_translator",
     namespace: "styleTransfer",
-    action: { type: "none" },
+    action: { type: "page" },
     i18n: toolKeys("style_transfer"),
     seo: seoKeys("style_transfer"),
+    demo: {
+      type: "single_video",
+      src: "/video/demo_styleTransfer.mp4",
+    },
   },
 
   // =======================
@@ -259,3 +298,38 @@ export function groupTools(): Record<ToolGroupId, ToolDef[]> {
     { video: [], image: [], audio: [] } as Record<ToolGroupId, ToolDef[]>
   );
 }
+
+/** Same-group sibling tools (excluding the current one and any coming-soon
+ *  entries). Powers the "Related tools" block on each tool detail page. */
+export function getSiblingTools(slug: string, max = 3): ToolDef[] {
+  const current = getToolBySlug(slug);
+  if (!current) return [];
+  return TOOL_REGISTRY
+    .filter(
+      (t) =>
+        t.slug !== slug &&
+        t.groupId === current.groupId &&
+        t.status !== "coming_soon"
+    )
+    .slice(0, max);
+}
+
+// Tool slug → blog categories to surface as "Related reading" on each
+// tool detail page. Source of truth: docs/interconnection.md (Tool slug
+// → Blog categories table). Keep in sync when adding a new tool.
+export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
+  "video-dubbing":               ["video-translation-dubbing", "video-dubbing"],
+  "bilingual-subtitles":         ["video-translation-dubbing", "creator-tools"],
+  "voice-clone":                 ["video-translation-dubbing"],
+  "speech-translator":           ["video-translation-dubbing"],
+  "video-transcript-generator":  ["creator-tools", "video-translation-dubbing"],
+  "youtube-subtitle-downloader": ["creator-tools", "video-translation-dubbing"],
+  "video-subtitle-extractor":    ["creator-tools", "video-translation-dubbing"],
+  "translate-subtitles":         ["video-translation-dubbing"],
+  "video-summarizer":            ["creator-tools"],
+  "video-enhance":               ["creator-tools", "video-translation-dubbing"],
+  "storyboard-generator":        ["creator-tools"],
+  "image-translation":           ["video-translation-dubbing", "creator-tools"],
+  "manga-translation":           ["video-translation-dubbing"],
+  "style-transfer":              ["creator-tools", "nano-template"],
+};

@@ -15,7 +15,13 @@ import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import { nanoRegistry } from "@/lib/nano_utils";
 import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import { tsToSc } from "@/lib/zh_normalize";
+import { rewriteQuery } from "@/lib/searchRewrite";
 import SearchResultsClient from "./SearchResultsClient";
+
+// Threshold below which we trigger the LLM rewrite path. Matches the
+// client-side LOW_RESULT_THRESHOLD in SearchResultsClient so the tracking
+// boundary stays consistent.
+const LOW_RESULT_THRESHOLD = 3;
 
 // Build once per request — small enough to recompute, big enough we don't want
 // to do it inside the inspiration loop.
@@ -102,6 +108,28 @@ function buildSearchTokens(query: string): {
     .split(/[\s,，、。.:：=·\/|()\[\]+*]+/)
     .map((w) => w.trim())
     .filter((w) => w && !STOPWORDS.has(w));
+
+  // English plural stem: single ASCII primary token ending in `s` gets
+  // singularized so `snakes` matches records tagged `snake`. Conservative
+  // suffix guard skips already-singular forms (`-ss`, `-us`, `-is`, `-os`,
+  // `-as`) so we don't mangle `boss`, `lens`, `analysis`, `chaos`, `bias`.
+  // Handles three plural shapes: `-ies` → `-y` (stories → story); `-es`
+  // after sibilants (sx/ch/sh/zz) → strip `-es` (boxes → box, wishes →
+  // wish); else strip `-s`. A literal-plural record would be missed, but
+  // in practice tags lean singular for findability.
+  if (primary.length === 1) {
+    let t = primary[0];
+    if (/^[a-z]+s$/.test(t) && t.length >= 4 && !/(ss|us|is|os|as)$/.test(t)) {
+      if (/[bcdfghjklmnpqrtvwz]ies$/.test(t) && t.length >= 5) {
+        t = t.slice(0, -3) + "y";
+      } else if (/(ches|shes|xes|zzes)$/.test(t) && t.length >= 5) {
+        t = t.slice(0, -2);
+      } else {
+        t = t.slice(0, -1);
+      }
+      primary[0] = t;
+    }
+  }
 
   const bigrams: string[] = [];
   if (
@@ -227,28 +255,11 @@ export default async function SearchPage({ params, searchParams }: Props) {
       );
     }
   }
-  // Two-pass match: strict-AND on primary tokens first (preserves
-  // precision for queries like "spain travel"). If that finds zero
-  // templates, fall back to relaxed-OR — require ⌈N/2⌉ primary tokens to
-  // be present, which catches multi-concept queries where no single blob
-  // contains every word ("3x3 grid collage", "the psychology of self
-  // discipline", "动物 词汇"). CJK bigram path stays as the fuzzy fallback
-  // for unsegmented queries.
-  const bigramThreshold = bigramHitThreshold(tokens.bigrams.length);
-  const relaxedThreshold = relaxedPrimaryThreshold(tokens.primary.length);
-
-  const strictTemplateMatches = new Set<string>();
-  const relaxedTemplateMatches = new Set<string>();
-  for (const [tid, blob] of templateSearchBlob) {
-    const s = scoreBlob(blob, tokens);
-    if (s.allPrimary || s.bigramHits >= bigramThreshold) {
-      strictTemplateMatches.add(tid);
-    } else if (s.primaryHits >= relaxedThreshold && relaxedThreshold > 0) {
-      relaxedTemplateMatches.add(tid);
-    }
-  }
-  const matchedTemplateIdsByI18n =
-    strictTemplateMatches.size > 0 ? strictTemplateMatches : relaxedTemplateMatches;
+  // Two-pass match (strict-AND on primary tokens, then relaxed-OR with a
+  // ⌈N/2⌉ threshold, with CJK bigram fallback for unsegmented queries) +
+  // strict/relaxed inspiration bucketing are all folded into the
+  // scoreQueryTokens helper below. We call it once for the original
+  // tokens and once per LLM rewrite, then merge by inspiration id.
 
   // Topic slug match → go straight to the topic page (reuses all existing
   // infrastructure). Exact match first; if nothing exact, fall back to a
@@ -324,48 +335,170 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // Surface strict alone if it's non-empty (precision); otherwise fall
   // back to the relaxed pool. Mirrors the template-i18n two-pass.
   type ScoredInspiration = { rec: InspRecord; score: number; strict: boolean };
-  const allScored: ScoredInspiration[] = [];
-  for (const r of nanoInspiration as InspRecord[]) {
-    // Only auto-elevate child inspirations when the parent template was
-    // matched via STRICT i18n (every primary token / enough bigrams).
-    // Auto-elevating under relaxed-template matches floods results when a
-    // common short token (e.g. "met") substring-matches many template
-    // blobs — every child inspiration gets force-promoted to score 100
-    // and the precise hit gets drowned out. Inspirations under
-    // relaxed-template matches still get scored on their own blob below.
-    if (strictTemplateMatches.has(r.template_id)) {
-      allScored.push({ rec: r, score: 100, strict: true });
-      continue;
+
+  // Inner scorer extracted so the LLM-rewrite path below can call it
+  // again per rewrite without duplicating the strict/relaxed two-pass.
+  // Returns { scored, strictTplMatches, matchedTplIdsByI18n } for the
+  // given tokens — caller merges across multiple calls when needed.
+  //
+  // `promoteAllUnderStrictTpl`:
+  //   - true  (default for the original-query pass): when a template's
+  //     blob strict-matches, ALL its inspirations are promoted to
+  //     score=100 strict. Gives broad recall: a query like "character"
+  //     that matches template-mbti-marvel's blob surfaces every Marvel
+  //     MBTI inspiration even if the literal token isn't in each one.
+  //   - false (for rewrite-pass scoring): inspirations must match the
+  //     query tokens IN THEIR OWN BLOB to be promoted. Stops a rewrite
+  //     like "watercolor flowers" from surfacing every inspiration
+  //     under a watercolor template, regardless of whether the specific
+  //     instance depicts flowers. Precision over recall — the right
+  //     trade for the rewrite path, because the rewrite is already a
+  //     reach beyond the original query.
+  function scoreQueryTokens(
+    tokens: ReturnType<typeof buildSearchTokens>,
+    promoteAllUnderStrictTpl: boolean = true,
+  ) {
+    const bigramThr = bigramHitThreshold(tokens.bigrams.length);
+    const relaxedThr = relaxedPrimaryThreshold(tokens.primary.length);
+
+    const strictTpl = new Set<string>();
+    const relaxedTpl = new Set<string>();
+    for (const [tid, blob] of templateSearchBlob) {
+      const s = scoreBlob(blob, tokens);
+      if (s.allPrimary || s.bigramHits >= bigramThr) {
+        strictTpl.add(tid);
+      } else if (s.primaryHits >= relaxedThr && relaxedThr > 0) {
+        relaxedTpl.add(tid);
+      }
     }
-    const localeFields = Object.values(r.locales ?? {}).flatMap((l) => [
-      l?.title,
-      l?.category,
-    ]);
-    const blob = normalizeForSearch(
-      [
-        r.id,
-        r.template_id,
-        ...(r.tags ?? []),
-        ...(r.search_aliases ?? []),
-        ...Object.values(r.params ?? {}),
-        ...localeFields,
-      ]
-        .filter((v): v is string => typeof v === "string" && v.length > 0)
-        .join(" ")
-    );
-    const s = scoreBlob(blob, tokens);
-    if (s.allPrimary || s.bigramHits >= bigramThreshold) {
-      allScored.push({ rec: r, score: s.primaryHits + s.bigramHits, strict: true });
-    } else if (s.primaryHits >= relaxedThreshold && relaxedThreshold > 0) {
-      allScored.push({ rec: r, score: s.primaryHits, strict: false });
+    const tplByI18n = strictTpl.size > 0 ? strictTpl : relaxedTpl;
+
+    const scored: ScoredInspiration[] = [];
+    // Pre-compute query-token set for the compound-noun guard below.
+    const queryTokenSet = new Set(tokens.primary);
+    for (const r of nanoInspiration as InspRecord[]) {
+      if (promoteAllUnderStrictTpl && strictTpl.has(r.template_id)) {
+        scored.push({ rec: r, score: 100, strict: true });
+        continue;
+      }
+      const localeFields = Object.values(r.locales ?? {}).flatMap((l) => [
+        l?.title,
+        l?.category,
+      ]);
+      const blob = normalizeForSearch(
+        [
+          r.id,
+          r.template_id,
+          ...(r.tags ?? []),
+          ...(r.search_aliases ?? []),
+          ...Object.values(r.params ?? {}),
+          ...localeFields,
+        ]
+          .filter((v): v is string => typeof v === "string" && v.length > 0)
+          .join(" ")
+      );
+      const s = scoreBlob(blob, tokens);
+      // Compound-noun precision guard: a single-token ASCII query that hits
+      // an inspiration ONLY because the token is one word inside a multi-word
+      // param value (e.g. `snake` matching `plant_name: "snake plant"`) gets
+      // demoted to relaxed unless the topical fields (template_id, tags,
+      // search_aliases) also carry the token. Phrase-collision matches are
+      // the main precision bug for short single-word queries against
+      // param-rich templates (houseplants, fashion, food).
+      let demoteToRelaxed = false;
+      if ((s.allPrimary || s.bigramHits >= bigramThr) && !strictTpl.has(r.template_id)) {
+        const topicalBlob = normalizeForSearch(
+          [r.template_id, ...(r.tags ?? []), ...(r.search_aliases ?? [])]
+            .filter((v): v is string => typeof v === "string" && v.length > 0)
+            .join(" ")
+        );
+        const topicalScore = scoreBlob(topicalBlob, tokens);
+        const topicalStrict =
+          topicalScore.allPrimary || topicalScore.bigramHits >= bigramThr;
+        if (!topicalStrict) {
+          // Topical fields don't carry the query — check whether any param
+          // value matches as a whole phrase (its tokens are a subset of the
+          // query tokens). Query "snake plant" vs param "snake plant" → ok;
+          // query "snake" vs param "snake plant" → demote.
+          let paramWholePhrase = false;
+          for (const pv of Object.values(r.params ?? {})) {
+            if (typeof pv !== "string" || !pv) continue;
+            const pvTokens = normalizeForSearch(pv).split(/\s+/).filter(Boolean);
+            if (pvTokens.length === 0) continue;
+            if (pvTokens.every((tok) => queryTokenSet.has(tok))) {
+              paramWholePhrase = true;
+              break;
+            }
+          }
+          if (!paramWholePhrase) demoteToRelaxed = true;
+        }
+      }
+      if ((s.allPrimary || s.bigramHits >= bigramThr) && !demoteToRelaxed) {
+        scored.push({ rec: r, score: s.primaryHits + s.bigramHits, strict: true });
+      } else if (s.primaryHits >= relaxedThr && relaxedThr > 0) {
+        scored.push({ rec: r, score: s.primaryHits, strict: false });
+      }
+    }
+    return { scored, strictTpl, tplByI18n };
+  }
+
+  let baseResult = scoreQueryTokens(tokens);
+  // Track the union of strict-template matches (any pass) and the union
+  // of i18n-template matches (any pass) — drives matchedTemplates below.
+  let strictTemplateMatchesUnion = new Set(baseResult.strictTpl);
+  let matchedTemplateIdsByI18nUnion = new Set(baseResult.tplByI18n);
+  // Initial inspirations + post-rewrite merge target. The merge uses a
+  // by-id map so the highest score per record wins across passes.
+  const inspirationById = new Map<string, ScoredInspiration>();
+  for (const s of baseResult.scored) inspirationById.set(s.rec.id, s);
+
+  // LLM query rewrite — only when the original query returned thin
+  // results (< LOW_RESULT_THRESHOLD across all surfaces). Each rewrite is
+  // re-scored against the catalog; results are unioned with the originals
+  // and the same precision/relaxed gating applies. We do NOT redirect to
+  // a topic page even if a rewrite happens to match one — that would
+  // override the user's intent. See lib/searchRewrite.ts for the prompt
+  // + cache + failure-mode contract.
+  let usedRewrites: string[] = [];
+  const initialThinCount =
+    baseResult.scored.filter((s) => s.strict).length +
+    matchedTemplateIdsByI18nUnion.size;
+  if (initialThinCount < LOW_RESULT_THRESHOLD && query.length >= 2) {
+    const rewrites = await rewriteQuery(query);
+    if (rewrites.length > 0) {
+      for (const rw of rewrites) {
+        const rwTokens = buildSearchTokens(rw);
+        // Inspiration-level matching only for rewrites — see the
+        // promoteAllUnderStrictTpl=false branch in scoreQueryTokens.
+        // Stops "watercolor flowers" from auto-promoting every
+        // inspiration under any watercolor template.
+        const rwResult = scoreQueryTokens(rwTokens, false);
+        for (const id of rwResult.strictTpl) strictTemplateMatchesUnion.add(id);
+        for (const id of rwResult.tplByI18n) matchedTemplateIdsByI18nUnion.add(id);
+        for (const s of rwResult.scored) {
+          const prev = inspirationById.get(s.rec.id);
+          // Keep the max score per record across passes; promote strict
+          // if any pass saw it as strict so the strict-filter below
+          // doesn't drop a rewrite hit just because the original was
+          // relaxed.
+          if (!prev || s.score > prev.score || (s.strict && !prev.strict)) {
+            inspirationById.set(s.rec.id, s);
+          }
+        }
+      }
+      usedRewrites = rewrites;
     }
   }
+
+  const allScored = Array.from(inspirationById.values());
   const hasStrict = allScored.some((x) => x.strict);
   const inspirations = allScored
     .filter((x) => (hasStrict ? x.strict : true))
     .sort((a, b) => b.score - a.score)
     .slice(0, 80)
     .map((x) => x.rec);
+  const strictTemplateMatches = strictTemplateMatchesUnion;
+  const matchedTemplateIdsByI18n = matchedTemplateIdsByI18nUnion;
 
   // Related queries: aggregate Tier-2/3 topics across matched templates,
   // sort by frequency, fall back to popular Tier-2 if nothing matched.
@@ -406,21 +539,55 @@ export default async function SearchPage({ params, searchParams }: Props) {
     strictLocale: false,
     translate: translateNano,
   });
-  const matchedTemplates = allFeedCards.filter((c) =>
-    matchedTemplateIdsAll.has(c.template_id)
-  );
+  // For each template card, prefer the inspiration(s) that actually matched
+  // the query as the preview image — instead of buildNanoFeedCards default
+  // of the first inspirations by rank order. Makes "what surfaced" visible
+  // at a glance and lets the click prefill the form with the matched
+  // inspiration's params via sample_parameters.
+  const matchedInspsByTemplate = new Map<string, InspRecord[]>();
+  for (const r of inspirations) {
+    const existing = matchedInspsByTemplate.get(r.template_id);
+    if (existing) existing.push(r);
+    else matchedInspsByTemplate.set(r.template_id, [r]);
+  }
+  const matchedTemplates = allFeedCards
+    .filter((c) => matchedTemplateIdsAll.has(c.template_id))
+    .map((c) => {
+      const matched = matchedInspsByTemplate.get(c.template_id);
+      if (!matched || matched.length === 0) return c;
+      const top = matched.slice(0, 2);
+      return {
+        ...c,
+        image_urls: top.map((r) => r.asset.image_url),
+        preview_image_urls: top.map((r) => r.asset.preview_image_url ?? r.asset.image_url),
+        sample_parameters: (top[0]?.params as Record<string, unknown>) ?? c.sample_parameters,
+      };
+    });
 
   // Gallery prompts: fetch from Redis when the query exactly matches a
   // known nano-banana tag. Free-text queries skip this — we don't have
-  // a full-text search over gallery prompts yet.
+  // a full-text search over gallery prompts yet. When the original
+  // query doesn't match a tag but one of the LLM rewrites does (e.g.
+  // user typed `唯美春天`, rewrite produced `watercolor` which IS a
+  // known tag), fetch for the first matching rewrite.
   let galleryPrompts: NanoPromptBase[] = [];
-  if (NANO_PROMPT_TAG_SET.has(query)) {
+  const galleryTagCandidates = [query, ...usedRewrites.map((r) => r.toLowerCase().trim())];
+  for (const candidate of galleryTagCandidates) {
+    if (!NANO_PROMPT_TAG_SET.has(candidate)) continue;
     try {
-      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(query, {
-        limit: 12,
+      // Fetch 3x the visible cap so the post-filter has room to drop
+      // revealing-imagery prompts (marked with `revealing-female` by
+      // scripts/tag_revealing_female.py) while still landing on ~12
+      // family-friendly results.
+      const raw = await nanoPromptsService.getNanoPromptsByTag(candidate, {
+        limit: 36,
       });
+      galleryPrompts = raw
+        .filter((p) => !(p.tags ?? []).includes("revealing-female"))
+        .slice(0, 12);
+      if (galleryPrompts.length > 0) break;
     } catch (err) {
-      console.error("Failed to fetch gallery prompts for tag", query, err);
+      console.error("Failed to fetch gallery prompts for tag", candidate, err);
     }
   }
 
@@ -432,6 +599,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
       relatedTopics={relatedTopics}
       matchedTemplates={matchedTemplates}
       galleryPrompts={galleryPrompts}
+      usedRewrites={usedRewrites}
     />
   );
 }
