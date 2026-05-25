@@ -7,6 +7,7 @@ import { nanoPromptsService } from '@/services/nanoPrompts';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
 import { toOgLocale } from '@/lib/locale_utils';
 import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
+import { POPULAR_GALLERY_TAGS, POPULAR_TAG_ROW_LIMIT } from '@/lib/popular_tags';
 
 export const runtime = 'nodejs';
 
@@ -103,6 +104,22 @@ export default async function NanoBananaProPromptsPage({
     error = err instanceof Error ? err.message : 'Failed to load prompts';
   }
 
+  // Fetch a small thumbnail row for each hardcoded popular tag in parallel.
+  // Per-row errors are swallowed so one tag failing does not blank the page.
+  const popularTagRows = await Promise.all(
+    POPULAR_GALLERY_TAGS.map(async (tag) => {
+      try {
+        const prompts = await nanoPromptsService.getNanoPromptsByTag(tag, {
+          limit: POPULAR_TAG_ROW_LIMIT,
+        });
+        return { tag, prompts };
+      } catch (err) {
+        console.error(`Error loading popular-tag row for ${tag}:`, err);
+        return { tag, prompts: [] as NanoPromptBase[] };
+      }
+    }),
+  );
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -144,6 +161,7 @@ export default async function NanoBananaProPromptsPage({
           category: t.tag,
           count: t.count,
         }))}
+        popularTagRows={popularTagRows}
       />
     </>
   );
