@@ -3,7 +3,6 @@ const path = require("path");
 
 const INPUT_PATH = path.join(__dirname, "../public/data/nano_templates.json");
 const OUTPUT_JSON_PATH = path.join(__dirname, "../public/data/nano_templates.json");
-const OUTPUT_MAP_PATH = path.join(__dirname, "../public/data/template_topic_map.json");
 const BACKUP_PATH = path.join(__dirname, "../public/data/nano_templates.backup.json");
 
 /**
@@ -164,21 +163,12 @@ function main() {
     };
   });
 
-  const templateTopicMap = Object.entries(TEMPLATE_TOPIC_ID_MAP)
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([id, topic_ids]) => ({
-      id,
-      topic_ids,
-      topics: topic_ids.map((t) => TOPIC_ID_TO_TOPIC_FIELD[t])
-    }));
-
   writeJson(OUTPUT_JSON_PATH, updatedTemplates);
-  writeJson(OUTPUT_MAP_PATH, templateTopicMap);
 
+  const mappedCount = Object.keys(TEMPLATE_TOPIC_ID_MAP).length;
   console.log(`Updated: ${OUTPUT_JSON_PATH}`);
-  console.log(`Wrote map: ${OUTPUT_MAP_PATH}`);
   console.log(`Backup: ${BACKUP_PATH}`);
-  console.log(`Mapped templates: ${templateTopicMap.length}`);
+  console.log(`Mapped templates: ${mappedCount}`);
   console.log(`Unmapped templates: ${missingMappings.length}`);
 }
 
