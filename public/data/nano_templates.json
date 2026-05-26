@@ -8487,7 +8487,8 @@
       "for-creators",
       "for-publishers",
       "for-parents"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-historical-evolution-timeline-infographic",
@@ -8525,7 +8526,8 @@
       "for-creators",
       "for-publishers",
       "for-parents"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-generation-comparison-infographic",
@@ -8564,7 +8566,8 @@
       "for-creators",
       "for-publishers",
       "for-marketers"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-tourist-spot-watercolor-map-infographic",
@@ -8603,7 +8606,8 @@
       "for-creators",
       "for-publishers",
       "for-marketers"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-dual-character-comparison-infographic",
@@ -8642,6 +8646,165 @@
       "for-creators",
       "for-publishers",
       "for-parents"
-    ]
+    ],
+    "allow_generation": true
+  },
+  {
+    "id": "template-best-cities-travel-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Best Cities Travel Infographic Creator) Create a vintage-style travel infographic poster titled '{topic}'. Layout: A header with criteria icons, followed by 5 city profile sections, each featuring the city name, country flag, key details, local illustration, and scenic images. Style: Warm vintage travel poster aesthetic, sepia-toned accents, bold typography, hand-drawn icons, direct high-quality image generation. Subject: '{topic} travel infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Travel City Guide Topic",
+            "type": "text",
+            "placeholder": [
+              "Best Cities for Digital Nomads",
+              "Best Cities for Outdoor Adventures",
+              "Best Cities for Food Enthusiasts",
+              "Best Cities for Coffee Lovers",
+              "Best Cities for Culture Lovers",
+              "Best Cities for Budget Travelers"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-best-cities-travel-infographic-coffee-lovers-prev.jpg",
+    "topics": [
+      "travel",
+      "city",
+      "guides",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-26",
+    "use_cases": [
+      "for-creators",
+      "for-marketers",
+      "for-publishers"
+    ],
+    "allow_generation": true
+  },
+  {
+    "id": "template-self-care-illustration-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Self-Care Illustration Poster Creator) Create a dreamy, cozy self-care poster titled '{topic}'. Layout: A collection of hand-drawn watercolor-style illustrations showing different self-care activities, each labeled with a short title. Add a decorative background with stars, flowers, or sparkles, and a large title at the top. Style: Whimsical watercolor illustration style, soft pastel color palette, gentle texture, handwritten-style text, warm and calming atmosphere, direct high-quality image generation. Subject: '{topic} self-care guide poster'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Self-Care Topic",
+            "type": "text",
+            "placeholder": [
+              "Night Time Routine Self-Care",
+              "Sick Day Self-Care",
+              "Ways to Boost Energy",
+              "Self-Care for Depression",
+              "Instant Mood Boosters",
+              "Low-Spend Self-Care"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-self-care-illustration-poster-depression-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "mood",
+      "guides",
+      "posters",
+      "watercolor"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-26",
+    "use_cases": [
+      "for-creators",
+      "for-publishers",
+      "for-parents"
+    ],
+    "allow_generation": true
+  },
+  {
+    "id": "template-top10-visual-guide-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Top 10 Visual Guide Infographic Creator) Create an elegant educational infographic poster titled '{topic}'. Layout: A 2-column grid of 10 entries, each with a number, title, short description, and matching illustration (fashion styles, travel destinations, yoga poses). Add decorative borders, icons, and a motivational footer. Style: Luxurious gold-accented aesthetic, clean typography, vintage or minimalist illustrations, direct high-quality image generation. Subject: '{topic} visual guide infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Visual Guide Topic",
+            "type": "text",
+            "placeholder": [
+              "Top 10 Fashion Styles",
+              "Top 10 Travel Destinations",
+              "Top 10 Yoga Poses",
+              "Top 10 Book Genres",
+              "Top 10 Coffee Drinks",
+              "Top 10 Workout Routines"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-top10-visual-guide-infographic-fashion-styles-prev.jpg",
+    "topics": [
+      "learning",
+      "guides",
+      "posters",
+      "composition"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-26",
+    "use_cases": [
+      "for-creators",
+      "for-publishers",
+      "for-marketers"
+    ],
+    "allow_generation": true
+  },
+  {
+    "id": "template-dessert-color-lab-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Dessert Color Lab Infographic Creator) Create an elegant dessert-themed infographic titled '{topic}'. Layout: A 3x3 grid of dessert items, each displayed against a color-coordinated background, with the dessert name below each image. Add a main title, subtitle keywords, and a small 'No.' label at the top. Style: Clean minimalist aesthetic, matching pastel/rich color palettes for each theme, high-quality food photography, classic serif typography, direct high-quality image generation. Subject: '{topic} dessert color lab infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Dessert Color Theme",
+            "type": "text",
+            "placeholder": [
+              "Golden Winter Glow Desserts",
+              "Fresh Green Serene Desserts",
+              "Serene Blue Desserts",
+              "Vibrant Red Passion Desserts",
+              "Mystic Purple Desserts",
+              "Soft Pink Romantic Desserts"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-dessert-color-lab-infographic-mystic-purple-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "food",
+      "design",
+      "posters",
+      "composition"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-26",
+    "use_cases": [
+      "for-creators",
+      "for-marketers",
+      "for-designers"
+    ],
+    "allow_generation": true
   }
 ]

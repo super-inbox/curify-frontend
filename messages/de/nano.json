@@ -4251,5 +4251,85 @@
         ]
       }
     }
+  },
+  "template-best-cities-travel-infographic": {
+    "category": "Beste Städte Reise-Infografik",
+    "description": "Vintage-Stil 5-Städte Reise-Infografik, die Ziele nach einem gewählten Thema bewertet – digitale Nomaden, Outdoor-Abenteuer, Feinschmecker, Kaffeeliebhaber, Kultur, Budgetreisen.",
+    "title": "Beste Städte Reise Bildungs-Infografik",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein Vintage-Stil Reise-Infografik-Poster, das die 5 besten Städte für ein gewähltes Thema bewertet. Layout: Kopfzeile mit Themenkriterien-Icons + 5 Stadtprofilabschnitte, jeweils mit Stadtname, Landesflagge, wichtigen Details, lokaler Illustration und malerischem Bild. Warme, gedämpfte Farbpalette, klassische Typografie, Museumsposter-Gefühl.",
+        "who": "Geeignet für Reiseblogger, Slow-Travel-Inhaltsersteller, Stadt-Tourismusbehörden, Lifestyle-Publisher, Newsletter-Autoren für digitale Nomaden und Ersteller, die SEO-Inhalte zur Zielbewertung produzieren.",
+        "how": [
+          "Wählen Sie ein Stadtführer-Thema (Beste Städte für digitale Nomaden, Beste Städte für Outdoor-Abenteuer, Beste Städte für Feinschmecker, Beste Städte für Kaffeeliebhaber, Beste Städte für Kulturinteressierte, Beste Städte für Budgetreisende).",
+          "Generieren Sie die 5-Städte Reise-Infografik."
+        ],
+        "prompts": [
+          "Generieren Sie eine Reise-Infografik für die besten Städte für digitale Nomaden.",
+          "Erstellen Sie ein Reise-Poster für die besten Städte für Feinschmecker.",
+          "Generieren Sie eine Reise-Infografik für die besten Städte für Kaffeeliebhaber."
+        ]
+      }
+    }
+  },
+  "template-self-care-illustration-poster": {
+    "category": "Selbstpflege Illustrationsposter",
+    "description": "Traumhaftes Aquarell-Poster von Selbstpflege-Aktivitäten – nächtliche Routine, Krankentage, Energiebooster, Unterstützung bei Depressionen, Stimmungsaufheller – mit handgezeichneten Vignetten und einem dekorativen sternen-/blumigen Hintergrund.",
+    "title": "Selbstpflege Illustrationsposter",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein gemütliches Aquarell-Stil Selbstpflege-Poster zu einem gewählten Thema. Layout: eine Sammlung von handgezeichneten Aquarell-Vignetten, die verschiedene Selbstpflege-Aktivitäten zeigen, jeweils mit einem kurzen Titel beschriftet, auf einem traumhaften dekorativen Hintergrund mit Sternen, Blumen und sanften Pastellwaschungen.",
+        "who": "Geeignet für Wellness-Blogger, Verlage für psychische Gesundheit, Inhaltsersteller für Therapie/Coaching, Eltern-Blogger und Social-Media-Konten, die ästhetische Selbstpflege-Inhalte produzieren.",
+        "how": [
+          "Wählen Sie ein Selbstpflege-Thema (Nächtliche Routine Selbstpflege, Krankentag Selbstpflege, Möglichkeiten zur Energiesteigerung, Selbstpflege bei Depressionen, Sofortige Stimmungsaufheller, Günstige Selbstpflege).",
+          "Generieren Sie das Aquarell Selbstpflege-Poster."
+        ],
+        "prompts": [
+          "Generieren Sie ein Illustrationsposter zur nächtlichen Routine Selbstpflege.",
+          "Erstellen Sie ein Aquarell-Poster zur Selbstpflege bei Depressionen.",
+          "Generieren Sie eine Selbstpflege-Illustration für sofortige Stimmungsaufheller."
+        ]
+      }
+    }
+  },
+  "template-top10-visual-guide-infographic": {
+    "category": "Top 10 Visual Guide Infografik",
+    "description": "Elegante 2-Spalten 10-Einträge Infografik für SEO-Inhalte mit Ranglisten – Mode-Stile, Reiseziele, Yoga-Posen, Buchgenres, Kaffeegetränke, Workout-Routinen – jeweils mit nummerierter Illustration + kurzer Beschreibung.",
+    "title": "Top 10 Visual Guide Bildungs-Infografik",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine elegante Bildungs-Infografik zu einer Top-10-Liste. Layout: 2-Spalten-Gitter mit 10 Einträgen, jeweils mit einer Nummer, Titel, kurzer Beschreibung und passender Illustration. Saubere Typografie, dekorative Ränder, Galerie-Poster-Ästhetik. Entwickelt für den SEO-Inhaltscluster von Listenartikeln.",
+        "who": "Geeignet für Lifestyle-Blogger, Inhaltsersteller, die Top-10-Listen erstellen, Marketing-Teams, Social-Media-Manager, E-Commerce-Inhaltsschreiber und Verlage, die SEO-Artikel mit Ranglisten veröffentlichen.",
+        "how": [
+          "Wählen Sie ein Top-10-Thema (Top 10 Mode-Stile, Top 10 Reiseziele, Top 10 Yoga-Posen, Top 10 Buchgenres, Top 10 Kaffeegetränke, Top 10 Workout-Routinen).",
+          "Generieren Sie die Top-10 Visual Guide Infografik."
+        ],
+        "prompts": [
+          "Generieren Sie eine Infografik für die Top 10 Yoga-Posen.",
+          "Erstellen Sie ein Poster für die Top 10 Reiseziele.",
+          "Generieren Sie eine Infografik für die Top 10 Kaffeegetränke."
+        ]
+      }
+    }
+  },
+  "template-dessert-color-lab-infographic": {
+    "category": "Dessert Farb-Labor Infografik",
+    "description": "Elegantes 3x3 Dessert-Gitter, farblich abgestimmt auf das Thema – goldener Winterglanz, frisches grünes Serenity, lebendige rote Leidenschaft, mystisches Lila, sanftes rosa Romantik. Entwickelt für Food-Styling und ästhetische Rezept-SEO-Inhalte.",
+    "title": "Dessert Farb-Labor Bildungsinfografik",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine elegante 3x3 Dessert-Gitter-Infografik. Jedes Dessert wird vor einem farblich abgestimmten Hintergrund angezeigt, der auf das gewählte Thema abgestimmt ist; die Dessertnamen stehen unter jedem Bild. Haupttitel + Untertitel-Keywords + dekorative Mikro-Elemente verleihen ihm ein redaktionelles Food-Magazin-Feeling.",
+        "who": "Geeignet für Food-Blogger, Dessert-/Bäckerei-Inhaltsersteller, Marketingteams von Konditoreien, Lifestyle-/ästhetische Inhaltsersteller und Pinterest-/Instagram-first-Verlage.",
+        "how": [
+          "Wählen Sie ein Dessertfarbthema (Goldener Winterglanz Desserts, Frisches Grünes Serenity Desserts, Ruhiges Blau Desserts, Lebendige Rote Leidenschaft Desserts, Mystisches Lila Desserts, Sanftes Rosa Romantik Desserts).",
+          "Generieren Sie die 3x3 Dessert Farb-Labor Infografik."
+        ],
+        "prompts": [
+          "Generieren Sie eine Goldener Winterglanz Desserts Farb-Labor Infografik.",
+          "Erstellen Sie ein Sanftes Rosa Romantik Desserts visuelles Gitterposter.",
+          "Generieren Sie ein Lebendige Rote Leidenschaft Desserts Dessert Farb-Labor."
+        ]
+      }
+    }
   }
 }
