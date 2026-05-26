@@ -147,11 +147,10 @@ const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
     },
   ],
   // B2B sales-narrative posts shaped like engineering deep-dives — readers
-  // come with buyer intent (EdTech / Publisher / Agency / ProgSEO). The
-  // category default (now content-automation for the first two, still
-  // ds-ai-engineering for the third) routes to /contact + Calendly OR
-  // MentorCruise + /contact, neither of which is the conversion path
-  // we built. Override each to its matching /use-cases/for-* page +
+  // come with buyer intent (EdTech / Publisher / Agency / DTC / ProgSEO).
+  // Category defaults (content-automation → /contact + Calendly; or
+  // ds-ai-engineering → MentorCruise + /contact) aren't the conversion
+  // path we built. Override each to its matching /use-cases/for-* page +
   // Calendly direct so buyer-intent traffic gets the landing page that
   // sells the pitch.
   "multimodal-ai-educational-publishing": [
@@ -206,6 +205,25 @@ const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
       label: "Book a 15-min audit",
       description:
         "Direct calendar — pipeline review of your existing SEO content stack, no demo.",
+      href: CALENDLY,
+      external: true,
+      Icon: Calendar,
+    },
+  ],
+  "programmatic-seo-dtc-visual-first": [
+    {
+      id: "use-cases-for-dtc-brands",
+      label: "DTC brands playbook",
+      description:
+        "1 product photo → 100 scene variants, SMM-scheduled. The buyer-side build of the programmatic-SEO engine this post walks through.",
+      href: "/use-cases/for-dtc-brands",
+      Icon: MessageCircle,
+    },
+    {
+      id: "calendly-15min",
+      label: "Book a 15-min audit",
+      description:
+        "Direct calendar — map your existing landing-page stack to where the visual-first engine bundles in.",
       href: CALENDLY,
       external: true,
       Icon: Calendar,
