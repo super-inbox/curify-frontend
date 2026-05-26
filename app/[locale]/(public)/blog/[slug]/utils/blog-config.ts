@@ -62,7 +62,8 @@ export function createBlogPostsConfig() {
       'ai-engineering-hard-truth': 'aiEngineeringHardTruth',
       'ai-content-factory-for-agencies': 'aiContentFactoryForAgencies',
       'multimodal-ai-educational-publishing': 'multimodalAiEducationalPublishing',
-      'programmatic-seo-dtc-visual-first': 'programmaticSeoDtcVisualFirst'
+      'programmatic-seo-dtc-visual-first': 'programmaticSeoDtcVisualFirst',
+      'self-improving-multimodal-search': 'selfImprovingMultimodalSearch'
     };
     
     namespace = namespaceMap[slug] || namespace;
@@ -159,5 +160,6 @@ export const availableKeys: Record<string, string[]> = {
   'aiEngineeringHardTruth': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'aiContentFactoryForAgencies': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'multimodalAiEducationalPublishing': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
-  'programmaticSeoDtcVisualFirst': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords']
+  'programmaticSeoDtcVisualFirst': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
+  'selfImprovingMultimodalSearch': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords']
 };
