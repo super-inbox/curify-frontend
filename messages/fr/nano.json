@@ -4151,5 +4151,105 @@
         ]
       }
     }
+  },
+  "template-evolution-timeline-infographic": {
+    "category": "Infographie de la Chronologie de l'Évolution",
+    "description": "Infographie chronologique de style vintage retraçant l'évolution d'un objet — vélos, téléphones, voitures, caméras, ordinateurs, avions — avec des illustrations numérotées reliées par un motif de chaîne.",
+    "title": "Infographie Éducative de la Chronologie de l'Évolution",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche infographique éducative de style vintage autour d'une évolution chronologique. Mise en page : une chronologie d'illustrations numérotées pour chaque étape de l'évolution du sujet, connectées par des motifs de chaînes, avec des dates de période et des légendes courtes. Palette sépia chaude, typographie serif classique, ambiance d'affiche de musée — conçu pour ancrer le contenu éducatif SEO.",
+        "who": "Convient aux éducateurs en histoire, équipes de contenu de musées, communicateurs scientifiques, éditeurs EdTech, créateurs de programmes scolaires à domicile et blogs technologiques publiant du contenu rétrospectif.",
+        "how": [
+          "Choisissez un sujet d'évolution (Évolution des Vélos, Évolution des Téléphones, Évolution des Voitures, Évolution des Caméras, Évolution des Ordinateurs, Évolution des Avions).",
+          "Générez l'infographie de la chronologie."
+        ],
+        "prompts": [
+          "Générez une infographie de la chronologie de l'Évolution des Vélos.",
+          "Créez une affiche éducative sur l'Évolution des Caméras.",
+          "Générez une infographie chronologique de l'Évolution des Téléphones."
+        ]
+      }
+    }
+  },
+  "template-historical-evolution-timeline-infographic": {
+    "category": "Infographie de la Chronologie de l'Évolution Historique",
+    "description": "Chronologie horizontale détaillée retraçant l'évolution historique des concepts culturels — datation, mode, communication, musique, transport, technologie — avec des illustrations spécifiques à chaque période et des étiquettes d'époque.",
+    "title": "Infographie Éducative de la Chronologie de l'Évolution Historique",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative détaillée autour de l'évolution historique d'un concept culturel. Mise en page de chronologie horizontale avec des illustrations spécifiques à chaque période, descriptions, étiquettes d'époque et notes de contexte culturel par étape. Plus riche en détails éditoriaux que la Chronologie de l'Évolution axée sur les objets ; mieux adaptée aux sujets doux comme la mode ou la datation.",
+        "who": "Convient aux éducateurs en histoire, éditeurs de journalisme culturel, blogueurs en sociologie / culture pop, créateurs de programmes scolaires et créateurs produisant du contenu rétrospectif long.",
+        "how": [
+          "Choisissez un sujet d'évolution historique (Évolution de la Datation, Évolution de la Mode, Évolution de la Communication, Évolution de la Musique, Évolution du Transport, Évolution de la Technologie).",
+          "Générez l'infographie de la chronologie historique."
+        ],
+        "prompts": [
+          "Générez une infographie de la chronologie historique de l'Évolution de la Mode.",
+          "Créez une affiche éducative sur l'Évolution de la Communication.",
+          "Générez une infographie historique de l'Évolution de la Datation."
+        ]
+      }
+    }
+  },
+  "template-generation-comparison-infographic": {
+    "category": "Infographie de Comparaison de Générations",
+    "description": "Infographie au format vertical comparant les époques ou générations — Boomers vs Millennials, générations de consoles de jeux, époques de genres musicaux — avec des illustrations représentatives, des plages d'années et des descriptions de traits clés.",
+    "title": "Infographie Éducative de Comparaison de Générations",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie de comparaison verticale autour des générations ou des époques. Chaque génération a sa propre colonne avec une illustration représentative, une plage d'années, des traits clés et une signature visuelle. Idéal pour le contenu SEO axé sur la nostalgie (habitudes de travail de la Génération Z vs Millénaire, guerres de consoles, comparaisons de décennies de mode).",
+        "who": "Convient aux créateurs de contenu produisant des comparaisons générationnelles, éditeurs de commentaires sociaux, blogueurs en jeux / technologie / mode, équipes marketing ciblant la segmentation par cohortes d'âge et éditeurs de style de vie.",
+        "how": [
+          "Choisissez un sujet de comparaison (Générations de Personnes, Évolution des Styles de Travail, Histoire de la Technologie de Communication, Époques de Genres Musicaux, Évolution des Tendances de Mode, Générations de Consoles de Jeux).",
+          "Générez l'infographie de comparaison de générations."
+        ],
+        "prompts": [
+          "Générez une infographie de comparaison des Générations de Consoles de Jeux.",
+          "Créez une affiche de comparaison verticale des Époques de Genres Musicaux.",
+          "Générez une comparaison de générations sur l'Évolution des Styles de Travail."
+        ]
+      }
+    }
+  },
+  "template-tourist-spot-watercolor-map-infographic": {
+    "category": "Infographie de carte aquarelle des lieux touristiques",
+    "description": "Charmante carte aquarelle illustrée pour une visite guidée ou un itinéraire — boucle à vélo de Central Park, promenade dans le vieux Kyoto, monuments de Paris, trésors cachés de Rome — avec des vignettes de localisation dessinées à la main le long d'un chemin sinueux.",
+    "title": "Infographie éducative de carte aquarelle des lieux touristiques",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie de carte illustrée en aquarelle pour une visite guidée ou un itinéraire. Un chemin sinueux relie des vignettes aquarelle dessinées à la main de lieux ou scènes clés. Palette pastel douce, contours délicats, esthétique de journal de voyage — conçu pour ancrer le contenu SEO d'itinéraire de voyage et les souvenirs de voyage imprimables.",
+        "who": "Convient aux blogueurs de voyage, créateurs de contenu de voyage lent, offices de tourisme urbains, éditeurs d'itinéraires de voyage, équipes de marketing d'hospitalité et créateurs produisant des souvenirs de voyage imprimables.",
+        "how": [
+          "Choisissez un sujet de visite ou de carte (Points forts de la visite à vélo de Central Park, Visite à pied du vieux Kyoto, Monuments historiques de Paris, Trésors cachés de Rome, Visite des canaux d'Amsterdam, Sentiers de randonnée dans le parc national de Banff).",
+          "Générez l'infographie de la carte aquarelle."
+        ],
+        "prompts": [
+          "Générez une infographie de carte aquarelle de la visite à pied du vieux Kyoto.",
+          "Créez une carte de voyage illustrée des trésors cachés de Rome.",
+          "Générez une carte aquarelle des points forts de la visite à vélo de Central Park."
+        ]
+      }
+    }
+  },
+  "template-dual-character-comparison-infographic": {
+    "category": "Infographie de comparaison de personnages doubles",
+    "description": "Infographie amusante de comparaison en écran partagé entre deux types de personnages — Papa vs Maman, Amateur de chats vs Amateur de chiens, Introverti vs Extraverti, Télétravail vs Bureau — avec des vignettes par personnage côte à côte.",
+    "title": "Infographie de comparaison de personnages doubles",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie de comparaison en écran partagé relatable. Deux colonnes verticales, chacune dédiée à un type de personnage avec plusieurs vignettes illustrées de moments représentatifs. Conçu pour le cluster de contenu SEO quotidien — parentalité, style de vie, travail, possession d'animaux de compagnie.",
+        "who": "Convient aux blogueurs sur la parentalité, créateurs de contenu de style de vie, comptes de mèmes sur les réseaux sociaux, éditeurs de coachs relationnels, éditeurs de style de vie produisant du contenu côte à côte relatable.",
+        "how": [
+          "Choisissez un sujet de comparaison (Moments de parentalité Papa vs Maman, Vie d'Amateur de chats vs Amateur de chiens, Week-end Introverti vs Extraverti, Habitudes de lève-tôt vs Noctambule, Télétravail vs Vie de bureau, Préparation de repas Végétalien vs Omnivore).",
+          "Générez l'infographie de comparaison de personnages doubles."
+        ],
+        "prompts": [
+          "Générez une infographie de comparaison des moments de parentalité Papa vs Maman.",
+          "Créez une affiche Vie d'Amateur de chats vs Amateur de chiens.",
+          "Générez une infographie de comparaison Week-end Introverti vs Extraverti."
+        ]
+      }
+    }
   }
 }

@@ -8451,5 +8451,197 @@
       "for-publishers"
     ],
     "allow_generation": true
+  },
+  {
+    "id": "template-evolution-timeline-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Evolution Timeline Infographic Creator) Create a vintage-style educational infographic poster titled '{topic}'. Layout: A chronological timeline layout showing the evolution of a subject, with numbered illustrations of each stage, connected by chain/arrow lines. Each stage includes a name, year, and country flag. Style: Retro sepia-toned illustration style, hand-drawn line art, warm aged paper texture, classic serif typography, direct high-quality image generation. Subject: '{topic} evolution timeline infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Evolution Topic",
+            "type": "text",
+            "placeholder": [
+              "Evolution of Bicycles",
+              "Evolution of Phones",
+              "Evolution of Cars",
+              "Evolution of Cameras",
+              "Evolution of Computers",
+              "Evolution of Airplanes"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-evolution-timeline-infographic-bicycles-prev.jpg",
+    "topics": [
+      "learning",
+      "history",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-26",
+    "use_cases": [
+      "for-creators",
+      "for-publishers",
+      "for-parents"
+    ]
+  },
+  {
+    "id": "template-historical-evolution-timeline-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Historical Evolution Timeline Infographic Creator) Create a detailed educational infographic titled '{topic}'. Layout: A horizontal timeline format showing stages of evolution, with period-specific illustrations, descriptions, era labels, and cultural icons. Include arrows connecting each stage to show progression from past to present. Style: Retro cartoon illustration style, warm vintage color palette, clear section dividers, direct high-quality image generation. Subject: '{topic} evolution timeline infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Evolution Topic",
+            "type": "text",
+            "placeholder": [
+              "Evolution of Dating",
+              "Evolution of Fashion",
+              "Evolution of Communication",
+              "Evolution of Music",
+              "Evolution of Transportation",
+              "Evolution of Technology"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-historical-evolution-timeline-infographic-romance-culture-prev.jpg",
+    "topics": [
+      "learning",
+      "history",
+      "culture",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-26",
+    "use_cases": [
+      "for-creators",
+      "for-publishers",
+      "for-parents"
+    ]
+  },
+  {
+    "id": "template-generation-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Generation Comparison Infographic Creator) Create an educational infographic poster titled '{topic}'. Layout: A vertical layout showcasing different generations/eras, each with a representative illustration, year range, and key traits description. Add a bold title at the top. Style: Clean modern aesthetic, realistic character illustrations, clear typography, neutral background, direct high-quality image generation. Subject: '{topic} comparison infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Comparison Topic",
+            "type": "text",
+            "placeholder": [
+              "Generations of People",
+              "Evolution of Work Styles",
+              "History of Communication Tech",
+              "Music Genre Eras",
+              "Evolution of Fashion Trends",
+              "Generations of Gaming Consoles"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-generation-comparison-infographic-demographic-generations-prev.jpg",
+    "topics": [
+      "learning",
+      "nostalgia",
+      "lifestyle",
+      "posters",
+      "composition"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-26",
+    "use_cases": [
+      "for-creators",
+      "for-publishers",
+      "for-marketers"
+    ]
+  },
+  {
+    "id": "template-tourist-spot-watercolor-map-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Tourist Spot Watercolor Map Infographic Creator) Create a charming illustrated map infographic titled '{topic}'. Layout: A winding path representing a guided tour or route, with hand-drawn watercolor illustrations of key locations/scenes along the way, each paired with a title and short description. Add theme-appropriate decorative elements (like bikes, leaves, boats, or city skyline silhouettes). Style: Whimsical watercolor illustration style, soft pastel colors, vintage travel poster aesthetic, clean typography, direct high-quality image generation. Subject: '{topic} illustrated map infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Tour/Map Topic",
+            "type": "text",
+            "placeholder": [
+              "Highlights of Central Park Bike Tour",
+              "Walking Tour of Old Town Kyoto",
+              "Historic Landmarks of Paris",
+              "Hidden Gems of Rome",
+              "Canal Tour of Amsterdam",
+              "Hiking Trails in Banff National Park"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-tourist-spot-watercolor-map-infographic-central-park-prev.jpg",
+    "topics": [
+      "travel",
+      "itinerary",
+      "design",
+      "posters",
+      "watercolor"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-26",
+    "use_cases": [
+      "for-creators",
+      "for-publishers",
+      "for-marketers"
+    ]
+  },
+  {
+    "id": "template-dual-character-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Dual Character Comparison Infographic Creator) Create a fun, relatable comparison infographic titled '{topic}'. Layout: Split-screen format with two vertical columns, each dedicated to one character type (e.g., Dad vs Mom). Each column includes multiple illustrated scenes (playtime, mealtime, mess, bedtime) with short captions describing their style. Add a bold title, a central 'VS' graphic, and a heartfelt footer message. Style: Warm, playful cartoon art style, distinct color palettes for each character, bold typography, clear section dividers, direct high-quality image generation. Subject: '{topic} comparison infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Comparison Topic",
+            "type": "text",
+            "placeholder": [
+              "Dad vs Mom Parenting Moments",
+              "Cat Person vs Dog Person Life",
+              "Introvert vs Extrovert Weekend",
+              "Early Bird vs Night Owl Habits",
+              "Work From Home vs Office Life",
+              "Vegan vs Omnivore Meal Prep"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-dual-character-comparison-infographic-dad-vs-mom-prev.jpg",
+    "topics": [
+      "character",
+      "comparison",
+      "lifestyle",
+      "posters",
+      "composition"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-05-26",
+    "use_cases": [
+      "for-creators",
+      "for-publishers",
+      "for-parents"
+    ]
   }
 ]

@@ -4151,5 +4151,105 @@
         ]
       }
     }
+  },
+  "template-evolution-timeline-infographic": {
+    "category": "Evrim Zaman Çizgisi İnfografiği",
+    "description": "Nesnelerin evrimini takip eden, numaralı illüstrasyonlarla zincir motifiyle bağlantılı vintage tarzı kronolojik zaman çizgisi infografiği — bisikletler, telefonlar, arabalar, kameralar, bilgisayarlar, uçaklar.",
+    "title": "Evrim Zaman Çizgisi Eğitim İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, kronolojik bir evrim etrafında vintage tarzı bir eğitim infografiği posteri oluşturur. Düzen: konunun evriminin her aşaması için numaralı illüstrasyonların zaman çizgisi, zincir bağlantı motifleriyle bağlı, dönem tarihleri ve kısa başlıklarla. Sıcak sepya paleti, klasik serif tipografi, müze posteri hissi — eğitim SEO içeriğini desteklemek için tasarlandı.",
+        "who": "Tarih eğitmenleri, müze içerik ekipleri, bilim iletişimcileri, EdTech yayıncıları, evde eğitim müfredatı oluşturucuları ve retrospektif içerik yayınlayan teknoloji blogları için uygundur.",
+        "how": [
+          "Bir evrim konusu seçin (Bisikletlerin Evrimi, Telefonların Evrimi, Arabaların Evrimi, Kameraların Evrimi, Bilgisayarların Evrimi, Uçakların Evrimi).",
+          "Zaman çizgisi infografiğini oluşturun."
+        ],
+        "prompts": [
+          "Bir Bisikletlerin Evrimi zaman çizgisi infografiği oluşturun.",
+          "Bir Kameraların Evrimi eğitim posteri oluşturun.",
+          "Bir Telefonların Evrimi kronolojik infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-historical-evolution-timeline-infographic": {
+    "category": "Tarihsel Evrim Zaman Çizgisi İnfografiği",
+    "description": "Dönemlere özgü illüstrasyonlar ve dönem etiketleri ile kültürel kavramların tarihsel evrimini izleyen detaylı yatay zaman çizgisi.",
+    "title": "Tarihsel Evrim Zaman Çizgisi Eğitim İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir kültürel kavramın tarihsel evrimi etrafında detaylı bir eğitim infografiği oluşturur. Dönemlere özgü illüstrasyonlar, açıklamalar, dönem etiketleri ve her aşama için kültürel bağlam notları ile yatay zaman çizgisi düzeni. Nesne odaklı Evrim Zaman Çizgisi'nden daha zengin editoryal detay; moda veya flört gibi yumuşak konular için daha iyi.",
+        "who": "Tarih eğitmenleri, kültürel gazetecilik yayıncıları, sosyoloji / pop-kültür blog yazarları, okul müfredatı oluşturucuları ve retrospektif uzun biçim içerik üreten yaratıcılar için uygundur.",
+        "how": [
+          "Bir tarihsel evrim konusu seçin (Flörtün Evrimi, Modanın Evrimi, İletişimin Evrimi, Müziğin Evrimi, Taşımacılığın Evrimi, Teknolojinin Evrimi).",
+          "Tarihsel zaman çizgisi infografiğini oluşturun."
+        ],
+        "prompts": [
+          "Bir Modanın Evrimi tarihsel zaman çizgisi infografiği oluşturun.",
+          "Bir İletişimin Evrimi eğitim posteri oluşturun.",
+          "Bir Flörtün Evrimi tarihsel infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-generation-comparison-infographic": {
+    "category": "Nesil Karşılaştırma İnfografiği",
+    "description": "Dönemleri veya nesilleri karşılaştıran dikey formatta infografik — Baby Boomer'lar ile Y kuşağı, oyun konsolu nesilleri, müzik türü dönemleri — temsilci illüstrasyonlar, yıl aralıkları ve ana özellik açıklamaları ile.",
+    "title": "Nesil Karşılaştırma Eğitim İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, nesiller veya dönemler etrafında dikey bir karşılaştırma infografiği oluşturur. Her nesil, temsilci bir illüstrasyon, yıl aralığı, ana özellikler ve görsel imza ile kendi sütununu alır. Nostalji odaklı SEO içeriği için idealdir (Gen Z ile Y kuşağı iş alışkanlıkları, konsol savaşları, moda on yıllık karşılaştırmaları).",
+        "who": "Nesil karşılaştırmaları üreten içerik oluşturucular, sosyal yorum yayıncıları, oyun / teknoloji / moda blog yazarları, yaş grubu segmentasyonu hedefleyen pazarlama ekipleri ve yaşam tarzı yayıncıları için uygundur.",
+        "how": [
+          "Bir karşılaştırma konusu seçin (İnsan Nesilleri, Çalışma Tarzlarının Evrimi, İletişim Teknolojisinin Tarihi, Müzik Türü Dönemleri, Moda Trendlerinin Evrimi, Oyun Konsolu Nesilleri).",
+          "Nesil karşılaştırma infografiğini oluşturun."
+        ],
+        "prompts": [
+          "Bir Oyun Konsolu Nesilleri karşılaştırma infografiği oluşturun.",
+          "Bir Müzik Türü Dönemleri dikey karşılaştırma posteri oluşturun.",
+          "Bir Çalışma Tarzlarının Evrimi nesil karşılaştırması oluşturun."
+        ]
+      }
+    }
+  },
+  "template-tourist-spot-watercolor-map-infographic": {
+    "category": "Turistik Nokta Sulu Boya Harita Bilgilendirme Grafiği",
+    "description": "Rehberli bir tur veya rota için şirin bir şekilde illüstre edilmiş sulu boya harita — Central Park bisiklet turu, Kyoto Eski Şehir yürüyüşü, Paris simgeleri, Roma gizli hazineleri — kıvrımlı bir yol boyunca el çizimi konum vinyetleri ile.",
+    "title": "Turistik Nokta Sulu Boya Harita Eğitici Bilgilendirme Grafiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, rehberli bir tur veya rota için sulu boya ile illüstre edilmiş bir harita bilgilendirme grafiği oluşturur. Kıvrımlı bir yol, ana konumların veya sahnelerin el çizimi sulu boya vinyetlerini bağlar. Yumuşak pastel palet, nazik hatlar, seyahat günlüğü estetiği — seyahat programı SEO içeriğini ve basılabilir seyahat hatıralarını desteklemek için tasarlanmıştır.",
+        "who": "Seyahat blog yazarları, yavaş seyahat içerik üreticileri, şehir turizm ofisleri, seyahat programı yayıncıları, konaklama pazarlama ekipleri ve basılabilir seyahat hatıraları üreten yaratıcılar için uygundur.",
+        "how": [
+          "Bir tur veya harita konusu seçin (Central Park Bisiklet Turu'nun Öne Çıkanları, Kyoto Eski Şehir Yürüyüş Turu, Paris Tarihi Simgeleri, Roma Gizli Hazineleri, Amsterdam Kanal Turu, Banff Ulusal Parkı'ndaki Yürüyüş Parkurları).",
+          "Sulu boya harita bilgilendirme grafiğini oluşturun."
+        ],
+        "prompts": [
+          "Bir Kyoto Eski Şehir Yürüyüş Turu sulu boya harita bilgilendirme grafiği oluşturun.",
+          "Bir Roma Gizli Hazineleri illüstrasyonlu seyahat haritası oluşturun.",
+          "Bir Central Park Bisiklet Turu'nun Öne Çıkanları sulu boya haritası oluşturun."
+        ]
+      }
+    }
+  },
+  "template-dual-character-comparison-infographic": {
+    "category": "İkili Karakter Karşılaştırma Bilgilendirme Grafiği",
+    "description": "İki karakter türü arasında eğlenceli bir bölünmüş ekran karşılaştırma bilgilendirme grafiği — Baba vs Anne, Kedi Sahibi vs Köpek Sahibi, İçedönük vs Dışadönük, Evden Çalışma vs Ofis — yan yana ilişkilendirilebilir karakter vinyetleri ile.",
+    "title": "İkili Karakter Karşılaştırma Bilgilendirme Grafiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, ilişkilendirilebilir bir bölünmüş ekran karşılaştırma bilgilendirme grafiği oluşturur. Her biri bir karakter türüne adanmış iki dikey sütun, temsilci anların birden fazla illüstrasyonlu vinyetini içerir. Günlük yaşamla ilişkilendirilebilir SEO içerik kümesi için tasarlanmıştır — ebeveynlik, yaşam tarzı, iş, evcil hayvan sahipliği.",
+        "who": "Ebeveynlik blog yazarları, yaşam tarzı içerik üreticileri, sosyal medya meme hesapları, ilişki koçu yayıncıları, ilişkilendirilebilir yan yana içerik üreten yaşam tarzı yayıncıları için uygundur.",
+        "how": [
+          "Bir karşılaştırma konusu seçin (Baba vs Anne Ebeveynlik Anları, Kedi Sahibi vs Köpek Sahibi Hayatı, İçedönük vs Dışadönük Hafta Sonu, Erken Kalkan vs Gece Kuşu Alışkanlıkları, Evden Çalışma vs Ofis Hayatı, Vegan vs Omnivor Yemek Hazırlığı).",
+          "İkili karakter karşılaştırma bilgilendirme grafiğini oluşturun."
+        ],
+        "prompts": [
+          "Bir Baba vs Anne Ebeveynlik Anları karşılaştırma bilgilendirme grafiği oluşturun.",
+          "Bir Kedi Sahibi vs Köpek Sahibi Hayatı posteri oluşturun.",
+          "Bir İçedönük vs Dışadönük Hafta Sonu karşılaştırma bilgilendirme grafiği oluşturun."
+        ]
+      }
+    }
   }
 }
