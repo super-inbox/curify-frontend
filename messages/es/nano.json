@@ -4251,5 +4251,85 @@
         ]
       }
     }
+  },
+  "template-best-cities-travel-infographic": {
+    "category": "Infografía de las Mejores Ciudades para Viajar",
+    "description": "Infografía de viaje de 5 ciudades en estilo vintage que clasifica destinos según un tema elegido: nómadas digitales, aventuras al aire libre, entusiastas de la comida, amantes del café, cultura, viajes económicos.",
+    "title": "Infografía Educativa de las Mejores Ciudades para Viajar",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un cartel de infografía de viaje en estilo vintage que clasifica las 5 mejores ciudades para un tema elegido. Diseño: encabezado con íconos de criterios del tema + 5 secciones de perfil de ciudad, cada una con el nombre de la ciudad, bandera del país, detalles clave, ilustración local e imagen escénica. Paleta cálida y suave, tipografía clásica, sensación de cartel de museo.",
+        "who": "Adecuado para bloggers de viajes, creadores de contenido de viajes lentos, oficinas de turismo de ciudades, editores de estilo de vida, escritores de boletines para nómadas digitales y creadores que producen contenido SEO de clasificación de destinos.",
+        "how": [
+          "Elige un tema de guía de ciudad (Mejores Ciudades para Nómadas Digitales, Mejores Ciudades para Aventuras al Aire Libre, Mejores Ciudades para Entusiastas de la Comida, Mejores Ciudades para Amantes del Café, Mejores Ciudades para Amantes de la Cultura, Mejores Ciudades para Viajeros con Presupuesto).",
+          "Genera la infografía de viaje de 5 ciudades."
+        ],
+        "prompts": [
+          "Genera una infografía de viaje de las Mejores Ciudades para Nómadas Digitales.",
+          "Crea un cartel de viaje de las Mejores Ciudades para Entusiastas de la Comida.",
+          "Genera una infografía de viaje de las Mejores Ciudades para Amantes del Café."
+        ]
+      }
+    }
+  },
+  "template-self-care-illustration-poster": {
+    "category": "Cartel de Ilustración de Cuidado Personal",
+    "description": "Cartel de acuarela onírica de actividades de cuidado personal: rutina nocturna, cuidado en días de enfermedad, potenciadores de energía, apoyo para la depresión, elevadores de ánimo, con viñetas dibujadas a mano y un fondo decorativo estrellado/floral.",
+    "title": "Cartel de Ilustración de Cuidado Personal",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un cartel de cuidado personal en estilo acuarela acogedor alrededor de un tema elegido. Diseño: una colección de viñetas de acuarela dibujadas a mano que muestran diferentes actividades de cuidado personal, cada una etiquetada con un título corto, sobre un fondo decorativo onírico con estrellas, flores y suaves lavados en tonos pastel.",
+        "who": "Adecuado para bloggers de bienestar, editores de salud mental, creadores de contenido de terapia/coach, bloggers de crianza y cuentas de redes sociales que producen contenido estético de cuidado personal.",
+        "how": [
+          "Elige un tema de cuidado personal (Rutina Nocturna de Cuidado Personal, Cuidado Personal en Días de Enfermedad, Maneras de Aumentar la Energía, Cuidado Personal para la Depresión, Potenciadores Instantáneos de Ánimo, Cuidado Personal de Bajo Costo).",
+          "Genera el cartel de cuidado personal en acuarela."
+        ],
+        "prompts": [
+          "Genera un cartel de ilustración de Rutina Nocturna de Cuidado Personal.",
+          "Crea un cartel de acuarela de Cuidado Personal para la Depresión.",
+          "Genera una ilustración de cuidado personal de Potenciadores Instantáneos de Ánimo."
+        ]
+      }
+    }
+  },
+  "template-top10-visual-guide-infographic": {
+    "category": "Infografía de Guía Visual de las 10 Mejores",
+    "description": "Elegante infografía de 2 columnas y 10 entradas para contenido SEO de lista clasificada: estilos de moda, destinos de viaje, posturas de yoga, géneros de libros, bebidas de café, rutinas de ejercicio, cada una con ilustración numerada + breve descripción.",
+    "title": "Infografía Educativa de Guía Visual de las 10 Mejores",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa elegante alrededor de una lista de las 10 mejores. Diseño: cuadrícula de 2 columnas de 10 entradas, cada una con un número, título, breve descripción e ilustración correspondiente. Tipografía limpia, bordes decorativos, estética de cartel de galería. Diseñada para el clúster de contenido SEO de listas.",
+        "who": "Adecuado para bloggers de estilo de vida, creadores de contenido que producen listas de las 10 mejores, equipos de marketing, gerentes de redes sociales, escritores de contenido de comercio electrónico y editores que publican artículos SEO de listas clasificadas.",
+        "how": [
+          "Elige un tema de las 10 mejores (Las 10 Mejores Estilos de Moda, Las 10 Mejores Destinos de Viaje, Las 10 Mejores Posturas de Yoga, Los 10 Mejores Géneros de Libros, Las 10 Mejores Bebidas de Café, Las 10 Mejores Rutinas de Ejercicio).",
+          "Genera la infografía de guía visual de las 10 mejores."
+        ],
+        "prompts": [
+          "Genera una infografía de guía visual de las 10 Mejores Posturas de Yoga.",
+          "Crea un cartel de guía visual de los 10 Mejores Destinos de Viaje.",
+          "Genera una infografía de guía visual de las 10 Mejores Bebidas de Café."
+        ]
+      }
+    }
+  },
+  "template-dessert-color-lab-infographic": {
+    "category": "Infografía del Laboratorio de Color de Postres",
+    "description": "Elegante cuadrícula de postres 3x3 coordinada por color según el tema: brillo dorado invernal, verde fresco sereno, pasión roja vibrante, púrpura místico, rosa suave romántico. Diseñada para contenido SEO de estilismo de alimentos y recetas estéticas.",
+    "title": "Infografía Educativa del Laboratorio de Color de Postres",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una elegante infografía de cuadrícula de postres 3x3. Cada postre se muestra contra un fondo coordinado por color ajustado al tema elegido; los nombres de los postres se sitúan debajo de cada imagen. Título principal + palabras clave del subtítulo + micro-elementos decorativos le dan un toque editorial de revista gastronómica.",
+        "who": "Adecuado para bloggers de comida, creadores de contenido de postres / panaderías, equipos de marketing de pastelerías, creadores de contenido de estilo de vida / estético, y editores enfocados en Pinterest / Instagram.",
+        "how": [
+          "Elige un tema de color para postres (Postres con Brillo Dorado Invernal, Postres Verdes Frescos Serenos, Postres Azules Serenos, Postres Rojos Vibrantes de Pasión, Postres Púrpuras Místicos, Postres Rosas Suaves Románticos).",
+          "Genera la infografía del laboratorio de color de postres 3x3."
+        ],
+        "prompts": [
+          "Genera una infografía del laboratorio de color de Postres con Brillo Dorado Invernal.",
+          "Crea un cartel visual de cuadrícula de Postres Rosas Suaves Románticos.",
+          "Genera un laboratorio de color de postres de Postres Rojos Vibrantes de Pasión."
+        ]
+      }
+    }
   }
 }

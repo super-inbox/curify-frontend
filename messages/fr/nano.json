@@ -4251,5 +4251,85 @@
         ]
       }
     }
+  },
+  "template-best-cities-travel-infographic": {
+    "category": "Infographie de Voyage des Meilleures Villes",
+    "description": "Infographie de voyage vintage de 5 villes classant les destinations selon un thème choisi — nomades numériques, aventures en plein air, amateurs de nourriture, amateurs de café, culture, voyage à petit budget.",
+    "title": "Infographie Éducative de Voyage des Meilleures Villes",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche infographique de voyage au style vintage classant les 5 meilleures villes selon un thème choisi. Mise en page : en-tête avec des icônes de critères de thème + 5 sections de profil de ville chacune avec le nom de la ville, le drapeau du pays, les détails clés, une illustration locale et une image pittoresque. Palette chaude et atténuée, typographie classique, ambiance d'affiche de musée.",
+        "who": "Convient aux blogueurs de voyage, créateurs de contenu de slow-travel, offices de tourisme urbains, éditeurs de style de vie, rédacteurs de newsletters pour nomades numériques et créateurs produisant du contenu SEO sur le classement des destinations.",
+        "how": [
+          "Choisissez un thème de guide de ville (Meilleures Villes pour Nomades Numériques, Meilleures Villes pour Aventures en Plein Air, Meilleures Villes pour Amateurs de Nourriture, Meilleures Villes pour Amateurs de Café, Meilleures Villes pour Amateurs de Culture, Meilleures Villes pour Voyageurs à Petit Budget).",
+          "Générez l'infographie de voyage des 5 villes."
+        ],
+        "prompts": [
+          "Générez une infographie de voyage des Meilleures Villes pour Nomades Numériques.",
+          "Créez une affiche de voyage des Meilleures Villes pour Amateurs de Nourriture.",
+          "Générez une infographie de voyage des Meilleures Villes pour Amateurs de Café."
+        ]
+      }
+    }
+  },
+  "template-self-care-illustration-poster": {
+    "category": "Affiche d'Illustration de Soins Personnels",
+    "description": "Affiche aquarelle rêveuse d'activités de soins personnels — routine nocturne, soins en cas de maladie, boosters d'énergie, soutien à la dépression, élévateurs d'humeur — avec des vignettes dessinées à la main et un fond décoratif étoilé/floral.",
+    "title": "Affiche d'Illustration de Soins Personnels",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche de soins personnels au style aquarelle autour d'un thème choisi. Mise en page : une collection de vignettes aquarelle dessinées à la main montrant différentes activités de soins personnels, chacune étiquetée avec un court titre, sur un fond décoratif rêveur avec des étoiles, des fleurs et des lavis pastel doux.",
+        "who": "Convient aux blogueurs de bien-être, éditeurs de santé mentale, créateurs de contenu thérapeutique / coaching, blogueurs parentaux et comptes de médias sociaux produisant du contenu esthétique sur les soins personnels.",
+        "how": [
+          "Choisissez un thème de soins personnels (Routine Nocturne de Soins Personnels, Soins en Cas de Maladie, Façons de Booster l'Énergie, Soins Personnels pour la Dépression, Élévateurs d'Humeur Instantanés, Soins Personnels à Petit Budget).",
+          "Générez l'affiche de soins personnels aquarelle."
+        ],
+        "prompts": [
+          "Générez une affiche d'illustration de Routine Nocturne de Soins Personnels.",
+          "Créez une affiche aquarelle de Soins Personnels pour la Dépression.",
+          "Générez une illustration de soins personnels d'Élévateurs d'Humeur Instantanés."
+        ]
+      }
+    }
+  },
+  "template-top10-visual-guide-infographic": {
+    "category": "Infographie du Top 10 des Guides Visuels",
+    "description": "Infographie élégante à 2 colonnes et 10 entrées pour du contenu SEO de liste classée — styles de mode, destinations de voyage, poses de yoga, genres de livres, boissons au café, routines d'entraînement — chacune avec une illustration numérotée + une courte description.",
+    "title": "Infographie Éducative du Top 10 des Guides Visuels",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative élégante autour d'une liste de top-10. Mise en page : grille à 2 colonnes de 10 entrées, chacune avec un numéro, un titre, une courte description et une illustration correspondante. Typographie propre, bordures décoratives, esthétique d'affiche de galerie. Conçu pour le cluster de contenu SEO de liste.",
+        "who": "Convient aux blogueurs de style de vie, créateurs de contenu produisant des listes de top-10, équipes marketing, gestionnaires de médias sociaux, rédacteurs de contenu e-commerce et éditeurs publiant des articles SEO de listes classées.",
+        "how": [
+          "Choisissez un sujet de top-10 (Top 10 des Styles de Mode, Top 10 des Destinations de Voyage, Top 10 des Poses de Yoga, Top 10 des Genres de Livres, Top 10 des Boissons au Café, Top 10 des Routines d'Entraînement).",
+          "Générez l'infographie du guide visuel top-10."
+        ],
+        "prompts": [
+          "Générez une infographie du guide visuel des Top 10 des Poses de Yoga.",
+          "Créez une affiche du guide visuel des Top 10 des Destinations de Voyage.",
+          "Générez une infographie du guide visuel des Top 10 des Boissons au Café."
+        ]
+      }
+    }
+  },
+  "template-dessert-color-lab-infographic": {
+    "category": "Infographie du Laboratoire des Couleurs des Desserts",
+    "description": "Grille de desserts élégante 3x3 coordonnée par thème — éclat doré d'hiver, vert frais serein, passion rouge vibrante, violet mystique, rose doux romantique. Conçu pour le stylisme culinaire et le contenu SEO de recettes esthétiques.",
+    "title": "Infographie Éducative du Laboratoire des Couleurs des Desserts",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie élégante de grille de desserts 3x3. Chaque dessert s'affiche sur un fond coordonné par couleur adapté au thème choisi ; les noms des desserts se trouvent sous chaque image. Titre principal + mots-clés de sous-titre + micro-éléments décoratifs lui donnent une ambiance de magazine culinaire éditorial.",
+        "who": "Convient aux blogueurs culinaires, créateurs de contenu sur les desserts / boulangeries, équipes marketing de pâtisseries, créateurs de contenu lifestyle / esthétique, et éditeurs axés sur Pinterest / Instagram.",
+        "how": [
+          "Choisissez un thème de couleur de dessert (Desserts Éclat Doré d'Hiver, Desserts Verts Frais Sereins, Desserts Bleus Sereins, Desserts Passion Rouge Vibrante, Desserts Violets Mystiques, Desserts Roses Doux Romantiques).",
+          "Générez l'infographie du laboratoire des couleurs des desserts 3x3."
+        ],
+        "prompts": [
+          "Générez une infographie du laboratoire des couleurs des Desserts Éclat Doré d'Hiver.",
+          "Créez un poster visuel de grille des Desserts Roses Doux Romantiques.",
+          "Générez un laboratoire des couleurs des Desserts Passion Rouge Vibrante."
+        ]
+      }
+    }
   }
 }

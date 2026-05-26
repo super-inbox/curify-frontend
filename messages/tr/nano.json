@@ -4251,5 +4251,85 @@
         ]
       }
     }
+  },
+  "template-best-cities-travel-infographic": {
+    "category": "En İyi Şehirler Seyahat İnfografiği",
+    "description": "Vintage tarzda 5 şehir seyahat infografiği, seçilen bir tema ile destinasyonları sıralar — dijital göçebeler, açık hava maceraları, yemek tutkunları, kahveseverler, kültür, bütçe seyahati.",
+    "title": "En İyi Şehirler Seyahat Eğitim İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen bir tema için en iyi 5 şehri sıralayan vintage tarzda bir seyahat infografiği posteri oluşturur. Düzen: tema kriter simgeleri ile başlık + her biri şehir adı, ülke bayrağı, ana detaylar, yerel illüstrasyon ve manzara resmi içeren 5 şehir profili bölümü. Sıcak, soluk palet, klasik tipografi, müze posteri hissi.",
+        "who": "Seyahat blog yazarları, yavaş seyahat içerik üreticileri, şehir turizm ofisleri, yaşam tarzı yayıncıları, dijital göçebe bülten yazarları ve destinasyon sıralama SEO içeriği üreten yaratıcılar için uygundur.",
+        "how": [
+          "Bir şehir rehberi teması seçin (Dijital Göçebeler için En İyi Şehirler, Açık Hava Maceraları için En İyi Şehirler, Yemek Tutkunları için En İyi Şehirler, Kahveseverler için En İyi Şehirler, Kültür Tutkunları için En İyi Şehirler, Bütçe Seyahatleri için En İyi Şehirler).",
+          "5 şehir seyahat infografiğini oluşturun."
+        ],
+        "prompts": [
+          "Dijital Göçebeler için En İyi Şehirler seyahat infografiğini oluşturun.",
+          "Yemek Tutkunları için En İyi Şehirler seyahat posterini oluşturun.",
+          "Kahveseverler için En İyi Şehirler seyahat infografiğini oluşturun."
+        ]
+      }
+    }
+  },
+  "template-self-care-illustration-poster": {
+    "category": "Kendine Bakım İllüstrasyon Posteri",
+    "description": "Kendine bakım aktivitelerinin rüya gibi suluboya posteri — gece rutini, hastalık günü bakımı, enerji artırıcılar, depresyon desteği, ruh hali yükselticiler — el çizimi vinyetler ve dekoratif yıldızlı/çiçekli bir arka plan ile.",
+    "title": "Kendine Bakım İllüstrasyon Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen bir tema etrafında rahat bir suluboya tarzında kendine bakım posteri oluşturur. Düzen: farklı kendine bakım aktivitelerini gösteren el çizimi suluboya vinyetlerinin bir koleksiyonu, her biri kısa bir başlıkla etiketlenmiş, rüya gibi dekoratif bir arka planda yıldızlar, çiçekler, yumuşak pastel tonları ile.",
+        "who": "Wellness blog yazarları, zihinsel sağlık yayıncıları, terapist / koçluk içerik üreticileri, ebeveynlik blog yazarları ve estetik kendine bakım içeriği üreten sosyal medya hesapları için uygundur.",
+        "how": [
+          "Bir kendine bakım teması seçin (Gece Rutini Kendine Bakım, Hastalık Günü Kendine Bakım, Enerji Artırma Yolları, Depresyon için Kendine Bakım, Anlık Ruh Hali Yükselticiler, Düşük Bütçeli Kendine Bakım).",
+          "Suluboya kendine bakım posterini oluşturun."
+        ],
+        "prompts": [
+          "Gece Rutini Kendine Bakım illüstrasyon posterini oluşturun.",
+          "Depresyon için Kendine Bakım suluboya posterini oluşturun.",
+          "Anlık Ruh Hali Yükselticiler kendine bakım illüstrasyonunu oluşturun."
+        ]
+      }
+    }
+  },
+  "template-top10-visual-guide-infographic": {
+    "category": "En İyi 10 Görsel Rehber İnfografiği",
+    "description": "Sıralı liste SEO içeriği için şık 2 sütunlu 10 girişli infografik — moda stilleri, seyahat destinasyonları, yoga pozları, kitap türleri, kahve içecekleri, egzersiz rutinleri — her biri numaralı illüstrasyon + kısa açıklama ile.",
+    "title": "En İyi 10 Görsel Rehber Eğitim İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir top-10 listesi etrafında şık bir eğitim infografiği oluşturur. Düzen: her biri bir numara, başlık, kısa açıklama ve eşleşen illüstrasyon içeren 10 girişli 2 sütunlu ızgara. Temiz tipografi, dekoratif kenarlıklar, galeri-posteri estetiği. Liste makalesi-SEO içerik kümesi için tasarlandı.",
+        "who": "Yaşam tarzı blog yazarları, top-10 liste içerikleri üreten içerik üreticileri, pazarlama ekipleri, sosyal medya yöneticileri, e-ticaret içerik yazarları ve sıralı liste SEO makaleleri yayınlayan yayıncılar için uygundur.",
+        "how": [
+          "Bir top-10 konusu seçin (En İyi 10 Moda Stili, En İyi 10 Seyahat Destinasyonu, En İyi 10 Yoga Pozu, En İyi 10 Kitap Türü, En İyi 10 Kahve İçeceği, En İyi 10 Egzersiz Rutini).",
+          "Top-10 görsel rehber infografiğini oluşturun."
+        ],
+        "prompts": [
+          "En İyi 10 Yoga Pozu görsel rehber infografiğini oluşturun.",
+          "En İyi 10 Seyahat Destinasyonu görsel rehber posterini oluşturun.",
+          "En İyi 10 Kahve İçeceği görsel rehber infografiğini oluşturun."
+        ]
+      }
+    }
+  },
+  "template-dessert-color-lab-infographic": {
+    "category": "Tatlı Renk Laboratuvarı Bilgilendirme Grafiği",
+    "description": "Tema ile uyumlu şık 3x3 tatlı ızgara — altın kış ışıltısı, taze yeşil huzur, canlı kırmızı tutku, mistik mor, yumuşak pembe romantik. Gıda stilizasyonu ve estetik tarif SEO içeriği için tasarlandı.",
+    "title": "Tatlı Renk Laboratuvarı Eğitici Bilgilendirme Grafiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, şık bir 3x3 tatlı ızgara bilgilendirme grafiği oluşturur. Her tatlı, seçilen tema ile uyumlu bir arka plan üzerinde sergilenir; tatlı isimleri her resmin altında yer alır. Ana başlık + alt başlık anahtar kelimeleri + dekoratif mikro unsurlar, ona editoryal bir gıda dergisi hissi verir.",
+        "who": "Gıda blog yazarları, tatlı / fırın içerik üreticileri, pastane pazarlama ekipleri, yaşam tarzı / estetik içerik üreticileri ve Pinterest / Instagram odaklı yayıncılar için uygundur.",
+        "how": [
+          "Bir tatlı renk teması seçin (Altın Kış Işıltısı Tatlıları, Taze Yeşil Huzur Tatlıları, Huzurlu Mavi Tatlılar, Canlı Kırmızı Tutku Tatlıları, Mistik Mor Tatlılar, Yumuşak Pembe Romantik Tatlılar).",
+          "3x3 tatlı renk laboratuvarı bilgilendirme grafiğini oluşturun."
+        ],
+        "prompts": [
+          "Bir Altın Kış Işıltısı Tatlıları renk laboratuvarı bilgilendirme grafiği oluşturun.",
+          "Bir Yumuşak Pembe Romantik Tatlılar görsel ızgara posteri oluşturun.",
+          "Bir Canlı Kırmızı Tutku Tatlıları tatlı renk laboratuvarı oluşturun."
+        ]
+      }
+    }
   }
 }
