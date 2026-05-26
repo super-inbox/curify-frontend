@@ -367,7 +367,7 @@ export default function BlogContent() {
         </div>
       </footer>
 
-      <RelatedBlogs currentSlug="visual-learning-tools" locale="en" maxRelated={2} />
+      <RelatedBlogs currentSlug="visual-learning-tools" locale={'en'} maxRelated={2} />
     </article>
   )
 }

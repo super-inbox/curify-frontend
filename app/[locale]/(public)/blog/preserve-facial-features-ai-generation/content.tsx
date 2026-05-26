@@ -410,7 +410,7 @@ with [style_specific_elements]"`}
         </p>
       </footer>
 
-      <RelatedBlogs currentSlug="preserve-facial-features-ai-generation" locale="en" maxRelated={2} />
+      <RelatedBlogs currentSlug="preserve-facial-features-ai-generation" locale={'en'} maxRelated={2} />
     </article>
   )
 }

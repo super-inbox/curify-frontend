@@ -327,7 +327,7 @@ export default function BlogContent() {
         </div>
       </footer>
 
-      <RelatedBlogs currentSlug="image-to-narrative-video" locale="en" maxRelated={3} />
+      <RelatedBlogs currentSlug="image-to-narrative-video" locale={'en'} maxRelated={3} />
     </article>
   )
 }

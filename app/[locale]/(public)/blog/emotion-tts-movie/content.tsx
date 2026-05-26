@@ -399,7 +399,7 @@ export default function BlogContent() {
         </div>
       </footer>
 
-      <RelatedBlogs currentSlug="emotion-tts-movie" locale="en" maxRelated={3} />
+      <RelatedBlogs currentSlug="emotion-tts-movie" locale={'en'} maxRelated={3} />
     </article>
   )
 }

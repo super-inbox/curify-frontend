@@ -1,0 +1,46 @@
+{
+  "pipeline": {
+    "version": "1.0.0",
+    "name": "Blog Writing Pipeline",
+    "description": "Automated blog content generation using GSC data and existing blog context"
+  },
+  "contentGeneration": {
+    "minWordCount": 1500,
+    "maxWordCount": 2500,
+    "minReadTime": 8,
+    "maxReadTime": 15,
+    "defaultCategory": "creator-tools"
+  },
+  "seo": {
+    "targetKeywordDensity": 0.02,
+    "maxTitleLength": 60,
+    "maxMetaDescriptionLength": 160,
+    "includeFAQ": true,
+    "internalLinking": true
+  },
+  "translation": {
+    "supportedLocales": ["en", "es", "fr", "de"],
+    "autoTranslate": true,
+    "translationService": "google-translate",
+    "fallbackLocale": "en"
+  },
+  "output": {
+    "componentsPath": "app/[locale]/(public)/blog/[slug]/components",
+    "translationsPath": "messages/{locale}/blog.json",
+    "imagesPath": "images",
+    "imageFormat": "webp"
+  },
+  "dataSources": {
+    "gscDataPath": "public/data/gsc_data.json",
+    "blogsDataPath": "public/data/blogs.json",
+    "categoriesPath": "public/data/blog-categories.json",
+    "nanoTemplatesPath": "public/data/nano_templates.json"
+  },
+  "aiIntegration": {
+    "provider": "openai",
+    "model": "gpt-4",
+    "maxTokens": 4000,
+    "temperature": 0.7,
+    "systemPromptPath": "prompt.md"
+  }
+}

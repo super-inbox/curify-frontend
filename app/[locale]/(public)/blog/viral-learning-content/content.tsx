@@ -278,7 +278,7 @@ export default function BlogContent() {
         </div>
       </footer>
 
-      <RelatedBlogs currentSlug="viral-learning-content" locale="en" maxRelated={3} />
+      <RelatedBlogs currentSlug="viral-learning-content" locale={'en'} maxRelated={3} />
     </article>
   )
 }

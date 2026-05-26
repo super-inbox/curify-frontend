@@ -34,7 +34,7 @@ export default function WeirdScienceFactsClassroomEngagement() {
       />
       
       <div className="mb-8">
-        <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
+       <div className="w-full h-64 md:h-80 mb-6 overflow-hidden rounded-xl shadow-lg">
           <CdnImage
             src="/images/nano_insp/template-weird-cold-knowledge-popular-science-card-blue-whale.jpg"
             alt={t('title')}

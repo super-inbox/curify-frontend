@@ -262,7 +262,7 @@ export default function BlogContent() {
         </div>
       </footer>
 
-      <RelatedBlogs currentSlug="curify-ai-growth-engine" locale="en" maxRelated={3} />
+      <RelatedBlogs currentSlug="curify-ai-growth-engine" locale={'en'} maxRelated={3} />
     </article>
   )
 }
