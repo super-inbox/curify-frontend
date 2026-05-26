@@ -2,7 +2,7 @@
 // Tier 2 entries are shown by default on focus; all entries are searched on keystroke.
 
 import nanoMetadata from "@/lib/generated/nanobanana_prompts_metadata.json";
-import topicMapping from "./topic_tag_mappings.json";
+import taxonomy from "./taxonomy.json";
 
 export type SuggestionEntry = {
   slug: string;
@@ -224,7 +224,7 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
 const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
 // ── Topic-mapping destinations ─────────────────────────────────────────────
-// Tags listed as Tier-3 children in lib/topic_tag_mappings.json that aren't
+// Tags listed as Tier-3 children in lib/taxonomy.json that aren't
 // already represented in the static tier arrays above. These get
 // SuggestionEntries that route to /topics/<slug> (default routing — no href
 // override) so search bounces straight to the richer topic page, not to a
@@ -242,7 +242,7 @@ for (const s of [
 ]) _EXISTING_SLUGS.add(s.slug.toLowerCase());
 
 const _MAPPED_DEST_TAGS = new Set<string>();
-for (const list of Object.values(topicMapping.TIER1_TAG_CHILDREN as Record<string, string[]>)) {
+for (const list of Object.values(taxonomy.tier3 as Record<string, string[]>)) {
   for (const tag of list) _MAPPED_DEST_TAGS.add(tag.toLowerCase());
 }
 

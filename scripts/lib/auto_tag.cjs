@@ -3,8 +3,8 @@
  *
  * Picks one Tier-3 tag per record via gpt-4o-mini, using the parent
  * template's Tier-1 ancestor and the Tier-1 → Tier-3 mapping defined
- * in lib/topic_tag_mappings.json (single source of truth, also read by
- * lib/topicRegistry.ts).
+ * in lib/taxonomy.json (single source of truth, also read by
+ * lib/topicRegistry.ts and lib/searchIndex.ts).
  *
  * Used by:
  *   - scripts/sync_nano_inspiration.cjs (gallery + Supabase ingest)
@@ -16,13 +16,13 @@
 const path = require("path");
 const https = require("https");
 const http = require("http");
-const topicTagMappings = require(path.join(__dirname, "..", "..", "lib", "topic_tag_mappings.json"));
+const taxonomy = require(path.join(__dirname, "..", "..", "lib", "taxonomy.json"));
 
 let sharp;
 try { sharp = require("sharp"); } catch { sharp = null; }
 
-const TIER1_TAG_CHILDREN = topicTagMappings.TIER1_TAG_CHILDREN;
-const EXPLICIT_CHILD_TOPICS = topicTagMappings.EXPLICIT_CHILD_TOPICS || {};
+const TIER1_TAG_CHILDREN = taxonomy.tier3;
+const EXPLICIT_CHILD_TOPICS = taxonomy.tier2 || {};
 
 const TIER2_TO_TIER1 = {};
 for (const [t1, t2s] of Object.entries(EXPLICIT_CHILD_TOPICS)) {

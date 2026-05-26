@@ -1,0 +1,56 @@
+[
+  {
+    "template_id": "template-food",
+    "params": { "food_name": "Cuban Sandwich" },
+    "topics": ["lifestyle", "food"],
+    "id_suffix": "cuban-sandwich"
+  },
+  {
+    "template_id": "template-food",
+    "params": { "food_name": "Philly Cheesesteak" },
+    "topics": ["lifestyle", "food"],
+    "id_suffix": "philly-cheesesteak"
+  },
+  {
+    "template_id": "template-food",
+    "params": { "food_name": "Croque Monsieur" },
+    "topics": ["lifestyle", "food"],
+    "id_suffix": "croque-monsieur"
+  },
+  {
+    "template_id": "template-food",
+    "params": { "food_name": "Reuben Sandwich" },
+    "topics": ["lifestyle", "food"],
+    "id_suffix": "reuben-sandwich"
+  },
+  {
+    "template_id": "template-food",
+    "params": { "food_name": "Club Sandwich" },
+    "topics": ["lifestyle", "food"],
+    "id_suffix": "club-sandwich"
+  },
+  {
+    "template_id": "template-food",
+    "params": { "food_name": "BLT" },
+    "topics": ["lifestyle", "food"],
+    "id_suffix": "blt"
+  },
+  {
+    "template_id": "template-varieties-food-poster",
+    "params": { "food_theme": "Classic American Sandwiches" },
+    "topics": ["lifestyle", "food", "posters"],
+    "id_suffix": "classic-american-sandwiches"
+  },
+  {
+    "template_id": "template-varieties-food-poster",
+    "params": { "food_theme": "World Sandwiches" },
+    "topics": ["lifestyle", "food", "posters"],
+    "id_suffix": "world-sandwiches"
+  },
+  {
+    "template_id": "template-varieties-food-poster",
+    "params": { "food_theme": "Breakfast Sandwiches" },
+    "topics": ["lifestyle", "food", "posters"],
+    "id_suffix": "breakfast-sandwiches"
+  }
+]
