@@ -1,17 +1,18 @@
 // ProgSEO demo data — 10 hand-curated long-tail SEO queries each
-// mapped to 2 best-fit templates with concrete params. Used by
-// app/[locale]/(public)/progseo-demo/page.tsx to drive a Loom-style
-// demo of "search query → matched templates → on-demand image gen."
+// mapped to 1-2 best-fit templates with concrete params + a preview
+// image. Drives app/[locale]/(public)/progseo-demo/page.tsx.
 //
-// To extend: add an entry below. The page renders one row per entry
-// with one Generate button per match. Generated images land in
-// /tmp/progseo-demo/<slug>-<idx>.jpg via the route at
-// app/api/progseo-demo/generate.
+// Relevance principle: every (query, template) pair must produce an
+// image that a reasonable user typing the query would accept. No
+// loose seconds — better to show 1 tight match than 2 with 1 weak.
+
+import nanoTemplates from "@/public/data/nano_templates.json";
 
 export type ProgSeoMatch = {
   template_id: string;
   params: Record<string, string>;
   label: string;
+  preview_image_url: string;
 };
 
 export type ProgSeoEntry = {
@@ -20,43 +21,53 @@ export type ProgSeoEntry = {
   matches: ProgSeoMatch[];
 };
 
+type TemplateLike = { id: string; og_image?: string };
+const TPL_BY_ID = new Map<string, TemplateLike>(
+  (nanoTemplates as TemplateLike[]).map((t) => [t.id, t]),
+);
+function preview(template_id: string): string {
+  return TPL_BY_ID.get(template_id)?.og_image ?? "/images/default-prompt-image.jpg";
+}
+
+function entry(
+  query: string,
+  slug: string,
+  matches: { template_id: string; params: Record<string, string>; label: string }[],
+): ProgSeoEntry {
+  return {
+    query,
+    slug,
+    matches: matches.map((m) => ({ ...m, preview_image_url: preview(m.template_id) })),
+  };
+}
+
 export const PROGSEO_QUERIES: ProgSeoEntry[] = [
-  {
-    query: "minimalist autumn outfit for japan travel",
-    slug: "minimalist-autumn-outfit-japan-travel",
-    matches: [
+  entry(
+    "minimalist autumn outfit for japan travel",
+    "minimalist-autumn-outfit-japan-travel",
+    [
       {
         template_id: "template-fashion-ecommerce",
-        params: { core_selling_point: "Minimalist autumn outfit perfect for Japan travel, neutral palette, breathable layers" },
+        params: { core_selling_point: "Minimalist autumn outfit for Japan travel — neutral palette, breathable layers, packable for city walks" },
         label: "Fashion product card",
       },
-      {
-        template_id: "template-travel",
-        params: { destination: "Tokyo", date_range: "Autumn" },
-        label: "Travel poster",
-      },
     ],
-  },
-  {
-    query: "infj vs entp dating compatibility chart",
-    slug: "infj-entp-dating-compatibility",
-    matches: [
+  ),
+  entry(
+    "infj vs entp dating compatibility chart",
+    "infj-entp-dating-compatibility",
+    [
       {
         template_id: "template-mbti-relationship-infographic",
         params: { mbti_type_a: "INFJ", mbti_type_b: "ENTP" },
-        label: "MBTI relationship chart",
-      },
-      {
-        template_id: "template-mbti-in-love-infographic",
-        params: { mbti_type: "INFJ" },
-        label: "Single-type love profile",
+        label: "MBTI pair relationship chart",
       },
     ],
-  },
-  {
-    query: "cuban sandwich recipe poster",
-    slug: "cuban-sandwich-recipe-poster",
-    matches: [
+  ),
+  entry(
+    "cuban sandwich recipe poster",
+    "cuban-sandwich-recipe-poster",
+    [
       {
         template_id: "template-recipe",
         params: { dish_name: "Cuban Sandwich" },
@@ -68,49 +79,44 @@ export const PROGSEO_QUERIES: ProgSeoEntry[] = [
         label: "Food poster",
       },
     ],
-  },
-  {
-    query: "bilingual flashcards for kids learning korean fruits",
-    slug: "bilingual-flashcards-korean-fruits",
-    matches: [
+  ),
+  entry(
+    "bilingual flashcards for kids learning korean fruits",
+    "bilingual-flashcards-korean-fruits",
+    [
       {
         template_id: "template-vocabulary",
         params: { language_pair: "en-ko", topic_name: "Fruits" },
         label: "English-Korean vocabulary",
       },
     ],
-  },
-  {
-    query: "watercolor map of europe travel destinations",
-    slug: "watercolor-map-europe-destinations",
-    matches: [
+  ),
+  entry(
+    "watercolor map of europe travel destinations",
+    "watercolor-map-europe-destinations",
+    [
       {
         template_id: "template-watercolor-world-map-illustration",
         params: { continent_name: "Europe" },
         label: "Watercolor continent map",
       },
-      {
-        template_id: "template-country-souvenirs-watercolor",
-        params: { country_name: "Italy" },
-        label: "Country souvenirs",
-      },
     ],
-  },
-  {
-    query: "monstera plant care guide infographic",
-    slug: "monstera-plant-care-guide",
-    matches: [
+  ),
+  entry(
+    "monstera plant care guide infographic",
+    "monstera-plant-care-guide",
+    [
       {
         template_id: "template-houseplant-care-guide-infographic",
         params: { plant_name: "Monstera" },
         label: "Houseplant care guide",
       },
     ],
-  },
-  {
-    query: "marvel mbti character chart 16 types",
-    slug: "marvel-mbti-character-chart",
-    matches: [
+  ),
+  entry(
+    "marvel mbti character chart 16 types",
+    "marvel-mbti-character-chart",
+    [
       {
         template_id: "template-mbti-generic",
         params: {
@@ -119,44 +125,39 @@ export const PROGSEO_QUERIES: ProgSeoEntry[] = [
         },
         label: "Marvel MBTI grid",
       },
-      {
-        template_id: "template-mbti-marvel",
-        params: { character_name: "Iron Man" },
-        label: "Single-hero MBTI",
-      },
     ],
-  },
-  {
-    query: "lunar new year red envelope graphic design",
-    slug: "lunar-new-year-red-envelope-design",
-    matches: [
+  ),
+  entry(
+    "lunar new year red envelope graphic design",
+    "lunar-new-year-red-envelope-design",
+    [
       {
         template_id: "template-cultural-festival-poster",
         params: { festival_name: "Lunar New Year" },
         label: "Festival poster",
       },
     ],
-  },
-  {
-    query: "1950s vintage diner illustration retro poster",
-    slug: "1950s-vintage-diner-retro-poster",
-    matches: [
+  ),
+  entry(
+    "1950s vintage diner illustration retro poster",
+    "1950s-vintage-diner-retro-poster",
+    [
       {
-        template_id: "template-then-vs-now-comparison-infographic",
-        params: { topic: "1950s Diners vs Modern Restaurants" },
-        label: "Then vs Now infographic",
+        template_id: "template-watercolor-theme-collage-illustration",
+        params: { theme: "1950s vintage American diner — chrome stools, neon signs, jukebox, milkshakes" },
+        label: "Watercolor theme collage",
       },
     ],
-  },
-  {
-    query: "before after kitchen organization makeover",
-    slug: "before-after-kitchen-organization",
-    matches: [
+  ),
+  entry(
+    "before after kitchen organization makeover",
+    "before-after-kitchen-organization",
+    [
       {
         template_id: "template-home-organization-before-after",
         params: { space_type: "Kitchen" },
         label: "Home before/after",
       },
     ],
-  },
+  ),
 ];
