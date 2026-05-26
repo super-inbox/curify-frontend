@@ -132,9 +132,12 @@ export const PROGSEO_QUERIES: ProgSeoEntry[] = [
     "lunar-new-year-red-envelope-design",
     [
       {
-        template_id: "template-cultural-festival-poster",
-        params: { festival_name: "Lunar New Year" },
-        label: "Festival poster",
+        template_id: "template-product-theme-promotional-poster",
+        params: {
+          title_text: "新年红包 · Lunar New Year Red Envelope",
+          language: "Bilingual (Chinese & English)",
+        },
+        label: "Promotional poster",
       },
     ],
   ),

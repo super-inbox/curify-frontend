@@ -14,20 +14,21 @@ function keyFor(slug: string, idx: number): string {
   return `${slug}-${idx}`;
 }
 
+// Compact, action-less card. Mirrors the PromptCard 3:4 layout used on
+// /nano-banana-pro-prompts so the demo grid sits at the same visual
+// rhythm as the existing surfaces — but with a checkbox replacing the
+// Copy button since this is a batch-select UI, not a per-card action UI.
 function MatchCard({
   match,
-  k,
   selected,
   onToggle,
   state,
 }: {
   match: ProgSeoMatch;
-  k: string;
   selected: boolean;
   onToggle: () => void;
   state: GenState;
 }) {
-  // Preview source: generated image when done; the template og_image otherwise.
   const imgSrc =
     state.status === "done"
       ? state.url
@@ -35,65 +36,69 @@ function MatchCard({
 
   return (
     <label
-      className={`relative flex cursor-pointer flex-col gap-2 rounded-lg border bg-white p-3 shadow-sm transition ${
-        selected ? "border-indigo-500 ring-2 ring-indigo-200" : "border-gray-200 hover:border-gray-300"
+      className={`group block cursor-pointer overflow-hidden rounded-xl border bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md ${
+        selected ? "border-indigo-500 ring-2 ring-indigo-200" : "border-gray-200"
       }`}
     >
-      <input
-        type="checkbox"
-        checked={selected}
-        onChange={onToggle}
-        disabled={state.status === "running"}
-        className="absolute top-2 right-2 z-10 h-5 w-5 cursor-pointer rounded border-gray-300"
-        aria-label={`Select ${match.label}`}
-      />
-      <div className="pr-7 text-sm font-medium text-gray-900">{match.label}</div>
-      <div className="break-all font-mono text-xs text-gray-500">
-        {match.template_id}
-      </div>
-      <div className="rounded bg-gray-50 p-2 font-mono text-xs text-gray-700">
-        {Object.entries(match.params).map(([key, v]) => (
-          <div key={key} className="break-words">
-            <span className="text-gray-500">{key}:</span> {String(v)}
-          </div>
-        ))}
-      </div>
-      <div className="relative aspect-square w-full overflow-hidden rounded bg-gray-100">
+      <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imgSrc}
           alt={match.label}
-          className={`h-full w-full object-cover ${
-            state.status === "done" ? "" : "opacity-70"
-          }`}
+          className={`h-full w-full object-cover transition-transform duration-300 ${
+            state.status === "done" ? "" : "opacity-80"
+          } group-hover:scale-[1.02]`}
         />
+
+        <input
+          type="checkbox"
+          checked={selected}
+          onChange={onToggle}
+          disabled={state.status === "running"}
+          className="absolute top-2 right-2 h-5 w-5 cursor-pointer rounded border-gray-300 shadow-sm"
+          aria-label={`Select ${match.label}`}
+        />
+
         {state.status === "running" && (
-          <div className="absolute inset-0 flex items-center justify-center bg-white/70 text-sm font-medium text-gray-700">
+          <div className="absolute inset-0 flex items-center justify-center bg-white/70 text-xs font-medium text-gray-700">
             generating…
           </div>
         )}
         {state.status === "idle" && (
-          <div className="absolute bottom-1 left-1 rounded bg-white/85 px-2 py-0.5 text-[10px] uppercase tracking-wide text-gray-500">
-            template preview
-          </div>
+          <span className="absolute bottom-2 left-2 rounded bg-black/40 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white backdrop-blur-sm">
+            preview
+          </span>
         )}
         {state.status === "done" && (
-          <div className="absolute bottom-1 left-1 rounded bg-emerald-600 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+          <span className="absolute bottom-2 left-2 rounded bg-emerald-600 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
             generated
-          </div>
+          </span>
         )}
         {state.status === "error" && (
-          <div className="absolute inset-0 flex items-center justify-center bg-red-50 p-2 text-center text-xs text-red-700">
+          <div className="absolute inset-x-0 bottom-0 bg-red-50/95 p-1.5 text-center text-[11px] text-red-700">
             {state.message}
           </div>
         )}
+      </div>
+
+      <div className="px-2.5 py-2">
+        <div className="truncate text-xs font-semibold text-gray-900">{match.label}</div>
+        <div className="mt-0.5 truncate font-mono text-[10px] text-gray-500">
+          {match.template_id.replace(/^template-/, "")}
+        </div>
+        <div className="mt-1.5 space-y-0.5 font-mono text-[10px] leading-tight text-gray-600">
+          {Object.entries(match.params).map(([k, v]) => (
+            <div key={k} className="truncate" title={`${k}: ${v}`}>
+              <span className="text-gray-400">{k}:</span> {String(v)}
+            </div>
+          ))}
+        </div>
       </div>
     </label>
   );
 }
 
 export default function ProgSeoDemoClient({ entries }: { entries: ProgSeoEntry[] }) {
-  // Pre-build the flat list of all match keys so select-all is trivial.
   const allKeys = useMemo<string[]>(() => {
     const out: string[] = [];
     for (const e of entries) {
@@ -121,8 +126,6 @@ export default function ProgSeoDemoClient({ entries }: { entries: ProgSeoEntry[]
   const generateSelected = useCallback(async () => {
     if (selected.size === 0 || running) return;
     setRunning(true);
-    // Build a flat list of (entry, idx) tuples for the selected keys,
-    // preserving the page order so the UI fills top-to-bottom.
     const jobs: { entry: ProgSeoEntry; matchIdx: number; k: string }[] = [];
     for (const e of entries) {
       for (let i = 0; i < e.matches.length; i++) {
@@ -184,7 +187,6 @@ export default function ProgSeoDemoClient({ entries }: { entries: ProgSeoEntry[]
           </p>
         </header>
 
-        {/* Sticky toolbar so the Generate button stays visible while scrolling */}
         <div className="sticky top-0 z-20 mb-6 flex flex-wrap items-center gap-3 rounded-lg border border-gray-200 bg-white/95 px-3 py-2 shadow-sm backdrop-blur">
           <button
             onClick={selectAll}
@@ -212,21 +214,27 @@ export default function ProgSeoDemoClient({ entries }: { entries: ProgSeoEntry[]
           </div>
         </div>
 
-        <div className="space-y-8">
+        <div className="divide-y divide-gray-200">
           {entries.map((entry) => (
-            <section key={entry.slug}>
-              <h2 className="mb-3 text-lg font-semibold text-gray-900">
-                <span className="text-gray-400">query: </span>
-                {entry.query}
-              </h2>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <section
+              key={entry.slug}
+              className="grid grid-cols-1 gap-4 py-5 md:grid-cols-[220px_1fr] md:gap-6"
+            >
+              <div className="md:pt-1">
+                <div className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">
+                  query
+                </div>
+                <h2 className="mt-1 text-sm font-semibold text-gray-900">
+                  {entry.query}
+                </h2>
+              </div>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 {entry.matches.map((m, idx) => {
                   const k = keyFor(entry.slug, idx);
                   return (
                     <MatchCard
                       key={k}
                       match={m}
-                      k={k}
                       selected={selected.has(k)}
                       onToggle={() => toggle(k)}
                       state={states[k] ?? { status: "idle" }}
