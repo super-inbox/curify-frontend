@@ -135,11 +135,23 @@ const SYSTEM_PROMPT = `You match user search queries to Curify image-generation 
 
 For EACH query, decide:
 - top 2-3 best-fit templates (ordered by confidence desc; fewer is fine if no clear fit)
-- for each pick: concrete parameter values extracted from the query (JSON keyed by the template's parameter names)
+- for each pick: concrete parameter values extracted from the query
 - confidence in 0.0..1.0 (be honest — 0.3 + reason is fine if uncertain)
 - short reason (<= 80 chars)
 
-Pick templates that can GENERATE content for the query, not just templates whose tags happen to overlap. A "cuban sandwich" query should pick template-recipe / template-food (templates that produce a sandwich image), NOT template-cultural-festival-poster (despite Cuban culture overlap).
+CRITICAL — read EVERY modifier in the query, not just the subject noun. Templates are differentiated by visual style AND layout, not only topic:
+
+- **Style modifiers** (watercolor / retro / vintage / minimalist / photorealistic / anime / kawaii / ink / monochrome) — pick a template whose OUTPUT natively has that style. "Watercolor map" needs a watercolor map template, not a generic destination list.
+- **Format / layout modifiers** (chart / grid / list of N / top 10 / 16 types / dual / before-after / comparison / timeline) — pick the template whose LAYOUT matches. "Chart of 16 MBTI types" needs a grid/chart template, NOT a single-character profile. Read the template's parameter shape: a single-value param (one name, one item) produces ONE artifact; multi-character or topic-as-set params produce a grid.
+- **Audience modifiers** (for kids / for beginners / educational / for parents) — pick the template whose style fits the audience (kids → cartoon/watercolor; beginner → simpler layouts).
+- **Artifact-type modifiers** (recipe poster / promotional poster / care guide / how-to / infographic) — these name the artifact directly. Prefer the template that explicitly produces that artifact.
+
+Pick templates that can GENERATE content for the query AS TYPED, not just templates whose tags overlap with one word.
+
+Examples of the modifier check:
+- "marvel mbti chart 16 types" → mbti-generic (grid of all 16) NOT mbti-marvel (single character_name param)
+- "watercolor map of europe" → watercolor-world-map-illustration NOT any other map template
+- "before after kitchen organization" → home-organization-before-after NOT a generic home decor template
 
 Catalog:
 {catalog}
