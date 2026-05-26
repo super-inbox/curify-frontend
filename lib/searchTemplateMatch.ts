@@ -1,0 +1,197 @@
+// Search ⇄ generation bridge — LLM matcher.
+//
+// Given a search query, asks gpt-4o-mini which Curify templates could
+// GENERATE content for that query (with concrete params filled in),
+// even when no inspirations exist today. Used by the search page to
+// surface a "Generate from these templates" section alongside the
+// existing inspirations grid.
+//
+// Validated against the 10-query ProgSEO baseline at top-3 100%,
+// top-1 90% (see scripts/eval_template_matcher.cjs).
+//
+// Same prompt + scoring + cache shape as lib/searchRewrite.ts.
+
+import OpenAI from "openai";
+import nanoTemplates from "@/public/data/nano_templates.json";
+import enNano from "@/messages/en/nano.json";
+
+const MODEL = "gpt-4o-mini";
+const TIMEOUT_MS = 15_000;
+
+type TemplateShape = {
+  id: string;
+  allow_generation?: boolean;
+  locales?: Record<string, { parameters?: Array<{ name?: string }> } | undefined>;
+};
+
+type NanoMessages = Record<string, { description?: string } | undefined>;
+
+// Build the catalog blob once at module load. Limits to templates with
+// allow_generation=true so the matcher can't suggest a template the
+// user can't actually generate from. ~11K tokens at the current 200-
+// template catalog.
+function buildCatalogBlob(): string {
+  const lines: string[] = [];
+  const en = enNano as NanoMessages;
+  for (const t of nanoTemplates as TemplateShape[]) {
+    if (t.allow_generation !== true) continue;
+    const desc = (en[t.id]?.description ?? "")
+      .replace(/\s+/g, " ")
+      .slice(0, 180);
+    const params = (t.locales?.en?.parameters ?? [])
+      .map((p) => p?.name)
+      .filter((n): n is string => Boolean(n))
+      .join(",");
+    lines.push(`- ${t.id} | params=[${params}] | ${desc}`);
+  }
+  return lines.join("\n");
+}
+
+const CATALOG_BLOB = buildCatalogBlob();
+const TEMPLATE_IDS = new Set(
+  (nanoTemplates as TemplateShape[])
+    .filter((t) => t.allow_generation === true)
+    .map((t) => t.id),
+);
+
+const SYSTEM_PROMPT = `You match user search queries to Curify image-generation templates that could create content for those queries.
+
+For EACH query, decide:
+- top 2-3 best-fit templates (ordered by confidence desc; fewer is fine if no clear fit)
+- for each pick: concrete parameter values extracted from the query
+- confidence in 0.0..1.0 (be honest — 0.3 + reason is fine if uncertain)
+- short reason (<= 80 chars)
+
+CRITICAL — read EVERY modifier in the query, not just the subject noun. Templates are differentiated by visual style AND layout, not only topic:
+
+- **Style modifiers** (watercolor / retro / vintage / minimalist / photorealistic / anime / kawaii / ink / monochrome) — pick a template whose OUTPUT natively has that style. "Watercolor map" needs a watercolor map template, not a generic destination list.
+- **Format / layout modifiers** (chart / grid / list of N / top 10 / 16 types / dual / before-after / comparison / timeline) — pick the template whose LAYOUT matches. "Chart of 16 MBTI types" needs a grid/chart template, NOT a single-character profile.
+- **Audience modifiers** (for kids / for beginners / educational) — pick the template whose style fits.
+- **Artifact-type modifiers** (recipe poster / promotional poster / care guide / how-to / infographic) — these name the artifact directly. Prefer the template that explicitly produces that artifact.
+
+Pick templates that can GENERATE content for the query AS TYPED, not just templates whose tags overlap with one word.
+
+Catalog:
+{catalog}
+
+Return ONLY a JSON object: {"matches": [{"template_id": "template-...", "params": {"key": "value"}, "confidence": 0.85, "reason": "..."}]}.
+No prose, no markdown fences.`;
+
+export type TemplateMatch = {
+  template_id: string;
+  params: Record<string, string>;
+  confidence: number;
+  reason: string;
+};
+
+type MatchCache = Map<string, { matches: TemplateMatch[]; at: number }>;
+const CACHE: MatchCache = new Map();
+const CACHE_MAX = 256;
+const CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1_000;
+
+function cacheGet(key: string): TemplateMatch[] | null {
+  const hit = CACHE.get(key);
+  if (!hit) return null;
+  if (Date.now() - hit.at > CACHE_TTL_MS) {
+    CACHE.delete(key);
+    return null;
+  }
+  CACHE.delete(key);
+  CACHE.set(key, hit);
+  return hit.matches;
+}
+
+function cacheSet(key: string, matches: TemplateMatch[]) {
+  if (CACHE.size >= CACHE_MAX) {
+    const first = CACHE.keys().next().value;
+    if (first !== undefined) CACHE.delete(first);
+  }
+  CACHE.set(key, { matches, at: Date.now() });
+}
+
+let _client: OpenAI | null | undefined;
+function getClient(): OpenAI | null {
+  if (_client !== undefined) return _client;
+  const key = process.env.OPENAI_API_KEY;
+  if (!key) {
+    _client = null;
+    return null;
+  }
+  try {
+    _client = new OpenAI({ apiKey: key, timeout: TIMEOUT_MS });
+  } catch {
+    _client = null;
+  }
+  return _client;
+}
+
+function sanitizeParams(raw: unknown): Record<string, string> {
+  if (!raw || typeof raw !== "object") return {};
+  const out: Record<string, string> = {};
+  for (const [k, v] of Object.entries(raw as Record<string, unknown>)) {
+    if (typeof k !== "string" || !k) continue;
+    if (v === null || v === undefined) continue;
+    out[k] = String(v);
+  }
+  return out;
+}
+
+/**
+ * Ask gpt-4o-mini for up to 3 templates that could generate content
+ * matching `query`. Returns [] on any failure (missing key, timeout,
+ * malformed response, hallucinated template_ids) — caller should treat
+ * empty as "no matcher rail to show this query."
+ */
+export async function matchTemplatesForQuery(
+  query: string,
+): Promise<TemplateMatch[]> {
+  const trimmed = query.trim();
+  if (trimmed.length < 2) return [];
+
+  const cacheKey = trimmed.toLowerCase();
+  const cached = cacheGet(cacheKey);
+  if (cached) return cached;
+
+  const client = getClient();
+  if (!client) return [];
+
+  try {
+    const res = await client.chat.completions.create({
+      model: MODEL,
+      temperature: 0.2,
+      max_tokens: 800,
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT.replace("{catalog}", CATALOG_BLOB) },
+        { role: "user", content: `Query: ${trimmed}` },
+      ],
+    });
+    const raw = res.choices?.[0]?.message?.content?.trim() ?? "";
+    const cleaned = raw.replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/i, "").trim();
+    const parsed = JSON.parse(cleaned);
+    const matches = Array.isArray(parsed?.matches) ? parsed.matches : [];
+    const cleanedMatches: TemplateMatch[] = [];
+    const seen = new Set<string>();
+    for (const m of matches) {
+      if (!m || typeof m !== "object") continue;
+      const tid = (m as { template_id?: unknown }).template_id;
+      if (typeof tid !== "string") continue;
+      if (!TEMPLATE_IDS.has(tid)) continue; // reject hallucinations
+      if (seen.has(tid)) continue;
+      seen.add(tid);
+      const confRaw = (m as { confidence?: unknown }).confidence;
+      const conf =
+        typeof confRaw === "number" ? Math.max(0, Math.min(1, confRaw)) : 0.5;
+      cleanedMatches.push({
+        template_id: tid,
+        params: sanitizeParams((m as { params?: unknown }).params),
+        confidence: conf,
+        reason: String((m as { reason?: unknown }).reason ?? ""),
+      });
+      if (cleanedMatches.length >= 3) break;
+    }
+    cacheSet(cacheKey, cleanedMatches);
+    return cleanedMatches;
+  } catch {
+    return [];
+  }
+}
