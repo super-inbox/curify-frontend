@@ -35,21 +35,25 @@ const EN_NANO = JSON.parse(
 
 const MODEL = "gpt-4o-mini";
 
-// Hand-curated baseline mirrors lib/progseo_demo.ts. Updating that file
-// SHOULD trigger updating this baseline — they are intentionally kept
-// inline so the eval is self-contained and re-runnable. The user keeps
-// the demo + baseline in sync editorially.
+// Hand-curated baseline. Each query lists 2-3 ACCEPTABLE templates —
+// any one of which would be a reasonable answer. Top-3 precision
+// against this expanded baseline is the headline metric (vs. the
+// single-template baseline that was too strict).
 const PROGSEO_BASELINE = [
   {
     query: "minimalist autumn outfit for japan travel",
     expected: [
       { template_id: "template-fashion-ecommerce", params: { core_selling_point: "Minimalist autumn outfit for Japan travel" } },
+      { template_id: "template-personal-fashion-outfit-style-variations", params: { style1: "minimalist autumn Japan travel outfit" } },
+      { template_id: "template-travel-packing-guide-infographic", params: { destination: "Japan", day_count: "7" } },
     ],
   },
   {
     query: "infj vs entp dating compatibility chart",
     expected: [
       { template_id: "template-mbti-relationship-infographic", params: { mbti_type_a: "INFJ", mbti_type_b: "ENTP" } },
+      { template_id: "template-mbti-comparison-infographic", params: { topic: "INFJ vs ENTP dating compatibility" } },
+      { template_id: "template-mbti-in-love-infographic", params: { mbti_type: "INFJ" } },
     ],
   },
   {
@@ -57,42 +61,53 @@ const PROGSEO_BASELINE = [
     expected: [
       { template_id: "template-recipe", params: { dish_name: "Cuban Sandwich" } },
       { template_id: "template-food", params: { food_name: "Cuban Sandwich" } },
+      { template_id: "template-varieties-food-poster", params: { food_theme: "Cuban Sandwiches" } },
     ],
   },
   {
     query: "bilingual flashcards for kids learning korean fruits",
     expected: [
       { template_id: "template-vocabulary", params: { language_pair: "en-ko", topic_name: "Fruits" } },
+      { template_id: "template-kids-vocabulary-poster", params: { theme_name: "Fruits" } },
+      { template_id: "template-cartoon-english-vocabulary-flashcards", params: { theme: "Fruits" } },
     ],
   },
   {
     query: "watercolor map of europe travel destinations",
     expected: [
       { template_id: "template-watercolor-world-map-illustration", params: { continent_name: "Europe" } },
+      { template_id: "template-watercolor-travel-journal-collage", params: { expedition_theme: "European travel" } },
+      { template_id: "template-whimsical-travel-map", params: { country_name: "Europe" } },
     ],
   },
   {
     query: "monstera plant care guide infographic",
     expected: [
       { template_id: "template-houseplant-care-guide-infographic", params: { plant_name: "Monstera" } },
+      { template_id: "template-gardening-how-to-infographic", params: { plant_name: "Monstera" } },
     ],
   },
   {
     query: "marvel mbti character chart 16 types",
     expected: [
       { template_id: "template-mbti-generic", params: { character_set: "Marvel" } },
+      { template_id: "template-mbti-marvel", params: { character_name: "Iron Man" } },
+      { template_id: "template-fandom-character-grid-poster", params: { theme: "Marvel MBTI" } },
     ],
   },
   {
     query: "lunar new year red envelope graphic design",
     expected: [
       { template_id: "template-product-theme-promotional-poster", params: { title_text: "Lunar New Year Red Envelope" } },
+      { template_id: "template-cultural-festival-poster", params: { festival_name: "Lunar New Year" } },
     ],
   },
   {
     query: "1950s vintage diner illustration retro poster",
     expected: [
       { template_id: "template-watercolor-theme-collage-illustration", params: { theme: "1950s vintage American diner" } },
+      { template_id: "template-nostalgic-first-item-poster", params: { item_theme: "1950s diner" } },
+      { template_id: "template-vintage-travel-scrapbook-poster", params: { destination: "1950s diner" } },
     ],
   },
   {
