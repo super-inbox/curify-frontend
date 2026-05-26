@@ -214,14 +214,21 @@ export default function ProgSeoDemoClient({ entries }: { entries: ProgSeoEntry[]
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="divide-y divide-gray-200">
           {entries.map((entry) => (
-            <section key={entry.slug}>
-              <h2 className="mb-2 text-sm font-semibold text-gray-900">
-                <span className="text-gray-400">query: </span>
-                {entry.query}
-              </h2>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+            <section
+              key={entry.slug}
+              className="grid grid-cols-1 gap-4 py-5 md:grid-cols-[220px_1fr] md:gap-6"
+            >
+              <div className="md:pt-1">
+                <div className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">
+                  query
+                </div>
+                <h2 className="mt-1 text-sm font-semibold text-gray-900">
+                  {entry.query}
+                </h2>
+              </div>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 {entry.matches.map((m, idx) => {
                   const k = keyFor(entry.slug, idx);
                   return (
