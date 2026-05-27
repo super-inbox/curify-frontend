@@ -16,6 +16,7 @@ import RelatedBlogs from "../../../_components/RelatedBlogs";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import nanoTemplatesData from '../../../../../public/data/nano_templates.json';
 import { toSlug } from '@/lib/nano_utils';
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 type Template = {
   id: string;
@@ -249,6 +250,13 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
 
         {/* RelatedBlogs covers internal blog cross-links — no separate
             "Related Tools & Resources" section (those entries were just other
+
+            <BlogCTACard
+              category="nano-template"
+              slug="ultimate-directory-of-nano-banana-prompts"
+              locale={locale}
+            />
+
             blog posts, duplicating RelatedBlogs). */}
         <RelatedBlogs currentSlug="ultimate-directory-of-nano-banana-prompts" locale={locale} />
 

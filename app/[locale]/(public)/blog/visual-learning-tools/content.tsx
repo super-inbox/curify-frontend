@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 export default function BlogContent() {
   const t = useTranslations('blog.visualLearningTools')
 
@@ -365,6 +366,13 @@ export default function BlogContent() {
         <div className="text-white">
           <p>{t('footer.callToAction')}</p>
         </div>
+
+      <BlogCTACard
+        category="learning-education"
+        slug="visual-learning-tools"
+        locale={locale}
+      />
+
       </footer>
 
       <RelatedBlogs currentSlug="visual-learning-tools" locale="en" maxRelated={2} />

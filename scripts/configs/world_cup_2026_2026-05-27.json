@@ -1,0 +1,69 @@
+[
+  {
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "Kylian Mbappé", "player_right": "Jude Bellingham" },
+    "topics": ["character", "sports", "comparison"],
+    "id_suffix": "mbappe-vs-bellingham"
+  },
+  {
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "Lionel Messi", "player_right": "Kylian Mbappé" },
+    "topics": ["character", "sports", "comparison"],
+    "id_suffix": "messi-vs-mbappe-final-rematch"
+  },
+  {
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "Vinicius Jr", "player_right": "Lamine Yamal" },
+    "topics": ["character", "sports", "comparison"],
+    "id_suffix": "vinicius-vs-yamal"
+  },
+  {
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "Lautaro Martínez", "player_right": "Harry Kane" },
+    "topics": ["character", "sports", "comparison"],
+    "id_suffix": "lautaro-vs-kane"
+  },
+  {
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "Pedri", "player_right": "Kevin De Bruyne" },
+    "topics": ["character", "sports", "comparison"],
+    "id_suffix": "pedri-vs-debruyne"
+  },
+
+  {
+    "template_id": "template-celebrity-movie-group-poster",
+    "params": { "star_movie_group": "Argentina 2026 World Cup squad — Messi, Di María, Álvarez, Mac Allister, Lautaro Martínez, Emiliano Martínez" },
+    "topics": ["character", "sports", "groups", "posters"],
+    "id_suffix": "argentina-2026-world-cup-squad"
+  },
+  {
+    "template_id": "template-celebrity-movie-group-poster",
+    "params": { "star_movie_group": "Brazil 2026 World Cup squad — Vinicius Jr, Rodrygo, Raphinha, Casemiro, Marquinhos, Alisson" },
+    "topics": ["character", "sports", "groups", "posters"],
+    "id_suffix": "brazil-2026-world-cup-squad"
+  },
+  {
+    "template_id": "template-celebrity-movie-group-poster",
+    "params": { "star_movie_group": "France 2026 World Cup squad — Mbappé, Griezmann, Tchouaméni, Theo Hernandez, Kanté, Maignan" },
+    "topics": ["character", "sports", "groups", "posters"],
+    "id_suffix": "france-2026-world-cup-squad"
+  },
+  {
+    "template_id": "template-celebrity-movie-group-poster",
+    "params": { "star_movie_group": "England 2026 World Cup squad — Kane, Bellingham, Saka, Foden, Rice, Pickford" },
+    "topics": ["character", "sports", "groups", "posters"],
+    "id_suffix": "england-2026-world-cup-squad"
+  },
+  {
+    "template_id": "template-celebrity-movie-group-poster",
+    "params": { "star_movie_group": "Spain 2026 World Cup squad — Yamal, Pedri, Rodri, Morata, Carvajal, Unai Simón" },
+    "topics": ["character", "sports", "groups", "posters"],
+    "id_suffix": "spain-2026-world-cup-squad"
+  },
+  {
+    "template_id": "template-celebrity-movie-group-poster",
+    "params": { "star_movie_group": "Portugal 2026 World Cup squad — Cristiano Ronaldo, Bruno Fernandes, Bernardo Silva, Diogo Jota, Cancelo, Diogo Costa" },
+    "topics": ["character", "sports", "groups", "posters"],
+    "id_suffix": "portugal-2026-world-cup-squad"
+  }
+]

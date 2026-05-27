@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 export default function BlogContent() {
   const t = useTranslations('blog.redCarpetAiLooks')
   const locale = useLocale()
@@ -120,6 +121,13 @@ export default function BlogContent() {
             Try Fashion Templates
           </a>
         </div>
+
+      <BlogCTACard
+        category="nano-template"
+        slug="red-carpet-ai-looks"
+        locale={locale}
+      />
+
       </section>
 
       <RelatedBlogs currentSlug="red-carpet-ai-looks" locale="en" maxRelated={2} />

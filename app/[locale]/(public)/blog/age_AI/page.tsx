@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 export async function generateMetadata({
   params,
@@ -145,6 +146,13 @@ export default function AgeAiPost() {
       <p className="mt-8 text-gray-600">
         {t("conclusion")}
       </p>
+
+
+      <BlogCTACard
+        category="ds-ai-engineering"
+        slug="age_AI"
+        locale={locale}
+      />
 
       {/* Related Articles Section */}
       <RelatedBlogs currentSlug="age_AI" locale={locale} />

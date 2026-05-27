@@ -4,6 +4,7 @@ import CdnImage from '../../../_components/CdnImage';
 import RelatedBlogs from '../../../_components/RelatedBlogs';
 import { FaLightbulb, FaCheck, FaLayerGroup, FaCogs, FaChartLine, FaTools, FaRocket } from 'react-icons/fa';
 import Link from 'next/link';
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 export async function generateMetadata({
   params,
@@ -520,6 +521,13 @@ export default async function AIPlatform({
             </div>
           </div>
         </section>
+
+
+        <BlogCTACard
+          category="ds-ai-engineering"
+          slug="aiPlatform"
+          locale={locale}
+        />
 
         {/* Related Articles */}
         <RelatedBlogs currentSlug="aiPlatform" locale={locale} />

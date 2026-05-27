@@ -15,6 +15,7 @@ import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import { VideoTranscriptionBusinessMermaid } from "./VideoTranscriptionBusinessMermaid";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 /**
  * Helper function to convert markdown to HTML
@@ -244,6 +245,13 @@ export default function VideoTranscriptionBusinessGuidePost() {
           }} 
         />
       </section>
+
+
+      <BlogCTACard
+        category="creator-tools"
+        slug="video-transcription-business-guide"
+        locale={locale}
+      />
 
       {/* Related Articles */}
       <RelatedBlogs currentSlug="video-transcription-business-guide" locale={locale} />

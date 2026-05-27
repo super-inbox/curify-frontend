@@ -15,6 +15,7 @@ import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import { VideoTranscriptionMermaid } from "./VideoTranscriptionMermaid";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 /**
  * Helper function to convert markdown to HTML
@@ -347,6 +348,13 @@ export default function VideoTranscriptionTechnicalDeepDivePost() {
           }} 
         />
       </section>
+
+
+      <BlogCTACard
+        category="video-translation-dubbing"
+        slug="video-transcription-technical-deep-dive"
+        locale={locale}
+      />
 
       {/* Related Articles */}
       <RelatedBlogs currentSlug="video-transcription-technical-deep-dive" locale={locale} />

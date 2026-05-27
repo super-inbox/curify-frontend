@@ -78008,6 +78008,9 @@
       "名人海报",
       "篮球比赛",
       "体育传奇"
+    ],
+    "topics": [
+      "sports"
     ]
   },
   {
@@ -78031,6 +78034,9 @@
       "经典角色",
       "英雄人物",
       "电影传奇"
+    ],
+    "topics": [
+      "film"
     ]
   },
   {
@@ -78054,6 +78060,9 @@
       "喜剧角色",
       "电视海报",
       "情景喜剧"
+    ],
+    "topics": [
+      "film"
     ]
   },
   {
@@ -78077,6 +78086,9 @@
       "电视节目",
       "经典角色",
       "情景喜剧海报"
+    ],
+    "topics": [
+      "film"
     ]
   },
   {
@@ -78100,6 +78112,9 @@
       "运动海报",
       "篮球比赛海报",
       "体育偶像"
+    ],
+    "topics": [
+      "sports"
     ]
   },
   {
@@ -78125,6 +78140,9 @@
       "扣篮大赛",
       "运动海报",
       "明星合影"
+    ],
+    "topics": [
+      "sports"
     ]
   },
   {
@@ -78150,6 +78168,9 @@
       "赛车明星",
       "速度与激情",
       "赛车比赛"
+    ],
+    "topics": [
+      "sports"
     ]
   },
   {
@@ -78175,6 +78196,9 @@
       "运动员合影",
       "网球冠军",
       "网球运动"
+    ],
+    "topics": [
+      "sports"
     ]
   },
   {
@@ -80011,6 +80035,9 @@
       "犯罪题材",
       "电视剧海报",
       "剧情"
+    ],
+    "topics": [
+      "film"
     ]
   },
   {
@@ -80059,6 +80086,9 @@
       "角色合辑",
       "经典人物",
       "电影海报"
+    ],
+    "topics": [
+      "film"
     ]
   },
   {
@@ -80083,6 +80113,9 @@
       "奇幻电影",
       "角色海报",
       "魔法人物"
+    ],
+    "topics": [
+      "film"
     ]
   },
   {
@@ -80107,6 +80140,9 @@
       "超自然",
       "团队海报",
       "经典剧集"
+    ],
+    "topics": [
+      "film"
     ]
   },
   {
@@ -80131,6 +80167,9 @@
       "经典喜剧",
       "团队合辑",
       "职场幽默"
+    ],
+    "topics": [
+      "film"
     ]
   },
   {
@@ -98755,6 +98794,330 @@
       "探险城市",
       "旅行目的地",
       "美国最佳城市"
+    ]
+  },
+  {
+    "id": "template-sports-battle-mbappe-vs-bellingham",
+    "template_id": "template-sports-battle",
+    "asset": {
+      "image_url": "/images/nano_insp/template-sports-battle-mbappe-vs-bellingham.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-sports-battle-mbappe-vs-bellingham-prev.jpg"
+    },
+    "params": {
+      "player_left": "Kylian Mbappé",
+      "player_right": "Jude Bellingham"
+    },
+    "locales": {
+      "en": {
+        "title": "Kylian Mbappé"
+      }
+    },
+    "topics": [
+      "character",
+      "sports",
+      "comparison",
+      "world-cup"
+    ],
+    "search_aliases": [
+      "Kylian Mbappé",
+      "Jude Bellingham",
+      "NBA对决",
+      "运动员比较",
+      "篮球对比海报"
+    ]
+  },
+  {
+    "id": "template-sports-battle-vinicius-vs-yamal",
+    "template_id": "template-sports-battle",
+    "asset": {
+      "image_url": "/images/nano_insp/template-sports-battle-vinicius-vs-yamal.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-sports-battle-vinicius-vs-yamal-prev.jpg"
+    },
+    "params": {
+      "player_left": "Vinicius Jr",
+      "player_right": "Lamine Yamal"
+    },
+    "locales": {
+      "en": {
+        "title": "Vinicius Jr"
+      }
+    },
+    "topics": [
+      "character",
+      "sports",
+      "comparison",
+      "world-cup"
+    ],
+    "search_aliases": [
+      "Vinicius Jr",
+      "Lamine Yamal",
+      "NBA对决",
+      "运动员比较",
+      "篮球对比海报"
+    ]
+  },
+  {
+    "id": "template-sports-battle-lautaro-vs-kane",
+    "template_id": "template-sports-battle",
+    "asset": {
+      "image_url": "/images/nano_insp/template-sports-battle-lautaro-vs-kane.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-sports-battle-lautaro-vs-kane-prev.jpg"
+    },
+    "params": {
+      "player_left": "Lautaro Martínez",
+      "player_right": "Harry Kane"
+    },
+    "locales": {
+      "en": {
+        "title": "Lautaro Martínez"
+      }
+    },
+    "topics": [
+      "character",
+      "sports",
+      "comparison",
+      "world-cup"
+    ],
+    "search_aliases": [
+      "Lautaro Martínez",
+      "Harry Kane",
+      "NBA对决",
+      "运动员比较",
+      "篮球对比海报"
+    ]
+  },
+  {
+    "id": "template-sports-battle-pedri-vs-debruyne",
+    "template_id": "template-sports-battle",
+    "asset": {
+      "image_url": "/images/nano_insp/template-sports-battle-pedri-vs-debruyne.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-sports-battle-pedri-vs-debruyne-prev.jpg"
+    },
+    "params": {
+      "player_left": "Pedri",
+      "player_right": "Kevin De Bruyne"
+    },
+    "locales": {
+      "en": {
+        "title": "Pedri"
+      }
+    },
+    "topics": [
+      "character",
+      "sports",
+      "comparison",
+      "world-cup"
+    ],
+    "search_aliases": [
+      "Pedri",
+      "Kevin De Bruyne",
+      "NBA对决",
+      "运动员比较",
+      "篮球对比海报"
+    ]
+  },
+  {
+    "id": "template-celebrity-movie-group-poster-argentina-2026-world-cup-squad",
+    "template_id": "template-celebrity-movie-group-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-celebrity-movie-group-poster-argentina-2026-world-cup-squad.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-celebrity-movie-group-poster-argentina-2026-world-cup-squad-prev.jpg"
+    },
+    "params": {
+      "star_movie_group": "Argentina 2026 World Cup squad — Messi, Di María, Álvarez, Mac Allister, Lautaro Martínez, Emiliano Martínez"
+    },
+    "locales": {
+      "en": {
+        "title": "Argentina 2026 World Cup squad — Messi, Di María, Álvarez, Mac Allister, Lautaro Martínez, Emiliano Martínez"
+      }
+    },
+    "topics": [
+      "character",
+      "film",
+      "groups",
+      "posters",
+      "sports",
+      "world-cup"
+    ],
+    "search_aliases": [
+      "Argentina 2026 World Cup squad",
+      "梅西",
+      "Di María",
+      "Álvarez",
+      "Mac Allister",
+      "Lautaro Martínez",
+      "Emiliano Martínez",
+      "世界杯海报"
+    ]
+  },
+  {
+    "id": "template-celebrity-movie-group-poster-brazil-2026-world-cup-squad",
+    "template_id": "template-celebrity-movie-group-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-celebrity-movie-group-poster-brazil-2026-world-cup-squad.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-celebrity-movie-group-poster-brazil-2026-world-cup-squad-prev.jpg"
+    },
+    "params": {
+      "star_movie_group": "Brazil 2026 World Cup squad — Vinicius Jr, Rodrygo, Raphinha, Casemiro, Marquinhos, Alisson"
+    },
+    "locales": {
+      "en": {
+        "title": "Brazil 2026 World Cup squad — Vinicius Jr, Rodrygo, Raphinha, Casemiro, Marquinhos, Alisson"
+      }
+    },
+    "topics": [
+      "character",
+      "film",
+      "groups",
+      "posters",
+      "sports",
+      "world-cup"
+    ],
+    "search_aliases": [
+      "Brazil 2026 World Cup squad",
+      "巴西2026世界杯阵容",
+      "Vinicius Jr",
+      "Rodrygo",
+      "Raphinha",
+      "Casemiro",
+      "Marquinhos",
+      "Alisson"
+    ]
+  },
+  {
+    "id": "template-celebrity-movie-group-poster-france-2026-world-cup-squad",
+    "template_id": "template-celebrity-movie-group-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-celebrity-movie-group-poster-france-2026-world-cup-squad.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-celebrity-movie-group-poster-france-2026-world-cup-squad-prev.jpg"
+    },
+    "params": {
+      "star_movie_group": "France 2026 World Cup squad — Mbappé, Griezmann, Tchouaméni, Theo Hernandez, Kanté, Maignan"
+    },
+    "locales": {
+      "en": {
+        "title": "France 2026 World Cup squad — Mbappé, Griezmann, Tchouaméni, Theo Hernandez, Kanté, Maignan"
+      }
+    },
+    "topics": [
+      "character",
+      "film",
+      "groups",
+      "posters",
+      "sports",
+      "world-cup"
+    ],
+    "search_aliases": [
+      "France 2026 World Cup squad",
+      "法国2026世界杯阵容",
+      "Mbappé",
+      "Griezmann",
+      "Tchouaméni",
+      "Theo Hernandez",
+      "Kanté",
+      "Maignan"
+    ]
+  },
+  {
+    "id": "template-celebrity-movie-group-poster-england-2026-world-cup-squad",
+    "template_id": "template-celebrity-movie-group-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-celebrity-movie-group-poster-england-2026-world-cup-squad.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-celebrity-movie-group-poster-england-2026-world-cup-squad-prev.jpg"
+    },
+    "params": {
+      "star_movie_group": "England 2026 World Cup squad — Kane, Bellingham, Saka, Foden, Rice, Pickford"
+    },
+    "locales": {
+      "en": {
+        "title": "England 2026 World Cup squad — Kane, Bellingham, Saka, Foden, Rice, Pickford"
+      }
+    },
+    "topics": [
+      "character",
+      "film",
+      "groups",
+      "posters",
+      "sports",
+      "world-cup"
+    ],
+    "search_aliases": [
+      "England 2026 World Cup squad",
+      "英格兰2026世界杯阵容",
+      "Kane",
+      "Bellingham",
+      "Saka",
+      "Foden",
+      "Rice",
+      "Pickford"
+    ]
+  },
+  {
+    "id": "template-celebrity-movie-group-poster-spain-2026-world-cup-squad",
+    "template_id": "template-celebrity-movie-group-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-celebrity-movie-group-poster-spain-2026-world-cup-squad.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-celebrity-movie-group-poster-spain-2026-world-cup-squad-prev.jpg"
+    },
+    "params": {
+      "star_movie_group": "Spain 2026 World Cup squad — Yamal, Pedri, Rodri, Morata, Carvajal, Unai Simón"
+    },
+    "locales": {
+      "en": {
+        "title": "Spain 2026 World Cup squad — Yamal, Pedri, Rodri, Morata, Carvajal, Unai Simón"
+      }
+    },
+    "topics": [
+      "character",
+      "film",
+      "groups",
+      "posters",
+      "sports",
+      "world-cup"
+    ],
+    "search_aliases": [
+      "Spain 2026 World Cup squad",
+      "西班牙2026世界杯阵容",
+      "Yamal",
+      "Pedri",
+      "Rodri",
+      "Morata",
+      "Carvajal",
+      "Unai Simón"
+    ]
+  },
+  {
+    "id": "template-celebrity-movie-group-poster-portugal-2026-world-cup-squad",
+    "template_id": "template-celebrity-movie-group-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-celebrity-movie-group-poster-portugal-2026-world-cup-squad.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-celebrity-movie-group-poster-portugal-2026-world-cup-squad-prev.jpg"
+    },
+    "params": {
+      "star_movie_group": "Portugal 2026 World Cup squad — Cristiano Ronaldo, Bruno Fernandes, Bernardo Silva, Diogo Jota, Cancelo, Diogo Costa"
+    },
+    "locales": {
+      "en": {
+        "title": "Portugal 2026 World Cup squad — Cristiano Ronaldo, Bruno Fernandes, Bernardo Silva, Diogo Jota, Cancelo, Diogo Costa"
+      }
+    },
+    "topics": [
+      "character",
+      "film",
+      "groups",
+      "posters",
+      "sports",
+      "world-cup"
+    ],
+    "search_aliases": [
+      "Portugal 2026 World Cup squad",
+      "葡萄牙2026世界杯阵容",
+      "Cristiano Ronaldo",
+      "Bruno Fernandes",
+      "Bernardo Silva",
+      "Diogo Jota",
+      "Cancelo",
+      "Diogo Costa"
     ]
   }
 ]

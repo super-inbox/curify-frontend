@@ -371,3 +371,23 @@ Skim the ~20 P2 bodies. If anchored in real templates and tools, leave alone; ot
 ---
 
 _Track sources used for this audit: `git log --since=2026-05-10`, `public/data/blogs.json`, `messages/en/blog.json`, `app/[locale]/_components/BlogCTACard.tsx`, commits `0803aab`, `ac14131`, `9c8fe83`, `b533c55`, `db74b3e`, `b5925db`, `250e2b6`, `225e2f7`, `e57377f`, `a7011b7`, `f11608f`, `7ef4e04`, `4355568`._
+
+---
+
+## SERP-emulation learnings for nano-banana / prompt-focused posts (added 2026-05-27)
+
+Audit of the top SERP result for `brazil prompt` (`https://sajjadit.com/ai-soccer-poster-prompt-argentina-brazil/`, 2,000-2,500 words) surfaced five structural patterns missing from our nano-banana corpus. The Curify version shipped at `/blog/brazil-argentina-soccer-poster-prompts` adopts all five; the existing nano-banana posts (`nano-banana-prompt-ecosystem`, `10-prompting-tips-nano-banana`, `curify-nano-banana-template-tips`, `ultimate-directory-of-nano-banana-prompts`, `nano-banana-dedicated`) should be backfilled with these where applicable.
+
+1. **Copyable prompt blocks (explicit copy UI).** Triple-backtick code blocks already render as `<pre><code>` via `formatContent`, which the user can select/copy. Prompt-focused posts should put every recommended prompt inside a code block. Today many of our prompts are buried in prose.
+
+2. **Per-country/team/topic permutation as long-tail strategy.** sajjadit.com's sidebar lists Morocco, Portugal, Germany, France posts — each post hits a different long-tail query with the same structural skeleton. We should ship variants for high-search-volume entities (each World Cup nation, each MBTI universe, each tier-1 topic) where the structural cost of authoring drops to near-zero after the first one.
+
+3. **AI tools mini-comparison table.** Standard inclusion in prompt-focused SERP winners — readers want to know which model fits before they commit to one. The four-column shape (Tool / Best for / Strength / Weakness) takes ~15 minutes to write and dramatically improves dwell time. Already in the new soccer-poster post and `image-generation-model-comparison`; backfill into the nano-banana directory + ecosystem posts.
+
+4. **Settings & keyword vocabulary section.** Lens choice (`85mm portrait`, `wide-angle action`), lighting cue (`golden hour`, `floodlight glare`, `rim lighting`), color grading vocabulary (`teal-orange grade`, `commercial color grade`), negative prompts (`no warped jersey numbers`). This section feeds search-by-aesthetic queries that prompt-content readers actually type. Most existing nano-banana posts skip this entirely.
+
+5. **"Other variants — same prompt, swap the entity" closer.** The conclusion of every prompt-focused post should be a list of 8-10 entity permutations with the prompt-shape held constant. Tells the reader: this post is one of many; here are the natural next searches. Sajjadit ends with "Morocco, France, Germany, Portugal" pointers. Our soccer post ends with 9 national-team variants. Should backfill into the nano-banana posts (e.g., the directory post's conclusion could end with "Other prompt families — same pattern: character, design, lifestyle, learning").
+
+**Methodology captured for future GSC-driven posts:** `feedback_gsc_serp_emulation.md` in memory. The cadence is: pull weekly `Queries.csv` → find emergent queries with non-zero CTR at position 8-25 → WebFetch top-1 SERP result → audit structure → ship Curify version anchored in real templates.
+
+---

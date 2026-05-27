@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 function pickLocaleImage(locale: string, zhSrc: string, enSrc: string) {
   return locale === "zh" ? zhSrc : enSrc; // all non-zh locales use English version
@@ -310,6 +311,13 @@ export default async function AeVsComfyUiPost({
           {t("cta.secondary")}
         </Link>
       </div>
+
+
+      <BlogCTACard
+        category="creator-tools"
+        slug="ae-vs-comfyui"
+        locale={locale}
+      />
 
       {/* Related Articles */}
       <RelatedBlogs currentSlug="ae-vs-comfyui" locale={locale} />

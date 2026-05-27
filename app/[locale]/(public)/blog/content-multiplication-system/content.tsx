@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 export default function BlogContent() {
   const t = useTranslations('blog.contentMultiplicationSystem')
 
@@ -231,6 +232,13 @@ export default function BlogContent() {
         <div className="text-white">
           <p>{t('footer.questions')}</p>
         </div>
+
+      <BlogCTACard
+        category="content-automation"
+        slug="content-multiplication-system"
+        locale={locale}
+      />
+
       </footer>
 
       <RelatedBlogs currentSlug="content-multiplication-system" locale="en" maxRelated={3} />

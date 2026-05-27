@@ -121,11 +121,22 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   seasonal:             "winter",
   composition:          "collage",
   "cultural-festivals": "festive",
+  "world-cup":          "athletic",
 };
 
-// Blog tag to pull posts for a topic page.
+// Blog tag to pull posts for a topic page. Use when one tag in
+// public/data/blogs.json maps cleanly to a topic.
 const TOPIC_BLOG_TAG: Record<string, string> = {
   ai: "Creator Tools",
+};
+
+// Specific blog slugs to surface on a topic page. Use when a single
+// canonical post belongs to a topic but its tag is too generic to
+// map via TOPIC_BLOG_TAG (e.g. tag "Nano Template" is shared by many
+// posts; only this one is the canonical world-cup explainer).
+// Resolved against public/data/blogs.json by slug.
+const TOPIC_BLOG_SLUGS: Record<string, string[]> = {
+  "world-cup": ["brazil-argentina-soccer-poster-prompts"],
 };
 
 // Reverse map: Tier 2 child → Tier 1 parent
@@ -407,6 +418,12 @@ export function getUseCasesForTopics(topicIds: readonly string[]): string[] {
 /** Blog tag to filter blog posts for this topic page, if any. */
 export function getBlogTag(topicId: string): string | undefined {
   return TOPIC_BLOG_TAG[topicId];
+}
+
+/** Specific blog slugs pinned to a topic (in addition to tag-based filter).
+ *  Returns an empty array when the topic has no curated slugs. */
+export function getBlogSlugsForTopic(topicId: string): string[] {
+  return TOPIC_BLOG_SLUGS[topicId] ?? [];
 }
 
 export { normalizeTopicValues };

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 export default function BlogContent() {
   const t = useTranslations('blog.imageToNarrativeVideo')
 
@@ -325,6 +326,13 @@ export default function BlogContent() {
             {t('footer.contactText')}
           </a>
         </div>
+
+      <BlogCTACard
+        category="creator-tools"
+        slug="image-to-narrative-video"
+        locale={locale}
+      />
+
       </footer>
 
       <RelatedBlogs currentSlug="image-to-narrative-video" locale="en" maxRelated={3} />

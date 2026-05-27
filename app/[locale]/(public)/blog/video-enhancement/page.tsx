@@ -9,6 +9,7 @@ import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import CdnVideo from "../../../_components/CdnVideo";
 import CdnAudio from "../../../_components/CdnAudio";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 export async function generateMetadata({
   params,
@@ -280,6 +281,13 @@ export default async function VideoEnhancementPost({
           </p>
         </footer>
       </main>
+
+
+      <BlogCTACard
+        category="creator-tools"
+        slug="video-enhancement"
+        locale={locale}
+      />
 
       {/* Related Articles */}
       <RelatedBlogs currentSlug="video-enhancement" locale={locale} />
