@@ -29,13 +29,28 @@ def main():
     lines.append('')
     lines.append(data.get('description', ''))
     lines.append('')
-    lines.append('## Expected legend')
+    lines.append('## Expected legend — inspiration richness (`expected`)')
     lines.append('')
     lines.append('| Bucket | Means |')
     lines.append('| --- | --- |')
     for k, v in data.get('expected_legend', {}).items():
         lines.append(f'| `{k}` | {v} |')
     lines.append('')
+
+    tpl_legend = data.get('expected_templates_legend')
+    if tpl_legend:
+        lines.append('## Expected legend — template richness (`expected_templates`)')
+        lines.append('')
+        lines.append('| Bucket | Means |')
+        lines.append('| --- | --- |')
+        for k, v in tpl_legend.items():
+            lines.append(f'| `{k}` | {v} |')
+        lines.append('')
+        lines.append('**Tolerance:** template-richness verdict accepts ±1 bucket drift '
+                     'as PASS (LLM matcher temperature 0.2 produces run-to-run noise '
+                     'at that level). 2-bucket drift → WARN, 3-bucket drift → FAIL.')
+        lines.append('')
+
     redirect_note = data.get('redirect_bypass_note')
     if redirect_note:
         lines.append(f'**Redirect bypass note:** {redirect_note}')
@@ -54,6 +69,7 @@ def main():
         'popular',
         'gsc-zero',
         'synthetic',
+        'progseo-2026-05-26',
     ]
     for src in order:
         rows = by_source.get(src, [])
@@ -62,13 +78,13 @@ def main():
         del by_source[src]
         lines.append(f'## {src} ({len(rows)} queries)')
         lines.append('')
-        lines.append('| # | Query | Expected | Notes |')
-        lines.append('| --- | --- | --- | --- |')
+        lines.append('| # | Query | Expected (inspirations) | Expected (templates) | Notes |')
+        lines.append('| --- | --- | --- | --- | --- |')
         for i, q in enumerate(rows, 1):
-            # Pipe-safe escape — replace `|` with `\|` in notes
             notes = (q.get('notes') or '').replace('|', '\\|')
+            tpl = q.get('expected_templates') or '—'
             lines.append(
-                f"| {i} | `{q['query']}` | `{q['expected']}` | {notes} |"
+                f"| {i} | `{q['query']}` | `{q['expected']}` | `{tpl}` | {notes} |"
             )
         lines.append('')
 
