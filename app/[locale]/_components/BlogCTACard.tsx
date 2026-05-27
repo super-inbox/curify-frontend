@@ -164,6 +164,26 @@ const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
       Icon: MessageCircle,
     },
   ],
+  // Soccer-poster post — route readers straight to the two templates the post
+  // walks through, not the generic nano-banana directory.
+  "brazil-argentina-soccer-poster-prompts": [
+    {
+      id: "sports-battle-template",
+      label: "Try the Sports Battle template",
+      description:
+        "1v1 player VS poster — supply two names, get the comic-book rivalry poster.",
+      href: "/nano-template/sports-battle",
+      Icon: Wrench,
+    },
+    {
+      id: "group-poster-template",
+      label: "Try the Team Poster template",
+      description:
+        "Full national-team ensemble poster — supply the squad name, get the cinematic lineup.",
+      href: "/nano-template/celebrity-movie-group-poster",
+      Icon: Wrench,
+    },
+  ],
   // Top-of-page-3 traffic; this post drives interest in design / collage
   // templates, not a partnership form.
   "ai-collage-digital-wallpaper-guide": [
