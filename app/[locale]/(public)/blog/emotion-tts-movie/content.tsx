@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 export default function BlogContent() {
   const t = useTranslations('blog.emotionTtsMovie')
 
@@ -397,6 +398,13 @@ export default function BlogContent() {
             {t('footer.contactText')}
           </a>
         </div>
+
+      <BlogCTACard
+        category="creator-tools"
+        slug="emotion-tts-movie"
+        locale={locale}
+      />
+
       </footer>
 
       <RelatedBlogs currentSlug="emotion-tts-movie" locale="en" maxRelated={3} />

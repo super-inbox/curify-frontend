@@ -8,6 +8,7 @@ import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 // Define types for our translations
 type StepPoints = string | string[];
@@ -373,6 +374,13 @@ ffmpeg -i output_temp.mp4 -i music.mp3 -filter_complex "[0:a][1:a]amix=inputs=2"
           br: () => <br />
         })}
       </div>
+
+
+      <BlogCTACard
+        category="creator-tools"
+        slug="storyboard-to-pipeline"
+        locale={locale}
+      />
 
       {/* Related Articles */}
       <RelatedBlogs currentSlug="storyboard-to-pipeline" locale={locale} />

@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 export async function generateMetadata({
   params,
@@ -314,6 +315,13 @@ export default async function AgentsVsWorkflowsPost({
         <strong> control</strong>, agents bring <strong>creativity</strong>, together they deliver
         <strong> exceptional results</strong>.
       </p>
+
+
+      <BlogCTACard
+        category="creator-tools"
+        slug="agents-vs-workflows"
+        locale={locale}
+      />
 
       {/* Related Articles */}
       <RelatedBlogs currentSlug="agents-vs-workflows" locale={locale} />

@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 export async function generateMetadata({
   params,
@@ -171,6 +172,13 @@ export default function VideoTranslationEvaluationPost() {
             </a>
           </p>
         </footer>
+
+
+        <BlogCTACard
+          category="video-translation-dubbing"
+          slug="video-evaluation"
+          locale={locale}
+        />
 
         {/* Related Articles */}
         <RelatedBlogs currentSlug="video-evaluation" locale={locale} />

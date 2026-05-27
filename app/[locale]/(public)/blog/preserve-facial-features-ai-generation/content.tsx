@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 export default function BlogContent() {
   const t = useTranslations('blog.preserveFacialFeaturesAiGeneration')
 
@@ -408,6 +409,13 @@ with [style_specific_elements]"`}
         <p className="text-gray-600 text-center">
           {t('footer')}
         </p>
+
+      <BlogCTACard
+        category="creator-tools"
+        slug="preserve-facial-features-ai-generation"
+        locale={locale}
+      />
+
       </footer>
 
       <RelatedBlogs currentSlug="preserve-facial-features-ai-generation" locale="en" maxRelated={2} />

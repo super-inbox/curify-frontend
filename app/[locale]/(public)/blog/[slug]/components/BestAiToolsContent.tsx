@@ -1,11 +1,13 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
+import BlogCTACard from '@/app/[locale]/_components/BlogCTACard'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 
 export default function BestAiToolsContent() {
   const t = useTranslations('blog.bestAiTools')
+  const locale = useLocale()
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
@@ -193,7 +195,13 @@ export default function BestAiToolsContent() {
         </div>
       </footer>
 
-      <RelatedBlogs currentSlug="best-ai-tools" locale="en" maxRelated={3} />
+      <BlogCTACard
+        category="creator-tools"
+        slug="best-ai-tools"
+        locale={locale}
+      />
+
+      <RelatedBlogs currentSlug="best-ai-tools" locale={locale} maxRelated={3} />
     </article>
   )
 }

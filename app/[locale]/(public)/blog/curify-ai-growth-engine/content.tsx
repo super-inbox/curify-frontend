@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 export default function BlogContent() {
   const t = useTranslations('blog.curifyAiGrowthEngine')
 
@@ -260,6 +261,13 @@ export default function BlogContent() {
             {t('footer.contactText')}
           </a>
         </div>
+
+      <BlogCTACard
+        category="content-automation"
+        slug="curify-ai-growth-engine"
+        locale={locale}
+      />
+
       </footer>
 
       <RelatedBlogs currentSlug="curify-ai-growth-engine" locale="en" maxRelated={3} />

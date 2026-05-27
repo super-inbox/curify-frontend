@@ -27,6 +27,7 @@ import RelatedBlogs from "../../../_components/RelatedBlogs";
 
 // Import scene analysis data from JSON file
 import dreamScenes from '@/public/data/dream-scene-analysis.json';
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 
 // Use the imported scenes data
 const inceptionScenes = dreamScenes;
@@ -685,6 +686,13 @@ export default function SceneDetectionPage() {
             })}
           </p>
         </section>
+
+
+        <BlogCTACard
+          category="creator-tools"
+          slug="storyboard-labeling"
+          locale={locale}
+        />
 
         {/* Related Articles */}
         <RelatedBlogs currentSlug="storyboard-labeling" locale={locale} />

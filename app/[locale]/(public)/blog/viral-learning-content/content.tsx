@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 export default function BlogContent() {
   const t = useTranslations('blog.viralLearningContent')
 
@@ -276,6 +277,13 @@ export default function BlogContent() {
         <div className="text-white">
           <p>{t('footer.questions')}</p>
         </div>
+
+      <BlogCTACard
+        category="learning-education"
+        slug="viral-learning-content"
+        locale={locale}
+      />
+
       </footer>
 
       <RelatedBlogs currentSlug="viral-learning-content" locale="en" maxRelated={3} />

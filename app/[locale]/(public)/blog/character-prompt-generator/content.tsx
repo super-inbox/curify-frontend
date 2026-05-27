@@ -6,6 +6,7 @@ import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 import NanoBananaExamples from '@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples'
 
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 type TemplateEntry = { name: string; slug: string; params: string }
 
 export default function BlogContent() {
@@ -164,6 +165,13 @@ export default function BlogContent() {
             ))}
           </div>
           <p className="text-sm text-gray-700 dark:text-gray-300">{t('footer.questions')}</p>
+
+        <BlogCTACard
+          category="creator-tools"
+          slug="character-prompt-generator"
+          locale={locale}
+        />
+
         </footer>
 
         <RelatedBlogs currentSlug="character-prompt-generator" locale={locale} maxRelated={2} />

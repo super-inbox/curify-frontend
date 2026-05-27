@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 export default function BlogContent() {
   const locale = useLocale()
   const t = useTranslations('blog.aiVideoDubbingTutorial')
@@ -260,6 +261,13 @@ export default function BlogContent() {
         <p className="mb-4">
           {t('conclusionPara2')}
         </p>
+
+      <BlogCTACard
+        category="video-dubbing"
+        slug="ai-video-dubbing-tutorial"
+        locale={locale}
+      />
+
       </section>
 
       <RelatedBlogs currentSlug="ai-video-dubbing-tutorial" locale={locale} />

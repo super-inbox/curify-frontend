@@ -118,12 +118,50 @@ const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
       Icon: Wrench,
     },
     {
-      id: "tools-index",
-      label: "Browse Creator Tools",
+      id: "nano-banana-prompts",
+      label: "Browse Nano Banana Prompts",
       description:
-        "Video dubbing, subtitles, transcription — pair the prompts with the production tools.",
-      href: "/tools",
+        "Curated nano-banana prompt directory — every prompt family the post references, ready to copy.",
+      href: "/nano-banana-pro-prompts",
       Icon: Wrench,
+    },
+  ],
+  // Nano-banana directory + dedicated-explainer posts — readers come for prompts,
+  // route them to the prompt directory and a partnership fork (not /tools).
+  "ultimate-directory-of-nano-banana-prompts": [
+    {
+      id: "nano-banana-prompts",
+      label: "Browse Nano Banana Prompts",
+      description:
+        "The curated directory itself — character, design, lifestyle, learning, and more.",
+      href: "/nano-banana-pro-prompts",
+      Icon: Wrench,
+    },
+    {
+      id: "contact-partner",
+      label: "Partner with us",
+      description:
+        "Custom Nano Banana template work, brand-locked visual contracts, or scale-out partnership.",
+      href: "/contact",
+      Icon: MessageCircle,
+    },
+  ],
+  "nano-banana-dedicated": [
+    {
+      id: "nano-banana-prompts",
+      label: "Browse Nano Banana Prompts",
+      description:
+        "Curated nano-banana prompt directory across character, design, lifestyle, and learning.",
+      href: "/nano-banana-pro-prompts",
+      Icon: Wrench,
+    },
+    {
+      id: "contact-partner",
+      label: "Partner with us",
+      description:
+        "Custom Nano Banana template work or scale-out partnership.",
+      href: "/contact",
+      Icon: MessageCircle,
     },
   ],
   // Top-of-page-3 traffic; this post drives interest in design / collage
@@ -280,6 +318,14 @@ function ctasFor(category: string, locale: string, slug?: string): CTA[] {
           href: `/${locale}${override?.href ?? "/tools"}`,
           Icon: Wrench,
         },
+        {
+          id: "contact-partner",
+          label: "Partner with us",
+          description:
+            "Custom creator pipeline, white-label tooling, or scale-out partnership.",
+          href: `/${locale}/contact`,
+          Icon: MessageCircle,
+        },
       ];
     }
 
@@ -334,11 +380,11 @@ function ctasFor(category: string, locale: string, slug?: string): CTA[] {
           Icon: MessageCircle,
         },
         {
-          id: "tools-index",
-          label: "Browse Creator Tools",
+          id: "nano-banana-prompts",
+          label: "Browse Nano Banana Prompts",
           description:
-            "Video dubbing, subtitles, and the other tools that pair with the template gallery.",
-          href: `/${locale}/tools`,
+            "Curated nano-banana prompt directory — character, design, lifestyle, learning, and more.",
+          href: `/${locale}/nano-banana-pro-prompts`,
           Icon: Wrench,
         },
       ];
