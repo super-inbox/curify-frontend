@@ -18,6 +18,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useState } from 'react';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
+import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
@@ -349,6 +350,12 @@ export default function HowToDubVideosNaturallyPage() {
           </div>
         </section>
       </div>
+
+      <BlogCTACard
+        category="video-translation-dubbing"
+        slug="how-to-dub-videos-naturally"
+        locale={locale}
+      />
 
       {/* Related Blogs */}
       <RelatedBlogs currentSlug="how-to-dub-videos-naturally" locale={locale} />
