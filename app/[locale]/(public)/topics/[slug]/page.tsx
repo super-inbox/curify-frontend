@@ -20,7 +20,7 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic } from "@/lib/topicRegistry";
 
 // Topic data is bundled (nano_templates.json + nano_inspiration.json +
 // blogs.json) plus a single fetch for related prompts. Bundled data
@@ -199,11 +199,31 @@ export default async function Page({ params }: Props) {
     }
   }
 
-  // Blog posts for this topic (if configured)
+  // Blog posts for this topic — union of two sources:
+  //   1. blogs whose tag matches TOPIC_BLOG_TAG[slug] (broad — used for
+  //      e.g. ai → "Creator Tools" where ANY post with that tag belongs)
+  //   2. blogs whose slug is in TOPIC_BLOG_SLUGS[slug] (narrow — used for
+  //      curated single-post pins like world-cup → soccer-poster-prompts
+  //      where the tag is generic but the post is canonical)
   const blogTag = getBlogTag(slug);
-  const blogPosts = blogTag
-    ? (blogsData as any[]).filter((b) => b.tag?.toLowerCase() === blogTag.toLowerCase())
-    : [];
+  const blogSlugs = getBlogSlugsForTopic(slug);
+  const blogSlugSet = new Set(blogSlugs.map((s) => s.toLowerCase()));
+  const blogPostSet = new Map<string, (typeof blogsData)[number]>();
+  if (blogTag) {
+    for (const b of blogsData as any[]) {
+      if (b.tag?.toLowerCase() === blogTag.toLowerCase()) {
+        blogPostSet.set(b.slug, b);
+      }
+    }
+  }
+  if (blogSlugSet.size > 0) {
+    for (const b of blogsData as any[]) {
+      if (b.slug && blogSlugSet.has(b.slug.toLowerCase())) {
+        blogPostSet.set(b.slug, b);
+      }
+    }
+  }
+  const blogPosts = Array.from(blogPostSet.values());
 
   const topicTitle =
     translateTopics(`topics.${slug}.title`) ||
