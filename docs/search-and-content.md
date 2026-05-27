@@ -200,6 +200,22 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
 
    **Unblocks**: long-tail SEO landing pages, dynamic /topics/<slug> generate-grids (even when topic has zero content yet), automation pair with gap-classifier (item 6) to turn `CONTENT_GAP_BATCH_GEN` verdicts into concrete batch configs.
 
+9. **Programmatic SEO — topic-hub pipeline** (filed 2026-05-27, **highest-leverage item in the workstream**). Every other item in this thread improves internal UX; this is the only item that converts the workstream output into external (Google organic) traffic.
+
+   **The strategic framing**: the self-evolving search engine produces a content engine — detect demand → match to templates → batch-gen content. But the output surface is internal-only. Audit on 2026-05-27: **1 of 46 eval queries has a Google-indexable static URL today; 45 are search-only and invisible to Googlebot**. The engine works; we just haven't built the export surface.
+
+   **Why search-only URLs don't index**: (a) Googlebot can't type into search boxes — only follows `<a href>`; (b) client-side-rendered `/search?q=…` returns empty HTML to crawlers; (c) Google's anti-Slop policy penalizes internal-search pages as thin content. Fixes: (a) semantic-slug routes `/topic-hub/<slug>`; (b) server-rendered; (c) wrapped as topic-hub format (H1 + 80-120 word LLM intro + curated image grid + downloads + cross-links) so it reads as an editorial topic page, not a search result.
+
+   **Source pipeline** combines three inputs: GSC top queries (impressions ≥ 30, CTR < 3%, position 5-20), internal `SEARCH_NORESULT + LOWRESULT` (≥ 2 distinct users in last 30 days), curated long-tail (e.g. ProgSEO seeds). Slugs gate on catalog-readiness (≥ 5 inspirations OR ≥ 2 high-confidence matcher templates) + intent clarity + cannibalization check against existing /topics/<slug>.
+
+   **Phases**: (0) foundation infra — manifest schema + route + sitemap — 1 day; (1) ship 20 hand-curated hubs from highest-impressions GSC queries — 2-3 days; (2) auto-generation pipeline pairing with gap-classifier verdicts — 1 week; (3) cross-link layer + /topic-hub index — half-week; (4) measurement loop using GSC API — ongoing.
+
+   **Phase 1 success criteria** (30 days post-ship): ≥ 60% indexed, ≥ 5 on page 1, ≥ 500 impressions/week, ≥ 10 clicks/week landing.
+
+   **Full spec**: `docs/programmatic-seo-topic-hubs.md` — covers page anatomy, source pipeline gating, hreflang strategy, risks (duplicate content with /topics, anti-Slop, AI Overview defenses, cannibalization), measurement loop.
+
+   **Why prioritize ahead of items 5-8**: items 5-8 all improve internal UX or measurement; only item 9 converts the workstream into a growth flywheel. Should be the next thing built once Generation Bridge Phase 1 has accumulated 2 weeks of CTR data to inform which queries are matcher-ready.
+
 ---
 
 ## Cross-thread priorities (next 2-3 weeks)
