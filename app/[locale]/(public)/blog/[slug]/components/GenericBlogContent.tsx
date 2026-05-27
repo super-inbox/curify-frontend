@@ -196,15 +196,17 @@ export default function GenericBlogContent({
         />
       </section>
 
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{hasKey("conclusionTitle") ? safeT("conclusionTitle") : "Conclusion"}</h2>
-        <div
-          className="prose prose-lg max-w-none"
-          dangerouslySetInnerHTML={{
-            __html: hasKey("conclusionContent") ? formatContent(safeT("conclusionContent")) : "<p>Start your journey with AI-powered content creation tools today.</p>",
-          }}
-        />
-      </section>
+      {(hasKey("conclusionTitle") || hasKey("conclusionContent")) && (
+        <section>
+          <h2 className="text-2xl font-bold mb-4">{hasKey("conclusionTitle") ? safeT("conclusionTitle") : "Conclusion"}</h2>
+          <div
+            className="prose prose-lg max-w-none"
+            dangerouslySetInnerHTML={{
+              __html: hasKey("conclusionContent") ? formatContent(safeT("conclusionContent")) : "<p>Start your journey with AI-powered content creation tools today.</p>",
+            }}
+          />
+        </section>
+      )}
     </div>
   );
 }
