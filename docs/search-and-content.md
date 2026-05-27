@@ -188,6 +188,18 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
 
    **Priority**: medium-low. Long compound CJK queries are long-tail (most users type 2-6 chars). Worth tackling when the gap-classifier (open item 6) surfaces ≥10 such queries per week, which would justify the engineering cost. Until then, accept rewriter rescue as the best-available behavior.
 
+8. **Search ⇄ generation bridge** (filed 2026-05-26, motivated by ProgSEO demo). The current search results page surfaces inspirations + templates *reactively* — Templates rail only includes templates whose i18n or existing inspirations match the query. This misses the big idea behind the ProgSEO demo: for any query, the page should ALSO surface templates that **could generate** the query (with concrete params filled in), even when zero inspirations exist today.
+
+   **Concrete example**: `cuban sandwich recipe poster` has 1 strict hit today. We have `template-recipe` and `template-food` — both can clearly generate it with `{dish_name: "Cuban Sandwich"}` / `{food_name: "Cuban Sandwich"}`. The page should render both as "Generate this yourself" cards alongside the existing examples grid.
+
+   **Design**: two sections — `Examples generated` (existing) + `Generate "<query>" yourself` (new). LLM matcher (`proposal_matching.py` already exists for Reddit adapter — port to TS, run at query time when results thin, cache via LRU). Page header swaps to a richer status: "<N> examples + <M> templates for <query>" / "No examples for <query> yet — generate one below." Borderline-confidence (0.4-0.7) templates render with a hedged label ("Might work for <query>").
+
+   **Phases**: (1) wire LLM matcher into search page + render new section + tracking → ~3 days; (2) measure CLICK-through + downstream GENERATE attribution → half-day; (3) backfill taxonomy from accepted LLM verdicts to cut LLM cost long-term → half-week.
+
+   **Full spec**: `docs/search-generation-bridge.md` — covers two design paths (taxonomy vs LLM matcher), hybrid recommendation, UI copy proposals per state, mobile + accessibility, risks, open questions, downstream unlocks beyond search.
+
+   **Unblocks**: long-tail SEO landing pages, dynamic /topics/<slug> generate-grids (even when topic has zero content yet), automation pair with gap-classifier (item 6) to turn `CONTENT_GAP_BATCH_GEN` verdicts into concrete batch configs.
+
 ---
 
 ## Cross-thread priorities (next 2-3 weeks)

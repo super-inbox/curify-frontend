@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
+import GenerableTemplatesSection from "./GenerableTemplatesSection";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import type { SuggestionEntry } from "@/lib/searchIndex";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
@@ -240,6 +241,12 @@ export default function SearchResultsClient({
               />
             </section>
           )}
+
+          {/* Generable templates (LLM-matched): templates that COULD
+              generate the query even if no inspiration exists for it
+              yet. Lazy-fetched after mount so initial render stays
+              fast. See docs/search-generation-bridge.md. */}
+          <GenerableTemplatesSection query={query} locale={locale} />
 
           {/* Gallery prompts (bottom): Redis-backed nano-banana prompts
               matching the query as an exact tag. Renders with the same

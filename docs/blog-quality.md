@@ -1,6 +1,6 @@
 # Blog Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-18 (second push — closed all 4 duplicate-consolidation pairs + the orphan namespace + the layer3 contamination, net −6,200 lines across `blog.json`). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
+_Last updated: 2026-05-26 (GSC CTR-lift readout on the 15 rewritten posts: 5/13 vs 5/25; B2B post categorization cleanup). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
 
 ## Framing
 
@@ -11,6 +11,57 @@ Three parallel tracks:
 3. **Layout & visual polish** — uniform basic layout across every blog and the feed: no giant hero images, relaxed reading width, consistent alignment, CTA card themed in light-purple + light-blue. Affects every reader on every blog, so the impact compounds across the whole catalog rather than being per-URL.
 
 Both tracks share the same i18n fan-out: edit `messages/en/blog.json`, delete the stale `title` field in each non-en locale, run `scripts/i18n_autotranslate.cjs --base en --files blog --write`, bump `lastmod` in `public/data/blogs.json`.
+
+**Feed source note (post-`4c84a7e`, 2026-05-19):** `public/data/blogs.json` is now the single source for the blog feed. The legacy `blog.posts[]` array in `messages/{locale}/blog.json` was removed — no per-locale `tag` fan-out needed when recategorizing.
+
+---
+
+## Today's progress (2026-05-26 — GSC CTR-lift readout + B2B categorization)
+
+### GSC CTR-lift on the 15 rewritten posts (5/13 → 5/25)
+
+Compared `raw/curify-ai.com-Performance-on-Search-2026-05-13/Pages.csv` vs `…-2026-05-25/Pages.csv`. Time windows differ (5/13 looks 28d/90d, 5/25 looks 7d) so absolute click/impression deltas aren't comparable — but **CTR % and position are normalized**, so the lift signal below is real.
+
+| Slug | Old CTR | New CTR | Lift | New Pos | Read |
+| --- | --: | --: | --: | --: | --- |
+| `lip-sync-technical-deep-dive` | 0.28% | 6.67% | 24× | 8.26 | Tiny sample (30 impr) — directional |
+| `what-is-voice-cloning` | 0.03% | 0.39% | 13× | 8.80 | Position improved 10.55→8.80 ★ |
+| `ai-youtube-video-translator` | 0.35% | **3.21%** | **9.2×** | 10.58 | **Biggest real win** — 7 clicks on 218 impr |
+| `video-transcription-business-guide` | 0.38% | 2.08% | 5.5× | 13.39 | Position improved 15.5→13.4 |
+| `10-prompting-tips-video-generation` | 0.37% | 1.41% | 3.8× | 10.06 | Position drift 8.25→10.06 |
+| `image-generation-model-comparison` | 0.06% | 0.18% | 3× | 8.54 | Still floor-level; meta not the lever here |
+| `f5-tts-voice-cloning` | 0.35% | 0.41% | 1.2× | 8.60 | Flat |
+| `chinese-costume-history-infographic` | 0% | 1.54% | from-zero | 22.61 | Real but ranked deep |
+| `voice-cloning-tools` | 0.25% | **0%** | regress | 8.32 | 752 impr, 0 clicks — concerning |
+| `translate-youtube-video-to-english` | 1.16% | 0% | regress | 13.04 | Position dropped 9.6→13 — re-crawl drift |
+| `how-to-dub-videos-naturally` | 0% | 0% | flat | 7.22 | Bespoke layout — meta alone isn't enough |
+
+**Headline reads:**
+
+1. **Playbook validated.** 8 of 11 posts with usable signal cross the 2× CTR threshold; standouts are `ai-youtube-video-translator` (9.2×, 3.21%), `what-is-voice-cloning` (13× + position gain), `video-transcription-business-guide` (5.5× + position gain).
+2. **Position drift is a real side-effect** of bumping `lastmod` — many posts dropped 1-3 positions during re-evaluation. Most should recover next pull.
+3. **4 concerning bleeders** that didn't respond to the meta-only treatment — needs deeper diagnosis from current 5/25 Queries.csv:
+   - `image-generation-model-comparison` — 1,102 impressions, 0.18% CTR. Biggest absolute bleeder. Different framing experiment needed (title hook isn't winning the SERP).
+   - `voice-cloning-tools` — 752 impressions, 0% CTR. Regressed from 0.25%. Possibly snippet vs intent mismatch.
+   - `translate-youtube-video-to-english` — position dropped 9.6→13.0, CTR collapsed. Re-crawl drift or relevance signal lost.
+   - `how-to-dub-videos-naturally` — 141 impressions on 5/25 (down from 1,008 on 5/13), still 0 clicks at position 7.22. Bespoke dedicated-folder layout may be the limiting factor, not the meta.
+
+### B2B post categorization cleanup (single commit)
+
+Closed the follow-up the 2026-05-25 audit (`e6f1ecc`) explicitly deferred for the DTC post, plus the tag-drift bug on Agency + EdTech.
+
+| Change | Slug | Before | After |
+| --- | --- | --- | --- |
+| Category | `programmatic-seo-dtc-visual-first` | `ds-ai-engineering` | `content-automation` |
+| BLOG_POST_OVERRIDES | `programmatic-seo-dtc-visual-first` | (none) | → `/use-cases/for-dtc-brands` + Calendly |
+| Catalog tag | `ai-content-factory-for-agencies` | `"DS & AI Engineering"` | `"Content Automation"` |
+| Catalog tag | `multimodal-ai-educational-publishing` | `"DS & AI Engineering"` | `"Content Automation"` |
+| Catalog tag | `programmatic-seo-dtc-visual-first` | `"DS & AI Engineering"` | `"Content Automation"` |
+| `lastmod` | All 3 above | (varied) | `2026-05-26` |
+
+After this push, the **B2B-narrative routing pattern** is consistent across all 3 buyer-intent posts: `category: content-automation` + `BLOG_POST_OVERRIDES` → matching `/use-cases/for-<persona>` + Calendly direct. `self-improving-multimodal-search` correctly stays under `ds-ai-engineering` (it IS a real engineering deep-dive; MentorCruise CTA fits).
+
+`BLOG_POST_OVERRIDES` table now has **8 entries**: 4 high-traffic creator-side routing fixes (character-prompt-generator, mbti-character-generator, 10-prompting-tips-nano-banana, ai-collage-digital-wallpaper-guide) + 4 B2B-narrative posts (multimodal-ai-educational-publishing, ai-content-factory-for-agencies, content-tagging-system, programmatic-seo-dtc-visual-first).
 
 ---
 

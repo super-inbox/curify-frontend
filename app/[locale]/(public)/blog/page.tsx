@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { useState, useMemo } from "react";
 import { useParams } from "next/navigation";
 import blogsData from "@/public/data/blogs.json";
+import { blogPosts as blogPostsConfig } from "./[slug]/utils/blog-config";
 
 interface BlogPost {
   slug: string;
@@ -53,6 +54,18 @@ export default function BlogListPage() {
 
   const blogHref = (slug: string) => `/${locale}/blog/${slug}`;
 
+  // Per-post localized title from messages/<locale>/blog.json. Each post's
+  // namespace is registered in blog-config.ts (slug → namespace map). Falls
+  // back to the catalog's English title when the locale lookup misses,
+  // which preserves the previous behaviour for any slug not yet registered.
+  const localizedTitle = (post: BlogPost) => {
+    const namespace = blogPostsConfig[post.slug as keyof typeof blogPostsConfig]?.namespace;
+    if (namespace && t.has(`${namespace}.title`)) {
+      return t(`${namespace}.title`);
+    }
+    return post.title;
+  };
+
   return (
     <div className="pt-2 pb-16">
       <div className="mx-auto max-w-[1400px] px-4">
@@ -87,7 +100,7 @@ export default function BlogListPage() {
               <div className="relative h-48 w-full bg-neutral-100">
                 <CdnImage
                   src={post.image}
-                  alt={post.title}
+                  alt={localizedTitle(post)}
                   fill
                   className="object-cover"
                 />
@@ -100,7 +113,7 @@ export default function BlogListPage() {
                   {post.date} · {post.readTime}
                 </div>
                 <h2 className="text-base font-semibold leading-snug text-neutral-900 transition group-hover:text-purple-700">
-                  {post.title}
+                  {localizedTitle(post)}
                 </h2>
               </div>
             </Link>
