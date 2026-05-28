@@ -274,12 +274,17 @@ export default async function BlogPostPage({
           body in normal block flow. overflow-hidden on the wrapper acts
           as a clearfix for the float. */}
       <div className="overflow-hidden">
-        {/* Hero wrapper enforces a fixed 3:2 aspect ratio so vertical
-            source images (e.g., template renders like sports-battle at
-            896x1200) don't tower over horizontal sources. Cap visual
-            size consistent across orientations. object-cover crops to
-            fit — subject usually centered enough to survive. */}
-        <div className="mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 rounded-lg overflow-hidden shadow aspect-[3/2]">
+        {/* Hero is adaptive to source aspect ratio — no forced shape,
+            no cropping. Wrapper provides max width (max-w-lg/xl) +
+            max height (max-h-96 = 384px) constraints. The image renders
+            at its natural aspect, shrinking proportionally whichever
+            constraint hits first:
+              - horizontal 16:9 → fills width (576px × 324px on desktop)
+              - 3:4 vertical → fills height (288px × 384px on desktop)
+              - 1:1 square → fills height (384px × 384px on desktop)
+            Visual area roughly matched across orientations; nothing is
+            cropped. */}
+        <div className="mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 flex items-center justify-center">
           {useMermaidThumbnail ? (
             <DynamicThumbnail
               slug={thumbnailType || slug}
@@ -294,7 +299,7 @@ export default async function BlogPostPage({
               alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
               width={672}
               height={448}
-              className="w-full h-full rounded-lg object-cover"
+              className="block max-w-full max-h-96 w-auto h-auto rounded-lg shadow"
             />
           )}
         </div>
