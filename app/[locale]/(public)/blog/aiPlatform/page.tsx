@@ -60,7 +60,7 @@ export default async function AIPlatform({
               alt={t('imageAlt')}
               width={800}
               height={450}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover max-w-2xl mx-auto"
             />
           </div>
 

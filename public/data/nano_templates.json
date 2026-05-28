@@ -5502,7 +5502,7 @@
     "id": "template-phonics-consonant-blend",
     "locales": {
       "en": {
-        "base_prompt": "(Phonics Learning Poster Designer) Create a vibrant, educational phonics poster for the {phonics_blend} consonant blend. Layout: 1. Large, bold ' {phonics_blend} ' text at the top of the poster. 2. Inside a white bordered frame, display 6-8 words starting with '{phonics_blend}', each paired with a colorful cartoon illustration of the word. 3. Each word has the '{phonics_blend}' part in red and the rest of the letters in blue. 4. The background is a cheerful sky-blue with white clouds and green grass at the bottom. Style: Friendly, simple cartoon style, bright kid-friendly colors, clear sans-serif font, educational early learning aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: '{phonics_blend}' Consonant Blend Phonics Learning Poster.",
+        "base_prompt": "(Phonics Learning Poster Designer) Create a vibrant, educational phonics poster for the {phonics_blend} phonics pattern. Layout: 1. Large, bold ' {phonics_blend} ' text at the top of the poster. 2. Inside a white bordered frame, display 6-8 words featuring '{phonics_blend}', each paired with a colorful cartoon illustration of the word. 3. Each word has the '{phonics_blend}' part in red and the rest of the letters in blue. 4. The background is a cheerful sky-blue with white clouds and green grass at the bottom. Style: Friendly, simple cartoon style, bright kid-friendly colors, clear sans-serif font, educational early learning aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: '{phonics_blend}' Phonics Pattern Learning Poster.",
         "parameters": [
           {
             "name": "phonics_blend",

@@ -5,6 +5,7 @@ import CdnImage from './CdnImage';
 import { DynamicThumbnail } from '@/app/[locale]/(public)/blog/[slug]/components/DynamicThumbnail';
 import { useTranslations } from 'next-intl';
 import blogsData from '@/public/data/blogs.json';
+import { blogPosts as blogPostsConfig } from '@/app/[locale]/(public)/blog/[slug]/utils/blog-config';
 import { useClickTracking } from '@/services/useTracking';
 
 interface BlogPost {
@@ -25,7 +26,15 @@ interface RelatedBlogCardProps {
 
 export default function RelatedBlogCard({ blog, locale, category }: RelatedBlogCardProps) {
   const t = useTranslations('blog');
-  
+
+  // Per-post localized title from messages/<locale>/blog.json. Same lookup
+  // pattern as the blog index page (fd6a67a) — falls back to the catalog's
+  // English title when the namespace or the localized key is missing, so a
+  // catalog/namespace title drift doesn't render an empty card.
+  const namespace = blogPostsConfig[blog.slug as keyof typeof blogPostsConfig]?.namespace;
+  const localizedTitle =
+    namespace && t.has(`${namespace}.title`) ? t(`${namespace}.title`) : blog.title;
+
   // Find the full blog data to check for useMermaidThumbnail
   const blogData = blogsData.find((b: any) => b.slug === blog.slug) as any;
   const useMermaidThumbnail = blogData?.useMermaidThumbnail || false;
@@ -51,7 +60,7 @@ export default function RelatedBlogCard({ blog, locale, category }: RelatedBlogC
           <div className="w-full h-full">
             <DynamicThumbnail
               slug={thumbnailType || blog.slug}
-              title={blog.title}
+              title={typeof localizedTitle === 'string' ? localizedTitle : blog.title}
               category={blog.category || category || ''}
               existingImage={blog.image}
               forceType="mermaid"
@@ -60,7 +69,7 @@ export default function RelatedBlogCard({ blog, locale, category }: RelatedBlogC
         ) : (
           <CdnImage
             src={blog.image}
-            alt={blog.title}
+            alt={localizedTitle}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
@@ -80,7 +89,7 @@ export default function RelatedBlogCard({ blog, locale, category }: RelatedBlogC
         </div>
         
         <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200 line-clamp-2 mb-2">
-          {blog.title}
+          {localizedTitle}
         </h3>
         
         <div className="flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-700">

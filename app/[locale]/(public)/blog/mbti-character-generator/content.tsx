@@ -23,7 +23,7 @@ export default function BlogContent() {
         <div className="mt-6">
           <CdnImage 
             src="/images/nano_insp_preview/template-mbti-nba-kevendurant-prev.jpg" 
-            className="w-full rounded-lg shadow-lg"
+            className="w-full rounded-lg shadow-lg max-w-2xl mx-auto"
             alt="MBTI Character Generator Preview"
           />
         </div>

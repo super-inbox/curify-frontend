@@ -63,7 +63,8 @@ export function createBlogPostsConfig() {
       'ai-content-factory-for-agencies': 'aiContentFactoryForAgencies',
       'multimodal-ai-educational-publishing': 'multimodalAiEducationalPublishing',
       'programmatic-seo-dtc-visual-first': 'programmaticSeoDtcVisualFirst',
-      'brazil-argentina-soccer-poster-prompts': 'brazilArgentinaSoccerPosterPrompts',
+            'brazil-argentina-soccer-poster-prompts': 'brazilArgentinaSoccerPosterPrompts',
+      'one-person-companies-vs-100-person-teams': 'onePersonCompaniesVs100PersonTeams',
       'self-improving-multimodal-search': 'selfImprovingMultimodalSearch'
     };
     
@@ -163,5 +164,6 @@ export const availableKeys: Record<string, string[]> = {
   'multimodalAiEducationalPublishing': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'programmaticSeoDtcVisualFirst': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'brazilArgentinaSoccerPosterPrompts': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'modelsTitle', 'modelsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'toolsTitle', 'toolsContent', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
+  'onePersonCompaniesVs100PersonTeams': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'selfImprovingMultimodalSearch': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords']
 };

@@ -67,7 +67,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         readTime={t('readTime')}
       />
       <div className="flex flex-col xl:flex-row xl:gap-8">
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 max-w-3xl">
           <p className="text-lg font-semibold text-blue-600 mb-4">
             {t("intro")}
           </p>

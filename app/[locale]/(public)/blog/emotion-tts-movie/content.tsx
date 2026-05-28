@@ -25,7 +25,7 @@ export default function BlogContent() {
         <div className="mt-6">
           <CdnImage 
             src="/images/voices2.webp" 
-            className="w-full rounded-lg shadow-lg"
+            className="w-full rounded-lg shadow-lg max-w-2xl mx-auto"
             alt="Emotion TTS Movie Tool"
           />
         </div>

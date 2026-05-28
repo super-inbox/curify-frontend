@@ -61,7 +61,7 @@ export default async function AeVsComfyUiPost({
           alt={t("images.guideCoverAlt")}
           width={1400}
           height={700}
-          className="w-full h-auto object-cover"
+          className="w-full h-auto object-cover max-w-2xl mx-auto"
           priority
         />
       </div>

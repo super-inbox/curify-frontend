@@ -26,7 +26,7 @@ export default function BlogContent() {
         <div className="mt-6">
           <CdnImage 
             src="/images/2b234839e1161a6d57af43e828efd3ec_thumb_1764263264241.jpg" 
-            className="w-full rounded-lg shadow-lg"
+            className="w-full rounded-lg shadow-lg max-w-2xl mx-auto"
             alt="Red Carpet AI Fashion Looks"
           />
         </div>

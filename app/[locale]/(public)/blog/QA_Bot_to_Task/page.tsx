@@ -59,11 +59,13 @@ export default async function QABotToTaskAgent({
         {t("intro")}
       </p>
       
-      <div className="my-8 rounded-lg overflow-hidden shadow-lg">
-        <img 
-          src="https://storage.googleapis.com/curify-static/taskAgent.jpg" 
+      <div className="my-8 mx-auto max-w-2xl rounded-lg overflow-hidden shadow-lg">
+        <CdnImage
+          src="https://cdn.curify-ai.com/taskAgent.jpg"
           alt={t("taskAgentImageAlt")}
           className="w-full h-auto"
+          width={1200}
+          height={800}
         />
       </div>
 

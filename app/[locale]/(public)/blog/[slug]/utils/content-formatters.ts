@@ -160,6 +160,11 @@ export function formatVoiceCloningContent(content: string): string {
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
     // Handle bold text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    // Handle markdown blockquotes — pull-quote rendering with a colored
+    // left border + italic. Applied after links/bold so those still
+    // resolve inside the quote, but before the bullet-header rule so a
+    // quoted line doesn't get caught as a list item.
+    .replace(/^> (.+)$/gm, '<blockquote class="border-l-4 border-purple-300 pl-4 italic text-gray-700 my-6 text-lg">$1</blockquote>')
     // Handle bullet points with bold headers: **Header**: Description
     .replace(/^\*\*(.*?)\*\*:\s*(.+)$/gm, '<li><strong>$1:</strong> $2</li>')
     // Handle bullet points at start of line
@@ -197,6 +202,11 @@ export function formatAslContent(content: string): string {
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
     // Handle bold text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    // Handle markdown blockquotes — pull-quote rendering with a colored
+    // left border + italic. Applied after links/bold so those still
+    // resolve inside the quote, but before the bullet-header rule so a
+    // quoted line doesn't get caught as a list item.
+    .replace(/^> (.+)$/gm, '<blockquote class="border-l-4 border-purple-300 pl-4 italic text-gray-700 my-6 text-lg">$1</blockquote>')
     // Handle bullet points with bold headers: **Header**: Description
     .replace(/^\*\*(.*?)\*\*:\s*(.+)$/gm, '<li><strong>$1:</strong> $2</li>')
     // Handle regular bullet points

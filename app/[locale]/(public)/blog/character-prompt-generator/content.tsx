@@ -33,7 +33,7 @@ export default function BlogContent() {
               src="/images/nano_insp_preview/template-mbti-marvel-en-marvel-hulk-prev.jpg"
               width={320}
               height={400}
-              className="w-full rounded-lg shadow-md"
+              className="w-full rounded-lg shadow-md max-w-2xl mx-auto"
               alt={t('heroImageAlt')}
             />
           </div>
