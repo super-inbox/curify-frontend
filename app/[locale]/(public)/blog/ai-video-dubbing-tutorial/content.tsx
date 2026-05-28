@@ -23,10 +23,12 @@ export default function BlogContent() {
           <span>•</span>
           <span>{t('category')}</span>
         </div>
-        <div className="mt-6">
-          <CdnImage 
-            src="/images/055fcb6de6feb319ff89ee8a63957028_thumb_1764265719958.jpg" 
-            className="w-full rounded-lg shadow-lg max-w-2xl mx-auto"
+        <div className="mt-4 mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 flex items-center justify-center">
+          <CdnImage
+            src="/images/055fcb6de6feb319ff89ee8a63957028_thumb_1764265719958.jpg"
+            width={672}
+            height={448}
+            className="block max-w-full max-h-96 w-auto h-auto rounded-lg shadow-lg"
             alt="AI Video Dubbing Tutorial"
           />
         </div>

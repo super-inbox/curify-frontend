@@ -57,37 +57,17 @@ export default function AiContentDistributionSystemContent({ slug, t, locale }: 
         </div>
         
         <div className="bg-gray-50 p-6 rounded-lg mb-6">
-          <h3 className="text-lg font-semibold mb-4">AI Content Distribution Pipeline</h3>
-          <MermaidChart 
-            chart={`flowchart TD
-    A[Content Creation] --> B[Platform-Specific Formatting]
-    B --> C[AI Draft Generation]
-    C --> D[Human Refinement]
-    D --> E[Scheduled Distribution]
-    E --> F[Platform Channels]
-    
-    B --> B1[Website SEO]
-    B --> B2[X/Twitter]
-    B --> B3[Facebook Groups]
-    
-    F --> F1[SEO Content]
-    F --> F2[Social Media Posts]
-    F --> F3[Niche Communities]
-    
-    F1 --> G[Analytics & Feedback]
-    F2 --> G
-    F3 --> G
-    
-    G --> H[Content Optimization]
-    H --> A
-    
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style G fill:#f1f8e9
-    style H fill:#e0f2f1`}
+          <h3 className="text-lg font-semibold mb-4">Four stages, one loop</h3>
+          <MermaidChart
+            chart={`flowchart LR
+    A[1. Format Adaptation] --> B[2. Niche-First Distribution]
+    B --> C[3. Performance Instrumentation]
+    C --> D[4. Feedback into Next Batch]
+    D --> A
+    style A fill:#e0e7ff,stroke:#6366f1
+    style B fill:#dbeafe,stroke:#3b82f6
+    style C fill:#fce7f3,stroke:#ec4899
+    style D fill:#dcfce7,stroke:#16a34a`}
             id="ai-content-distribution-pipeline"
           />
         </div>
@@ -126,27 +106,6 @@ export default function AiContentDistributionSystemContent({ slug, t, locale }: 
         <div className="prose prose-lg max-w-none mb-4">
           {renderRichContent("learningsContent")}
         </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{t("automationTitle")}</h2>
-        <div className="prose prose-lg max-w-none mb-4">
-          {renderRichContent("automationContent")}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{t("feedbackTitle")}</h2>
-        <div className="prose prose-lg max-w-none mb-4">
-          {renderRichContent("feedbackContent")}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{t("tryItTitle")}</h2>
-        <div className="prose prose-lg max-w-none mb-4">
-          {renderRichContent("tryItContent")}
-        </div>
         <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800">
             🎯 Ready to ship the same pipeline at agency scale? <a href={`/${locale}/use-cases/for-marketers`} className="text-blue-600 hover:underline font-semibold">Read the Growth Agencies playbook →</a>
@@ -155,22 +114,10 @@ export default function AiContentDistributionSystemContent({ slug, t, locale }: 
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("bonusTitle")}</h2>
-        <div className="prose prose-lg max-w-none mb-4">
-          {renderRichContent("bonusContent")}
-        </div>
-      </section>
-
-      <section>
         <h2 className="text-2xl font-bold mb-4">{t("conclusionTitle")}</h2>
         <div className="prose prose-lg max-w-none">
           {renderRichContent("conclusionContent")}
         </div>
-      </section>
-
-      <section className="mt-8 p-4 bg-gray-50 border border-gray-200 rounded-lg">
-        <h3 className="text-lg font-semibold mb-2">🔍 SEO Keywords</h3>
-        <p className="text-sm text-gray-600">{t("seoKeywords")}</p>
       </section>
     </div>
   );

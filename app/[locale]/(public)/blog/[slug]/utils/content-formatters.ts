@@ -276,10 +276,19 @@ export function formatNanoBananaContent(content: string): string {
   }
   
   return content
+    // Handle markdown images ![alt](src) — must run before the link rule
+    // since the syntax overlaps with [text](url). Kept as markdown (not
+    // raw <img>) in messages because ICU MessageFormat treats attributed
+    // HTML tags as INVALID_TAG and silently swallows the whole message,
+    // surfacing as the dot-path key in the rendered page.
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="my-4 mx-auto max-w-md rounded-lg shadow" />')
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
-    // Handle bold text
+    // Handle bold text — must run before italic so **x** is consumed first
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    // Handle single-asterisk italic — guarded against adjacent asterisks
+    // so we never partially eat what was meant to be bold.
+    .replace(/(?<!\*)\*([^*\n]+?)\*(?!\*)/g, '<em>$1</em>')
     // Handle paragraph breaks
     .replace(/\n\n/g, '</p><p class="mb-4 text-base leading-relaxed">')
     // Handle remaining line breaks

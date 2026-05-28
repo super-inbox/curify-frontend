@@ -88,7 +88,8 @@
     "topics": [
       "learning",
       "science",
-      "isometric"
+      "isometric",
+      "evolution"
     ],
     "rank_score": 80.15,
     "base_rank_score": 80,
@@ -3495,7 +3496,8 @@
       "posters",
       "culture",
       "kawaii",
-      "costumes"
+      "costumes",
+      "evolution"
     ],
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-clothing-evolution-poster.mp4",
@@ -8477,7 +8479,8 @@
     "topics": [
       "learning",
       "history",
-      "posters"
+      "posters",
+      "evolution"
     ],
     "base_rank_score": 90,
     "rank_score": 90,
@@ -8516,7 +8519,8 @@
       "learning",
       "history",
       "culture",
-      "posters"
+      "posters",
+      "evolution"
     ],
     "base_rank_score": 90,
     "rank_score": 90,
@@ -8805,5 +8809,146 @@
       "for-designers"
     ],
     "allow_generation": true
+  },
+  {
+    "id": "template-food-product-packaging-design",
+    "locales": {
+      "en": {
+        "base_prompt": "(Food Product Packaging Design Creator) Create a premium product packaging design for '{topic}'. Layout: A vertical package design with a large product name, brand logo, product photo (in a window or main section), key feature icons, and net weight text. Style: Minimalist modern aesthetic, theme-matching color palette, bold typography, clean layout, direct high-quality image generation. Subject: '{topic} premium food product packaging design'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Food Product Type",
+            "type": "text",
+            "placeholder": [
+              "Organic Rolled Oats",
+              "Double Chocolate Cookies",
+              "Italian Pasta Sauce",
+              "Marinara Sauce",
+              "Ceremonial Grade Matcha",
+              "Espresso Coffee Beans"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-food-product-packaging-design-pasta-sauce-prev.jpg",
+    "topics": [
+      "design",
+      "product",
+      "posters",
+      "mockups"
+    ],
+    "base_rank_score": 85,
+    "rank_score": 85,
+    "creation_date": "2026-05-28",
+    "allow_generation": true,
+    "batch": true
+  },
+  {
+    "id": "template-educational-career-field-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Educational Career Field Infographic Creator) Create a detailed educational infographic poster titled '{topic}'. Layout: A structured layout with 4 main sections explaining key aspects of the field, followed by real-world applications, key skills/tools, and goals. Include cartoon-style illustrations of professionals and related scenes. Style: Friendly educational cartoon art style, clear section dividers, bold headings, vibrant color coding, direct high-quality image generation. Subject: '{topic} career field infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Career/Academic Field Topic",
+            "type": "text",
+            "placeholder": [
+              "Industrial Engineering",
+              "Food Science",
+              "Healthcare Technology",
+              "Sustainable Energy",
+              "Urban Planning",
+              "Data Science"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-educational-career-field-infographic-sustainable-energy-prev.jpg",
+    "topics": [
+      "learning",
+      "guides",
+      "posters"
+    ],
+    "base_rank_score": 85,
+    "rank_score": 85,
+    "creation_date": "2026-05-28",
+    "allow_generation": true,
+    "batch": true
+  },
+  {
+    "id": "template-lunar-new-year-red-envelope-set",
+    "locales": {
+      "en": {
+        "base_prompt": "(Red Envelope Set Product Display Creator) Create a festive product showcase poster for a set of four red envelopes titled '{topic}'. Layout: Four different envelope designs displayed side-by-side, each labeled with a name and keyword. Include a decorative title banner at the top and a footer note about the set. Style: Festive illustration style matching the theme, soft pastel background, clean product photography aesthetic, direct high-quality image generation. Subject: '{topic} red envelope set product display'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Red Envelope Theme",
+            "type": "text",
+            "placeholder": [
+              "Cat-themed Red Envelopes",
+              "Dragon Year Red Envelopes",
+              "Floral Blessing Red Envelopes",
+              "Koi Fish Red Envelopes",
+              "Zodiac Rabbit Red Envelopes",
+              "Traditional Calligraphy Red Envelopes"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-lunar-new-year-red-envelope-set-koi-fish-prosperity-prev.jpg",
+    "topics": [
+      "design",
+      "culture",
+      "celebration",
+      "cultural-festivals",
+      "posters"
+    ],
+    "base_rank_score": 88,
+    "rank_score": 88,
+    "creation_date": "2026-05-28",
+    "allow_generation": true,
+    "batch": true
+  },
+  {
+    "id": "template-mbti-personality-compatibility-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(MBTI Personality Compatibility Infographic Creator) Create a cute, cartoon-style infographic poster titled '{topic}'. Layout: Split-screen layout comparing two personality types, each with key traits, cognitive functions, a character illustration, and color theme. The center includes a compatibility section, interaction dynamics description, and sliders for communication, shared interests, and conflict potential. Style: Soft pastel colors, whimsical cartoon art style, decorative hearts and sparkles, direct high-quality image generation. Subject: '{topic} MBTI compatibility infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "MBTI Pairing Topic",
+            "type": "text",
+            "placeholder": [
+              "INTJ & ENFP Compatibility",
+              "INFP & ENTJ Relationship",
+              "ISTP & ESFJ Pairing",
+              "INFJ & ESTP Connection",
+              "ISFJ & ENTP Dynamics",
+              "ISTJ & ESFP Interaction"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-personality-compatibility-infographic-istp-esfj-prev.jpg",
+    "topics": [
+      "character",
+      "mbti",
+      "relationship",
+      "personality",
+      "comparison"
+    ],
+    "base_rank_score": 92,
+    "rank_score": 92,
+    "creation_date": "2026-05-28",
+    "allow_generation": true,
+    "batch": true
   }
 ]

@@ -35,13 +35,13 @@ export default function AICollageWallpaperGuide() {
       />
       
       <div className="mb-8">
-        <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
+        <div className="mb-4 mx-auto max-w-lg md:max-w-xl md:float-left md:mr-6 md:mx-0 flex items-center justify-center">
           <CdnImage
             src="/images/45658b99d089618b244c024b1ea93cc9_thumb_1762921242171.jpg"
             alt={t('title')}
-            width={400}
-            height={250}
-            className="rounded-lg object-cover"
+            width={672}
+            height={448}
+            className="block max-w-full max-h-96 w-auto h-auto rounded-lg shadow"
           />
         </div>
         

@@ -396,27 +396,141 @@ FAMILIES = OrderedDict([
             '手作','手工','手工艺','手工制作','拼贴','剪贴簿','手帐','手作 教程','手工 拼贴',
         ],
     }),
+    # ── 2026-05-28 data-driven top-up: 5 failing queries from the 14-day
+    # admin.py search panel (curify-studio admin.py section 6). For each
+    # query, we identified the templates whose inspirations already carry
+    # the content (verified by blob match), then explicitly alias them
+    # so the production scoreBlob ranks them above the precision guard.
+    # Queries: chiikawa (3 searches, 0 CTR), 下雨 (2, 0), samurai (1, 0),
+    # 歷史 (1, 0), 路书 (1, 0).
+    ('chiikawa_franchise', {
+        'templates': [
+            'template-fandom-character-grid-poster',
+            'template-pop-culture-matching-chart',
+            'template-celebrity-movie-group-poster',
+            'template-mbti-generic',
+            'template-vocabulary',
+        ],
+        'inspiration_filter': {
+            'fields_any': [
+                'params.theme',
+                'params.theme_name',
+                'params.character_set',
+                'params.mbti_topic',
+                'params.topic_name',
+                'params.star_movie_group',
+            ],
+            'patterns': ['chiikawa', '吉伊卡哇', 'ちいかわ'],
+        },
+        'aliases': [
+            'chiikawa','ちいかわ','吉伊卡哇','chii','nagano',
+        ],
+    }),
+    ('samurai_franchise', {
+        'templates': [
+            'template-fandom-character-grid-poster',
+            'template-mbti-generic',
+            'template-historical-figure-profile-infographic',
+        ],
+        'inspiration_filter': {
+            'fields_any': [
+                'params.theme',
+                'params.character_set',
+                'params.mbti_topic',
+                'params.topic',
+                'params.topic_name',
+            ],
+            'patterns': ['samurai', '武士', '侍'],
+        },
+        'aliases': [
+            'samurai','samurais','bushido','武士','侍','武士道','幕末','feudal japan',
+            'shogun','shogunate','jidaigeki','时代剧','武家',
+        ],
+    }),
+    ('weather_cjk', {
+        # Single dedicated weather template — safe to apply template-wide.
+        'templates': [
+            'template-weather-education-infographic',
+        ],
+        'aliases': [
+            '天气','下雨','雨','雨天','下雪','雪','雪天','晴天','阴天',
+            '多云','刮风','大风','雷雨','暴雨','气象',
+            '天氣','下雨天','陰天','颱風','台风','颶風',
+            'rainy','snowy','sunny','cloudy','windy','stormy','thunderstorm','blizzard',
+            'weather forecast','weather chart','climate',
+        ],
+    }),
+    ('history_cjk', {
+        # All 13 templates carry the `history` tier-2 topic. Adding CJK
+        # history terms ensures 歷史 / 历史 / 历史人物 queries land instead
+        # of returning empty (eval gap 2026-05-28).
+        'templates': [
+            'template-what-if-history',
+            'template-historical-event-map-illustration',
+            'template-figure-principles-infographic',
+            'template-world-landmark-vintage-info-poster',
+            'template-history-timeline-infographic',
+            'template-artist-biography-infographic',
+            'template-historical-figure-vs-infographic',
+            'template-historical-figure-educational',
+            'template-national-culture-history-infographic',
+            'template-manga-artist-infographic-poster',
+            'template-historical-figure-profile-infographic',
+            'template-evolution-timeline-infographic',
+            'template-historical-evolution-timeline-infographic',
+        ],
+        'aliases': [
+            '历史','歷史','歷史人物','历史人物','歷史事件','历史事件','史','历史时期','歷史時期',
+            '中国历史','中國歷史','世界历史','世界歷史','古代史','近代史','现代史','現代史',
+            'historical figure','historical event','historical timeline','world history',
+        ],
+    }),
+    ('itinerary_cjk', {
+        'templates': [
+            'template-travel',
+            'template-series-travel',
+            'template-travel-packing-guide-infographic',
+            'template-tourist-spot-watercolor-map-infographic',
+        ],
+        'aliases': [
+            '路书','旅行路书','行程','旅行行程','路线','旅行路线','旅游攻略','旅游线路',
+            '路書','旅行路書','旅行路線','旅遊攻略',
+            'roadbook','road book','travel route','itinerary plan','trip plan',
+            'route plan','journey plan',
+        ],
+    }),
 ])
 
 
 def _inspiration_matches_filter(rec: dict, flt: dict) -> bool:
     """Check whether an inspiration's field contains any of the filter patterns.
 
-    flt is a dict with `field` (dotted path into the record, e.g.
-    'params.topic_name') and `patterns` (list of case-insensitive
-    substrings — match if any one appears in the field value). When the
-    field is missing or empty, the record does NOT match.
+    flt has `patterns` (list of case-insensitive substrings — match if any one
+    appears) and EITHER:
+      - `field`: dotted path into the record (e.g. 'params.topic_name')
+      - `fields_any`: list of dotted paths — match if ANY field contains any
+        pattern. Use when a franchise name (e.g. 'chiikawa') appears across
+        multiple param shapes (params.theme, params.theme_name,
+        params.character_set) within the family's templates.
+    When the resolved field is missing or empty, that field does NOT match.
     """
-    parts = flt['field'].split('.')
-    val = rec
-    for p in parts:
-        if not isinstance(val, dict):
-            return False
-        val = val.get(p)
+    paths = flt.get('fields_any') or [flt['field']]
+    patterns_lc = [pat.lower() for pat in flt['patterns']]
+    for path in paths:
+        val = rec
+        for p in path.split('.'):
+            if not isinstance(val, dict):
+                val = None
+                break
+            val = val.get(p)
+            if val is None:
+                break
         if val is None:
-            return False
-    val_lc = str(val).lower()
-    return any(pat.lower() in val_lc for pat in flt['patterns'])
+            continue
+        val_lc = str(val).lower()
+        if any(pat in val_lc for pat in patterns_lc):
+            return True
+    return False
 
 
 def main():

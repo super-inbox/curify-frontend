@@ -9,6 +9,7 @@ import { apiClient } from "@/services/api";
 import { redirectToCheckout } from "@/services/stripe";
 import PaymentProcessingModal from "./PaymentProcessingModal";
 import { useTranslations } from "next-intl";
+import { useTracking } from "@/services/useTracking";
 
 export default function TopUpModal() {
   const [modal, setModal] = useAtom(modalAtom);
@@ -18,6 +19,7 @@ export default function TopUpModal() {
   const userPlan = "Free"; // TODO: fetch from user profile
   const isOpen = modal === "topup";
   const t = useTranslations("topUpModal");
+  const { trackAction } = useTracking();
 
   const handleClose = () => {
     setModal(null);
@@ -40,6 +42,11 @@ export default function TopUpModal() {
         setError(t("minimumTopupError"));
         return;
       }
+
+      trackAction(
+        { contentType: "page", contentId: `topup-credits-${credits}` },
+        "click",
+      );
 
       setError(null);
       setShowProcessing(true);

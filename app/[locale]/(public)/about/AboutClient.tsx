@@ -99,27 +99,6 @@ const [selectedTech, setSelectedTech] = useState(technologies[0]);
               github: "https://github.com/qqwjq1981",
             },
             {
-              name: "Shengli Li",
-              role: "Founding Architect",
-              image: "/images/team/shengli.png",
-              desc: "20+ years in distributed systems, search & recommendation engine architecture.",
-            },
-            {
-              name: "Ting Zhang",
-              role: "GTM & Partnerships",
-              image: "/images/team/ting.png",
-              desc: "Biz dev strategist on B2B partnerships across entertainment, education, and media industries.",
-              linkedin: "https://www.linkedin.com/in/ting-zhang-91043811",
-            },
-            {
-              name: "Rafi Ahmed Patel",
-              role: "Founding ML Engineer",
-              image: "/images/team/rafi.png",
-              desc: "MSc UCL. Specializes in TTS, CV, and translation systems.",
-              linkedin: "https://www.linkedin.com/in/raafi-patel-bb2954202/",
-              github: "https://github.com/rafipatel",
-            },
-            {
               name: "Ronel Solomon",
               role: "Founding ML Engineer",
               image: "/images/team/ronel.png",

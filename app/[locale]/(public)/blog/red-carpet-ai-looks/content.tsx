@@ -11,7 +11,7 @@ export default function BlogContent() {
   const locale = useLocale()
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
+    <article className="max-w-5xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">
           {t('title')}
@@ -23,10 +23,12 @@ export default function BlogContent() {
           <span>•</span>
           <span>{t('category')}</span>
         </div>
-        <div className="mt-6">
-          <CdnImage 
-            src="/images/2b234839e1161a6d57af43e828efd3ec_thumb_1764263264241.jpg" 
-            className="w-full rounded-lg shadow-lg max-w-2xl mx-auto"
+        <div className="mt-4 mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 flex items-center justify-center">
+          <CdnImage
+            src="/images/2b234839e1161a6d57af43e828efd3ec_thumb_1764263264241.jpg"
+            width={672}
+            height={448}
+            className="block max-w-full max-h-96 w-auto h-auto rounded-lg shadow-lg"
             alt="Red Carpet AI Fashion Looks"
           />
         </div>
@@ -102,35 +104,13 @@ export default function BlogContent() {
         </div>
       </section>
 
-      <section className="mb-8">
-        <h2 className="text-3xl font-semibold mb-4">{t('annualRefresh.title')}</h2>
-        <p className="mb-4">
-          {t('annualRefresh.content')}
-        </p>
-      </section>
-
-      <section className="mb-8">
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8 rounded-lg text-center">
-          <h2 className="text-2xl font-bold mb-4">{t('cta.text')}</h2>
-          <a 
-            href={t('cta.url')} 
-            className="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Try Fashion Templates
-          </a>
-        </div>
-
       <BlogCTACard
         category="nano-template"
         slug="red-carpet-ai-looks"
         locale={locale}
       />
 
-      </section>
-
-      <RelatedBlogs currentSlug="red-carpet-ai-looks" locale="en" maxRelated={2} />
+      <RelatedBlogs currentSlug="red-carpet-ai-looks" locale={locale} maxRelated={2} />
       
     </article>
   )
