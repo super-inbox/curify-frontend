@@ -28,7 +28,7 @@ export default function BlogContent() {
             alt={t('heroImageAlt')}
             width={800}
             height={400}
-            className="w-full rounded-lg shadow-lg"
+            className="w-full rounded-lg shadow-lg max-w-2xl mx-auto"
           />
         </div>
       </header>

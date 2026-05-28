@@ -149,7 +149,7 @@ export default function AiContentDistributionSystemContent({ slug, t, locale }: 
         </div>
         <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800">
-            🎯 Ready to transform your content distribution? <a href="https://www.curify-ai.com/tools/bilingual-subtitles" className="text-blue-600 hover:underline font-semibold" target="_blank" rel="noopener noreferrer">Try Curify's AI Distribution Tools</a>
+            🎯 Ready to ship the same pipeline at agency scale? <a href={`/${locale}/use-cases/for-marketers`} className="text-blue-600 hover:underline font-semibold">Read the Growth Agencies playbook →</a>
           </p>
         </div>
       </section>

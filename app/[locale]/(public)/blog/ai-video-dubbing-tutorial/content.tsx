@@ -26,7 +26,7 @@ export default function BlogContent() {
         <div className="mt-6">
           <CdnImage 
             src="/images/055fcb6de6feb319ff89ee8a63957028_thumb_1764265719958.jpg" 
-            className="w-full rounded-lg shadow-lg"
+            className="w-full rounded-lg shadow-lg max-w-2xl mx-auto"
             alt="AI Video Dubbing Tutorial"
           />
         </div>

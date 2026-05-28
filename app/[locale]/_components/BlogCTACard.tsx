@@ -434,18 +434,20 @@ function ctasFor(category: string, locale: string, slug?: string): CTA[] {
   }
 }
 
-// Two-tone CTA palette: first card light-purple (primary), rest light-blue.
-// Tailwind's JIT needs the class names to appear as literals, so we keep
-// the two variants in a static map instead of interpolating the color.
+// Two-tone CTA palette: first card leads with light-purple, second with
+// light-blue. Both gradients run between the two hues so each card actually
+// shows the "light purple + light blue" treatment rather than fading to
+// white. Tailwind's JIT needs the class names to appear as literals, so we
+// keep the variants in a static map instead of interpolating the color.
 const ACCENT_STYLES = {
   purple: {
     card:
-      "border-purple-200 bg-gradient-to-br from-purple-50 to-white hover:border-purple-400",
+      "border-purple-200 bg-gradient-to-br from-purple-100 via-purple-50 to-blue-50 hover:border-purple-400 hover:from-purple-200 hover:via-purple-100 hover:to-blue-100",
     icon: "text-purple-700",
   },
   blue: {
     card:
-      "border-blue-200 bg-gradient-to-br from-blue-50 to-white hover:border-blue-400",
+      "border-blue-200 bg-gradient-to-br from-blue-100 via-blue-50 to-purple-50 hover:border-blue-400 hover:from-blue-200 hover:via-blue-100 hover:to-purple-100",
     icon: "text-blue-700",
   },
 } as const;

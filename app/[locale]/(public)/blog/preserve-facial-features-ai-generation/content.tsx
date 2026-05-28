@@ -25,7 +25,7 @@ export default function BlogContent() {
         <div className="mt-6">
           <CdnImage 
             src="/image_text_layout/4214_3_city-story-haunting-gaze.png" 
-            className="w-full rounded-lg shadow-lg"
+            className="w-full rounded-lg shadow-lg max-w-2xl mx-auto"
             alt={t('altText')}
           />
         </div>

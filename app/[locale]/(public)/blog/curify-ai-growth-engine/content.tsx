@@ -22,9 +22,9 @@ export default function BlogContent() {
           <span>•</span>
           <span>{t('category')}</span>
         </div>
-        <div className="mt-6">
-          <CdnImage 
-            src="/images/growthengine.webp" 
+        <div className="mt-6 max-w-2xl mx-auto">
+          <CdnImage
+            src="/images/growthengine.webp"
             className="w-full rounded-lg shadow-lg"
             alt="Curify AI Growth Engine"
           />
