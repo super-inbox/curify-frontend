@@ -1,6 +1,6 @@
 # Etsy Pack Distribution — Status & Operations
 
-_Last updated: 2026-05-18 (initial draft — captures the two live SKUs + the redemption flow). Owner: jay. Update after every push that touches `lib/etsy_packs.json`, `lib/etsy_packs.ts`, `app/[locale]/(public)/pack/[sku]/`, `services/etsyPacks.ts`, or `scripts/build_template_packs.cjs`._
+_Last updated: 2026-05-28 (adds `phonics` SKU scaffolding — registry, taxonomy, gen config, clean images for 5 of 50 staged; image gen + pack build pending). Owner: jay. Update after every push that touches `lib/etsy_packs.json`, `lib/etsy_packs.ts`, `app/[locale]/(public)/pack/[sku]/`, `services/etsyPacks.ts`, or `scripts/build_template_packs.cjs`._
 
 ## Why this doc exists
 
@@ -10,18 +10,20 @@ The doc is **not** GTM strategy — that lives in `docs/interconnection.md`. Thi
 
 ---
 
-## Live packs (as of 2026-05-18)
+## Live packs (as of 2026-05-28)
 
 | SKU | Title | Landing URL (give this to Canva / Etsy) | Cards | ZIP size | Blob path | Version |
 | --- | --- | --- | --- | --- | --- | --- |
 | `mbti-character` | MBTI Character Pack: Marvel, Ghibli & Friends | `https://www.curify-ai.com/pack/mbti-character` | 100 | 147 MB | `packs/sku/mbti-character/pack-v1.zip` | 1 |
 | `vocabulary` | Kids English-Chinese Bilingual Vocabulary Cards | `https://www.curify-ai.com/pack/vocabulary` | 108 | 84 MB | `packs/sku/vocabulary/pack-v1.zip` | 1 |
+| `phonics` | Phonics Pack: 50 Blend, Digraph & Vowel Pattern Posters | `https://www.curify-ai.com/pack/phonics` | 50 | 28 MB | `packs/sku/phonics/pack-v1.zip` | 1 |
 
-Both packs are `active: true`, `secret: null` (anonymous redemption), no `etsy_listing_url` set yet.
+All three packs are `active: true`, `secret: null` (anonymous redemption), no `etsy_listing_url` set yet.
 
 Pack contents (local source bundles, gitignored except for the manifest):
 - `packs/mbti-character/` — 66 Marvel + 23 Studio Ghibli + 11 Friends portraits, plus `pack.zip`.
 - `packs/vocabulary/` — 108 EN-ZH bilingual flashcards across 12 themes (animals, food, nature, family, transport, weather, body, emotions, celebrations, school, space, life cycles), plus `pack.zip`.
+- `packs/phonics/` — 50 phonics posters across 5 categories (21 consonant blends, 7 consonant digraphs, 15 vowel digraphs, 5 r-controlled vowels, 2 trigraphs), plus `pack.zip`. Generated via `scripts/generate_template_examples.cjs --config=scripts/configs/phonics_pack_2026-05-28.json --pack=phonics`; the 5 originals (bl/ch/gr/sh/th) were retained from earlier April generation and re-staged from `~/curify-gallery/daily_inspirations/Apr_29/`.
 
 ---
 
@@ -55,7 +57,24 @@ Browser redirects to signed Azure URL → ZIP downloads
 ## Operational protocols
 
 ### Adding a new pack
-1. **Build the asset.** `scripts/build_template_packs.cjs` supports SKU mode (commit `16805cd`). Add a config block at the top, run with `--sku <name>`. Output lands in `packs/<sku>/` + `packs/<sku>/pack.zip`, plus uploads `packs/sku/<sku>/pack-v1.zip` to Azure.
+1. **Build the asset.** Two paths depending on whether images already exist:
+
+   **(a) Generating fresh images via the nano-template generator** (preferred for new SKUs sourced from an existing template — e.g. `phonics`):
+   ```
+   node scripts/generate_template_examples.cjs \
+     --config=scripts/configs/<your-config>.json \
+     --pack=<sku>
+   ```
+   The `--pack=<sku>` flag dual-outputs each generation: clean pre-watermark image → `packs/<sku>/<recordId>.jpg` (for the Etsy ZIP), watermarked + preview → `/images/nano_insp/` and `/images/nano_insp_preview/` (for the public gallery + daily-content-drop), and a tagged entry into `public/data/nano_inspiration.json` (auto-tagged via gpt-4o-mini against the parent template's tier-1 ancestor). Requires `GEMINI_API_KEY` and `OPENAI_API_KEY` in `.env.local`.
+
+   **(b) Curating pre-built assets manually** (used for `mbti-character` + `vocabulary`): drop clean images into `packs/<sku>/` directly, then run `scripts/build_template_packs.cjs --mode=sku --sku=<name>` to zip + upload. No nano_inspiration entries get created via this path — handle that separately if the pack assets should also appear in the public gallery.
+
+   Either way, the final pack build step is:
+   ```
+   node scripts/build_template_packs.cjs --mode=sku --sku=<name>
+   ```
+   This zips `packs/<sku>/*.jpg` and uploads to `packs/sku/<sku>/pack-v1.zip` on Azure.
+
 2. **Add the registry entry.** Append to the `packs` array in `lib/etsy_packs.json`:
    ```json
    {
@@ -121,6 +140,7 @@ When the catalog is private (live but not yet promoted, or recently rotated), se
 | 2026-05-15 | `5f8e6c0` | Enabled `batch: true` for 20 language templates, dropped travel. |
 | 2026-05-16 | `2922339` | Per-item download packs on topic page + use-case chips on 3 surfaces. |
 | 2026-05-17 | `789ca7c` | Dropped "Explore by Use Case" lead-in + made the Download Packs pills purple to match Remix. |
+| 2026-05-28 | (this commit) | `phonics` SKU shipped — full pipeline: taxonomy entries (50 units across 5 categories under `language` + `learning`), template prompt generalized for vowel patterns (consonant blend → phonics pattern; starting with → featuring), 45 images generated via Gemini 3 Pro + auto-tagged via gpt-4o-mini (all picked `phonics` tier-3 correctly), SKU pack built + uploaded to Azure (28 MB, 50 cards), registry flipped to `active: true`. Vowel-pattern image quality verified on `ay` sample (8 correct words: day, play, stay, tray, clay, hay, way, spray — each containing the pattern, not just starting with it). |
 
 ---
 
