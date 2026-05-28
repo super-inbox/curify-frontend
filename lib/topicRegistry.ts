@@ -121,7 +121,6 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   seasonal:             "winter",
   composition:          "collage",
   "cultural-festivals": "festive",
-  "world-cup":          "athletic",
 };
 
 // Blog tag to pull posts for a topic page. Use when one tag in

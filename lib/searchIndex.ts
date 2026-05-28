@@ -136,6 +136,10 @@ export const TIER3_SUBJECT: SuggestionEntry[] = [
   { slug: "celebration",     label: "Celebration",     emoji: "🎉", tier: 3, aliases: ["party", "holiday"] },
   { slug: "body",            label: "Body",            emoji: "🧍", tier: 3, aliases: ["body parts", "anatomy", "health"] },
   { slug: "emotions",        label: "Emotions",        emoji: "😊", tier: 3, aliases: ["feelings", "mood", "emotional"] },
+  // Phonics is a data-layer tier-3 — no /topics/phonics page exists.
+  // searchFallback routes the user to /search?q=phonics where the 50
+  // template-phonics-consonant-blend-* inspirations free-text-match.
+  { slug: "phonics",         label: "Phonics",         emoji: "🔤", tier: 3, aliases: ["consonant blend", "digraph", "vowel pattern", "phonemes", "learn to read"], searchFallback: true },
 ];
 
 // Default suggestions shown on search focus — top Tier 2 + selected geo + style picks
