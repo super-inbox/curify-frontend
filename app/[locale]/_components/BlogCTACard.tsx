@@ -369,6 +369,28 @@ function ctasFor(category: string, locale: string, slug?: string): CTA[] {
         },
       ];
 
+    case "ai-strategy":
+      return [
+        {
+          id: "mentorcruise-ai-strategy",
+          label: "Book AI Strategy Coaching",
+          description:
+            "1:1 sessions with Jay Wang on MentorCruise — org redesign, AI-leverage playbooks, transformation roadmap for SMB leaders.",
+          href: MENTORCRUISE,
+          external: true,
+          Icon: GraduationCap,
+        },
+        {
+          id: "calendly-pilot-scope",
+          label: "Scope a 90-day pilot",
+          description:
+            "Direct 15-min calendar with Jay to map friction, identify redesign candidates, and outline the pilot shape.",
+          href: CALENDLY,
+          external: true,
+          Icon: Calendar,
+        },
+      ];
+
     case "content-automation":
       return [
         {
