@@ -4225,11 +4225,6 @@
       "category": "Plantilla Nano",
       "metaDescription": "Guía anual de estilo de alfombra roja con IA: recrea arquetipos de moda icónicos de alfombra roja con recetas de prompts impulsadas por Nano Banana.",
       "keywords": "alfombra roja ia, moda ia, estilos de moda ia, moda nano banana, generador de atuendos de alfombra roja",
-      "intro": {
-        "title": "La Revolución de la Alfombra Roja",
-        "content1": "La moda de alfombra roja representa la cúspide de la innovación en estilo, donde diseños que rompen barreras se encuentran con momentos culturales. Desde los temas teatrales de la Met Gala hasta la elegancia clásica de los Oscars, estos eventos muestran las creaciones más atrevidas de la moda.",
-        "content2": "Con Nano Banana AI, ahora puedes recrear estos momentos icónicos de moda sin enfocarte en celebridades específicas. En su lugar, exploraremos los arquetipos de estilo que definen el glamour de la alfombra roja, centrándonos en la ropa, siluetas y visiones artísticas que hacen que estos looks sean legendarios."
-      },
       "corePromptRecipe": {
         "title": "La Receta de Prompt Principal: Sujeto + Evento + Estética + Estilo de Cámara",
         "content": "Crear moda deslumbrante de alfombra roja con IA sigue una fórmula simple. Comienza con un sujeto de moda (modelo, maniquí o figura), especifica el contexto del evento, describe la estética y los detalles de la ropa, y termina con especificaciones de cámara y iluminación. Esta estructura de cuatro partes asegura resultados consistentes y profesionales cada vez."
@@ -4296,13 +4291,10 @@
           }
         ]
       },
-      "annualRefresh": {
-        "title": "Nota de Actualización Anual",
-        "content": "¡Marca esta página! Actualizamos esta guía de estilo cada mayo y febrero después de la Met Gala y los Oscars para asegurarnos de que tus recetas coincidan con las últimas actualizaciones del modelo Nano Banana."
-      },
-      "cta": {
-        "text": "Genera Looks de Moda con Nano Banana",
-        "url": "https://www.curify-ai.com/tools"
+      "intro": {
+        "title": "Prompts de Alfombra Roja que se Mantienen",
+        "content1": "Los looks de alfombra roja son un corpus pequeño e intenso para modelar: unos pocos cientos de atuendos destacados por año, fotografiados por profesionales, analizados por cada blog de moda para el lunes por la mañana. Generar una imagen creíble de alfombra roja con Nano Banana no se trata de especificar \"Met Gala\" y esperar; se trata de controlar las cuatro cosas que distinguen una toma de moda de un retrato de archivo: especificidad de la tela, contexto de la escena, drama de la iluminación y intencionalidad de la pose.",
+        "content2": "Esta guía se basa en cinco arquetipos de estilo que recurren a lo largo de las temporadas de alfombra roja: vestimenta de método de ciencia ficción, glamour de Hollywood vintage, floral vanguardista, minimalismo escultórico y maximalismo teatral. Para cada arquetipo: la receta del prompt que logra el look de manera consistente, los tokens de lenguaje que hacen el trabajo pesado y los modos de falla típicos que verás en tus dos o tres primeras generaciones."
       }
     },
     "characterPromptGenerator": {

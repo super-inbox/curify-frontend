@@ -2332,9 +2332,9 @@
       "metaDescription": "Annual AI red-carpet style guide — recreate iconic red carpet fashion archetypes with prompt recipes powered by Nano Banana.",
       "keywords": "red carpet ai, fashion ai, ai fashion styles, nano banana fashion, red carpet outfit generator",
       "intro": {
-        "title": "The Red Carpet Revolution",
-        "content1": "Red carpet fashion represents the pinnacle of style innovation, where boundary-pushing designs meet cultural moments. From the Met Gala's theatrical themes to the Oscars' classic elegance, these events showcase fashion's most daring creations.",
-        "content2": "With Nano Banana AI, you can now recreate these iconic fashion moments without focusing on specific celebrities. Instead, we'll explore the style archetypes that define red carpet glamour—focusing on the clothing, silhouettes, and artistic visions that make these looks legendary."
+        "title": "Red Carpet Prompts That Hold Up",
+        "content1": "Red carpet looks are a small, intense corpus to model: a few hundred standout outfits per year, photographed by professionals, scrutinized by every fashion blog by Monday morning. Generating a believable red carpet image with Nano Banana isn't about specifying \"Met Gala\" and hoping; it's about controlling the four things that distinguish a fashion shot from a stock portrait — fabric specificity, scene context, lighting drama, and pose intentionality.",
+        "content2": "This guide is built around five style archetypes that recur across red carpet seasons — sci-fi method dressing, vintage Hollywood glamour, avant-garde floral, sculptural minimalism, and theatrical maximalism. For each archetype: the prompt recipe that lands the look consistently, the language tokens doing the heavy lifting, and the typical failure modes you'll see in your first two or three generations."
       },
       "corePromptRecipe": {
         "title": "The Core Prompt Recipe: Subject + Event + Aesthetic + Camera Style",
@@ -2401,14 +2401,6 @@
             "fix": "Focus on 'designer-inspired' aesthetics (e.g., Schiaparelli-style) rather than specific real-world likenesses."
           }
         ]
-      },
-      "annualRefresh": {
-        "title": "Annual Refresh Note",
-        "content": "Bookmark this page! We update this style guide every May and February following the Met Gala and the Oscars to ensure your recipes match the latest Nano Banana model updates."
-      },
-      "cta": {
-        "text": "Generate Fashion Looks with Nano Banana",
-        "url": "https://www.curify-ai.com/tools"
       }
     },
     "contentTaggingSystem": {

@@ -4225,11 +4225,6 @@
       "category": "Modèle Nano",
       "metaDescription": "Guide annuel des styles du tapis rouge alimenté par l'IA — recréez des archétypes de mode iconiques du tapis rouge avec des recettes de prompts propulsées par Nano Banana.",
       "keywords": "tapis rouge ia, mode ia, styles de mode ia, mode nano banana, générateur de tenues tapis rouge",
-      "intro": {
-        "title": "La Révolution du Tapis Rouge",
-        "content1": "La mode du tapis rouge représente le summum de l'innovation stylistique, où des designs audacieux rencontrent des moments culturels. Des thèmes théâtraux du Met Gala à l'élégance classique des Oscars, ces événements mettent en avant les créations les plus audacieuses de la mode.",
-        "content2": "Avec Nano Banana AI, vous pouvez désormais recréer ces moments de mode emblématiques sans vous concentrer sur des célébrités spécifiques. Au lieu de cela, nous explorerons les archétypes de style qui définissent le glamour du tapis rouge, en nous concentrant sur les vêtements, les silhouettes et les visions artistiques qui rendent ces looks légendaires."
-      },
       "corePromptRecipe": {
         "title": "La Recette de Base du Prompt : Sujet + Événement + Esthétique + Style de Caméra",
         "content": "Créer une mode éblouissante sur le tapis rouge avec l'IA suit une formule simple. Commencez par un sujet de mode (modèle, mannequin ou figure), spécifiez le contexte de l'événement, décrivez l'esthétique et les détails des vêtements, et terminez par les spécifications de la caméra et de l'éclairage. Cette structure en quatre parties garantit des résultats cohérents et professionnels à chaque fois."
@@ -4296,13 +4291,10 @@
           }
         ]
       },
-      "annualRefresh": {
-        "title": "Note de mise à jour annuelle",
-        "content": "Ajoutez cette page à vos favoris ! Nous mettons à jour ce guide de style chaque mois de mai et février après le Met Gala et les Oscars pour garantir que vos recettes correspondent aux dernières mises à jour du modèle Nano Banana."
-      },
-      "cta": {
-        "text": "Générez des looks de mode avec Nano Banana",
-        "url": "https://www.curify-ai.com/tools"
+      "intro": {
+        "title": "Prompts de Tapis Rouge Qui Tiennent La Route",
+        "content1": "Les looks de tapis rouge sont un petit corpus intense à modéliser : quelques centaines de tenues remarquables par an, photographiées par des professionnels, scrutées par chaque blog de mode d'ici lundi matin. Générer une image de tapis rouge crédible avec Nano Banana ne consiste pas à spécifier \"Met Gala\" et à espérer ; il s'agit de contrôler les quatre éléments qui distinguent une photo de mode d'un portrait de stock : la spécificité du tissu, le contexte de la scène, le drame de l'éclairage et l'intentionnalité de la pose.",
+        "content2": "Ce guide est construit autour de cinq archétypes de style qui se répètent à travers les saisons de tapis rouge : le style sci-fi, le glamour vintage d'Hollywood, le floral avant-gardiste, le minimalisme sculptural et le maximalisme théâtral. Pour chaque archétype : la recette de prompt qui permet d'obtenir le look de manière cohérente, les tokens de langage qui font le gros du travail et les modes d'échec typiques que vous verrez lors de vos deux ou trois premières générations."
       }
     },
     "characterPromptGenerator": {
