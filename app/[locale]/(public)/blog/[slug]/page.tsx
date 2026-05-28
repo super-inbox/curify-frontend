@@ -274,7 +274,7 @@ export default async function BlogPostPage({
           body in normal block flow. overflow-hidden on the wrapper acts
           as a clearfix for the float. */}
       <div className="overflow-hidden">
-        <div className="mb-4 mx-auto max-w-xl md:max-w-2xl md:float-right md:ml-6 md:mx-0 rounded-lg overflow-hidden shadow">
+        <div className="mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 rounded-lg overflow-hidden shadow">
           {useMermaidThumbnail ? (
             <DynamicThumbnail
               slug={thumbnailType || slug}
