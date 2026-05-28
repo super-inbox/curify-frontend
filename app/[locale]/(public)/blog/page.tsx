@@ -29,6 +29,7 @@ const PILLAR_LABELS = [
   "Content Automation",
   "Learning & Education",
   "DS & AI Engineering",
+  "AI Strategy",
 ];
 
 export default function BlogListPage() {
