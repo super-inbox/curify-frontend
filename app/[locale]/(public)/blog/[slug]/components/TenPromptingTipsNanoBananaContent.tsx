@@ -67,16 +67,13 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         readTime={t('readTime')}
       />
       {/* Single-column layout. The [slug] page header already floats the
-          hero image to the right; removing the xl:flex-row sidebar lets
-          text wrap around the hero naturally. Cap reading width at
-          max-w-4xl (wider than the previous max-w-3xl, bounded for
-          readability). TOC sits inline below the intro instead of as a
-          side rail. */}
+          hero image to the right; text wraps around the hero naturally.
+          TOC removed entirely (was generating a visible right-side gap
+          and not adding navigation value for a ~10-min read). */}
       <div className="max-w-4xl">
         <p className="text-lg font-semibold text-blue-600 mb-4">
           {t("intro")}
         </p>
-        <TableOfContents headings={headings} />
 
       {(t("whyNanoBananaTitle") || t("whyNanoBananaContent")) && (
         <section id="why-nano-banana">
