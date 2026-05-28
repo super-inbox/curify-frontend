@@ -287,9 +287,9 @@ export default async function BlogPostPage({
             <CdnImage
               src={blogConfig.image}
               alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-              width={320}
-              height={200}
-              className="rounded-lg object-cover"
+              width={672}
+              height={420}
+              className="w-full h-auto rounded-lg object-cover"
             />
           )}
         </div>
