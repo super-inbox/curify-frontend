@@ -1,6 +1,6 @@
 # Search Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-19 (added 28-query regression eval set + runner that bypasses topic-redirect to evaluate /search results directly). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `lib/searchRewrite.ts`, `scripts/enrich_search_aliases.cjs`, `scripts/topup_search_aliases.py`, `scripts/eval_search.cjs`, `scripts/configs/search_eval_set.json`, or `scripts/lib/auto_tag.cjs`._
+_Last updated: 2026-05-28 (CTR re-pull: 17.1% vs 5.5% baseline, 3.1x lift; data-driven top-up shipped with 5 new families covering chiikawa / 下雨 / samurai / 歷史 / 路书 — all surfaced from the now-live admin panel; `_inspiration_matches_filter` extended to support `fields_any` for multi-field franchise aliasing). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `lib/searchRewrite.ts`, `lib/searchTemplateMatch.ts`, `scripts/enrich_search_aliases.cjs`, `scripts/topup_search_aliases.py`, `scripts/eval_search.cjs`, `scripts/configs/search_eval_set.json`, or `scripts/lib/auto_tag.cjs`._
 
 ## Framing
 
@@ -33,6 +33,9 @@ Tracks are interleaved but distinct. Recall fixes ship in `search/page.tsx` (tok
 | 2026-05-20 | `7727d3e` | **Wine batch** | `scripts/configs/wine_examples_2026-05-20.json` + run of `scripts/generate_template_examples.cjs`. 10 new wine-focused examples closing the `葡萄酒` gap (2 → 5 inspirations matching the literal CJK query, plus broader auto-tagged alias coverage). |
 | 2026-05-20 | `33a625d` | **Precision tightening** | Relevance audit via `scripts/eval_relevance_audit.cjs` surfaced template-level alias overspread. New `scripts/prune_search_aliases.py` removes aliases from over-broad parents; `topup_search_aliases.py` gains `inspiration_filter` for re-attachment at inspiration granularity. Net: 16,936 alias entries pruned, 2,182 re-added at inspiration level. `global influence` 479→38, `wedding planner` 252→88, `动物 词汇` 310→166, `唯美春天` 133→58. Recall preserved — eval 28/28 PASS. |
 | 2026-05-20 | _(this commit)_ | **Eval set refresh** | Dropped 8 tier-1 anchor queries (those redirect to /topics/<slug>, no fresh signal). Added 16 real production queries from admin search-log + GSC zero-CTR list. Net 36 queries, all PASS at base scoring. |
+| 2026-05-26 | `7f980e6` | **Search → generation bridge Phase 1** | `lib/searchTemplateMatch.ts` calls gpt-4o-mini against the 200-template catalog blob (~11K tokens); `GenerableTemplatesSection` renders "Generate from a template" cards with prefilled params on `/search`. Top-3 100% / top-1 90% on the expanded baseline per `scripts/eval_template_matcher.cjs`. Click tracking via `search_generable_template:<template_id>`. Phase 2 measurement panel (per-query Generate-card → downstream-generate conversion) NOT yet built. Phase 3 taxonomy backfill gated on Phase 2 data. Spec: `docs/search-generation-bridge.md`. |
+| 2026-05-27 | `9bcc991` | **Eval set: ProgSEO expansion + template-richness scoring** | Appended 10 ProgSEO long-tail queries to `search_eval_set.json` (cuban sandwich recipe poster, monstera plant care, marvel mbti chart 16 types, etc — the empty-inspiration-rich-template case the bridge was built for). Added `expected_templates` field to every query; `eval_search.cjs --matcher` now scores both inspiration richness AND LLM matcher template richness, ±1 bucket tolerance for matcher noise. 46 queries total. |
+| 2026-05-28 | _(this commit)_ | **CTR re-pull + data-driven alias top-up** | First admin-panel-driven iteration of the recall feedback loop. Pulled 14-day search panel via the section-6 SQL: 111 searches across 91 unique queries, **17.1% result CTR vs 5.5% baseline (3.1x lift)**. Still 33% no/low-result rate; matched-templates rail still gets zero clicks. From the top failing queries identified 5 with existing template content but missing alias coverage: `chiikawa` (3 searches, content match 5 records via params.theme/character_set), `下雨` (2, weather-template alias gap), `samurai` (1, 3 records via params.theme/character_set), `歷史` (1, 13 history templates lacked CJK aliases), `路书` (1, 4 itinerary templates lacked CJK aliases). Extended `_inspiration_matches_filter` to support `fields_any` (multi-field-OR) so franchise names spread across `params.theme` / `params.theme_name` / `params.character_set` / `params.mbti_topic` / etc. can be aliased in one family. Net: 5 new families in `scripts/topup_search_aliases.py`, ~169 inspirations aliased, ~3,950 alias entries added. Eval regression: 45 PASS / 1 WARN / 0 FAIL — sole WARN is `watercolor map of europe travel destinations` (over-shoot from itinerary_cjk family broadening, benign over-recall). |
 
 ---
 
@@ -145,14 +148,14 @@ First pass complete via `scripts/topup_search_aliases.py`. Appended targeted ali
 
 Open follow-up: **727 templates aren't in any of the 6 families.** The next audit pass should rank failing queries from the new low-result logging and add new families as needed. Expect content gaps as well (e.g. `证件照` is a partial match — there's no dedicated ID-photo template in the catalog).
 
-### ~~2. Low-result query logging~~ ✓ shipped 2026-05-18 (frontend side)
-Frontend instrumentation landed. `SearchResultsClient` now fires:
+### ~~2. Low-result query logging~~ ✓ shipped 2026-05-18 (frontend) + admin panel shipped (backend)
+Frontend instrumentation landed 2026-05-18. `SearchResultsClient` fires:
 - `search_noresult` when total results = 0 (existing event, backward compat).
 - **NEW** `search_lowresult` when total results is 1-2 (threshold = 3). `contentId` is `<query>|n=<count>` so admin can rank queries by how close they are to the threshold without joining against the results table.
 
 Total result count = `gridItems.length + matchedTemplates.length + galleryPrompts.length` (covers all three result surfaces, not just inspirations).
 
-**Backend follow-up (still open):** add a "Low-result queries (last 14 days)" panel to `curify-studio/curify_background/app/crud/admin.py` that surfaces both `search_noresult` and `search_lowresult` events, grouped by query, sorted by frequency. Once that lands, the alias top-up audit (item 1) becomes data-driven rather than analyst-driven.
+**Backend admin panel: SHIPPED** at `curify-studio/curify_background/app/crud/admin.py` section 6 ("Search queries (last 14 days)"). Surfaces per query: searches, no_results (NORESULT + LOWRESULT collapsed into one column), users, noresult_pct, result_clicks, chip_clicks, escape_clicks, result_ctr_pct. Test users 155 and 1117 excluded. The alias top-up audit (item 1) is now data-driven via this panel — see the 2026-05-28 entry in the shipped table for the first iteration.
 
 ### ~~3. LLM query rewrite on no/low-result queries~~ ✓ shipped 2026-05-18
 **Recall floor.** When the original query returns fewer than `LOW_RESULT_THRESHOLD` (3) strict-template hits, the server calls `gpt-4o-mini` for 1-3 alternate phrasings, scores each rewrite against the catalog, and unions the results into the page.
