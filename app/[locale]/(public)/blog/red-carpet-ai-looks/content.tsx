@@ -23,10 +23,12 @@ export default function BlogContent() {
           <span>•</span>
           <span>{t('category')}</span>
         </div>
-        <div className="mt-6">
-          <CdnImage 
-            src="/images/2b234839e1161a6d57af43e828efd3ec_thumb_1764263264241.jpg" 
-            className="w-full rounded-lg shadow-lg max-w-2xl mx-auto"
+        <div className="mt-4 mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 flex items-center justify-center">
+          <CdnImage
+            src="/images/2b234839e1161a6d57af43e828efd3ec_thumb_1764263264241.jpg"
+            width={672}
+            height={448}
+            className="block max-w-full max-h-96 w-auto h-auto rounded-lg shadow-lg"
             alt="Red Carpet AI Fashion Looks"
           />
         </div>
