@@ -66,11 +66,17 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
         url={`${t("baseUrl")}${slug}`}
         readTime={t('readTime')}
       />
-      <div className="flex flex-col xl:flex-row xl:gap-8">
-        <div className="flex-1 min-w-0 max-w-3xl">
-          <p className="text-lg font-semibold text-blue-600 mb-4">
-            {t("intro")}
-          </p>
+      {/* Single-column layout. The [slug] page header already floats the
+          hero image to the right; removing the xl:flex-row sidebar lets
+          text wrap around the hero naturally. Cap reading width at
+          max-w-4xl (wider than the previous max-w-3xl, bounded for
+          readability). TOC sits inline below the intro instead of as a
+          side rail. */}
+      <div className="max-w-4xl">
+        <p className="text-lg font-semibold text-blue-600 mb-4">
+          {t("intro")}
+        </p>
+        <TableOfContents headings={headings} />
 
       {(t("whyNanoBananaTitle") || t("whyNanoBananaContent")) && (
         <section id="why-nano-banana">
@@ -299,10 +305,7 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
       </section>
 
       <FAQSection faqs={faqs} />
-    </div>
-    
-    <TableOfContents headings={headings} />
-  </div>
-  </>
+      </div>
+    </>
   );
 }
