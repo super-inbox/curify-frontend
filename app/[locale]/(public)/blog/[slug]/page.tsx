@@ -274,7 +274,12 @@ export default async function BlogPostPage({
           body in normal block flow. overflow-hidden on the wrapper acts
           as a clearfix for the float. */}
       <div className="overflow-hidden">
-        <div className="mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 rounded-lg overflow-hidden shadow">
+        {/* Hero wrapper enforces a fixed 3:2 aspect ratio so vertical
+            source images (e.g., template renders like sports-battle at
+            896x1200) don't tower over horizontal sources. Cap visual
+            size consistent across orientations. object-cover crops to
+            fit — subject usually centered enough to survive. */}
+        <div className="mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 rounded-lg overflow-hidden shadow aspect-[3/2]">
           {useMermaidThumbnail ? (
             <DynamicThumbnail
               slug={thumbnailType || slug}
@@ -288,8 +293,8 @@ export default async function BlogPostPage({
               src={blogConfig.image}
               alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
               width={672}
-              height={420}
-              className="w-full h-auto rounded-lg object-cover"
+              height={448}
+              className="w-full h-full rounded-lg object-cover"
             />
           )}
         </div>
