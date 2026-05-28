@@ -1,9 +1,7 @@
 import { formatNanoBananaContent } from "../utils/content-formatters";
-import PromptBox from "./PromptBox";
 import TableOfContents from "./TableOfContents";
 import FAQSection from "./FAQSection";
 import StructuredData from "./StructuredData";
-import NanoBananaExamples from "../NanoBananaExamples";
 import Head from 'next/head';
 
 interface TenPromptingTipsNanoBananaContentProps {
@@ -27,7 +25,6 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
     { level: 'H2', text: t("tip9Title"), id: 'tip-9-language' },
     { level: 'H2', text: t("tip10Title"), id: 'tip-10-credits' },
     { level: 'H2', text: t("toolsTitle"), id: 'tools-section' },
-    { level: 'H2', text: t("templatesTitle"), id: 'templates-section' },
     { level: 'H2', text: t("curifyTitle"), id: 'curify-section' },
     { level: 'H2', text: t("conclusionTitle"), id: 'conclusion-section' }
   ];
@@ -95,13 +92,13 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
             __html: formatNanoBananaContent(t("tip1Content"))
           }} 
         />
-        {t("tip1Example") && t("tip1Example").trim().length > 0 && (
-          <PromptBox 
-            title={t("tip1ExampleTitle")}
-            promptText={t("tip1Example")}
-          >
-            <pre>{t("tip1Example")}</pre>
-          </PromptBox>
+        {t("tip1Example") && (
+          <div
+            className="prose prose-lg max-w-none mb-6"
+            dangerouslySetInnerHTML={{
+              __html: formatNanoBananaContent(t("tip1Example"))
+            }}
+          />
         )}
       </section>
 
@@ -114,12 +111,12 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
           }} 
         />
         {t("tip2Example") && (
-          <PromptBox 
-            title={`${t("tip2Title")} - Example Prompt`}
-            promptText={t("tip2Example")}
-          >
-            <pre>{t("tip2Example")}</pre>
-          </PromptBox>
+          <div
+            className="prose prose-lg max-w-none mb-6"
+            dangerouslySetInnerHTML={{
+              __html: formatNanoBananaContent(t("tip2Example"))
+            }}
+          />
         )}
       </section>
 
@@ -132,12 +129,12 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
           }} 
         />
         {t("tip3Example") && (
-          <PromptBox 
-            title={`${t("tip3Title")} - Example Prompt`}
-            promptText={t("tip3Example")}
-          >
-            <pre>{t("tip3Example")}</pre>
-          </PromptBox>
+          <div
+            className="prose prose-lg max-w-none mb-6"
+            dangerouslySetInnerHTML={{
+              __html: formatNanoBananaContent(t("tip3Example"))
+            }}
+          />
         )}
       </section>
 
@@ -150,12 +147,12 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
           }} 
         />
         {t("tip4Example") && (
-          <PromptBox 
-            title={`${t("tip4Title")} - Example Prompt`}
-            promptText={t("tip4Example")}
-          >
-            <pre>{t("tip4Example")}</pre>
-          </PromptBox>
+          <div
+            className="prose prose-lg max-w-none mb-6"
+            dangerouslySetInnerHTML={{
+              __html: formatNanoBananaContent(t("tip4Example"))
+            }}
+          />
         )}
       </section>
 
@@ -168,12 +165,12 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
           }} 
         />
         {t("tip5Example") && (
-          <PromptBox 
-            title={`${t("tip5Title")} - Example Prompt`}
-            promptText={t("tip5Example")}
-          >
-            <pre>{t("tip5Example")}</pre>
-          </PromptBox>
+          <div
+            className="prose prose-lg max-w-none mb-6"
+            dangerouslySetInnerHTML={{
+              __html: formatNanoBananaContent(t("tip5Example"))
+            }}
+          />
         )}
       </section>
 
@@ -186,12 +183,12 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
           }} 
         />
         {t("tip6Example") && (
-          <PromptBox 
-            title={`${t("tip6Title")} - Example Prompt`}
-            promptText={t("tip6Example")}
-          >
-            <pre>{t("tip6Example")}</pre>
-          </PromptBox>
+          <div
+            className="prose prose-lg max-w-none mb-6"
+            dangerouslySetInnerHTML={{
+              __html: formatNanoBananaContent(t("tip6Example"))
+            }}
+          />
         )}
       </section>
 
@@ -204,12 +201,12 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
           }} 
         />
         {t("tip7Example") && (
-          <PromptBox 
-            title={`${t("tip7Title")} - Example Prompt`}
-            promptText={t("tip7Example")}
-          >
-            <pre>{t("tip7Example")}</pre>
-          </PromptBox>
+          <div
+            className="prose prose-lg max-w-none mb-6"
+            dangerouslySetInnerHTML={{
+              __html: formatNanoBananaContent(t("tip7Example"))
+            }}
+          />
         )}
       </section>
 
@@ -222,12 +219,12 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
           }} 
         />
         {t("tip8Example") && (
-          <PromptBox 
-            title={`${t("tip8Title")} - Example Prompt`}
-            promptText={t("tip8Example")}
-          >
-            <pre>{t("tip8Example")}</pre>
-          </PromptBox>
+          <div
+            className="prose prose-lg max-w-none mb-6"
+            dangerouslySetInnerHTML={{
+              __html: formatNanoBananaContent(t("tip8Example"))
+            }}
+          />
         )}
       </section>
 
@@ -240,12 +237,12 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
           }} 
         />
         {t("tip9Example") && (
-          <PromptBox 
-            title={`${t("tip9Title")} - Example Prompt`}
-            promptText={t("tip9Example")}
-          >
-            <pre>{t("tip9Example")}</pre>
-          </PromptBox>
+          <div
+            className="prose prose-lg max-w-none mb-6"
+            dangerouslySetInnerHTML={{
+              __html: formatNanoBananaContent(t("tip9Example"))
+            }}
+          />
         )}
       </section>
 
@@ -258,12 +255,12 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
           }} 
         />
         {t("tip10Example") && (
-          <PromptBox 
-            title={`${t("tip10Title")} - Example Prompt`}
-            promptText={t("tip10Example")}
-          >
-            <pre>{t("tip10Example")}</pre>
-          </PromptBox>
+          <div
+            className="prose prose-lg max-w-none mb-6"
+            dangerouslySetInnerHTML={{
+              __html: formatNanoBananaContent(t("tip10Example"))
+            }}
+          />
         )}
       </section>
 
@@ -275,10 +272,6 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
             __html: formatNanoBananaContent(t("toolsContent"))
           }} 
         />
-      </section>
-
-      <section id="templates-section">
-        <NanoBananaExamples locale={locale} blogSlug="10-prompting-tips-nano-banana" />
       </section>
 
       <section id="curify-section">
