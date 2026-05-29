@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
+import Link from 'next/link'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 
@@ -49,6 +50,60 @@ export default function BlogContent() {
         <p className="mb-4">
           {t('corePromptRecipe.content')}
         </p>
+      </section>
+
+      <section className="mb-12 not-prose">
+        <h2 className="text-3xl font-semibold mb-4 font-serif">From the gallery</h2>
+        <p className="mb-6 text-gray-700 dark:text-gray-300">
+          Three live templates that ship the recipe above — open one, copy the prompt, swap the subject.
+        </p>
+        <div className="grid md:grid-cols-3 gap-6">
+          <Link
+            href="/nano-template/lifestyle-photo-grid/example/template-lifestyle-photo-grid-met-gala-red-carpet"
+            className="block group"
+          >
+            <CdnImage
+              src="/images/nano_insp/template-lifestyle-photo-grid-met-gala-red-carpet.jpg"
+              alt="Met Gala red-carpet AI portrait grid"
+              width={480}
+              height={320}
+              className="w-full h-auto rounded-lg shadow group-hover:shadow-xl transition"
+            />
+            <div className="mt-3 text-sm font-medium text-gray-800 dark:text-gray-200">
+              Met Gala red-carpet portrait
+            </div>
+          </Link>
+          <Link
+            href="/nano-template/lifestyle-photo-grid/example/template-lifestyle-photo-grid-paris-fashion-week"
+            className="block group"
+          >
+            <CdnImage
+              src="/images/nano_insp/template-lifestyle-photo-grid-paris-fashion-week.jpg"
+              alt="Paris Fashion Week AI portrait grid"
+              width={480}
+              height={320}
+              className="w-full h-auto rounded-lg shadow group-hover:shadow-xl transition"
+            />
+            <div className="mt-3 text-sm font-medium text-gray-800 dark:text-gray-200">
+              Paris Fashion Week portrait
+            </div>
+          </Link>
+          <Link
+            href="/nano-template/fashion-inspired-gown-design-sheet"
+            className="block group"
+          >
+            <CdnImage
+              src="/images/nano_insp/template-fashion-inspired-gown-design-sheet-phoenix.jpg"
+              alt="Phoenix-inspired couture gown design sheet"
+              width={480}
+              height={320}
+              className="w-full h-auto rounded-lg shadow group-hover:shadow-xl transition"
+            />
+            <div className="mt-3 text-sm font-medium text-gray-800 dark:text-gray-200">
+              Couture gown design sheet
+            </div>
+          </Link>
+        </div>
       </section>
 
       <section className="mb-8">
