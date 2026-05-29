@@ -128,6 +128,30 @@ PRUNE = OrderedDict([
             '反义','反义词','对比','反义中英','中英对照','中英对比','反义词卡','对比 词',
         ],
     }),
+    # 2026-05-29: fashion_red_carpet over-spread on 3 broad templates was
+    # flooding the top of /search?q=met+gala (~30 results in positions
+    # 1-30: portrait-retouching-blueprint-en 1..5, fashion-ecommerce-*
+    # 20+ records, clothing-evolution-poster-* 5+ records). This pushed
+    # the literal-match template-lifestyle-photo-grid-met-gala-red-carpet
+    # and template-lifestyle-photo-grid-paris-fashion-week records past
+    # the 80-item /search cap to positions 80-81.
+    # Paired with the tightening of the topup family in
+    # scripts/topup_search_aliases.py (same date) — those 3 templates
+    # are no longer listed there, so this prune removes the orphan
+    # aliases without risk of re-add.
+    ('fashion_red_carpet_overspread', {
+        'templates': [
+            'template-fashion-ecommerce',
+            'template-portrait-retouching-blueprint',
+            'template-clothing-evolution-poster',
+        ],
+        'aliases': [
+            'red carpet','met gala','gala','runway','fashion show','couture','haute couture',
+            'evening gown','ball gown','celebrity fashion','awards show','oscars',
+            'oscars red carpet','met gala outfit','formal wear','black tie',
+            '红毯','时装秀','礼服','晚礼服','高定','时尚晚会','颁奖典礼','明星红毯','奥斯卡','met 红毯',
+        ],
+    }),
 ])
 
 

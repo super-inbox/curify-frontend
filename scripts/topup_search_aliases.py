@@ -302,16 +302,24 @@ FAMILIES = OrderedDict([
         # `met gala` stayed at 1 hit. Existing fashion templates cover
         # outfit / styling but never alias the red-carpet / gala /
         # couture vocabulary that the gsc-zero query uses.
+        #
+        # Tightened 2026-05-29: dropped 3 over-spread templates
+        # (fashion-ecommerce: isolated product shots like shoes/bag/hat;
+        # portrait-retouching-blueprint: generic portrait retouching;
+        # clothing-evolution-poster: historical clothing across eras).
+        # These templates were flooding the top of /search?q=met+gala
+        # and /search?q=red+carpet, pushing the literal-match
+        # template-lifestyle-photo-grid-{met-gala-red-carpet,
+        # paris-fashion-week} records past the 80-item /search cap.
+        # Aliases removed via prune_search_aliases.py
+        # `fashion_red_carpet_overspread` block.
         'templates': [
-            'template-fashion-ecommerce',
             'template-fashion-before-after-outfit-annotation-card',
             'template-fashion-inspired-gown-design-sheet',
             'template-personal-fashion-outfit-style-variations',
             'template-ai-outfit-try-on-poster',
-            'template-clothing-evolution-poster',
             'template-ethnic-costume-deconstruction-board',
             'template-lifestyle-photo-grid',
-            'template-portrait-retouching-blueprint',
             'template-hairstyle-color-recommendation',
         ],
         'aliases': [
