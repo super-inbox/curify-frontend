@@ -11,7 +11,7 @@ export default function BlogContent() {
 
   const locale = useLocale()
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
+    <article className="max-w-5xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">
           {t('title')}
@@ -107,15 +107,15 @@ export default function BlogContent() {
         <div className="grid md:grid-cols-2 gap-6 my-8">
           <div>
             <h4 className="text-lg font-semibold mb-2">{t('wrongApproach')}</h4>
-            <pre className="bg-red-50 dark:bg-red-900/20 p-4 rounded text-sm">
+            <pre className="bg-red-50 dark:bg-red-900/20 p-4 rounded text-sm whitespace-pre-wrap break-words">
 {t.raw('wrongApproachExample')}
             </pre>
             <p className="text-sm text-red-600 mt-2">{t('wrongApproachNote')}</p>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-2">{t('nanoBananaMethod')}</h4>
-            <pre className="bg-green-50 dark:bg-green-900/20 p-4 rounded text-sm">
+            <pre className="bg-green-50 dark:bg-green-900/20 p-4 rounded text-sm whitespace-pre-wrap break-words">
 {t.raw('nanoBananaMethodExample')}
             </pre>
             <p className="text-sm text-green-600 mt-2">{t('nanoBananaMethodNote')}</p>
