@@ -152,6 +152,29 @@ PRUNE = OrderedDict([
             '红毯','时装秀','礼服','晚礼服','高定','时尚晚会','颁奖典礼','明星红毯','奥斯卡','met 红毯',
         ],
     }),
+    # 2026-05-29: wedding_marriage over-spread surfaced via user query
+    # 'marriage' returning 89 results with first 5 being template-costume
+    # entries unrelated to weddings (Tang qixiong, Ming dragon robe,
+    # Qing buzi, Song beizi, Beijing opera armor). template-costume
+    # mostly covers historical dynastic dress; only certain styles
+    # (qixiong, hanfu wedding variants) are wedding-relevant. template-
+    # fashion-before-after-outfit-annotation-card and template-lifestyle-
+    # photo-grid are generic outfit/lifestyle templates where wedding
+    # was over-spread. Paired with the tightening in topup_search_
+    # aliases.py wedding_marriage family (same date).
+    ('wedding_marriage_overspread', {
+        'templates': [
+            'template-costume',
+            'template-fashion-before-after-outfit-annotation-card',
+            'template-lifestyle-photo-grid',
+        ],
+        'aliases': [
+            'wedding','wedding planner','marriage','bride','groom','ceremony','vows',
+            'engagement','anniversary','bridal','wedding invitation','wedding card',
+            'wedding planning',
+            '婚礼','结婚','婚纱','新娘','新郎','婚庆','婚礼策划','婚礼请柬','周年纪念','订婚',
+        ],
+    }),
 ])
 
 
