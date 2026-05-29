@@ -88,8 +88,8 @@ cover like "stock prices" or "tax software"):
     a misleading rewrite — worse than an empty result page.
 
 Examples of empty-return (use Path B ONLY when the query is clearly outside
-any visual / creative / cultural domain — NOT for pop-culture names you
-don't recognize, which the catalog CAN template via fandom-grid / MBTI):
+any visual / creative / cultural domain — NOT for pop-culture names,
+historical figures, places, or generic concepts in any language):
 - "زوحين" → [] (random non-Latin letters that don't form a recognizable word)
 - "ddd" → [] (random keystrokes)
 - "asjdkfh" → [] (random)
@@ -99,19 +99,50 @@ don't recognize, which the catalog CAN template via fandom-grid / MBTI):
 - "stock prices" → [] (finance data, not visual)
 - "tax software" → [] (business utility, not visual)
 
-CRITICAL: pop-culture names, anime / game franchises, celebrities, public
-figures, films, TV shows, fashion brands → ALWAYS Path A (template-mbti-*
-or template-fandom-character-grid-poster can handle them):
-- "Genshin Impact", "Genshin", "原神" → Path A (anime / fandom MBTI)
-- "Bridgerton" → Path A (period drama / regency fashion)
-- "Taylor Swift" → Path A (celebrity / music portrait)
-- "Stranger Things" → Path A (fandom MBTI / character grid)
-- "Chiikawa" → Path A (kawaii anime characters)
+CRITICAL: any of the following → ALWAYS Path A. The catalog can template
+them via mbti-*, fandom-character-grid, historical-figure-profile,
+artist-biography, travel, culture, music-style-visual, dance, or vocabulary
+templates. Recognize transliterations across Chinese / Japanese / Korean /
+Russian / Spanish / French / Arabic and route them the same way as the
+English form:
+
+  - Pop-culture: anime/manga, game franchises, films, TV shows
+    e.g. "Genshin Impact" / "原神" / "겐신" → Path A
+    e.g. "Bridgerton" → Path A
+    e.g. "Stranger Things" → Path A
+    e.g. "Chiikawa" / "ちいかわ" / "吉伊卡哇" → Path A
+
+  - Celebrities, athletes, artists, public figures:
+    e.g. "Taylor Swift" / "테일러 스위프트" → Path A
+    e.g. "BTS" / "방탄소년단" → Path A
+
+  - Historical / notable figures (scientists, philosophers, leaders, artists):
+    e.g. "Einstein" / "아인슈타인" / "爱因斯坦" → Path A (character-analysis,
+         historical-figure-profile, artist-biography templates)
+    e.g. "Newton" / "뉴턴" / "牛顿" → Path A
+    e.g. "Marie Curie" / "퀴리 부인" → Path A
+    e.g. "Confucius" / "孔子" → Path A
+
+  - Country / region / city names in ANY language:
+    e.g. "Korea" / "한국" / "韓国" → Path A (travel + culture + food + costume)
+    e.g. "China" / "中国" / "중국" → Path A
+    e.g. "Paris" / "巴黎" / "파리" → Path A
+    e.g. "Japan" / "日本" / "일본" → Path A
+
+  - Generic creative-domain concepts even when stated as bare nouns:
+    e.g. "music" / "音乐" / "음악" → Path A (music-style-visual-infographic)
+    e.g. "animation" / "动画" / "애니메이션" → Path A (animation-studio-comparison)
+    e.g. "company" / "회사" / "公司" → Path A (business / professional vocabulary
+         or category-guide-infographic — DON'T conflate with "Salesforce")
 
 Examples of valid rewrites:
 - "手作" → ["crafting templates", "diy watercolor", "scrapbook design"]
 - "唯美春天" → ["watercolor spring", "spring flowers", "aesthetic florals"]
 - "证件照" → ["passport photo portrait", "professional headshot", "证件 风格头像"]
+- "아인슈타인" → ["Einstein character poster", "Einstein historical figure", "scientist biography infographic"]
+- "한국" → ["Korea travel poster", "Korean culture infographic", "Korean food vocabulary"]
+- "음악" → ["music style infographic", "music genre poster", "music vocabulary card"]
+- "회사" → ["company professional guide", "business category infographic", "office lifestyle"]
 
 LITERAL-NOUN RULE: a literal noun query (single object the user wants
 to see — 鲜花 fresh flowers, 蛋糕 cake, 戒指 ring, 蜡烛 candle, 茶具 teapot,
