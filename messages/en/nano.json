@@ -4330,5 +4330,93 @@
         ]
       }
     }
+  },
+  "template-food-product-packaging-design": {
+    "category": "Food Product Packaging Design",
+    "description": "Generate a premium minimalist packaging design for any food product with brand logo, product photo window, feature icons, and net weight text.",
+    "title": "Nano Banana Prompt: Food Product Packaging Design Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K premium food product packaging poster for '{topic}'. The layout features a bold product name, brand logo, product photo in a window, key feature icons, and net weight text. A minimalist modern aesthetic with a theme-matching color palette and clean typography delivers a polished retail-ready feel.",
+        "who": "Suitable for food brand designers, CPG marketers, packaging design students, product photographers, dropshipping sellers, indie food makers, and content creators producing food product mockups.",
+        "how": [
+          "Enter a food product type in {topic} (e.g., Organic Rolled Oats, Italian Pasta Sauce).",
+          "The poster auto-generates a vertical package with product name, brand logo, and product photo window.",
+          "Key feature icons and net weight text are laid out beneath the photo.",
+          "Generate a vertical 4K minimalist food packaging design poster."
+        ],
+        "prompts": [
+          "Generate an Organic Rolled Oats premium packaging design.",
+          "Create a Double Chocolate Cookies food product packaging poster.",
+          "Generate an Italian Pasta Sauce minimalist packaging design."
+        ]
+      }
+    }
+  },
+  "template-educational-career-field-infographic": {
+    "category": "Career Field Infographic",
+    "description": "Create a structured educational infographic explaining any career or academic field — key aspects, real-world applications, skills, and goals.",
+    "title": "Nano Banana Prompt: Educational Career Field Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K educational infographic poster titled '{topic}'. The layout has 4 main sections explaining key aspects of the field, plus real-world applications, key skills/tools, and goals. Cartoon-style illustrations of professionals appear alongside section dividers. A friendly cartoon aesthetic with bold headings and vibrant color coding makes it accessible for students.",
+        "who": "Suitable for educators, school counselors, university career-services teams, education content creators, parents helping kids explore careers, EdTech product designers, and bloggers covering academic fields.",
+        "how": [
+          "Enter a career or academic field in {topic} (e.g., Industrial Engineering, Food Science).",
+          "The poster auto-generates 4 sections covering key aspects, applications, skills, and goals.",
+          "Cartoon professionals and scene illustrations appear alongside each section.",
+          "Generate a vertical 4K cartoon-style career field educational infographic."
+        ],
+        "prompts": [
+          "Generate an Industrial Engineering career field infographic.",
+          "Create a Food Science educational career poster with applications and skills.",
+          "Generate a Healthcare Technology career field infographic for high schoolers."
+        ]
+      }
+    }
+  },
+  "template-lunar-new-year-red-envelope-set": {
+    "category": "Red Envelope Set Showcase",
+    "description": "Create a festive product display poster showcasing a set of four lunar new year red envelope designs with the theme of your choice.",
+    "title": "Nano Banana Prompt: Lunar New Year Red Envelope Set Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K festive product showcase for a set of four red envelopes titled '{topic}'. Four different envelope designs are displayed side-by-side, each labeled with a name and keyword. A decorative title banner sits at the top and a footer note describes the set. Festive illustration style with a soft pastel background gives it a clean product-photography feel.",
+        "who": "Suitable for stationery designers, lunar new year gift brands, Etsy / Shopify sellers, festive product photographers, social media designers, paper-goods Pinterest creators, and gift-shop e-commerce teams.",
+        "how": [
+          "Enter a red envelope theme in {topic} (e.g., Dragon Year, Cat-themed, Floral Blessing).",
+          "Four envelope variants are auto-laid out side-by-side with names and keywords.",
+          "A decorative title banner appears at the top and a footer note at the bottom.",
+          "Generate a vertical 4K festive lunar new year red envelope set product showcase."
+        ],
+        "prompts": [
+          "Generate a Dragon Year Red Envelopes product showcase.",
+          "Create a Cat-themed Red Envelopes festive set display.",
+          "Generate a Floral Blessing Red Envelopes product photography poster."
+        ]
+      }
+    }
+  },
+  "template-mbti-personality-compatibility-infographic": {
+    "category": "MBTI Compatibility Infographic",
+    "description": "Generate a cute, cartoon-style MBTI compatibility infographic comparing two personality types with traits, cognitive functions, and relationship sliders.",
+    "title": "Nano Banana Prompt: MBTI Personality Compatibility Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K cartoon-style infographic poster titled '{topic}'. The split-screen layout compares two MBTI personality types with key traits, cognitive functions, character illustrations, and color themes. The center includes a compatibility summary, interaction dynamics description, and sliders for communication, shared interests, and conflict potential. Soft pastel colors, whimsical cartoon style, decorative hearts and sparkles.",
+        "who": "Suitable for MBTI content creators, personality enthusiasts, dating app marketing teams, relationship coaches, social media accounts focused on personality, and anyone producing shareable MBTI-pair content.",
+        "how": [
+          "Enter an MBTI pairing in {topic} (e.g., INTJ & ENFP Compatibility, INFP & ENTJ Relationship).",
+          "The poster auto-generates a split-screen with traits, cognitive functions, and character illustrations for both types.",
+          "The center compatibility section shows interaction dynamics and compatibility sliders.",
+          "Generate a vertical 4K pastel cartoon MBTI compatibility infographic."
+        ],
+        "prompts": [
+          "Generate an INTJ & ENFP compatibility infographic with traits and sliders.",
+          "Create an INFP & ENTJ relationship MBTI pairing poster.",
+          "Generate an ISTP & ESFJ pairing MBTI compatibility infographic."
+        ]
+      }
+    }
   }
 }

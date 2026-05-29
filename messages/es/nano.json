@@ -4331,5 +4331,93 @@
         ]
       }
     }
+  },
+  "template-food-product-packaging-design": {
+    "category": "Diseno de Empaque Alimentario",
+    "description": "Genera un diseno de empaque premium y minimalista para cualquier producto alimentario con logo de marca, foto del producto, iconos de caracteristicas y peso neto.",
+    "title": "Nano Banana Prompt: Generador de Diseno de Empaque Alimentario | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster vertical 4K de empaque premium para '{topic}'. El diseno incluye un nombre de producto destacado, el logo de la marca, una foto del producto en ventana, iconos de caracteristicas y peso neto. Estetica minimalista moderna con paleta de colores tematica y tipografia limpia para un acabado listo para venta.",
+        "who": "Adecuado para disenadores de marcas alimentarias, marketers de bienes de consumo, estudiantes de diseno de empaques, fotografos de producto, vendedores dropshipping, productores independientes y creadores de contenido.",
+        "how": [
+          "Introduce un tipo de producto en {topic} (ej. Avena Organica, Salsa de Pasta Italiana).",
+          "El poster genera un empaque vertical con nombre, logo y ventana de foto.",
+          "Los iconos de caracteristicas y el peso neto se colocan bajo la foto.",
+          "Se genera un poster 4K vertical de diseno minimalista de empaque alimentario."
+        ],
+        "prompts": [
+          "Genera un diseno premium de empaque para Avena Organica.",
+          "Crea un poster de empaque para Galletas de Doble Chocolate.",
+          "Genera un diseno minimalista de empaque para Salsa de Pasta Italiana."
+        ]
+      }
+    }
+  },
+  "template-educational-career-field-infographic": {
+    "category": "Infografia de Campo Profesional",
+    "description": "Crea una infografia educativa estructurada para cualquier carrera o campo academico, con aspectos clave, aplicaciones reales, habilidades y objetivos.",
+    "title": "Nano Banana Prompt: Generador de Infografia Educativa de Carreras | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster vertical 4K titulado '{topic}'. El diseno tiene 4 secciones principales que explican aspectos clave del campo, mas aplicaciones reales, habilidades/herramientas y objetivos. Ilustraciones cartoon de profesionales acompanan las secciones. Estilo cartoon amistoso con titulos en negrita y codigo de colores vibrante, accesible para estudiantes.",
+        "who": "Adecuado para educadores, orientadores escolares, servicios de carrera universitarios, creadores de contenido educativo, padres orientando a sus hijos, disenadores EdTech y bloggers que cubren campos academicos.",
+        "how": [
+          "Introduce un campo profesional o academico en {topic} (ej. Ingenieria Industrial, Ciencia de los Alimentos).",
+          "El poster genera 4 secciones que cubren aspectos clave, aplicaciones, habilidades y objetivos.",
+          "Ilustraciones cartoon de profesionales aparecen junto a cada seccion.",
+          "Se genera una infografia educativa cartoon vertical 4K."
+        ],
+        "prompts": [
+          "Genera una infografia profesional para Ingenieria Industrial.",
+          "Crea un poster educativo para Ciencia de los Alimentos con aplicaciones y habilidades.",
+          "Genera una infografia profesional para Tecnologia Sanitaria para estudiantes de secundaria."
+        ]
+      }
+    }
+  },
+  "template-lunar-new-year-red-envelope-set": {
+    "category": "Set de Sobres Rojos",
+    "description": "Crea un poster festivo que muestre un set de cuatro disenos de sobres rojos de ano nuevo lunar con el tema que elijas.",
+    "title": "Nano Banana Prompt: Generador de Set de Sobres Rojos Ano Nuevo Lunar | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster vertical 4K festivo de producto para un set de cuatro sobres rojos titulado '{topic}'. Cuatro disenos diferentes se muestran lado a lado, cada uno con nombre y palabra clave. Un banner decorativo encabeza la composicion y una nota al pie describe el set. Estilo ilustrativo festivo con fondo pastel suave y aire de fotografia de producto.",
+        "who": "Adecuado para disenadores de papeleria, marcas de regalos de ano nuevo lunar, vendedores en Etsy / Shopify, fotografos de productos festivos, disenadores de redes sociales, creadores en Pinterest y equipos de e-commerce de tiendas de regalos.",
+        "how": [
+          "Introduce un tema en {topic} (ej. Ano del Dragon, Tematica de Gatos, Bendicion Floral).",
+          "Cuatro variantes de sobre se disponen lado a lado con nombre y palabra clave.",
+          "Aparecen un banner decorativo arriba y una nota al pie.",
+          "Se genera un poster vertical 4K del set festivo de sobres rojos."
+        ],
+        "prompts": [
+          "Genera un set de sobres rojos del Ano del Dragon.",
+          "Crea una presentacion festiva de set de sobres con tematica de gatos.",
+          "Genera un poster de producto con sobres rojos de Bendicion Floral."
+        ]
+      }
+    }
+  },
+  "template-mbti-personality-compatibility-infographic": {
+    "category": "Infografia de Compatibilidad MBTI",
+    "description": "Genera una infografia cartoon de compatibilidad MBTI comparando dos tipos con rasgos, funciones cognitivas y sliders de relacion.",
+    "title": "Nano Banana Prompt: Generador de Infografia de Compatibilidad MBTI | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster vertical 4K estilo cartoon titulado '{topic}'. El diseno de pantalla dividida compara dos tipos MBTI con rasgos clave, funciones cognitivas, ilustraciones de personajes y paletas de color. El centro incluye un resumen de compatibilidad, descripcion de dinamica de interaccion y sliders de comunicacion, intereses compartidos y conflicto. Pastel suave, estilo cartoon caprichoso, corazones y destellos decorativos.",
+        "who": "Adecuado para creadores de contenido MBTI, entusiastas de la personalidad, equipos de marketing de apps de citas, coaches de relaciones, cuentas de redes sociales y cualquiera que produzca contenido MBTI compartible.",
+        "how": [
+          "Introduce una pareja MBTI en {topic} (ej. INTJ & ENFP Compatibilidad, INFP & ENTJ Relacion).",
+          "El poster genera una pantalla dividida con rasgos, funciones cognitivas e ilustraciones para ambos tipos.",
+          "La seccion central muestra dinamica de interaccion y sliders de compatibilidad.",
+          "Se genera una infografia vertical 4K pastel cartoon de compatibilidad MBTI."
+        ],
+        "prompts": [
+          "Genera una infografia INTJ & ENFP con rasgos y sliders.",
+          "Crea un poster MBTI de INFP & ENTJ Relacion.",
+          "Genera una infografia ISTP & ESFJ de compatibilidad MBTI."
+        ]
+      }
+    }
   }
 }

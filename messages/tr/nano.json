@@ -4331,5 +4331,93 @@
         ]
       }
     }
+  },
+  "template-food-product-packaging-design": {
+    "category": "Gida Urunu Ambalaj Tasarimi",
+    "description": "Marka logosu, urun fotograf penceresi, ozellik ikonlari ve net agirlik metni ile herhangi bir gida urunu icin premium minimal ambalaj tasarimi olusturun.",
+    "title": "Nano Banana Prompt: Gida Urunu Ambalaj Tasarimi Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon '{topic}' icin 4K dikey premium gida urunu ambalaj posteri uretir. Yerlesimde belirgin urun adi, marka logosu, pencerede urun fotografi, ana ozellik ikonlari ve net agirlik metni bulunur. Minimal modern estetik, temaya uygun renk paleti ve temiz tipografi ile rafa hazir bir gorunum sunar.",
+        "who": "Gida marka tasarimcilari, CPG pazarlamacilari, ambalaj tasarimi ogrencileri, urun fotografcilari, dropshipping saticilari, bagimsiz gida ureticileri ve urun mockup'lari hazirlayan icerik ureticileri icin uygundur.",
+        "how": [
+          "{topic} alanina gida turunu girin (orn. Organic Rolled Oats, Italian Pasta Sauce).",
+          "Poster urun adi, logo ve fotograf penceresiyle dikey ambalaji otomatik olusturur.",
+          "Ozellik ikonlari ve net agirlik fotografin altina yerlestirilir.",
+          "4K dikey minimal gida ambalaj tasarimi posteri uretilir."
+        ],
+        "prompts": [
+          "Organic Rolled Oats icin premium ambalaj tasarimi olusturun.",
+          "Double Chocolate Cookies icin gida ambalaji posteri olusturun.",
+          "Italian Pasta Sauce icin minimal ambalaj tasarimi olusturun."
+        ]
+      }
+    }
+  },
+  "template-educational-career-field-infographic": {
+    "category": "Kariyer Alani Infografigi",
+    "description": "Herhangi bir kariyer veya akademik alan icin temel yonler, gercek uygulamalar, beceriler ve hedefler iceren yapilandirilmis egitim infografigi olusturun.",
+    "title": "Nano Banana Prompt: Egitim Kariyer Alani Infografik Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon '{topic}' baslikli 4K dikey egitim infografigi posteri uretir. Yerlesimde alanin temel yonlerini aciklayan 4 ana bolum, ardindan gercek uygulamalar, beceriler/araclar ve hedefler bulunur. Profesyonellerin karikatur cizimleri her bolume eslik eder. Samimi karikatur stili, kalin basliklar ve canli renk kodlamasi ile ogrenciler icin erisilebilir.",
+        "who": "Ogretmenler, okul rehber danismanlari, universite kariyer merkezleri, egitim icerigi ureticileri, cocuklarinin kariyer kesfine yardim eden ebeveynler, EdTech tasarimcilari ve akademik alanlar hakkinda blog yazanlar icin uygundur.",
+        "how": [
+          "{topic} alanina kariyer veya akademik alani girin (orn. Industrial Engineering, Food Science).",
+          "Poster temel yonler, uygulamalar, beceriler ve hedefler icin 4 bolum otomatik olusturur.",
+          "Her bolumun yanina karikatur profesyonel ve sahne cizimleri yerlestirilir.",
+          "4K dikey karikatur tarzi kariyer alani egitim infografigi uretilir."
+        ],
+        "prompts": [
+          "Industrial Engineering icin kariyer alani infografigi olusturun.",
+          "Food Science icin uygulamalar ve becerilerle egitim posteri olusturun.",
+          "Lise ogrencileri icin Healthcare Technology kariyer infografigi olusturun."
+        ]
+      }
+    }
+  },
+  "template-lunar-new-year-red-envelope-set": {
+    "category": "Kirmizi Zarf Seti Vitrini",
+    "description": "Seciminizdeki temayla, lunar yeni yili icin dort kirmizi zarf tasariminin yer aldigi festival temasli urun posteri olusturun.",
+    "title": "Nano Banana Prompt: Lunar Yeni Yil Kirmizi Zarf Seti Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon '{topic}' baslikli dort kirmizi zarftan olusan set icin 4K dikey festival urun vitrini uretir. Dort farkli zarf tasarimi yan yana gosterilir; her birinin yaninda ad ve anahtar kelime bulunur. Ustte dekoratif baslik banti, altta set notu yer alir. Festival illustrasyon tarzi ve yumusak pastel arka plan ile temiz urun fotografi havasi verir.",
+        "who": "Kirtasiye tasarimcilari, lunar yeni yil hediye markalari, Etsy / Shopify saticilari, sezonluk urun fotografcilari, sosyal medya tasarimcilari, Pinterest ureticileri ve hediye dukkani e-ticaret ekipleri icin uygundur.",
+        "how": [
+          "{topic} alanina zarf temasi girin (orn. Dragon Year, Cat-themed, Floral Blessing).",
+          "Dort zarf varyasyonu ad ve anahtar kelimeyle yan yana otomatik dizilir.",
+          "Ustte dekoratif baslik banti, altta set notu gorunur.",
+          "4K dikey festival lunar yeni yil kirmizi zarf seti urun vitrini uretilir."
+        ],
+        "prompts": [
+          "Dragon Year Red Envelopes urun vitrini olusturun.",
+          "Cat-themed Red Envelopes festival set sunumu olusturun.",
+          "Floral Blessing Red Envelopes urun fotografi posteri olusturun."
+        ]
+      }
+    }
+  },
+  "template-mbti-personality-compatibility-infographic": {
+    "category": "MBTI Uyumluluk Infografigi",
+    "description": "Ozellikler, bilissel fonksiyonlar ve iliski sliderlari ile iki kisilik tipini karsilastiran sirin karikatur tarzinda MBTI uyumluluk infografigi olusturun.",
+    "title": "Nano Banana Prompt: MBTI Kisilik Uyumluluk Infografik Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon '{topic}' baslikli 4K dikey karikatur tarzi infografik posteri uretir. Bolunmus ekran yerlesimi iki MBTI tipini temel ozellikler, bilissel fonksiyonlar, karakter cizimleri ve renk temalariyla karsilastirir. Merkezde uyumluluk ozeti, etkilesim dinamigi aciklamasi ve iletisim, ortak ilgi ile catisma potansiyeli icin sliderlar bulunur. Yumusak pastel renkler, esprili karikatur tarzi, dekoratif kalpler ve isiltilar.",
+        "who": "MBTI icerigi ureticileri, kisilik tipi meraklilari, tanisma uygulamalarinin pazarlama ekipleri, iliski koclari, kisilik odakli sosyal medya hesaplari ve paylasilabilir MBTI cift icerigi uretenler icin uygundur.",
+        "how": [
+          "{topic} alanina MBTI eslesmesi girin (orn. INTJ & ENFP Compatibility, INFP & ENTJ Relationship).",
+          "Poster iki tipin ozellikleri, bilissel fonksiyonlari ve karakter cizimleriyle bolunmus ekran otomatik olusturur.",
+          "Merkez uyumluluk bolumu etkilesim dinamigini ve sliderlari gosterir.",
+          "4K dikey pastel karikatur MBTI uyumluluk infografigi uretilir."
+        ],
+        "prompts": [
+          "Ozellikler ve sliderlarla INTJ & ENFP uyumluluk infografigi olusturun.",
+          "INFP & ENTJ iliski MBTI cift posteri olusturun.",
+          "ISTP & ESFJ eslesmesi MBTI uyumluluk infografigi olusturun."
+        ]
+      }
+    }
   }
 }

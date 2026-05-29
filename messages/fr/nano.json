@@ -4331,5 +4331,93 @@
         ]
       }
     }
+  },
+  "template-food-product-packaging-design": {
+    "category": "Design d'Emballage Alimentaire",
+    "description": "Generez un design d'emballage premium et minimaliste pour tout produit alimentaire avec logo, photo produit, icones de caracteristiques et poids net.",
+    "title": "Nano Banana Prompt: Generateur de Design d'Emballage Alimentaire | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K d'emballage premium pour '{topic}'. La mise en page comprend un nom de produit en evidence, le logo, une photo dans une fenetre, des icones de caracteristiques et le poids net. Esthetique moderne minimaliste avec palette de couleurs thematique et typographie nette pour un rendu pret a vendre.",
+        "who": "Convient aux designers de marques alimentaires, marketeurs CPG, etudiants en design d'emballage, photographes produit, vendeurs dropshipping, artisans alimentaires independants et createurs de mockups.",
+        "how": [
+          "Saisissez un type de produit dans {topic} (ex. Flocons d'Avoine Bio, Sauce Pates Italienne).",
+          "L'affiche genere automatiquement un emballage vertical avec nom, logo et fenetre photo.",
+          "Les icones de caracteristiques et le poids net se placent sous la photo.",
+          "Une affiche 4K verticale minimaliste de design d'emballage est generee."
+        ],
+        "prompts": [
+          "Generez un design premium d'emballage pour Flocons d'Avoine Bio.",
+          "Creez une affiche d'emballage pour Cookies Double Chocolat.",
+          "Generez un design minimaliste pour Sauce Pates Italienne."
+        ]
+      }
+    }
+  },
+  "template-educational-career-field-infographic": {
+    "category": "Infographie de Domaine Professionnel",
+    "description": "Creez une infographie pedagogique structuree pour toute carriere ou domaine academique avec aspects cles, applications, competences et objectifs.",
+    "title": "Nano Banana Prompt: Generateur d'Infographie de Domaine Professionnel | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K intitulee '{topic}'. La mise en page comporte 4 sections principales expliquant les aspects cles du domaine, plus applications, competences/outils et objectifs. Des illustrations cartoon de professionnels accompagnent les separateurs. Style cartoon amical, titres marques, codage couleur vibrant, accessible aux eleves.",
+        "who": "Convient aux enseignants, conseillers d'orientation, services carriere universitaires, createurs de contenu educatif, parents accompagnant l'exploration de carrieres, designers EdTech et blogueurs couvrant des domaines academiques.",
+        "how": [
+          "Saisissez un domaine professionnel dans {topic} (ex. Genie Industriel, Sciences Alimentaires).",
+          "L'affiche genere 4 sections couvrant aspects cles, applications, competences et objectifs.",
+          "Des illustrations cartoon apparaissent aux cotes de chaque section.",
+          "Une infographie pedagogique cartoon verticale 4K est generee."
+        ],
+        "prompts": [
+          "Generez une infographie de domaine pour Genie Industriel.",
+          "Creez une affiche pedagogique pour Sciences Alimentaires avec applications et competences.",
+          "Generez une infographie de domaine pour Technologie de la Sante destinee aux lyceens."
+        ]
+      }
+    }
+  },
+  "template-lunar-new-year-red-envelope-set": {
+    "category": "Set d'Enveloppes Rouges",
+    "description": "Creez une affiche festive de presentation produit pour un set de quatre enveloppes rouges du Nouvel An lunaire dans le theme de votre choix.",
+    "title": "Nano Banana Prompt: Generateur de Set d'Enveloppes Rouges Nouvel An Lunaire | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K festive presentant un set de quatre enveloppes rouges intitule '{topic}'. Quatre designs differents sont affiches cote a cote, chacun avec un nom et un mot-cle. Une banniere decorative en haut, une note de pied en bas. Style illustratif festif sur fond pastel doux, ambiance photo produit propre.",
+        "who": "Convient aux designers de papeterie, marques de cadeaux du Nouvel An lunaire, vendeurs Etsy / Shopify, photographes produit festifs, designers reseaux sociaux, createurs Pinterest et equipes e-commerce de boutiques cadeaux.",
+        "how": [
+          "Saisissez un theme dans {topic} (ex. Annee du Dragon, Theme Chats, Benediction Florale).",
+          "Quatre variantes d'enveloppes sont disposees cote a cote avec noms et mots-cles.",
+          "Une banniere decorative apparait en haut et une note de pied en bas.",
+          "Une affiche 4K festive de set d'enveloppes rouges du Nouvel An lunaire est generee."
+        ],
+        "prompts": [
+          "Generez une presentation produit Enveloppes Rouges Annee du Dragon.",
+          "Creez un set festif d'enveloppes rouges Theme Chats.",
+          "Generez une affiche photo produit avec Enveloppes Rouges Benediction Florale."
+        ]
+      }
+    }
+  },
+  "template-mbti-personality-compatibility-infographic": {
+    "category": "Infographie de Compatibilite MBTI",
+    "description": "Generez une infographie cartoon de compatibilite MBTI comparant deux types avec traits, fonctions cognitives et curseurs de relation.",
+    "title": "Nano Banana Prompt: Generateur d'Infographie de Compatibilite MBTI | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K cartoon intitulee '{topic}'. La mise en page en ecran scinde compare deux types MBTI avec traits cles, fonctions cognitives, illustrations de personnages et palettes de couleurs. Le centre inclut un resume de compatibilite, une description de dynamique d'interaction et des curseurs pour communication, interets partages et potentiel de conflit. Pastels doux, style cartoon ludique, coeurs et etincelles decoratifs.",
+        "who": "Convient aux createurs de contenu MBTI, passionnes de personnalite, equipes marketing d'applications de rencontre, coaches en relations, comptes sociaux personnalite et quiconque produit du contenu MBTI a partager.",
+        "how": [
+          "Saisissez un appariement MBTI dans {topic} (ex. INTJ & ENFP Compatibilite, INFP & ENTJ Relation).",
+          "L'affiche genere un ecran scinde avec traits, fonctions cognitives et illustrations pour les deux types.",
+          "La section centrale de compatibilite affiche dynamique d'interaction et curseurs.",
+          "Une infographie verticale 4K pastel cartoon de compatibilite MBTI est generee."
+        ],
+        "prompts": [
+          "Generez une infographie INTJ & ENFP avec traits et curseurs.",
+          "Creez une affiche d'appariement MBTI pour INFP & ENTJ Relation.",
+          "Generez une infographie d'appariement ISTP & ESFJ."
+        ]
+      }
+    }
   }
 }
