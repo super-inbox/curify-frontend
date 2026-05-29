@@ -382,7 +382,18 @@ export default async function SearchPage({ params, searchParams }: Props) {
         relaxedTpl.add(tid);
       }
     }
-    const tplByI18n = strictTpl.size > 0 ? strictTpl : relaxedTpl;
+    // Templates rail uses strict-match only (relaxedTpl is built but
+    // intentionally NOT used here). Falling back to relaxed at the
+    // template-i18n level surfaces templates that share ONE token with
+    // a multi-token query — e.g. `world cup` would pull
+    // template-watercolor-world-map-illustration because "world"
+    // alone hits the description. Relevant templates still surface via
+    // matchedTemplateIds (templates owning strict-matched inspirations),
+    // so this only drops the false-positive long tail.
+    const tplByI18n = strictTpl;
+    // relaxedTpl intentionally unused — kept for the strict-vs-relaxed
+    // bookkeeping that downstream callers (rewriter merge) might depend on.
+    void relaxedTpl;
 
     const scored: ScoredInspiration[] = [];
     // Pre-compute query-token set for the compound-noun guard below.

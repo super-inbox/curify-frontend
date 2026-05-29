@@ -310,7 +310,7 @@ export default async function Page({ params }: Props) {
         </div>
       </section>
 
-      {tier1Ancestor === 'character' && (
+      {(slug === 'character' || slug === 'mbti') && (
         <section className="mx-auto max-w-[1400px] px-4 pb-6 sm:px-6 lg:px-8">
           <MBTIQuizCapsule />
         </section>

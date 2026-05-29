@@ -23,7 +23,7 @@ export default function BlogContent() {
           <span>•</span>
           <span>{t('category')}</span>
         </div>
-        <div className="mt-6 mb-4 mx-auto max-w-lg md:max-w-xl flex items-center justify-center">
+        <div className="mt-6 mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 flex items-center justify-center">
           <CdnImage
             src="/image_text_layout/4214_3_city-story-haunting-gaze.png"
             width={672}
@@ -70,45 +70,30 @@ export default function BlogContent() {
 
       <section className="mb-8">
         <h2 className="text-3xl font-semibold mb-4">{t('facialFeatureLockFramework')}</h2>
-        
+
         <h3 className="text-2xl font-semibold mb-3 mt-6">{t('coreArchitecture')}</h3>
         <p className="mb-4">
           {t('coreArchitectureDesc')}
         </p>
-        
-        <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg my-6">
-          <h4 className="text-xl font-semibold mb-3">🔧 {t('coreTemplate')}</h4>
-          <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded text-sm overflow-x-auto">
-{t.raw('coreTemplate')}
-          </pre>
-          <p className="text-sm mt-2">{t('coreTemplateDesc')}</p>
-        </div>
+        <p className="mb-6 text-sm text-gray-600 dark:text-gray-400">
+          {t('coreTemplateDesc')}
+        </p>
 
         <h3 className="text-2xl font-semibold mb-3 mt-6">{t('uniqueIdentifiers')}</h3>
         <p className="mb-4">
           {t('uniqueIdentifiersDesc')}
         </p>
-        
-        <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg my-6">
-          <h4 className="text-xl font-semibold mb-3">✨ {t('uniqueTemplate')}</h4>
-          <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded text-sm overflow-x-auto">
-{t.raw('uniqueTemplate')}
-          </pre>
-          <p className="text-sm mt-2">{t('uniqueTemplateDesc')}</p>
-        </div>
+        <p className="mb-6 text-sm text-gray-600 dark:text-gray-400">
+          {t('uniqueTemplateDesc')}
+        </p>
 
         <h3 className="text-2xl font-semibold mb-3 mt-6">{t('expressionConsistencyRulesTitle')}</h3>
         <p className="mb-4">
           {t('expressionConsistencyRulesDesc')}
         </p>
-        
-        <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg my-6">
-          <h4 className="text-xl font-semibold mb-3">😊 {t('expressionTemplate')}</h4>
-          <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded text-sm overflow-x-auto">
-{t.raw('expressionTemplate')}
-          </pre>
-          <p className="text-sm mt-2">{t('expressionTemplateDesc')}</p>
-        </div>
+        <p className="mb-6 text-sm text-gray-600 dark:text-gray-400">
+          {t('expressionTemplateDesc')}
+        </p>
       </section>
 
       <section className="mb-8">
@@ -291,13 +276,6 @@ client.models.generate_content(
           Open any grid and you can copy the exact template prompt, swap the subject, and ship a 9-image identity-locked set in under five minutes. The four techniques below are what the template bakes in.
         </p>
 
-        <h3 className="text-2xl font-semibold mb-3 mt-8">{t('whatMakesTheseWork')}</h3>
-        <ul className="list-disc pl-6 mb-4">
-          <li><strong>{t('consistentEyeShape')}</strong> {t('consistentEyeShapeDesc')}</li>
-          <li><strong>{t('noseRecognition')}</strong> {t('noseRecognitionDesc')}</li>
-          <li><strong>{t('jawlineContinuity')}</strong> {t('jawlineContinuityDesc')}</li>
-          <li><strong>{t('expressionRules')}</strong> {t('expressionRulesDesc')}</li>
-        </ul>
       </section>
 
       <section className="mb-8">
@@ -316,112 +294,6 @@ client.models.generate_content(
           <p className="text-sm mt-2">{t('styleTransferExample')}</p>
         </div>
 
-        <h3 className="text-2xl font-semibold mb-3 mt-6">{t('ageProgressionSystem')}</h3>
-        <p className="mb-4">
-          {t('ageProgressionSystemDesc')}
-        </p>
-        
-        <div className="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg my-6">
-          <h4 className="text-xl font-semibold mb-3">{t('ageProgressionRules')}</h4>
-          <ul className="list-disc pl-6 space-y-2">
-            <li><strong>{t('ageChildToTeen')}</strong></li>
-            <li><strong>{t('ageTeenToAdult')}</strong></li>
-            <li><strong>{t('ageAdultToElder')}</strong></li>
-          </ul>
-        </div>
-
-        <h3 className="text-2xl font-semibold mb-3 mt-6">{t('emotionalRangeLibrary')}</h3>
-        <p className="mb-4">
-          {t('emotionalRangeLibraryDesc')}
-        </p>
-        
-        <div className="grid md:grid-cols-2 gap-4 my-6">
-          <div>
-            <h4 className="text-lg font-semibold mb-2">{t('basicExpressions')}</h4>
-            <ul className="list-disc pl-6 text-sm space-y-1">
-              <li>{t('neutral')}</li>
-              <li>{t('happy')}</li>
-              <li>{t('sad')}</li>
-              <li>{t('angry')}</li>
-              <li>{t('surprised')}</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-2">{t('complexExpressions')}</h4>
-            <ul className="list-disc pl-6 text-sm space-y-1">
-              <li>{t('confident')}</li>
-              <li>{t('thoughtful')}</li>
-              <li>{t('amused')}</li>
-              <li>{t('determined')}</li>
-              <li>{t('worried')}</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-3xl font-semibold mb-4">{t('commonPitfallsSolutions')}</h2>
-        
-        <div className="space-y-4">
-          <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
-            <h4 className="font-semibold text-red-800 dark:text-red-200">{t('featureDrift')}</h4>
-            <p className="text-sm mb-2">{t('featureDriftDesc')}</p>
-            <p className="text-sm"><strong>{t('featureDriftSolution')}</strong></p>
-          </div>
-          
-          <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
-            <h4 className="font-semibold text-red-800 dark:text-red-200">{t('styleOverwriting')}</h4>
-            <p className="text-sm mb-2">{t('styleOverwritingDesc')}</p>
-            <p className="text-sm"><strong>{t('styleOverwritingSolution')}</strong></p>
-          </div>
-          
-          <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
-            <h4 className="font-semibold text-red-800 dark:text-red-200">{t('lightingConfusion')}</h4>
-            <p className="text-sm mb-2">{t('lightingConfusionDesc')}</p>
-            <p className="text-sm"><strong>{t('lightingConfusionSolution')}</strong></p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-3xl font-semibold mb-4">{t('characterConsistencyChecklist')}</h2>
-        
-        <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg my-6">
-          <h4 className="text-xl font-semibold mb-3">{t('preGenerationChecklistTitle')}</h4>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <h5 className="font-semibold mb-2">{t('facialBlueprint')}</h5>
-              <ul className="list-disc pl-6 text-sm space-y-1">
-                <li>{t('faceShapeDefined')}</li>
-                <li>{t('eyeShapeColorSpecified')}</li>
-                <li>{t('noseShapeDetailed')}</li>
-                <li>{t('mouthLipCharacteristics')}</li>
-                <li>{t('uniqueMarksScarsIdentified')}</li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-semibold mb-2">{t('expressionRules2')}</h5>
-              <ul className="list-disc pl-6 text-sm space-y-1">
-                <li>{t('smilePatternDefined')}</li>
-                <li>{t('eyeMovementCharacteristics')}</li>
-                <li>{t('browBehaviorSpecified')}</li>
-                <li>{t('jawTensionPatterns')}</li>
-                <li>{t('asymmetricalDetailsNoted')}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg my-6">
-          <h4 className="text-xl font-semibold mb-3">{t('postGenerationValidationTitle')}</h4>
-          <ul className="list-disc pl-6 space-y-2">
-            <li><strong>{t('eyeDistanceCheck')}</strong></li>
-            <li><strong>{t('noseBridgeTest')}</strong></li>
-            <li><strong>{t('jawlineComparison')}</strong> {t('jawlineComparisonDesc')}</li>
-            <li><strong>{t('uniqueFeatureVerification')}</strong> {t('uniqueFeatureVerificationDesc')}</li>
-            <li><strong>{t('expressionConsistencyValidation')}</strong> {t('expressionConsistencyValidationDesc')}</li>
-          </ul>
-        </div>
       </section>
 
       <section className="mb-8">
