@@ -37,6 +37,26 @@ export default function VoiceCloningToolsContent({ slug, t, locale }: VoiceCloni
       </section>
 
       <section>
+        <h2 className="text-2xl font-bold mb-4">{t("buyersGuideTitle")}</h2>
+        <div
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{
+            __html: formatVoiceCloningContent(t("buyersGuideContent"))
+          }}
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("methodologyTitle")}</h2>
+        <div
+          className="prose prose-lg max-w-none mb-4 italic text-gray-700 dark:text-gray-300 border-l-4 border-gray-300 dark:border-gray-700 pl-4"
+          dangerouslySetInnerHTML={{
+            __html: formatVoiceCloningContent(t("methodologyContent"))
+          }}
+        />
+      </section>
+
+      <section>
         <h2 className="text-2xl font-bold mb-4">{t("toolsTitle")}</h2>
         <p className="mb-6">{t("toolsIntro")}</p>
 
@@ -144,6 +164,23 @@ export default function VoiceCloningToolsContent({ slug, t, locale }: VoiceCloni
             __html: formatVoiceCloningContent(t("complianceContent"))
           }}
         />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("faqTitle")}</h2>
+        <div className="space-y-6 mb-4">
+          {[1, 2, 3, 4, 5, 6].map((idx) => (
+            <div key={idx} className="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0">
+              <h3 className="text-lg font-semibold mb-2">{t(`faq${idx}Q`)}</h3>
+              <div
+                className="prose prose-base max-w-none text-gray-700 dark:text-gray-300"
+                dangerouslySetInnerHTML={{
+                  __html: formatVoiceCloningContent(t(`faq${idx}A`))
+                }}
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       <section>
