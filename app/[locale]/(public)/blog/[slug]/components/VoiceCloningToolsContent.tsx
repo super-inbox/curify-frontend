@@ -8,9 +8,24 @@ interface VoiceCloningToolsContentProps {
 }
 
 const TOOLS = [
-  { idx: 1, color: "blue" },
-  { idx: 2, color: "green" },
-  { idx: 3, color: "purple" },
+  {
+    idx: 1,
+    color: "blue",
+    image: "https://elevenlabs.io/cover.png",
+    href: "https://elevenlabs.io/",
+  },
+  {
+    idx: 2,
+    color: "green",
+    image: "https://opengraph.githubassets.com/1371fae0717cb3fbb2714b2fa2354abab88599acebb1b767a9ae4dc25691bcc5/SWivid/F5-TTS",
+    href: "https://github.com/SWivid/F5-TTS",
+  },
+  {
+    idx: 3,
+    color: "purple",
+    image: "https://opengraph.githubassets.com/419461266328e32e22f3ca1feceaed11ff8c11f47f5d3fbc1bd4af9323e3d903/myshell-ai/OpenVoice",
+    href: "https://github.com/myshell-ai/OpenVoice",
+  },
 ] as const;
 
 const COLOR_CLASSES: Record<string, string> = {
@@ -60,27 +75,48 @@ export default function VoiceCloningToolsContent({ slug, t, locale }: VoiceCloni
         <h2 className="text-2xl font-bold mb-4">{t("toolsTitle")}</h2>
         <p className="mb-6">{t("toolsIntro")}</p>
 
-        {TOOLS.map(({ idx, color }) => (
+        {TOOLS.map(({ idx, color, image, href }) => (
           <div
             key={idx}
-            className={`${COLOR_CLASSES[color]} border-l-4 p-6 rounded-lg my-6 not-prose`}
+            className={`${COLOR_CLASSES[color]} border-l-4 rounded-lg my-6 not-prose overflow-hidden`}
           >
-            <h3 className="text-xl font-bold mb-1">{t(`tool${idx}Name`)}</h3>
-            <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 italic">
-              {t(`tool${idx}Tagline`)}
-            </p>
-            <ul className="text-sm space-y-1 mb-4">
-              <li><strong>Best for:</strong> {t(`tool${idx}BestFor`)}</li>
-              <li><strong>Pricing:</strong> {t(`tool${idx}Pricing`)}</li>
-              <li><strong>Languages:</strong> {t(`tool${idx}Languages`)}</li>
-              <li><strong>Notable limitation:</strong> {t(`tool${idx}Limitation`)}</li>
-            </ul>
-            <div
-              className="prose prose-sm max-w-none"
-              dangerouslySetInnerHTML={{
-                __html: formatVoiceCloningContent(t(`tool${idx}WhenToPick`))
-              }}
-            />
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700"
+            >
+              <img
+                src={image}
+                alt={`${t(`tool${idx}Name`).replace(/^\d+\.\s*/, "")} homepage`}
+                width={1200}
+                height={600}
+                loading="lazy"
+                className="w-full h-auto max-h-64 object-contain"
+              />
+            </a>
+            <div className="p-6">
+              <h3 className="text-xl font-bold mb-1">
+                <a href={href} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  {t(`tool${idx}Name`)}
+                </a>
+              </h3>
+              <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 italic">
+                {t(`tool${idx}Tagline`)}
+              </p>
+              <ul className="text-sm space-y-1 mb-4">
+                <li><strong>Best for:</strong> {t(`tool${idx}BestFor`)}</li>
+                <li><strong>Pricing:</strong> {t(`tool${idx}Pricing`)}</li>
+                <li><strong>Languages:</strong> {t(`tool${idx}Languages`)}</li>
+                <li><strong>Notable limitation:</strong> {t(`tool${idx}Limitation`)}</li>
+              </ul>
+              <div
+                className="prose prose-sm max-w-none"
+                dangerouslySetInnerHTML={{
+                  __html: formatVoiceCloningContent(t(`tool${idx}WhenToPick`))
+                }}
+              />
+            </div>
           </div>
         ))}
       </section>
