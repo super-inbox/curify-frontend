@@ -45,7 +45,12 @@ export default function SearchBar({ locale }: Props) {
     setOpen(false);
     setQuery("");
     if (href) router.push(`/${locale}${href}`);
-    else if (searchFallback) router.push(`/${locale}/search?q=${encodeURIComponent(queryStr ?? slug)}`);
+    else if (searchFallback) {
+      router.push(`/${locale}/search?q=${encodeURIComponent(queryStr ?? slug)}`);
+      // Bypass Next.js Router Cache so a stale empty-result RSC payload
+      // from a pre-deploy attempt doesn't get served on the same query.
+      router.refresh();
+    }
     else router.push(`/${locale}/topics/${q}`);
   }, [locale, query, router, track]);
 
@@ -62,11 +67,13 @@ export default function SearchBar({ locale }: Props) {
     if (exact && (exact.slug === q || exact.label.toLowerCase() === q || exactLocalized === q)) {
       if (exact.searchFallback) {
         router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
+        router.refresh();
       } else {
         router.push(exact.href ? `/${locale}${exact.href}` : `/${locale}/topics/${exact.slug}`);
       }
     } else {
       router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
+      router.refresh();
     }
   };
 
