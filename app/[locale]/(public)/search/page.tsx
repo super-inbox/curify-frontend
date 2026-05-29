@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
@@ -22,6 +23,29 @@ import SearchResultsClient from "./SearchResultsClient";
 // client-side LOW_RESULT_THRESHOLD in SearchResultsClient so the tracking
 // boundary stays consistent.
 const LOW_RESULT_THRESHOLD = 3;
+
+// Bots / crawlers we do NOT want triggering paid LLM rewriter calls.
+// Observed in Vercel logs hitting /search with garbage queries (bingbot
+// querying "MuMu_5.0.11_LxoFNKC 32bit", etc). The rewriter still runs
+// for real users — bots just get the empty-result rendering.
+const BOT_UA_REGEX = /bot|crawler|spider|claudebot|gptbot|chatgpt|bingbot|googlebot|ahrefs|semrushbot|facebookexternalhit|baiduspider|duckduckbot|yandexbot|sogou|petalbot|applebot|amazonbot|mj12bot|seekport|exabot|datadog|uptimerobot/i;
+
+// Garbage-query heuristic — queries unlikely to map to any creative
+// catalog content, so skip the paid LLM rewriter. Looks for: version
+// strings (1.2.3), long underscored tokens (LxoFNKC_32bit), file
+// extensions, long alphanumeric blobs with no spaces. Real user queries
+// don't look like this.
+function looksLikeGarbageQuery(q: string): boolean {
+  const t = q.trim();
+  if (t.length < 2) return true;
+  if (/\d+\.\d+\.\d+/.test(t)) return true;                  // 1.2.3 version
+  if (/\.[a-z]{2,4}(?:\s|$)/i.test(t)) return true;          // file extension
+  if (/_[a-z0-9]{4,}_|_[a-z0-9]{4,}\s|\s[a-z0-9]{4,}_/i.test(t)) return true;  // underscored ID-shape tokens
+  if (/^[a-z0-9]{20,}$/i.test(t)) return true;               // long alnum blob
+  // Single very long token (no spaces) with mixed case/digits — likely an ID
+  if (!/\s/.test(t) && t.length > 25 && /\d/.test(t) && /[A-Z]/.test(t) && /[a-z]/.test(t)) return true;
+  return false;
+}
 
 // Build once per request — small enough to recompute, big enough we don't want
 // to do it inside the inspiration loop.
@@ -485,7 +509,18 @@ export default async function SearchPage({ params, searchParams }: Props) {
   const initialThinCount =
     baseResult.scored.filter((s) => s.strict).length +
     matchedTemplateIdsByI18nUnion.size;
-  if (initialThinCount < LOW_RESULT_THRESHOLD && query.length >= 2) {
+  // Gate the paid LLM rewriter on (a) thin results, (b) non-bot UA,
+  // (c) query doesn't look like garbage (version strings, file IDs,
+  // long alphanumeric blobs typical of crawler scrape attempts).
+  const ua = (await headers()).get("user-agent") ?? "";
+  const isBot = BOT_UA_REGEX.test(ua);
+  const isGarbage = looksLikeGarbageQuery(query);
+  if (
+    initialThinCount < LOW_RESULT_THRESHOLD &&
+    query.length >= 2 &&
+    !isBot &&
+    !isGarbage
+  ) {
     const rewrites = await rewriteQuery(query);
     if (rewrites.length > 0) {
       for (const rw of rewrites) {
