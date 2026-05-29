@@ -246,6 +246,61 @@ Performance: pattern-matching ~200 templates × ~5 patterns each = ~1000 regex e
 - For the remaining ≤ 15%, the LLM matcher falls back automatically and the user sees the same cards either way.
 - LLM cost should drop by **~70-80%** at steady state (real prod queries are dominated by repeats — the long tail keeps the LLM matcher alive).
 
+## Open taxonomy followups (revisit before/during Phase 3 implementation)
+
+Three insights surfaced from the 2026-05-29 taxonomy audit (commit `8d3fc6d`, which built `template_subjects`). Documented here as a TODO list to revisit when the bridge implementation actually starts.
+
+### TODO 1 — Tier-3 ↔ template tag alignment is sparse
+
+**Insight:** The original Phase 3 spec assumed `template.topics ∩ tier3` would yield a meaningful per-template subject map. Audit showed it doesn't — only **65 of 215 templates** reference any tier-3 subject directly. Most templates' `topics[]` use tier-1/tier-2 names (`posters`, `design`, `learning`, `guides`, `composition`) because that's how content creators naturally tag.
+
+**Current mitigation:** `template_subjects` map uses inclusive matching across tier1 ∪ tier2 ∪ tier3 → 215/215 coverage.
+
+**Followup decision points:**
+- (a) **Accept** the current state — inclusive matching works for the bridge, and forcing creators to tag at tier-3 would be an unnatural authoring constraint.
+- (b) **Auto-promote** common template tags to tier-3 entries (e.g., `posters`, `guides`, `composition` become tier-3 subjects with their own tier-4 leaves). Restructures the taxonomy meaningfully.
+- (c) **Re-tag** templates to include tier-3 subjects in their `topics[]` — could be done via the LLM matcher's existing verdict logic.
+
+Recommendation: (a) for now; revisit if Phase 3 implementation reveals routing issues that tier-3 specificity would solve.
+
+### TODO 2 — 52 tier-3 "orphan" entries are entity values, not subject categories
+
+**Insight:** 52 tier-3 entries are referenced by zero templates: 16 MBTI types (`mbti-intj`, `mbti-intp`, ...), 22 country names (`spain`, `france`, ...), 9 style names (`minimalist`, `chic`, `vintage-retro`, ...), and 5 other subjects (`nature`, `food-and-drink`, `phonics`, etc — these last 5 appear in `tier3.language` but templates tag at the tier-2 level).
+
+The MBTI types and country names ARE in templates — but via `params.country = "Spain"` or `params.mbti_type = "INTJ"`, not via `topics[]`. They're entity values, not subjects templates self-categorize under.
+
+**Followup decision points:**
+- (a) **Leave as-is.** They document the entity vocabulary and could be used by the entity-extraction step of the bridge (`accepts.primary_param` extraction).
+- (b) **Move to a new `entity_values` section** in taxonomy.json, structured by entity type (mbti types under `entity_values.mbti`, countries under `entity_values.geo`, etc). Cleaner separation.
+- (c) **Delete** them from tier-3 if they don't carry semantic weight beyond the entity vocabulary. Likely too aggressive — they're documented vocabulary that downstream tools could need.
+
+Recommendation: (b) when the bridge implementation needs entity-type metadata. Until then, (a) is fine.
+
+### TODO 3 — Tier-4 enrichment from template placeholders is deferred
+
+**Insight:** The 34 templates with `allow_generation: true` + `batch: true` have 45+14+11+6 = ~76 unique placeholder values that could become tier-4 leaves. But they cluster under TIER-2 style descriptors (`kawaii`, `watercolor`, `photorealistic`) that aren't currently tier-3 subjects with their own tier-4 keys.
+
+Top 5 candidate clusters:
+- **kawaii** — 45 placeholder candidates (no tier-4 key today)
+- **watercolor** — 14 candidates (no tier-4 key)
+- **photorealistic** — 11 candidates (no tier-4 key)
+- **celebration** — 6 candidates (tier-4 has 8 today, can extend)
+- (others below threshold)
+
+**Followup decision points:**
+- (a) **Promote style descriptors to tier-3 subjects** (add `kawaii` / `watercolor` / `photorealistic` to a new `tier3.style` cluster) and add their tier-4 leaves. Largest restructuring.
+- (b) **Add placeholder-derived leaves under EXISTING tier-3 subjects** where the template references both a style and a concrete subject (e.g., a kawaii template that's about food would contribute its placeholders to `tier4.food-and-drink`, not a new `tier4.kawaii`). More effort, more accurate.
+- (c) **Keep tier-4 as category-level only** (current state: `tier4.animals: ["Forest Animals", "Ocean Animals", ...]`) and rely on the LLM matcher to bridge query → template without per-leaf annotations. Simplest.
+
+Recommendation: (c) for now; the LLM matcher (Phase 1) handles the entity-shape queries well enough that fine-grained tier-4 leaves aren't blocking. Revisit if/when query patterns show systematic gaps the LLM can't handle.
+
+### When to revisit these
+
+Trigger conditions for re-opening each TODO:
+- **TODO 1**: when implementing the bridge's pattern matcher (Step 1-2 of the Phase 3 implementation breakdown above), if eval shows < 85% top-1 agreement and the gap is attributable to missing tier-3 specificity.
+- **TODO 2**: when the bridge's entity-extraction step needs to know "what TYPE of entity does this param accept" (e.g., to validate that an extracted entity is a valid country before binding to `params.country`).
+- **TODO 3**: when the LLM matcher's gpt-4o-mini cost becomes a real concern at scale (currently ~$0.0015/query, basically free at current traffic).
+
 ## Risks + open questions
 
 1. **LLM hallucination**: matcher returns template_ids that don't exist. Existing matcher already validates against the template set; same guard applies here.
