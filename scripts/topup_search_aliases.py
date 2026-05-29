@@ -134,11 +134,19 @@ FAMILIES = OrderedDict([
         # cover hundreds of topic_names beyond weddings (Numbers, Body
         # Parts, Weather, etc.). Wedding alias now re-attached at
         # inspiration level via wedding_marriage_insp below.
+        #
+        # Tightened 2026-05-29: dropped 3 more over-spread templates
+        # (template-costume: 47 records mostly about historical dynastic
+        # dress, not weddings; template-fashion-before-after-outfit-
+        # annotation-card: 7 generic outfit-annotation records; template-
+        # lifestyle-photo-grid: 7 generic lifestyle records). Query
+        # 'marriage' was returning 89 results with the first 5 being
+        # costume entries unrelated to weddings (Tang qixiong, Ming
+        # dragon robe, Qing buzi, Song beizi, Beijing opera armor). The
+        # prune family wedding_marriage_overspread (in prune_search_
+        # aliases.py) removes the orphan aliases from those 3 templates.
         'templates': [
-            'template-costume',
             'template-east-asian-culture-comparison-infographic',
-            'template-fashion-before-after-outfit-annotation-card',
-            'template-lifestyle-photo-grid',
             'template-relationship-advice-infographic',
             'template-celebration-illustration-poster',
             'template-cultural-festival-poster',
@@ -302,16 +310,24 @@ FAMILIES = OrderedDict([
         # `met gala` stayed at 1 hit. Existing fashion templates cover
         # outfit / styling but never alias the red-carpet / gala /
         # couture vocabulary that the gsc-zero query uses.
+        #
+        # Tightened 2026-05-29: dropped 3 over-spread templates
+        # (fashion-ecommerce: isolated product shots like shoes/bag/hat;
+        # portrait-retouching-blueprint: generic portrait retouching;
+        # clothing-evolution-poster: historical clothing across eras).
+        # These templates were flooding the top of /search?q=met+gala
+        # and /search?q=red+carpet, pushing the literal-match
+        # template-lifestyle-photo-grid-{met-gala-red-carpet,
+        # paris-fashion-week} records past the 80-item /search cap.
+        # Aliases removed via prune_search_aliases.py
+        # `fashion_red_carpet_overspread` block.
         'templates': [
-            'template-fashion-ecommerce',
             'template-fashion-before-after-outfit-annotation-card',
             'template-fashion-inspired-gown-design-sheet',
             'template-personal-fashion-outfit-style-variations',
             'template-ai-outfit-try-on-poster',
-            'template-clothing-evolution-poster',
             'template-ethnic-costume-deconstruction-board',
             'template-lifestyle-photo-grid',
-            'template-portrait-retouching-blueprint',
             'template-hairstyle-color-recommendation',
         ],
         'aliases': [
@@ -497,6 +513,29 @@ FAMILIES = OrderedDict([
             '路書','旅行路書','旅行路線','旅遊攻略',
             'roadbook','road book','travel route','itinerary plan','trip plan',
             'route plan','journey plan',
+        ],
+    }),
+    # 2026-05-29 user-flagged: 'product design' returns only 3 results,
+    # all from template-food-product-packaging-design (added yesterday).
+    # Aliases the query to the 5 templates that actually host product
+    # design content. This is idea-(a) in action — generic templates
+    # (product-poster, fashion-ecommerce, industrial-design-concept-
+    # sketch, product-theme-promotional-poster) serve broader queries
+    # than their narrow names suggest, but only if we wire the aliases.
+    ('product_design', {
+        'templates': [
+            'template-fashion-ecommerce',
+            'template-industrial-design-concept-sketch',
+            'template-product-poster',
+            'template-product-theme-promotional-poster',
+            'template-food-product-packaging-design',
+        ],
+        'aliases': [
+            'product design','product mockup','packaging design','industrial design',
+            'product photography','product showcase','mockup','commercial product',
+            'consumer product design','product visual','retail design','product render',
+            '产品设计','包装设计','工业设计','产品摄影','产品展示','商品设计','产品视觉',
+            '商品摄影','零售设计','消费品设计',
         ],
     }),
 ])

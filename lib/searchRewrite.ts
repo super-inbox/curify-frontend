@@ -17,8 +17,9 @@
 import OpenAI from "openai";
 
 const MODEL = "gpt-4o-mini";
-const TIMEOUT_MS = 5_000;
+const TIMEOUT_MS = 8_000;  // bumped from 5s — gives cold-start OpenAI clients more headroom
 const MAX_REWRITES = 3;
+const MAX_TOKENS = 400;    // bumped from 200 — multi-rewrite JSON for CJK queries can exceed 200
 
 // Inlined catalog context. Each bullet lists 3-8 concrete sub-examples
 // in parens so the LLM can extrapolate "the catalog has X, Y, Z
@@ -158,23 +159,24 @@ function cacheSet(key: string, rewrites: string[]) {
   CACHE.set(key, { rewrites, at: Date.now() });
 }
 
-// Lazy-init the OpenAI client so a missing key fails gracefully at call
-// time, not at module load. The search page calls this only on the
-// failure path, so no overhead on the typical request.
-let _client: OpenAI | null | undefined;
+// Lazy-init the OpenAI client. Re-checks env on each call so a transient
+// env miss (Vercel cold-start before env injection) doesn't permanently
+// disable the rewriter for the lifetime of the serverless instance.
+let _client: OpenAI | null = null;
 function getClient(): OpenAI | null {
-  if (_client !== undefined) return _client;
+  if (_client) return _client;
   const key = process.env.OPENAI_API_KEY;
   if (!key) {
-    _client = null;
+    console.error("[searchRewrite] OPENAI_API_KEY not set in env — rewriter disabled");
     return null;
   }
   try {
     _client = new OpenAI({ apiKey: key, timeout: TIMEOUT_MS });
-  } catch {
-    _client = null;
+    return _client;
+  } catch (e) {
+    console.error("[searchRewrite] OpenAI client init failed:", e instanceof Error ? e.message : String(e));
+    return null;
   }
-  return _client;
 }
 
 /**
@@ -195,20 +197,32 @@ export async function rewriteQuery(query: string): Promise<string[]> {
   if (!client) return [];
 
   try {
+    const t0 = Date.now();
     const res = await client.chat.completions.create({
       model: MODEL,
       temperature: 0.4,
-      max_tokens: 200,
+      max_tokens: MAX_TOKENS,
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
         { role: "user", content: `Original query: ${trimmed}` },
       ],
     });
+    const elapsedMs = Date.now() - t0;
     const raw = res.choices?.[0]?.message?.content?.trim() ?? "";
+    const finishReason = res.choices?.[0]?.finish_reason;
     // Strip code fences if the model added them despite the instruction.
     const cleaned = raw.replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/i, "").trim();
-    const parsed = JSON.parse(cleaned);
-    if (!Array.isArray(parsed)) return [];
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(cleaned);
+    } catch (parseErr) {
+      console.error(`[searchRewrite] JSON parse failed for query=${JSON.stringify(trimmed)} finish=${finishReason} rawLen=${raw.length} elapsedMs=${elapsedMs}: ${parseErr instanceof Error ? parseErr.message : String(parseErr)} | raw="${raw.slice(0, 200)}"`);
+      return [];  // do NOT cache empty — let the next attempt retry
+    }
+    if (!Array.isArray(parsed)) {
+      console.error(`[searchRewrite] response not an array for query=${JSON.stringify(trimmed)} finish=${finishReason} parsed=${JSON.stringify(parsed).slice(0, 200)}`);
+      return [];  // do NOT cache empty — let the next attempt retry
+    }
     const rewrites: string[] = [];
     const seen = new Set([cacheKey]);
     for (const r of parsed) {
@@ -221,12 +235,16 @@ export async function rewriteQuery(query: string): Promise<string[]> {
       rewrites.push(s);
       if (rewrites.length >= MAX_REWRITES) break;
     }
+    if (rewrites.length === 0) {
+      console.error(`[searchRewrite] zero usable rewrites for query=${JSON.stringify(trimmed)} parsed=${JSON.stringify(parsed).slice(0, 200)}`);
+    }
     cacheSet(cacheKey, rewrites);
     return rewrites;
-  } catch {
-    // Cache empty on failure so we don't retry the same broken query
-    // every page load within the TTL window.
-    cacheSet(cacheKey, []);
+  } catch (e) {
+    // Surface what actually failed (OpenAI timeout, network, auth, etc).
+    // Do NOT cache empty on transient errors — failed cache eats 7 days
+    // of retries for what may be a one-off cold-start hiccup.
+    console.error(`[searchRewrite] OpenAI call failed for query=${JSON.stringify(trimmed)}: ${e instanceof Error ? `${e.name}: ${e.message}` : String(e)}`);
     return [];
   }
 }

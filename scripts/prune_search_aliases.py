@@ -128,6 +128,53 @@ PRUNE = OrderedDict([
             '反义','反义词','对比','反义中英','中英对照','中英对比','反义词卡','对比 词',
         ],
     }),
+    # 2026-05-29: fashion_red_carpet over-spread on 3 broad templates was
+    # flooding the top of /search?q=met+gala (~30 results in positions
+    # 1-30: portrait-retouching-blueprint-en 1..5, fashion-ecommerce-*
+    # 20+ records, clothing-evolution-poster-* 5+ records). This pushed
+    # the literal-match template-lifestyle-photo-grid-met-gala-red-carpet
+    # and template-lifestyle-photo-grid-paris-fashion-week records past
+    # the 80-item /search cap to positions 80-81.
+    # Paired with the tightening of the topup family in
+    # scripts/topup_search_aliases.py (same date) — those 3 templates
+    # are no longer listed there, so this prune removes the orphan
+    # aliases without risk of re-add.
+    ('fashion_red_carpet_overspread', {
+        'templates': [
+            'template-fashion-ecommerce',
+            'template-portrait-retouching-blueprint',
+            'template-clothing-evolution-poster',
+        ],
+        'aliases': [
+            'red carpet','met gala','gala','runway','fashion show','couture','haute couture',
+            'evening gown','ball gown','celebrity fashion','awards show','oscars',
+            'oscars red carpet','met gala outfit','formal wear','black tie',
+            '红毯','时装秀','礼服','晚礼服','高定','时尚晚会','颁奖典礼','明星红毯','奥斯卡','met 红毯',
+        ],
+    }),
+    # 2026-05-29: wedding_marriage over-spread surfaced via user query
+    # 'marriage' returning 89 results with first 5 being template-costume
+    # entries unrelated to weddings (Tang qixiong, Ming dragon robe,
+    # Qing buzi, Song beizi, Beijing opera armor). template-costume
+    # mostly covers historical dynastic dress; only certain styles
+    # (qixiong, hanfu wedding variants) are wedding-relevant. template-
+    # fashion-before-after-outfit-annotation-card and template-lifestyle-
+    # photo-grid are generic outfit/lifestyle templates where wedding
+    # was over-spread. Paired with the tightening in topup_search_
+    # aliases.py wedding_marriage family (same date).
+    ('wedding_marriage_overspread', {
+        'templates': [
+            'template-costume',
+            'template-fashion-before-after-outfit-annotation-card',
+            'template-lifestyle-photo-grid',
+        ],
+        'aliases': [
+            'wedding','wedding planner','marriage','bride','groom','ceremony','vows',
+            'engagement','anniversary','bridal','wedding invitation','wedding card',
+            'wedding planning',
+            '婚礼','结婚','婚纱','新娘','新郎','婚庆','婚礼策划','婚礼请柬','周年纪念','订婚',
+        ],
+    }),
 ])
 
 

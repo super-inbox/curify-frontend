@@ -8950,5 +8950,180 @@
     "creation_date": "2026-05-28",
     "allow_generation": true,
     "batch": true
+  },
+  {
+    "id": "template-professional-category-guide-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Professional Category Guide Infographic Creator) Create a clean, minimalist educational infographic poster titled 'Professional {topic} Guide'. Layout: A structured multi-section layout, with each category containing 3 columns of high-quality photos paired with short descriptive text below. Use a neutral, warm-toned background with bold, clear headings and thin dividing lines. Style: Clean, professional, minimalist aesthetic with a focus on photography, direct high-quality image generation. Subject: '{topic} professional category guide infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Professional Guide Topic",
+            "type": "text",
+            "placeholder": [
+              "Interior Design Style",
+              "Plant Care",
+              "Wine Pairing",
+              "Coffee Brewing",
+              "Cocktail Recipes",
+              "Baking Techniques"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-professional-category-guide-infographic-coffee-brewing-guide-prev.jpg",
+    "topics": [
+      "learning",
+      "guides",
+      "posters",
+      "design"
+    ],
+    "base_rank_score": 85,
+    "rank_score": 85,
+    "creation_date": "2026-05-29",
+    "allow_generation": true,
+    "batch": true
+  },
+  {
+    "id": "template-mbti-group-anime-character-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(MBTI Group Anime Character Poster Creator) Create a stylized anime character poster titled 'MBTI {topic}'. Layout: Four full-body anime characters representing the types in the group, all dressed in the same color palette matching the theme. Below them are pixel-art style icons for each type with their names. The title uses pixel-art font, with matching decorative symbols. Style: Clean anime character illustration, cohesive color scheme, soft background, retro pixel-art elements, direct high-quality image generation. Subject: 'MBTI {topic} group character poster'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "MBTI Group",
+            "type": "text",
+            "placeholder": [
+              "Analysts Group (INTJ, INTP, ENTJ, ENTP)",
+              "Diplomats Group (INFJ, INFP, ENFJ, ENFP)",
+              "Sentinels Group (ISTJ, ISFJ, ESTJ, ESFJ)",
+              "Explorers Group (ISTP, ISFP, ESTP, ESFP)"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-group-anime-character-poster-sentinels-prev.jpg",
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "anime",
+      "groups"
+    ],
+    "base_rank_score": 92,
+    "rank_score": 92,
+    "creation_date": "2026-05-29",
+    "allow_generation": true,
+    "batch": true
+  },
+  {
+    "id": "template-self-help-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Self-Help Infographic Poster Creator) Create a cheerful, illustrated self-help infographic poster titled '{topic}'. Layout: A grid of numbered circular icons, each containing a small cartoon illustration of the activity/habit, paired with a clear title. The top has a decorative banner title, and the bottom includes an encouraging footer message. Style: Whimsical watercolor cartoon style, soft pastel colors, hand-drawn decorative elements (leaves, stars, pencils), direct high-quality image generation. Subject: '{topic} self-help infographic poster'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Self-Help Topic",
+            "type": "text",
+            "placeholder": [
+              "What to Do When You Feel Stuck in Life",
+              "Toxic Habits to Let Go Of",
+              "Habits That Pay Off Forever",
+              "Daily Self-Care Activities",
+              "Productivity Boosting Habits",
+              "Mindfulness Practices"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-self-help-infographic-poster-get-unstuck-in-life-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "guides",
+      "wellness",
+      "posters"
+    ],
+    "base_rank_score": 85,
+    "rank_score": 85,
+    "creation_date": "2026-05-29",
+    "allow_generation": true,
+    "batch": true
+  },
+  {
+    "id": "template-hairstyle-guide-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Hairstyle Guide Infographic Creator) Create a professional hairstyle analysis infographic poster titled '{topic}'. Layout: Structured sections including hair analysis (face shape, texture, density), recommended vs not recommended hairstyles, hair length variations, parting/fringe options, color swatches, and style vibe examples. Use a grid layout with realistic model photos for each hairstyle. Style: Clean, modern, minimalist aesthetic with neutral tones, clear section headers, and direct high-quality image generation. Subject: '{topic} hairstyle guide infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Hairstyle Guide Topic",
+            "type": "text",
+            "placeholder": [
+              "Men's Wavy Hair Guide",
+              "Women's Red Bob Guide",
+              "Asian Men's Textured Crop Guide",
+              "Curly Hair Length Guide",
+              "Short Blonde Pixie Guide",
+              "Oval Face Layered Hair Guide"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-hairstyle-guide-infographic-women-asian-wavy-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "beauty",
+      "fashion",
+      "guides",
+      "posters"
+    ],
+    "base_rank_score": 85,
+    "rank_score": 85,
+    "creation_date": "2026-05-29",
+    "allow_generation": true,
+    "batch": true
+  },
+  {
+    "id": "template-self-help-book-visual-summary-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Self-Help Book Visual Summary Infographic Creator) Create an illustrated book summary infographic poster titled '{topic}'. Layout: A central winding mountain path illustration, surrounded by key concepts, definitions, processes, and insights from the book. Include icons, short descriptions, and a quote, all arranged around the central scene. Style: Whimsical watercolor illustration style, vintage hand-drawn aesthetic, warm earthy tones, clear labels, direct high-quality image generation. Subject: '{topic} book summary infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Self-Help Book Title",
+            "type": "text",
+            "placeholder": [
+              "The Mountain Is You",
+              "Atomic Habits",
+              "The Power of Now",
+              "Daring Greatly",
+              "Atomic Habits",
+              "The Alchemist"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-self-help-book-visual-summary-infographic-the-mountain-is-you-prev.jpg",
+    "topics": [
+      "learning",
+      "reading",
+      "guides",
+      "posters"
+    ],
+    "base_rank_score": 88,
+    "rank_score": 88,
+    "creation_date": "2026-05-29",
+    "allow_generation": true,
+    "batch": true
   }
 ]

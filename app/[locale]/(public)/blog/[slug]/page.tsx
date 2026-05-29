@@ -13,6 +13,7 @@ import { getVideoDubbingUrl, getSubtitleGeneratorUrl } from "./utils/blog-helper
 import { DynamicThumbnail } from "./components/DynamicThumbnail";
 import YoutubeTranslationContent from "./components/YoutubeTranslationContent";
 import VoiceCloningContent from "./components/VoiceCloningContent";
+import VoiceCloningToolsContent from "./components/VoiceCloningToolsContent";
 import AslTranslationContent from "./components/AslTranslationContent";
 import NanoTemplateContent from "./components/NanoTemplateContent";
 import NanoBananaContent from "./components/NanoBananaContent";
@@ -308,7 +309,10 @@ export default async function BlogPostPage({
         {(slug.startsWith('translate-youtube-video') || slug === 'ai-youtube-video-translator' || slug === 'translate-youtube-video-to-english') && (
           <YoutubeTranslationContent slug={slug} t={safeT} locale={locale} />
         )}
-        {(slug.startsWith('voice-cloning') || slug === 'what-is-voice-cloning' || slug === 'f5-tts-voice-cloning') && (
+        {slug === 'voice-cloning-tools' && (
+          <VoiceCloningToolsContent slug={slug} t={safeT} locale={locale} />
+        )}
+        {((slug.startsWith('voice-cloning') && slug !== 'voice-cloning-tools') || slug === 'what-is-voice-cloning' || slug === 'f5-tts-voice-cloning') && (
           <VoiceCloningContent slug={slug} t={safeT} locale={locale} />
         )}
         {slug.includes('asl') && (
