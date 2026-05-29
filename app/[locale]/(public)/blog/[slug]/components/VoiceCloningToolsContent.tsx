@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { formatVoiceCloningContent } from "../utils/content-formatters";
 
 interface VoiceCloningToolsContentProps {
@@ -11,19 +12,19 @@ const TOOLS = [
   {
     idx: 1,
     color: "blue",
-    image: "https://elevenlabs.io/cover.png",
+    image: "/images/voice-cloning-tools-elevenlabs.webp",
     href: "https://elevenlabs.io/",
   },
   {
     idx: 2,
     color: "green",
-    image: "https://opengraph.githubassets.com/1371fae0717cb3fbb2714b2fa2354abab88599acebb1b767a9ae4dc25691bcc5/SWivid/F5-TTS",
+    image: "/images/voice-cloning-tools-f5-tts.webp",
     href: "https://github.com/SWivid/F5-TTS",
   },
   {
     idx: 3,
     color: "purple",
-    image: "https://opengraph.githubassets.com/419461266328e32e22f3ca1feceaed11ff8c11f47f5d3fbc1bd4af9323e3d903/myshell-ai/OpenVoice",
+    image: "/images/voice-cloning-tools-openvoice.webp",
     href: "https://github.com/myshell-ai/OpenVoice",
   },
 ] as const;
@@ -86,12 +87,11 @@ export default function VoiceCloningToolsContent({ slug, t, locale }: VoiceCloni
               rel="noopener noreferrer"
               className="block bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700"
             >
-              <img
+              <CdnImage
                 src={image}
                 alt={`${t(`tool${idx}Name`).replace(/^\d+\.\s*/, "")} homepage`}
                 width={1200}
                 height={600}
-                loading="lazy"
                 className="w-full h-auto max-h-64 object-contain"
               />
             </a>
