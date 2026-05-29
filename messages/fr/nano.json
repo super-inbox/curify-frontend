@@ -4419,5 +4419,115 @@
         ]
       }
     }
+  },
+  "template-professional-category-guide-infographic": {
+    "category": "Guide de Categorie Professionnelle",
+    "description": "Creez une affiche d'infographie pedagogique epuree et minimaliste pour toute categorie professionnelle: styles d'amenagement interieur, accords mets-vins, preparation du cafe, soin des plantes et plus.",
+    "title": "Nano Banana Prompt: Generateur d'Infographie Guide de Categorie Professionnelle | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K minimaliste intitulee 'Professional {topic} Guide'. La mise en page multi-sections inclut des photos haute qualite en 3 colonnes par categorie, des etiquettes claires et de courtes descriptions. Typographie soignee et esthetique editoriale polie adaptee a la reference distribuee ou a l'affichage mural.",
+        "who": "Convient aux designers editoriaux, formateurs de marque, equipes retail / hotelerie, createurs Pinterest, services professionnels qui visualisent leurs categories et toute personne produisant des guides thematiques cures.",
+        "how": [
+          "Saisissez un sujet dans {topic} (ex. Interior Design Styles, Wine Pairing, Plant Care).",
+          "L'affiche genere une mise en page multi-sections avec photos en grilles de 3 colonnes.",
+          "Chaque categorie est etiquetee avec une typographie claire et une courte description.",
+          "Une affiche verticale 4K minimaliste de guide de categorie professionnelle est generee."
+        ],
+        "prompts": [
+          "Generez une affiche guide professionnelle Styles d'Amenagement Interieur.",
+          "Creez une infographie Guide d'Accords Mets-Vins avec sections par categorie.",
+          "Generez un Guide de Soin des Plantes avec grilles de photos."
+        ]
+      }
+    }
+  },
+  "template-mbti-group-anime-character-poster": {
+    "category": "Affiche Anime de Groupe MBTI",
+    "description": "Creez une affiche stylisee de personnages anime pour tout groupe MBTI (Analystes, Diplomates, Sentinelles, Explorateurs) avec 4 personnages plein corps dans une palette unifiee.",
+    "title": "Nano Banana Prompt: Generateur d'Affiche Anime de Groupe MBTI | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K stylisee anime intitulee 'MBTI {topic}'. Quatre personnages anime plein corps representent les types du groupe, tous habilles dans une palette unifiee. En dessous, de petites figures low-poly et les codes MBTI 4 lettres (ex. INTJ, INTP, ENTJ, ENTP) identifient chaque type.",
+        "who": "Convient aux createurs de contenu MBTI, fans d'anime/manga, passionnes de personnalite, designers fan-art, comptes sociaux personnalite et toute personne produisant du contenu MBTI partageable.",
+        "how": [
+          "Saisissez un groupe MBTI dans {topic} (ex. Analysts Group (INTJ, INTP, ENTJ, ENTP)).",
+          "L'affiche genere 4 personnages anime dans une palette unifiee pour le groupe.",
+          "En dessous apparaissent des figures low-poly et les codes MBTI 4 lettres.",
+          "Une affiche verticale 4K stylisee anime de groupe MBTI est generee."
+        ],
+        "prompts": [
+          "Generez une affiche Analysts Group (INTJ, INTP, ENTJ, ENTP) MBTI anime.",
+          "Creez une affiche Diplomats Group (INFJ, INFP, ENFJ, ENFP) MBTI.",
+          "Generez une affiche Explorers Group (ISTP, ISFP, ESTP, ESFP) MBTI anime."
+        ]
+      }
+    }
+  },
+  "template-self-help-infographic-poster": {
+    "category": "Infographie Developpement Personnel",
+    "description": "Creez une infographie developpement personnel joyeuse et illustree avec icones numerotees pour tout sujet d'amelioration: habitudes, routines, changements de mentalite et plus.",
+    "title": "Nano Banana Prompt: Generateur d'Infographie Developpement Personnel | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K joyeuse de developpement personnel intitulee '{topic}'. La mise en page est une grille d'icones circulaires numerotees, chacune avec une petite illustration cartoon de l'activite, accompagnee d'un titre clair et d'une explication courte. Style illustratif lumineux et typographie amicale faciles a partager.",
+        "who": "Convient aux createurs de contenu developpement personnel, coachs bien-etre, blogueurs productivite, educateurs sante mentale, comptes sociaux croissance personnelle et createurs Pinterest.",
+        "how": [
+          "Saisissez un sujet dans {topic} (ex. How to Get Unstuck in Life, Habits That Pay Off).",
+          "L'affiche genere une grille d'icones circulaires numerotees avec illustrations cartoon.",
+          "Chaque icone est associee a un titre clair et une description actionnable courte.",
+          "Une affiche verticale 4K joyeuse illustree de developpement personnel est generee."
+        ],
+        "prompts": [
+          "Generez une infographie How to Get Unstuck in Life.",
+          "Creez une affiche illustree Habits That Pay Off.",
+          "Generez une infographie illustree Toxic Habits to Quit."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-guide-infographic": {
+    "category": "Infographie Guide Coiffure",
+    "description": "Creez une affiche professionnelle d'analyse de coiffure pour tout type de cheveux: forme du visage, texture, densite, coupes recommandees, longueurs et conseils de coiffage.",
+    "title": "Nano Banana Prompt: Generateur d'Infographie Guide Coiffure | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K d'analyse coiffure intitulee '{topic}'. La mise en page structuree inclut analyse capillaire (forme du visage, texture, densite), coiffures recommandees vs non recommandees, longueurs et conseils de coiffage avec illustrations realistes. Esthetique editoriale professionnelle utile en salon et a la maison.",
+        "who": "Convient aux coiffeurs, proprietaires de salons, createurs de contenu beaute, blogueurs mode, marques de soin homme/femme, createurs Pinterest et educateurs de soins capillaires.",
+        "how": [
+          "Saisissez un sujet dans {topic} (ex. Men's Wavy Hair Guide, Women's Curly Long Hair Guide).",
+          "L'affiche genere des sections analyse forme du visage, texture et densite.",
+          "Coiffures recommandees, longueurs et conseils apparaissent avec illustrations realistes.",
+          "Une infographie verticale 4K professionnelle de guide coiffure est generee."
+        ],
+        "prompts": [
+          "Generez une infographie Men's Wavy Medium Hair Guide.",
+          "Creez un guide Women's Curly Long Hair avec forme du visage et coiffage.",
+          "Generez une infographie Women's Korean Short Hair Guide."
+        ]
+      }
+    }
+  },
+  "template-self-help-book-visual-summary-infographic": {
+    "category": "Resume Visuel de Livre Developpement",
+    "description": "Creez un resume visuel infographique illustre pour tout livre de developpement personnel — illustration centrale de chemin sinueux avec concepts cles et idees le long du parcours.",
+    "title": "Nano Banana Prompt: Generateur de Resume Visuel de Livre Developpement | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K de resume de livre illustre intitulee '{topic}'. La mise en page centre une illustration de chemin de montagne sinueux, entouree de concepts cles, definitions, processus et idees du livre. La metaphore du voyage renforce le message visuellement et offre un resume digestible d'un coup d'oeil.",
+        "who": "Convient aux blogueurs livres, createurs BookTok / Booktube, lecteurs prenant des notes, coachs croissance personnelle, auteurs creant des supports complementaires et createurs Pinterest.",
+        "how": [
+          "Saisissez un titre de livre dans {topic} (ex. The Mountain Is You, Atomic Habits).",
+          "L'affiche genere une illustration centrale de chemin de montagne sinueux.",
+          "Concepts cles, definitions, processus et idees du livre sont places le long du parcours.",
+          "Une affiche verticale 4K illustree de resume visuel de livre est generee."
+        ],
+        "prompts": [
+          "Generez une infographie resume visuel de 'The Mountain Is You'.",
+          "Creez une affiche resume illustree de 'Atomic Habits'.",
+          "Generez une infographie resume visuel de 'Mindset' (Carol Dweck)."
+        ]
+      }
+    }
   }
 }

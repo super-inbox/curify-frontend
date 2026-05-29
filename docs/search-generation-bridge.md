@@ -166,6 +166,86 @@ After Phase 1 has run for ~2 weeks, mine the LLM verdicts:
 - Convert to `template.accepts.*` annotations
 - Skip LLM call when a cache + taxonomy hit covers the query (cost reduction)
 
+#### Design decisions (locked 2026-05-29)
+
+**Where the `accepts` annotation lives:** on each template in `nano_templates.json` (Option A from the design discussion). Rejected the alternative of a centralized block in `taxonomy.json` because the annotation is template metadata (what queries this template can serve), not part of the topic hierarchy itself. Putting `accepts` next to `topics` / `rank_score` / `allow_generation` keeps template-related fields co-located.
+
+```jsonc
+// nano_templates.json — new optional field per template
+{
+  "id": "template-recipe",
+  "topics": ["food", "lifestyle", "guides"],
+  "rank_score": 90,
+  "allow_generation": true,
+  "batch": true,
+  // NEW:
+  "accepts": {
+    "subject_class": "food-and-drink",         // references taxonomy.tier3 subject names
+    "primary_param": "dish_name",              // which template param the extracted entity binds to
+    "query_patterns": [
+      "* recipe",
+      "how to make *",
+      "* recipe card",
+      "* recipe poster"
+    ]
+  }
+}
+```
+
+**How `taxonomy.json` is referenced** (NOT modified structurally):
+
+1. `accepts.subject_class` references an existing tier-3 subject name from `taxonomy.tier3` — e.g., `food-and-drink`, `animals`, `nature`, `phonics`. The classification vocabulary already exists in taxonomy.json; Phase 3 just consumes it.
+
+2. `accepts.query_patterns` can be **seeded from `taxonomy.tier4`** — for `template-recipe`, the patterns auto-expand from `tier4.food-and-drink` (`Fruits recipe`, `Vegetables recipe`, `Desserts recipe`, ...) on top of the hand-authored generic patterns (`* recipe`, `how to make *`). Natural reuse of the existing leaf seeds — no duplication.
+
+3. **No new tier or field added to taxonomy.json**. The integration is one-way: nano_templates.json reads from taxonomy.json's existing structure.
+
+#### Data-source workaround for the offline backfill
+
+There's no persistent logging of `lib/searchTemplateMatch.ts` verdicts today — the LRU cache is process-local and blows on Vercel cold starts. So the seed data for Phase 3 has to come from an offline run, not production logs.
+
+Backfill source — total ~140-300 queries depending on synthesis decision:
+
+| Source | Count | Notes |
+|---|---|---|
+| Real prod queries from 14-day admin panel (section 6) | ~91 unique | Grounded — these are queries users actually typed |
+| `scripts/configs/search_eval_set.json` | 46 | Includes ProgSEO entity-shape queries the matcher was already validated against |
+| Optional: synthesized from `tier4` seeds | ~50-200 | "* recipe", "* travel", "* mbti" expanded over each tier4 leaf — broader coverage but risks queries no real user will type |
+
+Total cost at gpt-4o-mini pricing: ~$0.0015/query × ~200 queries = **~$0.30 one-off** to seed the initial annotations across all ~200 `allow_generation: true` templates.
+
+#### At query time (changes to `app/[locale]/(public)/search/page.tsx`)
+
+```
+1. For each template with `accepts`, scan its query_patterns against the
+   query (in-memory regex match, microseconds).
+2. If ≥ 2 templates pattern-match → build TemplateMatch[] from those,
+   extract the entity via the * wildcard position, SKIP the LLM matcher
+   call entirely.
+3. If < 2 → fall back to existing LLM matcher (current behavior).
+4. The LLM matcher's verdicts when it does run get logged to a new
+   persistent store (Vercel KV / Postgres sidecar), so Phase 3's
+   annotations grow organically over time.
+```
+
+Performance: pattern-matching ~200 templates × ~5 patterns each = ~1000 regex evaluations per query, all in-memory. Should be sub-millisecond. The LLM call (which this replaces on cache hit) is ~800-1500ms.
+
+#### Implementation breakdown (~1 day total)
+
+| Step | Deliverable | Effort |
+|---|---|---|
+| 1 | `scripts/backfill_template_accepts.cjs` — offline runner over the query set above, writes `accepts` to `nano_templates.json` | 3-4 hrs |
+| 2 | `lib/searchAcceptsMatcher.ts` — pattern-matcher loader that bypasses the LLM call on hit; same output shape as `searchTemplateMatch.ts` | 2-3 hrs |
+| 3 | `app/[locale]/(public)/search/page.tsx` — wire matcher gate (try pattern-match first; fall back to LLM matcher) | 1 hr |
+| 4 | Eval validation that the pattern-matcher's verdicts agree with the LLM matcher's on the 46-query eval set (top-1 agreement ≥ 85%) | 1 hr |
+| 5 | (Deferred follow-up) Persistent verdict logging in `curify_background` so annotations grow over time | half-day, P2 |
+
+#### Validation criteria
+
+- The eval-set top-1 verdict from the pattern matcher must agree with the LLM matcher's top-1 on **≥ 85%** of queries with no LLM call.
+- For the remaining ≤ 15%, the LLM matcher falls back automatically and the user sees the same cards either way.
+- LLM cost should drop by **~70-80%** at steady state (real prod queries are dominated by repeats — the long tail keeps the LLM matcher alive).
+
 ## Risks + open questions
 
 1. **LLM hallucination**: matcher returns template_ids that don't exist. Existing matcher already validates against the template set; same guard applies here.

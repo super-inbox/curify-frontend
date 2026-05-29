@@ -4418,5 +4418,115 @@
         ]
       }
     }
+  },
+  "template-professional-category-guide-infographic": {
+    "category": "专业品类指南",
+    "description": "围绕任意专业品类(室内设计风格、葡萄酒搭配、咖啡冲泡、植物养护等)生成简约风格的教育指南海报。",
+    "title": "Nano Banana 提示词:专业品类指南信息图生成器 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "本模板生成一张4K竖版极简指南海报,标题为'Professional {topic} Guide'。版面为多区块结构化布局,每个品类配有3列高质量图片、清晰标签和简短说明。干净排版与编辑级美学,既适合做参考资料,也适合上墙展示。",
+        "who": "适合编辑设计师、品牌培训人员、零售/酒店的客用参考资料制作团队、Pinterest 创作者、需要可视化展示自身品类的专业服务,以及制作主题指南的创作者。",
+        "how": [
+          "在 {topic} 中填入主题(例如:Interior Design Styles、Wine Pairing、Plant Care)。",
+          "海报自动生成多区块布局,每个区块为3列照片网格。",
+          "每个品类配有清晰排版的标签与简短描述。",
+          "生成4K竖版极简风专业品类指南海报。"
+        ],
+        "prompts": [
+          "生成'室内设计风格'专业指南海报。",
+          "创建包含品类区块的'葡萄酒搭配指南'信息图。",
+          "生成带图片网格的'植物养护指南'。"
+        ]
+      }
+    }
+  },
+  "template-mbti-group-anime-character-poster": {
+    "category": "MBTI 分组动漫海报",
+    "description": "为任意MBTI分组(分析家、外交官、守卫者、探险家)生成统一配色的二次元动漫角色海报,展示4位全身角色。",
+    "title": "Nano Banana 提示词:MBTI 分组动漫角色海报生成器 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "本模板生成一张4K竖版二次元动漫风海报,标题为'MBTI {topic}'。四位全身动漫角色代表该分组中的人格类型,统一配色契合主题。角色下方为小型低多边形人偶配合MBTI四字母代码(例如 INTJ、INTP、ENTJ、ENTP),清晰区分每种类型。",
+        "who": "适合MBTI内容创作者、动漫/漫画爱好者、人格爱好者、同人创作者、人格主题社媒账号,以及制作易于分享的MBTI分组内容的创作者。",
+        "how": [
+          "在 {topic} 中填入MBTI分组(例如:Analysts Group (INTJ, INTP, ENTJ, ENTP))。",
+          "海报自动生成该分组的4位动漫角色,统一配色。",
+          "角色下方出现低多边形人偶与MBTI四字母代码,标注各类型。",
+          "生成4K竖版二次元风MBTI分组动漫海报。"
+        ],
+        "prompts": [
+          "生成'分析家组 (INTJ, INTP, ENTJ, ENTP)' MBTI动漫海报。",
+          "为'外交官组 (INFJ, INFP, ENFJ, ENFP)'生成MBTI角色海报。",
+          "生成'探险家组 (ISTP, ISFP, ESTP, ESFP)' MBTI动漫海报。"
+        ]
+      }
+    }
+  },
+  "template-self-help-infographic-poster": {
+    "category": "自我提升信息图",
+    "description": "围绕任意自我提升主题(习惯、日常、心态转变等),生成带编号卡通图标的开朗插画信息图。",
+    "title": "Nano Banana 提示词:自我提升信息图海报生成器 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "本模板生成一张4K竖版开朗自我提升海报,标题为'{topic}'。版面为编号圆形图标网格,每个图标内有该活动/习惯的小卡通插画,配合清晰标题与简短解释。明亮的插画风与友好排版便于分享。",
+        "who": "适合自我提升内容创作者、健康教练、生产力博主、心理健康教育者、聚焦个人成长的社媒账号,以及制作可执行习惯海报的Pinterest创作者。",
+        "how": [
+          "在 {topic} 中填入自我提升主题(例如:How to Get Unstuck in Life、Habits That Pay Off)。",
+          "海报自动生成带卡通插画的编号圆形图标网格。",
+          "每个图标配有清晰标题与简短可执行说明。",
+          "生成4K竖版开朗插画风自我提升信息图海报。"
+        ],
+        "prompts": [
+          "生成'如何走出人生瓶颈'自我提升信息图。",
+          "创建'能带来回报的习惯'插画式自我提升海报。",
+          "生成'值得戒掉的不良习惯'插画式信息图。"
+        ]
+      }
+    }
+  },
+  "template-hairstyle-guide-infographic": {
+    "category": "发型指南信息图",
+    "description": "为任意发型类型生成专业的发型分析海报,涵盖脸型、发质、密度分析、推荐发型、长度建议与造型技巧。",
+    "title": "Nano Banana 提示词:发型指南信息图生成器 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "本模板生成一张4K竖版发型分析海报,标题为'{topic}'。结构化版面包含发型分析(脸型、发质、密度)、推荐与不推荐的发型、长度建议、造型技巧,配真实风格插画。专业编辑级美学既适合美发店内部参考,也适合家庭使用。",
+        "who": "适合理发师、美发店老板、美妆内容创作者、时尚博主、男士/女士护理品牌、Pinterest创作者,以及制作美发教育内容的创作者。",
+        "how": [
+          "在 {topic} 中填入发型主题(例如:Men's Wavy Hair Guide、Women's Curly Long Hair Guide)。",
+          "海报自动生成脸型、发质、密度分析区块。",
+          "推荐发型、长度与造型技巧配合写实插画呈现。",
+          "生成4K竖版专业发型指南信息图。"
+        ],
+        "prompts": [
+          "生成'男士中长波浪发型指南'信息图。",
+          "创建包含脸型与造型技巧的'女士长卷发指南'。",
+          "生成'女士韩系短发指南'信息图。"
+        ]
+      }
+    }
+  },
+  "template-self-help-book-visual-summary-infographic": {
+    "category": "自我提升书籍可视化总结",
+    "description": "为任意自我提升书籍生成插画式视觉总结信息图——中心绕山路径插画,沿途映射核心概念、定义与洞见。",
+    "title": "Nano Banana 提示词:自我提升书籍可视化总结生成器 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "本模板生成一张4K竖版插画式书籍总结海报,标题为'{topic}'。版面以中心绕山路径插画为核心,周围分布书中的关键概念、定义、流程与洞见。旅程隐喻强化了书的核心信息,同时提供易消化的一图速览总结。",
+        "who": "适合书评博主、BookTok/Booktube创作者、做读书笔记的自我提升读者、个人成长教练、制作补充材料的作者,以及制作书籍总结的Pinterest创作者。",
+        "how": [
+          "在 {topic} 中填入自我提升书名(例如:The Mountain Is You、Atomic Habits)。",
+          "海报自动生成中心绕山路径插画。",
+          "书中的关键概念、定义、流程与洞见映射在沿途各点。",
+          "生成4K竖版插画式可视化书籍总结信息图海报。"
+        ],
+        "prompts": [
+          "为'The Mountain Is You'生成可视化书籍总结信息图。",
+          "创建'Atomic Habits'插画式书籍总结海报。",
+          "为'Mindset'(卡罗尔·德韦克)生成可视化书籍总结信息图。"
+        ]
+      }
+    }
   }
 }

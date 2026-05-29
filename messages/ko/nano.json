@@ -4419,5 +4419,115 @@
         ]
       }
     }
+  },
+  "template-professional-category-guide-infographic": {
+    "category": "전문 카테고리 가이드",
+    "description": "인테리어 디자인 스타일, 와인 페어링, 커피 브루잉, 식물 관리 등 어떤 전문 카테고리든 깔끔하고 미니멀한 교육 인포그래픽 포스터를 생성하세요.",
+    "title": "Nano Banana 프롬프트: 전문 카테고리 가이드 인포그래픽 생성기 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "이 템플릿은 'Professional {topic} Guide' 제목의 4K 세로형 미니멀 가이드 포스터를 생성합니다. 다중 섹션 레이아웃에 카테고리별로 3열 고품질 사진, 명확한 라벨, 짧은 설명이 들어갑니다. 깔끔한 타이포그래피와 세련된 에디토리얼 미감으로 배포 자료나 벽면 전시에 모두 적합합니다.",
+        "who": "에디토리얼 디자이너, 브랜드 교육 담당자, 리테일·호스피탈리티 팀의 고객용 참고 자료 제작자, Pinterest 크리에이터, 자신의 카테고리를 시각화하고 싶은 전문 서비스, 큐레이션된 주제별 가이드를 만드는 누구에게나 적합.",
+        "how": [
+          "{topic} 에 주제를 입력 (예: Interior Design Styles, Wine Pairing, Plant Care).",
+          "포스터가 3열 사진 그리드의 다중 섹션 레이아웃을 자동 생성합니다.",
+          "각 카테고리에는 깔끔한 타이포그래피와 짧은 설명이 붙습니다.",
+          "4K 세로형 미니멀한 전문 카테고리 가이드 포스터가 생성됩니다."
+        ],
+        "prompts": [
+          "Interior Design Styles 전문 가이드 포스터를 생성.",
+          "카테고리 섹션이 있는 Wine Pairing Guide 인포그래픽을 생성.",
+          "사진 그리드 카테고리가 있는 Plant Care Guide를 생성."
+        ]
+      }
+    }
+  },
+  "template-mbti-group-anime-character-poster": {
+    "category": "MBTI 그룹 애니메 포스터",
+    "description": "MBTI 그룹(분석가, 외교관, 관리자, 탐험가)별로 통일된 컬러 팔레트에 4명의 전신 애니메 캐릭터를 배치한 스타일리시한 애니메 포스터를 생성하세요.",
+    "title": "Nano Banana 프롬프트: MBTI 그룹 애니메 캐릭터 포스터 생성기 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "이 템플릿은 'MBTI {topic}' 제목의 4K 세로형 스타일리시 애니메 포스터를 생성합니다. 4명의 전신 애니메 캐릭터가 그룹의 각 유형을 대표하고, 모두 테마에 맞춘 통일 팔레트로 의상이 통일됩니다. 캐릭터 아래에는 작은 로우폴리 피규어와 MBTI 4글자 라벨(예: INTJ, INTP, ENTJ, ENTP)이 각 유형을 명확히 표시합니다.",
+        "who": "MBTI 콘텐츠 크리에이터, 애니메·만화 팬, 성격 유형 애호가, 팬아트 디자이너, MBTI 중심 SNS 계정, 공유하기 좋은 MBTI 그룹 콘텐츠를 만드는 누구에게나 적합.",
+        "how": [
+          "{topic} 에 MBTI 그룹을 입력 (예: Analysts Group (INTJ, INTP, ENTJ, ENTP)).",
+          "포스터가 해당 그룹의 4명의 애니메 캐릭터를 통일 팔레트로 자동 생성합니다.",
+          "캐릭터 아래에 로우폴리 피규어와 MBTI 4글자 코드가 각 유형을 라벨링합니다.",
+          "4K 세로형 스타일리시 애니메 MBTI 그룹 포스터가 생성됩니다."
+        ],
+        "prompts": [
+          "Analysts Group (INTJ, INTP, ENTJ, ENTP) MBTI 애니메 포스터를 생성.",
+          "Diplomats Group (INFJ, INFP, ENFJ, ENFP) MBTI 캐릭터 포스터를 생성.",
+          "Explorers Group (ISTP, ISFP, ESTP, ESFP) MBTI 애니메 포스터를 생성."
+        ]
+      }
+    }
+  },
+  "template-self-help-infographic-poster": {
+    "category": "자기계발 인포그래픽",
+    "description": "습관, 루틴, 마인드셋 변화 등 어떤 자기계발 주제든, 번호가 매겨진 카툰 아이콘이 있는 밝고 일러스트풍의 자기계발 인포그래픽을 생성하세요.",
+    "title": "Nano Banana 프롬프트: 자기계발 인포그래픽 포스터 생성기 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "이 템플릿은 '{topic}' 제목의 4K 세로형 밝은 자기계발 포스터를 생성합니다. 레이아웃은 번호가 매겨진 원형 아이콘 그리드이며, 각 아이콘 안에는 활동/습관의 작은 카툰 일러스트가 들어가고 명확한 제목과 짧은 설명이 따라옵니다. 밝은 일러스트 스타일과 친근한 타이포그래피로 쉽게 공유할 수 있습니다.",
+        "who": "자기계발 콘텐츠 크리에이터, 웰니스 코치, 생산성 블로거, 정신 건강 교육자, 개인 성장 중심 SNS 계정, 실행 가능한 습관 포스터를 만드는 Pinterest 크리에이터에게 적합.",
+        "how": [
+          "{topic} 에 자기계발 주제를 입력 (예: How to Get Unstuck in Life, Habits That Pay Off).",
+          "포스터가 카툰 일러스트가 있는 번호 매김 원형 아이콘 그리드를 자동 생성합니다.",
+          "각 아이콘에는 명확한 제목과 짧은 실행 설명이 결합됩니다.",
+          "4K 세로형 밝은 일러스트 자기계발 인포그래픽 포스터가 생성됩니다."
+        ],
+        "prompts": [
+          "How to Get Unstuck in Life 자기계발 인포그래픽을 생성.",
+          "Habits That Pay Off 일러스트 자기계발 포스터를 생성.",
+          "Toxic Habits to Quit 일러스트 인포그래픽을 생성."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-guide-infographic": {
+    "category": "헤어스타일 가이드 인포그래픽",
+    "description": "어떤 모발 유형이든 전문 헤어스타일 분석 포스터를 생성하세요. 얼굴형, 텍스처, 밀도 분석, 추천 컷, 길이, 스타일링 팁이 포함됩니다.",
+    "title": "Nano Banana 프롬프트: 헤어스타일 가이드 인포그래픽 생성기 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "이 템플릿은 '{topic}' 제목의 4K 세로형 헤어스타일 분석 포스터를 생성합니다. 구조적 레이아웃에 모발 분석(얼굴형, 텍스처, 밀도), 추천 vs 비추천 헤어스타일, 길이 추천, 스타일링 팁이 사실적인 일러스트와 함께 포함됩니다. 전문적 에디토리얼 미감으로 살롱과 가정에서 모두 참고할 수 있습니다.",
+        "who": "헤어 스타일리스트, 살롱 오너, 뷰티 콘텐츠 크리에이터, 패션 블로거, 남성·여성 그루밍 브랜드, Pinterest 크리에이터, 헤어 케어 교육 콘텐츠를 만드는 사람에게 적합.",
+        "how": [
+          "{topic} 에 헤어스타일 주제를 입력 (예: Men's Wavy Hair Guide, Women's Curly Long Hair Guide).",
+          "포스터가 얼굴형·텍스처·밀도 분석 섹션을 자동 생성합니다.",
+          "추천 헤어스타일, 길이, 스타일링 팁이 사실적인 일러스트와 함께 표시됩니다.",
+          "4K 세로형 전문 헤어스타일 가이드 인포그래픽이 생성됩니다."
+        ],
+        "prompts": [
+          "Men's Wavy Medium Hair Guide 인포그래픽을 생성.",
+          "얼굴형과 스타일링이 포함된 Women's Curly Long Hair Guide를 생성.",
+          "Women's Korean Short Hair Guide 인포그래픽을 생성."
+        ]
+      }
+    }
+  },
+  "template-self-help-book-visual-summary-infographic": {
+    "category": "자기계발서 비주얼 요약",
+    "description": "어떤 자기계발서든 일러스트풍 비주얼 요약 인포그래픽을 생성하세요. 중앙의 굽이치는 길 일러스트에 책의 핵심 개념과 통찰이 여정을 따라 배치됩니다.",
+    "title": "Nano Banana 프롬프트: 자기계발서 비주얼 요약 인포그래픽 생성기 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "이 템플릿은 '{topic}' 제목의 4K 세로형 일러스트 책 요약 포스터를 생성합니다. 레이아웃은 중앙의 굽이치는 산길 일러스트를 중심으로, 책의 핵심 개념, 정의, 프로세스, 통찰이 그 주변에 배치됩니다. 여정이라는 은유가 책의 메시지를 시각적으로 강화하면서, 한눈에 소화 가능한 요약을 제공합니다.",
+        "who": "북 블로거, BookTok/Booktube 크리에이터, 독서 노트를 만드는 자기계발 독자, 개인 성장 코치, 보조 자료를 만드는 작가, 책 요약을 만드는 Pinterest 크리에이터에게 적합.",
+        "how": [
+          "{topic} 에 자기계발서 제목을 입력 (예: The Mountain Is You, Atomic Habits).",
+          "포스터가 중앙의 굽이치는 산길 일러스트를 자동 생성합니다.",
+          "책의 핵심 개념, 정의, 프로세스, 통찰이 여정을 따라 매핑됩니다.",
+          "4K 세로형 일러스트 비주얼 책 요약 인포그래픽 포스터가 생성됩니다."
+        ],
+        "prompts": [
+          "'The Mountain Is You' 비주얼 책 요약 인포그래픽을 생성.",
+          "'Atomic Habits' 일러스트 책 요약 포스터를 생성.",
+          "'Mindset' (Carol Dweck) 비주얼 책 요약 인포그래픽을 생성."
+        ]
+      }
+    }
   }
 }

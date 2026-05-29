@@ -4418,5 +4418,115 @@
         ]
       }
     }
+  },
+  "template-professional-category-guide-infographic": {
+    "category": "Professional Category Guide",
+    "description": "Create a clean, minimalist educational infographic poster guiding users through any professional category — interior design styles, wine pairings, coffee brewing, plant care, and beyond.",
+    "title": "Nano Banana Prompt: Professional Category Guide Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K minimalist guide poster titled 'Professional {topic} Guide'. The layout is a structured multi-section grid with high-quality photos in 3 columns per category, clear labels, and short descriptions. Clean typography and a polished editorial aesthetic make it suitable for hand-out reference or wall display.",
+        "who": "Suitable for editorial designers, brand educators, retail / hospitality teams making guest references, Pinterest creators, professional services explaining their categories visually, and anyone producing curated topic guides.",
+        "how": [
+          "Enter a topic in {topic} (e.g., Interior Design Styles, Wine Pairing, Plant Care).",
+          "The poster auto-generates a multi-section layout with photos in 3-column grids.",
+          "Each category is labeled with clear typography and a short description.",
+          "Generate a vertical 4K minimalist professional category guide poster."
+        ],
+        "prompts": [
+          "Generate an Interior Design Styles professional guide poster.",
+          "Create a Wine Pairing Guide infographic with category sections.",
+          "Generate a Plant Care Guide with photo-grid categories."
+        ]
+      }
+    }
+  },
+  "template-mbti-group-anime-character-poster": {
+    "category": "MBTI Group Anime Poster",
+    "description": "Create a stylized anime character poster for any MBTI group (Analysts, Diplomats, Sentinels, Explorers) — 4 full-body characters in a unified color palette.",
+    "title": "Nano Banana Prompt: MBTI Group Anime Character Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K stylized anime poster titled 'MBTI {topic}'. Four full-body anime characters represent the types in the group, all dressed in a unified color palette matching the theme. Below the characters, small low-poly figures and 4-letter MBTI labels (e.g., INTJ, INTP, ENTJ, ENTP) clearly identify each type.",
+        "who": "Suitable for MBTI content creators, anime / manga fans, personality enthusiasts, fan-art designers, social media accounts focused on MBTI, and anyone producing shareable MBTI-group content.",
+        "how": [
+          "Enter an MBTI group in {topic} (e.g., Analysts Group (INTJ, INTP, ENTJ, ENTP)).",
+          "The poster auto-generates 4 anime characters in a unified color palette for that group.",
+          "Below the characters, low-poly figures and MBTI 4-letter codes label each type.",
+          "Generate a vertical 4K stylized anime MBTI group poster."
+        ],
+        "prompts": [
+          "Generate an Analysts Group (INTJ, INTP, ENTJ, ENTP) MBTI anime poster.",
+          "Create a Diplomats Group (INFJ, INFP, ENFJ, ENFP) MBTI character poster.",
+          "Generate an Explorers Group (ISTP, ISFP, ESTP, ESFP) MBTI anime poster."
+        ]
+      }
+    }
+  },
+  "template-self-help-infographic-poster": {
+    "category": "Self-Help Infographic",
+    "description": "Create a cheerful, illustrated self-help infographic with numbered cartoon icons for any life-improvement topic — habits, routines, mindset shifts, and more.",
+    "title": "Nano Banana Prompt: Self-Help Infographic Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K cheerful self-help poster titled '{topic}'. The layout is a grid of numbered circular icons, each containing a small cartoon illustration of the activity or habit, paired with a clear title and a short explanation. Bright illustrative style and friendly typography make it easy to share.",
+        "who": "Suitable for self-help content creators, wellness coaches, productivity bloggers, mental-health educators, social media accounts focused on personal growth, and Pinterest creators producing actionable habit posters.",
+        "how": [
+          "Enter a self-help topic in {topic} (e.g., How to Get Unstuck in Life, Habits That Pay Off).",
+          "The poster auto-generates a grid of numbered circular icons with cartoon illustrations.",
+          "Each icon is paired with a clear title and a short actionable description.",
+          "Generate a vertical 4K cheerful illustrated self-help infographic poster."
+        ],
+        "prompts": [
+          "Generate a How to Get Unstuck in Life self-help infographic.",
+          "Create a Habits That Pay Off illustrated self-help poster.",
+          "Generate a Toxic Habits to Quit illustrated infographic."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-guide-infographic": {
+    "category": "Hairstyle Guide Infographic",
+    "description": "Create a professional hairstyle analysis poster for any hair type — face shape, texture, density analysis, recommended cuts, length, and styling tips.",
+    "title": "Nano Banana Prompt: Hairstyle Guide Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K hairstyle analysis poster titled '{topic}'. The structured layout includes hair analysis (face shape, texture, density), recommended vs not-recommended hairstyles, length recommendations, and styling tips with realistic illustrations. A professional editorial aesthetic supports both salon and home reference use.",
+        "who": "Suitable for hair stylists, salon owners, beauty content creators, fashion bloggers, men's / women's grooming brands, Pinterest creators, and anyone producing hair-care educational content.",
+        "how": [
+          "Enter a hairstyle topic in {topic} (e.g., Men's Wavy Hair Guide, Women's Curly Long Hair Guide).",
+          "The poster auto-generates sections for face shape, texture, and density analysis.",
+          "Recommended hairstyles, lengths, and styling tips appear alongside realistic illustrations.",
+          "Generate a vertical 4K professional hairstyle guide infographic."
+        ],
+        "prompts": [
+          "Generate a Men's Wavy Medium Hair Guide infographic.",
+          "Create a Women's Curly Long Hair Guide with face shape and styling tips.",
+          "Generate a Women's Korean Short Hair Guide infographic."
+        ]
+      }
+    }
+  },
+  "template-self-help-book-visual-summary-infographic": {
+    "category": "Self-Help Book Summary",
+    "description": "Create an illustrated visual summary infographic for any self-help book — central winding-path illustration with key concepts, definitions, and insights mapped along the journey.",
+    "title": "Nano Banana Prompt: Self-Help Book Visual Summary Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K illustrated book summary poster titled '{topic}'. The layout centers a winding mountain path illustration, surrounded by key concepts, definitions, processes, and insights from the book. The metaphor of the journey reinforces the book's message visually while delivering a digestible at-a-glance summary.",
+        "who": "Suitable for book bloggers, BookTok / Booktube creators, self-help readers building book notes, personal growth coaches, authors creating supplementary materials, and Pinterest creators producing book summaries.",
+        "how": [
+          "Enter a self-help book title in {topic} (e.g., The Mountain Is You, Atomic Habits).",
+          "The poster auto-generates a central winding mountain path illustration.",
+          "Key concepts, definitions, processes, and insights from the book are mapped along the journey.",
+          "Generate a vertical 4K illustrated visual book summary infographic poster."
+        ],
+        "prompts": [
+          "Generate a 'The Mountain Is You' visual book summary infographic.",
+          "Create an 'Atomic Habits' illustrated book summary poster.",
+          "Generate a 'Mindset' (Carol Dweck) visual book summary infographic."
+        ]
+      }
+    }
   }
 }
