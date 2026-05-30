@@ -1,6 +1,6 @@
 # Blog Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-26 (GSC CTR-lift readout on the 15 rewritten posts: 5/13 vs 5/25; B2B post categorization cleanup). Owner: jay. Update after every push that touches blog content or `BlogCTACard.tsx`._
+_Last updated: 2026-05-30 (engagement-funnel deep-dive after World Cup GSC spike; 4-part fix shipped — P0 conditional target=_blank, P1a inline-click tracker, P1b+P2 hero+CTA block + i18n for 4 blogs; 3 deferred todos flagged). Owner: jay. Update after every push that touches blog content, `BlogCTACard.tsx`, `GenericBlogContent.tsx`, or `content-formatters.ts`._
 
 ## Framing
 
@@ -13,6 +13,130 @@ Three parallel tracks:
 Both tracks share the same i18n fan-out: edit `messages/en/blog.json`, delete the stale `title` field in each non-en locale, run `scripts/i18n_autotranslate.cjs --base en --files blog --write`, bump `lastmod` in `public/data/blogs.json`.
 
 **Feed source note (post-`4c84a7e`, 2026-05-19):** `public/data/blogs.json` is now the single source for the blog feed. The legacy `blog.posts[]` array in `messages/{locale}/blog.json` was removed — no per-locale `tag` fan-out needed when recategorizing.
+
+---
+
+## Today's progress (2026-05-30 — engagement-funnel deep-dive + P0/P1/P2 fix)
+
+### What triggered the audit
+
+GSC clicks 2× from 5/27-5/29 driven almost entirely by World Cup queries (~80 clicks to `/blog/brazil-argentina-soccer-poster-prompts` alone). But DAU/iDAU on the admin panel barely moved. User asked us to debug.
+
+### Findings
+
+**(1) Tracking attribution worked correctly — page views landed in `user_interactions`.** Confirmed 86 unique visitors to the WC blog over 3 days (matches GSC's 79). The `current_page_route` column stores the Next.js route pattern (`/blog/[slug]`); the actual slug lives in `content_id`.
+
+**(2) Zero of those 86 visitors took any follow-up action within 60 minutes.** The "1 follow-up action" my earlier query found turned out to be a duplicate PAGE VIEW fired 0.1s after the first (Next.js client re-mount). So the genuine engagement rate is **0/86 (0.0%)**. Single-event sessions get correctly filtered by the bot-free heuristic → those landers vanish from DAU.
+
+**(3) The bounce problem isn't WC-specific — it's all blogs using `GenericBlogContent`.** Per-blog engagement over 7 days:
+
+| Blog | Landers | Engaged % |
+|------|---------|-----------|
+| brazil-argentina-soccer-poster-prompts | 90 | **0%** |
+| image-generation-model-comparison | 46 | 0% |
+| asl-video-translator | 32 | 6% |
+| character-prompt-generator | 27 | 4% |
+| preserve-facial-features-ai-generation | 20 | 5% |
+| f5-tts-voice-cloning | 17 | 6% |
+| **mbti-character-generator** | 12 | **33%** ← outlier |
+| ae-vs-comfyui | 12 | 0% |
+| storyboard-to-pipeline | 12 | 0% |
+| 10-prompting-tips-video-generation | 11 | 0% |
+| ... rest of the 39 generic blogs | | 0-6% |
+
+**(4) mbti-character-generator wins because it has structural advantages the generic blogs lack:**
+
+- Custom `content.tsx` (356 lines) instead of shared `GenericBlogContent.tsx` (212 lines, text-only)
+- `CdnImage` hero above the fold — visual hook that advertises "you can generate this"
+- Specific links to template EXAMPLES (rendered output) rather than blank template forms
+- The example page is itself sticky (preview image + reproduce panel)
+
+### Three root causes (all in `GenericBlogContent` path)
+
+1. **All inline markdown links rendered with `target="_blank"`** in `utils/content-formatters.ts` (5 different formatter functions, same pattern in each). Internal `/nano-template/...` clicks opened in a new tab → blog session ended with PAGE VIEW only → filtered by bot-free heuristic → not in DAU.
+
+2. **No `onClick` handler on inline links** (plain `<a>` rendered via `dangerouslySetInnerHTML`). Even when clicks DO happen, no `CLICK` event lands in `user_interactions` → no per-link funnel possible.
+
+3. **No visual hook above the fold.** `GenericBlogContent` opens with title + date + read-time + "Introduction" paragraph. No image, no widget, no obvious "do this next" CTA. Readers default to bouncing.
+
+### Four-part fix shipped — commit `c3e5d32`
+
+**P0 — conditional `target="_blank"` in `content-formatters.ts`** (5 markdown-link replacers all patched). Internal URLs (starts with `/`) open in same tab; external URLs keep `_blank`. Universal — every blog using `formatContent` is fixed.
+
+**P1a — new `BlogInlineClickTracker.tsx`** client wrapper. Delegated `onClick` walks up from click target to nearest `<a>`, fires CLICK event with `content_id = blog-link:<slug>:<href>` for internal links only. Uses `trackAction` which posts with `keepalive:true` so the request survives same-tab navigation. Per-link funnel analytics now possible across all `GenericBlogContent` blogs.
+
+**P1b + P2 — optional hero+CTA block in `GenericBlogContent`** that activates when i18n provides `{heroImage, heroCtaText, heroCtaHref}`. Pattern ported from mbti-character-generator. Single component change + i18n keys per blog = same impact as authoring 5 dedicated blog directories at ~1/5 the code.
+
+Populated hero+CTA in `messages/en/blog.json` for 4 blogs:
+
+| Blog | CTA → destination |
+|------|-------------------|
+| `brazilArgentinaSoccerPosterPrompts` | "Generate your own Messi vs Ronaldo poster" → `/nano-template/sports-battle` |
+| `imageGenerationModelComparison` | "Browse 200+ ready-made templates" → `/nano-banana-pro-prompts` |
+| `aeVsComfyUi` | "Run a full video pipeline in Curify" → `/tools/video-dubbing` |
+| `tenPromptingTipsVideoGeneration` | "Put these 10 prompting tips into practice" → `/tools/video-dubbing` |
+
+### Deferred todos
+
+**TODO 1 — `storyboard-to-pipeline` has NO English i18n content.** The blog entry exists in `ja/zh/fr/ko/ru/blog.json` but is missing from `messages/en/blog.json` entirely. English readers see fallback boilerplate, not actual content — explains why the 12 weekly landers all bounce. Different gap from the others (missing translation, not missing CTA). Needs the upstream English copy authored before the hero block can be added.
+
+  *Trigger to re-open:* immediate. This blog is a wasted entry — fix the EN content first, then apply the same hero+CTA treatment as the other 4.
+
+**TODO 2 — Other 9 locales of the 4 fixed blogs are hero-less.** Hero keys are EN-only this commit. Other locales gracefully fall back via the `hasKey` check (hero block doesn't render). Worth a separate i18n pass to extend `heroImage`/`heroCtaText`/`heroCtaHref` to all 10 locales for these 4 blogs.
+
+  *Trigger to re-open:* when GSC shows meaningful non-EN traffic to any of the 4 fixed blogs. Currently EN dominates GSC; not urgent.
+
+**TODO 3 — Watch impact post-deploy.** Need to re-pull GSC + admin panel after the deploy has been live for 5-7 days to validate the conversion floor. Expected at least 8-10 weekly conversions across the 4 fixed blogs (vs current 0). Compare GSC clicks-to-blog vs new `blog-link:<slug>:*` CLICK events in the admin panel.
+
+  *Trigger to re-open:* 2026-06-06 or later — pull GSC export + run a per-blog engagement query like the one in this audit; expect non-zero `engaged_pct` for the 4 fixed blogs.
+
+### Methodology (reusable)
+
+For per-blog engagement analysis, the query that produced the table above:
+
+```sql
+WITH blog_landers AS (
+    SELECT
+        SUBSTRING(content_id FROM '/blog/([^/?]+)') AS blog_slug,
+        COALESCE(user_id::text, session_id) AS user_key,
+        MIN(created_at) AS landed_at
+    FROM user_interactions
+    WHERE created_at >= NOW() - INTERVAL '7 days'
+      AND action_type::text = 'VIEW'
+      AND content_type::text = 'PAGE'
+      AND content_id LIKE '%/blog/%'
+      AND (user_id IS NULL OR user_id NOT IN (155, 1117))
+    GROUP BY 1, 2
+    HAVING SUBSTRING(content_id FROM '/blog/([^/?]+)') IS NOT NULL
+),
+landers_with_followups AS (
+    SELECT
+        bl.blog_slug,
+        bl.user_key,
+        BOOL_OR(ui.action_type::text != 'VIEW') AS had_interaction,
+        BOOL_OR(ui.action_type::text IN ('GENERATE','COPY','REMIX')) AS had_replication,
+        BOOL_OR(ui.action_type::text = 'CLICK') AS had_click
+    FROM blog_landers bl
+    LEFT JOIN user_interactions ui
+      ON COALESCE(ui.user_id::text, ui.session_id) = bl.user_key
+     AND ui.created_at BETWEEN bl.landed_at AND bl.landed_at + INTERVAL '30 minutes'
+    GROUP BY bl.blog_slug, bl.user_key
+)
+SELECT blog_slug,
+       COUNT(*) AS landers,
+       COUNT(*) FILTER (WHERE had_interaction) AS interacted,
+       COUNT(*) FILTER (WHERE had_replication) AS replicated,
+       COUNT(*) FILTER (WHERE had_click) AS clicked,
+       ROUND(100.0 * COUNT(*) FILTER (WHERE had_interaction) / NULLIF(COUNT(*), 0), 1) AS engaged_pct
+FROM landers_with_followups
+GROUP BY blog_slug
+HAVING COUNT(*) >= 5
+ORDER BY landers DESC;
+```
+
+The key insight buried in here: `content_id` (not `current_page_route`) carries the slug. `current_page_route` only stores the Next.js route pattern (`/blog/[slug]`).
+
+After this commit lands, per-link funnel becomes available — query for `content_id LIKE 'blog-link:<slug>:%'` to see which inline links per blog drive the most clicks.
 
 ---
 
