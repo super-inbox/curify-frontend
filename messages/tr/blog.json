@@ -1395,7 +1395,6 @@
       "publishedDate": "2026-05-30",
       "readTime": "8 dk okuma",
       "category": "Yaratıcı Araçlar",
-      "heroImageAlt": "2026'da video içerik üreticileri için AI araçları",
       "intro": "Çoğu \"en iyi AI araçları\" listesi 20 giriş uzunluğundadır çünkü ekleme SEO'ya yardımcı olur. Biz katılmıyoruz. Üç araç, neredeyse her gerçek video üretici iş akışını kapsar — düzenleme/transkript (Descript), ses ve TTS (ElevenLabs), üretken video (Runway). Bu kılavuz, üç aracı seçer, her birinin gerçekten en iyi olduğu alanları belirtir ve bunları atlayıp dublaj aracı kullanmanız gereken yaygın durumu işaret eder.",
       "whoThisIsForTitle": "Bu kimler için",
       "whoThisIsForContent": "YouTube / TikTok / Instagram / ücretli müşteri çalışmaları için video içeriği düzenlemek, anlatmak veya oluşturmak üzere bir araç seçen solo yaratıcılar. Yerelleştirilmiş içerik üreten ajans video ekipleri. Ürün tanıtımları, web seminerleri, kurs modülleri oluşturan pazarlama ekipleri. Eğer mevcut bir videoyu orijinal konuşmacının sesiyle başka bir dile yerelleştirmeye çalışıyorsanız, [Video oluşturucu aracı ihtiyacınız yoksa ne olur?](#curify-callout) başlığına geçin — bu farklı bir sorun ve farklı bir araç.",
@@ -1459,7 +1458,11 @@
           "AI video dublajı"
         ],
         "questions": "Hangi aracın iş akışınıza uygun olduğuna dair sorularınız mı var? /contact üzerinden bize ulaşın — bu üçüncü taraf araçların yanı sıra Curify'yi de içsel olarak kullanıyoruz ve görüşlerimiz var."
-      }
+      },
+      "heroImageAlt": "Video içerik üreticileri için AI araçları 2026: Descript, ElevenLabs, Runway",
+      "heroImage": "/images/best-ai-tools-video-runway.webp",
+      "heroCtaText": "Bir videoyu orijinal konuşmacının sesiyle başka bir dile yerelleştirin — Curify Video Dubbing'i deneyin",
+      "heroCtaHref": "/tools/video-dubbing"
     },
     "nanoBananaDedicated": {
       "title": "Nano Banana AI Nedir? AI Yapılandırılmış Görsel Üretim için Tam Kılavuz",
@@ -4557,7 +4560,9 @@
             "slug": "custom-character-card"
           }
         ]
-      }
+      },
+      "heroCtaText": "Marvel MBTI şablonunu açın — herhangi bir kahraman veya kötü adam ismini yazın ve analiz kartını alın",
+      "heroCtaHref": "/nano-template/mbti-marvel"
     },
     "curifyNanoBananaTemplateTips": {
       "title": "Curify'nin Nano Banana Şablonlarını Kullanmak için 10 İpucu",

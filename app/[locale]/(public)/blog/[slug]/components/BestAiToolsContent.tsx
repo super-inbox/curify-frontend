@@ -5,6 +5,7 @@ import Link from 'next/link'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import BlogCTACard from '@/app/[locale]/_components/BlogCTACard'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
+import BlogInlineClickTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker'
 import { formatVoiceCloningContent } from '@/app/[locale]/(public)/blog/[slug]/utils/content-formatters'
 
 const TOOLS = [
@@ -40,6 +41,7 @@ export default function BestAiToolsContent() {
 
   return (
     <article className="max-w-5xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
+      <BlogInlineClickTracker blogSlug="best-ai-tools">
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
         <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 text-sm">
@@ -49,6 +51,30 @@ export default function BestAiToolsContent() {
           <span>•</span>
           <span>{t('category')}</span>
         </div>
+        <section className="mt-6 mb-6 not-prose">
+          <a
+            href={t('heroCtaHref')}
+            className="block group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all bg-white dark:bg-gray-800"
+          >
+            <div className="aspect-[16/9] w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
+              <CdnImage
+                src={t('heroImage')}
+                alt={t('heroImageAlt')}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform"
+              />
+            </div>
+            <div className="px-6 py-5 flex items-center justify-between gap-4">
+              <div className="min-w-0">
+                <div className="text-base font-semibold text-gray-900 dark:text-white">
+                  {t('heroCtaText')}
+                </div>
+              </div>
+              <div className="flex-shrink-0 rounded-lg bg-purple-600 text-white px-4 py-2 text-sm font-semibold group-hover:bg-purple-700 transition">
+                Try it →
+              </div>
+            </div>
+          </a>
+        </section>
       </header>
 
       <div className="space-y-6">
@@ -225,6 +251,7 @@ export default function BestAiToolsContent() {
 
         <RelatedBlogs currentSlug="best-ai-tools" locale={locale} maxRelated={2} />
       </div>
+      </BlogInlineClickTracker>
     </article>
   )
 }

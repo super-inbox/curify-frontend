@@ -5,6 +5,7 @@ import Link from 'next/link'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 import NanoBananaExamples from '@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples'
+import BlogInlineClickTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker'
 
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 type TemplateEntry = { name: string; slug: string; params: string }
@@ -27,6 +28,7 @@ export default function BlogContent() {
 
   return (
     <article className="mx-auto max-w-6xl px-4 py-8">
+      <BlogInlineClickTracker blogSlug="character-prompt-generator">
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <header className="mb-8">
           <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
@@ -37,16 +39,31 @@ export default function BlogContent() {
             <span>•</span>
             <span>{t('category')}</span>
           </div>
-          <div className="mt-6 max-w-xs">
-            <CdnImage
-              src="/images/nano_insp_preview/template-mbti-marvel-en-marvel-hulk-prev.jpg"
-              width={320}
-              height={400}
-              className="w-full rounded-lg shadow-md max-w-2xl mx-auto"
-              alt={t('heroImageAlt')}
-            />
-          </div>
-          <p className="mt-6 text-lg text-gray-800 dark:text-gray-200">{t('intro')}</p>
+          <section className="mt-6 mb-6 not-prose">
+            <a
+              href={`${localePrefix}${t('heroCtaHref')}`}
+              className="block group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all bg-white dark:bg-gray-800"
+            >
+              <div className="aspect-[16/9] w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
+                <CdnImage
+                  src="/images/nano_insp_preview/template-mbti-marvel-en-marvel-hulk-prev.jpg"
+                  alt={t('heroImageAlt')}
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform"
+                />
+              </div>
+              <div className="px-6 py-5 flex items-center justify-between gap-4">
+                <div className="min-w-0">
+                  <div className="text-base font-semibold text-gray-900 dark:text-white">
+                    {t('heroCtaText')}
+                  </div>
+                </div>
+                <div className="flex-shrink-0 rounded-lg bg-blue-600 text-white px-4 py-2 text-sm font-semibold group-hover:bg-blue-700 transition">
+                  Try it →
+                </div>
+              </div>
+            </a>
+          </section>
+          <p className="mt-2 text-lg text-gray-800 dark:text-gray-200">{t('intro')}</p>
         </header>
 
         {/* What We Ship — three grounded groups */}
@@ -222,6 +239,7 @@ export default function BlogContent() {
 
         <RelatedBlogs currentSlug="character-prompt-generator" locale={locale} maxRelated={2} />
       </div>
+      </BlogInlineClickTracker>
     </article>
   )
 }

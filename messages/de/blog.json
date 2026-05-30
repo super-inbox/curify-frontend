@@ -1181,7 +1181,6 @@
       "publishedDate": "2026-05-30",
       "readTime": "8 Minuten Lesezeit",
       "category": "Creator Tools",
-      "heroImageAlt": "KI-Tools für Video-Content-Ersteller im Jahr 2026",
       "intro": "Die meisten Listen der \"besten KI-Tools\" sind 20 Einträge lang, weil das Aufblähen SEO hilft. Wir sind anderer Meinung. Drei Tools decken fast jeden echten Workflow von Videoerstellern ab – Bearbeitung/Transkripte (Descript), Stimme und TTS (ElevenLabs), generatives Video (Runway). Dieser Leitfaden wählt die drei aus, benennt, was jedes tatsächlich am besten kann, und kennzeichnet den einen häufigen Fall (Synchronisation eines Videos in eine andere Sprache mit der Stimme des ursprünglichen Sprechers), in dem Sie sie überspringen und stattdessen ein Synchronisationstool verwenden sollten.",
       "whoThisIsForTitle": "Für wen das ist",
       "whoThisIsForContent": "Solo-Ersteller, die ein Tool auswählen, um Video-Content für YouTube / TikTok / Instagram / bezahlte Kundenarbeit zu bearbeiten, zu erzählen oder zu generieren. Agentur-Video-Teams, die lokalisierten Content in großen Mengen erstellen. Marketing-Teams, die Produktdemos, Webinare, Kursmodule erstellen. Wenn Sie versuchen, ein bestehendes Video in eine andere Sprache mit der Stimme des ursprünglichen Sprechers zu lokalisieren, springen Sie zum [Was, wenn Sie kein Videoerstellungstool benötigen?](#curify-callout) Hinweis – das ist ein anderes Problem und ein anderes Tool.",
@@ -1245,7 +1244,11 @@
           "KI-Video-Dubbing"
         ],
         "questions": "Fragen, welches Tool zu Ihrem Workflow passt? Schreiben Sie uns über /contact — wir verwenden Curify zusätzlich zu diesen Drittanbieter-Tools intern und haben Meinungen."
-      }
+      },
+      "heroImageAlt": "KI-Tools für Videoinhaltsersteller 2026: Descript, ElevenLabs, Runway",
+      "heroImage": "/images/best-ai-tools-video-runway.webp",
+      "heroCtaText": "Lokalisieren Sie ein Video in eine andere Sprache mit der Stimme des ursprünglichen Sprechers — probieren Sie Curify Video Dubbing aus",
+      "heroCtaHref": "/tools/video-dubbing"
     },
     "nanoBananaDedicated": {
       "title": "Was ist Nano Banana AI? Der vollständige Leitfaden zur AI-strukturierten visuellen Generierung",
@@ -4559,7 +4562,9 @@
             "slug": "benutzerdefinierte-charakterkarte"
           }
         ]
-      }
+      },
+      "heroCtaText": "Öffne die Marvel MBTI-Vorlage — gib einen beliebigen Helden- oder Bösewichtnamen ein und erhalte die Analysekarte",
+      "heroCtaHref": "/nano-template/mbti-marvel"
     },
     "curifyNanoBananaTemplateTips": {
       "title": "10 Tipps zur Verwendung von Curifys Nano Banana-Vorlagen",

@@ -1395,7 +1395,6 @@
       "publishedDate": "2026-05-30",
       "readTime": "阅读时间：8分钟",
       "category": "创作者工具",
-      "heroImageAlt": "2026年视频内容创作者的AI工具",
       "intro": "大多数“最佳AI工具”列表有20个条目，因为填充有助于SEO。我们不同意。三个工具几乎涵盖了每个真实视频创作者的工作流程——编辑/转录（Descript）、语音和TTS（ElevenLabs）、生成视频（Runway）。本指南选择了这三款工具，说明每个工具的最佳用途，并标记出一个常见的情况（将视频配音成另一种语言并保留原讲者的声音），在这种情况下你应该跳过它们而使用配音工具。",
       "whoThisIsForTitle": "适合谁",
       "whoThisIsForContent": "独立创作者选择工具来编辑、叙述或生成YouTube / TikTok / Instagram / 收费客户工作的内容。代理视频团队大批量制作本地化内容。营销团队构建产品演示、网络研讨会、课程模块。如果你想将现有视频本地化为另一种语言并保留原讲者的声音，请跳到[如果你不需要视频创作工具怎么办？](#curify-callout)的提示——这是一个不同的问题和不同的工具。",
@@ -1459,7 +1458,11 @@
           "人工智能视频配音"
         ],
         "questions": "关于哪个工具适合您的工作流程的问题？通过/contact给我们留言——我们在内部使用Curify以及这些第三方工具，并有自己的看法。"
-      }
+      },
+      "heroImageAlt": "2026 年视频内容创作者的 AI 工具：Descript、ElevenLabs、Runway",
+      "heroImage": "/images/best-ai-tools-video-runway.webp",
+      "heroCtaText": "将视频本地化为另一种语言，使用原讲者的声音 — 尝试 Curify 视频配音",
+      "heroCtaHref": "/tools/video-dubbing"
     },
     "nanoBananaDedicated": {
       "title": "什么是Nano Banana AI？AI结构化视觉生成的完整指南",
@@ -4557,7 +4560,9 @@
             "slug": "custom-character-card"
           }
         ]
-      }
+      },
+      "heroCtaText": "打开 Marvel MBTI 模板 — 输入任何英雄或反派的名字并获取分析卡",
+      "heroCtaHref": "/nano-template/mbti-marvel"
     },
     "curifyNanoBananaTemplateTips": {
       "title": "使用 Curify 的 Nano Banana 模板的 10 个提示",

@@ -2341,7 +2341,9 @@
             "slug": "custom-character-card"
           }
         ]
-      }
+      },
+      "heroCtaText": "Open the Marvel MBTI template — type any hero or villain name and get the analysis card",
+      "heroCtaHref": "/nano-template/mbti-marvel"
     },
     "UltimateDirectoryOfNanoBananaPrompts": {
       "title": "Ultimate Directory of Nano Banana Prompts",
@@ -3573,7 +3575,7 @@
       "publishedDate": "2026-05-30",
       "readTime": "8 min read",
       "category": "Creator Tools",
-      "heroImageAlt": "AI tools for video content creators in 2026",
+      "heroImageAlt": "AI tools for video content creators 2026: Descript, ElevenLabs, Runway",
       "intro": "Most \"best AI tools\" lists are 20 entries long because padding helps SEO. We disagree. Three tools cover almost every real video creator workflow — editing/transcripts (Descript), voice and TTS (ElevenLabs), generative video (Runway). This guide picks the three, names what each is actually best at, and flags the one common case (dubbing a video into another language with the original speaker's voice) where you should skip them and use a dubbing tool instead.",
       "whoThisIsForTitle": "Who this is for",
       "whoThisIsForContent": "Solo creators picking a tool to edit, narrate, or generate video content for YouTube / TikTok / Instagram / paid client work. Agency video teams shipping localized content at volume. Marketing teams building product demos, webinars, course modules. If you're trying to localize an existing video into another language with the original speaker's voice, skip ahead to the [What if you don't need a video creator tool?](#curify-callout) callout — that's a different problem and a different tool.",
@@ -3637,7 +3639,10 @@
           "AI video dubbing"
         ],
         "questions": "Questions about which tool fits your workflow? Drop us a line via /contact — we use Curify on top of these third-party tools internally and have opinions."
-      }
+      },
+      "heroImage": "/images/best-ai-tools-video-runway.webp",
+      "heroCtaText": "Localize a video into another language with the original speaker's voice — try Curify Video Dubbing",
+      "heroCtaHref": "/tools/video-dubbing"
     },
     "whatIsInfographics": {
       "title": "What is Infographics and How Can Infographic Cards Be Used?",

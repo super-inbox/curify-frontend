@@ -1179,7 +1179,6 @@
       "publishedDate": "2026-05-30",
       "readTime": "8 min de lectura",
       "category": "Herramientas para Creadores",
-      "heroImageAlt": "Herramientas de IA para creadores de contenido en video en 2026",
       "intro": "La mayoría de las listas de \"mejores herramientas de IA\" tienen 20 entradas porque el relleno ayuda al SEO. No estamos de acuerdo. Tres herramientas cubren casi todo el flujo de trabajo real de un creador de video: edición/transcripciones (Descript), voz y TTS (ElevenLabs), video generativo (Runway). Esta guía selecciona las tres, nombra en qué es mejor cada una y señala el único caso común (doblar un video a otro idioma con la voz del hablante original) donde deberías omitirlas y usar una herramienta de doblaje en su lugar.",
       "whoThisIsForTitle": "Para quién es esto",
       "whoThisIsForContent": "Creadores individuales que eligen una herramienta para editar, narrar o generar contenido de video para YouTube / TikTok / Instagram / trabajo con clientes de pago. Equipos de video de agencias que producen contenido localizado a gran escala. Equipos de marketing que crean demostraciones de productos, seminarios web, módulos de cursos. Si intentas localizar un video existente a otro idioma con la voz del hablante original, salta al [¿Qué pasa si no necesitas una herramienta de creador de video?](#curify-callout) — ese es un problema diferente y una herramienta diferente.",
@@ -1243,7 +1242,11 @@
           "doblaje de video con IA"
         ],
         "questions": "¿Preguntas sobre qué herramienta se adapta a tu flujo de trabajo? Contáctanos a través de /contact — usamos Curify además de estas herramientas de terceros internamente y tenemos opiniones."
-      }
+      },
+      "heroImageAlt": "Herramientas de IA para creadores de contenido de video 2026: Descript, ElevenLabs, Runway",
+      "heroImage": "/images/best-ai-tools-video-runway.webp",
+      "heroCtaText": "Localiza un video en otro idioma con la voz del hablante original: prueba Curify Video Dubbing",
+      "heroCtaHref": "/tools/video-dubbing"
     },
     "nanoBananaDedicated": {
       "title": "¿Qué es Nano Banana AI? La Guía Completa de Generación Visual Estructurada con AI",
@@ -4557,7 +4560,9 @@
             "slug": "custom-character-card"
           }
         ]
-      }
+      },
+      "heroCtaText": "Abre la plantilla MBTI de Marvel: escribe el nombre de cualquier héroe o villano y obtén la tarjeta de análisis",
+      "heroCtaHref": "/nano-template/mbti-marvel"
     },
     "curifyNanoBananaTemplateTips": {
       "title": "10 Consejos para Usar las Plantillas de Nano Banana de Curify",

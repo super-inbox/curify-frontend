@@ -1395,7 +1395,6 @@
       "publishedDate": "2026-05-30",
       "readTime": "8분 읽기",
       "category": "제작자 도구",
-      "heroImageAlt": "2026년 비디오 콘텐츠 제작자를 위한 AI 도구",
       "intro": "대부분의 \"최고의 AI 도구\" 목록은 SEO를 돕기 위해 20개 항목으로 구성됩니다. 우리는 동의하지 않습니다. 세 가지 도구가 거의 모든 실제 비디오 제작자 워크플로를 커버합니다 — 편집/전사(Descript), 음성 및 TTS(ElevenLabs), 생성 비디오(Runway). 이 가이드는 세 가지 도구를 선택하고, 각 도구의 실제 장점을 명시하며, 건너뛰고 더빙 도구를 사용해야 하는 일반적인 경우(원래 화자의 목소리로 다른 언어로 비디오 더빙)도 표시합니다.",
       "whoThisIsForTitle": "이 도구가 필요한 사람",
       "whoThisIsForContent": "YouTube / TikTok / Instagram / 유료 클라이언트 작업을 위해 비디오 콘텐츠를 편집, 내레이션 또는 생성할 도구를 선택하는 솔로 제작자. 대량으로 현지화된 콘텐츠를 제작하는 에이전시 비디오 팀. 제품 데모, 웨비나, 강의 모듈을 구축하는 마케팅 팀. 기존 비디오를 원래 화자의 목소리로 다른 언어로 현지화하려는 경우, [비디오 제작 도구가 필요하지 않은 경우는?](#curify-callout)로 건너뛰세요 — 이는 다른 문제이며 다른 도구입니다.",
@@ -1459,7 +1458,11 @@
           "AI 비디오 더빙"
         ],
         "questions": "어떤 도구가 귀하의 워크플로에 적합한지에 대한 질문이 있으신가요? /contact를 통해 문의해 주세요. 우리는 이러한 서드파티 도구 위에 Curify를 사용하고 있으며 의견이 있습니다."
-      }
+      },
+      "heroImageAlt": "비디오 콘텐츠 제작자를 위한 AI 도구 2026: Descript, ElevenLabs, Runway",
+      "heroImage": "/images/best-ai-tools-video-runway.webp",
+      "heroCtaText": "원어민의 목소리로 비디오를 다른 언어로 현지화하세요 — Curify Video Dubbing을 사용해 보세요",
+      "heroCtaHref": "/tools/video-dubbing"
     },
     "nanoBananaDedicated": {
       "title": "나노 바나나 AI란 무엇인가? AI 구조화된 시각 생성에 대한 완벽한 가이드",
@@ -4557,7 +4560,9 @@
             "slug": "custom-character-card"
           }
         ]
-      }
+      },
+      "heroCtaText": "마블 MBTI 템플릿 열기 — 영웅 또는 악당 이름을 입력하고 분석 카드를 받으세요",
+      "heroCtaHref": "/nano-template/mbti-marvel"
     },
     "curifyNanoBananaTemplateTips": {
       "title": "Curify의 Nano Banana 템플릿 사용을 위한 10가지 팁",
