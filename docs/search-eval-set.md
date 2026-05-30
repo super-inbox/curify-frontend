@@ -1,10 +1,10 @@
 # Search Evaluation Query Set
 
-_Auto-generated from `scripts/configs/search_eval_set.json` (2026-05-19, last recalibrated 2026-05-27 (appended 10 ProgSEO long-tail queries + added expected_templates field measuring template richness from the LLM matcher in Phase 1 of docs/search-generation-bridge.md. Net set: 46 queries — original 36 + 10 long-tail.)). Re-run `python3 scripts/render_eval_set_md.py` after editing the JSON._
+_Auto-generated from `scripts/configs/search_eval_set.json` (2026-05-19, last recalibrated 2026-05-30 (weekly cycle 1: appended 3 user-weekly-2026-05-30 queries — chiikawa, samurai, genshin — surfaced as under-served fandoms by the 14d admin /interaction-analytics pull and shipped a content topup the same cycle. Net set: 57 queries — 54 prior + 3 weekly. Prior recalibration 2026-05-29 appended 8 Pinterest discovery keywords.)). Re-run `python3 scripts/render_eval_set_md.py` after editing the JSON._
 
-46-query regression + coverage set for /search, now scoring TWO surfaces: (a) inspiration richness via the strict/relaxed matcher (existing `expected` field), and (b) template richness via the LLM matcher (`expected_templates` — # templates with matcher confidence >= 0.4, mirroring the production GenerableTemplatesSection threshold).
+54-query regression + coverage set for /search, now scoring TWO surfaces: (a) inspiration richness via the strict/relaxed matcher (existing `expected` field), and (b) template richness via the LLM matcher (`expected_templates` — # templates with matcher confidence >= 0.4, mirroring the production GenerableTemplatesSection threshold).
 
-Mix: (a) real user queries, (b) Reddit-eval queries with structural-stopword noise stripped, (c) user-reported bad cases, (d) long-tail / popular / gsc-zero queries, (e) ProgSEO long-tail queries (added 2026-05-27) covering the empty-inspiration + rich-template case the Generation Bridge was built for.
+Mix: (a) real user queries, (b) Reddit-eval queries with structural-stopword noise stripped, (c) user-reported bad cases, (d) long-tail / popular / gsc-zero queries, (e) ProgSEO long-tail queries (added 2026-05-27) covering the empty-inspiration + rich-template case the Generation Bridge was built for, (f) Pinterest discovery keywords (added 2026-05-29) — real Pinterest search terms harvested while doing B2B lead discovery, that double as entity-shape queries Curify users would type.
 
 Re-run `scripts/eval_search.cjs` (cheap) for inspiration drift; re-run `scripts/eval_search.cjs --matcher` (incurs LLM cost ~$0.09 across the full set) to also check template-richness drift after any change to lib/searchTemplateMatch.ts, the taxonomy, or the template catalog.
 
@@ -112,6 +112,27 @@ Re-run `scripts/eval_search.cjs` (cheap) for inspiration drift; re-run `scripts/
 | 8 | `lunar new year red envelope graphic design` | `empty` | `moderate` | ProgSEO long-tail. Inspiration: no red-envelope-specific example yet. Template: product-theme-promotional-poster (graphic design) + cultural-festival-poster (festival angle). |
 | 9 | `1950s vintage diner illustration retro poster` | `rich` | `moderate` | ProgSEO long-tail. Inspiration: no 1950s diner example yet. Template: watercolor-theme-collage-illustration + nostalgic-first-item-poster + vintage-travel-scrapbook-poster all fit the retro brief. |
 | 10 | `before after kitchen organization makeover` | `moderate` | `thin` | ProgSEO long-tail. Inspiration: home-organization-before-after has kitchen examples. Template: template-home-organization-before-after is the canonical match — narrow but precise. |
+
+## pinterest-discovery-2026-05-29 (8 queries)
+
+| # | Query | Expected | Notes |
+| --- | --- | --- | --- |
+| 1 | `phonics worksheets kindergarten` | `empty` | Pinterest edu-printable keyword. Inspiration: empty — no inspiration carries the exact 3-token combo even though 50 phonics templates exist (shipped 5/27). Template: phonics-consonant-blend canonical, plus english-grammar-wordlist + english-homograph-educational-poster + kids-vocabulary-poster all plausible. |
+| 2 | `Spanish vocabulary printable` | `rich` | Pinterest edu-printable keyword. Inspiration: 15 hits — Spanish vocab examples + 'printable' alias from prior topup land enough to surface as rich. Template: template-vocabulary (en-es) + cartoon-english-vocabulary-flashcards + kids-vocabulary-poster all fit. |
+| 3 | `ESL flashcards printable` | `empty` | Pinterest edu-printable keyword. Same shape as Spanish vocabulary — ESL templates exist but printable/flashcards aren't aliased on every record. Template: vocabulary + cartoon-english-vocabulary-flashcards + english-grammar-wordlist. |
+| 4 | `easy weeknight dinners healthy` | `empty` | Pinterest recipe-creator keyword. Inspiration: empty — recipe examples are dish-named not adjective-named. Template: template-recipe + premium-recipe-card-infographic + food-recipe-tip-infographic all plausible. |
+| 5 | `gluten free dinner ideas` | `empty` | Pinterest recipe-creator keyword. Inspiration: empty (no gluten-free-specific examples). Template: recipe + premium-recipe-card-infographic + dessert-color-lab-infographic adjacent. |
+| 6 | `meal prep weekly recipes` | `empty` | Pinterest recipe-creator keyword. Same shape — template-recipe + premium-recipe-card-infographic + food-recipe-tip-infographic. |
+| 7 | `cozy reading aesthetic` | `thin` | Pinterest book/literary keyword. Inspiration: 1 hit (incidental — alias overlap from 'aesthetic' family). Template: self-help-book-visual-summary + watercolor-theme-collage + lifestyle-watercolor-infographic — all serve the cozy-reading-aesthetic vibe. |
+| 8 | `book lovers gift guide` | `thin` | Pinterest book/literary keyword. Inspiration: 1 hit (incidental — alias overlap from 'gift guide' family). Template: self-help-book-visual-summary + country-souvenirs-watercolor (gift-guide layout) + top10-visual-guide-infographic. |
+
+## user-weekly-2026-05-30 (3 queries)
+
+| # | Query | Expected | Notes |
+| --- | --- | --- | --- |
+| 1 | `chiikawa` | `moderate` | Weekly cycle 1: 14d admin pull showed 3 NR / 3 escape-clicks (highest user-gave-up signal in the set). Pre-topup base was 5 hits (1 example each across fandom-grid + pop-culture-matching + celebrity-group + mbti-generic) — alias-driven, content-thin. After 2026-05-30 fandom topup (+3 net chiikawa examples; 1 dedup skip on pop-culture-matching), base = 8 hits across 4 templates (mbti×3 + fandom-grid×2 + pop-culture×1 + celebrity-group×1). Moderate is the honest bucket for a niche fandom. Companion: existing CJK form 吉伊卡哇 already in the set. |
+| 2 | `samurai` | `moderate` | Weekly cycle 1: 14d admin pull showed 1 NR. Pre-topup base was 3 hits (1 each across fandom-grid + mbti-generic + historical-figure-profile from 2026-05-19 batch). After 2026-05-30 fandom topup (+4 samurai examples: female samurai grid, sengoku warlords grid, anime-samurai mbti, samurai-of-anime pop-culture), base = 7 hits across 4 templates. Adjacent 武士 also covered via CJK bigram. |
+| 3 | `genshin` | `moderate` | Weekly cycle 1: 14d admin pull showed 1 NR. Pre-topup base was 3 hits (1 each across fandom-grid + mbti-generic + pop-culture-matching from 2026-05-19 batch). After 2026-05-30 fandom topup (+4 genshin examples: Liyue grid, Fontaine grid, by-element mbti, Archons pop-culture), base = 7 hits across 3 templates. Adjacent 原神 (Genshin CJK) = 4 hits. |
 
 ## How to use this set for side-by-side comparison
 

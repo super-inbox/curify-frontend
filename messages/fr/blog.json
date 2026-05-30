@@ -748,7 +748,13 @@
       ],
       "title": "10 conseils de vidéo IA qui fonctionnent vraiment (Sora, Runway, Pika)",
       "metaDescription": "10 techniques de suggestion testées sur Sora, Runway et Pika pour arrêter de générer des vidéos IA ennuyeuses. Exemples réels avant et après pour les créateurs en 2026.",
-      "seoKeywords": "suggestions vidéo IA, suggestions sora, suggestions vidéo runway, suggestions vidéo pika, conseils de génération vidéo IA, techniques de suggestion vidéo 2026, guide du créateur vidéo IA"
+      "seoKeywords": "suggestions vidéo IA, suggestions sora, suggestions vidéo runway, suggestions vidéo pika, conseils de génération vidéo IA, techniques de suggestion vidéo 2026, guide du créateur vidéo IA",
+      "heroImage": "/images/tenprompt.webp",
+      "heroImageAlt": "Top 10 conseils de formulation pour la génération de vidéos IA",
+      "heroCtaLabel": "ESSAYER LA GÉNÉRATION DE VIDÉOS",
+      "heroCtaText": "Mettez ces 10 conseils de formulation en pratique avec les outils de génération de vidéos de Curify",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "Essayer →"
     },
     "imageGenerationModelComparison": {
       "date": "28 mars 2026",
@@ -811,7 +817,13 @@
       "faq1Answer": "Nano Banana Pro (via Google AI Studio) et GPT Image 2 (le successeur de DALL-E 3 dans ChatGPT) sont les plus conviviaux pour les débutants — tapez ce que vous voulez en anglais simple, obtenez une image, itérez de manière conversationnelle. Midjourney v7 a une courbe d'apprentissage sur Discord/web. Stable Diffusion 3.5 nécessite une configuration technique à moins que vous n'utilisiez un front-end cloud géré comme fal.ai ou Replicate.",
       "faq2Answer": "Les trois supportent l'utilisation commerciale. Nano Banana Pro et Midjourney v7 accordent des licences commerciales avec leurs plans payants (Google intègre une marque invisible SynthID dans les sorties de Nano Banana pour la provenance). Stable Diffusion 3.5 est open-source sous une licence permissive, mais vérifiez les licences LoRA communautaires individuelles — certaines sont non commerciales.",
       "faq3Answer": "Pour une itération rapide et un travail conceptuel, Nano Banana 2 (niveau Flash) ou Stable Diffusion 3.5 Turbo (génération de 2-4 secondes sur un GPU puissant). Pour un travail de production final où l'esthétique est primordiale, Midjourney v7 ou Nano Banana Pro au niveau de raisonnement complet. Pour des séries cohérentes avec un personnage ou un style de marque spécifique, Stable Diffusion 3.5 Large avec un LoRA ajusté gagne en cohérence par image.",
-      "faq4Answer": "Minimum : GPU avec 12 Go de VRAM pour des modèles distillés comme Stable Diffusion 3.5 Turbo. Recommandé : 16-24 Go de VRAM pour le modèle complet 3.5 Large et une génération plus rapide. Les locations cloud (Runpod, fal.ai, Replicate) coûtent 0,50-2 $/heure si vous préférez ne pas acheter de matériel à l'avance — utile pour essayer SD avant de vous engager dans un achat de GPU."
+      "faq4Answer": "Minimum : GPU avec 12 Go de VRAM pour des modèles distillés comme Stable Diffusion 3.5 Turbo. Recommandé : 16-24 Go de VRAM pour le modèle complet 3.5 Large et une génération plus rapide. Les locations cloud (Runpod, fal.ai, Replicate) coûtent 0,50-2 $/heure si vous préférez ne pas acheter de matériel à l'avance — utile pour essayer SD avant de vous engager dans un achat de GPU.",
+      "heroImage": "/images/hardworker.webp",
+      "heroImageAlt": "Comparez les sorties de Nano Banana, Flux et Stable Diffusion sur le même prompt",
+      "heroCtaLabel": "PARCOURIR LES MODÈLES",
+      "heroCtaText": "Évitez le piège du modèle contre modèle — commencez avec plus de 200 modèles prêts à l'emploi de Curify",
+      "heroCtaHref": "/nano-banana-pro-prompts",
+      "heroCtaButton": "Explorer →"
     },
     "lipSyncBusinessGuide": {
       "title": "Guide de Synchronisation Labiale et de Doublage IA : Applications et Outils pour les Entreprises",
@@ -1162,359 +1174,79 @@
       ]
     },
     "bestAiTools": {
-      "title": "10 meilleurs outils d'IA pour les créateurs de contenu en 2026",
-      "publishedDate": "2 avril 2026",
-      "readTime": "12 min de lecture",
+      "title": "Meilleurs outils d'IA pour les créateurs de contenu vidéo en 2026 : Descript vs ElevenLabs vs Runway",
+      "metaDescription": "Descript, ElevenLabs, Runway — quel outil d'IA utiliser pour la création vidéo, ce pour quoi chacun est réellement bon, et un cas où vous devriez les éviter et utiliser un outil de doublage à la place.",
+      "publishedDate": "2026-05-30",
+      "readTime": "8 min de lecture",
       "category": "Outils pour créateurs",
-      "heroImageAlt": "Aperçu complet des outils d'IA pour les créateurs de contenu, y compris la prise de notes, la recherche et les outils de création multimédia",
-      "introduction": {
-        "title": "Introduction",
-        "description": "La création de contenu a été révolutionnée par des outils d'IA qui rationalisent les flux de travail, améliorent la créativité et augmentent la productivité. De la prise de notes à la production vidéo, ces outils aident les créateurs à travailler plus intelligemment, pas plus dur.",
-        "subtitle": "Nous avons sélectionné les 10 outils d'IA essentiels que chaque créateur de contenu devrait connaître en 2026."
-      },
-      "tools": {
-        "title": "Outils et ressources",
-        "description": "Découvrez les meilleurs outils disponibles pour les créateurs de contenu en 2026.",
-        "list": [
-          {
-            "icon": "📝",
-            "name": "Notion AI",
-            "category": "Prise de notes et organisation",
-            "description": "Espace de travail alimenté par l'IA qui aide à organiser les pensées, générer du contenu et automatiser les flux de travail.",
-            "features": [
-              "Écriture assistée par IA",
-              "Organisation intelligente",
-              "Bibliothèque de modèles",
-              "Collaboration en équipe"
-            ],
-            "pricing": "Niveau gratuit disponible, Payant à partir de 8 $/mois",
-            "bestFor": "Planificateurs de contenu, rédacteurs et équipes"
-          },
-          {
-            "icon": "🔍",
-            "name": "Perplexity AI",
-            "category": "Recherche et Analyse",
-            "description": "Moteur de recherche alimenté par l'IA qui fournit des réponses précises et citées à des questions complexes.",
-            "features": [
-              "Recherche web en temps réel",
-              "Sources citées",
-              "Recherche académique",
-              "Analyse de documents"
-            ],
-            "pricing": "Niveau gratuit disponible, Pro à partir de 20 $/mois",
-            "bestFor": "Chercheurs, journalistes et universitaires"
-          },
-          {
-            "icon": "🎨",
-            "name": "Midjourney",
-            "category": "Génération d'Images",
-            "description": "Générateur d'images IA de premier plan qui crée des visuels époustouflants à partir de prompts textuels.",
-            "features": [
-              "Images de haute qualité",
-              "Personnalisation de style",
-              "Création en lot",
-              "Droits commerciaux"
-            ],
-            "pricing": "Basique à partir de 10 $/mois, Standard à partir de 30 $/mois",
-            "bestFor": "Créateurs visuels, marketeurs et designers"
-          },
-          {
-            "icon": "🎬",
-            "name": "Runway ML",
-            "category": "Création Vidéo",
-            "description": "Plateforme vidéo IA qui permet des capacités de texte à vidéo et de montage vidéo.",
-            "features": [
-              "Texte à vidéo",
-              "Montage vidéo",
-              "Suppression de fond vert",
-              "Effets IA"
-            ],
-            "pricing": "Niveau gratuit disponible, Standard à partir de 15 $/mois",
-            "bestFor": "Créateurs vidéo et gestionnaires de médias sociaux"
-          },
-          {
-            "icon": "🎙️",
-            "name": "Descript",
-            "category": "Audio & Podcast",
-            "description": "Plateforme de montage audio/vidéo tout-en-un avec transcription IA et clonage vocal.",
-            "features": [
-              "Transcription automatique",
-              "Clonage vocal",
-              "Montage IA",
-              "Enregistrement d'écran"
-            ],
-            "pricing": "Niveau gratuit disponible, Créateur à partir de 15 $/mois",
-            "bestFor": "Podcasteurs et créateurs vidéo"
-          },
-          {
-            "icon": "📊",
-            "name": "Canva AI",
-            "category": "Design Graphique",
-            "description": "Plateforme de design alimentée par l'IA qui crée des graphiques professionnels, des présentations et des supports marketing.",
-            "features": [
-              "Suggestions de design IA",
-              "Gestion de kit de marque",
-              "Bibliothèque de modèles",
-              "Collaboration d'équipe"
-            ],
-            "pricing": "Niveau gratuit disponible, Pro à partir de 12,99 $/mois",
-            "bestFor": "Gestionnaires de médias sociaux et marketeurs"
-          },
-          {
-            "icon": "🚀",
-            "name": "Jasper AI",
-            "category": "Rédaction de Contenu",
-            "description": "Assistant de rédaction IA qui aide à créer des articles de blog, du contenu pour les réseaux sociaux et des textes marketing.",
-            "features": [
-              "Plus de 50 modèles de rédaction",
-              "Personnalisation de la voix de marque",
-              "Optimisation SEO",
-              "Calendrier de contenu"
-            ],
-            "pricing": "Créateur à partir de 39 $/mois, Équipes à partir de 99 $/mois",
-            "bestFor": "Marketeurs de contenu et rédacteurs"
-          },
-          {
-            "icon": "🎯",
-            "name": "Grammarly AI",
-            "category": "Amélioration de l'écriture",
-            "description": "Assistant d'écriture alimenté par l'IA qui améliore la grammaire, le ton et la clarté dans tous les types de contenu.",
-            "features": [
-              "Vérification grammaticale",
-              "Détection du ton",
-              "Suggestions de style",
-              "Vérificateur de plagiat"
-            ],
-            "pricing": "Niveau gratuit disponible, Premium à partir de 12 $/mois",
-            "bestFor": "Rédacteurs et professionnels"
-          },
-          {
-            "icon": "📱",
-            "name": "Buffer AI",
-            "category": "Gestion des réseaux sociaux",
-            "description": "Plateforme de gestion des réseaux sociaux alimentée par l'IA qui optimise les horaires de publication et la performance du contenu.",
-            "features": [
-              "Suggestions de contenu par IA",
-              "Heures de publication optimales",
-              "Tableau de bord analytique",
-              "Gestion multi-plateforme"
-            ],
-            "pricing": "Niveau gratuit disponible, Essentiels à partir de 6 $/mois",
-            "bestFor": "Gestionnaires de réseaux sociaux et petites entreprises"
-          },
-          {
-            "icon": "🎥",
-            "name": "Curify",
-            "category": "Traduction Vidéo & Contenu AI",
-            "description": "Plateforme AI complète pour la traduction vidéo, le doublage et la création de contenu avec des capacités avancées de clonage vocal et multimodal.",
-            "features": [
-              "Traduction vidéo AI",
-              "Clonage vocal",
-              "Technologie de synchronisation labiale",
-              "Génération de contenu multimodal",
-              "Doublage professionnel"
-            ],
-            "pricing": "Niveau gratuit disponible, plans Pro à partir de 29 $/mois",
-            "bestFor": "Créateurs de vidéos, spécialistes du marketing de contenu et entreprises mondiales"
-          }
-        ]
-      },
-      "features": {
-        "title": "Fonctionnalités clés"
-      },
-      "pricing": {
-        "title": "Tarification"
-      },
-      "bestFor": {
-        "title": "Meilleur pour"
-      },
-      "curify": {
-        "title": "Comment Curify peut aider",
-        "description": "Curify offre des solutions complètes pour les créateurs de contenu cherchant à intégrer des outils d'IA dans leur flux de travail. Notre plateforme propose une intégration transparente avec les meilleurs outils d'IA, des modèles personnalisables et des conseils d'experts pour vous aider à créer un contenu convaincant efficacement.",
-        "features": [
-          "Intégration transparente des outils d'IA",
-          "Modèles de contenu personnalisables",
-          "Conseils et support d'experts",
-          "Optimisation du flux de travail",
-          "Analyse de performance"
-        ]
-      },
-      "cta": {
-        "title": "🎯 Prêt à commencer ?",
-        "description": "Essayez les outils de Curify aujourd'hui et transformez votre flux de création de contenu avec des solutions alimentées par l'IA."
-      },
-      "comparison": {
-        "title": "Comparaison des outils",
-        "description": "Comparez ces outils d'IA côte à côte pour trouver celui qui convient le mieux à vos besoins spécifiques et à votre budget.",
-        "tableTitle": "Tableau de comparaison rapide",
-        "toolColumn": "Outil",
-        "categoryColumn": "Catégorie",
-        "pricingColumn": "Prix de départ",
-        "difficultyColumn": "Courbe d'apprentissage",
-        "tableData": [
-          {
-            "tool": "Notion AI",
-            "category": "Prise de notes",
-            "pricing": "8 $/mois",
-            "difficulty": "Facile"
-          },
-          {
-            "tool": "Perplexity AI",
-            "category": "Recherche",
-            "pricing": "20 $/mois",
-            "difficulty": "Facile"
-          },
-          {
-            "tool": "Midjourney",
-            "category": "Images",
-            "pricing": "10 $/mois",
-            "difficulty": "Moyen"
-          },
-          {
-            "tool": "Runway ML",
-            "category": "Vidéo",
-            "pricing": "15 $/mois",
-            "difficulty": "Moyen"
-          },
-          {
-            "tool": "Descript",
-            "category": "Audio",
-            "pricing": "15 $/mois",
-            "difficulty": "Facile"
-          },
-          {
-            "tool": "Canva AI",
-            "category": "Conception Graphique",
-            "pricing": "12,99 $/mois",
-            "difficulty": "Facile"
-          },
-          {
-            "tool": "Jasper AI",
-            "category": "Rédaction de Contenu",
-            "pricing": "39 $/mois",
-            "difficulty": "Moyen"
-          },
-          {
-            "tool": "Grammarly AI",
-            "category": "Amélioration de l'Écriture",
-            "pricing": "12 $/mois",
-            "difficulty": "Facile"
-          },
-          {
-            "tool": "Buffer AI",
-            "category": "Médias Sociaux",
-            "pricing": "6 $/mois",
-            "difficulty": "Facile"
-          },
-          {
-            "tool": "Curify",
-            "category": "Traduction Vidéo",
-            "pricing": "29 $/mois",
-            "difficulty": "Moyenne"
-          }
-        ]
-      },
-      "howToChoose": {
-        "title": "Comment Choisir les Bons Outils",
-        "description": "Sélectionner les bons outils d'IA dépend de vos besoins spécifiques, de votre budget et de votre flux de travail. Considérez ces facteurs clés :",
-        "factors": [
-          {
-            "title": "Type de Contenu",
-            "description": "Associez les outils à votre format de contenu principal (vidéo, texte, images, audio)"
-          },
-          {
-            "title": "Contraintes Budgétaires",
-            "description": "Commencez avec des niveaux gratuits et passez à des options payantes au fur et à mesure que vos besoins évoluent"
-          },
-          {
-            "title": "Besoins d'Intégration",
-            "description": "Considérez comment les outils fonctionnent avec votre flux de travail et vos logiciels existants"
-          },
-          {
-            "title": "Courbe d'Apprentissage",
-            "description": "Équilibrez des fonctionnalités puissantes avec la facilité d'utilisation pour votre équipe"
-          }
-        ]
-      },
-      "workflow": {
-        "title": "Flux de Travail Optimal pour les Créateurs",
-        "description": "Voici comment intégrer ces outils d'IA dans un processus de création de contenu rationalisé :",
-        "steps": [
-          {
-            "title": "Recherche & Planification",
-            "description": "Utilisez Perplexity AI pour la recherche et Notion AI pour la planification de contenu"
-          },
-          {
-            "title": "Création de Contenu",
-            "description": "Rédigez avec des assistants IA, améliorez avec des outils de grammaire"
-          },
-          {
-            "title": "Éléments Visuels",
-            "description": "Créez des images avec Midjourney, des designs avec des outils d'IA"
-          },
-          {
-            "title": "Audio/Vidéo",
-            "description": "Enregistrez et éditez avec Descript, créez des vidéos avec Runway ML"
-          },
-          {
-            "title": "Présentation",
-            "description": "Compilez tout dans des présentations avec des outils d'IA"
-          }
-        ]
-      },
-      "tips": {
-        "title": "Conseils Pro pour une Efficacité Maximale",
-        "description": "Tirez le meilleur parti de ces outils d'IA avec ces stratégies d'experts :",
-        "list": [
-          "Commencez avec un outil et maîtrisez-le avant d'en ajouter d'autres à votre flux de travail",
-          "Utilisez l'IA pour 80 % du travail, puis ajoutez votre touche personnelle pour plus d'authenticité",
-          "Créez des modèles et des flux de travail pour automatiser les tches répétitives",
-          "Mettez régulièrement à jour vos outils et apprenez les nouvelles fonctionnalités au fur et à mesure de leur sortie",
-          "Combinez plusieurs outils pour des résultats uniques qui se démarquent de la concurrence"
-        ]
-      },
-      "future": {
-        "title": "L'Avenir de l'IA dans la Création de Contenu",
-        "description": "Les outils d'IA évoluent rapidement. Voici les tendances qui façonnent l'avenir de la création de contenu :",
-        "trends": [
-          {
-            "title": "IA Multimodale",
-            "description": "Outils capables de gérer le texte, les images, l'audio et la vidéo de manière transparente"
-          },
-          {
-            "title": "Personnalisation",
-            "description": "IA qui apprend votre style et vos préférences pour de meilleurs résultats"
-          },
-          {
-            "title": "Collaboration en Temps Réel",
-            "description": "Outils d'IA qui permettent une collaboration instantanée entre équipes et plateformes"
-          }
-        ]
-      },
-      "conclusion": {
-        "title": "Conclusion",
-        "description": "Commencez votre parcours avec des outils de création de contenu alimentés par l'IA dès aujourd'hui. La bonne combinaison d'outils d'IA peut améliorer considérablement votre productivité, votre créativité et la qualité de votre contenu. Commencez avec un outil, maîtrisez-le, et élargissez progressivement votre boîte à outils pour construire un flux de création de contenu complet qui fonctionne pour vous."
-      },
+      "intro": "La plupart des listes de \"meilleurs outils d'IA\" comptent 20 entrées car le remplissage aide au SEO. Nous ne sommes pas d'accord. Trois outils couvrent presque tous les flux de travail réels des créateurs vidéo — montage/transcriptions (Descript), voix et TTS (ElevenLabs), vidéo générative (Runway). Ce guide sélectionne les trois, nomme ce pour quoi chacun est réellement le meilleur, et signale le cas commun (doublage d'une vidéo dans une autre langue avec la voix de l'orateur original) où vous devriez les éviter et utiliser un outil de doublage à la place.",
+      "whoThisIsForTitle": "Pour qui c'est",
+      "whoThisIsForContent": "Créateurs solo choisissant un outil pour éditer, narrer ou générer du contenu vidéo pour YouTube / TikTok / Instagram / travaux clients payants. Équipes vidéo d'agence livrant du contenu localisé en volume. Équipes marketing construisant des démos de produits, des webinaires, des modules de cours. Si vous essayez de localiser une vidéo existante dans une autre langue avec la voix de l'orateur original, passez directement à l'appel [Que faire si vous n'avez pas besoin d'un outil de création vidéo ?](#curify-callout) — c'est un problème différent et un outil différent.",
+      "buyersGuideTitle": "Guide d'achat rapide — ce qui compte vraiment",
+      "buyersGuideContent": "Quatre dimensions comptent ; le reste est du texte marketing.\n\n**1. À quelle étape du flux de travail avez-vous besoin d'aide ?** La pré-production (scénarisation / storyboard) se fait dans un outil différent de la production (montage) et du post (voix, doublage, distribution). Acheter un outil pour tout faire signifie généralement acheter une version médiocre de chacun.\n\n**2. Modèle de tarification.** La tarification par minute (la plupart des outils vidéo génératifs) évolue de manière linéaire — bien pour un faible volume, douloureux à grande échelle. Les plans d'abonnement limitent vos dépenses. La tarification par caractère (TTS) est similaire — bon marché pour les courts clips, brutal pour la narration longue.\n\n**3. Flexibilité du format de sortie.** Pouvez-vous exporter en 4K ? Obtenez-vous des pistes audio brutes ou un mix final ? La transcription est-elle téléchargeable au format SRT ? La plupart des outils vous enferment dans leur lecteur ou éditeur ; vous voulez ceux qui livrent des fichiers sources propres.\n\n**4. Le coût caché : temps jusqu'à l'acceptable.** Un outil qui prend 30 minutes par vidéo à apprendre mais produit un résultat poli dès le premier essai est généralement meilleur qu'un outil qui produit un résultat en 30 secondes mais nécessite trois itérations pour avoir l'air correct. La deuxième catégorie s'accumule sur 50 vidéos.",
+      "methodologyTitle": "Comment nous avons sélectionné ces trois",
+      "methodologyContent": "La plupart des listes de \"meilleurs outils d'IA\" comptent 15-20 entrées car le remplissage aide au SEO. Nous ne sommes pas d'accord. Trois outils couvrent l'ensemble de la pile des créateurs vidéo — montage/transcriptions, voix, vidéo générative. Nous avons éliminé 17 outils qui se chevauchent avec ces trois : CapCut AI, Adobe Premiere Firefly, Lumen5, Pictory, InVideo et Veed se trouvent dans le même seau de montage que Descript ; Murf, Play.ht, Speechify, WellSaid, Lovo se trouvent dans le même seau de voix qu'ElevenLabs ; Pika, Sora, Luma, Kling, Synthesia, HeyGen se trouvent dans le même seau de vidéo générative que Runway. Si vous voulez la longue liste, ceux-ci sont à une recherche Google. Si vous voulez une décision, continuez à lire.",
+      "toolsTitle": "Les trois outils qui valent la peine d'être comparés",
+      "toolsIntro": "Au-delà du texte marketing, l'espace IA pour vidéo se divise en trois catégories : le cheval de bataille du montage + transcription (Descript), le leader de la voix et du TTS (ElevenLabs), et le leader de la vidéo générative (Runway). Chacun possède une étape différente du flux de travail. Choisissez en fonction de ce qui est le plus coûteux dans votre pile aujourd'hui.",
+      "tool1Name": "1. Descript",
+      "tool1Tagline": "Éditeur multimodal — éditez la vidéo en modifiant la transcription",
+      "tool1BestFor": "Montage de podcasts et de vidéos, coupes basées sur des transcriptions, audio + vidéo multi-pistes, enregistrement d'écran pour des tutoriels",
+      "tool1Pricing": "Niveau gratuit limité ; les plans payants commencent à environ 16 $/mois ; niveaux entreprise pour les flux de travail d'équipe",
+      "tool1Languages": "La transcription prend en charge plus de 23 langues ; le clonage vocal (Overdub) prend en charge l'anglais + d'autres sélectionnés",
+      "tool1Limitation": "Le modèle de montage suppose un contenu de type podcast ; moins efficace sur la vidéo narrative, pas de génération native de b-roll AI, la qualité du clonage vocal est inférieure à celle d'ElevenLabs",
+      "tool1WhenToPick": "Choisissez Descript lorsque la plupart de votre temps de montage est consacré à couper des séquences d'interview, des épisodes de podcast, des vidéos de cours ou des enregistrements d'écran — du contenu où la transcription est l'échafaudage structurel. La fonctionnalité de suppression de mots est l'atout majeur : coupez une phrase de la transcription et la vidéo correspond. Le niveau gratuit est suffisamment généreux pour évaluer ; les niveaux payants ajoutent le multi-piste, le clonage vocal (Overdub) et la correction du contact visuel AI.",
+      "tool2Name": "2. ElevenLabs",
+      "tool2Tagline": "Leader de la voix et du TTS — le choix commercial poli",
+      "tool2BestFor": "Voix off pour des vidéos explicatives, narration de livres audio, voix de personnages pour les médias, voix personnalisées pour les fonctionnalités de produits",
+      "tool2Pricing": "Facturation par caractère — niveau gratuit limité ; les plans payants commencent à environ 5 $/mois ; niveaux entreprise pour une utilisation API à volume élevé",
+      "tool2Languages": "Plus de 30 langues avec une bibliothèque vocale mature ; clonage vocal instantané avec 10-30s de référence ; clonage professionnel avec plus de 30 min de référence",
+      "tool2Limitation": "Plateforme fermée avec des barrières de politique de contenu sur le clonage vocal (vérification de consentement requise pour les voix personnalisées) ; les coûts par caractère s'accumulent à volume élevé",
+      "tool2WhenToPick": "Choisissez ElevenLabs lorsque vous avez besoin d'une voix — pour la narration d'un essai YouTube, une voix off de tutoriel, une introduction de podcast, un livre audio. L'API et la bibliothèque vocale sont les plus matures de la catégorie. Pour une comparaison plus approfondie sur le clonage vocal spécifiquement, voir [/blog/voice-cloning-tools](/blog/voice-cloning-tools).",
+      "tool3Name": "3. Runway",
+      "tool3Tagline": "Vidéo générative — texte en vidéo et pinceau de mouvement à qualité de production",
+      "tool3BestFor": "B-roll génératif, génération de scènes abstraites, graphiques animés, prises de vue de clips musicaux, séquences de révélation de produits",
+      "tool3Pricing": "Niveau gratuit limité ; les plans payants commencent à ~15 $/mois ; entreprise pour une utilisation Gen-3 / Gen-4 à fort volume",
+      "tool3Languages": "Interface de texte en anglais ; la sortie est visuelle, indépendante de la langue",
+      "tool3Limitation": "Fort sur les courts clips cinématographiques (5-10 secondes) ; plus faible sur les narrations longues cohérentes ; le prix par seconde rend les longues séquences coûteuses ; le contrôle sur des actions spécifiques (par exemple, \"le personnage lance la balle\") reste encore incohérent",
+      "tool3WhenToPick": "Choisissez Runway lorsque vous avez besoin de vidéo générative cinématographique — intros abstraites, révélations de produits, graphiques animés, prises de vue de clips musicaux, b-roll qui n'existe pas. Les modèles Gen-3 et Gen-4 dominent la catégorie en qualité visuelle. Associez-le à un véritable éditeur vidéo (Descript, Premiere, Final Cut) pour l'étape d'assemblage.",
+      "comparisonTitle": "Côte à côte",
+      "comparisonIntro": "Les mêmes quatre dimensions à travers les trois outils. Utilisez ceci pour trianguler l'appel après avoir lu les encadrés par outil.",
+      "decisionRubricTitle": "Lequel pour quel cas d'utilisation",
+      "decisionRubricContent": "- **Montage vidéo basé sur un podcast ou une interview** → Descript. Éditez par transcription est le flux de travail.\n- **Voix off pour narration ou fonctionnalité de produit** → ElevenLabs. Finition + faible surface d'ingénierie.\n- **B-roll génératif ou génération de scènes cinématographiques** → Runway. Meilleure qualité visuelle dans la catégorie.\n- **Localiser une vidéo dans une autre langue avec la voix de l'orateur original** → passez les trois. Lisez la section suivante.",
+      "curifyCalloutTitle": "Que faire si vous n'avez pas besoin d'un *outil* de création vidéo ?",
+      "curifyCalloutContent": "La plupart des lecteurs arrivant sur \"meilleurs outils IA pour créateurs de vidéos\" essaient de résoudre l'un des deux problèmes : créer une nouvelle vidéo à partir de zéro, OU localiser une vidéo existante dans une autre langue tout en gardant la voix de l'orateur original. Les trois outils ci-dessus gèrent le premier problème. **Pour le deuxième problème, vous n'avez besoin d'aucun d'eux.**\n\n[Curify Video Dubbing](/tools/video-dubbing) clone la voix de l'orateur original à partir de la vidéo source, traduit l'audio, l'aligne sur le timing source, et livre une piste doublée dans la langue cible avec l'identité de l'orateur préservée. Le clonage vocal est invisible — téléchargez une vidéo, choisissez une langue, obtenez un doublage.\n\n**Quand c'est le bon choix :** localiser une vidéo YouTube, un module de cours, une démo de produit, un webinaire, un tutoriel.\n\n**Quand ce n'est pas :** créer un nouveau contenu vidéo à partir de zéro (utilisez Runway ou Descript), générer une voix off pour un script (utilisez ElevenLabs), monter une interview (utilisez Descript). Catégorie différente, outil différent.",
+      "faqTitle": "Questions fréquemment posées",
+      "faq1Q": "Ai-je besoin des trois outils ?",
+      "faq1A": "Non — cela dépend de votre flux de travail. Un créateur solo réalisant des vidéos explicatives pourrait n'utiliser que Descript (enregistrer + éditer) + ElevenLabs (voix si vous n'utilisez pas la vôtre). Un créateur axé sur les graphiques animés pourrait utiliser Runway + Descript. La plupart des créateurs n'ont pas besoin de vidéo générative ; la plupart des créateurs ont besoin d'un montage basé sur la transcription. Commencez par le domaine qui prend le plus de votre temps aujourd'hui.",
+      "faq2Q": "Y a-t-il des niveaux gratuits que je peux évaluer ?",
+      "faq2A": "Les trois ont des niveaux gratuits. **Descript** : ~1 heure de transcription par mois, exports avec filigrane. **ElevenLabs** : 10k caractères/mois (~10 minutes de voix). **Runway** : générations limitées par mois, avec filigrane. Les niveaux gratuits suffisent pour évaluer ; le travail de production nécessite des plans payants. La liste d'attente d'accès anticipé de Curify Video Dubbing est également gratuite à rejoindre.",
+      "faq3Q": "Quelle est la combinaison la moins chère qui couvre les besoins d'un créateur YouTube ?",
+      "faq3A": "Le plan créateur Descript (~16 $/mois) couvre l'édition + la transcription + la voix Overdub brute. ElevenLabs Starter (5 $/mois) couvre la voix off de haute qualité. Total ~21 $/mois pour un ensemble qui gère une chaîne YouTube réalisant 1-2 vidéos par semaine. Ajoutez Runway seulement si vous avez besoin de b-roll génératif régulièrement.",
+      "faq4Q": "Comment puis-je cloner ma propre voix pour la voix off ?",
+      "faq4A": "ElevenLabs Instant Voice Clone nécessite 10-30 secondes d'audio de référence et fonctionne en quelques minutes. ElevenLabs Professional Voice Clone nécessite 30+ minutes d'audio studio propre et atteint une fidélité proche de la diffusion. Descript Overdub adopte une approche similaire dans l'éditeur mais la fidélité est inférieure à celle d'ElevenLabs. Pour une comparaison complète sur le clonage vocal spécifiquement — y compris les options open-source (F5-TTS, OpenVoice) — voir [/blog/voice-cloning-tools](/blog/voice-cloning-tools).",
+      "faq5Q": "Ces outils peuvent-ils générer des vidéos de longueur complète automatiquement ?",
+      "faq5A": "Pas à qualité de production, non. Runway peut produire des clips de 5-30 secondes qui semblent cinématographiques. Les assembler en une narration cohérente de 10 minutes nécessite toujours un éditeur humain (Descript, Premiere ou Final Cut). Les outils qui promettent \"l'IA génère votre vidéo complète\" livrent presque toujours quelque chose qui ressemble à une génération par IA. Les trois outils ci-dessus sont mieux compris comme des aides, pas des remplacements.",
+      "faq6Q": "Je veux juste doubler une vidéo YouTube dans ma propre voix. Quel outil ?",
+      "faq6A": "Aucun des trois ci-dessus à lui seul — vous assembleriez un pipeline. Vous auriez besoin : d'extraire l'audio original, de cloner la voix de l'orateur, de traduire le script, de générer l'audio doublé dans la voix clonée, de l'aligner sur le timing de la vidéo source, éventuellement de synchroniser les lèvres. [Curify Video Dubbing](/tools/video-dubbing) fait les six étapes de bout en bout. Le clonage vocal est interne ; vous téléchargez une vidéo, choisissez une langue, obtenez un doublage. Catégorie différente des \"outils de création vidéo IA\".",
+      "conclusionTitle": "La version courte",
+      "conclusionContent": "Trois outils, une décision : **Descript** si la plupart de votre montage concerne du contenu d'interview / podcast / enregistrement d'écran où la transcription guide le montage ; **ElevenLabs** si vous avez besoin d'une voix off soignée ou de clonage vocal ; **Runway** si vous avez besoin de b-roll génératif ou de courts clips cinématographiques. Et si votre véritable problème est de doubler une vidéo existante dans la voix de l'orateur original, [essayez Curify](/tools/video-dubbing) — catégorie différente, le clonage vocal est automatique, vous n'avez pas à apprendre à utiliser les trois ci-dessus.",
       "footer": {
         "tags": [
-          "Outils IA",
-          "Création de Contenu",
-          "Productivité",
-          "Marketing",
-          "Design",
-          "Production Vidéo",
-          "Rédaction",
-          "Recherche"
+          "Outils vidéo IA",
+          "Descript",
+          "ElevenLabs",
+          "Runway",
+          "IA pour les créateurs",
+          "IA de montage vidéo",
+          "clonage vocal",
+          "doublage vidéo IA"
         ],
-        "questions": "Vous avez des questions sur les outils d'IA pour la création de contenu ? Contactez nos experts pour des recommandations personnalisées."
+        "questions": "Des questions sur quel outil convient à votre flux de travail ? Contactez-nous via /contact — nous utilisons Curify en plus de ces outils tiers en interne et avons des avis."
       },
-      "metaDescription": "Les 10 outils AI que les créateurs de contenu utilisent réellement en 2026 — doublage, transcription, image, voix. Ce que chacun fait bien et où il échoue.",
-      "seoKeywords": [
-        "meilleurs outils AI 2026",
-        "outils AI pour créateurs",
-        "création de contenu AI",
-        "comparaison d'outils AI"
-      ]
+      "heroImageAlt": "Outils IA pour créateurs de contenu vidéo 2026 : Descript, ElevenLabs, Runway",
+      "heroImage": "/images/best-ai-tools-video-runway.webp",
+      "heroCtaText": "Localisez une vidéo dans une autre langue avec la voix du locuteur original — essayez Curify Video Dubbing",
+      "heroCtaHref": "/tools/video-dubbing"
     },
     "nanoBananaDedicated": {
       "title": "Qu'est-ce que Nano Banana AI ? Le guide complet de la génération visuelle structurée par IA",
@@ -3930,7 +3662,13 @@
         "pipeline vidéo IA",
         "workflow de diffusion",
         "graphismes animés IA"
-      ]
+      ],
+      "heroImage": "/images/ae-vs-comfyui.jpg",
+      "heroImageAlt": "After Effects vs ComfyUI pour les pipelines vidéo AI",
+      "heroCtaLabel": "ESSAYEZ LE PIPELINE",
+      "heroCtaText": "Évitez le débat AE-vs-ComfyUI — exécutez un pipeline vidéo complet dans les outils par lots de Curify",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "Essayer →"
     },
     "qaBotToTaskAgent": {
       "heading": "🏗️ De QA Bot à Task Agent : Un Guide d'Architecture",
@@ -4337,13 +4075,8 @@
       }
     },
     "characterPromptGenerator": {
-      "title": "Générateur de prompts de personnage : 12+ cartes MBTI Univers + Personnages personnalisés",
-      "metaDescription": "Créez des personnages de toutes pièces avec personnalité, nom, âge, sexe — ou réimaginez un personnage connu en tant que carte de personnalité MBTI dans votre univers préféré (Marvel, Breaking Bad, Naruto, Ghibli, Harry Potter, Friends, et plus).",
-      "publishedDate": "2026-05-12",
-      "readTime": "6 min de lecture",
       "category": "Nano Template",
       "heroImageAlt": "Aperçu du générateur de prompts de personnage",
-      "intro": "Que vous souhaitiez concevoir un tout nouveau personnage de toutes pièces ou réimaginer quelqu'un de votre émission préférée en tant que carte de personnalité MBTI, Curify propose un ensemble ciblé de modèles de personnages — chacun avec un formulaire de paramètres spécifique afin que vous sachiez exactement quoi remplir.",
       "whatWeShip": {
         "title": "Ce que nous proposons",
         "intro": "Tous les modèles ci-dessous sont en direct sur Curify avec des exemples sélectionnés. Choisissez en fonction du type de personnage que vous souhaitez créer :",
@@ -4478,35 +4211,6 @@
           ]
         }
       },
-      "whoCanBenefit": {
-        "title": "Qui peut en bénéficier",
-        "writers": {
-          "title": "Écrivains & Narrateurs",
-          "description": "Utilisez la Carte de personnage personnalisé pour concevoir des membres de casting récurrents avec une personnalité cohérente avant de rédiger. Utilisez la Carte de contraste MBTI pour planifier des rivalités et des dynamiques de dialogue."
-        },
-        "artists": {
-          "title": "Artistes numériques & Illustrateurs",
-          "description": "Créez des fiches de référence dans la Carte de profil Kawaii, ou générez des grilles de personnages complètes avec l'Affiche de grille Fandom pour l'inspiration de commissions."
-        },
-        "gameDevelopers": {
-          "title": "Développeurs de jeux",
-          "description": "La Carte de contraste MBTI et la Carte de personnage personnalisé fournissent toutes deux des archétypes de PNJ avec une lecture visuelle et comportementale cohérente en un seul coup."
-        },
-        "creators": {
-          "title": "Créateurs de contenu",
-          "description": "Les cartes MBTI de l'univers (Marvel / Friends / NBA / Ghibli / Classique chinois) sont conçues pour les réseaux sociaux verticaux — insérez un nom de personnage et publiez."
-        }
-      },
-      "proTips": {
-        "title": "Conseils Pro",
-        "tips": [
-          "Associez la personnalité à la palette de couleurs — les personnages colériques fonctionnent dans des rouges chauds, les mélancoliques dans des bleus profonds.",
-          "Pour les cartes de personnage personnalisées, écrivez la personnalité comme 'MBTI + 1-2 traits' (par exemple, 'ENFP, optimiste, agité'). Des invites vagues produisent des portraits vagues.",
-          "Les modèles MBTI de l'univers fonctionnent mieux avec des noms de personnages bien connus. Les noms obscurs ont tendance à dériver.",
-          "Si le type MBTI généré est en désaccord avec la lecture canonique des fans, la carte est toujours utile — elle produit une interprétation alternative qui mérite d'être discutée.",
-          "Utilisez le Fandom Grid Poster pour du contenu social partageable — les grilles thématiques surpassent les publications de personnages uniques."
-        ]
-      },
       "footer": {
         "tags": [
           "Conception de Personnage IA",
@@ -4519,7 +4223,346 @@
           "Profil de Personnage Kawaii"
         ],
         "questions": "Vous avez un univers que vous aimeriez ajouter à la liste MBTI ? Contactez-nous et nous l'examinerons pour le prochain contenu."
-      }
+      },
+      "title": "Générateur de Prompts de Personnages : MBTI pour Naruto, Yellowstone, Marvel, Harry Potter + 8 Autres Univers",
+      "metaDescription": "Découvrez les types de personnalité MBTI pour plus de 35 personnages à travers Naruto, Yellowstone, Marvel, Friends, Harry Potter, Breaking Bad — puis générez la carte avec les modèles spécifiques à l'univers de Curify.",
+      "publishedDate": "2026-05-30",
+      "readTime": "7 min de lecture",
+      "intro": "Vous cherchez \"type de personnalité de Minato\" ou \"type de personnalité de Beth Dutton\" ? Vous êtes au bon endroit. Ce guide présente le MBTI pour plus de 35 personnages les plus recherchés à travers six univers — Naruto, Yellowstone, Marvel, Friends, Harry Potter, Breaking Bad — ainsi que le modèle Curify dans lequel vous pouvez insérer n'importe quel nom pour générer la carte complète. Passez à l'[univers que vous êtes venu chercher](#universes) ou au [tableau de référence rapide MBTI](#mbti-index).",
+      "workedExamples": {
+        "title": "MBTI par Univers — 35+ Personnages Analyés",
+        "intro": "Chaque section d'univers ci-dessous liste les personnages les plus recherchés avec leur type MBTI et un résumé en une ligne. Cliquez sur le lien du modèle en bas de chaque section pour générer la carte complète du personnage avec image.",
+        "universes": [
+          {
+            "name": "Naruto",
+            "slug": "mbti-naruto",
+            "heading": "Personnages MBTI de Naruto",
+            "description": "Le modèle Naruto génère des cartes de personnalité stylées pour le monde des shinobi — esthétique ninja avec des marques de village spécifiques aux personnages et un fond thématique de chakra. Insérez n'importe quel nom dans le modèle ; voici le MBTI des personnages les plus recherchés.",
+            "characters": [
+              {
+                "name": "Minato Namikaze",
+                "mbti": "INFJ-A",
+                "blurb": "Stratégique, altruiste, profondément principiel. Le Flash Jaune pense deux coups à l'avance sur chaque ennemi."
+              },
+              {
+                "name": "Orochimaru",
+                "mbti": "INTJ-A",
+                "blurb": "Calculateur, obsessionnel, méprisant l'ordinaire. L'original Sannin incarne le côté sombre de l'intellect sans retenue."
+              },
+              {
+                "name": "Itachi Uchiha",
+                "mbti": "INFJ-T",
+                "blurb": "Protecteur accablé avec un cadre moral complexe. A sacrifié tout pour une vision que lui seul comprenait."
+              },
+              {
+                "name": "Naruto Uzumaki",
+                "mbti": "ENFP-A",
+                "blurb": "Optimisme sans bornes, personnalité magnétique, conviction inébranlable dans la capacité des gens à changer."
+              },
+              {
+                "name": "Sasuke Uchiha",
+                "mbti": "ISTP-T",
+                "blurb": "Détachement frais, maîtrise technique, conflit intérieur masqué par un extérieur calme."
+              },
+              {
+                "name": "Kakashi Hatake",
+                "mbti": "INTP-T",
+                "blurb": "Analytique, esprit sec, dévie l'émotion par l'intellectualisme. Copie mille jutsu mais reste indéchiffrable."
+              }
+            ]
+          },
+          {
+            "name": "Yellowstone",
+            "slug": "mbti-yellowstone",
+            "heading": "Personnages MBTI de Yellowstone",
+            "description": "Les cartes de modèle de Yellowstone apportent le registre occidental de l'émission — palette en denim et cuir, arrière-plans de ranch, la marque Dutton. Les personnages Dutton les plus recherchés et leur MBTI :",
+            "characters": [
+              {
+                "name": "Beth Dutton",
+                "mbti": "ESTJ-A",
+                "blurb": "Exécutrice impitoyable, loyale envers sa famille, ne fait pas de prisonniers. Beth dirige l'entreprise familiale avec une tronçonneuse et un cocktail."
+              },
+              {
+                "name": "John Dutton",
+                "mbti": "ISTJ-A",
+                "blurb": "Traditionaliste têtu, lié par le devoir, accablé par l'héritage. Le patriarche qui brûlerait le ranch avant de le laisser quitter la famille."
+              },
+              {
+                "name": "Rip Wheeler",
+                "mbti": "ISTP-A",
+                "blurb": "Protecteur loyal, calme sous pression, dévastateur lorsqu'il est trahi. Le cavalier devenu exécuteur."
+              },
+              {
+                "name": "Kayce Dutton",
+                "mbti": "ISFP-T",
+                "blurb": "Calme, principiel, orienté vers l'action. Pris entre deux mondes et essayant d'honorer les deux."
+              },
+              {
+                "name": "Jamie Dutton",
+                "mbti": "INFP-T",
+                "blurb": "Conflit, idéaliste, facilement blessé. L'avocat de la famille dont la boussole morale continue de tourner."
+              }
+            ]
+          },
+          {
+            "name": "Marvel",
+            "slug": "mbti-marvel",
+            "heading": "Personnages MBTI de Marvel",
+            "description": "Le modèle Marvel génère des cartes de personnages MBTI avec des palettes de couleurs spécifiques aux héros et des scènes de pièces isométriques. Choisissez un héros ou un méchant — voici le MBTI des personnages les plus recherchés.",
+            "characters": [
+              {
+                "name": "Tony Stark / Iron Man",
+                "mbti": "ENTP-A",
+                "blurb": "Inventif, charismatique, non conventionnel. Tony gagne des arguments et des batailles par l'improvisation, pas par la préparation."
+              },
+              {
+                "name": "Steve Rogers / Captain America",
+                "mbti": "ISFJ-A",
+                "blurb": "Lié au devoir, traditionnel, le protecteur original. Le cadre moral de Cap a été établi en 1942 et n'a pas changé."
+              },
+              {
+                "name": "Bruce Banner / Hulk",
+                "mbti": "INTJ-T",
+                "blurb": "Stratège brillant retenu par ce qu'il devient lorsque l'émotion prend le dessus. L'homme le plus intelligent de la pièce jusqu'à ce qu'il ne le soit plus."
+              },
+              {
+                "name": "Thor",
+                "mbti": "ESFP-A",
+                "blurb": "Sociable, orienté vers l'action, pense au présent. Digne du marteau parce qu'il choisit de l'être, pas parce qu'il prévoit de l'être."
+              },
+              {
+                "name": "Natasha Romanoff / Black Widow",
+                "mbti": "ISTP-A",
+                "blurb": "Ingénieuse, indépendante, profondément privée. Lit chaque pièce et agit seulement quand elle est sûre."
+              },
+              {
+                "name": "Peter Parker / Spider-Man",
+                "mbti": "INFP-T",
+                "blurb": "Idéaliste, sensible, guidé par des valeurs. Porte le poids de chaque choix parce qu'il croit que les choix comptent."
+              }
+            ]
+          },
+          {
+            "name": "Friends",
+            "slug": "friends-character-mbti",
+            "heading": "Personnages MBTI de Friends",
+            "description": "Les cartes du modèle Friends capturent la chaleur de la sitcom — palette de couleurs de Central Perk, esthétique d'appartement de New York des années 90. Voici le MBTI de chaque membre principal du casting.",
+            "characters": [
+              {
+                "name": "Chandler Bing",
+                "mbti": "ENTP-T",
+                "blurb": "Spirituel, sarcastique, évitant les conflits. Désamorce chaque moment émotionnel avec une réplique."
+              },
+              {
+                "name": "Ross Geller",
+                "mbti": "INTP-T",
+                "blurb": "Intellectuel, maladroit, analytique. Juste sur les dinosaures, faux sur tout le reste."
+              },
+              {
+                "name": "Rachel Green",
+                "mbti": "ENFP-A",
+                "blurb": "Charmante, axée sur l'image, évoluant lentement. L'arc de la fiancée gâtée à la directrice de mode est un chemin de croissance ENFP classique."
+              },
+              {
+                "name": "Monica Geller",
+                "mbti": "ESTJ-A",
+                "blurb": "Organisée, contrôlante, nourrissante par la structure. La chef qui reçoit parce que c'est le seul moyen de contrôler le chaos."
+              },
+              {
+                "name": "Joey Tribbiani",
+                "mbti": "ESFP-A",
+                "blurb": "Sociable, hédoniste, loyal. Vit dans le présent et veut que vous y viviez avec lui."
+              },
+              {
+                "name": "Phoebe Buffay",
+                "mbti": "ENFP-T",
+                "blurb": "Excentrique, intuitive, libre d'esprit. La seule dont le cadre moral vient vraiment d'ailleurs."
+              }
+            ]
+          },
+          {
+            "name": "Harry Potter",
+            "slug": "harry-potter-mbti-infographic",
+            "heading": "Personnages MBTI de Harry Potter",
+            "description": "Le modèle Harry Potter génère des cartes de personnalité à esthétique de sorcier — palette de couleurs de maison, baguette signature, arrière-plan situationnel qui correspond à chaque personnage. Personnages HP les plus recherchés et leur MBTI :",
+            "characters": [
+              {
+                "name": "Harry Potter",
+                "mbti": "ISFP-T",
+                "blurb": "Rebelle silencieux, guidé par des valeurs, agit quand il est poussé. Le héros réticent dont la boussole morale ne vacille jamais."
+              },
+              {
+                "name": "Hermione Granger",
+                "mbti": "ESTJ-A",
+                "blurb": "Liée aux règles, ambitieuse, organisée. La bonne réponse d'abord, à chaque fois — jusqu'à ce que les règles et la bonne réponse entrent en conflit."
+              },
+              {
+                "name": "Ron Weasley",
+                "mbti": "ESFP-T",
+                "blurb": "Loyal, aimant s'amuser, parfois peu sûr de lui. L'ami dont la présence compte plus que sa stratégie."
+              },
+              {
+                "name": "Severus Snape",
+                "mbti": "INTJ-A",
+                "blurb": "Stratégique, amer, avec des profondeurs cachées. A joué le jeu le plus long et le plus douloureux de la série."
+              },
+              {
+                "name": "Albus Dumbledore",
+                "mbti": "INFJ-A",
+                "blurb": "Mentor sage, planificateur à long terme, principled au point d'être cruel. Sait ce que le résultat doit être et l'orchestration."
+              },
+              {
+                "name": "Lord Voldemort",
+                "mbti": "ENTJ-A",
+                "blurb": "En quête de pouvoir, charismatique, impitoyable. A construit toute une idéologie autour de la peur de sa propre mortalité."
+              }
+            ]
+          },
+          {
+            "name": "Breaking Bad",
+            "slug": "mbti-breakingbad",
+            "heading": "Personnages MBTI de Breaking Bad",
+            "description": "Les cartes de modèle de Breaking Bad s'inspirent de l'esthétique désert-méth de l'émission — palette d'Albuquerque, éléments de signature spécifiques aux personnages (le chapeau de Walt, le costume de Saul, le hoodie de Jesse). Inclut les personnages de Better Call Saul.",
+            "characters": [
+              {
+                "name": "Walter White",
+                "mbti": "INTJ-A",
+                "blurb": "Stratège brillant, motivé par l'ego, masqué. L'arc du professeur de chimie se dirige inévitablement vers l'arc du cartel."
+              },
+              {
+                "name": "Jesse Pinkman",
+                "mbti": "ISFP-T",
+                "blurb": "Loyal, émotionnel, lié par la conscience. Le centre moral de la série, même quand personne ne lui a demandé d'être."
+              },
+              {
+                "name": "Saul Goodman / Jimmy McGill",
+                "mbti": "ENTP-T",
+                "blurb": "Rusé, parlant rapidement, opportuniste avec une blessure en forme de frère. Qu'il soit Slippin' Jimmy ou Saul, le mécanisme est le même."
+              },
+              {
+                "name": "Mike Ehrmantraut",
+                "mbti": "ISTJ-A",
+                "blurb": "Opérateur discipliné, code de conduite, parle peu. Le seul personnage de l'émission qui ne fait jamais d'erreur tactique."
+              },
+              {
+                "name": "Gustavo Fring",
+                "mbti": "INTJ-A",
+                "blurb": "Stratège à long terme, extérieur contrôlé, patience glaciaire. A construit un empire sur le principe que le plan lent gagne toujours."
+              },
+              {
+                "name": "Chuck McGill",
+                "mbti": "ISTJ-A",
+                "blurb": "Rigide, principled, amer. Le frère dont le cadre moral est si strict qu'il étrangle chaque relation."
+              }
+            ]
+          }
+        ]
+      },
+      "mbtiIndex": {
+        "title": "Référence rapide MBTI aux personnages",
+        "intro": "Vous cherchez un exemple d'un type MBTI spécifique ? Un personnage présenté par type, avec le modèle Curify qui gère cet univers. Cliquez sur n'importe quel lien de modèle pour générer la carte.",
+        "note": "Pour les types MBTI non couverts ci-dessus (ou les personnages d'univers pour lesquels nous n'avons pas encore de modèle dédié — comme Star Wars, Le Roi Lion, Star Trek), utilisez le modèle [Carte de personnage personnalisée](/nano-template/custom-character-card) — tapez le nom du personnage et le MBTI dans les paramètres et cela génère l'analyse.",
+        "rows": [
+          {
+            "type": "INFJ",
+            "label": "L'Avocat",
+            "character": "Minato Namikaze (Naruto)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "INTJ",
+            "label": "L'Architecte",
+            "character": "Walter White (Breaking Bad)",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "INTP",
+            "label": "Le Logicien",
+            "character": "Ross Geller (Friends)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "INFP",
+            "label": "Le Médiateur",
+            "character": "Jesse Pinkman (Breaking Bad)",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "ISFJ",
+            "label": "Le Défenseur",
+            "character": "Steve Rogers / Captain America (Marvel)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ISTJ",
+            "label": "Le Logisticien",
+            "character": "John Dutton (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ISFP",
+            "label": "L'Aventurier",
+            "character": "Harry Potter (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ISTP",
+            "label": "Le Virtuose",
+            "character": "Rip Wheeler (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ENFJ",
+            "label": "Le Protagoniste",
+            "character": "Mufasa (Le Roi Lion — Carte de Personnage Personnalisée)",
+            "slug": "custom-character-card"
+          },
+          {
+            "type": "ENFP",
+            "label": "Le Campagneur",
+            "character": "Naruto Uzumaki (Naruto)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "ENTJ",
+            "label": "Le Commandant",
+            "character": "Lord Voldemort (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ENTP",
+            "label": "Le Débatteur",
+            "character": "Tony Stark / Iron Man (Marvel)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ESFJ",
+            "label": "Le Consul",
+            "character": "Molly Weasley (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ESTJ",
+            "label": "L'Exécutif",
+            "character": "Beth Dutton (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ESFP",
+            "label": "L'Animateur",
+            "character": "Joey Tribbiani (Friends)",
+            "slug": "amis-caractère-mbti"
+          },
+          {
+            "type": "ESTP",
+            "label": "L'Entrepreneur",
+            "character": "Han Solo (Star Wars — Carte de personnage personnalisée)",
+            "slug": "carte-de-personnage-personnalisée"
+          }
+        ]
+      },
+      "heroCtaText": "Ouvrez le modèle MBTI Marvel — tapez le nom d'un héros ou d'un méchant et obtenez la carte d'analyse",
+      "heroCtaHref": "/nano-template/mbti-marvel"
     },
     "curifyNanoBananaTemplateTips": {
       "title": "10 Conseils pour Utiliser les Modèles Nano Banana de Curify",
@@ -4940,7 +4983,6 @@
       "modelsContent": "**Sports Battle** ([/nano-template/sports-battle](/nano-template/sports-battle)) prend deux noms de joueurs — `player_left` et `player_right` — et rend un poster de comparaison de style bande dessinée vertical 3:4 : deux portraits en pied, un graphique VS au centre, des panneaux de statistiques, des surnoms, des étiquettes d'identité, des effets de lueur néon. Le prompt de base spécifie déjà les uniformes d'équipe, les poses dynamiques et les arrière-plans thématiques d'équipe — vous n'avez qu'à fournir les noms. Idéal pour *Messi contre Cristiano Ronaldo*, *Mbappé contre Vinícius Júnior*, *Haaland contre Mbappé*. Le modèle est déjà livré avec un exemple Messi contre Ronaldo afin que vous puissiez voir la sortie avant de générer.\n\n**Celebrity & Movie Group Poster** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)) prend un seul paramètre `star_movie_group` et rend un poster d'ensemble au look officiel : plusieurs figures en composition dynamique, éclairage cinématographique, arrière-plan en dégradé doux, police de titre minimaliste de luxe, détail de qualité magazine de mode. Les exemples de placeholders incluent *Marvel Avengers*, *Blackpink*, *NBA Legends* — même modèle, fournissez *Équipe nationale du Brésil 2026* ou *Équipe de la Coupe du Monde d'Argentine 2026* et vous obtenez la version alignement d'équipe.\n\nLes deux modèles fonctionnent sur le pipeline Pro de Nano Banana de Curify, donc les prompts ci-dessous se rendent avec le style de base du modèle déjà verrouillé — vous n'avez qu'à fournir les variables.",
       "howTitle": "Comment expédier un poster du Brésil ou de l'Argentine en 60 secondes",
       "step1Title": "Méthode 1 : Rivalité 1v1 — Modèle Sports Battle",
-      "step1Content": "**Idéal pour** : posters de derby, contenu de prévision de match de la Coupe du Monde, engagement des fans avant un match à élimination directe.\n\nOuvrez [/nano-template/sports-battle](/nano-template/sports-battle). Deux champs de texte — `player_left` et `player_right`. Les rivalités de football les plus recherchées pour commencer :\n\n- `Lionel Messi` contre `Cristiano Ronaldo` — le débat GOAT, intemporel\n- `Kylian Mbappé` contre `Vinícius Júnior` — la nouvelle rivalité Brésil contre France\n- `Erling Haaland` contre `Kylian Mbappé` — les porteurs de flambeau post-Messi/Ronaldo\n- `Lamine Yamal` contre `Vinícius Júnior` — duel d'ailiers Espagne-Brésil\n- `Neymar Jr` contre `Lionel Messi` — énergie de réunion à Barcelone\n\nGénérez. Le modèle rend un poster VS de style bande dessinée avec les deux joueurs en kit national, des panneaux de statistiques, des étiquettes d'identité et le graphique VS au centre. La sortie par défaut est verticale 3:4 — parfaite pour les histoires Instagram, TikTok, Pinterest.\n\n**Exemple en direct** dans la galerie : [le poster Messi contre Ronaldo](/nano-template/sports-battle) — même modèle, même prompt, juste deux entrées de nom.",
       "step2Title": "Méthode 2 : Équipe nationale complète — Modèle Celebrity Group Poster",
       "step2Content": "**Idéal pour** : révélations d'équipe la veille du tournoi, graphiques de soirée de visionnage, branding de ligue de football fantasy, en-têtes de médias sociaux.\n\nOuvrez [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster). Un champ de texte — `star_movie_group`. Pour la Coupe du Monde 2026, les équipes avec le plus de volume de recherche pour commencer :\n\n- `Équipe nationale du Brésil 2026`\n- `Équipe de la Coupe du Monde d'Argentine 2026`\n- `Équipe nationale de France 2026`\n- `Équipe nationale d'Espagne 2026`\n- `Équipe de la Coupe du Monde d'Angleterre 2026`\n- `Équipe nationale d'Allemagne 2026`\n- `Équipe nationale du Portugal 2026`\n- `Équipe nationale du Maroc 2026`\n\nLe modèle rend plusieurs figures emblématiques dans une composition dynamique dramatique avec éclairage cinématographique, arrière-plan en dégradé et texte de titre minimaliste de luxe — le look d'un poster d'équipe officiel Adidas / Nike. Ajoutez l'année (`2026`) pour que le modèle se concentre sur l'équipe actuelle plutôt que sur des alignements historiques.",
       "step3Title": "Prompt de Poster Cinématographique Brésil 2026",
@@ -4956,7 +4998,14 @@
       "curifyTitle": "Générez le vôtre — Liens directs vers les modèles",
       "curifyContent": "Évitez l'ingénierie de prompt et allez directement aux modèles avec les paramètres pré-remplis :\n\n**Sports Battle (rivalité 1v1)** : [/nano-template/sports-battle](/nano-template/sports-battle) — fournissez `player_left` et `player_right`. Le prompt de base du modèle est verrouillé sur le style de poster VS de bande dessinée ; vous fournissez seulement les noms. La galerie existante comprend [Messi contre Ronaldo](/nano-template/sports-battle), [Federer contre Nadal](/nano-template/sports-battle), [Ali contre Tyson](/nano-template/sports-battle), [Hamilton contre Schumacher](/nano-template/sports-battle) pour référence.\n\n**Celebrity Group Poster (équipe complète)** : [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — fournissez `star_movie_group` avec le nom de l'équipe (par exemple, `Équipe nationale du Brésil 2026`). La galerie existante couvre des groupes d'ensemble à travers les sports (NBA Legends, Tennis Legends, Racing Legends), le divertissement (Friends, Stranger Things, BTS, Blackpink, Game of Thrones) et l'anime — même modèle, groupe différent.\n\nPour plus de prompts sur le thème du sport, le hub [/topics/character](/topics/character) indexe des modèles axés sur les personnages à travers le sport, le jeu, le film et le divertissement. Pour le répertoire Nano Banana curé à travers chaque famille de prompts, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) est le catalogue.",
       "conclusionTitle": "Chaque autre équipe nationale — Même prompt, changez le nom",
-      "conclusionContent": "Les deux invites ci-dessus se généralisent. Même modèle, changez le nom de l'équipe, obtenez les couleurs et la palette du kit correctes :\n\n- **France** : `Équipe nationale de France 2026` — bleu marine + blanc + rouge, Stade de France, titre `FRANCE 2026`\n- **Allemagne** : `Équipe nationale d'Allemagne 2026` — kit blanc + accents noirs + drapeau rouge/or, Allianz Arena, titre `DEUTSCHLAND 2026`\n- **Espagne** : `Équipe nationale d'Espagne 2026` — rouge + jaune safran + marine, Santiago Bernabéu, titre `ESPAÑA 2026`\n- **Angleterre** : `Équipe de la Coupe du Monde d'Angleterre 2026` — blanc + rouge de Saint-Georges + marine, Wembley, titre `ENGLAND 2026`\n- **Portugal** : `Équipe nationale du Portugal 2026` — rouge foncé + col vert + accent doré, Estádio José Alvalade, titre `PORTUGAL 2026`\n- **Maroc** : `Équipe nationale du Maroc 2026` — rouge + étoile verte + bord blanc, Grand Stade Hassan II, titre `LE MAROC 2026`\n- **Mexique** : `Équipe nationale du Mexique 2026` (pays hôte) — vert + blanc + rouge, Estadio Azteca, titre `MÉXICO 2026`\n- **États-Unis** : `Équipe de la Coupe du Monde des États-Unis 2026` (pays hôte) — marine + rayures rouges + étoile blanche, SoFi Stadium, titre `USA 2026`\n- **Japon** : `Équipe nationale du Japon 2026` — kit bleu samouraï + accent rouge soleil levant + blanc, Saitama Stadium, titre `日本 2026`\n\nLa structure de l'invite reste identique — description du kit, toile de fond du stade, palette de couleurs, texte du titre, format vertical 3:4. Permutez le nom de l'équipe et la palette ; tout le reste est repris du modèle de base de l'invite.\n\nSi vous expédiez une affiche que vous aimez, les hubs [/topics/character](/topics/character) et [/topics/sports](/topics/sports) sont où des modèles similaires apparaissent — batailles de personnages, affiches de groupe de films, listes de fans, tous fonctionnant sur le même pipeline Curify."
+      "conclusionContent": "Les deux invites ci-dessus se généralisent. Même modèle, changez le nom de l'équipe, obtenez les couleurs et la palette du kit correctes :\n\n- **France** : `Équipe nationale de France 2026` — bleu marine + blanc + rouge, Stade de France, titre `FRANCE 2026`\n- **Allemagne** : `Équipe nationale d'Allemagne 2026` — kit blanc + accents noirs + drapeau rouge/or, Allianz Arena, titre `DEUTSCHLAND 2026`\n- **Espagne** : `Équipe nationale d'Espagne 2026` — rouge + jaune safran + marine, Santiago Bernabéu, titre `ESPAÑA 2026`\n- **Angleterre** : `Équipe de la Coupe du Monde d'Angleterre 2026` — blanc + rouge de Saint-Georges + marine, Wembley, titre `ENGLAND 2026`\n- **Portugal** : `Équipe nationale du Portugal 2026` — rouge foncé + col vert + accent doré, Estádio José Alvalade, titre `PORTUGAL 2026`\n- **Maroc** : `Équipe nationale du Maroc 2026` — rouge + étoile verte + bord blanc, Grand Stade Hassan II, titre `LE MAROC 2026`\n- **Mexique** : `Équipe nationale du Mexique 2026` (pays hôte) — vert + blanc + rouge, Estadio Azteca, titre `MÉXICO 2026`\n- **États-Unis** : `Équipe de la Coupe du Monde des États-Unis 2026` (pays hôte) — marine + rayures rouges + étoile blanche, SoFi Stadium, titre `USA 2026`\n- **Japon** : `Équipe nationale du Japon 2026` — kit bleu samouraï + accent rouge soleil levant + blanc, Saitama Stadium, titre `日本 2026`\n\nLa structure de l'invite reste identique — description du kit, toile de fond du stade, palette de couleurs, texte du titre, format vertical 3:4. Permutez le nom de l'équipe et la palette ; tout le reste est repris du modèle de base de l'invite.\n\nSi vous expédiez une affiche que vous aimez, les hubs [/topics/character](/topics/character) et [/topics/sports](/topics/sports) sont où des modèles similaires apparaissent — batailles de personnages, affiches de groupe de films, listes de fans, tous fonctionnant sur le même pipeline Curify.",
+      "heroImage": "/images/nano_insp/template-sports-battle-Messi-vs-Ronaldo.jpg",
+      "heroImageAlt": "Affiche cinématographique de la rivalité de football Messi vs Ronaldo — aperçu du modèle Sports Battle",
+      "heroCtaLabel": "ESSAYEZ LE MODÈLE",
+      "heroCtaText": "Générez votre propre affiche cinématographique Messi vs Ronaldo (ou toute rivalité de football)",
+      "heroCtaHref": "/nano-template/sports-battle",
+      "heroCtaButton": "Générer →",
+      "step1Content": "**Idéal pour** : posters de derby, contenu de prévision de match de la Coupe du Monde, engagement des fans avant un match à élimination directe.\n\nOuvrez [/nano-template/sports-battle](/nano-template/sports-battle). Deux champs de texte — `player_left` et `player_right`. Les rivalités de football les plus recherchées pour commencer :\n\n- `Lionel Messi` contre `Cristiano Ronaldo` — le débat GOAT, intemporel\n- `Kylian Mbappé` contre `Vinícius Júnior` — la nouvelle rivalité Brésil contre France\n- `Erling Haaland` contre `Kylian Mbappé` — les porteurs de flambeau post-Messi/Ronaldo\n- `Lamine Yamal` contre `Vinícius Júnior` — duel d'ailiers Espagne-Brésil\n- `Neymar Jr` contre `Lionel Messi` — énergie de réunion à Barcelone\n\nGénérez. Le modèle rend un poster VS de style bande dessinée avec les deux joueurs en kit national, des panneaux de statistiques, des étiquettes d'identité et le graphique VS au centre. La sortie par défaut est verticale 3:4 — parfaite pour les histoires Instagram, TikTok, Pinterest.\n\n**Exemple en direct** dans la galerie : [le poster Messi contre Ronaldo](/nano-template/sports-battle) — même modèle, même prompt, juste deux entrées de nom."
     },
     "onePersonCompaniesVs100PersonTeams": {
       "title": "Les entreprises unipersonnelles cartonnent. Votre équipe de 100 personnes est un fardeau.",
@@ -4980,6 +5029,99 @@
       "conclusionContent": "Le choix pour les dirigeants de PME est binaire. Restructurer pour permettre à vos 10 % les plus performants d'opérer comme une flotte de puissances unipersonnelles, ou regarder un seul concurrent avec l'IA démolir absolument votre équipe de 100 personnes.\n\nCes rôles traditionnels que vous pensez être des atouts aujourd'hui ? Ils seront des passifs au bilan d'ici l'année prochaine. La fenêtre pour redessiner avec le moral intact se ferme plus vite que la plupart des dirigeants ne le réalisent — au moment où le ratio effectif-sortie est visible pour les investisseurs, le redessin n'est plus un choix.",
       "challengesContent": "Les cinq responsabilités à repérer :\n\n| Problème | Symptôme que vous voyez quotidiennement | Pourquoi l'IA change la donne |\n|---|---|---|\n| Goulot d'étranglement d'exécution | Se contenter d'attendre 17h, théâtre de travail inutile | Les workflows agentiques gèrent l'exécution routinière de bout en bout |\n| Paradoxe de spécification | Heures de réunions, zéro alignement | Si vous pouvez le spécifier clairement à un humain, alimentez-le à un LLM |\n| Gestion sans direction | Nouvelle stratégie lundi, nouveau pivot mardi | Les managers devraient orchestrer les résultats, pas suivre les tâches |\n| Collaboration en silo | Négociations diplomatiques inter-équipes | Les pipelines agentiques partagés font tomber les murs |\n| Traînée émotionnelle | L'anxiété descend, le désengagement mental monte | L'énergie se concentre sur la construction, pas sur la politique |\n\n> Les humains devraient gérer l'ambiguïté ; l'IA devrait gérer l'exécution.\n\nNous faisions semblant que c'était inévitable. L'IA a changé la donne.",
       "curifyContent": "Nous consultons des leaders de PME qui ne veulent pas être la prochaine histoire d'avertissement. Nous ne devinons pas.\n\n1. **Cartographiez vos points de friction humain à humain actuels** — réunions, transferts, boucles de exigences. Où l'ambiguïté meurt-elle dans une présentation ? Où l'exécution est-elle bloquée dans un ticket Jira ?\n2. **Identifiez quels 20 % de rôles sont vulnérables** — non pas pour licencier, mais pour redéfinir. Quels emplois sont principalement de l'orchestration qu'un workflow agentique peut absorber ?\n3. **Construisez un pilote IA + org de 90 jours** qui maintient le moral élevé et la vitesse mesurable. Choisissez un workflow, instrumentez le avant/après, expédiez la version agentique, prouvez l'augmentation.\n\n> Vous n'avez pas besoin de devenir un fondateur solo. Vous devez arrêter de gérer une organisation de 100 personnes comme si c'était 2019."
+    },
+    "portugalSoccerPosterPrompts": {
+      "title": "Prompts d'affiche de football AI du Portugal : Modèles de la Coupe du Monde 2026",
+      "metaDescription": "Générez des affiches cinématographiques de football du Portugal avec deux modèles Nano Banana — Sports Battle pour les rivalités de Ronaldo, Affiche de Groupe pour l'équipe de la Seleção. Copiez les prompts.",
+      "seoKeywords": "prompt portugal, prompt ai portugal, prompt ronaldo portugal, prompt affiche portugal, prompt coupe du monde portugal, prompt seleção 2026, affiche de football ai portugal, bataille sportive ronaldo, nano banana portugal, affiche cinématographique portugal, coupe du monde fifa 2026 ai",
+      "date": "30 mai 2026",
+      "readTime": "9 min de lecture",
+      "intro": "Le Portugal entre dans la Coupe du Monde 2026 avec le dernier arc de tournoi de Cristiano Ronaldo encore en jeu, le milieu de terrain Bernardo Silva–Bruno Fernandes portant le poids, et une génération d'attaquants (Rafael Leão, João Félix, Pedro Neto, Diogo Jota) qui s'accordent enfin. Les requêtes de recherche le reflètent déjà — \"prompt ai portugal\", \"prompt ronaldo portugal\", \"prompt coupe du monde portugal\". Deux modèles Curify Nano Banana gèrent le travail de bout en bout : Sports Battle pour les affiches de rivalité (Ronaldo contre Messi, Ronaldo contre Mbappé, Bernardo Silva contre Bellingham), et Affiche de Groupe Célébrité pour la composition complète de la Seleção. Ce guide vous livre une affiche cinématographique du Portugal en moins de 60 secondes, avec le texte du prompt, la palette et la forme des paramètres.",
+      "whatIsTitle": "Qu'est-ce qui rend une affiche du Portugal cinématographique",
+      "whatIsContent": "Trois ingrédients séparent un rendu AI générique d'une affiche qui ressemble à ce que Nike aurait pu expédier pour la campagne 2026.\n\n**Action dynamique plutôt que pose statique.** Un joueur immobile en maillot du Portugal ressemble à une photo de stock. Un joueur en plein coup de pied retourné, le célèbre *SIUUU* de Ronaldo, Bernardo Silva passant avec les bras écartés — cela ressemble à des affiches. Les verbes d'action dans le prompt font la majeure partie du travail — *en plein coup*, *saut de célébration*, *plan héroïque en contre-plongée*, *coup de pied aérien*.\n\n**Palette portugaise.** Portugal = rouge foncé (Vinho do Porto) + vert atlantique + or chaud + une touche de bleu azulejo pour la profondeur du patrimoine. Le maillot Nike actuel utilise un rouge proche de `#C8102E` avec des bordures vertes sur le col et les manches. Ne tombez pas dans un rouge vif de camion de pompiers — la palette nationale portugaise est plus sombre, plus proche du vin, avec le vert comme accent et non comme couleur principale. Obtenez la palette correcte et l'affiche sera celle du Portugal, pas un maillot générique.\n\n**Fond de stade et lumière de Lisbonne.** Un stade flou avec des lumières de foule derrière le joueur ancre l'image comme un moment de jour de match. Des stades portugais spécifiques fonctionnent encore mieux — *Estádio José Alvalade à l'heure dorée*, *Estádio da Luz sous les projecteurs*, *Estádio do Dragão au crépuscule*. L'indice de lumière porte la moitié du poids cinématographique ; l'heure dorée de Lisbonne a sa propre chaleur que la lumière brésilienne ou anglaise n'a pas.",
+      "modelsTitle": "Deux modèles Curify qui gèrent le travail",
+      "howTitle": "Comment expédier une affiche du Portugal en 60 secondes",
+      "step1Title": "Méthode 1 : Rivalité 1v1 — Modèle de Bataille Sportive",
+      "step1Content": "**Idéal pour** : aperçus de matchs de phase à élimination directe, contenu de fans ancré par Ronaldo, affiches de derby pour les clubs de la Liga Portugal.\n\nOuvrez [/nano-template/sports-battle](/nano-template/sports-battle). Deux champs de texte — `player_left` et `player_right`. Les rivalités les plus recherchées pour commencer :\n\n- `Cristiano Ronaldo` contre `Lionel Messi` — le débat éternel sur le GOAT, le volume de recherche le plus élevé sur la plateforme\n- `Cristiano Ronaldo` contre `Kylian Mbappé` — passage générationnel, cadre de rivalité Portugal-France\n- `Bernardo Silva` contre `Jude Bellingham` — duel de milieu de terrain Portugal-Angleterre, génération actuelle\n- `Rafael Leão` contre `Vinícius Júnior` — affrontement d'ailiers Portugal-Brésil\n- `Bruno Fernandes` contre `Luka Modrić` — meneur contre meneur, énergie vétéran\n\nGénérez. Le modèle rend une affiche VS de style bande dessinée avec les deux joueurs en maillot de leur équipe nationale, des panneaux de statistiques, des étiquettes d'identité et le graphique VS au centre. La sortie par défaut est verticale 3:4 — parfaite pour les histoires Instagram, TikTok, Pinterest.\n\n**Exemple en direct** dans la galerie : [l'affiche Messi contre Ronaldo](/nano-template/sports-battle) — même modèle, même forme de prompt, juste deux entrées de nom.",
+      "step2Title": "Méthode 2 : Sélection Complète — Modèle d'Affiche de Groupe Célébrité",
+      "step2Content": "**Idéal pour** : révélations d'équipe à la veille du tournoi, graphiques de soirée de visionnage, branding de ligue de fantaisie Liga Portugal, en-têtes de médias sociaux pour la course à la Coupe du Monde 2026.\n\nOuvrez [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster). Un champ de texte — `star_movie_group`. Pour la course du Portugal en 2026 :\n\n- `Équipe Nationale du Portugal 2026` — ensemble générique (le modèle choisit les figures emblématiques)\n- `Équipe de la Coupe du Monde 2026 du Portugal avec Ronaldo` — ancré par Ronaldo, bon pour la narration du capitaine\n- `Sélection des Quinas 2026 du Portugal` — utilise l'identité de l'équipe en langue portugaise, le modèle s'ancre sur des indices culturels portugais\n- `Ligne d'Attaque 2026 du Portugal — Leão, Félix, Neto, Jota` — focus étroit sur le noyau offensif\n\nLe modèle rend plusieurs figures emblématiques dans une composition dynamique dramatique avec un éclairage cinématographique, un arrière-plan en dégradé et un texte de titre minimaliste de luxe — le look d'une affiche officielle de la Seleção de Nike. Ajoutez l'année (`2026`) pour que le modèle s'ancre sur l'équipe actuelle plutôt que sur des compositions historiques.",
+      "step3Title": "Prompt d'Affiche Cinématographique du Portugal 2026",
+      "step3Content": "Déposez ceci directement dans le champ `star_movie_group` du modèle d'Affiche de Groupe Célébrité, ou utilisez-le comme prompt libre sur Nano Banana Pro / GPT Image 2 :\n\n```\nÉquipe Nationale du Portugal 2026 — équipe complète en maillot domicile rouge foncé emblématique de la Seleção avec bordure verte et blason doré, composition de groupe dynamique avec Cristiano Ronaldo, Bernardo Silva, Bruno Fernandes, Rafael Leão, João Félix en poses héroïques au centre. Fond de l'Estádio José Alvalade à l'heure dorée avec des lumières de foule et des banderoles du drapeau portugais. Étalonnage des couleurs cinématographiques chaudes — rouge vinho-do-Porto + vert atlantique + accent doré, touche de bleu azulejo. Photoréaliste, netteté de magazine de mode, éclairage dramatique en contre-jour, arrière-plan en dégradé doux, titre en langue portugaise minimaliste de luxe \"PORTUGAL 2026\" en gras doré serif. Détails ultra 4K, sans filigranes, format vertical 3:4.\n```\n\n**Palette de couleurs à spécifier** : `#C8102E` (rouge foncé du maillot), `#006847` (vert du maillot), `#FFD700` (accent doré), `#0072CE` (bordure bleue azulejo), tons chauds de l'heure dorée de Lisbonne. Spécifiez explicitement la palette dans le prompt pour une meilleure cohérence des couleurs à travers les rendus.\n\n**Ce qu'il faut échanger** : changez la liste des joueurs (l'équipe change à chaque tournoi — les compositions pré-2026 et post-Ronaldo se lisent différemment), le stade (Estádio José Alvalade / Estádio da Luz / Estádio do Dragão), et le texte du titre. Tout le reste reste.",
+      "step4Title": "Prompt de Bataille 1v1 Ancré par Ronaldo",
+      "step5Title": "Paramètres & Mots-clés Qui Font Bouger le Dial Cinématographique",
+      "step5Content": "Une fois que vous avez expédié la première affiche, ces ajustements sont là où la qualité s'accumule à travers 50 rendus.\n\n**Objectif / cadrage** : `objectif portrait 85 mm` (compresse l'arrière-plan, met en valeur le joueur), `prise de vue d'action grand angle` (échelle de stade), `composition héroïque en contre-plongée` (fait paraître Ronaldo plus grand — en réalité plus grand que la caméra). Pour les compositions d'équipe : `plan moyen cinématographique` avec le groupe remplissant le cadre.\n\n**Éclairage** : `heure dorée de Lisbonne` (la lumière chaude-orange spécifique de l'après-midi à Lisbonne), `éblouissement des projecteurs` (drame de match nocturne à Alvalade / Luz / Dragão), `éclairage en contre-jour` (pop de silhouette), `rayons de dieu volumétriques` (atmosphère de stade à travers la brume des lumières de stade).\n\n**Vocabulaire d'étalonnage des couleurs** : `étalonnage cinématographique teal-orange`, `étalonnage saturé de la palette portugaise`, `étalonnage rouge foncé vin`, `étalonnage photographie de sport Nike`, `étalonnage archive Sporting CP`. Cela déclenche les bons clusters de référence dans les données d'entraînement du modèle.\n\n**Détails du maillot** : `détail net du blason du Portugal`, `broderie nette du blason des Quinas`, `blason de la Seleção brodé`. Les Quinas (les cinq petits blasons dans les armoiries portugaises) sont l'ancre de la marque — le modèle a tendance à le rendre comme un vague disque doré à moins que vous ne le nommiez.\n\n**Indices patrimoniaux** : `bannière de drapeau de l'ère des navigateurs lusitaniens`, `panneau de fond en motif de carreaux azulejo`, `bordure en filigrane doré de l'ère des découvertes`. Cela pousse le modèle vers une culture visuelle spécifique au Portugal et loin d'une esthétique générique de football européen. Utilisez avec parcimonie — un indice patrimonial par affiche, sinon cela se lit comme un kitsch thématique.\n\n**Indices négatifs** : `pas de visages flous`, `pas de membres supplémentaires`, `pas de numéros de maillot déformés`, `pas d'indices de couleur espagnols ou brésiliens` (le modèle dérive parfois vers le bleu ciel ou le jaune si vous ne supprimez pas).",
+      "toolsTitle": "Outils AI Comparés pour la Génération d'Affiches du Portugal",
+      "challengesTitle": "Où les affiches AI du Portugal échouent encore (et les solutions)",
+      "challengesContent": "Trois modes d'échec spécifiques aux affiches du Portugal, et l'atténuation côté prompt :\n\n**Le rouge dérive trop clair.** Le modèle par défaut utilise un rouge de camion de pompiers (`#FF0000`) lorsque vous dites \"rouge du Portugal\" — trop saturé, ressemble à du espagnol ou polonais. **Solution** : nommez la couleur spécifiquement (`rouge foncé vinho-do-Porto`, `rouge ton vin`, `#C8102E désaturé`). Le rouge du maillot portugais a plus de profondeur et de sous-ton brun que le rouge générique par défaut.\n\n**Le blason des Quinas ressort comme un disque doré.** Les armoiries portugaises avec les cinq petits blasons sont complexes ; le modèle les abstrait en une tache dorée à moins d'être invité. **Solution** : `détail net du blason des Quinas, cinq petits blasons visibles en motif croisé, filigrane doré`. Même dans ce cas, attendez-vous à environ 70 % de précision — pour un travail client, compositez le vrai blason dans Figma après le rendu.\n\n**Inexactitude du visage sur Ronaldo.** Les modèles à code fermé ne rendront pas la ressemblance exacte de Ronaldo (par conception, et de plus en plus appliquée). **Solution** : misez sur le cadre \"inspiré par\" — décrivez le style de jeu, le type de corps (`grande stature athlétique, mâchoire définie, cheveux noirs lissés`), la pose de célébration SIUUU. Le modèle de Bataille Sportive de Curify utilise une stylisation de bande dessinée, qui cache l'écart de ressemblance par conception — le style artistique de bande dessinée stylise le visage de sorte que le manque d'exactitude photographique se lise comme intentionnel.",
+      "curifyTitle": "Générez le vôtre — Liens directs vers les modèles",
+      "curifyContent": "Évitez l'ingénierie de prompt et allez directement aux modèles avec les paramètres pré-remplis :\n\n**Bataille Sportive (rivalité 1v1)** : [/nano-template/sports-battle](/nano-template/sports-battle) — fournissez `player_left` (`Cristiano Ronaldo`) et `player_right` (`Lionel Messi`, `Kylian Mbappé`, `Lamine Yamal`, `Vinícius Júnior`, qui que ce soit). Le prompt de base du modèle est verrouillé au style d'affiche VS de bande dessinée ; vous n'avez qu'à fournir les noms.\n\n**Affiche de Groupe Célébrité (Seleção)** : [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — fournissez `star_movie_group` avec `Équipe Nationale du Portugal 2026` ou l'une des variantes ci-dessus. Le modèle gère l'éclairage cinématographique, le dégradé et le titre en serif de luxe.\n\nPour plus de prompts sur le thème du sport, le hub [/topics/character](/topics/character) indexe des modèles axés sur les personnages dans le sport, le jeu, le film et le divertissement. Pour le répertoire Nano Banana organisé à travers chaque famille de prompts, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) est le catalogue. Pour le post frère sur le Brésil + l'Argentine dans cette série, consultez [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts).",
+      "conclusionTitle": "Autres Pays — Même Modèle, Échangez le Nom",
+      "modelsContent": "**Bataille Sportive** ([/nano-template/sports-battle](/nano-template/sports-battle)) prend deux noms de joueurs — `player_left` et `player_right` — et génère une affiche de comparaison verticale au style bande dessinée 3:4 : deux portraits en pied, un graphique VS au centre, des panneaux de statistiques, des surnoms, des étiquettes d'identité, des effets de néon. Le prompt de base spécifie déjà les uniformes d'équipe, les poses dynamiques et les arrière-plans thématiques d'équipe — vous n'avez qu'à fournir les noms. Idéal pour *Ronaldo contre Messi*, *Ronaldo contre Mbappé*, *Bernardo Silva contre Bellingham*, *Bruno Fernandes contre Modrić*. Le modèle est déjà livré avec un exemple Messi-contre-Ronaldo pour que vous puissiez voir le rendu avant de générer.\n\n**Affiche de Groupe Célébrité & Film** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)) prend un seul paramètre `star_movie_group` et génère une affiche d'ensemble au look officiel : plusieurs figures en composition dynamique, éclairage cinématographique, arrière-plan en dégradé doux, police de titre minimaliste de luxe, détail de qualité magazine de mode. Fournissez *Équipe Nationale du Portugal 2026* et vous obtiendrez la version complète de la composition de la Seleção.\n\nLes deux modèles fonctionnent sur le pipeline Pro de Nano Banana de Curify, donc les prompts ci-dessous se rendent avec le style de base du modèle déjà verrouillé — vous n'avez qu'à fournir les variables.",
+      "toolsContent": "Les modèles de Curify fonctionnent sur Nano Banana Pro en arrière-plan. Si vous créez le vôtre en dehors du moteur de modèle, voici comment les meilleurs modèles de 2026 se comparent pour ce cas d'utilisation spécifique :\n\n| Outil | Meilleur pour les affiches du Portugal | Force | Faiblesse |\n|---|---|---|---|\n| **Nano Banana Pro** (Gemini 3 Pro Image) | ★★★★★ | Raisonnement spatial pour des prises de vue de groupe multi-figures ; ancrage de recherche Google pour l'équipe actuelle de la Seleção ; édition conversationnelle (\"échangez João Félix contre Rafael Leão, gardez l'éclairage\") | Moins de flair éditorial que Midjourney dès le départ |\n| **GPT Image 2** (ChatGPT) | ★★★★ | Itération conversationnelle, scènes multi-éléments précises, inclus avec ChatGPT Plus | Les filtres de sécurité agressifs rejettent certains prompts de ressemblance avec Ronaldo |\n| **Midjourney v7** | ★★★★ | Meilleur esthétisme / étalonnage des couleurs ; le ton rouge vinho-do-Porto se pose naturellement | Pas d'API ; rend la ressemblance littérale des joueurs difficile ; moins bon sur les prises de vue de groupe multi-figures |\n| **Stable Diffusion 3.5 Large** | ★★★ | Contrôle total via ControlNets (utilisez une référence de pose de Ronaldo) ; coût par image nul après matériel | La qualité dès le départ est inférieure à celle des leaders à code fermé sans un LoRA ajusté |\n\nPour le flux de travail que ce post décrit, **restez sur Nano Banana Pro via les modèles Curify** — le modèle impose l'esthétique d'affiche de marque afin que vous n'ayez pas à concevoir la palette rouge foncé portugaise de zéro à chaque rendu. Pour la comparaison plus approfondie, consultez [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison).",
+      "step4Content": "Si l'Affiche de Groupe est trop chargée pour votre cas d'utilisation, le tir solo-vs-rival de la Bataille Sportive de Ronaldo attire davantage pour les canaux axés sur l'engagement (TikTok, Instagram Reels) :\n\n```\nCristiano Ronaldo contre Kylian Mbappé — affiche VS de style bande dessinée, les deux joueurs en pose d'action en plein mouvement, Ronaldo à gauche en maillot rouge foncé du Portugal avec le célèbre geste de célébration SIUUU, Mbappé à droite en maillot bleu marine de la France en pleine course. Format vertical 3:4, éclairage en néon, étalonnage des couleurs dramatiques teal-orange, panneaux de statistiques en bas (buts, âge, club). Graphique VS au centre en or métallique avec effet d'arc de foudre. L'Estádio José Alvalade s'estompe en arrière-plan du Stade de France, ciel à l'heure dorée partagé entre l'orange de Lisbonne et le bleu de Paris. Art de ligne de bande dessinée, ombrage en demi-teinte, définition d'ombre dramatique. Affiche cinématographique, détail 4K, sans filigranes.\n```\n\n**Ce qu'il faut échanger** : tout autre rival à droite — Messi, Bellingham, Haaland, Vinícius Jr. L'arrière-plan de stade partagé fonctionne pour n'importe quel affrontement Portugal-pays.",
+      "conclusionContent": "Les deux prompts du Portugal ci-dessus se généralisent à travers le reste du champ de la Coupe du Monde 2026. Même modèle, échangez le nom de l'équipe, obtenez les couleurs et la palette du maillot correctes :\n\n- **Brésil** : `Équipe Nationale du Brésil 2026` — jaune + vert + accent bleu, Maracanã, titre `BRASIL 2026` — voir [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts)\n- **Argentine** : `Équipe de la Coupe du Monde 2026 de l'Argentine` — bleu ciel + blanc + or, Estadio Monumental, titre `ARGENTINA 2026` — [même post frère](/blog/brazil-argentina-soccer-poster-prompts)\n- **France** : `Équipe Nationale de France 2026` — bleu marine + blanc + rouge, Stade de France, titre `FRANCE 2026`\n- **Espagne** : `Équipe Nationale d'Espagne 2026` — rouge + jaune safran + bleu marine, Santiago Bernabéu, titre `ESPAÑA 2026`\n- **Allemagne** : `Équipe Nationale d'Allemagne 2026` — blanc + noir + rouge/or, Allianz Arena, titre `DEUTSCHLAND 2026`\n- **Maroc** : `Équipe Nationale du Maroc 2026` — rouge + étoile verte + blanc, Grand Stade Hassan II, titre `LE MAROC 2026`\n- **Angleterre** : `Équipe de la Coupe du Monde 2026 de l'Angleterre` — blanc + rouge de Saint-Georges + bleu marine, Wembley, titre `ENGLAND 2026`\n- **USA** (pays hôte) : `Équipe de la Coupe du Monde 2026 des USA` — bleu marine + rayures rouges + étoile blanche, SoFi Stadium, titre `USA 2026`\n- **Mexique** (pays hôte) : `Équipe Nationale du Mexique 2026` — vert + blanc + rouge, Estadio Azteca, titre `MÉXICO 2026`\n\nLa structure du prompt reste identique — description du maillot, arrière-plan du stade, palette de couleurs, texte du titre, format vertical 3:4. Permutez le nom de l'équipe et la palette ; tout le reste se transmet du prompt de base du modèle."
+    },
+    "ai1v1SoccerRivalryPrompts": {
+      "title": "Prompts de Rivalité de Football AI 1v1 : Messi vs Ronaldo, Mbappé vs Bellingham + Plus",
+      "metaDescription": "Copiez 5 prompts de rivalité de football prêts à expédier pour le modèle Sports Battle — Messi vs Ronaldo, Mbappé vs Bellingham, Vinícius vs Yamal, Lautaro vs Kane, Pedri vs De Bruyne.",
+      "seoKeywords": "messi vs ronaldo prompt, mbappe vs bellingham prompt, vinicius vs yamal prompt, soccer rivalry prompt, 1v1 soccer poster, sports battle template, ai football vs poster, lautaro vs kane prompt, pedri vs de bruyne prompt, nano banana sports battle, world cup rivalry prompt",
+      "date": "30 mai 2026",
+      "readTime": "8 min de lecture",
+      "intro": "Les affiches de rivalité sont le format le plus engageant dans le contenu de football. Une affiche VS côte à côte avec deux joueurs est ce que les fans partagent avant un derby, ce avec quoi les montages TikTok s'ouvrent, ce que les tableaux Pinterest collectent. Et la structure du prompt est suffisamment fixe pour que vous n'ayez besoin de fournir que deux noms — le modèle Sports Battle de Curify s'occupe du reste. Ce guide propose cinq prompts de rivalité prêts à l'emploi pour les affrontements que les gens recherchent réellement : Messi vs Ronaldo, Mbappé vs Bellingham, Vinícius vs Yamal, Lautaro vs Kane, Pedri vs De Bruyne. Copiez le prompt, changez deux noms, expédiez.",
+      "whatIsTitle": "Pourquoi les Affiches de Rivalité Surpassent les Affiches Solo",
+      "whatIsContent": "Trois raisons pour lesquelles le format d'affiche VS attire plus que le format d'affiche solo sur chaque canal de distribution.\n\n**Engagement par débat.** Une affiche solo obtient un like. Une affiche VS obtient un commentaire — les fans classent, défendent, argumentent. Sur TikTok et Instagram Reels, le moteur de débat dans la légende est ce qui pousse le post au-delà du seuil algorithmique.\n\n**La composition symétrique se lit instantanément.** Le cerveau traite côte à côte plus rapidement que des figures empilées verticalement. Vous pouvez faire défiler une affiche VS en 0,3 secondes et enregistrer les deux joueurs, les deux équipes, les deux schémas de couleurs. C'est pourquoi chaque overlay d'e-sport et chaque affiche de boxe utilise cette forme — c'est la mise en page la plus dense en informations pour un contenu à deux sujets.\n\n**Économie de même modèle.** Une affiche solo veut un prompt différent pour chaque joueur (éclairage, pose, arrière-plan ajusté à une figure). Une affiche VS fonctionne sur un seul modèle avec deux emplacements variables. Générez 10 affiches de rivalité dans le temps qu'il faut pour ajuster une seule prise solo.",
+      "modelsTitle": "Modèle Sports Battle de Curify — Comment Ça Fonctionne",
+      "howTitle": "Cinq Prompts de Rivalité de Football Prêts à Expédier",
+      "step1Title": "1. Messi vs Ronaldo — Le Débat Éternel du GOAT",
+      "step2Title": "2. Mbappé vs Bellingham — Génération Actuelle Français-Anglais",
+      "step3Title": "3. Vinícius vs Yamal — Duel d'Ailiers Brésil-Espagne",
+      "step4Title": "4. Lautaro vs Kane — Duel Numéro 9 Argentine-Angleterre",
+      "step5Title": "5. Pedri vs De Bruyne — Maestros du Milieu Espagne-Belgique",
+      "toolsTitle": "Outils AI Comparés pour les Affiches de Rivalité",
+      "challengesTitle": "Où les Affiches de Rivalité AI Échouent Encore (et les Solutions)",
+      "challengesContent": "Quatre modes d'échec spécifiques au format d'affiche VS, avec l'atténuation du côté prompt :\n\n**Effondrement de la symétrie — une figure domine.** Le modèle rend le Joueur A en détail héroïque et le Joueur B comme un croquis plat. **Solution** : spécifiez les deux figures au même niveau de détail explicitement — `les deux joueurs rendus avec une pose héroïque en mouvement égale, un détail de kit égal, une intensité d'éclairage de contour égale`. La symétrie est ce dont le format VS a besoin et le modèle par défaut à l'asymétrie.\n\n**Dérive de couleur de kit.** La France par défaut à un bleu marine simple lorsque vous voulez le bleu plus clair des Bleus ; le Brésil dérive vers un jaune fluorescent lorsque vous voulez le jaune atténué de la Verdeamarela. **Solution** : nommez la couleur spécifique (`bleu marine des Bleus avec des accents rouges`, `jaune atténué de la Verdeamarela avec un col vert jungle`) plutôt que le pays.\n\n**Le graphique VS sort comme une paire de lettres générique.** Le modèle rend parfois \"VS\" comme des lettres en bloc simples au lieu du graphique d'arc d'éclair en or métallique. **Solution** : spécifiez `graphique VS en or métallique avec effet d'arc électrique au centre, motif d'explosion de bande dessinée derrière les lettres`. L'arc d'éclair est l'élément visuel signature.\n\n**Inexactitude du visage sur les deux joueurs simultanément.** Les modèles à code fermé ne rendront pas de ressemblance exacte de célébrité — et sur une affiche à deux joueurs, l'inexactitude se cumule. **Solution** : penchez-vous vers la stylisation de bande dessinée (ce que fait Sports Battle par défaut) — l'abstraction de l'art de ligne cache l'écart de ressemblance en se lisant comme un style artistique délibéré plutôt que comme un échec de photoréalisme.",
+      "curifyTitle": "Générez le Vôtre — Lien Direct vers le Modèle",
+      "curifyContent": "Évitez l'ingénierie de prompt et allez directement au modèle avec les paramètres prêts :\n\n**Sports Battle** : [/nano-template/sports-battle](/nano-template/sports-battle) — fournissez `player_left` et `player_right` à partir de n'importe laquelle des cinq rivalités ci-dessus, ou créez votre propre paire. Le prompt de base du modèle est verrouillé sur le style d'affiche VS de bande dessinée.\n\nExemples de galerie existants pour alimenter le vôtre :\n\n- [Messi vs Ronaldo](/nano-template/sports-battle) — rivalité GOAT du football\n- [Federer vs Nadal](/nano-template/sports-battle) — rivalité de tennis, même modèle\n- [Ali vs Tyson](/nano-template/sports-battle) — boxe à travers les époques\n- [Hamilton vs Schumacher](/nano-template/sports-battle) — F1 à travers les époques\n- [Kobe vs Ray Allen](/nano-template/sports-battle), [LeBron vs Karl Malone](/nano-template/sports-battle), [Magic vs Stockton](/nano-template/sports-battle) — rivalités NBA\n\nMême modèle, sport différent. La forme VS est la même.\n\nPour plus de prompts sur le thème du sport, le hub [/topics/character](/topics/character) indexe des modèles axés sur les personnages à travers le sport, le jeu, le film et le divertissement. Pour le répertoire Nano Banana curé à travers chaque famille de prompts, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) est le catalogue. Pour les homologues spécifiques à chaque pays de ce post, consultez [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts) et [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts).",
+      "conclusionTitle": "Autres Rivalités — Même Modèle, Deux Noms Différents",
+      "conclusionContent": "Les cinq prompts ci-dessus couvrent les rivalités actuelles avec le plus grand volume de recherche. Le modèle se généralise — nommez n'importe quels deux joueurs, obtenez l'affiche VS. Modèles à permuter :\n\n**Par position** :\n- Gardiens : `Emiliano Martínez vs Thibaut Courtois`, `Alisson vs Ederson`\n- Défenseurs centraux : `Rúben Dias vs Antonio Rüdiger`, `Van Dijk vs Saliba`\n- Numéros 8 : `Bellingham vs Pedri`, `Tchouaméni vs Camavinga`\n- Ailiers : `Saka vs Bukayo`, `Nico Williams vs Rafael Leão`\n\n**Par rivalité de club** :\n- Real Madrid vs Barcelone actuel : `Vinícius vs Yamal`, `Bellingham vs Pedri`\n- Course au #9 de Premier League : `Haaland vs Salah`, `Isak vs Watkins`\n- Meilleurs buteurs de Bundesliga : `Kane vs Guirassy`\n\n**Par passage générationnel** :\n- `Messi vs Yamal` (Argentine-Espagne à travers les générations)\n- `Ronaldo vs Mbappé` (Portugal-France passage générationnel)\n- `Modrić vs Pedri` (créateurs de jeu croates-espagnols à travers les époques)\n\nLa structure du prompt reste identique — `player_left`, `player_right`, le modèle Sports Battle s'occupe du reste. Permutez les noms, obtenez des affiches. Pour le contenu de la veille de tournoi pendant la course de la Coupe du Monde 2026, le post de rivalité est le format à la plus haute vélocité — générez-en un par jour de match.\n\nSi vous expédiez une affiche qui fonctionne, les hubs [/topics/character](/topics/character) et [/topics/sports](/topics/sports) font remonter des modèles similaires — affiches de groupe de célébrités, cartes MBTI de stars uniques, batailles de personnages à travers d'autres domaines, tous fonctionnant sur le même pipeline Curify.",
+      "modelsContent": "**Sports Battle** ([/nano-template/sports-battle](/nano-template/sports-battle)) est le modèle. Deux champs de texte — `player_left` et `player_right`. La sortie est une affiche de comparaison de style bande dessinée verticale 3:4 :\n\n- Deux portraits en pied faisant face vers l'intérieur\n- Graphique VS central avec effet or métallique + arc d'éclair\n- Panneaux de statistiques en bas (buts, âge, club)\n- Étiquettes d'identité (surnoms, position, nationalité)\n- Éclairage de contour néon sur les deux figures\n- Dégradé d'arrière-plan thématique d'équipe (couleur divisée lorsque les rivaux sont dans des équipes nationales différentes)\n\nLe prompt de base du modèle spécifie déjà tout ce qui précède — détail du kit, poses dynamiques en mouvement, grade de couleur dramatique teal-orange, art de ligne de bande dessinée avec ombrage en demi-teintes. Vous n'avez pas besoin de faire de l'ingénierie de prompt pour cela. **Vous ne fournissez que deux noms.**\n\nLa sortie par défaut est verticale 3:4 — parfaite pour les histoires Instagram, TikTok, Pinterest. Changez en 1:1 pour un post dans le fil Instagram ou 16:9 pour une miniature YouTube en modifiant le rapport d'aspect dans les paramètres du modèle.\n\nLe modèle est livré avec un exemple Messi-vs-Ronaldo dans la galerie, plus des rivalités dans d'autres sports : Federer vs Nadal, Ali vs Tyson, Hamilton vs Schumacher, Kobe vs Ray Allen, LeBron vs Karl Malone. Ouvrez n'importe lequel d'eux, échangez les noms, expédiez une nouvelle affiche en 60 secondes.",
+      "toolsContent": "Le modèle Sports Battle de Curify fonctionne sur Nano Banana Pro. Si vous créez le vôtre en dehors du modèle :\n\n| Outil | Meilleur pour les affiches VS | Force | Faiblesse |\n|---|---|---|---|\n| **Nano Banana Pro** (Gemini 3 Pro Image) | ★★★★★ | Raisonnement spatial pour la composition symétrique à deux figures ; édition conversationnelle (\"échangez Mbappé pour Bellingham, gardez l'éclairage\"); ancrage de recherche Google pour les effectifs actuels | Moins de flair esthétique que Midjourney par défaut |\n| **GPT Image 2** (ChatGPT) | ★★★★ | Itération conversationnelle sur la mise en page VS à deux figures, inclus avec ChatGPT Plus | Les filtres de sécurité rejettent certains prompts de ressemblance de célébrités |\n| **Midjourney v7** | ★★★★ | Meilleure esthétique / stylisation de bande dessinée par défaut ; le grade teal-orange se marie naturellement | Pas d'API ; moins efficace pour la ressemblance littérale des joueurs ; maladroit sur le cadre symétrique à deux figures sans contrôle explicite de pose |\n| **Stable Diffusion 3.5 Large** | ★★★ | Contrôle total des poses via ControlNets (utilisez un modèle de référence d'affiche VS) ; coût par image nul après matériel | La qualité par défaut est inférieure à celle des leaders à code fermé sans un LoRA ajusté |\n\nPour le flux de travail que ce post décrit, **restez sur Nano Banana Pro via le modèle Sports Battle** — le modèle impose la mise en page VS, le détail du kit et le grade de couleur afin que vous ne repartiez pas de zéro à chaque rendu. Pour la comparaison plus approfondie, consultez [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison).",
+      "step1Content": "**Pourquoi ça classe** : recherche de rivalité de football la plus volumineuse sur la plateforme. Recherché en continu, atteint des sommets lors de chaque Ballon d'Or et de chaque discussion hypothétique sur un affrontement Argentine-Portugal.\n\nAncre de galerie : [/nano-template/sports-battle](/nano-template/sports-battle) expédie Messi-vs-Ronaldo comme exemple par défaut — ouvrez-le pour voir le format d'affiche VS de bande dessinée en action avant de générer le vôtre.\n\n**Entrées Sports Battle** :\n\n- `player_left` : `Lionel Messi`\n- `player_right` : `Cristiano Ronaldo`\n\n**Ou comme prompt libre** (à insérer directement dans Nano Banana Pro / GPT Image 2) :\n\n```\nLionel Messi vs Cristiano Ronaldo — affiche VS de bande dessinée, format vertical 3:4. Messi à gauche dans le kit ciel-bleu de l'Argentine #10, en mouvement avec le ballon à gauche, célébration de jambe levée dorée. Ronaldo à droite dans le kit rouge foncé du Portugal #7, en mouvement avec les bras écartés dans la célébration SIUUU. Graphique VS central en or métallique avec effet d'arc d'éclair. Panneaux de statistiques en bas (buts en carrière, club, sélections internationales). Arrière-plan de stade divisé — Estadio Monumental se fondant dans l'Estádio José Alvalade, ciel de l'heure dorée divisé entre l'or de Buenos Aires et l'orange de Lisbonne. Art de ligne de bande dessinée avec ombrage en demi-teintes, éclairage de contour néon, grade de couleur dramatique teal-orange. Détails 4K, sans filigranes.\n```\n\n**Variations à copier** : changez `Argentine` → `Inter Miami` pour une prise sur le thème du club ; changez la paire de stades en `Camp Nou se fondant dans Old Trafford` pour un retour de carrière Barcelone-United.",
+      "step2Content": "**Pourquoi ça classe** : les porteurs de flambeau post-Messi/Ronaldo. La dynamique des coéquipiers du Real Madrid ajoute une autre couche — ils jouent ensemble au niveau du club, s'affrontent au niveau national. Fort volume de recherche sur \"mbappe vs bellingham prompt\" spécifiquement.\n\n**Entrées Sports Battle** :\n\n- `player_left` : `Kylian Mbappé`\n- `player_right` : `Jude Bellingham`\n\n**Ou comme prompt libre** :\n\n```\nKylian Mbappé vs Jude Bellingham — affiche VS de bande dessinée, vertical 3:4. Mbappé à gauche dans le kit marine de la France #10, en pose de sprint avec le ballon au pied droit, la célébration des bras croisés de Mbappé prête à se déclencher. Bellingham à droite dans le kit blanc de l'Angleterre #10, en saut avec les bras écartés dans la célébration de l'aigle écarté. Graphique VS central en or métallique avec arc d'éclair. Panneaux de statistiques (buts en Ligue des champions, statistiques du Real Madrid depuis que les deux portent du blanc au niveau du club, comparaison d'âge). Arrière-plan de stade divisé — Stade de France se fondant dans Wembley, ciel de l'heure dorée divisé entre le bleu de Paris et le crépuscule de Londres. Art de ligne de bande dessinée, ombrage en demi-teintes, éclairage de contour néon, grade de couleur teal-orange. Détails 4K, sans filigranes.\n```\n\n**Variations** : échangez `France` → `Real Madrid` et `Angleterre` → `Real Madrid` pour une comparaison interne d'équipe ; ou associez Mbappé avec Vinícius pour une prise sur le trio d'attaque du Real Madrid.",
+      "step3Content": "**Pourquoi ça classe** : étoile montante contre étoile montante, avec un fort élan de recherche depuis la Copa América 2024. L'Espagne et le Brésil sont tous deux des favoris de la Coupe du Monde ; les deux ailiers sont la principale menace d'attaque de leurs pays.\n\n**Entrées Sports Battle** :\n\n- `player_left` : `Vinícius Júnior`\n- `player_right` : `Lamine Yamal`\n\n**Ou comme prompt libre** :\n\n```\nVinícius Júnior vs Lamine Yamal — affiche VS de bande dessinée, vertical 3:4. Vinícius à gauche dans le kit jaune du Brésil #7, en dribble avec le ballon au pied gauche, le mouvement de croisement de jambe visible. Yamal à droite dans le kit rouge de l'Espagne #19, en pose de coup intérieur avec le ballon au pied droit, bras étendu pour le coup. Les deux joueurs en composition héroïque en contre-plongée. Graphique VS central en or métallique avec arc d'éclair. Panneaux de statistiques (passes décisives, dribbles réussis, comparaison d'âge — Yamal est le plus jeune). Arrière-plan de stade divisé — Maracanã se fondant dans le Santiago Bernabéu, ciel de l'heure dorée divisé entre le vert de la jungle de Rio et l'ambre de Madrid. Art de ligne de bande dessinée, ombrage en demi-teintes, éclairage de contour néon, grade de couleur teal-orange. Détails 4K, sans filigranes.\n```\n\n**Variations** : même modèle avec `Real Madrid` → `Barcelone` pour la version El Clásico (Vinícius RM vs Yamal Barça) ; ou échangez Yamal pour `Nico Williams` pour l'autre prise d'ailier espagnol.",
+      "step4Content": "**Pourquoi ça classe** : le cadre classique #9 contre #9 pour les aperçus des phases à élimination directe de la Coupe du Monde. Les deux joueurs sont la principale menace de but de leur pays ; les deux ont un pedigree gagnant (Lautaro 2022 Coupe du Monde + Copa América, titres de Kane au Bayern Munich).\n\n**Entrées Sports Battle** :\n\n- `player_left` : `Lautaro Martínez`\n- `player_right` : `Harry Kane`\n\n**Ou comme prompt libre** :\n\n```\nLautaro Martínez vs Harry Kane — affiche VS de bande dessinée, vertical 3:4. Lautaro à gauche dans le kit ciel-bleu et blanc de l'Argentine #10 (ou #22 pour l'hommage à l'Inter Milan), en pose de tir avec le pied droit connectant sur un tir. Kane à droite dans le kit blanc de l'Angleterre #9, en pose de tête avec extension complète. Les deux en composition héroïque en contre-plongée. Graphique VS central en or métallique avec arc d'éclair. Panneaux de statistiques (buts internationaux, trophées de meilleur buteur en club, buts en Coupe du Monde). Arrière-plan de stade divisé — Estadio Monumental se fondant dans Wembley, ciel de l'heure dorée divisé entre l'or de Buenos Aires et le crépuscule de Londres. Art de ligne de bande dessinée, ombrage en demi-teintes, éclairage de contour néon, grade de couleur teal-orange. Détails 4K, sans filigranes.\n```\n\n**Variations** : échangez `Kane` → `Erling Haaland` pour le duel plus propre Norvège-Argentine #9 ; ou associez `Kane` avec `Mbappé` pour le cadre #9 France-Angleterre (Kane à gauche dans ce cas).",
+      "step5Content": "**Pourquoi ça classe** : les créateurs de jeu au milieu de terrain sont la rivalité des connaisseurs — recherchée par des lecteurs qui se soucient de la façon dont le jeu est réellement construit, pas seulement de qui marque. Les deux sont les métronomes de leurs équipes nationales ; les deux suscitent le débat \"qui est le meilleur créateur de jeu\".\n\n**Entrées Sports Battle** :\n\n- `player_left` : `Pedri`\n- `player_right` : `Kevin De Bruyne`\n\n**Ou comme prompt libre** :\n\n```\nPedri vs Kevin De Bruyne — affiche VS de bande dessinée, vertical 3:4. Pedri à gauche dans le kit rouge de l'Espagne #8, en pose de passe avec le ballon au pied gauche, bras pointant vers l'avant pour diriger un coéquipier. De Bruyne à droite dans le kit rouge de la Belgique #7, en pose de centre avec le pied droit connectant sur un ballon fouetté, le bras droit traînant dans la forme classique de KDB. Les deux en composition héroïque en plan moyen (pas en contre-plongée — les créateurs de jeu n'ont pas besoin du cadre imposant). Graphique VS central en or métallique avec arc d'éclair. Panneaux de statistiques (passes décisives par match, passes clés, passes décisives en phase à élimination directe de la Ligue des champions). Arrière-plan de stade divisé — Santiago Bernabéu se fondant dans l'Etihad Stadium, ciel de l'heure dorée divisé entre l'ambre de Madrid et le bleu-gris de Manchester. Art de ligne de bande dessinée, ombrage en demi-teintes, éclairage de contour néon, grade de couleur teal-orange. Détails 4K, sans filigranes.\n```\n\n**Variations** : échangez `De Bruyne` → `Jude Bellingham` pour le cadre milieu Espagne-Angleterre (Bellingham porte le #10 pour l'Angleterre) ; ou associez `Pedri` avec `Frenkie de Jong` pour la prise des créateurs de jeu formés au Barça Espagne-Pays-Bas."
+    },
+    "franceSoccerPosterPrompts": {
+      "title": "Prompts d'Affiche de Football AI France : Modèles de la Coupe du Monde 2026",
+      "metaDescription": "Générez des affiches cinématographiques de football en France avec deux modèles Nano Banana — Sports Battle pour les rivalités de Mbappé, Affiche de Groupe pour Les Bleus. Copiez les invites.",
+      "seoKeywords": "france ai prompt, mbappe prompt, france soccer poster prompt, les bleus 2026 prompt, mbappe vs bellingham prompt, france world cup poster, ai france poster, sports battle mbappe, nano banana france, cinematic france poster, fifa world cup 2026 ai",
+      "date": "30 mai 2026",
+      "readTime": "9 min de lecture",
+      "intro": "La France entre dans la Coupe du Monde 2026 en tant que finaliste défendant, avec Kylian Mbappé à son apogée au Real Madrid, l'énergie de son coéquipier Jude Bellingham reflétant la rivalité nationale, et une reconstruction du milieu de terrain (Tchouaméni, Camavinga, Koné) qui commence enfin à fonctionner. La marque Les Bleus a un registre cinématographique spécifique — bleu marine + blanc + rouge, éclairages du Stade de France, l'héritage des affiches art déco de la Coupe du Monde 1998. Deux modèles Curify Nano Banana livrent le travail de bout en bout : Sports Battle pour les rivalités de Mbappé (vs Bellingham, vs Vinícius, vs Haaland), et Affiche de Groupe Célébrité pour l'ensemble de l'équipe Les Bleus. Ce guide vous livre une affiche cinématographique de France en moins de 60 secondes, avec le texte de l'invite, la palette et la forme des paramètres.",
+      "whatIsTitle": "Qu'est-ce qui rend une affiche de France cinématographique",
+      "whatIsContent": "Trois ingrédients séparent un rendu français générique d'une affiche avec le registre de marque Les Bleus.\n\n**Action dynamique avec flair français.** Un Mbappé immobile ressemble à une photo de stock. Mbappé en pleine course, bras croisés dans la célébration, Bellingham en plein saut, Tchouaméni chargeant dans un tacle — ceux-ci ressemblent à des affiches. Les verbes d'action dans l'invite font la majeure partie du travail — *en pleine course*, *célébration bras croisés*, *charge*, *coup de tête aérien*.\n\n**Bleu-blanc-rouge bien fait.** France = bleu marine (pas bleu vif) + blanc éclatant + un accent rouge saturé. Le maillot Nike actuel utilise un bleu marine profond avec des bordures rouges au col et un liseré rouge et blanc sur les manches. Le bleu royal vif ressemble à l'Italie ou à l'Argentine, pas à la France. Obtenez la palette correcte et l'affiche se lit comme Les Bleus, pas comme un maillot européen générique.\n\n**Héritage cinématographique français en toile de fond.** Trois registres de référence fonctionnent — l'esthétique des affiches art déco de la Coupe du Monde 1998 (type géométrique propre, couleurs d'affiche atténuées), le style *nouvelle vague* noir et blanc avec accent de couleur, et l'atmosphère du Stade de France avec des éclairages perçant la brume d'un match de phase à élimination directe. Spécifiez un registre par affiche ; les mélanger produit une sortie incohérente.",
+      "modelsTitle": "Deux modèles Curify qui gèrent le travail",
+      "howTitle": "Comment expédier une affiche de France en 60 secondes",
+      "step1Title": "Méthode 1 : 1v1 ancré par Mbappé — Modèle Sports Battle",
+      "step1Content": "**Idéal pour** : contenu de prévision de match à la veille du tournoi, affiches de rivalité entre coéquipiers du Real Madrid, contenu de derby pendant la saison de Ligue 1.\n\nOuvrez [/nano-template/sports-battle](/nano-template/sports-battle). Deux champs de texte — `player_left` et `player_right`. Les rivalités Mbappé les plus recherchées :\n\n- `Kylian Mbappé` vs `Jude Bellingham` — France vs Angleterre, coéquipiers du Real Madrid au niveau du club\n- `Kylian Mbappé` vs `Vinícius Júnior` — France vs Brésil, trio d'attaque du Real Madrid (Vinícius, Mbappé, Bellingham)\n- `Kylian Mbappé` vs `Erling Haaland` — France vs Norvège, le débat sur le passage de flambeau après Messi/Ronaldo\n- `Kylian Mbappé` vs `Cristiano Ronaldo` — France vs Portugal, cadre de passage générationnel\n- `Aurélien Tchouaméni` vs `Jude Bellingham` — France vs Angleterre au milieu de terrain, également un affrontement entre coéquipiers du Real Madrid\n\nGénérez. Le modèle rend une affiche VS de style bande dessinée avec les deux joueurs dans leur maillot national, panneaux de statistiques, étiquettes d'identité et le graphique VS au centre. Format par défaut 3:4 — prêt pour Instagram Stories, TikTok, Pinterest.\n\n**Exemple en direct** dans la galerie : [l'affiche Mbappé vs Bellingham](/nano-template/sports-battle) — même modèle, même forme d'invite, juste deux entrées de noms.",
+      "step2Title": "Méthode 2 : Équipe Les Bleus — Modèle Affiche de Groupe Célébrité",
+      "step2Content": "**Idéal pour** : révélations d'équipe à la veille du tournoi, graphiques de soirée de visionnage pour le parcours 2026, contenu de fans de la Coupe du Monde, en-têtes sur les réseaux sociaux.\n\nOuvrez [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster). Un champ de texte — `star_movie_group`. Pour Les Bleus 2026 :\n\n- `Équipe Nationale de France 2026` — ensemble générique (le modèle choisit des figures emblématiques)\n- `Équipe de France 2026 Coupe du Monde avec Mbappé` — ancré par Mbappé, récit de capitaine\n- `Les Bleus 2026` — identité en langue française, le modèle s'ancre sur des repères culturels français\n- `Trio d'Attaquants France 2026 — Mbappé, Coman, Olise` — focus étroit sur le noyau offensif\n- `Connexion Real Madrid France 2026 — Mbappé, Camavinga, Tchouaméni` — coéquipiers du Real Madrid en maillot Les Bleus, un angle de contenu pour les audiences de La Liga\n\nLe modèle rend plusieurs figures emblématiques dans une composition dramatique avec un éclairage cinématographique, un arrière-plan en dégradé et un texte de titre minimaliste de luxe — l'apparence d'une affiche officielle Nike Les Bleus. Ajoutez `2026` afin que le modèle s'ancre sur l'équipe actuelle.",
+      "step3Title": "Invite d'Affiche Cinématographique France 2026",
+      "step3Content": "Déposez ceci dans le champ `star_movie_group` du modèle Affiche de Groupe Célébrité, ou utilisez-le en libre forme sur Nano Banana Pro / GPT Image 2 :\n\n```\nÉquipe Nationale de France 2026 Coupe du Monde — équipe complète en maillot Les Bleus bleu marine emblématique avec bordure rouge et blason doré, composition dynamique de groupe avec Kylian Mbappé, Aurélien Tchouaméni, Eduardo Camavinga, Manu Koné, Bradley Barcola en poses héroïques en pleine action au centre. Toile de fond du Stade de France à l'heure dorée avec des lumières de foule et des banderoles tricolores françaises. Étalonnage des couleurs cinématographiques — bleu marine profond + blanc éclatant + accent rouge français saturé, touche d'or art déco. Photoréaliste, netteté de magazine de mode, éclairage dramatique, arrière-plan en dégradé doux, titre minimaliste en français \"FRANCE 2026\" en gras doré serif. Ultra détaillé 4K, sans filigranes, format vertical 3:4.\n```\n\n**Palette de couleurs à spécifier** : `#002654` (bleu marine profond Les Bleus), `#FFFFFF` (blanc éclatant), `#ED2939` (rouge français), `#D4AF37` (accent doré), tons chauds de l'heure dorée du Stade de France.\n\n**Ce qu'il faut échanger** : liste des joueurs (l'équipe Les Bleus change à chaque tournoi — les alignements avant 2026 et après Mbappé se liront différemment) ; stade (Stade de France pour le registre national, ou Parc des Princes pour un hommage au club de Paris, ou Vélodrome pour le registre de Marseille) ; texte du titre.",
+      "step4Title": "Invite de Bataille 1v1 Mbappé vs Bellingham",
+      "step5Title": "Paramètres & Mots-clés qui font bouger le cadran cinématographique",
+      "step5Content": "Une fois que vous avez expédié la première affiche, ces ajustements s'accumulent sur 50 rendus.\n\n**Objectif / cadrage** : `objectif portrait 85mm` (compresse l'arrière-plan, héroïse Mbappé), `prise de vue d'action grand angle` (échelle du stade), `composition héroïque en contre-plongée` (figure imposante). Pour les alignements d'équipe : `plan moyen cinématographique` avec le groupe remplissant le cadre.\n\n**Éclairage** : `éblouissement des projecteurs du Stade de France` (le registre dramatique spécifique des matchs de nuit), `crépuscule parisien` (lumière du soir chaude et bleue), `éclairage de contour` (pop de silhouette), `rayons volumétriques` (atmosphère du stade à travers la brume des projecteurs).\n\n**Vocabulaire d'étalonnage des couleurs** : `étalonnage cinématographique teal-orange`, `étalonnage de palette saturée Les Bleus`, `bleu marine profond avec accent rouge`, `étalonnage de photographie de vêtements de sport Nike`, `étalonnage art déco de la Coupe du Monde 1998` (le registre d'affiche aux couleurs atténuées du tournoi à domicile).\n\n**Registres cinématographiques français** : `nouvelle vague noir et blanc avec accent de couleur` (un rouge ou bleu audacieux sur monochrome), `typographie d'affiche art déco` (titres géométriques en serif, palette atténuée), `heure dorée du Marais` (le registre de lumière ambrée spécifique de Paris). Utilisez un registre par affiche.\n\n**Détails du maillot** : `détails du blason coq Gaulois`, `logo FFF brodé`, `swoosh Nike sur la poitrine`. Le blason coq Gaulois (coq) est complexe ; le modèle l'abstrait en une vague marque dorée à moins que vous ne le nommiez.\n\n**Indices négatifs** : `pas de bleu royal vif (utilisez le bleu marine)`, `pas d'indices de couleur italienne (le chevauchement bleu profond)`, `pas de visages flous`, `pas de numéros de maillot déformés`.",
+      "toolsTitle": "Outils IA comparés pour la génération d'affiches de France",
+      "challengesTitle": "Où les affiches IA de France échouent encore (et les solutions)",
+      "challengesContent": "Trois modes d'échec spécifiques aux affiches de France, avec l'atténuation côté invite :\n\n**Le bleu marine dérive vers le bleu vif.** Le modèle par défaut passe au bleu royal ou au bleu fluorescent lorsque vous dites \"bleu de France\" — trop saturé, ressemble à l'italien ou à l'argentin. **Solution** : nommez la couleur spécifiquement (`bleu marine profond Les Bleus, #002654, atténué avec une sous-teinte brune`). Le bleu marine de France a plus de profondeur que le bleu générique par défaut.\n\n**Le blason coq Gaulois ressort comme une tache dorée.** Le blason du coq gaulois avec les marques FFF est détaillé ; le modèle l'abstrait. **Solution** : `détails du blason coq Gaulois, coq doré dans un bouclier rouge, lettrage FFF brodé`. Même dans ce cas, attendez-vous à ~70% de précision — pour le travail client, compositez le vrai blason dans Figma.\n\n**Inexactitude du visage de Mbappé.** Les modèles fermés ne rendront pas la ressemblance exacte de Mbappé. **Solution** : penchez-vous sur le cadre \"inspiré par\" — décrivez le style de jeu, le type de corps (`jeune corps athlétique, pommettes hautes, cheveux coupés courts, célébration emblématique des bras croisés`). La stylisation bande dessinée de Sports Battle cache l'écart de ressemblance par conception.",
+      "curifyTitle": "Générez le vôtre — Liens directs vers les modèles",
+      "curifyContent": "Évitez l'ingénierie d'invite et allez directement aux modèles :\n\n**Sports Battle (Mbappé 1v1)** : [/nano-template/sports-battle](/nano-template/sports-battle) — fournissez `player_left` (`Kylian Mbappé`) et `player_right` (`Jude Bellingham`, `Vinícius Júnior`, `Erling Haaland`, qui que ce soit). Le modèle gère le style d'affiche bande dessinée VS.\n\n**Affiche de Groupe Célébrité (Les Bleus)** : [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — fournissez `star_movie_group` avec `Équipe Nationale de France 2026` ou toute variante ci-dessus. Le modèle gère l'éclairage cinématographique, le dégradé, le titre en serif de luxe.\n\nPour plus d'invites sur le thème du sport, le hub [/topics/character](/topics/character) indexe des modèles axés sur les personnages dans le sport, le jeu, le film et le divertissement. Pour le répertoire Nano Banana, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) est le catalogue. Pour les publications de pays frères dans cette série : [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts) et [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts). Pour le guide spécifique aux rivalités 1v1 : [/blog/ai-1v1-soccer-rivalry-prompts](/blog/ai-1v1-soccer-rivalry-prompts).",
+      "conclusionTitle": "Autres pays — Même modèle, changez le nom",
+      "modelsContent": "**Sports Battle** ([/nano-template/sports-battle](/nano-template/sports-battle)) prend deux noms de joueurs — `player_left` et `player_right` — et rend une affiche verticale de style bande dessinée 3:4 : deux portraits en pied, graphique VS au centre, panneaux de statistiques, étiquettes d'identité, éclairage néon. L'invite de base est verrouillée au style bande dessinée ; vous fournissez les noms. Idéal pour *Mbappé vs Bellingham*, *Mbappé vs Vinícius Júnior*, *Mbappé vs Haaland*, *Tchouaméni vs Bellingham*. Le modèle est livré avec un exemple Mbappé-vs-Bellingham afin que vous puissiez prévisualiser avant de générer.\n\n**Affiche de Groupe Célébrité & Film** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)) prend un seul paramètre `star_movie_group` et rend une affiche d'ensemble ayant l'air officielle : plusieurs figures dans une composition dynamique, éclairage cinématographique, arrière-plan en dégradé doux, police de titre minimaliste de luxe. Fournissez *Équipe Nationale de France 2026* et vous obtenez la version complète de l'équipe Les Bleus.\n\nLes deux modèles fonctionnent sur le pipeline Pro de Nano Banana de Curify. Le style de base du modèle verrouille le registre de l'affiche de marque ; vous ne fournissez que des variables.",
+      "toolsContent": "Les modèles de Curify fonctionnent sur Nano Banana Pro. En dehors du modèle :\n\n| Outil | Meilleur pour les affiches de France | Force | Faiblesse |\n|---|---|---|---|\n| **Nano Banana Pro** (Gemini 3 Pro Image) | ★★★★★ | Raisonnement spatial pour des prises de vue de groupe multi-figures ; ancrage de recherche Google pour l'équipe actuelle des Les Bleus ; édition conversationnelle (\"échangez Camavinga contre Koné, gardez l'éclairage\") | Moins de flair éditorial que Midjourney dès le départ |\n| **GPT Image 2** (ChatGPT) | ★★★★ | Itération conversationnelle, scènes multi-éléments précises, inclus avec ChatGPT Plus | Les filtres de sécurité agressifs rejettent certaines invites de ressemblance de Mbappé |\n| **Midjourney v7** | ★★★★ | Meilleure esthétique ; le registre bleu marine + rouge des Les Bleus se marie naturellement avec le grading art déco | Pas d'API ; ne rend pas les ressemblances de joueurs littérales ; moins performant sur les multi-figures |\n| **Stable Diffusion 3.5 Large** | ★★★ | Contrôle total via ControlNets (utilisez une référence de pose d'équipe Les Bleus) ; coût par image nul après matériel | La qualité de sortie de base est inférieure à celle des leaders fermés sans LoRA ajusté |\n\nPour ce flux de travail, **restez sur Nano Banana Pro via les modèles Curify** — le modèle impose l'esthétique de l'affiche de marque afin que vous ne deviez pas concevoir le bleu marine des Les Bleus de zéro à chaque rendu. Pour la comparaison plus approfondie, consultez [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison).",
+      "step4Content": "Si l'affiche de groupe est trop chargée, le tir solo de Mbappé contre son rival est le format le plus engageant pour le contenu de France (TikTok, Instagram Reels) :\n\n```\nKylian Mbappé vs Jude Bellingham — affiche VS de style bande dessinée, verticale 3:4, les deux joueurs en pose d'action. Mbappé à gauche en maillot France #10 bleu marine avec bordure rouge, en pleine course avec le ballon du pied droit, la célébration emblématique de Mbappé, bras croisés, prête à être déclenchée. Bellingham à droite en maillot Angleterre #10 blanc avec la croix rouge de Saint-Georges, en plein saut avec les bras écartés dans la célébration écartée. Les deux en composition héroïque en contre-plongée. Graphique VS au centre en or métallique avec effet d'éclair d'arc électrique. Panneaux de statistiques en bas (buts en Ligue des Champions, statistiques du Real Madrid puisque les deux portent du blanc au niveau du club, âge — Bellingham 4 ans de moins). Arrière-plan de stade partagé — Stade de France se fondant dans Wembley, ciel à l'heure dorée partagé entre le bleu de Paris et le crépuscule londonien. Art de ligne de bande dessinée, ombrage en demi-teinte, éclairage néon, étalonnage dramatique des couleurs teal-orange. Détails 4K, sans filigranes.\n```\n\n**Ce qu'il faut échanger** : tout autre rival à droite — Vinícius Jr (duel d'ailiers Brésil-France), Haaland (Norvège), Ronaldo (passage de flambeau générationnel). L'arrière-plan de stade partagé fonctionne pour tout affrontement France-pays.",
+      "conclusionContent": "Les deux invites de France ci-dessus se généralisent à l'ensemble du terrain de la Coupe du Monde 2026. Même modèle, changez le nom de l'équipe, obtenez les couleurs du maillot correctes :\n\n- **Brésil** : `Équipe Nationale du Brésil 2026` — jaune + vert + accent bleu, Maracanã, titre `BRASIL 2026` — voir [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts)\n- **Argentine** : `Équipe de la Coupe du Monde 2026 de l'Argentine` — bleu ciel + blanc + or, Estadio Monumental, titre `ARGENTINA 2026` — [même publication sœur](/blog/brazil-argentina-soccer-poster-prompts)\n- **Portugal** : `Équipe Nationale du Portugal 2026` — rouge foncé + vert + or, Estádio José Alvalade, titre `PORTUGAL 2026` — voir [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts)\n- **Espagne** : `Équipe Nationale d'Espagne 2026` — rouge + jaune safran + bleu marine, Santiago Bernabéu, titre `ESPAÑA 2026`\n- **Allemagne** : `Équipe Nationale d'Allemagne 2026` — blanc + noir + rouge/or, Allianz Arena, titre `DEUTSCHLAND 2026`\n- **Angleterre** : `Équipe de la Coupe du Monde 2026 de l'Angleterre` — blanc + rouge de Saint-Georges + bleu marine, Wembley, titre `ENGLAND 2026`\n- **Maroc** : `Équipe Nationale du Maroc 2026` — rouge + étoile verte + blanc, Grand Stade Hassan II, titre `LE MAROC 2026`\n- **Mexique** (hôte) : `Équipe Nationale du Mexique 2026` — vert + blanc + rouge, Estadio Azteca, titre `MÉXICO 2026`\n- **USA** (hôte) : `Équipe de la Coupe du Monde 2026 des USA` — bleu marine + rayures rouges + étoile blanche, SoFi Stadium, titre `USA 2026`\n\nLa structure de l'invite reste identique — description du maillot, toile de fond du stade, palette de couleurs, texte du titre, format vertical 3:4. Permutez l'équipe et la palette ; tout le reste est repris de l'invite de base du modèle."
     }
   },
   "aeVsComfyUi": {

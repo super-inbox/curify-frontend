@@ -191,7 +191,15 @@
     },
     "relatedReading": "Lee sobre cómo funciona",
     "whoItsFor": "Para quién es",
-    "see_demo": "Ver demostración"
+    "see_demo": "Ver demostración",
+    "asl_video_translator": {
+      "title": "Traductor de Video ASL con IA",
+      "desc": "Traduce videos en Lengua de Señas Americana a texto y subtítulos en inglés, automáticamente.",
+      "meta": {
+        "title": "Traductor de Video ASL con IA | Lengua de Señas a Subtítulos en Inglés | Curify AI",
+        "description": "Traduce videos en lengua de señas ASL a texto o subtítulos en inglés automáticamente. Ve una demostración en tiempo real con material firmado — luego únete al acceso anticipado para tus propias cargas."
+      }
+    }
   },
   "bilingual": {
     "metadata": {
@@ -699,6 +707,60 @@
         "educationBody": "Los profesores de idiomas y los editores de ediciones bilingües producen páginas en paralelo o en idiomas alternos a partir de una única fuente. El pipeline de traducción genera una versión que preserva el diseño en cada idioma objetivo, lista para ser compuesta en la edición bilingüe final.",
         "businessTitle": "Para Editores de Manga, Cómics y Webtoons",
         "businessBody": "Los editores localizan títulos de catálogo en nuevos mercados donde la traducción manual licenciada no es económica. La traducción automatizada hace viable una estrategia de localización de largo plazo: cada título de catálogo se convierte en un candidato para un lanzamiento en un nuevo mercado."
+      }
+    }
+  },
+  "aslVideoTranslator": {
+    "metadata": {
+      "title": "Traductor de Video ASL con IA | Lengua de Señas a Subtítulos en Inglés | Curify AI",
+      "description": "Traduce videos en lengua de señas ASL a texto o subtítulos en inglés automáticamente. Ve una demostración en tiempo real con material firmado — luego únete al acceso anticipado para tus propias cargas."
+    },
+    "title": "Traductor de Video ASL con IA",
+    "description": "Traduce videos en Lengua de Señas Americana a texto o subtítulos en inglés, automáticamente. La demostración a continuación se basa en un clip real de ASL — la misma pipeline aceptará tus cargas una vez que se abra el acceso anticipado.",
+    "example": "Ejemplo: un breve clip conversacional de ASL traducido a subtítulos en inglés en una sola pasada. Sin intérprete, sin transcripción manual.",
+    "cta": "Únete al Acceso Anticipado",
+    "demo": {
+      "aria": "Demostración de traducción de video en lengua de señas ASL",
+      "caption": "Mira el clip de demostración para ver ASL traducido a subtítulos en inglés.",
+      "nowPlaying": "Ahora reproduciendo: {lang}"
+    },
+    "why": {
+      "title": "¿Por qué usar Curify para la traducción de video ASL?",
+      "point1": "Automático — sin paso manual de intérprete. Sube un video firmado, obtén subtítulos en inglés.",
+      "point2": "Diseñado para contenido, no para demostraciones de laboratorio — maneja ángulos de cámara del mundo real, estilos de firma variados y ritmo conversacional.",
+      "point3": "Formatos de salida diseñados para distribución: subtítulos incrustados, SRT para YouTube, o texto de transcripción simple.",
+      "point4": "Solo demostración hoy; regístrate para el acceso anticipado para traducir tu propio material ASL cuando se abra la pipeline."
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Está disponible hoy el traductor de video ASL?",
+      "a1": "Aún no — esta página es una demostración en tiempo real con un clip real de ASL. La pipeline de producción está en pruebas privadas. Únete al acceso anticipado y nos pondremos en contacto cuando se abra para cargas.",
+      "q2": "¿Funciona en idiomas distintos a ASL?",
+      "a2": "La demostración actual se dirige específicamente a la Lengua de Señas Americana. Las lenguas de señas no son mutuamente inteligibles — BSL (Británica), Auslan (Australiana) y LSF (Francesa) tienen diferentes gramáticas y vocabularios. Estamos evaluando lenguas de señas adicionales según la demanda de inscripciones anticipadas."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué es la traducción de video ASL con IA?",
+        "p1": "La traducción de video ASL convierte una actuación en video firmada en inglés escrito. A diferencia de la conversión de voz a texto o la transcripción de video, que traducen audio a texto, la traducción de ASL tiene que leer la modalidad visual — la forma de la mano del signatario, la ubicación, el movimiento, la orientación de la palma y los marcadores no manuales (expresiones faciales, inclinaciones de cabeza, movimientos corporales) que llevan significado gramatical. No hay una pista de audio a la que recurrir.",
+        "p2": "ASL tampoco es un mapeo uno a uno del inglés. Tiene su propia gramática, orden de palabras y frases idiomáticas. La sustitución palabra por signo produce una salida que es técnicamente literal pero se lee como inglés roto. Una traducción de calidad tiene que reconocer la señal visual Y reestructurar el resultado en un inglés natural — más cerca de traducir entre dos idiomas que de transcribir uno.",
+        "p3": "El objetivo: un signatario sordo o con problemas de audición graba un video; una audiencia oyente lee subtítulos en inglés o una transcripción. La traducción es el puente."
+      },
+      "how": {
+        "title": "¿Cómo traduce Curify el video ASL?",
+        "p1": "La pipeline funciona en cuatro etapas. Primero, el video fuente se procesa cuadro por cuadro para localizar al signatario, aislar la parte superior del cuerpo y segmentar el espacio de firma — descartando el movimiento de fondo que no forma parte de la señal.",
+        "p2": "En segundo lugar, un codificador de visión lee el flujo visual y produce una secuencia de incrustaciones conscientes de la señal: forma de la mano, vectores de movimiento y los marcadores no manuales (expresión facial, inclinación de cabeza, mirada) que cambian una señal de una afirmación a una pregunta.",
+        "p3": "En tercer lugar, una cabeza de traducción decodifica esas incrustaciones en texto en inglés. El decodificador está entrenado en corpus de video ASL-inglés paralelos, por lo que reestructura la gramática ASL en inglés natural en lugar de producir un glosario literal.",
+        "p4": "En cuarto lugar, el texto traducido se alinea de nuevo al tiempo original: cada oración en inglés está anclada a los segundos de video que la produjeron. Eso te proporciona subtítulos que puedes insertar directamente en un editor de video, además de una exportación SRT que se carga sin problemas en YouTube.",
+        "p5": "La demostración en esta página es el modelo de producción que se ejecuta en un clip conversacional real de ASL. Las cargas de acceso anticipado seguirán el mismo proceso."
+      },
+      "usecases": {
+        "title": "Dónde importa la traducción de video ASL",
+        "creatorsTitle": "Para creadores sordos y con dificultades auditivas",
+        "creatorsBody": "El lenguaje de señas es tu lengua principal para el contenido de video; los subtítulos en inglés desbloquean la audiencia oyente sin obligarte a grabar dos veces. Sube la toma firmada, obtén la pista de subtítulos en inglés.",
+        "educationTitle": "Para educadores y equipos de accesibilidad",
+        "educationBody": "Los videos de curso firmados por un instructor sordo —o interpretados en ASL para un aula mixta— obtienen transcripciones en inglés automáticamente. El mismo proceso maneja la subtitulación conforme a la ADA para bibliotecas de video institucionales.",
+        "businessTitle": "Para comunicaciones internas y equipos de producto",
+        "businessBody": "Los videos de soporte al cliente, clips de incorporación y reuniones internas grabadas en ASL permanecen buscables en tu sistema: la transcripción en inglés es lo que realmente lee tu índice de búsqueda."
       }
     }
   }

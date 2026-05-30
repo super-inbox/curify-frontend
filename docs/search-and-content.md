@@ -1,6 +1,6 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-05-20 (P0 #1 eval-driven alias top-up + P0 #2 gallery tag taxonomy + P0 #3 content drops all shipped 2026-05-19/20; precision tightening pass + new prune/audit tools shipped 2026-05-20; eval set refreshed with 16 real user queries). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-05-30 (workstream refresh: content shapes abstraction proposed as the next-bottleneck unblock; Reddit docking re-scoped; blog-engagement P0/P1/P2 shipped 2026-05-30 — see `docs/blog-quality.md`). Owner: jay. Update after any push that touches the threads below or changes priority order._
 
 ## Why this doc exists
 
@@ -218,6 +218,46 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
 
 ---
 
+## 2026-05-30 — Workstream refresh: content shapes + Reddit docking
+
+After ~10 days of search/content production plus the 2026-05-30 blog-engagement triage, the bottleneck has moved. Search recall on covered topics is largely fixed (eval 52/54 PASS, low-result panel ships demand signal, alias top-up is well-grooved). Content production is steady (~5-10 new templates per week via patch branches; 215 templates total). The new bottleneck is **discoverability of which content to make next** — both for filling demand that search/Reddit reveal, and for compounding the catalog without redundancy.
+
+### The unifying frame: content shapes
+
+Today the taxonomy is two-axis:
+
+- **Subject / topic** — what the content is *about* (sports, character, mbti, food, history, ...)
+- **Template** — a specific generative pipeline that turns a prompt into a visual
+
+What's missing is the **shape** layer in between — the format-pattern that is portable across subjects:
+
+> 1v1 battle · team poster · then-vs-now · grid collection · timeline-evolution · recipe card · how-to guide · mbti portrait · vocabulary flashcard · character profile · collage · lookbook · packaging · celebration poster · map · ...
+
+The same shape (1v1 battle) is currently expressed across `template-sports-battle`, `template-mbti-comparison`, `template-historical-figure-vs-infographic`. The same subject (world cup) is currently expressed via 1v1 battle + team poster but **not** via nostalgia / then-vs-now / evolution timeline — even though all three shapes exist in the catalog and would clearly fit. **Shape × subject** is the right primitive for spotting that gap.
+
+Downstream consumers this layer unblocks:
+
+- **Content gap discovery**: shape × tier-2 subject → template count. Cells with 0 templates but high adjacent demand are the next-to-build list.
+- **Programmatic landing pages**: per-shape index pages (e.g. `/shapes/then-vs-now`) become coherent SEO hubs distinct from `/topics/<subject>`.
+- **Reddit demand routing**: when Reddit posts mention "anyone have a [shape] of [subject]", the shape tag tells us which existing templates to surface or which gap to fill next.
+- **Search-generation bridge Phase 3**: the parked Phase 3 spec in `docs/search-generation-bridge.md` already pencils in shape-aware accept conditions. With per-template shape tags, the matcher can reason "user asked for a battle, route to 1v1-battle templates".
+
+### Refresh priorities (supersede the 2026-05-19 list below)
+
+1. **P0 — Content shapes taxonomy + per-template tagging.** Define ~15-18 canonical shapes; tag each of the 215 templates with 1-3 shapes; write `content_shapes` and reverse `shape_templates` maps into `lib/taxonomy.json` (same in-taxonomy pattern as the `template_subjects` map shipped 2026-05-26). Build `scripts/build_template_shapes.cjs` as the canonical re-derivation. Output coverage matrix: shape × tier-2 subject. **~1 day. Unblocks every item below.**
+
+2. **P1 — Weekly cron: low-result panel → alias family proposer.** Every Monday, pull `SEARCH_NORESULT` + `SEARCH_LOWRESULT` from prod, cluster via the rewriter, emit candidate alias-family proposals into the existing approval queue. Closes the loop between "user asks → no result → operator adds alias" without manual eyeballing. ~3 days.
+
+3. **P1 — Reddit demand-mining → 3-channel docking.** Current Reddit crawl produces visual proposals (in `proposals.py`). Extend to two more channels: (a) **B2B client seed extraction** — brand/founder mentions feeding the demand-mining doc's outreach queue; (b) **content-shape demand** — what shape is being asked for. Output writes to the proposals approval queue tagged by shape+subject, which the P0 matrix surfaces as gap-filling priority. ~4 days. Depends on P0.
+
+4. **P2 — Search-generation bridge Phase 2 measurement panel.** Phase 1 (LLM matcher routing queries to existing templates) is shipped. Phase 2 panel measures matcher CTR, template-binding hit rate, queries-without-a-match per week. Data input to decide which queries are mature enough to route to Phase 3 (generation). ~2 days.
+
+5. **P2 — Search-generation bridge Phase 3 build.** Once Phase 2 has ≥2 weeks of CTR data and the P0 shape layer exists, build the matcher-to-generation handoff per the spec in `docs/search-generation-bridge.md`. Shape annotations on each template become the acceptance criterion (the matcher refuses to spin up a generation that doesn't bind to a known shape). ~1 week.
+
+Items 5-12 in the prior priority list remain in scope as **Backlog** — they're internal UX / measurement items that don't unblock new growth surfaces, so they wait behind the items above.
+
+---
+
 ## Cross-thread priorities (next 2-3 weeks)
 
 Ranked by how much each unblocks downstream. Reprioritized 2026-05-19 after running `scripts/eval_search.cjs --rewrite` and reading the base-vs-union gap.
@@ -260,6 +300,10 @@ Ranked by how much each unblocks downstream. Reprioritized 2026-05-19 after runn
 11. **[thread d] Approval-rate-per-source dashboard panel**. Calibrates which adapter cron slots to keep.
 
 12. **[thread b] Periodic gallery-tag ↔ topic-registry consistency audit**. Catch silent drift. Subsumed once P0 #2 ships and the gallery tags carry a tier mapping.
+
+### Recently shipped (2026-05-30)
+- **[thread b] Content shapes taxonomy P0** (`1581a11`, 2026-05-30) — Foundation layer between (subject) and (template). 20 canonical shapes (1v1-battle, then-vs-now, grid-collection, team-group-poster, timeline-evolution, nostalgia-retro, map-spatial, recipe-card, how-to-guide, educational-explainer, mbti-portrait, vocabulary-flashcard, character-profile, collage-scrapbook, lookbook-outfit, packaging-design, celebration-festival, watercolor-illustration, quote-typography-poster, hero-thematic-poster). 204/215 templates assigned 1-3 shapes each (11 unshaped = pure single-image aesthetic templates). Written into `lib/taxonomy.json` as `content_shapes` + reverse `template_shapes` map (same in-taxonomy pattern as `template_subjects`). Canonical re-derivation: `scripts/build_template_shapes.cjs`. Coverage matrix (shape × tier-2 subject) surfaces gaps immediately — e.g. sports × nostalgia-retro = 0, character × map-spatial = 0, food × packaging-design = 0. 52/54 eval PASS (no regression — additive only).
+- **[thread a/d] Weekly search-evolution review setup + cycle 1 shipped** (`bc26c90`, 2026-05-30) — In-session cadence (NO cron — user declined automation; memory `project_search_weekly_review.md`). Cycle 1: pulled 14d admin `/interaction-analytics` (reuse-admin-panel pattern, memory `feedback_reuse_admin_panel.md`), 92 candidate queries, 4 clusters. Shipped Cluster A (fandom under-serve): 11 new chiikawa/samurai/genshin examples via `scripts/configs/fandom_topup_2026-05-30.json`. Hits lifted chiikawa 5→8 (was 3 escape-clicks — the loudest user-gave-up signal), samurai 3→7, genshin 3→7. 3 new eval-set entries under source `user-weekly-2026-05-30`, all PASS at moderate. New "Weekly review cycles" section in `docs/search-quality.md`. Eval 55/57 PASS (no new WARNs).
 
 ### Recently shipped (2026-05-23 / 25)
 - **[thread a] Snake-class tokenizer fixes** (`cdc6d7a`, 2026-05-25) — Two changes in `app/[locale]/(public)/search/page.tsx`. (1) English plural stem: single ASCII tokens ending in -s get singularized at tokenization time (snakes → snake, stories → story, boxes → box). Conservative suffix guard skips -ss/-us/-is/-os/-as. (2) Compound-noun precision guard in scoreQueryTokens: inspirations that strict-match only via their own blob (parent template did not match) require either topical-field reinforcement (template_id / tags / search_aliases) OR a whole-phrase param match (param tokens ⊆ query tokens). Stops query `snake` from being a strict hit on a snake-plant inspiration under a houseplant template that never mentions snakes. 36/36 eval PASS.

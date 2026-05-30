@@ -211,7 +211,15 @@
     "create": "Create",
     "see_demo": "See Demo",
     "relatedReading": "Read about how it works",
-    "whoItsFor": "Who it's for"
+    "whoItsFor": "Who it's for",
+    "asl_video_translator": {
+      "title": "AI ASL Video Translator",
+      "desc": "Translate American Sign Language video into English text and subtitles, automatically.",
+      "meta": {
+        "title": "AI ASL Video Translator | Sign Language to English Subtitles | Curify AI",
+        "description": "Translate ASL sign language video into English text or subtitles automatically. See a working demo on real signed footage — then join early access for your own uploads."
+      }
+    }
   },
   "bilingual": {
     "metadata": {
@@ -638,6 +646,60 @@
         "educationBody": "Language teachers and bilingual-edition publishers produce side-by-side or alternating-language pages from a single source. The translation pipeline outputs a layout-preserved version in each target language, ready for typesetting into the final bilingual edition.",
         "businessTitle": "For Manga, Comic, and Webtoon Publishers",
         "businessBody": "Publishers localize backlist titles into new markets where licensed manual translation is uneconomical. Automated translation makes a long-tail localization strategy viable — every backlist title becomes a candidate for a new-market release."
+      }
+    }
+  },
+  "aslVideoTranslator": {
+    "metadata": {
+      "title": "AI ASL Video Translator | Sign Language to English Subtitles | Curify AI",
+      "description": "Translate ASL sign language video into English text or subtitles automatically. See a working demo on real signed footage — then join early access for your own uploads."
+    },
+    "title": "AI ASL Video Translator",
+    "description": "Translate American Sign Language video into English text or subtitles, automatically. The demo below runs on a real ASL clip — the same pipeline will accept your uploads once early access opens.",
+    "example": "Example: a short conversational ASL clip translated into English subtitles in one pass. No interpreter, no manual transcription.",
+    "cta": "Join Early Access",
+    "demo": {
+      "aria": "ASL sign language video translation demo",
+      "caption": "Watch the demo clip to see ASL translated into English subtitles.",
+      "nowPlaying": "Now playing: {lang}"
+    },
+    "why": {
+      "title": "Why use Curify for ASL video translation?",
+      "point1": "Automatic — no manual interpreter step. Upload a signed video, get English subtitles.",
+      "point2": "Built for content, not lab demos — handles real-world camera angles, varied signing styles, and conversational pacing.",
+      "point3": "Output formats designed for distribution: burned-in subtitles, SRT for YouTube, or plain transcript text.",
+      "point4": "Demo-only today; sign up for early access to translate your own ASL footage when the pipeline opens."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is the ASL video translator available today?",
+      "a1": "Not yet — this page is a working demo on a real ASL clip. The production pipeline is in private testing. Join early access and we will reach out when it opens for uploads.",
+      "q2": "Does it work on languages other than ASL?",
+      "a2": "The current demo targets American Sign Language specifically. Sign languages are not mutually intelligible — BSL (British), Auslan (Australian), and LSF (French) have different grammars and vocabularies. We are scoping additional sign languages based on demand from early-access signups."
+    },
+    "deep": {
+      "what": {
+        "title": "What is AI ASL video translation?",
+        "p1": "ASL video translation converts a signed video performance into written English. Unlike speech-to-text or video transcription, which translate audio into text, ASL translation has to read the visual modality — the signer's handshape, location, movement, palm orientation, and the non-manual markers (facial expressions, head tilts, body shifts) that carry grammatical meaning. There is no audio track to fall back on.",
+        "p2": "ASL is also not a one-to-one map of English. It has its own grammar, word order, and idiomatic phrasing. Word-for-sign substitution produces output that is technically literal but reads as broken English. Quality translation has to recognize the visual signal AND restructure the result into natural English — closer to translating between two languages than transcribing one.",
+        "p3": "The goal: a deaf or hard-of-hearing signer records a video; a hearing audience reads English subtitles or a transcript. The translation is the bridge."
+      },
+      "how": {
+        "title": "How does Curify translate ASL video?",
+        "p1": "The pipeline runs in four stages. First, the source video is processed frame-by-frame to localize the signer, isolate the upper body, and segment the signing space — discarding background motion that is not part of the sign.",
+        "p2": "Second, a vision encoder reads the visual stream and produces a sequence of sign-aware embeddings: handshape, movement vectors, and the non-manual markers (facial expression, head tilt, eye gaze) that change a sign from a statement into a question.",
+        "p3": "Third, a translation head decodes those embeddings into English text. The decoder is trained on parallel ASL-English video corpora, so it restructures ASL grammar into natural English rather than producing a literal gloss.",
+        "p4": "Fourth, the translated text is aligned back to the source timing — each English sentence is anchored to the seconds of video that produced it. That gives you subtitles you can drop straight into a video editor, plus an SRT export that loads cleanly into YouTube.",
+        "p5": "The demo on this page is the production model running on one real conversational ASL clip. Early-access uploads will run the same pipeline."
+      },
+      "usecases": {
+        "title": "Where ASL video translation matters",
+        "creatorsTitle": "For deaf and hard-of-hearing creators",
+        "creatorsBody": "Sign language is your primary language for video content; English subtitles unlock the hearing audience without forcing you to record twice. Upload the signed take, get the English subtitle track.",
+        "educationTitle": "For educators and accessibility teams",
+        "educationBody": "Course videos signed by a deaf instructor — or interpreted in ASL for a mixed classroom — get English transcripts automatically. The same pipeline handles ADA-compliant captioning for institutional video libraries.",
+        "businessTitle": "For internal comms and product teams",
+        "businessBody": "Customer-support videos, onboarding clips, and internal town halls recorded in ASL stay searchable across your stack — the English transcript is what your search index actually reads."
       }
     }
   }

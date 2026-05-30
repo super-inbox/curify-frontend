@@ -191,7 +191,15 @@
     },
     "relatedReading": "Nasıl çalıştığını okuyun",
     "whoItsFor": "Kimin için",
-    "see_demo": "Demo Gör"
+    "see_demo": "Demo Gör",
+    "asl_video_translator": {
+      "title": "AI ASL Video Çevirmeni",
+      "desc": "Amerikan İşaret Dili videosunu otomatik olarak İngilizce metne ve altyazılara çevirin.",
+      "meta": {
+        "title": "AI ASL Video Çevirmeni | İşaret Dili'nden İngilizce Altyazılara | Curify AI",
+        "description": "ASL işaret dili videosunu otomatik olarak İngilizce metne veya altyazılara çevirin. Gerçek işaretli görüntülerde çalışan bir demo görün — ardından kendi yüklemeleriniz için erken erişim için katılın."
+      }
+    }
   },
   "bilingual": {
     "metadata": {
@@ -784,6 +792,60 @@
         "educationBody": "Dil öğretmenleri ve iki dilli baskı yayınevleri, tek bir kaynaktan yan yana veya dönüşümlü dil sayfaları üretir. Çeviri hattı, her hedef dilde düzen koruyan bir versiyon çıkarır ve son iki dilli baskıya hazır hale getirir.",
         "businessTitle": "Manga, Çizgi Roman ve Webtoon Yayınevleri İçin",
         "businessBody": "Yayınevleri, lisanslı manuel çevirinin ekonomik olmadığı yeni pazarlara eski yayınları yerelleştirir. Otomatik çeviri, uzun kuyruklu bir yerelleştirme stratejisini uygulanabilir hale getirir — her eski yayın, yeni pazar sürümü için bir aday haline gelir."
+      }
+    }
+  },
+  "aslVideoTranslator": {
+    "metadata": {
+      "title": "AI ASL Video Çevirmeni | İşaret Dili'nden İngilizce Altyazılara | Curify AI",
+      "description": "ASL işaret dili videosunu otomatik olarak İngilizce metne veya altyazılara çevirin. Gerçek işaretli görüntülerde çalışan bir demo görün — ardından kendi yüklemeleriniz için erken erişim için katılın."
+    },
+    "title": "AI ASL Video Çevirmeni",
+    "description": "Amerikan İşaret Dili videosunu otomatik olarak İngilizce metne veya altyazılara çevirin. Aşağıdaki demo, gerçek bir ASL klibi üzerinde çalışıyor — erken erişim açıldığında aynı sistem yüklemelerinizi kabul edecek.",
+    "example": "Örnek: bir geçişte İngilizce altyazılara çevrilen kısa bir konuşma ASL klibi. Hiçbir tercüman yok, manuel transkripsiyon yok.",
+    "cta": "Erken Erişime Katıl",
+    "demo": {
+      "aria": "ASL işaret dili video çeviri demosu",
+      "caption": "ASL'nin İngilizce altyazılara çevrildiğini görmek için demo klibi izleyin.",
+      "nowPlaying": "Şu anda oynatılıyor: {lang}"
+    },
+    "why": {
+      "title": "Neden Curify'i ASL video çevirisi için kullanmalısınız?",
+      "point1": "Otomatik — manuel tercüman adımı yok. İşaretli bir video yükleyin, İngilizce altyazılar alın.",
+      "point2": "İçerik için tasarlandı, laboratuvar demoları için değil — gerçek dünya kamera açılarını, çeşitli işaret stillerini ve konuşma temposunu yönetir.",
+      "point3": "Dağıtım için tasarlanmış çıktı formatları: gömülü altyazılar, YouTube için SRT veya düz transkript metni.",
+      "point4": "Bugün sadece demo; boru hattı açıldığında kendi ASL görüntülerinizi çevirmek için erken erişim için kaydolun."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "ASL video çevirmeni bugün mevcut mu?",
+      "a1": "Henüz değil — bu sayfa gerçek bir ASL klibi üzerinde çalışan bir demo. Üretim boru hattı özel test aşamasında. Erken erişime katılın ve yüklemeler için açıldığında sizinle iletişime geçeceğiz.",
+      "q2": "ASL dışındaki dillerde çalışıyor mu?",
+      "a2": "Mevcut demo özellikle Amerikan İşaret Dili'ni hedefliyor. İşaret dilleri karşılıklı anlaşılabilir değildir — BSL (İngiliz), Auslan (Avustralya) ve LSF (Fransız) farklı dilbilgileri ve kelime dağarcıkları vardır. Erken erişim kayıtlarından gelen talebe göre ek işaret dillerini değerlendirmekteyiz."
+    },
+    "deep": {
+      "what": {
+        "title": "AI ASL video çevirisi nedir?",
+        "p1": "ASL video çevirisi, işaretli bir video performansını yazılı İngilizceye dönüştürür. Sesli metin veya video transkripsiyonu gibi, sesin metne çevrildiği durumların aksine, ASL çevirisi görsel modülü okumalıdır — işaretçinin el şekli, konumu, hareketi, avuç içi yönelimi ve dilbilgisel anlam taşıyan el dışı işaretler (yüz ifadeleri, baş eğmeleri, vücut kaymaları). Geri dönülecek bir ses parçası yoktur.",
+        "p2": "ASL, İngilizce ile birebir bir eşleşme de değildir. Kendi dilbilgisi, kelime sırası ve deyimsel ifadeleri vardır. Kelime için işaret ikamesi, teknik olarak kelime kelime doğru ama bozuk İngilizce olarak okunan bir çıktı üretir. Kaliteli çeviri, görsel sinyali tanımak ve sonucu doğal İngilizceye yeniden yapılandırmak zorundadır — bir dilden diğerine çeviri yapmak gibi, birini transkribe etmekten daha yakındır.",
+        "p3": "Hedef: işitme engelli veya işitme zorluğu çeken bir işaretçi bir video kaydeder; işiten bir izleyici İngilizce altyazıları veya bir transkripti okur. Çeviri köprüdür."
+      },
+      "how": {
+        "title": "Curify ASL videosunu nasıl çeviriyor?",
+        "p1": "Boru hattı dört aşamada çalışır. İlk olarak, kaynak video, işaretçiyi yerelleştirmek, üst vücut izole etmek ve işaretleme alanını segmentlere ayırmak için kare kare işlenir — işaretin bir parçası olmayan arka plan hareketini atarak.",
+        "p2": "İkinci olarak, bir görsel kodlayıcı görsel akışı okur ve işaret bilincine sahip gömme dizileri üretir: el şekli, hareket vektörleri ve bir işareti bir cümleden bir soru haline getiren el dışı işaretler (yüz ifadesi, baş eğimi, göz bakışı).",
+        "p3": "Üçüncüsü, bir çeviri başlığı bu gömme verileri İngilizce metne çözümler. Çözücü, paralel ASL-İngilizce video derlemeleri üzerinde eğitildiği için, ASL dilbilgisini doğal İngilizceye yeniden yapılandırır, kelime kelime bir çeviri üretmek yerine.",
+        "p4": "Dördüncüsü, çevrilen metin kaynak zamanlamasına geri hizalanır — her İngilizce cümle, onu üreten video saniyelerine bağlıdır. Bu, doğrudan bir video düzenleyicisine yerleştirebileceğiniz altyazılar ve YouTube'a temiz bir şekilde yüklenen bir SRT dışa aktarımı sağlar.",
+        "p5": "Bu sayfadaki demo, gerçek bir konuşma ASL klibi üzerinde çalışan üretim modelidir. Erken erişim yüklemeleri aynı hattı çalıştıracaktır."
+      },
+      "usecases": {
+        "title": "ASL video çevirisinin önemli olduğu yerler",
+        "creatorsTitle": "Sağır ve işitme engelli içerik üreticileri için",
+        "creatorsBody": "İşaret dili, video içeriği için birincil dilinizdir; İngilizce altyazılar, sizi iki kez kaydetmeye zorlamadan işitme engelli izleyiciye erişim sağlar. İşaretli çekimi yükleyin, İngilizce altyazı parçasını alın.",
+        "educationTitle": "Eğitmenler ve erişilebilirlik ekipleri için",
+        "educationBody": "Bir sağır eğitmen tarafından işaretlenen kurs videoları — veya karışık bir sınıf için ASL ile yorumlanan — otomatik olarak İngilizce transkriptler alır. Aynı hat, kurumsal video kütüphaneleri için ADA uyumlu altyazılamayı da yönetir.",
+        "businessTitle": "İç iletişim ve ürün ekipleri için",
+        "businessBody": "ASL'de kaydedilen müşteri destek videoları, oryantasyon klipleri ve iç toplantılar, yığınınızda aranabilir kalır — İngilizce transkript, arama indeksinizin gerçekten okuduğu şeydir."
       }
     }
   }

@@ -411,12 +411,13 @@ export default async function BlogPostPage({
          slug !== 'series-infographic-vs-notebooklm' &&
          slug !== 'mbti-character-generator' &&
          slug !== 'content-tagging-system' && (
-          <GenericBlogContent 
+          <GenericBlogContent
             hasKey={hasKey}
             safeT={safeT}
             formatContent={formatContent}
             getVideoDubbingUrl={getVideoDubbingUrl}
             locale={locale}
+            slug={slug}
           />
         )}
       </div>

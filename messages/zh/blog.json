@@ -964,7 +964,13 @@
       ],
       "title": "10个有效的AI视频提示技巧（Sora、Runway、Pika）",
       "metaDescription": "在Sora、Runway和Pika上测试的10种提示技巧，帮助你停止生成无聊的AI视频。2026年创作者的真实前后示例。",
-      "seoKeywords": "AI视频提示，Sora提示，Runway视频提示，Pika视频提示，AI视频生成技巧，视频提示技巧2026，AI视频创作者指南"
+      "seoKeywords": "AI视频提示，Sora提示，Runway视频提示，Pika视频提示，AI视频生成技巧，视频提示技巧2026，AI视频创作者指南",
+      "heroImage": "/images/tenprompt.webp",
+      "heroImageAlt": "AI视频生成的十大提示",
+      "heroCtaLabel": "尝试视频生成",
+      "heroCtaText": "使用Curify的视频生成工具实践这10个提示",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "尝试 →"
     },
     "imageGenerationModelComparison": {
       "date": "2026年3月28日",
@@ -1027,7 +1033,13 @@
       "faq1Answer": "Nano Banana Pro（通过Google AI Studio）和GPT Image 2（DALL-E 3的继任者，内置于ChatGPT）是最适合初学者的——用简单英语输入你想要的内容，获得图像，进行对话迭代。Midjourney v7在Discord/web上有学习曲线。Stable Diffusion 3.5需要技术设置，除非你使用像fal.ai或Replicate这样的管理云前端。",
       "faq2Answer": "这三者都支持商业使用。Nano Banana Pro和Midjourney v7在其付费计划中授予商业许可证（Google在Nano Banana输出中嵌入不可见的SynthID水印以追踪来源）。Stable Diffusion 3.5在宽松许可证下是开源的，但请检查各个社区LoRA许可证——有些是非商业的。",
       "faq3Answer": "对于快速迭代和概念工作，Nano Banana 2（Flash层）或Stable Diffusion 3.5 Turbo（在强GPU上2-4秒生成）。对于最终制作工作，美学最重要时，Midjourney v7或Nano Banana Pro在完整推理层胜出。对于具有特定角色或品牌风格的一致系列，Stable Diffusion 3.5 Large与调优的LoRA在每张图像的一致性上胜出。",
-      "faq4Answer": "最低要求：用于提炼模型（如Stable Diffusion 3.5 Turbo）的12GB VRAM GPU。推荐：用于完整的3.5 Large模型和更快生成的16-24GB VRAM。如果你不想提前购买硬件，云租赁（Runpod、fal.ai、Replicate）为$0.50-2/小时——在承诺购买GPU之前尝试SD时非常有用。"
+      "faq4Answer": "最低要求：用于提炼模型（如Stable Diffusion 3.5 Turbo）的12GB VRAM GPU。推荐：用于完整的3.5 Large模型和更快生成的16-24GB VRAM。如果你不想提前购买硬件，云租赁（Runpod、fal.ai、Replicate）为$0.50-2/小时——在承诺购买GPU之前尝试SD时非常有用。",
+      "heroImage": "/images/hardworker.webp",
+      "heroImageAlt": "比较Nano Banana、Flux和Stable Diffusion在相同提示下的输出",
+      "heroCtaLabel": "浏览模板",
+      "heroCtaText": "跳过模型对比的无尽循环 — 从200多个现成的Curify模板开始",
+      "heroCtaHref": "/nano-banana-pro-prompts",
+      "heroCtaButton": "探索 →"
     },
     "lipSyncBusinessGuide": {
       "title": "AI 唇同步与配音指南：商业应用与工具",
@@ -1378,359 +1390,79 @@
       ]
     },
     "bestAiTools": {
-      "title": "2026 年内容创作者的 10 大最佳 AI 工具",
-      "publishedDate": "2026 年 4 月 2 日",
-      "readTime": "12 分钟阅读",
+      "title": "2026年视频内容创作者最佳AI工具：Descript vs ElevenLabs vs Runway",
+      "metaDescription": "Descript、ElevenLabs、Runway——哪个AI工具适合视频创作，每个工具的优势是什么，以及一个你应该跳过它们而使用配音工具的案例。",
+      "publishedDate": "2026-05-30",
+      "readTime": "阅读时间：8分钟",
       "category": "创作者工具",
-      "heroImageAlt": "内容创作者的 AI 工具的全面概述，包括笔记、研究和多媒体创作工具",
-      "introduction": {
-        "title": "介绍",
-        "description": "AI 工具彻底改变了内容创作，简化了工作流程，增强了创造力，提高了生产力。从笔记到视频制作，这些工具帮助创作者更聪明地工作，而不是更辛苦。",
-        "subtitle": "我们精心挑选了 2026 年每个内容创作者都应该了解的 10 个必备 AI 工具。"
-      },
-      "tools": {
-        "title": "工具与资源",
-        "description": "了解 2026 年内容创作者可用的最佳工具。",
-        "list": [
-          {
-            "icon": "📝",
-            "name": "Notion AI",
-            "category": "笔记与组织",
-            "description": "AI 驱动的工作空间，帮助组织思维、生成内容和自动化工作流程。",
-            "features": [
-              "AI 辅助写作",
-              "智能组织",
-              "模板库",
-              "团队协作"
-            ],
-            "pricing": "免费套餐可用，付费从每月 8 美元起",
-            "bestFor": "内容策划者、写作者和团队"
-          },
-          {
-            "icon": "🔍",
-            "name": "Perplexity AI",
-            "category": "研究与分析",
-            "description": "一个由AI驱动的搜索引擎，提供准确的引用答案以解决复杂问题。",
-            "features": [
-              "实时网页搜索",
-              "引用来源",
-              "学术研究",
-              "文档分析"
-            ],
-            "pricing": "提供免费层，专业版从每月$20起",
-            "bestFor": "研究人员、记者和学者"
-          },
-          {
-            "icon": "🎨",
-            "name": "Midjourney",
-            "category": "图像生成",
-            "description": "领先的AI图像生成器，从文本提示中创建惊艳的视觉效果。",
-            "features": [
-              "高质量图像",
-              "风格定制",
-              "批量创建",
-              "商业版权"
-            ],
-            "pricing": "基础版从每月$10起，标准版从每月$30起",
-            "bestFor": "视觉创作者、市场营销人员和设计师"
-          },
-          {
-            "icon": "🎬",
-            "name": "Runway ML",
-            "category": "视频创作",
-            "description": "一个AI视频平台，支持文本转视频和视频编辑功能。",
-            "features": [
-              "文本转视频",
-              "视频编辑",
-              "绿幕去除",
-              "AI效果"
-            ],
-            "pricing": "提供免费层，标准版从每月$15起",
-            "bestFor": "视频创作者和社交媒体经理"
-          },
-          {
-            "icon": "🎙️",
-            "name": "Descript",
-            "category": "音频与播客",
-            "description": "一个集成音频/视频编辑平台，具有AI转录和语音克隆功能。",
-            "features": [
-              "自动转录",
-              "语音克隆",
-              "AI编辑",
-              "屏幕录制"
-            ],
-            "pricing": "提供免费层，创作者版从每月$15起",
-            "bestFor": "播客和视频创作者"
-          },
-          {
-            "icon": "📊",
-            "name": "Canva AI",
-            "category": "图形设计",
-            "description": "一个由AI驱动的设计平台，创建专业图形、演示文稿和营销材料。",
-            "features": [
-              "AI设计建议",
-              "品牌工具包管理",
-              "模板库",
-              "团队协作"
-            ],
-            "pricing": "提供免费层，专业版从每月$12.99起",
-            "bestFor": "社交媒体经理和市场营销人员"
-          },
-          {
-            "icon": "🚀",
-            "name": "Jasper AI",
-            "category": "内容写作",
-            "description": "AI写作助手，帮助创建博客文章、社交媒体内容和营销文案。",
-            "features": [
-              "50+写作模板",
-              "品牌声音定制",
-              "SEO优化",
-              "内容日历"
-            ],
-            "pricing": "创作者版从每月$39起，团队版从每月$99起",
-            "bestFor": "内容营销人员和文案撰写人"
-          },
-          {
-            "icon": "🎯",
-            "name": "Grammarly AI",
-            "category": "写作增强",
-            "description": "AI驱动的写作助手，提升所有内容类型的语法、语气和清晰度。",
-            "features": [
-              "语法检查",
-              "语气检测",
-              "风格建议",
-              "抄袭检查"
-            ],
-            "pricing": "提供免费层，Premium 从 $12/月起",
-            "bestFor": "写作者和专业人士"
-          },
-          {
-            "icon": "📱",
-            "name": "Buffer AI",
-            "category": "社交媒体管理",
-            "description": "AI驱动的社交媒体管理平台，优化发布日程和内容表现。",
-            "features": [
-              "AI内容建议",
-              "最佳发布时机",
-              "分析仪表板",
-              "多平台管理"
-            ],
-            "pricing": "提供免费层，Essentials 从 $6/月起",
-            "bestFor": "社交媒体经理和小型企业"
-          },
-          {
-            "icon": "🎥",
-            "name": "Curify",
-            "category": "视频翻译与AI内容",
-            "description": "综合AI平台，用于视频翻译、配音和内容创作，具备先进的声音克隆和多模态能力。",
-            "features": [
-              "AI视频翻译",
-              "声音克隆",
-              "同步口型技术",
-              "多模态内容生成",
-              "专业配音"
-            ],
-            "pricing": "提供免费套餐，专业计划起价$29/月",
-            "bestFor": "视频创作者、内容营销人员和全球企业"
-          }
-        ]
-      },
-      "features": {
-        "title": "主要特点"
-      },
-      "pricing": {
-        "title": "定价"
-      },
-      "bestFor": {
-        "title": "最佳适用对象"
-      },
-      "curify": {
-        "title": "Curify 如何帮助您",
-        "description": "Curify 为希望将 AI 工具整合到工作流程中的内容创作者提供全面解决方案。我们的平台提供与顶级 AI 工具的无缝集成、可定制模板和专家指导，帮助您高效创建引人注目的内容。",
-        "features": [
-          "无缝的 AI 工具集成",
-          "可定制的内容模板",
-          "专家指导和支持",
-          "工作流程优化",
-          "性能分析"
-        ]
-      },
-      "cta": {
-        "title": "🎯 准备好开始了吗？",
-        "description": "今天尝试 Curify 的工具，利用 AI 驱动的解决方案转变您的内容创作工作流程。"
-      },
-      "comparison": {
-        "title": "工具比较",
-        "description": "并排比较这些 AI 工具，以找到最适合您特定需求和预算的工具。",
-        "tableTitle": "快速比较表",
-        "toolColumn": "工具",
-        "categoryColumn": "类别",
-        "pricingColumn": "起始价格",
-        "difficultyColumn": "学习曲线",
-        "tableData": [
-          {
-            "tool": "Notion AI",
-            "category": "笔记",
-            "pricing": "$8/月",
-            "difficulty": "简单"
-          },
-          {
-            "tool": "Perplexity AI",
-            "category": "研究",
-            "pricing": "$20/月",
-            "difficulty": "简单"
-          },
-          {
-            "tool": "Midjourney",
-            "category": "图像",
-            "pricing": "$10/月",
-            "difficulty": "中等"
-          },
-          {
-            "tool": "Runway ML",
-            "category": "视频",
-            "pricing": "$15/月",
-            "difficulty": "中等"
-          },
-          {
-            "tool": "Descript",
-            "category": "音频",
-            "pricing": "$15/月",
-            "difficulty": "简单"
-          },
-          {
-            "tool": "Canva AI",
-            "category": "图形设计",
-            "pricing": "$12.99/月",
-            "difficulty": "简单"
-          },
-          {
-            "tool": "Jasper AI",
-            "category": "内容写作",
-            "pricing": "$39/月",
-            "difficulty": "中等"
-          },
-          {
-            "tool": "Grammarly AI",
-            "category": "写作增强",
-            "pricing": "$12/月",
-            "difficulty": "简单"
-          },
-          {
-            "tool": "Buffer AI",
-            "category": "社交媒体",
-            "pricing": "$6/月",
-            "difficulty": "简单"
-          },
-          {
-            "tool": "Curify",
-            "category": "视频翻译",
-            "pricing": "$29/月",
-            "difficulty": "中等"
-          }
-        ]
-      },
-      "howToChoose": {
-        "title": "如何选择合适的工具",
-        "description": "选择合适的AI工具取决于您的具体需求、预算和工作流程。考虑以下关键因素：",
-        "factors": [
-          {
-            "title": "内容类型",
-            "description": "将工具与您的主要内容格式（视频、文本、图像、音频）匹配"
-          },
-          {
-            "title": "预算限制",
-            "description": "从免费层开始，随着需求增长而升级"
-          },
-          {
-            "title": "集成需求",
-            "description": "考虑工具如何与您现有的工作流程和软件协同工作"
-          },
-          {
-            "title": "学习曲线",
-            "description": "在强大功能与团队易用性之间取得平衡"
-          }
-        ]
-      },
-      "workflow": {
-        "title": "最佳创作者工作流程",
-        "description": "以下是如何将这些AI工具集成到简化的内容创作过程中的方法：",
-        "steps": [
-          {
-            "title": "研究与规划",
-            "description": "使用Perplexity AI进行研究，使用Notion AI进行内容规划"
-          },
-          {
-            "title": "内容创作",
-            "description": "使用AI助手进行写作，使用语法工具进行增强"
-          },
-          {
-            "title": "视觉元素",
-            "description": "使用Midjourney创建图像，使用AI工具进行设计"
-          },
-          {
-            "title": "音频/视频",
-            "description": "使用Descript进行录音和编辑，使用Runway ML创建视频"
-          },
-          {
-            "title": "演示",
-            "description": "使用AI工具将所有内容汇编成演示文稿"
-          }
-        ]
-      },
-      "tips": {
-        "title": "最大效率的专业技巧",
-        "description": "通过这些专家策略充分利用这些AI工具：",
-        "list": [
-          "从一个工具开始，掌握它，然后再将其他工具添加到您的工作流程中",
-          "使用AI完成80%的工作，然后添加个人风格以增强真实性",
-          "创建模板和工作流程以自动化重复任务",
-          "定期更新您的工具，并学习新功能的发布",
-          "结合多个工具以获得独特的结果，使其在竞争中脱颖而出"
-        ]
-      },
-      "future": {
-        "title": "内容创作中的AI未来",
-        "description": "AI工具正在迅速发展。以下是塑造内容创作未来的趋势：",
-        "trends": [
-          {
-            "title": "多模态AI",
-            "description": "能够无缝处理文本、图像、音频和视频的工具"
-          },
-          {
-            "title": "个性化",
-            "description": "AI学习您的风格和偏好，以获得更好的结果"
-          },
-          {
-            "title": "实时协作",
-            "description": "能够在团队和平台之间实现即时协作的AI工具"
-          }
-        ]
-      },
-      "conclusion": {
-        "title": "结论",
-        "description": "今天就开始您的AI驱动的内容创作工具之旅。正确组合的AI工具可以显著提高您的生产力、创造力和内容质量。从一个工具开始，掌握它，然后逐步扩展您的工具包，以构建适合您的全面内容创作工作流程。"
-      },
+      "intro": "大多数“最佳AI工具”列表有20个条目，因为填充有助于SEO。我们不同意。三个工具几乎涵盖了每个真实视频创作者的工作流程——编辑/转录（Descript）、语音和TTS（ElevenLabs）、生成视频（Runway）。本指南选择了这三款工具，说明每个工具的最佳用途，并标记出一个常见的情况（将视频配音成另一种语言并保留原讲者的声音），在这种情况下你应该跳过它们而使用配音工具。",
+      "whoThisIsForTitle": "适合谁",
+      "whoThisIsForContent": "独立创作者选择工具来编辑、叙述或生成YouTube / TikTok / Instagram / 收费客户工作的内容。代理视频团队大批量制作本地化内容。营销团队构建产品演示、网络研讨会、课程模块。如果你想将现有视频本地化为另一种语言并保留原讲者的声音，请跳到[如果你不需要视频创作工具怎么办？](#curify-callout)的提示——这是一个不同的问题和不同的工具。",
+      "buyersGuideTitle": "快速买家指南——什么才是真正重要的",
+      "buyersGuideContent": "四个维度很重要；其余是营销文案。\n\n**1. 你需要在哪个工作流程阶段获得帮助？** 前期制作（脚本/分镜）与制作（编辑）和后期制作（语音、配音、分发）使用不同的工具。购买一个工具来完成所有工作通常意味着购买每个工具的平庸版本。\n\n**2. 定价模型。** 按分钟计费（大多数生成视频工具）线性扩展——对于低量是好的，但在大规模时会很痛苦。订阅计划限制你的支出。按字符计费（TTS）类似——短片便宜，长篇叙述则很贵。\n\n**3. 输出格式灵活性。** 你能以4K导出吗？你能获得原始音频轨道还是最终混音？转录是否可以下载为SRT？大多数工具将你限制在他们的播放器或编辑器中；你想要的是那些提供干净源文件的工具。\n\n**4. 隐藏成本：可接受的时间。** 一个学习每个视频需要30分钟但第一次尝试就能产生精美结果的工具通常比一个在30秒内产生结果但需要三次迭代才能看起来正确的工具更好。第二类在50个视频中会累积。",
+      "methodologyTitle": "我们如何选择这三款工具",
+      "methodologyContent": "大多数“最佳AI工具”列表有15-20个条目，因为填充有助于SEO。我们不同意。三个工具涵盖了整个视频创作者堆栈——编辑/转录、语音、生成视频。我们剔除了17个与这三款工具重叠的工具：CapCut AI、Adobe Premiere Firefly、Lumen5、Pictory、InVideo和Veed与Descript在同一编辑类别中；Murf、Play.ht、Speechify、WellSaid、Lovo与ElevenLabs在同一语音类别中；Pika、Sora、Luma、Kling、Synthesia、HeyGen与Runway在同一生成视频类别中。如果你想要长列表，那些只需Google搜索即可。如果你想要一个决策，请继续阅读。",
+      "toolsTitle": "值得比较的三款工具",
+      "toolsIntro": "超越营销文案，视频AI领域分为三个类别：编辑 + 转录的工作马（Descript）、语音和TTS的领导者（ElevenLabs）以及生成视频的领跑者（Runway）。每个工具掌握着工作流程的不同阶段。根据你今天堆栈中最昂贵的部分进行选择。",
+      "tool1Name": "1. Descript",
+      "tool1Tagline": "多模态编辑器——通过编辑转录来编辑视频",
+      "tool1BestFor": "播客和视频编辑、基于转录的剪辑、多轨音频 + 视频、教程的屏幕录制",
+      "tool1Pricing": "免费版有限；付费计划起价约为$16/月；企业级计划适用于团队工作流程",
+      "tool1Languages": "转录支持23种以上语言；语音克隆（Overdub）支持英语和其他选择的语言",
+      "tool1Limitation": "编辑模型假设为播客风格的对话内容；在叙事视频上较弱，没有本地AI B-roll生成，语音克隆质量落后于ElevenLabs",
+      "tool1WhenToPick": "当你大部分编辑时间用于剪辑访谈片段、播客集、课程视频或屏幕录制时，选择Descript——内容的转录是结构支架。通过删除单词进行编辑是杀手级功能：从转录中剪掉一个句子，视频会自动匹配。免费版足够慷慨以供评估；付费版增加多轨、语音克隆（Overdub）和AI眼神接触修正。",
+      "tool2Name": "2. ElevenLabs",
+      "tool2Tagline": "语音和TTS领导者——精致的商业选择",
+      "tool2BestFor": "解释视频的配音、有声书叙述、媒体角色声音、产品特性定制声音",
+      "tool2Pricing": "按字符计费——免费版有限；付费计划起价约为$5/月；企业级计划适用于高容量API使用",
+      "tool2Languages": "30种以上语言，拥有成熟的语音库；10-30秒参考的即时语音克隆；30分钟以上参考的专业克隆",
+      "tool2Limitation": "封闭平台，语音克隆的内容政策限制（需要验证同意才能使用自定义声音）；高容量时按字符计费的成本累积",
+      "tool2WhenToPick": "当你需要一个声音时，选择ElevenLabs——用于YouTube论文的叙述、教程配音、播客介绍、有声书。API和语音库在该类别中最为成熟。有关语音克隆的更深入对比，请参见[/blog/voice-cloning-tools](/blog/voice-cloning-tools)。",
+      "tool3Name": "3. Runway",
+      "tool3Tagline": "生成视频 - 文本转视频和运动画笔，生产质量",
+      "tool3BestFor": "生成B-roll，抽象场景生成，运动图形，音乐视频镜头，产品揭示序列",
+      "tool3Pricing": "免费层有限；付费计划起价约为15美元/月；企业版适用于高容量Gen-3 / Gen-4使用",
+      "tool3Languages": "文本提示界面为英语；输出为视觉，语言无关",
+      "tool3Limitation": "在短小的电影片段（5-10秒）上表现强劲；在连贯的长篇叙事上较弱；按秒计费使得长序列成本高昂；对特定动作的控制（例如“角色投掷球”）仍然不一致",
+      "tool3WhenToPick": "当您需要电影级生成视频时选择Runway - 抽象介绍、产品揭示、运动图形、音乐视频镜头、不存在的B-roll。Gen-3和Gen-4模型在视觉质量上领先于该类别。将其与真实视频编辑器（Descript、Premiere、Final Cut）配合使用以进行组装步骤。",
+      "comparisonTitle": "并排比较",
+      "comparisonIntro": "三个工具的四个维度相同。在阅读每个工具的框后，使用此信息进行三角定位。",
+      "decisionRubricTitle": "哪个适合哪个用例",
+      "decisionRubricContent": "- **以播客或访谈为驱动的视频编辑** → Descript。通过转录进行编辑。\n- **叙述或产品特征的配音** → ElevenLabs。抛光 + 低工程表面。\n- **生成B-roll或电影场景生成** → Runway。该类别中最佳视觉质量。\n- **将视频本地化为另一种语言，同时保留原始说话者的声音** → 跳过这三者。阅读下一部分。",
+      "curifyCalloutTitle": "如果您不需要视频创作者*工具*怎么办？",
+      "curifyCalloutContent": "大多数访问“最佳AI视频创作者工具”的读者都在尝试解决两个问题之一：从头开始制作新视频，或者将现有视频本地化为另一种语言，同时保留原始说话者的声音。上述三个工具处理第一个问题。**对于第二个问题，您不需要它们中的任何一个。**\n\n[Curify视频配音](/tools/video-dubbing)从源视频克隆原始说话者的声音，翻译音频，将其与源时间对齐，并在目标语言中提供保留说话者身份的配音轨道。声音克隆是隐形的 - 上传视频，选择语言，获取配音。\n\n**何时适合：** 本地化YouTube视频、课程模块、产品演示、网络研讨会、教程。\n\n**何时不适合：** 从头开始制作新视频内容（使用Runway或Descript），为脚本生成配音（使用ElevenLabs），编辑访谈（使用Descript）。不同类别，不同工具。",
+      "faqTitle": "常见问题",
+      "faq1Q": "我需要所有三个工具吗？",
+      "faq1A": "不 - 取决于您的工作流程。一个独立创作者制作解释视频可能只使用Descript（录制 + 编辑）+ ElevenLabs（如果不使用自己的声音则使用）。一个以运动图形为主的创作者可能使用Runway + Descript。大多数创作者不需要生成视频；大多数创作者确实需要基于转录的编辑。从今天占用您大部分时间的类别开始。",
+      "faq2Q": "有没有我可以评估的免费层？",
+      "faq2A": "这三个都有免费层。**Descript**：每月约1小时的转录，带水印的导出。**ElevenLabs**：每月1万字符（约10分钟的声音）。**Runway**：每月有限生成，带水印。免费层足以进行评估；生产工作需要付费计划。Curify视频配音的早期访问候补名单也可以免费加入。",
+      "faq3Q": "覆盖YouTube创作者需求的最便宜组合是什么？",
+      "faq3A": "Descript创作者计划（约16美元/月）涵盖编辑 + 转录 + 粗略的Overdub声音。ElevenLabs入门版（5美元/月）涵盖高质量配音。总计约21美元/月，适用于每周制作1-2个视频的YouTube频道。仅在您需要定期生成B-roll时添加Runway。",
+      "faq4Q": "我如何克隆自己的声音进行配音？",
+      "faq4A": "ElevenLabs即时声音克隆需要10-30秒的参考音频，并在几分钟内完成。ElevenLabs专业声音克隆需要30分钟以上的干净录音，并达到接近广播的保真度。Descript Overdub在编辑器内部采用类似的方法，但保真度不及ElevenLabs。有关声音克隆的全面对比 - 包括开源选项（F5-TTS，OpenVoice） - 请参见[/blog/voice-cloning-tools](/blog/voice-cloning-tools)。",
+      "faq5Q": "这些工具可以自动生成完整视频吗？",
+      "faq5A": "不，无法达到生产质量。Runway可以生成5-30秒的电影片段。将它们串联成10分钟的连贯叙事仍然需要人工编辑（Descript、Premiere或Final Cut）。承诺“AI生成您的完整视频”的工具几乎总是交付看起来像是AI生成的东西。上述三个工具最好理解为辅助，而不是替代品。",
+      "faq6Q": "我只想用自己的声音为YouTube视频配音。哪个工具？",
+      "faq6A": "上述三个工具单独使用都不行 - 您需要组装一个管道。您需要：提取原始音频，克隆说话者的声音，翻译脚本，在克隆的声音中生成配音音频，将其与源视频时间对齐，选择性地进行口型同步。[Curify视频配音](/tools/video-dubbing)完成所有六个步骤。声音克隆是内部的；您上传视频，选择语言，获取配音。与“AI视频创作者工具”不同的类别。",
+      "conclusionTitle": "简短版本",
+      "conclusionContent": "三个工具，一个决定：**Descript**如果您的大部分编辑是访谈/播客/屏幕录制内容，转录驱动剪辑；**ElevenLabs**如果您需要精致的配音或声音克隆；**Runway**如果您需要生成B-roll或电影短片。如果您真正的问题是用原始说话者的声音为现有视频配音，[尝试Curify](/tools/video-dubbing) - 不同类别，声音克隆是自动的，您不必学习上述三个工具中的任何一个。",
       "footer": {
         "tags": [
-          "AI工具",
-          "内容创作",
-          "生产力",
-          "营销",
-          "设计",
-          "视频制作",
-          "写作",
-          "研究"
+          "AI视频工具",
+          "Descript",
+          "ElevenLabs",
+          "Runway",
+          "创作者的人工智能",
+          "视频编辑人工智能",
+          "声音克隆",
+          "人工智能视频配音"
         ],
-        "questions": "对内容创作的AI工具有疑问吗？联系我们的专家获取个性化建议。"
+        "questions": "关于哪个工具适合您的工作流程的问题？通过/contact给我们留言——我们在内部使用Curify以及这些第三方工具，并有自己的看法。"
       },
-      "metaDescription": "2026年内容创作者实际使用的10个AI工具——配音、转录、图像、语音。每个工具的优点和不足之处。",
-      "seoKeywords": [
-        "2026年最佳AI工具",
-        "创作者的AI工具",
-        "内容创作AI",
-        "AI工具比较"
-      ]
+      "heroImageAlt": "2026 年视频内容创作者的 AI 工具：Descript、ElevenLabs、Runway",
+      "heroImage": "/images/best-ai-tools-video-runway.webp",
+      "heroCtaText": "将视频本地化为另一种语言，使用原讲者的声音 — 尝试 Curify 视频配音",
+      "heroCtaHref": "/tools/video-dubbing"
     },
     "nanoBananaDedicated": {
       "title": "什么是Nano Banana AI？AI结构化视觉生成的完整指南",
@@ -3930,7 +3662,13 @@
         "AI视频管道",
         "扩散工作流",
         "运动图形AI"
-      ]
+      ],
+      "heroImage": "/images/ae-vs-comfyui.jpg",
+      "heroImageAlt": "After Effects 与 ComfyUI 的 AI 视频管道",
+      "heroCtaLabel": "试试这个管道",
+      "heroCtaText": "跳过 AE 与 ComfyUI 的争论 — 在 Curify 的批处理工具中运行完整的视频管道",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "试试 →"
     },
     "qaBotToTaskAgent": {
       "heading": "🏗️ 从QA机器人到任务代理：架构指南",
@@ -4337,13 +4075,8 @@
       }
     },
     "characterPromptGenerator": {
-      "title": "角色提示生成器：12+宇宙MBTI卡片 + 自定义角色",
-      "metaDescription": "从零开始构建角色，包含个性、名字、年龄、性别——或者将您喜欢的宇宙中的已知角色重新想象为MBTI个性卡（如漫威、绝命毒师、火影忍者、吉卜力、哈利·波特、老友记等）。",
-      "publishedDate": "2026-05-12",
-      "readTime": "6分钟阅读",
       "category": "Nano模板",
       "heroImageAlt": "角色提示生成器预览",
-      "intro": "无论您是想从头设计一个全新的角色，还是将您喜欢的节目中的某个角色重新想象为MBTI个性卡，Curify提供了一套专注的角色模板——每个模板都有特定的参数表单，让您确切知道该填写什么。",
       "whatWeShip": {
         "title": "我们提供的内容",
         "intro": "以下所有模板在Curify上都有实时示例。根据您想要构建的角色类型进行选择：",
@@ -4478,35 +4211,6 @@
           ]
         }
       },
-      "whoCanBenefit": {
-        "title": "谁能受益",
-        "writers": {
-          "title": "作家与讲故事者",
-          "description": "使用自定义角色卡设计具有一致个性的常驻角色，然后再进行草稿。使用MBTI对比卡规划对立关系和对话动态。"
-        },
-        "artists": {
-          "title": "数字艺术家与插画师",
-          "description": "在可爱档案卡中生成参考表，或使用粉丝网格海报生成完整角色网格以获取委托灵感。"
-        },
-        "gameDevelopers": {
-          "title": "游戏开发者",
-          "description": "MBTI对比卡和自定义角色卡都提供具有一致视觉和行为特征的NPC原型。"
-        },
-        "creators": {
-          "title": "内容创作者",
-          "description": "宇宙MBTI卡（漫威/老友记/NBA/吉卜力/中国经典）旨在用于垂直社交 — 输入角色名称并发布。"
-        }
-      },
-      "proTips": {
-        "title": "专业提示",
-        "tips": [
-          "将个性与色彩调色板匹配 — 胆汁型角色适合温暖的红色，忧郁型适合深蓝色。",
-          "对于自定义角色卡，写下个性为 'MBTI + 1–2 个特征'（例如 'ENFP，乐观，焦躁'）。模糊的提示会产生模糊的肖像。",
-          "宇宙 MBTI 模板最适合使用知名角色名称。冷门名称往往会偏离。",
-          "如果生成的 MBTI 类型与官方粉丝解读不一致，卡片仍然有用——它提供了一个值得讨论的替代解释。",
-          "使用 Fandom 网格海报作为可分享的社交内容——主题网格的表现优于单角色帖子。"
-        ]
-      },
       "footer": {
         "tags": [
           "AI 角色设计",
@@ -4519,7 +4223,346 @@
           "可爱角色档案"
         ],
         "questions": "有想要添加到 MBTI 系列的宇宙吗？联系我们，我们会考虑在下一个内容发布中加入。"
-      }
+      },
+      "title": "角色提示生成器：为火影忍者、黄石公园、漫威、哈利·波特及8个更多宇宙提供MBTI",
+      "metaDescription": "查找火影忍者、黄石公园、漫威、老友记、哈利·波特、绝命毒师等35个角色的MBTI人格类型 — 然后使用Curify的特定宇宙模板生成卡片。",
+      "publishedDate": "2026-05-30",
+      "readTime": "7分钟阅读",
+      "intro": "搜索“鸣人性格类型”或“贝丝·达顿性格类型”？你来对地方了。本指南提供了六个宇宙中35个最受欢迎角色的MBTI — 火影忍者、黄石公园、漫威、老友记、哈利·波特、绝命毒师 — 以及你可以将任何这些名字放入以生成完整卡片的Curify模板。跳到你想要的[宇宙](#universes)或[MBTI快速参考表](#mbti-index)。",
+      "workedExamples": {
+        "title": "按宇宙分析的MBTI — 35个角色",
+        "intro": "下面每个宇宙部分列出了最受欢迎角色及其MBTI类型和简要介绍。点击每个部分底部的模板链接以生成带图像的完整角色卡片。",
+        "universes": [
+          {
+            "name": "火影忍者",
+            "slug": "mbti-naruto",
+            "heading": "火影忍者MBTI角色",
+            "description": "火影忍者模板生成风格化为忍者世界的人格卡片 — 具有角色特定的村庄标记和查克拉主题背景的忍者美学。将任何名字放入模板；这是最受欢迎角色的MBTI。",
+            "characters": [
+              {
+                "name": "波风水门",
+                "mbti": "INFJ-A",
+                "blurb": "战略性、自我牺牲、原则坚定。黄闪总是比每个敌人多想两步。"
+              },
+              {
+                "name": "大蛇丸",
+                "mbti": "INTJ-A",
+                "blurb": "计算型、执着、蔑视平凡。原始的三忍体现了不受限制的智力的黑暗面。"
+              },
+              {
+                "name": "宇智波鼬",
+                "mbti": "INFJ-T",
+                "blurb": "负担沉重的保护者，拥有复杂的道德框架。为只有他理解的愿景牺牲了一切。"
+              },
+              {
+                "name": "鸣人·宇智波",
+                "mbti": "ENFP-A",
+                "blurb": "无尽的乐观，吸引人的个性，对人们改变能力的坚定信念。"
+              },
+              {
+                "name": "佐助·宇智波",
+                "mbti": "ISTP-T",
+                "blurb": "冷静的超然，技术精湛，内心冲突被安静的外表掩盖。"
+              },
+              {
+                "name": "卡卡西·旗木",
+                "mbti": "INTP-T",
+                "blurb": "分析型，幽默干练，以智力化解情感。复制了一千种忍术却依然难以捉摸。"
+              }
+            ]
+          },
+          {
+            "name": "黄石",
+            "slug": "mbti-yellowstone",
+            "heading": "黄石 MBTI 角色",
+            "description": "黄石模板卡片带来了节目的西部风格——牛仔布和皮革色调，牧场背景，达顿品牌。最受欢迎的达顿角色及其 MBTI：",
+            "characters": [
+              {
+                "name": "贝丝·达顿",
+                "mbti": "ESTJ-A",
+                "blurb": "无情的执行者，忠于家庭，毫不留情。贝丝用电锯和鸡尾酒管理家族生意。"
+              },
+              {
+                "name": "约翰·达顿",
+                "mbti": "ISTJ-A",
+                "blurb": "顽固的传统主义者，责任感强，被遗产压得喘不过气。宁愿烧掉牧场也不让它离开家族的家长。"
+              },
+              {
+                "name": "瑞普·惠勒",
+                "mbti": "ISTP-A",
+                "blurb": "忠诚的保护者，冷静应对压力，遭遇背叛时极具破坏力。牧场工人转变为执法者。"
+              },
+              {
+                "name": "凯西·达顿",
+                "mbti": "ISFP-T",
+                "blurb": "安静，原则性强，行动导向。夹在两个世界之间，努力尊重两者。"
+              },
+              {
+                "name": "杰米·达顿",
+                "mbti": "INFP-T",
+                "blurb": "内心矛盾，理想主义，容易受伤。道德指南针不断旋转的家族律师。"
+              }
+            ]
+          },
+          {
+            "name": "漫威",
+            "slug": "mbti-marvel",
+            "heading": "漫威 MBTI 角色",
+            "description": "漫威模板生成具有英雄特定色彩调色板和等距房间场景的 MBTI 角色卡。选择一个英雄或反派——这是最受欢迎角色的 MBTI。",
+            "characters": [
+              {
+                "name": "托尼·斯塔克 / 钢铁侠",
+                "mbti": "ENTP-A",
+                "blurb": "富有创造力、魅力四射、非传统。托尼通过即兴发挥而非准备赢得争论和战斗。"
+              },
+              {
+                "name": "史蒂夫·罗杰斯 / 美国队长",
+                "mbti": "ISFJ-A",
+                "blurb": "忠于职责、传统，原始保护者。美国队长的道德框架在1942年设定，并未改变。"
+              },
+              {
+                "name": "布鲁斯·班纳 / 绿巨人",
+                "mbti": "INTJ-T",
+                "blurb": "杰出的战略家，被情感占据时变成的东西所束缚。房间里最聪明的人，直到他不是。"
+              },
+              {
+                "name": "索尔",
+                "mbti": "ESFP-A",
+                "blurb": "外向、行动导向、活在当下的思考者。值得拥有锤子，因为他选择这样做，而不是因为他计划这样做。"
+              },
+              {
+                "name": "娜塔莎·罗曼诺夫 / 黑寡妇",
+                "mbti": "ISTP-A",
+                "blurb": "足智多谋、独立、深藏不露。能读懂每个房间，只有在确定时才会采取行动。"
+              },
+              {
+                "name": "彼得·帕克 / 蜘蛛侠",
+                "mbti": "INFP-T",
+                "blurb": "理想主义、敏感、价值驱动。因为相信选择重要，所以承受每一个选择的重担。"
+              }
+            ]
+          },
+          {
+            "name": "老友记",
+            "slug": "friends-character-mbti",
+            "heading": "老友记 MBTI 角色",
+            "description": "老友记模板卡传达了节目的情景喜剧温暖——中央公园色彩调色板，90年代纽约公寓美学。这里是每个主要演员的 MBTI。",
+            "characters": [
+              {
+                "name": "钱德勒·宾",
+                "mbti": "ENTP-T",
+                "blurb": "机智、讽刺、避免冲突。用一句话化解每一个情感时刻。"
+              },
+              {
+                "name": "罗斯·盖勒",
+                "mbti": "INTP-T",
+                "blurb": "知识渊博、笨拙、分析能力强。对恐龙的看法正确，但对其他一切都错。"
+              },
+              {
+                "name": "瑞秋·格林",
+                "mbti": "ENFP-A",
+                "blurb": "迷人、以形象为驱动、缓慢进化。从被宠坏的未婚妻到时尚高管的转变是典型的ENFP成长路径。"
+              },
+              {
+                "name": "莫妮卡·盖勒",
+                "mbti": "ESTJ-A",
+                "blurb": "有条理、控制欲强、通过结构来关怀。厨师因为这是控制混乱的唯一方式而举办聚会。"
+              },
+              {
+                "name": "乔伊·特里比亚尼",
+                "mbti": "ESFP-A",
+                "blurb": "外向、享乐主义、忠诚。活在当下，希望你也能和他一起生活在当下。"
+              },
+              {
+                "name": "菲比·布菲",
+                "mbti": "ENFP-T",
+                "blurb": "古怪、直觉强、自由奔放。唯一一个道德框架真正来自其他地方的人。"
+              }
+            ]
+          },
+          {
+            "name": "哈利·波特",
+            "slug": "harry-potter-mbti-infographic",
+            "heading": "哈利·波特 MBTI 角色",
+            "description": "哈利·波特模板生成巫师美学个性卡片——房屋颜色调色板、标志性魔杖、适合每个角色的情境背景。搜索最多的HP角色及其MBTI：",
+            "characters": [
+              {
+                "name": "哈利·波特",
+                "mbti": "ISFP-T",
+                "blurb": "安静的叛逆者、以价值观为驱动、在被推动时采取行动。犹豫的英雄，其道德指南针从不动摇。"
+              },
+              {
+                "name": "赫敏·格兰杰",
+                "mbti": "ESTJ-A",
+                "blurb": "遵循规则、雄心勃勃、有条理。每次都先给出正确答案——直到规则与正确答案发生冲突。"
+              },
+              {
+                "name": "罗恩·韦斯利",
+                "mbti": "ESFP-T",
+                "blurb": "忠诚、爱玩、有时缺乏安全感。朋友的存在比他的策略更重要。"
+              },
+              {
+                "name": "西弗勒斯·斯内普",
+                "mbti": "INTJ-A",
+                "blurb": "战略性、痛苦、深藏的内涵。在系列中玩了最长、最痛苦的游戏。"
+              },
+              {
+                "name": "阿尔布斯·邓布利多",
+                "mbti": "INFJ-A",
+                "blurb": "智慧的导师，长远的计划者，原则坚定到残酷。知道结果需要什么并进行安排。"
+              },
+              {
+                "name": "伏地魔",
+                "mbti": "ENTJ-A",
+                "blurb": "追求权力，富有魅力，冷酷无情。围绕对自己死亡的恐惧建立了整个意识形态。"
+              }
+            ]
+          },
+          {
+            "name": "绝命毒师",
+            "slug": "mbti-breakingbad",
+            "heading": "绝命毒师 MBTI 角色",
+            "description": "绝命毒师模板卡片融入了该剧的沙漠毒品美学——阿尔伯克基的调色板，角色特定的标志性元素（沃尔特的帽子，索尔的西装，杰西的连帽衫）。包括《更好的呼叫索尔》中的角色。",
+            "characters": [
+              {
+                "name": "沃尔特·怀特",
+                "mbti": "INTJ-A",
+                "blurb": "杰出的战略家，受自我驱动，伪装。化学老师的故事线不可避免地向毒枭的故事线倾斜。"
+              },
+              {
+                "name": "杰西·平克曼",
+                "mbti": "ISFP-T",
+                "blurb": "忠诚，情感丰富，良心驱动。即使没有人要求他，他也是系列的道德中心。"
+              },
+              {
+                "name": "索尔·古德曼 / 吉米·麦吉尔",
+                "mbti": "ENTP-T",
+                "blurb": "狡猾，口才出众，机会主义者，心中有兄弟的伤口。无论是“滑头”吉米还是索尔，机制都是一样的。"
+              },
+              {
+                "name": "迈克·埃尔曼特劳特",
+                "mbti": "ISTJ-A",
+                "blurb": "有纪律的操作者，行为准则，寡言少语。剧中唯一一个从不犯战术错误的角色。"
+              },
+              {
+                "name": "古斯塔沃·弗林",
+                "mbti": "INTJ-A",
+                "blurb": "长远的战略家，控制的外表，冰冷的耐心。建立了一个帝国，原则是慢计划总是胜利。"
+              },
+              {
+                "name": "查克·麦吉尔",
+                "mbti": "ISTJ-A",
+                "blurb": "固执，原则性强，心怀怨恨。道德框架如此严格，以至于窒息了每一段关系。"
+              }
+            ]
+          }
+        ]
+      },
+      "mbtiIndex": {
+        "title": "MBTI与角色快速参考",
+        "intro": "寻找特定MBTI类型的示例？每种类型一个特色角色，配有处理该宇宙的Curify模板。点击任何模板链接生成卡片。",
+        "note": "对于上述未涵盖的MBTI类型（或我们尚未有专门模板的宇宙中的角色——如《星球大战》，《狮子王》，《星际迷航》），请使用[自定义角色卡](/nano-template/custom-character-card)模板——在参数中输入角色名称和MBTI，它会生成分析。",
+        "rows": [
+          {
+            "type": "INFJ",
+            "label": "倡导者",
+            "character": "波风水门（火影忍者）",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "INTJ",
+            "label": "建筑师",
+            "character": "沃尔特·怀特（绝命毒师）",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "INTP",
+            "label": "逻辑学家",
+            "character": "罗斯·盖勒（老友记）",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "INFP",
+            "label": "调解者",
+            "character": "杰西·平克曼（绝命毒师）",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "ISFJ",
+            "label": "捍卫者",
+            "character": "史蒂夫·罗杰斯 / 美国队长（漫威）",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ISTJ",
+            "label": "后勤员",
+            "character": "约翰·达顿（黄石）",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ISFP",
+            "label": "冒险家",
+            "character": "哈利·波特（哈利·波特）",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ISTP",
+            "label": "艺术家",
+            "character": "Rip Wheeler (黄石)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ENFJ",
+            "label": "主角",
+            "character": "穆法萨 (狮子王 — 自定义角色卡)",
+            "slug": "custom-character-card"
+          },
+          {
+            "type": "ENFP",
+            "label": "活动家",
+            "character": "鸣人 (火影忍者)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "ENTJ",
+            "label": "指挥官",
+            "character": "伏地魔 (哈利·波特)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ENTP",
+            "label": "辩论者",
+            "character": "托尼·斯塔克 / 钢铁侠 (漫威)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ESFJ",
+            "label": "领事",
+            "character": "莫莉·韦斯莱 (哈利·波特)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ESTJ",
+            "label": "执行官",
+            "character": "贝丝·达顿 (黄石)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ESFP",
+            "label": "娱乐者",
+            "character": "乔伊·特里比亚尼 (老友记)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "ESTP",
+            "label": "企业家",
+            "character": "汉·索罗（星球大战 — 自定义角色卡）",
+            "slug": "custom-character-card"
+          }
+        ]
+      },
+      "heroCtaText": "打开 Marvel MBTI 模板 — 输入任何英雄或反派的名字并获取分析卡",
+      "heroCtaHref": "/nano-template/mbti-marvel"
     },
     "curifyNanoBananaTemplateTips": {
       "title": "使用 Curify 的 Nano Banana 模板的 10 个提示",
@@ -4940,7 +4983,6 @@
       "modelsContent": "**体育战斗** ([/nano-template/sports-battle](/nano-template/sports-battle)) 接受两个球员名称——`player_left` 和 `player_right`——并渲染一个纵向 3:4 漫画风格的比较海报：两个全身肖像，一个中心 VS 图形，统计面板，昵称，身份标签，霓虹光效。基础提示已经指定了球队制服、动态姿势和球队主题背景——您只需提供名称。非常适合 *梅西对克里斯蒂亚诺·罗纳尔多*、*姆巴佩对维尼修斯·儒尼奥尔*、*哈兰德对姆巴佩*。该模板已经附带了一个梅西对罗纳尔多的示例，以便您在生成之前查看输出。\n\n**名人和电影团体海报** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)) 接受一个 `star_movie_group` 参数，并渲染一个看起来官方的合奏海报：多个动态构图的人物，电影灯光，柔和渐变背景，奢华简约的标题字体，时尚杂志级别的细节。占位符示例包括 *漫威复仇者*、*黑pink*、*NBA传奇*——相同模板，提供 *巴西 2026 国家队* 或 *阿根廷 2026 世界杯阵容*，您将获得球队阵容版本。\n\n这两个模板在 Curify 的 Nano Banana Pro 管道上工作，因此下面的提示在模板的基础样式已经锁定的情况下进行渲染——您只需提供变量。",
       "howTitle": "如何在 60 秒内生成巴西或阿根廷海报",
       "step1Title": "方法 1：1v1 竞争——体育战斗模板",
-      "step1Content": "**最佳适用**：德比海报、世界杯比赛预览内容、淘汰赛前的球迷互动。\n\n打开 [/nano-template/sports-battle](/nano-template/sports-battle)。两个文本字段——`player_left` 和 `player_right`。最常搜索的足球竞争可以从以下开始：\n\n- `Lionel Messi` 对 `Cristiano Ronaldo`——GOAT 辩论，永恒\n- `Kylian Mbappé` 对 `Vinícius Júnior`——新一代巴西与法国的竞争\n- `Erling Haaland` 对 `Kylian Mbappé`——梅西/罗纳尔多后的接班人\n- `Lamine Yamal` 对 `Vinícius Júnior`——西班牙与巴西的边锋对决\n- `Neymar Jr` 对 `Lionel Messi`——巴萨重聚的能量\n\n生成。模板渲染一个漫画风格的 VS 海报，两个球员穿着国家队球衣，统计面板，身份标签，以及中心的 VS 图形。默认输出为纵向 3:4——非常适合 Instagram Stories、TikTok、Pinterest。\n\n**画廊中的实时示例**：[梅西对罗纳尔多海报](/nano-template/sports-battle)——相同模板，相同提示，只需两个名称输入。",
       "step2Title": "方法 2：完整国家队——名人团体海报模板",
       "step2Content": "**最佳适用**：比赛前夕的阵容揭晓、观赛派对图形、幻想足球联赛品牌、社交媒体头图。\n\n打开 [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)。一个文本字段——`star_movie_group`。对于 2026 年世界杯，最常搜索的球队可以从以下开始：\n\n- `巴西 2026 国家队`\n- `阿根廷 2026 世界杯阵容`\n- `法国 2026 国家队`\n- `西班牙 2026 国家队`\n- `英格兰 2026 世界杯阵容`\n- `德国 2026 国家队`\n- `葡萄牙 2026 国家队`\n- `摩洛哥 2026 国家队`\n\n该模板渲染多个标志性人物，具有戏剧性的动态构图，电影灯光，渐变背景，以及奢华简约的标题文本——官方阿迪达斯/耐克球队海报的外观。添加年份（`2026`），以便模型锚定当前阵容，而不是历史阵容。",
       "step3Title": "巴西 2026 电影感海报提示",
@@ -4956,7 +4998,14 @@
       "curifyTitle": "生成您的——直接模板链接",
       "curifyContent": "跳过提示工程，直接进入参数预填的模板：\n\n**体育战斗（1v1 竞争）**： [/nano-template/sports-battle](/nano-template/sports-battle)——提供 `player_left` 和 `player_right`。模板的基础提示已锁定为漫画风格的 VS 海报；您只需提供名称。现有画廊包括 [梅西对罗纳尔多](/nano-template/sports-battle)、[费德勒对纳达尔](/nano-template/sports-battle)、[阿里对泰森](/nano-template/sports-battle)、[汉密尔顿对舒马赫](/nano-template/sports-battle) 作为参考。\n\n**名人团体海报（完整团队）**： [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)——提供 `star_movie_group` 和球队名称（例如，`巴西 2026 国家队`）。现有画廊涵盖跨体育（NBA 传奇、网球传奇、赛车传奇）、娱乐（老友记、怪奇物语、BTS、黑pink、权力的游戏）和动漫的合奏组——相同模板，不同组。\n\n有关更多体育主题提示，[/topics/character](/topics/character) 中心索引跨体育、游戏、电影和娱乐的角色驱动模板。有关每个提示系列的策划 Nano Banana 目录，[/nano-banana-pro-prompts](/nano-banana-pro-prompts) 是目录。",
       "conclusionTitle": "其他国家队——相同提示，交换名称",
-      "conclusionContent": "上述两个提示是通用的。相同模板，交换球队名称，正确获取球衣颜色和调色板：\n\n- **法国**：`法国 2026 国家队`——海军蓝 + 白色 + 红色，法兰西体育场，标题 `FRANCE 2026`\n- **德国**：`德国 2026 国家队`——白色球衣 + 黑色点缀 + 红色/金色国旗，安联竞技场，标题 `DEUTSCHLAND 2026`\n- **西班牙**：`西班牙 2026 国家队`——红色 + 番红花黄色 + 海军，圣地亚哥·伯纳乌，标题 `ESPAÑA 2026`\n- **英格兰**：`英格兰 2026 世界杯阵容`——白色 + 圣乔治红 + 海军，温布利，标题 `ENGLAND 2026`\n- **葡萄牙**：`葡萄牙 2026 国家队`——深红色 + 绿色领 + 金色点缀，阿尔瓦拉德体育场，标题 `PORTUGAL 2026`\n- **摩洛哥**：`摩洛哥 2026 国家队`——红色 + 绿色星 + 白色点缀，哈桑二世大体育场，标题 `LE MAROC 2026`\n- **墨西哥**：`墨西哥 2026 国家队`（东道主）——绿色 + 白色 + 红色，阿兹特克体育场，标题 `MÉXICO 2026`\n- **美国**：`美国 2026 世界杯阵容`（东道主）——海军 + 红色条纹 + 白色星，索非亚体育场，标题 `USA 2026`\n- **日本**：`日本 2026 国家队`——武士蓝球衣 + 红色旭日点缀 + 白色，埼玉体育场，标题 `日本 2026`\n\n提示结构保持不变——球衣描述、体育场背景、调色板、标题文本、纵向 3:4 格式。排列球队名称和调色板；其他所有内容从模板的基础提示中继承。\n\n如果您生成了喜欢的海报，[/topics/character](/topics/character) 和 [/topics/sports](/topics/sports) 中心是类似模板的来源——角色对战、电影团体海报、球迷阵容，所有这些都在相同的 Curify 管道上运行。"
+      "conclusionContent": "上述两个提示是通用的。相同模板，交换球队名称，正确获取球衣颜色和调色板：\n\n- **法国**：`法国 2026 国家队`——海军蓝 + 白色 + 红色，法兰西体育场，标题 `FRANCE 2026`\n- **德国**：`德国 2026 国家队`——白色球衣 + 黑色点缀 + 红色/金色国旗，安联竞技场，标题 `DEUTSCHLAND 2026`\n- **西班牙**：`西班牙 2026 国家队`——红色 + 番红花黄色 + 海军，圣地亚哥·伯纳乌，标题 `ESPAÑA 2026`\n- **英格兰**：`英格兰 2026 世界杯阵容`——白色 + 圣乔治红 + 海军，温布利，标题 `ENGLAND 2026`\n- **葡萄牙**：`葡萄牙 2026 国家队`——深红色 + 绿色领 + 金色点缀，阿尔瓦拉德体育场，标题 `PORTUGAL 2026`\n- **摩洛哥**：`摩洛哥 2026 国家队`——红色 + 绿色星 + 白色点缀，哈桑二世大体育场，标题 `LE MAROC 2026`\n- **墨西哥**：`墨西哥 2026 国家队`（东道主）——绿色 + 白色 + 红色，阿兹特克体育场，标题 `MÉXICO 2026`\n- **美国**：`美国 2026 世界杯阵容`（东道主）——海军 + 红色条纹 + 白色星，索非亚体育场，标题 `USA 2026`\n- **日本**：`日本 2026 国家队`——武士蓝球衣 + 红色旭日点缀 + 白色，埼玉体育场，标题 `日本 2026`\n\n提示结构保持不变——球衣描述、体育场背景、调色板、标题文本、纵向 3:4 格式。排列球队名称和调色板；其他所有内容从模板的基础提示中继承。\n\n如果您生成了喜欢的海报，[/topics/character](/topics/character) 和 [/topics/sports](/topics/sports) 中心是类似模板的来源——角色对战、电影团体海报、球迷阵容，所有这些都在相同的 Curify 管道上运行。",
+      "heroImage": "/images/nano_insp/template-sports-battle-Messi-vs-Ronaldo.jpg",
+      "heroImageAlt": "梅西与罗纳尔多的电影足球对抗海报 — 体育对抗模板预览",
+      "heroCtaLabel": "试试这个模板",
+      "heroCtaText": "生成你自己的梅西与罗纳尔多（或任何足球对抗）电影海报",
+      "heroCtaHref": "/nano-template/sports-battle",
+      "heroCtaButton": "生成 →",
+      "step1Content": "**最佳适用**：德比海报、世界杯比赛预览内容、淘汰赛前的球迷互动。\n\n打开 [/nano-template/sports-battle](/nano-template/sports-battle)。两个文本字段——`player_left` 和 `player_right`。最常搜索的足球竞争可以从以下开始：\n\n- `Lionel Messi` 对 `Cristiano Ronaldo`——GOAT 辩论，永恒\n- `Kylian Mbappé` 对 `Vinícius Júnior`——新一代巴西与法国的竞争\n- `Erling Haaland` 对 `Kylian Mbappé`——梅西/罗纳尔多后的接班人\n- `Lamine Yamal` 对 `Vinícius Júnior`——西班牙与巴西的边锋对决\n- `Neymar Jr` 对 `Lionel Messi`——巴萨重聚的能量\n\n生成。模板渲染一个漫画风格的 VS 海报，两个球员穿着国家队球衣，统计面板，身份标签，以及中心的 VS 图形。默认输出为纵向 3:4——非常适合 Instagram Stories、TikTok、Pinterest。\n\n**画廊中的实时示例**：[梅西对罗纳尔多海报](/nano-template/sports-battle)——相同模板，相同提示，只需两个名称输入。"
     },
     "onePersonCompaniesVs100PersonTeams": {
       "title": "一人公司正在崛起。你的100人团队成了负担。",
@@ -4980,6 +5029,99 @@
       "conclusionContent": "中小企业领导者的选择是二元的。重组以赋权你的前10%像一艘一人强大的舰队一样运作，或者看着一个拥有AI的竞争对手彻底摧毁你的100人团队。\n\n那些你认为今天是资产的传统角色？到明年它们将成为资产负债表的负担。保持士气的重新设计窗口比大多数领导者意识到的要快关闭——当员工人数与产出比率对投资者可见时，重新设计不再是选择。",
       "challengesContent": "需要识别的五个责任：\n\n| 问题 | 每天看到的症状 | 为什么 AI 改变了计算 |\n|---|---|---|\n| 执行瓶颈 | 一直到下午五点的消耗时间，忙碌的工作剧场 | 自主工作流程处理从头到尾的例行执行 |\n| 规范悖论 | 数小时的会议，零对齐 | 如果你能清晰地向人类说明，给 LLM 提供它 |\n| 无方向的管理 | 周一的新战略，周二的新转变 | 管理者应该协调结果，而不是跟踪任务 |\n| 孤立的协作 | 跨团队的外交谈判 | 共享的自主管道打破了壁垒 |\n| 情绪拖累 | 焦虑向下滚动，心理退出向上 | 能量流向建设，而不是政治 |\n\n> 人类应该处理模糊性；AI 应该处理执行。\n\n我们曾经假装这是不可避免的。AI 改变了计算。",
       "curifyContent": "我们与不想成为下一个警示故事的小型企业领导者进行咨询。我们不猜测。\n\n1. **绘制当前人际摩擦点** — 会议、交接、需求循环。模糊性在幻灯片中在哪里消亡？执行在 Jira 票据中在哪里停滞？\n2. **识别哪些 20% 的角色是脆弱的** — 不是解雇，而是重新设计。哪些工作主要是协调，可以被自主工作流程吸收？\n3. **建立一个 90 天的 AI + 组织试点**，保持士气高涨和速度可测。选择一个工作流程，记录前后，发布自主版本，证明提升。\n\n> 你不需要成为一个独立创始人。你需要停止像 2019 年那样管理一个 100 人的组织。"
+    },
+    "portugalSoccerPosterPrompts": {
+      "title": "葡萄牙AI足球海报提示：2026年世界杯模板",
+      "metaDescription": "使用两个Nano Banana模板生成电影感的葡萄牙足球海报——针对罗纳尔多对抗的体育战斗海报，Seleção阵容的团体海报。复制提示。",
+      "seoKeywords": "葡萄牙提示, 葡萄牙ai提示, 罗纳尔多葡萄牙提示, 葡萄牙海报提示, 葡萄牙世界杯提示, seleção 2026提示, ai足球海报葡萄牙, 体育战斗罗纳尔多, nano banana葡萄牙, 电影感葡萄牙海报, fifa世界杯2026 ai",
+      "date": "2026年5月30日",
+      "readTime": "阅读时间：9分钟",
+      "intro": "葡萄牙在2026年世界杯中迎来克里斯蒂亚诺·罗纳尔多的最后一次比赛，贝尔纳多·席尔瓦和布鲁诺·费尔南德斯的中场承担重任，一代前锋（拉斐尔·莱昂、若昂·费利克斯、佩德罗·内托、迪奥戈·若塔）终于齐心协力。搜索查询已经反映了这一点——“葡萄牙ai提示”，“罗纳尔多葡萄牙提示”，“葡萄牙世界杯提示”。两个Curify Nano Banana模板处理从头到尾的工作：体育战斗用于对抗海报（罗纳尔多对梅西，罗纳尔多对姆巴佩，贝尔纳多·席尔瓦对贝林厄姆），名人团体海报用于完整的Seleção阵容。本指南在60秒内为您提供一张电影感的葡萄牙海报，包含提示文本、调色板和参数形状。",
+      "whatIsTitle": "什么让葡萄牙海报看起来像电影",
+      "whatIsContent": "三个要素将普通的AI渲染与看起来像耐克为2026年活动发布的海报区分开来。\n\n**动态动作胜于静态姿势。** 穿着葡萄牙球衣的静止球员看起来像是一张库存照片。一个正在进行自行车踢的球员，罗纳尔多标志性的*SIUUU*庆祝膝滑，贝尔纳多·席尔瓦双臂张开传球——这些看起来像海报。提示中的动作动词做了大部分工作——*中途击打*，*庆祝跳跃*，*低角度英雄镜头*，*空中倒钩*。\n\n**葡萄牙调色板。** 葡萄牙=深红色（波尔图酒）+大西洋绿+温暖金色+一点蓝色瓷砖蓝以增加文化深度。当前的耐克球衣使用接近`#C8102E`的红色，领口和袖子上有绿色装饰。不要退回到明亮的消防车红——葡萄牙国家调色板更深，更接近葡萄酒，绿色作为点缀而非主色。调色板正确，海报看起来就是葡萄牙的海报，而不是普通的球衣。\n\n**体育场和里斯本光影背景。** 背后有观众灯光的模糊体育场将图像固定为比赛日时刻。特定的葡萄牙体育场效果更佳——*阿尔瓦拉德体育场的金色时刻*，*光明体育场的灯光下*，*龙体育场的黄昏*。光线提示承载了一半的电影感；里斯本的金色时刻有其自身的温暖，而巴西或英格兰的光线则没有。",
+      "modelsTitle": "两个处理工作的Curify模板",
+      "howTitle": "如何在60秒内生成葡萄牙海报",
+      "step1Title": "方法1：1对1对抗——体育战斗模板",
+      "step1Content": "**最佳适用**：淘汰赛阶段比赛预览，罗纳尔多主导的粉丝内容，Liga Portugal俱乐部的德比海报。\n\n打开 [/nano-template/sports-battle](/nano-template/sports-battle)。两个文本字段——`player_left`和`player_right`。开始时搜索量最高的对抗：\n\n- `Cristiano Ronaldo` 对 `Lionel Messi` — 永恒的GOAT辩论，平台上搜索量最高\n- `Cristiano Ronaldo` 对 `Kylian Mbappé` — 代际交接，葡萄牙-法国对抗框架\n- `Bernardo Silva` 对 `Jude Bellingham` — 葡萄牙-英格兰中场对决，当前一代\n- `Rafael Leão` 对 `Vinícius Júnior` — 葡萄牙-巴西边锋对决\n- `Bruno Fernandes` 对 `Luka Modrić` — 组织者对组织者，老将能量\n\n生成。模板渲染一个漫画风格的VS海报，两个球员穿着国家队球衣，统计面板，身份标签，以及中心的VS图形。默认输出为纵向3:4——非常适合Instagram故事、TikTok、Pinterest。\n\n**画廊中的实时示例**：[梅西对罗纳尔多的海报](/nano-template/sports-battle)——相同模板，相同提示形状，只需两个名称输入。",
+      "step2Title": "方法2：完整Seleção——名人团体海报模板",
+      "step2Content": "**最佳适用**：比赛前夕阵容揭晓、观赛派对图形、Liga Portugal幻想联赛品牌、2026年世界杯的社交媒体头图。\n\n打开 [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)。一个文本字段——`star_movie_group`。对于葡萄牙的2026年之旅：\n\n- `Portugal 2026 National Team` — 普通合奏（模型选择标志性人物）\n- `Portugal 2026 World Cup Squad ft. Ronaldo` — 罗纳尔多主导，适合队长叙事\n- `Portugal 2026 Seleção das Quinas` — 使用葡萄牙语球队身份，模型基于葡萄牙文化线索\n- `Portugal 2026 Forward Line — Leão, Félix, Neto, Jota` — 集中关注进攻核心\n\n该模板渲染多个标志性人物，具有戏剧性的动态构图，电影灯光，渐变背景和奢华简约的标题文本——官方耐克Seleção海报的外观。添加年份（`2026`），以便模型基于当前阵容而非历史阵容进行锚定。",
+      "step3Title": "葡萄牙2026电影海报提示",
+      "step3Content": "将此直接放入名人团体海报模板的`star_movie_group`字段，或在Nano Banana Pro / GPT Image 2上用作自由形式提示：\n\n```\n葡萄牙2026世界杯国家队——全队穿着标志性的深红色Seleção主场球衣，绿色领口装饰和金色徽章，动态团体构图，克里斯蒂亚诺·罗纳尔多、贝尔纳多·席尔瓦、布鲁诺·费尔南德斯、拉斐尔·莱昂、若昂·费利克斯在中心的英雄中途姿势。阿尔瓦拉德体育场的金色时刻背景，观众灯光和葡萄牙国旗横幅。电影感的温暖色调——波尔图酒红+大西洋绿+温暖金色点缀，一点蓝色瓷砖。照片真实，时尚杂志般的清晰度，戏剧性的边缘光，柔和的渐变背景，奢华简约的葡萄牙语标题“PORTUGAL 2026”用粗体金色衬线字体。4K超详细，无水印，纵向3:4格式。\n```\n\n**指定的调色板**：`#C8102E`（球衣深红），`#006847`（球衣绿色），`#FFD700`（金色点缀），`#0072CE`（蓝色瓷砖装饰），温暖的里斯本金色时刻色调。为确保渲染中的颜色一致性，在提示中明确指定调色板。\n\n**需要更换的内容**：更改球员名单（阵容在每次比赛中都会变化——2026年之前与罗纳尔多之后的阵容读起来不同），体育场（阿尔瓦拉德体育场/光明体育场/龙体育场）和标题文本。其他内容保持不变。",
+      "step4Title": "罗纳尔多主导的1对1对抗提示",
+      "step5Title": "推动电影感的设置与关键词",
+      "step5Content": "一旦您发布了第一张海报，这些调整是质量在50次渲染中累积的地方。\n\n**镜头/构图**：`85mm人像镜头`（压缩背景，使球员更具英雄感），`广角动作镜头`（体育场规模），`低角度英雄构图`（让罗纳尔多看起来高大——实际上比相机高）。对于球队阵容：`电影中等宽镜头`，让团队填满画面。\n\n**照明**：`里斯本金色时刻`（特定的温暖橙色里斯本下午光），`泛光灯眩光`（阿尔瓦拉德/光明/龙体育场的夜间比赛戏剧），`边缘照明`（轮廓突出），`体积光束`（通过体育场灯光雾霭的体育场氛围）。\n\n**颜色分级词汇**：`电影青色-橙色分级`，`饱和葡萄牙调色板分级`，`深红葡萄酒色调分级`，`耐克运动摄影分级`，`体育CP档案分级`。这些触发模型训练数据中的正确参考集群。\n\n**球衣细节**：`清晰的葡萄牙徽章细节`，`锐利的Quinas盾徽刺绣`，`刺绣的Seleção徽章`。Quinas（葡萄牙国徽中的五个小盾牌）是品牌锚——模型往往将其渲染为模糊的金色圆盘，除非您明确提到。\n\n**文化线索**：`卢西塔尼亚航海家时代的旗帜横幅`，`蓝色瓷砖图案背景面板`，`发现时代的金色花边边框`。这些将模型引向葡萄牙特有的视觉文化，远离普通的欧洲足球美学。使用时要节制——每张海报一个文化线索，否则会显得主题庸俗。\n\n**负面线索**：`无模糊面孔`，`无多余肢体`，`无扭曲的球衣号码`，`无西班牙或巴西颜色线索`（如果不抑制，模型有时会漂移到天蓝色或黄色）。",
+      "toolsTitle": "比较用于葡萄牙海报生成的AI工具",
+      "challengesTitle": "AI葡萄牙海报仍然失败的地方（及解决方案）",
+      "challengesContent": "三种特定于葡萄牙海报的失败模式，以及提示侧的缓解措施：\n\n**红色漂移过于明亮。** 当您说“葡萄牙红”时，模型默认使用消防车红（`#FF0000`）——过于饱和，看起来像西班牙或波兰。**解决方案**：具体命名颜色（`深波尔图酒红`，`葡萄酒色调红`，`#C8102E去饱和`）。葡萄牙球衣的红色比普通红色更有深度和棕色底色。\n\n**Quinas徽章呈现为金色圆盘。** 葡萄牙国徽中的五个小盾牌非常复杂；模型将其抽象为金色圆块，除非提示。**解决方案**：`清晰的Quinas盾徽细节，五个小盾牌在十字形图案中可见，金色花边`。即便如此，预计准确率约为70%——对于客户工作，渲染后在Figma中合成真实徽章。\n\n**罗纳尔多的面部不准确。** 闭源模型不会渲染出确切的罗纳尔多相似度（出于设计原因，并且越来越严格执行）。**解决方案**：倾向于“受启发于”的框架——描述比赛风格、体型（`高大运动型，轮廓分明的下巴，梳理整齐的黑发`），SIUUU庆祝姿势。Curify的体育战斗模板使用漫画风格，设计上隐藏了相似度差距——漫画艺术风格使面部的缺乏照片精确度看起来是故意的。",
+      "curifyTitle": "生成您的海报——直接模板链接",
+      "curifyContent": "跳过提示工程，直接访问参数预填充的模板：\n\n**体育战斗（1对1对抗）**： [/nano-template/sports-battle](/nano-template/sports-battle) — 提供`player_left`（`Cristiano Ronaldo`）和`player_right`（`Lionel Messi`，`Kylian Mbappé`，`Lamine Yamal`，`Vinícius Júnior`，随便谁）。模板的基础提示锁定为漫画风格的VS海报；您只需提供名称。\n\n**名人团体海报（Seleção）**： [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — 提供`star_movie_group`，使用`Portugal 2026 National Team`或上述任何变体。模板处理电影灯光、渐变和奢华衬线标题。\n\n有关更多运动主题提示，[/topics/character](/topics/character)中心索引了跨越运动、游戏、电影和娱乐的角色驱动模板。有关每个提示系列的策划Nano Banana目录，请参见[/nano-banana-pro-prompts](/nano-banana-pro-prompts)。有关本系列中巴西+阿根廷兄弟帖的更多信息，请参见[/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts)。",
+      "conclusionTitle": "其他国家——相同模板，替换名称",
+      "modelsContent": "**体育战斗** ([/nano-template/sports-battle](/nano-template/sports-battle)) 接受两个球员名称——`player_left`和`player_right`——并渲染一个纵向3:4的漫画风格比较海报：两个全身肖像，一个中心VS图形，统计面板，昵称，身份标签，霓虹光效。基础提示已经指定了球队制服、动态姿势和球队主题背景——您只需提供名称。非常适合*罗纳尔多对梅西*，*罗纳尔多对姆巴佩*，*贝尔纳多·席尔瓦对贝林厄姆*，*布鲁诺·费尔南德斯对莫德里奇*。该模板已经附带了一个梅西对罗纳尔多的示例，以便您在生成之前查看输出。\n\n**名人和电影团体海报** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)) 接受一个`star_movie_group`参数，并渲染一个看起来官方的合奏海报：多个动态构图的人物，电影灯光，柔和渐变背景，奢华简约的标题字体，时尚杂志级的细节。提供*葡萄牙2026国家队*，您将获得完整的Seleção阵容版本。\n\n这两个模板在Curify的Nano Banana Pro管道上工作，因此下面的提示在模板的基础样式已经锁定的情况下渲染——您只需提供变量。",
+      "toolsContent": "Curify的模板在Nano Banana Pro的底层运行。如果您在模板引擎之外自行制作，以下是针对这一特定用例的2026年顶级模型的比较：\n\n| 工具 | 最适合葡萄牙海报 | 优势 | 劣势 |\n|---|---|---|---|\n| **Nano Banana Pro** (Gemini 3 Pro图像) | ★★★★★ | 多人物组图的空间推理；当前Seleção阵容的Google搜索基础；对话式编辑（“将若昂·费利克斯换成拉斐尔·莱昂，保持光线”） | 开箱即用的编辑风格不如Midjourney华丽 |\n| **GPT Image 2** (ChatGPT) | ★★★★ | 对话式迭代，准确的多元素场景，包含在ChatGPT Plus中 | 激进的安全过滤器拒绝某些罗纳尔多相似度提示 |\n| **Midjourney v7** | ★★★★ | 最佳美学/颜色分级；波尔图酒红色调自然呈现 | 无API；对球员相似度的处理较弱；在多人物组图上表现较差 |\n| **Stable Diffusion 3.5 Large** | ★★★ | 通过ControlNets完全控制（使用罗纳尔多姿势参考）；硬件后每张图像零成本 | 开箱即用的质量落后于闭源领导者，除非调优LoRA |\n\n对于本文描述的工作流程，**请继续使用Curify模板上的Nano Banana Pro**——模板强制执行品牌海报美学，因此您不必在每次渲染时从头开始提示工程化深红色葡萄牙调色板。有关更深入的比较，请参见 [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison)。",
+      "step4Content": "如果团体海报对您的使用案例来说太拥挤，体育战斗罗纳尔多单打对抗的镜头更能吸引参与驱动的渠道（TikTok，Instagram Reels）：\n\n```\n克里斯蒂亚诺·罗纳尔多对基利安·姆巴佩——漫画风格的VS海报，两个球员都处于中途动作姿势，罗纳尔多在左侧穿着深红色葡萄牙球衣，标志性的SIUUU庆祝手臂张开，姆巴佩在右侧穿着海军蓝法国球衣，正处于冲刺中。纵向3:4格式，霓虹光边缘照明，戏剧性的青色-橙色色调，底部有统计面板（进球、年龄、俱乐部）。中心的VS图形为金属金色，带有闪电弧效果。阿尔瓦拉德体育场渐变为法兰西体育场的背景，金色时刻的天空在里斯本的橙色和巴黎的蓝色之间分割。漫画风格的线条艺术，半色调阴影，戏剧性的阴影定义。电影海报，4K细节，无水印。\n```\n\n**需要更换的内容**：右侧的任何其他对手——梅西、贝林厄姆、哈兰德、维尼修斯·儒尼奥尔。分割体育场背景适用于任何葡萄牙对抗国家的比赛。",
+      "conclusionContent": "上述两个葡萄牙提示可以推广到2026年世界杯的其他国家。相同模板，替换球队名称，正确获取球衣颜色和调色板：\n\n- **巴西**：`Brazil 2026 National Team` — 黄色+绿色+蓝色点缀，马拉卡纳，标题`BRASIL 2026` — 参见 [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts)\n- **阿根廷**：`Argentina 2026 World Cup Squad` — 天蓝色+白色+金色，纪念碑体育场，标题`ARGENTINA 2026` — [同一兄弟帖](/blog/brazil-argentina-soccer-poster-prompts)\n- **法国**：`France 2026 National Team` — 海军蓝+白色+红色，法兰西体育场，标题`FRANCE 2026`\n- **西班牙**：`Spain 2026 National Team` — 红色+藏红色+海军，圣地亚哥·伯纳乌，标题`ESPAÑA 2026`\n- **德国**：`Germany 2026 National Team` — 白色+黑色+红色/金色，安联竞技场，标题`DEUTSCHLAND 2026`\n- **摩洛哥**：`Morocco 2026 National Team` — 红色+绿色星+白色，哈桑二世大体育场，标题`LE MAROC 2026`\n- **英格兰**：`England 2026 World Cup Squad` — 白色+圣乔治红+海军，温布利，标题`ENGLAND 2026`\n- **美国**（东道主）：`USA 2026 World Cup Squad` — 海军+红色条纹+白色星，索菲体育场，标题`USA 2026`\n- **墨西哥**（东道主）：`Mexico 2026 National Team` — 绿色+白色+红色，阿兹特克体育场，标题`MÉXICO 2026`\n\n提示结构保持不变——球衣描述、体育场背景、调色板、标题文本、纵向3:4格式。排列球队名称和调色板；其他内容从模板的基础提示中继承。 \n\n如果您发布了一张喜欢的海报，[/topics/character](/topics/character)和[/topics/sports](/topics/sports)中心会展示类似的模板——角色对抗、电影团体海报、粉丝阵容，所有这些都在相同的Curify管道上运行。"
+    },
+    "ai1v1SoccerRivalryPrompts": {
+      "title": "AI 1v1 足球对抗提示：梅西 vs 罗纳尔多，姆巴佩 vs 贝林厄姆 + 更多",
+      "metaDescription": "复制 5 个准备好的足球对抗提示，用于体育对战模板 — 梅西 vs 罗纳尔多，姆巴佩 vs 贝林厄姆，维尼修斯 vs 亚马尔，劳塔罗 vs 凯恩，佩德里 vs 德布劳内。",
+      "seoKeywords": "梅西 vs 罗纳尔多 提示，姆巴佩 vs 贝林厄姆 提示，维尼修斯 vs 亚马尔 提示，足球对抗提示，1v1 足球海报，体育对战模板，AI 足球 vs 海报，劳塔罗 vs 凯恩 提示，佩德里 vs 德布劳内 提示，纳米香蕉体育对战，世界杯对抗提示",
+      "date": "2026年5月30日",
+      "readTime": "8分钟阅读",
+      "intro": "对抗海报是足球内容中参与度最高的格式。两个球员的并排对抗海报是球迷在德比前分享的内容，是 TikTok 编辑的开场，是 Pinterest 板块的收藏。而提示结构足够固定，你只需提供两个名字 — Curify 的体育对战模板处理其余部分。本指南提供五个准备好的对抗提示，涵盖人们实际搜索的对决：梅西 vs 罗纳尔多，姆巴佩 vs 贝林厄姆，维尼修斯 vs 亚马尔，劳塔罗 vs 凯恩，佩德里 vs 德布劳内。复制提示，改变两个名字，发布。",
+      "whatIsTitle": "为什么对抗海报的表现优于单人海报",
+      "whatIsContent": "三个原因说明 VS 海报格式在每个分发渠道上的吸引力更强。\n\n**通过辩论提升参与度。** 单人海报获得一个点赞。VS 海报获得一个评论 — 球迷排名、辩护、争论。在 TikTok 和 Instagram Reels 上，标题中的辩论驱动因素是推动帖子超越算法阈值的关键。\n\n**对称构图瞬间可读。** 大脑处理并排的内容比垂直堆叠的内容更快。你可以在 0.3 秒内滚动过一个 VS 海报，仍然能识别出两个球员、两个球队、两个配色方案。这就是为什么每个电子竞技覆盖和拳击海报都使用这种形状 — 这是两主题内容中信息密度最高的布局。\n\n**相同模板的经济性。** 单人海报需要为每个球员提供不同的提示（灯光、姿势、背景调整到一个人物）。VS 海报基于一个单一模板，具有两个可变插槽。在生成 10 个对抗海报的时间内，可以调整一个单人海报。",
+      "modelsTitle": "Curify 的体育对战模板 — 工作原理",
+      "howTitle": "五个准备发布的足球对抗提示",
+      "step1Title": "1. 梅西 vs 罗纳尔多 — 永恒的 GOAT 辩论",
+      "step2Title": "2. 姆巴佩 vs 贝林厄姆 — 当前一代法英对抗",
+      "step3Title": "3. 维尼修斯 vs 亚马尔 — 巴西-西班牙边锋对决",
+      "step4Title": "4. 劳塔罗 vs 凯恩 — 阿根廷-英格兰 9号对决",
+      "step5Title": "5. 佩德里 vs 德布劳内 — 西班牙-比利时中场大师",
+      "toolsTitle": "对抗海报的 AI 工具比较",
+      "challengesTitle": "AI 对抗海报仍然失败的地方（及解决方案）",
+      "challengesContent": "四种特定于 VS 海报格式的失败模式，以及提示侧的缓解措施：\n\n**对称崩溃 — 一个角色主导。** 模型将 A 球员渲染为英雄细节，而 B 球员则呈现为平面草图。**解决方案**：明确指定两个角色在同一细节水平上 — `两个球员以相等的英雄中步姿势渲染，相等的球衣细节，相等的边光强度`。对称性是 VS 格式所需的，而模型默认是非对称。\n\n**球衣颜色漂移。** 法国默认使用普通海军蓝，而你想要的是更亮的蓝色；巴西漂移到荧光黄，而你想要的是柔和的绿色。**解决方案**：命名具体颜色（`带红色装饰的蓝色`，`柔和的黄色带丛林绿色领子`），而不是国家。\n\n**VS 图形呈现为通用字母对。** 模型有时将“VS”渲染为普通块字母，而不是金属金色闪电弧图形。**解决方案**：指定 `中间的金属金色 VS 图形，带有电弧闪电效果，字母后面有漫画爆炸图案`。闪电弧是标志性的视觉元素。\n\n**两个球员的面部不准确。** 闭源模型不会渲染确切的名人相似度 — 在两名球员的海报上，不准确性会加倍。**解决方案**：倾向于漫画风格化（体育对战默认如此） — 线条艺术抽象化掩盖了相似度差距，使其看起来像是故意的艺术风格，而不是失败的照片现实主义。",
+      "curifyTitle": "生成你的 — 直接模板链接",
+      "curifyContent": "跳过提示工程，直接进入模板，参数已准备好：\n\n**体育对战**: [/nano-template/sports-battle](/nano-template/sports-battle) — 从上述五个对抗中提供 `player_left` 和 `player_right`，或自行组合。模板的基本提示锁定为漫画风格的 VS 海报。\n\n现有画廊示例以启发你自己的：\n\n- [梅西 vs 罗纳尔多](/nano-template/sports-battle) — 足球 GOAT 对抗\n- [费德勒 vs 纳达尔](/nano-template/sports-battle) — 网球对抗，相同模板\n- [阿里 vs 泰森](/nano-template/sports-battle) — 跨时代拳击\n- [汉密尔顿 vs 施马赫](/nano-template/sports-battle) — 跨时代 F1\n- [科比 vs 雷·阿伦](/nano-template/sports-battle)，[勒布朗 vs 卡尔·马龙](/nano-template/sports-battle)，[魔术 vs 斯托克顿](/nano-template/sports-battle) — NBA 对抗\n\n相同模板，不同运动。VS 形状是相同的。\n\n有关更多运动主题的提示，[/topics/character](/topics/character) 中心索引了跨运动、游戏、电影和娱乐的角色驱动模板。有关所有提示系列的策划纳米香蕉目录，请参见 [/nano-banana-pro-prompts](/nano-banana-pro-prompts)。有关本文国家特定兄弟的更多信息，请参见 [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts) 和 [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts)。",
+      "conclusionTitle": "其他对抗 — 相同模板，两种不同名字",
+      "conclusionContent": "以上五个提示涵盖了搜索量最高的当前对抗。模板具有通用性 — 命名任何两个球员，获得 VS 海报。可变模式：\n\n**按位置**：\n- 门将：`埃米利亚诺·马丁内斯 vs 提博·库尔图瓦`，`阿利森 vs 埃德森`\n- 中后卫：`鲁本·迪亚斯 vs 安东尼奥·吕迪格`，`范迪克 vs 萨利巴`\n- 8号位：`贝林厄姆 vs 佩德里`，`楚阿梅尼 vs 卡马文加`\n- 边锋：`萨卡 vs 布卡约`，`尼科·威廉姆斯 vs 拉斐尔·莱昂`\n\n**按俱乐部对抗**：\n- 皇家马德里 vs 巴萨当前：`维尼修斯 vs 亚马尔`，`贝林厄姆 vs 佩德里`\n- 英超 #9 竞争：`哈兰德 vs 萨拉赫`，`伊萨克 vs 瓦特金斯`\n- 德甲最佳射手：`凯恩 vs 瓜伊拉西`\n\n**按代际交接**：\n- `梅西 vs 亚马尔`（阿根廷-西班牙跨代）\n- `罗纳尔多 vs 姆巴佩`（葡萄牙-法国代际交接）\n- `莫德里奇 vs 佩德里`（克罗地亚-西班牙组织者跨时代）\n\n提示结构保持不变 — `player_left`，`player_right`，体育对战模板处理其余部分。变换名字，获得海报。对于 2026 年世界杯期间的比赛日内容，对抗帖子是最高速度的格式 — 每场比赛日生成一个。\n\n如果你发布的海报受欢迎，[/topics/character](/topics/character) 和 [/topics/sports](/topics/sports) 中心会展示类似的模板 — 名人团体海报、单星 MBTI 卡片、跨其他领域的角色对抗，均在同一 Curify 流程下运行。",
+      "modelsContent": "**体育对战** ([/nano-template/sports-battle](/nano-template/sports-battle)) 是模板。两个文本字段 — `player_left` 和 `player_right`。输出是一个纵向 3:4 漫画风格的比较海报：\n\n- 两个全身肖像面向内侧\n- 中间的 VS 图形带有金属金色 + 闪电弧效果\n- 底部的统计面板（进球、年龄、俱乐部）\n- 身份标签（昵称、位置、国籍）\n- 两个角色的霓虹光边照明\n- 团队主题背景渐变（当对手来自不同国家队时为分色）\n\n模板的基本提示已经指定了以上所有内容 — 球衣细节、动态中步姿势、戏剧性的青色-橙色色调、带有半色调阴影的漫画线条艺术。你不需要对这些进行提示工程。**你只需提供两个名字。**\n\n默认输出为纵向 3:4 — 非常适合 Instagram Stories、TikTok、Pinterest。通过在模板设置中更改纵横比，可以切换到 1:1 用于 Instagram 动态帖子或 16:9 用于 YouTube 缩略图。\n\n模板中附带了一个梅西对罗纳尔多的示例，此外还有其他运动的对抗：费德勒 vs 纳达尔，阿里 vs 泰森，汉密尔顿 vs 施马赫，科比 vs 雷·阿伦，勒布朗 vs 卡尔·马龙。打开其中任何一个，交换名字，在 60 秒内发布一个新海报。",
+      "toolsContent": "Curify 的体育对战模板运行在纳米香蕉专业版上。如果你在模板外自行制作：\n\n| 工具 | 最适合的 VS 海报 | 优势 | 劣势 |\n|---|---|---|---|\n| **纳米香蕉专业版** (Gemini 3 Pro 图像) | ★★★★★ | 对称两人物构图的空间推理；对话编辑（“将姆巴佩换成贝林厄姆，保持灯光”）；谷歌搜索基础的当前阵容 | 开箱即用的美学不如 Midjourney |\n| **GPT 图像 2** (ChatGPT) | ★★★★ | 对两人物 VS 布局的对话迭代，包含在 ChatGPT Plus 中 | 安全过滤器拒绝某些名人相似度提示 |\n| **Midjourney v7** | ★★★★ | 开箱即用的最佳美学 / 漫画风格化；青色-橙色色调自然呈现 | 无 API；对字面球员相似度较弱；在没有明确姿势控制的情况下对两人物对称构图较为尴尬 |\n| **稳定扩散 3.5 大型** | ★★★ | 通过 ControlNets 完全控制姿势（使用 VS 海报参考模板）；硬件后每张图像零成本 | 开箱即用的质量落后于闭源领导者，未调优的 LoRA |\n\n对于本文描述的工作流程，**请继续使用纳米香蕉专业版通过体育对战模板** — 模板强制执行 VS 布局、球衣细节和色调，因此你不需要在每次渲染时从头开始重新提示。有关更深入的比较，请参见 [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison)。",
+      "step1Content": "**为什么它排名**：平台上搜索量最高的足球对抗。持续搜索，在每次金球奖和每次阿根廷-葡萄牙假设对决讨论期间达到峰值。\n\n画廊锚点：[/nano-template/sports-battle](/nano-template/sports-battle) 将梅西对罗纳尔多作为默认示例 — 打开它以查看漫画风格的 VS 海报格式在实际生成你的海报前的效果。\n\n**体育对战输入**：\n\n- `player_left`: `利昂内尔·梅西`\n- `player_right`: `克里斯蒂亚诺·罗纳尔多`\n\n**或作为自由形式提示**（直接放入纳米香蕉专业版 / GPT 图像 2）：\n\n```\n利昂内尔·梅西 vs 克里斯蒂亚诺·罗纳尔多 — 漫画风格的 VS 海报，纵向 3:4 格式。梅西在左侧穿着天蓝色阿根廷 #10 球衣，左脚带球中步，金腿庆祝臂抬起。罗纳尔多在右侧穿着深红色葡萄牙 #7 球衣，双臂张开中步庆祝 SIUUU。中间的 VS 图形为金属金色，带有闪电弧效果。底部的统计面板（职业进球、俱乐部、国际出场）。分色背景 — 埃斯塔迪奥·莫努门塔尔渐变为埃斯塔迪奥·何塞·阿尔瓦拉德，金色时刻的天空在布宜诺斯艾利斯的金色和里斯本的橙色之间分割。漫画线条艺术，半色调阴影，霓虹光边照明，戏剧性的青色-橙色色调。4K 细节，无水印。\n```\n\n**变体复制**：将 `阿根廷` → `国际迈阿密` 更改为俱乐部主题的镜头；将体育场对换为 `诺坎普渐变为老特拉福德` 以进行巴萨-曼联的职业回顾。",
+      "step2Content": "**为什么它排名**：梅西/罗纳尔多后的接力者。皇家马德里队友的动态增加了另一层 — 他们在俱乐部层面一起比赛，在国家层面相互对抗。针对“姆巴佩 vs 贝林厄姆 提示”的搜索量强劲。\n\n**体育对战输入**：\n\n- `player_left`: `基利安·姆巴佩`\n- `player_right`: `裘德·贝林厄姆`\n\n**或作为自由形式提示**：\n\n```\n基利安·姆巴佩 vs 裘德·贝林厄姆 — 漫画风格的 VS 海报，纵向 3:4。姆巴佩在左侧穿着海军蓝法国 #10 球衣，中步姿势右脚带球，姆巴佩交叉手臂庆祝准备触发。贝林厄姆在右侧穿着白色英格兰 #10 球衣，中跳姿势双臂张开，进行大鹏展翅庆祝。中间的 VS 图形为金属金色，带有闪电弧。统计面板（冠军联赛进球，皇家马德里自两人都穿白色的俱乐部数据，年龄比较）。分色背景 — 法国体育场渐变为温布利，金色时刻的天空在巴黎蓝和伦敦黄昏之间分割。漫画线条艺术，半色调阴影，霓虹光边照明，青色-橙色色调。4K 细节，无水印。\n```\n\n**变体**：将 `法国` → `皇家马德里` 和 `英格兰` → `皇家马德里` 进行内部团队比较；或者将姆巴佩与维尼修斯配对，进行皇家马德里攻击三人组的镜头。",
+      "step3Content": "**为什么它排名**：新兴明星 vs 新兴明星，自 2024 年美洲杯以来搜索势头强劲。西班牙和巴西都是世界杯热门；这两名边锋都是各自国家的主要攻击威胁。\n\n**体育对战输入**：\n\n- `player_left`: `维尼修斯·儒尼奥尔`\n- `player_right`: `拉米内·亚马尔`\n\n**或作为自由形式提示**：\n\n```\n维尼修斯·儒尼奥尔 vs 拉米内·亚马尔 — 漫画风格的 VS 海报，纵向 3:4。维尼修斯在左侧穿着黄色巴西 #7 球衣，中带球运球，标志性的过人动作可见。亚马尔在右侧穿着红色西班牙 #19 球衣，中切入姿势右脚带球，手臂伸出准备切入。两名球员以英雄的低角度构图。中间的 VS 图形为金属金色，带有闪电弧。统计面板（助攻、完成的过人、年龄比较 — 亚马尔是最年轻的）。分色背景 — 马拉卡纳渐变为圣地亚哥·伯纳乌，金色时刻的天空在里约热带绿色和马德里琥珀之间分割。漫画线条艺术，半色调阴影，霓虹光边照明，青色-橙色色调。4K 细节，无水印。\n```\n\n**变体**：使用相同模板将 `皇家马德里` → `巴萨` 进行经典对决（维尼修斯 RM vs 亚马尔 巴萨）；或者将亚马尔替换为 `尼科·威廉姆斯` 进行另一名西班牙边锋的镜头。",
+      "step4Content": "**为什么它排名**：经典的 #9 vs #9 框架，用于世界杯淘汰赛预览。两名球员都是各自国家的主要进攻威胁；两人都有获胜的资历（劳塔罗 2022 年世界杯 + 美洲杯，凯恩拜仁慕尼黑的冠军）。\n\n**体育对战输入**：\n\n- `player_left`: `劳塔罗·马丁内斯`\n- `player_right`: `哈里·凯恩`\n\n**或作为自由形式提示**：\n\n```\n劳塔罗·马丁内斯 vs 哈里·凯恩 — 漫画风格的 VS 海报，纵向 3:4。劳塔罗在左侧穿着天蓝色和白色阿根廷 #10 球衣（或 #22 以致敬国际米兰），中击姿势右脚射门。凯恩在右侧穿着白色英格兰 #9 球衣，中头球姿势全身伸展。两人以英雄的低角度构图。中间的 VS 图形为金属金色，带有闪电弧。统计面板（国际进球、俱乐部金靴奖、世界杯进球）。分色背景 — 埃斯塔迪奥·莫努门塔尔渐变为温布利，金色时刻的天空在布宜诺斯艾利斯的金色和伦敦黄昏之间分割。漫画线条艺术，半色调阴影，霓虹光边照明，青色-橙色色调。4K 细节，无水印。\n```\n\n**变体**：将 `凯恩` → `埃尔林·哈兰德` 进行更干净的挪威-阿根廷 #9 对决；或者将 `凯恩` 与 `姆巴佩` 配对进行法英 #9 框架（在这种情况下凯恩在左侧）。",
+      "step5Content": "**为什么它排名**：中场组织者是鉴赏家的对抗 — 被那些关心比赛实际构建的人搜索，而不仅仅是谁进球。两人都是各自国家队的节拍器；两人都引发“谁是更好的组织者”的辩论。\n\n**体育对战输入**：\n\n- `player_left`: `佩德里`\n- `player_right`: `凯文·德布劳内`\n\n**或作为自由形式提示**：\n\n```\n佩德里 vs 凯文·德布劳内 — 漫画风格的 VS 海报，纵向 3:4。佩德里在左侧穿着红色西班牙 #8 球衣，中传球姿势左脚带球，手臂指向前方引导队友。德布劳内在右侧穿着红色比利时 #7 球衣，中传中球姿势右脚发力，右臂在经典 KDB 形式中拖动。两人以英雄的中景构图（不是低角度 — 组织者不需要高大的框架）。中间的 VS 图形为金属金色，带有闪电弧。统计面板（每场助攻、关键传球、冠军联赛淘汰赛助攻）。分色背景 — 圣地亚哥·伯纳乌渐变为伊蒂哈德体育场，金色时刻的天空在马德里琥珀和曼彻斯特灰蓝之间分割。漫画线条艺术，半色调阴影，霓虹光边照明，青色-橙色色调。4K 细节，无水印。\n```\n\n**变体**：将 `德布劳内` → `裘德·贝林厄姆` 进行西班牙-英格兰中场框架（贝林厄姆穿着英格兰 #10）；或者将 `佩德里` 与 `弗兰基·德容` 配对进行西班牙-荷兰巴萨训练的组织者镜头。"
+    },
+    "franceSoccerPosterPrompts": {
+      "title": "法国 AI 足球海报提示：2026 年世界杯模板",
+      "metaDescription": "使用两个Nano Banana模板生成电影感的法国足球海报——针对姆巴佩对抗的体育对决，针对蓝军的团队海报。复制提示。",
+      "seoKeywords": "法国ai提示，姆巴佩提示，法国足球海报提示，蓝军2026提示，姆巴佩对贝林厄姆提示，法国世界杯海报，ai法国海报，体育对决姆巴佩，nano banana法国，电影感法国海报，2026年世界杯ai",
+      "date": "2026年5月30日",
+      "readTime": "阅读时间：9分钟",
+      "intro": "法国作为卫冕决赛选手进入2026年世界杯，基利安·姆巴佩正值皇家马德里巅峰，裘德·贝林厄姆的俱乐部队友能量映射出国家间的对抗，以及中场重建（楚阿梅尼、卡马文加、科内）终于取得了成效。蓝军品牌具有特定的电影感——海军蓝+白+红，法兰西体育场的聚光灯，1998年主场世界杯的艺术装饰海报遗产。两个Curify Nano Banana模板提供端到端的工作：针对姆巴佩对抗的体育对决（对贝林厄姆、对维尼修斯、对哈兰德），以及针对完整蓝军阵容的名人团队海报。本指南在60秒内为您提供一张电影感的法国海报，包含提示文本、调色板和参数形状。",
+      "whatIsTitle": "什么让法国海报看起来具有电影感",
+      "whatIsContent": "三种元素将普通的法国渲染与具有蓝军品牌注册的海报区分开来。\n\n**充满法式风格的动态动作。** 静止不动的姆巴佩看起来像是一张库存照片。姆巴佩在冲刺中，双臂交叉庆祝，贝林厄姆在跳跃中，楚阿梅尼肩撞铲球——这些都看起来像海报。提示中的动作动词做了大部分工作——*冲刺中*，*交叉手臂庆祝*，*肩撞*，*空中头球*。\n\n**正确的蓝白红。** 法国=海军蓝（而不是亮蓝）+清晰的白色+饱和的红色点缀。当前的耐克球衣使用深海军蓝，领口和袖子上有红色装饰。亮皇家蓝看起来像意大利或阿根廷，而不是法国。调色板正确，海报就会呈现蓝军的形象，而不是普通的欧洲球衣。\n\n**法国电影遗产作为背景。** 三种参考风格有效——1998年主场世界杯的艺术装饰海报美学（干净的几何字体，柔和的海报颜色），*新浪潮*黑白加色彩点缀风格，以及法兰西体育场的聚光灯穿透雾气的淘汰赛夜场氛围。每张海报指定一种风格；混合会产生不连贯的输出。",
+      "modelsTitle": "两个处理工作的Curify模板",
+      "howTitle": "如何在60秒内生成法国海报",
+      "step1Title": "方法1：姆巴佩主导的1对1——体育对决模板",
+      "step1Content": "**最佳适用**：比赛前夕的预览内容，皇家马德里内部队友对抗海报，法甲赛季的德比内容。\n\n打开 [/nano-template/sports-battle](/nano-template/sports-battle)。两个文本字段——`player_left` 和 `player_right`。搜索量最高的姆巴佩对抗：\n\n- `基利安·姆巴佩` 对 `裘德·贝林厄姆` — 法国对英格兰，皇家马德里队友\n- `基利安·姆巴佩` 对 `维尼修斯·儒尼奥尔` — 法国对巴西，皇家马德里攻击三人组（维尼修斯、姆巴佩、贝林厄姆）\n- `基利安·姆巴佩` 对 `埃尔林·哈兰德` — 法国对挪威，梅西/罗纳尔多接力辩论\n- `基利安·姆巴佩` 对 `克里斯蒂亚诺·罗纳尔多` — 法国对葡萄牙，世代交接框架\n- `奥雷利安·楚阿梅尼` 对 `裘德·贝林厄姆` — 法国对英格兰中场，也是皇家马德里队友对抗\n\n生成。模板渲染一个漫画风格的VS海报，两个球员穿着国家队球衣，统计面板，身份标签，以及中心的VS图形。默认3:4——适合Instagram故事、TikTok、Pinterest。\n\n**画廊中的实时示例**：[姆巴佩对贝林厄姆海报](/nano-template/sports-battle)——相同模板，相同提示形状，仅两个名称输入。",
+      "step2Title": "方法2：蓝军阵容——名人团队海报模板",
+      "step2Content": "**最佳适用**：比赛前夕的阵容揭晓，2026年赛事的观赛派对图形，世界杯粉丝内容，社交媒体头图。\n\n打开 [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)。一个文本字段——`star_movie_group`。对于蓝军2026：\n\n- `法国2026国家队` — 普通合奏（模型选择标志性人物）\n- `法国2026世界杯阵容，姆巴佩主演` — 姆巴佩主导，队长叙事\n- `蓝军2026` — 法语身份，模型基于法国文化线索\n- `法国2026前锋三人组——姆巴佩、科曼、奥利塞` — 专注于进攻核心\n- `法国2026皇家马德里连接——姆巴佩、卡马文加、楚阿梅尼` — 皇家马德里队友穿着蓝军球衣，为西甲观众提供内容角度\n\n模板渲染多个标志性人物的戏剧性构图，配有电影感照明、渐变背景和奢华简约的标题文本——官方耐克蓝军海报的外观。添加`2026`以便模型基于当前阵容。",
+      "step3Title": "法国2026电影海报提示",
+      "step3Content": "将其放入名人团队海报模板的`star_movie_group`字段，或在Nano Banana Pro / GPT Image 2上自由使用：\n\n```\n法国2026世界杯国家队——全队穿着标志性的深海军蓝蓝军主场球衣，红色领口装饰和金色徽章，动态团队构图，基利安·姆巴佩、奥雷利安·楚阿梅尼、爱德华多·卡马文加、马努·科内、布拉德利·巴尔科拉在中心的英雄中步行动作姿势。法兰西体育场的黄金时刻背景，伴随人群灯光和法国三色旗的旗帜。电影色彩分级——深海军蓝+清晰白色+饱和法国红点缀，艺术装饰金色的暗示。超写实，时尚杂志般的清晰度，戏剧性的边缘照明，柔和的渐变背景，奢华简约的法语标题“FRANCE 2026”以粗体金色衬线字体呈现。4K超详细，无水印，纵向3:4格式。\n```\n\n**指定的调色板**：`#002654`（蓝军深海军蓝），`#FFFFFF`（清晰白色），`#ED2939`（法国红），`#D4AF37`（金色点缀），温暖的法兰西体育场黄金时刻色调。\n\n**需要更换的内容**：球员名单（蓝军阵容在每场比赛中都会变化——2026年之前与姆巴佩之后的阵容会有不同的表现）；体育场（法兰西体育场用于主场注册，或巴黎王子公园用于巴黎俱乐部致敬，或维洛德罗姆用于马赛注册）；标题文本。",
+      "step4Title": "姆巴佩对贝林厄姆1对1对抗提示",
+      "step5Title": "推动电影感的设置和关键词",
+      "step5Content": "一旦您生成了第一张海报，这些调整将在50个渲染中累积。\n\n**镜头/构图**：`85mm人像镜头`（压缩背景，使姆巴佩更具英雄气质），`广角动作镜头`（体育场规模），`低角度英雄构图`（高大的身影）。对于团队阵容：`电影感中景镜头`，让团队填满画面。\n\n**照明**：`法兰西体育场聚光灯眩光`（特定的夜场比赛戏剧注册），`巴黎黄昏`（温暖的蓝色晚间光），`边缘照明`（轮廓突出），`体积光束`（通过聚光灯雾气的体育场氛围）。\n\n**色彩分级词汇**：`电影感青色-橙色分级`，`饱和蓝军调色板分级`，`深海军蓝与红色点缀`，`耐克运动摄影分级`，`1998年法国世界杯艺术装饰分级`（主办赛事的柔和色彩海报注册）。\n\n**法国电影注册**：`新浪潮黑白与色彩点缀`（单一鲜明的红色或蓝色在单色背景上），`艺术装饰海报排版`（几何衬线标题，柔和调色板），`马雷黄金时刻`（特定的巴黎琥珀光注册）。每张海报使用一种风格。\n\n**球衣细节**：`清晰的高卢公鸡徽章细节`，`刺绣的FFF标志`，`胸前的耐克勾`。高卢公鸡（公鸡）徽章复杂；模型将其抽象为模糊的金色标记，除非您明确提到。\n\n**负面提示**：`无亮皇家蓝（使用深海军蓝）`，`无意大利颜色提示（深蓝重叠）`，`无模糊面孔`，`无扭曲的球衣号码`。",
+      "toolsTitle": "法国海报生成的AI工具比较",
+      "challengesTitle": "AI法国海报仍然失败的地方（及解决方案）",
+      "challengesContent": "三种特定于法国海报的失败模式，以及提示侧的缓解措施：\n\n**海军蓝漂移到亮蓝。** 当您说“法国蓝”时，模型默认使用皇家蓝或荧光蓝——过于饱和，看起来像意大利或阿根廷。**解决方案**：具体命名颜色（`深海军蓝蓝军蓝，#002654，带有棕色底色`）。法国海军蓝比普通蓝色更深。\n\n**高卢公鸡徽章呈现为金色斑点。** 带有FFF标志的高卢公鸡徽章很复杂；模型将其抽象化。**解决方案**：`清晰的高卢公鸡徽章细节，红色盾牌中的金色公鸡，刺绣的FFF字母`。即使如此，预计准确度约为70%——对于客户工作，请在Figma中合成真实徽章。\n\n**姆巴佩面部不准确。** 封闭源模型无法呈现准确的姆巴佩肖像。**解决方案**：倾向于“灵感来源于”的框架——描述打球风格、体型（`年轻的运动型身材，高颧骨，短发，标志性的交叉手臂庆祝`）。体育对决的漫画风格通过设计隐藏了肖像差距。",
+      "curifyTitle": "生成您的海报——直接模板链接",
+      "curifyContent": "跳过提示工程，直接访问模板：\n\n**体育对决（姆巴佩1对1）**： [/nano-template/sports-battle](/nano-template/sports-battle) — 提供`player_left`（`基利安·姆巴佩`）和`player_right`（`裘德·贝林厄姆`，`维尼修斯·儒尼奥尔`，`埃尔林·哈兰德`，任意人）。模板处理漫画风格的VS海报。\n\n**名人团队海报（蓝军）**： [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — 提供`star_movie_group`，使用`法国2026国家队`或上述任何变体。模板处理电影感照明、渐变、奢华衬线标题。\n\n有关更多体育主题的提示，[/topics/character](/topics/character)中心索引了跨越体育、游戏、电影和娱乐的角色驱动模板。有关策划的Nano Banana目录，[/nano-banana-pro-prompts](/nano-banana-pro-prompts)是目录。有关本系列中兄弟国家的帖子：[/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts)和[/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts)。有关1对1对抗的特定指南：[/blog/ai-1v1-soccer-rivalry-prompts](/blog/ai-1v1-soccer-rivalry-prompts)。",
+      "conclusionTitle": "其他国家——相同模板，替换名称",
+      "modelsContent": "**体育对决** ([/nano-template/sports-battle](/nano-template/sports-battle)) 接受两个球员名称——`player_left` 和 `player_right`——并渲染一个纵向3:4的漫画风格VS海报：两个全身肖像，中心VS图形，统计面板，身份标签，霓虹光环照明。基础提示锁定为漫画风格；您提供名称。非常适合*姆巴佩对贝林厄姆*，*姆巴佩对维尼修斯·儒尼奥尔*，*姆巴佩对哈兰德*，*楚阿梅尼对贝林厄姆*。模板附带一个姆巴佩对贝林厄姆的示例，以便您在生成之前预览。\n\n**名人和电影团队海报** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)) 接受一个`star_movie_group`参数，并渲染一个看起来官方的合奏海报：多个动态构图的人物，电影感照明，柔和渐变背景，奢华简约的标题字体。提供*法国2026国家队*，您将获得完整蓝军阵容版本。\n\n这两个模板在Curify的Nano Banana Pro管道上运行。模板基础样式锁定品牌海报注册；您只需提供变量。",
+      "toolsContent": "Curify的模板在Nano Banana Pro上运行。在模板之外：\n\n| 工具 | 最适合法国海报 | 优势 | 劣势 |\n|---|---|---|---|\n| **Nano Banana Pro** (Gemini 3 Pro图像) | ★★★★★ | 多人物组图的空间推理；当前蓝军阵容的Google搜索基础；对话式编辑（“将卡马文加换成科内，保持照明”） | 开箱即用的编辑风格不如Midjourney丰富 |\n| **GPT Image 2** (ChatGPT) | ★★★★ | 对话式迭代，准确的多元素场景，包含在ChatGPT Plus中 | 激进的安全过滤器拒绝某些姆巴佩相似度提示 |\n| **Midjourney v7** | ★★★★ | 最佳美学；深海军蓝+红色蓝军注册自然与艺术装饰分级相结合 | 无API；对球员肖像的处理不够准确；在多人物方面表现较弱 |\n| **Stable Diffusion 3.5 Large** | ★★★ | 通过ControlNets完全控制（使用蓝军团队姿势参考）；硬件后每张图像零成本 | 开箱即用的质量落后于封闭源的领导者，除非调优LoRA |\n\n对于此工作流程，**请继续使用Curify模板上的Nano Banana Pro**——模板强制执行品牌海报美学，因此您无需在每次渲染时从头开始提示生成蓝军海军。有关更深入的比较，请参见 [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison)。",
+      "step4Content": "如果团队海报太拥挤，姆巴佩单独对抗对手的照片是法国内容（TikTok、Instagram Reels）中参与度最高的格式：\n\n```\n基利安·姆巴佩对裘德·贝林厄姆——漫画风格的VS海报，纵向3:4，两个球员处于动态动作姿势。姆巴佩在左侧，穿着深海军蓝的法国#10球衣，红色装饰，正中冲刺，右脚控球，准备触发标志性的姆巴佩交叉手臂庆祝。贝林厄姆在右侧，穿着白色的英格兰#10球衣，带有圣乔治的红十字，正中跳跃，双臂张开，进行大鹏展翅的庆祝。两者均为英雄低角度构图。中心VS图形为金属金色，带有电弧闪电效果。底部的统计面板（冠军联赛进球，皇家马德里自两人都穿白色俱乐部球衣以来的统计，年龄——贝林厄姆比姆巴佩小4岁）。分割体育场背景——法兰西体育场渐变为温布利，黄金时刻的天空在巴黎蓝和伦敦黄昏之间分割。漫画风格的线条艺术，半色调阴影，霓虹光环照明，戏剧性的青色-橙色色调。4K细节，无水印。\n```\n\n**需要更换的内容**：右侧的任何其他对手——维尼修斯·儒尼奥尔（巴西-法国边锋对抗），哈兰德（挪威），罗纳尔多（世代交接）。分割体育场背景适用于任何法国对抗国家的比赛。",
+      "conclusionContent": "以上两个法国提示可以推广到2026年世界杯的其他国家。相同模板，替换球队名称，正确获取球衣颜色：\n\n- **巴西**：`巴西2026国家队` — 黄色+绿色+蓝色点缀，马拉卡纳，标题`BRASIL 2026` — 见 [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts)\n- **阿根廷**：`阿根廷2026世界杯阵容` — 天空蓝+白+金色，纪念碑体育场，标题`ARGENTINA 2026` — [同一兄弟帖子](/blog/brazil-argentina-soccer-poster-prompts)\n- **葡萄牙**：`葡萄牙2026国家队` — 深红+绿色+金色，阿尔瓦拉德体育场，标题`PORTUGAL 2026` — 见 [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts)\n- **西班牙**：`西班牙2026国家队` — 红色+藏红色+海军，伯纳乌，标题`ESPAÑA 2026`\n- **德国**：`德国2026国家队` — 白色+黑色+红色/金色，安联竞技场，标题`DEUTSCHLAND 2026`\n- **英格兰**：`英格兰2026世界杯阵容` — 白色+圣乔治红+海军，温布利，标题`ENGLAND 2026`\n- **摩洛哥**：`摩洛哥2026国家队` — 红色+绿色星+白色，哈桑二世大体育场，标题`LE MAROC 2026`\n- **墨西哥**（东道主）：`墨西哥2026国家队` — 绿色+白色+红色，阿兹特克体育场，标题`MÉXICO 2026`\n- **美国**（东道主）：`美国2026世界杯阵容` — 海军+红色条纹+白色星，索非亚体育场，标题`USA 2026`\n\n提示结构保持不变——球衣描述、体育场背景、调色板、标题文本、纵向3:4格式。排列球队和调色板；其他一切从模板的基础提示中继承。\n\n如果您生成了喜欢的海报，[/topics/character](/topics/character)和[/topics/sports](/topics/sports)会展示类似的模板——角色对抗、电影团队海报、粉丝阵容，全部在同一Curify管道上。"
     }
   },
   "imageGenerationModelComparison": {

@@ -63,7 +63,20 @@ export default function AslTranslationContent({ slug, t, tEn, locale }: AslTrans
       <p className="text-lg font-semibold text-indigo-600 mb-4">
         {safeT("intro")}
       </p>
-      
+
+      <div className="border-l-4 border-indigo-500 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 p-6 rounded-lg my-2 not-prose">
+        <p className="font-semibold mb-2">Looking for the tool, not the guide?</p>
+        <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
+          See a working ASL → English subtitle demo on a real signed clip, then join early access for your own uploads.
+        </p>
+        <a
+          href="/tools/asl-video-translator"
+          className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2 rounded-lg transition"
+        >
+          Try the ASL Video Translator →
+        </a>
+      </div>
+
       <section>
         <h2 className="text-2xl font-bold mb-4">{safeT("whatIsTitle")}</h2>
         <div 

@@ -964,7 +964,13 @@
       ],
       "title": "Gerçekten İşe Yarayan 10 AI Video Yönlendirme İpucu (Sora, Runway, Pika)",
       "metaDescription": "Sora, Runway ve Pika'da test edilen 10 yönlendirme tekniğiyle sıkıcı AI videolarını üretmeyi durdurun. 2026'da yaratıcılar için gerçek öncesi ve sonrası örnekler.",
-      "seoKeywords": "ai video yönlendirmeleri, sora yönlendirmeleri, runway video yönlendirmeleri, pika video yönlendirmeleri, ai video üretim ipuçları, video yönlendirme teknikleri 2026, ai video üretici rehberi"
+      "seoKeywords": "ai video yönlendirmeleri, sora yönlendirmeleri, runway video yönlendirmeleri, pika video yönlendirmeleri, ai video üretim ipuçları, video yönlendirme teknikleri 2026, ai video üretici rehberi",
+      "heroImage": "/images/tenprompt.webp",
+      "heroImageAlt": "AI video üretimi için en iyi 10 yönlendirme ipucu",
+      "heroCtaLabel": "VIDEO ÜRETİMİNİ DENEYİN",
+      "heroCtaText": "Bu 10 yönlendirme ipucunu Curify'nin video üretim araçlarıyla uygulayın",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "Dene →"
     },
     "imageGenerationModelComparison": {
       "date": "28 Mart 2026",
@@ -1027,7 +1033,13 @@
       "faq1Answer": "Nano Banana Pro (Google AI Studio aracılığıyla) ve GPT Image 2 (ChatGPT içindeki DALL-E 3 halefidir) en başlangıç dostu olanlardır — istediğinizi sade İngilizce ile yazın, bir görüntü alın, konuşarak yineleyin. Midjourney v7'nin bir Discord/web öğrenme eğrisi vardır. Stable Diffusion 3.5, fal.ai veya Replicate gibi yönetilen bir bulut ön ucu kullanmadığınız sürece teknik kurulum gerektirir.",
       "faq2Answer": "Üçü de ticari kullanımı destekler. Nano Banana Pro ve Midjourney v7, ücretli planları ile ticari lisanslar verir (Google, Nano Banana çıktılarında menşei için görünmez bir SynthID filigranı yerleştirir). Stable Diffusion 3.5, izin verici bir lisans altında açık kaynaklıdır, ancak bireysel topluluk LoRA lisanslarını kontrol edin — bazıları ticari değildir.",
       "faq3Answer": "Hızlı yineleme ve kavramsal çalışma için, Nano Banana 2 (Flash katmanı) veya Stable Diffusion 3.5 Turbo (güçlü bir GPU'da 2-4 saniye üretim). Estetiğin en önemli olduğu nihai üretim çalışmaları için, Midjourney v7 veya tam akıl yürütme katmanındaki Nano Banana Pro. Belirli bir karakter veya marka stiline sahip tutarlı seriler için, ayarlanmış bir LoRA ile Stable Diffusion 3.5 Large, görüntü başına tutarlılıkta kazanır.",
-      "faq4Answer": "Minimum: distile modeller için 12GB VRAM'li bir GPU. Önerilen: tam 3.5 Large modeli ve daha hızlı üretim için 16-24GB VRAM. Donanım satın almak istemiyorsanız bulut kiralamaları (Runpod, fal.ai, Replicate) $0.50-2/saatdir — SD'yi bir GPU satın almadan önce denemek için kullanışlıdır."
+      "faq4Answer": "Minimum: distile modeller için 12GB VRAM'li bir GPU. Önerilen: tam 3.5 Large modeli ve daha hızlı üretim için 16-24GB VRAM. Donanım satın almak istemiyorsanız bulut kiralamaları (Runpod, fal.ai, Replicate) $0.50-2/saatdir — SD'yi bir GPU satın almadan önce denemek için kullanışlıdır.",
+      "heroImage": "/images/hardworker.webp",
+      "heroImageAlt": "Aynı yönlendirme ile Nano Banana, Flux ve Stable Diffusion çıktılarının karşılaştırması",
+      "heroCtaLabel": "ŞABLONLARI GÖRÜNTÜLE",
+      "heroCtaText": "Model karşılaştırmalarına dalmadan — 200+ hazır Curify şablonundan başlayın",
+      "heroCtaHref": "/nano-banana-pro-prompts",
+      "heroCtaButton": "Keşfet →"
     },
     "lipSyncBusinessGuide": {
       "title": "AI Dudak Senkronizasyonu ve Dublaj Rehberi: İş Uygulamaları ve Araçlar",
@@ -1378,359 +1390,79 @@
       ]
     },
     "bestAiTools": {
-      "title": "2026'da İçerik Üreticileri için En İyi 10 AI Aracı",
-      "publishedDate": "2 Nisan 2026",
-      "readTime": "12 dakika okuma",
-      "category": "Üretici Araçları",
-      "heroImageAlt": "Not alma, araştırma ve çoklu medya oluşturma araçları dahil içerik üreticileri için AI araçlarının kapsamlı incelemesi",
-      "introduction": {
-        "title": "Giriş",
-        "description": "İçerik oluşturma, iş akışlarını kolaylaştıran, yaratıcılığı artıran ve verimliliği artıran AI araçlarıyla devrim niteliğinde değişti. Not almaktan video üretimine kadar bu araçlar, üreticilerin daha akıllıca çalışmasına yardımcı oluyor.",
-        "subtitle": "2026'da her içerik üreticisinin bilmesi gereken 10 temel AI aracını derledik."
-      },
-      "tools": {
-        "title": "Araçlar & Kaynaklar",
-        "description": "2026'da içerik üreticileri için mevcut en iyi araçları öğrenin.",
-        "list": [
-          {
-            "icon": "📝",
-            "name": "Notion AI",
-            "category": "Not Alma & Organizasyon",
-            "description": "Düşünceleri organize etmeye, içerik oluşturmaya ve iş akışlarını otomatikleştirmeye yardımcı olan AI destekli çalışma alanı.",
-            "features": [
-              "AI destekli yazım",
-              "Akıllı organizasyon",
-              "Şablon kütüphanesi",
-              "Ekip işbirliği"
-            ],
-            "pricing": "Ücretsiz katman mevcut, Aylık 8$'dan başlayan ücretli",
-            "bestFor": "İçerik planlayıcıları, yazarlar ve ekipler"
-          },
-          {
-            "icon": "🔍",
-            "name": "Perplexity AI",
-            "category": "Araştırma & Analiz",
-            "description": "Karmaşık sorulara doğru, alıntılı yanıtlar sağlayan AI destekli arama motoru.",
-            "features": [
-              "Gerçek zamanlı web araması",
-              "Alıntılanmış kaynaklar",
-              "Akademik araştırma",
-              "Belge analizi"
-            ],
-            "pricing": "Ücretsiz katman mevcut, Pro aylık 20$'dan itibaren",
-            "bestFor": "Araştırmacılar, gazeteciler ve akademisyenler"
-          },
-          {
-            "icon": "🎨",
-            "name": "Midjourney",
-            "category": "Görüntü Üretimi",
-            "description": "Metin istemlerinden etkileyici görseller oluşturan öncü AI görüntü üreticisi.",
-            "features": [
-              "Yüksek kaliteli görüntüler",
-              "Stil özelleştirme",
-              "Toplu oluşturma",
-              "Ticari haklar"
-            ],
-            "pricing": "Temel aylık 10$'dan itibaren, Standart aylık 30$'dan itibaren",
-            "bestFor": "Görsel yaratıcılar, pazarlamacılar ve tasarımcılar"
-          },
-          {
-            "icon": "🎬",
-            "name": "Runway ML",
-            "category": "Video Oluşturma",
-            "description": "Metinden videoya ve video düzenleme yetenekleri sunan AI video platformu.",
-            "features": [
-              "Metinden videoya",
-              "Video düzenleme",
-              "Yeşil ekran kaldırma",
-              "AI efektleri"
-            ],
-            "pricing": "Ücretsiz katman mevcut, Standart aylık 15$'dan itibaren",
-            "bestFor": "Video yaratıcıları ve sosyal medya yöneticileri"
-          },
-          {
-            "icon": "🎙️",
-            "name": "Descript",
-            "category": "Ses & Podcast",
-            "description": "AI transkripsiyonu ve ses klonlama ile tümleşik ses/video düzenleme platformu.",
-            "features": [
-              "Otomatik transkripsiyon",
-              "Ses klonlama",
-              "AI düzenleme",
-              "Ekran kaydı"
-            ],
-            "pricing": "Ücretsiz katman mevcut, Yaratıcı aylık 15$'dan itibaren",
-            "bestFor": "Podcast yayıncıları ve video yaratıcıları"
-          },
-          {
-            "icon": "📊",
-            "name": "Canva AI",
-            "category": "Grafik Tasarım",
-            "description": "Profesyonel grafikler, sunumlar ve pazarlama materyalleri oluşturan AI destekli tasarım platformu.",
-            "features": [
-              "AI tasarım önerileri",
-              "Marka kiti yönetimi",
-              "Şablon kütüphanesi",
-              "Ekip işbirliği"
-            ],
-            "pricing": "Ücretsiz katman mevcut, Pro aylık 12.99$'dan itibaren",
-            "bestFor": "Sosyal medya yöneticileri ve pazarlamacılar"
-          },
-          {
-            "icon": "🚀",
-            "name": "Jasper AI",
-            "category": "İçerik Yazımı",
-            "description": "Blog yazıları, sosyal medya içerikleri ve pazarlama metinleri oluşturmanıza yardımcı olan AI yazım asistanı.",
-            "features": [
-              "50+ yazım şablonu",
-              "Marka sesi özelleştirme",
-              "SEO optimizasyonu",
-              "İçerik takvimi"
-            ],
-            "pricing": "Yaratıcı aylık 39$'dan itibaren, Ekipler aylık 99$'dan itibaren",
-            "bestFor": "İçerik pazarlamacıları ve metin yazarları"
-          },
-          {
-            "icon": "🎯",
-            "name": "Grammarly AI",
-            "category": "Yazım Geliştirme",
-            "description": "Dilbilgisi, ton ve netliği tüm içerik türlerinde geliştiren AI destekli yazım asistanı.",
-            "features": [
-              "Dilbilgisi kontrolü",
-              "Ton tespiti",
-              "Stil önerileri",
-              "İntihal kontrolü"
-            ],
-            "pricing": "Ücretsiz katman mevcut, Premium $12/aydan itibaren",
-            "bestFor": "Yazarlar ve profesyoneller"
-          },
-          {
-            "icon": "📱",
-            "name": "Buffer AI",
-            "category": "Sosyal Medya Yönetimi",
-            "description": "Gönderi programlarını ve içerik performansını optimize eden AI destekli sosyal medya yönetim platformu.",
-            "features": [
-              "AI içerik önerileri",
-              "Optimal gönderim zamanları",
-              "Analitik panel",
-              "Çoklu platform yönetimi"
-            ],
-            "pricing": "Ücretsiz katman mevcut, Temel $6/aydan itibaren",
-            "bestFor": "Sosyal medya yöneticileri ve küçük işletmeler"
-          },
-          {
-            "icon": "🎥",
-            "name": "Curify",
-            "category": "Video Çeviri & AI İçeriği",
-            "description": "Gelişmiş ses klonlama ve çok modlu yeteneklerle video çevirisi, dublaj ve içerik oluşturma için kapsamlı AI platformu.",
-            "features": [
-              "AI video çevirisi",
-              "Ses klonlama",
-              "Dudak senkronizasyonu teknolojisi",
-              "Çok modlu içerik üretimi",
-              "Profesyonel dublaj"
-            ],
-            "pricing": "Ücretsiz katman mevcut, Pro planlar $29/aydan itibaren",
-            "bestFor": "Video yaratıcıları, içerik pazarlamacıları ve küresel işletmeler"
-          }
-        ]
-      },
-      "features": {
-        "title": "Ana Özellikler"
-      },
-      "pricing": {
-        "title": "Fiyatlandırma"
-      },
-      "bestFor": {
-        "title": "En İyi Kullanım Alanları"
-      },
-      "curify": {
-        "title": "Curify Nasıl Yardımcı Olabilir",
-        "description": "Curify, AI araçlarını iş akışınıza entegre etmek isteyen içerik üreticileri için kapsamlı çözümler sunar. Platformumuz, en iyi AI araçlarıyla sorunsuz entegrasyon, özelleştirilebilir şablonlar ve etkili içerik oluşturmanıza yardımcı olacak uzman rehberliği sağlar.",
-        "features": [
-          "Sorunsuz AI araç entegrasyonu",
-          "Özelleştirilebilir içerik şablonları",
-          "Uzman rehberliği ve destek",
-          "İş akışı optimizasyonu",
-          "Performans analitiği"
-        ]
-      },
-      "cta": {
-        "title": "🎯 Başlamak için hazır mısınız?",
-        "description": "Bugün Curify'nin Araçlarını deneyin ve içerik oluşturma iş akışınızı AI destekli çözümlerle dönüştürün."
-      },
-      "comparison": {
-        "title": "Araç Karşılaştırması",
-        "description": "Bu AI araçlarını yan yana karşılaştırarak özel ihtiyaçlarınıza ve bütçenize en uygun olanı bulun.",
-        "tableTitle": "Hızlı Karşılaştırma Tablosu",
-        "toolColumn": "Araç",
-        "categoryColumn": "Kategori",
-        "pricingColumn": "Başlangıç Fiyatı",
-        "difficultyColumn": "Öğrenme Eğrisi",
-        "tableData": [
-          {
-            "tool": "Notion AI",
-            "category": "Not Alma",
-            "pricing": "$8/ay",
-            "difficulty": "Kolay"
-          },
-          {
-            "tool": "Perplexity AI",
-            "category": "Araştırma",
-            "pricing": "$20/ay",
-            "difficulty": "Kolay"
-          },
-          {
-            "tool": "Midjourney",
-            "category": "Görseller",
-            "pricing": "$10/ay",
-            "difficulty": "Orta"
-          },
-          {
-            "tool": "Runway ML",
-            "category": "Video",
-            "pricing": "$15/ay",
-            "difficulty": "Orta"
-          },
-          {
-            "tool": "Descript",
-            "category": "Ses",
-            "pricing": "$15/ay",
-            "difficulty": "Kolay"
-          },
-          {
-            "tool": "Canva AI",
-            "category": "Grafik Tasarım",
-            "pricing": "$12.99/ay",
-            "difficulty": "Kolay"
-          },
-          {
-            "tool": "Jasper AI",
-            "category": "İçerik Yazımı",
-            "pricing": "$39/ay",
-            "difficulty": "Orta"
-          },
-          {
-            "tool": "Grammarly AI",
-            "category": "Yazım Geliştirme",
-            "pricing": "$12/ay",
-            "difficulty": "Kolay"
-          },
-          {
-            "tool": "Buffer AI",
-            "category": "Sosyal Medya",
-            "pricing": "$6/ay",
-            "difficulty": "Kolay"
-          },
-          {
-            "tool": "Curify",
-            "category": "Video Çeviri",
-            "pricing": "$29/ay",
-            "difficulty": "Orta"
-          }
-        ]
-      },
-      "howToChoose": {
-        "title": "Doğru Araçları Nasıl Seçersiniz",
-        "description": "Doğru AI araçlarını seçmek, özel ihtiyaçlarınıza, bütçenize ve iş akışınıza bağlıdır. Bu ana faktörleri göz önünde bulundurun:",
-        "factors": [
-          {
-            "title": "İçerik Türü",
-            "description": "Araçları ana içerik formatınıza (video, metin, görseller, ses) göre eşleştirin"
-          },
-          {
-            "title": "Bütçe Kısıtlamaları",
-            "description": "Ücretsiz katmanlarla başlayın ve ihtiyaçlarınız arttıkça yükseltin"
-          },
-          {
-            "title": "Entegrasyon İhtiyaçları",
-            "description": "Araçların mevcut iş akışınız ve yazılımınızla nasıl çalıştığını düşünün"
-          },
-          {
-            "title": "Öğrenme Eğrisi",
-            "description": "Güçlü özellikleri, ekibiniz için kullanım kolaylığı ile dengeleyin"
-          }
-        ]
-      },
-      "workflow": {
-        "title": "Optimal Yaratıcı İş Akışı",
-        "description": "Bu AI araçlarını akıcı bir içerik oluşturma sürecine nasıl entegre edebileceğinizi burada bulabilirsiniz:",
-        "steps": [
-          {
-            "title": "Araştırma & Planlama",
-            "description": "Araştırma için Perplexity AI'yi, içerik planlama için Notion AI'yi kullanın"
-          },
-          {
-            "title": "İçerik Oluşturma",
-            "description": "AI asistanlarıyla yazın, dil bilgisi araçlarıyla geliştirin"
-          },
-          {
-            "title": "Görsel Unsurlar",
-            "description": "Midjourney ile görseller oluşturun, AI araçlarıyla tasarımlar yapın"
-          },
-          {
-            "title": "Ses/Görüntü",
-            "description": "Descript ile kaydedin ve düzenleyin, Runway ML ile videolar oluşturun"
-          },
-          {
-            "title": "Sunum",
-            "description": "Her şeyi AI araçlarıyla sunumlara derleyin"
-          }
-        ]
-      },
-      "tips": {
-        "title": "Maksimum Verimlilik için Profesyonel İpuçları",
-        "description": "Bu AI araçlarından en iyi şekilde yararlanmak için bu uzman stratejilerini kullanın:",
-        "list": [
-          "Bir araçla başlayın ve diğerlerini iş akışınıza eklemeden önce onu ustalaşın",
-          "İşin %80'ini AI ile yapın, ardından özgünlük için kişisel dokunuşunuzu ekleyin",
-          "Tekrar eden görevleri otomatikleştirmek için şablonlar ve iş akışları oluşturun",
-          "Araçlarınızı düzenli olarak güncelleyin ve yeni özellikleri öğrenin",
-          "Rekabetten sıyrılan benzersiz sonuçlar için birden fazla aracı birleştirin"
-        ]
-      },
-      "future": {
-        "title": "İçerik Oluşturmadaki AI'nın Geleceği",
-        "description": "AI araçları hızla evrim geçiriyor. İşte içerik oluşturmanın geleceğini şekillendiren trendler:",
-        "trends": [
-          {
-            "title": "Çok Modlu AI",
-            "description": "Metin, görseller, ses ve videoyu sorunsuz bir şekilde işleyebilen araçlar"
-          },
-          {
-            "title": "Kişiselleştirme",
-            "description": "Daha iyi sonuçlar için stilinizi ve tercihlerinizi öğrenen AI"
-          },
-          {
-            "title": "Gerçek Zamanlı İşbirliği",
-            "description": "Ekipler ve platformlar arasında anlık işbirliği sağlayan AI araçları"
-          }
-        ]
-      },
-      "conclusion": {
-        "title": "Sonuç",
-        "description": "Bugün AI destekli içerik oluşturma araçlarıyla yolculuğunuza başlayın. Doğru AI araçları kombinasyonu, verimliliğinizi, yaratıcılığınızı ve içerik kalitenizi önemli ölçüde artırabilir. Bir araçla başlayın, onu ustalaşın ve zamanla kapsamlı bir içerik oluşturma iş akışı oluşturmak için araç setinizi genişletin."
-      },
+      "title": "2026'da Video İçerik Üreticileri için En İyi AI Araçları: Descript vs ElevenLabs vs Runway",
+      "metaDescription": "Descript, ElevenLabs, Runway — video oluşturma için hangi AI aracını kullanmalısınız, her birinin gerçekten iyi olduğu alanlar ve bunları atlayıp dublaj aracı kullanmanız gereken bir durum.",
+      "publishedDate": "2026-05-30",
+      "readTime": "8 dk okuma",
+      "category": "Yaratıcı Araçlar",
+      "intro": "Çoğu \"en iyi AI araçları\" listesi 20 giriş uzunluğundadır çünkü ekleme SEO'ya yardımcı olur. Biz katılmıyoruz. Üç araç, neredeyse her gerçek video üretici iş akışını kapsar — düzenleme/transkript (Descript), ses ve TTS (ElevenLabs), üretken video (Runway). Bu kılavuz, üç aracı seçer, her birinin gerçekten en iyi olduğu alanları belirtir ve bunları atlayıp dublaj aracı kullanmanız gereken yaygın durumu işaret eder.",
+      "whoThisIsForTitle": "Bu kimler için",
+      "whoThisIsForContent": "YouTube / TikTok / Instagram / ücretli müşteri çalışmaları için video içeriği düzenlemek, anlatmak veya oluşturmak üzere bir araç seçen solo yaratıcılar. Yerelleştirilmiş içerik üreten ajans video ekipleri. Ürün tanıtımları, web seminerleri, kurs modülleri oluşturan pazarlama ekipleri. Eğer mevcut bir videoyu orijinal konuşmacının sesiyle başka bir dile yerelleştirmeye çalışıyorsanız, [Video oluşturucu aracı ihtiyacınız yoksa ne olur?](#curify-callout) başlığına geçin — bu farklı bir sorun ve farklı bir araç.",
+      "buyersGuideTitle": "Hızlı alıcı kılavuzu — gerçekten önemli olanlar",
+      "buyersGuideContent": "Dört boyut önemlidir; geri kalanı pazarlama metnidir.\n\n**1. İş akışının hangi aşamasında yardıma ihtiyacınız var?** Ön üretim (senaryo yazımı / hikaye tahtası) üretim (düzenleme) ile post (ses, dublaj, dağıtım) aşamalarından farklı bir araçta yer alır. Her şeyi yapabilen bir araç satın almak genellikle her birinin ortalama bir versiyonunu satın almak anlamına gelir.\n\n**2. Fiyatlandırma modeli.** Dakika başına fiyatlandırma (çoğu üretken video aracı) lineer olarak ölçeklenir — düşük hacim için iyi, ölçeklendiğinde acı verici. Abonelik planları harcamanızı sınırlar. Karakter başına fiyatlandırma (TTS) benzer — kısa klipler için ucuz, uzun biçimli anlatım için acı verici.\n\n**3. Çıktı formatı esnekliği.** 4K olarak dışa aktarabilir misiniz? Ham ses parçaları mı yoksa son karışım mı alıyorsunuz? Transkript SRT olarak indirilebilir mi? Çoğu araç sizi kendi oynatıcılarına veya editörlerine hapseder; temiz kaynak dosyaları gönderenleri istersiniz.\n\n**4. Gizli maliyet: kabul edilebilir zamana kadar.** Bir videoyu öğrenmek için 30 dakika alan ama ilk denemede cilalı bir sonuç üreten bir araç genellikle 30 saniyede sonuç üreten ama doğru görünmesi için üç iterasyona ihtiyaç duyan bir araçtan daha iyidir. İkinci kategori 50 video boyunca birikir.",
+      "methodologyTitle": "Bu üç aracı nasıl seçtik",
+      "methodologyContent": "Çoğu \"en iyi AI araçları\" listesi 15-20 giriş uzunluğundadır çünkü ekleme SEO'ya yardımcı olur. Biz katılmıyoruz. Üç araç, video üretici yelpazesinin tamamını kapsar — düzenleme/transkript, ses, üretken video. Bu üçüyle örtüşen 17 aracı çıkardık: CapCut AI, Adobe Premiere Firefly, Lumen5, Pictory, InVideo ve Veed, Descript ile aynı düzenleme grubunda yer alır; Murf, Play.ht, Speechify, WellSaid, Lovo, ElevenLabs ile aynı ses grubunda yer alır; Pika, Sora, Luma, Kling, Synthesia, HeyGen, Runway ile aynı üretken-video grubunda yer alır. Uzun listeyi istiyorsanız, bunlar bir Google araması kadar yakın. Bir karar almak istiyorsanız, okumaya devam edin.",
+      "toolsTitle": "Karşılaştırmaya değer üç araç",
+      "toolsIntro": "Pazarlama metninin ötesinde, video için AI alanı üç gruba ayrılır: düzenleme + transkript iş gücü (Descript), ses ve TTS lideri (ElevenLabs) ve üretken video öncüsü (Runway). Her biri iş akışının farklı bir aşamasını sahiplenir. Bugün yığınınızdaki en pahalı olanı seçin.",
+      "tool1Name": "1. Descript",
+      "tool1Tagline": "Çok modlu editör — transkripti düzenleyerek videoyu düzenleyin",
+      "tool1BestFor": "Podcast ve video düzenleme, transkripte dayalı kesimler, çok parçalı ses + video, eğitimler için ekran kaydı",
+      "tool1Pricing": "Ücretsiz katman sınırlı; ücretli planlar yaklaşık 16$/aydan başlar; ekip iş akışları için kurumsal katmanlar",
+      "tool1Languages": "Transkripsiyon 23+ dili destekler; ses klonlama (Overdub) İngilizce + seçili diğer dilleri destekler",
+      "tool1Limitation": "Düzenleme modeli, podcast tarzı konuşma içeriğini varsayar; anlatı videosunda zayıf, yerel AI b-roll üretimi yok, ses klonlama kalitesi ElevenLabs'ın gerisinde",
+      "tool1WhenToPick": "Descript'i, düzenleme zamanınızın çoğunun röportaj görüntülerini, podcast bölümlerini, kurs videolarını veya ekran kayıtlarını kesmeye gittiği durumlarda seçin — transkriptin yapısal iskelet olduğu içeriklerde. Kelimeleri silerek düzenleme, öldürücü bir özelliktir: transkriptten bir cümleyi kesin ve video eşleşir. Ücretsiz katman değerlendirmek için yeterince cömerttir; ücretli katmanlar çok parçalı, ses klonlama (Overdub) ve AI göz teması düzeltmesini ekler.",
+      "tool2Name": "2. ElevenLabs",
+      "tool2Tagline": "Ses ve TTS lideri — cilalı ticari seçim",
+      "tool2BestFor": "Açıklayıcı videolar için seslendirme, sesli kitap anlatımı, medya için karakter sesleri, ürün özellikleri için özel sesler",
+      "tool2Pricing": "Karakter başına faturalama — ücretsiz katman sınırlı; ücretli planlar yaklaşık 5$/aydan başlar; yüksek hacimli API kullanımı için kurumsal katmanlar",
+      "tool2Languages": "Olgun ses kütüphanesi ile 30+ dil; 10-30s referans ile anlık ses klonlama; 30+ dk referans ile profesyonel klonlama",
+      "tool2Limitation": "Ses klonlama üzerinde içerik politikası engelleri olan kapalı platform (özel sesler için onay doğrulaması gereklidir); karakter başına maliyetler yüksek hacimde birikir",
+      "tool2WhenToPick": "ElevenLabs'i, bir ses gerektiğinde seçin — bir YouTube denemesi için anlatım, bir eğitim seslendirmesi, bir podcast girişi, bir sesli kitap için. API ve ses kütüphanesi kategorideki en olgun olanlardır. Ses klonlama konusunda daha derin bir karşılaştırma için, [/blog/voice-cloning-tools](/blog/voice-cloning-tools) sayfasına bakın.",
+      "tool3Name": "3. Runway",
+      "tool3Tagline": "Üretken video — metinden videoya ve hareket fırçası üretim kalitesinde",
+      "tool3BestFor": "Üretken b-roll, soyut sahne üretimi, hareketli grafikler, müzik video çekimleri, ürün tanıtım sekansları",
+      "tool3Pricing": "Ücretsiz katman sınırlı; ücretli planlar ~15$/ay'dan başlıyor; yüksek hacimli Gen-3 / Gen-4 kullanımı için kurumsal",
+      "tool3Languages": "Metin istemi arayüzü İngilizce; çıktı görsel, dil bağımsız",
+      "tool3Limitation": "Kısa sinematik kliplerde (5-10 saniye) güçlü; tutarlı uzun biçim anlatımda zayıf; saniye başına fiyatlandırma uzun sekansları pahalı hale getiriyor; belirli eylemler üzerinde kontrol (örneğin, \"karakter topu atar\") hala tutarsız",
+      "tool3WhenToPick": "Sinematik üretken video gerektiğinde Runway'i seçin — soyut girişler, ürün tanıtımları, hareketli grafikler, var olmayan b-roll. Gen-3 ve Gen-4 modelleri görsel kalitede kategoriyi liderlik ediyor. Montaj aşaması için gerçek bir video editörü (Descript, Premiere, Final Cut) ile eşleştirin.",
+      "comparisonTitle": "Yan yana",
+      "comparisonIntro": "Üç araçta aynı dört boyut. Her bir araç kutusunu okuduktan sonra çağrıyı üçgenleştirmek için bunu kullanın.",
+      "decisionRubricTitle": "Hangi kullanım durumu için hangisi",
+      "decisionRubricContent": "- **Podcast veya röportaj odaklı video düzenleme** → Descript. Transkripte göre düzenleme iş akışıdır.\n- **Anlatım veya ürün özelliği için seslendirme** → ElevenLabs. Parlak + düşük mühendislik yüzeyi.\n- **Üretken b-roll veya sinematik sahne üretimi** → Runway. Kategoride en iyi görsel kalite.\n- **Bir videoyu orijinal konuşmacının sesiyle başka bir dile yerelleştirme** → üçünü de atlayın. Sonraki bölümü okuyun.",
+      "curifyCalloutTitle": "Bir video yaratıcı *aracına* ihtiyacınız yoksa ne olur?",
+      "curifyCalloutContent": "En iyi \"video yaratıcıları için en iyi AI araçları\" sayfasına gelen çoğu okuyucu, iki sorundan birini çözmeye çalışıyor: sıfırdan yeni bir video oluşturmak veya mevcut bir videoyu orijinal konuşmacının sesiyle başka bir dile yerelleştirmek. Yukarıdaki üç araç ilk sorunu ele alıyor. **İkinci sorun için, hiçbirine ihtiyacınız yok.**\n\n[Curify Video Dubbing](/tools/video-dubbing) orijinal konuşmacının sesini kaynak videodan kopyalar, sesi çevirir, kaynak zamanlamasına hizalar ve konuşmacının kimliğini koruyarak hedef dilde dublajlı bir parça gönderir. Ses kopyalama görünmez — bir video yükleyin, bir dil seçin, dublaj alın.\n\n**Bu doğru uyum olduğunda:** bir YouTube videosunu, bir kurs modülünü, bir ürün demosunu, bir web seminerini, bir eğitimi yerelleştirmek.\n\n**Olmadığında:** sıfırdan yeni video içeriği oluşturmak (Runway veya Descript kullanın), bir senaryo için seslendirme üretmek (ElevenLabs kullanın), bir röportajı düzenlemek (Descript kullanın). Farklı kategori, farklı araç.",
+      "faqTitle": "Sıkça sorulan sorular",
+      "faq1Q": "Üç araca da ihtiyacım var mı?",
+      "faq1A": "Hayır — iş akışınıza bağlı. Açıklayıcı videolar yapan bir solo yaratıcı sadece Descript (kaydet + düzenle) + ElevenLabs (kendi sesinizi kullanmıyorsanız ses) kullanabilir. Hareketli grafiklere ağırlık veren bir yaratıcı Runway + Descript kullanabilir. Çoğu yaratıcı üretken videoya ihtiyaç duymaz; çoğu yaratıcı transkripte dayalı düzenlemeye ihtiyaç duyar. Bugün en çok zamanınızı alan kutudan başlayın.",
+      "faq2Q": "Değerlendirebileceğim ücretsiz katmanlar var mı?",
+      "faq2A": "Üçü de ücretsiz katmanlara sahip. **Descript**: ayda ~1 saat transkripsiyon, filigranlı çıktılar. **ElevenLabs**: ayda 10k karakter (~10 dakika ses). **Runway**: ayda sınırlı üretimler, filigranlı. Ücretsiz katmanlar değerlendirmek için yeterlidir; üretim çalışmaları ücretli planlar gerektirir. Curify Video Dubbing'in erken erişim bekleme listesine katılmak da ücretsizdir.",
+      "faq3Q": "Bir YouTube yaratıcısının ihtiyaçlarını karşılayan en ucuz kombinasyon nedir?",
+      "faq3A": "Descript Creator planı (~16$/ay) düzenleme + transkripsiyon + kaba Overdub sesi kapsar. ElevenLabs Starter ($5/ay) yüksek kaliteli seslendirme sağlar. Haftada 1-2 video yapan bir YouTube kanalı için toplam ~21$/ay. Üretken b-roll'u düzenli olarak gerekiyorsa yalnızca Runway ekleyin.",
+      "faq4Q": "Seslendirme için kendi sesimi nasıl kopyalarım?",
+      "faq4A": "ElevenLabs Instant Voice Clone 10-30 saniye referans sesine ihtiyaç duyar ve dakikalar içinde çalışır. ElevenLabs Professional Voice Clone 30+ dakika temiz stüdyo sesine ihtiyaç duyar ve yayın kalitesine yakın bir ses elde eder. Descript Overdub, editörde benzer bir yaklaşım benimser ancak kalitesi ElevenLabs'ın gerisindedir. Ses kopyalama konusunda tam bir karşılaştırma için — açık kaynak seçenekleri (F5-TTS, OpenVoice) dahil — [/blog/voice-cloning-tools](/blog/voice-cloning-tools) sayfasına bakın.",
+      "faq5Q": "Bu araçlar otomatik olarak tam uzunlukta videolar üretebilir mi?",
+      "faq5A": "Üretim kalitesinde değil, hayır. Runway, sinematik görünen 5-30 saniyelik klipler üretebilir. Bunları 10 dakikalık tutarlı bir anlatı haline getirmek hala bir insan editörü (Descript, Premiere veya Final Cut) gerektirir. \"AI tam videonuzu üretir\" vaadiyle çıkan araçlar genellikle AI tarafından üretilmiş gibi görünen bir şey gönderir. Yukarıdaki üç araç, asistan olarak en iyi şekilde anlaşılır, yerini alacak araçlar değildir.",
+      "faq6Q": "Kendi sesimle bir YouTube videosunu dublajlamak istiyorum. Hangi araç?",
+      "faq6A": "Üçü de tek başına değil — bir boru hattı oluşturmanız gerekir. Şunlara ihtiyacınız olacak: orijinal sesi çıkarın, konuşmacının sesini kopyalayın, senaryoyu çevirin, kopyalanmış sesle dublajlı sesi üretin, kaynak video zamanlamasına hizalayın, isteğe bağlı olarak dudak senkronizasyonu yapın. [Curify Video Dubbing](/tools/video-dubbing) tüm altı adımı baştan sona yapar. Ses kopyalama dahili; bir video yükleyin, bir dil seçin, dublaj alın. \"AI video yaratıcı araçları\" kategorisinden farklı.",
+      "conclusionTitle": "Kısa versiyon",
+      "conclusionContent": "Üç araç, bir karar: **Descript** eğer düzenlemenizin çoğu röportaj / podcast / ekran kaydı içeriği ise ve transkript kesimi yönlendiriyorsa; **ElevenLabs** eğer cilalı seslendirme veya ses kopyalama gerekiyorsa; **Runway** eğer üretken b-roll veya sinematik kısa klipler gerekiyorsa. Ve eğer gerçek sorununuz mevcut bir videoyu orijinal konuşmacının sesiyle dublajlamaksa, [Curify'yi deneyin](/tools/video-dubbing) — farklı kategori, ses kopyalama otomatik, yukarıdaki üçünden herhangi birini öğrenmenize gerek yok.",
       "footer": {
         "tags": [
-          "AI Araçları",
-          "İçerik Oluşturma",
-          "Verimlilik",
-          "Pazarlama",
-          "Tasarım",
-          "Video Prodüksiyonu",
-          "Yazım",
-          "Araştırma"
+          "AI video araçları",
+          "Descript",
+          "ElevenLabs",
+          "Runway",
+          "Yaratıcılar için AI",
+          "video düzenleme AI",
+          "ses klonlama",
+          "AI video dublajı"
         ],
-        "questions": "İçerik oluşturma için AI araçları hakkında sorularınız mı var? Kişiselleştirilmiş öneriler için uzmanlarımızla iletişime geçin."
+        "questions": "Hangi aracın iş akışınıza uygun olduğuna dair sorularınız mı var? /contact üzerinden bize ulaşın — bu üçüncü taraf araçların yanı sıra Curify'yi de içsel olarak kullanıyoruz ve görüşlerimiz var."
       },
-      "metaDescription": "2026'da içerik üreticilerinin gerçekten kullandığı 10 AI aracı — dublaj, transkripsiyon, görsel, ses. Her birinin iyi yaptığı şeyler ve zayıf kaldığı noktalar.",
-      "seoKeywords": [
-        "en iyi AI araçları 2026",
-        "yaratıcılar için AI araçları",
-        "içerik oluşturma AI",
-        "AI araç karşılaştırması"
-      ]
+      "heroImageAlt": "Video içerik üreticileri için AI araçları 2026: Descript, ElevenLabs, Runway",
+      "heroImage": "/images/best-ai-tools-video-runway.webp",
+      "heroCtaText": "Bir videoyu orijinal konuşmacının sesiyle başka bir dile yerelleştirin — Curify Video Dubbing'i deneyin",
+      "heroCtaHref": "/tools/video-dubbing"
     },
     "nanoBananaDedicated": {
       "title": "Nano Banana AI Nedir? AI Yapılandırılmış Görsel Üretim için Tam Kılavuz",
@@ -4267,7 +3999,13 @@
         "AI video boru hattı",
         "difüzyon iş akışı",
         "hareket grafikleri AI"
-      ]
+      ],
+      "heroImage": "/images/ae-vs-comfyui.jpg",
+      "heroImageAlt": "After Effects ve ComfyUI için AI video boru hatları",
+      "heroCtaLabel": "BORU HATTIYI DENEYİN",
+      "heroCtaText": "AE-vs-ComfyUI tartışmasını atlayın — Curify'nin toplu araçlarında tam bir video boru hattı çalıştırın",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "Dene →"
     },
     "qaBotToTaskAgent": {
       "heading": "🏗️ QA Bot'tan Görev Ajanına: Bir Mimari Rehberi",
@@ -4337,13 +4075,8 @@
       "finalThought": "Eğer ajansınız sadece soruları yanıtlıyorsa, bu bir sohbet botudur. Eğer güvenilir bir şekilde iş yapıyorsa, bu bir Görev Ajansı'dır."
     },
     "characterPromptGenerator": {
-      "title": "Karakter İstek Üretici: 12+ Evren MBTI Kartı + Özel Karakterler",
-      "metaDescription": "Kişilik, isim, yaş, cinsiyet ile sıfırdan karakterler oluşturun - ya da sevdiğiniz evrende (Marvel, Breaking Bad, Naruto, Ghibli, Harry Potter, Friends ve daha fazlası) bilinen bir karakteri MBTI kişilik kartı olarak yeniden hayal edin.",
-      "publishedDate": "2026-05-12",
-      "readTime": "6 dk okuma",
       "category": "Nano Şablon",
       "heroImageAlt": "Karakter istek üretici önizlemesi",
-      "intro": "Sıfırdan tamamen yeni bir karakter tasarlamak veya sevdiğiniz şovdan birini MBTI kişilik kartı olarak yeniden hayal etmek istiyorsanız, Curify, her biri neyi doldurmanız gerektiğini tam olarak bilmenizi sağlayan belirli bir parametre formuna sahip odaklanmış bir karakter şablonu seti sunar.",
       "whatWeShip": {
         "title": "Ne Gönderiyoruz",
         "intro": "Aşağıdaki tüm şablonlar, Curify'de özenle hazırlanmış örneklerle canlıdır. Oluşturmak istediğiniz karakter türüne göre seçin:",
@@ -4478,35 +4211,6 @@
           ]
         }
       },
-      "whoCanBenefit": {
-        "title": "Kimler Faydalanabilir",
-        "writers": {
-          "title": "Yazarlar & Hikaye Anlatıcıları",
-          "description": "Özel Karakter Kartı kullanarak taslak oluşturmadan önce tutarlı kişiliğe sahip tekrar eden karakterleri tasarlayın. Rakiplikler ve diyalog dinamiklerini planlamak için MBTI Kontrast Kartı'nı kullanın."
-        },
-        "artists": {
-          "title": "Dijital Sanatçılar & İllüstratörler",
-          "description": "Kawaii Profil Kartı'nda referans sayfaları oluşturun veya komisyon ilhamı için Fandom Izgara Posteri ile tam karakter ızgaraları oluşturun."
-        },
-        "gameDevelopers": {
-          "title": "Oyun Geliştiricileri",
-          "description": "MBTI Kontrast Kartı ve Özel Karakter Kartı, her ikisi de tek seferde tutarlı bir görsel ve davranışsal okuma ile NPC arketipleri sunar."
-        },
-        "creators": {
-          "title": "İçerik Üreticileri",
-          "description": "Evren MBTI kartları (Marvel / Friends / NBA / Ghibli / Çin Klasik) dikey sosyal medya için tasarlanmıştır — bir karakter adı ekleyin ve paylaşın."
-        }
-      },
-      "proTips": {
-        "title": "Profesyonel İpuçları",
-        "tips": [
-          "Kişiliği renk paleti ile eşleştirin — kolerik karakterler sıcak kırmızılarda, melankolikler derin mavilerde iyi çalışır.",
-          "Özel Karakter Kartları için kişiliği 'MBTI + 1-2 özellik' olarak yazın (örneğin 'ENFP, iyimser, huzursuz'). Belirsiz ipuçları belirsiz portreler üretir.",
-          "Evrensel MBTI şablonları, iyi bilinen karakter isimleriyle en iyi şekilde çalışır. Belirsiz isimler kayma eğilimindedir.",
-          "Üretilen MBTI türü, kanonik hayran yorumuyla çelişiyorsa, kart yine de faydalıdır — tartışmaya değer alternatif bir yorum üretir.",
-          "Paylaşılabilir sosyal içerik için Fandom Grid Poster'ını kullanın — temalı ızgaralar tek karakterli gönderilerden daha iyi performans gösterir."
-        ]
-      },
       "footer": {
         "tags": [
           "AI Karakter Tasarımı",
@@ -4519,7 +4223,346 @@
           "Kawaii Karakter Profili"
         ],
         "questions": "MBTI serisine eklenmesini istediğiniz bir evren var mı? İletişime geçin, bunu bir sonraki içerik güncellemesi için değerlendireceğiz."
-      }
+      },
+      "title": "Karakter Yönlendirme Üretici: Naruto, Yellowstone, Marvel, Harry Potter + 8 Daha Fazla Evren için MBTI",
+      "metaDescription": "Naruto, Yellowstone, Marvel, Friends, Harry Potter, Breaking Bad gibi 35+ karakter için MBTI kişilik tiplerini araştırın — ardından Curify'nin evrene özel şablonlarıyla kartı oluşturun.",
+      "publishedDate": "2026-05-30",
+      "readTime": "7 dk okuma",
+      "intro": "\"Minato kişilik tipi\" veya \"Beth Dutton kişilik tipi\" mi arıyorsunuz? Doğru yerdesiniz. Bu kılavuz, Naruto, Yellowstone, Marvel, Friends, Harry Potter, Breaking Bad gibi altı evrende en çok aranan 35+ karakter için MBTI'yi sunuyor — ayrıca bu isimlerden herhangi birini kullanarak tam kartı oluşturmak için kullanacağınız Curify şablonunu içeriyor. [Geldiğiniz evrene](#universes) veya [MBTI hızlı referans tablosuna](#mbti-index) geçin.",
+      "workedExamples": {
+        "title": "Evrene Göre MBTI — 35+ Karakter Analizi",
+        "intro": "Aşağıdaki her evrenin bölümü, MBTI türü ve bir cümlelik açıklamasıyla en çok aranan karakterleri listeler. Her bölümün altındaki şablon bağlantısına tıklayarak görüntü ile tam karakter kartını oluşturun.",
+        "universes": [
+          {
+            "name": "Naruto",
+            "slug": "mbti-naruto",
+            "heading": "Naruto MBTI Karakterleri",
+            "description": "Naruto şablonu, shinobi dünyasına uygun şekilde tasarlanmış kişilik kartları oluşturur — ninja estetiği ile karaktere özel köy işaretleri ve chakra temalı arka plan. Herhangi bir ismi şablona yerleştirin; en çok aranan karakterlerin MBTI'si burada.",
+            "characters": [
+              {
+                "name": "Minato Namikaze",
+                "mbti": "INFJ-A",
+                "blurb": "Stratejik, özverili, derin prensiplere sahip. Sarı Işık, her düşmanından iki hamle önde düşünür."
+              },
+              {
+                "name": "Orochimaru",
+                "mbti": "INTJ-A",
+                "blurb": "Hesaplayıcı, takıntılı, sıradanlığa karşı küçümseyici. Orijinal Sannin, sınırsız zekanın karanlık tarafını temsil ediyor."
+              },
+              {
+                "name": "Itachi Uchiha",
+                "mbti": "INFJ-T",
+                "blurb": "Karmaşık bir ahlaki çerçeveye sahip, yükümlü bir koruyucu. Sadece onun anladığı bir vizyon için her şeyi feda etti."
+              },
+              {
+                "name": "Naruto Uzumaki",
+                "mbti": "ENFP-A",
+                "blurb": "Sonsuz iyimserlik, manyetik kişilik, insanların değişim kapasitesine sarsılmaz bir inanç."
+              },
+              {
+                "name": "Sasuke Uchiha",
+                "mbti": "ISTP-T",
+                "blurb": "Sakin bir dış görünümün ardında gizli iç çatışma, teknik ustalık, soğuk bir mesafe."
+              },
+              {
+                "name": "Kakashi Hatake",
+                "mbti": "INTP-T",
+                "blurb": "Analitik, kuru esprili, duyguları entelektüellik ile savuşturur. Binlerce jutsu kopyalar ama bilinmez kalır."
+              }
+            ]
+          },
+          {
+            "name": "Yellowstone",
+            "slug": "mbti-yellowstone",
+            "heading": "Yellowstone MBTI Karakterleri",
+            "description": "Yellowstone şablon kartları, dizinin Batı tarzını getiriyor — kot ve deri paleti, çiftlik arka planları, Dutton markası. En çok aranan Dutton karakterleri ve onların MBTI:",
+            "characters": [
+              {
+                "name": "Beth Dutton",
+                "mbti": "ESTJ-A",
+                "blurb": "Acımasız bir icracı, aileye sadık, esir almayan. Beth, aile işini bir testere ve bir kokteyl ile yönetiyor."
+              },
+              {
+                "name": "John Dutton",
+                "mbti": "ISTJ-A",
+                "blurb": "İnatçı gelenekçi, göreve bağlı, mirasın yükü altında. Ailenin ayrılmasına izin vermeden çiftliği yakacak olan patriark."
+              },
+              {
+                "name": "Rip Wheeler",
+                "mbti": "ISTP-A",
+                "blurb": "Sadık bir koruyucu, baskı altında soğukkanlı, karşılaştığında yıkıcı derecede etkili. Çiftlik işçisinden zorba haline gelen."
+              },
+              {
+                "name": "Kayce Dutton",
+                "mbti": "ISFP-T",
+                "blurb": "Sessiz, prensip sahibi, eylem odaklı. İki dünya arasında sıkışmış ve her ikisini de onurlandırmaya çalışıyor."
+              },
+              {
+                "name": "Jamie Dutton",
+                "mbti": "INFP-T",
+                "blurb": "Çatışmalı, idealist, kolayca yaralanan. Ailenin avukatı, ahlaki pusulası sürekli dönüyor."
+              }
+            ]
+          },
+          {
+            "name": "Marvel",
+            "slug": "mbti-marvel",
+            "heading": "Marvel MBTI Karakterleri",
+            "description": "Marvel şablonu, kahramanlara özel renk paletleri ve izometrik oda sahneleri ile MBTI karakter kartları oluşturur. Bir kahraman veya kötü adam seçin — en çok aranan karakterlerin MBTI'si burada.",
+            "characters": [
+              {
+                "name": "Tony Stark / Iron Man",
+                "mbti": "ENTP-A",
+                "blurb": "Yenilikçi, karizmatik, alışılmadık. Tony, tartışmaları ve savaşları hazırlık değil, doğaçlama ile kazanır."
+              },
+              {
+                "name": "Steve Rogers / Captain America",
+                "mbti": "ISFJ-A",
+                "blurb": "Görevine bağlı, geleneksel, orijinal koruyucu. Cap'in ahlaki çerçevesi 1942'de belirlendi ve değişmedi."
+              },
+              {
+                "name": "Bruce Banner / Hulk",
+                "mbti": "INTJ-T",
+                "blurb": "Duygular kontrolü ele geçirdiğinde, dönüşmekte olduğu şey tarafından engellenen parlak bir stratejist. Odadaki en zeki adam, ta ki öyle olmayana kadar."
+              },
+              {
+                "name": "Thor",
+                "mbti": "ESFP-A",
+                "blurb": "Dışa dönük, eylem odaklı, anlık düşünen. Çekiç için layık, çünkü olmayı seçiyor, planladığı için değil."
+              },
+              {
+                "name": "Natasha Romanoff / Black Widow",
+                "mbti": "ISTP-A",
+                "blurb": "Kaynakları iyi kullanan, bağımsız, derinlemesine özel. Her odayı okur ve yalnızca emin olduğunda harekete geçer."
+              },
+              {
+                "name": "Peter Parker / Spider-Man",
+                "mbti": "INFP-T",
+                "blurb": "İdealist, hassas, değer odaklı. Her seçimin ağırlığını taşır çünkü seçimlerin önemli olduğuna inanır."
+              }
+            ]
+          },
+          {
+            "name": "Friends",
+            "slug": "friends-character-mbti",
+            "heading": "Friends MBTI Karakterleri",
+            "description": "Friends şablon kartları, dizinin sitcom sıcaklığını yansıtır — Central Perk renk paleti, 90'lar NYC daire estetiği. İşte her ana oyuncu için MBTI.",
+            "characters": [
+              {
+                "name": "Chandler Bing",
+                "mbti": "ENTP-T",
+                "blurb": "Zeki, alaycı, çatışmadan kaçınan. Her duygusal anı bir espriyle etkisiz hale getirir."
+              },
+              {
+                "name": "Ross Geller",
+                "mbti": "INTP-T",
+                "blurb": "Zeki, garip, analitik. Dinozorlar hakkında doğru, diğer her şey hakkında yanlış."
+              },
+              {
+                "name": "Rachel Green",
+                "mbti": "ENFP-A",
+                "blurb": "Cazibeli, imaj odaklı, yavaşça evrilen. Şımarık nişanlıdan moda yöneticisine geçiş, bir ENFP büyüme yolunun kitapta yazılı hali."
+              },
+              {
+                "name": "Monica Geller",
+                "mbti": "ESTJ-A",
+                "blurb": "Organize, kontrolcü, yapı aracılığıyla besleyici. Kaosu kontrol etmenin tek yolu olduğu için ev sahipliği yapan şef."
+              },
+              {
+                "name": "Joey Tribbiani",
+                "mbti": "ESFP-A",
+                "blurb": "Dışa dönük, hedonist, son derece sadık. Şu anda yaşıyor ve senin de onunla orada yaşamanı istiyor."
+              },
+              {
+                "name": "Phoebe Buffay",
+                "mbti": "ENFP-T",
+                "blurb": "Garip, sezgisel, özgür ruhlu. Ahlaki çerçevesi gerçekten başka bir yerden gelen tek kişi."
+              }
+            ]
+          },
+          {
+            "name": "Harry Potter",
+            "slug": "harry-potter-mbti-infographic",
+            "heading": "Harry Potter MBTI Karakterleri",
+            "description": "Harry Potter şablonu, her karaktere uyan sihirbaz estetiği kişilik kartları oluşturur - ev renk paleti, imza asa, durumsal arka plan. En çok aranan HP karakterleri ve MBTI'leri:",
+            "characters": [
+              {
+                "name": "Harry Potter",
+                "mbti": "ISFP-T",
+                "blurb": "Sessiz isyancı, değer odaklı, zorlandığında harekete geçer. Ahlaki pusulası asla sapmayan isteksiz kahraman."
+              },
+              {
+                "name": "Hermione Granger",
+                "mbti": "ESTJ-A",
+                "blurb": "Kurallara bağlı, hırslı, organize. Her seferinde doğru cevap önce gelir - ta ki kurallar ve doğru cevap çatışana kadar."
+              },
+              {
+                "name": "Ron Weasley",
+                "mbti": "ESFP-T",
+                "blurb": "Sadık, eğlenceli, bazen güvensiz. Varlığı, stratejisinden daha önemli olan arkadaş."
+              },
+              {
+                "name": "Severus Snape",
+                "mbti": "INTJ-A",
+                "blurb": "Stratejik, acı dolu, gizli derinlikler. Serinin en uzun ve en acı verici oyununu oynadı."
+              },
+              {
+                "name": "Albus Dumbledore",
+                "mbti": "INFJ-A",
+                "blurb": "Bilge mentor, uzun vadeli planlayıcı, acımasızlığa varan prensip sahibi. Sonucun ne olması gerektiğini bilir ve onu düzenler."
+              },
+              {
+                "name": "Lord Voldemort",
+                "mbti": "ENTJ-A",
+                "blurb": "Güç peşinde, karizmatik, acımasız. Kendi ölümü korkusu etrafında bir ideoloji inşa etti."
+              }
+            ]
+          },
+          {
+            "name": "Breaking Bad",
+            "slug": "mbti-breakingbad",
+            "heading": "Breaking Bad MBTI Karakterleri",
+            "description": "Breaking Bad şablon kartları, dizinin çöl-meth estetiğine odaklanıyor - Albuquerque paleti, karakterlere özgü imza unsurlar (Walt'ın şapkası, Saul'un takımı, Jesse'nin kapüşonu). Better Call Saul karakterlerini de içerir.",
+            "characters": [
+              {
+                "name": "Walter White",
+                "mbti": "INTJ-A",
+                "blurb": "Zeki stratejist, ego odaklı, maskeli. Kimya öğretmeni hikayesi, kartel hikayesine korkunç bir kaçınılmazlıkla eğilir."
+              },
+              {
+                "name": "Jesse Pinkman",
+                "mbti": "ISFP-T",
+                "blurb": "Sadık, duygusal, vicdanına bağlı. Serinin ahlaki merkezi, kimse ondan bunu istemese bile."
+              },
+              {
+                "name": "Saul Goodman / Jimmy McGill",
+                "mbti": "ENTP-T",
+                "blurb": "Kurnaz, hızlı konuşan, fırsatçı birisi, kardeş şeklinde bir yarası var. Slippin' Jimmy ya da Saul olsun, mekanizma aynıdır."
+              },
+              {
+                "name": "Mike Ehrmantraut",
+                "mbti": "ISTJ-A",
+                "blurb": "Disiplinli operatör, bir davranış kuralı, az konuşur. Dizide asla taktiksel bir hata yapmayan tek karakter."
+              },
+              {
+                "name": "Gustavo Fring",
+                "mbti": "INTJ-A",
+                "blurb": "Uzun vadeli stratejist, kontrollü dış görünüm, buz gibi sabır. Yavaş planın her zaman kazandığı ilkesine dayanarak bir imparatorluk kurdu."
+              },
+              {
+                "name": "Chuck McGill",
+                "mbti": "ISTJ-A",
+                "blurb": "Katı, prensip sahibi, kin besleyen. Ahlaki çerçevesi o kadar sıkı ki her ilişkiyi boğuyor."
+              }
+            ]
+          }
+        ]
+      },
+      "mbtiIndex": {
+        "title": "MBTI ile Karakter Hızlı Referans",
+        "intro": "Belirli bir MBTI türünün örneğini mi arıyorsunuz? Her tür için bir karakter, o evreni yöneten Curify şablonuyla birlikte. Kartı oluşturmak için herhangi bir şablon bağlantısına tıklayın.",
+        "note": "Yukarıda belirtilmeyen MBTI türleri için (veya henüz özel bir şablonumuz olmayan evrenlerden karakterler — Star Wars, Aslan Kral, Star Trek gibi), [Özel Karakter Kartı](/nano-template/custom-character-card) şablonunu kullanın — karakter adını ve MBTI'yi parametreler içine yazın ve analiz oluşturur.",
+        "rows": [
+          {
+            "type": "INFJ",
+            "label": "Savunucu",
+            "character": "Minato Namikaze (Naruto)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "INTJ",
+            "label": "Mimar",
+            "character": "Walter White (Breaking Bad)",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "INTP",
+            "label": "Mantıkçı",
+            "character": "Ross Geller (Friends)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "INFP",
+            "label": "Arabulucu",
+            "character": "Jesse Pinkman (Breaking Bad)",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "ISFJ",
+            "label": "Koruyucu",
+            "character": "Steve Rogers / Kaptan Amerika (Marvel)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ISTJ",
+            "label": "Lojistikçi",
+            "character": "John Dutton (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ISFP",
+            "label": "Macera Arayan",
+            "character": "Harry Potter (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ISTP",
+            "label": "Virtüöz",
+            "character": "Rip Wheeler (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ENFJ",
+            "label": "Protagonist",
+            "character": "Mufasa (Aslan Kral — Özel Karakter Kartı)",
+            "slug": "custom-character-card"
+          },
+          {
+            "type": "ENFP",
+            "label": "Kampanyacı",
+            "character": "Naruto Uzumaki (Naruto)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "ENTJ",
+            "label": "Komutan",
+            "character": "Lord Voldemort (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ENTP",
+            "label": "Tartışmacı",
+            "character": "Tony Stark / Iron Man (Marvel)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ESFJ",
+            "label": "Konsolos",
+            "character": "Molly Weasley (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ESTJ",
+            "label": "Yönetici",
+            "character": "Beth Dutton (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ESFP",
+            "label": "Eğlendirici",
+            "character": "Joey Tribbiani (Friends)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "ESTP",
+            "label": "Girişimci",
+            "character": "Han Solo (Star Wars — Özel Karakter Kartı)",
+            "slug": "custom-character-card"
+          }
+        ]
+      },
+      "heroCtaText": "Marvel MBTI şablonunu açın — herhangi bir kahraman veya kötü adam ismini yazın ve analiz kartını alın",
+      "heroCtaHref": "/nano-template/mbti-marvel"
     },
     "curifyNanoBananaTemplateTips": {
       "title": "Curify'nin Nano Banana Şablonlarını Kullanmak için 10 İpucu",
@@ -4940,7 +4983,6 @@
       "modelsContent": "**Spor Savaşı** ([/nano-template/sports-battle](/nano-template/sports-battle)), iki oyuncu adı alır — `player_left` ve `player_right` — ve dikey 3:4 çizgi roman tarzı karşılaştırma posteri oluşturur: iki tam boy portre, ortada VS grafiği, istatistik panelleri, takma adlar, kimlik etiketleri, neon parıltı efektleri. Temel istem, takım formalarını, dinamik pozları ve takım temalı arka planları zaten belirtir — sadece isimleri sağlamanız yeterli. *Messi vs Cristiano Ronaldo*, *Mbappé vs Vinícius Júnior*, *Haaland vs Mbappé* için harika. Şablon, çıktıyı görmeniz için zaten bir Messi-vs-Ronaldo örneği ile birlikte gelir.\n\n**Ünlü & Film Grup Posteri** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)), tek bir `star_movie_group` parametresi alır ve resmi görünümlü bir toplu poster oluşturur: dinamik kompozisyonda birden fazla figür, sinematik aydınlatma, yumuşak gradyan arka plan, lüks minimalist başlık fontu, moda dergisi kalitesinde detay. Yer tutucu örnekler arasında *Marvel Avengers*, *Blackpink*, *NBA Legends* bulunur — aynı şablon, *Brezilya 2026 Milli Takımı* veya *Arjantin 2026 Dünya Kupası Kadrosu* sağlayın ve takım kadrosu versiyonunu alırsınız.\n\nHer iki şablon da Curify'nin Nano Banana Pro hattında çalışır, bu nedenle aşağıdaki istemler, şablonun temel stilinin zaten kilitlenmiş olduğu şekilde oluşturulur — sadece değişkenleri sağlamanız yeterli.",
       "howTitle": "60 Saniyede Bir Brezilya veya Arjantin Posteri Nasıl Gönderilir",
       "step1Title": "Yöntem 1: 1v1 Rekabet — Spor Savaşı Şablonu",
-      "step1Content": "**En iyi**: derbi posterleri, Dünya Kupası maç önizleme içeriği, eleme aşaması eşleşmesi öncesi fan etkileşimi.\n\n[/nano-template/sports-battle](/nano-template/sports-battle) açın. İki metin alanı — `player_left` ve `player_right`. Başlamak için en çok aranan futbol rekabetleri:\n\n- `Lionel Messi` vs `Cristiano Ronaldo` — GOAT tartışması, her zaman geçerli\n- `Kylian Mbappé` vs `Vinícius Júnior` — yeni nesil Brezilya-Fransa rekabeti\n- `Erling Haaland` vs `Kylian Mbappé` — Messi/Ronaldo sonrası meşaleyi taşıyanlar\n- `Lamine Yamal` vs `Vinícius Júnior` — İspanya-Brezilya kanat düellosu\n- `Neymar Jr` vs `Lionel Messi` — Barcelona yeniden bir araya gelme enerjisi\n\nOluşturun. Şablon, her iki oyuncunun milli takım formasında, istatistik panelleri, kimlik etiketleri ve ortada VS grafiği ile bir çizgi roman VS posteri oluşturur. Varsayılan çıktı dikey 3:4 — Instagram Hikayeleri, TikTok, Pinterest için mükemmel.\n\n**Canlı örnek** galeride: [Messi vs Ronaldo posteri](/nano-template/sports-battle) — aynı şablon, aynı istem, sadece iki isim girişi.",
       "step2Title": "Yöntem 2: Tam Milli Takım — Ünlü Grup Posteri Şablonu",
       "step2Content": "**En iyi**: turnuva öncesi kadro açıklamaları, izleme partisi grafikleri, fantezi futbol ligi markalaşması, sosyal medya başlıkları.\n\n[/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) açın. Bir metin alanı — `star_movie_group`. 2026 Dünya Kupası için, başlamak için en yüksek arama hacmine sahip takımlar:\n\n- `Brezilya 2026 Milli Takımı`\n- `Arjantin 2026 Dünya Kupası Kadrosu`\n- `Fransa 2026 Milli Takımı`\n- `İspanya 2026 Milli Takımı`\n- `İngiltere 2026 Dünya Kupası Kadrosu`\n- `Almanya 2026 Milli Takımı`\n- `Portekiz 2026 Milli Takımı`\n- `Fas 2026 Milli Takımı`\n\nŞablon, sinematik aydınlatma, gradyan arka plan ve lüks minimalist başlık metni ile dramatik dinamik kompozisyonda birden fazla ikonik figür oluşturur — resmi bir Adidas / Nike takım posterinin görünümü. Modelin mevcut kadroya odaklanması için yılı (`2026`) ekleyin, tarihi kadrolardan ziyade.",
       "step3Title": "Brezilya 2026 Sinematik Posteri İpuçları",
@@ -4956,7 +4998,14 @@
       "curifyTitle": "Kendi Üretiminizi Oluşturun — Doğrudan Şablon Bağlantıları",
       "curifyContent": "İstem mühendisliğini atlayın ve parametreler önceden doldurulmuş şablonlara doğrudan gidin:\n\n**Spor Savaşı (1v1 rekabet)**: [/nano-template/sports-battle](/nano-template/sports-battle) — `player_left` ve `player_right` sağlayın. Şablonun temel istemi, çizgi roman VS poster tarzına kilitlenmiştir; sadece isimleri sağlamanız yeterlidir. Mevcut galeri, [Messi vs Ronaldo](/nano-template/sports-battle), [Federer vs Nadal](/nano-template/sports-battle), [Ali vs Tyson](/nano-template/sports-battle), [Hamilton vs Schumacher](/nano-template/sports-battle) gibi referansları içerir.\n\n**Ünlü Grup Posteri (tam takım)**: [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — takım adı ile `star_movie_group` sağlayın (örneğin, `Brezilya 2026 Milli Takımı`). Mevcut galeri, spor (NBA Legends, Tenis Efsaneleri, Yarış Efsaneleri), eğlence (Friends, Stranger Things, BTS, Blackpink, Game of Thrones) ve anime alanlarında toplu grupları kapsar — aynı şablon, farklı grup.\n\nDaha fazla spor temalı istem için, [/topics/character](/topics/character) merkezi, spor, oyun, film ve eğlence alanlarında karakter odaklı şablonları indeksler. Her istem ailesi için küratörlü Nano Banana dizini için [/nano-banana-pro-prompts](/nano-banana-pro-prompts) kataloğuna bakın.",
       "conclusionTitle": "Diğer Tüm Milli Takımlar — Aynı İstem, İsim Değiştirin",
-      "conclusionContent": "Yukarıdaki iki istem genelleştirilmiştir. Aynı şablon, takım adını değiştirin, forma renklerini ve paleti doğru ayarlayın:\n\n- **Fransa**: `Fransa 2026 Milli Takımı` — lacivert + beyaz + kırmızı, Stade de France, başlık `FRANCE 2026`\n- **Almanya**: `Almanya 2026 Milli Takımı` — beyaz forma + siyah detaylar + kırmızı/altın bayrak, Allianz Arena, başlık `DEUTSCHLAND 2026`\n- **İspanya**: `İspanya 2026 Milli Takımı` — kırmızı + safran sarısı + lacivert, Santiago Bernabéu, başlık `ESPAÑA 2026`\n- **İngiltere**: `İngiltere 2026 Dünya Kupası Kadrosu` — beyaz + St George'un kırmızısı + lacivert, Wembley, başlık `ENGLAND 2026`\n- **Portekiz**: `Portekiz 2026 Milli Takımı` — koyu kırmızı + yeşil yaka + altın vurgusu, Estádio José Alvalade, başlık `PORTUGAL 2026`\n- **Fas**: `Fas 2026 Milli Takımı` — kırmızı + yeşil yıldız + beyaz detay, Grand Stade Hassan II, başlık `LE MAROC 2026`\n- **Meksika**: `Meksika 2026 Milli Takımı` (ev sahibi ülke) — yeşil + beyaz + kırmızı, Estadio Azteca, başlık `MÉXICO 2026`\n- **ABD**: `ABD 2026 Dünya Kupası Kadrosu` (ev sahibi ülke) — lacivert + kırmızı şeritler + beyaz yıldız, SoFi Stadyumu, başlık `USA 2026`\n- **Japonya**: `Japonya 2026 Milli Takımı` — Samuray mavi forması + kırmızı yükselen güneş vurgusu + beyaz, Saitama Stadyumu, başlık `日本 2026`\n\nİstem yapısı aynı kalır — forma tanımı, stadyum arka planı, renk paleti, başlık metni, dikey 3:4 format. Takım adını ve paleti değiştirin; diğer her şey, şablonun temel isteminden geçer.\n\nBeğendiğiniz bir posteri gönderirseniz, [/topics/character](/topics/character) ve [/topics/sports](/topics/sports) merkezleri, benzer şablonların ortaya çıktığı yerdir — karakter savaşları, film grup posterleri, fan kadroları, hepsi aynı Curify hattında çalışır."
+      "conclusionContent": "Yukarıdaki iki istem genelleştirilmiştir. Aynı şablon, takım adını değiştirin, forma renklerini ve paleti doğru ayarlayın:\n\n- **Fransa**: `Fransa 2026 Milli Takımı` — lacivert + beyaz + kırmızı, Stade de France, başlık `FRANCE 2026`\n- **Almanya**: `Almanya 2026 Milli Takımı` — beyaz forma + siyah detaylar + kırmızı/altın bayrak, Allianz Arena, başlık `DEUTSCHLAND 2026`\n- **İspanya**: `İspanya 2026 Milli Takımı` — kırmızı + safran sarısı + lacivert, Santiago Bernabéu, başlık `ESPAÑA 2026`\n- **İngiltere**: `İngiltere 2026 Dünya Kupası Kadrosu` — beyaz + St George'un kırmızısı + lacivert, Wembley, başlık `ENGLAND 2026`\n- **Portekiz**: `Portekiz 2026 Milli Takımı` — koyu kırmızı + yeşil yaka + altın vurgusu, Estádio José Alvalade, başlık `PORTUGAL 2026`\n- **Fas**: `Fas 2026 Milli Takımı` — kırmızı + yeşil yıldız + beyaz detay, Grand Stade Hassan II, başlık `LE MAROC 2026`\n- **Meksika**: `Meksika 2026 Milli Takımı` (ev sahibi ülke) — yeşil + beyaz + kırmızı, Estadio Azteca, başlık `MÉXICO 2026`\n- **ABD**: `ABD 2026 Dünya Kupası Kadrosu` (ev sahibi ülke) — lacivert + kırmızı şeritler + beyaz yıldız, SoFi Stadyumu, başlık `USA 2026`\n- **Japonya**: `Japonya 2026 Milli Takımı` — Samuray mavi forması + kırmızı yükselen güneş vurgusu + beyaz, Saitama Stadyumu, başlık `日本 2026`\n\nİstem yapısı aynı kalır — forma tanımı, stadyum arka planı, renk paleti, başlık metni, dikey 3:4 format. Takım adını ve paleti değiştirin; diğer her şey, şablonun temel isteminden geçer.\n\nBeğendiğiniz bir posteri gönderirseniz, [/topics/character](/topics/character) ve [/topics/sports](/topics/sports) merkezleri, benzer şablonların ortaya çıktığı yerdir — karakter savaşları, film grup posterleri, fan kadroları, hepsi aynı Curify hattında çalışır.",
+      "heroImage": "/images/nano_insp/template-sports-battle-Messi-vs-Ronaldo.jpg",
+      "heroImageAlt": "Messi vs Ronaldo sinematik futbol rekabeti posteri — Spor Savaşı şablon önizlemesi",
+      "heroCtaLabel": "ŞABLONU DENEYİN",
+      "heroCtaText": "Kendi Messi vs Ronaldo (veya herhangi bir futbol rekabeti) sinematik posterinizi oluşturun",
+      "heroCtaHref": "/nano-template/sports-battle",
+      "heroCtaButton": "Oluştur →",
+      "step1Content": "**En iyi**: derbi posterleri, Dünya Kupası maç önizleme içeriği, eleme aşaması eşleşmesi öncesi fan etkileşimi.\n\n[/nano-template/sports-battle](/nano-template/sports-battle) açın. İki metin alanı — `player_left` ve `player_right`. Başlamak için en çok aranan futbol rekabetleri:\n\n- `Lionel Messi` vs `Cristiano Ronaldo` — GOAT tartışması, her zaman geçerli\n- `Kylian Mbappé` vs `Vinícius Júnior` — yeni nesil Brezilya-Fransa rekabeti\n- `Erling Haaland` vs `Kylian Mbappé` — Messi/Ronaldo sonrası meşaleyi taşıyanlar\n- `Lamine Yamal` vs `Vinícius Júnior` — İspanya-Brezilya kanat düellosu\n- `Neymar Jr` vs `Lionel Messi` — Barcelona yeniden bir araya gelme enerjisi\n\nOluşturun. Şablon, her iki oyuncunun milli takım formasında, istatistik panelleri, kimlik etiketleri ve ortada VS grafiği ile bir çizgi roman VS posteri oluşturur. Varsayılan çıktı dikey 3:4 — Instagram Hikayeleri, TikTok, Pinterest için mükemmel.\n\n**Canlı örnek** galeride: [Messi vs Ronaldo posteri](/nano-template/sports-battle) — aynı şablon, aynı istem, sadece iki isim girişi."
     },
     "onePersonCompaniesVs100PersonTeams": {
       "title": "Tek Kişilik Şirketler Fırtına Gibi. 100 Kişilik Ekibiniz Bir Yük.",
@@ -4980,6 +5029,99 @@
       "conclusionContent": "SMB liderliği için seçim ikili. En iyi %10'unuzu tek kişilik güç merkezleri gibi çalışacak şekilde güçlendirmek için yeniden yapılandırın ya da yapay zeka ile tek bir rakibin 100 kişilik ekibinizi tamamen yok etmesine tanık olun.\n\nBugün varlık olarak düşündüğünüz geleneksel roller? Gelecek yıl bilanço yükleri haline gelecek. Moral bozulmadan yeniden tasarım için pencere, çoğu liderin fark ettiğinden daha hızlı kapanıyor — çalışan sayısı ile çıktı oranı yatırımcılara görünür hale geldiğinde, yeniden tasarım artık bir seçenek değildir.",
       "challengesContent": "Belirlenmesi gereken beş yükümlülük:\n\n| Problem | Günlük Gördüğünüz Belirti | Neden AI Hesaplamayı Değiştiriyor |\n|---|---|---|\n| Uygulama Darboğazı | Saat 17:00'ye kadar kayma, meşgul çalışma tiyatrosu | Ajansal iş akışları, rutin uygulamayı baştan sona yönetir |\n| Spesifikasyon Paradoksu | Saatlerce toplantı, sıfır uyum | Eğer bunu bir insana net bir şekilde belirtebiliyorsanız, bir LLM'ye verin |\n| Hedefsiz Yönetim | Pazartesi yeni strateji, Salı yeni yön değişikliği | Yöneticiler sonuçları düzenlemeli, görevleri takip etmemelidir |\n| Silo İçindeki İşbirliği | Takımlar arası diplomatik müzakereler | Paylaşılan ajansal boru hatları duvarları yıkar |\n| Duygusal Ağırlık | Kaygı aşağı doğru akar, zihinsel kapanma yukarı | Enerji inşa etmeye akar, siyasete değil |\n\n> İnsanlar belirsizliği yönetmeli; AI uygulamayı yönetmeli.\n\nBunun kaçınılmaz olduğunu iddia ederdik. AI hesaplamayı değiştirdi.",
       "curifyContent": "Bir sonraki uyarıcı hikaye olmak istemeyen KOBİ liderleriyle danışmanlık yapıyoruz. Tahmin yürütmüyoruz.\n\n1. **Mevcut insan-insan sürtüşme noktalarınızı haritalayın** — toplantılar, devralmalar, gereksinim döngüleri. Belirsizlik bir slayt sunumunda nerede sona eriyor? Uygulama bir Jira biletinde nerede duraklıyor?\n2. **Hangi %20 rolün savunmasız olduğunu belirleyin** — işten çıkarmak için değil, yeniden tasarlamak için. Hangi işler çoğunlukla bir ajansal iş akışının absorbe edebileceği orkestrasyon içeriyor?\n3. **Moralin yüksek ve hızın ölçülebilir olduğu 90 günlük AI + organizasyon pilotu oluşturun.** Bir iş akışı seçin, öncesini/sonrasını ölçün, ajansal versiyonu gönderin, artışı kanıtlayın.\n\n> Tek kurucu olmanıza gerek yok. 100 kişilik bir organizasyonu 2019 gibi yönetmeyi bırakmalısınız."
+    },
+    "portugalSoccerPosterPrompts": {
+      "title": "Portekiz AI Futbol Posteri Önerileri: 2026 Dünya Kupası Şablonları",
+      "metaDescription": "İki Nano Banana şablonu ile sinematik Portekiz futbol posterleri oluşturun — Ronaldo rekabeti için Sports Battle, Seleção kadrosu için Grup Posteri. Önerileri kopyalayın.",
+      "seoKeywords": "portekiz önerisi, portekiz ai önerisi, ronaldo portekiz önerisi, portekiz posteri önerisi, portekiz dünya kupası önerisi, seleção 2026 önerisi, ai futbol posteri portekiz, spor savaşı ronaldo, nano banana portekiz, sinematik portekiz posteri, fifa dünya kupası 2026 ai",
+      "date": "30 Mayıs 2026",
+      "readTime": "9 dk okuma",
+      "intro": "Portekiz, Cristiano Ronaldo'nun son turnuva hikayesi hala devam ederken 2026 Dünya Kupası'na giriyor, Bernardo Silva–Bruno Fernandes orta sahası yükü taşıyor ve bir nesil forvet (Rafael Leão, João Félix, Pedro Neto, Diogo Jota) nihayet birlikte uyum sağlıyor. Arama sorguları bunu zaten yansıtıyor — \"portekiz ai önerisi\", \"ronaldo portekiz önerisi\", \"portekiz dünya kupası önerisi\". İki Curify Nano Banana şablonu işi baştan sona hallediyor: Rekabet posterleri için Sports Battle (Ronaldo vs Messi, Ronaldo vs Mbappé, Bernardo Silva vs Bellingham) ve tam Seleção kadrosu için Ünlü Grup Posteri. Bu kılavuz, size 60 saniyeden kısa sürede sinematik bir Portekiz posteri gönderiyor, öneri metni, palet ve parametre şekli ile.",
+      "whatIsTitle": "Portekiz Posteri Neden Sinematik Görünüyor",
+      "whatIsContent": "Üç bileşen, genel bir AI renderını 2026 kampanyası için Nike'ın göndermiş olabileceği bir posterden ayırır.\n\n**Dinamik aksiyon, statik pozdan daha iyi.** Portekiz forması giymiş bir oyuncunun durması, bir stok fotoğraf gibi görünür. Bir oyuncunun bisiklet vuruşu yaparken, Ronaldo'nun imzası olan *SIUUU* kutlama diz kayması, Bernardo Silva'nın kolları açık pas atması — bunlar poster gibi görünür. Önerideki eylem fiilleri işin çoğunu yapar — *vuruş anında*, *kutlama sıçraması*, *alçak açıdan kahraman çekimi*, *havadan vuruş*.\n\n**Portekiz paleti.** Portekiz = koyu kırmızı (Vinho do Porto) + Atlantik yeşili + sıcak altın + miras derinliği için azulejo mavisi. Mevcut Nike forması, yakada ve kollarında yeşil detaylarla `#C8102E`-yakın bir kırmızı kullanıyor. Parlak itfaiye kırmızısına düşmeyin — Portekiz milli paleti daha koyu, şarap rengine daha yakın, yeşil vurgulayıcı değil başlık olmalıdır. Paleti doğru ayarlayın ve poster Portekiz'in posteri olarak okunur, genel bir forma olarak değil.\n\n**Stadyum ve Lizbon ışık arka planı.** Arka planda kalabalık ışıkları olan bulanık bir stadyum, görüntüyü bir maç günü anı olarak sabitler. Belirli Portekiz stadyumları daha iyi çalışır — *Estádio José Alvalade altın saati*, *Estádio da Luz floodlight altında*, *Estádio do Dragão alacakaranlığı*. Aydınlatma ipucu sinematik ağırlığın yarısını taşır; Lizbon'un altın saati, Brezilya veya İngiliz ışığının sahip olmadığı bir sıcaklığa sahiptir.",
+      "modelsTitle": "İşi Yürüten İki Curify Şablonu",
+      "howTitle": "60 Saniyede Bir Portekiz Posteri Nasıl Gönderilir",
+      "step1Title": "Yöntem 1: 1v1 Rekabet — Spor Savaşı Şablonu",
+      "step1Content": "**En iyi**: eleme aşaması maç önizlemeleri, Ronaldo merkezli hayran içeriği, Liga Portekiz kulüpleri için derbi posterleri.\n\n[/nano-template/sports-battle](/nano-template/sports-battle) açın. İki metin alanı — `player_left` ve `player_right`. Başlamak için en yüksek arama hacmine sahip rekabetler:\n\n- `Cristiano Ronaldo` vs `Lionel Messi` — her zaman geçerli GOAT tartışması, platformda en yüksek arama hacmi\n- `Cristiano Ronaldo` vs `Kylian Mbappé` — nesil geçişi, Portekiz-Fransa rekabet çerçevesi\n- `Bernardo Silva` vs `Jude Bellingham` — Portekiz-İngiltere orta saha düellosu, mevcut nesil\n- `Rafael Leão` vs `Vinícius Júnior` — Portekiz-Brezilya kanat karşılaşması\n- `Bruno Fernandes` vs `Luka Modrić` — oyun kurucu vs oyun kurucu, veteran enerjisi\n\nOluştur. Şablon, her iki oyuncuyu milli takım formasıyla, istatistik panelleri, kimlik etiketleri ve ortada VS grafiği ile içeren bir çizgi roman VS posteri oluşturur. Varsayılan çıktı dikey 3:4 — Instagram Hikayeleri, TikTok, Pinterest için mükemmel.\n\n**Canlı örnek** galeride: [Messi vs Ronaldo posteri](/nano-template/sports-battle) — aynı şablon, aynı öneri şekli, sadece iki isim girişi.",
+      "step2Title": "Yöntem 2: Tam Seleção — Ünlü Grup Posteri Şablonu",
+      "step2Content": "**En iyi**: turnuva öncesi kadro açıklamaları, izleme partisi grafikleri, Liga Portekiz fantezi ligi markası, 2026 Dünya Kupası koşusu için sosyal medya başlıkları.\n\n[/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) açın. Bir metin alanı — `star_movie_group`. Portekiz'in 2026 koşusu için:\n\n- `Portekiz 2026 Milli Takımı` — genel topluluk (model ikonik figürleri seçer)\n- `Portekiz 2026 Dünya Kupası Kadrosu ft. Ronaldo` — Ronaldo merkezli, kaptan hikayesi için iyi\n- `Portekiz 2026 Seleção das Quinas` — Portekizce takım kimliğini kullanır, model Portekiz kültürel ipuçlarına dayanır\n- `Portekiz 2026 Forvet Hattı — Leão, Félix, Neto, Jota` — saldırı çekirdeğine dar odak\n\nŞablon, sinematik aydınlatma, gradyan arka plan ve lüks minimalist başlık metni ile dramatik dinamik kompozisyonda birden fazla ikonik figür oluşturur — resmi bir Nike Seleção posteri görünümü. Modelin mevcut kadroya odaklanması için yılı (`2026`) ekleyin, böylece tarihi kadrolar yerine güncel kadro üzerinde durur.",
+      "step3Title": "Portekiz 2026 Sinematik Posteri Önerisi",
+      "step3Content": "Bunu doğrudan Ünlü Grup Posteri şablonunun `star_movie_group` alanına yerleştirin veya Nano Banana Pro / GPT Image 2'de serbest bir öneri olarak kullanın:\n\n```\nPortekiz 2026 Dünya Kupası Milli Takımı — ikonik koyu kırmızı Seleção ev formasıyla yeşil yaka detayına sahip tam kadro, Cristiano Ronaldo, Bernardo Silva, Bruno Fernandes, Rafael Leão, João Félix'in kahramanca orta pozisyonlarda dinamik grup kompozisyonu. Estádio José Alvalade altın saat arka planı, kalabalık ışıkları ve Portekiz bayrağı sargıları. Sinematik sıcak renk derecelendirmesi — vinho-do-Porto kırmızı + Atlantik yeşili + sıcak altın vurgusu, azulejo mavisi dokunuşu. Fotoğraf gerçekçi, moda dergisi keskinliği, dramatik kenar aydınlatması, yumuşak gradyan arka plan, lüks minimalist Portekizce başlık \"PORTUGAL 2026\" kalın altın serif ile. 4K ultra detay, su işareti yok, dikey 3:4 format.\n```\n\n**Belirtilmesi gereken renk paleti**: `#C8102E` (forma koyu kırmızı), `#006847` (forma yeşili), `#FFD700` (altın vurgusu), `#0072CE` (azulejo mavi detay), sıcak Lizbon altın saati tonları. Daha güçlü renk tutarlılığı için paleti öneride açıkça belirtin.\n\n**Değiştirilecekler**: oyuncu kadrosunu değiştirin (kadro her turnuvada değişir — 2026 öncesi ve sonrası Ronaldo kadroları farklı okunur), stadyumu (Estádio José Alvalade / Estádio da Luz / Estádio do Dragão) ve başlık metnini. Diğer her şey aynı kalır.",
+      "step4Title": "Ronaldo Merkezli 1v1 Savaş Önerisi",
+      "step5Title": "Sinematik Dönüşümü Sağlayan Ayarlar & Anahtar Kelimeler",
+      "step5Content": "İlk posteri gönderdikten sonra, bu ayarlamalar, 50 render arasında kaliteyi artırır.\n\n**Lens / çerçeveleme**: `85mm portre lensi` (arka planı sıkıştırır, oyuncuyu kahramanlaştırır), `geniş açı aksiyon çekimi` (stadyum ölçeği), `alçak açıdan kahraman kompozisyonu` (Ronaldo'yu daha uzun gösterir — aslında kameradan daha uzun). Takım kadroları için: `sinematik orta-geniş çekim` ile grup çerçeveyi doldurur.\n\n**Aydınlatma**: `Lizbon altın saati` (özellikle sıcak-turuncu Lizbon öğleden sonra ışığı), `floodlight parlaması` (Alvalade / Luz / Dragão'daki gece maçı draması), `kenar aydınlatması` (silüet pop), `volumetrik tanrı ışınları` (stadyum atmosferi stadyum ışığı sisinden geçerken).\n\n**Renk derecelendirme terimleri**: `sinematik teal-turuncu derecelendirmesi`, `doygun Portekiz paleti derecelendirmesi`, `koyu kırmızı şarap tonu derecelendirmesi`, `Nike spor giyim fotoğrafçılığı derecelendirmesi`, `Sporting CP arşiv derecelendirmesi`. Bunlar, modelin eğitim verilerindeki doğru referans kümelerini tetikler.\n\n**Forma detayı**: `keskin Portekiz arması detayı`, `keskin Quinas kalkanı nakışı`, `nakışlı Seleção arması`. Quinas (Portekiz armalarında beş küçük kalkan) marka simgesidir — model genellikle onu belirsiz bir altın disk olarak render eder, adını vermediğiniz sürece.\n\n**Miras ipuçları**: `Lusitanian kaşif dönemi bayrak sargıları`, `azulejo karo desen arka plan paneli`, `Keşif Çağı altın filigree kenar`. Bunlar, modeli Portekiz'e özgü görsel kültüre yönlendirir ve genel Avrupa futbol estetiğinden uzaklaştırır. Az kullanın — her posterde bir miras ipucu, aksi takdirde tematik kitsch olarak okunur.\n\n**Negatif ipuçları**: `bulanık yüz yok`, `fazla uzuv yok`, `bozulmuş forma numarası yok`, `İspanyol veya Brezilyalı renk ipuçları yok` (model bazen mavi gökyüzü veya sarıya kayar, eğer bastırmazsanız).",
+      "toolsTitle": "Portekiz Posteri Üretimi için AI Araçları Karşılaştırması",
+      "challengesTitle": "AI Portekiz Posterlerinin Hala Başarısız Olduğu Yerler (ve Çözümler)",
+      "challengesContent": "Portekiz posterlerine özgü üç başarısızlık modu ve öneri tarafındaki hafifletme:\n\n**Kırmızı çok parlak kayıyor.** Model, \"Portekiz kırmızısı\" dediğinizde itfaiye kırmızısına (`#FF0000`) varsayılan olarak geçiyor — çok doygun, İspanyol veya Polonyalı görünüyor. **Çözüm**: rengi özel olarak adlandırın (`koyu vinho-do-Porto kırmızı`, `şarap tonu kırmızı`, `#C8102E desaturated`). Portekiz forması kırmızısı, genel kırmızı varsayılanından daha derin ve kahverengi alt tonlara sahiptir.\n\n**Quinas arması altın bir disk olarak çıkıyor.** Beş küçük kalkanla Portekiz arması karmaşık; model, onu bir altın blob olarak soyutlar. **Çözüm**: `keskin Quinas kalkanı detayı, çapraz desende beş küçük kalkan görünür, altın filigree`. Yine de, ~%70 doğruluk bekleyin — müşteri çalışmaları için, renderdan sonra Figma'da gerçek arması birleştirin.\n\n**Ronaldo'da yüz hatası.** Kapalı kaynak modeller, tam Ronaldo benzerliğini render etmez (tasarım gereği ve giderek daha fazla uygulanır). **Çözüm**: \"ilham alınmış\" çerçevesine yönelin — oynama tarzını, vücut tipini tanımlayın (`uzun atletik yapı, belirgin çene hattı, slicked koyu saç`), SIUUU kutlama pozunu. Curify'nin Spor Savaşı şablonu, çizgi roman stilizasyonu kullanır, bu da benzerlik boşluğunu tasarım gereği gizler — çizgi roman sanat stili, yüzü stilize eder, böylece fotoğrafik kesinliğin eksikliği kasıtlı olarak okunur.",
+      "curifyTitle": "Kendi Üretiminizi Oluşturun — Doğrudan Şablon Bağlantıları",
+      "curifyContent": "Öneri mühendisliğini atlayın ve parametreler önceden doldurulmuş şablonlara doğrudan gidin:\n\n**Spor Savaşı (1v1 rekabet)**: [/nano-template/sports-battle](/nano-template/sports-battle) — `player_left` (`Cristiano Ronaldo`) ve `player_right` (`Lionel Messi`, `Kylian Mbappé`, `Lamine Yamal`, `Vinícius Júnior`, kim olursa olsun) sağlayın. Şablonun temel önerisi, çizgi roman tarzı VS posteri stiline kilitlenmiştir; sadece isimleri sağlamanız yeterlidir.\n\n**Ünlü Grup Posteri (Seleção)**: [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — `star_movie_group` ile `Portekiz 2026 Milli Takımı` veya yukarıdaki herhangi bir varyantı sağlayın. Şablon, sinematik aydınlatmayı, gradyanı ve lüks serif başlığını yönetir.\n\nDaha fazla spor temalı öneri için, [/topics/character](/topics/character) merkezi, spor, oyun, film ve eğlence alanındaki karakter odaklı şablonları indeksler. Her öneri ailesi için düzenlenmiş Nano Banana dizini için [/nano-banana-pro-prompts](/nano-banana-pro-prompts) kataloğuna bakın. Bu serideki Brezilya + Arjantin kardeş gönderisi için [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts) adresine bakın.",
+      "conclusionTitle": "Diğer Ülkeler — Aynı Şablon, İsmi Değiştir",
+      "modelsContent": "**Spor Savaşı** ([/nano-template/sports-battle](/nano-template/sports-battle)), iki oyuncu adı alır — `player_left` ve `player_right` — ve dikey 3:4 çizgi roman tarzı karşılaştırma posteri oluşturur: iki tam vücut portresi, ortada VS grafiği, istatistik panelleri, takma adlar, kimlik etiketleri, neon parıltı efektleri. Temel öneri zaten takım formalarını, dinamik pozları ve takım temalı arka planları belirtir — sadece isimleri sağlamanız yeterlidir. *Ronaldo vs Messi*, *Ronaldo vs Mbappé*, *Bernardo Silva vs Bellingham*, *Bruno Fernandes vs Modrić* için harika. Şablon, çıktıyı oluşturulmadan önce görebilmeniz için bir Messi-vs-Ronaldo örneği ile birlikte gelir.\n\n**Ünlü & Film Grup Posteri** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)), tek bir `star_movie_group` parametresi alır ve resmi bir görünümde toplu poster oluşturur: dinamik kompozisyonda birden fazla figür, sinematik aydınlatma, yumuşak gradyan arka plan, lüks minimalist başlık fontu, moda dergisi kalitesinde detay. *Portekiz 2026 Milli Takımı* sağlarsanız, tam Seleção kadrosu versiyonunu alırsınız.\n\nHer iki şablon da Curify'nin Nano Banana Pro hattında çalışır, bu nedenle aşağıdaki öneriler, şablonun temel stilinin zaten kilitlendiği şekilde oluşturulur — sadece değişkenleri sağlamanız yeterlidir.",
+      "toolsContent": "Curify'nin şablonları Nano Banana Pro altında çalışır. Eğer şablon motorunun dışında kendi başınıza çalışıyorsanız, bu belirli kullanım durumu için en iyi 2026 modellerinin karşılaştırması:\n\n| Araç | Portekiz posterleri için en iyisi | Güç | Zayıflık |\n|---|---|---|---|\n| **Nano Banana Pro** (Gemini 3 Pro Görüntü) | ★★★★★ | Çok figürlü grup çekimleri için mekansal akıl yürütme; mevcut Seleção kadrosu için Google Arama temeli; konuşma tabanlı düzenleme (\"João Félix'i Rafael Leão ile değiştir, aydınlatmayı koru\") | Kutudan çıkan Midjourney kadar editoryal süsleme yok |\n| **GPT Image 2** (ChatGPT) | ★★★★ | Konuşma tabanlı yineleme, doğru çok ögeli sahneler, ChatGPT Plus ile dahil | Agresif güvenlik filtreleri bazı Ronaldo benzerliği önerilerini reddediyor |\n| **Midjourney v7** | ★★★★ | En iyi estetik / renk derecelendirmesi; vinho-do-Porto kırmızı tonu doğal olarak gelir | API yok; tam oyuncu benzerliğini zayıf yapar; çok figürlü grup çekimlerinde daha zayıf |\n| **Stable Diffusion 3.5 Large** | ★★★ | ControlNets aracılığıyla tam kontrol (bir Ronaldo poz referansı kullanın); donanım sonrası her görüntü için sıfır maliyet | Kutudan çıkan kalite, ayarlanmış bir LoRA olmadan kapalı kaynak liderlerinin gerisinde kalıyor |\n\nBu gönderide tarif edilen iş akışı için, **Curify şablonları aracılığıyla Nano Banana Pro'da kalın** — şablon, marka-poster estetiğini zorunlu kılar, böylece her renderda koyu kırmızı Portekiz paletini sıfırdan oluşturmak zorunda kalmazsınız. Daha derin karşılaştırma için [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison) adresine bakın.",
+      "step4Content": "Eğer Grup Posteri kullanım durumunuz için fazla kalabalıksa, Spor Savaşı Ronaldo solo-rakip çekimi, etkileşim odaklı kanallar (TikTok, Instagram Reels) için daha fazla çekim sağlar:\n\n```\nCristiano Ronaldo vs Kylian Mbappé — çizgi roman tarzı VS posteri, her iki oyuncu da orta pozisyonda aksiyon pozunda, Ronaldo solda koyu kırmızı Portekiz formasıyla ikonik SIUUU kutlama kol açma pozunda, Mbappé sağda lacivert Fransa formasıyla orta hızda koşuyor. Dikey 3:4 format, neon-parıltı kenar aydınlatması, dramatik teal-turuncu renk derecelendirmesi, altta istatistik panelleri (goller, yaş, kulüp). Ortada metalik altın VS grafiği, yıldırım yay etkisi. Estádio José Alvalade, Stade de France arka planına geçiyor, altın saat gökyüzü Lizbon turuncusu ve Paris mavisi arasında bölünüyor. Çizgi roman çizgi sanatı, yarı ton gölgeleme, dramatik gölge tanımı. Sinematik poster, 4K detay, su işareti yok.\n```\n\n**Değiştirilecekler**: sağda başka bir rakip — Messi, Bellingham, Haaland, Vinícius Jr. Bölünmüş stadyum arka planı, herhangi bir Portekiz-ülke karşılaşması için çalışır.",
+      "conclusionContent": "Yukarıdaki iki Portekiz önerisi, 2026 Dünya Kupası alanının geri kalanına genelleştirilebilir. Aynı şablon, takım adını değiştirin, forma renklerini ve paleti doğru ayarlayın:\n\n- **Brezilya**: `Brezilya 2026 Milli Takımı` — sarı + yeşil + mavi vurgusu, Maracanã, başlık `BRASIL 2026` — [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts) adresine bakın\n- **Arjantin**: `Arjantin 2026 Dünya Kupası Kadrosu` — gökyüzü mavisi + beyaz + altın, Estadio Monumental, başlık `ARGENTINA 2026` — [aynı kardeş gönderi](/blog/brazil-argentina-soccer-poster-prompts)\n- **Fransa**: `Fransa 2026 Milli Takımı` — lacivert + beyaz + kırmızı, Stade de France, başlık `FRANCE 2026`\n- **İspanya**: `İspanya 2026 Milli Takımı` — kırmızı + safran sarısı + lacivert, Santiago Bernabéu, başlık `ESPAÑA 2026`\n- **Almanya**: `Almanya 2026 Milli Takımı` — beyaz + siyah + kırmızı/altın, Allianz Arena, başlık `DEUTSCHLAND 2026`\n- **Fas**: `Fas 2026 Milli Takımı` — kırmızı + yeşil yıldız + beyaz, Grand Stade Hassan II, başlık `LE MAROC 2026`\n- **İngiltere**: `İngiltere 2026 Dünya Kupası Kadrosu` — beyaz + St George'un kırmızısı + lacivert, Wembley, başlık `ENGLAND 2026`\n- **ABD** (ev sahibi ülke): `ABD 2026 Dünya Kupası Kadrosu` — lacivert + kırmızı şeritler + beyaz yıldız, SoFi Stadyumu, başlık `USA 2026`\n- **Meksika** (ev sahibi ülke): `Meksika 2026 Milli Takımı` — yeşil + beyaz + kırmızı, Estadio Azteca, başlık `MÉXICO 2026`\n\nÖneri yapısı aynı kalır — forma açıklaması, stadyum arka planı, renk paleti, başlık metni, dikey 3:4 format. Takım adını ve paleti değiştirin; diğer her şey şablonun temel önerisinden geçer.\n\nBeğendiğiniz bir poster gönderirseniz, [/topics/character](/topics/character) ve [/topics/sports](/topics/sports) merkezleri benzer şablonları ortaya çıkarır — karakter savaşları, film grup posterleri, hayran kadroları, hepsi aynı Curify hattında çalışır."
+    },
+    "ai1v1SoccerRivalryPrompts": {
+      "title": "AI 1v1 Futbol Rekabeti İstekleri: Messi vs Ronaldo, Mbappé vs Bellingham + Daha Fazlası",
+      "metaDescription": "Spor Savaşı şablonu için 5 hazır futbol rekabeti isteği kopyalayın — Messi vs Ronaldo, Mbappé vs Bellingham, Vinícius vs Yamal, Lautaro vs Kane, Pedri vs De Bruyne.",
+      "seoKeywords": "messi vs ronaldo isteği, mbappe vs bellingham isteği, vinicius vs yamal isteği, futbol rekabeti isteği, 1v1 futbol afişi, spor savaşı şablonu, ai futbol vs afişi, lautaro vs kane isteği, pedri vs de bruyne isteği, nano banana spor savaşı, dünya kupası rekabeti isteği",
+      "date": "30 Mayıs 2026",
+      "readTime": "8 dakika okuma",
+      "intro": "Rekabet afişleri, futbol içeriğinde en yüksek etkileşim formatıdır. İki oyuncunun yan yana olduğu bir VS afişi, taraftarların bir derbi öncesi paylaştığı, TikTok düzenlemelerinin açılışında kullandığı, Pinterest panolarının topladığı şeydir. Ve istek yapısı yeterince sabittir ki, sadece iki isim sağlamanız yeterlidir — Curify'nin Spor Savaşı şablonu geri kalanını halleder. Bu kılavuz, insanların gerçekten aradığı eşleşmeler için beş hazır rekabet isteği sunar: Messi vs Ronaldo, Mbappé vs Bellingham, Vinícius vs Yamal, Lautaro vs Kane, Pedri vs De Bruyne. İsteği kopyalayın, iki ismi değiştirin, gönderin.",
+      "whatIsTitle": "Neden Rekabet Afişleri Tekli Afişlerden Daha Fazla Etkileşim Alır",
+      "whatIsContent": "VS-afiş formatının her dağıtım kanalında neden tekli çekim formatından daha fazla çekim sağladığını gösteren üç neden.\n\n**Tartışma ile etkileşim.** Tekli bir afiş beğeni alır. Bir VS afişi yorum alır — taraftarlar sıralar, savunur, tartışır. TikTok ve Instagram Reels'de, başlıktaki tartışma sürücüsü, gönderiyi algoritmik eşiğin ötesine iten şeydir.\n\n**Simetrik kompozisyon anında okunur.** Beyin yan yana olanları, dikey olarak yığılmış figürlerden daha hızlı işler. Bir VS afişini 0.3 saniyede kaydırabilir ve yine de her iki oyuncuyu, her iki takımı, her iki renk şemasını kaydedebilirsiniz. Bu yüzden her esports overlay ve boks maç afişi bu şekli kullanır — iki konulu içerik için en bilgi yoğun düzenlemedir.\n\n**Aynı şablon ekonomisi.** Tekli bir afiş, her oyuncu için farklı bir isteğe ihtiyaç duyar (aydınlatma, poz, arka plan bir figüre göre ayarlanır). Bir VS afişi, iki değişken slot ile tek bir şablonda çalışır. Bir tekli çekim ayarlamak için geçen sürede 10 rekabet afişi oluşturun.",
+      "modelsTitle": "Curify'nin Spor Savaşı Şablonu — Nasıl Çalışır",
+      "howTitle": "Gönderilmeye Hazır Beş Futbol Rekabeti İsteği",
+      "step1Title": "1. Messi vs Ronaldo — Zamansız GOAT Tartışması",
+      "step2Title": "2. Mbappé vs Bellingham — Güncel Fransız-İngiliz",
+      "step3Title": "3. Vinícius vs Yamal — Brezilya-İspanya Kanat Mücadelesi",
+      "step4Title": "4. Lautaro vs Kane — Arjantin-İngiltere 9 Numara Mücadelesi",
+      "step5Title": "5. Pedri vs De Bruyne — İspanya-Belçika Orta Saha Ustaları",
+      "toolsTitle": "Rekabet Afişleri için Karşılaştırılan AI Araçları",
+      "challengesTitle": "AI Rekabet Afişlerinin Hala Başarısız Olduğu Yerler (ve Çözümler)",
+      "challengesContent": "VS-afiş formatına özgü dört başarısızlık modu, istem tarafı hafifletmesi ile:\n\n**Simetri çöküşü — bir figür baskın çıkıyor.** Model, Oyuncu A'yı kahramanca detaylarla ve Oyuncu B'yi düz bir çizim olarak render ediyor. **Çözüm**: her iki figürü de aynı detay seviyesinde açıkça belirtin — `her iki oyuncu eşit kahramanca orta adım pozunda, eşit forma detayında, eşit çerçeve aydınlatma yoğunluğunda render edilsin`. Simetri, VS formatının ihtiyaç duyduğu şeydir ve model asimetrik olarak varsayılan ayara geçer.\n\n**Forma rengi kayması.** Fransa, daha açık Les Bleus mavi yerine düz lacivert varsayılan ayarına geçiyor; Brezilya, daha muted Verdeamarela yerine floresan sarıya kayıyor. **Çözüm**: ülke yerine belirli rengi adlandırın (`Les Bleus lacivert, kırmızı detay, altın vurgular`, `Verdeamarela muted sarı, orman yeşili yaka`) yerine.\n\n**VS grafiği, genel bir harf çifti olarak çıkıyor.** Model bazen \"VS\"yi düz blok harfler olarak render ediyor, metalik-altın yıldırım etkisi yerine. **Çözüm**: `metallic-gold VS graphic with electric-arc lightning effect at center, comic-book burst pattern behind the letters` belirtin. Yıldırım arkı, imza görsel unsurdur.\n\n**Her iki oyuncunun yüzünde aynı anda yanlışlık.** Kapalı kaynak modeller, kesin ünlü benzerliğini render etmiyor — ve iki oyunculu bir afişte yanlışlıklar birikiyor. **Çözüm**: çizgi roman stilizasyonuna yönelin (ki Spor Savaşı bunu varsayılan olarak yapar) — çizgi sanatı soyutlaması, benzerlik boşluğunu gizler, başarısız fotorealizm yerine kasıtlı bir sanat tarzı olarak okunur.",
+      "curifyTitle": "Kendi Afişinizi Oluşturun — Doğrudan Şablon Bağlantısı",
+      "curifyContent": "İstem mühendisliğini atlayın ve parametreler hazır olan şablona doğrudan gidin:\n\n**Spor Savaşı**: [/nano-template/sports-battle](/nano-template/sports-battle) — yukarıdaki beş rekabetten `player_left` ve `player_right` sağlayın veya kendi eşleşmenizi oluşturun. Şablonun temel isteği, çizgi roman tarzı VS afiş stiline kilitlenmiştir.\n\nKendi afişinizi oluşturmak için mevcut galeri örnekleri:\n\n- [Messi vs Ronaldo](/nano-template/sports-battle) — futbol GOAT rekabeti\n- [Federer vs Nadal](/nano-template/sports-battle) — tenis rekabeti, aynı şablon\n- [Ali vs Tyson](/nano-template/sports-battle) — dönemler arası boks\n- [Hamilton vs Schumacher](/nano-template/sports-battle) — dönemler arası F1\n- [Kobe vs Ray Allen](/nano-template/sports-battle), [LeBron vs Karl Malone](/nano-template/sports-battle), [Magic vs Stockton](/nano-template/sports-battle) — NBA rekabetleri\n\nAynı şablon, farklı spor. VS şekli aynıdır.\n\nDaha fazla spor temalı istek için, [/topics/character](/topics/character) merkezi, spor, oyun, film ve eğlence alanında karakter odaklı şablonları indeksler. Her istek ailesi için düzenlenmiş Nano Banana dizini, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) kataloğudur. Bu gönderinin ülkeye özgü kardeşleri için [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts) ve [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts) adresine bakın.",
+      "conclusionTitle": "Diğer Rekabetler — Aynı Şablon, İki Farklı İsim",
+      "conclusionContent": "Yukarıdaki beş istek, en yüksek arama hacmine sahip mevcut rekabetleri kapsar. Şablon genelleşir — herhangi iki oyuncunun adını verin, VS afişini alın. Değiştirme kalıpları:\n\n**Pozisyona göre**:\n- Kaleciler: `Emiliano Martínez vs Thibaut Courtois`, `Alisson vs Ederson`\n- Stoperler: `Rúben Dias vs Antonio Rüdiger`, `Van Dijk vs Saliba`\n- 8 numaralar: `Bellingham vs Pedri`, `Tchouaméni vs Camavinga`\n- Kanat oyuncuları: `Saka vs Bukayo`, `Nico Williams vs Rafael Leão`\n\n**Kulüp rekabetine göre**:\n- Real Madrid vs Barcelona güncel: `Vinícius vs Yamal`, `Bellingham vs Pedri`\n- Premier Lig #9 yarışı: `Haaland vs Salah`, `Isak vs Watkins`\n- Bundesliga gol kralları: `Kane vs Guirassy`\n\n**Nesil devri**:\n- `Messi vs Yamal` (Arjantin-İspanya nesiller arası)\n- `Ronaldo vs Mbappé` (Portekiz-Fransa nesil devri)\n- `Modrić vs Pedri` (Hırvat-İspanyol oyun kurucuları dönemler arası)\n\nİstek yapısı aynı kalır — `player_left`, `player_right`, Spor Savaşı şablonu geri kalanını halleder. İsimleri değiştirin, afişleri alın. 2026 Dünya Kupası süresince turnuva öncesi içerik için rekabet gönderisi en yüksek hızda formatıdır — her maç günü bir tane oluşturun.\n\nBir afiş gönderirseniz, [/topics/character](/topics/character) ve [/topics/sports](/topics/sports) merkezleri benzer şablonları ortaya çıkarır — ünlü grup afişleri, tek yıldız MBTI kartları, diğer alanlarda karakter savaşları, hepsi aynı Curify boru hattında çalışır.",
+      "modelsContent": "**Spor Savaşı** ([/nano-template/sports-battle](/nano-template/sports-battle)) şablondur. İki metin alanı — `player_left` ve `player_right`. Çıktı, dikey 3:4 çizgi roman tarzı karşılaştırma afişidir:\n\n- İçe dönük bakan iki tam vücut portresi\n- Metalik altın + yıldırım etkisi ile merkezde VS grafiği\n- Alt kısımda istatistik panelleri (goller, yaş, kulüp)\n- Kimlik etiketleri (lakaplar, pozisyon, milliyet)\n- Her iki figürde neon-parlak çerçeve aydınlatması\n- Takım temalı arka plan gradyanı (rakipler farklı milli takımlarda olduğunda iki renkli)\n\nŞablonun temel isteği, yukarıdakilerin hepsini zaten belirtir — forma detayı, dinamik orta adım pozları, dramatik teal-turuncu renk derecelendirmesi, çizgi roman çizgisi sanatı ve yarı ton gölgeleme. Bunların hiçbirini istemeniz gerekmez. **Sadece iki isim sağlamanız yeterlidir.**\n\nVarsayılan çıktı dikey 3:4'tür — Instagram Hikayeleri, TikTok, Pinterest için mükemmeldir. Şablon ayarlarında en boy oranını değiştirerek Instagram besleme gönderisi için 1:1 veya YouTube küçük resmi için 16:9'a geçebilirsiniz.\n\nŞablon, galeride bir Messi-vs-Ronaldo örneği ile birlikte gelir, ayrıca diğer sporlar arasındaki rekabetler: Federer vs Nadal, Ali vs Tyson, Hamilton vs Schumacher, Kobe vs Ray Allen, LeBron vs Karl Malone. Herhangi birini açın, isimleri değiştirin, 60 saniyede yeni bir afiş gönderin.",
+      "toolsContent": "Curify'nin Spor Savaşı şablonu Nano Banana Pro üzerinde çalışır. Şablon dışında kendi başınıza yapıyorsanız:\n\n| Araç | VS afişleri için en iyisi | Güç | Zayıflık |\n|---|---|---|---|\n| **Nano Banana Pro** (Gemini 3 Pro Görüntü) | ★★★★★ | Simetrik iki figür kompozisyonu için mekansal akıl yürütme; konuşma düzenlemesi (\"Mbappé'yi Bellingham ile değiştir, aydınlatmayı koru\"); güncel kadrolar için Google Arama temellendirmesi | Kutudan çıkan Midjourney'den daha az estetik süs |\n| **GPT Image 2** (ChatGPT) | ★★★★ | İki figürlü VS düzeni üzerinde konuşma yinelemesi, ChatGPT Plus ile dahil | Güvenlik filtreleri bazı ünlü benzerlik isteklerini reddediyor |\n| **Midjourney v7** | ★★★★ | Kutudan çıkan en iyi estetik / çizgi roman stilizasyonu; teal-turuncu derecelendirmesi doğal olarak oturuyor | API yok; tam oyuncu benzerliğinde zayıf; açık poz kontrolü olmadan iki figür simetrik çerçevede garip |\n| **Stable Diffusion 3.5 Large** | ★★★ | ControlNets aracılığıyla tam poz kontrolü (bir VS-afiş referans şablonu kullanın); donanım sonrası her görüntü için sıfır maliyet | Kutudan çıkan kalite, ayarlanmış bir LoRA olmadan kapalı kaynak liderlerinin gerisinde kalıyor |\n\nBu gönderide tanımlanan iş akışı için, **Spor Savaşı şablonu üzerinden Nano Banana Pro'da kalın** — şablon, VS düzenini, forma detayını ve renk derecelendirmesini zorunlu kılar, böylece her render için sıfırdan yeniden istemek zorunda kalmazsınız. Daha derin bir karşılaştırma için [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison) adresine bakın.",
+      "step1Content": "**Neden sıralanıyor**: platformdaki en yüksek hacimli futbol rekabeti araması. Sürekli aranıyor, her Ballon d'Or ve her Arjantin-Portekiz varsayımsal eşleşme konuşmasında zirve yapıyor.\n\nGaleri bağlantısı: [/nano-template/sports-battle](/nano-template/sports-battle) Messi-vs-Ronaldo'yu varsayılan örnek olarak gönderir — kendi afişinizi oluşturmadan önce çizgi roman tarzı VS afiş formatını görmek için açın.\n\n**Spor Savaşı girdileri**:\n\n- `player_left`: `Lionel Messi`\n- `player_right`: `Cristiano Ronaldo`\n\n**Ya da serbest format isteği olarak** (Nano Banana Pro / GPT Image 2'ye doğrudan bırakın):\n\n```\nLionel Messi vs Cristiano Ronaldo — çizgi roman tarzı VS afiş, dikey 3:4 formatında. Messi solda açık mavi Arjantin #10 formasında, sol ayağında top ile orta adımda, altın bacak yukarı kutlama kolu. Ronaldo sağda koyu kırmızı Portekiz #7 formasında, kolları açmış şekilde orta adımda. Merkezde metalik altın ile yıldırım etkisi olan VS grafiği. Alt kısımda istatistik panelleri (kariyer golleri, kulüp, uluslararası maç sayısı). Split-stadyum arka planı — Estadio Monumental, Estádio José Alvalade'a geçerken, altın saat gökyüzü Buenos Aires altın rengi ve Lizbon turuncusu arasında bölünmüş. Çizgi roman çizgisi sanatı, yarı ton gölgeleme, neon-parlak çerçeve aydınlatması, dramatik teal-turuncu renk derecelendirmesi. 4K detay, su işareti yok.\n```\n\n**Kopyalanacak varyasyonlar**: `Arjantin` → `Inter Miami` değiştirin; stadyum çiftini `Camp Nou, Old Trafford` için değiştirin.",
+      "step2Content": "**Neden sıralanıyor**: Messi/Ronaldo sonrası meşaleyi taşıyanlar. Real Madrid takım arkadaşı dinamiği başka bir katman ekliyor — kulüp seviyesinde birlikte oynuyorlar, ülke seviyesinde birbirlerine karşı. Özellikle \"mbappe vs bellingham isteği\" üzerinde güçlü arama hacmi var.\n\n**Spor Savaşı girdileri**:\n\n- `player_left`: `Kylian Mbappé`\n- `player_right`: `Jude Bellingham`\n\n**Ya da serbest format isteği olarak**:\n\n```\nKylian Mbappé vs Jude Bellingham — çizgi roman tarzı VS afiş, dikey 3:4. Mbappé solda lacivert Fransa #10 formasında, sağ ayağında top ile orta koşu pozunda, Mbappé-kollar-kavuşmuş kutlamaya hazır. Bellingham sağda beyaz İngiltere #10 formasında, kolları açık orta sıçrama pozunda. Merkezde metalik altın ile yıldırım etkisi olan VS grafiği. İstatistik panelleri (Şampiyonlar Ligi golleri, Real Madrid istatistikleri, yaş karşılaştırması). Split-stadyum arka planı — Stade de France, Wembley'e geçerken, altın saat gökyüzü Paris mavisi ve Londra alacakaranlığı arasında bölünmüş. Çizgi roman çizgisi sanatı, yarı ton gölgeleme, neon-parlak çerçeve aydınlatması, teal-turuncu renk derecelendirmesi. 4K detay, su işareti yok.\n```\n\n**Varyasyonlar**: `Fransa` → `Real Madrid` ve `İngiltere` → `Real Madrid` değiştirin; ya da Mbappé'yi Vinícius ile eşleştirin.",
+      "step3Content": "**Neden sıralanıyor**: yükselen yıldız vs yükselen yıldız, 2024 Copa América'dan bu yana güçlü arama ivmesi. İspanya ve Brezilya, her ikisi de Dünya Kupası favorisi; her iki kanat oyuncusu da ülkelerinin birincil saldırı tehdidi.\n\n**Spor Savaşı girdileri**:\n\n- `player_left`: `Vinícius Júnior`\n- `player_right`: `Lamine Yamal`\n\n**Ya da serbest format isteği olarak**:\n\n```\nVinícius Júnior vs Lamine Yamal — çizgi roman tarzı VS afiş, dikey 3:4. Vinícius solda sarı Brezilya #7 formasında, sol ayağında top ile orta dribbling pozunda, imza adım geçişi görünür. Yamal sağda kırmızı İspanya #19 formasında, sağ ayağında top ile orta kesme pozunda, kolu kesim için uzatılmış. Her iki oyuncu da kahramanca düşük açı kompozisyonunda. Merkezde metalik altın ile yıldırım etkisi olan VS grafiği. İstatistik panelleri (asist, tamamlanan dribbling, yaş karşılaştırması — Yamal en genç). Split-stadyum arka planı — Maracanã, Santiago Bernabéu'ya geçerken, altın saat gökyüzü Rio orman yeşili ve Madrid amberi arasında bölünmüş. Çizgi roman çizgisi sanatı, yarı ton gölgeleme, neon-parlak çerçeve aydınlatması, teal-turuncu renk derecelendirmesi. 4K detay, su işareti yok.\n```\n\n**Varyasyonlar**: aynı şablon ile `Real Madrid` → `Barcelona` değiştirin (Vinícius RM vs Yamal Barça); ya da Yamal'ı `Nico Williams` ile değiştirin.",
+      "step4Content": "**Neden sıralanıyor**: Dünya Kupası eleme aşaması önizlemeleri için klasik #9 vs #9 çerçevesi. Her iki oyuncu da ülkelerinin birincil gol tehdidi; her ikisinin de kazanma geçmişi var (Lautaro 2022 Dünya Kupası + Copa América, Kane Bayern Münih şampiyonlukları).\n\n**Spor Savaşı girdileri**:\n\n- `player_left`: `Lautaro Martínez`\n- `player_right`: `Harry Kane`\n\n**Ya da serbest format isteği olarak**:\n\n```\nLautaro Martínez vs Harry Kane — çizgi roman tarzı VS afiş, dikey 3:4. Lautaro solda açık mavi ve beyaz Arjantin #10 formasında (veya Inter Milan'a bir selam için #22), sağ ayağıyla bir şut çekerken orta pozisyonda. Kane sağda beyaz İngiltere #9 formasında, tam vücut uzanmasıyla orta kafa pozisyonda. Her ikisi de kahramanca düşük açı kompozisyonunda. Merkezde metalik altın ile yıldırım etkisi olan VS grafiği. İstatistik panelleri (uluslararası goller, kulüp altın ayakkabı ödülleri, Dünya Kupası golleri). Split-stadyum arka planı — Estadio Monumental, Wembley'e geçerken, altın saat gökyüzü Buenos Aires altın rengi ve Londra alacakaranlığı arasında bölünmüş. Çizgi roman çizgisi sanatı, yarı ton gölgeleme, neon-parlak çerçeve aydınlatması, teal-turuncu renk derecelendirmesi. 4K detay, su işareti yok.\n```\n\n**Varyasyonlar**: `Kane` → `Erling Haaland` değiştirin; ya da `Kane` ile `Mbappé` eşleştirin.",
+      "step5Content": "**Neden sıralanıyor**: orta saha oyun kurucuları, gerçek oyun yapısını önemseyen okuyucular tarafından aranan rekabet — sadece kimlerin gol attığı değil. Her ikisi de ulusal takımlarının metronomlarıdır; her ikisi de \"kim daha iyi oyun kurucu\" tartışmasını çeker.\n\n**Spor Savaşı girdileri**:\n\n- `player_left`: `Pedri`\n- `player_right`: `Kevin De Bruyne`\n\n**Ya da serbest format isteği olarak**:\n\n```\nPedri vs Kevin De Bruyne — çizgi roman tarzı VS afiş, dikey 3:4. Pedri solda kırmızı İspanya #8 formasında, sol ayağında top ile orta pas pozunda, bir takım arkadaşını yönlendirmek için kolunu ileri uzatıyor. De Bruyne sağda kırmızı Belçika #7 formasında, sağ ayağıyla bir topa vururken orta kesme pozunda, sağ kolu klasik KDB formunda geride kalıyor. Her ikisi de kahramanca orta açı kompozisyonunda (düşük açı değil — oyun kurucuların yüksek çerçeveye ihtiyacı yok). Merkezde metalik altın ile yıldırım etkisi olan VS grafiği. İstatistik panelleri (maç başına asist, ana paslar, Şampiyonlar Ligi eleme asistleri). Split-stadyum arka planı — Santiago Bernabéu, Etihad Stadyumu'na geçerken, altın saat gökyüzü Madrid amberi ve Manchester gri-mavi arasında bölünmüş. Çizgi roman çizgisi sanatı, yarı ton gölgeleme, neon-parlak çerçeve aydınlatması, teal-turuncu renk derecelendirmesi. 4K detay, su işareti yok.\n```\n\n**Varyasyonlar**: `De Bruyne` → `Jude Bellingham` değiştirin; ya da `Pedri` ile `Frenkie de Jong` eşleştirin."
+    },
+    "franceSoccerPosterPrompts": {
+      "title": "Fransa AI Futbol Afişi İstekleri: 2026 Dünya Kupası Şablonları",
+      "metaDescription": "İki Nano Banana şablonuyla sinematik Fransa futbol posterleri oluşturun - Mbappé rekabetleri için Sports Battle, Les Bleus için Grup Posteri. İfadeleri kopyalayın.",
+      "seoKeywords": "fransa ai istemi, mbappe istemi, fransa futbol posteri istemi, les bleus 2026 istemi, mbappe vs bellingham istemi, fransa dünya kupası posteri, ai fransa posteri, spor savaşı mbappe, nano banana fransa, sinematik fransa posteri, fifa dünya kupası 2026 ai",
+      "date": "30 Mayıs 2026",
+      "readTime": "9 dakika okuma",
+      "intro": "Fransa, 2026 Dünya Kupası'na savunma finalist olarak giriyor; Kylian Mbappé Real Madrid'in zirvesindeyken, Jude Bellingham'ın kulüp takım arkadaşı enerjisi ülke rekabetini yansıtıyor ve orta saha yeniden yapılanması (Tchouaméni, Camavinga, Koné) nihayet uyum sağlıyor. Les Bleus markası belirli bir sinematik kayıt içeriyor - lacivert + beyaz + kırmızı, Stade de France flood ışıkları, 1998 ev sahibi Dünya Kupası'ndan art-deco poster mirası. İki Curify Nano Banana şablonu, işi baştan sona taşıyor: Mbappé rekabetleri için Sports Battle (Bellingham'a karşı, Vinícius'e karşı, Haaland'a karşı) ve tam Les Bleus kadrosu için Ünlü Grup Posteri. Bu kılavuz, 60 saniyeden kısa bir sürede sinematik bir Fransa posteri gönderir; istem metni, palet ve parametre şekli ile.",
+      "whatIsTitle": "Fransa Posterini Sinematik Kılan Nedir",
+      "whatIsContent": "Üç bileşen, genel bir Fransız renderını Les Bleus marka kaydına sahip bir posterden ayırır.\n\n**Fransız zarafetiyle dinamik aksiyon.** Duran bir Mbappé, bir stok fotoğraf gibi görünür. Mbappé koşarken, kolları kutlama için çapraz, Bellingham sıçrarken, Tchouaméni bir tackle'a omuz atarken - bunlar poster olarak okunur. İstemdeki eylem fiilleri işin çoğunu yapar - *koşarken*, *kollar çapraz kutlama*, *omuz atma*, *havadan kafa vuruşu*.\n\n**Doğru şekilde bleu-blanc-rouge.** Fransa = lacivert (parlak mavi değil) + keskin beyaz + doygun kırmızı vurgu. Mevcut Nike forması, yakada kırmızı detaylarla derin bir lacivert kullanıyor ve kolların uçlarında kırmızı + beyaz detaylar var. Parlak kraliyet mavisi, İtalya veya Arjantin olarak okunur, Fransa olarak değil. Paleti doğru ayarlayın ve poster Les Bleus olarak okunur, genel bir Avrupa forması olarak değil.\n\n**Fransız sinematik mirası arka plan olarak.** Üç referans kaydı çalışır - 1998 ev sahibi Dünya Kupası'ndan art-deco poster estetiği (temiz geometrik yazı, soluk poster renkleri), *nouvelle vague* siyah-beyaz-renk vurgulu stil ve Stade de France flood ışıklarıyla sisin deldiği bir eleme aşaması gece maçı atmosferi. Her poster için bir kayıt belirtin; karıştırmak tutarsız bir çıktı üretir.",
+      "modelsTitle": "İşi Yürüten İki Curify Şablonu",
+      "howTitle": "60 Saniyede Fransa Posteri Nasıl Gönderilir",
+      "step1Title": "Yöntem 1: Mbappé Merkezli 1v1 - Spor Savaşı Şablonu",
+      "step1Content": "**En iyi**: turnuva öncesi maç önizleme içeriği, Real Madrid iç takım arkadaşı rekabeti posterleri, Ligue 1 sezonu boyunca derbi içeriği.\n\n[/nano-template/sports-battle](/nano-template/sports-battle) açın. İki metin alanı - `player_left` ve `player_right`. En çok aranan Mbappé rekabetleri:\n\n- `Kylian Mbappé` vs `Jude Bellingham` - Fransa vs İngiltere, kulüp seviyesinde Real Madrid takım arkadaşları\n- `Kylian Mbappé` vs `Vinícius Júnior` - Fransa vs Brezilya, Real Madrid'in hücum üçlüsü (Vinícius, Mbappé, Bellingham)\n- `Kylian Mbappé` vs `Erling Haaland` - Fransa vs Norveç, Messi/Ronaldo sonrası meşale tartışması\n- `Kylian Mbappé` vs `Cristiano Ronaldo` - Fransa vs Portekiz, nesil geçiş çerçevesi\n- `Aurélien Tchouaméni` vs `Jude Bellingham` - Fransa vs İngiltere orta sahası, ayrıca Real Madrid takım arkadaşı çatışması\n\nOluşturun. Şablon, her iki oyuncuyu da ulusal takım formasıyla, istatistik panelleri, kimlik etiketleri ve ortada VS grafiği ile bir çizgi roman VS posteri oluşturur. Varsayılan 3:4 - Instagram Hikayeleri, TikTok, Pinterest için hazır.\n\n**Canlı örnek** galeride: [Mbappé vs Bellingham posteri](/nano-template/sports-battle) - aynı şablon, aynı istem şekli, sadece iki isim girişi.",
+      "step2Title": "Yöntem 2: Les Bleus Kadrosu - Ünlü Grup Posteri Şablonu",
+      "step2Content": "**En iyi**: turnuva öncesi kadro açıklamaları, 2026 koşusu için izleme partisi grafikleri, Coupe du Monde hayran içeriği, sosyal medya başlıkları.\n\n[/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) açın. Bir metin alanı - `star_movie_group`. Les Bleus 2026 için:\n\n- `Fransa 2026 Millî Takımı` - genel topluluk (model ikonik figürleri seçer)\n- `Fransa 2026 Dünya Kupası Kadrosu ft. Mbappé` - Mbappé merkezli, kaptan anlatısı\n- `Les Bleus 2026` - Fransızca kimlik, model Fransız kültürel ipuçlarına dayanır\n- `Fransa 2026 Forvet Üçlüsü - Mbappé, Coman, Olise` - hücum çekirdeğine dar odak\n- `Fransa 2026 Real Madrid Bağlantısı - Mbappé, Camavinga, Tchouaméni` - Les Bleus formasıyla Real Madrid takım arkadaşları, La Liga izleyicileri için bir içerik açısı\n\nŞablon, sinematik aydınlatma, gradyan arka plan ve lüks minimalist başlık metni ile dramatik bir kompozisyonda birden fazla ikonik figür oluşturur - resmi bir Nike Les Bleus posterinin görünümü. Modelin mevcut kadroya dayanması için `2026` ekleyin.",
+      "step3Title": "Fransa 2026 Sinematik Posteri İstemi",
+      "step3Content": "Bunu Ünlü Grup Posteri şablonunun `star_movie_group` alanına yerleştirin veya Nano Banana Pro / GPT Image 2'de serbest form olarak kullanın:\n\n```\nFransa 2026 Dünya Kupası Millî Takımı - ikonik derin-lacivert Les Bleus ev formasıyla kırmızı yaka detayı olan tam kadro, Kylian Mbappé, Aurélien Tchouaméni, Eduardo Camavinga, Manu Koné, Bradley Barcola'nın kahramanca orta adım pozlarında dinamik grup kompozisyonu. Stade de France altın saat arka planı, kalabalık ışıkları ve Fransız üç renkli bayrakları. Sinematik renk derecelendirmesi - derin lacivert + keskin beyaz + doygun Fransız kırmızı vurgusu, art-deco altın ipucu. Fotoğraf gerçekçi, moda dergisi keskinliği, dramatik çerçeve aydınlatması, yumuşak gradyan arka plan, lüks minimalist Fransızca başlık \"FRANSA 2026\" kalın altın serif ile. 4K ultra detaylı, su işareti yok, dikey 3:4 format.\n```\n\n**Belirtilmesi gereken renk paleti**: `#002654` (Les Bleus derin lacivert), `#FFFFFF` (keskin beyaz), `#ED2939` (Fransız kırmızısı), `#D4AF37` (altın vurgusu), sıcak Stade de France altın saat tonları.\n\n**Değiştirilecekler**: oyuncu kadrosu (Les Bleus kadrosu her turnuvada değişir - 2026 öncesi ve sonrası Mbappé kadroları farklı okunur); stadyum (ev kaydı için Stade de France, Paris kulübü anısına Parc des Princes veya Marseille kaydı için Vélodrome); başlık metni.",
+      "step4Title": "Mbappé vs Bellingham 1v1 Savaş İstemi",
+      "step5Title": "Sinematik Dönüşümü Sağlayan Ayarlar & Anahtar Kelimeler",
+      "step5Content": "İlk posteri gönderdiğinizde, bu ayarlamalar 50 render boyunca birikir.\n\n**Lens / çerçeveleme**: `85mm portre lensi` (arka planı sıkıştırır, Mbappé'yi kahramanlaştırır), `geniş açı aksiyon çekimi` (stadyum ölçeği), `düşük açı kahraman kompozisyonu` (yüksek figür). Takım kadroları için: `sinematik orta-geniş çekim` ile grup çerçeveyi doldurur.\n\n**Aydınlatma**: `Stade de France flood ışığı parlaması` (belirli gece maçı dram kaydı), `Paris alacakaranlığı` (sıcak-mavi akşam ışığı), `çerçeve aydınlatması` (silüet pop), `volumetrik tanrı ışınları` (flood ışığı sisinden stadyum atmosferi).\n\n**Renk derecelendirme sözlüğü**: `sinematik teal-turuncu derecelendirmesi`, `doygun Les Bleus paleti derecelendirmesi`, `derin-lacivert kırmızı vurgulu`, `Nike spor giyimi fotoğrafçılığı derecelendirmesi`, `1998 Fransa Dünya Kupası art-deco derecelendirmesi` (ev sahibi turnuvadan soluk renkli poster kaydı).\n\n**Fransız sinematik kayıtları**: `nouvelle vague siyah-beyaz renk vurgulu` (monokromda tek cesur kırmızı veya mavi), `art-deco poster tipografisi` (geometrik serif başlıklar, soluk palet), `Marais altın saati` (belirli Paris-amber ışık kaydı). Her poster için bir kayıt kullanın.\n\n**Forma detayı**: `keskin coq Gaulois armaları detayı`, `işlemeli FFF logosu`, `göğüste Nike swoosh`. Coq Gaulois (horoz) arması ayrıntılıdır; model bunu belirsiz bir altın işareti olarak soyutlar, adını vermediğiniz sürece.\n\n**Olumsuz ipuçları**: `parlak kraliyet mavisi yok (derin lacivert kullanın)`, `İtalya renk ipuçları yok (derin-mavi örtüşmesi)`, `bulanık yüz yok`, `bozuk forma numaraları yok`.",
+      "toolsTitle": "Fransa Posteri Üretimi için AI Araçları Karşılaştırması",
+      "challengesTitle": "AI Fransa Posterlerinin Hala Başarısız Olduğu Yerler (ve Çözümleri)",
+      "challengesContent": "Fransa posterlerine özgü üç başarısızlık modu, istem tarafı hafifletmesi ile:\n\n**Lacivert parlak maviye kayıyor.** Model, \"Fransa mavisi\" dediğinizde kraliyet mavisi veya flüoresan maviye varsayıyor - çok doygun, İtalyan veya Arjantinli gibi görünüyor. **Çözüm**: rengi spesifik olarak adlandırın (`derin lacivert Les Bleus mavi, #002654, kahverengi alt tonla soluk`). Fransa lacivertinin genel mavi varsayımdan daha derin bir tonu vardır.\n\n**Coq Gaulois arması altın bir leke olarak çıkıyor.** FFF işaretleri ile Gallic horoz arması detaylıdır; model bunu soyutlar. **Çözüm**: `keskin coq Gaulois horoz arması detayı, kırmızı kalkan içinde altın horoz, işlemeli FFF yazısı`. Yine de yaklaşık %70 doğruluk bekleyin - müşteri çalışmaları için, gerçek arması Figma'da birleştirin.\n\n**Mbappé yüzü yanlış.** Kapalı kaynak modeller tam Mbappé benzerliğini oluşturamaz. **Çözüm**: \"ilham alınmış\" çerçevesine yönelin - oyun tarzını, vücut tipini tanımlayın (`genç atletik yapı, yüksek elmacık kemikleri, kısa kesim saç, imza kollar çapraz kutlama`). Spor Savaşı'nın çizgi roman stilizasyonu, tasarım gereği benzerlik açığını gizler.",
+      "curifyTitle": "Kendi Üretiminizi Oluşturun - Doğrudan Şablon Bağlantıları",
+      "curifyContent": "İstem mühendisliğini atlayın ve doğrudan şablonlara gidin:\n\n**Spor Savaşı (Mbappé 1v1)**: [/nano-template/sports-battle](/nano-template/sports-battle) - `player_left` (`Kylian Mbappé`) ve `player_right` (`Jude Bellingham`, `Vinícius Júnior`, `Erling Haaland`, kim olursa) sağlayın. Şablon, çizgi roman VS posteri stilini yönetir.\n\n**Ünlü Grup Posteri (Les Bleus)**: [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) - `star_movie_group` ile `Fransa 2026 Millî Takımı` veya yukarıdaki herhangi bir varyant sağlayın. Şablon, sinematik aydınlatmayı, gradyanı, lüks serif başlığı yönetir.\n\nDaha fazla spor temalı istem için, [/topics/character](/topics/character) merkezi, spor, oyun, film ve eğlence alanında karakter odaklı şablonları indeksler. Küratörlü Nano Banana dizini için, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) kataloğu. Bu serideki kardeş ülke gönderileri için: [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts) ve [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts). 1v1 rekabetine özel kılavuz için: [/blog/ai-1v1-soccer-rivalry-prompts](/blog/ai-1v1-soccer-rivalry-prompts).",
+      "conclusionTitle": "Diğer Ülkeler - Aynı Şablon, İsmi Değiştir",
+      "modelsContent": "**Spor Savaşı** ([/nano-template/sports-battle](/nano-template/sports-battle)), iki oyuncu adı alır - `player_left` ve `player_right` - ve dikey 3:4 çizgi roman tarzı VS posteri oluşturur: iki tam vücut portresi, ortada VS grafiği, istatistik panelleri, kimlik etiketleri, neon-parlak çerçeve aydınlatması. Temel istem, çizgi roman tarzına kilitlenmiştir; isimleri siz sağlarsınız. *Mbappé vs Bellingham*, *Mbappé vs Vinícius Júnior*, *Mbappé vs Haaland*, *Tchouaméni vs Bellingham* için harika. Şablon, önizleme yapabilmeniz için bir Mbappé-Bellingham örneği ile birlikte gelir.\n\n**Ünlü & Film Grup Posteri** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)), tek bir `star_movie_group` parametresi alır ve resmi bir görünümde toplu poster oluşturur: dinamik kompozisyonda birden fazla figür, sinematik aydınlatma, yumuşak gradyan arka plan, lüks minimalist başlık yazı tipi. *Fransa 2026 Millî Takımı* sağlarsanız, tam Les Bleus kadrosu versiyonunu alırsınız.\n\nHer iki şablon da Curify'nin Nano Banana Pro hattında çalışır. Şablon temel stili, marka-poster kaydını kilitler; yalnızca değişkenleri siz sağlarsınız.",
+      "toolsContent": "Curify'nin şablonları Nano Banana Pro üzerinde çalışır. Şablon dışında:\n\n| Araç | Fransa posterleri için en iyisi | Güç | Zayıflık |\n|---|---|---|---|\n| **Nano Banana Pro** (Gemini 3 Pro Görüntü) | ★★★★★ | Çok figürlü grup çekimleri için mekansal akıl yürütme; mevcut Les Bleus kadrosu için Google Arama temeli; konuşma düzenleme (\"Camavinga'yı Koné ile değiştir, aydınlatmayı koru\") | Kutudan çıktığında Midjourney'den daha az editoryal zarafet |\n| **GPT Image 2** (ChatGPT) | ★★★★ | Konuşma yinelemesi, doğru çok öğeli sahneler, ChatGPT Plus ile dahil | Agresif güvenlik filtreleri bazı Mbappé benzerlik istemlerini reddediyor |\n| **Midjourney v7** | ★★★★ | En iyi estetik; derin-lacivert + kırmızı Les Bleus kaydı doğal olarak art-deco derecelendirmesi ile uyum sağlar | API yok; tam oyuncu benzerliğini zayıf yapar; çok figürlüde zayıf |\n| **Stable Diffusion 3.5 Large** | ★★★ | ControlNets aracılığıyla tam kontrol (Les Bleus takım poz referansı kullanın); donanım sonrası her görüntü için sıfır maliyet | Kutudan çıktığında kalitesi kapalı kaynak liderlerinin gerisinde kalıyor, ayarlanmış bir LoRA olmadan |\n\nBu iş akışı için, **Curify şablonları aracılığıyla Nano Banana Pro'da kalın** - şablon, her renderda Les Bleus lacivertini sıfırdan istem mühendisliği yapmadan marka-poster estetiğini zorunlu kılar. Daha derin karşılaştırma için [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison) adresine bakın.",
+      "step4Content": "Eğer grup posteri çok kalabalıksa, Mbappé'nin rakibiyle solo çekimi, Fransa içeriği için en yüksek etkileşim formatıdır (TikTok, Instagram Reels):\n\n```\nKylian Mbappé vs Jude Bellingham - çizgi roman VS posteri, dikey 3:4, her iki oyuncu da orta aksiyon pozunda. Mbappé solda derin-lacivert Fransa #10 formasıyla kırmızı detaylarla, sağ ayağında top ile koşarken, imza Mbappé-kollar çapraz kutlama pozuna geçmeye hazır. Bellingham sağda beyaz İngiltere #10 formasıyla St George'un kırmızı haçıyla, kolları açık yay pozunda sıçrarken. Her ikisi de kahramanca düşük açı kompozisyonunda. Ortada metalik altın ile VS grafiği, elektrik arkı aydınlatma efekti. Alt kısımda istatistik panelleri (Şampiyonlar Ligi golleri, her ikisi de kulüp seviyesinde beyaz giydiği için Real Madrid istatistikleri, yaş - Bellingham 4 yaş daha genç). Bölünmüş stadyum arka planı - Stade de France, Wembley'e geçiyor, altın saat gökyüzü Paris mavisi ve Londra alacakaranlığı arasında bölünmüş. Çizgi roman çizgi sanatı, yarı ton gölgeleme, neon-parlak çerçeve aydınlatması, dramatik teal-turuncu renk derecelendirmesi. 4K detay, su işareti yok.\n```\n\n**Değiştirilecekler**: sağda başka bir rakip - Vinícius Jr (Brezilya-Fransa kanat düellosu), Haaland (Norveç), Ronaldo (nesil geçişi). Bölünmüş stadyum arka planı, herhangi bir Fransa-ülke eşleşmesi için çalışır.",
+      "conclusionContent": "Yukarıdaki iki Fransa istemi, 2026 Dünya Kupası alanının geri kalanına genelleştirilebilir. Aynı şablon, takım adını değiştirin, forma renklerini doğru alın:\n\n- **Brezilya**: `Brezilya 2026 Millî Takımı` - sarı + yeşil + mavi vurgusu, Maracanã, başlık `BREZİLYA 2026` - [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts) adresine bakın\n- **Arjantin**: `Arjantin 2026 Dünya Kupası Kadrosu` - gökyüzü mavisi + beyaz + altın, Estadio Monumental, başlık `ARJANTİN 2026` - [aynı kardeş gönderi](/blog/brazil-argentina-soccer-poster-prompts)\n- **Portekiz**: `Portekiz 2026 Millî Takımı` - koyu kırmızı + yeşil + altın, Estádio José Alvalade, başlık `PORTEKİZ 2026` - [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts)\n- **İspanya**: `İspanya 2026 Millî Takımı` - kırmızı + safran sarısı + lacivert, Santiago Bernabéu, başlık `İSPANYA 2026`\n- **Almanya**: `Almanya 2026 Millî Takımı` - beyaz + siyah + kırmızı/altın, Allianz Arena, başlık `ALMANYA 2026`\n- **İngiltere**: `İngiltere 2026 Dünya Kupası Kadrosu` - beyaz + St George'un kırmızısı + lacivert, Wembley, başlık `İNGİLTERE 2026`\n- **Fas**: `Fas 2026 Millî Takımı` - kırmızı + yeşil yıldız + beyaz, Grand Stade Hassan II, başlık `LE MAROC 2026`\n- **Meksika** (ev sahibi): `Meksika 2026 Millî Takımı` - yeşil + beyaz + kırmızı, Estadio Azteca, başlık `MÉXİKO 2026`\n- **ABD** (ev sahibi): `ABD 2026 Dünya Kupası Kadrosu` - lacivert + kırmızı şeritler + beyaz yıldız, SoFi Stadyumu, başlık `ABD 2026`\n\nİstem yapısı aynı kalır - forma açıklaması, stadyum arka planı, renk paleti, başlık metni, dikey 3:4 format. Takım ve paleti değiştirin; diğer her şey şablonun temel isteminden geçer.\n\nBeğendiğiniz bir posteri gönderirseniz, [/topics/character](/topics/character) ve [/topics/sports](/topics/sports) benzer şablonları yüzeye çıkarır - karakter savaşları, film grup posterleri, hayran kadroları, hepsi aynı Curify hattında."
     }
   },
   "aeVsComfyUi": {

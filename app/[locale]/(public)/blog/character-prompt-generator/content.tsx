@@ -5,9 +5,19 @@ import Link from 'next/link'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 import NanoBananaExamples from '@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples'
+import BlogInlineClickTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker'
 
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 type TemplateEntry = { name: string; slug: string; params: string }
+type WorkedCharacter = { name: string; mbti: string; blurb: string }
+type WorkedUniverse = {
+  name: string
+  slug: string
+  heading: string
+  description: string
+  characters: WorkedCharacter[]
+}
+type MbtiIndexRow = { type: string; label: string; character: string; slug: string }
 
 export default function BlogContent() {
   const t = useTranslations('blog.characterPromptGenerator')
@@ -18,6 +28,7 @@ export default function BlogContent() {
 
   return (
     <article className="mx-auto max-w-6xl px-4 py-8">
+      <BlogInlineClickTracker blogSlug="character-prompt-generator">
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <header className="mb-8">
           <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
@@ -28,16 +39,31 @@ export default function BlogContent() {
             <span>•</span>
             <span>{t('category')}</span>
           </div>
-          <div className="mt-6 max-w-xs">
-            <CdnImage
-              src="/images/nano_insp_preview/template-mbti-marvel-en-marvel-hulk-prev.jpg"
-              width={320}
-              height={400}
-              className="w-full rounded-lg shadow-md max-w-2xl mx-auto"
-              alt={t('heroImageAlt')}
-            />
-          </div>
-          <p className="mt-6 text-lg text-gray-800 dark:text-gray-200">{t('intro')}</p>
+          <section className="mt-6 mb-6 not-prose">
+            <a
+              href={`${localePrefix}${t('heroCtaHref')}`}
+              className="block group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all bg-white dark:bg-gray-800"
+            >
+              <div className="aspect-[16/9] w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
+                <CdnImage
+                  src="/images/nano_insp_preview/template-mbti-marvel-en-marvel-hulk-prev.jpg"
+                  alt={t('heroImageAlt')}
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform"
+                />
+              </div>
+              <div className="px-6 py-5 flex items-center justify-between gap-4">
+                <div className="min-w-0">
+                  <div className="text-base font-semibold text-gray-900 dark:text-white">
+                    {t('heroCtaText')}
+                  </div>
+                </div>
+                <div className="flex-shrink-0 rounded-lg bg-blue-600 text-white px-4 py-2 text-sm font-semibold group-hover:bg-blue-700 transition">
+                  Try it →
+                </div>
+              </div>
+            </a>
+          </section>
+          <p className="mt-2 text-lg text-gray-800 dark:text-gray-200">{t('intro')}</p>
         </header>
 
         {/* What We Ship — three grounded groups */}
@@ -104,6 +130,69 @@ export default function BlogContent() {
           </div>
         </section>
 
+        {/* Worked Examples — MBTI by Universe */}
+        <section id="universes" className="mb-10 not-prose">
+          <h2 className="text-3xl font-semibold mb-2 text-gray-900 dark:text-white">{t('workedExamples.title')}</h2>
+          <p className="text-gray-700 dark:text-gray-300 mb-6">{t('workedExamples.intro')}</p>
+          <div className="space-y-8">
+            {(t.raw('workedExamples.universes') as WorkedUniverse[]).map((u) => (
+              <div key={u.slug} className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <h3 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">{u.heading}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-5">{u.description}</p>
+                <div className="space-y-3 mb-5">
+                  {u.characters.map((c) => (
+                    <div key={c.name} className="border-l-4 border-blue-400 pl-4 py-1">
+                      <h4 className="text-base font-semibold text-gray-900 dark:text-white">
+                        {c.name} — <span className="text-blue-700 dark:text-blue-300 font-mono">{c.mbti}</span>
+                      </h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300 mt-0.5">{c.blurb}</p>
+                    </div>
+                  ))}
+                </div>
+                <Link
+                  href={templateLink(u.slug)}
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded transition"
+                >
+                  Generate a {u.name} MBTI card →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* MBTI Quick Reference */}
+        <section id="mbti-index" className="mb-10 not-prose">
+          <h2 className="text-3xl font-semibold mb-2 text-gray-900 dark:text-white">{t('mbtiIndex.title')}</h2>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">{t('mbtiIndex.intro')}</p>
+          <div className="overflow-x-auto mb-4">
+            <table className="min-w-full border border-gray-200 dark:border-gray-700 text-sm">
+              <thead className="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                  <th className="border border-gray-200 dark:border-gray-700 px-3 py-2 text-left">Type</th>
+                  <th className="border border-gray-200 dark:border-gray-700 px-3 py-2 text-left">Label</th>
+                  <th className="border border-gray-200 dark:border-gray-700 px-3 py-2 text-left">Featured Character</th>
+                  <th className="border border-gray-200 dark:border-gray-700 px-3 py-2 text-left">Template</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(t.raw('mbtiIndex.rows') as MbtiIndexRow[]).map((row) => (
+                  <tr key={row.type} className="even:bg-gray-50 dark:even:bg-gray-900/30">
+                    <td className="border border-gray-200 dark:border-gray-700 px-3 py-2 font-mono font-semibold">{row.type}</td>
+                    <td className="border border-gray-200 dark:border-gray-700 px-3 py-2">{row.label}</td>
+                    <td className="border border-gray-200 dark:border-gray-700 px-3 py-2">{row.character}</td>
+                    <td className="border border-gray-200 dark:border-gray-700 px-3 py-2">
+                      <Link href={templateLink(row.slug)} className="text-blue-600 dark:text-blue-300 hover:underline">
+                        Open →
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-gray-700 dark:text-gray-300">{t('mbtiIndex.note')}</p>
+        </section>
+
         {/* How to Use — three recipes */}
         <section className="mb-10">
           <h2 className="text-3xl font-semibold mb-4">{t('howToUse.title')}</h2>
@@ -124,32 +213,6 @@ export default function BlogContent() {
         {/* Live template cards */}
         <section className="mb-10 not-prose">
           <NanoBananaExamples locale={locale} blogSlug="character-prompt-generator" />
-        </section>
-
-        {/* Who can benefit */}
-        <section className="mb-10">
-          <h2 className="text-3xl font-semibold mb-4">{t('whoCanBenefit.title')}</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {(['writers', 'artists', 'gameDevelopers', 'creators'] as const).map((seg, i) => (
-              <div key={seg} className={`border-l-4 pl-5 py-2 ${['border-green-500', 'border-orange-500', 'border-blue-500', 'border-purple-500'][i]}`}>
-                <h3 className="text-lg font-semibold mb-1">{t(`whoCanBenefit.${seg}.title`)}</h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">{t(`whoCanBenefit.${seg}.description`)}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Pro tips */}
-        <section className="mb-10">
-          <h2 className="text-3xl font-semibold mb-4">{t('proTips.title')}</h2>
-          <ul className="space-y-2 text-gray-800 dark:text-gray-200">
-            {(t.raw('proTips.tips') as string[]).map((tip, i) => (
-              <li key={i} className="flex items-start gap-2">
-                <span className="text-blue-500 mt-1">•</span>
-                <span>{tip}</span>
-              </li>
-            ))}
-          </ul>
         </section>
 
         {/* Footer */}
@@ -176,6 +239,7 @@ export default function BlogContent() {
 
         <RelatedBlogs currentSlug="character-prompt-generator" locale={locale} maxRelated={2} />
       </div>
+      </BlogInlineClickTracker>
     </article>
   )
 }

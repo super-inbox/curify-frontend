@@ -1625,7 +1625,13 @@
         "🤖 <strong>AI Model Comparison:</strong> Choose the right platform for your needs",
         "💼 <strong>Commercial Applications:</strong> Monetize your AI video skills"
       ],
-      "seoKeywords": "ai video prompts, sora prompts, runway video prompts, pika video prompts, ai video generation tips, video prompting techniques 2026, ai video creator guide"
+      "seoKeywords": "ai video prompts, sora prompts, runway video prompts, pika video prompts, ai video generation tips, video prompting techniques 2026, ai video creator guide",
+      "heroImage": "/images/tenprompt.webp",
+      "heroImageAlt": "Top 10 prompting tips for AI video generation",
+      "heroCtaLabel": "TRY VIDEO GENERATION",
+      "heroCtaText": "Put these 10 prompting tips into practice with Curify's video generation tools",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "Try →"
     },
     "imageGenerationModelComparison": {
       "title": "Midjourney vs Nano Banana vs Stable Diffusion: Which Wins in 2026?",
@@ -1688,7 +1694,13 @@
       "batchProcessingTitle": "Batch Processing",
       "batchProcessingContent": "Generate multiple variations simultaneously for faster iteration",
       "technicalAdvancementsTitle": "Technical Advancements",
-      "marketEvolutionTitle": "Market Evolution"
+      "marketEvolutionTitle": "Market Evolution",
+      "heroImage": "/images/hardworker.webp",
+      "heroImageAlt": "Compare Nano Banana, Flux, and Stable Diffusion outputs across the same prompt",
+      "heroCtaLabel": "BROWSE TEMPLATES",
+      "heroCtaText": "Skip the model-vs-model rabbit hole — start from 200+ ready-made Curify templates",
+      "heroCtaHref": "/nano-banana-pro-prompts",
+      "heroCtaButton": "Explore →"
     },
     "lipSyncBusinessGuide": {
       "title": "AI Lip Sync & Dubbing Guide: Business Applications and Tools",
@@ -1844,13 +1856,13 @@
       "conclusionContent": "The pattern that works for faceless channels is the opposite of how most creators start. Build the pipeline first — visual template, script library, voice clone, schedule — and then produce. The first 10 videos are testing the pipeline, not building an audience.\n\nThe ceiling for a faceless channel is not creative; it is operational. The channels that scale are the ones with infrastructure. Start with one channel, lock the pipeline, then consider scaling to a network only when the first one is running on autopilot."
     },
     "characterPromptGenerator": {
-      "title": "Character Prompt Generator: 12+ Universe MBTI Cards + Custom Characters",
-      "metaDescription": "Build characters from scratch with personality, name, age, gender — or re-imagine a known character as an MBTI personality card in your favourite universe (Marvel, Breaking Bad, Naruto, Ghibli, Harry Potter, Friends, and more).",
-      "publishedDate": "2026-05-12",
-      "readTime": "6 min read",
+      "title": "Character Prompt Generator: MBTI for Naruto, Yellowstone, Marvel, Harry Potter + 8 More Universes",
+      "metaDescription": "Look up MBTI personality types for 35+ characters across Naruto, Yellowstone, Marvel, Friends, Harry Potter, Breaking Bad — then generate the card with Curify's universe-specific templates.",
+      "publishedDate": "2026-05-30",
+      "readTime": "7 min read",
       "category": "Nano Template",
       "heroImageAlt": "Character prompt generator preview",
-      "intro": "Whether you want to design a brand-new character from scratch or re-imagine someone from your favourite show as an MBTI personality card, Curify ships a focused set of character templates — each with a specific parameter form so you know exactly what to fill in.",
+      "intro": "Searching \"Minato personality type\" or \"Beth Dutton personality type\"? You're in the right place. This guide ships the MBTI for 35+ most-searched characters across six universes — Naruto, Yellowstone, Marvel, Friends, Harry Potter, Breaking Bad — plus the Curify template you'd drop any of those names into to generate the full card. Skip to the [universe you came for](#universes) or the [MBTI quick-reference table](#mbti-index).",
       "whatWeShip": {
         "title": "What We Ship",
         "intro": "All templates below are live on Curify with curated examples. Pick by the kind of character you want to build:",
@@ -1985,35 +1997,6 @@
           ]
         }
       },
-      "whoCanBenefit": {
-        "title": "Who Can Benefit",
-        "writers": {
-          "title": "Writers & Storytellers",
-          "description": "Use Custom Character Card to design recurring cast members with consistent personality before drafting. Use the MBTI Contrast Card to plan rivalries and dialogue dynamics."
-        },
-        "artists": {
-          "title": "Digital Artists & Illustrators",
-          "description": "Spin up reference sheets in the Kawaii Profile Card, or generate full character grids with the Fandom Grid Poster for commission inspiration."
-        },
-        "gameDevelopers": {
-          "title": "Game Developers",
-          "description": "MBTI Contrast Card and Custom Character Card both give NPC archetypes with a coherent visual and behavioural read in one shot."
-        },
-        "creators": {
-          "title": "Content Creators",
-          "description": "Universe MBTI cards (Marvel / Friends / NBA / Ghibli / Chinese Classic) are designed for vertical social — drop in a character name and post."
-        }
-      },
-      "proTips": {
-        "title": "Pro Tips",
-        "tips": [
-          "Match personality to colour palette — choleric characters work in warm reds, melancholic in deep blues.",
-          "For Custom Character Cards, write the personality as 'MBTI + 1–2 traits' (e.g. 'ENFP, optimistic, restless'). Vague prompts produce vague portraits.",
-          "Universe MBTI templates work best with well-known character names. Obscure names tend to drift.",
-          "If the generated MBTI type disagrees with the canonical fan reading, the card is still useful — it produces an alternative interpretation worth discussing.",
-          "Use the Fandom Grid Poster for shareable social content — themed grids outperform single-character posts."
-        ]
-      },
       "footer": {
         "tags": [
           "AI Character Design",
@@ -2026,7 +2009,341 @@
           "Kawaii Character Profile"
         ],
         "questions": "Have a universe you'd like added to the MBTI lineup? Reach out and we'll consider it for the next content drop."
-      }
+      },
+      "workedExamples": {
+        "title": "MBTI by Universe — 35+ Characters Analyzed",
+        "intro": "Each universe section below lists the most-searched characters with their MBTI type and a one-line take. Click the template link at the bottom of each section to generate the full character card with image.",
+        "universes": [
+          {
+            "name": "Naruto",
+            "slug": "mbti-naruto",
+            "heading": "Naruto MBTI Characters",
+            "description": "The Naruto template generates personality cards styled to the shinobi world — ninja aesthetic with character-specific village marks and chakra-themed background. Drop any name into the template; here's the MBTI for the most-searched characters.",
+            "characters": [
+              {
+                "name": "Minato Namikaze",
+                "mbti": "INFJ-A",
+                "blurb": "Strategic, self-sacrificing, deeply principled. The Yellow Flash thinks two moves ahead of every enemy."
+              },
+              {
+                "name": "Orochimaru",
+                "mbti": "INTJ-A",
+                "blurb": "Calculating, obsessive, contemptuous of the ordinary. The original Sannin embodies the dark side of unrestrained intellect."
+              },
+              {
+                "name": "Itachi Uchiha",
+                "mbti": "INFJ-T",
+                "blurb": "Burdened protector with a complex moral framework. Sacrificed everything for a vision only he understood."
+              },
+              {
+                "name": "Naruto Uzumaki",
+                "mbti": "ENFP-A",
+                "blurb": "Boundless optimism, magnetic personality, unshakeable conviction in people's capacity to change."
+              },
+              {
+                "name": "Sasuke Uchiha",
+                "mbti": "ISTP-T",
+                "blurb": "Cool detachment, technical mastery, internal conflict masked by a quiet exterior."
+              },
+              {
+                "name": "Kakashi Hatake",
+                "mbti": "INTP-T",
+                "blurb": "Analytical, dry-witted, deflects emotion with intellectualism. Copies a thousand jutsu but stays unknowable."
+              }
+            ]
+          },
+          {
+            "name": "Yellowstone",
+            "slug": "mbti-yellowstone",
+            "heading": "Yellowstone MBTI Characters",
+            "description": "The Yellowstone template cards bring the show's Western register — denim and leather palette, ranch backdrops, the Dutton brand. The most-searched Dutton characters and their MBTI:",
+            "characters": [
+              {
+                "name": "Beth Dutton",
+                "mbti": "ESTJ-A",
+                "blurb": "Ruthless executor, family-loyal, takes no prisoners. Beth runs the family business with a chainsaw and a cocktail."
+              },
+              {
+                "name": "John Dutton",
+                "mbti": "ISTJ-A",
+                "blurb": "Stubborn traditionalist, duty-bound, weighed down by legacy. The patriarch who'd burn the ranch before letting it leave the family."
+              },
+              {
+                "name": "Rip Wheeler",
+                "mbti": "ISTP-A",
+                "blurb": "Loyal protector, cool under pressure, devastatingly effective when crossed. The wrangler-turned-enforcer."
+              },
+              {
+                "name": "Kayce Dutton",
+                "mbti": "ISFP-T",
+                "blurb": "Quiet, principled, action-oriented. Caught between two worlds and trying to honour both."
+              },
+              {
+                "name": "Jamie Dutton",
+                "mbti": "INFP-T",
+                "blurb": "Conflicted, idealistic, easily wounded. The family lawyer whose moral compass keeps spinning."
+              }
+            ]
+          },
+          {
+            "name": "Marvel",
+            "slug": "mbti-marvel",
+            "heading": "Marvel MBTI Characters",
+            "description": "The Marvel template generates MBTI character cards with hero-specific colour palettes and isometric room scenes. Pick a hero or villain — here's the MBTI on the most-searched characters.",
+            "characters": [
+              {
+                "name": "Tony Stark / Iron Man",
+                "mbti": "ENTP-A",
+                "blurb": "Inventive, charismatic, unconventional. Tony wins arguments and battles through improvisation, not preparation."
+              },
+              {
+                "name": "Steve Rogers / Captain America",
+                "mbti": "ISFJ-A",
+                "blurb": "Duty-bound, traditional, the original protector. Cap's moral framework was set in 1942 and hasn't moved."
+              },
+              {
+                "name": "Bruce Banner / Hulk",
+                "mbti": "INTJ-T",
+                "blurb": "Brilliant strategist held back by the thing he becomes when emotion takes over. The smartest man in the room until he isn't."
+              },
+              {
+                "name": "Thor",
+                "mbti": "ESFP-A",
+                "blurb": "Outgoing, action-oriented, present-tense thinker. Worthy of the hammer because he chooses to be, not because he plans to be."
+              },
+              {
+                "name": "Natasha Romanoff / Black Widow",
+                "mbti": "ISTP-A",
+                "blurb": "Resourceful, independent, deeply private. Reads every room and acts only when she's sure."
+              },
+              {
+                "name": "Peter Parker / Spider-Man",
+                "mbti": "INFP-T",
+                "blurb": "Idealistic, sensitive, values-driven. Carries the weight of every choice because he believes choices matter."
+              }
+            ]
+          },
+          {
+            "name": "Friends",
+            "slug": "friends-character-mbti",
+            "heading": "Friends MBTI Characters",
+            "description": "The Friends template cards channel the show's sitcom warmth — Central Perk colour palette, 90s NYC apartment aesthetic. Here's the MBTI for each main cast member.",
+            "characters": [
+              {
+                "name": "Chandler Bing",
+                "mbti": "ENTP-T",
+                "blurb": "Witty, sarcastic, conflict-avoidant. Defuses every emotional moment with a one-liner."
+              },
+              {
+                "name": "Ross Geller",
+                "mbti": "INTP-T",
+                "blurb": "Intellectual, awkward, analytical. Right about dinosaurs, wrong about everything else."
+              },
+              {
+                "name": "Rachel Green",
+                "mbti": "ENFP-A",
+                "blurb": "Charming, image-driven, slowly evolving. The arc from spoiled fiancée to fashion executive is a textbook ENFP growth path."
+              },
+              {
+                "name": "Monica Geller",
+                "mbti": "ESTJ-A",
+                "blurb": "Organized, controlling, nurturing through structure. The chef who hosts because it's the only way to control the chaos."
+              },
+              {
+                "name": "Joey Tribbiani",
+                "mbti": "ESFP-A",
+                "blurb": "Outgoing, hedonist, fiercely loyal. Lives in the present and wants you to live there with him."
+              },
+              {
+                "name": "Phoebe Buffay",
+                "mbti": "ENFP-T",
+                "blurb": "Quirky, intuitive, free-spirited. The only one whose moral framework genuinely came from somewhere else."
+              }
+            ]
+          },
+          {
+            "name": "Harry Potter",
+            "slug": "harry-potter-mbti-infographic",
+            "heading": "Harry Potter MBTI Characters",
+            "description": "The Harry Potter template generates wizard-aesthetic personality cards — house colour palette, signature wand, situational background that fits each character. Most-searched HP characters and their MBTI:",
+            "characters": [
+              {
+                "name": "Harry Potter",
+                "mbti": "ISFP-T",
+                "blurb": "Quiet rebel, values-driven, action when pushed. The reluctant hero whose moral compass never wavers."
+              },
+              {
+                "name": "Hermione Granger",
+                "mbti": "ESTJ-A",
+                "blurb": "Rule-bound, ambitious, organized. Right answer first, every time — until the rules and the right answer conflict."
+              },
+              {
+                "name": "Ron Weasley",
+                "mbti": "ESFP-T",
+                "blurb": "Loyal, fun-loving, sometimes insecure. The friend whose presence matters more than his strategy."
+              },
+              {
+                "name": "Severus Snape",
+                "mbti": "INTJ-A",
+                "blurb": "Strategic, bitter, hidden depths. Played the longest, most painful game in the series."
+              },
+              {
+                "name": "Albus Dumbledore",
+                "mbti": "INFJ-A",
+                "blurb": "Wise mentor, long-view planner, principled to the point of cruelty. Knows what the outcome needs and orchestrates it."
+              },
+              {
+                "name": "Lord Voldemort",
+                "mbti": "ENTJ-A",
+                "blurb": "Power-seeking, charismatic, ruthless. Built an entire ideology around the fear of his own mortality."
+              }
+            ]
+          },
+          {
+            "name": "Breaking Bad",
+            "slug": "mbti-breakingbad",
+            "heading": "Breaking Bad MBTI Characters",
+            "description": "The Breaking Bad template cards lean into the show's desert-meth aesthetic — Albuquerque palette, character-specific signature elements (Walt's hat, Saul's suit, Jesse's hoodie). Including Better Call Saul characters.",
+            "characters": [
+              {
+                "name": "Walter White",
+                "mbti": "INTJ-A",
+                "blurb": "Brilliant strategist, ego-driven, masked. The chemistry teacher arc bends toward the cartel arc with terrible inevitability."
+              },
+              {
+                "name": "Jesse Pinkman",
+                "mbti": "ISFP-T",
+                "blurb": "Loyal, emotional, conscience-bound. The series' moral centre, even when nobody asked him to be."
+              },
+              {
+                "name": "Saul Goodman / Jimmy McGill",
+                "mbti": "ENTP-T",
+                "blurb": "Crafty, fast-talking, opportunist with a brother-shaped wound. Whether he's Slippin' Jimmy or Saul, the mechanism is the same."
+              },
+              {
+                "name": "Mike Ehrmantraut",
+                "mbti": "ISTJ-A",
+                "blurb": "Disciplined operator, code of conduct, says little. The only character in the show who never makes a tactical mistake."
+              },
+              {
+                "name": "Gustavo Fring",
+                "mbti": "INTJ-A",
+                "blurb": "Long-game strategist, controlled exterior, glacial patience. Built an empire on the principle that the slow plan always wins."
+              },
+              {
+                "name": "Chuck McGill",
+                "mbti": "ISTJ-A",
+                "blurb": "Rigid, principled, resentful. The brother whose moral framework is so tight it strangles every relationship."
+              }
+            ]
+          }
+        ]
+      },
+      "mbtiIndex": {
+        "title": "MBTI to Character Quick Reference",
+        "intro": "Looking for an example of a specific MBTI type? One featured character per type, with the Curify template that handles that universe. Click any template link to generate the card.",
+        "note": "For MBTI types not covered above (or characters from universes we don't have a dedicated template for yet — like Star Wars, Lion King, Star Trek), use the [Custom Character Card](/nano-template/custom-character-card) template — type the character name and MBTI into the parameters and it generates the analysis.",
+        "rows": [
+          {
+            "type": "INFJ",
+            "label": "The Advocate",
+            "character": "Minato Namikaze (Naruto)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "INTJ",
+            "label": "The Architect",
+            "character": "Walter White (Breaking Bad)",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "INTP",
+            "label": "The Logician",
+            "character": "Ross Geller (Friends)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "INFP",
+            "label": "The Mediator",
+            "character": "Jesse Pinkman (Breaking Bad)",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "ISFJ",
+            "label": "The Defender",
+            "character": "Steve Rogers / Captain America (Marvel)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ISTJ",
+            "label": "The Logistician",
+            "character": "John Dutton (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ISFP",
+            "label": "The Adventurer",
+            "character": "Harry Potter (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ISTP",
+            "label": "The Virtuoso",
+            "character": "Rip Wheeler (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ENFJ",
+            "label": "The Protagonist",
+            "character": "Mufasa (Lion King — Custom Character Card)",
+            "slug": "custom-character-card"
+          },
+          {
+            "type": "ENFP",
+            "label": "The Campaigner",
+            "character": "Naruto Uzumaki (Naruto)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "ENTJ",
+            "label": "The Commander",
+            "character": "Lord Voldemort (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ENTP",
+            "label": "The Debater",
+            "character": "Tony Stark / Iron Man (Marvel)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ESFJ",
+            "label": "The Consul",
+            "character": "Molly Weasley (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ESTJ",
+            "label": "The Executive",
+            "character": "Beth Dutton (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ESFP",
+            "label": "The Entertainer",
+            "character": "Joey Tribbiani (Friends)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "ESTP",
+            "label": "The Entrepreneur",
+            "character": "Han Solo (Star Wars — Custom Character Card)",
+            "slug": "custom-character-card"
+          }
+        ]
+      },
+      "heroCtaText": "Open the Marvel MBTI template — type any hero or villain name and get the analysis card",
+      "heroCtaHref": "/nano-template/mbti-marvel"
     },
     "UltimateDirectoryOfNanoBananaPrompts": {
       "title": "Ultimate Directory of Nano Banana Prompts",
@@ -3253,359 +3570,79 @@
       }
     },
     "bestAiTools": {
-      "title": "10 Best AI Tools for Content Creators in 2026",
-      "metaDescription": "The 10 AI tools content creators actually use in 2026 — dubbing, transcription, image, voice. What each one does well and where it falls short.",
-      "seoKeywords": [
-        "best AI tools 2026",
-        "AI tools for creators",
-        "content creation AI",
-        "AI tool comparison"
-      ],
-      "publishedDate": "April 2, 2026",
-      "readTime": "12 min read",
+      "title": "Best AI Tools for Video Content Creators in 2026: Descript vs ElevenLabs vs Runway",
+      "metaDescription": "Descript, ElevenLabs, Runway — which AI tool to use for video creation, what each is actually good at, and one case where you should skip them and use a dubbing tool instead.",
+      "publishedDate": "2026-05-30",
+      "readTime": "8 min read",
       "category": "Creator Tools",
-      "heroImageAlt": "Comprehensive overview of AI tools for content creators including note-taking, research, and multimedia creation tools",
-      "introduction": {
-        "title": "Introduction",
-        "description": "Content creation has been revolutionized by AI tools that streamline workflows, enhance creativity, and boost productivity. From note-taking to video production, these tools help creators work smarter, not harder.",
-        "subtitle": "We've curated the 10 essential AI tools that every content creator should know about in 2026."
-      },
-      "tools": {
-        "title": "Tools & Resources",
-        "description": "Learn about the best tools available for content creators in 2026.",
-        "list": [
-          {
-            "icon": "📝",
-            "name": "Notion AI",
-            "category": "Note-Taking & Organization",
-            "description": "AI-powered workspace that helps organize thoughts, generate content, and automate workflows.",
-            "features": [
-              "AI-assisted writing",
-              "Smart organization",
-              "Template library",
-              "Team collaboration"
-            ],
-            "pricing": "Free tier available, Paid from $8/month",
-            "bestFor": "Content planners, writers, and teams"
-          },
-          {
-            "icon": "🔍",
-            "name": "Perplexity AI",
-            "category": "Research & Analysis",
-            "description": "AI-powered search engine that provides accurate, cited answers to complex questions.",
-            "features": [
-              "Real-time web search",
-              "Cited sources",
-              "Academic research",
-              "Document analysis"
-            ],
-            "pricing": "Free tier available, Pro from $20/month",
-            "bestFor": "Researchers, journalists, and academics"
-          },
-          {
-            "icon": "🎨",
-            "name": "Midjourney",
-            "category": "Image Generation",
-            "description": "Leading AI image generator that creates stunning visuals from text prompts.",
-            "features": [
-              "High-quality images",
-              "Style customization",
-              "Batch creation",
-              "Commercial rights"
-            ],
-            "pricing": "Basic from $10/month, Standard from $30/month",
-            "bestFor": "Visual creators, marketers, and designers"
-          },
-          {
-            "icon": "🎬",
-            "name": "Runway ML",
-            "category": "Video Creation",
-            "description": "AI video platform that enables text-to-video and video editing capabilities.",
-            "features": [
-              "Text-to-video",
-              "Video editing",
-              "Green screen removal",
-              "AI effects"
-            ],
-            "pricing": "Free tier available, Standard from $15/month",
-            "bestFor": "Video creators and social media managers"
-          },
-          {
-            "icon": "🎙️",
-            "name": "Descript",
-            "category": "Audio & Podcast",
-            "description": "All-in-one audio/video editing platform with AI transcription and voice cloning.",
-            "features": [
-              "Automatic transcription",
-              "Voice cloning",
-              "AI editing",
-              "Screen recording"
-            ],
-            "pricing": "Free tier available, Creator from $15/month",
-            "bestFor": "Podcasters and video creators"
-          },
-          {
-            "icon": "📊",
-            "name": "Canva AI",
-            "category": "Graphic Design",
-            "description": "AI-powered design platform that creates professional graphics, presentations, and marketing materials.",
-            "features": [
-              "AI design suggestions",
-              "Brand kit management",
-              "Template library",
-              "Team collaboration"
-            ],
-            "pricing": "Free tier available, Pro from $12.99/month",
-            "bestFor": "Social media managers and marketers"
-          },
-          {
-            "icon": "🚀",
-            "name": "Jasper AI",
-            "category": "Content Writing",
-            "description": "AI writing assistant that helps create blog posts, social media content, and marketing copy.",
-            "features": [
-              "50+ writing templates",
-              "Brand voice customization",
-              "SEO optimization",
-              "Content calendar"
-            ],
-            "pricing": "Creator from $39/month, Teams from $99/month",
-            "bestFor": "Content marketers and copywriters"
-          },
-          {
-            "icon": "🎯",
-            "name": "Grammarly AI",
-            "category": "Writing Enhancement",
-            "description": "AI-powered writing assistant that improves grammar, tone, and clarity across all content types.",
-            "features": [
-              "Grammar checking",
-              "Tone detection",
-              "Style suggestions",
-              "Plagiarism checker"
-            ],
-            "pricing": "Free tier available, Premium from $12/month",
-            "bestFor": "Writers and professionals"
-          },
-          {
-            "icon": "📱",
-            "name": "Buffer AI",
-            "category": "Social Media Management",
-            "description": "AI-driven social media management platform that optimizes posting schedules and content performance.",
-            "features": [
-              "AI content suggestions",
-              "Optimal posting times",
-              "Analytics dashboard",
-              "Multi-platform management"
-            ],
-            "pricing": "Free tier available, Essentials from $6/month",
-            "bestFor": "Social media managers and small businesses"
-          },
-          {
-            "icon": "🎥",
-            "name": "Curify",
-            "category": "Video Translation & AI Content",
-            "description": "Comprehensive AI platform for video translation, dubbing, and content creation with advanced voice cloning and multimodal capabilities.",
-            "features": [
-              "AI video translation",
-              "Voice cloning",
-              "Lip sync technology",
-              "Multimodal content generation",
-              "Professional dubbing"
-            ],
-            "pricing": "Free tier available, Pro plans from $29/month",
-            "bestFor": "Video creators, content marketers, and global businesses"
-          }
-        ]
-      },
-      "features": {
-        "title": "Key Features"
-      },
-      "pricing": {
-        "title": "Pricing"
-      },
-      "bestFor": {
-        "title": "Best For"
-      },
-      "curify": {
-        "title": "How Curify Can Help",
-        "description": "Curify offers comprehensive solutions for content creators looking to integrate AI tools into their workflow. Our platform provides seamless integration with top AI tools, customizable templates, and expert guidance to help you create compelling content efficiently.",
-        "features": [
-          "Seamless AI tool integration",
-          "Customizable content templates",
-          "Expert guidance and support",
-          "Workflow optimization",
-          "Performance analytics"
-        ]
-      },
-      "cta": {
-        "title": "🎯 Ready to get started?",
-        "description": "Try Curify's Tools today and transform your content creation workflow with AI-powered solutions."
-      },
-      "comparison": {
-        "title": "Tool Comparison",
-        "description": "Compare these AI tools side by side to find the best fit for your specific needs and budget.",
-        "tableTitle": "Quick Comparison Table",
-        "toolColumn": "Tool",
-        "categoryColumn": "Category",
-        "pricingColumn": "Starting Price",
-        "difficultyColumn": "Learning Curve",
-        "tableData": [
-          {
-            "tool": "Notion AI",
-            "category": "Note-Taking",
-            "pricing": "$8/month",
-            "difficulty": "Easy"
-          },
-          {
-            "tool": "Perplexity AI",
-            "category": "Research",
-            "pricing": "$20/month",
-            "difficulty": "Easy"
-          },
-          {
-            "tool": "Midjourney",
-            "category": "Images",
-            "pricing": "$10/month",
-            "difficulty": "Medium"
-          },
-          {
-            "tool": "Runway ML",
-            "category": "Video",
-            "pricing": "$15/month",
-            "difficulty": "Medium"
-          },
-          {
-            "tool": "Descript",
-            "category": "Audio",
-            "pricing": "$15/month",
-            "difficulty": "Easy"
-          },
-          {
-            "tool": "Canva AI",
-            "category": "Graphic Design",
-            "pricing": "$12.99/month",
-            "difficulty": "Easy"
-          },
-          {
-            "tool": "Jasper AI",
-            "category": "Content Writing",
-            "pricing": "$39/month",
-            "difficulty": "Medium"
-          },
-          {
-            "tool": "Grammarly AI",
-            "category": "Writing Enhancement",
-            "pricing": "$12/month",
-            "difficulty": "Easy"
-          },
-          {
-            "tool": "Buffer AI",
-            "category": "Social Media",
-            "pricing": "$6/month",
-            "difficulty": "Easy"
-          },
-          {
-            "tool": "Curify",
-            "category": "Video Translation",
-            "pricing": "$29/month",
-            "difficulty": "Medium"
-          }
-        ]
-      },
-      "howToChoose": {
-        "title": "How to Choose the Right Tools",
-        "description": "Selecting the right AI tools depends on your specific needs, budget, and workflow. Consider these key factors:",
-        "factors": [
-          {
-            "title": "Content Type",
-            "description": "Match tools to your primary content format (video, text, images, audio)"
-          },
-          {
-            "title": "Budget Constraints",
-            "description": "Start with free tiers and upgrade as your needs grow"
-          },
-          {
-            "title": "Integration Needs",
-            "description": "Consider how tools work with your existing workflow and software"
-          },
-          {
-            "title": "Learning Curve",
-            "description": "Balance powerful features with ease of use for your team"
-          }
-        ]
-      },
-      "workflow": {
-        "title": "Optimal Creator Workflow",
-        "description": "Here's how to integrate these AI tools into a streamlined content creation process:",
-        "steps": [
-          {
-            "title": "Research & Planning",
-            "description": "Use Perplexity AI for research and Notion AI for content planning"
-          },
-          {
-            "title": "Content Creation",
-            "description": "Write with AI assistants, enhance with grammar tools"
-          },
-          {
-            "title": "Visual Elements",
-            "description": "Create images with Midjourney, designs with AI tools"
-          },
-          {
-            "title": "Audio/Video",
-            "description": "Record and edit with Descript, create videos with Runway ML"
-          },
-          {
-            "title": "Presentation",
-            "description": "Compile everything into presentations with AI tools"
-          }
-        ]
-      },
-      "tips": {
-        "title": "Pro Tips for Maximum Efficiency",
-        "description": "Get the most out of these AI tools with these expert strategies:",
-        "list": [
-          "Start with one tool and master it before adding others to your workflow",
-          "Use AI for 80% of the work, then add your personal touch for authenticity",
-          "Create templates and workflows to automate repetitive tasks",
-          "Regularly update your tools and learn new features as they're released",
-          "Combine multiple tools for unique results that stand out from the competition"
-        ]
-      },
-      "future": {
-        "title": "The Future of AI in Content Creation",
-        "description": "AI tools are evolving rapidly. Here are the trends shaping the future of content creation:",
-        "trends": [
-          {
-            "title": "Multimodal AI",
-            "description": "Tools that can handle text, images, audio, and video seamlessly"
-          },
-          {
-            "title": "Personalization",
-            "description": "AI that learns your style and preferences for better results"
-          },
-          {
-            "title": "Real-time Collaboration",
-            "description": "AI tools that enable instant collaboration across teams and platforms"
-          }
-        ]
-      },
-      "conclusion": {
-        "title": "Conclusion",
-        "description": "Start your journey with AI-powered content creation tools today. The right combination of AI tools can dramatically enhance your productivity, creativity, and content quality. Begin with one tool, master it, and gradually expand your toolkit to build a comprehensive content creation workflow that works for you."
-      },
+      "heroImageAlt": "AI tools for video content creators 2026: Descript, ElevenLabs, Runway",
+      "intro": "Most \"best AI tools\" lists are 20 entries long because padding helps SEO. We disagree. Three tools cover almost every real video creator workflow — editing/transcripts (Descript), voice and TTS (ElevenLabs), generative video (Runway). This guide picks the three, names what each is actually best at, and flags the one common case (dubbing a video into another language with the original speaker's voice) where you should skip them and use a dubbing tool instead.",
+      "whoThisIsForTitle": "Who this is for",
+      "whoThisIsForContent": "Solo creators picking a tool to edit, narrate, or generate video content for YouTube / TikTok / Instagram / paid client work. Agency video teams shipping localized content at volume. Marketing teams building product demos, webinars, course modules. If you're trying to localize an existing video into another language with the original speaker's voice, skip ahead to the [What if you don't need a video creator tool?](#curify-callout) callout — that's a different problem and a different tool.",
+      "buyersGuideTitle": "Quick buyer's guide — what actually matters",
+      "buyersGuideContent": "Four dimensions matter; the rest is marketing copy.\n\n**1. What stage of the workflow do you need help with?** Pre-production (scripting / storyboarding) lives in a different tool from production (editing) than from post (voice, dubbing, distribution). Buying one tool to do everything usually means buying a mediocre version of each.\n\n**2. Pricing model.** Per-minute pricing (most generative video tools) scales linearly — fine for low volume, painful at scale. Subscription plans cap your spend. Per-character pricing (TTS) is similar — cheap for short clips, brutal for long-form narration.\n\n**3. Output format flexibility.** Can you export in 4K? Do you get raw audio stems or a final mix? Is the transcript downloadable as SRT? Most tools box you into their player or editor; you want the ones that ship clean source files.\n\n**4. The hidden cost: time-to-acceptable.** A tool that takes 30 minutes per video to learn but produces a polished result on the first try is usually better than a tool that produces a result in 30 seconds but needs three iterations to look right. The second category compounds across 50 videos.",
+      "methodologyTitle": "How we picked these three",
+      "methodologyContent": "Most \"best AI tools\" lists are 15-20 entries long because padding helps SEO. We disagree. Three tools cover the entire video creator stack — editing/transcripts, voice, generative video. We dropped 17 tools that overlap with these three: CapCut AI, Adobe Premiere Firefly, Lumen5, Pictory, InVideo, and Veed sit in the same editing bucket as Descript; Murf, Play.ht, Speechify, WellSaid, Lovo sit in the same voice bucket as ElevenLabs; Pika, Sora, Luma, Kling, Synthesia, HeyGen sit in the same generative-video bucket as Runway. If you want the long listicle, those are a Google search away. If you want a decision, read on.",
+      "toolsTitle": "The three tools worth comparing",
+      "toolsIntro": "Past the marketing copy, the AI-for-video space sorts into three buckets: the editing + transcript workhorse (Descript), the voice and TTS leader (ElevenLabs), and the generative video frontrunner (Runway). Each owns a different stage of the workflow. Pick by what's most expensive in your stack today.",
+      "tool1Name": "1. Descript",
+      "tool1Tagline": "Multimodal editor — edit video by editing the transcript",
+      "tool1BestFor": "Podcast and video editing, transcript-driven cuts, multi-track audio + video, screen recording for tutorials",
+      "tool1Pricing": "Free tier limited; paid plans start ~$16/mo; enterprise tiers for team workflows",
+      "tool1Languages": "Transcription supports 23+ languages; voice cloning (Overdub) supports English + select others",
+      "tool1Limitation": "Editing model assumes podcast-style talking-head content; weaker on narrative video, no native AI b-roll generation, voice cloning quality trails ElevenLabs",
+      "tool1WhenToPick": "Pick Descript when most of your editing time goes to cutting interview footage, podcast episodes, course videos, or screen recordings — content where the transcript is the structural scaffold. Edit-by-deleting-words is the killer feature: cut a sentence from the transcript and the video matches. The free tier is generous enough to evaluate; paid tiers add multi-track, voice cloning (Overdub), and the AI eye-contact correction.",
+      "tool2Name": "2. ElevenLabs",
+      "tool2Tagline": "Voice and TTS leader — the polished commercial choice",
+      "tool2BestFor": "Voiceover for explainer videos, audiobook narration, character voices for media, custom voices for product features",
+      "tool2Pricing": "Per-character billing — free tier limited; paid plans start ~$5/mo; enterprise tiers for high-volume API use",
+      "tool2Languages": "30+ languages with mature voice library; instant voice cloning with 10-30s reference; professional cloning with 30+ min reference",
+      "tool2Limitation": "Closed platform with content-policy gates on voice cloning (consent verification required for custom voices); per-character costs add up at high volume",
+      "tool2WhenToPick": "Pick ElevenLabs when you need a voice — for narration on a YouTube essay, a tutorial voiceover, a podcast intro, an audiobook. The API and voice library are the most mature in the category. For a deeper head-to-head on voice cloning specifically, see [/blog/voice-cloning-tools](/blog/voice-cloning-tools).",
+      "tool3Name": "3. Runway",
+      "tool3Tagline": "Generative video — text-to-video and motion brush at production quality",
+      "tool3BestFor": "Generative b-roll, abstract scene generation, motion graphics, music-video shots, product reveal sequences",
+      "tool3Pricing": "Free tier limited; paid plans start ~$15/mo; enterprise for high-volume Gen-3 / Gen-4 use",
+      "tool3Languages": "Text prompt interface in English; output is visual, language-independent",
+      "tool3Limitation": "Strong on short cinematic clips (5-10 seconds); weaker on coherent long-form narrative; per-second pricing makes long sequences expensive; control over specific actions (e.g. \"the character throws the ball\") still inconsistent",
+      "tool3WhenToPick": "Pick Runway when you need cinematic generative video — abstract intros, product reveals, motion graphics, music-video shots, b-roll that doesn't exist. The Gen-3 and Gen-4 models lead the category on visual quality. Pair it with a real video editor (Descript, Premiere, Final Cut) for the assembly step.",
+      "comparisonTitle": "Side-by-side",
+      "comparisonIntro": "The same four dimensions across the three tools. Use this to triangulate the call after you've read the per-tool boxes.",
+      "decisionRubricTitle": "Which one for which use case",
+      "decisionRubricContent": "- **Podcast or interview-driven video editing** → Descript. Edit by transcript is the workflow.\n- **Voiceover for narration or product feature** → ElevenLabs. Polish + low engineering surface.\n- **Generative b-roll or cinematic scene generation** → Runway. Best visual quality in the bucket.\n- **Localizing a video into another language with the original speaker's voice** → skip all three. Read the next section.",
+      "curifyCalloutTitle": "What if you don't need a video creator *tool*?",
+      "curifyCalloutContent": "Most readers landing on \"best AI tools for video creators\" are trying to solve one of two problems: build a new video from scratch, OR localize an existing video into another language while keeping the original speaker's voice. The three tools above handle the first problem. **For the second problem, you don't need any of them.**\n\n[Curify Video Dubbing](/tools/video-dubbing) clones the original speaker's voice from the source video, translates the audio, aligns it to the source timing, and ships a dubbed track in the target language with the speaker's identity preserved. The voice cloning is invisible — upload a video, pick a language, get a dub.\n\n**When this is the right fit:** localizing a YouTube video, a course module, a product demo, a webinar, a tutorial.\n\n**When it's not:** building new video content from scratch (use Runway or Descript), generating voiceover for a script (use ElevenLabs), editing an interview down (use Descript). Different category, different tool.",
+      "faqTitle": "Frequently asked questions",
+      "faq1Q": "Do I need all three tools?",
+      "faq1A": "No — depends on your workflow. A solo creator making explainer videos might use just Descript (record + edit) + ElevenLabs (voice if not using your own). A motion-graphics-heavy creator might use Runway + Descript. Most creators don't need generative video; most creators do need transcript-driven editing. Start with the bucket that eats most of your time today.",
+      "faq2Q": "Are there free tiers I can evaluate with?",
+      "faq2A": "All three have free tiers. **Descript**: ~1 hour of transcription per month, watermarked exports. **ElevenLabs**: 10k characters/month (~10 minutes of voice). **Runway**: limited generations per month, watermarked. The free tiers are enough to evaluate; production work needs paid plans. Curify Video Dubbing's early-access waitlist is also free to join.",
+      "faq3Q": "What's the cheapest combination that covers a YouTube creator's needs?",
+      "faq3A": "Descript Creator plan (~$16/mo) covers editing + transcription + rough Overdub voice. ElevenLabs Starter ($5/mo) covers high-quality voiceover. Total ~$21/mo for a stack that handles a YouTube channel doing 1-2 videos per week. Add Runway only if you need generative b-roll regularly.",
+      "faq4Q": "How do I clone my own voice for voiceover?",
+      "faq4A": "ElevenLabs Instant Voice Clone needs 10-30 seconds of reference audio and works in minutes. ElevenLabs Professional Voice Clone needs 30+ minutes of clean studio audio and reaches near-broadcast fidelity. Descript Overdub takes a similar approach inside the editor but the fidelity trails ElevenLabs. For a full head-to-head on voice cloning specifically — including open-source options (F5-TTS, OpenVoice) — see [/blog/voice-cloning-tools](/blog/voice-cloning-tools).",
+      "faq5Q": "Can these tools generate full-length videos automatically?",
+      "faq5A": "Not at production quality, no. Runway can produce 5-30 second clips that look cinematic. Stringing them into a 10-minute coherent narrative still requires a human editor (Descript, Premiere, or Final Cut). Tools that promise \"AI generates your full video\" almost always ship something that looks like AI generated it. The three tools above are best understood as assists, not replacements.",
+      "faq6Q": "I just want to dub a YouTube video in my own voice. Which tool?",
+      "faq6A": "None of the three above on their own — you'd assemble a pipeline. You'd need: extract original audio, clone the speaker's voice, translate the script, generate dubbed audio in the cloned voice, align it to the source video timing, optionally lip-sync. [Curify Video Dubbing](/tools/video-dubbing) does all six steps end-to-end. Voice cloning is internal; you upload a video, pick a language, get a dub. Different category from \"AI video creator tools\".",
+      "conclusionTitle": "The short version",
+      "conclusionContent": "Three tools, one decision: **Descript** if most of your editing is interview / podcast / screen recording content where the transcript drives the cut; **ElevenLabs** if you need polished voiceover or voice cloning; **Runway** if you need generative b-roll or cinematic short clips. And if your real problem is dubbing an existing video in the original speaker's voice, [try Curify](/tools/video-dubbing) — different category, the voice cloning is automatic, you don't have to learn any of the three above.",
       "footer": {
         "tags": [
-          "AI Tools",
-          "Content Creation",
-          "Productivity",
-          "Marketing",
-          "Design",
-          "Video Production",
-          "Writing",
-          "Research"
+          "AI video tools",
+          "Descript",
+          "ElevenLabs",
+          "Runway",
+          "AI for creators",
+          "video editing AI",
+          "voice cloning",
+          "AI video dubbing"
         ],
-        "questions": "Have questions about AI tools for content creation? Contact our experts for personalized recommendations."
-      }
+        "questions": "Questions about which tool fits your workflow? Drop us a line via /contact — we use Curify on top of these third-party tools internally and have opinions."
+      },
+      "heroImage": "/images/best-ai-tools-video-runway.webp",
+      "heroCtaText": "Localize a video into another language with the original speaker's voice — try Curify Video Dubbing",
+      "heroCtaHref": "/tools/video-dubbing"
     },
     "whatIsInfographics": {
       "title": "What is Infographics and How Can Infographic Cards Be Used?",
@@ -4532,7 +4569,13 @@
       "cta": {
         "primary": "Go to curify-ai.com to see templates",
         "secondary": "Back to blog list"
-      }
+      },
+      "heroImage": "/images/ae-vs-comfyui.jpg",
+      "heroImageAlt": "After Effects vs ComfyUI for AI video pipelines",
+      "heroCtaLabel": "TRY THE PIPELINE",
+      "heroCtaText": "Skip the AE-vs-ComfyUI debate — run a full video pipeline in Curify's batch tools",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "Try →"
     },
     "qaBotToTaskAgent": {
       "heading": "🏗️ From QA Bot to Task Agent: An Architecture Guide",
@@ -4787,7 +4830,7 @@
       "modelsContent": "**Sports Battle** ([/nano-template/sports-battle](/nano-template/sports-battle)) takes two player names — `player_left` and `player_right` — and renders a vertical 3:4 comic-book-style comparison poster: two full-body portraits, a center VS graphic, stat panels, nicknames, identity tags, neon glow effects. The base prompt already specifies team uniforms, dynamic poses, and team-themed backgrounds — you just supply the names. Great for *Messi vs Cristiano Ronaldo*, *Mbappé vs Vinícius Júnior*, *Haaland vs Mbappé*. The template already ships with a Messi-vs-Ronaldo example so you can see the output before you generate.\n\n**Celebrity & Movie Group Poster** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)) takes a single `star_movie_group` parameter and renders an official-looking ensemble poster: multiple figures in dynamic composition, cinematic lighting, soft gradient background, luxury minimalist title font, fashion-magazine-grade detail. The placeholder examples include *Marvel Avengers*, *Blackpink*, *NBA Legends* — same template, supply *Brazil 2026 National Team* or *Argentina 2026 World Cup Squad* and you get the team-lineup version.\n\nBoth templates work on Curify's Nano Banana Pro pipeline, so the prompts below render with the template's base styling already locked in — you only need to supply the variables.",
       "howTitle": "How to Ship a Brazil or Argentina Poster in 60 Seconds",
       "step1Title": "Method 1: 1v1 Rivalry — Sports Battle Template",
-      "step1Content": "**Best for**: derby posters, World Cup match-preview content, fan engagement before a knockout-stage matchup.\n\nOpen [/nano-template/sports-battle](/nano-template/sports-battle). Two text fields — `player_left` and `player_right`. The most-searched soccer rivalries to start with:\n\n- `Lionel Messi` vs `Cristiano Ronaldo` — the GOAT debate, evergreen\n- `Kylian Mbappé` vs `Vinícius Júnior` — the new-gen Brazil vs France rivalry\n- `Erling Haaland` vs `Kylian Mbappé` — the post-Messi/Ronaldo torch-carriers\n- `Lamine Yamal` vs `Vinícius Júnior` — Spain-Brazil winger duel\n- `Neymar Jr` vs `Lionel Messi` — Barcelona reunion energy\n\nGenerate. The template renders a comic-book VS poster with both players in their national-team kit, stat panels, identity tags, and the VS graphic in the center. Default output is vertical 3:4 — perfect for Instagram Stories, TikTok, Pinterest.\n\n**Live example** in the gallery: [the Messi vs Ronaldo poster](/nano-template/sports-battle) — same template, same prompt, just two name inputs.",
+      "step1Content": "**Best for**: derby posters, World Cup match-preview content, fan engagement before a knockout-stage matchup.\n\nOpen [/nano-template/sports-battle](/nano-template/sports-battle). Two text fields — `player_left` and `player_right`. The most-searched soccer rivalries to start with:\n\n- `Lionel Messi` vs `Cristiano Ronaldo` — the GOAT debate, evergreen\n- `Kylian Mbappé` vs `Vinícius Júnior` — the new-gen Brazil vs France rivalry\n- `Erling Haaland` vs `Kylian Mbappé` — the post-Messi/Ronaldo torch-carriers\n- `Lamine Yamal` vs `Vinícius Júnior` — Spain-Brazil winger duel\n- `Neymar Jr` vs `Lionel Messi` — Barcelona reunion energy\n\nGenerate. The template renders a comic-book VS poster with both players in their national-team kit, stat panels, identity tags, and the VS graphic in the center. Default output is vertical 3:4 — perfect for Instagram Stories, TikTok, Pinterest.\n\n![Messi vs Ronaldo — Sports Battle template output, vertical 3:4 comic-book VS poster with both players in mid-stride action pose, center VS graphic, stat panels, and split-stadium background](/images/nano_insp/template-sports-battle-Messi-vs-Ronaldo.jpg)\n\n[Open the Sports Battle template →](/nano-template/sports-battle)\n\n**Live example** in the gallery: [the Messi vs Ronaldo poster](/nano-template/sports-battle) — same template, same prompt, just two name inputs.",
       "step2Title": "Method 2: Full National Team — Celebrity Group Poster Template",
       "step2Content": "**Best for**: tournament-eve squad reveals, viewing-party graphics, fantasy-football league branding, social-media headers.\n\nOpen [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster). One text field — `star_movie_group`. For the 2026 World Cup, the highest-search-volume teams to start with:\n\n- `Brazil 2026 National Team`\n- `Argentina 2026 World Cup Squad`\n- `France 2026 National Team`\n- `Spain 2026 National Team`\n- `England 2026 World Cup Squad`\n- `Germany 2026 National Team`\n- `Portugal 2026 National Team`\n- `Morocco 2026 National Team`\n\nThe template renders multiple iconic figures in a dramatic dynamic composition with cinematic lighting, gradient background, and luxury minimalist title text — the look of an official Adidas / Nike team poster. Add the year (`2026`) so the model anchors on the current squad instead of historical lineups.",
       "step3Title": "Brazil 2026 Cinematic Poster Prompt",
@@ -4803,7 +4846,13 @@
       "curifyTitle": "Generate Yours — Direct Template Links",
       "curifyContent": "Skip the prompt-engineering and go directly to the templates with the parameters pre-filled:\n\n**Sports Battle (1v1 rivalry)**: [/nano-template/sports-battle](/nano-template/sports-battle) — supply `player_left` and `player_right`. The template's base prompt is locked to the comic-book VS poster style; you only supply the names. Existing gallery includes [Messi vs Ronaldo](/nano-template/sports-battle), [Federer vs Nadal](/nano-template/sports-battle), [Ali vs Tyson](/nano-template/sports-battle), [Hamilton vs Schumacher](/nano-template/sports-battle) for reference.\n\n**Celebrity Group Poster (full team)**: [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — supply `star_movie_group` with the team name (e.g., `Brazil 2026 National Team`). Existing gallery covers ensemble groups across sports (NBA Legends, Tennis Legends, Racing Legends), entertainment (Friends, Stranger Things, BTS, Blackpink, Game of Thrones), and anime — same template, different group.\n\nFor more sports-themed prompts, the [/topics/character](/topics/character) hub indexes character-driven templates across sports, gaming, film, and entertainment. For the curated Nano Banana directory across every prompt family, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) is the catalog.",
       "conclusionTitle": "Every Other National Team — Same Prompt, Swap the Name",
-      "conclusionContent": "The two prompts above generalize. Same template, swap the team name, get the kit colors and palette right:\n\n- **France**: `France 2026 National Team` — navy blue + white + red, Stade de France, headline `FRANCE 2026`\n- **Germany**: `Germany 2026 National Team` — white kit + black accents + red/gold flag, Allianz Arena, headline `DEUTSCHLAND 2026`\n- **Spain**: `Spain 2026 National Team` — red + saffron-yellow + navy, Santiago Bernabéu, headline `ESPAÑA 2026`\n- **England**: `England 2026 World Cup Squad` — white + St George's red + navy, Wembley, headline `ENGLAND 2026`\n- **Portugal**: `Portugal 2026 National Team` — dark red + green collar + gold accent, Estádio José Alvalade, headline `PORTUGAL 2026`\n- **Morocco**: `Morocco 2026 National Team` — red + green star + white trim, Grand Stade Hassan II, headline `LE MAROC 2026`\n- **Mexico**: `Mexico 2026 National Team` (host nation) — green + white + red, Estadio Azteca, headline `MÉXICO 2026`\n- **USA**: `USA 2026 World Cup Squad` (host nation) — navy + red stripes + white star, SoFi Stadium, headline `USA 2026`\n- **Japan**: `Japan 2026 National Team` — Samurai-blue kit + red rising-sun accent + white, Saitama Stadium, headline `日本 2026`\n\nThe prompt structure stays identical — kit description, stadium backdrop, color palette, headline text, vertical 3:4 format. Permute the team name and the palette; everything else carries over from the template's base prompt.\n\nIf you ship a poster you like, the [/topics/character](/topics/character) and [/topics/sports](/topics/sports) hubs are where similar templates surface — character battles, movie group posters, fan rosters, all running on the same Curify pipeline."
+      "conclusionContent": "The two prompts above generalize. Same template, swap the team name, get the kit colors and palette right:\n\n- **France**: `France 2026 National Team` — navy blue + white + red, Stade de France, headline `FRANCE 2026`\n- **Germany**: `Germany 2026 National Team` — white kit + black accents + red/gold flag, Allianz Arena, headline `DEUTSCHLAND 2026`\n- **Spain**: `Spain 2026 National Team` — red + saffron-yellow + navy, Santiago Bernabéu, headline `ESPAÑA 2026`\n- **England**: `England 2026 World Cup Squad` — white + St George's red + navy, Wembley, headline `ENGLAND 2026`\n- **Portugal**: `Portugal 2026 National Team` — dark red + green collar + gold accent, Estádio José Alvalade, headline `PORTUGAL 2026`\n- **Morocco**: `Morocco 2026 National Team` — red + green star + white trim, Grand Stade Hassan II, headline `LE MAROC 2026`\n- **Mexico**: `Mexico 2026 National Team` (host nation) — green + white + red, Estadio Azteca, headline `MÉXICO 2026`\n- **USA**: `USA 2026 World Cup Squad` (host nation) — navy + red stripes + white star, SoFi Stadium, headline `USA 2026`\n- **Japan**: `Japan 2026 National Team` — Samurai-blue kit + red rising-sun accent + white, Saitama Stadium, headline `日本 2026`\n\nThe prompt structure stays identical — kit description, stadium backdrop, color palette, headline text, vertical 3:4 format. Permute the team name and the palette; everything else carries over from the template's base prompt.\n\nIf you ship a poster you like, the [/topics/character](/topics/character) and [/topics/sports](/topics/sports) hubs are where similar templates surface — character battles, movie group posters, fan rosters, all running on the same Curify pipeline.",
+      "heroImage": "/images/nano_insp/template-sports-battle-Messi-vs-Ronaldo.jpg",
+      "heroImageAlt": "Messi vs Ronaldo cinematic soccer rivalry poster — Sports Battle template preview",
+      "heroCtaLabel": "TRY THE TEMPLATE",
+      "heroCtaText": "Generate your own Messi vs Ronaldo (or any soccer rivalry) cinematic poster",
+      "heroCtaHref": "/nano-template/sports-battle",
+      "heroCtaButton": "Generate →"
     },
     "onePersonCompaniesVs100PersonTeams": {
       "title": "One-Person Companies Are Crushing It. Your 100-Person Team Is a Liability.",
@@ -4827,6 +4876,99 @@
       "curifyContent": "We consult with SMB leaders who don't want to be the next cautionary tale. We don't guess.\n\n1. **Map your current human-to-human friction points** — meetings, handoffs, requirements loops. Where does ambiguity die in a slide deck? Where does execution stall in a Jira ticket?\n2. **Identify which 20% of roles are vulnerable** — not to fire, but to redesign. Which jobs are mostly orchestration that an agentic workflow can absorb?\n3. **Build a 90-day AI + org pilot** that keeps morale high and speed measurable. Pick one workflow, instrument the before/after, ship the agentic version, prove the lift.\n\n> You don't need to become a solo founder. You need to stop running a 100-person org like it's 2019.",
       "conclusionTitle": "Restructure, or Watch a Competitor + AI Do It for You",
       "conclusionContent": "The choice for SMB leadership is binary. Restructure to empower your top 10% to operate like a fleet of one-person powerhouses, or watch a single competitor with AI absolutely demolish your 100-person team.\n\nThose traditional roles you think are assets today? They'll be balance-sheet liabilities by next year. The window to redesign with morale intact closes faster than most leaders realize — by the time the headcount-vs-output ratio is visible to investors, the redesign is no longer a choice."
+    },
+    "portugalSoccerPosterPrompts": {
+      "title": "Portugal AI Soccer Poster Prompts: 2026 World Cup Templates",
+      "metaDescription": "Generate cinematic Portugal soccer posters with two Nano Banana templates — Sports Battle for Ronaldo rivalry shots, Group Poster for the Seleção squad. Copy the prompts.",
+      "seoKeywords": "portugal prompt, portugal ai prompt, ronaldo portugal prompt, portugal poster prompt, portugal world cup prompt, seleção 2026 prompt, ai soccer poster portugal, sports battle ronaldo, nano banana portugal, cinematic portugal poster, fifa world cup 2026 ai",
+      "date": "May 30, 2026",
+      "readTime": "9 min read",
+      "intro": "Portugal goes into the 2026 World Cup with Cristiano Ronaldo's last tournament arc still in play, the Bernardo Silva–Bruno Fernandes midfield carrying the load, and a generation of forwards (Rafael Leão, João Félix, Pedro Neto, Diogo Jota) finally clicking together. The search queries already reflect it — \"portugal ai prompt\", \"ronaldo portugal prompt\", \"portugal world cup prompt\". Two Curify Nano Banana templates handle the work end-to-end: Sports Battle for the rivalry posters (Ronaldo vs Messi, Ronaldo vs Mbappé, Bernardo Silva vs Bellingham), and Celebrity Group Poster for the full Seleção lineup. This guide ships you a cinematic Portugal poster in under 60 seconds, with the prompt text, palette, and parameter shape.",
+      "whatIsTitle": "What Makes a Portugal Poster Look Cinematic",
+      "whatIsContent": "Three ingredients separate a generic AI render from a poster that looks like Nike could have shipped it for the 2026 campaign.\n\n**Dynamic action over static pose.** A standing-still player in a Portugal jersey reads as a stock photo. A player mid-bicycle-kick, Ronaldo's signature *SIUUU* celebration knee-slide, Bernardo Silva threading a pass with arms wide — these read as posters. Action verbs in the prompt do most of the work — *mid-strike*, *celebration leap*, *low-angle hero shot*, *aerial overhead kick*.\n\n**Portuguese palette.** Portugal = dark red (Vinho do Porto) + Atlantic green + warm gold + a hint of azulejo blue for heritage depth. The current Nike kit uses a `#C8102E`-adjacent red with green trim on the collar and sleeves. Don't fall back on bright fire-engine red — the Portuguese national palette is darker, closer to wine, with the green as accent not headline. Get the palette right and the poster reads as Portugal's poster, not a generic kit.\n\n**Stadium and Lisbon-light backdrop.** A blurred stadium with crowd lights behind the player anchors the image as a match-day moment. Specific Portuguese stadiums work even better — *Estádio José Alvalade golden hour*, *Estádio da Luz under floodlights*, *Estádio do Dragão twilight*. The lighting cue carries half the cinematic weight; the Lisbon golden hour has its own warmth that Brazilian or English light doesn't.",
+      "modelsTitle": "Two Curify Templates That Handle the Work",
+      "modelsContent": "**Sports Battle** ([/nano-template/sports-battle](/nano-template/sports-battle)) renders the 1v1 rivalry posters; **Celebrity Group Poster** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)) renders full team lineups. Both run on Nano Banana Pro. The [Brazil-Argentina post](/blog/brazil-argentina-soccer-poster-prompts#modelsTitle) covers each template's full parameter shape and base styling — refer there for the deep dive.\n\nPortugal-specific shape: the Sports Battle template handles Ronaldo solo vs any rival (Messi, Mbappé, Bellingham, Modrić, Yamal). The Group Poster template handles the Seleção lineup (`Portugal 2026 National Team`, `Seleção das Quinas 2026`, or narrow cuts like the forward line).",
+      "howTitle": "How to Ship a Portugal Poster in 60 Seconds",
+      "step1Title": "Method 1: 1v1 Rivalry — Sports Battle Template",
+      "step1Content": "**Best for**: knockout-stage match previews, Ronaldo-anchored fan content, derby posters for the Liga Portugal clubs.\n\nOpen [/nano-template/sports-battle](/nano-template/sports-battle). Two text fields — `player_left` and `player_right`. The highest-search rivalries to start with:\n\n- `Cristiano Ronaldo` vs `Lionel Messi` — the evergreen GOAT debate, highest search volume on the platform\n- `Cristiano Ronaldo` vs `Kylian Mbappé` — generational handoff, Portugal-France rivalry frame\n- `Bernardo Silva` vs `Jude Bellingham` — Portugal-England midfield duel, current-gen\n- `Rafael Leão` vs `Vinícius Júnior` — Portugal-Brazil winger showdown\n- `Bruno Fernandes` vs `Luka Modrić` — playmaker vs playmaker, veteran energy\n\nGenerate. The template renders a comic-book VS poster with both players in their national-team kit, stat panels, identity tags, and the VS graphic in the center. Default output is vertical 3:4 — perfect for Instagram Stories, TikTok, Pinterest.\n\n**Live example** in the gallery: [the Messi vs Ronaldo poster](/nano-template/sports-battle) — same template, same prompt shape, just two name inputs.",
+      "step2Title": "Method 2: Full Seleção — Celebrity Group Poster Template",
+      "step2Content": "**Best for**: tournament-eve squad reveals, viewing-party graphics, Liga Portugal fantasy-league branding, social-media headers for the 2026 World Cup run.\n\nOpen [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster). One text field — `star_movie_group`. For Portugal's 2026 run:\n\n- `Portugal 2026 National Team` — generic ensemble (model picks the iconic figures)\n- `Portugal 2026 World Cup Squad ft. Ronaldo` — Ronaldo-anchored, good for the captain narrative\n- `Portugal 2026 Seleção das Quinas` — uses the Portuguese-language team identity, model anchors on Portuguese cultural cues\n- `Portugal 2026 Forward Line — Leão, Félix, Neto, Jota` — narrow focus on the attacking core\n\nThe template renders multiple iconic figures in a dramatic dynamic composition with cinematic lighting, gradient background, and luxury minimalist title text — the look of an official Nike Seleção poster. Add the year (`2026`) so the model anchors on the current squad instead of historical lineups.",
+      "step3Title": "Portugal 2026 Cinematic Poster Prompt",
+      "step3Content": "Drop this directly into the Celebrity Group Poster template's `star_movie_group` field, or use it as a freeform prompt on Nano Banana Pro / GPT Image 2:\n\n```\nPortugal 2026 World Cup National Team — full squad in iconic dark-red Seleção home kit with green collar trim and gold crest, dynamic group composition with Cristiano Ronaldo, Bernardo Silva, Bruno Fernandes, Rafael Leão, João Félix in heroic mid-stride poses at center. Estádio José Alvalade golden-hour backdrop with crowd lights and Portuguese flag pennants. Cinematic warm color grading — vinho-do-Porto red + Atlantic green + warm gold accent, hint of azulejo blue. Photorealistic, fashion-magazine sharpness, dramatic rim lighting, soft gradient background, luxury minimalist Portuguese-language headline \"PORTUGAL 2026\" in bold gold serif. 4K ultra detailed, no watermarks, vertical 3:4 format.\n```\n\n**Color palette to specify**: `#C8102E` (jersey dark red), `#006847` (kit green), `#FFD700` (gold accent), `#0072CE` (azulejo blue trim), warm Lisbon golden-hour tones. Specify the palette explicitly in the prompt for stronger color consistency across renders.\n\n**What to swap**: change the player roster (the squad shifts each tournament — pre-2026 vs post-Ronaldo lineups read differently), the stadium (Estádio José Alvalade / Estádio da Luz / Estádio do Dragão), and the headline text. Everything else stays.",
+      "step4Title": "Ronaldo-Anchored 1v1 Battle Prompt",
+      "step4Content": "![Cristiano Ronaldo Sports Battle template output — comic-book VS poster with Ronaldo in dark-red Portugal kit on the left](/images/nano_insp/template-sports-battle-Messi-vs-Ronaldo.jpg)\n\n*Ronaldo is the left-side player in this Messi-vs-Ronaldo gallery example. Swap the right-side `player_right` parameter to Mbappé, Bellingham, or any other rival.*\n\n[Open the Sports Battle template →](/nano-template/sports-battle)\n\nIf the Group Poster is too crowded for your use case, the Sports Battle Ronaldo solo-vs-rival shot pulls harder for engagement-driven channels (TikTok, Instagram Reels):\n\n```\nCristiano Ronaldo vs Kylian Mbappé — comic-book VS poster, both players in mid-stride action pose, Ronaldo on left in dark-red Portugal kit with the iconic SIUUU celebration arm-spread, Mbappé on right in navy France kit mid-sprint. Vertical 3:4 format, neon-glow rim lighting, dramatic teal-orange color grade, stat panels at the bottom (goals, age, club). Center VS graphic in metallic gold with lightning-arc effect. Estádio José Alvalade fading into Stade de France backdrop, golden-hour sky split between Lisbon orange and Paris blue. Comic-book line art, halftone shading, dramatic shadow definition. Cinematic poster, 4K detail, no watermarks.\n```\n\n**What to swap**: any other rival on the right — Messi, Bellingham, Haaland, Vinícius Jr. The split-stadium background works for any Portugal-versus-country matchup.",
+      "step5Title": "Settings & Keywords That Move the Cinematic Dial",
+      "step5Content": "Once you've shipped the first poster, these tweaks are where quality compounds across 50 renders.\n\n**Lens / framing**: `85mm portrait lens` (compresses background, hero-fies player), `wide-angle action shot` (stadium scale), `low-angle hero composition` (makes Ronaldo look towering — actually taller than the camera). For team lineups: `cinematic medium-wide shot` with the group filling the frame.\n\n**Lighting**: `Lisbon golden hour` (the specific warm-orange Lisbon afternoon light), `floodlight glare` (night-match drama at Alvalade / Luz / Dragão), `rim lighting` (silhouette pop), `volumetric god rays` (stadium atmosphere through stadium-light haze).\n\n**Color grading vocabulary**: `cinematic teal-orange grade`, `saturated Portuguese-palette grade`, `dark-red wine-tone grade`, `Nike sportswear photography grade`, `Sporting CP archive grade`. These trigger the right reference clusters in the model's training data.\n\n**Jersey detail**: `crisp Portugal crest detail`, `sharp Quinas shield embroidery`, `embroidered Seleção crest`. The Quinas (the five small shields in the Portuguese coat of arms) is the brand anchor — the model tends to render it as a vague gold disc unless you name it.\n\n**Heritage cues**: `Lusitanian navigator-era flag pennants`, `azulejo tile-pattern background panel`, `Age-of-Discovery gold filigree border`. These pull the model toward Portuguese-specific visual culture and away from generic European-football aesthetic. Use sparingly — one heritage cue per poster, or it reads as thematic kitsch.\n\n**Negative cues**: `no blurry faces`, `no extra limbs`, `no warped jersey numbers`, `no Spanish or Brazilian color cues` (the model sometimes drifts toward sky-blue or yellow if you don't suppress).",
+      "toolsTitle": "AI Tools Compared for Portugal Poster Generation",
+      "toolsContent": "For the full 4-model comparison across Nano Banana Pro, GPT Image 2, Midjourney v7, and Stable Diffusion 3.5 — including which lands the dark vinho-do-Porto Portuguese kit color register naturally and which fumbles celebrity likeness — see [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison). Short version for this workflow: **stay on Nano Banana Pro via the Curify templates** — the template enforces the brand-poster aesthetic so you don't prompt-engineer the dark-red wine-tone palette from scratch on every render.",
+      "challengesTitle": "Where AI Portugal Posters Still Fail (and the Fixes)",
+      "challengesContent": "Three failure modes specific to Portugal posters, and the prompt-side mitigation:\n\n**Red drifts too bright.** The model defaults to fire-engine red (`#FF0000`) when you say \"Portugal red\" — too saturated, looks Spanish or Polish. **Fix**: name the color specifically (`dark vinho-do-Porto red`, `wine-tone red`, `#C8102E desaturated`). The Portuguese kit red has more depth and brown undertone than the generic-red default.\n\n**Quinas crest comes out as a gold disc.** The Portuguese coat of arms with the five small shields is intricate; the model abstracts it to a gold blob unless prompted. **Fix**: `crisp Quinas shield detail, five small shields visible in cross pattern, gold filigree`. Even then, expect ~70% accuracy — for client work, composite the real crest in Figma after rendering.\n\n**Face inaccuracy on Ronaldo.** Closed-source models won't render exact Ronaldo likeness (by design, and increasingly enforced). **Fix**: lean into the \"inspired by\" framing — describe playing style, body type (`tall athletic build, defined jawline, slicked dark hair`), the SIUUU celebration pose. Curify's Sports Battle template uses comic-book stylization, which hides the likeness gap by design — the comic art style stylizes the face so the lack of photographic exactness reads as intentional.",
+      "curifyTitle": "Generate Yours — Direct Template Links",
+      "curifyContent": "Skip the prompt-engineering and go directly to the templates with the parameters pre-filled:\n\n**Sports Battle (1v1 rivalry)**: [/nano-template/sports-battle](/nano-template/sports-battle) — supply `player_left` (`Cristiano Ronaldo`) and `player_right` (`Lionel Messi`, `Kylian Mbappé`, `Lamine Yamal`, `Vinícius Júnior`, whoever). The template's base prompt is locked to the comic-book VS poster style; you only supply the names.\n\n**Celebrity Group Poster (Seleção)**: [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — supply `star_movie_group` with `Portugal 2026 National Team` or any of the variants above. The template handles the cinematic lighting, gradient, and luxury serif headline.\n\nFor more sports-themed prompts, the [/topics/character](/topics/character) hub indexes character-driven templates across sports, gaming, film, and entertainment. For the curated Nano Banana directory across every prompt family, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) is the catalog. For the Brazil + Argentina sibling post in this series, see [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts).",
+      "conclusionTitle": "Other Countries — Same Template, Swap the Name",
+      "conclusionContent": "The two Portugal prompts above generalize. Same template, swap the team name and kit-color register:\n\n- **Brazil & Argentina**: yellow + green + blue accent (Brazil), sky-blue + white + gold (Argentina). See [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts).\n- **France**: deep navy + crisp white + French red. See [/blog/france-soccer-poster-prompts](/blog/france-soccer-poster-prompts).\n- **1v1 rivalries across countries** (Messi vs Ronaldo, Mbappé vs Bellingham, Vinícius vs Yamal, Lautaro vs Kane, Pedri vs De Bruyne): see [/blog/ai-1v1-soccer-rivalry-prompts](/blog/ai-1v1-soccer-rivalry-prompts).\n\nFor other tier-1 nations (Spain `red + saffron-yellow + navy`, Germany `white + black + red/gold`, England `white + St George's red`, Morocco `red + green star + white`), the same prompt shape works — supply the country palette and stadium, keep everything else from the template's base prompt.\n\nTournament-eve content velocity: one Ronaldo-anchored 1v1 per Portugal matchday, one Seleção squad poster pre-tournament. Both run on the same two templates."
+    },
+    "ai1v1SoccerRivalryPrompts": {
+      "title": "AI 1v1 Soccer Rivalry Prompts: Messi vs Ronaldo, Mbappé vs Bellingham + More",
+      "metaDescription": "Copy 5 ready-to-ship soccer rivalry prompts for the Sports Battle template — Messi vs Ronaldo, Mbappé vs Bellingham, Vinícius vs Yamal, Lautaro vs Kane, Pedri vs De Bruyne.",
+      "seoKeywords": "messi vs ronaldo prompt, mbappe vs bellingham prompt, vinicius vs yamal prompt, soccer rivalry prompt, 1v1 soccer poster, sports battle template, ai football vs poster, lautaro vs kane prompt, pedri vs de bruyne prompt, nano banana sports battle, world cup rivalry prompt",
+      "date": "May 30, 2026",
+      "readTime": "8 min read",
+      "intro": "Rivalry posters are the highest-engagement format in soccer content. A side-by-side VS poster with two players is what fans share before a derby, what TikTok edits open with, what Pinterest boards collect. And the prompt structure is fixed enough that you only need to supply two names — Curify's Sports Battle template handles the rest. This guide ships five ready-to-go rivalry prompts for the matchups people are actually searching: Messi vs Ronaldo, Mbappé vs Bellingham, Vinícius vs Yamal, Lautaro vs Kane, Pedri vs De Bruyne. Copy the prompt, change two names, ship.",
+      "whatIsTitle": "Why Rivalry Posters Outperform Solo Posters",
+      "whatIsContent": "Three reasons the VS-poster format pulls harder than the solo-shot format on every distribution channel.\n\n**Engagement-by-debate.** A solo poster gets a like. A VS poster gets a comment — fans rank, defend, argue. On TikTok and Instagram Reels, the debate-driver in the caption is what pushes the post past the algorithmic threshold.\n\n**Symmetric composition reads instantly.** The brain processes side-by-side faster than vertically-stacked figures. You can scroll past a VS poster in 0.3 seconds and still register both players, both teams, both color schemes. That's why every esports overlay and boxing fight poster uses this shape — it's the most information-dense layout for two-subject content.\n\n**Same-template economics.** A solo poster wants a different prompt for every player (lighting, pose, background tuned to one figure). A VS poster runs on a single template with two variable slots. Generate 10 rivalry posters in the time it takes to tune one solo shot.",
+      "modelsTitle": "Curify's Sports Battle Template — How It Works",
+      "modelsContent": "**Sports Battle** ([/nano-template/sports-battle](/nano-template/sports-battle)) is the template. Two text fields — `player_left` and `player_right`. The template's base prompt already specifies kit detail, dynamic mid-stride poses, neon-glow rim lighting, dramatic teal-orange color grade, and comic-book line art with halftone shading. **You only supply two names.**\n\nOutput is a vertical 3:4 comic-book-style VS poster: two full-body portraits facing inward, center VS graphic with metallic gold + lightning-arc effect, stat panels (goals, age, club), identity tags, team-themed split-color background. Switch to 1:1 or 16:9 by changing the aspect ratio in the template settings.\n\nThe template ships with examples across sports (Federer vs Nadal, Ali vs Tyson, Hamilton vs Schumacher, NBA rivalries). Open any of them, swap the names, ship a new poster in 60 seconds. For the country-specific posters (Brazil 2026 squad / Portugal Seleção / Les Bleus), see the country sibling posts cross-linked at the end.",
+      "howTitle": "Five Ready-to-Ship Soccer Rivalry Prompts",
+      "step1Title": "1. Messi vs Ronaldo — The Evergreen GOAT Debate",
+      "step1Content": "**Why it ranks**: highest-volume soccer rivalry search on the platform. Searched continuously, peaks during every Ballon d'Or and every Argentina-Portugal hypothetical matchup talk.\n\nGallery anchor: [/nano-template/sports-battle](/nano-template/sports-battle) ships Messi-vs-Ronaldo as the default example — open it to see the comic-book VS poster format in action before you generate your own.\n\n![Messi vs Ronaldo — Sports Battle template output, comic-book VS poster with both players in national-team kits, center VS graphic, stat panels, split-stadium background](/images/nano_insp/template-sports-battle-Messi-vs-Ronaldo.jpg)\n\n[Open the Sports Battle template →](/nano-template/sports-battle)\n\n**Sports Battle inputs**:\n\n- `player_left`: `Lionel Messi`\n- `player_right`: `Cristiano Ronaldo`\n\n**Or as freeform prompt** (drop into Nano Banana Pro / GPT Image 2 directly):\n\n```\nLionel Messi vs Cristiano Ronaldo — comic-book VS poster, vertical 3:4 format. Messi on left in sky-blue Argentina #10 kit, mid-stride with ball at left foot, gold leg-up celebration arm. Ronaldo on right in dark-red Portugal #7 kit, mid-stride with arms spread in the SIUUU celebration. Center VS graphic in metallic gold with lightning-arc effect. Stat panels at bottom (career goals, club, international caps). Split-stadium background — Estadio Monumental fading into Estádio José Alvalade, golden-hour sky split between Buenos Aires gold and Lisbon orange. Comic-book line art with halftone shading, neon-glow rim lighting, dramatic teal-orange color grade. 4K detail, no watermarks.\n```\n\n**Variations to copy**: change `Argentina` → `Inter Miami` for a club-themed shot; change the stadium pair to `Camp Nou fading into Old Trafford` for a Barcelona-United career retrospective.",
+      "step2Title": "2. Mbappé vs Bellingham — Current-Gen French-English",
+      "step2Content": "**Why it ranks**: the post-Messi/Ronaldo torch-carriers. The Real Madrid teammate dynamic adds another layer — they play together at club level, against each other at country level. Strong search volume on \"mbappe vs bellingham prompt\" specifically.\n\n![Mbappé vs Bellingham — Sports Battle template output, comic-book VS poster with both players in national-team kits, center VS graphic, stat panels, split-stadium background](/images/nano_insp/template-sports-battle-mbappe-vs-bellingham.jpg)\n\n[Open the Sports Battle template →](/nano-template/sports-battle)\n\n**Sports Battle inputs**:\n\n- `player_left`: `Kylian Mbappé`\n- `player_right`: `Jude Bellingham`\n\n**Or as freeform prompt**:\n\n```\nKylian Mbappé vs Jude Bellingham — comic-book VS poster, vertical 3:4. Mbappé on left in navy France #10 kit, mid-sprint pose with ball at right foot, the Mbappé-arms-crossed celebration ready to trigger. Bellingham on right in white England #10 kit, mid-leap with arms wide in the spread-eagle celebration. Center VS graphic in metallic gold with lightning-arc. Stat panels (Champions League goals, Real Madrid stats since both wear white at club level, age comparison). Split-stadium background — Stade de France fading into Wembley, golden-hour sky split between Paris blue and London twilight. Comic-book line art, halftone shading, neon-glow rim lighting, teal-orange color grade. 4K detail, no watermarks.\n```\n\n**Variations**: swap `France` → `Real Madrid` and `England` → `Real Madrid` for an internal-team comparison; or pair Mbappé with Vinícius for a Real Madrid attacking-trio shot.",
+      "step3Title": "3. Vinícius vs Yamal — Brazil-Spain Winger Duel",
+      "step3Content": "**Why it ranks**: emerging-star vs emerging-star, with strong search momentum since the 2024 Copa América. Spain and Brazil are both World Cup favorites; both wingers are their countries' primary attacking threat.\n\n![Vinícius vs Yamal — Sports Battle template output, comic-book VS poster with both players in national-team kits, center VS graphic, stat panels, split-stadium background](/images/nano_insp/template-sports-battle-vinicius-vs-yamal.jpg)\n\n[Open the Sports Battle template →](/nano-template/sports-battle)\n\n**Sports Battle inputs**:\n\n- `player_left`: `Vinícius Júnior`\n- `player_right`: `Lamine Yamal`\n\n**Or as freeform prompt**:\n\n```\nVinícius Júnior vs Lamine Yamal — comic-book VS poster, vertical 3:4. Vinícius on left in yellow Brazil #7 kit, mid-dribble with ball at left foot, the trademark step-over leg-cross visible. Yamal on right in red Spain #19 kit, mid-cut-inside pose with ball at right foot, arm extended for the cut. Both players in heroic low-angle composition. Center VS graphic in metallic gold with lightning-arc. Stat panels (assists, dribbles completed, age comparison — Yamal is the youngest). Split-stadium background — Maracanã fading into Santiago Bernabéu, golden-hour sky split between Rio jungle-green and Madrid amber. Comic-book line art, halftone shading, neon-glow rim lighting, teal-orange color grade. 4K detail, no watermarks.\n```\n\n**Variations**: same template with `Real Madrid` → `Barcelona` for the El Clásico version (Vinícius RM vs Yamal Barça); or swap Yamal for `Nico Williams` for the other Spain winger shot.",
+      "step4Title": "4. Lautaro vs Kane — Argentina-England Number 9 Duel",
+      "step4Content": "**Why it ranks**: the classic #9 vs #9 frame for World Cup knockout-stage previews. Both players are their country's primary goal threat; both have winning pedigree (Lautaro 2022 World Cup + Copa América, Kane Bayern Munich titles).\n\n![Lautaro vs Kane — Sports Battle template output, comic-book VS poster with both players in national-team kits, center VS graphic, stat panels, split-stadium background](/images/nano_insp/template-sports-battle-lautaro-vs-kane.jpg)\n\n[Open the Sports Battle template →](/nano-template/sports-battle)\n\n**Sports Battle inputs**:\n\n- `player_left`: `Lautaro Martínez`\n- `player_right`: `Harry Kane`\n\n**Or as freeform prompt**:\n\n```\nLautaro Martínez vs Harry Kane — comic-book VS poster, vertical 3:4. Lautaro on left in sky-blue and white Argentina #10 kit (or #22 for the Inter Milan tribute), mid-strike pose with right foot connecting on a shot. Kane on right in white England #9 kit, mid-header pose with full-body extension. Both in heroic low-angle composition. Center VS graphic in metallic gold with lightning-arc. Stat panels (international goals, club golden-boot trophies, World Cup goals). Split-stadium background — Estadio Monumental fading into Wembley, golden-hour sky split between Buenos Aires gold and London twilight. Comic-book line art, halftone shading, neon-glow rim lighting, teal-orange color grade. 4K detail, no watermarks.\n```\n\n**Variations**: swap `Kane` → `Erling Haaland` for the cleaner Norway-Argentina #9 duel; or pair `Kane` with `Mbappé` for the France-England #9 frame (Kane on left in this case).",
+      "step5Title": "5. Pedri vs De Bruyne — Spain-Belgium Midfield Maestros",
+      "step5Content": "**Why it ranks**: midfield playmakers are the connoisseur's rivalry — searched by readers who care about how the game is actually built, not just who scores. Both are the metronomes of their national teams; both attract \"who's the better playmaker\" debate.\n\n![Pedri vs De Bruyne — Sports Battle template output, comic-book VS poster with both players in national-team kits, center VS graphic, stat panels, split-stadium background](/images/nano_insp/template-sports-battle-pedri-vs-debruyne.jpg)\n\n[Open the Sports Battle template →](/nano-template/sports-battle)\n\n**Sports Battle inputs**:\n\n- `player_left`: `Pedri`\n- `player_right`: `Kevin De Bruyne`\n\n**Or as freeform prompt**:\n\n```\nPedri vs Kevin De Bruyne — comic-book VS poster, vertical 3:4. Pedri on left in red Spain #8 kit, mid-pass pose with ball at left foot, arm pointing forward to direct a teammate. De Bruyne on right in red Belgium #7 kit, mid-cross pose with right foot connecting on a whipped ball, the right arm trailing in classic KDB form. Both in heroic medium-shot composition (not low-angle — playmakers don't need the towering frame). Center VS graphic in metallic gold with lightning-arc. Stat panels (assists per game, key passes, Champions League knockout assists). Split-stadium background — Santiago Bernabéu fading into Etihad Stadium, golden-hour sky split between Madrid amber and Manchester grey-blue. Comic-book line art, halftone shading, neon-glow rim lighting, teal-orange color grade. 4K detail, no watermarks.\n```\n\n**Variations**: swap `De Bruyne` → `Jude Bellingham` for the Spain-England midfield frame (Bellingham wears #10 for England); or pair `Pedri` with `Frenkie de Jong` for the Spain-Netherlands Barça-trained playmakers shot.",
+      "toolsTitle": "AI Tools Compared for Rivalry Posters",
+      "toolsContent": "Curify's Sports Battle template runs on Nano Banana Pro. For the full 4-model comparison across Nano Banana Pro, GPT Image 2, Midjourney v7, and Stable Diffusion 3.5 — including which handles the two-figure symmetric VS framing best and which fumbles celebrity likeness — see [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison). Short version for this workflow: **stay on Nano Banana Pro via the Sports Battle template** — the template enforces the VS layout, kit detail, and color grade so you don't re-prompt from scratch every render.",
+      "challengesTitle": "Where AI Rivalry Posters Still Fail (and the Fixes)",
+      "challengesContent": "Four failure modes specific to the VS-poster format, with the prompt-side mitigation:\n\n**Symmetry collapse — one figure dominates.** The model renders Player A in heroic detail and Player B as a flat sketch. **Fix**: specify both figures at the same level of detail explicitly — `both players rendered with equal heroic mid-stride pose, equal kit detail, equal rim-lighting intensity`. Symmetry is what the VS format needs and the model defaults to asymmetry.\n\n**Kit color drift.** France defaults to plain navy when you want the lighter Les Bleus blue; Brazil drifts to fluorescent yellow when you want the muted Verdeamarela. **Fix**: name the specific color (`Les Bleus navy with red trim, gold accents`, `Verdeamarela muted yellow with jungle-green collar`) rather than the country.\n\n**VS graphic comes out as a generic letter pair.** The model sometimes renders \"VS\" as plain block letters instead of the metallic-gold lightning-arc graphic. **Fix**: specify `metallic-gold VS graphic with electric-arc lightning effect at center, comic-book burst pattern behind the letters`. The lightning arc is the signature visual element.\n\n**Face inaccuracy on both players simultaneously.** Closed-source models won't render exact celebrity likeness — and on a two-player poster the inaccuracy compounds. **Fix**: lean into comic-book stylization (which Sports Battle does by default) — the line-art abstraction hides the likeness gap by reading as deliberate art style rather than failed photorealism.",
+      "curifyTitle": "Generate Yours — Direct Template Link",
+      "curifyContent": "Skip the prompt-engineering and go directly to the template with the parameters ready:\n\n**Sports Battle**: [/nano-template/sports-battle](/nano-template/sports-battle) — supply `player_left` and `player_right` from any of the five rivalries above, or roll your own pairing. The template's base prompt is locked to the comic-book VS poster style.\n\nExisting gallery examples to seed your own:\n\n- [Messi vs Ronaldo](/nano-template/sports-battle) — soccer GOAT rivalry\n- [Federer vs Nadal](/nano-template/sports-battle) — tennis rivalry, same template\n- [Ali vs Tyson](/nano-template/sports-battle) — boxing across eras\n- [Hamilton vs Schumacher](/nano-template/sports-battle) — F1 across eras\n- [Kobe vs Ray Allen](/nano-template/sports-battle), [LeBron vs Karl Malone](/nano-template/sports-battle), [Magic vs Stockton](/nano-template/sports-battle) — NBA rivalries\n\nSame template, different sport. The VS shape is the same.\n\nFor more sports-themed prompts, the [/topics/character](/topics/character) hub indexes character-driven templates across sports, gaming, film, and entertainment. For the curated Nano Banana directory across every prompt family, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) is the catalog. For the country-specific siblings of this post, see [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts) and [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts).",
+      "conclusionTitle": "Other Rivalries — Same Template, Two Different Names",
+      "conclusionContent": "The five prompts above cover the highest-search-volume current rivalries. The template generalizes — name any two players, get the VS poster. Patterns to permute:\n\n**By position**:\n- Goalkeepers: `Emiliano Martínez vs Thibaut Courtois`, `Alisson vs Ederson`\n- Centre-backs: `Rúben Dias vs Antonio Rüdiger`, `Van Dijk vs Saliba`\n- Number 8s: `Bellingham vs Pedri`, `Tchouaméni vs Camavinga`\n- Wingers: `Saka vs Bukayo`, `Nico Williams vs Rafael Leão`\n\n**By club rivalry**:\n- Real Madrid vs Barcelona current: `Vinícius vs Yamal`, `Bellingham vs Pedri`\n- Premier League #9 race: `Haaland vs Salah`, `Isak vs Watkins`\n- Bundesliga top scorers: `Kane vs Guirassy`\n\n**By generational handoff**:\n- `Messi vs Yamal` (Argentina-Spain across generations)\n- `Ronaldo vs Mbappé` (Portugal-France gen handoff)\n- `Modrić vs Pedri` (Croatian-Spanish playmakers across eras)\n\nThe prompt structure stays identical — `player_left`, `player_right`, the Sports Battle template handles the rest. Permute names, get posters. For tournament-eve content during the 2026 World Cup run, the rivalry post is the highest-velocity format — generate one per matchday.\n\nIf you ship a poster that lands, the [/topics/character](/topics/character) and [/topics/sports](/topics/sports) hubs surface similar templates — celebrity group posters, single-star MBTI cards, character battles across other domains, all running on the same Curify pipeline."
+    },
+    "franceSoccerPosterPrompts": {
+      "title": "France AI Soccer Poster Prompts: 2026 World Cup Templates",
+      "metaDescription": "Generate cinematic France soccer posters with two Nano Banana templates — Sports Battle for Mbappé rivalries, Group Poster for Les Bleus. Copy the prompts.",
+      "seoKeywords": "france ai prompt, mbappe prompt, france soccer poster prompt, les bleus 2026 prompt, mbappe vs bellingham prompt, france world cup poster, ai france poster, sports battle mbappe, nano banana france, cinematic france poster, fifa world cup 2026 ai",
+      "date": "May 30, 2026",
+      "readTime": "9 min read",
+      "intro": "France goes into the 2026 World Cup as the defending finalist, with Kylian Mbappé in his Real Madrid prime, Jude Bellingham's club teammate energy mirroring the country rivalry, and a midfield rebuild (Tchouaméni, Camavinga, Koné) that's finally clicking. The Les Bleus brand has a specific cinematic register — navy + white + red, Stade de France floodlights, the art-deco poster heritage from the 1998 home World Cup. Two Curify Nano Banana templates ship the work end-to-end: Sports Battle for Mbappé rivalries (vs Bellingham, vs Vinícius, vs Haaland), and Celebrity Group Poster for the full Les Bleus squad. This guide ships you a cinematic France poster in under 60 seconds, with the prompt text, palette, and parameter shape.",
+      "whatIsTitle": "What Makes a France Poster Look Cinematic",
+      "whatIsContent": "Three ingredients separate a generic French render from a poster with the Les Bleus brand register.\n\n**Dynamic action with French flair.** A standing-still Mbappé reads as a stock photo. Mbappé mid-sprint, arms crossed in the celebration, Bellingham mid-leap, Tchouaméni shoulder-charging into a tackle — these read as posters. Action verbs in the prompt do most of the work — *mid-sprint*, *arms-crossed celebration*, *shoulder-charge*, *aerial header*.\n\n**Bleu-blanc-rouge done right.** France = navy blue (not bright blue) + crisp white + a saturated red accent. The current Nike kit uses a deep navy with red trim on the collar and red+white tipping on the sleeves. Bright royal-blue reads as Italy or Argentina, not France. Get the palette right and the poster reads as Les Bleus, not a generic European kit.\n\n**French cinematic heritage as backdrop.** Three reference registers work — the art-deco poster aesthetic from the 1998 home World Cup (clean geometric type, muted poster colors), the *nouvelle vague* black-and-white-with-color-accent style, and the Stade de France floodlight-pierce-the-fog atmosphere of a knockout-stage night match. Specify one register per poster; mixing them produces incoherent output.",
+      "modelsTitle": "Two Curify Templates That Handle the Work",
+      "modelsContent": "**Sports Battle** ([/nano-template/sports-battle](/nano-template/sports-battle)) renders the 1v1 rivalry posters; **Celebrity Group Poster** ([/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)) renders full team lineups. Both run on Nano Banana Pro. The [Brazil-Argentina post](/blog/brazil-argentina-soccer-poster-prompts#modelsTitle) covers each template's full parameter shape and base styling — refer there for the deep dive.\n\nFrance-specific shape: the Sports Battle template handles Mbappé solo vs any rival (Bellingham, Vinícius, Haaland, Ronaldo). The Group Poster template handles the Les Bleus lineup (`France 2026 National Team`, `Les Bleus 2026`, or the Real Madrid Connection variant featuring Mbappé + Camavinga + Tchouaméni).",
+      "howTitle": "How to Ship a France Poster in 60 Seconds",
+      "step1Title": "Method 1: Mbappé-Anchored 1v1 — Sports Battle Template",
+      "step1Content": "**Best for**: tournament-eve match-preview content, Real Madrid internal-teammate rivalry posters, derby content during the Ligue 1 season.\n\nOpen [/nano-template/sports-battle](/nano-template/sports-battle). Two text fields — `player_left` and `player_right`. The highest-search Mbappé rivalries:\n\n- `Kylian Mbappé` vs `Jude Bellingham` — France vs England, Real Madrid teammates at club level\n- `Kylian Mbappé` vs `Vinícius Júnior` — France vs Brazil, Real Madrid attacking trio (Vinícius, Mbappé, Bellingham)\n- `Kylian Mbappé` vs `Erling Haaland` — France vs Norway, the post-Messi/Ronaldo torch debate\n- `Kylian Mbappé` vs `Cristiano Ronaldo` — France vs Portugal, generational handoff frame\n- `Aurélien Tchouaméni` vs `Jude Bellingham` — France vs England midfield, also Real Madrid teammate clash\n\nGenerate. The template renders a comic-book VS poster with both players in their national-team kit, stat panels, identity tags, and the VS graphic in the center. Default 3:4 — Instagram Stories, TikTok, Pinterest ready.\n\n**Live example** in the gallery: [the Mbappé vs Bellingham poster](/nano-template/sports-battle) — same template, same prompt shape, just two name inputs.",
+      "step2Title": "Method 2: Les Bleus Squad — Celebrity Group Poster Template",
+      "step2Content": "**Best for**: tournament-eve squad reveals, viewing-party graphics for the 2026 run, Coupe du Monde fan content, social-media headers.\n\nOpen [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster). One text field — `star_movie_group`. For Les Bleus 2026:\n\n- `France 2026 National Team` — generic ensemble (model picks iconic figures)\n- `France 2026 World Cup Squad ft. Mbappé` — Mbappé-anchored, captain narrative\n- `Les Bleus 2026` — French-language identity, model anchors on French cultural cues\n- `France 2026 Forward Trio — Mbappé, Coman, Olise` — narrow focus on the attacking core\n- `France 2026 Real Madrid Connection — Mbappé, Camavinga, Tchouaméni` — Real Madrid teammates in Les Bleus kit, a content angle for La Liga audiences\n\nThe template renders multiple iconic figures in a dramatic composition with cinematic lighting, gradient background, and luxury minimalist title text — the look of an official Nike Les Bleus poster. Add `2026` so the model anchors on the current squad.",
+      "step3Title": "France 2026 Cinematic Poster Prompt",
+      "step3Content": "Drop this into the Celebrity Group Poster template's `star_movie_group` field, or use as freeform on Nano Banana Pro / GPT Image 2:\n\n```\nFrance 2026 World Cup National Team — full squad in iconic deep-navy Les Bleus home kit with red collar trim and gold crest, dynamic group composition with Kylian Mbappé, Aurélien Tchouaméni, Eduardo Camavinga, Manu Koné, Bradley Barcola in heroic mid-stride action poses at center. Stade de France golden-hour backdrop with crowd lights and French tricolore pennants. Cinematic color grading — deep navy + crisp white + saturated French red accent, hint of art-deco gold. Photorealistic, fashion-magazine sharpness, dramatic rim lighting, soft gradient background, luxury minimalist French-language headline \"FRANCE 2026\" in bold gold serif. 4K ultra detailed, no watermarks, vertical 3:4 format.\n```\n\n**Color palette to specify**: `#002654` (Les Bleus deep navy), `#FFFFFF` (crisp white), `#ED2939` (French red), `#D4AF37` (gold accent), warm Stade de France golden-hour tones.\n\n**What to swap**: player roster (the Les Bleus squad shifts each tournament — pre-2026 vs post-Mbappé lineups will read differently); stadium (Stade de France for the home register, or Parc des Princes for a Paris-club tribute, or Vélodrome for the Marseille register); headline text.",
+      "step4Title": "Mbappé vs Bellingham 1v1 Battle Prompt",
+      "step4Content": "![Mbappé vs Bellingham — Sports Battle template output, comic-book VS poster with both players in their national kits, split-stadium background](/images/nano_insp/template-sports-battle-mbappe-vs-bellingham.jpg)\n\n[Open the Sports Battle template →](/nano-template/sports-battle)\n\nIf the group poster is too crowded, the Mbappé solo-vs-rival shot is the highest-engagement format for France content (TikTok, Instagram Reels):\n\n```\nKylian Mbappé vs Jude Bellingham — comic-book VS poster, vertical 3:4, both players in mid-action pose. Mbappé on left in deep-navy France #10 kit with red trim, mid-sprint with ball at right foot, the trademark Mbappé-arms-crossed celebration ready to trigger. Bellingham on right in white England #10 kit with St George's red cross, mid-leap with arms wide in the spread-eagle celebration. Both in heroic low-angle composition. Center VS graphic in metallic gold with electric-arc lightning effect. Stat panels at bottom (Champions League goals, Real Madrid stats since both wear white at club level, age — Bellingham 4 years younger). Split-stadium background — Stade de France fading into Wembley, golden-hour sky split between Paris blue and London twilight. Comic-book line art, halftone shading, neon-glow rim lighting, dramatic teal-orange color grade. 4K detail, no watermarks.\n```\n\n**What to swap**: any other rival on the right — Vinícius Jr (Brazil-France winger duel), Haaland (Norway), Ronaldo (gen handoff). The split-stadium background works for any France-vs-country matchup.",
+      "step5Title": "Settings & Keywords That Move the Cinematic Dial",
+      "step5Content": "Once you've shipped the first poster, these tweaks compound across 50 renders.\n\n**Lens / framing**: `85mm portrait lens` (compresses background, hero-fies Mbappé), `wide-angle action shot` (stadium scale), `low-angle hero composition` (towering figure). For team lineups: `cinematic medium-wide shot` with the group filling the frame.\n\n**Lighting**: `Stade de France floodlight glare` (the specific night-match drama register), `Paris twilight` (warm-blue evening light), `rim lighting` (silhouette pop), `volumetric god rays` (stadium atmosphere through floodlight haze).\n\n**Color grading vocabulary**: `cinematic teal-orange grade`, `saturated Les Bleus palette grade`, `deep-navy with red accent`, `Nike sportswear photography grade`, `1998 France World Cup art-deco grade` (the muted-color poster register from the home tournament).\n\n**French cinematic registers**: `nouvelle vague black-and-white with color accent` (single bold red or blue on monochrome), `art-deco poster typography` (geometric serif headlines, muted palette), `Marais golden hour` (the specific Paris-amber light register). Use one register per poster.\n\n**Jersey detail**: `crisp coq Gaulois crest detail`, `embroidered FFF logo`, `Nike swoosh on chest`. The coq Gaulois (rooster) crest is intricate; the model abstracts it to a vague gold mark unless you name it.\n\n**Negative cues**: `no bright royal-blue (use deep navy)`, `no Italy color cues (the deep-blue overlap)`, `no blurry faces`, `no warped jersey numbers`.",
+      "toolsTitle": "AI Tools Compared for France Poster Generation",
+      "toolsContent": "For the full 4-model comparison across Nano Banana Pro, GPT Image 2, Midjourney v7, and Stable Diffusion 3.5 — including which lands the deep navy Les Bleus kit color register naturally and which fumbles celebrity likeness — see [/blog/image-generation-model-comparison](/blog/image-generation-model-comparison). Short version for this workflow: **stay on Nano Banana Pro via the Curify templates** — the template enforces the brand-poster aesthetic so you don't prompt-engineer the bleu-blanc-rouge palette from scratch on every render.",
+      "challengesTitle": "Where AI France Posters Still Fail (and the Fixes)",
+      "challengesContent": "Three failure modes specific to France posters, with the prompt-side mitigation:\n\n**Navy drifts to bright blue.** The model defaults to royal blue or fluorescent blue when you say \"France blue\" — too saturated, looks Italian or Argentine. **Fix**: name the color specifically (`deep navy Les Bleus blue, #002654, muted with brown undertone`). France navy has more depth than the generic-blue default.\n\n**Coq Gaulois crest comes out as a gold blob.** The Gallic rooster crest with the FFF marks is detailed; the model abstracts it. **Fix**: `crisp coq Gaulois rooster crest detail, golden cockerel in red shield, embroidered FFF lettering`. Even then expect ~70% accuracy — for client work, composite the real crest in Figma.\n\n**Mbappé face inaccuracy.** Closed-source models won't render exact Mbappé likeness. **Fix**: lean into the \"inspired by\" framing — describe playing style, body type (`young athletic build, high cheekbones, short crew-cut hair, signature arms-crossed celebration`). Sports Battle's comic-book stylization hides the likeness gap by design.",
+      "curifyTitle": "Generate Yours — Direct Template Links",
+      "curifyContent": "Skip the prompt-engineering and go directly to the templates:\n\n**Sports Battle (Mbappé 1v1)**: [/nano-template/sports-battle](/nano-template/sports-battle) — supply `player_left` (`Kylian Mbappé`) and `player_right` (`Jude Bellingham`, `Vinícius Júnior`, `Erling Haaland`, whoever). Template handles the comic-book VS poster style.\n\n**Celebrity Group Poster (Les Bleus)**: [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — supply `star_movie_group` with `France 2026 National Team` or any variant above. Template handles the cinematic lighting, gradient, luxury serif headline.\n\nFor more sports-themed prompts, the [/topics/character](/topics/character) hub indexes character-driven templates across sports, gaming, film, and entertainment. For the curated Nano Banana directory, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) is the catalog. For sibling country posts in this series: [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts) and [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts). For the 1v1 rivalry-specific guide: [/blog/ai-1v1-soccer-rivalry-prompts](/blog/ai-1v1-soccer-rivalry-prompts).",
+      "conclusionTitle": "Other Countries — Same Template, Swap the Name",
+      "conclusionContent": "The two France prompts above generalize. Same template, swap the team name and kit-color register:\n\n- **Brazil & Argentina**: yellow + green + blue (Brazil), sky-blue + white + gold (Argentina). See [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts).\n- **Portugal**: dark vinho-do-Porto red + Atlantic green + gold accent. See [/blog/portugal-soccer-poster-prompts](/blog/portugal-soccer-poster-prompts).\n- **1v1 rivalries across countries** (Messi vs Ronaldo, Mbappé vs Bellingham, Vinícius vs Yamal, Lautaro vs Kane, Pedri vs De Bruyne): see [/blog/ai-1v1-soccer-rivalry-prompts](/blog/ai-1v1-soccer-rivalry-prompts).\n\nFor other tier-1 nations (Spain `red + saffron-yellow + navy`, Germany `white + black + red/gold`, England `white + St George's red`, Morocco `red + green star + white`), the same prompt shape works — supply the country palette and stadium.\n\nTournament-eve content velocity: one Mbappé-anchored 1v1 per France matchday, one Les Bleus squad poster pre-tournament. Both run on the same two templates."
     }
   },
   "aiPlatform": {

@@ -191,7 +191,15 @@
     },
     "relatedReading": "Erfahren Sie, wie es funktioniert",
     "whoItsFor": "Für wen es gedacht ist",
-    "see_demo": "Demo ansehen"
+    "see_demo": "Demo ansehen",
+    "asl_video_translator": {
+      "title": "AI ASL Video Übersetzer",
+      "desc": "Übersetzen Sie Videos in American Sign Language automatisch in englischen Text und Untertitel.",
+      "meta": {
+        "title": "AI ASL Video Übersetzer | Gebärdensprache in englische Untertitel | Curify AI",
+        "description": "Übersetzen Sie ASL-Gebärdensprache-Videos automatisch in englischen Text oder Untertitel. Sehen Sie eine funktionierende Demo mit echten Gebärdenaufnahmen – dann melden Sie sich für den frühen Zugang an, um Ihre eigenen Uploads vorzunehmen."
+      }
+    }
   },
   "bilingual": {
     "metadata": {
@@ -699,6 +707,60 @@
         "educationBody": "Sprachlehrer und Verlage von zweisprachigen Ausgaben erstellen nebeneinander oder abwechselndsprachige Seiten aus einer einzigen Quelle. Die Übersetzungs-Pipeline liefert eine layout-erhaltene Version in jeder Zielsprache, bereit für das Setzen in die endgültige zweisprachige Ausgabe.",
         "businessTitle": "Für Manga-, Comic- und Webtoon-Verlage",
         "businessBody": "Verlage lokalisieren Backlist-Titel in neue Märkte, in denen eine lizenzierte manuelle Übersetzung unwirtschaftlich ist. Automatisierte Übersetzung macht eine langfristige Lokalisierungsstrategie rentabel – jeder Backlist-Titel wird zu einem Kandidaten für eine Veröffentlichung im neuen Markt."
+      }
+    }
+  },
+  "aslVideoTranslator": {
+    "metadata": {
+      "title": "AI ASL Video Übersetzer | Gebärdensprache in englische Untertitel | Curify AI",
+      "description": "Übersetzen Sie ASL-Gebärdensprache-Videos automatisch in englischen Text oder Untertitel. Sehen Sie eine funktionierende Demo mit echten Gebärdenaufnahmen – dann melden Sie sich für den frühen Zugang an, um Ihre eigenen Uploads vorzunehmen."
+    },
+    "title": "AI ASL Video Übersetzer",
+    "description": "Übersetzen Sie Videos in American Sign Language automatisch in englischen Text oder Untertitel. Die folgende Demo läuft mit einem echten ASL-Clip – dieselbe Pipeline akzeptiert Ihre Uploads, sobald der frühe Zugang eröffnet wird.",
+    "example": "Beispiel: ein kurzer konversationeller ASL-Clip, der in einem Durchgang in englische Untertitel übersetzt wird. Kein Dolmetscher, keine manuelle Transkription.",
+    "cta": "Frühen Zugang anfordern",
+    "demo": {
+      "aria": "Demo zur Übersetzung von ASL-Gebärdensprache-Videos",
+      "caption": "Sehen Sie sich den Democlip an, um ASL in englische Untertitel übersetzt zu sehen.",
+      "nowPlaying": "Jetzt läuft: {lang}"
+    },
+    "why": {
+      "title": "Warum Curify für die ASL-Videoübersetzung verwenden?",
+      "point1": "Automatisch – kein manueller Dolmetscher-Schritt. Laden Sie ein gebärdetes Video hoch, erhalten Sie englische Untertitel.",
+      "point2": "Für Inhalte entwickelt, nicht für Labordemos – bewältigt reale Kamerawinkel, unterschiedliche Gebärdenstile und konversationelles Tempo.",
+      "point3": "Ausgabeformate, die für die Verbreitung konzipiert sind: eingebettete Untertitel, SRT für YouTube oder einfacher Transkriptionstext.",
+      "point4": "Heute nur als Demo; melden Sie sich für den frühen Zugang an, um Ihr eigenes ASL-Material zu übersetzen, wenn die Pipeline eröffnet wird."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Ist der ASL-Videoübersetzer heute verfügbar?",
+      "a1": "Noch nicht – diese Seite ist eine funktionierende Demo mit einem echten ASL-Clip. Die Produktionspipeline befindet sich in privatem Test. Melden Sie sich für den frühen Zugang an, und wir werden Sie kontaktieren, wenn sie für Uploads geöffnet wird.",
+      "q2": "Funktioniert es auch mit anderen Sprachen als ASL?",
+      "a2": "Die aktuelle Demo richtet sich speziell an American Sign Language. Gebärdensprachen sind nicht gegenseitig verständlich – BSL (Britisch), Auslan (Australisch) und LSF (Französisch) haben unterschiedliche Grammatiken und Wortschätze. Wir prüfen zusätzliche Gebärdensprachen basierend auf der Nachfrage von Anmeldungen für den frühen Zugang."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist die AI ASL-Videoübersetzung?",
+        "p1": "Die ASL-Videoübersetzung wandelt eine gebärdete Videoaufführung in geschriebenes Englisch um. Im Gegensatz zu Sprach-zu-Text oder Video-Transkription, die Audio in Text übersetzen, muss die ASL-Übersetzung das visuelle Medium lesen – die Handform des Gebärders, den Standort, die Bewegung, die Handflächenorientierung und die nicht-manualen Marker (Gesichtsausdrücke, Kopfneigungen, Körperbewegungen), die grammatische Bedeutung tragen. Es gibt keinen Audio-Track, auf den man zurückgreifen kann.",
+        "p2": "ASL ist auch keine eins-zu-eins-Karte von Englisch. Es hat seine eigene Grammatik, Wortstellung und idiomatische Ausdrücke. Der Austausch von Wörtern durch Gebärden produziert Ausgaben, die technisch wörtlich sind, aber wie gebrochenes Englisch wirken. Eine qualitativ hochwertige Übersetzung muss das visuelle Signal erkennen UND das Ergebnis in natürliches Englisch umstrukturieren – näher an der Übersetzung zwischen zwei Sprachen als an der Transkription einer.",
+        "p3": "Das Ziel: Ein tauber oder schwerhöriger Gebärder zeichnet ein Video auf; ein hörendes Publikum liest englische Untertitel oder ein Transkript. Die Übersetzung ist die Brücke."
+      },
+      "how": {
+        "title": "Wie übersetzt Curify ASL-Videos?",
+        "p1": "Die Pipeline läuft in vier Phasen. Zuerst wird das Quellvideo frameweise verarbeitet, um den Gebärder zu lokalisieren, den Oberkörper zu isolieren und den Gebärdenraum zu segmentieren – Hintergrundbewegungen, die nicht Teil der Gebärde sind, werden verworfen.",
+        "p2": "Zweitens liest ein Vision-Encoder den visuellen Stream und produziert eine Sequenz von gebärdenbewussten Einbettungen: Handform, Bewegungsvektoren und die nicht-manualen Marker (Gesichtsausdruck, Kopfneigung, Augenblick), die eine Gebärde von einer Aussage in eine Frage verwandeln.",
+        "p3": "Drittens dekodiert ein Übersetzungskopf diese Einbettungen in englischen Text. Der Decoder ist auf parallelen ASL-Englisch-Video-Korpora trainiert, sodass er die ASL-Grammatik in natürliches Englisch umstrukturiert, anstatt eine wörtliche Übersetzung zu produzieren.",
+        "p4": "Viertens wird der übersetzte Text wieder an das Quell-Zeitmaß angepasst – jeder englische Satz wird an die Sekunden des Videos verankert, die ihn erzeugt haben. Das gibt Ihnen Untertitel, die Sie direkt in einen Video-Editor einfügen können, plus einen SRT-Export, der sauber in YouTube geladen wird.",
+        "p5": "Die Demo auf dieser Seite ist das Produktionsmodell, das mit einem echten konversationellen ASL-Clip läuft. Uploads im frühen Zugang werden denselben Prozess durchlaufen."
+      },
+      "usecases": {
+        "title": "Wo die ASL-Videoübersetzung wichtig ist",
+        "creatorsTitle": "Für gehörlose und schwerhörige Kreative",
+        "creatorsBody": "Die Gebärdensprache ist Ihre Hauptsprache für Videoinhalte; englische Untertitel öffnen das Publikum für Hörende, ohne dass Sie zweimal aufnehmen müssen. Laden Sie die gebärdete Aufnahme hoch, erhalten Sie die englische Untertitelspur.",
+        "educationTitle": "Für Lehrkräfte und Barrierefreiheitsteams",
+        "educationBody": "Kursvideos, die von einem gehörlosen Dozenten gebärdet oder in ASL für eine gemischte Klasse interpretiert werden, erhalten automatisch englische Transkripte. Der gleiche Prozess übernimmt die ADA-konforme Untertitelung für institutionelle Videobibliotheken.",
+        "businessTitle": "Für interne Kommunikation und Produktteams",
+        "businessBody": "Kundenservice-Videos, Einarbeitungsvideos und interne Town Halls, die in ASL aufgezeichnet wurden, bleiben in Ihrem System durchsuchbar – das englische Transkript ist das, was Ihr Suchindex tatsächlich liest."
       }
     }
   }
