@@ -191,7 +191,15 @@
     },
     "relatedReading": "Lisez comment cela fonctionne",
     "whoItsFor": "Pour qui c'est",
-    "see_demo": "Voir la démo"
+    "see_demo": "Voir la démo",
+    "asl_video_translator": {
+      "title": "Traducteur vidéo ASL IA",
+      "desc": "Traduisez les vidéos en langue des signes américaine en texte et sous-titres en anglais, automatiquement.",
+      "meta": {
+        "title": "Traducteur vidéo ASL IA | Langue des signes en sous-titres anglais | Curify AI",
+        "description": "Traduisez les vidéos en langue des signes ASL en texte ou sous-titres en anglais automatiquement. Découvrez une démonstration fonctionnelle sur des séquences signées réelles — puis rejoignez l'accès anticipé pour vos propres téléchargements."
+      }
+    }
   },
   "bilingual": {
     "metadata": {
@@ -699,6 +707,60 @@
         "educationBody": "Les enseignants de langues et les éditeurs d'éditions bilingues produisent des pages en langues alternées ou côte à côte à partir d'une seule source. Le pipeline de traduction produit une version préservée de la mise en page dans chaque langue cible, prête à être mise en forme pour l'édition bilingue finale.",
         "businessTitle": "Pour les éditeurs de manga, de bandes dessinées et de webtoons",
         "businessBody": "Les éditeurs localisent des titres de catalogue dans de nouveaux marchés où la traduction manuelle sous licence n'est pas rentable. La traduction automatisée rend viable une stratégie de localisation à long terme : chaque titre de catalogue devient un candidat pour une sortie sur un nouveau marché."
+      }
+    }
+  },
+  "aslVideoTranslator": {
+    "metadata": {
+      "title": "Traducteur vidéo ASL IA | Langue des signes en sous-titres anglais | Curify AI",
+      "description": "Traduisez les vidéos en langue des signes ASL en texte ou sous-titres en anglais automatiquement. Découvrez une démonstration fonctionnelle sur des séquences signées réelles — puis rejoignez l'accès anticipé pour vos propres téléchargements."
+    },
+    "title": "Traducteur vidéo ASL IA",
+    "description": "Traduisez les vidéos en langue des signes américaine en texte ou sous-titres en anglais, automatiquement. La démonstration ci-dessous fonctionne sur un clip ASL réel — le même processus acceptera vos téléchargements une fois l'accès anticipé ouvert.",
+    "example": "Exemple : un court clip de conversation en ASL traduit en sous-titres anglais en une seule fois. Pas d'interprète, pas de transcription manuelle.",
+    "cta": "Rejoindre l'accès anticipé",
+    "demo": {
+      "aria": "Démonstration de traduction vidéo en langue des signes ASL",
+      "caption": "Regardez le clip de démonstration pour voir l'ASL traduit en sous-titres anglais.",
+      "nowPlaying": "En cours de lecture : {lang}"
+    },
+    "why": {
+      "title": "Pourquoi utiliser Curify pour la traduction vidéo ASL ?",
+      "point1": "Automatique — pas d'étape d'interprète manuelle. Téléchargez une vidéo signée, obtenez des sous-titres en anglais.",
+      "point2": "Conçu pour le contenu, pas pour des démonstrations en laboratoire — gère les angles de caméra du monde réel, les styles de signature variés et le rythme conversationnel.",
+      "point3": "Formats de sortie conçus pour la distribution : sous-titres intégrés, SRT pour YouTube, ou texte de transcription simple.",
+      "point4": "Démonstration uniquement aujourd'hui ; inscrivez-vous pour un accès anticipé afin de traduire vos propres séquences ASL lorsque le processus s'ouvrira."
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "Le traducteur vidéo ASL est-il disponible aujourd'hui ?",
+      "a1": "Pas encore — cette page est une démonstration fonctionnelle sur un clip ASL réel. Le processus de production est en test privé. Rejoignez l'accès anticipé et nous vous contacterons lorsqu'il sera ouvert aux téléchargements.",
+      "q2": "Fonctionne-t-il sur d'autres langues que l'ASL ?",
+      "a2": "La démonstration actuelle cible spécifiquement la langue des signes américaine. Les langues des signes ne sont pas mutuellement intelligibles — BSL (britannique), Auslan (australien) et LSF (français) ont des grammaires et des vocabulaires différents. Nous examinons d'autres langues des signes en fonction de la demande des inscriptions à l'accès anticipé."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce que la traduction vidéo ASL IA ?",
+        "p1": "La traduction vidéo ASL convertit une performance vidéo signée en anglais écrit. Contrairement à la transcription audio ou à la conversion de la parole en texte, qui traduisent l'audio en texte, la traduction ASL doit lire la modalité visuelle — la forme de la main du signataire, l'emplacement, le mouvement, l'orientation de la paume et les marqueurs non manuels (expressions faciales, inclinaisons de la tête, mouvements du corps) qui portent un sens grammatical. Il n'y a pas de piste audio sur laquelle se reposer.",
+        "p2": "L'ASL n'est pas non plus une correspondance un à un de l'anglais. Elle a sa propre grammaire, son ordre des mots et ses expressions idiomatiques. La substitution mot-à-signe produit un résultat qui est techniquement littéral mais se lit comme un anglais cassé. Une traduction de qualité doit reconnaître le signal visuel ET restructurer le résultat en anglais naturel — plus proche de la traduction entre deux langues que de la transcription d'une seule.",
+        "p3": "L'objectif : un signataire sourd ou malentendant enregistre une vidéo ; un public entendant lit des sous-titres en anglais ou une transcription. La traduction est le pont."
+      },
+      "how": {
+        "title": "Comment Curify traduit-il la vidéo ASL ?",
+        "p1": "Le processus se déroule en quatre étapes. Tout d'abord, la vidéo source est traitée image par image pour localiser le signataire, isoler le haut du corps et segmenter l'espace de signature — en éliminant le mouvement de fond qui ne fait pas partie du signe.",
+        "p2": "Deuxièmement, un encodeur visuel lit le flux visuel et produit une séquence d'embeddings sensibles aux signes : forme de la main, vecteurs de mouvement et les marqueurs non manuels (expression faciale, inclinaison de la tête, regard) qui changent un signe d'une déclaration en une question.",
+        "p3": "Troisièmement, une tête de traduction décode ces embeddings en texte anglais. Le décodeur est entraîné sur des corpus vidéo ASL-Anglais parallèles, il restructure donc la grammaire ASL en anglais naturel plutôt que de produire un glossaire littéral.",
+        "p4": "Quatrièmement, le texte traduit est réajusté au timing source — chaque phrase anglaise est ancrée aux secondes de vidéo qui l'ont produite. Cela vous donne des sous-titres que vous pouvez directement intégrer dans un éditeur vidéo, ainsi qu'une exportation SRT qui se charge proprement dans YouTube.",
+        "p5": "La démo sur cette page est le modèle de production fonctionnant sur un véritable extrait de conversation ASL. Les téléchargements en accès anticipé suivront le même pipeline."
+      },
+      "usecases": {
+        "title": "Où la traduction vidéo ASL est importante",
+        "creatorsTitle": "Pour les créateurs sourds et malentendants",
+        "creatorsBody": "La langue des signes est votre langue principale pour le contenu vidéo ; les sous-titres en anglais débloquent le public entendant sans vous obliger à enregistrer deux fois. Téléchargez la prise signée, obtenez la piste de sous-titres en anglais.",
+        "educationTitle": "Pour les éducateurs et les équipes d'accessibilité",
+        "educationBody": "Les vidéos de cours signées par un instructeur sourd — ou interprétées en ASL pour une classe mixte — obtiennent automatiquement des transcriptions en anglais. Le même pipeline gère le sous-titrage conforme à l'ADA pour les bibliothèques vidéo institutionnelles.",
+        "businessTitle": "Pour les communications internes et les équipes produit",
+        "businessBody": "Les vidéos de support client, les extraits d'intégration et les assemblées internes enregistrées en ASL restent consultables dans votre pile — la transcription en anglais est ce que votre index de recherche lit réellement."
       }
     }
   }

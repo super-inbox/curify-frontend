@@ -162,6 +162,29 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Demo-only SEO landing — no backend pipeline yet. The blog
+    // /blog/asl-video-translator ranks at pos ~13 for "asl video translator"
+    // / "sign language video translator" but as an editorial page the
+    // tool-intent queries convert at 0.75% CTR. Shipping this tool route
+    // closes the loop with a visible demo + waitlist CTA. 2026-05-30 GSC
+    // pull: 8 distinct tool-intent ASL queries at pos 9-26, zero clicks
+    // (no /tools/asl-* landing existed).
+    id: "asl-video-translator",
+    slug: "asl-video-translator",
+    groupId: "video",
+    status: "demo",
+    job_type: "video_transcript",
+    namespace: "aslVideoTranslator",
+    action: { type: "page" },
+    i18n: toolKeys("asl_video_translator"),
+    seo: seoKeys("asl_video_translator"),
+    demo: {
+      type: "single_video",
+      src: "/video/asl-demo-translation.mp4",
+    },
+  },
+
+  {
     // Demo-only SEO landing — no backend pipeline yet. The blog post
     // /blog/video-enhancement already drives search traffic in this
     // capability space; the tool page closes the loop with a visible
