@@ -351,6 +351,11 @@ export function formatContent(content: string): string {
     .replace(/^### (.+)$/gm, '</p><h3 class="text-xl font-semibold mt-6 mb-3 text-gray-900">$1</h3><p>')
     .replace(/^## (.+)$/gm, '</p><h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">$1</h2><p>')
     .replace(/^# (.+)$/gm, '</p><h1 class="text-3xl font-bold mt-8 mb-6 text-gray-900">$1</h1><p>')
+    // Handle markdown images ![alt](src) — MUST run before the link rule
+    // since the syntax overlaps with [text](url). Kept as markdown (not
+    // raw <img>) in messages because ICU MessageFormat treats attributed
+    // HTML tags as INVALID_TAG and silently swallows the whole message.
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="my-4 mx-auto max-w-md rounded-lg shadow" />')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // bold LAST, inline
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
       // Internal Curify URLs (start with /) open in the SAME tab so session
