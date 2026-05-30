@@ -964,7 +964,13 @@
       ],
       "title": "10个有效的AI视频提示技巧（Sora、Runway、Pika）",
       "metaDescription": "在Sora、Runway和Pika上测试的10种提示技巧，帮助你停止生成无聊的AI视频。2026年创作者的真实前后示例。",
-      "seoKeywords": "AI视频提示，Sora提示，Runway视频提示，Pika视频提示，AI视频生成技巧，视频提示技巧2026，AI视频创作者指南"
+      "seoKeywords": "AI视频提示，Sora提示，Runway视频提示，Pika视频提示，AI视频生成技巧，视频提示技巧2026，AI视频创作者指南",
+      "heroImage": "/images/tenprompt.webp",
+      "heroImageAlt": "AI视频生成的十大提示",
+      "heroCtaLabel": "尝试视频生成",
+      "heroCtaText": "使用Curify的视频生成工具实践这10个提示",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "尝试 →"
     },
     "imageGenerationModelComparison": {
       "date": "2026年3月28日",
@@ -1027,7 +1033,13 @@
       "faq1Answer": "Nano Banana Pro（通过Google AI Studio）和GPT Image 2（DALL-E 3的继任者，内置于ChatGPT）是最适合初学者的——用简单英语输入你想要的内容，获得图像，进行对话迭代。Midjourney v7在Discord/web上有学习曲线。Stable Diffusion 3.5需要技术设置，除非你使用像fal.ai或Replicate这样的管理云前端。",
       "faq2Answer": "这三者都支持商业使用。Nano Banana Pro和Midjourney v7在其付费计划中授予商业许可证（Google在Nano Banana输出中嵌入不可见的SynthID水印以追踪来源）。Stable Diffusion 3.5在宽松许可证下是开源的，但请检查各个社区LoRA许可证——有些是非商业的。",
       "faq3Answer": "对于快速迭代和概念工作，Nano Banana 2（Flash层）或Stable Diffusion 3.5 Turbo（在强GPU上2-4秒生成）。对于最终制作工作，美学最重要时，Midjourney v7或Nano Banana Pro在完整推理层胜出。对于具有特定角色或品牌风格的一致系列，Stable Diffusion 3.5 Large与调优的LoRA在每张图像的一致性上胜出。",
-      "faq4Answer": "最低要求：用于提炼模型（如Stable Diffusion 3.5 Turbo）的12GB VRAM GPU。推荐：用于完整的3.5 Large模型和更快生成的16-24GB VRAM。如果你不想提前购买硬件，云租赁（Runpod、fal.ai、Replicate）为$0.50-2/小时——在承诺购买GPU之前尝试SD时非常有用。"
+      "faq4Answer": "最低要求：用于提炼模型（如Stable Diffusion 3.5 Turbo）的12GB VRAM GPU。推荐：用于完整的3.5 Large模型和更快生成的16-24GB VRAM。如果你不想提前购买硬件，云租赁（Runpod、fal.ai、Replicate）为$0.50-2/小时——在承诺购买GPU之前尝试SD时非常有用。",
+      "heroImage": "/images/hardworker.webp",
+      "heroImageAlt": "比较Nano Banana、Flux和Stable Diffusion在相同提示下的输出",
+      "heroCtaLabel": "浏览模板",
+      "heroCtaText": "跳过模型对比的无尽循环 — 从200多个现成的Curify模板开始",
+      "heroCtaHref": "/nano-banana-pro-prompts",
+      "heroCtaButton": "探索 →"
     },
     "lipSyncBusinessGuide": {
       "title": "AI 唇同步与配音指南：商业应用与工具",
@@ -3930,7 +3942,13 @@
         "AI视频管道",
         "扩散工作流",
         "运动图形AI"
-      ]
+      ],
+      "heroImage": "/images/ae-vs-comfyui.jpg",
+      "heroImageAlt": "After Effects 与 ComfyUI 的 AI 视频管道",
+      "heroCtaLabel": "试试这个管道",
+      "heroCtaText": "跳过 AE 与 ComfyUI 的争论 — 在 Curify 的批处理工具中运行完整的视频管道",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "试试 →"
     },
     "qaBotToTaskAgent": {
       "heading": "🏗️ 从QA机器人到任务代理：架构指南",
@@ -4337,13 +4355,8 @@
       }
     },
     "characterPromptGenerator": {
-      "title": "角色提示生成器：12+宇宙MBTI卡片 + 自定义角色",
-      "metaDescription": "从零开始构建角色，包含个性、名字、年龄、性别——或者将您喜欢的宇宙中的已知角色重新想象为MBTI个性卡（如漫威、绝命毒师、火影忍者、吉卜力、哈利·波特、老友记等）。",
-      "publishedDate": "2026-05-12",
-      "readTime": "6分钟阅读",
       "category": "Nano模板",
       "heroImageAlt": "角色提示生成器预览",
-      "intro": "无论您是想从头设计一个全新的角色，还是将您喜欢的节目中的某个角色重新想象为MBTI个性卡，Curify提供了一套专注的角色模板——每个模板都有特定的参数表单，让您确切知道该填写什么。",
       "whatWeShip": {
         "title": "我们提供的内容",
         "intro": "以下所有模板在Curify上都有实时示例。根据您想要构建的角色类型进行选择：",
@@ -4478,35 +4491,6 @@
           ]
         }
       },
-      "whoCanBenefit": {
-        "title": "谁能受益",
-        "writers": {
-          "title": "作家与讲故事者",
-          "description": "使用自定义角色卡设计具有一致个性的常驻角色，然后再进行草稿。使用MBTI对比卡规划对立关系和对话动态。"
-        },
-        "artists": {
-          "title": "数字艺术家与插画师",
-          "description": "在可爱档案卡中生成参考表，或使用粉丝网格海报生成完整角色网格以获取委托灵感。"
-        },
-        "gameDevelopers": {
-          "title": "游戏开发者",
-          "description": "MBTI对比卡和自定义角色卡都提供具有一致视觉和行为特征的NPC原型。"
-        },
-        "creators": {
-          "title": "内容创作者",
-          "description": "宇宙MBTI卡（漫威/老友记/NBA/吉卜力/中国经典）旨在用于垂直社交 — 输入角色名称并发布。"
-        }
-      },
-      "proTips": {
-        "title": "专业提示",
-        "tips": [
-          "将个性与色彩调色板匹配 — 胆汁型角色适合温暖的红色，忧郁型适合深蓝色。",
-          "对于自定义角色卡，写下个性为 'MBTI + 1–2 个特征'（例如 'ENFP，乐观，焦躁'）。模糊的提示会产生模糊的肖像。",
-          "宇宙 MBTI 模板最适合使用知名角色名称。冷门名称往往会偏离。",
-          "如果生成的 MBTI 类型与官方粉丝解读不一致，卡片仍然有用——它提供了一个值得讨论的替代解释。",
-          "使用 Fandom 网格海报作为可分享的社交内容——主题网格的表现优于单角色帖子。"
-        ]
-      },
       "footer": {
         "tags": [
           "AI 角色设计",
@@ -4519,6 +4503,343 @@
           "可爱角色档案"
         ],
         "questions": "有想要添加到 MBTI 系列的宇宙吗？联系我们，我们会考虑在下一个内容发布中加入。"
+      },
+      "title": "角色提示生成器：为火影忍者、黄石公园、漫威、哈利·波特及8个更多宇宙提供MBTI",
+      "metaDescription": "查找火影忍者、黄石公园、漫威、老友记、哈利·波特、绝命毒师等35个角色的MBTI人格类型 — 然后使用Curify的特定宇宙模板生成卡片。",
+      "publishedDate": "2026-05-30",
+      "readTime": "7分钟阅读",
+      "intro": "搜索“鸣人性格类型”或“贝丝·达顿性格类型”？你来对地方了。本指南提供了六个宇宙中35个最受欢迎角色的MBTI — 火影忍者、黄石公园、漫威、老友记、哈利·波特、绝命毒师 — 以及你可以将任何这些名字放入以生成完整卡片的Curify模板。跳到你想要的[宇宙](#universes)或[MBTI快速参考表](#mbti-index)。",
+      "workedExamples": {
+        "title": "按宇宙分析的MBTI — 35个角色",
+        "intro": "下面每个宇宙部分列出了最受欢迎角色及其MBTI类型和简要介绍。点击每个部分底部的模板链接以生成带图像的完整角色卡片。",
+        "universes": [
+          {
+            "name": "火影忍者",
+            "slug": "mbti-naruto",
+            "heading": "火影忍者MBTI角色",
+            "description": "火影忍者模板生成风格化为忍者世界的人格卡片 — 具有角色特定的村庄标记和查克拉主题背景的忍者美学。将任何名字放入模板；这是最受欢迎角色的MBTI。",
+            "characters": [
+              {
+                "name": "波风水门",
+                "mbti": "INFJ-A",
+                "blurb": "战略性、自我牺牲、原则坚定。黄闪总是比每个敌人多想两步。"
+              },
+              {
+                "name": "大蛇丸",
+                "mbti": "INTJ-A",
+                "blurb": "计算型、执着、蔑视平凡。原始的三忍体现了不受限制的智力的黑暗面。"
+              },
+              {
+                "name": "宇智波鼬",
+                "mbti": "INFJ-T",
+                "blurb": "负担沉重的保护者，拥有复杂的道德框架。为只有他理解的愿景牺牲了一切。"
+              },
+              {
+                "name": "鸣人·宇智波",
+                "mbti": "ENFP-A",
+                "blurb": "无尽的乐观，吸引人的个性，对人们改变能力的坚定信念。"
+              },
+              {
+                "name": "佐助·宇智波",
+                "mbti": "ISTP-T",
+                "blurb": "冷静的超然，技术精湛，内心冲突被安静的外表掩盖。"
+              },
+              {
+                "name": "卡卡西·旗木",
+                "mbti": "INTP-T",
+                "blurb": "分析型，幽默干练，以智力化解情感。复制了一千种忍术却依然难以捉摸。"
+              }
+            ]
+          },
+          {
+            "name": "黄石",
+            "slug": "mbti-yellowstone",
+            "heading": "黄石 MBTI 角色",
+            "description": "黄石模板卡片带来了节目的西部风格——牛仔布和皮革色调，牧场背景，达顿品牌。最受欢迎的达顿角色及其 MBTI：",
+            "characters": [
+              {
+                "name": "贝丝·达顿",
+                "mbti": "ESTJ-A",
+                "blurb": "无情的执行者，忠于家庭，毫不留情。贝丝用电锯和鸡尾酒管理家族生意。"
+              },
+              {
+                "name": "约翰·达顿",
+                "mbti": "ISTJ-A",
+                "blurb": "顽固的传统主义者，责任感强，被遗产压得喘不过气。宁愿烧掉牧场也不让它离开家族的家长。"
+              },
+              {
+                "name": "瑞普·惠勒",
+                "mbti": "ISTP-A",
+                "blurb": "忠诚的保护者，冷静应对压力，遭遇背叛时极具破坏力。牧场工人转变为执法者。"
+              },
+              {
+                "name": "凯西·达顿",
+                "mbti": "ISFP-T",
+                "blurb": "安静，原则性强，行动导向。夹在两个世界之间，努力尊重两者。"
+              },
+              {
+                "name": "杰米·达顿",
+                "mbti": "INFP-T",
+                "blurb": "内心矛盾，理想主义，容易受伤。道德指南针不断旋转的家族律师。"
+              }
+            ]
+          },
+          {
+            "name": "漫威",
+            "slug": "mbti-marvel",
+            "heading": "漫威 MBTI 角色",
+            "description": "漫威模板生成具有英雄特定色彩调色板和等距房间场景的 MBTI 角色卡。选择一个英雄或反派——这是最受欢迎角色的 MBTI。",
+            "characters": [
+              {
+                "name": "托尼·斯塔克 / 钢铁侠",
+                "mbti": "ENTP-A",
+                "blurb": "富有创造力、魅力四射、非传统。托尼通过即兴发挥而非准备赢得争论和战斗。"
+              },
+              {
+                "name": "史蒂夫·罗杰斯 / 美国队长",
+                "mbti": "ISFJ-A",
+                "blurb": "忠于职责、传统，原始保护者。美国队长的道德框架在1942年设定，并未改变。"
+              },
+              {
+                "name": "布鲁斯·班纳 / 绿巨人",
+                "mbti": "INTJ-T",
+                "blurb": "杰出的战略家，被情感占据时变成的东西所束缚。房间里最聪明的人，直到他不是。"
+              },
+              {
+                "name": "索尔",
+                "mbti": "ESFP-A",
+                "blurb": "外向、行动导向、活在当下的思考者。值得拥有锤子，因为他选择这样做，而不是因为他计划这样做。"
+              },
+              {
+                "name": "娜塔莎·罗曼诺夫 / 黑寡妇",
+                "mbti": "ISTP-A",
+                "blurb": "足智多谋、独立、深藏不露。能读懂每个房间，只有在确定时才会采取行动。"
+              },
+              {
+                "name": "彼得·帕克 / 蜘蛛侠",
+                "mbti": "INFP-T",
+                "blurb": "理想主义、敏感、价值驱动。因为相信选择重要，所以承受每一个选择的重担。"
+              }
+            ]
+          },
+          {
+            "name": "老友记",
+            "slug": "friends-character-mbti",
+            "heading": "老友记 MBTI 角色",
+            "description": "老友记模板卡传达了节目的情景喜剧温暖——中央公园色彩调色板，90年代纽约公寓美学。这里是每个主要演员的 MBTI。",
+            "characters": [
+              {
+                "name": "钱德勒·宾",
+                "mbti": "ENTP-T",
+                "blurb": "机智、讽刺、避免冲突。用一句话化解每一个情感时刻。"
+              },
+              {
+                "name": "罗斯·盖勒",
+                "mbti": "INTP-T",
+                "blurb": "知识渊博、笨拙、分析能力强。对恐龙的看法正确，但对其他一切都错。"
+              },
+              {
+                "name": "瑞秋·格林",
+                "mbti": "ENFP-A",
+                "blurb": "迷人、以形象为驱动、缓慢进化。从被宠坏的未婚妻到时尚高管的转变是典型的ENFP成长路径。"
+              },
+              {
+                "name": "莫妮卡·盖勒",
+                "mbti": "ESTJ-A",
+                "blurb": "有条理、控制欲强、通过结构来关怀。厨师因为这是控制混乱的唯一方式而举办聚会。"
+              },
+              {
+                "name": "乔伊·特里比亚尼",
+                "mbti": "ESFP-A",
+                "blurb": "外向、享乐主义、忠诚。活在当下，希望你也能和他一起生活在当下。"
+              },
+              {
+                "name": "菲比·布菲",
+                "mbti": "ENFP-T",
+                "blurb": "古怪、直觉强、自由奔放。唯一一个道德框架真正来自其他地方的人。"
+              }
+            ]
+          },
+          {
+            "name": "哈利·波特",
+            "slug": "harry-potter-mbti-infographic",
+            "heading": "哈利·波特 MBTI 角色",
+            "description": "哈利·波特模板生成巫师美学个性卡片——房屋颜色调色板、标志性魔杖、适合每个角色的情境背景。搜索最多的HP角色及其MBTI：",
+            "characters": [
+              {
+                "name": "哈利·波特",
+                "mbti": "ISFP-T",
+                "blurb": "安静的叛逆者、以价值观为驱动、在被推动时采取行动。犹豫的英雄，其道德指南针从不动摇。"
+              },
+              {
+                "name": "赫敏·格兰杰",
+                "mbti": "ESTJ-A",
+                "blurb": "遵循规则、雄心勃勃、有条理。每次都先给出正确答案——直到规则与正确答案发生冲突。"
+              },
+              {
+                "name": "罗恩·韦斯利",
+                "mbti": "ESFP-T",
+                "blurb": "忠诚、爱玩、有时缺乏安全感。朋友的存在比他的策略更重要。"
+              },
+              {
+                "name": "西弗勒斯·斯内普",
+                "mbti": "INTJ-A",
+                "blurb": "战略性、痛苦、深藏的内涵。在系列中玩了最长、最痛苦的游戏。"
+              },
+              {
+                "name": "阿尔布斯·邓布利多",
+                "mbti": "INFJ-A",
+                "blurb": "智慧的导师，长远的计划者，原则坚定到残酷。知道结果需要什么并进行安排。"
+              },
+              {
+                "name": "伏地魔",
+                "mbti": "ENTJ-A",
+                "blurb": "追求权力，富有魅力，冷酷无情。围绕对自己死亡的恐惧建立了整个意识形态。"
+              }
+            ]
+          },
+          {
+            "name": "绝命毒师",
+            "slug": "mbti-breakingbad",
+            "heading": "绝命毒师 MBTI 角色",
+            "description": "绝命毒师模板卡片融入了该剧的沙漠毒品美学——阿尔伯克基的调色板，角色特定的标志性元素（沃尔特的帽子，索尔的西装，杰西的连帽衫）。包括《更好的呼叫索尔》中的角色。",
+            "characters": [
+              {
+                "name": "沃尔特·怀特",
+                "mbti": "INTJ-A",
+                "blurb": "杰出的战略家，受自我驱动，伪装。化学老师的故事线不可避免地向毒枭的故事线倾斜。"
+              },
+              {
+                "name": "杰西·平克曼",
+                "mbti": "ISFP-T",
+                "blurb": "忠诚，情感丰富，良心驱动。即使没有人要求他，他也是系列的道德中心。"
+              },
+              {
+                "name": "索尔·古德曼 / 吉米·麦吉尔",
+                "mbti": "ENTP-T",
+                "blurb": "狡猾，口才出众，机会主义者，心中有兄弟的伤口。无论是“滑头”吉米还是索尔，机制都是一样的。"
+              },
+              {
+                "name": "迈克·埃尔曼特劳特",
+                "mbti": "ISTJ-A",
+                "blurb": "有纪律的操作者，行为准则，寡言少语。剧中唯一一个从不犯战术错误的角色。"
+              },
+              {
+                "name": "古斯塔沃·弗林",
+                "mbti": "INTJ-A",
+                "blurb": "长远的战略家，控制的外表，冰冷的耐心。建立了一个帝国，原则是慢计划总是胜利。"
+              },
+              {
+                "name": "查克·麦吉尔",
+                "mbti": "ISTJ-A",
+                "blurb": "固执，原则性强，心怀怨恨。道德框架如此严格，以至于窒息了每一段关系。"
+              }
+            ]
+          }
+        ]
+      },
+      "mbtiIndex": {
+        "title": "MBTI与角色快速参考",
+        "intro": "寻找特定MBTI类型的示例？每种类型一个特色角色，配有处理该宇宙的Curify模板。点击任何模板链接生成卡片。",
+        "note": "对于上述未涵盖的MBTI类型（或我们尚未有专门模板的宇宙中的角色——如《星球大战》，《狮子王》，《星际迷航》），请使用[自定义角色卡](/nano-template/custom-character-card)模板——在参数中输入角色名称和MBTI，它会生成分析。",
+        "rows": [
+          {
+            "type": "INFJ",
+            "label": "倡导者",
+            "character": "波风水门（火影忍者）",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "INTJ",
+            "label": "建筑师",
+            "character": "沃尔特·怀特（绝命毒师）",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "INTP",
+            "label": "逻辑学家",
+            "character": "罗斯·盖勒（老友记）",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "INFP",
+            "label": "调解者",
+            "character": "杰西·平克曼（绝命毒师）",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "ISFJ",
+            "label": "捍卫者",
+            "character": "史蒂夫·罗杰斯 / 美国队长（漫威）",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ISTJ",
+            "label": "后勤员",
+            "character": "约翰·达顿（黄石）",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ISFP",
+            "label": "冒险家",
+            "character": "哈利·波特（哈利·波特）",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ISTP",
+            "label": "艺术家",
+            "character": "Rip Wheeler (黄石)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ENFJ",
+            "label": "主角",
+            "character": "穆法萨 (狮子王 — 自定义角色卡)",
+            "slug": "custom-character-card"
+          },
+          {
+            "type": "ENFP",
+            "label": "活动家",
+            "character": "鸣人 (火影忍者)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "ENTJ",
+            "label": "指挥官",
+            "character": "伏地魔 (哈利·波特)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ENTP",
+            "label": "辩论者",
+            "character": "托尼·斯塔克 / 钢铁侠 (漫威)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ESFJ",
+            "label": "领事",
+            "character": "莫莉·韦斯莱 (哈利·波特)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ESTJ",
+            "label": "执行官",
+            "character": "贝丝·达顿 (黄石)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ESFP",
+            "label": "娱乐者",
+            "character": "乔伊·特里比亚尼 (老友记)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "ESTP",
+            "label": "企业家",
+            "character": "汉·索罗（星球大战 — 自定义角色卡）",
+            "slug": "custom-character-card"
+          }
+        ]
       }
     },
     "curifyNanoBananaTemplateTips": {
@@ -4956,7 +5277,13 @@
       "curifyTitle": "生成您的——直接模板链接",
       "curifyContent": "跳过提示工程，直接进入参数预填的模板：\n\n**体育战斗（1v1 竞争）**： [/nano-template/sports-battle](/nano-template/sports-battle)——提供 `player_left` 和 `player_right`。模板的基础提示已锁定为漫画风格的 VS 海报；您只需提供名称。现有画廊包括 [梅西对罗纳尔多](/nano-template/sports-battle)、[费德勒对纳达尔](/nano-template/sports-battle)、[阿里对泰森](/nano-template/sports-battle)、[汉密尔顿对舒马赫](/nano-template/sports-battle) 作为参考。\n\n**名人团体海报（完整团队）**： [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster)——提供 `star_movie_group` 和球队名称（例如，`巴西 2026 国家队`）。现有画廊涵盖跨体育（NBA 传奇、网球传奇、赛车传奇）、娱乐（老友记、怪奇物语、BTS、黑pink、权力的游戏）和动漫的合奏组——相同模板，不同组。\n\n有关更多体育主题提示，[/topics/character](/topics/character) 中心索引跨体育、游戏、电影和娱乐的角色驱动模板。有关每个提示系列的策划 Nano Banana 目录，[/nano-banana-pro-prompts](/nano-banana-pro-prompts) 是目录。",
       "conclusionTitle": "其他国家队——相同提示，交换名称",
-      "conclusionContent": "上述两个提示是通用的。相同模板，交换球队名称，正确获取球衣颜色和调色板：\n\n- **法国**：`法国 2026 国家队`——海军蓝 + 白色 + 红色，法兰西体育场，标题 `FRANCE 2026`\n- **德国**：`德国 2026 国家队`——白色球衣 + 黑色点缀 + 红色/金色国旗，安联竞技场，标题 `DEUTSCHLAND 2026`\n- **西班牙**：`西班牙 2026 国家队`——红色 + 番红花黄色 + 海军，圣地亚哥·伯纳乌，标题 `ESPAÑA 2026`\n- **英格兰**：`英格兰 2026 世界杯阵容`——白色 + 圣乔治红 + 海军，温布利，标题 `ENGLAND 2026`\n- **葡萄牙**：`葡萄牙 2026 国家队`——深红色 + 绿色领 + 金色点缀，阿尔瓦拉德体育场，标题 `PORTUGAL 2026`\n- **摩洛哥**：`摩洛哥 2026 国家队`——红色 + 绿色星 + 白色点缀，哈桑二世大体育场，标题 `LE MAROC 2026`\n- **墨西哥**：`墨西哥 2026 国家队`（东道主）——绿色 + 白色 + 红色，阿兹特克体育场，标题 `MÉXICO 2026`\n- **美国**：`美国 2026 世界杯阵容`（东道主）——海军 + 红色条纹 + 白色星，索非亚体育场，标题 `USA 2026`\n- **日本**：`日本 2026 国家队`——武士蓝球衣 + 红色旭日点缀 + 白色，埼玉体育场，标题 `日本 2026`\n\n提示结构保持不变——球衣描述、体育场背景、调色板、标题文本、纵向 3:4 格式。排列球队名称和调色板；其他所有内容从模板的基础提示中继承。\n\n如果您生成了喜欢的海报，[/topics/character](/topics/character) 和 [/topics/sports](/topics/sports) 中心是类似模板的来源——角色对战、电影团体海报、球迷阵容，所有这些都在相同的 Curify 管道上运行。"
+      "conclusionContent": "上述两个提示是通用的。相同模板，交换球队名称，正确获取球衣颜色和调色板：\n\n- **法国**：`法国 2026 国家队`——海军蓝 + 白色 + 红色，法兰西体育场，标题 `FRANCE 2026`\n- **德国**：`德国 2026 国家队`——白色球衣 + 黑色点缀 + 红色/金色国旗，安联竞技场，标题 `DEUTSCHLAND 2026`\n- **西班牙**：`西班牙 2026 国家队`——红色 + 番红花黄色 + 海军，圣地亚哥·伯纳乌，标题 `ESPAÑA 2026`\n- **英格兰**：`英格兰 2026 世界杯阵容`——白色 + 圣乔治红 + 海军，温布利，标题 `ENGLAND 2026`\n- **葡萄牙**：`葡萄牙 2026 国家队`——深红色 + 绿色领 + 金色点缀，阿尔瓦拉德体育场，标题 `PORTUGAL 2026`\n- **摩洛哥**：`摩洛哥 2026 国家队`——红色 + 绿色星 + 白色点缀，哈桑二世大体育场，标题 `LE MAROC 2026`\n- **墨西哥**：`墨西哥 2026 国家队`（东道主）——绿色 + 白色 + 红色，阿兹特克体育场，标题 `MÉXICO 2026`\n- **美国**：`美国 2026 世界杯阵容`（东道主）——海军 + 红色条纹 + 白色星，索非亚体育场，标题 `USA 2026`\n- **日本**：`日本 2026 国家队`——武士蓝球衣 + 红色旭日点缀 + 白色，埼玉体育场，标题 `日本 2026`\n\n提示结构保持不变——球衣描述、体育场背景、调色板、标题文本、纵向 3:4 格式。排列球队名称和调色板；其他所有内容从模板的基础提示中继承。\n\n如果您生成了喜欢的海报，[/topics/character](/topics/character) 和 [/topics/sports](/topics/sports) 中心是类似模板的来源——角色对战、电影团体海报、球迷阵容，所有这些都在相同的 Curify 管道上运行。",
+      "heroImage": "/images/nano_insp/template-sports-battle-Messi-vs-Ronaldo.jpg",
+      "heroImageAlt": "梅西与罗纳尔多的电影足球对抗海报 — 体育对抗模板预览",
+      "heroCtaLabel": "试试这个模板",
+      "heroCtaText": "生成你自己的梅西与罗纳尔多（或任何足球对抗）电影海报",
+      "heroCtaHref": "/nano-template/sports-battle",
+      "heroCtaButton": "生成 →"
     },
     "onePersonCompaniesVs100PersonTeams": {
       "title": "一人公司正在崛起。你的100人团队成了负担。",

@@ -964,7 +964,13 @@
       ],
       "title": "Gerçekten İşe Yarayan 10 AI Video Yönlendirme İpucu (Sora, Runway, Pika)",
       "metaDescription": "Sora, Runway ve Pika'da test edilen 10 yönlendirme tekniğiyle sıkıcı AI videolarını üretmeyi durdurun. 2026'da yaratıcılar için gerçek öncesi ve sonrası örnekler.",
-      "seoKeywords": "ai video yönlendirmeleri, sora yönlendirmeleri, runway video yönlendirmeleri, pika video yönlendirmeleri, ai video üretim ipuçları, video yönlendirme teknikleri 2026, ai video üretici rehberi"
+      "seoKeywords": "ai video yönlendirmeleri, sora yönlendirmeleri, runway video yönlendirmeleri, pika video yönlendirmeleri, ai video üretim ipuçları, video yönlendirme teknikleri 2026, ai video üretici rehberi",
+      "heroImage": "/images/tenprompt.webp",
+      "heroImageAlt": "AI video üretimi için en iyi 10 yönlendirme ipucu",
+      "heroCtaLabel": "VIDEO ÜRETİMİNİ DENEYİN",
+      "heroCtaText": "Bu 10 yönlendirme ipucunu Curify'nin video üretim araçlarıyla uygulayın",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "Dene →"
     },
     "imageGenerationModelComparison": {
       "date": "28 Mart 2026",
@@ -1027,7 +1033,13 @@
       "faq1Answer": "Nano Banana Pro (Google AI Studio aracılığıyla) ve GPT Image 2 (ChatGPT içindeki DALL-E 3 halefidir) en başlangıç dostu olanlardır — istediğinizi sade İngilizce ile yazın, bir görüntü alın, konuşarak yineleyin. Midjourney v7'nin bir Discord/web öğrenme eğrisi vardır. Stable Diffusion 3.5, fal.ai veya Replicate gibi yönetilen bir bulut ön ucu kullanmadığınız sürece teknik kurulum gerektirir.",
       "faq2Answer": "Üçü de ticari kullanımı destekler. Nano Banana Pro ve Midjourney v7, ücretli planları ile ticari lisanslar verir (Google, Nano Banana çıktılarında menşei için görünmez bir SynthID filigranı yerleştirir). Stable Diffusion 3.5, izin verici bir lisans altında açık kaynaklıdır, ancak bireysel topluluk LoRA lisanslarını kontrol edin — bazıları ticari değildir.",
       "faq3Answer": "Hızlı yineleme ve kavramsal çalışma için, Nano Banana 2 (Flash katmanı) veya Stable Diffusion 3.5 Turbo (güçlü bir GPU'da 2-4 saniye üretim). Estetiğin en önemli olduğu nihai üretim çalışmaları için, Midjourney v7 veya tam akıl yürütme katmanındaki Nano Banana Pro. Belirli bir karakter veya marka stiline sahip tutarlı seriler için, ayarlanmış bir LoRA ile Stable Diffusion 3.5 Large, görüntü başına tutarlılıkta kazanır.",
-      "faq4Answer": "Minimum: distile modeller için 12GB VRAM'li bir GPU. Önerilen: tam 3.5 Large modeli ve daha hızlı üretim için 16-24GB VRAM. Donanım satın almak istemiyorsanız bulut kiralamaları (Runpod, fal.ai, Replicate) $0.50-2/saatdir — SD'yi bir GPU satın almadan önce denemek için kullanışlıdır."
+      "faq4Answer": "Minimum: distile modeller için 12GB VRAM'li bir GPU. Önerilen: tam 3.5 Large modeli ve daha hızlı üretim için 16-24GB VRAM. Donanım satın almak istemiyorsanız bulut kiralamaları (Runpod, fal.ai, Replicate) $0.50-2/saatdir — SD'yi bir GPU satın almadan önce denemek için kullanışlıdır.",
+      "heroImage": "/images/hardworker.webp",
+      "heroImageAlt": "Aynı yönlendirme ile Nano Banana, Flux ve Stable Diffusion çıktılarının karşılaştırması",
+      "heroCtaLabel": "ŞABLONLARI GÖRÜNTÜLE",
+      "heroCtaText": "Model karşılaştırmalarına dalmadan — 200+ hazır Curify şablonundan başlayın",
+      "heroCtaHref": "/nano-banana-pro-prompts",
+      "heroCtaButton": "Keşfet →"
     },
     "lipSyncBusinessGuide": {
       "title": "AI Dudak Senkronizasyonu ve Dublaj Rehberi: İş Uygulamaları ve Araçlar",
@@ -4267,7 +4279,13 @@
         "AI video boru hattı",
         "difüzyon iş akışı",
         "hareket grafikleri AI"
-      ]
+      ],
+      "heroImage": "/images/ae-vs-comfyui.jpg",
+      "heroImageAlt": "After Effects ve ComfyUI için AI video boru hatları",
+      "heroCtaLabel": "BORU HATTIYI DENEYİN",
+      "heroCtaText": "AE-vs-ComfyUI tartışmasını atlayın — Curify'nin toplu araçlarında tam bir video boru hattı çalıştırın",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "Dene →"
     },
     "qaBotToTaskAgent": {
       "heading": "🏗️ QA Bot'tan Görev Ajanına: Bir Mimari Rehberi",
@@ -4337,13 +4355,8 @@
       "finalThought": "Eğer ajansınız sadece soruları yanıtlıyorsa, bu bir sohbet botudur. Eğer güvenilir bir şekilde iş yapıyorsa, bu bir Görev Ajansı'dır."
     },
     "characterPromptGenerator": {
-      "title": "Karakter İstek Üretici: 12+ Evren MBTI Kartı + Özel Karakterler",
-      "metaDescription": "Kişilik, isim, yaş, cinsiyet ile sıfırdan karakterler oluşturun - ya da sevdiğiniz evrende (Marvel, Breaking Bad, Naruto, Ghibli, Harry Potter, Friends ve daha fazlası) bilinen bir karakteri MBTI kişilik kartı olarak yeniden hayal edin.",
-      "publishedDate": "2026-05-12",
-      "readTime": "6 dk okuma",
       "category": "Nano Şablon",
       "heroImageAlt": "Karakter istek üretici önizlemesi",
-      "intro": "Sıfırdan tamamen yeni bir karakter tasarlamak veya sevdiğiniz şovdan birini MBTI kişilik kartı olarak yeniden hayal etmek istiyorsanız, Curify, her biri neyi doldurmanız gerektiğini tam olarak bilmenizi sağlayan belirli bir parametre formuna sahip odaklanmış bir karakter şablonu seti sunar.",
       "whatWeShip": {
         "title": "Ne Gönderiyoruz",
         "intro": "Aşağıdaki tüm şablonlar, Curify'de özenle hazırlanmış örneklerle canlıdır. Oluşturmak istediğiniz karakter türüne göre seçin:",
@@ -4478,35 +4491,6 @@
           ]
         }
       },
-      "whoCanBenefit": {
-        "title": "Kimler Faydalanabilir",
-        "writers": {
-          "title": "Yazarlar & Hikaye Anlatıcıları",
-          "description": "Özel Karakter Kartı kullanarak taslak oluşturmadan önce tutarlı kişiliğe sahip tekrar eden karakterleri tasarlayın. Rakiplikler ve diyalog dinamiklerini planlamak için MBTI Kontrast Kartı'nı kullanın."
-        },
-        "artists": {
-          "title": "Dijital Sanatçılar & İllüstratörler",
-          "description": "Kawaii Profil Kartı'nda referans sayfaları oluşturun veya komisyon ilhamı için Fandom Izgara Posteri ile tam karakter ızgaraları oluşturun."
-        },
-        "gameDevelopers": {
-          "title": "Oyun Geliştiricileri",
-          "description": "MBTI Kontrast Kartı ve Özel Karakter Kartı, her ikisi de tek seferde tutarlı bir görsel ve davranışsal okuma ile NPC arketipleri sunar."
-        },
-        "creators": {
-          "title": "İçerik Üreticileri",
-          "description": "Evren MBTI kartları (Marvel / Friends / NBA / Ghibli / Çin Klasik) dikey sosyal medya için tasarlanmıştır — bir karakter adı ekleyin ve paylaşın."
-        }
-      },
-      "proTips": {
-        "title": "Profesyonel İpuçları",
-        "tips": [
-          "Kişiliği renk paleti ile eşleştirin — kolerik karakterler sıcak kırmızılarda, melankolikler derin mavilerde iyi çalışır.",
-          "Özel Karakter Kartları için kişiliği 'MBTI + 1-2 özellik' olarak yazın (örneğin 'ENFP, iyimser, huzursuz'). Belirsiz ipuçları belirsiz portreler üretir.",
-          "Evrensel MBTI şablonları, iyi bilinen karakter isimleriyle en iyi şekilde çalışır. Belirsiz isimler kayma eğilimindedir.",
-          "Üretilen MBTI türü, kanonik hayran yorumuyla çelişiyorsa, kart yine de faydalıdır — tartışmaya değer alternatif bir yorum üretir.",
-          "Paylaşılabilir sosyal içerik için Fandom Grid Poster'ını kullanın — temalı ızgaralar tek karakterli gönderilerden daha iyi performans gösterir."
-        ]
-      },
       "footer": {
         "tags": [
           "AI Karakter Tasarımı",
@@ -4519,6 +4503,343 @@
           "Kawaii Karakter Profili"
         ],
         "questions": "MBTI serisine eklenmesini istediğiniz bir evren var mı? İletişime geçin, bunu bir sonraki içerik güncellemesi için değerlendireceğiz."
+      },
+      "title": "Karakter Yönlendirme Üretici: Naruto, Yellowstone, Marvel, Harry Potter + 8 Daha Fazla Evren için MBTI",
+      "metaDescription": "Naruto, Yellowstone, Marvel, Friends, Harry Potter, Breaking Bad gibi 35+ karakter için MBTI kişilik tiplerini araştırın — ardından Curify'nin evrene özel şablonlarıyla kartı oluşturun.",
+      "publishedDate": "2026-05-30",
+      "readTime": "7 dk okuma",
+      "intro": "\"Minato kişilik tipi\" veya \"Beth Dutton kişilik tipi\" mi arıyorsunuz? Doğru yerdesiniz. Bu kılavuz, Naruto, Yellowstone, Marvel, Friends, Harry Potter, Breaking Bad gibi altı evrende en çok aranan 35+ karakter için MBTI'yi sunuyor — ayrıca bu isimlerden herhangi birini kullanarak tam kartı oluşturmak için kullanacağınız Curify şablonunu içeriyor. [Geldiğiniz evrene](#universes) veya [MBTI hızlı referans tablosuna](#mbti-index) geçin.",
+      "workedExamples": {
+        "title": "Evrene Göre MBTI — 35+ Karakter Analizi",
+        "intro": "Aşağıdaki her evrenin bölümü, MBTI türü ve bir cümlelik açıklamasıyla en çok aranan karakterleri listeler. Her bölümün altındaki şablon bağlantısına tıklayarak görüntü ile tam karakter kartını oluşturun.",
+        "universes": [
+          {
+            "name": "Naruto",
+            "slug": "mbti-naruto",
+            "heading": "Naruto MBTI Karakterleri",
+            "description": "Naruto şablonu, shinobi dünyasına uygun şekilde tasarlanmış kişilik kartları oluşturur — ninja estetiği ile karaktere özel köy işaretleri ve chakra temalı arka plan. Herhangi bir ismi şablona yerleştirin; en çok aranan karakterlerin MBTI'si burada.",
+            "characters": [
+              {
+                "name": "Minato Namikaze",
+                "mbti": "INFJ-A",
+                "blurb": "Stratejik, özverili, derin prensiplere sahip. Sarı Işık, her düşmanından iki hamle önde düşünür."
+              },
+              {
+                "name": "Orochimaru",
+                "mbti": "INTJ-A",
+                "blurb": "Hesaplayıcı, takıntılı, sıradanlığa karşı küçümseyici. Orijinal Sannin, sınırsız zekanın karanlık tarafını temsil ediyor."
+              },
+              {
+                "name": "Itachi Uchiha",
+                "mbti": "INFJ-T",
+                "blurb": "Karmaşık bir ahlaki çerçeveye sahip, yükümlü bir koruyucu. Sadece onun anladığı bir vizyon için her şeyi feda etti."
+              },
+              {
+                "name": "Naruto Uzumaki",
+                "mbti": "ENFP-A",
+                "blurb": "Sonsuz iyimserlik, manyetik kişilik, insanların değişim kapasitesine sarsılmaz bir inanç."
+              },
+              {
+                "name": "Sasuke Uchiha",
+                "mbti": "ISTP-T",
+                "blurb": "Sakin bir dış görünümün ardında gizli iç çatışma, teknik ustalık, soğuk bir mesafe."
+              },
+              {
+                "name": "Kakashi Hatake",
+                "mbti": "INTP-T",
+                "blurb": "Analitik, kuru esprili, duyguları entelektüellik ile savuşturur. Binlerce jutsu kopyalar ama bilinmez kalır."
+              }
+            ]
+          },
+          {
+            "name": "Yellowstone",
+            "slug": "mbti-yellowstone",
+            "heading": "Yellowstone MBTI Karakterleri",
+            "description": "Yellowstone şablon kartları, dizinin Batı tarzını getiriyor — kot ve deri paleti, çiftlik arka planları, Dutton markası. En çok aranan Dutton karakterleri ve onların MBTI:",
+            "characters": [
+              {
+                "name": "Beth Dutton",
+                "mbti": "ESTJ-A",
+                "blurb": "Acımasız bir icracı, aileye sadık, esir almayan. Beth, aile işini bir testere ve bir kokteyl ile yönetiyor."
+              },
+              {
+                "name": "John Dutton",
+                "mbti": "ISTJ-A",
+                "blurb": "İnatçı gelenekçi, göreve bağlı, mirasın yükü altında. Ailenin ayrılmasına izin vermeden çiftliği yakacak olan patriark."
+              },
+              {
+                "name": "Rip Wheeler",
+                "mbti": "ISTP-A",
+                "blurb": "Sadık bir koruyucu, baskı altında soğukkanlı, karşılaştığında yıkıcı derecede etkili. Çiftlik işçisinden zorba haline gelen."
+              },
+              {
+                "name": "Kayce Dutton",
+                "mbti": "ISFP-T",
+                "blurb": "Sessiz, prensip sahibi, eylem odaklı. İki dünya arasında sıkışmış ve her ikisini de onurlandırmaya çalışıyor."
+              },
+              {
+                "name": "Jamie Dutton",
+                "mbti": "INFP-T",
+                "blurb": "Çatışmalı, idealist, kolayca yaralanan. Ailenin avukatı, ahlaki pusulası sürekli dönüyor."
+              }
+            ]
+          },
+          {
+            "name": "Marvel",
+            "slug": "mbti-marvel",
+            "heading": "Marvel MBTI Karakterleri",
+            "description": "Marvel şablonu, kahramanlara özel renk paletleri ve izometrik oda sahneleri ile MBTI karakter kartları oluşturur. Bir kahraman veya kötü adam seçin — en çok aranan karakterlerin MBTI'si burada.",
+            "characters": [
+              {
+                "name": "Tony Stark / Iron Man",
+                "mbti": "ENTP-A",
+                "blurb": "Yenilikçi, karizmatik, alışılmadık. Tony, tartışmaları ve savaşları hazırlık değil, doğaçlama ile kazanır."
+              },
+              {
+                "name": "Steve Rogers / Captain America",
+                "mbti": "ISFJ-A",
+                "blurb": "Görevine bağlı, geleneksel, orijinal koruyucu. Cap'in ahlaki çerçevesi 1942'de belirlendi ve değişmedi."
+              },
+              {
+                "name": "Bruce Banner / Hulk",
+                "mbti": "INTJ-T",
+                "blurb": "Duygular kontrolü ele geçirdiğinde, dönüşmekte olduğu şey tarafından engellenen parlak bir stratejist. Odadaki en zeki adam, ta ki öyle olmayana kadar."
+              },
+              {
+                "name": "Thor",
+                "mbti": "ESFP-A",
+                "blurb": "Dışa dönük, eylem odaklı, anlık düşünen. Çekiç için layık, çünkü olmayı seçiyor, planladığı için değil."
+              },
+              {
+                "name": "Natasha Romanoff / Black Widow",
+                "mbti": "ISTP-A",
+                "blurb": "Kaynakları iyi kullanan, bağımsız, derinlemesine özel. Her odayı okur ve yalnızca emin olduğunda harekete geçer."
+              },
+              {
+                "name": "Peter Parker / Spider-Man",
+                "mbti": "INFP-T",
+                "blurb": "İdealist, hassas, değer odaklı. Her seçimin ağırlığını taşır çünkü seçimlerin önemli olduğuna inanır."
+              }
+            ]
+          },
+          {
+            "name": "Friends",
+            "slug": "friends-character-mbti",
+            "heading": "Friends MBTI Karakterleri",
+            "description": "Friends şablon kartları, dizinin sitcom sıcaklığını yansıtır — Central Perk renk paleti, 90'lar NYC daire estetiği. İşte her ana oyuncu için MBTI.",
+            "characters": [
+              {
+                "name": "Chandler Bing",
+                "mbti": "ENTP-T",
+                "blurb": "Zeki, alaycı, çatışmadan kaçınan. Her duygusal anı bir espriyle etkisiz hale getirir."
+              },
+              {
+                "name": "Ross Geller",
+                "mbti": "INTP-T",
+                "blurb": "Zeki, garip, analitik. Dinozorlar hakkında doğru, diğer her şey hakkında yanlış."
+              },
+              {
+                "name": "Rachel Green",
+                "mbti": "ENFP-A",
+                "blurb": "Cazibeli, imaj odaklı, yavaşça evrilen. Şımarık nişanlıdan moda yöneticisine geçiş, bir ENFP büyüme yolunun kitapta yazılı hali."
+              },
+              {
+                "name": "Monica Geller",
+                "mbti": "ESTJ-A",
+                "blurb": "Organize, kontrolcü, yapı aracılığıyla besleyici. Kaosu kontrol etmenin tek yolu olduğu için ev sahipliği yapan şef."
+              },
+              {
+                "name": "Joey Tribbiani",
+                "mbti": "ESFP-A",
+                "blurb": "Dışa dönük, hedonist, son derece sadık. Şu anda yaşıyor ve senin de onunla orada yaşamanı istiyor."
+              },
+              {
+                "name": "Phoebe Buffay",
+                "mbti": "ENFP-T",
+                "blurb": "Garip, sezgisel, özgür ruhlu. Ahlaki çerçevesi gerçekten başka bir yerden gelen tek kişi."
+              }
+            ]
+          },
+          {
+            "name": "Harry Potter",
+            "slug": "harry-potter-mbti-infographic",
+            "heading": "Harry Potter MBTI Karakterleri",
+            "description": "Harry Potter şablonu, her karaktere uyan sihirbaz estetiği kişilik kartları oluşturur - ev renk paleti, imza asa, durumsal arka plan. En çok aranan HP karakterleri ve MBTI'leri:",
+            "characters": [
+              {
+                "name": "Harry Potter",
+                "mbti": "ISFP-T",
+                "blurb": "Sessiz isyancı, değer odaklı, zorlandığında harekete geçer. Ahlaki pusulası asla sapmayan isteksiz kahraman."
+              },
+              {
+                "name": "Hermione Granger",
+                "mbti": "ESTJ-A",
+                "blurb": "Kurallara bağlı, hırslı, organize. Her seferinde doğru cevap önce gelir - ta ki kurallar ve doğru cevap çatışana kadar."
+              },
+              {
+                "name": "Ron Weasley",
+                "mbti": "ESFP-T",
+                "blurb": "Sadık, eğlenceli, bazen güvensiz. Varlığı, stratejisinden daha önemli olan arkadaş."
+              },
+              {
+                "name": "Severus Snape",
+                "mbti": "INTJ-A",
+                "blurb": "Stratejik, acı dolu, gizli derinlikler. Serinin en uzun ve en acı verici oyununu oynadı."
+              },
+              {
+                "name": "Albus Dumbledore",
+                "mbti": "INFJ-A",
+                "blurb": "Bilge mentor, uzun vadeli planlayıcı, acımasızlığa varan prensip sahibi. Sonucun ne olması gerektiğini bilir ve onu düzenler."
+              },
+              {
+                "name": "Lord Voldemort",
+                "mbti": "ENTJ-A",
+                "blurb": "Güç peşinde, karizmatik, acımasız. Kendi ölümü korkusu etrafında bir ideoloji inşa etti."
+              }
+            ]
+          },
+          {
+            "name": "Breaking Bad",
+            "slug": "mbti-breakingbad",
+            "heading": "Breaking Bad MBTI Karakterleri",
+            "description": "Breaking Bad şablon kartları, dizinin çöl-meth estetiğine odaklanıyor - Albuquerque paleti, karakterlere özgü imza unsurlar (Walt'ın şapkası, Saul'un takımı, Jesse'nin kapüşonu). Better Call Saul karakterlerini de içerir.",
+            "characters": [
+              {
+                "name": "Walter White",
+                "mbti": "INTJ-A",
+                "blurb": "Zeki stratejist, ego odaklı, maskeli. Kimya öğretmeni hikayesi, kartel hikayesine korkunç bir kaçınılmazlıkla eğilir."
+              },
+              {
+                "name": "Jesse Pinkman",
+                "mbti": "ISFP-T",
+                "blurb": "Sadık, duygusal, vicdanına bağlı. Serinin ahlaki merkezi, kimse ondan bunu istemese bile."
+              },
+              {
+                "name": "Saul Goodman / Jimmy McGill",
+                "mbti": "ENTP-T",
+                "blurb": "Kurnaz, hızlı konuşan, fırsatçı birisi, kardeş şeklinde bir yarası var. Slippin' Jimmy ya da Saul olsun, mekanizma aynıdır."
+              },
+              {
+                "name": "Mike Ehrmantraut",
+                "mbti": "ISTJ-A",
+                "blurb": "Disiplinli operatör, bir davranış kuralı, az konuşur. Dizide asla taktiksel bir hata yapmayan tek karakter."
+              },
+              {
+                "name": "Gustavo Fring",
+                "mbti": "INTJ-A",
+                "blurb": "Uzun vadeli stratejist, kontrollü dış görünüm, buz gibi sabır. Yavaş planın her zaman kazandığı ilkesine dayanarak bir imparatorluk kurdu."
+              },
+              {
+                "name": "Chuck McGill",
+                "mbti": "ISTJ-A",
+                "blurb": "Katı, prensip sahibi, kin besleyen. Ahlaki çerçevesi o kadar sıkı ki her ilişkiyi boğuyor."
+              }
+            ]
+          }
+        ]
+      },
+      "mbtiIndex": {
+        "title": "MBTI ile Karakter Hızlı Referans",
+        "intro": "Belirli bir MBTI türünün örneğini mi arıyorsunuz? Her tür için bir karakter, o evreni yöneten Curify şablonuyla birlikte. Kartı oluşturmak için herhangi bir şablon bağlantısına tıklayın.",
+        "note": "Yukarıda belirtilmeyen MBTI türleri için (veya henüz özel bir şablonumuz olmayan evrenlerden karakterler — Star Wars, Aslan Kral, Star Trek gibi), [Özel Karakter Kartı](/nano-template/custom-character-card) şablonunu kullanın — karakter adını ve MBTI'yi parametreler içine yazın ve analiz oluşturur.",
+        "rows": [
+          {
+            "type": "INFJ",
+            "label": "Savunucu",
+            "character": "Minato Namikaze (Naruto)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "INTJ",
+            "label": "Mimar",
+            "character": "Walter White (Breaking Bad)",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "INTP",
+            "label": "Mantıkçı",
+            "character": "Ross Geller (Friends)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "INFP",
+            "label": "Arabulucu",
+            "character": "Jesse Pinkman (Breaking Bad)",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "ISFJ",
+            "label": "Koruyucu",
+            "character": "Steve Rogers / Kaptan Amerika (Marvel)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ISTJ",
+            "label": "Lojistikçi",
+            "character": "John Dutton (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ISFP",
+            "label": "Macera Arayan",
+            "character": "Harry Potter (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ISTP",
+            "label": "Virtüöz",
+            "character": "Rip Wheeler (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ENFJ",
+            "label": "Protagonist",
+            "character": "Mufasa (Aslan Kral — Özel Karakter Kartı)",
+            "slug": "custom-character-card"
+          },
+          {
+            "type": "ENFP",
+            "label": "Kampanyacı",
+            "character": "Naruto Uzumaki (Naruto)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "ENTJ",
+            "label": "Komutan",
+            "character": "Lord Voldemort (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ENTP",
+            "label": "Tartışmacı",
+            "character": "Tony Stark / Iron Man (Marvel)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ESFJ",
+            "label": "Konsolos",
+            "character": "Molly Weasley (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ESTJ",
+            "label": "Yönetici",
+            "character": "Beth Dutton (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ESFP",
+            "label": "Eğlendirici",
+            "character": "Joey Tribbiani (Friends)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "ESTP",
+            "label": "Girişimci",
+            "character": "Han Solo (Star Wars — Özel Karakter Kartı)",
+            "slug": "custom-character-card"
+          }
+        ]
       }
     },
     "curifyNanoBananaTemplateTips": {
@@ -4956,7 +5277,13 @@
       "curifyTitle": "Kendi Üretiminizi Oluşturun — Doğrudan Şablon Bağlantıları",
       "curifyContent": "İstem mühendisliğini atlayın ve parametreler önceden doldurulmuş şablonlara doğrudan gidin:\n\n**Spor Savaşı (1v1 rekabet)**: [/nano-template/sports-battle](/nano-template/sports-battle) — `player_left` ve `player_right` sağlayın. Şablonun temel istemi, çizgi roman VS poster tarzına kilitlenmiştir; sadece isimleri sağlamanız yeterlidir. Mevcut galeri, [Messi vs Ronaldo](/nano-template/sports-battle), [Federer vs Nadal](/nano-template/sports-battle), [Ali vs Tyson](/nano-template/sports-battle), [Hamilton vs Schumacher](/nano-template/sports-battle) gibi referansları içerir.\n\n**Ünlü Grup Posteri (tam takım)**: [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — takım adı ile `star_movie_group` sağlayın (örneğin, `Brezilya 2026 Milli Takımı`). Mevcut galeri, spor (NBA Legends, Tenis Efsaneleri, Yarış Efsaneleri), eğlence (Friends, Stranger Things, BTS, Blackpink, Game of Thrones) ve anime alanlarında toplu grupları kapsar — aynı şablon, farklı grup.\n\nDaha fazla spor temalı istem için, [/topics/character](/topics/character) merkezi, spor, oyun, film ve eğlence alanlarında karakter odaklı şablonları indeksler. Her istem ailesi için küratörlü Nano Banana dizini için [/nano-banana-pro-prompts](/nano-banana-pro-prompts) kataloğuna bakın.",
       "conclusionTitle": "Diğer Tüm Milli Takımlar — Aynı İstem, İsim Değiştirin",
-      "conclusionContent": "Yukarıdaki iki istem genelleştirilmiştir. Aynı şablon, takım adını değiştirin, forma renklerini ve paleti doğru ayarlayın:\n\n- **Fransa**: `Fransa 2026 Milli Takımı` — lacivert + beyaz + kırmızı, Stade de France, başlık `FRANCE 2026`\n- **Almanya**: `Almanya 2026 Milli Takımı` — beyaz forma + siyah detaylar + kırmızı/altın bayrak, Allianz Arena, başlık `DEUTSCHLAND 2026`\n- **İspanya**: `İspanya 2026 Milli Takımı` — kırmızı + safran sarısı + lacivert, Santiago Bernabéu, başlık `ESPAÑA 2026`\n- **İngiltere**: `İngiltere 2026 Dünya Kupası Kadrosu` — beyaz + St George'un kırmızısı + lacivert, Wembley, başlık `ENGLAND 2026`\n- **Portekiz**: `Portekiz 2026 Milli Takımı` — koyu kırmızı + yeşil yaka + altın vurgusu, Estádio José Alvalade, başlık `PORTUGAL 2026`\n- **Fas**: `Fas 2026 Milli Takımı` — kırmızı + yeşil yıldız + beyaz detay, Grand Stade Hassan II, başlık `LE MAROC 2026`\n- **Meksika**: `Meksika 2026 Milli Takımı` (ev sahibi ülke) — yeşil + beyaz + kırmızı, Estadio Azteca, başlık `MÉXICO 2026`\n- **ABD**: `ABD 2026 Dünya Kupası Kadrosu` (ev sahibi ülke) — lacivert + kırmızı şeritler + beyaz yıldız, SoFi Stadyumu, başlık `USA 2026`\n- **Japonya**: `Japonya 2026 Milli Takımı` — Samuray mavi forması + kırmızı yükselen güneş vurgusu + beyaz, Saitama Stadyumu, başlık `日本 2026`\n\nİstem yapısı aynı kalır — forma tanımı, stadyum arka planı, renk paleti, başlık metni, dikey 3:4 format. Takım adını ve paleti değiştirin; diğer her şey, şablonun temel isteminden geçer.\n\nBeğendiğiniz bir posteri gönderirseniz, [/topics/character](/topics/character) ve [/topics/sports](/topics/sports) merkezleri, benzer şablonların ortaya çıktığı yerdir — karakter savaşları, film grup posterleri, fan kadroları, hepsi aynı Curify hattında çalışır."
+      "conclusionContent": "Yukarıdaki iki istem genelleştirilmiştir. Aynı şablon, takım adını değiştirin, forma renklerini ve paleti doğru ayarlayın:\n\n- **Fransa**: `Fransa 2026 Milli Takımı` — lacivert + beyaz + kırmızı, Stade de France, başlık `FRANCE 2026`\n- **Almanya**: `Almanya 2026 Milli Takımı` — beyaz forma + siyah detaylar + kırmızı/altın bayrak, Allianz Arena, başlık `DEUTSCHLAND 2026`\n- **İspanya**: `İspanya 2026 Milli Takımı` — kırmızı + safran sarısı + lacivert, Santiago Bernabéu, başlık `ESPAÑA 2026`\n- **İngiltere**: `İngiltere 2026 Dünya Kupası Kadrosu` — beyaz + St George'un kırmızısı + lacivert, Wembley, başlık `ENGLAND 2026`\n- **Portekiz**: `Portekiz 2026 Milli Takımı` — koyu kırmızı + yeşil yaka + altın vurgusu, Estádio José Alvalade, başlık `PORTUGAL 2026`\n- **Fas**: `Fas 2026 Milli Takımı` — kırmızı + yeşil yıldız + beyaz detay, Grand Stade Hassan II, başlık `LE MAROC 2026`\n- **Meksika**: `Meksika 2026 Milli Takımı` (ev sahibi ülke) — yeşil + beyaz + kırmızı, Estadio Azteca, başlık `MÉXICO 2026`\n- **ABD**: `ABD 2026 Dünya Kupası Kadrosu` (ev sahibi ülke) — lacivert + kırmızı şeritler + beyaz yıldız, SoFi Stadyumu, başlık `USA 2026`\n- **Japonya**: `Japonya 2026 Milli Takımı` — Samuray mavi forması + kırmızı yükselen güneş vurgusu + beyaz, Saitama Stadyumu, başlık `日本 2026`\n\nİstem yapısı aynı kalır — forma tanımı, stadyum arka planı, renk paleti, başlık metni, dikey 3:4 format. Takım adını ve paleti değiştirin; diğer her şey, şablonun temel isteminden geçer.\n\nBeğendiğiniz bir posteri gönderirseniz, [/topics/character](/topics/character) ve [/topics/sports](/topics/sports) merkezleri, benzer şablonların ortaya çıktığı yerdir — karakter savaşları, film grup posterleri, fan kadroları, hepsi aynı Curify hattında çalışır.",
+      "heroImage": "/images/nano_insp/template-sports-battle-Messi-vs-Ronaldo.jpg",
+      "heroImageAlt": "Messi vs Ronaldo sinematik futbol rekabeti posteri — Spor Savaşı şablon önizlemesi",
+      "heroCtaLabel": "ŞABLONU DENEYİN",
+      "heroCtaText": "Kendi Messi vs Ronaldo (veya herhangi bir futbol rekabeti) sinematik posterinizi oluşturun",
+      "heroCtaHref": "/nano-template/sports-battle",
+      "heroCtaButton": "Oluştur →"
     },
     "onePersonCompaniesVs100PersonTeams": {
       "title": "Tek Kişilik Şirketler Fırtına Gibi. 100 Kişilik Ekibiniz Bir Yük.",
