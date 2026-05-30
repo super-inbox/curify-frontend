@@ -1,20 +1,62 @@
+import BlogInlineClickTracker from "./BlogInlineClickTracker";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
+
 interface GenericBlogContentProps {
   hasKey: (key: string) => boolean;
   safeT: (key: string, defaultValue?: string) => string;
   formatContent: (content: string) => string;
   getVideoDubbingUrl: (locale: string) => string;
   locale: string;
+  slug: string;  // added 2026-05-30 — needed by BlogInlineClickTracker for per-blog click attribution
 }
 
-export default function GenericBlogContent({ 
-  hasKey, 
-  safeT, 
-  formatContent, 
-  getVideoDubbingUrl, 
-  locale 
+export default function GenericBlogContent({
+  hasKey,
+  safeT,
+  formatContent,
+  getVideoDubbingUrl,
+  locale,
+  slug,
 }: GenericBlogContentProps) {
+  // Optional hero + CTA block activates when i18n provides heroImage + heroCtaText + heroCtaHref.
+  // Pattern ported from mbti-character-generator (33% engagement vs 0% for plain GenericBlogContent).
+  const hasHero = hasKey("heroImage") && hasKey("heroCtaText") && hasKey("heroCtaHref");
+
   return (
+    <BlogInlineClickTracker blogSlug={slug}>
     <div className="space-y-6">
+      {hasHero && (
+        <section className="mb-8 not-prose">
+          <a
+            href={safeT("heroCtaHref")}
+            className="block group rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all bg-white"
+          >
+            <div className="aspect-[16/9] w-full overflow-hidden bg-gray-100">
+              <CdnImage
+                src={safeT("heroImage")}
+                alt={hasKey("heroImageAlt") ? safeT("heroImageAlt") : safeT("title")}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform"
+              />
+            </div>
+            <div className="px-6 py-5 flex items-center justify-between gap-4">
+              <div className="min-w-0">
+                {hasKey("heroCtaLabel") && (
+                  <div className="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-1">
+                    {safeT("heroCtaLabel")}
+                  </div>
+                )}
+                <div className="text-base font-semibold text-gray-900 truncate">
+                  {safeT("heroCtaText")}
+                </div>
+              </div>
+              <div className="flex-shrink-0 rounded-lg bg-blue-600 text-white px-4 py-2 text-sm font-semibold group-hover:bg-blue-700 transition">
+                {hasKey("heroCtaButton") ? safeT("heroCtaButton") : "Try it →"}
+              </div>
+            </div>
+          </a>
+        </section>
+      )}
+
       <p className="text-lg font-semibold text-blue-600 mb-4">
         {hasKey("intro") ? safeT("intro") : "Introduction"}
       </p>
@@ -208,5 +250,6 @@ export default function GenericBlogContent({
         </section>
       )}
     </div>
+    </BlogInlineClickTracker>
   );
 }

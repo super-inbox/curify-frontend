@@ -157,7 +157,15 @@ export function formatVoiceCloningContent(content: string): string {
     // Close table tags
     .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
     // Handle markdown links [text](url)
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
+      // Internal Curify URLs (start with /) open in the SAME tab so session
+      // attribution + click tracking works. External URLs keep _blank.
+      // Audit 2026-05-30: 90 WC-blog landers / 0 follow-ups / 0% engagement,
+      // tracked back to ALL inline markdown links rendering with _blank.
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="text-blue-600 hover:underline">${label}</a>`;
+    })
     // Handle bold text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     // Handle markdown blockquotes — pull-quote rendering with a colored
@@ -199,7 +207,15 @@ export function formatAslContent(content: string): string {
     // Close table tags
     .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
     // Handle markdown links [text](url)
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
+      // Internal Curify URLs (start with /) open in the SAME tab so session
+      // attribution + click tracking works. External URLs keep _blank.
+      // Audit 2026-05-30: 90 WC-blog landers / 0 follow-ups / 0% engagement,
+      // tracked back to ALL inline markdown links rendering with _blank.
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="text-blue-600 hover:underline">${label}</a>`;
+    })
     // Handle bold text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     // Handle markdown blockquotes — pull-quote rendering with a colored
@@ -249,7 +265,15 @@ export function formatNanoTemplateContent(content: string): string {
     // Close table tags
     .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
     // Handle markdown links [text](url)
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
+      // Internal Curify URLs (start with /) open in the SAME tab so session
+      // attribution + click tracking works. External URLs keep _blank.
+      // Audit 2026-05-30: 90 WC-blog landers / 0 follow-ups / 0% engagement,
+      // tracked back to ALL inline markdown links rendering with _blank.
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="text-blue-600 hover:underline">${label}</a>`;
+    })
     // Handle mermaid diagrams - process before other formatting
     .replace(/```mermaid\n([\s\S]*?)```/g, '<div class="mermaid">$1</div>')
     // Handle bold text (but not headers)
@@ -283,7 +307,15 @@ export function formatNanoBananaContent(content: string): string {
     // surfacing as the dot-path key in the rendered page.
     .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="my-4 mx-auto max-w-md rounded-lg shadow" />')
     // Handle markdown links [text](url)
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
+      // Internal Curify URLs (start with /) open in the SAME tab so session
+      // attribution + click tracking works. External URLs keep _blank.
+      // Audit 2026-05-30: 90 WC-blog landers / 0 follow-ups / 0% engagement,
+      // tracked back to ALL inline markdown links rendering with _blank.
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="text-blue-600 hover:underline">${label}</a>`;
+    })
     // Handle bold text — must run before italic so **x** is consumed first
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     // Handle single-asterisk italic — guarded against adjacent asterisks
@@ -320,7 +352,15 @@ export function formatContent(content: string): string {
     .replace(/^## (.+)$/gm, '</p><h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">$1</h2><p>')
     .replace(/^# (.+)$/gm, '</p><h1 class="text-3xl font-bold mt-8 mb-6 text-gray-900">$1</h1><p>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // bold LAST, inline
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
+      // Internal Curify URLs (start with /) open in the SAME tab so session
+      // attribution + click tracking works. External URLs keep _blank.
+      // Audit 2026-05-30: 90 WC-blog landers / 0 follow-ups / 0% engagement,
+      // tracked back to ALL inline markdown links rendering with _blank.
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="text-blue-600 hover:underline">${label}</a>`;
+    })
     .replace(/^- (.+)$/gm, '<li>$1</li>')
     .replace(/(<li>.*<\/li>)+/g, '<ul class="list-disc pl-6 mb-4 space-y-1">$&</ul>')
     .replace(/\n\n+/g, '</p><p class="mb-4">')

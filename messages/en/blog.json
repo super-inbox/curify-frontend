@@ -1625,7 +1625,13 @@
         "🤖 <strong>AI Model Comparison:</strong> Choose the right platform for your needs",
         "💼 <strong>Commercial Applications:</strong> Monetize your AI video skills"
       ],
-      "seoKeywords": "ai video prompts, sora prompts, runway video prompts, pika video prompts, ai video generation tips, video prompting techniques 2026, ai video creator guide"
+      "seoKeywords": "ai video prompts, sora prompts, runway video prompts, pika video prompts, ai video generation tips, video prompting techniques 2026, ai video creator guide",
+      "heroImage": "/images/tenprompt.webp",
+      "heroImageAlt": "Top 10 prompting tips for AI video generation",
+      "heroCtaLabel": "TRY VIDEO GENERATION",
+      "heroCtaText": "Put these 10 prompting tips into practice with Curify's video generation tools",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "Try →"
     },
     "imageGenerationModelComparison": {
       "title": "Midjourney vs Nano Banana vs Stable Diffusion: Which Wins in 2026?",
@@ -1688,7 +1694,13 @@
       "batchProcessingTitle": "Batch Processing",
       "batchProcessingContent": "Generate multiple variations simultaneously for faster iteration",
       "technicalAdvancementsTitle": "Technical Advancements",
-      "marketEvolutionTitle": "Market Evolution"
+      "marketEvolutionTitle": "Market Evolution",
+      "heroImage": "/images/hardworker.webp",
+      "heroImageAlt": "Compare Nano Banana, Flux, and Stable Diffusion outputs across the same prompt",
+      "heroCtaLabel": "BROWSE TEMPLATES",
+      "heroCtaText": "Skip the model-vs-model rabbit hole — start from 200+ ready-made Curify templates",
+      "heroCtaHref": "/nano-banana-pro-prompts",
+      "heroCtaButton": "Explore →"
     },
     "lipSyncBusinessGuide": {
       "title": "AI Lip Sync & Dubbing Guide: Business Applications and Tools",
@@ -1844,13 +1856,13 @@
       "conclusionContent": "The pattern that works for faceless channels is the opposite of how most creators start. Build the pipeline first — visual template, script library, voice clone, schedule — and then produce. The first 10 videos are testing the pipeline, not building an audience.\n\nThe ceiling for a faceless channel is not creative; it is operational. The channels that scale are the ones with infrastructure. Start with one channel, lock the pipeline, then consider scaling to a network only when the first one is running on autopilot."
     },
     "characterPromptGenerator": {
-      "title": "Character Prompt Generator: 12+ Universe MBTI Cards + Custom Characters",
-      "metaDescription": "Build characters from scratch with personality, name, age, gender — or re-imagine a known character as an MBTI personality card in your favourite universe (Marvel, Breaking Bad, Naruto, Ghibli, Harry Potter, Friends, and more).",
-      "publishedDate": "2026-05-12",
-      "readTime": "6 min read",
+      "title": "Character Prompt Generator: MBTI for Naruto, Yellowstone, Marvel, Harry Potter + 8 More Universes",
+      "metaDescription": "Look up MBTI personality types for 35+ characters across Naruto, Yellowstone, Marvel, Friends, Harry Potter, Breaking Bad — then generate the card with Curify's universe-specific templates.",
+      "publishedDate": "2026-05-30",
+      "readTime": "7 min read",
       "category": "Nano Template",
       "heroImageAlt": "Character prompt generator preview",
-      "intro": "Whether you want to design a brand-new character from scratch or re-imagine someone from your favourite show as an MBTI personality card, Curify ships a focused set of character templates — each with a specific parameter form so you know exactly what to fill in.",
+      "intro": "Searching \"Minato personality type\" or \"Beth Dutton personality type\"? You're in the right place. This guide ships the MBTI for 35+ most-searched characters across six universes — Naruto, Yellowstone, Marvel, Friends, Harry Potter, Breaking Bad — plus the Curify template you'd drop any of those names into to generate the full card. Skip to the [universe you came for](#universes) or the [MBTI quick-reference table](#mbti-index).",
       "whatWeShip": {
         "title": "What We Ship",
         "intro": "All templates below are live on Curify with curated examples. Pick by the kind of character you want to build:",
@@ -1985,35 +1997,6 @@
           ]
         }
       },
-      "whoCanBenefit": {
-        "title": "Who Can Benefit",
-        "writers": {
-          "title": "Writers & Storytellers",
-          "description": "Use Custom Character Card to design recurring cast members with consistent personality before drafting. Use the MBTI Contrast Card to plan rivalries and dialogue dynamics."
-        },
-        "artists": {
-          "title": "Digital Artists & Illustrators",
-          "description": "Spin up reference sheets in the Kawaii Profile Card, or generate full character grids with the Fandom Grid Poster for commission inspiration."
-        },
-        "gameDevelopers": {
-          "title": "Game Developers",
-          "description": "MBTI Contrast Card and Custom Character Card both give NPC archetypes with a coherent visual and behavioural read in one shot."
-        },
-        "creators": {
-          "title": "Content Creators",
-          "description": "Universe MBTI cards (Marvel / Friends / NBA / Ghibli / Chinese Classic) are designed for vertical social — drop in a character name and post."
-        }
-      },
-      "proTips": {
-        "title": "Pro Tips",
-        "tips": [
-          "Match personality to colour palette — choleric characters work in warm reds, melancholic in deep blues.",
-          "For Custom Character Cards, write the personality as 'MBTI + 1–2 traits' (e.g. 'ENFP, optimistic, restless'). Vague prompts produce vague portraits.",
-          "Universe MBTI templates work best with well-known character names. Obscure names tend to drift.",
-          "If the generated MBTI type disagrees with the canonical fan reading, the card is still useful — it produces an alternative interpretation worth discussing.",
-          "Use the Fandom Grid Poster for shareable social content — themed grids outperform single-character posts."
-        ]
-      },
       "footer": {
         "tags": [
           "AI Character Design",
@@ -2026,6 +2009,338 @@
           "Kawaii Character Profile"
         ],
         "questions": "Have a universe you'd like added to the MBTI lineup? Reach out and we'll consider it for the next content drop."
+      },
+      "workedExamples": {
+        "title": "MBTI by Universe — 35+ Characters Analyzed",
+        "intro": "Each universe section below lists the most-searched characters with their MBTI type and a one-line take. Click the template link at the bottom of each section to generate the full character card with image.",
+        "universes": [
+          {
+            "name": "Naruto",
+            "slug": "mbti-naruto",
+            "heading": "Naruto MBTI Characters",
+            "description": "The Naruto template generates personality cards styled to the shinobi world — ninja aesthetic with character-specific village marks and chakra-themed background. Drop any name into the template; here's the MBTI for the most-searched characters.",
+            "characters": [
+              {
+                "name": "Minato Namikaze",
+                "mbti": "INFJ-A",
+                "blurb": "Strategic, self-sacrificing, deeply principled. The Yellow Flash thinks two moves ahead of every enemy."
+              },
+              {
+                "name": "Orochimaru",
+                "mbti": "INTJ-A",
+                "blurb": "Calculating, obsessive, contemptuous of the ordinary. The original Sannin embodies the dark side of unrestrained intellect."
+              },
+              {
+                "name": "Itachi Uchiha",
+                "mbti": "INFJ-T",
+                "blurb": "Burdened protector with a complex moral framework. Sacrificed everything for a vision only he understood."
+              },
+              {
+                "name": "Naruto Uzumaki",
+                "mbti": "ENFP-A",
+                "blurb": "Boundless optimism, magnetic personality, unshakeable conviction in people's capacity to change."
+              },
+              {
+                "name": "Sasuke Uchiha",
+                "mbti": "ISTP-T",
+                "blurb": "Cool detachment, technical mastery, internal conflict masked by a quiet exterior."
+              },
+              {
+                "name": "Kakashi Hatake",
+                "mbti": "INTP-T",
+                "blurb": "Analytical, dry-witted, deflects emotion with intellectualism. Copies a thousand jutsu but stays unknowable."
+              }
+            ]
+          },
+          {
+            "name": "Yellowstone",
+            "slug": "mbti-yellowstone",
+            "heading": "Yellowstone MBTI Characters",
+            "description": "The Yellowstone template cards bring the show's Western register — denim and leather palette, ranch backdrops, the Dutton brand. The most-searched Dutton characters and their MBTI:",
+            "characters": [
+              {
+                "name": "Beth Dutton",
+                "mbti": "ESTJ-A",
+                "blurb": "Ruthless executor, family-loyal, takes no prisoners. Beth runs the family business with a chainsaw and a cocktail."
+              },
+              {
+                "name": "John Dutton",
+                "mbti": "ISTJ-A",
+                "blurb": "Stubborn traditionalist, duty-bound, weighed down by legacy. The patriarch who'd burn the ranch before letting it leave the family."
+              },
+              {
+                "name": "Rip Wheeler",
+                "mbti": "ISTP-A",
+                "blurb": "Loyal protector, cool under pressure, devastatingly effective when crossed. The wrangler-turned-enforcer."
+              },
+              {
+                "name": "Kayce Dutton",
+                "mbti": "ISFP-T",
+                "blurb": "Quiet, principled, action-oriented. Caught between two worlds and trying to honour both."
+              },
+              {
+                "name": "Jamie Dutton",
+                "mbti": "INFP-T",
+                "blurb": "Conflicted, idealistic, easily wounded. The family lawyer whose moral compass keeps spinning."
+              }
+            ]
+          },
+          {
+            "name": "Marvel",
+            "slug": "mbti-marvel",
+            "heading": "Marvel MBTI Characters",
+            "description": "The Marvel template generates MBTI character cards with hero-specific colour palettes and isometric room scenes. Pick a hero or villain — here's the MBTI on the most-searched characters.",
+            "characters": [
+              {
+                "name": "Tony Stark / Iron Man",
+                "mbti": "ENTP-A",
+                "blurb": "Inventive, charismatic, unconventional. Tony wins arguments and battles through improvisation, not preparation."
+              },
+              {
+                "name": "Steve Rogers / Captain America",
+                "mbti": "ISFJ-A",
+                "blurb": "Duty-bound, traditional, the original protector. Cap's moral framework was set in 1942 and hasn't moved."
+              },
+              {
+                "name": "Bruce Banner / Hulk",
+                "mbti": "INTJ-T",
+                "blurb": "Brilliant strategist held back by the thing he becomes when emotion takes over. The smartest man in the room until he isn't."
+              },
+              {
+                "name": "Thor",
+                "mbti": "ESFP-A",
+                "blurb": "Outgoing, action-oriented, present-tense thinker. Worthy of the hammer because he chooses to be, not because he plans to be."
+              },
+              {
+                "name": "Natasha Romanoff / Black Widow",
+                "mbti": "ISTP-A",
+                "blurb": "Resourceful, independent, deeply private. Reads every room and acts only when she's sure."
+              },
+              {
+                "name": "Peter Parker / Spider-Man",
+                "mbti": "INFP-T",
+                "blurb": "Idealistic, sensitive, values-driven. Carries the weight of every choice because he believes choices matter."
+              }
+            ]
+          },
+          {
+            "name": "Friends",
+            "slug": "friends-character-mbti",
+            "heading": "Friends MBTI Characters",
+            "description": "The Friends template cards channel the show's sitcom warmth — Central Perk colour palette, 90s NYC apartment aesthetic. Here's the MBTI for each main cast member.",
+            "characters": [
+              {
+                "name": "Chandler Bing",
+                "mbti": "ENTP-T",
+                "blurb": "Witty, sarcastic, conflict-avoidant. Defuses every emotional moment with a one-liner."
+              },
+              {
+                "name": "Ross Geller",
+                "mbti": "INTP-T",
+                "blurb": "Intellectual, awkward, analytical. Right about dinosaurs, wrong about everything else."
+              },
+              {
+                "name": "Rachel Green",
+                "mbti": "ENFP-A",
+                "blurb": "Charming, image-driven, slowly evolving. The arc from spoiled fiancée to fashion executive is a textbook ENFP growth path."
+              },
+              {
+                "name": "Monica Geller",
+                "mbti": "ESTJ-A",
+                "blurb": "Organized, controlling, nurturing through structure. The chef who hosts because it's the only way to control the chaos."
+              },
+              {
+                "name": "Joey Tribbiani",
+                "mbti": "ESFP-A",
+                "blurb": "Outgoing, hedonist, fiercely loyal. Lives in the present and wants you to live there with him."
+              },
+              {
+                "name": "Phoebe Buffay",
+                "mbti": "ENFP-T",
+                "blurb": "Quirky, intuitive, free-spirited. The only one whose moral framework genuinely came from somewhere else."
+              }
+            ]
+          },
+          {
+            "name": "Harry Potter",
+            "slug": "harry-potter-mbti-infographic",
+            "heading": "Harry Potter MBTI Characters",
+            "description": "The Harry Potter template generates wizard-aesthetic personality cards — house colour palette, signature wand, situational background that fits each character. Most-searched HP characters and their MBTI:",
+            "characters": [
+              {
+                "name": "Harry Potter",
+                "mbti": "ISFP-T",
+                "blurb": "Quiet rebel, values-driven, action when pushed. The reluctant hero whose moral compass never wavers."
+              },
+              {
+                "name": "Hermione Granger",
+                "mbti": "ESTJ-A",
+                "blurb": "Rule-bound, ambitious, organized. Right answer first, every time — until the rules and the right answer conflict."
+              },
+              {
+                "name": "Ron Weasley",
+                "mbti": "ESFP-T",
+                "blurb": "Loyal, fun-loving, sometimes insecure. The friend whose presence matters more than his strategy."
+              },
+              {
+                "name": "Severus Snape",
+                "mbti": "INTJ-A",
+                "blurb": "Strategic, bitter, hidden depths. Played the longest, most painful game in the series."
+              },
+              {
+                "name": "Albus Dumbledore",
+                "mbti": "INFJ-A",
+                "blurb": "Wise mentor, long-view planner, principled to the point of cruelty. Knows what the outcome needs and orchestrates it."
+              },
+              {
+                "name": "Lord Voldemort",
+                "mbti": "ENTJ-A",
+                "blurb": "Power-seeking, charismatic, ruthless. Built an entire ideology around the fear of his own mortality."
+              }
+            ]
+          },
+          {
+            "name": "Breaking Bad",
+            "slug": "mbti-breakingbad",
+            "heading": "Breaking Bad MBTI Characters",
+            "description": "The Breaking Bad template cards lean into the show's desert-meth aesthetic — Albuquerque palette, character-specific signature elements (Walt's hat, Saul's suit, Jesse's hoodie). Including Better Call Saul characters.",
+            "characters": [
+              {
+                "name": "Walter White",
+                "mbti": "INTJ-A",
+                "blurb": "Brilliant strategist, ego-driven, masked. The chemistry teacher arc bends toward the cartel arc with terrible inevitability."
+              },
+              {
+                "name": "Jesse Pinkman",
+                "mbti": "ISFP-T",
+                "blurb": "Loyal, emotional, conscience-bound. The series' moral centre, even when nobody asked him to be."
+              },
+              {
+                "name": "Saul Goodman / Jimmy McGill",
+                "mbti": "ENTP-T",
+                "blurb": "Crafty, fast-talking, opportunist with a brother-shaped wound. Whether he's Slippin' Jimmy or Saul, the mechanism is the same."
+              },
+              {
+                "name": "Mike Ehrmantraut",
+                "mbti": "ISTJ-A",
+                "blurb": "Disciplined operator, code of conduct, says little. The only character in the show who never makes a tactical mistake."
+              },
+              {
+                "name": "Gustavo Fring",
+                "mbti": "INTJ-A",
+                "blurb": "Long-game strategist, controlled exterior, glacial patience. Built an empire on the principle that the slow plan always wins."
+              },
+              {
+                "name": "Chuck McGill",
+                "mbti": "ISTJ-A",
+                "blurb": "Rigid, principled, resentful. The brother whose moral framework is so tight it strangles every relationship."
+              }
+            ]
+          }
+        ]
+      },
+      "mbtiIndex": {
+        "title": "MBTI to Character Quick Reference",
+        "intro": "Looking for an example of a specific MBTI type? One featured character per type, with the Curify template that handles that universe. Click any template link to generate the card.",
+        "note": "For MBTI types not covered above (or characters from universes we don't have a dedicated template for yet — like Star Wars, Lion King, Star Trek), use the [Custom Character Card](/nano-template/custom-character-card) template — type the character name and MBTI into the parameters and it generates the analysis.",
+        "rows": [
+          {
+            "type": "INFJ",
+            "label": "The Advocate",
+            "character": "Minato Namikaze (Naruto)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "INTJ",
+            "label": "The Architect",
+            "character": "Walter White (Breaking Bad)",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "INTP",
+            "label": "The Logician",
+            "character": "Ross Geller (Friends)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "INFP",
+            "label": "The Mediator",
+            "character": "Jesse Pinkman (Breaking Bad)",
+            "slug": "mbti-breakingbad"
+          },
+          {
+            "type": "ISFJ",
+            "label": "The Defender",
+            "character": "Steve Rogers / Captain America (Marvel)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ISTJ",
+            "label": "The Logistician",
+            "character": "John Dutton (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ISFP",
+            "label": "The Adventurer",
+            "character": "Harry Potter (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ISTP",
+            "label": "The Virtuoso",
+            "character": "Rip Wheeler (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ENFJ",
+            "label": "The Protagonist",
+            "character": "Mufasa (Lion King — Custom Character Card)",
+            "slug": "custom-character-card"
+          },
+          {
+            "type": "ENFP",
+            "label": "The Campaigner",
+            "character": "Naruto Uzumaki (Naruto)",
+            "slug": "mbti-naruto"
+          },
+          {
+            "type": "ENTJ",
+            "label": "The Commander",
+            "character": "Lord Voldemort (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ENTP",
+            "label": "The Debater",
+            "character": "Tony Stark / Iron Man (Marvel)",
+            "slug": "mbti-marvel"
+          },
+          {
+            "type": "ESFJ",
+            "label": "The Consul",
+            "character": "Molly Weasley (Harry Potter)",
+            "slug": "harry-potter-mbti-infographic"
+          },
+          {
+            "type": "ESTJ",
+            "label": "The Executive",
+            "character": "Beth Dutton (Yellowstone)",
+            "slug": "mbti-yellowstone"
+          },
+          {
+            "type": "ESFP",
+            "label": "The Entertainer",
+            "character": "Joey Tribbiani (Friends)",
+            "slug": "friends-character-mbti"
+          },
+          {
+            "type": "ESTP",
+            "label": "The Entrepreneur",
+            "character": "Han Solo (Star Wars — Custom Character Card)",
+            "slug": "custom-character-card"
+          }
+        ]
       }
     },
     "UltimateDirectoryOfNanoBananaPrompts": {
@@ -4532,7 +4847,13 @@
       "cta": {
         "primary": "Go to curify-ai.com to see templates",
         "secondary": "Back to blog list"
-      }
+      },
+      "heroImage": "/images/ae-vs-comfyui.jpg",
+      "heroImageAlt": "After Effects vs ComfyUI for AI video pipelines",
+      "heroCtaLabel": "TRY THE PIPELINE",
+      "heroCtaText": "Skip the AE-vs-ComfyUI debate — run a full video pipeline in Curify's batch tools",
+      "heroCtaHref": "/tools/video-dubbing",
+      "heroCtaButton": "Try →"
     },
     "qaBotToTaskAgent": {
       "heading": "🏗️ From QA Bot to Task Agent: An Architecture Guide",
@@ -4803,7 +5124,13 @@
       "curifyTitle": "Generate Yours — Direct Template Links",
       "curifyContent": "Skip the prompt-engineering and go directly to the templates with the parameters pre-filled:\n\n**Sports Battle (1v1 rivalry)**: [/nano-template/sports-battle](/nano-template/sports-battle) — supply `player_left` and `player_right`. The template's base prompt is locked to the comic-book VS poster style; you only supply the names. Existing gallery includes [Messi vs Ronaldo](/nano-template/sports-battle), [Federer vs Nadal](/nano-template/sports-battle), [Ali vs Tyson](/nano-template/sports-battle), [Hamilton vs Schumacher](/nano-template/sports-battle) for reference.\n\n**Celebrity Group Poster (full team)**: [/nano-template/celebrity-movie-group-poster](/nano-template/celebrity-movie-group-poster) — supply `star_movie_group` with the team name (e.g., `Brazil 2026 National Team`). Existing gallery covers ensemble groups across sports (NBA Legends, Tennis Legends, Racing Legends), entertainment (Friends, Stranger Things, BTS, Blackpink, Game of Thrones), and anime — same template, different group.\n\nFor more sports-themed prompts, the [/topics/character](/topics/character) hub indexes character-driven templates across sports, gaming, film, and entertainment. For the curated Nano Banana directory across every prompt family, [/nano-banana-pro-prompts](/nano-banana-pro-prompts) is the catalog.",
       "conclusionTitle": "Every Other National Team — Same Prompt, Swap the Name",
-      "conclusionContent": "The two prompts above generalize. Same template, swap the team name, get the kit colors and palette right:\n\n- **France**: `France 2026 National Team` — navy blue + white + red, Stade de France, headline `FRANCE 2026`\n- **Germany**: `Germany 2026 National Team` — white kit + black accents + red/gold flag, Allianz Arena, headline `DEUTSCHLAND 2026`\n- **Spain**: `Spain 2026 National Team` — red + saffron-yellow + navy, Santiago Bernabéu, headline `ESPAÑA 2026`\n- **England**: `England 2026 World Cup Squad` — white + St George's red + navy, Wembley, headline `ENGLAND 2026`\n- **Portugal**: `Portugal 2026 National Team` — dark red + green collar + gold accent, Estádio José Alvalade, headline `PORTUGAL 2026`\n- **Morocco**: `Morocco 2026 National Team` — red + green star + white trim, Grand Stade Hassan II, headline `LE MAROC 2026`\n- **Mexico**: `Mexico 2026 National Team` (host nation) — green + white + red, Estadio Azteca, headline `MÉXICO 2026`\n- **USA**: `USA 2026 World Cup Squad` (host nation) — navy + red stripes + white star, SoFi Stadium, headline `USA 2026`\n- **Japan**: `Japan 2026 National Team` — Samurai-blue kit + red rising-sun accent + white, Saitama Stadium, headline `日本 2026`\n\nThe prompt structure stays identical — kit description, stadium backdrop, color palette, headline text, vertical 3:4 format. Permute the team name and the palette; everything else carries over from the template's base prompt.\n\nIf you ship a poster you like, the [/topics/character](/topics/character) and [/topics/sports](/topics/sports) hubs are where similar templates surface — character battles, movie group posters, fan rosters, all running on the same Curify pipeline."
+      "conclusionContent": "The two prompts above generalize. Same template, swap the team name, get the kit colors and palette right:\n\n- **France**: `France 2026 National Team` — navy blue + white + red, Stade de France, headline `FRANCE 2026`\n- **Germany**: `Germany 2026 National Team` — white kit + black accents + red/gold flag, Allianz Arena, headline `DEUTSCHLAND 2026`\n- **Spain**: `Spain 2026 National Team` — red + saffron-yellow + navy, Santiago Bernabéu, headline `ESPAÑA 2026`\n- **England**: `England 2026 World Cup Squad` — white + St George's red + navy, Wembley, headline `ENGLAND 2026`\n- **Portugal**: `Portugal 2026 National Team` — dark red + green collar + gold accent, Estádio José Alvalade, headline `PORTUGAL 2026`\n- **Morocco**: `Morocco 2026 National Team` — red + green star + white trim, Grand Stade Hassan II, headline `LE MAROC 2026`\n- **Mexico**: `Mexico 2026 National Team` (host nation) — green + white + red, Estadio Azteca, headline `MÉXICO 2026`\n- **USA**: `USA 2026 World Cup Squad` (host nation) — navy + red stripes + white star, SoFi Stadium, headline `USA 2026`\n- **Japan**: `Japan 2026 National Team` — Samurai-blue kit + red rising-sun accent + white, Saitama Stadium, headline `日本 2026`\n\nThe prompt structure stays identical — kit description, stadium backdrop, color palette, headline text, vertical 3:4 format. Permute the team name and the palette; everything else carries over from the template's base prompt.\n\nIf you ship a poster you like, the [/topics/character](/topics/character) and [/topics/sports](/topics/sports) hubs are where similar templates surface — character battles, movie group posters, fan rosters, all running on the same Curify pipeline.",
+      "heroImage": "/images/nano_insp/template-sports-battle-Messi-vs-Ronaldo.jpg",
+      "heroImageAlt": "Messi vs Ronaldo cinematic soccer rivalry poster — Sports Battle template preview",
+      "heroCtaLabel": "TRY THE TEMPLATE",
+      "heroCtaText": "Generate your own Messi vs Ronaldo (or any soccer rivalry) cinematic poster",
+      "heroCtaHref": "/nano-template/sports-battle",
+      "heroCtaButton": "Generate →"
     },
     "onePersonCompaniesVs100PersonTeams": {
       "title": "One-Person Companies Are Crushing It. Your 100-Person Team Is a Liability.",
