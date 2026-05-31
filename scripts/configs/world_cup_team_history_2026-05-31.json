@@ -1,0 +1,75 @@
+[
+  {
+    "template_id": "template-history-timeline-infographic",
+    "params": { "timeline_topic": "Brazil at the FIFA World Cup — every tournament, every champion year (1958, 1962, 1970, 1994, 2002), key matches from 1930 to 2022" },
+    "topics": ["sports", "world-cup", "history", "groups", "timeline"],
+    "id_suffix": "brazil-world-cup-history"
+  },
+  {
+    "template_id": "template-history-timeline-infographic",
+    "params": { "timeline_topic": "Germany at the FIFA World Cup — full tournament history from 1934 through 2022, all four championship years (1954, 1974, 1990, 2014), key matches per decade" },
+    "topics": ["sports", "world-cup", "history", "groups", "timeline"],
+    "id_suffix": "germany-world-cup-history"
+  },
+  {
+    "template_id": "template-history-timeline-infographic",
+    "params": { "timeline_topic": "Italy at the FIFA World Cup — every appearance, four-time champions (1934, 1938, 1982, 2006), iconic moments through the decades" },
+    "topics": ["sports", "world-cup", "history", "groups", "timeline"],
+    "id_suffix": "italy-world-cup-history"
+  },
+  {
+    "template_id": "template-history-timeline-infographic",
+    "params": { "timeline_topic": "Argentina at the FIFA World Cup — Maradona's 1986, Messi's 2022, three championship years (1978, 1986, 2022), the full tournament arc" },
+    "topics": ["sports", "world-cup", "history", "groups", "timeline"],
+    "id_suffix": "argentina-world-cup-history"
+  },
+  {
+    "template_id": "template-evolution-timeline-infographic",
+    "params": { "topic": "France national football team evolution at the FIFA World Cup — from the 1958 third-place to the 1998 and 2018 championships" },
+    "topics": ["sports", "world-cup", "history", "groups", "timeline"],
+    "id_suffix": "france-world-cup-evolution"
+  },
+  {
+    "template_id": "template-evolution-timeline-infographic",
+    "params": { "topic": "Spain national football team evolution at the FIFA World Cup — from early appearances to the 2010 championship and tiki-taka era" },
+    "topics": ["sports", "world-cup", "history", "groups", "timeline"],
+    "id_suffix": "spain-world-cup-evolution"
+  },
+
+  {
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "Brazil National Football Team", "player_right": "Argentina National Football Team" },
+    "topics": ["sports", "world-cup", "comparison", "groups"],
+    "id_suffix": "brazil-vs-argentina-world-cup"
+  },
+  {
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "Germany National Football Team", "player_right": "Italy National Football Team" },
+    "topics": ["sports", "world-cup", "comparison", "groups"],
+    "id_suffix": "germany-vs-italy-world-cup"
+  },
+  {
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "England National Football Team", "player_right": "Argentina National Football Team" },
+    "topics": ["sports", "world-cup", "comparison", "groups"],
+    "id_suffix": "england-vs-argentina-world-cup"
+  },
+  {
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "Argentina National Football Team", "player_right": "France National Football Team" },
+    "topics": ["sports", "world-cup", "comparison", "groups"],
+    "id_suffix": "argentina-vs-france-world-cup-2022-final"
+  },
+  {
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "Brazil National Football Team", "player_right": "Germany National Football Team" },
+    "topics": ["sports", "world-cup", "comparison", "groups"],
+    "id_suffix": "brazil-vs-germany-world-cup"
+  },
+  {
+    "template_id": "template-historical-figure-vs-infographic",
+    "params": { "figure_a": "Brazil World Cup Legacy (5x champions 1958, 1962, 1970, 1994, 2002)", "figure_b": "Italy World Cup Legacy (4x champions 1934, 1938, 1982, 2006)" },
+    "topics": ["sports", "world-cup", "comparison", "history", "groups"],
+    "id_suffix": "brazil-vs-italy-world-cup-legacies"
+  }
+]

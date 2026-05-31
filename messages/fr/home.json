@@ -102,7 +102,11 @@
     },
     "style_transfer": {
       "title": "Transfert de style",
-      "desc": "Transformez votre vidéo en styles artistiques Pixar, Ghibli ou autres — bientôt disponible"
+      "desc": "Transformez votre vidéo en styles artistiques Pixar, Ghibli ou autres — bientôt disponible",
+      "meta": {
+        "title": "IA de Transfert de Style pour Vidéo | Pixar, Ghibli, Anime, Aquarelle | Curify",
+        "description": "IA de transfert de style pour vidéo — transformez des prises de vue réelles en Pixar, Ghibli, anime, aquarelle ou tout autre style de référence. Cohérent entre les images, préservation de l'identité. Essayez la démo, puis rejoignez l'accès anticipé."
+      }
     },
     "coming_soon": "Bientôt disponible",
     "create": "Créer",
@@ -198,6 +202,14 @@
       "meta": {
         "title": "Traducteur vidéo ASL IA | Langue des signes en sous-titres anglais | Curify AI",
         "description": "Traduisez les vidéos en langue des signes ASL en texte ou sous-titres en anglais automatiquement. Découvrez une démonstration fonctionnelle sur des séquences signées réelles — puis rejoignez l'accès anticipé pour vos propres téléchargements."
+      }
+    },
+    "ai_product_photo_generator": {
+      "title": "Générateur de photos de produits AI",
+      "desc": "Générez des photos de produits en accord avec votre marque à grande échelle — grilles de 9 images, emballages, essayages de tenues et photos de style de vie à partir de prompts modélisés.",
+      "meta": {
+        "title": "Générateur de photos de produits AI | Photos de catalogue modélisées à grande échelle | Curify",
+        "description": "Générateur de photos de produits AI avec style visuel modélisé — expédiez des grilles de produits de 9 images, des maquettes d'emballage, des essayages de tenues et des photos de style de vie à partir d'un seul prompt. Démo + accès anticipé."
       }
     }
   },
@@ -761,6 +773,55 @@
         "educationBody": "Les vidéos de cours signées par un instructeur sourd — ou interprétées en ASL pour une classe mixte — obtiennent automatiquement des transcriptions en anglais. Le même pipeline gère le sous-titrage conforme à l'ADA pour les bibliothèques vidéo institutionnelles.",
         "businessTitle": "Pour les communications internes et les équipes produit",
         "businessBody": "Les vidéos de support client, les extraits d'intégration et les assemblées internes enregistrées en ASL restent consultables dans votre pile — la transcription en anglais est ce que votre index de recherche lit réellement."
+      }
+    }
+  },
+  "aiProductPhotoGenerator": {
+    "metadata": {
+      "title": "Générateur de photos de produits AI | Photos de catalogue modélisées à grande échelle | Curify",
+      "description": "Générateur de photos de produits AI avec style visuel modélisé — expédiez des grilles de produits de 9 images, des maquettes d'emballage, des essayages de tenues et des photos de style de vie à partir d'un seul prompt. Démo + accès anticipé."
+    },
+    "title": "Générateur de photos de produits AI",
+    "description": "Générez des photos de produits en accord avec votre marque à grande échelle — grilles de style de vie de 9 images, maquettes d'emballage, cartes d'essayage de tenues et affiches promotionnelles à partir de prompts modélisés. Verrouillez le style visuel une fois ; chaque variante l'hérite. La démo fonctionne sur un vrai modèle ; rejoignez l'accès anticipé pour alimenter votre propre catalogue de produits.",
+    "example": "Exemple : une grille de style de vie de 9 images générée à partir d'un seul prompt. Même sujet, scènes différentes, visuels déterministes en accord avec la marque — le type d'ensemble de variantes dont ont besoin les pages de destination SEO programmatiques.",
+    "cta": "Rejoignez l'accès anticipé",
+    "why": {
+      "title": "Pourquoi utiliser Curify pour les photos de produits AI ?",
+      "point1": "Génération axée sur le modèle — verrouillez le style visuel une fois (éclairage, composition, cadrage, registre des couleurs), et chaque variante de produit hérite de ce style. Expédiez 1 000 pages de produits avec des visuels déterministes en accord avec la marque.",
+      "point2": "Formats de sortie multiples pris en charge par des prompts modélisés : grilles de style de vie de 9 images, maquettes d'emballage, cartes d'essayage de tenues, variantes de mode avant/après, affiches promotionnelles.",
+      "point3": "Conçu pour l'échelle — catalogues DTC, pages SEO programmatiques, variantes créatives pour tests A/B. La sortie est les fichiers sources (PNG/JPEG), pas un aperçu avec filigrane.",
+      "point4": "Démo uniquement aujourd'hui ; inscrivez-vous pour un accès anticipé afin de faire passer votre propre catalogue de produits à travers les modèles lorsque le pipeline s'ouvre."
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "Le générateur de photos de produits AI est-il disponible aujourd'hui ?",
+      "a1": "Pas encore — cette page montre une démo fonctionnelle sur un modèle d'exemple. Le pipeline de production (téléchargez vos propres photos de produits / variantes / catalogue) est en test privé. Rejoignez l'accès anticipé et nous vous contacterons lorsque cela s'ouvrira pour votre cas d'utilisation.",
+      "q2": "En quoi cela diffère-t-il de Midjourney ou de la génération d'images AI générique ?",
+      "a2": "La génération AI générique produit des visuels incohérents à grande échelle — 1 000 pages de produits obtiennent 1 000 interprétations différentes. L'approche axée sur le modèle de Curify verrouille le style visuel à l'avance, de sorte que chaque variante ressemble à celle d'une même séance photo. C'est le fossé pour les catalogues de produits DTC et les pages de destination SEO programmatiques où la cohérence compte plus que la variété."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce que la génération de photos de produits AI ?",
+        "p1": "La génération de photos de produits AI produit des visuels de qualité catalogue — photos de style de vie, maquettes d'emballage, essayages de tenues, affiches promotionnelles — sans séance photo. Le prompt encode le style visuel (éclairage, composition, registre des couleurs, placement des accessoires) et la spécification du produit (le SKU ou la variante).",
+        "p2": "La génération 2026 de modèles d'images génératives (Nano Banana Pro, GPT Image 2, Midjourney v7) fournit la capacité sous-jacente. Ce qui manque, c'est la couche de modélisation : un moyen de verrouiller le style une fois et de produire des centaines ou des milliers de variantes avec une qualité déterministe en accord avec la marque. La génération axée sur le modèle de Curify comble cette lacune.",
+        "p3": "Formats de sortie : portraits de produits verticaux 3:4, grilles de style de vie de 9 images (même sujet à travers neuf scènes), photos carrées prêtes pour Instagram 1:1, composites de maquettes d'emballage, cartes d'annotation de tenues avant/après, et affiches promotionnelles complètes avec texte d'accroche."
+      },
+      "how": {
+        "title": "Comment Curify génère des photos de produits à grande échelle",
+        "p1": "Le pipeline fonctionne en trois étapes. Tout d'abord, un modèle est sélectionné dans la galerie — grille de photo de style de vie pour des ensembles de 9 images, affiche de produit pour des photos héroïques, affiche d'essayage de tenues pour des variantes de mode, design d'emballage de produit alimentaire pour des maquettes d'emballage, etc. Chaque modèle encode le style visuel verrouillé.",
+        "p2": "Deuxièmement, les paramètres de variante sont fournis — nom du produit, catégorie, couleur, préréglage de scène (Met Gala, Paris Fashion Week, Plage d'été, Parc d'automne). Le prompt du modèle est rempli avec ces paramètres ; le style verrouillé passe sans changement.",
+        "p3": "Troisièmement, la génération s'exécute sur Nano Banana Pro. La sortie est une image par variante, déterministe en style et en accord avec cette ligne de produits. Pour les grilles de 9 images, le générateur produit un seul composite montrant neuf variations de scène dans une image.",
+        "p4": "Pour les cas d'utilisation SEO programmatiques, le pipeline est par lots : passez un CSV de variantes de produits, récupérez un dossier de visuels cohérents associés à chaque SKU. Chaque page de destination obtient sa propre image unique en accord avec la marque tandis que chaque page du catalogue hérite du même registre visuel.",
+        "p5": "La démo sur cette page montre une seule sortie de grille de photo de style de vie. Les téléchargements d'accès anticipé fonctionneront sur le même pipeline à quel que soit le volume requis par votre catalogue."
+      },
+      "usecases": {
+        "title": "Là où les photos de produits AI comptent",
+        "creatorsTitle": "Pour les marques DTC et e-commerce",
+        "creatorsBody": "Les catalogues avec des milliers de SKU ne peuvent pas se permettre des séances photo par SKU. La génération de photos de produits AI fournit des visuels par SKU à une échelle programmatique, tout en préservant le style de la marque à travers l'ensemble du catalogue. Associez-le à des pages de destination SEO programmatiques (voir /blog/best-programmatic-seo-tools) pour un effet cumulatif.",
+        "educationTitle": "Pour le SEO programmatique et l'automatisation de contenu",
+        "educationBody": "Les pages SEO programmatiques ont besoin de visuels uniques par variante. La génération AI générique produit une qualité incohérente à grande échelle ; l'approche axée sur les modèles de Curify donne à chaque page une image unique et en accord avec la marque. Voir /use-cases/for-programmatic-seo pour la forme d'intégration.",
+        "businessTitle": "Pour les équipes marketing réalisant des tests créatifs A/B",
+        "businessBody": "Testez 20 variantes visuelles du même produit à travers des canaux payants sans un budget de 20 séances photo. Le modèle verrouille le style de base ; les variantes diffèrent uniquement sur l'axe testé (arrière-plan, modèle, scène). Un design expérimental plus propre que l'incohérence que vous obtenez avec la génération AI générique."
       }
     }
   }

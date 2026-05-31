@@ -17,6 +17,15 @@ export type ToolDemo =
       type: "single_video";
       src: string;
       poster?: string;
+    }
+  | {
+      // For tools whose output is a still image (product photo, character
+      // card, infographic, style-transferred frame). Renders a single
+      // CdnImage instead of a video player. The example caption from i18n
+      // is shown beneath.
+      type: "single_image";
+      src: string;
+      alt?: string;
     };
 
 export type ToolDef = {
@@ -159,6 +168,32 @@ export const TOOL_REGISTRY: ToolDef[] = [
     action: { type: "modal", mode: "translation" },
     i18n: toolKeys("video_summarizer"),
     seo: seoKeys("video_summarizer"),
+  },
+
+  {
+    // Demo-only SEO landing — no backend pipeline yet. Targets SEMrush
+    // KD 36 "AI product photo generator" with our existing template
+    // catalog (60+ product-photo-relevant examples: product-poster,
+    // product-theme-promotional-poster, ai-outfit-try-on-poster,
+    // lifestyle-photo-grid, food-product-packaging-design, etc).
+    // Mirrors the asl-video-translator mini-tool playbook. Demo uses
+    // a single_image (a strong lifestyle-photo-grid sample) rather
+    // than a video — for image-output tools, a generated still IS the
+    // demo.
+    id: "ai-product-photo-generator",
+    slug: "ai-product-photo-generator",
+    groupId: "image",
+    status: "demo",
+    job_type: "video_transcript",
+    namespace: "aiProductPhotoGenerator",
+    action: { type: "page" },
+    i18n: toolKeys("ai_product_photo_generator"),
+    seo: seoKeys("ai_product_photo_generator"),
+    demo: {
+      type: "single_image",
+      src: "/images/nano_insp/template-lifestyle-photo-grid-met-gala-red-carpet.jpg",
+      alt: "AI product photo generator: 9-image grid generated from one template prompt",
+    },
   },
 
   {
