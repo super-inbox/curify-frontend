@@ -538,6 +538,28 @@ FAMILIES = OrderedDict([
             '商品摄影','零售设计','消费品设计',
         ],
     }),
+    # 2026-05-31: backfill product tier-2 vocabulary onto existing inspirations
+    # so strict-token search matches them on the canonical tier-2 word
+    # (today they only match via parent-template topics, which is enough
+    # for the topic page but not for explicit-token scoring). Skips
+    # branding — no templates yet.
+    ('product_tier2_packaging', {
+        'templates': ['template-food-product-packaging-design'],
+        'aliases': ['packaging','包装'],
+    }),
+    ('product_tier2_ecommerce', {
+        'templates': ['template-fashion-ecommerce', 'template-ai-outfit-try-on-poster'],
+        'aliases': ['ecommerce','e-commerce','电商'],
+    }),
+    ('product_tier2_showcase', {
+        'templates': [
+            'template-product-poster',
+            'template-product-theme-promotional-poster',
+            'template-interior-design-mood-board-generator',
+            'template-industrial-design-concept-sketch',
+        ],
+        'aliases': ['showcase','产品展示'],
+    }),
 ])
 
 
