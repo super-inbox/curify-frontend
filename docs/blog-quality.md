@@ -16,6 +16,28 @@ Both tracks share the same i18n fan-out: edit `messages/en/blog.json`, delete th
 
 ---
 
+## 2026-05-31 — BlogInlineClickTracker silent failure diagnosis + fix
+
+User flagged: ~200 GSC clicks in the last 2 days (heavy on World Cup + ASL queries), but Session Engagement Funnel still shows ~0% engagement on those landers. The 5/30 fix didn't deliver the expected lift.
+
+**Diagnosis (in order ruled out):**
+
+| Check | Result |
+|------|--------|
+| Backend `/interactions/track` accepts our payload | ✅ direct curl POST → `HTTP 200`, row landed with case-coerced `PAGE`/`CLICK` enums |
+| Tracker code in deployed Vercel bundle | ✅ `blog-link:` string present in `[locale]/(public)/blog/[slug]/page-*.js` |
+| Working header MENU_LINK CLICK events | ✅ same useTracking flow, same enum coercion — 4 events landed correctly |
+| `blog-link:%` events ever landed | ❌ **zero. ever.** in the entire history of `user_interactions` |
+| Wrapper tree structure on live page | ✅ `<div><div class="space-y-6">` confirmed in rendered HTML (BlogInlineClickTracker IS wrapping the body) |
+
+**Root cause:** the v1 tracker used `trackAction()` → `void trackInteraction()` → `fetch(..., { keepalive: true as never })`. The `keepalive` flag is unreliable for **cross-origin** POSTs that race against same-tab navigation. Page is at `curify-ai.com`; the API is at `*.azurewebsites.net`. Modern browsers cancel cross-origin in-flight requests on navigation more aggressively than same-origin. The keepalive flag mitigates this for same-origin but not reliably cross-origin.
+
+**Fix (commit `c7e1770`):** switch from `trackAction` to `trackOnUnload`. `trackOnUnload` uses `navigator.sendBeacon` first (W3C standard for fire-and-forget POSTs during page unload — purpose-built for this case and reliable cross-origin), falls back to fetch+keepalive only if sendBeacon is unavailable. One-line callsite change in `BlogInlineClickTracker.tsx`.
+
+**Verification plan:** post-deploy, query for `content_id LIKE 'blog-link:%'` in `user_interactions`. Expect rapid rise across all blogs using `GenericBlogContent`. Update Session Engagement Funnel query result here once 24+ hr of data has accumulated.
+
+---
+
 ## SEMrush KD priority queue (2026-05-30 pull)
 
 User shares fresh Keyword Difficulty (KD) data from SEMrush weekly. KD identifies low-competition keywords we can rank on with relatively cheap content. Memory `project_weekly_semrush_kd.md` tracks the cadence — re-prompt for the next week's pull when `last_shared_date` is ≥ 7 days old.
