@@ -6,6 +6,7 @@ import MetaChipLink from "@/app/[locale]/_components/MetaChipLink";
 import { buildTopicHref } from "@/lib/locale_utils";
 import { useClickTracking } from "@/services/useTracking";
 import { getTopics, type TopicWithTemplates } from "@/lib/topicRegistry";
+import taxonomy from "@/lib/taxonomy.json";
 
 type Props = {
   locale: string;
@@ -15,6 +16,34 @@ type Props = {
   showDisabled?: boolean;
   size?: "default" | "small";
 };
+
+// Tier-1 → set of its tier-2 children (from taxonomy.json). 'personality'
+// also implies 'mbti' (mbti is structurally under character but the
+// personality framework is the same concept).
+const TIER1_TO_TIER2_CHILDREN: Map<string, Set<string>> = new Map();
+for (const [tier1, children] of Object.entries(
+  taxonomy.tier2 as Record<string, string[]>
+)) {
+  TIER1_TO_TIER2_CHILDREN.set(tier1, new Set(children));
+}
+TIER1_TO_TIER2_CHILDREN.get("personality")?.add("mbti");
+
+// Suppress a tier-1 chip when any of its tier-2 children is in the same
+// chip set — the tier-2 is more specific and the tier-1 becomes redundant
+// noise on detail pages. Tier-1 pages (/topics/<tier1>) are unaffected
+// because templates still carry the tier-1 in topics[]; only the chip
+// display drops it.
+function suppressRedundantTier1(topicIds: string[]): string[] {
+  const inputSet = new Set(topicIds);
+  return topicIds.filter((id) => {
+    const children = TIER1_TO_TIER2_CHILDREN.get(id);
+    if (!children) return true;
+    for (const child of children) {
+      if (inputSet.has(child)) return false;
+    }
+    return true;
+  });
+}
 
 function TopicLink({
   topic,
@@ -57,8 +86,9 @@ export default function TopicNavRow({
 
   const sortedTopics = getTopics();
 
-  const visibleTopics = topics?.length
-    ? topics
+  const filteredIds = topics?.length ? suppressRedundantTier1(topics) : null;
+  const visibleTopics = filteredIds
+    ? filteredIds
         .map((id) => sortedTopics.find((topic) => topic.id === id))
         .filter((topic): topic is TopicWithTemplates => Boolean(topic))
     : sortedTopics;
