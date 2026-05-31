@@ -6,7 +6,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/auth/', '/public/data/'],
+        // /search is dynamic per-query (q param), Cache: MISS on every
+        // crawl, and produces a Node function execution. Already noindex
+        // via app/[locale]/(public)/search/page.tsx metadata, but bots
+        // need the robots.txt signal to skip the fetch entirely.
+        disallow: ['/api/', '/auth/', '/public/data/', '/search', '/*/search'],
       },
       {
         // These crawlers consume Vercel Fast Data Transfer with little
