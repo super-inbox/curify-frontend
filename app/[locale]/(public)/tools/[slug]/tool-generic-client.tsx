@@ -13,6 +13,7 @@ import {
   clientMountedAtom,
 } from "@/app/atoms/atoms";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
 import {
   getToolBySlug,
   getSiblingTools,
@@ -105,6 +106,18 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
             controls
             poster={demo.poster}
             src={demo.src}
+          />
+          <p className="text-sm text-gray-500 mb-8 text-center">{t("example")}</p>
+        </>
+      ) : demo?.type === "single_image" ? (
+        <>
+          {/* For tools whose output is a still image (product photo, character
+              card, infographic). Same max-w-2xl cap so a 1024-wide
+              template gallery image doesn't dominate the page. */}
+          <CdnImage
+            className="w-full max-w-2xl mx-auto rounded-xl shadow mb-4"
+            src={demo.src}
+            alt={demo.alt || t("title")}
           />
           <p className="text-sm text-gray-500 mb-8 text-center">{t("example")}</p>
         </>

@@ -203,6 +203,14 @@
         "title": "AI ASL Video Çevirmeni | İşaret Dili'nden İngilizce Altyazılara | Curify AI",
         "description": "ASL işaret dili videosunu otomatik olarak İngilizce metne veya altyazılara çevirin. Gerçek işaretli görüntülerde çalışan bir demo görün — ardından kendi yüklemeleriniz için erken erişim için katılın."
       }
+    },
+    "ai_product_photo_generator": {
+      "title": "AI Ürün Fotoğrafı Üretici",
+      "desc": "Markaya uygun ürün fotoğraflarını ölçekli olarak üretin — 9 resimden oluşan ızgaralar, ambalaj, kıyafet denemeleri ve şablonlu istemlerden yaşam tarzı çekimleri.",
+      "meta": {
+        "title": "AI Ürün Fotoğrafı Üretici | Ölçekli Şablonlu Katalog Fotoğrafları | Curify",
+        "description": "Şablonlu görsel stil ile AI ürün fotoğrafı üretici — tek bir istemden 9 resimlik ürün ızgaraları, ambalaj maketleri, kıyafet denemeleri ve yaşam tarzı çekimleri gönderin. Demo + erken erişim."
+      }
     }
   },
   "bilingual": {
@@ -850,6 +858,55 @@
         "educationBody": "Bir sağır eğitmen tarafından işaretlenen kurs videoları — veya karışık bir sınıf için ASL ile yorumlanan — otomatik olarak İngilizce transkriptler alır. Aynı hat, kurumsal video kütüphaneleri için ADA uyumlu altyazılamayı da yönetir.",
         "businessTitle": "İç iletişim ve ürün ekipleri için",
         "businessBody": "ASL'de kaydedilen müşteri destek videoları, oryantasyon klipleri ve iç toplantılar, yığınınızda aranabilir kalır — İngilizce transkript, arama indeksinizin gerçekten okuduğu şeydir."
+      }
+    }
+  },
+  "aiProductPhotoGenerator": {
+    "metadata": {
+      "title": "AI Ürün Fotoğrafı Üretici | Ölçekli Şablonlu Katalog Fotoğrafları | Curify",
+      "description": "Şablonlu görsel stil ile AI ürün fotoğrafı üretici — tek bir istemden 9 resimlik ürün ızgaraları, ambalaj maketleri, kıyafet denemeleri ve yaşam tarzı çekimleri gönderin. Demo + erken erişim."
+    },
+    "title": "AI Ürün Fotoğrafı Üretici",
+    "description": "Markaya uygun ürün fotoğraflarını ölçekli olarak üretin — 9 resimlik yaşam tarzı ızgaraları, ambalaj maketleri, kıyafet deneme kartları ve şablonlu istemlerden tanıtım posterleri. Görsel stili bir kez kilitleyin; her varyant bunu miras alır. Demo gerçek bir şablonda çalışır; kendi ürün kataloğunuzu beslemek için erken erişime katılın.",
+    "example": "Örnek: tek bir istemden üretilen 9 resimlik yaşam tarzı ızgarası. Aynı konu, farklı sahneler, markaya uygun görseller — programatik SEO açılış sayfalarının ihtiyaç duyduğu türde bir varyant seti.",
+    "cta": "Erken Erişime Katıl",
+    "why": {
+      "title": "Neden AI ürün fotoğrafları için Curify'i kullanmalısınız?",
+      "point1": "Şablon öncelikli üretim — görsel stili bir kez kilitleyin (aydınlatma, kompozisyon, çerçeveleme, renk kaydı) ve her ürün varyantı bu stili miras alır. 1.000 ürün sayfasını markaya uygun görsellerle gönderin.",
+      "point2": "Şablonlu istemler tarafından desteklenen birden fazla çıktı formatı: 9 resimlik yaşam tarzı ızgaraları, ambalaj maketleri, kıyafet deneme kartları, önce/sonra moda varyantları, tanıtım posterleri.",
+      "point3": "Ölçek için tasarlandı — DTC katalogları, programatik SEO sayfaları, A/B test yaratıcı varyantları. Çıktı, kaynak dosyalarıdır (PNG/JPEG), su işareti olmayan bir önizleme değil.",
+      "point4": "Bugün sadece demo; şablonlar aracılığıyla kendi ürün kataloğunuzu çalıştırmak için erken erişime kaydolun, pipeline açıldığında sizin için ulaşacağız."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "AI ürün fotoğrafı üretici bugün mevcut mu?",
+      "a1": "Henüz değil — bu sayfa bir örnek şablonda çalışan bir demo gösteriyor. Üretim pipeline'ı (kendi ürün fotoğraflarınızı / varyantlarınızı / kataloğunuzu yükleyin) özel test aşamasındadır. Erken erişime katılın ve kullanım durumunuz için açıldığında sizinle iletişime geçeceğiz.",
+      "q2": "Bu, Midjourney veya genel AI görüntü üretiminden nasıl farklı?",
+      "a2": "Genel AI üretimi, ölçekli olarak tutarsız görseller üretir — 1.000 ürün sayfası 1.000 farklı yorum alır. Curify'nin şablon öncelikli yaklaşımı, her varyantın aynı çekimden geliyormuş gibi görünmesini sağlamak için görsel stili önceden kilitler. Bu, DTC ürün katalogları ve tutarlılığın çeşitlilikten daha önemli olduğu programatik SEO açılış sayfaları için bir koruma sağlar."
+    },
+    "deep": {
+      "what": {
+        "title": "AI ürün fotoğrafı üretimi nedir?",
+        "p1": "AI ürün fotoğrafı üretimi, katalog kalitesinde görseller üretir — yaşam tarzı çekimleri, ambalaj maketleri, kıyafet denemeleri, tanıtım posterleri — bir fotoğraf çekimi olmadan. İstem, görsel stili (aydınlatma, kompozisyon, renk kaydı, nesne yerleşimi) ve ürün spesifikasyonunu (SKU veya varyant) kodlar.",
+        "p2": "2026 nesli jeneratif görüntü modelleri (Nano Banana Pro, GPT Image 2, Midjourney v7) temel yeteneği sunar. Eksik olan, stili bir kez kilitleyip yüzlerce veya binlerce varyantı tutarlı markaya uygun kalitede üretme yoludur. Curify'nin şablon öncelikli üretimi bu boşluğu doldurur.",
+        "p3": "Çıktı formatları: dikey 3:4 ürün portreleri, 9 resimlik yaşam tarzı ızgaraları (aynı konu dokuz sahnede), 1:1 kare Instagram'a uygun çekimler, ambalaj-maket bileşimleri, önce/sonra kıyafet açıklama kartları ve başlık metni içeren tam tanıtım posterleri."
+      },
+      "how": {
+        "title": "Curify, ürün fotoğraflarını ölçekli olarak nasıl üretir",
+        "p1": "Pipeline üç aşamada çalışır. İlk olarak, galeriden bir şablon seçilir — 9 resimlik setler için yaşam tarzı fotoğraf ızgarası, kahraman çekimleri için ürün posteri, moda varyantları için ai-kıyafet-deneme-posteri, ambalaj maketleri için gıda-ürün-ambalaj-tasarımı vb. Her şablon, kilitlenmiş görsel stili kodlar.",
+        "p2": "İkinci olarak, varyant parametreleri sağlanır — ürün adı, kategori, renk, sahne ön ayarı (Met Gala, Paris Moda Haftası, Plaj Yazı, Sonbahar Parkı). Şablon istemi bu parametrelerle doldurulur; kilitlenmiş stil değişmeden geçer.",
+        "p3": "Üçüncü olarak, üretim Nano Banana Pro üzerinde çalışır. Çıktı, her varyant için bir görüntüdür, stil açısından belirleyici ve o ürün serisi için markaya uygundur. 9 resimlik ızgaralar için, üretici dokuz sahne varyasyonunu tek bir görüntüde gösteren tek bir bileşik üretir.",
+        "p4": "Programatik SEO kullanım durumları için, pipeline toplu olarak çalışır: ürün varyantlarının bir CSV'sini geçin, her SKU'ya anahtarlanan tutarlı görsellerin bir klasörünü geri alın. Her açılış sayfası kendi benzersiz markaya uygun görüntüsünü alırken, katalogdaki her sayfa aynı görsel kaydı miras alır.",
+        "p5": "Bu sayfadaki demo, tek bir yaşam tarzı fotoğraf ızgarası çıktısını gösterir. Erken erişim yüklemeleri, kataloğunuzun gerektirdiği herhangi bir hacimde aynı pipeline'ı çalıştıracaktır."
+      },
+      "usecases": {
+        "title": "AI ürün fotoğraflarının önemli olduğu yerler",
+        "creatorsTitle": "DTC ve e-ticaret markaları için",
+        "creatorsBody": "Binlerce SKU içeren kataloglar, SKU başına fotoğraf çekimi yapma lüksüne sahip değildir. AI ürün fotoğrafı üretimi, tüm katalog boyunca markaya uygun tarzı koruyarak programatik ölçekte SKU başına görseller sağlar. Birleştirilmiş etki için programatik SEO açılış sayfaları ile eşleştirin (bkz. /blog/best-programmatic-seo-tools).",
+        "educationTitle": "Programatik SEO ve içerik otomasyonu için",
+        "educationBody": "Programatik SEO sayfaları, her varyant için benzersiz görsellere ihtiyaç duyar. Genel AI üretimi, ölçeklendirme sırasında tutarsız kalite üretir; Curify'nin şablon öncelikli yaklaşımı, her sayfaya markaya uygun benzersiz bir görüntü verir. Entegrasyon şekli için /use-cases/for-programmatic-seo'ya bakın.",
+        "businessTitle": "A/B yaratıcı testleri yapan pazarlama ekipleri için",
+        "businessBody": "Aynı ürünün 20 görsel varyantını, 20 çekim bütçesi olmadan ücretli kanallar üzerinden test edin. Şablon, temel tarzı kilitler; varyantlar yalnızca test edilen eksende (arka plan, model, sahne) farklılık gösterir. Genel AI üretiminden elde ettiğiniz tutarsızlıktan daha temiz bir deneysel tasarım."
       }
     }
   }

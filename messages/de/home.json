@@ -203,6 +203,14 @@
         "title": "AI ASL Video Übersetzer | Gebärdensprache in englische Untertitel | Curify AI",
         "description": "Übersetzen Sie ASL-Gebärdensprache-Videos automatisch in englischen Text oder Untertitel. Sehen Sie eine funktionierende Demo mit echten Gebärdenaufnahmen – dann melden Sie sich für den frühen Zugang an, um Ihre eigenen Uploads vorzunehmen."
       }
+    },
+    "ai_product_photo_generator": {
+      "title": "AI Produktfoto-Generator",
+      "desc": "Generieren Sie markengerechte Produktfotos in großem Maßstab – 9-Bilder-Gitter, Verpackungen, Outfit-Anproben und Lifestyle-Aufnahmen aus vorgefertigten Eingaben.",
+      "meta": {
+        "title": "AI Produktfoto-Generator | Vorlagenbasierte Katalogfotos in großem Maßstab | Curify",
+        "description": "AI Produktfoto-Generator mit vorgefertigtem visuellen Stil – liefern Sie 9-Bilder-Produktgitter, Verpackungs-Mockups, Outfit-Anproben und Lifestyle-Aufnahmen aus einer Eingabe. Demo + Frühzugang."
+      }
     }
   },
   "bilingual": {
@@ -765,6 +773,55 @@
         "educationBody": "Kursvideos, die von einem gehörlosen Dozenten gebärdet oder in ASL für eine gemischte Klasse interpretiert werden, erhalten automatisch englische Transkripte. Der gleiche Prozess übernimmt die ADA-konforme Untertitelung für institutionelle Videobibliotheken.",
         "businessTitle": "Für interne Kommunikation und Produktteams",
         "businessBody": "Kundenservice-Videos, Einarbeitungsvideos und interne Town Halls, die in ASL aufgezeichnet wurden, bleiben in Ihrem System durchsuchbar – das englische Transkript ist das, was Ihr Suchindex tatsächlich liest."
+      }
+    }
+  },
+  "aiProductPhotoGenerator": {
+    "metadata": {
+      "title": "AI Produktfoto-Generator | Vorlagenbasierte Katalogfotos in großem Maßstab | Curify",
+      "description": "AI Produktfoto-Generator mit vorgefertigtem visuellen Stil – liefern Sie 9-Bilder-Produktgitter, Verpackungs-Mockups, Outfit-Anproben und Lifestyle-Aufnahmen aus einer Eingabe. Demo + Frühzugang."
+    },
+    "title": "AI Produktfoto-Generator",
+    "description": "Generieren Sie markengerechte Produktfotos in großem Maßstab – 9-Bilder-Lifestyle-Gitter, Verpackungs-Mockups, Outfit-Anprobe-Karten und Werbeplakate aus vorgefertigten Eingaben. Sperren Sie den visuellen Stil einmal; jede Variante erbt ihn. Die Demo läuft auf einer echten Vorlage; treten Sie dem Frühzugang bei, um Ihr eigenes Produktkatalog zu füttern.",
+    "example": "Beispiel: ein 9-Bilder-Lifestyle-Gitter, das aus einer Eingabe generiert wurde. Dasselbe Thema, verschiedene Szenen, deterministische markengerechte Visuals – die Art von Varianten, die programmatische SEO-Landingpages benötigen.",
+    "cta": "Frühzugang beitreten",
+    "why": {
+      "title": "Warum Curify für AI Produktfotos verwenden?",
+      "point1": "Vorlagenbasierte Generierung – sperren Sie den visuellen Stil einmal (Beleuchtung, Komposition, Rahmen, Farbregistrierung), und jede Produktvariante erbt diesen Stil. Liefern Sie 1.000 Produktseiten mit deterministischen markengerechten Visuals.",
+      "point2": "Mehrere Ausgabeformate, die durch vorgefertigte Eingaben unterstützt werden: 9-Bilder-Lifestyle-Gitter, Verpackungs-Mockups, Outfit-Anprobe-Karten, Vorher/Nachher-Modellvarianten, Werbeplakate.",
+      "point3": "Für den großen Maßstab gebaut – DTC-Kataloge, programmatische SEO-Seiten, A/B-Test kreative Varianten. Die Ausgabe sind die Quelldateien (PNG/JPEG), nicht eine mit Wasserzeichen versehene Vorschau.",
+      "point4": "Heute nur Demo; melden Sie sich für den Frühzugang an, um Ihr eigenes Produktkatalog durch die Vorlagen zu führen, wenn die Pipeline geöffnet wird."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Ist der AI Produktfoto-Generator heute verfügbar?",
+      "a1": "Noch nicht – diese Seite zeigt eine funktionierende Demo auf einer Beispielvorlage. Die Produktionspipeline (laden Sie Ihre eigenen Produktfotos/Varianten/Katalog hoch) befindet sich in privatem Test. Treten Sie dem Frühzugang bei, und wir werden Sie kontaktieren, wenn sie für Ihren Anwendungsfall geöffnet wird.",
+      "q2": "Wie unterscheidet sich dies von Midjourney oder generischer AI-Bilderzeugung?",
+      "a2": "Generische AI-Generierung produziert inkonsistente Visuals in großem Maßstab – 1.000 Produktseiten erhalten 1.000 verschiedene Interpretationen. Curifys vorlagenbasierter Ansatz sperrt den visuellen Stil im Voraus, sodass jede Variante aussieht, als käme sie vom selben Shooting. Das ist der Vorteil für DTC-Produktkataloge und programmatische SEO-Landingpages, wo Konsistenz wichtiger ist als Vielfalt."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist AI Produktfoto-Generierung?",
+        "p1": "AI Produktfoto-Generierung produziert kataloggerechte Visuals – Lifestyle-Aufnahmen, Verpackungs-Mockups, Outfit-Anproben, Werbeplakate – ohne Fotoshooting. Die Eingabe kodiert den visuellen Stil (Beleuchtung, Komposition, Farbregistrierung, Platzierung von Requisiten) und die Produktspezifikation (die SKU oder Variante).",
+        "p2": "Die Generation 2026 von generativen Bildmodellen (Nano Banana Pro, GPT Image 2, Midjourney v7) liefert die zugrunde liegende Fähigkeit. Was fehlt, ist die Vorlagenebene: eine Möglichkeit, den Stil einmal zu sperren und Hunderte oder Tausende von Varianten mit deterministischer markengerechter Qualität zu produzieren. Curifys vorlagenbasierte Generierung schließt diese Lücke.",
+        "p3": "Ausgabeformate: vertikale 3:4 Produktporträts, 9-Bilder-Lifestyle-Gitter (dasselbe Thema über neun Szenen), 1:1 quadratische Instagram-fähige Aufnahmen, Verpackungs-Mockup-Komposite, Vorher/Nachher-Outfit-Anmerkungskarten und vollständige Werbeplakate mit Überschrifttext."
+      },
+      "how": {
+        "title": "Wie Curify Produktfotos in großem Maßstab generiert",
+        "p1": "Die Pipeline läuft in drei Phasen. Zuerst wird eine Vorlage aus der Galerie ausgewählt – Lifestyle-Foto-Gitter für 9-Bilder-Sets, Produkt-Plakat für Hero-Shots, ai-outfit-try-on-plakat für Modevarianten, food-product-packaging-design für Verpackungs-Mockups usw. Jede Vorlage kodiert den gesperrten visuellen Stil.",
+        "p2": "Zweitens werden die Variantenparameter bereitgestellt – Produktname, Kategorie, Farbe, Szenen-Voreinstellung (Met Gala, Paris Fashion Week, Strand-Sommer, Herbstpark). Die Vorlage wird mit diesen Parametern ausgefüllt; der gesperrte Stil bleibt unverändert.",
+        "p3": "Drittens läuft die Generierung auf Nano Banana Pro. Die Ausgabe ist ein Bild pro Variante, deterministisch im Stil und markengerecht für diese Produktlinie. Für 9-Bilder-Gitter produziert der Generator ein einzelnes Komposit, das neun Szenenvariationen in einem Bild zeigt.",
+        "p4": "Für programmatische SEO-Anwendungsfälle wird die Pipeline gebündelt: Übergeben Sie eine CSV von Produktvarianten, erhalten Sie einen Ordner mit konsistenten Visuals, die jeder SKU zugeordnet sind. Jede Landingpage erhält ihr eigenes einzigartiges markengerechtes Bild, während jede Seite im Katalog dasselbe visuelle Register erbt.",
+        "p5": "Die Demo auf dieser Seite zeigt eine einzelne Lifestyle-Foto-Gitter-Ausgabe. Frühzugangs-Uploads werden dieselbe Pipeline in dem Volumen ausführen, das Ihr Katalog benötigt."
+      },
+      "usecases": {
+        "title": "Wo KI-Produktfotos wichtig sind",
+        "creatorsTitle": "Für DTC- und E-Commerce-Marken",
+        "creatorsBody": "Kataloge mit Tausenden von SKUs können sich keine Fotoshootings pro SKU leisten. Die KI-Produktfotogenerierung bietet pro SKU visuelle Inhalte in programmatischem Maßstab, wobei der Markenstil im gesamten Katalog erhalten bleibt. Kombinieren Sie dies mit programmatischen SEO-Landingpages (siehe /blog/best-programmatic-seo-tools) für einen kumulativen Effekt.",
+        "educationTitle": "Für programmatische SEO und Inhaltsautomatisierung",
+        "educationBody": "Programmatische SEO-Seiten benötigen einzigartige visuelle Inhalte pro Variante. Generische KI-Generierung produziert inkonsistente Qualität in großem Maßstab; Curifys template-first Ansatz sorgt dafür, dass jede Seite ein einzigartiges, markenkonformes Bild erhält. Siehe /use-cases/for-programmatic-seo für die Integrationsform.",
+        "businessTitle": "Für Marketingteams, die A/B-Kreativtests durchführen",
+        "businessBody": "Testen Sie 20 visuelle Varianten desselben Produkts über bezahlte Kanäle hinweg, ohne ein Budget für 20 Fotoshootings. Die Vorlage fixiert den Basisstil; die Varianten unterscheiden sich nur in der getesteten Achse (Hintergrund, Modell, Szene). Ein saubereres experimentelles Design als die Inkonsistenz, die Sie von generischer KI-Generierung erhalten."
       }
     }
   }

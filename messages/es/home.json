@@ -203,6 +203,14 @@
         "title": "Traductor de Video ASL con IA | Lengua de Señas a Subtítulos en Inglés | Curify AI",
         "description": "Traduce videos en lengua de señas ASL a texto o subtítulos en inglés automáticamente. Ve una demostración en tiempo real con material firmado — luego únete al acceso anticipado para tus propias cargas."
       }
+    },
+    "ai_product_photo_generator": {
+      "title": "AI Product Photo Generator",
+      "desc": "Generate on-brand product photos at scale — 9-image grids, packaging, outfit try-on, and lifestyle shots from templated prompts.",
+      "meta": {
+        "title": "AI Product Photo Generator | Templated Catalog Photos at Scale | Curify",
+        "description": "AI product photo generator with templated visual style — ship 9-image product grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Demo + early access."
+      }
     }
   },
   "bilingual": {
@@ -765,6 +773,55 @@
         "educationBody": "Los videos de curso firmados por un instructor sordo —o interpretados en ASL para un aula mixta— obtienen transcripciones en inglés automáticamente. El mismo proceso maneja la subtitulación conforme a la ADA para bibliotecas de video institucionales.",
         "businessTitle": "Para comunicaciones internas y equipos de producto",
         "businessBody": "Los videos de soporte al cliente, clips de incorporación y reuniones internas grabadas en ASL permanecen buscables en tu sistema: la transcripción en inglés es lo que realmente lee tu índice de búsqueda."
+      }
+    }
+  },
+  "aiProductPhotoGenerator": {
+    "metadata": {
+      "title": "AI Product Photo Generator | Templated Catalog Photos at Scale | Curify",
+      "description": "AI product photo generator with templated visual style — ship 9-image product grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Demo + early access."
+    },
+    "title": "AI Product Photo Generator",
+    "description": "Generate on-brand product photos at scale — 9-image lifestyle grids, packaging mockups, outfit try-on cards, and promotional posters from templated prompts. Lock the visual style once; every variant inherits it. Demo runs on a real template; join early access to feed your own product catalog.",
+    "example": "Example: a 9-image lifestyle grid generated from one prompt. Same subject, different scenes, deterministic on-brand visuals — the kind of variant set programmatic SEO landing pages need.",
+    "cta": "Join Early Access",
+    "why": {
+      "title": "Why use Curify for AI product photos?",
+      "point1": "Template-first generation — lock the visual style once (lighting, composition, framing, color register), and every product variant inherits that style. Ship 1,000 product pages with deterministic on-brand visuals.",
+      "point2": "Multiple output formats supported by templated prompts: 9-image lifestyle grids, packaging mockups, outfit try-on cards, before/after fashion variants, promotional posters.",
+      "point3": "Built for scale — DTC catalogs, programmatic SEO pages, A/B-test creative variants. The output is the source files (PNG/JPEG), not a watermarked preview.",
+      "point4": "Demo-only today; sign up for early access to run your own product catalog through the templates when the pipeline opens."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is the AI product photo generator available today?",
+      "a1": "Not yet — this page shows a working demo on a sample template. The production pipeline (upload your own product photos / variants / catalog) is in private testing. Join early access and we will reach out when it opens for your use case.",
+      "q2": "How does this differ from Midjourney or generic AI image generation?",
+      "a2": "Generic AI generation produces inconsistent visuals at scale — 1,000 product pages get 1,000 different interpretations. Curify's template-first approach locks the visual style upfront so every variant looks like it came from the same shoot. That's the moat for DTC product catalogs and programmatic SEO landing pages where consistency matters more than variety."
+    },
+    "deep": {
+      "what": {
+        "title": "What is AI product photo generation?",
+        "p1": "AI product photo generation produces catalog-grade visuals — lifestyle shots, packaging mockups, outfit try-ons, promotional posters — without a photoshoot. The prompt encodes the visual style (lighting, composition, color register, prop placement) and the product specification (the SKU or variant).",
+        "p2": "The 2026 generation of generative image models (Nano Banana Pro, GPT Image 2, Midjourney v7) ship the underlying capability. What's missing is the templating layer: a way to lock the style once and produce hundreds or thousands of variants with deterministic on-brand quality. Curify's template-first generation fills that gap.",
+        "p3": "Output formats: vertical 3:4 product portraits, 9-image lifestyle grids (same subject across nine scenes), 1:1 square Instagram-ready shots, packaging-mockup composites, before/after outfit annotation cards, and full promotional posters with headline text."
+      },
+      "how": {
+        "title": "How Curify generates product photos at scale",
+        "p1": "The pipeline runs in three stages. First, a template is selected from the gallery — lifestyle-photo-grid for 9-image sets, product-poster for hero shots, ai-outfit-try-on-poster for fashion variants, food-product-packaging-design for packaging mockups, etc. Each template encodes the locked visual style.",
+        "p2": "Second, the variant parameters are supplied — product name, category, color, scene preset (Met Gala, Paris Fashion Week, Beach Summer, Autumn Park). The template prompt is filled in with these parameters; the locked style passes through unchanged.",
+        "p3": "Third, generation runs on Nano Banana Pro. The output is one image per variant, deterministic in style and on-brand for that product line. For 9-image grids, the generator produces a single composite showing nine scene variations in one image.",
+        "p4": "For programmatic SEO use cases, the pipeline is batched: pass a CSV of product variants, get back a folder of consistent visuals keyed to each SKU. Each landing page gets its own unique on-brand image while every page in the catalog inherits the same visual register.",
+        "p5": "The demo on this page shows a single lifestyle-photo-grid output. Early-access uploads will run the same pipeline at whatever volume your catalog requires."
+      },
+      "usecases": {
+        "title": "Where AI product photos matter",
+        "creatorsTitle": "For DTC and e-commerce brands",
+        "creatorsBody": "Catalogs with thousands of SKUs cannot afford per-SKU photoshoots. AI product photo generation provides per-SKU visuals at programmatic scale, with on-brand style preserved across the entire catalog. Pair with programmatic SEO landing pages (see /blog/best-programmatic-seo-tools) for compounding effect.",
+        "educationTitle": "For programmatic SEO and content automation",
+        "educationBody": "Programmatic SEO pages need unique visuals per variant. Generic AI generation produces inconsistent quality at scale; Curify's template-first approach gives every page a unique on-brand image. See /use-cases/for-programmatic-seo for the integration shape.",
+        "businessTitle": "For marketing teams running A/B creative tests",
+        "businessBody": "Test 20 visual variants of the same product across paid channels without a 20-shoot budget. The template locks the baseline style; the variants differ only on the tested axis (background, model, scene). Cleaner experimental design than the inconsistency you get from generic AI generation."
       }
     }
   }
