@@ -138,7 +138,18 @@
       "russia",
       "united-states",
       "iran",
-      "portugal"
+      "portugal",
+      "winter",
+      "summer",
+      "autumn",
+      "spring",
+      "morning",
+      "sunset",
+      "night",
+      "christmas",
+      "snowy",
+      "rainy",
+      "festive"
     ],
     "culture": [
       "spain",
@@ -182,7 +193,33 @@
       "isometric",
       "photorealistic",
       "monochrome",
-      "watercolor"
+      "watercolor",
+      "illustration",
+      "vintage",
+      "hyperrealistic",
+      "abstract",
+      "pastel",
+      "y2k",
+      "glossy",
+      "silver",
+      "gold",
+      "metallic",
+      "3d",
+      "industrial",
+      "ultra-realistic",
+      "vibrant-colors",
+      "artistic",
+      "soft-light",
+      "neon",
+      "neon-lights",
+      "golden-hour",
+      "dramatic-lighting",
+      "moody-lighting",
+      "natural-light",
+      "twilight",
+      "studio",
+      "bokeh",
+      "cinematic"
     ],
     "learning": [
       "animals",
@@ -207,7 +244,55 @@
       "vintage-retro",
       "elegant",
       "casual",
-      "high-fashion"
+      "high-fashion",
+      "playful",
+      "confident",
+      "serene",
+      "cozy",
+      "joyful",
+      "intimate",
+      "whimsical",
+      "vibrant",
+      "dramatic",
+      "moody",
+      "nostalgic",
+      "contemplative",
+      "energetic",
+      "calm",
+      "festive",
+      "intense",
+      "tranquil",
+      "ethereal",
+      "introspective",
+      "mysterious",
+      "romantic",
+      "dreamy",
+      "eerie",
+      "captivating",
+      "alluring",
+      "carefree",
+      "sophisticated",
+      "glamorous",
+      "warm",
+      "surreal",
+      "bold",
+      "dynamic",
+      "modern",
+      "urban",
+      "professional",
+      "intellectual",
+      "luxurious",
+      "stylish",
+      "humorous",
+      "iconic",
+      "exhausted",
+      "wary",
+      "somber",
+      "regal",
+      "soft",
+      "relaxed",
+      "futuristic",
+      "natural-beauty"
     ]
   },
   "tier4": {
@@ -483,13 +568,14 @@
       "mood"
     ],
     "natural": [
-      "mood"
+      "travel"
     ],
     "vibrant": [
       "mood"
     ],
     "luxurious": [
-      "mood"
+      "mood",
+      "high-fashion"
     ],
     "stylish": [
       "mood"
@@ -498,52 +584,55 @@
       "mood"
     ],
     "moody": [
-      "film"
+      "mood"
     ],
     "dramatic": [
-      "film"
+      "mood"
     ],
     "intense": [
-      "film"
+      "mood"
     ],
     "mysterious": [
-      "film"
+      "mood"
     ],
     "eerie": [
-      "film"
+      "mood"
     ],
     "cinematic": [
+      "lighting",
       "film"
     ],
     "editorial": [
-      "film"
+      "posters"
     ],
     "documentary": [
       "film"
     ],
     "nostalgic": [
+      "mood",
       "nostalgia"
     ],
     "illustration": [
       "digital-canvas"
     ],
     "whimsical": [
-      "digital-canvas"
+      "mood"
     ],
     "surreal": [
+      "mood",
       "digital-canvas"
     ],
     "abstract": [
       "digital-canvas"
     ],
     "ethereal": [
-      "digital-canvas"
+      "mood"
     ],
     "dreamy": [
-      "digital-canvas"
+      "mood"
     ],
     "fairy": [
-      "digital-canvas"
+      "character"
     ],
     "artistic": [
       "digital-canvas"
@@ -564,15 +653,17 @@
       "digital-canvas"
     ],
     "warm": [
-      "digital-canvas"
+      "mood"
     ],
     "vibrant colors": [
       "digital-canvas"
     ],
     "hyperrealistic": [
+      "digital-canvas",
       "photorealistic"
     ],
     "ultra realistic": [
+      "digital-canvas",
       "photorealistic"
     ],
     "golden hour": [
@@ -588,7 +679,7 @@
       "lighting"
     ],
     "sunset": [
-      "lighting"
+      "seasonal"
     ],
     "bokeh": [
       "lighting"
@@ -597,10 +688,11 @@
       "lighting"
     ],
     "night": [
-      "lighting"
+      "lighting",
+      "seasonal"
     ],
     "morning": [
-      "lighting"
+      "seasonal"
     ],
     "winter": [
       "seasonal"
@@ -621,34 +713,37 @@
       "seasonal"
     ],
     "christmas": [
-      "seasonal"
+      "seasonal",
+      "cultural-festivals"
     ],
     "festive": [
+      "mood",
       "seasonal"
     ],
     "landscape": [
-      "composition"
+      "travel"
     ],
     "macro": [
       "composition"
     ],
     "studio": [
-      "composition"
+      "lighting"
     ],
     "collage": [
-      "posters"
+      "composition"
     ],
     "poster": [
       "posters"
     ],
     "infographic": [
+      "composition",
       "posters"
     ],
     "informative": [
       "posters"
     ],
     "grid": [
-      "posters"
+      "composition"
     ],
     "woman": [
       "portrait"
@@ -663,28 +758,31 @@
       "portrait"
     ],
     "selfie": [
+      "composition",
       "portrait"
     ],
     "mirror selfie": [
+      "composition",
       "portrait"
     ],
     "model": [
       "portrait"
     ],
     "closeup": [
+      "composition",
       "portrait"
     ],
     "silhouette": [
-      "portrait"
+      "composition"
     ],
     "neon": [
-      "ai"
+      "lighting"
     ],
     "neon lights": [
-      "ai"
+      "lighting"
     ],
     "futuristic": [
-      "ai"
+      "mood"
     ],
     "japanese": [
       "japan"
@@ -693,8 +791,7 @@
       "korea"
     ],
     "east asian": [
-      "japan",
-      "korea"
+      "culture"
     ],
     "beach": [
       "travel"
@@ -712,6 +809,7 @@
       "travel"
     ],
     "y2k": [
+      "digital-canvas",
       "vintage-retro"
     ],
     "luxury": [
@@ -725,6 +823,148 @@
     ],
     "friends": [
       "relationship"
+    ],
+    "elegant": [
+      "mood"
+    ],
+    "sophisticated": [
+      "mood"
+    ],
+    "glamorous": [
+      "mood",
+      "high-fashion"
+    ],
+    "modern": [
+      "mood"
+    ],
+    "urban": [
+      "mood"
+    ],
+    "professional": [
+      "mood"
+    ],
+    "intellectual": [
+      "mood"
+    ],
+    "iconic": [
+      "mood"
+    ],
+    "exhausted": [
+      "mood"
+    ],
+    "wary": [
+      "mood"
+    ],
+    "somber": [
+      "mood"
+    ],
+    "regal": [
+      "mood"
+    ],
+    "natural beauty": [
+      "mood"
+    ],
+    "photorealistic": [
+      "digital-canvas",
+      "photorealistic"
+    ],
+    "vintage": [
+      "digital-canvas",
+      "nostalgia",
+      "vintage-retro"
+    ],
+    "watercolor": [
+      "digital-canvas"
+    ],
+    "ink": [
+      "digital-canvas"
+    ],
+    "monochrome": [
+      "digital-canvas"
+    ],
+    "3d": [
+      "digital-canvas"
+    ],
+    "3D": [
+      "digital-canvas"
+    ],
+    "industrial": [
+      "digital-canvas"
+    ],
+    "seasonal": [
+      "seasonal"
+    ],
+    "portrait": [
+      "portrait"
+    ],
+    "couple": [
+      "relationship",
+      "portrait"
+    ],
+    "fitness": [
+      "fitness"
+    ],
+    "athletic": [
+      "fitness"
+    ],
+    "fashion": [
+      "fashion"
+    ],
+    "high fashion": [
+      "high-fashion",
+      "fashion"
+    ],
+    "casual": [
+      "fashion"
+    ],
+    "chic": [
+      "fashion"
+    ],
+    "edgy": [
+      "fashion"
+    ],
+    "minimalist": [
+      "fashion",
+      "digital-canvas"
+    ],
+    "car": [
+      "transportation"
+    ],
+    "food": [
+      "food"
+    ],
+    "café": [
+      "food"
+    ],
+    "animal": [
+      "animal"
+    ],
+    "anime": [
+      "anime"
+    ],
+    "character": [
+      "character"
+    ],
+    "architecture": [
+      "architecture"
+    ],
+    "interior": [
+      "interior"
+    ],
+    "product": [
+      "product"
+    ],
+    "transformation": [
+      "comparison"
+    ],
+    "before-after": [
+      "comparison"
+    ],
+    "historical": [
+      "history"
+    ],
+    "educational": [
+      "learning"
     ]
   },
   "_reverse_map_excluded_topics_note": "Topics excluded from the reverse map only — their topic page still pulls a gallery row via TOPIC_GALLERY_TAG, but the tag page does NOT surface their templates. Use when a topic's template set is too heterogeneous to make a coherent Templates section.",
@@ -3935,5 +4175,400 @@
       "story",
       "timeline"
     ]
+  },
+  "_content_styles_note": "Style axis (Round 2B, 2026-05-31). 4 sub-axes: mood, aesthetic, lighting, temporal. Each entry carries gallery_count from lib/generated/nanobanana_prompts_metadata.json — the demand signal from prompt-side usage. Sister to information_types (info-type axis) and template_subjects (subject axis). Per-template style tagging deferred — style is query-side vocabulary; templates that carry style do so via their own topics[] arrays.",
+  "content_styles": {
+    "mood": {
+      "label": "Mood / emotional tone",
+      "description": "How the image *feels* — the emotional / temperamental tone the prompt asks for, independent of subject or medium. Drives query intent like 'cozy autumn aesthetic' or 'edgy editorial portrait'.",
+      "tier1_parent": "lifestyle",
+      "tier2_parent": "mood",
+      "entries": [
+        {
+          "value": "playful",
+          "gallery_count": 376
+        },
+        {
+          "value": "confident",
+          "gallery_count": 369
+        },
+        {
+          "value": "serene",
+          "gallery_count": 348
+        },
+        {
+          "value": "cozy",
+          "gallery_count": 314
+        },
+        {
+          "value": "joyful",
+          "gallery_count": 304
+        },
+        {
+          "value": "elegant",
+          "gallery_count": 303
+        },
+        {
+          "value": "intimate",
+          "gallery_count": 282
+        },
+        {
+          "value": "whimsical",
+          "gallery_count": 258
+        },
+        {
+          "value": "vibrant",
+          "gallery_count": 240
+        },
+        {
+          "value": "dramatic",
+          "gallery_count": 178
+        },
+        {
+          "value": "moody",
+          "gallery_count": 162
+        },
+        {
+          "value": "nostalgic",
+          "gallery_count": 117
+        },
+        {
+          "value": "contemplative",
+          "gallery_count": 126
+        },
+        {
+          "value": "energetic",
+          "gallery_count": 120
+        },
+        {
+          "value": "calm",
+          "gallery_count": 102
+        },
+        {
+          "value": "festive",
+          "gallery_count": 84
+        },
+        {
+          "value": "intense",
+          "gallery_count": 82
+        },
+        {
+          "value": "tranquil",
+          "gallery_count": 81
+        },
+        {
+          "value": "ethereal",
+          "gallery_count": 80
+        },
+        {
+          "value": "introspective",
+          "gallery_count": 78
+        },
+        {
+          "value": "mysterious",
+          "gallery_count": 39
+        },
+        {
+          "value": "romantic",
+          "gallery_count": 37
+        },
+        {
+          "value": "dreamy",
+          "gallery_count": 34
+        },
+        {
+          "value": "eerie",
+          "gallery_count": 27
+        },
+        {
+          "value": "captivating",
+          "gallery_count": 15
+        },
+        {
+          "value": "alluring",
+          "gallery_count": 10
+        },
+        {
+          "value": "carefree",
+          "gallery_count": 8
+        },
+        {
+          "value": "sophisticated",
+          "gallery_count": 48
+        },
+        {
+          "value": "glamorous",
+          "gallery_count": 48
+        },
+        {
+          "value": "warm",
+          "gallery_count": 42
+        },
+        {
+          "value": "surreal",
+          "gallery_count": 88
+        },
+        {
+          "value": "bold",
+          "gallery_count": 122
+        },
+        {
+          "value": "dynamic",
+          "gallery_count": 110
+        },
+        {
+          "value": "modern",
+          "gallery_count": 57
+        },
+        {
+          "value": "urban",
+          "gallery_count": 39
+        },
+        {
+          "value": "professional",
+          "gallery_count": 8
+        },
+        {
+          "value": "intellectual",
+          "gallery_count": 8
+        },
+        {
+          "value": "luxurious",
+          "gallery_count": 156
+        },
+        {
+          "value": "stylish",
+          "gallery_count": 163
+        },
+        {
+          "value": "humorous",
+          "gallery_count": 1
+        },
+        {
+          "value": "iconic",
+          "gallery_count": 3
+        },
+        {
+          "value": "exhausted",
+          "gallery_count": 1
+        },
+        {
+          "value": "wary",
+          "gallery_count": 1
+        },
+        {
+          "value": "somber",
+          "gallery_count": 1
+        },
+        {
+          "value": "regal",
+          "gallery_count": 1
+        },
+        {
+          "value": "soft",
+          "gallery_count": 15
+        },
+        {
+          "value": "relaxed",
+          "gallery_count": 23
+        },
+        {
+          "value": "futuristic",
+          "gallery_count": 14
+        },
+        {
+          "value": "natural-beauty",
+          "gallery_count": 36
+        }
+      ]
+    },
+    "aesthetic": {
+      "label": "Aesthetic / visual style",
+      "description": "The visual medium and rendering style — what the image looks like as an artifact (photorealistic vs illustration vs ink-wash, monochrome vs vibrant, vintage vs y2k).",
+      "tier1_parent": "design",
+      "tier2_parent": "digital-canvas",
+      "entries": [
+        {
+          "value": "photorealistic",
+          "gallery_count": 1809
+        },
+        {
+          "value": "illustration",
+          "gallery_count": 437
+        },
+        {
+          "value": "vintage",
+          "gallery_count": 187
+        },
+        {
+          "value": "hyperrealistic",
+          "gallery_count": 143
+        },
+        {
+          "value": "watercolor",
+          "gallery_count": 2
+        },
+        {
+          "value": "ink",
+          "gallery_count": 2
+        },
+        {
+          "value": "abstract",
+          "gallery_count": 61
+        },
+        {
+          "value": "pastel",
+          "gallery_count": 88
+        },
+        {
+          "value": "y2k",
+          "gallery_count": 71
+        },
+        {
+          "value": "glossy",
+          "gallery_count": 62
+        },
+        {
+          "value": "silver",
+          "gallery_count": 52
+        },
+        {
+          "value": "gold",
+          "gallery_count": 43
+        },
+        {
+          "value": "metallic",
+          "gallery_count": 24
+        },
+        {
+          "value": "monochrome",
+          "gallery_count": 20
+        },
+        {
+          "value": "3d",
+          "gallery_count": 5
+        },
+        {
+          "value": "industrial",
+          "gallery_count": 1
+        },
+        {
+          "value": "ultra-realistic",
+          "gallery_count": 27
+        },
+        {
+          "value": "vibrant-colors",
+          "gallery_count": 22
+        },
+        {
+          "value": "artistic",
+          "gallery_count": 174
+        }
+      ]
+    },
+    "lighting": {
+      "label": "Lighting / illumination",
+      "description": "How the scene is lit — distinct from temporal because lighting can be fully synthetic (neon, studio). Some entries overlap with temporal (golden hour reads as both lighting and time-of-day).",
+      "tier1_parent": "design",
+      "tier2_parent": "lighting",
+      "entries": [
+        {
+          "value": "soft-light",
+          "gallery_count": 133
+        },
+        {
+          "value": "neon",
+          "gallery_count": 129
+        },
+        {
+          "value": "neon-lights",
+          "gallery_count": 55
+        },
+        {
+          "value": "golden-hour",
+          "gallery_count": 87
+        },
+        {
+          "value": "dramatic-lighting",
+          "gallery_count": 0
+        },
+        {
+          "value": "moody-lighting",
+          "gallery_count": 0
+        },
+        {
+          "value": "natural-light",
+          "gallery_count": 49
+        },
+        {
+          "value": "twilight",
+          "gallery_count": 31
+        },
+        {
+          "value": "studio",
+          "gallery_count": 1
+        },
+        {
+          "value": "bokeh",
+          "gallery_count": 40
+        },
+        {
+          "value": "cinematic",
+          "gallery_count": 22
+        }
+      ]
+    },
+    "temporal": {
+      "label": "Temporal / seasonal / occasion",
+      "description": "When the scene takes place — season, time of day, weather, holiday. Distinct from lighting because temporal anchors a real-world moment (christmas, winter, sunset).",
+      "tier1_parent": "travel",
+      "tier2_parent": "seasonal",
+      "entries": [
+        {
+          "value": "winter",
+          "gallery_count": 191
+        },
+        {
+          "value": "summer",
+          "gallery_count": 50
+        },
+        {
+          "value": "autumn",
+          "gallery_count": 40
+        },
+        {
+          "value": "spring",
+          "gallery_count": 0
+        },
+        {
+          "value": "morning",
+          "gallery_count": 71
+        },
+        {
+          "value": "sunset",
+          "gallery_count": 65
+        },
+        {
+          "value": "night",
+          "gallery_count": 248
+        },
+        {
+          "value": "christmas",
+          "gallery_count": 70
+        },
+        {
+          "value": "snowy",
+          "gallery_count": 92
+        },
+        {
+          "value": "rainy",
+          "gallery_count": 36
+        },
+        {
+          "value": "festive",
+          "gallery_count": 84
+        }
+      ]
+    }
   }
 }
