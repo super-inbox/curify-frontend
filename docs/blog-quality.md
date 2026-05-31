@@ -16,6 +16,55 @@ Both tracks share the same i18n fan-out: edit `messages/en/blog.json`, delete th
 
 ---
 
+## 2026-05-31 — session recap + next-P0 proposals
+
+Heavy day across three workstreams. Recap and what's next:
+
+### What shipped today
+
+| Commit | What | Why |
+|---|---|---|
+| `c7e1770` | BlogInlineClickTracker: switch fetch+keepalive → sendBeacon | 2-day-post-deploy validation: 0 `blog-link:%` events landed across 213 blog landers; root cause was cross-origin keepalive POST cancellation on navigation. sendBeacon is W3C-standard for this exact case. Expect rising engagement-funnel numbers within 24-48 hr of Vercel propagation. |
+| `6e18c21` | Tier 1 KD 9+29: `/blog/best-programmatic-seo-tools` | "programmatic SEO tool" at KD 9 is rare territory (most "best X tool" head terms are KD 50+). 3-tool comparison (AirOps, Webflow, WordPress) modeled on voice-cloning-tools. Wove in the AI search / AEO angle picked up from AirOps + Webflow homepages — both pivoted to AEO this year. |
+| `03d0ed8` | Tier 2 KD 25: `/blog/style-transfer-ai-guide` + `/tools/style-transfer` meta refresh | 29-key blog targeting "style transfer AI" with 5 worked style buckets (Ghibli, Pixar, watercolor, anime, retro 80s). Tool meta now leads with "Style Transfer AI" word order for exact-query match. |
+| `c4d0469` | Tier 2 KD 36: `/tools/ai-product-photo-generator` mini-tool + `/blog/ai-product-photo-generator-guide` | New mini-tool + new `single_image` demo type for tool-generic-client (reusable infrastructure for future image-output mini-tools). 6 templated workflows in the companion blog. |
+
+### Tier 3 (KD 45 "video dubbing software") — deprioritized
+
+Original 5/30 plan was a 30-min meta refresh on `/tools/video-dubbing` + the two related blogs. User flagged: low confidence that meta-only sweeps move the needle at this scale. Parked indefinitely — re-evaluate if the 6/6 GSC pull shows the term gaining impressions on our existing surfaces.
+
+### Open trackers for 6/6 (data-driven re-evaluation)
+
+| Trigger | Action |
+|---|---|
+| Next SEMrush KD pull due | Per `project_weekly_semrush_kd.md` weekly cadence (last shared 5/30) — re-prompt user for fresh KD when ≥7 days old |
+| Engagement-funnel verification | Pull the `landers_with_followups` SQL (5/30 audit section) — expect non-zero `engaged_pct` across the 4 originally-fixed blogs + the 2 hero+CTA additions (character-prompt-generator, best-ai-tools) |
+| GSC re-pull on Tier 1 + Tier 2 | Position + CTR readout on `/blog/best-programmatic-seo-tools`, `/blog/style-transfer-ai-guide`, `/blog/ai-product-photo-generator-guide` |
+
+### Proposed next P0 (in ROI rank order)
+
+User flagged that meta-only refreshes are unlikely to move the needle at this stage. Bigger swings worth considering before the next data check:
+
+**P0 #1 — Build the programmatic SEO funnel deeper (~3-4 hr)**
+We shipped the blog (`/blog/best-programmatic-seo-tools`) and the tool (`/tools/ai-product-photo-generator`) but there's **no concrete conversion path between them**. The tool page is demo + early access; readers landing from the blog don't see "how do I actually wire Curify into my AirOps / Webflow stack." Two posts close this gap:
+- `/blog/curify-webflow-programmatic-seo-integration` — tutorial showing the actual integration shape (Webflow CMS feeding Curify template generation, output landing on per-SKU pages)
+- `/blog/curify-airops-product-photo-pipeline` — case-study-style post on the same theme with AirOps
+Highest expected revenue impact because programmatic SEO buyers have budget and clear intent.
+
+**P0 #2 — Engagement-funnel hero+CTA i18n fan-out (~1 hr)**
+TODO 2 from the 5/30 engagement audit, still open. The 4 originally-fixed blogs (`brazilArgentinaSoccerPosterPrompts`, `imageGenerationModelComparison`, `aeVsComfyUi`, `tenPromptingTipsVideoGeneration`) have `heroImage` / `heroCtaText` / `heroCtaHref` populated in **EN only**. Fan to 9 non-en locales. Low risk, predictable lift, maintains parity with the BlogInlineClickTracker fix that's now actually firing events.
+
+**P0 #3 — Interconnection layer pass (~2 hr)**
+Per memory `reference_interconnection_layer.md`: tool detail pages today are dead-ends, use-case pages don't link to blogs. We have great isolated posts but the cross-linking is patchy. A surgical pass that adds 2-3 explicit blog links to each tool page + 2-3 blog/tool links to each use case page would compound SEO and engagement without writing new content.
+
+**P0 #4 — AEO content audit on top-10 posts (~3-4 hr, speculative)**
+Both AirOps + Webflow pivoted to AEO this year. The 2026 SEO landscape is splitting into traditional SERP rankings vs LLM citations. Audit our top-10 blog posts for AEO readiness: add explicit Q&A near top, increase factual fact density (named tools, numbers, dates), structured-answer formatting that LLMs can extract. Lower confidence than KD-driven content because we don't have LLM citation tracking yet — but if even 1-2 of our posts get picked up by ChatGPT / Perplexity / Gemini, that's net-new traffic from a source we currently have zero share in.
+
+**P0 #5 — `storyboard-to-pipeline` cleanup (~10 min)**
+Small fix: line 284 of `app/[locale]/(public)/blog/storyboard-to-pipeline/page.tsx` has a stray `\`\`\`__` markdown marker that renders as literal text. Cheap polish.
+
+---
+
 ## 2026-05-31 — BlogInlineClickTracker silent failure diagnosis + fix
 
 User flagged: ~200 GSC clicks in the last 2 days (heavy on World Cup + ASL queries), but Session Engagement Funnel still shows ~0% engagement on those landers. The 5/30 fix didn't deliver the expected lift.
