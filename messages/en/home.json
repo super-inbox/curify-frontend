@@ -143,8 +143,12 @@
       "desc": "Match lips to speech perfectly with AI-powered lip sync"
     },
     "style_transfer": {
-      "title": "Style Transfer",
-      "desc": "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon"
+      "title": "Style Transfer AI",
+      "desc": "Restyle a video into Pixar, Ghibli, watercolor, anime, or any reference style — frame-coherent, identity-preserved, in early access.",
+      "meta": {
+        "title": "Style Transfer AI for Video | Pixar, Ghibli, Anime, Watercolor | Curify",
+        "description": "Style transfer AI for video — turn live-action into Pixar, Ghibli, anime, watercolor, or any reference style. Frame-coherent, identity-preserved. Try the demo, then join early access."
+      }
     },
     "groups": {
       "video": "Video Tools",
@@ -553,11 +557,11 @@
   },
   "styleTransfer": {
     "metadata": {
-      "title": "AI Style Transfer for Video | Pixar, Ghibli, Anime | Curify AI",
-      "description": "Apply Pixar, Ghibli, anime, or any reference art style to a real-world video clip. Curify's style transfer pipeline preserves motion and identity while swapping the visual language."
+      "title": "Style Transfer AI for Video | Pixar, Ghibli, Anime, Watercolor | Curify AI",
+      "description": "Style transfer AI for video — frame-coherent restyling into Pixar, Ghibli, anime, watercolor, or any reference style. Identity preserved across motion. Demo + early access."
     },
-    "title": "AI Style Transfer for Video",
-    "description": "Apply Pixar, Ghibli, anime, or any reference art style to a real-world video — frame-by-frame consistency, preserved motion, recognizable subjects. Watch the demo below for an example.",
+    "title": "Style Transfer AI for Video",
+    "description": "Style transfer AI takes a video and a target visual style — Pixar 3D, Ghibli painterly, anime line art, watercolor — and re-renders it with frame-coherent restyling and preserved subject identity. Watch the demo below.",
     "example": "Example: a live-action clip restyled into a Ghibli painterly look, frame-coherent across the full shot.",
     "cta": "Join Early Access",
     "why": {
