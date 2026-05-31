@@ -2121,7 +2121,8 @@
         "template-vintage-travel-scrapbook-poster",
         "template-watercolor-theme-collage-illustration",
         "template-watercolor-travel-journal-collage",
-        "template-wine-variety-intro-infographic"
+        "template-wine-variety-intro-infographic",
+        "template-world-cup-team-sticker-poster"
       ]
     },
     "comparison": {
@@ -2181,6 +2182,7 @@
         "template-national-culture-history-infographic",
         "template-personal-journey-wolf-path-illustration",
         "template-pet-life-journey-infographic",
+        "template-sports-trophy-infographic",
         "template-what-if-history",
         "template-world-landmark-vintage-info-poster"
       ]
@@ -2229,7 +2231,8 @@
         "template-vintage-ultimate-guide-infographic",
         "template-warmup-routine",
         "template-watercolor-painting-tutorial-guide",
-        "template-wine-variety-intro-infographic"
+        "template-wine-variety-intro-infographic",
+        "template-yellow-themed-illustrated-journey-infographic"
       ]
     },
     "information-card": {
@@ -2256,6 +2259,7 @@
         "template-solar-term",
         "template-species",
         "template-species-science",
+        "template-sports-trophy-infographic",
         "template-varieties-food-poster",
         "template-wine-variety-intro-infographic",
         "template-world-landmark-vintage-info-poster"
@@ -3018,6 +3022,10 @@
     "template-sports-technique-guide": [
       "process"
     ],
+    "template-sports-trophy-infographic": [
+      "information-card",
+      "timeline"
+    ],
     "template-stick-figure-vocab": [
       "vocabulary"
     ],
@@ -3112,12 +3120,18 @@
     "template-word-scene": [
       "vocabulary"
     ],
+    "template-world-cup-team-sticker-poster": [
+      "collection"
+    ],
     "template-world-landmark-vintage-info-poster": [
       "information-card",
       "timeline"
     ],
     "template-world-travel-map-illustration": [
       "map"
+    ],
+    "template-yellow-themed-illustrated-journey-infographic": [
+      "process"
     ],
     "template-zhenhuan-mbti-character-analysis": [
       "insight",
@@ -4674,6 +4688,12 @@
       "posters",
       "sports"
     ],
+    "template-sports-trophy-infographic": [
+      "history",
+      "information-card",
+      "posters",
+      "sports"
+    ],
     "template-stick-figure-vocab": [
       "kawaii",
       "language",
@@ -4853,6 +4873,13 @@
       "language",
       "vocabulary"
     ],
+    "template-world-cup-team-sticker-poster": [
+      "design",
+      "groups",
+      "posters",
+      "sports",
+      "world-cup"
+    ],
     "template-world-landmark-vintage-info-poster": [
       "design",
       "history",
@@ -4863,6 +4890,12 @@
     "template-world-travel-map-illustration": [
       "map",
       "travel"
+    ],
+    "template-yellow-themed-illustrated-journey-infographic": [
+      "design",
+      "guides",
+      "lifestyle",
+      "posters"
     ],
     "template-zhenhuan-mbti-character-analysis": [
       "character",

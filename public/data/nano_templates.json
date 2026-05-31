@@ -9331,5 +9331,112 @@
     "creation_date": "2026-05-29",
     "allow_generation": true,
     "batch": true
+  },
+  {
+    "id": "template-world-cup-team-sticker-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(World Cup Team Sticker Poster Creator) Create a vibrant national football team sticker-style poster titled '{topic}'. Layout: Collage of player cutouts (each with name, number, and nickname) arranged in a sticker sheet format, with team crest, flag, and motivational slogans. Use the country's national colors as brushstroke backgrounds. Style: Bold sticker art style, white outlines, hand-drawn text, dynamic celebratory player photos, direct high-quality image generation. Subject: '{topic} national football team sticker poster'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "National Football Team",
+            "type": "text",
+            "placeholder": [
+              "Brazil National Team",
+              "France National Team",
+              "England National Team",
+              "Argentina National Team",
+              "Spain National Team",
+              "Germany National Team"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-world-cup-team-sticker-poster-spain-poster-prev.jpg",
+    "topics": [
+      "sports",
+      "world-cup",
+      "groups",
+      "posters",
+      "design"
+    ],
+    "rank_score": 80,
+    "base_rank_score": 80,
+    "batch": true,
+    "allow_generation": true,
+    "creation_date": "2026-05-31"
+  },
+  {
+    "id": "template-yellow-themed-illustrated-journey-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Illustrated Journey Infographic Creator) Create a vibrant, educational infographic poster titled '{topic}'. Layout: A winding path representing a step-by-step journey, with numbered stages, simple stick-figure illustrations, speech bubbles, and motivational quotes. Include an opening headline, key takeaways, and closing encouragement. Style: Warm, yellow-dominated color palette, friendly hand-drawn cartoon art style, bold typography with high contrast, clear section dividers, direct high-quality image generation. Subject: '{topic} step-by-step journey infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Infographic Topic",
+            "type": "text",
+            "placeholder": [
+              "Creative Brainstorming Process",
+              "Healthy Lifestyle Journey",
+              "Learning & Growth Path",
+              "Sustainable Living Guide",
+              "Time Management Mastery",
+              "How to Create a Vision for the Future"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-yellow-themed-illustrated-journey-infographic-creative-brainstorming-process-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "design",
+      "posters",
+      "guides",
+      "process"
+    ],
+    "rank_score": 80,
+    "base_rank_score": 80,
+    "batch": true,
+    "allow_generation": true,
+    "creation_date": "2026-05-31"
+  },
+  {
+    "id": "template-sports-trophy-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Sports Trophy Infographic Creator) Create a clean, modern infographic poster titled '{topic}'. Layout: A central high-resolution image of the trophy, surrounded by sections on history, specifications, design features, materials, notable facts, and a timeline of champions. Use a neutral, sport-themed color palette, clear section headers, and minimalist icons. Style: Professional and informative aesthetic, direct high-quality image generation. Subject: '{topic} trophy infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Sports Trophy Topic",
+            "type": "text",
+            "placeholder": [
+              "Stanley Cup",
+              "Olympic Gold Medal",
+              "UEFA Champions League Trophy",
+              "Larry O'Brien Championship Trophy",
+              "FIFA World Cup Trophy",
+              "Wimbledon Championship Trophy"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-sports-trophy-infographic-fifa-world-cup-trophy-prev.jpg",
+    "topics": [
+      "sports",
+      "history",
+      "posters",
+      "information-card"
+    ],
+    "rank_score": 80,
+    "base_rank_score": 80,
+    "batch": true,
+    "allow_generation": true,
+    "creation_date": "2026-05-31"
   }
 ]
