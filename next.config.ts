@@ -106,6 +106,21 @@ const nextConfig: NextConfig = {
         destination: "/:locale/nano-template/world-travel-map-illustration",
         permanent: true,
       },
+      // Legacy carousel route renamed: /nano-template/[slug]/carousel/[exampleId]
+      // moved to /carousel/template-example/[slug]/[exampleId]. Google still
+      // has 511 indexed URLs at the old pattern (2026-05-31 Coverage
+      // Drilldown). Honor the route rename — point at the new carousel route,
+      // not the conceptually-similar /example/[exampleId] page.
+      {
+        source: "/nano-template/:slug/carousel/:exampleId",
+        destination: "/carousel/template-example/:slug/:exampleId",
+        permanent: true,
+      },
+      {
+        source: `/:locale(${LOCALE_RE})/nano-template/:slug/carousel/:exampleId`,
+        destination: "/:locale/carousel/template-example/:slug/:exampleId",
+        permanent: true,
+      },
 
       // Legacy marketing routes that surfaced in the GSC 404 report.
       // Each maps to the closest current equivalent so the SEO signal
