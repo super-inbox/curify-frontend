@@ -16,6 +16,26 @@ Both tracks share the same i18n fan-out: edit `messages/en/blog.json`, delete th
 
 ---
 
+## SEMrush KD priority queue (2026-05-30 pull)
+
+User shares fresh Keyword Difficulty (KD) data from SEMrush weekly. KD identifies low-competition keywords we can rank on with relatively cheap content. Memory `project_weekly_semrush_kd.md` tracks the cadence — re-prompt for the next week's pull when `last_shared_date` is ≥ 7 days old.
+
+**2026-05-30 keywords + current surfaces audit:**
+
+| Tier | KD | Keyword | Current surface | Play | Effort |
+|------|----|---------|------------------|------|--------|
+| 1 | **9** | programmatic SEO tool | `/blog/programmatic-seo-dtc-visual-first` (ICP narrative), `/use-cases/for-programmatic-seo`. **No tool comparison blog. No `/tools/*` landing.** | New blog `/blog/best-programmatic-seo-tools` — voice-cloning-tools shape, 3 tools (AirOps, Webflow, WordPress+WP All Import) + honest Curify callout for visual-heavy progSEO. Targets KD 9 + KD 29 in one post. | ~2-3 hr |
+| 1 | **29** | seo automation tool | Subsumed above — sibling intent to "programmatic SEO tool" | Co-targeted in the same post | — |
+| 2 | **25** | style transfer AI | `/tools/style-transfer` exists (status: `demo`). **No targeted comparison blog. Meta likely generic.** | Meta audit on existing tool page + short blog with gallery anchors | ~1 hr |
+| 2 | **36** | AI product photo generator | 9+ templates (`product-poster`, `product-theme-promotional-poster`, `ai-outfit-try-on-poster`, `lifestyle-photo-grid`, `food-product-packaging-design`, etc). **No mini-tool page. No targeted blog.** | New mini-tool `/tools/ai-product-photo-generator` (asl-video-translator mini-tool shape) + blog anchor | ~2 hr |
+| 3 | **45** | video dubbing software | `/tools/video-dubbing` live + `/blog/ai-video-dubbing-tutorial` + `/blog/how-to-dub-videos-naturally` (the dedicated-folder bleeder). | Meta-only refresh on `/tools/video-dubbing` + sibling blog metas to target "video dubbing software" phrase specifically | ~30 min |
+
+**Tier 3 deprioritize (KD 50+):** `seo content tool` (50), `video transcription tool` (52), `AI seo tool` (55), `AI seo content` (56) — head-term authority + backlinks needed; not a content-only win.
+
+**Sequence:** Tier 1 first (highest ROI on KD 9 — rare territory), then Tier 2 (asset-rich, low effort), then Tier 3 (quick meta refresh).
+
+---
+
 ## Today's progress (2026-05-30 — engagement-funnel deep-dive + P0/P1/P2 fix)
 
 ### What triggered the audit
