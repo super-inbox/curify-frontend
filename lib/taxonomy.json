@@ -2861,5 +2861,1079 @@
     "template-constellation-steampunk": [
       "hero-thematic-poster"
     ]
+  },
+  "_information_types_note": "type_id -> { label, description, templates: [...] }. The Information Type layer — how content is *organized* (Fact, Profile, Collection, ...). Bounded ~14 categories — the connective tissue between search intent and generation. Sister to (subject) tier1-4 and (style) content_styles. Built by scripts/build_template_information_types.cjs as of 2026-05-31 per the three-layer model in raw/taxonomy_brainstorm.txt.",
+  "information_types": {
+    "fact": {
+      "label": "Fact / cold knowledge",
+      "description": "One-line cold-knowledge claim + image. Low cognitive load, high visual impact, cross-domain (animal facts, history facts, science facts, weird trivia).",
+      "templates": [
+        "template-country-dos-and-donts-infographic",
+        "template-educational-topic-infographic",
+        "template-pet-safe-human-food-infographic",
+        "template-science-education-infographic",
+        "template-slang-week-recap-infographic",
+        "template-solar-term",
+        "template-space-planet-fact-infographic",
+        "template-species-science",
+        "template-weather",
+        "template-weather-education-infographic",
+        "template-weird-cold-knowledge-popular-science-card",
+        "template-weird-science-facts-infographic"
+      ]
+    },
+    "profile": {
+      "label": "Profile / single-subject",
+      "description": "One subject's attributes laid out — name, image, key traits. Works for people, characters, cities, products, animals, IPs.",
+      "templates": [
+        "template-ai-outfit-try-on-poster",
+        "template-architecture",
+        "template-artist-biography-infographic",
+        "template-book-minimalist",
+        "template-book-series",
+        "template-cartoon-character-profile-card-kawaii-style",
+        "template-celebrity-filmography-infographic",
+        "template-celebrity-movie-group-poster",
+        "template-character",
+        "template-character-analysis",
+        "template-chinese-classic-character-mbti",
+        "template-city-mbti",
+        "template-city-miniature",
+        "template-constellation-steampunk",
+        "template-costume",
+        "template-cultural-festival-poster",
+        "template-custom-character-card",
+        "template-detective-conan",
+        "template-ethnic-costume-deconstruction-board",
+        "template-fandom-character-grid-poster",
+        "template-fashion-ecommerce",
+        "template-fashion-inspired-gown-design-sheet",
+        "template-fashion-shape-guide-infographic",
+        "template-figure-principles-infographic",
+        "template-food",
+        "template-food-product-packaging-design",
+        "template-friends-character-mbti",
+        "template-fruit",
+        "template-guofeng-scroll",
+        "template-harry-potter-mbti-infographic",
+        "template-historical-figure-educational",
+        "template-historical-figure-profile-infographic",
+        "template-industrial-design-concept-sketch",
+        "template-manga-artist-infographic-poster",
+        "template-mbti-breakingbad",
+        "template-mbti-group-anime-character-poster",
+        "template-media-theme-wallpaper-poster",
+        "template-movie-poster",
+        "template-personal-fashion-outfit-style-variations",
+        "template-portrait-retouching-blueprint",
+        "template-princess-pearl-mbti-character-card",
+        "template-product-poster",
+        "template-product-theme-promotional-poster",
+        "template-species",
+        "template-theme-overview-poster",
+        "template-travel"
+      ]
+    },
+    "collection": {
+      "label": "Collection / N-items",
+      "description": "Multiple instances shown together as a unit (9 fruits, 16 birds, top-10 destinations, fandom-grid, photo-grid, varieties poster).",
+      "templates": [
+        "template-9-traits-info-grid",
+        "template-best-cities-travel-infographic",
+        "template-book-recommendation-grid-poster",
+        "template-book-series",
+        "template-celebrity-filmography-infographic",
+        "template-celebrity-movie-group-poster",
+        "template-costume",
+        "template-country-dos-and-donts-infographic",
+        "template-country-souvenirs-watercolor",
+        "template-country-top10-travel-destinations",
+        "template-dessert-color-lab-infographic",
+        "template-english-top5-phrases",
+        "template-fandom-character-grid-poster",
+        "template-fashion-nail-art-design",
+        "template-group-vocab-category",
+        "template-hairstyle-color-recommendation",
+        "template-interior-design-mood-board-generator",
+        "template-lifestyle-photo-grid",
+        "template-lunar-new-year-red-envelope-set",
+        "template-mbti-group-anime-character-poster",
+        "template-music-style-visual-infographic",
+        "template-nostalgic-first-item-poster",
+        "template-personal-fashion-outfit-style-variations",
+        "template-pop-culture-matching-chart",
+        "template-regional-alcoholic-drinks-infographic",
+        "template-regional-names-old-money-style",
+        "template-series-infographic",
+        "template-series-travel",
+        "template-tool-ai-category",
+        "template-top10-visual-guide-infographic",
+        "template-varieties-food-poster",
+        "template-vintage-stamp-collection-illustration",
+        "template-vintage-travel-scrapbook-poster",
+        "template-watercolor-theme-collage-illustration",
+        "template-watercolor-travel-journal-collage",
+        "template-wine-variety-intro-infographic"
+      ]
+    },
+    "comparison": {
+      "label": "Comparison / A vs B",
+      "description": "Side-by-side contrast between two entities (1v1 battle, then-vs-now, before-after, word vs word, culture vs culture).",
+      "templates": [
+        "template-animation-studio-comparison-infographic",
+        "template-battle",
+        "template-character-comparison",
+        "template-chinese-verb-opposite-infographic",
+        "template-dual-character-comparison-infographic",
+        "template-east-asian-culture-comparison-infographic",
+        "template-emotion-vs-emotion-illustration",
+        "template-english-homograph-educational-poster",
+        "template-english-word-difference-infographic",
+        "template-fashion-before-after-outfit-annotation-card",
+        "template-finance-comparison-infographic",
+        "template-generation-comparison-infographic",
+        "template-hairstyle-color-recommendation",
+        "template-historical-figure-vs-infographic",
+        "template-home-organization-before-after",
+        "template-kids-opposite-concept-education",
+        "template-language-word-comparison-educational-poster",
+        "template-mbti-comparison-infographic",
+        "template-mbti-contrast",
+        "template-mbti-group-comparison-infographic",
+        "template-mbti-personality-compatibility-infographic",
+        "template-mbti-stereotype-vs-reality-infographic",
+        "template-posture-correctness-comparison",
+        "template-sports-battle",
+        "template-then-vs-now-comparison-infographic"
+      ]
+    },
+    "timeline": {
+      "label": "Timeline / chronology",
+      "description": "Events arranged along time (history, evolution, life journey, IP-arc, decades-of-X).",
+      "templates": [
+        "template-artist-biography-infographic",
+        "template-clothing-evolution-poster",
+        "template-cultural-travel-journey-infographic",
+        "template-evolution",
+        "template-evolution-timeline-infographic",
+        "template-flowing-journey-infographic",
+        "template-historical-evolution-timeline-infographic",
+        "template-history-timeline-infographic",
+        "template-life-journey-curve-infographic",
+        "template-personal-journey-wolf-path-illustration",
+        "template-pet-life-journey-infographic"
+      ]
+    },
+    "analysis": {
+      "label": "Analysis / structured deep dive",
+      "description": "Multi-axis structured viewpoint (book summary, self-help framework, hot-event analysis, character analysis, MBTI relationship). Heavier than fact.",
+      "templates": [
+        "template-character-analysis",
+        "template-educational-career-field-infographic",
+        "template-english-error-correction",
+        "template-english-grammar-lesson",
+        "template-ethnic-costume-deconstruction-board",
+        "template-fashion-inspired-gown-design-sheet",
+        "template-figure-principles-infographic",
+        "template-financial-habit-infographic-poster",
+        "template-historical-figure-educational",
+        "template-hot-event-analysis",
+        "template-lifestyle-habit-infographic",
+        "template-lifestyle-watercolor-infographic",
+        "template-manga-artist-infographic-poster",
+        "template-mbti-in-love-infographic",
+        "template-mbti-relationship-infographic",
+        "template-national-culture-history-infographic",
+        "template-relationship-advice-infographic",
+        "template-self-care-illustration-poster",
+        "template-self-help-book-visual-summary-infographic",
+        "template-self-help-infographic-poster",
+        "template-what-if-history",
+        "template-zhenhuan-mbti-character-analysis"
+      ]
+    },
+    "process": {
+      "label": "Process / step-by-step",
+      "description": "Ordered how-to (recipe, beauty step-by-step, gardening guide, packing guide, watercolor tutorial, warmup routine, fat-loss plan).",
+      "templates": [
+        "template-anatomy-cut-guide",
+        "template-beauty-step-by-step-guide",
+        "template-cartoon-action-visual-guide-infographic",
+        "template-equipment-muscle-guide",
+        "template-fashion-shape-guide-infographic",
+        "template-fat-loss-plan",
+        "template-food-recipe-tip-infographic",
+        "template-gardening-how-to-infographic",
+        "template-hairstyle-guide-infographic",
+        "template-home-lifestyle-guide-infographic",
+        "template-houseplant-care-guide-infographic",
+        "template-nutrition-food-guide-poster",
+        "template-organ-health-food-guide-infographic",
+        "template-pain-relief-infographic",
+        "template-pet-care-guide",
+        "template-portrait-retouching-blueprint",
+        "template-premium-recipe-card-infographic",
+        "template-professional-category-guide-infographic",
+        "template-recipe",
+        "template-soft-decoration-design-guide",
+        "template-sports-technique-guide",
+        "template-training-muscle-equipment",
+        "template-travel-packing-guide-infographic",
+        "template-vintage-ultimate-guide-infographic",
+        "template-warmup-routine",
+        "template-watercolor-painting-tutorial-guide"
+      ]
+    },
+    "information-card": {
+      "label": "Information card / encyclopedia entry",
+      "description": "Attribute-rich catalog entry — name + image + structured attributes (herb, plant, animal species, periodic-table-style entry, country/city dossier, intangible heritage piece).",
+      "templates": [
+        "template-child-hobby-skill",
+        "template-cultural-relic-retro-infographic",
+        "template-dessert-color-lab-infographic",
+        "template-dog-breed-retro-infographic",
+        "template-education",
+        "template-education-card",
+        "template-educational-career-field-infographic",
+        "template-equipment-muscle-guide",
+        "template-herbal",
+        "template-hotspot-card",
+        "template-intangible-heritage",
+        "template-lifestyle-info-card",
+        "template-national-culture-history-infographic",
+        "template-pet-safe-human-food-infographic",
+        "template-professional-category-guide-infographic",
+        "template-regional-alcoholic-drinks-infographic",
+        "template-solar-term",
+        "template-species",
+        "template-species-science",
+        "template-varieties-food-poster",
+        "template-wine-variety-intro-infographic",
+        "template-world-landmark-vintage-info-poster"
+      ]
+    },
+    "vocabulary": {
+      "label": "Vocabulary / word + image",
+      "description": "Word + image learning unit across any language (English/Chinese/multilingual vocab, idiom card, phrasal verbs, kids vocab, phonics, opposite-concept).",
+      "templates": [
+        "template-CVC-english-word-coloring-flower-card",
+        "template-bilingual-object-structure-labeling",
+        "template-cartoon-english-vocabulary-flashcards",
+        "template-children-english-vocab-spelling",
+        "template-chinese-character-learning-poster",
+        "template-chinese-idiom-learning-card",
+        "template-chinese-radical-learning",
+        "template-chinese-verb-opposite-infographic",
+        "template-cuisine-food-vocab-poster",
+        "template-daily-essentials-learning-card",
+        "template-detailed-vocab-flashcard",
+        "template-english-dialogue-scene",
+        "template-english-error-correction",
+        "template-english-grammar-lesson",
+        "template-english-grammar-wordlist-infographic",
+        "template-english-homograph-educational-poster",
+        "template-english-phrasal-verb",
+        "template-english-top5-phrases",
+        "template-english-vocabulary-upgrade",
+        "template-english-word-difference-infographic",
+        "template-group-vocab-category",
+        "template-ielts-3-to-9-vocabulary-poster",
+        "template-kids-opposite-concept-education",
+        "template-kids-theme-fill-in-worksheet",
+        "template-kids-vocabulary-poster",
+        "template-language-word-comparison-educational-poster",
+        "template-multilingual-vocabulary-poster-watercolor",
+        "template-native-english-expressions",
+        "template-phonics-consonant-blend",
+        "template-regional-names-old-money-style",
+        "template-room-vocabulary-infographic",
+        "template-slang-week-recap-infographic",
+        "template-stick-figure-vocab",
+        "template-verb-action-learning-cards",
+        "template-vocabulary",
+        "template-word-origins-map-infographic",
+        "template-word-scene"
+      ]
+    },
+    "dialogue": {
+      "label": "Dialogue / conversation",
+      "description": "Conversation bubbles, native expressions, sentence-pair drills. Distinct from vocab because the unit is a turn, not a word.",
+      "templates": [
+        "template-english-dialogue-scene",
+        "template-native-english-expressions"
+      ]
+    },
+    "quote": {
+      "label": "Quote / one-message poster",
+      "description": "Name + quote + (optional) portrait. Single-message typography-led poster (literal quotes, poetry, slogan).",
+      "templates": [
+        "template-poetry-ink-wash-illustration",
+        "template-quote-poster-generator"
+      ]
+    },
+    "map": {
+      "label": "Map / spatial layout",
+      "description": "Geographic or spatial layout — landmark map, travel map, historical-event map, word-origins map.",
+      "templates": [
+        "template-3d-region-landmark-map",
+        "template-historical-event-map-illustration",
+        "template-national-theme-map-infographic",
+        "template-tourist-spot-watercolor-map-infographic",
+        "template-watercolor-world-map-illustration",
+        "template-whimsical-travel-map",
+        "template-word-origins-map-infographic",
+        "template-world-travel-map-illustration"
+      ]
+    },
+    "quiz": {
+      "label": "Quiz / personality test / matching chart",
+      "description": "Choice-driven / framework-driven self-test or fandom-mapping (MBTI applied to any IP, personality choice quiz, 16-cell matching chart, 9-traits).",
+      "templates": [
+        "template-9-traits-info-grid",
+        "template-chinese-classic-character-mbti",
+        "template-city-mbti",
+        "template-friends-character-mbti",
+        "template-harry-potter-mbti-infographic",
+        "template-kids-theme-fill-in-worksheet",
+        "template-mbti-animal",
+        "template-mbti-breakingbad",
+        "template-mbti-comparison-infographic",
+        "template-mbti-contrast",
+        "template-mbti-generic",
+        "template-mbti-ghibli",
+        "template-mbti-group-comparison-infographic",
+        "template-mbti-in-love-infographic",
+        "template-mbti-marvel",
+        "template-mbti-naruto",
+        "template-mbti-nba",
+        "template-mbti-personality-compatibility-infographic",
+        "template-mbti-relationship-infographic",
+        "template-mbti-siliconvalley",
+        "template-mbti-stereotype-vs-reality-infographic",
+        "template-mbti-yellowstone",
+        "template-personality-choice-quiz-card",
+        "template-pop-culture-matching-chart",
+        "template-princess-pearl-mbti-character-card",
+        "template-zhenhuan-mbti-character-analysis"
+      ]
+    },
+    "story": {
+      "label": "Story / multi-panel narrative",
+      "description": "Multi-panel narrative across cells (travel-journal, scroll storytelling, life-journey-as-story). Distinct from Timeline — Story is causal/narrative, Timeline is chronological.",
+      "templates": [
+        "template-guofeng-scroll",
+        "template-personal-journey-wolf-path-illustration",
+        "template-watercolor-travel-journal-collage"
+      ]
+    }
+  },
+  "_template_information_types_note": "template_id -> ordered array of info types. Primary type first, optional secondary types follow. Reverse of information_types. Consumed by: search-generation bridge Phase 3 (matches 'give me a [info_type] of [topic]' queries), per-info-type landing pages, content gap matrix v2 (info_type × subject).",
+  "template_information_types": {
+    "template-battle": [
+      "comparison"
+    ],
+    "template-sports-battle": [
+      "comparison"
+    ],
+    "template-mbti-comparison-infographic": [
+      "comparison",
+      "quiz"
+    ],
+    "template-mbti-contrast": [
+      "comparison",
+      "quiz"
+    ],
+    "template-historical-figure-vs-infographic": [
+      "comparison"
+    ],
+    "template-character-comparison": [
+      "comparison"
+    ],
+    "template-dual-character-comparison-infographic": [
+      "comparison"
+    ],
+    "template-emotion-vs-emotion-illustration": [
+      "comparison"
+    ],
+    "template-english-word-difference-infographic": [
+      "comparison",
+      "vocabulary"
+    ],
+    "template-language-word-comparison-educational-poster": [
+      "comparison",
+      "vocabulary"
+    ],
+    "template-finance-comparison-infographic": [
+      "comparison"
+    ],
+    "template-animation-studio-comparison-infographic": [
+      "comparison"
+    ],
+    "template-east-asian-culture-comparison-infographic": [
+      "comparison"
+    ],
+    "template-posture-correctness-comparison": [
+      "comparison"
+    ],
+    "template-then-vs-now-comparison-infographic": [
+      "comparison"
+    ],
+    "template-generation-comparison-infographic": [
+      "comparison"
+    ],
+    "template-mbti-stereotype-vs-reality-infographic": [
+      "comparison",
+      "quiz"
+    ],
+    "template-fashion-before-after-outfit-annotation-card": [
+      "comparison"
+    ],
+    "template-home-organization-before-after": [
+      "comparison"
+    ],
+    "template-mbti-group-comparison-infographic": [
+      "comparison",
+      "quiz"
+    ],
+    "template-9-traits-info-grid": [
+      "collection",
+      "quiz"
+    ],
+    "template-fandom-character-grid-poster": [
+      "collection",
+      "profile"
+    ],
+    "template-book-recommendation-grid-poster": [
+      "collection"
+    ],
+    "template-top10-visual-guide-infographic": [
+      "collection"
+    ],
+    "template-country-top10-travel-destinations": [
+      "collection"
+    ],
+    "template-english-top5-phrases": [
+      "collection",
+      "vocabulary"
+    ],
+    "template-lifestyle-photo-grid": [
+      "collection"
+    ],
+    "template-vintage-stamp-collection-illustration": [
+      "collection"
+    ],
+    "template-best-cities-travel-infographic": [
+      "collection"
+    ],
+    "template-regional-alcoholic-drinks-infographic": [
+      "collection",
+      "information-card"
+    ],
+    "template-wine-variety-intro-infographic": [
+      "collection",
+      "information-card"
+    ],
+    "template-varieties-food-poster": [
+      "collection",
+      "information-card"
+    ],
+    "template-music-style-visual-infographic": [
+      "collection"
+    ],
+    "template-tool-ai-category": [
+      "collection"
+    ],
+    "template-celebrity-movie-group-poster": [
+      "collection",
+      "profile"
+    ],
+    "template-mbti-group-anime-character-poster": [
+      "collection",
+      "profile"
+    ],
+    "template-group-vocab-category": [
+      "collection",
+      "vocabulary"
+    ],
+    "template-watercolor-theme-collage-illustration": [
+      "collection"
+    ],
+    "template-country-souvenirs-watercolor": [
+      "collection"
+    ],
+    "template-vintage-travel-scrapbook-poster": [
+      "collection"
+    ],
+    "template-nostalgic-first-item-poster": [
+      "collection"
+    ],
+    "template-personal-fashion-outfit-style-variations": [
+      "collection",
+      "profile"
+    ],
+    "template-hairstyle-color-recommendation": [
+      "collection",
+      "comparison"
+    ],
+    "template-fashion-nail-art-design": [
+      "collection"
+    ],
+    "template-interior-design-mood-board-generator": [
+      "collection"
+    ],
+    "template-series-infographic": [
+      "collection"
+    ],
+    "template-series-travel": [
+      "collection"
+    ],
+    "template-book-series": [
+      "collection",
+      "profile"
+    ],
+    "template-regional-names-old-money-style": [
+      "collection",
+      "vocabulary"
+    ],
+    "template-lunar-new-year-red-envelope-set": [
+      "collection"
+    ],
+    "template-country-dos-and-donts-infographic": [
+      "collection",
+      "fact"
+    ],
+    "template-evolution": [
+      "timeline"
+    ],
+    "template-evolution-timeline-infographic": [
+      "timeline"
+    ],
+    "template-historical-evolution-timeline-infographic": [
+      "timeline"
+    ],
+    "template-clothing-evolution-poster": [
+      "timeline"
+    ],
+    "template-history-timeline-infographic": [
+      "timeline"
+    ],
+    "template-life-journey-curve-infographic": [
+      "timeline"
+    ],
+    "template-flowing-journey-infographic": [
+      "timeline"
+    ],
+    "template-pet-life-journey-infographic": [
+      "timeline"
+    ],
+    "template-cultural-travel-journey-infographic": [
+      "timeline"
+    ],
+    "template-3d-region-landmark-map": [
+      "map"
+    ],
+    "template-whimsical-travel-map": [
+      "map"
+    ],
+    "template-historical-event-map-illustration": [
+      "map"
+    ],
+    "template-national-theme-map-infographic": [
+      "map"
+    ],
+    "template-world-travel-map-illustration": [
+      "map"
+    ],
+    "template-watercolor-world-map-illustration": [
+      "map"
+    ],
+    "template-tourist-spot-watercolor-map-infographic": [
+      "map"
+    ],
+    "template-word-origins-map-infographic": [
+      "map",
+      "vocabulary"
+    ],
+    "template-recipe": [
+      "process"
+    ],
+    "template-premium-recipe-card-infographic": [
+      "process"
+    ],
+    "template-food-recipe-tip-infographic": [
+      "process"
+    ],
+    "template-anatomy-cut-guide": [
+      "process"
+    ],
+    "template-beauty-step-by-step-guide": [
+      "process"
+    ],
+    "template-cartoon-action-visual-guide-infographic": [
+      "process"
+    ],
+    "template-equipment-muscle-guide": [
+      "process",
+      "information-card"
+    ],
+    "template-fashion-shape-guide-infographic": [
+      "process",
+      "profile"
+    ],
+    "template-gardening-how-to-infographic": [
+      "process"
+    ],
+    "template-hairstyle-guide-infographic": [
+      "process"
+    ],
+    "template-home-lifestyle-guide-infographic": [
+      "process"
+    ],
+    "template-houseplant-care-guide-infographic": [
+      "process"
+    ],
+    "template-nutrition-food-guide-poster": [
+      "process"
+    ],
+    "template-organ-health-food-guide-infographic": [
+      "process"
+    ],
+    "template-pet-care-guide": [
+      "process"
+    ],
+    "template-professional-category-guide-infographic": [
+      "process",
+      "information-card"
+    ],
+    "template-soft-decoration-design-guide": [
+      "process"
+    ],
+    "template-sports-technique-guide": [
+      "process"
+    ],
+    "template-travel-packing-guide-infographic": [
+      "process"
+    ],
+    "template-watercolor-painting-tutorial-guide": [
+      "process"
+    ],
+    "template-warmup-routine": [
+      "process"
+    ],
+    "template-fat-loss-plan": [
+      "process"
+    ],
+    "template-training-muscle-equipment": [
+      "process"
+    ],
+    "template-pain-relief-infographic": [
+      "process"
+    ],
+    "template-vintage-ultimate-guide-infographic": [
+      "process"
+    ],
+    "template-portrait-retouching-blueprint": [
+      "process",
+      "profile"
+    ],
+    "template-science-education-infographic": [
+      "fact"
+    ],
+    "template-space-planet-fact-infographic": [
+      "fact"
+    ],
+    "template-species-science": [
+      "fact",
+      "information-card"
+    ],
+    "template-weather-education-infographic": [
+      "fact"
+    ],
+    "template-weird-cold-knowledge-popular-science-card": [
+      "fact"
+    ],
+    "template-weird-science-facts-infographic": [
+      "fact"
+    ],
+    "template-pet-safe-human-food-infographic": [
+      "fact",
+      "information-card"
+    ],
+    "template-slang-week-recap-infographic": [
+      "fact",
+      "vocabulary"
+    ],
+    "template-educational-topic-infographic": [
+      "fact"
+    ],
+    "template-weather": [
+      "fact"
+    ],
+    "template-solar-term": [
+      "fact",
+      "information-card"
+    ],
+    "template-what-if-history": [
+      "analysis"
+    ],
+    "template-national-culture-history-infographic": [
+      "analysis",
+      "information-card"
+    ],
+    "template-relationship-advice-infographic": [
+      "analysis"
+    ],
+    "template-self-help-book-visual-summary-infographic": [
+      "analysis"
+    ],
+    "template-self-help-infographic-poster": [
+      "analysis"
+    ],
+    "template-financial-habit-infographic-poster": [
+      "analysis"
+    ],
+    "template-lifestyle-habit-infographic": [
+      "analysis"
+    ],
+    "template-lifestyle-watercolor-infographic": [
+      "analysis"
+    ],
+    "template-hot-event-analysis": [
+      "analysis"
+    ],
+    "template-character-analysis": [
+      "analysis",
+      "profile"
+    ],
+    "template-figure-principles-infographic": [
+      "analysis",
+      "profile"
+    ],
+    "template-historical-figure-educational": [
+      "analysis",
+      "profile"
+    ],
+    "template-manga-artist-infographic-poster": [
+      "analysis",
+      "profile"
+    ],
+    "template-mbti-in-love-infographic": [
+      "analysis",
+      "quiz"
+    ],
+    "template-mbti-relationship-infographic": [
+      "analysis",
+      "quiz"
+    ],
+    "template-zhenhuan-mbti-character-analysis": [
+      "analysis",
+      "quiz"
+    ],
+    "template-ethnic-costume-deconstruction-board": [
+      "analysis",
+      "profile"
+    ],
+    "template-fashion-inspired-gown-design-sheet": [
+      "analysis",
+      "profile"
+    ],
+    "template-educational-career-field-infographic": [
+      "analysis",
+      "information-card"
+    ],
+    "template-self-care-illustration-poster": [
+      "analysis"
+    ],
+    "template-lifestyle-info-card": [
+      "information-card"
+    ],
+    "template-dessert-color-lab-infographic": [
+      "information-card",
+      "collection"
+    ],
+    "template-hotspot-card": [
+      "information-card"
+    ],
+    "template-cultural-relic-retro-infographic": [
+      "information-card"
+    ],
+    "template-dog-breed-retro-infographic": [
+      "information-card"
+    ],
+    "template-world-landmark-vintage-info-poster": [
+      "information-card"
+    ],
+    "template-intangible-heritage": [
+      "information-card"
+    ],
+    "template-herbal": [
+      "information-card"
+    ],
+    "template-species": [
+      "information-card",
+      "profile"
+    ],
+    "template-education": [
+      "information-card"
+    ],
+    "template-education-card": [
+      "information-card"
+    ],
+    "template-child-hobby-skill": [
+      "information-card"
+    ],
+    "template-vocabulary": [
+      "vocabulary"
+    ],
+    "template-cartoon-english-vocabulary-flashcards": [
+      "vocabulary"
+    ],
+    "template-children-english-vocab-spelling": [
+      "vocabulary"
+    ],
+    "template-chinese-character-learning-poster": [
+      "vocabulary"
+    ],
+    "template-chinese-idiom-learning-card": [
+      "vocabulary"
+    ],
+    "template-chinese-radical-learning": [
+      "vocabulary"
+    ],
+    "template-chinese-verb-opposite-infographic": [
+      "vocabulary",
+      "comparison"
+    ],
+    "template-cuisine-food-vocab-poster": [
+      "vocabulary"
+    ],
+    "template-daily-essentials-learning-card": [
+      "vocabulary"
+    ],
+    "template-detailed-vocab-flashcard": [
+      "vocabulary"
+    ],
+    "template-english-error-correction": [
+      "vocabulary",
+      "analysis"
+    ],
+    "template-english-homograph-educational-poster": [
+      "vocabulary",
+      "comparison"
+    ],
+    "template-english-phrasal-verb": [
+      "vocabulary"
+    ],
+    "template-english-vocabulary-upgrade": [
+      "vocabulary"
+    ],
+    "template-english-grammar-lesson": [
+      "vocabulary",
+      "analysis"
+    ],
+    "template-english-grammar-wordlist-infographic": [
+      "vocabulary"
+    ],
+    "template-ielts-3-to-9-vocabulary-poster": [
+      "vocabulary"
+    ],
+    "template-kids-opposite-concept-education": [
+      "vocabulary",
+      "comparison"
+    ],
+    "template-kids-theme-fill-in-worksheet": [
+      "vocabulary",
+      "quiz"
+    ],
+    "template-kids-vocabulary-poster": [
+      "vocabulary"
+    ],
+    "template-multilingual-vocabulary-poster-watercolor": [
+      "vocabulary"
+    ],
+    "template-room-vocabulary-infographic": [
+      "vocabulary"
+    ],
+    "template-stick-figure-vocab": [
+      "vocabulary"
+    ],
+    "template-verb-action-learning-cards": [
+      "vocabulary"
+    ],
+    "template-word-scene": [
+      "vocabulary"
+    ],
+    "template-bilingual-object-structure-labeling": [
+      "vocabulary"
+    ],
+    "template-CVC-english-word-coloring-flower-card": [
+      "vocabulary"
+    ],
+    "template-phonics-consonant-blend": [
+      "vocabulary"
+    ],
+    "template-english-dialogue-scene": [
+      "dialogue",
+      "vocabulary"
+    ],
+    "template-native-english-expressions": [
+      "dialogue",
+      "vocabulary"
+    ],
+    "template-quote-poster-generator": [
+      "quote"
+    ],
+    "template-poetry-ink-wash-illustration": [
+      "quote"
+    ],
+    "template-mbti-animal": [
+      "quiz"
+    ],
+    "template-mbti-breakingbad": [
+      "quiz",
+      "profile"
+    ],
+    "template-mbti-generic": [
+      "quiz"
+    ],
+    "template-mbti-ghibli": [
+      "quiz"
+    ],
+    "template-mbti-marvel": [
+      "quiz"
+    ],
+    "template-mbti-naruto": [
+      "quiz"
+    ],
+    "template-mbti-nba": [
+      "quiz"
+    ],
+    "template-mbti-siliconvalley": [
+      "quiz"
+    ],
+    "template-mbti-yellowstone": [
+      "quiz"
+    ],
+    "template-mbti-personality-compatibility-infographic": [
+      "quiz",
+      "comparison"
+    ],
+    "template-friends-character-mbti": [
+      "quiz",
+      "profile"
+    ],
+    "template-chinese-classic-character-mbti": [
+      "quiz",
+      "profile"
+    ],
+    "template-harry-potter-mbti-infographic": [
+      "quiz",
+      "profile"
+    ],
+    "template-city-mbti": [
+      "quiz",
+      "profile"
+    ],
+    "template-princess-pearl-mbti-character-card": [
+      "quiz",
+      "profile"
+    ],
+    "template-personality-choice-quiz-card": [
+      "quiz"
+    ],
+    "template-pop-culture-matching-chart": [
+      "quiz",
+      "collection"
+    ],
+    "template-character": [
+      "profile"
+    ],
+    "template-cartoon-character-profile-card-kawaii-style": [
+      "profile"
+    ],
+    "template-custom-character-card": [
+      "profile"
+    ],
+    "template-historical-figure-profile-infographic": [
+      "profile"
+    ],
+    "template-artist-biography-infographic": [
+      "profile",
+      "timeline"
+    ],
+    "template-celebrity-filmography-infographic": [
+      "profile",
+      "collection"
+    ],
+    "template-detective-conan": [
+      "profile"
+    ],
+    "template-architecture": [
+      "profile"
+    ],
+    "template-city-miniature": [
+      "profile"
+    ],
+    "template-food": [
+      "profile"
+    ],
+    "template-fruit": [
+      "profile"
+    ],
+    "template-travel": [
+      "profile"
+    ],
+    "template-movie-poster": [
+      "profile"
+    ],
+    "template-media-theme-wallpaper-poster": [
+      "profile"
+    ],
+    "template-theme-overview-poster": [
+      "profile"
+    ],
+    "template-book-minimalist": [
+      "profile"
+    ],
+    "template-constellation-steampunk": [
+      "profile"
+    ],
+    "template-guofeng-scroll": [
+      "profile",
+      "story"
+    ],
+    "template-food-product-packaging-design": [
+      "profile"
+    ],
+    "template-product-poster": [
+      "profile"
+    ],
+    "template-product-theme-promotional-poster": [
+      "profile"
+    ],
+    "template-industrial-design-concept-sketch": [
+      "profile"
+    ],
+    "template-fashion-ecommerce": [
+      "profile"
+    ],
+    "template-ai-outfit-try-on-poster": [
+      "profile"
+    ],
+    "template-costume": [
+      "profile",
+      "collection"
+    ],
+    "template-cultural-festival-poster": [
+      "profile"
+    ],
+    "template-watercolor-travel-journal-collage": [
+      "story",
+      "collection"
+    ],
+    "template-personal-journey-wolf-path-illustration": [
+      "story",
+      "timeline"
+    ]
   }
 }
