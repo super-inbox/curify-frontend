@@ -4530,71 +4530,69 @@
       }
     }
   },
-  "nano": {
-    "template-world-cup-team-sticker-poster": {
-      "category": "World Cup Team Sticker Poster",
-      "description": "Generate a vibrant, sticker-collage poster celebrating a national football team — players, jerseys, badges, and World Cup glory moments arranged as a fan-art-style spread.",
-      "title": "Nano Banana Prompt: World Cup Team Sticker Poster Generator | Curify AI",
-      "content": {
-        "sections": {
-          "what": "This template generates a vertical 4K sticker-style poster celebrating a national football team. Star players, kit jerseys, team badges, trophy moments, and iconic match-day imagery are arranged as overlapping fan-art stickers across a bold backdrop in the team's colors. The composition feels like a passionate supporter's locker — collectible, energetic, and World-Cup-themed.",
-          "who": "Suitable for World Cup content creators, sports merchandise designers, football fan communities, Pinterest creators, sports bloggers, and brands producing tournament-themed visuals.",
-          "how": [
-            "Enter a national football team in {topic} (e.g., Brazil National Team, Argentina National Team).",
-            "Star players, jerseys, badges, and trophy moments auto-populate as overlapping stickers.",
-            "Background takes the team's primary colors with subtle World Cup motifs.",
-            "Generate a vertical 4K fan-art sticker-collage poster."
-          ],
-          "prompts": [
-            "Generate a 'Brazil National Team' World Cup sticker poster with five-time-champion legacy.",
-            "Create an 'Argentina National Team' sticker poster celebrating the 2022 World Cup win.",
-            "Generate a 'France National Team' World Cup sticker poster with Mbappé and Griezmann."
-          ]
-        }
+  "template-world-cup-team-sticker-poster": {
+    "category": "World Cup Team Sticker Poster",
+    "description": "Generate a vibrant, sticker-collage poster celebrating a national football team — players, jerseys, badges, and World Cup glory moments arranged as a fan-art-style spread.",
+    "title": "Nano Banana Prompt: World Cup Team Sticker Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K sticker-style poster celebrating a national football team. Star players, kit jerseys, team badges, trophy moments, and iconic match-day imagery are arranged as overlapping fan-art stickers across a bold backdrop in the team's colors. The composition feels like a passionate supporter's locker — collectible, energetic, and World-Cup-themed.",
+        "who": "Suitable for World Cup content creators, sports merchandise designers, football fan communities, Pinterest creators, sports bloggers, and brands producing tournament-themed visuals.",
+        "how": [
+          "Enter a national football team in {topic} (e.g., Brazil National Team, Argentina National Team).",
+          "Star players, jerseys, badges, and trophy moments auto-populate as overlapping stickers.",
+          "Background takes the team's primary colors with subtle World Cup motifs.",
+          "Generate a vertical 4K fan-art sticker-collage poster."
+        ],
+        "prompts": [
+          "Generate a 'Brazil National Team' World Cup sticker poster with five-time-champion legacy.",
+          "Create an 'Argentina National Team' sticker poster celebrating the 2022 World Cup win.",
+          "Generate a 'France National Team' World Cup sticker poster with Mbappé and Griezmann."
+        ]
       }
-    },
-    "template-yellow-themed-illustrated-journey-infographic": {
-      "category": "Yellow Journey Infographic",
-      "description": "Create a warm, yellow-themed illustrated infographic mapping any journey or process step-by-step — perfect for self-help, productivity, learning, and lifestyle guides.",
-      "title": "Nano Banana Prompt: Yellow-Themed Illustrated Journey Infographic Generator | Curify AI",
-      "content": {
-        "sections": {
-          "what": "This template generates a vertical 4K illustrated infographic mapping any journey or process across a yellow-toned canvas. A winding path or staged layout connects 5-8 illustrated milestone scenes, each with a short label and a soft hand-drawn vignette. The mustard/honey/cream palette gives the piece a warm, optimistic, self-help feel that reads well on both web and print.",
-          "who": "Suitable for self-help authors, productivity bloggers, lifestyle creators, course designers, educators teaching process-driven content, and brands producing aspirational visuals.",
-          "how": [
-            "Enter a journey or process topic in {topic} (e.g., Healthy Lifestyle Journey, Time Management Mastery).",
-            "5-8 illustrated milestones auto-populate along a winding path or staged composition.",
-            "Yellow / mustard / honey / cream palette unifies the scene; soft hand-drawn vignettes accent each step.",
-            "Generate a vertical 4K warm-yellow illustrated journey infographic."
-          ],
-          "prompts": [
-            "Generate a 'Healthy Lifestyle Journey' yellow-themed illustrated infographic.",
-            "Create a 'Time Management Mastery' yellow journey infographic with 6 milestone steps.",
-            "Generate a 'Sustainable Living Guide' yellow-toned illustrated path infographic."
-          ]
-        }
+    }
+  },
+  "template-yellow-themed-illustrated-journey-infographic": {
+    "category": "Yellow Journey Infographic",
+    "description": "Create a warm, yellow-themed illustrated infographic mapping any journey or process step-by-step — perfect for self-help, productivity, learning, and lifestyle guides.",
+    "title": "Nano Banana Prompt: Yellow-Themed Illustrated Journey Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K illustrated infographic mapping any journey or process across a yellow-toned canvas. A winding path or staged layout connects 5-8 illustrated milestone scenes, each with a short label and a soft hand-drawn vignette. The mustard/honey/cream palette gives the piece a warm, optimistic, self-help feel that reads well on both web and print.",
+        "who": "Suitable for self-help authors, productivity bloggers, lifestyle creators, course designers, educators teaching process-driven content, and brands producing aspirational visuals.",
+        "how": [
+          "Enter a journey or process topic in {topic} (e.g., Healthy Lifestyle Journey, Time Management Mastery).",
+          "5-8 illustrated milestones auto-populate along a winding path or staged composition.",
+          "Yellow / mustard / honey / cream palette unifies the scene; soft hand-drawn vignettes accent each step.",
+          "Generate a vertical 4K warm-yellow illustrated journey infographic."
+        ],
+        "prompts": [
+          "Generate a 'Healthy Lifestyle Journey' yellow-themed illustrated infographic.",
+          "Create a 'Time Management Mastery' yellow journey infographic with 6 milestone steps.",
+          "Generate a 'Sustainable Living Guide' yellow-toned illustrated path infographic."
+        ]
       }
-    },
-    "template-sports-trophy-infographic": {
-      "category": "Sports Trophy Infographic",
-      "description": "Generate a clean infographic spotlighting a sports trophy — its design, history, weight, materials, past winners, and iconic moments — in a museum-card style.",
-      "title": "Nano Banana Prompt: Sports Trophy Infographic Generator | Curify AI",
-      "content": {
-        "sections": {
-          "what": "This template generates a vertical 4K infographic profiling a sports trophy. The hero is a hyperrealistic render of the trophy itself, accompanied by labeled callouts for materials, dimensions, weight, and design provenance; a sidebar lists past winners and championship years; a band along the bottom highlights iconic moments and quotes from winning teams or athletes. Style reads like a sports museum exhibit card.",
-          "who": "Suitable for sports content creators, trophy and memorabilia collectors, sports museums, sports merch brands, Pinterest creators, and sports-history writers.",
-          "how": [
-            "Enter a trophy name in {topic} (e.g., FIFA World Cup Trophy, Olympic Gold Medal, UEFA Champions League Trophy).",
-            "A hyperrealistic trophy render takes center; callouts label materials, weight, designer.",
-            "Sidebar auto-populates past winners and championship years.",
-            "Generate a vertical 4K sports trophy museum-card infographic."
-          ],
-          "prompts": [
-            "Generate a 'FIFA World Cup Trophy' infographic with materials, weight, and past winners.",
-            "Create a 'UEFA Champions League Trophy' museum-style infographic with iconic finals moments.",
-            "Generate an 'Olympic Gold Medal' infographic spanning Summer and Winter Games history."
-          ]
-        }
+    }
+  },
+  "template-sports-trophy-infographic": {
+    "category": "Sports Trophy Infographic",
+    "description": "Generate a clean infographic spotlighting a sports trophy — its design, history, weight, materials, past winners, and iconic moments — in a museum-card style.",
+    "title": "Nano Banana Prompt: Sports Trophy Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K infographic profiling a sports trophy. The hero is a hyperrealistic render of the trophy itself, accompanied by labeled callouts for materials, dimensions, weight, and design provenance; a sidebar lists past winners and championship years; a band along the bottom highlights iconic moments and quotes from winning teams or athletes. Style reads like a sports museum exhibit card.",
+        "who": "Suitable for sports content creators, trophy and memorabilia collectors, sports museums, sports merch brands, Pinterest creators, and sports-history writers.",
+        "how": [
+          "Enter a trophy name in {topic} (e.g., FIFA World Cup Trophy, Olympic Gold Medal, UEFA Champions League Trophy).",
+          "A hyperrealistic trophy render takes center; callouts label materials, weight, designer.",
+          "Sidebar auto-populates past winners and championship years.",
+          "Generate a vertical 4K sports trophy museum-card infographic."
+        ],
+        "prompts": [
+          "Generate a 'FIFA World Cup Trophy' infographic with materials, weight, and past winners.",
+          "Create a 'UEFA Champions League Trophy' museum-style infographic with iconic finals moments.",
+          "Generate an 'Olympic Gold Medal' infographic spanning Summer and Winter Games history."
+        ]
       }
     }
   }

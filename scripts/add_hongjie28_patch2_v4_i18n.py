@@ -162,6 +162,12 @@ def main():
             if tid not in content:
                 raise SystemExit(f"FAIL: locale {locale} missing entry for {tid}")
 
+    # IMPORTANT: nano.json structure is FLAT at the top level — template ids
+    # are direct keys (NOT nested under a 'nano' wrapper). The first run of
+    # this script wrote to doc['nano'][tid] which caused UI fallback to
+    # `nano.template-X.category` raw key. Fixed to use top-level assignment
+    # (mirrors scripts/add_4_new_templates_i18n.py and all prior daily-drop
+    # i18n scripts). Memory: feedback_daily_drop_i18n.md updated.
     total_added = 0
     for locale in LOCALES:
         nano_path = MESSAGES / locale / "nano.json"
@@ -169,13 +175,12 @@ def main():
             print(f"  SKIP (missing): {nano_path}")
             continue
         doc = json.loads(nano_path.read_text(encoding="utf-8"))
-        nano = doc.setdefault("nano", {})
         added_here = 0
         for tid in template_ids:
-            if tid in nano:
+            if tid in doc:
                 print(f"  ({locale}) already has {tid}, skipping")
                 continue
-            nano[tid] = by_locale[locale][tid]
+            doc[tid] = by_locale[locale][tid]
             added_here += 1
             total_added += 1
         if added_here:
