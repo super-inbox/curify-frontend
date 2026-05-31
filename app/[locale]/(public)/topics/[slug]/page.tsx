@@ -20,7 +20,7 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic } from "@/lib/topicRegistry";
 
 // Topic data is bundled (nano_templates.json + nano_inspiration.json +
 // blogs.json) plus a single fetch for related prompts. Bundled data
@@ -114,6 +114,15 @@ export default async function Page({ params }: Props) {
 
   // Union of both sources
   const allFilteredIds = new Set([...templateTaggedIds, ...inspirationTaggedIds]);
+
+  // 404 if the slug lacks EN i18n in messages/en/topics.json. Many
+  // taxonomy entries (mood / aesthetic / lighting / temporal / product
+  // tier-3 cohorts from Rounds 2B/2D) are vocabulary-only — they exist
+  // in the taxonomy but don't yet have authored topic-page content.
+  // The registry already excludes these from getTopicById, but explicit
+  // 404 here keeps the route surface clean and prevents accidental
+  // renders when content gets attached via auto-tag.
+  if (!isLocalizedTopic(slug)) notFound();
 
   // 404 only for completely unknown slugs. If the slug is a declared topic
   // in the registry (Tier 1, Tier 2, or Tier 3 tag) but currently has no

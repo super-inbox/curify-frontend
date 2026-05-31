@@ -1,6 +1,21 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 import taxonomy from "./taxonomy.json";
+import topicsI18n from "@/messages/en/topics.json";
+
+// i18n-gating: a topic is only navigable (clickable chip + reachable
+// /topics/<slug> page) if it has an EN i18n entry in
+// messages/en/topics.json. The taxonomy holds many tier-3/tier-4
+// vocabulary entries that don't yet have authored topic-page content
+// (mood/aesthetic/lighting/temporal/product cohorts from Rounds 2B/2D);
+// they stay in the taxonomy as vocabulary but the registry treats them
+// as undeclared until i18n lands. Documented in docs/search-and-content.md.
+const LOCALIZED_TOPIC_IDS: Set<string> = new Set(
+  Object.keys((topicsI18n as { topics: Record<string, unknown> }).topics)
+);
+export function isLocalizedTopic(id: string): boolean {
+  return LOCALIZED_TOPIC_IDS.has(id);
+}
 
 export type Topic = {
   id: string;
@@ -189,24 +204,32 @@ function buildTopicRegistry(): TopicRegistry {
   }
 
   // Collect every explicitly-declared topic id (Tier 1 keys, Tier 2
-  // navigational children, and Tier 3 tag children). Topics declared in
-  // these constants must surface in the registry — and be navigable —
-  // even before any template / inspiration has been tagged with them, so
-  // newly-added tags (e.g. food-and-drink, evolution) appear as
-  // discoverable chips on parent pages while content gets curated.
+  // navigational children, and Tier 3 tag children). Filtered by i18n
+  // presence — taxonomy entries without messages/en/topics.json content
+  // stay as vocabulary but are NOT navigable until i18n is authored
+  // (avoids /topics/<slug> pages that render with key-fallback strings).
+  // Affects Round 2B/2D unlocalized cohorts (mood / aesthetic / lighting
+  // / temporal / product tier-3) — 99 entries as of 2026-05-31.
   const declaredTopicIds = new Set<string>();
   for (const [tier1, children] of Object.entries(EXPLICIT_CHILD_TOPICS)) {
-    declaredTopicIds.add(tier1);
-    for (const child of children) declaredTopicIds.add(child);
+    if (LOCALIZED_TOPIC_IDS.has(tier1)) declaredTopicIds.add(tier1);
+    for (const child of children) {
+      if (LOCALIZED_TOPIC_IDS.has(child)) declaredTopicIds.add(child);
+    }
   }
   for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
-    declaredTopicIds.add(tier1);
-    for (const tag of tags) declaredTopicIds.add(tag);
+    if (LOCALIZED_TOPIC_IDS.has(tier1)) declaredTopicIds.add(tier1);
+    for (const tag of tags) {
+      if (LOCALIZED_TOPIC_IDS.has(tag)) declaredTopicIds.add(tag);
+    }
   }
 
-  // Build enriched topic list — union of data-derived + declared topics.
+  // Build enriched topic list — union of data-derived + declared topics,
+  // also gated by i18n presence so the few inspirations auto-tagged with
+  // unlocalized terms (e.g. 'illustration' has 7 ins via gallery auto-tag)
+  // don't materialize a broken topic page.
   const allTopicIds = new Set<string>([
-    ...topicToTemplateIds.keys(),
+    ...[...topicToTemplateIds.keys()].filter((id) => LOCALIZED_TOPIC_IDS.has(id)),
     ...declaredTopicIds,
   ]);
   const enrichedTopics: TopicWithTemplates[] = Array.from(allTopicIds).map(
