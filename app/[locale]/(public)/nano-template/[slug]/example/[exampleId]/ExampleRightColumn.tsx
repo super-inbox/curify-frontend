@@ -16,6 +16,12 @@ import { normalizePrefills } from "@/lib/nano_prompt_utils";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
+import { useSeriesGenerate } from "@/services/useSeriesGenerate";
+import {
+  seriesGenerateService,
+  type SeriesCardResult,
+} from "@/services/seriesGenerate";
+import type { SeriesSpec } from "@/lib/series/types";
 import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
 
@@ -33,6 +39,7 @@ type Props = {
   exampleId: string;
   basePrompt: string;
   batchEnabled: boolean;
+  isSeries?: boolean;
   examplePageUrl: string;
   existingExamples?: ExistingExampleRef[];
   /** Persona chips to surface below the action bar. Derived from the
@@ -61,6 +68,7 @@ export default function ExampleRightColumn({
   exampleId,
   basePrompt,
   batchEnabled,
+  isSeries = false,
   examplePageUrl,
   existingExamples = [],
   useCaseFilter,
@@ -72,6 +80,11 @@ export default function ExampleRightColumn({
   const [form, setForm] = useState<Record<string, string>>(initialParams);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [generatedExampleId, setGeneratedExampleId] = useState<string | null>(null);
+  const [generatedSeries, setGeneratedSeries] = useState<{
+    seriesId: string;
+    cards: SeriesCardResult[];
+    plan: SeriesSpec | null;
+  } | null>(null);
   const [copied, setCopied] = useState(false);
   const [showFullPrompt, setShowFullPrompt] = useState(false);
 
@@ -86,17 +99,33 @@ export default function ExampleRightColumn({
     viewMode: "cards" as const,
   };
 
+  // Both hooks are called unconditionally to respect the rules of hooks.
+  // `isSeries` is a stable prop for a given page, so the active branch
+  // doesn't flip mid-session.
+  const direct = useDirectGenerate({
+    templateId,
+    params: form,
+    existingExamples,
+    tracking,
+    onSuccess: (signedUrl, exId) => {
+      setGeneratedImageUrl(signedUrl);
+      setGeneratedExampleId(exId);
+    },
+  });
+
+  const series = useSeriesGenerate({
+    templateId,
+    params: form,
+    locale,
+    existingExamples,
+    tracking,
+    onSuccess: (seriesId, cards, plan) => {
+      setGeneratedSeries({ seriesId, cards, plan: plan ?? null });
+    },
+  });
+
   const { generate, dismissAndGenerate, isGenerating, duplicateWarning, clearWarning } =
-    useDirectGenerate({
-      templateId,
-      params: form,
-      existingExamples,
-      tracking,
-      onSuccess: (signedUrl, exId) => {
-        setGeneratedImageUrl(signedUrl);
-        setGeneratedExampleId(exId);
-      },
-    });
+    isSeries ? series : direct;
 
   const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
 
@@ -106,6 +135,50 @@ export default function ExampleRightColumn({
   const onFormChange = (name: string, value: string) => {
     clearWarning();
     setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const retryCard = async (cardId: string) => {
+    const current = generatedSeries;
+    if (!current) return;
+    const specCard = current.plan?.cards.find((c) => c.card_id === cardId);
+    if (!specCard) return;
+
+    setGeneratedSeries((prev) =>
+      prev
+        ? {
+            ...prev,
+            cards: prev.cards.map((c) =>
+              c.card_id === cardId
+                ? { ...c, status: "generating", error: undefined }
+                : c,
+            ),
+          }
+        : prev,
+    );
+
+    const res = await seriesGenerateService.renderCard({
+      image_prompt: specCard.image_prompt,
+    });
+
+    setGeneratedSeries((prev) =>
+      prev
+        ? {
+            ...prev,
+            cards: prev.cards.map((c) =>
+              c.card_id === cardId
+                ? res.success && res.image_url
+                  ? {
+                      ...c,
+                      status: "done",
+                      image_url: res.image_url,
+                      error: undefined,
+                    }
+                  : { ...c, status: "failed", error: res.message }
+                : c,
+            ),
+          }
+        : prev,
+    );
   };
 
   const handleCopyGenerate = async () => {
@@ -300,10 +373,10 @@ export default function ExampleRightColumn({
               className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60 cursor-pointer"
             >
               <Wand2 className="h-4 w-4" />
-              {isGenerating ? t("generating") : t("generate")}
+              {isGenerating ? t("generating") : isSeries ? "Generate series" : t("generate")}
               {clientMounted && !user && <span className="ml-1 text-xs opacity-80">🔒</span>}
             </button>
-            {clientMounted && user && (
+            {clientMounted && user && !isSeries && (
               <span className="text-xs text-neutral-500">{CREDITS_COST} credits</span>
             )}
           </>
@@ -350,8 +423,8 @@ export default function ExampleRightColumn({
         </div>
       )}
 
-      {/* Generated image result */}
-      {generatedImageUrl && (
+      {/* Single-image generated result (non-series templates) */}
+      {!isSeries && generatedImageUrl && (
         <div className="flex flex-col gap-2">
           <CdnImage
             src={generatedImageUrl}
@@ -364,6 +437,81 @@ export default function ExampleRightColumn({
             download={{ enabled: true, url: generatedImageUrl }}
             share={{ enabled: true, url: examplePageUrl, title, text: `Check out this Nano Banana example: ${title}` }}
           />
+        </div>
+      )}
+
+      {/* Series generated result — grid of cards with images, or
+          status placeholders when a card failed to render. */}
+      {isSeries && generatedSeries && (
+        <div className="flex flex-col gap-2">
+          <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+            Series · {generatedSeries.cards.length} cards
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {generatedSeries.cards.map((card) => {
+              const specCard = generatedSeries.plan?.cards.find(
+                (c) => c.card_id === card.card_id,
+              );
+              const canRetry = !!specCard && card.status !== "generating";
+              const showImage =
+                !!card.image_url && card.status !== "generating";
+              return (
+                <div
+                  key={card.card_id}
+                  className="overflow-hidden rounded-xl border border-neutral-200 bg-white"
+                >
+                  {showImage ? (
+                    // Data URLs (gpt-image-1 base64) — plain img tag bypasses
+                    // CdnImage's CDN-only handling.
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={card.image_url}
+                      alt={card.title}
+                      className="aspect-[3/4] w-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex aspect-[3/4] w-full flex-col items-center justify-center gap-1.5 bg-neutral-100 p-3 text-center">
+                      <div className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
+                        {card.status}
+                      </div>
+                      {card.error && (
+                        <div className="line-clamp-4 text-[10px] leading-tight text-neutral-400">
+                          {card.error}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  <div className="flex rounded-full items-center justify-between gap-2 px-2 py-1.5">
+                    <span className="truncate text-xs font-medium text-neutral-700">
+                      {card.title}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => retryCard(card.card_id)}
+                      disabled={!canRetry}
+                      title="Regenerate this card"
+                      className="shrink-0 cursor-pointer rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-base font-bold leading-none text-neutral-600 hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-40"
+                    >
+                      ↻
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="text-[10px] text-neutral-400">
+            series_id: {generatedSeries.seriesId}
+          </div>
+          {generatedSeries.plan && (
+            <details className="mt-1 rounded-xl border border-neutral-200 bg-neutral-50">
+              <summary className="cursor-pointer select-none px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500 hover:text-neutral-700">
+                Planner JSON
+              </summary>
+              <pre className="max-h-[480px] overflow-auto px-3 pb-3 text-[11px] leading-snug text-neutral-700">
+                {JSON.stringify(generatedSeries.plan, null, 2)}
+              </pre>
+            </details>
+          )}
         </div>
       )}
     </div>

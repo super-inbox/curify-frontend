@@ -754,6 +754,7 @@
   },
   {
     "id": "template-book-series",
+    "is_series": true,
     "locales": {
       "zh": {
         "base_prompt": "（Book Visual Designer）你是专注小红书书籍解读图文的视觉设计师，擅长适配不同书籍调性生成风格统一的竖版图文。根据用户指定的【{book_name}】，按以下要求生成6张独立3:4竖版图文（全系列风格统一，贴合书籍调性，文字为短句/短语，适配nano banana生成逻辑）：\n1. 通用规则：《{book_name}》加粗放大置于每图顶端，作为视觉核心；全系列色调、字体、插画/图解风格一致，适配小红书传播节奏，文字简洁易收藏转发。\n2. 分图要求：\n【图文1：{book_name}_封面书名】：置顶《{book_name}》+1句极简核心标语（贴合书籍主旨）；配图为书籍核心场景/主题插画，简约大气。\n【图文2：{book_name}_模块1_核心主题】：4个核心关键词+每词1句极简释义（贴合书籍核心主线）；配图为贴合核心主旨的抽象/具象图。\n【图文3：{book_name}_模块2_经典语录】：3句书中金句+每句1句极简短解读；配图为金句排版图（字体适配调性，背景简约）。\n【图文4：{book_name}_模块3_核心观点】：6个核心观点（每点1-2句）；配图为观点可视化图解（短句卡片/极简思维导图）。\n【图文5：{book_name}_模块4_人物关系/核心维度】：有人物书籍：3-5位核心人物+“驭/衡/争/伴”等动词标注关系；无人物书籍：核心维度·关联逻辑梳理；配图为人物关系图/维度关联图解（简洁清晰）。\n【图文6：{book_name}_模块5_脉络梳理】：5个关键节点（文学/历史类按时间线，社科/经管类按逻辑线）；配图为竖版线性脉络图（标注明确，呈现起承转合）。\n直接生成6张独立图文，风格贴合《{book_name}》调性，可灵活适配文学/社科/经管/历史/哲学等类型书籍，模块按需微调。",
@@ -2379,6 +2380,7 @@
   },
   {
     "id": "template-series-infographic",
+    "is_series": true,
     "locales": {
       "en": {
         "base_prompt": "(Modular Infographic Designer) You are a top-tier modular infographic designer specializing in creating cohesive multi-card visual series. The user has specified [{series_topic}] in [{art_style}].\n\nFirst, reason about {series_topic} and determine: a logical set of section titles that together form a coherent narrative series — such as Cover, Overview, Key Concepts, Comparison, Case Study, Future Outlook, etc. — adapted to the nature of the topic (business, science, culture, education, etc.).\n\nThen generate a complete set of vertical 3:4 high-quality infographic cards. Each card focuses on one core section while maintaining consistent visual language. Single card structure: 1. Top title bar: prominent section title with soft themed background and rounded corners. 2. Central visual: core illustration/diagram representing the concept (comparison, timeline, flowchart, character, or scene) in {art_style}. 3. Content modules: layout with sections containing \"icon + label + short description\". 4. Bottom summary: highlighted box with key takeaway. Style: clean rounded UI, soft colors, clear typography, no extra decoration, Curify watermark top-left, vertical 3:4, 4K ultra HD. Series topic: [{series_topic}].",
@@ -2712,6 +2714,7 @@
   },
   {
     "id": "template-series-travel",
+    "is_series": true,
     "locales": {
       "en": {
         "base_prompt": "（Travel Infographic Designer）You are a professional travel infographic designer, specializing in creating cute cartoon-style travel map posters. The user has specified [{destination_name}] and [{trip_duration}] days.\n\nFirst, reason about {destination_name} and determine: 5 must-try local foods with brief descriptions, 4-5 key attractions/landmarks, 4 common transport types, and a day-by-day itinerary for {trip_duration} days with Morning/Afternoon/Evening activities, local costs, and suggested routes.\n\nThen generate a complete set of vertical 3:4 premium travel map cards, matching the kawaii, warm, and detailed aesthetic of the reference images. Set Structure: 1. Overview Card: Title \"{destination_name} Travel Guide\", divided into FOOD (5 local dishes with cartoon icons), ATTRACTIONS (4-5 landmarks on a map), TRANSPORT (4 transport types with icons), decorated with {destination_name}-themed elements. 2. Daily Itinerary Cards (one per day for {trip_duration} days): Title \"DAY [n] - [date]\", split into Morning/Afternoon/Evening blocks, each with activity icon, description, cost label, and simplified route map background. Overall Style: Clean rounded-corner UI, soft pastel color palette, kawaii cartoon illustrations, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {destination_name} {trip_duration}-day travel guide.",

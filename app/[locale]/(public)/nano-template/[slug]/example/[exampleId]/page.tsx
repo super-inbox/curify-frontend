@@ -55,6 +55,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
   const templateTopics = templateView?.topics ?? [];
   const templateUseCases = templateView?.use_cases ?? [];
   const templateBatch = templateView?.batch ?? false;
+  const templateIsSeries = templateView?.is_series ?? false;
   const templateParameters = templateView?.parameters ?? [];
   const templateAllowGeneration = templateView?.allow_generation ?? false;
 
@@ -136,6 +137,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     templateTopics,
     templateUseCases,
     templateBatch,
+    templateIsSeries,
     templateParameters,
     templateAllowGeneration,
     basePrompt,
@@ -253,6 +255,7 @@ export default async function NanoExampleDetailPage({
     templateTopics,
     templateUseCases,
     templateBatch,
+    templateIsSeries,
     templateParameters,
     templateAllowGeneration,
     basePrompt,
@@ -341,6 +344,7 @@ export default async function NanoExampleDetailPage({
             exampleId={example.id}
             basePrompt={basePrompt}
             batchEnabled={templateBatch}
+            isSeries={templateIsSeries}
             examplePageUrl={examplePageUrl}
             existingExamples={existingExamples}
             useCaseFilter={templateUseCases}
