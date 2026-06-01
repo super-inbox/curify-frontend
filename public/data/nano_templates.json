@@ -9595,4 +9595,56 @@
     "allow_generation": true,
     "creation_date": "2026-06-02"
   }
+,
+  {
+    "id": "template-yellow-themed-illustrated-timeline-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Illustrated Timeline Infographic Creator) Create a warm, educational timeline infographic poster titled '{topic}'. Layout: A winding path timeline on a vibrant yellow background, with key historical moments marked by circular illustrations, dates, and short descriptions. Include decorative doodles and hand-drawn elements. Style: Vintage hand-drawn illustration aesthetic, bold typography, clear section dividers, direct high-quality image generation. Subject: '{topic} illustrated timeline infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Timeline Topic",
+                    "type": "text",
+                    "placeholder": ["Space Exploration History", "Communication Technology Evolution", "Music History Timeline", "Architecture Through the Ages", "Fashion History Journey", "Art Movements Timeline"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-yellow-themed-illustrated-timeline-infographic-architecture-history-prev.jpg"
+},
+  {
+    "id": "template-fashion-style-outfit-breakdown-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Fashion Style Outfit Breakdown Infographic Creator) Create a stylish outfit breakdown infographic poster titled '{topic} Fashion'. Layout: Split-screen design with a full-body photo of the outfit on the left, and a numbered list of individual clothing items/accessories on the right. Include a vibe description and color palette at the bottom, plus decorative doodles and a matching color theme. Style: Themed, cohesive aesthetic, bold typography, direct high-quality image generation. Subject: '{topic} fashion outfit breakdown infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Fashion Style Topic",
+                    "type": "text",
+                    "placeholder": ["Cottagecore", "Dark Academia", "Minimalist", "Sporty Luxe", "Streetwear", "Y2K", "Academia", "Bohemian"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-streetwear-prev.jpg"
+},
+  {
+    "id": "template-annual-event-calendar-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Annual Event Calendar Infographic Creator) Create a colorful, playful event calendar poster titled '{topic}'. Layout: Monthly sections arranged in a grid, each with a distinct pastel color block, listing events with dates, times, and matching themed icons. Include a logo or header, and decorative doodles for each month's theme. Style: Bright, whimsical, bold typography with high contrast, direct high-quality image generation. Subject: '{topic} annual event calendar infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Calendar Title",
+                    "type": "text",
+                    "placeholder": ["2025 RV Resort Events", "Community Center Annual Events", "School Year Calendar", "Local Festival Schedule", "Family Activity Planner", "Corporate Team Building Calendar"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-annual-event-calendar-infographic-rv-resort-prev.jpg"
+}
 ]
