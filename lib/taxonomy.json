@@ -35,7 +35,10 @@
       "english-spanish",
       "english-korean",
       "english-japanese",
-      "english-french"
+      "english-french",
+      "beginner",
+      "intermediate",
+      "advanced"
     ],
     "travel": [
       "food",
@@ -121,7 +124,16 @@
       "mbti-istp",
       "mbti-isfp",
       "mbti-estp",
-      "mbti-esfp"
+      "mbti-esfp",
+      "naruto",
+      "harry-potter",
+      "friends",
+      "marvel",
+      "breaking-bad",
+      "yellowstone",
+      "ghibli",
+      "silicon-valley",
+      "nba"
     ],
     "travel": [
       "spain",
@@ -428,7 +440,12 @@
       "Hands and Fingers",
       "Going to the Doctor",
       "Healthy Habits",
-      "Body Movements"
+      "Body Movements",
+      "Heart",
+      "Lungs",
+      "Kidneys",
+      "Brain",
+      "Liver"
     ],
     "emotions": [
       "Basic Emotions",
@@ -530,6 +547,25 @@
       "Storage and Organization Solutions",
       "Interior Color Palettes",
       "Minimalist Living Spaces"
+    ],
+    "cuisine": [
+      "Chinese Cuisine",
+      "Italian Cuisine",
+      "Japanese Cuisine",
+      "Mexican Cuisine",
+      "Spanish Cuisine",
+      "Korean Cuisine",
+      "Indian Cuisine",
+      "French Cuisine",
+      "Thai Cuisine",
+      "Vietnamese Cuisine"
+    ],
+    "species": [
+      "Dog",
+      "Cat",
+      "Horse",
+      "Bird",
+      "Fish"
     ]
   },
   "_gallery_tag_to_topics_note": "Gallery-prompt tag → tier-2/tier-3 topic(s) it maps to. Used by (1) lib/topicRegistry.ts getTopicsForTag — tag-page surfaces templates from these topics; (2) lib/relatedTags.ts getRelatedTags — tags sharing a topic are siblings. Replaces the previous flat-list categorized_tags.json categories with topic-aligned destinations.",
@@ -3598,6 +3634,7 @@
       "travel"
     ],
     "template-bilingual-object-structure-labeling": [
+      "beginner",
       "language",
       "photorealistic",
       "vocabulary"
@@ -3633,6 +3670,7 @@
       "portrait"
     ],
     "template-cartoon-english-vocabulary-flashcards": [
+      "beginner",
       "kawaii",
       "language",
       "vocabulary"
@@ -3670,11 +3708,13 @@
       "learning"
     ],
     "template-children-english-vocab-spelling": [
+      "beginner",
       "kawaii",
       "language",
       "vocabulary"
     ],
     "template-chinese-character-learning-poster": [
+      "intermediate",
       "language",
       "posters",
       "vocabulary"
@@ -3687,15 +3727,18 @@
       "quiz"
     ],
     "template-chinese-idiom-learning-card": [
+      "intermediate",
       "language",
       "vocabulary"
     ],
     "template-chinese-radical-learning": [
+      "intermediate",
       "language",
       "vocabulary"
     ],
     "template-chinese-verb-opposite-infographic": [
       "comparison",
+      "intermediate",
       "language",
       "vocabulary"
     ],
@@ -3754,6 +3797,7 @@
       "watercolor"
     ],
     "template-cuisine-food-vocab-poster": [
+      "beginner",
       "food",
       "language",
       "photorealistic",
@@ -3783,11 +3827,13 @@
       "portrait"
     ],
     "template-CVC-english-word-coloring-flower-card": [
+      "beginner",
       "language-english",
       "learning",
       "vocabulary"
     ],
     "template-daily-essentials-learning-card": [
+      "beginner",
       "kawaii",
       "language",
       "vocabulary"
@@ -3802,6 +3848,7 @@
       "posters"
     ],
     "template-detailed-vocab-flashcard": [
+      "intermediate",
       "language",
       "vocabulary"
     ],
@@ -3854,30 +3901,35 @@
       "science"
     ],
     "template-emotion-vs-emotion-illustration": [
+      "beginner",
       "comparison",
       "language",
       "vocabulary"
     ],
     "template-english-dialogue-scene": [
       "dialogue",
+      "intermediate",
       "kawaii",
       "language",
       "vocabulary"
     ],
     "template-english-error-correction": [
       "insight",
+      "intermediate",
       "kawaii",
       "language",
       "vocabulary"
     ],
     "template-english-grammar-lesson": [
       "insight",
+      "intermediate",
       "language",
       "learning",
       "posters",
       "vocabulary"
     ],
     "template-english-grammar-wordlist-infographic": [
+      "intermediate",
       "language",
       "learning",
       "posters",
@@ -3885,6 +3937,7 @@
     ],
     "template-english-homograph-educational-poster": [
       "comparison",
+      "intermediate",
       "language",
       "learning",
       "posters",
@@ -3892,6 +3945,7 @@
     ],
     "template-english-phrasal-verb": [
       "expressions",
+      "intermediate",
       "language",
       "language-english",
       "vocabulary"
@@ -3899,11 +3953,13 @@
     "template-english-top5-phrases": [
       "expressions",
       "groups",
+      "intermediate",
       "kawaii",
       "language",
       "vocabulary"
     ],
     "template-english-vocabulary-upgrade": [
+      "advanced",
       "language",
       "language-english",
       "posters",
@@ -3911,6 +3967,7 @@
     ],
     "template-english-word-difference-infographic": [
       "comparison",
+      "intermediate",
       "language",
       "language-english",
       "vocabulary"
@@ -4070,6 +4127,7 @@
       "posters"
     ],
     "template-group-vocab-category": [
+      "beginner",
       "groups",
       "kawaii",
       "language",
@@ -4174,6 +4232,7 @@
       "posters"
     ],
     "template-ielts-3-to-9-vocabulary-poster": [
+      "advanced",
       "language",
       "language-english",
       "vocabulary"
@@ -4200,24 +4259,28 @@
       "showcase"
     ],
     "template-kids-opposite-concept-education": [
+      "beginner",
       "comparison",
       "language",
       "posters",
       "vocabulary"
     ],
     "template-kids-theme-fill-in-worksheet": [
+      "beginner",
       "learning",
       "quiz",
       "reading",
       "vocabulary"
     ],
     "template-kids-vocabulary-poster": [
+      "beginner",
       "language",
       "vocabulary"
     ],
     "template-language-word-comparison-educational-poster": [
       "comparison",
       "composition",
+      "intermediate",
       "kawaii",
       "language",
       "vocabulary"
@@ -4409,6 +4472,7 @@
       "posters"
     ],
     "template-multilingual-vocabulary-poster-watercolor": [
+      "intermediate",
       "language",
       "vocabulary",
       "watercolor"
@@ -4434,6 +4498,7 @@
     "template-native-english-expressions": [
       "dialogue",
       "expressions",
+      "intermediate",
       "kawaii",
       "language",
       "language-english",
@@ -4506,6 +4571,7 @@
       "lifestyle"
     ],
     "template-phonics-consonant-blend": [
+      "beginner",
       "language",
       "language-english",
       "reading",
@@ -4595,6 +4661,7 @@
       "design",
       "groups",
       "high-fashion",
+      "intermediate",
       "language",
       "vocabulary"
     ],
@@ -4605,6 +4672,7 @@
       "relationship"
     ],
     "template-room-vocabulary-infographic": [
+      "beginner",
       "language",
       "vocabulary"
     ],
@@ -4648,6 +4716,7 @@
     "template-slang-week-recap-infographic": [
       "expressions",
       "insight",
+      "intermediate",
       "language",
       "posters",
       "vocabulary"
@@ -4702,6 +4771,7 @@
       "sports"
     ],
     "template-stick-figure-vocab": [
+      "beginner",
       "kawaii",
       "language",
       "language-english",
@@ -4766,6 +4836,7 @@
       "posters"
     ],
     "template-verb-action-learning-cards": [
+      "beginner",
       "language",
       "vocabulary"
     ],
@@ -4788,6 +4859,7 @@
       "posters"
     ],
     "template-vocabulary": [
+      "intermediate",
       "kawaii",
       "language",
       "vocabulary"
@@ -4871,12 +4943,14 @@
       "posters"
     ],
     "template-word-origins-map-infographic": [
+      "intermediate",
       "language",
       "map",
       "posters",
       "vocabulary"
     ],
     "template-word-scene": [
+      "intermediate",
       "language",
       "vocabulary"
     ],
