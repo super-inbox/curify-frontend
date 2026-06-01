@@ -1,6 +1,7 @@
 {
   "_note": "Unified taxonomy: tier1/2/3 topic hierarchy + tier4 content-gen seeds + gallery tag → topic mapping. Consolidates the previous topic_tag_mappings.json + categorized_tags.json + subject_topic_seeds.json + the EXTRA_TAG_TO_TOPICS block in topicRegistry.ts. Single source of truth — lib/topicRegistry.ts, lib/searchIndex.ts, lib/relatedTags.ts, scripts/lib/auto_tag.cjs, scripts/generate_template_examples.cjs all read from here.",
   "tier1": [
+    "world-cup",
     "character",
     "personality",
     "language",
@@ -16,7 +17,6 @@
       "mbti",
       "anime",
       "sports",
-      "world-cup",
       "film",
       "relationship",
       "portrait",
@@ -87,7 +87,8 @@
       "mockups",
       "lighting",
       "composition"
-    ]
+    ],
+    "world-cup": []
   },
   "tier3": {
     "personality": [
@@ -329,7 +330,8 @@
       "product-lineup",
       "promotional-poster",
       "logo-application"
-    ]
+    ],
+    "world-cup": []
   },
   "tier4": {
     "_note": "Leaf topic names grouped by their tier-3 subject. Input to scripts/generate_template_examples.cjs for content drops. Add new subjects here; existing code (auto-tag pipeline, search index) keys off the subject name in tier3.language / tier3.learning.",

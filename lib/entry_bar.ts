@@ -2,9 +2,16 @@ export type EntryBarItem = {
   id: string;
   emoji?: string;
   path: string; // ✅ 从 href 改成 path
+  isHot?: boolean;
 };
 
 export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
+  {
+    id: "world-cup",
+    emoji: "⚽",
+    path: "/topics/world-cup",
+    isHot: true,
+  },
   {
     id: "character",
     emoji: "🎭",
