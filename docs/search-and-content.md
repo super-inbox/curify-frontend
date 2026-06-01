@@ -1,6 +1,6 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-05-30 (workstream refresh: content shapes abstraction proposed as the next-bottleneck unblock; Reddit docking re-scoped; blog-engagement P0/P1/P2 shipped 2026-05-30 — see `docs/blog-quality.md`). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-06-01 (three-tier ontology section added to Thread b — formalizes Subject × Info-type × Layout as the orthogonal axes of the taxonomy). Owner: jay. Update after any push that touches the threads below or changes priority order._
 
 ## Why this doc exists
 
@@ -54,6 +54,24 @@ A bug in any one thread can leak across — most often we discover the wrong thr
 ---
 
 ## Thread b — Content tagging + topic taxonomy
+
+### Three-tier ontology
+
+The taxonomy is structured along three orthogonal axes — every template / inspiration / gallery prompt is positioned at the intersection of (Tier I × Tier II × Tier III). Tags in `topics[]` carry the Tier-I and Tier-II coordinates; Tier III is implicit in the template ID today and queued for explicit tagging (2026-06-01 audit Open item 2).
+
+| Tier | Name | What it captures | Examples | Implementation |
+| --- | --- | --- | --- | --- |
+| **I** | Subjects, Events & Knowledge Graph Grounding | Entities the content is *about* — topics, franchises, places, people, IPs, events | `character`, `mbti`, `naruto`, `marvel`, `world-cup`, `language`, `chinese-cuisine`, `dog`, `heart` | `tier1-4` in `lib/taxonomy.json`; `template_subjects` (auto-derived); `topics[]` on templates + inspirations |
+| **II** | Information Typology & Semantic Modality | How information is *organized* — the cognitive shape of the payload | `fact`, `profile`, `collection`, `comparison`, `timeline`, `process`, `analysis`, `information-card`, `vocabulary`, `dialogue`, `quote`, `map`, `quiz`, `story` (13 canonical types, Round 2A) | `information_types` in `lib/taxonomy.json`; `template_information_types` (auto-derived from `topics[]`) |
+| **III** | Layout, Spatial Determinism & Visual Synthesis | How the artifact is *rendered* — composition rules, grid topology, aspect ratio | 3×3 grid, 4×4 grid, vertical poster, horizontal infographic, carousel, flashcard, collage, multi-panel | `template_shapes` (legacy alias from Round 2A — back-compat). **Not yet surfaced as queryable per-template tags** — encoded only in the template id. Queued as 2026-06-01 audit Open item 2. |
+
+**Why this framing matters**: Tier I scales unbounded (every new franchise / place / IP), Tier III scales slowly (a finite set of layouts), but Tier II is the keystone — **bounded at ~13 categories and the connective tissue between search intent and generation** (per `raw/taxonomy_brainstorm.txt`). Most queries decompose along this 3-axis grid:
+
+> "give me a [Tier II info-type] of [Tier I subject] in [Tier III layout]"
+>
+> e.g. "give me a **timeline** of **the World Cup** in a **vertical poster**" — single template can answer if all three axes hit.
+
+The content gap matrix is also 3D: `subject × info_type × layout`. Today we only render the `subject × info_type` slice (Round 2A coverage matrix). Adding Tier III as explicit tags unlocks the full 3D gap analysis + the search-generation bridge's "all three axes provided, generate now" path.
 
 ### Current state
 
