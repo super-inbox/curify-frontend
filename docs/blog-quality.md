@@ -1,5 +1,8 @@
 # Blog Quality Improvement — Status & Audit
 
+_For stable writing patterns + the pre-publish checklist, see **`docs/blog-writing-guidelines.md`**. This doc is the running progress log + ad-hoc audits + priority queues; guidelines doc is the reference._
+
+
 _Last updated: 2026-05-30 (engagement-funnel deep-dive after World Cup GSC spike; 4-part fix shipped — P0 conditional target=_blank, P1a inline-click tracker, P1b+P2 hero+CTA block + i18n for 4 blogs; 3 deferred todos flagged). Owner: jay. Update after every push that touches blog content, `BlogCTACard.tsx`, `GenericBlogContent.tsx`, or `content-formatters.ts`._
 
 ## Framing
