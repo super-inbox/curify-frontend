@@ -1,6 +1,6 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-05-30 (workstream refresh: content shapes abstraction proposed as the next-bottleneck unblock; Reddit docking re-scoped; blog-engagement P0/P1/P2 shipped 2026-05-30 — see `docs/blog-quality.md`). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-06-01 (three-tier ontology section added to Thread b — formalizes Subject × Info-type × Layout as the orthogonal axes of the taxonomy). Owner: jay. Update after any push that touches the threads below or changes priority order._
 
 ## Why this doc exists
 
@@ -55,6 +55,24 @@ A bug in any one thread can leak across — most often we discover the wrong thr
 
 ## Thread b — Content tagging + topic taxonomy
 
+### Three-tier ontology
+
+The taxonomy is structured along three orthogonal axes — every template / inspiration / gallery prompt is positioned at the intersection of (Tier I × Tier II × Tier III). Tags in `topics[]` carry the Tier-I and Tier-II coordinates; Tier III is implicit in the template ID today and queued for explicit tagging (2026-06-01 audit Open item 2).
+
+| Tier | Name | What it captures | Examples | Implementation |
+| --- | --- | --- | --- | --- |
+| **I** | Subjects, Events & Knowledge Graph Grounding | Entities the content is *about* — topics, franchises, places, people, IPs, events | `character`, `mbti`, `naruto`, `marvel`, `world-cup`, `language`, `chinese-cuisine`, `dog`, `heart` | `tier1-4` in `lib/taxonomy.json`; `template_subjects` (auto-derived); `topics[]` on templates + inspirations |
+| **II** | Information Typology & Semantic Modality | How information is *organized* — the cognitive shape of the payload | `fact`, `profile`, `collection`, `comparison`, `timeline`, `process`, `analysis`, `information-card`, `vocabulary`, `dialogue`, `quote`, `map`, `quiz`, `story` (13 canonical types, Round 2A) | `information_types` in `lib/taxonomy.json`; `template_information_types` (auto-derived from `topics[]`) |
+| **III** | Layout, Spatial Determinism & Visual Synthesis | How the artifact is *rendered* — composition rules, grid topology, aspect ratio | 3×3 grid, 4×4 grid, vertical poster, horizontal infographic, carousel, flashcard, collage, multi-panel | `template_shapes` (legacy alias from Round 2A — back-compat). **Not yet surfaced as queryable per-template tags** — encoded only in the template id. Queued as 2026-06-01 audit Open item 2. |
+
+**Why this framing matters**: Tier I scales unbounded (every new franchise / place / IP), Tier III scales slowly (a finite set of layouts), but Tier II is the keystone — **bounded at ~13 categories and the connective tissue between search intent and generation** (per `raw/taxonomy_brainstorm.txt`). Most queries decompose along this 3-axis grid:
+
+> "give me a [Tier II info-type] of [Tier I subject] in [Tier III layout]"
+>
+> e.g. "give me a **timeline** of **the World Cup** in a **vertical poster**" — single template can answer if all three axes hit.
+
+The content gap matrix is also 3D: `subject × info_type × layout`. Today we only render the `subject × info_type` slice (Round 2A coverage matrix). Adding Tier III as explicit tags unlocks the full 3D gap analysis + the search-generation bridge's "all three axes provided, generate now" path.
+
 ### Current state
 
 **Three tagging surfaces, each with a different shape:**
@@ -81,8 +99,55 @@ A bug in any one thread can leak across — most often we discover the wrong thr
 - `search_aliases` enrichment is automated for new inspirations via `scripts/lib/auto_tag.cjs` (same pipeline as the daily content drop).
 - `subject_topic_seeds.json` is small and easy to extend.
 
-### Open items
-1. **Random-sample audit recipe.** No script yet that samples 20 random inspirations + 20 random templates + 20 random gallery prompts and prints their tags side-by-side with their tier-1/tier-2 expected. The cheapest visibility tool: a one-shot `scripts/audit_tags.py` that prints sampled records' `topics`, `tags`, `search_aliases`, plus the parent template's `topics`, plus a "consistency note" (e.g. "inspiration is tagged `vocabulary` but parent template's tier-1 is `learning` not `language` — re-tag?"). Catches drift early, especially right after a content drop.
+### 2026-06-01 audit — Topic × Info-type × Layout coverage
+
+Ran a seeded-random audit (1 template + 1 example per tier-1's tier-2 children; 9 buckets) plus a 6-prompt gallery sample. Findings:
+
+**Sample table:**
+
+| # | Tier 1 → Tier 2 | Template | Example tags | Framework gap | Cross-topic? | Tier-3 candidate |
+|---|---|---|---|---|---|---|
+| 1 | character → anime | `template-mbti-naruto` | `anime, character, mbti, fantasy, franchise fandom` | info-type missing (profile), layout missing (character-card) | ✅ pattern reused for HP/Friends/Marvel | `franchise:naruto`, `character-role:villain` |
+| 2 | personality → quiz | (same template) | `anime, character, mbti, naruto, portrait, franchise fandom` | `quiz` topic tag looks **wrong** — this is a static profile card, not interactive | — | same as above |
+| 3 | language → expressions | `template-english-top5-phrases` | **EMPTY** | info-type missing, layout missing (top-N list) | ✅ any language pair × any topic | `pair:english-french`, `topic:hobbies`, `level:beginner` |
+| 4 | travel → food | `template-regional-alcoholic-drinks-infographic` | **EMPTY** | layout partial only | ✅ any region × any category | `country:spain`, `drink-type:wine` |
+| 5 | culture → food | `template-recipe` | `infographic, traditional, food, chinese, illustration` | info-type missing (process/recipe), layout missing | ✅ any cuisine | `cuisine:chinese`, `region:fujian`, `dish-type:soup` |
+| 6 | lifestyle → animal | `template-dog-breed-retro-infographic` | `dog, vintage, educational, illustration` | layout missing (retro-infographic) | ✅ any species × any breed | `species:dog`, `breed:poodle` |
+| 7 | learning → science | `template-organ-health-food-guide-infographic` | `health, food, educational, infographic, science, artistic, anatomy, food science` | best-tagged in sample (close to ideal) | ✅ any organ | `organ:heart`, `health-topic:cardiovascular` |
+| 8 | product → **branding** | **NO TEMPLATES TAGGED** | — | **catalog gap** — tier-2 has zero members | — | backfill OR remove |
+| 9 | design → digital-canvas | `template-poetry-ink-wash-illustration` | `traditional, chinese, poetry, ink wash` | `quote` acts as content shape | ✅ any topic in ink-wash style | `theme:rural-life`, `poetic-form:classical-chinese-poetry` |
+
+**Six-prompt gallery sample:** style-heavy tagging (`cozy, dramatic, elegant, photorealistic`) but consistently missing: subject (woman, café, mirror), scene (bathroom, dimly-lit-room), era (y2k, 80s), garments/props (black-dress, banana-phone, leather-couch), pose (mirror-selfie, split-pose). Plus several wrong/uncategorized topic fields ("History / What-if" on a café selfie; "Uncategorized" on a Y2K prompt).
+
+**Key findings:**
+
+1. **Framework coverage is partial.** All templates have topic tags. Roughly half implicitly carry info-type via the `topics` array (e.g. `information-card`, `quote`). Almost none have explicit template-shape / layout tags — layout is encoded only in the template ID. The taxonomy.json has the `information_types` (13) and `template_shapes` dimensions defined but they're not surfaced as queryable tags on individual templates.
+
+2. **Cross-topic reuse is high, undertapped.** 8 of 9 sampled templates are structurally generic but tagged narrowly by their first instance (recipe → any cuisine; dog-breed-infographic → any species; top-5-phrases → any language pair × any topic). The schema conflates "template structure" with "example instance" in the same `topics` array.
+
+3. **Example tag completeness is poor.** 2 of 9 examples had EMPTY tag arrays. Most others had 3-5 generic tags but were missing instance-specific tags (specific breed, country, dish name, character role).
+
+4. **Tier-3 expansion is overdue.** Tier-3 today is mostly MBTI types. The audit surfaced concrete tier-3 candidates that already exist in the catalog as separate templates but aren't promoted to taxonomy: franchises under `character → mbti`, cuisines under `travel → food`, species under `lifestyle → animal`, organs under `learning → science`, language pairs + levels under `language → vocabulary`.
+
+5. **Catalog gap surfaced.** `product → branding` has zero members.
+
+6. **Gallery tag schema needs 5 new dimensions.** `subject`, `scene`, `era`, `prop`, `pose` — use `category:value` convention within the existing `tags` array; no schema change.
+
+### Open items (re-ranked after 2026-06-01 audit)
+
+1. ~~**Random-sample audit recipe.**~~ Done ad-hoc on 2026-06-01 (see above). Codify as `scripts/audit_tags.py` for periodic re-run.
+
+2. **Add `info_type` + `template_shape` fields to template schema.** Backfill via script (use `id` substring matching against `taxonomy.json` `template_shapes` keys) then human review. ~2-3 hr. Unlocks proper 3-axis taxonomy queries (e.g. "all comparison-type templates across any topic", "all character-card templates by franchise").
+
+3. **Promote known template families to tier-3.** Formal additions to `lib/taxonomy.json` `tier3`: franchise (naruto, harry-potter, friends, marvel, breaking-bad, yellowstone), cuisine (chinese, italian, mexican, spanish), species (dog, cat, horse, bird), organ (heart, lungs, kidney, brain), language-pair (english-french, english-spanish, …), level (beginner, intermediate, advanced). ~1 hr; high SEO long-tail value.
+
+4. **Bulk-pass examples with empty/sparse tag arrays.** Script that suggests tags from example's `id` substring + `search_aliases` + parent template's `topics`, then human-review. Highest-leverage on the 2 sampled examples with empty arrays and the broader population they represent.
+
+5. **Fix `product → branding` tier-2.** Backfill members or remove the empty navigational child. ~30 min.
+
+6. **Extend gallery tag schema with 5 new dimensions.** Define the `category:value` convention (`subject:woman`, `scene:cafe-bathroom`, `era:y2k`, `prop:banana-phone`, `pose:mirror-selfie`). Pilot-retag top-100 prompts. ~3-4 hr. Big UX lift on `/nano-banana-pro-prompts` search/filter.
+
+7. **Audit `quiz` topic tag for false positives.** Sample #2 surfaced `template-mbti-naruto` tagged with `quiz` but it's a static character profile, not an interactive quiz. Worth a sweep of all `quiz`-tagged templates to confirm they actually are interactive quizzes vs profile cards mistagged.
 
 2. **Recommendation layer.** `subject_topic_seeds.json` is currently write-only (input to gen). The user flagged it as the substrate for: similar-template recommendations, similar-example recommendations on /carousel, similar-gallery recommendations, and a richer search-alias source. None of those are wired yet. The structure: take a record's tier-1 ancestor + its tier-3 tags + its `search_aliases` → query a similarity index → return top-N. Open question whether to build the index in JS (BM25 over the existing blobs) or to offload to a vector store. **Half-week task minimum.**
 

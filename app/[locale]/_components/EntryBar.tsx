@@ -19,6 +19,7 @@ type ItemProps = {
     id: string;
     emoji?: string;
     path: string;
+    isHot?: boolean;
   };
   locale: string;
 };
@@ -48,6 +49,11 @@ function EntryBarItem({ item, locale }: ItemProps) {
     >
       {item.emoji ? <span aria-hidden="true">{item.emoji}</span> : null}
       <span>{t(`items.${item.id}`)}</span>
+      {item.isHot ? (
+        <span aria-label="Hot" className="ml-0.5 text-base leading-none">
+          🔥
+        </span>
+      ) : null}
     </Link>
   );
 }
