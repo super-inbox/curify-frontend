@@ -176,9 +176,9 @@ Populated hero+CTA in `messages/en/blog.json` for 4 blogs:
 
   *Trigger to re-open:* immediate. This blog is a wasted entry — fix the EN content first, then apply the same hero+CTA treatment as the other 4.
 
-**TODO 2 — Other 9 locales of the 4 fixed blogs are hero-less.** Hero keys are EN-only this commit. Other locales gracefully fall back via the `hasKey` check (hero block doesn't render). Worth a separate i18n pass to extend `heroImage`/`heroCtaText`/`heroCtaHref` to all 10 locales for these 4 blogs.
+**TODO 2 — Other 9 locales of the 4 fixed blogs are hero-less.** ~~Hero keys are EN-only this commit. Other locales gracefully fall back via the `hasKey` check (hero block doesn't render). Worth a separate i18n pass to extend `heroImage`/`heroCtaText`/`heroCtaHref` to all 10 locales for these 4 blogs.~~
 
-  *Trigger to re-open:* when GSC shows meaningful non-EN traffic to any of the 4 fixed blogs. Currently EN dominates GSC; not urgent.
+**[RESOLVED 2026-06-01]** Verified all 4 blogs × all 10 locales now have 3/3 hero keys populated. A later autotranslate pass (likely swept alongside other work) fanned the hero keys to all non-en locales between the 5/30 commit and now. No action needed; this TODO was self-resolving.
 
 **TODO 3 — Watch impact post-deploy.** Need to re-pull GSC + admin panel after the deploy has been live for 5-7 days to validate the conversion floor. Expected at least 8-10 weekly conversions across the 4 fixed blogs (vs current 0). Compare GSC clicks-to-blog vs new `blog-link:<slug>:*` CLICK events in the admin panel.
 
