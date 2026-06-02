@@ -560,7 +560,15 @@
       "Indian Cuisine",
       "French Cuisine",
       "Thai Cuisine",
-      "Vietnamese Cuisine"
+      "Vietnamese Cuisine",
+      "Bolognese",
+      "Carbonara",
+      "Cacio e Pepe",
+      "Pesto",
+      "Orecchiette",
+      "Oaxacan Mole",
+      "Sichuan Spicy",
+      "Cantonese Dim Sum"
     ],
     "species": [
       "Dog",
@@ -568,6 +576,51 @@
       "Horse",
       "Bird",
       "Fish"
+    ],
+    "wine": [
+      "Bordeaux",
+      "Burgundy",
+      "Champagne",
+      "Rhône",
+      "Loire",
+      "Alsace",
+      "Tuscany",
+      "Napa Valley",
+      "Rioja",
+      "Mosel"
+    ],
+    "fashion-eras": [
+      "Flapper",
+      "Dior New Look",
+      "1960s Mod",
+      "1970s Disco",
+      "1980s Power Suits",
+      "1990s Minimalism",
+      "Y2K Revival",
+      "Utility 1940s"
+    ],
+    "olympic-sports": [
+      "Gymnastics",
+      "Sprint",
+      "Marathon",
+      "Swimming",
+      "Fencing",
+      "Shooting",
+      "Weightlifting",
+      "Diving",
+      "Skateboarding",
+      "Surfing"
+    ],
+    "soccer-positions": [
+      "Striker",
+      "Midfielder",
+      "Defender",
+      "Goalkeeper",
+      "Wing-back",
+      "False 9",
+      "Defensive Mid",
+      "Attacking Mid",
+      "Sweeper"
     ]
   },
   "_gallery_tag_to_topics_note": "Gallery-prompt tag → tier-2/tier-3 topic(s) it maps to. Used by (1) lib/topicRegistry.ts getTopicsForTag — tag-page surfaces templates from these topics; (2) lib/relatedTags.ts getRelatedTags — tags sharing a topic are siblings. Replaces the previous flat-list categorized_tags.json categories with topic-aligned destinations.",
