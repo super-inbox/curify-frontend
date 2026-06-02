@@ -621,6 +621,38 @@
       "Defensive Mid",
       "Attacking Mid",
       "Sweeper"
+    ],
+    "cultures": [
+      "Aztec",
+      "Mesoamerican",
+      "Maya",
+      "Inca",
+      "Olmec",
+      "Toltec",
+      "Dunhuang",
+      "Mogao Caves",
+      "Silk Road",
+      "Confucianism",
+      "Taoism",
+      "Shinto"
+    ],
+    "physics-concepts": [
+      "Electric Field",
+      "Magnetic Field",
+      "Gravitational Field",
+      "Electromagnetic Wave",
+      "Quantum Mechanics",
+      "Wave Function",
+      "Standard Model",
+      "Black Hole"
+    ],
+    "historical-events": [
+      "Great Emu War",
+      "Dancing Plague",
+      "Boston Molasses Disaster",
+      "War of the Bucket",
+      "Tulip Mania",
+      "Great London Beer Flood"
     ]
   },
   "_gallery_tag_to_topics_note": "Gallery-prompt tag → tier-2/tier-3 topic(s) it maps to. Used by (1) lib/topicRegistry.ts getTopicsForTag — tag-page surfaces templates from these topics; (2) lib/relatedTags.ts getRelatedTags — tags sharing a topic are siblings. Replaces the previous flat-list categorized_tags.json categories with topic-aligned destinations.",
