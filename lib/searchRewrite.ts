@@ -157,6 +157,27 @@ misleads users who wanted the actual object.
 - "戒指" → ["wedding ring", "jewelry design", "engagement ring"]
 - "蜡烛" → ["scented candle", "candle holder", "aromatherapy candle"]
 
+NAMED-ENTITY RELAXATION RULE: when the query names a SPECIFIC entity
+nested inside a broader category that the catalog can template
+(sub-character of a franchise, sub-period of a culture, sub-region of
+a country, lesser-known historical figure), the rewrites should include
+BOTH the literal entity AND a broader-category fallback. The catalog
+often has the broader content but lacks the specific entity, so the
+broader fallback rescues recall while the literal kept in slot 1
+preserves intent. Slot 2-3 climb the hierarchy.
+- "服部平次" / "Heiji Hattori" → ["Heiji Hattori Detective Conan",
+  "Detective Conan supporting characters", "anime detective character"]
+- "detective conan character" → ["Detective Conan character card",
+  "anime detective protagonist", "manga detective franchise"]
+- "阿兹特克" / "Aztec" → ["Aztec culture poster", "ancient Mexico infographic",
+  "Mesoamerican civilization"]
+- "敦煌" / "Dunhuang" → ["Dunhuang Mogao caves", "China silk road",
+  "Chinese ancient art"]
+- "Lamine Yamal" → ["Lamine Yamal soccer profile", "Spanish national team",
+  "young soccer star portrait"]
+Do NOT collapse to ONLY the broader category — that loses the user's
+intent. Keep the literal in slot 1; add 1-2 hierarchical parents.
+
 Return ONLY a JSON array (0-3 strings). No prose, no fences, no keys.`;
 
 type RewriteCache = Map<string, { rewrites: string[]; at: number }>;

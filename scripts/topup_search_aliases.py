@@ -560,6 +560,25 @@ FAMILIES = OrderedDict([
         ],
         'aliases': ['showcase','产品展示'],
     }),
+    # 2026-06-02 weekly cycle 2: 出海品牌 (cross-border ecom brand) surfaced
+    # as a Chinese B2B query with no result. Tier-2 product (ecommerce +
+    # branding + packaging) already exists; this top-up makes the queries
+    # land on the existing product templates.
+    ('cross_border_ecom_brand', {
+        'templates': [
+            'template-fashion-ecommerce',
+            'template-product-poster',
+            'template-product-theme-promotional-poster',
+            'template-food-product-packaging-design',
+        ],
+        'aliases': [
+            'cross-border', 'cross-border ecommerce', 'cross-border brand',
+            'going-abroad brand', 'dtc cross-border', 'overseas market',
+            'overseas brand', 'global expansion brand',
+            '出海品牌', '跨境品牌', '跨境电商', '出海', '海外市场', '海外品牌',
+            '全球化品牌', '出海营销',
+        ],
+    }),
 ])
 
 
