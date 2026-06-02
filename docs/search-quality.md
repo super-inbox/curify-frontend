@@ -1,6 +1,6 @@
 # Search Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-30 (weekly cycle 1 of the in-session search-evolution review: fandom content topup for chiikawa / samurai / genshin — under-served despite the 2026-05-19 alias batch — and 3 new entries in `search_eval_set.json` under source `user-weekly-2026-05-30`; see new "Weekly review cycles" section). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `lib/searchRewrite.ts`, `lib/searchTemplateMatch.ts`, `scripts/enrich_search_aliases.cjs`, `scripts/topup_search_aliases.py`, `scripts/eval_search.cjs`, `scripts/configs/search_eval_set.json`, or `scripts/lib/auto_tag.cjs`._
+_Last updated: 2026-06-02 (weekly cycle 2: 出海品牌 cross-border-ecom-brand alias top-up shipped, Cluster A carryover validated, rewriter relaxation hardening flagged as Cycle 3 carryover). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `lib/searchRewrite.ts`, `lib/searchTemplateMatch.ts`, `scripts/enrich_search_aliases.cjs`, `scripts/topup_search_aliases.py`, `scripts/eval_search.cjs`, `scripts/configs/search_eval_set.json`, or `scripts/lib/auto_tag.cjs`._
 
 ## Framing
 
@@ -60,6 +60,31 @@ Running log of the in-session weekly search-evolution review (memory: `project_s
 - **D — Niche / low-signal** (track only): 八酱, 电场, wordplay, cultural ties relationship, physical altercations, societal critique portraits, 회사, accion, inteiror (typo), coffic (typo), 下雨 (already 6 hits — fine).
 
 **Carryover into Cycle 2**: re-check whether any Cluster D query repeats (= elevate); confirm Cluster A queries now score `rich` post-topup; track whether Cluster B drives a search→tool routing spec.
+
+### Cycle 2 — 2026-06-02
+
+**Pull**: live admin `/interaction-analytics`, 14d window. 103 raw → 101 after garbage filter. Signal markedly thinner than Cycle 1 — most no-result queries are single-user/single-search.
+
+**Carryover validation (Cluster A from Cycle 1)** — all post-topup scores hold:
+
+  chiikawa  5 → 8 hits  (3 escape-clicks visible in 14d window are pre-topup events, will age out)
+  samurai   3 → 7 hits
+  genshin   3 → 7 hits
+
+**4 clusters surfaced**:
+
+- **A — Carryover** (no work): see above.
+- **B — Tool / format / feature intent** (still deferred per Cycle 1 pattern): `ppt`, `svg`, `translate`, `auto-translate youtube video`, `cricut` (craft cutter), `circuit` / `modèle pour circuit` (French), `short video advertising a cheap smart phone`. Same root cause as Cycle 1 — needs the search→tool routing spec.
+- **C — New content gaps** (1 shipped, 2 deferred for second-occurrence signal):
+  - **出海品牌** (cross-border ecom brand, Chinese B2B query) — **P0 shipped this cycle**. Tier-2 product (ecommerce + branding + packaging) already exists. Alias top-up family `cross_border_ecom_brand` covers 4 product templates (fashion-ecommerce, product-poster, product-theme-promotional-poster, food-product-packaging-design). Bilingual aliases: 出海品牌, 跨境品牌, 跨境电商, 出海, 海外市场, 海外品牌, 全球化品牌, 出海营销, cross-border, cross-border ecommerce, cross-border brand, going-abroad brand, dtc cross-border, overseas market, overseas brand, global expansion brand. 45 inspirations touched. After: 出海品牌 0 → 45 hits rich; cross-border 0 → 45; 跨境电商 0 → 45; 出海 0 → 46.
+  - 阿兹特克 (Aztec, 1 user) — deferred. Real cultural content gap (adjacent to existing Mexican cuisine tier-4) but single-user signal; rewriter should relax to "ancient Mexico / Mesoamerica" (carryover item below).
+  - 服部平次 (Heiji Hattori, Detective Conan) — deferred. Single-fandom character query; thin hit (1) on detective-conan template; rewriter should relax to "Detective Conan characters" (carryover item below).
+- **D — Rewriter validation** (no action): 아인슈타인 (Einstein KR, 6 searches / 1 result_click / 16.7% CTR) — rewriter rescue firing as designed.
+- **E — Niche / typos / operator test syntax** (skip + log): `gawai`, `电场`, `八酱`, `inteiror`, `coffic`, `accion`, `회사`, `sculpture · character_name`-style operator placeholders.
+
+**Carryover into Cycle 3**:
+- **LLM rewriter relaxation hardening** (raised by user 2026-06-02): the rewriter should relax queries like "detective conan character" → "Detective Conan" / fandom character templates, "阿兹特克" → "ancient Mexico / Mesoamerica / pre-Hispanic culture", "服部平次" → "Detective Conan supporting characters". Today's Path A produces literal translations for these; doesn't currently relax to adjacent-concept template families. Worth a prompt patch: when the literal query yields 0 base hits AND the query is a named entity (character / culture / niche concept), the rewriter should ALSO emit 1-2 broader category fallbacks. Spec into the existing CRITICAL clause structure.
+- Cycle 3 should re-check whether Cluster B (tool intent) queries are still recurring — if yes, that's the trigger to spec the search→tool routing.
 
 ---
 
