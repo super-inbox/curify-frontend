@@ -1,6 +1,6 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-06-01 (three-tier ontology section added to Thread b — formalizes Subject × Info-type × Layout as the orthogonal axes of the taxonomy). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-06-02 (3D content gap matrix operationalized — `scripts/build_3d_gap_matrix.cjs` materializes the Subject × Info-type × Layout ontology with heuristic Layout derivation; first-run findings + batch-gen candidates documented in Thread b). Owner: jay. Update after any push that touches the threads below or changes priority order._
 
 ## Why this doc exists
 
@@ -72,6 +72,55 @@ The taxonomy is structured along three orthogonal axes — every template / insp
 > e.g. "give me a **timeline** of **the World Cup** in a **vertical poster**" — single template can answer if all three axes hit.
 
 The content gap matrix is also 3D: `subject × info_type × layout`. Today we only render the `subject × info_type` slice (Round 2A coverage matrix). Adding Tier III as explicit tags unlocks the full 3D gap analysis + the search-generation bridge's "all three axes provided, generate now" path.
+
+### 3D content gap matrix — operationalized 2026-06-02
+
+The flat `topics[]` schema is preserved; tier classification happens at runtime via taxonomy.json maps. The script `scripts/build_3d_gap_matrix.cjs` reads three signals per template:
+
+- **Tier I (Subject)** — from `template_subjects` (already auto-derived from `topics[]` ∩ tier1-4)
+- **Tier II (Info-type)** — from `template_information_types` (auto-derived from `topics[]` ∩ `information_types` vocabulary)
+- **Tier III (Layout)** — heuristic from template id substrings via `LAYOUT_RULES` (since Layout isn't yet a queryable tag — flagged as 2026-06-01 audit Open item 2). 15-layout vocabulary: flashcard / matching-chart / grid / timeline / map / before-after / vs-battle / collage / mood-board / carousel / infographic / guide-card / character-card / poster / single-image.
+
+Run: `node scripts/build_3d_gap_matrix.cjs` → writes `/tmp/3d_gap_matrix_<date>.md`.
+
+**First-run findings (2026-06-02)** — 18 subjects × 13 info-types × 15 layouts = 3,510 3D cells. 778 are "fillable gap cells" (subject has ≥10 templates AND subject×info-type has at least one template AND that cell is empty for a common layout). 72 cells are saturated (≥3 templates).
+
+**Layout-axis sparsity is the headline**: the Layout distribution is highly uneven:
+
+| Layout | Templates | Layout | Templates |
+| --- | --: | --- | --: |
+| single-image | 62 | timeline | 7 |
+| infographic | 52 | flashcard | 6 |
+| poster | 22 | collage | 6 |
+| character-card | 15 | before-after | 5 |
+| vs-battle | 14 | grid | 5 |
+| guide-card | 11 | matching-chart | 2 |
+| map | 8 | carousel | 2 |
+| | | mood-board | 1 |
+
+**single-image + infographic = 114/218 (52%)** of the catalog by layout. Targeted layouts (timeline, flashcard, collage, grid, before-after, carousel, mood-board) have ≤10 templates each — they're under-represented and are the highest-leverage layout-axis content drops.
+
+**Top gap pattern**: `learning × {insight, timeline, information-card, process} × {flashcard, grid, timeline, map, before-after, vs-battle, collage, character-card, poster}` — `learning` (55 templates) has substantial info-type coverage but is mostly infographic-shaped; the same content can clearly render as flashcards, before-after pairs, grids etc.
+
+**Concrete batch-generation candidates** (first 5 from the report):
+
+- `learning × insight × flashcard` (empty; adjacent: infographic×12, single-image×6)
+- `learning × insight × grid` (empty; adjacent: infographic×12, single-image×6)
+- `learning × insight × timeline` (empty; adjacent: infographic×12, single-image×6)
+- `learning × insight × map` (empty; adjacent: infographic×12, single-image×6)
+- `learning × insight × before-after` (empty; adjacent: infographic×12, single-image×6)
+
+The mechanical brief: pick one existing example from the saturated (subject × info-type) row and regenerate in the missing layout. Single-template families can absorb this — `template-9-traits-info-grid` proves the grid layout works; cloning the design for `learning × insight × grid` is straightforward.
+
+**Caveats** for the first-run output:
+- Layout heuristic is id-substring based. Some templates classified as `single-image` actually have richer composition; some `infographic` matches catch incidental matches. Refining the rules OR promoting Layout to an explicit tag (audit Open item 2) would tighten the matrix.
+- `mbti` (26 templates) and `character` (45 templates) both have heavy `quiz` + `character-card` saturation but very thin `timeline`, `map`, `story` coverage — corroborates the 2026-05-30 content_shapes coverage matrix.
+- The 3D matrix is biased toward existing taxonomy entries. Brand-new subjects (world-cup just promoted to tier-1) won't show in MATRIX_SUBJECTS until added.
+
+**Next-step proposal (in order of ROI)**:
+1. **Pick 2-3 high-signal gap cells per week** for the daily content drop. The matrix surfaces them mechanically — no judgment needed beyond editorial pick.
+2. **Promote Layout to a queryable tag** (audit Open item 2). The heuristic works as a first cut but loses fidelity for genuinely-mixed-layout templates. Once explicit, the gap matrix becomes authoritative and feeds the search-generation bridge's accept criterion.
+3. **Tier-weighted matcher scoring** (#4 from the 2026-06-02 ontology-use proposal) — depends on Layout being a real tag.
 
 ### Current state
 
