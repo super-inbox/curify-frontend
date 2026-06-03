@@ -1,6 +1,6 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-06-03 (daily content drop from hongjie28-patch-4 + hongjie28-patch-5 — 3 sports/event templates, 12 seed examples, /topics/world-cup lifted to 3 templates / 37 inspirations). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-06-03 (World Cup expansion plan documented — content, UX, monetization streams + draft P0-P3 priorities). Owner: jay. Update after any push that touches the threads below or changes priority order._
 
 ## Why this doc exists
 
@@ -329,6 +329,55 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
    **Full spec**: `docs/programmatic-seo-topic-hubs.md` — covers page anatomy, source pipeline gating, hreflang strategy, risks (duplicate content with /topics, anti-Slop, AI Overview defenses, cannibalization), measurement loop.
 
    **Why prioritize ahead of items 5-8**: items 5-8 all improve internal UX or measurement; only item 9 converts the workstream into a growth flywheel. Should be the next thing built once Generation Bridge Phase 1 has accumulated 2 weeks of CTR data to inform which queries are matcher-ready.
+
+---
+
+## 2026-06-03 — World Cup expansion plan
+
+GSC shows substantial WC-related search traffic. The tier-1 promotion + EntryBar hot chip shipped 2026-06-01, and the 2026-06-03 daily-drop tripled landing inspirations (1 template / 27 ins → 3 templates / 37 ins). Next wave: **deepen WC content, enrich UX, cross-link to adjacent topics (culture / travel / country pages), layer in monetization.** Items grouped by area; prioritization pending — see end of section for recommendation.
+
+### Content expansion (thread c)
+
+1. **Teams + team-battle watch-list** — top match-ups to anticipate per match week; matchday content cards. Adjacent template: `template-sports-battle` already covers 1v1 (Messi vs Ronaldo style); new use is *team vs team* match-ups (Brazil vs Argentina semi-final preview, etc.).
+
+2. **Post-match meme generator** (比赛结果的梗图) — meme cards for results, players, iconic moments. Sustained engagement (memes are re-shared more than infographics). Template family doesn't exist yet — would need a new `template-match-result-meme` boilerplate that takes (final-score, hero-player, moment-photo) and renders a shareable meme card.
+
+3. **Vote / "who are you rooting for"** interactive — sustained engagement loop independent of match schedule. Cross-cuts with product item 1 (polls); the vote artifact itself becomes a shareable card ("我支持的世界杯队伍 — Argentina!").
+
+4. **Top-query suggestions** — surface GSC long-tail demand on the /topics/world-cup page itself ("People also search: Argentina lineup, Brazil 2002 squad, World Cup all-time top scorers, ..."). Drives further click-through to specific subtopic pages.
+
+### UX & product iteration (cross-cutting)
+
+1. **Poll + comments** — engagement loop on /topics/world-cup and per-match pages. Polls per match ("Argentina or Brazil for semi?"); comments per page. Requires user account integration. **Polls without comments** is cheaper to ship first.
+
+2. **Calendar (match schedule)** — **core anchor** per user direction. Treat as the primary navigation surface on /topics/world-cup. Schedule data source: FIFA API (free, well-documented), or a static seed file refreshed weekly. Calendar entries link to per-match pages (which themselves host polls + post-match memes + team-watch content).
+
+3. **Topic-as-card layout** — country-specific WC pages (`/topics/argentina-world-cup`, `/topics/brazil-world-cup`, etc.) get a card-based layout: hero matchday card → squad card → historical record card → key matchup card. Mirrors the consumer-grade UX that Pinterest / sports.com use; differentiates from text-heavy infographic landing.
+
+4. **Country ↔ WC bidirectional links** — from `/topics/<country>` link to `/topics/world-cup` (cross-promotion via the country's WC history); from `/topics/world-cup` surface country breakdowns. Today the country pages exist but don't cross-link to WC. **Smallest scope, fastest ship.**
+
+### Monetization (new dimension)
+
+1. **Amazon affiliate integration** — jersey, ball, fan merch contextual to the page (Argentina page → Argentina jersey + Messi merch). Requires affiliate-link wrapping middleware + an SKU-to-context mapping; revenue starts at ~3-8% per click conversion. Cleanest pilot: 4 country pages (Brazil, Argentina, France, Germany) + WC main page.
+
+2. **Shopify print-on-demand for user-generated WC posters** — user generates a poster via our templates, hits "order printed" → routed to a Shopify POD partner (Printful / Gelato / Printify). Higher margin than affiliates (30-50%) but requires order-fulfillment integration + design-to-product conversion. Defer to Phase 2.
+
+### Cross-thread implications
+
+- **Search**: WC-related queries get disproportionate ROI from generation-bridge Phase 1. Worth aiming the bridge here first when it ships (thread d item 8).
+- **Tagging**: tier2.world-cup is empty today (the bucket was created when promoted to tier-1). Add tier-3 entries under it: teams (Brazil / Argentina / France / Germany / Spain / Italy / Netherlands / Portugal / England + women's powerhouses), tournament editions (2026 / 2027-women / 2022 / 2018 / 1986 nostalgia), eras (Golden Generation Spain, Argentina-Messi, Brazil-Pelé).
+- **Calendar** infrastructure: requires data model (`/data/wc_schedule.json` or a new schema), refresh cadence, UI component, link strategy from calendar entries to per-match pages.
+- **Polls + comments**: requires user-account integration (anonymous voting may be enough for polls; comments need identity).
+- **Affiliate compliance**: FTC disclosure required on every affiliate link; Amazon Operating Agreement compliance (no caching prices, etc.).
+
+### Recommended prioritization (DRAFT — please confirm or redirect)
+
+| Phase | Items | Why | Effort |
+| --- | --- | --- | --- |
+| **P0 — this week** | (1) Country ↔ WC bidirectional links · (2) tier-3 under tier2.world-cup (teams + editions) · (3) Top-query suggestions card on /topics/world-cup | Fastest-to-ship, highest cross-link / SEO value, leverages existing GSC signal | 1-2 days total |
+| **P1 — next week** | (4) Calendar component + schedule data · (5) `template-match-result-meme` boilerplate + 4-6 seed examples · (6) Amazon affiliate pilot on Brazil/Argentina/France/Germany + WC main | Calendar is the anchor; memes drive shareability; affiliate is monetization MVP | 3-5 days |
+| **P2 — after CTR data** | (7) Polls (no comments) · (8) Country-WC card-layout redesign · (9) Vote/rooting interactive | Requires usage signal to inform design choices; polls need account integration | 1 week+ |
+| **P3 — Phase 2 monetization** | (10) Shopify POD integration | Higher margin but requires fulfillment partnership + UX flow | Multi-week |
 
 ---
 
