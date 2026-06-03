@@ -9483,5 +9483,116 @@
     "batch": true,
     "allow_generation": true,
     "creation_date": "2026-05-31"
+  },
+  {
+    "id": "template-football-tournament-group-stage-bracket-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Football Tournament Fixture Infographic Creator) Create official vibrant sports poster titled '{topic}'. Layout: Top header with tournament name, trophy graphic, competition dates & host region info; middle section split into eight color-blocked group tables listing participating national teams; lower knockout phase bracket diagram with round names, match dates and final venue; bottom decorated with host countries' national flags and slogan. Style: Official tournament branding design, bright segmented color blocks per group, bold sport typography, rich tournament-themed colorful graphics, direct high-quality image generation. Subject: '{topic} group stage & knockout bracket fixture infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Football Tournament Name",
+            "type": "text",
+            "placeholder": [
+              "2026 FIFA World Cup",
+              "UEFA Euro 2028",
+              "Copa América 2026",
+              "FIFA Women's World Cup 2027",
+              "AFC Asian Cup 2027",
+              "CONCACAF Gold Cup"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026-prev.jpg",
+    "topics": [
+      "sports",
+      "world-cup",
+      "soccer",
+      "groups",
+      "posters",
+      "infographic",
+      "comparison"
+    ],
+    "rank_score": 82,
+    "base_rank_score": 80,
+    "batch": true,
+    "allow_generation": true,
+    "creation_date": "2026-06-02"
+  },
+  {
+    "id": "template-international-event-promotional-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(International Event Promotional Poster Creator) Create vibrant gritty textured official event poster titled '{topic}'. Layout: Extra large distressed white rough-textured headline font occupies top area, center realistic core landmark + event iconic trophy/sport/music/art landmark with native city landmark scenery in background; middle lower green-red brush stroke banner with custom event slogan text; bottom section with event schedule text, calendar icon and official event hashtag; scattered colorful confetti fragments across entire canvas. Style: Modern street paint brushstroke design, vibrant saturated color grading, photorealistic central scenery, bold hand-painted typography, sharp commercial poster lighting, direct high-quality image generation. Subject: '{topic} official promotional poster'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Event Name",
+            "type": "text",
+            "placeholder": [
+              "Coachella 2026 Music Festival",
+              "Beijing 798 Art Season 2026",
+              "Nagoya 2026 Asian Games",
+              "Dakar 2026 Youth Olympic Games",
+              "2026 FIFA World Cup",
+              "Milano Cortina 2026 Winter Olympics"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-international-event-promotional-poster-beijing-798-art-season-2026-prev.jpg",
+    "topics": [
+      "posters",
+      "design",
+      "celebration",
+      "profile"
+    ],
+    "rank_score": 80,
+    "base_rank_score": 80,
+    "batch": true,
+    "allow_generation": true,
+    "creation_date": "2026-06-02"
+  },
+  {
+    "id": "template-player-vintage-stats-card-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Football Player Stats Card Creator) Create antique golden framed football player biography poster titled '{topic}'. Layout: Ornate vintage golden decorative border frame, central large portrait of footballer in national team jersey; left vertical panel for jersey number, nickname, club history & career stats; right vertical panel for national team data, trophy honours and player ability ratings; bottom section with national flag, signature quote and tournament slogan, small inset match action photo at bottom-left corner, dark navy textured vintage background with subtle stadium glow. Style: Luxe antique gold typography, aged parchment graphic texture, classic retro sports print aesthetic, realistic portrait photography, direct high-quality image generation. Subject: '{topic} vintage world cup player stats biography card'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Football Player Full Name + National Team",
+            "type": "text",
+            "placeholder": [
+              "Lionel Messi Argentina",
+              "Kylian Mbappé France",
+              "Jude Bellingham England",
+              "Vinicius Jr Brazil",
+              "Christian Pulisic USA",
+              "Erling Haaland Norway"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-player-vintage-stats-card-poster-usa-matt-turner-prev.jpg",
+    "topics": [
+      "sports",
+      "world-cup",
+      "soccer",
+      "character",
+      "profile",
+      "posters",
+      "nostalgia"
+    ],
+    "rank_score": 82,
+    "base_rank_score": 80,
+    "batch": true,
+    "allow_generation": true,
+    "creation_date": "2026-06-02"
   }
 ]

@@ -1,6 +1,6 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-06-01 (three-tier ontology section added to Thread b — formalizes Subject × Info-type × Layout as the orthogonal axes of the taxonomy). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-06-03 (World Cup expansion plan documented — content, UX, monetization streams + draft P0-P3 priorities). Owner: jay. Update after any push that touches the threads below or changes priority order._
 
 ## Why this doc exists
 
@@ -72,6 +72,55 @@ The taxonomy is structured along three orthogonal axes — every template / insp
 > e.g. "give me a **timeline** of **the World Cup** in a **vertical poster**" — single template can answer if all three axes hit.
 
 The content gap matrix is also 3D: `subject × info_type × layout`. Today we only render the `subject × info_type` slice (Round 2A coverage matrix). Adding Tier III as explicit tags unlocks the full 3D gap analysis + the search-generation bridge's "all three axes provided, generate now" path.
+
+### 3D content gap matrix — operationalized 2026-06-02
+
+The flat `topics[]` schema is preserved; tier classification happens at runtime via taxonomy.json maps. The script `scripts/build_3d_gap_matrix.cjs` reads three signals per template:
+
+- **Tier I (Subject)** — from `template_subjects` (already auto-derived from `topics[]` ∩ tier1-4)
+- **Tier II (Info-type)** — from `template_information_types` (auto-derived from `topics[]` ∩ `information_types` vocabulary)
+- **Tier III (Layout)** — heuristic from template id substrings via `LAYOUT_RULES` (since Layout isn't yet a queryable tag — flagged as 2026-06-01 audit Open item 2). 15-layout vocabulary: flashcard / matching-chart / grid / timeline / map / before-after / vs-battle / collage / mood-board / carousel / infographic / guide-card / character-card / poster / single-image.
+
+Run: `node scripts/build_3d_gap_matrix.cjs` → writes `/tmp/3d_gap_matrix_<date>.md`.
+
+**First-run findings (2026-06-02)** — 18 subjects × 13 info-types × 15 layouts = 3,510 3D cells. 778 are "fillable gap cells" (subject has ≥10 templates AND subject×info-type has at least one template AND that cell is empty for a common layout). 72 cells are saturated (≥3 templates).
+
+**Layout-axis sparsity is the headline**: the Layout distribution is highly uneven:
+
+| Layout | Templates | Layout | Templates |
+| --- | --: | --- | --: |
+| single-image | 62 | timeline | 7 |
+| infographic | 52 | flashcard | 6 |
+| poster | 22 | collage | 6 |
+| character-card | 15 | before-after | 5 |
+| vs-battle | 14 | grid | 5 |
+| guide-card | 11 | matching-chart | 2 |
+| map | 8 | carousel | 2 |
+| | | mood-board | 1 |
+
+**single-image + infographic = 114/218 (52%)** of the catalog by layout. Targeted layouts (timeline, flashcard, collage, grid, before-after, carousel, mood-board) have ≤10 templates each — they're under-represented and are the highest-leverage layout-axis content drops.
+
+**Top gap pattern**: `learning × {insight, timeline, information-card, process} × {flashcard, grid, timeline, map, before-after, vs-battle, collage, character-card, poster}` — `learning` (55 templates) has substantial info-type coverage but is mostly infographic-shaped; the same content can clearly render as flashcards, before-after pairs, grids etc.
+
+**Concrete batch-generation candidates** (first 5 from the report):
+
+- `learning × insight × flashcard` (empty; adjacent: infographic×12, single-image×6)
+- `learning × insight × grid` (empty; adjacent: infographic×12, single-image×6)
+- `learning × insight × timeline` (empty; adjacent: infographic×12, single-image×6)
+- `learning × insight × map` (empty; adjacent: infographic×12, single-image×6)
+- `learning × insight × before-after` (empty; adjacent: infographic×12, single-image×6)
+
+The mechanical brief: pick one existing example from the saturated (subject × info-type) row and regenerate in the missing layout. Single-template families can absorb this — `template-9-traits-info-grid` proves the grid layout works; cloning the design for `learning × insight × grid` is straightforward.
+
+**Caveats** for the first-run output:
+- Layout heuristic is id-substring based. Some templates classified as `single-image` actually have richer composition; some `infographic` matches catch incidental matches. Refining the rules OR promoting Layout to an explicit tag (audit Open item 2) would tighten the matrix.
+- `mbti` (26 templates) and `character` (45 templates) both have heavy `quiz` + `character-card` saturation but very thin `timeline`, `map`, `story` coverage — corroborates the 2026-05-30 content_shapes coverage matrix.
+- The 3D matrix is biased toward existing taxonomy entries. Brand-new subjects (world-cup just promoted to tier-1) won't show in MATRIX_SUBJECTS until added.
+
+**Next-step proposal (in order of ROI)**:
+1. **Pick 2-3 high-signal gap cells per week** for the daily content drop. The matrix surfaces them mechanically — no judgment needed beyond editorial pick.
+2. **Promote Layout to a queryable tag** (audit Open item 2). The heuristic works as a first cut but loses fidelity for genuinely-mixed-layout templates. Once explicit, the gap matrix becomes authoritative and feeds the search-generation bridge's accept criterion.
+3. **Tier-weighted matcher scoring** (#4 from the 2026-06-02 ontology-use proposal) — depends on Layout being a real tag.
 
 ### Current state
 
@@ -283,6 +332,55 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
 
 ---
 
+## 2026-06-03 — World Cup expansion plan
+
+GSC shows substantial WC-related search traffic. The tier-1 promotion + EntryBar hot chip shipped 2026-06-01, and the 2026-06-03 daily-drop tripled landing inspirations (1 template / 27 ins → 3 templates / 37 ins). Next wave: **deepen WC content, enrich UX, cross-link to adjacent topics (culture / travel / country pages), layer in monetization.** Items grouped by area; prioritization pending — see end of section for recommendation.
+
+### Content expansion (thread c)
+
+1. **Teams + team-battle watch-list** — top match-ups to anticipate per match week; matchday content cards. Adjacent template: `template-sports-battle` already covers 1v1 (Messi vs Ronaldo style); new use is *team vs team* match-ups (Brazil vs Argentina semi-final preview, etc.).
+
+2. **Post-match meme generator** (比赛结果的梗图) — meme cards for results, players, iconic moments. Sustained engagement (memes are re-shared more than infographics). Template family doesn't exist yet — would need a new `template-match-result-meme` boilerplate that takes (final-score, hero-player, moment-photo) and renders a shareable meme card.
+
+3. **Vote / "who are you rooting for"** interactive — sustained engagement loop independent of match schedule. Cross-cuts with product item 1 (polls); the vote artifact itself becomes a shareable card ("我支持的世界杯队伍 — Argentina!").
+
+4. **Top-query suggestions** — surface GSC long-tail demand on the /topics/world-cup page itself ("People also search: Argentina lineup, Brazil 2002 squad, World Cup all-time top scorers, ..."). Drives further click-through to specific subtopic pages.
+
+### UX & product iteration (cross-cutting)
+
+1. **Poll + comments** — engagement loop on /topics/world-cup and per-match pages. Polls per match ("Argentina or Brazil for semi?"); comments per page. Requires user account integration. **Polls without comments** is cheaper to ship first.
+
+2. **Calendar (match schedule)** — **core anchor** per user direction. Treat as the primary navigation surface on /topics/world-cup. Schedule data source: FIFA API (free, well-documented), or a static seed file refreshed weekly. Calendar entries link to per-match pages (which themselves host polls + post-match memes + team-watch content).
+
+3. **Topic-as-card layout** — country-specific WC pages (`/topics/argentina-world-cup`, `/topics/brazil-world-cup`, etc.) get a card-based layout: hero matchday card → squad card → historical record card → key matchup card. Mirrors the consumer-grade UX that Pinterest / sports.com use; differentiates from text-heavy infographic landing.
+
+4. **Country ↔ WC bidirectional links** — from `/topics/<country>` link to `/topics/world-cup` (cross-promotion via the country's WC history); from `/topics/world-cup` surface country breakdowns. Today the country pages exist but don't cross-link to WC. **Smallest scope, fastest ship.**
+
+### Monetization (new dimension)
+
+1. **Amazon affiliate integration** — jersey, ball, fan merch contextual to the page (Argentina page → Argentina jersey + Messi merch). Requires affiliate-link wrapping middleware + an SKU-to-context mapping; revenue starts at ~3-8% per click conversion. Cleanest pilot: 4 country pages (Brazil, Argentina, France, Germany) + WC main page.
+
+2. **Shopify print-on-demand for user-generated WC posters** — user generates a poster via our templates, hits "order printed" → routed to a Shopify POD partner (Printful / Gelato / Printify). Higher margin than affiliates (30-50%) but requires order-fulfillment integration + design-to-product conversion. Defer to Phase 2.
+
+### Cross-thread implications
+
+- **Search**: WC-related queries get disproportionate ROI from generation-bridge Phase 1. Worth aiming the bridge here first when it ships (thread d item 8).
+- **Tagging**: tier2.world-cup is empty today (the bucket was created when promoted to tier-1). Add tier-3 entries under it: teams (Brazil / Argentina / France / Germany / Spain / Italy / Netherlands / Portugal / England + women's powerhouses), tournament editions (2026 / 2027-women / 2022 / 2018 / 1986 nostalgia), eras (Golden Generation Spain, Argentina-Messi, Brazil-Pelé).
+- **Calendar** infrastructure: requires data model (`/data/wc_schedule.json` or a new schema), refresh cadence, UI component, link strategy from calendar entries to per-match pages.
+- **Polls + comments**: requires user-account integration (anonymous voting may be enough for polls; comments need identity).
+- **Affiliate compliance**: FTC disclosure required on every affiliate link; Amazon Operating Agreement compliance (no caching prices, etc.).
+
+### Recommended prioritization (DRAFT — please confirm or redirect)
+
+| Phase | Items | Why | Effort |
+| --- | --- | --- | --- |
+| **P0 — this week** | (1) Country ↔ WC bidirectional links · (2) tier-3 under tier2.world-cup (teams + editions) · (3) Top-query suggestions card on /topics/world-cup | Fastest-to-ship, highest cross-link / SEO value, leverages existing GSC signal | 1-2 days total |
+| **P1 — next week** | (4) Calendar component + schedule data · (5) `template-match-result-meme` boilerplate + 4-6 seed examples · (6) Amazon affiliate pilot on Brazil/Argentina/France/Germany + WC main | Calendar is the anchor; memes drive shareability; affiliate is monetization MVP | 3-5 days |
+| **P2 — after CTR data** | (7) Polls (no comments) · (8) Country-WC card-layout redesign · (9) Vote/rooting interactive | Requires usage signal to inform design choices; polls need account integration | 1 week+ |
+| **P3 — Phase 2 monetization** | (10) Shopify POD integration | Higher margin but requires fulfillment partnership + UX flow | Multi-week |
+
+---
+
 ## 2026-05-30 — Workstream refresh: content shapes + Reddit docking
 
 After ~10 days of search/content production plus the 2026-05-30 blog-engagement triage, the bottleneck has moved. Search recall on covered topics is largely fixed (eval 52/54 PASS, low-result panel ships demand signal, alias top-up is well-grooved). Content production is steady (~5-10 new templates per week via patch branches; 215 templates total). The new bottleneck is **discoverability of which content to make next** — both for filling demand that search/Reddit reveal, and for compounding the catalog without redundancy.
@@ -365,6 +463,15 @@ Ranked by how much each unblocks downstream. Reprioritized 2026-05-19 after runn
 11. **[thread d] Approval-rate-per-source dashboard panel**. Calibrates which adapter cron slots to keep.
 
 12. **[thread b] Periodic gallery-tag ↔ topic-registry consistency audit**. Catch silent drift. Subsumed once P0 #2 ships and the gallery tags carry a tier mapping.
+
+### Recently shipped (2026-06-03)
+- **[thread c] Daily content drop: hongjie28-patch-4 + hongjie28-patch-5** (`<this commit>`, 2026-06-03) — 3 new templates (all sports / international-event themed, perfect for /topics/world-cup tier-1 lift): `template-football-tournament-group-stage-bracket-infographic` (subject-bound to soccer tournaments), `template-international-event-promotional-poster` (BOILERPLATE per memory `feedback_template_topics_should_be_boilerplate.md` — hosts any event from sports to music festivals), `template-player-vintage-stats-card-poster` (subject-bound to football players, vintage aesthetic). patch-4 had malformed JSON (missing `]` and `,` between two templates) — extracted only the 2 new template definitions via brace-matching rather than full-file parse, preserving the post-Round-2A info-type tags on the 218 existing templates. 12 seed examples generated via Gemini-3-pro (4 per template: FIFA WC 2026 / UEFA Euro 2028 / Copa América / FIFA Women's WC 2027 brackets; FIFA WC 2026 / Milano Cortina / Coachella / Nagoya Asian Games event posters; Messi / Mbappé / Sun Wen / Marta vintage cards). Supabase pull `--since=2026-06-01` added 1 more inspiration (hairstyle-guide). 30 i18n template-locale entries via `scripts/add_hongjie28_patch4_patch5_v5_i18n.py` (flat top-level structure per memory `feedback_daily_drop_i18n.md`). **/topics/world-cup landing went 1 template/27 inspirations → 3 templates/37 inspirations**. Eval 55/57 PASS unchanged. Both remote branches deleted per memory `feedback_hongjie_patch_branches.md`.
+
+### Recently shipped (2026-06-02)
+- **[thread c] Gap-matrix batch 1 — 15 examples + tier-4 enrichment** (`cdb014f3`, 2026-06-02) — First content batch driven by the 3D gap matrix. 5 cells filled (16 entries proposed, 15 shipped, Iron Man deferred due to Gemini brand-content refusal on Mark-numbered Stark suits): character × comparison × before-after (Sun Wukong arc, Walter White arc), food × map × map (Italian regional pasta, Chinese provincial cuisine, Mexican mole varieties, French wine regions), sports × {quiz × matching-chart, collection × grid} (soccer-positions-mbti, olympic-sports-mbti, best-soccer-player-by-position), fashion × timeline × evolution (sneaker decades 1970-2026, denim decades, fashion eras 1920-2020), learning × insight × grid (9 animal facts, 16 weird historical events, 9 space facts). Per memory `feedback_template_topics_should_be_boilerplate.md`, subject tags written to **inspirations**' topics[], not parent templates. Tier-4 enrichment per memory `feedback_enrich_taxonomy_during_generation.md`: 4 new buckets (`wine`, `fashion-eras`, `olympic-sports`, `soccer-positions`) + extended `cuisine` (+8). Total 45 new tier-4 entity vocab entries.
+- **[thread b] 3D content gap matrix operationalized** (`cecfd25`, 2026-06-02) — `scripts/build_3d_gap_matrix.cjs` materializes the Subject × Info-type × Layout ontology with heuristic Layout derivation from template id substrings (since Layout isn't yet a queryable tag — 2026-06-01 audit Open item 2). First run: 3,510 3D cells, 778 fillable gap cells, 72 saturated. Layout-axis sparsity is the headline (single-image + infographic = 52% of catalog; flashcard, grid, collage, timeline, before-after all ≤7 templates each). Top-30 gap cells + 5 mechanical batch-gen briefs documented in `docs/search-and-content.md` Thread b. Flat `topics[]` schema preserved — tier classification at runtime.
+- **[thread a] Rewriter NAMED-ENTITY RELAXATION rule** (`bd231f53`, 2026-06-02) — Cycle 2 carryover. New clause in `lib/searchRewrite.ts` prompt: when a query names a specific entity nested in a broader catalog category, the rewrites should include BOTH the literal entity AND a broader-category fallback. Examples baked in: 服部平次 → [literal, Detective Conan supporting characters, anime detective character]; 阿兹特克 → [literal, ancient Mexico, Mesoamerican civilization]; 敦煌, Lamine Yamal etc. Additive — LITERAL-NOUN + CRITICAL clauses untouched. Eval 55/57 PASS unchanged.
+- **[thread a] Weekly search-evolution cycle 2** (`2d0ad4b0`, 2026-06-02) — Second in-session cycle. Cluster A carryover (chiikawa / samurai / genshin) post-topup hits hold. **P0 ship**: 出海品牌 (cross-border ecom brand, Chinese B2B query) → new alias-family `cross_border_ecom_brand` covering 4 product templates with bilingual aliases (出海品牌 / 跨境品牌 / 跨境电商 / 出海 / cross-border / dtc cross-border / overseas-market). 45 inspirations touched. After: 出海品牌 / cross-border / 跨境电商 / 出海 all jumped 0 → 45-46 hits rich. Cycle 3 carryover: rewriter relaxation hardening (shipped same day as bd231f53). Memory `project_search_weekly_review.md` cadence intact.
 
 ### Recently shipped (2026-05-31)
 - **[thread b] i18n-gating + product tier-2 completion** (`<this commit>`, 2026-05-31) — Single registry-level rule: a topic id is navigable (clickable chip + reachable `/topics/<slug>` page) only when `messages/en/topics.json` has an entry for it. Implemented in `lib/topicRegistry.ts` (filters `declaredTopicIds` + `allTopicIds` by `LOCALIZED_TOPIC_IDS`) and `app/[locale]/(public)/topics/[slug]/page.tsx` (explicit `notFound()` via new `isLocalizedTopic()` export). **Affects 99 unlocalized taxonomy entries** queued for future i18n: tier3.product (15, Round 2D), tier3.design aesthetic+lighting (25, Round 2B), tier3.travel temporal (11, Round 2B), tier3.lifestyle mood (48, Round 2B). The data stays in taxonomy as vocabulary; only the page surface is gated. Future entries auto-comply — author EN i18n in `messages/en/topics.json` to unlock the page. Also: product **tier-2** i18n added across 10 locales (packaging, ecommerce, showcase, branding) and 4 product templates tagged accordingly (food-product-packaging-design→packaging, fashion-ecommerce→ecommerce, product-poster+product-theme-promotional-poster→showcase). Richness audit: only 6 of the 99 unlocalized entries have any data attached (5 from auto-tag on the recent Supabase pull, 1 with 7 inspirations: `illustration`). Eval 55/57 PASS unchanged.

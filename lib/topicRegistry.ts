@@ -252,7 +252,35 @@ function buildTopicRegistry(): TopicRegistry {
     enrichedTopics.map((t) => [t.id, t])
   );
 
-  return { topics: enrichedTopics, topicById, topicToTemplates, templateToTopics, relatedTopics: new Map() };
+  // Manual cross-link map — bidirectional related-topic pairs that the
+  // tier hierarchy doesn't capture. Today's seed: country travel/culture
+  // pages ↔ their World Cup pages. /topics/brazil-world-cup links back
+  // to /topics/brazil (and vice versa). Extend this map when new topic
+  // pairs warrant explicit cross-promotion that EXPLICIT_PARENT_TOPIC +
+  // TIER3_TAG_PARENT can't reach.
+  const RELATED_LINKS: Record<string, string[]> = {
+    "brazil-world-cup":      ["brazil"],
+    "argentina-world-cup":   ["argentina"],
+    "france-world-cup":      ["france"],
+    "germany-world-cup":     ["germany"],
+    "italy-world-cup":       ["italy"],
+    "spain-world-cup":       ["spain"],
+    "england-world-cup":     ["uk"],
+    "portugal-world-cup":    ["portugal"],
+    "netherlands-world-cup": [],
+    "uruguay-world-cup":     [],
+    brazil:                  ["brazil-world-cup"],
+    argentina:               ["argentina-world-cup"],
+    france:                  ["france-world-cup"],
+    germany:                 ["germany-world-cup"],
+    italy:                   ["italy-world-cup"],
+    spain:                   ["spain-world-cup"],
+    uk:                      ["england-world-cup"],
+    portugal:                ["portugal-world-cup"],
+  };
+  const relatedTopics = new Map<string, string[]>(Object.entries(RELATED_LINKS));
+
+  return { topics: enrichedTopics, topicById, topicToTemplates, templateToTopics, relatedTopics };
 }
 
 const registry = buildTopicRegistry();

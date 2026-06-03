@@ -88,7 +88,18 @@
       "lighting",
       "composition"
     ],
-    "world-cup": []
+    "world-cup": [
+      "brazil-world-cup",
+      "argentina-world-cup",
+      "france-world-cup",
+      "germany-world-cup",
+      "italy-world-cup",
+      "spain-world-cup",
+      "england-world-cup",
+      "portugal-world-cup",
+      "netherlands-world-cup",
+      "uruguay-world-cup"
+    ]
   },
   "tier3": {
     "personality": [
@@ -560,7 +571,15 @@
       "Indian Cuisine",
       "French Cuisine",
       "Thai Cuisine",
-      "Vietnamese Cuisine"
+      "Vietnamese Cuisine",
+      "Bolognese",
+      "Carbonara",
+      "Cacio e Pepe",
+      "Pesto",
+      "Orecchiette",
+      "Oaxacan Mole",
+      "Sichuan Spicy",
+      "Cantonese Dim Sum"
     ],
     "species": [
       "Dog",
@@ -568,6 +587,83 @@
       "Horse",
       "Bird",
       "Fish"
+    ],
+    "wine": [
+      "Bordeaux",
+      "Burgundy",
+      "Champagne",
+      "Rhône",
+      "Loire",
+      "Alsace",
+      "Tuscany",
+      "Napa Valley",
+      "Rioja",
+      "Mosel"
+    ],
+    "fashion-eras": [
+      "Flapper",
+      "Dior New Look",
+      "1960s Mod",
+      "1970s Disco",
+      "1980s Power Suits",
+      "1990s Minimalism",
+      "Y2K Revival",
+      "Utility 1940s"
+    ],
+    "olympic-sports": [
+      "Gymnastics",
+      "Sprint",
+      "Marathon",
+      "Swimming",
+      "Fencing",
+      "Shooting",
+      "Weightlifting",
+      "Diving",
+      "Skateboarding",
+      "Surfing"
+    ],
+    "soccer-positions": [
+      "Striker",
+      "Midfielder",
+      "Defender",
+      "Goalkeeper",
+      "Wing-back",
+      "False 9",
+      "Defensive Mid",
+      "Attacking Mid",
+      "Sweeper"
+    ],
+    "cultures": [
+      "Aztec",
+      "Mesoamerican",
+      "Maya",
+      "Inca",
+      "Olmec",
+      "Toltec",
+      "Dunhuang",
+      "Mogao Caves",
+      "Silk Road",
+      "Confucianism",
+      "Taoism",
+      "Shinto"
+    ],
+    "physics-concepts": [
+      "Electric Field",
+      "Magnetic Field",
+      "Gravitational Field",
+      "Electromagnetic Wave",
+      "Quantum Mechanics",
+      "Wave Function",
+      "Standard Model",
+      "Black Hole"
+    ],
+    "historical-events": [
+      "Great Emu War",
+      "Dancing Plague",
+      "Boston Molasses Disaster",
+      "War of the Bucket",
+      "Tulip Mania",
+      "Great London Beer Flood"
     ]
   },
   "_gallery_tag_to_topics_note": "Gallery-prompt tag → tier-2/tier-3 topic(s) it maps to. Used by (1) lib/topicRegistry.ts getTopicsForTag — tag-page surfaces templates from these topics; (2) lib/relatedTags.ts getRelatedTags — tags sharing a topic are siblings. Replaces the previous flat-list categorized_tags.json categories with topic-aligned destinations.",
@@ -2134,6 +2230,7 @@
         "template-english-top5-phrases",
         "template-fandom-character-grid-poster",
         "template-fashion-nail-art-design",
+        "template-football-tournament-group-stage-bracket-infographic",
         "template-group-vocab-category",
         "template-hairstyle-color-recommendation",
         "template-interior-design-mood-board-generator",
@@ -2180,6 +2277,7 @@
         "template-english-word-difference-infographic",
         "template-fashion-before-after-outfit-annotation-card",
         "template-finance-comparison-infographic",
+        "template-football-tournament-group-stage-bracket-infographic",
         "template-generation-comparison-infographic",
         "template-hairstyle-color-recommendation",
         "template-historical-figure-vs-infographic",
@@ -2703,6 +2801,10 @@
     ],
     "template-food-recipe-tip-infographic": [
       "process"
+    ],
+    "template-football-tournament-group-stage-bracket-infographic": [
+      "collection",
+      "comparison"
     ],
     "template-friends-character-mbti": [
       "profile",
@@ -4102,6 +4204,13 @@
       "lifestyle",
       "posters"
     ],
+    "template-football-tournament-group-stage-bracket-infographic": [
+      "comparison",
+      "groups",
+      "posters",
+      "sports",
+      "world-cup"
+    ],
     "template-friends-character-mbti": [
       "character",
       "film",
@@ -4259,6 +4368,11 @@
       "mockups",
       "photorealistic",
       "showcase"
+    ],
+    "template-international-event-promotional-poster": [
+      "celebration",
+      "design",
+      "posters"
     ],
     "template-kids-opposite-concept-education": [
       "beginner",
@@ -4578,6 +4692,13 @@
       "language-english",
       "reading",
       "vocabulary"
+    ],
+    "template-player-vintage-stats-card-poster": [
+      "character",
+      "nostalgia",
+      "posters",
+      "sports",
+      "world-cup"
     ],
     "template-poetry-ink-wash-illustration": [
       "design",
