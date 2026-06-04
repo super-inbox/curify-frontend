@@ -42,8 +42,16 @@ function QueryChip({ query, locale }: { query: string; locale: string }) {
   );
 }
 
+// World-Cup pages (the tier-1 + all country-WC tier-2 pages) share the
+// same curated query list. Country-specific lists can be added by giving
+// the topic an explicit entry in TOP_QUERIES above.
+function isWorldCupPage(topicId: string): boolean {
+  return topicId === "world-cup" || topicId.endsWith("-world-cup");
+}
+
 export default function TopSearchSuggestions({ locale, topicId, heading }: Props) {
-  const queries = TOP_QUERIES[topicId];
+  const queries = TOP_QUERIES[topicId]
+    ?? (isWorldCupPage(topicId) ? TOP_QUERIES["world-cup"] : undefined);
   if (!queries || !queries.length) return null;
   return (
     <div>
