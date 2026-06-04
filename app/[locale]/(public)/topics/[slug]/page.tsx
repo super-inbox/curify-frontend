@@ -253,7 +253,13 @@ export default async function Page({ params }: Props) {
   const templatesHeading =
     translateTopics("topicPage.templatesHeading") || "Templates";
 
-  const relatedTopicIds = getRelatedTopics(slug);
+  // Filter every chip list by isLocalizedTopic so the heading sections
+  // don't mount when all chips would be suppressed by TopicNavRow's
+  // showDisabled={false} (which drops unlocalized = non-navigable
+  // entries). Without this, sections like "Explore More" / "Browse by
+  // Category" render an empty h2 above zero chips — see WC pages
+  // pre-2026-06-04 where tier3.world-cup had 12 unlocalized editions.
+  const relatedTopicIds = getRelatedTopics(slug).filter((id) => isLocalizedTopic(id));
 
   const parentTopicId = getParentTopic(slug);
 
@@ -261,17 +267,18 @@ export default async function Page({ params }: Props) {
   const tier1Ancestor = getTier1Ancestor(slug);
 
   // Tier 2 navigational subtopics — shown at top on all tiers
-  const navSubTopics = tier1Ancestor ? getNavigationalChildren(tier1Ancestor) : [];
+  const navSubTopics = (tier1Ancestor ? getNavigationalChildren(tier1Ancestor) : [])
+    .filter((id) => isLocalizedTopic(id));
 
-  // Tier 3 tag subtopics — shown at bottom on all tiers.
-  // Don't filter by isTopicEnabled: subject Tier 3 tags (animals, evolution,
-  // food-and-drink, family, etc.) are intentionally surfaced even before they
-  // have tagged content so the navigation is discoverable while content gets
-  // curated. The destination topic page falls back to the gallery section
-  // (TOPIC_GALLERY_TAG) when there's no template grid yet.
-  const tagSubTopics = tier1Ancestor
+  // Tier 3 tag subtopics — shown at bottom on all tiers. Filtered by
+  // isLocalizedTopic so unlocalized tier-3 vocabulary entries (e.g.,
+  // tier3.world-cup's 12 tournament editions that intentionally stay
+  // vocabulary-only per the i18n-gating rule) don't show an empty
+  // section header.
+  const tagSubTopics = (tier1Ancestor
     ? getTagChildren(tier1Ancestor).filter((id) => id !== slug)
-    : [];
+    : []
+  ).filter((id) => isLocalizedTopic(id));
 
   const subTopicsHeading = !!parentTopicId
     ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"
