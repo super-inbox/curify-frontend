@@ -342,7 +342,20 @@
       "promotional-poster",
       "logo-application"
     ],
-    "world-cup": []
+    "world-cup": [
+      "world-cup-2026",
+      "world-cup-2022",
+      "world-cup-2018",
+      "world-cup-2014",
+      "world-cup-2010",
+      "world-cup-2002",
+      "world-cup-1986",
+      "world-cup-1970",
+      "world-cup-1958",
+      "womens-world-cup-2027",
+      "womens-world-cup-2023",
+      "womens-world-cup-2019"
+    ]
   },
   "tier4": {
     "_note": "Leaf topic names grouped by their tier-3 subject. Input to scripts/generate_template_examples.cjs for content drops. Add new subjects here; existing code (auto-tag pipeline, search index) keys off the subject name in tier3.language / tier3.learning.",

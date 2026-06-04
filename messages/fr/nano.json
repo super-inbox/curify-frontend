@@ -4661,5 +4661,83 @@
         ]
       }
     }
+  },
+  "template-yellow-themed-illustrated-timeline-infographic": {
+    "title": "Infographie chronologique illustrée sur le thème jaune",
+    "category": "Infographie chronologique",
+    "description": "Infographie chronologique vintage sur un fond jaune vibrant. Mise en page en chemin sinueux avec des illustrations circulaires, des dates et des courtes descriptions de chaque moment clé. Parfait pour des affiches éducatives en classe, des explications historiques et des chronologies d'histoires de marque.",
+    "content": {
+      "sections": {
+        "what": "Génère une affiche infographique chronologique vintage dessinée à la main avec un chemin sinueux sur un fond jaune vif. Chaque jalon reçoit une illustration circulaire avec une date et une courte légende. Doodles décoratifs et séparateurs de sections propres tout au long.",
+        "who": "Éducateurs, éditeurs de classe, créateurs de contenu muséal/archivistique et narrateurs de marque qui souhaitent une esthétique chaleureuse mémorable pour toute narration sur la progression dans le temps.",
+        "how": "Fournissez un sujet unique (Histoire de l'exploration spatiale, Chronologie de l'histoire de la musique, Évolution de la technologie de communication). Le modèle rend la chronologie complète comme une image composée avec une direction artistique vintage dessinée à la main.",
+        "prompts": "Meilleurs sujets : histoires linéaires claires avec 5 à 10 jalons reconnaissables. Fonctionne bien pour l'évolution technologique, les mouvements musicaux/artistiques, les époques de mode, les découvertes scientifiques, les styles architecturaux."
+      }
+    }
+  },
+  "template-fashion-style-outfit-breakdown-infographic": {
+    "title": "Infographie de décomposition de tenue de style de mode",
+    "category": "Infographie de mode",
+    "description": "Affiche de décomposition de tenue en écran partagé : photo stylée en plein corps d'un côté, liste numérotée d'articles de vêtements + accessoires + palette de couleurs de l'autre. Thématique autour d'esthétiques de mode spécifiques comme Cottagecore, Dark Academia, Y2K, Streetwear.",
+    "content": {
+      "sections": {
+        "what": "Rend une infographie de décomposition de tenue stylée avec un design en écran partagé — photo de tenue en plein corps d'un côté, liste d'articles numérotés avec brèves descriptions de l'autre. Inclut une description de l'ambiance et une palette de couleurs en bas.",
+        "who": "Créateurs de mode, blogueurs de style, constructeurs de garde-robe capsule et acheteurs personnels créant des lookbooks cohérents ou du contenu de tenue du jour pour Pinterest, Instagram ou zines imprimés.",
+        "how": "Fournissez un sujet de style de mode (Cottagecore, Dark Academia, Minimaliste, Sporty Luxe, Y2K). Le modèle rend la tenue stylée complète + carte de décomposition dans une esthétique cohérente.",
+        "prompts": "Meilleurs sujets : styles définis par une esthétique établie avec des indices visuels reconnaissables. Cottagecore, Y2K, Streetwear, Academia, Bohémien, Sporty Luxe fonctionnent tous bien. Moins efficace pour des descripteurs génériques comme décontracté ou formel."
+      }
+    }
+  },
+  "template-annual-event-calendar-infographic": {
+    "title": "Infographie du calendrier des événements annuels",
+    "category": "Infographie de calendrier",
+    "description": "Affiche colorée du calendrier des événements annuels avec des sections mensuelles dans une grille, chacune dans un bloc de couleur pastel distinct. Liste des événements avec dates, heures et icônes thématiques. Parfait pour les calendriers communautaires, les horaires scolaires et les planificateurs d'événements d'entreprise.",
+    "content": {
+      "sections": {
+        "what": "Génère un calendrier des événements annuels ludique dans une mise en page de grille de 12 mois. Chaque mois reçoit son propre bloc de couleur pastel avec des noms d'événements, des dates, des heures et des icônes thématiques assorties. Doodles décoratifs par thème de mois.",
+        "who": "Gestionnaires communautaires, administrateurs scolaires, opérateurs de stations de camping-car, planificateurs d'événements d'entreprise et organisateurs d'activités familiales qui souhaitent une référence visuelle unique pour une année d'événements récurrents.",
+        "how": "Fournissez le titre du calendrier (Événements de station de camping-car 2025, Calendrier scolaire, Planificateur d'activités familiales). Le modèle rend l'ensemble du programme annuel comme une affiche de grille composée.",
+        "prompts": "Meilleurs sujets : horaires annuels récurrents avec un événement par mois. Calendriers de stations, programmes de centres communautaires, plans scolaires, circuits de festivals fonctionnent tous bien. Moins efficace pour des horaires d'événements sporadiques irréguliers."
+      }
+    }
+  },
+  "template-soccer-star-comic-retro-poster-card": {
+    "title": "Carte d'affiche rétro de bande dessinée de star du football",
+    "category": "Affiche de sport",
+    "description": "Affiche verticale de star du football au style bande dessinée vintage. Figure centrale en pleine course dribblant dans un maillot national authentique, entourée de panneaux de bande dessinée monochromes en gravure bleue montrant des jalons de carrière — levée de trophée, buts classiques, célébrations de championnat. Fond en parchemin crème vieilli, esthétique de manga sportif vintage occidental.",
+    "content": {
+      "sections": {
+        "what": "Rend une affiche verticale de star du football au style bande dessinée vintage. Le joueur présenté est rendu en pose de dribble en pleine course en couleur au centre, entouré de panneaux monochromes en gravure bleue capturant des moments emblématiques de carrière. Fond en parchemin crème vieilli avec typographie en bloc audacieuse.",
+        "who": "Fans de football, designers de marchandises sportives, supporters de clubs/équipes nationales et illustrateurs éditoriaux créant des affiches de tributes de joueurs au style rétro pour la fenêtre de la Coupe du Monde 2026 ou du contenu de légende de joueur intemporel.",
+        "how": "Fournissez le nom complet du joueur de football (Cristiano Ronaldo, Harry Kane, Pedri, Kylian Mbappé, Francesco Totti). Le modèle rend l'affiche de bande dessinée avec le maillot + panneaux de jalons de carrière.",
+        "prompts": "Meilleurs joueurs : stars du football actuelles et historiques largement reconnues avec des moments iconiques établis. Fonctionne pour Ronaldo, Messi, Kane, Mbappé, Müller, Totti, Pelé, Maradona. Moins efficace pour les joueurs émergents sans arc de carrière clair."
+      }
+    }
+  },
+  "template-all-sports-tournament-schedule-infographic": {
+    "title": "Infographie du calendrier des tournois de tous les sports",
+    "category": "Infographie de sport",
+    "description": "Infographie verticale de calendrier de tournoi formel. Bannière supérieure avec le titre de l'événement + portraits d'athlètes + trophée de championnat. Milieu : classements de groupe + calendrier des matchs en blocs segmentés. Bas : tableau chronologique des éliminatoires avec dates des matchs. Prend en charge des styles artistiques réalistes / cartoon / minimalistes.",
+    "content": {
+      "sections": {
+        "what": "Génère une affiche infographique de calendrier de tournoi au style officiel complet. Bannière supérieure avec titre + portraits d'athlètes en collage + trophée de championnat. Section intermédiaire avec classements de la phase de groupes dans des blocs codés par couleur. Bas avec tableau chronologique des éliminatoires de la phase préliminaire aux finales.",
+        "who": "Producteurs de médias sportifs, organisateurs de tournois, hôtes de soirées de visionnage, et publications de paris sportifs / fantasy souhaitant une affiche de référence canonique unique pour l'ensemble d'un tournoi.",
+        "how": "Fournissez le nom complet du tournoi + les détails du calendrier (Calendrier de la phase de groupes de la saison régulière NBA 2025, Tableau des éliminatoires du Championnat du Monde LOL S15). Le modèle génère l'affiche complète du calendrier.",
+        "prompts": "Meilleurs tournois : grands événements multi-phases avec phases de groupes + éliminatoires. Fonctionne pour les Coupes du Monde de football, les championnats du monde d'esports, les calendriers de saison de basketball, les grands chelems de tennis. Moins efficace pour les événements à match unique sans structure de tableau."
+      }
+    }
+  },
+  "template-universal-event-split-schedule-flyer-poster": {
+    "title": "Affiche de Flyer de Calendrier Universel Multi-Pays",
+    "category": "Flyer d'Événement",
+    "description": "Affiche décorative verticale de calendrier d'événements pour des tournois multi-régions / multi-pays. Haut : trophée + titre en gras. Milieu : colonnes verticales égales par région hôte avec date, lieu, portraits d'invités, match d'ouverture. Bas : informations sur le producteur + texte factuel. Esthétique décorative folklorique vibrante.",
+    "content": {
+      "sections": {
+        "what": "Rend une affiche de flyer de calendrier multi-colonnes pour des événements répartis sur plusieurs régions ou pays hôtes. Haut trophée + bannière de titre ; milieu mise en page à colonnes égales par région hôte avec date régionale, lieu, match d'ouverture, portraits d'invités, décoration thématique ; bas producteur + texte factuel.",
+        "who": "Producteurs d'événements pour des tournois multi-hôtes (accueil de trois nations FIFA 2026, villes divisées des Jeux Asiatiques, finales d'esports dans plusieurs lieux), et équipes de marketing d'événements de voyage promouvant des calendriers de tournée multi-étapes.",
+        "how": "Fournissez le nom du tournoi + les détails du calendrier réparti par hôte (Calendrier de la cérémonie d'ouverture de la Coupe du Monde FIFA 2026 à trois nations, Arrangement d'ouverture des Jeux Asiatiques en ville divisée). Le modèle génère le flyer complet à colonnes multiples.",
+        "prompts": "Meilleurs événements : tournois / festivals véritablement organisés dans plusieurs régions avec des programmes locaux distincts. Fonctionne pour la FIFA 2026 (États-Unis/Canada/Mexique), les Jeux Asiatiques multi-villes, la tournée mondiale d'esports. Moins efficace pour les événements à lieu unique sans répartition géographique."
+      }
+    }
   }
 }

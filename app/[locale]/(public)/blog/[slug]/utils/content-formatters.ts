@@ -1,3 +1,23 @@
+import { CDN_BASE } from "@/lib/constants";
+
+// Server-safe pure CDN URL rewriter. Mirrors the toCdnUrl in
+// CdnImage.tsx but lives here so the markdown→HTML formatter can use it
+// from server components (CdnImage.tsx is "use client").
+//
+// public/images/ is gitignored — the deployed bundle doesn't carry the
+// nano_insp jpgs. Inline <img src="/images/..."> emitted by the markdown
+// regex below would 404 against the page origin unless rewritten to the
+// CDN. Applied to formatContent + formatNanoBananaContent image rules.
+function toCdnUrl(src: string): string {
+  if (src.startsWith("http://") || src.startsWith("https://")) return src;
+  const clean = src.startsWith("/") ? src : `/${src}`;
+  if (!CDN_BASE) return clean;
+  if (clean.startsWith("/images/") || clean.startsWith("/video/") || clean.startsWith("/audio/")) {
+    return `${CDN_BASE}${clean}`;
+  }
+  return clean;
+}
+
 // Unified markdown table parser
 export function parseMarkdownTable(content: string): string {
   const lines = content.split('\n');
@@ -305,7 +325,8 @@ export function formatNanoBananaContent(content: string): string {
     // raw <img>) in messages because ICU MessageFormat treats attributed
     // HTML tags as INVALID_TAG and silently swallows the whole message,
     // surfacing as the dot-path key in the rendered page.
-    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="my-4 mx-auto max-w-md rounded-lg shadow" />')
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) =>
+      `<img src="${toCdnUrl(src)}" alt="${alt}" class="my-4 mx-auto max-w-md rounded-lg shadow" />`)
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
       // Internal Curify URLs (start with /) open in the SAME tab so session
@@ -355,7 +376,8 @@ export function formatContent(content: string): string {
     // since the syntax overlaps with [text](url). Kept as markdown (not
     // raw <img>) in messages because ICU MessageFormat treats attributed
     // HTML tags as INVALID_TAG and silently swallows the whole message.
-    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="my-4 mx-auto max-w-md rounded-lg shadow" />')
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) =>
+      `<img src="${toCdnUrl(src)}" alt="${alt}" class="my-4 mx-auto max-w-md rounded-lg shadow" />`)
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // bold LAST, inline
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
       // Internal Curify URLs (start with /) open in the SAME tab so session

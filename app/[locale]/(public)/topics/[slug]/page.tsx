@@ -21,6 +21,7 @@ import {
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic } from "@/lib/topicRegistry";
+import TopSearchSuggestions from "./TopSearchSuggestions";
 
 // Topic data is bundled (nano_templates.json + nano_inspiration.json +
 // blogs.json) plus a single fetch for related prompts. Bundled data
@@ -383,6 +384,18 @@ export default async function Page({ params }: Props) {
           />
         </section>
       )}
+
+      {/* Top-query suggestions — rendered at the bottom of the page so they
+          act as exploration prompts AFTER the user has scanned the content
+          grid above. Only renders when the topic has a curated list in
+          TopSearchSuggestions.tsx (today: world-cup). */}
+      <section className="mx-auto max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8">
+        <TopSearchSuggestions
+          locale={localeStr}
+          topicId={slug}
+          heading={translateTopics("topicPage.topQueriesHeading") || "People also search"}
+        />
+      </section>
 
     </main>
   );

@@ -102078,6 +102078,16 @@
     },
     "topics": [
       "nature"
+    ],
+    "search_aliases": [
+      "同形异义词",
+      "公园",
+      "故事",
+      "tear",
+      "nature",
+      "教育海报",
+      "英语学习",
+      "卡通插图"
     ]
   },
   {
@@ -102095,7 +102105,18 @@
         "title": "record live produce refuse"
       }
     },
-    "topics": []
+    "topics": [
+      "food-and-drink"
+    ],
+    "search_aliases": [
+      "record 录音",
+      "live 现场",
+      "produce 生产",
+      "refuse 拒绝",
+      "homographs 同形异义词",
+      "ESL 教学",
+      "educational poster 教育海报"
+    ]
   },
   {
     "id": "template-english-homograph-educational-poster-row-sow-polish-dove",
@@ -102226,63 +102247,6 @@
       "双关语"
     ],
     "topics": []
-  },
-  {
-    "id": "template-english-homograph-educational-poster-park-tear-story",
-    "template_id": "template-english-homograph-educational-poster",
-    "asset": {
-      "image_url": "/images/nano_insp/template-english-homograph-educational-poster-park-tear-story.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-homograph-educational-poster-park-tear-story-prev.jpg"
-    },
-    "params": {
-      "topic": "park tear story"
-    },
-    "locales": {
-      "en": {
-        "title": "park tear story"
-      }
-    },
-    "topics": [
-      "nature"
-    ],
-    "search_aliases": [
-      "同形异义词",
-      "公园",
-      "故事",
-      "tear",
-      "nature",
-      "教育海报",
-      "英语学习",
-      "卡通插图"
-    ]
-  },
-  {
-    "id": "template-english-homograph-educational-poster-record-live-produce-refuse",
-    "template_id": "template-english-homograph-educational-poster",
-    "asset": {
-      "image_url": "/images/nano_insp/template-english-homograph-educational-poster-record-live-produce-refuse.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-homograph-educational-poster-record-live-produce-refuse-prev.jpg"
-    },
-    "params": {
-      "topic": "record live produce refuse"
-    },
-    "locales": {
-      "en": {
-        "title": "record live produce refuse"
-      }
-    },
-    "topics": [
-      "food-and-drink"
-    ],
-    "search_aliases": [
-      "record 录音",
-      "live 现场",
-      "produce 生产",
-      "refuse 拒绝",
-      "homographs 同形异义词",
-      "ESL 教学",
-      "educational poster 教育海报"
-    ]
   },
   {
     "id": "template-dual-character-comparison-infographic-introvert-vs-extrovert-weekend",
@@ -109978,5 +109942,840 @@
       "球队贴纸"
     ],
     "allow_i18n": true
+  },
+  {
+    "id": "template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-group-draw-poster",
+    "template_id": "template-all-sports-tournament-schedule-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-group-draw-poster.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-group-draw-poster-prev.jpg"
+    },
+    "params": {
+      "tournament_info": "fifa world cup 2026 group draw poster"
+    },
+    "locales": {
+      "en": {
+        "title": "fifa world cup 2026 group draw poster"
+      }
+    },
+    "topics": [
+      "world-cup-2026"
+    ],
+    "search_aliases": [
+      "FIFA World Cup 2026",
+      "2026年世界杯",
+      "group draw poster",
+      "小组抽签海报",
+      "sports infographic",
+      "体育信息图",
+      "tournament schedule",
+      "比赛日程"
+    ]
+  },
+  {
+    "id": "template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-round-of-32-prediction-poster",
+    "template_id": "template-all-sports-tournament-schedule-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-round-of-32-prediction-poster.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-round-of-32-prediction-poster-prev.jpg"
+    },
+    "params": {
+      "tournament_info": "fifa world cup 2026 round of 32 prediction poster"
+    },
+    "locales": {
+      "en": {
+        "title": "fifa world cup 2026 round of 32 prediction poster"
+      }
+    },
+    "topics": [
+      "world-cup-2026"
+    ],
+    "search_aliases": [
+      "FIFA World Cup 2026",
+      "2026年世界杯",
+      "round of 32 prediction",
+      "32强预测",
+      "sports infographic",
+      "体育信息图",
+      "tournament schedule",
+      "比赛日程"
+    ]
+  },
+  {
+    "id": "template-annual-event-calendar-infographic-rv-resort",
+    "template_id": "template-annual-event-calendar-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-annual-event-calendar-infographic-rv-resort.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-annual-event-calendar-infographic-rv-resort-prev.jpg"
+    },
+    "params": {
+      "topic": "resort"
+    },
+    "locales": {
+      "en": {
+        "title": "resort"
+      }
+    },
+    "search_aliases": [
+      "度假村",
+      "resort",
+      "年度活动日历",
+      "社区日历",
+      "活动海报"
+    ]
+  },
+  {
+    "id": "template-fashion-style-outfit-breakdown-infographic-academia",
+    "template_id": "template-fashion-style-outfit-breakdown-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-style-outfit-breakdown-infographic-academia.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-academia-prev.jpg"
+    },
+    "params": {
+      "topic": "academia"
+    },
+    "locales": {
+      "en": {
+        "title": "academia"
+      }
+    },
+    "search_aliases": [
+      "学术风格",
+      "academia",
+      "时尚信息图",
+      "服装搭配",
+      "服饰清单"
+    ]
+  },
+  {
+    "id": "template-fashion-style-outfit-breakdown-infographic-bohemian",
+    "template_id": "template-fashion-style-outfit-breakdown-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-style-outfit-breakdown-infographic-bohemian.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-bohemian-prev.jpg"
+    },
+    "params": {
+      "topic": "bohemian"
+    },
+    "locales": {
+      "en": {
+        "title": "bohemian"
+      }
+    },
+    "topics": [
+      "vintage"
+    ],
+    "search_aliases": [
+      "波希米亚风格",
+      "bohemian",
+      "复古时尚",
+      "服装搭配",
+      "时尚信息图"
+    ]
+  },
+  {
+    "id": "template-fashion-style-outfit-breakdown-infographic-cottagecore",
+    "template_id": "template-fashion-style-outfit-breakdown-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-style-outfit-breakdown-infographic-cottagecore.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-cottagecore-prev.jpg"
+    },
+    "params": {
+      "topic": "cottagecore"
+    },
+    "locales": {
+      "en": {
+        "title": "cottagecore"
+      }
+    },
+    "topics": [
+      "vintage"
+    ],
+    "search_aliases": [
+      "cottagecore",
+      "田园风格",
+      "vintage fashion",
+      "乡村风格",
+      "复古服装",
+      "aesthetic outfits"
+    ]
+  },
+  {
+    "id": "template-fashion-style-outfit-breakdown-infographic-dark-academia",
+    "template_id": "template-fashion-style-outfit-breakdown-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-style-outfit-breakdown-infographic-dark-academia.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-dark-academia-prev.jpg"
+    },
+    "params": {
+      "topic": "dark academia"
+    },
+    "locales": {
+      "en": {
+        "title": "dark academia"
+      }
+    },
+    "topics": [
+      "moody-lighting"
+    ],
+    "search_aliases": [
+      "dark academia",
+      "黑暗学术风格",
+      "moody lighting",
+      "文艺复兴风格",
+      "gothic fashion",
+      "书卷气"
+    ]
+  },
+  {
+    "id": "template-fashion-style-outfit-breakdown-infographic-minimalist",
+    "template_id": "template-fashion-style-outfit-breakdown-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-style-outfit-breakdown-infographic-minimalist.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-minimalist-prev.jpg"
+    },
+    "params": {
+      "topic": "minimalist"
+    },
+    "locales": {
+      "en": {
+        "title": "minimalist"
+      }
+    },
+    "topics": [
+      "monochrome"
+    ],
+    "search_aliases": [
+      "minimalist",
+      "极简主义",
+      "monochrome",
+      "简约风格",
+      "clean design",
+      "simple outfits"
+    ]
+  },
+  {
+    "id": "template-fashion-style-outfit-breakdown-infographic-sporty-luxe",
+    "template_id": "template-fashion-style-outfit-breakdown-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-style-outfit-breakdown-infographic-sporty-luxe.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-sporty-luxe-prev.jpg"
+    },
+    "params": {
+      "topic": "sporty luxe"
+    },
+    "locales": {
+      "en": {
+        "title": "sporty luxe"
+      }
+    },
+    "search_aliases": [
+      "sporty luxe",
+      "运动奢华",
+      "athleisure",
+      "时尚运动",
+      "休闲奢华",
+      "casual chic"
+    ]
+  },
+  {
+    "id": "template-fashion-style-outfit-breakdown-infographic-streetwear",
+    "template_id": "template-fashion-style-outfit-breakdown-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-style-outfit-breakdown-infographic-streetwear.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-streetwear-prev.jpg"
+    },
+    "params": {
+      "topic": "streetwear"
+    },
+    "locales": {
+      "en": {
+        "title": "streetwear"
+      }
+    },
+    "search_aliases": [
+      "streetwear",
+      "街头风格",
+      "urban fashion",
+      "潮流服饰",
+      "街头文化",
+      "休闲风"
+    ]
+  },
+  {
+    "id": "template-fashion-style-outfit-breakdown-infographic-y2k",
+    "template_id": "template-fashion-style-outfit-breakdown-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-style-outfit-breakdown-infographic-y2k.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-y2k-prev.jpg"
+    },
+    "params": {
+      "topic": "y2k"
+    },
+    "locales": {
+      "en": {
+        "title": "y2k"
+      }
+    },
+    "topics": [
+      "y2k"
+    ],
+    "search_aliases": [
+      "y2k",
+      "时尚",
+      "服装风格",
+      "服装搭配",
+      "流行趋势",
+      "时尚美学",
+      "服装清单",
+      "配饰"
+    ]
+  },
+  {
+    "id": "template-international-event-promotional-poster-beijing-798-art-season-2026",
+    "template_id": "template-international-event-promotional-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-international-event-promotional-poster-beijing-798-art-season-2026.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-international-event-promotional-poster-beijing-798-art-season-2026-prev.jpg"
+    },
+    "params": {
+      "topic": "beijing 798 art season 2026"
+    },
+    "locales": {
+      "en": {
+        "title": "beijing 798 art season 2026"
+      }
+    },
+    "topics": [
+      "artistic"
+    ],
+    "search_aliases": [
+      "beijing 798 art season 2026",
+      "北京798艺术季",
+      "国际活动海报",
+      "艺术展",
+      "宣传海报",
+      "文化活动",
+      "艺术活动",
+      "城市地标"
+    ]
+  },
+  {
+    "id": "template-international-event-promotional-poster-coachella-2026-festival",
+    "template_id": "template-international-event-promotional-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-international-event-promotional-poster-coachella-2026-festival.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-international-event-promotional-poster-coachella-2026-festival-prev.jpg"
+    },
+    "params": {
+      "topic": "coachella 2026 festival"
+    },
+    "locales": {
+      "en": {
+        "title": "coachella 2026 festival"
+      }
+    },
+    "topics": [
+      "vibrant-colors"
+    ],
+    "search_aliases": [
+      "coachella 2026 festival",
+      "科切拉音乐节2026",
+      "音乐节海报",
+      "国际活动",
+      "节日活动",
+      "宣传海报",
+      "色彩鲜艳",
+      "户外音乐会"
+    ]
+  },
+  {
+    "id": "template-international-event-promotional-poster-dakar-2026-youth-olympics",
+    "template_id": "template-international-event-promotional-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-international-event-promotional-poster-dakar-2026-youth-olympics.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-international-event-promotional-poster-dakar-2026-youth-olympics-prev.jpg"
+    },
+    "params": {
+      "topic": "dakar 2026 youth olympics"
+    },
+    "locales": {
+      "en": {
+        "title": "dakar 2026 youth olympics"
+      }
+    },
+    "topics": [
+      "vibrant-colors"
+    ],
+    "search_aliases": [
+      "dakar 2026 youth olympics",
+      "达喀尔2026青年奥运会",
+      "国际活动海报",
+      "青年运动会",
+      "宣传海报",
+      "体育活动",
+      "色彩鲜艳",
+      "奥运会"
+    ]
+  },
+  {
+    "id": "template-international-event-promotional-poster-fifa-world-cup-2026-spanish",
+    "template_id": "template-international-event-promotional-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-international-event-promotional-poster-fifa-world-cup-2026-spanish.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-international-event-promotional-poster-fifa-world-cup-2026-spanish-prev.jpg"
+    },
+    "params": {
+      "topic": "fifa world cup 2026 spanish"
+    },
+    "locales": {
+      "en": {
+        "title": "fifa world cup 2026 spanish"
+      }
+    },
+    "topics": [
+      "vibrant-colors"
+    ],
+    "search_aliases": [
+      "fifa world cup 2026 spanish",
+      "2026年世界杯西班牙",
+      "国际活动海报",
+      "足球比赛",
+      "体育活动",
+      "宣传海报",
+      "色彩鲜艳",
+      "世界杯"
+    ]
+  },
+  {
+    "id": "template-player-vintage-stats-card-poster-argentina-franco-armani",
+    "template_id": "template-player-vintage-stats-card-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-player-vintage-stats-card-poster-argentina-franco-armani.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-player-vintage-stats-card-poster-argentina-franco-armani-prev.jpg"
+    },
+    "params": {
+      "topic": "argentina franco armani"
+    },
+    "locales": {
+      "en": {
+        "title": "argentina franco armani"
+      }
+    },
+    "topics": [
+      "world-cup-1986"
+    ],
+    "search_aliases": [
+      "argentina franco armani",
+      "阿根廷 弗朗哥·阿尔马尼",
+      "football player poster",
+      "vintage football stats",
+      "world cup 1986",
+      "football biography",
+      "antique sports poster"
+    ]
+  },
+  {
+    "id": "template-player-vintage-stats-card-poster-france-brais-samba",
+    "template_id": "template-player-vintage-stats-card-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-player-vintage-stats-card-poster-france-brais-samba.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-player-vintage-stats-card-poster-france-brais-samba-prev.jpg"
+    },
+    "params": {
+      "topic": "france brais samba"
+    },
+    "locales": {
+      "en": {
+        "title": "france brais samba"
+      }
+    },
+    "search_aliases": [
+      "france brais samba",
+      "法国 布雷斯·桑巴",
+      "football player poster",
+      "vintage football stats",
+      "football biography",
+      "antique sports poster"
+    ]
+  },
+  {
+    "id": "template-player-vintage-stats-card-poster-france-dayot-upamecano",
+    "template_id": "template-player-vintage-stats-card-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-player-vintage-stats-card-poster-france-dayot-upamecano.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-player-vintage-stats-card-poster-france-dayot-upamecano-prev.jpg"
+    },
+    "params": {
+      "topic": "france dayot upamecano"
+    },
+    "locales": {
+      "en": {
+        "title": "france dayot upamecano"
+      }
+    },
+    "search_aliases": [
+      "france dayot upamecano",
+      "法国 达约特·乌帕梅卡诺",
+      "football player poster",
+      "vintage football stats",
+      "football biography",
+      "antique sports poster"
+    ]
+  },
+  {
+    "id": "template-player-vintage-stats-card-poster-usa-chris-richards",
+    "template_id": "template-player-vintage-stats-card-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-player-vintage-stats-card-poster-usa-chris-richards.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-player-vintage-stats-card-poster-usa-chris-richards-prev.jpg"
+    },
+    "params": {
+      "topic": "usa chris richards"
+    },
+    "locales": {
+      "en": {
+        "title": "usa chris richards"
+      }
+    },
+    "search_aliases": [
+      "usa chris richards",
+      "美国 克里斯·理查兹",
+      "football player poster",
+      "vintage football stats",
+      "football biography",
+      "antique sports poster"
+    ]
+  },
+  {
+    "id": "template-player-vintage-stats-card-poster-usa-matt-turner",
+    "template_id": "template-player-vintage-stats-card-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-player-vintage-stats-card-poster-usa-matt-turner.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-player-vintage-stats-card-poster-usa-matt-turner-prev.jpg"
+    },
+    "params": {
+      "topic": "usa matt turner"
+    },
+    "locales": {
+      "en": {
+        "title": "usa matt turner"
+      }
+    },
+    "search_aliases": [
+      "usa matt turner",
+      "美国 马特·特纳",
+      "football player poster",
+      "vintage football stats",
+      "football biography",
+      "antique sports poster"
+    ]
+  },
+  {
+    "id": "template-soccer-star-comic-retro-poster-card-cristiano-ronaldo-portugal",
+    "template_id": "template-soccer-star-comic-retro-poster-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-soccer-star-comic-retro-poster-card-cristiano-ronaldo-portugal.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-cristiano-ronaldo-portugal-prev.jpg"
+    },
+    "params": {
+      "player_name": "cristiano ronaldo portugal"
+    },
+    "locales": {
+      "en": {
+        "title": "cristiano ronaldo portugal"
+      }
+    },
+    "search_aliases": [
+      "Cristiano Ronaldo",
+      "葡萄牙足球明星",
+      "soccer poster",
+      "vintage soccer art",
+      "comic style poster",
+      "football legend",
+      "retro sports art"
+    ]
+  },
+  {
+    "id": "template-soccer-star-comic-retro-poster-card-harry-kane-england",
+    "template_id": "template-soccer-star-comic-retro-poster-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-soccer-star-comic-retro-poster-card-harry-kane-england.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-harry-kane-england-prev.jpg"
+    },
+    "params": {
+      "player_name": "harry kane england"
+    },
+    "locales": {
+      "en": {
+        "title": "harry kane england"
+      }
+    },
+    "search_aliases": [
+      "Harry Kane",
+      "英格兰足球明星",
+      "soccer poster",
+      "vintage soccer art",
+      "comic style poster",
+      "football legend",
+      "retro sports art"
+    ]
+  },
+  {
+    "id": "template-soccer-star-comic-retro-poster-card-kilian-mbappe-france",
+    "template_id": "template-soccer-star-comic-retro-poster-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-soccer-star-comic-retro-poster-card-kilian-mbappe-france.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-kilian-mbappe-france-prev.jpg"
+    },
+    "params": {
+      "player_name": "kilian mbappe france"
+    },
+    "locales": {
+      "en": {
+        "title": "kilian mbappe france"
+      }
+    },
+    "search_aliases": [
+      "Kilian Mbappe",
+      "法国足球明星",
+      "soccer poster",
+      "vintage soccer art",
+      "comic style poster",
+      "football legend",
+      "retro sports art"
+    ]
+  },
+  {
+    "id": "template-soccer-star-comic-retro-poster-card-pedri-spain",
+    "template_id": "template-soccer-star-comic-retro-poster-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-soccer-star-comic-retro-poster-card-pedri-spain.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-pedri-spain-prev.jpg"
+    },
+    "params": {
+      "player_name": "pedri spain"
+    },
+    "locales": {
+      "en": {
+        "title": "pedri spain"
+      }
+    },
+    "search_aliases": [
+      "Pedri",
+      "西班牙足球明星",
+      "soccer poster",
+      "vintage soccer art",
+      "comic style poster",
+      "football legend",
+      "retro sports art"
+    ]
+  },
+  {
+    "id": "template-soccer-star-comic-retro-poster-card-thomas-muller-germany",
+    "template_id": "template-soccer-star-comic-retro-poster-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-soccer-star-comic-retro-poster-card-thomas-muller-germany.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-thomas-muller-germany-prev.jpg"
+    },
+    "params": {
+      "player_name": "thomas muller germany"
+    },
+    "locales": {
+      "en": {
+        "title": "thomas muller germany"
+      }
+    },
+    "search_aliases": [
+      "Thomas Muller",
+      "德国足球明星",
+      "soccer poster",
+      "vintage soccer art",
+      "comic style poster",
+      "football legend",
+      "retro sports art"
+    ]
+  },
+  {
+    "id": "template-universal-event-split-schedule-flyer-poster-fifa-world-cup-2026-opening-ceremony",
+    "template_id": "template-universal-event-split-schedule-flyer-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-universal-event-split-schedule-flyer-poster-fifa-world-cup-2026-opening-ceremony.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-universal-event-split-schedule-flyer-poster-fifa-world-cup-2026-opening-ceremony-prev.jpg"
+    },
+    "params": {
+      "tournament_info": "fifa world cup 2026 opening ceremony"
+    },
+    "locales": {
+      "en": {
+        "title": "fifa world cup 2026 opening ceremony"
+      }
+    },
+    "topics": [
+      "world-cup-2026"
+    ],
+    "search_aliases": [
+      "fifa world cup 2026 opening ceremony",
+      "2026年世界杯开幕式",
+      "FIFA世界杯海报",
+      "多国赛事海报",
+      "体育活动日程",
+      "世界杯活动安排",
+      "赛事宣传海报"
+    ]
+  },
+  {
+    "id": "template-yellow-themed-illustrated-timeline-infographic-architecture-history",
+    "template_id": "template-yellow-themed-illustrated-timeline-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-yellow-themed-illustrated-timeline-infographic-architecture-history.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-yellow-themed-illustrated-timeline-infographic-architecture-history-prev.jpg"
+    },
+    "params": {
+      "topic": "architecture history"
+    },
+    "locales": {
+      "en": {
+        "title": "architecture history"
+      }
+    },
+    "search_aliases": [
+      "建筑历史",
+      "architecture history",
+      "历史时间线",
+      "timeline infographic",
+      "教育资料",
+      "历史事件",
+      "黄色背景"
+    ]
+  },
+  {
+    "id": "template-yellow-themed-illustrated-timeline-infographic-art-history",
+    "template_id": "template-yellow-themed-illustrated-timeline-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-yellow-themed-illustrated-timeline-infographic-art-history.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-yellow-themed-illustrated-timeline-infographic-art-history-prev.jpg"
+    },
+    "params": {
+      "topic": "art history"
+    },
+    "locales": {
+      "en": {
+        "title": "art history"
+      }
+    },
+    "search_aliases": [
+      "艺术历史",
+      "art history",
+      "历史时间线",
+      "timeline infographic",
+      "教育资料",
+      "艺术事件",
+      "黄色背景"
+    ]
+  },
+  {
+    "id": "template-yellow-themed-illustrated-timeline-infographic-communication-inventions",
+    "template_id": "template-yellow-themed-illustrated-timeline-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-yellow-themed-illustrated-timeline-infographic-communication-inventions.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-yellow-themed-illustrated-timeline-infographic-communication-inventions-prev.jpg"
+    },
+    "params": {
+      "topic": "communication inventions"
+    },
+    "locales": {
+      "en": {
+        "title": "communication inventions"
+      }
+    },
+    "search_aliases": [
+      "通信发明",
+      "communication inventions",
+      "历史时间线",
+      "timeline infographic",
+      "教育资料",
+      "发明历史",
+      "黄色背景"
+    ]
+  },
+  {
+    "id": "template-yellow-themed-illustrated-timeline-infographic-fashion-history",
+    "template_id": "template-yellow-themed-illustrated-timeline-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-yellow-themed-illustrated-timeline-infographic-fashion-history.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-yellow-themed-illustrated-timeline-infographic-fashion-history-prev.jpg"
+    },
+    "params": {
+      "topic": "fashion history"
+    },
+    "locales": {
+      "en": {
+        "title": "fashion history"
+      }
+    },
+    "search_aliases": [
+      "时尚历史",
+      "fashion history",
+      "历史时间线",
+      "timeline infographic",
+      "教育资料",
+      "时尚事件",
+      "黄色背景"
+    ]
+  },
+  {
+    "id": "template-yellow-themed-illustrated-timeline-infographic-music-history",
+    "template_id": "template-yellow-themed-illustrated-timeline-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-yellow-themed-illustrated-timeline-infographic-music-history.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-yellow-themed-illustrated-timeline-infographic-music-history-prev.jpg"
+    },
+    "params": {
+      "topic": "music history"
+    },
+    "locales": {
+      "en": {
+        "title": "music history"
+      }
+    },
+    "search_aliases": [
+      "音乐历史",
+      "music history",
+      "历史时间线",
+      "timeline infographic",
+      "教育资料",
+      "音乐事件",
+      "黄色背景"
+    ]
+  },
+  {
+    "id": "template-yellow-themed-illustrated-timeline-infographic-space-exploration",
+    "template_id": "template-yellow-themed-illustrated-timeline-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-yellow-themed-illustrated-timeline-infographic-space-exploration.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-yellow-themed-illustrated-timeline-infographic-space-exploration-prev.jpg"
+    },
+    "params": {
+      "topic": "space exploration"
+    },
+    "locales": {
+      "en": {
+        "title": "space exploration"
+      }
+    },
+    "topics": [
+      "space"
+    ],
+    "search_aliases": [
+      "太空探索",
+      "space exploration",
+      "timeline infographic",
+      "教育图表",
+      "黄色主题",
+      "历史时间线",
+      "宇宙",
+      "关键时刻"
+    ]
   }
 ]
