@@ -6,6 +6,7 @@ import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import BlogCTACard from '@/app/[locale]/_components/BlogCTACard'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 import BlogInlineClickTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker'
+import BlogCodeBlockCopyTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogCodeBlockCopyTracker'
 import { formatVoiceCloningContent } from '@/app/[locale]/(public)/blog/[slug]/utils/content-formatters'
 
 const TOOLS = [
@@ -42,6 +43,7 @@ export default function BestAiToolsContent() {
   return (
     <article className="max-w-5xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <BlogInlineClickTracker blogSlug="best-ai-tools">
+      <BlogCodeBlockCopyTracker blogSlug="best-ai-tools">
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
         <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 text-sm">
@@ -251,6 +253,7 @@ export default function BestAiToolsContent() {
 
         <RelatedBlogs currentSlug="best-ai-tools" locale={locale} maxRelated={2} />
       </div>
+      </BlogCodeBlockCopyTracker>
       </BlogInlineClickTracker>
     </article>
   )
