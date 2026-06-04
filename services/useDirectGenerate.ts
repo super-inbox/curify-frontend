@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 
@@ -40,10 +40,33 @@ export function useDirectGenerate({
   } | null>(null);
   const bypassRef = useRef(false);
 
+  // Auto-resume after signin. When an anonymous user clicks Generate,
+  // we set pendingGenerateRef + open the signin drawer. When the user
+  // finishes signing in (userAtom transitions null → truthy), the
+  // useEffect below fires generate() automatically — so the user does
+  // not have to click Generate a second time after the drawer closes.
+  //
+  // Audit 2026-06-04 (engagement funnel deep-dive): blog-landing
+  // conversion was 1.5% vs template-direct 14.6%. Root cause was
+  // useDirectGenerate's hard bail at !user, which sent anonymous
+  // blog-referred traffic into the signin drawer and never resumed —
+  // the user had to remember to click Generate again post-signin
+  // (most did not). This closes the cliff.
+  const pendingGenerateRef = useRef(false);
+
   const generate = async () => {
     if (isGeneratingRef.current) return;
     isGeneratingRef.current = true;
-    if (!user) { setDrawerState("signin"); return; }
+    if (!user) {
+      // Anonymous → queue the action, open signin drawer, release the
+      // re-entry guard so the post-signin auto-resume can call generate
+      // again cleanly. Without releasing the ref, the post-signin call
+      // would silently no-op at the top of this function.
+      pendingGenerateRef.current = true;
+      isGeneratingRef.current = false;
+      setDrawerState("signin");
+      return;
+    }
 
     const credits =
       ((user as any)?.non_expiring_credits ?? 0) +
@@ -84,6 +107,23 @@ export function useDirectGenerate({
   };
 
   const clearWarning = () => setDuplicateWarning(null);
+
+  // Auto-resume after signin. Fires once when the user transitions from
+  // null → truthy AND a generate was queued. The closure here captures
+  // the latest `generate` on each re-render (which is itself the latest
+  // closure over user/params/etc.), so the resumed call sees the freshly-
+  // authenticated user and current form params.
+  useEffect(() => {
+    if (user && pendingGenerateRef.current) {
+      pendingGenerateRef.current = false;
+      generate();
+    }
+    // generate is intentionally omitted from deps — it changes on every
+    // render via closure capture, and we only want to fire when `user`
+    // transitions. The function we call is fresh by virtue of being
+    // looked up at fire-time inside the effect body.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   return { generate, dismissAndGenerate, isGenerating, duplicateWarning, clearWarning };
 }

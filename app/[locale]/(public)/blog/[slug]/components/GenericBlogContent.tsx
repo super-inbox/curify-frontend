@@ -1,4 +1,5 @@
 import BlogInlineClickTracker from "./BlogInlineClickTracker";
+import BlogCodeBlockCopyTracker from "./BlogCodeBlockCopyTracker";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 
 interface GenericBlogContentProps {
@@ -24,6 +25,7 @@ export default function GenericBlogContent({
 
   return (
     <BlogInlineClickTracker blogSlug={slug}>
+    <BlogCodeBlockCopyTracker blogSlug={slug}>
     <div className="space-y-6">
       {hasHero && (
         <section className="mb-8 not-prose">
@@ -250,6 +252,7 @@ export default function GenericBlogContent({
         </section>
       )}
     </div>
+    </BlogCodeBlockCopyTracker>
     </BlogInlineClickTracker>
   );
 }

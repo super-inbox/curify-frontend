@@ -6,6 +6,7 @@ import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 import NanoBananaExamples from '@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples'
 import BlogInlineClickTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker'
+import BlogCodeBlockCopyTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogCodeBlockCopyTracker'
 
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 type TemplateEntry = { name: string; slug: string; params: string }
@@ -29,6 +30,7 @@ export default function BlogContent() {
   return (
     <article className="mx-auto max-w-6xl px-4 py-8">
       <BlogInlineClickTracker blogSlug="character-prompt-generator">
+      <BlogCodeBlockCopyTracker blogSlug="character-prompt-generator">
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <header className="mb-8">
           <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
@@ -239,6 +241,7 @@ export default function BlogContent() {
 
         <RelatedBlogs currentSlug="character-prompt-generator" locale={locale} maxRelated={2} />
       </div>
+      </BlogCodeBlockCopyTracker>
       </BlogInlineClickTracker>
     </article>
   )

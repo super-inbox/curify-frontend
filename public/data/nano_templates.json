@@ -9832,5 +9832,110 @@
     "rank_score": 110,
     "creation_date": "2026-06-04",
     "allow_generation": true
+  },
+  {
+    "id": "template-global-city-walkability-infographic-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Global City Feature Infographic Creator) Grid layout urban feature infographic poster themed '{city_list_info}'. Layout: Multiple equal rectangular city card panels arranged in neat grid, every single city panel: top left small national flag + bold city&country title, middle large realistic panoramic landmark cityscape photo of local iconic architecture and pedestrian street scene, bottom row of circular icon + short descriptive text labels highlighting city core features like walkable districts, public transport, green space, cycling infrastructure; Optional top global headline banner with intro icon and theme subtitle for full infographic. Style: Clean modern infographic design, subtle dark or bright customizable background, crisp border segmentation for each city tile, high detail photorealistic city scenery, clear sans-serif typography, vibrant natural city color grading, 8K high definition print quality, flexible grid auto-adapts based on input city quantity. Subject: Walkable city feature showcase infographic for {city_list_info}.",
+        "parameters": [
+          {
+            "name": "city_list_info",
+            "label": "List of target cities with country",
+            "type": "text",
+            "placeholder": [
+              "Copenhagen Denmark, Amsterdam Netherlands, Paris France, Zurich Switzerland",
+              "Vienna Austria, Zurich Switzerland, Stockholm Sweden, Berlin Germany",
+              "Barcelona Spain, Tokyo Japan, Melbourne Australia, Singapore"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-global-city-walkability-infographic-card-third-group-8cities-prev.jpg",
+    "topics": [
+      "travel",
+      "lifestyle",
+      "groups",
+      "posters",
+      "infographic",
+      "design"
+    ],
+    "rank_score": 80,
+    "base_rank_score": 80,
+    "batch": true,
+    "allow_generation": true,
+    "creation_date": "2026-06-04"
+  },
+  {
+    "id": "template-sports-team-mbti-character-card-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Universal Sports Team MBTI Character Card Creator) Vertical framed sports team MBTI themed card poster themed '{team_mbti_info}'. Layout: Top area oversized heavy bold team name headline paired with national flag/team crest icon, middle main visual zone customizable artwork: team squad silhouette/action player illustration/tactical formation graphic matching team style; Middle-lower prominent badge block showing MBTI four-letter code + personality nickname with matching symbolic totem icon beside; Bottom split into two independent text boxes labeled TEAM PORTRAIT and KEY EVENT for descriptive copy, small team slogan footer text at very bottom edge. Color palette strictly based on official team representative colors, vintage textured paper overlay optional, sharp bold sports typography, clean segmented layout, supports soccer/basketball/esports/volleyball all competitive teams, multiple illustration styles: monochrome squad portrait / vibrant cultural graffiti / minimalist tactical line art. 8K high resolution commercial print poster quality. Subject: Official MBTI personality team card for {team_mbti_info}.",
+        "parameters": [
+          {
+            "name": "team_mbti_info",
+            "label": "Nation/Team Name + Corresponding MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "England National Football Team ISTJ",
+              "Brazil National Football Team ESFP",
+              "Spain National Football Team INTP",
+              "France National Football Team ENTJ",
+              "Argentina Basketball Team ISFP",
+              "LOL T1 Esports INTJ"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-sports-team-mbti-character-card-poster-brazil-esfp-prev.jpg",
+    "topics": [
+      "sports",
+      "character",
+      "mbti",
+      "quiz",
+      "posters",
+      "character-card"
+    ],
+    "rank_score": 82,
+    "base_rank_score": 80,
+    "batch": true,
+    "allow_generation": true,
+    "creation_date": "2026-06-04"
+  },
+  {
+    "id": "template-group-team-vertical-banner-country-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Universal Group Teams Vertical Banner Poster Creator) Vertical sports group art poster themed '{group_countries_info}'. Layout: Split into equal vertical independent pointed-bottom pennant banners, one banner for each participating nation inside the group; Every pennant top displays the country's official national flag and coat of arms, middle features representative national athlete wearing official home team uniform in dynamic competitive pose, below character decorated with iconic native landmark/animal/cultural totem matching the nation's regional features, bottom of pennant prints bold uppercase country name text; Bottom center of full artwork places tournament golden championship trophy, subtle stadium spotlight background across whole canvas, scattered sport equipment decorations at corner edges. Style: Bold vibrant cartoon comic illustration, thick clean outline strokes, saturated country-themed color grading, commercial sports poster texture, customizable sport type adapt for football/basketball/e-sports, neatly aligned layout, 8K high definition print quality. Subject: Group lineup banner artwork for {group_countries_info}.",
+        "parameters": [
+          {
+            "name": "group_countries_info",
+            "label": "Tournament Name + List of Group Participating Nations",
+            "type": "text",
+            "placeholder": [
+              "2026 World Cup Group H: Spain, Cabo Verde, Saudi Arabia, Uruguay",
+              "World Cup Group B: Canada, Bosnia, Qatar, Switzerland",
+              "Euro Cup Group C: Portugal, Jamaica, Uzbekistan, Colombia",
+              "Basketball World Cup Group D: Germany, Curacao, Ivory Coast, Ecuador"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-group-team-vertical-banner-country-poster-group-a-portugal-jamaica-uzbekistan-colombia-prev.jpg",
+    "topics": [
+      "sports",
+      "world-cup",
+      "soccer",
+      "groups",
+      "posters"
+    ],
+    "rank_score": 84,
+    "base_rank_score": 80,
+    "batch": true,
+    "allow_generation": true,
+    "creation_date": "2026-06-04"
   }
 ]
