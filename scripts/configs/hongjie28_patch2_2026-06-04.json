@@ -1,0 +1,82 @@
+[
+  {
+    "template_id": "template-group-team-vertical-banner-country-poster",
+    "params": { "group_countries_info": "2026 World Cup Group A: Mexico, Poland, Saudi Arabia, Argentina — North American host opener group" },
+    "topics": ["sports", "world-cup", "soccer", "argentina-world-cup", "mexico"],
+    "id_suffix": "wc-2026-group-a"
+  },
+  {
+    "template_id": "template-group-team-vertical-banner-country-poster",
+    "params": { "group_countries_info": "2026 World Cup Group B: Spain, Cabo Verde, Saudi Arabia, Uruguay — La Roja's defending Euro champions lead" },
+    "topics": ["sports", "world-cup", "soccer", "spain-world-cup", "uruguay-world-cup"],
+    "id_suffix": "wc-2026-group-b"
+  },
+  {
+    "template_id": "template-group-team-vertical-banner-country-poster",
+    "params": { "group_countries_info": "2026 World Cup Group C: Brazil, Senegal, Iran, Australia — Brazil's Selecao chase the sixth star" },
+    "topics": ["sports", "world-cup", "soccer", "brazil-world-cup"],
+    "id_suffix": "wc-2026-group-c"
+  },
+  {
+    "template_id": "template-group-team-vertical-banner-country-poster",
+    "params": { "group_countries_info": "2026 World Cup Group D: France, Cameroon, Croatia, USA — Les Bleus alongside the host USA" },
+    "topics": ["sports", "world-cup", "soccer", "france-world-cup", "usa"],
+    "id_suffix": "wc-2026-group-d"
+  },
+  {
+    "template_id": "template-group-team-vertical-banner-country-poster",
+    "params": { "group_countries_info": "2026 World Cup Group E: Germany, Morocco, Japan, Costa Rica — Die Mannschaft seeks redemption" },
+    "topics": ["sports", "world-cup", "soccer", "germany-world-cup"],
+    "id_suffix": "wc-2026-group-e"
+  },
+  {
+    "template_id": "template-group-team-vertical-banner-country-poster",
+    "params": { "group_countries_info": "2026 World Cup Group F: England, Wales, Belgium, Tunisia — Three Lions chasing first title since 1966" },
+    "topics": ["sports", "world-cup", "soccer", "england-world-cup"],
+    "id_suffix": "wc-2026-group-f"
+  },
+
+  {
+    "template_id": "template-sports-team-mbti-character-card-poster",
+    "params": { "team_mbti_info": "Brazil National Football Team — ESFP (The Entertainer) — flair, samba style, joyous attacking football" },
+    "topics": ["sports", "world-cup", "soccer", "brazil-world-cup", "mbti"],
+    "id_suffix": "brazil-mbti-esfp"
+  },
+  {
+    "template_id": "template-sports-team-mbti-character-card-poster",
+    "params": { "team_mbti_info": "Argentina National Football Team — ESTJ (The Executive) — clinical, disciplined, ruthless winners" },
+    "topics": ["sports", "world-cup", "soccer", "argentina-world-cup", "mbti"],
+    "id_suffix": "argentina-mbti-estj"
+  },
+  {
+    "template_id": "template-sports-team-mbti-character-card-poster",
+    "params": { "team_mbti_info": "Spain National Football Team — INTP (The Logician) — tiki-taka possession, geometric passing patterns, intellectual football" },
+    "topics": ["sports", "world-cup", "soccer", "spain-world-cup", "mbti"],
+    "id_suffix": "spain-mbti-intp"
+  },
+  {
+    "template_id": "template-sports-team-mbti-character-card-poster",
+    "params": { "team_mbti_info": "England National Football Team — ISTJ (The Logistician) — traditional structure, hardworking, classic 4-4-2 discipline" },
+    "topics": ["sports", "world-cup", "soccer", "england-world-cup", "mbti"],
+    "id_suffix": "england-mbti-istj"
+  },
+
+  {
+    "template_id": "template-global-city-walkability-infographic-card",
+    "params": { "city_list_info": "Top walkable European capitals: Copenhagen Denmark, Amsterdam Netherlands, Paris France, Zurich Switzerland — pedestrian-first urban design across Europe" },
+    "topics": ["travel", "lifestyle", "city", "europe"],
+    "id_suffix": "walkable-european-capitals"
+  },
+  {
+    "template_id": "template-global-city-walkability-infographic-card",
+    "params": { "city_list_info": "Most walkable Asian metropolises: Tokyo Japan, Singapore, Seoul Korea, Hong Kong China — dense urban cores with world-class transit" },
+    "topics": ["travel", "lifestyle", "city", "asia", "japan", "korea"],
+    "id_suffix": "walkable-asian-metros"
+  },
+  {
+    "template_id": "template-global-city-walkability-infographic-card",
+    "params": { "city_list_info": "Most walkable American cities: New York City, San Francisco, Boston, Chicago — North American urban walkability leaders" },
+    "topics": ["travel", "lifestyle", "city", "usa", "united-states"],
+    "id_suffix": "walkable-american-cities"
+  }
+]

@@ -4739,5 +4739,71 @@
         "prompts": "최고의 이벤트: 독특한 지역 프로그램이 있는 여러 지역에서 진정으로 개최되는 토너먼트 / 축제. FIFA 2026(미국/캐나다/멕시코), 아시안 게임 다중 도시, e스포츠 세계 투어에 적합합니다. 지리적 분할이 없는 단일 장소 이벤트에는 덜 효과적입니다."
       }
     }
+  },
+  "template-global-city-walkability-infographic-card": {
+    "category": "Global City Walkability Infographic",
+    "description": "Generate a grid-layout walkability infographic poster for any list of global cities — flags, landmark photos, walkability scores, and pedestrian-first urban design highlights.",
+    "title": "Nano Banana Prompt: Global City Walkability Infographic Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K grid-layout walkability infographic poster for any list of global cities. Each city panel features a small national flag, bold city/country title, large realistic panoramic landmark cityscape, walkability score, and key pedestrian-first urban design highlights. Layout works for 4-9 cities per poster.",
+        "who": "Suitable for urban planners, travel content creators, sustainable mobility advocates, real estate agents specializing in walkable neighborhoods, expat content publishers, and city tourism boards.",
+        "how": [
+          "Enter a comma-separated city list in {city_list_info} (e.g., Copenhagen Denmark, Amsterdam Netherlands, Paris France).",
+          "Each city auto-populates with flag, landmark cityscape, walkability score, and key features.",
+          "Grid layout adjusts based on number of cities (4-9 typical).",
+          "Generate a vertical 4K walkability infographic poster."
+        ],
+        "prompts": [
+          "Generate a walkability infographic for European capitals: Copenhagen, Amsterdam, Paris, Zurich.",
+          "Create a walkable Asian metropolises poster: Tokyo, Singapore, Seoul, Hong Kong.",
+          "Generate a walkable American cities infographic: NYC, San Francisco, Boston, Chicago."
+        ]
+      }
+    }
+  },
+  "template-sports-team-mbti-character-card-poster": {
+    "category": "Sports Team MBTI Character Card",
+    "description": "Generate a vertical MBTI character card poster for any sports team — national flag, team crest, squad silhouette, MBTI type analysis, playing-style breakdown, and tactical character traits.",
+    "title": "Nano Banana Prompt: Sports Team MBTI Character Card Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K MBTI character card poster for any sports team. Top header carries the team name in oversized bold typography paired with national flag/crest. Middle visual zone features squad silhouette / action player illustration / tactical formation graphic. Bottom panels list MBTI type explanation, playing-style traits, and signature tactical character.",
+        "who": "Suitable for sports content creators, MBTI fandom communities, fantasy league publishers, sports merchandise designers, and brands producing team-archetype visual content.",
+        "how": [
+          "Enter the team name + MBTI type in {team_mbti_info} (e.g., Brazil National Football Team ESFP, Spain INTP).",
+          "National flag/crest + squad silhouette auto-compose in the visual zone.",
+          "MBTI traits + playing-style breakdown auto-populate the lower panels.",
+          "Generate a vertical 4K sports team MBTI character card poster."
+        ],
+        "prompts": [
+          "Generate a Brazil National Football Team ESFP MBTI character card.",
+          "Create an Argentina National Football Team ESTJ MBTI poster.",
+          "Generate a Spain National Football Team INTP tiki-taka MBTI poster."
+        ]
+      }
+    }
+  },
+  "template-group-team-vertical-banner-country-poster": {
+    "category": "World Cup Group Banner Poster",
+    "description": "Generate a vertical group-stage banner poster for any World Cup or international tournament group — pennant-style flags, country crests, captain portraits, and group narratives.",
+    "title": "Nano Banana Prompt: World Cup Group Banner Country Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K group-stage banner poster for any World Cup or international tournament group. The image splits into equal vertical pointed-bottom pennant banners — one per participating nation. Each pennant top displays the country's national flag and coat of arms; middle features captain portrait and signature visual; bottom carries tournament info and group identifier.",
+        "who": "Suitable for World Cup content creators, soccer publishers, sports betting / fantasy league products, fan communities producing matchday graphics, and brands publishing tournament-themed visuals.",
+        "how": [
+          "Enter the tournament group in {group_countries_info} (e.g., 2026 World Cup Group A: Mexico, Poland, Saudi Arabia, Argentina).",
+          "Vertical pennant banners auto-populate per nation with flag, crest, captain.",
+          "Tournament header + group identifier render at the top.",
+          "Generate a vertical 4K group-stage banner poster."
+        ],
+        "prompts": [
+          "Generate a 2026 World Cup Group A banner: Mexico, Poland, Saudi Arabia, Argentina.",
+          "Create a 2026 World Cup Group C banner with Brazil, Senegal, Iran, Australia.",
+          "Generate a Euro Cup Group C banner: Portugal, Jamaica, Uzbekistan, Colombia."
+        ]
+      }
+    }
   }
 }

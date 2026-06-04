@@ -2244,6 +2244,8 @@
         "template-fandom-character-grid-poster",
         "template-fashion-nail-art-design",
         "template-football-tournament-group-stage-bracket-infographic",
+        "template-global-city-walkability-infographic-card",
+        "template-group-team-vertical-banner-country-poster",
         "template-group-vocab-category",
         "template-hairstyle-color-recommendation",
         "template-interior-design-mood-board-generator",
@@ -2279,6 +2281,7 @@
       "topic_word": "comparison",
       "templates": [
         "template-9-traits-info-grid",
+        "template-all-sports-tournament-schedule-infographic",
         "template-animation-studio-comparison-infographic",
         "template-battle",
         "template-character-comparison",
@@ -2333,7 +2336,8 @@
         "template-pet-life-journey-infographic",
         "template-sports-trophy-infographic",
         "template-what-if-history",
-        "template-world-landmark-vintage-info-poster"
+        "template-world-landmark-vintage-info-poster",
+        "template-yellow-themed-illustrated-timeline-infographic"
       ]
     },
     "process": {
@@ -2389,6 +2393,8 @@
       "description": "Attribute-rich catalog entry (herb, plant, species, landmark, intangible heritage).",
       "topic_word": "information-card",
       "templates": [
+        "template-all-sports-tournament-schedule-infographic",
+        "template-annual-event-calendar-infographic",
         "template-child-hobby-skill",
         "template-cultural-relic-retro-infographic",
         "template-dessert-color-lab-infographic",
@@ -2522,6 +2528,7 @@
         "template-personality-choice-quiz-card",
         "template-pop-culture-matching-chart",
         "template-princess-pearl-mbti-character-card",
+        "template-sports-team-mbti-character-card-poster",
         "template-zhenhuan-mbti-character-analysis"
       ]
     },
@@ -2549,11 +2556,18 @@
     "template-ai-outfit-try-on-poster": [
       "profile"
     ],
+    "template-all-sports-tournament-schedule-infographic": [
+      "comparison",
+      "information-card"
+    ],
     "template-anatomy-cut-guide": [
       "process"
     ],
     "template-animation-studio-comparison-infographic": [
       "comparison"
+    ],
+    "template-annual-event-calendar-infographic": [
+      "information-card"
     ],
     "template-architecture": [
       "profile"
@@ -2831,6 +2845,12 @@
     ],
     "template-generation-comparison-infographic": [
       "comparison"
+    ],
+    "template-global-city-walkability-infographic-card": [
+      "collection"
+    ],
+    "template-group-team-vertical-banner-country-poster": [
+      "collection"
     ],
     "template-group-vocab-category": [
       "collection",
@@ -3172,6 +3192,9 @@
     "template-sports-battle": [
       "comparison"
     ],
+    "template-sports-team-mbti-character-card-poster": [
+      "quiz"
+    ],
     "template-sports-technique-guide": [
       "process"
     ],
@@ -3285,6 +3308,9 @@
     ],
     "template-yellow-themed-illustrated-journey-infographic": [
       "process"
+    ],
+    "template-yellow-themed-illustrated-timeline-infographic": [
+      "timeline"
     ],
     "template-zhenhuan-mbti-character-analysis": [
       "insight",
@@ -3709,6 +3735,13 @@
       "portrait",
       "posters"
     ],
+    "template-all-sports-tournament-schedule-infographic": [
+      "comparison",
+      "information-card",
+      "posters",
+      "sports",
+      "world-cup"
+    ],
     "template-anatomy-cut-guide": [
       "food",
       "guides",
@@ -3720,6 +3753,11 @@
       "character",
       "comparison",
       "composition"
+    ],
+    "template-annual-event-calendar-infographic": [
+      "information-card",
+      "learning",
+      "posters"
     ],
     "template-architecture": [
       "architecture",
@@ -4158,6 +4196,11 @@
       "portrait",
       "posters"
     ],
+    "template-fashion-style-outfit-breakdown-infographic": [
+      "design",
+      "fashion",
+      "posters"
+    ],
     "template-fat-loss-plan": [
       "fitness",
       "guides",
@@ -4249,6 +4292,19 @@
       "lifestyle",
       "nostalgia",
       "posters"
+    ],
+    "template-global-city-walkability-infographic-card": [
+      "design",
+      "groups",
+      "lifestyle",
+      "posters",
+      "travel"
+    ],
+    "template-group-team-vertical-banner-country-poster": [
+      "groups",
+      "posters",
+      "sports",
+      "world-cup"
     ],
     "template-group-vocab-category": [
       "beginner",
@@ -4857,6 +4913,13 @@
       "posters",
       "vocabulary"
     ],
+    "template-soccer-star-comic-retro-poster-card": [
+      "character",
+      "nostalgia",
+      "posters",
+      "sports",
+      "world-cup"
+    ],
     "template-soft-decoration-design-guide": [
       "guides",
       "interior",
@@ -4892,6 +4955,13 @@
     "template-sports-battle": [
       "character",
       "comparison",
+      "sports"
+    ],
+    "template-sports-team-mbti-character-card-poster": [
+      "character",
+      "mbti",
+      "posters",
+      "quiz",
       "sports"
     ],
     "template-sports-technique-guide": [
@@ -4962,6 +5032,11 @@
       "guides",
       "itinerary",
       "travel"
+    ],
+    "template-universal-event-split-schedule-flyer-poster": [
+      "posters",
+      "sports",
+      "world-cup"
     ],
     "template-varieties-food-poster": [
       "food",
@@ -5112,6 +5187,12 @@
       "design",
       "guides",
       "lifestyle",
+      "posters"
+    ],
+    "template-yellow-themed-illustrated-timeline-infographic": [
+      "evolution",
+      "history",
+      "learning",
       "posters"
     ],
     "template-zhenhuan-mbti-character-analysis": [
