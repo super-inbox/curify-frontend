@@ -9594,57 +9594,148 @@
     "batch": true,
     "allow_generation": true,
     "creation_date": "2026-06-02"
-  }
-,
+  },
   {
     "id": "template-yellow-themed-illustrated-timeline-infographic",
     "locales": {
-        "en": {
-            "base_prompt": "(Illustrated Timeline Infographic Creator) Create a warm, educational timeline infographic poster titled '{topic}'. Layout: A winding path timeline on a vibrant yellow background, with key historical moments marked by circular illustrations, dates, and short descriptions. Include decorative doodles and hand-drawn elements. Style: Vintage hand-drawn illustration aesthetic, bold typography, clear section dividers, direct high-quality image generation. Subject: '{topic} illustrated timeline infographic'.",
-            "parameters": [
-                {
-                    "name": "topic",
-                    "label": "Timeline Topic",
-                    "type": "text",
-                    "placeholder": ["Space Exploration History", "Communication Technology Evolution", "Music History Timeline", "Architecture Through the Ages", "Fashion History Journey", "Art Movements Timeline"]
-                }
+      "en": {
+        "base_prompt": "(Illustrated Timeline Infographic Creator) Create a warm, educational timeline infographic poster titled '{topic}'. Layout: A winding path timeline on a vibrant yellow background, with key historical moments marked by circular illustrations, dates, and short descriptions. Include decorative doodles and hand-drawn elements. Style: Vintage hand-drawn illustration aesthetic, bold typography, clear section dividers, direct high-quality image generation. Subject: '{topic} illustrated timeline infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Timeline Topic",
+            "type": "text",
+            "placeholder": [
+              "Space Exploration History",
+              "Communication Technology Evolution",
+              "Music History Timeline",
+              "Architecture Through the Ages",
+              "Fashion History Journey",
+              "Art Movements Timeline"
             ]
-        }
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-yellow-themed-illustrated-timeline-infographic-architecture-history-prev.jpg"
-},
+  },
   {
     "id": "template-fashion-style-outfit-breakdown-infographic",
     "locales": {
-        "en": {
-            "base_prompt": "(Fashion Style Outfit Breakdown Infographic Creator) Create a stylish outfit breakdown infographic poster titled '{topic} Fashion'. Layout: Split-screen design with a full-body photo of the outfit on the left, and a numbered list of individual clothing items/accessories on the right. Include a vibe description and color palette at the bottom, plus decorative doodles and a matching color theme. Style: Themed, cohesive aesthetic, bold typography, direct high-quality image generation. Subject: '{topic} fashion outfit breakdown infographic'.",
-            "parameters": [
-                {
-                    "name": "topic",
-                    "label": "Fashion Style Topic",
-                    "type": "text",
-                    "placeholder": ["Cottagecore", "Dark Academia", "Minimalist", "Sporty Luxe", "Streetwear", "Y2K", "Academia", "Bohemian"]
-                }
+      "en": {
+        "base_prompt": "(Fashion Style Outfit Breakdown Infographic Creator) Create a stylish outfit breakdown infographic poster titled '{topic} Fashion'. Layout: Split-screen design with a full-body photo of the outfit on the left, and a numbered list of individual clothing items/accessories on the right. Include a vibe description and color palette at the bottom, plus decorative doodles and a matching color theme. Style: Themed, cohesive aesthetic, bold typography, direct high-quality image generation. Subject: '{topic} fashion outfit breakdown infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Fashion Style Topic",
+            "type": "text",
+            "placeholder": [
+              "Cottagecore",
+              "Dark Academia",
+              "Minimalist",
+              "Sporty Luxe",
+              "Streetwear",
+              "Y2K",
+              "Academia",
+              "Bohemian"
             ]
-        }
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-streetwear-prev.jpg"
-},
+  },
   {
     "id": "template-annual-event-calendar-infographic",
     "locales": {
-        "en": {
-            "base_prompt": "(Annual Event Calendar Infographic Creator) Create a colorful, playful event calendar poster titled '{topic}'. Layout: Monthly sections arranged in a grid, each with a distinct pastel color block, listing events with dates, times, and matching themed icons. Include a logo or header, and decorative doodles for each month's theme. Style: Bright, whimsical, bold typography with high contrast, direct high-quality image generation. Subject: '{topic} annual event calendar infographic'.",
-            "parameters": [
-                {
-                    "name": "topic",
-                    "label": "Calendar Title",
-                    "type": "text",
-                    "placeholder": ["2025 RV Resort Events", "Community Center Annual Events", "School Year Calendar", "Local Festival Schedule", "Family Activity Planner", "Corporate Team Building Calendar"]
-                }
+      "en": {
+        "base_prompt": "(Annual Event Calendar Infographic Creator) Create a colorful, playful event calendar poster titled '{topic}'. Layout: Monthly sections arranged in a grid, each with a distinct pastel color block, listing events with dates, times, and matching themed icons. Include a logo or header, and decorative doodles for each month's theme. Style: Bright, whimsical, bold typography with high contrast, direct high-quality image generation. Subject: '{topic} annual event calendar infographic'.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Calendar Title",
+            "type": "text",
+            "placeholder": [
+              "2025 RV Resort Events",
+              "Community Center Annual Events",
+              "School Year Calendar",
+              "Local Festival Schedule",
+              "Family Activity Planner",
+              "Corporate Team Building Calendar"
             ]
-        }
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-annual-event-calendar-infographic-rv-resort-prev.jpg"
-}
+  },
+  {
+    "id": "template-soccer-star-comic-retro-poster-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Football Legend Retro Comic Poster Creator) Vertical long vintage comic poster centered on footballer {player_name}, central main character in forward sprint dribbling pose, wearing authentic official home national team jersey with corresponding squad number, central figure full natural color realistic rendering with detailed muscle, jersey fabric and cleat texture. The artwork surrounded by multi-grid irregular comic panels, all side panels use only monochrome deep blue ink engraving sketch style, each small panel records player's iconic career milestone moments: trophy hoisting, championship celebration, classic goal scene, individual award ceremony, stadium cheering snapshot, dynamic ink burst splash comic effect beside every panel. Aged cream retro parchment paper background texture, huge thick bold block sport typography displaying {player_name} at bottom position, classic western sports manga engraving line art, vintage leather soccer ball near athlete's feet, 8K ultra-detailed, high-end print poster quality, crisp hand-drawn ink lines.",
+        "parameters": [
+          {
+            "name": "player_name",
+            "label": "Full Name of Football Player",
+            "type": "text",
+            "placeholder": [
+              "Thomas Müller",
+              "Pedri",
+              "Cristiano Ronaldo",
+              "Harry Kane",
+              "Kylian Mbappé",
+              "Francesco Totti"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-cristiano-ronaldo-portugal-prev.jpg"
+  },
+  {
+    "id": "template-all-sports-tournament-schedule-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Universal Multi-Sport Tournament Schedule Infographic Creator) Vertical formal sports schedule infographic poster themed '{tournament_info}'. Layout: Top banner with large bold event title, surrounded by collaged character portraits of core athletes/players of this event and the tournament’s official championship trophy in center; Middle area orderly segmented block layout for group stage standings & match schedule, each block equipped with team logo + team name text and neat dividing lines; Bottom area is chronological knockout bracket layout from preliminary round to finals with match date text, marginal small decorative illustrations of the competition’s exclusive venue and competitive equipment. Style: Customizable color palette matching event brand tone, high-contrast layered sport typography, optional glowing particle decoration or clean flat texture, supports realistic commercial poster / cartoon illustration / minimalist business three art styles, neat layout partition, ultra HD 8K printable picture, clean text typesetting. Subject: Official fixture infographic poster of {tournament_info}.",
+        "parameters": [
+          {
+            "name": "tournament_info",
+            "label": "Full Tournament Name + Schedule Details",
+            "type": "text",
+            "placeholder": [
+              "NBA 2025 Regular Season Group Schedule",
+              "LOL S15 World Championship Knockout Fixture",
+              "WTA Tennis Open Tournament Calendar",
+              "Volleyball Nations League Group Stage Arrangement",
+              "China Badminton Open Full Match Plan"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-group-draw-poster-prev.jpg"
+  },
+  {
+    "id": "template-universal-event-split-schedule-flyer-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Universal Multi-Country Split Schedule Flyer Creator) Vertical decorative event schedule poster themed '{tournament_info}'. Layout: Top center placed competition championship trophy, large bold headline title across top banner; middle area split into vertical equal multi-column layout corresponding to different host regions/countries, every single column independently contains regional date, venue name, opening fixture info, creative event theme text, circular headshot portraits of invited performing guests; edge surrounded by ethnic decorative ornaments matching host regional cultural style, bottom section packs producer info, overall competition date and descriptive fact text block. Style: Vibrant folk decorative illustration aesthetic, saturated rich color grading, bold thick sport typography, ornamental border doodle elements, customizable culture-themed decorative details by event location, clean content segmentation, 8K high definition printable commercial flyer, neatly arranged text layout. Subject: Split-host opening ceremony schedule art poster for {tournament_info}.",
+        "parameters": [
+          {
+            "name": "tournament_info",
+            "label": "Tournament Name + Host Split Schedule Details",
+            "type": "text",
+            "placeholder": [
+              "2026 FIFA World Cup Three-Nation Opening Ceremony Schedule",
+              "Asian Games Split-City Opening Arrangement",
+              "Global E-Sports Finals Multi-Venue Opening Plan",
+              "International Tennis Tournament Multi-Country Kickoff Schedule"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-universal-event-split-schedule-flyer-poster-fifa-world-cup-2026-opening-ceremony-prev.jpg"
+  }
 ]

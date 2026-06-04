@@ -21,6 +21,7 @@ import {
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic } from "@/lib/topicRegistry";
+import TopSearchSuggestions from "./TopSearchSuggestions";
 
 // Topic data is bundled (nano_templates.json + nano_inspiration.json +
 // blogs.json) plus a single fetch for related prompts. Bundled data
@@ -316,6 +317,12 @@ export default async function Page({ params }: Props) {
               />
             </div>
           )}
+
+          <TopSearchSuggestions
+            locale={localeStr}
+            topicId={slug}
+            heading={translateTopics("topicPage.topQueriesHeading") || "People also search"}
+          />
         </div>
       </section>
 
