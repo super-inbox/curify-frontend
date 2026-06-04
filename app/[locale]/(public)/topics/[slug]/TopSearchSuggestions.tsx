@@ -46,11 +46,11 @@ export default function TopSearchSuggestions({ locale, topicId, heading }: Props
   const queries = TOP_QUERIES[topicId];
   if (!queries || !queries.length) return null;
   return (
-    <div className="mt-4">
+    <div>
       {heading ? (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
+        <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
           {heading}
-        </p>
+        </h2>
       ) : null}
       <div className="flex flex-wrap gap-2">
         {queries.map((q) => (
