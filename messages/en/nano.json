@@ -4660,5 +4660,83 @@
         ]
       }
     }
+  },
+  "template-yellow-themed-illustrated-timeline-infographic": {
+    "title": "Yellow Themed Illustrated Timeline Infographic",
+    "category": "Timeline Infographic",
+    "description": "Warm vintage-style timeline infographic on a vibrant yellow background. Winding path layout with circular illustrations, dates, and short descriptions of each key moment. Perfect for educational classroom posters, history explainers, and brand-story timelines.",
+    "content": {
+      "sections": {
+        "what": "Generates a vintage hand-drawn timeline infographic poster with a winding path on a bright yellow background. Each milestone gets a circular illustration with a date and a short caption. Decorative doodles and clean section dividers throughout.",
+        "who": "Educators, classroom publishers, museum/archival content creators, and brand storytellers who want a memorable warm aesthetic for any progression-over-time narrative.",
+        "how": "Supply a single topic (Space Exploration History, Music History Timeline, Communication Technology Evolution). The template renders the full timeline as one composed image with vintage hand-drawn art direction.",
+        "prompts": "Best topics: clear linear histories with 5-10 recognizable milestones. Works well for technology evolution, music/art movements, fashion eras, scientific discoveries, architectural styles."
+      }
+    }
+  },
+  "template-fashion-style-outfit-breakdown-infographic": {
+    "title": "Fashion Style Outfit Breakdown Infographic",
+    "category": "Fashion Infographic",
+    "description": "Split-screen outfit breakdown poster: full-body styled photo on one side, numbered list of clothing items + accessories + color palette on the other. Themed around specific fashion aesthetics like Cottagecore, Dark Academia, Y2K, Streetwear.",
+    "content": {
+      "sections": {
+        "what": "Renders a stylish outfit breakdown infographic with a split-screen design — full-body outfit photo on one side, numbered item list with brief descriptions on the other. Includes vibe description and color palette at the bottom.",
+        "who": "Fashion creators, style bloggers, capsule-wardrobe builders, and personal shoppers building cohesive lookbooks or outfit-of-the-day content for Pinterest, Instagram, or print zines.",
+        "how": "Supply a fashion style topic (Cottagecore, Dark Academia, Minimalist, Sporty Luxe, Y2K). The template renders the full styled outfit + breakdown card in a single cohesive aesthetic.",
+        "prompts": "Best topics: established aesthetic-defined styles with recognizable visual cues. Cottagecore, Y2K, Streetwear, Academia, Bohemian, Sporty Luxe all work well. Less effective for generic descriptors like casual or formal."
+      }
+    }
+  },
+  "template-annual-event-calendar-infographic": {
+    "title": "Annual Event Calendar Infographic",
+    "category": "Calendar Infographic",
+    "description": "Colorful annual event calendar poster with monthly sections in a grid, each in a distinct pastel color block. Lists events with dates, times, and themed icons. Perfect for community calendars, school year schedules, and corporate event planners.",
+    "content": {
+      "sections": {
+        "what": "Generates a playful annual event calendar in a 12-month grid layout. Each month gets its own pastel color block with event names, dates, times, and matching themed icons. Decorative doodles per month theme.",
+        "who": "Community managers, school administrators, RV resort operators, corporate event planners, and family activity organizers who want a single visual reference for a year of recurring events.",
+        "how": "Supply the calendar title (2025 RV Resort Events, School Year Calendar, Family Activity Planner). The template renders the full annual schedule as one composed grid poster.",
+        "prompts": "Best topics: recurring annual schedules with one event per month. Resort calendars, community center programs, school year plans, festival circuits all work well. Less effective for irregular sporadic event schedules."
+      }
+    }
+  },
+  "template-soccer-star-comic-retro-poster-card": {
+    "title": "Soccer Star Comic Retro Poster Card",
+    "category": "Sports Poster",
+    "description": "Vertical vintage comic-style soccer star poster. Central forward-sprint dribbling figure in authentic national kit, surrounded by monochrome blue ink-engraving comic panels showing career milestones — trophy hoisting, classic goals, championship celebrations. Aged cream parchment background, vintage western sports manga aesthetic.",
+    "content": {
+      "sections": {
+        "what": "Renders a vertical vintage comic-style soccer star poster. The featured player is rendered in full-color forward-sprint dribbling pose at the center, surrounded by monochrome blue ink-engraving panels capturing iconic career moments. Aged cream parchment background with bold block typography.",
+        "who": "Soccer fans, sports merch designers, club/national-team supporters, and editorial illustrators creating retro-style player tribute posters for the 2026 World Cup window or evergreen player-legacy content.",
+        "how": "Supply the full name of the football player (Cristiano Ronaldo, Harry Kane, Pedri, Kylian Mbappé, Francesco Totti). The template renders the comic poster with kit + career-milestone panels.",
+        "prompts": "Best players: widely-recognized current and historic football stars with established iconic moments. Works for Ronaldo, Messi, Kane, Mbappé, Müller, Totti, Pelé, Maradona. Less effective for emerging players without a clear career arc yet."
+      }
+    }
+  },
+  "template-all-sports-tournament-schedule-infographic": {
+    "title": "All-Sports Tournament Schedule Infographic",
+    "category": "Sports Infographic",
+    "description": "Vertical formal tournament schedule infographic. Top banner with event title + athlete portraits + championship trophy. Middle: group standings + match schedule in segmented blocks. Bottom: chronological knockout bracket with match dates. Supports realistic / cartoon / minimalist art styles.",
+    "content": {
+      "sections": {
+        "what": "Generates a full official-style tournament schedule infographic poster. Top banner with title + collaged athlete portraits + championship trophy. Mid-section with group stage standings in color-coded blocks. Bottom with chronological knockout bracket from preliminary round to finals.",
+        "who": "Sports media producers, tournament organizers, viewing-party hosts, and sports betting / fantasy publications wanting a single canonical reference poster for an entire tournament fixture.",
+        "how": "Supply the full tournament name + schedule details (NBA 2025 Regular Season Group Schedule, LOL S15 World Championship Knockout Fixture). The template renders the full fixture poster.",
+        "prompts": "Best tournaments: large multi-stage events with both group + knockout phases. Works for football World Cups, esports world championships, basketball season schedules, tennis grand slams. Less effective for single-match events without a bracket structure."
+      }
+    }
+  },
+  "template-universal-event-split-schedule-flyer-poster": {
+    "title": "Universal Multi-Country Split Schedule Flyer Poster",
+    "category": "Event Flyer",
+    "description": "Vertical decorative event schedule poster for multi-region / multi-country tournaments. Top: trophy + bold headline. Middle: vertical equal columns per host region with date, venue, guest portraits, opening fixture. Bottom: producer info + fact text. Vibrant folk decorative aesthetic.",
+    "content": {
+      "sections": {
+        "what": "Renders a multi-column schedule flyer for events split across multiple host regions or countries. Top trophy + headline banner; middle equal-column layout per host region with regional date, venue, opening fixture, guest portraits, themed decoration; bottom producer + fact text.",
+        "who": "Event producers for multi-host tournaments (FIFA 2026 three-nation hosting, Asian Games split cities, esports finals across multiple venues), and travel-event marketing teams promoting multi-stop tour schedules.",
+        "how": "Supply the tournament name + host-split schedule details (2026 FIFA World Cup Three-Nation Opening Ceremony Schedule, Asian Games Split-City Opening Arrangement). The template renders the full multi-column flyer.",
+        "prompts": "Best events: tournaments / festivals genuinely hosted across multiple regions with distinct local programs. Works for FIFA 2026 (US/Canada/Mexico), Asian Games multi-city, esports world tour. Less effective for single-venue events with no geographic split."
+      }
+    }
   }
 }
