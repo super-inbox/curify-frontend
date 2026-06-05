@@ -299,6 +299,8 @@ interface NanoInspirationRowProps {
   rankScoreRelatedShift?: number;
   /** Cap visible rows by default; toggle the rest via See more / See less. */
   maxRows?: number;
+  /** Optional cell pinned to row 1, rightmost column (WC calendar widget etc.) */
+  topRightCell?: React.ReactNode;
 }
 
 
@@ -309,6 +311,7 @@ export function NanoInspirationRow({
   getRelatedScore,
   rankScoreRelatedShift = 80,
   maxRows = 5,
+  topRightCell,
 }: NanoInspirationRowProps) {
   const cols = useGridCols();
   const [expanded, setExpanded] = useState(false);
@@ -341,6 +344,11 @@ export function NanoInspirationRow({
   return (
     <div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {topRightCell ? (
+          <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5">
+            {topRightCell}
+          </div>
+        ) : null}
         {visibleCards.map((c) => (
           <NanoInspirationCard
             key={c.id}

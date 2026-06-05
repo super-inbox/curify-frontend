@@ -11,6 +11,7 @@ import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { InspirationCardType } from "@/app/[locale]/_components/InspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import HomeToolsStrip from "./HomeToolsStrip";
+import WorldCupCalendarCard from "@/app/[locale]/_components/WorldCupCalendarCard";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,9 +23,11 @@ function classNames(...xs: Array<string | false | undefined | null>) {
 }
 
 export default function HomeClient({
+  locale = "en",
   cards = [],
   nanoCards = [],
 }: {
+  locale?: string;
   cards?: InspirationCardType[];
   nanoCards?: NanoInspirationCardType[];
 }) {
@@ -70,6 +73,7 @@ export default function HomeClient({
           requireAuth={requireAuth}
           onViewClick={handleOpenModal}
           maxRows={8}
+          topRightCell={<WorldCupCalendarCard locale={locale} />}
         />
 
         <HomeToolsStrip />

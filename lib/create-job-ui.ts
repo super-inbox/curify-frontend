@@ -8,6 +8,11 @@ export type UiConfig = {
   allowUpload: boolean;
   allowYoutube: boolean;
 
+  // Kind of file the upload affordance accepts. Defaults to "video".
+  // Used by the Upload component to switch MIME types, accept extensions,
+  // and the on-screen file-type hint (`.mp4/.mov/…` vs `.mp3/.wav/…`).
+  acceptedKinds?: "video" | "audio";
+
   // Language selectors
   showSourceLang: boolean;
   showTargetLang: boolean;
@@ -108,6 +113,7 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     title: "Translate Speech",
     allowUpload: true,
     allowYoutube: true,
+    acceptedKinds: "audio",
     showSourceLang: true,
     showTargetLang: true,
     allowVoiceover: false,

@@ -6,7 +6,24 @@ import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { notFound } from "next/navigation";
 import RelatedBlogs from "@/app/[locale]/_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import WorldCupCalendarCard from "@/app/[locale]/_components/WorldCupCalendarCard";
 import NanoBananaExamples from "./NanoBananaExamples";
+
+// WC-themed blog posts that surface the calendar widget between the
+// body and the bottom CTA. Reader-mindset placement — the reader has
+// finished the post and is in a "what next" moment; calendar drives
+// to /topics/world-cup. Auto-hides via the widget's own
+// tournamentPhase("after") guard once the tournament ends.
+const WC_BLOG_SLUGS = new Set([
+  "world-cup-2026-top-contenders",
+  "world-cup-2026-ai-prompt-hub",
+  "fifa-2026-host-city-travel-guide",
+  "argentina-france-2022-world-cup-final",
+  "brazil-argentina-soccer-poster-prompts",
+  "france-soccer-poster-prompts",
+  "portugal-soccer-poster-prompts",
+  "ai-1v1-soccer-rivalry-prompts",
+]);
 import { blogPosts, availableKeys } from "./utils/blog-config";
 import { formatContent } from "./utils/content-formatters";
 import { getVideoDubbingUrl, getSubtitleGeneratorUrl } from "./utils/blog-helpers";
@@ -427,6 +444,16 @@ export default async function BlogPostPage({
           surfaces the cards keyed to its own slug. */}
       {blogData?.nanoTemplates?.length > 0 && (
         <NanoBananaExamples locale={locale} blogSlug={slug} />
+      )}
+
+      {/* WC 2026 calendar widget — surfaced on WC-themed blog posts
+          (8 slugs in WC_BLOG_SLUGS) between the body and the bottom
+          CTA. Wrapped at max-w-md to match blog reading column;
+          card-sized otherwise. Auto-hides after July 19, 2026. */}
+      {WC_BLOG_SLUGS.has(slug) && (
+        <div className="my-8 max-w-md mx-auto px-4">
+          <WorldCupCalendarCard locale={locale} />
+        </div>
       )}
 
       {/* Unified CTA — picks the right tool / coaching / contact target based

@@ -176,6 +176,21 @@ export function formatVoiceCloningContent(content: string): string {
     .replace(/^\| (.+?) \| (.+?) \| (.+?) \|\n/gm, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
     // Close table tags
     .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+    // Clickable image (image-as-link): [![alt](src)](url) → <a><img></a>
+    // Must run BEFORE the plain link regex so the inner ![alt](src) isn't
+    // half-eaten. Internal vs external follows the same same-tab/_blank
+    // rule as plain links.
+    .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="block my-6"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="hover:opacity-90 transition-opacity" /></a>`;
+    })
+    // Standalone markdown image: ![alt](src) → <img>
+    // Run BEFORE the plain link regex (which would otherwise capture
+    // ![alt as the label and produce a broken anchor).
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) => {
+      return `<img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; margin: 20px 0; border-radius: 8px;" />`;
+    })
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
       // Internal Curify URLs (start with /) open in the SAME tab so session
@@ -226,6 +241,21 @@ export function formatAslContent(content: string): string {
     .replace(/\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|/g, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$4</td></tr>')
     // Close table tags
     .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+    // Clickable image (image-as-link): [![alt](src)](url) → <a><img></a>
+    // Must run BEFORE the plain link regex so the inner ![alt](src) isn't
+    // half-eaten. Internal vs external follows the same same-tab/_blank
+    // rule as plain links.
+    .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="block my-6"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="hover:opacity-90 transition-opacity" /></a>`;
+    })
+    // Standalone markdown image: ![alt](src) → <img>
+    // Run BEFORE the plain link regex (which would otherwise capture
+    // ![alt as the label and produce a broken anchor).
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) => {
+      return `<img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; margin: 20px 0; border-radius: 8px;" />`;
+    })
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
       // Internal Curify URLs (start with /) open in the SAME tab so session
@@ -284,6 +314,21 @@ export function formatNanoTemplateContent(content: string): string {
     .replace(/^\| (.+?) \| (.+?) \| (.+?) \|\n/gm, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
     // Close table tags
     .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+    // Clickable image (image-as-link): [![alt](src)](url) → <a><img></a>
+    // Must run BEFORE the plain link regex so the inner ![alt](src) isn't
+    // half-eaten. Internal vs external follows the same same-tab/_blank
+    // rule as plain links.
+    .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="block my-6"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="hover:opacity-90 transition-opacity" /></a>`;
+    })
+    // Standalone markdown image: ![alt](src) → <img>
+    // Run BEFORE the plain link regex (which would otherwise capture
+    // ![alt as the label and produce a broken anchor).
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) => {
+      return `<img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; margin: 20px 0; border-radius: 8px;" />`;
+    })
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
       // Internal Curify URLs (start with /) open in the SAME tab so session
@@ -318,13 +363,31 @@ export function formatNanoBananaContent(content: string): string {
     // Return content as-is for HTML sections to preserve styling
     return content;
   }
-  
-  return content
-    // Handle markdown images ![alt](src) — must run before the link rule
-    // since the syntax overlaps with [text](url). Kept as markdown (not
-    // raw <img>) in messages because ICU MessageFormat treats attributed
-    // HTML tags as INVALID_TAG and silently swallows the whole message,
-    // surfacing as the dot-path key in the rendered page.
+
+  // Pre-process: image immediately followed (after blank-line gap) by a
+  // standalone markdown CTA link → wrap the image in the same link. See
+  // the parallel comment in formatContent for the full rationale.
+  let preprocessed = content.replace(
+    /(!\[[^\]]*\]\([^)]+\))\n+(\[[^\]]+\]\(([^)]+)\))(?=\n|$)/g,
+    (_m, imgMd, linkMd, linkUrl) => `[${imgMd}](${linkUrl})\n\n${linkMd}`
+  );
+
+  return preprocessed
+    // Image-as-link [![alt](src)](href) — MUST run before the standalone
+    // image rule so the inner ![alt](src) isn't replaced first and orphan
+    // the wrapping [](href). toCdnUrl applied to src so /images/... is
+    // rewritten to the CDN host (CDN fix 2026-06-04, was 404'ing the
+    // wrapped images in prod even though the standalone ones worked).
+    .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="block my-4 mx-auto max-w-md"><img src="${toCdnUrl(src)}" alt="${alt}" class="rounded-lg shadow hover:opacity-90 transition-opacity cursor-pointer" /></a>`;
+    })
+    // Handle standalone markdown images ![alt](src) — must run before the
+    // plain link rule since the syntax overlaps with [text](url). Kept as
+    // markdown (not raw <img>) in messages because ICU MessageFormat
+    // treats attributed HTML tags as INVALID_TAG and silently swallows
+    // the whole message, surfacing as the dot-path key in the rendered page.
     .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) =>
       `<img src="${toCdnUrl(src)}" alt="${alt}" class="my-4 mx-auto max-w-md rounded-lg shadow" />`)
     // Handle markdown links [text](url)
@@ -351,7 +414,7 @@ export function formatNanoBananaContent(content: string): string {
 // Standard content formatter (used by most components)
 export function formatContent(content: string): string {
   let processed = content;
-  
+
   // Handle code blocks FIRST to protect them from other processing
   const codeBlocks: string[] = [];
   processed = processed.replace(/```[\w]*\n([\s\S]*?)```/g, (match, code) => {
@@ -359,12 +422,43 @@ export function formatContent(content: string): string {
     codeBlocks.push(code.trim());
     return `__CODE_BLOCK_${index}__`;
   });
-  
+
   // Handle inline code
   processed = processed.replace(/`([^`]+)`/g, '<code class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono border border-gray-300">$1</code>');
-  
+
   // Handle tables next
   processed = parseMarkdownTable(processed);
+
+  // Pre-process: image immediately followed (after blank-line gap) by a
+  // standalone markdown CTA link → wrap the image in the same link, so the
+  // image itself is tappable while the visible CTA stays below as a
+  // fallback affordance. Authored shape in blog.json:
+  //
+  //     ![alt](/images/foo.jpg)
+  //
+  //     [Open the X template →](/nano-template/X)
+  //
+  // Rewrites to the standard image-in-link markdown pattern:
+  //
+  //     [![alt](/images/foo.jpg)](/nano-template/X)
+  //
+  //     [Open the X template →](/nano-template/X)
+  //
+  // Which the image-as-link regex below converts to <a><img></a> + the
+  // CTA stays as a regular link. Requires the link to be on its own line
+  // (look-ahead `(?=\n|$)`) so we don't accidentally consume the start of
+  // a paragraph that happens to begin with a link.
+  //
+  // Surfaced 2026-06-05 from user UX feedback on /blog/brazil-argentina-
+  // soccer-poster-prompts — the Messi-vs-Ronaldo image was paired with
+  // an "Open the Sports Battle template →" CTA but only the small CTA
+  // text was clickable. Same pattern across portugal/france/1v1/evolution/
+  // WC hub / illustrator industrial AI blogs — one regex retroactively
+  // upgrades them all.
+  processed = processed.replace(
+    /(!\[[^\]]*\]\([^)]+\))\n+(\[[^\]]+\]\(([^)]+)\))(?=\n|$)/g,
+    (_m, imgMd, linkMd, linkUrl) => `[${imgMd}](${linkUrl})\n\n${linkMd}`
+  );
   
   // Then apply all inline formatting
   const result = `<p>${processed
@@ -372,6 +466,16 @@ export function formatContent(content: string): string {
     .replace(/^### (.+)$/gm, '</p><h3 class="text-xl font-semibold mt-6 mb-3 text-gray-900">$1</h3><p>')
     .replace(/^## (.+)$/gm, '</p><h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">$1</h2><p>')
     .replace(/^# (.+)$/gm, '</p><h1 class="text-3xl font-bold mt-8 mb-6 text-gray-900">$1</h1><p>')
+    // Image-as-link [![alt](src)](href) — MUST run before the standalone
+    // image rule so the inner ![alt](src) isn't replaced first and orphan
+    // the wrapping [](href). Same same-tab/_blank rule as plain links.
+    // Image styling matches the standalone-image rule below so the visual
+    // is identical whether or not the image is wrapped in a link.
+    .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="block my-4 mx-auto max-w-md"><img src="${toCdnUrl(src)}" alt="${alt}" class="rounded-lg shadow hover:opacity-90 transition-opacity cursor-pointer" /></a>`;
+    })
     // Handle markdown images ![alt](src) — MUST run before the link rule
     // since the syntax overlaps with [text](url). Kept as markdown (not
     // raw <img>) in messages because ICU MessageFormat treats attributed

@@ -1,6 +1,6 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-06-03 (World Cup expansion plan documented — content, UX, monetization streams + draft P0-P3 priorities). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-06-05 (strategic reframe: WC is the entry point, the engine is the destination — "Visual Answers for Every Query". Calendar widget per-match-line clickable upgrade queued for 2026-06-06). Owner: jay. Update after any push that touches the threads below or changes priority order._
 
 ## Why this doc exists
 
@@ -369,6 +369,46 @@ GSC shows substantial WC-related search traffic. The tier-1 promotion + EntryBar
 - **Calendar** infrastructure: requires data model (`/data/wc_schedule.json` or a new schema), refresh cadence, UI component, link strategy from calendar entries to per-match pages.
 - **Polls + comments**: requires user-account integration (anonymous voting may be enough for polls; comments need identity).
 - **Affiliate compliance**: FTC disclosure required on every affiliate link; Amazon Operating Agreement compliance (no caching prices, etc.).
+
+### 2026-06-05 — Strategic reframe: WC is the entry point, not the destination
+
+User-direction (2026-06-05): the WC traffic itself isn't the opportunity. **The opportunity is using WC to teach users that any search query can become a beautiful visual answer.** Mindshare to claim: *"Visual Answers for Every Query"* / *"the world's biggest visual encyclopedia factory."* If users remember "the World Cup website" we've lost; if they remember "the site that turns any question into a visual encyclopedia" we've won.
+
+**Decision filter** going forward — every WC choice scored on: does it teach the engine, or just deepen WC retention?
+
+Re-ranked WC work under this lens:
+
+| Surface | Aligned with engine demo? | Action |
+| --- | --- | --- |
+| Calendar widget on home / WC / sports / country-WC | ✓ a topical demo of the visual-answer pattern | Keep; sharpen click targets to land on `/search?q=…` |
+| Calendar widget on 8 WC blog posts | Partial — CTA target matters | Keep, evolve CTA to search-page targets |
+| 10 country-WC tier-2 pages | Real content, but WC-deepening | Keep; de-prioritize *more* country expansion |
+| Tier-3 tournament editions vocabulary | Risky if all light up as pages | Keep as vocab; don't pour i18n + content into each |
+| Search→generation bridge (Thread d item 8) | **Strategic core** — it IS the engine | Promote to highest priority |
+
+### Calendar widget — per-match clickable lines (queued for 2026-06-06)
+
+Plan: each line of the calendar widget's "Upcoming" list becomes its own clickable component (instead of the single bottom CTA). Click → `/search?q=<contextual query>`.
+
+Examples (mapped from current schedule entries):
+
+| Line in widget | Click → search query |
+| --- | --- |
+| `06-11 Opening Match · Group A` | `Mexico World Cup 2026 opener` |
+| `06-12 USA Opener · Group D` | `USA World Cup 2026 opener` |
+| `06-13 Argentina · Group A` | `Argentina World Cup 2026` |
+| `06-14 Brazil · Group C` | `Brazil World Cup 2026` |
+| `07-04 Round of 16 begins` | `World Cup Round of 16 bracket` |
+| `07-19 FIFA World Cup Final` | `World Cup Final 2026` |
+
+Why this design embodies the strategic frame:
+
+- Every match line becomes a live demo: "click → search results page → visual answers"
+- Users learn the pattern through repetition (a calendar with 3+ clickable rows = 3+ chances to fire the demo)
+- The search bar is in the user's hand on landing, inviting "try another query"
+- No new content needed today — each line is a small implementation against existing `lib/wc_2026_schedule.ts` data
+
+Today's widget still uses the naive single-link redirect (`/topics/world-cup`) for the "View full schedule →" CTA. Per-match-line clickable upgrade ships 2026-06-06.
 
 ### Recommended prioritization (DRAFT — please confirm or redirect)
 
