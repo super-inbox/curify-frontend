@@ -222,6 +222,7 @@ export default function CreateNewModal() {
           <div className="flex flex-col items-center w-full">
             {ui.allowUpload ? (
               <Upload
+                acceptedKinds={ui.acceptedKinds}
                 onPreviewReady={(localUrl, file) => {
                   setLocalPreviewUrl(localUrl);
                   setUploadedFile(file);

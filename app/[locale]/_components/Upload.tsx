@@ -4,13 +4,44 @@ import { useRef, useState } from "react";
 import Icon from "./Icon";
 import { videoService } from "@/services/video";
 
-const ACCEPTED_TYPES = [
-  "video/mp4",
-  "video/quicktime",
-  "video/webm",
-  "video/x-msvideo",
-  "video/x-ms-wmv",
-];
+// Per-kind whitelists used by the file-picker accept= filter, drag/drop
+// MIME validation, the visible filetype hint, and the error message. The
+// kind comes from the parent (driven by lib/create-job-ui.ts:acceptedKinds),
+// defaults to "video" so existing call sites keep their current behavior.
+type UploadKind = "video" | "audio";
+
+const KIND_SPEC: Record<
+  UploadKind,
+  { mimeTypes: string[]; extList: string; extLabel: string }
+> = {
+  video: {
+    mimeTypes: [
+      "video/mp4",
+      "video/quicktime",
+      "video/webm",
+      "video/x-msvideo",
+      "video/x-ms-wmv",
+    ],
+    extList: ".mp4,.mov,.webm,.avi,.wmv",
+    extLabel: ".mp4/.mov/.webm/.avi/.wmv",
+  },
+  audio: {
+    mimeTypes: [
+      "audio/mpeg",        // .mp3
+      "audio/wav",
+      "audio/x-wav",
+      "audio/mp4",         // .m4a (sometimes reported as audio/mp4)
+      "audio/x-m4a",
+      "audio/m4a",
+      "audio/aac",
+      "audio/ogg",
+      "audio/flac",
+      "audio/webm",
+    ],
+    extList: ".mp3,.wav,.m4a,.aac,.flac,.ogg,.webm",
+    extLabel: ".mp3/.wav/.m4a/.aac/.flac/.ogg",
+  },
+};
 
 interface Props {
   onUploaded: (
@@ -21,14 +52,19 @@ interface Props {
   onPreviewReady?: (localPreviewUrl: string, file: File) => void;
   onUploadStart?: () => void;
   onUploadError?: (error: string) => void;
+  /** What kind of file this Upload accepts. Defaults to "video". */
+  acceptedKinds?: UploadKind;
 }
 
-export default function Upload({ 
-  onUploaded, 
-  onPreviewReady, 
-  onUploadStart, 
-  onUploadError 
+export default function Upload({
+  onUploaded,
+  onPreviewReady,
+  onUploadStart,
+  onUploadError,
+  acceptedKinds = "video",
 }: Props) {
+  const { mimeTypes: ACCEPTED_TYPES, extList: ACCEPT_ATTR, extLabel: TYPE_LABEL } =
+    KIND_SPEC[acceptedKinds];
   const inputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -37,7 +73,7 @@ export default function Upload({
 
     const file = fileList[0];
     if (!ACCEPTED_TYPES.includes(file.type)) {
-      const errorMsg = "Only .mp4, .mov, .webm, .avi, .wmv files are supported";
+      const errorMsg = `Only ${TYPE_LABEL.split("/").join(", ")} files are supported`;
       alert(errorMsg);
       onUploadError?.(errorMsg);
       return;
@@ -90,7 +126,7 @@ export default function Upload({
         Drag & Drop or Click to Upload
       </p>
       <div className="flex items-center mb-[-0.625rem]">
-        <p>.mp4/.mov/.webm/.avi/.wmv</p>
+        <p>{TYPE_LABEL}</p>
         <button className="p-2.5 mr-[-0.625rem]">
           <Icon name="info" />
         </button>
@@ -100,7 +136,7 @@ export default function Upload({
       <input
         ref={inputRef}
         type="file"
-        accept=".mp4,.mov,.webm,.avi,.wmv"
+        accept={ACCEPT_ATTR}
         hidden
         onChange={(e) => handleFile(e.target.files)}
       />
