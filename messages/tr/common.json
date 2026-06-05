@@ -219,7 +219,8 @@
       "for-designers": "Tasarımcılar",
       "for-publishers": "EdTech ve Yayıncılar",
       "for-dtc-brands": "DTC Markaları",
-      "for-programmatic-seo": "Programatik SEO"
+      "for-programmatic-seo": "Programatik SEO",
+      "for-forwarder-back-office": "Taşıma Brokerleri"
     }
   },
   "useCasePage": {
@@ -298,6 +299,18 @@
       "bullet1": "Original hero imagery per page — no royalty-free filler, no thin-content slop penalty",
       "bullet2": "Schema-aware templates ready for [service] in [city], AffiliateProduct, FAQ, HowTo markup — built for topical authority, not churn-and-burn",
       "bullet3": "Packaged as: hosted generator OR self-hosted Docker — fixed-scope CMS adapter, no custom rewrites"
+    },
+    "for-forwarder-back-office": {
+      "title": "Taşıma Brokerleri için AI — Sadece Arka Ofis",
+      "subtitle": "Brokerlerin masalarında yalnız başlarına yaptıkları işler için AI. Telefonla yaptıkları işler için değil.",
+      "description": "Taşıyıcılara AI sunan brokerlikler yük kaybediyor — taşıyıcılar ses botlarına kapatıyor, intikam aşırı fiyatlandırması yapıyor ve kapasite azalıyor. Biz bunun yerine arka ofis katmanını inşa ediyoruz: belgeler, faturalar, fiyat istatistikleri, güzergah analitiği, taşıyıcı-ağ iletişimi. Hiçbir müşteri veya taşıyıcı bunu görmüyor. Telefon görüşmeleri sizin kalıyor. Gerçek broker yorumlarına dayalı bir konumlandırma — Vlad (r/FreightBrokers'ta 53↑): ses botları brokerliğe kazandırdığından daha fazlasını kaybettiriyor. Questionoid (15↑): AI dolandırıcılığı işaretlemeli, belgeleri kontrol etmeli, taşıyıcı paketlerini sıralamalı — resepsiyonist, taşıyıcı temsilcisi veya uyum departmanı olmamalı.",
+      "bullet0": "BOL + fiyat onayı + fatura + yükleme çıkarımı → TMS gönderimi. Her temsilci için günde saatler kazandırır. Hiçbir taşıyıcı bunu görmez, ilişki zarar görmez.",
+      "bullet1": "Outlook veya Zoho için Mailbox-AI — fiyat istatistikleri, güzergah analitiği, takip hatırlatmaları, taslak yanıtlar — zaten yaptığınız konuşmalardan yüzeye çıkar.",
+      "bullet2": "Taşıyıcı tarafı iletişim amplifikatörü: kamu MC + güzergah gönderilerini tarayın, taşıyıcı-ağ kapsama boşluklarınızla eşleştirin, iletişim taslağı oluşturun. Aynı taraf B2B — müşteri karşısında bir tabu yok.",
+      "bullet3": "İç bilgi tabanı: kıdemli brokerin geçmiş fiyat anlaşmazlıklarından, kazanılan teklif kalıplarından, kenar durumları oyun kitaplarından kabile bilgisini kodlayın. Yeni işe alımlar sistemi öğrenir, sadece kulak misafiri olarak değil.",
+      "bullet4": "Taşıma uzun kuyruk için SEO içerik motoru: nakliye maliyeti hesaplayıcıları, DDP vs DDU açıklamaları, güzergah spesifik fiyat rehberleri. Orijinal görseller, şema uyumlu, indekslenebilir.",
+      "bullet5": "Marj tabanı uygulaması, fiyat geçmişi bağlamı ve uyum kontrolü ile arka ofis teklif taslağı. Temsilci gözden geçirir ve gönderir. Telefon görüşmeleri sizin kalıyor.",
+      "bullet6": "Şu şekilde paketlenmiştir: 30 günlük pilot kapsam (bir dilim, bir ICP) veya tam arka ofis motoru entegrasyonu. Sabit kapsam, özel geliştirme yok. /contact üzerinden 15 dakikalık bir denetim planlayın."
     }
   },
   "interconnection": {

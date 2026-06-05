@@ -219,7 +219,8 @@
       "for-designers": "디자이너",
       "for-publishers": "EdTech & 출판사",
       "for-dtc-brands": "DTC 브랜드",
-      "for-programmatic-seo": "프로그래매틱 SEO"
+      "for-programmatic-seo": "프로그래매틱 SEO",
+      "for-forwarder-back-office": "화물 중개인"
     }
   },
   "useCasePage": {
@@ -298,6 +299,18 @@
       "bullet1": "Original hero imagery per page — no royalty-free filler, no thin-content slop penalty",
       "bullet2": "Schema-aware templates ready for [service] in [city], AffiliateProduct, FAQ, HowTo markup — built for topical authority, not churn-and-burn",
       "bullet3": "Packaged as: hosted generator OR self-hosted Docker — fixed-scope CMS adapter, no custom rewrites"
+    },
+    "for-forwarder-back-office": {
+      "title": "화물 중개인을 위한 AI — 백 오피스 전용",
+      "subtitle": "중개인이 책상에서 혼자 하는 작업을 위한 AI. 전화로 하는 작업을 위한 AI는 아닙니다.",
+      "description": "운송업체 앞에 AI를 두는 중개업체는 화물을 잃고 있습니다 — 운송업체는 음성 봇에 전화를 끊고, 보복 과다 인용을 하며, 용량이 고갈됩니다. 우리는 대신 백 오피스 레이어를 구축합니다: 문서, 송장, 요금 통계, 노선 분석, 운송업체 네트워크 아웃리치. 고객이나 운송업체는 이를 절대 보지 않습니다. 전화 통화는 당신의 것입니다. 실제 중개인의 의견에 기반한 포지셔닝 — Vlad (r/FreightBrokers에서 53↑): 음성 봇은 중개업체에 절약하는 것보다 더 많은 비용을 초래합니다. Questionoid (15↑): AI는 사기를 플래그하고, 문서를 확인하고, 운송업체 패킷을 정렬해야 합니다 — 접수원, 운송업체 담당자 또는 준수 부서가 되어서는 안 됩니다.",
+      "bullet0": "BOL + 요금 확인 + 송장 + 적재자 추출 → TMS 푸시. 하루에 각 담당자당 몇 시간을 절약합니다. 운송업체는 이를 절대 보지 않으며, 관계 손상도 없습니다.",
+      "bullet1": "Outlook 또는 Zoho를 위한 메일박스-AI — 요금 통계, 노선 분석, 후속 알림, 초안 회신 — 이미 나눈 대화에서 추출됩니다.",
+      "bullet2": "운송업체 측 아웃리치 증폭기: 공개 MC + 노선 게시물을 스캔하고, 귀하의 운송업체 네트워크 커버리지 격차와 일치시키고, 아웃리치를 초안합니다. 같은 측 B2B — 고객 대면 금기 없음.",
+      "bullet3": "내부 지식 기반: 과거 요금 분쟁, 수주 패턴, 엣지 케이스 플레이북에서 선임 중개인의 부족 지식을 정리합니다. 신입 사원은 단순히 엿듣는 것이 아니라 시스템에서 배웁니다.",
+      "bullet4": "화물 롱테일을 위한 SEO 콘텐츠 엔진: 배송 비용 계산기, DDP 대 DDU 설명서, 노선별 요금 가이드. 원본 이미지, 스키마 인식, 색인 가능.",
+      "bullet5": "마진 바닥 강제 적용, 요금 이력 맥락 및 준수 검사가 포함된 백 오피스 견적 초안. 담당자가 검토하고 전송합니다. 전화 통화는 당신의 것입니다.",
+      "bullet6": "패키지 형태: 30일 파일럿 범위 설정 (하나의 웨지, 하나의 ICP) 또는 전체 백 오피스 엔진 통합. 고정 범위, 맞춤 개발 없음. /contact를 통해 15분 감사 일정을 잡으세요."
     }
   },
   "interconnection": {

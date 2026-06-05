@@ -188,7 +188,8 @@
       "for-designers": "Designers",
       "for-publishers": "EdTech & Publishers",
       "for-dtc-brands": "DTC Brands",
-      "for-programmatic-seo": "Programmatic SEO"
+      "for-programmatic-seo": "Programmatic SEO",
+      "for-forwarder-back-office": "Freight Brokers"
     }
   },
   "interconnection": {
@@ -275,6 +276,18 @@
       "bullet1": "Original hero imagery per page — no royalty-free filler, no thin-content slop penalty",
       "bullet2": "Schema-aware templates ready for [service] in [city], AffiliateProduct, FAQ, HowTo markup — built for topical authority, not churn-and-burn",
       "bullet3": "Packaged as: hosted generator OR self-hosted Docker — fixed-scope CMS adapter, no custom rewrites"
+    },
+    "for-forwarder-back-office": {
+      "title": "AI for Freight Brokers — Back Office Only",
+      "subtitle": "AI for the work brokers do alone at their desk. Not AI for the work they do on the phone.",
+      "description": "Brokerages that put AI in front of carriers are losing loads — carriers hang up on voice bots, revenge-overquote, and capacity dries up. We build the back-office layer instead: documents, invoices, rate stats, lane analytics, carrier-network outreach. No customer or carrier ever sees it. The phone calls stay yours. Positioning anchored in real broker comments — Vlad (53↑ on r/FreightBrokers): voice bots cost the brokerage more than they save. Questionoid (15↑): AI should flag fraud, check documents, sort carrier packets — not be the receptionist, the carrier rep, or the compliance department.",
+      "bullet0": "BOL + rate confirmation + invoice + lumper extraction → TMS push. Saves hours per rep per day. No carrier ever sees it, no relationship damage.",
+      "bullet1": "Mailbox-AI for Outlook or Zoho — rate stats, lane analytics, follow-up reminders, draft replies — surfaced from the conversations you already had.",
+      "bullet2": "Carrier-side outreach amplifier: scan public MC + lane posts, match against your carrier-network coverage gaps, draft outreach. Same-side B2B — no customer-facing taboo.",
+      "bullet3": "Internal knowledge base: codify the senior broker’s tribal knowledge from past rate disputes, won-quote patterns, edge-case playbooks. New hires learn from the system, not just from overhearing.",
+      "bullet4": "SEO content engine for freight long-tail: shipping cost calculators, DDP vs DDU explainers, lane-specific rate guides. Original imagery, schema-aware, indexable.",
+      "bullet5": "Back-office quote draft with margin-floor enforcement, rate-history context, and compliance check. The rep reviews and sends. The phone calls stay yours.",
+      "bullet6": "Packaged as: 30-day pilot scoping (one wedge, one ICP) OR full back-office engine integration. Fixed scope, no custom dev. Schedule a 15-min audit via /contact."
     },
     "learningMaterialsHeading": "Learning Materials"
   },

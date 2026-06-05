@@ -219,7 +219,8 @@
       "for-designers": "Designers",
       "for-publishers": "EdTech & Éditeurs",
       "for-dtc-brands": "Marques DTC",
-      "for-programmatic-seo": "SEO Programmatique"
+      "for-programmatic-seo": "SEO Programmatique",
+      "for-forwarder-back-office": "Courtiers de fret"
     }
   },
   "useCasePage": {
@@ -298,6 +299,18 @@
       "bullet1": "Original hero imagery per page — no royalty-free filler, no thin-content slop penalty",
       "bullet2": "Schema-aware templates ready for [service] in [city], AffiliateProduct, FAQ, HowTo markup — built for topical authority, not churn-and-burn",
       "bullet3": "Packaged as: hosted generator OR self-hosted Docker — fixed-scope CMS adapter, no custom rewrites"
+    },
+    "for-forwarder-back-office": {
+      "title": "IA pour les courtiers de fret — Bureau uniquement",
+      "subtitle": "IA pour le travail que les courtiers font seuls à leur bureau. Pas d'IA pour le travail qu'ils font au téléphone.",
+      "description": "Les courtiers qui mettent l'IA devant les transporteurs perdent des chargements — les transporteurs raccrochent sur les bots vocaux, la vengeance sur les devis, et la capacité s'épuise. Nous construisons plutôt la couche de back-office : documents, factures, statistiques tarifaires, analyses de couloir, sensibilisation au réseau de transporteurs. Aucun client ou transporteur ne le voit jamais. Les appels téléphoniques restent les vôtres. Positionnement ancré dans de vrais commentaires de courtiers — Vlad (53↑ sur r/FreightBrokers) : les bots vocaux coûtent plus cher au courtier qu'ils ne font économiser. Questionoid (15↑) : l'IA devrait signaler la fraude, vérifier les documents, trier les paquets de transporteurs — pas être la réceptionniste, le représentant des transporteurs ou le département de conformité.",
+      "bullet0": "BOL + confirmation de tarif + facture + extraction de lumper → push TMS. Économise des heures par représentant par jour. Aucun transporteur ne le voit, aucun dommage à la relation.",
+      "bullet1": "IA de boîte aux lettres pour Outlook ou Zoho — statistiques tarifaires, analyses de couloir, rappels de suivi, réponses à rédiger — extraites des conversations que vous avez déjà eues.",
+      "bullet2": "Amplificateur de sensibilisation côté transporteur : scanner les publications publiques MC + couloir, faire correspondre avec vos lacunes de couverture réseau de transporteurs, rédiger des sensibilisations. B2B côté même — pas de tabou face au client.",
+      "bullet3": "Base de connaissances interne : codifier le savoir tribal du courtier senior provenant des litiges tarifaires passés, des modèles de devis gagnés, des manuels de cas particuliers. Les nouvelles recrues apprennent du système, pas seulement en écoutant.",
+      "bullet4": "Moteur de contenu SEO pour le long tail du fret : calculateurs de coûts d'expédition, explications DDP vs DDU, guides tarifaires spécifiques aux couloirs. Images originales, conscientes du schéma, indexables.",
+      "bullet5": "Brouillon de devis de back-office avec application du seuil de marge, contexte d'historique tarifaire et vérification de conformité. Le représentant examine et envoie. Les appels téléphoniques restent les vôtres.",
+      "bullet6": "Conditionné comme : pilotage de 30 jours (une tranche, un ICP) OU intégration complète du moteur de back-office. Portée fixe, pas de développement personnalisé. Planifiez un audit de 15 minutes via /contact."
     }
   },
   "interconnection": {

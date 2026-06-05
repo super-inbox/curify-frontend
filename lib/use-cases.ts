@@ -79,6 +79,18 @@ export const USE_CASES: UseCaseDef[] = [
   // this for ourselves"). Also intentionally absent from
   // topicRegistry.TIER1_USE_CASES for the same reason.
   { slug: "for-programmatic-seo", tier: "b2b",  toolSlugs: [] },
+
+  // NEW 2026-06-05. Freight forwarders / brokerage SMBs — back-office
+  // automation only (BOL parsing, invoice auditing, mailbox-AI for rate
+  // stats, carrier-side outreach amplifier). Citation-grade thesis at
+  // ~/curify-studio/docs/reddit-demand-mining-logistics-2026-06-05-v3.md
+  // — r/FreightBrokers anti-AI sentiment is economically grounded
+  // (Vlad 53↑: voice bots in front of carriers = loads cost more,
+  // capacity dries up), so positioning is "back-office only, never
+  // customer or carrier-facing." Empty toolSlugs because the wedge is
+  // a pipeline-level pitch, not a tool-browser pitch. Memory:
+  // project_logistics_fde_thesis.md.
+  { slug: "for-forwarder-back-office", tier: "b2b", toolSlugs: [] },
 ];
 
 export function getUseCaseBySlug(slug: string): UseCaseDef | undefined {
@@ -105,4 +117,5 @@ export const PERSONA_BLOG_CATEGORIES: Record<string, string[]> = {
   "for-publishers":        ["nano-template", "learning-education"],
   "for-dtc-brands":        ["content-automation", "creator-tools"],
   "for-programmatic-seo":  ["ds-ai-engineering", "content-automation"],
+  "for-forwarder-back-office": ["ds-ai-engineering", "content-automation"],
 };
