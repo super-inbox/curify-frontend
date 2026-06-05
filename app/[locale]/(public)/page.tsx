@@ -87,7 +87,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   // 2. Fetch Data (Server-Side)
   // We reuse the same query as your Inspiration Hub to get the feed data
   let cards: ReturnType<typeof mapDTOToUICard>[] = [];
