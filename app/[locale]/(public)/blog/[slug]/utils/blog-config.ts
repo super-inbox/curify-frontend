@@ -77,7 +77,8 @@ export function createBlogPostsConfig() {
             'world-cup-2026-top-contenders': 'worldCup2026TopContenders',
             'argentina-france-2022-world-cup-final': 'argentinaFrance2022WorldCupFinal',
       'one-person-companies-vs-100-person-teams': 'onePersonCompaniesVs100PersonTeams',
-      'self-improving-multimodal-search': 'selfImprovingMultimodalSearch'
+      'self-improving-multimodal-search': 'selfImprovingMultimodalSearch',
+      'ai-event-card-manus-vs-genspark-vs-curify': 'aiEventCardManusGensparkCurify'
     };
     
     namespace = namespaceMap[slug] || namespace;
@@ -190,5 +191,6 @@ export const availableKeys: Record<string, string[]> = {
   'worldCup2026TopContenders': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'argentinaFrance2022WorldCupFinal': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'onePersonCompaniesVs100PersonTeams': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
-  'selfImprovingMultimodalSearch': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords']
+  'selfImprovingMultimodalSearch': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
+  'aiEventCardManusGensparkCurify': ['title', 'date', 'readTime', 'heroImage', 'heroImageAlt', 'heroCtaText', 'heroCtaHref', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords']
 };
