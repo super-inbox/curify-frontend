@@ -68,17 +68,12 @@ export default function HomeClient({
           </p>
         </div>
 
-        {/* WC 2026 calendar widget — slot one card-sized cell above the
-            main feed. Auto-suppresses after July 19, 2026. */}
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 mb-3">
-          <WorldCupCalendarCard locale={locale} />
-        </div>
-
         <NanoInspirationRow
           cards={nanoCards}
           requireAuth={requireAuth}
           onViewClick={handleOpenModal}
           maxRows={8}
+          topRightCell={<WorldCupCalendarCard locale={locale} />}
         />
 
         <HomeToolsStrip />

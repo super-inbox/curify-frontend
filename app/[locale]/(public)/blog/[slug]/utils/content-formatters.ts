@@ -176,6 +176,21 @@ export function formatVoiceCloningContent(content: string): string {
     .replace(/^\| (.+?) \| (.+?) \| (.+?) \|\n/gm, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
     // Close table tags
     .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+    // Clickable image (image-as-link): [![alt](src)](url) → <a><img></a>
+    // Must run BEFORE the plain link regex so the inner ![alt](src) isn't
+    // half-eaten. Internal vs external follows the same same-tab/_blank
+    // rule as plain links.
+    .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="block my-6"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="hover:opacity-90 transition-opacity" /></a>`;
+    })
+    // Standalone markdown image: ![alt](src) → <img>
+    // Run BEFORE the plain link regex (which would otherwise capture
+    // ![alt as the label and produce a broken anchor).
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) => {
+      return `<img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; margin: 20px 0; border-radius: 8px;" />`;
+    })
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
       // Internal Curify URLs (start with /) open in the SAME tab so session
@@ -226,6 +241,21 @@ export function formatAslContent(content: string): string {
     .replace(/\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|/g, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$4</td></tr>')
     // Close table tags
     .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+    // Clickable image (image-as-link): [![alt](src)](url) → <a><img></a>
+    // Must run BEFORE the plain link regex so the inner ![alt](src) isn't
+    // half-eaten. Internal vs external follows the same same-tab/_blank
+    // rule as plain links.
+    .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="block my-6"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="hover:opacity-90 transition-opacity" /></a>`;
+    })
+    // Standalone markdown image: ![alt](src) → <img>
+    // Run BEFORE the plain link regex (which would otherwise capture
+    // ![alt as the label and produce a broken anchor).
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) => {
+      return `<img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; margin: 20px 0; border-radius: 8px;" />`;
+    })
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
       // Internal Curify URLs (start with /) open in the SAME tab so session
@@ -284,6 +314,21 @@ export function formatNanoTemplateContent(content: string): string {
     .replace(/^\| (.+?) \| (.+?) \| (.+?) \|\n/gm, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
     // Close table tags
     .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+    // Clickable image (image-as-link): [![alt](src)](url) → <a><img></a>
+    // Must run BEFORE the plain link regex so the inner ![alt](src) isn't
+    // half-eaten. Internal vs external follows the same same-tab/_blank
+    // rule as plain links.
+    .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="block my-6"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="hover:opacity-90 transition-opacity" /></a>`;
+    })
+    // Standalone markdown image: ![alt](src) → <img>
+    // Run BEFORE the plain link regex (which would otherwise capture
+    // ![alt as the label and produce a broken anchor).
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) => {
+      return `<img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; margin: 20px 0; border-radius: 8px;" />`;
+    })
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
       // Internal Curify URLs (start with /) open in the SAME tab so session
@@ -327,6 +372,21 @@ export function formatNanoBananaContent(content: string): string {
     // surfacing as the dot-path key in the rendered page.
     .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) =>
       `<img src="${toCdnUrl(src)}" alt="${alt}" class="my-4 mx-auto max-w-md rounded-lg shadow" />`)
+    // Clickable image (image-as-link): [![alt](src)](url) → <a><img></a>
+    // Must run BEFORE the plain link regex so the inner ![alt](src) isn't
+    // half-eaten. Internal vs external follows the same same-tab/_blank
+    // rule as plain links.
+    .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
+      const isInternal = href.startsWith("/");
+      const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${target} class="block my-6"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="hover:opacity-90 transition-opacity" /></a>`;
+    })
+    // Standalone markdown image: ![alt](src) → <img>
+    // Run BEFORE the plain link regex (which would otherwise capture
+    // ![alt as the label and produce a broken anchor).
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string) => {
+      return `<img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; margin: 20px 0; border-radius: 8px;" />`;
+    })
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m: string, label: string, href: string) => {
       // Internal Curify URLs (start with /) open in the SAME tab so session

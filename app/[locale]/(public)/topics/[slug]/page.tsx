@@ -334,21 +334,33 @@ export default async function Page({ params }: Props) {
         </section>
       )}
 
-      {/* WC 2026 calendar widget — slot one card-sized cell into the
-          top of WC-family pages and sports. Auto-hides after July 19. */}
-      {(slug === "world-cup" || slug === "sports" || slug.endsWith("-world-cup")) && (
+      {/* WC 2026 calendar widget — slot into the top-right cell of the
+          ExampleImagesGrid on WC-family + sports pages. When the page
+          has no gridItems, fall back to a standalone single-cell row.
+          Auto-hides after July 19, 2026 via the widget itself. */}
+      {gridItems.length > 0 ? (
+        <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
+          <ExampleImagesGrid
+            items={gridItems}
+            locale={localeStr}
+            maxRows={3}
+            desktopOpensExample
+            topRightCell={
+              (slug === "world-cup" || slug === "sports" || slug.endsWith("-world-cup"))
+                ? <WorldCupCalendarCard locale={localeStr} />
+                : undefined
+            }
+          />
+        </section>
+      ) : (slug === "world-cup" || slug === "sports" || slug.endsWith("-world-cup")) ? (
         <section className="mx-auto max-w-[1400px] px-4 pb-6 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            <WorldCupCalendarCard locale={localeStr} />
+            <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5">
+              <WorldCupCalendarCard locale={localeStr} />
+            </div>
           </div>
         </section>
-      )}
-
-      {gridItems.length > 0 && (
-        <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
-          <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} desktopOpensExample />
-        </section>
-      )}
+      ) : null}
 
       {galleryPrompts.length > 0 && (
         <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">

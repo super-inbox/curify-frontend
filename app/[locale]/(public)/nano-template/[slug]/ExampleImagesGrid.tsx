@@ -244,6 +244,7 @@ export default function ExampleImagesGrid({
   locale = "en",
   batch = false,
   desktopOpensExample = false,
+  topRightCell,
 }: {
   items: Item[];
   maxRows?: number;
@@ -251,6 +252,8 @@ export default function ExampleImagesGrid({
   batch?: boolean;
   /** See ExampleImageCard — bypasses the carousel on desktop. */
   desktopOpensExample?: boolean;
+  /** Optional cell pinned to row 1, rightmost column (WC calendar widget etc.) */
+  topRightCell?: React.ReactNode;
 }) {
   const cols = useCols();
   const limit = cols * maxRows;
@@ -274,6 +277,11 @@ export default function ExampleImagesGrid({
   return (
     <div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {topRightCell ? (
+          <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5">
+            {topRightCell}
+          </div>
+        ) : null}
         {visible.map((it) => (
           <ExampleImageCard
             key={it.id}
