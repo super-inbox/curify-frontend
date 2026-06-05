@@ -138,7 +138,7 @@ Re-run `scripts/eval_search.cjs` (cheap) for inspiration drift; re-run `scripts/
 
 | # | Query | Expected | Notes |
 | --- | --- | --- | --- |
-| 1 | `maps` | `rich` | User-reported precision issue 2026-06-05: `/search?q=maps` surfaces irrelevant template examples. Intent is clearly map-themed templates (travel-map, region-landmark-map, world-travel-map-illustration, tourist-spot-watercolor-map-infographic, mole-varieties-map etc.) but the matcher pulls in adjacent off-intent examples. Recall is high (broad token), precision is weak — likely needs (a) map-specific alias gating in the matcher and (b) audit of which template_subjects contain `map` token to prune false positives. Open precision item alongside `吉伊卡哇` and `short city escapes`. |
+| 1 | `maps` | `rich` | User-reported precision issue 2026-06-05: `/search?q=maps` surfaced off-intent template examples (recall-high, precision-weak). Fix shipped same day: added `map` slot to TIER2_SUGGESTIONS in `lib/searchIndex.ts` with multi-language aliases (`地图` / `地圖` / `地図` / `マップ` / `mapa` / `carte` / `landkarte` / `지도` / `नक्शा` / `карта` / `harita` / …) so `maps` + `map` + foreign-language equivalents now REDIRECT to `/topics/map` (8 templates, 75 inspirations). This entry intentionally still scores the underlying `/search` matcher (per `redirect_bypass_note`) — open precision item alongside `吉伊卡哇` and `short city escapes`. |
 
 ## How to use this set for side-by-side comparison
 

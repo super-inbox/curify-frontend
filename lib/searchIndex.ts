@@ -69,6 +69,21 @@ export const TIER2_SUGGESTIONS: SuggestionEntry[] = [
   { slug: "digital-canvas", label: "Digital Canvas",    emoji: "🎨", tier: 2, aliases: ["digital art", "canvas", "digital painting"] },
   { slug: "mockups",        label: "Mockups",           emoji: "📱", tier: 2, aliases: ["mockup", "mock-up", "prototype", "preview"] },
   { slug: "guides",         label: "Guides",            emoji: "📋", tier: 2, aliases: ["how to", "how-to", "tutorial", "walkthrough", "guide"] },
+  // `map` slot — content-shape topic (8 templates, 75 inspirations). Aliases
+  // include multi-language map terms so `/search?q=<term>` redirects to
+  // `/topics/map` instead of falling through to the matcher (which has
+  // recall-high / precision-weak behavior on the bare token `map`/`maps`).
+  { slug: "map",            label: "Maps",              emoji: "🗺️", tier: 2, aliases: [
+    "maps", "mapping",
+    "地图", "地圖", "地図", "マップ",
+    "mapa", "mapas",
+    "carte", "cartes", "mappemonde", "plan de ville",
+    "landkarte", "weltkarte", "stadtplan",
+    "지도", "맵",
+    "नक्शा", "मानचित्र",
+    "карта", "карты",
+    "harita",
+  ] },
   { slug: "language-english", label: "English Learning", emoji: "🇬🇧", tier: 2, aliases: ["english", "esl", "learn english"] },
   // Language pairs — promoted from Tier 3 to Tier 2 so they appear as
   // navigational tabs alongside vocabulary / dialogue / etc.
