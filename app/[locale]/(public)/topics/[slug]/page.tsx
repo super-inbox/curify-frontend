@@ -22,6 +22,7 @@ import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic } from "@/lib/topicRegistry";
 import TopSearchSuggestions from "./TopSearchSuggestions";
+import WorldCupCalendarCard from "@/app/[locale]/_components/WorldCupCalendarCard";
 
 // Topic data is bundled (nano_templates.json + nano_inspiration.json +
 // blogs.json) plus a single fetch for related prompts. Bundled data
@@ -330,6 +331,16 @@ export default async function Page({ params }: Props) {
       {(slug === 'character' || slug === 'mbti') && (
         <section className="mx-auto max-w-[1400px] px-4 pb-6 sm:px-6 lg:px-8">
           <MBTIQuizCapsule />
+        </section>
+      )}
+
+      {/* WC 2026 calendar widget — slot one card-sized cell into the
+          top of WC-family pages and sports. Auto-hides after July 19. */}
+      {(slug === "world-cup" || slug === "sports" || slug.endsWith("-world-cup")) && (
+        <section className="mx-auto max-w-[1400px] px-4 pb-6 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            <WorldCupCalendarCard locale={localeStr} />
+          </div>
         </section>
       )}
 

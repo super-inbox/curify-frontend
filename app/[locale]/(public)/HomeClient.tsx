@@ -11,6 +11,7 @@ import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { InspirationCardType } from "@/app/[locale]/_components/InspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import HomeToolsStrip from "./HomeToolsStrip";
+import WorldCupCalendarCard from "@/app/[locale]/_components/WorldCupCalendarCard";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,9 +23,11 @@ function classNames(...xs: Array<string | false | undefined | null>) {
 }
 
 export default function HomeClient({
+  locale = "en",
   cards = [],
   nanoCards = [],
 }: {
+  locale?: string;
   cards?: InspirationCardType[];
   nanoCards?: NanoInspirationCardType[];
 }) {
@@ -63,6 +66,12 @@ export default function HomeClient({
           <p className="mt-4 text-base leading-relaxed text-neutral-700">
             {tHero("description")}
           </p>
+        </div>
+
+        {/* WC 2026 calendar widget — slot one card-sized cell above the
+            main feed. Auto-suppresses after July 19, 2026. */}
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 mb-3">
+          <WorldCupCalendarCard locale={locale} />
         </div>
 
         <NanoInspirationRow

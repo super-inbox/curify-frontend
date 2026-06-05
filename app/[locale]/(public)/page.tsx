@@ -127,7 +127,7 @@ export default async function HomePage() {
     })
   }}
 />
-      <HomeClient cards={cards} nanoCards={nanoCards} />
+      <HomeClient locale={locale} cards={cards} nanoCards={nanoCards} />
     </>
   );
 }
