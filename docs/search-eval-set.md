@@ -134,6 +134,12 @@ Re-run `scripts/eval_search.cjs` (cheap) for inspiration drift; re-run `scripts/
 | 2 | `samurai` | `moderate` | Weekly cycle 1: 14d admin pull showed 1 NR. Pre-topup base was 3 hits (1 each across fandom-grid + mbti-generic + historical-figure-profile from 2026-05-19 batch). After 2026-05-30 fandom topup (+4 samurai examples: female samurai grid, sengoku warlords grid, anime-samurai mbti, samurai-of-anime pop-culture), base = 7 hits across 4 templates. Adjacent 武士 also covered via CJK bigram. |
 | 3 | `genshin` | `moderate` | Weekly cycle 1: 14d admin pull showed 1 NR. Pre-topup base was 3 hits (1 each across fandom-grid + mbti-generic + pop-culture-matching from 2026-05-19 batch). After 2026-05-30 fandom topup (+4 genshin examples: Liyue grid, Fontaine grid, by-element mbti, Archons pop-culture), base = 7 hits across 3 templates. Adjacent 原神 (Genshin CJK) = 4 hits. |
 
+## user-report-2026-06-05 (1 query)
+
+| # | Query | Expected | Notes |
+| --- | --- | --- | --- |
+| 1 | `maps` | `rich` | User-reported precision issue 2026-06-05: `/search?q=maps` surfaces irrelevant template examples. Intent is clearly map-themed templates (travel-map, region-landmark-map, world-travel-map-illustration, tourist-spot-watercolor-map-infographic, mole-varieties-map etc.) but the matcher pulls in adjacent off-intent examples. Recall is high (broad token), precision is weak — likely needs (a) map-specific alias gating in the matcher and (b) audit of which template_subjects contain `map` token to prune false positives. Open precision item alongside `吉伊卡哇` and `short city escapes`. |
+
 ## How to use this set for side-by-side comparison
 
 For each query in this table, type it verbatim into both
