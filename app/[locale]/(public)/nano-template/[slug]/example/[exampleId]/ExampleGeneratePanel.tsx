@@ -65,12 +65,20 @@ export default function ExampleGeneratePanel({
   const handleDirectGenerate = async () => {
     if (isGeneratingRef.current) return;
     isGeneratingRef.current = true;
-    if (!user) { setDrawerState("signin"); return; }
+    if (!user) {
+      isGeneratingRef.current = false;
+      setDrawerState("signin");
+      return;
+    }
 
     const credits =
       ((user as any)?.non_expiring_credits ?? 0) +
       ((user as any)?.expiring_credits ?? 0);
-    if (credits < CREDITS_COST) { alert(t("insufficientCredits")); return; }
+    if (credits < CREDITS_COST) {
+      alert(t("insufficientCredits"));
+      isGeneratingRef.current = false;
+      return;
+    }
 
     try {
       setIsGenerating(true);
