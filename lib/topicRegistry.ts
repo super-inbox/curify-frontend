@@ -150,7 +150,62 @@ const TOPIC_BLOG_TAG: Record<string, string> = {
 // posts; only this one is the canonical world-cup explainer).
 // Resolved against public/data/blogs.json by slug.
 const TOPIC_BLOG_SLUGS: Record<string, string[]> = {
-  "world-cup": ["brazil-argentina-soccer-poster-prompts"],
+  // Main WC topic page — links to the hub blog + the 3 new 2026-06-05
+  // longform posts + the 4 existing prompt-recipe posts.
+  "world-cup": [
+    "world-cup-2026-ai-prompt-hub",
+    "world-cup-2026-top-contenders",
+    "fifa-2026-host-city-travel-guide",
+    "argentina-france-2022-world-cup-final",
+    "brazil-argentina-soccer-poster-prompts",
+    "portugal-soccer-poster-prompts",
+    "france-soccer-poster-prompts",
+    "ai-1v1-soccer-rivalry-prompts",
+  ],
+  // Country-WC tier-2 pages each pull the hub + the contenders + their
+  // own country-relevant deep guides where they exist.
+  "argentina-world-cup": [
+    "argentina-france-2022-world-cup-final",
+    "brazil-argentina-soccer-poster-prompts",
+    "world-cup-2026-top-contenders",
+    "world-cup-2026-ai-prompt-hub",
+  ],
+  "brazil-world-cup": [
+    "brazil-argentina-soccer-poster-prompts",
+    "world-cup-2026-ai-prompt-hub",
+    "world-cup-2026-top-contenders",
+  ],
+  "france-world-cup": [
+    "france-soccer-poster-prompts",
+    "argentina-france-2022-world-cup-final",
+    "world-cup-2026-top-contenders",
+    "world-cup-2026-ai-prompt-hub",
+  ],
+  "portugal-world-cup": [
+    "portugal-soccer-poster-prompts",
+    "world-cup-2026-ai-prompt-hub",
+  ],
+  "spain-world-cup": [
+    "world-cup-2026-top-contenders",
+    "world-cup-2026-ai-prompt-hub",
+  ],
+  "england-world-cup": [
+    "world-cup-2026-top-contenders",
+    "world-cup-2026-ai-prompt-hub",
+    "ai-1v1-soccer-rivalry-prompts",
+  ],
+  "germany-world-cup": [
+    "world-cup-2026-ai-prompt-hub",
+  ],
+  "italy-world-cup": [
+    "world-cup-2026-ai-prompt-hub",
+  ],
+  "netherlands-world-cup": [
+    "world-cup-2026-ai-prompt-hub",
+  ],
+  "uruguay-world-cup": [
+    "world-cup-2026-ai-prompt-hub",
+  ],
 };
 
 // Reverse map: Tier 2 child → Tier 1 parent
