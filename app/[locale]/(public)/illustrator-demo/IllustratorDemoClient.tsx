@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import type { IllustratorDemoSeed, IllustratorStyle } from "@/lib/illustrator_demo";
 
 const SCALE_COUNT = 3;
@@ -91,6 +91,10 @@ export default function IllustratorDemoClient({ seed }: { seed: IllustratorDemoS
     Array.from({ length: SCALE_COUNT }, () => ({ status: "idle" as const })),
   );
   const [scaling, setScaling] = useState(false);
+  // Synchronous guard — a fast double-click would otherwise fire onScale twice
+  // before the `scaling` state propagates, kicking off 2 × SCALE_COUNT Gemini
+  // calls instead of one batch. State alone isn't enough.
+  const scalingRef = useRef(false);
 
   const onPickStyle = useCallback((id: string) => {
     setPickedStyleId((cur) => (cur === id ? null : id));
@@ -99,7 +103,8 @@ export default function IllustratorDemoClient({ seed }: { seed: IllustratorDemoS
   }, []);
 
   const onScale = useCallback(async () => {
-    if (!pickedStyleId || scaling) return;
+    if (!pickedStyleId || scalingRef.current) return;
+    scalingRef.current = true;
     setScaling(true);
     const initial: ScaleState[] = Array.from({ length: SCALE_COUNT }, () => ({
       status: "running" as const,
@@ -139,7 +144,8 @@ export default function IllustratorDemoClient({ seed }: { seed: IllustratorDemoS
       }),
     );
     setScaling(false);
-  }, [pickedStyleId, scaling]);
+    scalingRef.current = false;
+  }, [pickedStyleId]);
 
   return (
     <main className="mx-auto max-w-6xl space-y-10 px-4 py-10">

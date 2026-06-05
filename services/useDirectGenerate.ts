@@ -39,6 +39,12 @@ export function useDirectGenerate({
     score: number;
   } | null>(null);
   const bypassRef = useRef(false);
+  // Tracks the exId of the most recent successful generation so a follow-up
+  // click with identical params surfaces the duplicate warning instead of
+  // silently re-firing the same generate request. existingExamples (the prop)
+  // is not refreshed after onSuccess, so without this guard `findDuplicate`
+  // misses the just-generated example and the second click goes through.
+  const lastGeneratedExIdRef = useRef<string | null>(null);
 
   // Auto-resume after signin. When an anonymous user clicks Generate,
   // we set pendingGenerateRef + open the signin drawer. When the user
@@ -71,11 +77,30 @@ export function useDirectGenerate({
     const credits =
       ((user as any)?.non_expiring_credits ?? 0) +
       ((user as any)?.expiring_credits ?? 0);
-    if (credits < CREDITS_COST) { alert(t("insufficientCredits")); return; }
+    if (credits < CREDITS_COST) {
+      alert(t("insufficientCredits"));
+      isGeneratingRef.current = false;
+      return;
+    }
+
+    const exId = buildExampleId(templateId, params);
 
     if (!bypassRef.current) {
       const dup = findDuplicate(templateId, params, existingExamples);
-      if (dup) { setDuplicateWarning(dup); return; }
+      if (dup) {
+        setDuplicateWarning(dup);
+        isGeneratingRef.current = false;
+        return;
+      }
+      // Self-duplicate: the user just generated this exact exId. Without this
+      // guard, a second click after success re-fires the same generate request
+      // (existingExamples isn't refreshed inside this hook), which is the path
+      // behind "users click twice and get the same image generated twice."
+      if (lastGeneratedExIdRef.current === exId) {
+        setDuplicateWarning({ exampleId: exId, score: 1 });
+        isGeneratingRef.current = false;
+        return;
+      }
     }
     bypassRef.current = false;
     setDuplicateWarning(null);
@@ -84,7 +109,6 @@ export function useDirectGenerate({
       setIsGenerating(true);
       isGeneratingRef.current = true;
       trackAction(tracking, "generate");
-      const exId = buildExampleId(templateId, params);
       const res = await nanoGenerateService.generate({
         template_id: templateId,
         params,
@@ -92,6 +116,7 @@ export function useDirectGenerate({
       });
       if (!res?.success || !res?.signed_url)
         throw new Error(res?.message || "Generation failed");
+      lastGeneratedExIdRef.current = exId;
       onSuccess(res.signed_url, exId);
     } catch {
       alert(t("generateFailed"));

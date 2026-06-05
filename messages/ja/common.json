@@ -219,7 +219,8 @@
       "for-designers": "デザイナー",
       "for-publishers": "EdTech・出版社",
       "for-dtc-brands": "DTC ブランド",
-      "for-programmatic-seo": "プログラマティック SEO"
+      "for-programmatic-seo": "プログラマティック SEO",
+      "for-forwarder-back-office": "貨物ブローカー"
     }
   },
   "useCasePage": {
@@ -298,6 +299,18 @@
       "bullet1": "Original hero imagery per page — no royalty-free filler, no thin-content slop penalty",
       "bullet2": "Schema-aware templates ready for [service] in [city], AffiliateProduct, FAQ, HowTo markup — built for topical authority, not churn-and-burn",
       "bullet3": "Packaged as: hosted generator OR self-hosted Docker — fixed-scope CMS adapter, no custom rewrites"
+    },
+    "for-forwarder-back-office": {
+      "title": "貨物ブローカーのためのAI — バックオフィス専用",
+      "subtitle": "ブローカーがデスクで単独で行う作業のためのAI。電話での作業のためのAIではありません。",
+      "description": "キャリアにAIを導入するブローカーは荷物を失っています — キャリアは音声ボットに電話を切り、復讐的な過剰見積もりが発生し、キャパシティが枯渇します。私たちは代わりにバックオフィス層を構築します：文書、請求書、料金統計、レーン分析、キャリアネットワークへのアプローチ。顧客やキャリアがそれを見ることはありません。電話はあなたのものです。実際のブローカーのコメントに基づいたポジショニング — Vlad (53↑ on r/FreightBrokers): 音声ボットはブローカーにとって節約よりもコストがかかる。Questionoid (15↑): AIは詐欺を検出し、文書を確認し、キャリアパケットを整理すべきであり、受付、キャリア担当者、またはコンプライアンス部門であってはなりません。",
+      "bullet0": "BOL + 料金確認 + 請求書 + ランパー抽出 → TMSプッシュ。1人の担当者あたり1日数時間を節約。キャリアはそれを見ることはなく、関係にダメージはありません。",
+      "bullet1": "OutlookまたはZoho用のMailbox-AI — 料金統計、レーン分析、フォローアップリマインダー、ドラフト返信 — すでに行った会話から引き出されます。",
+      "bullet2": "キャリア側のアプローチ増幅器：公的MC + レーン投稿をスキャンし、キャリアネットワークのカバレッジギャップに対してマッチングし、アプローチをドラフトします。同側B2B — 顧客向けのタブーはありません。",
+      "bullet3": "内部ナレッジベース：過去の料金紛争、獲得見積もりパターン、エッジケースのプレイブックから上級ブローカーの部族知識を体系化します。新入社員はシステムから学び、ただ耳にするだけではありません。",
+      "bullet4": "貨物ロングテールのためのSEOコンテンツエンジン：送料計算機、DDP対DDUの説明、レーン特有の料金ガイド。オリジナルの画像、スキーマ対応、インデックス可能。",
+      "bullet5": "マージンフロアの強制、料金履歴のコンテキスト、コンプライアンスチェックを備えたバックオフィス見積もりドラフト。担当者がレビューして送信します。電話はあなたのものです。",
+      "bullet6": "パッケージ化：30日間のパイロットスコーピング（1つのウェッジ、1つのICP）またはフルバックオフィスエンジン統合。固定スコープ、カスタム開発なし。/contact経由で15分の監査をスケジュールします。"
     }
   },
   "interconnection": {

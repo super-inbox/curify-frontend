@@ -30,7 +30,7 @@ type LearningMaterial = {
   coverImage?: string;
 };
 
-const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3"] as const;
+const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3", "bullet4", "bullet5", "bullet6"] as const;
 
 // Use cases that have an explainer video pair under /public/video/.
 // File naming convention: `use-case-{key}-{en|cn}.mp4`. Extend this map
@@ -268,7 +268,7 @@ export default function UseCaseClient({
         </p>
 
         <ul className="mt-5 space-y-2">
-          {BULLET_KEYS.map((key) => (
+          {BULLET_KEYS.filter((key) => t.has(`${slug}.${key}` as never)).map((key) => (
             <li key={key} className="flex items-start gap-2 text-sm text-neutral-700">
               <span className="mt-0.5 text-purple-500">✓</span>
               {t(`${slug}.${key}` as never)}

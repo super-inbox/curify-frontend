@@ -4804,5 +4804,93 @@
         ]
       }
     }
+  },
+  "template-ip-creative-cultural-goods-mockup-set": {
+    "category": "IP Cultural & Stationery Merchandise Mockup",
+    "description": "Generate a full IP-themed cultural merchandise flatlay — notebook, tote, fan, mug, stickers, keychain, gift box — all printed with your custom character art and brand color palette.",
+    "title": "Nano Banana Prompt: IP Cultural & Stationery Merchandise Mockup Set Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a top-down 8K commercial flatlay of a complete IP-derivative stationery merchandise set on a warm beige base background. The full lineup — spiral notebook, hardcover journal, canvas tote, folding fan, eye mask, lanyard, acrylic keychain, die-cut stickers, washi tape, ceramic mug, tumbler, throw pillow, ballpoint pen, phone case, gift box — is uniformly printed with your IP character illustration and matching brand title text, in the IP's signature color palette.",
+        "who": "Suitable for IP licensors and creators pitching merchandise lines, museum / cultural-creative gift shop teams, indie illustrators productizing characters, brand designers building lookbooks, and IP collaboration proposals.",
+        "how": [
+          "Enter the IP character name + brand slogan + art style direction in {ip_info} (e.g., 熊猫茶师 古风国画Q版熊猫穿汉服品茶 豆绿色主色调).",
+          "All merchandise items auto-render with the chosen character art and color palette.",
+          "Style is auto-tuned per IP — gongbi / cute cartoon / new-Chinese-style / streetwear illustration.",
+          "Generate a top-down 8K cultural merchandise flatlay mockup poster."
+        ],
+        "prompts": [
+          "Generate an IP merchandise flatlay for 熊猫茶师 panda tea master in gongbi style with dou-green palette.",
+          "Create an IP cultural goods set for 墨狐书生 ink fox scholar in burgundy ink-wash style.",
+          "Generate a 祥龙纳福 blessing dragon Q-version new-Chinese-style merchandise flatlay in jade green."
+        ]
+      }
+    }
+  },
+  "template-ip-gift-box-stationery-set-mockup": {
+    "category": "IP Gift Box Stationery Packaging Mockup",
+    "description": "Generate a top-down mockup of an open IP-themed gift packaging box — branded lid, fitted sponge tray with silicone keychain, stickers, notepad, tumbler, capped pen, spiral notebook, all printed with your custom character.",
+    "title": "Nano Banana Prompt: IP Gift Box Stationery Set Mockup Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a top-down 8K mockup of an open rectangular IP-themed gift packaging box. The lid's inner side carries the IP brand headline; a white sponge inner tray with pre-cut slots holds matching merchandise: silicone doll keychain, sticker sheet, memo notepad, portable tumbler, character-capped ball pen, and spiral notebook — all printed with your custom IP character and brand color palette.",
+        "who": "Suitable for IP merchandise teams launching boxed sets, K-pop / anime / character brand collabs, museum gift shops curating gift bundles, corporate-gift designers, and crowdfunding campaigns for character merchandise.",
+        "how": [
+          "Enter the IP character name + core color + character style in {ip_info} (e.g., 釜山布吉鸭 Busan Boogi Duck mustard yellow chubby duck).",
+          "Box lid, sponge tray slots, and all items auto-fill with your character art.",
+          "Brand palette is auto-derived from your IP's core color.",
+          "Generate a top-down 8K open gift box mockup poster."
+        ],
+        "prompts": [
+          "Generate a Busan Boogi Duck mustard-yellow IP gift box mockup with chubby duck character.",
+          "Create an IP gift box mockup for a streetwear shark mascot in navy + neon-orange palette.",
+          "Generate a new-Chinese-style 祥龙 dragon gift box mockup in jade green + gold palette."
+        ]
+      }
+    }
+  },
+  "template-ip-character-sprite-emoji-sheet": {
+    "category": "IP Character Sprite & Emoji Sheet",
+    "description": "Generate a vertical IP character design sheet — multi-pose emotion sprites on top (cheering, grumpy, typing, confused, sleeping), full turnaround views on bottom — for any IP character on a clean white background.",
+    "title": "Nano Banana Prompt: IP Character Sprite & Emoji Sheet Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K character design sheet for any IP character on a clean white background. The upper multi-grid panel shows independent cartoon frames of the character in various emotion + action poses — cheering with pom-poms, annoyed grumpy face, typing on laptop, confused with question mark, sleeping, dancing. The lower turnaround panel shows front / 3/4 / side / back views for asset-ready character design.",
+        "who": "Suitable for IP designers building character bibles, indie animators producing reaction sprites, sticker pack creators, brand mascot developers, and game/app teams needing character turnaround references.",
+        "how": [
+          "Enter the IP name + character feature + main color in {ip_info} (e.g., 毕业羊驼 graduation alpaca cream-white wool graduation cap).",
+          "Multi-pose emotion sprites auto-render in the upper panel.",
+          "Full turnaround views auto-render in the lower panel.",
+          "Generate a vertical 8K character design sheet on white background."
+        ],
+        "prompts": [
+          "Generate a graduation alpaca character sprite sheet with cap and gown in cream-white wool.",
+          "Create a streetwear shark mascot sprite + turnaround sheet in navy + neon-orange.",
+          "Generate a magical girl cat character sprite sheet in pastel pink + lavender."
+        ]
+      }
+    }
+  },
+  "template-ip-emoji-sticker-sheet-poster": {
+    "category": "IP Emoji Sticker Sheet Poster",
+    "description": "Generate a vertical IP emoticon sticker collection poster — large hero illustration with speech bubble on top, grid of small emoji panels below, on a soft warm base with faint character watermark.",
+    "title": "Nano Banana Prompt: IP Emoji Sticker Sheet Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K IP cartoon sticker collection poster. The top section features a large main character illustration with speech bubble and the IP name headline. Below, a neat grid layout holds multiple independent small emoji panels — each a single self-contained emotion or action sticker. Background is a soft solid warm base with a faint repeated character watermark.",
+        "who": "Suitable for IP creators launching sticker packs (LINE / WhatsApp / Telegram), printable sticker shop sellers, fandom merchandise designers, indie illustrators building reaction sets, and brand mascot rollouts.",
+        "how": [
+          "Enter the IP name + character feature + main color + drawing style in {ip_info} (e.g., 越南橘猫 Vietnamese orange cat in flat illustration style).",
+          "Hero illustration + speech bubble + IP name auto-render at the top.",
+          "Grid of small emoji panels auto-fills below with varied poses and reactions.",
+          "Generate a vertical 8K IP emoji sticker sheet poster."
+        ],
+        "prompts": [
+          "Generate a Vietnamese orange cat IP emoji sticker sheet poster in flat illustration style.",
+          "Create an Empress Cow Cat IP sticker sheet poster with regal palace styling in red + gold.",
+          "Generate a streetwear shark mascot emoji sticker sheet in navy + neon-orange."
+        ]
+      }
+    }
   }
 }
