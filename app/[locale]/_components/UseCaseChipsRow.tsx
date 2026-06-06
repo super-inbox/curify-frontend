@@ -73,7 +73,7 @@ export default function UseCaseChipsRow({
     ? filterTo
         .map((slug) => USE_CASES.find((uc) => uc.slug === slug))
         .filter((x): x is (typeof USE_CASES)[number] => Boolean(x))
-    : USE_CASES;
+    : USE_CASES.filter((uc) => !uc.hiddenFromChips);
 
   if (chips.length === 0) return null;
 

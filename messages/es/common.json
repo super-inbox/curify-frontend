@@ -220,7 +220,8 @@
       "for-publishers": "EdTech y Editores",
       "for-dtc-brands": "Marcas DTC",
       "for-programmatic-seo": "SEO Programático",
-      "for-forwarder-back-office": "Corredores de Carga"
+      "for-forwarder-back-office": "Corredores de Carga",
+      "for-merch-operators": "Operadores de Merch"
     }
   },
   "useCasePage": {
@@ -311,6 +312,17 @@
       "bullet4": "Motor de contenido SEO para carga de cola larga: calculadoras de costos de envío, explicaciones de DDP vs DDU, guías de tarifas específicas de rutas. Imágenes originales, conscientes de esquema, indexables.",
       "bullet5": "Borrador de cotización de oficina con cumplimiento de margen mínimo, contexto de historial de tarifas y verificación de cumplimiento. El representante revisa y envía. Las llamadas telefónicas siguen siendo tuyas.",
       "bullet6": "Empaquetado como: piloto de 30 días (un segmento, un ICP) O integración completa del motor de oficina. Alcance fijo, sin desarrollo personalizado. Programa una auditoría de 15 minutos a través de /contact."
+    },
+    "for-merch-operators": {
+      "title": "Para Operadores de Merch — Diseñado para Diseñadores, No en Contra de Ellos",
+      "subtitle": "Consigue 20 diseños consistentes en serie en el tiempo que actualmente te lleva hacer 3. Ningún cliente lo ve. Tu mano de diseño sigue siendo tuya.",
+      "description": "Las fábricas de impresión, plataformas POD y operadores de merch con su propio equipo de diseño no pierden ante la IA en calidad — pierden ante la pared de velocidad. Como dijo un operador en r/printondemand: \"Todo el mundo puede hacer de 1 a 3 diseños decentes. El verdadero desafío es: ¿puedes hacer 20 diseños, cambiarlos, refinarlos?\" Esa es la pared. Construimos el motor de capa de diseño que la rompe — una ontología de tres capas (marca → serie → SKU) que asegura consistencia a través de cientos de variantes sin aplanar la mano del ilustrador. Posicionamiento anclado contra el patrón \"Scoop\" de Gelato (el hilo meta de r/printondemand documentó un bot de IA reemplazando el soporte humano y destruyendo caminos de resolución). Curify es la capa de diseño que controla el operador — nunca la capa orientada al cliente que destruye la confianza.",
+      "bullet0": "20 diseños consistentes en serie en el tiempo que te lleva hacer 3. La pared de velocidad SKU, rota. Voz de marca bloqueada en todo el conjunto.",
+      "bullet1": "Ontología de tres capas: marca → serie → SKU. Bloquea la mano del ilustrador a nivel de serie; itera variantes a nivel de SKU. Sin desviaciones entre la pieza 1 y la pieza 50.",
+      "bullet2": "Salida de calidad de impresión. StickerApp, Printify, Printful, SPOD, Prodigi — impresión de primera pasada, sin limpieza manual entre diseño y producción.",
+      "bullet3": "Disciplinado por nicho por defecto. Forma de tienda única desde el primer diseño. Sin agrupaciones de múltiples categorías que gritan barato.",
+      "bullet4": "Ningún cliente lo ve, sin daño a la relación. El trabajo de diseño que el operador hace en el escritorio — no el trabajo de servicio al cliente que destruye la confianza del transportista y del comprador.",
+      "bullet5": "Empaquetado como: niveles de cuota de diseño mensual (50 / 200 / 1,000 / ilimitado) O licencia de motor para pipelines de diseño internos — elige una forma, sin desarrollo personalizado."
     }
   },
   "interconnection": {

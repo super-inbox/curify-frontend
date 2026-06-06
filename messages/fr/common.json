@@ -220,7 +220,8 @@
       "for-publishers": "EdTech & Éditeurs",
       "for-dtc-brands": "Marques DTC",
       "for-programmatic-seo": "SEO Programmatique",
-      "for-forwarder-back-office": "Courtiers de fret"
+      "for-forwarder-back-office": "Courtiers de fret",
+      "for-merch-operators": "Opérateurs de Merch"
     }
   },
   "useCasePage": {
@@ -311,6 +312,17 @@
       "bullet4": "Moteur de contenu SEO pour le long tail du fret : calculateurs de coûts d'expédition, explications DDP vs DDU, guides tarifaires spécifiques aux couloirs. Images originales, conscientes du schéma, indexables.",
       "bullet5": "Brouillon de devis de back-office avec application du seuil de marge, contexte d'historique tarifaire et vérification de conformité. Le représentant examine et envoie. Les appels téléphoniques restent les vôtres.",
       "bullet6": "Conditionné comme : pilotage de 30 jours (une tranche, un ICP) OU intégration complète du moteur de back-office. Portée fixe, pas de développement personnalisé. Planifiez un audit de 15 minutes via /contact."
+    },
+    "for-merch-operators": {
+      "title": "Pour les Opérateurs de Merch — Conçu pour les Designers, Pas Contre Eux",
+      "subtitle": "Réalisez 20 designs cohérents en série dans le temps qu'il vous faut actuellement pour en faire 3. Aucun client ne le voit jamais. Votre main de designer reste la vôtre.",
+      "description": "Les usines d'impression, les plateformes POD et les opérateurs de merch avec leur propre équipe de design ne perdent pas face à l'IA sur la qualité — ils perdent face au mur de la vélocité. Comme l'a dit un opérateur sur r/printondemand : \"Tout le monde peut faire 1 à 3 designs décents. Le vrai défi est : pouvez-vous faire 20 designs, les changer, les affiner ?\" C'est le mur. Nous construisons le moteur de couche de design qui le brise — une ontologie à trois couches (marque → série → SKU) qui verrouille la cohérence à travers des centaines de variantes sans aplatir la main de l'illustrateur. Positionnement ancré contre le modèle \"Scoop\" de Gelato (le fil méta r/printondemand 44↑ a documenté un bot IA remplaçant le support humain et détruisant les chemins de résolution). Curify est la couche de design que l'opérateur contrôle — jamais la couche orientée client qui détruit la confiance.",
+      "bullet0": "20 designs cohérents en série dans le temps qu'il vous faut pour en faire 3. Le mur de vélocité SKU, brisé. Voix de marque verrouillée à travers l'ensemble complet.",
+      "bullet1": "Ontologie à trois couches : marque → série → SKU. Verrouillez la main de l'illustrateur au niveau de la série ; itérez les variantes au niveau SKU. Pas de dérive entre la pièce 1 et la pièce 50.",
+      "bullet2": "Sortie de qualité impression. StickerApp, Printify, Printful, SPOD, Prodigi — impression au premier passage, sans nettoyage manuel entre le design et la production.",
+      "bullet3": "Discipline de niche par défaut. Forme de magasin unique dès le premier design. Pas de regroupement multi-catégories qui crie bon marché.",
+      "bullet4": "Aucun client ne le voit jamais, pas de dommages relationnels. Le travail de design que l'opérateur fait au bureau — pas le travail de service client qui détruit la confiance entre le transporteur et l'acheteur.",
+      "bullet5": "Emballé sous forme de : niveaux de quota de design mensuel (50 / 200 / 1 000 / illimité) OU licence moteur pour pipelines de design internes — choisissez une forme, pas de développement personnalisé."
     }
   },
   "interconnection": {
