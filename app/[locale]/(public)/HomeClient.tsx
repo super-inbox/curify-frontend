@@ -11,7 +11,8 @@ import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { InspirationCardType } from "@/app/[locale]/_components/InspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import HomeToolsStrip from "./HomeToolsStrip";
-import WorldCupCalendarCard from "@/app/[locale]/_components/WorldCupCalendarCard";
+import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
+import { TOP_QUERIES } from "@/app/[locale]/(public)/topics/[slug]/TopSearchSuggestions";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -73,7 +74,7 @@ export default function HomeClient({
           requireAuth={requireAuth}
           onViewClick={handleOpenModal}
           maxRows={8}
-          topRightCell={<WorldCupCalendarCard locale={locale} />}
+          topRightCell={<WcRotatingSlot locale={locale} queries={TOP_QUERIES["world-cup"]} />}
         />
 
         <HomeToolsStrip />

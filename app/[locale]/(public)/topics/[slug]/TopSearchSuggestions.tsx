@@ -11,7 +11,10 @@ function buildSearchHref(locale: string, query: string): string {
 // Hard-coded high-signal queries per topic. Renders only when the topic
 // has a curated list — keeps the surface narrow and editorial. Refresh
 // quarterly against GSC top-queries data.
-const TOP_QUERIES: Record<string, string[]> = {
+//
+// Exported so WcRotatingSlot can sample from the same list — single
+// source of truth for the WC "People also search" surface.
+export const TOP_QUERIES: Record<string, string[]> = {
   "world-cup": [
     "World Cup 2026 schedule",
     "Argentina vs Brazil all time",
@@ -23,6 +26,8 @@ const TOP_QUERIES: Record<string, string[]> = {
     "FIFA Women's World Cup 2027",
     "World Cup hosts history",
     "England 1966 World Cup",
+    "World Cup trivia",
+    "most memorable World Cup moments",
   ],
 };
 
