@@ -175,6 +175,57 @@ PRUNE = OrderedDict([
             '婚礼','结婚','婚纱','新娘','新郎','婚庆','婚礼策划','婚礼请柬','周年纪念','订婚',
         ],
     }),
+    # 2026-06-07 — WC alias overspread on history-timeline-infographic
+    # (introduced by commit 090b0f6c via template-level scope). Aliases
+    # added for England 1966 / Brazil 2002 / Maradona Hand of God /
+    # iconic moments etc. spread to all 16 timeline inspirations,
+    # including apple inc, coffee history, film awards, vintage fashion,
+    # marketing agencies, etc. — 9 non-WC timelines now incorrectly
+    # match WC queries. This prune entry strips the WC aliases globally;
+    # topup_search_aliases.py re-adds them with inspiration_filter scope
+    # (title contains 'world cup'/'fifa' for general WC queries,
+    # title contains '1966'/'2002'/'argentina'/'brazil' for the
+    # year-or-country-specific queries) on the same date.
+    ('wc_history_timeline_overspread', {
+        'templates': [
+            'template-history-timeline-infographic',
+            'template-sports-battle',
+        ],
+        'aliases': [
+            # wc_iconic_moments_history family aliases (commit 090b0f6c)
+            'Hand of God', 'Maradona Hand of God', 'Maradona 1986',
+            'iconic World Cup moments', 'most memorable World Cup moments',
+            'most memorable moments', 'World Cup memorable moments',
+            'greatest World Cup moments', 'unforgettable World Cup moments',
+            'defining World Cup moments', 'World Cup classic moments',
+            'World Cup defining matches', 'World Cup iconic matches',
+            '世界杯经典时刻', '世界杯难忘时刻', '马拉多纳上帝之手',
+            '上帝之手', '世界杯历史经典', '球王时刻',
+            '世界杯最难忘瞬间', '世界杯历史时刻',
+            # wc_vintage_year_squad family aliases (commit 090b0f6c)
+            '1966 World Cup', '1966 England', 'England 1966',
+            'England 1966 World Cup', 'England 1966 squad',
+            '2002 World Cup', '2002 Brazil', 'Brazil 2002',
+            'Brazil 2002 squad', '1970 Brazil', 'Brazil 1970',
+            '1986 Argentina', 'Argentina 1986', '1998 France', 'France 1998',
+            'World Cup vintage squad', 'World Cup historic squad',
+            'World Cup classic team', 'World Cup champion squad history',
+            '1966年世界杯', '2002年世界杯', '历届世界杯冠军',
+            '经典国家队', '世界杯传奇阵容',
+            # argentina_brazil_rivalry family aliases (commit 090b0f6c)
+            'Argentina vs Brazil', 'Brazil vs Argentina',
+            'Argentina-Brazil', 'Brazil-Argentina',
+            'Argentina vs Brazil all time', 'Brazil vs Argentina all time',
+            'Argentina Brazil rivalry', 'Brazil Argentina rivalry',
+            'South American rivalry', 'South American football rivalry',
+            'Superclásico de las Américas', 'Superclasico de las Americas',
+            'Albiceleste vs Seleção', 'Albiceleste vs Selecao',
+            'CONMEBOL rivalry',
+            '阿根廷vs巴西', '巴西vs阿根廷', '阿根廷巴西',
+            '巴西阿根廷', '南美足球宿敌', '南美双雄',
+            '阿根廷对巴西', '巴西对阿根廷',
+        ],
+    }),
 ])
 
 
