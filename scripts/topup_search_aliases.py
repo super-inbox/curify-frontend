@@ -638,6 +638,47 @@ FAMILIES = OrderedDict([
             '阿根廷对巴西', '巴西对阿根廷',
         ],
     }),
+    # 2026-06-07 — merch / merchandise-design subject family. Paired with
+    # the new tier-2 topic merch under design (lib/taxonomy.json) +
+    # topics.merch i18n (messages/en/topics.json) + topics[] tagging on
+    # the 4 IP-merch templates (template-ip-creative-cultural-goods-
+    # mockup-set / template-ip-gift-box-stationery-set-mockup /
+    # template-ip-character-sprite-emoji-sheet /
+    # template-ip-emoji-sticker-sheet-poster). Bilingual aliases cover
+    # production vocabulary (POD / DTG / screen-printing) so users on
+    # either side of the merch-design pipeline land on the right templates.
+    ('merchandise_design', {
+        'templates': [
+            'template-ip-creative-cultural-goods-mockup-set',
+            'template-ip-gift-box-stationery-set-mockup',
+            'template-ip-character-sprite-emoji-sheet',
+            'template-ip-emoji-sticker-sheet-poster',
+            'template-world-cup-team-sticker-poster',
+            'template-food-photo-doodle-sticker-overlay',
+        ],
+        'aliases': [
+            'merch', 'merchandise', 'merchandise design', 'merch design',
+            'branded merchandise', 'promotional merchandise', 'swag',
+            'print on demand', 'POD', 'on-demand printing',
+            'screen printing', 'screen print', 'silkscreen',
+            'DTG', 'direct to garment', 'sublimation printing',
+            'sticker design', 'sticker sheet design',
+            'IP merchandise', 'character merchandise',
+            'cultural creative goods', 'cultural creative merchandise',
+            't-shirt design', 'tee design', 'apparel design',
+            'mug design', 'tote bag design',
+            'gift box design', 'packaging mockup',
+            'character sprite sheet', 'emoji sticker sheet',
+            '周边', '周边设计', '周边商品', '文创周边',
+            '文创商品', '文创设计', '潮玩周边',
+            '印刷品', '印刷设计', '丝网印刷',
+            '按需印刷', 'POD 周边', '热升华印刷',
+            'T恤设计', 'T恤印花', '帆布袋设计',
+            '马克杯设计', '贴纸设计', '贴纸表情包',
+            '角色表情包', '角色三视图',
+            '礼盒包装设计', '伴手礼设计',
+        ],
+    }),
 ])
 
 
