@@ -3,12 +3,25 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useClickTracking } from "@/services/useTracking";
-import { WC_2026, daysUntil, nextMatches, tournamentPhase } from "@/lib/wc_2026_schedule";
+import {
+  WC_2026,
+  daysUntil,
+  matchTrackingId,
+  nextMatches,
+  searchQueryForMatch,
+  tournamentPhase,
+  type WCMatch,
+} from "@/lib/wc_2026_schedule";
 
 // Card-sized widget for the FIFA World Cup 2026 schedule. Slots into
 // the same grid as NanoInspirationCard (aspect-square outer wrap,
 // rounded-2xl border, p-3 padding). Renders countdown + next matches +
-// CTA to /topics/world-cup. Auto-hides after the tournament ends.
+// per-line clickable search links + footer CTA. Auto-hides after the
+// tournament ends.
+//
+// Per docs/search-and-content.md 2026-06-05 strategic reframe: each
+// Upcoming line is its own clickable demo of the search → visual-answer
+// pattern. Click → /search?q=<contextual query> derived per match.
 //
 // Mounted on:
 //   - /topics/world-cup
@@ -22,6 +35,35 @@ type Props = {
 
 function localePrefix(locale: string): string {
   return locale === "en" ? "" : `/${locale}`;
+}
+
+// Per-line clickable component. Lives outside the parent because
+// useClickTracking is a hook and can't be called in a render-time loop.
+function UpcomingMatchLine({ m, locale }: { m: WCMatch; locale: string }) {
+  const id = matchTrackingId(m);
+  const query = searchQueryForMatch(m);
+  const href = `${localePrefix(locale)}/search?q=${encodeURIComponent(query)}`;
+  const trackClick = useClickTracking(`wc-calendar:match:${id}`, "topic_capsule", "cards");
+  return (
+    <li>
+      <Link
+        href={href}
+        onClick={trackClick}
+        className="flex items-baseline gap-1.5 leading-tight rounded px-1 -mx-1 transition-colors hover:bg-emerald-100/60 hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        aria-label={`Search: ${query}`}
+      >
+        <span className="font-mono text-emerald-700 shrink-0">{m.date.slice(5)}</span>
+        <span className="truncate">
+          {m.label
+            ? m.label
+            : m.away
+              ? `${m.home} vs ${m.away}`
+              : m.home}
+          {m.stage ? <span className="text-neutral-500"> · {m.stage}</span> : null}
+        </span>
+      </Link>
+    </li>
+  );
 }
 
 export default function WorldCupCalendarCard({ locale, className }: Props) {
@@ -40,7 +82,11 @@ export default function WorldCupCalendarCard({ locale, className }: Props) {
   const upcoming = useMemo(() => nextMatches(now, 3), [now]);
 
   const wcHref = `${localePrefix(locale)}/topics/world-cup`;
-  const trackClick = useClickTracking("wc-calendar-widget", "topic_capsule", "cards");
+  // Footer CTA preserves the legacy wc-calendar-widget tracking id so the
+  // existing 19-click-per-14d engagement metric continues uninterrupted.
+  // Per-match line clicks land on a new content_id pattern
+  // (wc-calendar:match:<id>), giving us per-line CTR alongside it.
+  const trackFooterClick = useClickTracking("wc-calendar-widget", "topic_capsule", "cards");
 
   // After the tournament ends, the widget self-suppresses.
   if (phase === "after") return null;
@@ -57,13 +103,11 @@ export default function WorldCupCalendarCard({ locale, className }: Props) {
   }
 
   return (
-    <Link
-      href={wcHref}
-      onClick={trackClick}
+    <div
       className={[
         "group relative flex h-full flex-col overflow-hidden rounded-2xl border-2",
         "border-emerald-300 bg-gradient-to-br from-emerald-50 via-yellow-50 to-rose-50",
-        "p-3 shadow-md transition-all duration-300 cursor-pointer hover:border-emerald-500 hover:shadow-2xl",
+        "p-3 shadow-md transition-all duration-300 hover:border-emerald-500 hover:shadow-2xl",
         className ?? "",
       ].join(" ")}
       aria-label="FIFA World Cup 2026 calendar"
@@ -89,36 +133,32 @@ export default function WorldCupCalendarCard({ locale, className }: Props) {
         </div>
       </div>
 
-      {/* Upcoming matches list */}
+      {/* Upcoming matches list — per-line clickable */}
       <div className="flex-1 min-h-0">
         <div className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 mb-1">
           Upcoming
         </div>
-        <ul className="space-y-1 text-[11px] text-neutral-700">
-          {upcoming.map((m, i) => (
-            <li key={i} className="flex items-baseline gap-1.5 leading-tight">
-              <span className="font-mono text-emerald-700 shrink-0">
-                {m.date.slice(5)}
-              </span>
-              <span className="truncate">
-                {m.label
-                  ? m.label
-                  : m.away
-                    ? `${m.home} vs ${m.away}`
-                    : m.home}
-                {m.stage ? <span className="text-neutral-500"> · {m.stage}</span> : null}
-              </span>
-            </li>
+        <ul className="space-y-0.5 text-[11px] text-neutral-700">
+          {upcoming.map((m) => (
+            <UpcomingMatchLine
+              key={matchTrackingId(m)}
+              m={m}
+              locale={locale}
+            />
           ))}
         </ul>
       </div>
 
-      {/* Footer CTA */}
+      {/* Footer CTA → /topics/world-cup (preserves legacy tracking id) */}
       <div className="mt-2 flex items-center justify-between border-t border-emerald-100 pt-2">
-        <span className="text-[11px] font-semibold text-emerald-700 group-hover:underline">
+        <Link
+          href={wcHref}
+          onClick={trackFooterClick}
+          className="text-[11px] font-semibold text-emerald-700 hover:underline focus:outline-none focus:ring-2 focus:ring-emerald-400 rounded"
+        >
           View full schedule →
-        </span>
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }
