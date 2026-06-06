@@ -220,7 +220,8 @@
       "for-publishers": "EdTech ve Yayıncılar",
       "for-dtc-brands": "DTC Markaları",
       "for-programmatic-seo": "Programatik SEO",
-      "for-forwarder-back-office": "Taşıma Brokerleri"
+      "for-forwarder-back-office": "Taşıma Brokerleri",
+      "for-merch-operators": "Merch Operatörleri"
     }
   },
   "useCasePage": {
@@ -311,6 +312,17 @@
       "bullet4": "Taşıma uzun kuyruk için SEO içerik motoru: nakliye maliyeti hesaplayıcıları, DDP vs DDU açıklamaları, güzergah spesifik fiyat rehberleri. Orijinal görseller, şema uyumlu, indekslenebilir.",
       "bullet5": "Marj tabanı uygulaması, fiyat geçmişi bağlamı ve uyum kontrolü ile arka ofis teklif taslağı. Temsilci gözden geçirir ve gönderir. Telefon görüşmeleri sizin kalıyor.",
       "bullet6": "Şu şekilde paketlenmiştir: 30 günlük pilot kapsam (bir dilim, bir ICP) veya tam arka ofis motoru entegrasyonu. Sabit kapsam, özel geliştirme yok. /contact üzerinden 15 dakikalık bir denetim planlayın."
+    },
+    "for-merch-operators": {
+      "title": "Merch Operatörleri İçin — Tasarımcılar İçin Tasarlandı, Onlara Karşı Değil",
+      "subtitle": "Şu anda 3 tasarım yapma süresinde 20 seri-tutarlı tasarım oluşturun. Hiçbir müşteri bunu görmez. Tasarım eliniz sizde kalır.",
+      "description": "Baskı fabrikaları, POD platformları ve kendi tasarım ekibine sahip merch operatörleri, kalitede AI'ye yenilmez — hız duvarına yenilirler. Bir operatörün r/printondemand'da söylediği gibi: \"Herkes 1-3 makul tasarım yapabilir. Gerçek zorluk: 20 tasarım yapabilir misin, onları değiştirebilir misin, geliştirebilir misin?\" İşte bu duvar. Biz, bunu kıran tasarım katmanı motorunu inşa ediyoruz — yüzlerce varyant arasında tutarlılığı kilitleyen üç katmanlı bir ontoloji (marka → seri → SKU) ile, illüstratörün elini düzleştirmeden. Gelato'nun \"Scoop\" modeline karşı yerleştirilmiş bir konumlandırma (44↑ r/printondemand meta-thread'inde bir AI botunun insan desteğini değiştirdiği ve çözüm yollarını yok ettiği belgelenmiştir). Curify, operatörün kontrol ettiği tasarım katmanıdır — asla güveni yok eden müşteriyle yüzleşen katman değildir.",
+      "bullet0": "3 tasarım yapma süresinde 20 seri-tutarlı tasarım. SKU-hız duvarı, kırıldı. Marka sesi tam set boyunca kilitlendi.",
+      "bullet1": "Üç katmanlı ontoloji: marka → seri → SKU. İllüstratörün elini seri seviyesinde kilitleyin; SKU seviyesinde varyantları yineleyin. Parça 1 ile parça 50 arasında kayma yok.",
+      "bullet2": "Baskı kalitesinde çıktı. StickerApp, Printify, Printful, SPOD, Prodigi — ilk geçiş baskısı, tasarım ile üretim arasında manuel temizlik geçişi yok.",
+      "bullet3": "Varsayılan olarak niş-disiplinli. İlk tasarımdan itibaren tek mağaza şekli. Ucuz olduğu izlenimi veren çok kategorili paketleme yok.",
+      "bullet4": "Hiçbir müşteri bunu görmez, ilişki hasarı yok. Operatörün masada yaptığı tasarım çalışması — taşıyıcı ve alıcı güvenini yok eden müşteri hizmeti çalışması değil.",
+      "bullet5": "Aşağıdaki gibi paketlenmiştir: aylık-tasarım-kota katmanları (50 / 200 / 1,000 / sınırsız) veya iç tasarım hatları için motor lisansı — bir şekil seçin, özel geliştirme yok."
     }
   },
   "interconnection": {

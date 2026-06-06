@@ -241,7 +241,7 @@ export default function UseCaseClient({
           its own row above — tighter top whitespace, share affordance
           stays adjacent to the title. */}
       <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-20">
-      <section className="max-w-3xl lg:flex-1">
+      <section className={videoKey ? "max-w-3xl lg:flex-1" : "w-full"}>
         {isB2B && (
           <span className="mb-3 inline-flex items-center rounded-full border border-purple-300 bg-purple-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-purple-800">
             {tGlobal("interconnection.builtForTeams")}

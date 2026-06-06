@@ -579,6 +579,106 @@ FAMILIES = OrderedDict([
             '全球化品牌', '出海营销',
         ],
     }),
+    # 2026-06-07 — WC top-query content fidelity batch (Task #66).
+    # history-timeline-infographic already hosts per-country WC histories
+    # (Brazil 1958-2022, Italy 4-time champions, Argentina Maradona 1986 +
+    # Messi 2022, Pelé fixtures, WC Host Nations incl. 1966) — these
+    # families re-target existing rich content under the queries users type.
+    # Empty/thin scoring before this batch: Maradona Hand of God 0,
+    # most memorable World Cup moments 0, England 1966 World Cup 1,
+    # Brazil 2002 squad 3, Argentina vs Brazil all time 2.
+    ('wc_iconic_moments_history', {
+        'templates': [
+            'template-history-timeline-infographic',
+        ],
+        'aliases': [
+            'Hand of God', 'Maradona Hand of God', 'Maradona 1986',
+            'iconic World Cup moments', 'most memorable World Cup moments',
+            'most memorable moments', 'World Cup memorable moments',
+            'greatest World Cup moments', 'unforgettable World Cup moments',
+            'defining World Cup moments', 'World Cup classic moments',
+            'World Cup defining matches', 'World Cup iconic matches',
+            '世界杯经典时刻', '世界杯难忘时刻', '马拉多纳上帝之手',
+            '上帝之手', '世界杯历史经典', '球王时刻',
+            '世界杯最难忘瞬间', '世界杯历史时刻',
+        ],
+    }),
+    ('wc_vintage_year_squad', {
+        'templates': [
+            'template-history-timeline-infographic',
+        ],
+        'aliases': [
+            '1966 World Cup', '1966 England', 'England 1966',
+            'England 1966 World Cup', 'England 1966 squad',
+            '2002 World Cup', '2002 Brazil', 'Brazil 2002',
+            'Brazil 2002 squad', '1970 Brazil', 'Brazil 1970',
+            '1986 Argentina', 'Argentina 1986', '1998 France', 'France 1998',
+            'World Cup vintage squad', 'World Cup historic squad',
+            'World Cup classic team', 'World Cup champion squad history',
+            '1966年世界杯', '2002年世界杯', '历届世界杯冠军',
+            '经典国家队', '世界杯传奇阵容',
+        ],
+    }),
+    ('argentina_brazil_rivalry', {
+        'templates': [
+            'template-history-timeline-infographic',
+            'template-sports-battle',
+        ],
+        'aliases': [
+            'Argentina vs Brazil', 'Brazil vs Argentina',
+            'Argentina-Brazil', 'Brazil-Argentina',
+            'Argentina vs Brazil all time', 'Brazil vs Argentina all time',
+            'Argentina Brazil rivalry', 'Brazil Argentina rivalry',
+            'South American rivalry', 'South American football rivalry',
+            'Superclásico de las Américas', 'Superclasico de las Americas',
+            'Albiceleste vs Seleção', 'Albiceleste vs Selecao',
+            'CONMEBOL rivalry',
+            '阿根廷vs巴西', '巴西vs阿根廷', '阿根廷巴西',
+            '巴西阿根廷', '南美足球宿敌', '南美双雄',
+            '阿根廷对巴西', '巴西对阿根廷',
+        ],
+    }),
+    # 2026-06-07 — merch / merchandise-design subject family. Paired with
+    # the new tier-2 topic merch under design (lib/taxonomy.json) +
+    # topics.merch i18n (messages/en/topics.json) + topics[] tagging on
+    # the 4 IP-merch templates (template-ip-creative-cultural-goods-
+    # mockup-set / template-ip-gift-box-stationery-set-mockup /
+    # template-ip-character-sprite-emoji-sheet /
+    # template-ip-emoji-sticker-sheet-poster). Bilingual aliases cover
+    # production vocabulary (POD / DTG / screen-printing) so users on
+    # either side of the merch-design pipeline land on the right templates.
+    ('merchandise_design', {
+        'templates': [
+            'template-ip-creative-cultural-goods-mockup-set',
+            'template-ip-gift-box-stationery-set-mockup',
+            'template-ip-character-sprite-emoji-sheet',
+            'template-ip-emoji-sticker-sheet-poster',
+            'template-world-cup-team-sticker-poster',
+            'template-food-photo-doodle-sticker-overlay',
+        ],
+        'aliases': [
+            'merch', 'merchandise', 'merchandise design', 'merch design',
+            'branded merchandise', 'promotional merchandise', 'swag',
+            'print on demand', 'POD', 'on-demand printing',
+            'screen printing', 'screen print', 'silkscreen',
+            'DTG', 'direct to garment', 'sublimation printing',
+            'sticker design', 'sticker sheet design',
+            'IP merchandise', 'character merchandise',
+            'cultural creative goods', 'cultural creative merchandise',
+            't-shirt design', 'tee design', 'apparel design',
+            'mug design', 'tote bag design',
+            'gift box design', 'packaging mockup',
+            'character sprite sheet', 'emoji sticker sheet',
+            '周边', '周边设计', '周边商品', '文创周边',
+            '文创商品', '文创设计', '潮玩周边',
+            '印刷品', '印刷设计', '丝网印刷',
+            '按需印刷', 'POD 周边', '热升华印刷',
+            'T恤设计', 'T恤印花', '帆布袋设计',
+            '马克杯设计', '贴纸设计', '贴纸表情包',
+            '角色表情包', '角色三视图',
+            '礼盒包装设计', '伴手礼设计',
+        ],
+    }),
 ])
 
 

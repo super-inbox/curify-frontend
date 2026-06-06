@@ -82,3 +82,36 @@ export function tournamentPhase(ref: Date = new Date()): "before" | "during" | "
   if (today > WC_2026.end) return "after";
   return "during";
 }
+
+// Derive a contextual search query from a match. Used by WorldCupCalendarCard
+// per-line clickable upgrade — each Upcoming line links to /search?q=<query>
+// rather than the whole card going to /topics/world-cup. The strategic frame
+// (docs/search-and-content.md 2026-06-05): every match line is a live demo of
+// the search → visual-answer pattern. Users learn through repetition.
+export function searchQueryForMatch(m: WCMatch): string {
+  // Knockout milestones: away is "", home is the stage name
+  if (m.away === "") {
+    if (m.stage === "Round of 16")  return "World Cup Round of 16 bracket";
+    if (m.stage === "Quarterfinal") return "World Cup Quarterfinal bracket";
+    if (m.stage === "Semifinal")    return "World Cup Semifinal bracket";
+    if (m.stage === "Third Place")  return "World Cup 3rd place 2026";
+    if (m.stage === "Final")        return "World Cup Final 2026";
+    return `World Cup ${m.stage}`;
+  }
+  // Opener labels (Mexico Opening Match, USA Opener, Canada Opener)
+  if (m.label && (m.label.includes("Opener") || m.label.includes("Opening"))) {
+    return `${m.home} World Cup 2026 opener`;
+  }
+  // Group stage with TBD opponent (marquee team focus)
+  if (m.away === "TBD") {
+    return `${m.home} World Cup 2026`;
+  }
+  // Resolved fixture
+  return `${m.home} vs ${m.away} World Cup 2026`;
+}
+
+// Stable id for a match — used as tracking content_id on per-line clicks.
+export function matchTrackingId(m: WCMatch): string {
+  const opponent = m.away || "knockout";
+  return `${m.date}-${m.home}-${opponent}-${m.stage}`.replace(/\s+/g, "-").toLowerCase();
+}

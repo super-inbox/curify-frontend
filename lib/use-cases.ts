@@ -8,6 +8,12 @@ export type UseCaseDef = {
    *  packaged-tier copy in bullet3 so the page reads as a sales surface,
    *  not a discovery surface. See docs/interconnection.md "B2B tier". */
   tier: UseCaseTier;
+  /** When true, the use-case page still exists (registered route + sitemap +
+   *  PERSONA_BLOG_CATEGORIES mapping) but its chip is hidden from the
+   *  UseCaseChipsRow entry bar. Use when a vertical has a live landing
+   *  surface for SEO + named-account outreach but is intentionally off
+   *  the general consumer-facing chip rotation. */
+  hiddenFromChips?: boolean;
 };
 
 // Per-persona tool ordering (most relevant first). Replaces the previous
@@ -90,7 +96,27 @@ export const USE_CASES: UseCaseDef[] = [
   // customer or carrier-facing." Empty toolSlugs because the wedge is
   // a pipeline-level pitch, not a tool-browser pitch. Memory:
   // project_logistics_fde_thesis.md.
-  { slug: "for-forwarder-back-office", tier: "b2b", toolSlugs: [] },
+  // hiddenFromChips 2026-06-07: page + sitemap stay live for SEO + named
+  // outreach; chip rotated out of UseCaseChipsRow in favor of
+  // for-merch-operators which currently lines up more directly with
+  // active outbound (PARTS roster + 张总 anchor + r/printondemand
+  // demand mining 2026-06-07).
+  { slug: "for-forwarder-back-office", tier: "b2b", toolSlugs: [], hiddenFromChips: true },
+
+  // NEW 2026-06-07. Merch operators (factories / printers / POD platforms
+  // with their own design team scaling SKU output). Anchored on the
+  // 2026-06-04 张总 conversation (打样 accepted, first B2B factory
+  // customer) and validated by r/printondemand 2026-06-07 demand mining
+  // (TheBearManFromDK: "Can you do 20 designs, change them, refine them?"
+  // = SKU-velocity wall as dominant operator pain). Anti-AI Scoop pattern
+  // from the same corpus (Gelato AI bot auto-closing support cases)
+  // mirrors v3 logistics Vlad 53↑ → positioning is "AI for the design
+  // work the operator does at their desk, not AI for the customer
+  // service work that destroys relationships." Empty toolSlugs same as
+  // progseo + forwarder — pipeline-level industrial pitch, not tool
+  // browser. Citation-grade thesis at
+  // ~/curify-studio/docs/reddit-demand-mining-merch-operators-2026-06-07.md.
+  { slug: "for-merch-operators", tier: "b2b", toolSlugs: [] },
 ];
 
 export function getUseCaseBySlug(slug: string): UseCaseDef | undefined {
@@ -118,4 +144,5 @@ export const PERSONA_BLOG_CATEGORIES: Record<string, string[]> = {
   "for-dtc-brands":        ["content-automation", "creator-tools"],
   "for-programmatic-seo":  ["ds-ai-engineering", "content-automation"],
   "for-forwarder-back-office": ["ds-ai-engineering", "content-automation"],
+  "for-merch-operators":   ["content-automation", "nano-template"],
 };

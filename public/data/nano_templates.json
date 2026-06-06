@@ -9941,69 +9941,107 @@
   {
     "id": "template-ip-creative-cultural-goods-mockup-set",
     "locales": {
-        "en": {
-            "base_prompt": "(IP Cultural & Stationery Merchandise Mockup Creator) Flat lay top-down overhead shot of complete IP derivative stationery merchandise set themed '{ip_info}', neatly scattered various finished product mockups on clean solid warm beige base background. Merchandise range includes spiral notebook, hardcover journal, canvas tote bag, round handheld folding fan, eye sleep mask, lanyard + ID badge, acrylic keychain, die-cut sticker set, washi tape, ceramic coffee mug, short tumbler cup, square throw pillow, ballpoint pen, phone case, gift packaging box; All goods uniformly printed with exclusive {ip_info} cartoon character illustration and matching Chinese brand title text, color palette derived from IP’s main representative hues. Style: delicate Chinese meticulous painting / cute cartoon illustration customizable art style per IP, soft diffused studio lighting, clean minimalist product layout, ultra-realistic commodity texture, subtle vintage rice paper decorative background detail, 8K sharp commercial product photography, printable brand display poster. Subject: Full series {ip_info} cultural creative goods flatlay mockup.",
-            "parameters": [
-                {
-                    "name": "ip_info",
-                    "label": "IP Character Name + Brand Slogan & Art Style",
-                    "type": "text",
-                    "placeholder": ["熊猫茶师，古风国画Q版熊猫穿汉服品茶，豆绿色主色调", "墨狐书生，国风水墨狐狸书生执书卷，酒红棕配色", "祥龙纳福，新中式Q版抱珠祥龙，青绿色国潮画风", "鹿行记，森系手绘背包小鹿，森林复古墨绿配色", "摸鱼中，潮流卡通潜水粉色鱼头，蓝粉潮玩配色"]
-                }
+      "en": {
+        "base_prompt": "(IP Cultural & Stationery Merchandise Mockup Creator) Flat lay top-down overhead shot of complete IP derivative stationery merchandise set themed '{ip_info}', neatly scattered various finished product mockups on clean solid warm beige base background. Merchandise range includes spiral notebook, hardcover journal, canvas tote bag, round handheld folding fan, eye sleep mask, lanyard + ID badge, acrylic keychain, die-cut sticker set, washi tape, ceramic coffee mug, short tumbler cup, square throw pillow, ballpoint pen, phone case, gift packaging box; All goods uniformly printed with exclusive {ip_info} cartoon character illustration and matching Chinese brand title text, color palette derived from IP’s main representative hues. Style: delicate Chinese meticulous painting / cute cartoon illustration customizable art style per IP, soft diffused studio lighting, clean minimalist product layout, ultra-realistic commodity texture, subtle vintage rice paper decorative background detail, 8K sharp commercial product photography, printable brand display poster. Subject: Full series {ip_info} cultural creative goods flatlay mockup.",
+        "parameters": [
+          {
+            "name": "ip_info",
+            "label": "IP Character Name + Brand Slogan & Art Style",
+            "type": "text",
+            "placeholder": [
+              "熊猫茶师，古风国画Q版熊猫穿汉服品茶，豆绿色主色调",
+              "墨狐书生，国风水墨狐狸书生执书卷，酒红棕配色",
+              "祥龙纳福，新中式Q版抱珠祥龙，青绿色国潮画风",
+              "鹿行记，森系手绘背包小鹿，森林复古墨绿配色",
+              "摸鱼中，潮流卡通潜水粉色鱼头，蓝粉潮玩配色"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-ip-creative-cultural-goods-mockup-set-blessing-dragon-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-ip-creative-cultural-goods-mockup-set-blessing-dragon-prev.jpg",
+    "topics": [
+      "design",
+      "merch",
+      "mockups"
+    ]
+  },
   {
     "id": "template-ip-gift-box-stationery-set-mockup",
     "locales": {
-        "en": {
-            "base_prompt": "(IP Gift Box Stationery Packaging Mockup Creator) Top-down overhead shot of an open rectangular gift packaging box themed '{ip_info}', box lid inner side printed with IP brand headline text, white sponge inner tray pre-cut fixed slots neatly holding matching merchandise: silicone doll keychain, decorative sticker sheet, memo notepad, portable tumbler cup, character capped ball pen, spiral bound notebook; all products uniformly printed with custom IP cartoon character graphic and brand logo, whole set uses IP’s exclusive main color as box & product dominant tone. Style: Clean minimalist commercial product photography, soft gentle indoor studio shadow, matte cardboard box texture, smooth silicone & paper material detail, flat bright lighting, clean plain solid background, 8K ultra realistic retail gift set render, official brand commodity display. Subject: Complete customized {ip_info} stationery gift box product mockup.",
-            "parameters": [
-                {
-                    "name": "ip_info",
-                    "label": "IP Character Name + Core Color + Character Style Description",
-                    "type": "text",
-                    "placeholder": ["Boogi小白鸭子IP，暖鹅黄主色，简约扁平Q版呆萌白鸭子卡通形象", "国风熊猫茶师IP，豆绿色主色，古风手绘穿汉服品茶熊猫", "粉猪日常IP，樱花粉主色，软萌圆润极简小猪插画"]
-                }
+      "en": {
+        "base_prompt": "(IP Gift Box Stationery Packaging Mockup Creator) Top-down overhead shot of an open rectangular gift packaging box themed '{ip_info}', box lid inner side printed with IP brand headline text, white sponge inner tray pre-cut fixed slots neatly holding matching merchandise: silicone doll keychain, decorative sticker sheet, memo notepad, portable tumbler cup, character capped ball pen, spiral bound notebook; all products uniformly printed with custom IP cartoon character graphic and brand logo, whole set uses IP’s exclusive main color as box & product dominant tone. Style: Clean minimalist commercial product photography, soft gentle indoor studio shadow, matte cardboard box texture, smooth silicone & paper material detail, flat bright lighting, clean plain solid background, 8K ultra realistic retail gift set render, official brand commodity display. Subject: Complete customized {ip_info} stationery gift box product mockup.",
+        "parameters": [
+          {
+            "name": "ip_info",
+            "label": "IP Character Name + Core Color + Character Style Description",
+            "type": "text",
+            "placeholder": [
+              "Boogi小白鸭子IP，暖鹅黄主色，简约扁平Q版呆萌白鸭子卡通形象",
+              "国风熊猫茶师IP，豆绿色主色，古风手绘穿汉服品茶熊猫",
+              "粉猪日常IP，樱花粉主色，软萌圆润极简小猪插画"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-ip-gift-box-stationery-set-mockup-busan-boogi-duck-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-ip-gift-box-stationery-set-mockup-busan-boogi-duck-prev.jpg",
+    "topics": [
+      "design",
+      "merch",
+      "mockups"
+    ]
+  },
   {
     "id": "template-ip-character-sprite-emoji-sheet",
     "locales": {
-        "en": {
-            "base_prompt": "(Universal IP Character Emoticon & Turnaround Sheet Creator) Vertical character design sheet themed '{ip_info}', clean white blank background, split into two main layout sections; Upper multi-grid panel: multiple independent cartoon frames of the core IP character with various vivid emotional & action poses: cheering with pom-poms, annoyed grumpy face, typing on laptop, confused with question marks, bright idea with lightbulb, sad tearful expression, holding trophy, observing via magnifying glass; Lower area: three-view turnaround reference drawing (front view, side profile view, neutral static pose) plus two square app icon designs using the character's head portrait. Art style: clean flat vector cartoon illustration, solid block flat colors, minimal black outline, simple rounded cute proportions, customizable color scheme & drawing style matching IP setting, no messy shadow or gradient, high definition vector finish, printable brand character specification sheet. Subject: Complete emoticon sprite + three-view reference chart for {ip_info}.",
-            "parameters": [
-                {
-                    "name": "ip_info",
-                    "label": "IP Name + Character Feature & Main Color",
-                    "type": "text",
-                    "placeholder": ["Graduation cap orange alpaca IP, rounded chubby body, warm orange main color, minimalist flat cartoon", "Ancient style panda tea master IP, green Hanfu outfit, off-white body, Chinese meticulous painting flat style", "Pink round blob diving character IP, blue-pink main tone, modern trendy flat illustration"]
-                }
+      "en": {
+        "base_prompt": "(Universal IP Character Emoticon & Turnaround Sheet Creator) Vertical character design sheet themed '{ip_info}', clean white blank background, split into two main layout sections; Upper multi-grid panel: multiple independent cartoon frames of the core IP character with various vivid emotional & action poses: cheering with pom-poms, annoyed grumpy face, typing on laptop, confused with question marks, bright idea with lightbulb, sad tearful expression, holding trophy, observing via magnifying glass; Lower area: three-view turnaround reference drawing (front view, side profile view, neutral static pose) plus two square app icon designs using the character's head portrait. Art style: clean flat vector cartoon illustration, solid block flat colors, minimal black outline, simple rounded cute proportions, customizable color scheme & drawing style matching IP setting, no messy shadow or gradient, high definition vector finish, printable brand character specification sheet. Subject: Complete emoticon sprite + three-view reference chart for {ip_info}.",
+        "parameters": [
+          {
+            "name": "ip_info",
+            "label": "IP Name + Character Feature & Main Color",
+            "type": "text",
+            "placeholder": [
+              "Graduation cap orange alpaca IP, rounded chubby body, warm orange main color, minimalist flat cartoon",
+              "Ancient style panda tea master IP, green Hanfu outfit, off-white body, Chinese meticulous painting flat style",
+              "Pink round blob diving character IP, blue-pink main tone, modern trendy flat illustration"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-ip-character-sprite-emoji-sheet-graduation-alpaca-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-ip-character-sprite-emoji-sheet-graduation-alpaca-prev.jpg",
+    "topics": [
+      "design",
+      "merch",
+      "character"
+    ]
+  },
   {
     "id": "template-ip-emoji-sticker-sheet-poster",
     "locales": {
-        "en": {
-            "base_prompt": "(Universal IP Emoticon Sticker Sheet Creator) Vertical cartoon sticker collection poster themed '{ip_info}', soft solid warm light base background with faint repeated faint character watermark pattern, top section features large main character illustration with speech bubble and IP name text headline; below neatly arranged grid layout with multiple independent small emoticon panels, every single panel draws the core IP character with unique daily emotional & casual action: shy blushing, confused puzzled, reading book, sad downcast, happy grinning, weightlifting, sleepy lying down, drinking beer, eating food and other daily vivid expressions, each emoticon equipped with handwritten-style caption text beside character. Art style: casual warm hand-drawn line art, thick simple outline, soft matte flat coloring, customizable painting texture & main color matching the set IP style, cute chibi rounded character proportion, clean layout segmentation, 8K high-definition printable sticker sheet design. Subject: Complete multi-expression emoji sticker sheet for {ip_info}.",
-            "parameters": [
-                {
-                    "name": "ip_info",
-                    "label": "IP Name + Character Feature + Main Color & Drawing Style",
-                    "type": "text",
-                    "placeholder": ["胖橘脑袋顶小鱼橘猫IP，暖橙主色调，松弛手绘简笔卡通", "黑白奶牛猫咪IP，白黑配色，随性涂鸦风手绘插画", "国风圆滚滚小狐狸IP，酒红棕配色，软萌水彩手绘"]
-                }
+      "en": {
+        "base_prompt": "(Universal IP Emoticon Sticker Sheet Creator) Vertical cartoon sticker collection poster themed '{ip_info}', soft solid warm light base background with faint repeated faint character watermark pattern, top section features large main character illustration with speech bubble and IP name text headline; below neatly arranged grid layout with multiple independent small emoticon panels, every single panel draws the core IP character with unique daily emotional & casual action: shy blushing, confused puzzled, reading book, sad downcast, happy grinning, weightlifting, sleepy lying down, drinking beer, eating food and other daily vivid expressions, each emoticon equipped with handwritten-style caption text beside character. Art style: casual warm hand-drawn line art, thick simple outline, soft matte flat coloring, customizable painting texture & main color matching the set IP style, cute chibi rounded character proportion, clean layout segmentation, 8K high-definition printable sticker sheet design. Subject: Complete multi-expression emoji sticker sheet for {ip_info}.",
+        "parameters": [
+          {
+            "name": "ip_info",
+            "label": "IP Name + Character Feature + Main Color & Drawing Style",
+            "type": "text",
+            "placeholder": [
+              "胖橘脑袋顶小鱼橘猫IP，暖橙主色调，松弛手绘简笔卡通",
+              "黑白奶牛猫咪IP，白黑配色，随性涂鸦风手绘插画",
+              "国风圆滚滚小狐狸IP，酒红棕配色，软萌水彩手绘"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-ip-emoji-sticker-sheet-poster-empress-cow-cat-prev.jpg"
-}
+    "og_image": "/images/nano_insp_preview/template-ip-emoji-sticker-sheet-poster-empress-cow-cat-prev.jpg",
+    "topics": [
+      "design",
+      "merch",
+      "posters"
+    ]
+  }
 ]
