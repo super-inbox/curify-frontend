@@ -579,6 +579,65 @@ FAMILIES = OrderedDict([
             '全球化品牌', '出海营销',
         ],
     }),
+    # 2026-06-07 — WC top-query content fidelity batch (Task #66).
+    # history-timeline-infographic already hosts per-country WC histories
+    # (Brazil 1958-2022, Italy 4-time champions, Argentina Maradona 1986 +
+    # Messi 2022, Pelé fixtures, WC Host Nations incl. 1966) — these
+    # families re-target existing rich content under the queries users type.
+    # Empty/thin scoring before this batch: Maradona Hand of God 0,
+    # most memorable World Cup moments 0, England 1966 World Cup 1,
+    # Brazil 2002 squad 3, Argentina vs Brazil all time 2.
+    ('wc_iconic_moments_history', {
+        'templates': [
+            'template-history-timeline-infographic',
+        ],
+        'aliases': [
+            'Hand of God', 'Maradona Hand of God', 'Maradona 1986',
+            'iconic World Cup moments', 'most memorable World Cup moments',
+            'most memorable moments', 'World Cup memorable moments',
+            'greatest World Cup moments', 'unforgettable World Cup moments',
+            'defining World Cup moments', 'World Cup classic moments',
+            'World Cup defining matches', 'World Cup iconic matches',
+            '世界杯经典时刻', '世界杯难忘时刻', '马拉多纳上帝之手',
+            '上帝之手', '世界杯历史经典', '球王时刻',
+            '世界杯最难忘瞬间', '世界杯历史时刻',
+        ],
+    }),
+    ('wc_vintage_year_squad', {
+        'templates': [
+            'template-history-timeline-infographic',
+        ],
+        'aliases': [
+            '1966 World Cup', '1966 England', 'England 1966',
+            'England 1966 World Cup', 'England 1966 squad',
+            '2002 World Cup', '2002 Brazil', 'Brazil 2002',
+            'Brazil 2002 squad', '1970 Brazil', 'Brazil 1970',
+            '1986 Argentina', 'Argentina 1986', '1998 France', 'France 1998',
+            'World Cup vintage squad', 'World Cup historic squad',
+            'World Cup classic team', 'World Cup champion squad history',
+            '1966年世界杯', '2002年世界杯', '历届世界杯冠军',
+            '经典国家队', '世界杯传奇阵容',
+        ],
+    }),
+    ('argentina_brazil_rivalry', {
+        'templates': [
+            'template-history-timeline-infographic',
+            'template-sports-battle',
+        ],
+        'aliases': [
+            'Argentina vs Brazil', 'Brazil vs Argentina',
+            'Argentina-Brazil', 'Brazil-Argentina',
+            'Argentina vs Brazil all time', 'Brazil vs Argentina all time',
+            'Argentina Brazil rivalry', 'Brazil Argentina rivalry',
+            'South American rivalry', 'South American football rivalry',
+            'Superclásico de las Américas', 'Superclasico de las Americas',
+            'Albiceleste vs Seleção', 'Albiceleste vs Selecao',
+            'CONMEBOL rivalry',
+            '阿根廷vs巴西', '巴西vs阿根廷', '阿根廷巴西',
+            '巴西阿根廷', '南美足球宿敌', '南美双雄',
+            '阿根廷对巴西', '巴西对阿根廷',
+        ],
+    }),
 ])
 
 
