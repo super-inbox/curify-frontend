@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import BlogCTACard from '@/app/[locale]/_components/BlogCTACard'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 
 export default function NanoBananaDedicatedContent() {
@@ -13,6 +14,7 @@ export default function NanoBananaDedicatedContent() {
   return (
     <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <header className="mb-8">
+        <BlogCategoryLabel slug="nano-banana-dedicated" />
         <h1 className="text-4xl font-bold mb-4">
           {t('positioning.title')}
         </h1>

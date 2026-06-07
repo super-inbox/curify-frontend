@@ -5,6 +5,7 @@ import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 export async function generateMetadata({
   params,
@@ -34,6 +35,7 @@ export default function AgeAiPost() {
 
   return (
     <article className="pt-10 pb-8">
+      <BlogCategoryLabel slug="age_AI" />
       <h1 className="text-4xl font-bold mb-8">
         {t("heading")}
       </h1>

@@ -1,6 +1,6 @@
 # Etsy Pack Distribution — Status & Operations
 
-_Last updated: 2026-05-28 (adds `phonics` SKU scaffolding — registry, taxonomy, gen config, clean images for 5 of 50 staged; image gen + pack build pending). Owner: jay. Update after every push that touches `lib/etsy_packs.json`, `lib/etsy_packs.ts`, `app/[locale]/(public)/pack/[sku]/`, `services/etsyPacks.ts`, or `scripts/build_template_packs.cjs`._
+_Last updated: 2026-06-07 (adds `wc-2026-squads` SKU — 48 celebrity-movie-group-poster squad posters across all 12 FIFA WC 2026 groups; 11 prior squads copied from /images/nano_insp/, 37 fresh-generated via wc_2026_squads_2026-06-07.json config with --pack flag, search_aliases enriched for all 37, pack zipped + uploaded to Azure). Owner: jay. Update after every push that touches `lib/etsy_packs.json`, `lib/etsy_packs.ts`, `app/[locale]/(public)/pack/[sku]/`, `services/etsyPacks.ts`, or `scripts/build_template_packs.cjs`._
 
 ## Why this doc exists
 
@@ -17,6 +17,7 @@ The doc is **not** GTM strategy — that lives in `docs/interconnection.md`. Thi
 | `mbti-character` | MBTI Character Pack: Marvel, Ghibli & Friends | `https://www.curify-ai.com/pack/mbti-character` | 100 | 147 MB | `packs/sku/mbti-character/pack-v1.zip` | 1 |
 | `vocabulary` | Kids English-Chinese Bilingual Vocabulary Cards | `https://www.curify-ai.com/pack/vocabulary` | 108 | 84 MB | `packs/sku/vocabulary/pack-v1.zip` | 1 |
 | `phonics` | Phonics Pack: 50 Blend, Digraph & Vowel Pattern Posters | `https://www.curify-ai.com/pack/phonics` | 50 | 28 MB | `packs/sku/phonics/pack-v1.zip` | 1 |
+| `wc-2026-squads` | World Cup 2026 National Team Squad Posters (48 Countries) | `https://www.curify-ai.com/pack/wc-2026-squads` | 48 | 36 MB | `packs/sku/wc-2026-squads/pack-v1.zip` | 1 |
 
 All three packs are `active: true`, `secret: null` (anonymous redemption), no `etsy_listing_url` set yet.
 

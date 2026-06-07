@@ -8,6 +8,7 @@ import CdnImage from '@/app/[locale]/_components/CdnImage'
 import BlogInlineClickTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker'
 import BlogCodeBlockCopyTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogCodeBlockCopyTracker'
 import { formatVoiceCloningContent } from '@/app/[locale]/(public)/blog/[slug]/utils/content-formatters'
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 const TOOLS = [
   {
@@ -45,6 +46,7 @@ export default function BestAiToolsContent() {
       <BlogInlineClickTracker blogSlug="best-ai-tools">
       <BlogCodeBlockCopyTracker blogSlug="best-ai-tools">
       <header className="mb-8">
+        <BlogCategoryLabel slug="best-ai-tools" />
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
         <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 text-sm">
           <span>{t('publishedDate')}</span>

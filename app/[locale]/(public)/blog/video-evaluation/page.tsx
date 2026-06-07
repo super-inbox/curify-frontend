@@ -6,6 +6,7 @@ import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 export async function generateMetadata({
   params,
@@ -47,6 +48,7 @@ export default function VideoTranslationEvaluationPost() {
 
       {/* HEADER: This can remain full-width for impact */}
       <header className="mb-20 space-y-8">
+        <BlogCategoryLabel slug="video-evaluation" />
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center leading-tight">
           {t("title")} – {t("subtitle")}
         </h1>

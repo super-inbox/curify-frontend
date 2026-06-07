@@ -175,8 +175,15 @@ preserves intent. Slot 2-3 climb the hierarchy.
   "Chinese ancient art"]
 - "Lamine Yamal" → ["Lamine Yamal soccer profile", "Spanish national team",
   "young soccer star portrait"]
+- "아인슈타인" / "Einstein" → ["Einstein physicist profile",
+  "20th century scientist", "physics historical figure"]
+- "박지성" / "Park Ji-sung" → ["Park Ji-sung soccer profile",
+  "Korean national football team", "Asian soccer star portrait"]
 Do NOT collapse to ONLY the broader category — that loses the user's
 intent. Keep the literal in slot 1; add 1-2 hierarchical parents.
+Korean and other CJK scripts follow the same rule — examples above
+demonstrate KR + JP + CN; relax the literal entity into the same
+hierarchical pattern regardless of source script.
 
 Return ONLY a JSON array (0-3 strings). No prose, no fences, no keys.`;
 

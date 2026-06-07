@@ -8,6 +8,7 @@ import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/Tabl
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 export default function WeirdScienceFactsClassroomEngagement() {
   const t = useTranslations('blog.weirdScienceFactsClassroomEngagement');
@@ -44,6 +45,7 @@ export default function WeirdScienceFactsClassroomEngagement() {
           />
         </div>
         
+        <BlogCategoryLabel slug="weird-science-facts-classroom-engagement" />
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
         
         <div className="text-gray-600 mb-4">

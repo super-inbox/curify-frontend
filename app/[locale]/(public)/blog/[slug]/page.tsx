@@ -8,6 +8,7 @@ import RelatedBlogs from "@/app/[locale]/_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import WorldCupCalendarCard from "@/app/[locale]/_components/WorldCupCalendarCard";
 import NanoBananaExamples from "./NanoBananaExamples";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 // WC-themed blog posts that surface the calendar widget between the
 // body and the bottom CTA. Reader-mindset placement — the reader has
@@ -274,6 +275,7 @@ export default async function BlogPostPage({
   return (
     <article className="mx-auto max-w-6xl pt-4 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
       <header className="mb-6">
+        <BlogCategoryLabel category={blogConfig.category} />
         <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
           {tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
         </h1>

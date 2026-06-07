@@ -5,6 +5,7 @@ import RelatedBlogs from '../../../_components/RelatedBlogs';
 import { FaLightbulb, FaCheck, FaLayerGroup, FaCogs, FaChartLine, FaTools, FaRocket } from 'react-icons/fa';
 import Link from 'next/link';
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 export async function generateMetadata({
   params,
@@ -47,6 +48,7 @@ export default async function AIPlatform({
       {/* Main Content */}
       <article className="flex-1">
         <header className="mb-12">
+          <BlogCategoryLabel slug="aiPlatform" />
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {t('title')}
           </h1>

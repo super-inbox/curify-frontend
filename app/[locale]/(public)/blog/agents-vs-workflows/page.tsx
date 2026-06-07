@@ -5,6 +5,7 @@ import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 export async function generateMetadata({
   params,
@@ -28,6 +29,7 @@ export default async function AgentsVsWorkflowsPost({
   const { locale } = await params;  
   return (
     <article className="pt-10 pb-8">
+      <BlogCategoryLabel slug="agents-vs-workflows" />
       <h1 className="text-4xl font-bold mb-8">🤖 Agents vs Workflows</h1>
 
       <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">

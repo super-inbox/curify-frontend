@@ -5,6 +5,7 @@ import CdnImage from '../../../_components/CdnImage';
 import RelatedBlogs from '../../../_components/RelatedBlogs';
 import { FaTools, FaLightbulb, FaRocket } from 'react-icons/fa';
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 export async function generateMetadata({
   params,
@@ -47,6 +48,7 @@ export default async function QABotToTaskAgent({
 
       {/* Main Content */}
       <article className="flex-1 max-w-4xl text-lg leading-8">
+        <BlogCategoryLabel slug="QA_Bot_to_Task" />
         <h1 className="text-4xl font-bold mb-8">
           {t("heading")}
         </h1>
