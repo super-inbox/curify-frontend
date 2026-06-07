@@ -3,10 +3,23 @@
 import Link from "next/link";
 import CdnImage from "../../_components/CdnImage";
 import { useTranslations } from "next-intl";
-import { useState, useMemo } from "react";
-import { useParams } from "next/navigation";
+import { useState, useMemo, useEffect } from "react";
+import { useParams, useSearchParams } from "next/navigation";
 import blogsData from "@/public/data/blogs.json";
 import { blogPosts as blogPostsConfig } from "./[slug]/utils/blog-config";
+
+// Category slug → display label. Matches BlogCategoryLabel pillars so a
+// click on a per-page category chip (which links here with ?category=)
+// pre-selects the corresponding filter chip below.
+const CATEGORY_SLUG_TO_LABEL: Record<string, string> = {
+  "nano-template":       "Nano Template",
+  "creator-tools":       "Creator Tools",
+  "video-dubbing":       "Video Dubbing",
+  "content-automation":  "Content Automation",
+  "learning-education":  "Learning & Education",
+  "ds-ai-engineering":   "DS & AI Engineering",
+  "ai-strategy":         "AI Strategy",
+};
 
 interface BlogPost {
   slug: string;
@@ -35,7 +48,17 @@ const PILLAR_LABELS = [
 export default function BlogListPage() {
   const t = useTranslations("blog");
   const { locale } = useParams() as { locale: string };
+  const searchParams = useSearchParams();
   const [selectedTag, setSelectedTag] = useState<string>("All");
+
+  // ?category=<slug> arrives from per-blog BlogCategoryLabel chips —
+  // pre-select the matching pillar filter so the index opens already
+  // filtered. Empty / unknown slug → "All" (default).
+  useEffect(() => {
+    const catSlug = searchParams.get("category");
+    const mapped = catSlug ? CATEGORY_SLUG_TO_LABEL[catSlug] : null;
+    setSelectedTag(mapped || "All");
+  }, [searchParams]);
 
   // public/data/blogs.json is the single source of truth for the feed
   // catalog. The file is hand-curated and not strictly chronological,
@@ -50,7 +73,15 @@ export default function BlogListPage() {
 
   const filteredPosts = useMemo(() => {
     if (selectedTag === "All") return blogPosts;
-    return blogPosts.filter((post) => post.tag === selectedTag);
+    // Match against the post's tag OR its category's pillar label —
+    // covers older posts (which used short tag strings like "Strategy"
+    // for AI Strategy) and lets a category-only post still surface.
+    return blogPosts.filter((post) => {
+      if (post.tag === selectedTag) return true;
+      const cat = (post as BlogPost).category;
+      if (cat && CATEGORY_SLUG_TO_LABEL[cat] === selectedTag) return true;
+      return false;
+    });
   }, [blogPosts, selectedTag]);
 
   const blogHref = (slug: string) => `/${locale}/blog/${slug}`;
