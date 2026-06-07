@@ -21,7 +21,6 @@ import Link from 'next/link';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
-import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
@@ -129,18 +128,21 @@ export default function MBTICharacterGeneratorPage() {
           />
         </div>
 
-        {/* Table of Contents */}
-        <TableOfContents
-          headings={[
-            { level: "2", text: t('tabs.basics'), id: "basics" },
-            { level: "2", text: t('universes.title'), id: "universes" },
-            { level: "2", text: t('tabs.yellowstone'), id: "yellowstone" },
-            { level: "2", text: t('beyond.title'), id: "beyond" },
-            { level: "2", text: t('tabs.techniques'), id: "techniques" },
-            { level: "2", text: t('tabs.advanced'), id: "advanced" },
-            { level: "2", text: t('conclusion.title'), id: "conclusion" }
-          ]}
-        />
+        {/* Universe Templates — moved up to replace TOC (2026-06-07).
+            10 universe MBTI templates (trimmed from 12) — 2 rows on lg
+            (5 cols × 2). Pulls cards from blogs.json via groupKey prefix
+            mbti-character-generator-universe-*. */}
+        <section id="universes" className="my-12">
+          <div className="text-center mb-8">
+            <span className="inline-block px-3 py-1 text-sm font-semibold text-indigo-700 bg-indigo-100 rounded-full mb-3">
+              UNIVERSE TEMPLATES
+            </span>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('universes.title')}</h2>
+            <p className="text-gray-700 max-w-2xl mx-auto">{t('universes.description')}</p>
+            <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full mt-3"></div>
+          </div>
+          <NanoBananaExamples locale={locale} blogSlug="mbti-character-generator-universe" />
+        </section>
 
         {/* Social Share */}
         <ShareButton
@@ -201,19 +203,6 @@ export default function MBTICharacterGeneratorPage() {
               </div>
             </div>
           </section>
-
-        {/* Universes Section — all 12 universe MBTI templates */}
-        <section id="universes" className="my-16">
-          <div className="text-center mb-10">
-            <span className="inline-block px-3 py-1 text-sm font-semibold text-indigo-700 bg-indigo-100 rounded-full mb-4">
-              UNIVERSE TEMPLATES
-            </span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">{t('universes.title')}</h2>
-            <p className="text-gray-700 max-w-2xl mx-auto">{t('universes.description')}</p>
-            <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full mt-4"></div>
-          </div>
-          <NanoBananaExamples locale={locale} blogSlug="mbti-character-generator-universe" />
-        </section>
 
         {/* Yellowstone Section — kept as a deep-dive case study */}
         <section id="yellowstone" className="my-16">
