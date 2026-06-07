@@ -49,6 +49,24 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
 
+  // Early-out for taxonomy entries that don't have authored i18n yet
+  // (mood / aesthetic / lighting / temporal / product tier-3 cohorts from
+  // Rounds 2B/2D — ~99 entries flagged in docs/search-and-content.md
+  // 2026-05-31 "i18n-gating + product tier-2 completion" ship). Without
+  // this guard, generateMetadata calls t() on missing keys for every
+  // locale's metadata fetch, surfacing MISSING_MESSAGE console errors
+  // (e.g. topics.wary.displayName in fr). The Page itself already 404s
+  // via isLocalizedTopic but generateMetadata runs ahead of that on
+  // crawler hits.
+  if (!isLocalizedTopic(slug)) {
+    const fallback = titleCaseFromSlug(slug);
+    return {
+      title: `${fallback} — Nano Banana AI Templates`,
+      description: `Explore ${fallback} AI visual templates and prompts on Nano Banana.`,
+      robots: { index: false, follow: false },
+    };
+  }
+
   const t = await getTranslations({ locale });
   const safeT = (key: string) => { try { return t(key as never) ?? ""; } catch { return ""; } };
   const safeRaw = <T,>(key: string): T | null => {
