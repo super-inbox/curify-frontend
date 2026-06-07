@@ -283,12 +283,9 @@ export default async function PromptDetailPage({
           }
         />
 
-        <RelatedTagsSection
-          tags={getRelatedTagsForPrompt(promptTags, { limit: 12, liveOnly: true })}
-          locale={locale}
-          title="Related Tags"
-          subtitle="Tags from the same category clusters as this prompt."
-        />
+        {/* RelatedTagsSection moved to the page tail (after Related
+            Images + Related Templates) so the visual content rails come
+            first and the tag-cluster navigation closes the scroll. */}
 
         {related.length > 0 && (
           <section className="mt-10">
@@ -323,6 +320,13 @@ export default async function PromptDetailPage({
             />
           </section>
         )}
+
+        <RelatedTagsSection
+          tags={getRelatedTagsForPrompt(promptTags, { limit: 12, liveOnly: true })}
+          locale={locale}
+          title="Related Tags"
+          subtitle="Tags from the same category clusters as this prompt."
+        />
       </main>
     </div>
   );
