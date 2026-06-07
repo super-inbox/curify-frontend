@@ -4,8 +4,14 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ToolsClient from "./ToolsClient";
 import { SITE_URL } from "@/lib/constants";
+import { routing } from "@/i18n/routing";
 
-export const dynamic = "force-dynamic";
+// Prerender per locale (bundled/i18n-only page) -> edge-cached, no per-request
+// render. generateMetadata sets the correct per-locale canonical + hreflang.
+export const revalidate = false;
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 type Props = {
   params: Promise<{ locale: string }>;

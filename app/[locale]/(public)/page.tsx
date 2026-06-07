@@ -6,6 +6,7 @@ import { inspirationService } from "@/services/inspiration";
 import { mapDTOToUICard } from "@/services/inspirationMapper";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import { SITE_URL } from "@/lib/constants";
+import { routing } from "@/i18n/routing";
 import {
   buildNanoRegistry,
   type RawTemplate,
@@ -41,6 +42,15 @@ async function buildHomeNanoCards(): Promise<NanoInspirationCardType[]> {
     console.error("[nano] failed to build nano cards on server:", err);
     return [];
   }
+}
+
+// Prerender one static variant per locale -> served from edge cache instead of
+// a per-request render (cuts Fast Origin Transfer). Cached until next deploy.
+// The page's own generateMetadata below sets the correct per-locale canonical +
+// hreflang from params, so SEO output is byte-identical to the dynamic version.
+export const revalidate = false;
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({

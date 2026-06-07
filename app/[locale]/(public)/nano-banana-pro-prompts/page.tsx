@@ -8,13 +8,21 @@ import type { NanoPromptBase } from '@/types/nanoPrompts';
 import { toOgLocale } from '@/lib/locale_utils';
 import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
 import { POPULAR_GALLERY_TAGS, POPULAR_TAG_ROW_LIMIT } from '@/lib/popular_tags';
+import { routing } from '@/i18n/routing';
 
 export const runtime = 'nodejs';
 
-// Cache the prompts listing for 4 hours with ISR. Bots hammer this
-// page when iterating numbered prompt detail pages; without ISR each
-// hit forces a server render that ships through Fast Origin Transfer.
-export const revalidate = 14400;
+// Prerender the listing per locale -> served from edge cache (the original
+// revalidate=14400 was ignored because this route had no generateStaticParams,
+// so it rendered dynamically on every hit -> Fast Origin Transfer). Backend
+// prompt data is captured at build and refreshes on next deploy. Set to false
+// (not a time window) because ISR background revalidation can't run until the
+// shared-layout next-intl migration lands. generateMetadata sets the correct
+// per-locale canonical + hreflang, so SEO is unchanged.
+export const revalidate = false;
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 
 export async function generateMetadata({
