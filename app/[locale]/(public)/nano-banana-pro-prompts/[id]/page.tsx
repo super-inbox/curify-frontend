@@ -277,7 +277,7 @@ export default async function PromptDetailPage({
                   alt: p.title || `Prompt ${p.id}`,
                   title: p.title,
                 }))}
-                limit={6}
+                limit={2}
               />
             ) : null
           }

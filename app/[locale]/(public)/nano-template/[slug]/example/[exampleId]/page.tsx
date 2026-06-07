@@ -357,7 +357,7 @@ export default async function NanoExampleDetailPage({
                 alt: item.title,
                 title: item.title,
               }))}
-              limit={6}
+              limit={2}
             />
           ) : null
         }

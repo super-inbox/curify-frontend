@@ -20,11 +20,15 @@ export type RailItem = {
 type Props = {
   items: RailItem[];
   heading?: string;
-  /** Max thumbnails to render (default 8 — fills a 2×4 grid). Extras are dropped. */
+  /**
+   * Max thumbnails to render (default 2 — one row in the 2-col grid,
+   * keeps the rail height roughly aligned with the hero). Extras are
+   * dropped; the full set still surfaces in the below-hero grid.
+   */
   limit?: number;
 };
 
-export default function MoreLikeThisRail({ items, heading = "More like this", limit = 8 }: Props) {
+export default function MoreLikeThisRail({ items, heading = "More like this", limit = 2 }: Props) {
   const shown = items.slice(0, limit);
   if (shown.length === 0) return null;
   return (
