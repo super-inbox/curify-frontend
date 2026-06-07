@@ -178,7 +178,17 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
     label: "AI Tools",
     emoji: "🛠️",
     tier: 2,
-    aliases: ["tool", "ai tools", "studio tools", "utilities", "工具", "ai 工具", "herramientas"],
+    aliases: [
+      "tool", "ai tools", "studio tools", "utilities",
+      // 2026-06-07 Cycle 3 — `ppt` (CN PowerPoint slang, 1 user / 1
+      // escape) recurred in Cluster B tool-intent. We don't ship a
+      // dedicated /tools/ai-slides yet; route to the catalog so the
+      // user sees what's available instead of bouncing on empty search.
+      "ppt", "powerpoint", "ppt template", "slides", "presentation",
+      "ai slides", "ai presentation",
+      "工具", "ai 工具", "幻灯片", "演示文稿", "ppt 模板",
+      "herramientas", "présentation",
+    ],
   },
   {
     slug: "video-dubbing",
@@ -188,7 +198,14 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
     tier: 3,
     aliases: [
       "dub", "dubbing", "voice over", "translate video", "video translation",
-      "配音", "视频配音", "doblaje", "doblar video",
+      // 2026-06-07 Cycle 3 — `ai dub` (1 user / 2 searches / 2 escapes)
+      // and `video dubbing` (2 users / 2 searches / 0% CTR) recurred.
+      // `ai dub` was missing entirely from the alias set; `video dubbing`
+      // was matching via label-exact but with mixed-case quirks.
+      "ai dub", "ai dubbing", "ai voice over", "auto dub",
+      "lip sync dubbing", "dubbed video",
+      "配音", "视频配音", "ai 配音", "自动配音", "中英配音",
+      "doblaje", "doblar video", "doblaje ia",
     ],
   },
   {
