@@ -1,28 +1,33 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 import blogsData from "@/public/data/blogs.json";
-import categoriesData from "@/public/data/blog-categories.json";
 
 type BlogCategoryLabelProps = {
-  /** Blog slug — used to look up the category from blogs.json. */
+  /** Blog slug — used to look up the active category from blogs.json. */
   slug?: string;
   /** Category slug — bypasses blogs.json lookup when caller already has it. */
   category?: string;
+  /** Locale override; defaults to URL param (which is set by next-intl). */
+  locale?: string;
   className?: string;
 };
 
-const CATEGORY_NAME_FALLBACK: Record<string, string> = {
-  "ds-ai-engineering": "DS & AI Engineering",
-  "content-automation": "Content Automation",
-  "creator-tools": "Creator Tools",
-  "ai-strategy": "AI Strategy",
-  "learning-education": "Learning & Education",
-  "video-translation": "Video Translation",
-  "video-translation-dubbing": "Video Translation",
-  "video-dubbing": "Video Dubbing",
-  "nano-template": "Nano Templates",
-  "nano-banana-prompts": "Nano Banana Prompts",
-  "culture": "Culture",
-};
+// Same pillar ordering as the /blog index filter row. Each pillar
+// renders as a chip linking to /blog?category=<slug>. Display name +
+// underlying category-slug stay paired here so the chip text and the
+// /blog filter param align.
+const PILLARS: Array<{ slug: string; label: string }> = [
+  { slug: "nano-template",       label: "Nano Template" },
+  { slug: "creator-tools",       label: "Creator Tools" },
+  { slug: "video-dubbing",       label: "Video Dubbing" },
+  { slug: "content-automation",  label: "Content Automation" },
+  { slug: "learning-education",  label: "Learning & Education" },
+  { slug: "ds-ai-engineering",   label: "DS & AI Engineering" },
+  { slug: "ai-strategy",         label: "AI Strategy" },
+];
 
 function resolveCategorySlug(slug?: string, category?: string): string | null {
   if (category) return category;
@@ -33,25 +38,37 @@ function resolveCategorySlug(slug?: string, category?: string): string | null {
   return blog?.category ?? null;
 }
 
-function categoryDisplayName(categorySlug: string): string {
-  const fromConfig =
-    (categoriesData as { categories: Record<string, { name?: string }> })
-      .categories[categorySlug]?.name;
-  return fromConfig || CATEGORY_NAME_FALLBACK[categorySlug] || categorySlug;
-}
-
 export default function BlogCategoryLabel({
   slug,
   category,
+  locale: localeProp,
   className = "",
 }: BlogCategoryLabelProps) {
-  const resolved = resolveCategorySlug(slug, category);
-  if (!resolved) return null;
+  const params = useParams();
+  const locale = localeProp || ((params as { locale?: string })?.locale ?? "en");
+  const active = resolveCategorySlug(slug, category);
   return (
     <div
-      className={`text-xs font-semibold uppercase tracking-wider text-blue-600 mb-2 ${className}`}
+      className={`mb-4 -mx-1 flex flex-wrap gap-2 ${className}`}
+      aria-label="Blog categories"
     >
-      {categoryDisplayName(resolved)}
+      {PILLARS.map((p) => {
+        const isActive = p.slug === active;
+        return (
+          <Link
+            key={p.slug}
+            href={`/${locale}/blog?category=${encodeURIComponent(p.slug)}`}
+            className={`rounded-full px-3 py-1 text-xs font-medium transition ${
+              isActive
+                ? "bg-purple-600 text-white"
+                : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+            }`}
+            aria-current={isActive ? "page" : undefined}
+          >
+            {p.label}
+          </Link>
+        );
+      })}
     </div>
   );
 }

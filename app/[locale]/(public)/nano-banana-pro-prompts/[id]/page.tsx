@@ -6,6 +6,7 @@ import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
+import MoreLikeThisRail from "@/app/[locale]/_components/MoreLikeThisRail";
 import { getCanonicalPath } from "@/lib/canonical";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
 import PromptTagChips from "./PromptTagChips";
@@ -266,14 +267,25 @@ export default async function PromptDetailPage({
               }}
             />
           }
+          moreLikeThisRail={
+            related.length > 0 ? (
+              <MoreLikeThisRail
+                heading="More like this"
+                items={related.map((p) => ({
+                  href: buildPromptPath(locale, p.id),
+                  src: normalizeImageUrl(p.imageURL),
+                  alt: p.title || `Prompt ${p.id}`,
+                  title: p.title,
+                }))}
+                limit={2}
+              />
+            ) : null
+          }
         />
 
-        <RelatedTagsSection
-          tags={getRelatedTagsForPrompt(promptTags, { limit: 12, liveOnly: true })}
-          locale={locale}
-          title="Related Tags"
-          subtitle="Tags from the same category clusters as this prompt."
-        />
+        {/* RelatedTagsSection moved to the page tail (after Related
+            Images + Related Templates) so the visual content rails come
+            first and the tag-cluster navigation closes the scroll. */}
 
         {related.length > 0 && (
           <section className="mt-10">
@@ -308,6 +320,13 @@ export default async function PromptDetailPage({
             />
           </section>
         )}
+
+        <RelatedTagsSection
+          tags={getRelatedTagsForPrompt(promptTags, { limit: 12, liveOnly: true })}
+          locale={locale}
+          title="Related Tags"
+          subtitle="Tags from the same category clusters as this prompt."
+        />
       </main>
     </div>
   );

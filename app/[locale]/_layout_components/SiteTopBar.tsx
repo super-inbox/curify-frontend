@@ -1,11 +1,15 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import SearchBar from "@/app/[locale]/_components/SearchBar";
 import LocaleSwitcher from "@/app/[locale]/_components/LocaleSwitcher";
 import EntryBar from "@/app/[locale]/_components/EntryBar";
 
 export default function SiteTopBar({ locale }: { locale: string }) {
+  const tHeader = useTranslations("header");
   const pathname = usePathname();
   const isBlogPage =
     pathname === "/blog" ||
@@ -38,9 +42,25 @@ export default function SiteTopBar({ locale }: { locale: string }) {
 
   return (
     <div className="hidden lg:block sticky top-0 z-40 bg-[#FDFDFD]/95 backdrop-blur px-4 pt-3 pb-4">
-      {/* LocaleSwitcher lives in the SearchBar row so that hiding the
-          EntryBar collapses the sticky-bar height cleanly. */}
+      {/* Logo + SearchBar + LocaleSwitcher share the first row. Logo
+          moved here from the sidebar Header so the sidebar can collapse
+          to icon-only width. Logo height ~10% smaller than the prior
+          h-16 (64px → 56px = h-14). */}
       <div className="flex items-start gap-4">
+        <Link
+          href="/"
+          aria-label={tHeader("logoAlt")}
+          className="relative h-14 w-[140px] shrink-0 self-center"
+        >
+          <Image
+            src="/logo.svg"
+            alt={tHeader("logoAlt")}
+            fill
+            sizes="160px"
+            className="object-contain object-left"
+            priority
+          />
+        </Link>
         <div className="flex-1 min-w-0">
           <SearchBar locale={locale} />
         </div>

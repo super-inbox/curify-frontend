@@ -40,9 +40,14 @@ export function useIsMobileLikeDevice(): boolean {
 }
 
 /**
- * Column count for the standard `grid-cols-2 sm:grid-cols-3 lg:grid-cols-5`
- * card grid used across the site (NanoInspirationRow, ExampleImagesGrid).
- * Returns a desktop-default during SSR; updates on resize after mount.
+ * Column count for the standard `grid-cols-2 sm:grid-cols-3 lg:grid-cols-5
+ * xl:grid-cols-6` card grid used across the site (NanoInspirationRow,
+ * ExampleImagesGrid). Returns a desktop-default during SSR; updates on
+ * resize after mount.
+ *
+ * xl breakpoint (≥1280px) returns 6 — only achievable now that the
+ * sidebar collapsed from 225px → 56px (icon-only rail). Below 1280px
+ * but at lg (≥1024px) stays at 5 cols to keep card width readable.
  */
 export function useGridCols(): number {
   const [cols, setCols] = useState(5);
@@ -50,7 +55,7 @@ export function useGridCols(): number {
     const update = () => {
       if (typeof window === "undefined") return;
       const w = window.innerWidth;
-      setCols(w >= 1024 ? 5 : w >= 640 ? 3 : 2);
+      setCols(w >= 1280 ? 6 : w >= 1024 ? 5 : w >= 640 ? 3 : 2);
     };
     update();
     window.addEventListener("resize", update);
