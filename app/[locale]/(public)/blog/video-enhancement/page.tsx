@@ -10,6 +10,7 @@ import RelatedBlogs from "../../../_components/RelatedBlogs";
 import CdnVideo from "../../../_components/CdnVideo";
 import CdnAudio from "../../../_components/CdnAudio";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 export async function generateMetadata({
   params,
@@ -55,6 +56,7 @@ export default async function VideoEnhancementPost({
       {/* HEADER */}
       {/* ------------------------------------------------------- */}
       <header className="mb-20 space-y-8">
+        <BlogCategoryLabel slug="video-enhancement" />
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center leading-tight">
           AI Video Enhancement with Storyboards, Captions & SFX
         </h1>

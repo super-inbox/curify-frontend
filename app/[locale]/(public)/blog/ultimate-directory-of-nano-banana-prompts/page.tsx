@@ -17,6 +17,7 @@ import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/Struc
 import nanoTemplatesData from '../../../../../public/data/nano_templates.json';
 import { toSlug } from '@/lib/nano_utils';
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 type Template = {
   id: string;
@@ -185,6 +186,7 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
               className="rounded-lg shadow-md w-full h-auto object-cover"
             />
           </div>
+          <BlogCategoryLabel slug="ultimate-directory-of-nano-banana-prompts" />
           <h1 className="text-3xl md:text-4xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
             {t('hero.title')}
           </h1>

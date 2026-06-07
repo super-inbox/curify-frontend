@@ -16,6 +16,7 @@ import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import { VideoTranscriptionBusinessMermaid } from "./VideoTranscriptionBusinessMermaid";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 /**
  * Helper function to convert markdown to HTML
@@ -72,6 +73,7 @@ export default function VideoTranscriptionBusinessGuidePost() {
 
   return (
     <article className="pt-10 pb-8">
+      <BlogCategoryLabel slug="video-transcription-business-guide" />
       <h1 className="text-3xl md:text-4xl font-bold mb-6">{t("title")}</h1>
       
       {/* Featured Mermaid diagram with floating layout */}

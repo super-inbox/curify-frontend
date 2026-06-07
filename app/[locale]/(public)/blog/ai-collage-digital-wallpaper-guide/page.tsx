@@ -9,6 +9,7 @@ import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/Struc
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
 import NanoBananaExamples from "@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 
 export default function AICollageWallpaperGuide() {
   const t = useTranslations('blog.aiCollageDigitalWallpaperGuide');
@@ -45,6 +46,7 @@ export default function AICollageWallpaperGuide() {
           />
         </div>
         
+        <BlogCategoryLabel slug="ai-collage-digital-wallpaper-guide" />
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
         
         <div className="text-gray-600 mb-4">

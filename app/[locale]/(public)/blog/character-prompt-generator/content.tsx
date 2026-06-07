@@ -9,6 +9,7 @@ import BlogInlineClickTracker from '@/app/[locale]/(public)/blog/[slug]/componen
 import BlogCodeBlockCopyTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogCodeBlockCopyTracker'
 
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 type TemplateEntry = { name: string; slug: string; params: string }
 type WorkedCharacter = { name: string; mbti: string; blurb: string }
 type WorkedUniverse = {
@@ -33,6 +34,7 @@ export default function BlogContent() {
       <BlogCodeBlockCopyTracker blogSlug="character-prompt-generator">
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <header className="mb-8">
+          <BlogCategoryLabel slug="character-prompt-generator" />
           <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
           <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-400 text-sm">
             <span>{t('publishedDate')}</span>

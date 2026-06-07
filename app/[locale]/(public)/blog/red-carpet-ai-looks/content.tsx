@@ -7,6 +7,7 @@ import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
+import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 export default function BlogContent() {
   const t = useTranslations('blog.redCarpetAiLooks')
   const locale = useLocale()
@@ -14,6 +15,7 @@ export default function BlogContent() {
   return (
     <article className="max-w-5xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <header className="mb-8">
+        <BlogCategoryLabel slug="red-carpet-ai-looks" />
         <h1 className="text-4xl font-bold mb-4">
           {t('title')}
         </h1>
