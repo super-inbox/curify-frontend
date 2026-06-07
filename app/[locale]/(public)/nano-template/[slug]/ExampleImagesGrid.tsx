@@ -27,6 +27,7 @@ type Item = {
 function getCols() {
   if (typeof window === "undefined") return 1;
   const w = window.innerWidth;
+  if (w >= 1280) return 6;  // xl — unlocked by the icon-only sidebar collapse
   if (w >= 1024) return 5;
   if (w >= 640) return 3;
   return 2;
@@ -276,9 +277,9 @@ export default function ExampleImagesGrid({
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
         {topRightCell ? (
-          <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5">
+          <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5 xl:col-start-6">
             {topRightCell}
           </div>
         ) : null}

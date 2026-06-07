@@ -59,8 +59,8 @@ export default function HomeClient({
 
   return (
     <div className={classNames(inter.className, "w-full bg-[#FDFDFD] px-4 pb-10 pt-0 md:px-6 lg:px-10")}>
-      <div className="w-full max-w-[1400px]">
-        <div className="w-full max-w-[1400px] pb-6 pl-3">
+      <div className="w-full max-w-[1600px]">
+        <div className="w-full max-w-[1600px] pb-6 pl-3">
           <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
             {tHero("title")}
           </h1>

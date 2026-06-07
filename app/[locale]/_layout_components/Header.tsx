@@ -57,14 +57,19 @@ function HeaderTrackedLink({
     <Link
       href={href}
       onClick={trackClick}
-      className={`flex items-center gap-4 rounded-full px-7 py-4 text-[18px] font-semibold leading-none text-[#2f2f2f] transition-colors hover:bg-[#efefef] ${
+      aria-label={label}
+      className={`group relative flex h-12 w-12 items-center justify-center rounded-full text-[#2f2f2f] transition-colors hover:bg-[#efefef] focus:outline-none focus:ring-2 focus:ring-neutral-300 ${
         active ? "bg-[#efefef]" : ""
       }`}
     >
       <span className="flex h-7 w-7 items-center justify-center text-[#333]">
         {icon}
       </span>
-      <span className="cursor-pointer">{label}</span>
+      {/* Hover-tooltip: label appears to the right of the icon. Uses
+          absolute positioning so the narrow sidebar stays narrow. */}
+      <span className="pointer-events-none absolute left-full top-1/2 z-50 ml-2 -translate-y-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-xs font-medium text-white opacity-0 shadow-md transition-opacity group-hover:opacity-100">
+        {label}
+      </span>
     </Link>
   );
 }
@@ -218,68 +223,73 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Sidebar */}
-      <header className="hidden lg:fixed lg:left-0 lg:top-0 lg:z-50 lg:flex lg:h-screen lg:w-[225px] lg:flex-col lg:bg-[#f7f7f7] lg:px-4 lg:py-5">
-  {/* Logo */} <div className="mb-2 flex items-center justify-center"> <div className="relative h-16 w-full"> <Image src="/logo.svg" alt={t("logoAlt")} fill sizes="160px" className="object-contain" priority /> </div> </div>
+      {/* Sidebar — slim icon-only rail on lg+. Logo + label moved to
+          SiteTopBar (row 1). Width 70px (was 56px after the 2026-06-07
+          first pass — user requested +25% spacing room). Icons stack
+          with gap-3 so the rail breathes vertically. */}
+      <header className="hidden lg:fixed lg:left-0 lg:top-0 lg:z-50 lg:flex lg:h-screen lg:w-[70px] lg:flex-col lg:items-center lg:bg-[#f7f7f7] lg:px-2 lg:py-4">
 
         {(headerState === "out" || headerState === "in") && (
-          <nav className="flex flex-col gap-2 text-[#333]">
+          <nav className="flex flex-col gap-3 text-[#333]">
             <HeaderTrackedLink
               href="/"
               label={t("home")}
               contentId="header_home"
-              icon={<Home className="h-8 w-8 stroke-[2]" />}
+              icon={<Home className="h-7 w-7 stroke-[2]" />}
               active={pathname === "/"}
             />
             <HeaderTrackedLink
               href="/inspiration-hub"
               label={t("trending")}
               contentId="header_discover"
-              icon={<Video className="h-8 w-8 stroke-[2]" />}
+              icon={<Video className="h-7 w-7 stroke-[2]" />}
               active={pathname === "/inspiration-hub"}
             />
             <HeaderTrackedLink
               href="/nano-banana-pro-prompts"
               label={t("gallery")}
               contentId="header_gallery"
-              icon={<PlusSquare className="h-8 w-8 stroke-[2]" />}
+              icon={<PlusSquare className="h-7 w-7 stroke-[2]" />}
               active={pathname === "/nano-banana-pro-prompts"}
             />
             <HeaderTrackedLink
               href="/tools"
               label={t("tools")}
               contentId="header_tools"
-              icon={<Bell className="h-8 w-8 stroke-[2]" />}
+              icon={<Bell className="h-7 w-7 stroke-[2]" />}
               active={pathname === "/tools"}
             />
             <HeaderTrackedLink
               href="/blog"
               label={t("blogs")}
               contentId="header_blogs"
-              icon={<BookOpen className="h-8 w-8 stroke-[2]" />}
+              icon={<BookOpen className="h-7 w-7 stroke-[2]" />}
               active={pathname === "/blog"}
             />
 
             {isLoggedIn && (
               <button
-              onClick={() => router.push("/workspace")}
-                className="flex items-center gap-4 rounded-full bg-[#efefef] px-7 py-4 text-[18px] font-semibold text-[#2f2f2f] hover:bg-[#e9e9e9] cursor-pointer"
+                onClick={() => router.push("/workspace")}
+                aria-label={t("workspace")}
+                className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-[#efefef] text-[#2f2f2f] hover:bg-[#e9e9e9] cursor-pointer"
               >
                 {user?.avatar_url && !avatarError ? (
                   <Image
                     src={user.avatar_url}
                     alt={user.email || "User avatar"}
-                    width={32}
-                    height={32}
-                    className="h-8 w-8 rounded-full object-cover"
+                    width={28}
+                    height={28}
+                    className="h-7 w-7 rounded-full object-cover"
                     onError={() => setAvatarError(true)}
                   />
                 ) : (
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 text-white">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-500 text-sm text-white">
                     {avatarInitial}
                   </span>
                 )}
-                <span>{t("workspace")}</span>
+                <span className="pointer-events-none absolute left-full top-1/2 z-50 ml-2 -translate-y-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-xs font-medium text-white opacity-0 shadow-md transition-opacity group-hover:opacity-100">
+                  {t("workspace")}
+                </span>
               </button>
             )}
 
@@ -290,22 +300,30 @@ export default function Header() {
         <div className="flex-1" />
 
         {!isLoggedIn ? (
-          <div className="mb-6">
+          <div className="mb-4">
             <button
               onClick={handleLoginClick}
-              className="w-full rounded-full bg-blue-600 px-6 py-4 text-[18px] font-semibold text-white hover:bg-blue-700 cursor-pointer"
+              aria-label={t("logIn")}
+              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
             >
-              {t("logIn")}
+              <span className="text-xs font-bold uppercase">In</span>
+              <span className="pointer-events-none absolute left-full top-1/2 z-50 ml-2 -translate-y-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-xs font-medium text-white opacity-0 shadow-md transition-opacity group-hover:opacity-100">
+                {t("logIn")}
+              </span>
             </button>
           </div>
         ) : (
-          <div className="mb-6 mt-2">
-            <BtnN
+          <div className="mb-4">
+            <button
               onClick={() => setModal("topup")}
-              className="w-full py-3 text-[16px]"
+              aria-label={t("topUpCredits")}
+              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
             >
-              {t("topUpCredits")}
-            </BtnN>
+              <PlusSquare className="h-6 w-6 stroke-[2]" />
+              <span className="pointer-events-none absolute left-full top-1/2 z-50 ml-2 -translate-y-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-xs font-medium text-white opacity-0 shadow-md transition-opacity group-hover:opacity-100">
+                {t("topUpCredits")}
+              </span>
+            </button>
           </div>
         )}
 
@@ -313,10 +331,13 @@ export default function Header() {
         <div className="relative" ref={menuDropdownRef}>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex w-full items-center gap-4 rounded-full px-7 py-4 text-[18px] font-semibold text-[#2f2f2f] hover:bg-[#efefef] cursor-pointer"
+            aria-label="More"
+            className="group relative flex h-12 w-12 items-center justify-center rounded-full text-[#2f2f2f] hover:bg-[#efefef] cursor-pointer"
           >
-            <Menu className="h-8 w-8 stroke-[2]" />
-            <span>More</span>
+            <Menu className="h-7 w-7 stroke-[2]" />
+            <span className="pointer-events-none absolute left-full top-1/2 z-50 ml-2 -translate-y-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-xs font-medium text-white opacity-0 shadow-md transition-opacity group-hover:opacity-100">
+              More
+            </span>
           </button>
 
           <div className="absolute bottom-full left-0 mb-3 w-[260px]">
