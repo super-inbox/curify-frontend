@@ -6,6 +6,7 @@ import CdnImage from '@/app/[locale]/_components/CdnImage'
 
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 export default function BlogContent() {
   const t = useTranslations('blog.emotionTtsMovie')
 
@@ -13,6 +14,7 @@ export default function BlogContent() {
   return (
     <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <header className="mb-8">
+        <AutoTableOfContents />
         <BlogCategoryLabel slug="emotion-tts-movie" />
         <h1 className="text-4xl font-bold mb-4">
           {t('title')}

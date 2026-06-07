@@ -26,6 +26,7 @@ import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/Struc
 import FAQSection from "@/app/[locale]/(public)/blog/[slug]/components/FAQSection";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 // Helper function to decode HTML entities (server-safe)
 function decodeHTMLEntities(text: string): string {
@@ -71,6 +72,7 @@ export default function HowToDubVideosNaturallyPage() {
         {/* Hero Section */}
         <div className="relative mb-8">
           <div className="absolute -inset-2 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl blur opacity-20"></div>
+          <AutoTableOfContents />
           <BlogCategoryLabel slug="how-to-dub-videos-naturally" />
           <h1 className="relative text-3xl md:text-5xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
             {t('hero.title')}

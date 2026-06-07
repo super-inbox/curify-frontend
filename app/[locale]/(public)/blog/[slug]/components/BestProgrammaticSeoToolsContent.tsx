@@ -9,6 +9,7 @@ import BlogInlineClickTracker from '@/app/[locale]/(public)/blog/[slug]/componen
 import BlogCodeBlockCopyTracker from '@/app/[locale]/(public)/blog/[slug]/components/BlogCodeBlockCopyTracker'
 import { formatVoiceCloningContent } from '@/app/[locale]/(public)/blog/[slug]/utils/content-formatters'
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 const TOOLS = [
   {
@@ -46,6 +47,7 @@ export default function BestProgrammaticSeoToolsContent() {
       <BlogInlineClickTracker blogSlug="best-programmatic-seo-tools">
       <BlogCodeBlockCopyTracker blogSlug="best-programmatic-seo-tools">
       <header className="mb-8">
+        <AutoTableOfContents />
         <BlogCategoryLabel slug="best-programmatic-seo-tools" />
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
         <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 text-sm">

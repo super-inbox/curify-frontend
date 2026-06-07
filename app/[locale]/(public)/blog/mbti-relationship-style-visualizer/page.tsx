@@ -11,6 +11,7 @@ import { makeNanoTemplateUrl } from "@/lib/nano_utils";
 import { resolveContentLocale } from "@/lib/locale_utils";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 export default function MBTIRelationshipStyleVisualizer() {
   const t = useTranslations('blog.mbiRelationshipStyleVisualizer');
@@ -47,6 +48,7 @@ export default function MBTIRelationshipStyleVisualizer() {
           />
         </div>
         
+        <AutoTableOfContents />
         <BlogCategoryLabel slug="mbti-relationship-style-visualizer" />
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
         

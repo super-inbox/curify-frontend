@@ -26,6 +26,7 @@ import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/Struc
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
 import NanoBananaExamples from "@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 // Helper function to decode HTML entities (server-safe)
 function decodeHTMLEntities(text: string): string {
@@ -108,6 +109,7 @@ export default function MBTICharacterGeneratorPage() {
             + gradient-clip title, dropped per docs/blog-quality.md polish
             pass). */}
         <header className="mb-10">
+          <AutoTableOfContents />
           <BlogCategoryLabel slug="mbti-character-generator" />
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3 text-gray-900">
             {t('hero.title')}

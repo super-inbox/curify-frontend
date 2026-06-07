@@ -17,6 +17,7 @@ import RelatedBlogs from "../../../_components/RelatedBlogs";
 import { VideoTranscriptionMermaid } from "./VideoTranscriptionMermaid";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 /**
  * Helper function to convert markdown to HTML
@@ -142,6 +143,7 @@ export default function VideoTranscriptionTechnicalDeepDivePost() {
 
   return (
     <article className="pt-10 pb-8">
+      <AutoTableOfContents />
       <BlogCategoryLabel slug="video-transcription-technical-deep-dive" />
       <h1 className="text-3xl md:text-4xl font-bold mb-6">{t("title")}</h1>
       
