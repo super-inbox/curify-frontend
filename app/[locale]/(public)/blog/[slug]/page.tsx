@@ -53,13 +53,22 @@ import BilingualFlashcardsContent from "./components/BilingualFlashcardsContent"
 import UGCVideoTranslationContent from "./components/UGCVideoTranslationContent";
 import AIFacelessChannelPipelineWrapper from './components/AIFacelessChannelPipelineWrapper';
 import blogsData from "@/public/data/blogs.json";
+import { routing } from "@/i18n/routing";
+import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-// Force dynamic rendering to avoid static generation issues
-export const dynamic = 'force-dynamic';
-
-
+// Bundled-data page (blogPosts/blogsData + i18n) -> prerender per locale x slug
+// and serve from the edge cache instead of re-rendering on every hit. Must
+// enumerate BOTH params so all locales prerender (slug-only would leave non-en
+// locales on-demand). Cached until next deploy. Previously force-dynamic.
+// NOTE: this page sets its own canonical + hreflang below (it didn't before —
+// it relied on the shared layout, which only produces a correct canonical when
+// rendered dynamically). The values match what the layout emitted, so SEO is
+// unchanged.
+export const revalidate = false;
 export async function generateStaticParams() {
-  return Object.keys(blogPosts).map((slug) => ({ slug }));
+  return routing.locales.flatMap((locale) =>
+    Object.keys(blogPosts).map((slug) => ({ locale, slug })),
+  );
 }
 
 export async function generateMetadata({
@@ -73,6 +82,14 @@ export async function generateMetadata({
   if (!blogConfig) {
     return { title: "Blog Post Not Found" };
   }
+
+  // Per-locale canonical + hreflang, derived from params (NOT request headers),
+  // so the output is identical whether this page is prerendered or dynamic.
+  // Matches what the shared layout previously emitted for /blog/<slug>.
+  const alternates = {
+    canonical: getCanonicalUrl(locale, `/blog/${slug}`),
+    languages: getLanguagesMap(`/blog/${slug}`),
+  };
 
   try {
     const t = await getTranslations({ locale, namespace: `blog.${blogConfig.namespace}` });
@@ -92,6 +109,7 @@ export async function generateMetadata({
     const metadata: Metadata = {
       title: t(blogConfig.titleKey),
       description: t(blogConfig.descriptionKey),
+      alternates,
     };
     
     // Add SEO keywords if available
@@ -131,6 +149,7 @@ export async function generateMetadata({
       return {
         title: slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
         description: "Learn more about AI-powered content creation tools",
+        alternates,
       };
     }
   }
@@ -274,7 +293,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article className="mx-auto max-w-6xl pt-4 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
+    <article className="mx-auto xl:ml-8 xl:mr-72 max-w-6xl pt-4 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
       <AutoTableOfContents />
 
       <header className="mb-6">

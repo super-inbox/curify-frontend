@@ -142,7 +142,7 @@ export default function VideoTranscriptionTechnicalDeepDivePost() {
   const locale = useLocale();
 
   return (
-    <article className="pt-10 pb-8">
+    <article className="xl:pr-72 pt-10 pb-8">
       <AutoTableOfContents />
       <BlogCategoryLabel slug="video-transcription-technical-deep-dive" />
       <h1 className="text-3xl md:text-4xl font-bold mb-6">{t("title")}</h1>

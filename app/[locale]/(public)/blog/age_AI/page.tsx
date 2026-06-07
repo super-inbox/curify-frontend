@@ -35,7 +35,7 @@ export default function AgeAiPost() {
     : [];
 
   return (
-    <article className="pt-10 pb-8">
+    <article className="xl:pr-72 pt-10 pb-8">
       <AutoTableOfContents />
       <BlogCategoryLabel slug="age_AI" />
       <h1 className="text-4xl font-bold mb-8">

@@ -29,7 +29,7 @@ export default async function AgentsVsWorkflowsPost({
 }) {
   const { locale } = await params;  
   return (
-    <article className="pt-10 pb-8">
+    <article className="xl:pr-72 pt-10 pb-8">
       <AutoTableOfContents />
       <BlogCategoryLabel slug="agents-vs-workflows" />
       <h1 className="text-4xl font-bold mb-8">🤖 Agents vs Workflows</h1>

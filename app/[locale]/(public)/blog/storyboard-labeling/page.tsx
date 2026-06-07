@@ -64,7 +64,7 @@ export default function SceneDetectionPage() {
 
   return (
     <div className="pt-10 pb-8">
-      <article className="prose prose-base md:prose-lg">
+      <article className="xl:pr-72 prose prose-base md:prose-lg">
         <div className="relative mb-8">
           <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-20"></div>
           <AutoTableOfContents />

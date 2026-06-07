@@ -51,7 +51,7 @@ export default async function VideoEnhancementPost({
   const { locale } = await params;
   
   return (
-    <article className="pt-10 pb-8">
+    <article className="xl:pr-72 pt-10 pb-8">
 
       {/* ------------------------------------------------------- */}
       {/* HEADER */}

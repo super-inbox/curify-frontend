@@ -175,7 +175,7 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
 
   return (
     <div className="pt-10 pb-8">
-      <article className="prose prose-base md:prose-lg max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article className="xl:ml-8 xl:mr-72 prose prose-base md:prose-lg max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero — float-left small image so the h1 + subtitle wrap around */}
         <div className="not-prose mb-12 clear-both">
           <div className="float-left mr-6 mb-4 w-40 sm:w-56 md:w-64">

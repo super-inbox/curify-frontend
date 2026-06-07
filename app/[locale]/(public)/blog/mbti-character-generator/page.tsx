@@ -104,7 +104,7 @@ export default function MBTICharacterGeneratorPage() {
 
   return (
     <div className="mx-auto max-w-7xl pt-10 pb-8 px-4 md:px-6">
-      <article className="prose prose-base md:prose-lg max-w-none">
+      <article className="xl:pr-72 prose prose-base md:prose-lg max-w-none">
         {/* Hero — plain bold heading + subtitle (was a gradient-blur halo
             + gradient-clip title, dropped per docs/blog-quality.md polish
             pass). */}

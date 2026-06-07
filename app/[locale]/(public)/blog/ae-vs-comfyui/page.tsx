@@ -53,7 +53,7 @@ export default async function AeVsComfyUiPost({
   );
 
   return (
-    <article className="pt-10 pb-8">
+    <article className="xl:pr-72 pt-10 pb-8">
       <AutoTableOfContents />
       <BlogCategoryLabel slug="ae-vs-comfyui" />
       <h1 className="text-4xl font-bold mb-6">{t("heading")}</h1>

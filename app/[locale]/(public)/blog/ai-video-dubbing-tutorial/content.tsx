@@ -13,7 +13,7 @@ export default function BlogContent() {
   const t = useTranslations('blog.aiVideoDubbingTutorial')
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
+    <article className="xl:ml-8 xl:mr-72 max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <header className="mb-8">
         <AutoTableOfContents />
         <BlogCategoryLabel slug="ai-video-dubbing-tutorial" />

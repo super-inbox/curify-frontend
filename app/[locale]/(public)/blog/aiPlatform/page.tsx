@@ -47,7 +47,7 @@ export default async function AIPlatform({
   return (
     <div className="pt-10 pb-8">
       {/* Main Content */}
-      <article className="flex-1">
+      <article className="xl:pr-72 flex-1">
         <header className="mb-12">
           <AutoTableOfContents />
           <BlogCategoryLabel slug="aiPlatform" />

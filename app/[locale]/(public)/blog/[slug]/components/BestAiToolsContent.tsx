@@ -43,7 +43,7 @@ export default function BestAiToolsContent() {
   const locale = useLocale()
 
   return (
-    <article className="max-w-5xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
+    <article className="xl:ml-8 xl:mr-72 max-w-5xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <BlogInlineClickTracker blogSlug="best-ai-tools">
       <BlogCodeBlockCopyTracker blogSlug="best-ai-tools">
       <header className="mb-8">

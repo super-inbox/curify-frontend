@@ -66,7 +66,7 @@ export default function HowToDubVideosNaturallyPage() {
   const locale = useLocale();
 
   return (
-    <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
+    <article className="xl:pr-72 pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
       {/* Breadcrumb Navigation */}
       <div className="prose prose-base md:prose-lg">
         {/* Hero Section */}
