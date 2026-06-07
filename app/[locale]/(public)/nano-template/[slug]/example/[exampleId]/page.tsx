@@ -10,6 +10,7 @@ import ExampleRightColumn from "./ExampleRightColumn";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
+import MoreLikeThisRail from "@/app/[locale]/_components/MoreLikeThisRail";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
@@ -345,6 +346,20 @@ export default async function NanoExampleDetailPage({
             existingExamples={existingExamples}
             useCaseFilter={templateUseCases}
           />
+        }
+        moreLikeThisRail={
+          (similarItems.length > 0 ? similarItems : gridItems).length > 0 ? (
+            <MoreLikeThisRail
+              heading={similarItems.length > 0 ? "More like this" : "More from this template"}
+              items={(similarItems.length > 0 ? similarItems : gridItems).map((item) => ({
+                href: `/${rawLocale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`,
+                src: item.preview,
+                alt: item.title,
+                title: item.title,
+              }))}
+              limit={6}
+            />
+          ) : null
         }
       />
 

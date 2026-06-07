@@ -50,6 +50,15 @@ type ExamplePromptHeroProps = {
    * right column via ExampleRightColumn).
    */
   useCaseFilter?: readonly string[];
+  /**
+   * Optional sidebar rail rendered to the right of the image + prompt
+   * pair on lg+. Hidden on mobile by the rail itself — the existing
+   * below-hero "More like this" / "Related Images" section already
+   * serves smaller viewports. Pass a `<MoreLikeThisRail items={…} />`
+   * (or any compatible aside) — when present, the hero shifts into a
+   * 5-col outer grid (image+prompt span 4, rail spans 1).
+   */
+  moreLikeThisRail?: ReactNode;
 };
 
 function DesktopPrevNext({ prevNext, trackingId }: { prevNext?: PrevNextNav | null; trackingId?: string }) {
@@ -178,6 +187,7 @@ export default function ExamplePromptHero({
   prevNext,
   className,
   useCaseFilter,
+  moreLikeThisRail,
 }: ExamplePromptHeroProps) {
   return (
     <>
@@ -199,64 +209,77 @@ export default function ExamplePromptHero({
       <section className={["relative", className].filter(Boolean).join(" ")}>
         <DesktopPrevNext prevNext={prevNext} trackingId={trackingId} />
 
-        {/* Image card sized at 85% of the prior hero width (1.05fr →
-            0.89fr) and pinned to a fixed 440 px height on lg+ so the
-            example page and the gallery prompt page render the image at
-            the same size regardless of right-column content or image
-            aspect ratio. Items-stretch still aligns the right column to
-            match for the typical case (right col < 440); for the rare
-            heavy-params template the row grows past 440, the image card
-            stays 440 and aligns to the top of its grid cell. */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.89fr)_minmax(0,1.2fr)] lg:items-stretch">
-          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[440px] lg:self-start">
-            {image}
-          </div>
+        {/* Outer grid: when moreLikeThisRail is supplied, allocate 4 cols
+            for the image + reproduction pair and a 5th col for the rail
+            (hidden on mobile by the rail itself). Without a rail the
+            outer grid collapses to a single column and the inner 2-col
+            image/right grid takes the full width as before. */}
+        <div className={moreLikeThisRail ? "lg:grid lg:grid-cols-5 lg:gap-6" : ""}>
+          <div className={moreLikeThisRail ? "lg:col-span-4" : ""}>
+            {/* Inner 2-col: image card sized at 85% of the prior hero
+                width (1.05fr → 0.89fr) and pinned to a fixed 440 px
+                height on lg+ so the example page and the gallery prompt
+                page render the image at the same size regardless of
+                right-column content or image aspect ratio. Items-stretch
+                still aligns the right column to match for the typical
+                case (right col < 440); for the rare heavy-params
+                template the row grows past 440, the image card stays
+                440 and aligns to the top of its grid cell. */}
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.89fr)_minmax(0,1.2fr)] lg:items-stretch">
+              <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[440px] lg:self-start">
+                {image}
+              </div>
 
-          <div className="flex flex-col gap-4 lg:justify-center">
-            {rightColumnContent ? rightColumnContent : (
-              <>
-                {description ? (
-                  <DescriptionClamp text={description} lines={2} />
-                ) : null}
+              <div className="flex flex-col gap-4 lg:justify-center">
+                {rightColumnContent ? rightColumnContent : (
+                  <>
+                    {description ? (
+                      <DescriptionClamp text={description} lines={2} />
+                    ) : null}
 
-                {beforePrompt}
+                    {beforePrompt}
 
-                <section aria-labelledby="prompt-heading" className="flex flex-col">
-                  <h2
-                    id="prompt-heading"
-                    className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
-                  >
-                    Prompt
-                  </h2>
+                    <section aria-labelledby="prompt-heading" className="flex flex-col">
+                      <h2
+                        id="prompt-heading"
+                        className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
+                      >
+                        Prompt
+                      </h2>
 
-                  {promptVariant === "breakdown" ? (
-                    <PromptBreakdown prompt={prompt} params={promptParams ?? {}} collapsedMaxHeight={promptCollapsedMaxHeight} />
-                  ) : (
-                    <PromptPreviewBlock
-                      text={prompt}
-                      collapsedRows={1}
-                      expandable={true}
-                      containerClassName="rounded-2xl border border-neutral-200 bg-neutral-50"
-                      preClassName="text-neutral-800"
-                      expandLabel="Show full prompt"
-                      collapseLabel="Show less"
-                    />
-                  )}
-                </section>
+                      {promptVariant === "breakdown" ? (
+                        <PromptBreakdown prompt={prompt} params={promptParams ?? {}} collapsedMaxHeight={promptCollapsedMaxHeight} />
+                      ) : (
+                        <PromptPreviewBlock
+                          text={prompt}
+                          collapsedRows={1}
+                          expandable={true}
+                          containerClassName="rounded-2xl border border-neutral-200 bg-neutral-50"
+                          preClassName="text-neutral-800"
+                          expandLabel="Show full prompt"
+                          collapseLabel="Show less"
+                        />
+                      )}
+                    </section>
 
-                {actionBar}
+                    {actionBar}
 
-                {useCaseFilter && useCaseFilter.length > 0 && (
-                  <div className="border-t border-neutral-100 pt-3">
-                    <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-                      Use this prompt for
-                    </div>
-                    <UseCaseChipsRow filterTo={useCaseFilter} />
-                  </div>
+                    {useCaseFilter && useCaseFilter.length > 0 && (
+                      <div className="border-t border-neutral-100 pt-3">
+                        <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+                          Use this prompt for
+                        </div>
+                        <UseCaseChipsRow filterTo={useCaseFilter} />
+                      </div>
+                    )}
+                  </>
                 )}
-              </>
-            )}
+              </div>
+            </div>
           </div>
+          {moreLikeThisRail ? (
+            <div className="lg:col-span-1">{moreLikeThisRail}</div>
+          ) : null}
         </div>
       </section>
 

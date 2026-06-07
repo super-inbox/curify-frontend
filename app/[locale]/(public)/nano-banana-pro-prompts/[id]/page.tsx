@@ -6,6 +6,7 @@ import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
+import MoreLikeThisRail from "@/app/[locale]/_components/MoreLikeThisRail";
 import { getCanonicalPath } from "@/lib/canonical";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
 import PromptTagChips from "./PromptTagChips";
@@ -265,6 +266,20 @@ export default async function PromptDetailPage({
                 title: prompt.title,
               }}
             />
+          }
+          moreLikeThisRail={
+            related.length > 0 ? (
+              <MoreLikeThisRail
+                heading="More like this"
+                items={related.map((p) => ({
+                  href: buildPromptPath(locale, p.id),
+                  src: normalizeImageUrl(p.imageURL),
+                  alt: p.title || `Prompt ${p.id}`,
+                  title: p.title,
+                }))}
+                limit={6}
+              />
+            ) : null
           }
         />
 
