@@ -131,6 +131,7 @@ export async function generateMetadata({
       const metadata: Metadata = {
         title: t(blogConfig.titleKey),
         description: t(blogConfig.descriptionKey),
+        alternates,
       };
       
       // Add SEO keywords if available
@@ -293,7 +294,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article className="mx-auto xl:ml-8 xl:mr-72 max-w-6xl pt-4 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
+    <article className="mx-auto xl:ml-16 xl:mr-64 max-w-6xl pt-4 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
       <AutoTableOfContents />
 
       <header className="mb-6">

@@ -48,7 +48,7 @@ export default async function QABotToTaskAgent({
       </aside>
 
       {/* Main Content */}
-      <article className="xl:pr-72 flex-1 max-w-4xl text-lg leading-8">
+      <article className="xl:pr-64 flex-1 max-w-4xl text-lg leading-8">
         <AutoTableOfContents />
         <BlogCategoryLabel slug="QA_Bot_to_Task" />
         <h1 className="text-4xl font-bold mb-8">

@@ -27,7 +27,7 @@ export default function MBTIRelationshipStyleVisualizer() {
   ];
 
   return (
-    <article className="xl:pr-72 pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
+    <article className="xl:pr-64 pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
       <StructuredData 
         title={t('title')}
         description={t('metaDescription')}

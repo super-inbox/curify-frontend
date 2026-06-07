@@ -43,7 +43,7 @@ export default function BestProgrammaticSeoToolsContent() {
   const locale = useLocale()
 
   return (
-    <article className="xl:ml-8 xl:mr-72 max-w-5xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
+    <article className="xl:ml-16 xl:mr-64 max-w-5xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <BlogInlineClickTracker blogSlug="best-programmatic-seo-tools">
       <BlogCodeBlockCopyTracker blogSlug="best-programmatic-seo-tools">
       <header className="mb-8">

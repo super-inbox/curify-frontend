@@ -45,7 +45,7 @@ export default function VideoTranslationEvaluationPost() {
 
   return (
     // Keep the article container as the "max width" boundary
-    <article className="xl:pr-72 pt-10 pb-8">
+    <article className="xl:pr-64 pt-10 pb-8">
 
       {/* HEADER: This can remain full-width for impact */}
       <header className="mb-20 space-y-8">

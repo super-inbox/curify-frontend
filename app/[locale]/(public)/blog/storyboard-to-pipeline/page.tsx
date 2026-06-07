@@ -87,7 +87,7 @@ export default function StoryboardToPipelinePost() {
   };
 
   return (
-    <article className="xl:pr-72 pt-10 pb-8">
+    <article className="xl:pr-64 pt-10 pb-8">
       <AutoTableOfContents />
       <BlogCategoryLabel slug="storyboard-to-pipeline" />
       <h1 className="text-3xl md:text-4xl font-bold mb-6">{t("title")}</h1>

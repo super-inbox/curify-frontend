@@ -30,7 +30,7 @@ export default function BlogContent() {
   const templateLink = (slug: string) => `${localePrefix}/nano-template/${slug}`
 
   return (
-    <article className="xl:ml-8 xl:mr-72 mx-auto max-w-6xl px-4 py-8">
+    <article className="xl:ml-16 xl:mr-64 mx-auto max-w-6xl px-4 py-8">
       <BlogInlineClickTracker blogSlug="character-prompt-generator">
       <BlogCodeBlockCopyTracker blogSlug="character-prompt-generator">
       <div className="prose prose-lg dark:prose-invert max-w-none">
