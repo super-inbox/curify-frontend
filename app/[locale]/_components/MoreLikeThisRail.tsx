@@ -20,11 +20,11 @@ export type RailItem = {
 type Props = {
   items: RailItem[];
   heading?: string;
-  /** Max thumbnails to render (default 6). Extras are dropped. */
+  /** Max thumbnails to render (default 8 — fills a 2×4 grid). Extras are dropped. */
   limit?: number;
 };
 
-export default function MoreLikeThisRail({ items, heading = "More like this", limit = 6 }: Props) {
+export default function MoreLikeThisRail({ items, heading = "More like this", limit = 8 }: Props) {
   const shown = items.slice(0, limit);
   if (shown.length === 0) return null;
   return (
@@ -32,7 +32,12 @@ export default function MoreLikeThisRail({ items, heading = "More like this", li
       <h2 className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
         {heading}
       </h2>
-      <ul className="flex flex-col gap-2">
+      {/* Two-column grid so the rail cards match the below-hero grid card
+          width: the hero row is lg:grid-cols-6 with rail at col-span-2,
+          and the below-hero grid is xl:grid-cols-6 — so 2 rail cols at
+          1/3 hero width ≈ 2/6 of the page = same card width as the
+          below-hero 6-col grid on xl viewports. */}
+      <ul className="grid grid-cols-2 gap-3">
         {shown.map((item, i) => (
           <li key={item.href + ":" + i}>
             <Link

@@ -305,7 +305,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <main className="min-h-screen">
-      <section className="mx-auto max-w-[1400px] px-4 pt-2 pb-4 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-[1600px] px-4 pt-2 pb-4 sm:px-6 lg:px-8">
 
         <div>
           {/* Localized description + intro are kept in the DOM (so Google
@@ -347,7 +347,7 @@ export default async function Page({ params }: Props) {
       </section>
 
       {(slug === 'character' || slug === 'mbti') && (
-        <section className="mx-auto max-w-[1400px] px-4 pb-6 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1600px] px-4 pb-6 sm:px-6 lg:px-8">
           <MBTIQuizCapsule />
         </section>
       )}
@@ -357,7 +357,7 @@ export default async function Page({ params }: Props) {
           has no gridItems, fall back to a standalone single-cell row.
           Auto-hides after July 19, 2026 via the widget itself. */}
       {gridItems.length > 0 ? (
-        <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
           <ExampleImagesGrid
             items={gridItems}
             locale={localeStr}
@@ -371,7 +371,7 @@ export default async function Page({ params }: Props) {
           />
         </section>
       ) : (slug === "world-cup" || slug === "sports" || slug.endsWith("-world-cup")) ? (
-        <section className="mx-auto max-w-[1400px] px-4 pb-6 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1600px] px-4 pb-6 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5">
               <WcRotatingSlot locale={localeStr} queries={TOP_QUERIES["world-cup"]} />
@@ -381,7 +381,7 @@ export default async function Page({ params }: Props) {
       ) : null}
 
       {galleryPrompts.length > 0 && (
-        <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             Gallery
           </h2>
@@ -394,7 +394,7 @@ export default async function Page({ params }: Props) {
       )}
 
       {blogPosts.length > 0 && (
-        <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             Related Articles
           </h2>
@@ -406,7 +406,7 @@ export default async function Page({ params }: Props) {
         </section>
       )}
 
-      <section className="mx-auto max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-[1600px] px-4 pb-16 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
           {templatesHeading}
         </h2>
@@ -420,7 +420,7 @@ export default async function Page({ params }: Props) {
       </section>
 
       {tagSubTopics.length > 0 && (
-        <section className="mx-auto max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1600px] px-4 pb-16 sm:px-6 lg:px-8">
           <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
             {subTopicsHeading}
           </h2>
@@ -437,7 +437,7 @@ export default async function Page({ params }: Props) {
           act as exploration prompts AFTER the user has scanned the content
           grid above. Only renders when the topic has a curated list in
           TopSearchSuggestions.tsx (today: world-cup). */}
-      <section className="mx-auto max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-[1600px] px-4 pb-16 sm:px-6 lg:px-8">
         <TopSearchSuggestions
           locale={localeStr}
           topicId={slug}

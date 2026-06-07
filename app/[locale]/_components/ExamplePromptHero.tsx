@@ -210,11 +210,13 @@ export default function ExamplePromptHero({
         <DesktopPrevNext prevNext={prevNext} trackingId={trackingId} />
 
         {/* Outer grid: when moreLikeThisRail is supplied, allocate 4 cols
-            for the image + reproduction pair and a 5th col for the rail
-            (hidden on mobile by the rail itself). Without a rail the
-            outer grid collapses to a single column and the inner 2-col
-            image/right grid takes the full width as before. */}
-        <div className={moreLikeThisRail ? "lg:grid lg:grid-cols-5 lg:gap-6" : ""}>
+            (of 6) for the image + reproduction pair and 2 cols for the
+            rail. The 4/2 split lines the rail card width up with the
+            below-hero xl:grid-cols-6 card grid — 2 rail cols out of 6
+            page cols = same card width as the below-hero 6-col grid on
+            xl viewports. Without a rail the outer grid collapses to a
+            single column. */}
+        <div className={moreLikeThisRail ? "lg:grid lg:grid-cols-6 lg:gap-6" : ""}>
           <div className={moreLikeThisRail ? "lg:col-span-4" : ""}>
             {/* Inner 2-col: image card sized at 85% of the prior hero
                 width (1.05fr → 0.89fr) and pinned to a fixed 440 px
@@ -278,7 +280,7 @@ export default function ExamplePromptHero({
             </div>
           </div>
           {moreLikeThisRail ? (
-            <div className="lg:col-span-1">{moreLikeThisRail}</div>
+            <div className="lg:col-span-2">{moreLikeThisRail}</div>
           ) : null}
         </div>
       </section>
