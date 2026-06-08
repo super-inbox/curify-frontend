@@ -7900,7 +7900,8 @@
       "fashion",
       "guides",
       "posters",
-      "portrait"
+      "portrait",
+      "product"
     ],
     "base_rank_score": 90,
     "rank_score": 102.9,
@@ -8178,7 +8179,6 @@
     "og_image": "/images/nano_insp_preview/template-finance-comparison-infographic-saving-vs-investing-prev.jpg",
     "topics": [
       "learning",
-      "product",
       "posters",
       "trending",
       "composition",
@@ -10047,69 +10047,149 @@
   {
     "id": "template-world-cup-debut-team-preview-poster",
     "locales": {
-        "en": {
-            "base_prompt": "(World Cup Debut Team Preview Poster Creator) Vertical dramatic commercial sports poster themed '{team_info}'. Layout: Top section features bold textured headline title, central main visual layered with dynamic photos of the debut team's key players in their national kit, surrounded by brush stroke color accents matching the team's flag colors; supporting elements include national flag, team crest, iconic landmark/landscape silhouette, and FIFA World Cup trophy graphic; lower section contains descriptive subtitle text, group stage opponent flags, tournament year, and team slogan. Style: High-contrast gritty sports poster aesthetic, dramatic stadium lighting, glowing light flares, textured brush stroke overlays, bold grunge typography, dynamic layered composition, hyperrealistic player portraits, cinematic color grading, 8K high resolution, professional print-ready sports marketing poster quality. Subject: Official debut team preview poster for {team_info}.",
-            "parameters": [
-                {
-                    "name": "team_info",
-                    "label": "Debut Team Name + Tournament Year + Theme Slogan",
-                    "type": "text",
-                    "placeholder": ["Uzbekistan 2026 FIFA World Cup Debut, \"Historic Debut\" theme", "Curaçao 2026 World Cup Preview, \"Giant Killers\" theme", "Cape Verde 2026 World Cup Debut, \"Island Dreams\" theme", "Jordan 2026 World Cup Preview, \"Pride & Passion\" theme"]
-                }
+      "en": {
+        "base_prompt": "(World Cup Debut Team Preview Poster Creator) Vertical dramatic commercial sports poster themed '{team_info}'. Layout: Top section features bold textured headline title, central main visual layered with dynamic photos of the debut team's key players in their national kit, surrounded by brush stroke color accents matching the team's flag colors; supporting elements include national flag, team crest, iconic landmark/landscape silhouette, and FIFA World Cup trophy graphic; lower section contains descriptive subtitle text, group stage opponent flags, tournament year, and team slogan. Style: High-contrast gritty sports poster aesthetic, dramatic stadium lighting, glowing light flares, textured brush stroke overlays, bold grunge typography, dynamic layered composition, hyperrealistic player portraits, cinematic color grading, 8K high resolution, professional print-ready sports marketing poster quality. Subject: Official debut team preview poster for {team_info}.",
+        "parameters": [
+          {
+            "name": "team_info",
+            "label": "Debut Team Name + Tournament Year + Theme Slogan",
+            "type": "text",
+            "placeholder": [
+              "Uzbekistan 2026 FIFA World Cup Debut, \"Historic Debut\" theme",
+              "Curaçao 2026 World Cup Preview, \"Giant Killers\" theme",
+              "Cape Verde 2026 World Cup Debut, \"Island Dreams\" theme",
+              "Jordan 2026 World Cup Preview, \"Pride & Passion\" theme"
             ]
-        }
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-world-cup-debut-team-preview-poster-curacao-giant-killers-prev.jpg"
-},
+  },
   {
     "id": "template-science-myth-bust-infographic-poster",
     "locales": {
-        "en": {
-            "base_prompt": "(Science Myth Busting Infographic Creator) Vertical educational poster themed '{myth_info}' under the 'SCIENCE LORE' series. Layout: Top section features the 'MYTH' headline in a red rectangular box with a red cross icon, clearly stating the common misconception; Middle section has a central visual illustration related to the myth (e.g., animals, objects, scientific phenomena); Bottom section has a green rectangular 'THE TRUTH' box with a green checkmark icon, explaining the scientific facts, supported by simple line icons and bullet points. Style: Bright high-contrast color palette (red/green accent colors), bold and readable sans-serif typography, clean infographic layout with clear section separation, fun cartoonish or realistic scientific illustration style, subtle gradient or dotted background texture, 8K high resolution, print-ready educational poster quality. Subject: Science myth vs. fact infographic for '{myth_info}'.",
-            "parameters": [
-                {
-                    "name": "myth_info",
-                    "label": "Common Misconception + Corresponding Scientific Fact",
-                    "type": "text",
-                    "placeholder": ["\"Eating carrots improves night vision\" myth vs WWII propaganda & vitamin A fact", "\"Humans only use 10% of their brain\" myth vs whole brain usage fact", "\"Goldfish have 3-second memory\" myth vs multi-month memory fact", "\"Lightning never strikes the same place twice\" myth vs repeated strikes fact"]
-                }
+      "en": {
+        "base_prompt": "(Science Myth Busting Infographic Creator) Vertical educational poster themed '{myth_info}' under the 'SCIENCE LORE' series. Layout: Top section features the 'MYTH' headline in a red rectangular box with a red cross icon, clearly stating the common misconception; Middle section has a central visual illustration related to the myth (e.g., animals, objects, scientific phenomena); Bottom section has a green rectangular 'THE TRUTH' box with a green checkmark icon, explaining the scientific facts, supported by simple line icons and bullet points. Style: Bright high-contrast color palette (red/green accent colors), bold and readable sans-serif typography, clean infographic layout with clear section separation, fun cartoonish or realistic scientific illustration style, subtle gradient or dotted background texture, 8K high resolution, print-ready educational poster quality. Subject: Science myth vs. fact infographic for '{myth_info}'.",
+        "parameters": [
+          {
+            "name": "myth_info",
+            "label": "Common Misconception + Corresponding Scientific Fact",
+            "type": "text",
+            "placeholder": [
+              "\"Eating carrots improves night vision\" myth vs WWII propaganda & vitamin A fact",
+              "\"Humans only use 10% of their brain\" myth vs whole brain usage fact",
+              "\"Goldfish have 3-second memory\" myth vs multi-month memory fact",
+              "\"Lightning never strikes the same place twice\" myth vs repeated strikes fact"
             ]
-        }
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-science-myth-bust-infographic-poster-giraffe-sounds-prev.jpg"
-},
+  },
   {
     "id": "template-brand-ip-mascot-design-board",
     "locales": {
-        "en": {
-            "base_prompt": "(Brand Mascot Character Design Sheet Creator) Clean white background character style guide poster themed '{brand_info}'. Layout divided into clear sections: Top-left main mascot hero shot with brand tagline; Top-right brand logo, slogan and character description with keyword icons; Center turnaround view (front/side/back/three-quarter angles); Expressions/emotions grid showing happy, excited, thinking, surprised, etc.; Bottom sections with app icons, social media assets, and merchandise mockups including tote bags, cups, apparel, stationery, keychains. Style: Cute chibi 3D render or flat illustration style, brand color palette swatch and typography included, clean graphic design layout, professional brand identity presentation, 8K ultra-detailed, print-ready mascot design document. Subject: Official character style guide for {brand_info}.",
-            "parameters": [
-                {
-                    "name": "brand_info",
-                    "label": "Brand Name + Mascot Concept & Style",
-                    "type": "text",
-                    "placeholder": ["Spotify Soni mascot, music-themed monkey character, black-green techy style", "LEGO Brixo mascot, brick-themed cheerful builder character, primary color playful style", "Coca-Cola Fizz mascot, soda bottle cap-themed sprite, bubbly red-white retro style"]
-                }
+      "en": {
+        "base_prompt": "(Brand Mascot Character Design Sheet Creator) Clean white background character style guide poster themed '{brand_info}'. Layout divided into clear sections: Top-left main mascot hero shot with brand tagline; Top-right brand logo, slogan and character description with keyword icons; Center turnaround view (front/side/back/three-quarter angles); Expressions/emotions grid showing happy, excited, thinking, surprised, etc.; Bottom sections with app icons, social media assets, and merchandise mockups including tote bags, cups, apparel, stationery, keychains. Style: Cute chibi 3D render or flat illustration style, brand color palette swatch and typography included, clean graphic design layout, professional brand identity presentation, 8K ultra-detailed, print-ready mascot design document. Subject: Official character style guide for {brand_info}.",
+        "parameters": [
+          {
+            "name": "brand_info",
+            "label": "Brand Name + Mascot Concept & Style",
+            "type": "text",
+            "placeholder": [
+              "Spotify Soni mascot, music-themed monkey character, black-green techy style",
+              "LEGO Brixo mascot, brick-themed cheerful builder character, primary color playful style",
+              "Coca-Cola Fizz mascot, soda bottle cap-themed sprite, bubbly red-white retro style"
             ]
-        }
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-brand-ip-mascot-design-board-curify-ai-curi-prev.jpg"
-},
+  },
   {
     "id": "template-sports-iconic-event-analysis-poster",
     "locales": {
-        "en": {
-            "base_prompt": "(Iconic Sports Event Analysis Poster Creator) Horizontal cinematic sports infographic poster themed '{event_info}'. Layout: Large bold headline title with dual-language text at the top; centerpiece features a dramatic composite of archival match photos, key moment stills, or tactical diagrams; additional sections include quote blocks, timeline/evolution graphics, side-by-side comparisons, and match stats panels. Style: Gritty vintage textured aesthetic with aged paper overlays, gold metallic accents, and stadium spotlight lighting; bold layered sports typography, cinematic color grading, and photorealistic compositing; supports multiple layouts: legacy retrospective, rule evolution timeline, dual-goal comparison, multi-angle controversy analysis, and single-moment hero shot. 8K high resolution, print-ready quality. Subject: Deep-dive analysis poster for the {event_info} iconic sports moment.",
-            "parameters": [
-                {
-                    "name": "event_info",
-                    "label": "Iconic Sports Event Name + Layout Theme",
-                    "type": "text",
-                    "placeholder": ["Maradona's Hand of God 1986 Legacy Retrospective", "The Hand of God & VAR Evolution Timeline", "Maradona vs England 1986: Hand of God vs Goal of the Century", "The Hand of God 1986 Controversy Multi-Angle Analysis"]
-                }
+      "en": {
+        "base_prompt": "(Iconic Sports Event Analysis Poster Creator) Horizontal cinematic sports infographic poster themed '{event_info}'. Layout: Large bold headline title with dual-language text at the top; centerpiece features a dramatic composite of archival match photos, key moment stills, or tactical diagrams; additional sections include quote blocks, timeline/evolution graphics, side-by-side comparisons, and match stats panels. Style: Gritty vintage textured aesthetic with aged paper overlays, gold metallic accents, and stadium spotlight lighting; bold layered sports typography, cinematic color grading, and photorealistic compositing; supports multiple layouts: legacy retrospective, rule evolution timeline, dual-goal comparison, multi-angle controversy analysis, and single-moment hero shot. 8K high resolution, print-ready quality. Subject: Deep-dive analysis poster for the {event_info} iconic sports moment.",
+        "parameters": [
+          {
+            "name": "event_info",
+            "label": "Iconic Sports Event Name + Layout Theme",
+            "type": "text",
+            "placeholder": [
+              "Maradona's Hand of God 1986 Legacy Retrospective",
+              "The Hand of God & VAR Evolution Timeline",
+              "Maradona vs England 1986: Hand of God vs Goal of the Century",
+              "The Hand of God 1986 Controversy Multi-Angle Analysis"
             ]
-        }
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-sports-iconic-event-analysis-poster-hand-of-god-controversial-moment-prev.jpg"
-}
+  },
+  {
+    "id": "template-football-team-all-time-lineup-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Football Team All-Time Lineup Poster Creator) Vertical football tactics poster themed '{team_info}'. Layout: Top view of a classic 4-4-2 football pitch with crisp white lines on lush green grass background; The team's crest/logo is placed in the top-left corner; The starting 11 players are arranged in their positions on the pitch, with dynamic action cutout photos of each player and their name text below; A 'BANQUILLO' (bench/substitutes) section at the bottom shows the manager and iconic reserve players as headshots, alongside the team flag on the right. Style: Classic football tactical diagram aesthetic, clean grid layout, realistic player cutouts with team kits, bold yellow player name text, vibrant green pitch texture, official team colors, 8K high resolution print-ready quality. Subject: All-time greatest starting XI lineup poster for {team_info}.",
+        "parameters": [
+          {
+            "name": "team_info",
+            "label": "Football Team Name + All-Time Starting XI",
+            "type": "text",
+            "placeholder": [
+              "Brazil National Team All-Time Greatest XI",
+              "FC Barcelona All-Time Legends Lineup",
+              "AC Milan All-Time Dream Team",
+              "Argentina National Team All-Time Best Squad"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-football-team-all-time-lineup-poster-brazil-prev.jpg"
+  },
+  {
+    "id": "template-ip-character-design-specification-sheet",
+    "locales": {
+      "en": {
+        "base_prompt": "(IP Character Design Specification Sheet Creator) Clean white background technical design document themed '{ip_info}'. Layout structured into clear sections: Top section shows the character's side-view construction using golden ratio and grid system, with construction circles and proportional guides; Middle section breaks down facial feature measurements: face height ratio, nose proportions, eye dimensions, ear width, paw details, and multi-angle references (front/3/4/side views); Bottom section presents the final character turnaround (front, 3/4 side, side, back views) in flat vector style. Style: Minimal technical infographic aesthetic, thin red dashed proportional guides, simple black line art for construction, solid color character fills, clear sans-serif labels, consistent unit system, clean and professional design document layout, 8K high resolution print-ready quality. Subject: Official character design specification sheet for '{ip_info}'.",
+        "parameters": {
+          "name": "ip_info",
+          "label": "IP Character Name + Core Color & Species",
+          "type": "text",
+          "placeholder": [
+            "Meituan Kangaroo Mascot, bright yellow color scheme, simple flat line art style",
+            "Cute Brown Bear Mascot, warm brown and beige tones, rounded cartoon proportions",
+            "Blue Penguin Mascot, blue and white color palette, clean vector illustration"
+          ]
+        }
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-ip-character-design-specification-sheet-panda-prev.jpg"
+  },
+  {
+    "id": "template-sports-ball-evolution-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Sports Ball Evolution Infographic Creator) Horizontal infographic poster themed '{sport_ball_info}'. Layout: Title at the top ('THE EVOLUTION OF [SPORT] BALLS 18XX-2026'), split into two eras: Early Era (old leather balls with dates) and Modern Era (modern branded balls with dates). A large hero shot of the latest 2026 'smart' ball sits at the bottom, with feature icons (sensor tech, tracking, etc.) and the official sport/brand logo. Style: Dark, dramatic studio lighting with a deep gradient background, photorealistic product photography, bold sans-serif typography with metallic accents, vintage aged textures on early balls, clean modern branding on later ones, 8K high resolution print-ready quality. Subject: Visual timeline showing the evolution of {sport_ball_info} from its origins to the smart modern era.",
+        "parameters": {
+          "name": "sport_ball_info",
+          "label": "Sport name + Ball type + Brand",
+          "type": "text",
+          "placeholder": [
+            "Basketball evolution timeline with Wilson NBA ball",
+            "FIFA World Cup football evolution with Adidas balls",
+            "MLB baseball evolution with Rawlings balls",
+            "Tennis ball evolution with Wimbledon ATP balls"
+          ]
+        }
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-sports-ball-evolution-infographic-rugby-prev.jpg"
+  }
 ]
