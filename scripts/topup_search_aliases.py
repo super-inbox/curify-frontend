@@ -617,6 +617,9 @@ FAMILIES = OrderedDict([
     ('wc_1966_specific', {
         'templates': [
             'template-history-timeline-infographic',
+            'template-football-team-all-time-lineup-poster',
+            'template-sports-iconic-event-analysis-poster',
+            'template-celebrity-movie-group-poster',
         ],
         'inspiration_filter': {
             'field': 'locales.en.title',
@@ -625,12 +628,16 @@ FAMILIES = OrderedDict([
         'aliases': [
             '1966 World Cup', '1966 England', 'England 1966',
             'England 1966 World Cup', 'England 1966 squad',
-            '1966年世界杯',
+            'England 1966 winning XI', 'Geoff Hurst hat-trick',
+            'Wembley 1966', 'wingless wonders',
+            '1966年世界杯', '1966年英格兰', '英格兰1966',
         ],
     }),
     ('wc_2002_specific', {
         'templates': [
             'template-history-timeline-infographic',
+            'template-football-team-all-time-lineup-poster',
+            'template-sports-iconic-event-analysis-poster',
         ],
         'inspiration_filter': {
             'field': 'locales.en.title',
@@ -638,7 +645,11 @@ FAMILIES = OrderedDict([
         },
         'aliases': [
             '2002 World Cup', '2002 Brazil', 'Brazil 2002',
-            'Brazil 2002 squad', '2002年世界杯',
+            'Brazil 2002 squad', 'Brazil 2002 Pentacampeao',
+            'Pentacampeao XI', 'Ronaldo Nazario 2002',
+            'Brazil vs Germany 2002', 'Yokohama 2002 final',
+            '2002年世界杯', '2002年巴西', '巴西2002',
+            '罗纳尔多2002', '五星巴西',
         ],
     }),
     # 2026-06-09 cycle 4 — `cr7` jersey-shortcut. 1 SEARCH_NORESULT on
