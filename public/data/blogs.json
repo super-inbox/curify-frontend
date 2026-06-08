@@ -1,5 +1,83 @@
 [
   {
+    "slug": "ip-merch-design-ai-workflow",
+    "title": "Designer Toy IP Merchandise Design: The 2026 AI Production Workflow",
+    "date": "June 8, 2026",
+    "readTime": "8 min read",
+    "tag": "Strategy",
+    "image": "/images/nano_insp/template-ip-creative-cultural-goods-mockup-set-bronze-rabbit-qingqing.jpg",
+    "category": "ai-strategy",
+    "relatedLinks": [
+      "industrial-ai-for-illustrator-ip",
+      "surtex-licensing-playbook-surface-designers",
+      "ai-event-card-manus-vs-genspark-vs-curify"
+    ],
+    "lastmod": "2026-06-08",
+    "metaDescription": "Designer toy + cultural-creative IP merchandise design in 2026 — what AI delivers on core IP optimization, 2D emoji + poster + merch extensions, and where 3D engineering still sits outside AI's range. Real RFQ pricing, 5-template Curify stack.",
+    "nanoTemplates": [
+      {
+        "groupKey": "ip-merch-design-ip-character-sprite-emoji-sheet-graduation-alpaca",
+        "template_id": "template-ip-character-sprite-emoji-sheet",
+        "sample_parameters": {
+          "ip_info": "graduation alpaca"
+        },
+        "category": "merch",
+        "description": "IP Character Sprite + Emoji Sheet (action library + 12-pose grid)",
+        "image_urls": [
+          "/images/nano_insp/template-ip-character-sprite-emoji-sheet-graduation-alpaca.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-ip-character-sprite-emoji-sheet-graduation-alpaca-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ip-merch-design-ip-emoji-sticker-sheet-poster-empress-cow-cat",
+        "template_id": "template-ip-emoji-sticker-sheet-poster",
+        "sample_parameters": {
+          "ip_info": "empress cow cat"
+        },
+        "category": "merch",
+        "description": "IP Emoji Sticker Sheet Poster (16-piece WeChat-standard distribution pack)",
+        "image_urls": [
+          "/images/nano_insp/template-ip-emoji-sticker-sheet-poster-empress-cow-cat.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-ip-emoji-sticker-sheet-poster-empress-cow-cat-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ip-merch-design-ip-gift-box-stationery-set-mockup-busan-boogi-duck",
+        "template_id": "template-ip-gift-box-stationery-set-mockup",
+        "sample_parameters": {
+          "ip_info": "busan boogi duck"
+        },
+        "category": "merch",
+        "description": "IP Gift Box Stationery Set Mockup (retail-shelf gift-box + stationery)",
+        "image_urls": [
+          "/images/nano_insp/template-ip-gift-box-stationery-set-mockup-busan-boogi-duck.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-ip-gift-box-stationery-set-mockup-busan-boogi-duck-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ip-merch-design-ip-creative-cultural-goods-mockup-set-bronze-rabbit-qingqing",
+        "template_id": "template-ip-creative-cultural-goods-mockup-set",
+        "sample_parameters": {
+          "ip_info": "bronze rabbit qingqing"
+        },
+        "category": "merch",
+        "description": "IP Creative Cultural Goods Mockup Set (5+ merch surface designs in one render)",
+        "image_urls": [
+          "/images/nano_insp/template-ip-creative-cultural-goods-mockup-set-bronze-rabbit-qingqing.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-ip-creative-cultural-goods-mockup-set-bronze-rabbit-qingqing-prev.jpg"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "surtex-licensing-playbook-surface-designers",
     "title": "Surtex Playbook for Surface Designers: How to Pitch a Licensable Product Family, Not a Single Pattern",
     "date": "June 6, 2026",
@@ -8,6 +86,7 @@
     "image": "/images/nano_insp/template-ip-creative-cultural-goods-mockup-set-blessing-dragon.jpg",
     "category": "ai-strategy",
     "relatedLinks": [
+      "ip-merch-design-ai-workflow",
       "industrial-ai-for-illustrator-ip",
       "ai-content-factory-for-agencies",
       "one-person-companies-vs-100-person-teams"
@@ -72,6 +151,7 @@
     "image": "/images/blogs/industrial-ai-for-illustrator-ip/style-watercolor-sketch.jpg",
     "category": "ds-ai-engineering",
     "relatedLinks": [
+      "ip-merch-design-ai-workflow",
       "ai-content-factory-for-agencies",
       "ai-engineering-hard-truth",
       "multimodal-ai-educational-publishing"
@@ -1910,6 +1990,7 @@
     "image": "/images/blogs/ai-event-card-manus-vs-genspark-vs-curify/curify-side-a-agenda.png",
     "category": "creator-tools",
     "relatedLinks": [
+      "ip-merch-design-ai-workflow",
       "image-generation-model-comparison",
       "industrial-ai-for-illustrator-ip",
       "cross-border-ecommerce-multilingual-seo-case"
