@@ -10158,16 +10158,18 @@
     "locales": {
       "en": {
         "base_prompt": "(IP Character Design Specification Sheet Creator) Clean white background technical design document themed '{ip_info}'. Layout structured into clear sections: Top section shows the character's side-view construction using golden ratio and grid system, with construction circles and proportional guides; Middle section breaks down facial feature measurements: face height ratio, nose proportions, eye dimensions, ear width, paw details, and multi-angle references (front/3/4/side views); Bottom section presents the final character turnaround (front, 3/4 side, side, back views) in flat vector style. Style: Minimal technical infographic aesthetic, thin red dashed proportional guides, simple black line art for construction, solid color character fills, clear sans-serif labels, consistent unit system, clean and professional design document layout, 8K high resolution print-ready quality. Subject: Official character design specification sheet for '{ip_info}'.",
-        "parameters": {
-          "name": "ip_info",
-          "label": "IP Character Name + Core Color & Species",
-          "type": "text",
-          "placeholder": [
-            "Meituan Kangaroo Mascot, bright yellow color scheme, simple flat line art style",
-            "Cute Brown Bear Mascot, warm brown and beige tones, rounded cartoon proportions",
-            "Blue Penguin Mascot, blue and white color palette, clean vector illustration"
-          ]
-        }
+        "parameters": [
+          {
+            "name": "ip_info",
+            "label": "IP Character Name + Core Color & Species",
+            "type": "text",
+            "placeholder": [
+              "Meituan Kangaroo Mascot, bright yellow color scheme, simple flat line art style",
+              "Cute Brown Bear Mascot, warm brown and beige tones, rounded cartoon proportions",
+              "Blue Penguin Mascot, blue and white color palette, clean vector illustration"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-ip-character-design-specification-sheet-panda-prev.jpg"
@@ -10177,17 +10179,19 @@
     "locales": {
       "en": {
         "base_prompt": "(Sports Ball Evolution Infographic Creator) Horizontal infographic poster themed '{sport_ball_info}'. Layout: Title at the top ('THE EVOLUTION OF [SPORT] BALLS 18XX-2026'), split into two eras: Early Era (old leather balls with dates) and Modern Era (modern branded balls with dates). A large hero shot of the latest 2026 'smart' ball sits at the bottom, with feature icons (sensor tech, tracking, etc.) and the official sport/brand logo. Style: Dark, dramatic studio lighting with a deep gradient background, photorealistic product photography, bold sans-serif typography with metallic accents, vintage aged textures on early balls, clean modern branding on later ones, 8K high resolution print-ready quality. Subject: Visual timeline showing the evolution of {sport_ball_info} from its origins to the smart modern era.",
-        "parameters": {
-          "name": "sport_ball_info",
-          "label": "Sport name + Ball type + Brand",
-          "type": "text",
-          "placeholder": [
-            "Basketball evolution timeline with Wilson NBA ball",
-            "FIFA World Cup football evolution with Adidas balls",
-            "MLB baseball evolution with Rawlings balls",
-            "Tennis ball evolution with Wimbledon ATP balls"
-          ]
-        }
+        "parameters": [
+          {
+            "name": "sport_ball_info",
+            "label": "Sport name + Ball type + Brand",
+            "type": "text",
+            "placeholder": [
+              "Basketball evolution timeline with Wilson NBA ball",
+              "FIFA World Cup football evolution with Adidas balls",
+              "MLB baseball evolution with Rawlings balls",
+              "Tennis ball evolution with Wimbledon ATP balls"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-sports-ball-evolution-infographic-rugby-prev.jpg"
