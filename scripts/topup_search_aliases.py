@@ -641,6 +641,35 @@ FAMILIES = OrderedDict([
             'Brazil 2002 squad', '2002年世界杯',
         ],
     }),
+    # 2026-06-09 cycle 4 — `cr7` jersey-shortcut. 1 SEARCH_NORESULT on
+    # 2026-06-06 from a user who tried the shortcut form rather than the
+    # full name. Content exists across 18 inspirations (template-mbti-nba
+    # "cristianoronaldo", soccer-star-comic-retro, Portugal 2026 WC squad,
+    # Messi-vs-Ronaldo battle, etc.). Filter on cristiano / ronaldo /
+    # portugal so the alias only attaches to on-content inspirations.
+    ('cr7_ronaldo_shortcut', {
+        'templates': [
+            'template-soccer-star-comic-retro-poster-card',
+            'template-celebrity-movie-group-poster',
+            'template-world-cup-team-sticker-poster',
+            'template-sports-battle',
+            'template-mbti-nba',
+        ],
+        'inspiration_filter': {
+            'fields_any': [
+                'locales.en.title',
+                'params.player_name',
+                'params.team',
+                'params.team_name',
+                'params.star_movie_group',
+            ],
+            'patterns': ['cristiano', 'ronaldo', 'portugal'],
+        },
+        'aliases': [
+            'cr7', 'CR7', 'c.r.7', 'ronaldo7', 'cr 7',
+            '罗纳尔多', '克里斯蒂亚诺·罗纳尔多', 'C罗',
+        ],
+    }),
     ('argentina_brazil_rivalry', {
         'templates': [
             'template-history-timeline-infographic',
