@@ -33,7 +33,7 @@ export type SuggestionEntry = {
 // Tier 2 — primary navigational topics (shown by default on focus)
 export const TIER2_SUGGESTIONS: SuggestionEntry[] = [
   { slug: "anime",          label: "Anime",            emoji: "🎌", tier: 2, aliases: ["manga", "japan animation"] },
-  { slug: "portrait",       label: "Portrait",          emoji: "👤", tier: 2, aliases: ["face", "headshot", "person"] },
+  { slug: "portrait",       label: "Portrait",          emoji: "👤", tier: 2, aliases: ["face", "headshot", "person", "portarit", "portarite", "portait", "prtrait", "portriat"] },
   { slug: "fashion",        label: "Fashion",           emoji: "👗", tier: 2, aliases: ["clothing", "clothes", "outfit", "style", "apparel", "wear"] },
   { slug: "food",           label: "Food & Cuisine",    emoji: "🍜", tier: 2, aliases: ["recipe", "cooking", "cuisine", "meal", "dish"] },
   { slug: "fitness",        label: "Fitness",           emoji: "💪", tier: 2, aliases: ["workout", "gym", "exercise", "health", "training", "cardio", "yoga"] },

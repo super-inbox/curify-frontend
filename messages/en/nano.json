@@ -4980,5 +4980,71 @@
         ]
       }
     }
+  },
+  "template-football-team-all-time-lineup-poster": {
+    "category": "Football Team All-Time Lineup Poster",
+    "description": "Generate a vertical football tactics poster with any team's all-time starting XI on a classic 4-4-2 pitch — team crest, eleven star players in position, signature formation grid.",
+    "title": "Nano Banana Prompt: Football Team All-Time Lineup Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K football tactics poster for any club or national team's all-time starting XI. Layout: top-down view of a classic 4-4-2 football pitch with crisp white lines on lush green grass; team crest in the top-left corner; the starting 11 legendary players placed in their natural tactical positions with portrait photos, names, and historic shirt numbers; team identity bar across the bottom.",
+        "who": "Suitable for football fan-art creators, national-team merch designers, fantasy-league commentators, sports-bar wall print sellers, and football-historian publishers building all-time XI editorials.",
+        "how": [
+          "Enter the team name + all-time starting XI in {team_info} (e.g. 'Brazil National Team All-Time Greatest XI' or 'FC Barcelona All-Time Legends Lineup').",
+          "Team crest auto-renders in the top-left corner.",
+          "11 legendary players auto-place in 4-4-2 positions with portraits, names, shirt numbers.",
+          "Generate a vertical 8K all-time XI football tactics poster."
+        ],
+        "prompts": [
+          "Generate a Brazil National Team All-Time Greatest XI poster in a 4-4-2 formation.",
+          "Create an FC Barcelona All-Time Legends Lineup poster.",
+          "Generate an Argentina National Team All-Time Best Squad tactics poster."
+        ]
+      }
+    }
+  },
+  "template-ip-character-design-specification-sheet": {
+    "category": "IP Character Design Specification Sheet",
+    "description": "Generate a clean white-background technical design document for any IP mascot — side-view golden-ratio construction, color palette, multi-angle turnaround, expression grid, brand-voice notes.",
+    "title": "Nano Banana Prompt: IP Character Design Specification Sheet Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates an 8K clean white-background technical design specification sheet for any IP character. Layout: top section shows the character's side-view construction using golden ratio and grid system with construction circles and proportional guides; middle carries color palette swatches with hex codes and the full character turnaround (front / side / back / three-quarter); lower section delivers an expression grid, signature poses, and brand-voice tone notes — all unified under a single IP identity.",
+        "who": "Suitable for in-house brand teams launching a mascot IP, agencies pitching mascot redesigns, IP-licensing intermediaries presenting characters for approval, kids-product brand managers, and indie creators building stylized character bibles.",
+        "how": [
+          "Enter the IP character name + core color + species in {ip_info} (e.g. 'Meituan Kangaroo Mascot, bright yellow color scheme, simple flat line art style').",
+          "Side-view golden-ratio construction auto-renders in the top section.",
+          "Color palette + multi-angle turnaround + expression grid auto-compose across the lower sections.",
+          "Generate an 8K white-background IP character design specification sheet."
+        ],
+        "prompts": [
+          "Generate a Meituan Kangaroo Mascot design specification sheet in bright yellow flat line art.",
+          "Create a Cute Brown Bear Mascot spec sheet in warm brown and beige tones with rounded cartoon proportions.",
+          "Generate a Blue Penguin Mascot specification sheet in clean vector illustration with a blue and white palette."
+        ]
+      }
+    }
+  },
+  "template-sports-ball-evolution-infographic": {
+    "category": "Sports Ball Evolution Infographic",
+    "description": "Generate a horizontal infographic poster tracking any sport's ball evolution — Early Era leather originals on the left, Modern Era branded balls on the right, hero ball at center with material and design annotations.",
+    "title": "Nano Banana Prompt: Sports Ball Evolution Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a horizontal 8K infographic poster on the evolution of any sport's ball. Layout: title bar at the top ('THE EVOLUTION OF [SPORT] BALLS 18XX-2026'); left side covers the Early Era (old leather balls with launch dates and material notes); right side covers the Modern Era (modern branded balls with launch dates); a large hero ball anchors the center with material, stitching, and design annotations, surrounded by historical milestones and brand collaborators.",
+        "who": "Suitable for sports equipment brands (Wilson, Adidas, Rawlings) producing brand-history merch, sports museums and hall-of-fame retail, sporting goods e-commerce publishers, sports-history educators, and content creators producing equipment-evolution reels.",
+        "how": [
+          "Enter the sport + ball type + brand in {sport_ball_info} (e.g. 'FIFA World Cup football evolution with Adidas balls' or 'Basketball evolution timeline with Wilson NBA ball').",
+          "Early Era leather originals auto-render on the left side with launch dates.",
+          "Modern Era branded balls auto-render on the right; hero ball + annotations auto-compose at center.",
+          "Generate a horizontal 8K sports-ball evolution infographic poster."
+        ],
+        "prompts": [
+          "Generate a Basketball evolution timeline infographic with the Wilson NBA ball as hero.",
+          "Create a FIFA World Cup football evolution infographic featuring Adidas balls.",
+          "Generate an MLB baseball evolution infographic with Rawlings balls."
+        ]
+      }
+    }
   }
 }
