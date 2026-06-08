@@ -5,6 +5,7 @@ import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 function pickLocaleImage(locale: string, zhSrc: string, enSrc: string) {
   return locale === "zh" ? zhSrc : enSrc; // all non-zh locales use English version
@@ -52,7 +53,8 @@ export default async function AeVsComfyUiPost({
   );
 
   return (
-    <article className="pt-10 pb-8">
+    <article className="xl:pr-64 pt-10 pb-8">
+      <AutoTableOfContents />
       <BlogCategoryLabel slug="ae-vs-comfyui" />
       <h1 className="text-4xl font-bold mb-6">{t("heading")}</h1>
 

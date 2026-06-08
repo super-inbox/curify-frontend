@@ -6,6 +6,7 @@ import { FaLightbulb, FaCheck, FaLayerGroup, FaCogs, FaChartLine, FaTools, FaRoc
 import Link from 'next/link';
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 export async function generateMetadata({
   params,
@@ -46,8 +47,9 @@ export default async function AIPlatform({
   return (
     <div className="pt-10 pb-8">
       {/* Main Content */}
-      <article className="flex-1">
+      <article className="xl:pr-64 flex-1">
         <header className="mb-12">
+          <AutoTableOfContents />
           <BlogCategoryLabel slug="aiPlatform" />
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {t('title')}

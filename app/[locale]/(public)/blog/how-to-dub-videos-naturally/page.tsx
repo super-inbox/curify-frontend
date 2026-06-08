@@ -26,6 +26,7 @@ import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/Struc
 import FAQSection from "@/app/[locale]/(public)/blog/[slug]/components/FAQSection";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 // Helper function to decode HTML entities (server-safe)
 function decodeHTMLEntities(text: string): string {
@@ -65,12 +66,13 @@ export default function HowToDubVideosNaturallyPage() {
   const locale = useLocale();
 
   return (
-    <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
+    <article className="xl:pr-64 pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
       {/* Breadcrumb Navigation */}
       <div className="prose prose-base md:prose-lg">
         {/* Hero Section */}
         <div className="relative mb-8">
           <div className="absolute -inset-2 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl blur opacity-20"></div>
+          <AutoTableOfContents />
           <BlogCategoryLabel slug="how-to-dub-videos-naturally" />
           <h1 className="relative text-3xl md:text-5xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
             {t('hero.title')}

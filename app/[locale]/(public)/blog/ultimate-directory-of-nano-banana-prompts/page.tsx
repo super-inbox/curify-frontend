@@ -18,6 +18,7 @@ import nanoTemplatesData from '../../../../../public/data/nano_templates.json';
 import { toSlug } from '@/lib/nano_utils';
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 type Template = {
   id: string;
@@ -174,7 +175,7 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
 
   return (
     <div className="pt-10 pb-8">
-      <article className="prose prose-base md:prose-lg max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article className="xl:ml-16 xl:mr-64 prose prose-base md:prose-lg max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero — float-left small image so the h1 + subtitle wrap around */}
         <div className="not-prose mb-12 clear-both">
           <div className="float-left mr-6 mb-4 w-40 sm:w-56 md:w-64">
@@ -186,6 +187,7 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
               className="rounded-lg shadow-md w-full h-auto object-cover"
             />
           </div>
+          <AutoTableOfContents />
           <BlogCategoryLabel slug="ultimate-directory-of-nano-banana-prompts" />
           <h1 className="text-3xl md:text-4xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
             {t('hero.title')}

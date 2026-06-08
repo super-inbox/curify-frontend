@@ -11,6 +11,7 @@ import CdnVideo from "../../../_components/CdnVideo";
 import CdnAudio from "../../../_components/CdnAudio";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 export async function generateMetadata({
   params,
@@ -50,12 +51,13 @@ export default async function VideoEnhancementPost({
   const { locale } = await params;
   
   return (
-    <article className="pt-10 pb-8">
+    <article className="xl:pr-64 pt-10 pb-8">
 
       {/* ------------------------------------------------------- */}
       {/* HEADER */}
       {/* ------------------------------------------------------- */}
       <header className="mb-20 space-y-8">
+        <AutoTableOfContents />
         <BlogCategoryLabel slug="video-enhancement" />
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center leading-tight">
           AI Video Enhancement with Storyboards, Captions & SFX

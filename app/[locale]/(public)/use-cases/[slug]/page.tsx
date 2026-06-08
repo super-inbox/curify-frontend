@@ -18,8 +18,18 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 
 import UseCaseClient from "./UseCaseClient";
+import { routing } from "@/i18n/routing";
 
-export const dynamic = "force-dynamic";
+// Prerender every locale x use-case (bundled data, bounded set) -> edge-cached
+// instead of a per-request render. Must enumerate BOTH params so all locales
+// prerender (returning slug-only would leave non-default locales on-demand).
+// generateMetadata sets the correct per-locale canonical + hreflang.
+export const revalidate = false;
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    USE_CASES.map((uc) => ({ locale, slug: uc.slug })),
+  );
+}
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;

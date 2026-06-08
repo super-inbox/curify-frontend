@@ -7,6 +7,7 @@ import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 export async function generateMetadata({
   params,
@@ -44,10 +45,11 @@ export default function VideoTranslationEvaluationPost() {
 
   return (
     // Keep the article container as the "max width" boundary
-    <article className="pt-10 pb-8">
+    <article className="xl:pr-64 pt-10 pb-8">
 
       {/* HEADER: This can remain full-width for impact */}
       <header className="mb-20 space-y-8">
+        <AutoTableOfContents />
         <BlogCategoryLabel slug="video-evaluation" />
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center leading-tight">
           {t("title")} – {t("subtitle")}

@@ -5,6 +5,7 @@ import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import BlogCTACard from '@/app/[locale]/_components/BlogCTACard'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 
 export default function NanoBananaDedicatedContent() {
@@ -12,8 +13,9 @@ export default function NanoBananaDedicatedContent() {
   const locale = useLocale()
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
+    <article className="xl:ml-16 xl:mr-64 max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <header className="mb-8">
+        <AutoTableOfContents />
         <BlogCategoryLabel slug="nano-banana-dedicated" />
         <h1 className="text-4xl font-bold mb-4">
           {t('positioning.title')}

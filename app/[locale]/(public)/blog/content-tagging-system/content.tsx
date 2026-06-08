@@ -4,13 +4,15 @@ import { useTranslations } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
 import CdnImage from '@/app/[locale]/_components/CdnImage'
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 export default function BlogContent() {
   const t = useTranslations('blog.contentTaggingSystem')
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
+    <article className="xl:ml-16 xl:mr-64 max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
       <header className="mb-8">
+        <AutoTableOfContents />
         <BlogCategoryLabel slug="content-tagging-system" />
         <h1 className="text-4xl font-bold mb-4">
           {t('title')}

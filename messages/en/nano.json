@@ -4892,5 +4892,93 @@
         ]
       }
     }
+  },
+  "template-world-cup-debut-team-preview-poster": {
+    "category": "World Cup Debut Team Preview",
+    "description": "Generate a vertical sports preview poster for any World Cup debut team — bold textured headline, central squad visual, key player highlights, and tournament-debut narrative.",
+    "title": "Nano Banana Prompt: World Cup Debut Team Preview Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K dramatic commercial sports poster for any World Cup debut team. Top section features a bold textured headline title; central main visual layers squad photography with tactical formation diagrams; lower panels carry key player highlights, qualifying-path stats, and the debut-tournament narrative arc.",
+        "who": "Suitable for sports content creators, World Cup fandoms covering underdogs, betting and fantasy-league publishers, national-team merch designers, and editorial outlets producing debut-team explainers.",
+        "how": [
+          "Enter the debut team name + narrative angle in {team_info} (e.g. 'Uzbekistan Historic Debut — Central Asia's first World Cup squad').",
+          "Squad photo + tactical diagram auto-compose in the visual zone.",
+          "Player highlights + qualifying-path stats auto-populate the panels.",
+          "Generate a vertical 8K debut-team preview poster."
+        ],
+        "prompts": [
+          "Generate an Uzbekistan World Cup 2026 historic debut preview poster.",
+          "Create a Curaçao giant-killers debut preview with squad highlights.",
+          "Generate a Cabo Verde first World Cup appearance preview poster."
+        ]
+      }
+    }
+  },
+  "template-science-myth-bust-infographic-poster": {
+    "category": "Science Myth-Busting Infographic",
+    "description": "Generate a vertical 'SCIENCE LORE' myth-busting poster — red MYTH headline at top, debunking science explanation in the middle, citation-style proof panels at the bottom.",
+    "title": "Nano Banana Prompt: Science Myth-Bust Infographic Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K educational poster under the 'SCIENCE LORE' series. Top section carries the 'MYTH' headline in a red rectangular box with a kawaii illustration of the misconception. Middle section explains the actual science with diagrams, charts, or process illustrations. Bottom carries source citations and a 'TRUTH' summary chip.",
+        "who": "Suitable for science-communication accounts, classroom poster sellers, school librarians, parent/educator content creators, museum gift-shop product lines, and STEM-focused educational publishers.",
+        "how": [
+          "Enter the myth + correction angle in {myth_info} (e.g. 'Goldfish have a 3-second memory — actually months').",
+          "MYTH headline + kawaii misconception illustration auto-render in the top box.",
+          "Science explanation + diagrams auto-populate the middle section.",
+          "Generate a vertical 8K 'SCIENCE LORE' poster."
+        ],
+        "prompts": [
+          "Generate a SCIENCE LORE poster on the 3-second goldfish memory myth.",
+          "Create a SCIENCE LORE infographic on the 'we only use 10% of our brain' myth.",
+          "Generate a SCIENCE LORE poster on the 'lightning never strikes twice' myth."
+        ]
+      }
+    }
+  },
+  "template-brand-ip-mascot-design-board": {
+    "category": "Brand IP Mascot Design Board",
+    "description": "Generate a clean white-background brand mascot character style guide — hero mascot, color palette, pose sheet, expression set, brand voice notes — all unified under one IP identity.",
+    "title": "Nano Banana Prompt: Brand IP Mascot Design Board Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates an 8K clean white-background character style guide poster for any brand. Layout divides into clear sections: top-left main mascot hero shot with brand title, top-right color palette swatches, middle pose sheet with 4-6 character poses, bottom-left expression / emoticon set, bottom-right brand voice + tone notes. All sections unified under the brand's IP identity.",
+        "who": "Suitable for in-house brand teams launching mascots, agencies pitching mascot redesigns, indie brand owners building character IP, kids-product brand managers, and IP-licensing intermediaries presenting mascot families.",
+        "how": [
+          "Enter the brand name + mascot character description + main color in {brand_info} (e.g. 'Curify AI Curi — friendly AI character in purple gradient').",
+          "Hero mascot shot + color palette + pose sheet + expression set auto-compose.",
+          "Brand voice notes auto-populate the lower-right panel.",
+          "Generate an 8K white-background mascot design board poster."
+        ],
+        "prompts": [
+          "Generate a Curify AI Curi mascot design board in purple gradient with friendly AI character.",
+          "Create a Spotify Soni mascot design board in green gradient with music-themed character.",
+          "Generate a LEGO Brixo mascot design board with primary-color block character."
+        ]
+      }
+    }
+  },
+  "template-sports-iconic-event-analysis-poster": {
+    "category": "Iconic Sports Event Analysis Poster",
+    "description": "Generate a horizontal cinematic sports infographic poster for any iconic moment — archival match photos, tactical diagrams, quote blocks, timeline panels, side-by-side comparisons, multi-angle controversy analysis.",
+    "title": "Nano Banana Prompt: Iconic Sports Event Analysis Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a horizontal 8K cinematic sports infographic poster themed around an iconic event. Large bold dual-language headline at the top; centerpiece composites archival match photos, key moment stills, or tactical diagrams; additional sections carry quote blocks, timeline / evolution graphics, side-by-side comparisons, and match stats panels. Style: gritty vintage textured aesthetic with aged paper overlays, gold metallic accents, and stadium spotlight lighting.",
+        "who": "Suitable for sports historians, retrospective documentary marketers, sports-bar wall print sellers, fantasy-league commentators, and sports-bottling cultural-events publishers covering the long arc of iconic matches.",
+        "how": [
+          "Enter the iconic event + layout theme in {event_info} (e.g. 'Maradona Hand of God 1986 Legacy Retrospective' or 'Hand of God & VAR Evolution Timeline').",
+          "Archival match photo composite + tactical diagram auto-render at the center.",
+          "Quote blocks, timeline graphics, comparison panels auto-populate around the centerpiece.",
+          "Generate a horizontal 8K cinematic sports analysis poster."
+        ],
+        "prompts": [
+          "Generate a Hand of God 1986 Legacy Retrospective horizontal analysis poster.",
+          "Create a Hand of God vs Goal of the Century side-by-side comparison poster.",
+          "Generate a Zidane Headbutt 2006 Final Multi-Angle Controversy Analysis poster."
+        ]
+      }
+    }
   }
 }

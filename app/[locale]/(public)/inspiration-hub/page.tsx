@@ -8,8 +8,17 @@ import { inspirationService } from "@/services/inspiration";
 import { mapDTOToUICard } from "@/services/inspirationMapper";
 import { InspirationCardUI } from "@/types/inspiration";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
+import { routing } from "@/i18n/routing";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 import nanoTemplates from "@/public/data/nano_templates.json";
+
+// Prerender per locale -> edge-cached (cuts Fast Origin Transfer). Backend data
+// is captured at build (refreshes on next deploy). generateMetadata sets the
+// correct per-locale canonical + hreflang, so SEO output is unchanged.
+export const revalidate = false;
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 // Topic rows shown at the top of the hub. Order matters — these render
 // in the listed sequence. Each topic should resolve to a `topics.${slug}`

@@ -10,6 +10,7 @@ import BlogCodeBlockCopyTracker from '@/app/[locale]/(public)/blog/[slug]/compon
 
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 type TemplateEntry = { name: string; slug: string; params: string }
 type WorkedCharacter = { name: string; mbti: string; blurb: string }
 type WorkedUniverse = {
@@ -29,11 +30,12 @@ export default function BlogContent() {
   const templateLink = (slug: string) => `${localePrefix}/nano-template/${slug}`
 
   return (
-    <article className="mx-auto max-w-6xl px-4 py-8">
+    <article className="xl:ml-16 xl:mr-64 mx-auto max-w-6xl px-4 py-8">
       <BlogInlineClickTracker blogSlug="character-prompt-generator">
       <BlogCodeBlockCopyTracker blogSlug="character-prompt-generator">
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <header className="mb-8">
+          <AutoTableOfContents />
           <BlogCategoryLabel slug="character-prompt-generator" />
           <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
           <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-400 text-sm">

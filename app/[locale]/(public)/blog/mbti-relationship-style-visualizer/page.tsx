@@ -11,6 +11,7 @@ import { makeNanoTemplateUrl } from "@/lib/nano_utils";
 import { resolveContentLocale } from "@/lib/locale_utils";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 export default function MBTIRelationshipStyleVisualizer() {
   const t = useTranslations('blog.mbiRelationshipStyleVisualizer');
@@ -26,7 +27,7 @@ export default function MBTIRelationshipStyleVisualizer() {
   ];
 
   return (
-    <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
+    <article className="xl:pr-64 pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
       <StructuredData 
         title={t('title')}
         description={t('metaDescription')}
@@ -47,6 +48,7 @@ export default function MBTIRelationshipStyleVisualizer() {
           />
         </div>
         
+        <AutoTableOfContents />
         <BlogCategoryLabel slug="mbti-relationship-style-visualizer" />
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
         

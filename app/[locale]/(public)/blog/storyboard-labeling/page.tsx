@@ -29,6 +29,7 @@ import RelatedBlogs from "../../../_components/RelatedBlogs";
 import dreamScenes from '@/public/data/dream-scene-analysis.json';
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
+import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
 // Use the imported scenes data
 const inceptionScenes = dreamScenes;
@@ -63,9 +64,10 @@ export default function SceneDetectionPage() {
 
   return (
     <div className="pt-10 pb-8">
-      <article className="prose prose-base md:prose-lg">
+      <article className="xl:pr-64 prose prose-base md:prose-lg">
         <div className="relative mb-8">
           <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-20"></div>
+          <AutoTableOfContents />
           <BlogCategoryLabel slug="storyboard-labeling" />
           <h1 className="relative text-3xl md:text-5xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
             {t('hero.title')}
