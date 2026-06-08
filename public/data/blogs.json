@@ -284,19 +284,94 @@
   },
   {
     "slug": "ai-product-photo-generator-guide",
-    "title": "AI Product Photo Generator in 2026: 6 Templated Workflows for Catalog Scale",
+    "title": "AI Product Photography: One Hero Shot to 100+ Brand-Consistent Variations",
     "date": "May 31, 2026",
     "readTime": "7 min read",
     "tag": "Creator Tools",
-    "image": "/images/nano_insp/template-lifestyle-photo-grid-met-gala-red-carpet.jpg",
+    "image": "/images/nano_insp/template-product-poster-aromatherapy-diffuser.jpg",
     "category": "creator-tools",
     "relatedLinks": [
       "best-programmatic-seo-tools",
       "style-transfer-ai-guide",
       "best-ai-tools"
     ],
-    "lastmod": "2026-05-31",
-    "metaDescription": "AI product photo generator workflows for 2026 — 6 templated patterns (lifestyle grid, product poster, outfit try-on, packaging mockup, promotional poster, fashion before/after) with worked examples."
+    "lastmod": "2026-06-08",
+    "metaDescription": "AI product photography for DTC + ecommerce: one hero shot → 100+ brand-consistent variations in a day. Packaging, posters, ecommerce details, fashion sizing — all from one product photo.",
+    "nanoTemplates": [
+      {
+        "groupKey": "ai-product-photo-food-product-packaging-design-double-chocolate-cookies",
+        "template_id": "template-food-product-packaging-design",
+        "sample_parameters": {
+          "topic": "Double Chocolate Cookies"
+        },
+        "category": "design",
+        "description": "Photorealistic Food Packaging Mockup",
+        "image_urls": [
+          "/images/nano_insp/template-food-product-packaging-design-double-chocolate-cookies.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-food-product-packaging-design-double-chocolate-cookies-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ai-product-photo-product-poster-aromatherapy-diffuser",
+        "template_id": "template-product-poster",
+        "sample_parameters": {
+          "product_name": "Aromatherapy Diffuser"
+        },
+        "category": "product",
+        "description": "Lifestyle Product Showcase Poster",
+        "image_urls": [
+          "/images/nano_insp/template-product-poster-aromatherapy-diffuser.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-product-poster-aromatherapy-diffuser-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ai-product-photo-product-theme-promotional-poster-tech-gadget-sale",
+        "template_id": "template-product-theme-promotional-poster",
+        "sample_parameters": {},
+        "category": "product",
+        "description": "Promotional Product Poster (sale / banner)",
+        "image_urls": [
+          "/images/nano_insp/template-product-theme-promotional-poster-tech-gadget-sale.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-product-theme-promotional-poster-tech-gadget-sale-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ai-product-photo-fashion-ecommerce-ring",
+        "template_id": "template-fashion-ecommerce",
+        "sample_parameters": {
+          "core_selling_point": "ring"
+        },
+        "category": "mockups",
+        "description": "Ecommerce Detail Page (PDP) Render",
+        "image_urls": [
+          "/images/nano_insp/template-fashion-ecommerce-zh-ring.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-fashion-ecommerce-zh-ring-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ai-product-photo-fashion-shape-guide-infographic-cycling-apparel-for-body-type",
+        "template_id": "template-fashion-shape-guide-infographic",
+        "sample_parameters": {
+          "topic": "Cycling Apparel for Body Type"
+        },
+        "category": "lifestyle",
+        "description": "Fashion Shape Guide Infographic",
+        "image_urls": [
+          "/images/nano_insp/template-fashion-shape-guide-infographic-cycling-apparel-for-body-type.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-fashion-shape-guide-infographic-cycling-apparel-for-body-type-prev.jpg"
+        ]
+      }
+    ]
   },
   {
     "slug": "style-transfer-ai-guide",
