@@ -10200,5 +10200,141 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-sports-ball-evolution-infographic-rugby-prev.jpg"
+  },
+  {
+    "id": "template-disney-character-color-grid-art",
+    "locales": {
+      "en": {
+        "base_prompt": "(Disney Character Color Grid Art Creator) Square grid mosaic poster themed '{color_theme_info}'. Layout: 4x4 uniform grid layout with 16 individual square frames, each containing a different Disney character (heroes, villains, animals, sidekicks) rendered in a matching style; the background of every frame is the same solid {color_theme_info} color, with subtle star or sparkle texture accents. Style: Official Disney 3D CGI character art style, clean character bust or full-body portraits, consistent lighting across all frames, vibrant color-matched aesthetic, 8K high resolution, clean seamless grid composition. Subject: Disney character collection poster unified by the '{color_theme_info}' color theme.",
+        "parameters": [
+          {
+            "name": "color_theme_info",
+            "label": "Target color theme for the character grid",
+            "type": "text",
+            "placeholder": [
+              "Purple theme Disney character grid, with Cheshire Cat, Yzma, Rapunzel, etc.",
+              "Green theme Disney character grid, with Mike Wazowski, Tinker Bell, Mulan, etc.",
+              "Pink theme Disney character grid, with Ariel, Minnie Mouse, Piglet, etc.",
+              "Blue theme Disney character grid, with Dory, Genie, Elsa, etc."
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-disney-character-color-grid-art-orange-prev.jpg",
+    "topics": [
+      "character",
+      "groups",
+      "posters",
+      "disney"
+    ]
+  },
+  {
+    "id": "template-asl-sign-language-tutorial-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(ASL Sign Language Tutorial Infographic Creator) Vertical educational poster themed '{asl_topic_info}'. Layout: Clean, structured infographic layout with bold section headers, color-coded panels, and clear step-by-step instructions. Includes: main title, sign demonstration photos, key points, memory tricks, visual icons, and practice tips. Style: Friendly, accessible educational design with soft pastel accents, sans-serif fonts, clear photography of a signer, and simple illustrative icons. The design is clean, organized, and easy to follow. Subject: American Sign Language (ASL) tutorial poster for '{asl_topic_info}'.",
+        "parameters": [
+          {
+            "name": "asl_topic_info",
+            "label": "ASL sign or concept to create a tutorial for",
+            "type": "text",
+            "placeholder": [
+              "ASL sign for 'GREAT' tutorial infographic",
+              "ASL sign parameters handshape/location/movement guide",
+              "ASL 'BIG' vs 'VERY BIG' comparison tutorial",
+              "ASL 'BROTHER' vs 'SISTER' memory trick infographic"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-how-to-sign-great-prev.jpg",
+    "topics": [
+      "language",
+      "asl",
+      "guides",
+      "posters"
+    ]
+  },
+  {
+    "id": "template-educational-topic-cheat-sheet-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Educational Topic Cheat Sheet Creator) Vertical study guide poster themed '{subject_topic_info}'. Layout: Colorful infographic-style cheat sheet with clear section headers, organized into panels containing key concepts, formulas, diagrams, and step-by-step explanations. Includes illustrative icons (lab equipment, symbols, graphs), worked examples, and memory aids. Style: Friendly, engaging educational design with soft pastel color accents, hand-drawn doodles, clear typography, and simple diagrams. The layout is clean, structured, and visually appealing for learning. Subject: Study guide poster for '{subject_topic_info}'.",
+        "parameters": [
+          {
+            "name": "subject_topic_info",
+            "label": "Educational topic to create a cheat sheet for",
+            "type": "text",
+            "placeholder": [
+              "Chemistry important reactions cheat sheet",
+              "Physics electric charges and fields formula sheet",
+              "Stoichiometry study guide infographic",
+              "Periodic table trends quick notes"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-educational-topic-cheat-sheet-poster-chemistry-d-block-elements-prev.jpg",
+    "topics": [
+      "learning",
+      "posters",
+      "guides"
+    ]
+  },
+  {
+    "id": "template-figure-to-abstract-portrait-series",
+    "locales": {
+      "en": {
+        "base_prompt": "(Figure-to-Abstract Portrait Series Creator) 2x2 grid of artworks themed '{subject_photo_info}'. Layout: 4 panels showing the evolution of a portrait from photo to abstract. Top-left: the original black-and-white reference photograph. Top-right: stylized modern vector portrait in bold flat colors. Bottom-left: geometric cubist-inspired deconstruction with simplified shapes. Bottom-right: pure abstract interpretation, influenced by the subject's style/movement (e.g., Mondrian, Kandinsky, Picasso). Style: Clean, minimalist, high-contrast modern illustration. Color palettes reflect the subject's associated art movement (e.g., primary colors for Mondrian, bold lines for Picasso). Subject: Four-stage abstract portrait series inspired by '{subject_photo_info}'.",
+        "parameters": [
+          {
+            "name": "subject_photo_info",
+            "label": "The subject/photo reference for the portrait series",
+            "type": "text",
+            "placeholder": [
+              "Architect De Stijl style portrait series inspired by Mondrian",
+              "Composer Kandinsky-inspired abstract portrait evolution",
+              "Artist Picasso-style cubist to abstract portrait series"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-figure-to-abstract-portrait-series-kandinsky-abstract-prev.jpg",
+    "topics": [
+      "character",
+      "portrait",
+      "posters",
+      "abstract"
+    ]
+  },
+  {
+    "id": "template-crafting-step-by-step-tutorial-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Crafting Step-by-Step Tutorial Infographic Creator) Vertical guide poster themed '{craft_topic_info}'. Layout: Cute, friendly infographic design with numbered steps, screenshots or illustrations of each process, arrows guiding the eye, and a warm, pastel color palette. Includes decorative icons like crafting tools, flowers, and sparkles. Style: Whimsical, modern, and approachable, with soft pink and mint tones, playful fonts, and clean, organized sections. Subject: Easy-to-follow step-by-step guide for '{craft_topic_info}'.",
+        "parameters": [
+          {
+            "name": "craft_topic_info",
+            "label": "Crafting topic or process to create a guide for",
+            "type": "text",
+            "placeholder": [
+              "How to upload an SVG file to Cricut Design Space",
+              "Beginner's guide to using Cricut Maker",
+              "Step-by-step tutorial for vinyl decal making"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-crafting-step-by-step-tutorial-infographic-cricut-svg-upload-guide-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "guides",
+      "posters"
+    ]
   }
 ]
