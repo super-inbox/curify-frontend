@@ -30,6 +30,7 @@
       "vocabulary",
       "dialogue",
       "expressions",
+      "asl",
       "language-english",
       "english-chinese",
       "english-spanish",
@@ -146,7 +147,8 @@
       "yellowstone",
       "ghibli",
       "silicon-valley",
-      "nba"
+      "nba",
+      "disney"
     ],
     "travel": [
       "spain",
@@ -2199,6 +2201,7 @@
         "template-fashion-inspired-gown-design-sheet",
         "template-fashion-shape-guide-infographic",
         "template-figure-principles-infographic",
+        "template-figure-to-abstract-portrait-series",
         "template-food",
         "template-food-product-packaging-design",
         "template-friends-character-mbti",
@@ -2241,6 +2244,7 @@
         "template-country-souvenirs-watercolor",
         "template-country-top10-travel-destinations",
         "template-dessert-color-lab-infographic",
+        "template-disney-character-color-grid-art",
         "template-english-top5-phrases",
         "template-fandom-character-grid-poster",
         "template-fashion-nail-art-design",
@@ -2273,6 +2277,7 @@
         "template-watercolor-theme-collage-illustration",
         "template-watercolor-travel-journal-collage",
         "template-wine-variety-intro-infographic",
+        "template-world-cup-debut-team-preview-poster",
         "template-world-cup-team-sticker-poster"
       ]
     },
@@ -2347,11 +2352,14 @@
       "topic_word": "guides",
       "templates": [
         "template-anatomy-cut-guide",
+        "template-asl-sign-language-tutorial-infographic",
         "template-beauty-step-by-step-guide",
         "template-best-cities-travel-infographic",
         "template-cartoon-action-visual-guide-infographic",
         "template-country-dos-and-donts-infographic",
+        "template-crafting-step-by-step-tutorial-infographic",
         "template-educational-career-field-infographic",
+        "template-educational-topic-cheat-sheet-poster",
         "template-equipment-muscle-guide",
         "template-fashion-shape-guide-infographic",
         "template-fat-loss-plan",
@@ -2577,6 +2585,9 @@
       "profile",
       "timeline"
     ],
+    "template-asl-sign-language-tutorial-infographic": [
+      "process"
+    ],
     "template-battle": [
       "comparison"
     ],
@@ -2678,6 +2689,9 @@
     "template-country-top10-travel-destinations": [
       "collection"
     ],
+    "template-crafting-step-by-step-tutorial-infographic": [
+      "process"
+    ],
     "template-cuisine-food-vocab-poster": [
       "vocabulary"
     ],
@@ -2709,6 +2723,9 @@
     "template-detective-conan": [
       "profile"
     ],
+    "template-disney-character-color-grid-art": [
+      "collection"
+    ],
     "template-dog-breed-retro-infographic": [
       "information-card"
     ],
@@ -2727,6 +2744,9 @@
     "template-educational-career-field-infographic": [
       "information-card",
       "insight",
+      "process"
+    ],
+    "template-educational-topic-cheat-sheet-poster": [
       "process"
     ],
     "template-educational-topic-infographic": [
@@ -2811,6 +2831,9 @@
       "insight",
       "profile",
       "timeline"
+    ],
+    "template-figure-to-abstract-portrait-series": [
+      "profile"
     ],
     "template-finance-comparison-infographic": [
       "comparison"
@@ -3297,6 +3320,9 @@
     "template-word-scene": [
       "vocabulary"
     ],
+    "template-world-cup-debut-team-preview-poster": [
+      "collection"
+    ],
     "template-world-cup-team-sticker-poster": [
       "collection"
     ],
@@ -3771,6 +3797,12 @@
       "portrait",
       "posters"
     ],
+    "template-asl-sign-language-tutorial-infographic": [
+      "asl",
+      "guides",
+      "language",
+      "posters"
+    ],
     "template-battle": [
       "character",
       "comparison",
@@ -3952,6 +3984,11 @@
       "travel",
       "watercolor"
     ],
+    "template-crafting-step-by-step-tutorial-infographic": [
+      "guides",
+      "lifestyle",
+      "posters"
+    ],
     "template-cuisine-food-vocab-poster": [
       "beginner",
       "food",
@@ -4015,6 +4052,12 @@
       "mbti",
       "portrait"
     ],
+    "template-disney-character-color-grid-art": [
+      "character",
+      "disney",
+      "groups",
+      "posters"
+    ],
     "template-dog-breed-retro-infographic": [
       "animal",
       "information-card",
@@ -4048,6 +4091,11 @@
       "guides",
       "information-card",
       "insight",
+      "learning",
+      "posters"
+    ],
+    "template-educational-topic-cheat-sheet-poster": [
+      "guides",
       "learning",
       "posters"
     ],
@@ -4216,6 +4264,12 @@
       "portrait",
       "reading",
       "science"
+    ],
+    "template-figure-to-abstract-portrait-series": [
+      "abstract",
+      "character",
+      "portrait",
+      "posters"
     ],
     "template-finance-comparison-infographic": [
       "comparison",
@@ -5190,6 +5244,12 @@
       "intermediate",
       "language",
       "vocabulary"
+    ],
+    "template-world-cup-debut-team-preview-poster": [
+      "groups",
+      "posters",
+      "sports",
+      "world-cup"
     ],
     "template-world-cup-team-sticker-poster": [
       "design",

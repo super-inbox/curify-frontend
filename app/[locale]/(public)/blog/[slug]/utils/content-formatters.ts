@@ -364,10 +364,29 @@ export function formatNanoBananaContent(content: string): string {
     return content;
   }
 
-  // Pre-process: image immediately followed (after blank-line gap) by a
-  // standalone markdown CTA link → wrap the image in the same link. See
-  // the parallel comment in formatContent for the full rationale.
+  // Pre-process A (2026-06-09): when image src is /images/nano_insp/<eid>.jpg
+  // AND the trailing CTA links to /nano-template/<slug>, AND <eid> starts
+  // with `template-<slug>-`, rewrite the CTA href to the deeper example
+  // page (/nano-template/<slug>/example/<eid>). This applies to both the
+  // wrapped image and the CTA link (handled by Pre-process B below), so
+  // both clickable surfaces land on the example page (deeper conversion
+  // surface — copy/remix/download events fire there) instead of the
+  // template index. Falls through to Pre-process B unchanged on
+  // template_id/example_id mismatch.
   let preprocessed = content.replace(
+    /(!\[[^\]]*\]\(\/images\/nano_insp\/(template-[^/]+?)\.jpg\))\n+\[([^\]]+)\]\((\/nano-template\/[^/)]+)\)(?=\n|$)/g,
+    (m, imgMd, exampleId, label, templateUrl) => {
+      const slug = templateUrl.replace("/nano-template/", "");
+      if (!exampleId.startsWith(`template-${slug}-`)) return m;
+      const exampleUrl = `${templateUrl}/example/${exampleId}`;
+      return `${imgMd}\n\n[${label}](${exampleUrl})`;
+    }
+  );
+
+  // Pre-process B: image immediately followed (after blank-line gap) by
+  // a standalone markdown CTA link → wrap the image in the same link.
+  // See the parallel comment in formatContent for the full rationale.
+  preprocessed = preprocessed.replace(
     /(!\[[^\]]*\]\([^)]+\))\n+(\[[^\]]+\]\(([^)]+)\))(?=\n|$)/g,
     (_m, imgMd, linkMd, linkUrl) => `[${imgMd}](${linkUrl})\n\n${linkMd}`
   );
@@ -455,6 +474,22 @@ export function formatContent(content: string): string {
   // text was clickable. Same pattern across portugal/france/1v1/evolution/
   // WC hub / illustrator industrial AI blogs — one regex retroactively
   // upgrades them all.
+  // Pre-process A (2026-06-09): when image src is /images/nano_insp/<eid>.jpg
+  // AND the trailing CTA links to /nano-template/<slug>, AND <eid> starts
+  // with `template-<slug>-`, rewrite the CTA href to the deeper example
+  // page so the image + CTA both land on the example page (deeper
+  // conversion surface — copy/remix/download fire there) instead of the
+  // template index. Falls through unchanged on slug mismatch.
+  processed = processed.replace(
+    /(!\[[^\]]*\]\(\/images\/nano_insp\/(template-[^/]+?)\.jpg\))\n+\[([^\]]+)\]\((\/nano-template\/[^/)]+)\)(?=\n|$)/g,
+    (m, imgMd, exampleId, label, templateUrl) => {
+      const slug = templateUrl.replace("/nano-template/", "");
+      if (!exampleId.startsWith(`template-${slug}-`)) return m;
+      const exampleUrl = `${templateUrl}/example/${exampleId}`;
+      return `${imgMd}\n\n[${label}](${exampleUrl})`;
+    }
+  );
+
   processed = processed.replace(
     /(!\[[^\]]*\]\([^)]+\))\n+(\[[^\]]+\]\(([^)]+)\))(?=\n|$)/g,
     (_m, imgMd, linkMd, linkUrl) => `[${imgMd}](${linkUrl})\n\n${linkMd}`

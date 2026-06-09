@@ -5047,5 +5047,115 @@
         ]
       }
     }
+  },
+  "template-disney-character-color-grid-art": {
+    "category": "Disney Character Color Grid Art",
+    "description": "Generate a 4x4 mosaic poster of 16 Disney characters in a single unified color theme — heroes, villains, sidekicks, animals all rendered in the same palette for instant fan recognition.",
+    "title": "Nano Banana Prompt: Disney Character Color Grid Art Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a 4x4 square grid mosaic poster on a single Disney color theme. Each of the 16 frames contains a different Disney character (heroes, villains, animals, sidekicks) rendered in a matching color palette and consistent illustration style; backgrounds tinted to the same hue family unify the grid into one bold piece of fan art.",
+        "who": "Suitable for Disney fan-art creators, kids-room print sellers, color-theme nursery designers, Etsy + Redbubble print operators, and merch designers building gift bundles for the Disney superfan demographic.",
+        "how": [
+          "Enter the color theme + Disney characters in {color_theme_info} (e.g. 'Purple theme Disney character grid, with Cheshire Cat, Yzma, Rapunzel, etc.').",
+          "16-character 4x4 grid auto-composes with consistent palette and tinted backgrounds.",
+          "Each character rendered in the matching style for visual unity.",
+          "Generate a 4x4 Disney character color-themed mosaic poster."
+        ],
+        "prompts": [
+          "Generate a Purple-theme Disney character grid with Cheshire Cat, Yzma, Rapunzel.",
+          "Create a Green-theme Disney character grid with Mike Wazowski, Tinker Bell, Mulan.",
+          "Generate a Pink-theme Disney character grid with Ariel, Minnie Mouse, Piglet."
+        ]
+      }
+    }
+  },
+  "template-asl-sign-language-tutorial-infographic": {
+    "category": "ASL Sign Language Tutorial Infographic",
+    "description": "Generate a vertical educational infographic teaching any ASL sign — bold section headers, sign demonstration photos, handshape / location / movement breakdown, and memory mnemonics.",
+    "title": "Nano Banana Prompt: ASL Sign Language Tutorial Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical educational ASL infographic poster. Layout: bold section headers + color-coded panels + clear step-by-step sign demonstrations. Includes main title, sign demonstration photos, key points, handshape / location / movement parameters, memory mnemonics, and related-sign comparisons. Clean, classroom-ready typography.",
+        "who": "Suitable for ASL tutors and educators, Deaf-community content creators, parents of Deaf or HoH children, K-12 inclusive-education poster sellers, sign-language app marketers, and ASL student-handbook publishers.",
+        "how": [
+          "Enter the ASL sign + tutorial angle in {asl_topic_info} (e.g. 'ASL sign for GREAT tutorial infographic').",
+          "Sign demonstration photos + handshape / location / movement breakdown auto-compose.",
+          "Memory mnemonics + related-sign comparisons populate the side panels.",
+          "Generate a vertical educational ASL tutorial infographic poster."
+        ],
+        "prompts": [
+          "Generate an ASL tutorial infographic for the sign 'GREAT'.",
+          "Create an ASL handshape / location / movement parameter guide infographic.",
+          "Generate an ASL 'BIG' vs 'VERY BIG' comparison tutorial poster."
+        ]
+      }
+    }
+  },
+  "template-educational-topic-cheat-sheet-poster": {
+    "category": "Educational Topic Cheat Sheet Poster",
+    "description": "Generate a vertical study-guide cheat sheet for any subject — colorful section headers, key concepts, formulas, diagrams, step-by-step explanations, and illustrative icons.",
+    "title": "Nano Banana Prompt: Educational Topic Cheat Sheet Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K study-guide cheat sheet poster on any educational topic. Colorful infographic-style layout with clear section headers organized into panels containing key concepts, formulas, diagrams, and step-by-step explanations. Illustrative icons and example diagrams reinforce each concept, designed for fast subject-matter recall on exam day.",
+        "who": "Suitable for K-12 + college study-guide sellers, classroom teachers preparing wall references, online tutors building course collateral, AP / IB / IGCSE exam prep brands, and student note-taking content creators on TikTok / Instagram.",
+        "how": [
+          "Enter the subject + topic in {subject_topic_info} (e.g. 'Chemistry important reactions cheat sheet').",
+          "Section headers + key concepts + formulas + diagrams auto-compose in colorful panels.",
+          "Illustrative icons + step-by-step explanations populate the body.",
+          "Generate a vertical 8K educational cheat sheet poster."
+        ],
+        "prompts": [
+          "Generate a Chemistry important reactions cheat sheet poster.",
+          "Create a Physics electric charges and fields formula sheet poster.",
+          "Generate a Stoichiometry study-guide infographic poster."
+        ]
+      }
+    }
+  },
+  "template-figure-to-abstract-portrait-series": {
+    "category": "Figure-to-Abstract Portrait Series",
+    "description": "Generate a 2x2 portrait evolution grid — original B&W photo, stylized vector portrait, geometric abstraction, fully non-figurative composition — for any historical figure or icon.",
+    "title": "Nano Banana Prompt: Figure-to-Abstract Portrait Series Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a 2x2 grid of artworks showing the evolution of a portrait from photo to abstract. Top-left: the original black-and-white reference photograph. Top-right: stylized modern vector portrait in bold flat colors. Bottom-left: geometric abstraction with clean shapes. Bottom-right: fully non-figurative composition derived from the same color and shape language. A clean white background unifies the series.",
+        "who": "Suitable for gallery wall print designers, modernist art Etsy stores, biographical print sellers (architects, composers, scientists, artists), interior design / mid-century-modern decor brands, and art-history educators producing visual-style comparison teaching aids.",
+        "how": [
+          "Enter the subject + abstraction reference in {subject_photo_info} (e.g. 'Architect De Stijl style portrait series inspired by Mondrian').",
+          "Original B&W photo + stylized vector portrait auto-render in the top row.",
+          "Geometric abstraction + non-figurative composition auto-render in the bottom row.",
+          "Generate a 2x2 figure-to-abstract portrait evolution series."
+        ],
+        "prompts": [
+          "Generate an Architect De Stijl style portrait series inspired by Mondrian.",
+          "Create a Composer Kandinsky-inspired abstract portrait evolution series.",
+          "Generate an Artist Picasso-style cubist to abstract portrait series."
+        ]
+      }
+    }
+  },
+  "template-crafting-step-by-step-tutorial-infographic": {
+    "category": "Crafting Step-by-Step Tutorial Infographic",
+    "description": "Generate a cute pastel crafting how-to poster with numbered steps, process screenshots / illustrations, arrows guiding the eye, and decorative icons — perfect for Cricut, vinyl, paper craft, or any DIY workflow.",
+    "title": "Nano Banana Prompt: Crafting Step-by-Step Tutorial Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K crafting tutorial infographic poster. Cute, friendly design with numbered steps, process screenshots or illustrations of each stage, arrows guiding the eye through the workflow, and a warm pastel color palette. Includes decorative icons + tools-required panel + finished-piece hero shot at the top.",
+        "who": "Suitable for crafting + Cricut + Silhouette content creators, DIY blog publishers building printable tutorials, paper-craft Etsy sellers, hobbyist YouTubers needing thumbnail companion graphics, and craft-supply brands producing in-pack instruction sheets.",
+        "how": [
+          "Enter the crafting topic + workflow in {craft_topic_info} (e.g. 'How to upload an SVG file to Cricut Design Space').",
+          "Numbered steps + process screenshots / illustrations auto-compose.",
+          "Tools-required panel + decorative icons populate the layout.",
+          "Generate a vertical 8K crafting step-by-step tutorial poster."
+        ],
+        "prompts": [
+          "Generate a tutorial poster for uploading an SVG file to Cricut Design Space.",
+          "Create a beginner's guide poster for using Cricut Maker.",
+          "Generate a step-by-step tutorial poster for vinyl decal making."
+        ]
+      }
+    }
   }
 }

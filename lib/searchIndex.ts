@@ -85,6 +85,16 @@ export const TIER2_SUGGESTIONS: SuggestionEntry[] = [
     "harita",
   ] },
   { slug: "language-english", label: "English Learning", emoji: "🇬🇧", tier: 2, aliases: ["english", "esl", "learn english"] },
+  // `asl` slot — American Sign Language. Added 2026-06-09 with the
+  // template-asl-sign-language-tutorial-infographic template push. Closes
+  // the bare-`asl` SEARCH_NORESULT bleeder from cycle 4. Multi-locale
+  // aliases keep CJK / European callers in scope.
+  { slug: "asl", label: "American Sign Language", emoji: "🤟", tier: 2, aliases: [
+    "asl", "american sign language", "sign language", "sign", "signing",
+    "deaf community", "deaf",
+    "美式手语", "手语", "수어", "수화",
+    "lengua de señas", "langue des signes", "gebärdensprache",
+  ] },
   // Language pairs — promoted from Tier 3 to Tier 2 so they appear as
   // navigational tabs alongside vocabulary / dialogue / etc.
   { slug: "english-chinese",  label: "English ↔ Chinese",  emoji: "🇨🇳", tier: 2, aliases: ["en-zh", "chinese english", "english chinese"] },
