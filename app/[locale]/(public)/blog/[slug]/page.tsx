@@ -26,6 +26,22 @@ const WC_BLOG_SLUGS = new Set([
   "portugal-soccer-poster-prompts",
   "ai-1v1-soccer-rivalry-prompts",
 ]);
+
+// Per-WC-slug → topic page slug. Country-specific posts route to their
+// country-WC topic page; multi-country / generic posts route to the
+// parent /topics/world-cup hub. Added 2026-06-09 to make WC blog hero
+// images clickable through to the topic page (deeper-conversion
+// surface — the topic has gallery + templates + cross-blog links).
+const WC_BLOG_HERO_TOPIC: Record<string, string> = {
+  "world-cup-2026-top-contenders": "world-cup",
+  "world-cup-2026-ai-prompt-hub": "world-cup",
+  "fifa-2026-host-city-travel-guide": "world-cup",
+  "argentina-france-2022-world-cup-final": "world-cup",
+  "brazil-argentina-soccer-poster-prompts": "world-cup",
+  "france-soccer-poster-prompts": "france-world-cup",
+  "portugal-soccer-poster-prompts": "portugal-world-cup",
+  "ai-1v1-soccer-rivalry-prompts": "world-cup",
+};
 import { blogPosts, availableKeys } from "./utils/blog-config";
 import { formatContent } from "./utils/content-formatters";
 import { getVideoDubbingUrl, getSubtitleGeneratorUrl } from "./utils/blog-helpers";
@@ -328,23 +344,39 @@ export default async function BlogPostPage({
             Visual area roughly matched across orientations; nothing is
             cropped. */}
         <div className="mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 flex items-center justify-center">
-          {useMermaidThumbnail ? (
-            <DynamicThumbnail
-              slug={thumbnailType || slug}
-              title={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-              category={blogConfig.category}
-              existingImage={blogConfig.image}
-              forceType="mermaid"
-            />
-          ) : (
-            <CdnImage
-              src={blogConfig.image}
-              alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-              width={672}
-              height={448}
-              className="block max-w-full max-h-96 w-auto h-auto rounded-lg shadow"
-            />
-          )}
+          {/* WC blogs: wrap hero in a link to the most relevant WC topic
+              page (parent /topics/world-cup or country-specific). Hero is
+              the largest clickable surface on the article, so this
+              promotes the topic page as the natural next step. Added
+              2026-06-09. */}
+          {(() => {
+            const heroNode = useMermaidThumbnail ? (
+              <DynamicThumbnail
+                slug={thumbnailType || slug}
+                title={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                category={blogConfig.category}
+                existingImage={blogConfig.image}
+                forceType="mermaid"
+              />
+            ) : (
+              <CdnImage
+                src={blogConfig.image}
+                alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                width={672}
+                height={448}
+                className="block max-w-full max-h-96 w-auto h-auto rounded-lg shadow hover:opacity-90 transition-opacity"
+              />
+            );
+            const wcTopic = WC_BLOG_HERO_TOPIC[slug];
+            if (wcTopic) {
+              return (
+                <a href={`/${locale}/topics/${wcTopic}`} className="block">
+                  {heroNode}
+                </a>
+              );
+            }
+            return heroNode;
+          })()}
         </div>
 
         {/* Dynamic content rendering based on slug */}
