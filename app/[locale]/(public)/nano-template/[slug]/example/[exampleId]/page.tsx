@@ -11,6 +11,8 @@ import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
 import MoreLikeThisRail from "@/app/[locale]/_components/MoreLikeThisRail";
+import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
+import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
@@ -394,6 +396,19 @@ export default async function NanoExampleDetailPage({
           showOtherTemplates={true}
         />
       </section>
+
+      {/* WC → travel cross-sell rail. Renders only on WC content pages
+          (those carrying a <country>-world-cup compound tag). Filtered
+          by intersecting the country tag with travel-tagged templates.
+          See lib/wcTravelRail.ts for the detection logic. */}
+      {(() => {
+        const rec = getWcTravelRecommendations(
+          exampleTopics,
+          pageData.contentLocale,
+          { limit: 6 },
+        );
+        return rec ? <WcTravelRail recommendation={rec} locale={rawLocale} /> : null;
+      })()}
 
       <script
         type="application/ld+json"
