@@ -3,7 +3,22 @@
 _For stable writing patterns + the pre-publish checklist, see **`docs/blog-writing-guidelines.md`**. This doc is the running progress log + ad-hoc audits + priority queues; guidelines doc is the reference._
 
 
-_Last updated: 2026-05-30 (engagement-funnel deep-dive after World Cup GSC spike; 4-part fix shipped — P0 conditional target=_blank, P1a inline-click tracker, P1b+P2 hero+CTA block + i18n for 4 blogs; 3 deferred todos flagged). Owner: jay. Update after every push that touches blog content, `BlogCTACard.tsx`, `GenericBlogContent.tsx`, or `content-formatters.ts`._
+_Last updated: 2026-06-11 (5-post bundled ship — 2 travel T1 + 3 flashcard triad; combined ~31,260 vol/mo addressable; commit `082b66f2`; hero CVR upgrade extended via `heroLink` field). Owner: jay. Update after every push that touches blog content, `BlogCTACard.tsx`, `GenericBlogContent.tsx`, or `content-formatters.ts`._
+
+## Recent batch ships (2026-06-10 → 2026-06-11)
+
+- **2026-06-10 commit `ee48cefd`** — GSC bleeder P0 batch: 4 blog title/meta + MBTI example-page template head-term injection (~700+ impressions of MBTI bleed recovered + 4 blogs targeting 1,334 impressions of zero-click queries).
+- **2026-06-10 commit `6e73d5e8`** — Flashcard/learning T1 retitles: 3 existing blogs retitled for "visual learning" (vol 4,400), "flashcards for kids" (vol 390), "science flashcards" (vol 260). Combined ~5,050 vol/mo head-term capture.
+- **2026-06-11 commit `082b66f2`** — Bundled 5-post ship:
+  - Travel: `ai-travel-scrapbook-templates` (KD 7-27, vol 2,530) + `ai-travel-itinerary-templates` (KD 19-42, vol 24,520)
+  - Flashcards: `phonics-flashcards-ai-templates` (KD 10, vol 1,000) + `subject-flashcards-biology-chemistry-ai` (KD 17-20, vol 960) + `vocabulary-flashcards-ai-templates` (KD 35, vol 2,250 combined)
+  - Hero auto-routing extended to non-WC blogs via the `heroLink` field on blogs.json entries (reuses semantics from WC hero topic-routing at `8052a8ee`).
+
+Tracking docs for the underlying KD analyses + execution logs:
+- `docs/seo-flashcard-learning-batch-2026-06-10.md` (22 queries × Curify content map)
+- `docs/seo-travel-batch-2026-06-10.md` (29 queries × Curify content map)
+
+Measurement window for the 2026-06-11 batch: re-pull GSC on 2026-06-18 (7d) + 2026-06-25 (14d) for impressions/CTR on the 5 new URLs.
 
 ## Framing
 
