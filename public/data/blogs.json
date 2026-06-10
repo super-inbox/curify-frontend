@@ -1,5 +1,398 @@
 [
   {
+    "slug": "vocabulary-flashcards-ai-templates",
+    "title": "Vocabulary Flashcards with AI: Bilingual, Visual, and ESL-Ready Templates",
+    "tag": "Learning & Education",
+    "image": "/images/nano_insp/template-detailed-vocab-flashcard-apple.jpg",
+    "heroLink": "/nano-template/detailed-vocab-flashcard/example/template-detailed-vocab-flashcard-apple",
+    "category": "learning-education",
+    "relatedLinks": [
+      "phonics-flashcards-ai-templates",
+      "subject-flashcards-biology-chemistry-ai",
+      "bilingual-ai-flashcards-early-childhood-education"
+    ],
+    "lastmod": "2026-06-11",
+    "metaDescription": "Vocabulary flashcards with AI templates — bilingual cards, picture flashcards, ESL-ready visuals, body movement verbs, and detailed word-illustration cards. For ESL learners, bilingual classrooms, and language self-study.",
+    "readTime": "7 min read",
+    "date": "June 11, 2026",
+    "nanoTemplates": [
+      {
+        "groupKey": "vocabulary-flashcards-detailed-vocab-flashcard-apple",
+        "template_id": "template-detailed-vocab-flashcard",
+        "sample_parameters": {
+          "chinese_word": "苹果"
+        },
+        "category": "english-chinese",
+        "description": "Detailed Vocab Flashcard — Apple",
+        "image_urls": [
+          "/images/nano_insp/template-detailed-vocab-flashcard-apple.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-detailed-vocab-flashcard-apple-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "vocabulary-flashcards-multilingual-vocabulary-poster-watercolor-animals-pinyin",
+        "template_id": "template-multilingual-vocabulary-poster-watercolor",
+        "sample_parameters": {},
+        "category": "learning",
+        "description": "Multilingual Vocabulary Poster — animals + pinyin",
+        "image_urls": [
+          "/images/nano_insp/template-multilingual-vocabulary-poster-watercolor-animals-pinyin.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-multilingual-vocabulary-poster-watercolor-animals-pinyin-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "vocabulary-flashcards-bilingual-object-structure-labeling-apple",
+        "template_id": "template-bilingual-object-structure-labeling",
+        "sample_parameters": {
+          "object_name": "Apple"
+        },
+        "category": "learning",
+        "description": "Bilingual Object Structure Labeling — Apple parts",
+        "image_urls": [
+          "/images/nano_insp/template-bilingual-object-structure-labeling-apple.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-bilingual-object-structure-labeling-apple-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "vocabulary-flashcards-stick-figure-vocab-body-movement-verbs-set1",
+        "template_id": "template-stick-figure-vocab",
+        "sample_parameters": {
+          "vocab_theme": "body movement verbs set1"
+        },
+        "category": "learning",
+        "description": "Stick Figure Vocab — body movement verbs",
+        "image_urls": [
+          "/images/nano_insp/template-stick-figure-vocab-body-movement-verbs-set1.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-stick-figure-vocab-body-movement-verbs-set1-prev.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "subject-flashcards-biology-chemistry-ai",
+    "title": "Subject Flashcards with AI: Biology, Chemistry, and Science Cards That Stick",
+    "tag": "Learning & Education",
+    "image": "/images/nano_insp/template-species-science-zh-egret.jpg",
+    "heroLink": "/nano-template/species-science/example/template-species-science-egret",
+    "category": "learning-education",
+    "relatedLinks": [
+      "weird-science-facts-classroom-engagement",
+      "phonics-flashcards-ai-templates",
+      "vocabulary-flashcards-ai-templates"
+    ],
+    "lastmod": "2026-06-11",
+    "metaDescription": "Subject flashcards with AI — biology, chemistry, and science cards rendered as photorealistic species cards, herbal infographics, and education explainers. Templates teachers and homeschool parents actually use.",
+    "readTime": "7 min read",
+    "date": "June 11, 2026",
+    "nanoTemplates": [
+      {
+        "groupKey": "subject-flashcards-species-science-egret",
+        "template_id": "template-species-science",
+        "sample_parameters": {
+          "species_name": "egret"
+        },
+        "category": "learning",
+        "description": "Species Science Card — Egret (field-guide quality)",
+        "image_urls": [
+          "/images/nano_insp/template-species-science-zh-egret.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-species-science-zh-egret-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "subject-flashcards-herbal-dragon's-blood",
+        "template_id": "template-herbal",
+        "sample_parameters": {
+          "herb_name": "dragon's blood"
+        },
+        "category": "learning",
+        "description": "Herbal Botanical — Dragon's Blood",
+        "image_urls": [
+          "/images/nano_insp/template-herbal-zh-dragon's-blood.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-herbal-zh-dragon's-blood-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "subject-flashcards-science-education-infographic-atmosphere-layers",
+        "template_id": "template-science-education-infographic",
+        "sample_parameters": {
+          "topic": "atmosphere layers"
+        },
+        "category": "learning",
+        "description": "Science Education Infographic — atmosphere layers",
+        "image_urls": [
+          "/images/nano_insp/template-science-education-infographic-atmosphere-layers.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-science-education-infographic-atmosphere-layers-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "subject-flashcards-species-baiji",
+        "template_id": "template-species",
+        "sample_parameters": {
+          "species_name": "baiji"
+        },
+        "category": "learning",
+        "description": "Species — Baiji dolphin",
+        "image_urls": [
+          "/images/nano_insp/template-species-zh-baiji.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-species-zh-baiji-prev.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "phonics-flashcards-ai-templates",
+    "title": "Phonics Flashcards: AI Templates for CVC Words, Sounds, and Early Reading",
+    "tag": "Learning & Education",
+    "image": "/images/nano_insp/template-CVC-english-word-coloring-flower-card-am.jpg",
+    "heroLink": "/nano-template/CVC-english-word-coloring-flower-card/example/template-CVC-english-word-coloring-flower-card-am",
+    "category": "learning-education",
+    "relatedLinks": [
+      "bilingual-ai-flashcards-early-childhood-education",
+      "vocabulary-flashcards-ai-templates",
+      "visual-learning-tools"
+    ],
+    "lastmod": "2026-06-11",
+    "metaDescription": "Phonics flashcards with AI templates — CVC word cards, beginning sounds, vowel patterns, and early-reading visuals. Free templates parents and kindergarten teachers actually print and use. Ages 3-7.",
+    "readTime": "6 min read",
+    "date": "June 11, 2026",
+    "nanoTemplates": [
+      {
+        "groupKey": "phonics-flashcards-CVC-english-word-coloring-flower-card-am",
+        "template_id": "template-CVC-english-word-coloring-flower-card",
+        "sample_parameters": {
+          "word_family": "am"
+        },
+        "category": "learning",
+        "description": "CVC Word Coloring Card — am word family",
+        "image_urls": [
+          "/images/nano_insp/template-CVC-english-word-coloring-flower-card-am.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-CVC-english-word-coloring-flower-card-am-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "phonics-flashcards-children-english-vocab-spelling-family-members",
+        "template_id": "template-children-english-vocab-spelling",
+        "sample_parameters": {
+          "theme": "family members"
+        },
+        "category": "english-chinese",
+        "description": "Children Vocab Spelling — family members",
+        "image_urls": [
+          "/images/nano_insp/template-children-english-vocab-spelling-family-members.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-children-english-vocab-spelling-family-members-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "phonics-flashcards-cartoon-english-vocabulary-flashcards-fruits",
+        "template_id": "template-cartoon-english-vocabulary-flashcards",
+        "sample_parameters": {
+          "theme": "fruits"
+        },
+        "category": "learning",
+        "description": "Cartoon Vocabulary Flashcards — fruits",
+        "image_urls": [
+          "/images/nano_insp/template-cartoon-english-vocabulary-flashcards-fruits.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-fruits-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "phonics-flashcards-kids-vocabulary-poster-fruits",
+        "template_id": "template-kids-vocabulary-poster",
+        "sample_parameters": {
+          "theme_name": "fruits"
+        },
+        "category": "learning",
+        "description": "Kids Vocabulary Poster — fruits",
+        "image_urls": [
+          "/images/nano_insp/template-kids-vocabulary-poster-fruits.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-kids-vocabulary-poster-fruits-prev.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ai-travel-itinerary-templates",
+    "title": "AI Travel Itinerary Templates: Day-by-Day Planners, Packing Lists & Route Maps",
+    "tag": "Nano Template",
+    "image": "/images/nano_insp/template-tourist-spot-watercolor-map-infographic-central-park.jpg",
+    "heroLink": "/nano-template/tourist-spot-watercolor-map-infographic/example/template-tourist-spot-watercolor-map-infographic-central-park",
+    "category": "creator-tools",
+    "relatedLinks": [
+      "ai-travel-scrapbook-templates",
+      "fifa-2026-host-city-travel-guide",
+      "ai-collage-digital-wallpaper-guide"
+    ],
+    "lastmod": "2026-06-11",
+    "metaDescription": "AI travel itinerary templates: day-by-day planners, route maps, packing checklists, and trip guides that turn a destination + travel dates into a printable itinerary in minutes. Trip planner templates, examples, and ideas.",
+    "readTime": "8 min read",
+    "date": "June 11, 2026",
+    "nanoTemplates": [
+      {
+        "groupKey": "travel-itinerary-travel-beijing",
+        "template_id": "template-travel",
+        "sample_parameters": {
+          "destination": "Beijing",
+          "date_range": ""
+        },
+        "category": "china",
+        "description": "Travel Itinerary — Beijing day-by-day example",
+        "image_urls": [
+          "/images/nano_insp/template-travel-zh-beijing.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-travel-zh-beijing-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "travel-itinerary-series-travel-netherlands-01",
+        "template_id": "template-series-travel",
+        "sample_parameters": {
+          "destination_name": "Netherlands",
+          "trip_duration": "4"
+        },
+        "category": "learning",
+        "description": "Travel Series — Netherlands multi-city itinerary",
+        "image_urls": [
+          "/images/nano_insp/template-series-travel-netherlands-01.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-series-travel-netherlands-01-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "travel-itinerary-travel-packing-guide-infographic-3day-hiking-adventure",
+        "template_id": "template-travel-packing-guide-infographic",
+        "sample_parameters": {},
+        "category": "learning",
+        "description": "Travel Packing Guide Infographic — 3-day hiking sample",
+        "image_urls": [
+          "/images/nano_insp/template-travel-packing-guide-infographic-3day-hiking-adventure.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-travel-packing-guide-infographic-3day-hiking-adventure-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "travel-itinerary-tourist-spot-watercolor-map-infographic-central-park",
+        "template_id": "template-tourist-spot-watercolor-map-infographic",
+        "sample_parameters": {
+          "topic": "central park"
+        },
+        "category": "united-states",
+        "description": "Tourist Spot Watercolor Map — Central Park route",
+        "image_urls": [
+          "/images/nano_insp/template-tourist-spot-watercolor-map-infographic-central-park.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-tourist-spot-watercolor-map-infographic-central-park-prev.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ai-travel-scrapbook-templates",
+    "title": "AI Travel Scrapbook Templates: Watercolor Journals, Vintage Posters & Photo Collages",
+    "tag": "Nano Template",
+    "image": "/images/nano_insp/template-watercolor-travel-journal-collage-coastal-vibe.jpg",
+    "heroLink": "/nano-template/watercolor-travel-journal-collage/example/template-watercolor-travel-journal-collage-coastal-vibe",
+    "category": "creator-tools",
+    "relatedLinks": [
+      "ai-travel-itinerary-templates",
+      "fifa-2026-host-city-travel-guide",
+      "ai-collage-digital-wallpaper-guide"
+    ],
+    "lastmod": "2026-06-11",
+    "metaDescription": "AI travel scrapbook templates that turn your trip photos into watercolor journals, vintage posters, stamp collections, and souvenir collages — wall-art ready, printable, no design skills needed.",
+    "readTime": "7 min read",
+    "date": "June 11, 2026",
+    "nanoTemplates": [
+      {
+        "groupKey": "travel-scrapbook-watercolor-travel-journal-collage-coastal-vibe",
+        "template_id": "template-watercolor-travel-journal-collage",
+        "sample_parameters": {
+          "expedition_theme": "coastal vibe"
+        },
+        "category": "learning",
+        "description": "Watercolor Travel Journal Collage — coastal vibe sample",
+        "image_urls": [
+          "/images/nano_insp/template-watercolor-travel-journal-collage-coastal-vibe.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-watercolor-travel-journal-collage-coastal-vibe-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "travel-scrapbook-vintage-travel-scrapbook-poster-langkawi",
+        "template_id": "template-vintage-travel-scrapbook-poster",
+        "sample_parameters": {
+          "destination": "langkawi"
+        },
+        "category": "learning",
+        "description": "Vintage Travel Scrapbook Poster — Langkawi sample",
+        "image_urls": [
+          "/images/nano_insp/template-vintage-travel-scrapbook-poster-langkawi.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-vintage-travel-scrapbook-poster-langkawi-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "travel-scrapbook-vintage-stamp-collection-illustration-forest-botanicals",
+        "template_id": "template-vintage-stamp-collection-illustration",
+        "sample_parameters": {
+          "collection_title": "forest botanicals"
+        },
+        "category": "learning",
+        "description": "Vintage Stamp Collection — forest botanicals",
+        "image_urls": [
+          "/images/nano_insp/template-vintage-stamp-collection-illustration-forest-botanicals.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-vintage-stamp-collection-illustration-forest-botanicals-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "travel-scrapbook-country-souvenirs-watercolor-brazil",
+        "template_id": "template-country-souvenirs-watercolor",
+        "sample_parameters": {
+          "country_name": "brazil"
+        },
+        "category": "learning",
+        "description": "Country Souvenirs Watercolor — Brazil",
+        "image_urls": [
+          "/images/nano_insp/template-country-souvenirs-watercolor-brazil.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-country-souvenirs-watercolor-brazil-prev.jpg"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "ip-merch-design-ai-workflow",
     "title": "Designer Toy IP Merchandise Design: The 2026 AI Production Workflow",
     "date": "June 8, 2026",
@@ -534,7 +927,7 @@
   },
   {
     "slug": "portugal-soccer-poster-prompts",
-    "title": "Portugal Prompts: 2026 World Cup AI Soccer Posters",
+    "title": "Portugal 2026 World Cup Poster Prompts: Ronaldo + Seleção AI Cinematics",
     "date": "May 30, 2026",
     "readTime": "9 min read",
     "tag": "Nano Template",
@@ -545,12 +938,12 @@
       "ultimate-directory-of-nano-banana-prompts",
       "10-prompting-tips-nano-banana"
     ],
-    "lastmod": "2026-06-05",
+    "lastmod": "2026-06-10",
     "metaDescription": "Portugal World Cup 2026 AI poster prompts: Ronaldo-anchored cinematic shots, Bruno + Bernardo squad poses, dark-red Quinas palette. Free Curify Seleção templates inside."
   },
   {
     "slug": "brazil-argentina-soccer-poster-prompts",
-    "title": "Brazil & Argentina Prompts: 2026 World Cup AI Soccer Posters",
+    "title": "Brazil & Argentina 2026 World Cup Poster Prompts: Squad + Fans Tributes",
     "date": "May 27, 2026",
     "readTime": "10 min read",
     "tag": "Nano Template",
@@ -561,8 +954,8 @@
       "10-prompting-tips-nano-banana",
       "image-generation-model-comparison"
     ],
-    "lastmod": "2026-06-05",
-    "metaDescription": "Brazil + Argentina World Cup 2026 AI poster prompts: Messi-vs-Ronaldo battles, full squad shots, Albiceleste + Seleção cinematics. Free Curify templates inside."
+    "lastmod": "2026-06-10",
+    "metaDescription": "Brazil + Argentina 2026 World Cup AI poster prompts: 2026 squad shots, fan-tribute posters, Messi-vs-Ronaldo battles, Albiceleste + Seleção cinematics. Free Curify templates inside."
   },
   {
     "slug": "preserve-facial-features-ai-generation",
@@ -1353,9 +1746,9 @@
   },
   {
     "slug": "image-generation-model-comparison",
-    "title": "Midjourney vs Nano Banana Pro vs Stable Diffusion: 2026 Comparison",
+    "title": "Midjourney vs DALL-E 3 vs Nano Banana vs Stable Diffusion (2026)",
     "date": "March 28, 2026",
-    "lastmod": "2026-06-05",
+    "lastmod": "2026-06-10",
     "readTime": "15 min read",
     "tag": "Creator Tools",
     "image": "/images/hardworker.webp",
@@ -1365,7 +1758,7 @@
       "10-prompting-tips-nano-banana",
       "creative-ai-tools-websites"
     ],
-    "metaDescription": "Midjourney v7 vs Nano Banana Pro (Google Gemini 3) vs Stable Diffusion 3.5 — 2026 AI image model comparison. Aesthetics, control, grounded reasoning, cost — pick by use case. Plus DALL-E 3 + Grok Imagine context."
+    "metaDescription": "Midjourney v7 vs DALL-E 3 vs Nano Banana Pro (Google Gemini 3) vs Stable Diffusion 3.5 — 2026 AI image model comparison. Aesthetics, control, grounded reasoning, cost — pick by use case. Plus Grok Imagine."
   },
   {
     "slug": "lip-sync-business-guide",
@@ -1519,14 +1912,15 @@
   },
   {
     "slug": "visual-learning-tools",
-    "title": "Visual Learning Tools: How Students, Parents, and Teachers Can Transform Education",
+    "title": "Visual Learning: AI Tools, Flashcards, and Infographics for Modern Classrooms",
     "date": "April 1, 2026",
     "readTime": "10 min read",
     "tag": "Learning & Education",
     "image": "/images/nano_insp_preview/template-word-scene-zh-student-wizard-school-prev.jpg",
     "category": "learning-education",
     "relatedLinks": [],
-    "lastmod": "2026-05-27"
+    "lastmod": "2026-06-10",
+    "metaDescription": "Visual learning with AI — flashcards, infographics, and prompt-ready templates that help students absorb material faster. Tools for parents, teachers, and self-learners. Free Curify templates inside."
   },
   {
     "slug": "best-ai-tools",
@@ -1693,7 +2087,7 @@
   },
   {
     "slug": "bilingual-ai-flashcards-early-childhood-education",
-    "title": "Bilingual AI Flashcards for Early Childhood: Templates That Actually Stick at Ages 2-5",
+    "title": "Flashcards for Kids: AI Bilingual Vocabulary Templates for Ages 2-5",
     "date": "April 23, 2026",
     "readTime": "12 min read",
     "tag": "Learning & Education",
@@ -1704,7 +2098,8 @@
       "viral-learning-content",
       "nano-banana-prompt-ecosystem"
     ],
-    "lastmod": "2026-05-23"
+    "lastmod": "2026-06-10",
+    "metaDescription": "Flashcards for kids — bilingual AI templates for ages 2-5. Visual vocab cards, animal flashcards, daily-essentials sets. Templates parents and preschool teachers actually print and use."
   },
   {
     "slug": "ugc-video-translation-scaling-tiktoks-shorts-global-markets",
@@ -1738,7 +2133,7 @@
   },
   {
     "slug": "ai-collage-digital-wallpaper-guide",
-    "title": "How to Generate Aesthetic AI Collages and Digital Wallpapers: Grid Prompt Guide",
+    "title": "3x3 Grid Collage Prompts: AI Aesthetic Collages & Digital Wallpapers",
     "date": "May 4, 2026",
     "readTime": "12 min read",
     "tag": "Nano Template",
@@ -1749,7 +2144,7 @@
       "10-prompting-tips-nano-banana",
       "nano-banana-prompt-ecosystem"
     ],
-    "lastmod": "2026-05-17",
+    "lastmod": "2026-06-10",
     "nanoTemplates": [
       {
         "groupKey": "ai-collage-digital-wallpaper-guide-lifestyle",
@@ -1796,11 +2191,12 @@
           "/images/nano_insp_preview/template-fandom-character-grid-poster-anime-protagonists-prev.jpg"
         ]
       }
-    ]
+    ],
+    "metaDescription": "3x3 grid collage prompts that actually work — generate young-woman-in-winter-forest grids, seasonal aesthetics, and digital wallpapers with Nano Banana. Master grid layouts and aspect ratios in minutes."
   },
   {
     "slug": "weird-science-facts-classroom-engagement",
-    "title": "Visualizing Weird Science Facts: AI Prompt Templates for Classroom Engagement",
+    "title": "Science Flashcards: AI Prompt Templates That Spark Classroom Engagement",
     "date": "May 4, 2026",
     "readTime": "10 min read",
     "tag": "Learning & Education",
@@ -1811,7 +2207,8 @@
       "bilingual-ai-flashcards-early-childhood-education",
       "viral-learning-content"
     ],
-    "lastmod": "2026-05-17"
+    "lastmod": "2026-06-10",
+    "metaDescription": "Science flashcards that students actually look at — weird-facts hooks, AI-rendered diagrams, anatomy + chemistry + biology templates ready for the classroom. Free Curify prompts inside."
   },
   {
     "slug": "mbti-relationship-style-visualizer",

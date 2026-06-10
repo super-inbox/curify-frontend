@@ -210,6 +210,7 @@ export default async function NanoTemplatePage({ params }: Props) {
       topics: template.topics,
       batch: !!template.batch,
       allow_generation: !!template.allow_generation,
+      requires_image_upload: !!template.requires_image_upload,
       existingExamples: imageViews
         .filter((v) => v.params && Object.keys(v.params).length > 0)
         .map((v) => ({ id: v.id, params: v.params as Record<string, string> })),

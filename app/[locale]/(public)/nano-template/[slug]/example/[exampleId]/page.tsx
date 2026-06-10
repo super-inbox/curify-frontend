@@ -11,6 +11,8 @@ import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
 import MoreLikeThisRail from "@/app/[locale]/_components/MoreLikeThisRail";
+import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
+import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
@@ -179,11 +181,23 @@ export async function generateMetadata({
   const topicText = templateTopics?.length ? templateTopics[0] : "";
   const categoryText = category || topicText || "nano banana";
 
+  // MBTI head-term injection (2026-06-10 bleed fix). 12+ MBTI character
+  // example pages were sitting at SERP pos 3-10 with 0 clicks because
+  // titles read "Kobe Bryant — Nano Banana Prompt Generator" instead of
+  // matching the query pattern "kobe bryant mbti". Same pattern across
+  // /nano-template/{mbti-nba,mbti-yellowstone,mbti-naruto,mbti-generic,
+  // friends-character-mbti,...}/example/* — every slug in the family
+  // contains "mbti". One title-format swap recovers ~700+ impressions
+  // of leaked CTR across the family.
+  const isMbtiTemplate = slug.includes("mbti");
+
   // Use locale-specific metaDescription when available; fall back to a
   // generic template-derived sentence for non-allow_i18n / not-yet-translated.
   const description =
     metaDescription ||
-    `Generate images like "${title}" with Nano Banana. See the full prompt, breakdown, and use cases for this ${categoryText} template.`;
+    (isMbtiTemplate
+      ? `${title} MBTI personality type — AI-generated character card. Generate similar images with Nano Banana; full prompt + breakdown + example outputs.`
+      : `Generate images like "${title}" with Nano Banana. See the full prompt, breakdown, and use cases for this ${categoryText} template.`);
 
   // Build hreflang alternates for allow_i18n entries (10 locales) so Google
   // groups the localized URLs together. For other entries, only en + zh
@@ -212,11 +226,20 @@ export async function generateMetadata({
   const canonicalLocale = noindex ? "en" : rawLocale;
   const canonicalPath = canonicalLocale === "en" ? route : `/${canonicalLocale}${route}`;
 
+  // MBTI: inject "MBTI" head term right after the character name so the
+  // SERP title bolds the matched query ("kobe bryant mbti" etc).
+  const pageTitle = isMbtiTemplate
+    ? `${title} MBTI — Nano Banana Character Card`
+    : `${title} — Nano Banana Prompt Generator`;
+  const ogTitleStr = isMbtiTemplate
+    ? `${title} MBTI | Nano Banana`
+    : `${title} | Nano Banana`;
+
   return {
-    title: `${title} — Nano Banana Prompt Generator`,
+    title: pageTitle,
     description,
     openGraph: {
-      title: `${title} | Nano Banana`,
+      title: ogTitleStr,
       description,
       images: ogImage ? [{ url: ogImage }] : undefined,
     },
@@ -369,7 +392,18 @@ export default async function NanoExampleDetailPage({
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More like this
             </h2>
-            <ExampleImagesGrid items={similarItems} locale={pageLocale} maxRows={2} desktopOpensExample />
+            {/* desktopHideFirstN=2 unifies with the MoreLikeThisRail above
+                — the rail shows similarItems[0..1] on lg+, the grid
+                renders items[2..N] on desktop, full 0..N on mobile (rail
+                is hidden below lg). One continuous "More like this" flow,
+                no duplication. */}
+            <ExampleImagesGrid
+              items={similarItems}
+              locale={pageLocale}
+              maxRows={2}
+              desktopOpensExample
+              desktopHideFirstN={2}
+            />
           </>
         )}
         {similarItems.length === 0 && gridItems.length > 0 && (
@@ -394,6 +428,19 @@ export default async function NanoExampleDetailPage({
           showOtherTemplates={true}
         />
       </section>
+
+      {/* WC → travel cross-sell rail. Renders only on WC content pages
+          (those carrying a <country>-world-cup compound tag). Filtered
+          by intersecting the country tag with travel-tagged templates.
+          See lib/wcTravelRail.ts for the detection logic. */}
+      {(() => {
+        const rec = getWcTravelRecommendations(
+          exampleTopics,
+          pageData.contentLocale,
+          { limit: 6 },
+        );
+        return rec ? <WcTravelRail recommendation={rec} locale={rawLocale} /> : null;
+      })()}
 
       <script
         type="application/ld+json"

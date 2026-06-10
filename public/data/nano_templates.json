@@ -10359,5 +10359,170 @@
       "posters"
     ],
     "rank_score": 90.0
+  },
+  {
+    "id": "template-disney-character-costume-themed-grid-collection",
+    "locales": {
+      "en": {
+        "base_prompt": "(Character Costume Themed Grid Collection Creator) 4x3 grid poster themed '{character_info}'. Layout: 12 individual circular portraits, each featuring the character in a unique themed costume (fantasy, pirate, superhero, astronaut, chef, fairy tale, etc.), set against a solid, complementary colored background with small decorative stars. Below each portrait, the theme name is written in a playful handwritten font. Style: Classic Disney cartoon art style, clean line art, vibrant colors, and charming expressions. Subject: A collection of {character_info} reimagined in different fantasy and lifestyle themes.",
+        "parameters": [
+          {
+            "name": "character_info",
+            "label": "Character to create a costume-themed collection for",
+            "type": "text",
+            "placeholder": [
+              "Mickey Mouse in various fantasy and lifestyle costumes",
+              "Minnie Mouse in different adventure-themed outfits",
+              "Classic Disney character in fairy tale and pop culture styles"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-disney-character-costume-themed-grid-collection-mickey-minnie-costumes-set1-prev.jpg",
+    "topics": [
+      "character",
+      "groups",
+      "posters",
+      "disney"
+    ]
+  },
+  {
+    "id": "template-city-landmark-fridge-magnet-collection",
+    "locales": {
+      "en": {
+        "base_prompt": "(City Landmark Fridge Magnet Creator) Set of 6/4 fridge magnet designs themed '{city_info}'. Layout: Each magnet features a unique landmark or scenic spot, framed in a decorative border (flower, cloud, or geometric shape). Style: Clean line art with flat, vibrant colors, Chinese traditional aesthetic, or enamel pin-style 3D layered papercut effect. Includes the location name and brief description. Subject: A collection of fridge magnets celebrating the iconic landmarks of {city_info}.",
+        "parameters": [
+          {
+            "name": "city_info",
+            "label": "City/Theme + Key Landmarks",
+            "type": "text",
+            "placeholder": [
+              "Yangzhou city landmarks fridge magnet set (Ge Garden, Slender West Lake, Five Pavilion Bridge)",
+              "Nanjing city landmark enamel pin-style fridge magnet collection (Confucius Temple, Jiming Temple, Xuanwu Lake)",
+              "Suzhou garden-themed fridge magnet designs"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-city-landmark-fridge-magnet-collection-yangzhou-landmarks-prev.jpg",
+    "topics": [
+      "travel",
+      "merch",
+      "mockups",
+      "posters"
+    ]
+  },
+  {
+    "id": "template-museum-gift-themed-merchandise-collection-display",
+    "locales": {
+      "en": {
+        "base_prompt": "(Art-Themed Merchandise Collection Display Creator) Clean product showcase poster themed '{art_theme_info}'. Layout: Stylized product photography arrangement of themed items including tote bags, mugs, notebooks, stationery, puzzles, apparel, and accessories, all featuring iconic artwork or motifs from the theme. Style: Minimalist, bright studio aesthetic with soft neutral backgrounds and subtle lighting; clean commercial product photography with sharp focus on details. Subject: Curated collection of merchandise inspired by '{art_theme_info}'.",
+        "parameters": [
+          {
+            "name": "art_theme_info",
+            "label": "Artwork/Artist/Exhibition Theme for Merchandise",
+            "type": "text",
+            "placeholder": [
+              "Van Gogh 'The Starry Night' themed mystery box collection",
+              "Museum of Fine Arts Boston Van Gogh merchandise set",
+              "Monet Water Lilies stationery and apparel line",
+              "Dali surrealism themed gift collection"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-museum-gift-themed-merchandise-collection-display-van-gogh-mystery-box-prev.jpg",
+    "topics": [
+      "design",
+      "merch",
+      "mockups",
+      "posters"
+    ]
+  },
+  {
+    "id": "template-football-tournament-retro-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Football Tournament Retro Infographic Poster Creator) Vertical infographic poster themed '{tournament_info}'. Layout: Clear sections including tournament title/dates, key facts, group stage tables, knockout bracket results, final match details, tournament mascot illustration, and winner celebration. Style: Clean retro hand-drawn aesthetic, vintage color palette, official tournament logos, national flags, and simple icons. Subject: Complete results and stats infographic for '{tournament_info}'.",
+        "parameters": [
+          {
+            "name": "tournament_info",
+            "label": "Football tournament name and year",
+            "type": "text",
+            "placeholder": [
+              "1986 FIFA World Cup Mexico infographic poster",
+              "2006 FIFA World Cup Germany results chart",
+              "UEFA Euro 2000 tournament summary infographic"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-football-tournament-retro-infographic-poster-1978-world-cup-argentina-prev.jpg",
+    "topics": [
+      "sports",
+      "world-cup",
+      "history",
+      "posters",
+      "nostalgia"
+    ]
+  },
+  {
+    "id": "template-football-themed-ball-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Football-Themed Ball Infographic Creator) Circular infographic designed as a stylized football, themed '{football_topic_info}'. Layout: The ball is divided into hexagonal panels, each containing a fact, statistic, or key detail about the topic. The center features a large title and logo. Style: Clean, modern graphic design with bold colors, icons, and concise text. Uses football imagery and sports-themed elements. Subject: A football-shaped infographic presenting facts about '{football_topic_info}'.",
+        "parameters": [
+          {
+            "name": "football_topic_info",
+            "label": "Football topic or event for the infographic",
+            "type": "text",
+            "placeholder": [
+              "2026 FIFA World Cup facts infographic",
+              "FIFA organization information ball infographic",
+              "Football rules and regulations diagram",
+              "Fun football facts and trivia"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-football-themed-ball-infographic-soccer-rules-prev.jpg",
+    "topics": [
+      "sports",
+      "world-cup",
+      "posters"
+    ]
+  },
+  {
+    "id": "template-sport-rules-handdrawn-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Sport Rules Hand-Drawn Infographic Creator) Educational infographic poster themed '{sport_info}'. Layout: Playful, hand-drawn style with colorful sections covering players, scoring, serving, fouls/violations, the court diagram, and equipment. Each section includes simple cartoon illustrations, clear bullet points, and tips. Style: Bright, kid-friendly color palette, handwritten-style fonts, and simple icons. Subject: Easy-to-understand rules guide for '{sport_info}'.",
+        "parameters": [
+          {
+            "name": "sport_info",
+            "label": "Sport name to create a rules infographic for",
+            "type": "text",
+            "placeholder": [
+              "Basketball rules infographic for kids",
+              "Futsal basic rules hand-drawn poster",
+              "Badminton simplified rules guide",
+              "Volleyball court and rules diagram"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-sport-rules-handdrawn-infographic-table-tennis-prev.jpg",
+    "topics": [
+      "sports",
+      "learning",
+      "guides",
+      "posters"
+    ]
   }
 ]

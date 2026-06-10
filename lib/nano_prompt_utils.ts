@@ -18,6 +18,10 @@ export type NanoTemplateForDetail = {
   topics?: string[];
   batch?: boolean;
   allow_generation?: boolean;
+  // image-to-image templates: the user must upload a reference image before
+  // generating. When true, ReproduceTemplateSection shows the image upload UI
+  // and gates Generate on a reference image being present.
+  requires_image_upload?: boolean;
   existingExamples?: ExistingExample[];
 };
 

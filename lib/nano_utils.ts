@@ -24,6 +24,7 @@ export type RawTemplate = {
   rank_score?: number;
   batch?: boolean;
   allow_generation?: boolean;
+  requires_image_upload?: boolean;
 
   locales?: Partial<
     Record<
@@ -74,6 +75,7 @@ export type TemplateView = {
   rank_score?: number;
   batch?: boolean;
   allow_generation?: boolean;
+  requires_image_upload?: boolean;
   base_prompt: string;
   parameters: TemplateParameter[];
   cards: Array<{ image_id: string; params: Record<string, any> }>;
@@ -325,6 +327,7 @@ export function getTemplateView(
     rank_score: raw.rank_score,
     batch: raw.batch,
     allow_generation: raw.allow_generation,
+    requires_image_upload: raw.requires_image_upload,
     base_prompt: value.base_prompt,
     parameters: value.parameters,
     cards: raw.cards ?? [],
