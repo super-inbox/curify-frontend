@@ -246,6 +246,7 @@ export default function ExampleImagesGrid({
   batch = false,
   desktopOpensExample = false,
   topRightCell,
+  desktopHideFirstN = 0,
 }: {
   items: Item[];
   maxRows?: number;
@@ -255,9 +256,21 @@ export default function ExampleImagesGrid({
   desktopOpensExample?: boolean;
   /** Optional cell pinned to row 1, rightmost column (WC calendar widget etc.) */
   topRightCell?: React.ReactNode;
+  /**
+   * On desktop (≥ lg) only, hide the first N grid items — used when a
+   * companion rail (MoreLikeThisRail) already renders those first N
+   * thumbnails above the fold. Mobile / tablet show all items because
+   * the rail is hidden there. We also bump the visible window by N so
+   * the desktop total card count stays roughly equal to mobile's.
+   */
+  desktopHideFirstN?: number;
 }) {
   const cols = useCols();
-  const limit = cols * maxRows;
+  // Extend the visible window by desktopHideFirstN so desktop shows the
+  // same number of cards "below the rail" as mobile would show in the
+  // full grid. Otherwise hiding 2 would leave desktop with 2 fewer
+  // visible items at all viewports.
+  const limit = cols * maxRows + (desktopHideFirstN > 0 ? desktopHideFirstN : 0);
 
   const [expanded, setExpanded] = useState(false);
 
@@ -283,18 +296,36 @@ export default function ExampleImagesGrid({
             {topRightCell}
           </div>
         ) : null}
-        {visible.map((it) => (
-          <ExampleImageCard
-            key={it.id}
-            // Per-item batch wins (topic-page mixed-template grids stamp
-            // each item with its parent template's flag); grid-level
-            // batch is the fallback for single-template surfaces.
-            item={{ ...it, batch: it.batch ?? batch }}
-            locale={locale}
-            carouselContext={carouselContext}
-            desktopOpensExample={desktopOpensExample}
-          />
-        ))}
+        {visible.map((it, i) => {
+          // Hide the first N items on desktop only — they're already
+          // visible in the companion rail above the fold. Mobile shows
+          // all items because the rail is hidden there.
+          const hideOnDesktop = i < desktopHideFirstN;
+          if (hideOnDesktop) {
+            return (
+              <div key={it.id} className="lg:hidden">
+                <ExampleImageCard
+                  item={{ ...it, batch: it.batch ?? batch }}
+                  locale={locale}
+                  carouselContext={carouselContext}
+                  desktopOpensExample={desktopOpensExample}
+                />
+              </div>
+            );
+          }
+          return (
+            <ExampleImageCard
+              key={it.id}
+              // Per-item batch wins (topic-page mixed-template grids stamp
+              // each item with its parent template's flag); grid-level
+              // batch is the fallback for single-template surfaces.
+              item={{ ...it, batch: it.batch ?? batch }}
+              locale={locale}
+              carouselContext={carouselContext}
+              desktopOpensExample={desktopOpensExample}
+            />
+          );
+        })}
       </div>
 
       {items.length > limit && (

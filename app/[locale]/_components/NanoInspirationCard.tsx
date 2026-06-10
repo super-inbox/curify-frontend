@@ -128,10 +128,43 @@ export function NanoInspirationCard({
     setCurrentImageIndex((prev) => (prev - 1 + totalImages) % totalImages);
   };
 
+  // First example id extracted from the first image_url's basename so we
+  // can deep-link to /nano-template/<slug>/example/<exampleId> on desktop.
+  // CDN URL shape: https://cdn.curify-ai.com/images/nano_insp/<exampleId>.jpg
+  // Falls back to undefined when image_urls is empty or the URL is mal-
+  // formed (rare), in which case desktop clicks fall through to the
+  // template index page like before.
+  const firstExampleId = useMemo<string | undefined>(() => {
+    const first = card.image_urls?.[0] ?? card.preview_image_urls?.[0];
+    if (!first) return undefined;
+    const fname = first.split("/").pop() ?? "";
+    const stem = fname.replace(/\.[^.]+$/, "");
+    return stem || undefined;
+  }, [card.image_urls, card.preview_image_urls]);
+
+  const desktopExampleHref = useMemo<string | null>(() => {
+    if (!card.template_id || !firstExampleId) return null;
+    return `/${pageLocale}/nano-template/${toSlug(card.template_id)}/example/${encodeURIComponent(firstExampleId)}`;
+  }, [card.template_id, firstExampleId, pageLocale]);
+
   const handleCardClick = () => {
     trackCardClick();
 
     if (card.template_id) {
+      // Desktop (≥ lg): route directly to the first example page —
+      // higher-conversion surface (~37% replicate vs template index per
+      // the ExampleImagesGrid `desktopOpensExample` rationale). Mobile
+      // keeps the template-index destination so the template's full
+      // example grid + repro form is reachable in one tap on small
+      // screens. window.matchMedia is safe inside the click handler
+      // (event = client only).
+      const desktop =
+        typeof window !== "undefined" &&
+        window.matchMedia("(min-width: 1024px)").matches;
+      if (desktop && desktopExampleHref) {
+        router.push(desktopExampleHref);
+        return;
+      }
       router.push(canonicalUrl);
       return;
     }
