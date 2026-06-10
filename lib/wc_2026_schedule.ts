@@ -26,31 +26,82 @@ export const WC_2026 = {
   end:   "2026-07-19",
   hosts: ["Mexico", "USA", "Canada"],
   matches: [
-    // ── Opening week ─────────────────────────────────────────────────
-    { date: "2026-06-11", time: "17:00 CST", home: "Mexico", away: "TBD",
-      venue: "Estadio Azteca, Mexico City",   stage: "Group A", label: "Opening Match" },
-    { date: "2026-06-12", time: "15:00 ET",  home: "USA",    away: "TBD",
-      venue: "MetLife Stadium, NJ",            stage: "Group D", label: "USA Opener" },
-    { date: "2026-06-12", time: "18:00 ET",  home: "Canada", away: "TBD",
-      venue: "BMO Field, Toronto",             stage: "Group A", label: "Canada Opener" },
-    { date: "2026-06-13", time: "TBD",       home: "Argentina", away: "TBD",
-      venue: "TBD",                            stage: "Group A", label: "Defending Champions" },
-
-    // ── Marquee group stage ──────────────────────────────────────────
-    { date: "2026-06-14", time: "TBD", home: "Spain",       away: "TBD",
-      venue: "TBD", stage: "Group B" },
-    { date: "2026-06-14", time: "TBD", home: "Brazil",      away: "TBD",
-      venue: "TBD", stage: "Group C" },
-    { date: "2026-06-15", time: "TBD", home: "France",      away: "TBD",
-      venue: "TBD", stage: "Group D" },
-    { date: "2026-06-16", time: "TBD", home: "Germany",     away: "TBD",
-      venue: "TBD", stage: "Group E" },
-    { date: "2026-06-17", time: "TBD", home: "England",     away: "TBD",
-      venue: "TBD", stage: "Group F" },
-    { date: "2026-06-18", time: "TBD", home: "Portugal",    away: "TBD",
-      venue: "TBD", stage: "Group G" },
-
+    // ── Group stage (real fixtures, all 72 matches) ─────────────────
+    { date: "2026-06-11", time: "12:00 PM", home: "Mexico", away: "South Africa", stage: "Group A", label: "Opening Match" },
+    { date: "2026-06-11", time: "7:00 PM", home: "South Korea", away: "Czechia", stage: "Group A" },
+    { date: "2026-06-12", time: "12:00 PM", home: "Canada", away: "Bosnia and Herzegovina", stage: "Group B", label: "Canada Opener" },
+    { date: "2026-06-12", time: "6:00 PM", home: "USA", away: "Paraguay", stage: "Group D", label: "USA Opener" },
+    { date: "2026-06-13", time: "12:00 PM", home: "Qatar", away: "Switzerland", stage: "Group B" },
+    { date: "2026-06-13", time: "3:00 PM", home: "Brazil", away: "Morocco", stage: "Group C", label: "Brazil Opener" },
+    { date: "2026-06-13", time: "6:00 PM", home: "Haiti", away: "Scotland", stage: "Group C" },
+    { date: "2026-06-13", time: "9:00 PM", home: "Australia", away: "Türkiye", stage: "Group D" },
+    { date: "2026-06-14", time: "10:00 AM", home: "Germany", away: "Curaçao", stage: "Group E" },
+    { date: "2026-06-14", time: "1:00 PM", home: "Netherlands", away: "Japan", stage: "Group F" },
+    { date: "2026-06-14", time: "4:00 PM", home: "Ivory Coast", away: "Ecuador", stage: "Group E" },
+    { date: "2026-06-14", time: "7:00 PM", home: "Sweden", away: "Tunisia", stage: "Group F" },
+    { date: "2026-06-15", time: "9:00 AM", home: "Spain", away: "Cabo Verde", stage: "Group H", label: "Spain Opener" },
+    { date: "2026-06-15", time: "12:00 PM", home: "Belgium", away: "Egypt", stage: "Group G" },
+    { date: "2026-06-15", time: "3:00 PM", home: "Saudi Arabia", away: "Uruguay", stage: "Group H" },
+    { date: "2026-06-15", time: "6:00 PM", home: "Iran", away: "New Zealand", stage: "Group G" },
+    { date: "2026-06-16", time: "12:00 PM", home: "France", away: "Senegal", stage: "Group I" },
+    { date: "2026-06-16", time: "3:00 PM", home: "Iraq", away: "Norway", stage: "Group I" },
+    { date: "2026-06-16", time: "6:00 PM", home: "Argentina", away: "Algeria", stage: "Group J", label: "Defending Champions" },
+    { date: "2026-06-16", time: "9:00 PM", home: "Austria", away: "Jordan", stage: "Group J" },
+    { date: "2026-06-17", time: "10:00 AM", home: "Portugal", away: "DR Congo", stage: "Group K" },
+    { date: "2026-06-17", time: "1:00 PM", home: "England", away: "Croatia", stage: "Group L" },
+    { date: "2026-06-17", time: "4:00 PM", home: "Ghana", away: "Panama", stage: "Group L" },
+    { date: "2026-06-17", time: "7:00 PM", home: "Uzbekistan", away: "Colombia", stage: "Group K" },
+    { date: "2026-06-18", time: "9:00 AM", home: "Czechia", away: "South Africa", stage: "Group A" },
+    { date: "2026-06-18", time: "12:00 PM", home: "Switzerland", away: "Bosnia and Herzegovina", stage: "Group B" },
+    { date: "2026-06-18", time: "3:00 PM", home: "Canada", away: "Qatar", stage: "Group B" },
+    { date: "2026-06-18", time: "6:00 PM", home: "Mexico", away: "South Korea", stage: "Group A" },
+    { date: "2026-06-19", time: "12:00 PM", home: "USA", away: "Australia", stage: "Group D" },
+    { date: "2026-06-19", time: "3:00 PM", home: "Scotland", away: "Morocco", stage: "Group C" },
+    { date: "2026-06-19", time: "5:30 PM", home: "Brazil", away: "Haiti", stage: "Group C" },
+    { date: "2026-06-19", time: "8:00 PM", home: "Türkiye", away: "Paraguay", stage: "Group D" },
+    { date: "2026-06-20", time: "10:00 AM", home: "Netherlands", away: "Sweden", stage: "Group F" },
+    { date: "2026-06-20", time: "1:00 PM", home: "Germany", away: "Ivory Coast", stage: "Group E" },
+    { date: "2026-06-20", time: "5:00 PM", home: "Ecuador", away: "Curaçao", stage: "Group E" },
+    { date: "2026-06-20", time: "9:00 PM", home: "Tunisia", away: "Japan", stage: "Group F" },
+    { date: "2026-06-21", time: "9:00 AM", home: "Spain", away: "Saudi Arabia", stage: "Group H" },
+    { date: "2026-06-21", time: "12:00 PM", home: "Belgium", away: "Iran", stage: "Group G" },
+    { date: "2026-06-21", time: "3:00 PM", home: "Uruguay", away: "Cabo Verde", stage: "Group H" },
+    { date: "2026-06-21", time: "6:00 PM", home: "New Zealand", away: "Egypt", stage: "Group G" },
+    { date: "2026-06-22", time: "10:00 AM", home: "Argentina", away: "Austria", stage: "Group J" },
+    { date: "2026-06-22", time: "2:00 PM", home: "France", away: "Iraq", stage: "Group I" },
+    { date: "2026-06-22", time: "5:00 PM", home: "Norway", away: "Senegal", stage: "Group I" },
+    { date: "2026-06-22", time: "8:00 PM", home: "Jordan", away: "Algeria", stage: "Group J" },
+    { date: "2026-06-23", time: "10:00 AM", home: "Portugal", away: "Uzbekistan", stage: "Group K" },
+    { date: "2026-06-23", time: "1:00 PM", home: "England", away: "Ghana", stage: "Group L" },
+    { date: "2026-06-23", time: "4:00 PM", home: "Panama", away: "Croatia", stage: "Group L" },
+    { date: "2026-06-23", time: "7:00 PM", home: "Colombia", away: "DR Congo", stage: "Group K" },
+    { date: "2026-06-24", time: "12:00 PM", home: "Switzerland", away: "Canada", stage: "Group B" },
+    { date: "2026-06-24", time: "12:00 PM", home: "Bosnia and Herzegovina", away: "Qatar", stage: "Group B" },
+    { date: "2026-06-24", time: "3:00 PM", home: "Morocco", away: "Haiti", stage: "Group C" },
+    { date: "2026-06-24", time: "3:00 PM", home: "Scotland", away: "Brazil", stage: "Group C" },
+    { date: "2026-06-24", time: "6:00 PM", home: "South Africa", away: "South Korea", stage: "Group A" },
+    { date: "2026-06-24", time: "6:00 PM", home: "Czechia", away: "Mexico", stage: "Group A" },
+    { date: "2026-06-25", time: "1:00 PM", home: "Curaçao", away: "Ivory Coast", stage: "Group E" },
+    { date: "2026-06-25", time: "1:00 PM", home: "Ecuador", away: "Germany", stage: "Group E" },
+    { date: "2026-06-25", time: "4:00 PM", home: "Tunisia", away: "Netherlands", stage: "Group F" },
+    { date: "2026-06-25", time: "4:00 PM", home: "Japan", away: "Sweden", stage: "Group F" },
+    { date: "2026-06-25", time: "7:00 PM", home: "Türkiye", away: "USA", stage: "Group D" },
+    { date: "2026-06-25", time: "7:00 PM", home: "Paraguay", away: "Australia", stage: "Group D" },
+    { date: "2026-06-26", time: "12:00 PM", home: "Norway", away: "France", stage: "Group I" },
+    { date: "2026-06-26", time: "12:00 PM", home: "Senegal", away: "Iraq", stage: "Group I" },
+    { date: "2026-06-26", time: "5:00 PM", home: "Cabo Verde", away: "Saudi Arabia", stage: "Group H" },
+    { date: "2026-06-26", time: "5:00 PM", home: "Uruguay", away: "Spain", stage: "Group H" },
+    { date: "2026-06-26", time: "8:00 PM", home: "New Zealand", away: "Belgium", stage: "Group G" },
+    { date: "2026-06-26", time: "8:00 PM", home: "Egypt", away: "Iran", stage: "Group G" },
+    { date: "2026-06-27", time: "2:00 PM", home: "Panama", away: "England", stage: "Group L" },
+    { date: "2026-06-27", time: "2:00 PM", home: "Croatia", away: "Ghana", stage: "Group L" },
+    { date: "2026-06-27", time: "4:30 PM", home: "Colombia", away: "Portugal", stage: "Group K" },
+    { date: "2026-06-27", time: "4:30 PM", home: "DR Congo", away: "Uzbekistan", stage: "Group K" },
+    { date: "2026-06-27", time: "7:00 PM", home: "Algeria", away: "Austria", stage: "Group J" },
+    { date: "2026-06-27", time: "7:00 PM", home: "Jordan", away: "Argentina", stage: "Group J" },
     // ── Knockout milestones ──────────────────────────────────────────
+    { date: "2026-06-28", time: "TBD", home: "Round of 32", away: "",
+      venue: "Various", stage: "Round of 32",  label: "Round of 32 begins" },
     { date: "2026-07-04", time: "TBD", home: "Round of 16", away: "",
       venue: "Various", stage: "Round of 16",  label: "Round of 16 begins" },
     { date: "2026-07-09", time: "TBD", home: "Quarterfinal", away: "",
@@ -61,7 +112,7 @@ export const WC_2026 = {
       venue: "TBD",     stage: "Third Place",  label: "3rd Place Play-off" },
     { date: "2026-07-19", time: "15:00 ET", home: "Final",  away: "",
       venue: "MetLife Stadium, NJ", stage: "Final", label: "FIFA World Cup Final" },
-  ] as WCMatch[],
+] as WCMatch[],
 };
 
 // Helpers
@@ -74,6 +125,32 @@ export function daysUntil(target: string, ref: Date = new Date()): number {
 export function nextMatches(ref: Date = new Date(), n = 3): WCMatch[] {
   const today = ref.toISOString().slice(0, 10);
   return WC_2026.matches.filter((m) => m.date >= today).slice(0, n);
+}
+
+
+// Returns matches scheduled on `ref`'s local date. Used by the calendar
+// card during the tournament to surface "today's games" — typically 2-4
+// fixtures during group stage, none on rest days.
+export function todaysMatches(ref: Date = new Date(), max: number = 4): WCMatch[] {
+  const today = ref.toISOString().slice(0, 10);
+  return WC_2026.matches.filter((m) => m.date === today).slice(0, max);
+}
+
+// Extracts the country names (home + away) from a match for clickable
+// nation chips. Skips "TBD" and the knockout stage names (Round of 16 /
+// Semifinal / etc.) that occupy the home field on placeholder rows.
+export function nationsForMatch(m: WCMatch): string[] {
+  const stageWords = new Set([
+    "Round of 32", "Round of 16", "Quarterfinal", "Semifinal",
+    "Third Place", "3rd Place", "Final",
+  ]);
+  const out: string[] = [];
+  for (const t of [m.home, m.away]) {
+    if (!t || t === "TBD") continue;
+    if (stageWords.has(t)) continue;
+    out.push(t);
+  }
+  return out;
 }
 
 export function tournamentPhase(ref: Date = new Date()): "before" | "during" | "after" {

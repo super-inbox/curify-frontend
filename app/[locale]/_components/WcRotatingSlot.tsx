@@ -27,9 +27,19 @@ type Props = {
 
 type Mode = "calendar" | "query";
 
-function pickRandomQuery(queries: string[]): string {
-  if (queries.length === 0) return "";
-  return queries[Math.floor(Math.random() * queries.length)];
+const QUERIES_PER_VIEW = 4;
+
+// Returns a stable random sample of up to N queries — Fisher-Yates style
+// but only mutates a local copy. Deterministic given a seed (Math.random
+// per call, used in a client effect after hydration).
+function sampleQueries(queries: string[], n: number): string[] {
+  const pool = [...queries];
+  const out: string[] = [];
+  while (pool.length > 0 && out.length < n) {
+    const idx = Math.floor(Math.random() * pool.length);
+    out.push(pool.splice(idx, 1)[0]);
+  }
+  return out;
 }
 
 function pickRandomMode(): Mode {
@@ -42,12 +52,13 @@ export default function WcRotatingSlot({ locale, queries = [], className }: Prop
   // stable. Client effect re-rolls on mount so the user sees the random
   // pick after hydration. With no queries, stay calendar-only.
   const [mode, setMode] = useState<Mode>("calendar");
-  const [query, setQuery] = useState<string>(() => queries[0] ?? "");
+  // First N queries server-side for stable SSR. Client effect re-samples.
+  const [shown, setShown] = useState<string[]>(() => queries.slice(0, QUERIES_PER_VIEW));
 
   useEffect(() => {
     if (!hasQueries) return; // nothing to rotate into — calendar only
     setMode(pickRandomMode());
-    setQuery(pickRandomQuery(queries));
+    setShown(sampleQueries(queries, QUERIES_PER_VIEW));
   }, [queries, hasQueries]);
 
   const otherMode: Mode = mode === "calendar" ? "query" : "calendar";
@@ -58,9 +69,9 @@ export default function WcRotatingSlot({ locale, queries = [], className }: Prop
     e.stopPropagation();
     trackToggle();
     setMode(otherMode);
-    // Re-pick query when toggling INTO query mode so the user sees variety
-    // on repeat toggles.
-    if (otherMode === "query") setQuery(pickRandomQuery(queries));
+    // Re-sample queries when toggling INTO query mode so repeat toggles
+    // surface a fresh set instead of the same 4.
+    if (otherMode === "query") setShown(sampleQueries(queries, QUERIES_PER_VIEW));
   };
 
   const toggleLabel = mode === "calendar" ? "Show a popular search" : "Show the calendar";
@@ -71,7 +82,7 @@ export default function WcRotatingSlot({ locale, queries = [], className }: Prop
       {mode === "calendar" ? (
         <WorldCupCalendarCard locale={locale} />
       ) : (
-        <WcSearchQueryCard locale={locale} query={query} />
+        <WcSearchQueryCard locale={locale} queries={shown} />
       )}
 
       {/* Toggle button — top-right corner, small + unobtrusive. Only shown
