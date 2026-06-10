@@ -91,17 +91,20 @@ Three existing posts roughly align with bleeder queries — retitle to capture h
 - [x] 9-locale autotranslate fan-out (6 keys × 9 locales = 54 translations)
 - [x] Indexing API submit — 30 URLs (3 blogs × 10 locales), 30/30 OK
 
-### Tier 2 new posts (queued)
+### Tier 2 new posts — SHIPPED 2026-06-11 (in bundled batch with T3 vocabulary + travel T1)
 
-- [ ] **Phonics flashcards** new post — task #80 — KD 10 🟢🟢, vol 1,000. **Highest-ROI new post in queue.** Also register `phonics` as a new tier-3 topic (`lib/topicRegistry.ts` + `messages/en/topics.json` + autotranslate).
-- [ ] **Animal flashcards** new post — task #81 — KD 17 🟢, vol 390. Cross-link to `/topics/animals`.
-- [ ] **Biology + Chemistry flashcards hub** — task #82 — KD 17-20 🟢, combined vol 960.
+- [x] **Phonics flashcards** new post — task #80 — `/blog/phonics-flashcards-ai-templates` — KD 10 🟢🟢, vol 1,000. Anchor templates: CVC-english-word-coloring-flower-card, children-english-vocab-spelling, cartoon-english-vocabulary-flashcards, kids-vocabulary-poster.
+- [x] **Biology + Chemistry flashcards hub** — task #82 — `/blog/subject-flashcards-biology-chemistry-ai` — KD 17-20 🟢, vol 960. Anchor: species-science, herbal, science-education-infographic, species.
+- [ ] **Animal flashcards** new post — task #81 — KD 17 🟢, vol 390. Cross-link to `/topics/animals`. **Deferred** — outside the vocabulary/language/kids_science triad user prioritized; next pass.
+
+### Tier 3 — SHIPPED 2026-06-11
+
+- [x] **Vocabulary flashcards hub** — task #83 — `/blog/vocabulary-flashcards-ai-templates` — KD 35 🟡, vol 1,300 + ~950 long-tail. Anchor: detailed-vocab-flashcard, multilingual-vocabulary-poster-watercolor, bilingual-object-structure-labeling, stick-figure-vocab. Captures visual vocabulary (320) + language flashcards (210) + english flashcards (210) + esl flashcards (170) = ~2,250 combined vol.
 
 ### Tier 3 / longer-term (backlog)
 
-- [ ] **Vocabulary flashcards hub** — task #83 — KD 35 🟡, vol 1,300 + ~950 long-tail (incl. visual vocab, language flashcards, english flashcards, esl flashcards = ~2,250 combined).
 - [ ] Printable flashcards (KD 28 🟡, vol 1,300) — gate on PDF export feature.
-- [ ] Add `phonics` tier-3 topic registry entry (folded into task #80).
+- [ ] Add `phonics` tier-3 topic registry entry — not done in this ship; future task.
 
 ### Measurement
 

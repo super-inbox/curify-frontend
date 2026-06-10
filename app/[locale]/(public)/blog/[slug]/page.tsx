@@ -368,9 +368,20 @@ export default async function BlogPostPage({
               />
             );
             const wcTopic = WC_BLOG_HERO_TOPIC[slug];
-            if (wcTopic) {
+            // Hero link resolution order:
+            // 1. WC blog → /topics/<wcTopic> (high-CVR jump to the relevant
+            //    topic page)
+            // 2. blogs.json entry has a heroLink field → use it (typically
+            //    /nano-template/<slug>/example/<id> for posts that lead
+            //    with a specific template example)
+            // 3. fall through to non-linked hero
+            const explicitHero = (blogData as { heroLink?: string } | undefined)?.heroLink;
+            const heroHref = wcTopic
+              ? `/${locale}/topics/${wcTopic}`
+              : (explicitHero ? `/${locale}${explicitHero}` : null);
+            if (heroHref) {
               return (
-                <a href={`/${locale}/topics/${wcTopic}`} className="block">
+                <a href={heroHref} className="block">
                   {heroNode}
                 </a>
               );

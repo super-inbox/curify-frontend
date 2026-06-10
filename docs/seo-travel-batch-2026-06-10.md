@@ -154,10 +154,10 @@ If all Tier 1+2 ships (4 posts): **~38,910 vol/mo addressable demand**. Realisti
 
 ## Execution log
 
-### Tier 1 (queued)
+### Tier 1 — SHIPPED 2026-06-11 (bundled with 3 flashcard posts)
 
-- [ ] **Travel Scrapbook / Wall Art hub** — task #84 — KD 7-27 🟢🟢, vol 2,530 combined. Anchor: `template-vintage-travel-scrapbook-poster` + `template-watercolor-travel-journal-collage`.
-- [ ] **Travel Itinerary Template hub** — task #85 — KD 19-42, vol 24,520 combined. Anchor: `template-travel` + `template-series-travel` + `template-travel-packing-guide-infographic`.
+- [x] **Travel Scrapbook / Wall Art hub** — task #84 — `/blog/ai-travel-scrapbook-templates` — KD 7-27 🟢🟢, vol 2,530. Anchor templates: watercolor-travel-journal-collage, vintage-travel-scrapbook-poster, vintage-stamp-collection-illustration, country-souvenirs-watercolor.
+- [x] **Travel Itinerary Template hub** — task #85 — `/blog/ai-travel-itinerary-templates` — KD 19-42, vol 24,520. Anchor templates: travel, series-travel, travel-packing-guide-infographic, tourist-spot-watercolor-map-infographic.
 
 ### Tier 2 (queued)
 
