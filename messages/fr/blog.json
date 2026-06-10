@@ -888,7 +888,6 @@
       "metaDescription": "À l'intérieur du pipeline de synchronisation labiale IA : comment MuseTalk et Sync.co gèrent l'animation faciale, où ils échouent et ce qu'il faut pour expédier la synchronisation labiale aux vrais utilisateurs."
     },
     "visualLearningTools": {
-      "title": "Outils d'Apprentissage Visuels : Comment les Étudiants, Parents et Enseignants Peuvent Transformer l'Éducation",
       "publishedDate": "1 avril 2026",
       "readTime": "10 min de lecture",
       "category": "Outils d'Apprentissage",
@@ -1165,13 +1164,14 @@
           ]
         }
       },
-      "metaDescription": "L'outil AI d'apprentissage visuel que les étudiants, parents et enseignants adoptent réellement — flashcards, dialogues, infographies et les invites derrière chacun.",
       "seoKeywords": [
         "outils d'apprentissage visuel",
         "éducation AI",
         "flashcards AI",
         "AI pour les enseignants"
-      ]
+      ],
+      "title": "Apprentissage visuel : outils AI, cartes flash et infographies pour des classes modernes",
+      "metaDescription": "Apprentissage visuel avec AI — cartes flash, infographies et modèles prêts à l'emploi qui aident les élèves à absorber le matériel plus rapidement. Outils pour les parents, les enseignants et les apprenants autonomes. Modèles Curify gratuits à l'intérieur."
     },
     "bestAiTools": {
       "title": "Meilleurs outils d'IA pour les créateurs de contenu vidéo en 2026 : Descript vs ElevenLabs vs Runway",
@@ -3774,9 +3774,7 @@
       "metaDescription": "Prompts de collage 3x3 qui fonctionnent réellement — générez des grilles de jeune-femme-dans-une-forêt-d'hiver, des esthétiques saisonnières et des fonds d'écran numériques avec Nano Banana. Maîtrisez les mises en page de grille et les rapports d'aspect en quelques minutes."
     },
     "weirdScienceFactsClassroomEngagement": {
-      "title": "Visualiser des faits scientifiques étranges : modèles de prompts AI pour l'engagement en classe",
       "slug": "weird-science-facts-classroom-engagement",
-      "metaDescription": "Transformez des faits scientifiques étranges en flashcards AI bilingues engageantes pour l'apprentissage en classe. Modèles parfaits pour l'éducation visuelle qui captivent les étudiants et améliorent la rétention.",
       "date": "4 mai 2026",
       "readTime": "10 min de lecture",
       "whatIsTitle": "Qu'est-ce qui rend les faits scientifiques \"étranges\" et mémorables ?",
@@ -3813,7 +3811,9 @@
       "ctaDescription": "Accédez à notre bibliothèque de modèles scientifiques bilingues et commencez à créer du contenu éducatif engageant dès aujourd'hui.",
       "ctaButton": "Parcourir les modèles scientifiques",
       "intro": "La façon la plus rapide d'accrocher une classe n'est pas un plan de leçon — c'est un poulpe avec trois cœurs ou de la pluie de diamants sur Jupiter. Ce guide transforme les faits 'science étrange' les plus partageables en flashcards IA bilingues que vos élèves se souviendront réellement. Quatre faits d'exemple ci-dessous — diamants de Jupiter, poulpe à trois cœurs, miel qui ne se gâte jamais, éclair plus chaud que le soleil — chacun avec le prompt exact pour générer la flashcard en anglais plus une seconde langue.",
-      "conclusionContent": "Les faits de science étrange fonctionnent en classe parce qu'ils violent les attentes — et la violation est ce qui les rend mémorables. Les flashcards bilingues ajoutent une couche de seconde langue sans diluer la science, c'est pourquoi le format continue de fonctionner pour les classes ESL, les clubs de langues et les configurations d'école à la maison bilingues. Utilisez les prompts ci-dessus comme points de départ ; échangez le fait, la langue ou le style d'illustration pour tout sujet du programme."
+      "conclusionContent": "Les faits de science étrange fonctionnent en classe parce qu'ils violent les attentes — et la violation est ce qui les rend mémorables. Les flashcards bilingues ajoutent une couche de seconde langue sans diluer la science, c'est pourquoi le format continue de fonctionner pour les classes ESL, les clubs de langues et les configurations d'école à la maison bilingues. Utilisez les prompts ci-dessus comme points de départ ; échangez le fait, la langue ou le style d'illustration pour tout sujet du programme.",
+      "title": "Cartes flash de science : modèles de prompts AI qui stimulent l'engagement en classe",
+      "metaDescription": "Cartes flash de science que les élèves regardent réellement — accroches de faits étranges, diagrammes rendus par AI, modèles d'anatomie + chimie + biologie prêts pour la classe. Prompts Curify gratuits à l'intérieur."
     },
     "mbiRelationshipStyleVisualizer": {
       "title": "MBTI Relationship & Style Visualizer : Génération d'esthétiques de couple et d'analyses de tenues",
@@ -4733,8 +4733,6 @@
       "curifyContent": "Le modèle en quatre étapes ci-dessus n'est pas théorique. La pile Curify Studio le livre de bout en bout, et une agence peut l'utiliser comme un backend en marque blanche :\n\n- **Récupération.** Les profils de l'espace de travail capturent les spécifications de marque de chaque client une fois et alimentent chaque étape en aval. Deux bibliothèques de modèles sélectionnés — `template-marketing` pour les formats de campagne et [`template-mbti`](/topics/character) pour les variations segmentées par audience — fournissent une structure sans brief.\n- **Filtrage.** 172 modèles de prompt paramétrés avec des entrées typées à travers [/nano-template](/nano-template) gardent chaque rendu validé par un schéma. Le modèle ne voit jamais un prompt libre ; l'agence ne voit jamais une erreur d'analyse.\n- **Évaluation.** Une couche de rendu sans tête décline une intention de campagne en 50 variantes adaptées aux plateformes — carré Instagram, vertical Story, paysage LinkedIn, portrait X, le tout en parallèle.\n- **Distribution.** Publication automatique sur Twitter et Facebook sur des créneaux de hash-bucket ; voir [`/tools/video-dubbing`](/tools/video-dubbing) pour le pipeline équivalent de doublage et de distribution sur vidéo.\n\nPour une agence, l'avantage réside dans la couche en marque blanche. Le client se connecte à un tableau de bord de marque d'agence ; l'agence exécute le pipeline de Curify en arrière-plan ; la ligne de personnel sur le P&L cesse de croître avec le nombre de clients.\n\n<img src=\"https://cdn.curify-ai.com/images/ai-content-factory-timeline.jpg\" alt=\"Chronologie de l'évolution des agences de marketing — de la livraison basée sur le personnel aux pipelines pilotés par l'IA, 2010 à 2028\" class=\"my-4 mx-auto max-w-md rounded-lg shadow-md\" />\n\n[Voir le playbook des agences de croissance →](/use-cases/for-marketers)"
     },
     "bilingual-ai-flashcards-early-childhood-education": {
-      "title": "Cartes flash bilingues IA pour la petite enfance : des modèles qui restent vraiment en mémoire à 2-5 ans",
-      "metaDescription": "Les tout-petits apprennent le vocabulaire plus rapidement lorsqu'un nouveau mot arrive avec une image mémorable. Ce guide explore les modèles de cartes flash Nano Banana qui produisent des familles de cartes cohérentes, les sujets qui se retiennent à 2-5 ans, et les modèles d'invite qui échouent avec les jeunes publics.",
       "seoKeywords": [
         "cartes flash bilingues",
         "cartes flash IA enfants",
@@ -4777,7 +4775,9 @@
       "bestPracticesTitle": "Erreurs courantes à éviter",
       "bestPracticesContent": "**Illustrations encombrées** : L'IA a tendance à ajouter des détails d'arrière-plan (nuages, herbe, un petit oiseau). Pour les âges de 2 à 3 ans, retirez-les. Le sujet est la carte.\n\n**Mignon plutôt que clair** : Un renard stylisé avec cinq queues est adorable mais n'enseigne pas le mot « renard ». Privilégiez d'abord la reconnaissance, ensuite le mignon.\n\n**Direction artistique d'ensemble incohérente** : Mélanger le photoréalisme avec le style cel-shadé au milieu d'un ensemble brise la cohésion familiale. Régénérez toute carte qui a dérivé.\n\n**Personnage unique récurrent** : Évitez de mettre le même enfant de dessin animé sur chaque carte — l'enfant généralise « c'est le garçon des cartes » au lieu d'apprendre les noms. Utilisez des objets/animaux comme sujets ; des personnes uniquement lorsque le sujet est les personnes.\n\n**Sauter la langue de la maison** : Incluez toujours les deux langues sur la carte même si l'enfant semble connaître le mot dans la langue de la maison. La paire est l'objectif.",
       "conclusionTitle": "Construisez le premier sujet, puis arrêtez",
-      "conclusionContent": "La plus grande erreur est de générer 200 cartes avant de tester une seule. Commencez par un seul sujet de 12 cartes, imprimez-le, utilisez-le avec l'enfant pendant deux semaines, puis itérez. Les cartes que l'enfant adore vous indiquent quelle direction artistique fonctionne pour *votre* enfant ; construisez le prochain sujet autour de cela.\n\nGénérez, imprimez, itérez — dans cet ordre. L'IA fait le travail de production ; le parent fait toujours l'enseignement."
+      "conclusionContent": "La plus grande erreur est de générer 200 cartes avant de tester une seule. Commencez par un seul sujet de 12 cartes, imprimez-le, utilisez-le avec l'enfant pendant deux semaines, puis itérez. Les cartes que l'enfant adore vous indiquent quelle direction artistique fonctionne pour *votre* enfant ; construisez le prochain sujet autour de cela.\n\nGénérez, imprimez, itérez — dans cet ordre. L'IA fait le travail de production ; le parent fait toujours l'enseignement.",
+      "title": "Cartes flash pour enfants : modèles de vocabulaire bilingue AI pour les 2-5 ans",
+      "metaDescription": "Cartes flash pour enfants — modèles bilingues AI pour les 2-5 ans. Cartes de vocabulaire visuel, cartes flash d'animaux, ensembles d'essentiels quotidiens. Modèles que les parents et les enseignants de maternelle impriment et utilisent réellement."
     },
     "aifacelesschannelpipeline": {
       "title": "Pipeline de chaîne sans visage IA : Le flux de travail réel derrière 5-10 vidéos par semaine",

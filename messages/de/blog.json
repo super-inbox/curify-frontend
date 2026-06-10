@@ -890,7 +890,6 @@
       "metaDescription": "Einblick in die KI-Lip-Sync-Pipeline: wie MuseTalk und Sync.co Gesichtsanimationen handhaben, wo sie scheitern und was nötig ist, um Lip Sync an echte Benutzer auszuliefern."
     },
     "visualLearningTools": {
-      "title": "Visuelle Lernwerkzeuge: Wie Schüler, Eltern und Lehrer die Bildung transformieren können",
       "publishedDate": "1. April 2026",
       "readTime": "10 Minuten Lesezeit",
       "category": "Lernwerkzeuge",
@@ -1167,13 +1166,14 @@
           ]
         }
       },
-      "metaDescription": "Das visuelle Lern-KI-Toolkit, das Schüler, Eltern und Lehrer tatsächlich annehmen – Flashcards, Dialoge, Infografiken und die Aufforderungen hinter jedem einzelnen.",
       "seoKeywords": [
         "visuelle Lernwerkzeuge",
         "KI-Bildung",
         "KI-Flashcards",
         "KI für Lehrer"
-      ]
+      ],
+      "title": "Visuelles Lernen: KI-Tools, Flashkarten und Infografiken für moderne Klassenzimmer",
+      "metaDescription": "Visuelles Lernen mit KI — Flashkarten, Infografiken und promptbereite Vorlagen, die Schülern helfen, Materialien schneller zu erfassen. Werkzeuge für Eltern, Lehrer und Selbstlerner. Kostenlose Curify-Vorlagen enthalten."
     },
     "bestAiTools": {
       "title": "Die besten KI-Tools für Video-Content-Ersteller im Jahr 2026: Descript vs ElevenLabs vs Runway",
@@ -3776,9 +3776,7 @@
       "metaDescription": "3x3 Raster Collage Prompts, die tatsächlich funktionieren — generieren Sie Raster mit junger Frau im Winterwald, saisonalen Ästhetiken und digitalen Hintergründen mit Nano Banana. Meistern Sie Rasterlayouts und Seitenverhältnisse in Minuten."
     },
     "weirdScienceFactsClassroomEngagement": {
-      "title": "Visualisierung seltsamer Wissenschaftsfakten: KI-Prompt-Vorlagen für das Klassenzimmer",
       "slug": "seltsame-wissenschaftsfakten-klassenzimmer-engagement",
-      "metaDescription": "Verwandeln Sie seltsame Wissenschaftsfakten in ansprechende zweisprachige KI-Flashcards für das Lernen im Klassenzimmer. Perfekte Vorlagen für visuelle Bildung, die Schüler fesseln und das Behalten fördern.",
       "date": "4. Mai 2026",
       "readTime": "10 Minuten Lesezeit",
       "whatIsTitle": "Was macht Wissenschaftsfakten \"seltsam\" und einprägsam?",
@@ -3815,7 +3813,9 @@
       "ctaDescription": "Zugriff auf unsere zweisprachige Wissenschaftsvorlagenbibliothek und beginnen Sie noch heute mit der Erstellung ansprechender Bildungsinhalte.",
       "ctaButton": "Wissenschaftsvorlagen durchsuchen",
       "intro": "Der schnellste Weg, um eine Klasse zu fesseln, ist kein Unterrichtsplan – es ist ein Oktopus mit drei Herzen oder Diamantenregen auf Jupiter. Dieser Leitfaden verwandelt die am meisten teilbaren 'seltsamen Wissenschafts'-Fakten in zweisprachige KI-Flashcards, die Ihre Schüler sich tatsächlich merken werden. Vier Beispiel-Fakten unten – Jupiter-Diamanten, dreihärtiger Oktopus, Honig, der nie verdirbt, Blitz, der heißer ist als die Sonne – jeweils mit dem genauen Prompt zur Erstellung der Flashcard in Englisch plus einer zweiten Sprache.",
-      "conclusionContent": "Seltsame Wissenschaftsfakten funktionieren im Klassenzimmer, weil sie Erwartungen verletzen – und die Verletzung ist es, die sie einprägsam macht. Zweisprachige Flashcards fügen eine zweite Sprachebene hinzu, ohne die Wissenschaft zu verwässern, weshalb das Format in ESL-Klassen, Sprachclubs und zweisprachigen Homeschool-Setups weiterhin funktioniert. Verwenden Sie die oben genannten Prompts als Ausgangspunkt; tauschen Sie die Tatsache, die Sprache oder den Illustrationsstil für jedes Thema im Lehrplan aus."
+      "conclusionContent": "Seltsame Wissenschaftsfakten funktionieren im Klassenzimmer, weil sie Erwartungen verletzen – und die Verletzung ist es, die sie einprägsam macht. Zweisprachige Flashcards fügen eine zweite Sprachebene hinzu, ohne die Wissenschaft zu verwässern, weshalb das Format in ESL-Klassen, Sprachclubs und zweisprachigen Homeschool-Setups weiterhin funktioniert. Verwenden Sie die oben genannten Prompts als Ausgangspunkt; tauschen Sie die Tatsache, die Sprache oder den Illustrationsstil für jedes Thema im Lehrplan aus.",
+      "title": "Wissenschafts-Flashkarten: KI-Prompt-Vorlagen, die das Engagement im Klassenzimmer anregen",
+      "metaDescription": "Wissenschafts-Flashkarten, die Schüler tatsächlich ansehen — seltsame Fakten, KI-erstellte Diagramme, Anatomie + Chemie + Biologie-Vorlagen bereit für das Klassenzimmer. Kostenlose Curify-Prompts enthalten."
     },
     "mbiRelationshipStyleVisualizer": {
       "title": "MBTI-Beziehungs- & Stilvisualisierer: Erstellung von Paarästhetiken und Outfit-Analysen",
@@ -4735,8 +4735,6 @@
       "curifyContent": "Das oben dargestellte vierstufige Muster ist nicht theoretisch. Der Curify Studio-Stack liefert es von Anfang bis Ende, und eine Agentur kann es als White-Label-Backend nutzen:\n\n- **Abruf.** Arbeitsbereich-Profile erfassen die Markenspezifikationen jedes Kunden einmal und speisen jede nachgelagerte Phase. Zwei kuratierte Vorlagenbibliotheken — `template-marketing` für Kampagnenformate und [`template-mbti`](/topics/character) für publikumssegmentierte Variationen — bieten Struktur ohne Briefing.\n- **Filterung.** 172 parametrische Eingabevorlagen mit typisierten Eingaben über [/nano-template](/nano-template) halten jedes Rendering schema-validiert. Das Modell sieht niemals eine Freitextaufforderung; die Agentur sieht niemals einen Parsing-Fehler.\n- **Bewertung.** Eine kopflose Rendering-Schicht entfaltet eine Kampagnenabsicht in 50 plattformgerechte Varianten — Instagram quadratisch, Story vertikal, LinkedIn quer, X hochformatig, alles parallel.\n- **Bereitstellung.** Automatisches Veröffentlichen auf Twitter und Facebook in hash-bucketed Slots; siehe [`/tools/video-dubbing`](/tools/video-dubbing) für die entsprechende Dub-and-Distribute-Pipeline für Videos.\n\nFür eine Agentur liegt der Hebel in der White-Label-Schicht. Der Kunde loggt sich in ein agenturmarkiertes Dashboard ein; die Agentur betreibt Curifys Pipeline im Hintergrund; die Personalzeile in der Gewinn- und Verlustrechnung hört auf zu wachsen, wenn die Kundenzahl steigt.\n\n<img src=\"https://cdn.curify-ai.com/images/ai-content-factory-timeline.jpg\" alt=\"Marketing-Agentur-Evolutionstimeline — von der personalbasierten Lieferung zu KI-gesteuerten Pipelines, 2010 bis 2028\" class=\"my-4 mx-auto max-w-md rounded-lg shadow-md\" />\n\n[Siehe das Growth Agencies Playbook →](/use-cases/for-marketers)"
     },
     "bilingual-ai-flashcards-early-childhood-education": {
-      "title": "Bilinguale KI-Flashcards für die frühe Kindheit: Vorlagen, die tatsächlich bei 2-5 Jahren haften bleiben",
-      "metaDescription": "Kleinkinder lernen Vokabeln am schnellsten, wenn ein neues Wort mit einem einprägsamen Bild einhergeht. Dieser Leitfaden behandelt die Nano Banana Flashcard-Vorlagen, die konsistente Kartenfamilien erzeugen, die Themen, die bei 2-5 Jahren haften bleiben, und die Prompt-Muster, die bei jungen Zielgruppen scheitern.",
       "seoKeywords": [
         "bilinguale flashcards",
         "KI flashcards kinder",
@@ -4779,7 +4777,9 @@
       "bestPracticesTitle": "Häufige Fehler, die zu vermeiden sind",
       "bestPracticesContent": "**Überladene Illustrationen**: KI neigt dazu, Hintergrunddetails hinzuzufügen (Wolken, Gras, ein kleiner Vogel). Für Kinder im Alter von 2-3 Jahren sollten diese entfernt werden. Das Subjekt ist die Karte.\n\n**Niedlich über klar**: Ein stilisierter Fuchs mit fünf Schwänzen ist niedlich, lehrt aber nicht „Fuchs“. Standardmäßig zuerst erkennbar, zweitens niedlich.\n\n**Inkonsistente künstlerische Leitung des Sets**: Das Mischen von fotorealistisch mit cel-shaded in der Mitte des Sets bricht das Familiengefühl. Regeneriere jede Karte, die abgedriftet ist.\n\n**Wiederkehrende Einzelcharaktere**: Vermeide es, dass dasselbe Cartoon-Kind auf jeder Karte erscheint – das Kind verallgemeinert „das ist der Junge von den Karten“, anstatt die Substantive zu lernen. Verwende Objekte/Tiere als Subjekte; Menschen nur, wenn das Thema Menschen ist.\n\n**Überspringen der Haushaltsprache**: Immer beide Sprachen auf der Karte einfügen, auch wenn das Kind scheint, das Wort in der Haushaltsprache zu kennen. Das Paar ist der Punkt.",
       "conclusionTitle": "Baue das erste Thema, dann stoppe",
-      "conclusionContent": "Der größte Fehler ist, 200 Karten zu generieren, bevor man eine testet. Beginne mit einem einzigen 12-Karten-Thema, drucke es, arbeite zwei Wochen mit dem Kind daran und iteriere dann. Die Karten, die das Kind liebt, zeigen dir, welche künstlerische Richtung für *dein* Kind funktioniert; baue das nächste Thema darum herum.\n\nGeneriere, drucke, iteriere – in dieser Reihenfolge. Die KI erledigt die Produktionsarbeit; die Eltern unterrichten weiterhin."
+      "conclusionContent": "Der größte Fehler ist, 200 Karten zu generieren, bevor man eine testet. Beginne mit einem einzigen 12-Karten-Thema, drucke es, arbeite zwei Wochen mit dem Kind daran und iteriere dann. Die Karten, die das Kind liebt, zeigen dir, welche künstlerische Richtung für *dein* Kind funktioniert; baue das nächste Thema darum herum.\n\nGeneriere, drucke, iteriere – in dieser Reihenfolge. Die KI erledigt die Produktionsarbeit; die Eltern unterrichten weiterhin.",
+      "title": "Flashkarten für Kinder: KI-bilinguale Vorlagen für den Wortschatz von 2-5 Jahren",
+      "metaDescription": "Flashkarten für Kinder — bilinguale KI-Vorlagen für 2-5 Jahre. Visuelle Vokabelkarten, Tierflashkarten, Sets für den täglichen Bedarf. Vorlagen, die Eltern und Vorschullehrer tatsächlich drucken und verwenden."
     },
     "aifacelesschannelpipeline": {
       "title": "AI Faceless Channel Pipeline: Der tatsächliche Workflow hinter 5-10 Videos pro Woche",

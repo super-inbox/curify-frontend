@@ -888,7 +888,6 @@
       "metaDescription": "Dentro del pipeline de sincronización labial con IA: cómo MuseTalk y Sync.co manejan la animación facial, dónde fallan y qué se necesita para enviar sincronización labial a usuarios reales."
     },
     "visualLearningTools": {
-      "title": "Herramientas de Aprendizaje Visual: Cómo Estudiantes, Padres y Maestros Pueden Transformar la Educación",
       "publishedDate": "1 de abril de 2026",
       "readTime": "10 min de lectura",
       "category": "Herramientas de Aprendizaje",
@@ -1165,13 +1164,14 @@
           ]
         }
       },
-      "metaDescription": "El kit de herramientas de IA para el aprendizaje visual que realmente adoptan estudiantes, padres y maestros: tarjetas didácticas, diálogos, infografías y los prompts detrás de cada uno.",
       "seoKeywords": [
         "herramientas de aprendizaje visual",
         "educación IA",
         "tarjetas didácticas IA",
         "IA para maestros"
-      ]
+      ],
+      "title": "Aprendizaje Visual: Herramientas de IA, Tarjetas Didácticas e Infografías para Aulas Modernas",
+      "metaDescription": "Aprendizaje visual con IA: tarjetas didácticas, infografías y plantillas listas para prompts que ayudan a los estudiantes a absorber el material más rápido. Herramientas para padres, maestros y autodidactas. Plantillas gratuitas de Curify incluidas."
     },
     "bestAiTools": {
       "title": "Mejores herramientas de IA para creadores de contenido en video en 2026: Descript vs ElevenLabs vs Runway",
@@ -3774,9 +3774,7 @@
       "metaDescription": "Prompts de collage en cuadrícula 3x3 que realmente funcionan — genera cuadrículas de mujer joven en un bosque invernal, estéticas estacionales y fondos de pantalla digitales con Nano Banana. Domina los diseños de cuadrícula y las proporciones en minutos."
     },
     "weirdScienceFactsClassroomEngagement": {
-      "title": "Visualizando Datos Científicos Raros: Plantillas de Prompts de IA para la Participación en el Aula",
       "slug": "visualizando-datos-cientificos-raros-participacion-en-el-aula",
-      "metaDescription": "Transforma datos científicos raros en tarjetas didácticas bilingües atractivas para el aprendizaje en el aula. Plantillas perfectas para educación visual que cautivan a los estudiantes y mejoran la retención.",
       "date": "4 de mayo de 2026",
       "readTime": "10 min de lectura",
       "whatIsTitle": "¿Qué Hace que los Datos Científicos Sean \"Extraños\" y Memorables?",
@@ -3813,7 +3811,9 @@
       "ctaDescription": "Accede a nuestra biblioteca de plantillas de ciencia bilingües y comienza a crear contenido educativo atractivo hoy.",
       "ctaButton": "Explorar Plantillas de Ciencia",
       "intro": "La forma más rápida de captar la atención de un aula no es un plan de lección: es un pulpo con tres corazones o lluvia de diamantes en Júpiter. Esta guía convierte los hechos de 'ciencia extraña' más compartibles en tarjetas didácticas bilingües que tus estudiantes realmente recordarán. Cuatro hechos de muestra a continuación: diamantes de Júpiter, pulpo de tres corazones, miel que nunca se echa a perder, relámpago más caliente que el sol, cada uno con el prompt exacto para generar la tarjeta didáctica en inglés más un segundo idioma.",
-      "conclusionContent": "Los hechos de ciencia extraña funcionan en el aula porque violan expectativas, y la violación es lo que los hace memorables. Las tarjetas didácticas bilingües añaden una capa de segundo idioma sin diluir la ciencia, por lo que el formato sigue funcionando para aulas ESL, clubes de idiomas y configuraciones de educación en casa bilingües. Usa los prompts anteriores como iniciadores; intercambia el hecho, el idioma o el estilo de ilustración para cualquier tema del currículo."
+      "conclusionContent": "Los hechos de ciencia extraña funcionan en el aula porque violan expectativas, y la violación es lo que los hace memorables. Las tarjetas didácticas bilingües añaden una capa de segundo idioma sin diluir la ciencia, por lo que el formato sigue funcionando para aulas ESL, clubes de idiomas y configuraciones de educación en casa bilingües. Usa los prompts anteriores como iniciadores; intercambia el hecho, el idioma o el estilo de ilustración para cualquier tema del currículo.",
+      "title": "Tarjetas Didácticas de Ciencia: Plantillas de Prompts de IA que Fomentan la Participación en el Aula",
+      "metaDescription": "Tarjetas didácticas de ciencia que los estudiantes realmente miran: ganchos de datos extraños, diagramas generados por IA, plantillas de anatomía + química + biología listas para el aula. Prompts gratuitos de Curify incluidos."
     },
     "mbiRelationshipStyleVisualizer": {
       "title": "Visualizador de Relaciones y Estilo MBTI: Generando Estéticas de Pareja y Desglose de Atuendos",
@@ -4733,8 +4733,6 @@
       "curifyContent": "El patrón de cuatro etapas anterior no es teórico. La pila de Curify Studio lo entrega de extremo a extremo, y una agencia puede usarlo como un backend de etiqueta blanca:\n\n- **Recuperación.** Los Perfiles de Espacio de Trabajo capturan las especificaciones de marca de cada cliente una vez y alimentan cada etapa posterior. Dos bibliotecas de plantillas curadas — `template-marketing` para formatos de campaña y [`template-mbti`](/topics/character) para variaciones segmentadas por audiencia — proporcionan estructura sin un brief.\n- **Filtrado.** 172 plantillas de prompts parametrizadas con entradas tipadas a través de [/nano-template](/nano-template) mantienen cada renderización validada por esquema. El modelo nunca ve un prompt en formato libre; la agencia nunca ve un error de análisis.\n- **Puntuación.** Una capa de renderización sin cabeza expande una intención de campaña en 50 variantes del tamaño de plataformas — cuadrado de Instagram, vertical de Story, paisaje de LinkedIn, retrato de X, todo en paralelo.\n- **Servicio.** Publicación automática en Twitter y Facebook en espacios de hash-bucket; consulta [`/tools/video-dubbing`](/tools/video-dubbing) para el equivalente pipeline de doblaje y distribución en video.\n\nPara una agencia, la ventaja está en la capa de etiqueta blanca. El cliente inicia sesión en un panel de control de marca de agencia; la agencia ejecuta el pipeline de Curify por debajo; la línea de personal en el P&L deja de crecer con el número de clientes.\n\n<img src=\"https://cdn.curify-ai.com/images/ai-content-factory-timeline.jpg\" alt=\"Línea de tiempo de evolución de la agencia de marketing — de la entrega basada en personal a pipelines impulsados por IA, 2010 a 2028\" class=\"my-4 mx-auto max-w-md rounded-lg shadow-md\" />\n\n[Ver el manual de Agencias de Crecimiento →](/use-cases/for-marketers)"
     },
     "bilingual-ai-flashcards-early-childhood-education": {
-      "title": "Tarjetas Didácticas Bilingües de IA para la Primera Infancia: Plantillas que Realmente se Quedan en Edades de 2 a 5",
-      "metaDescription": "Los niños pequeños aprenden vocabulario más rápido cuando una nueva palabra llega con una imagen memorable. Esta guía recorre las plantillas de tarjetas didácticas de Nano Banana que producen familias de tarjetas consistentes, los temas que retienen a edades de 2 a 5, y los patrones de aviso que fallan con audiencias jóvenes.",
       "seoKeywords": [
         "tarjetas didácticas bilingües",
         "tarjetas didácticas de IA para niños",
@@ -4777,7 +4775,9 @@
       "bestPracticesTitle": "Errores Comunes Que Evitar",
       "bestPracticesContent": "**Ilustraciones desordenadas**: La IA tiende a agregar detalles de fondo (nubes, hierba, un pequeño pájaro). Para edades de 2 a 3, elimínalos. El sujeto es la tarjeta.\n\n**Lindo sobre claro**: Un zorro estilizado con cinco colas es adorable, pero no enseña \"zorro\". Predetermina lo reconocible primero, lo lindo segundo.\n\n**Dirección artística de conjunto inconsistente**: Mezclar fotorealismo con cel-shading a mitad de conjunto rompe la sensación familiar. Regenera cualquier tarjeta que se desvíe.\n\n**Personaje único recurrente**: Evita poner al mismo niño de dibujos animados en cada tarjeta: el niño generaliza \"ese es el chico de las tarjetas\" en lugar de aprender los sustantivos. Usa objetos/animales como sujetos; personas solo cuando el tema son personas.\n\n**Saltar el idioma del hogar**: Siempre incluye ambos idiomas en la tarjeta, incluso si el niño parece conocer la palabra en el idioma del hogar. La pareja es el objetivo.",
       "conclusionTitle": "Construye El Primer Tema, Luego Detente",
-      "conclusionContent": "El mayor error es generar 200 tarjetas antes de probar una. Comienza con un solo tema de 12 tarjetas, imprímelo, úsalo con el niño durante dos semanas y luego itera. Las tarjetas que al niño le encantan te dicen qué dirección artística funciona para *tu* hijo; construye el siguiente tema alrededor de eso.\n\nGenera, imprime, itera: en ese orden. La IA hace el trabajo de producción; el padre sigue haciendo la enseñanza."
+      "conclusionContent": "El mayor error es generar 200 tarjetas antes de probar una. Comienza con un solo tema de 12 tarjetas, imprímelo, úsalo con el niño durante dos semanas y luego itera. Las tarjetas que al niño le encantan te dicen qué dirección artística funciona para *tu* hijo; construye el siguiente tema alrededor de eso.\n\nGenera, imprime, itera: en ese orden. La IA hace el trabajo de producción; el padre sigue haciendo la enseñanza.",
+      "title": "Tarjetas Didácticas para Niños: Plantillas de Vocabulario Bilingüe con IA para Edades de 2 a 5 Años",
+      "metaDescription": "Tarjetas didácticas para niños: plantillas bilingües de IA para edades de 2 a 5 años. Tarjetas visuales de vocabulario, tarjetas de animales, conjuntos de elementos esenciales diarios. Plantillas que los padres y maestros de preescolar realmente imprimen y utilizan."
     },
     "aifacelesschannelpipeline": {
       "title": "Canal Sin Rostro de IA: El Flujo de Trabajo Real Detrás de 5-10 Videos a la Semana",

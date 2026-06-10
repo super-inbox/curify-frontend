@@ -1104,7 +1104,6 @@
       "metaDescription": "AI dudak senkronizasyonu hattının içi: MuseTalk ve Sync.co'nun yüz animasyonunu nasıl yönettiği, nerelerde sorun yaşadığı ve dudak senkronizasyonunu gerçek kullanıcılara göndermek için nelerin gerektiği."
     },
     "visualLearningTools": {
-      "title": "Görsel Öğrenme Araçları: Öğrencilerin, Ebeveynlerin ve Öğretmenlerin Eğitimi Dönüştürmesi",
       "publishedDate": "1 Nisan 2026",
       "readTime": "10 dakika okuma",
       "category": "Öğrenme Araçları",
@@ -1381,13 +1380,14 @@
           ]
         }
       },
-      "metaDescription": "Öğrencilerin, ebeveynlerin ve öğretmenlerin gerçekten benimsediği görsel öğrenme AI araç seti — flash kartlar, diyaloglar, infografikler ve her birinin arkasındaki ipuçları.",
       "seoKeywords": [
         "görsel öğrenme araçları",
         "AI eğitimi",
         "AI flash kartlar",
         "öğretmenler için AI"
-      ]
+      ],
+      "title": "Görsel Öğrenme: Modern Sınıflar için AI Araçları, Flash Kartlar ve Bilgi Grafikleri",
+      "metaDescription": "AI ile görsel öğrenme — öğrencilerin materyali daha hızlı kavramalarına yardımcı olan flash kartlar, bilgi grafikleri ve isteme hazır şablonlar. Ebeveynler, öğretmenler ve kendi kendine öğrenenler için araçlar. Ücretsiz Curify şablonları içerir."
     },
     "bestAiTools": {
       "title": "2026'da Video İçerik Üreticileri için En İyi AI Araçları: Descript vs ElevenLabs vs Runway",
@@ -3435,9 +3435,7 @@
       "metaDescription": "Gerçekten çalışan 3x3 kafes kolaj ipuçları — genç-kadın-kış-ormanı kafesleri, mevsimsel estetikler ve Nano Banana ile dijital duvar kağıtları oluşturun. Kafes düzenlerini ve en-boy oranlarını dakikalar içinde ustalaşın."
     },
     "weirdScienceFactsClassroomEngagement": {
-      "title": "Garip Bilim Gerçeklerini Görselleştirmek: Sınıf Katılımı için AI İstem Şablonları",
       "slug": "garip-bilim-gercekleri-sinif-katilimi",
-      "metaDescription": "Garip bilim gerçeklerini, sınıf öğrenimi için etkileyici iki dilli AI kartlarına dönüştürün. Öğrencileri etkileyen ve kalıcılığı artıran görsel eğitim için mükemmel şablonlar.",
       "date": "4 Mayıs 2026",
       "readTime": "10 dk okuma",
       "whatIsTitle": "Bilim Gerçeklerini \"Garip\" ve Unutulmaz Kılan Nedir?",
@@ -3474,7 +3472,9 @@
       "ctaDescription": "İki dilli bilim şablon kütüphanemize erişin ve bugün ilgi çekici eğitim içeriği oluşturmaya başlayın.",
       "ctaButton": "Bilim Şablonlarını Göz At",
       "intro": "Bir sınıfı etkilemenin en hızlı yolu bir ders planı değildir - üç kalbi olan bir ahtapot veya Jüpiter'deki elmas yağmuru. Bu kılavuz, en paylaşılabilir 'garip bilim' gerçeklerini, öğrencilerinizin gerçekten hatırlayacağı iki dilli AI kartlara dönüştürüyor. Aşağıda dört örnek gerçek - Jüpiter elmasları, üç kalpli ahtapot, asla bozulmayan bal, güneşten daha sıcak yıldırım - her biri İngilizce ve bir ikinci dilde kart oluşturmak için tam istem ile.",
-      "conclusionContent": "Garip bilim gerçekleri sınıfta işe yarar çünkü beklentileri ihlal eder - ve ihlal, onları akılda tutan şeydir. İki dilli kartlar, bilimi sulandırmadan ikinci bir dil katmanı ekler, bu nedenle format ESL sınıfları, dil kulüpleri ve iki dilli ev okulu düzenleri için işe yarar. Yukarıdaki istemleri başlangıç noktası olarak kullanın; gerçeği, dili veya illüstrasyon stilini müfredattaki herhangi bir konu için değiştirin."
+      "conclusionContent": "Garip bilim gerçekleri sınıfta işe yarar çünkü beklentileri ihlal eder - ve ihlal, onları akılda tutan şeydir. İki dilli kartlar, bilimi sulandırmadan ikinci bir dil katmanı ekler, bu nedenle format ESL sınıfları, dil kulüpleri ve iki dilli ev okulu düzenleri için işe yarar. Yukarıdaki istemleri başlangıç noktası olarak kullanın; gerçeği, dili veya illüstrasyon stilini müfredattaki herhangi bir konu için değiştirin.",
+      "title": "Bilim Flash Kartları: Sınıf Katılımını Artıran AI İstem Şablonları",
+      "metaDescription": "Öğrencilerin gerçekten baktığı bilim flash kartları — ilginç bilgiler, AI ile oluşturulmuş diyagramlar, sınıfa hazır anatomi + kimya + biyoloji şablonları. Ücretsiz Curify istemleri içerir."
     },
     "mbiRelationshipStyleVisualizer": {
       "title": "MBTI İlişki & Stil Görselleştirici: Çift Estetikleri ve Kıyafet Analizleri Oluşturma",
@@ -4733,8 +4733,6 @@
       "curifyContent": "Yukarıdaki dört aşamalı model teorik değildir. Curify Studio yığını bunu uçtan uca sunar ve bir ajans bunu beyaz etiketli bir arka uç olarak kullanabilir:\n\n- **Alım.** Çalışma Profilleri, her müşterinin marka spesifikasyonlarını bir kez yakalar ve her aşağı akış aşamasına besler. Kampanya formatları için `template-marketing` ve hedef kitleye göre varyasyonlar için [`template-mbti`](/topics/character) olmak üzere iki küratörlü şablon kütüphanesi, bir brifinge ihtiyaç duymadan yapı sağlar.\n- **Filtreleme.** [/nano-template](/nano-template) üzerinden yazılı girdilerle 172 parametreli istem şablonu, her render'ın şema doğrulamasını sağlar. Model asla serbest biçimli bir istem görmez; ajans asla bir ayrıştırma hatası görmez.\n- **Puanlama.** Başsız bir render katmanı, bir kampanya niyetini 50 platform boyutunda varyanta dönüştürür — Instagram kare, Hikaye dikey, LinkedIn yatay, X portre, hepsi paralel olarak.\n- **Hizmet Verme.** Hash-bucketed slotlarda Twitter ve Facebook'a otomatik yayınlama; video için eşdeğer dublaj ve dağıtım hattı için [`/tools/video-dubbing`](/tools/video-dubbing) sayfasına bakın.\n\nBir ajans için avantaj, beyaz etiket katmanındadır. Müşteri, ajans markalı bir kontrol paneline giriş yapar; ajans, Curify'nin hattını arka planda çalıştırır; P&L'deki personel sayısı, müşteri sayısıyla artmayı durdurur.\n\n<img src=\"https://cdn.curify-ai.com/images/ai-content-factory-timeline.jpg\" alt=\"Pazarlama ajansı evrimi zaman çizelgesi — personel sayısına dayalı teslimattan AI destekli hatlara, 2010'dan 2028'e\" class=\"my-4 mx-auto max-w-md rounded-lg shadow-md\" />\n\n[Büyüme Ajansları oyun kitabını görün →](/use-cases/for-marketers)"
     },
     "bilingual-ai-flashcards-early-childhood-education": {
-      "title": "İki Dilli AI Flash Kartları: 2-5 Yaş Arası Çocuklar İçin Gerçekten Kalıcı Şablonlar",
-      "metaDescription": "Küçük çocuklar, yeni bir kelime hatırlanabilir bir resimle geldiğinde en hızlı şekilde kelime dağarcığını öğrenir. Bu kılavuz, tutarlı kart aileleri üreten Nano Banana flash kart şablonlarını, 2-5 yaş arası kalıcı konuları ve genç izleyicilerle başarısız olan istem kalıplarını ele alır.",
       "seoKeywords": [
         "iki dilli flash kartlar",
         "AI flash kartları çocuklar",
@@ -4777,7 +4775,9 @@
       "bestPracticesTitle": "Kaçınılması Gereken Yaygın Hatalar",
       "bestPracticesContent": "**Dağınık illüstrasyonlar**: AI arka plan detayları (bulutlar, otlar, küçük bir kuş) eklemeye eğilimlidir. 2-3 yaş için bunları çıkarın. Konu karttır.\n\n**Sevimli yerine net**: Beş kuyruğu olan stilize bir tilki sevimlidir ama \"tilki\"yi öğretmez. Tanınabilir olanı önce varsayın, sevimli olanı ikinci sıraya koyun.\n\n**Tutarsız set sanat yönelimi**: Fotoğraf gerçekçiliği ile hücre gölgelendirilmiş ortalar karıştırmak aile hissini bozar. Drift eden herhangi bir kartı yeniden üretin.\n\n**Tek karakterin tekrarı**: Her kartta aynı çizgi film çocuğunu koymaktan kaçının — çocuk \"kartlardaki çocuk o\" diye genelleştirir, isimleri öğrenmek yerine. Konu insanlar olduğunda insanlar, diğer durumlarda nesneler/hayvanlar kullanın.\n\n**Ev dili atlamak**: Çocuk ev dili kelimesini bildiği görünse bile kartta her iki dili de dahil edin. Çift, önemli olan budur.",
       "conclusionTitle": "İlk Konuyu Oluşturun, Sonra Durdurun",
-      "conclusionContent": "En büyük hata 200 kart üretmek ve birini test etmemektir. Tek bir 12 kartlık konuyla başlayın, yazdırın, çocukla iki hafta boyunca uygulayın, sonra yineleyin. Çocuğun sevdiği kartlar, *sizin* çocuğunuz için hangi sanat yöneliminin işe yaradığını gösterir; bir sonraki konuyu bunun etrafında inşa edin.\n\nÜretin, yazdırın, yineleyin — bu sırayla. AI üretim işini yapar; ebeveyn hala öğretim yapar."
+      "conclusionContent": "En büyük hata 200 kart üretmek ve birini test etmemektir. Tek bir 12 kartlık konuyla başlayın, yazdırın, çocukla iki hafta boyunca uygulayın, sonra yineleyin. Çocuğun sevdiği kartlar, *sizin* çocuğunuz için hangi sanat yöneliminin işe yaradığını gösterir; bir sonraki konuyu bunun etrafında inşa edin.\n\nÜretin, yazdırın, yineleyin — bu sırayla. AI üretim işini yapar; ebeveyn hala öğretim yapar.",
+      "title": "Çocuklar için Flash Kartlar: 2-5 Yaş Arası AI İki Dilli Kelime Şablonları",
+      "metaDescription": "Çocuklar için flash kartlar — 2-5 yaş arası iki dilli AI şablonları. Görsel kelime kartları, hayvan flash kartları, günlük ihtiyaç setleri. Ebeveynlerin ve anaokulu öğretmenlerinin gerçekten basıp kullandığı şablonlar."
     },
     "aifacelesschannelpipeline": {
       "title": "AI Yüzsüz Kanal Pipeline: Haftada 5-10 Video Arkasındaki Gerçek İş Akışı",
