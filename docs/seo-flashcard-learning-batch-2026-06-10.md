@@ -83,25 +83,25 @@ Three existing posts roughly align with bleeder queries — retitle to capture h
 
 ## Execution log
 
-### Tier 1 retitles (in progress 2026-06-10)
+### Tier 1 retitles — SHIPPED 2026-06-10 commit `6e73d5e8`
 
-- [ ] `/blog/visual-learning-tools` — head term "visual learning"
-- [ ] `/blog/bilingual-ai-flashcards-early-childhood-education` — head term "flashcards for kids"
-- [ ] `/blog/weird-science-facts-classroom-engagement` — head term "science flashcards"
-- [ ] 9-locale autotranslate fan-out for 3 × title + meta
-- [ ] Indexing API submit — 3 blogs × 10 locales = 30 URLs
+- [x] `/blog/visual-learning-tools` — title now: "Visual Learning: AI Tools, Flashcards, and Infographics for Modern Classrooms"
+- [x] `/blog/bilingual-ai-flashcards-early-childhood-education` — title now: "Flashcards for Kids: AI Bilingual Vocabulary Templates for Ages 2-5"
+- [x] `/blog/weird-science-facts-classroom-engagement` — title now: "Science Flashcards: AI Prompt Templates That Spark Classroom Engagement"
+- [x] 9-locale autotranslate fan-out (6 keys × 9 locales = 54 translations)
+- [x] Indexing API submit — 30 URLs (3 blogs × 10 locales), 30/30 OK
 
 ### Tier 2 new posts (queued)
 
-- [ ] Phonics flashcards new post (KD 10 🟢🟢, vol 1,000) + register `phonics` tier-3 topic
-- [ ] Animal flashcards new post (KD 17 🟢, vol 390)
-- [ ] Biology + Chemistry flashcards hub (KD 17-20 🟢, combined vol 960)
+- [ ] **Phonics flashcards** new post — task #80 — KD 10 🟢🟢, vol 1,000. **Highest-ROI new post in queue.** Also register `phonics` as a new tier-3 topic (`lib/topicRegistry.ts` + `messages/en/topics.json` + autotranslate).
+- [ ] **Animal flashcards** new post — task #81 — KD 17 🟢, vol 390. Cross-link to `/topics/animals`.
+- [ ] **Biology + Chemistry flashcards hub** — task #82 — KD 17-20 🟢, combined vol 960.
 
 ### Tier 3 / longer-term (backlog)
 
-- [ ] Vocabulary flashcards hub (KD 35 🟡, vol 1,300)
-- [ ] Printable flashcards (KD 28 🟡, vol 1,300) — gate on PDF export feature
-- [ ] Add `phonics` to tier-3 topic registry (`lib/topicRegistry.ts` + `messages/en/topics.json` + 9-locale autotranslate; see `feedback_topic_registration_checklist.md`)
+- [ ] **Vocabulary flashcards hub** — task #83 — KD 35 🟡, vol 1,300 + ~950 long-tail (incl. visual vocab, language flashcards, english flashcards, esl flashcards = ~2,250 combined).
+- [ ] Printable flashcards (KD 28 🟡, vol 1,300) — gate on PDF export feature.
+- [ ] Add `phonics` tier-3 topic registry entry (folded into task #80).
 
 ### Measurement
 

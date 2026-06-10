@@ -4,6 +4,9 @@ export interface NanoGenerateRequest {
   template_id: string;
   params: Record<string, string>;
   example_id: string;
+  // image-to-image: blob_url of the uploaded reference image, for templates
+  // with requires_image_upload. Backend threads it into the Gemini call.
+  reference_image_url?: string;
 }
 
 export interface NanoGenerateResponse {

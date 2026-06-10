@@ -18,6 +18,10 @@ type Options = {
   existingExamples?: ExistingExampleRef[];
   tracking: TrackingTarget;
   onSuccess: (signedUrl: string, exampleId: string) => void;
+  // image-to-image: blob_url of the uploaded reference image. Required for
+  // templates with requires_image_upload — the caller gates Generate on it
+  // and passes it through here so it lands in the generate request.
+  referenceImageUrl?: string;
 };
 
 export function useDirectGenerate({
@@ -26,6 +30,7 @@ export function useDirectGenerate({
   existingExamples = [],
   tracking,
   onSuccess,
+  referenceImageUrl,
 }: Options) {
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
@@ -113,6 +118,7 @@ export function useDirectGenerate({
         template_id: templateId,
         params,
         example_id: exId,
+        ...(referenceImageUrl ? { reference_image_url: referenceImageUrl } : {}),
       });
       if (!res?.success || !res?.signed_url)
         throw new Error(res?.message || "Generation failed");

@@ -3,12 +3,13 @@
 import { useRef, useState } from "react";
 import Icon from "./Icon";
 import { videoService } from "@/services/video";
+import { imageService } from "@/services/image";
 
 // Per-kind whitelists used by the file-picker accept= filter, drag/drop
 // MIME validation, the visible filetype hint, and the error message. The
 // kind comes from the parent (driven by lib/create-job-ui.ts:acceptedKinds),
 // defaults to "video" so existing call sites keep their current behavior.
-type UploadKind = "video" | "audio";
+type UploadKind = "video" | "audio" | "image";
 
 const KIND_SPEC: Record<
   UploadKind,
@@ -40,6 +41,15 @@ const KIND_SPEC: Record<
     ],
     extList: ".mp3,.wav,.m4a,.aac,.flac,.ogg,.webm",
     extLabel: ".mp3/.wav/.m4a/.aac/.flac/.ogg",
+  },
+  image: {
+    mimeTypes: [
+      "image/jpeg",        // .jpg/.jpeg
+      "image/png",
+      "image/webp",
+    ],
+    extList: ".jpg,.jpeg,.png,.webp",
+    extLabel: ".jpg/.png/.webp",
   },
 };
 
@@ -86,10 +96,17 @@ export default function Upload({
     // Notify parent that upload is starting
     onUploadStart?.();
 
-    // Upload in the background
+    // Upload in the background. Image kind goes through the image upload
+    // endpoint (reference image for image-to-image templates) and reports
+    // back (image_id, blob_url); video/audio keep the existing path.
     try {
-      const res = await videoService.uploadVideo(file);
-      onUploaded(res.video_id, res.blob_url, res.thumbnail_signed_url);
+      if (acceptedKinds === "image") {
+        const res = await imageService.uploadImage(file);
+        onUploaded(res.image_id, res.blob_url);
+      } else {
+        const res = await videoService.uploadVideo(file);
+        onUploaded(res.video_id, res.blob_url, res.thumbnail_signed_url);
+      }
     } catch (err) {
       console.error("❌ Upload failed:", err);
       const errorMsg = "Upload failed, please try again.";
@@ -131,7 +148,9 @@ export default function Upload({
           <Icon name="info" />
         </button>
       </div>
-      <p className="text-[var(--c4)] underline">Supported Languages</p>
+      {acceptedKinds !== "image" && (
+        <p className="text-[var(--c4)] underline">Supported Languages</p>
+      )}
 
       <input
         ref={inputRef}
