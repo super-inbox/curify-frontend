@@ -1038,8 +1038,8 @@
       "heroCtaHref": "/nano-banana-pro-prompts",
       "heroCtaButton": "探索 →",
       "seoKeywords": "midjourney与dall-e 3, midjourney与dall-e与stable diffusion, midjourney与nano banana, dall-e 3与midjourney与stable diffusion 2026, midjourney dall-e stable diffusion比较2026, grok imagine与midjourney, midjourney v7, nano banana pro, gemini 3图像, stable diffusion 3.5, gpt图像2, 2026年最佳人工智能图像生成器, 人工智能艺术工具比较, 创作者人工智能工具",
-      "title": "Midjourney 与 Nano Banana Pro 与 Stable Diffusion：2026 年比较",
-      "metaDescription": "Midjourney v7 与 Nano Banana Pro (Google Gemini 3) 与 Stable Diffusion 3.5 — 2026 年 AI 图像模型比较。美学、控制、扎实推理、成本 — 按用例选择。此外还有 DALL-E 3 + Grok Imagine 上下文。"
+      "title": "Midjourney vs DALL-E 3 vs Nano Banana vs Stable Diffusion (2026)",
+      "metaDescription": "Midjourney v7 vs DALL-E 3 vs Nano Banana Pro (Google Gemini 3) vs Stable Diffusion 3.5 — 2026年AI图像模型比较。美学、控制、扎实推理、成本 — 根据用例选择。还有Grok Imagine。"
     },
     "lipSyncBusinessGuide": {
       "title": "AI 唇同步与配音指南：商业应用与工具",
@@ -3738,9 +3738,7 @@
       "finalThought": "如果您的代理仅回答问题，那它就是一个聊天机器人。如果它可靠地执行工作，那它就是一个任务代理。"
     },
     "aiCollageDigitalWallpaperGuide": {
-      "title": "如何生成美学AI拼贴画和数字壁纸：网格提示指南",
       "slug": "ai-collage-digital-wallpaper-guide",
-      "metaDescription": "了解如何使用纳米香蕉提示创建惊艳的3x3网格拼贴画和数字壁纸。掌握网格布局、季节美学和纵横比，以获得完美的数字壁纸。",
       "date": "2026年5月4日",
       "readTime": "阅读时间：12分钟",
       "whatIsTitle": "什么是3x3网格拼贴？",
@@ -3771,7 +3769,9 @@
       "ctaDescription": "访问我们的完整网格模板库，获取经过验证的3x3布局，排名并转化。",
       "ctaButton": "浏览网格模板",
       "intro": "3x3 网格拼贴和数字壁纸是一些最易分享的 AI 生成视觉作品——连贯、编辑风格且瞬间可识别。本指南将介绍其背后的基于网格的提示技术，并指引您使用精心挑选的模板，以便您在几分钟内制作自己的作品。",
-      "whyContent": "网格拼贴之所以有效，是因为它们提供了构图控制，而不是单一的随机图像。最成功的 AI 生成拼贴具有四个特征：<br/><br/>• 特定布局（3x3 网格、前后对比、多个面板海报——不仅仅是单一图像）<br/>• 季节美学（冬季森林、秋季氛围、夏季海滩）<br/>• 肖像一致性（所有单元格中的同一人或风格）<br/>• 壁纸优化（适合手机和桌面的正确纵横比）<br/><br/>Nano Banana 在这里表现出色，因为您可以强制精确的网格结构，同时保持每个单元格的主题一致性——这是大多数通用 AI 图像生成器在没有大量提示工程的情况下难以做到的一步。"
+      "whyContent": "网格拼贴之所以有效，是因为它们提供了构图控制，而不是单一的随机图像。最成功的 AI 生成拼贴具有四个特征：<br/><br/>• 特定布局（3x3 网格、前后对比、多个面板海报——不仅仅是单一图像）<br/>• 季节美学（冬季森林、秋季氛围、夏季海滩）<br/>• 肖像一致性（所有单元格中的同一人或风格）<br/>• 壁纸优化（适合手机和桌面的正确纵横比）<br/><br/>Nano Banana 在这里表现出色，因为您可以强制精确的网格结构，同时保持每个单元格的主题一致性——这是大多数通用 AI 图像生成器在没有大量提示工程的情况下难以做到的一步。",
+      "title": "3x3网格拼贴提示：AI美学拼贴和数字壁纸",
+      "metaDescription": "有效的3x3网格拼贴提示 — 生成冬季森林中的年轻女性网格、季节美学和Nano Banana数字壁纸。几分钟内掌握网格布局和纵横比。"
     },
     "weirdScienceFactsClassroomEngagement": {
       "title": "可视化奇怪的科学事实：用于课堂参与的AI提示模板",
@@ -4974,9 +4974,9 @@
       "step1Content": "**最佳适用**：德比海报、世界杯比赛预览内容、淘汰赛前的球迷互动。\n\n打开 [/nano-template/sports-battle](/nano-template/sports-battle)。两个文本字段——`player_left` 和 `player_right`。最常搜索的足球竞争可以从以下开始：\n\n- `Lionel Messi` 对 `Cristiano Ronaldo`——GOAT 辩论，永恒\n- `Kylian Mbappé` 对 `Vinícius Júnior`——新一代巴西与法国的竞争\n- `Erling Haaland` 对 `Kylian Mbappé`——梅西/罗纳尔多后的接班人\n- `Lamine Yamal` 对 `Vinícius Júnior`——西班牙与巴西的边锋对决\n- `Neymar Jr` 对 `Lionel Messi`——巴萨重聚的能量\n\n生成。模板渲染一个漫画风格的 VS 海报，两个球员穿着国家队球衣，统计面板，身份标签，以及中心的 VS 图形。默认输出为纵向 3:4——非常适合 Instagram Stories、TikTok、Pinterest。\n\n**画廊中的实时示例**：[梅西对罗纳尔多海报](/nano-template/sports-battle)——相同模板，相同提示，只需两个名称输入。",
       "step3Content": "![巴西2026年世界杯阵容海报 — 全部Seleção身穿标志性的黄色Verdeamarela主场球衣，Vinícius Jr, Rodrygo, Raphinha, Casemiro, Marquinhos以动态中步姿势展示，背景为马拉卡纳金色时刻](/images/nano_insp/template-celebrity-movie-group-poster-brazil-2026-world-cup-squad.jpg)\n\n[打开名人小组海报模板 →](/nano-template/celebrity-movie-group-poster)\n\n将此直接放入名人小组海报模板的`star_movie_group`字段，或在Nano Banana Pro / GPT Image 2上用作自由形式提示：\n\n```\n巴西2026年世界杯国家队 — 全部阵容身穿标志性的黄色Verdeamarela主场球衣，配有绿色装饰，动态小组构图，Vinícius Júnior, Rodrygo, Endrick, Raphinha, Neymar Jr以英雄般的中步姿势位于中心。马拉卡纳体育场金色时刻背景，观众灯光和巴西国旗小旗。电影色彩分级 — 饱和的金黄色 + 丛林绿色 + 大西洋蓝色点缀。照片真实，时尚杂志般的清晰度，戏剧性的边缘光照，柔和的渐变背景，奢华简约的葡萄牙语标题“BRASIL 2026”以粗体金色衬线字体呈现。4K超详细，无水印，垂直3:4格式。\n```\n\n**指定的调色板**: `#FED904`（球衣黄色），`#009739`（球衣绿色），`#012169`（点缀蓝色），温暖的金色灯光色调。为确保多个渲染之间的颜色一致性，请在提示中明确指定调色板。\n\n**需要更换的内容**: 更改球员名单（阵容在每个比赛中变化），体育场（马拉卡纳 / Mané Garrincha / Itaipava Arena Fonte Nova）和标题文本。其他内容保持不变。",
       "step4Content": "![阿根廷2026年世界杯阵容海报 — 全部Albiceleste身穿标志性的天蓝色和白色条纹主场球衣，梅西，迪玛利亚，阿尔瓦雷斯，麦克阿利斯特，劳塔罗·马丁内斯以英雄般的动作姿势展示，背景为埃斯塔迪奥·莫努门塔尔的日落](/images/nano_insp/template-celebrity-movie-group-poster-argentina-2026-world-cup-squad.jpg)\n\n相同形状，Albiceleste调色板：\n\n```\n阿根廷2026年世界杯国家队 — 全部阵容身穿标志性的天蓝色和白色条纹Albiceleste主场球衣，动态小组构图，里奥内尔·梅西，朱利安·阿尔瓦雷斯，劳塔罗·马丁内斯，恩佐·费尔南德斯，亚历克西斯·麦克阿利斯特以英雄般的动作姿势展示。布宜诺斯艾利斯的埃斯塔迪奥·莫努门塔尔金色时刻背景，观众身穿天蓝色，阿根廷国旗小旗，世界杯奖杯在前景中闪烁。电影色彩分级 — 天蓝色 + 清脆的白色 + 温暖的金色点缀。照片真实，时尚杂志般的清晰度，戏剧性的边缘光照，柔和的渐变背景，奢华简约的西班牙语标题“ARGENTINA 2026”以粗体金色衬线字体呈现。4K超详细，无水印，垂直3:4格式。\n```\n\n**指定的调色板**: `#74ACDF`（天蓝色），`#FFFFFF`（白色），`#FCBF49`（金色点缀），温暖的布宜诺斯艾利斯日落色调。\n\n**需要更换的内容**: 球员名单（梅西在2026年后版本中是否在阵容中），体育场（埃斯塔迪奥·莫努门塔尔 / 拉·博卡诺拉如果是俱乐部主题变体），标题语言。垂直3:4格式是社交媒体准备的形状；如果需要桌面壁纸，请切换为16:9，如果需要Instagram动态帖子，请切换为1:1。",
-      "title": "巴西与阿根廷提示：2026年世界杯AI足球海报",
-      "metaDescription": "巴西 + 阿根廷世界杯2026 AI海报提示：梅西对战罗纳尔多，完整阵容照片，阿尔比塞莱斯特 + 塞莱桑电影场景。内部有免费的Curify模板。",
-      "seoKeywords": "巴西提示, 阿根廷提示, 巴西2026电影足球海报提示, 阿根廷2026电影足球海报提示, 巴西足球提示, 阿根廷世界杯提示, 巴西提示chatgpt, 阿根廷提示chatgpt, 阿根廷AI提示, 巴西AI提示, 世界杯2026提示, AI足球海报, 国际足联世界杯2026 AI, 巴西海报提示, 阿根廷海报提示, 巴西球队提示, 阿根廷AI照片提示"
+      "seoKeywords": "巴西提示, 阿根廷提示, 巴西2026电影足球海报提示, 阿根廷2026电影足球海报提示, 巴西足球提示, 阿根廷世界杯提示, 巴西提示chatgpt, 阿根廷提示chatgpt, 阿根廷AI提示, 巴西AI提示, 世界杯2026提示, AI足球海报, 国际足联世界杯2026 AI, 巴西海报提示, 阿根廷海报提示, 巴西球队提示, 阿根廷AI照片提示",
+      "title": "巴西与阿根廷2026世界杯海报提示：球队+球迷致敬",
+      "metaDescription": "巴西+阿根廷2026世界杯AI海报提示：2026年球队照片、球迷致敬海报、梅西与罗纳尔多的对决、阿尔比塞莱斯特+塞莱桑的电影场景。内部有免费的Curify模板。"
     },
     "onePersonCompaniesVs100PersonTeams": {
       "title": "一人公司正在崛起。你的100人团队成了负担。",
@@ -5028,9 +5028,9 @@
       "step4Content": "如果团体海报对您的使用案例来说太拥挤，体育战斗罗纳尔多单打对抗的镜头更能吸引参与驱动的渠道（TikTok，Instagram Reels）：\n\n```\n克里斯蒂亚诺·罗纳尔多对基利安·姆巴佩——漫画风格的VS海报，两个球员都处于中途动作姿势，罗纳尔多在左侧穿着深红色葡萄牙球衣，标志性的SIUUU庆祝手臂张开，姆巴佩在右侧穿着海军蓝法国球衣，正处于冲刺中。纵向3:4格式，霓虹光边缘照明，戏剧性的青色-橙色色调，底部有统计面板（进球、年龄、俱乐部）。中心的VS图形为金属金色，带有闪电弧效果。阿尔瓦拉德体育场渐变为法兰西体育场的背景，金色时刻的天空在里斯本的橙色和巴黎的蓝色之间分割。漫画风格的线条艺术，半色调阴影，戏剧性的阴影定义。电影海报，4K细节，无水印。\n```\n\n**需要更换的内容**：右侧的任何其他对手——梅西、贝林厄姆、哈兰德、维尼修斯·儒尼奥尔。分割体育场背景适用于任何葡萄牙对抗国家的比赛。",
       "conclusionContent": "上述两个葡萄牙提示可以推广到2026年世界杯的其他国家。相同模板，替换球队名称，正确获取球衣颜色和调色板：\n\n- **巴西**：`Brazil 2026 National Team` — 黄色+绿色+蓝色点缀，马拉卡纳，标题`BRASIL 2026` — 参见 [/blog/brazil-argentina-soccer-poster-prompts](/blog/brazil-argentina-soccer-poster-prompts)\n- **阿根廷**：`Argentina 2026 World Cup Squad` — 天蓝色+白色+金色，纪念碑体育场，标题`ARGENTINA 2026` — [同一兄弟帖](/blog/brazil-argentina-soccer-poster-prompts)\n- **法国**：`France 2026 National Team` — 海军蓝+白色+红色，法兰西体育场，标题`FRANCE 2026`\n- **西班牙**：`Spain 2026 National Team` — 红色+藏红色+海军，圣地亚哥·伯纳乌，标题`ESPAÑA 2026`\n- **德国**：`Germany 2026 National Team` — 白色+黑色+红色/金色，安联竞技场，标题`DEUTSCHLAND 2026`\n- **摩洛哥**：`Morocco 2026 National Team` — 红色+绿色星+白色，哈桑二世大体育场，标题`LE MAROC 2026`\n- **英格兰**：`England 2026 World Cup Squad` — 白色+圣乔治红+海军，温布利，标题`ENGLAND 2026`\n- **美国**（东道主）：`USA 2026 World Cup Squad` — 海军+红色条纹+白色星，索菲体育场，标题`USA 2026`\n- **墨西哥**（东道主）：`Mexico 2026 National Team` — 绿色+白色+红色，阿兹特克体育场，标题`MÉXICO 2026`\n\n提示结构保持不变——球衣描述、体育场背景、调色板、标题文本、纵向3:4格式。排列球队名称和调色板；其他内容从模板的基础提示中继承。 \n\n如果您发布了一张喜欢的海报，[/topics/character](/topics/character)和[/topics/sports](/topics/sports)中心会展示类似的模板——角色对抗、电影团体海报、粉丝阵容，所有这些都在相同的Curify管道上运行。",
       "step3Content": "![葡萄牙2026年世界杯阵容海报 — 全部Seleção das Quinas身穿标志性的深红色主场球衣，配有绿色领子，克里斯蒂亚诺·罗纳尔多，布鲁诺·费尔南德斯，贝尔纳多·席尔瓦，迪奥戈·若塔，坎塞洛以英雄般的中步姿势展示，背景为阿尔瓦拉德体育场金色时刻](/images/nano_insp/template-celebrity-movie-group-poster-portugal-2026-world-cup-squad.jpg)\n\n[打开名人小组海报模板 →](/nano-template/celebrity-movie-group-poster)\n\n将此直接放入名人小组海报模板的`star_movie_group`字段，或在Nano Banana Pro / GPT Image 2上用作自由形式提示：\n\n```\n葡萄牙2026年世界杯国家队 — 全部阵容身穿标志性的深红色Seleção主场球衣，配有绿色领子装饰和金色徽章，动态小组构图，克里斯蒂亚诺·罗纳尔多，贝尔纳多·席尔瓦，布鲁诺·费尔南德斯，拉斐尔·莱昂，若昂·费利克斯以英雄般的中步姿势位于中心。阿尔瓦拉德体育场金色时刻背景，观众灯光和葡萄牙国旗小旗。电影温暖色彩分级 — 葡萄酒红 + 大西洋绿色 + 温暖金色点缀，带有蓝色瓷砖的暗示。照片真实，时尚杂志般的清晰度，戏剧性的边缘光照，柔和的渐变背景，奢华简约的葡萄牙语标题“PORTUGAL 2026”以粗体金色衬线字体呈现。4K超详细，无水印，垂直3:4格式。\n```\n\n**指定的调色板**: `#C8102E`（球衣深红色），`#006847`（球衣绿色），`#FFD700`（金色点缀），`#0072CE`（蓝色瓷砖装饰），温暖的里斯本金色时刻色调。为确保多个渲染之间的颜色一致性，请在提示中明确指定调色板。\n\n**需要更换的内容**: 更改球员名单（阵容在每个比赛中变化 — 2026年前与罗纳尔多后的阵容会有所不同），体育场（阿尔瓦拉德体育场 / 光明体育场 / 龙体育场）和标题文本。其他内容保持不变。",
-      "title": "葡萄牙提示：2026年世界杯人工智能足球海报",
-      "metaDescription": "葡萄牙2026年世界杯人工智能海报提示：以罗纳尔多为中心的电影镜头，布鲁诺和贝尔纳多的队伍姿势，深红色的Quinas调色板。内部提供免费Curify Seleção模板。",
-      "seoKeywords": "葡萄牙提示, 葡萄牙球迷提示, 葡萄牙世界杯提示, 葡萄牙世界杯海报, 葡萄牙世界杯2026海报, 罗纳尔多葡萄牙提示, 葡萄牙球迷提示, 葡萄牙海报提示, 葡萄牙球衣提示, 葡萄牙人工智能提示, seleção 2026提示, 葡萄牙人工智能足球海报, nano banana葡萄牙, 电影葡萄牙海报, 2026年国际足联世界杯人工智能"
+      "seoKeywords": "葡萄牙提示, 葡萄牙球迷提示, 葡萄牙世界杯提示, 葡萄牙世界杯海报, 葡萄牙世界杯2026海报, 罗纳尔多葡萄牙提示, 葡萄牙球迷提示, 葡萄牙海报提示, 葡萄牙球衣提示, 葡萄牙人工智能提示, seleção 2026提示, 葡萄牙人工智能足球海报, nano banana葡萄牙, 电影葡萄牙海报, 2026年国际足联世界杯人工智能",
+      "title": "葡萄牙2026世界杯海报提示：罗纳尔多+塞莱桑AI电影场景",
+      "metaDescription": "葡萄牙2026世界杯AI海报提示：以罗纳尔多为主的电影镜头、布鲁诺+贝尔纳多的球队姿势、深红色的Quinas调色板。内部有免费的Curify Seleção模板。"
     },
     "ai1v1SoccerRivalryPrompts": {
       "title": "AI 1v1 足球对抗提示：梅西 vs 罗纳尔多，姆巴佩 vs 贝林厄姆 + 更多",
