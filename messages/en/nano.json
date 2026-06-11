@@ -5420,5 +5420,27 @@
         ]
       }
     }
+  },
+  "template-corporate-news-editorial-hero": {
+    "category": "Corporate News Editorial Hero",
+    "description": "Generate a monochrome editorial article-header illustration of a corporate news event — desaturated greys with a single brand-color accent on the company logo. Editorial style favored by business publishers (Stratechery, The Information, OutLever, Axios).",
+    "title": "Nano Banana Prompt: Corporate News Editorial Hero Illustration Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a horizontal 3:2 editorial article-header illustration depicting any corporate news event. Modern corporate setting with the company name prominently in branded signage; stylized realistic-illustrated figures (employees, executives, customers, partners) acting out the news event in the foreground. Style: monochrome desaturation to charcoal/grey across the entire scene EXCEPT ONE accent color — the company brand color — applied only to the logo signage and minimal branded accent elements. Subtle paper / newsprint texture overlay for editorial feel.",
+        "who": "Suitable for business journalists and editors at publishers like The Information / Stratechery / Axios / OutLever / Substack writers producing per-article hero visuals, corporate communications teams creating press release covers, content marketers at B2B SaaS / fintech / VC firms producing thought-leadership pieces, and PR agencies building news-cycle visual assets.",
+        "how": [
+          "Enter the corporate event + company + brand color in {event_info} (e.g. 'Meta lays off 8,000 workers and pivots with $115M America's Workforce Academy — workers exiting Meta HQ carrying personal items boxes, Meta blue #1877F2 accent').",
+          "Architectural setting + crowd of figures auto-render in the foreground.",
+          "Monochrome treatment with single-accent brand color auto-applied to logo signage.",
+          "Generate a 3:2 editorial article-header illustration ready for use as an article hero."
+        ],
+        "prompts": [
+          "Generate a Meta layoff editorial hero — workers exiting HQ carrying personal items boxes, Meta blue #1877F2 accent.",
+          "Create an OpenAI $300B valuation milestone editorial hero — celebratory office moment, OpenAI green #74AA9C accent.",
+          "Generate a Tesla Cybertruck recall editorial hero — service center with rows of returned trucks, Tesla red #CC0000 accent."
+        ]
+      }
+    }
   }
 }

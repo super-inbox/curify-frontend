@@ -1,0 +1,36 @@
+[
+  {
+    "template_id": "template-corporate-news-editorial-hero",
+    "params": {
+      "event_info": "Meta lays off 8,000 workers and pivots with $115M America's Workforce Academy — crowd of office workers walking out of glass-and-stone Meta headquarters carrying cardboard 'PERSONAL ITEMS' boxes, prominent 'meta' wordmark + infinity-loop logo on the building, Meta blue #1877F2 as the single accent color on the logo signage only"
+    },
+    "topics": ["design", "posters", "trending", "ai"],
+    "id_suffix": "meta-layoff-2026-pivot-trades"
+  },
+  {
+    "template_id": "template-hot-event-analysis",
+    "params": {
+      "event_title": "Meta Lays Off 8,000 Workers, Funds $115M Trades Training Program",
+      "logic_chain": "Layoffs → Severance → America's Workforce Academy launch → Welder/electrician/HVAC training → Job placement guarantee",
+      "impact_axes": "Tech-labor displacement, Trades industry, AI workforce shift, Public perception of Big Tech"
+    },
+    "topics": ["learning", "trending", "ai", "insight"],
+    "id_suffix": "meta-layoff-2026-pivot-analysis"
+  },
+  {
+    "template_id": "template-sports-iconic-event-analysis-poster",
+    "params": {
+      "event_info": "Meta's 2026 $115M Workforce Pivot — 8000 Layoffs to Trades Training Bridge: a sports-style retrospective poster of the corporate strategy shift"
+    },
+    "topics": ["design", "posters", "trending"],
+    "id_suffix": "meta-layoff-2026-pivot-sports-style"
+  },
+  {
+    "template_id": "template-weird-science-facts-infographic",
+    "params": {
+      "theme": "Meta's $115M Layoff Pivot — kawaii business strategy explainer about layoffs, severance, and trades training"
+    },
+    "topics": ["design", "trending", "kawaii"],
+    "id_suffix": "meta-layoff-2026-pivot-kawaii-explainer"
+  }
+]
