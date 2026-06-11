@@ -303,6 +303,14 @@ export const TIER3_TOPIC_MAPPED: SuggestionEntry[] = [..._MAPPED_DEST_TAGS]
       // Include both dash- and space-form so nano-tag dedupe and free-text
       // user queries both hit (`high-fashion` query AND `high fashion` query).
       aliases: spaced === slug ? undefined : [spaced],
+      // searchFallback by default: these slugs are auto-derived from
+      // taxonomy.json tier3 entries — there's no guarantee a /topics/<slug>
+      // page exists or is i18n-localized. Routing to /search instead lets
+      // the search page surface templates / inspirations / gallery prompts
+      // even when the topic page is missing. Without this, clicking
+      // unlocalized entries like world-cup-2026 / world-cup-1966 in the
+      // SearchBar dropdown bounced users to /topics/world-cup-2026 → 404.
+      searchFallback: true,
     };
   });
 

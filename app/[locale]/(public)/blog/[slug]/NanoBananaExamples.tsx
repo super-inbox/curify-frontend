@@ -1,13 +1,10 @@
 "use client";
 
-import { useCallback } from "react";
-import { useAtomValue, useSetAtom } from "jotai";
-
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import { PageLocale } from "@/lib/locale_utils";
 import blogsData from "@/public/data/blogs.json";
-import { userAtom, drawerAtom } from "@/app/atoms/atoms";
+import { useRequireAuth } from "@/services/useRequireAuth";
 
 interface NanoBananaExamplesProps {
   locale: string;
@@ -28,13 +25,7 @@ interface NanoTemplateCard {
 }
 
 export default function NanoBananaExamples({ locale, blogSlug }: NanoBananaExamplesProps) {
-  const user = useAtomValue(userAtom);
-  const setDrawerState = useSetAtom(drawerAtom);
-  const requireAuth = useCallback(() => {
-    if (user) return true;
-    setDrawerState("signin");
-    return false;
-  }, [user, setDrawerState]);
+  const requireAuth = useRequireAuth();
   const onViewClick = () => {};
 
   // Flatten all nanoTemplates across the catalog into a single card pool.

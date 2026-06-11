@@ -2,14 +2,13 @@
 
 import { useCallback, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { useAtomValue, useSetAtom } from "jotai";
 import { Download } from "lucide-react";
 import { Link as IntlLink } from "@/i18n/navigation";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
-import { userAtom, drawerAtom } from "@/app/atoms/atoms";
+import { useRequireAuth } from "@/services/useRequireAuth";
 import { templatePacksService } from "@/services/templatePacks";
 import { useTracking, useVideoTracking } from "@/services/useTracking";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
@@ -118,8 +117,7 @@ function UseCaseVideo({
 
 function LearningMaterialCard({ material }: { material: LearningMaterial }) {
   const t = useTranslations("actionButtons");
-  const user = useAtomValue(userAtom);
-  const setDrawerState = useSetAtom(drawerAtom);
+  const requireAuth = useRequireAuth();
   const { trackAction } = useTracking();
   const [isDownloading, setIsDownloading] = useState(false);
   const isDownloadingRef = useRef(false);
@@ -127,7 +125,7 @@ function LearningMaterialCard({ material }: { material: LearningMaterial }) {
   const handleDownload = async () => {
     if (isDownloadingRef.current) return;
     isDownloadingRef.current = true;
-    if (!user) { setDrawerState("signin"); isDownloadingRef.current = false; return; }
+    if (!requireAuth("download_learning_material")) { isDownloadingRef.current = false; return; }
 
     try {
       setIsDownloading(true);
@@ -223,13 +221,7 @@ export default function UseCaseClient({
     () => trackAction(shareTracking, "share"),
     [trackAction, shareTracking],
   );
-  const user = useAtomValue(userAtom);
-  const setDrawerState = useSetAtom(drawerAtom);
-  const requireAuth = useCallback(() => {
-    if (user) return true;
-    setDrawerState("signin");
-    return false;
-  }, [user, setDrawerState]);
+  const requireAuth = useRequireAuth();
 
   return (
     <main className="mx-auto max-w-[1400px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">

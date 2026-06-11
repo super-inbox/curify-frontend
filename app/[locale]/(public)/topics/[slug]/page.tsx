@@ -364,13 +364,13 @@ export default async function Page({ params }: Props) {
             maxRows={3}
             desktopOpensExample
             topRightCell={
-              (slug === "world-cup" || slug === "sports" || slug.endsWith("-world-cup"))
+              (slug === "world-cup" || slug === "sports")
                 ? <WcRotatingSlot locale={localeStr} queries={TOP_QUERIES["world-cup"]} />
                 : undefined
             }
           />
         </section>
-      ) : (slug === "world-cup" || slug === "sports" || slug.endsWith("-world-cup")) ? (
+      ) : (slug === "world-cup" || slug === "sports") ? (
         <section className="mx-auto max-w-[1600px] px-4 pb-6 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5">

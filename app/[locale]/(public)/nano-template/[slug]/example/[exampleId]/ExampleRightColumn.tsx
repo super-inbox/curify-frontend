@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import { Wand2 } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
@@ -29,6 +30,10 @@ type Props = {
   locale: string;
   parameters: TemplateParameter[];
   allowGeneration: boolean;
+  /** image-to-image templates need a reference-image upload, which only the
+   *  template detail page (ReproduceTemplateSection) has. On this surface we
+   *  can't generate inline, so route Generate to the detail page instead. */
+  requiresImageUpload?: boolean;
   initialParams: Record<string, string>;
   exampleId: string;
   basePrompt: string;
@@ -57,6 +62,7 @@ export default function ExampleRightColumn({
   locale,
   parameters,
   allowGeneration,
+  requiresImageUpload = false,
   initialParams,
   exampleId,
   basePrompt,
@@ -102,6 +108,17 @@ export default function ExampleRightColumn({
 
   const exampleUrl = (id: string) =>
     `/${locale}/nano-template/${slug}/example/${encodeURIComponent(id)}`;
+
+  // For image-to-image templates we can't generate here (no upload UI), so
+  // Generate links to the detail page's reproduce section with the current
+  // params prefilled (it reads them from the query string), where the user
+  // can upload a reference image and generate.
+  const templateGenerateUrl = useMemo(() => {
+    const qs = new URLSearchParams(
+      Object.entries(form).filter(([, v]) => v && String(v).trim() !== "")
+    ).toString();
+    return `/${locale}/nano-template/${slug}${qs ? `?${qs}` : ""}#reproduce`;
+  }, [locale, slug, form]);
 
   const onFormChange = (name: string, value: string) => {
     clearWarning();
@@ -291,7 +308,19 @@ export default function ExampleRightColumn({
 
       {/* Action row: generate + copy + share + batch */}
       <div className="mt-auto flex flex-wrap items-center gap-2 pt-1">
-        {allowGeneration ? (
+        {requiresImageUpload ? (
+          // image-to-image: no inline upload here — send the user to the
+          // detail page to upload a reference image and generate.
+          <Link
+            href={templateGenerateUrl}
+            onClick={() => trackAction(tracking, "generate")}
+            className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 cursor-pointer"
+          >
+            <Wand2 className="h-4 w-4" />
+            {t("generate")}
+            <span aria-hidden="true">→</span>
+          </Link>
+        ) : allowGeneration ? (
           <>
             <button
               onClick={generate}

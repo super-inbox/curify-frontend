@@ -2,8 +2,7 @@
 
 import { useMemo, useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
-import { useAtomValue, useSetAtom } from "jotai";
-import { drawerAtom, userAtom } from "@/app/atoms/atoms";
+import { useRequireAuth } from "@/services/useRequireAuth";
 
 import {
   InspirationListItem,
@@ -79,14 +78,7 @@ export default function InspirationHubClient({
     card: null,
   });
 
-  const user = useAtomValue(userAtom);
-  const setDrawerState = useSetAtom(drawerAtom);
-
-  const requireAuth = useCallback(() => {
-    if (user) return true;
-    setDrawerState("signup");
-    return false;
-  }, [user, setDrawerState]);
+  const requireAuth = useRequireAuth({ variant: "signup" });
 
   const handleOpenModal = useCallback((card: InspirationCardType) => {
     setModalState({ isOpen: true, card });

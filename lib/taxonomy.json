@@ -2178,10 +2178,7 @@
       "topic_word": "portrait",
       "templates": [
         "template-ai-outfit-try-on-poster",
-        "template-architecture",
         "template-artist-biography-infographic",
-        "template-book-minimalist",
-        "template-book-series",
         "template-cartoon-character-profile-card-kawaii-style",
         "template-celebrity-filmography-infographic",
         "template-celebrity-movie-group-poster",
@@ -2189,7 +2186,6 @@
         "template-character-analysis",
         "template-chinese-classic-character-mbti",
         "template-city-mbti",
-        "template-city-miniature",
         "template-constellation-steampunk",
         "template-costume",
         "template-cultural-festival-poster",
@@ -2200,18 +2196,13 @@
         "template-fashion-ecommerce",
         "template-fashion-inspired-gown-design-sheet",
         "template-fashion-shape-guide-infographic",
-        "template-figure-principles-infographic",
         "template-figure-to-abstract-portrait-series",
-        "template-food",
-        "template-food-product-packaging-design",
         "template-friends-character-mbti",
-        "template-fruit",
         "template-guofeng-scroll",
         "template-hairstyle-color-recommendation",
         "template-harry-potter-mbti-infographic",
         "template-historical-figure-educational",
         "template-historical-figure-profile-infographic",
-        "template-industrial-design-concept-sketch",
         "template-lifestyle-photo-grid",
         "template-manga-artist-infographic-poster",
         "template-mbti-breakingbad",
@@ -2220,12 +2211,7 @@
         "template-movie-poster",
         "template-personal-fashion-outfit-style-variations",
         "template-portrait-retouching-blueprint",
-        "template-princess-pearl-mbti-character-card",
-        "template-product-poster",
-        "template-product-theme-promotional-poster",
-        "template-species",
-        "template-theme-overview-poster",
-        "template-travel"
+        "template-princess-pearl-mbti-character-card"
       ]
     },
     "collection": {
@@ -2239,6 +2225,7 @@
         "template-book-series",
         "template-celebrity-filmography-infographic",
         "template-celebrity-movie-group-poster",
+        "template-character-multi-panel-comic-strip-poster",
         "template-costume",
         "template-country-dos-and-donts-infographic",
         "template-country-souvenirs-watercolor",
@@ -2390,6 +2377,7 @@
         "template-soft-decoration-design-guide",
         "template-sport-rules-handdrawn-infographic",
         "template-sports-technique-guide",
+        "template-theme-color-palette-card",
         "template-top10-visual-guide-infographic",
         "template-training-muscle-equipment",
         "template-travel-packing-guide-infographic",
@@ -2581,9 +2569,6 @@
     "template-annual-event-calendar-infographic": [
       "information-card"
     ],
-    "template-architecture": [
-      "profile"
-    ],
     "template-artist-biography-infographic": [
       "profile",
       "timeline"
@@ -2604,15 +2589,11 @@
     "template-bilingual-object-structure-labeling": [
       "vocabulary"
     ],
-    "template-book-minimalist": [
-      "profile"
-    ],
     "template-book-recommendation-grid-poster": [
       "collection"
     ],
     "template-book-series": [
-      "collection",
-      "profile"
+      "collection"
     ],
     "template-cartoon-action-visual-guide-infographic": [
       "process"
@@ -2641,6 +2622,9 @@
     "template-character-comparison": [
       "comparison"
     ],
+    "template-character-multi-panel-comic-strip-poster": [
+      "collection"
+    ],
     "template-child-hobby-skill": [
       "information-card"
     ],
@@ -2667,9 +2651,6 @@
     "template-city-mbti": [
       "profile",
       "quiz"
-    ],
-    "template-city-miniature": [
-      "profile"
     ],
     "template-clothing-evolution-poster": [
       "timeline"
@@ -2835,7 +2816,6 @@
     ],
     "template-figure-principles-infographic": [
       "insight",
-      "profile",
       "timeline"
     ],
     "template-figure-to-abstract-portrait-series": [
@@ -2850,12 +2830,6 @@
     "template-flowing-journey-infographic": [
       "timeline"
     ],
-    "template-food": [
-      "profile"
-    ],
-    "template-food-product-packaging-design": [
-      "profile"
-    ],
     "template-food-recipe-tip-infographic": [
       "process"
     ],
@@ -2869,9 +2843,6 @@
     "template-friends-character-mbti": [
       "profile",
       "quiz"
-    ],
-    "template-fruit": [
-      "profile"
     ],
     "template-gardening-how-to-infographic": [
       "process"
@@ -2948,9 +2919,6 @@
     ],
     "template-ielts-3-to-9-vocabulary-poster": [
       "vocabulary"
-    ],
-    "template-industrial-design-concept-sketch": [
-      "profile"
     ],
     "template-intangible-heritage": [
       "information-card"
@@ -3148,12 +3116,6 @@
       "profile",
       "quiz"
     ],
-    "template-product-poster": [
-      "profile"
-    ],
-    "template-product-theme-promotional-poster": [
-      "profile"
-    ],
     "template-professional-category-guide-infographic": [
       "information-card",
       "process"
@@ -3215,8 +3177,7 @@
       "insight"
     ],
     "template-species": [
-      "information-card",
-      "profile"
+      "information-card"
     ],
     "template-species-science": [
       "information-card",
@@ -3241,8 +3202,8 @@
     "template-stick-figure-vocab": [
       "vocabulary"
     ],
-    "template-theme-overview-poster": [
-      "profile"
+    "template-theme-color-palette-card": [
+      "process"
     ],
     "template-then-vs-now-comparison-infographic": [
       "comparison"
@@ -3259,9 +3220,6 @@
     ],
     "template-training-muscle-equipment": [
       "process"
-    ],
-    "template-travel": [
-      "profile"
     ],
     "template-travel-packing-guide-infographic": [
       "process"
@@ -3856,6 +3814,18 @@
       "groups",
       "learning"
     ],
+    "template-brand-ip-full-design-board": [
+      "character",
+      "design",
+      "mockups",
+      "posters"
+    ],
+    "template-brand-vi-full-visual-pack-mockup": [
+      "design",
+      "merch",
+      "mockups",
+      "posters"
+    ],
     "template-cartoon-action-visual-guide-infographic": [
       "guides",
       "learning",
@@ -3898,6 +3868,13 @@
     "template-character-comparison": [
       "character",
       "comparison"
+    ],
+    "template-character-multi-panel-comic-strip-poster": [
+      "anime",
+      "character",
+      "groups",
+      "nostalgia",
+      "posters"
     ],
     "template-child-hobby-skill": [
       "information-card",
@@ -4331,6 +4308,12 @@
       "guides",
       "lifestyle",
       "posters"
+    ],
+    "template-football-player-graffiti-poster": [
+      "character",
+      "posters",
+      "sports",
+      "world-cup"
     ],
     "template-football-themed-ball-infographic": [
       "posters",
@@ -5099,6 +5082,11 @@
       "language-english",
       "vocabulary"
     ],
+    "template-theme-color-palette-card": [
+      "design",
+      "guides",
+      "posters"
+    ],
     "template-theme-overview-poster": [
       "design",
       "lifestyle",
@@ -5164,6 +5152,13 @@
       "beginner",
       "language",
       "vocabulary"
+    ],
+    "template-vintage-football-jersey-intro-watercolor-poster": [
+      "nostalgia",
+      "posters",
+      "sports",
+      "watercolor",
+      "world-cup"
     ],
     "template-vintage-stamp-collection-illustration": [
       "design",

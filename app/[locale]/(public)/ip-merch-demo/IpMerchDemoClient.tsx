@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 import type { IpMerchDemoSeed, IpMerchStage } from "@/lib/ip_merch_demo";
 
 function StageDotNav({
@@ -60,7 +61,7 @@ function StagePanel({ stage }: { stage: IpMerchStage }) {
       <div className="overflow-hidden rounded-xl bg-gray-100">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={stage.image_url}
+          src={toCdnUrl(stage.image_url)}
           alt={`${stage.template_caption} — example IP "${stage.ip_info}"`}
           className="h-full w-full object-cover"
         />

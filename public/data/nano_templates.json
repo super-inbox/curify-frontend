@@ -10371,7 +10371,8 @@
       "groups",
       "posters",
       "disney"
-    ]
+    ],
+    "rank_score": 90.0
   },
   {
     "id": "template-city-landmark-fridge-magnet-collection",
@@ -10398,7 +10399,8 @@
       "merch",
       "mockups",
       "posters"
-    ]
+    ],
+    "rank_score": 90.0
   },
   {
     "id": "template-museum-gift-themed-merchandise-collection-display",
@@ -10426,7 +10428,8 @@
       "merch",
       "mockups",
       "posters"
-    ]
+    ],
+    "rank_score": 90.0
   },
   {
     "id": "template-football-tournament-retro-infographic-poster",
@@ -10454,7 +10457,8 @@
       "history",
       "posters",
       "nostalgia"
-    ]
+    ],
+    "rank_score": 90.0
   },
   {
     "id": "template-football-themed-ball-infographic",
@@ -10481,7 +10485,8 @@
       "sports",
       "world-cup",
       "posters"
-    ]
+    ],
+    "rank_score": 90.0
   },
   {
     "id": "template-sport-rules-handdrawn-infographic",
@@ -10509,6 +10514,180 @@
       "learning",
       "guides",
       "posters"
-    ]
+    ],
+    "rank_score": 90.0
+  },
+  {
+    "id": "template-character-multi-panel-comic-strip-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Multi-Panel Classic Comic Strip Poster Creator) Vertical comic strip poster themed '{anime_cartoon_theme_info}'. Layout: Fixed grid multi-panel layout (3 rows × 3 panels or custom grid), top with bold stylized main title banner, each panel features a classic character individual iconic pose & classic catchphrase speech bubble, retro halftone dot texture, onomatopoeia sound effect text (POW, WHOOSH, GRRR) embedded in each frame, distinct scene background for every panel. Style: Authentic original official comic art style, bold thick black outline, saturated vivid colors, classic western cartoon / Japanese manga consistent line art, vintage comic book print texture, sharp high resolution printable illustration. Subject: Multi-panel highlight comic strip collection poster for '{anime_cartoon_theme_info}' iconic characters and classic moments.",
+        "parameters": [
+          {
+            "name": "anime_cartoon_theme_info",
+            "label": "Cartoon / Anime work name + theme description",
+            "type": "text",
+            "placeholder": [
+              "Looney Tunes classic character highlight comic strip poster",
+              "Captain Tsubasa football iconic moves manga panel comic",
+              "The Simpsons Springfield character multi-panel comic collage",
+              "Slam Dunk classic basketball scenes manga comic strip"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-character-multi-panel-comic-strip-poster-slam-dunk-prev.jpg",
+    "topics": [
+      "character",
+      "anime",
+      "posters",
+      "groups",
+      "nostalgia"
+    ],
+    "rank_score": 90.0
+  },
+  {
+    "id": "template-brand-vi-full-visual-pack-mockup",
+    "locales": {
+      "en": {
+        "base_prompt": "(Brand Full VI Visual Identity Mockup Creator) Complete brand visual design showcase board themed '{brand_category_info}'. Layout: Collage layout combining main brand poster, social media banners, packaging cups, tote bags, labels, stickers, admission tickets, ribbon tags, mobile long poster, and merchandise mockups. Central cute IP cartoon character runs through all materials, unified fixed brand color palette, consistent typography and graphic elements. Style: Flat cute cartoon illustration style, lively commercial food/lifestyle brand aesthetic, clean layered mockup display, high resolution commercial design presentation board. Subject: Full set of VI visual identity application mockup pack for '{brand_category_info}'",
+        "parameters": [
+          {
+            "name": "brand_category_info",
+            "label": "Brand name + business category + core IP description",
+            "type": "text",
+            "placeholder": [
+              "想浮咖啡，咖啡饮品品牌，水獭卡通IP形象",
+              "Temp烘焙店，面包甜品烘焙品牌，面点拟人卡通IP",
+              "向野而生露营市集，户外活动市集，蔬果拟人卡通形象",
+              "咪咔烘焙，面包蛋糕店，傲娇猫咪卡通IP"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-brand-vi-full-visual-pack-mockup-christmas-party-event-prev.jpg",
+    "topics": [
+      "design",
+      "mockups",
+      "merch",
+      "posters"
+    ],
+    "rank_score": 90.0
+  },
+  {
+    "id": "template-football-player-graffiti-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Football Player Graffiti Style Poster Creator) Vertical illustration poster themed '{player_team_info}'. Layout: Central full-body colored illustration of the footballer in official club jersey; right side stacked multiple black-and-white sketch close-up panels (face, upper body, legs & football); integrated club crest, national flag, player name & jersey number bold typography, dynamic decorative graphic elements (lightning bursts, speech bubbles, sound effect text). Style: Bold comic sketch graffiti illustration, thick ink outlines, vibrant saturated team primary colors, textured hand-drawn shading, street art sports poster aesthetic, high resolution printable artwork. Subject: Exclusive stylized street art poster for footballer '{player_team_info}'.",
+        "parameters": [
+          {
+            "name": "player_team_info",
+            "label": "Football player name + club + jersey details",
+            "type": "text",
+            "placeholder": [
+              "Toni Kroos Real Madrid white home jersey poster",
+              "Lionel Messi Inter Miami pink jersey art poster",
+              "Lionel Messi Barcelona classic striped jersey graffiti poster"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-football-player-graffiti-poster-messi-inter-miami-prev.jpg",
+    "topics": [
+      "sports",
+      "world-cup",
+      "posters",
+      "character",
+      "soccer"
+    ],
+    "rank_score": 90.0
+  },
+  {
+    "id": "template-vintage-football-jersey-intro-watercolor-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Football Jersey Introduction Watercolor Poster Creator) Vertical illustrated jersey feature poster themed '{jersey_info}'. Layout: Large stylized title with season year at top, central full watercolor drawing of the classic football jersey with complete crest, sponsor logo and brand details; bottom corner small illustration of the corresponding star player in the same kit; multiple annotation arrows pointing to each key detail with descriptive handwritten explanatory text, subtle decorative pixel/geometric accents scattered around, textured aged paper background. Style: Soft watercolor hand-drawn illustration, sketch outline texture, retro sports collectible card aesthetic, hand lettered typography, warm muted tones, high resolution printable collectible poster. Subject: Classic retro football jersey detailed introduction art poster for '{jersey_info}'.",
+        "parameters": [
+          {
+            "name": "jersey_info",
+            "label": "Club + season + star player jersey info",
+            "type": "text",
+            "placeholder": [
+              "Manchester United 2008 home AIG jersey, Cristiano Ronaldo feature poster",
+              "Fiorentina 98-99 Nintendo sponsor jersey Batistuta introduction poster",
+              "Barcelona 99-00 away centenary jersey Rivaldo art poster"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vintage-football-jersey-intro-watercolor-poster-barcelona-99-00-prev.jpg",
+    "topics": [
+      "sports",
+      "world-cup",
+      "posters",
+      "nostalgia",
+      "watercolor"
+    ],
+    "rank_score": 90.0
+  },
+  {
+    "id": "template-brand-ip-full-design-board",
+    "locales": {
+      "en": {
+        "base_prompt": "(Brand IP Character Complete Design Display Board Creator) Vertical official IP design presentation board themed '{ip_design_info}'. Layout: Top area features large main IP character illustration paired with prominent project title banner; page split into independent numbered modules: 01 Design Concept text box, 02 character front/side/back three-view layout panel, 03 character basic profile & detailed setting introduction block, 04 multi-expression emoji expansion grid, 05 physical peripheral application mockups (keychain, pillow, sticker, mask, badge etc.). Full unified theme color palette, decorative border elements matching IP tone, clear segmented layout with directional arrows. Style support: cute flat 2D cartoon illustration / soft 3D clay figurine rendering, neat layout partition, high-resolution printable commercial design sheet, standardized text typesetting. Subject: Complete official full-set design display board for custom IP character '{ip_design_info}'.",
+        "parameters": [
+          {
+            "name": "ip_design_info",
+            "label": "IP形象名称 + 完整人设、风格、背景设定描述",
+            "type": "text",
+            "placeholder": [
+              "江源水豚IP，上海东滩湿地国风环保守护者人设，中式传统盘扣服饰，2D扁平卡通风格完整展板",
+              "青榄小菊IP，榄菊品牌驱蚊拟人孩童形象，黄菊绿植造型，3D黏土玩偶风格全套IP设计展板",
+              "沪澜浣熊IP，上海水岸生态国风守护拟人形象，紫色中式汉服，卡通IP规范设计展板"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-brand-ip-full-design-board-capybara-jiangyuan-prev.jpg",
+    "topics": [
+      "design",
+      "character",
+      "posters",
+      "mockups"
+    ],
+    "rank_score": 90.0
+  },
+  {
+    "id": "template-theme-color-palette-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Themed Scene Color Palette Card Generator) Vertical color reference card themed '{color_theme_info}'. Layout: Beautiful full background illustration matching the theme; left side vertically arranged rectangular solid color swatch blocks, each block embeds clear hex color code text, evenly spaced alignment. Style: High quality illustration background, harmonious matched color system, clean minimalist layout, design material color reference chart, ultra HD, sharp text, printable design resource. Subject: Complete themed color palette reference card for '{color_theme_info}'.",
+        "parameters": [
+          {
+            "name": "color_theme_info",
+            "label": "色彩主题+画面风格描述",
+            "type": "text",
+            "placeholder": [
+              "深海鲸鲨蓝紫水彩插画配色色卡",
+              "热带珊瑚海底吉卜力动画风配色色卡",
+              "粉紫渐变斗鱼写实质感配色色卡",
+              "夏日海边度假暖粉色沙滩饮品配色色卡"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-theme-color-palette-card-flamingo-ocean-sunset-prev.jpg",
+    "topics": [
+      "design",
+      "guides",
+      "posters"
+    ],
+    "rank_score": 90.0
   }
 ]

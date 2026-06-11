@@ -5289,5 +5289,137 @@
         ]
       }
     }
+  },
+  "template-character-multi-panel-comic-strip-poster": {
+    "category": "Multi-Panel Classic Comic Strip Poster",
+    "description": "Generate a vertical multi-panel comic strip poster — 3x3 (or custom) grid of classic characters with bold stylized title banner, each panel an iconic moment.",
+    "title": "Nano Banana Prompt: Multi-Panel Classic Comic Strip Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical multi-panel comic strip poster on any anime / cartoon theme. Fixed-grid layout (3 rows x 3 panels by default) with a bold stylized title banner at top; each panel features a classic character in an individual iconic moment, building toward a single collectible composition with consistent stylization across the strip.",
+        "who": "Suitable for anime / cartoon fan-art creators, classic-cartoon nostalgia print sellers, kids' room wall-art designers, fandom-merch Etsy / Redbubble operators, and educators producing visual-storytelling teaching aids.",
+        "how": [
+          "Enter the anime / cartoon theme in {anime_cartoon_theme_info} (e.g. 'Looney Tunes classic character highlight comic strip').",
+          "Title banner auto-renders at the top.",
+          "9 panels auto-compose with iconic-moment scenes of each character.",
+          "Generate a vertical multi-panel comic strip poster."
+        ],
+        "prompts": [
+          "Generate a Looney Tunes classic character highlight comic strip poster.",
+          "Create a Captain Tsubasa football iconic moves manga panel comic poster.",
+          "Generate a The Simpsons Springfield character multi-panel comic collage."
+        ]
+      }
+    }
+  },
+  "template-brand-vi-full-visual-pack-mockup": {
+    "category": "Brand Full VI Visual Identity Pack Mockup",
+    "description": "Generate a complete brand visual identity showcase — main poster, social banners, packaging cups, tote bags, labels, stickers, tickets, ribbons, mobile mockups — all in a unified design collage.",
+    "title": "Nano Banana Prompt: Brand Full VI Visual Identity Pack Mockup Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a complete brand visual design showcase board for any brand category. Collage layout combines the main brand poster, social media banners, packaging (cups, bottles, bags), tote bags, labels, stickers, admission tickets, ribbon tags, and mobile mockups — all unified under the brand's character IP and color system. Ready as a pitch-deck or capability-deck hero.",
+        "who": "Suitable for in-house brand teams pitching a new VI system, agencies showcasing brand-launch capabilities, indie brand owners building deck collateral, IP-licensing intermediaries demonstrating multi-surface mockups, and product designers preparing investor decks.",
+        "how": [
+          "Enter the brand + category + character info in {brand_category_info} (e.g. '想浮咖啡, coffee drink brand, otter cartoon IP').",
+          "Main poster + social banners + packaging + tote + labels + tickets + mobile auto-compose.",
+          "Character IP + color system unify the collage.",
+          "Generate a complete brand VI visual identity pack mockup."
+        ],
+        "prompts": [
+          "Generate a 想浮 Coffee brand VI pack with otter cartoon IP.",
+          "Create a Temp Bakery brand VI pack with bread / pastry cartoon IP.",
+          "Generate a 向野而生 outdoor camping brand VI pack with veggie-fruit cartoon IP."
+        ]
+      }
+    }
+  },
+  "template-football-player-graffiti-poster": {
+    "category": "Football Player Graffiti Style Poster",
+    "description": "Generate a vertical graffiti-style football player poster — central colored illustration in club jersey, right-side B&W sketch close-ups, urban street-art typography.",
+    "title": "Nano Banana Prompt: Football Player Graffiti Style Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical illustration poster of any football player. Central full-body colored illustration of the player in their official club jersey; right side stacked B&W sketch close-up panels (face, upper body, signature pose); urban street-art typography across the layout. Pose, sponsor and crest carried through faithfully.",
+        "who": "Suitable for football fan-art creators, jersey-history print sellers, football-bar wall print stores, player-merch Etsy / Redbubble operators, and brand marketers producing player-feature collateral around club launches.",
+        "how": [
+          "Enter the player + team / jersey in {player_team_info} (e.g. 'Toni Kroos Real Madrid white home jersey').",
+          "Central full-body colored illustration auto-renders.",
+          "Right-side B&W sketch close-up panels + street typography auto-compose.",
+          "Generate a graffiti-style football player poster."
+        ],
+        "prompts": [
+          "Generate a Toni Kroos Real Madrid white home jersey graffiti poster.",
+          "Create a Lionel Messi Inter Miami pink jersey art poster.",
+          "Generate a Lionel Messi Barcelona classic striped jersey graffiti poster."
+        ]
+      }
+    }
+  },
+  "template-vintage-football-jersey-intro-watercolor-poster": {
+    "category": "Vintage Football Jersey Introduction Watercolor Poster",
+    "description": "Generate a vertical watercolor poster feature for any classic football jersey — full kit illustration, crest + sponsor logo, season year typography, player association tag.",
+    "title": "Nano Banana Prompt: Vintage Football Jersey Watercolor Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical illustrated jersey feature poster. Large stylized season-year title at top; central full watercolor drawing of the classic football jersey with complete crest, sponsor logo, collar and detailing; player association tag (the legend who wore it) and optional historical context panel. Soft watercolor strokes evoke nostalgia.",
+        "who": "Suitable for football kit historians + content creators, vintage-jersey resellers and collectors, classic-football brand owners (Copa90, Classic Football Shirts), retro merch designers, and football-bar / pub print sellers.",
+        "how": [
+          "Enter the jersey + player in {jersey_info} (e.g. 'Manchester United 2008 home AIG jersey, Cristiano Ronaldo feature').",
+          "Full watercolor jersey illustration auto-renders at center.",
+          "Crest, sponsor, season year, player association auto-populate the layout.",
+          "Generate a vintage football jersey watercolor feature poster."
+        ],
+        "prompts": [
+          "Generate a Manchester United 2008 home AIG jersey poster featuring Cristiano Ronaldo.",
+          "Create a Fiorentina 98-99 Nintendo sponsor jersey poster featuring Batistuta.",
+          "Generate a Barcelona 99-00 away centenary jersey poster featuring Rivaldo."
+        ]
+      }
+    }
+  },
+  "template-brand-ip-full-design-board": {
+    "category": "Brand IP Full Design Display Board",
+    "description": "Generate a vertical official IP design display board — main IP character at top, numbered modules covering design language, expression sheet, pose sheet, color system, scenario applications.",
+    "title": "Nano Banana Prompt: Brand IP Full Design Display Board Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K official IP design presentation board. Top area features the main IP character paired with a prominent project title banner; below, the page splits into independent numbered modules — design language, expression sheet, pose sheet, color system, brand voice, and scenario / application mockups — for a presentation-ready showcase.",
+        "who": "Suitable for in-house brand teams approving a mascot launch, agencies pitching IP redesigns, IP-licensing intermediaries presenting full character bibles, kids-product brand managers, and product designers building investor / partner decks.",
+        "how": [
+          "Enter the IP design info in {ip_design_info} (e.g. '江源水豚IP, Shanghai Dongtan wetland eco-guardian, traditional Chinese knot dress').",
+          "Main IP character + title banner auto-render at the top.",
+          "Numbered modules + scenario applications auto-compose below.",
+          "Generate a vertical 8K brand IP full design display board."
+        ],
+        "prompts": [
+          "Generate a 江源水豚 (Capybara) IP design board with Chinese guardian dress.",
+          "Create a 青榄小菊 mosquito-repellent IP design board with chrysanthemum kid character.",
+          "Generate a 沪澜浣熊 Shanghai raccoon eco-guardian IP design board in purple Hanfu."
+        ]
+      }
+    }
+  },
+  "template-theme-color-palette-card": {
+    "category": "Themed Scene Color Palette Card",
+    "description": "Generate a vertical color reference card with a full themed background illustration and labeled hex-coded color swatches running down the left edge.",
+    "title": "Nano Banana Prompt: Themed Scene Color Palette Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical color reference card. Beautiful full-background illustration matching the theme; left-side vertically arranged rectangular color swatch blocks, each block embeds a clear hex color code label. The result is presentation-ready for designers, color-grading reference, and themed mood-board work.",
+        "who": "Suitable for graphic designers and digital illustrators, interior + brand-system designers building palette references, art-style content creators on Pinterest / Instagram, color-grading filmmakers, and design educators producing color-theory teaching aids.",
+        "how": [
+          "Enter the theme + style in {color_theme_info} (e.g. 'Deep-sea whale-shark blue-purple watercolor palette card').",
+          "Full themed background illustration auto-renders.",
+          "Color swatch blocks + hex code labels populate the left edge.",
+          "Generate a vertical themed color palette card."
+        ],
+        "prompts": [
+          "Generate a deep-sea whale-shark blue-purple watercolor palette card.",
+          "Create a tropical-coral Studio Ghibli palette card.",
+          "Generate a pink-purple gradient betta-fish realistic palette card."
+        ]
+      }
+    }
   }
 }

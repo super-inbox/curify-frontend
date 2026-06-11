@@ -1,9 +1,8 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { useAtomValue, useSetAtom } from "jotai";
-import { drawerAtom, userAtom } from "@/app/atoms/atoms";
 import { Inter } from "next/font/google";
+import { useRequireAuth } from "@/services/useRequireAuth";
 import { useTranslations } from "next-intl";
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
@@ -32,16 +31,9 @@ export default function HomeClient({
   cards?: InspirationCardType[];
   nanoCards?: NanoInspirationCardType[];
 }) {
-  const user = useAtomValue(userAtom);
-  const setDrawerState = useSetAtom(drawerAtom);
-
   const tHero = useTranslations("home.hero");
 
-  const requireAuth = useCallback(() => {
-    if (user) return true;
-    setDrawerState("signup");
-    return false;
-  }, [user, setDrawerState]);
+  const requireAuth = useRequireAuth({ variant: "signup" });
 
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
