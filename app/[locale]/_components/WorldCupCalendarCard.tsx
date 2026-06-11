@@ -254,7 +254,7 @@ export default function WorldCupCalendarCard({ locale, className }: Props) {
           onClick={trackFooterClick}
           className="text-[11px] font-semibold text-emerald-700 hover:underline focus:outline-none focus:ring-2 focus:ring-emerald-400 rounded"
         >
-          View full schedule →
+          Explore World Cup →
         </Link>
       </div>
     </div>

@@ -17,8 +17,11 @@ import WcSearchQueryCard from "./WcSearchQueryCard";
 type Props = {
   locale: string;
   // Curated WC query list — passed in by the parent so this component
-  // stays presentation-only.
-  queries: string[];
+  // stays presentation-only. Optional + defaulted so a caller passing
+  // undefined doesn't blow up useState initial-state evaluation (the
+  // production crash that the multi-query version had also guarded
+  // against; reintroduced with the revert, then re-fixed here).
+  queries?: string[];
   className?: string;
 };
 
@@ -33,17 +36,23 @@ function pickRandomMode(): Mode {
   return Math.random() < 0.5 ? "calendar" : "query";
 }
 
-export default function WcRotatingSlot({ locale, queries, className }: Props) {
+export default function WcRotatingSlot({ locale, queries = [], className }: Props) {
+  // Defensive: even with the default above, hold a stable array reference
+  // so downstream reads (`queries[0]`, `queries.length`) never see undefined.
+  const safeQueries = Array.isArray(queries) ? queries : [];
+  const hasQueries = safeQueries.length > 0;
+
   // Server render with a deterministic default (calendar) so SSR markup is
   // stable. Client effect re-rolls on mount so the user sees the random
-  // pick after hydration.
+  // pick after hydration. With no queries, stay calendar-only.
   const [mode, setMode] = useState<Mode>("calendar");
-  const [query, setQuery] = useState<string>(() => queries[0] ?? "");
+  const [query, setQuery] = useState<string>(() => safeQueries[0] ?? "");
 
   useEffect(() => {
+    if (!hasQueries) return;
     setMode(pickRandomMode());
-    setQuery(pickRandomQuery(queries));
-  }, [queries]);
+    setQuery(pickRandomQuery(safeQueries));
+  }, [safeQueries, hasQueries]);
 
   const otherMode: Mode = mode === "calendar" ? "query" : "calendar";
   const trackToggle = useClickTracking(`wc-slot-toggle:${otherMode}`, "topic_capsule", "cards");
@@ -55,7 +64,7 @@ export default function WcRotatingSlot({ locale, queries, className }: Props) {
     setMode(otherMode);
     // Re-pick query when toggling INTO query mode so the user sees variety
     // on repeat toggles.
-    if (otherMode === "query") setQuery(pickRandomQuery(queries));
+    if (otherMode === "query") setQuery(pickRandomQuery(safeQueries));
   };
 
   const toggleLabel = mode === "calendar" ? "Show a popular search" : "Show the calendar";
@@ -69,22 +78,27 @@ export default function WcRotatingSlot({ locale, queries, className }: Props) {
         <WcSearchQueryCard locale={locale} query={query} />
       )}
 
-      {/* Toggle button — top-right corner, small + unobtrusive */}
-      <button
-        type="button"
-        onClick={handleToggle}
-        aria-label={toggleLabel}
-        title={toggleLabel}
-        className={[
-          "absolute right-2 top-2 z-10",
-          "flex items-center justify-center w-7 h-7 rounded-full",
-          "bg-white/85 backdrop-blur-sm shadow-sm border border-neutral-200",
-          "text-sm transition-all hover:scale-110 hover:bg-white hover:shadow-md",
-          "focus:outline-none focus:ring-2 focus:ring-neutral-400",
-        ].join(" ")}
-      >
-        <span aria-hidden="true">{toggleIcon}</span>
-      </button>
+      {/* Toggle button — top-right corner, small + unobtrusive. Only
+          shown when there are queries to rotate into; otherwise the slot
+          stays calendar-only and the toggle would lead to an empty
+          query card. */}
+      {hasQueries && (
+        <button
+          type="button"
+          onClick={handleToggle}
+          aria-label={toggleLabel}
+          title={toggleLabel}
+          className={[
+            "absolute right-2 top-2 z-10",
+            "flex items-center justify-center w-7 h-7 rounded-full",
+            "bg-white/85 backdrop-blur-sm shadow-sm border border-neutral-200",
+            "text-sm transition-all hover:scale-110 hover:bg-white hover:shadow-md",
+            "focus:outline-none focus:ring-2 focus:ring-neutral-400",
+          ].join(" ")}
+        >
+          <span aria-hidden="true">{toggleIcon}</span>
+        </button>
+      )}
     </div>
   );
 }
