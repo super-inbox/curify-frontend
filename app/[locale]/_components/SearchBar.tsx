@@ -4,7 +4,13 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Search, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { filterSuggestions, DEFAULT_FOCUS_SUGGESTIONS } from "@/lib/searchIndex";
+import {
+  filterSuggestions,
+  DEFAULT_FOCUS_SUGGESTIONS,
+  TIER1_CHIP_SETS,
+  ALL_SUGGESTIONS,
+  type SuggestionEntry,
+} from "@/lib/searchIndex";
 import { useTracking } from "@/services/useTracking";
 
 type Props = { locale: string };
@@ -51,6 +57,38 @@ export default function SearchBar({ locale }: Props) {
   const suggestions = query.trim()
     ? filterSuggestions(query, 8, localize)
     : DEFAULT_FOCUS_SUGGESTIONS;
+
+  // Build a slug→SuggestionEntry index ONCE per mount for the grouped
+  // focus view. Lookup is read-only; the index isn't recomputed unless
+  // ALL_SUGGESTIONS itself changes (module-static at build time).
+  const suggestionBySlug = useRef<Map<string, SuggestionEntry>>(
+    new Map(ALL_SUGGESTIONS.map((s) => [s.slug, s]))
+  ).current;
+
+  // For the focus-state grouped view: resolve each tier1's chip slugs into
+  // full SuggestionEntries (emoji + label + searchFallback + href). Slugs
+  // not found in ALL_SUGGESTIONS (e.g., unlocalized world-cup country edits)
+  // get a minimal default entry so the chip still renders.
+  const groupedFocusSections = TIER1_CHIP_SETS.map(({ tier1, chips }) => {
+    const t1Entry = suggestionBySlug.get(tier1);
+    const t1Label = renderLabel(tier1, t1Entry?.label ?? tier1);
+    const t1Emoji = t1Entry?.emoji;
+    const items = chips
+      .map((slug): SuggestionEntry => {
+        const found = suggestionBySlug.get(slug);
+        if (found) return found;
+        // Fallback for slugs not in ALL_SUGGESTIONS — route to /search
+        // so the chip still works even if the topic page isn't registered.
+        const spaced = slug.replace(/-/g, " ");
+        return {
+          slug,
+          label: spaced.replace(/\b\w/g, (c) => c.toUpperCase()),
+          tier: 3 as const,
+          searchFallback: true,
+        };
+      });
+    return { tier1, t1Label, t1Emoji, items };
+  });
 
   const navigate = useCallback((
     slug: string,
@@ -135,27 +173,60 @@ export default function SearchBar({ locale }: Props) {
 
       {/* Suggestions dropdown */}
       {open && (
-        <div className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden">
-          <div className="px-3 pt-3 pb-1">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">
-              {query.trim() ? "Suggestions" : "Popular topics"}
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-2 px-3 pb-3 pt-1.5">
-            {suggestions.map((s) => (
-              <button
-                key={s.slug}
-                type="button"
-                onClick={() => navigate(s.slug, renderLabel(s.slug, s.label), s.href, s.searchFallback, s.aliases?.[0])}
-                className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 text-base text-neutral-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-colors cursor-pointer"
-              >
-                {s.emoji && <span aria-hidden="true">{s.emoji}</span>}
-                {renderLabel(s.slug, s.label)}
-              </button>
-            ))}
-          </div>
-          {query.trim() && suggestions.length === 0 && (
-            <p className="px-4 pb-3 text-sm text-neutral-400">No matching topics — press Enter to search</p>
+        <div className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-[70vh] overflow-y-auto rounded-xl border border-neutral-200 bg-white shadow-lg">
+          {query.trim() ? (
+            <>
+              <div className="px-3 pt-3 pb-1">
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">
+                  Suggestions
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2 px-3 pb-3 pt-1.5">
+                {suggestions.map((s) => (
+                  <button
+                    key={s.slug}
+                    type="button"
+                    onClick={() => navigate(s.slug, renderLabel(s.slug, s.label), s.href, s.searchFallback, s.aliases?.[0])}
+                    className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 text-base text-neutral-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-colors cursor-pointer"
+                  >
+                    {s.emoji && <span aria-hidden="true">{s.emoji}</span>}
+                    {renderLabel(s.slug, s.label)}
+                  </button>
+                ))}
+              </div>
+              {suggestions.length === 0 && (
+                <p className="px-4 pb-3 text-sm text-neutral-400">No matching topics — press Enter to search</p>
+              )}
+            </>
+          ) : (
+            <div className="px-3 py-3">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-neutral-400">
+                Browse by category
+              </p>
+              <div className="flex flex-col gap-3">
+                {groupedFocusSections.map(({ tier1, t1Label, t1Emoji, items }) => (
+                  <div key={tier1}>
+                    <div className="mb-1.5 flex items-center gap-1.5 px-1 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+                      {t1Emoji && <span aria-hidden="true" className="text-sm">{t1Emoji}</span>}
+                      <span>{t1Label}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {items.map((s) => (
+                        <button
+                          key={s.slug}
+                          type="button"
+                          onClick={() => navigate(s.slug, renderLabel(s.slug, s.label), s.href, s.searchFallback, s.aliases?.[0])}
+                          className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-colors cursor-pointer"
+                        >
+                          {s.emoji && <span aria-hidden="true">{s.emoji}</span>}
+                          {renderLabel(s.slug, s.label)}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           )}
         </div>
       )}

@@ -178,6 +178,34 @@ export const DEFAULT_FOCUS_SUGGESTIONS: SuggestionEntry[] = [
   { slug: "cartoon",        label: "Cartoon",        emoji: "🖌️",   tier: 3 },
 ];
 
+// Curated chip set per Tier 1, shown in the focus-state dropdown grouped
+// by Tier 1 section header (4-5 most interesting Tier 2/3 picks per row).
+// Each entry is a slug resolved against ALL_SUGGESTIONS at render time.
+//
+// Curation principles:
+//   - Lead with entries that have content (no dead chips)
+//   - Mix Tier 2 navigational + Tier 3 specific where appropriate
+//   - WC row uses the 5 highest-entry-traffic country pages from the
+//     2026-06-12 per-topic entry pull (argentina/portugal/england/
+//     brazil/france were top 5)
+//   - Refresh quarterly against TOPIC_CAPSULE click frequency
+//
+// Slugs not in TIER1/2/3 explicit arrays will still resolve via
+// TIER3_TOPIC_MAPPED (taxonomy.json tier3 derivation). Any slug missing
+// from ALL_SUGGESTIONS gets dropped silently by the SearchBar render.
+export const TIER1_CHIP_SETS: Array<{ tier1: string; chips: string[] }> = [
+  { tier1: "world-cup",   chips: ["argentina-world-cup", "portugal-world-cup", "england-world-cup", "brazil-world-cup", "france-world-cup"] },
+  { tier1: "character",   chips: ["mbti", "anime", "sports", "film", "portrait"] },
+  { tier1: "personality", chips: ["mbti-enfp", "mbti-intj", "mbti-infp", "mbti-entp", "mbti-isfj"] },
+  { tier1: "language",    chips: ["vocabulary", "dialogue", "english-chinese", "english-spanish", "asl"] },
+  { tier1: "learning",    chips: ["science", "history", "ai", "phonics", "architecture"] },
+  { tier1: "travel",      chips: ["city", "itinerary", "japan", "france", "korea"] },
+  { tier1: "culture",     chips: ["food", "costumes", "cultural-festivals", "china", "india"] },
+  { tier1: "lifestyle",   chips: ["fashion", "fitness", "beauty", "interior", "finance"] },
+  { tier1: "design",      chips: ["posters", "mockups", "watercolor", "photorealistic", "illustration"] },
+  { tier1: "product",     chips: ["packaging", "ecommerce", "branding", "hero-banner", "mood-board"] },
+];
+
 // Tools — overall /tools page + each tool with status === "create" in
 // lib/tools-registry.ts. Use `href` so navigation goes to the tool route
 // instead of /topics/<slug>. Keep slugs in sync with tools-registry.
