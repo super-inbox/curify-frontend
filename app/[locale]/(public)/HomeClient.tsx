@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl";
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
-import type { InspirationCardType } from "@/app/[locale]/_components/InspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import HomeToolsStrip from "./HomeToolsStrip";
 import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
@@ -24,11 +23,9 @@ function classNames(...xs: Array<string | false | undefined | null>) {
 
 export default function HomeClient({
   locale = "en",
-  cards = [],
   nanoCards = [],
 }: {
   locale?: string;
-  cards?: InspirationCardType[];
   nanoCards?: NanoInspirationCardType[];
 }) {
   const tHero = useTranslations("home.hero");

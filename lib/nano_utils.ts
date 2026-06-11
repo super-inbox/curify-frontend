@@ -104,6 +104,12 @@ export type NanoInspirationCardType = {
   rank_score?: number;
   image_urls: string[];
   preview_image_urls: string[];
+  // Canonical example (inspiration) id per image, parallel to image_urls.
+  // Used to deep-link to /nano-template/<slug>/example/<id>. Must come from
+  // the data (ImageView.id) — do NOT derive it from the image filename, which
+  // bakes in the content locale (template-travel-zh-beijing.jpg) and isn't a
+  // valid example id.
+  example_ids?: string[];
   description?: string;
   base_prompt?: string;
   template_parameters?: TemplateParameter[];

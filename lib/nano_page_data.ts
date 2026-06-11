@@ -229,6 +229,7 @@ export function buildNanoFeedCards(
       template_parameters: tv.parameters,
       image_urls: sliced.map((x) => x.image_url),
       preview_image_urls: sliced.map((x) => x.preview_image_url ?? x.image_url),
+      example_ids: sliced.map((x) => x.id),
       sample_parameters: sliced[0]?.params,
     });
   }

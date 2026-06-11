@@ -69,6 +69,28 @@ import BilingualFlashcardsContent from "./components/BilingualFlashcardsContent"
 import UGCVideoTranslationContent from "./components/UGCVideoTranslationContent";
 import AIFacelessChannelPipelineWrapper from './components/AIFacelessChannelPipelineWrapper';
 import blogsData from "@/public/data/blogs.json";
+import nanoInspirationData from "@/public/data/nano_inspiration.json";
+
+// Build example_id → template_id lookup at module init (server-component
+// load = once per deploy). Lets the hero auto-deriver below resolve any
+// /images/nano_insp/<example-id>.jpg URL to /nano-template/<slug>/example/
+// <example-id> with no per-blog config. Catalog is ~2,900 entries today
+// so the Map is small.
+const NANO_EXAMPLE_TO_TEMPLATE: Map<string, string> = new Map(
+  (nanoInspirationData as Array<{ id?: string; template_id?: string }>)
+    .filter((e) => !!e?.id && !!e?.template_id)
+    .map((e) => [e.id as string, e.template_id as string]),
+);
+function deriveHeroLinkFromImage(imageSrc: string | undefined): string | null {
+  if (!imageSrc) return null;
+  const m = imageSrc.match(/^\/images\/nano_insp\/(template-[^/]+)\.jpg$/);
+  if (!m) return null;
+  const exampleId = m[1];
+  const templateId = NANO_EXAMPLE_TO_TEMPLATE.get(exampleId);
+  if (!templateId) return null;
+  const templateSlug = templateId.replace(/^template-/, "");
+  return `/nano-template/${templateSlug}/example/${exampleId}`;
+}
 import { routing } from "@/i18n/routing";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
@@ -368,21 +390,37 @@ export default async function BlogPostPage({
               />
             );
             const wcTopic = WC_BLOG_HERO_TOPIC[slug];
-            // Hero link resolution order:
-            // 1. WC blog → /topics/<wcTopic> (high-CVR jump to the relevant
-            //    topic page)
-            // 2. blogs.json entry has a heroLink field → use it (typically
-            //    /nano-template/<slug>/example/<id> for posts that lead
-            //    with a specific template example)
-            // 3. fall through to non-linked hero
+            // Hero link resolution order (2026-06-12):
+            // 1. WC blog → /topics/<wcTopic> (high-CVR jump to the topic page)
+            // 2. blogs.json entry has an explicit heroLink field — use it
+            // 3. Auto-derive from blogConfig.image when it points at
+            //    /images/nano_insp/<example-id>.jpg — lookup the template
+            //    via NANO_EXAMPLE_TO_TEMPLATE and route to the example page.
+            //    Covers the existing catalog retroactively with no per-blog
+            //    blogs.json edits.
+            // 4. Fall through to non-linked hero.
             const explicitHero = (blogData as { heroLink?: string } | undefined)?.heroLink;
+            const autoHero = deriveHeroLinkFromImage(blogConfig.image);
             const heroHref = wcTopic
               ? `/${locale}/topics/${wcTopic}`
-              : (explicitHero ? `/${locale}${explicitHero}` : null);
+              : (explicitHero ? `/${locale}${explicitHero}`
+                 : (autoHero ? `/${locale}${autoHero}` : null));
             if (heroHref) {
               return (
-                <a href={heroHref} className="block">
+                <a href={heroHref} className="relative block group">
                   {heroNode}
+                  {/* Hover affordance — corner arrow badge fades in on
+                      hover. Universal "click to navigate" cue, no
+                      translation needed. pointer-events-none so it
+                      doesn't intercept the link click. */}
+                  <span
+                    className="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/95 shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200 pointer-events-none"
+                    aria-hidden="true"
+                  >
+                    <svg className="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
                 </a>
               );
             }

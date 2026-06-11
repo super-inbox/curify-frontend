@@ -135,12 +135,18 @@ export function NanoInspirationCard({
   // formed (rare), in which case desktop clicks fall through to the
   // template index page like before.
   const firstExampleId = useMemo<string | undefined>(() => {
+    // Prefer the canonical example id carried on the card (from ImageView.id).
+    // Only fall back to the image filename stem when a card source didn't
+    // supply example_ids — that fallback is unreliable for localized images
+    // (the filename bakes in the content locale, e.g. template-travel-zh-
+    // beijing), so card builders should always populate example_ids.
+    const fromData = card.example_ids?.[0];
+    if (fromData) return fromData;
     const first = card.image_urls?.[0] ?? card.preview_image_urls?.[0];
     if (!first) return undefined;
-    const fname = first.split("/").pop() ?? "";
-    const stem = fname.replace(/\.[^.]+$/, "");
+    const stem = (first.split("/").pop() ?? "").replace(/\.[^.]+$/, "");
     return stem || undefined;
-  }, [card.image_urls, card.preview_image_urls]);
+  }, [card.example_ids, card.image_urls, card.preview_image_urls]);
 
   const desktopExampleHref = useMemo<string | null>(() => {
     if (!card.template_id || !firstExampleId) return null;

@@ -222,7 +222,7 @@ export default async function Page({ params }: Props) {
       });
       galleryPrompts = raw
         .filter((p) => !(p.tags ?? []).includes("revealing-female"))
-        .slice(0, 10);
+        .slice(0, 12);
     } catch {
       // gallery is non-critical; fail silently
     }

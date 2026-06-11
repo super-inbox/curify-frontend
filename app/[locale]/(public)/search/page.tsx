@@ -627,6 +627,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
         ...c,
         image_urls: top.map((r) => r.asset.image_url),
         preview_image_urls: top.map((r) => r.asset.preview_image_url ?? r.asset.image_url),
+        example_ids: top.map((r) => r.id),
         sample_parameters: (top[0]?.params as Record<string, unknown>) ?? c.sample_parameters,
       };
     });
