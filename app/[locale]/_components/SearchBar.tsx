@@ -17,6 +17,25 @@ export default function SearchBar({ locale }: Props) {
   const router = useRouter();
   const { track } = useTracking();
   const t = useTranslations("topics");
+  // Guard so we only fire ONE focus event per session-of-this-mount,
+  // not on every focus regain. Pairs with the SEARCH submit event so we
+  // can compute "opened dropdown / didn't submit" as a funnel rung.
+  const focusFiredRef = useRef(false);
+
+  // Fired the first time the SearchBar dropdown is opened in a session.
+  // content_id `searchbar-focus` is a fixed string (not a query) so the
+  // event is countable without per-query cardinality blowup. Action_type
+  // reuses "click" — there's no "focus" enum; backend silently drops
+  // unknown values (feedback_tracking_enums memory).
+  const trackFocusOnce = useCallback(() => {
+    if (focusFiredRef.current) return;
+    focusFiredRef.current = true;
+    track({
+      contentId: "searchbar-focus",
+      contentType: "topic_capsule",
+      actionType: "click",
+    });
+  }, [track]);
 
   // Localized label resolver — returns the locale's displayName or undefined.
   // Used for both rendering chips and matching user queries in the user's language.
@@ -98,7 +117,7 @@ export default function SearchBar({ locale }: Props) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            onFocus={() => setOpen(true)}
+            onFocus={() => { setOpen(true); trackFocusOnce(); }}
             placeholder="Search templates, styles, topics…"
             className="w-full rounded-2xl border-2 border-blue-200 bg-white py-3.5 pl-12 pr-10 text-base text-neutral-900 placeholder:text-neutral-500 shadow-sm hover:border-blue-300 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all"
           />
