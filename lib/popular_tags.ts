@@ -26,4 +26,7 @@ export const POPULAR_GALLERY_TAGS: string[] = [
   "professional",
 ];
 
-export const POPULAR_TAG_ROW_LIMIT = 5;
+// One row per popular tag on /nano-banana-pro-prompts. Aligned to the
+// xl 6-column grid the rest of the site uses since the 2026-06-04 layout
+// refactor; was 5 from the pre-refactor lg:grid-cols-5 era.
+export const POPULAR_TAG_ROW_LIMIT = 6;

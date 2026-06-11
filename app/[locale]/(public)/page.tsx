@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import HomeClient from "./HomeClient";
 // 1. Import your service and mapper
-import { inspirationService } from "@/services/inspiration";
-import { mapDTOToUICard } from "@/services/inspirationMapper";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import { SITE_URL } from "@/lib/constants";
 import { routing } from "@/i18n/routing";
@@ -103,23 +101,13 @@ export default async function HomePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  // 2. Fetch Data (Server-Side)
-  // We reuse the same query as your Inspiration Hub to get the feed data
-  let cards: ReturnType<typeof mapDTOToUICard>[] = [];
-  try {
-    const rawData = await inspirationService.getCards({
-      review_status: "APPROVED",
-      limit: 50,
-    });
-    cards = rawData.map(mapDTOToUICard);
-  } catch (err) {
-    console.error("[HomePage] inspiration API failed, falling back to nano cards only:", err);
-  }
-
   // Build nano cards on the server so the client bundle stays slim.
+  // The legacy `cards` prop (inspiration API fetch with limit=50) was
+  // destructured by HomeClient but never rendered after the WC widget
+  // refactor — drop the fetch entirely to save the API roundtrip on
+  // every home render.
   const nanoCards = await buildHomeNanoCards();
 
-  // 4. Pass 'cards' prop to the Client Component
   return (
     <>
      <script
@@ -142,7 +130,7 @@ export default async function HomePage({
     })
   }}
 />
-      <HomeClient locale={locale} cards={cards} nanoCards={nanoCards} />
+      <HomeClient locale={locale} nanoCards={nanoCards} />
     </>
   );
 }
