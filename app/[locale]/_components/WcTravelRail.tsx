@@ -27,10 +27,12 @@ export default function WcTravelRail({ recommendation, locale }: Props) {
     <section className="mt-12 rounded-3xl border border-amber-200 bg-amber-50/40 p-6 sm:p-8">
       <div className="mb-5 flex items-baseline justify-between gap-4">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-wider text-amber-700">
-            Heading to {recommendation.countryLabel} for the World Cup?
-          </p>
-          <h2 className="mt-1 text-xl font-bold text-neutral-900">
+          {/* Eyebrow line was "Heading to X for the World Cup?" — dropped
+              because the WC 2026 hosts are Mexico / USA / Canada, so a
+              user on a Brazil-or-England squad page isn't actually
+              traveling there for the tournament. The heading stays
+              venue-agnostic ("Plan your trip to X"). */}
+          <h2 className="text-xl font-bold text-neutral-900">
             Plan your trip to {recommendation.countryLabel}
           </h2>
         </div>
