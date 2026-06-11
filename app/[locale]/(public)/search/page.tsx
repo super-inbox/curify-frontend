@@ -17,6 +17,7 @@ import { nanoRegistry } from "@/lib/nano_utils";
 import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import { tsToSc } from "@/lib/zh_normalize";
 import { rewriteQuery } from "@/lib/searchRewrite";
+import { matchWcCountryQuery } from "@/lib/wcCountryRouting";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Threshold below which we trigger the LLM rewrite path. Matches the
@@ -223,6 +224,15 @@ export default async function SearchPage({ params, searchParams }: Props) {
   const query = q.trim().toLowerCase();
 
   if (!query) redirect(`/${locale}`);
+
+  // "<country> world cup" → if the country has a registered topic page
+  // (10 nations currently — see lib/wcCountryRouting.ts), redirect there
+  // directly. Keeps the typed-query experience identical to the calendar-
+  // card chip click and bypasses LLM rewriter randomness.
+  const wcCountrySlug = matchWcCountryQuery(query);
+  if (wcCountrySlug) {
+    redirect(`/${locale}/topics/${wcCountrySlug}-world-cup`);
+  }
 
   const tokens = buildSearchTokens(query);
 

@@ -14,6 +14,7 @@ import {
   tournamentPhase,
   type WCMatch,
 } from "@/lib/wc_2026_schedule";
+import { routeWcCountry } from "@/lib/wcCountryRouting";
 
 // Card-sized widget for the FIFA World Cup 2026 schedule. Slots into
 // the same grid as NanoInspirationCard. Two phases:
@@ -39,7 +40,10 @@ function localePrefix(locale: string): string {
 }
 
 function nationSearchHref(locale: string, country: string): string {
-  return `${localePrefix(locale)}/search?q=${encodeURIComponent(`${country} world cup`)}`;
+  // Mapped nations land on /topics/<country>-world-cup directly (richer
+  // country-specific WC view). Unmapped nations fall through to search
+  // — see lib/wcCountryRouting.ts.
+  return routeWcCountry(country, locale);
 }
 
 // Per-line clickable for "Upcoming" (pre-tournament view). Each row is a
