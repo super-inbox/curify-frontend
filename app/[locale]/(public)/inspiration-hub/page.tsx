@@ -2,11 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
-import InspirationHubClient from "./InspirationHubClient";
 import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
-import { inspirationService } from "@/services/inspiration";
-import { mapDTOToUICard } from "@/services/inspirationMapper";
-import { InspirationCardUI } from "@/types/inspiration";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import { routing } from "@/i18n/routing";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
@@ -49,30 +45,24 @@ export async function generateMetadata({
   };
 }
 
-function generateJsonLd(cards: InspirationCardUI[]) {
+// ItemList structured data built from the static topic rows (the page's
+// actual visible content). Previously derived from the dynamic "Today's
+// Signals" card feed, which was removed 2026-06-10 to drop the build-time
+// backend dependency; this keeps the page's structured data intact without
+// any backend call.
+function generateJsonLd(
+  topicRows: { topic: string; displayName: string }[],
+  locale: string,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Daily Inspiration Hub",
-    itemListElement: cards.slice(0, 50).map((c, idx) => ({
+    itemListElement: topicRows.slice(0, 50).map((row, idx) => ({
       "@type": "ListItem",
       position: idx + 1,
-      item: {
-        "@type": "CreativeWork",
-        name: c.hook.text.replace(/"/g, ""),
-        inLanguage: c.lang,
-        description: c.signal.summary || c.translation.tag,
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/inspiration-hub#${c.id}`,
-        ...(c.rating && {
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: c.rating.score,
-            bestRating: 5,
-            worstRating: 0,
-            ratingCount: 1,
-          },
-        }),
-      },
+      name: row.displayName,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/topics/${row.topic}`,
     })),
   };
 }
@@ -173,15 +163,15 @@ export default async function InspirationHubPage({
     try { return t(key as never) ?? ""; } catch { return ""; }
   };
 
-  const rawData = await inspirationService.getCards({
-    review_status: "APPROVED",
-    limit: 100,
-  });
-
-  const cards = rawData.map(mapDTOToUICard);
-  const jsonLd = generateJsonLd(cards);
-
   const topicRows = buildTopicRows(locale);
+
+  const jsonLd = generateJsonLd(
+    topicRows.map(({ topic }) => ({
+      topic,
+      displayName: safeT(`topics.${topic}.displayName`) || topic,
+    })),
+    locale,
+  );
 
   return (
     <>
@@ -235,14 +225,6 @@ export default async function InspirationHubPage({
             </section>
           );
         })}
-
-        {/* Original signal-based card feed below the topic rows. */}
-        <section className="mt-12 border-t border-neutral-200 pt-8">
-          <h2 className="mb-4 text-2xl font-semibold tracking-tight text-neutral-900">
-            Today&apos;s Signals
-          </h2>
-          <InspirationHubClient cards={cards} />
-        </section>
       </main>
     </>
   );
