@@ -177,6 +177,7 @@ type TemplateExampleProps = {
   templateTopics: string[];
   templateParameters: TemplateParameter[];
   templateAllowGeneration: boolean;
+  templateRequiresImageUpload?: boolean;
   templateBatch: boolean;
   basePrompt: string;
   existingExamples: ExistingExampleRef[];
@@ -742,6 +743,7 @@ export default function CarouselClient(props: Props) {
               locale={locale}
               parameters={tProps.templateParameters}
               allowGeneration={tProps.templateAllowGeneration}
+              requiresImageUpload={tProps.templateRequiresImageUpload}
               initialParams={slide.params}
               exampleId={slide.id}
               basePrompt={tProps.basePrompt}

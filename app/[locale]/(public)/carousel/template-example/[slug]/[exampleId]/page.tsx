@@ -139,6 +139,7 @@ export default async function TemplateExampleCarouselPage({
   const templateTopics = templateView?.topics ?? [];
   const templateParameters = templateView?.parameters ?? [];
   const templateAllowGeneration = templateView?.allow_generation ?? false;
+  const templateRequiresImageUpload = templateView?.requires_image_upload ?? false;
   const templateBatch = templateView?.batch ?? false;
   const basePrompt = templateView?.base_prompt ?? "";
 
@@ -159,6 +160,7 @@ export default async function TemplateExampleCarouselPage({
       templateTopics={templateTopics}
       templateParameters={templateParameters}
       templateAllowGeneration={templateAllowGeneration}
+      templateRequiresImageUpload={templateRequiresImageUpload}
       templateBatch={templateBatch}
       basePrompt={basePrompt}
       existingExamples={existingExamples}

@@ -60,6 +60,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
   const templateBatch = templateView?.batch ?? false;
   const templateParameters = templateView?.parameters ?? [];
   const templateAllowGeneration = templateView?.allow_generation ?? false;
+  const templateRequiresImageUpload = templateView?.requires_image_upload ?? false;
 
   const fallbackCopy = resolveLocalizedExampleCopy(
     example,
@@ -141,6 +142,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     templateBatch,
     templateParameters,
     templateAllowGeneration,
+    templateRequiresImageUpload,
     basePrompt,
     existingExamples,
     allowI18n,
@@ -279,6 +281,7 @@ export default async function NanoExampleDetailPage({
     templateBatch,
     templateParameters,
     templateAllowGeneration,
+    templateRequiresImageUpload,
     basePrompt,
     existingExamples,
     bodyDescription,
@@ -361,6 +364,7 @@ export default async function NanoExampleDetailPage({
             locale={rawLocale}
             parameters={templateParameters}
             allowGeneration={templateAllowGeneration}
+            requiresImageUpload={templateRequiresImageUpload}
             initialParams={paramEntries}
             exampleId={example.id}
             basePrompt={basePrompt}
