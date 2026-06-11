@@ -681,6 +681,44 @@ FAMILIES = OrderedDict([
             '罗纳尔多', '克里斯蒂亚诺·罗纳尔多', 'C罗',
         ],
     }),
+    # 2026-06-12 cycle 5 — "squad picture" intent. Noclick pull surfaced
+    # users typing the phrase variations below — they DID get results (no
+    # SEARCH_NORESULT), but didn't click. The result tiles match via
+    # free-text on the title but no alias was hitting "squad picture" /
+    # "group pic" / "team picture" specifically, so the LLM rewriter was
+    # the only path. Add the phrasing aliases directly on the 5 WC squad
+    # templates so the match is exact (alias > free-text > LLM rewriter).
+    ('wc_squad_picture_phrasing', {
+        'templates': [
+            'template-celebrity-movie-group-poster',
+            'template-world-cup-team-sticker-poster',
+            'template-group-team-vertical-banner-country-poster',
+            'template-soccer-star-comic-retro-poster-card',
+            'template-football-team-all-time-lineup-poster',
+        ],
+        'inspiration_filter': {
+            'fields_any': [
+                'locales.en.title',
+                'params.team',
+                'params.team_name',
+                'params.team_info',
+                'params.player_name',
+                'params.star_movie_group',
+            ],
+            # Match every squad poster — phrasing aliases apply broadly to
+            # any team/player example on these templates.
+            'patterns': ['squad', 'team', 'player', 'world cup', 'cup', '2026'],
+        },
+        'aliases': [
+            'squad picture', 'squad pic', 'squad photo', 'squad poster',
+            'team picture', 'team pic', 'team photo', 'team poster',
+            'group pic', 'group picture', 'group photo', 'group poster',
+            'national team picture', 'national team poster',
+            'team squad', 'squad banner',
+            'make squad picture', 'create team poster',
+            '球队照', '阵容照', '阵容海报', '球队海报', '阵容图', '国家队照', '国家队海报',
+        ],
+    }),
     ('argentina_brazil_rivalry', {
         'templates': [
             'template-history-timeline-infographic',
