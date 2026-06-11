@@ -183,7 +183,7 @@ export function formatVoiceCloningContent(content: string): string {
     .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
       const isInternal = href.startsWith("/");
       const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
-      return `<a href="${href}"${target} class="block my-6"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="hover:opacity-90 transition-opacity" /></a>`;
+      return `<a href="${href}"${target} class="relative group block my-6 mx-auto" style="max-width: 600px;"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="transition-all duration-200 group-hover:shadow-xl group-hover:scale-[1.02]" /><span class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/95 shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200 pointer-events-none" aria-hidden="true"><svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span></a>`;
     })
     // Standalone markdown image: ![alt](src) → <img>
     // Run BEFORE the plain link regex (which would otherwise capture
@@ -248,7 +248,7 @@ export function formatAslContent(content: string): string {
     .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
       const isInternal = href.startsWith("/");
       const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
-      return `<a href="${href}"${target} class="block my-6"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="hover:opacity-90 transition-opacity" /></a>`;
+      return `<a href="${href}"${target} class="relative group block my-6 mx-auto" style="max-width: 600px;"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="transition-all duration-200 group-hover:shadow-xl group-hover:scale-[1.02]" /><span class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/95 shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200 pointer-events-none" aria-hidden="true"><svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span></a>`;
     })
     // Standalone markdown image: ![alt](src) → <img>
     // Run BEFORE the plain link regex (which would otherwise capture
@@ -321,7 +321,7 @@ export function formatNanoTemplateContent(content: string): string {
     .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
       const isInternal = href.startsWith("/");
       const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
-      return `<a href="${href}"${target} class="block my-6"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="hover:opacity-90 transition-opacity" /></a>`;
+      return `<a href="${href}"${target} class="relative group block my-6 mx-auto" style="max-width: 600px;"><img src="${src}" alt="${alt}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; cursor: pointer;" class="transition-all duration-200 group-hover:shadow-xl group-hover:scale-[1.02]" /><span class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/95 shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200 pointer-events-none" aria-hidden="true"><svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span></a>`;
     })
     // Standalone markdown image: ![alt](src) → <img>
     // Run BEFORE the plain link regex (which would otherwise capture
@@ -400,7 +400,10 @@ export function formatNanoBananaContent(content: string): string {
     .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
       const isInternal = href.startsWith("/");
       const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
-      return `<a href="${href}"${target} class="block my-4 mx-auto max-w-md"><img src="${toCdnUrl(src)}" alt="${alt}" class="rounded-lg shadow hover:opacity-90 transition-opacity cursor-pointer" /></a>`;
+      // 2026-06-12 CVR upgrade: explicit corner-arrow badge + image hover
+      // shadow lift + soft scale, so the click affordance is obvious.
+      // Matches the hero-image affordance in [slug]/page.tsx.
+      return `<a href="${href}"${target} class="relative group block my-4 mx-auto max-w-md"><img src="${toCdnUrl(src)}" alt="${alt}" class="rounded-lg shadow transition-all duration-200 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" /><span class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/95 shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200 pointer-events-none" aria-hidden="true"><svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span></a>`;
     })
     // Handle standalone markdown images ![alt](src) — must run before the
     // plain link rule since the syntax overlaps with [text](url). Kept as
@@ -509,7 +512,10 @@ export function formatContent(content: string): string {
     .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {
       const isInternal = href.startsWith("/");
       const target = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
-      return `<a href="${href}"${target} class="block my-4 mx-auto max-w-md"><img src="${toCdnUrl(src)}" alt="${alt}" class="rounded-lg shadow hover:opacity-90 transition-opacity cursor-pointer" /></a>`;
+      // 2026-06-12 CVR upgrade: explicit corner-arrow badge + image hover
+      // shadow lift + soft scale, so the click affordance is obvious.
+      // Matches the hero-image affordance in [slug]/page.tsx.
+      return `<a href="${href}"${target} class="relative group block my-4 mx-auto max-w-md"><img src="${toCdnUrl(src)}" alt="${alt}" class="rounded-lg shadow transition-all duration-200 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" /><span class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/95 shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200 pointer-events-none" aria-hidden="true"><svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span></a>`;
     })
     // Handle markdown images ![alt](src) — MUST run before the link rule
     // since the syntax overlaps with [text](url). Kept as markdown (not
