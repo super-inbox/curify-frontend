@@ -98,6 +98,14 @@ export default function ReproduceTemplateSection(props: {
   // image has finished uploading (blob_url present).
   const needsImage = requiresImageUpload && !referenceImageUrl;
 
+  // Whether to show the real Generate button (vs the copy-prompt fallback).
+  // requires_image_upload templates are inherently generation templates and
+  // THIS surface has the reference-image upload UI + the needsImage gate, so
+  // enable Generate for them even when allow_generation is unset/clobbered —
+  // the allow_generation flag in nano_templates.json gets reset by tag-regen
+  // scripts (e.g. portrait-retouching-blueprint), so don't rely on it alone.
+  const canGenerate = !!(template.allow_generation || requiresImageUpload);
+
   const handleGenerate = () => {
     if (emptyParams.length > 0) return;
     if (needsImage || isUploadingImage) return;
@@ -340,11 +348,11 @@ export default function ReproduceTemplateSection(props: {
             <UnifiedActionBar
               className="mt-auto pt-1"
               tracking={tracking}
-              generate={template.allow_generation ? undefined : {
+              generate={canGenerate ? undefined : {
                 enabled: true,
                 text: promptText,
               }}
-              externalGenerate={template.allow_generation ? {
+              externalGenerate={canGenerate ? {
                 enabled: true,
                 onGenerate: handleGenerate,
                 isGenerating,
