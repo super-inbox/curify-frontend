@@ -1,5 +1,95 @@
 [
   {
+    "slug": "competitor-comparison-infographics-ai",
+    "title": "Competitor Comparison Infographics with AI: A 3-Tier Composable Workflow",
+    "date": "June 12, 2026",
+    "readTime": "9 min read",
+    "tag": "DS & AI Engineering",
+    "image": "/images/nano_insp/template-finance-comparison-infographic-employee-vs-entrepreneur.jpg",
+    "heroLink": "/nano-template/finance-comparison-infographic/example/template-finance-comparison-infographic-employee-vs-entrepreneur",
+    "category": "ds-ai-engineering",
+    "relatedLinks": [
+      "ai-engineering-hard-truth",
+      "ai-content-factory-for-agencies",
+      "image-generation-model-comparison"
+    ],
+    "lastmod": "2026-06-12",
+    "metaDescription": "Competitor comparison infographics with AI — a 3-tier composable workflow (subject × info-type × layout/style) that ships Tesla vs Rivian, OpenAI vs Anthropic, Shopify vs Webflow battles in minutes. Free Curify templates inside.",
+    "nanoTemplates": [
+      {
+        "groupKey": "competitor-comparison-finance-comparison-infographic-employee-vs-entrepreneur",
+        "template_id": "template-finance-comparison-infographic",
+        "sample_parameters": {
+          "topic": "employee vs entrepreneur"
+        },
+        "category": "comparison",
+        "description": "Finance Comparison — Employee vs Entrepreneur (head-to-head data panel)",
+        "image_urls": [
+          "/images/nano_insp/template-finance-comparison-infographic-employee-vs-entrepreneur.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-finance-comparison-infographic-employee-vs-entrepreneur-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "competitor-comparison-finance-comparison-infographic-saving-vs-investing",
+        "template_id": "template-finance-comparison-infographic",
+        "sample_parameters": {
+          "topic": "saving vs investing"
+        },
+        "category": "comparison",
+        "description": "Finance Comparison — Saving vs Investing (head-to-head data panel)",
+        "image_urls": [
+          "/images/nano_insp/template-finance-comparison-infographic-saving-vs-investing.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-finance-comparison-infographic-saving-vs-investing-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "competitor-comparison-historical-figure-vs-infographic-nikola-tesla-vs-thomas-edison",
+        "template_id": "template-historical-figure-vs-infographic",
+        "sample_parameters": {},
+        "category": "comparison",
+        "description": "Historical Figure Vs — Tesla vs Edison (founder-vs-founder)",
+        "image_urls": [
+          "/images/nano_insp/template-historical-figure-vs-infographic-nikola-tesla-vs-thomas-edison.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-historical-figure-vs-infographic-nikola-tesla-vs-thomas-edison-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "competitor-comparison-animation-studio-comparison-infographic-pixar-vs-dreamworks",
+        "template_id": "template-animation-studio-comparison-infographic",
+        "sample_parameters": {},
+        "category": "comparison",
+        "description": "Animation Studio Comparison — Pixar vs DreamWorks (modern infographic)",
+        "image_urls": [
+          "/images/nano_insp/template-animation-studio-comparison-infographic-pixar-vs-dreamworks.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-animation-studio-comparison-infographic-pixar-vs-dreamworks-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "competitor-comparison-then-vs-now-comparison-infographic-tech-products",
+        "template_id": "template-then-vs-now-comparison-infographic",
+        "sample_parameters": {
+          "topic": "tech products"
+        },
+        "category": "comparison",
+        "description": "Then vs Now — Tech Products (temporal comparison)",
+        "image_urls": [
+          "/images/nano_insp/template-then-vs-now-comparison-infographic-tech-products.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-then-vs-now-comparison-infographic-tech-products-prev.jpg"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "vocabulary-flashcards-ai-templates",
     "title": "Vocabulary Flashcards with AI: Bilingual, Visual, and ESL-Ready Templates",
     "tag": "Learning & Education",
@@ -601,21 +691,6 @@
         ]
       },
       {
-        "groupKey": "world-cup-popular-group-team-vertical-banner-country-poster-wc-2026-group-a",
-        "template_id": "template-group-team-vertical-banner-country-poster",
-        "sample_parameters": {
-          "group_countries_info": "2026 World Cup Group A: Mexico, Poland, Saudi Arabia, Argentina — North American host opener group"
-        },
-        "category": "sports",
-        "description": "WC 2026 Group A Vertical Banner",
-        "image_urls": [
-          "/images/nano_insp/template-group-team-vertical-banner-country-poster-wc-2026-group-a.jpg"
-        ],
-        "preview_image_urls": [
-          "/images/nano_insp_preview/template-group-team-vertical-banner-country-poster-wc-2026-group-a-prev.jpg"
-        ]
-      },
-      {
         "groupKey": "world-cup-popular-player-vintage-stats-card-poster-lionel-messi-argentina",
         "template_id": "template-player-vintage-stats-card-poster",
         "sample_parameters": {
@@ -662,21 +737,6 @@
         ]
       },
       {
-        "groupKey": "world-cup-popular-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026",
-        "template_id": "template-football-tournament-group-stage-bracket-infographic",
-        "sample_parameters": {
-          "topic": "FIFA World Cup 2026 — USA / Canada / Mexico — 48-team expanded format with group stage and knockout bracket"
-        },
-        "category": "sports",
-        "description": "FIFA WC 2026 Group Stage Bracket",
-        "image_urls": [
-          "/images/nano_insp/template-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026.jpg"
-        ],
-        "preview_image_urls": [
-          "/images/nano_insp_preview/template-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026-prev.jpg"
-        ]
-      },
-      {
         "groupKey": "world-cup-popular-3d-region-landmark-map-brazil",
         "template_id": "template-3d-region-landmark-map",
         "sample_parameters": {
@@ -692,33 +752,65 @@
         ]
       },
       {
-        "groupKey": "world-cup-popular-city-miniature-new-york",
-        "template_id": "template-city-miniature",
+        "groupKey": "world-cup-popular-soccer-star-comic-retro-poster-card-kilian-mbappe-france",
+        "template_id": "template-soccer-star-comic-retro-poster-card",
         "sample_parameters": {
-          "City Name": "New York"
+          "player_name": "kilian mbappe france"
         },
-        "category": "united-states",
-        "description": "Host City Miniature — New York",
+        "category": "france",
+        "description": "Soccer Star Retro Poster — Kylian Mbappé (France)",
         "image_urls": [
-          "/images/nano_insp/template-city-miniature-zh-new-york.jpg"
+          "/images/nano_insp/template-soccer-star-comic-retro-poster-card-kilian-mbappe-france.jpg"
         ],
         "preview_image_urls": [
-          "/images/nano_insp_preview/template-city-miniature-zh-new-york-prev.jpg"
+          "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-kilian-mbappe-france-prev.jpg"
         ]
       },
       {
-        "groupKey": "world-cup-popular-sports-trophy-infographic-fifa-world-cup-trophy",
-        "template_id": "template-sports-trophy-infographic",
+        "groupKey": "world-cup-popular-soccer-star-comic-retro-poster-card-harry-kane-england",
+        "template_id": "template-soccer-star-comic-retro-poster-card",
         "sample_parameters": {
-          "topic": "FIFA World Cup Trophy"
+          "player_name": "harry kane england"
         },
-        "category": "sports",
-        "description": "FIFA World Cup Trophy Infographic",
+        "category": "uk",
+        "description": "Soccer Star Retro Poster — Harry Kane (England)",
         "image_urls": [
-          "/images/nano_insp/template-sports-trophy-infographic-fifa-world-cup-trophy.jpg"
+          "/images/nano_insp/template-soccer-star-comic-retro-poster-card-harry-kane-england.jpg"
         ],
         "preview_image_urls": [
-          "/images/nano_insp_preview/template-sports-trophy-infographic-fifa-world-cup-trophy-prev.jpg"
+          "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-harry-kane-england-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "world-cup-popular-sports-battle-mbappe-vs-bellingham",
+        "template_id": "template-sports-battle",
+        "sample_parameters": {
+          "player_left": "Kylian Mbappé",
+          "player_right": "Jude Bellingham"
+        },
+        "category": "character",
+        "description": "1v1 Rivalry Battle — Mbappé vs Bellingham",
+        "image_urls": [
+          "/images/nano_insp/template-sports-battle-mbappe-vs-bellingham.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-sports-battle-mbappe-vs-bellingham-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "world-cup-popular-sports-battle-vinicius-vs-yamal",
+        "template_id": "template-sports-battle",
+        "sample_parameters": {
+          "player_left": "Vinicius Jr",
+          "player_right": "Lamine Yamal"
+        },
+        "category": "character",
+        "description": "1v1 Rivalry Battle — Vinícius Júnior vs Lamine Yamal",
+        "image_urls": [
+          "/images/nano_insp/template-sports-battle-vinicius-vs-yamal.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-sports-battle-vinicius-vs-yamal-prev.jpg"
         ]
       }
     ]
@@ -938,7 +1030,7 @@
       "ultimate-directory-of-nano-banana-prompts",
       "10-prompting-tips-nano-banana"
     ],
-    "lastmod": "2026-06-10",
+    "lastmod": "2026-06-12",
     "metaDescription": "Portugal World Cup 2026 AI poster prompts: Ronaldo-anchored cinematic shots, Bruno + Bernardo squad poses, dark-red Quinas palette. Free Curify Seleção templates inside."
   },
   {

@@ -3,7 +3,6 @@
 import { useCallback, useState } from "react";
 import { Inter } from "next/font/google";
 import { useRequireAuth } from "@/services/useRequireAuth";
-import { useTranslations } from "next-intl";
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
@@ -28,8 +27,6 @@ export default function HomeClient({
   locale?: string;
   nanoCards?: NanoInspirationCardType[];
 }) {
-  const tHero = useTranslations("home.hero");
-
   const requireAuth = useRequireAuth({ variant: "signup" });
 
   const [modalState, setModalState] = useState<{
@@ -49,15 +46,6 @@ export default function HomeClient({
   return (
     <div className={classNames(inter.className, "w-full bg-[#FDFDFD] px-4 pb-10 pt-0 md:px-6 lg:px-10")}>
       <div className="w-full max-w-[1600px]">
-        <div className="w-full max-w-[1600px] pb-6 pl-3">
-          <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
-            {tHero("title")}
-          </h1>
-          <p className="mt-4 text-base leading-relaxed text-neutral-700">
-            {tHero("description")}
-          </p>
-        </div>
-
         <NanoInspirationRow
           cards={nanoCards}
           requireAuth={requireAuth}

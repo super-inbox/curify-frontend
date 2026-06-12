@@ -10745,5 +10745,36 @@
     "rank_score": 110,
     "creation_date": "2026-06-11",
     "base_rank_score": 90
+  },
+  {
+    "id": "template-corporate-news-editorial-hero",
+    "rank_score": 90.0,
+    "topics": [
+      "design",
+      "posters",
+      "trending",
+      "ai",
+      "character"
+    ],
+    "locales": {
+      "en": {
+        "category": "Corporate News Editorial Hero",
+        "title": "",
+        "description": "",
+        "base_prompt": "Editorial article-header illustration depicting '{event_info}'. Aspect ratio 3:2 landscape, centered hero composition.\n\nScene: A modern corporate setting featuring the company's name prominently in branded signage, with stylized realistic-illustrated figures (employees, executives, customers as relevant) acting out the news event in the foreground. Detailed figures with varied expressions and business attire. Architectural foreground filling the center, crowd or human-story elements filling the lower third where applicable.\n\nStyle: Monochrome editorial illustration — full desaturation to charcoal/grey tones across the entire scene EXCEPT the company's brand color (specified in {event_info}) applied ONLY to the company logo signage and minimal branded accent elements. Realistic-illustrated style, not photoreal not cartoony. Subtle paper / newsprint texture overlay for editorial feel. Strong centered framing optimized for use as an article header. No text overlay, no captions, no watermarks.",
+        "parameters": [
+          {
+            "name": "event_info",
+            "label": "Corporate news event + company + brand color",
+            "type": "text",
+            "placeholder": [
+              "Meta lays off 8,000 workers and pivots with $115M America's Workforce Academy — workers exiting Meta HQ carrying personal items boxes, Meta blue #1877F2 accent",
+              "OpenAI hits $300B valuation in mega Series F round — celebratory office moment with OpenAI green #74AA9C accent on logo",
+              "Tesla Cybertruck recall, 50,000 units returning — service center with rows of recalled trucks, Tesla red #CC0000 accent on logo"
+            ]
+          }
+        ]
+      }
+    }
   }
 ]

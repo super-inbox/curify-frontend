@@ -1139,6 +1139,68 @@
     ],
     "educational": [
       "learning"
+    ],
+    "graphic-design": [
+      "design",
+      "posters"
+    ],
+    "digital-art": [
+      "design",
+      "illustration"
+    ],
+    "branding": [
+      "product",
+      "design"
+    ],
+    "web-design": [
+      "design",
+      "mockups"
+    ],
+    "90s": [
+      "nostalgia",
+      "vintage"
+    ],
+    "cyberpunk": [
+      "design",
+      "digital-canvas"
+    ],
+    "pixar": [
+      "character",
+      "film"
+    ],
+    "double-exposure": [
+      "design",
+      "photorealistic"
+    ],
+    "gradient": [
+      "design",
+      "digital-canvas"
+    ],
+    "drinks": [
+      "food-and-drink",
+      "food"
+    ],
+    "desserts": [
+      "food-and-drink",
+      "food"
+    ],
+    "outerwear": [
+      "fashion"
+    ],
+    "streetwear": [
+      "fashion"
+    ],
+    "sneakers": [
+      "fashion",
+      "product"
+    ],
+    "bedroom": [
+      "interior",
+      "lifestyle"
+    ],
+    "outdoor": [
+      "nature",
+      "travel"
     ]
   },
   "_reverse_map_excluded_topics_note": "Topics excluded from the reverse map only — their topic page still pulls a gallery row via TOPIC_GALLERY_TAG, but the tag page does NOT surface their templates. Use when a topic's template set is too heterogeneous to make a coherent Templates section.",
@@ -3584,7 +3646,7 @@
         },
         {
           "value": "3d",
-          "gallery_count": 5
+          "gallery_count": 63
         },
         {
           "value": "industrial",
@@ -3644,7 +3706,7 @@
         },
         {
           "value": "studio",
-          "gallery_count": 1
+          "gallery_count": 148
         },
         {
           "value": "bokeh",
@@ -3946,6 +4008,13 @@
       "design",
       "digital-canvas",
       "portrait"
+    ],
+    "template-corporate-news-editorial-hero": [
+      "ai",
+      "character",
+      "design",
+      "posters",
+      "trending"
     ],
     "template-costume": [
       "costumes",
