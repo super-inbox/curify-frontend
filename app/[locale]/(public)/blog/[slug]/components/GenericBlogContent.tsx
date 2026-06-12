@@ -241,6 +241,18 @@ export default function GenericBlogContent({
         </section>
       )}
 
+      {(hasKey("jerseyTitle") || hasKey("jerseyContent")) && (
+        <section>
+          <h2 className="text-2xl font-bold mb-4">{safeT("jerseyTitle")}</h2>
+          <div
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{
+              __html: hasKey("jerseyContent") ? formatContent(safeT("jerseyContent")) : "",
+            }}
+          />
+        </section>
+      )}
+
       {(hasKey("challengesTitle") || hasKey("challengesContent")) && (
         <section>
           <h2 className="text-2xl font-bold mb-4">{hasKey("challengesTitle") ? safeT("challengesTitle") : "Technical Challenges"}</h2>
