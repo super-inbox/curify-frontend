@@ -36,13 +36,16 @@ META_PATH = ROOT / "lib/generated/nanobanana_prompts_metadata.json"
 
 TAG_RULES: dict[str, dict] = {
     # ── 16 truly new tags ─────────────────────────────────────────────
+    # Domain-filter REMOVED from graphic-design / digital-art / branding /
+    # web-design after the 2026-06-12 QA pass — the gallery's
+    # domainCategory field is noisy (e.g., "Graphic Design" applied to
+    # women-in-café photos), so domain-as-positive-signal inflated
+    # counts with off-target content. Keyword match only.
     "graphic-design": {
-        "patterns": [r"\bgraphic\s+design\b", r"\bgraphic\s+designer\b"],
-        "domain": ["Graphic Design"],
+        "patterns": [r"\bgraphic\s+design(?:er)?\b", r"\bgraphic\s+designer\b"],
     },
     "digital-art": {
         "patterns": [r"\bdigital\s+(art|painting|illustration)\b"],
-        "domain": ["Digital Art", "3D Art & Modeling"],
     },
     "branding": {
         "patterns": [
@@ -50,7 +53,6 @@ TAG_RULES: dict[str, dict] = {
             r"\blogo\s+design\b",
             r"\bbrand\s+system\b",
         ],
-        "domain": ["Branding & Identity"],
     },
     "web-design": {
         "patterns": [
@@ -59,7 +61,6 @@ TAG_RULES: dict[str, dict] = {
             r"\blanding\s+page\b",
             r"\bui\s+design\b",
         ],
-        "domain": ["Web Design"],
     },
     "90s": {
         # Specifically 1990s — distinct from y2k (early 2000s) and vintage (broad).
@@ -162,12 +163,13 @@ TAG_RULES: dict[str, dict] = {
         ],
     },
     "interior": {
+        # Domain filter removed for consistency — keyword patterns are
+        # specific enough.
         "patterns": [
             r"\binterior\s+(design|decor|setting|space|view)\b",
             r"\b(modern|minimalist|cozy|chic|luxurious)\s+interior\b",
             r"\b(living\s+room|dining\s+room)\b",
         ],
-        "domain": ["Interior Design"],
     },
     "3d": {
         "patterns": [
@@ -175,9 +177,14 @@ TAG_RULES: dict[str, dict] = {
             r"\bthree[\s-]dimensional\b",
             r"\bisometric\s+3d\b",
         ],
-        "domain": ["3D Art & Modeling"],
     },
 }
+
+# Skip prompts already tagged with these — content moderation. The new
+# tags should not surface revealing-female content on canonical tag
+# pages (e.g., a search for /tag/bedroom should not pull revealing
+# imagery just because the prompt mentioned a bed).
+REVEALING_FEMALE_TAG = "revealing-female"
 
 
 def build_haystack(p: dict) -> str:
@@ -214,11 +221,26 @@ def main():
         for t in p.get("tags") or []:
             before[t.lower()] += 1
 
+    # Pass 0: strip any prior runs' tags so re-runs with tightened rules
+    # produce a clean re-application (the script is idempotent across the
+    # set of tags it manages — only TAG_RULES.keys() get touched).
+    managed = set(TAG_RULES.keys())
+    for p in prompts:
+        if not p.get("tags"):
+            continue
+        p["tags"] = [t for t in p["tags"] if t.lower() not in managed]
+
     # Pass 1: tag each prompt
     added_by_tag = Counter()
+    skipped_revealing = 0
     for p in prompts:
-        haystack = build_haystack(p)
         existing = set(t.lower() for t in (p.get("tags") or []))
+        # Skip prompts already in the content-moderation bucket — the new
+        # tags should not surface revealing imagery on canonical tag pages.
+        if REVEALING_FEMALE_TAG in existing:
+            skipped_revealing += 1
+            continue
+        haystack = build_haystack(p)
         for tag, rule in TAG_RULES.items():
             if tag in existing:
                 continue
@@ -228,6 +250,7 @@ def main():
                 p["tags"] = tags
                 existing.add(tag)
                 added_by_tag[tag] += 1
+    print(f"  skipped {skipped_revealing} prompts (already tagged revealing-female)")
 
     # After counts
     after = Counter()
