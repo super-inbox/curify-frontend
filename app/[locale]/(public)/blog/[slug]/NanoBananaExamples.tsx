@@ -58,10 +58,11 @@ export default function NanoBananaExamples({ locale, blogSlug }: NanoBananaExamp
       <div className="mb-6">
         <p className="text-gray-600 mb-6">Explore our most popular Nano Banana prompt templates to see what's possible:</p>
         
-        <NanoInspirationRow 
+        <NanoInspirationRow
           cards={filteredCards}
           requireAuth={requireAuth}
           onViewClick={onViewClick}
+          maxCols={5}
         />
       </div>
     </section>

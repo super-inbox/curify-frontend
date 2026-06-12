@@ -340,6 +340,11 @@ interface NanoInspirationRowProps {
   maxRows?: number;
   /** Optional cell pinned to row 1, rightmost column (WC calendar widget etc.) */
   topRightCell?: React.ReactNode;
+  /** Cap visible columns at lg/xl. Default 6 (lg:5 → xl:6, browsing density).
+   *  Pass 5 to drop the xl:grid-cols-6 jump — used by blog popular rails
+   *  with exactly 10 cards so the visible layout is always 2 rows × 5
+   *  rather than 6 + 4 at xl. */
+  maxCols?: 5 | 6;
 }
 
 
@@ -351,6 +356,7 @@ export function NanoInspirationRow({
   rankScoreRelatedShift = 80,
   maxRows = 5,
   topRightCell,
+  maxCols = 6,
 }: NanoInspirationRowProps) {
   const cols = useGridCols();
   const [expanded, setExpanded] = useState(false);
@@ -382,9 +388,21 @@ export function NanoInspirationRow({
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+      <div
+        className={
+          maxCols === 5
+            ? "grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5"
+            : "grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6"
+        }
+      >
         {topRightCell ? (
-          <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5 xl:col-start-6">
+          <div
+            className={
+              maxCols === 5
+                ? "col-start-2 row-start-1 sm:col-start-3 lg:col-start-5"
+                : "col-start-2 row-start-1 sm:col-start-3 lg:col-start-5 xl:col-start-6"
+            }
+          >
             {topRightCell}
           </div>
         ) : null}
