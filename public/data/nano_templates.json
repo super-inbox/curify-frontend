@@ -10776,5 +10776,146 @@
         ]
       }
     }
+  },
+  {
+    "id": "template-isometric-business-process-roadmap-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Isometric Business Process Roadmap Infographic Generator) Horizontal workflow roadmap infographic themed '{process_topic_info}'. Layout: Flowing curved pathway connects sequential numbered process stages; each stage contains labeled title box + bullet point detailed task list, paired with matching minimalist isometric office scene illustrations (office staff, laptop, servers, warehouse, analytics dashboard, rockets, social media icons etc.). Top displays large bold main title. Style: Clean 2.5D isometric line art, unified purple accent color scheme, simple outline cartoon business characters, pure white background, neat modular layout, sharp vector graphic, high resolution commercial PPT printable flowchart diagram. Subject: Complete step-by-step business process roadmap infographic for '{process_topic_info}'.",
+        "parameters": [
+          {
+            "name": "process_topic_info",
+            "label": "完整业务流程主题名称",
+            "type": "text",
+            "placeholder": [
+              "Digital Transformation Roadmap full process flowchart",
+              "New Employee Onboarding Journey step infographic",
+              "Supply Chain Management end-to-end workflow roadmap",
+              "Content Marketing Strategy full stages diagram"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-isometric-business-process-roadmap-infographic-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "learning",
+      "product",
+      "posters",
+      "guides",
+      "isometric"
+    ]
+  },
+  {
+    "id": "template-person-self-portrait-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Personal Character Infographic Self-Portrait Poster Generator) Vertical flat illustration infographic poster themed '{person_info}'. Layout: Center full-body flat cartoon character illustration in personalized outfit; surrounding multiple independent labelled modules: daily timeline schedule, basic personal profile, skill bar chart, consumption pie chart, favorite music/food/books, personality dimension radar chart, belongings & gear, life mottos, frequently visited locations, career works showcase, contact data. Each section matched with tiny matching icon illustrations, unified single background theme color, top large Korean/English dual title. Style: clean Korean flat vector graphic design, solid color blocks, no complex gradients, neatly typeset text blocks, printable personal resume infographic sheet, high resolution vector art. Subject: complete multi-data personal self-introduction infographic poster for '{person_info}'.",
+        "parameters": [
+          {
+            "name": "person_info",
+            "label": "人物完整设定：姓名+职业/身份+外貌穿搭+个人标签",
+            "type": "text",
+            "placeholder": [
+              "男大学生AI设计师，黑框眼镜格纹衬衫背包造型个人信息长图信息图表",
+              "独立民谣女创作歌手，抱吉他休闲穿搭人物介绍信息海报",
+              "专业书法中年男性，手持毛笔西装造型个人数据信息长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-person-self-portrait-infographic-poster-rock-bassist-musician-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "character",
+      "portrait",
+      "posters",
+      "guides"
+    ]
+  },
+  {
+    "id": "template-disney-dual-character-intro-book-spread",
+    "locales": {
+      "en": {
+        "base_prompt": "(Dual Character Book Spread Character Introduction Page Generator) Horizontal two-page book layout spread, left and right pages each feature one classic animation character themed '{character_pair_info}'. Layout: Page top large bold character name headline, full-size official original animation character full-body illustration occupies main visual area; surrounding multi text blocks: character personality introduction, classic iconic quote, key plot background, fun little known facts box, small scene cutout screenshots, detail callout labels pointing out outfit/accessory features. Each page uses exclusive matched theme border and background tint color. Style: Official Disney 3D animation original render style, children picture book layout, neat typesetting, soft clean background, high resolution printable book inner spread, standard storybook layout. Subject: Dual partner character introduction two-page book spread for '{character_pair_info}'.",
+        "parameters": [
+          {
+            "name": "character_pair_info",
+            "label": "动画作品+左右一对搭档角色名称",
+            "type": "text",
+            "placeholder": [
+              "夏日友晴天 Luca & Alberto 双人跨页角色介绍内页",
+              "头脑特工队 Riley & Joy 角色对开介绍书页",
+              "寻梦环游记 Miguel & Dante 搭档人物绘本双页 spreads"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-disney-dual-character-intro-book-spread-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "character",
+      "film",
+      "posters",
+      "disney",
+      "groups"
+    ]
+  },
+  {
+    "id": "template-popular-science-health-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Popular Science Health Knowledge Infographic Poster Generator) Vertical science popularization infographic poster themed '{knowledge_topic_info}'. Layout: Large bold headline at the top; page split into multiple independent content modules with clear subtitles, including misconception correction, truth explanation, classification introduction, pros & cons analysis, hazard description, coping solutions, survey pie/bar charts, timeline flow charts and data visualization; decorated with relevant cute flat cartoon character illustrations, symbolic icons and decorative circular geometric elements. Style: Soft flat vector illustration style, unified coordinated main color scheme, neat segmented text layout, readable font hierarchy, clean white background, high-resolution printable popular science promotional poster, suitable for health science spread. Subject: Complete systematic popular science infographic poster explaining the professional knowledge of '{knowledge_topic_info}'.",
+        "parameters": [
+          {
+            "name": "knowledge_topic_info",
+            "label": "科普健康主题完整名称",
+            "type": "text",
+            "placeholder": [
+              "无糖食品误区科普详解信息长图",
+              "睡眠障碍成因、危害与科学应对科普海报",
+              "疫情期间焦虑情绪科普分析信息可视化长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-popular-science-health-infographic-poster-sugar-free-food-misunderstanding-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "learning",
+      "science",
+      "posters",
+      "guides"
+    ]
+  },
+  {
+    "id": "template-custom-ip-character-profile-poster-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Custom IP Character Official Profile Poster Card Generator) Vertical IP character design showcase card themed '{ip_name_desc}'. Layout: Central large full-body IP character main illustration; layout divided into multiple standardized modules: IP design concept, front/side/back three-view schematic, character basic setting profile, multi-expression emoji set, peripheral application mockups (keychain, tote bag, sticker, pillow etc.), brand color palette display. Consistent unified brand color system, decorative border elements matching IP style, clear text box segmentation, directional guide arrows for annotation. Style: Follow reference illustration art style, cute cartoon / 3D clay / national style flat illustration optional, clean commercial design layout, high resolution printable official IP introduction poster card, complete VI presentation layout. Subject: Complete official character IP profile poster design card for '{ip_name_desc}'",
+        "parameters": [
+          {
+            "name": "ip_name_desc",
+            "label": "IP角色名称 + 人设风格+核心设定描述",
+            "type": "text",
+            "placeholder": [
+              "江源水豚国风湿地守护者IP，中式盘扣绿色服饰，2D扁平卡通IP完整介绍海报卡",
+              "青榄小菊拟人孩童驱蚊品牌IP，黄绿色花艺造型，3D黏土玩偶IP规范展示展板"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-custom-ip-character-profile-poster-card-nicoco-healing-girl-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "character",
+      "design",
+      "posters"
+    ]
   }
 ]
