@@ -5855,7 +5855,9 @@
     "creation_date": "2026-05-03",
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "requires_image_upload": true,
+    "allow_generation": true
   },
   {
     "id": "template-lifestyle-watercolor-infographic",
@@ -10347,7 +10349,9 @@
     ],
     "rank_score": 106,
     "creation_date": "2026-06-08",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "requires_image_upload": true,
+    "allow_generation": true
   },
   {
     "id": "template-crafting-step-by-step-tutorial-infographic",
