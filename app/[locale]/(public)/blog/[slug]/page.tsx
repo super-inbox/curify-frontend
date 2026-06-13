@@ -8,6 +8,7 @@ import RelatedBlogs from "@/app/[locale]/_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import WorldCupCalendarCard from "@/app/[locale]/_components/WorldCupCalendarCard";
 import NanoBananaExamples from "./NanoBananaExamples";
+import CodeBlockCopyButtons from "./components/CodeBlockCopyButtons";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
@@ -544,6 +545,10 @@ export default async function BlogPostPage({
           />
         )}
       </div>
+
+      {/* Adds a "Copy prompt" button to each <pre> prompt block (client-side,
+          post-hydration) — the copy-prompt escape hatch for blog readers. */}
+      <CodeBlockCopyButtons />
 
       {/* Optional template row — renders when the catalog entry has
           `nanoTemplates`. Filters by groupKey prefix so each post only
