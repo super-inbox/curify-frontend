@@ -5442,5 +5442,115 @@
         ]
       }
     }
+  },
+  "template-isometric-business-process-roadmap-infographic": {
+    "category": "Isometric Business Process Roadmap Infographic",
+    "description": "Generate a horizontal 2.5D isometric workflow roadmap infographic — flowing curved pathway through numbered process stages, each with isometric office scene illustrations and detailed task lists.",
+    "title": "Nano Banana Prompt: Isometric Business Process Roadmap Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a horizontal 8K business process roadmap infographic in 2.5D isometric line art style. Flowing curved pathway connects sequential numbered process stages; each stage carries a labeled title box + bullet-point task list and a matching minimalist isometric office scene (office staff, laptop, servers, warehouse, analytics dashboard, rockets, social media icons). Top displays the bold main title. Unified purple accent color scheme, clean modular layout, print-ready commercial PPT flowchart quality.",
+        "who": "Suitable for B2B SaaS product marketing, operations consulting deck designers, internal-comms teams documenting workflows, startup growth playbook authors, and B-school instructors producing teaching slides on business processes.",
+        "how": [
+          "Enter the process topic + scope in {process_topic_info} (e.g. 'Digital Transformation Roadmap full process flowchart').",
+          "Flowing curved pathway + sequential numbered stages auto-render.",
+          "Isometric office scene illustrations auto-compose per stage.",
+          "Generate a horizontal 8K isometric business process roadmap infographic."
+        ],
+        "prompts": [
+          "Generate a Digital Transformation Roadmap full process flowchart.",
+          "Create a New Employee Onboarding Journey roadmap infographic.",
+          "Generate an E-commerce Order Fulfillment process roadmap."
+        ]
+      }
+    }
+  },
+  "template-person-self-portrait-infographic-poster": {
+    "category": "Person Self-Portrait Infographic Poster",
+    "description": "Generate a vertical self-portrait infographic poster for any person — central portrait flanked by labeled module panels covering identity, skills, interests, hobbies, and signature attributes.",
+    "title": "Nano Banana Prompt: Person Self-Portrait Infographic Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K self-portrait infographic poster for any individual. Central portrait illustration flanked by labeled module panels covering identity (name + role), skills & expertise, interests & hobbies, signature attributes, and signature accomplishments. Clean typographic hierarchy, designed for personal-brand / professional-introduction usage.",
+        "who": "Suitable for personal brand builders, content creators producing 'about me' posters, job-seekers crafting infographic CVs, music / sports / tech personalities, and HR teams producing employee-spotlight materials.",
+        "how": [
+          "Enter the person + signature traits in {person_info} (e.g. 'Rock Bassist Musician — 10-year touring career, vintage gear collector, indie label founder').",
+          "Central portrait auto-renders.",
+          "Identity / skills / interests / signature module panels auto-compose around the portrait.",
+          "Generate a vertical 8K self-portrait infographic poster."
+        ],
+        "prompts": [
+          "Generate a Rock Bassist Musician self-portrait infographic poster.",
+          "Create a Tech Startup Founder self-portrait infographic.",
+          "Generate a Marathon Runner self-portrait infographic."
+        ]
+      }
+    }
+  },
+  "template-disney-dual-character-intro-book-spread": {
+    "category": "Disney Dual Character Intro Book Spread",
+    "description": "Generate an open-book magazine spread introducing two Disney characters side-by-side — character art on each page, name + role + signature traits, and shared universe context.",
+    "title": "Nano Banana Prompt: Disney Dual Character Intro Book Spread Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a horizontal open-book magazine-style spread introducing two Disney characters side-by-side. Each character occupies one page: portrait art at top, character name + role banner, signature trait highlights, and quick-fact panel. The center spine carries shared universe / film context. Children's-book illustration style with warm earthy palette.",
+        "who": "Suitable for Disney fan-art creators, kids' bedtime-story content creators, parent + educator content producers, Disney-themed party invitation designers, and merch designers building character-bundle storyboards.",
+        "how": [
+          "Enter the two character names + shared context in {character_pair_info} (e.g. 'Belle & Beast — Beauty and the Beast forbidden romance').",
+          "Each character auto-renders on its page with portrait + name + trait highlights.",
+          "Center spine auto-populates with shared universe context.",
+          "Generate a Disney dual-character intro book spread."
+        ],
+        "prompts": [
+          "Generate a Belle & Beast — Beauty and the Beast dual-character book spread.",
+          "Create a Ariel & Eric — Little Mermaid dual-character intro spread.",
+          "Generate an Anna & Elsa — Frozen sister dual-character book spread."
+        ]
+      }
+    }
+  },
+  "template-popular-science-health-infographic-poster": {
+    "category": "Popular Science Health Infographic Poster",
+    "description": "Generate a vertical health-science infographic poster — bold headline, multi-module layout with myth correction, truth explanation, data visualization (pie / bar charts, timelines), and cartoon character mascots.",
+    "title": "Nano Banana Prompt: Popular Science Health Infographic Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K health-science popularization poster. Large bold headline at top; page split into independent content modules with clear subtitles: misconception correction, truth explanation, classification overview, pros & cons analysis, hazard description, coping solutions, plus survey pie / bar charts, timeline flow charts and data visualization. Decorated with relevant cute flat cartoon character illustrations, symbolic icons, and decorative geometric elements. Soft flat vector illustration style, coordinated unified color scheme, readable font hierarchy, clean white background — print-ready for health-science campaigns.",
+        "who": "Suitable for public-health communicators, family-doctor practices producing waiting-room education posters, nutrition / wellness brand content marketers, public-health agencies running campaigns, and health-tech app designers producing educational in-app content.",
+        "how": [
+          "Enter the health topic + angle in {knowledge_topic_info} (e.g. 'Sugar-Free Food Misconceptions popular-science explainer').",
+          "Module sections auto-compose around the central topic.",
+          "Cartoon mascots + data visualization auto-render at appropriate positions.",
+          "Generate a vertical 8K health-science infographic poster."
+        ],
+        "prompts": [
+          "Generate a Sugar-Free Food Misconceptions popular-science infographic.",
+          "Create a Sleep Disorder Causes, Hazards & Scientific Coping poster.",
+          "Generate a Pandemic-Era Anxiety Emotion popular-science infographic."
+        ]
+      }
+    }
+  },
+  "template-custom-ip-character-profile-poster-card": {
+    "category": "Custom IP Character Profile Poster Card",
+    "description": "Generate a vertical IP character official-profile poster card — central full-body main illustration plus modules for design concept, three-view schematic, character profile, expression set, peripheral mockups, and brand color palette.",
+    "title": "Nano Banana Prompt: Custom IP Character Profile Poster Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K IP character design showcase card. Central large full-body IP character illustration; layout divided into standardized modules: IP design concept summary, front / side / back three-view schematic, character basic setting profile, multi-expression emoji set, peripheral application mockups (keychain, tote bag, sticker, pillow), brand color palette display. Consistent unified brand color system, decorative borders matching the IP style, clear text-box segmentation, directional guide arrows. Complete VI presentation layout.",
+        "who": "Suitable for in-house brand teams launching IP mascots, agencies pitching mascot redesigns, IP licensing intermediaries presenting characters, kids-product brand managers, indie creators building stylized character bibles, and product designers preparing investor / partner decks.",
+        "how": [
+          "Enter the IP name + style + setting in {ip_name_desc} (e.g. '江源水豚 Capybara wetland-guardian IP, traditional Chinese knot dress, 2D flat cartoon').",
+          "Central full-body IP character auto-renders.",
+          "Three-view schematic + expression set + peripheral mockups + color palette auto-populate the modules.",
+          "Generate a vertical 8K custom IP character profile poster card."
+        ],
+        "prompts": [
+          "Generate a 江源水豚 Capybara wetland-guardian IP profile card with traditional Chinese knot dress.",
+          "Create a 青榄小菊 anthropomorphic kid mosquito-repellent brand IP profile card.",
+          "Generate a Sora Penguin Antarctic-explorer IP profile card."
+        ]
+      }
+    }
   }
 }

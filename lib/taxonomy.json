@@ -2271,6 +2271,7 @@
         "template-mbti-group-anime-character-poster",
         "template-media-theme-wallpaper-poster",
         "template-movie-poster",
+        "template-person-self-portrait-infographic-poster",
         "template-personal-fashion-outfit-style-variations",
         "template-portrait-retouching-blueprint",
         "template-princess-pearl-mbti-character-card"
@@ -2295,6 +2296,7 @@
         "template-dessert-color-lab-infographic",
         "template-disney-character-color-grid-art",
         "template-disney-character-costume-themed-grid-collection",
+        "template-disney-dual-character-intro-book-spread",
         "template-english-top5-phrases",
         "template-fandom-character-grid-poster",
         "template-fashion-nail-art-design",
@@ -2419,15 +2421,18 @@
         "template-hairstyle-guide-infographic",
         "template-home-lifestyle-guide-infographic",
         "template-houseplant-care-guide-infographic",
+        "template-isometric-business-process-roadmap-infographic",
         "template-life-journey-curve-infographic",
         "template-lifestyle-habit-infographic",
         "template-lifestyle-info-card",
         "template-nutrition-food-guide-poster",
         "template-organ-health-food-guide-infographic",
         "template-pain-relief-infographic",
+        "template-person-self-portrait-infographic-poster",
         "template-pet-care-guide",
         "template-pet-life-journey-infographic",
         "template-pet-safe-human-food-infographic",
+        "template-popular-science-health-infographic-poster",
         "template-portrait-retouching-blueprint",
         "template-premium-recipe-card-infographic",
         "template-professional-category-guide-infographic",
@@ -2775,6 +2780,9 @@
     "template-disney-character-costume-themed-grid-collection": [
       "collection"
     ],
+    "template-disney-dual-character-intro-book-spread": [
+      "collection"
+    ],
     "template-dog-breed-retro-infographic": [
       "information-card"
     ],
@@ -2988,6 +2996,9 @@
     "template-interior-design-mood-board-generator": [
       "collection"
     ],
+    "template-isometric-business-process-roadmap-infographic": [
+      "process"
+    ],
     "template-kids-opposite-concept-education": [
       "comparison",
       "vocabulary"
@@ -3130,6 +3141,10 @@
     "template-pain-relief-infographic": [
       "process"
     ],
+    "template-person-self-portrait-infographic-poster": [
+      "process",
+      "profile"
+    ],
     "template-personal-fashion-outfit-style-variations": [
       "collection",
       "profile"
@@ -3163,6 +3178,9 @@
     "template-pop-culture-matching-chart": [
       "collection",
       "quiz"
+    ],
+    "template-popular-science-health-infographic-poster": [
+      "process"
     ],
     "template-portrait-retouching-blueprint": [
       "process",
@@ -4079,6 +4097,11 @@
       "mbti",
       "portrait"
     ],
+    "template-custom-ip-character-profile-poster-card": [
+      "character",
+      "design",
+      "posters"
+    ],
     "template-CVC-english-word-coloring-flower-card": [
       "beginner",
       "language-english",
@@ -4121,6 +4144,13 @@
     "template-disney-character-costume-themed-grid-collection": [
       "character",
       "disney",
+      "groups",
+      "posters"
+    ],
+    "template-disney-dual-character-intro-book-spread": [
+      "character",
+      "disney",
+      "film",
       "groups",
       "posters"
     ],
@@ -4602,6 +4632,13 @@
       "merch",
       "mockups"
     ],
+    "template-isometric-business-process-roadmap-infographic": [
+      "guides",
+      "isometric",
+      "learning",
+      "posters",
+      "product"
+    ],
     "template-kids-opposite-concept-education": [
       "beginner",
       "comparison",
@@ -4878,6 +4915,12 @@
       "guides",
       "lifestyle"
     ],
+    "template-person-self-portrait-infographic-poster": [
+      "character",
+      "guides",
+      "portrait",
+      "posters"
+    ],
     "template-personal-fashion-outfit-style-variations": [
       "fashion",
       "groups",
@@ -4945,6 +4988,12 @@
       "film",
       "groups",
       "quiz"
+    ],
+    "template-popular-science-health-infographic-poster": [
+      "guides",
+      "learning",
+      "posters",
+      "science"
     ],
     "template-portrait-retouching-blueprint": [
       "design",
