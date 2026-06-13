@@ -351,6 +351,17 @@ export default async function BlogPostPage({
         </div>
       </header>
 
+      {/* Examples surfaced near the TOP for WC poster posts — visual-first,
+          with a generate path above the fold. These posts are ~70% of blog DAU
+          and ~88% bounce; the example cards otherwise render only at the bottom
+          after ~2,000 words. Moved here (not duplicated) — the bottom render
+          skips these slugs. See docs/dau-activation-analysis-2026-06-12.md. */}
+      {blogData?.nanoTemplates?.length > 0 && WC_BLOG_SLUGS.has(slug) && (
+        <div className="mb-8">
+          <NanoBananaExamples locale={locale} blogSlug={slug} />
+        </div>
+      )}
+
       {/* Body region with hero image floated right on desktop so text
           wraps around it. On mobile the image renders centered above the
           body in normal block flow. overflow-hidden on the wrapper acts
@@ -552,8 +563,9 @@ export default async function BlogPostPage({
 
       {/* Optional template row — renders when the catalog entry has
           `nanoTemplates`. Filters by groupKey prefix so each post only
-          surfaces the cards keyed to its own slug. */}
-      {blogData?.nanoTemplates?.length > 0 && (
+          surfaces the cards keyed to its own slug. WC poster posts render this
+          near the top instead (above), so skip the bottom copy for them. */}
+      {blogData?.nanoTemplates?.length > 0 && !WC_BLOG_SLUGS.has(slug) && (
         <NanoBananaExamples locale={locale} blogSlug={slug} />
       )}
 
