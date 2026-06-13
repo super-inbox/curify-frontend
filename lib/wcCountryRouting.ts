@@ -41,11 +41,11 @@ function normalizeCountrySlug(country: string): string {
   if (s === "north korea") return "north-korea";
   if (s === "ivory coast" || s === "cote d'ivoire" || s === "côte d'ivoire") return "ivory-coast";
   if (s === "saudi arabia") return "saudi-arabia";
-  if (s === "cabo verde" || s === "cape verde") return "cabo-verde";
+  if (s === "cape verde" || s === "cabo verde") return "cape-verde";
   if (s === "new zealand") return "new-zealand";
   if (s === "south africa") return "south-africa";
   if (s === "bosnia and herzegovina") return "bosnia-and-herzegovina";
-  if (s === "dr congo") return "dr-congo";
+  if (s === "congo dr" || s === "dr congo") return "congo-dr";
   if (s === "türkiye" || s === "turkey") return "turkiye";
   // Standard single-word countries collapse spaces to dashes.
   return s.replace(/\s+/g, "-");

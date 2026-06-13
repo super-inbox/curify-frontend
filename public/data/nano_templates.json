@@ -10917,5 +10917,142 @@
       "design",
       "posters"
     ]
+  },
+  {
+    "id": "template-vintage-musical-instrument-technical-illustration-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Antique Musical Instrument Technical Sketch Poster Generator) Vertical technical illustration sheet themed '{instrument_name_info}'. Layout: Central full detailed hand-drawn rendering of the target musical instrument; surrounding scattered exploded partial structure close-ups, component dimension annotated diagrams, curling musical staff notation sheets, metronome/tuning fork/bow accessory sketches, directional annotation labels pointing to each structural part; aged parchment paper background, top antique catalogue reference number & dated header text, handwritten cursive explanatory notes, bottom dedicated color swatch panel. Style: 19th century classical textbook pen & watercolor sketch, antique engineering schematic aesthetic, soft sepia aged texture, precise linework, museum archival music study plate, high resolution printable art print. Subject: Vintage technical annotated illustration study poster for '{instrument_name_info}'.",
+        "parameters": [
+          {
+            "name": "instrument_name_info",
+            "label": "完整乐器名称+配套管弦乐器组合说明",
+            "type": "text",
+            "placeholder": [
+              "小提琴独奏复古结构解析手绘图纸海报",
+              "三角钢琴+管风琴组合古典乐器技术插画展板",
+              "单簧管管弦乐器拆解标注复古乐谱手稿插画"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vintage-musical-instrument-technical-illustration-poster-piano-violin-organ-trumpet-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "design",
+      "posters",
+      "nostalgia",
+      "guides"
+    ]
+  },
+  {
+    "id": "template-pro-athlete-stat-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Professional Athlete Full Data Infographic Poster Generator) Vertical sports star stats illustration poster themed '{athlete_info}'. Layout: Center large hand-drawn sketch style full-body athlete competition action illustration; surrounding modular data panels: career average stats bar charts, pie charts, heat maps, career honors & trophy list, technical motion breakdown annotated callouts, season trend line charts, milestone records, key notable single-game performances, advanced efficiency metrics, athlete classic quote text box. Unified team themed primary color system, clean white background, neatly segmented layout, sports graphic design typesetting. Style: detailed pencil sketch portrait + digital graphic composite, official sports media data visualization layout, high resolution printable athlete collectible stats poster. Subject: complete career statistics & technical analysis infographic poster for '{athlete_info}'.",
+        "parameters": [
+          {
+            "name": "athlete_info",
+            "label": "运动员姓名+运动项目+所属队伍/项目细分",
+            "type": "text",
+            "placeholder": [
+              "斯蒂芬·库里，NBA篮球，金州勇士球员生涯数据技术解析海报",
+              "迈克尔·菲尔普斯，100米自由泳，奥运游泳传奇运动数据信息长图",
+              "德约科维奇，网球，发球技术生涯战绩统计海报"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-pro-athlete-stat-infographic-poster-novak-djokovic-tennis-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "sports",
+      "posters",
+      "information-card",
+      "composition"
+    ]
+  },
+  {
+    "id": "template-sports-league-qb-team-order-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Sports League Team Chronology Infographic Poster Generator) Vertical league team overview infographic themed '{league_conference_info}'. Layout: Large bold main title at the top; teams arranged in neat grid sequential number order, each team unit contains cute Q-version cartoon player full-body illustration, official team logo pedestal graphic, team full name + founding year text label; thin connecting dotted lines link each team in sequence order, light aged paper background, clear number indexing markers. Style: Chibi cute cartoon vector illustration, unified clean sports graphic layout, consistent line art thickness, flat solid color style, high resolution printable league timeline overview poster. Subject: Full franchise founding chronological order infographic poster for '{league_conference_info}'.",
+        "parameters": [
+          {
+            "name": "league_conference_info",
+            "label": "联赛+分区完整名称",
+            "type": "text",
+            "placeholder": [
+              "NBA东部赛区球队建队时间排序Q版卡通信息海报",
+              "NFL NFC国家橄榄球联合会分区球队时序图鉴长图",
+              "NHL东部联盟球队创立先后顺序卡通排版展板"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-sports-league-qb-team-order-infographic-nhl-east-founding-year-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "sports",
+      "posters",
+      "comparison",
+      "composition"
+    ]
+  },
+  {
+    "id": "template-high-saturation-sports-equipment-segment-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(High Saturation Segmented Sports Equipment Vertical Card Generator) Vertical multi-block segmented illustration card themed '{sports_category_info}'. Layout: vertically stacked multiple independent rounded rectangular segmented panels, each panel uses exclusive solid high-saturation background color, placed corresponding sports ball/racket/gear equipment graphic, simple court line decoration inside each block, subtle long soft drop shadow. Style: modern flat vector graphic design, bold vivid high saturated solid colors, clean sharp outline, minimal geometric court line details, no gradients, minimalist sport UI banner set, high resolution seamless segmented graphic card set. Subject: vertical stacked segmented equipment illustration card for '{sports_category_info}'.",
+        "parameters": [
+          {
+            "name": "sports_category_info",
+            "label": "体育运动品类清单，多个项目用顿号隔开",
+            "type": "text",
+            "placeholder": [
+              "网球、排球、足球、棒球竖向分块高饱和色块卡片",
+              "篮球、网球、羽毛球四联竖版扁平化运动器材分割插画"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-high-saturation-sports-equipment-segment-card-tennis-volleyball-soccer-baseball-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "sports",
+      "product",
+      "showcase"
+    ]
+  },
+  {
+    "id": "template-two-column-sports-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Two Column Side-by-Side Sports Comparison Infographic Poster Generator) Vertical comparison infographic themed '{sports_compare_topic}'. Layout: Top large bold main title; page split into two equal vertical comparison columns, each column has unified theme color header; split into multiple parallel comparison modules side by side, each module contains small equipment/ scene illustration + bullet point descriptive text, decorative sport icon ornaments (racket, shuttlecock, feather) and subtle plant border decorations, neat segmented text boxes, clear dividing lines. Style: soft hand-drawn flat illustration style, fresh sport themed color palette, clean readable typesetting, vertical long infographic layout, high resolution printable sports tutorial comparison poster. Subject: side-by-side detailed comparison infographic poster for '{sports_compare_topic}'.",
+        "parameters": [
+          {
+            "name": "sports_compare_topic",
+            "label": "运动项目+双向对比完整主题",
+            "type": "text",
+            "placeholder": [
+              "羽毛球室内装备VS室外装备差异对比科普信息长图",
+              "羽毛球低价球拍VS高端球拍材质性能横向对比图解海报"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-two-column-sports-comparison-infographic-cheap-expensive-badminton-rackets-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "sports",
+      "comparison",
+      "composition",
+      "posters"
+    ]
   }
 ]
