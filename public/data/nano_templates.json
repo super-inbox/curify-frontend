@@ -10752,7 +10752,7 @@
   },
   {
     "id": "template-corporate-news-editorial-hero",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "design",
       "posters",
@@ -10802,7 +10802,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-isometric-business-process-roadmap-infographic-prev.jpg",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "learning",
       "product",
@@ -10831,7 +10831,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-person-self-portrait-infographic-poster-rock-bassist-musician-prev.jpg",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "character",
       "portrait",
@@ -10859,7 +10859,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-disney-dual-character-intro-book-spread-prev.jpg",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "character",
       "film",
@@ -10888,7 +10888,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-popular-science-health-infographic-poster-sugar-free-food-misunderstanding-prev.jpg",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "learning",
       "science",
@@ -10915,7 +10915,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-custom-ip-character-profile-poster-card-nicoco-healing-girl-prev.jpg",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "character",
       "design",
@@ -10942,7 +10942,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-vintage-musical-instrument-technical-illustration-poster-piano-violin-organ-trumpet-prev.jpg",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "design",
       "posters",
@@ -10970,7 +10970,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-pro-athlete-stat-infographic-poster-novak-djokovic-tennis-prev.jpg",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "sports",
       "posters",
@@ -10998,7 +10998,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-sports-league-qb-team-order-infographic-nhl-east-founding-year-prev.jpg",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "sports",
       "posters",
@@ -11025,7 +11025,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-high-saturation-sports-equipment-segment-card-tennis-volleyball-soccer-baseball-prev.jpg",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "sports",
       "product",
@@ -11051,12 +11051,56 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-two-column-sports-comparison-infographic-cheap-expensive-badminton-rackets-prev.jpg",
-    "rank_score": 90.0,
+    "rank_score": 90,
     "topics": [
       "sports",
       "comparison",
       "composition",
       "posters"
     ]
+  },
+  {
+    "id": "template-wc-fan-outfit-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(World Cup Fan Outfit Poster) Create a vertical 4:5 fashion-poster mockup using the uploaded reference photo as the model — preserve the reference person's facial features, identity, ethnicity, age, and body proportions accurately. Subject: {country} World Cup 2026 fan styling.\n\nLAYOUT:\n— TOP HEADER (top 15-18% of frame): Country name '{country}' rendered in large dramatic brush-stroke calligraphic script with paint-splash effect using {country}'s national flag colors. Centered, expressive editorial typography.\n— RIGHT SIDE (60% of frame width, full height below header): Full-figure portrait of the reference person standing confidently, wearing the complete {country} World Cup 2026 fan kit — official national team jersey (with country crest, sleeve flag, sponsor logos), matching shorts or skirt in country accent colors, athletic shoes with country stripe details, complete team accessories (team cap with country flag patch, fan scarf draped over shoulders, wristband, sunglasses). Pose: relaxed editorial fashion stance with one hand on hip or holding a soccer ball at side, confident smile. Lighting: bright clean studio key light from camera-left, soft fill, neutral white seamless background.\n— LEFT SIDE (40% of frame width, full height below header): Three numbered vertical breakdown panels stacked top-to-bottom, each panel framed with a thin border and labeled with section header:\n   • Panel '01 ACCESSORIES': Flat-lay of team cap with country flag patch and gold or country-color earrings — each item shown isolated on white background with small '1x' quantity caption below.\n   • Panel '02 TOPS & ACCESSORIES': Flat-lay of team jersey, fan scarf with country name embroidered, team wristband, optional sunglasses — each item isolated, captioned '1x'.\n   • Panel '03 BOTTOMS & FOOTWEAR': Flat-lay of shorts or skirt with country accents, belt with flag clasp, athletic shoes with country stripe details — each item isolated, captioned '1x'.\n\nSTYLE: High-fashion editorial poster, polished RedNote / Xiaohongshu Chinese social media aesthetic, 4:5 portrait aspect ratio, sharp detail, consistent natural lighting across the figure and flat-lay panels, sophisticated modern typography, clean composition. The output must read as a deliberate styled lookbook page, not a casual selfie filter.",
+        "parameters": [
+          {
+            "name": "country",
+            "label": "World Cup Country",
+            "type": "text",
+            "placeholder": [
+              "Brazil",
+              "Argentina",
+              "France",
+              "Japan",
+              "Portugal",
+              "England",
+              "Germany",
+              "Spain",
+              "Mexico",
+              "Morocco"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-wc-fan-outfit-poster-prev.jpg",
+    "topics": [
+      "fashion",
+      "world-cup",
+      "lifestyle",
+      "posters",
+      "portrait"
+    ],
+    "base_rank_score": 88,
+    "rank_score": 88,
+    "creation_date": "2026-06-14",
+    "use_cases": [
+      "for-fans",
+      "for-designers"
+    ],
+    "requires_image_upload": true,
+    "allow_generation": true
   }
 ]
