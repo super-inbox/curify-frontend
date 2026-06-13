@@ -1,21 +1,6 @@
 import BlogInlineClickTracker from "./BlogInlineClickTracker";
 import BlogCodeBlockCopyTracker from "./BlogCodeBlockCopyTracker";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import NanoBananaExamples from "../NanoBananaExamples";
-
-// WC-themed blog posts that surface a "Popular WC Template Examples"
-// rail right after the first ("What is") section. Same 8 slugs that
-// the bottom calendar widget runs on in [slug]/page.tsx.
-const WC_BLOG_SLUGS = new Set([
-  "world-cup-2026-top-contenders",
-  "world-cup-2026-ai-prompt-hub",
-  "fifa-2026-host-city-travel-guide",
-  "argentina-france-2022-world-cup-final",
-  "brazil-argentina-soccer-poster-prompts",
-  "france-soccer-poster-prompts",
-  "portugal-soccer-poster-prompts",
-  "ai-1v1-soccer-rivalry-prompts",
-]);
 
 interface GenericBlogContentProps {
   hasKey: (key: string) => boolean;
@@ -88,30 +73,12 @@ export default function GenericBlogContent({
         />
       </section>
 
-      {/* WC-themed posts: 2-row "Popular WC Template Examples" rail
-          inserted right after the first ("What is") section. Cards are
-          pooled from blogs.json[*].nanoTemplates under groupKey prefix
-          `world-cup-popular-` (10 diverse templates: posters, player
-          cards, group banners, brackets, host-city miniatures, trophy
-          infographic). Mirrors the mbti-character-generator section
-          pattern. */}
-      {WC_BLOG_SLUGS.has(slug) && (
-        <section id="popular-wc-templates" className="my-12">
-          <div className="text-center mb-8">
-            <span className="inline-block px-3 py-1 text-sm font-semibold text-amber-700 bg-amber-100 rounded-full mb-3">
-              POPULAR WC TEMPLATES
-            </span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              World Cup Template Examples
-            </h2>
-            <p className="text-gray-700 max-w-2xl mx-auto">
-              Country posters, player cards, brackets, host-city miniatures, and trophy infographics — generate your own from any of these templates.
-            </p>
-            <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full mt-3"></div>
-          </div>
-          <NanoBananaExamples locale={locale} blogSlug="world-cup-popular" />
-        </section>
-      )}
+      {/* WC-themed posts: the "POPULAR WC TEMPLATES → World Cup Template
+          Examples" rail moved 2026-06-14 to page.tsx, where it renders
+          above the floated hero body so visitors land directly on examples
+          (88% bounce / "come and do nothing" fix). One section, not two —
+          this mid-page render is removed. See app/[locale]/(public)/blog/
+          [slug]/page.tsx ~line 354. */}
 
       {(hasKey("whyTitle") || hasKey("whyContent")) && (
         <section>
