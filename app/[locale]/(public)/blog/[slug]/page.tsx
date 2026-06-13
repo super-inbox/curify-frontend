@@ -8,6 +8,7 @@ import RelatedBlogs from "@/app/[locale]/_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import WorldCupCalendarCard from "@/app/[locale]/_components/WorldCupCalendarCard";
 import NanoBananaExamples from "./NanoBananaExamples";
+import CodeBlockCopyButtons from "./components/CodeBlockCopyButtons";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 
@@ -350,6 +351,34 @@ export default async function BlogPostPage({
         </div>
       </header>
 
+      {/* Examples surfaced near the TOP for WC poster posts — visual-first,
+          with a generate path above the fold. These posts are ~70% of blog DAU
+          and ~88% bounce; the example cards otherwise render only at the bottom
+          after ~2,000 words. blogSlug is hardcoded to "world-cup-popular" — the
+          WC popular-rail groupKey prefix shared across all 8 WC_BLOG_SLUGS —
+          rather than the page slug (only the WC hub has its own nanoTemplates;
+          the other 7 WC posts pool from this shared world-cup-popular rail).
+          The branded eyebrow + description match the section's original mid-page
+          treatment in GenericBlogContent (now removed to keep only one render).
+          See docs/dau-activation-analysis-2026-06-12.md. */}
+      {WC_BLOG_SLUGS.has(slug) && (
+        <section id="popular-wc-templates" className="mb-8">
+          <div className="text-center mb-8">
+            <span className="inline-block px-3 py-1 text-sm font-semibold text-amber-700 bg-amber-100 rounded-full mb-3">
+              POPULAR WC TEMPLATES
+            </span>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              World Cup Template Examples
+            </h2>
+            <p className="text-gray-700 max-w-2xl mx-auto">
+              Country posters, player cards, brackets, host-city miniatures, and trophy infographics — generate your own from any of these templates.
+            </p>
+            <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full mt-3"></div>
+          </div>
+          <NanoBananaExamples locale={locale} blogSlug="world-cup-popular" />
+        </section>
+      )}
+
       {/* Body region with hero image floated right on desktop so text
           wraps around it. On mobile the image renders centered above the
           body in normal block flow. overflow-hidden on the wrapper acts
@@ -545,10 +574,15 @@ export default async function BlogPostPage({
         )}
       </div>
 
+      {/* Adds a "Copy prompt" button to each <pre> prompt block (client-side,
+          post-hydration) — the copy-prompt escape hatch for blog readers. */}
+      <CodeBlockCopyButtons />
+
       {/* Optional template row — renders when the catalog entry has
           `nanoTemplates`. Filters by groupKey prefix so each post only
-          surfaces the cards keyed to its own slug. */}
-      {blogData?.nanoTemplates?.length > 0 && (
+          surfaces the cards keyed to its own slug. WC poster posts render this
+          near the top instead (above), so skip the bottom copy for them. */}
+      {blogData?.nanoTemplates?.length > 0 && !WC_BLOG_SLUGS.has(slug) && (
         <NanoBananaExamples locale={locale} blogSlug={slug} />
       )}
 

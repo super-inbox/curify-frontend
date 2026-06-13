@@ -17,7 +17,7 @@ import { nanoRegistry } from "@/lib/nano_utils";
 import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import { tsToSc } from "@/lib/zh_normalize";
 import { rewriteQuery } from "@/lib/searchRewrite";
-import { matchWcCountryQuery } from "@/lib/wcCountryRouting";
+import { matchBareWcCountryQuery, matchWcCountryQuery } from "@/lib/wcCountryRouting";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Threshold below which we trigger the LLM rewrite path. Matches the
@@ -224,6 +224,16 @@ export default async function SearchPage({ params, searchParams }: Props) {
   const query = q.trim().toLowerCase();
 
   if (!query) redirect(`/${locale}`);
+
+  // Bare "<country>" query for one of the 10 mapped WC nations → redirect
+  // straight to /topics/<country>-world-cup. During active WC, dominant
+  // intent for bare nation names is WC content (search-evolution data
+  // 2026-06-14: argentina/spain/portugal bare queries had 0–66% CTR
+  // because /search was returning mixed culture+WC results).
+  const bareCountrySlug = matchBareWcCountryQuery(query);
+  if (bareCountrySlug) {
+    redirect(`/${locale}/topics/${bareCountrySlug}-world-cup`);
+  }
 
   // "<country> world cup" → if the country has a registered topic page
   // (10 nations currently — see lib/wcCountryRouting.ts), redirect there

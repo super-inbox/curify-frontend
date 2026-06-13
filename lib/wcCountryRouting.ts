@@ -41,11 +41,11 @@ function normalizeCountrySlug(country: string): string {
   if (s === "north korea") return "north-korea";
   if (s === "ivory coast" || s === "cote d'ivoire" || s === "côte d'ivoire") return "ivory-coast";
   if (s === "saudi arabia") return "saudi-arabia";
-  if (s === "cabo verde" || s === "cape verde") return "cabo-verde";
+  if (s === "cape verde" || s === "cabo verde") return "cape-verde";
   if (s === "new zealand") return "new-zealand";
   if (s === "south africa") return "south-africa";
   if (s === "bosnia and herzegovina") return "bosnia-and-herzegovina";
-  if (s === "dr congo") return "dr-congo";
+  if (s === "congo dr" || s === "dr congo") return "congo-dr";
   if (s === "türkiye" || s === "turkey") return "turkiye";
   // Standard single-word countries collapse spaces to dashes.
   return s.replace(/\s+/g, "-");
@@ -83,5 +83,25 @@ export function matchWcCountryQuery(query: string): string | null {
   const m = query.trim().toLowerCase().match(/^(.+?)\s+world\s+cup$/);
   if (!m) return null;
   const slug = normalizeCountrySlug(m[1]);
+  return LOCALIZED_WC_COUNTRY_SLUGS.has(slug) ? slug : null;
+}
+
+/**
+ * Match a bare country query (just "argentina") to a mapped WC nation
+ * and return its slug. During the active WC window, dominant intent for
+ * a bare nation name is WC content (see search-evolution data where
+ * bare-country queries had 0% CTR before this redirect was added).
+ *
+ * Returns null for unmapped nations (japan, iran, etc.) so they fall
+ * through to /search results — but consider expanding the mapped set or
+ * adding alias rewrites for those if their query volume grows.
+ *
+ * Localized country names (e.g. Russian "Бразилия") are not yet handled;
+ * extend normalizeCountrySlug if/when localized data shows demand.
+ */
+export function matchBareWcCountryQuery(query: string): string | null {
+  const s = query.trim().toLowerCase();
+  if (!s || s.length > 40) return null;
+  const slug = normalizeCountrySlug(s);
   return LOCALIZED_WC_COUNTRY_SLUGS.has(slug) ? slug : null;
 }
