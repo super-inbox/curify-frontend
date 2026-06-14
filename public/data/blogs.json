@@ -2886,5 +2886,55 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "world-cup-fan-outfit-prompts",
+    "title": "World Cup Fan Outfit Generator: Upload a Selfie, Get Your National Team Lookbook",
+    "date": "June 14, 2026",
+    "readTime": "6 min read",
+    "tag": "World Cup",
+    "image": "/images/nano_insp/template-wc-fan-outfit-poster-japan-cap.jpg",
+    "heroLink": "/nano-template/wc-fan-outfit-poster/example/template-wc-fan-outfit-poster-japan-cap",
+    "category": "nano-template",
+    "relatedLinks": [
+      "world-cup-2026-ai-prompt-hub",
+      "portugal-soccer-poster-prompts",
+      "brazil-argentina-soccer-poster-prompts",
+      "ai-makeover-templates"
+    ],
+    "lastmod": "2026-06-14",
+    "metaDescription": "Generate a RedNote-style World Cup fan outfit poster of yourself in any country's national team kit. Upload a selfie, pick a country (Brazil, Argentina, France, Japan, Portugal, England, Germany, Spain, Mexico, Morocco), get a complete lookbook with kit + accessories breakdown.",
+    "nanoTemplates": [
+      {
+        "groupKey": "wc-fan-outfit-popular-wc-fan-outfit-poster-japan-cap",
+        "template_id": "template-wc-fan-outfit-poster",
+        "sample_parameters": {
+          "country": "Japan"
+        },
+        "category": "fashion",
+        "description": "Japan fan look — cap + heels formal variant with kit breakdown",
+        "image_urls": [
+          "/images/nano_insp/template-wc-fan-outfit-poster-japan-cap.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-wc-fan-outfit-poster-japan-cap-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "wc-fan-outfit-popular-wc-fan-outfit-poster-japan-scarf",
+        "template_id": "template-wc-fan-outfit-poster",
+        "sample_parameters": {
+          "country": "Japan"
+        },
+        "category": "fashion",
+        "description": "Japan fan look — headband + scarf + sneakers casual variant",
+        "image_urls": [
+          "/images/nano_insp/template-wc-fan-outfit-poster-japan-scarf.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-wc-fan-outfit-poster-japan-scarf-prev.jpg"
+        ]
+      }
+    ]
   }
 ]

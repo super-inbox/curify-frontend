@@ -8,10 +8,12 @@ function StageDotNav({
   stages,
   activeOrder,
   onPick,
+  stageWord,
 }: {
   stages: IpMerchStage[];
   activeOrder: number;
   onPick: (order: number) => void;
+  stageWord: string;
 }) {
   return (
     <ol className="mx-auto mb-6 flex max-w-3xl flex-wrap items-center justify-center gap-2 sm:gap-3">
@@ -42,8 +44,8 @@ function StageDotNav({
               >
                 {s.order}
               </span>
-              <span className="hidden sm:inline">{s.step_label.replace(/^Stage \d+ — /, "")}</span>
-              <span className="inline sm:hidden">Stage {s.order}</span>
+              <span className="hidden sm:inline">{s.short_label}</span>
+              <span className="inline sm:hidden">{stageWord} {s.order}</span>
             </button>
             {s.order < stages.length && (
               <span className="mx-1 hidden text-gray-300 sm:inline">→</span>
@@ -95,7 +97,7 @@ export default function IpMerchDemoClient({ seed }: { seed: IpMerchDemoSeed }) {
     <main className="mx-auto max-w-6xl px-4 py-8 sm:py-12">
       <header className="mx-auto mb-8 max-w-3xl text-center">
         <div className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-indigo-600">
-          IP-merch design demo · pitch-mode
+          {seed.ui.eyebrow}
         </div>
         <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">{seed.hero.title}</h1>
         <p className="mt-3 text-sm leading-relaxed text-gray-700 sm:text-base">
@@ -110,6 +112,7 @@ export default function IpMerchDemoClient({ seed }: { seed: IpMerchDemoSeed }) {
         stages={seed.stages}
         activeOrder={activeOrder}
         onPick={setActiveOrder}
+        stageWord={seed.ui.stageWord}
       />
 
       <StagePanel stage={activeStage} />
@@ -121,10 +124,10 @@ export default function IpMerchDemoClient({ seed }: { seed: IpMerchDemoSeed }) {
           disabled={activeOrder === 1}
           className="rounded-md border border-gray-200 bg-white px-3 py-1.5 font-medium text-gray-700 transition hover:border-gray-300 disabled:cursor-not-allowed disabled:opacity-40"
         >
-          ← Previous stage
+          ← {seed.ui.prevStage}
         </button>
         <div className="text-xs text-gray-500">
-          Stage {activeOrder} of {seed.stages.length}
+          {seed.ui.stageWord} {activeOrder} / {seed.stages.length}
         </div>
         <button
           type="button"
@@ -134,7 +137,7 @@ export default function IpMerchDemoClient({ seed }: { seed: IpMerchDemoSeed }) {
           disabled={activeOrder === seed.stages.length}
           className="rounded-md border border-indigo-200 bg-indigo-50 px-3 py-1.5 font-medium text-indigo-700 transition hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-40"
         >
-          Next stage →
+          {seed.ui.nextStage} →
         </button>
       </nav>
 

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Search, X } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   filterSuggestions,
@@ -11,18 +11,50 @@ import {
   ALL_SUGGESTIONS,
   type SuggestionEntry,
 } from "@/lib/searchIndex";
+import { POPULAR_PREFILL_QUERIES } from "@/lib/popularPrefillQueries";
 import { useTracking } from "@/services/useTracking";
+
+// Fisher-Yates shuffle, returns a NEW array (doesn't mutate input).
+function shuffled<T>(arr: ReadonlyArray<T>): T[] {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const PLACEHOLDER_ROTATE_MS = 3500;
+// Visible prefix on the rotating placeholder. Kept as a constant so the
+// onInputFocus DOM-read and the rendered placeholder stay in sync — the
+// strip-logic depends on this exact string.
+const PLACEHOLDER_PREFIX = "✨ ";
 
 type Props = { locale: string };
 
 export default function SearchBar({ locale }: Props) {
-  const [query, setQuery] = useState("");
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  // On /search results page: prefill from ?q= and disable rotation
+  // (refine mode — matches Google/Bing/Pinterest convention). Match any
+  // path ending in /search so locale prefix (/en/search, /zh/search) works.
+  const isSearchPage = (pathname ?? "").endsWith("/search");
+  const urlQuery = searchParams?.get("q") ?? "";
+
+  const [query, setQuery] = useState(isSearchPage ? urlQuery : "");
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const { track } = useTracking();
   const t = useTranslations("topics");
+
+  // Keep the input synced with the URL when navigating between /search?q=…
+  // results (e.g. user clicks a suggestion chip on the results page).
+  // SearchBar is mounted in the layout so it doesn't remount across nav.
+  useEffect(() => {
+    if (isSearchPage) setQuery(urlQuery);
+  }, [isSearchPage, urlQuery]);
   // Guard so we only fire ONE focus event per session-of-this-mount,
   // not on every focus regain. Pairs with the SEARCH submit event so we
   // can compute "opened dropdown / didn't submit" as a funnel rung.
@@ -42,6 +74,59 @@ export default function SearchBar({ locale }: Props) {
       actionType: "click",
     });
   }, [track]);
+
+  // Rotating placeholder — shuffled once per mount, advances every
+  // PLACEHOLDER_ROTATE_MS while the input is unfocused + empty. Pauses
+  // on focus, when the user types, or on the /search results page
+  // (refine mode — see isSearchPage above). Respects prefers-reduced-motion.
+  const shuffledQueriesRef = useRef<string[]>(shuffled(POPULAR_PREFILL_QUERIES));
+  const [placeholderIdx, setPlaceholderIdx] = useState(0);
+  // Track the interval id so onFocus can synchronously kill any pending
+  // tick — React's effect cleanup runs on the NEXT render cycle which
+  // can fire after the user has already pressed Enter, causing
+  // submit-mismatch with what they saw at focus time.
+  const intervalIdRef = useRef<number | null>(null);
+  // Snapshot of the placeholder query at focus time. handleSubmit's
+  // empty-fallback prefers this over the (possibly-advanced) idx so we
+  // always submit exactly what the user clicked on.
+  const focusedPlaceholderRef = useRef<string>("");
+  const isPaused = isSearchPage || open || query.length > 0;
+  useEffect(() => {
+    if (isPaused) return;
+    if (typeof window !== "undefined"
+      && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => {
+      setPlaceholderIdx((i) => (i + 1) % shuffledQueriesRef.current.length);
+    }, PLACEHOLDER_ROTATE_MS);
+    intervalIdRef.current = id;
+    return () => {
+      window.clearInterval(id);
+      intervalIdRef.current = null;
+    };
+  }, [isPaused]);
+  const rotatingPlaceholder = isSearchPage
+    ? "Refine your search…"
+    : `${PLACEHOLDER_PREFIX}${shuffledQueriesRef.current[placeholderIdx]}`;
+
+  const onInputFocus = useCallback(() => {
+    // Snap the placeholder DIRECTLY from the input's DOM attribute —
+    // that's what the user is actually looking at, regardless of any
+    // in-flight React state update that closure capture would miss.
+    // Falls back to the closure idx if DOM read returns nothing (e.g.,
+    // focus fired before first paint).
+    const dom = inputRef.current?.placeholder ?? "";
+    const fromDom = dom.startsWith(PLACEHOLDER_PREFIX)
+      ? dom.slice(PLACEHOLDER_PREFIX.length).trim()
+      : "";
+    focusedPlaceholderRef.current =
+      fromDom || shuffledQueriesRef.current[placeholderIdx] || "";
+    if (intervalIdRef.current !== null) {
+      window.clearInterval(intervalIdRef.current);
+      intervalIdRef.current = null;
+    }
+    setOpen(true);
+    trackFocusOnce();
+  }, [placeholderIdx, trackFocusOnce]);
 
   // Localized label resolver — returns the locale's displayName or undefined.
   // Used for both rendering chips and matching user queries in the user's language.
@@ -113,7 +198,34 @@ export default function SearchBar({ locale }: Props) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const q = query.trim().toLowerCase();
+    // Empty submit → adopt the placeholder visible AT FOCUS TIME (the
+    // snapshot captured in onInputFocus). Prefer the snapshot over the
+    // live placeholderIdx because a rotation tick may have queued after
+    // focus but before this submit handler ran — without the snapshot,
+    // we'd submit a query different from what the user clicked on.
+    // No fallback on /search (refine-mode placeholder is "Refine your
+    // search…", not a real query).
+    let q = query.trim().toLowerCase();
+    if (!q && !isSearchPage) {
+      // Priority: focus-time snapshot → live DOM placeholder → closure idx.
+      // The DOM read is the single source of truth for what the user sees
+      // right NOW (rotation is paused while focused, so DOM == snapshot in
+      // the happy path, but DOM wins if anything got out of sync).
+      const dom = inputRef.current?.placeholder ?? "";
+      const fromDom = dom.startsWith(PLACEHOLDER_PREFIX)
+        ? dom.slice(PLACEHOLDER_PREFIX.length).trim().toLowerCase()
+        : "";
+      q = (focusedPlaceholderRef.current.toLowerCase()
+        || fromDom
+        || (shuffledQueriesRef.current[placeholderIdx] ?? "").toLowerCase()
+        || "").trim();
+      if (q) {
+        // Lightweight signal that a placeholder-adopt path fired — fixed
+        // content_id keeps cardinality bounded; the query itself goes into
+        // the SEARCH event below so we can still attribute downstream clicks.
+        track({ contentId: "placeholder-adopt", contentType: "topic_capsule", actionType: "click" });
+      }
+    }
     if (!q) return;
     track({ contentId: q, contentType: "topic_capsule", actionType: "search" });
     setOpen(false);
@@ -155,8 +267,8 @@ export default function SearchBar({ locale }: Props) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            onFocus={() => { setOpen(true); trackFocusOnce(); }}
-            placeholder="Search templates, styles, topics…"
+            onFocus={onInputFocus}
+            placeholder={rotatingPlaceholder}
             className="w-full rounded-2xl border-2 border-blue-200 bg-white py-3.5 pl-12 pr-10 text-base text-neutral-900 placeholder:text-neutral-500 shadow-sm hover:border-blue-300 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all"
           />
           {query && (
