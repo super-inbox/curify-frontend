@@ -77,6 +77,15 @@ export default function SearchBar({ locale }: Props) {
   // (refine mode — see isSearchPage above). Respects prefers-reduced-motion.
   const shuffledQueriesRef = useRef<string[]>(shuffled(POPULAR_PREFILL_QUERIES));
   const [placeholderIdx, setPlaceholderIdx] = useState(0);
+  // Track the interval id so onFocus can synchronously kill any pending
+  // tick — React's effect cleanup runs on the NEXT render cycle which
+  // can fire after the user has already pressed Enter, causing
+  // submit-mismatch with what they saw at focus time.
+  const intervalIdRef = useRef<number | null>(null);
+  // Snapshot of the placeholder query at focus time. handleSubmit's
+  // empty-fallback prefers this over the (possibly-advanced) idx so we
+  // always submit exactly what the user clicked on.
+  const focusedPlaceholderRef = useRef<string>("");
   const isPaused = isSearchPage || open || query.length > 0;
   useEffect(() => {
     if (isPaused) return;
@@ -85,11 +94,30 @@ export default function SearchBar({ locale }: Props) {
     const id = window.setInterval(() => {
       setPlaceholderIdx((i) => (i + 1) % shuffledQueriesRef.current.length);
     }, PLACEHOLDER_ROTATE_MS);
-    return () => window.clearInterval(id);
+    intervalIdRef.current = id;
+    return () => {
+      window.clearInterval(id);
+      intervalIdRef.current = null;
+    };
   }, [isPaused]);
   const rotatingPlaceholder = isSearchPage
     ? "Refine your search…"
     : `✨ ${shuffledQueriesRef.current[placeholderIdx]}`;
+
+  const onInputFocus = useCallback(() => {
+    // Snap the placeholder visible at focus time + kill any pending
+    // rotation tick synchronously. Together these guarantee that
+    // handleSubmit's empty-fallback submits exactly what the user saw,
+    // not whatever the next setInterval tick would have rotated to.
+    focusedPlaceholderRef.current =
+      shuffledQueriesRef.current[placeholderIdx] ?? "";
+    if (intervalIdRef.current !== null) {
+      window.clearInterval(intervalIdRef.current);
+      intervalIdRef.current = null;
+    }
+    setOpen(true);
+    trackFocusOnce();
+  }, [placeholderIdx, trackFocusOnce]);
 
   // Localized label resolver — returns the locale's displayName or undefined.
   // Used for both rendering chips and matching user queries in the user's language.
@@ -161,13 +189,18 @@ export default function SearchBar({ locale }: Props) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Empty submit → adopt the currently visible rotating placeholder so
-    // users can press Enter on a suggestion they like. Pool entries are
-    // calibrated for ≥1 hit on /search, so we never route to an empty
-    // results page from a default placeholder.
+    // Empty submit → adopt the placeholder visible AT FOCUS TIME (the
+    // snapshot captured in onInputFocus). Prefer the snapshot over the
+    // live placeholderIdx because a rotation tick may have queued after
+    // focus but before this submit handler ran — without the snapshot,
+    // we'd submit a query different from what the user clicked on.
+    // No fallback on /search (refine-mode placeholder is "Refine your
+    // search…", not a real query).
     let q = query.trim().toLowerCase();
-    if (!q) {
-      q = (shuffledQueriesRef.current[placeholderIdx] ?? "").trim().toLowerCase();
+    if (!q && !isSearchPage) {
+      q = (focusedPlaceholderRef.current
+        || shuffledQueriesRef.current[placeholderIdx]
+        || "").trim().toLowerCase();
       if (q) {
         // Lightweight signal that a placeholder-adopt path fired — fixed
         // content_id keeps cardinality bounded; the query itself goes into
@@ -216,7 +249,7 @@ export default function SearchBar({ locale }: Props) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            onFocus={() => { setOpen(true); trackFocusOnce(); }}
+            onFocus={onInputFocus}
             placeholder={rotatingPlaceholder}
             className="w-full rounded-2xl border-2 border-blue-200 bg-white py-3.5 pl-12 pr-10 text-base text-neutral-900 placeholder:text-neutral-500 shadow-sm hover:border-blue-300 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all"
           />
