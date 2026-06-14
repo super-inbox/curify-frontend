@@ -5662,5 +5662,28 @@
         ]
       }
     }
+  },
+  "template-wc-fan-outfit-poster": {
+    "category": "World Cup Fan Outfit Poster",
+    "description": "Upload your selfie and pick a country — generate a RedNote-style fan outfit poster of yourself in the national team kit with a 3-panel item breakdown (cap, jersey, shorts, scarf, accessories).",
+    "title": "World Cup Fan Outfit Poster Generator — Upload Selfie + Pick Country | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template renders a 4:5 vertical fan-outfit poster in the RedNote/Xiaohongshu lookbook format that drives 11M+ views per post. Top header: country name in brush-stroke calligraphy with flag-color paint splash. Right (60%): your full-figure portrait in the country's complete World Cup 2026 fan kit (jersey, cap or headband, shorts, scarf, shoes, accessories) with studio lighting. Left (40%): three numbered breakdown panels (01 Accessories / 02 Tops & Accessories / 03 Bottoms & Footwear) showing each item flat-laid isolated with 1x captions.",
+        "who": "Best for fans wanting share-ready editorial content for match-day social posts, content creators producing weekly WC series, fan account managers, and brand activation teams running WC sponsor campaigns. Upload your selfie, pick the country you root for, ship the post.",
+        "how": [
+          "Upload a clean full-body or torso-up selfie with clear face visibility, soft natural lighting, plain background.",
+          "Pick a country: Brazil, Argentina, France, Japan, Portugal, England, Germany, Spain, Mexico, Morocco, or any other WC 2026 nation.",
+          "The template preserves your facial identity while rendering you in the country's full fan kit with studio lighting.",
+          "Output is a share-ready 4:5 vertical poster with the country header + full-figure portrait + 3-panel item breakdown.",
+          "Best for posting on match day to multiply engagement 5-10x."
+        ],
+        "prompts": [
+          "Japan fan outfit, editorial styling with cap and dressy heels, holding a soccer ball at hip.",
+          "Brazil fan outfit, casual streetwear with denim shorts and sneakers, samba percussion accents.",
+          "France fan outfit, polished editorial styling with fleur-de-lis embroidery details on accessories."
+        ]
+      }
+    }
   }
 }

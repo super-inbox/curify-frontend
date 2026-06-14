@@ -5663,5 +5663,28 @@
         ]
       }
     }
+  },
+  "template-wc-fan-outfit-poster": {
+    "category": "Póster de Atuendo de Fan del Mundial",
+    "description": "Sube tu selfie y elige un país: genera un póster de atuendo de fan al estilo RedNote de ti mismo en el uniforme del equipo nacional con un desglose de 3 paneles (gorra, camiseta, pantalones cortos, bufanda, accesorios).",
+    "title": "Generador de Póster de Atuendo de Fan del Mundial — Sube Selfie + Elige País | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster vertical de atuendo de fan 4:5 en el formato lookbook de RedNote/Xiaohongshu que genera más de 11M de vistas por publicación. Encabezado superior: nombre del país en caligrafía de pincel con salpicadura de pintura de color de bandera. Derecha (60%): tu retrato de cuerpo completo en el kit completo de fan del Mundial 2026 del país (camiseta, gorra o diadema, pantalones cortos, bufanda, zapatos, accesorios) con iluminación de estudio. Izquierda (40%): tres paneles de desglose numerados (01 Accesorios / 02 Parte Superior y Accesorios / 03 Parte Inferior y Calzado) mostrando cada artículo aislado y plano con subtítulos de 1x.",
+        "who": "Mejor para fans que desean contenido editorial listo para compartir para publicaciones en días de partido, creadores de contenido que producen series semanales del Mundial, administradores de cuentas de fans y equipos de activación de marcas que ejecutan campañas de patrocinio del Mundial. Sube tu selfie, elige el país por el que animas, publica.",
+        "how": [
+          "Sube una selfie limpia de cuerpo completo o de torso con visibilidad clara de la cara, iluminación natural suave, fondo simple.",
+          "Elige un país: Brasil, Argentina, Francia, Japón, Portugal, Inglaterra, Alemania, España, México, Marruecos, o cualquier otra nación del Mundial 2026.",
+          "La plantilla preserva tu identidad facial mientras te representa en el kit completo de fan del país con iluminación de estudio.",
+          "La salida es un póster vertical 4:5 listo para compartir con el encabezado del país + retrato de cuerpo completo + desglose de 3 paneles.",
+          "Mejor para publicar en el día del partido para multiplicar el compromiso de 5 a 10 veces."
+        ],
+        "prompts": [
+          "Atuendo de fan de Japón, estilo editorial con gorra y tacones elegantes, sosteniendo un balón de fútbol a la cadera.",
+          "Atuendo de fan de Brasil, ropa casual urbana con pantalones cortos de mezclilla y zapatillas, acentos de percusión de samba.",
+          "Atuendo de fan de Francia, estilo editorial pulido con detalles de bordado de flor de lis en los accesorios."
+        ]
+      }
+    }
   }
 }

@@ -5663,5 +5663,28 @@
         ]
       }
     }
+  },
+  "template-wc-fan-outfit-poster": {
+    "category": "Affiche de Tenue de Fan de la Coupe du Monde",
+    "description": "Téléchargez votre selfie et choisissez un pays — générez une affiche de tenue de fan au style RedNote de vous-même dans le maillot de l'équipe nationale avec une répartition des articles en 3 panneaux (casquette, maillot, shorts, écharpe, accessoires).",
+    "title": "Générateur d'Affiche de Tenue de Fan de la Coupe du Monde — Téléchargez un Selfie + Choisissez un Pays | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle rend une affiche de tenue de fan verticale 4:5 au format lookbook RedNote/Xiaohongshu qui génère plus de 11 millions de vues par publication. En-tête supérieur : nom du pays en calligraphie à coups de pinceau avec éclaboussure de peinture aux couleurs du drapeau. À droite (60%) : votre portrait en pleine figure dans la tenue complète de fan de la Coupe du Monde 2026 du pays (maillot, casquette ou bandeau, shorts, écharpe, chaussures, accessoires) avec éclairage de studio. À gauche (40%) : trois panneaux de répartition numérotés (01 Accessoires / 02 Hauts & Accessoires / 03 Bas & Chaussures) montrant chaque article isolé à plat avec des légendes 1x.",
+        "who": "Idéal pour les fans souhaitant du contenu éditorial prêt à partager pour les publications sur les réseaux sociaux le jour du match, les créateurs de contenu produisant une série hebdomadaire sur la Coupe du Monde, les gestionnaires de comptes de fans et les équipes d'activation de marque menant des campagnes de sponsors pour la Coupe du Monde. Téléchargez votre selfie, choisissez le pays que vous soutenez, publiez.",
+        "how": [
+          "Téléchargez un selfie propre en plein corps ou de la taille vers le haut avec une visibilité claire du visage, un éclairage naturel doux, un fond uni.",
+          "Choisissez un pays : Brésil, Argentine, France, Japon, Portugal, Angleterre, Allemagne, Espagne, Mexique, Maroc, ou tout autre pays de la Coupe du Monde 2026.",
+          "Le modèle préserve votre identité faciale tout en vous rendant dans la tenue complète de fan du pays avec un éclairage de studio.",
+          "Le résultat est une affiche verticale 4:5 prête à être partagée avec l'en-tête du pays + portrait en pleine figure + répartition des articles en 3 panneaux.",
+          "Idéal pour publier le jour du match afin de multiplier l'engagement par 5 à 10 fois."
+        ],
+        "prompts": [
+          "Tenue de fan du Japon, style éditorial avec casquette et talons habillés, tenant un ballon de football à la taille.",
+          "Tenue de fan du Brésil, streetwear décontracté avec shorts en denim et baskets, accents de percussion samba.",
+          "Tenue de fan de France, style éditorial soigné avec des détails de broderie fleur-de-lis sur les accessoires."
+        ]
+      }
+    }
   }
 }
