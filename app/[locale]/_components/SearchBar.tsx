@@ -25,6 +25,10 @@ function shuffled<T>(arr: ReadonlyArray<T>): T[] {
 }
 
 const PLACEHOLDER_ROTATE_MS = 3500;
+// Visible prefix on the rotating placeholder. Kept as a constant so the
+// onInputFocus DOM-read and the rendered placeholder stay in sync — the
+// strip-logic depends on this exact string.
+const PLACEHOLDER_PREFIX = "✨ ";
 
 type Props = { locale: string };
 
@@ -102,15 +106,20 @@ export default function SearchBar({ locale }: Props) {
   }, [isPaused]);
   const rotatingPlaceholder = isSearchPage
     ? "Refine your search…"
-    : `✨ ${shuffledQueriesRef.current[placeholderIdx]}`;
+    : `${PLACEHOLDER_PREFIX}${shuffledQueriesRef.current[placeholderIdx]}`;
 
   const onInputFocus = useCallback(() => {
-    // Snap the placeholder visible at focus time + kill any pending
-    // rotation tick synchronously. Together these guarantee that
-    // handleSubmit's empty-fallback submits exactly what the user saw,
-    // not whatever the next setInterval tick would have rotated to.
+    // Snap the placeholder DIRECTLY from the input's DOM attribute —
+    // that's what the user is actually looking at, regardless of any
+    // in-flight React state update that closure capture would miss.
+    // Falls back to the closure idx if DOM read returns nothing (e.g.,
+    // focus fired before first paint).
+    const dom = inputRef.current?.placeholder ?? "";
+    const fromDom = dom.startsWith(PLACEHOLDER_PREFIX)
+      ? dom.slice(PLACEHOLDER_PREFIX.length).trim()
+      : "";
     focusedPlaceholderRef.current =
-      shuffledQueriesRef.current[placeholderIdx] ?? "";
+      fromDom || shuffledQueriesRef.current[placeholderIdx] || "";
     if (intervalIdRef.current !== null) {
       window.clearInterval(intervalIdRef.current);
       intervalIdRef.current = null;
@@ -198,9 +207,18 @@ export default function SearchBar({ locale }: Props) {
     // search…", not a real query).
     let q = query.trim().toLowerCase();
     if (!q && !isSearchPage) {
-      q = (focusedPlaceholderRef.current
-        || shuffledQueriesRef.current[placeholderIdx]
-        || "").trim().toLowerCase();
+      // Priority: focus-time snapshot → live DOM placeholder → closure idx.
+      // The DOM read is the single source of truth for what the user sees
+      // right NOW (rotation is paused while focused, so DOM == snapshot in
+      // the happy path, but DOM wins if anything got out of sync).
+      const dom = inputRef.current?.placeholder ?? "";
+      const fromDom = dom.startsWith(PLACEHOLDER_PREFIX)
+        ? dom.slice(PLACEHOLDER_PREFIX.length).trim().toLowerCase()
+        : "";
+      q = (focusedPlaceholderRef.current.toLowerCase()
+        || fromDom
+        || (shuffledQueriesRef.current[placeholderIdx] ?? "").toLowerCase()
+        || "").trim();
       if (q) {
         // Lightweight signal that a placeholder-adopt path fired — fixed
         // content_id keeps cardinality bounded; the query itself goes into
