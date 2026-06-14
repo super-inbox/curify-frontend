@@ -11,5 +11,6 @@
       "renovate/**": false,
       "*": false
     }
-  }
+  },
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- ':!docs/**' ':!**/*.md'"
 }
