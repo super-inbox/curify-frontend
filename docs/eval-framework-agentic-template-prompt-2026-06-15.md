@@ -61,6 +61,19 @@ Build 100 user intents with **gold template + gold slots**, measure:
 - **Template Accuracy** — did the agent pick the right template?
 - **Slot Accuracy** — did it extract the right parameter values?
 
+**Connection to the 3-tier ontology:** "gold template" is the right cell in the 3D matrix `Subject × Info-type × Layout` documented in [`docs/search-and-content.md`](./search-and-content.md#three-tier-ontology) (Thread b). The gold-label for each user intent decomposes to:
+
+```
+Intent:  "Make a retro soccer poster for Messi"
+Decomposes to:
+  Tier I  (Subject):    soccer + messi
+  Tier II (Info-type):  profile
+  Tier III (Layout):    poster (retro variant)
+Gold cell: soccer × profile × poster → template-soccer-star-comic-retro-poster
+```
+
+This means L1 doubles as a **validator of the ontology itself** — if a human annotator can't pick a gold template because no template fits the (Subject × Info-type × Layout) cell, that's a real content gap surfaced by the eval (and feeds back into the `build_3d_gap_matrix.cjs` report). Worth keeping a "no good template" option in the annotation UI so we capture this signal cleanly.
+
 Lineage: OpenAI function-calling benchmark, Berkeley Function Calling Leaderboard. Cheap to instrument, regression-test on every agent prompt change.
 
 ### Layer 2 — Workflow Evaluation (architecture comparison)
