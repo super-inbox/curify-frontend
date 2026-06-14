@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Search, X } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   filterSuggestions,
@@ -29,13 +29,28 @@ const PLACEHOLDER_ROTATE_MS = 3500;
 type Props = { locale: string };
 
 export default function SearchBar({ locale }: Props) {
-  const [query, setQuery] = useState("");
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  // On /search results page: prefill from ?q= and disable rotation
+  // (refine mode — matches Google/Bing/Pinterest convention). Match any
+  // path ending in /search so locale prefix (/en/search, /zh/search) works.
+  const isSearchPage = (pathname ?? "").endsWith("/search");
+  const urlQuery = searchParams?.get("q") ?? "";
+
+  const [query, setQuery] = useState(isSearchPage ? urlQuery : "");
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const { track } = useTracking();
   const t = useTranslations("topics");
+
+  // Keep the input synced with the URL when navigating between /search?q=…
+  // results (e.g. user clicks a suggestion chip on the results page).
+  // SearchBar is mounted in the layout so it doesn't remount across nav.
+  useEffect(() => {
+    if (isSearchPage) setQuery(urlQuery);
+  }, [isSearchPage, urlQuery]);
   // Guard so we only fire ONE focus event per session-of-this-mount,
   // not on every focus regain. Pairs with the SEARCH submit event so we
   // can compute "opened dropdown / didn't submit" as a funnel rung.
@@ -58,11 +73,11 @@ export default function SearchBar({ locale }: Props) {
 
   // Rotating placeholder — shuffled once per mount, advances every
   // PLACEHOLDER_ROTATE_MS while the input is unfocused + empty. Pauses
-  // on focus or when the user types so we never overwrite their context.
-  // Respects prefers-reduced-motion (no rotation, just shows first entry).
+  // on focus, when the user types, or on the /search results page
+  // (refine mode — see isSearchPage above). Respects prefers-reduced-motion.
   const shuffledQueriesRef = useRef<string[]>(shuffled(POPULAR_PREFILL_QUERIES));
   const [placeholderIdx, setPlaceholderIdx] = useState(0);
-  const isPaused = open || query.length > 0;
+  const isPaused = isSearchPage || open || query.length > 0;
   useEffect(() => {
     if (isPaused) return;
     if (typeof window !== "undefined"
@@ -72,7 +87,9 @@ export default function SearchBar({ locale }: Props) {
     }, PLACEHOLDER_ROTATE_MS);
     return () => window.clearInterval(id);
   }, [isPaused]);
-  const rotatingPlaceholder = `Try: ${shuffledQueriesRef.current[placeholderIdx]}`;
+  const rotatingPlaceholder = isSearchPage
+    ? "Refine your search…"
+    : `✨ ${shuffledQueriesRef.current[placeholderIdx]}`;
 
   // Localized label resolver — returns the locale's displayName or undefined.
   // Used for both rendering chips and matching user queries in the user's language.
