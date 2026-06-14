@@ -5,14 +5,21 @@
 // nouns. The pool seeds the breadth of platform value to first-time
 // visitors who would otherwise stare at an empty bar.
 //
-// Pool composition (~45 queries):
+// Pool composition (~42 queries):
 //   - At least one query per tier-2 category we have content for
 //   - Mix of evergreen + tournament/seasonal entries
-//   - 4 empirically-validated long queries from real search data
+//   - 3 empirically-validated long queries from real search data
+//
+// Quality gate (2026-06-14): inspect_prefill_pool_quality.cjs verified
+// every entry returns ON-TOPIC top hits. 13 entries with off-topic top
+// results were dropped or swapped — those are kept in
+// scripts/configs/search_eval_set.json marked as quality-issue records
+// (see task #86 for the matcher fix that would let them ship).
 //
 // Maintenance: when adding a new tier-2 or a content-pack you want
-// surfaced, append one entry here. Order doesn't matter — SearchBar
-// shuffles the pool on mount (Fisher-Yates) before rotating.
+// surfaced, append one entry here AND run scripts/inspect_prefill_pool_quality.cjs
+// to confirm the top hits are topically aligned. Order doesn't matter —
+// SearchBar shuffles the pool on mount (Fisher-Yates) before rotating.
 
 export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
   // === world-cup (3 — light during off-game days, scale up around match days) ===
@@ -21,8 +28,6 @@ export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
   "world cup 2026 schedule",
 
   // === character (mbti / anime / film / portrait / sports, 6) ===
-  "mbti enfp career poster",
-  "mbti infj workplace traits",
   "anime character group poster",
   "celebrity movie group poster",
   "mbti relationship compatibility chart",
@@ -37,9 +42,8 @@ export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
   "ielts vocabulary upgrade poster",
 
   // === travel (itinerary / city / map / scrapbook, 5) ===
-  "japan culture travel poster",
-  "italy city map poster",
-  "3d landmark map illustration",
+  "paris travel itinerary",
+  "architecture empire state building",
   "watercolor travel journal collage",
   "vintage travel scrapbook poster",
 
@@ -51,17 +55,16 @@ export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
 
   // === nostalgia + retro (new emphasis) ===
   "vintage nostalgia infographic poster",
-  "vintage childhood memories illustration",
+  "childhood snacks then vs now",
   "generation comparison nostalgia infographic",
-  "retro 90s aesthetic poster",
+  "vintage stamp collection garden birds",
   "vintage stamp collection illustration",
 
   // === diy + life tips + guides (new emphasis) ===
   "diy home decor ideas",
   "lifestyle guide infographic poster",
-  "diy craft tutorial poster",
   "home organization tips guide",
-  "morning routine checklist poster",
+  "warmup routine running checklist",
   "quick recipe meal prep guide",
 
   // === lifestyle (fashion / interior / fitness / pet, 5) ===
@@ -75,15 +78,9 @@ export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
   "weird science facts infographic",
   "world history timeline poster",
   "ai workflow infographic guide",
-  "architecture style guide poster",
-
   // === design + product (3) ===
   "ai outfit try-on poster",
   "product packaging mockup display",
-  "brand logo design board",
-
   // === empirically-validated 100% CTR long queries (real user data) ===
-  "amusement park map infographic",
   "evolution snacks infographic",
-  "dubai map travel guide",
 ];
