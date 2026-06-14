@@ -11,7 +11,20 @@ import {
   ALL_SUGGESTIONS,
   type SuggestionEntry,
 } from "@/lib/searchIndex";
+import { POPULAR_PREFILL_QUERIES } from "@/lib/popularPrefillQueries";
 import { useTracking } from "@/services/useTracking";
+
+// Fisher-Yates shuffle, returns a NEW array (doesn't mutate input).
+function shuffled<T>(arr: ReadonlyArray<T>): T[] {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const PLACEHOLDER_ROTATE_MS = 3500;
 
 type Props = { locale: string };
 
@@ -42,6 +55,24 @@ export default function SearchBar({ locale }: Props) {
       actionType: "click",
     });
   }, [track]);
+
+  // Rotating placeholder — shuffled once per mount, advances every
+  // PLACEHOLDER_ROTATE_MS while the input is unfocused + empty. Pauses
+  // on focus or when the user types so we never overwrite their context.
+  // Respects prefers-reduced-motion (no rotation, just shows first entry).
+  const shuffledQueriesRef = useRef<string[]>(shuffled(POPULAR_PREFILL_QUERIES));
+  const [placeholderIdx, setPlaceholderIdx] = useState(0);
+  const isPaused = open || query.length > 0;
+  useEffect(() => {
+    if (isPaused) return;
+    if (typeof window !== "undefined"
+      && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => {
+      setPlaceholderIdx((i) => (i + 1) % shuffledQueriesRef.current.length);
+    }, PLACEHOLDER_ROTATE_MS);
+    return () => window.clearInterval(id);
+  }, [isPaused]);
+  const rotatingPlaceholder = `Try: ${shuffledQueriesRef.current[placeholderIdx]}`;
 
   // Localized label resolver — returns the locale's displayName or undefined.
   // Used for both rendering chips and matching user queries in the user's language.
@@ -156,7 +187,7 @@ export default function SearchBar({ locale }: Props) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => { setOpen(true); trackFocusOnce(); }}
-            placeholder="Search templates, styles, topics…"
+            placeholder={rotatingPlaceholder}
             className="w-full rounded-2xl border-2 border-blue-200 bg-white py-3.5 pl-12 pr-10 text-base text-neutral-900 placeholder:text-neutral-500 shadow-sm hover:border-blue-300 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all"
           />
           {query && (
