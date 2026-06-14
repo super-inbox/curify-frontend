@@ -144,7 +144,20 @@ export default function SearchBar({ locale }: Props) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const q = query.trim().toLowerCase();
+    // Empty submit → adopt the currently visible rotating placeholder so
+    // users can press Enter on a suggestion they like. Pool entries are
+    // calibrated for ≥1 hit on /search, so we never route to an empty
+    // results page from a default placeholder.
+    let q = query.trim().toLowerCase();
+    if (!q) {
+      q = (shuffledQueriesRef.current[placeholderIdx] ?? "").trim().toLowerCase();
+      if (q) {
+        // Lightweight signal that a placeholder-adopt path fired — fixed
+        // content_id keeps cardinality bounded; the query itself goes into
+        // the SEARCH event below so we can still attribute downstream clicks.
+        track({ contentId: "placeholder-adopt", contentType: "topic_capsule", actionType: "click" });
+      }
+    }
     if (!q) return;
     track({ contentId: q, contentType: "topic_capsule", actionType: "search" });
     setOpen(false);
