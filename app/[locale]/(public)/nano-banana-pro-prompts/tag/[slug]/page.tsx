@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { getCanonicalUrl, getLanguagesMap } from '@/lib/canonical';
 import { SITE_URL } from '@/lib/constants';
@@ -24,6 +24,19 @@ const TEMPLATE_CARDS_CAP = 30;
 const CANONICAL_TAGS = new Set<string>(
   nanoMetadata.metadata.tags.map((t) => t.tag)
 );
+
+// Tag aliases: 301 redirect known misspellings / case-variants /
+// pluralizations to their canonical counterpart. Surfaced 2026-06-14 from
+// GSC audit — soft-404 URLs were burning ~133 impr/mo across `women` (116
+// impr, the biggest miss), `confidence`, `Fashion Design`, etc. Each maps
+// a lowercase incoming slug → canonical tag. Permanent redirect (308)
+// signals to Google "this URL has moved" and consolidates link equity on
+// the canonical page.
+const TAG_ALIASES: Record<string, string> = {
+  women: "woman",
+  confidence: "confident",
+  "fashion design": "fashion",
+};
 
 // Cache tag listing pages for 4 hours with ISR — listings rarely
 // change and bot crawls hit these often.
@@ -50,6 +63,11 @@ async function getTagEntry(tag: string): Promise<TagEntry> {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const tag = decodeURIComponent(slug);
+  const aliasTarget = TAG_ALIASES[tag.toLowerCase()];
+  if (aliasTarget) {
+    const prefix = locale === "en" ? "" : `/${locale}`;
+    permanentRedirect(`${prefix}/nano-banana-pro-prompts/tag/${encodeURIComponent(aliasTarget)}`);
+  }
   if (!CANONICAL_TAGS.has(tag)) {
     return {
       title: 'Tag Not Found',
@@ -132,6 +150,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TagPage({ params }: Props) {
   const { locale, slug } = await params;
   const tag = decodeURIComponent(slug);
+  const aliasTarget = TAG_ALIASES[tag.toLowerCase()];
+  if (aliasTarget) {
+    const prefix = locale === "en" ? "" : `/${locale}`;
+    permanentRedirect(`${prefix}/nano-banana-pro-prompts/tag/${encodeURIComponent(aliasTarget)}`);
+  }
   if (!CANONICAL_TAGS.has(tag)) notFound();
   const entry = await getTagEntry(tag);
 
