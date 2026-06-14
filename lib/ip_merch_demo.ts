@@ -12,6 +12,13 @@
 // pre-rendered and shipped in /public/images/nano_insp/. Same noindex
 // pitch-mode surface as /illustrator-demo and /progseo-demo.
 //
+// i18n (2026-06-13): seed is locale-aware via getIpMerchSeed(locale).
+// English is authoritative; Chinese (zh) is a full translation for the
+// merch/factory audience. Other locales fall back to English — extend
+// LOCALE_SEEDS to add more. Structural fields (order/id/template_id/
+// image_url) are shared from the English seed; the zh seed only overrides
+// display text, so the two can't drift on assets.
+//
 // V2 would add: "run your own IP brief" text input → live Gemini call
 // on stage 1 → user picks the locked character sheet → stages 2-4
 // fan out cached or live. Not in MVP — reactions first.
@@ -23,6 +30,8 @@ export type IpMerchStage = {
   id: string;
   /** Step label shown above the image */
   step_label: string;
+  /** Short label for the stage dot-nav chip (no "Stage N —" prefix) */
+  short_label: string;
   /** Curify template id this stage maps to (blog source of truth) */
   template_id: string;
   /** IP example used for this stage in the MVP walkthrough */
@@ -35,6 +44,15 @@ export type IpMerchStage = {
   image_url: string;
   /** Preview / thumbnail image */
   preview_image_url: string;
+};
+
+/** Chrome / UI labels (localized) */
+export type IpMerchUi = {
+  eyebrow: string;
+  prevStage: string;
+  nextStage: string;
+  /** "Stage" / "阶段" — used in "Stage 2 / 4" + the mobile chip */
+  stageWord: string;
 };
 
 export type IpMerchDemoSeed = {
@@ -54,6 +72,8 @@ export type IpMerchDemoSeed = {
     secondary_href: string;
     closing_line: string;
   };
+  /** Localized chrome labels */
+  ui: IpMerchUi;
 };
 
 export const IP_MERCH_DEMO_SEED: IpMerchDemoSeed = {
@@ -69,6 +89,7 @@ export const IP_MERCH_DEMO_SEED: IpMerchDemoSeed = {
       order: 1,
       id: "character-sprite-emoji-sheet",
       step_label: "Stage 1 — Lock the character canon",
+      short_label: "Lock the character canon",
       template_id: "template-ip-character-sprite-emoji-sheet",
       ip_info: "graduation alpaca",
       template_caption:
@@ -84,6 +105,7 @@ export const IP_MERCH_DEMO_SEED: IpMerchDemoSeed = {
       order: 2,
       id: "emoji-sticker-sheet-poster",
       step_label: "Stage 2 — Distribution-ready pack",
+      short_label: "Distribution-ready pack",
       template_id: "template-ip-emoji-sticker-sheet-poster",
       ip_info: "empress cow cat",
       template_caption:
@@ -99,6 +121,7 @@ export const IP_MERCH_DEMO_SEED: IpMerchDemoSeed = {
       order: 3,
       id: "gift-box-stationery-set-mockup",
       step_label: "Stage 3 — Retail-shelf mockup",
+      short_label: "Retail-shelf mockup",
       template_id: "template-ip-gift-box-stationery-set-mockup",
       ip_info: "busan boogi duck",
       template_caption:
@@ -114,6 +137,7 @@ export const IP_MERCH_DEMO_SEED: IpMerchDemoSeed = {
       order: 4,
       id: "creative-cultural-goods-mockup-set",
       step_label: "Stage 4 — Full SKU family",
+      short_label: "Full SKU family",
       template_id: "template-ip-creative-cultural-goods-mockup-set",
       ip_info: "bronze rabbit qingqing",
       template_caption:
@@ -134,7 +158,90 @@ export const IP_MERCH_DEMO_SEED: IpMerchDemoSeed = {
     closing_line:
       "Each stage takes a real IP brief and outputs at SKU velocity. Run this on your character — we'll send back a two-piece sample on any stage you pick.",
   },
+  ui: {
+    eyebrow: "IP-merch design demo · pitch-mode",
+    prevStage: "Previous stage",
+    nextStage: "Next stage",
+    stageWord: "Stage",
+  },
 };
+
+// ── Chinese (zh) ────────────────────────────────────────────────────────────
+// Per-stage display-text overrides, keyed by stage id. Structural fields
+// (order/id/template_id/image_url/preview_image_url) are reused from the
+// English seed below so the two never drift on assets.
+const ZH_STAGE_TEXT: Record<
+  string,
+  Pick<IpMerchStage, "step_label" | "short_label" | "ip_info" | "template_caption" | "operator_outcome">
+> = {
+  "character-sprite-emoji-sheet": {
+    step_label: "第 1 阶段 —— 锁定角色设定",
+    short_label: "锁定角色设定",
+    ip_info: "毕业羊驼",
+    template_caption: "IP 角色立绘 + 表情包 —— 单张网格上的 12 个动作姿势库。",
+    operator_outcome:
+      "角色设定锁定。后续每个阶段都以这张设定表作为结构来源，因此整个 SKU 家族的脸型、比例和轮廓都保持一致。",
+  },
+  "emoji-sticker-sheet-poster": {
+    step_label: "第 2 阶段 —— 可分发素材包",
+    short_label: "可分发素材包",
+    ip_info: "皇后奶牛猫",
+    template_caption: "IP 表情贴纸海报 —— 16 张微信标准规格的分发素材包。",
+    operator_outcome:
+      "贴纸包已就绪，可直接投放到带来上层流量的渠道。16 张的微信版式符合平台分发规则，因此素材包当天即可上线，无需返工重切。",
+  },
+  "gift-box-stationery-set-mockup": {
+    step_label: "第 3 阶段 —— 零售货架样机",
+    short_label: "零售货架样机",
+    ip_info: "釜山布吉鸭",
+    template_caption: "IP 礼盒文具套装样机 —— 可上架礼盒 + 配套文具家族。",
+    operator_outcome:
+      "可直接用于渠道的样机。IP 简报到手当天就能放进授权商提案里 —— 买家先看到的是礼盒，而不是一张没有商业包装的角色研究图。",
+  },
+  "creative-cultural-goods-mockup-set": {
+    step_label: "第 4 阶段 —— 完整 SKU 家族",
+    short_label: "完整 SKU 家族",
+    ip_info: "青铜兔青青",
+    template_caption: "IP 文创周边样机套装 —— 5+ 种周边载体设计一并呈现。",
+    operator_outcome:
+      "一次渲染得到完整 SKU 家族 —— 马克杯、托特包、贴纸、徽章套装、包装。从这一刻起，授权提案不再是角色研究，而是产品路线图。",
+  },
+};
+
+const ZH_SEED: IpMerchDemoSeed = {
+  hero: {
+    title: "IP 周边设计工作流 —— 一份简报，四个阶段，完整 SKU 产品家族",
+    subtitle:
+      "用一个 IP 走完 Curify 的四个模板，把一份角色简报变成可上架的周边产品家族。品牌 → 系列 → SKU，每个阶段都锁定一致性。",
+    workflow_summary:
+      "这四个阶段就是我们为付费工厂客户运行的同一套引擎。每个阶段都以上一阶段锁定的产出作为约束，因此从角色设定表到礼盒样机，插画师的笔触始终保持一致。下面用我们 2026-06-08 案例研究中的 IP 示例，逐阶段演示一次。",
+  },
+  stages: IP_MERCH_DEMO_SEED.stages.map((s) => ({ ...s, ...ZH_STAGE_TEXT[s.id] })),
+  cta: {
+    ...IP_MERCH_DEMO_SEED.cta,
+    primary_label: "用你的 IP 做 15 分钟演示",
+    secondary_label: "阅读案例研究",
+    closing_line:
+      "每个阶段都基于真实的 IP 简报，以 SKU 的速度产出。用你的角色跑一遍 —— 你挑任意一个阶段，我们都会回寄一份两件套打样。",
+  },
+  ui: {
+    eyebrow: "IP 周边设计演示 · 提案模式",
+    prevStage: "上一阶段",
+    nextStage: "下一阶段",
+    stageWord: "阶段",
+  },
+};
+
+const LOCALE_SEEDS: Record<string, IpMerchDemoSeed> = {
+  en: IP_MERCH_DEMO_SEED,
+  zh: ZH_SEED,
+};
+
+/** Locale-aware seed. zh → Chinese; everything else falls back to English. */
+export function getIpMerchSeed(locale: string | undefined): IpMerchDemoSeed {
+  const lang = (locale || "en").toLowerCase().split("-")[0];
+  return LOCALE_SEEDS[lang] ?? IP_MERCH_DEMO_SEED;
+}
 
 /** Helper: get a stage by id (mirrors lib/illustrator_demo.ts getStyleById). */
 export function getStageById(id: string): IpMerchStage | undefined {
