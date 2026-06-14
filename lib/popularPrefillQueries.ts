@@ -16,7 +16,7 @@
 
 export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
   // === world-cup (3 — light during off-game days, scale up around match days) ===
-  "brazil 2026 world cup squad",
+  "brazil world cup squad poster",
   "england 1966 world cup squad",
   "world cup 2026 schedule",
 
@@ -31,13 +31,13 @@ export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
   // === language (vocab with explicit subjects + asl + comparison, 6) ===
   "kids english animals vocabulary cards",
   "kids english food vocabulary poster",
-  "kids english body parts flashcards",
+  "kids english colors vocabulary cards",
   "english spanish word comparison",
   "asl sign language tutorial",
   "ielts vocabulary upgrade poster",
 
   // === travel (itinerary / city / map / scrapbook, 5) ===
-  "japan travel itinerary infographic",
+  "japan culture travel poster",
   "italy city map poster",
   "3d landmark map illustration",
   "watercolor travel journal collage",
@@ -50,7 +50,7 @@ export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
   "cultural festival illustration poster",
 
   // === nostalgia + retro (new emphasis) ===
-  "old times nostalgia poster",
+  "vintage nostalgia infographic poster",
   "vintage childhood memories illustration",
   "generation comparison nostalgia infographic",
   "retro 90s aesthetic poster",
@@ -58,7 +58,7 @@ export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
 
   // === diy + life tips + guides (new emphasis) ===
   "diy home decor ideas",
-  "life hack daily tips infographic",
+  "lifestyle guide infographic poster",
   "diy craft tutorial poster",
   "home organization tips guide",
   "morning routine checklist poster",
@@ -66,9 +66,9 @@ export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
 
   // === lifestyle (fashion / interior / fitness / pet, 5) ===
   "vintage fashion lookbook",
-  "interior design bedroom guide",
+  "interior design home guide",
   "fitness anatomy guide infographic",
-  "skincare routine step guide",
+  "beauty step by step guide",
   "pet care guide infographic",
 
   // === learning (science / history / ai / architecture, 4) ===
