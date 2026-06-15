@@ -11,8 +11,19 @@ export interface NanoGenerateRequest {
 
 export interface NanoGenerateResponse {
   success: boolean;
+  // Async flow: poll /projects/{project_id}/status for the result.
+  project_id?: string;
+  // Legacy synchronous field (older backend) — async path leaves it null.
   signed_url?: string;
   message?: string;
+}
+
+export interface NanoProjectStatus {
+  project_id: string;
+  status: string; // STARTED | COMPLETED | FAILED | ...
+  result_url?: string | null;
+  failure_code?: string | null;
+  failure_reason?: string | null;
 }
 
 export const nanoGenerateService = {
@@ -21,5 +32,15 @@ export const nanoGenerateService = {
       method: "POST",
       body: JSON.stringify(data),
     });
+  },
+
+  // Poll the async generation's project status. Returns the inner data of the
+  // APIResponse wrapper. Throws on 404/network (caller handles).
+  async getProjectStatus(projectId: string): Promise<NanoProjectStatus> {
+    const res = await apiClient.request<{ data: NanoProjectStatus }>(
+      `/projects/${encodeURIComponent(projectId)}/status`,
+      { method: "GET" }
+    );
+    return res.data;
   },
 };

@@ -12,6 +12,38 @@ import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
 const CREDITS_COST = 10;
 
+// Async generation poll. Generation runs as a backend background task (image2image
+// can take >60s — the old synchronous request timed out on the client while the
+// backend completed, orphaning the result). We poll /projects/{id}/status until
+// COMPLETED (returns a signed result_url) or FAILED.
+const POLL_INTERVAL_MS = 2500;
+const POLL_MAX_MS = 180_000; // 3 min ceiling
+const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
+
+async function pollNanoResult(projectId: string): Promise<string> {
+  const deadline = Date.now() + POLL_MAX_MS;
+  await sleep(1500); // let the background task start
+  while (Date.now() < deadline) {
+    let st;
+    try {
+      st = await nanoGenerateService.getProjectStatus(projectId);
+    } catch {
+      await sleep(POLL_INTERVAL_MS); // transient network / 429 — retry
+      continue;
+    }
+    const status = (st?.status || "").toUpperCase();
+    if (status === "COMPLETED") {
+      if (st.result_url) return st.result_url;
+      throw new Error("Generation completed but no image was returned");
+    }
+    if (status === "FAILED") {
+      throw new Error(st.failure_reason || "Generation failed");
+    }
+    await sleep(POLL_INTERVAL_MS);
+  }
+  throw new Error("Generation timed out");
+}
+
 type Options = {
   templateId: string;
   params: Record<string, string>;
@@ -120,10 +152,17 @@ export function useDirectGenerate({
         example_id: exId,
         ...(referenceImageUrl ? { reference_image_url: referenceImageUrl } : {}),
       });
-      if (!res?.success || !res?.signed_url)
-        throw new Error(res?.message || "Generation failed");
+      if (!res?.success) throw new Error(res?.message || "Generation failed");
+
+      // Legacy synchronous backend returned signed_url directly; the async
+      // backend returns a project_id we poll until the render completes.
+      let imageUrl = res.signed_url;
+      if (!imageUrl) {
+        if (!res.project_id) throw new Error(res?.message || "Generation failed");
+        imageUrl = await pollNanoResult(res.project_id);
+      }
       lastGeneratedExIdRef.current = exId;
-      onSuccess(res.signed_url, exId);
+      onSuccess(imageUrl, exId);
     } catch {
       alert(t("generateFailed"));
     } finally {
