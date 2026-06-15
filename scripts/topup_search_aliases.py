@@ -790,6 +790,109 @@ FAMILIES = OrderedDict([
             '礼盒包装设计', '伴手礼设计',
         ],
     }),
+
+    # 2026-06-16 cycle 5 follow-ups — see /tmp/cycle5.log + memory
+    # project_search_weekly_review.md. Each family is a no-click signal
+    # surfaced by the buckets in search_cycle5_pull.py.
+
+    # `wc-argentina` / `wc-portugal` etc. — hyphenated WC-prefixed bare
+    # countries. matchBareWcCountryQuery doesn't catch these (`wc-argentina`
+    # normalizes to a non-country slug). Attach as aliases on each mapped
+    # nation's squad/sticker content so the relaxed matcher rescues them
+    # to relevant results — proper fix is a search-page rewrite rule
+    # (queued separately).
+    ('wc_hyphenated_country_shortcut', {
+        'templates': [
+            'template-celebrity-movie-group-poster',
+            'template-world-cup-team-sticker-poster',
+            'template-group-team-vertical-banner-country-poster',
+        ],
+        'inspiration_filter': {
+            'fields_any': [
+                'id', 'locales.en.title',
+                'params.team', 'params.team_name', 'params.team_info',
+                'params.star_movie_group',
+            ],
+            'patterns': ['argentina', 'brazil', 'france', 'germany', 'italy',
+                         'spain', 'england', 'portugal', 'netherlands', 'uruguay'],
+        },
+        'aliases': [
+            'wc-argentina', 'wc-brazil', 'wc-france', 'wc-germany', 'wc-italy',
+            'wc-spain', 'wc-england', 'wc-portugal', 'wc-netherlands', 'wc-uruguay',
+            'wc argentina', 'wc brazil', 'wc france', 'wc germany', 'wc italy',
+            'wc spain', 'wc england', 'wc portugal', 'wc netherlands', 'wc uruguay',
+            'wc 2026', 'world-cup-2026',
+        ],
+    }),
+
+    # `england fussbal tiem` — typo cluster: German "fussball" + typo "tiem".
+    # Catches "fussbal", "fussball", "footbal", "futbol", "soccor", "tiem"
+    # under England football templates so we don't return nothing for
+    # close-miss spellings.
+    ('england_football_typo_rescue', {
+        'templates': [
+            'template-football-team-all-time-lineup-poster',
+            'template-celebrity-movie-group-poster',
+            'template-vintage-football-jersey-intro-watercolor-poster',
+            'template-football-tournament-retro-infographic-poster',
+        ],
+        'inspiration_filter': {
+            'fields_any': [
+                'id', 'locales.en.title',
+                'params.team', 'params.team_name', 'params.team_info',
+                'params.star_movie_group',
+            ],
+            'patterns': ['england', 'three lions', '1966'],
+        },
+        'aliases': [
+            'england fussbal tiem', 'england fussball team',
+            'england footbal team', 'england soccor team',
+            'england footy', 'england national team',
+            'three lions team', 'three lions football',
+            'england football tiem', 'eng football team',
+        ],
+    }),
+
+    # `workplace culture` — bucket B w/ click (cycle 5 2026-06-16);
+    # user clicked east-asian-culture-comparison + watercolor-world-map.
+    # Amplify those templates with workplace-context aliases.
+    ('workplace_culture_amplify', {
+        'templates': [
+            'template-east-asian-culture-comparison-infographic',
+            'template-national-culture-history-infographic',
+        ],
+        'aliases': [
+            'workplace culture', 'office culture', 'work culture',
+            'corporate culture', 'business culture', 'business etiquette',
+            'workplace etiquette', 'office etiquette', 'professional culture',
+            '职场文化', '办公文化', '工作文化', '职场礼仪',
+        ],
+    }),
+
+    # `canada world cup 2026 opener` (3 searches, 0 clicks) — we have
+    # canada-2026-world-cup-home-squad but the "opener" angle isn't
+    # tagged. Attach opener/host/debut aliases on Canadian WC content.
+    ('canada_wc_opener', {
+        'templates': [
+            'template-celebrity-movie-group-poster',
+            'template-world-cup-debut-team-preview-poster',
+        ],
+        'inspiration_filter': {
+            'fields_any': [
+                'id', 'locales.en.title',
+                'params.team', 'params.team_name', 'params.team_info',
+                'params.star_movie_group',
+            ],
+            'patterns': ['canada'],
+        },
+        'aliases': [
+            'canada world cup 2026 opener', 'canada wc opener',
+            'world cup 2026 opener', 'wc 2026 opening match',
+            'world cup host opener', 'canada hosting match',
+            'opening match canada', 'wc 2026 first match',
+            'canada wc debut match',
+        ],
+    }),
 ])
 
 
