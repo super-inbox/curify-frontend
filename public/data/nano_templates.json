@@ -14128,5 +14128,33 @@
     ],
     "requires_image_upload": true,
     "allow_generation": true
+  },
+  {
+    "id": "template-sports-court-shot-trajectory-analysis-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Sports Court Shot Trajectory Tactical Analysis Infographic Poster Generator) Vertical tactical shot map infographic themed '{sport_analysis_topic}'. Layout: Large bold main title + quote text at top; full top-down/isometric official court floor layout in center; multiple colored curved trajectory lines originating from athlete positions to target zones, each line uniquely color-coded with index marker; tiny simplified cartoon player figures placed at each starting position; bottom complete data table including athlete name, team, match date, position, shot attempts, success rate and detailed metrics, unified color legend matching trajectory lines. Style: clean modern sports analytics graphic design, soft flat illustration court texture, distinct bright trajectory line colors, clear table typesetting, professional match tactical analysis print poster, ultra HD sharp vector graphics. Subject: complete match shot trajectory & performance stats analysis infographic poster for '{sport_analysis_topic}'.",
+        "parameters": [
+          {
+            "name": "sport_analysis_topic",
+            "label": "运动项目+分析主题完整描述",
+            "type": "text",
+            "placeholder": [
+              "足球远距离凌空射门轨迹战术分析数据海报",
+              "NBA球员全场投篮点位命中统计可视化图表",
+              "网球不同发球落点线路大赛技术解析信息长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-sports-court-shot-trajectory-analysis-infographic-tennis-serve-trajectory-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "sports",
+      "posters",
+      "information-card",
+      "composition"
+    ]
   }
 ]

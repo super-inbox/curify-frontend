@@ -5686,5 +5686,27 @@
         ]
       }
     }
+  },
+  "template-sports-court-shot-trajectory-analysis-infographic": {
+    "category": "Sports Court Shot Trajectory Analysis Infographic",
+    "description": "Generate a vertical tactical shot-map infographic — top-down/isometric court layout with color-coded curved trajectory lines from athlete positions to target zones, tiny cartoon player markers, and a full data table of attempts, success rates, and per-player metrics.",
+    "title": "Nano Banana Prompt: Sports Court Shot Trajectory Analysis Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K tactical shot-trajectory infographic poster for any sport. Layout: bold main title + quote at top; full top-down or isometric official court floor at center; multiple uniquely color-coded curved trajectory lines originating from athlete positions to target zones, each labeled with an index marker; tiny simplified cartoon player figures at each starting position; bottom data table with athlete name, team, match date, position, shot attempts, success rate, and detailed metrics. Color legend ties trajectory lines to table rows. Clean modern sports-analytics graphic design, soft flat illustration court texture, distinct bright trajectory colors, professional print-poster quality.",
+        "who": "Suitable for sports analysts producing match-review collateral, coaches teaching shot selection / tactical patterns, sports-media designers needing data-viz posters, fantasy-sports content creators, and broadcast-graphics producers.",
+        "how": [
+          "Enter the sport + analysis focus in {sport_analysis_topic} (e.g. 'NBA player full-court shot point hit-rate visualization chart').",
+          "Top-down / isometric court auto-renders for the matching sport.",
+          "Color-coded trajectories + cartoon player markers + data table auto-compose.",
+          "Generate a vertical 8K shot-trajectory tactical analysis infographic."
+        ],
+        "prompts": [
+          "Generate a soccer long-range volley shot trajectory tactical analysis poster.",
+          "Create an NBA player full-court shot point hit-rate visualization chart.",
+          "Generate a tennis serve placement line-route grand-slam technique analysis infographic."
+        ]
+      }
+    }
   }
 }
