@@ -1,0 +1,3302 @@
+{
+  "meta": {
+    "generated_at": "2026-06-14T23:30:42.422Z",
+    "eval_set_size": 125,
+    "processed": 125,
+    "empty_matcher_returns": 8,
+    "catalog_size": 227
+  },
+  "queries": [
+    {
+      "query": "单词",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-vocabulary",
+          "confidence": 0.9,
+          "reason": "Directly relates to vocabulary learning.",
+          "params": {
+            "language_pair": "en-zh",
+            "topic_name": "单词"
+          },
+          "title": "template-vocabulary",
+          "thumbnail": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg"
+        },
+        {
+          "template_id": "template-english-homograph-educational-poster",
+          "confidence": 0.7,
+          "reason": "Focuses on word pairs, suitable for educational context.",
+          "params": {
+            "topic": "单词"
+          },
+          "title": "template-english-homograph-educational-poster",
+          "thumbnail": "/images/nano_insp_preview/template-english-homograph-educational-poster-affect-converse-skied-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "卡通",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-cartoon-character-profile-card-kawaii-style",
+          "confidence": 0.9,
+          "reason": "Directly matches 'cartoon' style and character profile.",
+          "params": {
+            "name": "",
+            "age": "",
+            "gender": "",
+            "theme": ""
+          },
+          "title": "template-cartoon-character-profile-card-kawaii-style",
+          "thumbnail": "/images/nano_insp_preview/template-cartoon-character-profile-card-kawaii-style-adventurer-max-prev.jpg"
+        },
+        {
+          "template_id": "template-cartoon-english-vocabulary-flashcards",
+          "confidence": 0.8,
+          "reason": "Cartoon style for educational content.",
+          "params": {
+            "theme": ""
+          },
+          "title": "template-cartoon-english-vocabulary-flashcards",
+          "thumbnail": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-weather-prev.jpg"
+        },
+        {
+          "template_id": "template-kids-opposite-concept-education",
+          "confidence": 0.7,
+          "reason": "Kid-friendly cartoon style for educational purposes.",
+          "params": {
+            "topic": ""
+          },
+          "title": "template-kids-opposite-concept-education",
+          "thumbnail": "/images/nano_insp_preview/template-kids-opposite-concept-education-comparison-concepts-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "吉伊卡哇",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-character",
+          "confidence": 0.9,
+          "reason": "Directly generates character concept breakdown.",
+          "params": {
+            "character_source": "吉伊卡哇",
+            "character_name": "吉伊卡哇"
+          },
+          "title": "template-character",
+          "thumbnail": "/images/nano_insp_preview/template-character-zh-academic-journey-to-the-west 1-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "家居装饰",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-soft-decoration-design-guide",
+          "confidence": 0.9,
+          "reason": "Directly matches home decor theme and design style.",
+          "params": {
+            "space_type": "home",
+            "decor_style": "modern"
+          },
+          "title": "template-soft-decoration-design-guide",
+          "thumbnail": "/images/nano_insp_preview/template-soft-decoration-design-guide-poster-en-preview.jpg"
+        },
+        {
+          "template_id": "template-home-organization-before-after",
+          "confidence": 0.7,
+          "reason": "Focuses on home organization, relevant to decor.",
+          "params": {
+            "space_type": "home"
+          },
+          "title": "template-home-organization-before-after",
+          "thumbnail": "/images/nano_insp_preview/template-home-organization-before-after-living-room-shelf-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "工程",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "empty",
+      "candidates": []
+    },
+    {
+      "query": "植物",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "rich",
+      "candidates": [
+        {
+          "template_id": "template-gardening-how-to-infographic",
+          "confidence": 0.8,
+          "reason": "Gardening guide fits the plant theme.",
+          "params": {
+            "plant_name": "植物"
+          },
+          "title": "template-gardening-how-to-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-gardening-how-to-infographic-bell-peppers-prev.jpg"
+        },
+        {
+          "template_id": "template-houseplant-care-guide-infographic",
+          "confidence": 0.7,
+          "reason": "Care guide for houseplants matches the query.",
+          "params": {
+            "plant_name": "植物"
+          },
+          "title": "template-houseplant-care-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-houseplant-care-guide-infographic-pothos-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "水果中文",
+      "source": "user-2026-05-20",
+      "expected": "empty",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-fruit",
+          "confidence": 0.9,
+          "reason": "Directly matches fruit theme for infographic.",
+          "params": {
+            "fruit_name": "水果"
+          },
+          "title": "Fruit Category",
+          "thumbnail": "/images/nano_insp_preview/template-fruit-en-chilean-cherries-prev.jpg"
+        },
+        {
+          "template_id": "template-kids-vocabulary-poster",
+          "confidence": 0.7,
+          "reason": "Suitable for educational vocabulary on fruits.",
+          "params": {
+            "theme_name": "水果"
+          },
+          "title": "template-kids-vocabulary-poster",
+          "thumbnail": "/images/nano_insp_preview/template-kids-vocabulary-poster-vegetables-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "电商详情图",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-fashion-ecommerce",
+          "confidence": 0.9,
+          "reason": "Directly matches e-commerce detail image format.",
+          "params": {
+            "core_selling_point": "电商详情图"
+          },
+          "title": "template-fashion-ecommerce",
+          "thumbnail": "/images/nano_insp_preview/template-fashion-ecommerce-zh-jeans-prev.jpg"
+        },
+        {
+          "template_id": "template-product-poster",
+          "confidence": 0.7,
+          "reason": "Relevant for product promotion in e-commerce.",
+          "params": {
+            "product_name": "电商产品"
+          },
+          "title": "template-product-poster",
+          "thumbnail": "/images/nano_insp_preview/template-product-poster-aroma-diffuser-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "自行车",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-architecture",
+          "confidence": 0.6,
+          "reason": "Focus on a landmark related to bicycles.",
+          "params": {
+            "landmark": "自行车"
+          },
+          "title": "template-architecture",
+          "thumbnail": "/images/nano_insp_preview/template-architecture-zh-empire-state-building-prev.jpg"
+        },
+        {
+          "template_id": "template-gardening-how-to-infographic",
+          "confidence": 0.4,
+          "reason": "Potentially related to bicycle maintenance or gardening.",
+          "params": {
+            "plant_name": "自行车"
+          },
+          "title": "template-gardening-how-to-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-gardening-how-to-infographic-bell-peppers-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "葡萄酒",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-wine-variety-intro-infographic",
+          "confidence": 0.9,
+          "reason": "Directly matches wine variety introduction.",
+          "params": {
+            "wine_name": "葡萄酒"
+          },
+          "title": "template-wine-variety-intro-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-wine-variety-intro-infographic-red-wine-prev.jpg"
+        },
+        {
+          "template_id": "template-nutrition-food-guide-poster",
+          "confidence": 0.6,
+          "reason": "Can cover health aspects of wine.",
+          "params": {
+            "nutrition_theme": "葡萄酒"
+          },
+          "title": "template-nutrition-food-guide-poster",
+          "thumbnail": "/images/nano_insp_preview/template-nutrition-food-guide-poster-antioxidant-rich-foods-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "蔬菜",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-food",
+          "confidence": 0.8,
+          "reason": "Focus on a food-related infographic.",
+          "params": {
+            "food_name": "蔬菜"
+          },
+          "title": "template-food",
+          "thumbnail": "/images/nano_insp_preview/template-food-zh-bak-kut-teh-prev.jpg"
+        },
+        {
+          "template_id": "template-nutrition-food-guide-poster",
+          "confidence": 0.7,
+          "reason": "Nutrition theme fits vegetable topic.",
+          "params": {
+            "nutrition_theme": "蔬菜"
+          },
+          "title": "template-nutrition-food-guide-poster",
+          "thumbnail": "/images/nano_insp_preview/template-nutrition-food-guide-poster-antioxidant-rich-foods-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "词汇",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-vocabulary",
+          "confidence": 0.9,
+          "reason": "Directly matches vocabulary topic for language learning.",
+          "params": {
+            "language_pair": "zh-en",
+            "topic_name": "词汇"
+          },
+          "title": "template-vocabulary",
+          "thumbnail": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg"
+        },
+        {
+          "template_id": "template-group-vocab-category",
+          "confidence": 0.8,
+          "reason": "Focuses on grouping vocabulary items, suitable for educational purposes.",
+          "params": {
+            "theme": "词汇"
+          },
+          "title": "template-group-vocab-category",
+          "thumbnail": "/images/nano_insp_preview/template-group-vocab-category-sports-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "趣味经济学知识科普",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "rich",
+      "candidates": [
+        {
+          "template_id": "template-education",
+          "confidence": 0.85,
+          "reason": "Educational infographic fits the topic.",
+          "params": {
+            "topic": "趣味经济学知识"
+          },
+          "title": "template-education",
+          "thumbnail": "/images/nano_insp_preview/template-education-zh-conservation-of-energy-prev.jpg"
+        },
+        {
+          "template_id": "template-science-education-infographic",
+          "confidence": 0.75,
+          "reason": "Covers science topics, suitable for economics.",
+          "params": {
+            "topic": "经济学"
+          },
+          "title": "template-science-education-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-science-education-infographic-ocean-zones-prev.jpg"
+        },
+        {
+          "template_id": "template-educational-topic-infographic",
+          "confidence": 0.7,
+          "reason": "Kid-friendly infographic for educational topics.",
+          "params": {
+            "topic_title": "趣味经济学"
+          },
+          "title": "template-educational-topic-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-educational-topic-infographic-ocean-mysteries-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "音乐",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-music-style-visual-infographic",
+          "confidence": 0.9,
+          "reason": "Directly relates to music style visualization.",
+          "params": {
+            "music_style": "音乐"
+          },
+          "title": "template-music-style-visual-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-music-style-visual-infographic-rock-star-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "食物",
+      "source": "user-2026-05-20",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-food",
+          "confidence": 0.8,
+          "reason": "Generates a food science infographic.",
+          "params": {
+            "food_name": "食物"
+          },
+          "title": "template-food",
+          "thumbnail": "/images/nano_insp_preview/template-food-zh-bak-kut-teh-prev.jpg"
+        },
+        {
+          "template_id": "template-cuisine-food-vocab-poster",
+          "confidence": 0.7,
+          "reason": "Focuses on food vocabulary.",
+          "params": {
+            "cuisine_theme": "食物"
+          },
+          "title": "template-cuisine-food-vocab-poster",
+          "thumbnail": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-beijing-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "香薰",
+      "source": "user-2026-05-20",
+      "expected": "moderate",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-pet-care-guide",
+          "confidence": 0.4,
+          "reason": "Related to care guide but not a perfect match.",
+          "params": {
+            "pet_type": "香薰",
+            "pet_age": "adult"
+          },
+          "title": "template-pet-care-guide",
+          "thumbnail": "/images/nano_insp_preview/template-pet-care-guide-labrador-3yo-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "historical character",
+      "source": "reddit",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-historical-figure-profile-infographic",
+          "confidence": 0.9,
+          "reason": "Directly profiles historical figures.",
+          "params": {
+            "topic": "historical character"
+          },
+          "title": "template-historical-figure-profile-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-historical-figure-profile-infographic-famous-painters-prev.jpg"
+        },
+        {
+          "template_id": "template-historical-figure-educational",
+          "confidence": 0.8,
+          "reason": "Educational focus on historical figures.",
+          "params": {
+            "theme": "historical character"
+          },
+          "title": "template-historical-figure-educational",
+          "thumbnail": "/images/nano_insp_preview/template-historical-figure-educational-scientists-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "future characters",
+      "source": "reddit",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-character",
+          "confidence": 0.7,
+          "reason": "Character concept breakdown for future-themed characters.",
+          "params": {
+            "character_source": "future",
+            "character_name": "future characters"
+          },
+          "title": "template-character",
+          "thumbnail": "/images/nano_insp_preview/template-character-zh-academic-journey-to-the-west 1-prev.jpg"
+        },
+        {
+          "template_id": "template-custom-character-card",
+          "confidence": 0.6,
+          "reason": "Custom character profiles for futuristic themes.",
+          "params": {
+            "gender": "any",
+            "personality_traits": "futuristic",
+            "character_archetype": "future",
+            "character_title": "future characters",
+            "tags": "sci-fi",
+            "character_name": "future characters"
+          },
+          "title": "template-custom-character-card",
+          "thumbnail": "/images/nano_insp_preview/template-custom-character-card--prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "homophones and homonyms",
+      "source": "reddit",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-english-homograph-educational-poster",
+          "confidence": 0.9,
+          "reason": "Directly addresses homophones and homonyms for education.",
+          "params": {
+            "topic": "homophones and homonyms"
+          },
+          "title": "template-english-homograph-educational-poster",
+          "thumbnail": "/images/nano_insp_preview/template-english-homograph-educational-poster-affect-converse-skied-prev.jpg"
+        },
+        {
+          "template_id": "template-english-grammar-wordlist-infographic",
+          "confidence": 0.7,
+          "reason": "Covers vocabulary pairs, suitable for grammar topics.",
+          "params": {
+            "topic": "homophones and homonyms"
+          },
+          "title": "template-english-grammar-wordlist-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-english-grammar-wordlist-infographic-20-common-homonyms-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "english-chinese",
+      "source": "reddit",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-vocabulary",
+          "confidence": 0.8,
+          "reason": "Bilingual vocabulary card for English and Chinese.",
+          "params": {
+            "language_pair": "en-zh",
+            "topic_name": "English-Chinese"
+          },
+          "title": "template-vocabulary",
+          "thumbnail": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg"
+        },
+        {
+          "template_id": "template-english-dialogue-scene",
+          "confidence": 0.7,
+          "reason": "Simulates real-life conversations in English and Chinese.",
+          "params": {
+            "language_pair": "en-zh",
+            "topic_name": "English-Chinese"
+          },
+          "title": "template-english-dialogue-scene",
+          "thumbnail": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "language learning expressions",
+      "source": "reddit",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-native-english-expressions",
+          "confidence": 0.9,
+          "reason": "Directly matches expressions for language learning.",
+          "params": {
+            "theme": "language learning expressions"
+          },
+          "title": "template-native-english-expressions",
+          "thumbnail": "/images/nano_insp_preview/template-native-english-expressions-time-related-preview.jpg"
+        },
+        {
+          "template_id": "template-vocabulary",
+          "confidence": 0.7,
+          "reason": "Focuses on vocabulary which can include expressions.",
+          "params": {
+            "language_pair": "en-zh",
+            "topic_name": "language learning expressions"
+          },
+          "title": "template-vocabulary",
+          "thumbnail": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "global influence",
+      "source": "reddit",
+      "expected": "rich",
+      "expected_templates": "empty",
+      "candidates": []
+    },
+    {
+      "query": "remote destination",
+      "source": "reddit",
+      "expected": "rich",
+      "expected_templates": "empty",
+      "candidates": []
+    },
+    {
+      "query": "unique cultural experiences",
+      "source": "reddit",
+      "expected": "empty",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-national-culture-history-infographic",
+          "confidence": 0.8,
+          "reason": "Covers unique cultural experiences and history.",
+          "params": {
+            "country_name": "any"
+          },
+          "title": "template-national-culture-history-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-national-culture-history-infographic-china-prev.jpg"
+        },
+        {
+          "template_id": "template-east-asian-culture-comparison-infographic",
+          "confidence": 0.7,
+          "reason": "Compares cultural experiences across East Asia.",
+          "params": {
+            "topic": "cultural etiquette or traditions"
+          },
+          "title": "template-east-asian-culture-comparison-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-wedding-traditions-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "short city escapes",
+      "source": "reddit",
+      "expected": "rich",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-series-travel",
+          "confidence": 0.7,
+          "reason": "Focus on travel itineraries for short city trips.",
+          "params": {
+            "destination_name": "city escapes",
+            "trip_duration": "short"
+          },
+          "title": "template-series-travel",
+          "thumbnail": "/images/nano_insp_preview/template-series-travel-russia-01-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "creative comfort food",
+      "source": "reddit",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-food",
+          "confidence": 0.8,
+          "reason": "Focus on food with a creative twist.",
+          "params": {
+            "food_name": "comfort food"
+          },
+          "title": "template-food",
+          "thumbnail": "/images/nano_insp_preview/template-food-zh-bak-kut-teh-prev.jpg"
+        },
+        {
+          "template_id": "template-recipe",
+          "confidence": 0.7,
+          "reason": "Recipe poster for comfort food.",
+          "params": {
+            "dish_name": "creative comfort food"
+          },
+          "title": "template-recipe",
+          "thumbnail": "/images/nano_insp_preview/template-recipe-zh-sweet-and-sour-ribs-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "唯美春天",
+      "source": "user-report-2026-05-18",
+      "expected": "rich",
+      "expected_templates": "rich",
+      "candidates": [
+        {
+          "template_id": "template-watercolor-theme-collage-illustration",
+          "confidence": 0.9,
+          "reason": "Watercolor collage fits the aesthetic of '唯美春天'.",
+          "params": {
+            "theme_name": "春天"
+          },
+          "title": "template-watercolor-theme-collage-illustration",
+          "thumbnail": "/images/nano_insp_preview/template-watercolor-theme-collage-illustration-autumn-harvest-prev.jpg"
+        },
+        {
+          "template_id": "template-lifestyle-watercolor-infographic",
+          "confidence": 0.7,
+          "reason": "Lifestyle infographic can capture spring themes.",
+          "params": {
+            "infographic_topic": "春天",
+            "number": 5
+          },
+          "title": "template-lifestyle-watercolor-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-lifestyle-watercolor-infographic-morning-routine-prev.jpg"
+        },
+        {
+          "template_id": "template-whimsical-travel-map",
+          "confidence": 0.5,
+          "reason": "Whimsical style aligns with the beauty of spring.",
+          "params": {
+            "country_name": "春天"
+          },
+          "title": "template-whimsical-travel-map",
+          "thumbnail": "/images/nano_insp_preview/template-whimsical-travel-map-thailand-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "证件照",
+      "source": "user-report-2026-05-18",
+      "expected": "rich",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-product-poster",
+          "confidence": 0.7,
+          "reason": "Poster for showcasing ID photo services.",
+          "params": {
+            "product_name": "证件照"
+          },
+          "title": "template-product-poster",
+          "thumbnail": "/images/nano_insp_preview/template-product-poster-aroma-diffuser-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "手作",
+      "source": "user-report-2026-05-18",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-intangible-heritage",
+          "confidence": 0.9,
+          "reason": "Focus on traditional crafts aligns with '手作'.",
+          "params": {
+            "craft_name": "手作"
+          },
+          "title": "template-intangible-heritage",
+          "thumbnail": "/images/nano_insp_preview/template-intangible-heritage-zh-anshun-opera-prev.jpg"
+        },
+        {
+          "template_id": "template-gardening-how-to-infographic",
+          "confidence": 0.4,
+          "reason": "Possible connection to DIY plant crafts, but less direct.",
+          "params": {
+            "plant_name": "手作"
+          },
+          "title": "template-gardening-how-to-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-gardening-how-to-infographic-bell-peppers-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "mbti marvel",
+      "source": "popular",
+      "expected": "rich",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-mbti-marvel",
+          "confidence": 1,
+          "reason": "Direct match for MBTI and Marvel characters.",
+          "params": {
+            "character_name": ""
+          },
+          "title": "template-mbti-marvel",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-marvel-en-rogue-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "spring flowers",
+      "source": "popular",
+      "expected": "rich",
+      "expected_templates": "rich",
+      "candidates": [
+        {
+          "template_id": "template-watercolor-theme-collage-illustration",
+          "confidence": 0.9,
+          "reason": "Whimsical watercolor collage fits spring flowers theme.",
+          "params": {
+            "theme_name": "spring flowers"
+          },
+          "title": "template-watercolor-theme-collage-illustration",
+          "thumbnail": "/images/nano_insp_preview/template-watercolor-theme-collage-illustration-autumn-harvest-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "反义词",
+      "source": "popular",
+      "expected": "rich",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-chinese-verb-opposite-infographic",
+          "confidence": 0.9,
+          "reason": "Directly matches the topic of opposites in Chinese.",
+          "params": {
+            "chart_title": "反义词"
+          },
+          "title": "template-chinese-verb-opposite-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-chinese-verb-opposite-infographic-daily-words-prev.jpg"
+        },
+        {
+          "template_id": "template-english-homograph-educational-poster",
+          "confidence": 0.6,
+          "reason": "Focuses on word pairs, though not specifically opposites.",
+          "params": {
+            "topic": "反义词"
+          },
+          "title": "template-english-homograph-educational-poster",
+          "thumbnail": "/images/nano_insp_preview/template-english-homograph-educational-poster-affect-converse-skied-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "paper cutting",
+      "source": "popular",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-intangible-heritage",
+          "confidence": 0.9,
+          "reason": "Directly matches the craft of paper cutting.",
+          "params": {
+            "craft_name": "paper cutting"
+          },
+          "title": "template-intangible-heritage",
+          "thumbnail": "/images/nano_insp_preview/template-intangible-heritage-zh-anshun-opera-prev.jpg"
+        },
+        {
+          "template_id": "template-cultural-festival-poster",
+          "confidence": 0.4,
+          "reason": "Could relate to a festival theme but less direct.",
+          "params": {
+            "festival_name": "paper cutting festival"
+          },
+          "title": "template-cultural-festival-poster",
+          "thumbnail": "/images/nano_insp_preview/template-cultural-festival-poster-dragon-boat-festival-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "met gala",
+      "source": "gsc-zero",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-fashion-inspired-gown-design-sheet",
+          "confidence": 0.9,
+          "reason": "Focuses on fashion design inspired by events like Met Gala.",
+          "params": {
+            "inspiration_subject": "Met Gala fashion"
+          },
+          "title": "template-fashion-inspired-gown-design-sheet",
+          "thumbnail": "/images/nano_insp_preview/template-fashion-inspired-gown-design-sheet-ice-crystal-prev.jpg"
+        },
+        {
+          "template_id": "template-fashion-nail-art-design",
+          "confidence": 0.7,
+          "reason": "Could showcase nail art inspired by Met Gala themes.",
+          "params": {
+            "theme": "Met Gala"
+          },
+          "title": "template-fashion-nail-art-design",
+          "thumbnail": "/images/nano_insp_preview/template-fashion-nail-art-design-tropical-flower-prev.jpg"
+        },
+        {
+          "template_id": "template-product-theme-promotional-poster",
+          "confidence": 0.6,
+          "reason": "Can create promotional content related to Met Gala fashion.",
+          "params": {
+            "title_text": "Met Gala Fashion",
+            "language": "English"
+          },
+          "title": "template-product-theme-promotional-poster",
+          "thumbnail": "/images/nano_insp_preview/template-product-theme-promotional-poster-summer-snack-festival-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "动物 词汇",
+      "source": "synthetic",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-group-vocab-category",
+          "confidence": 0.9,
+          "reason": "Directly matches animal vocabulary theme.",
+          "params": {
+            "theme": "动物"
+          },
+          "title": "template-group-vocab-category",
+          "thumbnail": "/images/nano_insp_preview/template-group-vocab-category-sports-prev.jpg"
+        },
+        {
+          "template_id": "template-kids-vocabulary-poster",
+          "confidence": 0.85,
+          "reason": "Kid-friendly vocabulary poster for animals.",
+          "params": {
+            "theme_name": "动物"
+          },
+          "title": "template-kids-vocabulary-poster",
+          "thumbnail": "/images/nano_insp_preview/template-kids-vocabulary-poster-vegetables-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "wedding planner",
+      "source": "synthetic",
+      "expected": "rich",
+      "expected_templates": "empty",
+      "candidates": []
+    },
+    {
+      "query": "minimalist autumn outfit for japan travel",
+      "source": "progseo-2026-05-26",
+      "expected": "empty",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-fashion-style-outfit-breakdown-infographic",
+          "confidence": 0.9,
+          "reason": "Matches minimalist style and outfit breakdown layout.",
+          "params": {
+            "topic": "minimalist autumn outfit"
+          },
+          "title": "template-fashion-style-outfit-breakdown-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-streetwear-prev.jpg"
+        },
+        {
+          "template_id": "template-travel-packing-guide-infographic",
+          "confidence": 0.7,
+          "reason": "Relevant for travel packing, includes autumn context.",
+          "params": {
+            "destination": "Japan",
+            "day_count": "autumn"
+          },
+          "title": "template-travel-packing-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-travel-packing-guide-infographic-3day-weekend-getaway-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "infj vs entp dating compatibility chart",
+      "source": "progseo-2026-05-26",
+      "expected": "empty",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-mbti-comparison-infographic",
+          "confidence": 0.7,
+          "reason": "General comparison of MBTI types in dating context.",
+          "params": {
+            "topic": "dating compatibility"
+          },
+          "title": "template-mbti-comparison-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-problem-solving-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "cuban sandwich recipe poster",
+      "source": "progseo-2026-05-26",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-recipe",
+          "confidence": 0.9,
+          "reason": "Direct match for a recipe poster.",
+          "params": {
+            "dish_name": "cuban sandwich"
+          },
+          "title": "template-recipe",
+          "thumbnail": "/images/nano_insp_preview/template-recipe-zh-sweet-and-sour-ribs-prev.jpg"
+        },
+        {
+          "template_id": "template-food",
+          "confidence": 0.7,
+          "reason": "Food infographic style fits recipe content.",
+          "params": {
+            "food_name": "cuban sandwich"
+          },
+          "title": "template-food",
+          "thumbnail": "/images/nano_insp_preview/template-food-zh-bak-kut-teh-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "bilingual flashcards for kids learning korean fruits",
+      "source": "progseo-2026-05-26",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-kids-vocabulary-poster",
+          "confidence": 0.9,
+          "reason": "Perfect for kids learning vocabulary about fruits.",
+          "params": {
+            "theme_name": "fruits"
+          },
+          "title": "template-kids-vocabulary-poster",
+          "thumbnail": "/images/nano_insp_preview/template-kids-vocabulary-poster-vegetables-prev.jpg"
+        },
+        {
+          "template_id": "template-cartoon-english-vocabulary-flashcards",
+          "confidence": 0.8,
+          "reason": "Colorful flashcards for teaching fruit vocabulary.",
+          "params": {
+            "theme": "fruits"
+          },
+          "title": "template-cartoon-english-vocabulary-flashcards",
+          "thumbnail": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-weather-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "watercolor map of europe travel destinations",
+      "source": "progseo-2026-05-26",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-country-top10-travel-destinations",
+          "confidence": 0.9,
+          "reason": "Matches watercolor style and travel destinations.",
+          "params": {
+            "country_name": "Europe"
+          },
+          "title": "template-country-top10-travel-destinations",
+          "thumbnail": "/images/nano_insp_preview/template-country-top10-travel-destinations-france-prev.jpg"
+        },
+        {
+          "template_id": "template-whimsical-travel-map",
+          "confidence": 0.8,
+          "reason": "Whimsical style fits travel map request.",
+          "params": {
+            "country_name": "Europe"
+          },
+          "title": "template-whimsical-travel-map",
+          "thumbnail": "/images/nano_insp_preview/template-whimsical-travel-map-thailand-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "monstera plant care guide infographic",
+      "source": "progseo-2026-05-26",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-houseplant-care-guide-infographic",
+          "confidence": 0.9,
+          "reason": "Direct match for monstera plant care infographic.",
+          "params": {
+            "plant_name": "monstera"
+          },
+          "title": "template-houseplant-care-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-houseplant-care-guide-infographic-pothos-prev.jpg"
+        },
+        {
+          "template_id": "template-gardening-how-to-infographic",
+          "confidence": 0.7,
+          "reason": "General plant care guide, suitable for monstera.",
+          "params": {
+            "plant_name": "monstera"
+          },
+          "title": "template-gardening-how-to-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-gardening-how-to-infographic-bell-peppers-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "marvel mbti character chart 16 types",
+      "source": "progseo-2026-05-26",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-mbti-marvel",
+          "confidence": 0.9,
+          "reason": "Directly matches Marvel and MBTI character theme.",
+          "params": {
+            "character_name": "16 types"
+          },
+          "title": "template-mbti-marvel",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-marvel-en-rogue-prev.jpg"
+        },
+        {
+          "template_id": "template-mbti-generic",
+          "confidence": 0.7,
+          "reason": "Generic MBTI illustration for 16 types, can include Marvel characters.",
+          "params": {
+            "mbti_topic": "16 types",
+            "character_set": "Marvel"
+          },
+          "title": "template-mbti-generic",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-generic-employee-en-estp-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "lunar new year red envelope graphic design",
+      "source": "progseo-2026-05-26",
+      "expected": "empty",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-lunar-new-year-red-envelope-set",
+          "confidence": 0.9,
+          "reason": "Direct match for red envelope design.",
+          "params": {
+            "topic": "red envelope graphic design"
+          },
+          "title": "template-lunar-new-year-red-envelope-set",
+          "thumbnail": "/images/nano_insp_preview/template-lunar-new-year-red-envelope-set-koi-fish-prosperity-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "1950s vintage diner illustration retro poster",
+      "source": "progseo-2026-05-26",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-nostalgic-first-item-poster",
+          "confidence": 0.9,
+          "reason": "Directly matches 1950s vintage diner theme.",
+          "params": {
+            "item_theme": "1950s vintage diner"
+          },
+          "title": "template-nostalgic-first-item-poster",
+          "thumbnail": "/images/nano_insp_preview/template-nostalgic-first-item-poster-camera-prev.jpg"
+        },
+        {
+          "template_id": "template-vintage-travel-scrapbook-poster",
+          "confidence": 0.7,
+          "reason": "Vintage style fits the retro poster request.",
+          "params": {
+            "destination": "1950s diner"
+          },
+          "title": "template-vintage-travel-scrapbook-poster",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-travel-scrapbook-poster-riga-prev.jpg"
+        },
+        {
+          "template_id": "template-cultural-festival-poster",
+          "confidence": 0.5,
+          "reason": "Could capture the essence of a diner-themed event.",
+          "params": {
+            "festival_name": "1950s diner theme"
+          },
+          "title": "template-cultural-festival-poster",
+          "thumbnail": "/images/nano_insp_preview/template-cultural-festival-poster-dragon-boat-festival-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "before after kitchen organization makeover",
+      "source": "progseo-2026-05-26",
+      "expected": "moderate",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-home-organization-before-after",
+          "confidence": 0.9,
+          "reason": "Directly matches 'before after kitchen organization'.",
+          "params": {
+            "space_type": "kitchen"
+          },
+          "title": "template-home-organization-before-after",
+          "thumbnail": "/images/nano_insp_preview/template-home-organization-before-after-living-room-shelf-prev.jpg"
+        },
+        {
+          "template_id": "template-home-lifestyle-guide-infographic",
+          "confidence": 0.6,
+          "reason": "Related to kitchen organization but not specifically before/after.",
+          "params": {
+            "guide_topic": "kitchen organization"
+          },
+          "title": "template-home-lifestyle-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-home-lifestyle-guide-infographic-fitness-routine-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "phonics worksheets kindergarten",
+      "source": "pinterest-discovery-2026-05-29",
+      "expected": "empty",
+      "expected_templates": "rich",
+      "candidates": [
+        {
+          "template_id": "template-kids-theme-fill-in-worksheet",
+          "confidence": 0.8,
+          "reason": "Kid-friendly fill-in worksheets for phonics.",
+          "params": {
+            "topic": "phonics"
+          },
+          "title": "template-kids-theme-fill-in-worksheet",
+          "thumbnail": "/images/nano_insp_preview/template-kids-theme-fill-in-worksheet-introduce-myself-prev.jpg"
+        },
+        {
+          "template_id": "template-phonics-consonant-blend",
+          "confidence": 0.7,
+          "reason": "Visual guide for phonics blends suitable for kids.",
+          "params": {
+            "phonics_blend": "various blends"
+          },
+          "title": "template-phonics-consonant-blend",
+          "thumbnail": "/images/nano_insp_preview/template-phonics-consonant-blend-gr-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "Spanish vocabulary printable",
+      "source": "pinterest-discovery-2026-05-29",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-vocabulary",
+          "confidence": 0.9,
+          "reason": "Directly matches vocabulary learning for Spanish.",
+          "params": {
+            "language_pair": "en-es",
+            "topic_name": "Spanish vocabulary"
+          },
+          "title": "template-vocabulary",
+          "thumbnail": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg"
+        },
+        {
+          "template_id": "template-group-vocab-category",
+          "confidence": 0.7,
+          "reason": "Categorizes vocabulary, suitable for printable format.",
+          "params": {
+            "theme": "Spanish vocabulary"
+          },
+          "title": "template-group-vocab-category",
+          "thumbnail": "/images/nano_insp_preview/template-group-vocab-category-sports-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "ESL flashcards printable",
+      "source": "pinterest-discovery-2026-05-29",
+      "expected": "empty",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-cartoon-english-vocabulary-flashcards",
+          "confidence": 0.9,
+          "reason": "Directly creates ESL flashcards for kids.",
+          "params": {
+            "theme": "ESL"
+          },
+          "title": "template-cartoon-english-vocabulary-flashcards",
+          "thumbnail": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-weather-prev.jpg"
+        },
+        {
+          "template_id": "template-english-homograph-educational-poster",
+          "confidence": 0.6,
+          "reason": "Educational poster format, suitable for ESL.",
+          "params": {
+            "topic": "ESL"
+          },
+          "title": "template-english-homograph-educational-poster",
+          "thumbnail": "/images/nano_insp_preview/template-english-homograph-educational-poster-affect-converse-skied-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "easy weeknight dinners healthy",
+      "source": "pinterest-discovery-2026-05-29",
+      "expected": "empty",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-recipe",
+          "confidence": 0.8,
+          "reason": "Focuses on healthy recipes for weeknight meals.",
+          "params": {
+            "dish_name": "easy weeknight dinners"
+          },
+          "title": "template-recipe",
+          "thumbnail": "/images/nano_insp_preview/template-recipe-zh-sweet-and-sour-ribs-prev.jpg"
+        },
+        {
+          "template_id": "template-food",
+          "confidence": 0.75,
+          "reason": "Generates infographics on healthy food options.",
+          "params": {
+            "food_name": "healthy weeknight dinners"
+          },
+          "title": "template-food",
+          "thumbnail": "/images/nano_insp_preview/template-food-zh-bak-kut-teh-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "gluten free dinner ideas",
+      "source": "pinterest-discovery-2026-05-29",
+      "expected": "empty",
+      "expected_templates": "moderate",
+      "candidates": []
+    },
+    {
+      "query": "meal prep weekly recipes",
+      "source": "pinterest-discovery-2026-05-29",
+      "expected": "empty",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-recipe",
+          "confidence": 0.8,
+          "reason": "Focus on recipes for meal prep.",
+          "params": {
+            "dish_name": "weekly meal prep recipes"
+          },
+          "title": "template-recipe",
+          "thumbnail": "/images/nano_insp_preview/template-recipe-zh-sweet-and-sour-ribs-prev.jpg"
+        },
+        {
+          "template_id": "template-food",
+          "confidence": 0.7,
+          "reason": "Infographic style for food-related content.",
+          "params": {
+            "food_name": "meal prep dishes"
+          },
+          "title": "template-food",
+          "thumbnail": "/images/nano_insp_preview/template-food-zh-bak-kut-teh-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "cozy reading aesthetic",
+      "source": "pinterest-discovery-2026-05-29",
+      "expected": "thin",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-lifestyle-photo-grid",
+          "confidence": 0.8,
+          "reason": "Photorealistic collage fits cozy reading theme.",
+          "params": {
+            "theme": "cozy reading aesthetic"
+          },
+          "title": "template-lifestyle-photo-grid",
+          "thumbnail": "/images/nano_insp_preview/template-lifestyle-photo-grid-city-fashion-prev.jpg"
+        },
+        {
+          "template_id": "template-watercolor-theme-collage-illustration",
+          "confidence": 0.7,
+          "reason": "Watercolor collage captures cozy reading vibes.",
+          "params": {
+            "theme_name": "cozy reading aesthetic"
+          },
+          "title": "template-watercolor-theme-collage-illustration",
+          "thumbnail": "/images/nano_insp_preview/template-watercolor-theme-collage-illustration-autumn-harvest-prev.jpg"
+        },
+        {
+          "template_id": "template-self-care-illustration-poster",
+          "confidence": 0.6,
+          "reason": "Self-care poster can include reading as a cozy activity.",
+          "params": {
+            "topic": "reading"
+          },
+          "title": "template-self-care-illustration-poster",
+          "thumbnail": "/images/nano_insp_preview/template-self-care-illustration-poster-depression-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "book lovers gift guide",
+      "source": "pinterest-discovery-2026-05-29",
+      "expected": "thin",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-book-recommendation-grid-poster",
+          "confidence": 0.8,
+          "reason": "Grid layout fits a gift guide format.",
+          "params": {
+            "book_category": "gift guide"
+          },
+          "title": "template-book-recommendation-grid-poster",
+          "thumbnail": "/images/nano_insp_preview/template-book-recommendation-grid-poster-fantasy-adventures-prev.jpg"
+        },
+        {
+          "template_id": "template-book-minimalist",
+          "confidence": 0.7,
+          "reason": "Minimalist style suits a clean gift guide.",
+          "params": {
+            "book_theme": "gift ideas"
+          },
+          "title": "template-book-minimalist",
+          "thumbnail": "/images/nano_insp_preview/template-book-minimalist-gardening-beginners-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "chiikawa",
+      "source": "user-weekly-2026-05-30",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-cartoon-character-profile-card-kawaii-style",
+          "confidence": 0.9,
+          "reason": "Directly matches the kawaii style and character theme.",
+          "params": {
+            "name": "chiikawa",
+            "age": "unknown",
+            "gender": "unknown",
+            "theme": "kawaii"
+          },
+          "title": "template-cartoon-character-profile-card-kawaii-style",
+          "thumbnail": "/images/nano_insp_preview/template-cartoon-character-profile-card-kawaii-style-adventurer-max-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "samurai",
+      "source": "user-weekly-2026-05-30",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-ethnic-costume-deconstruction-board",
+          "confidence": 0.9,
+          "reason": "Focus on traditional samurai costume details.",
+          "params": {
+            "ethnic_group": "samurai"
+          },
+          "title": "template-ethnic-costume-deconstruction-board",
+          "thumbnail": "/images/nano_insp_preview/template-ethnic-costume-deconstruction-board-yi-prev.jpg"
+        },
+        {
+          "template_id": "template-historical-figure-profile-infographic",
+          "confidence": 0.7,
+          "reason": "Profiles historical figures related to samurai.",
+          "params": {
+            "topic": "samurai"
+          },
+          "title": "template-historical-figure-profile-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-historical-figure-profile-infographic-famous-painters-prev.jpg"
+        },
+        {
+          "template_id": "template-manga-artist-infographic-poster",
+          "confidence": 0.5,
+          "reason": "Potential connection to samurai-themed manga creators.",
+          "params": {
+            "creator_name": "samurai"
+          },
+          "title": "template-manga-artist-infographic-poster",
+          "thumbnail": "/images/nano_insp_preview/template-manga-artist-infographic-poster-akira-toriyama-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "genshin",
+      "source": "user-weekly-2026-05-30",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": []
+    },
+    {
+      "query": "maps",
+      "source": "user-report-2026-06-05",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": []
+    },
+    {
+      "query": "Argentina vs Brazil all time",
+      "source": "wc-top-query-2026-06-07",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-historical-figure-vs-infographic",
+          "confidence": 0.9,
+          "reason": "Comparison of two historical football teams.",
+          "params": {
+            "figure_a": "Argentina",
+            "figure_b": "Brazil"
+          },
+          "title": "template-historical-figure-vs-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-historical-figure-vs-infographic-wright-brothers-vs-alberto-santos-dumont-prev.jpg"
+        },
+        {
+          "template_id": "template-sports-team-mbti-character-card-poster",
+          "confidence": 0.7,
+          "reason": "Analyzes team characteristics in a sports context.",
+          "params": {
+            "team_mbti_info": "Argentina vs Brazil"
+          },
+          "title": "template-sports-team-mbti-character-card-poster",
+          "thumbnail": "/images/nano_insp_preview/template-sports-team-mbti-character-card-poster-brazil-esfp-prev.jpg"
+        },
+        {
+          "template_id": "template-sports-battle",
+          "confidence": 0.6,
+          "reason": "Visual comparison of two teams in a competitive format.",
+          "params": {
+            "player_left": "Argentina",
+            "player_right": "Brazil"
+          },
+          "title": "template-sports-battle",
+          "thumbnail": "/images/nano_insp_preview/template-sports-battle-template-sports-battle-kobe-vs-rayallen-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "England 1966 World Cup",
+      "source": "wc-top-query-2026-06-07",
+      "expected": "thin",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-soccer-star-comic-retro-poster-card",
+          "confidence": 0.8,
+          "reason": "Retro comic-style fits the historical theme.",
+          "params": {
+            "player_name": "England 1966 World Cup"
+          },
+          "title": "template-soccer-star-comic-retro-poster-card",
+          "thumbnail": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-cristiano-ronaldo-portugal-prev.jpg"
+        },
+        {
+          "template_id": "template-football-tournament-group-stage-bracket-infographic",
+          "confidence": 0.7,
+          "reason": "Relevant for showcasing tournament structure.",
+          "params": {
+            "topic": "1966 World Cup"
+          },
+          "title": "template-football-tournament-group-stage-bracket-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026-prev.jpg"
+        },
+        {
+          "template_id": "template-player-vintage-stats-card-poster",
+          "confidence": 0.65,
+          "reason": "Focuses on player stats, suitable for historical context.",
+          "params": {
+            "topic": "1966 World Cup players"
+          },
+          "title": "template-player-vintage-stats-card-poster",
+          "thumbnail": "/images/nano_insp_preview/template-player-vintage-stats-card-poster-usa-matt-turner-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "Brazil 2002 squad",
+      "source": "wc-top-query-2026-06-07",
+      "expected": "thin",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-world-cup-team-sticker-poster",
+          "confidence": 0.9,
+          "reason": "Perfect for celebrating a national football team.",
+          "params": {
+            "topic": "Brazil 2002 squad"
+          },
+          "title": "template-world-cup-team-sticker-poster",
+          "thumbnail": "/images/nano_insp_preview/template-world-cup-team-sticker-poster-spain-poster-prev.jpg"
+        },
+        {
+          "template_id": "template-player-vintage-stats-card-poster",
+          "confidence": 0.7,
+          "reason": "Focuses on player stats and history.",
+          "params": {
+            "topic": "Brazil 2002 squad"
+          },
+          "title": "template-player-vintage-stats-card-poster",
+          "thumbnail": "/images/nano_insp_preview/template-player-vintage-stats-card-poster-usa-matt-turner-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "Maradona Hand of God",
+      "source": "wc-top-query-2026-06-07",
+      "expected": "moderate",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-soccer-star-comic-retro-poster-card",
+          "confidence": 0.9,
+          "reason": "Retro comic-style poster fits Maradona's iconic moment.",
+          "params": {
+            "player_name": "Maradona"
+          },
+          "title": "template-soccer-star-comic-retro-poster-card",
+          "thumbnail": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-cristiano-ronaldo-portugal-prev.jpg"
+        },
+        {
+          "template_id": "template-football-tournament-group-stage-bracket-infographic",
+          "confidence": 0.6,
+          "reason": "Could include historical context of the match.",
+          "params": {
+            "topic": "Hand of God incident"
+          },
+          "title": "template-football-tournament-group-stage-bracket-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "most memorable World Cup moments",
+      "source": "wc-top-query-2026-06-07",
+      "expected": "moderate",
+      "expected_templates": "thin",
+      "candidates": [
+        {
+          "template_id": "template-best-cities-travel-infographic",
+          "confidence": 0.6,
+          "reason": "Infographic format fits memorable moments.",
+          "params": {
+            "topic": "World Cup moments"
+          },
+          "title": "template-best-cities-travel-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-best-cities-travel-infographic-coffee-lovers-prev.jpg"
+        },
+        {
+          "template_id": "template-soccer-star-comic-retro-poster-card",
+          "confidence": 0.5,
+          "reason": "Comic-style poster could highlight iconic players.",
+          "params": {
+            "player_name": "World Cup stars"
+          },
+          "title": "template-soccer-star-comic-retro-poster-card",
+          "thumbnail": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-cristiano-ronaldo-portugal-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "england 1966 world cup squad",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-soccer-star-comic-retro-poster-card",
+          "confidence": 0.8,
+          "reason": "Retro comic-style suits the historical sports theme.",
+          "params": {
+            "player_name": "England 1966 World Cup Squad"
+          },
+          "title": "template-soccer-star-comic-retro-poster-card",
+          "thumbnail": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-cristiano-ronaldo-portugal-prev.jpg"
+        },
+        {
+          "template_id": "template-football-tournament-group-stage-bracket-infographic",
+          "confidence": 0.7,
+          "reason": "Relevant to the tournament context and squad details.",
+          "params": {
+            "topic": "1966 World Cup"
+          },
+          "title": "template-football-tournament-group-stage-bracket-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026-prev.jpg"
+        },
+        {
+          "template_id": "template-player-vintage-stats-card-poster",
+          "confidence": 0.6,
+          "reason": "Focus on player stats aligns with squad information.",
+          "params": {
+            "topic": "1966 World Cup Squad"
+          },
+          "title": "template-player-vintage-stats-card-poster",
+          "thumbnail": "/images/nano_insp_preview/template-player-vintage-stats-card-poster-usa-matt-turner-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "world cup 2026 schedule",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-all-sports-tournament-schedule-infographic",
+          "confidence": 0.9,
+          "reason": "Directly matches the request for a tournament schedule.",
+          "params": {
+            "tournament_info": "World Cup 2026"
+          },
+          "title": "template-all-sports-tournament-schedule-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-group-draw-poster-prev.jpg"
+        },
+        {
+          "template_id": "template-universal-event-split-schedule-flyer-poster",
+          "confidence": 0.7,
+          "reason": "Suitable for a multi-region event schedule.",
+          "params": {
+            "tournament_info": "World Cup 2026"
+          },
+          "title": "template-universal-event-split-schedule-flyer-poster",
+          "thumbnail": "/images/nano_insp_preview/template-universal-event-split-schedule-flyer-poster-fifa-world-cup-2026-opening-ceremony-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "mbti enfp career poster",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-mbti-generic",
+          "confidence": 0.9,
+          "reason": "Directly matches MBTI career theme for ENFP.",
+          "params": {
+            "mbti_topic": "career",
+            "character_set": "ENFP"
+          },
+          "title": "template-mbti-generic",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-generic-employee-en-estp-prev.jpg"
+        },
+        {
+          "template_id": "template-mbti-personality-compatibility-infographic",
+          "confidence": 0.7,
+          "reason": "Focuses on personality traits related to careers.",
+          "params": {
+            "topic": "ENFP careers"
+          },
+          "title": "template-mbti-personality-compatibility-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-personality-compatibility-infographic-istp-esfj-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "mbti infj workplace traits",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-mbti-comparison-infographic",
+          "confidence": 0.85,
+          "reason": "Focuses on MBTI traits in a workplace context.",
+          "params": {
+            "topic": "workplace traits"
+          },
+          "title": "template-mbti-comparison-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-problem-solving-prev.jpg"
+        },
+        {
+          "template_id": "template-mbti-generic",
+          "confidence": 0.75,
+          "reason": "Generates content on MBTI types in specific situations.",
+          "params": {
+            "mbti_topic": "workplace",
+            "character_set": "INFJ"
+          },
+          "title": "template-mbti-generic",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-generic-employee-en-estp-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "anime character group poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-mbti-group-anime-character-poster",
+          "confidence": 0.9,
+          "reason": "Direct match for anime character group poster.",
+          "params": {
+            "topic": "anime character group"
+          },
+          "title": "template-mbti-group-anime-character-poster",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-group-anime-character-poster-sentinels-prev.jpg"
+        },
+        {
+          "template_id": "template-fandom-character-grid-poster",
+          "confidence": 0.7,
+          "reason": "Fits the theme of anime characters in a grid layout.",
+          "params": {
+            "theme": "anime"
+          },
+          "title": "template-fandom-character-grid-poster",
+          "thumbnail": "/images/nano_insp_preview/template-fandom-character-grid-poster-anime-protagonists-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "celebrity movie group poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-celebrity-movie-group-poster",
+          "confidence": 0.9,
+          "reason": "Direct match for celebrity movie group poster.",
+          "params": {
+            "star_movie_group": ""
+          },
+          "title": "template-celebrity-movie-group-poster",
+          "thumbnail": "/images/nano_insp_preview/template-celebrity-movie-group-poster-basketball-legends-1-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "mbti relationship compatibility chart",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-mbti-relationship-infographic",
+          "confidence": 0.9,
+          "reason": "Directly matches MBTI relationship compatibility.",
+          "params": {
+            "mbti_type_a": "Type A",
+            "mbti_type_b": "Type B"
+          },
+          "title": "template-mbti-relationship-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-relationship-infographic-intj-enfp-prev.jpg"
+        },
+        {
+          "template_id": "template-mbti-group-comparison-infographic",
+          "confidence": 0.7,
+          "reason": "Could provide insights on group dynamics in relationships.",
+          "params": {
+            "topic": "relationship dynamics"
+          },
+          "title": "template-mbti-group-comparison-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-mbti-group-comparison-infographic-group-chat-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "dual character comparison infographic",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-dual-character-comparison-infographic",
+          "confidence": 0.9,
+          "reason": "Direct match for dual character comparison.",
+          "params": {
+            "topic": "character types"
+          },
+          "title": "template-dual-character-comparison-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-dual-character-comparison-infographic-dad-vs-mom-prev.jpg"
+        },
+        {
+          "template_id": "template-character-comparison",
+          "confidence": 0.7,
+          "reason": "Similar layout but less focused on dual comparison.",
+          "params": {
+            "character_name": "character A vs character B"
+          },
+          "title": "template-character-comparison",
+          "thumbnail": null
+        }
+      ]
+    },
+    {
+      "query": "kids english animals vocabulary cards",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-cartoon-english-vocabulary-flashcards",
+          "confidence": 0.9,
+          "reason": "Perfect for kids' animal vocabulary with cartoon illustrations.",
+          "params": {
+            "theme": "animals"
+          },
+          "title": "template-cartoon-english-vocabulary-flashcards",
+          "thumbnail": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-weather-prev.jpg"
+        },
+        {
+          "template_id": "template-kids-vocabulary-poster",
+          "confidence": 0.8,
+          "reason": "Colorful vocabulary poster for kids, suitable for animals.",
+          "params": {
+            "theme_name": "animals"
+          },
+          "title": "template-kids-vocabulary-poster",
+          "thumbnail": "/images/nano_insp_preview/template-kids-vocabulary-poster-vegetables-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "kids english food vocabulary poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-kids-vocabulary-poster",
+          "confidence": 0.9,
+          "reason": "Perfect for kids' food vocabulary.",
+          "params": {
+            "theme_name": "food"
+          },
+          "title": "template-kids-vocabulary-poster",
+          "thumbnail": "/images/nano_insp_preview/template-kids-vocabulary-poster-vegetables-prev.jpg"
+        },
+        {
+          "template_id": "template-cartoon-english-vocabulary-flashcards",
+          "confidence": 0.7,
+          "reason": "Colorful flashcards suitable for kids.",
+          "params": {
+            "theme": "food"
+          },
+          "title": "template-cartoon-english-vocabulary-flashcards",
+          "thumbnail": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-weather-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "english spanish word comparison",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-language-word-comparison-educational-poster",
+          "confidence": 0.9,
+          "reason": "Direct match for comparing English and Spanish words.",
+          "params": {
+            "word1": "english",
+            "word2": "spanish"
+          },
+          "title": "template-language-word-comparison-educational-poster",
+          "thumbnail": "/images/nano_insp_preview/template-language-word-comparison-educational-poster-dou-ye-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "asl sign language tutorial",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-english-dialogue-scene",
+          "confidence": 0.7,
+          "reason": "Tutorial format fits dialogue scene layout.",
+          "params": {
+            "language_pair": "en-zh",
+            "topic_name": "ASL Sign Language"
+          },
+          "title": "template-english-dialogue-scene",
+          "thumbnail": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg"
+        },
+        {
+          "template_id": "template-english-homograph-educational-poster",
+          "confidence": 0.5,
+          "reason": "Educational focus aligns with learning ASL.",
+          "params": {
+            "topic": "ASL Sign Language"
+          },
+          "title": "template-english-homograph-educational-poster",
+          "thumbnail": "/images/nano_insp_preview/template-english-homograph-educational-poster-affect-converse-skied-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "ielts vocabulary upgrade poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-english-vocabulary-upgrade",
+          "confidence": 0.9,
+          "reason": "Directly matches IELTS vocabulary upgrade theme.",
+          "params": {
+            "vocab_theme": "IELTS"
+          },
+          "title": "template-english-vocabulary-upgrade",
+          "thumbnail": "/images/nano_insp_preview/template-english-vocabulary-upgrade-informal-to-formal-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "italy city map poster",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-whimsical-travel-map",
+          "confidence": 0.9,
+          "reason": "Whimsical illustrated map fits 'city map poster'.",
+          "params": {
+            "country_name": "Italy"
+          },
+          "title": "template-whimsical-travel-map",
+          "thumbnail": "/images/nano_insp_preview/template-whimsical-travel-map-thailand-prev.jpg"
+        },
+        {
+          "template_id": "template-country-top10-travel-destinations",
+          "confidence": 0.7,
+          "reason": "Watercolor-style poster for top destinations in Italy.",
+          "params": {
+            "country_name": "Italy"
+          },
+          "title": "template-country-top10-travel-destinations",
+          "thumbnail": "/images/nano_insp_preview/template-country-top10-travel-destinations-france-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "3d landmark map illustration",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-3d-region-landmark-map",
+          "confidence": 0.9,
+          "reason": "Directly matches 3D landmark map illustration.",
+          "params": {
+            "region_name": ""
+          },
+          "title": "template-3d-region-landmark-map",
+          "thumbnail": "/images/nano_insp_preview/template-3d-region-landmark-map-egypt-prev.jpg"
+        },
+        {
+          "template_id": "template-city-miniature",
+          "confidence": 0.7,
+          "reason": "Related to city landmarks but not specifically 3D.",
+          "params": {
+            "City Name": ""
+          },
+          "title": "template-city-miniature",
+          "thumbnail": "/images/nano_insp_preview/template-city-miniature-zh-shanghai-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "watercolor travel journal collage",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-watercolor-travel-journal-collage",
+          "confidence": 0.9,
+          "reason": "Exact match for watercolor travel journal collage.",
+          "params": {
+            "expedition_theme": "travel journal"
+          },
+          "title": "template-watercolor-travel-journal-collage",
+          "thumbnail": "/images/nano_insp_preview/template-watercolor-travel-journal-collage-coastal-vibe-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "vintage travel scrapbook poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-vintage-travel-scrapbook-poster",
+          "confidence": 0.9,
+          "reason": "Exact match for vintage travel scrapbook style.",
+          "params": {
+            "destination": ""
+          },
+          "title": "template-vintage-travel-scrapbook-poster",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-travel-scrapbook-poster-riga-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "ethnic costume deconstruction board",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-ethnic-costume-deconstruction-board",
+          "confidence": 1,
+          "reason": "Exact match for ethnic costume deconstruction.",
+          "params": {
+            "ethnic_group": ""
+          },
+          "title": "template-ethnic-costume-deconstruction-board",
+          "thumbnail": "/images/nano_insp_preview/template-ethnic-costume-deconstruction-board-yi-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "east asian culture comparison",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-east-asian-culture-comparison-infographic",
+          "confidence": 0.9,
+          "reason": "Direct match for comparing East Asian cultures.",
+          "params": {
+            "topic": "cultural etiquette or traditions"
+          },
+          "title": "template-east-asian-culture-comparison-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-wedding-traditions-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "world cuisine food poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-cuisine-food-vocab-poster",
+          "confidence": 0.9,
+          "reason": "Directly matches 'world cuisine' theme for food vocabulary.",
+          "params": {
+            "cuisine_theme": "world cuisine"
+          },
+          "title": "template-cuisine-food-vocab-poster",
+          "thumbnail": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-beijing-prev.jpg"
+        },
+        {
+          "template_id": "template-varieties-food-poster",
+          "confidence": 0.8,
+          "reason": "Showcases different types of world cuisine.",
+          "params": {
+            "food_theme": "world cuisine"
+          },
+          "title": "template-varieties-food-poster",
+          "thumbnail": "/images/nano_insp_preview/template-varieties-food-poster-salad-prev.jpg"
+        },
+        {
+          "template_id": "template-nutrition-food-guide-poster",
+          "confidence": 0.7,
+          "reason": "Focuses on nutritional aspects of world cuisine.",
+          "params": {
+            "nutrition_theme": "world cuisine"
+          },
+          "title": "template-nutrition-food-guide-poster",
+          "thumbnail": "/images/nano_insp_preview/template-nutrition-food-guide-poster-antioxidant-rich-foods-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "cultural festival illustration poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-cultural-festival-poster",
+          "confidence": 0.9,
+          "reason": "Direct match for cultural festival illustration poster.",
+          "params": {
+            "festival_name": ""
+          },
+          "title": "template-cultural-festival-poster",
+          "thumbnail": "/images/nano_insp_preview/template-cultural-festival-poster-dragon-boat-festival-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "vintage childhood memories illustration",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-nostalgic-first-item-poster",
+          "confidence": 0.9,
+          "reason": "Directly relates to vintage childhood themes.",
+          "params": {
+            "item_theme": "childhood memories"
+          },
+          "title": "template-nostalgic-first-item-poster",
+          "thumbnail": "/images/nano_insp_preview/template-nostalgic-first-item-poster-camera-prev.jpg"
+        },
+        {
+          "template_id": "template-vintage-travel-scrapbook-poster",
+          "confidence": 0.7,
+          "reason": "Vintage style fits the nostalgic theme.",
+          "params": {
+            "destination": "childhood memories"
+          },
+          "title": "template-vintage-travel-scrapbook-poster",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-travel-scrapbook-poster-riga-prev.jpg"
+        },
+        {
+          "template_id": "template-vintage-ultimate-guide-infographic",
+          "confidence": 0.6,
+          "reason": "Can encompass various aspects of childhood in a vintage style.",
+          "params": {
+            "topic": "childhood memories"
+          },
+          "title": "template-vintage-ultimate-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-ultimate-guide-infographic-coffee-brewing-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "generation comparison nostalgia infographic",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-generation-comparison-infographic",
+          "confidence": 0.9,
+          "reason": "Direct match for comparing generations with nostalgia theme.",
+          "params": {
+            "topic": "nostalgia"
+          },
+          "title": "template-generation-comparison-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-generation-comparison-infographic-demographic-generations-prev.jpg"
+        },
+        {
+          "template_id": "template-then-vs-now-comparison-infographic",
+          "confidence": 0.7,
+          "reason": "Focuses on vintage vs modern, relevant to nostalgia.",
+          "params": {
+            "topic": "nostalgia"
+          },
+          "title": "template-then-vs-now-comparison-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-then-vs-now-comparison-infographic-childhood-snacks-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "retro 90s aesthetic poster",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-nostalgic-first-item-poster",
+          "confidence": 0.9,
+          "reason": "Directly fits retro 90s theme with nostalgic elements.",
+          "params": {
+            "item_theme": "90s aesthetic"
+          },
+          "title": "template-nostalgic-first-item-poster",
+          "thumbnail": "/images/nano_insp_preview/template-nostalgic-first-item-poster-camera-prev.jpg"
+        },
+        {
+          "template_id": "template-vintage-travel-scrapbook-poster",
+          "confidence": 0.7,
+          "reason": "Vintage style aligns with retro aesthetic.",
+          "params": {
+            "destination": "90s aesthetic"
+          },
+          "title": "template-vintage-travel-scrapbook-poster",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-travel-scrapbook-poster-riga-prev.jpg"
+        },
+        {
+          "template_id": "template-vintage-stamp-collection-illustration",
+          "confidence": 0.6,
+          "reason": "Nostalgic theme fits retro aesthetic.",
+          "params": {
+            "collection_title": "90s nostalgia"
+          },
+          "title": "template-vintage-stamp-collection-illustration",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-stamp-collection-illustration-forest-botanicals-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "vintage stamp collection illustration",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-vintage-stamp-collection-illustration",
+          "confidence": 0.9,
+          "reason": "Exact match for vintage stamp collection theme.",
+          "params": {
+            "collection_title": "vintage stamp collection"
+          },
+          "title": "template-vintage-stamp-collection-illustration",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-stamp-collection-illustration-forest-botanicals-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "diy home decor ideas",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-home-organization-before-after",
+          "confidence": 0.7,
+          "reason": "Focus on home decor transformation ideas.",
+          "params": {
+            "space_type": "home decor"
+          },
+          "title": "template-home-organization-before-after",
+          "thumbnail": "/images/nano_insp_preview/template-home-organization-before-after-living-room-shelf-prev.jpg"
+        },
+        {
+          "template_id": "template-soft-decoration-design-guide",
+          "confidence": 0.6,
+          "reason": "Guides for DIY home decor styles.",
+          "params": {
+            "space_type": "home",
+            "decor_style": "diy"
+          },
+          "title": "template-soft-decoration-design-guide",
+          "thumbnail": "/images/nano_insp_preview/template-soft-decoration-design-guide-poster-en-preview.jpg"
+        },
+        {
+          "template_id": "template-home-lifestyle-guide-infographic",
+          "confidence": 0.5,
+          "reason": "General home lifestyle guide could include decor.",
+          "params": {
+            "guide_topic": "home decor"
+          },
+          "title": "template-home-lifestyle-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-home-lifestyle-guide-infographic-fitness-routine-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "diy craft tutorial poster",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-gardening-how-to-infographic",
+          "confidence": 0.7,
+          "reason": "Craft tutorial fits how-to format.",
+          "params": {
+            "plant_name": "craft"
+          },
+          "title": "template-gardening-how-to-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-gardening-how-to-infographic-bell-peppers-prev.jpg"
+        },
+        {
+          "template_id": "template-cartoon-action-visual-guide-infographic",
+          "confidence": 0.6,
+          "reason": "Educational guide style matches DIY tutorial.",
+          "params": {
+            "topic": "craft"
+          },
+          "title": "template-cartoon-action-visual-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-cartoon-action-visual-guide-infographic-dance-styles-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "home organization tips guide",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-home-organization-before-after",
+          "confidence": 0.9,
+          "reason": "Directly matches 'home organization tips' with before-after layout.",
+          "params": {
+            "space_type": "home"
+          },
+          "title": "template-home-organization-before-after",
+          "thumbnail": "/images/nano_insp_preview/template-home-organization-before-after-living-room-shelf-prev.jpg"
+        },
+        {
+          "template_id": "template-home-lifestyle-guide-infographic",
+          "confidence": 0.7,
+          "reason": "Covers lifestyle habits including organization tips.",
+          "params": {
+            "guide_topic": "organization"
+          },
+          "title": "template-home-lifestyle-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-home-lifestyle-guide-infographic-fitness-routine-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "morning routine checklist poster",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-lifestyle-habit-infographic",
+          "confidence": 0.9,
+          "reason": "Infographic style fits a checklist format for routines.",
+          "params": {
+            "topic": "morning routine"
+          },
+          "title": "template-lifestyle-habit-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-cute-lifestyle-habit-infographic-productive-work-habits-prev.jpg"
+        },
+        {
+          "template_id": "template-home-lifestyle-guide-infographic",
+          "confidence": 0.7,
+          "reason": "Covers lifestyle habits in an infographic format.",
+          "params": {
+            "guide_topic": "morning routine"
+          },
+          "title": "template-home-lifestyle-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-home-lifestyle-guide-infographic-fitness-routine-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "quick recipe meal prep guide",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-recipe",
+          "confidence": 0.9,
+          "reason": "Directly matches recipe guide for meal prep.",
+          "params": {
+            "dish_name": "quick meal prep"
+          },
+          "title": "template-recipe",
+          "thumbnail": "/images/nano_insp_preview/template-recipe-zh-sweet-and-sour-ribs-prev.jpg"
+        },
+        {
+          "template_id": "template-food",
+          "confidence": 0.7,
+          "reason": "Focuses on food infographic, suitable for meal prep.",
+          "params": {
+            "food_name": "meal prep"
+          },
+          "title": "template-food",
+          "thumbnail": "/images/nano_insp_preview/template-food-zh-bak-kut-teh-prev.jpg"
+        },
+        {
+          "template_id": "template-gardening-how-to-infographic",
+          "confidence": 0.4,
+          "reason": "Less relevant, but offers a how-to format.",
+          "params": {
+            "plant_name": "meal prep"
+          },
+          "title": "template-gardening-how-to-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-gardening-how-to-infographic-bell-peppers-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "vintage fashion lookbook",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-fashion-style-outfit-breakdown-infographic",
+          "confidence": 0.85,
+          "reason": "Matches vintage fashion theme with outfit breakdown.",
+          "params": {
+            "topic": "vintage fashion"
+          },
+          "title": "template-fashion-style-outfit-breakdown-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-fashion-style-outfit-breakdown-infographic-streetwear-prev.jpg"
+        },
+        {
+          "template_id": "template-vintage-ultimate-guide-infographic",
+          "confidence": 0.7,
+          "reason": "Provides a vintage-style guide suitable for fashion.",
+          "params": {
+            "topic": "fashion"
+          },
+          "title": "template-vintage-ultimate-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-ultimate-guide-infographic-coffee-brewing-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "fitness anatomy guide infographic",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-equipment-muscle-guide",
+          "confidence": 0.85,
+          "reason": "Focuses on fitness anatomy with illustrated exercises.",
+          "params": {
+            "equipment_name": "fitness anatomy"
+          },
+          "title": "template-equipment-muscle-guide",
+          "thumbnail": "/images/nano_insp_preview/template-equipment-muscle-guide-leg-press-lat-pulldown-chest-press-cable-row-prev.jpg"
+        },
+        {
+          "template_id": "template-sports-technique-guide",
+          "confidence": 0.75,
+          "reason": "Covers sports techniques, relevant to fitness anatomy.",
+          "params": {
+            "sport_type": "fitness"
+          },
+          "title": "template-sports-technique-guide",
+          "thumbnail": "/images/nano_insp_preview/template-sports-technique-guide-judo-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "pet care guide infographic",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-pet-care-guide",
+          "confidence": 0.9,
+          "reason": "Direct match for pet care infographic.",
+          "params": {
+            "pet_type": "",
+            "pet_age": ""
+          },
+          "title": "template-pet-care-guide",
+          "thumbnail": "/images/nano_insp_preview/template-pet-care-guide-labrador-3yo-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "weird science facts infographic",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-weird-science-facts-infographic",
+          "confidence": 0.9,
+          "reason": "Direct match for weird science facts infographic.",
+          "params": {
+            "theme": "weird science facts"
+          },
+          "title": "template-weird-science-facts-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-weird-science-facts-infographic-plant-facts-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "world history timeline poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-history-timeline-infographic",
+          "confidence": 0.9,
+          "reason": "Direct match for world history timeline.",
+          "params": {
+            "timeline_topic": "world history"
+          },
+          "title": "template-history-timeline-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-history-timeline-infographic-prev.jpg"
+        },
+        {
+          "template_id": "template-evolution-timeline-infographic",
+          "confidence": 0.7,
+          "reason": "Covers historical evolution, fits timeline concept.",
+          "params": {
+            "topic": "world history"
+          },
+          "title": "template-evolution-timeline-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-evolution-timeline-infographic-bicycles-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "ai workflow infographic guide",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-professional-category-guide-infographic",
+          "confidence": 0.8,
+          "reason": "Fits the educational infographic format for AI workflows.",
+          "params": {
+            "topic": "AI workflow"
+          },
+          "title": "template-professional-category-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-professional-category-guide-infographic-coffee-brewing-guide-prev.jpg"
+        },
+        {
+          "template_id": "template-lifestyle-habit-infographic",
+          "confidence": 0.6,
+          "reason": "Can adapt to lifestyle habits related to AI workflows.",
+          "params": {
+            "topic": "AI workflow"
+          },
+          "title": "template-lifestyle-habit-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-cute-lifestyle-habit-infographic-productive-work-habits-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "architecture style guide poster",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-architecture",
+          "confidence": 0.9,
+          "reason": "Directly matches architecture style guide request.",
+          "params": {
+            "landmark": ""
+          },
+          "title": "template-architecture",
+          "thumbnail": "/images/nano_insp_preview/template-architecture-zh-empire-state-building-prev.jpg"
+        },
+        {
+          "template_id": "template-national-culture-history-infographic",
+          "confidence": 0.6,
+          "reason": "Could cover architectural styles in a cultural context.",
+          "params": {
+            "country_name": ""
+          },
+          "title": "template-national-culture-history-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-national-culture-history-infographic-china-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "ai outfit try-on poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-ai-outfit-try-on-poster",
+          "confidence": 1,
+          "reason": "Exact match for AI outfit try-on poster.",
+          "params": {},
+          "title": "template-ai-outfit-try-on-poster",
+          "thumbnail": "/images/nano_insp_preview/template-education-card-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "product packaging mockup display",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-food-product-packaging-design",
+          "confidence": 0.9,
+          "reason": "Directly matches product packaging mockup display.",
+          "params": {
+            "topic": "product packaging"
+          },
+          "title": "template-food-product-packaging-design",
+          "thumbnail": "/images/nano_insp_preview/template-food-product-packaging-design-pasta-sauce-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "brand logo design board",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-product-theme-promotional-poster",
+          "confidence": 0.6,
+          "reason": "Template supports promotional visuals, can adapt for logo design.",
+          "params": {
+            "title_text": "Brand Logo Design Board",
+            "language": "English"
+          },
+          "title": "template-product-theme-promotional-poster",
+          "thumbnail": "/images/nano_insp_preview/template-product-theme-promotional-poster-summer-snack-festival-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "amusement park map infographic",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-whimsical-travel-map",
+          "confidence": 0.8,
+          "reason": "Whimsical style fits amusement park theme.",
+          "params": {
+            "country_name": "amusement park"
+          },
+          "title": "template-whimsical-travel-map",
+          "thumbnail": "/images/nano_insp_preview/template-whimsical-travel-map-thailand-prev.jpg"
+        },
+        {
+          "template_id": "template-tourist-spot-watercolor-map-infographic",
+          "confidence": 0.7,
+          "reason": "Illustrated map format suitable for parks.",
+          "params": {
+            "topic": "amusement park"
+          },
+          "title": "template-tourist-spot-watercolor-map-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-tourist-spot-watercolor-map-infographic-central-park-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "evolution snacks infographic",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-evolution",
+          "confidence": 0.9,
+          "reason": "Infographic on the evolution of snacks fits perfectly.",
+          "params": {
+            "theme": "snacks"
+          },
+          "title": "template-evolution",
+          "thumbnail": "/images/nano_insp_preview/template-evolution-zh-currency-forms-prev.jpg"
+        },
+        {
+          "template_id": "template-top10-visual-guide-infographic",
+          "confidence": 0.7,
+          "reason": "Top 10 snacks infographic could relate to evolution.",
+          "params": {
+            "topic": "snacks"
+          },
+          "title": "template-top10-visual-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-top10-visual-guide-infographic-fashion-styles-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "dubai map travel guide",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-travel",
+          "confidence": 0.9,
+          "reason": "Hand-drawn travel map fits the query.",
+          "params": {
+            "destination": "Dubai",
+            "date_range": ""
+          },
+          "title": "template-travel",
+          "thumbnail": "/images/nano_insp_preview/template-travel-zh-xishuangbanna-prev.jpg"
+        },
+        {
+          "template_id": "template-whimsical-travel-map",
+          "confidence": 0.7,
+          "reason": "Illustrated travel map style matches travel guide.",
+          "params": {
+            "country_name": "Dubai"
+          },
+          "title": "template-whimsical-travel-map",
+          "thumbnail": "/images/nano_insp_preview/template-whimsical-travel-map-thailand-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "france 2026 world cup",
+      "source": "wc-data-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-international-event-promotional-poster",
+          "confidence": 0.9,
+          "reason": "Promotional poster for an international sports event.",
+          "params": {
+            "topic": "2026 World Cup in France"
+          },
+          "title": "template-international-event-promotional-poster",
+          "thumbnail": "/images/nano_insp_preview/template-international-event-promotional-poster-beijing-798-art-season-2026-prev.jpg"
+        },
+        {
+          "template_id": "template-football-tournament-group-stage-bracket-infographic",
+          "confidence": 0.85,
+          "reason": "Infographic for tournament fixtures and brackets.",
+          "params": {
+            "topic": "2026 World Cup"
+          },
+          "title": "template-football-tournament-group-stage-bracket-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "france wins fifa 2026",
+      "source": "wc-data-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-international-event-promotional-poster",
+          "confidence": 0.8,
+          "reason": "Promotional poster for an international sports event.",
+          "params": {
+            "topic": "FIFA 2026",
+            "language": "English"
+          },
+          "title": "template-international-event-promotional-poster",
+          "thumbnail": "/images/nano_insp_preview/template-international-event-promotional-poster-beijing-798-art-season-2026-prev.jpg"
+        },
+        {
+          "template_id": "template-football-tournament-group-stage-bracket-infographic",
+          "confidence": 0.75,
+          "reason": "Infographic for tournament fixtures and results.",
+          "params": {
+            "topic": "FIFA 2026"
+          },
+          "title": "template-football-tournament-group-stage-bracket-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "brazil 2026 national team",
+      "source": "wc-data-2026-06-14",
+      "expected": "thin",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-sports-team-mbti-character-card-poster",
+          "confidence": 0.85,
+          "reason": "Focuses on national team analysis and character traits.",
+          "params": {
+            "team_mbti_info": "brazil national team 2026"
+          },
+          "title": "template-sports-team-mbti-character-card-poster",
+          "thumbnail": "/images/nano_insp_preview/template-sports-team-mbti-character-card-poster-brazil-esfp-prev.jpg"
+        },
+        {
+          "template_id": "template-group-team-vertical-banner-country-poster",
+          "confidence": 0.8,
+          "reason": "Suitable for showcasing team details in a tournament context.",
+          "params": {
+            "group_countries_info": "brazil 2026 national team"
+          },
+          "title": "template-group-team-vertical-banner-country-poster",
+          "thumbnail": "/images/nano_insp_preview/template-group-team-vertical-banner-country-poster-group-a-portugal-jamaica-uzbekistan-colombia-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "brazil national team",
+      "source": "wc-data-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-sports-team-mbti-character-card-poster",
+          "confidence": 0.9,
+          "reason": "Directly matches sports team and MBTI analysis.",
+          "params": {
+            "team_mbti_info": "brazil national team"
+          },
+          "title": "template-sports-team-mbti-character-card-poster",
+          "thumbnail": "/images/nano_insp_preview/template-sports-team-mbti-character-card-poster-brazil-esfp-prev.jpg"
+        },
+        {
+          "template_id": "template-global-city-walkability-infographic-card",
+          "confidence": 0.5,
+          "reason": "Related to Brazil but not specifically about the national team.",
+          "params": {
+            "city_list_info": "brazil"
+          },
+          "title": "template-global-city-walkability-infographic-card",
+          "thumbnail": "/images/nano_insp_preview/template-global-city-walkability-infographic-card-third-group-8cities-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "england football",
+      "source": "wc-data-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-soccer-star-comic-retro-poster-card",
+          "confidence": 0.8,
+          "reason": "Comic-style poster fits football theme.",
+          "params": {
+            "player_name": "England football player"
+          },
+          "title": "template-soccer-star-comic-retro-poster-card",
+          "thumbnail": "/images/nano_insp_preview/template-soccer-star-comic-retro-poster-card-cristiano-ronaldo-portugal-prev.jpg"
+        },
+        {
+          "template_id": "template-football-tournament-group-stage-bracket-infographic",
+          "confidence": 0.7,
+          "reason": "Tournament infographic relevant to football.",
+          "params": {
+            "topic": "England football tournament"
+          },
+          "title": "template-football-tournament-group-stage-bracket-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026-prev.jpg"
+        },
+        {
+          "template_id": "template-player-vintage-stats-card-poster",
+          "confidence": 0.6,
+          "reason": "Vintage stats card aligns with football player profiles.",
+          "params": {
+            "topic": "England football player stats"
+          },
+          "title": "template-player-vintage-stats-card-poster",
+          "thumbnail": "/images/nano_insp_preview/template-player-vintage-stats-card-poster-usa-matt-turner-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "fifa 2026",
+      "source": "wc-data-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-international-event-promotional-poster",
+          "confidence": 0.9,
+          "reason": "Promotional poster for an international sports event.",
+          "params": {
+            "topic": "FIFA 2026"
+          },
+          "title": "template-international-event-promotional-poster",
+          "thumbnail": "/images/nano_insp_preview/template-international-event-promotional-poster-beijing-798-art-season-2026-prev.jpg"
+        },
+        {
+          "template_id": "template-football-tournament-group-stage-bracket-infographic",
+          "confidence": 0.85,
+          "reason": "Infographic for tournament fixtures and brackets.",
+          "params": {
+            "topic": "FIFA 2026"
+          },
+          "title": "template-football-tournament-group-stage-bracket-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-football-tournament-group-stage-bracket-infographic-fifa-world-cup-2026-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "ai dub",
+      "source": "wc-data-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": []
+    },
+    {
+      "query": "brazil world cup squad poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-sports-team-mbti-character-card-poster",
+          "confidence": 0.9,
+          "reason": "Directly matches sports team and poster format.",
+          "params": {
+            "team_mbti_info": "Brazil World Cup squad"
+          },
+          "title": "template-sports-team-mbti-character-card-poster",
+          "thumbnail": "/images/nano_insp_preview/template-sports-team-mbti-character-card-poster-brazil-esfp-prev.jpg"
+        },
+        {
+          "template_id": "template-world-cup-team-sticker-poster",
+          "confidence": 0.85,
+          "reason": "Focuses on a national football team in a poster format.",
+          "params": {
+            "topic": "Brazil national football team"
+          },
+          "title": "template-world-cup-team-sticker-poster",
+          "thumbnail": "/images/nano_insp_preview/template-world-cup-team-sticker-poster-spain-poster-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "kids english colors vocabulary cards",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-kids-vocabulary-poster",
+          "confidence": 0.9,
+          "reason": "Perfect for kids' color vocabulary learning.",
+          "params": {
+            "theme_name": "colors"
+          },
+          "title": "template-kids-vocabulary-poster",
+          "thumbnail": "/images/nano_insp_preview/template-kids-vocabulary-poster-vegetables-prev.jpg"
+        },
+        {
+          "template_id": "template-cartoon-english-vocabulary-flashcards",
+          "confidence": 0.85,
+          "reason": "Colorful flashcards ideal for teaching kids colors.",
+          "params": {
+            "theme": "colors"
+          },
+          "title": "template-cartoon-english-vocabulary-flashcards",
+          "thumbnail": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-weather-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "japan culture travel poster",
+      "source": "prefill-pool-2026-06-14-dropped-quality",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-national-culture-history-infographic",
+          "confidence": 0.9,
+          "reason": "Focuses on cultural aspects of Japan.",
+          "params": {
+            "country_name": "Japan"
+          },
+          "title": "template-national-culture-history-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-national-culture-history-infographic-china-prev.jpg"
+        },
+        {
+          "template_id": "template-country-top10-travel-destinations",
+          "confidence": 0.85,
+          "reason": "Highlights top travel destinations in Japan.",
+          "params": {
+            "country_name": "Japan"
+          },
+          "title": "template-country-top10-travel-destinations",
+          "thumbnail": "/images/nano_insp_preview/template-country-top10-travel-destinations-france-prev.jpg"
+        },
+        {
+          "template_id": "template-whimsical-travel-map",
+          "confidence": 0.8,
+          "reason": "Illustrated travel map style fits cultural travel.",
+          "params": {
+            "country_name": "Japan"
+          },
+          "title": "template-whimsical-travel-map",
+          "thumbnail": "/images/nano_insp_preview/template-whimsical-travel-map-thailand-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "vintage nostalgia infographic poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-nostalgic-first-item-poster",
+          "confidence": 0.9,
+          "reason": "Directly matches vintage nostalgia theme.",
+          "params": {
+            "item_theme": "vintage nostalgia"
+          },
+          "title": "template-nostalgic-first-item-poster",
+          "thumbnail": "/images/nano_insp_preview/template-nostalgic-first-item-poster-camera-prev.jpg"
+        },
+        {
+          "template_id": "template-vintage-ultimate-guide-infographic",
+          "confidence": 0.8,
+          "reason": "Vintage style fits nostalgia theme.",
+          "params": {
+            "topic": "nostalgia"
+          },
+          "title": "template-vintage-ultimate-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-ultimate-guide-infographic-coffee-brewing-prev.jpg"
+        },
+        {
+          "template_id": "template-vintage-travel-scrapbook-poster",
+          "confidence": 0.7,
+          "reason": "Vintage scrapbook style aligns with nostalgia.",
+          "params": {
+            "destination": "nostalgia"
+          },
+          "title": "template-vintage-travel-scrapbook-poster",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-travel-scrapbook-poster-riga-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "lifestyle guide infographic poster",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-home-lifestyle-guide-infographic",
+          "confidence": 0.9,
+          "reason": "Direct match for lifestyle guide infographic.",
+          "params": {
+            "guide_topic": "lifestyle habits"
+          },
+          "title": "template-home-lifestyle-guide-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-home-lifestyle-guide-infographic-fitness-routine-prev.jpg"
+        },
+        {
+          "template_id": "template-lifestyle-habit-infographic",
+          "confidence": 0.85,
+          "reason": "Focuses on lifestyle habits in infographic format.",
+          "params": {
+            "topic": "lifestyle habits"
+          },
+          "title": "template-lifestyle-habit-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-cute-lifestyle-habit-infographic-productive-work-habits-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "interior design home guide",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-soft-decoration-design-guide",
+          "confidence": 0.9,
+          "reason": "Directly matches 'interior design home guide'.",
+          "params": {
+            "space_type": "home",
+            "decor_style": "any"
+          },
+          "title": "template-soft-decoration-design-guide",
+          "thumbnail": "/images/nano_insp_preview/template-soft-decoration-design-guide-poster-en-preview.jpg"
+        },
+        {
+          "template_id": "template-home-organization-before-after",
+          "confidence": 0.6,
+          "reason": "Focuses on home organization, relevant to interior design.",
+          "params": {
+            "space_type": "home"
+          },
+          "title": "template-home-organization-before-after",
+          "thumbnail": "/images/nano_insp_preview/template-home-organization-before-after-living-room-shelf-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "beauty step by step guide",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "moderate",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-beauty-step-by-step-guide",
+          "confidence": 1,
+          "reason": "Exact match for beauty step-by-step guide.",
+          "params": {
+            "tutorial_theme": "beauty"
+          },
+          "title": "template-beauty-step-by-step-guide",
+          "thumbnail": "/images/nano_insp_preview/template-beauty-step-by-step-guide-hairstyle-tutorial-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "paris travel itinerary",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-series-travel",
+          "confidence": 0.9,
+          "reason": "Direct match for travel itinerary.",
+          "params": {
+            "destination_name": "paris",
+            "trip_duration": ""
+          },
+          "title": "template-series-travel",
+          "thumbnail": "/images/nano_insp_preview/template-series-travel-russia-01-prev.jpg"
+        },
+        {
+          "template_id": "template-travel",
+          "confidence": 0.7,
+          "reason": "Fits travel theme but less focused on itinerary.",
+          "params": {
+            "destination": "paris",
+            "date_range": ""
+          },
+          "title": "template-travel",
+          "thumbnail": "/images/nano_insp_preview/template-travel-zh-xishuangbanna-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "architecture empire state building",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-architecture",
+          "confidence": 0.9,
+          "reason": "Direct match for architectural visual guide of a landmark.",
+          "params": {
+            "landmark": "Empire State Building"
+          },
+          "title": "template-architecture",
+          "thumbnail": "/images/nano_insp_preview/template-architecture-zh-empire-state-building-prev.jpg"
+        },
+        {
+          "template_id": "template-city-miniature",
+          "confidence": 0.6,
+          "reason": "Could include the Empire State Building in a city context.",
+          "params": {
+            "City Name": "New York"
+          },
+          "title": "template-city-miniature",
+          "thumbnail": "/images/nano_insp_preview/template-city-miniature-zh-shanghai-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "childhood snacks then vs now",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-then-vs-now-comparison-infographic",
+          "confidence": 0.9,
+          "reason": "Directly compares past and present snacks.",
+          "params": {
+            "topic": "childhood snacks"
+          },
+          "title": "template-then-vs-now-comparison-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-then-vs-now-comparison-infographic-childhood-snacks-prev.jpg"
+        },
+        {
+          "template_id": "template-best-cities-travel-infographic",
+          "confidence": 0.4,
+          "reason": "Could relate to cultural aspects of snacks.",
+          "params": {
+            "topic": "childhood snacks"
+          },
+          "title": "template-best-cities-travel-infographic",
+          "thumbnail": "/images/nano_insp_preview/template-best-cities-travel-infographic-coffee-lovers-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "warmup routine running checklist",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-warmup-routine",
+          "confidence": 0.9,
+          "reason": "Direct match for warmup routine in running.",
+          "params": {
+            "sport_type": "running"
+          },
+          "title": "template-warmup-routine",
+          "thumbnail": "/images/nano_insp_preview/template-warmup-routine-gym-prev.jpg"
+        },
+        {
+          "template_id": "template-lifestyle-info-card",
+          "confidence": 0.6,
+          "reason": "Could create a checklist-style info card.",
+          "params": {
+            "topic": "running warmup checklist"
+          },
+          "title": "template-lifestyle-info-card",
+          "thumbnail": "/images/nano_insp_preview/template-lifestyle-info-card-coffee-brewing-guide-prev.jpg"
+        }
+      ]
+    },
+    {
+      "query": "vintage stamp collection garden birds",
+      "source": "prefill-pool-2026-06-14",
+      "expected": "rich",
+      "expected_templates": "moderate",
+      "candidates": [
+        {
+          "template_id": "template-vintage-stamp-collection-illustration",
+          "confidence": 0.9,
+          "reason": "Direct match for vintage stamp collection on garden birds.",
+          "params": {
+            "collection_title": "garden birds"
+          },
+          "title": "template-vintage-stamp-collection-illustration",
+          "thumbnail": "/images/nano_insp_preview/template-vintage-stamp-collection-illustration-forest-botanicals-prev.jpg"
+        }
+      ]
+    }
+  ]
+}
