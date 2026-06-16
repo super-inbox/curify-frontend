@@ -22,6 +22,14 @@ export type NanoTemplateForDetail = {
   // generating. When true, ReproduceTemplateSection shows the image upload UI
   // and gates Generate on a reference image being present.
   requires_image_upload?: boolean;
+  // Template archetype — "creation" (default; user fills params + generates
+  // their own variant) vs "consumption" (we publish a fresh output the user
+  // just looks at; daily recap, news event, scheduled standings, etc.).
+  // ReproduceTemplateSection collapses the parameter form into a customize-
+  // and-regenerate disclosure for consumption templates and leads with a
+  // banner pointing at the latest published output above. See memory
+  // feedback_creation_vs_consumption_templates.md for the full distinction.
+  archetype?: "creation" | "consumption";
   existingExamples?: ExistingExample[];
 };
 

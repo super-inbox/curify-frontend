@@ -164,16 +164,17 @@ export default function ReproduceTemplateSection(props: {
   const exampleUrl = (exampleId: string) =>
     `${localePrefix}/nano-template/${toSlug(template.template_id)}/example/${encodeURIComponent(exampleId)}`;
 
-  return (
-    <section id="reproduce" className="scroll-mt-24">
-      <h2 className="mb-4 text-lg font-bold text-neutral-900">
-        {t("reproduce.title")}
-      </h2>
-      <p className="mb-4 text-sm text-neutral-600">
-        {t("reproduce.subtitle")}
-      </p>
+  // Consumption-archetype templates publish fresh outputs WE generate (daily
+  // recaps, news event visualizations, scheduled standings). Users land here
+  // to look at the latest version above — the parameter-fill + generate flow
+  // is a secondary "make a custom version" action, not the primary one. We
+  // collapse the full reproduce surface into a <details> disclosure and lead
+  // with a short banner. See memory feedback_creation_vs_consumption_templates
+  // and the archetype field in lib/nano_prompt_utils.ts.
+  const isConsumption = template.archetype === "consumption";
 
-      <div className="mt-4 rounded-2xl border border-neutral-200 bg-white p-3 sm:p-4">
+  const reproduceBody = (
+    <div className="mt-4 rounded-2xl border border-neutral-200 bg-white p-3 sm:p-4">
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
 
           {/* Left: parameter inputs + action bar */}
@@ -501,6 +502,32 @@ export default function ReproduceTemplateSection(props: {
 
         </div>
       </div>
+  );
+
+  return (
+    <section id="reproduce" className="scroll-mt-24">
+      <h2 className="mb-4 text-lg font-bold text-neutral-900">
+        {isConsumption ? "Customize & regenerate" : t("reproduce.title")}
+      </h2>
+      <p className="mb-4 text-sm text-neutral-600">
+        {isConsumption
+          ? "This template is published fresh by Curify on a recurring cadence — the latest version is above. You can also fill in your own parameters and generate a custom version below."
+          : t("reproduce.subtitle")}
+      </p>
+
+      {isConsumption ? (
+        <details className="group rounded-2xl border border-neutral-200 bg-white">
+          <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-neutral-800 hover:bg-neutral-50 rounded-2xl flex items-center justify-between">
+            <span>Open customize panel</span>
+            <span className="text-neutral-400 text-xs group-open:rotate-180 transition-transform">▾</span>
+          </summary>
+          <div className="border-t border-neutral-100">
+            {reproduceBody}
+          </div>
+        </details>
+      ) : (
+        reproduceBody
+      )}
     </section>
   );
 }
