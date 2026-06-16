@@ -25,6 +25,11 @@ export type RawTemplate = {
   batch?: boolean;
   allow_generation?: boolean;
   requires_image_upload?: boolean;
+  /** "creation" (default, absent) vs "consumption" — gates UI for templates
+   *  the operator publishes for viewing rather than user-driven generation
+   *  (daily recaps, news cards, scheduled standings). See memory
+   *  feedback_creation_vs_consumption_templates.md. */
+  archetype?: "creation" | "consumption";
 
   locales?: Partial<
     Record<
@@ -76,6 +81,7 @@ export type TemplateView = {
   batch?: boolean;
   allow_generation?: boolean;
   requires_image_upload?: boolean;
+  archetype?: "creation" | "consumption";
   base_prompt: string;
   parameters: TemplateParameter[];
   cards: Array<{ image_id: string; params: Record<string, any> }>;
@@ -334,6 +340,7 @@ export function getTemplateView(
     batch: raw.batch,
     allow_generation: raw.allow_generation,
     requires_image_upload: raw.requires_image_upload,
+    archetype: raw.archetype,
     base_prompt: value.base_prompt,
     parameters: value.parameters,
     cards: raw.cards ?? [],
