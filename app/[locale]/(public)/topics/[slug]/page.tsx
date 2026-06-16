@@ -22,6 +22,7 @@ import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic } from "@/lib/topicRegistry";
 import TopSearchSuggestions, { TOP_QUERIES } from "./TopSearchSuggestions";
+import SearchRedirectTracker from "./SearchRedirectTracker";
 import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
 
 // Topic data is bundled (nano_templates.json + nano_inspiration.json +
@@ -305,6 +306,10 @@ export default async function Page({ params }: Props) {
 
   return (
     <main className="min-h-screen">
+      {/* Fires a CLICK event when ?from_search= is present (server-side
+          redirect from /search). Lets search_cycle5_pull.py attribute
+          bare-country redirects as a distinct "had-redirect" bucket. */}
+      <SearchRedirectTracker />
       <section className="mx-auto max-w-[1600px] px-4 pt-2 pb-4 sm:px-6 lg:px-8">
 
         <div>
