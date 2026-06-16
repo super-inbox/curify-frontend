@@ -14198,5 +14198,292 @@
     "rank_score": 115.0,
     "base_rank_score": 92.0,
     "archetype": "consumption"
+  },
+  {
+    "id": "template-classical-famous-painting-analysis-cartoon-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Famous Classic Painting Educational Breakdown Infographic Generator) Vertical A4 art appreciation infographic poster themed '{painting_full_info}'. Layout: Soft aged cream paper texture background; decorative handwritten large title at top, cute Q-version cartoon portrait of the painter holding paintbrush/palette at top corner; center full reproduction of the famous artwork, thin orange arrow lines connecting painting details to surrounding segmented text modules; each module contains tiny detail close-up illustration + explanatory text box, divided sections: artwork & artist intro, core symbolic elements breakdown, painting technique, background story, exhibition museum info, art movement style introduction. Style: warm soft watercolor cute cartoon aesthetic, rounded text boxes, gentle earth tone color palette, easy-to-read kid-friendly educational layout, printable art class appreciation poster, clean annotated directional arrows. Subject: complete annotated art analysis infographic poster explaining the classic masterpiece '{painting_full_info}'.",
+        "parameters": [
+          {
+            "name": "painting_full_info",
+            "label": "世界名画完整名称+作者",
+            "type": "text",
+            "placeholder": [
+              "达芬奇《蒙娜丽莎》名画赏析卡通解析信息海报",
+              "达利《记忆的永恒》超现实主义作品科普插画展板",
+              "波提切利《维纳斯的诞生》文艺复兴艺术讲解长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-classical-famous-painting-analysis-cartoon-infographic-mona-lisa-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "learning",
+      "history",
+      "posters",
+      "information-card"
+    ]
+  },
+  {
+    "id": "template-chikawa-monthly-calendar-vertical-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Chiikawa Style Monthly Vertical Calendar Poster Generator) Vertical cute monthly calendar wallpaper themed '{calendar_theme_info}'. Layout: Solid soft pastel color background, top half large cute Chiikawa character seasonal scene illustration matching the month theme, big bold hand-drawn month number + kanji text in the middle lower area, standard weekly calendar grid below (SUN to SAT column headers, numbered date cells), small copyright text at very bottom. Style: Official Nagano Chiikawa cartoon art style, clean thick black outline, soft matte texture coloring, warm gentle kawaii aesthetic, vertical phone wallpaper ratio, high resolution printable monthly calendar art. Subject: vertical Chiikawa character monthly calendar wallpaper for '{calendar_theme_info}'.",
+        "parameters": [
+          {
+            "name": "calendar_theme_info",
+            "label": "年份+月份+季节/节日主题+吉伊卡哇角色场景描述",
+            "type": "text",
+            "placeholder": [
+              "2026年6月梅雨雨天主题，吉伊、乌萨奇、哈奇瓦力撑荷叶避雨卡通月历",
+              "2026年12月圣诞新年主题，三只角色圣诞聚餐竖版日历壁纸",
+              "2026年7月七夕星空竹子许愿场景Chiikawa月度插画月历"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-chikawa-monthly-calendar-vertical-poster-july-star-bamboo-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "design",
+      "posters",
+      "kawaii",
+      "mood"
+    ]
+  },
+  {
+    "id": "template-historical-figure-biography-vintage-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Famous Historical Person Vintage Biography Infographic Generator) Vertical antique parchment style biography poster themed '{figure_full_info}'. Layout: Aged textured paper vintage background, huge bold serif main title & subtitle at top; central giant hyperrealistic statue-style full-body portrait of the historical figure standing on engraved wooden pedestal with name plaque; page evenly split into 8 rectangular knowledge modules arranged around central portrait, each numbered panel contains mini illustration, diagram, timeline, map or icon set paired with descriptive biography text; decorative vintage ornaments: wax seal, quill ink bottle, scroll quotes, subtle antique border frame. Style: old textbook engraving mixed with realistic 3D character rendering, muted sepia & earth vintage color palette, formal serif academic font, educational museum wall print, high resolution historical character timeline infographic. Subject: complete vintage-style life story biography infographic poster for historical figure '{figure_full_info}'.",
+        "parameters": [
+          {
+            "name": "figure_full_info",
+            "label": "历史人物完整名称+身份",
+            "type": "text",
+            "placeholder": [
+              "伊丽莎白一世英国女王复古生平科普竖版信息海报",
+              "孔子古代思想家人生脉络与儒家思想图解展板",
+              "李小龙武术传奇人物生涯全解析复古印刷风长图",
+              "曼德拉反种族隔离领袖历史事迹图文展板"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-historical-figure-biography-vintage-infographic-michael-jackson-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "learning",
+      "history",
+      "posters",
+      "nostalgia",
+      "information-card"
+    ]
+  },
+  {
+    "id": "template-musical-instrument-technical-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Musical Instrument Knowledge Infographic Educational Poster Generator) Vertical music instrument tutorial infographic themed '{instrument_name_topic}'. Layout: Large stylized bold headline title at top; huge full realistic illustration of the target instrument centered vertically, thin labeled leader lines pointing to every structural part with text explanation panels scattered around; multi-type data modules surrounding the main instrument: pie charts, bar graphs, origin map, legendary musician character portraits, internal airflow/cross-section schematic, genre usage statistics, bottom horizontal chronological history timeline, decorative musical note and concert crowd silhouette ornaments at borders. Style: clean modern music textbook graphic design, soft genre-matching themed background color, sharp realistic instrument photography, mixed data visualization charts, formal readable serif font, high resolution printable music classroom educational wall poster. Subject: full structural, historical & technical knowledge infographic poster for musical instrument '{instrument_name_topic}'.",
+        "parameters": [
+          {
+            "name": "instrument_name_topic",
+            "label": "乐器完整名称+音乐风格主题",
+            "type": "text",
+            "placeholder": [
+              "Fender Stratocaster电吉他摇滚乐器全解析科普信息海报",
+              "爵士萨克斯结构、种类、演奏技巧教学竖版图解展板",
+              "古典钢琴构造与发展史音乐科普图文长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-musical-instrument-technical-infographic-poster-fender-stratocaster-guitar-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "learning",
+      "design",
+      "posters",
+      "information-card",
+      "guides"
+    ]
+  },
+  {
+    "id": "template-kawaii-cartoon-ip-profile-grid-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Cute Kawaii IP Character Profile Grid Infographic Poster Generator) Vertical soft cream background character introduction info poster themed '{ip_character_theme}'. Layout: Oversized cute hand-drawn IP logo title at top, large full main character group illustration header; page divided into multiple rounded pastel colored segmented grid panels with thin soft dividing borders, each module matches cute mini character drawings paired with explanatory text boxes; modules include core character individual profile card, character appearance feature annotation, personality trait panel, favorite things list, world setting & story introduction, exclusive signature merchandise gallery, classic famous scene screenshots, iconic catchphrases dialogue bubble section, core charm summary icon list; tiny flower, star, cloud doodle decorations scattered on margins. Style: official simple flat cartoon IP art, clean thin black outlines, gentle low-saturation pastel color palette, neat Korean/Japanese kid-friendly readable font layout, printable character encyclopedia educational sheet, high resolution cute brand setting graphic. Subject: complete all-round character setting profile infographic poster for '{ip_character_theme}'.",
+        "parameters": [
+          {
+            "name": "ip_character_theme",
+            "label": "完整卡通IP名称及介绍需求",
+            "type": "text",
+            "placeholder": [
+              "Miffy米菲兔人物档案、性格、世界观完整科普网格展板",
+              "Chiikawa吉伊卡哇全员角色设定、剧情、名场面介绍信息长图",
+              "玉桂狗Cinnamoroll完整IP背景图文解析竖版海报"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-kawaii-cartoon-ip-profile-grid-infographic-chiikawa-korean-intro-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "character",
+      "portrait",
+      "posters",
+      "kawaii",
+      "groups"
+    ]
+  },
+  {
+    "id": "template-exam-vocabulary-two-column-list-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Exam Core Vocabulary Two Column Cheat Sheet Poster Generator) Vertical exam vocabulary reference poster themed '{vocab_topic_info}'. Layout: Solid soft single-color background, huge bold centered title at top; main area split into two equal vertical text columns, numbered vocabulary items in each row, format: core high-scoring word = multiple synonym replacements, thin horizontal dividing lines separate each entry, neat aligned monospaced study font, no extra decorative illustrations, clean minimalist exam cheat sheet layout. Style: simple minimal study printable graphic, soft matte solid background color, black clear readable font, high contrast text, compact efficient word list layout, 8K high resolution exam revision wall poster. Subject: two-column synonym vocabulary cheat sheet poster for '{vocab_topic_info}'.",
+        "parameters": [
+          {
+            "name": "vocab_topic_info",
+            "label": "英语词汇完整主题名称",
+            "type": "text",
+            "placeholder": [
+              "雅思写作高分同义替换词汇表两栏清单海报",
+              "四六级核心高级单词同义替换背诵展板",
+              "托福阅读高频同义词汇整理学习长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-exam-vocabulary-two-column-list-poster-ielts-synonym-vocab-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "language",
+      "vocabulary",
+      "posters",
+      "comparison"
+    ]
+  },
+  {
+    "id": "template-health-tips-six-method-cartoon-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Health Tips Six Ways Cartoon Educational Poster Generator) Vertical health popular science poster themed '{health_topic_info}'. Layout: Oversized bold hand-drawn main title at the top, central cute anthropomorphic core organ mascot illustration (brain/heart/moon/sun matching theme), six scattered independent cartoon sub-illustration modules around the center, each paired with numbered text bubble listing one healthy lifestyle tip; solid high-saturation single color background unique to the topic, simple thick outline flat cartoon art, clean kid-friendly typography, no messy clutter. Style: minimalist modern cute flat vector cartoon, bright solid color palette, thick black outlines, educational wellness wall print, high resolution printable health guide infographic. Subject: six healthy lifestyle tips cartoon poster focused on '{health_topic_info}'.",
+        "parameters": [
+          {
+            "name": "health_topic_info",
+            "label": "健康科普完整主题名称",
+            "type": "text",
+            "placeholder": [
+              "6种养护大脑的健康方式卡通科普海报",
+              "改善睡眠的六个好习惯简约插画展板",
+              "保护心脏六大健康指南治愈卡通信息图",
+              "提升情绪心理健康6个小方法儿童宣教海报"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-health-tips-six-method-cartoon-poster-mental-health-mood-boost-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "lifestyle",
+      "guides",
+      "posters",
+      "information-card"
+    ]
+  },
+  {
+    "id": "template-kid-friendly-grid-fun-fact-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kids Educational Grid Fun Fact Infographic Generator) Vertical children science popularization fact poster themed '{fun_fact_topic}'. Layout: Large eye-catching title at the top; neatly arranged 4-column × 4-row grid layout, each grid cell has cute cartoon illustration matching the fact content + short easy-to-read fun fact text below the drawing; soft themed background color (pastel tone matching the topic), rounded cell spacing, warm child-friendly aesthetic. Style: cute flat cartoon illustration style, soft pastel color palette, thick friendly font for kids, clear grid segmentation, high resolution printable early education popular science poster. Subject: grid-style fun fact educational infographic for kids about {fun_fact_topic}.",
+        "parameters": [
+          {
+            "name": "fun_fact_topic",
+            "label": "面向儿童的趣味科普主题",
+            "type": "text",
+            "placeholder": [
+              "小动物冷知识儿童科普网格海报",
+              "气象小常识幼儿启蒙趣味信息图",
+              "瓢虫趣味知识点早教卡通展板",
+              "地球科普知识点儿童方格插画长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-kid-friendly-grid-fun-fact-infographic-animal-facts-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "learning",
+      "science",
+      "posters",
+      "kawaii",
+      "information-card"
+    ]
+  },
+  {
+    "id": "template-nature-ecology-double-page-book-spread-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Natural Science Ecology Double-Page Book Spread Infographic Generator) Horizontal two-page children's nature science textbook spread themed '{ecology_topic_info}'. Layout: Double-page horizontal layout with unified soft natural background; large decorative main title at top left; irregular rounded organic-shaped text boxes scattered across pages, each box paired with matching illustration: real photographic animal/landscape photos, hand-drawn schematic cross-section diagrams, geographic distribution map, small close-up detail cutouts, annotated structure sketches; segmented knowledge modules covering geography, species, living habits, seasonal cycles, ecological relationships, fun trivia; soft earth-tone natural color palette, gentle curved dividing borders, clear kid-friendly serif print font. Style: official nature educational picture book layout, mixed media of watercolor illustration + real nature photography, clean readable text layout, high resolution printable two-page textbook inner spread. Subject: two-page natural science textbook spread introducing '{ecology_topic_info}'.",
+        "parameters": [
+          {
+            "name": "ecology_topic_info",
+            "label": "自然生态科普完整主题名称",
+            "type": "text",
+            "placeholder": [
+              "东北太平洋巨藻森林海洋生态系统跨页科普书页",
+              "海獭物种习性与关键生态作用绘本对开内页",
+              "山地地形分层生态与雪豹生物科普双页 spreads"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-nature-ecology-double-page-book-spread-infographic-northeast-pacific-kelp-forest-overview-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "learning",
+      "science",
+      "reading",
+      "information-card"
+    ]
+  },
+  {
+    "id": "template-classic-spirits-cocktail-recipe-grid-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Classic Base Spirit Cocktail Recipe Grid Poster Generator) Vertical bartender cocktail recipe infographic poster themed '{base_spirit_info}'. Layout: Huge bold decorative main title at top, decorative banner subtitle; main area arranged as neat 4-column × 3-row grid, each grid cell contains realistic full cocktail glass photo, numbered title, ingredient measurement list, short flavor description; bottom auxiliary divided modules: mixing bartender tool chart, alcohol ABV strength bar chart, garnish ingredient reference panel, professional bartending making tips block, decorative liquor bottle & fresh fruit foliage ornaments around edges. Style: clean retro bar print aesthetic, warm neutral off-white background, sharp realistic drink photography, clear readable measurement text layout, printable home bar cocktail guide wall poster, high resolution commercial beverage graphic design. Subject: complete grid-style classic cocktail recipe guide poster based on '{base_spirit_info}' base liquor.",
+        "parameters": [
+          {
+            "name": "base_spirit_info",
+            "label": "基酒完整品类名称",
+            "type": "text",
+            "placeholder": [
+              "威士忌基酒经典鸡尾酒配方图鉴海报",
+              "金酒Gin十二款调酒食谱网格信息长图",
+              "龙舌兰Tequila鸡尾酒家庭制作指南展板"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-classic-spirits-cocktail-recipe-grid-poster-whiskey-cocktails-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "lifestyle",
+      "guides",
+      "posters",
+      "groups"
+    ]
   }
 ]
