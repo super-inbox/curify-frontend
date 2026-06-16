@@ -5686,5 +5686,50 @@
         ]
       }
     }
+  },
+  "template-sports-court-shot-trajectory-analysis-infographic": {
+    "category": "Sports Court Shot Trajectory Analysis Infographic",
+    "description": "Generate a vertical tactical shot-map infographic — top-down/isometric court layout with color-coded curved trajectory lines from athlete positions to target zones, tiny cartoon player markers, and a full data table of attempts, success rates, and per-player metrics.",
+    "title": "Nano Banana Prompt: Sports Court Shot Trajectory Analysis Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K tactical shot-trajectory infographic poster for any sport. Layout: bold main title + quote at top; full top-down or isometric official court floor at center; multiple uniquely color-coded curved trajectory lines originating from athlete positions to target zones, each labeled with an index marker; tiny simplified cartoon player figures at each starting position; bottom data table with athlete name, team, match date, position, shot attempts, success rate, and detailed metrics. Color legend ties trajectory lines to table rows. Clean modern sports-analytics graphic design, soft flat illustration court texture, distinct bright trajectory colors, professional print-poster quality.",
+        "who": "Suitable for sports analysts producing match-review collateral, coaches teaching shot selection / tactical patterns, sports-media designers needing data-viz posters, fantasy-sports content creators, and broadcast-graphics producers.",
+        "how": [
+          "Enter the sport + analysis focus in {sport_analysis_topic} (e.g. 'NBA player full-court shot point hit-rate visualization chart').",
+          "Top-down / isometric court auto-renders for the matching sport.",
+          "Color-coded trajectories + cartoon player markers + data table auto-compose.",
+          "Generate a vertical 8K shot-trajectory tactical analysis infographic."
+        ],
+        "prompts": [
+          "Generate a soccer long-range volley shot trajectory tactical analysis poster.",
+          "Create an NBA player full-court shot point hit-rate visualization chart.",
+          "Generate a tennis serve placement line-route grand-slam technique analysis infographic."
+        ]
+      }
+    }
+  },
+  "template-wc-daily-recap-poster": {
+    "category": "World Cup Daily Recap Poster",
+    "description": "Generate a vertical daily World Cup recap infographic — yesterday's match results with scorers + minutes, current golden boot leaders, today's fixtures with multi-timezone times. One fresh visualization per day during the tournament.",
+    "title": "Nano Banana Prompt: World Cup Daily Recap Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K daily World Cup 2026 recap infographic. Header (trophy + ball + date). Yesterday's results section: 2x2 grid of match cards with country flags, big bold score + FT pill, goal scorers with minute markers. Golden Boot Leaders box: chibi-style cartoon avatars of the current top scorers + tournament-total goals counter. Today's matches section: 4 fixture cards stacked vertically with multi-timezone time tables and venue info. Designed as a single-glance daily WC snapshot — fresh content for SEO + social + return-visitor surfaces during the tournament window.",
+        "who": "Suitable for daily World Cup coverage during the tournament (~2026-06-11 to 2026-07-19), sports content creators producing daily-fresh posters, fan communities, broadcast-graphics teams, and site operators wanting a daily-changing hero image without manual layout work.",
+        "how": [
+          "Collect yesterday's match results + scorers + minutes (FIFA / ESPN / BBC Sport scrape or admin pull).",
+          "Update cumulative golden boot leaders + tournament total goals.",
+          "Pull today's fixtures + venues from the schedule.",
+          "Pass everything as a single payload to {wc_daily_data} (one structured string).",
+          "Generate the vertical 8K daily recap poster."
+        ],
+        "prompts": [
+          "Generate yesterday's World Cup results + today's fixtures recap poster.",
+          "Create a daily World Cup 2026 highlights infographic with scorers and tomorrow's matches.",
+          "Generate a fresh FIFA WC daily recap with golden boot leaders + tournament goal counter."
+        ]
+      }
+    }
   }
 }
