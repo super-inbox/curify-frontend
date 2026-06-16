@@ -20,6 +20,15 @@ const POLL_INTERVAL_MS = 2500;
 const POLL_MAX_MS = 180_000; // 3 min ceiling
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
+// Mark an error as carrying a clean, user-facing message (e.g. the backend's
+// CONTENT_BLOCKED reason) so the catch surfaces it verbatim instead of the
+// generic fallback. Network/unknown errors stay unmarked → generic message.
+function userError(message: string): Error {
+  const e = new Error(message);
+  (e as Error & { userFacing?: boolean }).userFacing = true;
+  return e;
+}
+
 async function pollNanoResult(projectId: string): Promise<string> {
   const deadline = Date.now() + POLL_MAX_MS;
   await sleep(1500); // let the background task start
@@ -34,14 +43,15 @@ async function pollNanoResult(projectId: string): Promise<string> {
     const status = (st?.status || "").toUpperCase();
     if (status === "COMPLETED") {
       if (st.result_url) return st.result_url;
-      throw new Error("Generation completed but no image was returned");
+      throw userError("Generation finished but no image came back — please try again.");
     }
     if (status === "FAILED") {
-      throw new Error(st.failure_reason || "Generation failed");
+      // failure_reason is a clean user-facing line (e.g. content-blocked).
+      throw userError(st.failure_reason || "Generation failed. Please try again.");
     }
     await sleep(POLL_INTERVAL_MS);
   }
-  throw new Error("Generation timed out");
+  throw userError("This is taking longer than usual — please try again in a moment.");
 }
 
 type Options = {
@@ -152,19 +162,22 @@ export function useDirectGenerate({
         example_id: exId,
         ...(referenceImageUrl ? { reference_image_url: referenceImageUrl } : {}),
       });
-      if (!res?.success) throw new Error(res?.message || "Generation failed");
+      if (!res?.success) throw userError(res?.message || "Generation failed");
 
       // Legacy synchronous backend returned signed_url directly; the async
       // backend returns a project_id we poll until the render completes.
       let imageUrl = res.signed_url;
       if (!imageUrl) {
-        if (!res.project_id) throw new Error(res?.message || "Generation failed");
+        if (!res.project_id) throw userError(res?.message || "Generation failed");
         imageUrl = await pollNanoResult(res.project_id);
       }
       lastGeneratedExIdRef.current = exId;
       onSuccess(imageUrl, exId);
-    } catch {
-      alert(t("generateFailed"));
+    } catch (err) {
+      // Surface clean user-facing messages (content-blocked, timeout, etc.);
+      // fall back to the generic alert for network/unknown errors.
+      const e = err as (Error & { userFacing?: boolean }) | undefined;
+      alert(e?.userFacing && e.message ? e.message : t("generateFailed"));
     } finally {
       setIsGenerating(false);
       isGeneratingRef.current = false;
