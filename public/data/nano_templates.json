@@ -768,6 +768,17 @@
               "穷查理宝典",
               "人类简史"
             ]
+          },
+          {
+            "name": "card_count",
+            "label": "卡片数量",
+            "type": "text",
+            "placeholder": [
+              "4",
+              "6",
+              "8",
+              "10"
+            ]
           }
         ]
       },
@@ -782,6 +793,17 @@
               "One Hundred Years of Solitude",
               "Poor Charlie's Almanack",
               "Sapiens"
+            ]
+          },
+          {
+            "name": "card_count",
+            "label": "Number of Cards",
+            "type": "text",
+            "placeholder": [
+              "4",
+              "6",
+              "8",
+              "10"
             ]
           }
         ]
@@ -1810,6 +1832,17 @@
               "Tech Layoff 2026",
               "Asset Hedge"
             ]
+          },
+          {
+            "name": "card_count",
+            "label": "卡片数量",
+            "type": "text",
+            "placeholder": [
+              "4",
+              "6",
+              "8",
+              "10"
+            ]
           }
         ]
       },
@@ -1826,6 +1859,17 @@
               "Middle East Situation",
               "Tech Layoff 2026",
               "Asset Hedge"
+            ]
+          },
+          {
+            "name": "card_count",
+            "label": "Number of Cards",
+            "type": "text",
+            "placeholder": [
+              "4",
+              "6",
+              "8",
+              "10"
             ]
           }
         ]
@@ -1844,7 +1888,8 @@
     ],
     "base_rank_score": 70,
     "allow_generation": true,
-    "creation_date": "2026-04-10"
+    "creation_date": "2026-04-10",
+    "is_series": true
   },
   {
     "id": "template-constellation-steampunk",
@@ -2408,6 +2453,17 @@
               "Tech Line Art Style",
               "Watercolor Style"
             ]
+          },
+          {
+            "name": "card_count",
+            "label": "Number of Cards",
+            "type": "text",
+            "placeholder": [
+              "4",
+              "6",
+              "8",
+              "10"
+            ]
           }
         ]
       },
@@ -2436,6 +2492,17 @@
               "Vintage Chinese Style",
               "Tech Line Art Style",
               "Watercolor Style"
+            ]
+          },
+          {
+            "name": "card_count",
+            "label": "卡片数量",
+            "type": "text",
+            "placeholder": [
+              "4",
+              "6",
+              "8",
+              "10"
             ]
           }
         ]

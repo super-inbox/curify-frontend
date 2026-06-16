@@ -6,18 +6,33 @@ export const SERIES_TEMPLATE_IDS = [
   "template-book-series",
   "template-series-infographic",
   "template-series-travel",
+  "template-hotspot-card",
 ] as const;
 
 export const SERIES_CARD_ROLES = ["cover", "section", "day", "content"] as const;
 
-export const BOOK_SERIES_CARD_IDS = [
-  "cover",
+// Suggested content sections the planner can draw from; the book series no
+// longer has a fixed card set — card_count (1-10) is user-controlled.
+export const BOOK_SERIES_SECTION_POOL = [
   "themes",
   "quotes",
   "ideas",
   "relations",
   "structure",
 ] as const;
+
+// Shared card-count bounds for the user-controlled "number of cards" input
+// (book-series, series-infographic, hotspot-card). Travel sizes itself from
+// trip_duration instead and uses TRAVEL_MAX_* below.
+export const SERIES_CARD_COUNT_MIN = 1;
+export const SERIES_CARD_COUNT_MAX = 10;
+
+export function clampCardCount(cardCount: number): number {
+  return Math.min(
+    Math.max(Math.trunc(cardCount), SERIES_CARD_COUNT_MIN),
+    SERIES_CARD_COUNT_MAX,
+  );
+}
 
 export type SeriesLocale = (typeof SERIES_LOCALES)[number];
 export type SeriesTemplateId = (typeof SERIES_TEMPLATE_IDS)[number];
@@ -100,47 +115,97 @@ export type CardCountValidation =
   | { ok: true }
   | { ok: false; reason: string };
 
+// Travel-series sizing: a series never exceeds TRAVEL_MAX_TOTAL_CARDS cards
+// (1 overview + up to TRAVEL_MAX_DAY_CARDS day cards). Trips longer than
+// TRAVEL_MAX_DAYS are clamped, and when there are more days than day-card
+// slots each day card covers a contiguous *range* of days (days / cards),
+// so a 50-day trip becomes 9 day cards of ~5-6 days each instead of 50 cards.
+export const TRAVEL_MAX_TOTAL_CARDS = 10;
+export const TRAVEL_MAX_DAYS = 50;
+export const TRAVEL_MAX_DAY_CARDS = TRAVEL_MAX_TOTAL_CARDS - 1;
+
+export type TravelDayCard = {
+  card_id: string;
+  startDay: number;
+  endDay: number;
+};
+
+export type TravelPlan = {
+  rawDays: number;
+  effectiveDays: number;
+  numDayCards: number;
+  dayCards: TravelDayCard[];
+};
+
+// Distributes effectiveDays as evenly as possible across the available day
+// cards; the first `remainder` cards get one extra day so every day is covered.
+export function planTravelDayCards(tripDuration: number): TravelPlan {
+  const rawDays = tripDuration;
+  const effectiveDays = Math.min(Math.max(rawDays, 1), TRAVEL_MAX_DAYS);
+  const numDayCards = Math.min(effectiveDays, TRAVEL_MAX_DAY_CARDS);
+  const base = Math.floor(effectiveDays / numDayCards);
+  const remainder = effectiveDays % numDayCards;
+
+  const dayCards: TravelDayCard[] = [];
+  let cursor = 1;
+  for (let i = 0; i < numDayCards; i++) {
+    const span = base + (i < remainder ? 1 : 0);
+    const startDay = cursor;
+    const endDay = cursor + span - 1;
+    dayCards.push({ card_id: `day-${i + 1}`, startDay, endDay });
+    cursor = endDay + 1;
+  }
+
+  return { rawDays, effectiveDays, numDayCards, dayCards };
+}
+
+// Shared validation for templates with a user-controlled card_count input:
+// count must equal the clamped card_count, the first card is the cover, and
+// every card_id is unique.
+function validateUserCardCount(
+  spec: SeriesSpec,
+  params: Record<string, string>,
+): CardCountValidation {
+  const label = spec.template_id;
+  const requested = Number.parseInt(params.card_count ?? "", 10);
+  if (!Number.isFinite(requested) || requested < 1) {
+    return {
+      ok: false,
+      reason: `${label}: invalid card_count ${JSON.stringify(params.card_count)}`,
+    };
+  }
+  const expected = clampCardCount(requested);
+  if (spec.cards.length !== expected) {
+    return {
+      ok: false,
+      reason: `${label} expects ${expected} cards (card_count ${requested} clamped to ${SERIES_CARD_COUNT_MIN}-${SERIES_CARD_COUNT_MAX}), got ${spec.cards.length}`,
+    };
+  }
+  if (spec.cards[0]?.role !== "cover") {
+    return {
+      ok: false,
+      reason: `${label}: first card role must be "cover", got "${spec.cards[0]?.role}"`,
+    };
+  }
+  const ids = spec.cards.map((c) => c.card_id);
+  if (new Set(ids).size !== ids.length) {
+    return {
+      ok: false,
+      reason: `${label}: card_ids must be unique, got [${ids.join(", ")}]`,
+    };
+  }
+  return { ok: true };
+}
+
 export function validateCardCount(
   spec: SeriesSpec,
   params: Record<string, string>,
 ): CardCountValidation {
   switch (spec.template_id) {
-    case "template-book-series": {
-      if (spec.cards.length !== BOOK_SERIES_CARD_IDS.length) {
-        return {
-          ok: false,
-          reason: `template-book-series expects ${BOOK_SERIES_CARD_IDS.length} cards, got ${spec.cards.length}`,
-        };
-      }
-      const expected = new Set<string>(BOOK_SERIES_CARD_IDS);
-      const actual = new Set(spec.cards.map((c) => c.card_id));
-      if (
-        expected.size !== actual.size ||
-        [...expected].some((id) => !actual.has(id))
-      ) {
-        return {
-          ok: false,
-          reason: `template-book-series requires card_ids [${[...expected].join(", ")}]; got [${[...actual].join(", ")}]`,
-        };
-      }
-      return { ok: true };
-    }
-    case "template-series-infographic": {
-      const n = spec.cards.length;
-      if (n < 4 || n > 8) {
-        return {
-          ok: false,
-          reason: `template-series-infographic expects 4-8 cards, got ${n}`,
-        };
-      }
-      if (spec.cards[0]?.role !== "cover") {
-        return {
-          ok: false,
-          reason: `template-series-infographic: first card role must be "cover", got "${spec.cards[0]?.role}"`,
-        };
-      }
-      return { ok: true };
-    }
+    case "template-book-series":
+    case "template-series-infographic":
+    case "template-hotspot-card":
+      return validateUserCardCount(spec, params);
     case "template-series-travel": {
       const days = Number.parseInt(params.trip_duration ?? "", 10);
       if (!Number.isFinite(days) || days < 1) {
@@ -149,11 +214,12 @@ export function validateCardCount(
           reason: `template-series-travel: invalid trip_duration ${JSON.stringify(params.trip_duration)}`,
         };
       }
-      const expected = days + 1;
+      const plan = planTravelDayCards(days);
+      const expected = plan.numDayCards + 1;
       if (spec.cards.length !== expected) {
         return {
           ok: false,
-          reason: `template-series-travel expects ${expected} cards for ${days}-day trip, got ${spec.cards.length}`,
+          reason: `template-series-travel expects ${expected} cards for a ${days}-day trip (overview + ${plan.numDayCards} day cards), got ${spec.cards.length}`,
         };
       }
       if (spec.cards[0]?.card_id !== "overview") {
@@ -162,12 +228,12 @@ export function validateCardCount(
           reason: `template-series-travel: first card_id must be "overview", got "${spec.cards[0]?.card_id}"`,
         };
       }
-      for (let i = 1; i <= days; i++) {
-        const expectedId = `day-${i}`;
-        if (spec.cards[i]?.card_id !== expectedId) {
+      for (let i = 0; i < plan.numDayCards; i++) {
+        const expectedId = plan.dayCards[i].card_id;
+        if (spec.cards[i + 1]?.card_id !== expectedId) {
           return {
             ok: false,
-            reason: `template-series-travel: card ${i} must have card_id "${expectedId}", got "${spec.cards[i]?.card_id}"`,
+            reason: `template-series-travel: card ${i + 1} must have card_id "${expectedId}", got "${spec.cards[i + 1]?.card_id}"`,
           };
         }
       }

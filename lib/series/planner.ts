@@ -8,9 +8,15 @@ import {
   type SeriesTemplateParameter,
 } from "./templateLoader";
 import {
+  clampCardCount,
+  planTravelDayCards,
   seriesSpecJsonSchema,
   seriesSpecSchema,
   validateCardCount,
+  SERIES_CARD_COUNT_MAX,
+  SERIES_CARD_COUNT_MIN,
+  TRAVEL_MAX_DAYS,
+  TRAVEL_MAX_TOTAL_CARDS,
   type SeriesLocale,
   type SeriesSpec,
   type SeriesTemplateId,
@@ -45,23 +51,29 @@ Rules:
 
 const TEMPLATE_RULES: Record<SeriesTemplateId, string> = {
   "template-book-series": `Template: template-book-series.
-- cards.length MUST equal 6.
-- card_ids in order: "cover", "themes", "quotes", "ideas", "relations", "structure".
-- First card role "cover"; the rest role "content".
+- User provides card_count N (clamped to ${SERIES_CARD_COUNT_MIN}-${SERIES_CARD_COUNT_MAX}). The exact required count is given in the user message under "Card plan"; cards.length MUST equal it.
+- First card: card_id "cover", role "cover" — the book's title card.
+- Remaining cards: role "content", with short unique descriptive card_ids (e.g. "themes", "quotes", "ideas", "relations", "structure", "characters", "context", "takeaways"). Pick the most relevant book-analysis sections for the requested count: with few cards choose the most essential, with more cards add depth. Do NOT pad with filler.
 - Every card.image_prompt places the book name prominently at the top.`,
 
   "template-series-infographic": `Template: template-series-infographic.
-- Decide a logical, coherent section list adapted to the topic.
-- cards.length MUST be between 4 and 8 inclusive.
-- First card role "cover"; remaining cards role "section".
+- User provides card_count N (clamped to ${SERIES_CARD_COUNT_MIN}-${SERIES_CARD_COUNT_MAX}). The exact required count is given in the user message under "Card plan"; cards.length MUST equal it.
+- Decide a logical, coherent section list adapted to the topic, sized to the requested count.
+- First card: card_id "cover", role "cover"; remaining cards role "section" with short unique descriptive card_ids.
 - Each card.image_prompt incorporates the user's art_style and the shared single-card layout (top title bar, central visual, content modules, bottom summary highlight).`,
 
+  "template-hotspot-card": `Template: template-hotspot-card.
+- User provides card_count N (clamped to ${SERIES_CARD_COUNT_MIN}-${SERIES_CARD_COUNT_MAX}). The exact required count is given in the user message under "Card plan"; cards.length MUST equal it.
+- Reason about the hotspot topic and break it into coherent dimensions sized to the requested count.
+- First card: card_id "cover", role "cover" — an overview knowledge card for the hotspot. Remaining cards role "section", each a hand-drawn watercolor knowledge card on one dimension, with short unique descriptive card_ids.
+- Keep the shared hand-drawn watercolor style across all cards: top title banner ("知识卡片 | {hotspot_name}" or "Knowledge Card | {hotspot_name}"), 3 keyword subtitles, soft watercolor gradient background in a topic-appropriate palette, clear black hand-drawn outlines with low-saturation fills, content modules with icons + cause/effect links, and a one-line summary quote box at the bottom.`,
+
   "template-series-travel": `Template: template-series-travel.
-- User provides trip_duration N (positive integer).
-- cards.length MUST equal N + 1.
+- User provides trip_duration N (positive integer). Long trips are grouped so the series never exceeds ${TRAVEL_MAX_TOTAL_CARDS} cards (1 overview + up to ${TRAVEL_MAX_TOTAL_CARDS - 1} day cards); trips longer than ${TRAVEL_MAX_DAYS} days are clamped to ${TRAVEL_MAX_DAYS}.
+- The exact required cards and the day range each day card must cover are given in the user message under "Travel day plan". Produce EXACTLY those cards, in that order, with those card_ids.
 - First card: card_id "overview", role "cover", title "{destination_name} Travel Guide".
-- Remaining N cards: card_id "day-1"..."day-N" in order, role "day", title "DAY {i}".
-- Reason about destination: pick 5 local foods, 4-5 attractions, 4 transport types, and Morning/Afternoon/Evening activities with costs + simplified routes per day.`,
+- Each day card: role "day". If it covers a single day, title "DAY {d}"; if it covers a range, title "DAYS {start}-{end}".
+- For each day card, reason about its whole day range: pick local foods, attractions, transport types, and Morning/Afternoon/Evening activities with costs + simplified routes covering those days.`,
 };
 
 export async function planSeries(
@@ -178,12 +190,20 @@ function buildUserPrompt(
         .join("\n")
     : "  (none)";
 
+  let planText = "";
+  if (templateId === "template-series-travel") {
+    planText = buildTravelPlanText(filledParams);
+  } else {
+    planText = buildCardCountPlanText(filledParams);
+  }
+
   return [
     `Template id: ${templateId}`,
     `Locale: ${locale} (all visible text in image_prompts must be in this language)`,
     "",
     "Template-specific rules:",
     TEMPLATE_RULES[templateId],
+    planText,
     "",
     "Base prompt (the original template authoring prompt — interpret and expand into a structured per-card plan):",
     "---",
@@ -194,5 +214,47 @@ function buildUserPrompt(
     paramLines,
     "",
     "Return the series spec JSON now.",
+  ].join("\n");
+}
+
+function buildCardCountPlanText(params: Record<string, string>): string {
+  const requested = Number.parseInt(params.card_count ?? "", 10);
+  if (!Number.isFinite(requested) || requested < 1) return "";
+
+  const count = clampCardCount(requested);
+  const note =
+    requested !== count
+      ? ` (card_count ${requested} clamped to ${SERIES_CARD_COUNT_MIN}-${SERIES_CARD_COUNT_MAX})`
+      : "";
+
+  return [
+    "",
+    `Card plan${note}: produce EXACTLY ${count} card(s) — 1 "cover" card plus ${count - 1} content card(s).`,
+  ].join("\n");
+}
+
+function buildTravelPlanText(params: Record<string, string>): string {
+  const n = Number.parseInt(params.trip_duration ?? "", 10);
+  if (!Number.isFinite(n) || n < 1) return "";
+
+  const plan = planTravelDayCards(n);
+  const note =
+    plan.rawDays > plan.effectiveDays
+      ? ` (trip_duration ${plan.rawDays} clamped to ${plan.effectiveDays} days)`
+      : "";
+
+  const lines = plan.dayCards.map((c) => {
+    const label =
+      c.startDay === c.endDay
+        ? `DAY ${c.startDay}`
+        : `DAYS ${c.startDay}-${c.endDay}`;
+    return `  - ${c.card_id} (role "day"): cover ${label}`;
+  });
+
+  return [
+    "",
+    `Travel day plan${note} — produce these ${plan.numDayCards + 1} cards in order:`,
+    `  - overview (role "cover")`,
+    ...lines,
   ].join("\n");
 }

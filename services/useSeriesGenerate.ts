@@ -75,18 +75,26 @@ export function useSeriesGenerate({
     try {
       setIsGenerating(true);
       trackAction(tracking, "generate");
-      const res = await seriesGenerateService.generate({
+      
+      const res = await seriesGenerateService.plan({
         template_id: templateId,
         params,
         locale,
       });
-      if (!res?.success || !res?.series_id || !res?.cards) {
+      if (!res?.success || !res?.series_id || !res?.plan) {
         throw new Error(res?.message || "Series generation failed");
       }
+      const seededCards: SeriesCardResult[] = res.plan.cards.map((c) => ({
+        card_id: c.card_id,
+        order: c.order,
+        role: c.role,
+        title: c.title,
+        status: "generating",
+      }));
       setSeriesId(res.series_id);
-      setCards(res.cards);
-      setPlan(res.plan ?? null);
-      onSuccess(res.series_id, res.cards, res.plan);
+      setCards(seededCards);
+      setPlan(res.plan);
+      onSuccess(res.series_id, seededCards, res.plan);
     } catch {
       alert(t("generateFailed"));
     } finally {

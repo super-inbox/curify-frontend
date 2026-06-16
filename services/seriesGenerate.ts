@@ -1,6 +1,7 @@
 import type { SeriesCardRole, SeriesSpec } from "@/lib/series/types";
 
 export const SERIES_GENERATE_ENDPOINT = "/api/series/generate";
+export const SERIES_PLAN_ENDPOINT = "/api/series/plan";
 export const SERIES_RENDER_CARD_ENDPOINT = "/api/series/render-card";
 
 export type SeriesCardStatus = "queued" | "generating" | "done" | "failed";
@@ -25,6 +26,13 @@ export interface SeriesGenerateResponse {
   success: boolean;
   series_id?: string;
   cards?: SeriesCardResult[];
+  plan?: SeriesSpec;
+  message?: string;
+}
+
+export interface SeriesPlanResponse {
+  success: boolean;
+  series_id?: string;
   plan?: SeriesSpec;
   message?: string;
 }
@@ -62,7 +70,6 @@ async function postJson<T extends { success: boolean; message?: string }>(
         return { success: false, message: parsed.message } as T;
       }
     } catch {
-      /* fall through */
     }
     return { success: false, message: `HTTP ${res.status}: ${text}` } as T;
   }
@@ -73,6 +80,9 @@ async function postJson<T extends { success: boolean; message?: string }>(
 export const seriesGenerateService = {
   generate(data: SeriesGenerateRequest): Promise<SeriesGenerateResponse> {
     return postJson<SeriesGenerateResponse>(SERIES_GENERATE_ENDPOINT, data);
+  },
+  plan(data: SeriesGenerateRequest): Promise<SeriesPlanResponse> {
+    return postJson<SeriesPlanResponse>(SERIES_PLAN_ENDPOINT, data);
   },
   renderCard(data: RenderCardRequest): Promise<RenderCardResponse> {
     return postJson<RenderCardResponse>(SERIES_RENDER_CARD_ENDPOINT, data);

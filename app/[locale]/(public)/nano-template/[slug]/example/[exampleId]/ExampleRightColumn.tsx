@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { Wand2 } from "lucide-react";
+import { useState, useMemo, useCallback } from "react";
+import { Wand2, Loader2, Info, X } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
@@ -87,6 +87,11 @@ export default function ExampleRightColumn({
   } | null>(null);
   const [copied, setCopied] = useState(false);
   const [showFullPrompt, setShowFullPrompt] = useState(false);
+  // Card whose full image prompt is shown in the floating "more info" panel.
+  const [promptModal, setPromptModal] = useState<{
+    title: string;
+    prompt: string;
+  } | null>(null);
 
   const [user] = useAtom(userAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
@@ -113,6 +118,51 @@ export default function ExampleRightColumn({
     },
   });
 
+  // Render a single card's image and stream the result into the grid:
+  // mark it "generating" (spinner), then flip to "done"/"failed" when the
+  // render resolves. Shared by initial generation and per-card retries.
+  const renderOneCard = useCallback(
+    async (cardId: string, imagePrompt: string) => {
+      setGeneratedSeries((prev) =>
+        prev
+          ? {
+              ...prev,
+              cards: prev.cards.map((c) =>
+                c.card_id === cardId
+                  ? { ...c, status: "generating", error: undefined }
+                  : c,
+              ),
+            }
+          : prev,
+      );
+
+      const res = await seriesGenerateService.renderCard({
+        image_prompt: imagePrompt,
+      });
+
+      setGeneratedSeries((prev) =>
+        prev
+          ? {
+              ...prev,
+              cards: prev.cards.map((c) =>
+                c.card_id === cardId
+                  ? res.success && res.image_url
+                    ? {
+                        ...c,
+                        status: "done",
+                        image_url: res.image_url,
+                        error: undefined,
+                      }
+                    : { ...c, status: "failed", error: res.message }
+                  : c,
+              ),
+            }
+          : prev,
+      );
+    },
+    [],
+  );
+
   const series = useSeriesGenerate({
     templateId,
     params: form,
@@ -120,7 +170,12 @@ export default function ExampleRightColumn({
     existingExamples,
     tracking,
     onSuccess: (seriesId, cards, plan) => {
+      // Paint the grid with all cards as spinners, then render each image
+      // in parallel so spinners flip to pictures independently.
       setGeneratedSeries({ seriesId, cards, plan: plan ?? null });
+      plan?.cards.forEach((c) => {
+        void renderOneCard(c.card_id, c.image_prompt);
+      });
     },
   });
 
@@ -137,48 +192,12 @@ export default function ExampleRightColumn({
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const retryCard = async (cardId: string) => {
-    const current = generatedSeries;
-    if (!current) return;
-    const specCard = current.plan?.cards.find((c) => c.card_id === cardId);
+  const retryCard = (cardId: string) => {
+    const specCard = generatedSeries?.plan?.cards.find(
+      (c) => c.card_id === cardId,
+    );
     if (!specCard) return;
-
-    setGeneratedSeries((prev) =>
-      prev
-        ? {
-            ...prev,
-            cards: prev.cards.map((c) =>
-              c.card_id === cardId
-                ? { ...c, status: "generating", error: undefined }
-                : c,
-            ),
-          }
-        : prev,
-    );
-
-    const res = await seriesGenerateService.renderCard({
-      image_prompt: specCard.image_prompt,
-    });
-
-    setGeneratedSeries((prev) =>
-      prev
-        ? {
-            ...prev,
-            cards: prev.cards.map((c) =>
-              c.card_id === cardId
-                ? res.success && res.image_url
-                  ? {
-                      ...c,
-                      status: "done",
-                      image_url: res.image_url,
-                      error: undefined,
-                    }
-                  : { ...c, status: "failed", error: res.message }
-                : c,
-            ),
-          }
-        : prev,
-    );
+    void renderOneCard(cardId, specCard.image_prompt);
   };
 
   const handleCopyGenerate = async () => {
@@ -471,6 +490,9 @@ export default function ExampleRightColumn({
                     />
                   ) : (
                     <div className="flex aspect-[3/4] w-full flex-col items-center justify-center gap-1.5 bg-neutral-100 p-3 text-center">
+                      {card.status === "generating" && (
+                        <Loader2 className="h-6 w-6 animate-spin text-purple-500" />
+                      )}
                       <div className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
                         {card.status}
                       </div>
@@ -481,19 +503,36 @@ export default function ExampleRightColumn({
                       )}
                     </div>
                   )}
-                  <div className="flex rounded-full items-center justify-between gap-2 px-2 py-1.5">
+                  <div className="flex items-center justify-between gap-2 px-2 py-1.5">
                     <span className="truncate text-xs font-medium text-neutral-700">
                       {card.title}
                     </span>
-                    <button
-                      type="button"
-                      onClick={() => retryCard(card.card_id)}
-                      disabled={!canRetry}
-                      title="Regenerate this card"
-                      className="shrink-0 cursor-pointer rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-base font-bold leading-none text-neutral-600 hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-40"
-                    >
-                      ↻
-                    </button>
+                    <div className="flex shrink-0 items-center gap-1">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          specCard &&
+                          setPromptModal({
+                            title: card.title,
+                            prompt: specCard.image_prompt,
+                          })
+                        }
+                        disabled={!specCard}
+                        title="View image prompt"
+                        className="cursor-pointer rounded-lg border border-neutral-200 bg-white p-1.5 leading-none text-neutral-600 hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-40"
+                      >
+                        <Info className="h-4 w-4" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => retryCard(card.card_id)}
+                        disabled={!canRetry}
+                        title="Regenerate this card"
+                        className="cursor-pointer rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-base font-bold leading-none text-neutral-600 hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-40"
+                      >
+                        ↻
+                      </button>
+                    </div>
                   </div>
                 </div>
               );
@@ -502,16 +541,40 @@ export default function ExampleRightColumn({
           <div className="text-[10px] text-neutral-400">
             series_id: {generatedSeries.seriesId}
           </div>
-          {generatedSeries.plan && (
-            <details className="mt-1 rounded-xl border border-neutral-200 bg-neutral-50">
-              <summary className="cursor-pointer select-none px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500 hover:text-neutral-700">
-                Planner JSON
-              </summary>
-              <pre className="max-h-[480px] overflow-auto px-3 pb-3 text-[11px] leading-snug text-neutral-700">
-                {JSON.stringify(generatedSeries.plan, null, 2)}
-              </pre>
-            </details>
-          )}
+        </div>
+      )}
+
+      {/* Floating "more info" panel showing a card's full image prompt.
+          No dimming backdrop, so the rest of the page stays interactive and
+          generation keeps running; dismissed only via the X button. */}
+      {promptModal && (
+        <div
+          role="dialog"
+          aria-modal="false"
+          aria-label={`Image prompt for ${promptModal.title}`}
+          className="fixed inset-x-4 bottom-4 z-50 mx-auto flex max-h-[70vh] w-auto max-w-lg flex-col rounded-2xl border border-neutral-200 bg-white shadow-2xl sm:inset-x-auto sm:right-6 sm:bottom-6"
+        >
+          <div className="flex items-start justify-between gap-3 border-b border-neutral-100 px-4 py-3">
+            <div className="text-sm font-bold text-neutral-900">
+              {promptModal.title}
+            </div>
+            <button
+              type="button"
+              onClick={() => setPromptModal(null)}
+              aria-label="Close"
+              className="shrink-0 cursor-pointer rounded-lg p-1 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+          <div className="overflow-auto px-4 py-3">
+            <div className="mb-1 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+              Image prompt
+            </div>
+            <pre className="whitespace-pre-wrap text-sm leading-relaxed text-neutral-800">
+              {promptModal.prompt}
+            </pre>
+          </div>
         </div>
       )}
     </div>
