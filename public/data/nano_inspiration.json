@@ -128222,5 +128222,924 @@
       "服装细节",
       "专业时尚建议"
     ]
+  },
+  {
+    "id": "template-kid-friendly-grid-fun-fact-infographic-dinosaurs-10-surprising-facts",
+    "template_id": "template-kid-friendly-grid-fun-fact-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-kid-friendly-grid-fun-fact-infographic-dinosaurs-10-surprising-facts.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-kid-friendly-grid-fun-fact-infographic-dinosaurs-10-surprising-facts-prev.jpg"
+    },
+    "params": {
+      "fun_fact_topic": "10 surprising facts about dinosaurs for kids — sizes, sounds, what they ate, how they walked"
+    },
+    "locales": {
+      "en": {
+        "title": "10 surprising facts about dinosaurs for kids — sizes, sounds, what they ate, how they walked"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "posters",
+      "kawaii",
+      "information-card",
+      "dinosaur",
+      "prehistoric",
+      "evolution"
+    ],
+    "search_aliases": [
+      "恐龙的10个惊人事实",
+      "dinosaurs fun facts",
+      "孩子们的恐龙知识",
+      "儿童科学海报",
+      "恐龙信息卡",
+      "prehistoric facts for kids",
+      "可爱插图的海报"
+    ]
+  },
+  {
+    "id": "template-kid-friendly-grid-fun-fact-infographic-carnivorous-dinosaurs-10-facts",
+    "template_id": "template-kid-friendly-grid-fun-fact-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-kid-friendly-grid-fun-fact-infographic-carnivorous-dinosaurs-10-facts.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-kid-friendly-grid-fun-fact-infographic-carnivorous-dinosaurs-10-facts-prev.jpg"
+    },
+    "params": {
+      "fun_fact_topic": "10 amazing facts about carnivorous dinosaurs — T-Rex bite force, Velociraptor pack hunting, Spinosaurus swimming"
+    },
+    "locales": {
+      "en": {
+        "title": "10 amazing facts about carnivorous dinosaurs — T-Rex bite force, Velociraptor pack hunting, Spinosaurus swimming"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "posters",
+      "kawaii",
+      "information-card",
+      "dinosaur",
+      "prehistoric",
+      "evolution"
+    ],
+    "search_aliases": [
+      "肉食性恐龙的10个事实",
+      "carnivorous dinosaurs facts",
+      "T-Rex 咬合力",
+      "儿童恐龙知识",
+      "猎食恐龙",
+      "可爱插图的海报",
+      "恐龙信息卡"
+    ]
+  },
+  {
+    "id": "template-kid-friendly-grid-fun-fact-infographic-weird-dinosaurs-10-facts",
+    "template_id": "template-kid-friendly-grid-fun-fact-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-kid-friendly-grid-fun-fact-infographic-weird-dinosaurs-10-facts.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-kid-friendly-grid-fun-fact-infographic-weird-dinosaurs-10-facts-prev.jpg"
+    },
+    "params": {
+      "fun_fact_topic": "10 cool facts about weird dinosaurs — Therizinosaurus' giant claws, Microraptor's four wings, Pachycephalosaurus' dome head"
+    },
+    "locales": {
+      "en": {
+        "title": "10 cool facts about weird dinosaurs — Therizinosaurus' giant claws, Microraptor's four wings, Pachycephalosaurus' dome head"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "posters",
+      "kawaii",
+      "information-card",
+      "dinosaur",
+      "prehistoric",
+      "evolution"
+    ],
+    "search_aliases": [
+      "奇怪恐龙的10个事实",
+      "weird dinosaurs facts",
+      "Therizinosaurus 巨爪",
+      "四翼恐龙",
+      "儿童科学海报",
+      "可爱插图的海报",
+      "恐龙信息卡"
+    ]
+  },
+  {
+    "id": "template-species-tyrannosaurus-rex",
+    "template_id": "template-species",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-tyrannosaurus-rex.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-tyrannosaurus-rex-prev.jpg"
+    },
+    "params": {
+      "species_name": "Tyrannosaurus Rex — apex predator of the Late Cretaceous, 12m long, 40 km/h, bite force 12,800 lb"
+    },
+    "locales": {
+      "en": {
+        "title": "Tyrannosaurus Rex — apex predator of the Late Cretaceous, 12m long, 40 km/h, bite force 12,800 lb"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "animal",
+      "information-card",
+      "posters",
+      "species",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "暴龙",
+      "Tyrannosaurus Rex",
+      "晚白垩纪的顶级掠食者",
+      "恐龙知识卡",
+      "生物保护信息",
+      "12米长的恐龙",
+      "咬合力12800磅"
+    ]
+  },
+  {
+    "id": "template-species-triceratops",
+    "template_id": "template-species",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-triceratops.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-triceratops-prev.jpg"
+    },
+    "params": {
+      "species_name": "Triceratops — three-horned herbivore of the Late Cretaceous, frilled skull, lived in herds, 9m long"
+    },
+    "locales": {
+      "en": {
+        "title": "Triceratops — three-horned herbivore of the Late Cretaceous, frilled skull, lived in herds, 9m long"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "animal",
+      "information-card",
+      "posters",
+      "species",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "三角龙",
+      "Triceratops",
+      "晚白垩纪的草食性恐龙",
+      "恐龙知识卡",
+      "生物保护信息",
+      "9米长的恐龙",
+      "三角头骨"
+    ]
+  },
+  {
+    "id": "template-species-stegosaurus",
+    "template_id": "template-species",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-stegosaurus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-stegosaurus-prev.jpg"
+    },
+    "params": {
+      "species_name": "Stegosaurus — Jurassic plated herbivore, thagomizer tail spikes, double row of bony back plates, walnut-sized brain"
+    },
+    "locales": {
+      "en": {
+        "title": "Stegosaurus — Jurassic plated herbivore, thagomizer tail spikes, double row of bony back plates, walnut-sized brain"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "animal",
+      "information-card",
+      "posters",
+      "species",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Stegosaurus",
+      "剑龙",
+      "Jurassic dinosaur",
+      "plated herbivore",
+      "prehistoric animal",
+      "thagomizer tail spikes",
+      "bony back plates",
+      "dinosaur knowledge card"
+    ]
+  },
+  {
+    "id": "template-species-velociraptor",
+    "template_id": "template-species",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-velociraptor.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-velociraptor-prev.jpg"
+    },
+    "params": {
+      "species_name": "Velociraptor — small Late Cretaceous pack hunter, feathered, sickle claw, intelligent, 2m long"
+    },
+    "locales": {
+      "en": {
+        "title": "Velociraptor — small Late Cretaceous pack hunter, feathered, sickle claw, intelligent, 2m long"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "animal",
+      "information-card",
+      "posters",
+      "species",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Velociraptor",
+      "迅猛龙",
+      "Late Cretaceous dinosaur",
+      "small pack hunter",
+      "feathered dinosaur",
+      "sickle claw",
+      "intelligent dinosaur",
+      "dinosaur information card"
+    ]
+  },
+  {
+    "id": "template-species-brachiosaurus",
+    "template_id": "template-species",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-brachiosaurus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-brachiosaurus-prev.jpg"
+    },
+    "params": {
+      "species_name": "Brachiosaurus — Jurassic long-necked herbivore, reached 12m tall to feed on treetops, weighed 50 tons"
+    },
+    "locales": {
+      "en": {
+        "title": "Brachiosaurus — Jurassic long-necked herbivore, reached 12m tall to feed on treetops, weighed 50 tons"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "animal",
+      "information-card",
+      "posters",
+      "species",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Brachiosaurus",
+      "腕龙",
+      "Jurassic long-necked dinosaur",
+      "herbivore",
+      "12m tall",
+      "treetop feeder",
+      "50 tons",
+      "prehistoric knowledge card"
+    ]
+  },
+  {
+    "id": "template-species-spinosaurus",
+    "template_id": "template-species",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-spinosaurus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-spinosaurus-prev.jpg"
+    },
+    "params": {
+      "species_name": "Spinosaurus — semi-aquatic Cretaceous carnivore, sail-back, longer than T-Rex, swam and hunted fish in rivers"
+    },
+    "locales": {
+      "en": {
+        "title": "Spinosaurus — semi-aquatic Cretaceous carnivore, sail-back, longer than T-Rex, swam and hunted fish in rivers"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "animal",
+      "information-card",
+      "posters",
+      "species",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Spinosaurus",
+      "棘龙",
+      "semi-aquatic dinosaur",
+      "Cretaceous carnivore",
+      "sail-back dinosaur",
+      "hunted fish",
+      "longer than T-Rex",
+      "dinosaur facts card"
+    ]
+  },
+  {
+    "id": "template-species-allosaurus",
+    "template_id": "template-species",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-allosaurus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-allosaurus-prev.jpg"
+    },
+    "params": {
+      "species_name": "Allosaurus — Late Jurassic apex predator before T-Rex, slashing teeth, hunted in groups, 8.5m long"
+    },
+    "locales": {
+      "en": {
+        "title": "Allosaurus — Late Jurassic apex predator before T-Rex, slashing teeth, hunted in groups, 8.5m long"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "animal",
+      "information-card",
+      "posters",
+      "species",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Allosaurus",
+      "异特龙",
+      "Late Jurassic predator",
+      "apex predator",
+      "slashing teeth",
+      "hunted in groups",
+      "8.5m long",
+      "dinosaur educational card"
+    ]
+  },
+  {
+    "id": "template-species-pteranodon",
+    "template_id": "template-species",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-pteranodon.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-pteranodon-prev.jpg"
+    },
+    "params": {
+      "species_name": "Pteranodon — Late Cretaceous flying reptile (technically a pterosaur, not a dinosaur), 7m wingspan, fished from the sky"
+    },
+    "locales": {
+      "en": {
+        "title": "Pteranodon — Late Cretaceous flying reptile (technically a pterosaur, not a dinosaur), 7m wingspan, fished from the sky"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "animal",
+      "information-card",
+      "posters",
+      "species",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Pteranodon",
+      "翼龙",
+      "Late Cretaceous",
+      "flying reptile",
+      "prehistoric animal",
+      "7m wingspan",
+      "endangered species",
+      "pterosaur"
+    ]
+  },
+  {
+    "id": "template-species-ankylosaurus",
+    "template_id": "template-species",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-ankylosaurus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-ankylosaurus-prev.jpg"
+    },
+    "params": {
+      "species_name": "Ankylosaurus — Late Cretaceous armored herbivore, club-tailed, low and tank-like, fused bone armor across back"
+    },
+    "locales": {
+      "en": {
+        "title": "Ankylosaurus — Late Cretaceous armored herbivore, club-tailed, low and tank-like, fused bone armor across back"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "animal",
+      "information-card",
+      "posters",
+      "species",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Ankylosaurus",
+      "甲龙",
+      "Late Cretaceous",
+      "armored herbivore",
+      "prehistoric animal",
+      "club-tailed",
+      "fused bone armor",
+      "dinosaur"
+    ]
+  },
+  {
+    "id": "template-species-parasaurolophus",
+    "template_id": "template-species",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-parasaurolophus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-parasaurolophus-prev.jpg"
+    },
+    "params": {
+      "species_name": "Parasaurolophus — Late Cretaceous duck-billed herbivore, hollow crest amplified honking calls, 10m long"
+    },
+    "locales": {
+      "en": {
+        "title": "Parasaurolophus — Late Cretaceous duck-billed herbivore, hollow crest amplified honking calls, 10m long"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "animal",
+      "information-card",
+      "posters",
+      "species",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Parasaurolophus",
+      "副栉龙",
+      "Late Cretaceous",
+      "duck-billed herbivore",
+      "prehistoric animal",
+      "10m long",
+      "hollow crest",
+      "amplified honking calls"
+    ]
+  },
+  {
+    "id": "template-anatomy-cut-guide-tyrannosaurus-rex",
+    "template_id": "template-anatomy-cut-guide",
+    "asset": {
+      "image_url": "/images/nano_insp/template-anatomy-cut-guide-tyrannosaurus-rex.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-anatomy-cut-guide-tyrannosaurus-rex-prev.jpg"
+    },
+    "params": {
+      "animal_name": "Tyrannosaurus Rex — skeletal anatomy cutaway: massive skull, tiny forelimbs, powerful legs, serrated 12-inch teeth, S-curved neck"
+    },
+    "locales": {
+      "en": {
+        "title": "Tyrannosaurus Rex — skeletal anatomy cutaway: massive skull, tiny forelimbs, powerful legs, serrated 12-inch teeth, S-curved neck"
+      }
+    },
+    "topics": [
+      "food",
+      "learning",
+      "guides",
+      "posters",
+      "science",
+      "species",
+      "animal",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Tyrannosaurus Rex",
+      "霸王龙",
+      "skeletal anatomy",
+      "massive skull",
+      "serrated teeth",
+      "prehistoric animal",
+      "cutaway",
+      "dinosaur"
+    ]
+  },
+  {
+    "id": "template-anatomy-cut-guide-triceratops",
+    "template_id": "template-anatomy-cut-guide",
+    "asset": {
+      "image_url": "/images/nano_insp/template-anatomy-cut-guide-triceratops.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-anatomy-cut-guide-triceratops-prev.jpg"
+    },
+    "params": {
+      "animal_name": "Triceratops — anatomy cutaway: three horns, bony neck frill, parrot-like beak, dental battery for grinding plants, four sturdy legs"
+    },
+    "locales": {
+      "en": {
+        "title": "Triceratops — anatomy cutaway: three horns, bony neck frill, parrot-like beak, dental battery for grinding plants, four sturdy legs"
+      }
+    },
+    "topics": [
+      "food",
+      "learning",
+      "guides",
+      "posters",
+      "science",
+      "species",
+      "animal",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Triceratops",
+      "三角龙",
+      "anatomy cutaway",
+      "three horns",
+      "bony neck frill",
+      "prehistoric animal",
+      "dental battery",
+      "dinosaur"
+    ]
+  },
+  {
+    "id": "template-anatomy-cut-guide-stegosaurus",
+    "template_id": "template-anatomy-cut-guide",
+    "asset": {
+      "image_url": "/images/nano_insp/template-anatomy-cut-guide-stegosaurus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-anatomy-cut-guide-stegosaurus-prev.jpg"
+    },
+    "params": {
+      "animal_name": "Stegosaurus — anatomy cutaway: 17 back plates (thermoregulation), thagomizer tail with 4 spikes, walnut brain, twin-rowed plates"
+    },
+    "locales": {
+      "en": {
+        "title": "Stegosaurus — anatomy cutaway: 17 back plates (thermoregulation), thagomizer tail with 4 spikes, walnut brain, twin-rowed plates"
+      }
+    },
+    "topics": [
+      "food",
+      "learning",
+      "guides",
+      "posters",
+      "science",
+      "species",
+      "animal",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Stegosaurus",
+      "剑龙",
+      "dinosaur anatomy",
+      "肉类切割指南",
+      "prehistoric animal",
+      "meat cuts",
+      "vintage poster",
+      "culinary uses"
+    ]
+  },
+  {
+    "id": "template-anatomy-cut-guide-velociraptor",
+    "template_id": "template-anatomy-cut-guide",
+    "asset": {
+      "image_url": "/images/nano_insp/template-anatomy-cut-guide-velociraptor.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-anatomy-cut-guide-velociraptor-prev.jpg"
+    },
+    "params": {
+      "animal_name": "Velociraptor — anatomy cutaway: sickle claw on second toe, feathered arms (not wings), long stiff tail, hollow bones"
+    },
+    "locales": {
+      "en": {
+        "title": "Velociraptor — anatomy cutaway: sickle claw on second toe, feathered arms (not wings), long stiff tail, hollow bones"
+      }
+    },
+    "topics": [
+      "food",
+      "learning",
+      "guides",
+      "posters",
+      "science",
+      "species",
+      "animal",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Velociraptor",
+      "迅猛龙",
+      "dinosaur anatomy",
+      "肉类切割指南",
+      "prehistoric animal",
+      "meat cuts",
+      "vintage poster",
+      "sickle claw"
+    ]
+  },
+  {
+    "id": "template-anatomy-cut-guide-brachiosaurus",
+    "template_id": "template-anatomy-cut-guide",
+    "asset": {
+      "image_url": "/images/nano_insp/template-anatomy-cut-guide-brachiosaurus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-anatomy-cut-guide-brachiosaurus-prev.jpg"
+    },
+    "params": {
+      "animal_name": "Brachiosaurus — anatomy cutaway: 9m vertical neck, column legs longer in front than rear, small head, peg-like teeth for stripping leaves"
+    },
+    "locales": {
+      "en": {
+        "title": "Brachiosaurus — anatomy cutaway: 9m vertical neck, column legs longer in front than rear, small head, peg-like teeth for stripping leaves"
+      }
+    },
+    "topics": [
+      "food",
+      "learning",
+      "guides",
+      "posters",
+      "science",
+      "species",
+      "animal",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "Brachiosaurus",
+      "腕龙",
+      "dinosaur anatomy",
+      "肉类切割指南",
+      "prehistoric animal",
+      "meat cuts",
+      "vintage poster",
+      "long neck"
+    ]
+  },
+  {
+    "id": "template-nature-ecology-double-page-book-spread-infographic-triassic-period-ecosystem",
+    "template_id": "template-nature-ecology-double-page-book-spread-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-nature-ecology-double-page-book-spread-infographic-triassic-period-ecosystem.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-nature-ecology-double-page-book-spread-infographic-triassic-period-ecosystem-prev.jpg"
+    },
+    "params": {
+      "ecology_topic_info": "Triassic Period ecosystem (252-201 million years ago) — early dinosaurs Coelophysis & Plateosaurus, fern forests, dry red-bed climates, first crocodile ancestors, Pangaea supercontinent"
+    },
+    "locales": {
+      "en": {
+        "title": "Triassic Period ecosystem (252-201 million years ago) — early dinosaurs Coelophysis & Plateosaurus, fern forests, dry red-bed climates, first crocodile ancestors, Pangaea supercontinent"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "reading",
+      "information-card",
+      "nature",
+      "dinosaur",
+      "prehistoric"
+    ],
+    "search_aliases": [
+      "Triassic Period",
+      "三叠纪",
+      "Coelophysis",
+      "Plateosaurus",
+      "prehistoric ecosystem",
+      "Pangaea",
+      "dinosaur diagram",
+      "nature education"
+    ]
+  },
+  {
+    "id": "template-nature-ecology-double-page-book-spread-infographic-jurassic-period-ecosystem",
+    "template_id": "template-nature-ecology-double-page-book-spread-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-nature-ecology-double-page-book-spread-infographic-jurassic-period-ecosystem.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-nature-ecology-double-page-book-spread-infographic-jurassic-period-ecosystem-prev.jpg"
+    },
+    "params": {
+      "ecology_topic_info": "Jurassic Period ecosystem (201-145 million years ago) — golden age of dinosaurs, Brachiosaurus & Stegosaurus & Allosaurus, lush conifer forests, first birds (Archaeopteryx), Pangaea splitting"
+    },
+    "locales": {
+      "en": {
+        "title": "Jurassic Period ecosystem (201-145 million years ago) — golden age of dinosaurs, Brachiosaurus & Stegosaurus & Allosaurus, lush conifer forests, first birds (Archaeopteryx), Pangaea splitting"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "reading",
+      "information-card",
+      "nature",
+      "dinosaur",
+      "prehistoric"
+    ],
+    "search_aliases": [
+      "Jurassic Period",
+      "侏罗纪",
+      "Brachiosaurus",
+      "Stegosaurus",
+      "Allosaurus",
+      "prehistoric ecosystem",
+      "Archaeopteryx",
+      "nature education"
+    ]
+  },
+  {
+    "id": "template-nature-ecology-double-page-book-spread-infographic-cretaceous-period-ecosystem",
+    "template_id": "template-nature-ecology-double-page-book-spread-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-nature-ecology-double-page-book-spread-infographic-cretaceous-period-ecosystem.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-nature-ecology-double-page-book-spread-infographic-cretaceous-period-ecosystem-prev.jpg"
+    },
+    "params": {
+      "ecology_topic_info": "Cretaceous Period ecosystem (145-66 million years ago) — peak dinosaur diversity (T-Rex, Triceratops, Velociraptor, Spinosaurus), flowering plants emerge, mammals diversify, ends with the K-Pg asteroid impact"
+    },
+    "locales": {
+      "en": {
+        "title": "Cretaceous Period ecosystem (145-66 million years ago) — peak dinosaur diversity (T-Rex, Triceratops, Velociraptor, Spinosaurus), flowering plants emerge, mammals diversify, ends with the K-Pg asteroid impact"
+      }
+    },
+    "topics": [
+      "learning",
+      "science",
+      "reading",
+      "information-card",
+      "nature",
+      "dinosaur",
+      "prehistoric"
+    ],
+    "search_aliases": [
+      "Cretaceous Period",
+      "白垩纪生态系统",
+      "恐龙",
+      "T-Rex",
+      "三角龙",
+      "生态图",
+      "食物链",
+      "教育图表"
+    ]
+  },
+  {
+    "id": "template-kids-vocabulary-poster-popular-dinosaurs",
+    "template_id": "template-kids-vocabulary-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-kids-vocabulary-poster-popular-dinosaurs.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-kids-vocabulary-poster-popular-dinosaurs-prev.jpg"
+    },
+    "params": {
+      "theme_name": "popular dinosaurs vocabulary — Tyrannosaurus, Triceratops, Stegosaurus, Velociraptor, Brachiosaurus, Spinosaurus, Allosaurus, Pteranodon, Ankylosaurus, Parasaurolophus"
+    },
+    "locales": {
+      "en": {
+        "title": "popular dinosaurs vocabulary — Tyrannosaurus, Triceratops, Stegosaurus, Velociraptor, Brachiosaurus, Spinosaurus, Allosaurus, Pteranodon, Ankylosaurus, Parasaurolophus"
+      }
+    },
+    "topics": [
+      "language",
+      "vocabulary",
+      "beginner",
+      "learning",
+      "posters",
+      "kids-vocabulary",
+      "english-chinese",
+      "dinosaur",
+      "prehistoric",
+      "animals"
+    ],
+    "search_aliases": [
+      "流行恐龙词汇",
+      "Tyrannosaurus",
+      "三角龙",
+      "迅猛龙",
+      "水彩海报",
+      "儿童学习",
+      "恐龙",
+      "动物"
+    ]
+  },
+  {
+    "id": "template-kids-vocabulary-poster-paleontology-vocabulary",
+    "template_id": "template-kids-vocabulary-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-kids-vocabulary-poster-paleontology-vocabulary.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-kids-vocabulary-poster-paleontology-vocabulary-prev.jpg"
+    },
+    "params": {
+      "theme_name": "paleontology vocabulary for kids — fossil, extinct, herbivore, carnivore, omnivore, predator, prey, Mesozoic, dig site, paleontologist"
+    },
+    "locales": {
+      "en": {
+        "title": "paleontology vocabulary for kids — fossil, extinct, herbivore, carnivore, omnivore, predator, prey, Mesozoic, dig site, paleontologist"
+      }
+    },
+    "topics": [
+      "language",
+      "vocabulary",
+      "beginner",
+      "learning",
+      "posters",
+      "kids-vocabulary",
+      "english-chinese",
+      "dinosaur",
+      "prehistoric",
+      "evolution"
+    ],
+    "search_aliases": [
+      "古生物学词汇",
+      "化石",
+      "灭绝",
+      "草食动物",
+      "肉食动物",
+      "掘地点",
+      "儿童学习",
+      "恐龙"
+    ]
+  },
+  {
+    "id": "template-evolution-timeline-infographic-dinosaurs-to-modern-birds",
+    "template_id": "template-evolution-timeline-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-evolution-timeline-infographic-dinosaurs-to-modern-birds.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-evolution-timeline-infographic-dinosaurs-to-modern-birds-prev.jpg"
+    },
+    "params": {
+      "topic": "Dinosaur to modern birds evolution timeline — from feathered theropods (Velociraptor, Microraptor) through Archaeopteryx to modern birds; 165 million years of evolution"
+    },
+    "locales": {
+      "en": {
+        "title": "Dinosaur to modern birds evolution timeline — from feathered theropods (Velociraptor, Microraptor) through Archaeopteryx to modern birds; 165 million years of evolution"
+      }
+    },
+    "topics": [
+      "learning",
+      "history",
+      "posters",
+      "evolution",
+      "science",
+      "timeline",
+      "dinosaur",
+      "prehistoric"
+    ],
+    "search_aliases": [
+      "恐龙到现代鸟类演化",
+      "演化时间线",
+      "羽毛恐龙",
+      "Archaeopteryx",
+      "165百万年",
+      "教育图表",
+      "史前",
+      "科学"
+    ]
+  },
+  {
+    "id": "template-top10-visual-guide-infographic-top10-biggest-dinosaurs-ever",
+    "template_id": "template-top10-visual-guide-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-top10-visual-guide-infographic-top10-biggest-dinosaurs-ever.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-top10-visual-guide-infographic-top10-biggest-dinosaurs-ever-prev.jpg"
+    },
+    "params": {
+      "topic": "Top 10 biggest dinosaurs ever — Argentinosaurus, Patagotitan, Dreadnoughtus, Spinosaurus, Sauroposeidon, Brachiosaurus, Diplodocus, Apatosaurus, Mamenchisaurus, Shantungosaurus — with length + weight"
+    },
+    "locales": {
+      "en": {
+        "title": "Top 10 biggest dinosaurs ever — Argentinosaurus, Patagotitan, Dreadnoughtus, Spinosaurus, Sauroposeidon, Brachiosaurus, Diplodocus, Apatosaurus, Mamenchisaurus, Shantungosaurus — with length + weight"
+      }
+    },
+    "topics": [
+      "learning",
+      "guides",
+      "posters",
+      "composition",
+      "groups",
+      "science",
+      "comparison",
+      "information-card",
+      "dinosaur",
+      "prehistoric",
+      "evolution"
+    ],
+    "search_aliases": [
+      "十大最大恐龙",
+      "Argentinosaurus",
+      "Patagotitan",
+      "Spinosaurus",
+      "教育图表",
+      "长度和重量",
+      "史前",
+      "比较"
+    ]
   }
 ]
