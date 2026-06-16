@@ -1,0 +1,253 @@
+{
+  "generated_at": "2026-06-17",
+  "source": "human eval at curify-gallery/daily_inspirations/June_16/匹配.docx",
+  "verdict_legend": {
+    "accurate": "matcher picks topically aligned with query intent",
+    "biased": "picks overlap with intent but drift on a key axis (subject, entity, layout)",
+    "wrong": "picks unrelated to intent — usually a generic-token-overrule failure",
+    "no_match": "matcher returned empty when relevant templates exist"
+  },
+  "queries": [
+    {
+      "query": "电商详情页",
+      "matcher_picks_zh": [
+        "商品详情页",
+        "商品海报"
+      ],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "amusement park map infographic",
+      "matcher_picks_zh": [
+        "旅行海报"
+      ],
+      "verdict": "biased",
+      "notes": "matched travel-poster, ignored 'amusement park' subject"
+    },
+    {
+      "query": "Maradona Hand of God",
+      "matcher_picks_zh": [
+        "球星海报",
+        "世界杯赛程海报"
+      ],
+      "verdict": "biased",
+      "notes": "got football-poster, missed iconic-moment-analysis intent"
+    },
+    {
+      "query": "world cup 2026 schedule",
+      "matcher_picks_zh": [
+        "世界杯赛程"
+      ],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "chiikawa",
+      "matcher_picks_zh": [
+        "人物信息卡"
+      ],
+      "verdict": "wrong",
+      "notes": "generic character card; missed Chiikawa franchise / kawaii templates"
+    },
+    {
+      "query": "fifa 2026",
+      "matcher_picks_zh": [
+        "世界杯海报",
+        "世界杯赛程"
+      ],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "diy craft tutorial poster",
+      "matcher_picks_zh": [
+        "蔬菜种植步骤",
+        "动作词卡"
+      ],
+      "verdict": "wrong",
+      "notes": "veg-planting + action-vocab; totally off — 'tutorial' alone drove match"
+    },
+    {
+      "query": "Brazil national team",
+      "matcher_picks_zh": [
+        "球队mbti",
+        "城市介绍卡片"
+      ],
+      "verdict": "biased",
+      "notes": "returned MBTI-of-team + city-info; should be squad poster"
+    },
+    {
+      "query": "cultural festival illustration poster",
+      "matcher_picks_zh": [
+        "节日海报"
+      ],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "vintage fashion lookbook",
+      "matcher_picks_zh": [
+        "穿搭推荐",
+        "食物分类"
+      ],
+      "verdict": "biased",
+      "notes": "outfit OK; food-category off"
+    },
+    {
+      "query": "brazil world cup squad poster",
+      "matcher_picks_zh": [
+        "球星贴纸",
+        "球队mbti"
+      ],
+      "verdict": "biased",
+      "notes": "sticker partial; MBTI-of-team wrong-axis"
+    },
+    {
+      "query": "product packaging mockup display",
+      "matcher_picks_zh": [
+        "产品外包装"
+      ],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "english spanish word comparison",
+      "matcher_picks_zh": [
+        "中文释义对照卡"
+      ],
+      "verdict": "wrong",
+      "notes": "Chinese-explanation card returned for English-Spanish query"
+    },
+    {
+      "query": "1950s vintage diner illustration retro poster",
+      "matcher_picks_zh": [
+        "物品发展史卡",
+        "旅行手账",
+        "节日海报"
+      ],
+      "verdict": "wrong",
+      "notes": "evolution + travel + festival; nothing fits 1950s diner"
+    },
+    {
+      "query": "most memorable World Cup moments",
+      "matcher_picks_zh": [
+        "最适合推荐卡",
+        "球星卡"
+      ],
+      "verdict": "wrong",
+      "notes": "recommendation + player card; should be iconic-event-analysis"
+    },
+    {
+      "query": "england 1966 world cup squad",
+      "matcher_picks_zh": [
+        "球星卡",
+        "赛程"
+      ],
+      "verdict": "biased",
+      "notes": "player + schedule; should be team-squad-poster directly"
+    },
+    {
+      "query": "fitness anatomy guide infographic",
+      "matcher_picks_zh": [],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "蔬菜",
+      "matcher_picks_zh": [
+        "食谱",
+        "食物推荐"
+      ],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "Maps",
+      "matcher_picks_zh": [],
+      "verdict": "no_match",
+      "notes": "matcher returned empty; we have map templates"
+    },
+    {
+      "query": "evolution snacks infographic",
+      "matcher_picks_zh": [
+        "历史演进",
+        "服装演进"
+      ],
+      "verdict": "wrong",
+      "notes": "history-evolution + clothing-evolution; 'snacks' subject ignored"
+    },
+    {
+      "query": "beauty step by step guide",
+      "matcher_picks_zh": [],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "brand logo design board",
+      "matcher_picks_zh": [
+        "商品banner"
+      ],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "vintage stamp collection garden birds",
+      "matcher_picks_zh": [],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "证件照",
+      "matcher_picks_zh": [
+        "商品海报"
+      ],
+      "verdict": "wrong",
+      "notes": "ID photo query returned product poster"
+    },
+    {
+      "query": "音乐",
+      "matcher_picks_zh": [
+        "音乐风格卡"
+      ],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "反义词",
+      "matcher_picks_zh": [
+        "反义词卡",
+        "同音不同义"
+      ],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "ielts vocabulary upgrade poster",
+      "matcher_picks_zh": [],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "homophones and homonyms",
+      "matcher_picks_zh": [],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "家居装饰",
+      "matcher_picks_zh": [
+        "装修风格卡",
+        "居家收纳卡"
+      ],
+      "verdict": "accurate",
+      "notes": ""
+    },
+    {
+      "query": "wedding planner",
+      "matcher_picks_zh": [],
+      "verdict": "no_match",
+      "notes": "wedding templates exist; matcher missed"
+    }
+  ]
+}

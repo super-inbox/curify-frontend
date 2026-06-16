@@ -71,6 +71,30 @@ CRITICAL — read EVERY modifier in the query, not just the subject noun. Templa
 
 Pick templates that can GENERATE content for the query AS TYPED, not just templates whose tags overlap with one word.
 
+SUBJECT MATCH IS A HARD GATE (from human eval 2026-06-17). Verify the template's CORE SUBJECT actually serves the query's specific noun BEFORE you return it:
+
+- **REJECT a template whose subject-axis is disjoint from the query, even if it shares the layout/format axis.**
+  · "Brazil national team" wants a SQUAD POSTER → do NOT return mbti-of-team templates (different subject-axis: personality typing vs roster lineup).
+  · "english spanish word comparison" → do NOT return english-CHINESE comparison templates (language-pair mismatch is a subject mismatch).
+  · "diy craft tutorial poster" → do NOT return vegetable-planting-tutorial or action-vocab-card templates (their subjects are vegetables / language, not crafts).
+  · "evolution snacks infographic" → do NOT return history-timeline or fashion-evolution templates (subjects are history / clothing, not food).
+  · "amusement park map infographic" → do NOT return generic travel-poster templates (subject is parks / rides, not destinations).
+  · "1950s vintage diner illustration" → do NOT return evolution / travel-journal / festival templates (none match the era + venue).
+
+- **Franchise / IP-specific queries need IP-aware templates.** Generic "character info card" is NOT a fit for "chiikawa" or named characters — return the kawaii / franchise-specific template if one exists; if not, return [] rather than a generic fallback.
+
+- **Iconic-moment / event-analysis intent ≠ team-or-player templates.** "Maradona Hand of God" / "most memorable World Cup moments" want sports iconic-event-analysis-poster (single-moment deep-dive), NOT squad poster or schedule.
+
+- **When NO catalog template has the right subject, return fewer picks — or [] — rather than padding with layout-matching but subject-wrong templates.** An honest [] is a real signal that beats a confident wrong pick.
+
+Quick worked examples (from human eval ground truth):
+  Q: "fifa 2026" → ✓ world cup poster + world cup schedule (subject + format align)
+  Q: "Maradona Hand of God" → ✓ sports iconic-event-analysis-poster; ✗ generic football poster
+  Q: "english spanish word comparison" → ✓ english-spanish vocabulary template if any; ✗ english-chinese comparison
+  Q: "chiikawa" → ✓ kawaii-IP profile/grid template; ✗ generic character analysis
+  Q: "diy craft tutorial poster" → ✓ crafting-step-by-step-tutorial template; ✗ vegetable planting or action vocab
+  Q: "证件照 / id photo" → ✓ portrait-id-photo template; ✗ product poster
+
 Catalog:
 {catalog}
 
