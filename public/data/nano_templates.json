@@ -14156,5 +14156,32 @@
       "information-card",
       "composition"
     ]
+  },
+  {
+    "id": "template-wc-daily-recap-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "Generate a single vertical 8K infographic poster titled \"FIFA World Cup 2026 — Results & Today's Matches\" with clean modern sports-graphic design, white/cream background, gold + navy accents, and stylized chibi-style cartoon player avatars where shown.\n\nUse the following daily payload (use VERBATIM — no substitutions, no skips):\n{wc_daily_data}\n\nVERTICAL LAYOUT, TOP TO BOTTOM:\n(1) HEADER — top-left: gold WC trophy; top-right: gold-trimmed soccer ball with confetti. Centered bold serif title \"FIFA World Cup 2026\", smaller subtitle \"Results & Today's Matches\", calendar icon + the current date from the payload.\n(2) YESTERDAY RESULTS — gold star-banner reading \"Yesterday: <yesterday-date> Results\". Below: 2x2 grid of match-result cards (one card per match in the YESTERDAY section). Each card shows: \"Group X\" label, left round flag badge + country ALL CAPS, big bold center score with white \"FT\" pill, right round flag badge + country, then below each team a bullet list of goal scorers with minute markers (e.g. \"Felix Nmecha 6'\", \"Kai Havertz 45+5' PK 88'\"). If a team has no scorers, render \"(none)\".\n(3) GOLDEN BOOT LEADERS — yellow rounded box on left with gold boot icon + \"Golden Boot Leaders\" label. Three chibi-style player avatars (sparkly eyes, jersey color matches country) side by side with name, country flag, goals. Yellow box on right with \"Tournament Goals\" label + huge number from the payload.\n(4) TODAY MATCHES — blue banner \"Today: <today-date> Matches\". Below: 4 fixture cards stacked vertically (render ALL fixture entries from the payload — do NOT omit any). Each card shows: \"Group X\" label, left flag + country, \"VS\", right flag + country, venue line with pin icon (stadium + city), multi-timezone time table with columns (Pacific / Mexico CT / Colombia / Eastern / UTC-3 / UK / Central Europe / Japan / East Aus / West Aus), and the big bold local-time on the right (e.g. \"12:00 ET\").\n(5) FOOTER — small centered note with clock icon: \"Times marked next-day occur on the following day locally.\"\n\nCRITICAL: ALL scores, scorer names, minute markers, country names, venues, and timezone numbers must reproduce VERBATIM from the payload — no substitution. Country names ALL CAPS. Round flag badges with thin gold ring; flags drawn accurately. Chibi avatars. Aspect ratio 4:5 portrait. White/cream background, navy + gold accents. Bold serif for titles, clean sans-serif for data.",
+        "parameters": [
+          {
+            "name": "wc_daily_data",
+            "label": "WC daily recap data payload (yesterday's results + scorers + golden boot + today's fixtures)",
+            "type": "text",
+            "placeholder": [
+              "Today: Monday, June 15, 2026; Yesterday: June 14 — Germany 7-1 Curaçao (Group E, FT), scorers DEU: Felix Nmecha 6', Nico Schlotterbeck 38', Kai Havertz 45+5' PK 88', Jamal Musiala 47', Nathaniel Brown 68', Deniz Unday 78'; CUW: Livano Comencenia 21'; Côte d'Ivoire 1-0 Ecuador (Group E, FT), scorers CIV: Amad Diallo 90'; ECU: (none); Netherlands 2-2 Japan (Group F, FT), scorers NED: Virgil van Dijk 50', Crysencio Summerville 64'; JPN: Keito Nakamura 57', Daichi Kamada 88'; Sweden 5-1 Tunisia (Group F, FT), scorers SWE: Yasin Ayari 7'+90+6', Alexander Isak 30', Viktor Gyökeres 60', Mattias Svanberg 84'; TUN: Omar Rekik 43'; Golden Boot Leaders: Folarin Balogun (USA) 2 goals, Kai Havertz (Germany) 2 goals, Yasin Ayari (Sweden) 2 goals; Tournament Goals: 38; Today fixtures Jun 15: Spain vs Cabo Verde (Group H) at Atlanta Stadium, Atlanta USA — 12:00 ET; Belgium vs Egypt (Group G) at Seattle Stadium, Seattle USA — 12:00 PT; Saudi Arabia vs Uruguay (Group G) at Miami Stadium, Miami USA — 18:00 ET; Iran vs New Zealand (Group H) at Los Angeles Stadium, Los Angeles USA — 18:00 PT."
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-wc-daily-recap-poster-prev.jpg",
+    "topics": [
+      "sports",
+      "world-cup",
+      "posters",
+      "information-card",
+      "composition"
+    ],
+    "rank_score": 92.0
   }
 ]
