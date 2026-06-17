@@ -14485,5 +14485,147 @@
       "posters",
       "groups"
     ]
+  },
+  {
+    "id": "template-fruit-commercial-lifestyle-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Single Fruit Popular Science Commercial Infographic Generator) Vertical newspaper-style fruit knowledge poster themed '{fruit_full_name}'. Layout: Oversized high-realism central fruit photography as core visual, vertical slanted bold headline text wrapping around the main fruit image; multiple independent segmented info panels distributed around the central fruit: world production distribution map, market sales bar chart, numbered icon health benefits list, nutritional value circular data labels, fruit variety comparison small illustrations, fun trivia block, seasonal picking guide, multi-culinary usage thumbnail gallery, fruit culture & art section. Style: clean modern newspaper food & health layout, natural fruit-themed main color palette, fresh vivid realistic fruit photography, neat small icon data visualization, clear readable sans-serif font, high resolution printable lifestyle magazine fruit guide infographic. Subject: complete market, nutrition, usage, culture popular science infographic poster for fruit '{fruit_full_name}'.",
+        "parameters": [
+          {
+            "name": "fruit_full_name",
+            "label": "完整水果名称",
+            "type": "text",
+            "placeholder": [
+              "草莓全方位科普商业信息海报",
+              "菠萝热带水果营养产地图解竖版展板",
+              "橙子柑橘品种、功效、市场数据科普长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-fruit-commercial-lifestyle-infographic-poster-grapes-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "lifestyle",
+      "food",
+      "product",
+      "posters"
+    ]
+  },
+  {
+    "id": "template-educational-flashcard-ontology-mindmap-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Educational Flashcard System Ontology Mind Map Generator) Horizontal kids education mind map infographic themed '{flashcard_theme_info}'. Layout: Central large rounded gradient title bubble as core topic, colorful branching lines radiating outward to multiple rectangular category modules; each module has cute matching cartoon illustrations, split into six main branch systems: classification categories, learning age levels, flashcard core content, visual asset types, interactive game functions, output product packs; bottom edge scattered theme cartoon mascots, bottom-right small front-back flashcard sample demo panel, tiny paw/star decorative doodles as background ornament. Style: clean soft pastel flat cartoon kid-friendly design, clear thick colored branch lines, rounded rectangle text boxes, simple sans-serif educational font, light solid soft background, high resolution printable curriculum system mind map poster. Subject: full system ontology mind map infographic for '{flashcard_theme_info}' bilingual children educational flashcard series.",
+        "parameters": [
+          {
+            "name": "flashcard_theme_info",
+            "label": "双语早教闪卡完整主题",
+            "type": "text",
+            "placeholder": [
+              "动物认知双语早教闪卡全体系思维导图信息图",
+              "恐龙百科中英文儿童闪卡产品架构科普思维导图展板",
+              "海洋生物幼儿启蒙闪卡分类体系横向mindmap长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-educational-flashcard-ontology-mindmap-infographic-dinosaur-bilingual-mindmap-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "learning",
+      "science",
+      "posters",
+      "information-card"
+    ]
+  },
+  {
+    "id": "template-musical-score-illustrated-art-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Illustrated Musical Score Art Poster Generator) Vertical decorative sheet music poster themed '{music_theme_info}'. Layout: Top area displays bold song title + composer credit text; the main body is standard musical staff notation, every staff segment is filled with hand-drawn scene illustrations that match the song's theme, small motifs integrate with musical notes and staff lines, scenes unfold sequentially along the progression of the sheet music; marginal decorative elements echo the overall theme style. Style: customizable art texture (vintage retro line drawing / clean flat vector cartoon / warm festive graphic), cohesive limited color palette matching the song mood, delicate hand-drawn linework, printable wall art quality, clear readable music notation. Subject: theme-customized illustrated decorative sheet music art poster for '{music_theme_info}'.",
+        "parameters": [
+          {
+            "name": "music_theme_info",
+            "label": "乐曲名称+主题风格设定",
+            "type": "text",
+            "placeholder": [
+              "《铃儿响叮当》圣诞冬日主题插画乐谱海报",
+              "华尔兹舞曲都市舞会复古手绘五线谱装饰画",
+              "森林童话民谣扁平化卡通乐谱艺术竖版海报"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-musical-score-illustrated-art-poster-chopin-ballet-dance-scene-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "design",
+      "posters",
+      "art",
+      "guides"
+    ]
+  },
+  {
+    "id": "template-vintage-collage-fashion-collection-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Polaroid Collage Fashion Lookbook Poster Generator) Vertical streetwear brand new collection promotional poster themed '{fashion_theme_info}'. Layout: Light aged textured beige paper background; top large flowing cursive script headline title; central cutout full-body fashion model sticker as core visual; surrounding 2-3 vintage polaroid photo frames with close-up garment detail shots; torn paper sticky note text labels with hand-drawn arrow annotations pointing to design features; loose sketchy scribble line decorative elements scattered around; bottom footer with brand name, store address or official website text. Style: retro scrapbook collage aesthetic, high fashion editorial photography, elegant red/orange cursive script font, minimalist neutral tone background, commercial clothing brand social media promotional graphic, high resolution vertical fashion feed poster. Subject: vintage polaroid collage style new clothing collection promo poster themed '{fashion_theme_info}'.",
+        "parameters": [
+          {
+            "name": "fashion_theme_info",
+            "label": "服装系列风格主题",
+            "type": "text",
+            "placeholder": [
+              "浅蓝拼接牛仔复古简约时装新品拼贴海报",
+              "法式极简通勤女装秋冬系列ins风宣传展板",
+              "复古街头辣妹休闲服饰新品上线拼贴长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vintage-collage-fashion-collection-poster-srd-new-accessory-collection-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "lifestyle",
+      "fashion",
+      "posters",
+      "nostalgia",
+      "composition"
+    ]
+  },
+  {
+    "id": "template-kpop-idol-profile-vintage-passport-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kpop Idol Member Vintage Profile Passport Style Poster Generator) Vertical minimalist k-pop member profile poster themed '{idol_profile_info}'. Layout: Thin light rectangular border frame, subtle grain aged paper texture background; centered full-body clean studio idol photo as main visual; left side giant vertical stacked bold name typography, small vertical Korean intro text block beside it; top right brand logo with tiny star sparkles; right side header text \"KOREAN SUPERSTAR\" + Korean biography paragraph; bottom right halftone dotted star graphic, hangul name, birth date, barcode decorative element; tiny sparkle star doodles at bottom corners, small text tag \"singer dancer idol\". Style: muted soft monochrome matching tone palette, retro print grain texture, clean minimalist kpop editorial design, soft neutral background, high resolution idol social media profile graphic, printable fanmade profile poster. Subject: vintage passport style k-pop idol member personal profile poster for '{idol_profile_info}'.",
+        "parameters": [
+          {
+            "name": "idol_profile_info",
+            "label": "偶像团体+成员名称/团体全员主题",
+            "type": "text",
+            "placeholder": [
+              "ILLIT女团MINJU单人复古证件风个人简介竖版海报",
+              "ILLIT五人团体全员合集韩系简约爱豆档案展板",
+              "韩系女团单人清冷质感粉丝向人物介绍信息图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-kpop-idol-profile-vintage-passport-poster-illit-yunah-prev.jpg",
+    "rank_score": 90.0,
+    "topics": [
+      "character",
+      "portrait",
+      "posters",
+      "nostalgia",
+      "profile"
+    ]
   }
 ]
