@@ -148,7 +148,16 @@
       "ghibli",
       "silicon-valley",
       "nba",
-      "disney"
+      "disney",
+      "superhero",
+      "celebrity",
+      "anthropomorphic",
+      "villain",
+      "detective",
+      "scientist",
+      "founder",
+      "cowboy",
+      "soccer"
     ],
     "travel": [
       "spain",
@@ -183,7 +192,8 @@
       "christmas",
       "snowy",
       "rainy",
-      "festive"
+      "festive",
+      "canada"
     ],
     "culture": [
       "spain",
@@ -203,7 +213,11 @@
       "portugal",
       "brazil",
       "vietnam",
-      "egypt"
+      "egypt",
+      "festival",
+      "mythological-figures",
+      "east-asian-culture",
+      "cuisine"
     ],
     "language": [
       "animals",
@@ -218,7 +232,9 @@
       "celebration",
       "body",
       "emotions",
-      "phonics"
+      "phonics",
+      "grammar-correction",
+      "poetry"
     ],
     "design": [
       "cartoon",
@@ -253,7 +269,15 @@
       "twilight",
       "studio",
       "bokeh",
-      "cinematic"
+      "cinematic",
+      "infographic",
+      "comic",
+      "caricature",
+      "miniature",
+      "calligraphy",
+      "object-labeling",
+      "before-and-after",
+      "step-by-step-tutorial"
     ],
     "learning": [
       "animals",
@@ -267,7 +291,16 @@
       "transportation",
       "celebration",
       "body",
-      "emotions"
+      "emotions",
+      "anatomy",
+      "literature",
+      "music",
+      "technology",
+      "fantasy",
+      "adventure",
+      "crime",
+      "western",
+      "military"
     ],
     "lifestyle": [
       "minimalist",
@@ -326,7 +359,18 @@
       "soft",
       "relaxed",
       "futuristic",
-      "natural-beauty"
+      "natural-beauty",
+      "business",
+      "workplace-dynamics",
+      "health",
+      "productivity",
+      "shopping",
+      "hobbies",
+      "sustainability",
+      "humor",
+      "botanical",
+      "herbal",
+      "zodiac"
     ],
     "product": [
       "food-packaging",
@@ -680,6 +724,59 @@
       "War of the Bucket",
       "Tulip Mania",
       "Great London Beer Flood"
+    ],
+    "places-scenes": [
+      "Kitchen",
+      "Library",
+      "Supermarket",
+      "Classroom",
+      "Laboratory",
+      "Playground",
+      "Cafe",
+      "Restaurant",
+      "Park",
+      "Bedroom",
+      "Amusement Park",
+      "Office",
+      "Gym",
+      "Hospital",
+      "Hotel"
+    ],
+    "cities": [
+      "Beijing",
+      "Bangkok",
+      "Paris",
+      "London",
+      "Tokyo",
+      "New York",
+      "Shanghai",
+      "Seoul",
+      "Mumbai",
+      "Dubai",
+      "Sydney",
+      "Rio de Janeiro",
+      "Mexico City",
+      "Istanbul",
+      "Hong Kong"
+    ],
+    "zodiac": [
+      "Aries",
+      "Taurus",
+      "Gemini",
+      "Cancer",
+      "Leo",
+      "Virgo",
+      "Libra",
+      "Scorpio",
+      "Sagittarius",
+      "Capricorn",
+      "Aquarius",
+      "Pisces"
+    ],
+    "traditional-medicine": [
+      "Traditional Chinese Medicine",
+      "Herbalism",
+      "Ayurveda"
     ]
   },
   "_gallery_tag_to_topics_note": "Gallery-prompt tag → tier-2/tier-3 topic(s) it maps to. Used by (1) lib/topicRegistry.ts getTopicsForTag — tag-page surfaces templates from these topics; (2) lib/relatedTags.ts getRelatedTags — tags sharing a topic are siblings. Replaces the previous flat-list categorized_tags.json categories with topic-aligned destinations.",
@@ -5578,5 +5675,11 @@
       "mbti",
       "quiz"
     ]
-  }
+  },
+  "audience": [
+    "kids-learning",
+    "early-childhood-learning",
+    "bilingual",
+    "professional"
+  ]
 }
