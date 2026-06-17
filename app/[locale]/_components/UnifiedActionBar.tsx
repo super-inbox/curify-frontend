@@ -88,7 +88,7 @@ export default function UnifiedActionBar({
   save,
   download,
 }: Props) {
-  const { trackAction } = useTracking();
+  const { trackAction, track } = useTracking();
   const trackSave = useSaveTracking(tracking.contentId, tracking.contentType, tracking.viewMode);
   const t = useTranslations("actionButtons");
 
@@ -103,6 +103,7 @@ export default function UnifiedActionBar({
   const handleSave = () => {
     if (!save || saved) return;
     if (!user) {
+      track({ contentId: "auth-modal:save-actionbar", contentType: "topic_capsule", actionType: "click" });
       setDrawerState("signin");
       return;
     }
@@ -123,8 +124,9 @@ export default function UnifiedActionBar({
 
   const handleBatchDownload = async () => {
     if (!batchDownload || isBatchDownloading) return;
-  
+
     if (!user) {
+      track({ contentId: "auth-modal:batch-download-actionbar", contentType: "topic_capsule", actionType: "click" });
       setDrawerState("signin");
       return;
     }

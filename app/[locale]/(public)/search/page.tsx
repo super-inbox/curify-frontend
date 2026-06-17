@@ -230,9 +230,18 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // intent for bare nation names is WC content (search-evolution data
   // 2026-06-14: argentina/spain/portugal bare queries had 0–66% CTR
   // because /search was returning mixed culture+WC results).
+  // ?from_search=<query> on every server-side redirect from /search → /topics
+  // gives the topic page a marker to fire a fixed-cardinality CLICK event
+  // (content_id='search-redirect', content_type='topic_capsule'). Without
+  // this, bare-country redirects bypass /search entirely and look like
+  // bucket-D no-click failures in the cycle SQL even though the redirect
+  // IS the conversion. See search_cycle5_pull.py + the topic-page
+  // SearchRedirectTracker for the attribution pickup.
+  const redirectMarker = `?from_search=${encodeURIComponent(query)}`;
+
   const bareCountrySlug = matchBareWcCountryQuery(query);
   if (bareCountrySlug) {
-    redirect(`/${locale}/topics/${bareCountrySlug}-world-cup`);
+    redirect(`/${locale}/topics/${bareCountrySlug}-world-cup${redirectMarker}`);
   }
 
   // "<country> world cup" → if the country has a registered topic page
@@ -241,7 +250,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // card chip click and bypasses LLM rewriter randomness.
   const wcCountrySlug = matchWcCountryQuery(query);
   if (wcCountrySlug) {
-    redirect(`/${locale}/topics/${wcCountrySlug}-world-cup`);
+    redirect(`/${locale}/topics/${wcCountrySlug}-world-cup${redirectMarker}`);
   }
 
   const tokens = buildSearchTokens(query);

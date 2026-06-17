@@ -51,7 +51,7 @@ export function NanoInspirationCard({
 
   const trackCardClick = useClickTracking(card.id, "nano_inspiration_template_card", "list");
   const trackRemix = useRemixTracking(card.id, "nano_inspiration_template_card", "list");
-  const { trackAction } = useTracking();
+  const { trackAction, track } = useTracking();
   const t = useTranslations("actionButtons");
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
@@ -63,7 +63,11 @@ export function NanoInspirationCard({
   const handleSave = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (saved) return;
-    if (!user) { setDrawerState("signin"); return; }
+    if (!user) {
+      track({ contentId: "auth-modal:save-card", contentType: "topic_capsule", actionType: "click" });
+      setDrawerState("signin");
+      return;
+    }
     setSaved(true);
     trackAction(batchTracking, "favorite");
     setShowSavedToast(true);
@@ -80,7 +84,12 @@ export function NanoInspirationCard({
     e.stopPropagation();
     if (isDownloadingRef.current) return;
     isDownloadingRef.current = true;
-    if (!user) { setDrawerState("signin"); isDownloadingRef.current = false; return; }
+    if (!user) {
+      track({ contentId: "auth-modal:download-card", contentType: "topic_capsule", actionType: "click" });
+      setDrawerState("signin");
+      isDownloadingRef.current = false;
+      return;
+    }
 
     try {
       setIsDownloading(true);
