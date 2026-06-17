@@ -44,7 +44,7 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
   const [, setDrawerState] = useAtom(drawerAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
   const t = useTranslations();
-  const { trackAction } = useTracking();
+  const { trackAction, track } = useTracking();
 
   const trackToolClick = (toolId: string) => {
     trackAction(
@@ -56,6 +56,7 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
   const openToolModal = (tool: ToolDef) => {
     trackToolClick(tool.id);
     if (!user) {
+      track({ contentId: `auth-modal:tool-launch:${tool.id}`, contentType: "topic_capsule", actionType: "click" });
       setDrawerState("signin");
       return;
     }

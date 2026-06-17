@@ -76,7 +76,7 @@ export function useDirectGenerate({
 }: Options) {
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
-  const { trackAction } = useTracking();
+  const { trackAction, track } = useTracking();
   const t = useTranslations("actionButtons");
 
   const [isGenerating, setIsGenerating] = useState(false);
@@ -117,6 +117,11 @@ export function useDirectGenerate({
       // would silently no-op at the top of this function.
       pendingGenerateRef.current = true;
       isGeneratingRef.current = false;
+      // auth-modal tracking — mirrors services/useRequireAuth.ts. Funnel
+      // pull 2026-06-17 surfaced 0 auth-modal events because this hot
+      // path (the Generate flow) bypassed useRequireAuth. Reason
+      // 'generate-attempt' so we can split friction by verb.
+      track({ contentId: "auth-modal:generate-attempt", contentType: "topic_capsule", actionType: "click" });
       setDrawerState("signin");
       return;
     }
