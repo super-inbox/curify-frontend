@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { InspirationCardType } from "./InspirationCard";
-import { NanoInspirationCardType } from "@/lib/nano_utils";
+import { NanoInspirationCardType } from "@/lib/nano_pure";
 
 function normalizeImageSrc(src?: string | null) {
   if (!src) return "";

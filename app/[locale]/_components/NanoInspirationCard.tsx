@@ -20,10 +20,10 @@ import {
   normalizeCarouselUrls,
   getLocaleFromPath,
   toSlug,
-} from "@/lib/nano_utils";
+} from "@/lib/nano_pure";
 import { useGridCols } from "@/lib/device";
 
-import { NanoInspirationCardType } from "@/lib/nano_utils";
+import { NanoInspirationCardType } from "@/lib/nano_pure";
 
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");

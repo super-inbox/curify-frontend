@@ -21,6 +21,7 @@ const TIMEOUT_MS = 15_000;
 type TemplateShape = {
   id: string;
   allow_generation?: boolean;
+  og_image?: string;
   locales?: Record<string, { parameters?: Array<{ name?: string }> } | undefined>;
 };
 
@@ -53,6 +54,13 @@ const TEMPLATE_IDS = new Set(
     .filter((t) => t.allow_generation === true)
     .map((t) => t.id),
 );
+// id → og_image preview. Attached to each match server-side so the client
+// GenerableTemplatesSection doesn't have to import the 842K templates JSON
+// just to look up a preview thumbnail (it shipped in the /search bundle).
+const TEMPLATE_OG = new Map<string, string>();
+for (const t of nanoTemplates as TemplateShape[]) {
+  if (t.og_image) TEMPLATE_OG.set(t.id, t.og_image);
+}
 
 const SYSTEM_PROMPT = `You match user search queries to Curify image-generation templates that could create content for those queries.
 
@@ -106,6 +114,8 @@ export type TemplateMatch = {
   params: Record<string, string>;
   confidence: number;
   reason: string;
+  /** og_image preview URL, attached server-side from the templates catalog. */
+  og_image?: string;
 };
 
 type MatchCache = Map<string, { matches: TemplateMatch[]; at: number }>;
@@ -210,6 +220,7 @@ export async function matchTemplatesForQuery(
         params: sanitizeParams((m as { params?: unknown }).params),
         confidence: conf,
         reason: String((m as { reason?: unknown }).reason ?? ""),
+        og_image: TEMPLATE_OG.get(tid),
       });
       if (cleanedMatches.length >= 3) break;
     }

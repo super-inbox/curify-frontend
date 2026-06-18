@@ -6,7 +6,7 @@ import { useRequireAuth } from "@/services/useRequireAuth";
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
-import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import HomeToolsStrip from "./HomeToolsStrip";
 import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
 import { TOP_QUERIES } from "@/app/[locale]/(public)/topics/[slug]/TopSearchSuggestions";

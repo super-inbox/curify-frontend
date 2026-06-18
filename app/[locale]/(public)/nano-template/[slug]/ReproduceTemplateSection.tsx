@@ -11,8 +11,8 @@ import Upload from "@/app/[locale]/_components/Upload";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
-import { toSlug } from "@/lib/nano_utils";
-import { getUseCasesForTopics } from "@/lib/topicRegistry";
+import { toSlug } from "@/lib/nano_pure";
+import { getUseCasesForTopics } from "@/lib/topicRegistry_pure";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 
 import {

@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { SITE_URL } from "@/lib/constants";
-import { toSlug } from "@/lib/nano_utils";
+import { toSlug } from "@/lib/nano_pure";
 import { useClickTracking, useTracking, useVideoTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";

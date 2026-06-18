@@ -1,7 +1,7 @@
 "use client";
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
-import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import { PageLocale } from "@/lib/locale_utils";
 import blogsData from "@/public/data/blogs.json";
 import { useRequireAuth } from "@/services/useRequireAuth";

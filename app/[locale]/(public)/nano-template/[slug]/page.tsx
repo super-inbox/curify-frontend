@@ -28,7 +28,7 @@ import {
   buildNanoTemplateDetailData,
 } from "@/lib/nano_page_data";
 
-import { getTagChildren, getPrimaryTagTier1 } from "@/lib/topicRegistry";
+import { getTagChildren, getPrimaryTagTier1, getTopicNavList } from "@/lib/topicRegistry";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -173,7 +173,8 @@ export default async function NanoTemplatePage({ params }: Props) {
 
             {templateTopics.length > 0 ? (
   <TopicNavRow
-    locale={pageLocale}    
+    locale={pageLocale}
+    allTopics={getTopicNavList()}
     topics={templateTopics}
     className="mt-4 mb-0"
     showDisabled={false}
@@ -305,6 +306,7 @@ export default async function NanoTemplatePage({ params }: Props) {
           </h2>
           <TopicNavRow
             locale={pageLocale}
+            allTopics={getTopicNavList()}
             topics={tagSubTopics}
             showDisabled={false}
             size="default"

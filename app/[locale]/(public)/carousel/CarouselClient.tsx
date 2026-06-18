@@ -30,10 +30,10 @@ import PromptRightColumn from "./PromptRightColumn";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 import { useTracking } from "@/services/useTracking";
 import { useIsMobileLikeDevice } from "@/lib/device";
-import { toSlug } from "@/lib/nano_utils";
-import type { TemplateParameter } from "@/lib/nano_utils";
+import { toSlug } from "@/lib/nano_pure";
+import type { TemplateParameter } from "@/lib/nano_pure";
 import type { ExistingExampleRef } from "@/lib/editDistance";
-import { getUseCasesForTopics } from "@/lib/topicRegistry";
+import { getUseCasesForTopics, type TopicNavItem } from "@/lib/topicRegistry_pure";
 
 const PROMPT_PLACEHOLDER_IMAGE = "/images/default-prompt-image.jpg";
 
@@ -181,6 +181,10 @@ type TemplateExampleProps = {
   templateBatch: boolean;
   basePrompt: string;
   existingExamples: ExistingExampleRef[];
+  // Slim topic list for the sidebar's TopicNavRow. Computed server-side
+  // (getTopicNavList) and passed down so this client bundle never imports
+  // the data-derived topic registry (and its ~4MB nano JSON).
+  allTopics: TopicNavItem[];
   // If set (the grid passes its own page URL via ?from=…), close
   // returns the user there instead of the per-example detail page.
   closeHref?: string;
@@ -734,6 +738,7 @@ export default function CarouselClient(props: Props) {
             <ExampleRightColumn
               key={slide.id}
               showHeader
+              allTopics={tProps.allTopics}
               chipTopics={tProps.templateTopics}
               chipExampleTopics={slide.topics}
               chipCategory={slide.category}

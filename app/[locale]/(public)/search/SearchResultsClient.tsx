@@ -10,7 +10,7 @@ import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/Exam
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
 import GenerableTemplatesSection from "./GenerableTemplatesSection";
-import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import type { SuggestionEntry } from "@/lib/searchIndex";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
 import { useTracking } from "@/services/useTracking";

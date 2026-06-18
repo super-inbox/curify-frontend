@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 
 import { nanoGenerateService } from "@/services/nanoGenerate";
-import { buildExampleId } from "@/lib/nano_utils";
+import { buildExampleId } from "@/lib/nano_pure";
 import { findDuplicate, type ExistingExampleRef } from "@/lib/editDistance";
 import { useTracking, type TrackingTarget } from "@/services/useTracking";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
