@@ -13,6 +13,7 @@ import GenerableTemplatesSection from "./GenerableTemplatesSection";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import type { SuggestionEntry } from "@/lib/searchIndex";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
+import type { IntentChip } from "@/lib/intent_clusters";
 import { useTracking } from "@/services/useTracking";
 
 type InspRecord = {
@@ -41,6 +42,10 @@ type Props = {
    *  enough or when the rewriter was unavailable. Surfaced to the
    *  user via a "Showing results for: …" hint above the grid. */
   usedRewrites?: string[];
+  /** Top output-type slugs derived from matched templates' topics —
+   *  Pinterest-style "Explore further" chip row above the example
+   *  grid. Empty when no chip clears the minCount threshold. */
+  intentChips?: IntentChip[];
 };
 
 // Compute the href for a SuggestionEntry chip — honors `href` overrides
@@ -63,6 +68,7 @@ export default function SearchResultsClient({
   matchedTemplates,
   galleryPrompts,
   usedRewrites = [],
+  intentChips = [],
 }: Props) {
   const [input, setInput] = useState(query);
   const router = useRouter();
@@ -233,6 +239,40 @@ export default function SearchResultsClient({
         </div>
       ) : (
         <>
+          {/* Intent chip row — Pinterest-style "Explore further" derived
+              from the output-type tags on matched templates. Sits ABOVE
+              the example grid so users can narrow by creation intent
+              (flashcards / posters / stickers / …) before scrolling
+              through individual examples. Click → /topics/<slug>?from_search
+              (server-side redirect attribution stays consistent with the
+              bare-country redirect bucket tracked since 2026-06-16). */}
+          {intentChips.length > 0 && (
+            <section className="mb-6 flex flex-wrap items-center gap-2">
+              <span className="text-sm font-semibold text-neutral-700">
+                Explore further:
+              </span>
+              {intentChips.map(({ slug, count }) => (
+                <Link
+                  key={slug}
+                  href={`/${locale}/topics/${slug}?from_search=${encodeURIComponent(query)}`}
+                  onClick={() =>
+                    track({
+                      contentId: `intent-chip:${slug}:${query}`,
+                      contentType: "topic_capsule",
+                      actionType: "click",
+                    })
+                  }
+                  className="inline-flex items-center gap-1.5 rounded-full border border-purple-200 bg-purple-50 px-3.5 py-1.5 text-sm text-purple-900 transition-colors hover:border-purple-400 hover:bg-purple-100"
+                >
+                  <span className="font-semibold">
+                    {renderLabel(slug, slug.replace(/-/g, " "))}
+                  </span>
+                  <span className="text-xs text-purple-600">{count}</span>
+                </Link>
+              ))}
+            </section>
+          )}
+
           {/* Examples grid (top): same UI used on /topics, /nano-template
               detail, /inspiration-hub. Tracking, share, remix all carry over
               for free. */}

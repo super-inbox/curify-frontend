@@ -18,6 +18,7 @@ import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import { tsToSc } from "@/lib/zh_normalize";
 import { rewriteQuery } from "@/lib/searchRewrite";
 import { matchBareWcCountryQuery, matchWcCountryQuery } from "@/lib/wcCountryRouting";
+import { topIntentChips } from "@/lib/intent_clusters";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Threshold below which we trigger the LLM rewrite path. Matches the
@@ -690,6 +691,14 @@ export default async function SearchPage({ params, searchParams }: Props) {
     }
   }
 
+  // Phase 1 intent-chip aggregator: derive top output-type slugs from
+  // matched templates' topics[] so /search can offer Pinterest-style
+  // "Explore further" chips above the example grid. Uses the 19-slug
+  // output-type vocabulary tagged across 285 templates in af768fe7.
+  // Computed server-side so the chip row renders in the initial HTML
+  // (no client flash + good SEO indexing).
+  const intentChips = topIntentChips(matchedTemplates, { topN: 5, minCount: 2 });
+
   return (
     <SearchResultsClient
       query={query}
@@ -699,6 +708,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
       matchedTemplates={matchedTemplates}
       galleryPrompts={galleryPrompts}
       usedRewrites={usedRewrites}
+      intentChips={intentChips}
     />
   );
 }
