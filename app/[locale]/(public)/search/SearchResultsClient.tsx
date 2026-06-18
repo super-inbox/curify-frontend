@@ -26,7 +26,7 @@ type InspRecord = {
   params?: Record<string, unknown>;
   topics?: string[];
   tags?: string[];
-  locales?: Record<string, { title?: string }>;
+  locales?: Record<string, { title?: string; category?: string }>;
 };
 
 type Props = {
@@ -88,20 +88,44 @@ export default function SearchResultsClient({
         counts.set(r.template_id, n + 1);
         return true;
       })
-      .map((r) => ({
-        id: r.id,
-        title:
-          r.locales?.[locale]?.title ||
-          r.locales?.en?.title ||
-          r.locales?.zh?.title ||
-          "",
-        preview: r.asset.preview_image_url,
-        templateId: r.template_id,
-        params: Object.fromEntries(
-          Object.entries(r.params ?? {}).map(([k, v]) => [k, String(v ?? "")])
-        ) as Record<string, string>,
-        videoUrl: r.asset.video_url,
-      }));
+      .map((r) => {
+        // Caption fallback chain: prefer locales.[locale].title (i18n);
+        // then EN/ZH title; then locales.category; then the first
+        // non-empty param value (humanized); finally, strip the
+        // template_id prefix from the id and title-case the suffix.
+        // Keeps the search grid readable for records where authored
+        // i18n is sparse without showing raw slugs.
+        const titleForCaption = (() => {
+          const direct =
+            r.locales?.[locale]?.title ||
+            r.locales?.en?.title ||
+            r.locales?.zh?.title;
+          if (direct) return direct;
+          const cat =
+            r.locales?.[locale]?.category || r.locales?.en?.category;
+          if (cat) return cat;
+          const firstParam = Object.values(r.params ?? {}).find(
+            (v) => v != null && String(v).trim().length > 0
+          );
+          if (firstParam) return String(firstParam);
+          const idTail = r.id
+            .replace(r.template_id, "")
+            .replace(/^-/, "")
+            .replace(/-/g, " ")
+            .trim();
+          return idTail;
+        })();
+        return {
+          id: r.id,
+          title: titleForCaption,
+          preview: r.asset.preview_image_url,
+          templateId: r.template_id,
+          params: Object.fromEntries(
+            Object.entries(r.params ?? {}).map(([k, v]) => [k, String(v ?? "")])
+          ) as Record<string, string>,
+          videoUrl: r.asset.video_url,
+        };
+      });
   }, [inspirations, locale]);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -221,6 +245,7 @@ export default function SearchResultsClient({
                 items={gridItems}
                 locale={locale}
                 maxRows={3}
+                showCaption
               />
             </section>
           )}
