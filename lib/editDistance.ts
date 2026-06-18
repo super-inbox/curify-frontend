@@ -1,4 +1,4 @@
-import { buildExampleId } from "@/lib/nano_utils";
+import { buildExampleId } from "@/lib/nano_pure";
 
 export const SIMILARITY_THRESHOLD = 0.92;
 

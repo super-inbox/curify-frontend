@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import CarouselClient from "../../../CarouselClient";
+import { getTopicNavList } from "@/lib/topicRegistry";
 import {
   buildNanoPageContext,
   resolveLocalizedExampleCopy,
@@ -164,6 +165,7 @@ export default async function TemplateExampleCarouselPage({
       templateBatch={templateBatch}
       basePrompt={basePrompt}
       existingExamples={existingExamples}
+      allTopics={getTopicNavList()}
       closeHref={from ? decodeURIComponent(from) : undefined}
       gridIds={idsParam}
     />

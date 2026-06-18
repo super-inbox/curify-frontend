@@ -122,7 +122,7 @@ The mechanical brief: pick one existing example from the saturated (subject × i
 2. **Promote Layout to a queryable tag** (audit Open item 2). The heuristic works as a first cut but loses fidelity for genuinely-mixed-layout templates. Once explicit, the gap matrix becomes authoritative and feeds the search-generation bridge's accept criterion.
 3. **Tier-weighted matcher scoring** (#4 from the 2026-06-02 ontology-use proposal) — depends on Layout being a real tag.
 
-**See also:** the agentic eval framework at [`docs/eval-framework-agentic-template-prompt-2026-06-15.md`](./eval-framework-agentic-template-prompt-2026-06-15.md). Its Layer 1 (Template + Slot Accuracy) is essentially **the 3-tier ontology as a scoring rubric** — each user intent decomposes into a (Subject × Info-type × Layout) gold cell, and the agent's pick is graded against it. The eval doubles as ontology validation: gold cells that humans can't fill mark real content gaps and feed back to the gap matrix.
+**See also:** the Visual Intent Routing eval at [`docs/eval-framework-visual-intent-routing-2026-06-15.md`](./eval-framework-visual-intent-routing-2026-06-15.md) (renamed 2026-06-17 from "Agentic Evaluation"). Its Layer 1 (Routing Accuracy) is essentially **the 3-tier ontology as a scoring rubric** — each user intent decomposes into a (Subject × Info-type × Layout) gold cell, and the routing system's pick is graded against it. The eval doubles as ontology validation: gold cells that humans can't fill mark real content gaps and feed back to the gap matrix.
 
 ### Current state
 

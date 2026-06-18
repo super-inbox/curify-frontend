@@ -1,10 +1,19 @@
 export type EntryBarItem = {
   id: string;
   emoji?: string;
-  path: string; // ✅ 从 href 改成 path
+  path: string;
   isHot?: boolean;
 };
 
+// 2026-06-19 entry bar refresh: pivots from abstract topic framing to
+// action-oriented "what you can make" framing. Order picks supply
+// (inspirations per bucket) AND demand (gallery copy signal) — see
+// docs/visual-layer-distribution-2026-06-19.md for the per-bucket counts.
+// Culture dropped (covered by Travel + Social Media Assets + Food).
+// AI Portraits added because ~22 of top-25 gallery copies are
+// photorealistic AI portraits/selfies — dominant remix demand.
+// Recipes & Food Cards added: 346 inspirations, currently invisible
+// from top-level nav.
 export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
   {
     id: "world-cup",
@@ -18,24 +27,19 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     path: "/topics/character",
   },
   {
-    id: "language",
-    emoji: "🗣️",
-    path: "/topics/language",
+    id: "ai-portrait",
+    emoji: "📸",
+    path: "/topics/portrait",
   },
   {
     id: "learning",
-    emoji: "📚",
+    emoji: "🧠",
     path: "/topics/learning",
   },
   {
-    id: "travel",
-    emoji: "✈️",
-    path: "/topics/travel",
-  },
-  {
-    id: "culture",
-    emoji: "🏛️",
-    path: "/topics/culture",
+    id: "language",
+    emoji: "🗣️",
+    path: "/topics/language",
   },
   {
     id: "lifestyle",
@@ -43,13 +47,28 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     path: "/topics/lifestyle",
   },
   {
-    id: "product",
-    emoji: "🛍️",
-    path: "/topics/product",
+    id: "travel",
+    emoji: "✈️",
+    path: "/topics/travel",
+  },
+  {
+    id: "food",
+    emoji: "🍳",
+    path: "/topics/food",
   },
   {
     id: "visual",
     emoji: "🎨",
     path: "/topics/design",
+  },
+  {
+    id: "product",
+    emoji: "🛍️",
+    path: "/topics/product",
+  },
+  {
+    id: "merch",
+    emoji: "🎁",
+    path: "/topics/merch",
   },
 ];

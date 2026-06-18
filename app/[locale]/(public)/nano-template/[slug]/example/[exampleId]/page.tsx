@@ -14,6 +14,7 @@ import MoreLikeThisRail from "@/app/[locale]/_components/MoreLikeThisRail";
 import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
 import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import { getTopicNavList } from "@/lib/topicRegistry";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
 
@@ -292,12 +293,14 @@ export default async function NanoExampleDetailPage({
   const mergedTopics = [
     ...new Set([...(templateTopics ?? []), ...(exampleTopics ?? [])]),
   ];
+  const topicNav = getTopicNavList();
   const metaChips =
     mergedTopics.length > 0 || category ? (
       <>
         {mergedTopics.length > 0 && (
           <TopicNavRow
             locale={rawLocale}
+            allTopics={topicNav}
             topics={mergedTopics}
             className="mb-0"
             showDisabled={false}
@@ -372,6 +375,7 @@ export default async function NanoExampleDetailPage({
             examplePageUrl={examplePageUrl}
             existingExamples={existingExamples}
             useCaseFilter={templateUseCases}
+            allTopics={topicNav}
           />
         }
         moreLikeThisRail={
@@ -407,6 +411,7 @@ export default async function NanoExampleDetailPage({
               maxRows={2}
               desktopOpensExample
               desktopHideFirstN={2}
+              showCaption
             />
           </>
         )}
@@ -415,7 +420,7 @@ export default async function NanoExampleDetailPage({
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More from this template
             </h2>
-            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} desktopOpensExample />
+            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} desktopOpensExample showCaption />
           </>
         )}
 

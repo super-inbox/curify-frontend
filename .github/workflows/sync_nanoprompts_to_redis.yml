@@ -8,7 +8,13 @@ on:
       - "public/data/nanobanana.json"
       - "scripts/sync_nanoprompts_to_redis.cjs"
       - "scripts/regen_nanobanana_metadata.cjs"
+      - "scripts/snapshot_top_remix_prompts.cjs"
       - ".github/workflows/sync_nanoprompts_to_redis.yml"
+  schedule:
+    # Daily 06:00 UTC — refreshes public/data/top_remix_prompts.json
+    # (top-25 gallery prompts by 30d copy count) for the home fused
+    # rail. Redis sync step is idempotent so daily fire is harmless.
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -64,3 +70,23 @@ jobs:
           REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
           REDIS_TLS: true
         run: npm run redis:sync:nanoprompts
+
+      - name: Snapshot top-25 remixed gallery prompts (30d)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          npm install pg --no-save
+          node scripts/snapshot_top_remix_prompts.cjs
+
+      - name: Commit snapshot if changed
+        run: |
+          if git diff --quiet -- public/data/top_remix_prompts.json; then
+            echo "No snapshot changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/top_remix_prompts.json
+          git commit -m "chore: auto-update top_remix_prompts.json (30d copy snapshot)"
+          git push

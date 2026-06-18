@@ -3,16 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
-import nanoTemplates from "@/public/data/nano_templates.json";
 import { useClickTracking } from "@/services/useTracking";
-import { toSlug } from "@/lib/nano_utils";
+import { toSlug } from "@/lib/nano_pure";
 import type { TemplateMatch } from "@/lib/searchTemplateMatch";
-
-type TemplateShape = { id: string; og_image?: string };
-const TPL_PREVIEW = new Map<string, string>();
-for (const t of nanoTemplates as TemplateShape[]) {
-  if (t.og_image) TPL_PREVIEW.set(t.id, t.og_image);
-}
 
 // Confidence threshold below which we hedge the label.
 const HIGH_CONFIDENCE = 0.7;
@@ -28,7 +21,7 @@ function GenerableCard({
   locale: string;
   query: string;
 }) {
-  const preview = TPL_PREVIEW.get(match.template_id) ?? "/images/default-prompt-image.jpg";
+  const preview = match.og_image ?? "/images/default-prompt-image.jpg";
   const slug = toSlug(match.template_id);
   const qs = new URLSearchParams(match.params).toString();
   const href = `/${locale}/nano-template/${slug}${qs ? `?${qs}` : ""}#reproduce`;

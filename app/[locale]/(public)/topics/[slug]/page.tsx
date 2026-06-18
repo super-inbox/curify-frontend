@@ -20,7 +20,7 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic, getTopicNavList } from "@/lib/topicRegistry";
 import TopSearchSuggestions, { TOP_QUERIES } from "./TopSearchSuggestions";
 import SearchRedirectTracker from "./SearchRedirectTracker";
 import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
@@ -329,6 +329,7 @@ export default async function Page({ params }: Props) {
             <div className="mt-4">
               <TopicNavRow
                 locale={localeStr}
+                allTopics={getTopicNavList()}
                 topics={relatedTopicIds}
                 activeTopic={slug}
                 showDisabled={false}
@@ -341,6 +342,7 @@ export default async function Page({ params }: Props) {
             <div className="mt-4">
               <TopicNavRow
                 locale={localeStr}
+                allTopics={getTopicNavList()}
                 topics={navSubTopics}
                 activeTopic={slug}
                 showDisabled={false}
@@ -368,6 +370,7 @@ export default async function Page({ params }: Props) {
             locale={localeStr}
             maxRows={3}
             desktopOpensExample
+            showCaption
             topRightCell={
               (slug === "world-cup" || slug === "sports")
                 ? <WcRotatingSlot locale={localeStr} queries={TOP_QUERIES["world-cup"]} />
@@ -431,6 +434,7 @@ export default async function Page({ params }: Props) {
           </h2>
           <TopicNavRow
             locale={localeStr}
+            allTopics={getTopicNavList()}
             topics={tagSubTopics}
             showDisabled={false}
             size="default"

@@ -12,9 +12,10 @@ import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
-import { fillPrompt } from "@/lib/nano_utils";
+import { fillPrompt } from "@/lib/nano_pure";
 import { normalizePrefills } from "@/lib/nano_prompt_utils";
-import type { TemplateParameter } from "@/lib/nano_utils";
+import type { TemplateParameter } from "@/lib/nano_pure";
+import type { TopicNavItem } from "@/lib/topicRegistry_pure";
 import type { ExistingExampleRef } from "@/lib/editDistance";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
@@ -52,6 +53,10 @@ type Props = {
   chipExampleTopics?: string[];
   chipCategory?: string;
   showHeader?: boolean;
+  /** Slim topic list for the in-column TopicNavRow (only rendered when
+   *  showHeader is set). Computed server-side via getTopicNavList() and
+   *  passed down so this client component never imports the topic registry. */
+  allTopics?: TopicNavItem[];
 };
 
 export default function ExampleRightColumn({
@@ -74,6 +79,7 @@ export default function ExampleRightColumn({
   chipExampleTopics,
   chipCategory,
   showHeader,
+  allTopics = [],
 }: Props) {
   const [form, setForm] = useState<Record<string, string>>(initialParams);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
@@ -145,6 +151,7 @@ export default function ExampleRightColumn({
           {mergedTopics.length > 0 && (
             <TopicNavRow
               locale={locale}
+              allTopics={allTopics}
               topics={mergedTopics}
               className="mb-0"
               showDisabled={false}

@@ -1,7 +1,6 @@
 {
   "topics": {
     "learning": {
-      "displayName": "Connaissance",
       "title": "Invitations Visuelles, Modèles et Inspirations pour l'Apprentissage",
       "description": "Explorez des visuels AI axés sur l'apprentissage, des modèles éducatifs et des cartes d'inspiration pour le partage de connaissances, les explications, le contenu d'étude et les résumés visuels.",
       "intro": "Bienvenue dans notre collection de modèles d'IA et de prompts visuels axés sur l'apprentissage, conçus pour améliorer le partage des connaissances et les expériences éducatives. Que vous soyez un éducateur cherchant à créer des supports d'étude engageants, un designer à la recherche d'inspiration pour des résumés visuels, ou un créateur de contenu souhaitant simplifier des concepts complexes, cette galerie offre une variété de modèles et d'exemples adaptés à vos besoins. Plongez ci-dessous pour explorer notre sélection de ressources qui stimulent la créativité et facilitent un apprentissage efficace.",
@@ -9,7 +8,8 @@
         "éducation",
         "étude",
         "édu"
-      ]
+      ],
+      "displayName": "Infographies"
     },
     "history": {
       "displayName": "Histoire",
@@ -38,14 +38,14 @@
       ]
     },
     "design": {
-      "displayName": "Design",
       "title": "Invitations Visuelles, Modèles et Inspirations en Design",
       "description": "Découvrez des visuels AI liés au design, des modèles créatifs et des inspirations pour le branding, les mises en page, les concepts visuels et les explorations esthétiques.",
       "intro": "Explorez notre galerie soigneusement sélectionnée de visuels d'IA liés au design, présentant une collection diversifiée de modèles, d'exemples et d'incitations adaptés aux créateurs, éducateurs et designers. Que vous cherchiez de l'inspiration pour le branding, des idées de mise en page ou des concepts visuels uniques, cette collection a quelque chose pour tout le monde. Plongez dans les modèles et exemples ci-dessous pour stimuler votre créativité et élever vos projets de design.",
       "keywords": [
         "art",
         "design graphique"
-      ]
+      ],
+      "displayName": "Affiches & Designs"
     },
     "nature": {
       "displayName": "Nature",
@@ -60,7 +60,6 @@
       ]
     },
     "travel": {
-      "displayName": "Voyage",
       "title": "Invitations Visuelles, Modèles et Inspirations pour le Voyage",
       "description": "Explorez des visuels AI sur le thème du voyage, des modèles de destination et des inspirations pour des monuments, des guides de ville, des récits culturels et du contenu lié aux voyages.",
       "intro": "Plongez dans notre collection soigneusement sélectionnée de visuels, modèles et prompts sur le thème du voyage, conçus pour stimuler votre créativité. Que vous soyez un blogueur de voyage à la recherche d'inspiration pour votre prochain guide de destination, un designer cherchant à créer des publicités de voyage captivantes, ou un éducateur souhaitant enrichir votre programme avec des récits culturels, vous trouverez ici une richesse de ressources. Explorez les modèles et exemples ci-dessous pour donner vie à vos récits de voyage.",
@@ -69,10 +68,10 @@
         "voyage",
         "parcours",
         "tourisme"
-      ]
+      ],
+      "displayName": "Affiches de Voyage & Cartes"
     },
     "lifestyle": {
-      "displayName": "Style de Vie",
       "title": "Invitations Visuelles, Modèles et Inspirations pour le Style de Vie",
       "description": "Trouvez des visuels AI sur le style de vie, des modèles et des inspirations pour la vie quotidienne, les habitudes, l'esthétique, les intérêts personnels et le contenu social partageable.",
       "intro": "Explorez notre collection soigneusement sélectionnée de visuels, modèles et inspirations sur le style de vie conçus pour améliorer la vie quotidienne et les intérêts personnels. Que vous soyez un créateur cherchant à élever vos projets, un éducateur à la recherche de matériaux engageants pour vos étudiants, ou un designer en quête de nouvelles idées, cette galerie a quelque chose pour tout le monde. Plongez dans les modèles et exemples ci-dessous pour éveiller votre créativité et donner vie à vos visions de style de vie.",
@@ -80,7 +79,8 @@
         "vie quotidienne",
         "soin de soi",
         "bien-être"
-      ]
+      ],
+      "displayName": "Actifs de Médias Sociaux"
     },
     "film": {
       "displayName": "Pop Culture",
@@ -133,33 +133,33 @@
       ]
     },
     "character": {
-      "displayName": "Personnage",
       "title": "Invitations Visuelles, Modèles et Inspirations en Psychologie",
       "description": "Découvrez des visuels AI liés à la psychologie, des modèles de personnalité et des inspirations créatives pour le MBTI, l'analyse de caractère, les émotions et le contenu de réflexion personnelle.",
       "intro": "Explorez notre collection diversifiée de modèles, de visuels et de prompts d'IA axés sur les personnages, conçus pour inspirer la créativité et l'insight. Que vous soyez un créateur cherchant à développer des récits engageants, un éducateur à la recherche d'outils pour l'analyse des personnages, ou un designer ayant besoin d'inspiration visuelle innovante, cette galerie offre quelque chose pour tout le monde. Plongez dans les modèles et les exemples ci-dessous pour élever vos projets et approfondir votre compréhension des dynamiques de personnage.",
       "keywords": [
         "archétype",
         "persona"
-      ]
+      ],
+      "displayName": "MBTI & Personnages"
     },
     "product": {
-      "displayName": "Commerce",
       "title": "Invitations Visuelles, Modèles et Inspirations en Commerce",
       "description": "Explorez des visuels AI axés sur le commerce, des modèles de produits et des inspirations pour le commerce électronique, les créations marketing, les récits de produits et le contenu pour les vendeurs.",
       "intro": "Bienvenue dans nos incitations visuelles Commerce, où vous découvrirez une galerie soigneusement sélectionnée de modèles et d'exemples générés par IA, conçus spécifiquement pour le paysage du commerce électronique. Cette collection sert de ressource précieuse pour les créateurs, les marketeurs et les designers de produits cherchant à améliorer leur narration visuelle et à engager efficacement leur audience. Plongez dans notre sélection ci-dessous pour trouver de l'inspiration et des outils pratiques qui peuvent élever vos projets commerciaux.",
       "keywords": [
         "shopping",
         "ecommerce"
-      ]
+      ],
+      "displayName": "Commerce & Branding"
     },
     "language": {
-      "displayName": "Langue",
       "title": "Invitations Visuelles, Modèles et Inspirations pour l'Apprentissage des Langues",
       "description": "Découvrez des visuels d'apprentissage des langues, des cartes de vocabulaire, des modèles de dialogue et du contenu généré par IA pour maîtriser de nouvelles langues et compétences en communication.",
       "intro": "Bienvenue dans notre section Langue, où vous trouverez une collection diversifiée de modèles d'IA créatifs et de prompts visuels conçus pour améliorer l'apprentissage des langues. Que vous soyez un éducateur à la recherche de matériaux engageants, un designer en quête d'inspiration pour des cartes de vocabulaire, ou un passionné de langues souhaitant améliorer vos compétences en communication, cette galerie a quelque chose pour vous. Explorez les modèles et les exemples ci-dessous pour libérer votre potentiel dans la maîtrise de nouvelles langues.",
       "keywords": [
         "linguistique"
-      ]
+      ],
+      "displayName": "Cartes Flash EdTech"
     },
     "science": {
       "displayName": "Science",
@@ -735,7 +735,6 @@
       ]
     },
     "portrait": {
-      "displayName": "Portrait",
       "title": "Modèles Visuels Portrait avec IA | Curify AI",
       "description": "Découvrez des modèles visuels IA pour portraits de personnages, cartes de profil, identités MBTI et portraits personnels stylisés.",
       "intro": "Explorez notre collection soigneusement sélectionnée de modèles visuels de portrait et de prompts IA, conçus pour aider les créateurs, les éducateurs et les designers à donner vie à leurs concepts de personnages. Que vous créiez des cartes de profil, des cartes d'identité MBTI ou des portraits personnels stylisés uniques, nos ressources fournissent l'inspiration et la structure dont vous avez besoin. Plongez dans les modèles et exemples ci-dessous pour stimuler votre créativité et améliorer vos projets.",
@@ -743,7 +742,8 @@
         "visage",
         "portrait",
         "personne"
-      ]
+      ],
+      "displayName": "Portraits IA"
     },
     "monochrome": {
       "displayName": "Monochrome",
@@ -1962,7 +1962,6 @@
       ]
     },
     "merch": {
-      "displayName": "Merch & Impression à la Demande",
       "title": "Prompts Visuels, Modèles et Inspirations pour Merch & Impression à la Demande",
       "description": "Concevez des marchandises générées par IA — maquettes à plat sur le thème de la propriété intellectuelle, feuilles d'autocollants, feuilles de sprites de personnages, emballages de boîtes cadeaux — prêtes à imprimer pour la sérigraphie, l'impression à la demande et le DTG.",
       "intro": "Des feuilles d'autocollants de personnages de propriété intellectuelle aux ensembles complets de mises en scène culturelles et créatives, cette collection vous aide à expédier des designs de marchandises prêts à imprimer plus rapidement. Les modèles ici génèrent l'ensemble complet dont les équipes de marque ont besoin : maquettes de papeterie, motifs de sacs et de t-shirts, feuilles de sprites de personnages prêtes pour les packs d'emojis et les feuilles d'autocollants, emballages de boîtes cadeaux adaptés aux véritables pipelines de sérigraphie et d'impression à la demande. Déposez votre brief de propriété intellectuelle, obtenez un ensemble de marchandises unifié, prêt à être envoyé à l'imprimeur.",
@@ -1979,7 +1978,8 @@
         "biens culturels et créatifs",
         "文创周边",
         "周边设计"
-      ]
+      ],
+      "displayName": "Merch & Autocollants"
     },
     "asl": {
       "displayName": "ASL · Langue des Signes Américaine",

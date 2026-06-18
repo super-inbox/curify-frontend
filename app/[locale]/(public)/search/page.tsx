@@ -382,6 +382,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
     params?: Record<string, unknown>;
     locales?: Record<string, { title?: string; category?: string }>;
     tags?: string[];
+    topics?: string[];
     // Hidden synonyms list — fed into the search blob, never user-visible.
     // Populated by scripts/enrich_search_aliases.cjs (gpt-4o-mini) for
     // cross-language terms users type that don't appear in title/params
@@ -460,11 +461,16 @@ export default async function SearchPage({ params, searchParams }: Props) {
         l?.title,
         l?.category,
       ]);
+      // Merged-signal blob — mirrors `lib/nano_example_utils.ts` "more like
+      // this" (tags ∪ topics ∪ parent-template topics). Keeps /search and
+      // example-detail recommendations aligned on the same signal set.
       const blob = normalizeForSearch(
         [
           r.id,
           r.template_id,
           ...(r.tags ?? []),
+          ...(r.topics ?? []),
+          ...(TEMPLATE_TOPICS.get(r.template_id) ?? []),
           ...(r.search_aliases ?? []),
           ...Object.values(r.params ?? {}),
           ...localeFields,
@@ -483,7 +489,13 @@ export default async function SearchPage({ params, searchParams }: Props) {
       let demoteToRelaxed = false;
       if ((s.allPrimary || s.bigramHits >= bigramThr) && !strictTpl.has(r.template_id)) {
         const topicalBlob = normalizeForSearch(
-          [r.template_id, ...(r.tags ?? []), ...(r.search_aliases ?? [])]
+          [
+            r.template_id,
+            ...(r.tags ?? []),
+            ...(r.topics ?? []),
+            ...(TEMPLATE_TOPICS.get(r.template_id) ?? []),
+            ...(r.search_aliases ?? []),
+          ]
             .filter((v): v is string => typeof v === "string" && v.length > 0)
             .join(" ")
         );

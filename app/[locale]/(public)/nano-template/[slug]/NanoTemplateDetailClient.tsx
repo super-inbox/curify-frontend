@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
-import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import { useRequireAuth } from "@/services/useRequireAuth";
 
 import ReproduceTemplateSection, { type SampleImage } from "./ReproduceTemplateSection";

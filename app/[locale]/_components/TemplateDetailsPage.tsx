@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
-import { toSlug } from "@/lib/nano_utils";
+import { toSlug } from "@/lib/nano_pure";
 
 // Updated types matching new schema
 export type TemplateParameter = {

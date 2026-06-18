@@ -7,7 +7,7 @@ import { Link as IntlLink } from "@/i18n/navigation";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
-import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import { useRequireAuth } from "@/services/useRequireAuth";
 import { templatePacksService } from "@/services/templatePacks";
 import { useTracking, useVideoTracking } from "@/services/useTracking";

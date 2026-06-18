@@ -15,7 +15,7 @@ import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import nanoTemplatesData from '../../../../../public/data/nano_templates.json';
-import { toSlug } from '@/lib/nano_utils';
+import { toSlug } from '@/lib/nano_pure';
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";

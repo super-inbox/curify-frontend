@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { SITE_URL } from "@/lib/constants";
-import { toSlug } from "@/lib/nano_utils";
+import { toSlug } from "@/lib/nano_pure";
 import { useClickTracking, useTracking, useVideoTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
@@ -60,6 +60,7 @@ function ExampleImageCard({
   locale,
   carouselContext,
   desktopOpensExample = false,
+  showCaption = false,
 }: {
   item: Item;
   locale: string;
@@ -73,6 +74,12 @@ function ExampleImageCard({
    * example page actually converts at ~37%).
    */
   desktopOpensExample?: boolean;
+  /**
+   * When true, render a one-line truncated caption below the image with
+   * the example's title. Off by default (preserves existing surfaces);
+   * /search turns it on because the title is a strong relevance cue.
+   */
+  showCaption?: boolean;
 }) {
   const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
   const { trackVideoClick } = useVideoTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
@@ -202,6 +209,14 @@ function ExampleImageCard({
         </Link>
       )}
 
+      {showCaption && item.title && (
+        <p
+          className="px-3 pt-2 text-xs text-neutral-700 line-clamp-1"
+          title={item.title}
+        >
+          {item.title}
+        </p>
+      )}
       <div className="flex items-center justify-between px-3 py-2">
         {item.batch ? (
           <button
@@ -247,6 +262,7 @@ export default function ExampleImagesGrid({
   desktopOpensExample = false,
   topRightCell,
   desktopHideFirstN = 0,
+  showCaption = false,
 }: {
   items: Item[];
   maxRows?: number;
@@ -264,6 +280,8 @@ export default function ExampleImagesGrid({
    * the desktop total card count stays roughly equal to mobile's.
    */
   desktopHideFirstN?: number;
+  /** Render a 1-line title caption below each thumbnail (used on /search). */
+  showCaption?: boolean;
 }) {
   const cols = useCols();
   // Extend the visible window by desktopHideFirstN so desktop shows the
@@ -309,6 +327,7 @@ export default function ExampleImagesGrid({
                   locale={locale}
                   carouselContext={carouselContext}
                   desktopOpensExample={desktopOpensExample}
+                  showCaption={showCaption}
                 />
               </div>
             );
@@ -323,6 +342,7 @@ export default function ExampleImagesGrid({
               locale={locale}
               carouselContext={carouselContext}
               desktopOpensExample={desktopOpensExample}
+              showCaption={showCaption}
             />
           );
         })}

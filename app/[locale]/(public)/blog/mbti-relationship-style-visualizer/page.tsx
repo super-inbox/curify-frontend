@@ -7,7 +7,7 @@ import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
-import { makeNanoTemplateUrl } from "@/lib/nano_utils";
+import { makeNanoTemplateUrl } from "@/lib/nano_pure";
 import { resolveContentLocale } from "@/lib/locale_utils";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";

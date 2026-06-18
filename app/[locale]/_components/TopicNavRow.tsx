@@ -5,11 +5,20 @@ import { useTranslations } from "next-intl";
 import MetaChipLink from "@/app/[locale]/_components/MetaChipLink";
 import { buildTopicHref } from "@/lib/locale_utils";
 import { useClickTracking } from "@/services/useTracking";
-import { getTopics, type TopicWithTemplates } from "@/lib/topicRegistry";
 import taxonomy from "@/lib/taxonomy.json";
+import type { TopicNavItem } from "@/lib/topicRegistry_pure";
+
+// The full data-derived topic list (built from the ~4MB nano JSON) must NOT be
+// imported here — that would ship the JSON in the client bundle. Server parents
+// compute the slim list via getTopicNavList() (server-only topicRegistry) and
+// pass it as `allTopics`.
+type NavTopic = TopicNavItem;
 
 type Props = {
   locale: string;
+  // Full ordered topic list ({id, isEnabled}) from the server. Required so this
+  // client component never pulls the topic registry (and its nano JSON) itself.
+  allTopics: NavTopic[];
   activeTopic?: string;
   topics?: string[];
   className?: string;
@@ -52,7 +61,7 @@ function TopicLink({
   isActive,
   size,
 }: {
-  topic: TopicWithTemplates;
+  topic: NavTopic;
   href: string;
   label: string;
   isActive: boolean;
@@ -76,6 +85,7 @@ function TopicLink({
 
 export default function TopicNavRow({
   locale,
+  allTopics,
   activeTopic,
   topics,
   className,
@@ -84,13 +94,13 @@ export default function TopicNavRow({
 }: Props) {
   const t = useTranslations("topics");
 
-  const sortedTopics = getTopics();
+  const sortedTopics = allTopics;
 
   const filteredIds = topics?.length ? suppressRedundantTier1(topics) : null;
   const visibleTopics = filteredIds
     ? filteredIds
         .map((id) => sortedTopics.find((topic) => topic.id === id))
-        .filter((topic): topic is TopicWithTemplates => Boolean(topic))
+        .filter((topic): topic is NavTopic => Boolean(topic))
     : sortedTopics;
 
   if (!visibleTopics.length) return null;
