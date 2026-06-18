@@ -46,6 +46,9 @@ type Props = {
    *  Pinterest-style "Explore further" chip row above the example
    *  grid. Empty when no chip clears the minCount threshold. */
   intentChips?: IntentChip[];
+  /** When set, results are already narrowed to this output-type slug
+   *  (user clicked a chip). Renders a removable header pill. */
+  withinSlug?: string;
 };
 
 // Compute the href for a SuggestionEntry chip — honors `href` overrides
@@ -69,6 +72,7 @@ export default function SearchResultsClient({
   galleryPrompts,
   usedRewrites = [],
   intentChips = [],
+  withinSlug,
 }: Props) {
   const [input, setInput] = useState(query);
   const router = useRouter();
@@ -161,25 +165,40 @@ export default function SearchResultsClient({
     // backlog stays focused on "tried everything and still empty."
     // When the rewrite DID run (usedRewrites.length > 0), append a
     // "|rw=1" marker so admin can split "thin after LLM rescue attempt"
-    // from "thin without rescue attempt" without a second event.
+    // from "thin without rescue attempt" without a second event. Same
+    // pattern for ?within=<slug> intent narrowing — admin can split the
+    // chip-narrowed result events from raw-search events without forking
+    // the action_type enum.
     const rwSuffix = usedRewrites.length > 0 ? "|rw=1" : "";
+    const withinSuffix = withinSlug ? `|within=${withinSlug}` : "";
     if (totalResults === 0) {
       track({
-        contentId: q + rwSuffix,
+        contentId: q + withinSuffix + rwSuffix,
         contentType: "topic_capsule",
         actionType: "search_noresult",
       });
     } else if (totalResults < LOW_RESULT_THRESHOLD) {
       // Encode the count in contentId so admin can rank queries by how
       // close they are to the threshold without joining against another
-      // table. Format: "<query>|n=<count>[ |rw=1]".
+      // table. Format: "<query>[|within=<slug>]|n=<count>[|rw=1]".
       track({
-        contentId: `${q}|n=${totalResults}${rwSuffix}`,
+        contentId: `${q}${withinSuffix}|n=${totalResults}${rwSuffix}`,
         contentType: "topic_capsule",
         actionType: "search_lowresult",
       });
+    } else if (withinSlug) {
+      // Chip-narrowed search with healthy results — fire SEARCH so admin
+      // sees volume per (query, within) pair. Raw searches with healthy
+      // results don't fire a SEARCH event today (the URL change is the
+      // implicit signal). Chip-narrow is an explicit user action and the
+      // operator wants per-chip volume, so we fire it for this case.
+      track({
+        contentId: `${q}${withinSuffix}${rwSuffix}`,
+        contentType: "topic_capsule",
+        actionType: "search",
+      });
     }
-  }, [query, totalResults, usedRewrites.length, track]);
+  }, [query, totalResults, usedRewrites.length, withinSlug, track]);
 
   return (
     <div className="mx-auto max-w-[1680px] px-4 py-10 sm:px-6 lg:px-8">
@@ -246,6 +265,25 @@ export default function SearchResultsClient({
               through individual examples. Click → /topics/<slug>?from_search
               (server-side redirect attribution stays consistent with the
               bare-country redirect bucket tracked since 2026-06-16). */}
+          {/* Active intent-narrow pill — appears when ?within=<slug> is
+              set (chip aggregator destination). Removable × restores the
+              raw query. Mutually exclusive with the chip row below: once
+              narrowed, the user is one level deep already, the further
+              chips would be redundant. */}
+          {withinSlug && (
+            <section className="mb-5 flex flex-wrap items-center gap-2">
+              <span className="text-sm text-neutral-600">Narrowed to:</span>
+              <Link
+                href={`/${locale}/search?q=${encodeURIComponent(query)}`}
+                className="inline-flex items-center gap-1.5 rounded-full bg-purple-600 px-3.5 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-purple-700"
+                aria-label={`Remove ${renderLabel(withinSlug, withinSlug)} filter`}
+              >
+                <span>{renderLabel(withinSlug, withinSlug.replace(/-/g, " "))}</span>
+                <span aria-hidden="true">×</span>
+              </Link>
+            </section>
+          )}
+
           {intentChips.length > 0 && (
             <section className="mb-6 flex flex-wrap items-center gap-2">
               <span className="text-sm font-semibold text-neutral-700">
@@ -254,7 +292,7 @@ export default function SearchResultsClient({
               {intentChips.map(({ slug, count }) => (
                 <Link
                   key={slug}
-                  href={`/${locale}/topics/${slug}?from_search=${encodeURIComponent(query)}`}
+                  href={`/${locale}/search?q=${encodeURIComponent(query)}&within=${slug}`}
                   onClick={() =>
                     track({
                       contentId: `intent-chip:${slug}:${query}`,

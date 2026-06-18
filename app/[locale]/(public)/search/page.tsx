@@ -73,7 +73,7 @@ const NANO_PROMPT_TAG_SET = new Set(
 
 type Props = {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string; within?: string }>;
 };
 
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
@@ -220,9 +220,16 @@ function scoreBlob(
 }
 
 export default async function SearchPage({ params, searchParams }: Props) {
+  // Intent narrowing: chip aggregator (commit 17b56686) sends users to
+  // /search?q=<query>&within=<output-type-slug>. Reuses the full /search
+  // pipeline (matcher, gallery rail, attribution, low-result tracking) and
+  // just filters the matched-template + inspiration result sets to those
+  // whose topics include the within slug. The chip itself is rendered as
+  // a removable header pill in SearchResultsClient.
   const { locale } = await params;
-  const { q = "" } = await searchParams;
+  const { q = "", within = "" } = await searchParams;
   const query = q.trim().toLowerCase();
+  const withinSlug = within.trim().toLowerCase();
 
   if (!query) redirect(`/${locale}`);
 
@@ -591,11 +598,25 @@ export default async function SearchPage({ params, searchParams }: Props) {
 
   const allScored = Array.from(inspirationById.values());
   const hasStrict = allScored.some((x) => x.strict);
-  const inspirations = allScored
+  let inspirations = allScored
     .filter((x) => (hasStrict ? x.strict : true))
     .sort((a, b) => b.score - a.score)
     .slice(0, 80)
     .map((x) => x.rec);
+
+  // Intent narrow (?within=<output-type-slug>): keep only inspirations
+  // whose parent template OR own topics+tags carry the slug. Matches the
+  // chip aggregator's underlying signal (the slug was counted on the
+  // template's topics during topIntentChips) so the result set is exactly
+  // what the user expected when they clicked the chip.
+  if (withinSlug) {
+    inspirations = inspirations.filter((r) => {
+      const tplTopics = TEMPLATE_TOPICS.get(r.template_id) ?? [];
+      if (tplTopics.includes(withinSlug)) return true;
+      const own = [...(r.topics ?? []), ...(r.tags ?? [])];
+      return own.includes(withinSlug);
+    });
+  }
   const strictTemplateMatches = strictTemplateMatchesUnion;
   const matchedTemplateIdsByI18n = matchedTemplateIdsByI18nUnion;
 
@@ -651,6 +672,9 @@ export default async function SearchPage({ params, searchParams }: Props) {
   }
   const matchedTemplates = allFeedCards
     .filter((c) => matchedTemplateIdsAll.has(c.template_id))
+    // Intent narrow: same withinSlug filter, applied to the templates rail
+    // so the user sees only template cards whose topics carry the slug.
+    .filter((c) => !withinSlug || (c.topics ?? []).includes(withinSlug))
     .map((c) => {
       const matched = matchedInspsByTemplate.get(c.template_id);
       if (!matched || matched.length === 0) return c;
@@ -696,8 +720,12 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // "Explore further" chips above the example grid. Uses the 19-slug
   // output-type vocabulary tagged across 285 templates in af768fe7.
   // Computed server-side so the chip row renders in the initial HTML
-  // (no client flash + good SEO indexing).
-  const intentChips = topIntentChips(matchedTemplates, { topN: 5, minCount: 2 });
+  // (no client flash + good SEO indexing). Skipped when within is
+  // already active — the active slug is shown as a removable pill
+  // instead, and the user is one level deep already.
+  const intentChips = withinSlug
+    ? []
+    : topIntentChips(matchedTemplates, { topN: 5, minCount: 2 });
 
   return (
     <SearchResultsClient
@@ -709,6 +737,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
       galleryPrompts={galleryPrompts}
       usedRewrites={usedRewrites}
       intentChips={intentChips}
+      withinSlug={withinSlug || undefined}
     />
   );
 }
