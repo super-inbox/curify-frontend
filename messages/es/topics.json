@@ -1,7 +1,6 @@
 {
   "topics": {
     "learning": {
-      "displayName": "Conocimiento",
       "title": "Prompts Visuales de Aprendizaje, Plantillas e Inspiración",
       "description": "Explora visuales de IA centrados en el aprendizaje, plantillas educativas y tarjetas de inspiración para compartir conocimientos, explicaciones, contenido de estudio y resúmenes visuales.",
       "intro": "Bienvenido a nuestra colección de plantillas de IA y prompts visuales centrados en el aprendizaje, diseñados para mejorar el intercambio de conocimientos y las experiencias educativas. Ya seas un educador que busca crear materiales de estudio atractivos, un diseñador en busca de inspiración para resúmenes visuales, o un creador de contenido que busca simplificar conceptos complejos, esta galería ofrece una variedad de plantillas y ejemplos adaptados a tus necesidades. Sumérgete a continuación para explorar nuestra selección curada de recursos que fomentan la creatividad y facilitan un aprendizaje efectivo.",
@@ -9,7 +8,8 @@
         "educación",
         "estudio",
         "edu"
-      ]
+      ],
+      "displayName": "Infografías"
     },
     "history": {
       "displayName": "Historia",
@@ -38,14 +38,14 @@
       ]
     },
     "design": {
-      "displayName": "Diseño",
       "title": "Prompts Visuales de Diseño, Plantillas e Inspiración",
       "description": "Descubre visuales de IA relacionados con el diseño, plantillas creativas e inspiración para branding, maquetas, conceptos visuales y exploraciones estéticas.",
       "intro": "Explora nuestra galería curada de visuales de IA relacionados con el diseño, que presenta una diversa colección de plantillas, ejemplos y prompts adaptados para creadores, educadores y diseñadores. Ya sea que busques inspiración para branding, ideas de diseño o conceptos visuales únicos, esta colección tiene algo para todos. Sumérgete en las plantillas y ejemplos a continuación para estimular tu creatividad y elevar tus proyectos de diseño.",
       "keywords": [
         "arte",
         "diseño gráfico"
-      ]
+      ],
+      "displayName": "Carteles y Diseños"
     },
     "nature": {
       "displayName": "Naturaleza",
@@ -60,7 +60,6 @@
       ]
     },
     "travel": {
-      "displayName": "Viaje",
       "title": "Prompts Visuales de Viaje, Plantillas e Inspiración",
       "description": "Explora visuales de IA con temática de viaje, plantillas de destinos e inspiración para monumentos, guías de ciudades, narración cultural y contenido relacionado con viajes.",
       "intro": "Sumérgete en nuestra colección curada de visuales, plantillas y prompts de IA con temática de viajes, diseñados para alimentar tu creatividad. Ya seas un bloguero de viajes en busca de inspiración para tu próxima guía de destino, un diseñador que busca crear anuncios de viajes cautivadores, o un educador que desea enriquecer su currículo con narrativas culturales, aquí encontrarás una gran cantidad de recursos. Explora las plantillas y ejemplos a continuación para dar vida a tus narrativas de viaje.",
@@ -69,10 +68,10 @@
         "viaje",
         "trayecto",
         "turismo"
-      ]
+      ],
+      "displayName": "Carteles y Mapas de Viaje"
     },
     "lifestyle": {
-      "displayName": "Estilo de Vida",
       "title": "Prompts Visuales de Estilo de Vida, Plantillas e Inspiración",
       "description": "Encuentra visuales de IA sobre estilo de vida, plantillas e inspiración para la vida diaria, hábitos, estética, intereses personales y contenido social compartible.",
       "intro": "Explora nuestra colección curada de visuales, plantillas e inspiración de IA sobre estilo de vida, diseñadas para mejorar la vida diaria y los intereses personales. Ya seas un creador que busca elevar tus proyectos, un educador que busca materiales atractivos para tus estudiantes, o un diseñador en busca de nuevas ideas, esta galería tiene algo para todos. Sumérgete en las plantillas y ejemplos a continuación para encender tu creatividad y dar vida a tus visiones de estilo de vida.",
@@ -80,7 +79,8 @@
         "vida diaria",
         "cuidado personal",
         "bienestar"
-      ]
+      ],
+      "displayName": "Recursos de Redes Sociales"
     },
     "film": {
       "displayName": "Cultura Pop",
@@ -133,33 +133,33 @@
       ]
     },
     "character": {
-      "displayName": "Personaje",
       "title": "Prompts Visuales de Psicología, Plantillas e Inspiración",
       "description": "Descubre visuales de IA relacionados con la psicología, plantillas de personalidad e inspiración creativa para MBTI, análisis de personajes, emociones y contenido de autorreflexión.",
       "intro": "Explora nuestra diversa colección de plantillas, visuales y prompts de IA centrados en personajes, diseñados para inspirar creatividad y comprensión. Ya seas un creador que busca desarrollar narrativas atractivas, un educador que busca herramientas para el análisis de personajes, o un diseñador que necesita inspiración visual innovadora, esta galería ofrece algo para todos. Sumérgete en las plantillas y ejemplos a continuación para elevar tus proyectos y profundizar tu comprensión de la dinámica de los personajes.",
       "keywords": [
         "arquetipo",
         "persona"
-      ]
+      ],
+      "displayName": "MBTI y Personajes"
     },
     "product": {
-      "displayName": "Comercio",
       "title": "Prompts Visuales de Comercio, Plantillas e Inspiración",
       "description": "Explora visuales de IA centrados en el comercio, plantillas de productos e inspiración para comercio electrónico, creativos de marketing, narración de productos y contenido para vendedores.",
       "intro": "Bienvenido a nuestros prompts visuales de Comercio, donde descubrirás una galería curada de plantillas y ejemplos generados por IA diseñados específicamente para el paisaje del comercio electrónico. Esta colección sirve como un recurso valioso para creadores, comercializadores y diseñadores de productos que buscan mejorar su narración visual y comprometer eficazmente a su audiencia. Sumérgete en nuestra selección a continuación para encontrar inspiración y herramientas prácticas que pueden elevar tus proyectos comerciales.",
       "keywords": [
         "compras",
         "comercio electrónico"
-      ]
+      ],
+      "displayName": "Comercio y Marca"
     },
     "language": {
-      "displayName": "Idioma",
       "title": "Prompts Visuales, Plantillas e Inspiración para el Aprendizaje de Idiomas",
       "description": "Descubre visuales para el aprendizaje de idiomas, tarjetas de vocabulario, plantillas de diálogos y contenido generado por IA para dominar nuevos idiomas y habilidades de comunicación.",
       "intro": "Bienvenido a nuestra sección de Lenguaje, donde encontrarás una diversa colección de plantillas de IA y prompts visuales creativos diseñados para mejorar el aprendizaje de idiomas. Ya seas un educador que busca materiales atractivos, un diseñador en busca de inspiración para tarjetas de vocabulario, o un entusiasta del idioma que desea mejorar sus habilidades de comunicación, esta galería tiene algo para ti. Explora las plantillas y ejemplos a continuación para liberar tu potencial en el dominio de nuevos idiomas.",
       "keywords": [
         "lingüístico"
-      ]
+      ],
+      "displayName": "Tarjetas Didácticas de EdTech"
     },
     "science": {
       "displayName": "Ciencia",
@@ -735,7 +735,6 @@
       ]
     },
     "portrait": {
-      "displayName": "Retrato",
       "title": "Plantillas Visuales de Retrato con IA | Curify AI",
       "description": "Descubre plantillas visuales de IA para retratos de personajes, tarjetas de perfil, identidades MBTI y retratos personales estilizados.",
       "intro": "Explora nuestra colección curada de plantillas visuales de retrato y prompts de IA, diseñadas para ayudar a creadores, educadores y diseñadores a dar vida a sus conceptos de personajes. Ya estés creando tarjetas de perfil, tarjetas de identidad MBTI o retratos personales estilizados únicos, nuestros recursos proporcionan la inspiración y estructura que necesitas. Sumérgete en las plantillas y ejemplos a continuación para encender tu creatividad y mejorar tus proyectos.",
@@ -743,7 +742,8 @@
         "cara",
         "foto de perfil",
         "persona"
-      ]
+      ],
+      "displayName": "Retratos de IA"
     },
     "monochrome": {
       "displayName": "Monocromo",
@@ -1962,7 +1962,6 @@
       ]
     },
     "merch": {
-      "displayName": "Merch y Print-on-Demand",
       "title": "Prompts Visuales, Plantillas e Inspiración de Merch y Print-on-Demand",
       "description": "Diseña mercancía generada por IA: maquetas planas temáticas de IP, hojas de pegatinas, hojas de sprites de personajes, empaques de cajas de regalo, listos para impresión en pantalla, POD y DTG.",
       "intro": "Desde hojas de pegatinas de personajes de IP hasta conjuntos completos de maquetas culturales-creativas, esta colección te ayuda a enviar diseños de mercancía listos para imprimir más rápido. Las plantillas aquí generan la línea completa que los equipos de marca necesitan: maquetas de papelería, patrones de tote y camiseta, hojas de sprites de personajes listas para paquetes de emojis y hojas de pegatinas, empaques de cajas de regalo que se ajustan a los verdaderos procesos de impresión en pantalla y print-on-demand. Introduce tu breve de IP, recibe una línea unificada de merch, lista para enviar a la imprenta.",
@@ -1979,7 +1978,8 @@
         "bienes culturales creativos",
         "文创周边",
         "周边设计"
-      ]
+      ],
+      "displayName": "Merch y Stickers"
     },
     "asl": {
       "displayName": "ASL · Lengua de Señas Americana",
