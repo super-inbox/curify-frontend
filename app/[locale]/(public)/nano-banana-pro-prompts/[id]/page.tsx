@@ -10,6 +10,7 @@ import MoreLikeThisRail from "@/app/[locale]/_components/MoreLikeThisRail";
 import { getCanonicalPath } from "@/lib/canonical";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
 import PromptTagChips from "./PromptTagChips";
+import GalleryRemixSection from "./GalleryRemixSection";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPrompt } from "@/types/nanoPrompts";
 import PromptCard from "../PromptCard";
@@ -286,6 +287,17 @@ export default async function PromptDetailPage({
         {/* RelatedTagsSection moved to the page tail (after Related
             Images + Related Templates) so the visual content rails come
             first and the tag-cluster navigation closes the scroll. */}
+
+        {/* Remix surface — editable prompt + optional reference image →
+            in-app freeform image generation (backend: NANO_FREEFORM_GENERATION
+            via /nano-freeform/generate). Storage suffix nano_freeform/<id>
+            partitions outputs from the public nano_insp catalog. */}
+        <GalleryRemixSection
+          promptId={prompt.id}
+          initialPrompt={promptText}
+          sourceImageUrl={imageUrl}
+          sourceImageAlt={prompt.title}
+        />
 
         {related.length > 0 && (
           <section className="mt-10">
