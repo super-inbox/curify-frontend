@@ -411,6 +411,7 @@ export default async function NanoExampleDetailPage({
               maxRows={2}
               desktopOpensExample
               desktopHideFirstN={2}
+              showCaption
             />
           </>
         )}
@@ -419,7 +420,7 @@ export default async function NanoExampleDetailPage({
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More from this template
             </h2>
-            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} desktopOpensExample />
+            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} desktopOpensExample showCaption />
           </>
         )}
 

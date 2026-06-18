@@ -221,7 +221,7 @@ export default async function InspirationHubPage({
                   See all →
                 </Link>
               </div>
-              <ExampleImagesGrid items={items} maxRows={1} locale={locale} />
+              <ExampleImagesGrid items={items} maxRows={1} locale={locale} showCaption />
             </section>
           );
         })}

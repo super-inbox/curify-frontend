@@ -198,6 +198,7 @@ export default async function NanoTemplatePage({ params }: Props) {
           maxRows={2}
           batch={!!template.batch}
           desktopOpensExample
+          showCaption
         />
 </section>
 

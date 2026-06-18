@@ -370,6 +370,7 @@ export default async function Page({ params }: Props) {
             locale={localeStr}
             maxRows={3}
             desktopOpensExample
+            showCaption
             topRightCell={
               (slug === "world-cup" || slug === "sports")
                 ? <WcRotatingSlot locale={localeStr} queries={TOP_QUERIES["world-cup"]} />
