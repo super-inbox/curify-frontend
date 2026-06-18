@@ -1,0 +1,190 @@
+#!/usr/bin/env node
+
+/**
+ * Snapshot top-25 most-copied gallery prompts (last 30d) → static JSON.
+ *
+ * Output: public/data/top_remix_prompts.json
+ * Schema:
+ *   {
+ *     "generated_at": "<ISO timestamp>",
+ *     "window": "30d",
+ *     "prompts": [{ id, title, image_url, tags, unique_copies_30d, total_copies_30d }, ...]
+ *   }
+ *
+ * Two steps, fully no-backend:
+ *   1. SQL against user_interactions for the top-N (id, copy_count).
+ *      Same prod DB the rankscore script (and other admin pulls) use.
+ *   2. Hydrate title/image/tags from the local public/data/nanobanana.json
+ *      (4117 prompts indexed locally — no HTTP hop, no backend dependency).
+ *
+ * The home page reads the output JSON at build time so the hottest cached
+ * page stays ISR-friendly with no per-render DB hit.
+ *
+ * Runs in the existing sync_nanoprompts_to_redis.yml workflow (DB
+ * credentials, bot token, and commit-back already wired there).
+ *
+ * Usage:
+ *   node scripts/snapshot_top_remix_prompts.cjs
+ *   node scripts/snapshot_top_remix_prompts.cjs --dry-run
+ *   DATABASE_URL=... node scripts/snapshot_top_remix_prompts.cjs
+ */
+
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+const { Client } = require("pg");
+
+const ROOT = process.cwd();
+const NANOBANANA_PATH = path.join(ROOT, "public", "data", "nanobanana.json");
+const OUT_PATH = path.join(ROOT, "public", "data", "top_remix_prompts.json");
+
+const args = process.argv.slice(2);
+const isDryRun = args.includes("--dry-run");
+
+const BOT_UA =
+  "bot|crawl|spider|slurp|http|preview|fetch|monitor|whatsapp|telegram|render";
+const TEST_USERS = [155, 1117];
+const TOP_N = 25;
+
+loadLocalEnv();
+
+function loadLocalEnv() {
+  // GitHub Actions provides DATABASE_URL via secret. Locally, fall back
+  // to .env.local. Mirrors the pattern used by
+  // scripts/update_nano_template_rankscore.cjs.
+  if (process.env.DATABASE_URL) return;
+  const envPath = path.join(ROOT, ".env.local");
+  if (!fs.existsSync(envPath)) return;
+  const lines = fs.readFileSync(envPath, "utf-8").split("\n");
+  for (const line of lines) {
+    const m = line.match(/^DATABASE_URL\s*=\s*(.+?)\s*$/);
+    if (m) {
+      process.env.DATABASE_URL = m[1].replace(/^['"]|['"]$/g, "");
+      break;
+    }
+  }
+}
+
+// DB encoding gotcha: content_type / action_type are bound to PG enums
+// via SQLAlchemy SQLEnum, which stores the enum NAME (uppercase). SQL
+// filters MUST use 'NANO_GALLERY' / 'COPY', not the lowercase enum
+// values. See feedback_jobtype_enum_addition.md for the broader pattern.
+//
+// Distinct-by-actor (DISTINCT user_id|session_id) so a single power user
+// copying the same prompt 80 times can't sweep the leaderboard. Includes
+// anon sessions. Bot UA + test users excluded — same exclusions other
+// admin pulls use.
+const SQL_TOP_COPIES = `
+  WITH bot_free AS (
+    SELECT user_id, session_id, content_id
+    FROM user_interactions
+    WHERE created_at >= NOW() - INTERVAL '30 days'
+      AND content_type::text = 'NANO_GALLERY'
+      AND action_type::text = 'COPY'
+      AND (user_id IS NULL OR user_id NOT IN (${TEST_USERS.join(",")}))
+      AND (user_agent IS NULL OR user_agent !~* '${BOT_UA}')
+      AND content_id IS NOT NULL
+      AND content_id ~ '^[0-9]+$'
+  )
+  SELECT content_id,
+         COUNT(DISTINCT COALESCE(user_id::text, session_id))::int AS unique_copies,
+         COUNT(*)::int                                            AS total_copies
+  FROM bot_free
+  GROUP BY content_id
+  ORDER BY unique_copies DESC, total_copies DESC
+  LIMIT ${TOP_N};
+`;
+
+async function fetchTopCounts() {
+  if (!process.env.DATABASE_URL) {
+    throw new Error("DATABASE_URL is not set");
+  }
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false },
+  });
+  await client.connect();
+  try {
+    const res = await client.query(SQL_TOP_COPIES);
+    return res.rows;
+  } finally {
+    await client.end();
+  }
+}
+
+function buildPromptIndex() {
+  const raw = JSON.parse(fs.readFileSync(NANOBANANA_PATH, "utf-8"));
+  const arr = Array.isArray(raw) ? raw : raw.prompts || [];
+  const byId = new Map();
+  for (const p of arr) {
+    if (typeof p?.id === "number") byId.set(p.id, p);
+  }
+  return byId;
+}
+
+function hydrate(byId, contentId) {
+  const id = parseInt(contentId, 10);
+  if (!Number.isFinite(id)) return null;
+  const p = byId.get(id);
+  if (!p) return null;
+  return {
+    id,
+    title: p.title || "",
+    image_url: p.imageUrl || p.imageURL || p.image_url || "",
+    tags: Array.isArray(p.tags) ? p.tags : [],
+  };
+}
+
+(async () => {
+  console.log(
+    `Pulling top-${TOP_N} 30d copy counts (distinct-by-actor) from user_interactions...`
+  );
+  const rows = await fetchTopCounts();
+  console.log(`  ${rows.length} rows from SQL\n`);
+
+  console.log("Hydrating from local public/data/nanobanana.json...");
+  const byId = buildPromptIndex();
+  console.log(`  ${byId.size} prompts indexed locally`);
+
+  const out = [];
+  let skipped = 0;
+  for (const r of rows) {
+    const meta = hydrate(byId, r.content_id);
+    if (!meta) {
+      skipped++;
+      console.log(`  ! skip ${r.content_id} (not in nanobanana.json)`);
+      continue;
+    }
+    meta.unique_copies_30d = r.unique_copies;
+    meta.total_copies_30d = r.total_copies;
+    out.push(meta);
+  }
+
+  const payload = {
+    generated_at: new Date().toISOString(),
+    window: "30d",
+    prompts: out,
+  };
+  const text = JSON.stringify(payload, null, 2) + "\n";
+
+  if (isDryRun) {
+    console.log(`\n[dry-run] would write ${out.length} prompts to ${OUT_PATH}`);
+  } else {
+    fs.writeFileSync(OUT_PATH, text, "utf-8");
+    console.log(`\n  wrote ${out.length} prompts → ${OUT_PATH}`);
+  }
+  if (skipped) {
+    console.log(`  skipped ${skipped} (not in nanobanana.json)`);
+  }
+  console.log("\n  top 5 preview:");
+  for (const p of out.slice(0, 5)) {
+    const t = (p.title || "").slice(0, 60);
+    console.log(
+      `    ${String(p.unique_copies_30d).padStart(3)}u/${String(p.total_copies_30d).padStart(3)}t  ${String(p.id).padStart(5)}  ${t}`
+    );
+  }
+})().catch((err) => {
+  console.error("Snapshot failed:", err);
+  process.exit(1);
+});
