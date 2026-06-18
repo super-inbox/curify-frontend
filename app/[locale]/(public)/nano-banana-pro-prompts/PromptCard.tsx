@@ -75,7 +75,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
             {prompt.tags.slice(0, 2).map((tag, i) => (
               <span
                 key={`${tag}-${i}`}
-                className="rounded-full bg-black/40 px-2 py-0.5 text-[10px] font-medium text-white backdrop-blur-sm"
+                className="rounded-full bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur-sm"
               >
                 {tag}
               </span>
@@ -85,7 +85,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
       </div>
 
       <div className="flex items-center justify-between gap-2 px-3 py-2">
-        <h3 className="min-w-0 flex-1 truncate text-xs font-semibold text-gray-900">
+        <h3 className="min-w-0 flex-1 truncate text-sm font-semibold text-gray-900">
           {prompt.title}
         </h3>
 
@@ -93,7 +93,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
           <button
             type="button"
             onClick={copyToClipboard}
-            className="flex shrink-0 items-center gap-1 rounded-full bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold text-indigo-600 transition-colors hover:bg-indigo-100 cursor-pointer"
+            className="flex shrink-0 items-center gap-1 rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-600 transition-colors hover:bg-indigo-100 cursor-pointer"
             aria-label={`Copy prompt: ${prompt.title}`}
           >
             {copied ? (

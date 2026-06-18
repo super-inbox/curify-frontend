@@ -176,7 +176,7 @@ export default function SearchResultsClient({
   }, [query, totalResults, usedRewrites.length, track]);
 
   return (
-    <div className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-[1680px] px-4 py-10 sm:px-6 lg:px-8">
       {/* Mobile-only search input — desktop uses SiteTopBar's SearchBar */}
       <form onSubmit={handleSearch} className="lg:hidden mb-8 flex gap-2">
         <div className="relative flex-1">
