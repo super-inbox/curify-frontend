@@ -14,6 +14,11 @@ import {
 import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
+// Top-25 most-copied gallery prompts (30d). Snapshotted offline via
+// curify-studio/scripts/snapshot_top_remix_prompts.py. Inlined at build
+// time → no per-render DB/API hit; refreshes when the snapshot is
+// committed (run the script when refresh is wanted).
+import topRemixSnapshot from "@/public/data/top_remix_prompts.json";
 
 // Nano cards on the home page are intentionally locale-agnostic for now —
 // always built from the en content + en translations regardless of URL locale.
@@ -130,7 +135,11 @@ export default async function HomePage({
     })
   }}
 />
-      <HomeClient locale={locale} nanoCards={nanoCards} />
+      <HomeClient
+        locale={locale}
+        nanoCards={nanoCards}
+        topRemixPrompts={topRemixSnapshot.prompts}
+      />
     </>
   );
 }
