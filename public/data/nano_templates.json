@@ -15492,5 +15492,75 @@
       "art-prints",
       "wall-art"
     ]
+  },
+  {
+    "id": "template-full-year-12-month-cartoon-character-calendar-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Full Year 12 Months Cartoon IP Calendar Poster Generator) Horizontal full-year wall calendar poster themed '{cartoon_ip_theme}'. Layout: Plain clean white background; top huge hand-drawn sketch style large year number with tiny star doodle ornaments scattered around; page split evenly into 3 rows × 4 columns monthly grid, each grid cell contains unique seasonal themed cartoon illustration of the IP character at top, below standard weekly calendar table with \"Su Mo Tu We Th Fr Sa\" header and date numbers, each month has month name text under the character drawing. Style: cute official flat cartoon IP art, simple clean outlines, soft bright pastel color matching the character brand, minimalist printable annual planner poster, high resolution wall decor calendar, consistent cute doodle decorative stars/moons/flowers as minor ornaments. Subject: complete 12-month full year horizontal cartoon character annual calendar poster for '{cartoon_ip_theme}'.",
+        "parameters": [
+          {
+            "name": "cartoon_ip_theme",
+            "label": "卡通IP完整名称+年份",
+            "type": "text",
+            "placeholder": [
+              "2026吉卜力宫崎骏动漫角色全年12月横版年历海报",
+              "2026史努比花生漫画四季主题全年日历展板",
+              "2026吉伊卡哇十二月份季节场景完整年度规划长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-full-year-12-month-cartoon-character-calendar-poster-crayon-shinchan-2026-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90
+  },
+  {
+    "id": "template-men-lifestyle-step-guide-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Men Lifestyle Step-by-Step Guide Infographic Poster Generator) Vertical men's daily routine tutorial infographic poster themed '{men_topic_theme}'. Layout: Clean light white minimalist background; top large bold blue main headline title, small feature icon row on upper right; top full-body male model hero photo as header visual; dark blue top navigation tag bar with three core labels; central 5-column numbered sequential step flow layout, each step includes demonstration photo + brief descriptive subtitle; bottom left tip checklist panel with matching line icons, bottom right budget product showcase grid with real product photos & labels; footer inspirational quote block + bottom-right pinned social save call-to-action banner. Style: modern masculine commercial graphic design, navy & royal blue primary brand color scheme, sharp clean sans-serif font, realistic men lifestyle photography, neatly segmented bordered panels, high resolution Pinterest social media tutorial poster, printable self-care guide graphic. Subject: step-by-step tutorial infographic poster for men's '{men_topic_theme}' daily routine.",
+        "parameters": [
+          {
+            "name": "men_topic_theme",
+            "label": "男士生活主题完整名称",
+            "type": "text",
+            "placeholder": [
+              "男士居家无器械健身流程分步指南信息海报",
+              "男生五步护肤提亮清爽肤质科普展板",
+              "男士商务正装穿搭搭配教程商业长图",
+              "男生健康增肌一日饮食营养规划图解"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-men-lifestyle-step-guide-infographic-poster-mens-glow-skin-routine-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90
+  },
+  {
+    "id": "template-ballroom-dance-step-vintage-tutorial-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Ballroom Dance Step Tutorial Infographic Generator) Vertical retro print dance guide poster themed '{dance_style_name}'. Layout: Warm aged cream parchment paper background; large bold red serif main title at top with subtitle line; vertically stacked numbered step panels from 1 to 5, each panel contains: retro line art couple dancing pose illustration, footstep schematic diagram with labeled L/R feet and red movement arrows, right-side step description text block; small vintage circular logo in top right corner, tiny footnote practice tip text at bottom edge. Style: mid-century retro black & blue line drawing illustration, simple clear instructional layout, muted vintage paper texture, bold red accent lines & number markers, classic print textbook aesthetic, high resolution printable ballroom dance classroom tutorial poster. Subject: vintage vertical step-by-step tutorial infographic poster for '{dance_style_name}' basic partner dance steps.",
+        "parameters": [
+          {
+            "name": "dance_style_name",
+            "label": "国标舞/交谊舞完整舞种名称",
+            "type": "text",
+            "placeholder": [
+              "探戈Tango基础行走舞步复古分步教学信息海报",
+              "华尔兹Waltz方步老式印刷风舞蹈图解展板",
+              "摇摆舞Swing基础摇滚三步双人舞教程竖版长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-ballroom-dance-step-vintage-tutorial-infographic-swing-rock-triple-step-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90
   }
 ]
