@@ -133,6 +133,7 @@ function hydrate(byId, contentId) {
     title: p.title || "",
     image_url: p.imageUrl || p.imageURL || p.image_url || "",
     tags: Array.isArray(p.tags) ? p.tags : [],
+    featured_boost: Number(p.featured_boost || 0),
   };
 }
 
@@ -161,27 +162,56 @@ function hydrate(byId, contentId) {
     out.push(meta);
   }
 
+  // Editorial featured boost — pull every prompt in nanobanana.json with
+  // featured_boost > 0 and prepend to the list (deduped by id). Same
+  // signal that drives nano_prompts:most_popular ranking in Redis, so
+  // featured picks dominate BOTH the gallery list page (via Redis) AND
+  // the home rail (via this snapshot). 30d copy count still ranks
+  // organic-only positions within each tier.
+  const featuredIds = new Set();
+  const featuredPrompts = [];
+  for (const p of byId.values()) {
+    const boost = Number(p.featured_boost || 0);
+    if (boost <= 0) continue;
+    const hydrated = hydrate(byId, String(p.id));
+    if (!hydrated) continue;
+    // Inherit existing copy counts if already in the organic list
+    const existing = out.find((x) => x.id === hydrated.id);
+    hydrated.unique_copies_30d = existing?.unique_copies_30d ?? 0;
+    hydrated.total_copies_30d = existing?.total_copies_30d ?? 0;
+    featuredPrompts.push(hydrated);
+    featuredIds.add(hydrated.id);
+  }
+  // Sort featured by boost desc (so a 2000 boost outranks 1000)
+  featuredPrompts.sort((a, b) => (b.featured_boost || 0) - (a.featured_boost || 0));
+  // Final list: featured first, then organic (filtered to avoid dupes),
+  // capped at TOP_N total.
+  const organicOnly = out.filter((p) => !featuredIds.has(p.id));
+  const merged = [...featuredPrompts, ...organicOnly].slice(0, TOP_N);
+  console.log(`  featured-boosted prompts prepended: ${featuredPrompts.length}`);
+
   const payload = {
     generated_at: new Date().toISOString(),
     window: "30d",
-    prompts: out,
+    prompts: merged,
   };
   const text = JSON.stringify(payload, null, 2) + "\n";
 
   if (isDryRun) {
-    console.log(`\n[dry-run] would write ${out.length} prompts to ${OUT_PATH}`);
+    console.log(`\n[dry-run] would write ${merged.length} prompts to ${OUT_PATH}`);
   } else {
     fs.writeFileSync(OUT_PATH, text, "utf-8");
-    console.log(`\n  wrote ${out.length} prompts → ${OUT_PATH}`);
+    console.log(`\n  wrote ${merged.length} prompts → ${OUT_PATH}`);
   }
   if (skipped) {
     console.log(`  skipped ${skipped} (not in nanobanana.json)`);
   }
-  console.log("\n  top 5 preview:");
-  for (const p of out.slice(0, 5)) {
-    const t = (p.title || "").slice(0, 60);
+  console.log("\n  top 8 preview:");
+  for (const p of merged.slice(0, 8)) {
+    const t = (p.title || "").slice(0, 50);
+    const badge = (p.featured_boost || 0) > 0 ? "★F" : "  ";
     console.log(
-      `    ${String(p.unique_copies_30d).padStart(3)}u/${String(p.total_copies_30d).padStart(3)}t  ${String(p.id).padStart(5)}  ${t}`
+      `   ${badge} ${String(p.unique_copies_30d).padStart(3)}u/${String(p.total_copies_30d).padStart(3)}t  ${String(p.id).padStart(5)}  ${t}`
     );
   }
 })().catch((err) => {

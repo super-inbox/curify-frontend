@@ -48,21 +48,27 @@ async function pollFreeformResult(projectId: string): Promise<string> {
   throw userError("This is taking longer than usual — please try again in a moment.");
 }
 
-type Options = {
+// Per-call arguments. The hook is now imperative — one instance fires many
+// generations with different prompts/references (the custom remix + each
+// production tile on the gallery reproduce surface), so prompt/reference are
+// passed at call time rather than baked in at construction.
+export type FreeformGenerateArgs = {
   prompt: string;
   referenceImageUrl?: string;
   sourcePromptId?: string;
-  tracking: TrackingTarget;
-  onSuccess: (signedUrl: string) => void;
+  // Optional per-call tracking override (e.g. to attribute a specific
+  // production tile). Falls back to the hook-level tracking target.
+  tracking?: TrackingTarget;
 };
 
-export function useFreeformGenerate({
-  prompt,
-  referenceImageUrl,
-  sourcePromptId,
-  tracking,
-  onSuccess,
-}: Options) {
+type Options = {
+  tracking: TrackingTarget;
+  // Fired on a successful generation with the signed result URL plus the args
+  // that produced it (so the caller can label/group results in a tray).
+  onSuccess?: (signedUrl: string, args: FreeformGenerateArgs) => void;
+};
+
+export function useFreeformGenerate({ tracking, onSuccess }: Options) {
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
   const { trackAction, track } = useTracking();
@@ -70,14 +76,14 @@ export function useFreeformGenerate({
 
   const [isGenerating, setIsGenerating] = useState(false);
   const isGeneratingRef = useRef(false);
-  const pendingGenerateRef = useRef(false);
 
-  const generate = async () => {
-    if (isGeneratingRef.current) return;
+  // Returns the signed URL on success; null when blocked (auth / credits /
+  // blank prompt) or on failure (the error is surfaced via alert inside).
+  const generate = async (args: FreeformGenerateArgs): Promise<string | null> => {
+    if (isGeneratingRef.current) return null;
     isGeneratingRef.current = true;
 
     if (!user) {
-      pendingGenerateRef.current = true;
       isGeneratingRef.current = false;
       track({
         contentId: "auth-modal:gallery-remix",
@@ -85,7 +91,7 @@ export function useFreeformGenerate({
         actionType: "click",
       });
       setDrawerState("signin");
-      return;
+      return null;
     }
 
     const credits =
@@ -94,30 +100,32 @@ export function useFreeformGenerate({
     if (credits < CREDITS_COST) {
       alert(t("insufficientCredits"));
       isGeneratingRef.current = false;
-      return;
+      return null;
     }
 
-    if (!prompt || !prompt.trim()) {
+    if (!args.prompt || !args.prompt.trim()) {
       isGeneratingRef.current = false;
-      return;
+      return null;
     }
 
     try {
       setIsGenerating(true);
-      trackAction(tracking, "generate");
+      trackAction(args.tracking ?? tracking, "generate");
       const res = await freeformGenerateService.generate({
-        prompt: prompt.trim(),
-        ...(referenceImageUrl ? { reference_image_url: referenceImageUrl } : {}),
-        ...(sourcePromptId ? { source_prompt_id: sourcePromptId } : {}),
+        prompt: args.prompt.trim(),
+        ...(args.referenceImageUrl ? { reference_image_url: args.referenceImageUrl } : {}),
+        ...(args.sourcePromptId ? { source_prompt_id: args.sourcePromptId } : {}),
       });
       if (!res?.success || !res.project_id) {
         throw userError(res?.message || "Generation failed");
       }
       const imageUrl = await pollFreeformResult(res.project_id);
-      onSuccess(imageUrl);
+      onSuccess?.(imageUrl, args);
+      return imageUrl;
     } catch (err) {
       const e = err as (Error & { userFacing?: boolean }) | undefined;
       alert(e?.userFacing && e.message ? e.message : t("generateFailed"));
+      return null;
     } finally {
       setIsGenerating(false);
       isGeneratingRef.current = false;

@@ -64,6 +64,10 @@ interface Props {
   onUploadError?: (error: string) => void;
   /** What kind of file this Upload accepts. Defaults to "video". */
   acceptedKinds?: UploadKind;
+  /** Compact dropzone — smaller box + condensed copy. Used where the upload is
+   *  a secondary affordance inside a denser layout (e.g. the gallery reproduce
+   *  panel) rather than the primary full-size dropzone. */
+  compact?: boolean;
 }
 
 export default function Upload({
@@ -72,6 +76,7 @@ export default function Upload({
   onUploadStart,
   onUploadError,
   acceptedKinds = "video",
+  compact = false,
 }: Props) {
   const { mimeTypes: ACCEPTED_TYPES, extList: ACCEPT_ATTR, extLabel: TYPE_LABEL } =
     KIND_SPEC[acceptedKinds];
@@ -129,8 +134,9 @@ export default function Upload({
         handleFile(e.dataTransfer.files);
       }}
       className={`
-        w-100 h-60 flex flex-col items-center justify-center
-        cursor-pointer rounded-xl p-6 text-center transition 
+        flex flex-col items-center justify-center
+        cursor-pointer rounded-xl text-center transition
+        ${compact ? "w-full h-28 p-3" : "w-100 h-60 p-6"}
         ${
           isDragging
             ? "bg-[var(--p-blue)]/6 opacity-80 shadow-[inset_0_0_0_0_var(--c4)]"
@@ -138,17 +144,23 @@ export default function Upload({
         }
       `}
     >
-      <Icon name="add" size={8} />
-      <p className="text-[var(--c2)] text-base font-bold mt-4.5 mb-1.5">
-        Drag & Drop or Click to Upload
+      <Icon name="add" size={compact ? 5 : 8} />
+      <p
+        className={`text-[var(--c2)] font-bold ${
+          compact ? "text-xs mt-2 mb-0.5" : "text-base mt-4.5 mb-1.5"
+        }`}
+      >
+        {compact ? "Click or drop to upload" : "Drag & Drop or Click to Upload"}
       </p>
-      <div className="flex items-center mb-[-0.625rem]">
-        <p>{TYPE_LABEL}</p>
-        <button className="p-2.5 mr-[-0.625rem]">
-          <Icon name="info" />
-        </button>
-      </div>
-      {acceptedKinds !== "image" && (
+      {!compact && (
+        <div className="flex items-center mb-[-0.625rem]">
+          <p>{TYPE_LABEL}</p>
+          <button className="p-2.5 mr-[-0.625rem]">
+            <Icon name="info" />
+          </button>
+        </div>
+      )}
+      {!compact && acceptedKinds !== "image" && (
         <p className="text-[var(--c4)] underline">Supported Languages</p>
       )}
 

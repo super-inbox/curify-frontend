@@ -153,11 +153,18 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
     { id: "saved", label: "Saved", count: savedCards.length || undefined },
   ];
 
+  // Both nano image-gen job types render as images here. Gallery-prompt remixes
+  // generate via the freeform pipeline (NANO_FREEFORM_GENERATION); template
+  // reproductions use NANO_TEMPLATE_GENERATION. The backend serializes
+  // image_path/preview_image_path for both (response_helpers.is_image_gen), so
+  // both belong in the Images section — previously freeform gens were silently
+  // dropped from the workspace.
+  const IMAGE_JOB_TYPES = ["nano_template_generation", "nano_freeform_generation"];
   const videoProjects = projects.filter(
-    (p) => p.job_settings.job_type !== "nano_template_generation"
+    (p) => !IMAGE_JOB_TYPES.includes(p.job_settings.job_type)
   );
   const imageProjects = projects.filter(
-    (p) => p.job_settings.job_type === "nano_template_generation"
+    (p) => IMAGE_JOB_TYPES.includes(p.job_settings.job_type)
   );
 
   return (
