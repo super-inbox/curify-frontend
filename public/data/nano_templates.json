@@ -15588,5 +15588,100 @@
       "step-by-step-tutorial",
       "wall-art"
     ]
+  },
+  {
+    "id": "template-anime-crew-vintage-newspaper-character-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Newspaper Anime Team Character Profile Poster Generator) Vertical retro aged paper anime cast introduction poster themed '{anime_series_theme}'. Layout: Faded beige vintage newspaper texture background; top large stylized brush script main title with series establishment year mark; oversized close-up main protagonist portrait occupies the right large vertical section; left side multiple irregular hexagonal segmented character panels, each panel contains character headshot illustration, bold character name, role subtitle, bullet point trait description and small circular stat dot indicators; bottom corner tiny full crew silhouette group graphic + series slogan text, series emblem/logo decoration at margin. Style: retro print comic newspaper texture, anime official original art style, limited unified color palette matching the anime tone, bold serif & script layered typography, grain vintage filter texture, high resolution collectible anime wall art poster. Subject: vintage newspaper style full main cast character profile infographic poster for anime series '{anime_series_theme}'.",
+        "parameters": [
+          {
+            "name": "anime_series_theme",
+            "label": "完整动漫作品名称+核心队伍主题",
+            "type": "text",
+            "placeholder": [
+              "海贼王草帽一伙复古报纸风全员人物档案竖版海报",
+              "进击的巨人调查兵团角色设定科普信息展板",
+              "火影忍者木叶第七班忍界传奇人物复古印刷长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-anime-crew-vintage-newspaper-character-infographic-poster-attack-on-titan-survey-corps-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "character",
+      "anime",
+      "posters",
+      "wall-art",
+      "vintage",
+      "infographic",
+      "fan-art"
+    ]
+  },
+  {
+    "id": "template-kids-origami-step-tutorial-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Cute Kids Origami Step-by-Step Tutorial Infographic Poster Generator) Vertical children paper folding guide poster themed '{origami_object_name}'. Layout: Soft cream off-white paper background; top ribbon banner with large playful hand-drawn headline text; center big clear photo of finished origami craft as main hero visual; left side dashed rounded MATERIALS box with supply icons & text, right side TIPS hint panel with lightbulb icon; lower section 8 sequential numbered step grid layout, each cell contains folded paper diagram with fold direction arrows + simple short step description text; tiny heart, star, dot doodle ornaments scattered around margins, bottom decorative banner with fun closing slogan. Style: bright pastel kid-friendly color scheme, thick clear instructional fold line graphics, rounded sans-serif educational font, clean printable classroom craft wall poster, warm soft lighting origami product photography, neat separated colored modules. Subject: full step-by-step kids origami tutorial infographic poster for folding '{origami_object_name}'.",
+        "parameters": [
+          {
+            "name": "origami_object_name",
+            "label": "折纸完整物品名称",
+            "type": "text",
+            "placeholder": [
+              "爱心折纸八步儿童手工图解竖版海报",
+              "千纸鹤折纸详细分步教学科普展板",
+              "青蛙折纸幼儿园手工材料步骤长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-kids-origami-step-tutorial-infographic-butterfly-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "learning",
+      "guides",
+      "posters",
+      "infographic",
+      "step-by-step-tutorial",
+      "kids-learning",
+      "wall-art"
+    ]
+  },
+  {
+    "id": "template-vintage-fruit-market-label-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Orchard Fruit Label Poster Generator) Vertical retro farm fruit promotional poster themed '{fruit_full_name}'. Layout: Aged off-white textured kraft paper background; large elegant red cursive script headline at top, central realistic hand-drawn vintage engraving illustration of whole fruit with leaves and blossom, optional sliced fruit detail drawing; surrounding segmented text blocks featuring fruit introduction text, Chinese fruit name, establishment year mark, circular rubber stamp decorative badges, price tag box, small botanical sketch doodles of branches and flowers, decorative serif bold subhead text, bordered slogan banners. Style: old grocery tin label retro print texture, muted deep red & natural earth tone color palette, mixed script + slab serif vintage typography, grain halftone printing filter, high resolution printable farmers market fruit wall art poster. Subject: vintage farm orchard style single fruit market label promotional poster for '{fruit_full_name}'.",
+        "parameters": [
+          {
+            "name": "fruit_full_name",
+            "label": "完整水果名称",
+            "type": "text",
+            "placeholder": [
+              "水蜜桃复古农场果铺标签竖版宣传海报",
+              "鲜梨老式印刷农产品市集装饰展板",
+              "柠檬果园复古罐头标签风水果科普长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vintage-fruit-market-label-poster-lemon-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "design",
+      "posters",
+      "vintage",
+      "food",
+      "wall-art",
+      "art-prints"
+    ]
   }
 ]
