@@ -199,7 +199,7 @@ export default async function PromptDetailPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="mx-auto max-w-[1400px] px-4 py-4 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-[1680px] px-4 py-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <nav className="mb-4 flex items-center gap-1.5 text-xs text-neutral-500">
           <Link href={getCanonicalPath(locale)} className="hover:text-neutral-800">
