@@ -30,7 +30,12 @@ function toSummary(prompt) {
 function scorePrompt(prompt) {
   const likes = Number(prompt.likes || 0);
   const retweets = Number(prompt.retweets || 0);
-  return likes + retweets;
+  // featured_boost — editorial pick for the gallery list page. Defaults to 0
+  // for organic prompts; set on hand-curated remix candidates so they
+  // dominate the "most popular" rank without polluting the organic
+  // likes/retweets signal. See nanobanana.json for the field per record.
+  const featured = Number(prompt.featured_boost || 0);
+  return likes + retweets + featured;
 }
 
 function validatePrompt(prompt) {
