@@ -2,10 +2,11 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Search, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { NanoInspirationCard } from "@/app/[locale]/_components/NanoInspirationCard";
+import WcSearchQueryCard from "@/app/[locale]/_components/WcSearchQueryCard";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import { useClickTracking } from "@/services/useTracking";
 
@@ -98,33 +99,14 @@ function GalleryPromptTile({
   );
 }
 
-function SearchQueryTile({ query, locale }: { query: string; locale: string }) {
-  // Reuse 'topic_capsule' content_type (per feedback_tracking_enums —
-  // backend silently rejects unknown values). Prefix gives admin SQL
-  // a clean way to split home-rail search tiles from other capsule
-  // events without forking the enum.
-  const trackClick = useClickTracking(
-    `home-rail-search:${query}`,
-    "topic_capsule",
-    "cards"
-  );
-  const href = `/${locale}/search?q=${encodeURIComponent(query)}`;
-  return (
-    <Link
-      href={href}
-      onClick={trackClick}
-      className="group relative flex h-full flex-col items-center justify-center overflow-hidden rounded-2xl border-2 border-amber-200 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50 p-4 text-center shadow-md transition-all duration-300 hover:border-amber-400 hover:shadow-2xl"
-    >
-      <Search className="mb-2 h-5 w-5 text-amber-700" />
-      <p className="text-sm font-semibold leading-snug text-neutral-900 line-clamp-3">
-        {query}
-      </p>
-      <p className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-amber-700">
-        Search →
-      </p>
-    </Link>
-  );
-}
+// Search-query tile on the home fused row — adopts the WC slot's
+// "People are searching" card format (WcSearchQueryCard) so all search-
+// nudge surfaces look consistent. WcSearchQueryCard handles tracking
+// internally with content_id="wc-query-card:<query>", so home-rail
+// search clicks coalesce into the same admin SQL bucket as the WC slot's
+// query mode (acceptable — both are "user clicked a popular-search
+// nudge tile"). If we ever need to split them by surface, swap to a
+// dedicated wrapper that re-fires with a "home-rail-search:" prefix.
 
 export default function HomeFusedRow({
   templates,
@@ -213,7 +195,7 @@ export default function HomeFusedRow({
             );
           }
           return (
-            <SearchQueryTile
+            <WcSearchQueryCard
               key={`q-${item.query}`}
               query={item.query}
               locale={locale}
