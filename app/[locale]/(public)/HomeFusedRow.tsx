@@ -17,7 +17,8 @@ const GALLERY_INTERLEAVE_RATIO = 4;
 
 // One search-query tile every N tiles. Wider cadence than gallery —
 // these are navigational nudges, not content; too many becomes noise.
-const SEARCH_QUERY_INTERLEAVE_RATIO = 6;
+// 10 → one tile per 9 templates (~10% of a 40-tile rail).
+const SEARCH_QUERY_INTERLEAVE_RATIO = 10;
 
 export type TopRemixPrompt = {
   id: number;
