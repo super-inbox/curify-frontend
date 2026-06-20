@@ -25,6 +25,7 @@ export default function HomeClient({
   locale = "en",
   nanoCards = [],
   topRemixPrompts = [],
+  searchQueries = [],
 }: {
   locale?: string;
   nanoCards?: NanoInspirationCardType[];
@@ -33,6 +34,10 @@ export default function HomeClient({
    *  rail switches to the fused variant. Empty → stays on the
    *  template-only NanoInspirationRow. */
   topRemixPrompts?: TopRemixPrompt[];
+  /** 6-8 popular queries randomly picked server-side from
+   *  lib/popularPrefillQueries.ts. Rendered as interleaved nudge tiles
+   *  in the fused row. */
+  searchQueries?: string[];
 }) {
   const requireAuth = useRequireAuth({ variant: "signup" });
 
@@ -57,10 +62,14 @@ export default function HomeClient({
           <HomeFusedRow
             templates={nanoCards}
             galleryPrompts={topRemixPrompts}
+            searchQueries={searchQueries}
             locale={locale}
             requireAuth={requireAuth}
             onViewClick={handleOpenModal}
             maxRows={8}
+            topRightCell={
+              <WcRotatingSlot locale={locale} queries={TOP_QUERIES["world-cup"]} />
+            }
           />
         ) : (
           <NanoInspirationRow

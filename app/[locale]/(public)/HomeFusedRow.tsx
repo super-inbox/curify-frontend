@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { Search, Sparkles } from "lucide-react";
 
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { NanoInspirationCard } from "@/app/[locale]/_components/NanoInspirationCard";
@@ -13,6 +13,10 @@ import { useClickTracking } from "@/services/useTracking";
 // visible without dominating the template feed. Easy to tune later
 // once CTR by tile-type comes back.
 const GALLERY_INTERLEAVE_RATIO = 4;
+
+// One search-query tile every N tiles. Wider cadence than gallery —
+// these are navigational nudges, not content; too many becomes noise.
+const SEARCH_QUERY_INTERLEAVE_RATIO = 6;
 
 export type TopRemixPrompt = {
   id: number;
@@ -26,15 +30,21 @@ export type TopRemixPrompt = {
 type Props = {
   templates: NanoInspirationCardType[];
   galleryPrompts: TopRemixPrompt[];
+  /** 6-8 random picks from POPULAR_PREFILL_QUERIES (server-side shuffled
+   *  so each visit gets a fresh mix without hydration mismatch). */
+  searchQueries?: string[];
   locale: string;
   requireAuth: (reason?: string) => boolean;
   onViewClick: (card: NanoInspirationCardType) => void;
   maxRows?: number;
+  /** Pinned to row-1 rightmost cell (WC rotating slot on the home page). */
+  topRightCell?: React.ReactNode;
 };
 
 type FusedItem =
   | { kind: "template"; card: NanoInspirationCardType }
-  | { kind: "gallery"; prompt: TopRemixPrompt };
+  | { kind: "gallery"; prompt: TopRemixPrompt }
+  | { kind: "search"; query: string };
 
 function GalleryPromptTile({
   prompt,
@@ -88,27 +98,59 @@ function GalleryPromptTile({
   );
 }
 
+function SearchQueryTile({ query, locale }: { query: string; locale: string }) {
+  // Reuse 'topic_capsule' content_type (per feedback_tracking_enums —
+  // backend silently rejects unknown values). Prefix gives admin SQL
+  // a clean way to split home-rail search tiles from other capsule
+  // events without forking the enum.
+  const trackClick = useClickTracking(
+    `home-rail-search:${query}`,
+    "topic_capsule",
+    "cards"
+  );
+  const href = `/${locale}/search?q=${encodeURIComponent(query)}`;
+  return (
+    <Link
+      href={href}
+      onClick={trackClick}
+      className="group relative flex h-full flex-col items-center justify-center overflow-hidden rounded-2xl border-2 border-amber-200 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50 p-4 text-center shadow-md transition-all duration-300 hover:border-amber-400 hover:shadow-2xl"
+    >
+      <Search className="mb-2 h-5 w-5 text-amber-700" />
+      <p className="text-sm font-semibold leading-snug text-neutral-900 line-clamp-3">
+        {query}
+      </p>
+      <p className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-amber-700">
+        Search →
+      </p>
+    </Link>
+  );
+}
+
 export default function HomeFusedRow({
   templates,
   galleryPrompts,
+  searchQueries = [],
   locale,
   requireAuth,
   onViewClick,
   maxRows = 8,
+  topRightCell,
 }: Props) {
   const [expanded, setExpanded] = useState(false);
 
   // Build the interleaved sequence. Templates are kept in their
-  // incoming order (caller pre-sorted by rank_score); gallery prompts
-  // arrive pre-sorted by copy count. We splice in one gallery prompt
-  // at every Nth position (0-indexed): positions 3, 7, 11, ...
+  // incoming order (caller pre-sorted by rank_score). Gallery prompts
+  // and search-query tiles are spliced at their own cadences
+  // (gallery: every 3rd template; search: every 5th template). With a
+  // 5-wide grid, this lands a search tile in row 1 only if it falls
+  // before the topRightCell — which is reserved (WC slot), so we shift
+  // the first search tile to after the row-1 visible window.
   const fused: FusedItem[] = useMemo(() => {
     const out: FusedItem[] = [];
     let g = 0;
+    let s = 0;
     for (let i = 0; i < templates.length; i++) {
       out.push({ kind: "template", card: templates[i] });
-      // After the Nth template tile, before the (N+1)th, push the
-      // next gallery prompt. So with ratio=4: positions 3, 7, 11, …
       if (
         (i + 1) % (GALLERY_INTERLEAVE_RATIO - 1) === 0 &&
         g < galleryPrompts.length
@@ -116,14 +158,24 @@ export default function HomeFusedRow({
         out.push({ kind: "gallery", prompt: galleryPrompts[g] });
         g += 1;
       }
+      if (
+        (i + 1) % (SEARCH_QUERY_INTERLEAVE_RATIO - 1) === 0 &&
+        s < searchQueries.length
+      ) {
+        out.push({ kind: "search", query: searchQueries[s] });
+        s += 1;
+      }
     }
-    // Anything leftover (rare — only when galleryPrompts > templates / 3)
     while (g < galleryPrompts.length) {
       out.push({ kind: "gallery", prompt: galleryPrompts[g] });
       g += 1;
     }
+    while (s < searchQueries.length) {
+      out.push({ kind: "search", query: searchQueries[s] });
+      s += 1;
+    }
     return out;
-  }, [templates, galleryPrompts]);
+  }, [templates, galleryPrompts, searchQueries]);
 
   // Approximate visible window. Match NanoInspirationRow's heuristic:
   // 5 cols × 8 rows = 40. We don't have useGridCols here; pick 5 cols
@@ -135,22 +187,39 @@ export default function HomeFusedRow({
   return (
     <div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
-        {visible.map((item) =>
-          item.kind === "template" ? (
-            <NanoInspirationCard
-              key={`tpl-${item.card.id}`}
-              card={item.card}
-              requireAuth={requireAuth}
-              onViewClick={onViewClick}
-            />
-          ) : (
-            <GalleryPromptTile
-              key={`gal-${item.prompt.id}`}
-              prompt={item.prompt}
+        {topRightCell ? (
+          <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5 xl:col-start-6">
+            {topRightCell}
+          </div>
+        ) : null}
+        {visible.map((item) => {
+          if (item.kind === "template") {
+            return (
+              <NanoInspirationCard
+                key={`tpl-${item.card.id}`}
+                card={item.card}
+                requireAuth={requireAuth}
+                onViewClick={onViewClick}
+              />
+            );
+          }
+          if (item.kind === "gallery") {
+            return (
+              <GalleryPromptTile
+                key={`gal-${item.prompt.id}`}
+                prompt={item.prompt}
+                locale={locale}
+              />
+            );
+          }
+          return (
+            <SearchQueryTile
+              key={`q-${item.query}`}
+              query={item.query}
               locale={locale}
             />
-          )
-        )}
+          );
+        })}
       </div>
       {hidden > 0 && (
         <div className="mt-5 flex justify-center">

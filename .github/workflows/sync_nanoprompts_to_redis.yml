@@ -11,10 +11,13 @@ on:
       - "scripts/snapshot_top_remix_prompts.cjs"
       - ".github/workflows/sync_nanoprompts_to_redis.yml"
   schedule:
-    # Daily 06:00 UTC — refreshes public/data/top_remix_prompts.json
-    # (top-25 gallery prompts by 30d copy count) for the home fused
-    # rail. Redis sync step is idempotent so daily fire is harmless.
-    - cron: "0 6 * * *"
+    # Weekly Monday 06:00 UTC — refreshes public/data/top_remix_prompts.json
+    # (top-25 gallery prompts by 30d copy count + featured_boost picks)
+    # for the home fused rail. Redis sync step is idempotent so weekly
+    # fire is harmless. Daily was overkill — the 30d-window denominator
+    # plus weekly featured_boost edits don't churn the leaderboard fast
+    # enough to need a daily refresh.
+    - cron: "0 6 * * 1"
   workflow_dispatch:
 
 permissions:

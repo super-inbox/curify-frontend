@@ -19,6 +19,7 @@ import nanoInspiration from "@/public/data/nano_inspiration.json";
 // time → no per-render DB/API hit; refreshes when the snapshot is
 // committed (run the script when refresh is wanted).
 import topRemixSnapshot from "@/public/data/top_remix_prompts.json";
+import { POPULAR_PREFILL_QUERIES } from "@/lib/popularPrefillQueries";
 
 // Nano cards on the home page are intentionally locale-agnostic for now —
 // always built from the en content + en translations regardless of URL locale.
@@ -113,6 +114,19 @@ export default async function HomePage({
   // every home render.
   const nanoCards = await buildHomeNanoCards();
 
+  // Pick 7 random queries from the prefill pool for the interleaved
+  // search-nudge tiles on the fused home row. Server-evaluated so the
+  // picks are stable across hydration; rotates with each ISR rebuild
+  // (which fires on commit, including the weekly snapshot workflow).
+  const searchQueries = (() => {
+    const a = [...POPULAR_PREFILL_QUERIES];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a.slice(0, 7);
+  })();
+
   return (
     <>
      <script
@@ -139,6 +153,7 @@ export default async function HomePage({
         locale={locale}
         nanoCards={nanoCards}
         topRemixPrompts={topRemixSnapshot.prompts}
+        searchQueries={searchQueries}
       />
     </>
   );
