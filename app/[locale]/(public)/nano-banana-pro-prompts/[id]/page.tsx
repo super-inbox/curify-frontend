@@ -3,14 +3,10 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import CdnImage from "../../../_components/CdnImage";
-import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
-import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
-import MoreLikeThisRail from "@/app/[locale]/_components/MoreLikeThisRail";
 import { getCanonicalPath } from "@/lib/canonical";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
 import PromptTagChips from "./PromptTagChips";
-import GalleryRemixSection from "./GalleryRemixSection";
+import GalleryReproduceSurface from "./GalleryReproduceSurface";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPrompt } from "@/types/nanoPrompts";
 import PromptCard from "../PromptCard";
@@ -111,6 +107,11 @@ export default async function PromptDetailPage({
   if (!prompt) notFound();
 
   const imageUrl = normalizeImageUrl(prompt.imageURL);
+  // Absolute URL for the backend to fetch as the image2image reference when a
+  // production tile transforms the source image (server can't resolve a
+  // relative CDN path).
+  const absoluteImageUrl =
+    toAbsUrlMaybe(imageUrl) ?? "/images/default-prompt-image.jpg";
   const promptText = prompt.prompt;
 
   const canonicalPath = buildPromptPath(DEFAULT_CONTENT_LOCALE, prompt.id);
@@ -199,105 +200,67 @@ export default async function PromptDetailPage({
       />
 
       <main className="mx-auto max-w-[1400px] px-4 py-4 sm:px-6 lg:px-8">
-        <ExamplePromptHero
-          title={prompt.title}
-          prompt={promptText}
-          trackingId={String(prompt.id)}
-          promptVariant="preview"
-          // Prompt-gallery audience is overwhelmingly creator + designer
-          // per the catalog audit — narrow the chip set so the affordance
-          // feels relevant instead of generic.
-          useCaseFilter={["for-creators", "for-designers"]}
-          description={prompt.description || undefined}
-          prevNext={prevNext}
-          breadcrumbs={[
-            {
-              label: "Home",
-              href: getCanonicalPath(locale),
-            },
-            {
-              label: "Nano Banana Prompts",
-              href: getCanonicalPath(locale, "/nano-banana-pro-prompts"),
-            },
-            {
-              label: prompt.title,
-            },
-          ]}
-          metaChips={
-            <PromptTagChips
-              tags={prompt.tags}
-              locale={locale}
-              size="small"
-            />
-          }
-          image={
-            // Tile click opens the prompt in the carousel — same UX as
-            // the example page'/template-example carousel. Wrapping the
-            // image surface lets users zoom / scrub siblings without
-            // losing the detail page in their history.
-            <Link
-              href={`/${locale}/carousel/prompt-gallery/${prompt.id}`}
-              className="relative block h-full min-h-[360px] w-full cursor-zoom-in lg:min-h-0"
-              aria-label="Open image in carousel"
-            >
-              <CdnImage
-                src={imageUrl}
-                alt={prompt.title}
-                fill
-                className="object-contain"
-                priority
-              />
-            </Link>
-          }
-          actionBar={
-            <UnifiedActionBar
-              className="pt-2"
-              tracking={{
-                contentId: String(prompt.id),
-                contentType: "nano_gallery",
-                viewMode: "cards",
-              }}
-              copy={{
-                enabled: true,
-                text: promptText,
-              }}
-              share={{
-                enabled: true,
-                url: buildPromptPath(locale, prompt.id),
-                title: prompt.title,
-              }}
-            />
-          }
-          moreLikeThisRail={
-            related.length > 0 ? (
-              <MoreLikeThisRail
-                heading="More like this"
-                items={related.map((p) => ({
-                  href: buildPromptPath(locale, p.id),
-                  src: normalizeImageUrl(p.imageURL),
-                  alt: p.title || `Prompt ${p.id}`,
-                  title: p.title,
-                }))}
-                limit={2}
-              />
-            ) : null
-          }
-        />
+        {/* Breadcrumbs */}
+        <nav className="mb-4 flex items-center gap-1.5 text-xs text-neutral-500">
+          <Link href={getCanonicalPath(locale)} className="hover:text-neutral-800">
+            Home
+          </Link>
+          <span>/</span>
+          <Link
+            href={getCanonicalPath(locale, "/nano-banana-pro-prompts")}
+            className="hover:text-neutral-800"
+          >
+            Nano Banana Prompts
+          </Link>
+          <span>/</span>
+          <span className="line-clamp-1 font-medium text-neutral-800">
+            {prompt.title}
+          </span>
+        </nav>
 
-        {/* RelatedTagsSection moved to the page tail (after Related
-            Images + Related Templates) so the visual content rails come
-            first and the tag-cluster navigation closes the scroll. */}
+        {/* Header — H1 + tag chips */}
+        <header className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+          <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
+            {prompt.title}
+          </h1>
+          <PromptTagChips tags={prompt.tags} locale={locale} size="small" />
+        </header>
 
-        {/* Remix surface — editable prompt + optional reference image →
-            in-app freeform image generation (backend: NANO_FREEFORM_GENERATION
-            via /nano-freeform/generate). Storage suffix nano_freeform/<id>
-            partitions outputs from the public nano_insp catalog. */}
-        <GalleryRemixSection
+        {/* Unified reproduce surface — Source · Make-it-yours · Production
+            tiles, full width (the old "More like this" right rail is removed;
+            related images below now run full width from the first item). All
+            generations ride the freeform pipeline (NANO_FREEFORM_GENERATION)
+            and land in the user's workspace. */}
+        <GalleryReproduceSurface
+          locale={locale}
           promptId={prompt.id}
           initialPrompt={promptText}
           sourceImageUrl={imageUrl}
+          sourceReferenceUrl={absoluteImageUrl}
           sourceImageAlt={prompt.title}
+          copyText={promptText}
+          shareUrl={buildPromptPath(locale, prompt.id)}
+          title={prompt.title}
         />
+
+        {/* Prev / next within the related set — kept for crawl + navigation
+            now that the hero's overlay arrows are gone. */}
+        {prevNext && (
+          <div className="mt-4 flex items-center justify-between gap-3">
+            <Link
+              href={prevNext.prev.href}
+              className="inline-flex items-center rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50"
+            >
+              ← Prev
+            </Link>
+            <Link
+              href={prevNext.next.href}
+              className="inline-flex items-center rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50"
+            >
+              Next →
+            </Link>
+          </div>
+        )}
 
         {related.length > 0 && (
           <section className="mt-10">
