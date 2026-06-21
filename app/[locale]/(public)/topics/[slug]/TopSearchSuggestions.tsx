@@ -24,7 +24,10 @@ export const TOP_QUERIES: Record<string, string[]> = {
     "World Cup all time top scorers",
     "Messi vs Ronaldo World Cup",
     "Brazil 2002 squad",
-    "FIFA Women's World Cup 2027",
+    // "FIFA Women's World Cup 2027" — removed 2026-06-21: thin content
+    // coverage (no women's WC examples in catalog beyond the bracket
+    // infographic). Re-enable when WC top-queries content fidelity
+    // (task #66) gens a Women's WC 2027 batch.
     "World Cup hosts history",
     "England 1966 World Cup",
   ],

@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
+import { Copy, Check, Sparkles } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
@@ -29,6 +30,7 @@ const normalizeCdnImageUrl = (imageUrl: string | null | undefined): string => {
 };
 
 export default function PromptCard({ prompt }: PromptCardProps) {
+  const t = useTranslations('actionButtons');
   const [copied, setCopied] = useState(false);
   const [hasImgError, setHasImgError] = useState(false);
 
@@ -82,27 +84,45 @@ export default function PromptCard({ prompt }: PromptCardProps) {
             ))}
           </div>
         )}
+
+        {/* Remix affordance — signals this prompt is generable, not just
+            copyable. Mirrors the home-rail gallery tile's badge. */}
+        <span className="absolute bottom-2 left-2 inline-flex items-center gap-1 rounded-full bg-purple-600/90 px-2 py-0.5 text-[11px] font-semibold text-white backdrop-blur-sm">
+          <Sparkles className="h-3 w-3" /> Remix
+        </span>
       </div>
 
-      <div className="flex items-center justify-between gap-2 px-3 py-2">
-        <h3 className="min-w-0 flex-1 truncate text-sm font-semibold text-gray-900">
+      <div className="px-3 py-2">
+        <h3 className="truncate text-sm font-semibold text-gray-900">
           {prompt.title}
         </h3>
 
-        {prompt.prompt && (
-          <button
-            type="button"
-            onClick={copyToClipboard}
-            className="flex shrink-0 items-center gap-1 rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-600 transition-colors hover:bg-indigo-100 cursor-pointer"
-            aria-label={`Copy prompt: ${prompt.title}`}
-          >
-            {copied ? (
-              <><Check className="h-3 w-3 text-green-500" /><span>Copied</span></>
-            ) : (
-              <><Copy className="h-3 w-3" /><span>Copy</span></>
-            )}
-          </button>
-        )}
+        {/* Primary CTA = "Make your own" (value-capture). The whole card links
+            to the detail page, whose reproduce surface lets the user generate;
+            this just makes the generate intent the visible lead instead of
+            Copy. Copy is demoted to a secondary icon-only action. */}
+        <div className="mt-2 flex items-center gap-2">
+          <span className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-purple-600 px-3 py-1.5 text-xs font-bold text-white transition-colors group-hover:bg-purple-700">
+            <Sparkles className="h-3.5 w-3.5" />
+            {t('remixThis')}
+          </span>
+
+          {prompt.prompt && (
+            <button
+              type="button"
+              onClick={copyToClipboard}
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-600 transition-colors hover:bg-neutral-200 cursor-pointer"
+              aria-label={copied ? 'Copied' : `Copy prompt: ${prompt.title}`}
+              title={copied ? 'Copied' : 'Copy prompt'}
+            >
+              {copied ? (
+                <Check className="h-3.5 w-3.5 text-green-500" />
+              ) : (
+                <Copy className="h-3.5 w-3.5" />
+              )}
+            </button>
+          )}
+        </div>
       </div>
     </Link>
   );
