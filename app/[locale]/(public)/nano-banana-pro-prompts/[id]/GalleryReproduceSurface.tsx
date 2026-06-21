@@ -60,27 +60,40 @@ export default function GalleryReproduceSurface({
     viewMode: "cards" as const,
   };
 
-  const { generate, isGenerating } = useFreeformGenerate({ tracking });
+  // State flows through the hook's lifecycle callbacks so a post-signin
+  // auto-resumed generation (fired inside the hook, not from run()) restores
+  // the right tile spinner and lands in the tray identically to a direct click.
+  const { generate, isGenerating } = useFreeformGenerate({
+    tracking,
+    onStart: (args) => setActiveKey((args.meta?.key as string) ?? "custom"),
+    onSuccess: (url, args) => {
+      resultSeq.current += 1;
+      setResults((prev) => [
+        {
+          id: `${(args.meta?.key as string) ?? "gen"}-${resultSeq.current}`,
+          url,
+          label: (args.meta?.label as string) ?? "Generation",
+        },
+        ...prev,
+      ]);
+    },
+    onSettled: () => setActiveKey(null),
+  });
 
-  const run = async (
+  const run = (
     key: string,
     label: string,
     prompt: string,
     referenceUrl?: string,
   ) => {
     if (isGenerating) return;
-    setActiveKey(key);
-    const url = await generate({
+    generate({
       prompt,
       referenceImageUrl: referenceUrl,
       sourcePromptId: String(promptId),
       tracking: { ...tracking, contentId: `gallery-${key}:${String(promptId)}` },
+      meta: { key, label },
     });
-    if (url) {
-      resultSeq.current += 1;
-      setResults((prev) => [{ id: `${key}-${resultSeq.current}`, url, label }, ...prev]);
-    }
-    setActiveKey(null);
   };
 
   // Production tiles transform the image the user is working with: their own

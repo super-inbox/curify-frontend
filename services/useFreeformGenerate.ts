@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 
@@ -59,16 +59,26 @@ export type FreeformGenerateArgs = {
   // Optional per-call tracking override (e.g. to attribute a specific
   // production tile). Falls back to the hook-level tracking target.
   tracking?: TrackingTarget;
+  // Opaque caller metadata threaded back through the lifecycle callbacks
+  // (e.g. {key, label} so the surface can restore the right tile spinner and
+  // label the result) — survives the auth stash + post-signin resume.
+  meta?: Record<string, unknown>;
 };
 
 type Options = {
   tracking: TrackingTarget;
+  // Fires when a generation actually begins (after auth + credit checks pass) —
+  // including a post-signin auto-resumed one. Use to set per-trigger UI state.
+  onStart?: (args: FreeformGenerateArgs) => void;
   // Fired on a successful generation with the signed result URL plus the args
   // that produced it (so the caller can label/group results in a tray).
   onSuccess?: (signedUrl: string, args: FreeformGenerateArgs) => void;
+  // Fires after a started generation settles (success or failure) — pair with
+  // onStart to clear per-trigger UI state.
+  onSettled?: (args: FreeformGenerateArgs) => void;
 };
 
-export function useFreeformGenerate({ tracking, onSuccess }: Options) {
+export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled }: Options) {
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
   const { trackAction, track } = useTracking();
@@ -76,6 +86,12 @@ export function useFreeformGenerate({ tracking, onSuccess }: Options) {
 
   const [isGenerating, setIsGenerating] = useState(false);
   const isGeneratingRef = useRef(false);
+  // Auto-resume after signin: an anonymous user's click is stashed here, the
+  // signin drawer opens, and the useEffect below re-fires it once the user
+  // transitions null → truthy. Mirrors useDirectGenerate — without it the
+  // anon user's tile/Generate click on the gallery surface was silently
+  // dropped at the drawer.
+  const pendingArgsRef = useRef<FreeformGenerateArgs | null>(null);
 
   // Returns the signed URL on success; null when blocked (auth / credits /
   // blank prompt) or on failure (the error is surfaced via alert inside).
@@ -84,6 +100,8 @@ export function useFreeformGenerate({ tracking, onSuccess }: Options) {
     isGeneratingRef.current = true;
 
     if (!user) {
+      // Queue the action, open signin; the post-signin effect resumes it.
+      pendingArgsRef.current = args;
       isGeneratingRef.current = false;
       track({
         contentId: "auth-modal:gallery-remix",
@@ -110,6 +128,7 @@ export function useFreeformGenerate({ tracking, onSuccess }: Options) {
 
     try {
       setIsGenerating(true);
+      onStart?.(args);
       trackAction(args.tracking ?? tracking, "generate");
       const res = await freeformGenerateService.generate({
         prompt: args.prompt.trim(),
@@ -129,8 +148,21 @@ export function useFreeformGenerate({ tracking, onSuccess }: Options) {
     } finally {
       setIsGenerating(false);
       isGeneratingRef.current = false;
+      onSettled?.(args);
     }
   };
+
+  // Fire once when the user transitions null → truthy AND a generate was queued.
+  // The looked-up `generate` is fresh by virtue of being read at effect-fire
+  // time. `user` is the only intended trigger.
+  useEffect(() => {
+    if (user && pendingArgsRef.current) {
+      const args = pendingArgsRef.current;
+      pendingArgsRef.current = null;
+      generate(args);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   return { generate, isGenerating };
 }
