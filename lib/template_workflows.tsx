@@ -1,33 +1,27 @@
-import {
-  Sticker,
-  Shirt,
-  Frame,
-  Images,
-  LayoutGrid,
-  Printer,
-  Shapes,
-  type LucideIcon,
-} from "lucide-react";
+import { Images, LayoutGrid, Printer, Shapes, type LucideIcon } from "lucide-react";
+import { PRODUCTION_TILES } from "./gallery_production_tiles";
 
 /**
  * Template-specific "Production" workflows for the example-page workbench
- * (Column 3). Unlike the gallery surface — whose source image is loosely
- * defined, so it gets the generic transform tiles — a template is highly
- * determined, so its Column 3 should offer template-appropriate deliverables.
+ * (Column 3).
  *
- * Sourcing (decided 2026-06-21): a sensible DEFAULT set for every template +
- * hand-curated OVERRIDES for flagship templates (exact id) and broad PATTERN
- * rules (by id substring). Cheap to expand — add ids/patterns over time. No
- * per-template metadata exists in nano_templates.json, so this registry is the
- * single source of truth.
+ * Implementation mirrors the gallery surface exactly (decided 2026-06-21):
+ * EVERY design workflow is just a preset prompt sent through the freeform
+ * pipeline (POST /nano-freeform/generate → NANO_FREEFORM_GENERATION) with the
+ * current result / example image as the reference. There is NO dedicated
+ * "design workflow" backend — the gallery's 6 tiles are preset prompts, and we
+ * emulate that here. So even deliverable-style workflows (print poster, IG
+ * 9-grid, vector icons, flyer set) are expressed as image-gen prompts that
+ * produce the visual equivalent, not as a separate export backend. Labels avoid
+ * literal file-spec claims (no "300DPI/CMYK") since the output is a rendered
+ * image, not a true print file.
  *
- * Two kinds:
- *  - `transform`: a real image2image generation on the current result (or the
- *    example image) via the freeform pipeline — same mechanism as the gallery
- *    tiles. The prompt is written as an explicit image-edit instruction.
- *  - `soon`: a deliverable we don't produce yet (PDF / A3 print / IG 9-grid /
- *    vector extract). Rendered visible-but-disabled so we capture demand-signal
- *    clicks without faking output. Wire to a real pipeline later.
+ * Sourcing: DEFAULT = the same 6 workflows the gallery uses (reused verbatim) +
+ * hand-curated OVERRIDES for flagship templates (exact id) + broad PATTERN rules
+ * (by id substring). Cheap to expand.
+ *
+ * The `soon` kind is retained in the type for any genuinely un-promptable future
+ * deliverable, but nothing uses it today — every workflow is a live transform.
  */
 export type TemplateWorkflow = {
   key: string;
@@ -35,11 +29,11 @@ export type TemplateWorkflow = {
   hint: string;
   icon: LucideIcon;
   kind: "transform" | "soon";
-  /** Preset image2image prompt — required for kind "transform". */
+  /** Preset image2image prompt — present for kind "transform". */
   prompt?: string;
 };
 
-const transform = (
+const wf = (
   key: string,
   label: string,
   hint: string,
@@ -47,44 +41,43 @@ const transform = (
   prompt: string,
 ): TemplateWorkflow => ({ key, label, hint, icon, kind: "transform", prompt });
 
-const soon = (
-  key: string,
-  label: string,
-  hint: string,
-  icon: LucideIcon,
-): TemplateWorkflow => ({ key, label, hint, icon, kind: "soon" });
+// DEFAULT = the gallery's 6 design workflows, reused verbatim (emulate the
+// gallery). Same preset prompts, same freeform pipeline.
+const DEFAULT_WORKFLOWS: TemplateWorkflow[] = PRODUCTION_TILES.map((tile) => ({
+  key: tile.key,
+  label: tile.label,
+  hint: tile.hint,
+  icon: tile.icon,
+  kind: "transform" as const,
+  prompt: tile.prompt,
+}));
 
-// Shared transforms (mirror the gallery production tiles; prompts say "the
-// attached image" because the backend sends the reference image first).
-const STICKER = transform(
-  "sticker", "Sticker pack", "Die-cut, white border", Sticker,
-  "Turn the attached image into a die-cut sticker: isolate the main subject as a clean cutout with a thick white border and a subtle drop shadow, bold vibrant flat colors, plain light background. Preserve the subject's identity and key features.",
+// Reusable template-specific deliverable workflows (all real preset prompts).
+const PRINT_POSTER = wf(
+  "print-poster", "Print poster", "Print-ready layout", Printer,
+  "Recompose the attached image as a print-ready poster: the artwork as a large central hero, balanced margins, clean space reserved for a title and a short caption, crisp high detail, portrait orientation. Keep the original subject and style.",
 );
-const MERCH = transform(
-  "merch", "Merch mockup", "Tee · mug · tote", Shirt,
-  "Use the design from the attached image as artwork placed on realistic product mockups: a t-shirt, a ceramic mug, and a tote bag arranged together, soft studio lighting, clean neutral background, e-commerce catalog style.",
+const IG_GRID = wf(
+  "ig-grid", "Instagram 9-grid", "Sliced for feed", LayoutGrid,
+  "Render the attached image as a single picture divided into a 3x3 grid (9 equal square tiles) with thin even gutters between tiles, so it reads as one image split into 9 Instagram carousel posts. Preserve the original content across the tiles.",
 );
-const POSTER = transform(
-  "poster", "Poster / wallpaper", "Print-ready framing", Frame,
-  "Turn the attached image into a polished poster / wallpaper: balanced composition, rich lighting, tasteful negative space for typography, high-resolution print-ready framing. Keep the main subject as the focal point.",
+const VECTOR_ICONS = wf(
+  "vector-icons", "Vector icon set", "Flat minimalist icons", Shapes,
+  "Extract the key subjects/landmarks from the attached image and render them as a clean set of flat, minimalist vector-style icons arranged on a plain neutral background — consistent line weight, limited cohesive color palette, evenly spaced.",
 );
-
-const DEFAULT_WORKFLOWS: TemplateWorkflow[] = [
-  STICKER,
-  MERCH,
-  POSTER,
-  soon("a4-pdf", "A4 print PDF", "High-res export", Printer),
-];
 
 // Exact-id overrides for flagship templates.
 const OVERRIDES_EXACT: Record<string, TemplateWorkflow[]> = {
   "template-portrait-retouching-blueprint": [
-    transform(
+    wf(
       "before-after", "Before / After collage", "小红书-ready split", Images,
-      "Create a clean before-and-after collage from the attached image: left panel the original, right panel the retouched/enhanced version of the same person, with subtle 'BEFORE' and 'AFTER' labels, social-ready vertical layout. Preserve the person's identity.",
+      "Create a clean before-and-after collage from the attached image: left panel the original, right panel the retouched/enhanced version of the SAME person, with subtle 'BEFORE' and 'AFTER' labels, social-ready vertical layout. Preserve the person's identity and features.",
     ),
-    soon("beauty-poster", "医美海报排版", "Clinic poster layout", LayoutGrid),
-    soon("a4-print", "A4 print PDF", "High-res export", Printer),
+    wf(
+      "beauty-poster", "Beauty poster", "Aesthetic-clinic promo", LayoutGrid,
+      "Compose the attached portrait into a polished aesthetic-clinic promotional poster: the person as the hero image, elegant typographic space for a headline and three short service bullets, soft premium color palette, vertical poster format. Keep the person's identity.",
+    ),
+    PRINT_POSTER,
   ],
 };
 
@@ -92,23 +85,22 @@ const OVERRIDES_EXACT: Record<string, TemplateWorkflow[]> = {
 const PATTERN_RULES: { test: RegExp; workflows: TemplateWorkflow[] }[] = [
   {
     test: /travel.*map|map.*travel|itinerary|city-?guide/i,
-    workflows: [
-      soon("a3-print", "A3 300DPI print", "High-res export", Printer),
-      soon("ig-grid", "Instagram 9-grid", "Sliced for feed", LayoutGrid),
-      soon("vector-icons", "Vector landmark icons", "Extract as SVG", Shapes),
-    ],
+    workflows: [PRINT_POSTER, IG_GRID, VECTOR_ICONS],
   },
   {
     test: /health|wellness|clinic|medical|nutrition/i,
     workflows: [
-      soon("flyer-set", "Clinic flyer set", "Multi-size pack", LayoutGrid),
-      soon("a4-print", "A4 print PDF", "High-res export", Printer),
-      POSTER,
+      wf(
+        "flyer-set", "Clinic flyer", "Wellness flyer layout", LayoutGrid,
+        "Lay out the attached image as a professional clinic/wellness flyer: a clear headline area at the top, the image as the hero, two or three short caption blocks with small icons, clean medical aesthetic, vertical flyer format.",
+      ),
+      PRINT_POSTER,
+      IG_GRID,
     ],
   },
   {
     test: /poster|infographic|chart|board/i,
-    workflows: [POSTER, MERCH, soon("a3-print", "A3 300DPI print", "High-res export", Printer)],
+    workflows: [PRINT_POSTER, IG_GRID, VECTOR_ICONS],
   },
 ];
 
