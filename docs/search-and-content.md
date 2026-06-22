@@ -6,6 +6,8 @@ _Last updated: 2026-06-05 (strategic reframe: WC is the entry point, the engine 
 
 Search quality, content tagging, content production, and upstream demand-sensing each have their own runbook (`docs/search-quality.md`, `docs/batch-generation.md`, plus pieces in `curify-studio`), but the work is interlocking — a recall fix in search can be a tag fix, a tag refactor can change what gets generated next, and the upstream proposals pipeline feeds the content drop. This doc is the **orchestration layer** that names the threads, points to the runbooks, and tracks cross-thread priorities so we don't lose context jumping between them.
 
+**New operators start here:** [`docs/onboarding-runbook.md`](./onboarding-runbook.md) covers the prerequisites (tools, repo clones, GCS access), env vars, and step-by-step for each recurring workflow (daily content drop, batch gen, WC daily recap, prefill quality check, snapshot regen, manual credit grant). This doc is the WHY; the onboarding runbook is the HOW.
+
 The four threads:
 
 | # | Thread | Where it lives | Status doc |
@@ -214,7 +216,7 @@ Ran a seeded-random audit (1 template + 1 example per tier-1's tier-2 children; 
 
 ## Thread c — Content production + daily drop
 
-**Runbook:** [`docs/batch-generation.md`](./batch-generation.md). Memory: `project_daily_template_workflow.md`.
+**Runbooks:** [`docs/batch-generation.md`](./batch-generation.md) (config-driven batch gen) + [`docs/onboarding-runbook.md` § 2.1](./onboarding-runbook.md#21-daily-content-drop-hongjie28-patch-n) (the daily `hongjie28-patch-N` ingest loop, end-to-end) + [`docs/onboarding-runbook.md` § 2.3](./onboarding-runbook.md#23-wc-daily-recap-manual-paste-and-ship) (WC daily recap ritual).
 
 ### Already shipped
 - Config-driven generator (`scripts/generate_template_examples.cjs`) with watermark, auto-tag, `search_aliases` enrichment, optional `--sync` to CDN.
