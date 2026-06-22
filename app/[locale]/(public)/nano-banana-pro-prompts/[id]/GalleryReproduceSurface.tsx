@@ -2,11 +2,11 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import { Sparkles, X, Download, Loader2, ArrowUpRight } from "lucide-react";
+import { Sparkles, Download, Loader2, ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import Upload from "@/app/[locale]/_components/Upload";
+import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
 import { PRODUCTION_TILES } from "@/lib/gallery_production_tiles";
@@ -44,9 +44,7 @@ export default function GalleryReproduceSurface({
 
   const [editedPrompt, setEditedPrompt] = useState(initialPrompt);
   const [referenceImageUrl, setReferenceImageUrl] = useState<string | null>(null);
-  const [referencePreviewUrl, setReferencePreviewUrl] = useState<string | null>(null);
   const [isUploadingImage, setIsUploadingImage] = useState(false);
-  const [imageUploadError, setImageUploadError] = useState<string | null>(null);
 
   const [results, setResults] = useState<ResultItem[]>([]);
   // Which trigger is currently running ("custom" or a tile key) — drives the
@@ -106,11 +104,6 @@ export default function GalleryReproduceSurface({
   const latest = results[0] ?? null;
 
   const handleResetPrompt = () => setEditedPrompt(initialPrompt);
-  const handleRemoveReference = () => {
-    setReferenceImageUrl(null);
-    setReferencePreviewUrl(null);
-    setImageUploadError(null);
-  };
 
   const labelCls =
     "mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500";
@@ -179,58 +172,11 @@ export default function GalleryReproduceSurface({
               )}
             </div>
 
-            <div>
-              <label className="mb-1.5 block text-xs font-medium text-neutral-600">
-                Reference image (optional)
-              </label>
-              {referencePreviewUrl ? (
-                <div className="relative inline-block overflow-hidden rounded-xl border border-neutral-300 bg-white">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={referencePreviewUrl}
-                    alt="Reference"
-                    className="block max-h-24 w-auto object-contain"
-                  />
-                  <button
-                    type="button"
-                    onClick={handleRemoveReference}
-                    aria-label="Remove reference image"
-                    className="absolute right-1.5 top-1.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80"
-                  >
-                    <X className="h-3 w-3" />
-                  </button>
-                  {isUploadingImage && (
-                    <span className="absolute bottom-1.5 left-1.5 rounded-full bg-black/60 px-2 py-0.5 text-[11px] font-semibold text-white">
-                      Uploading…
-                    </span>
-                  )}
-                </div>
-              ) : (
-                <Upload
-                  compact
-                  acceptedKinds="image"
-                  onPreviewReady={(localUrl) => {
-                    setReferencePreviewUrl(localUrl);
-                    setImageUploadError(null);
-                  }}
-                  onUploadStart={() => setIsUploadingImage(true)}
-                  onUploaded={(_id, blobUrl) => {
-                    setReferenceImageUrl(blobUrl);
-                    setIsUploadingImage(false);
-                  }}
-                  onUploadError={(err) => {
-                    setIsUploadingImage(false);
-                    setImageUploadError(err);
-                  }}
-                />
-              )}
-              {imageUploadError && (
-                <p className="mt-1.5 text-xs text-red-600">{imageUploadError}</p>
-              )}
-              <p className="mt-1.5 text-[11px] text-neutral-500">
-                When attached, your prompt and the tiles use this image instead of the source.
-              </p>
-            </div>
+            <ReferenceImageUpload
+              onChange={setReferenceImageUrl}
+              onUploadingChange={setIsUploadingImage}
+              hint="When attached, your prompt and the tiles use this image instead of the source."
+            />
 
             <button
               type="button"

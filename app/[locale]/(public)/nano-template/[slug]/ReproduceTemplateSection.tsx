@@ -7,7 +7,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import Upload from "@/app/[locale]/_components/Upload";
+import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
@@ -54,13 +54,11 @@ export default function ReproduceTemplateSection(props: {
 
   // image-to-image: reference image upload state (only used when
   // template.requires_image_upload). referenceImageUrl is the uploaded
-  // blob_url sent to the backend; referencePreviewUrl is the local
-  // object-URL shown immediately while/after uploading.
+  // blob_url sent to the backend; the preview/error are owned by
+  // ReferenceImageUpload now.
   const requiresImageUpload = !!template.requires_image_upload;
   const [referenceImageUrl, setReferenceImageUrl] = useState<string | null>(null);
-  const [referencePreviewUrl, setReferencePreviewUrl] = useState<string | null>(null);
   const [isUploadingImage, setIsUploadingImage] = useState(false);
-  const [imageUploadError, setImageUploadError] = useState<string | null>(null);
 
   useEffect(() => {
     const next: Record<string, any> = {};
@@ -182,68 +180,19 @@ export default function ReproduceTemplateSection(props: {
             {/* Reference image upload — only for image-to-image templates
                 (requires_image_upload). Generate is gated on this below. */}
             {requiresImageUpload && (
-              <div>
-                <div className="mb-1 flex items-center justify-between gap-3">
-                  <div className="text-sm font-semibold text-neutral-800">
-                    {t("reproduce.referenceImageLabel")}
-                  </div>
-                  {referencePreviewUrl && (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setReferenceImageUrl(null);
-                        setReferencePreviewUrl(null);
-                        setImageUploadError(null);
-                        setGeneratedImageUrl(null);
-                        setGeneratedExampleId(null);
-                      }}
-                      className="cursor-pointer text-[11px] font-semibold text-purple-600 hover:text-purple-700"
-                    >
-                      {t("reproduce.replaceImage")}
-                    </button>
-                  )}
-                </div>
-
-                {referencePreviewUrl ? (
-                  <div className="relative overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={referencePreviewUrl}
-                      alt="Reference"
-                      className="max-h-48 w-full object-contain"
-                    />
-                    {isUploadingImage && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-white/60 text-sm font-semibold text-neutral-700">
-                        {t("reproduce.uploadingImage")}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div className="overflow-hidden rounded-xl">
-                    <Upload
-                      acceptedKinds="image"
-                      onPreviewReady={(localUrl) => {
-                        setReferencePreviewUrl(localUrl);
-                        setImageUploadError(null);
-                      }}
-                      onUploadStart={() => setIsUploadingImage(true)}
-                      onUploaded={(_imageId, blobUrl) => {
-                        setReferenceImageUrl(blobUrl);
-                        setIsUploadingImage(false);
-                      }}
-                      onUploadError={(err) => {
-                        setIsUploadingImage(false);
-                        setReferencePreviewUrl(null);
-                        setImageUploadError(err);
-                      }}
-                    />
-                  </div>
-                )}
-
-                {imageUploadError && (
-                  <p className="mt-1 text-xs text-red-600">{imageUploadError}</p>
-                )}
-              </div>
+              <ReferenceImageUpload
+                variant="full"
+                required
+                label={t("reproduce.referenceImageLabel")}
+                replaceLabel={t("reproduce.replaceImage")}
+                uploadingLabel={t("reproduce.uploadingImage")}
+                onChange={setReferenceImageUrl}
+                onUploadingChange={setIsUploadingImage}
+                onRemove={() => {
+                  setGeneratedImageUrl(null);
+                  setGeneratedExampleId(null);
+                }}
+              />
             )}
 
             {params.length === 0 ? (
