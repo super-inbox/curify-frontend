@@ -6,11 +6,9 @@ import { notFound } from "next/navigation";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
-import ExampleRightColumn from "./ExampleRightColumn";
+import ExampleReproduceSurface from "./ExampleReproduceSurface";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
-import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
-import MoreLikeThisRail from "@/app/[locale]/_components/MoreLikeThisRail";
 import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
 import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
@@ -320,17 +318,48 @@ export default async function NanoExampleDetailPage({
 
   return (
     <main className="mx-auto max-w-[1600px] px-4 py-2 sm:px-6 lg:px-8">
-      <ExamplePromptHero
+      {/* Breadcrumbs */}
+      <nav className="mb-4 flex items-center gap-1.5 text-xs text-neutral-500">
+        <Link href={`/${rawLocale}`} className="hover:text-neutral-800">Home</Link>
+        <span>/</span>
+        <Link href={`/${rawLocale}/nano-template/${slug}`} className="hover:text-neutral-800">
+          {category || slug}
+        </Link>
+        <span>/</span>
+        <span className="line-clamp-1 font-medium text-neutral-800">{title}</span>
+      </nav>
+
+      {/* Header — H1 + topic capsules */}
+      <header className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+        <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">{title}</h1>
+        {metaChips ? <div className="flex flex-wrap items-center gap-2">{metaChips}</div> : null}
+      </header>
+
+      {/* Unified reproduce workbench — Source · Make-it-yours · Production tiles,
+          full width (the old "More like this" right rail is gone; related
+          images run full-width at the bottom). Mirrors the gallery surface so
+          the generate mental model is identical across template + gallery. */}
+      <ExampleReproduceSurface
+        locale={rawLocale}
+        templateId={templateId}
+        slug={slug}
         title={title}
-        prompt={prompt}
-        trackingId={example.id}
-        prevNext={prevNext}
-        metaChips={metaChips}
-        breadcrumbs={[
-          { label: "Home", href: `/${rawLocale}` },
-          { label: category || slug, href: `/${rawLocale}/nano-template/${slug}` },
-          { label: title },
-        ]}
+        description={bodyDescription ?? undefined}
+        sourceReferenceUrl={
+          toAbsUrlMaybe(example.asset.image_url) ?? example.asset.image_url
+        }
+        parameters={templateParameters}
+        initialParams={paramEntries}
+        basePrompt={basePrompt}
+        allowGeneration={templateAllowGeneration}
+        requiresImageUpload={templateRequiresImageUpload}
+        batchEnabled={templateBatch}
+        exampleId={example.id}
+        examplePageUrl={examplePageUrl}
+        existingExamples={existingExamples}
+        useCaseFilter={templateUseCases}
+        copyText={prompt}
+        shareUrl={examplePageUrl}
         image={
           example.asset.video_url ? (
             <ExampleVideoPlayer
@@ -358,41 +387,26 @@ export default async function NanoExampleDetailPage({
             </Link>
           )
         }
-        rightColumnContent={
-          <ExampleRightColumn
-            title={title}
-            description={bodyDescription ?? undefined}
-            templateId={templateId}
-            slug={slug}
-            locale={rawLocale}
-            parameters={templateParameters}
-            allowGeneration={templateAllowGeneration}
-            requiresImageUpload={templateRequiresImageUpload}
-            initialParams={paramEntries}
-            exampleId={example.id}
-            basePrompt={basePrompt}
-            batchEnabled={templateBatch}
-            examplePageUrl={examplePageUrl}
-            existingExamples={existingExamples}
-            useCaseFilter={templateUseCases}
-            allTopics={topicNav}
-          />
-        }
-        moreLikeThisRail={
-          (similarItems.length > 0 ? similarItems : gridItems).length > 0 ? (
-            <MoreLikeThisRail
-              heading={similarItems.length > 0 ? "More like this" : "More from this template"}
-              items={(similarItems.length > 0 ? similarItems : gridItems).map((item) => ({
-                href: `/${rawLocale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`,
-                src: item.preview,
-                alt: item.title,
-                title: item.title,
-              }))}
-              limit={2}
-            />
-          ) : null
-        }
       />
+
+      {/* Prev / next within the template's examples — kept for crawl +
+          navigation now that the hero's overlay arrows are gone. */}
+      {prevNext && (
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <Link
+            href={prevNext.prev.href}
+            className="inline-flex items-center rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50"
+          >
+            ← Prev
+          </Link>
+          <Link
+            href={prevNext.next.href}
+            className="inline-flex items-center rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50"
+          >
+            Next →
+          </Link>
+        </div>
+      )}
 
       <section className="mt-8">
         {similarItems.length > 0 && (
@@ -400,17 +414,15 @@ export default async function NanoExampleDetailPage({
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More like this
             </h2>
-            {/* desktopHideFirstN=2 unifies with the MoreLikeThisRail above
-                — the rail shows similarItems[0..1] on lg+, the grid
-                renders items[2..N] on desktop, full 0..N on mobile (rail
-                is hidden below lg). One continuous "More like this" flow,
-                no duplication. */}
+            {/* Full "More like this" set at the bottom (below the fold). The
+                old right-rail that showed the first 2 is gone — Column 3 is now
+                the production workbench — so the grid renders the complete set
+                from the first item. */}
             <ExampleImagesGrid
               items={similarItems}
               locale={pageLocale}
               maxRows={2}
               desktopOpensExample
-              desktopHideFirstN={2}
               showCaption
             />
           </>

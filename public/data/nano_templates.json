@@ -472,6 +472,29 @@
   {
     "id": "template-character",
     "locales": {
+      "en": {
+        "base_prompt": "You are a top-tier game and anime concept art designer, skilled in creating detailed character design illustrations. You possess the ability of 'pixel-level disassembly', allowing you to see through the layers of a character's clothing, capture subtle changes in facial expressions, and visualize related items. Based on 【{character_source} featuring {character_name}】, generate a 'panoramic character depth concept breakdown' image with a 3:4 aspect ratio. The image must include a full-body illustration of the central character, surrounded by displays of the character's clothing layers, different expressions, core props, material close-ups, and a showcase of intimate and personal items that reflect everyday life. Include: clothing layers (multi-layer outfits + disassembly of intimate undergarments), expression set (3-4 close-ups of the head showing different emotions), material close-ups, related items (personal bags and their contents, beauty and care products, intimate life objects). Art style: Maintain a high-quality 2D illustration style or concept design sketch style, with clean and crisp lines. Background: Use a beige, parchment, or light gray textured background. Text description: Simulate handwritten notes next to each disassembled element, briefly explaining the material or brand/model hints, using English.",
+        "parameters": [
+          {
+            "name": "character_source",
+            "type": "text",
+            "label": "Character Source",
+            "placeholder": [
+              "Crayon Shin-chan",
+              "Detective Conan"
+            ]
+          },
+          {
+            "name": "character_name",
+            "type": "text",
+            "label": "Character Name",
+            "placeholder": [
+              "Shinnosuke Nohara",
+              "Shinichi Kudo"
+            ]
+          }
+        ]
+      },
       "zh": {
         "base_prompt": "你是一位顶尖的游戏与动漫概念美术设计大师，擅长制作详尽的角色设定图。你具备\"像素级拆解\"的能力，能够透视角色的穿着层级、捕捉微表情变化，并将与其相关的物品进行具象化还原。根据【{character_source}中{character_name}】，生成一张\"全景式角色深度概念分解图\"，图片比例3:4。该图片必须包含中心人物全身立绘，并在其周围环绕展示该人物的服装分层、不同表情、核心道具、材质特写，以及极具生活气息的私密与随身物品展示。包含：服装分层（多层穿搭+私密内着拆解）、表情集（3-4个头部特写展示不同情绪）、材质特写、关联物品（随身包袋与内容物、美妆与护理、私密生活物件）。画风: 保持高质量的2D插画风格或概念设计草图风格，线条干净利落。背景: 使用米黄色、羊皮纸或浅灰色纹理背景。文字说明: 在每个拆解元素旁模拟手写注释，简要说明材质或品牌/型号暗示，使用中文。",
         "parameters": [
@@ -491,29 +514,6 @@
             "placeholder": [
               "野原新之助",
               "工藤新一"
-            ]
-          }
-        ]
-      },
-      "en": {
-        "base_prompt": "You are a top-tier game and anime concept art designer, skilled in creating detailed character design illustrations. You possess the ability of 'pixel-level disassembly', allowing you to see through the layers of a character's clothing, capture subtle changes in facial expressions, and visualize related items. Based on 【{character_source} featuring {character_name}】, generate a 'panoramic character depth concept breakdown' image with a 3:4 aspect ratio. The image must include a full-body illustration of the central character, surrounded by displays of the character's clothing layers, different expressions, core props, material close-ups, and a showcase of intimate and personal items that reflect everyday life. Include: clothing layers (multi-layer outfits + disassembly of intimate undergarments), expression set (3-4 close-ups of the head showing different emotions), material close-ups, related items (personal bags and their contents, beauty and care products, intimate life objects). Art style: Maintain a high-quality 2D illustration style or concept design sketch style, with clean and crisp lines. Background: Use a beige, parchment, or light gray textured background. Text description: Simulate handwritten notes next to each disassembled element, briefly explaining the material or brand/model hints, using Chinese.",
-        "parameters": [
-          {
-            "name": "character_source",
-            "type": "text",
-            "label": "Character Source",
-            "placeholder": [
-              "Crayon Shin-chan",
-              "Detective Conan"
-            ]
-          },
-          {
-            "name": "character_name",
-            "type": "text",
-            "label": "Character Name",
-            "placeholder": [
-              "Shinnosuke Nohara",
-              "Shinichi Kudo"
             ]
           }
         ]
