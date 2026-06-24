@@ -2846,7 +2846,11 @@
       "kids-learning"
     ],
     "topics": [
-      "china"
+      "china",
+      "dunhuang",
+      "mogao-caves",
+      "silk-road",
+      "culture"
     ],
     "search_aliases": [
       "敦煌艺术",
@@ -2855,7 +2859,16 @@
       "佛教遗址",
       "文化遗产",
       "旅游景点",
-      "古代建筑"
+      "古代建筑",
+      "敦煌",
+      "莫高窟",
+      "丝绸之路",
+      "dunhuang",
+      "mogao caves",
+      "silk road",
+      "buddhist art",
+      "tang dynasty",
+      "cave murals"
     ],
     "allow_i18n": true
   },
@@ -42932,7 +42945,11 @@
       "kids-learning"
     ],
     "topics": [
-      "china"
+      "china",
+      "dunhuang",
+      "mogao-caves",
+      "silk-road",
+      "culture"
     ],
     "search_aliases": [
       "敦煌艺术",
@@ -42961,7 +42978,16 @@
       "纸工艺",
       "纸艺",
       "纸艺 装饰",
-      "纸雕"
+      "纸雕",
+      "敦煌",
+      "莫高窟",
+      "丝绸之路",
+      "dunhuang",
+      "mogao caves",
+      "silk road",
+      "buddhist art",
+      "tang dynasty",
+      "cave murals"
     ],
     "allow_i18n": true
   },
@@ -143251,6 +143277,292 @@
       "Golden Boot 领导者",
       "日本 vs 突尼斯",
       "西班牙 vs 沙特阿拉伯"
+    ]
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-yumen-pass-silk-road",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-yumen-pass-silk-road.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-yumen-pass-silk-road-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "yumen pass silk road fortress"
+    },
+    "locales": {
+      "en": {
+        "title": "yumen pass silk road fortress"
+      }
+    },
+    "topics": [
+      "culture",
+      "information-card",
+      "infographic",
+      "art-prints",
+      "wall-art",
+      "china",
+      "silk-road",
+      "history"
+    ],
+    "search_aliases": [
+      "玉门关丝绸之路堡垒",
+      "Yumen Pass Silk Road Fortress",
+      "cultural relics",
+      "historical sites",
+      "China history",
+      "丝绸之路文化遗产",
+      "infographic"
+    ]
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-kizil-thousand-buddha-caves",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-kizil-thousand-buddha-caves.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-kizil-thousand-buddha-caves-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "kizil thousand buddha caves"
+    },
+    "locales": {
+      "en": {
+        "title": "kizil thousand buddha caves"
+      }
+    },
+    "topics": [
+      "culture",
+      "information-card",
+      "infographic",
+      "art-prints",
+      "wall-art",
+      "china",
+      "silk-road",
+      "history",
+      "dunhuang"
+    ],
+    "search_aliases": [
+      "克孜尔千佛洞",
+      "Kizil Thousand Buddha Caves",
+      "cultural relics",
+      "Buddhist art",
+      "Dunhuang history",
+      "丝绸之路文化遗产",
+      "infographic"
+    ]
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-longmen-grottoes",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-longmen-grottoes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-longmen-grottoes-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "longmen grottoes buddhist sculptures"
+    },
+    "locales": {
+      "en": {
+        "title": "longmen grottoes buddhist sculptures"
+      }
+    },
+    "topics": [
+      "culture",
+      "information-card",
+      "infographic",
+      "art-prints",
+      "wall-art",
+      "china",
+      "history"
+    ],
+    "search_aliases": [
+      "龙门石窟佛教雕塑",
+      "Longmen Grottoes Buddhist Sculptures",
+      "cultural relics",
+      "Buddhist art",
+      "China history",
+      "丝绸之路文化遗产",
+      "infographic"
+    ]
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-yungang-grottoes",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-yungang-grottoes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-yungang-grottoes-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "yungang grottoes northern wei buddha statues"
+    },
+    "locales": {
+      "en": {
+        "title": "yungang grottoes northern wei buddha statues"
+      }
+    },
+    "topics": [
+      "culture",
+      "information-card",
+      "infographic",
+      "art-prints",
+      "wall-art",
+      "china",
+      "history"
+    ],
+    "search_aliases": [
+      "云冈石窟北魏佛像",
+      "Yungang Grottoes Northern Wei Buddha Statues",
+      "cultural relics",
+      "Buddhist art",
+      "China history",
+      "丝绸之路文化遗产",
+      "infographic"
+    ]
+  },
+  {
+    "id": "template-cultural-travel-journey-infographic-dunhuang-mogao-pilgrimage-journey",
+    "template_id": "template-cultural-travel-journey-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-travel-journey-infographic-dunhuang-mogao-pilgrimage-journey.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-travel-journey-infographic-dunhuang-mogao-pilgrimage-journey-prev.jpg"
+    },
+    "params": {
+      "topic": "Dunhuang Mogao Caves pilgrimage journey then vs now"
+    },
+    "locales": {
+      "en": {
+        "title": "Dunhuang Mogao Caves pilgrimage journey then vs now"
+      }
+    },
+    "topics": [
+      "travel",
+      "culture",
+      "learning",
+      "posters",
+      "history",
+      "infographic",
+      "art-prints",
+      "wall-art",
+      "china",
+      "dunhuang",
+      "mogao-caves",
+      "silk-road"
+    ],
+    "search_aliases": [
+      "敦煌莫高窟朝圣之旅",
+      "Dunhuang Mogao Caves Pilgrimage Journey",
+      "cultural travel",
+      "slow travel",
+      "历史对比",
+      "丝绸之路文化",
+      "infographic"
+    ]
+  },
+  {
+    "id": "template-east-asian-culture-comparison-infographic-tang-silk-road-vs-maritime-trade",
+    "template_id": "template-east-asian-culture-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-east-asian-culture-comparison-infographic-tang-silk-road-vs-maritime-trade.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-tang-silk-road-vs-maritime-trade-prev.jpg"
+    },
+    "params": {
+      "topic": "tang dynasty silk road merchant culture vs maritime trade culture"
+    },
+    "locales": {
+      "en": {
+        "title": "tang dynasty silk road merchant culture vs maritime trade culture"
+      }
+    },
+    "topics": [
+      "culture",
+      "composition",
+      "comparison",
+      "infographic",
+      "china",
+      "silk-road",
+      "history"
+    ],
+    "search_aliases": [
+      "唐朝",
+      "Silk Road",
+      "丝绸之路",
+      "maritime trade",
+      "海上贸易",
+      "cultural comparison",
+      "文化比较",
+      "东亚文化"
+    ]
+  },
+  {
+    "id": "template-historical-event-map-illustration-silk-road-trade-routes-han-to-tang",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-silk-road-trade-routes-han-to-tang.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-silk-road-trade-routes-han-to-tang-prev.jpg"
+    },
+    "params": {
+      "historical_event": "silk road trade routes han dynasty to tang dynasty"
+    },
+    "locales": {
+      "en": {
+        "title": "silk road trade routes han dynasty to tang dynasty"
+      }
+    },
+    "topics": [
+      "learning",
+      "history",
+      "map",
+      "infographic",
+      "illustration",
+      "wall-art",
+      "silk-road",
+      "china"
+    ],
+    "search_aliases": [
+      "丝绸之路",
+      "Silk Road",
+      "汉朝",
+      "Tang Dynasty",
+      "唐朝",
+      "trade routes",
+      "贸易路线",
+      "历史地图"
+    ]
+  },
+  {
+    "id": "template-historical-event-map-illustration-zhang-qian-western-regions-expedition",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-zhang-qian-western-regions-expedition.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-zhang-qian-western-regions-expedition-prev.jpg"
+    },
+    "params": {
+      "historical_event": "zhang qian western regions expedition 138 BC"
+    },
+    "locales": {
+      "en": {
+        "title": "zhang qian western regions expedition 138 BC"
+      }
+    },
+    "topics": [
+      "learning",
+      "history",
+      "map",
+      "infographic",
+      "illustration",
+      "wall-art",
+      "silk-road",
+      "china",
+      "military"
+    ],
+    "search_aliases": [
+      "张骞",
+      "Zhang Qian",
+      "西域探险",
+      "Western Regions Expedition",
+      "138 BC",
+      "历史事件",
+      "军事",
+      "历史地图"
     ]
   }
 ]

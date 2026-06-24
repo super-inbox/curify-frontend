@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
+import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { fillPrompt, type TemplateParameter } from "@/lib/nano_pure";
 import { normalizePrefills } from "@/lib/nano_prompt_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
@@ -79,6 +80,10 @@ export default function ExampleReproduceSurface({
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [soonNote, setSoonNote] = useState<string | null>(null);
+  // image2image: the uploaded reference image (blob_url) + its upload-in-flight
+  // flag. Only used when requiresImageUpload.
+  const [referenceImageUrl, setReferenceImageUrl] = useState<string | null>(null);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
   const resultSeq = useRef(0);
 
   const tracking = {
@@ -92,13 +97,15 @@ export default function ExampleReproduceSurface({
     setResults((prev) => [{ id: `${key}-${resultSeq.current}`, url, label }, ...prev]);
   };
 
-  // Template generation (params → templated image).
+  // Template generation (params → templated image; + uploaded reference for
+  // image2image templates).
   const { generate, dismissAndGenerate, isGenerating: directGenerating, duplicateWarning, clearWarning } =
     useDirectGenerate({
       templateId,
       params: form,
       existingExamples,
       tracking,
+      referenceImageUrl: referenceImageUrl ?? undefined,
       onSuccess: (signedUrl) => pushResult("generate", "Your generation", signedUrl),
     });
 
@@ -117,19 +124,17 @@ export default function ExampleReproduceSurface({
 
   const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
 
+  // Generate inline when the template is generable (allow_generation) OR is an
+  // image2image template (requires_image_upload) — the latter now uploads
+  // inline here instead of redirecting to the detail page. needsImage gates the
+  // button until the reference image is present.
+  const canGenerateInline = allowGeneration || requiresImageUpload;
+  const needsImage = requiresImageUpload && !referenceImageUrl;
+
   const onFormChange = (name: string, value: string) => {
     clearWarning();
     setForm((prev) => ({ ...prev, [name]: value }));
   };
-
-  // image-to-image templates: no inline upload here — route to the detail
-  // page's reproduce section with current params prefilled.
-  const templateGenerateUrl = useMemo(() => {
-    const qs = new URLSearchParams(
-      Object.entries(form).filter(([, v]) => v && String(v).trim() !== ""),
-    ).toString();
-    return `/${locale}/nano-template/${slug}${qs ? `?${qs}` : ""}#reproduce`;
-  }, [locale, slug, form]);
 
   const handleCopyGenerate = async () => {
     try {
@@ -231,6 +236,18 @@ export default function ExampleReproduceSurface({
               </div>
             )}
 
+            {/* image2image: upload the photo to transform, inline (no longer a
+                redirect to the detail page). Generate is gated on it below. */}
+            {requiresImageUpload && (
+              <ReferenceImageUpload
+                required
+                label="Your image"
+                hint="Upload the photo to transform — the template is applied to it."
+                onChange={setReferenceImageUrl}
+                onUploadingChange={setIsUploadingImage}
+              />
+            )}
+
             {/* Raw prompt hidden behind an Advanced disclosure — kept in the DOM
                 (details stays rendered) for SEO + power users, out of the way
                 for B2B users who'd find the code-like text overwhelming. */}
@@ -264,26 +281,23 @@ export default function ExampleReproduceSurface({
 
             {/* Primary generate (mt-auto pins it to the column base). */}
             <div className="mt-auto pt-1">
-              {requiresImageUpload ? (
-                <Link
-                  href={templateGenerateUrl}
-                  onClick={() => trackAction(tracking, "generate")}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700"
-                >
-                  <Wand2 className="h-4 w-4" /> {t("generate")} <span aria-hidden>→</span>
-                </Link>
-              ) : allowGeneration ? (
-                <button
-                  type="button"
-                  onClick={generate}
-                  disabled={anyGenerating}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60"
-                >
-                  {directGenerating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
-                  {directGenerating ? t("generating") : t("generate")}
-                  {clientMounted && !user && <span className="ml-1 text-xs opacity-80">🔒</span>}
-                  {clientMounted && user && <span className="ml-1 text-xs opacity-80">· {CREDITS_COST} credits</span>}
-                </button>
+              {canGenerateInline ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={generate}
+                    disabled={anyGenerating || needsImage || isUploadingImage}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60"
+                  >
+                    {directGenerating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
+                    {directGenerating ? t("generating") : t("generate")}
+                    {clientMounted && !user && <span className="ml-1 text-xs opacity-80">🔒</span>}
+                    {clientMounted && user && <span className="ml-1 text-xs opacity-80">· {CREDITS_COST} credits</span>}
+                  </button>
+                  {needsImage && (
+                    <p className="mt-1.5 text-[11px] text-neutral-500">Upload your image above to generate.</p>
+                  )}
+                </>
               ) : (
                 <button
                   type="button"
