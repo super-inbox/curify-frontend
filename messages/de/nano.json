@@ -6182,5 +6182,68 @@
         ]
       }
     }
+  },
+  "template-original-character-daily-life-grid": {
+    "category": "Original Character Daily Life Grid",
+    "description": "Erstellen Sie eine 2x3 Infografik über das tägliche Leben eines originalen anthropomorphisierten Charakters – sechs konsistente Panels, die denselben Charakter in alltäglichen Szenen zeigen.",
+    "title": "Nano Banana Prompt: Original Character Daily Life Grid Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Vertikale 8K 2x3 Infografik über das tägliche Leben. Der dieselbe Charakter wird in sechs konsistenten Alltagsszenen (Pendeln, Kaffee, Meeting, Mittagessen, Einkaufen, Wochenende) mit identischen Proportionen / Palette / charakteristischem Accessoire gezeigt – nur Pose, Setting und Ausdruck ändern sich. Editorial Flat-Illustration-Ästhetik, warme Pastellpalette, bereit für soziale Medien.",
+        "who": "Geeignet für Original-Charakter-Ersteller, Illustratoren von anthropomorphisierten Konzepten (Bronzearbeiter, Terrakotta-Fitnessbesucher usw.), Xiaohongshu / Instagram Lifestyle-Inhaltsersteller, Markenmaskottchen-Designer, die eine Charakterbibel erstellen.",
+        "how": [
+          "Geben Sie das Charakterkonzept ein (z. B. 'Bronzearbeiter mythisches Wesen' oder 'Terrakotta-Krieger Fitnessbesucher').",
+          "Sechs Panels über das tägliche Leben + Konsistenzprüfung des Charakters automatisch zusammenstellen.",
+          "Erstellen Sie ein vertikales 8K 2x3 Raster über das tägliche Leben."
+        ],
+        "prompts": [
+          "Erstellen Sie ein Raster über das tägliche Leben eines bronze Arbeiters mythisches Wesen.",
+          "Erstellen Sie ein 6-Panel-Blatt eines Terrakotta-Krieger Fitnessbesuchers.",
+          "Erstellen Sie eine Infografik über das tägliche Leben eines Jade-Hipster-Baristas."
+        ]
+      }
+    }
+  },
+  "template-original-character-sticker-pack": {
+    "category": "Original Character Sticker Pack",
+    "description": "Erstellen Sie ein 3x3 Sticker-Pack mit neun Posen eines originalen anthropomorphisierten Charakters – identischer Charakter in neun verschiedenen Ausdrücken.",
+    "title": "Nano Banana Prompt: Original Character Sticker Pack Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Vertikale 8K 3x3 Sticker-Pack-Blatt. Neun gestanzte Sticker-Pose eines originalen anthropomorphisierten Charakters, jede in einem anderen emotionalen Zustand (glücklich / müde / schockiert / stolz / verwirrt / aufgeregt / faul / wütend / liebevoll). Konsistentes Charakterdesign + kleine handgeschriebene Beschriftungstags. Kawaii Flat-Illustration-Ästhetik, kräftige Umrisse für das Ausschneiden von Stickern.",
+        "who": "Geeignet für Original-Charakter-Ersteller, Maskottchen-Designer, Sticker-Pack-Verkäufer (Etsy, Line / WeChat), Inhaltsersteller, die ein Emoji-Set für Charaktere erstellen, IP-Merch-Designer.",
+        "how": [
+          "Geben Sie das Charakterkonzept ein (z. B. 'Bronzearbeiter mythisches Wesen').",
+          "Neun Emotion-Posen + Beschriftungstags + gestanztes Layout automatisch zusammenstellen.",
+          "Erstellen Sie ein vertikales 8K Sticker-Pack mit neun Posen."
+        ],
+        "prompts": [
+          "Erstellen Sie ein 9-Pose Sticker-Pack eines bronze Arbeiters mythisches Wesen.",
+          "Erstellen Sie ein Sticker-Blatt eines anthropomorphisierten Matcha-Latte.",
+          "Erstellen Sie emotionale Sticker eines Büro-Pflanzen-Sukkulentenfreundes."
+        ]
+      }
+    }
+  },
+  "template-modernized-artifact-poster": {
+    "category": "Modernized Artifact Poster",
+    "description": "Erstellen Sie ein vertikales Poster, das ein historisches kulturelles Artefakt nimmt und es anthropomorphisiert in einer modernen Alltagsrolle neu interpretiert.",
+    "title": "Nano Banana Prompt: Modernized Artifact Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Vertikales 8K Poster, das ein historisches Artefakt (bronze Kessel, Terrakotta-Krieger, Tang-Pferdefigur, Ming-Vase usw.) ANTHROPOMORPHISIERT in eine zeitgenössische Alltagsrolle (Unternehmensleiter, Fitnesstrainer, Fahrdienstfahrer, Barista). Bewahrt die historische Materialästhetik des Artefakts – bronzene Patina, Tontextur, Lack, Jade – während es in einem modernen Setting platziert wird. Editorial illustriertes Poster, museumskartenstil Metadatenfußzeile.",
+        "who": "Geeignet für kulturelle Museen + Erbgeschäfte, die IP modernisieren, Kunst-Fusions-Inhaltsersteller, Original-IP-Designer, Markenkampagnen, die kulturelles Erbe mit Alltagsrelevanz verbinden.",
+        "how": [
+          "Geben Sie das Artefakt + moderne Rolle ein (z. B. 'Bronze Ding Kessel als Unternehmensleiter').",
+          "Anthropomorphisiertes Artefakt + modernes Setting + Dynastie-Metadatenfußzeile automatisch zusammenstellen.",
+          "Erstellen Sie ein vertikales 8K Poster eines modernisierten Artefakts."
+        ],
+        "prompts": [
+          "Erstellen Sie ein bronzenes Ding-Kessel als Poster für Unternehmensleiter.",
+          "Erstellen Sie einen Terrakotta-Krieger als modernisiertes Poster für Fitnesstrainer.",
+          "Erstellen Sie eine Tang-Pferdefigur als Poster für Fahrgemeinschaftsfahrer."
+        ]
+      }
+    }
   }
 }

@@ -6182,5 +6182,68 @@
         ]
       }
     }
+  },
+  "template-original-character-daily-life-grid": {
+    "category": "Grille de Vie Quotidienne de Personnage Original",
+    "description": "Générez une infographie de vie quotidienne 2x3 d'un personnage original anthropomorphisé — six panneaux cohérents montrant le MÊME personnage dans des scènes quotidiennes.",
+    "title": "Nano Banana Prompt : Générateur de Grille de Vie Quotidienne de Personnage Original | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Infographie de vie quotidienne verticale 8K 2x3. Le MÊME personnage est montré dans six scènes quotidiennes cohérentes (trajet, café, réunion, déjeuner, courses, week-end) avec des proportions / palette / accessoire signature identiques — seule la pose, le cadre et l'expression changent. Esthétique d'illustration plate éditoriale, palette pastel chaude, prête pour les réseaux sociaux.",
+        "who": "Convient aux créateurs de personnages originaux, illustrateurs de concepts anthropomorphisés (ouvrier en bronze, adepte de la gym en terre cuite, etc.), créateurs de contenu lifestyle sur Xiaohongshu / Instagram, designers de mascottes de marque construisant une bible de personnages.",
+        "how": [
+          "Entrez le concept du personnage (par exemple, 'Bête mythique ouvrier en bronze' ou 'Guerrier en terre cuite adepte de la gym').",
+          "Six panneaux de vie quotidienne + vérification de cohérence du personnage auto-composée.",
+          "Générez une grille de vie quotidienne verticale 8K 2x3."
+        ],
+        "prompts": [
+          "Générez une grille de vie quotidienne d'une bête mythique ouvrier en bronze.",
+          "Créez une feuille de 6 panneaux d'un guerrier en terre cuite adepte de la gym.",
+          "Générez une infographie de vie quotidienne d'un barista hipster en jade."
+        ]
+      }
+    }
+  },
+  "template-original-character-sticker-pack": {
+    "category": "Pack d'Autocollants de Personnage Original",
+    "description": "Générez un pack d'autocollants d'émotions à neuf poses 3x3 d'un personnage original anthropomorphisé — personnage identique à travers neuf expressions différentes.",
+    "title": "Nano Banana Prompt : Générateur de Pack d'Autocollants de Personnage Original | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Feuille d'autocollants verticale 8K 3x3. Neuf poses découpées de style autocollant d'un personnage original anthropomorphisé, chacune dans un état émotionnel différent (heureux / fatigué / choqué / fier / confus / excité / paresseux / en colère / aimant). Design de personnage cohérent + petites étiquettes manuscrites. Esthétique d'illustration plate kawaii, contours audacieux pour la découpe des autocollants.",
+        "who": "Convient aux créateurs de personnages originaux, designers de mascottes, vendeurs de packs d'autocollants (Etsy, Line / WeChat), créateurs de contenu construisant un ensemble d'emojis de personnages, designers de produits dérivés IP.",
+        "how": [
+          "Entrez le concept du personnage (par exemple, 'Bête mythique ouvrier en bronze').",
+          "Neuf poses émotionnelles + étiquettes de légende + mise en page découpée auto-composée.",
+          "Générez un pack d'autocollants à neuf poses verticale 8K."
+        ],
+        "prompts": [
+          "Générez un pack d'autocollants à 9 poses d'une bête mythique ouvrier en bronze.",
+          "Créez une feuille d'autocollants d'un latte matcha anthropomorphisé.",
+          "Générez des autocollants d'émotions d'un ami succulent plante de bureau."
+        ]
+      }
+    }
+  },
+  "template-modernized-artifact-poster": {
+    "category": "Affiche d'Artifact Modernisé",
+    "description": "Générez une affiche verticale prenant un artefact culturel historique et le réimaginant anthropomorphisé dans un rôle quotidien moderne.",
+    "title": "Nano Banana Prompt : Générateur d'Affiche d'Artifact Modernisé | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Affiche verticale 8K réimaginant un artefact historique (chaudron en bronze, guerrier en terre cuite, figurine de cheval Tang, vase Ming, etc.) ANTHROPOMORPHISÉ dans un rôle quotidien contemporain (cadre d'entreprise, entraîneur de gym, conducteur de covoiturage, barista). Préserve l'esthétique matérielle historique de l'artefact — patine de bronze, texture d'argile, laque, jade — tout en le plaçant dans un cadre moderne. Affiche illustrée éditoriale, pied de page de style carte de musée avec métadonnées.",
+        "who": "Convient aux musées culturels + boutiques de patrimoine modernisant la propriété intellectuelle, créateurs de contenu fusionnant l'art, designers de propriété intellectuelle originaux, campagnes de marque mêlant patrimoine culturel et quotidien.",
+        "how": [
+          "Entrez l'artefact + rôle moderne (par exemple, 'Chaudron en bronze ding comme cadre d'entreprise').",
+          "Artefact anthropomorphisé + cadre moderne + pied de page de métadonnées de dynastie auto-composé.",
+          "Générez une affiche d'artefact modernisé verticale 8K."
+        ],
+        "prompts": [
+          "Générez un chaudron en bronze en tant qu'affiche de cadre d'entreprise.",
+          "Créez un guerrier en terre cuite en tant qu'affiche modernisée de coach sportif.",
+          "Générez une figurine de cheval Tang en tant qu'affiche de conducteur de covoiturage."
+        ]
+      }
+    }
   }
 }

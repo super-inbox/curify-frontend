@@ -6181,5 +6181,68 @@
         ]
       }
     }
+  },
+  "template-original-character-daily-life-grid": {
+    "category": "Original Character Daily Life Grid",
+    "description": "Generate a 2x3 daily-life infographic of an original anthropomorphized character — six consistent panels showing the SAME character across everyday scenes.",
+    "title": "Nano Banana Prompt: Original Character Daily Life Grid Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Vertical 8K 2x3 six-panel daily-life infographic. The SAME character is shown across six consistent everyday scenes (commute, coffee, meeting, lunch, grocery, weekend) with identical proportions / palette / signature accessory — only pose, setting, and expression change. Editorial flat-illustration aesthetic, warm pastel palette, social-media-ready.",
+        "who": "Suitable for original-character creators, anthropomorphized-concept illustrators (bronze worker, terracotta gym-goer, etc.), Xiaohongshu / Instagram lifestyle content makers, brand mascot designers building a character bible.",
+        "how": [
+          "Enter the character concept (e.g. 'Bronze worker mythical beast' or 'Terracotta warrior gym-goer').",
+          "Six daily-life panels + character-consistency check auto-compose.",
+          "Generate a vertical 8K 2x3 daily-life grid."
+        ],
+        "prompts": [
+          "Generate a bronze worker mythical beast daily-life grid.",
+          "Create a terracotta warrior gym-goer 6-panel sheet.",
+          "Generate a jade hipster barista daily-life infographic."
+        ]
+      }
+    }
+  },
+  "template-original-character-sticker-pack": {
+    "category": "Original Character Sticker Pack",
+    "description": "Generate a 3x3 nine-pose emotion sticker pack of an original anthropomorphized character — identical character across nine different expressions.",
+    "title": "Nano Banana Prompt: Original Character Sticker Pack Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Vertical 8K 3x3 sticker-pack sheet. Nine die-cut sticker-style poses of one original anthropomorphized character, each in a different emotional state (happy / tired / shocked / proud / confused / excited / lazy / angry / loving). Consistent character design + tiny hand-lettered caption tags. Kawaii flat-illustration aesthetic, bold outlines for sticker cutting.",
+        "who": "Suitable for original-character creators, mascot designers, sticker-pack sellers (Etsy, Line / WeChat), content creators building a character emoji set, IP-merch designers.",
+        "how": [
+          "Enter the character concept (e.g. 'Bronze worker mythical beast').",
+          "Nine emotion poses + caption tags + die-cut layout auto-compose.",
+          "Generate a vertical 8K nine-pose sticker pack."
+        ],
+        "prompts": [
+          "Generate a bronze worker mythical beast 9-pose sticker pack.",
+          "Create an anthropomorphized matcha latte sticker sheet.",
+          "Generate an office plant succulent buddy emotion stickers."
+        ]
+      }
+    }
+  },
+  "template-modernized-artifact-poster": {
+    "category": "Modernized Artifact Poster",
+    "description": "Generate a vertical poster taking a historical cultural artifact and re-imagining it anthropomorphized in a modern everyday role.",
+    "title": "Nano Banana Prompt: Modernized Artifact Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Vertical 8K poster re-imagining a historical artifact (bronze cauldron, terracotta warrior, Tang horse figurine, Ming vase, etc.) ANTHROPOMORPHIZED into a contemporary everyday role (corporate executive, gym trainer, ride-share driver, barista). Preserves the artifact's historical material aesthetic — bronze patina, clay texture, lacquer, jade — while placing it in a modern setting. Editorial illustrated poster, museum-card-style metadata footer.",
+        "who": "Suitable for cultural museums + heritage shops modernizing IP, art-fusion content creators, original-IP designers, brand campaigns blending cultural heritage with everyday relatability.",
+        "how": [
+          "Enter the artifact + modern role (e.g. 'Bronze ding cauldron as corporate executive').",
+          "Anthropomorphized artifact + modern setting + dynasty metadata footer auto-compose.",
+          "Generate a vertical 8K modernized-artifact poster."
+        ],
+        "prompts": [
+          "Generate a bronze ding cauldron as corporate executive poster.",
+          "Create a terracotta warrior as gym trainer modernized poster.",
+          "Generate a Tang horse figurine as ride-share driver poster."
+        ]
+      }
+    }
   }
 }
