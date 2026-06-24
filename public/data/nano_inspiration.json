@@ -1269,7 +1269,10 @@
       "learning"
     ],
     "topics": [
-      "united-states"
+      "united-states",
+      "architecture",
+      "history",
+      "learning"
     ],
     "allow_i18n": true,
     "search_aliases": [
@@ -1279,7 +1282,10 @@
       "城市景观",
       "美国建筑",
       "历史建筑",
-      "旅游胜地"
+      "旅游胜地",
+      "Empire State Building",
+      "New York City landmark",
+      "NYC skyscraper architecture"
     ]
   },
   {
@@ -1319,9 +1325,17 @@
       "architectural design",
       "historical landmark",
       "pagoda",
-      "城市地标"
+      "城市地标",
+      "Giant Wild Goose Pagoda",
+      "Xi'an landmark",
+      "Tang dynasty architecture"
     ],
-    "topics": []
+    "topics": [
+      "architecture",
+      "history",
+      "china",
+      "learning"
+    ]
   },
   {
     "id": "template-architecture-national-stadium-bird-nest",
@@ -1359,9 +1373,16 @@
       "建筑设计",
       "中国建筑",
       "现代建筑",
-      "建筑图纸"
+      "建筑图纸",
+      "Beijing National Stadium",
+      "Bird's Nest stadium",
+      "Olympic stadium Beijing"
     ],
-    "topics": []
+    "topics": [
+      "architecture",
+      "china",
+      "learning"
+    ]
   },
   {
     "id": "template-architecture-oriental-pearl-tower",
@@ -1400,9 +1421,15 @@
       "城市天际线",
       "中国塔",
       "建筑艺术",
-      "观光塔"
+      "观光塔",
+      "Oriental Pearl Tower",
+      "Shanghai landmark tower"
     ],
-    "topics": []
+    "topics": [
+      "architecture",
+      "china",
+      "learning"
+    ]
   },
   {
     "id": "template-costume-beijing-opera-colorful-female-armor",
@@ -18064,7 +18091,8 @@
     "legacy_id": "template-city-miniature-zh-paris",
     "legacy_template_id": "template-city-miniature-zh",
     "topics": [
-      "france"
+      "france",
+      "travel"
     ],
     "tags": [
       "architecture",
@@ -18095,7 +18123,9 @@
       "旅行行程",
       "短途旅行",
       "远程目的地",
-      "隐藏景点"
+      "隐藏景点",
+      "Paris travel map",
+      "Paris landmarks miniature"
     ],
     "allow_i18n": true
   },
@@ -46547,7 +46577,11 @@
       "双语对照",
       "汉英",
       "物种 词汇",
-      "英汉"
+      "英汉",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "allow_i18n": true
   },
@@ -46664,7 +46698,11 @@
       "双语",
       "双语对照",
       "汉英",
-      "英汉"
+      "英汉",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "allow_i18n": true
   },
@@ -46695,9 +46733,14 @@
       "锻炼",
       "运动",
       "exercise routine",
-      "warm-up exercises"
+      "warm-up exercises",
+      "gym warmup routine",
+      "gym workout warmup"
     ],
-    "topics": [],
+    "topics": [
+      "sports",
+      "wellness"
+    ],
     "allow_i18n": true
   },
   {
@@ -46726,9 +46769,15 @@
       "跑步热身",
       "运动前准备",
       "running exercises",
-      "warm-up stretches"
+      "warm-up stretches",
+      "running warmup checklist",
+      "pre run warmup routine",
+      "running warmup steps"
     ],
-    "topics": [],
+    "topics": [
+      "sports",
+      "learning"
+    ],
     "allow_i18n": true
   },
   {
@@ -46760,9 +46809,14 @@
       "水上运动",
       "热身活动",
       "swimming exercises",
-      "水中锻炼"
+      "水中锻炼",
+      "swimming warmup routine",
+      "swimming warm up exercises"
     ],
-    "topics": [],
+    "topics": [
+      "sports",
+      "swimming"
+    ],
     "allow_i18n": true
   },
   {
@@ -46793,9 +46847,14 @@
       "运动海报",
       "锻炼计划",
       "柔韧性训练",
-      "身体活动"
+      "身体活动",
+      "yoga warmup routine",
+      "yoga warm up"
     ],
-    "topics": [],
+    "topics": [
+      "sports",
+      "wellness"
+    ],
     "allow_i18n": true
   },
   {
@@ -47711,7 +47770,8 @@
       "photorealistic"
     ],
     "topics": [
-      "mockups"
+      "mockups",
+      "before-after"
     ],
     "search_aliases": [
       "厨房整理",
@@ -47719,7 +47779,9 @@
       "烹饪空间",
       "家庭厨房",
       "收纳方案",
-      "前后对比"
+      "前后对比",
+      "kitchen before after transformation",
+      "kitchen organization makeover"
     ],
     "allow_i18n": true
   },
@@ -48088,9 +48150,13 @@
       "热身运动",
       "运动准备",
       "运动卡片",
-      "可爱风格"
+      "可爱风格",
+      "badminton warmup routine"
     ],
-    "topics": [],
+    "topics": [
+      "sports",
+      "badminton"
+    ],
     "allow_i18n": true
   },
   {
@@ -48120,9 +48186,13 @@
       "运动热身",
       "运动卡片",
       "可爱插图",
-      "体能训练"
+      "体能训练",
+      "basketball warmup routine"
     ],
-    "topics": [],
+    "topics": [
+      "sports",
+      "basketball"
+    ],
     "allow_i18n": true
   },
   {
@@ -48153,9 +48223,12 @@
       "运动准备",
       "热身动作",
       "可爱风格",
-      "运动卡片"
+      "运动卡片",
+      "fencing warmup routine"
     ],
-    "topics": [],
+    "topics": [
+      "sports"
+    ],
     "allow_i18n": true
   },
   {
@@ -48193,7 +48266,11 @@
       "双语学习",
       "视觉指南",
       "西班牙语",
-      "学习卡片"
+      "学习卡片",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "allow_i18n": true
   },
@@ -48235,7 +48312,11 @@
       "relatives",
       "亲戚",
       "家庭关系",
-      "家庭树"
+      "家庭树",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "allow_i18n": true
   },
@@ -48277,7 +48358,11 @@
       "美食",
       "餐饮",
       "食物词汇",
-      "烹饪"
+      "烹饪",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "allow_i18n": true
   },
@@ -60096,7 +60181,15 @@
       "幻想文学",
       "插图封面",
       "阅读推荐",
-      "书籍封面"
+      "书籍封面",
+      "gift",
+      "lovers",
+      "book lovers",
+      "book lover",
+      "gift guide",
+      "reading gift",
+      "书迷",
+      "礼物推荐"
     ],
     "allow_i18n": true
   },
@@ -60132,7 +60225,15 @@
       "文学作品",
       "插图封面",
       "阅读推荐",
-      "小说推荐"
+      "小说推荐",
+      "gift",
+      "lovers",
+      "book lovers",
+      "book lover",
+      "gift guide",
+      "reading gift",
+      "书迷",
+      "礼物推荐"
     ],
     "allow_i18n": true
   },
@@ -60168,7 +60269,15 @@
       "推理书籍",
       "书籍推荐",
       "书单",
-      "小说封面"
+      "小说封面",
+      "gift",
+      "lovers",
+      "book lovers",
+      "book lover",
+      "gift guide",
+      "reading gift",
+      "书迷",
+      "礼物推荐"
     ],
     "allow_i18n": true
   },
@@ -60205,7 +60314,15 @@
       "太空探险",
       "经典书籍",
       "书籍封面",
-      "书籍列表"
+      "书籍列表",
+      "gift",
+      "lovers",
+      "book lovers",
+      "book lover",
+      "gift guide",
+      "reading gift",
+      "书迷",
+      "礼物推荐"
     ],
     "allow_i18n": true
   },
@@ -60243,7 +60360,15 @@
       "成长书籍",
       "书籍推荐",
       "心理学书籍",
-      "成功故事"
+      "成功故事",
+      "gift",
+      "lovers",
+      "book lovers",
+      "book lover",
+      "gift guide",
+      "reading gift",
+      "书迷",
+      "礼物推荐"
     ],
     "allow_i18n": true
   },
@@ -69875,7 +70000,10 @@
       "绿色植物",
       "室内植物",
       "花卉",
-      "自然"
+      "自然",
+      "gift",
+      "book lovers",
+      "book lover"
     ],
     "topics": [],
     "allow_i18n": true,
@@ -78037,9 +78165,18 @@
       "儿童食品",
       "经典小吃",
       "现代零食",
-      "童年回忆"
+      "童年回忆",
+      "childhood snacks then vs now",
+      "nostalgic snacks comparison",
+      "snacks then and now",
+      "nostalgic food comparison"
     ],
-    "topics": [],
+    "topics": [
+      "nostalgia",
+      "food",
+      "comparison",
+      "learning"
+    ],
     "tags": [
       "comparison",
       "food",
@@ -97539,9 +97676,16 @@
       "自然主题",
       "手绘艺术",
       "生态设计",
-      "森林植物"
+      "森林植物",
+      "vintage stamp collection",
+      "forest botanicals illustration",
+      "botanical stamp art"
     ],
-    "topics": [],
+    "topics": [
+      "illustration",
+      "nature",
+      "vintage"
+    ],
     "tags": [
       "botanical",
       "design",
@@ -97570,9 +97714,16 @@
       "复古艺术",
       "自然邮票",
       "手绘邮票",
-      "生态艺术"
+      "生态艺术",
+      "vintage stamp collection",
+      "garden birds illustration",
+      "bird stamp collection"
     ],
-    "topics": [],
+    "topics": [
+      "illustration",
+      "nature",
+      "vintage"
+    ],
     "tags": [
       "birds-of-the-world",
       "design",
@@ -97601,9 +97752,16 @@
       "自然主题",
       "复古风格",
       "生态邮票",
-      "手绘昆虫"
+      "手绘昆虫",
+      "vintage stamp collection",
+      "insects butterflies illustration",
+      "butterfly stamp art"
     ],
-    "topics": [],
+    "topics": [
+      "illustration",
+      "nature",
+      "vintage"
+    ],
     "tags": [
       "design",
       "illustration",
@@ -97632,9 +97790,16 @@
       "复古艺术",
       "自然风光",
       "植物插图",
-      "手绘艺术"
+      "手绘艺术",
+      "vintage stamp collection",
+      "mountain flora illustration",
+      "alpine flowers stamp art"
     ],
-    "topics": [],
+    "topics": [
+      "illustration",
+      "nature",
+      "vintage"
+    ],
     "tags": [
       "design",
       "groups",
@@ -97663,9 +97828,16 @@
       "复古插图",
       "水下世界",
       "海洋艺术",
-      "自然主题"
+      "自然主题",
+      "vintage stamp collection",
+      "ocean life illustration",
+      "marine life stamp art"
     ],
-    "topics": [],
+    "topics": [
+      "illustration",
+      "nature",
+      "vintage"
+    ],
     "tags": [
       "nostalgia",
       "ocean-animals",
@@ -100153,7 +100325,11 @@
       "手工制作",
       "手工艺",
       "手帐",
-      "拼贴"
+      "拼贴",
+      "destinations",
+      "travel destinations",
+      "europe destinations",
+      "europe travel destinations"
     ],
     "tags": [
       "map",
@@ -100549,7 +100725,17 @@
       "健康",
       "营养",
       "snack",
-      "bilingual"
+      "bilingual",
+      "flashcards",
+      "kids",
+      "learning",
+      "korean fruits",
+      "fruit flashcards",
+      "bilingual flashcards",
+      "korean fruit vocabulary",
+      "韩语水果",
+      "水果单词卡",
+      "儿童学习"
     ],
     "tags": [
       "fruits",
@@ -101920,7 +102106,11 @@
       "基础",
       "学习",
       "教育",
-      "练习"
+      "练习",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "tags": [
       "intermediate",
@@ -101959,7 +102149,11 @@
       "视觉",
       "艺术",
       "图形",
-      "学习"
+      "学习",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "tags": [
       "intermediate",
@@ -101999,7 +102193,11 @@
       "食物",
       "维生素",
       "美味",
-      "市场"
+      "市场",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "tags": [
       "fruits",
@@ -102038,7 +102236,11 @@
       "green beans",
       "carrots",
       "healthy eating",
-      "grocery list"
+      "grocery list",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "tags": [
       "bilingual",
@@ -102093,7 +102295,11 @@
       "动物 词汇",
       "动物名称",
       "动物词汇",
-      "物种 词汇"
+      "物种 词汇",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "tags": [
       "bilingual",
@@ -102133,7 +102339,11 @@
       "head",
       "hands",
       "health",
-      "medical terms"
+      "medical terms",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "tags": [
       "body-parts",
@@ -102172,7 +102382,11 @@
       "seasons",
       "sunny",
       "rainy",
-      "weather forecast"
+      "weather forecast",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "tags": [
       "intermediate",
@@ -102210,7 +102424,11 @@
       "evening habits",
       "chores",
       "time management",
-      "schedules"
+      "schedules",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "tags": [
       "daily-routines",
@@ -102248,7 +102466,11 @@
       "食物",
       "西班牙语",
       "英语学习",
-      "美食"
+      "美食",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "tags": [
       "breakfast-foods",
@@ -107453,7 +107675,11 @@
       "bilingual learning",
       "交通工具",
       "英语西班牙语",
-      "词汇表"
+      "词汇表",
+      "printable",
+      "printable worksheet",
+      "Spanish printable",
+      "vocabulary sheet"
     ],
     "tags": [
       "english-spanish",
@@ -110157,7 +110383,12 @@
       "慰藉美食",
       "招牌菜",
       "美食",
-      "街头美食"
+      "街头美食",
+      "poster",
+      "food poster",
+      "recipe poster",
+      "美食海报",
+      "食谱海报"
     ],
     "tags": [
       "cuisine",
@@ -112980,7 +113211,9 @@
       }
     },
     "topics": [
-      "france"
+      "france",
+      "travel",
+      "itinerary"
     ],
     "search_aliases": [
       "Paris landmarks",
@@ -113009,7 +113242,9 @@
       "行程",
       "路书",
       "路書",
-      "路线"
+      "路线",
+      "Paris tourist map",
+      "Paris travel guide"
     ],
     "tags": [
       "infographic",
@@ -115892,7 +116127,11 @@
       "春节红包",
       "新年祝福",
       "文化庆祝",
-      "可爱风格"
+      "可爱风格",
+      "graphic",
+      "graphic design",
+      "红包图形设计",
+      "节日图形"
     ],
     "tags": [
       "cat",
@@ -115929,7 +116168,11 @@
       "春节",
       "新年庆祝",
       "文化节日",
-      "传统红包"
+      "传统红包",
+      "graphic",
+      "graphic design",
+      "红包图形设计",
+      "节日图形"
     ],
     "tags": [
       "celebration",
@@ -115965,7 +116208,11 @@
       "春节红包",
       "新年祝福",
       "文化庆祝",
-      "中国传统"
+      "中国传统",
+      "graphic",
+      "graphic design",
+      "红包图形设计",
+      "节日图形"
     ],
     "tags": [
       "celebration",
@@ -119693,7 +119940,11 @@
       "新年红包",
       "lunar new year",
       "kawaii",
-      "festive design"
+      "festive design",
+      "graphic",
+      "graphic design",
+      "红包图形设计",
+      "节日图形"
     ],
     "tags": [
       "cat",
@@ -119728,7 +119979,11 @@
       "新年红包",
       "lunar new year",
       "illustration",
-      "festive design"
+      "festive design",
+      "graphic",
+      "graphic design",
+      "红包图形设计",
+      "节日图形"
     ],
     "tags": [
       "celebration",
@@ -119761,7 +120016,11 @@
       "新年红包",
       "lunar new year",
       "watercolor",
-      "festive design"
+      "festive design",
+      "graphic",
+      "graphic design",
+      "红包图形设计",
+      "节日图形"
     ],
     "tags": [
       "celebration",
@@ -119793,7 +120052,11 @@
       "新年红包",
       "lunar new year",
       "illustration",
-      "festive design"
+      "festive design",
+      "graphic",
+      "graphic design",
+      "红包图形设计",
+      "节日图形"
     ],
     "tags": [
       "celebration",
@@ -126382,7 +126645,11 @@
       "book genre infographic",
       "top book categories",
       "popular book genres",
-      "reading list infographic"
+      "reading list infographic",
+      "gift",
+      "lovers",
+      "book lovers",
+      "gift guide"
     ],
     "tags": [
       "composition",
@@ -126889,7 +127156,9 @@
       }
     },
     "topics": [
-      "photorealistic"
+      "photorealistic",
+      "before-after",
+      "comparison"
     ],
     "search_aliases": [
       "厨房整理前后",
@@ -127041,7 +127310,11 @@
       "新年红包",
       "节日装饰",
       "红色信封",
-      "红包设计"
+      "红包设计",
+      "graphic",
+      "graphic design",
+      "红包图形设计",
+      "节日图形"
     ],
     "tags": [
       "celebration",

@@ -10,6 +10,8 @@
  * Each chip → /topics/<slug>?from_search=<query> for attribution tracking.
  */
 
+import type { TopicCooccurrenceResult } from "./topic_cooccurrence";
+
 // The 19 creation-output slugs. Must stay in sync with the vocabulary
 // the LLM tagging script (scripts/tag_templates_output_types_2026-06-19.py)
 // uses, otherwise the aggregator silently drops new entries.
@@ -87,4 +89,45 @@ export function topIntentChips(
     .sort((a, b) => b[1] - a[1])
     .slice(0, topN)
     .map(([slug, count]) => ({ slug, count }));
+}
+
+/**
+ * Derive intent chips from topic co-occurrence data calculated over the
+ * Top 20 ranked inspiration results.
+ *
+ * Evidence comes from mergedTopicCounts (inspiration + parent template
+ * topics combined). SYNONYM_FOLDS and OUTPUT_TYPE_SLUGS filtering are
+ * applied identically to topIntentChips.
+ *
+ * Synonym-fold deduplication: each TopicCount carries the inspiration IDs
+ * that contributed it. After folding (e.g. "art-prints" → "wall-art"), the
+ * result-ID sets for the source and target slugs are UNIONED. Using set.size
+ * as the count guarantees that a single result carrying both "art-prints" and
+ * "wall-art" in its merged topics contributes exactly +1 to "wall-art", not +2.
+ */
+export function topIntentChipsFromTopicCounts(
+  cooccurrence: TopicCooccurrenceResult,
+  options: { topN?: number; minCount?: number } = {}
+): IntentChip[] {
+  const topN = options.topN ?? 5;
+  const minCount = options.minCount ?? 2;
+
+  // Map from folded slug → set of result IDs that contributed (via either the
+  // source or target slug). Using a Set ensures one result = one vote even when
+  // it carries both a synonym and its canonical target.
+  const foldedResultIds = new Map<string, Set<string>>();
+
+  for (const { slug, resultIds } of cooccurrence.mergedTopicCounts) {
+    if (!OUTPUT_TYPE_SET.has(slug)) continue;
+    const folded = SYNONYM_FOLDS[slug] ?? slug;
+    if (!foldedResultIds.has(folded)) foldedResultIds.set(folded, new Set());
+    const idSet = foldedResultIds.get(folded)!;
+    for (const id of resultIds) idSet.add(id);
+  }
+
+  return Array.from(foldedResultIds.entries())
+    .map(([slug, ids]) => ({ slug, count: ids.size }))
+    .filter(({ count }) => count >= minCount)
+    .sort((a, b) => b.count - a.count || a.slug.localeCompare(b.slug))
+    .slice(0, topN);
 }

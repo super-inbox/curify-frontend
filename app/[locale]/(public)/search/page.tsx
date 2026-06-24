@@ -18,7 +18,9 @@ import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import { tsToSc } from "@/lib/zh_normalize";
 import { rewriteQuery } from "@/lib/searchRewrite";
 import { matchBareWcCountryQuery, matchWcCountryQuery } from "@/lib/wcCountryRouting";
-import { topIntentChips } from "@/lib/intent_clusters";
+import { topIntentChipsFromTopicCounts } from "@/lib/intent_clusters";
+import { buildTemplateTopicsMap, resolveTopics } from "@/lib/topic_resolver";
+import { calculateTopicCooccurrence } from "@/lib/topic_cooccurrence";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Threshold below which we trigger the LLM rewrite path. Matches the
@@ -57,12 +59,7 @@ const SUGGESTION_BY_SLUG = new Map<string, SuggestionEntry>(
 const TIER_2_3_SLUGS = new Set(
   ALL_SUGGESTIONS.filter((s) => s.tier !== 1).map((s) => s.slug)
 );
-const TEMPLATE_TOPICS = new Map<string, string[]>();
-for (const t of nanoTemplates as any[]) {
-  if (typeof t?.id === "string" && Array.isArray(t.topics)) {
-    TEMPLATE_TOPICS.set(t.id, t.topics);
-  }
-}
+const TEMPLATE_TOPICS = buildTemplateTopicsMap(nanoTemplates as any[]);
 
 // Set of known nano-banana prompt tags (lowercased). Used to decide
 // whether to fetch gallery prompts from Redis for the current query.
@@ -472,13 +469,14 @@ export default async function SearchPage({ params, searchParams }: Props) {
       // Merged-signal blob — mirrors `lib/nano_example_utils.ts` "more like
       // this" (tags ∪ topics ∪ parent-template topics). Keeps /search and
       // example-detail recommendations aligned on the same signal set.
+      // resolveTopics merges and deduplicates inspiration + template topics.
+      const { mergedTopics } = resolveTopics(r, TEMPLATE_TOPICS);
       const blob = normalizeForSearch(
         [
           r.id,
           r.template_id,
           ...(r.tags ?? []),
-          ...(r.topics ?? []),
-          ...(TEMPLATE_TOPICS.get(r.template_id) ?? []),
+          ...mergedTopics,
           ...(r.search_aliases ?? []),
           ...Object.values(r.params ?? {}),
           ...localeFields,
@@ -500,8 +498,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
           [
             r.template_id,
             ...(r.tags ?? []),
-            ...(r.topics ?? []),
-            ...(TEMPLATE_TOPICS.get(r.template_id) ?? []),
+            ...mergedTopics,
             ...(r.search_aliases ?? []),
           ]
             .filter((v): v is string => typeof v === "string" && v.length > 0)
@@ -716,16 +713,22 @@ export default async function SearchPage({ params, searchParams }: Props) {
   }
 
   // Phase 1 intent-chip aggregator: derive top output-type slugs from
-  // matched templates' topics[] so /search can offer Pinterest-style
-  // "Explore further" chips above the example grid. Uses the 19-slug
-  // output-type vocabulary tagged across 285 templates in af768fe7.
+  // topic co-occurrence across the Top 20 ranked inspiration results.
+  // Both inspiration-own topics and parent-template topics contribute.
   // Computed server-side so the chip row renders in the initial HTML
   // (no client flash + good SEO indexing). Skipped when within is
   // already active — the active slug is shown as a removable pill
   // instead, and the user is one level deep already.
   const intentChips = withinSlug
     ? []
-    : topIntentChips(matchedTemplates, { topN: 5, minCount: 2 });
+    : topIntentChipsFromTopicCounts(
+        calculateTopicCooccurrence(
+          inspirations as Parameters<typeof calculateTopicCooccurrence>[0],
+          TEMPLATE_TOPICS,
+          20
+        ),
+        { topN: 5, minCount: 2 }
+      );
 
   return (
     <SearchResultsClient
