@@ -1,16 +1,25 @@
 /**
  * Intent-cluster aggregator for /search results.
  *
- * Given the templates matched for a query, derive the top N output-type
- * slugs ("creation intents") to surface as Pinterest-style "Explore further"
- * chips above the example grid.
+ * Two pathways:
+ *   A. Raw output-type chips (legacy): topIntentChips / topIntentChipsFromTopicCounts
+ *      – operate on the 19 OUTPUT_TYPE_SLUGS vocabulary
+ *      – kind === "topic"
+ *   B. High-level cluster chips (Phase 2): rankIntentClusters
+ *      – maps Top-20 topic co-occurrence evidence into 8 creation-intent clusters
+ *      – kind === "cluster"
  *
- * Source of truth = the 19 output-type slugs added to lib/taxonomy.json
- * + tagged across 285 templates by gpt-4o-mini in commit af768fe7.
- * Each chip → /topics/<slug>?from_search=<query> for attribution tracking.
+ * Caller preference: cluster chips (B) when any cluster clears minCount;
+ * otherwise fall back to topic chips (A).
  */
 
 import type { TopicCooccurrenceResult } from "./topic_cooccurrence";
+import {
+  INTENT_CLUSTERS,
+  getIntentClusterLabel,
+  getIntentClusterTopicSet,
+  isIntentClusterSlug,
+} from "./intent_taxonomy";
 
 // The 19 creation-output slugs. Must stay in sync with the vocabulary
 // the LLM tagging script (scripts/tag_templates_output_types_2026-06-19.py)
@@ -51,10 +60,27 @@ const SYNONYM_FOLDS: Record<string, string> = {
   "art-prints": "wall-art",
 };
 
-export type IntentChip = {
+// ─── Chip types ─────────────────────────────────────────────────────────────
+
+/** Raw output-type chip (legacy pathway). */
+export type TopicChip = {
+  kind: "topic";
   slug: string;
   count: number;
 };
+
+/** High-level cluster chip (Phase 2 pathway). label is pre-localized. */
+export type ClusterChip = {
+  kind: "cluster";
+  slug: string;
+  label: string;
+  count: number;
+};
+
+/** Discriminated union passed to the search UI. */
+export type IntentChip = TopicChip | ClusterChip;
+
+// ─── Legacy pathway: raw output-type topic chips ─────────────────────────────
 
 /**
  * Top output-type chips for a result set. Returns up to `topN` slugs,
@@ -64,7 +90,7 @@ export type IntentChip = {
 export function topIntentChips(
   templates: Array<{ topics?: string[] | null }>,
   options: { topN?: number; minCount?: number } = {}
-): IntentChip[] {
+): TopicChip[] {
   const topN = options.topN ?? 5;
   const minCount = options.minCount ?? 2;
 
@@ -88,7 +114,7 @@ export function topIntentChips(
     .filter(([, c]) => c >= minCount)
     .sort((a, b) => b[1] - a[1])
     .slice(0, topN)
-    .map(([slug, count]) => ({ slug, count }));
+    .map(([slug, count]) => ({ kind: "topic" as const, slug, count }));
 }
 
 /**
@@ -108,7 +134,7 @@ export function topIntentChips(
 export function topIntentChipsFromTopicCounts(
   cooccurrence: TopicCooccurrenceResult,
   options: { topN?: number; minCount?: number } = {}
-): IntentChip[] {
+): TopicChip[] {
   const topN = options.topN ?? 5;
   const minCount = options.minCount ?? 2;
 
@@ -126,8 +152,109 @@ export function topIntentChipsFromTopicCounts(
   }
 
   return Array.from(foldedResultIds.entries())
-    .map(([slug, ids]) => ({ slug, count: ids.size }))
+    .map(([slug, ids]) => ({ kind: "topic" as const, slug, count: ids.size }))
     .filter(({ count }) => count >= minCount)
     .sort((a, b) => b.count - a.count || a.slug.localeCompare(b.slug))
     .slice(0, topN);
+}
+
+// ─── Phase 2: high-level cluster chips ──────────────────────────────────────
+
+/**
+ * Map topic co-occurrence evidence into the 8 high-level creation-intent
+ * clusters and return the top-ranked ones.
+ *
+ * Ranking rules:
+ *  - Uses mergedTopicCounts only.
+ *  - For each cluster, unions the resultIds of every matching topic slug.
+ *  - One result contributes at most +1 to a given cluster, even when it
+ *    carries multiple topics that all map to that cluster.
+ *  - The same result may contribute +1 to different clusters when its topics
+ *    support different intents.
+ *  - Cluster count = size of the unioned result-ID Set.
+ *  - Sort: count descending, then slug ascending for deterministic ties.
+ *  - No Business Override applied at this phase.
+ *  - No LLM calls; purely evidence-driven.
+ */
+export function rankIntentClusters(
+  cooccurrence: TopicCooccurrenceResult,
+  options: { topN?: number; minCount?: number; locale?: string } = {}
+): ClusterChip[] {
+  const topN = options.topN ?? 5;
+  const minCount = options.minCount ?? 2;
+  const locale = options.locale ?? "en";
+
+  // Fast lookup: topic slug → result IDs from merged counts
+  const topicToResultIds = new Map<string, string[]>();
+  for (const { slug, resultIds } of cooccurrence.mergedTopicCounts) {
+    topicToResultIds.set(slug, resultIds);
+  }
+
+  const chips: ClusterChip[] = [];
+
+  for (const cluster of INTENT_CLUSTERS) {
+    // Union all result IDs across every mapped topic slug.
+    // Using a Set ensures one result = one vote for this cluster.
+    const unionIds = new Set<string>();
+    for (const topicSlug of cluster.topicSlugs) {
+      for (const id of topicToResultIds.get(topicSlug) ?? []) {
+        unionIds.add(id);
+      }
+    }
+    if (unionIds.size < minCount) continue;
+    chips.push({
+      kind: "cluster" as const,
+      slug: cluster.slug,
+      label: getIntentClusterLabel(cluster, locale),
+      count: unionIds.size,
+    });
+  }
+
+  return chips
+    .sort((a, b) => b.count - a.count || a.slug.localeCompare(b.slug))
+    .slice(0, topN);
+}
+
+// ─── Pure filter helpers (used in search page and tests) ────────────────────
+
+/**
+ * Filter pre-resolved inspiration records by cluster membership.
+ *
+ * An inspiration survives when at least one of its mergedTopics is in the
+ * cluster's topic set. Original ranking order is preserved.
+ *
+ * If clusterSlug is not a known cluster, all records pass through (safe no-op).
+ */
+export function filterInspirationsByCluster<T extends { mergedTopics: string[] }>(
+  resolved: T[],
+  clusterSlug: string
+): T[] {
+  if (!isIntentClusterSlug(clusterSlug)) return resolved;
+  const topicSet = getIntentClusterTopicSet(clusterSlug);
+  return resolved.filter((r) => r.mergedTopics.some((t) => topicSet.has(t)));
+}
+
+/**
+ * Filter template-rail cards by cluster membership.
+ *
+ * A template is included when EITHER:
+ *   A. Its own topics intersect the cluster topic set (direct match).
+ *   B. Its template_id appears among the surviving inspiration results.
+ *
+ * If clusterSlug is not a known cluster, all templates pass through.
+ */
+export function filterTemplatesByCluster<
+  T extends { template_id: string; topics?: string[] | null },
+>(
+  templates: T[],
+  survivingInspTemplateIds: Set<string>,
+  clusterSlug: string
+): T[] {
+  if (!isIntentClusterSlug(clusterSlug)) return templates;
+  const topicSet = getIntentClusterTopicSet(clusterSlug);
+  return templates.filter(
+    (t) =>
+      (t.topics ?? []).some((s) => topicSet.has(s)) ||
+      survivingInspTemplateIds.has(t.template_id)
+  );
 }
