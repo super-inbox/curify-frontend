@@ -1,0 +1,57 @@
+{
+  "index": 41,
+  "query": "watercolor map of europe travel destinations",
+  "group": "progseo-2026-05-26",
+  "curifyUrl": "http://localhost:3001/en/search?q=watercolor%20map%20of%20europe%20travel%20destinations",
+  "finalUrl": "http://localhost:3001/search?q=watercolor+map+of+europe+travel+destinations",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:37:47.683Z",
+  "labels": [
+    {
+      "text": "🎨Watercolor",
+      "type": "suggestion",
+      "href": "/en/topics/watercolor"
+    },
+    {
+      "text": "🗺️Maps",
+      "type": "suggestion",
+      "href": "/en/topics/map"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "europe",
+      "subtitle": "europe",
+      "templateId": "watercolor-world-map-illustration",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/watercolor-world-map-illustration/template-watercolor-world-map-illustration-europe?media=image&from=%2Fsearch%3Fq%3Dwatercolor%2Bmap%2Bof%2Beurope%2Btravel%2Bdestinations&ids=template-watercolor-world-map-illustration-europe",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-watercolor-world-map-illustration-europe-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "europe | europe"
+    },
+    {
+      "rank": 2,
+      "title": "Watercolor World Maps preview 1",
+      "subtitle": "",
+      "templateId": "watercolor-world-map-illustration",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/watercolor-world-map-illustration?continent_name=europe",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-watercolor-world-map-illustration-europe-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Watercolor World Maps preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 2,
+    "topResults": 2
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/041-watercolor-map-of-europe-travel-destinat/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/041-watercolor-map-of-europe-travel-destinat/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}

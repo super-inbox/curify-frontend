@@ -1,0 +1,175 @@
+{
+  "index": 15,
+  "query": "食物",
+  "group": "user-2026-05-20",
+  "curifyUrl": "http://localhost:3001/en/search?q=%E9%A3%9F%E7%89%A9",
+  "finalUrl": "http://localhost:3001/search?q=%E9%A3%9F%E7%89%A9",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:29:16.971Z",
+  "labels": [
+    {
+      "text": "DIY & Guides20",
+      "type": "chip",
+      "href": "/en/search?q=%E9%A3%9F%E7%89%A9&intent=diy-guides"
+    },
+    {
+      "text": "Learning Materials20",
+      "type": "chip",
+      "href": "/en/search?q=%E9%A3%9F%E7%89%A9&intent=learning-materials"
+    },
+    {
+      "text": "Social & Personal20",
+      "type": "chip",
+      "href": "/en/search?q=%E9%A3%9F%E7%89%A9&intent=social-personal"
+    },
+    {
+      "text": "Travel & Place20",
+      "type": "chip",
+      "href": "/en/search?q=%E9%A3%9F%E7%89%A9&intent=travel-place"
+    },
+    {
+      "text": "Visual & Art20",
+      "type": "chip",
+      "href": "/en/search?q=%E9%A3%9F%E7%89%A9&intent=visual-art"
+    },
+    {
+      "text": "🍜Food",
+      "type": "suggestion",
+      "href": "/en/topics/food"
+    },
+    {
+      "text": "📖Vocabulary",
+      "type": "suggestion",
+      "href": "/en/topics/vocabulary"
+    },
+    {
+      "text": "🖼️Posters & Flyers",
+      "type": "suggestion",
+      "href": "/en/topics/posters"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "bak kut teh",
+      "subtitle": "bak kut teh",
+      "templateId": "food",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/food/template-food-bak-kut-teh?media=image&from=%2Fsearch%3Fq%3D%25E9%25A3%259F%25E7%2589%25A9&ids=template-food-bak-kut-teh%2Ctemplate-food-guilin-rice-noodles%2Ctemplate-food-italian-pasta%2Ctemplate-fruit-avocado%2Ctemplate-fruit-blueberry%2Ctemplate-fruit-chilean-cherries%2Ctemplate-cuisine-food-vocab-poster-thai%2Ctemplate-varieties-food-poster-egg-sandwich%2Ctemplate-varieties-food-poster-mille-crepe-cake%2Ctemplate-varieties-food-poster-pasta%2Ctemplate-cuisine-food-vocab-poster-beijing%2Ctemplate-cuisine-food-vocab-poster-japan%2Ctemplate-organ-health-food-guide-infographic-brain%2Ctemplate-organ-health-food-guide-infographic-heart%2Ctemplate-organ-health-food-guide-infographic-liver",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-food-zh-bak-kut-teh-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "bak kut teh | bak kut teh"
+    },
+    {
+      "rank": 2,
+      "title": "guilin rice noodles",
+      "subtitle": "guilin rice noodles",
+      "templateId": "food",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/food/template-food-guilin-rice-noodles?media=image&from=%2Fsearch%3Fq%3D%25E9%25A3%259F%25E7%2589%25A9&ids=template-food-bak-kut-teh%2Ctemplate-food-guilin-rice-noodles%2Ctemplate-food-italian-pasta%2Ctemplate-fruit-avocado%2Ctemplate-fruit-blueberry%2Ctemplate-fruit-chilean-cherries%2Ctemplate-cuisine-food-vocab-poster-thai%2Ctemplate-varieties-food-poster-egg-sandwich%2Ctemplate-varieties-food-poster-mille-crepe-cake%2Ctemplate-varieties-food-poster-pasta%2Ctemplate-cuisine-food-vocab-poster-beijing%2Ctemplate-cuisine-food-vocab-poster-japan%2Ctemplate-organ-health-food-guide-infographic-brain%2Ctemplate-organ-health-food-guide-infographic-heart%2Ctemplate-organ-health-food-guide-infographic-liver",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-food-zh-guilin-rice-noodles-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "guilin rice noodles | guilin rice noodles"
+    },
+    {
+      "rank": 3,
+      "title": "italian pasta",
+      "subtitle": "italian pasta",
+      "templateId": "food",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/food/template-food-italian-pasta?media=image&from=%2Fsearch%3Fq%3D%25E9%25A3%259F%25E7%2589%25A9&ids=template-food-bak-kut-teh%2Ctemplate-food-guilin-rice-noodles%2Ctemplate-food-italian-pasta%2Ctemplate-fruit-avocado%2Ctemplate-fruit-blueberry%2Ctemplate-fruit-chilean-cherries%2Ctemplate-cuisine-food-vocab-poster-thai%2Ctemplate-varieties-food-poster-egg-sandwich%2Ctemplate-varieties-food-poster-mille-crepe-cake%2Ctemplate-varieties-food-poster-pasta%2Ctemplate-cuisine-food-vocab-poster-beijing%2Ctemplate-cuisine-food-vocab-poster-japan%2Ctemplate-organ-health-food-guide-infographic-brain%2Ctemplate-organ-health-food-guide-infographic-heart%2Ctemplate-organ-health-food-guide-infographic-liver",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-food-zh-italian-pasta-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "italian pasta | italian pasta"
+    },
+    {
+      "rank": 4,
+      "title": "Cuisine Food Vocabulary Posters preview 1",
+      "subtitle": "",
+      "templateId": "cuisine-food-vocab-poster",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/cuisine-food-vocab-poster?cuisine_theme=Thai+Cuisine",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-cuisine-food-vocab-poster-thai-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Cuisine Food Vocabulary Posters preview 1"
+    },
+    {
+      "rank": 5,
+      "title": "Food Varieties Posters preview 1",
+      "subtitle": "",
+      "templateId": "varieties-food-poster",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/varieties-food-poster?food_theme=High-Protein+Egg+Sandwich",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-varieties-food-poster-egg-sandwich-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Food Varieties Posters preview 1"
+    },
+    {
+      "rank": 6,
+      "title": "Travel Scrapbook Posters preview 1",
+      "subtitle": "",
+      "templateId": "vintage-travel-scrapbook-poster",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/vintage-travel-scrapbook-poster?destination=langkawi",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-vintage-travel-scrapbook-poster-langkawi-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Travel Scrapbook Posters preview 1"
+    },
+    {
+      "rank": 7,
+      "title": "Recipe Infographic preview 1",
+      "subtitle": "",
+      "templateId": "premium-recipe-card-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/premium-recipe-card-infographic?recipe_name=cheesy+bacon+burger+bites",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-premium-recipe-card-infographic-cheesy-bacon-burger-bites-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Recipe Infographic preview 1"
+    },
+    {
+      "rank": 8,
+      "title": "Pet Safe Food Infographic preview 1",
+      "subtitle": "",
+      "templateId": "pet-safe-human-food-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/pet-safe-human-food-infographic?pet_name=cat",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-pet-safe-human-food-infographic-cat-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Pet Safe Food Infographic preview 1"
+    },
+    {
+      "rank": 9,
+      "title": "Organ Health Food Guide preview 1",
+      "subtitle": "",
+      "templateId": "organ-health-food-guide-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/organ-health-food-guide-infographic?organ=brain",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-organ-health-food-guide-infographic-brain-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Organ Health Food Guide preview 1"
+    },
+    {
+      "rank": 10,
+      "title": "Gardening How-To Infographic preview 1",
+      "subtitle": "",
+      "templateId": "gardening-how-to-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/gardening-how-to-infographic?plant_name=bell+peppers",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-gardening-how-to-infographic-bell-peppers-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Gardening How-To Infographic preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 8,
+    "topResults": 10
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/015-q015/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/015-q015/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}

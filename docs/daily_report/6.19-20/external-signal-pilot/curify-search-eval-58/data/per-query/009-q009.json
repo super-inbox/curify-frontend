@@ -1,0 +1,180 @@
+{
+  "index": 9,
+  "query": "自行车",
+  "group": "user-2026-05-20",
+  "curifyUrl": "http://localhost:3001/en/search?q=%E8%87%AA%E8%A1%8C%E8%BD%A6",
+  "finalUrl": "http://localhost:3001/search?q=%E8%87%AA%E8%A1%8C%E8%BD%A6",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:27:23.074Z",
+  "labels": [
+    {
+      "text": "Learning Materials20",
+      "type": "chip",
+      "href": "/en/search?q=%E8%87%AA%E8%A1%8C%E8%BD%A6&intent=learning-materials"
+    },
+    {
+      "text": "Visual & Art20",
+      "type": "chip",
+      "href": "/en/search?q=%E8%87%AA%E8%A1%8C%E8%BD%A6&intent=visual-art"
+    },
+    {
+      "text": "Travel & Place7",
+      "type": "chip",
+      "href": "/en/search?q=%E8%87%AA%E8%A1%8C%E8%BD%A6&intent=travel-place"
+    },
+    {
+      "text": "Social & Personal5",
+      "type": "chip",
+      "href": "/en/search?q=%E8%87%AA%E8%A1%8C%E8%BD%A6&intent=social-personal"
+    },
+    {
+      "text": "Events & Hot Now2",
+      "type": "chip",
+      "href": "/en/search?q=%E8%87%AA%E8%A1%8C%E8%BD%A6&intent=events-hot-now"
+    },
+    {
+      "text": "🖼️Posters & Flyers",
+      "type": "suggestion",
+      "href": "/en/topics/posters"
+    },
+    {
+      "text": "📜History",
+      "type": "suggestion",
+      "href": "/en/topics/history"
+    },
+    {
+      "text": "🗺️Maps",
+      "type": "suggestion",
+      "href": "/en/topics/map"
+    },
+    {
+      "text": "📖Vocabulary",
+      "type": "suggestion",
+      "href": "/en/topics/vocabulary"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "bicycles",
+      "subtitle": "bicycles",
+      "templateId": "evolution-timeline-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/evolution-timeline-infographic/template-evolution-timeline-infographic-bicycles?media=image&from=%2Fsearch%3Fq%3D%25E8%2587%25AA%25E8%25A1%258C%25E8%25BD%25A6&ids=template-evolution-timeline-infographic-bicycles%2Ctemplate-tourist-spot-watercolor-map-infographic-central-park%2Ctemplate-evolution-timeline-infographic-evolution-of-snacks%2Ctemplate-evolution-timeline-infographic-evolution-of-phones%2Ctemplate-tourist-spot-watercolor-map-infographic-hidden-gems-of-rome%2Ctemplate-tourist-spot-watercolor-map-infographic-historic-landmarks-of-paris%2Ctemplate-bilingual-object-structure-labeling-bicycle%2Ctemplate-vocabulary-bikes-en-zh%2Ctemplate-bilingual-object-structure-labeling-mountain-bike%2Ctemplate-bilingual-object-structure-labeling-road-bike%2Ctemplate-vocabulary-english-french-bike-anatomy%2Ctemplate-fashion-shape-guide-infographic-cycling-apparel-for-body-type%2Ctemplate-product-poster-smart-cycling-computer%2Ctemplate-lifestyle-info-card-bicycle-maintenance-basics%2Ctemplate-historical-event-map-illustration-tour-de-france-1903",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-evolution-timeline-infographic-bicycles-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "bicycles | bicycles"
+    },
+    {
+      "rank": 2,
+      "title": "central park",
+      "subtitle": "central park",
+      "templateId": "tourist-spot-watercolor-map-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/tourist-spot-watercolor-map-infographic/template-tourist-spot-watercolor-map-infographic-central-park?media=image&from=%2Fsearch%3Fq%3D%25E8%2587%25AA%25E8%25A1%258C%25E8%25BD%25A6&ids=template-evolution-timeline-infographic-bicycles%2Ctemplate-tourist-spot-watercolor-map-infographic-central-park%2Ctemplate-evolution-timeline-infographic-evolution-of-snacks%2Ctemplate-evolution-timeline-infographic-evolution-of-phones%2Ctemplate-tourist-spot-watercolor-map-infographic-hidden-gems-of-rome%2Ctemplate-tourist-spot-watercolor-map-infographic-historic-landmarks-of-paris%2Ctemplate-bilingual-object-structure-labeling-bicycle%2Ctemplate-vocabulary-bikes-en-zh%2Ctemplate-bilingual-object-structure-labeling-mountain-bike%2Ctemplate-bilingual-object-structure-labeling-road-bike%2Ctemplate-vocabulary-english-french-bike-anatomy%2Ctemplate-fashion-shape-guide-infographic-cycling-apparel-for-body-type%2Ctemplate-product-poster-smart-cycling-computer%2Ctemplate-lifestyle-info-card-bicycle-maintenance-basics%2Ctemplate-historical-event-map-illustration-tour-de-france-1903",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-tourist-spot-watercolor-map-infographic-central-park-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "central park | central park"
+    },
+    {
+      "rank": 3,
+      "title": "Evolution of Snacks",
+      "subtitle": "Evolution of Snacks",
+      "templateId": "evolution-timeline-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/evolution-timeline-infographic/template-evolution-timeline-infographic-evolution-of-snacks?media=image&from=%2Fsearch%3Fq%3D%25E8%2587%25AA%25E8%25A1%258C%25E8%25BD%25A6&ids=template-evolution-timeline-infographic-bicycles%2Ctemplate-tourist-spot-watercolor-map-infographic-central-park%2Ctemplate-evolution-timeline-infographic-evolution-of-snacks%2Ctemplate-evolution-timeline-infographic-evolution-of-phones%2Ctemplate-tourist-spot-watercolor-map-infographic-hidden-gems-of-rome%2Ctemplate-tourist-spot-watercolor-map-infographic-historic-landmarks-of-paris%2Ctemplate-bilingual-object-structure-labeling-bicycle%2Ctemplate-vocabulary-bikes-en-zh%2Ctemplate-bilingual-object-structure-labeling-mountain-bike%2Ctemplate-bilingual-object-structure-labeling-road-bike%2Ctemplate-vocabulary-english-french-bike-anatomy%2Ctemplate-fashion-shape-guide-infographic-cycling-apparel-for-body-type%2Ctemplate-product-poster-smart-cycling-computer%2Ctemplate-lifestyle-info-card-bicycle-maintenance-basics%2Ctemplate-historical-event-map-illustration-tour-de-france-1903",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-evolution-timeline-infographic-evolution-of-snacks-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "Evolution of Snacks | Evolution of Snacks"
+    },
+    {
+      "rank": 4,
+      "title": "Tourist Spot Watercolor Map Infographic preview 1",
+      "subtitle": "",
+      "templateId": "tourist-spot-watercolor-map-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/tourist-spot-watercolor-map-infographic?topic=central+park",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-tourist-spot-watercolor-map-infographic-central-park-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Tourist Spot Watercolor Map Infographic preview 1"
+    },
+    {
+      "rank": 5,
+      "title": "Evolution Timeline Infographic preview 1",
+      "subtitle": "",
+      "templateId": "evolution-timeline-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/evolution-timeline-infographic?topic=bicycles",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-evolution-timeline-infographic-bicycles-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Evolution Timeline Infographic preview 1"
+    },
+    {
+      "rank": 6,
+      "title": "Cozy Product Poster preview 1",
+      "subtitle": "",
+      "templateId": "product-poster",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/product-poster?product_name=Smart+Cycling+Computer",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-product-poster-smart-cycling-computer-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Cozy Product Poster preview 1"
+    },
+    {
+      "rank": 7,
+      "title": "Fashion Shape Guide Infographic preview 1",
+      "subtitle": "",
+      "templateId": "fashion-shape-guide-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/fashion-shape-guide-infographic?topic=Cycling+Apparel+for+Body+Type",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-shape-guide-infographic-cycling-apparel-for-body-type-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Fashion Shape Guide Infographic preview 1"
+    },
+    {
+      "rank": 8,
+      "title": "Bilingual Structure Labeling preview 1",
+      "subtitle": "",
+      "templateId": "bilingual-object-structure-labeling",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/bilingual-object-structure-labeling?object_name=Bicycle",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-bilingual-object-structure-labeling-bicycle-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Bilingual Structure Labeling preview 1"
+    },
+    {
+      "rank": 9,
+      "title": "Language Learning Card Category preview 1",
+      "subtitle": "",
+      "templateId": "vocabulary",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/vocabulary?language_pair=en-zh&topic_name=Bikes+and+Wheels",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-vocabulary-bikes-en-zh-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Language Learning Card Category preview 1"
+    },
+    {
+      "rank": 10,
+      "title": "Lifestyle Info Card preview 1",
+      "subtitle": "",
+      "templateId": "lifestyle-info-card",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/lifestyle-info-card?topic=Bicycle+Maintenance+Basics",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-lifestyle-info-card-bicycle-maintenance-basics-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Lifestyle Info Card preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 9,
+    "topResults": 10
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/009-q009/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/009-q009/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}

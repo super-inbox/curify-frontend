@@ -1,0 +1,141 @@
+{
+  "index": 18,
+  "query": "证件照",
+  "group": "user-report-2026-05-18",
+  "curifyUrl": "http://localhost:3001/en/search?q=%E8%AF%81%E4%BB%B6%E7%85%A7",
+  "finalUrl": "http://localhost:3001/search?q=%E8%AF%81%E4%BB%B6%E7%85%A7",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:30:16.706Z",
+  "labels": [
+    {
+      "text": "Social & Personal16",
+      "type": "chip",
+      "href": "/en/search?q=%E8%AF%81%E4%BB%B6%E7%85%A7&intent=social-personal"
+    },
+    {
+      "text": "Visual & Art16",
+      "type": "chip",
+      "href": "/en/search?q=%E8%AF%81%E4%BB%B6%E7%85%A7&intent=visual-art"
+    },
+    {
+      "text": "Learning Materials9",
+      "type": "chip",
+      "href": "/en/search?q=%E8%AF%81%E4%BB%B6%E7%85%A7&intent=learning-materials"
+    },
+    {
+      "text": "DIY & Guides5",
+      "type": "chip",
+      "href": "/en/search?q=%E8%AF%81%E4%BB%B6%E7%85%A7&intent=diy-guides"
+    },
+    {
+      "text": "👤AI Portraits",
+      "type": "suggestion",
+      "href": "/en/topics/portrait"
+    },
+    {
+      "text": "👗Fashion",
+      "type": "suggestion",
+      "href": "/en/topics/fashion"
+    },
+    {
+      "text": "👥Groups",
+      "type": "suggestion",
+      "href": "/en/topics/groups"
+    },
+    {
+      "text": "📋DIY & Guides",
+      "type": "suggestion",
+      "href": "/en/topics/guides"
+    },
+    {
+      "text": "✨Beauty & Care",
+      "type": "suggestion",
+      "href": "/en/topics/beauty"
+    },
+    {
+      "text": "↔️Comparison",
+      "type": "suggestion",
+      "href": "/en/topics/comparison"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "en 1",
+      "subtitle": "en 1",
+      "templateId": "portrait-retouching-blueprint",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/portrait-retouching-blueprint/template-portrait-retouching-blueprint-en%201?media=image&from=%2Fsearch%3Fq%3D%25E8%25AF%2581%25E4%25BB%25B6%25E7%2585%25A7&ids=template-portrait-retouching-blueprint-en%201%2Ctemplate-portrait-retouching-blueprint-en%202%2Ctemplate-portrait-retouching-blueprint-en%203%2Ctemplate-hairstyle-color-recommendation-long-hair-women%2Ctemplate-hairstyle-color-recommendation-oval-face-men%2Ctemplate-hairstyle-color-recommendation-oval-face-women%2Ctemplate-lifestyle-photo-grid-autumn-park%2Ctemplate-lifestyle-photo-grid-beach-summer%2Ctemplate-lifestyle-photo-grid-city-fashion",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-portrait-retouching-blueprint-en%201-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "en 1 | en 1"
+    },
+    {
+      "rank": 2,
+      "title": "en 2",
+      "subtitle": "en 2",
+      "templateId": "portrait-retouching-blueprint",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/portrait-retouching-blueprint/template-portrait-retouching-blueprint-en%202?media=image&from=%2Fsearch%3Fq%3D%25E8%25AF%2581%25E4%25BB%25B6%25E7%2585%25A7&ids=template-portrait-retouching-blueprint-en%201%2Ctemplate-portrait-retouching-blueprint-en%202%2Ctemplate-portrait-retouching-blueprint-en%203%2Ctemplate-hairstyle-color-recommendation-long-hair-women%2Ctemplate-hairstyle-color-recommendation-oval-face-men%2Ctemplate-hairstyle-color-recommendation-oval-face-women%2Ctemplate-lifestyle-photo-grid-autumn-park%2Ctemplate-lifestyle-photo-grid-beach-summer%2Ctemplate-lifestyle-photo-grid-city-fashion",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-portrait-retouching-blueprint-en%202-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "en 2 | en 2"
+    },
+    {
+      "rank": 3,
+      "title": "en 3",
+      "subtitle": "en 3",
+      "templateId": "portrait-retouching-blueprint",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/portrait-retouching-blueprint/template-portrait-retouching-blueprint-en%203?media=image&from=%2Fsearch%3Fq%3D%25E8%25AF%2581%25E4%25BB%25B6%25E7%2585%25A7&ids=template-portrait-retouching-blueprint-en%201%2Ctemplate-portrait-retouching-blueprint-en%202%2Ctemplate-portrait-retouching-blueprint-en%203%2Ctemplate-hairstyle-color-recommendation-long-hair-women%2Ctemplate-hairstyle-color-recommendation-oval-face-men%2Ctemplate-hairstyle-color-recommendation-oval-face-women%2Ctemplate-lifestyle-photo-grid-autumn-park%2Ctemplate-lifestyle-photo-grid-beach-summer%2Ctemplate-lifestyle-photo-grid-city-fashion",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-portrait-retouching-blueprint-en%203-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "en 3 | en 3"
+    },
+    {
+      "rank": 4,
+      "title": "Portrait Retouching Blueprint Category preview 1",
+      "subtitle": "",
+      "templateId": "portrait-retouching-blueprint",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/portrait-retouching-blueprint",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-portrait-retouching-blueprint-en%201-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Portrait Retouching Blueprint Category preview 1"
+    },
+    {
+      "rank": 5,
+      "title": "Hairstyle Recommendation Infographic preview 1",
+      "subtitle": "",
+      "templateId": "hairstyle-color-recommendation",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/hairstyle-color-recommendation",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-hairstyle-color-recommendation-long-hair-women-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Hairstyle Recommendation Infographic preview 1"
+    },
+    {
+      "rank": 6,
+      "title": "Lifestyle Photo Grids preview 1",
+      "subtitle": "",
+      "templateId": "lifestyle-photo-grid",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/lifestyle-photo-grid?theme=autumn+park",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-lifestyle-photo-grid-autumn-park-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Lifestyle Photo Grids preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 10,
+    "topResults": 6
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/018-q018/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/018-q018/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}

@@ -1,0 +1,59 @@
+index,query,intent,primaryIntent,reason
+1,单词,consumer,consumer,"Bare CJK noun — users browse vocabulary reference imagery, no action/output signal"
+2,卡通,consumer,consumer,Browse cartoon character / style images
+3,吉伊卡哇,consumer,consumer,Fan browse of Chiikawa character franchise imagery
+4,家居装饰,hybrid,consumer,Browse home decor inspiration; creation (mood board) is secondary
+5,工程,consumer,consumer,Browse engineering reference imagery
+6,植物,consumer,consumer,Browse plant / botanical imagery
+7,水果中文,creative,creative,Bilingual fruit vocabulary — clear intent to create/print educational material
+8,电商详情图,creative,creative,Create e-commerce product detail images — explicit production intent
+9,自行车,consumer,consumer,Browse bicycle imagery / references
+10,葡萄酒,consumer,consumer,"Browse wine imagery, lifestyle aesthetic"
+11,蔬菜,consumer,consumer,Browse vegetable imagery
+12,词汇,hybrid,creative,Vocabulary — commonly sought as printable/poster; creative production is primary
+13,趣味经济学知识科普,creative,creative,Create economics knowledge infographic / science-pop poster
+14,音乐,consumer,consumer,Browse music-themed imagery
+15,食物,consumer,consumer,Browse food imagery / aesthetic
+16,香薰,consumer,consumer,Browse aromatherapy / candle product imagery
+17,唯美春天,consumer,consumer,Aesthetic browsing — spring beauty imagery
+18,证件照,creative,creative,ID photo creation — explicit creative output intent (listed as creative in spec)
+19,手作,creative,creative,DIY craft creation — listed as creative in spec
+20,historical character,consumer,consumer,Browse historical figure / character reference imagery
+21,future characters,consumer,consumer,Browse sci-fi / futuristic character concept imagery
+22,homophones and homonyms,creative,creative,Create educational language content about homophones
+23,english-chinese,creative,creative,Create bilingual English-Chinese learning material
+24,language learning expressions,creative,creative,Create language learning expression content
+25,global influence,consumer,consumer,Browse global cultural / country-influence content
+26,remote destination,consumer,consumer,Browse remote travel destination imagery
+27,unique cultural experiences,consumer,consumer,Browse unique cultural experience content
+28,short city escapes,consumer,consumer,Browse short city trip / weekend getaway content
+29,creative comfort food,hybrid,consumer,Browse recipe/food inspiration; comfort food creation is secondary
+30,mbti marvel,hybrid,creative,MBTI Marvel chart — Curify's catalog is chart-creation; chart output is primary
+31,spring flowers,consumer,consumer,Browse spring flower / botanical imagery
+32,反义词,creative,creative,Create antonym educational poster / vocabulary content
+33,paper cutting,creative,creative,Paper cutting art — listed as creative in spec
+34,met gala,consumer,consumer,Browse Met Gala fashion / red carpet imagery
+35,动物 词汇,creative,creative,Create animal vocabulary educational content — explicit multi-token query with space
+36,wedding planner,creative,creative,Create wedding planning visual content — listed as creative in spec
+37,minimalist autumn outfit for japan travel,hybrid,consumer,Browse outfit inspiration for Japan travel; visual reference is primary
+38,infj vs entp dating compatibility chart,creative,creative,Create MBTI personality compatibility chart — explicit chart output
+39,cuban sandwich recipe poster,creative,creative,Create recipe poster — explicit poster output intent
+40,bilingual flashcards for kids learning korean fruits,creative,creative,Create bilingual Korean fruit flashcards — explicit educational output
+41,watercolor map of europe travel destinations,hybrid,creative,Create watercolor map illustration — creative output is primary despite browse aspect
+42,monstera plant care guide infographic,hybrid,creative,Create plant care guide infographic — explicit infographic output
+43,marvel mbti character chart 16 types,creative,creative,Create Marvel MBTI 16-type character chart — explicit chart
+44,lunar new year red envelope graphic design,creative,creative,Create red envelope graphic design — explicit graphic design output
+45,1950s vintage diner illustration retro poster,creative,creative,Create vintage diner retro poster — explicit poster illustration
+46,before after kitchen organization makeover,creative,creative,Create before/after makeover visual — listed as creative in spec
+47,phonics worksheets kindergarten,creative,creative,Create/print phonics worksheets — explicit printable output
+48,Spanish vocabulary printable,creative,creative,Create/print Spanish vocabulary material — explicit printable
+49,ESL flashcards printable,creative,creative,Create/print ESL flashcards — explicit printable
+50,easy weeknight dinners healthy,hybrid,creative,Seek recipe templates to create/display; Curify angle is recipe visual creation
+51,gluten free dinner ideas,hybrid,creative,Browse gluten-free ideas but primary value is recipe visual creation
+52,meal prep weekly recipes,creative,creative,Create meal prep visual / weekly recipe guide
+53,cozy reading aesthetic,hybrid,consumer,Aesthetic browsing — cozy reading mood; creation is secondary
+54,book lovers gift guide,hybrid,creative,Create gift guide visual — explicit guide output; listed as creative in spec
+55,chiikawa,consumer,consumer,Fan browse of Chiikawa (English form) character imagery
+56,samurai,consumer,consumer,Browse samurai character / historical imagery
+57,genshin,consumer,consumer,Fan browse of Genshin Impact character imagery
+58,maps,consumer,consumer,Browse map templates / cartographic reference imagery

@@ -1,0 +1,99 @@
+{
+  "index": 8,
+  "query": "电商详情图",
+  "group": "user-2026-05-20",
+  "curifyUrl": "http://localhost:3001/en/search?q=%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E5%9B%BE",
+  "finalUrl": "http://localhost:3001/search?q=%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E5%9B%BE",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:27:04.622Z",
+  "labels": [
+    {
+      "text": "Learning Materials20",
+      "type": "chip",
+      "href": "/en/search?q=%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E5%9B%BE&intent=learning-materials"
+    },
+    {
+      "text": "Merch & Commerce20",
+      "type": "chip",
+      "href": "/en/search?q=%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E5%9B%BE&intent=merch-commerce"
+    },
+    {
+      "text": "Social & Personal20",
+      "type": "chip",
+      "href": "/en/search?q=%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E5%9B%BE&intent=social-personal"
+    },
+    {
+      "text": "Visual & Art20",
+      "type": "chip",
+      "href": "/en/search?q=%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E5%9B%BE&intent=visual-art"
+    },
+    {
+      "text": "📱Mockups & UI",
+      "type": "suggestion",
+      "href": "/en/topics/mockups"
+    },
+    {
+      "text": "👤AI Portraits",
+      "type": "suggestion",
+      "href": "/en/topics/portrait"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "eyemask",
+      "subtitle": "eyemask",
+      "templateId": "fashion-ecommerce",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/fashion-ecommerce/template-fashion-ecommerce-eyemask?media=image&from=%2Fsearch%3Fq%3D%25E7%2594%25B5%25E5%2595%2586%25E8%25AF%25A6%25E6%2583%2585%25E5%259B%25BE&ids=template-fashion-ecommerce-eyemask%2Ctemplate-fashion-ecommerce-musical-instrument%2Ctemplate-fashion-ecommerce-pendant",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-ecommerce-zh-eyemask-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "eyemask | eyemask"
+    },
+    {
+      "rank": 2,
+      "title": "musical instrument",
+      "subtitle": "musical instrument",
+      "templateId": "fashion-ecommerce",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/fashion-ecommerce/template-fashion-ecommerce-musical-instrument?media=image&from=%2Fsearch%3Fq%3D%25E7%2594%25B5%25E5%2595%2586%25E8%25AF%25A6%25E6%2583%2585%25E5%259B%25BE&ids=template-fashion-ecommerce-eyemask%2Ctemplate-fashion-ecommerce-musical-instrument%2Ctemplate-fashion-ecommerce-pendant",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-ecommerce-zh-musical-instrument-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "musical instrument | musical instrument"
+    },
+    {
+      "rank": 3,
+      "title": "pendant",
+      "subtitle": "pendant",
+      "templateId": "fashion-ecommerce",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/fashion-ecommerce/template-fashion-ecommerce-pendant?media=image&from=%2Fsearch%3Fq%3D%25E7%2594%25B5%25E5%2595%2586%25E8%25AF%25A6%25E6%2583%2585%25E5%259B%25BE&ids=template-fashion-ecommerce-eyemask%2Ctemplate-fashion-ecommerce-musical-instrument%2Ctemplate-fashion-ecommerce-pendant",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-ecommerce-zh-pendant-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "pendant | pendant"
+    },
+    {
+      "rank": 4,
+      "title": "Fashion E-commerce Details Category preview 1",
+      "subtitle": "",
+      "templateId": "fashion-ecommerce",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/fashion-ecommerce?core_selling_point=eyemask",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-ecommerce-zh-eyemask-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Fashion E-commerce Details Category preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 6,
+    "topResults": 4
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/008-q008/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/008-q008/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}

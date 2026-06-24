@@ -1,0 +1,170 @@
+{
+  "index": 26,
+  "query": "remote destination",
+  "group": "reddit",
+  "curifyUrl": "http://localhost:3001/en/search?q=remote%20destination",
+  "finalUrl": "http://localhost:3001/search?q=remote+destination",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:32:52.950Z",
+  "labels": [
+    {
+      "text": "Travel & Place20",
+      "type": "chip",
+      "href": "/en/search?q=remote%20destination&intent=travel-place"
+    },
+    {
+      "text": "Visual & Art20",
+      "type": "chip",
+      "href": "/en/search?q=remote%20destination&intent=visual-art"
+    },
+    {
+      "text": "Learning Materials15",
+      "type": "chip",
+      "href": "/en/search?q=remote%20destination&intent=learning-materials"
+    },
+    {
+      "text": "🗺️Maps",
+      "type": "suggestion",
+      "href": "/en/topics/map"
+    },
+    {
+      "text": "🌸Kawaii",
+      "type": "suggestion",
+      "href": "/en/topics/kawaii"
+    },
+    {
+      "text": "🗓️Itinerary & Planning",
+      "type": "suggestion",
+      "href": "/en/topics/itinerary"
+    },
+    {
+      "text": "🏙️City",
+      "type": "suggestion",
+      "href": "/en/topics/city"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "beijing",
+      "subtitle": "beijing",
+      "templateId": "travel",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/travel/template-travel-beijing?media=image&from=%2Fsearch%3Fq%3Dremote%2Bdestination&ids=template-travel-beijing%2Ctemplate-travel-sanya%2Ctemplate-travel-xian%2Ctemplate-city-miniature-beijing%2Ctemplate-city-miniature-new-york%2Ctemplate-city-miniature-paris%2Ctemplate-series-travel-netherlands-01%2Ctemplate-series-travel-netherlands-02%2Ctemplate-series-travel-netherlands-03%2Ctemplate-3d-region-landmark-map-egypt%2Ctemplate-3d-region-landmark-map-france%2Ctemplate-3d-region-landmark-map-greece%2Ctemplate-whimsical-travel-map-australia%2Ctemplate-whimsical-travel-map-france%2Ctemplate-whimsical-travel-map-italy%2Ctemplate-historical-event-map-illustration-alexander-the-great%2Ctemplate-historical-event-map-illustration-bering-land-bridge-migration%2Ctemplate-historical-event-map-illustration-constantinople-siege%2Ctemplate-national-theme-map-infographic-made-in-china",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-travel-zh-beijing-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "beijing | beijing"
+    },
+    {
+      "rank": 2,
+      "title": "sanya",
+      "subtitle": "sanya",
+      "templateId": "travel",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/travel/template-travel-sanya?media=image&from=%2Fsearch%3Fq%3Dremote%2Bdestination&ids=template-travel-beijing%2Ctemplate-travel-sanya%2Ctemplate-travel-xian%2Ctemplate-city-miniature-beijing%2Ctemplate-city-miniature-new-york%2Ctemplate-city-miniature-paris%2Ctemplate-series-travel-netherlands-01%2Ctemplate-series-travel-netherlands-02%2Ctemplate-series-travel-netherlands-03%2Ctemplate-3d-region-landmark-map-egypt%2Ctemplate-3d-region-landmark-map-france%2Ctemplate-3d-region-landmark-map-greece%2Ctemplate-whimsical-travel-map-australia%2Ctemplate-whimsical-travel-map-france%2Ctemplate-whimsical-travel-map-italy%2Ctemplate-historical-event-map-illustration-alexander-the-great%2Ctemplate-historical-event-map-illustration-bering-land-bridge-migration%2Ctemplate-historical-event-map-illustration-constantinople-siege%2Ctemplate-national-theme-map-infographic-made-in-china",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-travel-zh-sanya-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "sanya | sanya"
+    },
+    {
+      "rank": 3,
+      "title": "xian",
+      "subtitle": "xian",
+      "templateId": "travel",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/travel/template-travel-xian?media=image&from=%2Fsearch%3Fq%3Dremote%2Bdestination&ids=template-travel-beijing%2Ctemplate-travel-sanya%2Ctemplate-travel-xian%2Ctemplate-city-miniature-beijing%2Ctemplate-city-miniature-new-york%2Ctemplate-city-miniature-paris%2Ctemplate-series-travel-netherlands-01%2Ctemplate-series-travel-netherlands-02%2Ctemplate-series-travel-netherlands-03%2Ctemplate-3d-region-landmark-map-egypt%2Ctemplate-3d-region-landmark-map-france%2Ctemplate-3d-region-landmark-map-greece%2Ctemplate-whimsical-travel-map-australia%2Ctemplate-whimsical-travel-map-france%2Ctemplate-whimsical-travel-map-italy%2Ctemplate-historical-event-map-illustration-alexander-the-great%2Ctemplate-historical-event-map-illustration-bering-land-bridge-migration%2Ctemplate-historical-event-map-illustration-constantinople-siege%2Ctemplate-national-theme-map-infographic-made-in-china",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-travel-zh-xian-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "xian | xian"
+    },
+    {
+      "rank": 4,
+      "title": "Travel Planning Map preview 1",
+      "subtitle": "",
+      "templateId": "travel",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/travel?destination=Beijing&date_range=",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-travel-zh-beijing-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Travel Planning Map preview 1"
+    },
+    {
+      "rank": 5,
+      "title": "3D Landmark Map preview 1",
+      "subtitle": "",
+      "templateId": "3d-region-landmark-map",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/3d-region-landmark-map?region_name=egypt",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-3d-region-landmark-map-egypt-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "3D Landmark Map preview 1"
+    },
+    {
+      "rank": 6,
+      "title": "Travel Map preview 1",
+      "subtitle": "",
+      "templateId": "whimsical-travel-map",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/whimsical-travel-map?country_name=australia",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-whimsical-travel-map-australia-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Travel Map preview 1"
+    },
+    {
+      "rank": 7,
+      "title": "Travel Itinerary Planner & Guide Cards preview 1",
+      "subtitle": "",
+      "templateId": "series-travel",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/series-travel?destination_name=Netherlands&trip_duration=4",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-series-travel-netherlands-01-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Travel Itinerary Planner & Guide Cards preview 1"
+    },
+    {
+      "rank": 8,
+      "title": "City Miniature Landscape Category preview 1",
+      "subtitle": "",
+      "templateId": "city-miniature",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/city-miniature?City+Name=Beijing",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-city-miniature-zh-beijing-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "City Miniature Landscape Category preview 1"
+    },
+    {
+      "rank": 9,
+      "title": "Historical Event Map preview 1",
+      "subtitle": "",
+      "templateId": "historical-event-map-illustration",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/historical-event-map-illustration?historical_event=alexander+the+great",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-historical-event-map-illustration-alexander-the-great-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Historical Event Map preview 1"
+    },
+    {
+      "rank": 10,
+      "title": "National Theme Map preview 1",
+      "subtitle": "",
+      "templateId": "national-theme-map-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/national-theme-map-infographic",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-national-theme-map-infographic-made-in-china-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "National Theme Map preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 7,
+    "topResults": 10
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/026-remote-destination/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/026-remote-destination/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}

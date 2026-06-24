@@ -1,0 +1,57 @@
+{
+  "index": 54,
+  "query": "book lovers gift guide",
+  "group": "pinterest-discovery-2026-05-29",
+  "curifyUrl": "http://localhost:3001/en/search?q=book%20lovers%20gift%20guide",
+  "finalUrl": "http://localhost:3001/search?q=book+lovers+gift+guide",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:43:27.743Z",
+  "labels": [
+    {
+      "text": "📚Reading",
+      "type": "suggestion",
+      "href": "/en/topics/reading"
+    },
+    {
+      "text": "🖼️Posters & Flyers",
+      "type": "suggestion",
+      "href": "/en/topics/posters"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "plant lovers",
+      "subtitle": "plant lovers",
+      "templateId": "book-minimalist",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/book-minimalist/template-book-minimalist-plant-lovers?media=image&from=%2Fsearch%3Fq%3Dbook%2Blovers%2Bgift%2Bguide&ids=template-book-minimalist-plant-lovers",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-book-minimalist-plant-lovers-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "plant lovers | plant lovers"
+    },
+    {
+      "rank": 2,
+      "title": "Minimalist Book Summary preview 1",
+      "subtitle": "",
+      "templateId": "book-minimalist",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/book-minimalist?book_theme=plant+lovers",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-book-minimalist-plant-lovers-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Minimalist Book Summary preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 2,
+    "topResults": 2
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/054-book-lovers-gift-guide/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/054-book-lovers-gift-guide/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}

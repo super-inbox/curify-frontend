@@ -1,0 +1,125 @@
+{
+  "index": 20,
+  "query": "historical character",
+  "group": "reddit",
+  "curifyUrl": "http://localhost:3001/en/search?q=historical%20character",
+  "finalUrl": "http://localhost:3001/search?q=historical+character",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:30:54.497Z",
+  "labels": [
+    {
+      "text": "Social & Personal20",
+      "type": "chip",
+      "href": "/en/search?q=historical%20character&intent=social-personal"
+    },
+    {
+      "text": "Storytelling & Identity20",
+      "type": "chip",
+      "href": "/en/search?q=historical%20character&intent=storytelling-identity"
+    },
+    {
+      "text": "Visual & Art20",
+      "type": "chip",
+      "href": "/en/search?q=historical%20character&intent=visual-art"
+    },
+    {
+      "text": "Travel & Place6",
+      "type": "chip",
+      "href": "/en/search?q=historical%20character&intent=travel-place"
+    },
+    {
+      "text": "🗺️Culture",
+      "type": "suggestion",
+      "href": "/en/topics/culture"
+    },
+    {
+      "text": "👤AI Portraits",
+      "type": "suggestion",
+      "href": "/en/topics/portrait"
+    },
+    {
+      "text": "🖼️Posters & Flyers",
+      "type": "suggestion",
+      "href": "/en/topics/posters"
+    },
+    {
+      "text": "🧠MBTI & Personality",
+      "type": "suggestion",
+      "href": "/en/topics/mbti"
+    },
+    {
+      "text": "👥Groups",
+      "type": "suggestion",
+      "href": "/en/topics/groups"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "chinese figure fengshenbang",
+      "subtitle": "chinese figure fengshenbang",
+      "templateId": "guofeng-scroll",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/guofeng-scroll/template-guofeng-scroll-chinese-figure-fengshenbang?media=image&from=%2Fsearch%3Fq%3Dhistorical%2Bcharacter&ids=template-guofeng-scroll-chinese-figure-fengshenbang%2Ctemplate-guofeng-scroll-chinese-figure-mudan-ting%2Ctemplate-guofeng-scroll-chinese-figure-water-margin%2Ctemplate-mbti-generic-Basketball-Kobe-Bryant-Stephen-Curry-Kevin-Durant-Tim-Duncan%2Ctemplate-mbti-generic-Basketball-Michael-Jordan-LeBron-James-Kawhi-Leonard-Shaquille-ONeal%2Ctemplate-mbti-generic-Football-Lionel-Messi-Cristiano-Ronaldo-Kevin-De-Bruyne-Neymar-Jr",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-guofeng-scroll-zh-chinese-figure-fengshenbang-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "chinese figure fengshenbang | chinese figure fengshenbang"
+    },
+    {
+      "rank": 2,
+      "title": "chinese figure mudan ting",
+      "subtitle": "chinese figure mudan ting",
+      "templateId": "guofeng-scroll",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/guofeng-scroll/template-guofeng-scroll-chinese-figure-mudan-ting?media=image&from=%2Fsearch%3Fq%3Dhistorical%2Bcharacter&ids=template-guofeng-scroll-chinese-figure-fengshenbang%2Ctemplate-guofeng-scroll-chinese-figure-mudan-ting%2Ctemplate-guofeng-scroll-chinese-figure-water-margin%2Ctemplate-mbti-generic-Basketball-Kobe-Bryant-Stephen-Curry-Kevin-Durant-Tim-Duncan%2Ctemplate-mbti-generic-Basketball-Michael-Jordan-LeBron-James-Kawhi-Leonard-Shaquille-ONeal%2Ctemplate-mbti-generic-Football-Lionel-Messi-Cristiano-Ronaldo-Kevin-De-Bruyne-Neymar-Jr",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-guofeng-scroll-zh-chinese-figure-mudan-ting-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "chinese figure mudan ting | chinese figure mudan ting"
+    },
+    {
+      "rank": 3,
+      "title": "chinese figure water margin",
+      "subtitle": "chinese figure water margin",
+      "templateId": "guofeng-scroll",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/guofeng-scroll/template-guofeng-scroll-chinese-figure-water-margin?media=image&from=%2Fsearch%3Fq%3Dhistorical%2Bcharacter&ids=template-guofeng-scroll-chinese-figure-fengshenbang%2Ctemplate-guofeng-scroll-chinese-figure-mudan-ting%2Ctemplate-guofeng-scroll-chinese-figure-water-margin%2Ctemplate-mbti-generic-Basketball-Kobe-Bryant-Stephen-Curry-Kevin-Durant-Tim-Duncan%2Ctemplate-mbti-generic-Basketball-Michael-Jordan-LeBron-James-Kawhi-Leonard-Shaquille-ONeal%2Ctemplate-mbti-generic-Football-Lionel-Messi-Cristiano-Ronaldo-Kevin-De-Bruyne-Neymar-Jr",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-guofeng-scroll-zh-chinese-figure-water-margin-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "chinese figure water margin | chinese figure water margin"
+    },
+    {
+      "rank": 4,
+      "title": "MBTI Personality Comparison Meme preview 1",
+      "subtitle": "",
+      "templateId": "mbti-generic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/mbti-generic?mbti_topic=Basketball&character_set=Kobe+Bryant%2C+Stephen+Curry%2C+Kevin+Durant%2C+Tim+Duncan",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-generic-Basketball-en-Kobe-Bryant-Stephen-Curry-Kevin-Durant-Tim-Duncan-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "MBTI Personality Comparison Meme preview 1"
+    },
+    {
+      "rank": 5,
+      "title": "Traditional Chinese Long Scroll Category preview 1",
+      "subtitle": "",
+      "templateId": "guofeng-scroll",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/guofeng-scroll?group_name=chinese+figure+fengshenbang",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-guofeng-scroll-zh-chinese-figure-fengshenbang-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Traditional Chinese Long Scroll Category preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 9,
+    "topResults": 5
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/020-historical-character/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/020-historical-character/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}

@@ -1,0 +1,59 @@
+index,query,tier1,primaryIntent,consumer_or_creator,key_categories,short_reason
+1,单词,Vocabulary & Language,consumer,consumer,"vocabulary card, word list, Chinese-English",Bare CJK noun → users browse vocabulary reference imagery; no creation signal
+2,卡通,Character & IP & Pop Culture,consumer,consumer,"cartoon character, anime style, kawaii, IP illustration",Brand/franchise browse; visual consumption of character imagery
+3,吉伊卡哇,Character & IP & Pop Culture,consumer,consumer,"Chiikawa fan art, merchandise, character sticker",IP fandom browse; highly specific franchise character imagery
+4,家居装饰,Lifestyle & Aesthetic,consumer,consumer,"home decor, interior design, room makeover, mood board",Home inspiration browse; creation (mood board) is secondary
+5,工程,DIY / How-to / Craft,consumer,consumer,"engineering diagram, mechanical drawing, blueprint",Reference/technical browse; unclear creation intent
+6,植物,Nature & Botanical,consumer,consumer,"plant species, botanical illustration, leaf identification",Visual browse of plant/botanical imagery; no creation signal
+7,水果中文,Vocabulary & Language,creative,creator,"bilingual fruit vocabulary, Chinese flashcard, printable",Bilingual educational material — explicit printable/creation intent
+8,电商详情图,Art & Design & Visual,creative,creator,"product detail page, e-commerce banner, layout template",Explicit design/production intent; e-commerce content creation
+9,自行车,Lifestyle & Aesthetic,consumer,consumer,"bicycle photo, cycling lifestyle, bike diagram",General lifestyle browse; product/activity imagery consumption
+10,葡萄酒,Lifestyle & Aesthetic,consumer,consumer,"wine photography, bottle label, lifestyle aesthetic",Aesthetic/lifestyle browse; wine imagery consumption
+11,蔬菜,Nature & Botanical,consumer,consumer,"vegetable photo, botanical, cooking ingredient",Browse vegetable imagery; food/nature reference
+12,词汇,Vocabulary & Language,creative,creator,"vocabulary poster, word list printable, educational card",Vocabulary — commonly sought as printable/poster; creation primary
+13,趣味经济学知识科普,DIY / How-to / Craft,creative,creator,"economics infographic, science-pop poster, knowledge card",Create economics knowledge infographic; explicit creative output
+14,音乐,Lifestyle & Aesthetic,consumer,consumer,"music aesthetic, album art, instrument photo",Browse music-themed imagery; aesthetic consumption
+15,食物,Food & Recipe,consumer,consumer,"food photo, dish aesthetic, food styling",Browse food imagery/aesthetic; no explicit output intent
+16,香薰,Lifestyle & Aesthetic,consumer,consumer,"aromatherapy, candle lifestyle, wellness product",Browse aromatherapy/candle product imagery; lifestyle consumption
+17,唯美春天,Nature & Botanical,consumer,consumer,"spring aesthetic, flower photography, pastel nature",Aesthetic spring imagery browse; visual mood consumption
+18,证件照,Art & Design & Visual,creative,creator,"ID photo, passport photo, portrait template",ID photo creation — explicit creative output; professional portrait
+19,手作,DIY / How-to / Craft,creative,creator,"handcraft tutorial, DIY project, craft how-to",DIY craft creation — how-to and making content
+20,historical character,Character & IP & Pop Culture,consumer,consumer,"historical figure portrait, period costume, classical painting",Browse historical character/figure imagery
+21,future characters,Character & IP & Pop Culture,consumer,consumer,"sci-fi character, futuristic design, concept art",Browse futuristic character concept imagery
+22,homophones and homonyms,Vocabulary & Language,creative,creator,"homophones chart, homonyms worksheet, language poster",Educational language content — printable worksheet/chart
+23,english-chinese,Vocabulary & Language,creative,creator,"bilingual flashcard, English-Chinese word card, vocabulary chart",Create bilingual English-Chinese learning material
+24,language learning expressions,Vocabulary & Language,creative,creator,"phrase card, expression chart, language learning poster",Create language expression learning content
+25,global influence,Travel & Place & Culture,consumer,consumer,"world culture, international influence, cultural map",Browse global cultural influence content; reference imagery
+26,remote destination,Travel & Place & Culture,consumer,consumer,"remote travel, off-grid destination, adventure landscape",Browse remote travel destination imagery
+27,unique cultural experiences,Travel & Place & Culture,consumer,consumer,"cultural festival, local tradition, travel experience",Browse unique cultural experience content
+28,short city escapes,Travel & Place & Culture,consumer,consumer,"weekend city trip, urban getaway, city itinerary",Browse short city trip / weekend getaway content
+29,creative comfort food,Food & Recipe,consumer,mixed,"comfort food recipe, cozy dish, food aesthetic",Browse recipe/food inspiration; comfort food creation secondary
+30,mbti marvel,Character & IP & Pop Culture,creative,mixed,"MBTI Marvel character chart, personality type, superhero",MBTI × Marvel chart — explicit chart/poster creation intent
+31,spring flowers,Nature & Botanical,consumer,consumer,"spring bloom, floral arrangement, flower photography",Browse spring flower/botanical imagery
+32,反义词,Vocabulary & Language,creative,creator,"antonym poster, opposite words chart, vocabulary card",Create antonym educational poster/vocabulary content
+33,paper cutting,DIY / How-to / Craft,creative,creator,"paper art, kirigami, craft template, cutting pattern",Paper cutting art creation — DIY/craft making
+34,met gala,Character & IP & Pop Culture,consumer,consumer,"Met Gala fashion, red carpet, celebrity outfit, designer look",Browse Met Gala fashion/red carpet imagery; celebrity consumption
+35,动物 词汇,Vocabulary & Language,creative,creator,"animal vocabulary card, bilingual animal poster, kids flashcard",Create animal vocabulary educational content
+36,wedding planner,Art & Design & Visual,creative,creator,"wedding checklist, timeline, venue layout, invitation design",Create wedding planning visual content — explicit design output
+37,minimalist autumn outfit for japan travel,Lifestyle & Aesthetic,consumer,mixed,"autumn fashion outfit, travel style, minimalist wardrobe",Browse outfit inspiration for Japan travel; visual reference primary
+38,infj vs entp dating compatibility chart,Character & IP & Pop Culture,creative,creator,"MBTI compatibility chart, personality dating, relationship chart",Create MBTI compatibility chart — explicit chart output
+39,cuban sandwich recipe poster,Food & Recipe,creative,creator,"recipe poster, sandwich infographic, food design template",Create recipe poster — explicit poster/infographic output
+40,bilingual flashcards for kids learning korean fruits,Vocabulary & Language,creative,creator,"Korean fruit flashcard, bilingual kids card, printable",Create bilingual Korean fruit flashcards — explicit educational output
+41,watercolor map of europe travel destinations,Art & Design & Visual,creative,creator,"watercolor map, Europe travel illustration, artistic map",Create watercolor map illustration — art/design output
+42,monstera plant care guide infographic,Nature & Botanical,creative,creator,"plant care infographic, Monstera guide, care schedule poster",Create plant care guide infographic — explicit infographic output
+43,marvel mbti character chart 16 types,Character & IP & Pop Culture,creative,creator,"Marvel MBTI chart, 16 personality types, character grid",Create Marvel MBTI 16-type character chart — explicit chart
+44,lunar new year red envelope graphic design,Art & Design & Visual,creative,creator,"red envelope design, lunar new year graphic, festive template",Create red envelope graphic — explicit graphic design output
+45,1950s vintage diner illustration retro poster,Art & Design & Visual,creative,creator,"retro poster, vintage diner art, 1950s illustration",Create vintage diner retro poster — explicit illustration/poster
+46,before after kitchen organization makeover,DIY / How-to / Craft,creative,creator,"kitchen organization, before-after visual, home makeover",Create before/after makeover visual — explicit design output
+47,phonics worksheets kindergarten,Vocabulary & Language,creative,creator,"phonics worksheet, kindergarten printable, alphabet activity",Create/print phonics worksheets — explicit printable output
+48,Spanish vocabulary printable,Vocabulary & Language,creative,creator,"Spanish word card, vocabulary printable, bilingual sheet",Create/print Spanish vocabulary material — explicit printable
+49,ESL flashcards printable,Vocabulary & Language,creative,creator,"ESL flashcard, English learner card, printable vocabulary",Create/print ESL flashcards — explicit printable output
+50,easy weeknight dinners healthy,Food & Recipe,creative,mixed,"weeknight recipe, healthy meal, dinner idea template",Seek recipe templates; creative angle is recipe visual creation
+51,gluten free dinner ideas,Food & Recipe,creative,mixed,"gluten-free recipe, dinner inspiration, dietary visual",Browse ideas but primary value is recipe visual creation
+52,meal prep weekly recipes,Food & Recipe,creative,creator,"meal prep planner, weekly recipe visual, food infographic",Create meal prep visual/weekly recipe guide — explicit output
+53,cozy reading aesthetic,Lifestyle & Aesthetic,consumer,consumer,"reading nook, bookshelf aesthetic, cozy mood board",Aesthetic browsing — cozy reading mood; creation is secondary
+54,book lovers gift guide,Lifestyle & Aesthetic,creative,mixed,"gift guide layout, book lover gift, reader present ideas",Create gift guide visual — explicit guide output
+55,chiikawa,Character & IP & Pop Culture,consumer,consumer,"Chiikawa character, anime sticker, IP merchandise",Fan browse of Chiikawa (English) character imagery
+56,samurai,Character & IP & Pop Culture,consumer,consumer,"samurai warrior, Japanese period character, sword art",Browse samurai character/historical imagery
+57,genshin,Character & IP & Pop Culture,consumer,consumer,"Genshin Impact character, game artwork, fan art",Fan browse of Genshin Impact imagery
+58,maps,Art & Design & Visual,consumer,mixed,"map template, world map, illustrated map, cartography",Browse map templates/cartographic reference; some creation intent

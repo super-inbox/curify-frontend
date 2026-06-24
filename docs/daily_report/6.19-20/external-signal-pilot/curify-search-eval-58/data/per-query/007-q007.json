@@ -1,0 +1,165 @@
+{
+  "index": 7,
+  "query": "水果中文",
+  "group": "user-2026-05-20",
+  "curifyUrl": "http://localhost:3001/en/search?q=%E6%B0%B4%E6%9E%9C%E4%B8%AD%E6%96%87",
+  "finalUrl": "http://localhost:3001/search?q=%E6%B0%B4%E6%9E%9C%E4%B8%AD%E6%96%87",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:26:46.880Z",
+  "labels": [
+    {
+      "text": "Learning Materials20",
+      "type": "chip",
+      "href": "/en/search?q=%E6%B0%B4%E6%9E%9C%E4%B8%AD%E6%96%87&intent=learning-materials"
+    },
+    {
+      "text": "Visual & Art20",
+      "type": "chip",
+      "href": "/en/search?q=%E6%B0%B4%E6%9E%9C%E4%B8%AD%E6%96%87&intent=visual-art"
+    },
+    {
+      "text": "Travel & Place12",
+      "type": "chip",
+      "href": "/en/search?q=%E6%B0%B4%E6%9E%9C%E4%B8%AD%E6%96%87&intent=travel-place"
+    },
+    {
+      "text": "📖Vocabulary",
+      "type": "suggestion",
+      "href": "/en/topics/vocabulary"
+    },
+    {
+      "text": "🌸Kawaii",
+      "type": "suggestion",
+      "href": "/en/topics/kawaii"
+    },
+    {
+      "text": "🎨Watercolor",
+      "type": "suggestion",
+      "href": "/en/topics/watercolor"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "supermarket",
+      "subtitle": "supermarket",
+      "templateId": "word-scene",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/word-scene/template-word-scene-supermarket?media=image&from=%2Fsearch%3Fq%3D%25E6%25B0%25B4%25E6%259E%259C%25E4%25B8%25AD%25E6%2596%2587&ids=template-word-scene-supermarket%2Ctemplate-vocabulary-banana-ripeness%2Ctemplate-children-english-vocab-spelling-fruits%2Ctemplate-detailed-vocab-flashcard-apple%2Ctemplate-daily-essentials-learning-card-fruits%2Ctemplate-bilingual-object-structure-labeling-apple%2Ctemplate-kids-vocabulary-poster-fruits%2Ctemplate-kids-vocabulary-poster-food%2Ctemplate-cartoon-english-vocabulary-flashcards-fruits%2Ctemplate-vocabulary-banana-ripeness-1%2Ctemplate-vocabulary-fruits-en-zh%2Ctemplate-multilingual-vocabulary-poster-watercolor-fruits-pinyin%2Ctemplate-word-scene-english-french-at-the-market%2Ctemplate-word-scene-english-korean-grocery-store",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-word-scene-zh-supermarket-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "supermarket | supermarket"
+    },
+    {
+      "rank": 2,
+      "title": "banana ripeness",
+      "subtitle": "banana ripeness",
+      "templateId": "vocabulary",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/vocabulary/template-vocabulary-banana-ripeness?media=image&from=%2Fsearch%3Fq%3D%25E6%25B0%25B4%25E6%259E%259C%25E4%25B8%25AD%25E6%2596%2587&ids=template-word-scene-supermarket%2Ctemplate-vocabulary-banana-ripeness%2Ctemplate-children-english-vocab-spelling-fruits%2Ctemplate-detailed-vocab-flashcard-apple%2Ctemplate-daily-essentials-learning-card-fruits%2Ctemplate-bilingual-object-structure-labeling-apple%2Ctemplate-kids-vocabulary-poster-fruits%2Ctemplate-kids-vocabulary-poster-food%2Ctemplate-cartoon-english-vocabulary-flashcards-fruits%2Ctemplate-vocabulary-banana-ripeness-1%2Ctemplate-vocabulary-fruits-en-zh%2Ctemplate-multilingual-vocabulary-poster-watercolor-fruits-pinyin%2Ctemplate-word-scene-english-french-at-the-market%2Ctemplate-word-scene-english-korean-grocery-store",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "banana ripeness | banana ripeness"
+    },
+    {
+      "rank": 3,
+      "title": "fruits",
+      "subtitle": "fruits",
+      "templateId": "children-english-vocab-spelling",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/children-english-vocab-spelling/template-children-english-vocab-spelling-fruits?media=image&from=%2Fsearch%3Fq%3D%25E6%25B0%25B4%25E6%259E%259C%25E4%25B8%25AD%25E6%2596%2587&ids=template-word-scene-supermarket%2Ctemplate-vocabulary-banana-ripeness%2Ctemplate-children-english-vocab-spelling-fruits%2Ctemplate-detailed-vocab-flashcard-apple%2Ctemplate-daily-essentials-learning-card-fruits%2Ctemplate-bilingual-object-structure-labeling-apple%2Ctemplate-kids-vocabulary-poster-fruits%2Ctemplate-kids-vocabulary-poster-food%2Ctemplate-cartoon-english-vocabulary-flashcards-fruits%2Ctemplate-vocabulary-banana-ripeness-1%2Ctemplate-vocabulary-fruits-en-zh%2Ctemplate-multilingual-vocabulary-poster-watercolor-fruits-pinyin%2Ctemplate-word-scene-english-french-at-the-market%2Ctemplate-word-scene-english-korean-grocery-store",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-children-english-vocab-spelling-fruits-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "fruits | fruits"
+    },
+    {
+      "rank": 4,
+      "title": "Bilingual Structure Labeling preview 1",
+      "subtitle": "",
+      "templateId": "bilingual-object-structure-labeling",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/bilingual-object-structure-labeling?object_name=Apple",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-bilingual-object-structure-labeling-apple-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Bilingual Structure Labeling preview 1"
+    },
+    {
+      "rank": 5,
+      "title": "Scene Word Learning Graphic preview 1",
+      "subtitle": "",
+      "templateId": "word-scene",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/word-scene?language_pair=en-zh&scene_type=Supermarket",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-word-scene-zh-supermarket-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Scene Word Learning Graphic preview 1"
+    },
+    {
+      "rank": 6,
+      "title": "Language Learning Card Category preview 1",
+      "subtitle": "",
+      "templateId": "vocabulary",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/vocabulary?language_pair=en-zh&topic_name=Banana+Ripeness",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Language Learning Card Category preview 1"
+    },
+    {
+      "rank": 7,
+      "title": "Kids Educational Vocabulary Posters preview 1",
+      "subtitle": "",
+      "templateId": "kids-vocabulary-poster",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/kids-vocabulary-poster?theme_name=fruits",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-kids-vocabulary-poster-fruits-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Kids Educational Vocabulary Posters preview 1"
+    },
+    {
+      "rank": 8,
+      "title": "Language Learning & Vocabulary Cards preview 1",
+      "subtitle": "",
+      "templateId": "detailed-vocab-flashcard",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/detailed-vocab-flashcard?chinese_word=%E8%8B%B9%E6%9E%9C",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-detailed-vocab-flashcard-apple-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Language Learning & Vocabulary Cards preview 1"
+    },
+    {
+      "rank": 9,
+      "title": "Kids Learning & Vocabulary Posters preview 1",
+      "subtitle": "",
+      "templateId": "children-english-vocab-spelling",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/children-english-vocab-spelling?theme=fruits",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-children-english-vocab-spelling-fruits-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Kids Learning & Vocabulary Posters preview 1"
+    },
+    {
+      "rank": 10,
+      "title": "Kids Learning & Educational Cards preview 1",
+      "subtitle": "",
+      "templateId": "daily-essentials-learning-card",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/daily-essentials-learning-card?theme=fruits",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-daily-essentials-learning-card-fruits-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Kids Learning & Educational Cards preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 6,
+    "topResults": 10
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/007-q007/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/007-q007/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}

@@ -1,0 +1,59 @@
+index,query,primaryIntent,curifyStatus,curifyTopResultsCount,googleTopResultsCount,bingTopResultsCount,pinterestTopResultsCount,canvaTopResultsCount,curifyLabelsCount,googleLabelsCount,bingLabelsCount,pinterestLabelsCount,canvaLabelsCount,externalRichSignal,issueType,severity,recommendation
+1,单词,consumer,ok,10,10,10,10,0,6,11,40,2,0,True,ok,P3,Performing adequately; monitor for regression
+2,卡通,consumer,ok,10,10,10,10,0,8,9,40,2,0,True,ok,P3,Performing adequately; monitor for regression
+3,吉伊卡哇,consumer,ok,10,10,10,10,0,9,8,40,0,0,True,ok,P3,Performing adequately; monitor for regression
+4,家居装饰,consumer,ok,10,10,10,10,0,9,16,40,0,0,True,ok,P3,Performing adequately; monitor for regression
+5,工程,consumer,ok,9,10,10,10,0,8,14,40,2,0,True,retrieval_gap,P2,Audit aliases and tokenization; check if content exists but isn't being recalled
+6,植物,consumer,ok,10,10,10,10,0,6,14,40,2,0,True,ok,P3,Performing adequately; monitor for regression
+7,水果中文,creative,ok,10,10,10,10,0,6,15,39,0,0,True,ok,P3,Performing adequately; monitor for regression
+8,电商详情图,creative,ok,4,10,10,10,0,6,0,39,0,0,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+9,自行车,consumer,ok,10,10,10,10,0,9,16,40,2,0,True,ok,P3,Performing adequately; monitor for regression
+10,葡萄酒,consumer,ok,10,10,10,10,2,9,16,40,0,23,True,ok,P3,Performing adequately; monitor for regression
+11,蔬菜,consumer,ok,10,10,10,10,0,9,7,40,0,0,True,ok,P3,Performing adequately; monitor for regression
+12,词汇,creative,ok,10,10,10,10,0,6,11,40,2,0,True,ok,P3,Performing adequately; monitor for regression
+13,趣味经济学知识科普,creative,ok,6,10,10,10,0,6,6,39,0,0,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+14,音乐,consumer,ok,10,10,10,10,0,9,14,40,2,0,True,ok,P3,Performing adequately; monitor for regression
+15,食物,consumer,ok,10,10,10,10,9,8,14,40,0,30,True,ok,P3,Performing adequately; monitor for regression
+16,香薰,consumer,ok,10,10,10,10,0,9,13,40,0,0,True,ok,P3,Performing adequately; monitor for regression
+17,唯美春天,consumer,ok,10,10,10,10,0,9,0,39,0,0,True,ok,P3,Performing adequately; monitor for regression
+18,证件照,creative,ok,6,10,10,10,0,10,15,40,0,0,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+19,手作,creative,ok,10,10,10,10,0,9,14,40,0,0,True,ok,P3,Performing adequately; monitor for regression
+20,historical character,consumer,ok,5,10,10,10,10,9,33,40,0,59,True,retrieval_gap,P1,Audit aliases and tokenization; check if content exists but isn't being recalled
+21,future characters,consumer,ok,10,10,10,10,10,9,33,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+22,homophones and homonyms,creative,ok,4,10,10,10,10,4,0,40,0,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+23,english-chinese,creative,ok,10,10,10,10,10,35,33,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+24,language learning expressions,creative,ok,10,10,10,10,10,8,16,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+25,global influence,consumer,ok,8,10,10,10,10,9,28,40,2,59,True,retrieval_gap,P2,Audit aliases and tokenization; check if content exists but isn't being recalled
+26,remote destination,consumer,ok,10,10,10,10,10,7,12,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+27,unique cultural experiences,consumer,ok_empty,0,10,10,10,10,8,12,40,0,59,True,content_gap,P0,Add templates / inspirations for this query; run content generation batch
+28,short city escapes,consumer,ok,10,10,10,10,10,7,13,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+29,creative comfort food,consumer,ok,10,10,10,10,10,8,14,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+30,mbti marvel,creative,ok,5,10,10,10,10,7,9,40,0,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+31,spring flowers,consumer,ok,10,10,10,10,10,9,33,40,2,59,True,ok,P3,Performing adequately; monitor for regression
+32,反义词,creative,ok,9,10,10,10,0,6,13,40,2,0,True,retrieval_gap,P2,Audit aliases and tokenization; check if content exists but isn't being recalled
+33,paper cutting,creative,ok,9,10,10,10,10,9,33,40,0,59,True,retrieval_gap,P2,Audit aliases and tokenization; check if content exists but isn't being recalled
+34,met gala,consumer,ok,10,10,10,10,10,9,33,40,2,59,True,ok,P3,Performing adequately; monitor for regression
+35,动物 词汇,creative,ok,10,10,10,10,0,8,14,39,0,0,True,ok,P3,Performing adequately; monitor for regression
+36,wedding planner,creative,ok,7,10,10,10,10,10,33,40,2,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+37,minimalist autumn outfit for japan travel,consumer,ok,10,10,10,10,10,9,8,40,2,59,True,ok,P3,Performing adequately; monitor for regression
+38,infj vs entp dating compatibility chart,creative,ok,10,10,10,10,10,8,13,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+39,cuban sandwich recipe poster,creative,ok,4,10,10,10,10,6,11,40,0,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+40,bilingual flashcards for kids learning korean fruits,creative,ok,6,10,10,10,10,4,10,40,2,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+41,watercolor map of europe travel destinations,creative,ok,2,10,10,10,10,2,13,40,2,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+42,monstera plant care guide infographic,creative,ok,10,10,10,10,10,8,12,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+43,marvel mbti character chart 16 types,creative,ok,7,10,10,10,10,9,9,40,0,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+44,lunar new year red envelope graphic design,creative,ok,4,10,10,10,10,8,14,40,2,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+45,1950s vintage diner illustration retro poster,creative,ok,10,10,10,10,10,9,15,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+46,before after kitchen organization makeover,creative,ok,3,10,10,10,10,9,13,40,0,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+47,phonics worksheets kindergarten,creative,ok_empty,0,10,10,10,10,8,33,40,0,59,True,content_gap,P0,Add templates / inspirations for this query; run content generation batch
+48,Spanish vocabulary printable,creative,ok,6,10,10,10,10,6,28,40,0,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+49,ESL flashcards printable,creative,ok,10,10,10,10,10,9,10,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+50,easy weeknight dinners healthy,creative,ok_empty,0,10,10,10,10,8,16,40,0,59,True,content_gap,P0,Add templates / inspirations for this query; run content generation batch
+51,gluten free dinner ideas,creative,ok_empty,0,10,10,10,10,8,25,40,0,59,True,content_gap,P0,Add templates / inspirations for this query; run content generation batch
+52,meal prep weekly recipes,creative,ok_empty,0,10,10,10,10,8,33,40,0,59,True,content_gap,P0,Add templates / inspirations for this query; run content generation batch
+53,cozy reading aesthetic,consumer,ok,10,10,10,10,10,9,18,40,0,59,True,ok,P3,Performing adequately; monitor for regression
+54,book lovers gift guide,creative,ok,2,10,10,10,10,2,12,40,2,59,True,template_gap,P1,Add dedicated templates for this creative intent; check alias coverage
+55,chiikawa,consumer,ok,10,10,10,10,0,10,33,40,0,0,True,ok,P3,Performing adequately; monitor for regression
+56,samurai,consumer,ok,8,10,10,10,10,10,33,40,0,59,True,retrieval_gap,P2,Audit aliases and tokenization; check if content exists but isn't being recalled
+57,genshin,consumer,ok,10,10,10,10,0,10,33,40,2,0,True,ok,P3,Performing adequately; monitor for regression
+58,maps,consumer,ok,10,10,10,10,10,38,63,40,0,59,True,ok,P3,Performing adequately; monitor for regression

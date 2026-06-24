@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-06-21T05:44:43.829Z",
+  "overall": "PASS",
+  "checks": [
+    {
+      "check": "Query constant assertions",
+      "status": "PASS"
+    },
+    {
+      "check": "Expected queries",
+      "status": "PASS",
+      "detail": "58"
+    },
+    {
+      "check": "Query IDs consecutive 1–58",
+      "status": "PASS"
+    },
+    {
+      "check": "No duplicate query IDs",
+      "status": "PASS"
+    },
+    {
+      "check": "No duplicate query texts",
+      "status": "PASS"
+    },
+    {
+      "check": "First query",
+      "status": "PASS",
+      "detail": "单词"
+    },
+    {
+      "check": "Last query",
+      "status": "PASS",
+      "detail": "maps"
+    },
+    {
+      "check": "maps query included",
+      "status": "PASS"
+    },
+    {
+      "check": "cat excluded",
+      "status": "PASS"
+    },
+    {
+      "check": "Query 35",
+      "status": "PASS",
+      "detail": "动物 词汇"
+    },
+    {
+      "check": "Query 48",
+      "status": "PASS",
+      "detail": "Spanish vocabulary printable"
+    },
+    {
+      "check": "Query 49",
+      "status": "PASS",
+      "detail": "ESL flashcards printable"
+    },
+    {
+      "check": "observations.json parse",
+      "status": "PASS"
+    },
+    {
+      "check": "observations 58 records",
+      "status": "PASS",
+      "detail": "58"
+    },
+    {
+      "check": "Query order",
+      "status": "PASS"
+    },
+    {
+      "check": "Query text consistency",
+      "status": "PASS"
+    },
+    {
+      "check": "finalUrl present for ok/partial queries",
+      "status": "PASS"
+    },
+    {
+      "check": "Screenshots present for ok/partial queries",
+      "status": "PASS"
+    },
+    {
+      "check": "Per-query JSON files",
+      "status": "PASS"
+    }
+  ],
+  "warnings": [],
+  "summary": {
+    "ok": 58,
+    "ok_empty": 0,
+    "blocked": 0,
+    "error": 0,
+    "partial": 0,
+    "pending": 0,
+    "labels_empty_count": 0,
+    "top_results_empty_count": 0,
+    "top_results_lt10_count": 0,
+    "missing_screenshots_count": 0,
+    "total_screenshot_size_bytes": 190034063
+  }
+}

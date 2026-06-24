@@ -1,0 +1,175 @@
+{
+  "index": 2,
+  "query": "卡通",
+  "group": "user-2026-05-20",
+  "curifyUrl": "http://localhost:3001/en/search?q=%E5%8D%A1%E9%80%9A",
+  "finalUrl": "http://localhost:3001/search?q=%E5%8D%A1%E9%80%9A",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:25:09.902Z",
+  "labels": [
+    {
+      "text": "Visual & Art20",
+      "type": "chip",
+      "href": "/en/search?q=%E5%8D%A1%E9%80%9A&intent=visual-art"
+    },
+    {
+      "text": "Social & Personal14",
+      "type": "chip",
+      "href": "/en/search?q=%E5%8D%A1%E9%80%9A&intent=social-personal"
+    },
+    {
+      "text": "Storytelling & Identity14",
+      "type": "chip",
+      "href": "/en/search?q=%E5%8D%A1%E9%80%9A&intent=storytelling-identity"
+    },
+    {
+      "text": "Learning Materials6",
+      "type": "chip",
+      "href": "/en/search?q=%E5%8D%A1%E9%80%9A&intent=learning-materials"
+    },
+    {
+      "text": "🎨Cartoon",
+      "type": "suggestion",
+      "href": "/en/topics/cartoon"
+    },
+    {
+      "text": "🔬Science",
+      "type": "suggestion",
+      "href": "/en/topics/science"
+    },
+    {
+      "text": "🧠MBTI & Personality",
+      "type": "suggestion",
+      "href": "/en/topics/mbti"
+    },
+    {
+      "text": "👥Groups",
+      "type": "suggestion",
+      "href": "/en/topics/groups"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "dna double helix",
+      "subtitle": "dna double helix",
+      "templateId": "education-card",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/education-card/template-education-dna-double-helix?media=image&from=%2Fsearch%3Fq%3D%25E5%258D%25A1%25E9%2580%259A&ids=template-education-dna-double-helix%2Ctemplate-education-plate-tectonics%2Ctemplate-education-card-resource-environmental-carrying-capacity%2Ctemplate-mbti-generic-Basketball-Kobe-Bryant-Stephen-Curry-Kevin-Durant-Tim-Duncan%2Ctemplate-mbti-generic-Basketball-Michael-Jordan-LeBron-James-Kawhi-Leonard-Shaquille-ONeal%2Ctemplate-mbti-generic-Football-Lionel-Messi-Cristiano-Ronaldo-Kevin-De-Bruyne-Neymar-Jr",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-education-zh-dna-double-helix-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "dna double helix | dna double helix"
+    },
+    {
+      "rank": 2,
+      "title": "plate tectonics",
+      "subtitle": "plate tectonics",
+      "templateId": "education-card",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/education-card/template-education-plate-tectonics?media=image&from=%2Fsearch%3Fq%3D%25E5%258D%25A1%25E9%2580%259A&ids=template-education-dna-double-helix%2Ctemplate-education-plate-tectonics%2Ctemplate-education-card-resource-environmental-carrying-capacity%2Ctemplate-mbti-generic-Basketball-Kobe-Bryant-Stephen-Curry-Kevin-Durant-Tim-Duncan%2Ctemplate-mbti-generic-Basketball-Michael-Jordan-LeBron-James-Kawhi-Leonard-Shaquille-ONeal%2Ctemplate-mbti-generic-Football-Lionel-Messi-Cristiano-Ronaldo-Kevin-De-Bruyne-Neymar-Jr",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-education-zh-plate-tectonics-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "plate tectonics | plate tectonics"
+    },
+    {
+      "rank": 3,
+      "title": "resource environmental carrying capacity",
+      "subtitle": "resource environmental carrying capacity",
+      "templateId": "education-card",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/education-card/template-education-card-resource-environmental-carrying-capacity?media=image&from=%2Fsearch%3Fq%3D%25E5%258D%25A1%25E9%2580%259A&ids=template-education-dna-double-helix%2Ctemplate-education-plate-tectonics%2Ctemplate-education-card-resource-environmental-carrying-capacity%2Ctemplate-mbti-generic-Basketball-Kobe-Bryant-Stephen-Curry-Kevin-Durant-Tim-Duncan%2Ctemplate-mbti-generic-Basketball-Michael-Jordan-LeBron-James-Kawhi-Leonard-Shaquille-ONeal%2Ctemplate-mbti-generic-Football-Lionel-Messi-Cristiano-Ronaldo-Kevin-De-Bruyne-Neymar-Jr",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-education-card-zh-resource-environmental-carrying-capacity-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "resource environmental carrying capacity | resource environmental carrying capacity"
+    },
+    {
+      "rank": 4,
+      "title": "Sports Infographic preview 1",
+      "subtitle": "",
+      "templateId": "all-sports-tournament-schedule-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/all-sports-tournament-schedule-infographic?tournament_info=fifa+world+cup+2026+group+draw+poster",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-group-draw-poster-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Sports Infographic preview 1"
+    },
+    {
+      "rank": 5,
+      "title": "World Cup Daily Recap Poster preview 1",
+      "subtitle": "",
+      "templateId": "wc-daily-recap-poster",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/wc-daily-recap-poster?wc_daily_data=Today%3A+Monday%2C+June+15%2C+2026%3B+Yesterday%3A+June+14+Results+%E2%80%94+%281%29+Germany+7-1+Cura%C3%A7ao+Group+E+FT%3B+Germany+scorers%3A+Felix+Nmecha+6%27%2C+Nico+Schlotterbeck+38%27%2C+Kai+Havertz+45%2B5%27+PK+88%27%2C+Jamal+Musiala+47%27%2C+Nathaniel+Brown+68%27%2C+Deniz+Unday+78%27%3B+Cura%C3%A7ao+scorers%3A+Livano+Comencenia+21%27.+%282%29+C%C3%B4te+d%27Ivoire+1-0+Ecuador+Group+E+FT%3B+C%C3%B4te+d%27Ivoire+scorers%3A+Amad+Diallo+90%27%3B+Ecuador+scorers%3A+%28none%29.+%283%29+Netherlands+2-2+Japan+Group+F+FT%3B+Netherlands+scorers%3A+Virgil+van+Dijk+50%27%2C+Crysencio+Summerville+64%27%3B+Japan+scorers%3A+Keito+Nakamura+57%27%2C+Daichi+Kamada+88%27.+%284%29+Sweden+5-1+Tunisia+Group+F+FT%3B+Sweden+scorers%3A+Yasin+Ayari+7%27+%2B+90%2B6%27%2C+Alexander+Isak+30%27%2C+Viktor+Gy%C3%B6keres+60%27%2C+Mattias+Svanberg+84%27%3B+Tunisia+scorers%3A+Omar+Rekik+43%27.+Golden+Boot+Leaders%3A+Folarin+Balogun+%28USA%29+2+goals%2C+Kai+Havertz+%28Germany%29+2+goals%2C+Yasin+Ayari+%28Sweden%29+2+goals.+Tournament+Goals%3A+38.+Today+fixtures+Jun+15+%E2%80%94+render+ALL+FOUR+fixture+cards+below%2C+no+omissions%3A+%28A%29+Spain+vs+Cabo+Verde+Group+H+at+Atlanta+Stadium%2C+Atlanta+USA+%E2%80%94+Pacific+09%3A00+%2F+Mexico+CT+10%3A00+%2F+Colombia+11%3A00+%2F+Eastern+12%3A00+%2F+UTC-3+13%3A00+%2F+UK+17%3A00+%2F+Central+Europe+18%3A00+%2F+Japan+01%3A00+Jun+16+%2F+East+Aus+02%3A00+Jun+16+%2F+West+Aus+00%3A00+Jun+16+%E2%80%94+local+kickoff+12%3A00+ET.+%28B%29+Belgium+vs+Egypt+Group+G+at+Seattle+Stadium%2C+Seattle+USA+%E2%80%94+Pacific+12%3A00+%2F+Mexico+CT+13%3A00+%2F+Colombia+14%3A00+%2F+Eastern+15%3A00+%2F+UTC-3+16%3A00+%2F+UK+20%3A00+%2F+Central+Europe+21%3A00+%2F+Japan+04%3A00+Jun+16+%2F+East+Aus+05%3A00+Jun+16+%2F+West+Aus+03%3A00+Jun+16+%E2%80%94+local+kickoff+12%3A00+PT.+%28C%29+Saudi+Arabia+vs+Uruguay+Group+G+at+Miami+Stadium%2C+Miami+USA+%E2%80%94+Pacific+15%3A00+%2F+Mexico+CT+16%3A00+%2F+Colombia+17%3A00+%2F+Eastern+18%3A00+%2F+UTC-3+19%3A00+%2F+UK+23%3A00+%2F+Central+Europe+00%3A00+Jun+16+%2F+Japan+07%3A00+Jun+16+%2F+East+Aus+08%3A00+Jun+16+%2F+West+Aus+06%3A00+Jun+16+%E2%80%94+local+kickoff+18%3A00+ET.+%28D%29+Iran+vs+New+Zealand+Group+H+at+Los+Angeles+Stadium%2C+Los+Angeles+USA+%E2%80%94+Pacific+18%3A00+%2F+Mexico+CT+19%3A00+%2F+Colombia+20%3A00+%2F+Eastern+21%3A00+%2F+UTC-3+22%3A00+%2F+UK+02%3A00+Jun+16+%2F+Central+Europe+03%3A00+Jun+16+%2F+Japan+10%3A00+Jun+16+%2F+East+Aus+11%3A00+Jun+16+%2F+West+Aus+09%3A00+Jun+16+%E2%80%94+local+kickoff+18%3A00+PT.",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-wc-daily-recap-poster-2026-06-15-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "World Cup Daily Recap Poster preview 1"
+    },
+    {
+      "rank": 6,
+      "title": "Sports Court Shot Trajectory Analysis Infographic preview 1",
+      "subtitle": "",
+      "templateId": "sports-court-shot-trajectory-analysis-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/sports-court-shot-trajectory-analysis-infographic?sport_analysis_topic=basketball+shot+chart",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-sports-court-shot-trajectory-analysis-infographic-basketball-shot-chart-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Sports Court Shot Trajectory Analysis Infographic preview 1"
+    },
+    {
+      "rank": 7,
+      "title": "Popular Science Health Infographic Poster preview 1",
+      "subtitle": "",
+      "templateId": "popular-science-health-infographic-poster",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/popular-science-health-infographic-poster?knowledge_topic_info=covid+anxiety+emotion",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-popular-science-health-infographic-poster-covid-anxiety-emotion-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Popular Science Health Infographic Poster preview 1"
+    },
+    {
+      "rank": 8,
+      "title": "Multi-Panel Classic Comic Strip Poster preview 1",
+      "subtitle": "",
+      "templateId": "character-multi-panel-comic-strip-poster",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/character-multi-panel-comic-strip-poster?anime_cartoon_theme_info=captain+tsubasa",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-character-multi-panel-comic-strip-poster-captain-tsubasa-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Multi-Panel Classic Comic Strip Poster preview 1"
+    },
+    {
+      "rank": 9,
+      "title": "Sport Rules Hand-Drawn Infographic preview 1",
+      "subtitle": "",
+      "templateId": "sport-rules-handdrawn-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/sport-rules-handdrawn-infographic?sport_info=badminton",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-sport-rules-handdrawn-infographic-badminton-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Sport Rules Hand-Drawn Infographic preview 1"
+    },
+    {
+      "rank": 10,
+      "title": "Chinese Verb Opposites Infographic preview 1",
+      "subtitle": "",
+      "templateId": "chinese-verb-opposite-infographic",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/chinese-verb-opposite-infographic?chart_title=action+words",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-chinese-verb-opposite-infographic-action-words-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Chinese Verb Opposites Infographic preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 8,
+    "topResults": 10
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/002-q002/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/002-q002/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}

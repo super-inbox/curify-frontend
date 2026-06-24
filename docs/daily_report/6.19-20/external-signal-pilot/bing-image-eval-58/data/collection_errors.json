@@ -1,0 +1,20 @@
+[
+  {
+    "query_id": 58,
+    "query": "maps",
+    "stage": "extract_top10",
+    "message": "page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:290:30), <anonymous>:1:153)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:290:30), <anonymous>:1:153)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at extractTiles (/Users/baobaoli/Desktop/curify-frontend/scripts/bing-image-eval/extractResults.ts:85:15)\n    at scrollAndCollect (/Users/baobaoli/Desktop/curify-frontend/scripts/bing-image-eval/extractResults.ts:72:25)\n    at extractTop10 (/Users/baobaoli/Desktop/curify-frontend/scripts/bing-image-eval/extractResults.ts:38:23)\n    at <anonymous> (/Users/baobaoli/Desktop/curify-frontend/scripts/bing-image-eval/collect.ts:268:26)",
+    "timestamp": "2026-06-21T05:21:45.355Z",
+    "screenshot": ""
+  },
+  {
+    "query_id": 58,
+    "query": "maps",
+    "stage": "extract_top10",
+    "message": "page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:290:30), <anonymous>:1:62)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:290:30), <anonymous>:1:62)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at extractTiles (/Users/baobaoli/Desktop/curify-frontend/scripts/bing-image-eval/extractResults.ts:64:15)\n    at scrollAndCollect (/Users/baobaoli/Desktop/curify-frontend/scripts/bing-image-eval/extractResults.ts:50:25)\n    at extractTop10 (/Users/baobaoli/Desktop/curify-frontend/scripts/bing-image-eval/extractResults.ts:16:23)\n    at <anonymous> (/Users/baobaoli/Desktop/curify-frontend/scripts/bing-image-eval/collect.ts:268:26)",
+    "timestamp": "2026-06-21T05:25:15.961Z",
+    "screenshot": ""
+  }
+]

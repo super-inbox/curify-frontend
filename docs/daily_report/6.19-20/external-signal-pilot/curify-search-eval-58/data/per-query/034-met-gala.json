@@ -1,0 +1,180 @@
+{
+  "index": 34,
+  "query": "met gala",
+  "group": "gsc-zero",
+  "curifyUrl": "http://localhost:3001/en/search?q=met%20gala",
+  "finalUrl": "http://localhost:3001/search?q=met+gala",
+  "status": "ok",
+  "redirected": true,
+  "redirectType": "other",
+  "capturedAt": "2026-06-21T04:35:34.069Z",
+  "labels": [
+    {
+      "text": "Social & Personal20",
+      "type": "chip",
+      "href": "/en/search?q=met%20gala&intent=social-personal"
+    },
+    {
+      "text": "Visual & Art20",
+      "type": "chip",
+      "href": "/en/search?q=met%20gala&intent=visual-art"
+    },
+    {
+      "text": "Learning Materials15",
+      "type": "chip",
+      "href": "/en/search?q=met%20gala&intent=learning-materials"
+    },
+    {
+      "text": "Merch & Commerce5",
+      "type": "chip",
+      "href": "/en/search?q=met%20gala&intent=merch-commerce"
+    },
+    {
+      "text": "Travel & Place4",
+      "type": "chip",
+      "href": "/en/search?q=met%20gala&intent=travel-place"
+    },
+    {
+      "text": "👗Fashion",
+      "type": "suggestion",
+      "href": "/en/topics/fashion"
+    },
+    {
+      "text": "👤AI Portraits",
+      "type": "suggestion",
+      "href": "/en/topics/portrait"
+    },
+    {
+      "text": "👥Groups",
+      "type": "suggestion",
+      "href": "/en/topics/groups"
+    },
+    {
+      "text": "↔️Comparison",
+      "type": "suggestion",
+      "href": "/en/topics/comparison"
+    }
+  ],
+  "topResults": [
+    {
+      "rank": 1,
+      "title": "bridal hairstyle",
+      "subtitle": "bridal hairstyle",
+      "templateId": "fashion-before-after-outfit-annotation-card",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/fashion-before-after-outfit-annotation-card/template-fashion-before-after-outfit-annotation-card-bridal-hairstyle?media=image&from=%2Fsearch%3Fq%3Dmet%2Bgala&ids=template-fashion-before-after-outfit-annotation-card-bridal-hairstyle%2Ctemplate-fashion-before-after-outfit-annotation-card-casual-denim%2Ctemplate-fashion-before-after-outfit-annotation-card-diamond-jewelry%2Ctemplate-hairstyle-color-recommendation-long-hair-women%2Ctemplate-hairstyle-color-recommendation-oval-face-men%2Ctemplate-hairstyle-color-recommendation-oval-face-women%2Ctemplate-ai-outfit-try-on-poster-casual-streetwear-male%2Ctemplate-ai-outfit-try-on-poster-classic-prep-female%2Ctemplate-ai-outfit-try-on-poster-cozy-summer-male%2Ctemplate-ethnic-costume-deconstruction-board-bai%2Ctemplate-ethnic-costume-deconstruction-board-buyi%2Ctemplate-ethnic-costume-deconstruction-board-miao%2Ctemplate-fashion-inspired-gown-design-sheet-butterfly%2Ctemplate-fashion-inspired-gown-design-sheet-cherry-blossom%2Ctemplate-fashion-inspired-gown-design-sheet-ice-crystal%2Ctemplate-personal-fashion-outfit-style-variations-men-1%2Ctemplate-personal-fashion-outfit-style-variations-women-1%2Ctemplate-personal-fashion-outfit-style-variations-women-2%2Ctemplate-lifestyle-photo-grid-autumn-park%2Ctemplate-lifestyle-photo-grid-beach-summer%2Ctemplate-lifestyle-photo-grid-city-fashion",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-before-after-outfit-annotation-card-bridal-hairstyle-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "bridal hairstyle | bridal hairstyle"
+    },
+    {
+      "rank": 2,
+      "title": "casual denim",
+      "subtitle": "casual denim",
+      "templateId": "fashion-before-after-outfit-annotation-card",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/fashion-before-after-outfit-annotation-card/template-fashion-before-after-outfit-annotation-card-casual-denim?media=image&from=%2Fsearch%3Fq%3Dmet%2Bgala&ids=template-fashion-before-after-outfit-annotation-card-bridal-hairstyle%2Ctemplate-fashion-before-after-outfit-annotation-card-casual-denim%2Ctemplate-fashion-before-after-outfit-annotation-card-diamond-jewelry%2Ctemplate-hairstyle-color-recommendation-long-hair-women%2Ctemplate-hairstyle-color-recommendation-oval-face-men%2Ctemplate-hairstyle-color-recommendation-oval-face-women%2Ctemplate-ai-outfit-try-on-poster-casual-streetwear-male%2Ctemplate-ai-outfit-try-on-poster-classic-prep-female%2Ctemplate-ai-outfit-try-on-poster-cozy-summer-male%2Ctemplate-ethnic-costume-deconstruction-board-bai%2Ctemplate-ethnic-costume-deconstruction-board-buyi%2Ctemplate-ethnic-costume-deconstruction-board-miao%2Ctemplate-fashion-inspired-gown-design-sheet-butterfly%2Ctemplate-fashion-inspired-gown-design-sheet-cherry-blossom%2Ctemplate-fashion-inspired-gown-design-sheet-ice-crystal%2Ctemplate-personal-fashion-outfit-style-variations-men-1%2Ctemplate-personal-fashion-outfit-style-variations-women-1%2Ctemplate-personal-fashion-outfit-style-variations-women-2%2Ctemplate-lifestyle-photo-grid-autumn-park%2Ctemplate-lifestyle-photo-grid-beach-summer%2Ctemplate-lifestyle-photo-grid-city-fashion",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-before-after-outfit-annotation-card-casual-denim-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "casual denim | casual denim"
+    },
+    {
+      "rank": 3,
+      "title": "diamond jewelry",
+      "subtitle": "diamond jewelry",
+      "templateId": "fashion-before-after-outfit-annotation-card",
+      "templateName": "",
+      "href": "http://localhost:3001/en/carousel/template-example/fashion-before-after-outfit-annotation-card/template-fashion-before-after-outfit-annotation-card-diamond-jewelry?media=image&from=%2Fsearch%3Fq%3Dmet%2Bgala&ids=template-fashion-before-after-outfit-annotation-card-bridal-hairstyle%2Ctemplate-fashion-before-after-outfit-annotation-card-casual-denim%2Ctemplate-fashion-before-after-outfit-annotation-card-diamond-jewelry%2Ctemplate-hairstyle-color-recommendation-long-hair-women%2Ctemplate-hairstyle-color-recommendation-oval-face-men%2Ctemplate-hairstyle-color-recommendation-oval-face-women%2Ctemplate-ai-outfit-try-on-poster-casual-streetwear-male%2Ctemplate-ai-outfit-try-on-poster-classic-prep-female%2Ctemplate-ai-outfit-try-on-poster-cozy-summer-male%2Ctemplate-ethnic-costume-deconstruction-board-bai%2Ctemplate-ethnic-costume-deconstruction-board-buyi%2Ctemplate-ethnic-costume-deconstruction-board-miao%2Ctemplate-fashion-inspired-gown-design-sheet-butterfly%2Ctemplate-fashion-inspired-gown-design-sheet-cherry-blossom%2Ctemplate-fashion-inspired-gown-design-sheet-ice-crystal%2Ctemplate-personal-fashion-outfit-style-variations-men-1%2Ctemplate-personal-fashion-outfit-style-variations-women-1%2Ctemplate-personal-fashion-outfit-style-variations-women-2%2Ctemplate-lifestyle-photo-grid-autumn-park%2Ctemplate-lifestyle-photo-grid-beach-summer%2Ctemplate-lifestyle-photo-grid-city-fashion",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-before-after-outfit-annotation-card-diamond-jewelry-prev.jpg",
+      "sourceType": "inspiration",
+      "visibleText": "diamond jewelry | diamond jewelry"
+    },
+    {
+      "rank": 4,
+      "title": "Fashion preview 1",
+      "subtitle": "",
+      "templateId": "fashion-before-after-outfit-annotation-card",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/fashion-before-after-outfit-annotation-card?outfit_type=bridal+hairstyle",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-before-after-outfit-annotation-card-bridal-hairstyle-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Fashion preview 1"
+    },
+    {
+      "rank": 5,
+      "title": "AI Outfit Try-On Poster preview 1",
+      "subtitle": "",
+      "templateId": "ai-outfit-try-on-poster",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/ai-outfit-try-on-poster",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-ai-outfit-try-on-poster-casual-streetwear-male-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "AI Outfit Try-On Poster preview 1"
+    },
+    {
+      "rank": 6,
+      "title": "Hairstyle Recommendation Infographic preview 1",
+      "subtitle": "",
+      "templateId": "hairstyle-color-recommendation",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/hairstyle-color-recommendation",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-hairstyle-color-recommendation-long-hair-women-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Hairstyle Recommendation Infographic preview 1"
+    },
+    {
+      "rank": 7,
+      "title": "Fashion Design Sheet preview 1",
+      "subtitle": "",
+      "templateId": "fashion-inspired-gown-design-sheet",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/fashion-inspired-gown-design-sheet?inspiration_subject=butterfly",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-inspired-gown-design-sheet-butterfly-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Fashion Design Sheet preview 1"
+    },
+    {
+      "rank": 8,
+      "title": "Ethnic Costume Deconstruction Board preview 1",
+      "subtitle": "",
+      "templateId": "ethnic-costume-deconstruction-board",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/ethnic-costume-deconstruction-board?ethnic_group=bai",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-ethnic-costume-deconstruction-board-bai-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Ethnic Costume Deconstruction Board preview 1"
+    },
+    {
+      "rank": 9,
+      "title": "Outfit Style Variations Lookbook preview 1",
+      "subtitle": "",
+      "templateId": "personal-fashion-outfit-style-variations",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/personal-fashion-outfit-style-variations",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-personal-fashion-outfit-style-variations-men-1-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Outfit Style Variations Lookbook preview 1"
+    },
+    {
+      "rank": 10,
+      "title": "Lifestyle Photo Grids preview 1",
+      "subtitle": "",
+      "templateId": "lifestyle-photo-grid",
+      "templateName": "",
+      "href": "http://localhost:3001/en/nano-template/lifestyle-photo-grid?theme=autumn+park",
+      "imageUrl": "https://cdn.curify-ai.com/images/nano_insp_preview/template-lifestyle-photo-grid-autumn-park-prev.jpg",
+      "sourceType": "template",
+      "visibleText": "Lifestyle Photo Grids preview 1"
+    }
+  ],
+  "counts": {
+    "labels": 9,
+    "topResults": 10
+  },
+  "screenshots": {
+    "page1": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/034-met-gala/curify-search-page1.png",
+    "page2": "/Users/baobaoli/Desktop/curify-frontend/docs/external-signal-pilot/curify-search-eval-58/screenshots/034-met-gala/curify-search-page2.png"
+  },
+  "notes": "",
+  "error": null
+}
