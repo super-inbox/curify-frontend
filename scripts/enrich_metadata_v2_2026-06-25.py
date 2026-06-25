@@ -86,6 +86,41 @@ def build_valid_set(tax: dict) -> set:
     return valid
 
 
+# Templates-only allow set. EXCLUDES every subject axis. Templates
+# carry boilerplate (Info-Type + Layout + Style + Audience) only;
+# subject tags (anime, naruto, japan, food, character, …) live on the
+# individual inspirations + gallery prompts. Memory:
+# feedback_template_topics_should_be_boilerplate.md
+TEMPLATE_FORMAT_PARENTS_TIER3 = ("design", "lifestyle", "product")
+TEMPLATE_FORMAT_PARENTS_TIER2 = ("design", "product")
+
+
+def build_template_allow_set(tax: dict) -> set:
+    """Slugs allowed on template.topics — never tier1, never tier4,
+    never subject-bearing tier2/tier3 parents."""
+    allow = set()
+    for parent in TEMPLATE_FORMAT_PARENTS_TIER2:
+        for x in tax.get("tier2", {}).get(parent, []) or []:
+            allow.add(str(x).lower()); allow.add(slugify(str(x)))
+    for parent in TEMPLATE_FORMAT_PARENTS_TIER3:
+        for x in tax.get("tier3", {}).get(parent, []) or []:
+            allow.add(str(x).lower()); allow.add(slugify(str(x)))
+    for a in tax.get("audience", []):
+        allow.add(a.lower()); allow.add(slugify(a))
+    return allow
+
+
+def build_template_vocab(tax: dict) -> dict:
+    """Vocab surfaced to the LLM for templates — NO subject lists."""
+    return {
+        "style_and_output":   sorted(tax.get("tier3", {}).get("design", []) or []),
+        "mood_and_aesthetic": sorted(tax.get("tier3", {}).get("lifestyle", []) or []),
+        "product_output":     sorted(tax.get("tier3", {}).get("product", []) or []),
+        "design_formats_t2":  sorted(tax.get("tier2", {}).get("design", []) or []),
+        "audience":           list(tax.get("audience", [])),
+    }
+
+
 SYSTEM_PROMPT = """You are a precise multi-axis tagger for visual content cards in an AI image-generation catalog.
 
 For each record, return 30-50 GRANULAR tags drawn STRICTLY from the provided taxonomy vocabulary. Coverage across NINE axes:
@@ -106,6 +141,25 @@ Hard rules:
   - Be specific when a specific slug exists (e.g. "mbti-infj" beats "personality", "spanish-cuisine" beats "food").
   - Don't repeat near-synonyms (e.g. "kawaii" + "cute" — pick one).
   - Skip audience slugs unless the card is CLEARLY for that audience (vocab cards, kids worksheets, etc.).
+  - Output JSON: {"tags": ["slug1", "slug2", …]}"""
+
+
+SYSTEM_PROMPT_TEMPLATES = """You are a precise BOILERPLATE tagger for template archetypes in an AI image-generation catalog.
+
+A TEMPLATE is a reusable archetype — its `topics[]` describe the FORMAT, LAYOUT, STYLE, AUDIENCE; NEVER the SUBJECT. Subjects (anime, naruto, japan, food, character, panda, etc.) live on the individual examples generated from the template, not on the template itself. E.g. `pop-culture-matching-chart` should carry "matching-chart", "infographic", "comparison" — NOT "anime", even though many examples may happen to be anime.
+
+For each template, return 12-25 tags drawn STRICTLY from the FOUR allowed axes:
+
+  1. style              (kawaii, cartoon, watercolor, ink, photorealistic, vintage, isometric, 3d, illustration, …)
+  2. output-type        (infographic, comic, poster, sticker, daily-life-grid, narrative-comic, mind-maps, study-sheets, art-prints, social-media-posts, …)
+  3. composition/mood   (centered, layered, grid, isometric, minimalist, playful, cozy, dramatic, bold, modern, …)
+  4. audience           (kids-learning, early-childhood-learning, bilingual, professional — only if the template is CLEARLY for that audience)
+
+Hard rules:
+  - Only return slugs from the provided vocabulary. NEVER invent slugs. NEVER add any subject slug (validation will reject them).
+  - 12-25 tags. Templates are intentionally LEAN — they describe the empty mold, not the contents.
+  - If two slugs are near-synonyms (kawaii + cute, playful + whimsical), pick one.
+  - Skip audience unless the template is clearly for that audience.
   - Output JSON: {"tags": ["slug1", "slug2", …]}"""
 
 
@@ -150,6 +204,19 @@ def build_user_prompt(record: dict, kind: str, vocab: dict, ctx_template: Option
     else:
         raise ValueError(f"unknown kind: {kind}")
 
+    if kind == "templates":
+        return f"""Vocabulary (use ONLY these slugs — NO subjects):
+  style_and_output:   {json.dumps(vocab["style_and_output"])}
+  mood_and_aesthetic: {json.dumps(vocab["mood_and_aesthetic"])}
+  product_output:     {json.dumps(vocab["product_output"])}
+  design_formats_t2:  {json.dumps(vocab["design_formats_t2"])}
+  audience:           {json.dumps(vocab["audience"])}
+
+Template:
+{ctx}
+
+Produce 12-25 BOILERPLATE tags from the FOUR allowed axes only (style / output / composition+mood / audience). NEVER any subject."""
+
     return f"""Vocabulary (use ONLY these slugs):
   subject_t1: {json.dumps(vocab["subject_t1"])}
   subject_t2: {json.dumps(vocab["subject_t2"])}
@@ -164,8 +231,11 @@ Produce 30-50 granular tags from the vocabulary across the 9 axes."""
 
 
 def enrich_one(client, record, kind, vocab, valid, ctx_template=None):
-    """Returns (record_id, kept_tags_list, dropped_invalid_list)."""
+    """Returns (record_id, kept_tags_list, dropped_invalid_list).
+    `valid` is the allowed-slug set (full for inspirations/gallery,
+    narrow for templates — built by build_template_allow_set)."""
     rid = record.get("id") or record.get("template_id") or "?"
+    sys_prompt = SYSTEM_PROMPT_TEMPLATES if kind == "templates" else SYSTEM_PROMPT
     try:
         prompt = build_user_prompt(record, kind, vocab, ctx_template)
         res = client.chat.completions.create(
@@ -173,7 +243,7 @@ def enrich_one(client, record, kind, vocab, valid, ctx_template=None):
             response_format={"type": "json_object"},
             temperature=0.1,
             messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "system", "content": sys_prompt},
                 {"role": "user", "content": prompt},
             ],
         )
@@ -210,9 +280,14 @@ def main() -> None:
         print("OPENAI_API_KEY not set", file=sys.stderr); sys.exit(1)
 
     tax = json.loads(TAX_PATH.read_text(encoding="utf-8"))
-    vocab = build_vocab(tax)
-    valid = build_valid_set(tax)
-    print(f"Vocab: T1={len(vocab['subject_t1'])} T2={len(vocab['subject_t2'])} T3={len(vocab['subject_t3'])} T4={len(vocab['entities_t4'])} audience={len(vocab['audience'])} | valid-slug set={len(valid)}")
+    if args.kind == "templates":
+        vocab = build_template_vocab(tax)
+        valid = build_template_allow_set(tax)
+        print(f"TEMPLATES vocab (subject-banned): style={len(vocab['style_and_output'])} mood={len(vocab['mood_and_aesthetic'])} product_output={len(vocab['product_output'])} t2_formats={len(vocab['design_formats_t2'])} audience={len(vocab['audience'])} | allow-set={len(valid)}")
+    else:
+        vocab = build_vocab(tax)
+        valid = build_valid_set(tax)
+        print(f"Vocab: T1={len(vocab['subject_t1'])} T2={len(vocab['subject_t2'])} T3={len(vocab['subject_t3'])} T4={len(vocab['entities_t4'])} audience={len(vocab['audience'])} | valid-slug set={len(valid)}")
 
     path = PATHS[args.kind]
     data = json.loads(path.read_text(encoding="utf-8"))
