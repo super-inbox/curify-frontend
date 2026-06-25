@@ -1,9 +1,9 @@
 # Search Retrieval Improvement Plan — 2026-06-25
 
-_Owner: jay. Status: **P0.1 inspirations + gallery shipped 2026-06-25**; P0.1b (templates with narrow prompt) and P0.2 (multi-query retrieval) queued. Re-rank after each ship + measure recall lift on the bronze-worker / 青铜打工小兽 class of viral-compound queries._
+_Owner: jay. Status: **P0.1 + P0.1b shipped 2026-06-25 / 2026-06-26**; P0.2 (multi-query retrieval) queued. Re-rank after each ship + measure recall lift on the bronze-worker / 青铜打工小兽 class of viral-compound queries._
 
 **Live status (open tasks):**
-- **Task #121 — P0.1b**: re-enrich templates with narrow prompt (output-type + composition + style + audience only).
+- ✅ Task #121 — P0.1b: templates re-enriched with narrow prompt (15 avg topics, 0 new subject leak).
 - **Task #122 — P0.2**: extend `lib/searchRewrite.ts` from 3 → 8 retrieval paths with decomposition + multi-hit rank boost.
 
 ## Why this doc exists
@@ -50,13 +50,13 @@ This doc maps each against what Curify already ships, picks the **P0 subset by R
 
 **Result of the full pass:**
 
-| Surface | Records | Avg before | Avg after | 25+ tags | 30+ tags | <10 tags |
-|---|---|---|---|---|---|---|
-| Inspirations | 3,134 | ~5 | **25.5** | 65% | 22% | 4% |
-| Gallery prompts | 4,117 | ~5 | **26.3** | 70% | 16% | 1% |
-| Templates | 297 | (kept) | — | — | — | — (DEFERRED → **P0.1b**) |
+| Surface | Records | Avg before | Avg after | Sweet spot | <10 tags |
+|---|---|---|---|---|---|
+| Inspirations | 3,134 | ~5 | **25.5** | 65% at 25+ | 4% |
+| Gallery prompts | 4,117 | ~5 | **26.3** | 70% at 25+ | 1% |
+| Templates (P0.1b) | 297 | ~5 | **15.0** | 95% in 12-25 | 0% |
 
-Cost: ~$11. Commits: `f2255f52` (inspirations), `ce2b696d` (gallery). Run script: [`scripts/enrich_metadata_v2_2026-06-25.py`](../scripts/enrich_metadata_v2_2026-06-25.py).
+Cost: ~$12 total. Commits: `f2255f52` (inspirations), `ce2b696d` (gallery), `2c0b8668` (templates narrow prompt). Run script: [`scripts/enrich_metadata_v2_2026-06-25.py`](../scripts/enrich_metadata_v2_2026-06-25.py).
 
 ### Original spec (kept for reference)
 
@@ -86,18 +86,13 @@ Cost: ~$11. Commits: `f2255f52` (inspirations), `ce2b696d` (gallery). Run script
 
 **Pipeline:** [`scripts/enrich_metadata_v2_2026-06-25.py`](../scripts/enrich_metadata_v2_2026-06-25.py) → run pilot → run full → commit `nano_inspiration.json` + `nanobanana.json` + (if templates touched) `nano_templates.json`.
 
-### P0.1b — Templates re-enrichment with narrow prompt (queued — task #121)
+### P0.1b — Templates re-enrichment with narrow prompt (✅ shipped 2026-06-26)
 
-**Why deferred:** The broad 9-axis prompt was tried on the 297 templates and reverted before commit because the LLM added subject tags (`anime`, `anthropomorphic`, `nature`, `narrative-comic`) to multi-IP / generic templates. This violates the [`template.topics = boilerplate (Info-Type + Layout), Subject on examples`](../scripts/) rule (memory: `feedback_template_topics_should_be_boilerplate.md`) — e.g. `pop-culture-matching-chart` shouldn't carry `anime`; subject tags belong on individual inspirations.
+**The fix:** built a templates-only `SYSTEM_PROMPT_TEMPLATES` + `build_template_allow_set()` partition of the taxonomy. Allow-set = tier3 under `{design, lifestyle, product}` + tier2 under `{design, product}` + audience = **147 slugs**, vs the full 807-slug set used for inspirations/gallery. Subject tiers are entirely absent from both the vocab surfaced to the LLM and the validation filter, so neither the prompt nor the post-filter ever lets a subject slug land on a template.
 
-**What to do:**
-- Add a `--kind templates` branch in [`scripts/enrich_metadata_v2_2026-06-25.py`](../scripts/enrich_metadata_v2_2026-06-25.py) with a NARROWER `SYSTEM_PROMPT` that only allows 4 axes: **output-type + composition + style + audience**.
-- Explicitly forbid the LLM from suggesting any tier-1/tier-2/tier-3 SUBJECT slug.
-- Add an extra validation filter that rejects any slug in the subject vocab even if the LLM returns it.
+**Result:** 297 templates → avg 15.0 topics (was ~5), 95% in the 12-25 sweet spot, 0 errors, **0 new subject additions** (verified by cross-checking proposed slugs against subject tier3 + tier4). Commit `2c0b8668`.
 
-**Pilot acceptance:** 20-template pilot must show ZERO subject slugs in the proposed tags (spot-check the diff).
-
-**Expected per-template count:** ~15-25 topics (lower than inspirations/gallery on purpose — templates are intentionally lean).
+Pre-existing tier1 memberships (e.g. `character` on `template-character`) remain — they're load-bearing for `/topics/<slug>` routing and out of scope for this pass.
 
 ### P0.2 — Multi-query Retrieval expansion (queued — task #122)
 
