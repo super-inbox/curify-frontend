@@ -170,7 +170,7 @@ This means a query for `daily life grid` or `narrative comic` (output-type queri
 
 A user types `青铜打工小兽`. The full pipeline now executes:
 
-**(a) Baseline pass.** `scoreQueryTokens(['青铜','打工','小兽'], true)` runs first. Suppose this returns 2 strict hits (the 2 records whose aliases were hand-curated in Step 1). Below `LOW_RESULT_THRESHOLD=3` → expansion fires.
+**(a) Baseline pass.** `scoreQueryTokens(['青铜','打工','小兽'], true)` runs first. Suppose this returns 2 strict hits (the 2 records whose aliases were hand-curated in Step 1). Below `LOW_RESULT_THRESHOLD=5` (raised from 3 on 2026-06-26) → expansion fires.
 
 **(b) One LLM call returns 7 extra paths.**
 ```json

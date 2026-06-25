@@ -155,10 +155,13 @@ export default function SearchResultsClient({
     gridItems.length + matchedTemplates.length + galleryPrompts.length;
   const hasResults = totalResults > 0;
   // Threshold below which a query is "thin" enough to flag for an alias
-  // top-up or content review. 3 catches queries that returned 1-2 items —
-  // a single accidental match isn't a useful result page. See
+  // top-up or content review. 5 catches queries that returned 1-4 items —
+  // even a 3-4-result page is often subjectively thin (no diversity,
+  // single template family). Raised from 3 → 5 on 2026-06-26 to surface
+  // borderline-thin queries in admin's failing-query backlog. Matches
+  // the server-side LOW_RESULT_THRESHOLD in search/page.tsx. See
   // docs/search-quality.md (item 2, low-result query logging).
-  const LOW_RESULT_THRESHOLD = 3;
+  const LOW_RESULT_THRESHOLD = 5;
 
   const { track } = useTracking();
   useEffect(() => {

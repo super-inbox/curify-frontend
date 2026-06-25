@@ -23,10 +23,15 @@ import { buildTemplateTopicsMap, resolveTopics } from "@/lib/topic_resolver";
 import { calculateTopicCooccurrence } from "@/lib/topic_cooccurrence";
 import SearchResultsClient from "./SearchResultsClient";
 
-// Threshold below which we trigger the LLM rewrite path. Matches the
-// client-side LOW_RESULT_THRESHOLD in SearchResultsClient so the tracking
-// boundary stays consistent.
-const LOW_RESULT_THRESHOLD = 3;
+// Threshold below which we trigger the LLM multi-query expansion path
+// (1 original + up to 3 paraphrases + up to 6 decomposition slots).
+// Matches the client-side LOW_RESULT_THRESHOLD in SearchResultsClient
+// so the tracking boundary stays consistent — both fire on totalResults
+// (or initialThinCount, server-side) < 5. Raised from 3 → 5 on
+// 2026-06-26 to widen the rescue window for borderline-thin queries
+// like compound CJK searches (n=3..4 baseline is still often subjectively
+// thin and benefits from decomposition-path coverage).
+const LOW_RESULT_THRESHOLD = 5;
 
 // Bots / crawlers we do NOT want triggering paid LLM rewriter calls.
 // Observed in Vercel logs hitting /search with garbage queries (bingbot
