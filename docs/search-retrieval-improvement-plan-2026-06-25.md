@@ -123,6 +123,104 @@ Run all 8 in parallel, union results, **re-rank by hit-count-across-paths** (rec
 
 ---
 
+## Worked example: `青铜打工小兽` end-to-end
+
+The canonical compound query used as the benchmark across this plan. The progression below is concrete and verifiable — each row is something we shipped or are about to ship.
+
+### Step 0 — pre-2026-06-23: the floor
+
+`/search?q=青铜打工小兽` returned **0 results**. The query is a viral Chinese compound (bronze + 打工 office-worker + 神兽 mythical-beast). No template existed for anthropomorphized cultural artifacts; the rewriter's catalog context didn't recognize 青铜 as a route-able tier-3; no inspiration carried `打工` or `office worker` as a tag.
+
+### Step 1 — 2026-06-23: A+C content gen (commit `224b3aa9`)
+
+Filed as the **bronze-worker case study** before P0 work began.
+- Added 5 tier-3 slugs: `original-ip`, `modernized-artifact`, `cultural-fusion`, `daily-life-grid`, `narrative-comic`.
+- Authored 3 new templates: `template-original-character-daily-life-grid`, `template-original-character-sticker-pack`, `template-modernized-artifact-poster`.
+- Generated 12 seed inspirations (4 per template) including a literal `bronze-worker` mascot card.
+- Added 16 fresh aliases on 3 existing bronze-mentioning records: `打工/working/office/grind/9-to-5`, `神兽/mythical creature/mascot`, `青铜/bronze/ancient artifact/文物`, `拟人/anthropomorphic`.
+
+After this drop, `/search?q=青铜打工小兽` returned **~6-8 hits via the rewriter path** but the **base (no-rewrite) match was still 0** — the original CJK tokens couldn't match anything; only the LLM rewrites rescued recall.
+
+### Step 2 — 2026-06-25 (P0.1): inspirations + gallery enriched
+
+Tag corpus jumped 5 → 25.5 avg per inspiration, 5 → 26.3 per gallery prompt. The 12 bronze-worker seeds now carry 25-30 tags each spanning the 9 axes — concretely:
+```
+template-original-character-daily-life-grid-bronze-worker:
+  subject:     anthropomorphic, character, character-ip, mascots,
+               original-ip, modernized-artifact
+  style:       illustration, cartoon, kawaii, 3d
+  scene:       office, daily-life-grid, workplace-dynamics
+  material:    bronze, metallic
+  era:         vintage, ancient
+  mood:        playful, cozy, modern
+  audience:    (none — adult-audience by default)
+  output:      character-ip, narrative-comic, daily-life-grid
+  composition: grid
+```
+
+A user query of just `bronze worker` (no original Chinese) now matches this record on **subject + material + scene** simultaneously instead of only via aliases.
+
+### Step 3 — 2026-06-26 (P0.1b): templates re-enriched with narrow prompt
+
+`template-original-character-daily-life-grid.topics[]` went from `["character", "design", "narrative-comic"]` to **~15 boilerplate topics** including `daily-life-grid`, `grid`, `playful`, `whimsical`, `narrative-comic`, `comic`, `social-media-posts`, `cozy`, `modern`, `dynamic`. Critically, **no new subject tags** leaked onto the template — `anthropomorphic` and `bronze` stay on the *examples*, not the template itself.
+
+This means a query for `daily life grid` or `narrative comic` (output-type queries with no subject) now surfaces this template, while `anime` (an unrelated subject) does not over-match it.
+
+### Step 4 — 2026-06-26 (P0.2): multi-query retrieval
+
+A user types `青铜打工小兽`. The full pipeline now executes:
+
+**(a) Baseline pass.** `scoreQueryTokens(['青铜','打工','小兽'], true)` runs first. Suppose this returns 2 strict hits (the 2 records whose aliases were hand-curated in Step 1). Below `LOW_RESULT_THRESHOLD=3` → expansion fires.
+
+**(b) One LLM call returns 7 extra paths.**
+```json
+{
+  "rewrites": ["bronze beast office worker", "bronze worker mascot", "bronze artifact employee"],
+  "decomposition": {
+    "subject": "bronze artifact",
+    "style":   "anthropomorphic",
+    "scene":   "office daily life",
+    "output":  "character poster"
+  }
+}
+```
+`flattenPaths` dedupes them against each other and the original → **7 unique extra paths**. Combined with the baseline = **8 retrieval paths**.
+
+**(c) Each path is re-scored.** Same `scoreQueryTokens` engine, union by record id, max score per record wins. A parallel `pathHitsById` counts how many paths matched each record:
+
+| Record | original | rw1 | rw2 | rw3 | subject | style | scene | output | hits | base |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `bronze-worker-seed-1` | ✅ (3) |  |  |  | ✅ (2) | ✅ (1) | ✅ (1) |  | **4** | 3 |
+| `bronze-misc-B` |  | ✅ (2) |  |  | ✅ (1) |  |  |  | **2** | 2 |
+| `kawaii-mascot-D` |  |  | ✅ (1) |  |  | ✅ (1) |  |  | **2** | 1 |
+| `office-meme-C` |  |  |  |  |  |  | ✅ (1) |  | **1** | 1 |
+
+**(d) Multi-hit re-rank.** `+8% per extra hit, capped at +40%`:
+
+| Record | base | hits | boost | final |
+|---|---|---|---|---|
+| `bronze-worker-seed-1` | 3.00 | 4 | ×1.24 | **3.72** |
+| `bronze-misc-B` | 2.00 | 2 | ×1.08 | 2.16 |
+| `kawaii-mascot-D` | 1.00 | 2 | ×1.08 | 1.08 |
+| `office-meme-C` | 1.00 | 1 | ×1.00 | 1.00 |
+
+`bronze-worker-seed-1` widens its lead because it covers 4 facets of the query; `kawaii-mascot-D` (kawaii bronze mascot — 2 facets) gets pushed above the single-facet `office-meme-C`.
+
+**(e) Tracking emits `|paths=8`.** If the union is still thin, the event reads:
+```
+content_id  = "青铜打工小兽|n=2|rw=1|paths=8"
+action_type = "search_lowresult"
+```
+That lets admin SQL distinguish "thin after 8 paths tried" (real content gap → file new content gen) from "thin without expansion attempt" (rewriter gated off — bot/garbage UA).
+
+### Current status (as of 2026-06-26)
+
+- ✅ Step 0 → Step 3: shipped. The query now lands on real content with 9-axis tagging.
+- ✅ Step 4: multi-query retrieval expansion live in prod via `c8504f27`.
+- 🔭 **Open**: monitor admin SEARCH events filtered to `LIKE '%青铜%' OR LIKE '%bronze%worker%'` for the next 7 days. If `|paths=8` events still show `n<3`, file a content-gen follow-up (more seed examples). If `|paths=8` events show healthy `n` AND CLICK follow-through, this query class is solved and the playbook generalizes to the next viral compound.
+
+---
+
 ## P1 — after P0.1 + P0.2 measure clean
 
 - **Query Decomposition surface** — show "Searched as: bronze + anthropomorphic + sticker pack" pill row above results. Transparency UX; doesn't move recall but improves user trust.
