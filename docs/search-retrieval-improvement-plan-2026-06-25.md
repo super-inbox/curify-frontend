@@ -60,6 +60,8 @@ This doc maps each against what Curify already ships, picks the **P0 subset by R
 
 **Scope:** 3071 inspirations + 4117 gallery prompts + 296 templates = ~7,500 records × ~$0.0015 each = **~$11**.
 
+> ⚠️ **Templates excluded from the broad 9-axis prompt.** Per the `template.topics = boilerplate (Info-Type + Layout), Subject on examples` rule (memory: `feedback_template_topics_should_be_boilerplate.md`), templates must NOT carry subject/scene/material/era tags — those belong on individual inspirations/gallery prompts. A separate **P0.1b** is queued: re-enrich templates with a narrower prompt covering only output-type + composition + style + audience axes.
+
 **Reuse:** the `scripts/enrich_inspiration_tags_phase3_2026-06-18.py` script as the template, broaden the prompt, validate against taxonomy (adding new T3/T4 entries for novel slugs that surface, per the 2026-06-18 fill pattern).
 
 **Pilot first:** 20 records to verify quality + average tag count + validation rate before burning full budget. Sign-off after pilot review.
