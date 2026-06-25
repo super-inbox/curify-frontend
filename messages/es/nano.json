@@ -6182,5 +6182,89 @@
         ]
       }
     }
+  },
+  "template-original-character-daily-life-grid": {
+    "category": "Cuadro de Vida Diaria de Personaje Original",
+    "description": "Genera una infografía de vida diaria 2x3 de un personaje original antropomorfizado: seis paneles consistentes mostrando el MISMO personaje en escenas cotidianas.",
+    "title": "Nano Banana Prompt: Generador de Cuadro de Vida Diaria de Personaje Original | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Infografía de vida diaria vertical 8K 2x3. El MISMO personaje se muestra en seis escenas cotidianas consistentes (desplazamiento, café, reunión, almuerzo, supermercado, fin de semana) con proporciones / paleta / accesorio de firma idénticos: solo cambian la pose, el entorno y la expresión. Estética de ilustración plana editorial, paleta de pasteles cálidos, lista para redes sociales.",
+        "who": "Adecuado para creadores de personajes originales, ilustradores de conceptos antropomorfizados (trabajador de bronce, asistente de gimnasio de terracota, etc.), creadores de contenido de estilo de vida en Xiaohongshu / Instagram, diseñadores de mascotas de marca que construyen una biblia de personajes.",
+        "how": [
+          "Ingresa el concepto del personaje (por ejemplo, 'Bestia mítica trabajador de bronce' o 'Guerrero de terracota asistente de gimnasio').",
+          "Seis paneles de vida diaria + verificación de consistencia del personaje auto-composición.",
+          "Genera un cuadro de vida diaria vertical 8K 2x3."
+        ],
+        "prompts": [
+          "Genera un cuadro de vida diaria de bestia mítica trabajador de bronce.",
+          "Crea una hoja de 6 paneles de guerrero de terracota asistente de gimnasio.",
+          "Genera una infografía de vida diaria de barista hipster de jade."
+        ]
+      }
+    }
+  },
+  "template-original-character-sticker-pack": {
+    "category": "Paquete de Stickers de Personaje Original",
+    "description": "Genera un paquete de stickers de emoción de nueve poses 3x3 de un personaje original antropomorfizado: personaje idéntico en nueve expresiones diferentes.",
+    "title": "Nano Banana Prompt: Generador de Paquete de Stickers de Personaje Original | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Hoja de paquete de stickers vertical 8K 3x3. Nueve poses de estilo sticker de un personaje original antropomorfizado, cada una en un estado emocional diferente (feliz / cansado / sorprendido / orgulloso / confundido / emocionado / perezoso / enojado / amoroso). Diseño de personaje consistente + pequeñas etiquetas de texto a mano. Estética de ilustración plana kawaii, contornos audaces para el corte de stickers.",
+        "who": "Adecuado para creadores de personajes originales, diseñadores de mascotas, vendedores de paquetes de stickers (Etsy, Line / WeChat), creadores de contenido que construyen un conjunto de emojis de personajes, diseñadores de merchandising de IP.",
+        "how": [
+          "Ingresa el concepto del personaje (por ejemplo, 'Bestia mítica trabajador de bronce').",
+          "Nueve poses de emoción + etiquetas de texto + diseño de corte auto-composición.",
+          "Genera un paquete de stickers de nueve poses vertical 8K."
+        ],
+        "prompts": [
+          "Genera un paquete de stickers de 9 poses de bestia mítica trabajador de bronce.",
+          "Crea una hoja de stickers de matcha latte antropomorfizado.",
+          "Genera stickers de emoción de amigo suculento de planta de oficina."
+        ]
+      }
+    }
+  },
+  "template-modernized-artifact-poster": {
+    "category": "Póster de Arte Modernizado",
+    "description": "Genera un póster vertical tomando un artefacto cultural histórico y reimaginándolo antropomorfizado en un rol cotidiano moderno.",
+    "title": "Nano Banana Prompt: Generador de Póster de Arte Modernizado | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Póster vertical 8K reimaginando un artefacto histórico (caldero de bronce, guerrero de terracota, figura de caballo Tang, jarrón Ming, etc.) ANTHROPOMORPHIZED en un rol cotidiano contemporáneo (ejecutivo corporativo, entrenador de gimnasio, conductor de transporte compartido, barista). Preserva la estética material histórica del artefacto: pátina de bronce, textura de arcilla, laca, jade, mientras lo coloca en un entorno moderno. Póster ilustrado editorial, pie de página de metadatos estilo tarjeta de museo.",
+        "who": "Adecuado para museos culturales + tiendas de patrimonio que modernizan IP, creadores de contenido de fusión artística, diseñadores de IP originales, campañas de marca que combinan patrimonio cultural con cotidianidad.",
+        "how": [
+          "Ingresa el artefacto + rol moderno (por ejemplo, 'Caldero ding de bronce como ejecutivo corporativo').",
+          "Artefacto antropomorfizado + entorno moderno + pie de página de metadatos de dinastía auto-composición.",
+          "Genera un póster de artefacto modernizado vertical 8K."
+        ],
+        "prompts": [
+          "Genera un caldero de bronce como cartel de ejecutivo corporativo.",
+          "Crea un guerrero de terracota como cartel modernizado de entrenador de gimnasio.",
+          "Genera una figura de caballo Tang como cartel de conductor de ride-share."
+        ]
+      }
+    }
+  },
+  "template-chinese-ancient-bronze-cultural-creative-product-technical-design-sheet": {
+    "category": "Chinese Ancient Bronze Cultural Creative Product Technical Design Sheet",
+    "description": "Generate a vertical technical design sheet for a cultural-creative product based on an ancient Chinese bronze artifact — front/side/exploded views + material specs + craft annotations.",
+    "title": "Nano Banana Prompt: Chinese Ancient Bronze Cultural Creative Product Technical Design Sheet Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K technical design sheet for a museum-shop / cultural-creative (文创) product whose form derives from an ancient Chinese bronze artifact (e.g. bronze beast → phone stand, soap dish, paperweight). Includes orthographic front and side views, exploded breakdown, material + finish callouts, craft technique annotations, dimension labels, and brand stamp footer. Blueprint-style technical drafting aesthetic with bronze-patina accent palette.",
+        "who": "Suitable for museum gift-shop product designers, cultural-IP merch teams, ancient-artifact-inspired homeware brands (Bronze · Tang · Ming era), industrial designers building heritage-themed product lines, and Etsy sellers building IP collections.",
+        "how": [
+          "Enter the bronze-artifact-inspired product idea (e.g. 'beast phone stand' or 'beast soap dish').",
+          "Multi-view technical drafting + material specs + craft annotations auto-compose.",
+          "Generate a vertical 8K Chinese bronze cultural-creative product design sheet."
+        ],
+        "prompts": [
+          "Generate a bronze beast phone stand design sheet.",
+          "Create a bronze taotie soap dish design sheet.",
+          "Generate a bronze ding cauldron tea-light holder technical sheet."
+        ]
+      }
+    }
   }
 }

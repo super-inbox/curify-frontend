@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { useRouter, useParams } from "next/navigation";
 import { Tab } from "@headlessui/react";
+import { Music2 } from "lucide-react";
 import clsx from "clsx";
 import ExportDialog from "../../../_componentForPage/ExportDialog";
 import { ProjectDetails } from "@/types/segments";
@@ -23,6 +24,9 @@ export default function ProjectDetailsPage() {
   const [projectDetails, setProjectDetails] = useState<ProjectDetails | null>(null);
   const [isExportDialogOpen, setIsExportDialogOpen] = useState(false);
   const [exportFiles, setExportFiles] = useState<File[]>([]);
+  // Mock "Publish to TikTok" — no backend wiring or event logging yet; clicking
+  // shows a transient "coming soon" note.
+  const [showTiktokNote, setShowTiktokNote] = useState(false);
   const [modifiedSegments, setModifiedSegments] = useState<Record<number, string>>({});
   const [statusMessage, setStatusMessage] = useState<string>("");
   const [isLoading, setIsLoading] = useState(true);
@@ -392,7 +396,7 @@ export default function ProjectDetailsPage() {
               </Tab.Panels>
             </Tab.Group>
 
-            <div className="flex justify-center mt-6">
+            <div className="flex flex-wrap justify-center items-center gap-3 mt-6">
               <button
                 onClick={() => setIsExportDialogOpen(true)}
                 className="bg-white text-blue-600 px-4 py-2 rounded-lg text-base border border-blue-600 hover:bg-blue-50 inline-flex items-center gap-2 cursor-pointer"
@@ -408,7 +412,25 @@ export default function ProjectDetailsPage() {
                 />
                 Export
               </button>
+
+              {/* Publish to TikTok — mock for now (no backend, no event logging). */}
+              <button
+                type="button"
+                onClick={() => {
+                  setShowTiktokNote(true);
+                  setTimeout(() => setShowTiktokNote(false), 3000);
+                }}
+                className="bg-white text-[#fe2c55] px-4 py-2 rounded-lg text-base border border-[#fe2c55] hover:bg-[#fff0f3] inline-flex items-center gap-2 cursor-pointer"
+              >
+                <Music2 className="w-4 h-4" />
+                Publish to TikTok
+              </button>
             </div>
+            {showTiktokNote && (
+              <p className="mt-2 text-center text-sm text-neutral-500">
+                TikTok publishing is coming soon.
+              </p>
+            )}
           </div>
         </div>
       </div>

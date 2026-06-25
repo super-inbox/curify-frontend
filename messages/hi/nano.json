@@ -6182,5 +6182,89 @@
         ]
       }
     }
+  },
+  "template-original-character-daily-life-grid": {
+    "category": "मूल चरित्र दैनिक जीवन ग्रिड",
+    "description": "एक मूल मानवाकार चरित्र का 2x3 दैनिक जीवन इन्फोग्राफिक उत्पन्न करें - छह लगातार पैनल जो हर रोज़ के दृश्यों में SAME चरित्र को दिखाते हैं।",
+    "title": "नैनो केला प्रॉम्प्ट: मूल चरित्र दैनिक जीवन ग्रिड जनरेटर | क्यूरिफाई एआई",
+    "content": {
+      "sections": {
+        "what": "वर्टिकल 8K 2x3 छह-पैनल दैनिक जीवन इन्फोग्राफिक। SAME चरित्र को छह लगातार रोज़ के दृश्यों (यात्रा, कॉफी, बैठक, दोपहर का भोजन, किराना, सप्ताहांत) में समान अनुपात / पैलेट / हस्ताक्षर सहायक उपकरण के साथ दिखाया गया है - केवल मुद्रा, सेटिंग और अभिव्यक्ति बदलती है। संपादकीय फ्लैट-इलस्ट्रेशन सौंदर्य, गर्म पेस्टल पैलेट, सोशल-मीडिया-तैयार।",
+        "who": "मूल चरित्र निर्माताओं, मानवाकार अवधारणा चित्रकारों (तांबे का श्रमिक, मिट्टी का जिम जाने वाला, आदि), शियाओहोंगशु / इंस्टाग्राम जीवनशैली सामग्री निर्माताओं, ब्रांड मास्कॉट डिज़ाइनरों के लिए उपयुक्त जो एक चरित्र बाइबल बना रहे हैं।",
+        "how": [
+          "चरित्र अवधारणा दर्ज करें (जैसे 'तांबे का श्रमिक पौराणिक प्राणी' या 'मिट्टी का योद्धा जिम जाने वाला')।",
+          "छह दैनिक जीवन पैनल + चरित्र-संगति जांच स्वचालित रूप से संकलित करें।",
+          "एक वर्टिकल 8K 2x3 दैनिक जीवन ग्रिड उत्पन्न करें।"
+        ],
+        "prompts": [
+          "एक तांबे के श्रमिक पौराणिक प्राणी दैनिक जीवन ग्रिड उत्पन्न करें।",
+          "एक मिट्टी के योद्धा जिम जाने वाले 6-पैनल शीट बनाएं।",
+          "एक जेड हिप्स्टर बारिस्ता दैनिक जीवन इन्फोग्राफिक उत्पन्न करें।"
+        ]
+      }
+    }
+  },
+  "template-original-character-sticker-pack": {
+    "category": "मूल चरित्र स्टिकर पैक",
+    "description": "एक मूल मानवाकार चरित्र का 3x3 नौ-मुद्रा भावनाओं का स्टिकर पैक उत्पन्न करें - नौ विभिन्न अभिव्यक्तियों में समान चरित्र।",
+    "title": "नैनो केला प्रॉम्प्ट: मूल चरित्र स्टिकर पैक जनरेटर | क्यूरिफाई एआई",
+    "content": {
+      "sections": {
+        "what": "वर्टिकल 8K 3x3 स्टिकर-पैक शीट। एक मूल मानवाकार चरित्र के नौ डाई-कट स्टिकर-शैली मुद्राएँ, प्रत्येक एक अलग भावनात्मक स्थिति (खुश / थका हुआ / चौंका हुआ / गर्वित / भ्रमित / उत्साहित / आलसी / गुस्से में / प्यार करने वाला) में। लगातार चरित्र डिज़ाइन + छोटे हाथ से लिखे गए कैप्शन टैग। कवाई फ्लैट-इलस्ट्रेशन सौंदर्य, स्टिकर काटने के लिए बोल्ड आउटलाइन।",
+        "who": "मूल चरित्र निर्माताओं, मास्कॉट डिज़ाइनरों, स्टिकर-पैक विक्रेताओं (ईट्सी, लाइन / वीचैट), सामग्री निर्माताओं के लिए उपयुक्त जो एक चरित्र इमोजी सेट बना रहे हैं, आईपी-मार्च डिज़ाइनर।",
+        "how": [
+          "चरित्र अवधारणा दर्ज करें (जैसे 'तांबे का श्रमिक पौराणिक प्राणी')।",
+          "नौ भावनाओं की मुद्राएँ + कैप्शन टैग + डाई-कट लेआउट स्वचालित रूप से संकलित करें।",
+          "एक वर्टिकल 8K नौ-मुद्रा स्टिकर पैक उत्पन्न करें।"
+        ],
+        "prompts": [
+          "एक तांबे के श्रमिक पौराणिक प्राणी 9-मुद्रा स्टिकर पैक उत्पन्न करें।",
+          "एक मानवाकार मैच चा लट्टे स्टिकर शीट बनाएं।",
+          "एक कार्यालय के पौधे के सुक्कुलेंट दोस्त भावनाओं के स्टिकर उत्पन्न करें।"
+        ]
+      }
+    }
+  },
+  "template-modernized-artifact-poster": {
+    "category": "आधुनिकीकरण किया गया कलाकृति पोस्टर",
+    "description": "एक ऐतिहासिक सांस्कृतिक कलाकृति को लेकर एक वर्टिकल पोस्टर उत्पन्न करें और इसे एक आधुनिक दैनिक भूमिका में मानवाकार रूप में कल्पना करें।",
+    "title": "नैनो केला प्रॉम्प्ट: आधुनिकीकृत कलाकृति पोस्टर जनरेटर | क्यूरिफाई एआई",
+    "content": {
+      "sections": {
+        "what": "वर्टिकल 8K पोस्टर जो एक ऐतिहासिक कलाकृति (तांबे का कढ़ाई, मिट्टी का योद्धा, तांग घोड़े की आकृति, मिंग फूलदान, आदि) को मानवाकार रूप में एक समकालीन दैनिक भूमिका (कॉर्पोरेट कार्यकारी, जिम प्रशिक्षक, राइड-शेयर चालक, बारिस्ता) में पुनः कल्पना करता है। यह कलाकृति की ऐतिहासिक सामग्री सौंदर्य को बनाए रखता है - तांबे की पाटीना, मिट्टी की बनावट, लाह, जेड - जबकि इसे एक आधुनिक सेटिंग में रखता है। संपादकीय चित्रित पोस्टर, संग्रहालय-कार्ड-शैली मेटाडेटा फुटर।",
+        "who": "संस्कृतिक संग्रहालयों + विरासत दुकानों के लिए उपयुक्त जो आईपी को आधुनिक बना रहे हैं, कला-फ्यूजन सामग्री निर्माताओं, मूल-आईपी डिज़ाइनरों, ब्रांड अभियानों के लिए जो सांस्कृतिक विरासत को दैनिक संबंध के साथ मिलाते हैं।",
+        "how": [
+          "कलाकृति + आधुनिक भूमिका दर्ज करें (जैसे 'तांबे का डिंग कढ़ाई कॉर्पोरेट कार्यकारी के रूप में')।",
+          "मानवाकार कलाकृति + आधुनिक सेटिंग + राजवंश मेटाडेटा फुटर स्वचालित रूप से संकलित करें।",
+          "एक वर्टिकल 8K आधुनिकीकृत कलाकृति पोस्टर उत्पन्न करें।"
+        ],
+        "prompts": [
+          "एक कांस्य डिंग कढ़ाई को कॉर्पोरेट कार्यकारी पोस्टर के रूप में उत्पन्न करें।",
+          "एक टेराकोटा योद्धा को जिम ट्रेनर के आधुनिक पोस्टर के रूप में बनाएं।",
+          "एक तांग घोड़े की आकृति को राइड-शेयर ड्राइवर पोस्टर के रूप में उत्पन्न करें।"
+        ]
+      }
+    }
+  },
+  "template-chinese-ancient-bronze-cultural-creative-product-technical-design-sheet": {
+    "category": "Chinese Ancient Bronze Cultural Creative Product Technical Design Sheet",
+    "description": "Generate a vertical technical design sheet for a cultural-creative product based on an ancient Chinese bronze artifact — front/side/exploded views + material specs + craft annotations.",
+    "title": "Nano Banana Prompt: Chinese Ancient Bronze Cultural Creative Product Technical Design Sheet Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 8K technical design sheet for a museum-shop / cultural-creative (文创) product whose form derives from an ancient Chinese bronze artifact (e.g. bronze beast → phone stand, soap dish, paperweight). Includes orthographic front and side views, exploded breakdown, material + finish callouts, craft technique annotations, dimension labels, and brand stamp footer. Blueprint-style technical drafting aesthetic with bronze-patina accent palette.",
+        "who": "Suitable for museum gift-shop product designers, cultural-IP merch teams, ancient-artifact-inspired homeware brands (Bronze · Tang · Ming era), industrial designers building heritage-themed product lines, and Etsy sellers building IP collections.",
+        "how": [
+          "Enter the bronze-artifact-inspired product idea (e.g. 'beast phone stand' or 'beast soap dish').",
+          "Multi-view technical drafting + material specs + craft annotations auto-compose.",
+          "Generate a vertical 8K Chinese bronze cultural-creative product design sheet."
+        ],
+        "prompts": [
+          "Generate a bronze beast phone stand design sheet.",
+          "Create a bronze taotie soap dish design sheet.",
+          "Generate a bronze ding cauldron tea-light holder technical sheet."
+        ]
+      }
+    }
   }
 }
