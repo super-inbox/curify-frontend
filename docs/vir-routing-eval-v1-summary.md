@@ -1,6 +1,6 @@
 # Visual Intent Routing / Template Retrieval Eval — v1 Summary
 
-**Date:** 2026-06-24 · **Branch:** `pr-intern` (branched off `jwang/vercel`, nothing committed/pushed) · **Status:** Phase 1 done (Path A baseline live); Path B + human review pending.
+**Date:** 2026-06-25 · **Branch:** `pr-intern` (branched off `jwang/vercel`) · **Status:** Path A (offline) **and** Path B (live gpt-4o-mini) + union all scored. Remaining: human review of the gold; Option D (KB-enriched matcher).
 
 **Goal.** First executable version of the routing eval from `docs/eval-framework-visual-intent-routing-2026-06-15.md` (P1 / Layer 1 — Template Routing Accuracy): a labeled gold set + a baseline **top-1 / top-3 routing accuracy** for the current template-recall layer, scoring the two recall paths separately:
 - **Path A** — keyword/alias retrieval (the `/search` scorer). Offline, no API key.
@@ -41,37 +41,25 @@ Annotation rules applied: a **subject gate** (reject a template whose subject is
 
 ---
 
-## 3. Path A baseline (offline, no API key — real numbers now)
+## 3. Results — Path A, Path B, and union
 
-### How Path A is scored
-`node scripts/eval_template_routing.cjs --path=a`
+`node scripts/eval_template_routing.cjs --path=all`. Path A = keyword/alias retrieval (offline, ported from `scripts/eval_search.cjs::scoreOnce`). Path B = live `gpt-4o-mini` using the **exact production prompt/params** from `lib/searchTemplateMatch.ts` (reproduces the live "Generate xxx yourself" rail). Metrics: top-1/top-3 routing accuracy + hit@any, bucketed by ambiguity; content-gap queries scored separately ("clean" = returns nothing but known near-misses).
 
-Pipeline per query (the retrieval scorer is ported verbatim from `scripts/eval_search.cjs::scoreOnce`, a mirror of production `app/[locale]/(public)/search/page.tsx`):
+| | overall top-1 | top-3 | hit@any | low | medium | high | gap clean |
+|---|---|---|---|---|---|---|---|
+| **Path A** (retrieval) | **53%** | 78% | 86% | 55% | 43% | 80% | 29% |
+| **Path B** (LLM matcher) | 33% | 41% | 41% | **82%** | 20% | 20% | **57%** |
+| **A∪B** (B-first union) | 53% | 76% | 88% | **82%** | 33% | 80% | 14% |
 
-1. **Tokenize** the query (whitespace/punct split, stopword strip, CJK bigram fallback for single-token CJK).
-2. **Two-tier match** over local JSON: a *strict* pass (all tokens hit) and, when strict is empty, a *relaxed* fallback (≥ ⌈tokens/2⌉ hit), run against both the template i18n text and all 3,115 inspirations.
-3. **Derive the matched template set** = templates that matched on their own i18n text ∪ the `template_id` of every matched inspiration, keeping only `allow_generation` templates (parity with Path B's catalog).
-4. **Rank** them: strict-i18n matches first, then by number of matched inspirations under each template.
-5. **Score vs gold**: `top-1` (rank-1 ∈ acceptable), `top-3` (any of top-3 ∈ acceptable), `hit@any` (matched set ∩ acceptable ≠ ∅), bucketed by ambiguity. Content-gap queries are scored separately (a path is "clean" iff it returns nothing but known near-misses).
-
-### Results
-
-| bucket | n | top-1 | top-3 | hit@any |
-|---|---|---|---|---|
-| **overall** | 51 | **53%** | **78%** | **86%** |
-| low | 11 | 55% | 82% | 82% |
-| medium | 30 | 43% | 73% | 83% |
-| high | 10 | 80% | 90% | 100% |
-
-Content-gap behavior: **2/7 clean (29%)**.
+(n = 51 scored; low 11 / medium 30 / high 10. "low/medium/high" columns are top-1. Path B hit@any = top-3 since it returns ≤3 picks.)
 
 ### Takeaways
-- **Medium-ambiguity is the hard middle** (top-1 43%): subject clear, format implied, small acceptable set — exactly where routing matters most, and where Path A surfaces the right *family* but the wrong *member* or ranks it below noise.
-- **High-ambiguity scores highest** (top-1 80%) partly as a large-target effect (its gold is a 3–4 template set); the real challenge there is ranking the single best one first.
-- **Descriptive long-tail queries recall-miss entirely** — `minimalist autumn outfit for japan travel`, `infj vs entp dating compatibility chart`, `phonics worksheets kindergarten` return nothing from Path A. This is precisely the empty-inspiration / rich-template case the LLM matcher (Path B) was built for; we expect Path B to dominate this slice.
-- **Content-gap precision is weak (29% clean):** Path A keeps routing queries that have no honest answer (`wedding planner`, `1950s vintage diner`, `easy weeknight dinners healthy`). A known recall-over-precision trait — and a concrete argument for the matcher/filter layer.
+- **A and B are complementary, split by query type.** Path B wins the **descriptive long-tail** it was built for (low-ambiguity top-1 **82%** vs A's 55%) — rescuing exactly what A recall-misses (`minimalist autumn outfit for japan travel`: A miss → B top-1). Path A wins **broad nouns + CJK** (high-ambiguity top-1 **80%** vs B's 20%).
+- **Path B returns `[]` on CJK and capability-dependent queries — the key finding.** Its catalog is **English descriptions only**, so: bare Chinese nouns (`单词`/`植物`/`食物`/`english-chinese`) → `[]`; and `chiikawa` → generic `template-character`, NOT the `fandom-character-grid-poster` that actually has Chiikawa examples (the description never reveals that). This is measured evidence for **Option D / the "b3" KB-routing idea**: enrich the matcher catalog with the capability KB (topics + real example values + aliases).
+- **The union needs a confidence gate.** Naive "B-confident-first" lifts low (82%) and keeps high (80%) and best hit@any (88%), but a confident-wrong B pick displaces A's correct rank-1 on **medium** (33% vs A's 43%).
+- **Content gaps:** Path B is cleanest (57% returns honest `[]`) vs Path A (29%); the union is worst (14%) by inheriting A's noise.
 
-Full per-query diagnostic (recall-miss / rank-miss / gap-confusion verdicts): `docs/vir-routing-eval-v1-results.md`.
+Full per-query A/B/union diagnostic: `docs/vir-routing-eval-v1-results.md`.
 
 ---
 
@@ -83,14 +71,14 @@ The gold is a Claude draft pending sign-off. A prioritized checklist is in `docs
 - **6 capability-driven overrides** of the eval notes (e.g. `homophones and homonyms` → `english-grammar-wordlist-infographic`, whose examples are literally "20 common homophones").
 - **12 subject-gate drops** (templates the note named but we rejected on subject mismatch).
 
-### b) Path B + union evaluation (needs a key)
-1. Put `OPENAI_API_KEY` in `curify-frontend/.env.local` (read from env only; never logged/committed; `.env.local` is gitignored).
-2. `cd curify-frontend && npm install` (installs `openai`, `dotenv`).
-3. `node scripts/eval_template_routing.cjs --path=all --out=<results.md>` — runs Path A, Path B, and the A∪B union; ≈ **$0.06** for 58 queries. The run also writes `<results>.pathB.json` so Path B can be re-scored offline later with `--replay` (no re-spend).
-- Cross-check: confirm the 10 ProgSEO queries score consistently against the existing `scripts/eval_template_matcher.cjs`.
+### b) Option D — KB-enriched matcher catalog (the "b3" path)
+The biggest measured lever: Path B is blind to CJK queries and to template capability because its catalog is description-only. Build a Path-B variant whose catalog blob includes the capability KB (topics + real example param-values + aliases) and re-run — expected to recover most of the CJK + broad-noun slice Path B currently returns `[]` on. (Mind contamination: keep gold human-reviewed/independent of the KB before scoring a KB-driven router.)
 
-### c) Scale-up (later)
-Extend the gold toward the spec's balanced 100 (low/med/high ≈ 30/50/20), and fold in the **real user search queries** the mentor will provide — appended in the same schema (`source: "user-queries-<date>"`), re-scored with no code change.
+### c) Union ranking fix
+Replace blind "B-first" with a confidence-gated merge so a low-confidence B pick can't displace A's correct rank-1 on medium-ambiguity queries.
+
+### d) Scale-up
+Extend the gold toward the spec's balanced 100 (low/med/high ≈ 30/50/20), and fold in the **real user search queries** the mentor will provide — appended in the same schema (`source: "user-queries-<date>"`), re-scored with no code change. Cross-check the 10 ProgSEO queries against the existing `scripts/eval_template_matcher.cjs`.
 
 ---
 

@@ -182,21 +182,54 @@ function buildCatalogBlob() {
   }
   return lines.join("\n");
 }
-// Same system prompt shape as lib/searchTemplateMatch.ts / eval_template_matcher.cjs.
+// EXACT production system prompt — copied verbatim from lib/searchTemplateMatch.ts
+// (the live /api/search-template-match matcher) so Path B here reproduces the
+// live "Generate xxx yourself" results. Keep in sync if the production prompt changes.
 const B_SYSTEM = `You match user search queries to Curify image-generation templates that could create content for those queries.
 
 For EACH query, decide:
 - top 2-3 best-fit templates (ordered by confidence desc; fewer is fine if no clear fit)
 - for each pick: concrete parameter values extracted from the query
-- confidence in 0.0..1.0 (be honest)
+- confidence in 0.0..1.0 (be honest — 0.3 + reason is fine if uncertain)
 - short reason (<= 80 chars)
 
-Pick templates that can GENERATE content for the query AS TYPED. Verify the template's CORE SUBJECT serves the query's noun before returning it; reject subject-mismatches even if the layout matches. When no catalog template has the right subject, return fewer picks — or [] — rather than padding.
+CRITICAL — read EVERY modifier in the query, not just the subject noun. Templates are differentiated by visual style AND layout, not only topic:
+
+- **Style modifiers** (watercolor / retro / vintage / minimalist / photorealistic / anime / kawaii / ink / monochrome) — pick a template whose OUTPUT natively has that style. "Watercolor map" needs a watercolor map template, not a generic destination list.
+- **Format / layout modifiers** (chart / grid / list of N / top 10 / 16 types / dual / before-after / comparison / timeline) — pick the template whose LAYOUT matches. "Chart of 16 MBTI types" needs a grid/chart template, NOT a single-character profile.
+- **Audience modifiers** (for kids / for beginners / educational) — pick the template whose style fits.
+- **Artifact-type modifiers** (recipe poster / promotional poster / care guide / how-to / infographic) — these name the artifact directly. Prefer the template that explicitly produces that artifact.
+
+Pick templates that can GENERATE content for the query AS TYPED, not just templates whose tags overlap with one word.
+
+SUBJECT MATCH IS A HARD GATE (from human eval 2026-06-17). Verify the template's CORE SUBJECT actually serves the query's specific noun BEFORE you return it:
+
+- **REJECT a template whose subject-axis is disjoint from the query, even if it shares the layout/format axis.**
+  · "Brazil national team" wants a SQUAD POSTER → do NOT return mbti-of-team templates (different subject-axis: personality typing vs roster lineup).
+  · "english spanish word comparison" → do NOT return english-CHINESE comparison templates (language-pair mismatch is a subject mismatch).
+  · "diy craft tutorial poster" → do NOT return vegetable-planting-tutorial or action-vocab-card templates (their subjects are vegetables / language, not crafts).
+  · "evolution snacks infographic" → do NOT return history-timeline or fashion-evolution templates (subjects are history / clothing, not food).
+  · "amusement park map infographic" → do NOT return generic travel-poster templates (subject is parks / rides, not destinations).
+  · "1950s vintage diner illustration" → do NOT return evolution / travel-journal / festival templates (none match the era + venue).
+
+- **Franchise / IP-specific queries need IP-aware templates.** Generic "character info card" is NOT a fit for "chiikawa" or named characters — return the kawaii / franchise-specific template if one exists; if not, return [] rather than a generic fallback.
+
+- **Iconic-moment / event-analysis intent ≠ team-or-player templates.** "Maradona Hand of God" / "most memorable World Cup moments" want sports iconic-event-analysis-poster (single-moment deep-dive), NOT squad poster or schedule.
+
+- **When NO catalog template has the right subject, return fewer picks — or [] — rather than padding with layout-matching but subject-wrong templates.** An honest [] is a real signal that beats a confident wrong pick.
+
+Quick worked examples (from human eval ground truth):
+  Q: "fifa 2026" → ✓ world cup poster + world cup schedule (subject + format align)
+  Q: "Maradona Hand of God" → ✓ sports iconic-event-analysis-poster; ✗ generic football poster
+  Q: "english spanish word comparison" → ✓ english-spanish vocabulary template if any; ✗ english-chinese comparison
+  Q: "chiikawa" → ✓ kawaii-IP profile/grid template; ✗ generic character analysis
+  Q: "diy craft tutorial poster" → ✓ crafting-step-by-step-tutorial template; ✗ vegetable planting or action vocab
+  Q: "证件照 / id photo" → ✓ portrait-id-photo template; ✗ product poster
 
 Catalog:
 {catalog}
 
-Return ONLY a JSON object: {"matches": [{"template_id": "template-...", "params": {"key":"value"}, "confidence": 0.85, "reason": "..."}]}.
+Return ONLY a JSON object: {"matches": [{"template_id": "template-...", "params": {"key": "value"}, "confidence": 0.85, "reason": "..."}]}.
 No prose, no markdown fences.`;
 async function pathBRanked(query, client, catalogBlob) {
   const prompt = B_SYSTEM.replace("{catalog}", catalogBlob);
