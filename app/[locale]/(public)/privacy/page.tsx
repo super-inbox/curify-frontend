@@ -2,9 +2,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Curify Studio",
+  title: "Privacy Policy | curify-ai",
   description:
-    "Read Curify Studio's privacy policy, including data handling, retention, third-party services, and user rights.",
+    "Read the privacy policy for curify-ai (curify-ai.com), including data handling, retention, third-party services, and user rights.",
 };
 
 export default function PrivacyPage() {
@@ -12,6 +12,14 @@ export default function PrivacyPage() {
     <div className="max-w-5xl mx-auto p-20 text-gray-800 text-base sm:text-lg leading-relaxed">
       <h1 className="text-2xl sm:text-3xl font-bold mb-6">🔐 Privacy Policy</h1>
       <p className="mb-6">Effective Date: September 13, 2025</p>
+
+      <p className="mb-6">
+        This Privacy Policy applies to <strong>curify-ai</strong> — the AI visual content
+        platform available at <a href="https://curify-ai.com" className="underline">curify-ai.com</a>,
+        operated by Curify Studio. Throughout this document, &ldquo;curify-ai&rdquo;,
+        &ldquo;Curify Studio&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, and &ldquo;the service&rdquo; refer
+        to the same product.
+      </p>
 
       <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">1. User-Uploaded Content</h2>
       <p className="mb-6">
