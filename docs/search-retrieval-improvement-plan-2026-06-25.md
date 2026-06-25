@@ -1,6 +1,10 @@
 # Search Retrieval Improvement Plan — 2026-06-25
 
-_Owner: jay. Status: P0.1 in progress; P0.2 queued. Re-rank after each ship + measure recall lift on the bronze-worker / 青铜打工小兽 class of viral-compound queries._
+_Owner: jay. Status: **P0.1 inspirations + gallery shipped 2026-06-25**; P0.1b (templates with narrow prompt) and P0.2 (multi-query retrieval) queued. Re-rank after each ship + measure recall lift on the bronze-worker / 青铜打工小兽 class of viral-compound queries._
+
+**Live status (open tasks):**
+- **Task #121 — P0.1b**: re-enrich templates with narrow prompt (output-type + composition + style + audience only).
+- **Task #122 — P0.2**: extend `lib/searchRewrite.ts` from 3 → 8 retrieval paths with decomposition + multi-hit rank boost.
 
 ## Why this doc exists
 
@@ -42,7 +46,19 @@ This doc maps each against what Curify already ships, picks the **P0 subset by R
 
 ## P0 — pick two, ship in order
 
-### P0.1 — Offline Metadata Expansion v2 (in progress)
+### P0.1 — Offline Metadata Expansion v2 (✅ shipped 2026-06-25 — inspirations + gallery)
+
+**Result of the full pass:**
+
+| Surface | Records | Avg before | Avg after | 25+ tags | 30+ tags | <10 tags |
+|---|---|---|---|---|---|---|
+| Inspirations | 3,134 | ~5 | **25.5** | 65% | 22% | 4% |
+| Gallery prompts | 4,117 | ~5 | **26.3** | 70% | 16% | 1% |
+| Templates | 297 | (kept) | — | — | — | — (DEFERRED → **P0.1b**) |
+
+Cost: ~$11. Commits: `f2255f52` (inspirations), `ce2b696d` (gallery). Run script: [`scripts/enrich_metadata_v2_2026-06-25.py`](../scripts/enrich_metadata_v2_2026-06-25.py).
+
+### Original spec (kept for reference)
 
 **What:** re-run Phase-3-style LLM enrichment with a broader prompt asking for **30-50 tags per record** spanning 9 axes:
 
@@ -70,7 +86,20 @@ This doc maps each against what Curify already ships, picks the **P0 subset by R
 
 **Pipeline:** [`scripts/enrich_metadata_v2_2026-06-25.py`](../scripts/enrich_metadata_v2_2026-06-25.py) → run pilot → run full → commit `nano_inspiration.json` + `nanobanana.json` + (if templates touched) `nano_templates.json`.
 
-### P0.2 — Multi-query Retrieval expansion (queued, after P0.1 ships)
+### P0.1b — Templates re-enrichment with narrow prompt (queued — task #121)
+
+**Why deferred:** The broad 9-axis prompt was tried on the 297 templates and reverted before commit because the LLM added subject tags (`anime`, `anthropomorphic`, `nature`, `narrative-comic`) to multi-IP / generic templates. This violates the [`template.topics = boilerplate (Info-Type + Layout), Subject on examples`](../scripts/) rule (memory: `feedback_template_topics_should_be_boilerplate.md`) — e.g. `pop-culture-matching-chart` shouldn't carry `anime`; subject tags belong on individual inspirations.
+
+**What to do:**
+- Add a `--kind templates` branch in [`scripts/enrich_metadata_v2_2026-06-25.py`](../scripts/enrich_metadata_v2_2026-06-25.py) with a NARROWER `SYSTEM_PROMPT` that only allows 4 axes: **output-type + composition + style + audience**.
+- Explicitly forbid the LLM from suggesting any tier-1/tier-2/tier-3 SUBJECT slug.
+- Add an extra validation filter that rejects any slug in the subject vocab even if the LLM returns it.
+
+**Pilot acceptance:** 20-template pilot must show ZERO subject slugs in the proposed tags (spot-check the diff).
+
+**Expected per-template count:** ~15-25 topics (lower than inspirations/gallery on purpose — templates are intentionally lean).
+
+### P0.2 — Multi-query Retrieval expansion (queued — task #122)
 
 **What:** extend `lib/searchRewrite.ts` to generate 8 retrieval paths instead of 3:
 
