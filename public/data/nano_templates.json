@@ -15840,5 +15840,39 @@
     "creation_date": "2026-06-24",
     "allow_generation": true,
     "og_image": "/images/nano_insp_preview/template-modernized-artifact-poster-bronze-ding-corporate-executive-prev.jpg"
+  },
+  {
+    "id": "template-chinese-ancient-bronze-cultural-creative-product-technical-design-sheet",
+    "locales": {
+      "en": {
+        "base_prompt": "(Chinese Antique Bronze Myth Beast Cultural Creatives Technical Design Sheet Generator) Vertical industrial product design technical drawing sheet themed '{cultural_creative_product_theme}'. Layout: Clean light grid blueprint background; multi-view orthographic drawing layout including left side elevation, right side elevation, top plan view, front elevation, cross-section cutaway diagram, bottom base detail rendering; each view hand-drawn product sketch with precise dimension measurement labels, thin blue flow lines marking internal functional structure; bottom right text panel split into FUNCTIONAL DESIGN FEATURES bullet list + SPECIFICATIONS parameter table, small material texture sample inset, tiny cultural inspiration logo mark at top corner, all technical annotations with thin black leader lines pointing to product structure details. Style: professional industrial design hand sketch technical illustration, antique bronze aged texture rendering, precise engineering dimension text, minimalist blueprint grid background, monochrome muted grey earth tone palette, printable product development design sheet, combines traditional Han Dynasty bronze beast oriental aesthetics with modern daily functional craft design. Subject: full multi-view technical drawing design sheet for Han bronze myth beast inspired cultural creative daily product '{cultural_creative_product_theme}'.",
+        "parameters": [
+          {
+            "name": "cultural_creative_product_theme",
+            "label": "古风青铜瑞兽文创产品完整品类名称",
+            "type": "text",
+            "placeholder": [
+              "汉代青铜瑞兽沥水肥皂碟文创产品全套六视图工业设计图纸",
+              "古青铜貔貅可调节手机支架三视图剖面技术绘图展板",
+              "中式青铜辟邪神兽桌面收纳摆件文创产品设计施工图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-chinese-ancient-bronze-cultural-creative-product-technical-design-sheet-beast-phone-stand-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "design",
+      "product",
+      "merch",
+      "modernized-artifact",
+      "cultural-fusion",
+      "character-ip",
+      "original-ip",
+      "anthropomorphic",
+      "infographic"
+    ]
   }
 ]
