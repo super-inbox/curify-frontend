@@ -1,10 +1,10 @@
 # Search Retrieval Improvement Plan — 2026-06-25
 
-_Owner: jay. Status: **P0.1 + P0.1b shipped 2026-06-25 / 2026-06-26**; P0.2 (multi-query retrieval) queued. Re-rank after each ship + measure recall lift on the bronze-worker / 青铜打工小兽 class of viral-compound queries._
+_Owner: jay. Status: **P0.1 + P0.1b + P0.2 shipped 2026-06-25 / 2026-06-26**. Measure recall lift on the bronze-worker / 青铜打工小兽 class of viral-compound queries; the `|paths=N` tracking suffix gives the admin SQL handle._
 
-**Live status (open tasks):**
+**Live status:**
 - ✅ Task #121 — P0.1b: templates re-enriched with narrow prompt (15 avg topics, 0 new subject leak).
-- **Task #122 — P0.2**: extend `lib/searchRewrite.ts` from 3 → 8 retrieval paths with decomposition + multi-hit rank boost.
+- ✅ Task #122 — P0.2: `getMultiQueryPaths` returns 3 paraphrases + 6 decomposition slots; multi-hit re-rank applied; `|paths=N` suffix on search events.
 
 ## Why this doc exists
 
@@ -94,7 +94,15 @@ Cost: ~$12 total. Commits: `f2255f52` (inspirations), `ce2b696d` (gallery), `2c0
 
 Pre-existing tier1 memberships (e.g. `character` on `template-character`) remain — they're load-bearing for `/topics/<slug>` routing and out of scope for this pass.
 
-### P0.2 — Multi-query Retrieval expansion (queued — task #122)
+### P0.2 — Multi-query Retrieval expansion (✅ shipped 2026-06-26)
+
+**The implementation:** [`lib/searchRewrite.ts`](../lib/searchRewrite.ts) gains `getMultiQueryPaths(query)` — one LLM round-trip returning both 1-3 paraphrase rewrites AND a decomposition object with up to 6 facet slots (subject / style / scene / output / era / mood). `flattenPaths()` orders + dedupes them. [`search/page.tsx`](../app/[locale]/(public)/search/page.tsx) runs the original query as baseline, then re-scores each non-empty path through the same `scoreQueryTokens(_, false)` codepath as before, unions by record id (max score wins), and tracks **hits-across-paths** per record. Records hit by multiple paths get an `+8% per extra path, capped at +40%` score boost — small enough that it adjusts ordering without flipping strict/relaxed gates, large enough that records covering several facets of the query outrank records that only matched one decomposition slot.
+
+**Tracking:** SearchResultsClient appends `|paths=N` to the `content_id` on `SEARCH_NORESULT` / `SEARCH_LOWRESULT` / `SEARCH` (within-chip) events when multi-query fired. Admin SQL can now split "thin after 8 paths tried" from "thin after no expansion attempt".
+
+**Cost:** still one LLM call per thin query (same gating as before — bot/garbage/healthy-result short-circuits skip the LLM); the extra output tokens for the decomposition object are negligible.
+
+Commit: `<HEAD on jwang/vercel>`.
 
 **What:** extend `lib/searchRewrite.ts` to generate 8 retrieval paths instead of 3:
 

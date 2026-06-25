@@ -16,7 +16,7 @@ import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import { nanoRegistry } from "@/lib/nano_utils";
 import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import { tsToSc } from "@/lib/zh_normalize";
-import { rewriteQuery } from "@/lib/searchRewrite";
+import { getMultiQueryPaths, flattenPaths } from "@/lib/searchRewrite";
 import { matchBareWcCountryQuery, matchWcCountryQuery } from "@/lib/wcCountryRouting";
 import { topIntentChipsFromTopicCounts } from "@/lib/intent_clusters";
 import { buildTemplateTopicsMap, resolveTopics } from "@/lib/topic_resolver";
@@ -544,18 +544,31 @@ export default async function SearchPage({ params, searchParams }: Props) {
   const inspirationById = new Map<string, ScoredInspiration>();
   for (const s of baseResult.scored) inspirationById.set(s.rec.id, s);
 
-  // LLM query rewrite — only when the original query returned thin
-  // results (< LOW_RESULT_THRESHOLD across all surfaces). Each rewrite is
-  // re-scored against the catalog; results are unioned with the originals
-  // and the same precision/relaxed gating applies. We do NOT redirect to
-  // a topic page even if a rewrite happens to match one — that would
-  // override the user's intent. See lib/searchRewrite.ts for the prompt
-  // + cache + failure-mode contract.
+  // P0.2 multi-query retrieval — when the original query returns thin
+  // results (< LOW_RESULT_THRESHOLD), expand to up to 8 retrieval paths:
+  //   1   original (already run as baseResult)
+  //   2-4 LLM paraphrase rewrites
+  //   5-? decomposition slots (subject / style / scene / output / era / mood)
+  // Each path is re-scored independently and unioned by record id (max
+  // score wins). Records hit by MULTIPLE paths get a multi-hit boost —
+  // hits-across-paths is the natural relevance signal that records
+  // covering several facets of the query should outrank records that
+  // only matched one decomposition slot. The boost is small (+8% per
+  // extra hit, capped) so it adjusts ordering without flipping a
+  // record's strict/relaxed gate.
+  //
+  // We do NOT redirect to a topic page even if a rewrite/decomp slot
+  // matches one — that would override the user's intent.
   let usedRewrites: string[] = [];
+  let usedPathsCount = 1;  // original always counts
+  const pathHitsById = new Map<string, number>();
+  // Baseline records (hit by the original query) each count as one path.
+  for (const s of baseResult.scored) pathHitsById.set(s.rec.id, 1);
+
   const initialThinCount =
     baseResult.scored.filter((s) => s.strict).length +
     matchedTemplateIdsByI18nUnion.size;
-  // Gate the paid LLM rewriter on (a) thin results, (b) non-bot UA,
+  // Gate the paid LLM call on (a) thin results, (b) non-bot UA,
   // (c) query doesn't look like garbage (version strings, file IDs,
   // long alphanumeric blobs typical of crawler scrape attempts).
   const ua = (await headers()).get("user-agent") ?? "";
@@ -567,29 +580,44 @@ export default async function SearchPage({ params, searchParams }: Props) {
     !isBot &&
     !isGarbage
   ) {
-    const rewrites = await rewriteQuery(query);
-    if (rewrites.length > 0) {
-      for (const rw of rewrites) {
-        const rwTokens = buildSearchTokens(rw);
-        // Inspiration-level matching only for rewrites — see the
+    const multi = await getMultiQueryPaths(query);
+    const extraPaths = flattenPaths(query, multi);
+    if (extraPaths.length > 0) {
+      for (const path of extraPaths) {
+        const pathTokens = buildSearchTokens(path);
+        // Inspiration-level matching only for expanded paths — see the
         // promoteAllUnderStrictTpl=false branch in scoreQueryTokens.
         // Stops "watercolor flowers" from auto-promoting every
         // inspiration under any watercolor template.
-        const rwResult = scoreQueryTokens(rwTokens, false);
-        for (const id of rwResult.strictTpl) strictTemplateMatchesUnion.add(id);
-        for (const id of rwResult.tplByI18n) matchedTemplateIdsByI18nUnion.add(id);
-        for (const s of rwResult.scored) {
+        const pathResult = scoreQueryTokens(pathTokens, false);
+        for (const id of pathResult.strictTpl) strictTemplateMatchesUnion.add(id);
+        for (const id of pathResult.tplByI18n) matchedTemplateIdsByI18nUnion.add(id);
+        for (const s of pathResult.scored) {
           const prev = inspirationById.get(s.rec.id);
           // Keep the max score per record across passes; promote strict
           // if any pass saw it as strict so the strict-filter below
-          // doesn't drop a rewrite hit just because the original was
-          // relaxed.
+          // doesn't drop a path hit just because the original was relaxed.
           if (!prev || s.score > prev.score || (s.strict && !prev.strict)) {
             inspirationById.set(s.rec.id, s);
           }
+          pathHitsById.set(s.rec.id, (pathHitsById.get(s.rec.id) ?? 0) + 1);
         }
       }
-      usedRewrites = rewrites;
+      usedRewrites = multi.rewrites;
+      usedPathsCount = 1 + extraPaths.length;
+    }
+  }
+
+  // Apply multi-hit re-rank boost. +8% per extra path the record is
+  // covered by, capped at +40% (5 hits or more) to avoid letting a
+  // popular-tag record swamp a literal-noun match. Only applied when
+  // multi-query expansion actually ran (usedPathsCount > 1).
+  if (usedPathsCount > 1) {
+    for (const [id, scored] of inspirationById) {
+      const hits = pathHitsById.get(id) ?? 1;
+      if (hits <= 1) continue;
+      const boost = 1 + Math.min(hits - 1, 5) * 0.08;
+      inspirationById.set(id, { ...scored, score: scored.score * boost });
     }
   }
 
@@ -739,6 +767,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
       matchedTemplates={matchedTemplates}
       galleryPrompts={galleryPrompts}
       usedRewrites={usedRewrites}
+      pathsUsed={usedPathsCount}
       intentChips={intentChips}
       withinSlug={withinSlug || undefined}
     />

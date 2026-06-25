@@ -42,6 +42,11 @@ type Props = {
    *  enough or when the rewriter was unavailable. Surfaced to the
    *  user via a "Showing results for: …" hint above the grid. */
   usedRewrites?: string[];
+  /** Number of retrieval paths actually unioned by the server (1 = just
+   *  the original query; >1 = multi-query expansion fired). Drives the
+   *  `|paths=N` admin tracking suffix so SQL can split "thin after 8
+   *  paths tried" from "thin after rewrite only" without a second event. */
+  pathsUsed?: number;
   /** Top output-type slugs derived from matched templates' topics —
    *  Pinterest-style "Explore further" chip row above the example
    *  grid. Empty when no chip clears the minCount threshold. */
@@ -71,6 +76,7 @@ export default function SearchResultsClient({
   matchedTemplates,
   galleryPrompts,
   usedRewrites = [],
+  pathsUsed = 1,
   intentChips = [],
   withinSlug,
 }: Props) {
@@ -171,18 +177,22 @@ export default function SearchResultsClient({
     // the action_type enum.
     const rwSuffix = usedRewrites.length > 0 ? "|rw=1" : "";
     const withinSuffix = withinSlug ? `|within=${withinSlug}` : "";
+    // P0.2 paths suffix — only emit when multi-query expansion fired
+    // (pathsUsed > 1). Lets admin SQL split "thin after N paths tried"
+    // from "thin after no expansion attempt" without a separate event.
+    const pathsSuffix = pathsUsed > 1 ? `|paths=${pathsUsed}` : "";
     if (totalResults === 0) {
       track({
-        contentId: q + withinSuffix + rwSuffix,
+        contentId: q + withinSuffix + rwSuffix + pathsSuffix,
         contentType: "topic_capsule",
         actionType: "search_noresult",
       });
     } else if (totalResults < LOW_RESULT_THRESHOLD) {
       // Encode the count in contentId so admin can rank queries by how
       // close they are to the threshold without joining against another
-      // table. Format: "<query>[|within=<slug>]|n=<count>[|rw=1]".
+      // table. Format: "<query>[|within=<slug>]|n=<count>[|rw=1][|paths=N]".
       track({
-        contentId: `${q}${withinSuffix}|n=${totalResults}${rwSuffix}`,
+        contentId: `${q}${withinSuffix}|n=${totalResults}${rwSuffix}${pathsSuffix}`,
         contentType: "topic_capsule",
         actionType: "search_lowresult",
       });
@@ -193,12 +203,12 @@ export default function SearchResultsClient({
       // implicit signal). Chip-narrow is an explicit user action and the
       // operator wants per-chip volume, so we fire it for this case.
       track({
-        contentId: `${q}${withinSuffix}${rwSuffix}`,
+        contentId: `${q}${withinSuffix}${rwSuffix}${pathsSuffix}`,
         contentType: "topic_capsule",
         actionType: "search",
       });
     }
-  }, [query, totalResults, usedRewrites.length, withinSlug, track]);
+  }, [query, totalResults, usedRewrites.length, withinSlug, pathsUsed, track]);
 
   return (
     <div className="mx-auto max-w-[1680px] px-4 py-10 sm:px-6 lg:px-8">
