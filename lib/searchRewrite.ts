@@ -20,6 +20,7 @@ const MODEL = "gpt-4o-mini";
 const TIMEOUT_MS = 8_000;  // bumped from 5s — gives cold-start OpenAI clients more headroom
 const MAX_REWRITES = 3;
 const MAX_TOKENS = 400;    // bumped from 200 — multi-rewrite JSON for CJK queries can exceed 200
+const MAX_TOKENS_MULTI = 600;  // multi-query JSON adds decomposition slots
 
 // Inlined catalog context. Each bullet lists 3-8 concrete sub-examples
 // in parens so the LLM can extrapolate "the catalog has X, Y, Z
@@ -187,6 +188,60 @@ hierarchical pattern regardless of source script.
 
 Return ONLY a JSON array (0-3 strings). No prose, no fences, no keys.`;
 
+// P0.2 multi-query system prompt — same DECISION TREE, same CATALOG_CONTEXT,
+// but the LLM now ALSO decomposes the query into orthogonal retrieval slots
+// (subject / style / scene / output / era / mood). Each slot becomes an
+// additional Section A retrieval path on top of the 3 paraphrase rewrites.
+// Records hit by multiple paths get a multi-hit rank boost in
+// app/[locale]/(public)/search/page.tsx.
+//
+// Why one combined call: each path costs the same downstream
+// (scoreQueryTokens is local), so the marginal cost of going from 3 → 8
+// paths is one LLM round-trip's extra output tokens, not 5 extra calls.
+const SYSTEM_PROMPT_MULTI = `${SYSTEM_PROMPT}
+
+────────────────────────────────────────────────────────────
+MULTI-QUERY MODE OVERRIDE — read this carefully.
+
+You will now return BOTH the Path A rewrites array AND a decomposition object that breaks the query into orthogonal retrieval facets. The decomposition slots are optional — only fill the ones the query actually expresses.
+
+Output schema (JSON object, no fences, no prose):
+{
+  "rewrites": [up to 3 alternate phrasings, same Path A rules as above — or [] for Path B],
+  "decomposition": {
+    "subject": "the literal object/person/place — bronze artifact / Einstein / Paris — or omit",
+    "style":   "the aesthetic/medium — kawaii / watercolor / Y2K / vintage — or omit",
+    "scene":   "the setting — office / kitchen / beach / classroom — or omit",
+    "output":  "the format — sticker / infographic / poster / comic — or omit",
+    "era":     "the time signal — Tang dynasty / Y2K / mid-century — or omit",
+    "mood":    "the emotional tone — cozy / dramatic / minimalist — or omit"
+  }
+}
+
+Decomposition rules:
+- Each slot value should be 1-3 words, English, lowercase preferred.
+- If the query doesn't contain a slot's facet, OMIT the key. Don't invent.
+- Don't repeat the original query verbatim in any slot.
+- For Path B queries, return {"rewrites": [], "decomposition": {}}.
+
+Examples:
+- "青铜打工小兽" / "bronze worker mythical beast" →
+  {"rewrites": ["bronze beast office worker", "bronze worker mascot", "bronze artifact employee"],
+   "decomposition": {"subject": "bronze artifact", "style": "anthropomorphic", "scene": "office daily life", "output": "character poster"}}
+- "kawaii museum sticker" →
+  {"rewrites": ["kawaii museum sticker pack", "cute museum gift sticker", "japanese museum stickers"],
+   "decomposition": {"style": "kawaii", "scene": "museum", "output": "sticker"}}
+- "唯美春天" →
+  {"rewrites": ["watercolor spring", "spring flowers", "aesthetic florals"],
+   "decomposition": {"subject": "spring flowers", "style": "watercolor", "mood": "aesthetic"}}
+- "鲜花" (literal noun) →
+  {"rewrites": ["bouquet", "flower arrangement", "cherry blossom"],
+   "decomposition": {"subject": "fresh flowers"}}
+- "stock prices" →
+  {"rewrites": [], "decomposition": {}}
+
+Return ONLY the JSON object. No prose, no fences.`;
+
 type RewriteCache = Map<string, { rewrites: string[]; at: number }>;
 
 // Process-local LRU. Vercel serverless invocations don't share memory so
@@ -305,5 +360,156 @@ export async function rewriteQuery(query: string): Promise<string[]> {
     // of retries for what may be a one-off cold-start hiccup.
     console.error(`[searchRewrite] OpenAI call failed for query=${JSON.stringify(trimmed)}: ${e instanceof Error ? `${e.name}: ${e.message}` : String(e)}`);
     return [];
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// P0.2 multi-query retrieval
+//
+// Returns the same 1-3 paraphrase rewrites as `rewriteQuery` PLUS a
+// decomposition object that splits the query into orthogonal facets.
+// Each non-empty slot becomes an additional Section A retrieval path.
+//
+// Total paths fed to scoreQueryTokens from the call site:
+//   1 (original) + up-to-3 (rewrites) + up-to-6 (decomposition slots)
+//   = up to 10 paths in practice (the doc spec calls this "3 → 8").
+//
+// Tracking: emit `|paths=<n>` suffix on the search event from the client.
+// ─────────────────────────────────────────────────────────────────────────
+export type QueryDecomposition = {
+  subject?: string;
+  style?: string;
+  scene?: string;
+  output?: string;
+  era?: string;
+  mood?: string;
+};
+
+export type MultiQueryPaths = {
+  rewrites: string[];
+  decomposition: QueryDecomposition;
+};
+
+const MULTI_CACHE: Map<string, { paths: MultiQueryPaths; at: number }> = new Map();
+
+function multiCacheGet(key: string): MultiQueryPaths | null {
+  const hit = MULTI_CACHE.get(key);
+  if (!hit) return null;
+  if (Date.now() - hit.at > CACHE_TTL_MS) {
+    MULTI_CACHE.delete(key);
+    return null;
+  }
+  MULTI_CACHE.delete(key);
+  MULTI_CACHE.set(key, hit);
+  return hit.paths;
+}
+
+function multiCacheSet(key: string, paths: MultiQueryPaths) {
+  if (MULTI_CACHE.size >= CACHE_MAX) {
+    const first = MULTI_CACHE.keys().next().value;
+    if (first !== undefined) MULTI_CACHE.delete(first);
+  }
+  MULTI_CACHE.set(key, { paths, at: Date.now() });
+}
+
+const DECOMPOSITION_KEYS: (keyof QueryDecomposition)[] = [
+  "subject", "style", "scene", "output", "era", "mood",
+];
+
+/** Flatten paths in priority order. Caller uses this to drive
+ * scoreQueryTokens; dedupes against the original query. */
+export function flattenPaths(original: string, paths: MultiQueryPaths): string[] {
+  const out: string[] = [];
+  const seen = new Set([original.trim().toLowerCase()]);
+  const push = (s: string | undefined) => {
+    if (!s) return;
+    const t = s.trim();
+    if (!t) return;
+    const k = t.toLowerCase();
+    if (seen.has(k)) return;
+    seen.add(k);
+    out.push(t);
+  };
+  for (const r of paths.rewrites) push(r);
+  for (const k of DECOMPOSITION_KEYS) push(paths.decomposition[k]);
+  return out;
+}
+
+export async function getMultiQueryPaths(query: string): Promise<MultiQueryPaths> {
+  const empty: MultiQueryPaths = { rewrites: [], decomposition: {} };
+  const trimmed = query.trim();
+  if (trimmed.length < 2) return empty;
+
+  const cacheKey = trimmed.toLowerCase();
+  const cached = multiCacheGet(cacheKey);
+  if (cached) return cached;
+
+  const client = getClient();
+  if (!client) return empty;
+
+  try {
+    const t0 = Date.now();
+    const res = await client.chat.completions.create({
+      model: MODEL,
+      temperature: 0.4,
+      max_tokens: MAX_TOKENS_MULTI,
+      response_format: { type: "json_object" },
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT_MULTI },
+        { role: "user", content: `Original query: ${trimmed}` },
+      ],
+    });
+    const elapsedMs = Date.now() - t0;
+    const raw = res.choices?.[0]?.message?.content?.trim() ?? "{}";
+    const finishReason = res.choices?.[0]?.finish_reason;
+    let parsed: { rewrites?: unknown; decomposition?: unknown };
+    try {
+      parsed = JSON.parse(raw);
+    } catch (e) {
+      console.error(`[searchRewrite.multi] JSON parse failed query=${JSON.stringify(trimmed)} finish=${finishReason} elapsedMs=${elapsedMs} err=${e instanceof Error ? e.message : String(e)} raw="${raw.slice(0, 200)}"`);
+      return empty;
+    }
+
+    // Sanitize rewrites
+    const rewrites: string[] = [];
+    const seen = new Set([cacheKey]);
+    if (Array.isArray(parsed.rewrites)) {
+      for (const r of parsed.rewrites) {
+        if (typeof r !== "string") continue;
+        const s = r.trim();
+        if (!s) continue;
+        const k = s.toLowerCase();
+        if (seen.has(k)) continue;
+        seen.add(k);
+        rewrites.push(s);
+        if (rewrites.length >= MAX_REWRITES) break;
+      }
+    }
+
+    // Sanitize decomposition
+    const decomposition: QueryDecomposition = {};
+    const decRaw = (parsed.decomposition && typeof parsed.decomposition === "object")
+      ? (parsed.decomposition as Record<string, unknown>)
+      : {};
+    for (const key of DECOMPOSITION_KEYS) {
+      const v = decRaw[key];
+      if (typeof v !== "string") continue;
+      const s = v.trim();
+      if (!s) continue;
+      // Drop slots that are identical to the original or a rewrite —
+      // running the same string twice through scoreQueryTokens is pure
+      // wasted compute (the merge is a no-op for that record).
+      const k = s.toLowerCase();
+      if (seen.has(k)) continue;
+      seen.add(k);
+      decomposition[key] = s;
+    }
+
+    const out: MultiQueryPaths = { rewrites, decomposition };
+    multiCacheSet(cacheKey, out);
+    return out;
+  } catch (e) {
+    console.error(`[searchRewrite.multi] OpenAI call failed for query=${JSON.stringify(trimmed)}: ${e instanceof Error ? `${e.name}: ${e.message}` : String(e)}`);
+    return empty;
   }
 }

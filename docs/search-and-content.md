@@ -8,6 +8,8 @@ Search quality, content tagging, content production, and upstream demand-sensing
 
 **New operators start here:** [`docs/onboarding-runbook.md`](./onboarding-runbook.md) covers the prerequisites (tools, repo clones, GCS access), env vars, and step-by-step for each recurring workflow (daily content drop, batch gen, WC daily recap, prefill quality check, snapshot regen, manual credit grant). This doc is the WHY; the onboarding runbook is the HOW.
 
+**Active improvement plan (2026-06-25):** [`docs/search-retrieval-improvement-plan-2026-06-25.md`](./search-retrieval-improvement-plan-2026-06-25.md) audits Curify's retrieval against a 4-item recommendation (multi-query, metadata expansion, query decomposition, intent routing), picks the P0 subset by ROI, and lays out the implementation order. P0.1 (metadata expansion v2) in progress.
+
 The four threads:
 
 | # | Thread | Where it lives | Status doc |

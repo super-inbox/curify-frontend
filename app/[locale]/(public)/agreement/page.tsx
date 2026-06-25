@@ -2,16 +2,24 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "User Agreement | Curify Studio",
+  title: "Terms of Service | curify-ai",
   description:
-    "Read Curify Studio's user agreement and terms of use, including licensing, content responsibility, and service policies.",
+    "Read the terms of service and user agreement for curify-ai (curify-ai.com), including licensing, content responsibility, and service policies.",
 };
 
 export default function UserAgreementPage() {
   return (
     <div className="max-w-5xl mx-auto p-20 text-gray-800 text-base sm:text-lg leading-relaxed">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-6">🧑‍⚖️ User Agreement (Terms of Use)</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6">🧑‍⚖️ Terms of Service (User Agreement)</h1>
       <p className="mb-6">Effective Date: September 13, 2025</p>
+
+      <p className="mb-6">
+        These Terms of Service govern your use of <strong>curify-ai</strong> — the AI
+        visual content platform available at <a href="https://curify-ai.com" className="underline">curify-ai.com</a>,
+        operated by Curify Studio. Throughout this document, &ldquo;curify-ai&rdquo;,
+        &ldquo;Curify Studio&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, and &ldquo;the service&rdquo; refer
+        to the same product. By accessing curify-ai you agree to these terms.
+      </p>
 
       <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">1. License for Processing</h2>
       <p className="mb-6">
