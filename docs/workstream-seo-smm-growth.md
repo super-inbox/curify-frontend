@@ -31,6 +31,9 @@ reframe) for the merchants who use it.
 **W1.7a + W1.7b shipped 2026-06-26 on `jwang/vercel`:**
 - Commit `a0a12ab4` — `app/sitemap.xml/route.ts`: filter noindex topics via `isLocalizedTopic()` + collapse tag pages to EN only. Sitemap URL count 25,764 → 20,905 (-4,859). NO direct click lift expected; success criteria = sitemap coverage 13.4% → ~17% over 4-8 weeks via `seo_funnel_audit.py` re-run. Re-audit checkpoint: 2026-07-24.
 - Commit `14db8c81` — audit pipeline + 4 findings/scope docs.
+
+**W1.1 + W1.4 shipped 2026-06-27 on `jwang/vercel`:**
+- Commit `c5eea10e` — new `HomeDiscoveryStrip.tsx` server component renders below `HomeToolsStrip` with two chip rows: top-36 enabled topics (sorted by template count) linking to `/topics/*`, and all live use-cases (filtered by `hiddenFromChips`) linking to `/use-cases/*`. Wired through `HomeClient` via a new `discoveryStrip: ReactNode` prop. i18n: 4 keys under `home.discovery`, autotranslated to all 9 non-EN locales. Verified on dev: /en renders 41 unique `/topics/*` + 9 unique `/use-cases/*` outbound links; zh works with localized chip titles. Expected lift: +220-530 clicks/day over 4-8 weeks. Re-audit checkpoint: ~2026-08-21.
 - `docs/programmatic-seo-topic-hubs.md` — the topic-hub framework
 - `docs/search-quality.md` — internal search quality (companion to A workstream)
 - `docs/interconnection.md` — blog ↔ use-case ↔ tool cross-link layer
