@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, type ReactNode } from "react";
 import { Inter } from "next/font/google";
 import { useRequireAuth } from "@/services/useRequireAuth";
 
@@ -26,6 +26,7 @@ export default function HomeClient({
   nanoCards = [],
   topRemixPrompts = [],
   searchQueries = [],
+  discoveryStrip,
 }: {
   locale?: string;
   nanoCards?: NanoInspirationCardType[];
@@ -38,6 +39,11 @@ export default function HomeClient({
    *  lib/popularPrefillQueries.ts. Rendered as interleaved nudge tiles
    *  in the fused row. */
   searchQueries?: string[];
+  /** Server-rendered discovery section (topics + use-case chips) shipped
+   *  2026-06-26 as W1.1+W1.4 of the indexation rescue. Rendered below
+   *  the tools strip so the homepage finally links to /topics and
+   *  /use-cases. */
+  discoveryStrip?: ReactNode;
 }) {
   const requireAuth = useRequireAuth({ variant: "signup" });
 
@@ -82,6 +88,8 @@ export default function HomeClient({
         )}
 
         <HomeToolsStrip />
+
+        {discoveryStrip}
       </div>
 
       <CardViewModal
