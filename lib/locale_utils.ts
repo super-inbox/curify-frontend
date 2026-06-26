@@ -22,7 +22,17 @@ export function getSupportedLocales(): readonly PageLocale[] {
 export function makeSafeTranslator(
   t: Awaited<ReturnType<typeof getTranslations>>
 ) {
+  // Use t.has(key) to check existence BEFORE calling t(key). next-intl logs
+  // missing-message warnings to the dev console even when the throw is
+  // caught — the only way to fully silence those is to never call t() on a
+  // key that doesn't exist. Pre-check via has() keeps the existing
+  // try/catch as belt-and-suspenders for edge cases (e.g. has() shape
+  // changing across next-intl versions).
+  const hasFn = (t as unknown as { has?: (k: string) => boolean }).has;
   return (key: string): string => {
+    if (typeof hasFn === "function" && !hasFn.call(t, key)) {
+      return "";
+    }
     try {
       return t(key as never) ?? "";
     } catch {

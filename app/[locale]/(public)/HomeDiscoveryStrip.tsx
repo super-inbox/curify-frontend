@@ -16,14 +16,20 @@ import { getTranslations } from "next-intl/server";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import { getTopics } from "@/lib/topicRegistry";
+import { isFullyLocalizedTopic } from "@/lib/topicRegistry_pure";
 
 const TOPIC_LIMIT = 36;
 
 export default async function HomeDiscoveryStrip({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "home.discovery" });
 
+  // Filter to FULLY-localized topics (have .title in messages/en/topics.json),
+  // not just LOCALIZED (which only requires the top-level entry to exist).
+  // The 27 stub topics with only .displayName render fine as chips but trip a
+  // missing-message warning on the destination topic page when it tries
+  // topics.<slug>.title — caught + falls back, but noisy in dev.
   const topics = getTopics()
-    .filter((tp) => tp.isEnabled)
+    .filter((tp) => tp.isEnabled && isFullyLocalizedTopic(tp.id))
     .sort((a, b) => b.templateCount - a.templateCount)
     .slice(0, TOPIC_LIMIT)
     .map((tp) => ({ id: tp.id, isEnabled: tp.isEnabled }));

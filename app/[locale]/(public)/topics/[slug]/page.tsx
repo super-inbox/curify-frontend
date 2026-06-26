@@ -69,8 +69,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const t = await getTranslations({ locale });
-  const safeT = (key: string) => { try { return t(key as never) ?? ""; } catch { return ""; } };
+  // Use t.has() to silence dev-mode missing-message warnings for
+  // partial topic i18n entries (the 27 "stub" topics that have
+  // displayName but not title/description/keywords). next-intl logs the
+  // miss even when caught, AND returns the raw key string for some
+  // missing modes — so a plain try/catch leaks "topics.foo.title" into
+  // the rendered <title>. has() check is the only fully-clean fallback.
+  const hasFn = (t as unknown as { has?: (k: string) => boolean }).has;
+  const safeT = (key: string) => {
+    if (typeof hasFn === "function" && !hasFn.call(t, key)) return "";
+    try { return t(key as never) ?? ""; } catch { return ""; }
+  };
   const safeRaw = <T,>(key: string): T | null => {
+    if (typeof hasFn === "function" && !hasFn.call(t, key)) return null;
     try { return (t as { raw: (k: string) => T }).raw(key) ?? null; } catch { return null; }
   };
 
