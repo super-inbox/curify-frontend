@@ -23,21 +23,58 @@ reframe) for the merchants who use it.
 - GSC + Indexing API loop (memory `reference_gsc_api_access.md`)
 
 **Anchors:**
+- `docs/seo-funnel-audit-2026-06-26.md` — **headline diagnosis: 87% of sitemap pages are invisible to Google; 76% of clicks from 3 WC posts; 5 wedges to grow from 213→10k clicks/day**
+- `docs/wedge1-indexation-rescue-scope-2026-06-26.md` — **W1 scope (7 work items, 4-5 weeks, +770-1,930 clicks/day projected over 8 weeks)**
+- `docs/wedge1-hygiene-findings-2026-06-26.md` — **W1.7 findings: 4,859 of 25,764 sitemap URLs are intentionally noindex (710 thin topics + 4,149 non-EN tag pages); 2 new sitemap-cleanup gates added before link injection**
+- `scripts/audit_gsc_full.cjs` + `scripts/seo_funnel_audit.py` + `scripts/sample_invisible_pages.cjs` — re-runnable audit pipeline
 - `docs/programmatic-seo-topic-hubs.md` — the topic-hub framework
 - `docs/search-quality.md` — internal search quality (companion to A workstream)
 - `docs/interconnection.md` — blog ↔ use-case ↔ tool cross-link layer
 - `docs/blog-quality.md` — quality improvement track (P0/P1 fluff telltales)
+- `docs/search-retrieval-improvement-plan-2026-06-25.md` — retrieval plan
+- `docs/eval-framework-visual-search-benchmark-2026-06-14.md` + `docs/eval-framework-visual-intent-routing-2026-06-15.md` — search eval framework
+- `docs/home-discoverability-ideas-2026-06-14.md` — homepage discoverability
+- `docs/content-gap-corporate-news-editorial-2026-06-12.md` + `docs/seo-business-news-visualization-batch-2026-06-12.md` — corporate news editorial
+- `docs/seo-flashcard-learning-batch-2026-06-10.md` + `docs/seo-travel-batch-2026-06-10.md` — programmatic batch ships
+- `docs/taxonomy-gap-canva-pinterest-2026-06-14.md` — taxonomy gap audit
+- `docs/template-matching-section-a-vs-b-2026-06-17.md` — template matching A/B
+- `docs/video-user-attribution-2026-06-26.md` — channel attribution for video users
+
+**Recent ships worth tracking:**
+- 4 mega-hubs (anti-listicle Path A): WC + sticker + packaging + makeover (tasks #102 + #104)
+- robots.txt expansion blocking 11 more crawlers from `/nano-template/*` + `/nano-banana-pro-prompts/*` (task #105, commit 94c0e6ac) — Vercel cost reduction
+- Indexing API pushes: 10 homepage URLs (brand SERP cleanup), 10 inspiration-hub URLs (structured-data error cleanup 2026-06-23)
 
 ## 2. SMM — Social Media Marketing / autopost
 
 **In scope:**
 - Autopost pipeline in `curify-studio/curify_background/` (Twitter + FB; the
   hash-bucketed slots framework in `app/utils/autopost_utils.py`)
-- Themed-day rotation (shipped 2026-06-23, commit 93fdf60)
-- Engagement-prompt captions (shipped 2026-06-23, commit bb90daf)
 - Pinterest lead-discovery (memory `reference_pinterest_lead_discovery.md`)
 - RedNote → WeChat funnel for CN factory leads (memory `feedback_cn_vertical_reply_channel.md`)
-- Carousel batching + group routing (queued, not merged to main)
+
+**Anchors:**
+- `~/curify-studio/curify_background/app/utils/autopost_utils.py` — selection + posting core
+- `~/curify-studio/curify_background/app/utils/facebook_client.py` — FB single-photo + carousel publish
+- `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest ICP keywords
+
+**Shipped to main:**
+- Themed-day rotation (Mon=MBTI → Sun=specialty cadence) — commit `93fdf60`, merged via PR #382
+- Engagement-prompt captions (FB + Twitter) — commit `bb90daf`, merged via PR #384
+
+**On `jwang/card-narration-refactor`, pending merge to main:**
+- Carousel-batch generator v1 (bucket-then-group) — commit `0fc94ce`
+- Carousel-batch generator v2 (global template-first selection) — commit `e721e82` (2026-06-26)
+- v2 supersedes v1: the bucket-then-group strategy hit 0 carousels in practice because
+  MD5 across 400 buckets spread popular families too wide (e.g. `template-vocabulary`'s
+  168 items max-out at 2-in-bucket). v2 picks the template family GLOBALLY by slot+theme,
+  slides a CAROUSEL_MAX-sized window per slot. Tested against the real corpus: 24/24
+  simulated slots produce a carousel. Cap = 3-8 photos (memory `feedback_fb_carousel_size_cap.md`).
+- Once merged, expect 6 FB carousels/day replacing the current single-photo broadcast.
+
+**Queued (not started):**
+- Group-aware FB routing (use item `topics` to pick 5-10 relevant groups vs blanket cross-post)
+- Spam-risk audit on cross-post volume
 
 ## 3. Growth Analytics
 
@@ -55,6 +92,25 @@ reframe) for the merchants who use it.
 - `~/curify-studio/curify_background/app/crud/admin.py` — the 7-query analytics
   module (memory `reference_growth_analytics.md`)
 - `scripts/pull_gsc_performance.cjs` + `scripts/submit_indexing_api.cjs`
+- `~/curify-studio/dev/jayw/admin_analysis/` — ad-hoc analysis scripts
+  (funnel pulls, search-eval cycles, video-user attribution)
+
+**Date-stamped findings docs (most recent first):**
+- `docs/video-user-attribution-2026-06-26.md` — channel + landing mix for
+  208 video-project users; only ~15% attributable (2-month user_interactions
+  retention vs 11-month project history); script at
+  `~/curify-studio/dev/jayw/admin_analysis/video_user_attribution.py`
+  (memory `reference_video_user_attribution.md`)
+- `docs/conversion-funnel-auth-wall-2026-06-12.md` — auth-wall conversion audit
+- `~/curify-studio/docs/dau-activation-analysis-2026-06-12.md` — DAU activation
+- `~/curify-studio/docs/scaling-audit-2026-06-10.md` — infra scaling audit
+- `~/curify-studio/docs/reengagement-2026-06-01.md` — reengagement analysis
+
+**Indexing API operational notes:**
+- 3-day API → UI lag vs 1-day GSC UI lag (memory `reference_gsc_api_access.md`)
+- 1-3d SERP-position flux after a push (memory `feedback_indexing_api_reindex_flux.md`)
+- Default-skip on new blogs — fire only on explicit request (memory `feedback_indexing_api_default_skip.md`)
+- Submit all 10 locales (memory `feedback_indexing_api_all_locales.md`)
 
 ---
 
