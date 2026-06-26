@@ -5,6 +5,7 @@ import nanoMetadata from "@/lib/generated/nanobanana_prompts_metadata.json";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
 import { USE_CASES } from "@/lib/use-cases";
 import { toSlug } from "@/lib/nano_utils";
+import { isLocalizedTopic } from "@/lib/topicRegistry_pure";
 import {
   SEO_RETITLED_LASTMOD,
   SEO_RETITLED_TEMPLATE_IDS,
@@ -103,7 +104,14 @@ function getTopicRoutes(): string[] {
       if (tp) templateLevelTopics.add(tp.toLowerCase());
     }
   }
-  return Array.from(templateLevelTopics).map((tp) => `/topics/${tp}`);
+  // Filter to i18n-authored topics only — topics without i18n render
+  // noindex,nofollow (see app/[locale]/(public)/topics/[slug]/page.tsx:62-68),
+  // so emitting them in the sitemap wastes crawl budget. Pre-filter cuts
+  // ~71 topics × 10 locales = 710 noindex'd sitemap entries.
+  // See docs/wedge1-hygiene-findings-2026-06-26.md.
+  return Array.from(templateLevelTopics)
+    .filter((tp) => isLocalizedTopic(tp))
+    .map((tp) => `/topics/${tp}`);
 }
 
 function generateHreflangLinks(
@@ -208,13 +216,16 @@ export async function GET() {
     });
   });
 
-  // Tag pages
+  // Tag pages — EN only. Non-EN tag pages render
+  // <meta name="robots" content="noindex,follow"> + canonical pointing to
+  // the EN URL (per the deliberate locale-collapse policy, since tag-page
+  // content is identical across locales). Emitting them in the sitemap
+  // told Google about 461 × 9 = 4,149 noindex'd URLs that diluted crawl
+  // budget. See docs/wedge1-hygiene-findings-2026-06-26.md.
   tagRoutes.forEach((route) => {
-    LOCALES.forEach((locale) => {
-      urls += generateUrlEntry(locale, route, {
-        changefreq: "weekly",
-        priority: "0.7",
-      });
+    urls += generateUrlEntry("en", route, {
+      changefreq: "weekly",
+      priority: "0.7",
     });
   });
 
