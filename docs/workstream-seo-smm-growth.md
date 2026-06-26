@@ -27,6 +27,10 @@ reframe) for the merchants who use it.
 - `docs/wedge1-indexation-rescue-scope-2026-06-26.md` — **W1 scope (7 work items, 4-5 weeks, +770-1,930 clicks/day projected over 8 weeks)**
 - `docs/wedge1-hygiene-findings-2026-06-26.md` — **W1.7 findings: 4,859 of 25,764 sitemap URLs are intentionally noindex (710 thin topics + 4,149 non-EN tag pages); 2 new sitemap-cleanup gates added before link injection**
 - `scripts/audit_gsc_full.cjs` + `scripts/seo_funnel_audit.py` + `scripts/sample_invisible_pages.cjs` — re-runnable audit pipeline
+
+**W1.7a + W1.7b shipped 2026-06-26 on `jwang/vercel`:**
+- Commit `a0a12ab4` — `app/sitemap.xml/route.ts`: filter noindex topics via `isLocalizedTopic()` + collapse tag pages to EN only. Sitemap URL count 25,764 → 20,905 (-4,859). NO direct click lift expected; success criteria = sitemap coverage 13.4% → ~17% over 4-8 weeks via `seo_funnel_audit.py` re-run. Re-audit checkpoint: 2026-07-24.
+- Commit `14db8c81` — audit pipeline + 4 findings/scope docs.
 - `docs/programmatic-seo-topic-hubs.md` — the topic-hub framework
 - `docs/search-quality.md` — internal search quality (companion to A workstream)
 - `docs/interconnection.md` — blog ↔ use-case ↔ tool cross-link layer
