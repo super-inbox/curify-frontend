@@ -18185,5 +18185,55 @@
       "product-lineup",
       "promotional-poster"
     ]
+  },
+  {
+    "id": "template-brand-identity-moodboard-visual-system-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Full Brand Identity Visual System Moodboard Generator) Vertical brand standard visual identity moodboard collage poster themed '{brand_business_theme}'. Layout: Grid multi-block collage layout split into 9 modules: top-left primary logo lockup + brand slogan; top-right store outdoor circular wall sign mockup; second row three logo monochrome/color reverse variants + official brand color palette block with hex color codes; third row product packaging mockups (shopping bag, container, accessories); middle-right large outdoor billboard advertising display; bottom three real-life application mockups: staff uniform cap & apron, customer carrying tote bag, mannequin wearing brand t-shirt. Style: clean commercial brand design presentation board, unified brand tone color system, realistic product & space mockup photography, minimalist white background, neat thin white dividing borders between each grid block, high resolution brand guideline showcase poster, modern flat business visual identity design. Subject: complete brand visual identity system moodboard collage for '{brand_business_theme}' commercial store brand.",
+        "parameters": {
+          "name": "brand_business_theme",
+          "label": "完整品牌行业+品牌名称主题",
+          "type": "text",
+          "placeholder": [
+            "生鲜超市GreenBasket全套VI视觉识别系统展板",
+            "宠物门店PAW PARADISE品牌标准色logo应用拼贴展板",
+            "精品咖啡馆BREW & CO品牌视觉规范展示长图"
+          ]
+        }
+      },
+      "zh": {
+        "base_prompt": "(Full Brand Identity Visual System Moodboard Generator) Vertical brand standard visual identity moodboard collage poster themed '{brand_business_theme}'. Layout: Grid multi-block collage layout split into 9 modules: top-left primary logo lockup + brand slogan; top-right store outdoor circular wall sign mockup; second row three logo monochrome/color reverse variants + official brand color palette block with hex color codes; third row product packaging mockups (shopping bag, container, accessories); middle-right large outdoor billboard advertising display; bottom three real-life application mockups: staff uniform cap & apron, customer carrying tote bag, mannequin wearing brand t-shirt. Style: clean commercial brand design presentation board, unified brand tone color system, realistic product & space mockup photography, minimalist white background, neat thin white dividing borders between each grid block, high resolution brand guideline showcase poster, modern flat business visual identity design. Subject: complete brand visual identity system moodboard collage for '{brand_business_theme}' commercial store brand.",
+        "parameters": {
+          "name": "brand_business_theme",
+          "label": "完整品牌行业+品牌名称主题",
+          "type": "text",
+          "placeholder": [
+            "生鲜超市GreenBasket全套VI视觉识别系统展板",
+            "宠物门店PAW PARADISE品牌标准色logo应用拼贴展板",
+            "精品咖啡馆BREW & CO品牌视觉规范展示长图"
+          ]
+        }
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-brand-identity-moodboard-visual-system-poster-golden-crust-bakery-prev.jpg",
+    "topics": [
+      "design",
+      "merch",
+      "branding",
+      "mood-board",
+      "mockups",
+      "posters",
+      "product",
+      "modern",
+      "playful",
+      "vibrant",
+      "artistic",
+      "illustration",
+      "digital-canvas",
+      "composition",
+      "bold"
+    ],
+    "rank_score": 90.0
   }
 ]

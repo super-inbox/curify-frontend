@@ -1,16 +1,31 @@
-# Workstream: Agentic Image Generation, Editing & Translation (Rong)
+# Workstream: Multi-modal Commercial Agent Pipeline (Rong)
 
-> Filed 2026-06-23. Owner: **Rong**. Sits under **Tooling & Engineering**
+> _Also indexed as the "Agentic Image Generation, Editing & Translation" workstream — internal naming. The public / academic framing per the 2026-06-27 Gemini discussion is **Multi-modal Commercial Agent Pipeline**: a strongly-constrained, business-purpose agent that orchestrates production APIs (CV / NLP), not an open-ended exploratory agent._
+
+> Filed 2026-06-23. **Reframed 2026-06-27** with the production-workflow framing from `raw/search-discovery-06-27/Gemini-discussion.txt`. Owner: **Rong** (UMD Stats PhD). Sits under **Tooling & Engineering**
 > ([`workstream-tooling-and-engineering.md`](workstream-tooling-and-engineering.md))
-> and is the execution arm of the **Visual Intent Routing** thesis
+> and is the execution arm of the **Visual Intent Routing / Generative Retrieval** thesis
 > ([`curify-frontend/docs/eval-framework-visual-intent-routing-2026-06-15.md`](../../curify-frontend/docs/eval-framework-visual-intent-routing-2026-06-15.md)).
 > Living doc.
 
 ---
 
+## 0. Reframing note (2026-06-27)
+
+The earlier framing of "open-ended agentic image research" was the wrong target for our stage. **Industry's working AI agents are 80% `if/else` over hand-curated tool calls** — what looks like "agentic" in product is in practice a strongly-typed router over a small set of production APIs. So the project is reshaped:
+
+- ❌ Don't build: open-ended autonomous agents, exploratory tool-use research, custom CV model training.
+- ✅ Do build: a **probabilistic intent router** that decides which production API gets called for each user query, plus the orchestration that wires the calls together into a deliverable artifact.
+
+**Externally** (resume / paper / LinkedIn): _"Designed a probabilistic Intent Routing mechanism and an orchestration Agent that dynamically calls multi-modal tools (CV / NLP APIs) to automate e-commerce and merch workflows."_ Reads as PhD-level systems work — appropriate for a Stats PhD.
+
+**Internally**: an MVP that takes a user upload + a merch intent, calls Photoroom-style segmentation (or Segment Anything), adds 3mm white border, calls an LLM to draft 3 caption slogans, typesets them onto the cutout. One concrete user-visible artifact per cycle. Strongly-constrained, strongly-typed. No vague "agent thinks" steps.
+
+---
+
 ## 1. Thesis
 
-The agent's job is one loop:
+The agent is one strongly-typed loop. No vague "agent thinks" steps — every node is either a router (decides which next call) or a tool call (executes a deterministic action). Conditionals are observable in logs; failures point to the responsible node.
 
 ```
 user query / image / intent
@@ -25,12 +40,56 @@ user query / image / intent
   ③ INTERACTIVE EDITING ──▶ multi-turn refine (re-route, swap workflow, re-run)
 ```
 
+### Worked example: from query to merch artifact (one loop, ~6 calls)
+
+This is the concrete shape Rong's agent should hit by end of Phase 4. Each step is a single API call against an existing tool — orchestration, not reasoning.
+
+```
+USER:  "make a sticker pack from this anime character image"
+              │
+              │  [INTENT ROUTING — probabilistic classifier]
+              ▼
+   Slot extraction:  subject = "anime character"
+                     intent = "merch"
+                     format = "sticker pack"
+                     transparent_bg = TRUE
+                     count = 6-12 emotions
+              │
+              │  [TOOL CALL — segmentation API]
+              ▼
+   Segment-Anything / Photoroom  →  cutout PNG (alpha channel)
+              │
+              │  [TOOL CALL — border + padding]
+              ▼
+   ImageMagick  →  add 3mm white border, square padding
+              │
+              │  [TOOL CALL — emotion variation via template]
+              ▼
+   template-ip-character-sprite-emoji-sheet  →  9-cell emotion grid
+              │
+              │  [TOOL CALL — print spec sheet]
+              ▼
+   PDF assembly  →  CMYK + bleed marks + die-cut outline
+              │
+              ▼
+   RETURN:  6-up sticker sheet + print-ready PDF + tagged transparent PNGs
+```
+
+Every node is either a router (line 1) or a deterministic tool call. The "agent" intelligence lives in the routing decision (which path to take given the intent) — NOT in any kind of free-form reasoning. That keeps it debuggable, cheap, fast, and resume-worthy without exposing the team to open-ended agent research risk.
+
+### What the agent is and isn't
+
+| ✅ The agent IS | ❌ The agent IS NOT |
+|---|---|
+| A probabilistic intent router with ~12 well-typed slots | An exploratory LLM running open-ended reasoning |
+| An orchestration layer over 6-10 known production APIs | A net-new CV/NLP model we train ourselves |
+| Strongly conditioned on observable user inputs | Implicitly conditioned on hidden "agent state" |
+| Logged at every routing decision + tool call | A black-box "the agent did this and we don't know why" |
+
 We already have most of the **building blocks** (bucket A) and the **surfaces**
 that run them. What's weak is the **brain** (bucket B — routing + the data it
 routes over) and the **inputs/coverage** (bucket C — task set, crawl, tool gaps).
-The agentic approach = wire the brain to orchestrate the building blocks, fed by
-a real task set. Routing accuracy is the load-bearing metric — get it wrong and
-everything downstream is rearranging deck chairs (per the VIR eval doc).
+The Multi-modal Commercial Agent Pipeline = wire the brain to orchestrate the building blocks, fed by a real task set. Routing accuracy is the load-bearing metric — get it wrong and everything downstream is rearranging deck chairs (per the VIR eval doc).
 
 ---
 
@@ -140,6 +199,13 @@ Turn the ad-hoc WC news crawl into a parameterized "hot-now" pipeline (source �
 extract → structured config → template render) that any `events-hot-now` topic
 can drive, not just the World Cup. This is the first end-to-end *agentic* loop
 (detect hot topic → route to format → generate) and removes a manual ritual.
+
+### P0-5 — Ship the worked-example merch loop end-to-end (the demo artifact) ⭐
+The thesis worked-example above ("anime character image → 6-up sticker pack PDF") **as a single user-facing flow.** Stitches P0-1 (capability index) + P0-2 (task set) + the existing freeform pipeline + a segmentation API call into one button. **Deliberately scoped narrow** — one input mode, one output mode, one routing decision — so the orchestration logic is provable end-to-end before generalizing.
+
+- **Why now:** every Rong-track artifact for resume / LinkedIn / fundraising boils down to "show the loop running." This is that. Without it, the work is a stack of unhooked modules.
+- **Concrete acceptance:** an authenticated user uploads an image, picks "make sticker pack," and within ~60s receives (a) the 6-up sticker sheet + (b) a print-ready PDF + (c) the underlying transparent PNGs. Every routing decision visible in admin logs.
+- **External framing:** the demo IS the deliverable. Used as the LinkedIn-post hero (per the VIR doc Appendix B) and as the "what the agent does" panel in the next fundraising deck.
 
 ---
 

@@ -1,13 +1,14 @@
 # Visual Intent Routing — eval framework
+### (a.k.a. Generative Retrieval for Template Recommendation)
 
-**Date filed:** 2026-06-15  ·  **Renamed from "Agentic Evaluation" 2026-06-17** (the agentic framing was too undefined; this name captures the actual problem).
-**Status:** Strategic framing — not yet executed. Parallel companion to `docs/eval-framework-visual-search-benchmark-2026-06-14.md` (Curify vs Pinterest/Bing/Google/Canva search eval).
+**Date filed:** 2026-06-15  ·  **Renamed from "Agentic Evaluation" 2026-06-17** (the agentic framing was too undefined; this name captures the actual problem). · **Reframed 2026-06-27** with the GPT-discussion paradigm split (Constrained Generative / Multi-path / KB / Hybrid) and intern-attached deliverables.
+**Status:** Strategic framing — not yet executed. Parallel companion to `docs/eval-framework-visual-search-benchmark-2026-06-14.md` (External Signals for Visual Search Evaluation, Baobao's track). **Owner: Rong** (UMD Stats PhD).
 
 ---
 
 ## TL;DR
 
-Curify's core decision is **visual intent routing**: given a user query, which visual format best serves it?
+Curify's core decision is **visual intent routing** — equivalent in CS terms to **Generative Retrieval over a finite (~300) Template Label Space**. Given a user query, which visual format best serves it?
 
 ```
 Query: "Paris"
@@ -24,7 +25,13 @@ That routing decision IS the product. Every Curify template represents one valid
 
 The eval has to measure the routing accuracy directly. Higher-order benchmarks (workflow, multi-turn, task success) build on top of it but **routing accuracy is the load-bearing metric**.
 
-We had earlier framed this as "Agentic Evaluation" — that name was buzzy and undefined. "Visual Intent Routing" is sharper: it names the actual problem.
+We had earlier framed this as "Agentic Evaluation" — that name was buzzy and undefined. "Visual Intent Routing" is sharper: it names the actual problem. The complementary academic framing — **"Generative Retrieval for Template Recommendation"** (per the 2026-06-27 GPT discussion) — captures the same thing in terms a CS reviewer recognizes:
+
+```
+Open-domain natural-language query  →  finite Template ID set (~300)
+```
+
+The key structural fact is the **small label space**. Industrial recommendation systems wrestle with millions of items; Curify has 300. Almost every algorithmic shortcut that's impractical at millions becomes practical at 300 — constrained generation with a trie, exhaustive multi-path retrieval, full-graph KB lookup. **That's the research wedge.**
 
 ---
 
@@ -98,21 +105,60 @@ Real user sessions iterate. Same intent often produces multiple turns ("make it 
 - **Medium ambiguity** (~50): query specifies subject but format is implied. `Paris`, `Messi`, `MBTI INFJ`, `dinosaurs`. **This is where routing matters most.**
 - **High ambiguity / multi-valid** (~20): query has multiple equally-valid routes. `Brazil` could be food / travel / WC / culture — ground truth here is a SET of acceptable routes, not a single gold.
 
-### Comparators
+### Comparators — three retrieval paradigms + hybrid
 
-All call the same image model — we isolate the prompt-layer + routing contribution.
+Reframed 2026-06-27 per the GPT discussion. Each is a distinct **retrieval paradigm**, not just a variant of "the same approach with more polish." Two intern-quarters of work can credibly build all four because the label space is 300, not 3M.
 
-| Approach | Pipeline |
-|---|---|
-| **A — Raw GPT** | User intent → image model directly. No routing, no template. |
-| **B — Prompt Engineering** | User intent → hand-crafted detailed prompt → image model. Skilled-user baseline. |
-| **C — Curify (today)** | User intent → LLM template-routing → structured prompt → image model. |
-| **D — Curify + topic-augmented blob** | C with the matcher catalog blob enriched by `topics[] + archetype` (Section-B Option B from `project_section_b_evolution_options`). |
-| **E — Curify hybrid** | C with taxonomy pre-filter then LLM ranker (Section-B Option C). |
+| ID | Paradigm | Pipeline | Why it might win |
+|---|---|---|---|
+| **A — Embedding baseline** | Dense retrieval | Query embedding → cosine vs precomputed template embeddings → top-k | Fast, no training; calibrates the floor |
+| **B — Multi-path Retrieval** | Decomposed sparse | Query → LLM rewrite + decomposition slots (subject/style/scene/output) → parallel scoring against `topics ∪ tags` → re-rank by hit-count-across-paths | Already partly shipped as P0.2 (`docs/search-retrieval-improvement-plan-2026-06-25.md`). Best for compound queries (`青铜打工小兽`) where no single embedding match exists |
+| **C — Knowledge-Based Retrieval** | Symbolic graph | Concept graph (Subject × Info-type × Layout) → graph walk → template at the cell | Best for canonical, semantically-named queries (`MBTI Marvel` → `mbti-marvel` cell, single hop). Trivially explainable |
+| **D — Constrained Generative Retrieval** | LLM-as-router | LLM generates Template IDs directly, output constrained by a trie over the 300 valid IDs | Best for novel / specific queries (`Generate a watercolor map poster of Kyoto` — composes three facets the catalog has separately). End-to-end + reasoning |
+| **E — Hybrid (Retriever → Reranker)** | RAG-style | KB pre-filter + Multi-path → LLM re-ranker over the union | Industrial mainline (Perplexity, OpenAI, Claude). Best overall, but masks where the lift comes from — only fair after A-D are individually measured |
+
+Plus two **non-Curify baselines** to keep the routing-layer claim honest — without these the experiment can't distinguish "good routing" from "good image model":
+
+| ID | Baseline | Pipeline |
+|---|---|---|
+| **0a — Raw image model** | User intent → image model directly. No routing, no template. |
+| **0b — Skilled prompt engineering** | User intent → hand-crafted detailed prompt → image model. Skilled-user ceiling for "do we even need templates?" |
+
+### The meta-routing observation
+
+The most interesting research finding wouldn't be "Approach X wins overall." It would be **"different query types are won by different paradigms":**
+
+| Query | Best paradigm | Why |
+|---|---|---|
+| `MBTI Marvel` | C (KB) | Single edge: `MBTI × Marvel` → `mbti-marvel`. Embedding under-uses the structure |
+| `青铜打工小兽` | B (Multi-path) | Compound; no single match exists; decomposition is the only signal |
+| `Generate a watercolor map poster of Kyoto` | D (Constrained Gen) | Three facets to compose; LLM reasoning excels |
+| `messi wallpaper` | A (Embedding) | Direct single-template match — embedding is the cheap floor |
+
+So the real product question becomes:
+
+```
+Query  →  Query-type classifier  →  Retriever choice  →  Templates
+```
+
+That's a tractable two-month research project for one Stats PhD with end-to-end value to the product.
 
 ### Judge + scoring
 
 LLM jury (GPT-4o + Gemini + Claude, 2-of-3 agreement) on each rendered output: Visual / Instruction / Commercial / Consistency (0-5 each). Success = all four ≥ 3. Aggregate as TSR per approach.
+
+### Product-aligned metrics (alongside Recall / NDCG)
+
+Traditional IR metrics (Recall@K, NDCG@K) ask "did we find the labeled gold." Curify needs additional metrics that ask "did the user *get a usable creation:*"
+
+| Metric | Definition | Why it matters here |
+|---|---|---|
+| **Template Coverage** | % of queries that hit ≥ 1 *usable* template (route exists AND `allow_generation=true`) | Catches the "we have a template for this in principle but the router can't see it" failure mode |
+| **Generation Success Rate** | Conditional on Coverage, % of routes that yield a TSR-passing render | Closes the loop from "route picked" → "thing actually generated well." Decouples routing errors from generation errors |
+| **Template Diversity (Top-K)** | Distinct (subject × info-type × layout) cells covered by the top-K returns | Catches the "5 different MBTI templates returned for one query" failure — top-K should cover the creation-direction tree, not pile up in one cell |
+| **Cold-start Robustness** | TSR on queries that introduce concepts post-cutoff (`青铜打工小兽`, last-week's viral compound) | Tests whether the system generalizes vs only retrieves what it's seen labeled |
+
+These four are the gates Curify cares about; Recall/NDCG remain on the dashboard for academic comparability with retrieval literature.
 
 ### Output shape (illustrative)
 
@@ -138,19 +184,22 @@ If VIR results favor Curify, the story moves from *"we have a good content libra
 
 ---
 
-## Phased plan
+## Phased plan — 8 weeks, Rong-owned
+
+The Phase split below is the 2026-06-27 reframe: build the benchmark first, then implement the three retrieval paradigms as separate baselines, then the constrained-generation prototype, then the hybrid. Each phase ships a deliverable on its own — no big-bang.
 
 | Phase | Effort | Deliverable |
 |---|---|---|
-| **P1 — L1 routing pilot** | ~2 days | 100 (intent → gold template+slots) pairs labeled in the admin dashboard. Establishes baseline top-1 / top-3 routing accuracy for the current matcher. |
-| **P2 — L3 TSR pilot** | ~3 days | 20 of the 100 intents run through A/B/C, scored by GPT-4o judge. Sanity-check the rubric discriminates. |
-| **P3 — Full VIRB** | ~1 week | Full 100 × 5 approaches × 4 dimensions scored by 2-of-3 LLM jury. Public-style benchmark report. |
-| **P4 — Multi-turn L4** | ~1 week | 30 of the 100 promoted to multi-turn scripts; measure Turns-to-success + Success@3. |
+| **Phase 1 — Benchmark** | 2 weeks | 200 (query → gold template ID[s]) pairs labeled in the admin dashboard. Top-1 / Top-3 / Top-5 metrics + the four product-aligned metrics above. Doubles as the seed for the Section A / Section B current matcher's regression baseline. |
+| **Phase 2 — Three baselines (A, B, C)** | 2 weeks | Implement Embedding baseline (A), Multi-path Retrieval (B, mostly already shipped as P0.2), and KB-based retrieval (C) as independent endpoints. Score each against the benchmark; produce the by-paradigm × by-query-type win-rate table. |
+| **Phase 3 — Constrained Generative Retrieval (D)** | 2 weeks | Prototype only — LLM (GPT-4 / Claude) with a trie constraint over the 300 template IDs. Not training; pure inference. Compare against the baselines on the same benchmark. |
+| **Phase 4 — Hybrid (E) + meta-routing** | 2 weeks | (a) Hybrid retriever → reranker over the union of A/B/C. (b) Meta-router: train a lightweight query-type classifier that picks among A/B/C/D per query. Final report = the win-rate table + the LinkedIn / technical post. |
 
 **Out of scope (deliberately):**
-- Custom judge model — use frontier APIs for v1
-- Real-time benchmark dashboard
-- Comparison against other agent products (Manus, GenSpark, etc.) — first prove the routing layer adds value vs its absence
+- Custom judge model — use frontier APIs for v1.
+- Real-time benchmark dashboard.
+- Comparison against other agent products (Manus, GenSpark, etc.) — first prove the routing layer adds value vs its absence.
+- Heavy model training. The label space is 300 — anything that needs a million-example fine-tune is the wrong tool.
 
 ---
 
@@ -180,3 +229,71 @@ VIR work belongs to the **post-WC strategic window** (mid-July onwards), alongsi
 | Routing axis (this) | `eval-framework-visual-intent-routing-2026-06-15.md` | Does our routing layer pick the right visual format? |
 
 Pickup signal: after WC traffic relaxes (post knockouts ~2026-07-19), or earlier if a fundraising / positioning conversation needs the routing-evidence story.
+
+---
+
+## Appendix A — Series structure (combined with Baobao's track)
+
+Per the GPT framing, the two intern tracks compose into a three-post sequence — Baobao's "find the gaps" track and Rong's "close the gaps" track converge into the same Search & Discovery story:
+
+| # | Title | Lead | Source doc |
+|---|---|---|---|
+| 1 | **External Signals for Visual Search Evaluation** | Baobao | `docs/eval-framework-visual-search-benchmark-2026-06-14.md` |
+| 2 | **Generative Retrieval for Template Recommendation** | Rong | this doc |
+| 3 | **Self-improving Visual Search** | both | (planned — written after #1 + #2 ship) |
+
+This positions the interns as co-authors on a unified Search & Discovery thesis (Baobao = "discover gaps," Rong = "solve gaps"), without forcing them onto the same task.
+
+---
+
+## Appendix B — Draft LinkedIn / technical post (deliverable for Phase 4)
+
+> **Working title:** *Generative Retrieval for Template Recommendation: When the Label Space Is Only 300, You Don't Need a Big Model*
+
+```
+Most retrieval research is set in the million-item regime — billions of
+products, infinite docs. The hard part is "how do we find the needle."
+
+Curify's catalog has 300 templates.
+
+That single fact flips which algorithms make sense. Approaches that are
+impractical at scale — exhaustive multi-path retrieval, trie-constrained
+generative routing, full graph walks — become trivially practical. And
+the question stops being "how do we find the needle" and becomes "which
+visual format should the user have used in the first place?"
+
+We tested four retrieval paradigms over 200 labeled queries against a
+catalog of 300 image-generation templates:
+
+  A. Embedding baseline (dense retrieval)
+  B. Multi-path retrieval (query decomposition into subject/style/scene)
+  C. Knowledge-base retrieval (Subject × Info-type × Layout graph)
+  D. Constrained Generative Retrieval (LLM with trie over template IDs)
+
+The headline finding wasn't "X wins." It was:
+
+  Different query types are won by different paradigms.
+
+  - Canonical queries (`MBTI Marvel`) → KB wins
+  - Compound queries (`bronze worker mythical beast`) → Multi-path wins
+  - Compositional queries (`watercolor map poster of Kyoto`) → ConstrGen wins
+  - Direct queries (`messi wallpaper`) → Embedding wins
+
+So the right architecture is a query-type-aware meta-router that picks
+the retrieval paradigm per query, not a single algorithm. We measured
+[XX]% top-3 routing accuracy with the meta-router vs [YY]% with any
+single paradigm.
+
+The product metric we cared most about wasn't NDCG — it was
+"Generation Success Rate" (did the user actually walk away with a
+usable rendered image). The meta-router lifted GSR from [ZZ]% to
+[AA]% over our prior single-LLM-matcher baseline.
+
+If your label space is small and the user wants to *make* something
+rather than *find* something, the standard recommender-system playbook
+underweights everything except the embedding baseline. Worth questioning.
+
+— Rong, Curify Labs
+```
+
+The bracketed numbers fill in after Phase 4. Drafting it now so the experiments are framed against a known publication target — keeps the work from drifting into pure exploration.

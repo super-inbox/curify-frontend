@@ -8,6 +8,7 @@ import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
 import ExampleReproduceSurface from "./ExampleReproduceSurface";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
+import ExampleRelatedTopics from "./ExampleRelatedTopics";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
 import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
@@ -448,6 +449,14 @@ export default async function NanoExampleDetailPage({
           showReproduce={false}
           showOtherTemplates={true}
         />
+
+        {/* W1.2 — Related-topics footer row. Expands the template+example
+            topic union with tier-1 / tier-2 ancestors + curated related
+            entries, filtered to fully-localized topics. Injects internal
+            authority into /topics/* hubs (17,650 example URLs × ~5 fresh
+            chips = ~88k new internal links — biggest tonnage in the W1
+            indexation rescue plan). */}
+        <ExampleRelatedTopics locale={rawLocale} seedTopics={mergedTopics} />
       </section>
 
       {/* WC → travel cross-sell rail. Renders only on WC content pages

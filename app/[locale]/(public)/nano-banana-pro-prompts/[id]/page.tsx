@@ -17,6 +17,7 @@ import { nanoRegistry } from "@/lib/nano_utils";
 import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import RelatedTagsSection from "@/app/[locale]/_components/RelatedTagsSection";
+import PromptTryInTool from "./PromptTryInTool";
 
 const TEMPLATE_CARDS_CAP = 30;
 
@@ -301,6 +302,17 @@ export default async function PromptDetailPage({
           locale={locale}
           title="Related Tags"
           subtitle="Tags from the same category clusters as this prompt."
+        />
+
+        {/* W1.5 — Cross-link to a live tool. Every prompt detail page
+            gains one outbound link to /tools/* via tag-based match or
+            round-robin default. Previously the prompt-detail surface
+            had 0 outbound links to the tool family despite tools
+            having the highest per-page click yield. */}
+        <PromptTryInTool
+          locale={locale}
+          promptId={prompt.id}
+          tags={promptTags}
         />
       </main>
     </div>

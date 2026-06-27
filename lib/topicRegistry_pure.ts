@@ -21,6 +21,25 @@ export function isLocalizedTopic(id: string): boolean {
   return LOCALIZED_TOPIC_IDS.has(id);
 }
 
+// "Stub" i18n entries — present in LOCALIZED_TOPIC_IDS with `.displayName`
+// only — render fine as a CHIP (TopicNavRow needs displayName only) but
+// trip a noindex-fallback on the topic page itself when it tries to
+// resolve `topics.<slug>.title|description|keywords|intro`. The fallback
+// catches the missing-message error but next-intl still logs it as a dev
+// warning. Use FULLY_LOCALIZED for surfaces that LINK to a topic from
+// outside the topic page itself (home discovery row, blog → topic sidebar,
+// example → topic row), so users only click through to topics with the
+// full page-render data authored.
+const TOPIC_ENTRIES = (topicsI18n as { topics: Record<string, Record<string, unknown>> }).topics;
+export const FULLY_LOCALIZED_TOPIC_IDS: Set<string> = new Set(
+  Object.entries(TOPIC_ENTRIES)
+    .filter(([, v]) => typeof v?.title === "string" && (v.title as string).length > 0)
+    .map(([k]) => k)
+);
+export function isFullyLocalizedTopic(id: string): boolean {
+  return FULLY_LOCALIZED_TOPIC_IDS.has(id);
+}
+
 export type Topic = {
   id: string;
 };

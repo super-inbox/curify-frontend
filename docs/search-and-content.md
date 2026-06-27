@@ -338,6 +338,65 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
 
 ---
 
+## 2026-06-26 — POD / Merch Design strategic reframe
+
+Workstream reframe per 2026-06-26 strategy discussion. **The thesis: Curify recenters
+around Merch Design + POD (Print-on-Demand) as the primary revenue surface.** Search
+& Content shifts from "info retrieval / template discovery" to a **Trend &
+Inspiration Engine for merch design** — every query is also a potential SKU.
+
+This section captures the search-and-content delta. Companion deltas live in:
+- `curify-studio/docs/workstream-tooling-and-engineering.md` → POD design + mockup tooling
+- `curify-frontend/docs/workstream-seo-smm-growth.md` → merchant SEO + SMM distribution + sales analytics
+- `curify-frontend/docs/workstream-vertical-use-cases.md` → 4 high-margin POD niche packages
+
+### Reframe in one paragraph
+
+Today every search result optimizes for *"did the user find a relevant template?"*.
+Under the POD lens it must also answer *"did the user find something they could
+turn into a sellable product?"*. That changes (a) the **intent layer** (purchase /
+gift / design intent become first-class), (b) the **daily content drop** target
+(trend-driven SKU concepts replace generic template authoring), and (c) the **eval
+rubric** (commercialization signal joins relevance / coverage).
+
+### Work items (POD lens) — thread mapping
+
+| # | Title | Threads touched | Effort |
+|---|---|---|---|
+| POD-A1 | **Purchase / design / gift intent classifier** in query routing — when a user searches a subject ("dachshund quotes", "80s retro arcade", "programmer humor"), the result page surfaces a *"Make merch from this"* rail alongside templates + inspirations. Routes into the merch-design demo page (D workstream) | a (search rerank + intent) + b (route binding) | 3-5d |
+| POD-A2 | **Daily content drop → "daily trending SKU concepts"** — pivot the hongjie patch cadence from generic templates to *seasonally / event-driven, POD-ready design concepts*. Source: trending memes, holidays, news, niche fandoms. Output: a daily set of merch-ready PNGs + slogans, not just nano-templates | c (daily drop) + d (upstream inspiration) | 1wk + ongoing |
+| POD-A3 | **Eval rubric: add "commercialization potential"** — extend `scripts/eval_search.cjs` (or build a sister eval) so each query's top results are scored not just on relevance but on *"could a POD seller turn this into a SKU?"* (slogan-ready / image-only / printable resolution / on-trend). Surfaces queries with high intent but low merch-readiness | a (eval) | 2-3d |
+| POD-A4 | **Niche-discovery surface** — mine SEARCH_NORESULT + SEARCH_LOWRESULT + low-CTR GSC queries for **blue-ocean POD niches** (e.g. "minority dog breed witty quotes t-shirt", "tarot cat sticker"). Output: a weekly "underserved POD niches this week" report. Feeds the daily content drop AND the merchant-facing growth-analytics blog series (C workstream) | d (demand sensing) + b (taxonomy gap matrix) | 3d, then weekly cadence |
+| POD-A5 | **Trend-capture pipeline (X / TikTok / Pinterest / RedNote)** — extend the proposals adapter set to ingest *visual / merch-shape* trends from social platforms, not just Reddit shape demand. The output is a candidate-design queue with provenance + recency, gated by the existing approval flow | d (upstream) | 1wk (adapter scaffold), then per-platform incremental |
+| POD-A6 | **Subject ↔ merch-format mapping** — for every tier-1/tier-2 subject in the topic registry, declare which POD formats convert (t-shirt / sticker / mug / hoodie / canvas / phone case / tote / poster). Drives the *"make merch from this"* rail in POD-A1 and the SKU concepts in POD-A2 | b (taxonomy) | 2-3d |
+
+### Why this belongs in *this* workstream (not just the new C / D docs)
+
+Search & Content is where intent first surfaces. If purchase intent isn't detected
+here, every downstream POD investment (mockup generator, listing optimizer, niche
+packages) is starved of demand signal. POD-A1 + POD-A3 are the upstream gates;
+POD-A2 + POD-A4 + POD-A5 are the supply side that keeps the engine fed.
+
+### Sequencing recommendation
+
+1. **POD-A6** first (1 week) — mapping is cheap and unblocks POD-A1's UX
+2. **POD-A1** (3-5d) — the visible UX change that proves the reframe
+3. **POD-A3** (2-3d) — instrument before scaling, otherwise we ship blind
+4. **POD-A2** in parallel with hongjie-patch refactor (the daily-drop machinery exists)
+5. **POD-A4 + POD-A5** as the weekly cycle stabilizes
+
+### Open questions
+
+- Is *"make merch from this"* a button on every result page, or only on certain
+  subject classes? (Probably gated by POD-A6 mapping — if subject has no high-converting
+  POD format, suppress the rail.)
+- Should the trend-capture pipeline (POD-A5) feed directly into autopost (C) for
+  amplification, or stay one-step removed via the proposals approval queue?
+- Eval-rubric scoring for POD-A3 — LLM-judge or human-curated rubric? LLM-judge is
+  faster but commercial signal is noisier than relevance signal.
+
+---
+
 ## 2026-06-03 — World Cup expansion plan
 
 GSC shows substantial WC-related search traffic. The tier-1 promotion + EntryBar hot chip shipped 2026-06-01, and the 2026-06-03 daily-drop tripled landing inspirations (1 template / 27 ins → 3 templates / 37 ins). Next wave: **deepen WC content, enrich UX, cross-link to adjacent topics (culture / travel / country pages), layer in monetization.** Items grouped by area; prioritization pending — see end of section for recommendation.
