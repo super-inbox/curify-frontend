@@ -102,6 +102,25 @@ export const WC_2026 = {
     // ── Knockout milestones ──────────────────────────────────────────
     { date: "2026-06-28", time: "TBD", home: "Round of 32", away: "",
       venue: "Various", stage: "Round of 32",  label: "Round of 32 begins" },
+    // Round of 32 confirmed fixtures (added 2026-06-28).
+    // Times converted from user paste (JST) → host-venue local; BRA v JPN
+    // explicitly verified vs GPT (1:00 PM EDT = 12:00 PM CT at NRG).
+    // Same +13/14/16h offset applied to the other 5; the bare 12-hour
+    // times follow the file's existing convention. Knockout-day TZ fix
+    // (Option B in #82) will normalize the whole calendar to UTC-rendered
+    // viewer-local times before quarterfinals.
+    { date: "2026-06-28", time: "12:00 PM", home: "South Africa", away: "Canada",
+      venue: "SoFi Stadium, Inglewood, California", stage: "Round of 32" },
+    { date: "2026-06-29", time: "12:00 PM", home: "Brazil",       away: "Japan",
+      venue: "NRG Stadium, Houston, Texas",         stage: "Round of 32" },
+    { date: "2026-06-29", time: "4:30 PM", home: "Germany",      away: "Paraguay",
+      venue: "Gillette Stadium, Foxborough, Massachusetts", stage: "Round of 32" },
+    { date: "2026-06-29", time: "8:00 PM", home: "Netherlands",  away: "Morocco",
+      venue: "Estadio BBVA, Guadalupe, Mexico",     stage: "Round of 32" },
+    { date: "2026-06-30", time: "12:00 PM", home: "Ivory Coast",  away: "Norway",
+      venue: "AT&T Stadium, Arlington, Texas",      stage: "Round of 32" },
+    { date: "2026-06-30", time: "5:00 PM", home: "France",       away: "Sweden",
+      venue: "MetLife Stadium, East Rutherford, New Jersey", stage: "Round of 32" },
     { date: "2026-07-04", time: "TBD", home: "Round of 16", away: "",
       venue: "Various", stage: "Round of 16",  label: "Round of 16 begins" },
     { date: "2026-07-09", time: "TBD", home: "Quarterfinal", away: "",
