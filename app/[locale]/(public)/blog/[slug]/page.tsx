@@ -8,6 +8,7 @@ import RelatedBlogs from "@/app/[locale]/_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
 import WorldCupCalendarCard from "@/app/[locale]/_components/WorldCupCalendarCard";
 import NanoBananaExamples from "./NanoBananaExamples";
+import BlogRelatedHubs from "./BlogRelatedHubs";
 import CodeBlockCopyButtons from "./components/CodeBlockCopyButtons";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
@@ -608,6 +609,15 @@ export default async function BlogPostPage({
           locale={locale}
         />
       )}
+
+      {/* W1.3 — Blog → topic hub footer row. Channels the 76% blog
+          click share into /topics/* via a per-slug-curated + category-
+          derived mapping. See utils/blog-related-hubs.ts. */}
+      <BlogRelatedHubs
+        locale={locale}
+        slug={slug}
+        category={blogConfig.category}
+      />
 
       {/* Related Blogs */}
       <RelatedBlogs currentSlug={slug} locale={locale} />
