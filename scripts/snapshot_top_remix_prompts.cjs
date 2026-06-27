@@ -45,7 +45,17 @@ const isDryRun = args.includes("--dry-run");
 const BOT_UA =
   "bot|crawl|spider|slurp|http|preview|fetch|monitor|whatsapp|telegram|render";
 const TEST_USERS = [155, 1117];
-const TOP_N = 25;
+// Raised 25 → 40 on 2026-06-27 so HomeFusedRow has a larger interleave
+// pool now that the density bumped (every 2 templates instead of 3) +
+// the new fresh-picks tier slots in.
+const TOP_N = 40;
+// Window for the "fresh picks" tier — any prompt whose date or
+// createdAt falls inside this window AND came from a curated daily
+// drop gets promoted into a recency tier between featured + organic.
+// Catches the jun25 / jun26 image2image families without waiting for
+// them to accrue 30d copy signal organically.
+const FRESH_PICKS_DAYS = 14;
+const FRESH_PICKS_MAX  = 18;
 
 loadLocalEnv();
 
@@ -184,11 +194,50 @@ function hydrate(byId, contentId) {
   }
   // Sort featured by boost desc (so a 2000 boost outranks 1000)
   featuredPrompts.sort((a, b) => (b.featured_boost || 0) - (a.featured_boost || 0));
-  // Final list: featured first, then organic (filtered to avoid dupes),
-  // capped at TOP_N total.
-  const organicOnly = out.filter((p) => !featuredIds.has(p.id));
-  const merged = [...featuredPrompts, ...organicOnly].slice(0, TOP_N);
+
+  // Fresh-picks tier — newly-curated drops (jun25 pet-customization,
+  // jun26 surreal fashion, etc.) that haven't had time to accrue 30d
+  // copy signal. Promotes prompts whose `date` or `createdAt` is within
+  // FRESH_PICKS_DAYS AND whose sourceType marks them as curated drops
+  // (so we don't promote miscellaneous twitter scrapes). Sorted by date
+  // desc so the most-recently-added land first.
+  const freshIds = new Set();
+  const freshPrompts = [];
+  const freshCutoff = Date.now() - FRESH_PICKS_DAYS * 24 * 60 * 60 * 1000;
+  const isCurated = (p) =>
+    typeof p?.sourceType === "string" && p.sourceType.startsWith("curated");
+  const promptDate = (p) => {
+    const raw = p?.date || p?.createdAt;
+    if (typeof raw !== "string") return 0;
+    const t = Date.parse(raw);
+    return Number.isFinite(t) ? t : 0;
+  };
+  const freshCandidates = [];
+  for (const p of byId.values()) {
+    if (!isCurated(p)) continue;
+    const t = promptDate(p);
+    if (t === 0 || t < freshCutoff) continue;
+    if (featuredIds.has(p.id)) continue;  // featured wins, no double-listing
+    freshCandidates.push({ p, t });
+  }
+  freshCandidates.sort((a, b) => b.t - a.t);
+  for (const { p } of freshCandidates.slice(0, FRESH_PICKS_MAX)) {
+    const hydrated = hydrate(byId, String(p.id));
+    if (!hydrated) continue;
+    const existing = out.find((x) => x.id === hydrated.id);
+    hydrated.unique_copies_30d = existing?.unique_copies_30d ?? 0;
+    hydrated.total_copies_30d = existing?.total_copies_30d ?? 0;
+    freshPrompts.push(hydrated);
+    freshIds.add(hydrated.id);
+  }
+
+  // Final list: featured → fresh → organic (deduped), capped at TOP_N.
+  const organicOnly = out.filter(
+    (p) => !featuredIds.has(p.id) && !freshIds.has(p.id)
+  );
+  const merged = [...featuredPrompts, ...freshPrompts, ...organicOnly].slice(0, TOP_N);
   console.log(`  featured-boosted prompts prepended: ${featuredPrompts.length}`);
+  console.log(`  fresh-picks prompts inserted:      ${freshPrompts.length}`);
 
   const payload = {
     generated_at: new Date().toISOString(),
@@ -206,10 +255,14 @@ function hydrate(byId, contentId) {
   if (skipped) {
     console.log(`  skipped ${skipped} (not in nanobanana.json)`);
   }
-  console.log("\n  top 8 preview:");
-  for (const p of merged.slice(0, 8)) {
+  console.log("\n  top 12 preview:");
+  for (const p of merged.slice(0, 12)) {
     const t = (p.title || "").slice(0, 50);
-    const badge = (p.featured_boost || 0) > 0 ? "★F" : "  ";
+    const badge = (p.featured_boost || 0) > 0
+      ? "★F"
+      : freshIds.has(p.id)
+        ? "✦N"
+        : "  ";
     console.log(
       `   ${badge} ${String(p.unique_copies_30d).padStart(3)}u/${String(p.total_copies_30d).padStart(3)}t  ${String(p.id).padStart(5)}  ${t}`
     );

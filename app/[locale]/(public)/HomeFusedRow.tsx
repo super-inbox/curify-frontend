@@ -10,10 +10,12 @@ import WcSearchQueryCard from "@/app/[locale]/_components/WcSearchQueryCard";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import { useClickTracking } from "@/services/useTracking";
 
-// One gallery-prompt tile every N tiles. 1:3 keeps the gallery rail
-// visible without dominating the template feed. Easy to tune later
-// once CTR by tile-type comes back.
-const GALLERY_INTERLEAVE_RATIO = 4;
+// One gallery-prompt tile every N tiles. Raised density 2026-06-27:
+// 4 → 3 (one gallery tile per 2 templates instead of per 3) because
+// the recent image2image drops (jun25 pet customization, jun26
+// surreal fashion) are easier-to-remix content and users were
+// requesting more remix tiles in the rail.
+const GALLERY_INTERLEAVE_RATIO = 3;
 
 // One search-query tile every N tiles. Wider cadence than gallery —
 // these are navigational nudges, not content; too many becomes noise.
