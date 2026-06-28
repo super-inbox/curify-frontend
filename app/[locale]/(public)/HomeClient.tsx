@@ -8,6 +8,8 @@ import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCa
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import HomeToolsStrip from "./HomeToolsStrip";
+import HomeHero from "./HomeHero";
+import HomeSolutionsGrid from "./HomeSolutionsGrid";
 import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
 import { TOP_QUERIES } from "@/app/[locale]/(public)/topics/[slug]/TopSearchSuggestions";
 import HomeFusedRow, { type TopRemixPrompt } from "./HomeFusedRow";
@@ -61,9 +63,21 @@ export default function HomeClient({
     setTimeout(() => setModalState((prev) => ({ ...prev, card: null })), 200);
   }, []);
 
+  // Decorative montage pool for the hero — real generated outputs pulled from
+  // the same cards the rail renders below (no new assets/fetch).
+  const montageImages = nanoCards
+    .flatMap((c) => c.preview_image_urls ?? c.image_urls ?? [])
+    .filter(Boolean)
+    .slice(0, 18);
+
   return (
     <div className={classNames(inter.className, "w-full bg-[#FDFDFD] px-4 pb-10 pt-0 md:px-6 lg:px-10")}>
       <div className="w-full max-w-[1600px]">
+        {/* Storytelling flow — message + audience entry points, layered above
+            the existing content rail (kept below for discovery + indexation). */}
+        <HomeHero montageImages={montageImages} />
+        <HomeSolutionsGrid />
+
         {topRemixPrompts.length > 0 ? (
           <HomeFusedRow
             templates={nanoCards}
