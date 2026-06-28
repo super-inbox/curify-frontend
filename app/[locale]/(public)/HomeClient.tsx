@@ -10,6 +10,7 @@ import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import HomeToolsStrip from "./HomeToolsStrip";
 import HomeHero from "./HomeHero";
 import HomeSolutionsGrid from "./HomeSolutionsGrid";
+import HomeWorkflow from "./HomeWorkflow";
 import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
 import { TOP_QUERIES } from "@/app/[locale]/(public)/topics/[slug]/TopSearchSuggestions";
 import HomeFusedRow, { type TopRemixPrompt } from "./HomeFusedRow";
@@ -77,6 +78,7 @@ export default function HomeClient({
             the existing content rail (kept below for discovery + indexation). */}
         <HomeHero montageImages={montageImages} />
         <HomeSolutionsGrid />
+        <HomeWorkflow />
 
         {topRemixPrompts.length > 0 ? (
           <HomeFusedRow

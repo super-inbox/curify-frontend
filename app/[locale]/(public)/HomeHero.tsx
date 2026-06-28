@@ -36,10 +36,10 @@ export default function HomeHero({ montageImages = [] }: { montageImages?: strin
               Explore solutions
             </a>
             <Link
-              href="/search"
+              href="/nano-banana-pro-prompts"
               className="inline-flex items-center justify-center rounded-xl border border-neutral-300 bg-white px-5 py-3 text-sm font-bold text-neutral-800 transition-colors hover:bg-neutral-50"
             >
-              Try visual search
+              Browse the gallery
             </Link>
           </div>
         </div>
