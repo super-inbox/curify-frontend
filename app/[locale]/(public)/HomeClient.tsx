@@ -15,10 +15,6 @@ import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
 import { TOP_QUERIES } from "@/app/[locale]/(public)/topics/[slug]/TopSearchSuggestions";
 import HomeFusedRow, { type TopRemixPrompt } from "./HomeFusedRow";
 
-// Canva-style topic strip (per raw/canva-strip-06-28). Server-rendered
-// node passed in via the `topicStrip` prop so this client file stays
-// data-light (no full topic registry import).
-
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -34,7 +30,6 @@ export default function HomeClient({
   topRemixPrompts = [],
   searchQueries = [],
   discoveryStrip,
-  topicStrip,
 }: {
   locale?: string;
   nanoCards?: NanoInspirationCardType[];
@@ -52,11 +47,6 @@ export default function HomeClient({
    *  the tools strip so the homepage finally links to /topics and
    *  /use-cases. */
   discoveryStrip?: ReactNode;
-  /** Canva-style topic strip (2026-06-28). Server-rendered upstream so
-   *  this client file stays light. Mounted ABOVE the fused row as the
-   *  prominent "Explore templates" surface; the legacy pill-style
-   *  discoveryStrip stays below for now (operator A/B before swap). */
-  topicStrip?: ReactNode;
 }) {
   const requireAuth = useRequireAuth({ variant: "signup" });
 
@@ -89,8 +79,6 @@ export default function HomeClient({
         <HomeHero montageImages={montageImages} />
         <HomeSolutionsGrid />
         <HomeWorkflow />
-
-        {topicStrip}
 
         {topRemixPrompts.length > 0 ? (
           <HomeFusedRow

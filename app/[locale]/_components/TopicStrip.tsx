@@ -67,16 +67,23 @@ type Props = {
    *  (e.g. "home-strip" vs "topic-bottom-strip"). */
   trackPrefix?: string;
   className?: string;
+  /** When true, render as a single horizontally-scrollable row even on
+   *  desktop (instead of the default wrapping grid). Used in the sticky
+   *  top-bar where vertical space is constrained to a single rail. */
+  singleRow?: boolean;
 };
 
 function TopicTile({
   item,
   locale,
   trackPrefix,
+  compact,
 }: {
   item: TopicStripItem;
   locale: string;
   trackPrefix: string;
+  /** Compact (single-row sticky-bar) tile: shorter + narrower. */
+  compact?: boolean;
 }) {
   const { bg, ring } = paletteFor(item.slug);
   const thumbnail = THUMBS[item.slug];
@@ -86,24 +93,31 @@ function TopicTile({
     "topic_capsule",
     "cards"
   );
+  const sizeClass = compact
+    ? "h-[56px] min-w-[150px] flex-shrink-0"
+    : "h-[88px] min-w-[180px] flex-1";
+  const labelClass = compact
+    ? "line-clamp-1 text-sm font-semibold leading-tight text-neutral-900"
+    : "line-clamp-2 text-base font-semibold leading-tight text-neutral-900";
+  const padClass = compact ? "px-3 py-2" : "px-4 py-3";
+  const thumbWidth = compact ? "w-[56px]" : "w-[82px]";
+  const thumbSizes = compact ? "56px" : "82px";
   return (
     <Link
       href={href}
       onClick={trackClick}
-      className={`group relative flex h-[88px] min-w-[180px] flex-1 items-stretch overflow-hidden rounded-2xl ring-1 transition-all duration-200 hover:scale-[1.02] hover:shadow-md ${bg} ${ring}`}
+      className={`group relative flex items-stretch overflow-hidden rounded-2xl ring-1 transition-all duration-200 hover:scale-[1.02] hover:shadow-md ${bg} ${ring} ${sizeClass}`}
     >
-      <div className="flex flex-1 items-center px-4 py-3">
-        <span className="line-clamp-2 text-base font-semibold leading-tight text-neutral-900">
-          {item.label}
-        </span>
+      <div className={`flex flex-1 items-center ${padClass}`}>
+        <span className={labelClass}>{item.label}</span>
       </div>
       {thumbnail ? (
-        <div className="relative h-full w-[82px] flex-shrink-0">
+        <div className={`relative h-full flex-shrink-0 ${thumbWidth}`}>
           <CdnImage
             src={thumbnail}
             alt=""
             fill
-            sizes="82px"
+            sizes={thumbSizes}
             className="object-cover transition-transform duration-300 group-hover:scale-[1.05]"
             loading="lazy"
           />
@@ -119,11 +133,21 @@ export default function TopicStrip({
   heading,
   trackPrefix = "topic-strip",
   className,
+  singleRow,
 }: Props) {
   const t = useTranslations();
   void t; // reserved for future "See more" UX
 
   if (items.length === 0) return null;
+
+  // Two layouts:
+  //   - default: mobile horizontal scroll, desktop wrapping grid
+  //     (Canva landing-page treatment)
+  //   - singleRow: always a single horizontal scroll rail; used in the
+  //     sticky topbar where we have ~56px of vertical budget total
+  const layoutClass = singleRow
+    ? "flex gap-2 overflow-x-auto pb-1"
+    : "flex gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-5 xl:grid-cols-6";
 
   return (
     <section
@@ -135,16 +159,14 @@ export default function TopicStrip({
           {heading}
         </h2>
       ) : null}
-      {/* Horizontal-scrolling rail on mobile, wrapping grid on larger
-          viewports. Mirrors the Canva strip's behavior — visible peek
-          tile on the right edge to signal scrollability on mobile. */}
-      <div className="flex gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-5 xl:grid-cols-6">
+      <div className={layoutClass}>
         {items.map((item) => (
           <TopicTile
             key={item.slug}
             item={item}
             locale={locale}
             trackPrefix={trackPrefix}
+            compact={singleRow}
           />
         ))}
       </div>

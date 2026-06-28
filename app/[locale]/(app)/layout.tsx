@@ -15,7 +15,6 @@ import GoogleAnalyticsInit from "../_components/GoogleAnalyticsInit";
 
 import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
 
-import EntryBar from "@/app/[locale]/_components/EntryBar";
 import { headers } from "next/headers";
 
 export default async function AppLocaleLayout({
