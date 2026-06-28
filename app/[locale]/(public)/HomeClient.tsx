@@ -4,7 +4,7 @@ import { useCallback, useState, type ReactNode } from "react";
 import { Inter } from "next/font/google";
 import { useRequireAuth } from "@/services/useRequireAuth";
 
-import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
+import TemplateStrip from "@/app/[locale]/_components/TemplateStrip";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import HomeToolsStrip from "./HomeToolsStrip";
@@ -100,12 +100,14 @@ export default function HomeClient({
             }
           />
         ) : (
-          <NanoInspirationRow
+          // Fallback when the gallery snapshot is empty — render the
+          // legacy template list as the new strip UI (name + small icon
+          // + save). Live rail (above) is the primary path; this branch
+          // only fires when top_remix_prompts.json is empty.
+          <TemplateStrip
             cards={nanoCards}
-            requireAuth={requireAuth}
-            onViewClick={handleOpenModal}
-            maxRows={8}
-            topRightCell={<WcRotatingSlot locale={locale} queries={TOP_QUERIES["world-cup"]} />}
+            trackPrefix="home-fallback-template-strip"
+            maxRows={24}
           />
         )}
 

@@ -2,9 +2,8 @@
 
 import { useTranslations } from "next-intl";
 
-import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
+import TemplateStrip from "@/app/[locale]/_components/TemplateStrip";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
-import { useRequireAuth } from "@/services/useRequireAuth";
 
 import ReproduceTemplateSection, { type SampleImage } from "./ReproduceTemplateSection";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
@@ -40,8 +39,9 @@ export default function NanoTemplateDetailClient(props: {
     sampleImage,
   } = props;
 
-  const requireAuth = useRequireAuth();
-  const onViewClick = () => {};
+  // requireAuth / onViewClick removed 2026-06-29 with the
+  // NanoInspirationRow → TemplateStrip swap. TemplateStrip owns its
+  // own save-auth handshake.
 
   const shouldShowReproduce = showReproduce && !!template;
   const currentTopics = template?.topics;
@@ -63,14 +63,14 @@ export default function NanoTemplateDetailClient(props: {
             </div>
           )}
 
-          <NanoInspirationRow
-            cards={otherNanoCards}
-            requireAuth={requireAuth}
-            onViewClick={onViewClick}
-            maxRows={3}
-            getRelatedScore={(card) => {
-              return countCommonTopics(currentTopics, card.topics);
-            }}
+          <TemplateStrip
+            cards={[...otherNanoCards].sort(
+              (a, b) =>
+                countCommonTopics(currentTopics, b.topics) -
+                countCommonTopics(currentTopics, a.topics)
+            )}
+            trackPrefix="other-templates-strip"
+            maxRows={18}
           />
         </section>
       )}
