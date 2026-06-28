@@ -18235,5 +18235,55 @@
       "bold"
     ],
     "rank_score": 90.0
+  },
+  {
+    "id": "template-wc-knockout-matchup-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "Generate a single vertical 8K knockout-matchup FIGHT POSTER for FIFA World Cup 2026 — {team_a} vs {team_b}. Aesthetic: bold cinematic boxing/UFC fight-card poster crossed with a modern football editorial cover. Magazine-quality stylized illustration, NOT photorealistic faces (avoids uncanny valley). VERTICAL 3:4 portrait, two zones. TOP 70% — 1v1 BATTLE VISUAL: split-screen backgrounds (LEFT = {team_a} sports-poster vocabulary, RIGHT = {team_b} sports-poster vocabulary; NO literal flag-tearing or militaristic motifs). LEFT player: {star_a_name} of {team_a} in {team_a} home kit, knee-up framing, attacking pose, ball at feet, fierce focus looking right. RIGHT player: {star_b_name} of {team_b} in {team_b} home kit, mirror attacking pose. HUGE gold metallic 'VS' between them with crossed gold soccer boots. Header strip: '{stage} · FIFA WORLD CUP 2026' with trophy icon. Player nameplates: '{star_a_name}' (gold, left) + '{star_b_name}' (silver-blue, right) with club subtitles. BOTTOM 30% — LIGHT INFO STRIP: two columns separated by gold vertical line. LEFT 'MATCH BASICS': date+time, venue, coaches matchup, betting odds. RIGHT 'WHAT TO WATCH': 4 emoji-led one-liners. Footer: 'Generated for Curify · Tap any tile to remix'. All English text legible; stylized illustration only.",
+        "parameters": {
+          "name": "matchup",
+          "label": "Knockout matchup (TeamA vs TeamB + Stage + Venue + Stars)",
+          "type": "text",
+          "placeholder": [
+            "Brazil vs Japan · Round of 32 · NRG Stadium · Vinícius vs Kubo",
+            "France vs Sweden · Round of 32 · MetLife · Mbappé vs Gyökeres",
+            "Germany vs Paraguay · Round of 32 · Gillette · Musiala vs Almirón"
+          ]
+        }
+      },
+      "zh": {
+        "base_prompt": "Generate a single vertical 8K knockout-matchup FIGHT POSTER for FIFA World Cup 2026 — {team_a} vs {team_b}. Aesthetic: bold cinematic boxing/UFC fight-card poster crossed with a modern football editorial cover. Magazine-quality stylized illustration, NOT photorealistic faces (avoids uncanny valley). VERTICAL 3:4 portrait, two zones. TOP 70% — 1v1 BATTLE VISUAL: split-screen backgrounds (LEFT = {team_a} sports-poster vocabulary, RIGHT = {team_b} sports-poster vocabulary; NO literal flag-tearing or militaristic motifs). LEFT player: {star_a_name} of {team_a} in {team_a} home kit, knee-up framing, attacking pose, ball at feet, fierce focus looking right. RIGHT player: {star_b_name} of {team_b} in {team_b} home kit, mirror attacking pose. HUGE gold metallic 'VS' between them with crossed gold soccer boots. Header strip: '{stage} · FIFA WORLD CUP 2026' with trophy icon. Player nameplates: '{star_a_name}' (gold, left) + '{star_b_name}' (silver-blue, right) with club subtitles. BOTTOM 30% — LIGHT INFO STRIP: two columns separated by gold vertical line. LEFT 'MATCH BASICS': date+time, venue, coaches matchup, betting odds. RIGHT 'WHAT TO WATCH': 4 emoji-led one-liners. Footer: 'Generated for Curify · Tap any tile to remix'. All English text legible; stylized illustration only.",
+        "parameters": {
+          "name": "matchup",
+          "label": "淘汰赛对阵海报（队伍A vs 队伍B + 阶段 + 球场 + 明星对位）",
+          "type": "text",
+          "placeholder": [
+            "巴西 vs 日本 · 32强 · NRG球场 · 维尼修斯 vs 久保建英",
+            "法国 vs 瑞典 · 32强 · 大都会球场 · 姆巴佩 vs 约凯雷斯",
+            "德国 vs 巴拉圭 · 32强 · 吉列球场 · 穆夏拉 vs 阿尔米隆"
+          ]
+        }
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-wc-knockout-matchup-poster-brazil-vs-japan-prev.jpg",
+    "topics": [
+      "design",
+      "posters",
+      "mood-board",
+      "social-media-posts",
+      "art-prints",
+      "digital-canvas",
+      "illustration",
+      "bold",
+      "dramatic",
+      "modern",
+      "dynamic",
+      "cinematic",
+      "iconic",
+      "vibrant",
+      "split-screen"
+    ],
+    "rank_score": 95.0
   }
 ]
