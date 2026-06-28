@@ -16,6 +16,19 @@ import { isFullyLocalizedTopic } from "@/lib/topicRegistry_pure";
 
 const TOPIC_LIMIT = 12;
 
+// Slug → destination override. When a topic slug maps to a stronger
+// use-case destination, redirect there instead of the generic
+// /topics/<slug> hub. The slug is still used for color + thumbnail
+// (so the tile keeps its identity), only the click target changes.
+//
+// Order matters: a slug present here takes precedence over /topics/<slug>.
+const HOME_PATH_OVERRIDES: Record<string, string> = {
+  // /topics/design exists but the use-case landing converts better on
+  // the operator-targeted designer audience (multi-template workflow
+  // pitch instead of a flat topic grid). 2026-06-29 swap per operator.
+  design: "/use-cases/for-designers",
+};
+
 export default async function HomeTopicStrip({ locale }: { locale: string }) {
   const t = await getTranslations({ locale });
   const tDiscovery = await getTranslations({ locale, namespace: "home.discovery" });
@@ -27,7 +40,8 @@ export default async function HomeTopicStrip({ locale }: { locale: string }) {
     .map((tp) => {
       const labelKey = `topics.${tp.id}.displayName`;
       const label = t.has(labelKey) ? t(labelKey) : tp.id;
-      return { slug: tp.id, path: `/topics/${tp.id}`, label };
+      const path = HOME_PATH_OVERRIDES[tp.id] ?? `/topics/${tp.id}`;
+      return { slug: tp.id, path, label };
     });
 
   return (

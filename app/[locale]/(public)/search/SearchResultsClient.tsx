@@ -10,6 +10,7 @@ import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/Exam
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
 import GenerableTemplatesSection from "./GenerableTemplatesSection";
+import TopicStrip, { type TopicStripItem } from "@/app/[locale]/_components/TopicStrip";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import type { SuggestionEntry } from "@/lib/searchIndex";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
@@ -68,6 +69,17 @@ function chipHref(s: SuggestionEntry, locale: string): string {
   return `/${locale}/topics/${s.slug}`;
 }
 
+// Bare (locale-prefix-free) variant of chipHref. TopicStrip prepends
+// /<locale> itself via getCanonicalPath, so we pass the raw path.
+function chipBarePath(s: SuggestionEntry): string {
+  if (s.href) return s.href;
+  if (s.searchFallback) {
+    const q = s.aliases?.[0] ?? s.slug;
+    return `/search?q=${encodeURIComponent(q)}`;
+  }
+  return `/topics/${s.slug}`;
+}
+
 export default function SearchResultsClient({
   query,
   locale,
@@ -90,6 +102,18 @@ export default function SearchResultsClient({
   const renderLabel = useCallback(
     (slug: string, fallback: string) => localize(slug) ?? fallback,
     [localize]
+  );
+
+  // Adapter — SuggestionEntry[] → TopicStripItem[] for the Canva-style
+  // related-topics strips (empty-state + bottom soft-footer).
+  const relatedTopicStripItems: TopicStripItem[] = useMemo(
+    () =>
+      relatedTopics.map((s) => ({
+        slug: s.slug,
+        path: chipBarePath(s),
+        label: renderLabel(s.slug, s.label),
+      })),
+    [relatedTopics, renderLabel]
   );
 
   // Cap at 3 examples per template_id — keeps results diverse without
@@ -255,19 +279,15 @@ export default function SearchResultsClient({
       </p>
 
       {!hasResults ? (
-        <div className="py-16 text-center">
-          <p className="text-neutral-400 mb-4">Try browsing a topic instead:</p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {relatedTopics.map((s) => (
-              <Link
-                key={s.slug}
-                href={chipHref(s, locale)}
-                className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
-              >
-                {s.emoji} {renderLabel(s.slug, s.label)}
-              </Link>
-            ))}
-          </div>
+        <div className="py-12">
+          <p className="mb-4 text-center text-neutral-400">
+            Try browsing a topic instead:
+          </p>
+          <TopicStrip
+            items={relatedTopicStripItems}
+            locale={locale}
+            trackPrefix="search-empty-strip"
+          />
         </div>
       ) : (
         <>
@@ -390,23 +410,18 @@ export default function SearchResultsClient({
         </>
       )}
 
-      {/* Related-query chips — moved to the bottom so the page leads
+      {/* Related-query strip — moved to the bottom so the page leads
           with actual results / the rewrite hint, and the "what else
           could I look at" fork sits as a soft footer for users who
           scrolled past everything without converting. */}
       {relatedTopics.length > 0 && (
-        <div className="mt-12 flex flex-wrap gap-2 border-t border-neutral-200 pt-8">
-          <span className="text-sm text-neutral-500 self-center">Browse:</span>
-          {relatedTopics.map((s) => (
-            <Link
-              key={s.slug}
-              href={chipHref(s, locale)}
-              className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
-            >
-              {s.emoji && <span>{s.emoji}</span>}
-              {renderLabel(s.slug, s.label)}
-            </Link>
-          ))}
+        <div className="mt-12 border-t border-neutral-200 pt-8">
+          <TopicStrip
+            items={relatedTopicStripItems}
+            locale={locale}
+            heading="Browse"
+            trackPrefix="search-bottom-strip"
+          />
         </div>
       )}
     </div>

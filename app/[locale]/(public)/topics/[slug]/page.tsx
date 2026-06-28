@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import TopicStrip from "@/app/[locale]/_components/TopicStrip";
 
 import {
   type RawTemplate,
@@ -440,15 +441,15 @@ export default async function Page({ params }: Props) {
 
       {tagSubTopics.length > 0 && (
         <section className="mx-auto max-w-[1600px] px-4 pb-16 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
-            {subTopicsHeading}
-          </h2>
-          <TopicNavRow
+          <TopicStrip
             locale={localeStr}
-            allTopics={getTopicNavList()}
-            topics={tagSubTopics}
-            showDisabled={false}
-            size="default"
+            heading={subTopicsHeading}
+            trackPrefix={`topic-bottom-strip:${slug}`}
+            items={tagSubTopics.map((subSlug) => ({
+              slug: subSlug,
+              path: `/topics/${subSlug}`,
+              label: translateTopics(`topics.${subSlug}.displayName`) || titleCaseFromSlug(subSlug),
+            }))}
           />
         </section>
       )}
