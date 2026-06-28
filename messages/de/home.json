@@ -7,8 +7,11 @@
       "ogDescription": "Verwandeln Sie Trends und Ideen in strukturierte visuelle Inhalte. Inspirationskarten, KI-Infografiken, Videoübersetzung und Lokalisierung – alles auf einer Plattform."
     },
     "hero": {
-      "title": "Ideen entdecken | Visuell ausdrücken | Inhalte erstellen",
-      "description": "Curify ist eine Plattform für visuelles Denken, die Trends, Ideen und Wissen in strukturierte, teilbare Inhalte verwandelt. Von Inspirationskarten und KI-Infografiken bis hin zu Untertiteln, Übersetzung und Lip-Sync-Synchronisation – wir verbinden Inspiration mit Produktion."
+      "title1": "Mach nicht nur ein Bild.",
+      "title2": "Bring die Arbeit zu Ende.",
+      "subtitle": "Curify hilft dir, Inspiration zu finden, Visuals zu generieren, weltweit zu lokalisieren und über jeden Kanal zu skalieren – Design, Bildung, Marketing und Commerce.",
+      "ctaPrimary": "Lösungen entdecken",
+      "ctaSecondary": "Galerie durchsuchen"
     },
     "toolsStrip": {
       "title": "Werkzeuge, um es zum Leben zu erwecken",
@@ -20,6 +23,63 @@
       "topicsSubtitle": "Vorlagen in unseren beliebtesten Kategorien.",
       "useCasesTitle": "Nach Anwendungsfall durchsuchen",
       "useCasesSubtitle": "Finden Sie Vorlagen, die zu Ihrem Projekt passen."
+    },
+    "solutions": {
+      "heading": "Eine Plattform. Sechs Anwendungen.",
+      "subheading": "Wähle die Aufgabe, die du erledigen willst.",
+      "explore": "Entdecken →",
+      "items": {
+        "merch": {
+          "label": "Merch & POD",
+          "message": "Aus einer Idee 100 Produkte machen."
+        },
+        "design": {
+          "label": "Designer",
+          "message": "Finde wiederverwendbare Design-Inspiration in Sekunden."
+        },
+        "education": {
+          "label": "Bildung",
+          "message": "Erstelle zweisprachige Lerninhalte in großem Maßstab."
+        },
+        "video": {
+          "label": "Video-Creator",
+          "message": "Übersetze und untertitle Videos für ein globales Publikum."
+        },
+        "marketing": {
+          "label": "Marketing & SEO",
+          "message": "Baue mehrsprachige visuelle Inhalte, die ranken."
+        },
+        "developers": {
+          "label": "Entwickler",
+          "message": "Integriere visuelle KI in Tagen statt Monaten in dein Produkt."
+        }
+      }
+    },
+    "workflow": {
+      "heading": "Ein Workflow, von Anfang bis Ende.",
+      "subheading": "Von einer Idee zu produktionsreifen Inhalten, in jeder Sprache.",
+      "steps": {
+        "find": {
+          "title": "Inspiration finden",
+          "desc": "Durchsuche Galerie und Asset-Bibliothek."
+        },
+        "understand": {
+          "title": "Designs verstehen",
+          "desc": "Extrahiere wiederverwendbare Motive, Texte & Stil-Tags."
+        },
+        "create": {
+          "title": "Visuals erstellen",
+          "desc": "Generiere aus KI-Vorlagen und Prompts."
+        },
+        "adapt": {
+          "title": "Für die Produktion anpassen",
+          "desc": "Typografie, druckfertige Dateien & Produkt-Mockups."
+        },
+        "scale": {
+          "title": "Global skalieren",
+          "desc": "Übersetzen, lokalisieren & verteilen via SEO + API."
+        }
+      }
     }
   },
   "coreFeatures": {

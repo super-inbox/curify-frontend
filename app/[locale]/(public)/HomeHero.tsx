@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 
@@ -7,9 +8,11 @@ import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
  * Storytelling hero: a strong workflow-led message on the left, a gentle
  * auto-scrolling montage of REAL generated outputs on the right (proof-first,
  * reuses existing CDN assets — purely decorative, the indexable content rail
- * lives below). Respects prefers-reduced-motion.
+ * lives below). Respects prefers-reduced-motion. Copy in messages/<locale>/home.json
+ * under home.hero.
  */
 export default function HomeHero({ montageImages = [] }: { montageImages?: string[] }) {
+  const t = useTranslations("home.hero");
   const imgs = montageImages.filter(Boolean).slice(0, 18);
   const cols = [0, 1, 2].map((m) => imgs.filter((_, i) => i % 3 === m));
 
@@ -19,27 +22,25 @@ export default function HomeHero({ montageImages = [] }: { montageImages?: strin
         {/* Left — message */}
         <div className="max-w-xl">
           <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-neutral-900 sm:text-5xl">
-            Don&apos;t just make an image.
+            {t("title1")}
             <br />
-            <span className="text-purple-600">Finish the job.</span>
+            <span className="text-purple-600">{t("title2")}</span>
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-neutral-600">
-            Curify helps you search inspiration, generate visuals, localize for the
-            world, and scale across every channel — design, education, marketing,
-            and commerce.
+            {t("subtitle")}
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a
               href="#solutions"
               className="inline-flex items-center justify-center rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-purple-700"
             >
-              Explore solutions
+              {t("ctaPrimary")}
             </a>
             <Link
               href="/nano-banana-pro-prompts"
               className="inline-flex items-center justify-center rounded-xl border border-neutral-300 bg-white px-5 py-3 text-sm font-bold text-neutral-800 transition-colors hover:bg-neutral-50"
             >
-              Browse the gallery
+              {t("ctaSecondary")}
             </Link>
           </div>
         </div>

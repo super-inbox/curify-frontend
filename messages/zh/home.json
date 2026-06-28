@@ -7,8 +7,11 @@
       "ogDescription": "将趋势与想法转化为结构化视觉内容。灵感卡片、AI 信息图、视频翻译与本地化工具，一站式完成。"
     },
     "hero": {
-      "title": "发现灵感 | 视觉表达 | 创作内容",
-      "description": "Curify 将趋势与知识转化为结构化、可分享的视觉内容。从灵感卡片和 AI 信息图，到字幕生成、视频翻译与口型同步配音，帮助创作者更高效发布内容。"
+      "title1": "不只是生成一张图片，",
+      "title2": "把整件事做完。",
+      "subtitle": "Curify 帮你搜索灵感、生成视觉内容、本地化到全球，并在每个渠道规模化——设计、教育、营销与电商。",
+      "ctaPrimary": "浏览解决方案",
+      "ctaSecondary": "浏览图库"
     },
     "toolsStrip": {
       "title": "将其变为现实的工具",
@@ -20,6 +23,63 @@
       "topicsSubtitle": "我们最受欢迎类别中的模板。",
       "useCasesTitle": "按用例浏览",
       "useCasesSubtitle": "找到与您正在处理的内容匹配的模板。"
+    },
+    "solutions": {
+      "heading": "一个平台，六种用法。",
+      "subheading": "选择你要完成的工作。",
+      "explore": "了解更多 →",
+      "items": {
+        "merch": {
+          "label": "商品设计与 POD",
+          "message": "一个创意，变成 100 款产品。"
+        },
+        "design": {
+          "label": "设计师",
+          "message": "几秒钟找到可复用的设计灵感。"
+        },
+        "education": {
+          "label": "教育",
+          "message": "规模化生成双语学习内容。"
+        },
+        "video": {
+          "label": "视频创作者",
+          "message": "为全球观众翻译并加字幕。"
+        },
+        "marketing": {
+          "label": "营销与 SEO",
+          "message": "打造能带来排名的多语种视觉内容。"
+        },
+        "developers": {
+          "label": "开发者",
+          "message": "几天内把视觉 AI 接入你的产品。"
+        }
+      }
+    },
+    "workflow": {
+      "heading": "一条端到端的工作流。",
+      "subheading": "从一个创意到可投产的内容，任意语言。",
+      "steps": {
+        "find": {
+          "title": "寻找灵感",
+          "desc": "在图库与素材库中搜索。"
+        },
+        "understand": {
+          "title": "理解设计",
+          "desc": "提取可复用的主体、文字与风格标签。"
+        },
+        "create": {
+          "title": "创作视觉",
+          "desc": "用 AI 模板与提示词生成。"
+        },
+        "adapt": {
+          "title": "适配生产",
+          "desc": "排版、可印刷文件与产品样机。"
+        },
+        "scale": {
+          "title": "全球规模化",
+          "desc": "通过 SEO + API 翻译、本地化与分发。"
+        }
+      }
     }
   },
   "coreFeatures": {

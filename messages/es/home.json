@@ -7,8 +7,11 @@
       "ogDescription": "Transforma tendencias e ideas en contenido visual estructurado. Tarjetas de inspiración, infografías con IA, traducción de video y herramientas de localización — todo en una sola plataforma."
     },
     "hero": {
-      "title": "Descubre Ideas | Expresa Visualmente | Crea Contenido",
-      "description": "Curify es una plataforma de pensamiento visual que transforma tendencias, ideas y conocimiento en contenido estructurado y compartible. Desde tarjetas de inspiración e infografías con IA hasta subtítulos, traducción y doblaje con sincronización labial."
+      "title1": "No solo hagas una imagen.",
+      "title2": "Termina el trabajo.",
+      "subtitle": "Curify te ayuda a buscar inspiración, generar visuales, localizar para el mundo y escalar en cada canal: diseño, educación, marketing y comercio.",
+      "ctaPrimary": "Explorar soluciones",
+      "ctaSecondary": "Explorar la galería"
     },
     "toolsStrip": {
       "title": "Herramientas para darle vida",
@@ -20,6 +23,63 @@
       "topicsSubtitle": "Plantillas en nuestras categorías más populares.",
       "useCasesTitle": "Explorar por caso de uso",
       "useCasesSubtitle": "Encuentra plantillas que se adapten a lo que estás trabajando."
+    },
+    "solutions": {
+      "heading": "Una plataforma. Seis formas de usarla.",
+      "subheading": "Elige el trabajo que vienes a hacer.",
+      "explore": "Explorar →",
+      "items": {
+        "merch": {
+          "label": "Merch y POD",
+          "message": "Convierte una idea en 100 productos."
+        },
+        "design": {
+          "label": "Diseñadores",
+          "message": "Encuentra inspiración de diseño reutilizable en segundos."
+        },
+        "education": {
+          "label": "Educación",
+          "message": "Crea contenido educativo bilingüe a escala."
+        },
+        "video": {
+          "label": "Creadores de video",
+          "message": "Traduce y subtitula videos para audiencias globales."
+        },
+        "marketing": {
+          "label": "Marketing y SEO",
+          "message": "Crea contenido visual multilingüe que posiciona."
+        },
+        "developers": {
+          "label": "Desarrolladores",
+          "message": "Integra IA visual en tu producto en días, no meses."
+        }
+      }
+    },
+    "workflow": {
+      "heading": "Un flujo de trabajo, de principio a fin.",
+      "subheading": "De una sola idea a contenido listo para producción, en cualquier idioma.",
+      "steps": {
+        "find": {
+          "title": "Encontrar inspiración",
+          "desc": "Busca en la galería y la biblioteca de recursos."
+        },
+        "understand": {
+          "title": "Entender diseños",
+          "desc": "Extrae sujetos, textos y etiquetas de estilo reutilizables."
+        },
+        "create": {
+          "title": "Crear visuales",
+          "desc": "Genera a partir de plantillas de IA y prompts."
+        },
+        "adapt": {
+          "title": "Adaptar para producción",
+          "desc": "Tipografía, archivos listos para imprimir y mockups de producto."
+        },
+        "scale": {
+          "title": "Escalar globalmente",
+          "desc": "Traduce, localiza y distribuye con SEO + API."
+        }
+      }
     }
   },
   "coreFeatures": {
