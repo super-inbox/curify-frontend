@@ -18,6 +18,14 @@ type ShareButtonProps = {
    */
   compact?: boolean;
   /**
+   * Icon-only rendering — hides the "Share" / "Shared" / "Copied!" text
+   * label so the button is just the icon. Used on the dense example
+   * grid cards where the text label competes with the CTA pill. The
+   * status transition still flips the icon (Share → Check) so the
+   * confirmation feedback isn't lost.
+   */
+  iconOnly?: boolean;
+  /**
    * Fires whenever the burst panel opens or closes. Useful for the parent
    * to bump its own z-index while the panel is visible — without that, the
    * panel can be painted under sibling cards from the next grid row.
@@ -103,6 +111,7 @@ export default function ShareButton({
   className = "",
   onShared,
   compact = false,
+  iconOnly = false,
   onOpenChange,
 }: ShareButtonProps) {
   const [status, setStatus] = useState<"idle" | "shared" | "copied">("idle");
@@ -244,11 +253,15 @@ export default function ShareButton({
         aria-label="Share"
         aria-expanded={isOpen}
       >
-        <Share
-          className={compact ? "h-3.5 w-3.5" : "h-4 w-4 transition-transform duration-300"}
-          style={{ transform: isOpen ? "rotate(20deg)" : "rotate(0deg)" }}
-        />
-        {label}
+        {iconOnly && (status === "shared" || status === "copied") ? (
+          <Check className={compact ? "h-3.5 w-3.5" : "h-4 w-4"} />
+        ) : (
+          <Share
+            className={compact ? "h-3.5 w-3.5" : "h-4 w-4 transition-transform duration-300"}
+            style={{ transform: isOpen ? "rotate(20deg)" : "rotate(0deg)" }}
+          />
+        )}
+        {iconOnly ? null : label}
       </button>
 
       {/* Compact mode: floating panel rendered via portal so it escapes

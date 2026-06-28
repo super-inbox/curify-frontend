@@ -211,7 +211,7 @@ function ExampleImageCard({
 
       {showCaption && item.title && (
         <p
-          className="px-3 pt-2 text-xs text-neutral-700 line-clamp-1"
+          className="px-3 pt-2 text-sm font-bold text-neutral-900 line-clamp-2"
           title={item.title}
         >
           {item.title}
@@ -242,6 +242,7 @@ function ExampleImageCard({
         )}
         <ShareButton
           compact
+          iconOnly
           url={shareUrl}
           title={item.title || item.id}
           text={`Check out this Nano Banana example: ${item.title || item.id}`}

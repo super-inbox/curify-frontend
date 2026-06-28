@@ -3,11 +3,14 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
 import WcSearchQueryCard from "@/app/[locale]/_components/WcSearchQueryCard";
+import { SITE_URL } from "@/lib/constants";
 import { toSlug } from "@/lib/nano_pure";
-import { useClickTracking } from "@/services/useTracking";
+import { useClickTracking, useTracking } from "@/services/useTracking";
 
 // One gallery-prompt tile every N tiles. Raised density 2026-06-27:
 // 4 → 3 (one gallery tile per 2 templates instead of per 3) because
@@ -72,14 +75,27 @@ function ExampleTile({
     "nano_inspiration_example_grid",
     "cards"
   );
-  const href = `/${locale}/nano-template/${toSlug(tile.templateId)}/example/${encodeURIComponent(tile.id)}`;
+  const { trackAction } = useTracking();
+  const t = useTranslations("actionButtons");
+  const slug = toSlug(tile.templateId);
+  const examplePageHref = `/${locale}/nano-template/${slug}/example/${encodeURIComponent(tile.id)}`;
+  const remixHref = `/${locale}/nano-template/${slug}#reproduce`;
+  const shareUrl = `${SITE_URL}${examplePageHref}`;
+  const shareTracking = {
+    contentId: tile.id,
+    contentType: "nano_inspiration_example_grid" as const,
+    viewMode: "cards" as const,
+  };
+  // Card UI mirrors the ExampleImagesGrid card (image → bold title →
+  // CTA + iconOnly Share row) so home / topic / search / use-case
+  // surfaces all render the same affordances.
   return (
-    <Link
-      href={href}
-      onClick={trackClick}
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white p-3 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-lg"
-    >
-      <div className="relative mb-2 aspect-[1/1] overflow-hidden rounded-xl bg-neutral-50">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-lg">
+      <Link
+        href={examplePageHref}
+        onClick={trackClick}
+        className="relative aspect-[1/1] overflow-hidden bg-neutral-50"
+      >
         <CdnImage
           src={tile.preview}
           alt={tile.title || "Example"}
@@ -87,16 +103,34 @@ function ExampleTile({
           className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           loading="lazy"
         />
-      </div>
+      </Link>
       {tile.title ? (
-        <h3
-          className="line-clamp-2 text-sm font-semibold text-neutral-900"
+        <p
+          className="px-3 pt-2 text-sm font-bold text-neutral-900 line-clamp-2"
           title={tile.title}
         >
           {tile.title}
-        </h3>
+        </p>
       ) : null}
-    </Link>
+      <div className="mt-auto flex items-center justify-between px-3 py-2">
+        <Link
+          href={remixHref}
+          onClick={trackClick}
+          className="inline-flex items-center gap-1.5 rounded-full bg-purple-600 px-3 py-1 text-sm font-bold text-white shadow-sm transition-colors hover:bg-purple-700"
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          {t("remixThis")}
+        </Link>
+        <ShareButton
+          compact
+          iconOnly
+          url={shareUrl}
+          title={tile.title || tile.id}
+          text={`Check out this Nano Banana example: ${tile.title || tile.id}`}
+          onShared={() => trackAction(shareTracking, "share")}
+        />
+      </div>
+    </div>
   );
 }
 
