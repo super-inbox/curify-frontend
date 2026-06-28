@@ -112,7 +112,12 @@ function bestImageFor(slug) {
   if (candidates.length === 0) return null;
   candidates.sort((a, b) => (b.rank_score || 0) - (a.rank_score || 0));
   const top = candidates[0];
-  const u = top?.asset?.image_url || top?.asset?.preview_image_url || null;
+  // Prefer preview_image_url over the full image — the strip renders
+  // tiles at 56-82px wide and CdnImage defaults unoptimized=true (no
+  // Vercel transformations), so loading the full 500KB-3MB JPG just
+  // to display a 56px thumbnail is wasteful. Many records carry a
+  // genuine smaller preview in /images/nano_insp_preview/...
+  const u = top?.asset?.preview_image_url || top?.asset?.image_url || null;
   return u || null;
 }
 
