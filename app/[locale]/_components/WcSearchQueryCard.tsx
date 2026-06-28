@@ -61,19 +61,11 @@ export default function WcSearchQueryCard({ locale, query, className }: Props) {
         </div>
       </div>
 
-      {/* Bottom hint */}
-      <div className="flex-1 min-h-0 flex flex-col justify-end">
-        <p className="text-[11px] text-neutral-700 leading-tight">
-          Click to see visual answers for this query — examples, templates, ready-to-generate prompts.
-        </p>
-      </div>
-
-      {/* Footer CTA */}
-      <div className="mt-2 flex items-center justify-between border-t border-purple-100 pt-2">
-        <span className="text-[11px] font-semibold text-purple-700 group-hover:underline">
-          See visual answers →
-        </span>
-      </div>
+      {/* Hint + footer CTA rows removed 2026-06-29 — the parent rail
+          now mixes these cards with example tiles, and the extra
+          two-row footer made the WC query card visibly taller than
+          its neighbors. The image card alone with its "✨ Try it"
+          badge carries the same affordance. */}
     </Link>
   );
 }

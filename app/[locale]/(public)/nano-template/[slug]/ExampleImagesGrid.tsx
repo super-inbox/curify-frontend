@@ -211,7 +211,7 @@ function ExampleImageCard({
 
       {showCaption && item.title && (
         <p
-          className="px-3 pt-2 text-xs text-neutral-700 line-clamp-1"
+          className="px-3 pt-2 text-sm font-bold text-neutral-900 line-clamp-2"
           title={item.title}
         >
           {item.title}
@@ -223,7 +223,7 @@ function ExampleImageCard({
             type="button"
             onClick={handleDownload}
             disabled={isDownloading}
-            className="flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900 disabled:opacity-60"
+            className="inline-flex items-center gap-1.5 rounded-full bg-purple-600 px-3 py-1 text-sm font-bold text-white shadow-sm transition-colors hover:bg-purple-700 disabled:opacity-60"
           >
             <Download className="h-3.5 w-3.5" />
             {isDownloading ? t("downloadingPack") : t("downloadPack")}
@@ -234,7 +234,7 @@ function ExampleImageCard({
             onClick={() => {
               document.getElementById("reproduce")?.scrollIntoView({ behavior: "smooth", block: "start" });
             }}
-            className="flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
+            className="inline-flex items-center gap-1.5 rounded-full bg-purple-600 px-3 py-1 text-sm font-bold text-white shadow-sm transition-colors hover:bg-purple-700"
           >
             <Sparkles className="h-3.5 w-3.5" />
             {t("remixThis")}
@@ -242,6 +242,7 @@ function ExampleImageCard({
         )}
         <ShareButton
           compact
+          iconOnly
           url={shareUrl}
           title={item.title || item.id}
           text={`Check out this Nano Banana example: ${item.title || item.id}`}

@@ -13,6 +13,9 @@ import ExampleImagesGrid from "./ExampleImagesGrid";
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
 
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import TopicStrip from "@/app/[locale]/_components/TopicStrip";
+import { resolveTopicPath } from "@/lib/topic_path_overrides";
+import { titleCaseFromSlug } from "@/lib/locale_utils";
 
 import {
   buildNanoTemplateMetadata,
@@ -171,15 +174,22 @@ export default async function NanoTemplatePage({ params }: Props) {
             <h1 className="text-2xl font-bold text-neutral-900">{h1}</h1>
             <p className="mt-2 text-sm text-neutral-600">{intro}</p>
 
+            {/* Top template-topic chip row → sr-only on 2026-06-29
+                per operator. The link tonnage matters for Google's
+                internal-link graph (templates → /topics/<slug>),
+                but visually it noises up the hero. Moved to the
+                bottom TopicStrip below for end-user display. */}
             {templateTopics.length > 0 ? (
-  <TopicNavRow
-    locale={pageLocale}
-    allTopics={getTopicNavList()}
-    topics={templateTopics}
-    className="mt-4 mb-0"
-    showDisabled={false}
-  />
-) : null}
+              <div className="sr-only">
+                <TopicNavRow
+                  locale={pageLocale}
+                  allTopics={getTopicNavList()}
+                  topics={templateTopics}
+                  className="mt-4 mb-0"
+                  showDisabled={false}
+                />
+              </div>
+            ) : null}
           </div>
 
           {categoryLabel ? (
@@ -300,8 +310,12 @@ export default async function NanoTemplatePage({ params }: Props) {
         </section>
       ) : null}
 
+      {/* 'Explore More' tier-3 tag chip row → sr-only on 2026-06-29.
+          Same SEO-link rationale as the top-of-page chip row. The
+          visible end-user surface is the merged TopicStrip block at
+          the bottom (below). */}
       {tagSubTopics.length > 0 && (
-        <section className="mt-10">
+        <section className="sr-only mt-10">
           <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
             Explore More
           </h2>
@@ -314,6 +328,36 @@ export default async function NanoTemplatePage({ params }: Props) {
           />
         </section>
       )}
+
+      {/* End-user-visible topic browsing surface — merged templateTopics
+          + tagSubTopics into ONE TopicStrip at the bottom (per the
+          /topics/<slug> pattern shipped 094ad8cb). Dedupe preserves
+          template-topics-first ordering since those are the canonical
+          categories this template participates in. */}
+      {(() => {
+        const merged: string[] = [];
+        const seen = new Set<string>();
+        for (const id of [...templateTopics, ...tagSubTopics]) {
+          if (seen.has(id)) continue;
+          seen.add(id);
+          merged.push(id);
+        }
+        if (merged.length === 0) return null;
+        return (
+          <section className="mt-10 pb-4">
+            <TopicStrip
+              locale={pageLocale}
+              heading="Browse topics"
+              trackPrefix="nano-template-bottom-strip"
+              items={merged.map((subSlug) => ({
+                slug: subSlug,
+                path: resolveTopicPath(subSlug),
+                label: titleCaseFromSlug(subSlug),
+              }))}
+            />
+          </section>
+        );
+      })()}
 
     </main>
   );

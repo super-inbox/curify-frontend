@@ -13,6 +13,9 @@ import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage"
 import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
 import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import TopicStrip from "@/app/[locale]/_components/TopicStrip";
+import { resolveTopicPath } from "@/lib/topic_path_overrides";
+import { titleCaseFromSlug } from "@/lib/locale_utils";
 import { getTopicNavList } from "@/lib/topicRegistry";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
@@ -97,8 +100,12 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
 
   const gridItems = buildTemplateImageGridItems(imageViews, imageId);
 
+  // Bumped 12 → 40 on 2026-06-29 so the 'More like this' grid's
+  // built-in See More button has a richer pool to expand into (the
+  // grid renders 2 rows × 5 cols = 10 visible above the fold; the
+  // remaining 30 surface when the user clicks See more).
   const similarItems = buildSimilarExampleGridItems(ctx.reg, imageId, {
-    limit: 12,
+    limit: 40,
     maxPerTemplate: 2,
   });
 
@@ -296,15 +303,22 @@ export default async function NanoExampleDetailPage({
   const metaChips =
     mergedTopics.length > 0 || category ? (
       <>
+        {/* Topic chips → sr-only on 2026-06-29 per operator. The
+            Google-crawl tonnage matters (17K example pages × ~5 chips =
+            ~88K links into /topics/<slug>) but they noise up the hero.
+            End-user surface is the merged TopicStrip block at the
+            page bottom. */}
         {mergedTopics.length > 0 && (
-          <TopicNavRow
-            locale={rawLocale}
-            allTopics={topicNav}
-            topics={mergedTopics}
-            className="mb-0"
-            showDisabled={false}
-            size="small"
-          />
+          <div className="sr-only">
+            <TopicNavRow
+              locale={rawLocale}
+              allTopics={topicNav}
+              topics={mergedTopics}
+              className="mb-0"
+              showDisabled={false}
+              size="small"
+            />
+          </div>
         )}
         {category && (
           <Link
@@ -455,8 +469,32 @@ export default async function NanoExampleDetailPage({
             entries, filtered to fully-localized topics. Injects internal
             authority into /topics/* hubs (17,650 example URLs × ~5 fresh
             chips = ~88k new internal links — biggest tonnage in the W1
-            indexation rescue plan). */}
-        <ExampleRelatedTopics locale={rawLocale} seedTopics={mergedTopics} />
+            indexation rescue plan).
+            sr-only on 2026-06-29 — kept in DOM for Google crawl, but the
+            end-user-visible browsing surface is the TopicStrip block
+            mounted right below this. */}
+        <div className="sr-only">
+          <ExampleRelatedTopics locale={rawLocale} seedTopics={mergedTopics} />
+        </div>
+
+        {/* End-user-visible topic browsing surface — uses the merged
+            templateTopics ∪ exampleTopics list as a TopicStrip
+            (Canva-style tiles, deterministic colors per slug). Same
+            pattern as the nano-template page bottom strip. */}
+        {mergedTopics.length > 0 && (
+          <section className="mt-10 pb-4">
+            <TopicStrip
+              locale={rawLocale}
+              heading="Browse topics"
+              trackPrefix={`example-bottom-strip:${slug}`}
+              items={mergedTopics.map((subSlug) => ({
+                slug: subSlug,
+                path: resolveTopicPath(subSlug),
+                label: titleCaseFromSlug(subSlug),
+              }))}
+            />
+          </section>
+        )}
       </section>
 
       {/* WC → travel cross-sell rail. Renders only on WC content pages

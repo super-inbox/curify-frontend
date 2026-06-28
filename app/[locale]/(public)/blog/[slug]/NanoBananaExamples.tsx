@@ -1,10 +1,9 @@
 "use client";
 
-import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
+import TemplateStrip from "@/app/[locale]/_components/TemplateStrip";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import { PageLocale } from "@/lib/locale_utils";
 import blogsData from "@/public/data/blogs.json";
-import { useRequireAuth } from "@/services/useRequireAuth";
 
 interface NanoBananaExamplesProps {
   locale: string;
@@ -25,8 +24,9 @@ interface NanoTemplateCard {
 }
 
 export default function NanoBananaExamples({ locale, blogSlug }: NanoBananaExamplesProps) {
-  const requireAuth = useRequireAuth();
-  const onViewClick = () => {};
+  // requireAuth / onViewClick previously threaded into NanoInspirationRow
+  // — dropped 2026-06-29 with the TemplateStrip swap. TemplateStrip owns
+  // its own save-auth handshake.
 
   // Flatten all nanoTemplates across the catalog into a single card pool.
   // blogSlug filters by groupKey prefix, so both real slugs (single-card
@@ -58,11 +58,10 @@ export default function NanoBananaExamples({ locale, blogSlug }: NanoBananaExamp
       <div className="mb-6">
         <p className="text-gray-600 mb-6">Explore our most popular Nano Banana prompt templates to see what's possible:</p>
         
-        <NanoInspirationRow
+        <TemplateStrip
           cards={filteredCards}
-          requireAuth={requireAuth}
-          onViewClick={onViewClick}
-          maxCols={5}
+          trackPrefix="blog-template-strip"
+          maxRows={24}
         />
       </div>
     </section>

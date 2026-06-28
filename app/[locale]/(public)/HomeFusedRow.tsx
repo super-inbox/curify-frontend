@@ -3,12 +3,14 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import { NanoInspirationCard } from "@/app/[locale]/_components/NanoInspirationCard";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
 import WcSearchQueryCard from "@/app/[locale]/_components/WcSearchQueryCard";
-import type { NanoInspirationCardType } from "@/lib/nano_pure";
-import { useClickTracking } from "@/services/useTracking";
+import { SITE_URL } from "@/lib/constants";
+import { toSlug } from "@/lib/nano_pure";
+import { useClickTracking, useTracking } from "@/services/useTracking";
 
 // One gallery-prompt tile every N tiles. Raised density 2026-06-27:
 // 4 → 3 (one gallery tile per 2 templates instead of per 3) because
@@ -31,24 +33,106 @@ export type TopRemixPrompt = {
   total_copies_30d: number;
 };
 
+/** One rendered example (nano_inspiration record) — the new tile shape
+ *  for the home fused row. Replaces the old template-card tile so the
+ *  rail showcases individual creations, not template-grouped collages. */
+export type HomeExampleTile = {
+  id: string;
+  templateId: string;
+  title: string;
+  preview: string;
+};
+
 type Props = {
-  templates: NanoInspirationCardType[];
+  examples: HomeExampleTile[];
   galleryPrompts: TopRemixPrompt[];
   /** 6-8 random picks from POPULAR_PREFILL_QUERIES (server-side shuffled
    *  so each visit gets a fresh mix without hydration mismatch). */
   searchQueries?: string[];
   locale: string;
-  requireAuth: (reason?: string) => boolean;
-  onViewClick: (card: NanoInspirationCardType) => void;
   maxRows?: number;
   /** Pinned to row-1 rightmost cell (WC rotating slot on the home page). */
   topRightCell?: React.ReactNode;
 };
 
 type FusedItem =
-  | { kind: "template"; card: NanoInspirationCardType }
+  | { kind: "example"; tile: HomeExampleTile }
   | { kind: "gallery"; prompt: TopRemixPrompt }
   | { kind: "search"; query: string };
+
+function ExampleTile({
+  tile,
+  locale,
+}: {
+  tile: HomeExampleTile;
+  locale: string;
+}) {
+  // Mirror the gallery rail's tracking convention — `home-rail-example`
+  // splits cleanly in admin SQL from the gallery (`home-rail:`) and
+  // strip (`home-topic-strip:`) buckets.
+  const trackClick = useClickTracking(
+    `home-rail-example:${tile.id}`,
+    "nano_inspiration_example_grid",
+    "cards"
+  );
+  const { trackAction } = useTracking();
+  const t = useTranslations("actionButtons");
+  const slug = toSlug(tile.templateId);
+  const examplePageHref = `/${locale}/nano-template/${slug}/example/${encodeURIComponent(tile.id)}`;
+  const remixHref = `/${locale}/nano-template/${slug}#reproduce`;
+  const shareUrl = `${SITE_URL}${examplePageHref}`;
+  const shareTracking = {
+    contentId: tile.id,
+    contentType: "nano_inspiration_example_grid" as const,
+    viewMode: "cards" as const,
+  };
+  // Card UI mirrors the ExampleImagesGrid card (image → bold title →
+  // CTA + iconOnly Share row) so home / topic / search / use-case
+  // surfaces all render the same affordances.
+  return (
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-lg">
+      <Link
+        href={examplePageHref}
+        onClick={trackClick}
+        className="relative aspect-[1/1] overflow-hidden bg-neutral-50"
+      >
+        <CdnImage
+          src={tile.preview}
+          alt={tile.title || "Example"}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          loading="lazy"
+        />
+      </Link>
+      {tile.title ? (
+        <p
+          className="px-3 pt-2 text-sm font-bold text-neutral-900 line-clamp-2"
+          title={tile.title}
+        >
+          {tile.title}
+        </p>
+      ) : null}
+      <div className="mt-auto flex items-center justify-between px-3 py-2">
+        <Link
+          href={remixHref}
+          onClick={trackClick}
+          className="inline-flex items-center gap-1.5 rounded-full bg-purple-600 px-3 py-1 text-sm font-bold text-white shadow-sm transition-colors hover:bg-purple-700"
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          {t("remixThis")}
+        </Link>
+        <ShareButton
+          compact
+          iconOnly
+          url={shareUrl}
+          title={tile.title || tile.id}
+          text={`Check out this Nano Banana example: ${tile.title || tile.id}`}
+          onShared={() => trackAction(shareTracking, "share")}
+        />
+      </div>
+    </div>
+  );
+}
 
 function GalleryPromptTile({
   prompt,
@@ -112,30 +196,28 @@ function GalleryPromptTile({
 // dedicated wrapper that re-fires with a "home-rail-search:" prefix.
 
 export default function HomeFusedRow({
-  templates,
+  examples,
   galleryPrompts,
   searchQueries = [],
   locale,
-  requireAuth,
-  onViewClick,
   maxRows = 8,
   topRightCell,
 }: Props) {
   const [expanded, setExpanded] = useState(false);
 
-  // Build the interleaved sequence. Templates are kept in their
-  // incoming order (caller pre-sorted by rank_score). Gallery prompts
-  // and search-query tiles are spliced at their own cadences
-  // (gallery: every 3rd template; search: every 5th template). With a
+  // Build the interleaved sequence. Examples are kept in their incoming
+  // order (caller pre-sorted by parent template rank_score, deduped to
+  // one per template). Gallery prompts + search-query tiles splice at
+  // their own cadences (gallery: every 2nd; search: every 9th). With a
   // 5-wide grid, this lands a search tile in row 1 only if it falls
-  // before the topRightCell — which is reserved (WC slot), so we shift
-  // the first search tile to after the row-1 visible window.
+  // before the topRightCell — reserved (WC slot), so we shift the
+  // first search tile to after the row-1 visible window.
   const fused: FusedItem[] = useMemo(() => {
     const out: FusedItem[] = [];
     let g = 0;
     let s = 0;
-    for (let i = 0; i < templates.length; i++) {
-      out.push({ kind: "template", card: templates[i] });
+    for (let i = 0; i < examples.length; i++) {
+      out.push({ kind: "example", tile: examples[i] });
       if (
         (i + 1) % (GALLERY_INTERLEAVE_RATIO - 1) === 0 &&
         g < galleryPrompts.length
@@ -160,7 +242,7 @@ export default function HomeFusedRow({
       s += 1;
     }
     return out;
-  }, [templates, galleryPrompts, searchQueries]);
+  }, [examples, galleryPrompts, searchQueries]);
 
   // Approximate visible window. Match NanoInspirationRow's heuristic:
   // 5 cols × 8 rows = 40. We don't have useGridCols here; pick 5 cols
@@ -178,13 +260,12 @@ export default function HomeFusedRow({
           </div>
         ) : null}
         {visible.map((item) => {
-          if (item.kind === "template") {
+          if (item.kind === "example") {
             return (
-              <NanoInspirationCard
-                key={`tpl-${item.card.id}`}
-                card={item.card}
-                requireAuth={requireAuth}
-                onViewClick={onViewClick}
+              <ExampleTile
+                key={`ex-${item.tile.id}`}
+                tile={item.tile}
+                locale={locale}
               />
             );
           }

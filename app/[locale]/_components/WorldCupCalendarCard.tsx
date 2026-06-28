@@ -153,8 +153,8 @@ export default function WorldCupCalendarCard({ locale, className }: Props) {
     return t.length > 0 ? t : nextMatches(now, 2);
   }, [phase, now]);
 
-  const wcHref = `${localePrefix(locale)}/topics/world-cup`;
-  const trackFooterClick = useClickTracking("wc-calendar-widget", "topic_capsule", "cards");
+  // wcHref / trackFooterClick removed 2026-06-29 alongside the
+  // 'Explore World Cup →' footer link.
 
   // After the tournament ends, the widget self-suppresses.
   if (phase === "after") return null;
@@ -251,16 +251,11 @@ export default function WorldCupCalendarCard({ locale, className }: Props) {
         </div>
       )}
 
-      {/* Footer CTA → /topics/world-cup (preserves legacy tracking id) */}
-      <div className="mt-2 flex items-center justify-between border-t border-emerald-100 pt-2">
-        <Link
-          href={wcHref}
-          onClick={trackFooterClick}
-          className="text-[11px] font-semibold text-emerald-700 hover:underline focus:outline-none focus:ring-2 focus:ring-emerald-400 rounded"
-        >
-          Explore World Cup →
-        </Link>
-      </div>
+      {/* 'Explore World Cup →' footer CTA removed 2026-06-29 — the
+          extra row made the card visibly taller than its example-grid
+          neighbors in the home rail. Match-line clicks above already
+          route into /search?q=<match> and the per-card-header title
+          links to /topics/world-cup. */}
     </div>
   );
 }

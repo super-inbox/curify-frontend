@@ -4,10 +4,9 @@ import { useCallback, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Download } from "lucide-react";
 import { Link as IntlLink } from "@/i18n/navigation";
-import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
+import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
-import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import { useRequireAuth } from "@/services/useRequireAuth";
 import { templatePacksService } from "@/services/templatePacks";
 import { useTracking, useVideoTracking } from "@/services/useTracking";
@@ -202,12 +201,20 @@ const PERSONA_SOLUTION: Record<string, string> = {
 
 export default function UseCaseClient({
   slug,
-  nanoCards,
+  exampleItems,
   tools,
   learningMaterials,
 }: {
   slug: string;
-  nanoCards: NanoInspirationCardType[];
+  /** Flattened example items for the ExampleImagesGrid (2026-06-29
+   *  swap from NanoInspirationRow / template-list UI). Each item is
+   *  one rendered inspiration, filtered server-side to this use-case. */
+  exampleItems: Array<{
+    id: string;
+    title: string;
+    preview: string;
+    templateId: string;
+  }>;
   tools: ToolDef[];
   learningMaterials?: LearningMaterial[];
 }) {
@@ -242,18 +249,17 @@ export default function UseCaseClient({
     () => trackAction(shareTracking, "share"),
     [trackAction, shareTracking],
   );
-  const requireAuth = useRequireAuth();
 
   return (
-    <main className="mx-auto max-w-[1400px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">
-      {/* Hero — text block + optional explainer video side by side on
-          lg+, stacked on smaller. Single max-w on the text section so
-          title, subtitle, description, bullets, and the B2B API line
-          share one consistent reading column. Share button sits on the
-          H1 line (right-aligned within the text section) instead of in
-          its own row above — tighter top whitespace, share affordance
-          stays adjacent to the title. */}
-      <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-20">
+    <main className="mx-auto max-w-[1600px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">
+      {/* Hero — text block + optional explainer video CENTERED on the
+          page per 2026-06-29 polish. The whole block caps at ~1100px
+          and centers horizontally so the eye lands on the hero before
+          scanning sideways to the (now narrower) page width. lg+ keeps
+          the text-then-video row; smaller stacks vertically. Single
+          max-w on the text section keeps title / subtitle / bullets /
+          B2B line in one consistent reading column. */}
+      <div className="mx-auto mb-10 flex max-w-[1100px] flex-col items-center justify-center gap-8 text-center lg:flex-row lg:items-start lg:gap-16 lg:text-left">
       <section className={videoKey ? "max-w-3xl lg:flex-1" : "w-full"}>
         {solutionName && (
           <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-600">
@@ -343,21 +349,23 @@ export default function UseCaseClient({
           </h2>
           <ToolsGrid
             tools={tools}
-            gridClassName="grid grid-cols-1 gap-6 sm:grid-cols-2"
+            gridClassName="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
           />
         </section>
       )}
 
-      {/* Nano Templates */}
-      {nanoCards.length > 0 && (
+      {/* Example grid — swap from NanoInspirationRow (template-list UI)
+          to ExampleImagesGrid (per-example tiles) on 2026-06-29 so the
+          visual matches /topics/<slug> + /search results. */}
+      {exampleItems.length > 0 && (
         <section>
           <h2 className="mb-4 text-xl font-bold text-neutral-900">
             {t("templatesHeading", { title })}
           </h2>
-          <NanoInspirationRow
-            cards={nanoCards}
-            requireAuth={requireAuth}
-            onViewClick={() => {}}
+          <ExampleImagesGrid
+            items={exampleItems}
+            locale={locale}
+            showCaption
           />
         </section>
       )}
@@ -370,7 +378,7 @@ export default function UseCaseClient({
         <RelatedBlogsByCategory
           categories={relatedBlogCategories}
           locale={locale}
-          max={6}
+          max={8}
           heading={tGlobal("interconnection.relatedReading", {
             defaultValue: "Related reading",
           })}
