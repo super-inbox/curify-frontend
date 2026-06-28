@@ -160,6 +160,15 @@ export default function TopicStrip({
   const t = useTranslations();
   void t; // reserved for future "See more" UX
 
+  // Drop items whose slug isn't in the user-visible-topics manifest
+  // (topic_thumbnails.json drives every other strip surface). This
+  // strips out taxonomy tier-3 mood/style fossils — 'soft', 'modern',
+  // 'playful', 'cozy', etc. — that pass isLocalizedTopic but have no
+  // real /topics/<slug> page. 2026-06-29 fix per operator: those slugs
+  // were leaking onto /topics/<slug> bottom strips because the
+  // upstream getTagChildren includes everything under tier3.lifestyle.
+  items = items.filter((item) => item.slug in THUMBS || item.slug in ICONS);
+
   if (items.length === 0) return null;
 
   // Two layouts:

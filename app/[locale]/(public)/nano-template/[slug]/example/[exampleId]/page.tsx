@@ -100,8 +100,12 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
 
   const gridItems = buildTemplateImageGridItems(imageViews, imageId);
 
+  // Bumped 12 → 40 on 2026-06-29 so the 'More like this' grid's
+  // built-in See More button has a richer pool to expand into (the
+  // grid renders 2 rows × 5 cols = 10 visible above the fold; the
+  // remaining 30 surface when the user clicks See more).
   const similarItems = buildSimilarExampleGridItems(ctx.reg, imageId, {
-    limit: 12,
+    limit: 40,
     maxPerTemplate: 2,
   });
 

@@ -151,7 +151,7 @@ export default function TemplateStrip({
   if (cards.length === 0) return null;
   const visible = cards.slice(0, maxRows);
   return (
-    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {visible.map((card) => (
         <TemplateStripCard key={card.id} card={card} trackPrefix={trackPrefix} />
       ))}

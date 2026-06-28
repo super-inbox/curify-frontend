@@ -252,14 +252,14 @@ export default function UseCaseClient({
 
   return (
     <main className="mx-auto max-w-[1600px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">
-      {/* Hero — text block + optional explainer video side by side on
-          lg+, stacked on smaller. Single max-w on the text section so
-          title, subtitle, description, bullets, and the B2B API line
-          share one consistent reading column. Share button sits on the
-          H1 line (right-aligned within the text section) instead of in
-          its own row above — tighter top whitespace, share affordance
-          stays adjacent to the title. */}
-      <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-20">
+      {/* Hero — text block + optional explainer video CENTERED on the
+          page per 2026-06-29 polish. The whole block caps at ~1100px
+          and centers horizontally so the eye lands on the hero before
+          scanning sideways to the (now narrower) page width. lg+ keeps
+          the text-then-video row; smaller stacks vertically. Single
+          max-w on the text section keeps title / subtitle / bullets /
+          B2B line in one consistent reading column. */}
+      <div className="mx-auto mb-10 flex max-w-[1100px] flex-col items-center justify-center gap-8 text-center lg:flex-row lg:items-start lg:gap-16 lg:text-left">
       <section className={videoKey ? "max-w-3xl lg:flex-1" : "w-full"}>
         {solutionName && (
           <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-600">
@@ -349,7 +349,7 @@ export default function UseCaseClient({
           </h2>
           <ToolsGrid
             tools={tools}
-            gridClassName="grid grid-cols-1 gap-6 sm:grid-cols-2"
+            gridClassName="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
           />
         </section>
       )}
@@ -378,7 +378,7 @@ export default function UseCaseClient({
         <RelatedBlogsByCategory
           categories={relatedBlogCategories}
           locale={locale}
-          max={6}
+          max={8}
           heading={tGlobal("interconnection.relatedReading", {
             defaultValue: "Related reading",
           })}
