@@ -7,8 +7,11 @@
       "ogDescription": "Transform trends and ideas into structured visual content. Inspiration cards, AI infographics, video translation, and localization tools — all in one platform."
     },
     "hero": {
-      "title": "Discover Ideas | Express Visually | Create Content",
-      "description": "Curify is a visual thinking platform that transforms trends, ideas, and knowledge into structured, shareable content. From inspiration cards and AI infographics to subtitles, translation, and lip-sync dubbing — we bridge inspiration and production, helping creators publish faster."
+      "title1": "Don't just make an image.",
+      "title2": "Finish the job.",
+      "subtitle": "Curify helps you search inspiration, generate visuals, localize for the world, and scale across every channel — design, education, marketing, and commerce.",
+      "ctaPrimary": "Explore solutions",
+      "ctaSecondary": "Browse the gallery"
     },
     "toolsStrip": {
       "title": "Tools to bring it to life",
@@ -20,6 +23,63 @@
       "topicsSubtitle": "Templates across our most popular categories.",
       "useCasesTitle": "Browse by use case",
       "useCasesSubtitle": "Find templates that match what you're working on."
+    },
+    "solutions": {
+      "heading": "One platform. Six ways to use it.",
+      "subheading": "Pick the job you're here to do.",
+      "explore": "Explore →",
+      "items": {
+        "merch": {
+          "label": "Merch & POD",
+          "message": "Turn one character into 100 products."
+        },
+        "design": {
+          "label": "Designers",
+          "message": "Find better design inspiration in seconds."
+        },
+        "education": {
+          "label": "Education",
+          "message": "Create bilingual learning content at scale."
+        },
+        "video": {
+          "label": "Video Creators",
+          "message": "Translate and subtitle videos for global audiences."
+        },
+        "marketing": {
+          "label": "Marketing & SEO",
+          "message": "Build multilingual visual content that ranks."
+        },
+        "developers": {
+          "label": "Developers",
+          "message": "Integrate visual AI into your own product."
+        }
+      }
+    },
+    "workflow": {
+      "heading": "One workflow, end to end.",
+      "subheading": "From a single idea to production-ready content, in any language.",
+      "steps": {
+        "find": {
+          "title": "Find inspiration",
+          "desc": "Search the gallery and asset library."
+        },
+        "understand": {
+          "title": "Understand designs",
+          "desc": "Extract reusable subjects, text & style tags."
+        },
+        "create": {
+          "title": "Create visuals",
+          "desc": "Generate from AI templates and prompts."
+        },
+        "adapt": {
+          "title": "Adapt for production",
+          "desc": "Typography, print-ready files & product mockups."
+        },
+        "scale": {
+          "title": "Scale globally",
+          "desc": "Translate, localize & distribute via SEO + API."
+        }
+      }
     }
   },
   "nanoGallery": {

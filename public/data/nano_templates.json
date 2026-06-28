@@ -18235,5 +18235,108 @@
       "bold"
     ],
     "rank_score": 90.0
+  },
+  {
+    "id": "template-wc-knockout-matchup-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "Generate a single vertical 8K knockout-matchup FIGHT POSTER for FIFA World Cup 2026 — {team_a} vs {team_b}. Aesthetic: bold cinematic boxing/UFC fight-card poster crossed with a modern football editorial cover. Magazine-quality stylized illustration, NOT photorealistic faces (avoids uncanny valley). VERTICAL 3:4 portrait, two zones. TOP 70% — 1v1 BATTLE VISUAL: split-screen backgrounds (LEFT = {team_a} sports-poster vocabulary, RIGHT = {team_b} sports-poster vocabulary; NO literal flag-tearing or militaristic motifs). LEFT player: {star_a_name} of {team_a} in {team_a} home kit, knee-up framing, attacking pose, ball at feet, fierce focus looking right. RIGHT player: {star_b_name} of {team_b} in {team_b} home kit, mirror attacking pose. HUGE gold metallic 'VS' between them with crossed gold soccer boots. Header strip: '{stage} · FIFA WORLD CUP 2026' with trophy icon. Player nameplates: '{star_a_name}' (gold, left) + '{star_b_name}' (silver-blue, right) with club subtitles. BOTTOM 30% — LIGHT INFO STRIP: two columns separated by gold vertical line. LEFT 'MATCH BASICS': date+time, venue, coaches matchup, betting odds. RIGHT 'WHAT TO WATCH': 4 emoji-led one-liners. Footer: 'Generated for Curify · Tap any tile to remix'. All English text legible; stylized illustration only.",
+        "parameters": {
+          "name": "matchup",
+          "label": "Knockout matchup (TeamA vs TeamB + Stage + Venue + Stars)",
+          "type": "text",
+          "placeholder": [
+            "Brazil vs Japan · Round of 32 · NRG Stadium · Vinícius vs Kubo",
+            "France vs Sweden · Round of 32 · MetLife · Mbappé vs Gyökeres",
+            "Germany vs Paraguay · Round of 32 · Gillette · Musiala vs Almirón"
+          ]
+        }
+      },
+      "zh": {
+        "base_prompt": "Generate a single vertical 8K knockout-matchup FIGHT POSTER for FIFA World Cup 2026 — {team_a} vs {team_b}. Aesthetic: bold cinematic boxing/UFC fight-card poster crossed with a modern football editorial cover. Magazine-quality stylized illustration, NOT photorealistic faces (avoids uncanny valley). VERTICAL 3:4 portrait, two zones. TOP 70% — 1v1 BATTLE VISUAL: split-screen backgrounds (LEFT = {team_a} sports-poster vocabulary, RIGHT = {team_b} sports-poster vocabulary; NO literal flag-tearing or militaristic motifs). LEFT player: {star_a_name} of {team_a} in {team_a} home kit, knee-up framing, attacking pose, ball at feet, fierce focus looking right. RIGHT player: {star_b_name} of {team_b} in {team_b} home kit, mirror attacking pose. HUGE gold metallic 'VS' between them with crossed gold soccer boots. Header strip: '{stage} · FIFA WORLD CUP 2026' with trophy icon. Player nameplates: '{star_a_name}' (gold, left) + '{star_b_name}' (silver-blue, right) with club subtitles. BOTTOM 30% — LIGHT INFO STRIP: two columns separated by gold vertical line. LEFT 'MATCH BASICS': date+time, venue, coaches matchup, betting odds. RIGHT 'WHAT TO WATCH': 4 emoji-led one-liners. Footer: 'Generated for Curify · Tap any tile to remix'. All English text legible; stylized illustration only.",
+        "parameters": {
+          "name": "matchup",
+          "label": "淘汰赛对阵海报（队伍A vs 队伍B + 阶段 + 球场 + 明星对位）",
+          "type": "text",
+          "placeholder": [
+            "巴西 vs 日本 · 32强 · NRG球场 · 维尼修斯 vs 久保建英",
+            "法国 vs 瑞典 · 32强 · 大都会球场 · 姆巴佩 vs 约凯雷斯",
+            "德国 vs 巴拉圭 · 32强 · 吉列球场 · 穆夏拉 vs 阿尔米隆"
+          ]
+        }
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-wc-knockout-matchup-poster-brazil-vs-japan-prev.jpg",
+    "topics": [
+      "design",
+      "posters",
+      "mood-board",
+      "social-media-posts",
+      "art-prints",
+      "digital-canvas",
+      "illustration",
+      "bold",
+      "dramatic",
+      "modern",
+      "dynamic",
+      "cinematic",
+      "iconic",
+      "vibrant",
+      "split-screen"
+    ],
+    "rank_score": 95.0
+  },
+  {
+    "id": "template-celebrity-meme-sticker-merchandise-collection-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Celebrity Viral Meme Sticker Pack & Full Merchandise Collection Showcase Poster Generator) Horizontal fan merch product display poster themed '{celebrity_meme_theme}'. Layout: Two-column split layout; Left section: large brush stroke main title headline + subheading 'STICKER PACK', grid of 6 unique die-cut cartoon sticker illustrations featuring iconic viral meme poses of the celebrity, each sticker paired with bold meme catchphrase text, bottom four feature icon labels highlighting waterproof, vibrant print, residue-free peel, fan-made design traits. Right section vertical merchandise mockup grid: top row hoodie + short sleeve t-shirt printed with sticker collage graphics; middle row phone case + laptop decal sticker sheet; bottom row canvas tote bag, reusable water bottle, themed collectible vehicle model; top-right small slogan tag line for the collection. Bottom full-width footer banner with celebrity tagline, central 'COLLECT. STICK. REPEAT.' motto, global fan community label. Style: gritty streetwear comic book illustration art, custom brand color palette matching the celebrity’s representative tone, clean commercial product mockup photography, bold textured brush typography, sharp die-cut sticker outlines, high resolution printable fan merchandise marketing poster for social media & shop listing. Subject: full meme sticker pack + multi-item apparel & accessory merchandise showcase poster for '{celebrity_meme_theme}' viral fan collection.",
+        "parameters": {
+          "name": "celebrity_meme_theme",
+          "label": "名人/球星梗图周边完整主题名称",
+          "type": "text",
+          "placeholder": [
+            "哈兰德Haaland足球梗图贴纸全套服饰周边展示横版海报",
+            "C罗CR7葡萄牙名场面meme贴纸文创商品宣传展板",
+            "马斯克Elon Musk科技网红梗图周边套装营销长图"
+          ]
+        }
+      },
+      "zh": {
+        "base_prompt": "(Celebrity Viral Meme Sticker Pack & Full Merchandise Collection Showcase Poster Generator) Horizontal fan merch product display poster themed '{celebrity_meme_theme}'. Layout: Two-column split layout; Left section: large brush stroke main title headline + subheading 'STICKER PACK', grid of 6 unique die-cut cartoon sticker illustrations featuring iconic viral meme poses of the celebrity, each sticker paired with bold meme catchphrase text, bottom four feature icon labels highlighting waterproof, vibrant print, residue-free peel, fan-made design traits. Right section vertical merchandise mockup grid: top row hoodie + short sleeve t-shirt printed with sticker collage graphics; middle row phone case + laptop decal sticker sheet; bottom row canvas tote bag, reusable water bottle, themed collectible vehicle model; top-right small slogan tag line for the collection. Bottom full-width footer banner with celebrity tagline, central 'COLLECT. STICK. REPEAT.' motto, global fan community label. Style: gritty streetwear comic book illustration art, custom brand color palette matching the celebrity’s representative tone, clean commercial product mockup photography, bold textured brush typography, sharp die-cut sticker outlines, high resolution printable fan merchandise marketing poster for social media & shop listing. Subject: full meme sticker pack + multi-item apparel & accessory merchandise showcase poster for '{celebrity_meme_theme}' viral fan collection.",
+        "parameters": {
+          "name": "celebrity_meme_theme",
+          "label": "名人/球星梗图周边完整主题名称",
+          "type": "text",
+          "placeholder": [
+            "哈兰德Haaland足球梗图贴纸全套服饰周边展示横版海报",
+            "C罗CR7葡萄牙名场面meme贴纸文创商品宣传展板",
+            "马斯克Elon Musk科技网红梗图周边套装营销长图"
+          ]
+        }
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-celebrity-meme-sticker-merchandise-collection-poster-andrew-tate-topg-prev.jpg",
+    "topics": [
+      "design",
+      "posters",
+      "social-media-posts",
+      "merch",
+      "stickers",
+      "mood-board",
+      "art-prints",
+      "cartoon",
+      "comic",
+      "bold",
+      "playful",
+      "modern",
+      "vibrant-colors",
+      "illustration",
+      "digital-canvas",
+      "mockups",
+      "composition",
+      "whimsical"
+    ],
+    "rank_score": 92.0
   }
 ]

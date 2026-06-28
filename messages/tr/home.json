@@ -7,8 +7,11 @@
       "ogDescription": "İlham kartları, AI infografikler ve video çeviri araçları tek bir platformda."
     },
     "hero": {
-      "title": "Fikirleri Keşfet | Görsel Olarak İfade Et | İçerik Oluştur",
-      "description": "Curify, trendleri ve fikirleri yapılandırılmış görsel içeriğe dönüştürür. İlham kartlarından altyazı ve video çeviriye kadar."
+      "title1": "Sadece bir görsel yapma.",
+      "title2": "İşi bitir.",
+      "subtitle": "Curify; ilham aramana, görseller üretmene, dünyaya yerelleştirmene ve her kanalda ölçeklenmene yardımcı olur — tasarım, eğitim, pazarlama ve ticaret.",
+      "ctaPrimary": "Çözümleri keşfet",
+      "ctaSecondary": "Galeriye göz at"
     },
     "toolsStrip": {
       "title": "Hayata geçirmek için araçlar",
@@ -20,6 +23,63 @@
       "topicsSubtitle": "En popüler kategorilerimizdeki şablonlar.",
       "useCasesTitle": "Kullanım senaryosuna göre göz at",
       "useCasesSubtitle": "Üzerinde çalıştığınız şeye uygun şablonları bulun."
+    },
+    "solutions": {
+      "heading": "Tek platform. Altı kullanım şekli.",
+      "subheading": "Yapmak istediğin işi seç.",
+      "explore": "Keşfet →",
+      "items": {
+        "merch": {
+          "label": "Merch ve POD",
+          "message": "Tek bir fikri 100 ürüne dönüştür."
+        },
+        "design": {
+          "label": "Tasarımcılar",
+          "message": "Yeniden kullanılabilir tasarım ilhamını saniyeler içinde bul."
+        },
+        "education": {
+          "label": "Eğitim",
+          "message": "İki dilli eğitim içeriğini ölçekli üret."
+        },
+        "video": {
+          "label": "Video Üreticileri",
+          "message": "Videolarını küresel izleyiciler için çevir ve altyazıla."
+        },
+        "marketing": {
+          "label": "Pazarlama ve SEO",
+          "message": "Üst sıralara çıkan çok dilli görsel içerik oluştur."
+        },
+        "developers": {
+          "label": "Geliştiriciler",
+          "message": "Görsel yapay zekâyı ürününe aylar değil günler içinde ekle."
+        }
+      }
+    },
+    "workflow": {
+      "heading": "Baştan sona tek bir iş akışı.",
+      "subheading": "Tek bir fikirden, her dilde üretime hazır içeriğe.",
+      "steps": {
+        "find": {
+          "title": "İlham bul",
+          "desc": "Galeride ve varlık kütüphanesinde ara."
+        },
+        "understand": {
+          "title": "Tasarımları anla",
+          "desc": "Yeniden kullanılabilir özneleri, metni ve stil etiketlerini çıkar."
+        },
+        "create": {
+          "title": "Görseller oluştur",
+          "desc": "Yapay zekâ şablonları ve istemlerinden üret."
+        },
+        "adapt": {
+          "title": "Üretime uyarla",
+          "desc": "Tipografi, baskıya hazır dosyalar ve ürün maketleri."
+        },
+        "scale": {
+          "title": "Küresel ölçekle",
+          "desc": "SEO + API ile çevir, yerelleştir ve dağıt."
+        }
+      }
     }
   },
   "coreFeatures": {

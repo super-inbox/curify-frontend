@@ -7,8 +7,11 @@
       "ogDescription": "Transformez tendances et idées en contenu visuel structuré. Cartes d’inspiration, infographies IA, traduction vidéo et outils de localisation — tout-en-un."
     },
     "hero": {
-      "title": "Découvrez des idées | Exprimez visuellement | Créez du contenu",
-      "description": "Curify transforme tendances, idées et connaissances en contenus structurés et partageables. Des cartes d’inspiration aux infographies IA, en passant par les sous-titres et le doublage synchronisé."
+      "title1": "Ne faites pas qu'une image.",
+      "title2": "Allez au bout du travail.",
+      "subtitle": "Curify vous aide à trouver l'inspiration, générer des visuels, localiser pour le monde entier et passer à l'échelle sur tous les canaux : design, éducation, marketing et commerce.",
+      "ctaPrimary": "Explorer les solutions",
+      "ctaSecondary": "Parcourir la galerie"
     },
     "toolsStrip": {
       "title": "Outils pour le mettre en vie",
@@ -20,6 +23,63 @@
       "topicsSubtitle": "Modèles dans nos catégories les plus populaires.",
       "useCasesTitle": "Parcourir par cas d'utilisation",
       "useCasesSubtitle": "Trouvez des modèles qui correspondent à ce sur quoi vous travaillez."
+    },
+    "solutions": {
+      "heading": "Une plateforme. Six façons de l'utiliser.",
+      "subheading": "Choisissez le travail que vous venez accomplir.",
+      "explore": "Explorer →",
+      "items": {
+        "merch": {
+          "label": "Merch & POD",
+          "message": "Transformez une idée en 100 produits."
+        },
+        "design": {
+          "label": "Designers",
+          "message": "Trouvez une inspiration design réutilisable en quelques secondes."
+        },
+        "education": {
+          "label": "Éducation",
+          "message": "Créez du contenu pédagogique bilingue à grande échelle."
+        },
+        "video": {
+          "label": "Créateurs vidéo",
+          "message": "Traduisez et sous-titrez vos vidéos pour un public mondial."
+        },
+        "marketing": {
+          "label": "Marketing & SEO",
+          "message": "Créez du contenu visuel multilingue qui se positionne."
+        },
+        "developers": {
+          "label": "Développeurs",
+          "message": "Intégrez l'IA visuelle à votre produit en jours, pas en mois."
+        }
+      }
+    },
+    "workflow": {
+      "heading": "Un workflow, de bout en bout.",
+      "subheading": "D'une seule idée à un contenu prêt pour la production, dans toutes les langues.",
+      "steps": {
+        "find": {
+          "title": "Trouver l'inspiration",
+          "desc": "Cherchez dans la galerie et la bibliothèque d'assets."
+        },
+        "understand": {
+          "title": "Comprendre les designs",
+          "desc": "Extrayez sujets, textes et tags de style réutilisables."
+        },
+        "create": {
+          "title": "Créer des visuels",
+          "desc": "Générez à partir de modèles IA et de prompts."
+        },
+        "adapt": {
+          "title": "Adapter pour la production",
+          "desc": "Typographie, fichiers prêts à imprimer et mockups produit."
+        },
+        "scale": {
+          "title": "Passer à l'échelle mondiale",
+          "desc": "Traduisez, localisez et diffusez via SEO + API."
+        }
+      }
     }
   },
   "coreFeatures": {

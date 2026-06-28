@@ -21,7 +21,6 @@ import SessionStartTracker from "../_components/SessionStartTracker";
 import { headers } from "next/headers";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import SiteTopBar from "../_layout_components/SiteTopBar";
-import MBTIQuizWidget from "@/app/[locale]/_components/MBTIQuizWidget";
 
 export async function generateMetadata({
   params,
@@ -103,7 +102,6 @@ export default async function PublicLocaleLayout({
 
               {children}
 
-              <MBTIQuizWidget locale={locale} />
               <Toaster />
               </main>
               <Footer />

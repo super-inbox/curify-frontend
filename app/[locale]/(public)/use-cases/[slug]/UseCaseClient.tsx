@@ -182,6 +182,24 @@ function LearningMaterialCard({ material }: { material: LearningMaterial }) {
   );
 }
 
+// Persona → Solution (the 6 in docs/positioning-solutions-and-site-ia.md). Drives
+// a small Solution-name eyebrow on the persona hero so a user who clicked a
+// home Solution card lands on a page that visibly confirms the same Solution
+// (entry → landing consistency). Label text is reused from home.solutions
+// (already localized in 10 locales) — no new strings, crafted persona copy
+// below is untouched.
+const PERSONA_SOLUTION: Record<string, string> = {
+  "for-merch-operators": "merch",
+  "for-dtc-brands": "merch",
+  "for-designers": "design",
+  "for-parents": "education",
+  "for-esl-learners": "education",
+  "for-publishers": "education",
+  "for-creators": "video",
+  "for-marketers": "marketing",
+  "for-programmatic-seo": "marketing",
+};
+
 export default function UseCaseClient({
   slug,
   nanoCards,
@@ -195,6 +213,9 @@ export default function UseCaseClient({
 }) {
   const t = useTranslations("useCasePage");
   const tGlobal = useTranslations();
+  const tSol = useTranslations("home.solutions");
+  const solutionKey = PERSONA_SOLUTION[slug];
+  const solutionName = solutionKey ? tSol(`items.${solutionKey}.label` as never) : null;
   const locale = useLocale();
   const title = t(`${slug}.title` as never);
   // P0 #3 — blog categories that match this persona. Drives the
@@ -234,6 +255,11 @@ export default function UseCaseClient({
           stays adjacent to the title. */}
       <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-20">
       <section className={videoKey ? "max-w-3xl lg:flex-1" : "w-full"}>
+        {solutionName && (
+          <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-600">
+            {solutionName}
+          </p>
+        )}
         {isB2B && (
           <span className="mb-3 inline-flex items-center rounded-full border border-purple-300 bg-purple-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-purple-800">
             {tGlobal("interconnection.builtForTeams")}
