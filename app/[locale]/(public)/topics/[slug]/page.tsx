@@ -351,18 +351,11 @@ export default async function Page({ params }: Props) {
             </div>
           )}
 
-          {navSubTopics.length > 0 && (
-            <div className="mt-4">
-              <TopicNavRow
-                locale={localeStr}
-                allTopics={getTopicNavList()}
-                topics={navSubTopics}
-                activeTopic={slug}
-                showDisabled={false}
-                size="small"
-              />
-            </div>
-          )}
+          {/* tier-2 navSubTopics moved into the bottom unified topic
+              strip (merged with tagSubTopics) per 2026-06-29 operator
+              ask. The page now leads with the related-topics chip row
+              + the content, and the merged sub-topics block sits at
+              the bottom as a single browse surface. */}
         </div>
       </section>
 
@@ -440,20 +433,35 @@ export default async function Page({ params }: Props) {
         />
       </section>
 
-      {tagSubTopics.length > 0 && (
-        <section className="mx-auto max-w-[1600px] px-4 pb-16 sm:px-6 lg:px-8">
-          <TopicStrip
-            locale={localeStr}
-            heading={subTopicsHeading}
-            trackPrefix={`topic-bottom-strip:${slug}`}
-            items={tagSubTopics.map((subSlug) => ({
-              slug: subSlug,
-              path: resolveTopicPath(subSlug),
-              label: translateTopics(`topics.${subSlug}.displayName`) || titleCaseFromSlug(subSlug),
-            }))}
-          />
-        </section>
-      )}
+      {(() => {
+        // Merge tier-2 navSubTopics + tier-3 tagSubTopics into ONE
+        // unified TopicStrip block at the bottom per 2026-06-29
+        // operator ask. Dedupe by slug; preserve tier-2-first ordering
+        // since the tier-2 items are the canonical landing categories
+        // and tier-3 items are subject sub-tags under them.
+        const merged: string[] = [];
+        const seen = new Set<string>([slug]);
+        for (const id of [...navSubTopics, ...tagSubTopics]) {
+          if (seen.has(id)) continue;
+          seen.add(id);
+          merged.push(id);
+        }
+        if (merged.length === 0) return null;
+        return (
+          <section className="mx-auto max-w-[1600px] px-4 pb-16 sm:px-6 lg:px-8">
+            <TopicStrip
+              locale={localeStr}
+              heading={subTopicsHeading}
+              trackPrefix={`topic-bottom-strip:${slug}`}
+              items={merged.map((subSlug) => ({
+                slug: subSlug,
+                path: resolveTopicPath(subSlug),
+                label: translateTopics(`topics.${subSlug}.displayName`) || titleCaseFromSlug(subSlug),
+              }))}
+            />
+          </section>
+        );
+      })()}
 
       {/* Top-query suggestions — rendered at the bottom of the page so they
           act as exploration prompts AFTER the user has scanned the content

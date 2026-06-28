@@ -7,6 +7,7 @@ import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { getCanonicalPath } from "@/lib/canonical";
 import { useClickTracking } from "@/services/useTracking";
 import TOPIC_THUMBNAILS from "@/lib/generated/topic_thumbnails.json";
+import TOPIC_ICONS from "@/lib/generated/topic_icons.json";
 
 // Canva-style topic strip — alternative to EntryBar's pill row.
 // Each tile is wider, light pastel background per topic, with a small
@@ -46,6 +47,15 @@ function paletteFor(slug: string): { bg: string; ring: string } {
 }
 
 const THUMBS = TOPIC_THUMBNAILS as Record<string, string>;
+const ICONS = TOPIC_ICONS as Record<string, string>;
+
+// Resolve the per-slug image — prefer the 128px webp icon (avg ~6 KB,
+// 10× smaller than the full preview). Fall back to the preview-image
+// path when no icon exists (e.g. a freshly-added topic that hasn't
+// run through build_topic_icons.cjs yet).
+function imageFor(slug: string): string | undefined {
+  return ICONS[slug] ?? THUMBS[slug];
+}
 
 export type TopicStripItem = {
   /** Topic slug (drives color + thumbnail + tracking). */
@@ -71,6 +81,12 @@ type Props = {
    *  desktop (instead of the default wrapping grid). Used in the sticky
    *  top-bar where vertical space is constrained to a single rail. */
   singleRow?: boolean;
+  /** Number of leading tiles to render with image `priority`. Only the
+   *  topbar (above-the-fold, server-rendered, every page) should pass
+   *  a non-zero value — that's where icon preloading earns its keep.
+   *  Other mount sites (topic page bottom, search related-topics) are
+   *  below the fold and should stay lazy. */
+  priorityFirst?: number;
 };
 
 function TopicTile({
@@ -78,15 +94,21 @@ function TopicTile({
   locale,
   trackPrefix,
   compact,
+  priority,
 }: {
   item: TopicStripItem;
   locale: string;
   trackPrefix: string;
   /** Compact (single-row sticky-bar) tile: shorter + narrower. */
   compact?: boolean;
+  /** When true, the tile image renders with priority (no lazy
+   *  loading + preloaded). Use sparingly — only for above-the-fold
+   *  tiles in the sticky topbar to avoid bloating the LCP candidate
+   *  set. */
+  priority?: boolean;
 }) {
   const { bg, ring } = paletteFor(item.slug);
-  const thumbnail = THUMBS[item.slug];
+  const thumbnail = imageFor(item.slug);
   const href = getCanonicalPath(locale, item.path);
   const trackClick = useClickTracking(
     `${trackPrefix}:${item.slug}`,
@@ -119,7 +141,7 @@ function TopicTile({
             fill
             sizes={thumbSizes}
             className="object-cover transition-transform duration-300 group-hover:scale-[1.05]"
-            loading="lazy"
+            {...(priority ? { priority: true } : { loading: "lazy" })}
           />
         </div>
       ) : null}

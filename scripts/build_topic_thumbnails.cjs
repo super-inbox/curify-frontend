@@ -65,22 +65,21 @@ const TIER3_STYLE_SLUGS = [
   "cartoon","photorealistic","watercolor","monochrome","ink","kawaii","isometric",
 ];
 
-const TIER3_MBTI_SLUGS = [
-  "intj","intp","entj","entp","infj","infp","enfj","enfp",
-  "istj","isfj","estj","esfj","istp","isfp","estp","esfp",
-].map((t) => `mbti-${t}`);
-
 const TIER3_SUBJECT_SLUGS = [
   "animals","nature","space","weather","evolution","food-and-drink",
   "family","school","transportation","celebration","body","emotions","phonics",
 ];
 
+// MBTI tier-3 slugs (mbti-intj, mbti-infp, etc.) are NOT in this list —
+// 16 entries that crowded the strip without earning their click weight
+// on landing-page surfaces. Dropped 2026-06-29 per operator. Users still
+// reach individual types via the /topics/mbti page + the MBTI quiz, and
+// the tier-2 `mbti` slug remains in TIER2_SLUGS as the umbrella entry.
 const SLUGS = Array.from(new Set([
   ...TIER1_SLUGS,
   ...TIER2_SLUGS,
   ...TIER3_GEO_SLUGS,
   ...TIER3_STYLE_SLUGS,
-  ...TIER3_MBTI_SLUGS,
   ...TIER3_SUBJECT_SLUGS,
 ]));
 

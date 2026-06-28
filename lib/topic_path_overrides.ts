@@ -11,11 +11,14 @@
 // WHY the override beats the default — these are routing exceptions,
 // not data normalizations.
 export const TOPIC_PATH_OVERRIDES: Record<string, string> = {
-  // /topics/design exists and is fully populated, but the use-case
-  // landing converts better on the operator-targeted designer audience
-  // (multi-template workflow pitch + persona-aligned hero copy instead
-  // of a flat topic grid). Swap requested 2026-06-29.
-  design: "/use-cases/for-designers",
+  // No overrides at the moment. The earlier design → /use-cases/for-
+  // designers redirect was reverted on 2026-06-29 — the entry-bar
+  // "Posters & Designs" tile should route to /topics/design, since
+  // that hub is what the label implies + the use-case landing is one
+  // hop away via the related-use-cases chips on the topic page.
+  //
+  // To add a future override: { slug: "/destination/path" } — keep a
+  // comment explaining WHY the override beats the /topics/<slug> default.
 };
 
 /**
