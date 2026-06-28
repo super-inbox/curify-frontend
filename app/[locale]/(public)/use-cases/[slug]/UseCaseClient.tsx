@@ -4,10 +4,9 @@ import { useCallback, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Download } from "lucide-react";
 import { Link as IntlLink } from "@/i18n/navigation";
-import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
+import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
-import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import { useRequireAuth } from "@/services/useRequireAuth";
 import { templatePacksService } from "@/services/templatePacks";
 import { useTracking, useVideoTracking } from "@/services/useTracking";
@@ -202,12 +201,20 @@ const PERSONA_SOLUTION: Record<string, string> = {
 
 export default function UseCaseClient({
   slug,
-  nanoCards,
+  exampleItems,
   tools,
   learningMaterials,
 }: {
   slug: string;
-  nanoCards: NanoInspirationCardType[];
+  /** Flattened example items for the ExampleImagesGrid (2026-06-29
+   *  swap from NanoInspirationRow / template-list UI). Each item is
+   *  one rendered inspiration, filtered server-side to this use-case. */
+  exampleItems: Array<{
+    id: string;
+    title: string;
+    preview: string;
+    templateId: string;
+  }>;
   tools: ToolDef[];
   learningMaterials?: LearningMaterial[];
 }) {
@@ -242,10 +249,9 @@ export default function UseCaseClient({
     () => trackAction(shareTracking, "share"),
     [trackAction, shareTracking],
   );
-  const requireAuth = useRequireAuth();
 
   return (
-    <main className="mx-auto max-w-[1400px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-[1600px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">
       {/* Hero — text block + optional explainer video side by side on
           lg+, stacked on smaller. Single max-w on the text section so
           title, subtitle, description, bullets, and the B2B API line
@@ -348,16 +354,18 @@ export default function UseCaseClient({
         </section>
       )}
 
-      {/* Nano Templates */}
-      {nanoCards.length > 0 && (
+      {/* Example grid — swap from NanoInspirationRow (template-list UI)
+          to ExampleImagesGrid (per-example tiles) on 2026-06-29 so the
+          visual matches /topics/<slug> + /search results. */}
+      {exampleItems.length > 0 && (
         <section>
           <h2 className="mb-4 text-xl font-bold text-neutral-900">
             {t("templatesHeading", { title })}
           </h2>
-          <NanoInspirationRow
-            cards={nanoCards}
-            requireAuth={requireAuth}
-            onViewClick={() => {}}
+          <ExampleImagesGrid
+            items={exampleItems}
+            locale={locale}
+            showCaption
           />
         </section>
       )}

@@ -83,11 +83,32 @@ export default async function UseCasePage({ params }: Props) {
     nanoImages as unknown as RawNanoImageRecord[]
   );
 
-  const nanoCards = buildNanoFeedCards(reg, resolveContentLocale(localeStr), {
+  const contentLocale = resolveContentLocale(localeStr);
+  const nanoCards = buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 4,
     strictLocale: false,
     translate: translateNano,
     useCaseSlugs: [useCase.slug],
+  });
+
+  // Flatten the template-grouped nanoCards into individual examples
+  // for the ExampleImagesGrid (per the 2026-06-29 swap from template-
+  // list UI to example-grid UI). Each card carries up to 4 examples
+  // already filtered+ordered by use-case + parent rank_score — flatten
+  // 1:1 here so the grid shows individual creations the user can
+  // click straight into the example detail page.
+  const exampleItems = nanoCards.flatMap((card) => {
+    const previews =
+      card.preview_image_urls?.length
+        ? card.preview_image_urls
+        : card.image_urls ?? [];
+    const ids = card.example_ids ?? [];
+    return previews.map((preview, i) => ({
+      id: ids[i] ?? `${card.template_id}-${i}`,
+      title: card.category || "",
+      preview,
+      templateId: card.template_id,
+    }));
   });
 
   const t = await getTranslations({ locale: localeStr });
@@ -130,7 +151,7 @@ export default async function UseCasePage({ params }: Props) {
   return (
     <UseCaseClient
       slug={useCase.slug}
-      nanoCards={nanoCards}
+      exampleItems={exampleItems}
       tools={tools}
       learningMaterials={learningMaterials}
     />
