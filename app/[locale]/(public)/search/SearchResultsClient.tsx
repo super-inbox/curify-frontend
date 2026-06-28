@@ -11,6 +11,7 @@ import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slu
 import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
 import GenerableTemplatesSection from "./GenerableTemplatesSection";
 import TopicStrip, { type TopicStripItem } from "@/app/[locale]/_components/TopicStrip";
+import { resolveTopicPath } from "@/lib/topic_path_overrides";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import type { SuggestionEntry } from "@/lib/searchIndex";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
@@ -71,13 +72,16 @@ function chipHref(s: SuggestionEntry, locale: string): string {
 
 // Bare (locale-prefix-free) variant of chipHref. TopicStrip prepends
 // /<locale> itself via getCanonicalPath, so we pass the raw path.
+// Honors TOPIC_PATH_OVERRIDES so slugs with stronger use-case landings
+// (e.g. design → /use-cases/for-designers) route there everywhere
+// the strip is mounted.
 function chipBarePath(s: SuggestionEntry): string {
   if (s.href) return s.href;
   if (s.searchFallback) {
     const q = s.aliases?.[0] ?? s.slug;
     return `/search?q=${encodeURIComponent(q)}`;
   }
-  return `/topics/${s.slug}`;
+  return resolveTopicPath(s.slug);
 }
 
 export default function SearchResultsClient({

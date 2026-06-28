@@ -5,6 +5,7 @@ import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slu
 import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import TopicStrip from "@/app/[locale]/_components/TopicStrip";
+import { resolveTopicPath } from "@/lib/topic_path_overrides";
 
 import {
   type RawTemplate,
@@ -447,7 +448,7 @@ export default async function Page({ params }: Props) {
             trackPrefix={`topic-bottom-strip:${slug}`}
             items={tagSubTopics.map((subSlug) => ({
               slug: subSlug,
-              path: `/topics/${subSlug}`,
+              path: resolveTopicPath(subSlug),
               label: translateTopics(`topics.${subSlug}.displayName`) || titleCaseFromSlug(subSlug),
             }))}
           />
