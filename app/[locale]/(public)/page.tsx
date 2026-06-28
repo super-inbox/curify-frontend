@@ -49,6 +49,79 @@ async function buildHomeNanoCards(): Promise<NanoInspirationCardType[]> {
   }
 }
 
+// Example tile data for the home fused row. Each entry is one rendered
+// inspiration (image + title) — the rail interleaves these with gallery
+// prompts + search-query nudges + WC slot. Sorted by parent template
+// rank_score, capped at 1 per template so the row showcases variety
+// instead of being dominated by whichever template has the most
+// examples. Cap at ~40 = the visible window of 5 cols × 8 rows.
+//
+// Shape type co-located with the tile component in HomeFusedRow.tsx so
+// the client component can import it cleanly (and so the type lives next
+// to the consumer that actually renders the data).
+import type { HomeExampleTile } from "./HomeFusedRow";
+
+const HOME_EXAMPLES_CAP = 40;
+
+function buildHomeExamples(): HomeExampleTile[] {
+  const templates = nanoTemplates as unknown as Array<{
+    id: string;
+    rank_score?: number;
+    allow_generation?: boolean;
+  }>;
+  const inspirations = nanoInspiration as unknown as Array<{
+    id: string;
+    template_id: string;
+    rank_score?: number;
+    asset?: { image_url?: string; preview_image_url?: string };
+    locales?: Record<string, { title?: string }>;
+  }>;
+
+  const tplById = new Map(templates.map((t) => [t.id, t]));
+
+  // Group inspirations by parent template, then sort templates by
+  // rank_score desc. Pick 1 inspiration per template (the highest-rank
+  // within that template's bucket) until we hit HOME_EXAMPLES_CAP.
+  const byTemplate = new Map<string, typeof inspirations>();
+  for (const r of inspirations) {
+    if (!r.template_id) continue;
+    if (!r.asset?.preview_image_url && !r.asset?.image_url) continue;
+    const arr = byTemplate.get(r.template_id);
+    if (arr) arr.push(r);
+    else byTemplate.set(r.template_id, [r]);
+  }
+
+  const sortedTplIds = [...byTemplate.keys()].sort((a, b) => {
+    const ar = tplById.get(a)?.rank_score ?? 0;
+    const br = tplById.get(b)?.rank_score ?? 0;
+    return br - ar;
+  });
+
+  const out: HomeExampleTile[] = [];
+  for (const tid of sortedTplIds) {
+    if (out.length >= HOME_EXAMPLES_CAP) break;
+    const bucket = byTemplate.get(tid)!;
+    // Pick the highest-rank inspiration in this template's bucket.
+    bucket.sort((a, b) => (b.rank_score ?? 0) - (a.rank_score ?? 0));
+    const pick = bucket[0];
+    const preview =
+      pick.asset?.preview_image_url || pick.asset?.image_url || "";
+    if (!preview) continue;
+    const title =
+      pick.locales?.en?.title ||
+      pick.locales?.zh?.title ||
+      Object.values(pick.locales ?? {})[0]?.title ||
+      "";
+    out.push({
+      id: pick.id,
+      templateId: pick.template_id,
+      title,
+      preview,
+    });
+  }
+  return out;
+}
+
 // Prerender one static variant per locale -> served from edge cache instead of
 // a per-request render (cuts Fast Origin Transfer). Cached until next deploy.
 // The page's own generateMetadata below sets the correct per-locale canonical +
@@ -114,6 +187,11 @@ export default async function HomePage({
   // refactor — drop the fetch entirely to save the API roundtrip on
   // every home render.
   const nanoCards = await buildHomeNanoCards();
+  // Per-template variety: pick top examples (one per template, sorted
+  // by parent rank_score) so the fused row showcases individual
+  // creations rather than template-grouped cards. Cap = 40 to match
+  // the visible window (5 cols × 8 rows).
+  const homeExamples = buildHomeExamples();
 
   // Pick 4 random queries from the prefill pool for the interleaved
   // search-nudge tiles on the fused home row. Server-evaluated so the
@@ -156,6 +234,7 @@ export default async function HomePage({
       <HomeClient
         locale={locale}
         nanoCards={nanoCards}
+        homeExamples={homeExamples}
         topRemixPrompts={topRemixSnapshot.prompts}
         searchQueries={searchQueries}
         discoveryStrip={<HomeDiscoveryStrip locale={locale} />}

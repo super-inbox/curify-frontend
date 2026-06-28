@@ -13,7 +13,7 @@ import HomeSolutionsGrid from "./HomeSolutionsGrid";
 import HomeWorkflow from "./HomeWorkflow";
 import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
 import { TOP_QUERIES } from "@/app/[locale]/(public)/topics/[slug]/TopSearchSuggestions";
-import HomeFusedRow, { type TopRemixPrompt } from "./HomeFusedRow";
+import HomeFusedRow, { type TopRemixPrompt, type HomeExampleTile } from "./HomeFusedRow";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,12 +27,20 @@ function classNames(...xs: Array<string | false | undefined | null>) {
 export default function HomeClient({
   locale = "en",
   nanoCards = [],
+  homeExamples = [],
   topRemixPrompts = [],
   searchQueries = [],
   discoveryStrip,
 }: {
   locale?: string;
+  /** Template-collage cards for the legacy fallback rail (used when
+   *  topRemixPrompts is empty / gallery snapshot hasn't run yet).
+   *  Also feeds the hero montage. */
   nanoCards?: NanoInspirationCardType[];
+  /** Individual examples (one inspiration per template, sorted by parent
+   *  rank_score) — the new fused-row tile feed replacing template cards
+   *  per the 2026-06-29 home-rail refresh. */
+  homeExamples?: HomeExampleTile[];
   /** Top-25 most-copied gallery prompts (30d), pre-loaded server-side
    *  from public/data/top_remix_prompts.json. When non-empty, the home
    *  rail switches to the fused variant. Empty → stays on the
@@ -82,12 +90,10 @@ export default function HomeClient({
 
         {topRemixPrompts.length > 0 ? (
           <HomeFusedRow
-            templates={nanoCards}
+            examples={homeExamples}
             galleryPrompts={topRemixPrompts}
             searchQueries={searchQueries}
             locale={locale}
-            requireAuth={requireAuth}
-            onViewClick={handleOpenModal}
             maxRows={8}
             topRightCell={
               <WcRotatingSlot locale={locale} queries={TOP_QUERIES["world-cup"]} />
