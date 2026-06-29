@@ -3804,7 +3804,8 @@
     "creation_date": "2026-04-11",
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "requires_image_upload": true
   },
   {
     "id": "template-mbti-siliconvalley",
@@ -10857,63 +10858,17 @@
     "id": "template-personal-fashion-outfit-style-variations",
     "locales": {
       "en": {
-        "base_prompt": "(Outfit Style Variation Creator) Create a fashion lookbook-style composite image. On the left: the original reference photo of a person in a neutral pose. On the right: four identical full-body shots of the same person, each styled in a different outfit: {style1}, {style2}, {style3}, {style4}. Each look is labeled below with the style name. All images have a clean white background, natural lighting, and maintain the person's facial features, hair, and body shape. Style: Realistic fashion photography, high resolution, consistent lighting, 4K ultra HD, direct image generation. Subject: '{person} in four different fashion styles'.",
+        "base_prompt": "(Outfit Style Variation Creator) Create a fashion lookbook-style composite image from the uploaded reference photo of a person. On the left: the original reference photo in a neutral pose. On the right: a row of full-body shots of the SAME person, each styled in a different outfit from these styles: {styles}. Each look is labeled below with its style name. All images have a clean white background, natural lighting, and preserve the person's facial features, hair, and body shape. Style: Realistic fashion photography, high resolution, consistent lighting, 4K ultra HD, direct image generation. Subject: the same person shown in multiple outfit styles.",
         "parameters": [
           {
-            "name": "style1",
-            "label": "First Outfit Style",
+            "name": "styles",
+            "label": "Outfit Styles",
             "type": "text",
             "placeholder": [
-              "Streetwear",
-              "Old Money",
-              "Cottagecore",
-              "Y2K",
-              "Office Chic",
-              "Athleisure"
+              "Streetwear, Old Money, Cottagecore, Y2K",
+              "Office Chic, Athleisure, Minimalist, Vintage"
             ],
-            "default": "Streetwear"
-          },
-          {
-            "name": "style2",
-            "label": "Second Outfit Style",
-            "type": "text",
-            "placeholder": [
-              "Streetwear",
-              "Old Money",
-              "Cottagecore",
-              "Y2K",
-              "Office Chic",
-              "Athleisure"
-            ],
-            "default": "Old Money"
-          },
-          {
-            "name": "style3",
-            "label": "Third Outfit Style",
-            "type": "text",
-            "placeholder": [
-              "Streetwear",
-              "Old Money",
-              "Cottagecore",
-              "Y2K",
-              "Office Chic",
-              "Athleisure"
-            ],
-            "default": "Cottagecore"
-          },
-          {
-            "name": "style4",
-            "label": "Fourth Outfit Style",
-            "type": "text",
-            "placeholder": [
-              "Streetwear",
-              "Old Money",
-              "Cottagecore",
-              "Y2K",
-              "Office Chic",
-              "Athleisure"
-            ],
-            "default": "Y2K"
+            "default": "Streetwear, Old Money, Cottagecore, Y2K"
           }
         ]
       }
@@ -10945,7 +10900,8 @@
     "use_cases": [
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "requires_image_upload": true
   },
   {
     "id": "template-chinese-idiom-learning-card",
