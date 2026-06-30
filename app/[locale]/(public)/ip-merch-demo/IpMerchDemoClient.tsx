@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 import type { IpMerchDemoSeed, IpMerchStage } from "@/lib/ip_merch_demo";
+import MerchWorkflowBurst from "./MerchWorkflowBurst";
 
 function StageDotNav({
   stages,
@@ -107,6 +108,11 @@ export default function IpMerchDemoClient({ seed }: { seed: IpMerchDemoSeed }) {
           {seed.hero.workflow_summary}
         </p>
       </header>
+
+      {/* Headline interactive feature (the 15s screen-recording moment):
+          doodle → one click → 10 production-ready sheets. Sits above the
+          4-stage walkthrough. */}
+      <MerchWorkflowBurst workflow={seed.workflow} />
 
       <StageDotNav
         stages={seed.stages}

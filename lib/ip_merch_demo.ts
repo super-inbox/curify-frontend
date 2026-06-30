@@ -55,6 +55,29 @@ export type IpMerchUi = {
   stageWord: string;
 };
 
+/** "Merch Workflow" instant-burst demo block (localized). Drives the
+ *  doodle → 10 production-sheets feature. Product `dims`/shape/icon are
+ *  structural (held in the component); only labels + chrome strings are
+ *  localized here. */
+export type IpMerchWorkflow = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  uploadPrompt: string;
+  uploadHint: string;
+  uploadCta: string;
+  runLabel: string;
+  runningLabel: string;
+  /** Result heading; "{n}" is replaced with the sheet count. */
+  resultHeading: string;
+  resetLabel: string;
+  dpi: string;
+  color: string;
+  bleed: string;
+  /** 10 products, in burst order. `key` maps to component-side dims/shape/icon. */
+  products: { key: string; label: string }[];
+};
+
 export type IpMerchDemoSeed = {
   /** Hero pitch shown at the top of the page */
   hero: {
@@ -74,7 +97,15 @@ export type IpMerchDemoSeed = {
   };
   /** Localized chrome labels */
   ui: IpMerchUi;
+  /** "Merch Workflow" instant-burst demo */
+  workflow: IpMerchWorkflow;
 };
+
+/** Shared product order/keys — labels are localized per seed. */
+export const MERCH_WORKFLOW_PRODUCT_KEYS = [
+  "mug", "tote", "badge", "tshirt", "sticker",
+  "poster", "phonecase", "notebook", "coaster", "keychain",
+] as const;
 
 export const IP_MERCH_DEMO_SEED: IpMerchDemoSeed = {
   hero: {
@@ -164,6 +195,34 @@ export const IP_MERCH_DEMO_SEED: IpMerchDemoSeed = {
     nextStage: "Next stage",
     stageWord: "Stage",
   },
+  workflow: {
+    eyebrow: "Live · Merch Workflow",
+    title: "From a doodle to 10 production-ready sheets — in one click.",
+    subtitle:
+      "Drop any rough sketch. Curify's Merch Workflow returns print-ready production sheets for your whole SKU set — 300 DPI, CMYK, perfect 3mm bleed, crop marks, every product sized.",
+    uploadPrompt: "Drop your sketch",
+    uploadHint: "Even a 10-second doodle works — PNG or JPG.",
+    uploadCta: "Choose a file",
+    runLabel: "Run Merch Workflow",
+    runningLabel: "Generating production sheets…",
+    resultHeading: "{n} production-ready sheets · 300 DPI · CMYK · 3mm bleed",
+    resetLabel: "Start over",
+    dpi: "300 DPI",
+    color: "CMYK",
+    bleed: "3mm bleed",
+    products: [
+      { key: "mug", label: "Ceramic mug" },
+      { key: "tote", label: "Canvas tote" },
+      { key: "badge", label: "Enamel badge" },
+      { key: "tshirt", label: "T-shirt" },
+      { key: "sticker", label: "Die-cut sticker" },
+      { key: "poster", label: "A2 poster" },
+      { key: "phonecase", label: "Phone case" },
+      { key: "notebook", label: "Notebook cover" },
+      { key: "coaster", label: "Round coaster" },
+      { key: "keychain", label: "Acrylic keychain" },
+    ],
+  },
 };
 
 // ── Chinese (zh) ────────────────────────────────────────────────────────────
@@ -229,6 +288,34 @@ const ZH_SEED: IpMerchDemoSeed = {
     prevStage: "上一阶段",
     nextStage: "下一阶段",
     stageWord: "阶段",
+  },
+  workflow: {
+    eyebrow: "实时 · Merch Workflow",
+    title: "一张简笔画，一键变成 10 张可投产图纸。",
+    subtitle:
+      "上传任意粗糙草图，Curify 的 Merch Workflow 立刻输出整套 SKU 的可印刷生产图纸 —— 300 DPI、CMYK、完美 3mm 出血线、裁切标记，每个产品都已排好尺寸。",
+    uploadPrompt: "上传你的草图",
+    uploadHint: "哪怕是 10 秒涂鸦也行 —— PNG 或 JPG。",
+    uploadCta: "选择文件",
+    runLabel: "运行 Merch Workflow",
+    runningLabel: "正在生成生产图纸…",
+    resultHeading: "{n} 张可投产图纸 · 300 DPI · CMYK · 3mm 出血",
+    resetLabel: "重新开始",
+    dpi: "300 DPI",
+    color: "CMYK",
+    bleed: "3mm 出血",
+    products: [
+      { key: "mug", label: "陶瓷马克杯" },
+      { key: "tote", label: "帆布托特包" },
+      { key: "badge", label: "搪瓷徽章" },
+      { key: "tshirt", label: "T 恤" },
+      { key: "sticker", label: "异形贴纸" },
+      { key: "poster", label: "A2 海报" },
+      { key: "phonecase", label: "手机壳" },
+      { key: "notebook", label: "笔记本封面" },
+      { key: "coaster", label: "圆形杯垫" },
+      { key: "keychain", label: "亚克力钥匙扣" },
+    ],
   },
 };
 
