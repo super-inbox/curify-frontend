@@ -49,6 +49,10 @@ type Props = {
   /** When set, results are already narrowed to this output-type slug
    *  (user clicked a chip). Renders a removable header pill. */
   withinSlug?: string;
+  /** When set, results are narrowed to this intent-cluster slug. */
+  intentSlug?: string;
+  /** Pre-localized label for the active intentSlug (server-computed). */
+  activeIntentLabel?: string;
 };
 
 // Compute the href for a SuggestionEntry chip — honors `href` overrides
