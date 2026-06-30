@@ -184,6 +184,53 @@ If VIR results favor Curify, the story moves from *"we have a good content libra
 
 ---
 
+## The founder's question — why Curify isn't GPT-with-extra-steps
+
+Filed 2026-07-01. Every AI app-layer founder needs to be able to answer in one sentence: *"Why don't I get killed by OpenAI's next release?"* Caught myself thinking "I'll just generate a blog illustration in GPT" — and that's a useful tell. It means for **low-effort, low-stakes content consumption** (a one-off meme), Curify isn't irreplaceable. Good. Cuts through the noise and exposes where the actual moat lives.
+
+This section names the three moats and ties each one back to a measurable hypothesis in **this** eval. If any moat fails to show up in the VIR results, that's a signal to invest harder in that surface — not to retreat from it.
+
+### Moat 1 — Deterministic typography vs probabilistic pixels
+
+**Frontier-model behavior:** prompt → DALL-E / Imagen → an RGB raster. Text spelling is often wrong, fonts are randomized, kerning is inconsistent. To ship the asset you re-open Canva or Figma and re-layer the text by hand.
+
+**Curify behavior:** the template layer carries the typography contract — vector positions, font choices, character-accurate text, brand-safe sizing. The diffusion model is delegated to *only* the background or stylized illustration; the words are rendered by the template layer.
+
+**Frontier output = unedited pixels. Curify output = production-ready asset.** The value isn't "we generate images" — it's filling the last mile between AI generation and shipping.
+
+> **Eval hypothesis:** Layer 3 (Task Success Rate) on the rubric dimension **"commercial usability / design consistency"** should be significantly higher for Curify routes than for prompt-only frontier-model outputs on the same query. If TSR shows no gap here, the typography moat is theoretical — we should invest in the template-layer rendering quality before anything else.
+
+### Moat 2 — Visual discovery / routing vs the blank canvas
+
+**Frontier-model behavior:** a textbox. Assumes the user knows what they want *and* knows how to describe it. Most people — including operators and pros — have blank-canvas paralysis. They don't know what meme compositions exist; they can't describe the humor in words.
+
+**Curify behavior:** a visual catalog. Browse the gallery, see a finished "FDE pushing-car" poster, click [Run], swap a slot. The user doesn't write prompts — they pick from best-practices that already work.
+
+**Frontier model = terminal. Curify = GUI with pre-installed templates.** The product is the *catalog plus routing*, not the generator.
+
+> **Eval hypothesis:** Layer 1 (Routing Accuracy) — for **underspecified queries** (single noun, single name) Curify's routing layer should outperform prompt-only frontier models. The frontier model can only render what you describe; we can show what you didn't know to ask for. If Curify's routing top-3 ≤ frontier's top-3 on the underspecified-query slice, the visual-discovery moat is just packaging — invest in the routing layer (KB, multi-path, hybrid — all four of paradigms A/B/C/D/E).
+
+### Moat 3 — Workflow / asset bundling vs single-shot generation
+
+**Frontier-model behavior:** one prompt = one image. A real blog post needs a 16:9 banner, a 1:1 social-card, a 9:16 short-video cover — three prompts, three styles, zero coherence.
+
+**Curify behavior:** one input (`Theme: FDE engineer's daily life`) → coordinated bundle: banner + meme + LinkedIn card, all on the same style spine.
+
+**Frontier model = generation. Curify = orchestration.** The customer doesn't pay for pixels; they pay for the 30 minutes they would have spent in Canva and Photoshop stitching aspect ratios together.
+
+> **Eval hypothesis (extension to VIR v2):** add a **bundle-success** metric to Layer 3 — for the subset of intents that have a natural multi-asset deliverable (blog, launch, listing), measure whether the system returns a coherent multi-aspect set vs N disjoint singles. This isn't in v1 of the VIRB schema; it's the natural Phase-5 extension once single-asset routing is stable.
+
+### Synthesis — engine vs chassis
+
+GPT / Gemini = **engine.** Raw horsepower for generation.
+Curify = **chassis + steering + assembly line.** Wraps the engine in templates (chassis), font rendering + size control (steering), and multi-aspect packaging (assembly line) — outputs a car the customer can drive without knowing how engines work.
+
+**Founder's directive:** do not optimize for prompt-tuning over the engine. The R&D leverage is in the template layer (typography, layout-as-code), the routing layer (this eval), and the workflow layer (bundling). Frontier-model improvement is a tailwind, not a threat — *as long as the moat is here and not in our prompting prowess*.
+
+This is **why the VIR eval matters more than search-eval-vs-Pinterest**: search-eval asks *"do we have the content?"* (a content claim); VIR asks *"does our layer add value the engine can't"* (a product claim). The latter is what survives the next OpenAI keynote.
+
+---
+
 ## Phased plan — 8 weeks, Rong-owned
 
 The Phase split below is the 2026-06-27 reframe: build the benchmark first, then implement the three retrieval paradigms as separate baselines, then the constrained-generation prototype, then the hybrid. Each phase ships a deliverable on its own — no big-bang.
