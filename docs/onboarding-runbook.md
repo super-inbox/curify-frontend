@@ -181,7 +181,34 @@ Flow:
 4. Backend hits `POST /nano-freeform/generate` → image lands at `images/nano_freeform/<project_id>.jpg` in GCS. Result tile shows on the gallery [id] reproduce surface.
 5. Verify the project shows up in the user's workspace (`/workspace`).
 
-### 2.7 Manual credit grant
+### 2.7 Image text-overlay edit (`image_text_overlay_agent.cjs`)
+
+**Frequency:** ad-hoc — when an operator wants to add or replace text on an existing image (meme captions, headline overlays, prompt-driven typography).
+
+**Pipeline:** [`scripts/image_text_overlay_agent.cjs`](../scripts/image_text_overlay_agent.cjs)
+1. Loads an image config from `public/data/nanobanana.json` by `id` (or reads a raw file directly in a per-job one-off — see below).
+2. Calls OpenAI (`gpt-4.1` by default) to PROPOSE 3 text-overlay ideas given the image + an editorial brief.
+3. For each idea, asks OpenAI to write a Gemini image-edit prompt.
+4. Calls Gemini image-edit (`gemini-2.5-flash-image` default) with the original image + edit prompt; saves output under `public/image_text_layout/`.
+
+**When you already know the exact caption**, skip the OpenAI propose step and write a focused one-off (see `scripts/oneoff_wc_meme_text_overlay_2026-06-30.cjs` as a template — it reuses the Gemini edit call directly).
+
+**Critical model gotcha — Chinese / CJK captions:**
+
+The pipeline's default `gemini-2.5-flash-image` **mangles longer Simplified-Chinese strings** — drops characters, garbles stroke composition, hallucinates near-homophones. For any CJK caption longer than ~6 characters, override the model:
+
+```bash
+GEMINI_IMAGE_EDIT_MODEL=gemini-3-pro-image-preview \
+  node scripts/<your-overlay-script>.cjs
+```
+
+`gemini-3-pro-image-preview` renders 20-30 character Chinese captions cleanly. Latin-only / short labels stay fine on flash (faster + cheaper).
+
+**Memory:** `feedback_chinese_caption_gemini_model.md` — captures this lesson + a productization follow-up (auto-detect CJK in the prompt and route to the right model inside the pipeline).
+
+**Concrete example (2026-06-30):** WC meme reskin of the classic 朱时茂/陈佩斯 frame with a soccer-themed caption replacement. Flash garbled the characters; pro rendered exactly. See `raw/wc-meme-06-30/` for input + edited output and `scripts/oneoff_wc_meme_text_overlay_2026-06-30.cjs` for the one-off shape.
+
+### 2.8 Manual credit grant
 
 **Frequency:** rare — typically for internal users or partner accounts.
 
