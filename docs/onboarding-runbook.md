@@ -208,6 +208,19 @@ GEMINI_IMAGE_EDIT_MODEL=gemini-3-pro-image-preview \
 
 **Concrete example (2026-06-30):** WC meme reskin of the classic 朱时茂/陈佩斯 frame with a soccer-themed caption replacement. Flash garbled the characters; pro rendered exactly. See `raw/wc-meme-06-30/` for input + edited output and `scripts/oneoff_wc_meme_text_overlay_2026-06-30.cjs` for the one-off shape.
 
+**Pattern — multi-line / multi-language / multi-variant overlay:**
+
+When you need more than a single caption replacement (e.g. a poster-style image with a top headline + bottom strip, or the same image rendered in several language combos for A/B), don't fire one call per output. Drive a `VERSIONS = [{ name, out, prompt }, ...]` array from a single script and loop. Keeps the image read once, makes side-by-side review trivial, and avoids prompt drift across variants.
+
+Two layout primitives that work well in the edit prompt:
+
+- **3-zone layout** — TOP sky / BOTTOM stack. Specify each line's text, language, color (white-with-outline vs bold-red-with-outline), size (% of image height, e.g. "~4%"), and placement (% from edge). The model honors percentage anchors better than vague "above" / "below".
+- **Per-language styling** — different language, different style: JP/EN white sans/serif with thin black outline reads as international tribute; bold red (#E63329) with black outline reads as Chinese meme house style. Mixing both signals "global support" vs single-culture joke.
+
+Always say what to **preserve** explicitly ("Snoopy, Mt. Fuji, the trophy, the train must remain pixel-identical — ONLY add the captions") — without it the model often re-renders the subject.
+
+**Concrete example (2026-06-30):** Japan WC tribute poster (Snoopy + Mt. Fuji + trophy). One script rendered two variants: J+E+C (3 lines, 3 languages, mixed styles) and J+E only (2 lines, white serif). See `raw/wc-meme-06-30/japan-wc-jec.jpg` / `japan-wc-je.jpg` and `scripts/oneoff_japan_wc_meme_text_overlay_2026-06-30.cjs`.
+
 ### 2.8 Manual credit grant
 
 **Frequency:** rare — typically for internal users or partner accounts.
