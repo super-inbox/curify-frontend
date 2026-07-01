@@ -10,6 +10,13 @@ Search quality, content tagging, content production, and upstream demand-sensing
 
 **Active improvement plan (2026-06-25):** [`docs/search-retrieval-improvement-plan-2026-06-25.md`](./search-retrieval-improvement-plan-2026-06-25.md) audits Curify's retrieval against a 4-item recommendation (multi-query, metadata expansion, query decomposition, intent routing), picks the P0 subset by ROI, and lays out the implementation order. P0.1 (metadata expansion v2) in progress.
 
+**Companion workstream — search evaluation + external signals (Baobao):** [`super-inbox/visual-search-adhoc`](https://github.com/super-inbox/visual-search-adhoc) — separate repo carrying Baobao's cross-platform search-quality benchmarks (Curify / Pinterest / Google Images / Bing Images / Canva) and external-signal pilots. Layout:
+- `scripts/{curify,pinterest,google-image,bing-image,canva}-search-eval/` — per-platform crawl + eval scripts.
+- `scripts/external-signal-analysis/` — upstream demand-sensing pilots (feeds thread-d).
+- `docs/search-evaluation/`, `docs/external-signal-pilot/`, `docs/daily_report/` — running reports and design notes; `claude-reports/` carries recent daily reports.
+- Clone alongside `curify-frontend` (`~/visual-search-adhoc`). Read `docs/search-evaluation/` first for the benchmark schema; the current work loop lands in `claude-reports/` before promotion.
+- Pairs with the eval framework doc [`docs/eval-framework-visual-search-benchmark-2026-06-14.md`](./eval-framework-visual-search-benchmark-2026-06-14.md) in this repo (framing here; execution + data there).
+
 The four threads:
 
 | # | Thread | Where it lives | Status doc |
