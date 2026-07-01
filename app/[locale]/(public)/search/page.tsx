@@ -18,9 +18,22 @@ import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import { tsToSc } from "@/lib/zh_normalize";
 import { getMultiQueryPaths, flattenPaths } from "@/lib/searchRewrite";
 import { matchBareWcCountryQuery, matchWcCountryQuery } from "@/lib/wcCountryRouting";
-import { topIntentChipsFromTopicCounts } from "@/lib/intent_clusters";
+import {
+  topIntentChipsFromTopicCounts,
+  rankIntentClusters,
+  type IntentChip,
+} from "@/lib/intent_clusters";
 import { buildTemplateTopicsMap, resolveTopics } from "@/lib/topic_resolver";
 import { calculateTopicCooccurrence } from "@/lib/topic_cooccurrence";
+import {
+  isIntentClusterSlug,
+  getIntentClusterTopicSet,
+  getIntentClusterLabel,
+  getIntentCluster,
+} from "@/lib/intent_taxonomy";
+import { normalizeSearchQuery } from "@/lib/query_normalize";
+import { getBusinessOverride, applyBusinessOverride, shouldSkipTopicRedirect } from "@/lib/search_business_override";
+import { CONCEPT_SYNONYMS } from "@/lib/template_concept_expansion";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Threshold below which we trigger the LLM multi-query expansion path
@@ -75,7 +88,7 @@ const NANO_PROMPT_TAG_SET = new Set(
 
 type Props = {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ q?: string; within?: string }>;
+  searchParams: Promise<{ q?: string; within?: string; intent?: string }>;
 };
 
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
@@ -229,9 +242,18 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // whose topics include the within slug. The chip itself is rendered as
   // a removable header pill in SearchResultsClient.
   const { locale } = await params;
-  const { q = "", within = "" } = await searchParams;
+  const { q = "", within = "", intent = "" } = await searchParams;
   const query = q.trim().toLowerCase();
+  const normalizedQuery = normalizeSearchQuery(q);
   const withinSlug = within.trim().toLowerCase();
+
+  // High-level intent cluster filter (?intent=<cluster-slug>).
+  // Validated here; invalid values are silently ignored.
+  // Precedence: intent takes priority over within when both are present.
+  const rawIntent = intent.trim().toLowerCase();
+  const intentSlug = isIntentClusterSlug(rawIntent) ? rawIntent : "";
+  // When intent is active, within is suppressed to avoid double-filtering.
+  const effectiveWithin = intentSlug ? "" : withinSlug;
 
   if (!query) redirect(`/${locale}`);
 
@@ -318,6 +340,17 @@ export default async function SearchPage({ params, searchParams }: Props) {
       );
     }
   }
+  // Augment the i18n blob with each template's topic slugs so queries
+  // that include a topic keyword (e.g. "flashcards" in "bilingual
+  // flashcards") can find templates tagged with that topic even when
+  // the exact word doesn't appear in the i18n title/description text.
+  for (const [tid, topics] of TEMPLATE_TOPICS) {
+    if (topics.length === 0) continue;
+    templateSearchBlob.set(
+      tid,
+      (templateSearchBlob.get(tid) ?? "") + " " + topics.join(" ")
+    );
+  }
   // Two-pass match (strict-AND on primary tokens, then relaxed-OR with a
   // ⌈N/2⌉ threshold, with CJK bigram fallback for unsegmented queries) +
   // strict/relaxed inspiration bucketing are all folded into the
@@ -381,7 +414,12 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // searchFallback entries (nano-banana prompt tags) intentionally do NOT
   // redirect — they should land on this page so the user sees templates,
   // template examples, and gallery prompts side-by-side.
-  if (target && !target.searchFallback) {
+  //
+  // Similarly, skip the topic redirect when a Business Override exists for
+  // this query: the search page's multi-intent chips and filtering provide
+  // a richer experience than the static topic page.  This ensures "cat" and
+  // "cats" (which normalizes to "cat") follow the same routing policy.
+  if (target && !target.searchFallback && !shouldSkipTopicRedirect(q)) {
     redirect(target.href ? `/${locale}${target.href}` : `/${locale}/topics/${target.slug}`);
   }
 
@@ -626,6 +664,42 @@ export default async function SearchPage({ params, searchParams }: Props) {
     }
   }
 
+  // Concept-expansion secondary pass — surfaces templates whose blobs contain
+  // semantically-related terms rather than the exact query tokens. Only targets
+  // the template rail (matchedTemplateIdsByI18nUnion); inspirations are not
+  // affected. Runs when the strict template set is thin (< 10) AND at least
+  // one query token has registered synonyms in CONCEPT_SYNONYMS.
+  //
+  // Matching rule: for each query token T build an "expanded set" {T} ∪
+  // CONCEPT_SYNONYMS[T]; a template qualifies when its blob contains at least
+  // one member of EVERY expanded set (per-token OR, cross-token AND).
+  {
+    const EXPANSION_THRESHOLD = 10;
+    const EXPANSION_CAP = 12;
+    if (matchedTemplateIdsByI18nUnion.size < EXPANSION_THRESHOLD) {
+      const tokenSet = new Set(tokens.primary);
+      const expandedSets = tokens.primary.map((tok) => {
+        const entry = CONCEPT_SYNONYMS[tok];
+        if (!entry) return [tok];
+        // Suppress this expansion when a co-signal in the query overrides
+        // the default semantic (e.g. "korean" + "flashcards" → language, not cuisine).
+        const suppressed = entry.suppressWhen?.some((sw) => tokenSet.has(sw)) ?? false;
+        return suppressed ? [tok] : [tok, ...entry.synonyms];
+      });
+      const hasAnyExpansion = expandedSets.some((s) => s.length > 1);
+      if (hasAnyExpansion) {
+        let added = 0;
+        for (const [tid, blob] of templateSearchBlob) {
+          if (matchedTemplateIdsByI18nUnion.has(tid)) continue;
+          if (expandedSets.every((termSet) => termSet.some((t) => tokenInBlob(blob, t)))) {
+            matchedTemplateIdsByI18nUnion.add(tid);
+            if (++added >= EXPANSION_CAP) break;
+          }
+        }
+      }
+    }
+  }
+
   const allScored = Array.from(inspirationById.values());
   const hasStrict = allScored.some((x) => x.strict);
   let inspirations = allScored
@@ -639,12 +713,23 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // chip aggregator's underlying signal (the slug was counted on the
   // template's topics during topIntentChips) so the result set is exactly
   // what the user expected when they clicked the chip.
-  if (withinSlug) {
+  if (effectiveWithin) {
     inspirations = inspirations.filter((r) => {
       const tplTopics = TEMPLATE_TOPICS.get(r.template_id) ?? [];
-      if (tplTopics.includes(withinSlug)) return true;
+      if (tplTopics.includes(effectiveWithin)) return true;
       const own = [...(r.topics ?? []), ...(r.tags ?? [])];
-      return own.includes(withinSlug);
+      return own.includes(effectiveWithin);
+    });
+  }
+
+  // High-level intent cluster filter (?intent=<cluster-slug>): keep only
+  // inspirations whose mergedTopics (inspiration + parent template union)
+  // intersect the cluster's mapped topic set. Preserves existing ranking order.
+  if (intentSlug) {
+    const clusterTopicSet = getIntentClusterTopicSet(intentSlug);
+    inspirations = inspirations.filter((r) => {
+      const { mergedTopics } = resolveTopics(r, TEMPLATE_TOPICS);
+      return mergedTopics.some((t) => clusterTopicSet.has(t));
     });
   }
   const strictTemplateMatches = strictTemplateMatchesUnion;
@@ -700,11 +785,22 @@ export default async function SearchPage({ params, searchParams }: Props) {
     if (existing) existing.push(r);
     else matchedInspsByTemplate.set(r.template_id, [r]);
   }
+  // Build the set of template IDs that survived the inspiration filter
+  // (needed for the intent-cluster template-rail inclusion rule).
+  const survivingInspTemplateIds = new Set(inspirations.map((r) => r.template_id));
+
   const matchedTemplates = allFeedCards
     .filter((c) => matchedTemplateIdsAll.has(c.template_id))
-    // Intent narrow: same withinSlug filter, applied to the templates rail
-    // so the user sees only template cards whose topics carry the slug.
-    .filter((c) => !withinSlug || (c.topics ?? []).includes(withinSlug))
+    // within filter: keep only templates whose topics carry the within slug.
+    .filter((c) => !effectiveWithin || (c.topics ?? []).includes(effectiveWithin))
+    // intent filter: include when (a) template topics intersect cluster set OR
+    // (b) the template owns at least one surviving inspiration result.
+    .filter((c) => {
+      if (!intentSlug) return true;
+      const clusterTopicSet = getIntentClusterTopicSet(intentSlug);
+      const directMatch = (c.topics ?? []).some((s) => clusterTopicSet.has(s));
+      return directMatch || survivingInspTemplateIds.has(c.template_id);
+    })
     .map((c) => {
       const matched = matchedInspsByTemplate.get(c.template_id);
       if (!matched || matched.length === 0) return c;
@@ -745,23 +841,42 @@ export default async function SearchPage({ params, searchParams }: Props) {
     }
   }
 
-  // Phase 1 intent-chip aggregator: derive top output-type slugs from
-  // topic co-occurrence across the Top 20 ranked inspiration results.
-  // Both inspiration-own topics and parent-template topics contribute.
-  // Computed server-side so the chip row renders in the initial HTML
-  // (no client flash + good SEO indexing). Skipped when within is
-  // already active — the active slug is shown as a removable pill
-  // instead, and the user is one level deep already.
-  const intentChips = withinSlug
-    ? []
-    : topIntentChipsFromTopicCounts(
-        calculateTopicCooccurrence(
-          inspirations as Parameters<typeof calculateTopicCooccurrence>[0],
-          TEMPLATE_TOPICS,
-          20
-        ),
-        { topN: 5, minCount: 2 }
-      );
+  // Intent chip aggregator: derive exploration chips from topic co-occurrence
+  // across the Top 20 ranked inspiration results. Skipped when any active
+  // filter is already applied — the active pill replaces the chip row.
+  //
+  // Pathway A (cluster chips): try ranking the 8 high-level clusters first.
+  // Pathway B (topic chips): fall back to raw output-type chips when no
+  // cluster reaches minCount.
+  let intentChips: IntentChip[] = [];
+  if (!intentSlug && !effectiveWithin) {
+    const cooccurrence = calculateTopicCooccurrence(
+      inspirations as Parameters<typeof calculateTopicCooccurrence>[0],
+      TEMPLATE_TOPICS,
+      20
+    );
+    const clusterChips = rankIntentClusters(cooccurrence, {
+      topN: 5,
+      minCount: 2,
+      locale,
+    });
+    if (clusterChips.length > 0) {
+      const overrideSlug = getBusinessOverride(normalizedQuery);
+      intentChips = overrideSlug
+        ? applyBusinessOverride(clusterChips, overrideSlug, locale)
+        : clusterChips;
+    } else {
+      intentChips = topIntentChipsFromTopicCounts(cooccurrence, {
+        topN: 5,
+        minCount: 2,
+      });
+    }
+  }
+
+  // Compute the localized label for an active cluster intent pill.
+  const activeIntentLabel = intentSlug
+    ? getIntentClusterLabel(getIntentCluster(intentSlug)!, locale)
+    : "";
 
   return (
     <SearchResultsClient
@@ -774,7 +889,9 @@ export default async function SearchPage({ params, searchParams }: Props) {
       usedRewrites={usedRewrites}
       pathsUsed={usedPathsCount}
       intentChips={intentChips}
-      withinSlug={withinSlug || undefined}
+      withinSlug={effectiveWithin || undefined}
+      intentSlug={intentSlug || undefined}
+      activeIntentLabel={activeIntentLabel || undefined}
     />
   );
 }
