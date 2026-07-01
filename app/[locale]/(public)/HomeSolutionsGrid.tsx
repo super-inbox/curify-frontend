@@ -15,7 +15,7 @@ type Solution = { key: string; emoji: string; href: string };
 
 const SOLUTIONS: Solution[] = [
   { key: "merch", emoji: "🎁", href: "/use-cases/for-merch-operators" },
-  { key: "design", emoji: "🎨", href: "/search" },
+  { key: "design", emoji: "🎨", href: "/use-cases/for-designers" },
   { key: "education", emoji: "📚", href: "/use-cases/for-parents" },
   { key: "video", emoji: "🎬", href: "/tools" },
   { key: "marketing", emoji: "🌍", href: "/use-cases/for-programmatic-seo" },
