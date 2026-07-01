@@ -18194,7 +18194,7 @@
       "composition",
       "bold"
     ],
-    "rank_score": 90.0
+    "rank_score": 90
   },
   {
     "id": "template-wc-knockout-matchup-poster",
@@ -18248,7 +18248,7 @@
       "vibrant",
       "split-screen"
     ],
-    "rank_score": 350.0
+    "rank_score": 350
   },
   {
     "id": "template-celebrity-meme-sticker-merchandise-collection-poster",
@@ -18305,6 +18305,55 @@
       "composition",
       "whimsical"
     ],
-    "rank_score": 92.0
+    "rank_score": 92
+  },
+  {
+    "id": "template-layered-systems-architecture",
+    "locales": {
+      "en": {
+        "base_prompt": "(Layered Systems Architecture Poster Designer) You are a senior technical illustrator producing reference-grade layered-architecture diagrams for engineering documentation, tech blogs, and platform onboarding decks. Based on the user inputs [{stack_title}], [{stack_subtitle}], and [{layers_block}] with N layers, generate a portrait 4:5 poster.\n\nTITLE\n- Top of the poster, centered:\n  - Main title: \"{stack_title}\" — large, bold, dark charcoal sans-serif (Inter / Söhne / SF Pro Display feel).\n  - Subtitle underneath in muted gray, smaller: \"{stack_subtitle}\"\n\nLAYERS\n- Render exactly N horizontal rectangular panels stacked top-to-bottom, evenly spaced, from top (L1) to bottom. Each panel represents one layer.\n- Between each consecutive pair of layers, draw a single centered downward arrow (thin vertical line + solid arrowhead) so the flow reads top→bottom.\n- Panel content is provided as {layers_block}: one line per layer in the form \"Lk — Name: item, item, item\". Use the exact text — do NOT invent extra items, do NOT drop items.\n\nPANEL DESIGN (apply to every layer)\n- Left side: a compact numbered chip (small square badge, e.g. \"L1\", \"L2\") in a solid accent color, followed by the layer name in bold sans-serif.\n- Right side: sub-items as small rounded-rectangle pills. Each pill has a thin outline (~1.5px), a subtle fill (light warm gray or a pale tint of the layer's accent), and item text in clean sans-serif or monospace (JetBrains Mono / IBM Plex Mono feel). Pills spaced evenly. If a layer has 5+ items, wrap into two rows.\n- Panel outline: 1-2px charcoal, rounded corners (~8px). No drop shadows.\n- Equal vertical space per layer — panels with fewer items should NOT shrink; balance the whitespace inside them.\n\nSTYLE\n- Flat vector illustration, engineering-diagram aesthetic.\n- NO cartoon characters, NO people, NO decorative avatars, NO gradient backgrounds, NO 3D depth, NO glowing effects.\n- Palette: warm-white background (#F9FAF8 range). Charcoal (#1F2937) text and outlines. Muted accent colors from a professional developer palette (deep indigo #4F46E5, teal #0D9488, warm amber #D97706, coral #E11D48, violet #7C3AED, slate #475569, emerald #059669) — one accent per layer, cycled if there are more layers than accents.\n- Consistent stroke weight. Balanced whitespace.\n\nWATERMARK\n- Small \"Curify\" wordmark in the bottom-right corner, muted gray, understated.\n\nCONSTRAINTS\n- Aspect ratio: portrait 4:5.\n- Text must be legible and spelled EXACTLY as given. Preserve punctuation and spacing inside item names.\n- Do NOT add layers or sub-items the input didn't specify. Do NOT add narrative captions, footnotes, or icons inside pills.\n\nOutput the final diagram directly.",
+        "parameters": [
+          {
+            "name": "stack_title",
+            "label": "Stack title",
+            "type": "text",
+            "placeholder": "AI/ML Job Orchestration"
+          },
+          {
+            "name": "stack_subtitle",
+            "label": "Subtitle (short tagline, optional)",
+            "type": "text",
+            "placeholder": "The 5 layers behind every production model-serving platform"
+          },
+          {
+            "name": "layers_block",
+            "label": "Layers (one per line: Lk — Name: item, item, item)",
+            "type": "textarea",
+            "placeholder": "L1 — API: Submit, Cancel, Status\nL2 — Execution: Queue, Worker, Sync/Async\nL3 — Reliability: Retry, Checkpoint, Failover\nL4 — Resources: CPU, GPU, Memory, Model Loading\nL5 — Scalability: Storage, Horizontal Scaling, Monitoring, Autoscaling"
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp/template-layered-systems-architecture-aiml-orchestration.jpg",
+    "topics": [
+      "infographic",
+      "insight",
+      "learning",
+      "modern",
+      "minimalist",
+      "posters",
+      "art-prints",
+      "wall-art",
+      "design",
+      "architecture",
+      "composition",
+      "reference",
+      "digital-canvas",
+      "bold"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 110,
+    "creation_date": "2026-07-01",
+    "allow_generation": true
   }
 ]
