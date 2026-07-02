@@ -14,6 +14,7 @@
 import OpenAI from "openai";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import enNano from "@/messages/en/nano.json";
+import { getOutputIntent, INTENT_META, type OutputIntent } from "@/lib/output_intent";
 
 const MODEL = "gpt-4o-mini";
 const TIMEOUT_MS = 15_000;
@@ -116,6 +117,10 @@ export type TemplateMatch = {
   reason: string;
   /** og_image preview URL, attached server-side from the templates catalog. */
   og_image?: string;
+  /** Output Intent (JTBD) + its differentiated Key Action CTA, attached
+   *  server-side so the search UI can show the right verb (P0-2). */
+  output_intent?: OutputIntent;
+  cta?: string;
 };
 
 type MatchCache = Map<string, { matches: TemplateMatch[]; at: number }>;
@@ -215,12 +220,15 @@ export async function matchTemplatesForQuery(
       const confRaw = (m as { confidence?: unknown }).confidence;
       const conf =
         typeof confRaw === "number" ? Math.max(0, Math.min(1, confRaw)) : 0.5;
+      const intent = getOutputIntent(tid);
       cleanedMatches.push({
         template_id: tid,
         params: sanitizeParams((m as { params?: unknown }).params),
         confidence: conf,
         reason: String((m as { reason?: unknown }).reason ?? ""),
         og_image: TEMPLATE_OG.get(tid),
+        output_intent: intent,
+        cta: INTENT_META[intent].cta,
       });
       if (cleanedMatches.length >= 3) break;
     }

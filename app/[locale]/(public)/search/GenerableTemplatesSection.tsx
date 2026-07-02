@@ -44,6 +44,12 @@ function GenerableCard({
           alt={match.template_id}
           className="h-full w-full object-cover opacity-80 transition-transform duration-300 group-hover:scale-[1.02]"
         />
+        {/* P0-2: differentiated Key Action verb from the template's output intent */}
+        {match.cta && !hedged && (
+          <span className="absolute left-2 top-2 rounded-full bg-purple-600 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
+            {match.cta}
+          </span>
+        )}
         <span
           className={`absolute bottom-2 left-2 rounded px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white ${
             hedged ? "bg-amber-600" : "bg-indigo-600"

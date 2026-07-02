@@ -10,6 +10,7 @@ import CdnImage from "@/app/[locale]/_components/CdnImage";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { SITE_URL } from "@/lib/constants";
 import { toSlug } from "@/lib/nano_pure";
+import { intentCtaLabel } from "@/lib/output_intent";
 import { useClickTracking, useTracking, useVideoTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
@@ -237,7 +238,7 @@ function ExampleImageCard({
             className="inline-flex items-center gap-1.5 rounded-full bg-purple-600 px-3 py-1 text-sm font-bold text-white shadow-sm transition-colors hover:bg-purple-700"
           >
             <Sparkles className="h-3.5 w-3.5" />
-            {t("remixThis")}
+            {intentCtaLabel(item.templateId, t("remixThis"))}
           </Link>
         )}
         <ShareButton
