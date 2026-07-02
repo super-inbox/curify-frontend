@@ -1,5 +1,7 @@
 # Visual Intent Routing / Template Retrieval Eval — v1 Summary
 
+> **⚠️ Migrated 2026-07-01 → [`super-inbox/agentic-adhoc`](https://github.com/super-inbox/agentic-adhoc) (`visual-intent-routing/`).** This track now lives in that repo as a self-contained, standalone-runnable copy. **All new work happens there; this copy in `curify-frontend` is frozen as history.** Do not edit the scripts/gold here — edit them in `agentic-adhoc`.
+
 **Date:** 2026-06-25 (KB try-out added 2026-06-26) · **Branch:** `pr-intern` (branched off `jwang/vercel`) · **Status:** Path A (offline) **and** Path B (live gpt-4o-mini) + union all scored; Option D (KB-enriched matcher) prototyped + tried locally (§3.5). Remaining: human review of the gold; per-query targeted KB injection.
 
 **Goal.** First executable version of the routing eval from `docs/eval-framework-visual-intent-routing-2026-06-15.md` (P1 / Layer 1 — Template Routing Accuracy): a labeled gold set + a baseline **top-1 / top-3 routing accuracy** for the current template-recall layer, scoring the two recall paths separately:
@@ -109,10 +111,13 @@ Rather than "dump the whole KB into the catalog", the more promising levers are:
 ## 4. Future work
 
 ### a) Human review of `vir_routing_gold.json`
-The gold is a Claude draft pending sign-off. A prioritized checklist is in `docs/vir-routing-eval-v1-review-checklist.md`, covering:
-- **7 content-gap calls** (acceptable = []) — esp. 4 queries where our "gap" verdict conflicts with the eval note's `expected_templates=moderate` (is it a routing error, or a real content gap?).
-- **6 capability-driven overrides** of the eval notes (e.g. `homophones and homonyms` → `english-grammar-wordlist-infographic`, whose examples are literally "20 common homophones").
-- **12 subject-gate drops** (templates the note named but we rejected on subject mismatch).
+The gold is a Claude draft pending sign-off. A prioritized, decision-only checklist is generated from the current gold by `scripts/build_review_checklist.cjs` → `docs/vir-routing-eval-v1-review-checklist.md` (re-run after any gold edit). It surfaces four data-derived categories:
+- **7 content-gap calls** (acceptable = []) — ordered by conflict severity; top rows are the 4 queries where our "gap" verdict conflicts with the eval note's `expected_templates=moderate` (routing error, or real content gap?).
+- **17 capability-driven overrides** of the eval notes (gold primary chosen from mined example evidence over the template the note named).
+- **21 subject-gate drops** (templates the note named but we demoted to near_miss on subject mismatch).
+- **52 cross-query consistency flags** — a template rejected as near_miss in one query but accepted in another (e.g. `recipe` rejected for `easy weeknight dinners healthy` but accepted for `cuban sandwich recipe poster`); gap-query rows are the most suspect.
+
+(Counts are auto-derived from the current gold, so they supersede the earlier hand-counted 6/12 estimate.)
 
 ### b) Option D — KB-enriched matcher catalog (the "b3" path)
 Prototyped and tried locally (see §3.5). The naive "whole-KB-into-the-catalog" form is **not** the slam-dunk first expected: on the 6-query try-out it stably recovered only `植物` (0 regressions), and bare CJK / IP queries still return `[]`. Next iterations to pursue (in priority order): **(1) per-query targeted KB injection** — retrieve candidate templates first, feed only their KB evidence (smaller/sharper catalog), expected to beat the naive blob; (2) CJK query normalization before the matcher; (3) full 58-query desc-vs-KB lift table (with variance) once gold is finalized. **Mind contamination: gold was KB-drafted, so finalize it by human review (§4a) before scoring a KB-driven router.**
@@ -134,5 +139,7 @@ Extend the gold toward the spec's balanced 100 (low/med/high ≈ 30/50/20), and 
 | `scripts/eval_template_routing.cjs` | Routing scorer (`--path=a\|b\|union\|all`, `--replay`, `--out`) |
 | `scripts/try_kb_matcher.cjs` | Local A/B try-out: Path A vs Path B (desc) vs Path B (KB-enriched) per query (Option D, §3.5) |
 | `scripts/kb_lookup.cjs` | Per-template capability lookup (review aid) |
-| `docs/vir-routing-eval-v1-{report,results,review-checklist,summary}.md` | Reports + review checklist |
+| `scripts/build_review_checklist.cjs` | Generates the gold human-review checklist from the current gold (§4a) |
+| `docs/vir-routing-eval-v1-summary.md` | This summary |
+| `docs/vir-routing-eval-v1-review-checklist.md` | Generated gold review checklist (regenerate via `build_review_checklist.cjs`) |
 
