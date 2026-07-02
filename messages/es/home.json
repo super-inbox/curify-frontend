@@ -277,6 +277,14 @@
         "title": "AI Product Photo Generator | Templated Catalog Photos at Scale | Curify",
         "description": "AI product photo generator with templated visual style — ship 9-image product grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Demo + early access."
       }
+    },
+    "ecommerce_photo": {
+      "title": "Foto del Producto → Imagen de Listado de E-Commerce",
+      "desc": "Sube cualquier foto de producto — obtén una imagen lista para listado en 30 segundos. Imágenes acogedoras para páginas de marca de Etsy / DTC; diseños de toma de detalle 9:16 para Shopee, TikTok Shop, RedNote.",
+      "meta": {
+        "title": "Sube Foto del Producto → Imagen de Listado de E-Commerce | Herramienta de IA | Curify",
+        "description": "Sube cualquier foto de producto — obtén una imagen de e-commerce lista para listar en 30 segundos. Imágenes acogedoras + diseños de toma de detalle 9:16. Demostración gratuita; únete al acceso anticipado para carga por lotes."
+      }
     }
   },
   "bilingual": {
@@ -905,6 +913,55 @@
         "educationBody": "Programmatic SEO pages need unique visuals per variant. Generic AI generation produces inconsistent quality at scale; Curify's template-first approach gives every page a unique on-brand image. See /use-cases/for-programmatic-seo for the integration shape.",
         "businessTitle": "For marketing teams running A/B creative tests",
         "businessBody": "Test 20 visual variants of the same product across paid channels without a 20-shoot budget. The template locks the baseline style; the variants differ only on the tested axis (background, model, scene). Cleaner experimental design than the inconsistency you get from generic AI generation."
+      }
+    }
+  },
+  "ecommercePhoto": {
+    "metadata": {
+      "title": "Sube Foto del Producto → Imagen de Listado de E-Commerce | Herramienta de IA | Curify",
+      "description": "Sube cualquier foto de producto: obtén una imagen de comercio electrónico lista para listar en 30 segundos. Toma de héroe cálida y acogedora + diseños de toma de detalle 9:16. Demostración gratuita; únete al acceso anticipado para la carga por lotes."
+    },
+    "title": "Sube Tu Producto → Imagen de Listado de Comercio Electrónico",
+    "description": "Convierte cualquier foto de producto en una imagen lista para listado sin necesidad de una sesión de fotos. Dos plantillas enviadas cubren las dos gramáticas visuales dominantes del comercio electrónico: tomas de héroe cálidas y acogedoras (estética de Etsy / marca DTC) y limpias disposiciones de toma de detalle vertical 9:16 (Shopee / TikTok Shop / Xiaohongshu). Sube una vez; la plantilla bloquea la composición, la iluminación y el encuadre. Demostración gratuita a continuación.",
+    "example": "Ejemplo: una foto de producto de camiseta de ciclismo renderizada como un diseño de toma de detalle vertical 9:16: el formato en el que realmente convierten los listados de Shopee, TikTok Shop y RedNote.",
+    "cta": "Pruébalo Ahora",
+    "why": {
+      "title": "¿Por qué convertir fotos de productos en listados a través de Curify?",
+      "point1": "Dos plantillas enviadas cubren las dos gramáticas visuales dominantes del comercio electrónico: tomas de héroe cálidas y acogedoras para páginas de Etsy / DTC, y diseños de tomas verticales 9:16 para Shopee, TikTok Shop y RedNote. Elige la que coincida con donde listes.",
+      "point2": "Sube la foto del producto que ya tienes. La plantilla preserva la identidad exacta del producto: forma, proporciones, colores, materiales, marca, mientras reemplaza la escena con iluminación interior acogedora o un diseño limpio de catálogo de marca.",
+      "point3": "La salida es una imagen lista para listado. No es un tablero de inspiración, no es un 'concepto'. La imagen generada se coloca directamente en un listado de Etsy / Shopify / TikTok Shop sin postproducción.",
+      "point4": "La demostración se ejecuta en plantillas reales. El acceso anticipado abre el pipeline por lotes: sube una carpeta de SKUs, recibe un conjunto coordinado de imágenes de listado con un estilo visual bloqueado en todo el catálogo."
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Subo mi propia foto de producto?",
+      "a1": "Sí. Ambos plantillas subyacentes (template-product-poster y template-fashion-ecommerce) toman una foto de referencia de tu producto real. La IA preserva la identidad del producto y reemplaza la escena / composición / iluminación. La imagen de tu listado termina mostrando tu producto, no un producto 'similar' genérico.",
+      "q2": "¿En qué se diferencia esto de ChatGPT o Midjourney para fotos de productos?",
+      "a2": "Los generadores de IA genéricos producen resultados inconsistentes entre SKU: cada producto termina en un estilo visual diferente, lo que se ve amateur en una página de listado. El enfoque de plantillas de Curify bloquea la composición, iluminación y encuadre en cada generación, por lo que 20 productos en tu catálogo parecen haber salido de la misma sesión de fotos. Esa consistencia es lo que los compradores registran como 'una marca real'."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué es una imagen de listado de comercio electrónico generada por IA?",
+        "p1": "Una imagen de listado de comercio electrónico es la foto principal del producto que aparece en un mercado o en una tienda DTC: la imagen que aparece en las cuadrículas de búsqueda, en las tarjetas de productos y en la parte superior de la página de listado. Es el activo visual de mayor impacto en el embudo de conversión. La fotografía de catálogo tradicional requiere un estudio físico, un kit de iluminación y un fotógrafo por SKU.",
+        "p2": "La generación de listados de comercio electrónico por IA reemplaza ese flujo de trabajo. Sube el producto (una foto de un teléfono en tu encimera de cocina es suficiente), y la IA lo renderiza dentro de una escena de listado correctamente compuesta: un interior cálido y acogedor, o un diseño de toma vertical limpia — mientras preserva la fidelidad del producto: misma forma, mismo color, misma textura, misma marca. La salida es una imagen fija lista para subir a Etsy, Shopify, Amazon, TikTok Shop, RedNote o tu tienda DTC.",
+        "p3": "La generación de 2026 de modelos de imagen a imagen (Nano Banana Pro, Gemini 3 Pro Image, GPT Image 2) proporciona la capacidad subyacente. Lo que faltaba hasta ahora es la capa de plantillas: una forma de garantizar que cada generación se mantenga en el mismo registro visual, de modo que un catálogo de 50 productos se lea como una sola marca en lugar de 50 salidas de IA dispares."
+      },
+      "how": {
+        "title": "Cómo Curify convierte tu foto de producto en una imagen de comercio electrónico",
+        "p1": "Paso uno: elige la gramática visual que coincida con donde listas. Las fotos de héroe cálidas y acogedoras son la estética de la página de marca de Etsy / DTC: iluminación interior suave, props naturales, escenografía en superficies de madera. Los diseños de tomas de detalle verticales 9:16 son la estética de Shopee / TikTok Shop / RedNote: fondo limpio, llamadas a la característica, mayor proporción de producto en el marco para cuadrículas móviles.",
+        "p2": "Paso dos: sube tu foto de producto. Cualquier ángulo funciona, pero una foto de héroe bien iluminada (encimera de cocina, luz natural de ventana) proporciona la referencia más nítida para que la IA preserve la identidad.",
+        "p3": "Paso tres: se ejecuta la plantilla. `template-product-poster` (rango 90) genera la variante de héroe acogedor. `template-fashion-ecommerce` (rango 80) genera la variante de toma de detalle 9:16. Ambas codifican composición + iluminación + encuadre para que no tengas que hacer ingeniería de prompts.",
+        "p4": "Paso cuatro: se envía la salida. Descarga la imagen fija, colócala en tu listado. Sin recortes, sin corrección de color, sin limpieza de escena. La plantilla ya ha bloqueado esas decisiones.",
+        "p5": "Para escala de catálogo — 20+ SKUs o una línea DTC completa — el pipeline por lotes (acceso anticipado) acepta una carpeta de fotos de productos y devuelve un conjunto coordinado de imágenes de listado que parecen haber salido de la misma sesión de fotos. Así es como se construyen las páginas de destino de SEO programático sin un presupuesto de sesión de fotos por SKU."
+      },
+      "usecases": {
+        "title": "Donde las imágenes de listado de comercio electrónico de IA importan",
+        "creatorsTitle": "Para vendedores de Etsy / Shopify / RedNote",
+        "creatorsBody": "Los vendedores independientes no pueden permitirse una sesión de estudio por SKU. La generación de comercio electrónico con IA cubre la brecha: sube la foto del producto que ya tienes, recibe de vuelta una imagen lista para listado que se presenta como una marca real. Consulta /use-cases/for-designers para el flujo de trabajo más amplio de diseñadores y /blog/ai-product-photo-to-ecommerce-listing para la encuesta plantilla por plantilla.",
+        "educationTitle": "Para catálogos DTC y SEO programático",
+        "educationBody": "Los catálogos DTC con más de 50 SKU necesitan consistencia visual en cada página de producto; de lo contrario, el catálogo se presenta como un mercado, no como una marca. El enfoque con plantillas de Curify garantiza consistencia. Combínalo con /blog/programmatic-seo-dtc-visual-first para la estrategia de SEO compuesta.",
+        "businessTitle": "Para operadores de POD / merchandising que envían diseños listos para imprimir",
+        "businessBody": "Los operadores de POD (camisetas, pegatinas, carteles, tazas) necesitan imágenes de maquetas + listados además del archivo de diseño listo para imprimir. Esta herramienta cubre la mitad de la imagen de listado; consulta /use-cases/for-merch-operators para el flujo de trabajo de merchandising y /blog/merchandise-design-hub para el manual de SKU-velocidad."
       }
     }
   }

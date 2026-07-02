@@ -314,6 +314,14 @@
         "title": "AI Product Photo Generator | Templated Catalog Photos at Scale | Curify",
         "description": "AI product photo generator with templated visual style — ship 9-image product grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Demo + early access."
       }
+    },
+    "ecommerce_photo": {
+      "title": "Product Photo → E-Commerce Listing Image",
+      "desc": "Upload any product photo — get a listing-ready image in 30 seconds. Cozy hero shots for Etsy / DTC brand pages; 9:16 detail-shot layouts for Shopee, TikTok Shop, RedNote.",
+      "meta": {
+        "title": "Upload Product Photo → E-Commerce Listing Image | AI Tool | Curify",
+        "description": "Upload any product photo — get a ready-to-list e-commerce image in 30 seconds. Cozy warm hero shots + 9:16 detail-shot layouts. Free demo; join early access for batch upload."
+      }
     }
   },
   "bilingual": {
@@ -844,6 +852,55 @@
         "educationBody": "Programmatic SEO pages need unique visuals per variant. Generic AI generation produces inconsistent quality at scale; Curify's template-first approach gives every page a unique on-brand image. See /use-cases/for-programmatic-seo for the integration shape.",
         "businessTitle": "For marketing teams running A/B creative tests",
         "businessBody": "Test 20 visual variants of the same product across paid channels without a 20-shoot budget. The template locks the baseline style; the variants differ only on the tested axis (background, model, scene). Cleaner experimental design than the inconsistency you get from generic AI generation."
+      }
+    }
+  },
+  "ecommercePhoto": {
+    "metadata": {
+      "title": "Upload Product Photo → E-Commerce Listing Image | AI Tool | Curify",
+      "description": "Upload any product photo — get a ready-to-list e-commerce image in 30 seconds. Cozy warm hero shots + 9:16 detail-shot layouts. Free demo; join early access for batch upload."
+    },
+    "title": "Upload Your Product → E-Commerce Listing Image",
+    "description": "Turn any product photo into a listing-ready image without a photoshoot. Two shipped templates cover the two dominant e-commerce visual grammars: warm cozy hero shots (Etsy / DTC brand aesthetic) and clean 9:16 vertical detail-shot layouts (Shopee / TikTok Shop / Xiaohongshu). Upload once; the template locks composition, lighting, and framing. Free demo below.",
+    "example": "Example: a cycling jersey product photo rendered as a 9:16 vertical detail-shot layout — the format Shopee, TikTok Shop, and RedNote listings actually convert on.",
+    "cta": "Try It Now",
+    "why": {
+      "title": "Why turn product photos into listings through Curify?",
+      "point1": "Two shipped templates cover the two dominant e-commerce visual grammars — warm cozy hero shots for Etsy / DTC brand pages, and 9:16 vertical detail-shot layouts for Shopee, TikTok Shop, and RedNote. Pick the one that matches where you list.",
+      "point2": "Upload the product photo you already have. The template preserves the exact product identity — shape, proportions, colors, materials, branding — while replacing the scene with cozy interior lighting or a clean brand-catalog layout.",
+      "point3": "Output is a listing-ready still. Not a mood board, not a 'concept'. The generated image drops directly into an Etsy / Shopify / TikTok Shop listing without post-production.",
+      "point4": "Demo runs on real templates. Early-access opens the batch pipeline — upload a folder of SKUs, get back a coordinated set of listing images with locked visual style across the catalog."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Do I upload my own product photo?",
+      "a1": "Yes. Both underlying templates (template-product-poster and template-fashion-ecommerce) take a reference photo of your actual product. The AI preserves the product identity and replaces the scene / composition / lighting. Your listing image ends up showing your product, not a generic 'similar' product.",
+      "q2": "How is this different from ChatGPT or Midjourney for product photos?",
+      "a2": "Generic AI generators produce inconsistent output across SKUs — each product ends up in a different visual style, which reads amateur on a listing page. Curify's templated approach locks composition, lighting, and framing across every generation, so 20 products in your catalog all look like they came from the same shoot. That consistency is what buyers register as 'a real brand'."
+    },
+    "deep": {
+      "what": {
+        "title": "What is an AI e-commerce listing image?",
+        "p1": "An e-commerce listing image is the main product photo that appears on a marketplace or DTC storefront — the image that shows up in search grids, on product cards, and at the top of the listing page. It's the highest-impact visual asset in the conversion funnel. Traditional catalog photography requires a physical studio, lighting kit, and photographer per SKU.",
+        "p2": "AI e-commerce listing generation replaces that workflow. Upload the product (a phone shot on your kitchen counter is enough), and the AI renders it inside a properly-composed listing scene — warm cozy interior, or clean vertical detail-shot layout — while preserving product fidelity: same shape, same color, same texture, same branding. The output is a still image ready to upload to Etsy, Shopify, Amazon, TikTok Shop, RedNote, or your DTC storefront.",
+        "p3": "The 2026 generation of image-to-image models (Nano Banana Pro, Gemini 3 Pro Image, GPT Image 2) ship the underlying capability. What was missing until now is the templating layer — a way to guarantee that every generation lands in the same visual register, so a catalog of 50 products reads as one brand instead of 50 disparate AI outputs."
+      },
+      "how": {
+        "title": "How Curify turns your product photo into an e-commerce image",
+        "p1": "Step one: pick the visual grammar that matches where you list. Warm cozy hero shots are the Etsy / DTC brand-page aesthetic — soft interior lighting, natural props, wooden-surface staging. Vertical 9:16 detail-shot layouts are the Shopee / TikTok Shop / RedNote aesthetic — clean background, feature callouts, larger product-in-frame ratio for mobile grids.",
+        "p2": "Step two: upload your product photo. Any angle works, but a well-lit hero shot (kitchen counter, natural window light) yields the sharpest reference for the AI to preserve identity from.",
+        "p3": "Step three: the template runs. `template-product-poster` (rank 90) generates the cozy hero variant. `template-fashion-ecommerce` (rank 80) generates the 9:16 detail-shot variant. Both encode composition + lighting + framing so you don't have to prompt-engineer.",
+        "p4": "Step four: the output ships. Download the still image, drop it into your listing. No cropping, no color-correcting, no scene-cleaning. The template has already locked those decisions.",
+        "p5": "For catalog scale — 20+ SKUs or a full DTC line — the batch pipeline (early access) accepts a folder of product photos and returns a coordinated set of listing images that all look like they came from the same shoot. This is how programmatic-SEO landing pages get built without a per-SKU photoshoot budget."
+      },
+      "usecases": {
+        "title": "Where AI e-commerce listing images matter",
+        "creatorsTitle": "For Etsy / Shopify / RedNote sellers",
+        "creatorsBody": "Independent sellers can't afford a per-SKU studio shoot. AI e-commerce generation covers the gap — upload the product photo you already have, get back a listing-ready image that reads as a real brand. See /use-cases/for-designers for the broader designer workflow and /blog/ai-product-photo-to-ecommerce-listing for the template-by-template survey.",
+        "educationTitle": "For DTC catalogs and programmatic SEO",
+        "educationBody": "DTC catalogs with 50+ SKUs need visual consistency across every product page — otherwise the catalog reads as a marketplace, not a brand. Curify's templated approach guarantees consistency. Pair with /blog/programmatic-seo-dtc-visual-first for the compounding-SEO play.",
+        "businessTitle": "For POD / merch operators shipping print-ready designs",
+        "businessBody": "POD operators (t-shirt, sticker, poster, mug) need mockup + listing imagery on top of the print-ready design file. This tool covers the listing-image half; see /use-cases/for-merch-operators for the merch-grade pipeline and /blog/merchandise-design-hub for the SKU-velocity playbook."
       }
     }
   }

@@ -1,5 +1,114 @@
 [
   {
+    "slug": "ai-product-photo-to-ecommerce-listing",
+    "title": "AI Product Photo to E-Commerce Listing Image: Upload Once, Ship in 30 Seconds",
+    "date": "July 2, 2026",
+    "readTime": "7 min read",
+    "tag": "Product Photo",
+    "image": "/images/nano_insp/template-fashion-ecommerce-cycling-jersey-aerodynamic.jpg",
+    "heroLink": "/tools/ecommerce-photo",
+    "category": "nano-template",
+    "relatedLinks": [
+      "ai-product-photo-generator-guide",
+      "programmatic-seo-dtc-visual-first",
+      "ip-merch-design-ai-workflow"
+    ],
+    "lastmod": "2026-07-02",
+    "metaDescription": "Turn any product photo into a listing-ready e-commerce image without a photoshoot. 6 shipped Curify templates cover cozy hero shots (Etsy / DTC), 9:16 detail-shot layouts (Shopee, TikTok Shop, RedNote), outfit try-ons, mood boards, and before/after storage. Upload once; template locks the style.",
+    "nanoTemplates": [
+      {
+        "groupKey": "ecommerce-photo-hub-product-poster-aromatherapy-diffuser",
+        "template_id": "template-product-poster",
+        "sample_parameters": {
+          "product_context": "Aromatherapy diffuser cozy warm-lit poster"
+        },
+        "category": "product",
+        "description": "Cozy warm hero shot — Etsy / DTC brand aesthetic",
+        "image_urls": [
+          "/images/nano_insp/template-product-poster-aromatherapy-diffuser.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-product-poster-aromatherapy-diffuser-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ecommerce-photo-hub-fashion-ecommerce-cycling-jersey",
+        "template_id": "template-fashion-ecommerce",
+        "sample_parameters": {
+          "product_context": "Cycling jersey 9:16 vertical detail-shot"
+        },
+        "category": "product",
+        "description": "9:16 vertical detail-shot — Shopee / TikTok Shop / RedNote",
+        "image_urls": [
+          "/images/nano_insp/template-fashion-ecommerce-cycling-jersey-aerodynamic.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-fashion-ecommerce-cycling-jersey-aerodynamic-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ecommerce-photo-hub-outfit-try-on-preppy-academia-female",
+        "template_id": "template-ai-outfit-try-on-poster",
+        "sample_parameters": {
+          "outfit_context": "Preppy academia female — 3-panel try-on"
+        },
+        "category": "fashion",
+        "description": "3-panel outfit try-on — apparel listing format",
+        "image_urls": [
+          "/images/nano_insp/template-ai-outfit-try-on-poster-preppy-academia-female.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-ai-outfit-try-on-poster-preppy-academia-female-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ecommerce-photo-hub-fashion-style-variations-women",
+        "template_id": "template-personal-fashion-outfit-style-variations",
+        "sample_parameters": {
+          "lookbook_context": "Women's lookbook — style variations grid"
+        },
+        "category": "fashion",
+        "description": "Lookbook style-variation grid — shop-by-look listing rail",
+        "image_urls": [
+          "/images/nano_insp/template-personal-fashion-outfit-style-variations-women-1.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-personal-fashion-outfit-style-variations-women-1-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ecommerce-photo-hub-interior-mood-board-aromatherapy",
+        "template_id": "template-interior-design-mood-board-generator",
+        "sample_parameters": {
+          "room_context": "Aromatherapy spa corner mood board"
+        },
+        "category": "interior",
+        "description": "Room → interior mood board — sell the aesthetic",
+        "image_urls": [
+          "/images/nano_insp/template-interior-design-mood-board-generator-aromatherapy-spa-corner.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-interior-design-mood-board-generator-aromatherapy-spa-corner-prev.jpg"
+        ]
+      },
+      {
+        "groupKey": "ecommerce-photo-hub-home-organization-before-after-closet",
+        "template_id": "template-home-organization-before-after",
+        "sample_parameters": {
+          "space_context": "Closet — before/after storage transformation"
+        },
+        "category": "interior",
+        "description": "Before/after storage — organizer / home-goods listing format",
+        "image_urls": [
+          "/images/nano_insp/template-home-organization-before-after-closet.jpg"
+        ],
+        "preview_image_urls": [
+          "/images/nano_insp_preview/template-home-organization-before-after-closet-prev.jpg"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "competitor-comparison-infographics-ai",
     "title": "Competitor Comparison Infographics with AI: A 3-Tier Composable Workflow",
     "date": "June 12, 2026",

@@ -40,6 +40,7 @@ const PER_SLUG_TOPICS: Record<string, string[]> = {
   "50-ai-sticker-design-prompts": ["design", "posters"],
   "50-ai-packaging-design-prompts": ["design", "posters"],
   "50-ai-makeover-prompts": ["makeover", "design"],
+  "ai-product-photo-to-ecommerce-listing": ["design", "product"],
 
   // ── Sticker + design ─────────────────────────────────────────────
   "ai-sticker-design-guide": ["design"],
