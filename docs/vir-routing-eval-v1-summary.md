@@ -1,5 +1,7 @@
 # Visual Intent Routing / Template Retrieval Eval — v1 Summary
 
+> **⚠️ Migrated 2026-07-01 → [`super-inbox/agentic-adhoc`](https://github.com/super-inbox/agentic-adhoc) (`visual-intent-routing/`).** This track now lives in that repo as a self-contained, standalone-runnable copy. **All new work happens there; this copy in `curify-frontend` is frozen as history.** Do not edit the scripts/gold here — edit them in `agentic-adhoc`.
+
 **Date:** 2026-06-25 (KB try-out added 2026-06-26) · **Branch:** `pr-intern` (branched off `jwang/vercel`) · **Status:** Path A (offline) **and** Path B (live gpt-4o-mini) + union all scored; Option D (KB-enriched matcher) prototyped + tried locally (§3.5). Remaining: human review of the gold; per-query targeted KB injection.
 
 **Goal.** First executable version of the routing eval from `docs/eval-framework-visual-intent-routing-2026-06-15.md` (P1 / Layer 1 — Template Routing Accuracy): a labeled gold set + a baseline **top-1 / top-3 routing accuracy** for the current template-recall layer, scoring the two recall paths separately:
