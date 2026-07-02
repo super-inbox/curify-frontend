@@ -2,18 +2,15 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useClickTracking } from "@/services/useTracking";
+import { ImageIcon, Download, Loader2 } from "lucide-react";
+import { useClickTracking, useTracking } from "@/services/useTracking";
 import {
   WC_2026_BRACKET,
   FLAG,
   buildDefaultPicks,
   sanitizePicks,
   setPick,
-  r32WinnerName,
   pairFor,
-  r16Winner,
-  qfWinner,
-  sfWinner,
   championName,
   R16_OFFSET,
   QF_OFFSET,
@@ -22,14 +19,15 @@ import {
   type BracketSide,
 } from "@/lib/wc_bracket_2026";
 
-// Interactive WC 2026 bracket picker.
+// Interactive WC 2026 bracket picker (dark theme, relaxed width).
 //
 // State: 31-char picks string (H/A/? per game) synced to ?p= query param.
 // Picks propagate: R32 winners feed R16 pairs, etc. Locked (real-world)
 // R32 results can't be overridden.
 //
-// Share: navigator.share on mobile → falls back to clipboard copy on
-// desktop or unsupported browsers.
+// Share: fetches /api/wc-bracket-poster?p=<picks> to build a 1080x1920
+// watermarked PNG (same pattern as MBTIPosterShare), wraps as a File,
+// hands to navigator.share on mobile / anchor download on desktop.
 
 function TeamButton({
   name,
@@ -46,14 +44,15 @@ function TeamButton({
 }) {
   const isEmpty = !name;
   const cls = [
-    "w-full flex items-center gap-1 rounded-md px-1.5 py-1 text-left text-[10px] sm:text-[11px] transition-all border",
+    "w-full flex items-center gap-1.5 rounded-md px-2 py-1.5 text-left text-[12px] sm:text-[13px] transition-all border",
     isEmpty
-      ? "border-dashed border-neutral-300 bg-neutral-50 text-neutral-400 cursor-default"
+      ? "border-dashed border-white/10 bg-white/[0.02] text-white/30 cursor-default"
       : picked
-        ? "border-emerald-500 bg-emerald-50 text-emerald-900 font-semibold shadow-sm"
-        : "border-neutral-200 bg-white text-neutral-700 hover:border-emerald-400 hover:bg-emerald-50/50",
+        ? locked
+          ? "border-emerald-400 bg-emerald-500/25 text-white font-bold shadow-inner shadow-emerald-950/40"
+          : "border-emerald-400 bg-emerald-500/20 text-white font-semibold shadow-sm"
+        : "border-white/10 bg-white/5 text-slate-200 hover:border-emerald-400/60 hover:bg-emerald-500/10 hover:text-white",
     disabled || locked ? "cursor-default" : "cursor-pointer",
-    locked && picked ? "border-emerald-600" : "",
   ].join(" ");
   return (
     <button
@@ -63,13 +62,13 @@ function TeamButton({
       aria-pressed={picked}
       aria-disabled={disabled || locked}
     >
-      <span aria-hidden className="text-sm shrink-0">
+      <span aria-hidden className="text-base shrink-0 leading-none">
         {name ? FLAG[name] ?? "" : "·"}
       </span>
-      <span className="truncate">
-        {name ?? "TBD"}
-      </span>
-      {locked && picked ? <span aria-hidden className="ml-auto text-emerald-600 shrink-0">✓</span> : null}
+      <span className="truncate">{name ?? "TBD"}</span>
+      {locked && picked ? (
+        <span aria-hidden className="ml-auto text-emerald-300 shrink-0 text-[11px]">✓</span>
+      ) : null}
     </button>
   );
 }
@@ -92,9 +91,12 @@ function GameCell({
   meta?: string;
 }) {
   return (
-    <div className="flex flex-col gap-0.5 rounded-lg border border-neutral-200 bg-white/85 p-1 shadow-sm">
+    <div className={[
+      "flex flex-col gap-1 rounded-lg p-1.5 border",
+      locked ? "border-emerald-500/30 bg-emerald-500/[0.06]" : "border-white/10 bg-white/[0.04]",
+    ].join(" ")}>
       {meta ? (
-        <div className="mb-0.5 text-[9px] font-mono text-neutral-500 leading-none">{meta}</div>
+        <div className="text-[10px] font-mono text-slate-400 leading-none">{meta}</div>
       ) : null}
       <TeamButton
         name={home}
@@ -114,6 +116,14 @@ function GameCell({
   );
 }
 
+function ColumnHeader({ label }: { label: string }) {
+  return (
+    <div className="text-center text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-emerald-300">
+      {label}
+    </div>
+  );
+}
+
 export default function BracketClient({ locale }: { locale: string }) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -121,6 +131,10 @@ export default function BracketClient({ locale }: { locale: string }) {
 
   const initialPicks = useMemo(() => sanitizePicks(searchParams.get("p")), [searchParams]);
   const [picks, setPicks] = useState<string>(initialPicks);
+  const [name, setName] = useState<string>("");
+  const [shareStatus, setShareStatus] = useState<"idle" | "loading" | "done">("idle");
+
+  const { track } = useTracking();
 
   // Push picks to URL (replace, not push, so back-button behavior stays sane)
   useEffect(() => {
@@ -135,7 +149,6 @@ export default function BracketClient({ locale }: { locale: string }) {
   }, [picks]);
 
   const trackReset = useClickTracking("wc-bracket:reset", "topic_capsule", "cards");
-  const trackShare = useClickTracking("wc-bracket:share", "topic_capsule", "cards");
   const trackClearPending = useClickTracking("wc-bracket:clear-pending", "topic_capsule", "cards");
 
   const handleR32 = useCallback((slot: number, side: BracketSide) => {
@@ -154,34 +167,57 @@ export default function BracketClient({ locale }: { locale: string }) {
     setPicks((p) => setPick(p, "f", 0, side));
   }, []);
 
-  const champion = championName(picks);
+  const champ = championName(picks);
 
-  const [shareStatus, setShareStatus] = useState<string>("");
+  const posterUrl = useMemo(() => {
+    const qs = new URLSearchParams();
+    if (picks !== buildDefaultPicks()) qs.set("p", picks);
+    if (name.trim()) qs.set("name", name.trim());
+    const suffix = qs.toString();
+    return `/api/wc-bracket-poster${suffix ? `?${suffix}` : ""}`;
+  }, [picks, name]);
+
   const handleShare = useCallback(async () => {
-    trackShare();
-    const shareUrl = typeof window !== "undefined" ? window.location.href : "";
-    const shareText = champion
-      ? `My World Cup 2026 bracket — I've got ${FLAG[champion] ?? ""} ${champion} winning it all. Fill yours →`
-      : `Fill out your 2026 World Cup bracket →`;
-    try {
-      if (typeof navigator !== "undefined" && (navigator as { share?: unknown }).share) {
-        await (navigator as { share: (data: unknown) => Promise<void> }).share({
-          title: "My World Cup 2026 bracket",
-          text: shareText,
-          url: shareUrl,
-        });
-        setShareStatus("Shared!");
-      } else if (typeof navigator !== "undefined" && navigator.clipboard) {
-        await navigator.clipboard.writeText(shareUrl);
-        setShareStatus("Link copied");
-      } else {
-        setShareStatus("Copy the URL to share");
+    const shareText = champ
+      ? `${name.trim() ? `${name.trim()}'s` : "My"} World Cup 2026 bracket — I've got ${FLAG[champ] ?? ""} ${champ} winning it all. Fill yours → curify.ai/wc-bracket`
+      : `Fill out your 2026 World Cup bracket → curify.ai/wc-bracket`;
+
+    // Mobile: native share sheet with a File (poster PNG)
+    if (typeof navigator !== "undefined" && (navigator as { canShare?: unknown }).canShare) {
+      setShareStatus("loading");
+      try {
+        const res = await fetch(posterUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const blob = await res.blob();
+        const file = new File([blob], "my-wc-bracket.png", { type: "image/png" });
+        const canShareFiles = (navigator as { canShare: (data: unknown) => boolean }).canShare({ files: [file] });
+        if (canShareFiles) {
+          await (navigator as { share: (data: unknown) => Promise<void> }).share({
+            files: [file],
+            title: "My World Cup 2026 bracket",
+            text: shareText,
+          });
+          track({ contentId: picks, contentType: "page", actionType: "share" });
+          setShareStatus("done");
+          setTimeout(() => setShareStatus("idle"), 2500);
+          return;
+        }
+      } catch {
+        // fall through to anchor download
       }
-    } catch {
-      // user cancelled — no-op
     }
-    setTimeout(() => setShareStatus(""), 2000);
-  }, [champion, trackShare]);
+
+    // Desktop / fallback: anchor download
+    track({ contentId: picks, contentType: "page", actionType: "download" });
+    const a = document.createElement("a");
+    a.href = posterUrl;
+    a.download = "my-wc-bracket.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setShareStatus("done");
+    setTimeout(() => setShareStatus("idle"), 2500);
+  }, [champ, name, picks, posterUrl, track]);
 
   const handleReset = useCallback(() => {
     trackReset();
@@ -191,52 +227,54 @@ export default function BracketClient({ locale }: { locale: string }) {
   const handleClearPending = useCallback(() => {
     trackClearPending();
     setPicks((p) => {
-      // Blank R32 for pending (result === null); keep locked ones; blank all downstream
       const chars = p.split("");
       WC_2026_BRACKET.r32.forEach((g, i) => {
         if (g.result === null) chars[i] = "?";
       });
-      // Blank everything downstream (they'll re-derive)
       for (let i = R16_OFFSET; i < 31; i++) chars[i] = "?";
       return chars.join("");
     });
   }, [trackClearPending]);
 
   return (
-    <div className="mx-auto max-w-[900px] px-3 py-6 sm:px-4 sm:py-8">
+    <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 sm:py-10">
       {/* Header */}
-      <header className="mb-4 sm:mb-6">
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight">
-          Fill your World Cup 2026 bracket
+      <header className="mb-6 sm:mb-8">
+        <div className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.35em] text-emerald-300">
+          <span aria-hidden>⚽</span>
+          <span>FIFA World Cup 2026</span>
+        </div>
+        <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          Fill your bracket.
         </h1>
-        <p className="mt-1.5 text-sm text-neutral-600">
-          Tap a team to pick — winners auto-advance. Real R32 results are locked ✓; the rest is yours to call.
+        <p className="mt-2 text-sm sm:text-base text-slate-300 max-w-2xl">
+          Tap a team to send them through — winners auto-advance. Real R32 results are locked ✓; the rest is your call. Share your final bracket as a poster in one tap.
         </p>
       </header>
 
       {/* Champion banner */}
-      <div className="mb-4 rounded-xl border-2 border-yellow-300 bg-gradient-to-r from-yellow-50 via-amber-50 to-orange-50 p-3 shadow-sm">
-        <div className="text-[10px] font-bold uppercase tracking-widest text-amber-700">
+      <div className="mb-5 sm:mb-6 rounded-2xl border-2 border-amber-400/50 bg-gradient-to-r from-amber-500/15 via-yellow-500/10 to-orange-500/5 p-4 sm:p-5 shadow-lg shadow-amber-950/30 backdrop-blur-sm">
+        <div className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.35em] text-amber-300">
           Your champion
         </div>
-        <div className="mt-1 flex items-center gap-2 text-xl sm:text-2xl font-extrabold text-neutral-900">
-          {champion ? (
+        <div className="mt-1.5 flex items-center gap-3 text-2xl sm:text-4xl font-black text-white">
+          {champ ? (
             <>
-              <span aria-hidden>{FLAG[champion] ?? "🏆"}</span>
-              <span>{champion}</span>
-              <span aria-hidden className="ml-1 text-lg">🏆</span>
+              <span aria-hidden className="text-3xl sm:text-5xl">{FLAG[champ] ?? "🏆"}</span>
+              <span>{champ}</span>
+              <span aria-hidden className="ml-1 text-2xl sm:text-3xl">🏆</span>
             </>
           ) : (
-            <span className="text-neutral-400 text-base font-medium">
+            <span className="text-slate-400 text-lg sm:text-xl font-semibold">
               Pick your way through to crown a champion
             </span>
           )}
         </div>
       </div>
 
-      {/* Bracket grid — 5 columns, mobile-scrollable */}
-      <div className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50/50 via-white to-yellow-50/40 p-2 sm:p-3">
-        <div className="grid grid-cols-5 gap-1 sm:gap-2">
+      {/* Bracket grid */}
+      <div className="rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-950/40 via-slate-900/60 to-emerald-950/30 p-3 sm:p-5 shadow-xl shadow-emerald-950/40 backdrop-blur">
+        <div className="grid grid-cols-5 gap-2 sm:gap-3">
           <ColumnHeader label={WC_2026_BRACKET.labels.r32} />
           <ColumnHeader label={WC_2026_BRACKET.labels.r16} />
           <ColumnHeader label={WC_2026_BRACKET.labels.qf} />
@@ -244,46 +282,34 @@ export default function BracketClient({ locale }: { locale: string }) {
           <ColumnHeader label={WC_2026_BRACKET.labels.f} />
         </div>
 
-        {/* Rows */}
-        <div className="mt-1 grid grid-cols-5 gap-1 sm:gap-2 auto-rows-[minmax(0,1fr)]">
-          {/* R32 column: 16 cells stacked */}
-          <div className="flex flex-col gap-1 sm:gap-1.5">
-            {WC_2026_BRACKET.r32.map((g, i) => {
-              const pickedH = picks[i] === "H";
-              const pickedA = picks[i] === "A";
-              const locked = g.result !== null;
-              return (
-                <GameCell
-                  key={`r32-${i}`}
-                  home={g.home}
-                  away={g.away}
-                  homePicked={pickedH}
-                  awayPicked={pickedA}
-                  onPick={(side) => handleR32(i, side)}
-                  locked={locked}
-                  meta={`${g.date} · ${g.time}`}
-                />
-              );
-            })}
+        <div className="mt-2 grid grid-cols-5 gap-2 sm:gap-3 auto-rows-[minmax(0,1fr)]">
+          {/* R32 column */}
+          <div className="flex flex-col gap-1.5 sm:gap-2">
+            {WC_2026_BRACKET.r32.map((g, i) => (
+              <GameCell
+                key={`r32-${i}`}
+                home={g.home}
+                away={g.away}
+                homePicked={picks[i] === "H"}
+                awayPicked={picks[i] === "A"}
+                onPick={(side) => handleR32(i, side)}
+                locked={g.result !== null}
+                meta={`${g.date} · ${g.time}`}
+              />
+            ))}
           </div>
 
-          {/* R16 column: 8 cells, each spanning 2 R32 rows */}
-          <div className="flex flex-col gap-1 sm:gap-1.5">
+          {/* R16 */}
+          <div className="flex flex-col gap-1.5 sm:gap-2">
             {Array.from({ length: 8 }, (_, s) => {
               const [h, a] = pairFor("r16", s, picks);
-              const pickedH = picks[R16_OFFSET + s] === "H";
-              const pickedA = picks[R16_OFFSET + s] === "A";
               return (
-                <div
-                  key={`r16-${s}`}
-                  className="flex-1 flex items-center"
-                  style={{ minHeight: 0 }}
-                >
+                <div key={`r16-${s}`} className="flex-1 flex items-center">
                   <GameCell
                     home={h}
                     away={a}
-                    homePicked={pickedH}
-                    awayPicked={pickedA}
+                    homePicked={picks[R16_OFFSET + s] === "H"}
+                    awayPicked={picks[R16_OFFSET + s] === "A"}
                     onPick={(side) => handleR16(s, side)}
                   />
                 </div>
@@ -291,19 +317,17 @@ export default function BracketClient({ locale }: { locale: string }) {
             })}
           </div>
 
-          {/* QF column: 4 cells */}
-          <div className="flex flex-col gap-1 sm:gap-1.5">
+          {/* QF */}
+          <div className="flex flex-col gap-1.5 sm:gap-2">
             {Array.from({ length: 4 }, (_, s) => {
               const [h, a] = pairFor("qf", s, picks);
-              const pickedH = picks[QF_OFFSET + s] === "H";
-              const pickedA = picks[QF_OFFSET + s] === "A";
               return (
                 <div key={`qf-${s}`} className="flex-1 flex items-center">
                   <GameCell
                     home={h}
                     away={a}
-                    homePicked={pickedH}
-                    awayPicked={pickedA}
+                    homePicked={picks[QF_OFFSET + s] === "H"}
+                    awayPicked={picks[QF_OFFSET + s] === "A"}
                     onPick={(side) => handleQF(s, side)}
                   />
                 </div>
@@ -311,19 +335,17 @@ export default function BracketClient({ locale }: { locale: string }) {
             })}
           </div>
 
-          {/* SF column: 2 cells */}
-          <div className="flex flex-col gap-1 sm:gap-1.5">
+          {/* SF */}
+          <div className="flex flex-col gap-1.5 sm:gap-2">
             {Array.from({ length: 2 }, (_, s) => {
               const [h, a] = pairFor("sf", s, picks);
-              const pickedH = picks[SF_OFFSET + s] === "H";
-              const pickedA = picks[SF_OFFSET + s] === "A";
               return (
                 <div key={`sf-${s}`} className="flex-1 flex items-center">
                   <GameCell
                     home={h}
                     away={a}
-                    homePicked={pickedH}
-                    awayPicked={pickedA}
+                    homePicked={picks[SF_OFFSET + s] === "H"}
+                    awayPicked={picks[SF_OFFSET + s] === "A"}
                     onPick={(side) => handleSF(s, side)}
                   />
                 </div>
@@ -331,19 +353,17 @@ export default function BracketClient({ locale }: { locale: string }) {
             })}
           </div>
 
-          {/* Final column: 1 cell */}
+          {/* Final */}
           <div className="flex flex-col">
             {(() => {
               const [h, a] = pairFor("f", 0, picks);
-              const pickedH = picks[F_OFFSET] === "H";
-              const pickedA = picks[F_OFFSET] === "A";
               return (
                 <div className="flex-1 flex items-center">
                   <GameCell
                     home={h}
                     away={a}
-                    homePicked={pickedH}
-                    awayPicked={pickedA}
+                    homePicked={picks[F_OFFSET] === "H"}
+                    awayPicked={picks[F_OFFSET] === "A"}
                     onPick={handleF}
                   />
                 </div>
@@ -354,45 +374,59 @@ export default function BracketClient({ locale }: { locale: string }) {
       </div>
 
       {/* Actions */}
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <button
-          type="button"
-          onClick={handleShare}
-          className="rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400"
-        >
-          Share my bracket
-        </button>
-        <button
-          type="button"
-          onClick={handleClearPending}
-          className="rounded-full border border-neutral-300 bg-white px-3.5 py-2 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-300"
-        >
-          Clear my picks
-        </button>
-        <button
-          type="button"
-          onClick={handleReset}
-          className="rounded-full border border-neutral-300 bg-white px-3.5 py-2 text-sm font-medium text-neutral-700 shadow-sm transition-all hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-300"
-          title="Reset to real R32 results only, everything else blank"
-        >
-          Reset
-        </button>
-        {shareStatus ? (
-          <span className="text-xs font-medium text-emerald-700">{shareStatus}</span>
-        ) : null}
+      <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5 backdrop-blur">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div className="flex-1">
+            <label className="mb-1 block text-[11px] font-bold uppercase tracking-[0.25em] text-emerald-300">
+              Add your name to the poster
+            </label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Optional — leave blank for &quot;My bracket&quot;"
+              maxLength={30}
+              className="w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
+            />
+          </div>
+
+          <button
+            type="button"
+            onClick={handleShare}
+            disabled={shareStatus === "loading"}
+            className="flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-3 text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-emerald-900/40 transition-all hover:from-emerald-400 hover:to-teal-400 disabled:opacity-60"
+          >
+            {shareStatus === "loading" ? (
+              <><Loader2 className="h-4 w-4 animate-spin" /> Preparing…</>
+            ) : shareStatus === "done" ? (
+              <><Download className="h-4 w-4" /> Ready!</>
+            ) : (
+              <><ImageIcon className="h-4 w-4" /> Share as poster</>
+            )}
+          </button>
+        </div>
+
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={handleClearPending}
+            className="rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-300 transition-all hover:bg-white/10 hover:text-white focus:outline-none"
+          >
+            Clear my picks
+          </button>
+          <button
+            type="button"
+            onClick={handleReset}
+            className="rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-300 transition-all hover:bg-white/10 hover:text-white focus:outline-none"
+            title="Reset to real R32 results only, everything else blank"
+          >
+            Reset
+          </button>
+          <span className="text-[11px] text-slate-500 ml-auto">
+            R32 results reflect data through {new Date().toISOString().slice(0, 10)} · Locale: {locale}
+          </span>
+        </div>
       </div>
-
-      <p className="mt-3 text-[11px] text-neutral-500">
-        Confirmed R32 results reflect data through {new Date().toISOString().slice(0, 10)}. Locale: {locale}.
-      </p>
-    </div>
-  );
-}
-
-function ColumnHeader({ label }: { label: string }) {
-  return (
-    <div className="text-center text-[10px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800">
-      {label}
     </div>
   );
 }

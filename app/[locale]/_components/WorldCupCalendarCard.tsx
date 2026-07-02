@@ -153,6 +153,10 @@ export default function WorldCupCalendarCard({ locale, className }: Props) {
     return t.length > 0 ? t : nextMatches(now, 2);
   }, [phase, now]);
 
+  // Shrink Upcoming from 3 → 2 during the knockouts so the bracket CTA
+  // has room to grow to a proper block without expanding the card.
+  const upcomingLimit = phase === "during" ? 2 : 3;
+
   // wcHref / trackFooterClick removed 2026-06-29 alongside the
   // 'Explore World Cup →' footer link.
 
@@ -222,7 +226,7 @@ export default function WorldCupCalendarCard({ locale, className }: Props) {
             Upcoming
           </div>
           <ul className="space-y-0.5 text-[11px] text-neutral-700">
-            {upcoming.map((m) => (
+            {upcoming.slice(0, upcomingLimit).map((m) => (
               <UpcomingMatchLine
                 key={matchTrackingId(m)}
                 m={m}
@@ -239,7 +243,7 @@ export default function WorldCupCalendarCard({ locale, className }: Props) {
           <ul className="space-y-0.5 text-[11px] text-neutral-700">
             {nextMatches(now, 3)
               .filter((m) => !todayList.some((t) => matchTrackingId(t) === matchTrackingId(m)))
-              .slice(0, 3)
+              .slice(0, upcomingLimit)
               .map((m) => (
                 <UpcomingMatchLine
                   key={matchTrackingId(m)}
@@ -271,18 +275,25 @@ function BracketFooterCta({ locale }: { locale: string }) {
   const track = useClickTracking("wc-calendar:bracket-cta", "topic_capsule", "cards");
   const href = `${localePrefix(locale)}/wc-bracket`;
   return (
-    <div className="mt-2 border-t border-emerald-200 pt-2">
+    <div className="mt-2">
       <Link
         href={href}
         onClick={track}
-        className="flex items-center justify-between gap-1.5 rounded-md px-1 py-0.5 text-[11px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-100/70 hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        className="group/cta flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 px-3 py-2 shadow-md transition-all hover:from-emerald-500 hover:to-teal-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-emerald-400"
         aria-label="Fill out your World Cup 2026 bracket"
       >
-        <span className="flex items-center gap-1">
-          <span aria-hidden>🏆</span>
-          <span>Fill your bracket</span>
+        <span aria-hidden className="text-2xl leading-none">🏆</span>
+        <span className="flex-1 min-w-0">
+          <span className="block text-[12px] font-extrabold uppercase tracking-wider text-white leading-tight">
+            Fill your bracket
+          </span>
+          <span className="block truncate text-[10px] font-medium text-emerald-50/90 leading-tight">
+            Pick winners · share a poster
+          </span>
         </span>
-        <span aria-hidden className="text-neutral-500">→</span>
+        <span aria-hidden className="text-white/90 text-lg leading-none transition-transform group-hover/cta:translate-x-0.5">
+          →
+        </span>
       </Link>
     </div>
   );

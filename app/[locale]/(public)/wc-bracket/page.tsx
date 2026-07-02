@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function WcBracketPage({ params }: Props) {
   const { locale } = await params;
   return (
-    <main className="min-h-screen bg-neutral-50">
-      <Suspense fallback={<div className="p-8 text-center text-neutral-500">Loading bracket…</div>}>
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-emerald-950/40 to-slate-950 text-white">
+      <Suspense fallback={<div className="p-8 text-center text-slate-400">Loading bracket…</div>}>
         <BracketClient locale={locale} />
       </Suspense>
     </main>
