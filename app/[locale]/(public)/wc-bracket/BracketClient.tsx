@@ -182,7 +182,21 @@ export default function BracketClient({ locale }: { locale: string }) {
       ? `${name.trim() ? `${name.trim()}'s` : "My"} World Cup 2026 bracket — I've got ${FLAG[champ] ?? ""} ${champ} winning it all. Fill yours → curify.ai/wc-bracket`
       : `Fill out your 2026 World Cup bracket → curify.ai/wc-bracket`;
 
-    // Mobile: native share sheet with a File (poster PNG)
+    // ContentId prefix so wc-bracket events are grep-able in
+    // user_interactions vs the generic 'page' contentType
+    // (feedback_tracking_enums: reuse the registered enum values,
+    // disambiguate via contentId). Outcome suffix encodes the funnel
+    // step: tap → shared / cancelled / downloaded / error.
+    const idBase = `wc-bracket:${picks}`;
+
+    // Always log the button tap so we can compute
+    //   tap → shared+downloaded conversion.
+    track({ contentId: `${idBase}:tap`, contentType: "page", actionType: "click" });
+
+    // Mobile: native share sheet with a File (poster PNG). canShare
+    // exists on desktop Chromium too but returns false for files
+    // there, so the canShareFiles check is what actually gates the
+    // native flow.
     if (typeof navigator !== "undefined" && (navigator as { canShare?: unknown }).canShare) {
       setShareStatus("loading");
       try {
@@ -192,23 +206,39 @@ export default function BracketClient({ locale }: { locale: string }) {
         const file = new File([blob], "my-wc-bracket.png", { type: "image/png" });
         const canShareFiles = (navigator as { canShare: (data: unknown) => boolean }).canShare({ files: [file] });
         if (canShareFiles) {
-          await (navigator as { share: (data: unknown) => Promise<void> }).share({
-            files: [file],
-            title: "My World Cup 2026 bracket",
-            text: shareText,
-          });
-          track({ contentId: picks, contentType: "page", actionType: "share" });
-          setShareStatus("done");
-          setTimeout(() => setShareStatus("idle"), 2500);
+          try {
+            await (navigator as { share: (data: unknown) => Promise<void> }).share({
+              files: [file],
+              title: "My World Cup 2026 bracket",
+              text: shareText,
+            });
+            track({ contentId: `${idBase}:shared`, contentType: "page", actionType: "share" });
+            setShareStatus("done");
+            setTimeout(() => setShareStatus("idle"), 2500);
+          } catch (err) {
+            // User cancelled the native share sheet (AbortError).
+            // Log the cancel and reset state — do NOT fall through to
+            // anchor download (that would save a file the user
+            // just cancelled sharing).
+            const isAbort = (err as { name?: string })?.name === "AbortError";
+            track({
+              contentId: `${idBase}:${isAbort ? "cancelled" : "share-error"}`,
+              contentType: "page",
+              actionType: "click",
+            });
+            setShareStatus("idle");
+          }
           return;
         }
       } catch {
-        // fall through to anchor download
+        // Real failure building the File (network / blob). Fall
+        // through to anchor download so the user still gets the poster.
+        track({ contentId: `${idBase}:fetch-error`, contentType: "page", actionType: "click" });
       }
     }
 
     // Desktop / fallback: anchor download
-    track({ contentId: picks, contentType: "page", actionType: "download" });
+    track({ contentId: `${idBase}:downloaded`, contentType: "page", actionType: "download" });
     const a = document.createElement("a");
     a.href = posterUrl;
     a.download = "my-wc-bracket.png";
