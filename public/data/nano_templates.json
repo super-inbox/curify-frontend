@@ -18343,5 +18343,50 @@
     "rank_score": 110,
     "creation_date": "2026-07-01",
     "allow_generation": true
-  }
+  },
+  {
+    "id": "template-amazon-product-six-grid-infographic-listing-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Amazon E-commerce Product Six Grid Listing Infographic Generator) Vertical Amazon product detail main image infographic poster themed '{product_full_name}'. Layout: Clean soft neutral off-white background, evenly divided 2×3 six rectangular module grid layout with thin subtle dividing lines; Grid 1 top-left: Hero product main shot + core selling feature icon bullet list; Grid 2 top-right: Lifestyle scene photo showing real usage scenario with text label of applicable occasions; Grid 3 middle-left: Core performance close-up functional demonstration diagram with parameter tag icons; Grid 4 middle-right: Product dimension size technical diagram + component feature annotation labels; Grid 5 bottom-left: Side-by-side comparison chart block vs ordinary competing products with tick cross indicators; Grid 6 bottom-right: Complete packaging box unboxing shot listing all included accessories with numbered labels. Style: Soft warm pastel brand color matching the product, clean minimalist commercial e-commerce graphic design, soft natural studio lighting product photography, rounded sans-serif marketing text, small simple line feature icons, high resolution printable Amazon listing main image, tidy readable layout for mobile shopping browsing. Subject: six-panel grid commercial product marketing infographic for Amazon listing of '{product_full_name}'.",
+            "parameters": {
+                "name": "product_full_name",
+                "label": "完整电商商品名称",
+                "type": "text",
+                "placeholder": ["BlendLife粉色便携充电榨汁杯亚马逊六格详情主图展板", "CloudCandle冰丝凉感U型旅行护颈枕跨境电商产品信息长图", "户外折叠保温水杯亚马逊商品六板块营销信息海报"]
+            }
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-amazon-product-six-grid-infographic-listing-poster-prev.jpg"
+},
+  {
+    "id": "template-micro-worker-big-smartphone-ecommerce-store-3d-art-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Miniature Worker Giant Smartphone E-commerce Shop 3D Commercial Art Generator) Vertical surreal hyperrealistic 3D render poster themed '{brand_store_theme}'. Layout: Oversized giant smartphone standing vertically as central scene prop, screen displays brand online store 4-grid product showcase layout with product name, star rating and review count; multiple tiny miniature uniform staff figurines performing retail work: climbing ladders to place goods into screen product slots, rappelling down ropes to hang merchandise, kneeling to check order tablet, hauling full-size physical goods beside the phone; minimalist clean matching brand tone indoor warehouse/store background, reflective polished floor surface. Style: cinematic soft studio lighting, ultra detailed macro miniature diorama texture, cohesive brand exclusive color palette matching the brand identity, sharp photorealistic commercial advertising render, shallow depth of field, premium luxury retail visual atmosphere. Subject: surreal miniature worker giant mobile phone online shopping store 3D art poster for brand '{brand_store_theme}' e-commerce advertising.",
+            "parameters": {
+                "name": "brand_store_theme",
+                "label": "品牌线上商城完整主题名称",
+                "type": "text",-
+                "placeholder": ["LV奢侈品线上商城巨型手机微缩工匠3D超现实商业宣传图", "Nike运动服饰电商页面迷你工人场景写实渲染海报", "麦当劳快餐外卖线上商店巨型手机微观创意广告长图"]
+            }
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-micro-worker-big-smartphone-ecommerce-store-3d-art-poster-nike-sport-shop-prev.jpg"
+},
+  {
+    "id": "template-einstein-character-russian-product-ad-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Einstein Character Russian Language Commercial Product Advertising Poster Generator) Vertical retail product marketing poster themed '{russian_product_theme}'. Layout: Central portrait of Albert Einstein cosplaying matching the product style, large bold stylized Russian headline typography at top, product hero shot placed foreground, small Russian text feature labels and parameter tags overlayed, themed decorative graphic elements matching merchandise, gradient brand color background. Style: vibrant modern retail commercial illustration, bold saturated color palette, clean photorealistic character rendering, layered graphic advertising layout, Cyrillic typography design, high resolution marketplace print ad. Subject: Russian language product promotional poster featuring Einstein character for '{russian_product_theme}' retail goods.",
+        "parameters": {
+            "name": "russian_product_theme",
+            "label": "俄文商品完整品类名称",
+            "type": "text",
+            "placeholder": ["925银复古朋克戒指套装俄语电商爱因斯坦人物宣传海报", "纯棉格纹居家睡衣俄式零售商业广告竖版画", "22mm粉色卷发棒潮流马卡龙配色俄文商品推广展板"]
+        }
+    }
+},
+"og_image": "/images/nano_insp_preview/template-einstein-character-russian-product-ad-poster-hair-curling-wand-prev.jpg"
+}
 ]
