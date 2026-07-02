@@ -49,13 +49,46 @@ const PRIORITY_URLS = [
 ];
 
 function parseArgs() {
-  const out = { key: null, urls: [], dryRun: false };
+  const out = {
+    key: null,
+    urls: [],
+    dryRun: false,
+    urlsFile: null,
+    limit: null,
+    stateFile: null,
+  };
   for (const a of process.argv.slice(2)) {
     if (a === "--dry-run") out.dryRun = true;
     else if (a.startsWith("--key=")) out.key = a.split("=").slice(1).join("=");
     else if (a.startsWith("--url=")) out.urls.push(a.split("=").slice(1).join("="));
+    else if (a.startsWith("--urls-file=")) out.urlsFile = a.split("=").slice(1).join("=");
+    else if (a.startsWith("--limit=")) out.limit = Number(a.split("=")[1]) || null;
+    else if (a.startsWith("--state=")) out.stateFile = a.split("=").slice(1).join("=");
   }
   return out;
+}
+
+function loadUrlsFile(p) {
+  return fs
+    .readFileSync(p, "utf8")
+    .split("\n")
+    .map((s) => s.trim())
+    .filter((s) => s && !s.startsWith("#"));
+}
+
+function loadState(p) {
+  if (!p || !fs.existsSync(p)) return { submitted: {} };
+  try {
+    return JSON.parse(fs.readFileSync(p, "utf8"));
+  } catch {
+    return { submitted: {} };
+  }
+}
+
+function saveState(p, state) {
+  if (!p) return;
+  fs.mkdirSync(require("path").dirname(p), { recursive: true });
+  fs.writeFileSync(p, JSON.stringify(state, null, 2) + "\n");
 }
 
 async function main() {
@@ -68,7 +101,28 @@ async function main() {
     console.error(`❌ Key file not found: ${args.key}`);
     process.exit(1);
   }
-  const urls = args.urls.length ? args.urls : PRIORITY_URLS;
+  // URL source priority: --url= flags > --urls-file= > built-in PRIORITY_URLS
+  let urls = args.urls;
+  if (!urls.length && args.urlsFile) urls = loadUrlsFile(args.urlsFile);
+  if (!urls.length) urls = PRIORITY_URLS;
+
+  // State-file dedup: skip URLs already submitted in prior runs (used
+  // when working through a multi-day priority list like
+  // raw/w1-indexing-priority.txt at the 200/day quota cap).
+  const state = loadState(args.stateFile);
+  const alreadySubmitted = new Set(Object.keys(state.submitted || {}));
+  if (args.stateFile) {
+    const before = urls.length;
+    urls = urls.filter((u) => !alreadySubmitted.has(u));
+    if (before !== urls.length) {
+      console.log(`state: ${before - urls.length} URL(s) already submitted in prior runs, skipping`);
+    }
+  }
+
+  if (args.limit && urls.length > args.limit) {
+    urls = urls.slice(0, args.limit);
+  }
+
   console.log(`Submitting ${urls.length} URL(s) to Google Indexing API${args.dryRun ? " (dry-run)" : ""}`);
 
   if (args.dryRun) {
@@ -83,7 +137,8 @@ async function main() {
   const client = await auth.getClient();
   const indexing = google.indexing({ version: "v3", auth: client });
 
-  let ok = 0, fail = 0;
+  state.submitted = state.submitted || {};
+  let ok = 0, fail = 0, quotaHit = false;
   for (const u of urls) {
     try {
       const res = await indexing.urlNotifications.publish({
@@ -91,14 +146,22 @@ async function main() {
       });
       const ts = res.data?.urlNotificationMetadata?.latestUpdate?.notifyTime || "(ok)";
       console.log(`✓ ${u}  -> ${ts}`);
+      state.submitted[u] = new Date().toISOString();
       ok++;
     } catch (e) {
       const msg = e?.errors?.[0]?.message || e?.message || String(e);
       console.log(`✗ ${u}  -> ${msg}`);
       fail++;
+      if (/quota|rate/i.test(msg)) {
+        console.log("→ quota / rate limit hit; stopping early. Re-run tomorrow.");
+        quotaHit = true;
+        break;
+      }
     }
   }
-  console.log(`\nDone: ${ok} submitted, ${fail} failed.`);
+  // Save state after each run so a mid-run crash or quota hit doesn't lose progress.
+  saveState(args.stateFile, state);
+  console.log(`\nDone: ${ok} submitted, ${fail} failed.${quotaHit ? " (stopped early — quota)" : ""}`);
 }
 
 main().catch((e) => {
