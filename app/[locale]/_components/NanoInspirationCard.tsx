@@ -14,6 +14,7 @@ import {
   useTracking,
 } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
+import { intentCtaLabel } from "@/lib/output_intent";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import {
   makeNanoTemplateUrl,
@@ -331,7 +332,7 @@ export function NanoInspirationCard({
             className="flex items-center justify-center gap-1 rounded-full bg-purple-50 px-2.5 py-1.5 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
           >
             <Sparkles className="h-3.5 w-3.5" />
-            {t("remixThis")}
+            {intentCtaLabel(card.template_id, t("remixThis"))}
           </Link>
         </div>
       )}

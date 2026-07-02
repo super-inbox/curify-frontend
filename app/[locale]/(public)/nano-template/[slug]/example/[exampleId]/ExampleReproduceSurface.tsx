@@ -16,6 +16,7 @@ import type { ExistingExampleRef } from "@/lib/editDistance";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
 import { getTemplateWorkflows } from "@/lib/template_workflows";
+import { resizeToSocialBundle } from "@/lib/resize_bundle";
 import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
 
@@ -145,10 +146,27 @@ export default function ExampleReproduceSurface({
     } catch {}
   };
 
-  const runWorkflow = (wf: (typeof workflows)[number]) => {
+  const runWorkflow = async (wf: (typeof workflows)[number]) => {
     if (wf.kind === "soon") {
       track({ contentId: `workflow-soon:${wf.key}:${templateId}`, contentType: "topic_capsule", actionType: "click" });
       setSoonNote(`${wf.label} is coming soon — we prioritize these by demand, so your click counts.`);
+      return;
+    }
+    // P0-4: One-Click Resize Bundle — client-side, no backend/credits. Crops the
+    // current image to the 3 social sizes and drops them into the result tray.
+    if (wf.kind === "resize") {
+      if (activeKey || anyGenerating) return;
+      setSoonNote(null);
+      setActiveKey(wf.key);
+      track({ contentId: `workflow-${wf.key}:${templateId}`, contentType: tracking.contentType, actionType: "download" });
+      try {
+        const variants = await resizeToSocialBundle(transformSource);
+        variants.forEach((v) => pushResult(`resize-${v.key}`, v.label, v.url));
+      } catch {
+        setSoonNote("Couldn't resize this image here. Generate a fresh result first, then try again.");
+      } finally {
+        setActiveKey(null);
+      }
       return;
     }
     if (anyGenerating || !wf.prompt) return;
