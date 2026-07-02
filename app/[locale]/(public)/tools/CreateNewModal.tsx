@@ -53,21 +53,30 @@ export default function CreateNewModal() {
   const [showMissingTargetWarning, setShowMissingTargetWarning] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState<string>("");
   const [isYoutubeUpload, setIsYoutubeUpload] = useState<boolean>(false);
+  // Metadata from the lightweight probe (duration/title/thumb) shown as an
+  // upfront cost-confirmation card before the full download runs.
+  const [youtubeMeta, setYoutubeMeta] = useState<{ duration_seconds: number; title?: string; thumbnail?: string } | null>(null);
+  const [probingYoutube, setProbingYoutube] = useState(false);
 
   const remainingCredits =
     ((user as any)?.non_expiring_credits ?? 0) + ((user as any)?.expiring_credits ?? 0);
 
-  const getDuration = (e: React.SyntheticEvent<HTMLVideoElement>) => {
-    const seconds = e.currentTarget.duration;
+  // Compute + display the credit cost from a duration in seconds. Shared by
+  // the uploaded-file preview (<video onLoadedMetadata>) and the YouTube
+  // metadata probe so both show the same upfront "Credits Required" prompt.
+  const applyDuration = (seconds: number) => {
+    if (!Number.isFinite(seconds) || seconds <= 0) return;
     const minutes = seconds / 60;
-
-    const rate = ui.ratePerMinute;
     const billableMinutes = Math.max(minutes, 1);
-    setCost(Math.ceil(billableMinutes * rate));
+    setCost(Math.ceil(billableMinutes * ui.ratePerMinute));
 
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     setDuration(`${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`);
+  };
+
+  const getDuration = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    applyDuration(e.currentTarget.duration);
   };
 
   useEffect(() => {
@@ -99,6 +108,11 @@ export default function CreateNewModal() {
     }
 
     setRequireTranslation("No");
+
+    // Clear any YouTube URL / cost preview carried over from another tool.
+    setYoutubeUrl("");
+    setYoutubeMeta(null);
+    setProbingYoutube(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [job_type]);
 
@@ -106,6 +120,50 @@ export default function CreateNewModal() {
     if (!ui.showTargetLang) return false;
     if (job_type === "subtitle_only") return requireTranslation === "Yes";
     return true;
+  };
+
+  // Step 1 for a YouTube URL: probe metadata (no download) so we can show the
+  // cost + gate on credits BEFORE spending time downloading the whole video.
+  const handleYoutubeProbe = async () => {
+    const url = youtubeUrl.trim();
+    if (!url || probingYoutube || isUploading) return;
+    setProbingYoutube(true);
+    try {
+      const meta = await videoService.getYoutubeMetadata(url);
+      if (!meta || !meta.duration_seconds) throw new Error("no duration");
+      setYoutubeMeta(meta);
+      applyDuration(meta.duration_seconds);
+    } catch (error) {
+      console.error("YouTube metadata probe failed:", error);
+      setYoutubeMeta(null);
+      alert("Couldn't read this YouTube video. It may be private, age-restricted, live, or unavailable. Please check the URL.");
+    } finally {
+      setProbingYoutube(false);
+    }
+  };
+
+  // Step 2 (after the user confirms the cost): actually download + process the
+  // video, then advance to the settings screen — same as before.
+  const handleYoutubeDownload = async () => {
+    const url = youtubeUrl.trim();
+    if (!url || isUploading) return;
+    setIsUploading(true);
+    setIsYoutubeUpload(true);
+    try {
+      const result = await videoService.uploadYoutubeVideo(url);
+      if (!result || !result.video_id) throw new Error("Invalid response from server");
+      setVideoId(result.video_id);
+      setVideoBlobUrl(result.blob_url);
+      setLocalPreviewUrl(result.blob_url);
+      setUploadedFile(new File([], `youtube_${result.video_id}.mp4`));
+      setIsUploading(false);
+      setModalState("setting");
+    } catch (error) {
+      console.error("YouTube upload failed:", error);
+      alert("Failed to download YouTube video. Please check the URL and try again.");
+      setIsUploading(false);
+      setIsYoutubeUpload(false);
+    }
   };
 
   const handleStart = async () => {
@@ -248,38 +306,79 @@ export default function CreateNewModal() {
 
             {ui.allowYoutube ? (
               <div className="w-full max-w-md">
-                <input
-                  type="text"
-                  placeholder="https://www.youtube.com/shorts/t84v79KXbFY"
-                  value={youtubeUrl}
-                  onChange={(e) => setYoutubeUrl(e.target.value)}
-                  onKeyDown={async (e) => {
-                    if (e.key === "Enter" && youtubeUrl.trim() && !isUploading) {
-                      e.preventDefault();
-                      setIsUploading(true);
-                      setIsYoutubeUpload(true);
-                      try {
-                        const result = await videoService.uploadYoutubeVideo(youtubeUrl);
-                        if (!result || !result.video_id) throw new Error("Invalid response from server");
-
-                        setVideoId(result.video_id);
-                        setVideoBlobUrl(result.blob_url);
-                        setLocalPreviewUrl(result.blob_url);
-                        setUploadedFile(new File([], `youtube_${result.video_id}.mp4`));
-
-                        setIsUploading(false);
-                        setModalState("setting");
-                      } catch (error) {
-                        console.error("YouTube upload failed:", error);
-                        alert("Failed to upload YouTube video. Please check the URL and try again.");
-                        setIsUploading(false);
-                        setIsYoutubeUpload(false);
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="https://www.youtube.com/shorts/t84v79KXbFY"
+                    value={youtubeUrl}
+                    onChange={(e) => {
+                      setYoutubeUrl(e.target.value);
+                      // Any URL edit invalidates the previous cost preview.
+                      if (youtubeMeta) setYoutubeMeta(null);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        handleYoutubeProbe();
                       }
-                    }
-                  }}
-                  disabled={isUploading}
-                  className="w-full px-4 py-3 border-2 border-blue-400 rounded-lg text-sm focus:outline-none focus:border-blue-600 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
-                />
+                    }}
+                    disabled={isUploading || probingYoutube}
+                    className="flex-1 px-4 py-3 border-2 border-blue-400 rounded-lg text-sm focus:outline-none focus:border-blue-600 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleYoutubeProbe}
+                    disabled={!youtubeUrl.trim() || isUploading || probingYoutube}
+                    className="shrink-0 px-4 py-3 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {probingYoutube ? "Checking…" : "Check"}
+                  </button>
+                </div>
+
+                {/* Upfront cost confirmation — parity with the uploaded-file
+                    flow. Gates the (expensive) download on available credits. */}
+                {youtubeMeta ? (
+                  <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-4">
+                    <div className="flex gap-3">
+                      {youtubeMeta.thumbnail ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={youtubeMeta.thumbnail}
+                          alt=""
+                          className="h-16 w-28 shrink-0 rounded object-cover bg-gray-200"
+                        />
+                      ) : null}
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-medium text-gray-800">
+                          {youtubeMeta.title || "YouTube video"}
+                        </p>
+                        <p className="text-xs text-gray-500 mt-0.5">Duration: {duration}</p>
+                      </div>
+                    </div>
+
+                    <p className="flex items-center mt-3 text-sm">
+                      Credits Required:
+                      <span className="text-[var(--p-blue)] ml-1 font-medium">{cost}</span>
+                      <span className="ml-3 text-gray-500" suppressHydrationWarning>
+                        (Available: {remainingCredits})
+                      </span>
+                    </p>
+                    {cost > remainingCredits ? (
+                      <p className="text-red-500 text-xs mt-1">
+                        Not enough credits for this video.
+                      </p>
+                    ) : null}
+
+                    <button
+                      type="button"
+                      onClick={handleYoutubeDownload}
+                      disabled={isUploading || cost > remainingCredits}
+                      className="mt-3 w-full px-4 py-2.5 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Continue
+                    </button>
+                  </div>
+                ) : null}
               </div>
             ) : null}
           </div>
