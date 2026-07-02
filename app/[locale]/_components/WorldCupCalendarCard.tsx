@@ -256,6 +256,34 @@ export default function WorldCupCalendarCard({ locale, className }: Props) {
           neighbors in the home rail. Match-line clicks above already
           route into /search?q=<match> and the per-card-header title
           links to /topics/world-cup. */}
+
+      {/* Bracket entry point — added 2026-07-02 during knockouts.
+          Single narrow line, footprint parity with the removed
+          'Explore World Cup' link. Shows only during the tournament
+          phase since brackets are meaningless pre-tournament and the
+          card is hidden post-tournament. */}
+      {phase === "during" ? <BracketFooterCta locale={locale} /> : null}
+    </div>
+  );
+}
+
+function BracketFooterCta({ locale }: { locale: string }) {
+  const track = useClickTracking("wc-calendar:bracket-cta", "topic_capsule", "cards");
+  const href = `${localePrefix(locale)}/wc-bracket`;
+  return (
+    <div className="mt-2 border-t border-emerald-200 pt-2">
+      <Link
+        href={href}
+        onClick={track}
+        className="flex items-center justify-between gap-1.5 rounded-md px-1 py-0.5 text-[11px] font-semibold text-emerald-800 transition-colors hover:bg-emerald-100/70 hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        aria-label="Fill out your World Cup 2026 bracket"
+      >
+        <span className="flex items-center gap-1">
+          <span aria-hidden>🏆</span>
+          <span>Fill your bracket</span>
+        </span>
+        <span aria-hidden className="text-neutral-500">→</span>
+      </Link>
     </div>
   );
 }
