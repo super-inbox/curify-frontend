@@ -1,5 +1,6 @@
-import { Images, LayoutGrid, Printer, Shapes, type LucideIcon } from "lucide-react";
+import { Crop, Images, LayoutGrid, Printer, Shapes, type LucideIcon } from "lucide-react";
 import { PRODUCTION_TILES } from "./gallery_production_tiles";
+import { getOutputIntent, type OutputIntent } from "./output_intent";
 
 /**
  * Template-specific "Production" workflows for the example-page workbench
@@ -28,9 +29,23 @@ export type TemplateWorkflow = {
   label: string;
   hint: string;
   icon: LucideIcon;
-  kind: "transform" | "soon";
+  // "transform" = preset image2image prompt through the freeform pipeline;
+  // "resize"    = client-side canvas export (no backend, no credits);
+  // "soon"      = un-promptable future deliverable (placeholder).
+  kind: "transform" | "resize" | "soon";
   /** Preset image2image prompt — present for kind "transform". */
   prompt?: string;
+};
+
+// P0-4: One-Click Resize Bundle — the first real "Completion" deliverable.
+// Handled client-side (canvas cover-crop to the 3 social aspect ratios) by the
+// surface, not the freeform backend — see lib/resize_bundle.ts.
+const RESIZE_BUNDLE: TemplateWorkflow = {
+  key: "resize-bundle",
+  label: "Resize for socials",
+  hint: "9:16 · 1:1 · 16:9",
+  icon: Crop,
+  kind: "resize",
 };
 
 const wf = (
@@ -104,10 +119,31 @@ const PATTERN_RULES: { test: RegExp; workflows: TemplateWorkflow[] }[] = [
   },
 ];
 
+// P0-3: column-3 ordered by the template's Output Intent, so the FIRST tile is
+// the intent's "completion" action. Reuses existing tiles (all real transforms)
+// + the client-side resize bundle. Looked up by key from the gallery defaults.
+const D = Object.fromEntries(DEFAULT_WORKFLOWS.map((w) => [w.key, w])) as Record<string, TemplateWorkflow>;
+
+const INTENT_WORKFLOWS: Record<OutputIntent, TemplateWorkflow[]> = {
+  // post-ready sizes first, then feed grid + poster
+  social: [RESIZE_BUNDLE, IG_GRID, D.poster],
+  // printable material first, then a coloring/line-art printable + share
+  education: [PRINT_POSTER, D.lineart, IG_GRID],
+  // product mockup + die-cut sticker + print-ready
+  merch: [D.merch, D.sticker, PRINT_POSTER],
+  // wall-art deliverables
+  "print-art": [PRINT_POSTER, D.poster, D.watercolor],
+  // infographic-style deliverables
+  presentation: [PRINT_POSTER, IG_GRID, VECTOR_ICONS],
+  // riffing / style exploration — the original 6 style tiles
+  remix: DEFAULT_WORKFLOWS,
+};
+
 export function getTemplateWorkflows(templateId: string): TemplateWorkflow[] {
+  // Exact overrides and specific pattern rules win over the broad intent layer.
   if (OVERRIDES_EXACT[templateId]) return OVERRIDES_EXACT[templateId];
   for (const rule of PATTERN_RULES) {
     if (rule.test.test(templateId)) return rule.workflows;
   }
-  return DEFAULT_WORKFLOWS;
+  return INTENT_WORKFLOWS[getOutputIntent(templateId)] ?? DEFAULT_WORKFLOWS;
 }
