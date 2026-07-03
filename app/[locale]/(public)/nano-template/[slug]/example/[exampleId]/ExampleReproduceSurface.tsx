@@ -76,7 +76,22 @@ export default function ExampleReproduceSurface({
   const [user] = useAtom(userAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
 
-  const [form, setForm] = useState<Record<string, string>>(initialParams);
+  // Seed empty params from their placeholder/default so a required field is
+  // never sent blank. Some examples ship empty values (e.g. every travel
+  // example has date_range="") and params like `daterange` have no picker —
+  // an empty required param makes the backend reject the generate BEFORE a
+  // project is even created ("generation failed" with no result).
+  const [form, setForm] = useState<Record<string, string>>(() => {
+    const seeded: Record<string, string> = { ...initialParams };
+    for (const p of parameters) {
+      if (!seeded[p.name] || !seeded[p.name].trim()) {
+        const { candidates } = normalizePrefills(p.placeholder);
+        const fallback = (p as { default?: string }).default || candidates[0];
+        if (fallback) seeded[p.name] = fallback;
+      }
+    }
+    return seeded;
+  });
   const [results, setResults] = useState<ResultItem[]>([]);
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
