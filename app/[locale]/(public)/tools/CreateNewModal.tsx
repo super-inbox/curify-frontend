@@ -281,6 +281,7 @@ export default function CreateNewModal() {
             {ui.allowUpload ? (
               <Upload
                 acceptedKinds={ui.acceptedKinds}
+                extractAudio={ui.audioOnly}
                 onPreviewReady={(localUrl, file) => {
                   setLocalPreviewUrl(localUrl);
                   setUploadedFile(file);

@@ -4,43 +4,53 @@ import { useRef, useState } from "react";
 import Icon from "./Icon";
 import { videoService } from "@/services/video";
 import { imageService } from "@/services/image";
+import { extractAudioWav } from "@/lib/extract_audio";
 
 // Per-kind whitelists used by the file-picker accept= filter, drag/drop
 // MIME validation, the visible filetype hint, and the error message. The
 // kind comes from the parent (driven by lib/create-job-ui.ts:acceptedKinds),
 // defaults to "video" so existing call sites keep their current behavior.
-type UploadKind = "video" | "audio" | "image";
+// "media" = video OR audio (audio-only tools that extract the audio track).
+type UploadKind = "video" | "audio" | "image" | "media";
+
+const VIDEO_MIME = [
+  "video/mp4",
+  "video/quicktime",
+  "video/webm",
+  "video/x-msvideo",
+  "video/x-ms-wmv",
+];
+const AUDIO_MIME = [
+  "audio/mpeg", // .mp3
+  "audio/wav",
+  "audio/x-wav",
+  "audio/mp4", // .m4a (sometimes reported as audio/mp4)
+  "audio/x-m4a",
+  "audio/m4a",
+  "audio/aac",
+  "audio/ogg",
+  "audio/flac",
+  "audio/webm",
+];
 
 const KIND_SPEC: Record<
   UploadKind,
   { mimeTypes: string[]; extList: string; extLabel: string }
 > = {
   video: {
-    mimeTypes: [
-      "video/mp4",
-      "video/quicktime",
-      "video/webm",
-      "video/x-msvideo",
-      "video/x-ms-wmv",
-    ],
+    mimeTypes: VIDEO_MIME,
     extList: ".mp4,.mov,.webm,.avi,.wmv",
     extLabel: ".mp4/.mov/.webm/.avi/.wmv",
   },
   audio: {
-    mimeTypes: [
-      "audio/mpeg",        // .mp3
-      "audio/wav",
-      "audio/x-wav",
-      "audio/mp4",         // .m4a (sometimes reported as audio/mp4)
-      "audio/x-m4a",
-      "audio/m4a",
-      "audio/aac",
-      "audio/ogg",
-      "audio/flac",
-      "audio/webm",
-    ],
+    mimeTypes: AUDIO_MIME,
     extList: ".mp3,.wav,.m4a,.aac,.flac,.ogg,.webm",
     extLabel: ".mp3/.wav/.m4a/.aac/.flac/.ogg",
+  },
+  media: {
+    mimeTypes: [...VIDEO_MIME, ...AUDIO_MIME],
+    extList: ".mp4,.mov,.webm,.avi,.wmv,.mp3,.wav,.m4a,.aac,.flac,.ogg",
+    extLabel: "video or audio (.mp4/.mov/.mp3/.wav/.m4a/…)",
   },
   image: {
     mimeTypes: [
@@ -64,6 +74,10 @@ interface Props {
   onUploadError?: (error: string) => void;
   /** What kind of file this Upload accepts. Defaults to "video". */
   acceptedKinds?: UploadKind;
+  /** Audio-only tools: extract the audio track in the browser and upload just
+   *  that (16 kHz mono WAV). A video is decoded to audio; an audio file is sent
+   *  as-is; if decoding fails we fall back to uploading the original file. */
+  extractAudio?: boolean;
   /** Compact dropzone — smaller box + condensed copy. Used where the upload is
    *  a secondary affordance inside a denser layout (e.g. the gallery reproduce
    *  panel) rather than the primary full-size dropzone. */
@@ -76,6 +90,7 @@ export default function Upload({
   onUploadStart,
   onUploadError,
   acceptedKinds = "video",
+  extractAudio = false,
   compact = false,
 }: Props) {
   const { mimeTypes: ACCEPTED_TYPES, extList: ACCEPT_ATTR, extLabel: TYPE_LABEL } =
@@ -109,7 +124,24 @@ export default function Upload({
         const res = await imageService.uploadImage(file);
         onUploaded(res.image_id, res.blob_url);
       } else {
-        const res = await videoService.uploadVideo(file);
+        // Audio-only tools: upload just the audio track. A video is decoded to
+        // a compact 16 kHz mono WAV; an audio file is uploaded as-is; if the
+        // browser can't decode, fall back to uploading the original file.
+        let toUpload = file;
+        let isAudio = false;
+        if (extractAudio) {
+          if (file.type.startsWith("audio/")) {
+            isAudio = true;
+          } else {
+            try {
+              toUpload = await extractAudioWav(file);
+              isAudio = true;
+            } catch (e) {
+              console.warn("audio extraction failed; uploading original file", e);
+            }
+          }
+        }
+        const res = await videoService.uploadVideo(toUpload, { isAudio });
         onUploaded(res.video_id, res.blob_url, res.thumbnail_signed_url);
       }
     } catch (err) {

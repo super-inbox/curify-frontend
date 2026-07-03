@@ -9,9 +9,13 @@ export interface VideoUploadResponse {
 }
 
 export const videoService = {
-  async uploadVideo(file: File): Promise<VideoUploadResponse> {
+  // opts.isAudio marks the file as an audio-only upload (extracted audio track
+  // or a raw audio file) for the audio-only tools — the backend then skips mp4
+  // validation and stages the audio directly. See lib/extract_audio.ts.
+  async uploadVideo(file: File, opts?: { isAudio?: boolean }): Promise<VideoUploadResponse> {
     const formData = new FormData();
     formData.append("is_youtube_upload", "false");
+    if (opts?.isAudio) formData.append("is_audio_upload", "true");
     formData.append("video_file", file);
 
     const res = await apiClient.request<{ data: VideoUploadResponse }>('/videos/upload', {

@@ -11,7 +11,14 @@ export type UiConfig = {
   // Kind of file the upload affordance accepts. Defaults to "video".
   // Used by the Upload component to switch MIME types, accept extensions,
   // and the on-screen file-type hint (`.mp4/.mov/…` vs `.mp3/.wav/…`).
-  acceptedKinds?: "video" | "audio";
+  // "media" = video OR audio (for audio-only tools that extract the track).
+  acceptedKinds?: "video" | "audio" | "media";
+
+  // Audio-only tools: the backend only needs the audio track, so the Upload
+  // component extracts audio in the browser and uploads just that (a video is
+  // decoded to a 16 kHz mono WAV; audio files upload as-is). Avoids shipping
+  // the whole video for transcript / summarizer / speech-translator.
+  audioOnly?: boolean;
 
   // Language selectors
   showSourceLang: boolean;
@@ -77,6 +84,8 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     title: "Generate Video Transcript",
     allowUpload: true,
     allowYoutube: true,
+    acceptedKinds: "media",
+    audioOnly: true,
     showSourceLang: true,
     showTargetLang: false,
     allowVoiceover: false,
@@ -101,6 +110,8 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     title: "Summarize Video",
     allowUpload: true,
     allowYoutube: true,
+    acceptedKinds: "media",
+    audioOnly: true,
     showSourceLang: true,
     showTargetLang: false,
     allowVoiceover: false,
@@ -113,7 +124,8 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     title: "Translate Speech",
     allowUpload: true,
     allowYoutube: true,
-    acceptedKinds: "audio",
+    acceptedKinds: "media",
+    audioOnly: true,
     showSourceLang: true,
     showTargetLang: true,
     allowVoiceover: false,
