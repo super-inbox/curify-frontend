@@ -29,9 +29,9 @@ social. Consistency of identity beats per-post polish.
 
 | 平台 | 账号 | 平台已经给的标签 (Identity) | 允许发 ✅ | 禁止发 ❌ | 固定栏目 (Series) |
 |------|------|--------------------------|-----------|-----------|-------------------|
-| X | **Jay** | AI / Data Science / Statistics / 推荐系统 | 硬核技术、LLM×推荐系统实践、多阶段检索排序、Scaling、FDE、Search、Google、创业踩坑 | ❌ 世界杯 ❌ Merch ❌ 旅游 ❌ Labubu ❌ 纯 AI 生成图 | 周一《AI Engineering Notes》· 周三《Recommendation System Insights》· 周五《Building Curify》 |
-| X | **Curify** | 全球热点 + 真情绪 + AI Visual | 世界杯、CR7、日本地震、Labubu、电影、突发新闻、Build-in-Public 真实创业情感 | ❌ AI 论文 ❌ MLOps ❌ 硬核技术 | 热点快反（当天热点 → 快速生成视觉资产 + 一句创业感悟） |
-| 小红书 | **Jay** | 统计学 / 商业分析 / AI 宏观思考 | 统计、商业、模型、认知、方法论、"降维打击"式深度反思（爆款是"统计学已经不存在了"→ 大家要的是**宏观思考**，不是 AI 教程） | ❌ 每天宣传产品 ❌ 泛泛 AI 焦虑 | 《统计学一分钟》·《一个数据科学家的思考》 |
+| X | **Jay** | AI / Data Science / Statistics / 推荐系统 *(低量·重建中)* | 硬核技术、LLM×推荐系统实践、多阶段检索排序、Scaling、FDE、Search、Google、创业踩坑、技术分享/talk（RAG、创作者生态）+ YouTube 链接 | ❌ 世界杯 ❌ Merch ❌ 旅游 ❌ Labubu ❌ 纯 AI 生成图 | 周一《AI Engineering Notes》· 周三《Recommendation System Insights》· 周五《Building Curify》 |
+| X | **Curify** | 全球热点 + 真情绪 + AI Visual *(低量)* | 世界杯、CR7、日本地震、Labubu、电影、突发新闻、Build-in-Public 真实创业情感（实测：情绪贴 like-rate > 产品贴）| ❌ AI 论文 ❌ MLOps ❌ 硬核技术 ❌ **产品/功能硬推**（实测 1.1K 曝光仅 2 赞）| 热点快反（当天热点 → 快速生成视觉资产 + 一句创业感悟） |
+| 小红书 | **Jay** | 统计学 / 商业分析 / AI 宏观思考 | 统计、商业、模型、认知、方法论、"降维打击"式深度反思（爆款是"统计学已经不存在了"→ 大家要的是**宏观思考**，不是 AI 教程）**格式=长文，让小红书自动转图片卡片（长文→图文卡）** | ❌ 每天宣传产品 ❌ 泛泛 AI 焦虑 ❌ #Curify 品牌水印（压制权威信号） | 《统计学一分钟》·《一个数据科学家的思考》 |
 | 小红书 | **Curify** | 中国历史/文化 反常识（**文字为主**） *(数据修订↓)* | 中国历史/文化 reverse-trivia **文字长贴/quote-card**（长平之战 what-if、彝族vs羌族、打更人由来）+ 短视频（避险/名人花边）| ❌ 别把双语闪卡/MBTI卡/世界杯海报当旗舰（实测垫底）❌ 硬广 | 《反常识·中国史》·《一条冷知识》 |
 | TikTok | **Curify** | 自动视频 / 视觉内容 | 强 Hook（前 3 秒视觉冲击/悬念）、动态生成过程 Before/After 对比 | ❌ 模板静态展示 | 《30 秒世界地图》·《一分钟 AI 翻译》 |
 | YouTube | **Curify** | 自动视频 | 同 TikTok（Hook + 动态过程） | ❌ 模板静态展示 | 同 TikTok 栏目复用 |
@@ -86,10 +86,26 @@ overturns several *content bets* in the memo.** Operational truth = the cheat sh
 - The 100× breakout is repeatable: **"统计学已经不存在了"** = **199.7K views / 3,636 saves /
   1,380 shares.** Clone template = a bold **反差 declaration about the death/rebirth of a whole
   field** ("X 已经不存在了" — disciplines, professions, business models, mental models).
-- **Format:** long-form **text-cover essay carousel**, serif/bold declarative headline on white.
+- **Format (refined 2026-07-06): write a LONG-FORM ARTICLE and let RedNote auto-convert it into
+  swipeable image cards (小红书 长文 → 图文卡片).** This is the account's best-performing format —
+  the production task is *writing a strong article*, not hand-designing slides. Keep the punchy
+  反差 headline as the first card; RedNote paginates the rest. Serif/bold on white house look.
 - **Saves = the audience bookmarks *frameworks & theses*, not entertainment.** Drift risks
   (proven underperformers): product-promo with visible **#Curify branding suppresses** the
   thought-leader signal even on-brand; **personal classifieds + travel/lifestyle video flatline**.
+
+### X / Twitter (both accounts) — LOW-volume, still building identity
+- **X · Jay** — top posts are **technical talks / strategic reflections** (RAG slide-deck→YouTube,
+  Kuaishou creator-ecosystem analysis) with a YouTube link, ~400 impressions each. Confirms the
+  hardcore-tech + recsys/creator-ecosystem identity, but the account is small — treat X-Jay as a
+  *rebuild* (consistent technical posting) not a reach channel yet.
+- **X · Curify** — two "top" posts, both low engagement: a **product/feature pitch** with a
+  flashcard-illustration video (1.1K impressions, **2 likes** = 0.18%) and a **WC emotion post**
+  (CR7×Modrić embrace + bracket infographic, 198 impressions, 3 likes = 1.5%). Read: the
+  **emotion/hot-news post out-engages the product pitch ~8× on rate** even at lower reach.
+  **Don't lead X-Curify with product pitches** (same product-output-as-hook anti-pattern as RedNote);
+  lead with emotion/hot-news and let the Curify visual be the payoff (the WC post embeds a
+  watermarked bracket — right pattern).
 
 ### Cross-cutting: two engines, and the product-output paradox
 1. **The visual learning object (flashcards) — Curify's core product output — is NOT what wins
