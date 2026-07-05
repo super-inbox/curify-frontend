@@ -6351,5 +6351,159 @@
         ]
       }
     }
+  },
+  "template-amazon-long-scroll-product-infographic-template": {
+    "category": "Infografía de Producto de Amazon de Desplazamiento Largo",
+    "description": "Genera una infografía de listado vertical de Amazon de longitud completa: banner principal, comparación antiguo vs nuevo, cuadrícula de características tecnológicas clave, escenas de uso en estilo de vida y una tabla de especificaciones, para cualquier producto de comercio electrónico transfronterizo.",
+    "title": "Nano Banana Prompt: Generador de Infografía de Producto de Amazon de Desplazamiento Largo | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de marketing de listado vertical de Amazon de longitud completa para {product_full_name}. Diseño, de arriba a abajo: un banner principal con un renderizado del producto desde múltiples ángulos, titular, etiquetas de íconos de puntos de venta, logotipo de la marca y distintivos de certificación; un bloque de comparación antiguo vs nuevo; una cuadrícula de características de tecnología clave de 3 paneles con renderizados internos; una cuadrícula de uso en estilo de vida en múltiples escenarios; y una tabla de especificaciones en la parte inferior. Diseño visual moderno y limpio para comercio electrónico, paleta de marca cohesiva, calidad de página de detalle lista para imprimir.",
+        "who": "Adecuado para vendedores de Amazon / comercio electrónico transfronterizo, comercializadores de marcas DTC, diseñadores de listados de productos, agencias que producen creatividad para páginas de detalle y dropshippers que construyen listados enfocados en la conversión.",
+        "how": [
+          "Ingresa el nombre completo del producto en {product_full_name} (por ejemplo, 'ventilador portátil de mano de alta velocidad RANVOO').",
+          "El banner principal, el bloque de comparación, la cuadrícula de características y las escenas de estilo de vida se componen automáticamente de arriba a abajo.",
+          "La tabla de especificaciones y los distintivos de certificación se completan automáticamente.",
+          "Genera una infografía de producto de Amazon de longitud completa y vertical."
+        ],
+        "prompts": [
+          "Genera una infografía de desplazamiento largo de Amazon para una máquina de café espresso portátil.",
+          "Crea una infografía de listado transfronterizo para auriculares bluetooth ANC.",
+          "Genera una infografía de página de detalle vertical para una botella de agua inteligente esterilizadora UV."
+        ]
+      }
+    }
+  },
+  "template-eco-farm-food-uniform-product-label": {
+    "category": "Etiqueta de Producto de Alimentos de Eco Granja",
+    "description": "Genera una etiqueta de empaque de alimentos orgánicos minimalista de granja: encabezado de marca, paleta de colores, ventana de foto de producto troquelada, nombre de producto sobredimensionado y texto de características, como una plantilla de serie de marca unificada.",
+    "title": "Nano Banana Prompt: Generador de Etiqueta de Producto de Alimentos de Eco Granja | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una etiqueta de empaque de alimentos orgánicos minimalista vertical para {food_product_name}. Base blanca limpia con un sistema de marca unificado: un encabezado de marca en la parte superior con logotipo, nombre y una paleta de colores de 4 muestras; una ventana troquelada irregular central llena de fotografía de producto en primer plano; un nombre de producto vertical sobredimensionado alineado al borde derecho; un área de texto inferior con texto corto de características naturales / artesanales / orgánicas; y una banda base con certificaciones u origen. Estética cohesiva y premium de etiqueta de empaque.",
+        "who": "Adecuado para marcas de alimentos orgánicos / artesanales, productores de granja a mesa, diseñadores de empaque, líneas de supermercado de marca privada y creadores que necesitan una serie de etiquetas consistente a través de SKUs.",
+        "how": [
+          "Ingresa la categoría del producto en {food_product_name} (por ejemplo, 'queso artesanal envejecido', 'granos de café tostados 100% Arábica').",
+          "La ventana troquelada se llena con fotografía de producto en primer plano coincidente.",
+          "El encabezado de marca, las muestras de color y el texto de características se componen automáticamente.",
+          "Genera una etiqueta de producto de alimentos orgánicos vertical."
+        ],
+        "prompts": [
+          "Genera una etiqueta de eco granja para miel natural cruda sin filtrar.",
+          "Crea una etiqueta de empaque minimalista para aceite de oliva virgen extra prensado en frío.",
+          "Genera una etiqueta de producto para pan artesanal de masa madre."
+        ]
+      }
+    }
+  },
+  "template-luxury-vintage-gem-necklace-design-sheet": {
+    "category": "Hoja de Diseño de Collar de Gemas Vintage",
+    "description": "Genera un tablero de presentación de diseño de joyería de dos columnas: boceto técnico dibujado a mano con anotaciones a la izquierda, renderizados de producto de colgante terminado realistas a la derecha, para un collar de gema barroca vintage.",
+    "title": "Nano Banana Prompt: Generador de Hoja de Diseño de Collar de Gemas Vintage | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un tablero de diseño de concepto de joyería vertical para {jewelry_theme_name}. Diseño de columna dual dividido: la izquierda es una hoja de concepto de boceto técnico dibujado a mano: título, texto del tema, un dibujo lineal de vista frontal anotado, un boceto de vista lateral, paneles de detalles de material y relieve, y una lista de especificaciones de material con dimensiones; la derecha apila dos renderizados de producto realistas: una toma frontal desde arriba y un detalle macro lateral del colgante de plata terminado sobre un fondo mate neutral. Estética elegante de portafolio de diseño de joyería antigua.",
+        "who": "Adecuado para diseñadores de joyería que construyen tableros de concepto, marcas de joyería fina que presentan colecciones, portafolios de artesanía / creadores, estudiantes de diseño y boutiques que presentan piezas personalizadas.",
+        "how": [
+          "Ingresa el tema del collar en {jewelry_theme_name} (por ejemplo, 'collar de plata de aguamarina con querubín de fuente de ángel').",
+          "La columna izquierda dibuja automáticamente el boceto técnico anotado.",
+          "La columna derecha renderiza tomas de producto en overhead + macro del colgante terminado.",
+          "Genera una hoja de diseño de collar de gema vintage vertical."
+        ],
+        "prompts": [
+          "Genera una hoja de diseño para un colgante de gema de madreperla de Lotus Pond.",
+          "Crea un tablero de concepto para un collar de plata tallado en cristal aqua vintage de arroyo forestal.",
+          "Genera una hoja de diseño de joyería para un colgante de aguamarina de querubín barroco."
+        ]
+      }
+    }
+  },
+  "template-football-star-chibi-sticker-set": {
+    "category": "Conjunto de Stickers Chibi de Estrella del Fútbol",
+    "description": "Genera una hoja de stickers chibi de jugador de fútbol 3×4 — 12 stickers de expresión fija con bordes troquelados limpios — para cualquier estrella de selección nacional y camiseta.",
+    "title": "Nano Banana Prompt: Generador de Conjunto de Stickers Chibi de Estrella del Fútbol | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una cuadrícula 3×4 de adorables stickers chibi de jugadores de fútbol temáticos {player_nationality_jersey}. Cada uno de los 12 stickers tiene un borde troquelado limpio y una expresión universal fija — señalando y riendo, enojado, llorando, sorprendido, animando, guiñando y más — sobre un fondo blanco apagado, todos vistiendo la camiseta de la selección nacional del jugador. Estilo de cartoon kawaii, diseño de personaje consistente en toda la hoja, listo para imprimir y para mensajería.",
+        "who": "Adecuado para aficionados al fútbol y comunidades de fans, creadores de memes / stickers deportivos, creadores de contenido social para días de partido, diseñadores de merchandising y editores de paquetes de stickers para aplicaciones de mensajería.",
+        "how": [
+          "Ingresa la estrella + selección nacional + camiseta en {player_nationality_jersey} (por ejemplo, 'Croacia Luka Modrić #10 camiseta a cuadros').",
+          "12 stickers de expresión fija se renderizan automáticamente en una cuadrícula 3×4.",
+          "Cada sticker mantiene la camiseta del jugador y un borde troquelado limpio.",
+          "Genera una hoja de stickers de estrella del fútbol chibi."
+        ],
+        "prompts": [
+          "Genera un conjunto de stickers chibi para Erling Haaland, Noruega #9.",
+          "Crea una hoja de stickers para Lionel Messi, Argentina #10 albiceleste.",
+          "Genera un paquete de stickers chibi para Kylian Mbappé, Francia #10."
+        ]
+      }
+    }
+  },
+  "template-world-cup-premium-gold-text-poster": {
+    "category": "Póster Premium de Oro de la Copa del Mundo",
+    "description": "Genera un épico póster cinematográfico de la Copa del Mundo con tipografía premium en oro — tributo de despedida a la leyenda o diseño de enfrentamiento — para cualquier jugador o partido.",
+    "title": "Nano Banana Prompt: Generador de Póster de Texto Premium de Oro de la Copa del Mundo | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster promocional vertical épico y cinematográfico de la Copa Mundial de la FIFA temático {poster_theme_type}, en uno de dos diseños: un Tributo de Despedida a la Leyenda ('Crepúsculo de los Dioses') con un titular en serif dorado, una cita poética vintage y un retrato del héroe; o un diseño de enfrentamiento con escudos de equipos, banderas y detalles del partido. Tipografía premium en oro, iluminación cinematográfica dramática, calidad de póster lista para imprimir.",
+        "who": "Adecuado para creadores de contenido de fútbol, diseñadores editoriales deportivos, comunidades de fans que producen gráficos de tributo y días de partido, y marcas que publican visuales temáticos de la Copa del Mundo.",
+        "how": [
+          "Ingresa el tema del póster en {poster_theme_type} (por ejemplo, 'Tributo de despedida al retiro de Luka Modrić').",
+          "Elige un diseño de tributo de despedida o de enfrentamiento.",
+          "Tipografía dorada, retrato / escudos y fondo cinematográfico se componen automáticamente.",
+          "Genera un póster de la Copa del Mundo con texto premium en oro."
+        ],
+        "prompts": [
+          "Genera un póster cinematográfico de despedida de carrera de Cristiano Ronaldo en la Copa del Mundo.",
+          "Crea un póster de enfrentamiento de Cabo Verde vs Argentina 2026 Copa del Mundo.",
+          "Genera un póster de tributo Crepúsculo de los Dioses para Luka Modrić."
+        ]
+      }
+    }
+  },
+  "template-japanese-traditional-music-instrument-info-poster": {
+    "category": "Póster de Información de Instrumento Japonés",
+    "description": "Genera un póster educativo vintage en papel washi sobre un instrumento musical japonés tradicional — título con sello rojo, diagrama etiquetado y texto histórico.",
+    "title": "Nano Banana Prompt: Generador de Póster de Información de Instrumento Tradicional Japonés | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster educativo vertical vintage en papel washi temático {japanese_instrument_name}, en un diseño modular unificado: un área superior con un sello rojo vertical que lleva el nombre en kanji más un título en inglés en serif; una ilustración central del instrumento etiquetada con anotaciones estructurales; y secciones inferiores que cubren historia, método de interpretación y contexto cultural. Textura de washi cálida, diseño editorial elegante, calidad de impresión para museo.",
+        "who": "Adecuado para educadores musicales, equipos de contenido cultural / de museo, entusiastas de las artes tradicionales, creadores de hojas de estudio y aula, y diseñadores que construyen un conjunto de pósters de instrumentos.",
+        "how": [
+          "Ingresa el instrumento en {japanese_instrument_name} (por ejemplo, 'Cítara Koto de 13 cuerdas', 'Laúd Shamisen de tres cuerdas').",
+          "Título en kanji de sello rojo y título en inglés con serifas configurados automáticamente.",
+          "Diagrama del instrumento etiquetado y secciones de historia compuestas automáticamente.",
+          "Generar un cartel infográfico de instrumento vintage de washi."
+        ],
+        "prompts": [
+          "Generar un cartel informativo para el tambor del festival de barriles Taiko.",
+          "Crear un infográfico de washi para el laúd de tres cuerdas Shamisen.",
+          "Generar un cartel educativo para el órgano de boca Sho de la corte."
+        ]
+      }
+    }
+  },
+  "template-english-confusing-word-pair-educational-poster": {
+    "category": "Cartel de pares de palabras confusas en inglés",
+    "description": "Generar un cartel educativo para el aula que contraste un par de palabras en inglés comúnmente confundidas — definiciones en dos columnas, ejemplos y un consejo de memoria.",
+    "title": "Nano Banana Prompt: Generador de Cartel de Pares de Palabras Confusas en Inglés | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un cartel de aprendizaje de gramática para el aula de nivel elemental con el tema {word_pair_title}, en un diseño unificado de dos columnas: un encabezado con un enorme título de dos colores [WordA VS WordB] y un subtítulo de diferencia clave de una línea; dos columnas que dan la parte del discurso de la palabra, definición y oraciones de ejemplo; y un consejo de memoria en la parte inferior. Estilo limpio y brillante para el aula, tipografía amigable y audaz, listo para imprimir y para hojas de trabajo.",
+        "who": "Adecuado para profesores de ESL / inglés, educadores de primaria y educación en casa, creadores de contenido de tutoría, diseñadores de carteles para el aula y editores de hojas de estudio.",
+        "how": [
+          "Ingrese el par de palabras en {word_pair_title} (por ejemplo, 'Loose vs Lose', 'Your vs You're').",
+          "Un título VS de dos colores y un subtítulo de diferencia clave configurados automáticamente.",
+          "Las columnas duales se llenan con definiciones y oraciones de ejemplo.",
+          "Generar un cartel educativo de pares de palabras confusas en inglés."
+        ],
+        "prompts": [
+          "Generar un cartel para 'Advice vs Advise'.",
+          "Crear una hoja para el aula para 'Accept vs Except'.",
+          "Generar un cartel educativo para 'Complement vs Compliment'."
+        ]
+      }
+    }
   }
 }

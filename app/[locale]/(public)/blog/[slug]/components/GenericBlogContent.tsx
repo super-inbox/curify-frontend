@@ -83,7 +83,12 @@ export default function GenericBlogContent({
       {(hasKey("whyTitle") || hasKey("whyContent")) && (
         <section>
           <h2 className="text-2xl font-bold mb-4">{hasKey("whyTitle") ? safeT("whyTitle") : "Why This Matters"}</h2>
-          <p className="mb-4">{hasKey("whyContent") ? safeT("whyContent") : "Learn why this topic is important..."}</p>
+          <div
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{
+              __html: hasKey("whyContent") ? formatContent(safeT("whyContent")) : "<p>Learn why this topic is important...</p>",
+            }}
+          />
         </section>
       )}
 
@@ -197,7 +202,12 @@ export default function GenericBlogContent({
       {(hasKey("useCasesTitle") || hasKey("useCasesContent")) && (
         <section>
           <h2 className="text-2xl font-bold mb-4">{hasKey("useCasesTitle") ? safeT("useCasesTitle") : "Use Cases"}</h2>
-          <p className="mb-4">{hasKey("useCasesContent") ? safeT("useCasesContent") : "Common applications..."}</p>
+          <div
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{
+              __html: hasKey("useCasesContent") ? formatContent(safeT("useCasesContent")) : "<p>Common applications...</p>",
+            }}
+          />
         </section>
       )}
 

@@ -224,7 +224,64 @@ The thesis worked-example above ("anime character image → 6-up sticker pack PD
 
 ---
 
-## 6. References
+## 6. Extended work — WeChat Design Copilot (agent at the edge)
+
+A B2B deployment of this exact agentic pipeline, pointed where the demand actually
+is. From a Chengdu design-studio-owner interview (2026-07-03): studios' clients
+arrive *because general AI failed them* — they can generate a fuzzy concept but not
+a production-standard deliverable. Sell **Completion**, not generation. The recurring
+pain is **requirement ambiguity** ("make that boat bigger" → rounds of revision); the
+fix is to turn a fuzzy ask into a **multiple-choice of graded variants** (+10/20/30/重构)
+the client just picks. Wedge = a **WeChat bot** that parasitizes the studio's existing
+chat workflow (zero friction); the strategic asset is the `request → options → pick`
+**data flywheel** (golden commercial pairing data). Buyer = the studio **owner**
+(throughput / margin), not the designer.
+
+Why it belongs in this workstream: it *is* our loop (intent routing → tool/workflow
+call → result → next turn) aimed at a real channel and a paying buyer — and it
+produces exactly the labeled interaction data the capability index (P0-1) and the
+task/eval set (P0-2) need.
+
+Full spec: `curify-studio/docs/wechat-design-copilot-mvp.md`.
+
+**Current MVP (built + tested 2026-07-03):** `curify-studio/dev/jayw/wechat-design-copilot/`
+- Channel-agnostic core `copilot.run_copilot(instruction, image_bytes)`: gpt-4o-mini
+  **intent router** (`gradient_edit / style / lineart / cutout / generate`) writes N
+  labeled graded prompts → **Gemini image-first edits** (mirrors `imagen_service`) →
+  labeled **2×2 grid** → **interaction log** (the flywheel).
+- First product category = **书签 / bookmark** (the interview's own example). Reuses the
+  gallery production-tile prompts + `imagen_service` + Scribe voice.
+- Channels: **Wechaty** adapter (personal WeChat, pilot-only, ToS-gray) + a **Gradio web
+  UI** (`web_ui.py`) that drives the same core in a browser today. Verified: bookmark +
+  "让海浪更大" → gradient_edit grid.
+- Blocker: personal WeChat has no free puppet (web login dead) → needs a paid **padlocal**
+  token or **WeCom**; the web UI unblocks testing meanwhile.
+
+**TODO → make it agentic:**
+1. **Capture real conversations & workflows.** Collect actual studio↔client dialogues
+   (fuzzy asks, revisions, final picks) and the real design workflows studios run
+   (画册 / 包装 / PPT steps) per category. Ground-truth input for routing + the flywheel;
+   feeds P0-1 (capability index) and P0-2 (task/eval set).
+2. **First agentic version — memory · knowledge · tool.** Upgrade the single-shot router
+   to an agent loop:
+   - **Memory:** conversation state + per-client / per-studio preferences ("this client
+     always wants it bolder"), carried across turns.
+   - **Knowledge:** the studio's own templates / brand assets + per-category production
+     specs (bookmark trim/bleed, POD dims) as retrievable context.
+   - **Tools:** the existing pipelines as callable tools — gradient-variant, style,
+     line-art, cutout, resize-to-spec, mockup — over the `nano_freeform` / `imagen_service`
+     substrate. This is the **agent orchestration layer** (P1) instantiated for a real user.
+3. **Shadow-test on real traffic.** Run the agent *alongside* live studio conversations
+   without acting: for each real fuzzy ask, log what the agent *would* propose vs. what the
+   designer actually delivered / the client actually picked. Use the `request → options →
+   pick` flywheel as the eval signal (does the agent's option set contain the chosen
+   direction? rounds saved?). Graduate shadow → assisted → autonomous only where the shadow
+   metrics clear. Then graduate the channel (WeCom) + wire the real `imagen_service` +
+   credit gate, and roll the captured data back into the capability index.
+
+---
+
+## 7. References
 - Tool registry: `curify-frontend/lib/tools-registry.ts` · inventory: [`tool-inventory.md`](tool-inventory.md)
 - Manga translation: `https://huggingface.co/spaces/Curify/manga_translation`
 - Workflows: `curify-frontend/lib/gallery_production_tiles.tsx`, `lib/template_workflows.tsx`; freeform pipeline `curify_background/app/pipelines/nano_freeform_pipeline.py`
