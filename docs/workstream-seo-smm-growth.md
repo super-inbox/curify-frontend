@@ -188,6 +188,13 @@ scope in `docs/mbti-character-cluster-build-2026-07-05.md`.
   (funnel pulls, search-eval cycles, video-user attribution)
 
 **Date-stamped findings docs (most recent first):**
+- `docs/use-case-chip-clicks-2026-07-03.md` — persona-chip click volume
+  across the 4 target personas (Growth Agencies / Designers / DTC Brands /
+  Merch Operators). 53 clicks / 30d total across all 10 personas; 0 on
+  template pages; 3 on example pages. Chips are not a meaningful discovery
+  path today; no product change taken pending impression instrumentation.
+  Pull script at
+  `~/curify-studio/dev/jayw/admin_analysis/use_case_chip_clicks_pull.py`
 - `docs/video-user-attribution-2026-06-26.md` — channel + landing mix for
   208 video-project users; only ~15% attributable (2-month user_interactions
   retention vs 11-month project history); script at

@@ -242,8 +242,22 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
       // was matching via label-exact but with mixed-case quirks.
       "ai dub", "ai dubbing", "ai voice over", "auto dub",
       "lip sync dubbing", "dubbed video",
+      // 2026-07-02 — `translate youtube video` (and near-variants) fell
+      // through the /search routing to the low-result topic-chip
+      // aggregator because none of the existing aliases carried the
+      // "youtube" substring. Add YouTube-carrying multi-word aliases so
+      // the exact-match branch (page.tsx L365-371) fires and redirects
+      // straight to /tools/video-dubbing. Bare "youtube" left OUT on
+      // purpose — collides with subtitle-downloader / summarizer intent.
+      "translate youtube video", "translate youtube",
+      "youtube video translation", "youtube translation",
+      "dub youtube video", "dub youtube", "youtube dubbing",
+      "youtube video dubbing",
       "配音", "视频配音", "ai 配音", "自动配音", "中英配音",
+      "翻译 youtube 视频", "youtube 视频翻译",
+      "youtube 视频配音", "给 youtube 视频配音",
       "doblaje", "doblar video", "doblaje ia",
+      "doblar video de youtube", "traducir video de youtube",
     ],
   },
   {

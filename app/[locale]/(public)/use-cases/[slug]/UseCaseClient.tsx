@@ -41,6 +41,7 @@ const USE_CASE_VIDEO_KEY: Record<string, string> = {
   "for-dtc-brands":       "dtc",
   "for-publishers":       "publisher",
   "for-programmatic-seo": "seo",
+  "for-marketers":        "marketer",
 };
 
 function UseCaseVideo({

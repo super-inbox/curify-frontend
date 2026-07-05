@@ -239,6 +239,24 @@ persona forms around them.
 
 ---
 
+## Outreach demo assets (pre-launch use cases)
+
+Verticals we're prototyping via 3-panel workflow decks before shipping a
+live `/use-cases/<slug>` landing page. Each has a reproducible pipeline
+so we can regenerate it for a specific prospect with their brief +
+palette + brand.
+
+| Vertical | Prospect origin | Deck doc | Pipeline |
+|---|---|---|---|
+| Brand Design Studios (新消费 / 大健康) | Niice Design owner, 2026-07-03 | [`docs/use-case-brand-design-studios-2026-07-03.md`](./use-case-brand-design-studios-2026-07-03.md) | `scripts/oneoff_brand_design_workflow_demo_2026-07-03.cjs` + `scripts/oneoff_brand_design_portfolio_pdf_2026-07-03.sh` |
+
+Promotion rule: convert an outreach deck into a live persona (row in
+"Currently shipped verticals" table above) only when a real user signs
+on for any partnership tier. Live-only policy per
+`feedback_tool_ship_persona_remapping`.
+
+---
+
 ## Related docs / threads
 - `docs/search-and-content.md` — Search & Content workstream (companion A)
 - `~/curify-studio/docs/workstream-tooling-and-engineering.md` — Tools workstream (companion B)

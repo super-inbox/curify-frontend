@@ -360,6 +360,7 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
   let resp = await callWithNetRetry({
     model: args.model,
     temperature: 0.2,
+    response_format: { type: "json_object" },
     messages: [
       { role: "system", content: system },
       { role: "user", content: user },
@@ -392,6 +393,7 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
       resp = await callWithNetRetry({
         model: args.model,
         temperature: 0.1, // Lower temperature for more deterministic output
+        response_format: { type: "json_object" },
         messages: [
           {
             role: "system",

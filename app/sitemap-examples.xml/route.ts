@@ -3,6 +3,7 @@ import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 import exampleI18nEn from "@/messages/en/example.json";
+import exampleVisibilityWhitelist from "@/public/data/example_visibility_whitelist.json";
 import { toSlug } from "@/lib/nano_utils";
 import {
   SEO_RETITLED_LASTMOD,
@@ -11,13 +12,35 @@ import {
 } from "@/lib/seo_retitled_templates";
 
 // Example IDs that have per-locale SEO copy in messages/<locale>/example.json.
-// Computed once at module load. Used to flag URLs whose lastmod should bump
-// to I18N_DESCRIPTIONS_LASTMOD so Google re-fetches and picks up the new
-// title / description / metaDescription. Broader than allow_i18n=true since
-// we backfilled non-allow_i18n examples on 2026-05-14.
+// Used ONLY for the lastmod bump below (so Google re-fetches i18n-authored
+// URLs) — no longer gates sitemap inclusion. Sitemap inclusion is now
+// GSC-driven (see shouldEmitExample below). 726 i18n-authored examples
+// with 0 GSC visibility get dropped from the sitemap as of B1 (2026-07-01);
+// if they later gain GSC signal the next whitelist regen re-adds them.
 const EXAMPLE_I18N_IDS: ReadonlySet<string> = new Set(
   Object.keys(exampleI18nEn as Record<string, unknown>)
 );
+
+// Example IDs that got any GSC impression in the last 28 days per the
+// most-recent scripts/build_example_visibility_whitelist.cjs run.
+// Crawl-budget optimization (B1, 2026-07-01): emitting all 17,650 example
+// URLs means Google spends most of its per-domain crawl budget on the
+// invisible 85% of the tail. Only emit examples that either have SEO
+// signal (GSC-visible OR i18n-authored OR their template was SEO retitled
+// OR were recently added) so crawler focuses on the pages that actually
+// return value. Regenerate via
+//   node scripts/build_example_visibility_whitelist.cjs
+// after each fresh audit_gsc_full pull.
+const GSC_VISIBLE_IDS: ReadonlySet<string> = new Set(
+  (exampleVisibilityWhitelist as { ids?: string[] }).ids ?? []
+);
+
+// Examples added within the last N days always stay in the sitemap so
+// fresh content gets a fair shot at discovery before GSC has time to
+// observe it. Threshold matches the GSC pull window (28d) plus a small
+// buffer for crawl latency.
+const FRESH_WINDOW_DAYS = 45;
+const FRESH_CUTOFF_MS = Date.now() - FRESH_WINDOW_DAYS * 24 * 60 * 60 * 1000;
 
 export const runtime = "nodejs";
 
@@ -106,17 +129,53 @@ function pickLastmod(x: NanoExample): string | undefined {
   return x.updated_at || x.lastmod || x.date || undefined;
 }
 
+function isFreshExample(ex: NanoExample): boolean {
+  const raw = ex.updated_at || ex.lastmod || ex.date;
+  if (!raw) return false;
+  const t = Date.parse(raw);
+  return Number.isFinite(t) && t >= FRESH_CUTOFF_MS;
+}
+
+function shouldEmitExample(ex: NanoExample, exampleId: string): boolean {
+  // 1. GSC-visible in last 28 days → keep (proven traffic potential).
+  if (GSC_VISIBLE_IDS.has(exampleId)) return true;
+  // 2. Template got explicit SEO retitle work → keep the whole family.
+  if (SEO_RETITLED_TEMPLATE_IDS.has(String(ex.template_id).trim())) return true;
+  // 3. Freshly added → keep to give discovery a chance before we ever
+  //    see GSC data. (No date field on examples today, so this is a
+  //    no-op — the field is here for when we start emitting dates.)
+  if (isFreshExample(ex)) return true;
+  // 4. i18n-only examples with 0 GSC signal are dropped. If Google
+  //    starts showing them, the next whitelist regen picks them up
+  //    (see comment on GSC_VISIBLE_IDS above). This is the crawl-budget
+  //    reclaim — ~726 examples where the i18n investment hasn't paid
+  //    off within GSC's ~28-day observation window.
+  return false;
+}
+
 export async function GET() {
   const templateLocalesMap = getTemplateLocalesMap();
   const examples = nanoInspiration as unknown as NanoExample[];
 
   let urls = "";
 
+  let emitted = 0;
+  let skipped = 0;
   for (const ex of examples) {
     if (!ex?.id || !ex?.template_id) continue;
 
     const templateId = String(ex.template_id).trim();
     const exampleId = String(ex.id).trim();
+
+    // B1 (2026-07-01) crawl-budget cull: drop examples with no SEO signal.
+    // Keep GSC-visible, i18n-authored, SEO-retitled, or freshly added ones;
+    // skip the rest so Googlebot spends its per-domain budget on pages
+    // that actually return traffic instead of the invisible tail.
+    if (!shouldEmitExample(ex, exampleId)) {
+      skipped++;
+      continue;
+    }
+    emitted++;
 
     // allow_i18n entries surface in all 10 locales (their per-locale SEO
     // copy lives in messages/<locale>/example.json). Other entries stick

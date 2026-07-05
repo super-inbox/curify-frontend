@@ -277,6 +277,14 @@
         "title": "Générateur de photos de produits AI | Photos de catalogue modélisées à grande échelle | Curify",
         "description": "Générateur de photos de produits AI avec style visuel modélisé — expédiez des grilles de produits de 9 images, des maquettes d'emballage, des essayages de tenues et des photos de style de vie à partir d'un seul prompt. Démo + accès anticipé."
       }
+    },
+    "ecommerce_photo": {
+      "title": "Photo de produit → Image de liste E-Commerce",
+      "desc": "Téléchargez n'importe quelle photo de produit — obtenez une image prête à lister en 30 secondes. Photos héroïques confortables pour les pages de marque Etsy / DTC ; mises en page de détails 9:16 pour Shopee, TikTok Shop, RedNote.",
+      "meta": {
+        "title": "Téléchargez la photo de produit → Image de liste E-Commerce | Outil IA | Curify",
+        "description": "Téléchargez n'importe quelle photo de produit — obtenez une image e-commerce prête à lister en 30 secondes. Photos héroïques chaleureuses + mises en page de détails 9:16. Démo gratuite ; rejoignez l'accès anticipé pour le téléchargement en lot."
+      }
     }
   },
   "bilingual": {
@@ -905,6 +913,55 @@
         "educationBody": "Les pages SEO programmatiques ont besoin de visuels uniques par variante. La génération AI générique produit une qualité incohérente à grande échelle ; l'approche axée sur les modèles de Curify donne à chaque page une image unique et en accord avec la marque. Voir /use-cases/for-programmatic-seo pour la forme d'intégration.",
         "businessTitle": "Pour les équipes marketing réalisant des tests créatifs A/B",
         "businessBody": "Testez 20 variantes visuelles du même produit à travers des canaux payants sans un budget de 20 séances photo. Le modèle verrouille le style de base ; les variantes diffèrent uniquement sur l'axe testé (arrière-plan, modèle, scène). Un design expérimental plus propre que l'incohérence que vous obtenez avec la génération AI générique."
+      }
+    }
+  },
+  "ecommercePhoto": {
+    "metadata": {
+      "title": "Téléchargez la photo de produit → Image de liste E-Commerce | Outil IA | Curify",
+      "description": "Téléchargez n'importe quelle photo de produit — obtenez une image e-commerce prête à lister en 30 secondes. Photos héroïques chaleureuses + mises en page de détails 9:16. Démo gratuite ; rejoignez l'accès anticipé pour le téléchargement en lot."
+    },
+    "title": "Téléchargez Votre Produit → Image de Liste E-Commerce",
+    "description": "Transformez n'importe quelle photo de produit en une image prête à lister sans séance photo. Deux modèles expédiés couvrent les deux grammaires visuelles e-commerce dominantes : photos héroïques chaleureuses et confortables (esthétique de marque Etsy / DTC) et mises en page de détails verticaux 9:16 propres (Shopee / TikTok Shop / Xiaohongshu). Téléchargez une fois ; le modèle verrouille la composition, l'éclairage et le cadrage. Démo gratuite ci-dessous.",
+    "example": "Exemple : une photo de produit de maillot de cyclisme rendue en tant que mise en page de détail vertical 9:16 — le format sur lequel les annonces Shopee, TikTok Shop et RedNote convertissent réellement.",
+    "cta": "Essayez-le Maintenant",
+    "why": {
+      "title": "Pourquoi transformer les photos de produits en annonces via Curify ?",
+      "point1": "Deux modèles expédiés couvrent les deux grammaires visuelles dominantes du e-commerce : des photos héroïques chaleureuses et confortables pour les pages Etsy / DTC, et des mises en page verticales en 9:16 pour Shopee, TikTok Shop et RedNote. Choisissez celui qui correspond à votre plateforme.",
+      "point2": "Téléchargez la photo du produit que vous avez déjà. Le modèle préserve l'identité exacte du produit : forme, proportions, couleurs, matériaux, branding, tout en remplaçant la scène par un éclairage intérieur chaleureux ou une mise en page de catalogue de marque épurée.",
+      "point3": "Le résultat est une image prête à l'annonce. Pas un mood board, pas un 'concept'. L'image générée s'intègre directement dans une annonce Etsy / Shopify / TikTok Shop sans post-production.",
+      "point4": "La démo fonctionne sur de vrais modèles. L'accès anticipé ouvre le pipeline de lot — téléchargez un dossier de SKU, obtenez un ensemble coordonné d'images d'annonces avec un style visuel verrouillé à travers le catalogue."
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "Dois-je télécharger ma propre photo de produit ?",
+      "a1": "Oui. Les deux modèles sous-jacents (template-product-poster et template-fashion-ecommerce) prennent une photo de référence de votre produit réel. L'IA préserve l'identité du produit et remplace la scène / la composition / l'éclairage. Votre image de liste montre votre produit, pas un produit 'similaire' générique.",
+      "q2": "En quoi cela diffère-t-il de ChatGPT ou Midjourney pour les photos de produits ?",
+      "a2": "Les générateurs d'IA génériques produisent des résultats incohérents entre les SKU — chaque produit se retrouve dans un style visuel différent, ce qui donne un aspect amateur sur une page de liste. L'approche par modèles de Curify verrouille la composition, l'éclairage et le cadrage à chaque génération, de sorte que 20 produits de votre catalogue semblent tous provenir de la même séance photo. Cette cohérence est ce que les acheteurs perçoivent comme 'une vraie marque'."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce qu'une image de liste de produits e-commerce générée par IA ?",
+        "p1": "Une image de liste de produits e-commerce est la photo principale du produit qui apparaît sur un marché ou une vitrine DTC — l'image qui s'affiche dans les grilles de recherche, sur les cartes de produits et en haut de la page de liste. C'est l'actif visuel le plus impactant dans l'entonnoir de conversion. La photographie de catalogue traditionnelle nécessite un studio physique, un kit d'éclairage et un photographe par SKU.",
+        "p2": "La génération d'images de liste e-commerce par IA remplace ce flux de travail. Téléchargez le produit (une photo prise sur votre plan de travail suffit), et l'IA le rend dans une scène de liste correctement composée — intérieur chaleureux et confortable, ou mise en page de détail vertical propre — tout en préservant la fidélité du produit : même forme, même couleur, même texture, même marque. Le résultat est une image fixe prête à être téléchargée sur Etsy, Shopify, Amazon, TikTok Shop, RedNote ou votre vitrine DTC.",
+        "p3": "La génération 2026 de modèles d'image à image (Nano Banana Pro, Gemini 3 Pro Image, GPT Image 2) fournit la capacité sous-jacente. Ce qui manquait jusqu'à présent, c'est la couche de modélisation — un moyen de garantir que chaque génération se situe dans le même registre visuel, de sorte qu'un catalogue de 50 produits se lise comme une seule marque au lieu de 50 résultats d'IA disparates."
+      },
+      "how": {
+        "title": "Comment Curify transforme votre photo de produit en image e-commerce",
+        "p1": "Étape un : choisissez la grammaire visuelle qui correspond à votre liste. Les photos héroïques chaleureuses et confortables sont l'esthétique de la page de marque Etsy / DTC — éclairage intérieur doux, accessoires naturels, mise en scène sur surface en bois. Les mises en page de détails verticaux 9:16 sont l'esthétique Shopee / TikTok Shop / RedNote — arrière-plan épuré, mises en avant des caractéristiques, ratio produit dans le cadre plus grand pour les grilles mobiles.",
+        "p2": "Étape deux : téléchargez votre photo de produit. N'importe quel angle fonctionne, mais une photo héroïque bien éclairée (plan de travail de cuisine, lumière naturelle de fenêtre) fournit la référence la plus nette pour que l'IA préserve l'identité.",
+        "p3": "Étape trois : le modèle s'exécute. `template-product-poster` (rang 90) génère la variante héroïque confortable. `template-fashion-ecommerce` (rang 80) génère la variante de photo de détail 9:16. Les deux encodent la composition + l'éclairage + le cadrage afin que vous n'ayez pas à faire de l'ingénierie de prompt.",
+        "p4": "Étape quatre : la sortie est expédiée. Téléchargez l'image fixe, déposez-la dans votre liste. Pas de recadrage, pas de correction des couleurs, pas de nettoyage de scène. Le modèle a déjà verrouillé ces décisions.",
+        "p5": "Pour une échelle de catalogue — 20+ SKU ou une ligne DTC complète — le pipeline par lot (accès anticipé) accepte un dossier de photos de produits et renvoie un ensemble coordonné d'images de liste qui semblent toutes provenir de la même séance photo. C'est ainsi que les pages de destination SEO programmatiques sont construites sans budget de séance photo par SKU."
+      },
+      "usecases": {
+        "title": "Où les images de listing e-commerce AI sont importantes",
+        "creatorsTitle": "Pour les vendeurs Etsy / Shopify / RedNote",
+        "creatorsBody": "Les vendeurs indépendants ne peuvent pas se permettre une séance photo en studio par SKU. La génération d'images e-commerce par AI comble cette lacune — téléchargez la photo du produit que vous avez déjà, obtenez une image prête à être listée qui ressemble à une vraie marque. Consultez /use-cases/for-designers pour le flux de travail plus large des designers et /blog/ai-product-photo-to-ecommerce-listing pour l'enquête modèle par modèle.",
+        "educationTitle": "Pour les catalogues DTC et le SEO programmatique",
+        "educationBody": "Les catalogues DTC avec plus de 50 SKU ont besoin d'une cohérence visuelle sur chaque page produit — sinon, le catalogue ressemble à un marché, pas à une marque. L'approche par modèles de Curify garantit la cohérence. Associez avec /blog/programmatic-seo-dtc-visual-first pour le jeu de SEO cumulatif.",
+        "businessTitle": "Pour les opérateurs POD / merch expédiant des designs prêts à imprimer",
+        "businessBody": "Les opérateurs POD (t-shirt, autocollant, affiche, tasse) ont besoin d'images de maquette + d'images de liste en plus du fichier de design prêt à imprimer. Cet outil couvre la moitié des images de liste ; consultez /use-cases/for-merch-operators pour le pipeline de qualité marchandise et /blog/merchandise-design-hub pour le playbook de vitesse SKU."
       }
     }
   }

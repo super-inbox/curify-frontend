@@ -197,6 +197,34 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Demo-only SEO landing. Narrower JTBD sibling to the broader
+    // /tools/ai-product-photo-generator hub — this one targets the
+    // upload-your-object → e-commerce-listing-image flow specifically.
+    // Backed by two shipped image2image templates:
+    //   - template-product-poster (cozy warm-lit hero shots)
+    //   - template-fashion-ecommerce (9:16 vertical detail-shot layouts)
+    // GSC/SEMrush cluster: "ai ecommerce photo", "product photo generator",
+    // "etsy product photo", "amazon product listing image". Ships against
+    // the 2026-07-02 Output-Intent reframe (workstream-tooling-and-
+    // engineering.md § Output-Intent) — merch-intent tool, Column-3
+    // deliverable = the ready-to-list image.
+    id: "ecommerce-photo",
+    slug: "ecommerce-photo",
+    groupId: "image",
+    status: "demo",
+    job_type: "video_transcript",
+    namespace: "ecommercePhoto",
+    action: { type: "page" },
+    i18n: toolKeys("ecommerce_photo"),
+    seo: seoKeys("ecommerce_photo"),
+    demo: {
+      type: "single_image",
+      src: "/images/nano_insp/template-fashion-ecommerce-cycling-jersey-aerodynamic.jpg",
+      alt: "Upload a product photo, get an e-commerce ready listing image — cycling jersey rendered as a vertical detail-shot layout",
+    },
+  },
+
+  {
     // Demo-only SEO landing — no backend pipeline yet. The blog
     // /blog/asl-video-translator ranks at pos ~13 for "asl video translator"
     // / "sign language video translator" but as an editorial page the

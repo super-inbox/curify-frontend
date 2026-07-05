@@ -277,6 +277,14 @@
         "title": "AI Produktfoto-Generator | Vorlagenbasierte Katalogfotos in großem Maßstab | Curify",
         "description": "AI Produktfoto-Generator mit vorgefertigtem visuellen Stil – liefern Sie 9-Bilder-Produktgitter, Verpackungs-Mockups, Outfit-Anproben und Lifestyle-Aufnahmen aus einer Eingabe. Demo + Frühzugang."
       }
+    },
+    "ecommerce_photo": {
+      "title": "Produktfoto → E-Commerce-Listingbild",
+      "desc": "Lade ein beliebiges Produktfoto hoch – erhalte in 30 Sekunden ein listingbereites Bild. Gemütliche Hero-Shots für Etsy / DTC-Marken-Seiten; 9:16 Detailaufnahmen für Shopee, TikTok Shop, RedNote.",
+      "meta": {
+        "title": "Produktfoto hochladen → E-Commerce-Listingbild | KI-Tool | Curify",
+        "description": "Lade ein beliebiges Produktfoto hoch – erhalte in 30 Sekunden ein bereit zum Listen stehendes E-Commerce-Bild. Gemütliche warme Hero-Shots + 9:16 Detailaufnahmen. Kostenlose Demo; frühzeitigen Zugang für Batch-Upload beantragen."
+      }
     }
   },
   "bilingual": {
@@ -905,6 +913,55 @@
         "educationBody": "Programmatische SEO-Seiten benötigen einzigartige visuelle Inhalte pro Variante. Generische KI-Generierung produziert inkonsistente Qualität in großem Maßstab; Curifys template-first Ansatz sorgt dafür, dass jede Seite ein einzigartiges, markenkonformes Bild erhält. Siehe /use-cases/for-programmatic-seo für die Integrationsform.",
         "businessTitle": "Für Marketingteams, die A/B-Kreativtests durchführen",
         "businessBody": "Testen Sie 20 visuelle Varianten desselben Produkts über bezahlte Kanäle hinweg, ohne ein Budget für 20 Fotoshootings. Die Vorlage fixiert den Basisstil; die Varianten unterscheiden sich nur in der getesteten Achse (Hintergrund, Modell, Szene). Ein saubereres experimentelles Design als die Inkonsistenz, die Sie von generischer KI-Generierung erhalten."
+      }
+    }
+  },
+  "ecommercePhoto": {
+    "metadata": {
+      "title": "Produktfoto hochladen → E-Commerce-Listingbild | KI-Tool | Curify",
+      "description": "Laden Sie ein beliebiges Produktfoto hoch – erhalten Sie in 30 Sekunden ein bereit zum Listen stehendes E-Commerce-Bild. Gemütliche warme Heldenaufnahmen + 9:16 Detailaufnahme-Layouts. Kostenlose Demo; treten Sie dem frühen Zugang für den Batch-Upload bei."
+    },
+    "title": "Laden Sie Ihr Produkt hoch → E-Commerce-Listing-Bild",
+    "description": "Verwandeln Sie jedes Produktfoto in ein bereit zum Listen stehendes Bild, ohne ein Fotoshooting. Zwei bereitgestellte Vorlagen decken die beiden dominierenden visuellen Grammatiken im E-Commerce ab: warme gemütliche Heldenaufnahmen (Etsy / DTC-Markenästhetik) und saubere 9:16 vertikale Detailaufnahme-Layouts (Shopee / TikTok Shop / Xiaohongshu). Einmal hochladen; die Vorlage sperrt Komposition, Beleuchtung und Bildausschnitt. Kostenlose Demo unten.",
+    "example": "Beispiel: Ein Produktfoto eines Radtrikots, das als 9:16 vertikales Detailaufnahme-Layout gerendert wird – das Format, auf dem Shopee-, TikTok-Shop- und RedNote-Listings tatsächlich konvertieren.",
+    "cta": "Jetzt ausprobieren",
+    "why": {
+      "title": "Warum Produktfotos über Curify in Angebote umwandeln?",
+      "point1": "Zwei versendete Vorlagen decken die beiden dominierenden visuellen Grammatiken im E-Commerce ab – warme, gemütliche Hero-Shots für Etsy / DTC-Marken-Seiten und 9:16 vertikale Detailaufnahmen für Shopee, TikTok Shop und RedNote. Wählen Sie die aus, die zu Ihrem Verkaufsort passt.",
+      "point2": "Laden Sie das Produktfoto hoch, das Sie bereits haben. Die Vorlage bewahrt die genaue Produktidentität – Form, Proportionen, Farben, Materialien, Branding – während die Szene mit gemütlicher Innenbeleuchtung oder einem sauberen Marken-Kataloglayout ersetzt wird.",
+      "point3": "Das Ergebnis ist ein verkaufsfertiges Bild. Kein Moodboard, kein 'Konzept'. Das generierte Bild wird direkt in ein Etsy / Shopify / TikTok Shop-Angebot eingefügt, ohne Nachbearbeitung.",
+      "point4": "Die Demo läuft mit echten Vorlagen. Der Frühzugang öffnet die Batch-Pipeline – laden Sie einen Ordner mit SKUs hoch und erhalten Sie ein koordiniertes Set von Angebotsbildern mit einem einheitlichen visuellen Stil im gesamten Katalog."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Lade ich mein eigenes Produktfoto hoch?",
+      "a1": "Ja. Beide zugrunde liegenden Vorlagen (template-product-poster und template-fashion-ecommerce) nehmen ein Referenzfoto Ihres tatsächlichen Produkts. Die KI bewahrt die Produktidentität und ersetzt die Szene / Komposition / Beleuchtung. Ihr Angebotsbild zeigt letztendlich Ihr Produkt und nicht ein generisches 'ähnliches' Produkt.",
+      "q2": "Wie unterscheidet sich das von ChatGPT oder Midjourney für Produktfotos?",
+      "a2": "Generische KI-Generatoren produzieren inkonsistente Ergebnisse über SKUs hinweg – jedes Produkt hat einen anderen visuellen Stil, was auf einer Angebotsseite amateurhaft wirkt. Curifys Vorlagenansatz sichert Komposition, Beleuchtung und Rahmung über jede Generation hinweg, sodass 20 Produkte in Ihrem Katalog alle so aussehen, als kämen sie aus demselben Shooting. Diese Konsistenz wird von Käufern als 'eine echte Marke' wahrgenommen."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist ein KI-E-Commerce-Listingbild?",
+        "p1": "Ein E-Commerce-Listingbild ist das Hauptproduktfoto, das auf einem Marktplatz oder DTC-Storefront erscheint – das Bild, das in Suchraster, auf Produktkarten und oben auf der Listing-Seite angezeigt wird. Es ist das visuelle Asset mit der größten Wirkung im Conversion-Trichter. Traditionelle Katalogfotografie erfordert ein physisches Studio, ein Beleuchtungsset und einen Fotografen pro SKU.",
+        "p2": "Die KI-generierte E-Commerce-Listing-Erstellung ersetzt diesen Workflow. Laden Sie das Produkt hoch (ein Foto auf Ihrer Küchenarbeitsplatte reicht aus), und die KI rendert es in einer richtig komponierten Listing-Szene – warmes, gemütliches Interieur oder sauberes vertikales Detailaufnahme-Layout – während die Produktgenauigkeit gewahrt bleibt: dieselbe Form, dieselbe Farbe, dieselbe Textur, dasselbe Branding. Das Ergebnis ist ein Standbild, das bereit ist, auf Etsy, Shopify, Amazon, TikTok Shop, RedNote oder Ihrem DTC-Storefront hochgeladen zu werden.",
+        "p3": "Die 2026-Generation von Bild-zu-Bild-Modellen (Nano Banana Pro, Gemini 3 Pro Image, GPT Image 2) liefert die zugrunde liegende Fähigkeit. Was bis jetzt fehlte, ist die Vorlagenebene – eine Möglichkeit, um sicherzustellen, dass jede Generation im gleichen visuellen Register landet, sodass ein Katalog von 50 Produkten als eine Marke und nicht als 50 disparate KI-Ausgaben gelesen wird."
+      },
+      "how": {
+        "title": "Wie Curify Ihr Produktfoto in ein E-Commerce-Bild verwandelt",
+        "p1": "Schritt eins: Wählen Sie die visuelle Grammatik, die zu Ihrem Angebot passt. Warme, gemütliche Hero-Shots sind die Ästhetik der Etsy / DTC-Marken-Seite – sanfte Innenbeleuchtung, natürliche Requisiten, Holzoberflächen-Bühne. Vertikale 9:16 Detailaufnahme-Layouts sind die Ästhetik von Shopee / TikTok Shop / RedNote – sauberer Hintergrund, Hervorhebungen, größeres Produkt-im-Rahmen-Verhältnis für mobile Raster.",
+        "p2": "Schritt zwei: Laden Sie Ihr Produktfoto hoch. Jeder Winkel funktioniert, aber ein gut beleuchteter Hero-Shot (Küchentheke, natürliches Fensterlicht) liefert die schärfste Referenz, von der die KI die Identität bewahren kann.",
+        "p3": "Schritt drei: Die Vorlage läuft. `template-product-poster` (Rang 90) generiert die gemütliche Hero-Variante. `template-fashion-ecommerce` (Rang 80) generiert die 9:16 Detailaufnahme-Variante. Beide kodieren Komposition + Beleuchtung + Rahmen, sodass Sie kein Prompt-Engineering durchführen müssen.",
+        "p4": "Schritt vier: Das Ergebnis wird versendet. Laden Sie das Standbild herunter und fügen Sie es in Ihr Angebot ein. Kein Zuschneiden, keine Farbkorrektur, keine Szenenbereinigung. Die Vorlage hat diese Entscheidungen bereits getroffen.",
+        "p5": "Für Katalogmaßstab – 20+ SKUs oder eine vollständige DTC-Linie – akzeptiert die Batch-Pipeline (früher Zugang) einen Ordner mit Produktfotos und gibt ein koordiniertes Set von Angebotsbildern zurück, die alle so aussehen, als kämen sie aus demselben Shooting. So werden programmatische SEO-Landingpages erstellt, ohne ein Budget für Fotoshootings pro SKU."
+      },
+      "usecases": {
+        "title": "Wo KI-E-Commerce-Listing-Bilder wichtig sind",
+        "creatorsTitle": "Für Etsy / Shopify / RedNote-Verkäufer",
+        "creatorsBody": "Unabhängige Verkäufer können sich kein Studio-Shooting pro SKU leisten. Die KI-E-Commerce-Generierung schließt die Lücke – lade das Produktfoto hoch, das du bereits hast, und erhalte ein bereit für das Listing, das wie eine echte Marke aussieht. Siehe /use-cases/for-designers für den umfassenderen Designer-Workflow und /blog/ai-product-photo-to-ecommerce-listing für die Umfrage von Vorlage zu Vorlage.",
+        "educationTitle": "Für DTC-Kataloge und programmatische SEO",
+        "educationBody": "DTC-Kataloge mit über 50 SKUs benötigen visuelle Konsistenz auf jeder Produktseite – andernfalls liest sich der Katalog wie ein Marktplatz, nicht wie eine Marke. Curifys vorgefertigter Ansatz garantiert Konsistenz. Kombiniere es mit /blog/programmatic-seo-dtc-visual-first für das SEO-Play mit Zinseszinsen.",
+        "businessTitle": "Für POD / Merch-Betreiber, die druckfertige Designs versenden",
+        "businessBody": "POD-Betreiber (T-Shirt, Aufkleber, Poster, Tasse) benötigen Mockup- und Listing-Bilder zusätzlich zur druckfertigen Design-Datei. Dieses Tool deckt die Listing-Bild-Hälfte ab; siehe /use-cases/for-merch-operators für die Merch-Grade-Pipeline und /blog/merchandise-design-hub für das SKU-Velocity-Playbook."
       }
     }
   }
