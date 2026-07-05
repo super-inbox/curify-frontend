@@ -6288,5 +6288,222 @@
         ]
       }
     }
+  },
+  "template-original-character-daily-life-grid": {
+    "category": "Orijinal Karakter Günlük Hayat Şeması",
+    "description": "Orijinal bir antropomorfik karakterin 2x3 günlük hayat infografiğini oluşturun - her gün sahnelerinde AYNI karakteri gösteren altı tutarlı panel.",
+    "title": "Nano Banana Prompt: Orijinal Karakter Günlük Hayat Şeması Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dikey 8K 2x3 altı panel günlük hayat infografiği. AYNI karakter altı tutarlı günlük sahnede (işe gidiş, kahve, toplantı, öğle yemeği, market, hafta sonu) aynı oranlar / palet / imza aksesuarı ile gösterilir - sadece poz, ortam ve ifade değişir. Editoryal düz illüstrasyon estetiği, sıcak pastel paleti, sosyal medya için hazır.",
+        "who": "Orijinal karakter yaratıcıları, antropomorfik konsept illüstratörleri (bronz işçi, terrakotta sporcu, vb.), Xiaohongshu / Instagram yaşam tarzı içerik üreticileri, bir karakter kütüğü oluşturan marka maskot tasarımcıları için uygundur.",
+        "how": [
+          "Karakter konseptini girin (örn. 'Bronz işçi efsanevi yaratık' veya 'Terrakotta savaşçı sporcu').",
+          "Altı günlük hayat paneli + karakter tutarlılığı kontrolü otomatik oluştur.",
+          "Dikey 8K 2x3 günlük hayat şeması oluşturun."
+        ],
+        "prompts": [
+          "Bir bronz işçi efsanevi yaratık günlük hayat şeması oluşturun.",
+          "Bir terrakotta savaşçı sporcu 6-panel sayfası oluşturun.",
+          "Bir jade hipster barista günlük hayat infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-original-character-sticker-pack": {
+    "category": "Orijinal Karakter Çıkartma Paketi",
+    "description": "Orijinal bir antropomorfik karakterin dokuz farklı ifadesini gösteren 3x3 dokuz poz duygusal çıkartma paketi oluşturun - her biri farklı bir ifadede aynı karakter.",
+    "title": "Nano Banana Prompt: Orijinal Karakter Çıkartma Paketi Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dikey 8K 3x3 çıkartma paketi sayfası. Bir orijinal antropomorfik karakterin dokuz die-cut çıkartma tarzı pozunun her biri farklı bir duygusal durumda (mutlu / yorgun / şok olmuş / gururlu / kafası karışık / heyecanlı / tembel / öfkeli / sevgi dolu). Tutarlı karakter tasarımı + küçük el yazısı etiketleri. Kawaii düz illüstrasyon estetiği, çıkartma kesimi için kalın hatlar.",
+        "who": "Orijinal karakter yaratıcıları, maskot tasarımcıları, çıkartma paketi satıcıları (Etsy, Line / WeChat), bir karakter emojisi seti oluşturan içerik üreticileri, IP-ürün tasarımcıları için uygundur.",
+        "how": [
+          "Karakter konseptini girin (örn. 'Bronz işçi efsanevi yaratık').",
+          "Dokuz duygusal poz + etiketler + die-cut düzen otomatik oluştur.",
+          "Dikey 8K dokuz poz çıkartma paketi oluşturun."
+        ],
+        "prompts": [
+          "Bir bronz işçi efsanevi yaratık 9-poz çıkartma paketi oluşturun.",
+          "Antropomorfik matcha latte çıkartma sayfası oluşturun.",
+          "Bir ofis bitkisi sukulent arkadaş duygusal çıkartmalar oluşturun."
+        ]
+      }
+    }
+  },
+  "template-modernized-artifact-poster": {
+    "category": "Modernleştirilmiş Artefakt Posteri",
+    "description": "Bir tarihi kültürel artefaktı alıp modern günlük bir rolde antropomorfik olarak yeniden hayal eden dikey bir poster oluşturun.",
+    "title": "Nano Banana Prompt: Modernleştirilmiş Artefakt Posteri Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dikey 8K posteri, bir tarihi artefaktı (bronz kazan, terrakotta savaşçı, Tang atı figürü, Ming vazosu, vb.) MODERN bir günlük rolde (kurumsal yönetici, spor eğitmeni, araç paylaşım sürücüsü, barista) ANTROPOMORFİK olarak yeniden hayal eder. Artefaktın tarihi malzeme estetiğini korur - bronz patina, kil dokusu, vernik, jade - modern bir ortamda yerleştirirken. Editoryal illüstrasyonlu poster, müze kartı tarzı meta veri alt bilgisi.",
+        "who": "Kültürel müzeler + miras dükkanları için uygundur, IP'yi modernleştiren, sanat-füzyon içerik üreticileri, orijinal-IP tasarımcıları, kültürel mirası günlük ilişkililikle harmanlayan marka kampanyaları.",
+        "how": [
+          "Artefakt + modern rolü girin (örn. 'Bronz ding kazanı kurumsal yönetici olarak').",
+          "Antropomorfik artefakt + modern ortam + hanedan meta veri alt bilgisi otomatik oluştur.",
+          "Dikey 8K modernleştirilmiş-artefakt posteri oluşturun."
+        ],
+        "prompts": [
+          "Kurumsal yönetici posteri olarak bir bronz ding kazanı oluşturun.",
+          "Spor salonu eğitmeni modernleştirilmiş posteri olarak bir terrakotta savaşçısı oluşturun.",
+          "Bir Tang at figürü olarak araç paylaşım sürücüsü posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-amazon-long-scroll-product-infographic-template": {
+    "category": "Amazon Uzun Kaydırma Ürün İnfografiği",
+    "description": "Herhangi bir sınır ötesi e-ticaret ürünü için tam boy dikey bir Amazon liste infografiği oluşturun — kahraman afiş, eski-yeni karşılaştırma, temel teknoloji özellikleri ızgarası, yaşam tarzı kullanım sahneleri ve bir özellik tablosu.",
+    "title": "Nano Banana Prompt: Amazon Uzun Kaydırma Ürün İnfografiği Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "{product_full_name} için tam uzun dikey bir Amazon liste pazarlama infografiği oluşturan bu şablon. Üstten alta düzen: çok açılı ürün render'ı ile bir kahraman afişi, başlık, satış noktası simgesi etiketleri, marka logosu ve sertifika rozetleri; eski-yeni karşılaştırma bloğu; iç kesit render'ları ile 3 panelli temel teknoloji özellikleri ızgarası; çok senaryolu yaşam tarzı kullanım ızgarası; ve alt kısımda bir özellik tablosu. Temiz modern e-ticaret görsel tasarımı, uyumlu marka paleti, baskıya hazır detay sayfası kalitesi.",
+        "who": "Amazon / sınır ötesi e-ticaret satıcıları, DTC marka pazarlamacıları, ürün liste tasarımcıları, detay sayfası yaratıcıları üreten ajanslar ve dönüşüm odaklı liste oluşturan dropshipper'lar için uygundur.",
+        "how": [
+          "{product_full_name} içinde tam ürün adını girin (örneğin 'RANVOO taşınabilir yüksek hızlı soğutma el fanı').",
+          "Kahraman afiş, karşılaştırma bloğu, özellik ızgarası ve yaşam tarzı sahneleri üstten alta otomatik olarak oluşturulur.",
+          "Özellik tablosu ve sertifika rozetleri otomatik olarak doldurulur.",
+          "Tam boy dikey bir Amazon ürün infografiği oluşturun."
+        ],
+        "prompts": [
+          "Taşınabilir espresso kahve makinesi için bir Amazon uzun kaydırma infografiği oluşturun.",
+          "ANC bluetooth kulaklıkları için bir sınır ötesi liste infografiği oluşturun.",
+          "UV sterilizasyonlu akıllı su şişesi için dikey bir detay sayfası infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-eco-farm-food-uniform-product-label": {
+    "category": "Ekolojik Tarım Gıda Ürün Etiketi",
+    "description": "Bir marka başlığı, renk örnek paleti, kesilmiş ürün fotoğraf penceresi, büyük ürün adı ve özellik metni ile minimalist organik tarım gıda ambalaj etiketi oluşturun — birleşik bir marka serisi şablonu olarak.",
+    "title": "Nano Banana Prompt: Ekolojik Tarım Gıda Ürün Etiketi Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "{food_product_name} için dikey minimalist organik tarım gıda ambalaj etiketi oluşturan bu şablon. Birleşik bir marka sistemi ile temiz beyaz zemin: logo, isim ve 4 renk örneği ile üst marka başlığı; yakın çekim ürün fotoğrafı ile doldurulmuş merkezi düzensiz kesim penceresi; sağ kenara hizalanmış büyük dikey ürün adı; kısa doğal / el yapımı / organik özellik metni ile alt metin alanı; ve sertifikalar veya köken ile bir alt bant. Uyumlu, premium ambalaj etiketi estetiği.",
+        "who": "Organik / zanaat gıda markaları, çiftlikten sofraya üreticiler, ambalaj tasarımcıları, özel etiket market hatları ve SKU'lar arasında tutarlı bir etiket serisine ihtiyaç duyan üreticiler için uygundur.",
+        "how": [
+          "{food_product_name} içinde ürün kategorisini girin (örneğin 'yaşlandırılmış zanaat peyniri', '100% Arabica kavrulmuş kahve çekirdekleri').",
+          "Kesilmiş pencere, eşleşen yakın çekim ürün fotoğrafı ile doldurulur.",
+          "Marka başlığı, renk örnekleri ve özellik metni otomatik olarak oluşturulur.",
+          "Dikey bir organik tarım gıda ürün etiketi oluşturun."
+        ],
+        "prompts": [
+          "Ham filtrelenmemiş doğal bal için bir ekolojik tarım etiketi oluşturun.",
+          "Soğuk sıkım sızma zeytinyağı için minimalist bir ambalaj etiketi oluşturun.",
+          "Ekşi mayalı zanaat ekmeği için bir ürün etiketi oluşturun."
+        ]
+      }
+    }
+  },
+  "template-luxury-vintage-gem-necklace-design-sheet": {
+    "category": "Vintage Taş Kolye Tasarım Şablonu",
+    "description": "Bir vintage barok değerli taş kolyesi için — solda el çizimi teknik konsept taslağı ile notlar, sağda gerçekçi bitmiş kolye ürün render'ları — çift sütunlu bir takı tasarım sunum panosu oluşturun.",
+    "title": "Nano Banana Prompt: Vintage Taş Kolye Tasarım Şablonu Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "{jewelry_theme_name} için dikey bir takı konsept tasarım düzeni oluşturur. İki sütunlu düzen: sol tarafta, başlık, tema metni, notlar ile birlikte ön görünüm çizimi, yan görünüm taslağı, malzeme ve kabartma motif detay panelleri ile boyutları içeren bir malzeme spesifikasyon listesi bulunan el çizimi teknik taslak sayfası; sağ tarafta ise iki gerçekçi ürün render'ı üstten ön çekim ve nötr mat arka planda bitmiş gümüş kolyenin makro yan detayı yer alır. Şık antik takı tasarım portföy estetiği.",
+        "who": "Konsept panoları oluşturan takı tasarımcıları, koleksiyonlarını sunan ince takı markaları, zanaatçı / yapımcı portföyleri, tasarım öğrencileri ve özel parçalar sunan butikler için uygundur.",
+        "how": [
+          "{jewelry_theme_name} içinde kolye temasını girin (örneğin, 'Melek Çeşmesi cherub akvamarin gümüş kolye').",
+          "Sol sütun, notlarla birlikte teknik konsept taslağını otomatik olarak çizer.",
+          "Sağ sütun, bitmiş kolyenin üstten ve makro ürün çekimlerini render eder.",
+          "Dikey bir vintage değerli taş kolye tasarım sayfası oluşturun."
+        ],
+        "prompts": [
+          "Bir Lotus Gölü inci değerli taş kolyesi için bir tasarım sayfası oluşturun.",
+          "Bir orman akıntısı vintage oyma aqua-kristal gümüş kolye için bir konsept panosu oluşturun.",
+          "Bir barok cherub akvamarin kolyesi için bir takı tasarım sayfası oluşturun."
+        ]
+      }
+    }
+  },
+  "template-football-star-chibi-sticker-set": {
+    "category": "Futbol Yıldızı Chibi Çıkartma Seti",
+    "description": "Herhangi bir milli takım yıldızı ve forması için 3×4 chibi futbolcu çıkartma sayfası oluşturun — 12 sabit ifadeli çıkartma, temiz kesim kenarlarla.",
+    "title": "Nano Banana Prompt: Futbol Yıldızı Chibi Çıkartma Seti Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, {player_nationality_jersey} temalı 3×4 ızgara şeklinde sevimli chibi futbolcu çıkartmaları üretir. 12 çıkartmanın her biri, temiz beyaz kesim kenarı ve sabit evrensel bir ifade — işaret etme & gülme, öfkeli, ağlayan, şok olmuş, tezahürat yapan, göz kırpan ve daha fazlası — ile sade açık beyaz bir arka planda, oyuncunun milli takım formasını giyen karakterlerdir. Kawaii çizgi film tarzı, sayfa boyunca tutarlı karakter tasarımı, baskı ve mesajlaşma için hazır.",
+        "who": "Futbol hayranları ve hayran toplulukları, spor meme / çıkartma yaratıcıları, maç günü sosyal içerik üreticileri, ürün tasarımcıları ve mesajlaşma uygulaması çıkartma paketi yayıncıları için uygundur.",
+        "how": [
+          "{player_nationality_jersey} alanına yıldız + milli takım + forma girin (örn. 'Hırvatistan Luka Modrić #10 kareli forma').",
+          "12 sabit ifadeli çıkartma otomatik olarak 3×4 ızgarada oluşturulur.",
+          "Her çıkartma, oyuncunun formasını ve temiz bir kesim kenarını korur.",
+          "Bir chibi futbol yıldızı çıkartma sayfası oluşturun."
+        ],
+        "prompts": [
+          "Erling Haaland için bir chibi çıkartma seti oluşturun, Norveç #9.",
+          "Lionel Messi için bir çıkartma sayfası oluşturun, Arjantin #10 albiceleste.",
+          "Kylian Mbappé için bir chibi çıkartma paketi oluşturun, Fransa #10."
+        ]
+      }
+    }
+  },
+  "template-world-cup-premium-gold-text-poster": {
+    "category": "Dünya Kupası Premium Altın Poster",
+    "description": "Herhangi bir oyuncu veya karşılaşma için premium altın tipografi ile epik sinematik bir Dünya Kupası posteri oluşturun — efsane veda anıtı veya karşılaşma düzeni.",
+    "title": "Nano Banana Prompt: Dünya Kupası Premium Altın Metin Poster Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, {poster_theme_type} temalı dikey epik sinematik FIFA Dünya Kupası tanıtım posteri üretir, iki düzenlemeden birinde: Efsane Veda Anıtı ('Tanrıların Alacakaranlığı') ile altın serif başlık, şiirsel vintage alıntı ve kahraman portresi; veya takım armaları, bayraklar ve karşılaşma detayları ile bir karşılaşma düzeni. Premium altın tipografi, dramatik sinematik aydınlatma, baskıya hazır poster kalitesi.",
+        "who": "Futbol içerik üreticileri, spor editoryal tasarımcıları, anma ve maç günü grafikleri üreten hayran toplulukları ve Dünya Kupası temalı görseller yayınlayan markalar için uygundur.",
+        "how": [
+          "{poster_theme_type} alanına poster temasını girin (örn. 'Luka Modrić alacakaranlık emeklilik veda anıtı').",
+          "Bir veda anıtı veya karşılaşma düzeni seçin.",
+          "Altın tipografi, portre / armalar ve sinematik arka plan otomatik olarak bir araya gelir.",
+          "Premium altın metinli bir Dünya Kupası posteri oluşturun."
+        ],
+        "prompts": [
+          "Cristiano Ronaldo için bir Dünya Kupası kariyer veda sinematik posteri oluşturun.",
+          "Kabo Verde vs Arjantin 2026 Dünya Kupası karşılaşma posterini oluşturun.",
+          "Luka Modrić için Tanrıların Alacakaranlığı anıt posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-japanese-traditional-music-instrument-info-poster": {
+    "category": "Japon Enstrüman Bilgi Posteri",
+    "description": "Bir geleneksel Japon müzik aleti hakkında vintage washi kağıdı ile eğitimsel bir infografik posteri oluşturun — kırmızı mühür başlık, etiketli diyagram ve tarih metni.",
+    "title": "Nano Banana Prompt: Japon Geleneksel Enstrüman Bilgi Posteri Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, {japanese_instrument_name} temalı dikey vintage washi kağıdı ile eğitimsel bir infografik posteri üretir, birleşik modüler bir seri düzeninde: üst kısımda kanji ismini taşıyan dikey kırmızı mühür damgası ve serif İngilizce başlık; merkezi etiketli enstrüman illüstrasyonu ile yapısal notlar; ve alt kısımlar tarih, çalma yöntemi ve kültürel bağlamı kapsar. Sıcak washi dokusu, zarif editoryal düzen, müze baskı kalitesi.",
+        "who": "Müzik eğitmenleri, kültürel / müze içerik ekipleri, geleneksel sanat meraklıları, sınıf ve çalışma sayfası hazırlayıcıları ve enstrüman serisi poster seti oluşturan tasarımcılar için uygundur.",
+        "how": [
+          "{japanese_instrument_name} alanına enstrümanı girin (örn. '13 telli Koto zither', 'Shamisen üç telli lut').",
+          "Kırmızı mühür kanji başlığı ve serif İngilizce başlığı otomatik ayarlanır.",
+          "Etiketli enstrüman diyagramı ve tarih bölümleri otomatik olarak oluşturulur.",
+          "Vintage washi enstrüman infografik posteri oluşturun."
+        ],
+        "prompts": [
+          "Taiko varil festivali davulu için bir bilgi posteri oluşturun.",
+          "Shamisen üç telli lut için bir washi infografik oluşturun.",
+          "Sho saray ağız organı için bir eğitim posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-english-confusing-word-pair-educational-poster": {
+    "category": "İngilizce Karışık Kelime Çifti Posteri",
+    "description": "Sıkça karıştırılan bir İngilizce kelime çiftini karşılaştıran bir sınıf eğitim posteri oluşturun — çift sütun tanımları, örnekler ve bir hafıza ipucu.",
+    "title": "Nano Banana İsteği: İngilizce Karışık Kelime Çifti Posteri Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, {word_pair_title} temalı dikey bir ilkokul sınıfı dil bilgisi öğrenme posteri oluşturur; büyük iki renkli [WordA VS WordB] başlığı ve bir satırlık ana fark alt başlığı ile birleşik çift sütunlu bir düzen: her iki sütun da kelimenin sözcük türü, tanımı ve örnek cümleleri verir; ve alt kısımda bir hafıza ipucu bulunur. Temiz, parlak sınıf tarzı, cesur dostça yazı, yazdırmaya ve çalışma sayfasına hazır.",
+        "who": "ESL / İngilizce öğretmenleri, ilkokul ve evde eğitim veren eğitmenler, özel ders içerik üreticileri, sınıf posteri tasarımcıları ve çalışma sayfası yayıncıları için uygundur.",
+        "how": [
+          "{word_pair_title} içindeki kelime çiftini girin (örneğin 'Loose vs Lose', 'Your vs You're').",
+          "İki renkli VS başlığı ve ana fark alt başlığı otomatik ayarlanır.",
+          "Çift sütunlar tanımlar ve örnek cümlelerle doldurulur.",
+          "Bir İngilizce karışık kelime çifti eğitim posteri oluşturun."
+        ],
+        "prompts": [
+          "'Advice vs Advise' için bir poster oluşturun.",
+          "'Accept vs Except' için bir sınıf sayfası oluşturun.",
+          "'Complement vs Compliment' için bir eğitim posteri oluşturun."
+        ]
+      }
+    }
   }
 }

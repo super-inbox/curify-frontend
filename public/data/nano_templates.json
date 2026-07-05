@@ -18343,5 +18343,296 @@
     "rank_score": 110,
     "creation_date": "2026-07-01",
     "allow_generation": true
+  },
+  {
+    "id": "template-amazon-long-scroll-product-infographic-template",
+    "locales": {
+      "en": {
+        "base_prompt": "(Amazon Long Vertical Scroll E-commerce Product Infographic Template Generator) Full long vertical Amazon listing product marketing infographic poster themed '{product_full_name}'. Layout: Multi-section vertical long scroll layout with clear segmented blocks from top to bottom:\n1. Hero Banner Section: Large multi-angle product hero render, bold main headline, core selling point icon tags, brand logo, certification badges at top right.\n2. Generation Comparison Block: Side-by-side contrast chart of old vs new product versions with labeled performance gap diagrams.\n3. Core 3 Technology Feature Grid: Three equal horizontal panels each with product internal structure cutaway render + feature headline + explanatory text & schematic diagram.\n4. Multi-Scenario Lifestyle Usage Grid: 3-column horizontal photo grid showing real-life usage scenes (outdoor/office/home/gym etc.) with short descriptive captions under each image.\n5. Safety Certification & Material Block: Product safety certification logos (CE/FCC/RoHS/FDA), material safety text, baby-safe/eco-friendly demo scene.\n6. Premium Gift Packaging Unboxing Section: Complete gift box open shot showing all included accessories with numbered labels, gift ribbon decorative background, gifting copywriting.\nStyle: Clean minimalist commercial retail design, brand exclusive cohesive gradient color palette matching product tone, soft natural studio product photography, flat simple line feature icons, modern sans-serif marketing typography, ample white negative space between segments, high resolution printable long infographic for Amazon / Shopify product page, mobile-friendly vertical scroll layout.\nSubject: Full vertical long-scroll product detail marketing infographic for cross-border e-commerce listing of '{product_full_name}'.",
+        "parameters": [
+          {
+            "name": "product_full_name",
+            "label": "跨境电商完整商品名称",
+            "type": "text",
+            "placeholder": [
+              "RANVOO便携式高速制冷手持小风扇亚马逊长详情信息图",
+              "TechPulse Pro X5运动健康智能手表跨境电商竖版详情展板",
+              "BrewMate Go便携意式浓缩咖啡机亚马逊全套营销长图",
+              "HydroSmart Plus紫外线杀菌智能测温保温杯商品详情长图",
+              "RelaxPro Zen U型EMS热敷颈椎按摩仪跨境详情海报",
+              "SonicWave Elite黑金主动降噪蓝牙耳机亚马逊竖版信息图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-amazon-long-scroll-product-infographic-template-smart-hydration-water-bottle-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "product",
+      "design",
+      "ecommerce",
+      "infographic",
+      "mockups",
+      "promotional-poster",
+      "posters",
+      "social-media-posts",
+      "composition",
+      "modern",
+      "bold",
+      "professional",
+      "vibrant",
+      "art-prints",
+      "illustration"
+    ]
+  },
+  {
+    "id": "template-eco-farm-food-uniform-product-label",
+    "locales": {
+      "en": {
+        "base_prompt": "(Eco Farm Uniform Series Food Product Label Template Generator) Vertical minimalist organic farm food packaging label themed '{food_product_name}'. Layout: Clean pure white base layout with unified brand layout system:\n1. Top section: Brand logo + brand name on left, 4-circle brand color palette swatches on right, thin dividing line below;\n2. Middle main visual: Irregular polygon die-cut window cutout filled with realistic close-up photography of the food product; vertical oversized bold sans-serif product name text aligned to the right edge of the canvas;\n3. Lower text area: Short descriptive copy introducing natural/handmade/organic product features, separated by thin horizontal rule;\n4. Bottom info bar split into three columns: left standard vertical barcode, middle store address, phone, website contact info, right eco/organic certification badge icon.\nStyle: Minimalist clean organic grocery packaging design, low saturation natural earth tone color system matched to food category, flat simple sans-serif font, soft natural light food photography, ample white negative space, uniform modular layout for whole product line, high resolution printable sticker label, premium eco farm brand aesthetic.\nSubject: Uniform series eco farm product sticker label for '{food_product_name}' natural farm food goods.",
+        "parameters": [
+          {
+            "name": "food_product_name",
+            "label": "生鲜有机农产品完整品类名称",
+            "type": "text",
+            "placeholder": [
+              "aged artisan cheese organic farm product label",
+              "sourdough artisan bread eco food sticker packaging",
+              "100% Arabica roasted coffee beans vertical label design",
+              "cold pressed extra virgin olive oil farm brand tag",
+              "raw unfiltered natural honey organic food packaging label"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-eco-farm-food-uniform-product-label-arabica-coffee-beans-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "product",
+      "design",
+      "food",
+      "lifestyle",
+      "mockups",
+      "posters",
+      "art-prints",
+      "illustration",
+      "minimalist",
+      "modern",
+      "elegant",
+      "cozy",
+      "natural-light",
+      "vintage"
+    ]
+  },
+  {
+    "id": "template-luxury-vintage-gem-necklace-design-sheet",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Baroque Gemstone Necklace Jewelry Design Presentation Sheet Generator) Vertical jewelry concept design layout board themed '{jewelry_theme_name}'. Layout: Split dual-column layout, left side is hand-drawn technical sketch concept sheet: large title, theme descriptive copy, front view line drawing with labeled structural annotations, side view sketch, close-up material & relief motif detail panels, bottom material specification text list with dimensions data; Right side two stacked realistic product photography renders: overhead front shot + macro side detail shot of finished silver necklace pendant on neutral beige matte texture background. Style: Elegant antique jewelry design portfolio aesthetic, soft warm neutral paper tone background, delicate serif heading font, fine line technical sketch rendering, hyperrealistic soft studio jewelry photography, intricate hand-carved silver baroque scroll texture, translucent carved aquamarine gemstone with water ripple internal carving, delicate enamel & mother-of-pearl decorative details, high detail 8K printable jewelry design presentation board. Subject: Complete concept design sheet for vintage carved silver gem pendant necklace themed '{jewelry_theme_name}'.",
+        "parameters": [
+          {
+            "name": "jewelry_theme_name",
+            "label": "珠宝项链完整主题名称",
+            "type": "text",
+            "placeholder": [
+              "Angel Fountain cherub aquamarine silver necklace design sheet",
+              "Lotus Pond mother-of-pearl water lily gem pendant jewelry concept board",
+              "Forest stream vintage carved aqua crystal silver necklace design layout"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-luxury-vintage-gem-necklace-design-sheet-lotus-pond-mother-of-pearl-aqua-gem-pendant-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "design",
+      "product",
+      "mockups",
+      "showcase",
+      "composition",
+      "illustration",
+      "elegant",
+      "vintage",
+      "modern",
+      "minimalist",
+      "art-prints",
+      "digital-canvas",
+      "3d",
+      "soft-light"
+    ]
+  },
+  {
+    "id": "template-football-star-chibi-sticker-set",
+    "locales": {
+      "en": {
+        "base_prompt": "(Football Superstar Chibi Sticker Sheet Generator) 3×4 grid cute chibi football player sticker pack themed '{player_nationality_jersey}'. Layout: Uniform 3-row × 4-column sticker grid on plain off-white background, each sticker has clean white die-cut border, 12 fixed universal expression slots:\nRow1: pointing & laughing, angry raging, crying loudly, shocked hands-on-cheeks\nRow2: cheering with fists raised, winking thumbs-up, heart eyes lovestruck, confused thinking\nRow3: sleeping with ZZZ props, cool sunglasses crossed arms, lifting World Cup trophy, winking OK gesture\nStyle: Soft cartoon chibi anime style, accurate national team home jersey color & number, consistent character facial features & hairstyle across all emotes, sparkling decorative star/confetti accent elements, sticker cutout outline, vibrant kid-friendly coloring, high resolution printable sticker sheet.\nSubject: Full set of 12-emoji chibi sticker sheet for {player_nationality_jersey} football celebrity.",
+        "parameters": [
+          {
+            "name": "player_nationality_jersey",
+            "label": "球星所属国家队+球衣信息",
+            "type": "text",
+            "placeholder": [
+              "Croatia Luka Modrić #10 checkered jersey chibi sticker pack",
+              "Erling Haaland Norway #9 light blue kit sticker sheet",
+              "Lionel Messi Argentina #10 albiceleste uniform emoticon stickers",
+              "Kylian Mbappé France #10 dark blue jersey sticker grid",
+              "Cristiano Ronaldo Portugal #7 red home kit chibi sticker set"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-football-star-chibi-sticker-set-haaland-man-city-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "character",
+      "world-cup",
+      "sports",
+      "merch",
+      "character-ip",
+      "kawaii",
+      "cartoon",
+      "groups",
+      "playful",
+      "vibrant",
+      "digital-canvas",
+      "art-prints",
+      "illustration",
+      "bold"
+    ]
+  },
+  {
+    "id": "template-world-cup-premium-gold-text-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(World Cup Premium Cinematic Football Poster Generator) Vertical epic cinematic FIFA World Cup promotional poster themed '{poster_theme_type}'. Two core layout modes to choose:\nMode 1: Legend Farewell Tribute Layout (Twilight of the Gods series)\n1. Top header serif title: TWILIGHT OF THE GODS, large golden main headline 'Farewell, [Player Name]', elegant decorative divider lines;\n2. Middle poetic two-line vintage quote text block, small paragraph match recap of player's World Cup career & retirement story;\n3. Main visual: Hyperrealistic sweaty football player portrait, sunset twilight stadium background with glowing floodlights, dramatic orange-gold dusk clouds, packed stadium crowd in soft bokeh;\n4. Or alternate variant: Two veteran players back-to-back embracing on pitch at sunset, emotional farewell interaction shot.\nStyle: Moody warm sunset color grading, luxury metallic gold serif typography, cinematic shallow depth of field, photorealistic sports portrait, dramatic soft rim light, aged premium sports magazine aesthetic, 8K ultra detailed print-ready poster.\n\nMode 2: Matchup Versus Battle Layout / Individual Player Hero Layout\n1. Top small header text: WORLD CUP 2026 + match stage label;\n2. Center huge textured gold metallic 'VS' logo for matchup version; split vertical frame: left nation player + national flag backdrop, right opposing nation player + their flag; bottom oversized gold font country names;\nFor single player hero variant: Full-body player portrait, national flag billowing behind, stadium night sky with star dust particle effects; giant gold textured name text at bottom, small tagline slogan underneath.\nShared style specs: Dark moody deep blue night sky background, stadium floodlight lens flare, tiny glowing spark embers, hyperreal gritty player skin sweat texture, heavy metallic gold 3D serif font with subtle texture, professional sports commercial photography, high contrast dramatic lighting, tournament official graphic design language.\nSubject: Epic premium cinematic 2026 FIFA World Cup football poster of theme '{poster_theme_type}'.",
+        "parameters": [
+          {
+            "name": "poster_theme_type",
+            "label": "世界杯海报完整主题",
+            "type": "text",
+            "placeholder": [
+              "Luka Modrić twilight retirement farewell tribute poster",
+              "Cristiano Ronaldo World Cup final career goodbye cinematic print",
+              "Cabo Verde vs Argentina 2026 World Cup 1/16 matchup battle poster",
+              "Vozinha Cape Verde national team goalkeeper hero single portrait poster",
+              "Modrić & Ronaldo emotional post-match embrace farewell football poster"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-world-cup-premium-gold-text-poster-modric-cristiano-hug-farewell-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "world-cup",
+      "sports",
+      "posters",
+      "promotional-poster",
+      "film",
+      "dramatic",
+      "bold",
+      "elegant",
+      "wall-art",
+      "art-prints",
+      "vibrant",
+      "illustration",
+      "composition",
+      "modern"
+    ]
+  },
+  {
+    "id": "template-japanese-traditional-music-instrument-info-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Washi Paper Japanese Traditional Musical Instrument Educational Infographic Poster Generator) Vertical educational series print poster themed '{japanese_instrument_name}'. Unified fixed modular layout for the whole instrument collection series:\n1. Top Area: Vertical red seal stamp with Japanese kanji instrument name on left; Large serif English main title + thin decorative divider; Subheading text: A Deep Dive into [Instrument] Music • X of 12 collection series mark.\n2. Central Hero Visual: Hyperrealistic full shot of the traditional Japanese instrument, labeled structural component lines with English terminology pointing to each part; Faint sepia ukiyo-e woodcut sketch background showing ancient performers playing the instrument in traditional Japanese palace/room scenery.\n3. Left Bottom Panel: Titled HOW THE [MELODY/STRING/BOW/RHYTHM] WORKS, small simplified line sketch diagram of the instrument with annotated playing mechanics, short explanatory paragraph.\n4. Right Side Vertical Info Column (4 stacked text boxes):\n    - DATES: Historical origin era of the instrument in Japan\n    - WHERE: Small simplified red seal map of Japan illustration\n    - KNOWN FOR: Core timbre & ensemble usage characteristics\n    - WHY IT MATTERS: Cultural historical significance\n    - INTERESTING FACT: Lesser-known trivia detail\n5. Bottom Middle: Japanese poetic phrase + romanji transliteration + short English poetic subtitle; Small floral seal decorative stamp underneath.\n6. Footer Section: Classic Japanese landscape illustration (Mt.Fuji, pine tree, shrine, river boat), series brand text 'Atlas Adventures TX', banner text 'Series: Japanese Instruments'.\nGlobal unified style: Aged cream washi rice paper textured background, muted sepia + soft dark red earth tone color palette, antique serif print typography, traditional Japanese wave/ cloud decorative corner patterns, subtle paper grain texture, museum educational exhibition print aesthetic, ultra detailed 8K printable vertical poster.\nSubject: Complete series uniform educational infographic poster for traditional Japanese instrument '{japanese_instrument_name}'.",
+        "parameters": [
+          {
+            "name": "japanese_instrument_name",
+            "label": "日本传统乐器完整名称",
+            "type": "text",
+            "placeholder": [
+              "Hichiriki (Gagaku double-reed flute)",
+              "Shamisen three-string lute",
+              "Kokyu bowed string lute",
+              "13-string Koto zither",
+              "Taiko barrel festival drum",
+              "Sho Japanese imperial court mouth organ"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-japanese-traditional-music-instrument-info-poster-koto-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "culture",
+      "learning",
+      "infographic",
+      "information-card",
+      "study-sheets",
+      "wall-art",
+      "art-prints",
+      "vintage",
+      "elegant",
+      "minimalist",
+      "posters",
+      "illustration",
+      "composition",
+      "soft-light"
+    ]
+  },
+  {
+    "id": "template-english-confusing-word-pair-educational-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kids Classroom English Homophones Confusing Word Pair Educational Vertical Poster Generator) Vertical elementary school grammar learning poster themed '{word_pair_title}'. Unified fixed dual-column split layout for every confusing word set:\n1. Header Section: Huge bold two-color title [WordA VS WordB], small subtitle explaining core difference between the two words, tiny lightbulb lightbulb decorative icon on top right.\n2. Two equal vertical split panels: Left panel dark purple header with large word title + part-of-speech definition; Right panel dark green header with matching word title + part-of-speech definition.\n    Each panel includes:\n    - Cute cartoon kid illustration with speech bubble containing simple demonstrative sentence\n    - 3 bullet-point correct example sentences below the illustration\n3. Middle yellow highlighted LIFE HACK tip bar: Short memory rhyme/rule to distinguish the two words.\n4. Bottom magnifying glass QUICK TRICK correction panel: Side-by-side wrong sentence cross-out and corrected tick sentence contrast to show common mistakes.\nGlobal unified style: Clean white background, friendly 2D cartoon student character art, bold saturated purple & green brand color blocks, rounded rectangle UI boxes, simple sans-serif educational font, kid-friendly soft color palette, printable classroom wall worksheet poster, clear high contrast text for elementary learners.\nSubject: English grammar educational poster for confusing homophone word pair '{word_pair_title}'",
+        "parameters": [
+          {
+            "name": "word_pair_title",
+            "label": "易混淆英语单词完整配对标题",
+            "type": "text",
+            "placeholder": [
+              "Loose vs Lose adjective verb contrast grammar poster",
+              "Advice vs Advise noun verb English learning sheet",
+              "Your vs You're possessive contraction classroom poster",
+              "Complement vs Compliment matching praise word pair print",
+              "Their vs There possession location grammar chart",
+              "Its vs It's possessive apostrophe learning poster",
+              "Affect vs Effect verb noun result worksheet",
+              "Accept vs Except receive exclude kid grammar poster"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-confusing-word-pair-educational-poster-accept-vs-except-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "language",
+      "learning",
+      "vocabulary",
+      "infographic",
+      "study-sheets",
+      "flashcards",
+      "comparison",
+      "kids-learning",
+      "wall-art",
+      "art-prints",
+      "bold",
+      "playful",
+      "minimalist",
+      "posters"
+    ]
   }
 ]
