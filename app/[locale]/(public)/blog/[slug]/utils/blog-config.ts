@@ -96,7 +96,8 @@ export function createBlogPostsConfig() {
       'one-person-companies-vs-100-person-teams': 'onePersonCompaniesVs100PersonTeams',
       'self-improving-multimodal-search': 'selfImprovingMultimodalSearch',
       'ai-event-card-manus-vs-genspark-vs-curify': 'aiEventCardManusGensparkCurify',
-      'ai-last-mile-problem': 'aiLastMileProblem'
+      'ai-last-mile-problem': 'aiLastMileProblem',
+      'visual-search-platform-comparison': 'visualSearchPlatformComparison'
     };
     
     namespace = namespaceMap[slug] || namespace;
@@ -228,5 +229,6 @@ export const availableKeys: Record<string, string[]> = {
   'onePersonCompaniesVs100PersonTeams': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'selfImprovingMultimodalSearch': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'aiEventCardManusGensparkCurify': ['title', 'date', 'readTime', 'heroImage', 'heroImageAlt', 'heroCtaText', 'heroCtaHref', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
-  'aiLastMileProblem': ['title', 'date', 'readTime', 'heroImage', 'heroImageAlt', 'heroCtaText', 'heroCtaHref', 'intro', 'whatIsTitle', 'whatIsContent', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords']
+  'aiLastMileProblem': ['title', 'date', 'readTime', 'heroImage', 'heroImageAlt', 'heroCtaText', 'heroCtaHref', 'intro', 'whatIsTitle', 'whatIsContent', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
+  'visualSearchPlatformComparison': ['title', 'metaDescription', 'seoKeywords', 'date', 'readTime', 'heroImage', 'heroImageAlt', 'intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'useCasesTitle', 'useCasesContent', 'toolsTitle', 'toolsContent', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'ctaText', 'ctaLink']
 };
