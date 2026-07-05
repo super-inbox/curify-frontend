@@ -4,6 +4,7 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoMetadata from "@/lib/generated/nanobanana_prompts_metadata.json";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
 import { USE_CASES } from "@/lib/use-cases";
+import { MBTI_TYPES } from "@/lib/mbti-meta";
 import { toSlug } from "@/lib/nano_utils";
 import { isLocalizedTopic } from "@/lib/topicRegistry_pure";
 import {
@@ -29,6 +30,17 @@ const TOPICS_LASTMOD = "2026-05-08T00:00:00.000Z";
 
 // Keep unchanged pages stable
 const STABLE_LASTMOD = "2026-03-01T00:00:00.000Z";
+
+// Added 2026-07-05 — the 16 /personality/[type] (MBTI) pages were never emitted
+// in the sitemap, leaving them invisible to Google's crawl (MBTI & Character
+// cluster build M1, docs/mbti-character-cluster-build-2026-07-05.md).
+const PERSONALITY_LASTMOD = "2026-07-05T00:00:00.000Z";
+
+// MBTI type pages hand-localize EN/zh/es only (lib/mbti-meta.ts pickLang);
+// other locales render EN-fallback copy, so restrict sitemap emission to the
+// localized 3 — same duplicate-canonical policy as nano-template routes.
+// Expand when M3 adds ko/ru copy.
+const PERSONALITY_LOCALES = ["en", "zh", "es"] as const;
 
 const STATIC_ROUTES = [
   "",
@@ -88,6 +100,13 @@ function getToolRoutes(): string[] {
 
 function getUseCaseRoutes(): string[] {
   return USE_CASES.map((uc) => `/use-cases/${uc.slug}`);
+}
+
+function getPersonalityRoutes(): string[] {
+  // 16 MBTI type pages. Canonical form is UPPERCASE (page.tsx builds its
+  // canonical from type.toUpperCase()); MBTI_TYPES is already uppercase, so
+  // emit as-is to match the on-page canonical and avoid a lower/upper dup pair.
+  return MBTI_TYPES.map((t) => `/personality/${t}`);
 }
 
 function getTopicRoutes(): string[] {
@@ -169,6 +188,7 @@ export async function GET() {
   const tagRoutes = getTagRoutes();
   const useCaseRoutes = getUseCaseRoutes();
   const topicRoutes = getTopicRoutes();
+  const personalityRoutes = getPersonalityRoutes();
 
   let urls = "";
 
@@ -190,6 +210,19 @@ export async function GET() {
         lastmod: TOPICS_LASTMOD,
         changefreq: "weekly",
         priority: "0.8",
+      });
+    });
+  });
+
+  // Personality (MBTI type) pages — EN/zh/es only (hand-localized in
+  // mbti-meta; other locales are EN-fallback duplicates). See M1 above.
+  personalityRoutes.forEach((route) => {
+    PERSONALITY_LOCALES.forEach((locale) => {
+      urls += generateUrlEntry(locale, route, {
+        lastmod: PERSONALITY_LASTMOD,
+        changefreq: "weekly",
+        priority: "0.7",
+        availableLocales: PERSONALITY_LOCALES,
       });
     });
   });

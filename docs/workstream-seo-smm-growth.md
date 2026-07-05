@@ -62,7 +62,82 @@ reframe) for the merchants who use it.
 - robots.txt expansion blocking 11 more crawlers from `/nano-template/*` + `/nano-banana-pro-prompts/*` (task #105, commit 94c0e6ac) — Vercel cost reduction
 - Indexing API pushes: 10 homepage URLs (brand SERP cleanup), 10 inspiration-hub URLs (structured-data error cleanup 2026-06-23)
 
+**GSC 404 report — legacy carousel URLs (RESOLVED, 2026-07-04):** the `raw/curify-ai.com-Coverage-Drilldown-2026-07-03/` "Not found (404)" export shows 642 URLs; **~524 (82%) are legacy `/nano-template/[slug]/carousel/[exampleId]` URLs across all 10 locales** — the pre-`016f8a14` (2026-05-13 route unification) carousel path, which moved to `/carousel/template-example/[slug]/[exampleId]`. **Already fixed:** commit `f52d67bd` (2026-05-31) added the 308 permanent redirect in `next.config.ts:114-123`; verified live 2026-07-04 — single hop old→new, destination returns 200. GSC count already fell 735→642 as Google recrawled, then plateaued ~2026-06-12. **No code action — the only lever is clicking "Validate Fix" in GSC to prompt recrawl.** Remaining buckets are low-value: ~75 `/i/<uuid>` inspiration deep-links (genuine 404, route removed, no clean map — leave or 410 later) + 6 `battle/…/example/*.jpg` image files crawled as pages; rest of the 676 table rows is CSV multi-line noise, not real URLs. Don't re-investigate carousel 404s on the next GSC pull.
+
+**H2-2026 strategic direction (2026-07-05, from `raw/seo-drop-07-05/`):** two independent
+reads (an advisor memo + the Reddit "sudden GSC drop" thread) confirm our own funnel-audit
+diagnosis — **the June collapse was NOT a site-wide penalty; it was the World Cup topic
+cluster reaching end-of-life while nothing evergreen picked up the slack** (WC = 76% of
+clicks). A penalty hits all topics + impressions + rankings together; ours didn't. Three
+growth layers proposed, documented here as direction (not yet scoped into tasks):
+- **Layer 1 — Evergreen depth:** chase **100 topic clusters Google considers "best-in-field,"
+  not 10k shallow pages.** Do ONE topic all the way down (Animals → Flashcards → Poster →
+  Worksheet → Quiz → Coloring) rather than 100 topics an inch deep. Candidates: Language,
+  Flashcards, Merch Design, Printable, Poster, Education. *(Gap vs today: W1 is breadth-first
+  internal linking; no explicit deep-cluster play yet.)*
+- **Layer 2 — Trending, productized:** the WC muscle systematized — daily Twitter/YouTube/Reddit
+  → "top-N hot things today" → Curify assets → Social+SEO. "Don't treat WC as an exception."
+  *(Nascent: `hot_topics.json` + `viral_video_ideas_*.json` exist; not yet a repeatable engine.)*
+- **Layer 3 — Living Content:** be *more* aggressive on programmatic SEO, but turn **"AI
+  generation" into "AI maintenance"** — pages get daily updates / +examples / +images / +FAQ
+  / +prompts / +video so Google reads them as maintained. *(Gap: we're generate-and-publish.)*
+- **SEO Ops Dashboard (metric reframe):** stop watching daily clicks (laggy + WC-confounded);
+  watch ① new-page **index rate** ② **impression growth** (leads clicks) ③ **topical authority**
+  by cluster ④ **page aging** (90/180d → auto-regen). These are leading indicators — the
+  answer to the opaque-algo + lag concern is to steer by faster signals we control.
+
+**⭐ If we do only ONE SEO thing:** pick **ONE evergreen cluster and make Curify the objectively
+best result in the world for it** — the full ladder, with original images + interactivity +
+generation that pure-AI-blog competitors structurally can't match. Rationale tied to the
+opaque/laggy-algo concern: "be genuinely the best page for this query" is the *only* strategy
+robust to every algo update — you're not gaming a signal you can't see, you're building the
+thing the algo is trying to find. Measure it by **impression growth on that one cluster**
+(leading, un-confounded), not sitewide clicks. WC already proved Google *will* hand Curify
+large traffic; the open question is only how many evergreen clusters can replicate that curve.
+
+**Cluster scorecard (2026-07-05, 4-source analysis — supply / blog / tool / long-term GSC demand).**
+Eight candidate clusters rated against real data (template+gallery supply in `nano_templates.json`
++ `nanobanana.json`; blog coverage in `blogs.json`; live tools in `lib/tools-registry.ts`; 8
+chronological GSC exports 2026-05-13→06-26, window-normalized to impr/day). ●●●=strong ●●=mod
+●=weak ○=none ◐=demo-only:
+
+| Cluster | Supply | Blog | Tool | GSC demand (non-WC) | Tier |
+|---|:--:|:--:|:--:|:--:|---|
+| **MBTI & Character** | ●●● 44 tmpl + test | ●● 3 | ○ | ●●● rising 100→500/d, best CTR, multilingual | **T1 — the pick** |
+| Infographics | ●●● 73% of lib | ●●● 8 | ○ | ●● ~300/d but ~1 click/d | *format substrate, not a cluster* |
+| Travel posters & maps | ●●● 37 tmpl + 503 gallery | ● ~2 | ○ | ●● emerging ~30/d steady | T2 — deepen |
+| Recipe & food cards | ●● 20 tmpl + 182 | ○ 0 | ○ | ●● emerging ~20/d steady | T2 — greenfield |
+| Education / Flashcards | ●● 42 core | ●●● 9 | ○ | ● 5–20/d | T3 — content ahead of demand |
+| Commerce & product poster | ●●● 24 tmpl / 954 gallery (23%) | ●●● 8 | ◐ 2 demo | ● ~10/d | T3 — POD/commercial track |
+| Merch design | ●● 25 (built-ahead) | ●●● 9 | ○ | ○ **0 impressions** | T3 — POD, gate on signal |
+| Social media assets | ●● 42 | ● incidental | ○ | ○ noise | fold into MBTI/Merch |
+| *(off-list)* Voice/Video AI tools | — | ●●● 14 | ●●● live | ●●● durable ~400/d floor, weak CTR | defend (fix CTR) |
+
+Reads: (1) **MBTI & Character is the one clear winner** — only cluster scoring on *every* demand
+axis (rising GSC, best conversion, multilingual queries `naruto mbti`/`캐릭터 프롬프트`/`нарута мбти`,
+deepest topic supply). Corrects the earlier Flashcards lean — Flashcards has supply+blogs but
+5–20 impr/d (demand-from-zero). (2) **"Infographics" is the house format, not a cluster** (73% of
+templates, ~88% of gallery layout) — treat as substrate + a CTR-rescue optimization, not a
+best-in-field bet. (3) **Merch + Commerce are business bets, not SEO-demand bets** — Merch has 0
+organic impressions, yet Commerce is the biggest gallery bucket (954, users *make* these) → belong
+to the POD track (tool-conversion + trending + social), not the evergreen-SEO bet. (4) Most durable
+non-WC evergreen is off-list — **Voice/Video AI tools** (~400 impr/d floor = the live backend; weak
+CTR is the gap). WC = 87% of impressions at peak; the non-WC floor is ~1,200–1,400 impr/d.
+
+**First cluster = MBTI & Character.** The MBTI ladder absorbs two weaker clusters as lower rungs:
+MBTI test → character MBTI charts → fandom/anime grids → character **sticker packs** (=Merch rung)
+→ character **wallpapers** (=Social rung) → "which [franchise] character are you" quizzes. Build
+scope in `docs/mbti-character-cluster-build-2026-07-05.md`.
+
 ## 2. SMM — Social Media Marketing / autopost
+
+> **Operating frame (2026-07-05): Account Positioning, not Content Strategy.** Full playbook:
+> `docs/smm-account-positioning-playbook-2026-07-05.md` (from `raw/seo-drop-07-05/smm-discussion.txt`).
+> Each account has an algo-assigned identity; posting off-identity ("Position Drift") tanks the
+> account — proven by Jay's X account (400 impr → dead after AI-art posts relabeled it Tech→AI Art).
+> The playbook's 账号定位表 (allow/ban per account) + named weekly Series (固定栏目) are the
+> deliverables. Operational hook: **autopost must enforce per-account allow/ban** — Curify FB
+> carousel broadcast is a pause candidate (FB limits pure-template/external-link posts).
 
 **In scope:**
 - Autopost pipeline in `curify-studio/curify_background/` (Twitter + FB; the
