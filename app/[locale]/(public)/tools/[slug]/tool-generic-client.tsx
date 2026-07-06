@@ -24,6 +24,7 @@ import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVi
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
+import EcommercePhotoGenerate from "@/app/[locale]/_components/EcommercePhotoGenerate";
 import CreateNewModal from "../CreateNewModal";
 
 // Map the existing "deep.usecases.X" subsection keys to the persona slugs
@@ -124,7 +125,10 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
       ) : null}
 
       <div className="mt-8 text-center">
-        {tool.status === "create" && tool.action?.type === "modal" ? (
+        {tool.action?.type === "generate" ? (
+          // Real inline image2image tool: drop a reference image → generate.
+          <EcommercePhotoGenerate templateId={tool.action.templateId} />
+        ) : tool.status === "create" && tool.action?.type === "modal" ? (
           <button
             onClick={handleTryItClick}
             className="mt-4 text-white px-6 py-3 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer relative text-lg"

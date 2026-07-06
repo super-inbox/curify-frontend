@@ -17,6 +17,9 @@ export type ToolItem = {
   status: ToolStatus;
   onClick?: () => void;
   href?: string; // unprefixed, i18n Link will add locale automatically
+  // status is "demo" (navigate-to-page) but the page hosts a real inline
+  // generate tool, so the CTA is labeled Create, not "See demo".
+  isGenerate?: boolean;
 };
 
 export type ToolGroupId = "video" | "image" | "audio";
@@ -74,6 +77,8 @@ export function buildToolsHub(params: {
 
       // ✅ only create tools open the modal
       onClick: canCreate ? () => openToolModal(tool.id) : undefined,
+
+      isGenerate: tool.action?.type === "generate",
     };
   };
 

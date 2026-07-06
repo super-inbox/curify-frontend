@@ -5,6 +5,10 @@ import type { BackendJobType } from "@/types/projects";
 export type ToolAction =
   | { type: "modal"; mode: ToolMode }
   | { type: "page" }
+  // Inline image2image generate block rendered on the tool page (drop a
+  // reference image → generate). templateId must be a requires_image_upload
+  // nano template. Bypasses the video-oriented CreateNewModal entirely.
+  | { type: "generate"; templateId: string }
   | { type: "none" };
 
 export type ToolDemo =
@@ -211,10 +215,17 @@ export const TOOL_REGISTRY: ToolDef[] = [
     id: "ecommerce-photo",
     slug: "ecommerce-photo",
     groupId: "image",
+    // "demo" keeps the card navigating to /tools/ecommerce-photo (the
+    // "create" status is hard-wired to the video CreateNewModal). The page
+    // itself now renders a real inline image2image generate block via the
+    // "generate" action below — not a coming-soon CTA.
     status: "demo",
+    // Unused for the "generate" action (that path bypasses CreateNewModal and
+    // submits via useDirectGenerate against the template below). Kept because
+    // job_type is a required field; there is no image BackendJobType.
     job_type: "video_transcript",
     namespace: "ecommercePhoto",
-    action: { type: "page" },
+    action: { type: "generate", templateId: "template-product-poster" },
     i18n: toolKeys("ecommerce_photo"),
     seo: seoKeys("ecommerce_photo"),
     demo: {

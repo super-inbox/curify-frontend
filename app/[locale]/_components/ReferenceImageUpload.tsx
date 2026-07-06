@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { X } from "lucide-react";
+import { useAtomValue, useSetAtom } from "jotai";
+import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import Upload from "@/app/[locale]/_components/Upload";
 
 /**
@@ -33,6 +35,9 @@ type Props = {
   /** Mark the field required (shows a "*"); otherwise shows "(optional)". */
   required?: boolean;
   className?: string;
+  /** Copy for the anonymous sign-in gate (the /images/upload endpoint requires
+   *  auth, so anon users get a sign-in CTA instead of a dropzone that 401s). */
+  signInLabel?: string;
 };
 
 export default function ReferenceImageUpload({
@@ -46,7 +51,16 @@ export default function ReferenceImageUpload({
   uploadingLabel = "Uploading…",
   required = false,
   className,
+  signInLabel = "Sign in to upload an image",
 }: Props) {
+  const rawUser = useAtomValue(userAtom);
+  const clientMounted = useAtomValue(clientMountedAtom);
+  const setDrawer = useSetAtom(drawerAtom);
+  // userAtom is atomWithStorage — treat as anonymous until mounted so SSR
+  // (always anon) and the first client render agree (no hydration mismatch);
+  // a logged-in user swaps to the real uploader post-mount via an effect.
+  const user = clientMounted ? rawUser : null;
+
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -117,6 +131,28 @@ export default function ReferenceImageUpload({
             )
           )}
         </div>
+      ) : !user ? (
+        // Anonymous: /images/upload requires auth and fires before the
+        // generate step, so a dropzone here would 401 into "Upload failed".
+        // Gate with a sign-in CTA; the uploader appears post-signin (userAtom
+        // flips). Shared across every image2image surface.
+        <button
+          type="button"
+          onClick={() => setDrawer("signin")}
+          className={`flex w-full flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-purple-300 bg-purple-50/50 text-center transition-colors hover:bg-purple-50 ${
+            compact ? "h-28 p-3" : "h-40 gap-2 p-6"
+          }`}
+        >
+          <span className={compact ? "text-lg" : "text-2xl"}>🖼️</span>
+          <span
+            className={`font-semibold text-purple-700 ${compact ? "text-xs" : "text-sm"}`}
+          >
+            {signInLabel}
+          </span>
+          {!compact && (
+            <span className="text-xs text-neutral-500">Free to start.</span>
+          )}
+        </button>
       ) : (
         <div className={compact ? undefined : "overflow-hidden rounded-xl"}>
           <Upload
