@@ -251,6 +251,14 @@
       "title": "Переводчик речи",
       "desc": "Переводите речь на другой язык с естественной подачей."
     },
+    "product_video": {
+      "title": "Product video generator",
+      "desc": "Turn a product link or a few product photos into a short, ready-to-post marketing video — features, price, and call-to-action auto-composed into animated scenes.",
+      "meta": {
+        "title": "AI Product Video Generator — Product Link to Marketing Video | Curify AI",
+        "description": "Turn a product URL or product photos into a short marketing video: auto-composed scenes for features, price, and CTA, with optional narration and background music. Watch the demo, join early access."
+      }
+    },
     "video_enhance": {
       "title": "Улучшение видео",
       "desc": "Восстановите детали, четкость и ясность в архивном, низкокачественном или сжатом видео.",
@@ -778,6 +786,55 @@
         "educationBody": "Отделы обучения переводят видео по введению, инструктажам по безопасности и обучению продуктам на местные языки. Естественная голосовая дорожка улучшает запоминание и вовлеченность по сравнению с субтитрами.",
         "businessTitle": "Для Международных Маркетинговых Команд",
         "businessBody": "Маркетинговые команды переводят демонстрационные видео, отзывы клиентов и записи мероприятий на языки целевого рынка — обеспечивая согласованность сообщений по регионам без затрат на производство для каждого рынка."
+      }
+    }
+  },
+  "productVideo": {
+    "metadata": {
+      "title": "AI Product Video Generator | Product Link → Marketing Video | Curify AI",
+      "description": "Turn a product URL — or a few product photos plus details — into a short, social-ready marketing video. Auto-composed feature, price, and call-to-action scenes with optional narration and music. See a real example; join early access."
+    },
+    "title": "AI Product Video Generator",
+    "description": "Turn a product page URL — or just a few product photos and a short description — into a social-ready marketing video. Curify plans a storyboard, animates your product with feature, price, and call-to-action scenes, and can add narration and background music. Watch a real generated example below.",
+    "example": "Example: a pair of headphones turned into a ~15-second product video — hero shot, animated feature callouts, price, and a closing call-to-action.",
+    "cta": "Join Early Access",
+    "why": {
+      "title": "Why Use Curify to Make Product Videos?",
+      "point1": "Start from what you already have — a product link, or a few photos plus the title, features, price, and CTA.",
+      "point2": "Auto-composed scenes: a hero shot, animated feature callouts, a price beat, and a closing call-to-action — no timeline editing.",
+      "point3": "Optional AI narration and background music turn a silent slideshow into a post that holds attention.",
+      "point4": "Demo-only today; join early access to generate videos for your own products when the pipeline opens."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is the product video generator available today?",
+      "a1": "Not yet — this page shows a real generated example. The production pipeline is in private testing. Join early access and we will reach out when you can run your own products.",
+      "q2": "Do I only need a product link?",
+      "a2": "A product URL works, but automated page scraping is unreliable, so the best results come from a few product photos plus the title, key features, price, and a call-to-action line. The generator composes those into an animated video with optional narration and music."
+    },
+    "deep": {
+      "what": {
+        "title": "What Is an AI Product Video Generator?",
+        "p1": "An AI product video generator turns a product — described by a link, or by a few images plus its title, features, and price — into a short marketing video without a human editor opening a timeline. Instead of cutting clips, it plans scenes and animates stills into motion.",
+        "p2": "The input is intentionally light: a URL to scrape, or (more reliably) a small structured brief — product images, a name, a handful of selling points, a price, and a call-to-action. The output is a 15–30 second vertical or landscape clip ready for a product page, an ad, or a social post.",
+        "p3": "This is not stock-footage assembly. Each video is composed around your specific product image with feature, price, and CTA scenes generated from your details, so the result is on-brand and specific rather than a generic template with your logo dropped in."
+      },
+      "how": {
+        "title": "How Curify Builds a Product Video",
+        "p1": "Product video generation is a pipeline of specialized steps, each handling one job, sequenced so the output of one feeds the next.",
+        "p2": "Step 1: Input and enrichment. A product URL is scraped for images and copy, or you supply a structured brief directly (more reliable). Missing imagery can fall back to relevant stock.",
+        "p3": "Step 2: Storyboard planning. A language model turns the product details into a scene-by-scene plan — hero, features, price, and call-to-action — with on-screen text and pacing.",
+        "p4": "Step 3: Narration. Optional text-to-speech generates a natural voiceover from the storyboard so the video works with sound on.",
+        "p5": "Step 4: Composition and export. The product image is animated across the planned scenes with transitions, optional music, and captions, then encoded to a share-ready MP4."
+      },
+      "usecases": {
+        "title": "Who Uses Product Video Generation?",
+        "creatorsTitle": "For Creators and Affiliates",
+        "creatorsBody": "Creators and affiliate sellers who promote many products need a fast way to turn each listing into a short, watchable clip for TikTok, Reels, or Shorts — without editing every one by hand.",
+        "educationTitle": "For Small Teams Without a Video Editor",
+        "educationBody": "Small shops and solo founders rarely have a dedicated editor. A generator that turns a link or a few photos into a finished clip lets them ship product videos on every launch instead of skipping video entirely.",
+        "businessTitle": "For DTC Brands and Marketplaces",
+        "businessBody": "Direct-to-consumer brands and marketplace sellers with large catalogs use product video generation to produce ad creative and listing videos at catalog scale — one pipeline, hundreds of SKUs, consistent format."
       }
     }
   },

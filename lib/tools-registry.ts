@@ -286,6 +286,28 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Product URL / images → short marketing video. Working pipeline exists as
+    // a dev prototype (curify-project-video-generation: scrape/JSON → GPT
+    // storyboard → Azure TTS → MoviePy compose → mp4) but is NOT productized
+    // yet (no JobType / dispatch route), so this ships as a DEMO SEO landing
+    // with a real sample output + early-access CTA. Flip to a "create" tool
+    // once the pipeline is extracted into curify_background.
+    id: "product-video",
+    slug: "product-video",
+    groupId: "video",
+    status: "demo",
+    job_type: "video_transcript",
+    namespace: "productVideo",
+    action: { type: "page" },
+    i18n: toolKeys("product_video"),
+    seo: seoKeys("product_video"),
+    demo: {
+      type: "single_video",
+      src: "/video/demo_product_video.mp4",
+    },
+  },
+
+  {
     id: "storyboard-generator",
     slug: "storyboard-generator",
     groupId: "video",
