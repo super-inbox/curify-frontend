@@ -27,6 +27,7 @@ import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import EcommercePhotoGenerate, {
   type EcommercePhotoData,
 } from "@/app/[locale]/_components/EcommercePhotoGenerate";
+import ProductVideoGenerate from "@/app/[locale]/_components/ProductVideoGenerate";
 import CreateNewModal from "../CreateNewModal";
 
 // Map the existing "deep.usecases.X" subsection keys to the persona slugs
@@ -139,6 +140,9 @@ export default function ToolGenericClient({
           // Real inline image2image tool: 3-column workbench (upload → generate
           // → designer pack), same as the image2image template-detail pages.
           <EcommercePhotoGenerate locale={locale} data={generateData} />
+        ) : tool.action?.type === "product_video" ? (
+          // Real inline product-video tool: structured input → PRODUCT_VIDEO job.
+          <ProductVideoGenerate />
         ) : tool.status === "create" && tool.action?.type === "modal" ? (
           <button
             onClick={handleTryItClick}

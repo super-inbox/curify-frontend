@@ -78,7 +78,8 @@ export function buildToolsHub(params: {
       // ✅ only create tools open the modal
       onClick: canCreate ? () => openToolModal(tool.id) : undefined,
 
-      isGenerate: tool.action?.type === "generate",
+      isGenerate:
+        tool.action?.type === "generate" || tool.action?.type === "product_video",
     };
   };
 

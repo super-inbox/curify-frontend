@@ -118,7 +118,9 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
               // A "generate" action is a real inline tool (not a demo), so
               // label it Create even though it navigates like a demo card.
               <span className="mt-4 block w-full rounded-lg border border-purple-200 bg-purple-50 px-4 py-2 text-center font-semibold text-purple-700 transition-colors duration-200 group-hover:border-purple-400 group-hover:bg-purple-100">
-                {tool.action?.type === "generate" ? t("tools.create") : t("tools.see_demo")}
+                {tool.action?.type === "generate" || tool.action?.type === "product_video"
+                  ? t("tools.create")
+                  : t("tools.see_demo")}
               </span>
             ) : (
               <p className="mt-4 text-center text-lg font-semibold italic text-blue-500">
