@@ -1,13 +1,15 @@
 "use client";
 
 // Compact tool-card strip rendered below the template grid on the home
-// page. Pulls all create + demo tools from the TOOL_REGISTRY and hands
-// them to the shared ToolsGrid component — same card visual + auth +
-// modal wiring as /tools and /tools/[slug] related-tools, including
-// the `tool_card` click tracking the grid emits per card.
+// page. Hands the shared ToolsGrid the FUNCTIONAL tools only — same card
+// visual + auth + modal wiring as /tools and /tools/[slug] related-tools,
+// including the `tool_card` click tracking the grid emits per card.
 //
-// Coming-soon entries are filtered out: this strip is meant to be a
-// secondary CTA to working products, not a roadmap teaser.
+// Shows: `create` tools + `demo`-status tools that are actually functional
+// (inline `generate` / `product_video` surfaces). Excludes coming-soon AND
+// the pure-demo SEO landings (status `demo`, action `page` — asl-video-
+// translator, video-enhance, manga-translation, style-transfer): the home
+// strip is a secondary CTA to working products, not a roadmap/demo teaser.
 
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
@@ -19,7 +21,10 @@ export default function HomeToolsStrip() {
   const t = useTranslations("home.toolsStrip");
 
   const tools = TOOL_REGISTRY.filter(
-    (tool) => tool.status === "create" || tool.status === "demo",
+    (tool) =>
+      tool.status === "create" ||
+      tool.action?.type === "generate" ||
+      tool.action?.type === "product_video",
   );
 
   if (tools.length === 0) return null;
