@@ -22,8 +22,11 @@ type BlogCategoryLabelProps = {
 const PILLARS: Array<{ slug: string; label: string }> = [
   { slug: "nano-template",       label: "Nano Template" },
   { slug: "creator-tools",       label: "Creator Tools" },
+  { slug: "design-branding",     label: "Design & Branding" },
+  { slug: "merch-pod",           label: "Merch & POD" },
   { slug: "video-dubbing",       label: "Video Dubbing" },
   { slug: "content-automation",  label: "Content Automation" },
+  { slug: "programmatic-seo",    label: "Programmatic SEO" },
   { slug: "learning-education",  label: "Learning & Education" },
   { slug: "ds-ai-engineering",   label: "DS & AI Engineering" },
   { slug: "ai-strategy",         label: "AI Strategy" },

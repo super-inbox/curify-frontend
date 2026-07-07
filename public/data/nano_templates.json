@@ -2456,7 +2456,10 @@
     "requires_image_upload": true,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-fashion-ecommerce.mp4",
-    "creation_date": "2026-04-09"
+    "creation_date": "2026-04-09",
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-portrait-retouching-blueprint",
@@ -3395,7 +3398,6 @@
     ],
     "rank_score": 80,
     "use_cases": [
-      "for-marketers",
       "for-creators"
     ],
     "base_rank_score": 80,
@@ -3611,7 +3613,6 @@
     "intro_video_url": "/video/template_intro/template-mbti-marvel.mp4",
     "creation_date": "2026-04-11",
     "use_cases": [
-      "for-designers",
       "for-publishers"
     ]
   },
@@ -3802,9 +3803,7 @@
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-mbti-nba.mp4",
     "creation_date": "2026-04-11",
-    "use_cases": [
-      "for-designers"
-    ],
+    "use_cases": [],
     "requires_image_upload": true
   },
   {
@@ -3993,7 +3992,6 @@
     ],
     "rank_score": 80,
     "use_cases": [
-      "for-marketers",
       "for-creators"
     ],
     "base_rank_score": 80,
@@ -4288,7 +4286,6 @@
     ],
     "rank_score": 8,
     "use_cases": [
-      "for-marketers",
       "for-creators"
     ],
     "base_rank_score": 8,
@@ -4671,9 +4668,7 @@
     ],
     "rank_score": 100.15,
     "use_cases": [
-      "for-marketers",
       "for-creators",
-      "for-designers",
       "for-publishers"
     ],
     "base_rank_score": 100,
@@ -6071,7 +6066,11 @@
     ],
     "base_rank_score": 50,
     "allow_generation": true,
-    "creation_date": "2026-04-17"
+    "creation_date": "2026-04-17",
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
+    ]
   },
   {
     "id": "template-varieties-food-poster",
@@ -7315,7 +7314,10 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-whimsical-travel-map.mp4",
-    "creation_date": "2026-04-23"
+    "creation_date": "2026-04-23",
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-pop-culture-matching-chart",
@@ -9681,7 +9683,8 @@
     "intro_video_url": "/video/template_intro/template-ai-outfit-try-on-poster.mp4",
     "creation_date": "2026-05-03",
     "use_cases": [
-      "for-designers"
+      "for-designers",
+      "for-merch-operators"
     ],
     "requires_image_upload": true,
     "allow_generation": true
@@ -10488,7 +10491,6 @@
     "creation_date": "2026-05-07",
     "allow_generation": true,
     "use_cases": [
-      "for-designers",
       "for-publishers"
     ]
   },
@@ -10640,7 +10642,6 @@
     "rank_score": 90,
     "creation_date": "2026-05-07",
     "use_cases": [
-      "for-designers",
       "for-publishers"
     ],
     "allow_generation": true
@@ -11025,7 +11026,8 @@
     "creation_date": "2026-05-10",
     "allow_generation": true,
     "use_cases": [
-      "for-designers"
+      "for-designers",
+      "for-merch-operators"
     ]
   },
   {
@@ -11073,7 +11075,6 @@
     "creation_date": "2026-05-10",
     "allow_generation": true,
     "use_cases": [
-      "for-designers",
       "for-publishers"
     ]
   },
@@ -11717,7 +11718,6 @@
     "rank_score": 90.75,
     "creation_date": "2026-05-14",
     "use_cases": [
-      "for-designers",
       "for-publishers"
     ],
     "allow_generation": true
@@ -11889,7 +11889,6 @@
     "rank_score": 90.15,
     "creation_date": "2026-05-16",
     "use_cases": [
-      "for-designers",
       "for-publishers"
     ],
     "allow_generation": true
@@ -12268,7 +12267,6 @@
     "rank_score": 90,
     "creation_date": "2026-05-16",
     "use_cases": [
-      "for-designers",
       "for-publishers"
     ],
     "allow_generation": true
@@ -12389,8 +12387,7 @@
     "rank_score": 90,
     "creation_date": "2026-05-19",
     "use_cases": [
-      "for-creators",
-      "for-designers"
+      "for-creators"
     ],
     "allow_generation": true
   },
@@ -13013,8 +13010,7 @@
     "rank_score": 90,
     "creation_date": "2026-05-21",
     "use_cases": [
-      "for-creators",
-      "for-designers"
+      "for-creators"
     ],
     "allow_generation": true
   },
@@ -13065,8 +13061,7 @@
     "rank_score": 90,
     "creation_date": "2026-05-22",
     "use_cases": [
-      "for-creators",
-      "for-designers"
+      "for-creators"
     ],
     "allow_generation": true
   },
@@ -13224,7 +13219,8 @@
     "use_cases": [
       "for-marketers",
       "for-dtc-brands",
-      "for-designers"
+      "for-designers",
+      "for-merch-operators"
     ],
     "allow_generation": true
   },
@@ -14076,7 +14072,11 @@
     "rank_score": 85,
     "creation_date": "2026-05-28",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
+    ]
   },
   {
     "id": "template-educational-career-field-infographic",
@@ -14170,7 +14170,10 @@
     "rank_score": 88,
     "creation_date": "2026-05-28",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-mbti-personality-compatibility-infographic",
@@ -14649,7 +14652,10 @@
     "base_rank_score": 80,
     "batch": true,
     "allow_generation": true,
-    "creation_date": "2026-05-31"
+    "creation_date": "2026-05-31",
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-yellow-themed-illustrated-journey-infographic",
@@ -15372,7 +15378,11 @@
     ],
     "rank_score": 94.05,
     "creation_date": "2026-06-05",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
+    ]
   },
   {
     "id": "template-ip-gift-box-stationery-set-mockup",
@@ -15414,7 +15424,10 @@
     ],
     "rank_score": 90.15,
     "creation_date": "2026-06-05",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-ip-character-sprite-emoji-sheet",
@@ -15456,7 +15469,10 @@
     ],
     "rank_score": 90.3,
     "creation_date": "2026-06-05",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-ip-emoji-sticker-sheet-poster",
@@ -15496,7 +15512,10 @@
     ],
     "rank_score": 90.15,
     "creation_date": "2026-06-05",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-world-cup-debut-team-preview-poster",
@@ -15615,6 +15634,10 @@
       "posters",
       "mockups",
       "whimsical"
+    ],
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
     ]
   },
   {
@@ -15735,7 +15758,11 @@
     ],
     "rank_score": 90,
     "creation_date": "2026-06-07",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
+    ]
   },
   {
     "id": "template-sports-ball-evolution-infographic",
@@ -16051,7 +16078,10 @@
     ],
     "rank_score": 90.75,
     "creation_date": "2026-06-09",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-museum-gift-themed-merchandise-collection-display",
@@ -16091,7 +16121,10 @@
     ],
     "rank_score": 90.15,
     "creation_date": "2026-06-09",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-football-tournament-retro-infographic-poster",
@@ -16294,7 +16327,11 @@
     ],
     "rank_score": 90.45,
     "creation_date": "2026-06-10",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
+    ]
   },
   {
     "id": "template-football-player-graffiti-poster",
@@ -16417,7 +16454,11 @@
     ],
     "rank_score": 90.3,
     "creation_date": "2026-06-11",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
+    ]
   },
   {
     "id": "template-theme-color-palette-card",
@@ -16456,7 +16497,10 @@
     ],
     "rank_score": 90,
     "creation_date": "2026-06-11",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-corporate-news-editorial-hero",
@@ -16963,8 +17007,7 @@
     "rank_score": 88.3,
     "creation_date": "2026-06-14",
     "use_cases": [
-      "for-fans",
-      "for-designers"
+      "for-merch-operators"
     ],
     "requires_image_upload": true,
     "allow_generation": true
@@ -17634,7 +17677,10 @@
       "merch"
     ],
     "creation_date": "2026-06-30",
-    "base_rank_score": 107
+    "base_rank_score": 107,
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-kpop-idol-profile-vintage-passport-poster",
@@ -17916,7 +17962,10 @@
       "natural-light",
       "soft-light"
     ],
-    "creation_date": "2026-07-01"
+    "creation_date": "2026-07-01",
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-original-character-daily-life-grid",
@@ -18037,7 +18086,10 @@
     "rank_score": 99,
     "creation_date": "2026-06-24",
     "allow_generation": true,
-    "og_image": "/images/nano_insp_preview/template-original-character-sticker-pack-bronze-worker-mythical-beast-prev.jpg"
+    "og_image": "/images/nano_insp_preview/template-original-character-sticker-pack-bronze-worker-mythical-beast-prev.jpg",
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-modernized-artifact-poster",
@@ -18145,7 +18197,11 @@
       "product-lineup",
       "promotional-poster"
     ],
-    "creation_date": "2026-07-02"
+    "creation_date": "2026-07-02",
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
+    ]
   },
   {
     "id": "template-brand-identity-moodboard-visual-system-poster",
@@ -18201,7 +18257,11 @@
     ],
     "rank_score": 110,
     "creation_date": "2026-07-02",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
+    ]
   },
   {
     "id": "template-wc-knockout-matchup-poster",
@@ -18316,7 +18376,10 @@
     ],
     "rank_score": 112,
     "creation_date": "2026-07-02",
-    "base_rank_score": 92
+    "base_rank_score": 92,
+    "use_cases": [
+      "for-merch-operators"
+    ]
   },
   {
     "id": "template-layered-systems-architecture",
@@ -18408,6 +18471,9 @@
       "vibrant",
       "art-prints",
       "illustration"
+    ],
+    "use_cases": [
+      "for-merch-operators"
     ]
   },
   {
@@ -18449,6 +18515,9 @@
       "cozy",
       "natural-light",
       "vintage"
+    ],
+    "use_cases": [
+      "for-merch-operators"
     ]
   },
   {
@@ -18488,6 +18557,10 @@
       "digital-canvas",
       "3d",
       "soft-light"
+    ],
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
     ]
   },
   {
@@ -18529,6 +18602,9 @@
       "art-prints",
       "illustration",
       "bold"
+    ],
+    "use_cases": [
+      "for-merch-operators"
     ]
   },
   {

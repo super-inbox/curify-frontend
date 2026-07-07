@@ -14,8 +14,11 @@ import { blogPosts as blogPostsConfig } from "./[slug]/utils/blog-config";
 const CATEGORY_SLUG_TO_LABEL: Record<string, string> = {
   "nano-template":       "Nano Template",
   "creator-tools":       "Creator Tools",
+  "design-branding":     "Design & Branding",
+  "merch-pod":           "Merch & POD",
   "video-dubbing":       "Video Dubbing",
   "content-automation":  "Content Automation",
+  "programmatic-seo":    "Programmatic SEO",
   "learning-education":  "Learning & Education",
   "ds-ai-engineering":   "DS & AI Engineering",
   "ai-strategy":         "AI Strategy",
@@ -38,8 +41,11 @@ interface BlogPost {
 const PILLAR_LABELS = [
   "Nano Template",
   "Creator Tools",
+  "Design & Branding",
+  "Merch & POD",
   "Video Dubbing",
   "Content Automation",
+  "Programmatic SEO",
   "Learning & Education",
   "DS & AI Engineering",
   "AI Strategy",

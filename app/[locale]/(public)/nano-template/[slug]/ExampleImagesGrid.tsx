@@ -10,7 +10,7 @@ import CdnImage from "@/app/[locale]/_components/CdnImage";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { SITE_URL } from "@/lib/constants";
 import { toSlug } from "@/lib/nano_pure";
-import { intentCtaLabel } from "@/lib/output_intent";
+import { intentCtaLabel, intentCtaContentId } from "@/lib/output_intent";
 import { useClickTracking, useTracking, useVideoTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
@@ -233,6 +233,17 @@ function ExampleImageCard({
           <Link
             href={remixHref}
             onClick={() => {
+              // Intent-CTA press instrumentation (2026-07-07). This CTA
+              // previously fired no event at all — the intent-lift gate had no
+              // meter on this surface. content_id encodes template + intent.
+              trackAction(
+                {
+                  contentId: intentCtaContentId(item.templateId),
+                  contentType: "nano_inspiration_example_grid",
+                  viewMode: "cards",
+                },
+                "click",
+              );
               document.getElementById("reproduce")?.scrollIntoView({ behavior: "smooth", block: "start" });
             }}
             className="inline-flex items-center gap-1.5 rounded-full bg-purple-600 px-3 py-1 text-sm font-bold text-white shadow-sm transition-colors hover:bg-purple-700"

@@ -115,9 +115,25 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
               // affordance. Lighter purple accent signals "demo / early
               // access" vs the bold gradient on Create — matches the /tools
               // index treatment so the Related-tools row reads identically.
-              <span className="mt-4 block w-full rounded-lg border border-purple-200 bg-purple-50 px-4 py-2 text-center font-semibold text-purple-700 transition-colors duration-200 group-hover:border-purple-400 group-hover:bg-purple-100">
-                {t("tools.see_demo")}
-              </span>
+              // A "generate" action is a real inline tool (not a demo), so
+              // label it Create even though it navigates like a demo card.
+              tool.action?.type === "generate" ||
+              tool.action?.type === "product_video" ? (
+                // Real inline tool (image2image or product-video) → primary
+                // "Create" button, same look as the video Create cards.
+                // Navigates (via the wrapping <Link>) to the tool page's inline
+                // reproduce section.
+                <span className="relative mt-4 block w-full rounded-lg bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-center font-bold text-white shadow-lg transition-opacity duration-300 group-hover:opacity-90">
+                  {t("tools.create")}
+                  {clientMounted && !user && (
+                    <span className="ml-2 text-xs opacity-80">🔒</span>
+                  )}
+                </span>
+              ) : (
+                <span className="mt-4 block w-full rounded-lg border border-purple-200 bg-purple-50 px-4 py-2 text-center font-semibold text-purple-700 transition-colors duration-200 group-hover:border-purple-400 group-hover:bg-purple-100">
+                  {t("tools.see_demo")}
+                </span>
+              )
             ) : (
               <p className="mt-4 text-center text-lg font-semibold italic text-blue-500">
                 {t("tools.coming_soon")}
@@ -130,7 +146,9 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
           return (
             <Link
               key={tool.id}
-              href={`/tools/${tool.slug}`}
+              href={`/tools/${tool.slug}${
+                tool.action?.type === "generate" ? "#reproduce" : ""
+              }`}
               onClick={() => {
                 // For demo cards (canNavigate but not canCreate), the card
                 // click drives nav — fire tracking here. Create cards have

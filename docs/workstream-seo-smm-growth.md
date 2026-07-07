@@ -188,6 +188,16 @@ scope in `docs/mbti-character-cluster-build-2026-07-05.md`.
   (funnel pulls, search-eval cycles, video-user attribution)
 
 **Date-stamped findings docs (most recent first):**
+- **Why few image-gen projects (2026-07-07)** — memory `project_why_no_image_gen`. Diagnosed
+  "why aren't users generating images": premise partly outdated (image gen = #2 job type,
+  accelerating Apr 4→Jun 24 users, 95% success — not broken/unwanted). Real cause is
+  **surface+intent**: every backend `create` tool is video/audio, image `/tools/*` were
+  demo-only, so image creators land on `/nano-template/*` (Google/SEO) while video creators
+  land on `/tools/*`. `nano_freeform_generation`=0 is *unreached-not-broken* (buried on
+  gallery-detail behind sign-in+10-credit); auth wall is universal (0 anon creation). **Lever
+  #1 = give image gen rankable `/tools/*` surfaces** — step 1 shipped 2026-07-07
+  (`ai-product-photo-generator` DEMO→real generate tool; commit `a90a9ab0`), tracked in
+  `curify-studio/docs/{tool-inventory,workstream-tooling-and-engineering}.md`.
 - `docs/use-case-chip-clicks-2026-07-03.md` — persona-chip click volume
   across the 4 target personas (Growth Agencies / Designers / DTC Brands /
   Merch Operators). 53 clicks / 30d total across all 10 personas; 0 on

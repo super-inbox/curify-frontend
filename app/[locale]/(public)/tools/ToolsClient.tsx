@@ -177,9 +177,22 @@ export default function ToolsClient() {
                           // so the inner element just needs to look button-like
                           // for affordance. Lighter accent than Create to
                           // signal "demo / early access" vs "live tool".
-                          <span className="mt-4 block w-full text-center px-4 py-2 rounded-lg font-semibold border border-purple-200 bg-purple-50 text-purple-700 transition-colors duration-200 group-hover:bg-purple-100 group-hover:border-purple-400">
-                            {t("tools.see_demo")}
-                          </span>
+                          "isGenerate" in tool && tool.isGenerate ? (
+                            // Real inline image2image tool → primary "Create"
+                            // button (same look as video Create). The card is
+                            // wrapped in a <Link> to the tool page's #reproduce
+                            // section.
+                            <span className="relative mt-4 block w-full text-center px-4 py-2 rounded-lg font-bold text-white shadow-lg bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] transition-opacity duration-300 group-hover:opacity-90">
+                              {t("tools.create")}
+                              {clientMounted && !user && (
+                                <span className="ml-2 text-xs opacity-80">🔒</span>
+                              )}
+                            </span>
+                          ) : (
+                            <span className="mt-4 block w-full text-center px-4 py-2 rounded-lg font-semibold border border-purple-200 bg-purple-50 text-purple-700 transition-colors duration-200 group-hover:bg-purple-100 group-hover:border-purple-400">
+                              {t("tools.see_demo")}
+                            </span>
+                          )
                         ) : (
                           <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
                             {t("tools.coming_soon")}

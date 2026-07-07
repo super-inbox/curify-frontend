@@ -48,10 +48,13 @@ export const USE_CASES: UseCaseDef[] = [
 
   // Freelance illustrators selling on Etsy / Pinterest / Gumroad. The
   // visual tools fit (style-transfer for mood boards / palette
-  // exploration; manga-translation for fan-art and cross-language
-  // illustration). Video tools are still not a fit. NOT a fit for brand
+  // exploration). Video tools are still not a fit. NOT a fit for brand
   // / logo / UI designers (the catalog has zero of those).
-  { slug: "for-designers",    tier: "consumer", toolSlugs: ["style-transfer", "manga-translation"] },
+  // 2026-07-07 GTM tighten: dropped manga-translation (a comic/creator
+  // translation tool, not a design tool) so the sole tool card is the
+  // genuine designer fit. The designer value on this page is carried by
+  // the curated designer-style template feed, not the tool grid.
+  { slug: "for-designers",    tier: "consumer", toolSlugs: ["style-transfer"] },
 
   // --- B2B ICPs (cold-outreach + reference-deal surface) ---
   // Slug kept for SEO continuity; copy and toolSlugs rewritten to target
@@ -62,7 +65,10 @@ export const USE_CASES: UseCaseDef[] = [
   // headcount you have for 10. Tools broadened to reflect the multi-vertical
   // breadth an agency ships across, including transcript and summary
   // workflows for competitor monitoring and content repurposing.
-  { slug: "for-marketers",    tier: "b2b",      toolSlugs: ["video-dubbing", "bilingual-subtitles", "speech-translator", "video-transcript-generator", "video-summarizer"] },
+  // 2026-07-07: added ecommerce image tools (ai-product-photo-generator,
+  // ecommerce-photo) — agencies shipping DTC/retail clients need product
+  // visuals as much as video localization.
+  { slug: "for-marketers",    tier: "b2b",      toolSlugs: ["video-dubbing", "bilingual-subtitles", "ai-product-photo-generator", "ecommerce-photo", "speech-translator", "video-transcript-generator", "video-summarizer"] },
 
   // Was generic "for-publishers". Now: EdTech & children's publishers —
   // industrial vocab pipeline + format extension + bilingual editions.
@@ -80,11 +86,13 @@ export const USE_CASES: UseCaseDef[] = [
   { slug: "for-dtc-brands",   tier: "b2b",      toolSlugs: ["style-transfer", "video-dubbing", "manga-translation"] },
 
   // NEW. Programmatic SEO builders — hub-and-spoke generator with original
-  // imagery. Horizontal engine play, NOT a template browser — empty
-  // toolSlugs (page leads with the meta angle: "we built 5,500 pages of
-  // this for ourselves"). Also intentionally absent from
-  // topicRegistry.TIER1_USE_CASES for the same reason.
-  { slug: "for-programmatic-seo", tier: "b2b",  toolSlugs: [] },
+  // imagery. Horizontal engine play (page leads with the meta angle:
+  // "we built 5,500 pages of this for ourselves"). Intentionally absent
+  // from topicRegistry.TIER1_USE_CASES (not a template browser).
+  // 2026-07-07: added the ecommerce image tools — the pSEO wedge is
+  // "original per-SKU imagery at CMS scale", so the product-photo
+  // generators are the concrete engine, not a generic tool browser.
+  { slug: "for-programmatic-seo", tier: "b2b",  toolSlugs: ["ai-product-photo-generator", "ecommerce-photo"] },
 
   // NEW 2026-06-05. Freight forwarders / brokerage SMBs — back-office
   // automation only (BOL parsing, invoice auditing, mailbox-AI for rate
@@ -116,7 +124,13 @@ export const USE_CASES: UseCaseDef[] = [
   // progseo + forwarder — pipeline-level industrial pitch, not tool
   // browser. Citation-grade thesis at
   // ~/curify-studio/docs/reddit-demand-mining-merch-operators-2026-06-07.md.
-  { slug: "for-merch-operators", tier: "b2b", toolSlugs: [] },
+  // 2026-07-07 GTM tighten: surfaced the two merch-intent image demos
+  // (ecommerce-photo = upload product → listing image; ai-product-photo-
+  // generator = one hero shot → many variations) instead of leaving the
+  // page tool-less. These ARE the SKU-velocity demo the 张总/r/printondemand
+  // pain points ask for; the template feed below is now explicitly tagged
+  // for-merch-operators (POD/mockup/sticker/packaging goods).
+  { slug: "for-merch-operators", tier: "b2b", toolSlugs: ["ecommerce-photo", "ai-product-photo-generator"] },
 ];
 
 export function getUseCaseBySlug(slug: string): UseCaseDef | undefined {
@@ -134,15 +148,23 @@ export function getPersonasForTool(toolSlug: string): string[] {
 // use-case landing page. Source of truth: docs/interconnection.md
 // (Persona → Blog categories table). Keep in sync when adding a new
 // persona or rebalancing a category's audience fit.
+//
+// 2026-07-07 GTM tighten: introduced three precise categories
+// (design-branding, merch-pod, programmatic-seo) and re-tagged the
+// relevant posts in blogs.json out of the catch-all buckets they were
+// stranded in (mostly the unmapped "ai-strategy" category). This lets
+// each persona's "Related reading" surface on-topic posts instead of
+// generic prompt/world-cup content (for-designers) or nothing at all
+// (for-merch-operators / for-programmatic-seo merch+SEO essays).
 export const PERSONA_BLOG_CATEGORIES: Record<string, string[]> = {
   "for-marketers":         ["content-automation", "creator-tools"],
   "for-parents":           ["learning-education"],
   "for-esl-learners":      ["video-translation-dubbing", "learning-education"],
   "for-creators":          ["creator-tools", "nano-template"],
-  "for-designers":         ["nano-template"],
+  "for-designers":         ["design-branding", "merch-pod"],
   "for-publishers":        ["nano-template", "learning-education"],
   "for-dtc-brands":        ["content-automation", "creator-tools"],
-  "for-programmatic-seo":  ["ds-ai-engineering", "content-automation"],
+  "for-programmatic-seo":  ["programmatic-seo", "ds-ai-engineering"],
   "for-forwarder-back-office": ["ds-ai-engineering", "content-automation"],
-  "for-merch-operators":   ["content-automation", "nano-template"],
+  "for-merch-operators":   ["merch-pod"],
 };

@@ -5,6 +5,13 @@ import type { BackendJobType } from "@/types/projects";
 export type ToolAction =
   | { type: "modal"; mode: ToolMode }
   | { type: "page" }
+  // Inline image2image generate block rendered on the tool page (drop a
+  // reference image → generate). templateId must be a requires_image_upload
+  // nano template. Bypasses the video-oriented CreateNewModal entirely.
+  | { type: "generate"; templateId: string }
+  // Inline product-video generate surface (structured input → mp4) on the tool
+  // page — backed by the PRODUCT_VIDEO backend job.
+  | { type: "product_video" }
   | { type: "none" };
 
 export type ToolDemo =
@@ -171,22 +178,24 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
-    // Demo-only SEO landing — no backend pipeline yet. Targets SEMrush
-    // KD 36 "AI product photo generator" with our existing template
-    // catalog (60+ product-photo-relevant examples: product-poster,
-    // product-theme-promotional-poster, ai-outfit-try-on-poster,
-    // lifestyle-photo-grid, food-product-packaging-design, etc).
-    // Mirrors the asl-video-translator mini-tool playbook. Demo uses
-    // a single_image (a strong lifestyle-photo-grid sample) rather
-    // than a video — for image-output tools, a generated still IS the
-    // demo.
+    // Real image2image generate tool (upgraded from demo 2026-07-07 — lever #1:
+    // give image gen a functional, rankable /tools surface like the video tools).
+    // The broad HUB for the "AI product photo generator" head term (SEMrush KD 36).
+    // status stays "demo" so the card links to the page (the "create" status is
+    // hard-wired to the video CreateNewModal); the action below is "generate", so
+    // the card CTA reads "Create" and the page renders the inline image2image
+    // reproduce block (EcommercePhotoGenerate) via the freeform pipeline.
+    // Uses product-poster (a requires_image_upload template) as the initial
+    // preset — FOLLOW-UP: turn this into a multi-preset picker (studio / lifestyle
+    // / marketplace / outfit) so the hub delivers the parameter *variations* the
+    // head term implies, while /tools/ecommerce-photo stays the focused spoke.
     id: "ai-product-photo-generator",
     slug: "ai-product-photo-generator",
     groupId: "image",
     status: "demo",
     job_type: "video_transcript",
     namespace: "aiProductPhotoGenerator",
-    action: { type: "page" },
+    action: { type: "generate", templateId: "template-product-poster" },
     i18n: toolKeys("ai_product_photo_generator"),
     seo: seoKeys("ai_product_photo_generator"),
     demo: {
@@ -211,10 +220,17 @@ export const TOOL_REGISTRY: ToolDef[] = [
     id: "ecommerce-photo",
     slug: "ecommerce-photo",
     groupId: "image",
+    // "demo" keeps the card navigating to /tools/ecommerce-photo (the
+    // "create" status is hard-wired to the video CreateNewModal). The page
+    // itself now renders a real inline image2image generate block via the
+    // "generate" action below — not a coming-soon CTA.
     status: "demo",
+    // Unused for the "generate" action (that path bypasses CreateNewModal and
+    // submits via useDirectGenerate against the template below). Kept because
+    // job_type is a required field; there is no image BackendJobType.
     job_type: "video_transcript",
     namespace: "ecommercePhoto",
-    action: { type: "page" },
+    action: { type: "generate", templateId: "template-product-poster" },
     i18n: toolKeys("ecommerce_photo"),
     seo: seoKeys("ecommerce_photo"),
     demo: {
@@ -271,6 +287,28 @@ export const TOOL_REGISTRY: ToolDef[] = [
         enhanced: { flag: "✨", video: "/video/oil_crisis_enhanced.mp4", label: "Enhanced" },
         original: { flag: "🎞️", video: "/video/oil_crisis_original.mp4", label: "Original" },
       },
+    },
+  },
+
+  {
+    // Product photos + details → short marketing video. Productized: the
+    // PRODUCT_VIDEO backend job (curify_background: images → GPT storyboard →
+    // Azure TTS → moviepy compose → mp4). The tool page renders the inline
+    // ProductVideoGenerate surface (structured input) via the "product_video"
+    // action; the demo video below is the on-page example. status stays "demo"
+    // so the grid navigates + relabels "Create" (the generate-CTA mechanism).
+    id: "product-video",
+    slug: "product-video",
+    groupId: "video",
+    status: "demo",
+    job_type: "video_transcript",
+    namespace: "productVideo",
+    action: { type: "product_video" },
+    i18n: toolKeys("product_video"),
+    seo: seoKeys("product_video"),
+    demo: {
+      type: "single_video",
+      src: "/video/demo_product_video.mp4",
     },
   },
 

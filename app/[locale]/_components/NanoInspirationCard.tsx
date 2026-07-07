@@ -14,7 +14,7 @@ import {
   useTracking,
 } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
-import { intentCtaLabel } from "@/lib/output_intent";
+import { intentCtaLabel, intentCtaContentId } from "@/lib/output_intent";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import {
   makeNanoTemplateUrl,
@@ -328,6 +328,18 @@ export function NanoInspirationCard({
             onClick={(e) => {
               e.stopPropagation();
               trackRemix();
+              // Intent-CTA press instrumentation (2026-07-07) — added alongside
+              // the existing remix event (which keys on the inspiration id) so
+              // the remix metric is unchanged; this one encodes template + intent
+              // for the intent-lift measurement.
+              trackAction(
+                {
+                  contentId: intentCtaContentId(card.template_id),
+                  contentType: "nano_inspiration_template_card",
+                  viewMode: "list",
+                },
+                "click",
+              );
             }}
             className="flex items-center justify-center gap-1 rounded-full bg-purple-50 px-2.5 py-1.5 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
           >

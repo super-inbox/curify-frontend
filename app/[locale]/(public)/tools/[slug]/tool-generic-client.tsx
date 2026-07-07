@@ -24,6 +24,10 @@ import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVi
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
+import EcommercePhotoGenerate, {
+  type EcommercePhotoData,
+} from "@/app/[locale]/_components/EcommercePhotoGenerate";
+import ProductVideoGenerate from "@/app/[locale]/_components/ProductVideoGenerate";
 import CreateNewModal from "../CreateNewModal";
 
 // Map the existing "deep.usecases.X" subsection keys to the persona slugs
@@ -36,7 +40,15 @@ const USECASE_SECTION_TO_PERSONA: Record<string, string> = {
   business: "for-marketers",
 };
 
-export default function ToolGenericClient({ slug }: { slug: string }) {
+export default function ToolGenericClient({
+  slug,
+  generateData,
+}: {
+  slug: string;
+  // Template data for "generate"-action tools (ecommerce-photo), loaded
+  // server-side and threaded down so the client never imports the templates JSON.
+  generateData?: EcommercePhotoData;
+}) {
   const tool = getToolBySlug(slug);
   if (!tool) return null;
 
@@ -123,8 +135,15 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
         </>
       ) : null}
 
-      <div className="mt-8 text-center">
-        {tool.status === "create" && tool.action?.type === "modal" ? (
+      <div id="reproduce" className="mt-8 scroll-mt-24 text-center">
+        {tool.action?.type === "generate" && generateData ? (
+          // Real inline image2image tool: 3-column workbench (upload → generate
+          // → designer pack), same as the image2image template-detail pages.
+          <EcommercePhotoGenerate locale={locale} data={generateData} />
+        ) : tool.action?.type === "product_video" ? (
+          // Real inline product-video tool: structured input → PRODUCT_VIDEO job.
+          <ProductVideoGenerate />
+        ) : tool.status === "create" && tool.action?.type === "modal" ? (
           <button
             onClick={handleTryItClick}
             className="mt-4 text-white px-6 py-3 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer relative text-lg"

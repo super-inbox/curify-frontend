@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
-import { useClickTracking } from "@/services/useTracking";
+import { useClickTracking, useTracking } from "@/services/useTracking";
 import { toSlug } from "@/lib/nano_pure";
+import { intentCtaContentId } from "@/lib/output_intent";
 import type { TemplateMatch } from "@/lib/searchTemplateMatch";
 
 // Confidence threshold below which we hedge the label.
@@ -30,11 +31,29 @@ function GenerableCard({
     "nano_inspiration_template_card",
     "cards",
   );
+  const { trackAction } = useTracking();
   const hedged = match.confidence < HIGH_CONFIDENCE;
+  const ctaShown = Boolean(match.cta) && !hedged;
   return (
     <Link
       href={href}
-      onClick={handleClick}
+      onClick={() => {
+        handleClick();
+        // Intent-CTA press instrumentation (2026-07-07). In search the whole
+        // card is the click target and the differentiated CTA badge is
+        // decorative, so attribute the click to the intent CTA only when that
+        // badge was actually shown (same condition as the badge below).
+        if (ctaShown) {
+          trackAction(
+            {
+              contentId: intentCtaContentId(match.template_id),
+              contentType: "nano_inspiration_template_card",
+              viewMode: "cards",
+            },
+            "click",
+          );
+        }
+      }}
       className="group block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
     >
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
