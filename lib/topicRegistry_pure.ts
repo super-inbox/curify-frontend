@@ -328,6 +328,12 @@ const GALLERY_TAG_TO_TOPICS: Map<string, string[]> = (() => {
 // (MBTI/character cards) or culture/lifestyle (infographics, lifestyle
 // photos). for-designers additionally keeps `culture` (costume/illustration
 // is real design work); for-merch-operators is restricted to design+product.
+// 2026-07-07 (round 2): also removed for-marketers from `lifestyle` — that
+// bucket is personal wellness/how-to/hobby content (fitness, houseplant care,
+// self-help, hairstyle guides), which is creator/consumer, not what a B2B
+// marketing agency ships. Marketers keep design (promotional posters),
+// product (product marketing) and travel (destination marketing), plus the
+// 4 stray MBTI templates were un-tagged from for-marketers in nano_templates.
 const TIER1_USE_CASES: Record<string, readonly string[]> = {
   character:   ["for-creators"],
   personality: ["for-creators"],
@@ -335,7 +341,7 @@ const TIER1_USE_CASES: Record<string, readonly string[]> = {
   learning:    ["for-parents", "for-creators", "for-publishers"],
   travel:      ["for-creators", "for-marketers", "for-dtc-brands"],
   culture:     ["for-creators", "for-publishers", "for-designers"],
-  lifestyle:   ["for-creators", "for-marketers", "for-dtc-brands"],
+  lifestyle:   ["for-creators", "for-dtc-brands"],
   design:      ["for-marketers", "for-designers", "for-dtc-brands", "for-merch-operators"],
   product:     ["for-marketers", "for-designers", "for-dtc-brands", "for-merch-operators"],
 };
