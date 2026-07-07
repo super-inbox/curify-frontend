@@ -67,3 +67,29 @@ export function intentCtaLabel(templateId: string | undefined | null, remixFallb
   const intent = getOutputIntent(templateId);
   return intent === "remix" ? remixFallback : INTENT_META[intent].cta;
 }
+
+// ---- Intent-CTA click instrumentation (2026-07-07) --------------------------
+// The differentiated CTA shipped 2026-07-02 with NO logged intent dimension —
+// the tracking event was byte-identical regardless of the CTA label, so the
+// "did the intent axis lift the funnel" gate had no meter (see workstream doc
+// § Output-Intent). Fix: on an intent-CTA press, fire a dedicated event whose
+// content_id encodes BOTH the template and its intent, using this convention:
+//
+//     <templateId>::cta-<intent>     e.g. "template-product-poster::cta-merch"
+//
+// Design notes:
+//  - templateId already starts with "template-", so the admin analytics rollup
+//    (`content_id LIKE 'template-%'` → `split_part(content_id, ':', 1)`) still
+//    resolves the template cleanly — the operator panel is unaffected.
+//  - The `::cta-` marker makes CTA presses trivially separable from ordinary
+//    card/image clicks, and lets a measurement pull parse the intent offline
+//    without a DB/schema change (no migration; content_id is free-text).
+//  - Fired with action_type "click" (existing enum) across all three surfaces
+//    (cards, template-detail example grid, search) for a uniform dataset.
+export const INTENT_CTA_MARKER = "::cta-";
+
+/** Tracking content_id for an intent-CTA press. Encodes template + intent while
+ *  staying admin-rollup-safe. Parse back in analysis via `INTENT_CTA_MARKER`. */
+export function intentCtaContentId(templateId: string): string {
+  return `${templateId}${INTENT_CTA_MARKER}${getOutputIntent(templateId)}`;
+}
