@@ -2,12 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { format } from "date-fns";
 import Link from "next/link";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
+import ReproduceWorkbench from "@/app/[locale]/_components/ReproduceWorkbench";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
@@ -29,7 +30,68 @@ export type SampleImage = {
   alt?: string;
 };
 
+// Dispatcher: image2image (requires_image_upload) templates get the shared
+// 3-column workbench with column 1 = upload (on-par with the example page);
+// text templates keep the existing 2-column reproduce layout below.
 export default function ReproduceTemplateSection(props: {
+  template: NanoTemplateForDetail;
+  sampleImage?: SampleImage;
+  initialParams?: Record<string, string>;
+}) {
+  if (props.template.requires_image_upload) {
+    return (
+      <ImageWorkbenchSection template={props.template} initialParams={props.initialParams} />
+    );
+  }
+  return <TextReproduceSection {...props} />;
+}
+
+// image2image template detail → shared 3-column workbench, col-1 upload.
+function ImageWorkbenchSection({
+  template,
+  initialParams,
+}: {
+  template: NanoTemplateForDetail;
+  initialParams?: Record<string, string>;
+}) {
+  const searchParams = useSearchParams();
+  const locale = useLocale();
+  const templateUseCases = useMemo(
+    () => getUseCasesForTopics(template.topics ?? []),
+    [template.topics]
+  );
+
+  // Query-param overrides for parameters; the workbench seeds the rest from
+  // each param's placeholder default.
+  const seeded = useMemo(() => {
+    const next: Record<string, string> = { ...(initialParams ?? {}) };
+    for (const p of template.parameters ?? []) {
+      const qv = searchParams?.get(p.name);
+      if (qv != null && qv.trim() !== "") next[p.name] = qv;
+    }
+    return next;
+  }, [template.parameters, searchParams, initialParams]);
+
+  return (
+    <section id="reproduce" className="scroll-mt-24">
+      <ReproduceWorkbench
+        locale={locale}
+        templateId={template.template_id}
+        parameters={template.parameters ?? []}
+        initialParams={seeded}
+        basePrompt={template.base_prompt || ""}
+        allowGeneration={!!template.allow_generation}
+        requiresImageUpload
+        existingExamples={template.existingExamples}
+        useCaseFilter={templateUseCases}
+        trackingContentId={template.template_id}
+        col1={{ mode: "upload" }}
+      />
+    </section>
+  );
+}
+
+function TextReproduceSection(props: {
   template: NanoTemplateForDetail;
   sampleImage?: SampleImage;
   initialParams?: Record<string, string>;

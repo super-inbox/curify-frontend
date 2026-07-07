@@ -24,7 +24,9 @@ import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVi
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
-import EcommercePhotoGenerate from "@/app/[locale]/_components/EcommercePhotoGenerate";
+import EcommercePhotoGenerate, {
+  type EcommercePhotoData,
+} from "@/app/[locale]/_components/EcommercePhotoGenerate";
 import CreateNewModal from "../CreateNewModal";
 
 // Map the existing "deep.usecases.X" subsection keys to the persona slugs
@@ -37,7 +39,15 @@ const USECASE_SECTION_TO_PERSONA: Record<string, string> = {
   business: "for-marketers",
 };
 
-export default function ToolGenericClient({ slug }: { slug: string }) {
+export default function ToolGenericClient({
+  slug,
+  generateData,
+}: {
+  slug: string;
+  // Template data for "generate"-action tools (ecommerce-photo), loaded
+  // server-side and threaded down so the client never imports the templates JSON.
+  generateData?: EcommercePhotoData;
+}) {
   const tool = getToolBySlug(slug);
   if (!tool) return null;
 
@@ -125,9 +135,10 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
       ) : null}
 
       <div className="mt-8 text-center">
-        {tool.action?.type === "generate" ? (
-          // Real inline image2image tool: drop a reference image → generate.
-          <EcommercePhotoGenerate templateId={tool.action.templateId} />
+        {tool.action?.type === "generate" && generateData ? (
+          // Real inline image2image tool: 3-column workbench (upload → generate
+          // → designer pack), same as the image2image template-detail pages.
+          <EcommercePhotoGenerate locale={locale} data={generateData} />
         ) : tool.status === "create" && tool.action?.type === "modal" ? (
           <button
             onClick={handleTryItClick}
