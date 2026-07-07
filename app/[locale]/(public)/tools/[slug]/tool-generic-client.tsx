@@ -135,7 +135,7 @@ export default function ToolGenericClient({
         </>
       ) : null}
 
-      <div className="mt-8 text-center">
+      <div id="reproduce" className="mt-8 scroll-mt-24 text-center">
         {tool.action?.type === "generate" && generateData ? (
           // Real inline image2image tool: 3-column workbench (upload → generate
           // → designer pack), same as the image2image template-detail pages.

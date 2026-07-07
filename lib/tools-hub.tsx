@@ -72,8 +72,13 @@ export function buildToolsHub(params: {
       desc: t(tool.i18n.descKey),
       status: tool.status,
 
-      // ✅ only non-coming-soon have pages
-      href: canNavigate ? href : undefined,
+      // ✅ only non-coming-soon have pages; generate tools deep-link to the
+      // inline image2image reproduce section on the tool page.
+      href: canNavigate
+        ? tool.action?.type === "generate"
+          ? `${href}#reproduce`
+          : href
+        : undefined,
 
       // ✅ only create tools open the modal
       onClick: canCreate ? () => openToolModal(tool.id) : undefined,

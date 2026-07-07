@@ -178,22 +178,24 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
-    // Demo-only SEO landing — no backend pipeline yet. Targets SEMrush
-    // KD 36 "AI product photo generator" with our existing template
-    // catalog (60+ product-photo-relevant examples: product-poster,
-    // product-theme-promotional-poster, ai-outfit-try-on-poster,
-    // lifestyle-photo-grid, food-product-packaging-design, etc).
-    // Mirrors the asl-video-translator mini-tool playbook. Demo uses
-    // a single_image (a strong lifestyle-photo-grid sample) rather
-    // than a video — for image-output tools, a generated still IS the
-    // demo.
+    // Real image2image generate tool (upgraded from demo 2026-07-07 — lever #1:
+    // give image gen a functional, rankable /tools surface like the video tools).
+    // The broad HUB for the "AI product photo generator" head term (SEMrush KD 36).
+    // status stays "demo" so the card links to the page (the "create" status is
+    // hard-wired to the video CreateNewModal); the action below is "generate", so
+    // the card CTA reads "Create" and the page renders the inline image2image
+    // reproduce block (EcommercePhotoGenerate) via the freeform pipeline.
+    // Uses product-poster (a requires_image_upload template) as the initial
+    // preset — FOLLOW-UP: turn this into a multi-preset picker (studio / lifestyle
+    // / marketplace / outfit) so the hub delivers the parameter *variations* the
+    // head term implies, while /tools/ecommerce-photo stays the focused spoke.
     id: "ai-product-photo-generator",
     slug: "ai-product-photo-generator",
     groupId: "image",
     status: "demo",
     job_type: "video_transcript",
     namespace: "aiProductPhotoGenerator",
-    action: { type: "page" },
+    action: { type: "generate", templateId: "template-product-poster" },
     i18n: toolKeys("ai_product_photo_generator"),
     seo: seoKeys("ai_product_photo_generator"),
     demo: {
