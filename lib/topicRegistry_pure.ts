@@ -320,14 +320,22 @@ const GALLERY_TAG_TO_TOPICS: Map<string, string[]> = (() => {
 // for-programmatic-seo is intentionally absent — it's a horizontal engine
 // play (hub-and-spoke generator), not a vertical template browser, so it
 // wouldn't be served by a "templates for travel" feed.
+// 2026-07-07 GTM tighten (use-case pages): narrowed the fallback so
+// untagged pop-culture/social/lifestyle templates stop leaking onto the
+// for-designers and for-merch-operators feeds. Those two personas are
+// now driven by explicit use_cases tags in nano_templates.json plus the
+// genuine design/product tier-1 topics — NOT by character/personality
+// (MBTI/character cards) or culture/lifestyle (infographics, lifestyle
+// photos). for-designers additionally keeps `culture` (costume/illustration
+// is real design work); for-merch-operators is restricted to design+product.
 const TIER1_USE_CASES: Record<string, readonly string[]> = {
-  character:   ["for-creators", "for-designers", "for-merch-operators"],
-  personality: ["for-creators", "for-designers"],
+  character:   ["for-creators"],
+  personality: ["for-creators"],
   language:    ["for-parents", "for-esl-learners", "for-publishers"],
   learning:    ["for-parents", "for-creators", "for-publishers"],
   travel:      ["for-creators", "for-marketers", "for-dtc-brands"],
-  culture:     ["for-creators", "for-publishers", "for-designers", "for-merch-operators"],
-  lifestyle:   ["for-creators", "for-marketers", "for-dtc-brands", "for-merch-operators"],
+  culture:     ["for-creators", "for-publishers", "for-designers"],
+  lifestyle:   ["for-creators", "for-marketers", "for-dtc-brands"],
   design:      ["for-marketers", "for-designers", "for-dtc-brands", "for-merch-operators"],
   product:     ["for-marketers", "for-designers", "for-dtc-brands", "for-merch-operators"],
 };
