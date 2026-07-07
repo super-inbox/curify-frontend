@@ -281,7 +281,56 @@ Full spec: `curify-studio/docs/wechat-design-copilot-mvp.md`.
 
 ---
 
-## 7. References
+## 7. Deep-research digest — the industrial pre-press moat (2026-07-07)
+
+Source: `curify-frontend/raw/designer-copilot-07-07/deep-research.txt` (SOTA architecture
++ tech-stack selection report). It **validates and sharpens** this workstream's reframing (§0):
+the 10x differentiation is **not** a better gen model or a smarter router — it is the **deep
+encapsulation of a specific workflow + perfect industrial-protocol output**. Building a model
+marginally better than Midjourney is pointless internal competition; the moat is the *silent
+pipeline* that turns an uncontrollable pixel stream into a **zero-tolerance, factory-ready
+manufacturing file** ("免检直接上机").
+
+**Market gap (why this wins).** Three incumbent camps, each blind to physical merch delivery:
+- **UI/UX gen** (Figma AI, Galileo, Musho) — great layer separation, but purely digital; no bleed/white-plate.
+- **Commercial graphics** (Adobe Firefly = strongest pixel/rights control but heavy; Canva = one-click but can't emit factory PDF with spot colors + bleed).
+- **Geek engines** (ComfyUI infinite node control, Magnific super-res) — anti-human UX for business users.
+
+The unoccupied slot = **ComfyUI-grade control, encapsulated behind a Canva-simple UI, emitting Adobe-grade print files.** That is our **3-column workbench** (§2 building blocks; the surfaces I shipped this cycle) — front = minimal business surface, **column 3 = a silent, powerful pre-press pipeline.**
+
+**The merch pre-press pipeline (column-3 "Production", made concrete).** The report specifies the
+exact stack — this replaces the vague "print-ready PDF + die-cut outline" in P0-5 with a real build:
+
+| Node | Job | SOTA selection (quality × cost) |
+|---|---|---|
+| A · Background removal | isolate subject (foundation for all physical calcs) | **BEN2** (MIT, Confidence-Guided Matting, 0.13s / ~4.5GB on RTX 3090, <$0.001/img self-hosted) primary; **Photoroom** API ($0.02 basic / $0.10 plus) async fallback for broken edges. Avoid RemoveBG ($0.20+). BiRefNet/RMBG-2.0 = license cost. |
+| B · Vectorization | raster → clean minimal SVG | Layered routing: **VTracer** (Rust, O(n), MIT — local default for uploads) / **Recraft V3-V4.1** ($0.08, native production SVG from prompt — new assets) / **StarVector** (CVPR'25, MLLM SVG-as-code, DinoScore 0.984 — brand icons/geometry). Paradigm shift: curve-fitting → code-gen. |
+| C · Physical geometry | bleed + white plate + cut path | Pure OpenCV/NumPy, cheap. **Bleed**: morphological *dilation* of alpha mask outward (300 DPI, 2mm ≈ 24px) + edge stretch/mirror fill. **White plate (白版)**: morphological *erosion* inward 0.1–0.2mm (1–3px) → 100%-black (K100) layer (choke, prevents white-ink bleed-out). **Cut line**: `cv2.findContours` → smooth offset closed path. |
+| D · Color management | sRGB → CMYK | **libvips (pyvips) + LittleCMS**, ICC profiles (NOT linear math). **Japan Color 2001 Coated** for the JP market. `icc_transform` w/ RELATIVE_COLORIMETRIC (white-point) or PERCEPTUAL (gamut compress). Demand-driven streaming = low memory on huge print files. |
+| E · PDF/X compile | assemble the factory file | **ReportLab** — do NOT rely on SVG (can't natively define spot colors). Bottom = K100 white plate, middle = CMYK+bleed image, top = **CutContour spot-color** stroke (`PCMYKColorSep(0,100,91,0, spotName='CutContour')`) that RIP software (Roland VersaWorks / Mimaki RasterLink) reads as the knife path. |
+
+**Market wedge = Japanese doujin / 谷子 merch** (acrylic stands, keychains). Factories (Graphic,
+Otaclub, Hotmobily, MYDOO) have severe 入稿 specs; independent artists / VTubers / SMB出海 brands
+lack pre-press knowledge (recurring failures: white-plate bleed, missing cutline, RGB→CMYK
+darkening) and factories upsell "代做白版/切割线" at cost + delay. Automating this = a built-in
+prepress engineer as middleware.
+
+**Reprioritization implications** (feeds §8 tooling doc):
+1. **Column-3 Production IS the moat — elevate it above router/gen work.** Our load-bearing metric
+   was routing accuracy (§1); this research says the *defensible* value is the silent pre-press
+   pipeline. Both matter, but the pipeline is what general chat-AI can't copy.
+2. **P0-5 (merch loop) is now the flagship** — and its deliverable is upgraded from a mockup to the
+   real PDF/X (nodes A→E). This is the concrete artifact for resume/deck/fundraising.
+3. **The tech stack is now decided** — no more "how" research. BEN2 · VTracer/Recraft/StarVector ·
+   OpenCV geometry · libvips+LittleCMS · ReportLab. This de-risks tooling POD-B1 (print-ready) +
+   POD-B8 (layers/bg-removal); they converge into this one pipeline.
+4. **Build order within the pipeline:** Node A (BEN2 bg-removal, reusable everywhere) → Node C
+   (bleed + white plate, pure Python, cheap, highest "wow") → Node E (CutContour PDF) → Node D
+   (CMYK/ICC) → Node B (vectorization, routed). A→C→E is a shippable JP-acrylic-keychain MVP.
+5. **Still gated on traffic signal for *timing*** (per the tooling doc's gate-on-signal rule) — the
+   research decides *what* the merch column-3 should be, not that we drop everything to build it now.
+
+## 8. References
 - Tool registry: `curify-frontend/lib/tools-registry.ts` · inventory: [`tool-inventory.md`](tool-inventory.md)
 - Manga translation: `https://huggingface.co/spaces/Curify/manga_translation`
 - Workflows: `curify-frontend/lib/gallery_production_tiles.tsx`, `lib/template_workflows.tsx`; freeform pipeline `curify_background/app/pipelines/nano_freeform_pipeline.py`
