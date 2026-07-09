@@ -42,18 +42,34 @@ const USE_CASE_VIDEO_KEY: Record<string, string> = {
   "for-publishers":       "publisher",
   "for-programmatic-seo": "seo",
   "for-marketers":        "marketer",
+  "for-merch-operators":  "merch",
 };
+
+// Aspect ratio per video pair. Most use-case explainers are vertical 9:16
+// (phone-shot / Reels-style) — the default. The merch pair is 3:4
+// (960x1280), so it gets its own box to avoid the <video> default
+// object-fit:fill stretching faces. Add an entry here for any future
+// pair whose source aspect isn't 9:16.
+const USE_CASE_VIDEO_ASPECT: Record<string, string> = {
+  merch: "aspect-[3/4]",
+};
+const DEFAULT_VIDEO_ASPECT = "aspect-[9/16]";
 
 function UseCaseVideo({
   slug,
   videoKey,
   lang,
+  aspectClass,
   transcript,
   transcriptLabel,
 }: {
   slug: string;
   videoKey: string;
   lang: "en" | "cn";
+  /** Tailwind aspect class for the video box (source aspect varies by
+   *  pair — 9:16 default, 3:4 for merch). Paired with object-contain so a
+   *  mismatched source letterboxes instead of stretching. */
+  aspectClass: string;
   /** Locale-picked transcript text. Rendered inside a collapsed
    *  <details> below the video so it stays crawlable by Google
    *  (text inside closed details is indexed) without polluting
@@ -93,7 +109,7 @@ function UseCaseVideo({
           controls
           playsInline
           preload="metadata"
-          className="aspect-[9/16] w-full bg-black"
+          className={`${aspectClass} w-full bg-black object-contain`}
           onPlay={trackVideoPlay}
         />
       </div>
@@ -321,6 +337,7 @@ export default function UseCaseClient({
               slug={slug}
               videoKey={videoKey}
               lang={locale === "zh" ? "cn" : "en"}
+              aspectClass={USE_CASE_VIDEO_ASPECT[videoKey] ?? DEFAULT_VIDEO_ASPECT}
               transcript={
                 (useCaseTranscripts as Record<string, { en?: string; cn?: string }>)
                   [videoKey]?.[locale === "zh" ? "cn" : "en"]
