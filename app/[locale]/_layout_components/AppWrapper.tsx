@@ -31,6 +31,19 @@ export default function AppWrapper({ children, user }: Props) {
     setClientMounted(true);
   }, [setClientMounted]);
 
+  // When the api client hits a token-carrying 401 (e.g. an expired session) it
+  // wipes access_token + curifyUser from localStorage and fires `auth:expired`
+  // (services/api.ts). But atomWithStorage's in-memory userAtom does NOT re-read
+  // storage on a same-tab removeItem, so without a listener the UI keeps showing
+  // a logged-in state (e.g. the upload dropzone) while the token is gone — the
+  // next upload 401s and ONLY a full page reload resyncs. Clear userAtom here so
+  // the UI reflects logged-out immediately (shows the sign-in CTA), no refresh.
+  useEffect(() => {
+    const onAuthExpired = () => setUser(null);
+    window.addEventListener("auth:expired", onAuthExpired);
+    return () => window.removeEventListener("auth:expired", onAuthExpired);
+  }, [setUser]);
+
   useEffect(() => {
     const currentUserId = user?.user_id || user?.email || null;
 
