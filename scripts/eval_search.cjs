@@ -100,6 +100,12 @@ const PHRASE_ALIAS_RULES = [
   { phrase: "glass skin", aliasTokens: ["k-beauty", "skincare"] },
   { phrase: "chrome skincare", aliasTokens: ["y2k", "skincare"] },
   { phrase: "光与夜之恋", atomicEntity: true },
+  // Fix 2: Chinese compound phrase protection — see lib/query_phrase_aliases.ts
+  // for the full rationale (coincidental CJK bigram collision with
+  // boilerplate template audience text, same root cause as 光与夜之恋 above).
+  { phrase: "小红书", atomicEntity: true },
+  { phrase: "手冲咖啡", atomicEntity: true, aliasTokens: ["brand identity", "visual identity"] },
+  { phrase: "二手奢侈品", atomicEntity: true },
 ];
 function isCJK(s) { return /[一-龥]/.test(s); }
 function phraseMatches(rule, normalizedQuery, primaryTokens) {

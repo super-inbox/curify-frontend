@@ -139,6 +139,67 @@ export const PHRASE_ALIAS_RULES: PhraseAliasRule[] = [
     phrase: "光与夜之恋",
     atomicEntity: true,
   },
+
+  // ── Fix 2: Chinese compound phrase protection ──────────────────────
+  // Same root cause as 光与夜之恋 above (coincidental CJK bigram overlap
+  // with boilerplate template text), found via the same audit method —
+  // NOT duplicating that rule, extending the pattern to newly-evidenced
+  // failures.
+
+  // "小红书" (Xiaohongshu, a platform name) is extremely common
+  // boilerplate in template audience descriptions (e.g. "适合...小红书
+  // 种草内容创作者" appears on many unrelated templates as a generic
+  // "who is this for" line). When a query embeds "小红书" in a longer
+  // unspaced compound (e.g. "小红书香薰产品种草图"), its own bigrams
+  // (小红/红书) plus "种草" coincidentally clear the strict bigram
+  // threshold against ANY template whose audience blurb happens to
+  // mention Xiaohongshu content creators — regardless of the query's
+  // actual subject. Verified: template-fashion-ecommerce's entire
+  // 23-inspiration cascade (eyemask/pendant/ring/scarf/...) was a false
+  // positive for "小红书香薰产品种草图" purely via this collision; none
+  // of those 23 have anything to do with aromatherapy. No alias tokens —
+  // "小红书" is a platform-name qualifier, not the query's subject, so
+  // there's no fixed vocabulary to redirect toward. The query's real
+  // subject (e.g. "香薰") still surfaces normally via its own rule above.
+  {
+    phrase: "小红书",
+    atomicEntity: true,
+  },
+
+  // "手冲咖啡" (pour-over coffee) queries combined with "工作室"
+  // (studio) / "视觉" (visual) — e.g. "手冲咖啡工作室视觉手册" — were
+  // coincidentally bigram-colliding with template-ethnic-costume-
+  // deconstruction-board ("时尚工作室摄影" fashion-studio-photography
+  // style copy) and template-animation-studio-comparison-infographic
+  // ("动画工作室对比" anime studio comparison) — neither related to
+  // coffee or brand visual manuals. Protect the whole query from bigram
+  // decomposition, but (unlike 小红书/二手奢侈品) redirect toward the
+  // catalog's actual brand-visual-identity family via an alias group:
+  // "brand identity" / "visual identity" appear narrowly (verified: only
+  // 2 templates catalog-wide) in template-brand-identity-moodboard-
+  // visual-system-poster and template-brand-vi-full-visual-pack-mockup,
+  // which include genuine coffee-brand instances (brew-and-co-coffee-shop,
+  // riseup-coffee).
+  {
+    phrase: "手冲咖啡",
+    atomicEntity: true,
+    aliasTokens: ["brand identity", "visual identity"],
+  },
+
+  // "二手奢侈品" (secondhand luxury goods) queries — e.g. "二手奢侈品
+  // 鉴定品牌视觉" (secondhand luxury authentication brand visual) — were
+  // coincidentally bigram-colliding with template-fashion-ecommerce via
+  // generic 品牌/牌视/视觉 bigrams (boilerplate "品牌视觉团队" brand-
+  // visual-team audience copy), ignoring the query's actual distinguishing
+  // subject (secondhand-luxury AUTHENTICATION). No alias tokens — no
+  // secondhand-luxury-authentication content exists in the catalog today
+  // (confirmed by grep for 二手/奢侈品/鉴定), so — same as 光与夜之恋 —
+  // this is purely defensive: stop the false match, don't invent a
+  // fallback that isn't backed by real content.
+  {
+    phrase: "二手奢侈品",
+    atomicEntity: true,
+  },
 ];
 
 function isCJK(s: string): boolean {

@@ -924,9 +924,9 @@
     {
       "query": "小红书香薰产品种草图",
       "source": "search-relevance-phrase-alias-2026-07-09",
-      "expected": "rich",
+      "expected": "moderate",
       "expected_templates": "",
-      "notes": "Fix 1 (CJK substring alias injection) — regression guard. Unspaced query collapses to one primary token, so a per-token synonym map can never see '香薰' as its own key; the phrase module detects it as a substring instead and injects an aromatherapy/fragrance/scent/candle/diffuser OR-group. BEFORE and AFTER both bucket=rich (23 strict hits) — unchanged, because this query was already well-served by the extensive search_aliases data top-up documented in docs/search-quality.md (2026-05-20 aromatherapy content-gap batch). Confirms the alias-group OR-semantics are additive-safe and don't dilute an already-working query (an earlier naive append-to-primary design would have regressed this from rich to relaxed/thin — see PR notes)."
+      "notes": "UPDATED BY FIX 2 — this is a CORRECTION, not a regression. Fix 1 shipped this query as bucket=rich (23 strict hits) and its own regression test asserted 'stays rich' as a success. That was wrong: all 23 hits came from template-fashion-ecommerce's inspiration cascade (eyemask/pendant/ring/scarf/musical-instrument/...), triggered purely because that template's audience blurb contains the boilerplate phrase '小红书种草内容创作者' (Xiaohongshu content-marketing creators) — the bigrams 小红/红书/种草 coincidentally cleared the strict bigram threshold against ANY template mentioning that generic audience line, independent of the query's actual subject. NONE of the 23 were about aromatherapy. Fix 2 adds a '小红书' atomicEntity rule (lib/query_phrase_aliases.ts) that suppresses bigram decomposition for this and any other query embedding the Xiaohongshu platform name, while leaving the existing '香薰' alias group (aromatherapy/fragrance/scent/candle/diffuser, added in Fix 1) fully intact and independently functional. AFTER Fix 2: bucket=moderate (6 hits), and all 6 are genuinely aromatherapy-related — template-product-poster-aroma-diffuser, template-product-poster-aromatherapy-diffuser, template-soft-decoration-design-guide-aromatherapy-spa-retreat-bedroom, template-interior-design-mood-board-generator-aromatherapy-spa-corner, template-herbal-lavender-aromatherapy, template-lifestyle-info-card-aromatherapy-essential-oils. Lower count, correct content — the eval bucket alone cannot distinguish 'rich but wrong' from 'moderate but right', which is exactly why this note exists."
     },
     {
       "query": "Amazon EBC enhanced brand content layout",
@@ -955,6 +955,27 @@
       "expected": "empty",
       "expected_templates": "",
       "notes": "Fix 1 (phrase alias injection). BEFORE: bucket=moderate (4 relaxed hits, all 4 from template-product-theme-promotional-poster variants — baby-care-brand/spring-beauty-festival/summer-beach-sale/summer-snack-festival) matched purely via 3 generic marketing words ('brand'+'launch'+'visual'), none specifically about K-beauty or glass skin. AFTER: bucket=empty (0) — the glass-skin alias group raises the required-slot denominator past what those 4 generic-overlap inspirations clear. This is the same class of generic-word coincidental match the rest of Fix 1 targets (comparable to the NCT-Dream and 光与夜之恋 cases), not a loss of genuine relevant content — no K-beauty/glass-skin-specific catalog content exists (confirmed by grep)."
+    },
+    {
+      "query": "手冲咖啡工作室视觉手册",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "rich",
+      "expected_templates": "",
+      "notes": "Fix 2 (atomicEntity + alias group). BEFORE Fix 2: bucket=rich (11 strict hits, ALL WRONG) — unspaced query collapsed to one primary token, bigram-decomposed, and 工作/作室/视觉 coincidentally strict-matched template-ethnic-costume-deconstruction-board ('时尚工作室摄影' fashion-studio-photography style copy) and template-animation-studio-comparison-infographic ('动画工作室对比' anime studio comparison) — neither related to coffee or brand visual manuals. AFTER Fix 2: the '手冲咖啡' atomicEntity rule suppresses bigram decomposition (the 2 wrong templates no longer match), and its 'brand identity'/'visual identity' alias group (verified narrow — only 2 templates catalog-wide contain that literal English phrase) surfaces bucket=rich (16 relaxed hits) from the CORRECT family: template-brand-identity-moodboard-visual-system-poster and template-brand-vi-full-visual-pack-mockup, including genuine coffee-brand instances (...brew-and-co-coffee-shop, ...riseup-coffee). Same bucket label as before (rich), but the underlying content flipped from 100% wrong to genuinely on-topic — verify by inspection, not just the bucket count."
+    },
+    {
+      "query": "二手奢侈品鉴定品牌视觉",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Fix 2 (atomicEntity, purely defensive). BEFORE Fix 2: bucket=moderate (31 strict hits, ALL WRONG) — 品牌/牌视/视觉 bigrams coincidentally strict-matched template-fashion-ecommerce via its boilerplate '品牌视觉团队' (brand visual team) audience blurb, completely ignoring the query's actual distinguishing subject (二手奢侈品鉴定 = secondhand luxury goods AUTHENTICATION). AFTER Fix 2: the '二手奢侈品' atomicEntity rule suppresses bigram decomposition, bucket=empty (0). No alias tokens added — no secondhand-luxury-authentication content exists anywhere in the catalog (confirmed by grep for 二手/奢侈品/鉴定, all zero hits), so empty is the honest, correct floor rather than inventing an unsupported fallback. Same class of fix as 光与夜之恋 above: eliminate the false positive, don't fabricate a match."
+    },
+    {
+      "query": "低饱和国风茶包装设计",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "rich",
+      "expected_templates": "",
+      "notes": "Fix 2 no-op guard — deliberately NOT given a phrase rule. BEFORE and AFTER both bucket=rich (84 strict hits), unchanged. Verified via direct inspection that the match is genuine: template-food-product-packaging-design and template-eco-farm-food-uniform-product-label both strict-match via 包装/装设/设计 bigrams against their own '食品包装设计' (food packaging design) text — a real, on-topic match, just broader than tea/guofeng-specific (no 国风-tea-packaging-specific content exists, confirmed by grep). Kept in the eval set as a regression guard proving Fix 2's new rules don't touch queries that were never broken — 低饱和/国风/茶 do not appear in any Fix 2 phrase rule."
     }
   ]
 }

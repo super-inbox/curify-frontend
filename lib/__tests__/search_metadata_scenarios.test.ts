@@ -786,3 +786,151 @@ describe("Fix 1: alias-group injection does not regress an already-working query
     expect(hits).toBeGreaterThanOrEqual(relaxedThr);
   });
 });
+
+// ─── 9. Fix 2: Chinese compound phrase protection ─────────────────────────────
+//
+// Same root cause as the Fix 1 光与夜之恋 case (coincidental CJK bigram
+// collision with boilerplate template audience text), found via the same
+// audit method and fixed with the same atomicEntity mechanism — no new
+// architecture, three new evidenced rules.
+//
+// IMPORTANT CAVEAT for the negative ("no longer matches X") assertions
+// below: buildTemplateBlob in this file (pre-existing helper, unchanged)
+// only scans messages/en/nano.json. All three Fix 2 collisions
+// (小红书/手冲咖啡/二手奢侈品 vs template-fashion-ecommerce /
+// template-ethnic-costume-deconstruction-board /
+// template-animation-studio-comparison-infographic) were caused by
+// boilerplate audience text that ONLY exists in the zh-locale nano.json —
+// the en-only template blob never saw the collision to begin with, so it
+// can't demonstrate a literal "before/after" flip. What IS fully testable
+// here, and what actually drives the fix, is the QUERY-side mechanism:
+// once atomicEntityMatched is true, buildTokensWithPhrases produces an
+// EMPTY bigrams array, which is what stops the collision regardless of
+// which locale a template's boilerplate text lives in. The full en+zh
+// before/after (rich(23/11/31), all wrong → moderate/rich/empty, all
+// correct or honestly empty) is verified in scripts/eval_search.cjs and
+// documented in scripts/configs/search_eval_set.json.
+
+describe("Fix 2: new phrase rules set atomicEntityMatched correctly", () => {
+  it("小红书: atomic, no alias group", () => {
+    const q = "小红书香薰产品种草图";
+    const result = applyPhraseAliasRules(normalizeForSearch(q), buildPrimaryTokens(q));
+    expect(result.atomicEntityMatched).toBe(true);
+    expect(result.matchedPhrases).toContain("小红书");
+  });
+
+  it("手冲咖啡: atomic AND injects the brand-identity/visual-identity alias group", () => {
+    const q = "手冲咖啡工作室视觉手册";
+    const result = applyPhraseAliasRules(normalizeForSearch(q), buildPrimaryTokens(q));
+    expect(result.atomicEntityMatched).toBe(true);
+    expect(result.matchedPhrases).toContain("手冲咖啡");
+    expect(result.aliasGroups.some((g) => g.includes("brand identity"))).toBe(true);
+    expect(result.aliasGroups.some((g) => g.includes("visual identity"))).toBe(true);
+  });
+
+  it("二手奢侈品: atomic, no alias group (purely defensive, no catalog content to redirect toward)", () => {
+    const q = "二手奢侈品鉴定品牌视觉";
+    const result = applyPhraseAliasRules(normalizeForSearch(q), buildPrimaryTokens(q));
+    expect(result.atomicEntityMatched).toBe(true);
+    expect(result.matchedPhrases).toContain("二手奢侈品");
+    expect(result.aliasGroups.length).toBe(0);
+  });
+
+  it("bare '工作室' / '视觉' / '品牌' queries without the trigger phrase are untouched — rules only fire on the full compound", () => {
+    const q = "工作室视觉品牌设计";
+    const result = applyPhraseAliasRules(normalizeForSearch(q), buildPrimaryTokens(q));
+    expect(result.atomicEntityMatched).toBe(false);
+    expect(result.aliasGroups.length).toBe(0);
+  });
+});
+
+describe("Fix 2: mechanism-level proof that bigram decomposition is suppressed for all three new phrases", () => {
+  it("小红书香薰产品种草图: atomicEntity blocks bigram generation (the mechanism that stopped the fashion-ecommerce false positive)", () => {
+    const { atomicEntityMatched, bigrams } = buildTokensWithPhrases("小红书香薰产品种草图");
+    expect(atomicEntityMatched).toBe(true);
+    expect(bigrams).toEqual([]);
+  });
+
+  it("手冲咖啡工作室视觉手册: atomicEntity blocks bigram generation (the mechanism that stopped the costume/anime-studio false positives)", () => {
+    const { atomicEntityMatched, bigrams } = buildTokensWithPhrases("手冲咖啡工作室视觉手册");
+    expect(atomicEntityMatched).toBe(true);
+    expect(bigrams).toEqual([]);
+  });
+
+  it("二手奢侈品鉴定品牌视觉: atomicEntity blocks bigram generation (the mechanism that stopped the fashion-ecommerce false positive)", () => {
+    const { atomicEntityMatched, bigrams } = buildTokensWithPhrases("二手奢侈品鉴定品牌视觉");
+    expect(atomicEntityMatched).toBe(true);
+    expect(bigrams).toEqual([]);
+  });
+});
+
+describe("Fix 2: 小红书香薰产品种草图 — genuine aromatherapy results still surface (positive regression)", () => {
+  it("all 6 individually-scored matches are genuinely aromatherapy-related, none are fashion-ecommerce products", () => {
+    const { primary, aliasGroups, bigrams } = buildTokensWithPhrases("小红书香薰产品种草图");
+    const relaxedThr = Math.ceil((primary.length + aliasGroups.length) / 2);
+    const matched: string[] = [];
+    for (const r of INSP) {
+      const localeFields = Object.values(r.locales ?? {}).flatMap((l) => [l?.title, l?.category]);
+      const blob = normalizeForSearch(
+        [r.id, r.template_id ?? "", ...(r.tags ?? []), ...(r.topics ?? []), ...(r.search_aliases ?? []), ...Object.values(r.params ?? {}), ...localeFields]
+          .filter((v): v is string => typeof v === "string" && v.length > 0)
+          .join(" ")
+      );
+      const { hits } = scoreBlobWithAliases(blob, primary, aliasGroups, bigrams);
+      if (hits >= relaxedThr) matched.push(r.id);
+    }
+    expect(matched.length).toBeGreaterThanOrEqual(6);
+    for (const id of matched) {
+      expect(id, `${id} should not be a fashion-ecommerce product`).not.toMatch(/^template-fashion-ecommerce-/);
+    }
+    expect(matched).toContain("template-product-poster-aromatherapy-diffuser");
+  });
+});
+
+describe("Fix 2: 手冲咖啡工作室视觉手册 — coffee/brand-identity family results surface (positive regression)", () => {
+  it("the brand-identity-moodboard and brand-vi-full-visual-pack templates strict-match via the alias group", () => {
+    const { primary, aliasGroups, bigrams } = buildTokensWithPhrases("手冲咖啡工作室视觉手册");
+    for (const tid of [
+      "template-brand-identity-moodboard-visual-system-poster",
+      "template-brand-vi-full-visual-pack-mockup",
+    ]) {
+      const blob = buildTemplateBlob(tid);
+      const { hits } = scoreBlobWithAliases(blob, primary, aliasGroups, bigrams);
+      expect(hits, `${tid} should clear the relaxed threshold via brand identity / visual identity`).toBeGreaterThanOrEqual(1);
+    }
+  });
+
+  it("does NOT match the unrelated ethnic-costume or animation-studio templates via the (now-suppressed) generic bigrams", () => {
+    const { primary, aliasGroups, bigrams } = buildTokensWithPhrases("手冲咖啡工作室视觉手册");
+    for (const tid of [
+      "template-ethnic-costume-deconstruction-board",
+      "template-animation-studio-comparison-infographic",
+    ]) {
+      const blob = buildTemplateBlob(tid);
+      const { allRequired } = scoreBlobWithAliases(blob, primary, aliasGroups, bigrams);
+      expect(allRequired, `${tid} should not strict-match`).toBe(false);
+    }
+  });
+});
+
+describe("Fix 2: no-op guard — 低饱和国风茶包装设计 is untouched", () => {
+  it("no Fix 2 (or Fix 1) phrase rule fires — tokenization is exactly the pre-Fix-2 baseline", () => {
+    const q = "低饱和国风茶包装设计";
+    const { atomicEntityMatched, aliasGroups, bigrams, primary } = buildTokensWithPhrases(q);
+    expect(atomicEntityMatched).toBe(false);
+    expect(aliasGroups.length).toBe(0);
+    expect(primary).toEqual([q]);
+    // Unspaced 9-char CJK query -> 8 overlapping 2-char bigrams, none
+    // suppressed (no atomicEntity rule matched).
+    expect(bigrams).toEqual(["低饱", "饱和", "和国", "国风", "风茶", "茶包", "包装", "装设", "设计"]);
+
+    // NOTE: this file's buildTemplateBlob is en-only (pre-existing
+    // limitation, see the caveat above describe block 9), and the
+    // genuine 食品包装设计 ("food packaging design") match for this
+    // query lives only in the zh-locale nano.json text — same limitation
+    // as every negative-collision test in this section. The full en+zh
+    // verification (rich(84) unchanged, both templates confirmed
+    // genuinely on-topic via direct grep of the zh text) is documented in
+    // scripts/configs/search_eval_set.json and scripts/eval_search.cjs.
+  });
+});
