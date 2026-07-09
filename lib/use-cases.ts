@@ -124,13 +124,15 @@ export const USE_CASES: UseCaseDef[] = [
   // progseo + forwarder — pipeline-level industrial pitch, not tool
   // browser. Citation-grade thesis at
   // ~/curify-studio/docs/reddit-demand-mining-merch-operators-2026-06-07.md.
-  // 2026-07-07 GTM tighten: surfaced the two merch-intent image demos
-  // (ecommerce-photo = upload product → listing image; ai-product-photo-
-  // generator = one hero shot → many variations) instead of leaving the
-  // page tool-less. These ARE the SKU-velocity demo the 张总/r/printondemand
-  // pain points ask for; the template feed below is now explicitly tagged
-  // for-merch-operators (POD/mockup/sticker/packaging goods).
-  { slug: "for-merch-operators", tier: "b2b", toolSlugs: ["ecommerce-photo", "ai-product-photo-generator"] },
+  // 2026-07-09: reverted to tool-less. The two product-photo tools we
+  // briefly surfaced here (ecommerce-photo, ai-product-photo-generator)
+  // are DTC/listing-image tools, not POD/merch-design — a persona
+  // mismatch. Instead the merch page now features the dedicated
+  // /ip-merch-demo walkthrough (brief → character canon → 16-piece
+  // sticker pack → gift-box mockup → full SKU family) as a prominent CTA
+  // banner (see USE_CASE_DEMO in UseCaseClient.tsx). The product-photo
+  // tools remain on for-marketers + for-programmatic-seo where they fit.
+  { slug: "for-merch-operators", tier: "b2b", toolSlugs: [] },
 ];
 
 export function getUseCaseBySlug(slug: string): UseCaseDef | undefined {
