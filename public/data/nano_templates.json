@@ -18733,5 +18733,356 @@
       "minimalist",
       "posters"
     ]
+  },
+  {
+    "id": "template-vietnam-traditional-handicraft-village-curved-wave-art-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vietnamese Traditional Handicraft Village Curved Wave Art Poster Generator) Vertical cultural craft promotional art poster themed '{vietnamese_handicraft_theme}'. Layout: Pure solid dark black minimalist background; top arched curved golden serif Vietnamese title text with smaller secondary descriptive subtitle below; central giant flowing spiral/curved wave texture formed by the core handicraft raw material & finished products of the craft, miniature tiny artisan figurines scattered inside the wave shape demonstrating hand-making procedures; delicate miniature craft scene diorama embedded within the curved flowing form, rich material texture matching the craft category. Style: hyperrealistic miniature diorama 3D render, cinematic soft studio lighting, premium luxury texture, cohesive monochromatic tone matching the handicraft material, elegant golden metallic typography, high-detail commercial cultural heritage art print, deep dark moody background to highlight craft textures. Subject: flowing curved wave diorama art poster showcasing the craft culture of '{vietnamese_handicraft_theme}' traditional Vietnamese handicraft village.",
+        "parameters": [
+          {
+            "name": "vietnamese_handicraft_theme",
+            "label": "越南传统手工艺村落完整主题名称",
+            "type": "text",
+            "placeholder": [
+              "Cát Đằng竹胎漆器村越南传统手工艺螺旋波浪微缩场景艺术海报",
+              "Phạm Pháo铜管乐器手工村落3D写实文创宣传展板",
+              "Đó Thủ Sỹ竹编渔篓古法工艺深色质感文化长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vietnam-traditional-handicraft-village-curved-wave-art-poster-brass-instrument-village-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "wall-art",
+      "art-prints",
+      "illustration",
+      "vibrant"
+    ]
+  },
+  {
+    "id": "template-mechanical-keycap-mini-diorama-3d-art-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Mechanical Keyboard Keycap Mini Diorama 3D Art Generator) Vertical miniature diorama art poster themed '{diorama_scene_theme}'. Layout: Realistic mechanical keyboard base as background, focus shot on one single oversized keycap housing a fully enclosed tiny indoor miniature scene; transparent glossy resin keycap shell (or solid plastic cap) with backlit glowing key label text on top; inside the cap: hyper-detailed tiny figurines, complete functional room furniture, matching ambient props, themed lighting and decorative environment details, shallow depth of field bokeh keyboard key background blur. Style: ultra realistic 3D render macro photography, soft cinematic studio lighting, clean shallow depth-of-field shot, intricate miniature clay diorama texture, warm/cyber/pastel custom color tone matching the scene theme, high detail commercial art print, whimsical desk decorative artwork. Subject: macro close-up 3D artwork of a themed tiny room miniature diorama sealed inside a single mechanical keyboard keycap, theme of '{diorama_scene_theme}'.",
+        "parameters": [
+          {
+            "name": "diorama_scene_theme",
+            "label": "键帽微缩场景完整主题",
+            "type": "text",
+            "placeholder": [
+              "ESC键帽透明外壳程序员深夜敲代码赛博微缩小屋3D微距插画",
+              "ENTER键帽黑客 hoodie 程序员机房迷你场景写实渲染图",
+              "ESC键帽居家瑜伽女孩温馨紫色卧室微缩手办键帽艺术图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-mechanical-keycap-mini-diorama-3d-art-poster-esc-programmer-cyber-hut-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "3d",
+      "art-prints",
+      "illustration",
+      "wall-art"
+    ]
+  },
+  {
+    "id": "template-one-piece-valentine-flat-magazine-character-card-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(One Piece Valentine Flat Magazine Character Card Poster Generator) Vertical modern flat graphic illustration character collectible card themed '{one_piece_character_name}'. Layout: White thin magazine border frame layout; top large bold serif magazine headline text + small Japanese Valentine subheading, tiny serial number & tagline on top corners; central bust shot of One Piece character, upward tilted profile view, wearing red heart-shaped sunglasses, large red gift ribbon wrapped around torso; clean two-tone flat color block background matching the character’s signature color palette, minimalist solid color illustration style without complex shadows. Style: bold solid flat vector graphic art, limited saturated retro pop color palette, clean sharp line art, Valentine’s Day gift card collectible magazine aesthetic, minimalist modern anime illustration, high resolution printable trading card poster. Subject: Valentine heart sunglasses flat magazine style collectible character card of One Piece '{one_piece_character_name}' crew member.",
+        "parameters": [
+          {
+            "name": "one_piece_character_name",
+            "label": "海贼王角色完整名称",
+            "type": "text",
+            "placeholder": [
+              "罗罗诺亚·索隆情人节爱心墨镜扁平杂志风收藏人物卡竖版画",
+              "蒙奇·D·路飞红色丝带礼物主题极简插画海报",
+              "娜美ONE PIECE情人节潮流扁平风角色卡片"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-one-piece-valentine-flat-magazine-character-card-poster-luffy-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "character-card",
+      "illustration",
+      "collectible"
+    ]
+  },
+  {
+    "id": "template-amazon-product-six-grid-infographic-listing-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Amazon E-commerce Product Six Grid Listing Infographic Generator) Vertical Amazon product detail main image infographic poster themed '{product_full_name}'. Layout: Clean soft neutral off-white background, evenly divided 2×3 six rectangular module grid layout with thin subtle dividing lines; Grid 1 top-left: Hero product main shot + core selling feature icon bullet list; Grid 2 top-right: Lifestyle scene photo showing real usage scenario with text label of applicable occasions; Grid 3 middle-left: Core performance close-up functional demonstration diagram with parameter tag icons; Grid 4 middle-right: Product dimension size technical diagram + component feature annotation labels; Grid 5 bottom-left: Side-by-side comparison chart block vs ordinary competing products with tick cross indicators; Grid 6 bottom-right: Complete packaging box unboxing shot listing all included accessories with numbered labels. Style: Soft warm pastel brand color matching the product, clean minimalist commercial e-commerce graphic design, soft natural studio lighting product photography, rounded sans-serif marketing text, small simple line feature icons, high resolution printable Amazon listing main image, tidy readable layout for mobile shopping browsing. Subject: six-panel grid commercial product marketing infographic for Amazon listing of '{product_full_name}'.",
+        "parameters": [
+          {
+            "name": "product_full_name",
+            "label": "完整电商商品名称",
+            "type": "text",
+            "placeholder": [
+              "BlendLife粉色便携充电榨汁杯亚马逊六格详情主图展板",
+              "CloudCandle冰丝凉感U型旅行护颈枕跨境电商产品信息长图",
+              "户外折叠保温水杯亚马逊商品六板块营销信息海报"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-amazon-product-six-grid-infographic-listing-poster-portable-juicer-cup-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "infographic",
+      "merch-commerce",
+      "product",
+      "posters"
+    ]
+  },
+  {
+    "id": "template-micro-worker-big-smartphone-ecommerce-store-3d-art-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Miniature Worker Giant Smartphone E-commerce Shop 3D Commercial Art Generator) Vertical surreal hyperrealistic 3D render poster themed '{brand_store_theme}'. Layout: Oversized giant smartphone standing vertically as central scene prop, screen displays brand online store 4-grid product showcase layout with product name, star rating and review count; multiple tiny miniature uniform staff figurines performing retail work: climbing ladders to place goods into screen product slots, rappelling down ropes to hang merchandise, kneeling to check order tablet, hauling full-size physical goods beside the phone; minimalist clean matching brand tone indoor warehouse/store background, reflective polished floor surface. Style: cinematic soft studio lighting, ultra detailed macro miniature diorama texture, cohesive brand exclusive color palette matching the brand identity, sharp photorealistic commercial advertising render, shallow depth of field, premium luxury retail visual atmosphere. Subject: surreal miniature worker giant mobile phone online shopping store 3D art poster for brand '{brand_store_theme}' e-commerce advertising.",
+        "parameters": [
+          {
+            "name": "brand_store_theme",
+            "label": "品牌线上商城完整主题名称",
+            "type": "text",
+            "placeholder": [
+              "LV奢侈品线上商城巨型手机微缩工匠3D超现实商业宣传图",
+              "Nike运动服饰电商页面迷你工人场景写实渲染海报",
+              "麦当劳快餐外卖线上商店巨型手机微观创意广告长图"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-micro-worker-big-smartphone-ecommerce-store-3d-art-poster-lv-luxury-store-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "3d",
+      "merch-commerce",
+      "art-prints",
+      "illustration"
+    ]
+  },
+  {
+    "id": "template-einstein-character-russian-product-ad-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Einstein Character Russian Language Commercial Product Advertising Poster Generator) Vertical retail product marketing poster themed '{russian_product_theme}'. Layout: Central portrait of Albert Einstein cosplaying matching the product style, large bold stylized Russian headline typography at top, product hero shot placed foreground, small Russian text feature labels and parameter tags overlayed, themed decorative graphic elements matching merchandise, gradient brand color background. Style: vibrant modern retail commercial illustration, bold saturated color palette, clean photorealistic character rendering, layered graphic advertising layout, Cyrillic typography design, high resolution marketplace print ad. Subject: Russian language product promotional poster featuring Einstein character for '{russian_product_theme}' retail goods.",
+        "parameters": [
+          {
+            "name": "russian_product_theme",
+            "label": "俄文商品完整品类名称",
+            "type": "text",
+            "placeholder": [
+              "925银复古朋克戒指套装俄语电商爱因斯坦人物宣传海报",
+              "纯棉格纹居家睡衣俄式零售商业广告竖版画",
+              "22mm粉色卷发棒潮流马卡龙配色俄文商品推广展板"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-einstein-character-russian-product-ad-poster-silver-punk-rings-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "merch-commerce",
+      "product",
+      "character"
+    ]
+  },
+  {
+    "id": "template-bilingual-chinese-vocabulary-word-card-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kid's Bilingual Chinese Vocabulary Flashcard Vertical Poster Generator) Uniform vertical Chinese beginner word learning flashcard themed '{chinese_vocab_word}'. Fixed unified layout for full vocabulary series:\n1. Top text area: Green pinyin phonetic spelling of the word, huge bold black regular script two-character Chinese vocabulary word, simple green lowercase English translation of the word below the characters.\n2. Middle illustration block: Soft warm watercolor children's illustration matching the word meaning, gentle pastoral mountain and cloud background, rounded rectangle border around the drawing, gentle muted earth & green watercolor tone.\n3. Bottom sentence section: Thin dividing line; left dark green rounded rectangular label with white text '例句'; followed by complete Chinese example sentence, its pinyin transcription underneath, then matching English translation of the sentence at the very bottom.\nGlobal unified style: Clean off-white soft paper background, gentle watercolor illustration texture, simple kid-friendly rounded typography, fresh natural muted color palette, gentle Chinese countryside landscape decorative background elements, printable A4 classroom bilingual Mandarin learning flashcard, warm tranquil educational aesthetic.\nSubject: Standard series bilingual Chinese vocabulary learning flashcard for word '{chinese_vocab_word}'.",
+        "parameters": [
+          {
+            "name": "chinese_vocab_word",
+            "label": "中文双字词汇完整词语",
+            "type": "text",
+            "placeholder": [
+              "时间 shíjiān time",
+              "梦想 mèngxiǎng dream",
+              "海洋 hǎiyáng ocean",
+              "目标 mùbiāo goal target",
+              "学习 xuéxí study learn",
+              "家庭 jiātíng family",
+              "勇气 yǒngqì courage",
+              "朋友 péngyou friend"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-bilingual-chinese-vocabulary-word-card-poster-shijian-time-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "flashcards",
+      "study-sheets",
+      "vocabulary",
+      "education",
+      "bilingual"
+    ]
+  },
+  {
+    "id": "template-hsk-bilingual-reading-text-lesson-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(HSK Bilingual Mandarin Reading Lesson Vertical Worksheet Poster Generator) Standard uniform HSK graded Chinese reading teaching poster themed '{hsk_article_title}', level marked HSK X. Fixed full series modular layout:\n1. Header zone: Left cloud-shaped label text '适合水平 HSK X'; Middle ribbon banner '阅读课文 | Reading Lesson'; Huge bold Chinese article title + small lowercase English subtitle underneath; Top right cute matching story scene watercolor illustration.\n2. Main text left column: Full reading passage line-by-line layout, each line first complete pinyin transcription, then simplified Chinese sentence, clean line spacing for beginner reading practice.\n3. Right vertical illustration column: Multi-panel warm watercolor cartoon illustrations matching key plot scenes of the story, soft pastel kids illustration style, rounded corner frames.\n4. Bottom vocabulary section: Title '生词 | New Words', 2-row × 4-column grid of word cards; each small card contains numbered Chinese word, pinyin, simple English translation, tiny matching icon illustration in light rounded rectangle box.\nGlobal unified style: Clean soft off-white paper background, warm gentle children's watercolor art, cute rounded sans-serif font, pastel muted natural color palette, decorative star & heart divider lines, printable A4 classroom Mandarin learning worksheet, beginner-friendly low-difficulty reading textbook page aesthetic.\nSubject: Graded HSK bilingual Chinese reading lesson worksheet for story '{hsk_article_title}'",
+        "parameters": [
+          {
+            "name": "hsk_article_title",
+            "label": "HSK分级阅读课文完整标题",
+            "type": "text",
+            "placeholder": [
+              "HSK1 在学校的一天 A Day at School reading worksheet",
+              "HSK1 小猫和朋友 The Little Cat and Her Friend lesson poster",
+              "HSK2 找鞋子 Looking for Shoes Chinese reading sheet",
+              "HSK2 小白兔和胡萝卜 Little White Rabbit and the Carrot worksheet",
+              "HSK2 小红帽 Little Red Riding Hood graded text poster",
+              "HSK3 帮助奶奶 Helping Grandma bilingual reading page"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-hsk-bilingual-reading-text-lesson-poster-hsk1-day-at-school-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "study-sheets",
+      "learning-materials",
+      "education",
+      "bilingual"
+    ]
+  },
+  {
+    "id": "template-vintage-classic-novel-book-summary-infographic-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Antique Paper Classic Literature Novel Summary Infographic Vertical Poster Generator) Unified vintage aged parchment book breakdown poster themed '{novel_full_title}'. Fixed modular layout shared for all classic novel series:\n1. Header Section: Large serif title of the novel, author credit line, one-sentence core premise blurb, top border full-scene vintage story watercolor illustration matching the book setting.\n2. Main Story Plot Grid: Numbered multi-panel horizontal story chapter blocks, each panel contains small antique engraved illustration + short concise plot paragraph covering the full narrative arc from opening to resolution.\n3. Middle Character Row: Horizontal lineup of character portrait busts, each labeled with character name + brief one-line description of their role in the story.\n4. Bottom Three Column Footer Section:\n    - Left: MAJOR THEMES box, each theme paired with small symbolic vintage icon\n    - Center: Framed timeless iconic quote pulled from the novel, decorative wreath border\n    - Right: ABOUT THE BOOK / WHY THE STORY MATTERS supplementary info box\nGlobal unified style: Warm sepia aged parchment paper texture, antique engraving & watercolor mixed illustration style, classic old-book serif typography, delicate floral/vine decorative borders, muted earth vintage color palette, printable classroom literature study guide poster, literary textbook aesthetic, ultra detailed 8K print-ready vertical infographic.\nSubject: Vintage full summary educational infographic poster for classic novel '{novel_full_title}'",
+        "parameters": [
+          {
+            "name": "novel_full_title",
+            "label": "经典小说完整书名",
+            "type": "text",
+            "placeholder": [
+              "Anne of Green Gables by L.M. Montgomery vintage novel summary infographic",
+              "The Count of Monte Cristo by Alexandre Dumas story breakdown poster",
+              "Gulliver in Lilliput Jonathan Swift literary study sheet",
+              "Heidi by Johanna Spyri classic children's novel infographic",
+              "The Old Man and the Sea Ernest Hemingway vintage book summary poster"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vintage-classic-novel-book-summary-infographic-poster-anne-of-green-gables-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "infographic",
+      "study-sheets",
+      "wall-art",
+      "education"
+    ]
+  },
+  {
+    "id": "template-3d-chibi-football-player-turnaround-sheet",
+    "locales": {
+      "en": {
+        "base_prompt": "(Pixar 3D Cute Chibi Football Figurine Turnaround Sheet Generator) Clean white seamless background, three full-body character views arranged horizontally: front view, side profile view, back view, unified tough crossed-arms stern expression for all three angles, consistent lighting across all poses.\nCharacter style: Big head small body chibi cartoon toy figurine, smooth plastic toy texture, soft subsurface scattering skin, clean PBR rendering, Pixar animated movie aesthetic, accurate real person facial features, hair shape, beard, tattoos reproduced faithfully from reference photo, full official national team soccer uniform including jersey number, shorts, striped socks, football cleats, complete matching team color scheme.\nLighting: Soft even studio key light, subtle gentle shadows, no harsh highlights, plain empty pure white background, no extra scenery, ultra sharp 8K render, product photography for collectible figure design sheet.\nSubject: Three-view turnaround reference sheet of chibi figurine for soccer player '{player_name}', based on real reference portrait photo, matching his national team home kit number '{jersey_number}'",
+        "parameters": [
+          {
+            "name": "player_name",
+            "label": "球员姓名与所属国家队球衣 / Player name + national-team kit",
+            "type": "text",
+            "placeholder": [
+              "Neymar, Brazil national team yellow home kit",
+              "Lionel Messi, Argentina Albiceleste home jersey",
+              "Kylian Mbappé, France dark blue national uniform",
+              "Erling Haaland, Norway red home kit",
+              "Cristiano Ronaldo, Portugal red-green split jersey"
+            ]
+          },
+          {
+            "name": "jersey_number",
+            "label": "球衣号码 / Jersey number",
+            "type": "text",
+            "placeholder": [
+              "10",
+              "10",
+              "10",
+              "9",
+              "7"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-3d-chibi-football-player-turnaround-sheet-neymar-brazil-10-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "character",
+      "3d",
+      "sports",
+      "collectible",
+      "illustration"
+    ]
+  },
+  {
+    "id": "template-chinese-compound-word-literacy-cartoon",
+    "locales": {
+      "en": {
+        "base_prompt": "(Chinese Compound Word Literacy Cartoon Generator) Solid soft pastel color background, horizontal layout: left cartoon illustration representing the first Chinese character + plus sign (+) + middle cartoon illustration representing the second Chinese character + equal sign (=) + right cartoon illustration representing the final two-character compound word. Below the illustrations are three column layouts, each column has pinyin on top, Chinese character in grid box in the middle, English meaning at the bottom. Flat minimalist cute cartoon style, soft harmonious color palette, simple clean lines, kid-friendly aesthetic, 500x500 square aspect ratio, high resolution, perfect for preschool Chinese learning materials\n\nWord set to illustrate (first character / second character / compound word, each as pinyin, English meaning, illustration hint): {compound_word_info}.",
+        "parameters": [
+          {
+            "name": "compound_word_info",
+            "label": "第一个汉字信息 + 第二个汉字信息 + 合成双字词信息",
+            "type": "text",
+            "placeholder": [
+              "壁(bì,Wall,wall painting) + 虎(hǔ,Tiger,tiger cub illustration) + 壁虎(bì hǔ,Gecko,gecko illustration)",
+              "海(hǎi,sea,waves painting) + 豚(tún,pig,pig illustration) + 海豚(hǎi tún,dolphin,dolphin illustration)",
+              "企(qǐ,standing,standing guard illustration) + 鹅(é,goose,swan illustration) + 企鹅(qǐ é,penguin,penguin illustration)",
+              "熊(xióng,bear,bear illustration) + 猫(māo,cat,cat illustration) + 熊猫(xióng māo,panda,panda illustration)",
+              "海(hǎi,sea,waves painting) + 马(mǎ,horse,horse head illustration) + 海马(hǎi mǎ,seahorse,seahorse illustration)"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-chinese-compound-word-literacy-cartoon-hai-tun-dolphin-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "flashcards",
+      "study-sheets",
+      "education",
+      "bilingual",
+      "illustration"
+    ]
   }
 ]
