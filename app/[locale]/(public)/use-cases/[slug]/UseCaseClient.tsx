@@ -55,34 +55,60 @@ const USE_CASE_VIDEO_ASPECT: Record<string, string> = {
 };
 const DEFAULT_VIDEO_ASPECT = "aspect-[9/16]";
 
-// Featured "pitch demo" banner. Some personas have a dedicated pre-rendered
-// walkthrough surface (/ip-merch-demo, sibling to /illustrator-demo +
-// /progseo-demo) that shows the full multi-stage workflow far better than a
-// generic tool card — so we feature it as a prominent CTA banner below the
-// hero instead of a tools grid. Copy is held here in en/zh and locale-picked,
-// mirroring the demo seed's own EN/ZH-plus-fallback localization
-// (lib/ip_merch_demo.ts) rather than round-tripping a noindex outreach
-// surface through the 10-locale message catalog. Add an entry to extend to
-// for-designers (/illustrator-demo) or for-programmatic-seo (/progseo-demo).
+// Featured "pitch demo" banners. Some personas have dedicated pre-rendered
+// walkthrough surfaces (/ip-merch-demo, /illustrator-demo — noindex pitch
+// mode) that show the full multi-stage workflow far better than a generic
+// tool card, so we feature them as prominent CTA banner cards below the hero
+// instead of a tools grid. A persona can list more than one — /illustrator-
+// demo (sketch → print-ready styled series) is the shared JTBD for BOTH merch
+// operators and designers, so it appears on both pages. Copy is held here in
+// en/zh and locale-picked, mirroring the demo seeds' own EN/ZH-plus-fallback
+// localization (lib/ip_merch_demo.ts / lib/illustrator_demo.ts) rather than
+// round-tripping a noindex outreach surface through the 10-locale catalog.
 type DemoCopy = { eyebrow: string; title: string; subtitle: string; button: string };
-const USE_CASE_DEMO: Record<string, { href: string; en: DemoCopy; zh: DemoCopy }> = {
-  "for-merch-operators": {
-    href: "/ip-merch-demo",
-    en: {
-      eyebrow: "Live demo",
-      title: "See the full IP-merch workflow",
-      subtitle:
-        "One IP brief → locked character canon → 16-piece sticker pack → retail gift-box mockup → full SKU family. The same engine we run with paid factory customers.",
-      button: "Open the IP-merch demo",
-    },
-    zh: {
-      eyebrow: "在线演示",
-      title: "查看完整 IP 周边设计工作流",
-      subtitle:
-        "一份 IP 简报 → 锁定角色设定 → 16 张表情贴纸包 → 零售礼盒样机 → 完整 SKU 家族。与我们为付费工厂客户运行的是同一套引擎。",
-      button: "打开 IP 周边演示",
-    },
+type DemoDef = { key: string; href: string; en: DemoCopy; zh: DemoCopy };
+
+const IP_MERCH_DEMO: DemoDef = {
+  key: "ip-merch-demo",
+  href: "/ip-merch-demo",
+  en: {
+    eyebrow: "Live demo",
+    title: "See the full IP-merch workflow",
+    subtitle:
+      "One IP brief → locked character canon → 16-piece sticker pack → retail gift-box mockup → full SKU family. The same engine we run with paid factory customers.",
+    button: "Open the IP-merch demo",
   },
+  zh: {
+    eyebrow: "在线演示",
+    title: "查看完整 IP 周边设计工作流",
+    subtitle:
+      "一份 IP 简报 → 锁定角色设定 → 16 张表情贴纸包 → 零售礼盒样机 → 完整 SKU 家族。与我们为付费工厂客户运行的是同一套引擎。",
+    button: "打开 IP 周边演示",
+  },
+};
+
+const ILLUSTRATOR_DEMO: DemoDef = {
+  key: "illustrator-demo",
+  href: "/illustrator-demo",
+  en: {
+    eyebrow: "Live demo",
+    title: "Turn one sketch into a styled series",
+    subtitle:
+      "One hand-drawn sketch → 4 finished aesthetic candidates (heritage mineral, ink & watercolor, Q-cute…) → lock a style → batch-render the same subject, print-ready and series-consistent.",
+    button: "Open the illustrator demo",
+  },
+  zh: {
+    eyebrow: "在线演示",
+    title: "一张草图，生成整套风格系列",
+    subtitle:
+      "一张手绘草图 → 4 个成品美学候选（矿物重彩 / 水墨淡彩 / Q 版水彩…）→ 锁定风格 → 批量生成同一主题，可直接印刷、系列风格统一。",
+    button: "打开插画师演示",
+  },
+};
+
+const USE_CASE_DEMO: Record<string, DemoDef[]> = {
+  "for-merch-operators": [IP_MERCH_DEMO, ILLUSTRATOR_DEMO],
+  "for-designers": [ILLUSTRATOR_DEMO],
 };
 
 function UseCaseVideo({
@@ -282,11 +308,14 @@ export default function UseCaseClient({
   // Optional explainer video on the right side of the hero. Only the
   // slugs in USE_CASE_VIDEO_KEY have a video pair under /public/video/.
   const videoKey = USE_CASE_VIDEO_KEY[slug];
-  // Optional featured pitch-demo banner (see USE_CASE_DEMO). demoCopy is
-  // locale-picked (zh → zh, else en) to match the demo surface's own
+  // Optional featured pitch-demo banner cards (see USE_CASE_DEMO). Copy is
+  // locale-picked (zh → zh, else en) to match each demo surface's own
   // EN/ZH-plus-fallback localization.
-  const demo = USE_CASE_DEMO[slug];
-  const demoCopy = demo ? (locale === "zh" ? demo.zh : demo.en) : null;
+  const demos = (USE_CASE_DEMO[slug] ?? []).map((d) => ({
+    key: d.key,
+    href: d.href,
+    copy: locale === "zh" ? d.zh : d.en,
+  }));
   // Share button props — ShareButton auto-prepends curify-ai.com on
   // relative URLs. Tracking uses contentType "page" + slug as
   // contentId so analytics groups shares per persona page.
@@ -301,10 +330,12 @@ export default function UseCaseClient({
     () => trackAction(shareTracking, "share"),
     [trackAction, shareTracking],
   );
-  // Track featured-demo CTA clicks so merch-page engagement shows up in the
-  // actions-per-route rollup (same contentType "page" as share).
+  // Track featured-demo CTA clicks so page engagement shows up in the
+  // actions-per-route rollup (same contentType "page" as share). contentId
+  // is `<slug>::<demoKey>` so analytics can tell which demo + which page.
   const handleDemoClick = useCallback(
-    () => trackAction({ contentId: slug, contentType: "page" as const }, "click"),
+    (demoKey: string) =>
+      trackAction({ contentId: `${slug}::${demoKey}`, contentType: "page" as const }, "click"),
     [trackAction, slug],
   );
 
@@ -389,32 +420,39 @@ export default function UseCaseClient({
         )}
       </div>
 
-      {/* Featured pitch-demo CTA banner — for personas with a dedicated
-          walkthrough surface (merch → /ip-merch-demo). Sits directly below
-          the hero so it reads as the primary next action. */}
-      {demo && demoCopy && (
+      {/* Featured pitch-demo CTA cards — for personas with dedicated
+          walkthrough surfaces (merch → /ip-merch-demo + /illustrator-demo;
+          designer → /illustrator-demo). Sits directly below the hero so it
+          reads as the primary next action. One card = full width; two =
+          side-by-side on md+. */}
+      {demos.length > 0 && (
         <section className="mb-10">
-          <IntlLink
-            href={demo.href}
-            onClick={handleDemoClick}
-            className="group flex flex-col gap-4 rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-white p-6 transition hover:border-purple-300 hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div className="min-w-0">
-              <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-purple-600">
-                {demoCopy.eyebrow}
-              </div>
-              <div className="text-lg font-bold text-neutral-900">
-                {demoCopy.title}
-              </div>
-              <p className="mt-1 text-sm leading-relaxed text-neutral-600">
-                {demoCopy.subtitle}
-              </p>
-            </div>
-            <span className="inline-flex flex-shrink-0 items-center justify-center gap-1.5 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-purple-700">
-              {demoCopy.button}
-              <ArrowRight className="h-4 w-4" />
-            </span>
-          </IntlLink>
+          <div className={`grid gap-4 ${demos.length > 1 ? "md:grid-cols-2" : "grid-cols-1"}`}>
+            {demos.map((demo) => (
+              <IntlLink
+                key={demo.key}
+                href={demo.href}
+                onClick={() => handleDemoClick(demo.key)}
+                className="group flex h-full flex-col rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-white p-6 transition hover:border-purple-300 hover:shadow-md"
+              >
+                <div className="flex-grow">
+                  <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-purple-600">
+                    {demo.copy.eyebrow}
+                  </div>
+                  <div className="text-lg font-bold text-neutral-900">
+                    {demo.copy.title}
+                  </div>
+                  <p className="mt-1 text-sm leading-relaxed text-neutral-600">
+                    {demo.copy.subtitle}
+                  </p>
+                </div>
+                <span className="mt-4 inline-flex w-fit items-center justify-center gap-1.5 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-purple-700">
+                  {demo.copy.button}
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </IntlLink>
+            ))}
+          </div>
         </section>
       )}
 
