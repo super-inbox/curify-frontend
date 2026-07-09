@@ -20,7 +20,7 @@ import type { ExistingExampleRef } from "@/lib/editDistance";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
 import { getTemplateWorkflows, videoShowWorkflow } from "@/lib/template_workflows";
-import { resizeToSocialBundle } from "@/lib/resize_bundle";
+import { resizeToSocialBundle, sliceIntoGrid } from "@/lib/resize_bundle";
 import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
 
@@ -138,7 +138,23 @@ export default function ReproduceWorkbench({
   const { generate: freeformGenerate, isGenerating: freeformGenerating } = useFreeformGenerate({
     tracking,
     onStart: (args) => setActiveKey((args.meta?.key as string) ?? null),
-    onSuccess: (url, args) => pushResult((args.meta?.key as string) ?? "wf", (args.meta?.label as string) ?? "Result", url),
+    onSuccess: async (url, args) => {
+      const key = (args.meta?.key as string) ?? "wf";
+      const label = (args.meta?.label as string) ?? "Result";
+      // The Instagram 9-grid workflow generates ONE composite 3x3 image; slice it
+      // client-side into 9 separate tiles so the user gets 9 post-ready files, not
+      // one image they'd have to cut up. Falls back to the composite on failure.
+      if (key === "ig-grid") {
+        try {
+          const tiles = await sliceIntoGrid(url, 3, 3);
+          tiles.forEach((t, i) => pushResult(`ig-grid-${i + 1}`, `Grid tile ${i + 1}`, t.url));
+          return;
+        } catch {
+          // CORS/decode failure — fall through and keep the composite.
+        }
+      }
+      pushResult(key, label, url);
+    },
     onSettled: () => setActiveKey(null),
   });
 

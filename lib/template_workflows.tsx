@@ -93,8 +93,8 @@ const PRINT_POSTER = wf(
   "Recompose the attached image as a print-ready poster: the artwork as a large central hero, balanced margins, clean space reserved for a title and a short caption, crisp high detail, portrait orientation. Keep the original subject and style.",
 );
 const IG_GRID = wf(
-  "ig-grid", "Instagram 9-grid", "Sliced for feed", LayoutGrid,
-  "Render the attached image as a single picture divided into a 3x3 grid (9 equal square tiles) with thin even gutters between tiles, so it reads as one image split into 9 Instagram carousel posts. Preserve the original content across the tiles.",
+  "ig-grid", "Instagram 9-grid", "9 separate tiles", LayoutGrid,
+  "Render the attached image as a single edge-to-edge composition arranged as a 3x3 grid of 9 equal square tiles with NO gutters, borders, or gaps between tiles, so it can be cleanly sliced into 9 separate square images that together reconstruct the whole. Preserve the original content across the tiles.",
 );
 const VECTOR_ICONS = wf(
   "vector-icons", "Vector icon set", "Flat minimalist icons", Shapes,

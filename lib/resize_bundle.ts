@@ -74,6 +74,42 @@ export async function resizeToSocialBundle(imageUrl: string): Promise<ResizedVar
   }
 }
 
+/** Slice a composite grid image into rows×cols separate tiles as object URLs.
+ *  Turns the "Instagram 9-grid" single composite into 9 post-ready files instead
+ *  of one image the user would have to cut up themselves. Assumes an even,
+ *  gutterless grid (the ig-grid prompt renders edge-to-edge tiles for a clean
+ *  slice). Throws on CORS/decode failure — the caller falls back to the composite. */
+export async function sliceIntoGrid(
+  imageUrl: string,
+  rows = 3,
+  cols = 3,
+): Promise<ResizedVariant[]> {
+  const bmp = await loadBitmap(imageUrl);
+  try {
+    const tileW = Math.floor(bmp.width / cols);
+    const tileH = Math.floor(bmp.height / rows);
+    const out: ResizedVariant[] = [];
+    let n = 0;
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        n += 1;
+        const canvas = document.createElement("canvas");
+        canvas.width = tileW;
+        canvas.height = tileH;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) throw new Error("no 2d context");
+        ctx.imageSmoothingQuality = "high";
+        ctx.drawImage(bmp, c * tileW, r * tileH, tileW, tileH, 0, 0, tileW, tileH);
+        const url = await canvasToUrl(canvas);
+        out.push({ key: `tile-${n}`, label: `Tile ${n}`, url, filename: `curify-grid-${n}.png` });
+      }
+    }
+    return out;
+  } finally {
+    bmp.close();
+  }
+}
+
 /** Trigger a browser download for a resized variant. */
 export function downloadVariant(v: ResizedVariant): void {
   const a = document.createElement("a");
