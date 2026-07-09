@@ -75,22 +75,84 @@ const STOPWORDS = new Set([
   "the","a","an","of","in","on","is","are","and","or","to","for","with","by","at","as","be","this","that",
   "的","了","和","及",
   "topic","topics","theme","themes","category","categories","insights","highlights","guide","guides",
+  // "template" — every inspiration blob includes r.template_id (literally
+  // "template-<slug>"), so the bare word "template" word-boundary-matches
+  // almost every record and silently inflates strict/relaxed hit counts
+  // for any query that types the word (e.g. "photocard template"). Mirror
+  // of app/[locale]/(public)/search/page.tsx STOPWORDS.
+  "template",
 ]);
 function normalizeForSearch(s) { return s.toLowerCase().replace(/×/g, "x"); }
+
+// ---- Phrase-level protection + alias injection (mirror of lib/query_phrase_aliases.ts) ----
+// scripts/*.cjs cannot `require()` a .ts module (no ts-node/tsx registered
+// in this repo — see the other scripts/lib/*.cjs helpers, which are all
+// plain JS), so this data table + matching logic is duplicated here.
+// Keep in sync with lib/query_phrase_aliases.ts.
+const PHRASE_ALIAS_RULES = [
+  { phrase: "nct dream", protectTokens: ["dream"], aliasTokens: ["nct", "kpop", "idol", "photocard", "trading card"] },
+  { phrase: "maker space", protectTokens: ["space"], aliasTokens: ["maker", "workshop", "classroom", "label", "diy"] },
+  { phrase: "photocard", aliasTokens: ["photo card", "idol card", "trading card", "card"] },
+  { phrase: "香薰", aliasTokens: ["aromatherapy", "fragrance", "scent", "candle", "diffuser"] },
+  { phrase: "ebc", aliasTokens: ["enhanced brand content", "amazon"] },
+  { phrase: "brand story", aliasTokens: ["amazon brand story", "e-commerce brand content"] },
+  { phrase: "launch poster", aliasTokens: ["product launch poster", "campaign poster", "brand launch visual"] },
+  { phrase: "glass skin", aliasTokens: ["k-beauty", "skincare"] },
+  { phrase: "chrome skincare", aliasTokens: ["y2k", "skincare"] },
+  { phrase: "光与夜之恋", atomicEntity: true },
+];
+function isCJK(s) { return /[一-龥]/.test(s); }
+function phraseMatches(rule, normalizedQuery, primaryTokens) {
+  const phrase = rule.phrase.toLowerCase();
+  if (isCJK(phrase)) return normalizedQuery.includes(phrase);
+  const words = phrase.split(/\s+/).filter(Boolean);
+  if (words.length === 0) return false;
+  if (words.length === 1) return primaryTokens.includes(words[0]);
+  for (let i = 0; i + words.length <= primaryTokens.length; i++) {
+    let matched = true;
+    for (let j = 0; j < words.length; j++) {
+      if (primaryTokens[i + j] !== words[j]) { matched = false; break; }
+    }
+    if (matched) return true;
+  }
+  return false;
+}
+function applyPhraseAliasRules(normalizedQuery, primaryTokens) {
+  const toRemove = new Set();
+  const aliasGroups = [];
+  const matchedPhrases = [];
+  let atomicEntityMatched = false;
+  for (const rule of PHRASE_ALIAS_RULES) {
+    if (!phraseMatches(rule, normalizedQuery, primaryTokens)) continue;
+    matchedPhrases.push(rule.phrase);
+    if (rule.atomicEntity) atomicEntityMatched = true;
+    for (const t of rule.protectTokens ?? []) toRemove.add(t);
+    if (rule.aliasTokens && rule.aliasTokens.length > 0) {
+      const group = [...new Set(rule.aliasTokens.map((t) => t.trim().toLowerCase()))].filter(Boolean);
+      if (group.length > 0) aliasGroups.push(group);
+    }
+  }
+  const primary = toRemove.size > 0 ? primaryTokens.filter((t) => !toRemove.has(t)) : [...primaryTokens];
+  return { primary, aliasGroups, atomicEntityMatched, matchedPhrases };
+}
+
 function buildSearchTokens(query) {
-  const primary = normalizeForSearch(query)
+  const normalizedQuery = normalizeForSearch(query);
+  let primary = normalizedQuery
     .split(/[\s,，、。.:：=·\/|()\[\]+*]+/)
     .map((w) => w.trim())
     .filter((w) => w && !STOPWORDS.has(w));
+  const phraseResult = applyPhraseAliasRules(normalizedQuery, primary);
+  primary = phraseResult.primary;
   const bigrams = [];
-  if (primary.length === 1 && /[一-龥]/.test(primary[0]) && primary[0].length >= 2) {
+  if (!phraseResult.atomicEntityMatched && primary.length === 1 && /[一-龥]/.test(primary[0]) && primary[0].length >= 2) {
     const w = primary[0];
     for (let i = 0; i < w.length - 1; i++) {
       const bg = w.slice(i, i + 2);
       if (/^[一-龥]{2}$/.test(bg)) bigrams.push(bg);
     }
   }
-  return { primary, bigrams };
+  return { primary, bigrams, aliasGroups: phraseResult.aliasGroups };
 }
 function relaxedPrimaryThreshold(n) { return n <= 1 ? 1 : Math.ceil(n / 2); }
 function bigramHitThreshold(n) {
@@ -107,9 +169,15 @@ function tokenInBlob(blob, t) {
 function scoreBlob(blob, tokens) {
   let primaryHits = 0;
   for (const t of tokens.primary) if (tokenInBlob(blob, t)) primaryHits++;
+  const aliasGroups = tokens.aliasGroups ?? [];
+  let groupHits = 0;
+  for (const group of aliasGroups) {
+    if (group.some((alt) => tokenInBlob(blob, alt))) groupHits++;
+  }
   let bigramHits = 0;
   for (const t of tokens.bigrams) if (blob.includes(t)) bigramHits++;
-  return { primaryHits, bigramHits, allPrimary: primaryHits === tokens.primary.length };
+  const requiredSlots = tokens.primary.length + aliasGroups.length;
+  return { primaryHits: primaryHits + groupHits, bigramHits, allPrimary: primaryHits + groupHits === requiredSlots };
 }
 
 // ---- One scoring pass per query (mirror of scoreQueryTokens) ----
@@ -124,7 +192,7 @@ function scoreOnce(query) {
     return { strictTpl: new Set(), tplI18n: new Set(), strictInsp: 0, effectiveInsp: 0, matchedIds: new Set() };
   }
   const bigramThr = bigramHitThreshold(tokens.bigrams.length);
-  const relaxedThr = relaxedPrimaryThreshold(tokens.primary.length);
+  const relaxedThr = relaxedPrimaryThreshold(tokens.primary.length + tokens.aliasGroups.length);
 
   const strictTpl = new Set();
   const relaxedTpl = new Set();

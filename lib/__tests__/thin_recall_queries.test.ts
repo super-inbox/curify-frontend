@@ -32,6 +32,11 @@ const STOPWORDS = new Set([
   "at","as","be","this","that","的","了","和","及",
   "topic","topics","theme","themes","category","categories",
   "insights","highlights","guide","guides",
+  // "template" — mirror of app/[locale]/(public)/search/page.tsx STOPWORDS.
+  // Every inspiration blob includes r.template_id (literally
+  // "template-<slug>"), so the bare word "template" false-positive-matches
+  // almost every record.
+  "template",
 ]);
 
 function normalizeForSearch(s: string): string {

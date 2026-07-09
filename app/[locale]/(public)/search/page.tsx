@@ -34,6 +34,7 @@ import {
 import { normalizeSearchQuery } from "@/lib/query_normalize";
 import { getBusinessOverride, applyBusinessOverride, shouldSkipTopicRedirect } from "@/lib/search_business_override";
 import { CONCEPT_SYNONYMS } from "@/lib/template_concept_expansion";
+import { applyPhraseAliasRules } from "@/lib/query_phrase_aliases";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Threshold below which we trigger the LLM multi-query expansion path
@@ -123,6 +124,15 @@ const STOPWORDS = new Set([
   "的", "了", "和", "及",
   "topic", "topics", "theme", "themes", "category", "categories",
   "insights", "highlights", "guide", "guides",
+  // "template" — every inspiration blob below includes `r.id` / `r.template_id`,
+  // which is literally `template-<slug>`, so the bare word "template"
+  // word-boundary-matches almost every inspiration and silently inflates
+  // strict/relaxed hit counts for any query that types the word (e.g.
+  // "photocard template", "poster template"). Confirmed via
+  // scripts/eval_search.cjs: dropping it changes zero existing eval-set
+  // buckets (no query in the 125-query regression set contains the
+  // literal word "template") and removes a real false-positive source.
+  "template",
 ]);
 
 // Normalize for substring matching:
@@ -137,8 +147,10 @@ function normalizeForSearch(s: string): string {
 function buildSearchTokens(query: string): {
   primary: string[];
   bigrams: string[];
+  aliasGroups: string[][];
 } {
-  const primary = normalizeForSearch(query)
+  const normalizedQuery = normalizeForSearch(query);
+  let primary = normalizedQuery
     // Split on whitespace + structural punctuation. Beyond the original
     // whitespace + sentence-end characters, we also break on `: = · / | ( ) [ ]
     // + *` and full-width colon — these show up in analyst-style structured
@@ -172,8 +184,20 @@ function buildSearchTokens(query: string): {
     }
   }
 
+  // Phrase-level protection + alias injection (lib/query_phrase_aliases.ts)
+  // — runs on the whitespace-split primary tokens, before the bigram
+  // fallback below, so multi-word named entities / compound nouns don't
+  // get diluted by their generic constituent words, and so acronyms / CJK
+  // substrings can pull in catalog-aligned vocabulary the literal query
+  // text doesn't contain. `aliasGroups` are OR-satisfied slots consumed
+  // by scoreBlob — they are NOT appended to `primary` as hard-required
+  // AND terms (that would only inflate the strict/relaxed denominator).
+  const phraseResult = applyPhraseAliasRules(normalizedQuery, primary);
+  primary = phraseResult.primary;
+
   const bigrams: string[] = [];
   if (
+    !phraseResult.atomicEntityMatched &&
     primary.length === 1 &&
     /[一-龥]/.test(primary[0]) &&
     primary[0].length >= 2
@@ -184,7 +208,7 @@ function buildSearchTokens(query: string): {
       if (/^[一-龥]{2}$/.test(bg)) bigrams.push(bg);
     }
   }
-  return { primary, bigrams };
+  return { primary, bigrams, aliasGroups: phraseResult.aliasGroups };
 }
 
 // Relaxed-mode threshold — only used when strict-AND finds zero hits.
@@ -216,21 +240,35 @@ function tokenInBlob(blob: string, t: string): boolean {
 }
 
 // Returns: { primaryHits, bigramHits, allPrimary }
-//   allPrimary  → true when every primary token appears in the blob
+//   allPrimary  → true when every primary token AND every alias group
+//                 (see lib/query_phrase_aliases.ts) appears in the blob
 //   bigramHits  → number of CJK bigrams that appear (only set when the
 //                 primary-token search yielded nothing useful)
+//
+// `aliasGroups` (from a matched phrase rule) each count as ONE required
+// slot, satisfied by ANY member — an OR-within-the-group, AND-across-
+// slots semantic. This is what lets a phrase-injected alias (e.g. "ebc"
+// -> "enhanced brand content") help a blob match without forcing every
+// alias to literally co-occur, which would only make strict/relaxed
+// matching harder than the un-expanded query.
 function scoreBlob(
   blob: string,
-  tokens: { primary: string[]; bigrams: string[] }
+  tokens: { primary: string[]; bigrams: string[]; aliasGroups?: string[][] }
 ): { primaryHits: number; bigramHits: number; allPrimary: boolean } {
   let primaryHits = 0;
   for (const t of tokens.primary) if (tokenInBlob(blob, t)) primaryHits++;
+  const aliasGroups = tokens.aliasGroups ?? [];
+  let groupHits = 0;
+  for (const group of aliasGroups) {
+    if (group.some((alt) => tokenInBlob(blob, alt))) groupHits++;
+  }
   let bigramHits = 0;
   for (const t of tokens.bigrams) if (blob.includes(t)) bigramHits++;
+  const requiredSlots = tokens.primary.length + aliasGroups.length;
   return {
-    primaryHits,
+    primaryHits: primaryHits + groupHits,
     bigramHits,
-    allPrimary: primaryHits === tokens.primary.length,
+    allPrimary: primaryHits + groupHits === requiredSlots,
   };
 }
 
@@ -472,7 +510,13 @@ export default async function SearchPage({ params, searchParams }: Props) {
     promoteAllUnderStrictTpl: boolean = true,
   ) {
     const bigramThr = bigramHitThreshold(tokens.bigrams.length);
-    const relaxedThr = relaxedPrimaryThreshold(tokens.primary.length);
+    // Alias groups count toward the same denominator scoreBlob uses
+    // (tokens.primary.length + aliasGroups.length) so the relaxed
+    // threshold stays consistent with what "required slots" actually
+    // means once phrase-injected alias groups are in play.
+    const relaxedThr = relaxedPrimaryThreshold(
+      tokens.primary.length + tokens.aliasGroups.length
+    );
 
     const strictTpl = new Set<string>();
     const relaxedTpl = new Set<string>();
