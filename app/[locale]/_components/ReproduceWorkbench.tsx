@@ -10,6 +10,7 @@ import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
+import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import { fillPrompt } from "@/lib/nano_pure";
 // Use the superset TemplateParameter (adds "daterange" + array placeholder) so
 // both the example page (nano_pure params) and the template-detail page
@@ -18,7 +19,7 @@ import { normalizePrefills, type TemplateParameter } from "@/lib/nano_prompt_uti
 import type { ExistingExampleRef } from "@/lib/editDistance";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
-import { getTemplateWorkflows } from "@/lib/template_workflows";
+import { getTemplateWorkflows, videoShowWorkflow } from "@/lib/template_workflows";
 import { resizeToSocialBundle } from "@/lib/resize_bundle";
 import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
@@ -61,6 +62,9 @@ type Props = {
   useCaseFilter?: readonly string[];
   /** content_id for tracking (example page: `${templateId}:${exampleId}`; others: templateId). */
   trackingContentId: string;
+  /** Template-level intro video (relative CDN path). When present, column 3 gets
+   *  a zero-cost "Watch video" tile that reveals this already-rendered MP4. */
+  introVideoUrl?: string;
   col1: WorkbenchCol1;
 };
 
@@ -78,6 +82,7 @@ export default function ReproduceWorkbench({
   existingExamples = [],
   useCaseFilter,
   trackingContentId,
+  introVideoUrl,
   col1,
 }: Props) {
   const t = useTranslations("actionButtons");
@@ -102,6 +107,9 @@ export default function ReproduceWorkbench({
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [soonNote, setSoonNote] = useState<string | null>(null);
+  // Set when the user taps the "Watch video" tile — reveals the template's
+  // already-rendered intro video in column 3 (free, no generation).
+  const [shownVideoUrl, setShownVideoUrl] = useState<string | null>(null);
   const [referenceImageUrl, setReferenceImageUrl] = useState<string | null>(null);
   const [isUploadingImage, setIsUploadingImage] = useState(false);
   const resultSeq = useRef(0);
@@ -141,7 +149,13 @@ export default function ReproduceWorkbench({
   // uploaded image (upload mode).
   const col1Source = col1.mode === "source" ? col1.sourceReferenceUrl : referenceImageUrl ?? "";
   const transformSource = latestUrl ?? col1Source;
-  const workflows = useMemo(() => getTemplateWorkflows(templateId), [templateId]);
+  const workflows = useMemo(() => {
+    const base = getTemplateWorkflows(templateId);
+    // Lead column 3 with a zero-cost "Watch video" tile for the ~109 templates
+    // that already ship a rendered intro video — image→video with no wait, no
+    // credits. Templates without one just show the design workflows as before.
+    return introVideoUrl ? [videoShowWorkflow(introVideoUrl), ...base] : base;
+  }, [templateId, introVideoUrl]);
 
   const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
 
@@ -166,6 +180,15 @@ export default function ReproduceWorkbench({
   };
 
   const runWorkflow = async (wf: (typeof workflows)[number]) => {
+    // "Watch video" — reveal the pre-rendered intro video. Free, instant, no
+    // backend. (The first, most-clicked tile for the templates that have one.)
+    if (wf.kind === "video-show") {
+      if (!wf.videoUrl) return;
+      setSoonNote(null);
+      setShownVideoUrl(wf.videoUrl);
+      track({ contentId: `workflow-video:${templateId}`, contentType: tracking.contentType, actionType: "click" });
+      return;
+    }
     if (wf.kind === "soon") {
       track({ contentId: `workflow-soon:${wf.key}:${templateId}`, contentType: "topic_capsule", actionType: "click" });
       setSoonNote(`${wf.label} is coming soon — we prioritize these by demand, so your click counts.`);
@@ -399,12 +422,14 @@ export default function ReproduceWorkbench({
               const Icon = wf.icon;
               const busy = activeKey === wf.key;
               const isSoon = wf.kind === "soon";
+              // Free/instant tiles (video reveal) stay enabled during a generation.
+              const isFree = wf.kind === "video-show";
               return (
                 <button
                   key={wf.key}
                   type="button"
                   title={wf.hint}
-                  disabled={anyGenerating && !isSoon}
+                  disabled={anyGenerating && !isSoon && !isFree}
                   onClick={() => runWorkflow(wf)}
                   className={`group relative flex flex-col items-center gap-1.5 rounded-xl border p-2 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 ${
                     isSoon ? "border-dashed border-neutral-300 bg-neutral-50" : "border-neutral-200 bg-white hover:border-purple-300"
@@ -425,6 +450,28 @@ export default function ReproduceWorkbench({
           </div>
 
           {soonNote && <p className="mt-2 text-[11px] text-neutral-500">{soonNote}</p>}
+
+          {/* Template intro video, revealed by the free "Watch video" tile. */}
+          {shownVideoUrl && (
+            <div className="relative mt-3 overflow-hidden rounded-2xl border border-neutral-200 bg-black shadow-sm">
+              <CdnVideo
+                key={shownVideoUrl}
+                src={shownVideoUrl}
+                controls
+                autoPlay
+                playsInline
+                className="h-auto w-full"
+              />
+              <button
+                type="button"
+                onClick={() => setShownVideoUrl(null)}
+                aria-label="Close video"
+                className="absolute right-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-lg bg-black/55 text-white backdrop-blur-sm transition hover:bg-black/75"
+              >
+                ✕
+              </button>
+            </div>
+          )}
 
           <div className="mt-3 flex flex-1 flex-col">
             <div className="relative flex min-h-[200px] flex-1 items-center justify-center overflow-hidden rounded-2xl border border-dashed border-neutral-300 bg-white p-2">

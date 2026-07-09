@@ -85,6 +85,7 @@ function ImageWorkbenchSection({
         existingExamples={template.existingExamples}
         useCaseFilter={templateUseCases}
         trackingContentId={template.template_id}
+        introVideoUrl={template.intro_video_url}
         col1={{ mode: "upload" }}
       />
     </section>

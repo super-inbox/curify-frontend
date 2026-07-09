@@ -1,4 +1,4 @@
-import { Crop, Images, LayoutGrid, Printer, Shapes, type LucideIcon } from "lucide-react";
+import { Crop, Images, LayoutGrid, PlayCircle, Printer, Shapes, type LucideIcon } from "lucide-react";
 import { PRODUCTION_TILES } from "./gallery_production_tiles";
 import { getOutputIntent, type OutputIntent } from "./output_intent";
 
@@ -29,13 +29,33 @@ export type TemplateWorkflow = {
   label: string;
   hint: string;
   icon: LucideIcon;
-  // "transform" = preset image2image prompt through the freeform pipeline;
-  // "resize"    = client-side canvas export (no backend, no credits);
-  // "soon"      = un-promptable future deliverable (placeholder).
-  kind: "transform" | "resize" | "soon";
+  // "transform"  = preset image2image prompt through the freeform pipeline;
+  // "resize"     = client-side canvas export (no backend, no credits);
+  // "video-show" = reveal an already-rendered template intro video (free, instant);
+  // "soon"       = un-promptable future deliverable (placeholder).
+  kind: "transform" | "resize" | "soon" | "video-show";
   /** Preset image2image prompt — present for kind "transform". */
   prompt?: string;
+  /** Relative CDN video path — present for kind "video-show". */
+  videoUrl?: string;
 };
+
+// "Watch video" tile for the ~109 templates that already ship a rendered intro
+// video (nano_templates.json `intro_video_url`). Clicking it just reveals the
+// existing MP4 — zero credits, no backend call. The video URL is threaded in
+// from the server page (never import the template JSON into the client surface;
+// see memory project_client_bundle_data_leak). Prepended to the workflow list
+// so image→video is the first thing a B2B user sees in column 3.
+export function videoShowWorkflow(videoUrl: string): TemplateWorkflow {
+  return {
+    key: "video-show",
+    label: "Watch video",
+    hint: "See this template in motion",
+    icon: PlayCircle,
+    kind: "video-show",
+    videoUrl,
+  };
+}
 
 // P0-4: One-Click Resize Bundle — the first real "Completion" deliverable.
 // Handled client-side (canvas cover-crop to the 3 social aspect ratios) by the

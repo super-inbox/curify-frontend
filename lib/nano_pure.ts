@@ -35,6 +35,11 @@ export type RawTemplate = {
    *  feedback_creation_vs_consumption_templates.md. */
   archetype?: "creation" | "consumption";
 
+  /** Template-level intro/demo video (relative CDN path, e.g.
+   *  "/video/template_intro/template-herbal.mp4"). ~109 templates carry one;
+   *  surfaced as a zero-cost "Watch video" tile in the column-3 workbench. */
+  intro_video_url?: string;
+
   locales?: Partial<
     Record<
     PageLocale,
@@ -86,6 +91,8 @@ export type TemplateView = {
   allow_generation?: boolean;
   requires_image_upload?: boolean;
   archetype?: "creation" | "consumption";
+  /** Template-level intro/demo video (relative CDN path). See RawTemplate. */
+  intro_video_url?: string;
   base_prompt: string;
   parameters: TemplateParameter[];
   cards: Array<{ image_id: string; params: Record<string, any> }>;
