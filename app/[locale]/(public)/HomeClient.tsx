@@ -86,7 +86,6 @@ export default function HomeClient({
         {/* Storytelling flow — message + audience entry points, layered above
             the existing content rail (kept below for discovery + indexation). */}
         <HomeHero montageImages={montageImages} />
-        <HomeOmniInput />
         <HomeSolutionsGrid />
         <HomeWorkflow />
 
@@ -114,6 +113,8 @@ export default function HomeClient({
         )}
 
         <HomeToolsStrip />
+
+        <HomeOmniInput />
 
         {discoveryStrip}
       </div>
