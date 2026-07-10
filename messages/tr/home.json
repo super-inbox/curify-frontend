@@ -306,6 +306,14 @@
         "title": "Ürün Fotoğrafı Yükle → E-Ticaret Listeleme Görseli | AI Aracı | Curify",
         "description": "Herhangi bir ürün fotoğrafı yükleyin — 30 saniyede listelemeye hazır bir e-ticaret görseli alın. Rahat sıcak kahraman çekimleri + 9:16 detay çekim düzenleri. Ücretsiz demo; toplu yükleme için erken erişime katılın."
       }
+    },
+    "character_sticker_sheet": {
+      "title": "Karakter → İfade Çıkartma Sayfası",
+      "desc": "Karakterinizin bir çizimini yükleyin — 30 saniyede 9 pozluk bir ifade sayfası (expression sheet, 差分) alın. Aynı yüz, dokuz duygu: mutlu, üzgün, kızgın, aşk, ağlayan, şaşkın ve daha fazlası — emote paketleri, sohbet çıkartmaları ve 谷子 (hayran ürünü) için hazır.",
+      "meta": {
+        "title": "Karakter İfade Sayfası Oluşturucu — 1 Çizim → 9 Poz | Curify",
+        "description": "Bir karakter çizimi yükleyin → 30 saniyede 9 pozluk bir ifade çıkartma sayfası (差分) alın. OC sanatçıları, VTuber'lar, emote paketleri ve talep üzerine baskı çıkartma satıcıları için. Ücretsiz demo."
+      }
     }
   },
   "bilingual": {
@@ -1117,6 +1125,55 @@
         "educationBody": "50+ SKU'ya sahip DTC katalogları, her ürün sayfasında görsel tutarlılık gerektirir — aksi takdirde katalog bir pazar yeri gibi görünür, marka gibi değil. Curify'nin şablonlu yaklaşımı tutarlılığı garanti eder. Bileşen SEO oyunu için /blog/programmatic-seo-dtc-visual-first ile eşleştirin.",
         "businessTitle": "Baskı hazır tasarımlar gönderen POD / ürün operatörleri için",
         "businessBody": "POD operatörleri (tişört, etiket, poster, kupa) baskı hazır tasarım dosyasının üzerine mockup + listeleme görsellerine ihtiyaç duyar. Bu araç, listeleme görseli kısmını kapsar; ürün operatörleri için /use-cases/for-merch-operators adresine ve SKU hızı kılavuzu için /blog/merchandise-design-hub adresine bakın."
+      }
+    }
+  },
+  "characterStickerSheet": {
+    "metadata": {
+      "title": "Karakter İfade Sayfası Oluşturucu — 1 Çizim → 9 Poz | Curify",
+      "description": "Bir karakter çizimi yükleyin → 30 saniyede 9 pozluk bir ifade çıkartma sayfası (差分) alın. OC sanatçıları, VTuber'lar, emote paketleri ve talep üzerine baskı çıkartma satıcıları için. Ücretsiz demo."
+    },
+    "title": "Karakterinizi Yükleyin → 9 Pozluk İfade Sayfası",
+    "description": "Karakterinizin bir çizimini eksiksiz bir ifade sayfasına (expression sheet, 差分) dönüştürün — aynı karakterin dokuz pozu temiz bir ızgarada, sohbet çıkartmalarına, emote paketlerine veya basılı 谷子 (hayran ürünü) ürünlerine kesilmeye hazır. Şablon, karakterin kimliğini sabitler; böylece her poz tartışmasız aynı karakterdir. Aşağıda ücretsiz demo.",
+    "example": "Örnek: bir karakter çizimi, ifadelerin 3×3 ızgarası olarak işlenmiş — mutlu, gülen, üzgün, ağlayan, kızgın, şaşkın, aşk, utangaç, düşünen.",
+    "cta": "Hemen Deneyin",
+    "why": {
+      "title": "Neden ifade sayfalarını Curify ile yapmalı?",
+      "point1": "Bir yükleme, dokuz ifade. Karakterinizin tek bir çizimini bırakın ve her pozu elle çizmek yerine eksiksiz bir duygu seti alın — mutlu, üzgün, kızgın, şaşkın, aşk, ağlayan, gülen, utangaç, düşünen.",
+      "point2": "Karakter aynı kalır. Şablon, referansınızdan yüzü, oranları, renkleri ve kıyafeti sabitler; böylece dokuz pozun hepsi tam olarak aynı karakterdir — dokuz benzeri değil.",
+      "point3": "Sonrasında geleni için tasarlandı. Temiz beyaz arka plandaki 3×3 ızgara, doğrudan tekil sohbet çıkartmalarına, emote paketlerine veya baskıya hazır 谷子 çıkartmalarına kesilmek üzere düzenlenmiştir (şeffaf PNG ve baskı için dışa aktarma yol haritasında).",
+      "point4": "Sipariş beklemesini atlayın. Satıcıların bugün sanatçılara $7–$300 ödeyip günlerce beklediği şeyi siz 30 saniyede önizlersiniz — sonra yalnızca bitirmeye değer pozları sipariş eder veya iyileştirirsiniz."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Kendi karakterimi mi yüklüyorum?",
+      "a1": "Evet. Karakterinizin bir çizimini yükleyin (OC, maskot veya IP). Yapay zeka o karakterin kimliğini — yüz, oranlar, renkler, kostüm — korur ve aynı karakterin dokuz yeni ifadesini üretir, genel bir 'benzer' değil.",
+      "q2": "İfade sayfasını ne için kullanabilirim?",
+      "a2": "Sohbet çıkartma paketleri (WeChat / LINE / Telegram), Twitch ve Discord emote'ları ve basılı 谷子 (hayran ürünü) (kesim çıkartmalar, rozetler/吧唧, ayaklı figürler/立牌). Pozlar temiz bir ızgarada gelir, böylece tekil çıkartmalara kolayca kesilir; şeffaf PNG ve baskıya hazır PDF dışa aktarma yol haritasında."
+    },
+    "deep": {
+      "what": {
+        "title": "Karakter ifade sayfası (差分) nedir?",
+        "p1": "Bir ifade sayfası — Japon ve Çin hayran sanatı dağarcığında 差分 — aynı karakterin birçok duygu ve pozda çizilmiş bir setidir: mutlu, üzgün, kızgın, şaşkın, ağlayan, aşk vb. Emote paketlerinin, sohbet çıkartma setlerinin, VTuber tepki varlıklarının ve basılı karakter ürünlerinin arkasındaki ham maddedir.",
+        "p2": "Geleneksel olarak her poz tek tek elle çizilir — bu yüzden satıcılar sanatçılara çıkartma sayfaları ve emote paketlerini set başına $7–$300'e sipariş eder ve her revizyon için günlerce bekler. Darboğaz ilk çizim değildir; darboğaz tüm duygu kütüphanesini tutarlı bir kalitede üretmektir.",
+        "p3": "Görüntüden görüntüye modelleri (Nano Banana Pro, Gemini 3 Pro Image) artık mevcut bir karakterin yeni pozlarını üretebiliyor. Eksik olan, karakteri her hücrede özdeş tutan ve pozları temiz, kesime hazır bir ızgaraya yerleştiren bir şablon katmanıydı — bu araç tam olarak bunu yapıyor."
+      },
+      "how": {
+        "title": "Curify bir çizimi nasıl ifade sayfasına dönüştürür",
+        "p1": "Birinci adım: karakterinizin net bir çizimini yükleyin. Temiz, önden bir referans, yapay zekaya kimliği sabitlemek için en güçlü sinyali verir — ancak okunabilir herhangi bir çizim de işe yarar.",
+        "p2": "İkinci adım: şablon çalışır. Karakterinizin tam yüzünü, oranlarını, renklerini ve kıyafetini yeniden üretir, ardından aynı karakterin dokuz yeni ifadesini oluşturur — mutlu, gülen, üzgün, ağlayan, kızgın, şaşkın, aşk, utangaç, düşünen.",
+        "p3": "Üçüncü adım: dokuz poz, saf beyaz arka plan üzerinde temiz bir 3×3 ızgaraya, eşit aralıklarla, net boşluklarla ve metinsiz olarak yerleştirilir — her poz tekil bir çıkartmaya kesilebilecek şekilde düzenlenir.",
+        "p4": "Dördüncü adım: sayfayı indirin. Bir sohbet çıkartma paketi veya emote seti için olduğu gibi kullanın ya da kesim çıkartmalar ve 谷子 (hayran ürünü) için baskı hattına götürün.",
+        "p5": "Yol haritasında: poz başına tekil şeffaf PNG'lere tek tıkla dışa aktarma, ayrıca baskıya hazır kesim sayfası PDF'i (300 DPI, kesim çizgileri) — ekrandaki sayfayı fiziksel ürün üretim dosyalarına dönüştürme."
+      },
+      "usecases": {
+        "title": "Karakter ifade sayfaları nerede önemli",
+        "creatorsTitle": "OC sanatçıları, VTuber'lar ve emote satıcıları için",
+        "creatorsBody": "Orijinal karakter sanatçıları ve yayıncılar ifade çeşitliliğiyle yaşar — tepki emote'ları, çıkartma paketleri, referans sayfaları. Tek bir çizimden eksiksiz duygu setini üretin, sonra kazananları bitirin. Daha geniş illüstratör iş akışı için /use-cases/for-designers sayfasına bakın.",
+        "educationTitle": "Sohbet çıkartması ve emote paketi yapımcıları için",
+        "educationBody": "WeChat / LINE / Telegram çıkartma paketleri ve Twitch / Discord emote setleri her pozda tutarlı bir karaktere ihtiyaç duyar. Şablon bu tutarlılığı garanti eder; böylece paket bir yamalı bohça değil, tek bir karakter olarak okunur.",
+        "businessTitle": "POD ve 谷子 (hayran ürünü) operatörleri için",
+        "businessBody": "Hayran ürünü ve talep üzerine baskı operatörleri karakter IP'sini kesim çıkartmalara, rozetlere (吧唧) ve ayaklı figürlere (立牌) dönüştürür. Bu araç ifade kütüphanesini üretir; SKU hız hattı için /use-cases/for-merch-operators ve /ip-merch-demo tanıtımına bakın."
       }
     }
   }

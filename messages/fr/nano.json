@@ -6648,5 +6648,25 @@
         "prompts": "Essayez player_name 'Neymar, tenue nationale du Brésil jaune à domicile' + jersey_number '10'; 'Erling Haaland, tenue nationale de Norvège rouge à domicile' + '9'."
       }
     }
+  },
+  "template-ip-character-expression-sheet": {
+    "category": "Planche d'expressions de personnage",
+    "description": "Téléversez un personnage → une planche d'expressions de 9 poses (差分, planche d'expressions) sur une grille 3×3 nette : joyeux, triste, en colère, amour, en pleurs, surpris et plus — le même personnage dans chaque cellule.",
+    "title": "Générateur de planches d'expressions de personnage (差分)",
+    "content": {
+      "sections": {
+        "what": "Ce modèle prend un dessin téléversé d'un personnage et génère une planche d'expressions de 9 poses du même personnage — joyeux, riant, triste, en pleurs, en colère, surpris, amour, timide, pensif — disposées sur une grille 3×3 blanche et nette, prête à découper en stickers ou emotes.",
+        "who": "Adapté aux artistes d'OC, VTubers, vendeurs d'emotes et de stickers de chat, détenteurs d'IP indépendants, et opérateurs d'impression à la demande / merch 谷子 (fan merch).",
+        "how": [
+          "Téléversez un dessin clair de votre personnage.",
+          "Générez une grille 3×3 de neuf expressions du même personnage sur un fond blanc net."
+        ],
+        "prompts": [
+          "Téléversez une mascotte chibi → obtenez une planche de stickers d'expressions de 9 poses.",
+          "Transformez un dessin d'OC en un set d'emotes joyeux / triste / en colère / amour.",
+          "Générez une planche d'expressions 差分 à partir d'une référence de personnage pour un pack de stickers WeChat."
+        ]
+      }
+    }
   }
 }

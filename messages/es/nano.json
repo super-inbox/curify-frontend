@@ -6648,5 +6648,25 @@
         "prompts": "Prueba player_name 'Neymar, uniforme amarillo de la selección de Brasil' + jersey_number '10'; 'Erling Haaland, uniforme rojo de la selección de Noruega' + '9'."
       }
     }
+  },
+  "template-ip-character-expression-sheet": {
+    "category": "Hoja de expresiones de personaje",
+    "description": "Sube un personaje → una hoja de expresiones de 9 poses (差分, hoja de expresiones) en una cuadrícula 3×3 limpia: feliz, triste, enojado, amor, llorando, sorprendido y más — el mismo personaje en cada celda.",
+    "title": "Generador de hojas de expresiones de personaje (差分)",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla toma un dibujo subido de un personaje y genera una hoja de expresiones de 9 poses del mismo personaje — feliz, riendo, triste, llorando, enojado, sorprendido, amor, tímido, pensando — dispuestas en una cuadrícula 3×3 blanca y limpia, lista para recortar en stickers o emotes.",
+        "who": "Adecuado para artistas de OC, VTubers, vendedores de emotes y stickers de chat, dueños de IP indie y operadores de impresión bajo demanda / merch 谷子 (fan merch).",
+        "how": [
+          "Sube un dibujo claro de tu personaje.",
+          "Genera una cuadrícula 3×3 de nueve expresiones del mismo personaje sobre un fondo blanco limpio."
+        ],
+        "prompts": [
+          "Sube una mascota chibi → obtén una hoja de stickers de expresiones de 9 poses.",
+          "Convierte un dibujo de OC en un set de emotes feliz / triste / enojado / amor.",
+          "Genera una hoja de expresiones 差分 desde una referencia de personaje para un pack de stickers de WeChat."
+        ]
+      }
+    }
   }
 }

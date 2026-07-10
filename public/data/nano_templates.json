@@ -19084,5 +19084,39 @@
       "bilingual",
       "illustration"
     ]
+  },
+  {
+    "id": "template-ip-character-expression-sheet",
+    "locales": {
+      "en": {
+        "base_prompt": "(Character Expression Sheet Creator) Create a character expression sheet (表情差分) for the EXACT character shown in the uploaded reference image. CHARACTER FIDELITY (most important): reproduce the uploaded character precisely — same face, head shape, body proportions, colors, outfit, hairstyle, and all defining features — so every pose is instantly recognizable as the SAME character. Do NOT redesign, restyle, age, or replace the character, and do NOT change its species or costume. Generate ONLY new facial expressions and poses of this one character. Layout: arrange exactly 9 poses in a clean, evenly spaced 3x3 grid on a pure solid white background, each pose fully inside its own cell with a clear white gutter between cells, no overlapping, no cell borders, no frames, no drop shadows, and no labels or text. The 9 expressions are: happy, laughing, sad, crying, angry, surprised, love with heart eyes, shy and blushing, and thinking. Keep the character centered and at a consistent size in every cell. Do NOT add any props, accessories, background scenery, mist, smoke, sparkles, or effects that are not part of the original character. The image must contain NO text, watermarks, captions, speech bubbles, or technical tokens such as '4K', 'HD', or 'high resolution'. Style: clean flat cartoon sticker illustration with crisp outlines, matching the art style of the uploaded reference. Subject: 'Character expression sheet'",
+        "parameters": []
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-ip-character-sprite-emoji-sheet-graduation-alpaca-prev.jpg",
+    "requires_image_upload": true,
+    "topics": [
+      "character",
+      "design",
+      "merch",
+      "stickers",
+      "character-ip",
+      "illustration",
+      "cartoon",
+      "playful",
+      "art-prints",
+      "digital-canvas",
+      "composition",
+      "modern",
+      "vibrant"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-07-11",
+    "allow_generation": true,
+    "use_cases": [
+      "for-merch-operators",
+      "for-designers"
+    ]
   }
 ]

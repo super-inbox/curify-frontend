@@ -6648,5 +6648,25 @@
         "prompts": "Versuchen Sie player_name 'Neymar, Brasilien Nationalmannschaft gelbes Heimtrikot' + jersey_number '10'; 'Erling Haaland, Norwegen rotes Heimtrikot' + '9'."
       }
     }
+  },
+  "template-ip-character-expression-sheet": {
+    "category": "Charakter-Ausdrucksbogen",
+    "description": "Lade einen Charakter hoch → einen Ausdrucksbogen mit 9 Posen (差分, Ausdrucksbogen) auf einem sauberen 3×3-Raster: fröhlich, traurig, wütend, verliebt, weinend, überrascht und mehr – derselbe Charakter in jeder Zelle.",
+    "title": "Charakter-Ausdrucksbogen-Generator (差分)",
+    "content": {
+      "sections": {
+        "what": "Dieses Template nimmt eine hochgeladene Zeichnung eines Charakters und generiert einen Ausdrucksbogen mit 9 Posen desselben Charakters – fröhlich, lachend, traurig, weinend, wütend, überrascht, verliebt, schüchtern, nachdenklich – angeordnet auf einem sauberen weißen 3×3-Raster, bereit zum Ausschneiden in Sticker oder Emotes.",
+        "who": "Geeignet für OC-Künstler, VTuber, Emote- und Chat-Sticker-Verkäufer, Indie-IP-Inhaber und Print-on-Demand- / 谷子-Merch-Betreiber (Fan-Merch).",
+        "how": [
+          "Lade eine klare Zeichnung deines Charakters hoch.",
+          "Generiere ein 3×3-Raster mit neun Ausdrücken desselben Charakters auf sauberem weißem Hintergrund."
+        ],
+        "prompts": [
+          "Lade ein Chibi-Maskottchen hoch → erhalte einen Ausdrucks-Stickerbogen mit 9 Posen.",
+          "Verwandle eine OC-Zeichnung in ein Emote-Set fröhlich / traurig / wütend / verliebt.",
+          "Generiere einen 差分-Ausdrucksbogen aus einer Charakterreferenz für ein WeChat-Stickerpack."
+        ]
+      }
+    }
   }
 }

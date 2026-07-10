@@ -6648,5 +6648,25 @@
         "prompts": "'海(hǎi,deniz,dalgalar) + 豚(tún,domuz,domuz) + 海豚(hǎi tún,dolphin,dolphin)', '熊(xióng,ayı) + 猫(māo,kedi) + 熊猫(xióng māo,panda)' deneyin."
       }
     }
+  },
+  "template-ip-character-expression-sheet": {
+    "category": "Karakter İfade Sayfası",
+    "description": "Bir karakter yükleyin → temiz bir 3×3 ızgarada 9 pozluk bir ifade sayfası (expression sheet, 差分): mutlu, üzgün, kızgın, aşk, ağlayan, şaşkın ve daha fazlası — her hücrede aynı karakter.",
+    "title": "Karakter İfade Sayfası (差分) Oluşturucu",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir karakterin yüklenen bir çizimini alır ve aynı karakterin 9 pozluk bir ifade sayfasını üretir — mutlu, gülen, üzgün, ağlayan, kızgın, şaşkın, aşk, utangaç, düşünen — temiz bir beyaz 3×3 ızgaraya yerleştirilmiş, çıkartma veya emote'lara kesilmeye hazır.",
+        "who": "OC sanatçıları, VTuber'lar, emote ve sohbet çıkartması satıcıları, bağımsız IP sahipleri ve talep üzerine baskı / 谷子 (hayran ürünü) operatörleri için uygundur.",
+        "how": [
+          "Karakterinizin net bir çizimini yükleyin.",
+          "Temiz bir beyaz arka plan üzerinde aynı karakterin dokuz ifadesinin 3×3 ızgarasını oluşturun."
+        ],
+        "prompts": [
+          "Bir chibi maskot yükleyin → 9 pozluk bir ifade çıkartma sayfası alın.",
+          "Bir OC çizimini mutlu / üzgün / kızgın / aşk emote setine dönüştürün.",
+          "Bir WeChat çıkartma paketi için bir karakter referansından bir 差分 ifade sayfası oluşturun."
+        ]
+      }
+    }
   }
 }

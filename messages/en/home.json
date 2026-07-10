@@ -343,6 +343,14 @@
         "title": "Upload Product Photo → E-Commerce Listing Image | AI Tool | Curify",
         "description": "Upload any product photo — get a listing-ready promotional image in 30 seconds, styled for your marketplace. Free demo; join early access for batch upload."
       }
+    },
+    "character_sticker_sheet": {
+      "title": "Character → Expression Sticker Sheet",
+      "desc": "Upload one drawing of your character — get a 9-pose expression sheet (表情差分) in 30 seconds. Same face, nine emotions: happy, sad, angry, love, crying, surprised, and more — ready for emote packs, chat stickers, and 谷子 merch.",
+      "meta": {
+        "title": "Character Expression Sheet Generator — 1 Drawing → 9 Poses | Curify",
+        "description": "Upload one character drawing → get a 9-pose expression sticker sheet (差分) in 30 seconds. For OC artists, VTubers, emote packs, and print-on-demand sticker sellers. Free demo."
+      }
     }
   },
   "bilingual": {
@@ -971,6 +979,55 @@
         "educationBody": "DTC catalogs with 50+ SKUs need visual consistency across every product page — otherwise the catalog reads as a marketplace, not a brand. Curify's templated approach guarantees consistency. Pair with /blog/programmatic-seo-dtc-visual-first for the compounding-SEO play.",
         "businessTitle": "For POD / merch operators shipping print-ready designs",
         "businessBody": "POD operators (t-shirt, sticker, poster, mug) need mockup + listing imagery on top of the print-ready design file. This tool covers the listing-image half; see /use-cases/for-merch-operators for the merch-grade pipeline and /blog/merchandise-design-hub for the SKU-velocity playbook."
+      }
+    }
+  },
+  "characterStickerSheet": {
+    "metadata": {
+      "title": "Character Expression Sheet Generator — 1 Drawing → 9 Poses | Curify",
+      "description": "Upload one character drawing → get a 9-pose expression sticker sheet (差分) in 30 seconds. For OC artists, VTubers, emote packs, and print-on-demand sticker sellers. Free demo."
+    },
+    "title": "Upload Your Character → 9-Pose Expression Sheet",
+    "description": "Turn one drawing of your character into a full expression sheet (表情差分) — nine poses of the same character on one clean grid, ready to cut into chat stickers, emote packs, or printed 谷子 merch. The template locks the character's identity so every pose is unmistakably the same character. Free demo below.",
+    "example": "Example: one character drawing rendered as a 3×3 grid of expressions — happy, laughing, sad, crying, angry, surprised, love, shy, thinking.",
+    "cta": "Try It Now",
+    "why": {
+      "title": "Why make expression sheets through Curify?",
+      "point1": "One upload, nine expressions. Drop a single drawing of your character and get a full emotion set — happy, sad, angry, surprised, love, crying, laughing, shy, thinking — instead of drawing each pose by hand.",
+      "point2": "The character stays the same. The template locks face, proportions, colors, and outfit from your reference, so all nine poses read as the exact same character — not nine lookalikes.",
+      "point3": "Built for what comes next. The 3×3 grid on a clean white background is laid out to cut straight into individual chat stickers, emote packs, or print-ready 谷子 stickers (transparent-PNG and print export are on the roadmap).",
+      "point4": "Skip the commission wait. What sellers currently pay artists $7–$300 and wait days for, you preview in 30 seconds — then commission or refine only the poses worth finishing."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Do I upload my own character?",
+      "a1": "Yes. Upload one drawing of your character (OC, mascot, or IP). The AI preserves that character's identity — face, proportions, colors, costume — and generates nine new expressions of the same character, not a generic 'similar' one.",
+      "q2": "What can I use the expression sheet for?",
+      "a2": "Chat sticker packs (WeChat / LINE / Telegram), Twitch and Discord emotes, and printed 谷子 merch (die-cut stickers, badges/吧唧, standees/立牌). The poses come on a clean grid so they're easy to cut into individual stickers; transparent-PNG and print-ready PDF export are on the roadmap."
+    },
+    "deep": {
+      "what": {
+        "title": "What is a character expression sheet (差分)?",
+        "p1": "An expression sheet — 差分 in Japanese and Chinese fan-art vocabulary — is a set of the same character drawn in many emotions and poses: happy, sad, angry, surprised, crying, love, and so on. It's the raw material behind emote packs, chat-sticker sets, VTuber reaction assets, and printed character merch.",
+        "p2": "Traditionally every pose is drawn by hand, one at a time — which is why sellers commission artists for sticker sheets and emote packs at $7–$300 per set and wait days per revision. The bottleneck isn't the first drawing; it's producing the whole emotion library at a consistent quality.",
+        "p3": "Image-to-image models (Nano Banana Pro, Gemini 3 Pro Image) can now generate new poses of an existing character. What was missing is a templating layer that keeps the character identical across every cell and lays the poses out on a clean, cut-ready grid — which is exactly what this tool does."
+      },
+      "how": {
+        "title": "How Curify turns one drawing into an expression sheet",
+        "p1": "Step one: upload one clear drawing of your character. A clean, front-facing reference gives the AI the strongest signal to lock identity from — but any legible drawing works.",
+        "p2": "Step two: the template runs. It reproduces your character's exact face, proportions, colors, and outfit, then generates nine new expressions of that same character — happy, laughing, sad, crying, angry, surprised, love, shy, thinking.",
+        "p3": "Step three: the nine poses are arranged in a clean 3×3 grid on a pure white background, evenly spaced with clear gutters and no text — laid out so each pose can be cut into an individual sticker.",
+        "p4": "Step four: download the sheet. Use it as-is for a chat-sticker pack or emote set, or take it into the print pipeline for die-cut stickers and 谷子 merch.",
+        "p5": "On the roadmap: one-click export to individual transparent PNGs per pose, plus a print-ready die-cut sheet PDF (300 DPI, cut lines) — turning the on-screen sheet into physical-merch production files."
+      },
+      "usecases": {
+        "title": "Where character expression sheets matter",
+        "creatorsTitle": "For OC artists, VTubers & emote sellers",
+        "creatorsBody": "Original-character artists and streamers live on expression variety — reaction emotes, sticker packs, reference sheets. Generate the full emotion set from one drawing, then finish the winners. See /use-cases/for-designers for the broader illustrator workflow.",
+        "educationTitle": "For chat-sticker & emote-pack makers",
+        "educationBody": "WeChat / LINE / Telegram sticker packs and Twitch / Discord emote sets need a consistent character across every pose. The template guarantees that consistency so the pack reads as one character, not a patchwork.",
+        "businessTitle": "For POD & 谷子 merch operators",
+        "businessBody": "Fan-merch and print-on-demand operators turn character IP into die-cut stickers, badges (吧唧), and standees (立牌). This tool produces the expression library; see /use-cases/for-merch-operators for the SKU-velocity pipeline and the /ip-merch-demo walkthrough."
       }
     }
   }

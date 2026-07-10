@@ -241,6 +241,33 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Inline image2image char-batch tool — the M9 wedge (2026-07-10 Reddit
+    // demand run: whitest-space merch direction). Upload ONE character →
+    // a 9-pose expression sheet (表情差分) on a clean 3x3 grid. Same
+    // inline-generate stack as ecommerce-photo (ReproduceWorkbench →
+    // useDirectGenerate → /nano-templates/generate); "demo" status keeps
+    // the card navigating to the tool page while the "generate" action
+    // renders the inline block. Featured on for-merch-operators +
+    // for-designers. Productization spec + P1/P2 roadmap:
+    // curify-studio/docs/spec-m9-char-batch-tool.md.
+    id: "character-sticker-sheet",
+    slug: "character-sticker-sheet",
+    groupId: "image",
+    status: "demo",
+    // Unused by the generate path (bypasses CreateNewModal); required field.
+    job_type: "video_transcript",
+    namespace: "characterStickerSheet",
+    action: { type: "generate", templateId: "template-ip-character-expression-sheet" },
+    i18n: toolKeys("character_sticker_sheet"),
+    seo: seoKeys("character_sticker_sheet"),
+    demo: {
+      type: "single_image",
+      src: "/images/nano_insp/template-ip-character-sprite-emoji-sheet-graduation-alpaca.jpg",
+      alt: "Upload one character drawing, get a 9-pose expression sticker sheet — graduation alpaca rendered across a 3x3 grid",
+    },
+  },
+
+  {
     // Demo-only SEO landing — no backend pipeline yet. The blog
     // /blog/asl-video-translator ranks at pos ~13 for "asl video translator"
     // / "sign language video translator" but as an editorial page the

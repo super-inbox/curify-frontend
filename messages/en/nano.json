@@ -6647,5 +6647,25 @@
         "prompts": "Try '海(hǎi,sea,waves) + 豚(tún,pig,pig) + 海豚(hǎi tún,dolphin,dolphin)', '熊(xióng,bear) + 猫(māo,cat) + 熊猫(xióng māo,panda)'."
       }
     }
+  },
+  "template-ip-character-expression-sheet": {
+    "category": "Character Expression Sheet",
+    "description": "Upload one character → a 9-pose expression sheet (表情差分) on a clean 3×3 grid: happy, sad, angry, love, crying, surprised, and more — the same character in every cell.",
+    "title": "Character Expression Sheet (差分) Generator",
+    "content": {
+      "sections": {
+        "what": "This template takes one uploaded drawing of a character and generates a 9-pose expression sheet of the same character — happy, laughing, sad, crying, angry, surprised, love, shy, thinking — arranged on a clean 3×3 white grid, ready to cut into stickers or emotes.",
+        "who": "Suitable for OC artists, VTubers, emote and chat-sticker sellers, indie IP owners, and print-on-demand / 谷子 merch operators.",
+        "how": [
+          "Upload one clear drawing of your character.",
+          "Generate a 3×3 grid of nine expressions of the same character on a clean white background."
+        ],
+        "prompts": [
+          "Upload a chibi mascot → get a 9-pose expression sticker sheet.",
+          "Turn one OC drawing into a happy / sad / angry / love emote set.",
+          "Generate a 差分 expression sheet from a character reference for a WeChat sticker pack."
+        ]
+      }
+    }
   }
 }

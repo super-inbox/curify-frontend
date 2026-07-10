@@ -54,7 +54,7 @@ export const USE_CASES: UseCaseDef[] = [
   // translation tool, not a design tool) so the sole tool card is the
   // genuine designer fit. The designer value on this page is carried by
   // the curated designer-style template feed, not the tool grid.
-  { slug: "for-designers",    tier: "consumer", toolSlugs: ["style-transfer"] },
+  { slug: "for-designers",    tier: "consumer", toolSlugs: ["style-transfer", "character-sticker-sheet"] },
 
   // --- B2B ICPs (cold-outreach + reference-deal surface) ---
   // Slug kept for SEO continuity; copy and toolSlugs rewritten to target
@@ -132,7 +132,12 @@ export const USE_CASES: UseCaseDef[] = [
   // sticker pack → gift-box mockup → full SKU family) as a prominent CTA
   // banner (see USE_CASE_DEMO in UseCaseClient.tsx). The product-photo
   // tools remain on for-marketers + for-programmatic-seo where they fit.
-  { slug: "for-merch-operators", tier: "b2b", toolSlugs: [] },
+  // 2026-07-11: added `character-sticker-sheet` — the M9 char-batch wedge
+  // (P0 ship; spec-m9-char-batch-tool.md). This IS a POD/merch-design tool
+  // (upload character → 9-pose 表情差分 sheet), unlike the product-photo
+  // tools, so it belongs here. Coexists with the /ip-merch-demo banner
+  // (banner = pitch/walkthrough, tool = do-it-now).
+  { slug: "for-merch-operators", tier: "b2b", toolSlugs: ["character-sticker-sheet"] },
 ];
 
 export function getUseCaseBySlug(slug: string): UseCaseDef | undefined {
