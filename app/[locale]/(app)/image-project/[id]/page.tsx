@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
-import Link from "next/link";
-import { Download, ArrowLeft, Sparkles } from "lucide-react";
+import { useParams } from "next/navigation";
+import { Link } from "@/i18n/navigation";
+import { ArrowLeft } from "lucide-react";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import ReproduceWorkbench from "@/app/[locale]/_components/ReproduceWorkbench";
 import { projectService } from "@/services/projects";
 import { ProjectDetails } from "@/types/segments";
 import { CDN_BASE } from "@/lib/constants";
-import { format } from "date-fns";
 
 function toCdnFull(path: string | null | undefined): string | null {
   if (!path) return null;
@@ -16,19 +16,25 @@ function toCdnFull(path: string | null | undefined): string | null {
   return `${CDN_BASE}/${path.replace(/^\//, "")}`;
 }
 
+/**
+ * The centralized image workflow page (Phase 1) — see
+ * docs/image-workflow-page-design-2026-07-11.md. A finished image project opens
+ * in the shared 3-column workbench in "result" mode: column 1 shows the result,
+ * column 3 (designer pack) lets the user keep producing on it. Column 2
+ * (parametric regenerate) is a later phase (needs template/params from the API).
+ */
 export default function ImageProjectPage() {
   const params = useParams();
-  const router = useRouter();
   const locale = Array.isArray(params.locale) ? params.locale[0] : (params.locale as string);
   const id = Array.isArray(params.id) ? params.id[0] : (params.id as string);
 
   const [project, setProject] = useState<ProjectDetails | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [isDownloading, setIsDownloading] = useState(false);
 
   useEffect(() => {
     if (!id) return;
-    projectService.getProject(id)
+    projectService
+      .getProject(id)
       .then(setProject)
       .catch(() => setProject(null))
       .finally(() => setIsLoading(false));
@@ -37,41 +43,24 @@ export default function ImageProjectPage() {
   const fullImageUrl = toCdnFull(project?.image_path);
   const previewImageUrl = toCdnFull(project?.preview_image_path) ?? fullImageUrl;
 
-  const handleDownload = async () => {
-    if (!fullImageUrl || isDownloading) return;
-    setIsDownloading(true);
-    try {
-      const res = await fetch(fullImageUrl);
-      const blob = await res.blob();
-      const ext = fullImageUrl.split(".").pop()?.split("?")[0] || "jpg";
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = `${project?.name || "image"}.${ext}`;
-      a.click();
-      URL.revokeObjectURL(a.href);
-    } catch {
-      window.open(fullImageUrl, "_blank");
-    } finally {
-      setIsDownloading(false);
-    }
-  };
-
   if (isLoading) {
     return (
-      <div className="max-w-3xl mx-auto px-6 pt-24 pb-10">
+      <div className="mx-auto max-w-5xl px-6 pb-10 pt-24">
         <div className="animate-pulse space-y-4">
-          <div className="h-6 w-32 bg-neutral-200 rounded" />
-          <div className="aspect-square bg-neutral-100 rounded-2xl" />
+          <div className="h-6 w-32 rounded bg-neutral-200" />
+          <div className="aspect-square rounded-2xl bg-neutral-100" />
         </div>
       </div>
     );
   }
 
-  if (!project) {
+  if (!project || !previewImageUrl) {
     return (
-      <div className="max-w-3xl mx-auto px-6 pt-24 pb-10 text-center">
-        <p className="text-neutral-500">Project not found.</p>
-        <Link href={`/${locale}/workspace`} className="mt-4 inline-block text-sm text-purple-600 hover:underline">
+      <div className="mx-auto max-w-5xl px-6 pb-10 pt-24 text-center">
+        <p className="text-neutral-500">
+          {project ? "No image available for this project." : "Project not found."}
+        </p>
+        <Link href="/workspace" className="mt-4 inline-block text-sm text-purple-600 hover:underline">
           Back to workspace
         </Link>
       </div>
@@ -79,51 +68,42 @@ export default function ImageProjectPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-6 pt-20 pb-16">
-      {/* Back */}
+    <div className="mx-auto max-w-5xl px-4 pb-16 pt-20 sm:px-6">
       <Link
-        href={`/${locale}/workspace`}
-        className="mb-6 inline-flex items-center gap-1.5 text-sm text-neutral-500 hover:text-neutral-800 transition-colors"
+        href="/workspace"
+        className="mb-6 inline-flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-800"
       >
         <ArrowLeft className="h-4 w-4" />
         My Workspace
       </Link>
 
-      {/* Header */}
-      <div className="mb-4 flex items-start justify-between gap-4">
-        <div>
-          <h1 className="text-xl font-bold text-neutral-900">{project.name}</h1>
-        </div>
-        <div className="flex items-center gap-2 shrink-0">
-          <button
-            type="button"
-            onClick={handleDownload}
-            disabled={!fullImageUrl || isDownloading}
-            className="flex items-center gap-1.5 rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700 disabled:opacity-50 transition-colors cursor-pointer"
-          >
-            <Download className="h-4 w-4" />
-            {isDownloading ? "Downloading…" : "Download"}
-          </button>
-        </div>
-      </div>
+      <h1 className="mb-4 text-xl font-bold text-neutral-900">{project.name}</h1>
 
-      {/* Image */}
-      <div className="relative overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50 shadow-sm">
-        {previewImageUrl ? (
-          <CdnImage
-            src={previewImageUrl}
-            alt={project.name}
-            width={1200}
-            height={1200}
-            className="w-full h-auto object-contain"
-            unoptimized
-          />
-        ) : (
-          <div className="flex aspect-square items-center justify-center text-neutral-300 text-sm">
-            No image available
-          </div>
-        )}
-      </div>
+      <ReproduceWorkbench
+        locale={locale}
+        templateId=""
+        parameters={[]}
+        initialParams={{}}
+        basePrompt=""
+        allowGeneration={false}
+        trackingContentId={project.project_id}
+        col1={{
+          mode: "result",
+          resultUrl: fullImageUrl ?? previewImageUrl,
+          downloadHref: fullImageUrl ?? previewImageUrl,
+          title: project.name,
+          image: (
+            <CdnImage
+              src={previewImageUrl}
+              alt={project.name}
+              width={1200}
+              height={1200}
+              className="h-full w-full object-contain"
+              unoptimized
+            />
+          ),
+        }}
+      />
     </div>
   );
 }

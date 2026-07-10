@@ -46,7 +46,18 @@ export type WorkbenchCol1 =
       title: string;
       batchEnabled?: boolean;
     }
-  | { mode: "upload"; label?: string; hint?: string };
+  | { mode: "upload"; label?: string; hint?: string }
+  // A finished project result opens in the workbench: column 1 shows the output,
+  // column 3 (designer pack) operates on it, and column 2 is HIDDEN — a loaded
+  // project carries no template/params to drive parametric regeneration (that's a
+  // later phase). See docs/image-workflow-page-design-2026-07-11.md.
+  | {
+      mode: "result";
+      image: ReactNode;
+      resultUrl: string;
+      title: string;
+      downloadHref?: string;
+    };
 
 type Props = {
   locale: string;
@@ -163,7 +174,10 @@ export default function ReproduceWorkbench({
   // Transform source for the designer-pack workflows: prefer the latest
   // generated result; else the static source image (source mode) or the raw
   // uploaded image (upload mode).
-  const col1Source = col1.mode === "source" ? col1.sourceReferenceUrl : referenceImageUrl ?? "";
+  const col1Source =
+    col1.mode === "source" ? col1.sourceReferenceUrl
+    : col1.mode === "result" ? col1.resultUrl
+    : referenceImageUrl ?? "";
   const transformSource = latestUrl ?? col1Source;
   const workflows = useMemo(() => {
     const base = getTemplateWorkflows(templateId);
@@ -180,6 +194,11 @@ export default function ReproduceWorkbench({
   // In upload mode the reference upload is column 1; in source mode it stays in
   // column 2 (only rendered there for image2image templates).
   const uploadInCol2 = col1.mode === "source" && requiresImageUpload;
+  // "result" mode = a finished project loaded to keep producing. Column 2 is
+  // hidden, so column 1 + column 3 widen to fill the 12-col grid.
+  const resultMode = col1.mode === "result";
+  const col1Span = resultMode ? "lg:col-span-4" : "lg:col-span-3";
+  const col3Span = resultMode ? "lg:col-span-8" : "lg:col-span-5";
 
   const onFormChange = (name: string, value: string) => {
     clearWarning();
@@ -251,8 +270,10 @@ export default function ReproduceWorkbench({
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
         {/* ── 1. SOURCE / YOUR IMAGE ────────────────────────────────── */}
-        <div className="flex flex-col lg:col-span-3">
-          <div className={labelCls}>{col1.mode === "upload" ? "1 · Your image" : "1 · Source"}</div>
+        <div className={`flex flex-col ${col1Span}`}>
+          <div className={labelCls}>
+            {col1.mode === "upload" ? "1 · Your image" : col1.mode === "result" ? "1 · Your result" : "1 · Source"}
+          </div>
           {col1.mode === "upload" ? (
             <div className="flex flex-1 flex-col rounded-2xl border border-neutral-200 bg-white p-3 shadow-sm">
               <ReferenceImageUpload
@@ -274,18 +295,31 @@ export default function ReproduceWorkbench({
                 {col1.image}
               </div>
               <div className="mt-2">
-                <UnifiedActionBar
-                  tracking={tracking}
-                  copy={{ enabled: true, text: col1.copyText }}
-                  share={{ enabled: true, url: col1.shareUrl, title: col1.title }}
-                  {...(col1.batchEnabled ? { batchDownload: { enabled: true, templateId } } : {})}
-                />
+                {col1.mode === "result" ? (
+                  <a
+                    href={col1.downloadHref ?? col1.resultUrl}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                  >
+                    <Download className="h-4 w-4" /> Download
+                  </a>
+                ) : (
+                  <UnifiedActionBar
+                    tracking={tracking}
+                    copy={{ enabled: true, text: col1.copyText }}
+                    share={{ enabled: true, url: col1.shareUrl, title: col1.title }}
+                    {...(col1.batchEnabled ? { batchDownload: { enabled: true, templateId } } : {})}
+                  />
+                )}
               </div>
             </>
           )}
         </div>
 
-        {/* ── 2. MAKE IT YOURS / PROMPT & GENERATE ──────────────────── */}
+        {/* ── 2. MAKE IT YOURS / PROMPT & GENERATE (hidden in result mode) ── */}
+        {!resultMode && (
         <div className="flex flex-col lg:col-span-4">
           <div className={labelCls}>{col1.mode === "upload" ? "2 · Prompt & generate" : "2 · Make it yours"}</div>
           <div className="flex flex-1 flex-col gap-3">
@@ -423,12 +457,13 @@ export default function ReproduceWorkbench({
             )}
           </div>
         </div>
+        )}
 
         {/* ── 3. DESIGNER PACK ──────────────────────────────────────── */}
-        <div className="flex flex-col lg:col-span-5">
+        <div className={`flex flex-col ${col3Span}`}>
           <div className="mb-2 flex items-baseline justify-between">
             <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-              3 · Turn it into design work
+              {resultMode ? "2 · " : "3 · "}Turn it into design work
             </span>
             <span className="text-[11px] text-neutral-400">{CREDITS_COST} credits each</span>
           </div>
