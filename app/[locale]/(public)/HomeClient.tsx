@@ -9,6 +9,7 @@ import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import HomeToolsStrip from "./HomeToolsStrip";
 import HomeHero from "./HomeHero";
+import HomeOmniInput from "./HomeOmniInput";
 import HomeSolutionsGrid from "./HomeSolutionsGrid";
 import HomeWorkflow from "./HomeWorkflow";
 import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
@@ -85,6 +86,7 @@ export default function HomeClient({
         {/* Storytelling flow — message + audience entry points, layered above
             the existing content rail (kept below for discovery + indexation). */}
         <HomeHero montageImages={montageImages} />
+        <HomeOmniInput />
         <HomeSolutionsGrid />
         <HomeWorkflow />
 

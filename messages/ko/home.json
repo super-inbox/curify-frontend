@@ -1,5 +1,18 @@
 {
   "home": {
+    "omni": {
+      "heading": "Start a workflow",
+      "subtitle": "Paste a link, describe an idea, or start from an image — Curify routes it to the right production pipeline.",
+      "placeholder": "Paste a YouTube link, or describe what you want to make…",
+      "go": "Go",
+      "urlLead": "Looks like a video — turn it into:",
+      "imageLead": "Or start from an image:",
+      "searchFor": "Search inspiration for “{q}”",
+      "chips": {
+        "summary": "Summary","transcript": "Transcript","subtitles": "Bilingual subtitles",
+        "ecommerce": "E-commerce image","poster": "Product poster","productVideo": "Product video"
+      }
+    },
     "metadata": {
       "title": "Curify – 아이디어를 시각적 사고로 | AI 인포그래픽 & 로컬라이제이션",
       "description": "Curify는 트렌드와 아이디어를 구조화된 공유 가능한 시각 콘텐츠로 변환하는 AI 기반 비주얼 씽킹 플랫폼입니다.",
