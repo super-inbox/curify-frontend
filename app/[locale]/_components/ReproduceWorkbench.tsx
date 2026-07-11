@@ -20,6 +20,7 @@ import type { ExistingExampleRef } from "@/lib/editDistance";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
 import { getTemplateWorkflows, videoShowWorkflow } from "@/lib/template_workflows";
+import { getOutputIntent } from "@/lib/output_intent";
 import { resizeToSocialBundle, sliceIntoGrid } from "@/lib/resize_bundle";
 import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
@@ -181,10 +182,16 @@ export default function ReproduceWorkbench({
   const transformSource = latestUrl ?? col1Source;
   const workflows = useMemo(() => {
     const base = getTemplateWorkflows(templateId);
-    // Lead column 3 with a zero-cost "Watch video" tile for the ~109 templates
-    // that already ship a rendered intro video — image→video with no wait, no
-    // credits. Templates without one just show the design workflows as before.
-    return introVideoUrl ? [videoShowWorkflow(introVideoUrl), ...base] : base;
+    // Lead column 3 with a zero-cost reveal tile for the ~109 templates that ship
+    // a rendered intro video — no wait, no credits. Vocab/education templates get
+    // "Read this" (readable narrative asset); visual templates get "Watch video".
+    if (!introVideoUrl) return base;
+    const educational = getOutputIntent(templateId) === "education";
+    const videoTile = videoShowWorkflow(
+      introVideoUrl,
+      educational ? { label: "Read this", hint: "Read the lesson" } : undefined,
+    );
+    return [videoTile, ...base];
   }, [templateId, introVideoUrl]);
 
   const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
