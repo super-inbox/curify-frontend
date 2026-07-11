@@ -9,8 +9,12 @@
       "imageLead": "Or start from an image:",
       "searchFor": "Search inspiration for “{q}”",
       "chips": {
-        "summary": "Summary","transcript": "Transcript","subtitles": "Bilingual subtitles",
-        "ecommerce": "E-commerce image","poster": "Product poster","productVideo": "Product video"
+        "summary": "Summary",
+        "transcript": "Transcript",
+        "subtitles": "Bilingual subtitles",
+        "ecommerce": "E-commerce image",
+        "poster": "Product poster",
+        "productVideo": "Product video"
       }
     },
     "metadata": {
@@ -313,6 +317,14 @@
       "meta": {
         "title": "Generador de hojas de expresiones de personaje — 1 dibujo → 9 poses | Curify",
         "description": "Sube un dibujo de personaje → obtén una hoja de stickers de expresiones de 9 poses (差分) en 30 segundos. Para artistas de OC, VTubers, packs de emotes y vendedores de stickers bajo demanda. Demo gratis."
+      }
+    },
+    "mockup": {
+      "title": "AI Merch Mockup Generator",
+      "desc": "Upload a character or design → a full merch mockup set (mug, tote, keychain, stickers, phone case…) with your art on every product.",
+      "meta": {
+        "title": "AI Merch Mockup Generator | Character → Product Mockups | Curify",
+        "description": "Upload your character or artwork and get a flat-lay merch mockup set — mug, tote, keychain, die-cut stickers, phone case and more, each printed with your design. Free demo."
       }
     }
   },
@@ -1089,6 +1101,55 @@
         "educationBody": "Los packs de stickers de WeChat / LINE / Telegram y los sets de emotes de Twitch / Discord necesitan un personaje consistente en cada pose. La plantilla garantiza esa consistencia para que el pack se lea como un solo personaje, no como un mosaico.",
         "businessTitle": "Para operadores de POD y merch 谷子 (fan merch)",
         "businessBody": "Los operadores de fan-merch e impresión bajo demanda convierten la IP de un personaje en stickers troquelados, chapas (吧唧) y standees (立牌). Esta herramienta produce la biblioteca de expresiones; ve /use-cases/for-merch-operators para el pipeline de velocidad de SKU y el recorrido en /ip-merch-demo."
+      }
+    }
+  },
+  "mockupGenerator": {
+    "metadata": {
+      "title": "AI Merch Mockup Generator | Curify",
+      "description": "Upload a character or design → a full merch mockup set with your art on every product."
+    },
+    "title": "AI Merch Mockup Generator",
+    "description": "Upload a character, logo, or artwork and get a clean flat-lay merch mockup set — spiral notebook, canvas tote, acrylic keychain, die-cut sticker sheet, ceramic mug, tumbler, pen, and phone case — each printed with your design and matching colors. Your artwork is preserved exactly across every product. Free demo below.",
+    "example": "Example: a kawaii illustration turned into a 9-piece merch mockup set — notebook, tote, keychain, stickers, mug, tumbler, pen, and phone case, on a clean flat-lay.",
+    "cta": "Try It Now",
+    "why": {
+      "title": "Why Curify's mockup generator",
+      "point1": "One upload → a full product lineup, not a single mockup you repeat by hand.",
+      "point2": "Fidelity-locked: your character/artwork is preserved exactly on every product — no redraw or restyle.",
+      "point3": "Real merch categories creators actually sell — mug, tote, keychain, die-cut stickers, phone case, and more.",
+      "point4": "Clean flat-lay commercial layout, ready for a listing, pitch deck, or social post."
+    },
+    "faq": {
+      "title": "FAQ",
+      "q1": "What image should I upload?",
+      "a1": "Any character, mascot, logo, or flat artwork you own the rights to. Original designs work best; the tool preserves your artwork across the products.",
+      "q2": "Can I use it for print-on-demand?",
+      "a2": "It's a mockup/showcase render — great for pitches, listings, and social. For factory-ready print files, use the print-ready / pre-press tools."
+    },
+    "deep": {
+      "what": {
+        "title": "What is an AI merch mockup set?",
+        "p1": "A merch mockup set is a single flat-lay image showing your design applied across a range of products — the visual sellers and studios use to pitch a collection before anything is printed.",
+        "p2": "Traditionally each mockup is composited by hand in Photoshop against a product template. Curify generates the whole lineup from one uploaded image in seconds.",
+        "p3": "The key is fidelity: the same artwork, colors, and linework must read consistently on a mug, a tote, and a keychain — exactly what the templated prompt enforces."
+      },
+      "how": {
+        "title": "How it works",
+        "p1": "Step 1 — Upload your character, mascot, logo, or artwork.",
+        "p2": "Step 2 — The tool applies it as the exclusive printed design across a curated merch lineup.",
+        "p3": "Step 3 — It renders a clean flat-lay of notebook, tote, keychain, sticker sheet, mug, tumbler, pen, and phone case.",
+        "p4": "Step 4 — Your subject's identity, shapes, and colors are preserved on every product.",
+        "p5": "Step 5 — Download the mockup for your listing, pitch deck, or social post."
+      },
+      "usecases": {
+        "title": "Who uses the mockup generator",
+        "creatorsTitle": "For Creators & Artists",
+        "creatorsBody": "Turn an original character into a full merch collection preview to gauge demand or pitch a drop.",
+        "educationTitle": "For Educators",
+        "educationBody": "Preview branded classroom or school-spirit merch from a single mascot illustration.",
+        "businessTitle": "For Brands & Studios",
+        "businessBody": "Show a client a cohesive product lineup from one brand character before committing to production."
       }
     }
   }
