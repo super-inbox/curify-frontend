@@ -64,6 +64,30 @@ reframe) for the merchants who use it.
 
 **GSC 404 report — legacy carousel URLs (RESOLVED, 2026-07-04):** the `raw/curify-ai.com-Coverage-Drilldown-2026-07-03/` "Not found (404)" export shows 642 URLs; **~524 (82%) are legacy `/nano-template/[slug]/carousel/[exampleId]` URLs across all 10 locales** — the pre-`016f8a14` (2026-05-13 route unification) carousel path, which moved to `/carousel/template-example/[slug]/[exampleId]`. **Already fixed:** commit `f52d67bd` (2026-05-31) added the 308 permanent redirect in `next.config.ts:114-123`; verified live 2026-07-04 — single hop old→new, destination returns 200. GSC count already fell 735→642 as Google recrawled, then plateaued ~2026-06-12. **No code action — the only lever is clicking "Validate Fix" in GSC to prompt recrawl.** Remaining buckets are low-value: ~75 `/i/<uuid>` inspiration deep-links (genuine 404, route removed, no clean map — leave or 410 later) + 6 `battle/…/example/*.jpg` image files crawled as pages; rest of the 676 table rows is CSV multi-line noise, not real URLs. Don't re-investigate carousel 404s on the next GSC pull.
 
+**GSC "Duplicate without user-selected canonical" — P0 FIXED (2026-07-11):** GSC Page Indexing
+showed **9,882 "Duplicate without user-selected canonical"** + **10,579 "Crawled - currently not
+indexed"** (the "87% invisible" made concrete). Drilled in via the **URL Inspection API**
+(`urlInspection.index.inspect`, service account `curify@…`, `sc-domain:curify-ai.com`) on
+representative URL patterns. **Root cause:** the **example pages**
+`/nano-template/[slug]/example/[exampleId]` — the **biggest URL class (17,650)** + the W1.2
+internal-link target — emitted a **RELATIVE** `rel=canonical` (`href="/nano-template/…"`), while
+the template-detail page emitted an absolute one. The route's `generateMetadata` set
+`alternates.canonical = canonicalPath` (a relative path); Next.js only absolutizes a relative
+canonical when `metadataBase` is set, which this route does NOT inherit (only `lib/nano_seo_utils.ts`
+sets it). Google won't accept a relative self-canonical → deduped every example page to `/` →
+"Duplicate without user-selected canonical." **Fix:** commit **`3fb7b42f`** on `jwang/vercel` —
+prepend `SITE_URL` to the `canonical`, `languages[lng]` (hreflang), and `x-default` in the example
+page `generateMetadata` (matches the template-detail page's `getCanonicalUrl`). Verified on dev: EN
+example → absolute self-canonical; localized variants → `noindex` + absolute canonical→EN. **Action
+after deploy: click "Validate Fix" on the duplicate-canonical issue in GSC to prompt recrawl; watch
+the 9,882 bucket drain + index coverage climb over the following weeks — the single highest-yield
+technical SEO reclaim.** Triage of the other buckets: **10,579 "crawled-not-indexed"** = content
+quality (the cluster-depth work / Driver 1, NOT a code fix); **17,425 noindex** = intentional
+(non-authored localized template/example variants — URL-Inspection sample confirmed NO EN core pages
+were caught, so no regression); redirects (3,297) / 404 (642) / alternate-canonical (372) =
+expected/known. Method note: GSC coverage *categories* aren't bulk-exportable via API — confirm
+patterns by inspecting representative URLs, not a full pull.
+
 **H2-2026 strategic direction (2026-07-05, from `raw/seo-drop-07-05/`):** two independent
 reads (an advisor memo + the Reddit "sudden GSC drop" thread) confirm our own funnel-audit
 diagnosis — **the June collapse was NOT a site-wide penalty; it was the World Cup topic
