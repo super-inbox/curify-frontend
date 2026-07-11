@@ -54,7 +54,7 @@ export const USE_CASES: UseCaseDef[] = [
   // translation tool, not a design tool) so the sole tool card is the
   // genuine designer fit. The designer value on this page is carried by
   // the curated designer-style template feed, not the tool grid.
-  { slug: "for-designers",    tier: "consumer", toolSlugs: ["style-transfer"] },
+  { slug: "for-designers",    tier: "consumer", toolSlugs: ["style-transfer", "character-sticker-sheet"] },
 
   // --- B2B ICPs (cold-outreach + reference-deal surface) ---
   // Slug kept for SEO continuity; copy and toolSlugs rewritten to target
@@ -124,13 +124,20 @@ export const USE_CASES: UseCaseDef[] = [
   // progseo + forwarder — pipeline-level industrial pitch, not tool
   // browser. Citation-grade thesis at
   // ~/curify-studio/docs/reddit-demand-mining-merch-operators-2026-06-07.md.
-  // 2026-07-07 GTM tighten: surfaced the two merch-intent image demos
-  // (ecommerce-photo = upload product → listing image; ai-product-photo-
-  // generator = one hero shot → many variations) instead of leaving the
-  // page tool-less. These ARE the SKU-velocity demo the 张总/r/printondemand
-  // pain points ask for; the template feed below is now explicitly tagged
-  // for-merch-operators (POD/mockup/sticker/packaging goods).
-  { slug: "for-merch-operators", tier: "b2b", toolSlugs: ["ecommerce-photo", "ai-product-photo-generator"] },
+  // 2026-07-09: reverted to tool-less. The two product-photo tools we
+  // briefly surfaced here (ecommerce-photo, ai-product-photo-generator)
+  // are DTC/listing-image tools, not POD/merch-design — a persona
+  // mismatch. Instead the merch page now features the dedicated
+  // /ip-merch-demo walkthrough (brief → character canon → 16-piece
+  // sticker pack → gift-box mockup → full SKU family) as a prominent CTA
+  // banner (see USE_CASE_DEMO in UseCaseClient.tsx). The product-photo
+  // tools remain on for-marketers + for-programmatic-seo where they fit.
+  // 2026-07-11: added `character-sticker-sheet` — the M9 char-batch wedge
+  // (P0 ship; spec-m9-char-batch-tool.md). This IS a POD/merch-design tool
+  // (upload character → 9-pose 表情差分 sheet), unlike the product-photo
+  // tools, so it belongs here. Coexists with the /ip-merch-demo banner
+  // (banner = pitch/walkthrough, tool = do-it-now).
+  { slug: "for-merch-operators", tier: "b2b", toolSlugs: ["character-sticker-sheet"] },
 ];
 
 export function getUseCaseBySlug(slug: string): UseCaseDef | undefined {

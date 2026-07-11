@@ -150,6 +150,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     templateParameters,
     templateAllowGeneration,
     templateRequiresImageUpload,
+    templateIntroVideoUrl: templateView?.intro_video_url,
     basePrompt,
     existingExamples,
     allowI18n,
@@ -289,6 +290,7 @@ export default async function NanoExampleDetailPage({
     templateParameters,
     templateAllowGeneration,
     templateRequiresImageUpload,
+    templateIntroVideoUrl,
     basePrompt,
     existingExamples,
     bodyDescription,
@@ -360,6 +362,7 @@ export default async function NanoExampleDetailPage({
         slug={slug}
         title={title}
         description={bodyDescription ?? undefined}
+        introVideoUrl={templateIntroVideoUrl}
         sourceReferenceUrl={
           toAbsUrlMaybe(example.asset.image_url) ?? example.asset.image_url
         }

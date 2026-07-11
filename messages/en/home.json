@@ -1,5 +1,18 @@
 {
   "home": {
+    "omni": {
+      "heading": "Start a workflow",
+      "subtitle": "Paste a link, describe an idea, or start from an image — Curify routes it to the right production pipeline.",
+      "placeholder": "Paste a YouTube link, or describe what you want to make…",
+      "go": "Go",
+      "urlLead": "Looks like a video — turn it into:",
+      "imageLead": "Or start from an image:",
+      "searchFor": "Search inspiration for “{q}”",
+      "chips": {
+        "summary": "Summary","transcript": "Transcript","subtitles": "Bilingual subtitles",
+        "ecommerce": "E-commerce image","poster": "Product poster","productVideo": "Product video"
+      }
+    },
     "metadata": {
       "title": "curify-ai – Turn Ideas Into Visual Thinking | AI Infographics, Inspiration & Localization",
       "description": "curify-ai (curify-ai.com) is an AI-powered visual thinking platform that transforms trends, ideas, and knowledge into structured, shareable visual content. Create infographics, inspiration cards, subtitles, translated videos, and localized media with ease.",
@@ -316,19 +329,27 @@
       }
     },
     "ai_product_photo_generator": {
-      "title": "AI Product Photo Generator",
-      "desc": "Generate on-brand product photos at scale — 9-image grids, packaging, outfit try-on, and lifestyle shots from templated prompts.",
+      "title": "AI Product Poster Generator",
+      "desc": "Turn a product photo into a polished promotional poster — pick a style, upload your product, get an on-brand hero visual in seconds.",
       "meta": {
-        "title": "AI Product Photo Generator | Templated Catalog Photos at Scale | Curify",
-        "description": "AI product photo generator with templated visual style — ship 9-image product grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Demo + early access."
+        "title": "AI Product Poster Generator | Promotional Product Posters | Curify",
+        "description": "Turn a product photo into a promotional poster — hero shot, headline space, and on-brand styling in seconds. Pick a poster style and upload your product. Free demo + early access."
       }
     },
     "ecommerce_photo": {
       "title": "Product Photo → E-Commerce Listing Image",
-      "desc": "Upload any product photo — get a listing-ready image in 30 seconds. Cozy hero shots for Etsy / DTC brand pages; 9:16 detail-shot layouts for Shopee, TikTok Shop, RedNote.",
+      "desc": "Upload any product photo — get a listing-ready promotional image in 30 seconds, styled for your marketplace (Etsy / DTC hero or Shopee / TikTok Shop / RedNote vertical).",
       "meta": {
         "title": "Upload Product Photo → E-Commerce Listing Image | AI Tool | Curify",
-        "description": "Upload any product photo — get a ready-to-list e-commerce image in 30 seconds. Cozy warm hero shots + 9:16 detail-shot layouts. Free demo; join early access for batch upload."
+        "description": "Upload any product photo — get a listing-ready promotional image in 30 seconds, styled for your marketplace. Free demo; join early access for batch upload."
+      }
+    },
+    "character_sticker_sheet": {
+      "title": "Character → Expression Sticker Sheet",
+      "desc": "Upload one drawing of your character — get a 9-pose expression sheet (表情差分) in 30 seconds. Same face, nine emotions: happy, sad, angry, love, crying, surprised, and more — ready for emote packs, chat stickers, and 谷子 merch.",
+      "meta": {
+        "title": "Character Expression Sheet Generator — 1 Drawing → 9 Poses | Curify",
+        "description": "Upload one character drawing → get a 9-pose expression sticker sheet (差分) in 30 seconds. For OC artists, VTubers, emote packs, and print-on-demand sticker sellers. Free demo."
       }
     }
   },
@@ -868,9 +889,9 @@
       "title": "AI Product Photo Generator | Templated Catalog Photos at Scale | Curify",
       "description": "AI product photo generator with templated visual style — ship 9-image product grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Demo + early access."
     },
-    "title": "AI Product Photo Generator",
-    "description": "Generate on-brand product photos at scale — 9-image lifestyle grids, packaging mockups, outfit try-on cards, and promotional posters from templated prompts. Lock the visual style once; every variant inherits it. Demo runs on a real template; join early access to feed your own product catalog.",
-    "example": "Example: a 9-image lifestyle grid generated from one prompt. Same subject, different scenes, deterministic on-brand visuals — the kind of variant set programmatic SEO landing pages need.",
+    "title": "AI Product Poster Generator",
+    "description": "Turn a product photo into a polished promotional poster — hero shot, headline space, and on-brand styling, generated in seconds. Pick a poster style and upload your product; the template locks composition, lighting, and framing so every variant stays on-brand. More poster styles are rolling out. Free demo below.",
+    "example": "Example: a product photo rendered as a promotional poster — the kind of hero visual an ad, banner, or landing page leads with. (For a clean marketplace listing shot instead, use the E-Commerce Listing Image tool.)",
     "cta": "Join Early Access",
     "why": {
       "title": "Why use Curify for AI product photos?",
@@ -918,8 +939,8 @@
       "description": "Upload any product photo — get a ready-to-list e-commerce image in 30 seconds. Cozy warm hero shots + 9:16 detail-shot layouts. Free demo; join early access for batch upload."
     },
     "title": "Upload Your Product → E-Commerce Listing Image",
-    "description": "Turn any product photo into a listing-ready image without a photoshoot. Two shipped templates cover the two dominant e-commerce visual grammars: warm cozy hero shots (Etsy / DTC brand aesthetic) and clean 9:16 vertical detail-shot layouts (Shopee / TikTok Shop / Xiaohongshu). Upload once; the template locks composition, lighting, and framing. Free demo below.",
-    "example": "Example: a cycling jersey product photo rendered as a 9:16 vertical detail-shot layout — the format Shopee, TikTok Shop, and RedNote listings actually convert on.",
+    "description": "Turn any product photo into a listing-ready promotional image without a photoshoot — sized and styled for marketplace listings (Etsy / DTC hero, or Shopee / TikTok Shop / Xiaohongshu vertical). Upload once; the template locks composition, lighting, and framing. This is the focused single-flow version; for multiple promotional poster styles, use the AI Product Poster Generator. Free demo below.",
+    "example": "Example: a product photo rendered as a listing-ready promotional image — the format Shopee, TikTok Shop, and RedNote listings actually convert on.",
     "cta": "Try It Now",
     "why": {
       "title": "Why turn product photos into listings through Curify?",
@@ -958,6 +979,55 @@
         "educationBody": "DTC catalogs with 50+ SKUs need visual consistency across every product page — otherwise the catalog reads as a marketplace, not a brand. Curify's templated approach guarantees consistency. Pair with /blog/programmatic-seo-dtc-visual-first for the compounding-SEO play.",
         "businessTitle": "For POD / merch operators shipping print-ready designs",
         "businessBody": "POD operators (t-shirt, sticker, poster, mug) need mockup + listing imagery on top of the print-ready design file. This tool covers the listing-image half; see /use-cases/for-merch-operators for the merch-grade pipeline and /blog/merchandise-design-hub for the SKU-velocity playbook."
+      }
+    }
+  },
+  "characterStickerSheet": {
+    "metadata": {
+      "title": "Character Expression Sheet Generator — 1 Drawing → 9 Poses | Curify",
+      "description": "Upload one character drawing → get a 9-pose expression sticker sheet (差分) in 30 seconds. For OC artists, VTubers, emote packs, and print-on-demand sticker sellers. Free demo."
+    },
+    "title": "Upload Your Character → 9-Pose Expression Sheet",
+    "description": "Turn one drawing of your character into a full expression sheet (表情差分) — nine poses of the same character on one clean grid, ready to cut into chat stickers, emote packs, or printed 谷子 merch. The template locks the character's identity so every pose is unmistakably the same character. Free demo below.",
+    "example": "Example: one character drawing rendered as a 3×3 grid of expressions — happy, laughing, sad, crying, angry, surprised, love, shy, thinking.",
+    "cta": "Try It Now",
+    "why": {
+      "title": "Why make expression sheets through Curify?",
+      "point1": "One upload, nine expressions. Drop a single drawing of your character and get a full emotion set — happy, sad, angry, surprised, love, crying, laughing, shy, thinking — instead of drawing each pose by hand.",
+      "point2": "The character stays the same. The template locks face, proportions, colors, and outfit from your reference, so all nine poses read as the exact same character — not nine lookalikes.",
+      "point3": "Built for what comes next. The 3×3 grid on a clean white background is laid out to cut straight into individual chat stickers, emote packs, or print-ready 谷子 stickers (transparent-PNG and print export are on the roadmap).",
+      "point4": "Skip the commission wait. What sellers currently pay artists $7–$300 and wait days for, you preview in 30 seconds — then commission or refine only the poses worth finishing."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Do I upload my own character?",
+      "a1": "Yes. Upload one drawing of your character (OC, mascot, or IP). The AI preserves that character's identity — face, proportions, colors, costume — and generates nine new expressions of the same character, not a generic 'similar' one.",
+      "q2": "What can I use the expression sheet for?",
+      "a2": "Chat sticker packs (WeChat / LINE / Telegram), Twitch and Discord emotes, and printed 谷子 merch (die-cut stickers, badges/吧唧, standees/立牌). The poses come on a clean grid so they're easy to cut into individual stickers; transparent-PNG and print-ready PDF export are on the roadmap."
+    },
+    "deep": {
+      "what": {
+        "title": "What is a character expression sheet (差分)?",
+        "p1": "An expression sheet — 差分 in Japanese and Chinese fan-art vocabulary — is a set of the same character drawn in many emotions and poses: happy, sad, angry, surprised, crying, love, and so on. It's the raw material behind emote packs, chat-sticker sets, VTuber reaction assets, and printed character merch.",
+        "p2": "Traditionally every pose is drawn by hand, one at a time — which is why sellers commission artists for sticker sheets and emote packs at $7–$300 per set and wait days per revision. The bottleneck isn't the first drawing; it's producing the whole emotion library at a consistent quality.",
+        "p3": "Image-to-image models (Nano Banana Pro, Gemini 3 Pro Image) can now generate new poses of an existing character. What was missing is a templating layer that keeps the character identical across every cell and lays the poses out on a clean, cut-ready grid — which is exactly what this tool does."
+      },
+      "how": {
+        "title": "How Curify turns one drawing into an expression sheet",
+        "p1": "Step one: upload one clear drawing of your character. A clean, front-facing reference gives the AI the strongest signal to lock identity from — but any legible drawing works.",
+        "p2": "Step two: the template runs. It reproduces your character's exact face, proportions, colors, and outfit, then generates nine new expressions of that same character — happy, laughing, sad, crying, angry, surprised, love, shy, thinking.",
+        "p3": "Step three: the nine poses are arranged in a clean 3×3 grid on a pure white background, evenly spaced with clear gutters and no text — laid out so each pose can be cut into an individual sticker.",
+        "p4": "Step four: download the sheet. Use it as-is for a chat-sticker pack or emote set, or take it into the print pipeline for die-cut stickers and 谷子 merch.",
+        "p5": "On the roadmap: one-click export to individual transparent PNGs per pose, plus a print-ready die-cut sheet PDF (300 DPI, cut lines) — turning the on-screen sheet into physical-merch production files."
+      },
+      "usecases": {
+        "title": "Where character expression sheets matter",
+        "creatorsTitle": "For OC artists, VTubers & emote sellers",
+        "creatorsBody": "Original-character artists and streamers live on expression variety — reaction emotes, sticker packs, reference sheets. Generate the full emotion set from one drawing, then finish the winners. See /use-cases/for-designers for the broader illustrator workflow.",
+        "educationTitle": "For chat-sticker & emote-pack makers",
+        "educationBody": "WeChat / LINE / Telegram sticker packs and Twitch / Discord emote sets need a consistent character across every pose. The template guarantees that consistency so the pack reads as one character, not a patchwork.",
+        "businessTitle": "For POD & 谷子 merch operators",
+        "businessBody": "Fan-merch and print-on-demand operators turn character IP into die-cut stickers, badges (吧唧), and standees (立牌). This tool produces the expression library; see /use-cases/for-merch-operators for the SKU-velocity pipeline and the /ip-merch-demo walkthrough."
       }
     }
   }

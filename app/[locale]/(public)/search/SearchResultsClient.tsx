@@ -62,6 +62,14 @@ type Props = {
   activeIntentLabel?: string;
 };
 
+// Fresh-marker key for the chip-narrow beacon handshake. The "Explore
+// further" chip stamps {slug, ts} here on click; the results-page effect
+// consumes it so only genuine human narrows emit a within= search event —
+// crawlers following the chip <Link>s never run the onClick, so they stay
+// out of the search-query analytics (see search-query CTR bot-pollution
+// finding 2026-07-09).
+const WITHIN_INTENT_KEY = "curify:within-intent";
+
 // Compute the href for a SuggestionEntry chip — honors `href` overrides
 // for non-topic destinations and routes `searchFallback` entries (nano-tag
 // suggestions) through /search?q= so they re-render this same page.
@@ -199,6 +207,28 @@ export default function SearchResultsClient({
   useEffect(() => {
     const q = query.trim();
     if (!q) return;
+    // Crawler-pollution guard (2026-07-09): chip-narrow (?within=) result
+    // pages are crawlable — bots follow the "Explore further" chip <Link>s
+    // and this effect would otherwise fire a phantom SEARCH/noresult on
+    // every crawl (~88% of logged search events were exactly this). Only
+    // emit the within= beacon when THIS page load came from a genuine chip
+    // click: the chip's onClick stamps a fresh sessionStorage marker that we
+    // consume here. Direct nav / crawl / refresh / prefetch → no fresh
+    // marker → stay silent. Raw (non-within) searches are unaffected.
+    if (withinSlug) {
+      let humanNarrow = false;
+      try {
+        const raw = sessionStorage.getItem(WITHIN_INTENT_KEY);
+        if (raw) {
+          const { slug, ts } = JSON.parse(raw) as { slug: string; ts: number };
+          humanNarrow = slug === withinSlug && Date.now() - ts < 15000;
+          sessionStorage.removeItem(WITHIN_INTENT_KEY); // consume once
+        }
+      } catch {
+        // sessionStorage unavailable — treat as non-human, stay silent.
+      }
+      if (!humanNarrow) return;
+    }
     // Server-side LLM rewrite runs BEFORE these arrays are populated, so
     // totalResults already reflects the post-rewrite count. We fire the
     // no-result / low-result events only when the rewrite either was not
@@ -334,13 +364,26 @@ export default function SearchResultsClient({
                 <Link
                   key={slug}
                   href={`/${locale}/search?q=${encodeURIComponent(query)}&within=${slug}`}
-                  onClick={() =>
+                  onClick={() => {
+                    // Authorize the destination page's within= beacon: a
+                    // genuine human chip click stamps this fresh marker,
+                    // which the results-page effect consumes. Crawlers that
+                    // follow the <Link> never run this handler, so their
+                    // page load stays out of search analytics.
+                    try {
+                      sessionStorage.setItem(
+                        WITHIN_INTENT_KEY,
+                        JSON.stringify({ slug, ts: Date.now() })
+                      );
+                    } catch {
+                      // sessionStorage unavailable — beacon just stays silent.
+                    }
                     track({
                       contentId: `intent-chip:${slug}:${query}`,
                       contentType: "topic_capsule",
                       actionType: "click",
-                    })
-                  }
+                    });
+                  }}
                   className="inline-flex items-center gap-1.5 rounded-full border border-purple-200 bg-purple-50 px-3.5 py-1.5 text-sm text-purple-900 transition-colors hover:border-purple-400 hover:bg-purple-100"
                 >
                   <span className="font-semibold">

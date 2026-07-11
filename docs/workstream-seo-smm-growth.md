@@ -129,6 +129,25 @@ MBTI test → character MBTI charts → fandom/anime grids → character **stick
 → character **wallpapers** (=Social rung) → "which [franchise] character are you" quizzes. Build
 scope in `docs/mbti-character-cluster-build-2026-07-05.md`.
 
+**Growth-driver framing (2026-07-11).** Session-wide synthesis: growth = **traffic × conversion**,
+with **two real drivers** (everything else is enabler or noise):
+- **Driver 1 — capture proven evergreen demand** (top of funnel): best-in-field cluster *depth*
+  (not breadth) + a productized trending engine. Evidence: WC proved Google will hand Curify
+  traffic; 87% of pages invisible; MBTI demand is rising + multilingual.
+- **Driver 2 — convert traffic into a generation** (middle of funnel): **the auth wall is the
+  bottleneck** (100% of creation auth-gated, 0 anon) and **image gen only converts where a
+  functional, ranking `/tools` surface exists**. Levers: **anon-generate-once** + a functional
+  tool surface per cluster (lever #1 generalized). Image gen is already #2 & accelerating.
+- **Amplifier — SMM** as demand-sensing + identity-matched distribution (not broadcast).
+- **NOT drivers:** page-size/2MB fix (crawl enabler), breadth/thin pages, engagement features for
+  the ~150-DAU base (already ~85-90% convert), DAU vanity (the "900" was bots — memory
+  `project_why_no_image_gen` + the 2026-07-07 refined-DAU bot-filter fix).
+
+MBTI is sequenced against both drivers (Phase 1 closes a full demand→conversion loop:
+M1b hub + M4 tool + **anon-generate-once**, piloted on MBTI because it's preset/text-driven =
+no `/images/upload` anon gate). Full phased plan in `docs/mbti-character-cluster-build-2026-07-05.md`
+§ "Sequencing — mapped to the two growth drivers".
+
 ## 2. SMM — Social Media Marketing / autopost
 
 > **Operating frame (2026-07-05): Account Positioning, not Content Strategy.** Full playbook:

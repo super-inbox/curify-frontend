@@ -30,6 +30,9 @@ export type NanoTemplateForDetail = {
   // banner pointing at the latest published output above. See memory
   // feedback_creation_vs_consumption_templates.md for the full distinction.
   archetype?: "creation" | "consumption";
+  // Template-level intro/demo video (relative CDN path). When present, the
+  // column-3 workbench shows a zero-cost "Watch video" tile that reveals it.
+  intro_video_url?: string;
   existingExamples?: ExistingExample[];
 };
 

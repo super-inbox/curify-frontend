@@ -1,5 +1,18 @@
 {
   "home": {
+    "omni": {
+      "heading": "Start a workflow",
+      "subtitle": "Paste a link, describe an idea, or start from an image — Curify routes it to the right production pipeline.",
+      "placeholder": "Paste a YouTube link, or describe what you want to make…",
+      "go": "Go",
+      "urlLead": "Looks like a video — turn it into:",
+      "imageLead": "Or start from an image:",
+      "searchFor": "Search inspiration for “{q}”",
+      "chips": {
+        "summary": "Summary","transcript": "Transcript","subtitles": "Bilingual subtitles",
+        "ecommerce": "E-commerce image","poster": "Product poster","productVideo": "Product video"
+      }
+    },
     "metadata": {
       "title": "Curify – Convierte ideas en pensamiento visual | Infografías con IA y localización",
       "description": "Curify es una plataforma de pensamiento visual impulsada por IA que transforma tendencias, ideas y conocimiento en contenido visual estructurado y compartible. Crea infografías, tarjetas de inspiración, subtítulos, videos traducidos y contenido localizado fácilmente.",
@@ -292,6 +305,14 @@
       "meta": {
         "title": "Sube Foto del Producto → Imagen de Listado de E-Commerce | Herramienta de IA | Curify",
         "description": "Sube cualquier foto de producto — obtén una imagen de e-commerce lista para listar en 30 segundos. Imágenes acogedoras + diseños de toma de detalle 9:16. Demostración gratuita; únete al acceso anticipado para carga por lotes."
+      }
+    },
+    "character_sticker_sheet": {
+      "title": "Personaje → hoja de stickers de expresiones",
+      "desc": "Sube un dibujo de tu personaje y obtén una hoja de expresiones de 9 poses (差分, hoja de expresiones) en 30 segundos. La misma cara, nueve emociones: feliz, triste, enojado, amor, llorando, sorprendido y más — lista para packs de emotes, stickers de chat y merch 谷子 (fan merch).",
+      "meta": {
+        "title": "Generador de hojas de expresiones de personaje — 1 dibujo → 9 poses | Curify",
+        "description": "Sube un dibujo de personaje → obtén una hoja de stickers de expresiones de 9 poses (差分) en 30 segundos. Para artistas de OC, VTubers, packs de emotes y vendedores de stickers bajo demanda. Demo gratis."
       }
     }
   },
@@ -1019,6 +1040,55 @@
         "educationBody": "Los catálogos DTC con más de 50 SKU necesitan consistencia visual en cada página de producto; de lo contrario, el catálogo se presenta como un mercado, no como una marca. El enfoque con plantillas de Curify garantiza consistencia. Combínalo con /blog/programmatic-seo-dtc-visual-first para la estrategia de SEO compuesta.",
         "businessTitle": "Para operadores de POD / merchandising que envían diseños listos para imprimir",
         "businessBody": "Los operadores de POD (camisetas, pegatinas, carteles, tazas) necesitan imágenes de maquetas + listados además del archivo de diseño listo para imprimir. Esta herramienta cubre la mitad de la imagen de listado; consulta /use-cases/for-merch-operators para el flujo de trabajo de merchandising y /blog/merchandise-design-hub para el manual de SKU-velocidad."
+      }
+    }
+  },
+  "characterStickerSheet": {
+    "metadata": {
+      "title": "Generador de hojas de expresiones de personaje — 1 dibujo → 9 poses | Curify",
+      "description": "Sube un dibujo de personaje → obtén una hoja de stickers de expresiones de 9 poses (差分) en 30 segundos. Para artistas de OC, VTubers, packs de emotes y vendedores de stickers bajo demanda. Demo gratis."
+    },
+    "title": "Sube tu personaje → hoja de expresiones de 9 poses",
+    "description": "Convierte un dibujo de tu personaje en una hoja de expresiones completa (差分, hoja de expresiones): nueve poses del mismo personaje en una cuadrícula limpia, lista para recortar en stickers de chat, packs de emotes o merch 谷子 (fan merch) impreso. La plantilla fija la identidad del personaje para que cada pose sea inconfundiblemente el mismo. Demo gratis abajo.",
+    "example": "Ejemplo: un dibujo de personaje renderizado como una cuadrícula 3×3 de expresiones — feliz, riendo, triste, llorando, enojado, sorprendido, amor, tímido, pensando.",
+    "cta": "Pruébalo ahora",
+    "why": {
+      "title": "¿Por qué hacer hojas de expresiones con Curify?",
+      "point1": "Una subida, nueve expresiones. Suelta un único dibujo de tu personaje y obtén un set completo de emociones — feliz, triste, enojado, sorprendido, amor, llorando, riendo, tímido, pensando — en lugar de dibujar cada pose a mano.",
+      "point2": "El personaje se mantiene igual. La plantilla fija cara, proporciones, colores y vestimenta de tu referencia, así que las nueve poses son exactamente el mismo personaje, no nueve parecidos.",
+      "point3": "Pensado para lo que viene después. La cuadrícula 3×3 sobre fondo blanco limpio está diseñada para recortar directamente en stickers de chat individuales, packs de emotes o stickers 谷子 listos para imprimir (la exportación en PNG transparente y para impresión está en el roadmap).",
+      "point4": "Sáltate la espera del encargo. Lo que los vendedores hoy pagan a artistas por $7–$300 y esperan días, tú lo previsualizas en 30 segundos — y luego encargas o refinas solo las poses que valga la pena terminar."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q1": "¿Subo mi propio personaje?",
+      "a1": "Sí. Sube un dibujo de tu personaje (OC, mascota o IP). La IA preserva la identidad de ese personaje — cara, proporciones, colores, vestuario — y genera nueve expresiones nuevas del mismo personaje, no uno genérico 'parecido'.",
+      "q2": "¿Para qué puedo usar la hoja de expresiones?",
+      "a2": "Packs de stickers de chat (WeChat / LINE / Telegram), emotes de Twitch y Discord, y merch 谷子 (fan merch) impreso (stickers troquelados, chapas/吧唧, standees/立牌). Las poses vienen en una cuadrícula limpia para recortarlas fácilmente en stickers individuales; la exportación en PNG transparente y PDF listo para imprimir está en el roadmap."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué es una hoja de expresiones de personaje (差分)?",
+        "p1": "Una hoja de expresiones — 差分 en el vocabulario del fan-art japonés y chino — es un set del mismo personaje dibujado en muchas emociones y poses: feliz, triste, enojado, sorprendido, llorando, amor, etcétera. Es la materia prima detrás de los packs de emotes, sets de stickers de chat, recursos de reacción de VTubers y merch impreso de personajes.",
+        "p2": "Tradicionalmente cada pose se dibuja a mano, una por una — por eso los vendedores encargan a artistas hojas de stickers y packs de emotes por $7–$300 el set y esperan días por cada revisión. El cuello de botella no es el primer dibujo; es producir toda la biblioteca de emociones con una calidad consistente.",
+        "p3": "Los modelos imagen-a-imagen (Nano Banana Pro, Gemini 3 Pro Image) ya pueden generar nuevas poses de un personaje existente. Lo que faltaba es una capa de plantillas que mantenga al personaje idéntico en cada celda y disponga las poses en una cuadrícula limpia y lista para recortar — que es exactamente lo que hace esta herramienta."
+      },
+      "how": {
+        "title": "Cómo Curify convierte un dibujo en una hoja de expresiones",
+        "p1": "Paso uno: sube un dibujo claro de tu personaje. Una referencia limpia y de frente le da a la IA la señal más fuerte para fijar la identidad — pero cualquier dibujo legible funciona.",
+        "p2": "Paso dos: la plantilla corre. Reproduce la cara, proporciones, colores y vestimenta exactas de tu personaje, y luego genera nueve expresiones nuevas del mismo personaje — feliz, riendo, triste, llorando, enojado, sorprendido, amor, tímido, pensando.",
+        "p3": "Paso tres: las nueve poses se disponen en una cuadrícula 3×3 limpia sobre fondo blanco puro, con espaciado uniforme, márgenes claros y sin texto — dispuestas para que cada pose pueda recortarse en un sticker individual.",
+        "p4": "Paso cuatro: descarga la hoja. Úsala tal cual para un pack de stickers de chat o un set de emotes, o llévala al pipeline de impresión para stickers troquelados y merch 谷子 (fan merch).",
+        "p5": "En el roadmap: exportación con un clic a PNGs transparentes individuales por pose, más un PDF de hoja troquelada lista para imprimir (300 DPI, líneas de corte) — convirtiendo la hoja en pantalla en archivos de producción de merch físico."
+      },
+      "usecases": {
+        "title": "Dónde importan las hojas de expresiones de personaje",
+        "creatorsTitle": "Para artistas de OC, VTubers y vendedores de emotes",
+        "creatorsBody": "Los artistas de personajes originales y los streamers viven de la variedad de expresiones — emotes de reacción, packs de stickers, hojas de referencia. Genera el set completo de emociones desde un dibujo y luego termina los ganadores. Ve /use-cases/for-designers para el flujo de trabajo de ilustrador más amplio.",
+        "educationTitle": "Para creadores de stickers de chat y packs de emotes",
+        "educationBody": "Los packs de stickers de WeChat / LINE / Telegram y los sets de emotes de Twitch / Discord necesitan un personaje consistente en cada pose. La plantilla garantiza esa consistencia para que el pack se lea como un solo personaje, no como un mosaico.",
+        "businessTitle": "Para operadores de POD y merch 谷子 (fan merch)",
+        "businessBody": "Los operadores de fan-merch e impresión bajo demanda convierten la IP de un personaje en stickers troquelados, chapas (吧唧) y standees (立牌). Esta herramienta produce la biblioteca de expresiones; ve /use-cases/for-merch-operators para el pipeline de velocidad de SKU y el recorrido en /ip-merch-demo."
       }
     }
   }

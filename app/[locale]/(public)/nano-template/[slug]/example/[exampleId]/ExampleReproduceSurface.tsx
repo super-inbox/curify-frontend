@@ -17,6 +17,8 @@ type Props = {
   title: string;
   description?: string;
   image: ReactNode;
+  /** Template-level intro video (relative CDN path) → "Watch video" tile in col 3. */
+  introVideoUrl?: string;
   sourceReferenceUrl: string;
   parameters: TemplateParameter[];
   initialParams: Record<string, string>;
@@ -38,6 +40,7 @@ export default function ExampleReproduceSurface({
   title,
   description,
   image,
+  introVideoUrl,
   sourceReferenceUrl,
   parameters,
   initialParams,
@@ -64,6 +67,7 @@ export default function ExampleReproduceSurface({
       existingExamples={existingExamples}
       useCaseFilter={useCaseFilter}
       trackingContentId={`${templateId}:${exampleId}`}
+      introVideoUrl={introVideoUrl}
       col1={{
         mode: "source",
         image,

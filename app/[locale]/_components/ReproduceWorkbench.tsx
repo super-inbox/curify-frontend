@@ -10,6 +10,7 @@ import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
+import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import { fillPrompt } from "@/lib/nano_pure";
 // Use the superset TemplateParameter (adds "daterange" + array placeholder) so
 // both the example page (nano_pure params) and the template-detail page
@@ -18,8 +19,8 @@ import { normalizePrefills, type TemplateParameter } from "@/lib/nano_prompt_uti
 import type { ExistingExampleRef } from "@/lib/editDistance";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
-import { getTemplateWorkflows } from "@/lib/template_workflows";
-import { resizeToSocialBundle } from "@/lib/resize_bundle";
+import { getTemplateWorkflows, videoShowWorkflow } from "@/lib/template_workflows";
+import { resizeToSocialBundle, sliceIntoGrid } from "@/lib/resize_bundle";
 import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
 
@@ -45,7 +46,18 @@ export type WorkbenchCol1 =
       title: string;
       batchEnabled?: boolean;
     }
-  | { mode: "upload"; label?: string; hint?: string };
+  | { mode: "upload"; label?: string; hint?: string }
+  // A finished project result opens in the workbench: column 1 shows the output,
+  // column 3 (designer pack) operates on it, and column 2 is HIDDEN — a loaded
+  // project carries no template/params to drive parametric regeneration (that's a
+  // later phase). See docs/image-workflow-page-design-2026-07-11.md.
+  | {
+      mode: "result";
+      image: ReactNode;
+      resultUrl: string;
+      title: string;
+      downloadHref?: string;
+    };
 
 type Props = {
   locale: string;
@@ -61,6 +73,9 @@ type Props = {
   useCaseFilter?: readonly string[];
   /** content_id for tracking (example page: `${templateId}:${exampleId}`; others: templateId). */
   trackingContentId: string;
+  /** Template-level intro video (relative CDN path). When present, column 3 gets
+   *  a zero-cost "Watch video" tile that reveals this already-rendered MP4. */
+  introVideoUrl?: string;
   col1: WorkbenchCol1;
 };
 
@@ -78,6 +93,7 @@ export default function ReproduceWorkbench({
   existingExamples = [],
   useCaseFilter,
   trackingContentId,
+  introVideoUrl,
   col1,
 }: Props) {
   const t = useTranslations("actionButtons");
@@ -102,6 +118,9 @@ export default function ReproduceWorkbench({
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [soonNote, setSoonNote] = useState<string | null>(null);
+  // Set when the user taps the "Watch video" tile — reveals the template's
+  // already-rendered intro video in column 3 (free, no generation).
+  const [shownVideoUrl, setShownVideoUrl] = useState<string | null>(null);
   const [referenceImageUrl, setReferenceImageUrl] = useState<string | null>(null);
   const [isUploadingImage, setIsUploadingImage] = useState(false);
   const resultSeq = useRef(0);
@@ -130,7 +149,23 @@ export default function ReproduceWorkbench({
   const { generate: freeformGenerate, isGenerating: freeformGenerating } = useFreeformGenerate({
     tracking,
     onStart: (args) => setActiveKey((args.meta?.key as string) ?? null),
-    onSuccess: (url, args) => pushResult((args.meta?.key as string) ?? "wf", (args.meta?.label as string) ?? "Result", url),
+    onSuccess: async (url, args) => {
+      const key = (args.meta?.key as string) ?? "wf";
+      const label = (args.meta?.label as string) ?? "Result";
+      // The Instagram 9-grid workflow generates ONE composite 3x3 image; slice it
+      // client-side into 9 separate tiles so the user gets 9 post-ready files, not
+      // one image they'd have to cut up. Falls back to the composite on failure.
+      if (key === "ig-grid") {
+        try {
+          const tiles = await sliceIntoGrid(url, 3, 3);
+          tiles.forEach((t, i) => pushResult(`ig-grid-${i + 1}`, `Grid tile ${i + 1}`, t.url));
+          return;
+        } catch {
+          // CORS/decode failure — fall through and keep the composite.
+        }
+      }
+      pushResult(key, label, url);
+    },
     onSettled: () => setActiveKey(null),
   });
 
@@ -139,9 +174,18 @@ export default function ReproduceWorkbench({
   // Transform source for the designer-pack workflows: prefer the latest
   // generated result; else the static source image (source mode) or the raw
   // uploaded image (upload mode).
-  const col1Source = col1.mode === "source" ? col1.sourceReferenceUrl : referenceImageUrl ?? "";
+  const col1Source =
+    col1.mode === "source" ? col1.sourceReferenceUrl
+    : col1.mode === "result" ? col1.resultUrl
+    : referenceImageUrl ?? "";
   const transformSource = latestUrl ?? col1Source;
-  const workflows = useMemo(() => getTemplateWorkflows(templateId), [templateId]);
+  const workflows = useMemo(() => {
+    const base = getTemplateWorkflows(templateId);
+    // Lead column 3 with a zero-cost "Watch video" tile for the ~109 templates
+    // that already ship a rendered intro video — image→video with no wait, no
+    // credits. Templates without one just show the design workflows as before.
+    return introVideoUrl ? [videoShowWorkflow(introVideoUrl), ...base] : base;
+  }, [templateId, introVideoUrl]);
 
   const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
 
@@ -150,6 +194,11 @@ export default function ReproduceWorkbench({
   // In upload mode the reference upload is column 1; in source mode it stays in
   // column 2 (only rendered there for image2image templates).
   const uploadInCol2 = col1.mode === "source" && requiresImageUpload;
+  // "result" mode = a finished project loaded to keep producing. Column 2 is
+  // hidden, so column 1 + column 3 widen to fill the 12-col grid.
+  const resultMode = col1.mode === "result";
+  const col1Span = resultMode ? "lg:col-span-4" : "lg:col-span-3";
+  const col3Span = resultMode ? "lg:col-span-8" : "lg:col-span-5";
 
   const onFormChange = (name: string, value: string) => {
     clearWarning();
@@ -166,6 +215,15 @@ export default function ReproduceWorkbench({
   };
 
   const runWorkflow = async (wf: (typeof workflows)[number]) => {
+    // "Watch video" — reveal the pre-rendered intro video. Free, instant, no
+    // backend. (The first, most-clicked tile for the templates that have one.)
+    if (wf.kind === "video-show") {
+      if (!wf.videoUrl) return;
+      setSoonNote(null);
+      setShownVideoUrl(wf.videoUrl);
+      track({ contentId: `workflow-video:${templateId}`, contentType: tracking.contentType, actionType: "click" });
+      return;
+    }
     if (wf.kind === "soon") {
       track({ contentId: `workflow-soon:${wf.key}:${templateId}`, contentType: "topic_capsule", actionType: "click" });
       setSoonNote(`${wf.label} is coming soon — we prioritize these by demand, so your click counts.`);
@@ -212,8 +270,10 @@ export default function ReproduceWorkbench({
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
         {/* ── 1. SOURCE / YOUR IMAGE ────────────────────────────────── */}
-        <div className="flex flex-col lg:col-span-3">
-          <div className={labelCls}>{col1.mode === "upload" ? "1 · Your image" : "1 · Source"}</div>
+        <div className={`flex flex-col ${col1Span}`}>
+          <div className={labelCls}>
+            {col1.mode === "upload" ? "1 · Your image" : col1.mode === "result" ? "1 · Your result" : "1 · Source"}
+          </div>
           {col1.mode === "upload" ? (
             <div className="flex flex-1 flex-col rounded-2xl border border-neutral-200 bg-white p-3 shadow-sm">
               <ReferenceImageUpload
@@ -235,18 +295,31 @@ export default function ReproduceWorkbench({
                 {col1.image}
               </div>
               <div className="mt-2">
-                <UnifiedActionBar
-                  tracking={tracking}
-                  copy={{ enabled: true, text: col1.copyText }}
-                  share={{ enabled: true, url: col1.shareUrl, title: col1.title }}
-                  {...(col1.batchEnabled ? { batchDownload: { enabled: true, templateId } } : {})}
-                />
+                {col1.mode === "result" ? (
+                  <a
+                    href={col1.downloadHref ?? col1.resultUrl}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                  >
+                    <Download className="h-4 w-4" /> Download
+                  </a>
+                ) : (
+                  <UnifiedActionBar
+                    tracking={tracking}
+                    copy={{ enabled: true, text: col1.copyText }}
+                    share={{ enabled: true, url: col1.shareUrl, title: col1.title }}
+                    {...(col1.batchEnabled ? { batchDownload: { enabled: true, templateId } } : {})}
+                  />
+                )}
               </div>
             </>
           )}
         </div>
 
-        {/* ── 2. MAKE IT YOURS / PROMPT & GENERATE ──────────────────── */}
+        {/* ── 2. MAKE IT YOURS / PROMPT & GENERATE (hidden in result mode) ── */}
+        {!resultMode && (
         <div className="flex flex-col lg:col-span-4">
           <div className={labelCls}>{col1.mode === "upload" ? "2 · Prompt & generate" : "2 · Make it yours"}</div>
           <div className="flex flex-1 flex-col gap-3">
@@ -384,12 +457,13 @@ export default function ReproduceWorkbench({
             )}
           </div>
         </div>
+        )}
 
         {/* ── 3. DESIGNER PACK ──────────────────────────────────────── */}
-        <div className="flex flex-col lg:col-span-5">
+        <div className={`flex flex-col ${col3Span}`}>
           <div className="mb-2 flex items-baseline justify-between">
             <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-              3 · Turn it into design work
+              {resultMode ? "2 · " : "3 · "}Turn it into design work
             </span>
             <span className="text-[11px] text-neutral-400">{CREDITS_COST} credits each</span>
           </div>
@@ -399,12 +473,14 @@ export default function ReproduceWorkbench({
               const Icon = wf.icon;
               const busy = activeKey === wf.key;
               const isSoon = wf.kind === "soon";
+              // Free/instant tiles (video reveal) stay enabled during a generation.
+              const isFree = wf.kind === "video-show";
               return (
                 <button
                   key={wf.key}
                   type="button"
                   title={wf.hint}
-                  disabled={anyGenerating && !isSoon}
+                  disabled={anyGenerating && !isSoon && !isFree}
                   onClick={() => runWorkflow(wf)}
                   className={`group relative flex flex-col items-center gap-1.5 rounded-xl border p-2 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 ${
                     isSoon ? "border-dashed border-neutral-300 bg-neutral-50" : "border-neutral-200 bg-white hover:border-purple-300"
@@ -425,6 +501,28 @@ export default function ReproduceWorkbench({
           </div>
 
           {soonNote && <p className="mt-2 text-[11px] text-neutral-500">{soonNote}</p>}
+
+          {/* Template intro video, revealed by the free "Watch video" tile. */}
+          {shownVideoUrl && (
+            <div className="relative mt-3 overflow-hidden rounded-2xl border border-neutral-200 bg-black shadow-sm">
+              <CdnVideo
+                key={shownVideoUrl}
+                src={shownVideoUrl}
+                controls
+                autoPlay
+                playsInline
+                className="h-auto w-full"
+              />
+              <button
+                type="button"
+                onClick={() => setShownVideoUrl(null)}
+                aria-label="Close video"
+                className="absolute right-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-lg bg-black/55 text-white backdrop-blur-sm transition hover:bg-black/75"
+              >
+                ✕
+              </button>
+            </div>
+          )}
 
           <div className="mt-3 flex flex-1 flex-col">
             <div className="relative flex min-h-[200px] flex-1 items-center justify-center overflow-hidden rounded-2xl border border-dashed border-neutral-300 bg-white p-2">

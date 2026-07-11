@@ -89,11 +89,51 @@
   query position for "mbti test" / "personality test" / per-fandom head terms; ko/ru impressions post-M3.
 - **Conversion:** `/tools/mbti-*` generation runs (M4) — the value-capture rung.
 
-## Sequencing
+## Sequencing — mapped to the two growth drivers (2026-07-11)
 
-**M1a ✅ done** (sitemap unlock) → **M1b** (head-term hub) → **M2 + M3** (interlink + i18n; cheap,
-high-leverage, parallel) → **M4** (conversion endpoint) → **M5** in parallel (independent content
-value) → **M6** standing maintenance loop → **M7** opportunistic off the trending engine.
+Reframed against the session-wide growth synthesis: growth = **traffic × conversion**.
+**Driver 1 = capture proven evergreen demand** (top of funnel); **Driver 2 = convert the
+traffic into a generation** (middle of funnel — the auth wall is *the* bottleneck: 100% of
+creation is auth-gated, 0 anon). MBTI is the first cluster because it hits BOTH drivers at once
+(rising multilingual demand + a functional tool surface we can build from existing assets).
+
+**Organizing idea: build a complete flywheel for ONE cluster first, then replicate.**
+> Google "which Naruto character am I" → land on a ranking MBTI page **[D1]** → take the quiz /
+> **generate a character once without signing up** **[D2]** → the generation is the value moment →
+> sign-up to save/make more → generated assets + type pages feed more indexable "living content"
+> → more ranking surface.
+
+### Phase 1 — Close the loop (MVP: demand + conversion together) ← priority
+| Step | Driver | What | Effort |
+|---|---|---|---|
+| M1a ✅ | D1 | sitemap: 16 `/personality/[type]` pages discoverable | shipped |
+| **M1b** | **D1** | `/personality` **hub** — head term "mbti test / personality test"; hosts existing `MBTIQuizWidget` + 16 type chips + character-template gallery | ~2–3d |
+| **M4** | **D2** | `/tools/mbti-character-generator` — surface the existing `NANO_FREEFORM` / `personality-poster` pipeline as a functional, rankable tool | ~3–4d |
+| **★ anon-generate-once** | **D2** | let a visitor generate **one** MBTI character *before* the auth wall, then prompt sign-up to save/continue | ~3–5d |
+| M2 | D1 | interlink hub ↔ type pages ↔ 44 templates ↔ tool ↔ blogs into one authority graph | ~2d |
+
+**Why MBTI is the right pilot for anon-generate-once:** the known anon blocker is the
+`/images/upload` 401 on **image-required** flows (memory `feedback_image_upload_requires_auth`).
+MBTI character gen is **preset/text-driven — no upload** — so it's the cleanest surface to prove
+anon-generate-once without hitting that gate. Prove the lift here, then generalize platform-wide
+(anon-generate-once is the single highest-leverage conversion change on the platform).
+
+### Phase 2 — Scale demand within the cluster
+- **M3 [D1]** — i18n `mbti-meta` → ko/ru/zh-TW (proven demand: `나루토 mbti`, `нарута мбти`).
+- **M5 [D1]** — blogs 3 → 10 (head-term + per-fandom "which X are you").
+- **M7 [D1 + amplifier]** — trend-fed fandom expansion via the SMM trending engine.
+
+### Phase 3 — Living content + replicate
+- **M6 [D1]** — freshness cadence on hub + type pages (the "living content" flywheel arm).
+- **Then replicate** the working template to the next cluster (Travel or Recipe).
+
+### Driver-tied metrics
+- **D1:** MBTI-cluster impressions/day (GSC bucket, baseline ~500), head-term position, `/personality/*` index coverage.
+- **D2:** anon-generate rate, generate→signup conversion, MBTI-tool generations (project-table `job_type` + referrer/landing analytics already stood up).
+
+**Non-drivers (do not let these jump the queue):** page-size/2MB fix (crawl *enabler*, not demand),
+breadth/thin pages, engagement features for the current ~150-DAU base (already ~85-90% convert —
+it's small, not disengaged), DAU vanity metrics (the "900" was bots).
 
 ## Status log
 

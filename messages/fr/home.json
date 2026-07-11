@@ -1,5 +1,18 @@
 {
   "home": {
+    "omni": {
+      "heading": "Start a workflow",
+      "subtitle": "Paste a link, describe an idea, or start from an image — Curify routes it to the right production pipeline.",
+      "placeholder": "Paste a YouTube link, or describe what you want to make…",
+      "go": "Go",
+      "urlLead": "Looks like a video — turn it into:",
+      "imageLead": "Or start from an image:",
+      "searchFor": "Search inspiration for “{q}”",
+      "chips": {
+        "summary": "Summary","transcript": "Transcript","subtitles": "Bilingual subtitles",
+        "ecommerce": "E-commerce image","poster": "Product poster","productVideo": "Product video"
+      }
+    },
     "metadata": {
       "title": "Curify – Transformez les idées en pensée visuelle | IA & Localisation",
       "description": "Curify est une plateforme de pensée visuelle alimentée par l’IA qui transforme tendances, idées et connaissances en contenus visuels structurés et partageables. Créez des infographies, cartes d’inspiration, sous-titres et vidéos traduites facilement.",
@@ -292,6 +305,14 @@
       "meta": {
         "title": "Téléchargez la photo de produit → Image de liste E-Commerce | Outil IA | Curify",
         "description": "Téléchargez n'importe quelle photo de produit — obtenez une image e-commerce prête à lister en 30 secondes. Photos héroïques chaleureuses + mises en page de détails 9:16. Démo gratuite ; rejoignez l'accès anticipé pour le téléchargement en lot."
+      }
+    },
+    "character_sticker_sheet": {
+      "title": "Personnage → planche de stickers d'expressions",
+      "desc": "Téléversez un dessin de votre personnage — obtenez une planche d'expressions de 9 poses (差分, planche d'expressions) en 30 secondes. Le même visage, neuf émotions : joyeux, triste, en colère, amour, en pleurs, surpris et plus — prête pour packs d'emotes, stickers de chat et merch 谷子 (fan merch).",
+      "meta": {
+        "title": "Générateur de planches d'expressions de personnage — 1 dessin → 9 poses | Curify",
+        "description": "Téléversez un dessin de personnage → obtenez une planche de stickers d'expressions de 9 poses (差分) en 30 secondes. Pour les artistes d'OC, les VTubers, les packs d'emotes et les vendeurs de stickers à la demande. Démo gratuite."
       }
     }
   },
@@ -1019,6 +1040,55 @@
         "educationBody": "Les catalogues DTC avec plus de 50 SKU ont besoin d'une cohérence visuelle sur chaque page produit — sinon, le catalogue ressemble à un marché, pas à une marque. L'approche par modèles de Curify garantit la cohérence. Associez avec /blog/programmatic-seo-dtc-visual-first pour le jeu de SEO cumulatif.",
         "businessTitle": "Pour les opérateurs POD / merch expédiant des designs prêts à imprimer",
         "businessBody": "Les opérateurs POD (t-shirt, autocollant, affiche, tasse) ont besoin d'images de maquette + d'images de liste en plus du fichier de design prêt à imprimer. Cet outil couvre la moitié des images de liste ; consultez /use-cases/for-merch-operators pour le pipeline de qualité marchandise et /blog/merchandise-design-hub pour le playbook de vitesse SKU."
+      }
+    }
+  },
+  "characterStickerSheet": {
+    "metadata": {
+      "title": "Générateur de planches d'expressions de personnage — 1 dessin → 9 poses | Curify",
+      "description": "Téléversez un dessin de personnage → obtenez une planche de stickers d'expressions de 9 poses (差分) en 30 secondes. Pour les artistes d'OC, les VTubers, les packs d'emotes et les vendeurs de stickers à la demande. Démo gratuite."
+    },
+    "title": "Téléversez votre personnage → planche d'expressions de 9 poses",
+    "description": "Transformez un dessin de votre personnage en une planche d'expressions complète (差分, planche d'expressions) — neuf poses du même personnage sur une grille nette, prête à découper en stickers de chat, packs d'emotes ou merch 谷子 (fan merch) imprimé. Le modèle verrouille l'identité du personnage pour que chaque pose soit sans conteste le même. Démo gratuite ci-dessous.",
+    "example": "Exemple : un dessin de personnage rendu en grille 3×3 d'expressions — joyeux, riant, triste, en pleurs, en colère, surpris, amour, timide, pensif.",
+    "cta": "Essayer maintenant",
+    "why": {
+      "title": "Pourquoi créer des planches d'expressions avec Curify ?",
+      "point1": "Un téléversement, neuf expressions. Déposez un seul dessin de votre personnage et obtenez un set d'émotions complet — joyeux, triste, en colère, surpris, amour, en pleurs, riant, timide, pensif — au lieu de dessiner chaque pose à la main.",
+      "point2": "Le personnage reste le même. Le modèle verrouille visage, proportions, couleurs et tenue de votre référence, si bien que les neuf poses sont exactement le même personnage — pas neuf sosies.",
+      "point3": "Conçu pour la suite. La grille 3×3 sur fond blanc net est agencée pour être découpée directement en stickers de chat individuels, packs d'emotes ou stickers 谷子 prêts à imprimer (l'export en PNG transparent et pour impression est prévu à la feuille de route).",
+      "point4": "Évitez l'attente des commandes. Ce que les vendeurs paient aujourd'hui aux artistes $7–$300 en attendant des jours, vous le prévisualisez en 30 secondes — puis vous ne commandez ou n'affinez que les poses qui valent la peine d'être finalisées."
+    },
+    "faq": {
+      "title": "Foire aux questions",
+      "q1": "Est-ce que je téléverse mon propre personnage ?",
+      "a1": "Oui. Téléversez un dessin de votre personnage (OC, mascotte ou IP). L'IA préserve l'identité de ce personnage — visage, proportions, couleurs, costume — et génère neuf nouvelles expressions du même personnage, pas un « ressemblant » générique.",
+      "q2": "À quoi peut servir la planche d'expressions ?",
+      "a2": "Packs de stickers de chat (WeChat / LINE / Telegram), emotes Twitch et Discord, et merch 谷子 (fan merch) imprimé (stickers découpés, badges/吧唧, standees/立牌). Les poses arrivent sur une grille nette, faciles à découper en stickers individuels ; l'export en PNG transparent et PDF prêt à imprimer est prévu à la feuille de route."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce qu'une planche d'expressions de personnage (差分) ?",
+        "p1": "Une planche d'expressions — 差分 dans le vocabulaire du fan-art japonais et chinois — est un set du même personnage dessiné dans de multiples émotions et poses : joyeux, triste, en colère, surpris, en pleurs, amour, et ainsi de suite. C'est la matière première derrière les packs d'emotes, les sets de stickers de chat, les assets de réaction de VTubers et le merch imprimé de personnages.",
+        "p2": "Traditionnellement chaque pose est dessinée à la main, une à une — c'est pourquoi les vendeurs commandent aux artistes des planches de stickers et des packs d'emotes à $7–$300 le set et attendent des jours par révision. Le goulet d'étranglement, ce n'est pas le premier dessin ; c'est produire toute la bibliothèque d'émotions avec une qualité homogène.",
+        "p3": "Les modèles image-à-image (Nano Banana Pro, Gemini 3 Pro Image) peuvent désormais générer de nouvelles poses d'un personnage existant. Ce qui manquait, c'est une couche de gabarit qui garde le personnage identique dans chaque cellule et dispose les poses sur une grille nette et prête à découper — c'est exactement ce que fait cet outil."
+      },
+      "how": {
+        "title": "Comment Curify transforme un dessin en planche d'expressions",
+        "p1": "Étape un : téléversez un dessin clair de votre personnage. Une référence nette et de face donne à l'IA le signal le plus fort pour verrouiller l'identité — mais tout dessin lisible fonctionne.",
+        "p2": "Étape deux : le modèle s'exécute. Il reproduit le visage, les proportions, les couleurs et la tenue exacts de votre personnage, puis génère neuf nouvelles expressions du même personnage — joyeux, riant, triste, en pleurs, en colère, surpris, amour, timide, pensif.",
+        "p3": "Étape trois : les neuf poses sont disposées sur une grille 3×3 nette sur fond blanc pur, espacées régulièrement, avec des marges claires et sans texte — agencées pour que chaque pose puisse être découpée en sticker individuel.",
+        "p4": "Étape quatre : téléchargez la planche. Utilisez-la telle quelle pour un pack de stickers de chat ou un set d'emotes, ou passez-la dans le pipeline d'impression pour des stickers découpés et du merch 谷子 (fan merch).",
+        "p5": "À la feuille de route : export en un clic vers des PNG transparents individuels par pose, plus un PDF de planche découpée prête à imprimer (300 DPI, traits de coupe) — transformant la planche à l'écran en fichiers de production de merch physique."
+      },
+      "usecases": {
+        "title": "Où les planches d'expressions de personnage comptent",
+        "creatorsTitle": "Pour les artistes d'OC, VTubers et vendeurs d'emotes",
+        "creatorsBody": "Les artistes de personnages originaux et les streamers vivent de la variété d'expressions — emotes de réaction, packs de stickers, planches de référence. Générez le set d'émotions complet à partir d'un dessin, puis finalisez les meilleurs. Voir /use-cases/for-designers pour le workflow d'illustrateur plus large.",
+        "educationTitle": "Pour les créateurs de stickers de chat et de packs d'emotes",
+        "educationBody": "Les packs de stickers WeChat / LINE / Telegram et les sets d'emotes Twitch / Discord ont besoin d'un personnage cohérent sur chaque pose. Le modèle garantit cette cohérence pour que le pack se lise comme un seul personnage, pas un patchwork.",
+        "businessTitle": "Pour les opérateurs de POD et de merch 谷子 (fan merch)",
+        "businessBody": "Les opérateurs de fan-merch et d'impression à la demande transforment l'IP d'un personnage en stickers découpés, badges (吧唧) et standees (立牌). Cet outil produit la bibliothèque d'expressions ; voir /use-cases/for-merch-operators pour le pipeline de vélocité de SKU et la visite guidée /ip-merch-demo."
       }
     }
   }

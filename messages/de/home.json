@@ -1,5 +1,18 @@
 {
   "home": {
+    "omni": {
+      "heading": "Start a workflow",
+      "subtitle": "Paste a link, describe an idea, or start from an image — Curify routes it to the right production pipeline.",
+      "placeholder": "Paste a YouTube link, or describe what you want to make…",
+      "go": "Go",
+      "urlLead": "Looks like a video — turn it into:",
+      "imageLead": "Or start from an image:",
+      "searchFor": "Search inspiration for “{q}”",
+      "chips": {
+        "summary": "Summary","transcript": "Transcript","subtitles": "Bilingual subtitles",
+        "ecommerce": "E-commerce image","poster": "Product poster","productVideo": "Product video"
+      }
+    },
     "metadata": {
       "title": "Curify – Ideen in visuelles Denken verwandeln | KI-Infografiken & Lokalisierung",
       "description": "Curify ist eine KI-gestützte Plattform für visuelles Denken, die Trends, Ideen und Wissen in strukturierte, teilbare visuelle Inhalte verwandelt. Erstellen Sie Infografiken, Inspirationskarten, Untertitel, übersetzte Videos und lokalisierte Medien ganz einfach.",
@@ -292,6 +305,14 @@
       "meta": {
         "title": "Produktfoto hochladen → E-Commerce-Listingbild | KI-Tool | Curify",
         "description": "Lade ein beliebiges Produktfoto hoch – erhalte in 30 Sekunden ein bereit zum Listen stehendes E-Commerce-Bild. Gemütliche warme Hero-Shots + 9:16 Detailaufnahmen. Kostenlose Demo; frühzeitigen Zugang für Batch-Upload beantragen."
+      }
+    },
+    "character_sticker_sheet": {
+      "title": "Charakter → Ausdrucks-Stickerbogen",
+      "desc": "Lade eine Zeichnung deines Charakters hoch – erhalte in 30 Sekunden einen Ausdrucksbogen mit 9 Posen (差分, Ausdrucksbogen). Dasselbe Gesicht, neun Emotionen: fröhlich, traurig, wütend, verliebt, weinend, überrascht und mehr – bereit für Emote-Packs, Chat-Sticker und 谷子 (Fan-Merch).",
+      "meta": {
+        "title": "Charakter-Ausdrucksbogen-Generator – 1 Zeichnung → 9 Posen | Curify",
+        "description": "Lade eine Charakterzeichnung hoch → erhalte in 30 Sekunden einen Ausdrucks-Stickerbogen mit 9 Posen (差分). Für OC-Künstler, VTuber, Emote-Packs und Print-on-Demand-Stickerverkäufer. Kostenlose Demo."
       }
     }
   },
@@ -1019,6 +1040,55 @@
         "educationBody": "DTC-Kataloge mit über 50 SKUs benötigen visuelle Konsistenz auf jeder Produktseite – andernfalls liest sich der Katalog wie ein Marktplatz, nicht wie eine Marke. Curifys vorgefertigter Ansatz garantiert Konsistenz. Kombiniere es mit /blog/programmatic-seo-dtc-visual-first für das SEO-Play mit Zinseszinsen.",
         "businessTitle": "Für POD / Merch-Betreiber, die druckfertige Designs versenden",
         "businessBody": "POD-Betreiber (T-Shirt, Aufkleber, Poster, Tasse) benötigen Mockup- und Listing-Bilder zusätzlich zur druckfertigen Design-Datei. Dieses Tool deckt die Listing-Bild-Hälfte ab; siehe /use-cases/for-merch-operators für die Merch-Grade-Pipeline und /blog/merchandise-design-hub für das SKU-Velocity-Playbook."
+      }
+    }
+  },
+  "characterStickerSheet": {
+    "metadata": {
+      "title": "Charakter-Ausdrucksbogen-Generator – 1 Zeichnung → 9 Posen | Curify",
+      "description": "Lade eine Charakterzeichnung hoch → erhalte in 30 Sekunden einen Ausdrucks-Stickerbogen mit 9 Posen (差分). Für OC-Künstler, VTuber, Emote-Packs und Print-on-Demand-Stickerverkäufer. Kostenlose Demo."
+    },
+    "title": "Lade deinen Charakter hoch → Ausdrucksbogen mit 9 Posen",
+    "description": "Verwandle eine Zeichnung deines Charakters in einen vollständigen Ausdrucksbogen (差分, Ausdrucksbogen) – neun Posen desselben Charakters auf einem sauberen Raster, bereit zum Ausschneiden zu Chat-Stickern, Emote-Packs oder gedrucktem 谷子 (Fan-Merch). Das Template fixiert die Identität des Charakters, sodass jede Pose unverkennbar derselbe Charakter ist. Kostenlose Demo unten.",
+    "example": "Beispiel: eine Charakterzeichnung, gerendert als 3×3-Raster von Ausdrücken – fröhlich, lachend, traurig, weinend, wütend, überrascht, verliebt, schüchtern, nachdenklich.",
+    "cta": "Jetzt ausprobieren",
+    "why": {
+      "title": "Warum Ausdrucksbögen mit Curify erstellen?",
+      "point1": "Ein Upload, neun Ausdrücke. Lege eine einzige Zeichnung deines Charakters ab und erhalte ein komplettes Emotions-Set – fröhlich, traurig, wütend, überrascht, verliebt, weinend, lachend, schüchtern, nachdenklich – statt jede Pose von Hand zu zeichnen.",
+      "point2": "Der Charakter bleibt gleich. Das Template fixiert Gesicht, Proportionen, Farben und Outfit aus deiner Referenz, sodass alle neun Posen exakt derselbe Charakter sind – keine neun Doppelgänger.",
+      "point3": "Gebaut für das, was danach kommt. Das 3×3-Raster auf sauberem weißem Hintergrund ist so angelegt, dass es sich direkt in einzelne Chat-Sticker, Emote-Packs oder druckfertige 谷子-Sticker schneiden lässt (Export als transparentes PNG und für den Druck ist auf der Roadmap).",
+      "point4": "Spare dir die Wartezeit auf Auftragsarbeiten. Wofür Verkäufer heute Künstlern $7–$300 zahlen und tagelang warten, siehst du in 30 Sekunden in der Vorschau – und beauftragst oder verfeinerst dann nur die Posen, die es wert sind, fertiggestellt zu werden."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Lade ich meinen eigenen Charakter hoch?",
+      "a1": "Ja. Lade eine Zeichnung deines Charakters hoch (OC, Maskottchen oder IP). Die KI bewahrt die Identität dieses Charakters – Gesicht, Proportionen, Farben, Kostüm – und generiert neun neue Ausdrücke desselben Charakters, keinen generischen „ähnlichen“.",
+      "q2": "Wofür kann ich den Ausdrucksbogen verwenden?",
+      "a2": "Chat-Stickerpacks (WeChat / LINE / Telegram), Twitch- und Discord-Emotes und gedrucktes 谷子 (Fan-Merch) (gestanzte Sticker, Buttons/吧唧, Aufsteller/立牌). Die Posen kommen auf einem sauberen Raster, sodass sie sich leicht in einzelne Sticker schneiden lassen; Export als transparentes PNG und druckfertiges PDF ist auf der Roadmap."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist ein Charakter-Ausdrucksbogen (差分)?",
+        "p1": "Ein Ausdrucksbogen – 差分 im japanischen und chinesischen Fan-Art-Vokabular – ist ein Set desselben Charakters, gezeichnet in vielen Emotionen und Posen: fröhlich, traurig, wütend, überrascht, weinend, verliebt und so weiter. Er ist das Rohmaterial hinter Emote-Packs, Chat-Sticker-Sets, VTuber-Reaktions-Assets und gedrucktem Charakter-Merch.",
+        "p2": "Traditionell wird jede Pose von Hand gezeichnet, eine nach der anderen – deshalb beauftragen Verkäufer Künstler für Stickerbögen und Emote-Packs mit $7–$300 pro Set und warten Tage pro Überarbeitung. Der Engpass ist nicht die erste Zeichnung; es ist die Produktion der gesamten Emotionsbibliothek in gleichbleibender Qualität.",
+        "p3": "Bild-zu-Bild-Modelle (Nano Banana Pro, Gemini 3 Pro Image) können jetzt neue Posen eines bestehenden Charakters generieren. Was fehlte, ist eine Template-Schicht, die den Charakter über jede Zelle hinweg identisch hält und die Posen auf einem sauberen, schnittfertigen Raster anordnet – genau das macht dieses Tool."
+      },
+      "how": {
+        "title": "Wie Curify aus einer Zeichnung einen Ausdrucksbogen macht",
+        "p1": "Schritt eins: Lade eine klare Zeichnung deines Charakters hoch. Eine saubere Frontalreferenz gibt der KI das stärkste Signal, um die Identität zu fixieren – aber jede lesbare Zeichnung funktioniert.",
+        "p2": "Schritt zwei: Das Template läuft. Es reproduziert Gesicht, Proportionen, Farben und Outfit deines Charakters exakt und generiert dann neun neue Ausdrücke desselben Charakters – fröhlich, lachend, traurig, weinend, wütend, überrascht, verliebt, schüchtern, nachdenklich.",
+        "p3": "Schritt drei: Die neun Posen werden in einem sauberen 3×3-Raster auf reinweißem Hintergrund angeordnet, gleichmäßig verteilt, mit klaren Zwischenräumen und ohne Text – so angelegt, dass jede Pose in einen einzelnen Sticker geschnitten werden kann.",
+        "p4": "Schritt vier: Lade den Bogen herunter. Nutze ihn direkt für ein Chat-Stickerpack oder Emote-Set, oder bring ihn in die Druck-Pipeline für gestanzte Sticker und 谷子 (Fan-Merch).",
+        "p5": "Auf der Roadmap: Ein-Klick-Export zu einzelnen transparenten PNGs pro Pose sowie ein druckfertiges Stanzbogen-PDF (300 DPI, Schnittlinien) – so wird der Bogen am Bildschirm zu Produktionsdateien für physisches Merch."
+      },
+      "usecases": {
+        "title": "Wo Charakter-Ausdrucksbögen wichtig sind",
+        "creatorsTitle": "Für OC-Künstler, VTuber & Emote-Verkäufer",
+        "creatorsBody": "Künstler von Originalcharakteren und Streamer leben von Ausdrucksvielfalt – Reaktions-Emotes, Stickerpacks, Referenzbögen. Generiere das komplette Emotions-Set aus einer Zeichnung und finalisiere dann die Gewinner. Siehe /use-cases/for-designers für den umfassenderen Illustrator-Workflow.",
+        "educationTitle": "Für Ersteller von Chat-Stickern & Emote-Packs",
+        "educationBody": "WeChat- / LINE- / Telegram-Stickerpacks und Twitch- / Discord-Emote-Sets brauchen einen konsistenten Charakter über jede Pose hinweg. Das Template garantiert diese Konsistenz, sodass das Pack als ein Charakter wirkt, nicht als Flickenteppich.",
+        "businessTitle": "Für POD- & 谷子-Merch-Betreiber (Fan-Merch)",
+        "businessBody": "Betreiber von Fan-Merch und Print-on-Demand verwandeln Charakter-IP in gestanzte Sticker, Buttons (吧唧) und Aufsteller (立牌). Dieses Tool produziert die Ausdrucksbibliothek; siehe /use-cases/for-merch-operators für die SKU-Velocity-Pipeline und die /ip-merch-demo-Führung."
       }
     }
   }

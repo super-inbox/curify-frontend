@@ -1,4 +1,4 @@
-import { Crop, Images, LayoutGrid, Printer, Shapes, type LucideIcon } from "lucide-react";
+import { Crop, Images, LayoutGrid, PlayCircle, Printer, Shapes, type LucideIcon } from "lucide-react";
 import { PRODUCTION_TILES } from "./gallery_production_tiles";
 import { getOutputIntent, type OutputIntent } from "./output_intent";
 
@@ -29,13 +29,33 @@ export type TemplateWorkflow = {
   label: string;
   hint: string;
   icon: LucideIcon;
-  // "transform" = preset image2image prompt through the freeform pipeline;
-  // "resize"    = client-side canvas export (no backend, no credits);
-  // "soon"      = un-promptable future deliverable (placeholder).
-  kind: "transform" | "resize" | "soon";
+  // "transform"  = preset image2image prompt through the freeform pipeline;
+  // "resize"     = client-side canvas export (no backend, no credits);
+  // "video-show" = reveal an already-rendered template intro video (free, instant);
+  // "soon"       = un-promptable future deliverable (placeholder).
+  kind: "transform" | "resize" | "soon" | "video-show";
   /** Preset image2image prompt — present for kind "transform". */
   prompt?: string;
+  /** Relative CDN video path — present for kind "video-show". */
+  videoUrl?: string;
 };
+
+// "Watch video" tile for the ~109 templates that already ship a rendered intro
+// video (nano_templates.json `intro_video_url`). Clicking it just reveals the
+// existing MP4 — zero credits, no backend call. The video URL is threaded in
+// from the server page (never import the template JSON into the client surface;
+// see memory project_client_bundle_data_leak). Prepended to the workflow list
+// so image→video is the first thing a B2B user sees in column 3.
+export function videoShowWorkflow(videoUrl: string): TemplateWorkflow {
+  return {
+    key: "video-show",
+    label: "Watch video",
+    hint: "See this template in motion",
+    icon: PlayCircle,
+    kind: "video-show",
+    videoUrl,
+  };
+}
 
 // P0-4: One-Click Resize Bundle — the first real "Completion" deliverable.
 // Handled client-side (canvas cover-crop to the 3 social aspect ratios) by the
@@ -73,8 +93,8 @@ const PRINT_POSTER = wf(
   "Recompose the attached image as a print-ready poster: the artwork as a large central hero, balanced margins, clean space reserved for a title and a short caption, crisp high detail, portrait orientation. Keep the original subject and style.",
 );
 const IG_GRID = wf(
-  "ig-grid", "Instagram 9-grid", "Sliced for feed", LayoutGrid,
-  "Render the attached image as a single picture divided into a 3x3 grid (9 equal square tiles) with thin even gutters between tiles, so it reads as one image split into 9 Instagram carousel posts. Preserve the original content across the tiles.",
+  "ig-grid", "Instagram 9-grid", "9 separate tiles", LayoutGrid,
+  "Render the attached image as a single edge-to-edge composition arranged as a 3x3 grid of 9 equal square tiles with NO gutters, borders, or gaps between tiles, so it can be cleanly sliced into 9 separate square images that together reconstruct the whole. Preserve the original content across the tiles.",
 );
 const VECTOR_ICONS = wf(
   "vector-icons", "Vector icon set", "Flat minimalist icons", Shapes,
