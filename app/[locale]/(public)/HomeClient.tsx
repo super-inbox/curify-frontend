@@ -9,7 +9,7 @@ import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import HomeToolsStrip from "./HomeToolsStrip";
 import HomeHero from "./HomeHero";
-import HomeOmniInput from "./HomeOmniInput";
+import HomeImageWorkbench from "./HomeImageWorkbench";
 import HomeSolutionsGrid from "./HomeSolutionsGrid";
 import HomeWorkflow from "./HomeWorkflow";
 import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
@@ -114,7 +114,7 @@ export default function HomeClient({
 
         <HomeToolsStrip />
 
-        <HomeOmniInput />
+        <HomeImageWorkbench locale={locale} />
 
         {discoveryStrip}
       </div>
