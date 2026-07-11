@@ -21,7 +21,7 @@ import { useDirectGenerate } from "@/services/useDirectGenerate";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
 import { getTemplateWorkflows, videoShowWorkflow } from "@/lib/template_workflows";
 import { getOutputIntent } from "@/lib/output_intent";
-import { resizeToSocialBundle, sliceIntoGrid } from "@/lib/resize_bundle";
+import { resizeToSocialBundle, sliceIntoGrid, makePrintReady } from "@/lib/resize_bundle";
 import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
 
@@ -250,6 +250,26 @@ export default function ReproduceWorkbench({
         variants.forEach((v) => pushResult(`resize-${v.key}`, v.label, v.url));
       } catch {
         setSoonNote("Couldn't resize this image here. Generate a fresh result first, then try again.");
+      } finally {
+        setActiveKey(null);
+      }
+      return;
+    }
+    // "Make print-ready" — client-side bleed pass on an already-poster result.
+    if (wf.kind === "print-ready") {
+      if (activeKey || anyGenerating) return;
+      if (!transformSource) {
+        setSoonNote("Generate a result first, then add a print bleed.");
+        return;
+      }
+      setSoonNote(null);
+      setActiveKey(wf.key);
+      track({ contentId: `workflow-${wf.key}:${templateId}`, contentType: tracking.contentType, actionType: "download" });
+      try {
+        const v = await makePrintReady(transformSource);
+        pushResult("print-ready", v.label, v.url);
+      } catch {
+        setSoonNote("Couldn't prepare a print-ready file here. Generate a fresh result first, then try again.");
       } finally {
         setActiveKey(null);
       }
