@@ -1,9 +1,19 @@
 # Design — Workbench Columns 2 & 3 (variation controls + context-aware designer pack)
 
 > Filed 2026-07-12. Frontend design for the shared 3-column `ReproduceWorkbench`.
-> Status: **design (not yet built)**. Builds on the image-workflow-page design
-> (`image-workflow-page-design-2026-07-11.md`) + the Output-Intent axis
-> (`lib/output_intent.ts`). Column 3 tiling lives in `lib/template_workflows.tsx`.
+> Builds on the image-workflow-page design (`image-workflow-page-design-2026-07-11.md`)
+> + the Output-Intent axis (`lib/output_intent.ts`). Column 3 tiling lives in
+> `lib/template_workflows.tsx`.
+>
+> **Status (2026-07-12):**
+> - ✅ **Column 3 quick wins SHIPPED** (jwang/vercel `fb42b733`): dedupe poster tiles,
+>   moodboards ≠ Instagram 3×3, "Read this" vs "Watch video" for vocab.
+> - ✅ **Flashcard "Print PDF" SHIPPED** (frontend `03bcfe95`; backend `jwang/pack-pdf`
+>   — `format=pdf` on `/template-packs/download`, needs merge+deploy).
+> - ✅ **"Make print-ready" (bleed) SHIPPED** (jwang/vercel `037313c4`): poster-output
+>   results add a bleed margin instead of recomposing (`makePrintReady`).
+> - ⏸️ **TODO — HELD: Column 2 style + layout variation** (the large item below). Not
+>   started; deferred by the user 2026-07-12. Resume from the "Column 2" section.
 
 ## Problem
 
