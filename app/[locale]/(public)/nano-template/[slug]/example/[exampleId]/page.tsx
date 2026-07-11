@@ -216,13 +216,18 @@ export async function generateMetadata({
   const hreflangLocales: readonly string[] = allowI18n
     ? routing.locales
     : ["en", "zh"];
+  // Absolute URLs — Next.js only auto-absolutizes relative canonical/hreflang
+  // when metadataBase is set, which this route does NOT inherit. A relative
+  // canonical is why GSC classified every example page as "Duplicate without
+  // user-selected canonical" (2026-07-11 audit). Prepend SITE_URL like the
+  // template-detail page's getCanonicalUrl does.
   const languages: Record<string, string> = {};
   for (const lng of hreflangLocales) {
     const prefix = lng === "en" ? "" : `/${lng}`;
-    languages[lng] = `${prefix}${route}`;
+    languages[lng] = `${SITE_URL}${prefix}${route}`;
   }
   // x-default mirrors the canonical (root-domain English path).
-  languages["x-default"] = route;
+  languages["x-default"] = `${SITE_URL}${route}`;
 
   // Non-allow_i18n entries on non-en/zh locales render with template-level
   // fallbacks (thin) — noindex them to avoid SEO penalties for thin content.
@@ -254,7 +259,7 @@ export async function generateMetadata({
       images: ogImage ? [{ url: ogImage }] : undefined,
     },
     alternates: {
-      canonical: canonicalPath,
+      canonical: `${SITE_URL}${canonicalPath}`,
       languages,
     },
     robots: noindex ? { index: false, follow: true } : undefined,
