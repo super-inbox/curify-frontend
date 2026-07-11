@@ -3,6 +3,8 @@ import { apiClient } from "./api";
 
 export interface TemplatePackDownloadRequest {
   template_id: string;
+  /** "zip" (default pack) or "pdf" (a print-ready PDF of the pack images). */
+  format?: "zip" | "pdf";
 }
 
 export interface TemplatePackDownloadResponse {

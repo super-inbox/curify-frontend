@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Wand2, Sparkles, Download, Bookmark } from "lucide-react";
+import { Wand2, Sparkles, Download, Bookmark, Printer } from "lucide-react";
 
 const GENERATE_CREDITS_COST = 10;
 import { useTranslations } from "next-intl";
@@ -12,6 +12,7 @@ import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { useTracking, useSaveTracking, type TrackingTarget } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
+import { getOutputIntent } from "@/lib/output_intent";
 import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
 
 type GenerateConfig = {
@@ -98,6 +99,11 @@ export default function UnifiedActionBar({
 
   const [generated, setGenerated] = useState(false);
   const [isBatchDownloading, setIsBatchDownloading] = useState(false);
+  const [isPrintingPdf, setIsPrintingPdf] = useState(false);
+  // "Print PDF" is the strong action for flashcard/education packs — the same
+  // pack, delivered as one print-ready PDF instead of a zip of images.
+  const showPrintPdf =
+    !!batchDownload && getOutputIntent(batchDownload.templateId) === "education";
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
@@ -159,6 +165,37 @@ export default function UnifiedActionBar({
     }
   };
 
+  const handlePrintPdf = async () => {
+    if (!batchDownload || isPrintingPdf) return;
+    if (!user) {
+      track({ contentId: "auth-modal:print-pack-pdf", contentType: "topic_capsule", actionType: "click" });
+      setDrawerState("signin");
+      return;
+    }
+    try {
+      setIsPrintingPdf(true);
+      const res = await templatePacksService.downloadPack({
+        template_id: batchDownload.templateId,
+        format: "pdf",
+      });
+      if (!res?.success || !res?.download_url) {
+        throw new Error(res?.message || "Missing download_url");
+      }
+      const a = document.createElement("a");
+      a.href = res.download_url;
+      a.rel = "noopener noreferrer";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      trackAction(tracking, "download");
+    } catch (error) {
+      console.error("Print PDF failed:", error);
+      alert(t("batchDownloadFailed"));
+    } finally {
+      setIsPrintingPdf(false);
+    }
+  };
+
   return (
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
       {visible(externalGenerate) ? (
@@ -210,12 +247,33 @@ export default function UnifiedActionBar({
         />
       )}
 
+      {/* Print PDF — the strong action for flashcard/education packs (the whole
+          pack as one print-ready PDF). Leads the pack actions for those templates. */}
+      {showPrintPdf && (
+        <button
+          onClick={handlePrintPdf}
+          disabled={isPrintingPdf}
+          type="button"
+          className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-sm font-bold text-white hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer relative disabled:opacity-60"
+        >
+          <Printer className="h-4 w-4" />
+          {isPrintingPdf ? "Building PDF…" : "Print PDF"}
+          {clientMounted && !user && (
+            <span className="ml-1 text-xs opacity-80">🔒</span>
+          )}
+        </button>
+      )}
+
       {visible(batchDownload) && (
         <button
           onClick={handleBatchDownload}
           disabled={isBatchDownloading}
           type="button"
-          className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-sm font-bold text-white hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer relative disabled:opacity-60"
+          className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-bold transition-opacity duration-300 shadow-lg cursor-pointer relative disabled:opacity-60 ${
+            showPrintPdf
+              ? "border border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50"
+              : "bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] text-white hover:opacity-90"
+          }`}
         >
           <Download className="h-4 w-4" />
           {isBatchDownloading ? t("downloadingPack") : t("downloadPack")}
