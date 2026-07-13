@@ -1,4 +1,4 @@
-import { Crop, Images, LayoutGrid, PlayCircle, Printer, Shapes, type LucideIcon } from "lucide-react";
+import { Crop, Images, LayoutGrid, PlayCircle, Printer, Scissors, Shapes, type LucideIcon } from "lucide-react";
 import { PRODUCTION_TILES } from "./gallery_production_tiles";
 import { getOutputIntent, type OutputIntent } from "./output_intent";
 
@@ -33,7 +33,7 @@ export type TemplateWorkflow = {
   // "resize"     = client-side canvas export (no backend, no credits);
   // "video-show" = reveal an already-rendered template intro video (free, instant);
   // "soon"       = un-promptable future deliverable (placeholder).
-  kind: "transform" | "resize" | "soon" | "video-show";
+  kind: "transform" | "resize" | "soon" | "video-show" | "print-ready";
   /** Preset image2image prompt — present for kind "transform". */
   prompt?: string;
   /** Relative CDN video path — present for kind "video-show". */
@@ -46,11 +46,17 @@ export type TemplateWorkflow = {
 // from the server page (never import the template JSON into the client surface;
 // see memory project_client_bundle_data_leak). Prepended to the workflow list
 // so image→video is the first thing a B2B user sees in column 3.
-export function videoShowWorkflow(videoUrl: string): TemplateWorkflow {
+export function videoShowWorkflow(
+  videoUrl: string,
+  opts?: { label?: string; hint?: string },
+): TemplateWorkflow {
+  // Vocabulary / education templates carry a readable narrative asset, so the
+  // caller labels it "Read this" to distinguish from the visual templates'
+  // "Watch video" intro (see project_image_to_video_tile).
   return {
     key: "video-show",
-    label: "Watch video",
-    hint: "See this template in motion",
+    label: opts?.label ?? "Watch video",
+    hint: opts?.hint ?? "See this template in motion",
     icon: PlayCircle,
     kind: "video-show",
     videoUrl,
@@ -92,6 +98,17 @@ const PRINT_POSTER = wf(
   "print-poster", "Print poster", "Print-ready layout", Printer,
   "Recompose the attached image as a print-ready poster: the artwork as a large central hero, balanced margins, clean space reserved for a title and a short caption, crisp high detail, portrait orientation. Keep the original subject and style.",
 );
+// When the result is ALREADY a poster, "Print poster" (recompose) is circular —
+// use this client-side print-prep pass instead: add a bleed margin so the poster
+// can be trimmed without white edges. No re-gen, no credits (lib/resize_bundle
+// makePrintReady). The on-ramp to the pre-press pipeline.
+const PRINT_READY: TemplateWorkflow = {
+  key: "print-ready",
+  label: "Make print-ready",
+  hint: "Add bleed margin for printing",
+  icon: Scissors,
+  kind: "print-ready",
+};
 const IG_GRID = wf(
   "ig-grid", "Instagram 9-grid", "9 separate tiles", LayoutGrid,
   "Render the attached image as a single edge-to-edge composition arranged as a 3x3 grid of 9 equal square tiles with NO gutters, borders, or gaps between tiles, so it can be cleanly sliced into 9 separate square images that together reconstruct the whole. Preserve the original content across the tiles.",
@@ -120,7 +137,7 @@ const OVERRIDES_EXACT: Record<string, TemplateWorkflow[]> = {
 const PATTERN_RULES: { test: RegExp; workflows: TemplateWorkflow[] }[] = [
   {
     test: /travel.*map|map.*travel|itinerary|city-?guide/i,
-    workflows: [PRINT_POSTER, IG_GRID, VECTOR_ICONS],
+    workflows: [PRINT_READY, IG_GRID, VECTOR_ICONS],
   },
   {
     test: /health|wellness|clinic|medical|nutrition/i,
@@ -134,8 +151,18 @@ const PATTERN_RULES: { test: RegExp; workflows: TemplateWorkflow[] }[] = [
     ],
   },
   {
-    test: /poster|infographic|chart|board/i,
-    workflows: [PRINT_POSTER, IG_GRID, VECTOR_ICONS],
+    // Brand moodboards / design boards / VI packs / spec sheets: a print-ready
+    // presentation + element-extraction + resize. NOT an Instagram 3x3 — a board
+    // isn't a feed post (per the 2026-07-12 column-3 review). Must precede the
+    // broad poster rule since these ids also end in "-poster".
+    test: /moodboard|mood-board|visual-system|brand-identity|design-board|design-specification|vi-full|visual-pack/i,
+    workflows: [PRINT_READY, VECTOR_ICONS, RESIZE_BUNDLE],
+  },
+  {
+    // "board" dropped from this pattern — moodboards/design-boards handled above;
+    // it was over-matching them into the Instagram-grid set.
+    test: /poster|infographic|chart/i,
+    workflows: [PRINT_READY, IG_GRID, VECTOR_ICONS],
   },
 ];
 
@@ -151,19 +178,37 @@ const INTENT_WORKFLOWS: Record<OutputIntent, TemplateWorkflow[]> = {
   education: [PRINT_POSTER, D.lineart, IG_GRID],
   // product mockup + die-cut sticker + print-ready
   merch: [D.merch, D.sticker, PRINT_POSTER],
-  // wall-art deliverables
-  "print-art": [PRINT_POSTER, D.poster, D.watercolor],
+  // wall-art deliverables — print-ready poster + a watercolor render + an icon
+  // set extracted from it (dropped the gallery "Poster / wallpaper" tile: it
+  // overlapped "Print poster"; dedupe below also guards this globally).
+  "print-art": [PRINT_READY, D.watercolor, VECTOR_ICONS],
   // infographic-style deliverables
   presentation: [PRINT_POSTER, IG_GRID, VECTOR_ICONS],
   // riffing / style exploration — the original 6 style tiles
   remix: DEFAULT_WORKFLOWS,
 };
 
+// "Print poster" and the gallery "Poster / wallpaper" tile overlap — never show
+// both (keep the more actionable print-poster). Also collapse any repeated key.
+function dedupeWorkflows(list: TemplateWorkflow[]): TemplateWorkflow[] {
+  const hasPosterTile = list.some((w) => w.key === "print-poster" || w.key === "print-ready");
+  const seen = new Set<string>();
+  const out: TemplateWorkflow[] = [];
+  for (const w of list) {
+    if (hasPosterTile && w.key === "poster") continue;
+    if (seen.has(w.key)) continue;
+    seen.add(w.key);
+    out.push(w);
+  }
+  return out;
+}
+
 export function getTemplateWorkflows(templateId: string): TemplateWorkflow[] {
   // Exact overrides and specific pattern rules win over the broad intent layer.
-  if (OVERRIDES_EXACT[templateId]) return OVERRIDES_EXACT[templateId];
-  for (const rule of PATTERN_RULES) {
-    if (rule.test.test(templateId)) return rule.workflows;
-  }
-  return INTENT_WORKFLOWS[getOutputIntent(templateId)] ?? DEFAULT_WORKFLOWS;
+  const base =
+    OVERRIDES_EXACT[templateId] ??
+    PATTERN_RULES.find((rule) => rule.test.test(templateId))?.workflows ??
+    INTENT_WORKFLOWS[getOutputIntent(templateId)] ??
+    DEFAULT_WORKFLOWS;
+  return dedupeWorkflows(base);
 }

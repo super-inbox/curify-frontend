@@ -15335,21 +15335,8 @@
     "id": "template-ip-creative-cultural-goods-mockup-set",
     "locales": {
       "en": {
-        "base_prompt": "(IP Cultural & Stationery Merchandise Mockup Creator) Flat lay top-down overhead shot of complete IP derivative stationery merchandise set themed '{ip_info}', neatly scattered various finished product mockups on clean solid warm beige base background. Merchandise range includes spiral notebook, hardcover journal, canvas tote bag, round handheld folding fan, eye sleep mask, lanyard + ID badge, acrylic keychain, die-cut sticker set, washi tape, ceramic coffee mug, short tumbler cup, square throw pillow, ballpoint pen, phone case, gift packaging box; All goods uniformly printed with exclusive {ip_info} cartoon character illustration and matching Chinese brand title text, color palette derived from IP’s main representative hues. Style: delicate Chinese meticulous painting / cute cartoon illustration customizable art style per IP, soft diffused studio lighting, clean minimalist product layout, ultra-realistic commodity texture, subtle vintage rice paper decorative background detail, 8K sharp commercial product photography, printable brand display poster. Subject: Full series {ip_info} cultural creative goods flatlay mockup.",
-        "parameters": [
-          {
-            "name": "ip_info",
-            "label": "IP Character Name + Brand Slogan & Art Style",
-            "type": "text",
-            "placeholder": [
-              "熊猫茶师，古风国画Q版熊猫穿汉服品茶，豆绿色主色调",
-              "墨狐书生，国风水墨狐狸书生执书卷，酒红棕配色",
-              "祥龙纳福，新中式Q版抱珠祥龙，青绿色国潮画风",
-              "鹿行记，森系手绘背包小鹿，森林复古墨绿配色",
-              "摸鱼中，潮流卡通潜水粉色鱼头，蓝粉潮玩配色"
-            ]
-          }
-        ]
+        "base_prompt": "(IP Merch Mockup Set) Using the character or subject from the attached image as the exclusive printed artwork, create a clean flat-lay top-down overhead merchandise mockup set arranged on a solid warm beige background. The set includes a spiral notebook, hardcover journal, canvas tote bag, acrylic keychain, die-cut sticker sheet, ceramic coffee mug, short tumbler cup, ballpoint pen, and phone case, each uniformly printed with the attached subject's artwork and its matching color palette. Preserve the attached subject's exact identity, shapes, colors, linework and details on every product; do not redraw or restyle the subject. Even soft studio product-mockup lighting, cohesive commercial layout, realistic material textures per product category.",
+        "parameters": []
       }
     },
     "og_image": "/images/nano_insp_preview/template-ip-creative-cultural-goods-mockup-set-blessing-dragon-prev.jpg",
@@ -15382,7 +15369,9 @@
     "use_cases": [
       "for-merch-operators",
       "for-designers"
-    ]
+    ],
+    "requires_image_upload": true,
+    "allow_generation": true
   },
   {
     "id": "template-ip-gift-box-stationery-set-mockup",

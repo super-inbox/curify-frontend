@@ -268,6 +268,25 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Merch mockup generator — upload a character/artwork, get a full flat-lay
+    // merch mockup set (notebook/tote/keychain/sticker/mug/tumbler/pen/phone
+    // case) with the design on every product. Same inline-generate stack as
+    // ecommerce-photo / character-sticker-sheet (ReproduceWorkbench →
+    // useDirectGenerate). Image2image prompt Gemini-validated 2026-07-11.
+    // (No demo image yet — the tool renders the inline generate block + SEO.)
+    id: "mockup",
+    slug: "mockup",
+    groupId: "image",
+    status: "demo",
+    // Unused by the generate path (bypasses CreateNewModal); required field.
+    job_type: "video_transcript",
+    namespace: "mockupGenerator",
+    action: { type: "generate", templateId: "template-ip-creative-cultural-goods-mockup-set" },
+    i18n: toolKeys("mockup"),
+    seo: seoKeys("mockup"),
+  },
+
+  {
     // Demo-only SEO landing — no backend pipeline yet. The blog
     // /blog/asl-video-translator ranks at pos ~13 for "asl video translator"
     // / "sign language video translator" but as an editorial page the

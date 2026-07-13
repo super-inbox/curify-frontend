@@ -110,6 +110,40 @@ export async function sliceIntoGrid(
   }
 }
 
+/** Add a print BLEED (edge-replicated margin) around the image so it can be
+ *  trimmed without white edges — the print-prep pass for results that are ALREADY
+ *  a poster (the pre-press on-ramp; first step toward the full pre-press pipeline
+ *  in project_designer_copilot_prepress_moat). ~3% bleed (min 24px), edges stretched
+ *  outward. Client-side, no backend/credits. Returns a downloadable object URL. */
+export async function makePrintReady(imageUrl: string): Promise<ResizedVariant> {
+  const bmp = await loadBitmap(imageUrl);
+  try {
+    const w = bmp.width;
+    const h = bmp.height;
+    const bleed = Math.max(24, Math.round(Math.min(w, h) * 0.03));
+    const canvas = document.createElement("canvas");
+    canvas.width = w + bleed * 2;
+    canvas.height = h + bleed * 2;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) throw new Error("no 2d context");
+    ctx.imageSmoothingQuality = "high";
+    // Center the artwork, then edge-replicate the outer row/col into the bleed.
+    ctx.drawImage(bmp, bleed, bleed);
+    ctx.drawImage(bmp, 0, 0, w, 1, bleed, 0, w, bleed);              // top
+    ctx.drawImage(bmp, 0, h - 1, w, 1, bleed, bleed + h, w, bleed);  // bottom
+    ctx.drawImage(bmp, 0, 0, 1, h, 0, bleed, bleed, h);             // left
+    ctx.drawImage(bmp, w - 1, 0, 1, h, bleed + w, bleed, bleed, h); // right
+    ctx.drawImage(bmp, 0, 0, 1, 1, 0, 0, bleed, bleed);                        // TL
+    ctx.drawImage(bmp, w - 1, 0, 1, 1, bleed + w, 0, bleed, bleed);            // TR
+    ctx.drawImage(bmp, 0, h - 1, 1, 1, 0, bleed + h, bleed, bleed);           // BL
+    ctx.drawImage(bmp, w - 1, h - 1, 1, 1, bleed + w, bleed + h, bleed, bleed); // BR
+    const url = await canvasToUrl(canvas);
+    return { key: "print-ready", label: "Print-ready (bleed)", url, filename: "curify-print-ready.png" };
+  } finally {
+    bmp.close();
+  }
+}
+
 /** Trigger a browser download for a resized variant. */
 export function downloadVariant(v: ResizedVariant): void {
   const a = document.createElement("a");

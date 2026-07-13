@@ -94,13 +94,14 @@ export default function ToolGenericClient({
   const demo = tool.demo;
 
   // The image2image `generate` tool renders the 3-column reproduce workbench,
-  // which is cramped at max-w-5xl — give that page a wider (still centered)
-  // main so the workflow columns have room. Other tools stay max-w-5xl.
+  // which is cramped at max-w-5xl — give that page a relaxed (still centered)
+  // main so the 3 workflow columns have room to breathe. Other tools stay
+  // max-w-5xl.
   const wideMain = tool.action?.type === "generate";
 
   return (
     <main
-      className={`${wideMain ? "max-w-7xl" : "max-w-5xl"} mx-auto pt-20 px-6 py-12 text-[var(--c2)]`}
+      className={`${wideMain ? "max-w-[1600px]" : "max-w-5xl"} mx-auto pt-20 px-6 py-12 text-[var(--c2)]`}
     >
       <h1 className="text-4xl font-bold mb-4 text-[var(--c1)]">{t("title")}</h1>
       <p className="text-lg mb-6">{t("description")}</p>
