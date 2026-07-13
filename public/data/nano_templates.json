@@ -19114,5 +19114,200 @@
       "for-merch-operators",
       "for-designers"
     ]
+  },
+  {
+    "id": "template-vintage-watercolor-hobby-sticker-sheet",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Cottagecore Watercolor Hobby Sticker Sheet Generator) Square vertical sticker sheet on textured off-white aged paper background, full collection of themed hand-drawn watercolor clipart scattered neatly across canvas, cohesive muted earth & soft pastel cottage color palette, subtle grain paper texture, gentle watercolor wash bleed edges, tiny hand-drawn floral leaf divider accents.\nFixed unified layout structure for all themes:\n1. Top headline area: Cursive handwritten green script word \"Happy\", large textured speckled serif main hobby theme word, small fabric ribbon banner below holding short warm subtitle phrase, tiny heart & sprout decorative flourishes surrounding title.\n2. Main body grid: Dense tidy scattered arrangement of themed hobby objects, kitchen/music/coffee/reading/travel/picnic/gardening related illustrations, each item standalone soft watercolor sticker cutout style, slight natural overlapping.\n3. Bottom decorative bubble text labels: Cloud-shaped scalloped text badges with handwritten cozy hobby quotes, small plant/heart icon beside each text block.\nArt style: Soft loose watercolor illustration, vintage cottagecore aesthetic, muted desaturated warm tones, delicate thin line art, subtle speckle grain texture, no harsh black outlines, gentle soft shadows, printable planner sticker pack, high detail 8K, clean printable cut-and-stick sticker sheet.\nSubject: Complete themed watercolor sticker sheet for hobby theme '{hobby_theme}', full matching collection of all related tools, items, food, decor and motivational quote badges",
+        "parameters": [
+          {
+            "name": "hobby_theme",
+            "label": "手作贴纸主题名称",
+            "type": "text",
+            "placeholder": [
+              "BAKING, subtitle MADE WITH LOVE, baking kitchen tools & pastry dessert clipart",
+              "MUSIC, subtitle MELODY EVERY DAY, vintage musical instrument & retro audio gear clipart",
+              "Coffee Time, subtitle SLOW MORNINGS, cafe coffee equipment & pastry clipart",
+              "READING, subtitle COZY BOOKISH MOMENTS, library book nook & reading decor clipart",
+              "TRAVEL, subtitle COLLECT MOMENTS, vacation travel luggage & outdoor adventure clipart",
+              "PICNIC, subtitle SUNNY OUTDOOR TREATS, outdoor picnic food & leisure gear clipart",
+              "GARDENING, subtitle GROW WITH LOVE, plant gardening tools & flower clipart"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vintage-watercolor-hobby-sticker-sheet-baking-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "stickers",
+      "wall-art",
+      "illustration",
+      "collectible"
+    ]
+  },
+  {
+    "id": "template-vintage-food-menu-scientific-sketch-illustration",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Culinary Sketch Menu Illustration Generator, Scientific Botanical Food Journal Style) Vertical tall canvas, aged cream textured parchment paper background, mixed media watercolor + graphite pencil sketch aesthetic, soft muted warm earth tone palette, thin delicate sketch linework, gentle translucent watercolor washes, subtle paper grain texture.\nUnified fixed layout rules for all food themes:\n1. Central large focal food artwork as main visual, complete tableware, garnish, fruit, herb & drink matching the dish theme, soft natural diffused window lighting, gentle subtle shadows.\n2. Surrounding handwritten cursive & serif menu text blocks scattered around main food drawing, dotted thin guide lines connecting text labels to corresponding ingredients, decorative vintage serif title header at top of canvas.\n3. Tiny decorative elements: fresh herb sprigs, citrus slices, flower blossoms, nut pieces scattered as border accents, thin antique frame border around entire page.\nArt style reference: Antique cookbook botanical sketch, food journal scientific illustration, cozy bistro menu print, soft painterly watercolor, no harsh black heavy outlines, warm nostalgic vintage restaurant aesthetic, ultra detailed 8K print-ready vertical illustration.\nSubject: Vintage culinary sketch menu page themed '{food_theme}', central detailed watercolor sketch of full set of themed food, matching beverage, tableware and fresh garnishes, scattered labeled handwritten menu text annotations linked by thin guide lines, aged parchment background",
+        "parameters": [
+          {
+            "name": "food_theme",
+            "label": "美食主题完整描述",
+            "type": "text",
+            "placeholder": [
+              "Cream seafood chowder soup with shrimp mussels, blue berry garnish, mint citrus sparkling cocktail, shellfish appetizer plate, coastal seafood bistro menu sketch",
+              "Grilled seafood skewers, roasted octopus, grilled chicken satay, olive wine bottle, lemon side dish, mediterranean grill restaurant sketch menu",
+              "Morning breakfast spread: latte coffee, flower bouquet vase, toasted grain bread, blueberry cream pastry, lemon honey jar, cozy cottage brunch journal page",
+              "Hawaiian ham pineapple pizza, melted cheese pull slice, wooden pizza peel, pizza cutter, italian pizzeria vintage menu illustration",
+              "Osmanthus green matcha tea, steamed red filling bun pastry, osmanthus flower, butter cookies, oriental dessert tea house sketch page"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vintage-food-menu-scientific-sketch-illustration-seafood-chowder-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "food",
+      "illustration",
+      "wall-art"
+    ]
+  },
+  {
+    "id": "template-clay-cute-3d-icon-grid-sheet",
+    "locales": {
+      "en": {
+        "base_prompt": "(Cute Clay 3D Icon Grid Sticker Sheet Generator) Vertical tall canvas, solid soft pale peach flat background, neat evenly spaced grid layout (5 rows × 3 columns), every cell holds an independent smooth clay figurine icon, uniform soft clay plastic texture, subtle matte material, gentle tiny ambient shadow under each object, clean isometric front flat view, no overlapping elements.\nUnified art rules: Kawaii clay toy aesthetic, low saturation warm neutral earth color palette, rounded soft edges on all props, soft diffused studio lighting, no harsh highlights, clean commercial UI asset illustration, 8K ultra sharp, printable sticker pack.\nSubject: Full grid clay icon sheet themed '{icon_theme}', complete matching set of all related miniature clay objects neatly arranged in 5×3 grid on pale peach background",
+        "parameters": [
+          {
+            "name": "icon_theme",
+            "label": "黏土图标全套主题名称",
+            "type": "text",
+            "placeholder": [
+              "Office stationery & computer desk supplies clay icons, laptop, keyboard, printer, notebook, desk lamp, coffee mug, office chair, calculator, clipboard, folder, stapler, paper clip",
+              "Vintage musical instrument clay icons, headphones, vinyl record, microphone, guitar, mini keyboard, trumpet, saxophone, snare drum, speaker, cassette tape, radio, violin, tambourine, music note"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-clay-cute-3d-icon-grid-sheet-office-stationery-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "3d",
+      "illustration",
+      "icons",
+      "collectible"
+    ]
+  },
+  {
+    "id": "template-surreal-macro-product-commercial-ad-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Surreal Macro Scale Commercial Product Advertising Poster Generator, Giant Product Miniature Scene Concept) Vertical tall commercial advertisement poster, surreal forced perspective scale contrast: oversized main product occupies central frame, inside / flowing out from product forms a complete tiny miniature lifestyle scene with micro characters and matching environment, cinematic natural soft lighting, rich vivid color grading, hyper-realistic photographic texture, sharp commercial product detail, atmospheric depth of field, premium brand advertising aesthetic, clean readable title text space reserved at top or edge.\nFixed unified surreal scale logic: Giant product as landscape container, miniature human figures & matching environmental props interact with the substance inside the product, theme environment fully matches product function.\nSubject: Surreal giant miniature scene ad poster for '{product_theme}', oversized main product, tiny micro people interacting inside/out of product, matching themed landscape background, professional commercial photography, 8K ultra detailed print-ready advertising artwork",
+        "parameters": [
+          {
+            "name": "product_theme",
+            "label": "广告产品+迷你场景完整设定",
+            "type": "text",
+            "placeholder": [
+              "vivo round smart watch, watch dial becomes swimming pool, tiny man swimming, resort terrace background, waterproof function ad",
+              "Real coconut water carton, giant cut coconut fruit forms mountain cliff, coconut juice flows as waterfall, lush tropical rainforest mountain background, natural hydration drink poster",
+              "kids winter face cream tube, cream flows down snowy mountain slope as ski snow, tiny miniature animal figures skiing on cream, alpine snow mountain winter landscape, children skincare ad",
+              "Librederm sunscreen tube, tube casts huge beach shadow, dozens of tiny tourists sunbathing on sand under shadow, tropical ocean beach overhead top-down shot, sun protection cream commercial",
+              "dark blue wireless earbuds case, inside earbud box mini live rock band performing stage, warm orange studio spotlight background, audio earphone advertising poster",
+              "Casio leather wrist watch, watch dial frame frames endless highway with tiny cars driving, sunny mountain roadside sky background, outdoor travel watch ad",
+              "Nutella chocolate hazelnut spread jar, melted chocolate oozes as ski mountain slope, tiny skier mini figurines sliding on chocolate snow, snowy pine forest winter scene, chocolate spread creative ad"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-surreal-macro-product-commercial-ad-poster-vivo-smartwatch-pool-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "merch-commerce",
+      "product",
+      "3d"
+    ]
+  },
+  {
+    "id": "template-9-grid-ecommerce-product-lifestyle-moodboard",
+    "locales": {
+      "en": {
+        "base_prompt": "(9 Grid E-commerce Product Lifestyle Shot Moodboard Generator) Square canvas divided evenly into a neat 3×3 nine-grid layout, every cell is an independent product lifestyle photograph, unified warm neutral minimalist interior aesthetic across all frames.\nCore visual rules for all panels: Soft natural window side light, gentle diffused shadow, warm beige/cream neutral tone palette, matte texture props (marble stone tray, linen fabric, ceramic vases, dried foliage, concrete display pedestals), shallow depth of field, commercial product photography, ultra clean composition, 8K sharp detail, soft earth color grading, no clutter.\nEach grid shows unique shooting angle: full product display, close-up texture detail, partial scene lifestyle match, macro part shot, overhead flat lay, side profile shot, scene matching home environment, dynamic detail shot, partial texture close-up.\nSubject: 3×9 grid product photography moodboard for '{product_name}', consistent minimalist warm neutral home scene, multiple diverse shooting angles covering full view, texture macro, lifestyle scene, detail close-up",
+        "parameters": [
+          {
+            "name": "product_name",
+            "label": "电商产品完整名称",
+            "type": "text",
+            "placeholder": [
+              "black semi-automatic espresso coffee machine",
+              "dark gray hard-shell rolling luggage suitcase",
+              "genuine leather women's handbag collection",
+              "neutral tone silk chiffon scarf",
+              "white wireless bluetooth earbuds",
+              "square silicone band smart watch"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-9-grid-ecommerce-product-lifestyle-moodboard-espresso-machine-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "merch-commerce",
+      "product",
+      "moodboard",
+      "lifestyle"
+    ]
+  },
+  {
+    "id": "template-football-f4-garden-romantic-academy-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vertical Romantic Elite Academy Movie Character Poster Generator, Football F4 Garden series) Tall vertical movie poster, dreamy sunset purple-pink gradient sky, grand European baroque boarding school mansion background, climbing pink rose vines, floating rose petals, soft magical glitter sparkles all over scene.\nUnified visual setting: Dark navy school blazer with pink piping, white shirt, striped burgundy-pink tie, F4 Academy embroidered crest badge on chest, lush pink roses frame all four sides of canvas.\nText style: Glittering pink metallic curly serif title font, delicate crown, shield, heart decorative ornaments, soft glowing text glow effect.\nTwo fixed layout modes to choose:\n1. Group ensemble poster: Multiple full-body cast characters layered together center frame, top main series title FOOTBALL F4 GARDEN, bottom global tagline, each character small name label beside their portrait.\n2. Solo character individual poster: Single central full-body portrait of one character, top FOOTBALL F4 GARDEN logo banner, middle large glitter character name + subtitle title, three small bullet-point trait icons & descriptions below name, bottom signature iconic quote framed by tiny crown.\nLighting: Cinematic warm dusk rim light, soft portrait studio shading, romantic dreamy teen romance drama aesthetic, hyper detailed 8K photorealistic illustration, sharp clean print quality.\nSubject: {poster_mode} poster for FOOTBALL F4 GARDEN series, character: {character_full_info}",
+        "parameters": [
+          {
+            "name": "poster_mode",
+            "label": "海报模式 / Poster mode (group or solo)",
+            "type": "text",
+            "placeholder": [
+              "Group ensemble cast poster",
+              "Solo individual character poster"
+            ]
+          },
+          {
+            "name": "character_full_info",
+            "label": "角色阵容与人设 / Character line-up + persona",
+            "type": "text",
+            "placeholder": [
+              "full cast: Haaland The Ice Prince, Ronaldo The Eternal Star, Kevin De Bruyne The Professor, Mbappé The Golden Boy, Vini Jr The Fun Prince",
+              "Erling Haaland, The Ice Prince, cool blond hero",
+              "Cristiano Ronaldo, The Eternal Star, elegant captain"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-football-f4-garden-romantic-academy-poster-f4-group-main-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "character",
+      "sports",
+      "illustration"
+    ]
   }
 ]
