@@ -231,6 +231,22 @@ no `/images/upload` anon gate). Full phased plan in `docs/mbti-character-cluster
   (funnel pulls, search-eval cycles, video-user attribution)
 
 **Date-stamped findings docs (most recent first):**
+- **First paid user + near-converter analysis (2026-07-13)** — memory `project_first_paid_user`.
+  First paying customer (user 1359) = a **Spanish-speaking football-sticker POD maker**: Google
+  organic → landed directly on the `/nano-template/*/example/*` page for
+  `template-football-star-chibi-sticker-set` → **generated die-cut stickers within seconds** (signup
+  fired 3s prior — generate intent triggered the auth wall) → returned 3 days, 13 freeform gens (0
+  failed) → exhausted free credits → **bought $5/50 credits** (Stripe top-up, stayed FREE). Validates
+  the POD reframe (revenue), the **example-page SEO funnel** (the 17,650-page class whose canonical
+  bug was just fixed — widening it feeds this), freeform **sticker/line-art** tooling, and
+  football/WC as a *revenue* lane. **Near-converters:** funnel = 612 users → **196 activated** → **1
+  paid (0.5%)**; **no POD/sticker/football lookalikes exist** (payer is the only one). Credit-
+  exhaustion near-converters exist (generic gens, hobbyists, didn't pay). **Strategic read: the
+  revenue bottleneck is COMMERCIAL INTENT, not activation** — lever = acquire more POD/merch-intent
+  users via the sticker/merch SEO+WC funnel, not "convert more hobbyists." **Leaks:** search friction
+  (9/12 of the payer's searches were LOW/NO-RESULT on football/merch/Spanish terms) + Spanish demand.
+  Actions: email the customer for feedback; more football/club sticker+line-art templates (WC 2026
+  live); fix football/merch/Spanish search.
 - **Why few image-gen projects (2026-07-07)** — memory `project_why_no_image_gen`. Diagnosed
   "why aren't users generating images": premise partly outdated (image gen = #2 job type,
   accelerating Apr 4→Jun 24 users, 95% success — not broken/unwanted). Real cause is
