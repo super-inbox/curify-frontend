@@ -4,6 +4,8 @@ import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
+import { useAtom } from "jotai";
+import { modalAtom } from "@/app/atoms/atoms";
 import Loading from "../Loading";
 import { projectService } from "@/services/projects";
 import { ProjectStatus } from "@/types/projects";
@@ -18,6 +20,8 @@ export default function Magic() {
 
   const [status, setStatus] = useState<ProjectStatus>("QUEUED");
   const [error, setError] = useState<string | null>(null);
+  const [failureCode, setFailureCode] = useState<string | null>(null);
+  const [, setModal] = useAtom(modalAtom);
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isRedirectingRef = useRef(false);
@@ -83,6 +87,7 @@ export default function Magic() {
 
         if (projectStatus === "FAILED") {
           const code = statusRes?.failure_code;
+          setFailureCode(code ?? null);
           if (code && t.has(code)) {
             setError(t(code));
           } else if (statusRes?.failure_reason) {
@@ -116,8 +121,16 @@ export default function Magic() {
 
   if (error) {
     return (
-      <div className="w-full h-screen flex items-center justify-center text-red-600 text-lg font-semibold">
-        {error}
+      <div className="w-full h-screen flex flex-col items-center justify-center gap-4 text-center px-6">
+        <p className="text-red-600 text-lg font-semibold max-w-md">{error}</p>
+        {failureCode === "INSUFFICIENT_CREDITS" && (
+          <button
+            onClick={() => setModal("topup")}
+            className="px-5 py-2.5 rounded-full bg-[var(--p-blue)] text-white font-medium hover:opacity-90 transition"
+          >
+            {t("topUpCta")}
+          </button>
+        )}
       </div>
     );
   }

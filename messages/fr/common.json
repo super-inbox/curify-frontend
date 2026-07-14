@@ -340,7 +340,9 @@
   "magic": {
     "errors": {
       "NO_SPEECH": "La vidéo semble ne pas avoir de discours audible. Nous ne pouvons pas transcrire la langue des signes ou les séquences silencieuses - veuillez télécharger une vidéo avec un audio parlé.",
-      "default": "Votre tâche a échoué. Veuillez réessayer ou contacter le support."
+      "default": "Votre tâche a échoué. Veuillez réessayer ou contacter le support.",
+      "INSUFFICIENT_CREDITS": "Vous n'avez pas assez de crédits pour exécuter cette tâche. Rechargez pour continuer.",
+      "topUpCta": "Recharger des crédits"
     }
   }
 }
