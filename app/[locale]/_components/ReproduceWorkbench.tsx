@@ -80,7 +80,13 @@ type Props = {
   col1: WorkbenchCol1;
 };
 
-type ResultItem = { id: string; url: string; label: string };
+// `kind` distinguishes a PRIMARY result (the main column-2 generation, or a
+// loaded project result) from a DERIVATIVE (a designer-pack output: resize,
+// print-ready, icon set, IG tiles, etc.). Designer-pack transforms always run
+// off the latest PRIMARY (the "hero"), never the previous derivative — so
+// applying several design tiles in a row each operates on the hero, not on the
+// output of the tile before it. See issue (c), 2026-07-15.
+type ResultItem = { id: string; url: string; label: string; kind: "primary" | "derivative" };
 
 export default function ReproduceWorkbench({
   locale,
@@ -132,9 +138,14 @@ export default function ReproduceWorkbench({
     viewMode: "cards" as const,
   };
 
-  const pushResult = (key: string, label: string, url: string) => {
+  const pushResult = (
+    key: string,
+    label: string,
+    url: string,
+    kind: "primary" | "derivative" = "derivative",
+  ) => {
     resultSeq.current += 1;
-    setResults((prev) => [{ id: `${key}-${resultSeq.current}`, url, label }, ...prev]);
+    setResults((prev) => [{ id: `${key}-${resultSeq.current}`, url, label, kind }, ...prev]);
   };
 
   const { generate, dismissAndGenerate, isGenerating: directGenerating, duplicateWarning, clearWarning } =
@@ -144,7 +155,7 @@ export default function ReproduceWorkbench({
       existingExamples,
       tracking,
       referenceImageUrl: referenceImageUrl ?? undefined,
-      onSuccess: (signedUrl) => pushResult("generate", "Your generation", signedUrl),
+      onSuccess: (signedUrl) => pushResult("generate", "Your generation", signedUrl, "primary"),
     });
 
   const { generate: freeformGenerate, isGenerating: freeformGenerating } = useFreeformGenerate({
@@ -172,14 +183,18 @@ export default function ReproduceWorkbench({
 
   const anyGenerating = directGenerating || freeformGenerating;
   const latestUrl = results[0]?.url ?? null;
-  // Transform source for the designer-pack workflows: prefer the latest
-  // generated result; else the static source image (source mode) or the raw
-  // uploaded image (upload mode).
   const col1Source =
     col1.mode === "source" ? col1.sourceReferenceUrl
     : col1.mode === "result" ? col1.resultUrl
     : referenceImageUrl ?? "";
-  const transformSource = latestUrl ?? col1Source;
+  // Reference image for the designer-pack workflows = the "hero": the latest
+  // PRIMARY result (the main generation), or — before any generation — the
+  // column-1 source (loaded project result / uploaded / source image). It is
+  // deliberately NOT `latestUrl`: designer-pack tiles are parallel finishing
+  // passes on the hero, so applying several in a row must each read the hero,
+  // not the previous tile's derivative output (issue (c), 2026-07-15).
+  const heroUrl = results.find((r) => r.kind === "primary")?.url ?? col1Source;
+  const transformSource = heroUrl;
   const workflows = useMemo(() => {
     const base = getTemplateWorkflows(templateId);
     // Lead column 3 with a zero-cost reveal tile for the ~109 templates that ship
@@ -494,6 +509,13 @@ export default function ReproduceWorkbench({
             </span>
             <span className="text-[11px] text-neutral-400">{CREDITS_COST} credits each</span>
           </div>
+
+          {transformSource && (
+            <p className="mb-2 text-[11px] text-neutral-400">
+              Each tile works from your{" "}
+              {results.some((r) => r.kind === "primary") ? "latest generation" : "source image"}.
+            </p>
+          )}
 
           <div className="grid grid-cols-3 gap-2">
             {workflows.map((wf) => {

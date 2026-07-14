@@ -137,7 +137,7 @@ const OVERRIDES_EXACT: Record<string, TemplateWorkflow[]> = {
 const PATTERN_RULES: { test: RegExp; workflows: TemplateWorkflow[] }[] = [
   {
     test: /travel.*map|map.*travel|itinerary|city-?guide/i,
-    workflows: [PRINT_READY, IG_GRID, VECTOR_ICONS],
+    workflows: [PRINT_READY, RESIZE_BUNDLE, VECTOR_ICONS],
   },
   {
     test: /health|wellness|clinic|medical|nutrition/i,
@@ -147,7 +147,7 @@ const PATTERN_RULES: { test: RegExp; workflows: TemplateWorkflow[] }[] = [
         "Lay out the attached image as a professional clinic/wellness flyer: a clear headline area at the top, the image as the hero, two or three short caption blocks with small icons, clean medical aesthetic, vertical flyer format.",
       ),
       PRINT_POSTER,
-      IG_GRID,
+      RESIZE_BUNDLE,
     ],
   },
   {
@@ -160,9 +160,12 @@ const PATTERN_RULES: { test: RegExp; workflows: TemplateWorkflow[] }[] = [
   },
   {
     // "board" dropped from this pattern — moodboards/design-boards handled above;
-    // it was over-matching them into the Instagram-grid set.
+    // it was over-matching them into the Instagram-grid set. IG 9-grid also
+    // dropped (2026-07-15): a poster/infographic is a SINGLE composition — slicing
+    // it into a 3×3 feed destroys it. Offer social-media *resizes* instead, which
+    // keep the poster whole. IG_GRID now only appears for the `social` intent.
     test: /poster|infographic|chart/i,
-    workflows: [PRINT_READY, IG_GRID, VECTOR_ICONS],
+    workflows: [PRINT_READY, RESIZE_BUNDLE, VECTOR_ICONS],
   },
 ];
 
@@ -182,8 +185,8 @@ const INTENT_WORKFLOWS: Record<OutputIntent, TemplateWorkflow[]> = {
   // set extracted from it (dropped the gallery "Poster / wallpaper" tile: it
   // overlapped "Print poster"; dedupe below also guards this globally).
   "print-art": [PRINT_READY, D.watercolor, VECTOR_ICONS],
-  // infographic-style deliverables
-  presentation: [PRINT_POSTER, IG_GRID, VECTOR_ICONS],
+  // infographic-style deliverables (single poster → resize, not 9-slice)
+  presentation: [PRINT_POSTER, RESIZE_BUNDLE, VECTOR_ICONS],
   // riffing / style exploration — the original 6 style tiles
   remix: DEFAULT_WORKFLOWS,
 };
