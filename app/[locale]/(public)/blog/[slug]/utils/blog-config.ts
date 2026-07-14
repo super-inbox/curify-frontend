@@ -44,6 +44,7 @@ export function createBlogPostsConfig() {
       'lip-sync-technical-deep-dive': 'lipSyncTechnicalDeepDive',
       'character-prompt-generator': 'characterPromptGenerator',
       'mbti-character-generator': 'mbtiCharacterGenerator',
+      'footballer-mbti-types': 'footballerMbtiTypes',
       'content-tagging-system': 'contentTaggingSystem',
       'visual-learning-tools': 'visualLearningTools',
       'ai-content-distribution-system': 'aiContentDistributionSystem',
@@ -147,6 +148,7 @@ export const blogPosts = createBlogPostsConfig();
 
 // Define which keys exist for each blog post type
 export const availableKeys: Record<string, string[]> = {
+  'footballerMbtiTypes': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'aiPlatform': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
   'qaBotToTask': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
   'ageAi': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
