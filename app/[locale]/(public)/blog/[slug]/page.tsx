@@ -71,6 +71,8 @@ import BilingualFlashcardsContent from "./components/BilingualFlashcardsContent"
 import UGCVideoTranslationContent from "./components/UGCVideoTranslationContent";
 import AIFacelessChannelPipelineWrapper from './components/AIFacelessChannelPipelineWrapper';
 import blogsData from "@/public/data/blogs.json";
+import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
+import { TOOL_REGISTRY } from "@/lib/tools-registry";
 import nanoInspirationData from "@/public/data/nano_inspiration.json";
 
 // Build example_id → template_id lookup at module init (server-component
@@ -583,6 +585,13 @@ export default async function BlogPostPage({
           `nanoTemplates`. Filters by groupKey prefix so each post only
           surfaces the cards keyed to its own slug. WC poster posts render this
           near the top instead (above), so skip the bottom copy for them. */}
+      {slug === 'video-to-learning-pack' && (
+        <div className="max-w-4xl mx-auto px-4 my-8">
+          <h3 className="text-xl font-semibold mb-4 text-gray-900">The video tools behind each step</h3>
+          <ToolsGrid tools={TOOL_REGISTRY.filter((t) => ["bilingual-subtitles","video-transcript-generator","video-summarizer","speech-translator","video-dubbing"].includes(t.slug))} />
+        </div>
+      )}
+
       {blogData?.nanoTemplates?.length > 0 && !WC_BLOG_SLUGS.has(slug) && (
         <NanoBananaExamples locale={locale} blogSlug={slug} />
       )}
