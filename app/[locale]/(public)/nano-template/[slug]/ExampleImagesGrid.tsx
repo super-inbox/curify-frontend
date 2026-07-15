@@ -62,7 +62,6 @@ function ExampleImageCard({
   carouselContext,
   desktopOpensExample = false,
   showCaption = false,
-  fixedCols,
 }: {
   item: Item;
   locale: string;
@@ -82,8 +81,6 @@ function ExampleImageCard({
    * /search turns it on because the title is a strong relevance cue.
    */
   showCaption?: boolean;
-  /** Force a fixed column count (e.g. blog embeds). Undefined = responsive default, so all existing call sites are unaffected. */
-  fixedCols?: number;
 }) {
   const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
   const { trackVideoClick } = useVideoTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
@@ -279,6 +276,7 @@ export default function ExampleImagesGrid({
   topRightCell,
   desktopHideFirstN = 0,
   showCaption = false,
+  fixedCols,
 }: {
   items: Item[];
   maxRows?: number;
@@ -298,6 +296,8 @@ export default function ExampleImagesGrid({
   desktopHideFirstN?: number;
   /** Render a 1-line title caption below each thumbnail (used on /search). */
   showCaption?: boolean;
+  /** Force a fixed column count (e.g. blog embeds). Undefined = responsive default, so all existing call sites are unaffected. */
+  fixedCols?: number;
 }) {
   const responsiveCols = useCols();
   const cols = fixedCols ?? responsiveCols;
