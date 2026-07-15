@@ -73,6 +73,7 @@ import AIFacelessChannelPipelineWrapper from './components/AIFacelessChannelPipe
 import blogsData from "@/public/data/blogs.json";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
+import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import nanoInspirationData from "@/public/data/nano_inspiration.json";
 
 // Build example_id → template_id lookup at module init (server-component
@@ -586,9 +587,25 @@ export default async function BlogPostPage({
           surfaces the cards keyed to its own slug. WC poster posts render this
           near the top instead (above), so skip the bottom copy for them. */}
       {slug === 'video-to-learning-pack' && (
-        <div className="max-w-4xl mx-auto px-4 my-8">
-          <h3 className="text-xl font-semibold mb-4 text-gray-900">The video tools behind each step</h3>
-          <ToolsGrid tools={TOOL_REGISTRY.filter((t) => ["bilingual-subtitles","video-transcript-generator","video-summarizer","speech-translator","video-dubbing"].includes(t.slug))} />
+        <div className="max-w-5xl mx-auto px-4 my-8 space-y-10">
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">The video tools behind each step</h3>
+            <ToolsGrid tools={TOOL_REGISTRY.filter((t) => ["bilingual-subtitles","video-transcript-generator","video-summarizer","speech-translator"].includes(t.slug))} />
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">Learning templates to build each asset</h3>
+            <ExampleImagesGrid
+              locale={locale}
+              showCaption
+              maxRows={1}
+              items={[
+                { id: "template-cartoon-english-vocabulary-flashcards-fruits", title: "Word cards", preview: "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-fruits-prev.jpg", templateId: "template-cartoon-english-vocabulary-flashcards" },
+                { id: "template-bilingual-chinese-vocabulary-word-card-poster-shijian-time", title: "Bilingual word card", preview: "/images/nano_insp_preview/template-bilingual-chinese-vocabulary-word-card-poster-shijian-time-prev.jpg", templateId: "template-bilingual-chinese-vocabulary-word-card-poster" },
+                { id: "template-educational-flashcard-ontology-mindmap-infographic-animal-learning-card-structure-mindmap", title: "Character map", preview: "/images/nano_insp_preview/template-educational-flashcard-ontology-mindmap-infographic-animal-learning-card-structure-mindmap-prev.jpg", templateId: "template-educational-flashcard-ontology-mindmap-infographic" },
+                { id: "template-hsk-bilingual-reading-text-lesson-poster-hsk1-day-at-school", title: "Reading lesson", preview: "/images/nano_insp_preview/template-hsk-bilingual-reading-text-lesson-poster-hsk1-day-at-school-prev.jpg", templateId: "template-hsk-bilingual-reading-text-lesson-poster" },
+              ]}
+            />
+          </div>
         </div>
       )}
 
