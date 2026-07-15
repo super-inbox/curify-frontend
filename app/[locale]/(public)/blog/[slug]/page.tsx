@@ -598,6 +598,7 @@ export default async function BlogPostPage({
               locale={locale}
               showCaption
               maxRows={1}
+              fixedCols={4}
               items={[
                 { id: "template-cartoon-english-vocabulary-flashcards-fruits", title: "Word cards", preview: "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-fruits-prev.jpg", templateId: "template-cartoon-english-vocabulary-flashcards" },
                 { id: "template-bilingual-chinese-vocabulary-word-card-poster-shijian-time", title: "Bilingual word card", preview: "/images/nano_insp_preview/template-bilingual-chinese-vocabulary-word-card-poster-shijian-time-prev.jpg", templateId: "template-bilingual-chinese-vocabulary-word-card-poster" },

@@ -62,6 +62,7 @@ function ExampleImageCard({
   carouselContext,
   desktopOpensExample = false,
   showCaption = false,
+  fixedCols,
 }: {
   item: Item;
   locale: string;
@@ -81,6 +82,8 @@ function ExampleImageCard({
    * /search turns it on because the title is a strong relevance cue.
    */
   showCaption?: boolean;
+  /** Force a fixed column count (e.g. blog embeds). Undefined = responsive default, so all existing call sites are unaffected. */
+  fixedCols?: number;
 }) {
   const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
   const { trackVideoClick } = useVideoTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
@@ -296,7 +299,8 @@ export default function ExampleImagesGrid({
   /** Render a 1-line title caption below each thumbnail (used on /search). */
   showCaption?: boolean;
 }) {
-  const cols = useCols();
+  const responsiveCols = useCols();
+  const cols = fixedCols ?? responsiveCols;
   // Extend the visible window by desktopHideFirstN so desktop shows the
   // same number of cards "below the rail" as mobile would show in the
   // full grid. Otherwise hiding 2 would leave desktop with 2 fewer
@@ -321,7 +325,7 @@ export default function ExampleImagesGrid({
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+      <div className={fixedCols === 4 ? "grid grid-cols-2 gap-3 sm:grid-cols-4" : "grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6"}>
         {topRightCell ? (
           <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5 xl:col-start-6">
             {topRightCell}
