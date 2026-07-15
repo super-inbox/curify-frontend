@@ -6746,5 +6746,83 @@
         "prompts": "Essayez le mode 'Affiche de groupe' avec 'distribution complète : Haaland Le Prince de Glace, Ronaldo La Star Éternelle, Mbappé Le Garçon en Or' ; ou 'Affiche de personnage individuel solo' avec 'Erling Haaland, Le Prince de Glace'."
       }
     }
+  },
+  "template-kids-bilingual-cartoon-learning-card": {
+    "category": "Carte d'apprentissage bilingue de dessin animé",
+    "description": "Transformez un dessin animé préféré en une carte d'apprentissage bilingue (anglais + chinois) avec sous-titres pour enfants.",
+    "title": "Nano Banana Prompt : Carte d'apprentissage bilingue de dessin animé pour enfants | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une large feuille de travail d'apprentissage bilingue sur le thème {cartoon_theme} : une illustration de scène assortie avec un tableau de sous-titres d'histoire de 10 lignes (anglais + chinois) et une boîte de conseils de vocabulaire, encadrée par une bordure décorative enroulée.",
+        "who": "Enseignants ESL / bilingues, parents et créateurs de contenu pour l'éducation précoce.",
+        "how": "Entrez un thème de dessin animé (titre + scène + style artistique). Un clic génère la carte ; changez de dessin animé pour créer une série.",
+        "prompts": "Essayez 'Peppa Pig, la famille cochon saute dans des flaques de boue, style livre d'images', 'Havoc in Heaven, Sun Wukong combat des soldats célestes, style aquarelle chinois'."
+      }
+    }
+  },
+  "template-cartoon-english-quiz-learning-card": {
+    "category": "Carte de quiz en anglais sur le dessin animé",
+    "description": "Créez une carte de quiz en anglais sur le thème du dessin animé à partir de n'importe quelle propriété intellectuelle de dessin animé pour enfants.",
+    "title": "Nano Banana Prompt : Carte de quiz en anglais sur le dessin animé | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une carte de quiz en anglais sur le thème du dessin animé {cartoon_ip_theme} : éléments de questions illustrés et choix de réponses construits autour de l'histoire et des personnages du dessin animé, dans une mise en page ludique adaptée aux enfants.",
+        "who": "Enseignants ESL, plateformes de tutorat et parents créant des exercices d'anglais amusants pour les enfants.",
+        "how": "Entrez la propriété intellectuelle du dessin animé + scène. Un clic génère la carte de quiz ; variez la propriété intellectuelle pour un ensemble de quiz.",
+        "prompts": "Essayez 'Les Trois Petits Cochons, maisons en paille/bois/briques contre le grand méchant loup', 'Frères Calabash, sept frères gourdes combattent le démon serpent'."
+      }
+    }
+  },
+  "template-cartoon-english-wordcard-learning-card": {
+    "category": "Carte de vocabulaire en anglais sur le dessin animé",
+    "description": "Générez une carte de vocabulaire en anglais sur le thème du dessin animé pour les jeunes apprenants.",
+    "title": "Nano Banana Prompt : Carte de vocabulaire en anglais sur le dessin animé | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une carte de vocabulaire sur le thème du dessin animé {cartoon_ip_theme} : une illustration de scène associée à une liste de mots en anglais thématique (avec significations) tirée de l'histoire du dessin animé.",
+        "who": "Enseignants ESL / de vocabulaire, parents et créateurs de contenu en anglais pour enfants.",
+        "how": "Entrez la propriété intellectuelle du dessin animé + une liste de mots. Un clic génère la carte de mots ; construisez une série de vocabulaire.",
+        "prompts": "Essayez 'Frères Calabash — gourde, frère, montagne, sauvetage, démon, courageux', 'Détective Chat Noir — police, forêt, garde, poursuite, astucieux'."
+      }
+    }
+  },
+  "template-cartoon-mini-script-learning-card": {
+    "category": "Carte d'apprentissage de mini-script de dessin animé",
+    "description": "Créez une carte de mini-script de dessin animé (dialogue) que les enfants peuvent lire à haute voix et jouer en anglais.",
+    "title": "Nano Banana Prompt : Carte d'apprentissage de mini-script de dessin animé | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une carte d'apprentissage de mini-script de dessin animé sur le thème {cartoon_ip_theme} : une courte scène scriptée avec une liste de personnages, des lignes de dialogue en anglais et des conseils d'interprétation, afin que les enfants puissent lire à haute voix et jouer.",
+        "who": "Enseignants ESL / de théâtre, plateformes de tutorat et parents pratiquant la lecture à haute voix.",
+        "how": "Entrez la propriété intellectuelle du dessin animé + scène + liste de personnages. Un clic génère la carte de script.",
+        "prompts": "Essayez 'Détective Chat Noir — poursuivant les rats voleurs de grains dans la forêt', 'Havoc in Heaven — Sun Wukong attaque le Palais Céleste'."
+      }
+    }
+  },
+  "template-kids-english-phonics-sentence-flashcard": {
+    "category": "Carte flash de phonétique et de phrases en anglais pour enfants",
+    "description": "Créez une carte flash de phonétique anglaise ou de phrases thématiques pour la maternelle (feuille de travail imprimable).",
+    "title": "Nano Banana Prompt : Flashcard de Phonétique Anglaise pour Enfants & Phrase | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une flashcard imprimable pour la maternelle sur le thème {flashcard_custom_info} : une carte phonétique de l'alphabet (lettre + mots exemples) ou une carte de phrase thématique (phrase + mot en surbrillance + image), dans une mise en page propre à 2 lignes + 4 en bas.",
+        "who": "Enseignants de maternelle et d'ESL précoce, parents et éducateurs à domicile.",
+        "how": "Entrez le mode et le contenu — 'Phonétique de l'Alphabet | Lettre Dd | chien | canard, poupée, tambour, bureau' ou 'Phrase Thématique | Je vois un … rose | rose'. Un clic génère la flashcard.",
+        "prompts": "Essayez 'Mode 1 Phonétique de l'Alphabet | Lettre Dd | chien | canard, poupée, tambour, bureau', 'Mode 2 Phrase Thématique | J'aime jouer | jouer'."
+      }
+    }
+  },
+  "template-cartoon-character-map-learning-card": {
+    "category": "Carte d'Apprentissage de la Carte des Personnages de Dessin Animé",
+    "description": "Créez une carte de relations de personnages de dessin animé qui enseigne les personnages et leurs relations en anglais.",
+    "title": "Nano Banana Prompt : Carte d'Apprentissage des Personnages de Dessin Animé | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une carte de relations de personnages de dessin animé sur le thème {cartoon_ip_theme} : 3 personnages principaux avec leurs traits et relations, plus une phrase axée sur l'histoire, sur un fond de scène thématique.",
+        "who": "Enseignants d'ESL / de lecture, parents et créateurs de contenu de compréhension d'histoires pour enfants.",
+        "how": "Entrez la propriété intellectuelle de dessin animé, les personnages et leurs relations. Un clic génère la carte des personnages.",
+        "prompts": "Essayez 'Havoc in Heaven — Empereur de Jade, Sun Wukong, Erlang Shen', 'Trois Petits Cochons — trois cochons et le grand méchant loup'."
+      }
+    }
   }
 }

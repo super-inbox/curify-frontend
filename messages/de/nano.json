@@ -6746,5 +6746,83 @@
         "prompts": "Versuchen Sie den Modus 'Gruppenensemble-Cast-Poster' mit 'voller Cast: Haaland Der Eisprinz, Ronaldo Der Ewige Star, Mbappé Der Goldene Junge'; oder 'Einzelner Charakter-Poster' mit 'Erling Haaland, Der Eisprinz'."
       }
     }
+  },
+  "template-kids-bilingual-cartoon-learning-card": {
+    "category": "Bilinguale Cartoon-Lernkarte",
+    "description": "Verwandle einen Lieblings-Cartoon in eine bilinguale (Englisch + Chinesisch) Untertitel-Lernkarte für Kinder.",
+    "title": "Nano Banana Prompt: Bilinguale Cartoon-Lernkarte für Kinder | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein breites bilinguales Lernarbeitsblatt zum Thema {cartoon_theme}: eine passende Szenenillustration mit einer 10-zeiligen Untertitel-Tabelle (Englisch + Chinesisch) und einer Box mit Vokabeltipps, umrahmt von einem dekorativen Scrollrand.",
+        "who": "ESL-/bilinguale Lehrer, Eltern und Inhalte-Ersteller für frühkindliche Bildung.",
+        "how": "Gib ein Cartoon-Thema ein (Titel + Szene + Kunststil). Ein Klick erstellt die Karte; tausche Cartoons aus, um eine Serie zu erstellen.",
+        "prompts": "Versuche 'Peppa Pig, Schweinefamilie springt in matschige Pfützen, Bilderbuch-Flachstil', 'Havoc in Heaven, Sun Wukong kämpft gegen himmlische Soldaten, chinesischer Aquarellstil'."
+      }
+    }
+  },
+  "template-cartoon-english-quiz-learning-card": {
+    "category": "Cartoon-Englisch-Quizkarte",
+    "description": "Erstelle eine cartoonbasierte Englisch-Quiz-Lernkarte aus jedem Kinder-Cartoon-IP.",
+    "title": "Nano Banana Prompt: Cartoon-Englisch-Quiz-Lernkarte | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine cartoonbasierte Englisch-Quizkarte zum Thema {cartoon_ip_theme}: illustrierte Fragen und Antwortmöglichkeiten, die sich um die Geschichte und Charaktere des Cartoons gruppieren, in einem spielerischen, kinderfreundlichen Layout.",
+        "who": "ESL-Lehrer, Nachhilfeplattformen und Eltern, die Spaß beim Englischüben für Kinder schaffen.",
+        "how": "Gib die Cartoon-IP + Szene ein. Ein Klick erstellt die Quizkarte; variiere die IP für ein Quiz-Set.",
+        "prompts": "Versuche 'Die drei kleinen Schweinchen, Stroh-/Holz-/Ziegelhäuser gegen den bösen Wolf', 'Calabash Brothers, sieben Kürbisbrüder kämpfen gegen den Schlangendämon'."
+      }
+    }
+  },
+  "template-cartoon-english-wordcard-learning-card": {
+    "category": "Cartoon-Englisch-Wortkarte",
+    "description": "Generiere eine cartoonbasierte Englisch-Vokabelkarte für junge Lernende.",
+    "title": "Nano Banana Prompt: Cartoon-Englisch-Wortkarte | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine cartoonbasierte Vokabelkarte zum Thema {cartoon_ip_theme}: eine Szenenillustration kombiniert mit einer thematischen englischen Wortliste (mit Bedeutungen), die aus der Geschichte des Cartoons entnommen ist.",
+        "who": "ESL-/Vokabel-Lehrer, Eltern und Inhalte-Ersteller für Englisch für Kinder.",
+        "how": "Gib die Cartoon-IP + eine Wortliste ein. Ein Klick erstellt die Wortkarte; baue eine Vokabelserie auf.",
+        "prompts": "Versuche 'Calabash Brothers — Kürbis, Bruder, Berg, Rettung, Dämon, mutig', 'Black Cat Detective — Polizei, Wald, Wache, Verfolgung, clever'."
+      }
+    }
+  },
+  "template-cartoon-mini-script-learning-card": {
+    "category": "Cartoon-Mini-Drehbuch-Lernkarte",
+    "description": "Erstelle eine Cartoon-Mini-Drehbuchkarte (Dialog), die Kinder laut lesen und in Englisch nachspielen können.",
+    "title": "Nano Banana Prompt: Cartoon-Mini-Drehbuch-Lernkarte | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine Cartoon-Mini-Drehbuch-Lernkarte zum Thema {cartoon_ip_theme}: eine kurze, skriptierte Szene mit einer Charakterliste, englischen Dialogzeilen und Schauspieltipps, damit Kinder laut lesen und nachspielen können.",
+        "who": "ESL-/Drama-Lehrer, Nachhilfeplattformen und Eltern, die Lautleseübungen machen.",
+        "how": "Gib die Cartoon-IP + Szene + Charakterliste ein. Ein Klick erstellt die Drehbuchkarte.",
+        "prompts": "Versuche 'Black Cat Detective — Verfolgung der kornraubenden Ratten im Wald', 'Havoc in Heaven — Sun Wukong stürmt den Himmlischen Palast'."
+      }
+    }
+  },
+  "template-kids-english-phonics-sentence-flashcard": {
+    "category": "Kinder Englisch Phonics & Satz-Flashkarte",
+    "description": "Erstelle eine Vorschul-Englisch-Phonics- oder Themen-Satz-Flashkarte (druckbares Arbeitsblatt).",
+    "title": "Nano Banana Prompt: Kinder Englisch Phonics & Satz Flashkarte | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine druckbare Vorschul-Flashkarte zum Thema {flashcard_custom_info}: eine Alphabet-Phonics-Karte (Buchstabe + Beispielwörter) oder eine Themen-Satzkarte (Satz + hervorgehobenes Wort + Bild) in einem klaren Layout mit 2 Reihen + 4 am unteren Rand.",
+        "who": "Vorschullehrer und frühe ESL-Lehrer, Eltern und Homeschool-Pädagogen.",
+        "how": "Geben Sie den Modus und den Inhalt ein — 'Alphabet Phonics | Buchstabe Dd | Hund | Ente, Puppe, Trommel, Schreibtisch' oder 'Themen-Satz | Ich sehe ein pinkes … | pink'. Ein Klick erstellt die Flashkarte.",
+        "prompts": "Versuchen Sie 'Modus 1 Alphabet Phonics | Buchstabe Dd | Hund | Ente, Puppe, Trommel, Schreibtisch', 'Modus 2 Themen-Satz | Ich spiele gerne | spielen'."
+      }
+    }
+  },
+  "template-cartoon-character-map-learning-card": {
+    "category": "Lernkarte zur Charakterbeziehung von Cartoonfiguren",
+    "description": "Erstellen Sie eine Beziehungskarte von Cartoonfiguren, die Charaktere und ihre Beziehungen auf Englisch lehrt.",
+    "title": "Nano Banana Prompt: Lernkarte zur Charakterbeziehung von Cartoonfiguren | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine Beziehungskarte von Cartoonfiguren zum Thema {cartoon_ip_theme}: 3 Hauptfiguren mit ihren Eigenschaften und Beziehungen sowie einem satzfokussierten Satz auf einem thematischen Hintergrund.",
+        "who": "ESL-/Leselehrer, Eltern und Inhaltsanbieter für das Geschichtverständnis von Kindern.",
+        "how": "Geben Sie das Cartoon-IP, die Charaktere und ihre Beziehungen ein. Ein Klick erstellt die Charakterkarte.",
+        "prompts": "Versuchen Sie 'Havoc in Heaven — Jade Emperor, Sun Wukong, Erlang Shen', 'Die drei kleinen Schweinchen — drei Schweine und der große böse Wolf'."
+      }
+    }
   }
 }

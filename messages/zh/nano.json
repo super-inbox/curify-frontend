@@ -6745,5 +6745,83 @@
         "prompts": "尝试模式 '团体组合海报'，使用 '全体演员：哈兰德 冰雪王子，罗纳尔多 永恒之星，姆巴佩 黄金男孩'；或 '单人角色海报'，使用 '埃尔林 哈兰德，冰雪王子'。"
       }
     }
+  },
+  "template-kids-bilingual-cartoon-learning-card": {
+    "category": "双语卡通学习卡",
+    "description": "将最喜欢的卡通变成一张双语（英语 + 中文）字幕学习卡给孩子们。",
+    "title": "Nano Banana 提示：儿童双语卡通学习卡 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "此模板呈现一个以 {cartoon_theme} 为主题的双语学习工作表：配有场景插图和 10 行故事字幕表（英语 + 中文）以及词汇提示框，装饰以卷轴边框。",
+        "who": "ESL / 双语教师、家长和早教内容创作者。",
+        "how": "输入卡通主题（标题 + 场景 + 艺术风格）。一键生成卡片；更换卡通以构建系列。",
+        "prompts": "尝试 '小猪佩奇，猪家族跳泥坑，图画书平面风格'，'西游记，孙悟空与天兵作战，中国水彩风格'。"
+      }
+    }
+  },
+  "template-cartoon-english-quiz-learning-card": {
+    "category": "卡通英语测验卡",
+    "description": "从任何儿童卡通 IP 制作卡通主题的英语测验学习卡。",
+    "title": "Nano Banana 提示：卡通英语测验学习卡 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "此模板呈现一个以 {cartoon_ip_theme} 为主题的卡通英语测验卡：围绕卡通的故事和角色构建的插图问题项和答案选择，以有趣的儿童友好布局呈现。",
+        "who": "ESL 教师、辅导平台和为孩子们构建有趣英语练习的家长。",
+        "how": "输入卡通 IP + 场景。一键生成测验卡；更换 IP 以创建测验集。",
+        "prompts": "尝试 '三只小猪，稻草/木头/砖房 vs 大坏狼'，'葫芦兄弟，七个葫芦兄弟打蛇妖'。"
+      }
+    }
+  },
+  "template-cartoon-english-wordcard-learning-card": {
+    "category": "卡通英语单词卡",
+    "description": "为年轻学习者生成一张卡通主题的英语词汇单词卡。",
+    "title": "Nano Banana 提示：卡通英语单词卡 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "此模板呈现一个以 {cartoon_ip_theme} 为主题的卡通词汇单词卡：配有场景插图和从卡通故事中提取的主题英语单词列表（含释义）。",
+        "who": "ESL / 词汇教师、家长和儿童英语内容创作者。",
+        "how": "输入卡通 IP + 单词列表。一键生成单词卡；构建词汇系列。",
+        "prompts": "尝试 '葫芦兄弟 — 葫芦、兄弟、山、救援、妖怪、勇敢'，'黑猫警长 — 警察、森林、守卫、追逐、聪明'。"
+      }
+    }
+  },
+  "template-cartoon-mini-script-learning-card": {
+    "category": "卡通迷你剧本学习卡",
+    "description": "创建一张孩子们可以大声朗读和角色扮演的卡通迷你剧本（对话）卡。",
+    "title": "Nano Banana 提示：卡通迷你剧本学习卡 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "此模板呈现一个以 {cartoon_ip_theme} 为主题的卡通迷你剧本学习卡：一个短小的剧本场景，包含角色列表、英语对话和表演提示，供孩子们大声朗读和角色扮演。",
+        "who": "ESL / 戏剧教师、辅导平台和进行朗读练习的家长。",
+        "how": "输入卡通 IP + 场景 + 角色列表。一键生成剧本卡。",
+        "prompts": "尝试 '黑猫警长 — 在森林中追逐偷粮食的老鼠'，'西游记 — 孙悟空闯天宫'。"
+      }
+    }
+  },
+  "template-kids-english-phonics-sentence-flashcard": {
+    "category": "儿童英语语音与句子闪卡",
+    "description": "制作一张学前英语语音或主题句子的闪卡（可打印工作表）。",
+    "title": "Nano Banana 提示：儿童英语语音与句子闪卡 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "此模板生成一个可打印的学前闪卡，主题为 {flashcard_custom_info}：字母语音卡（字母 + 示例单词）或主题句子卡（句子 + 突出词 + 图片），采用干净的2行 + 底部4布局。",
+        "who": "学前和早期ESL教师、家长和家庭教育工作者。",
+        "how": "输入模式和内容 — '字母语音 | 字母 Dd | 狗 | 鸭子、洋娃娃、鼓、桌子' 或 '主题句子 | 我看到一个粉色的… | 粉色'。一键生成闪卡。",
+        "prompts": "尝试 '模式1 字母语音 | 字母 Dd | 狗 | 鸭子、洋娃娃、鼓、桌子'，'模式2 主题句子 | 我喜欢玩 | 玩'。"
+      }
+    }
+  },
+  "template-cartoon-character-map-learning-card": {
+    "category": "卡通角色关系图学习卡",
+    "description": "制作一个卡通角色关系图，教授角色及其关系的英语。",
+    "title": "Nano Banana 提示：卡通角色关系图学习卡 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "此模板生成一个以 {cartoon_ip_theme} 为主题的卡通角色关系图：3个核心角色及其特征和关系，以及一个故事重点句子，背景为主题场景。",
+        "who": "ESL / 阅读教师、家长和儿童故事理解内容创作者。",
+        "how": "输入卡通IP、角色及其关系。一键生成角色图。",
+        "prompts": "尝试 '天宫浩劫 — 玉皇大帝、孙悟空、二郎神'，'三只小猪 — 三只猪和大坏狼'。"
+      }
+    }
   }
 }

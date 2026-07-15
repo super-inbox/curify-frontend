@@ -6746,5 +6746,83 @@
         "prompts": "Prueba el modo 'Póster de elenco grupal' con 'elenco completo: Haaland El Príncipe de Hielo, Ronaldo La Estrella Eterna, Mbappé El Niño Dorado'; o 'Póster de personaje individual en solitario' con 'Erling Haaland, El Príncipe de Hielo'."
       }
     }
+  },
+  "template-kids-bilingual-cartoon-learning-card": {
+    "category": "Tarjeta de Aprendizaje de Dibujos Animados Bilingüe",
+    "description": "Convierte un dibujo animado favorito en una tarjeta de aprendizaje de subtítulos bilingüe (inglés + chino) para niños.",
+    "title": "Nano Banana Prompt: Tarjeta de Aprendizaje de Dibujos Animados Bilingüe para Niños | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una amplia hoja de trabajo de aprendizaje bilingüe con el tema {cartoon_theme}: una ilustración de escena de coincidencia con una tabla de subtítulos de historia de 10 líneas (inglés + chino) y una caja de consejos de vocabulario, enmarcada por un borde decorativo de pergamino.",
+        "who": "Profesores de ESL / bilingües, padres y creadores de contenido de educación infantil.",
+        "how": "Ingresa un tema de dibujo animado (título + escena + estilo artístico). Un clic genera la tarjeta; cambia los dibujos animados para construir una serie.",
+        "prompts": "Prueba 'Peppa Pig, la familia cerdo salta en charcos de barro, estilo de libro ilustrado plano', 'Havoc in Heaven, Sun Wukong lucha contra soldados celestiales, estilo de acuarela china'."
+      }
+    }
+  },
+  "template-cartoon-english-quiz-learning-card": {
+    "category": "Tarjeta de Cuestionario de Inglés de Dibujos Animados",
+    "description": "Crea una tarjeta de aprendizaje de cuestionario de inglés con temática de dibujos animados a partir de cualquier IP de dibujos animados para niños.",
+    "title": "Nano Banana Prompt: Tarjeta de Aprendizaje de Cuestionario de Inglés de Dibujos Animados | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una tarjeta de cuestionario de inglés con temática de dibujos animados con el tema {cartoon_ip_theme}: elementos de preguntas ilustrados y opciones de respuesta construidas en torno a la historia y personajes del dibujo animado, en un diseño divertido y amigable para los niños.",
+        "who": "Profesores de ESL, plataformas de tutoría y padres que crean práctica divertida de inglés para niños.",
+        "how": "Ingresa la IP del dibujo animado + escena. Un clic genera la tarjeta de cuestionario; varía la IP para un conjunto de cuestionarios.",
+        "prompts": "Prueba 'Los Tres Cerditos, casas de paja/madera/ladrillo vs el lobo feroz', 'Hermanos Calabaza, siete hermanos calabaza luchan contra el demonio serpiente'."
+      }
+    }
+  },
+  "template-cartoon-english-wordcard-learning-card": {
+    "category": "Tarjeta de Palabras de Inglés de Dibujos Animados",
+    "description": "Genera una tarjeta de vocabulario de inglés con temática de dibujos animados para jóvenes aprendices.",
+    "title": "Nano Banana Prompt: Tarjeta de Palabras de Inglés de Dibujos Animados | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una tarjeta de palabras de vocabulario con temática de dibujos animados con el tema {cartoon_ip_theme}: una ilustración de escena emparejada con una lista de palabras en inglés (con significados) extraída de la historia del dibujo animado.",
+        "who": "Profesores de ESL / vocabulario, padres y creadores de contenido de inglés para niños.",
+        "how": "Ingresa la IP del dibujo animado + una lista de palabras. Un clic genera la tarjeta de palabras; construye una serie de vocabulario.",
+        "prompts": "Prueba 'Hermanos Calabaza — calabaza, hermano, montaña, rescate, demonio, valiente', 'Detective Gato Negro — policía, bosque, guardia, persecución, astuto'."
+      }
+    }
+  },
+  "template-cartoon-mini-script-learning-card": {
+    "category": "Tarjeta de Aprendizaje de Mini-Guion de Dibujos Animados",
+    "description": "Crea una tarjeta de mini-guion (diálogo) de dibujos animados que los niños puedan leer en voz alta y representar en inglés.",
+    "title": "Nano Banana Prompt: Tarjeta de Aprendizaje de Mini-Guion de Dibujos Animados | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una tarjeta de aprendizaje de mini-guion de dibujos animados con el tema {cartoon_ip_theme}: una escena corta con un listado de personajes, líneas de diálogo en inglés y consejos de actuación, para que los niños puedan leer en voz alta y representar.",
+        "who": "Profesores de ESL / drama, plataformas de tutoría y padres que realizan práctica de lectura en voz alta.",
+        "how": "Ingresa la IP del dibujo animado + escena + lista de personajes. Un clic genera la tarjeta de guion.",
+        "prompts": "Prueba 'Detective Gato Negro — persiguiendo a los ratones ladrones de grano en el bosque', 'Havoc in Heaven — Sun Wukong asalta el Palacio Celestial'."
+      }
+    }
+  },
+  "template-kids-english-phonics-sentence-flashcard": {
+    "category": "Tarjeta de Flash de Fonética y Oraciones en Inglés para Niños",
+    "description": "Crea una tarjeta de flash de fonética en inglés o de oración temática (hoja imprimible).",
+    "title": "Nano Banana Prompt: Tarjetas de Flash de Fonética y Oraciones en Inglés para Niños | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una tarjeta de flash imprimible para preescolar con el tema {flashcard_custom_info}: una tarjeta de fonética del alfabeto (letra + palabras de ejemplo) o una tarjeta de oración temática (oración + palabra destacada + imagen), en un diseño limpio de 2 filas + 4 en la parte inferior.",
+        "who": "Maestros de preescolar y ESL temprano, padres y educadores en casa.",
+        "how": "Ingresa el modo y el contenido — 'Fonética del Alfabeto | Letra Dd | perro | pato, muñeca, tambor, escritorio' o 'Oración Temática | Veo un … rosa | rosa'. Un clic genera la tarjeta de flash.",
+        "prompts": "Prueba 'Modo 1 Fonética del Alfabeto | Letra Dd | perro | pato, muñeca, tambor, escritorio', 'Modo 2 Oración Temática | Me gusta jugar | jugar'."
+      }
+    }
+  },
+  "template-cartoon-character-map-learning-card": {
+    "category": "Tarjeta de Aprendizaje del Mapa de Personajes de Dibujos Animados",
+    "description": "Crea un mapa de relaciones de personajes de dibujos animados que enseña sobre los personajes y sus relaciones en inglés.",
+    "title": "Nano Banana Prompt: Tarjeta de Aprendizaje del Mapa de Personajes de Dibujos Animados | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un mapa de relaciones de personajes de dibujos animados con el tema {cartoon_ip_theme}: 3 personajes principales con sus rasgos y relaciones, más una oración centrada en la historia, sobre un fondo de escena temática.",
+        "who": "Maestros de ESL / lectura, padres y creadores de contenido de comprensión de historias para niños.",
+        "how": "Ingresa la propiedad intelectual de dibujos animados, los personajes y sus relaciones. Un clic genera el mapa de personajes.",
+        "prompts": "Prueba 'Caos en el Cielo — Emperador de Jade, Sun Wukong, Erlang Shen', 'Los Tres Cerditos — tres cerdos y el gran lobo malo'."
+      }
+    }
   }
 }
