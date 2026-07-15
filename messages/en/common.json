@@ -340,7 +340,9 @@
   "magic": {
     "errors": {
       "NO_SPEECH": "The video appears to have no audible speech. We can't transcribe sign language or silent footage — please upload a video with spoken audio.",
-      "default": "Your job failed. Please try again or contact support."
+      "default": "Your job failed. Please try again or contact support.",
+      "INSUFFICIENT_CREDITS": "You don't have enough credits to run this job. Top up to continue.",
+      "topUpCta": "Top up credits"
     }
   }
 }

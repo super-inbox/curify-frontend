@@ -2260,7 +2260,7 @@
     "id": "template-fashion-ecommerce",
     "locales": {
       "zh": {
-        "base_prompt": "（Fashion E-commerce Designer）根据上传的服饰参考图，生成一张 9:16 竖版电商服饰详情长图，整体风格统一暖色调、干净高端、商业时尚质感，4K 高清，产品与文字对焦清晰。\n\n画面从上到下分为 4 个清晰板块：\n1) 首屏视觉区：多位高颜值模特穿着该服饰，场景时尚，姿势自然灵动不僵硬；配文字【核心卖点：{core_selling_point}】。\n2) 面料细节区：3 张面料特写图（质感、弹力、工艺细节），搭配简洁图标说明。\n3) 搭配展示区：2 种不同配色或穿搭方式并排对比展示。\n4) 尺码信息区：标准尺码表格，含美码 XS、S、M、L、XL；采用通用正常尺码数据，文字清晰易读。\n\n整体排版整洁高级，色调统一，突出产品质感与卖点，适合电商详情页与商品宣传使用。直接出图。核心服饰参考上传图。核心卖点：{core_selling_point}。",
+        "base_prompt": "（Fashion E-commerce Designer）根据上传的参考图，为图中【完全相同】的服饰生成一张 9:16 竖版电商详情长图。产品还原（最重要）：精确还原上传服饰——相同的廓形、剪裁、颜色、印花/图案、面料质感、辅料、走线以及任何标识或品牌，使其一眼可辨认为同一件商品。不要重新设计、改款、改色或替换该服饰，也不要改变它的品类；模特穿着时，其身上的服饰必须与参考图完全一致。不要添加任何并非该服饰本身的印花、装饰、道具或特效。\n\n画面从上到下分为 4 个清晰板块：\n1) 首屏视觉区：一位或多位高颜值模特穿着【与上传图完全一致】的服饰，场景时尚，姿势自然灵动；配标题文字【{core_selling_point}】。\n2) 面料细节区：3 张真实面料特写图（质感、弹力、工艺细节），搭配简洁图标说明。\n3) 搭配展示区：同一件服饰的 2 种搭配方式并排对比（不要创造参考图中没有的新款式或新配色）。\n4) 尺码信息区：标准尺码表格，含美码 XS、S、M、L、XL，采用通用正常尺码数据，文字清晰易读。\n\n整体风格统一暖色调、干净高端、商业时尚质感，细节清晰锐利。画面中唯一可出现的文字是真实详情页文案（标题、图标说明、尺码表）——不要在画面中打印这些说明或任何技术词汇（如“4K”“高清”“超清”“高分辨率”）。核心服饰参考上传图。核心卖点：{core_selling_point}。",
         "parameters": [
           {
             "name": "core_selling_point",
@@ -2277,7 +2277,7 @@
         ]
       },
       "en": {
-        "base_prompt": "(Fashion E-commerce Designer) Using the uploaded clothing reference image, generate a 9:16 vertical fashion e-commerce detail long image. Keep a consistent warm tone, clean premium layout, and high-end commercial fashion look in 4K resolution. Ensure the product and text are sharp and well-focused.\n\nSplit the canvas into 4 clear sections from top to bottom:\n1) Hero Visual: multiple attractive models wearing the outfit; a stylish environment; natural, dynamic poses (not stiff). Add headline text: [Key Selling Point: {core_selling_point}].\n2) Fabric Details: 3 close-up fabric shots (texture, stretch, craftsmanship details) with simple icon callouts.\n3) Styling Comparison: 2 different colorways or styling options shown side-by-side.\n4) Size Info: a standard size table including US sizes XS, S, M, L, XL with commonly used normal sizing values; text must be crisp and readable.\n\nOverall: tidy, premium composition; unified color tone; highlight material quality and selling points. Output the image directly. The outfit must follow the uploaded reference. Key selling point: {core_selling_point}.",
+        "base_prompt": "(Fashion E-commerce Designer) Create a 9:16 vertical e-commerce product detail page for the EXACT garment shown in the uploaded reference image. PRODUCT FIDELITY (most important): reproduce the uploaded garment precisely — same silhouette, cut, colors, print/pattern, fabric texture, trims, stitching, and any logos or branding — so it is instantly recognizable as the same item. Do NOT redesign, restyle, recolor, or replace the garment, and do NOT change what kind of item it is; when models wear it, the garment on them must match the reference exactly. Do NOT add prints, embellishments, props, or effects that are not physically part of the actual garment.\n\nSplit the canvas into 4 clear sections from top to bottom:\n1) Hero Visual: one or more attractive models wearing the EXACT uploaded outfit; a stylish environment; natural, dynamic poses. Add headline text: [{core_selling_point}].\n2) Fabric Details: 3 close-up shots of the real fabric (texture, stretch, craftsmanship) with simple icon callouts.\n3) Styling Comparison: 2 styling options of the SAME garment shown side-by-side (do not invent new designs or colors that are not in the reference).\n4) Size Info: a standard size table with US sizes XS, S, M, L, XL and normal sizing values; text crisp and readable.\n\nStyle: consistent warm tone, clean premium layout, high-end commercial fashion look, crisp high-resolution detail. The ONLY text in the image is real listing copy (headline, callouts, size table) — do NOT print these instructions or any technical words such as '4K', 'HD', 'ultra HD', or 'high resolution' anywhere in the image. The outfit must follow the uploaded reference. Key selling point: {core_selling_point}.",
         "parameters": [
           {
             "name": "core_selling_point",
@@ -12338,7 +12338,8 @@
     "use_cases": [
       "for-creators",
       "for-marketers"
-    ]
+    ],
+    "intro_video_url": "/video/template_intro/template-food-photo-doodle-sticker-overlay.mp4"
   },
   {
     "id": "template-mbti-in-love-infographic",
@@ -14655,7 +14656,8 @@
     "creation_date": "2026-05-31",
     "use_cases": [
       "for-merch-operators"
-    ]
+    ],
+    "intro_video_url": "/video/template_intro/template-world-cup-team-sticker-poster.mp4"
   },
   {
     "id": "template-yellow-themed-illustrated-journey-infographic",
@@ -15504,7 +15506,8 @@
     "base_rank_score": 90,
     "use_cases": [
       "for-merch-operators"
-    ]
+    ],
+    "intro_video_url": "/video/template_intro/template-ip-emoji-sticker-sheet-poster.mp4"
   },
   {
     "id": "template-world-cup-debut-team-preview-poster",
@@ -18598,7 +18601,8 @@
     "use_cases": [
       "for-merch-operators"
     ],
-    "creation_date": "2026-07-09"
+    "creation_date": "2026-07-09",
+    "intro_video_url": "/video/template_intro/template-football-star-chibi-sticker-set.mp4"
   },
   {
     "id": "template-world-cup-premium-gold-text-poster",
@@ -19113,6 +19117,457 @@
     "use_cases": [
       "for-merch-operators",
       "for-designers"
+    ]
+  },
+  {
+    "id": "template-vintage-watercolor-hobby-sticker-sheet",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Cottagecore Watercolor Hobby Sticker Sheet Generator) Square vertical sticker sheet on textured off-white aged paper background, full collection of themed hand-drawn watercolor clipart scattered neatly across canvas, cohesive muted earth & soft pastel cottage color palette, subtle grain paper texture, gentle watercolor wash bleed edges, tiny hand-drawn floral leaf divider accents.\nFixed unified layout structure for all themes:\n1. Top headline area: Cursive handwritten green script word \"Happy\", large textured speckled serif main hobby theme word, small fabric ribbon banner below holding short warm subtitle phrase, tiny heart & sprout decorative flourishes surrounding title.\n2. Main body grid: Dense tidy scattered arrangement of themed hobby objects, kitchen/music/coffee/reading/travel/picnic/gardening related illustrations, each item standalone soft watercolor sticker cutout style, slight natural overlapping.\n3. Bottom decorative bubble text labels: Cloud-shaped scalloped text badges with handwritten cozy hobby quotes, small plant/heart icon beside each text block.\nArt style: Soft loose watercolor illustration, vintage cottagecore aesthetic, muted desaturated warm tones, delicate thin line art, subtle speckle grain texture, no harsh black outlines, gentle soft shadows, printable planner sticker pack, high detail 8K, clean printable cut-and-stick sticker sheet.\nSubject: Complete themed watercolor sticker sheet for hobby theme '{hobby_theme}', full matching collection of all related tools, items, food, decor and motivational quote badges",
+        "parameters": [
+          {
+            "name": "hobby_theme",
+            "label": "手作贴纸主题名称",
+            "type": "text",
+            "placeholder": [
+              "BAKING, subtitle MADE WITH LOVE, baking kitchen tools & pastry dessert clipart",
+              "MUSIC, subtitle MELODY EVERY DAY, vintage musical instrument & retro audio gear clipart",
+              "Coffee Time, subtitle SLOW MORNINGS, cafe coffee equipment & pastry clipart",
+              "READING, subtitle COZY BOOKISH MOMENTS, library book nook & reading decor clipart",
+              "TRAVEL, subtitle COLLECT MOMENTS, vacation travel luggage & outdoor adventure clipart",
+              "PICNIC, subtitle SUNNY OUTDOOR TREATS, outdoor picnic food & leisure gear clipart",
+              "GARDENING, subtitle GROW WITH LOVE, plant gardening tools & flower clipart"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vintage-watercolor-hobby-sticker-sheet-baking-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "stickers",
+      "wall-art",
+      "illustration",
+      "collectible"
+    ]
+  },
+  {
+    "id": "template-vintage-food-menu-scientific-sketch-illustration",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vintage Culinary Sketch Menu Illustration Generator, Scientific Botanical Food Journal Style) Vertical tall canvas, aged cream textured parchment paper background, mixed media watercolor + graphite pencil sketch aesthetic, soft muted warm earth tone palette, thin delicate sketch linework, gentle translucent watercolor washes, subtle paper grain texture.\nUnified fixed layout rules for all food themes:\n1. Central large focal food artwork as main visual, complete tableware, garnish, fruit, herb & drink matching the dish theme, soft natural diffused window lighting, gentle subtle shadows.\n2. Surrounding handwritten cursive & serif menu text blocks scattered around main food drawing, dotted thin guide lines connecting text labels to corresponding ingredients, decorative vintage serif title header at top of canvas.\n3. Tiny decorative elements: fresh herb sprigs, citrus slices, flower blossoms, nut pieces scattered as border accents, thin antique frame border around entire page.\nArt style reference: Antique cookbook botanical sketch, food journal scientific illustration, cozy bistro menu print, soft painterly watercolor, no harsh black heavy outlines, warm nostalgic vintage restaurant aesthetic, ultra detailed 8K print-ready vertical illustration.\nSubject: Vintage culinary sketch menu page themed '{food_theme}', central detailed watercolor sketch of full set of themed food, matching beverage, tableware and fresh garnishes, scattered labeled handwritten menu text annotations linked by thin guide lines, aged parchment background",
+        "parameters": [
+          {
+            "name": "food_theme",
+            "label": "美食主题完整描述",
+            "type": "text",
+            "placeholder": [
+              "Cream seafood chowder soup with shrimp mussels, blue berry garnish, mint citrus sparkling cocktail, shellfish appetizer plate, coastal seafood bistro menu sketch",
+              "Grilled seafood skewers, roasted octopus, grilled chicken satay, olive wine bottle, lemon side dish, mediterranean grill restaurant sketch menu",
+              "Morning breakfast spread: latte coffee, flower bouquet vase, toasted grain bread, blueberry cream pastry, lemon honey jar, cozy cottage brunch journal page",
+              "Hawaiian ham pineapple pizza, melted cheese pull slice, wooden pizza peel, pizza cutter, italian pizzeria vintage menu illustration",
+              "Osmanthus green matcha tea, steamed red filling bun pastry, osmanthus flower, butter cookies, oriental dessert tea house sketch page"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vintage-food-menu-scientific-sketch-illustration-seafood-chowder-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "food",
+      "illustration",
+      "wall-art"
+    ]
+  },
+  {
+    "id": "template-clay-cute-3d-icon-grid-sheet",
+    "locales": {
+      "en": {
+        "base_prompt": "(Cute Clay 3D Icon Grid Sticker Sheet Generator) Vertical tall canvas, solid soft pale peach flat background, neat evenly spaced grid layout (5 rows × 3 columns), every cell holds an independent smooth clay figurine icon, uniform soft clay plastic texture, subtle matte material, gentle tiny ambient shadow under each object, clean isometric front flat view, no overlapping elements.\nUnified art rules: Kawaii clay toy aesthetic, low saturation warm neutral earth color palette, rounded soft edges on all props, soft diffused studio lighting, no harsh highlights, clean commercial UI asset illustration, 8K ultra sharp, printable sticker pack.\nSubject: Full grid clay icon sheet themed '{icon_theme}', complete matching set of all related miniature clay objects neatly arranged in 5×3 grid on pale peach background",
+        "parameters": [
+          {
+            "name": "icon_theme",
+            "label": "黏土图标全套主题名称",
+            "type": "text",
+            "placeholder": [
+              "Office stationery & computer desk supplies clay icons, laptop, keyboard, printer, notebook, desk lamp, coffee mug, office chair, calculator, clipboard, folder, stapler, paper clip",
+              "Vintage musical instrument clay icons, headphones, vinyl record, microphone, guitar, mini keyboard, trumpet, saxophone, snare drum, speaker, cassette tape, radio, violin, tambourine, music note"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-clay-cute-3d-icon-grid-sheet-office-stationery-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "3d",
+      "illustration",
+      "icons",
+      "collectible"
+    ]
+  },
+  {
+    "id": "template-surreal-macro-product-commercial-ad-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Surreal Macro Scale Commercial Product Advertising Poster Generator, Giant Product Miniature Scene Concept) Vertical tall commercial advertisement poster, surreal forced perspective scale contrast: oversized main product occupies central frame, inside / flowing out from product forms a complete tiny miniature lifestyle scene with micro characters and matching environment, cinematic natural soft lighting, rich vivid color grading, hyper-realistic photographic texture, sharp commercial product detail, atmospheric depth of field, premium brand advertising aesthetic, clean readable title text space reserved at top or edge.\nFixed unified surreal scale logic: Giant product as landscape container, miniature human figures & matching environmental props interact with the substance inside the product, theme environment fully matches product function.\nSubject: Surreal giant miniature scene ad poster for '{product_theme}', oversized main product, tiny micro people interacting inside/out of product, matching themed landscape background, professional commercial photography, 8K ultra detailed print-ready advertising artwork",
+        "parameters": [
+          {
+            "name": "product_theme",
+            "label": "广告产品+迷你场景完整设定",
+            "type": "text",
+            "placeholder": [
+              "vivo round smart watch, watch dial becomes swimming pool, tiny man swimming, resort terrace background, waterproof function ad",
+              "Real coconut water carton, giant cut coconut fruit forms mountain cliff, coconut juice flows as waterfall, lush tropical rainforest mountain background, natural hydration drink poster",
+              "kids winter face cream tube, cream flows down snowy mountain slope as ski snow, tiny miniature animal figures skiing on cream, alpine snow mountain winter landscape, children skincare ad",
+              "Librederm sunscreen tube, tube casts huge beach shadow, dozens of tiny tourists sunbathing on sand under shadow, tropical ocean beach overhead top-down shot, sun protection cream commercial",
+              "dark blue wireless earbuds case, inside earbud box mini live rock band performing stage, warm orange studio spotlight background, audio earphone advertising poster",
+              "Casio leather wrist watch, watch dial frame frames endless highway with tiny cars driving, sunny mountain roadside sky background, outdoor travel watch ad",
+              "Nutella chocolate hazelnut spread jar, melted chocolate oozes as ski mountain slope, tiny skier mini figurines sliding on chocolate snow, snowy pine forest winter scene, chocolate spread creative ad"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-surreal-macro-product-commercial-ad-poster-vivo-smartwatch-pool-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "merch-commerce",
+      "product",
+      "3d"
+    ]
+  },
+  {
+    "id": "template-9-grid-ecommerce-product-lifestyle-moodboard",
+    "locales": {
+      "en": {
+        "base_prompt": "(9 Grid E-commerce Product Lifestyle Shot Moodboard Generator) Square canvas divided evenly into a neat 3×3 nine-grid layout, every cell is an independent product lifestyle photograph, unified warm neutral minimalist interior aesthetic across all frames.\nCore visual rules for all panels: Soft natural window side light, gentle diffused shadow, warm beige/cream neutral tone palette, matte texture props (marble stone tray, linen fabric, ceramic vases, dried foliage, concrete display pedestals), shallow depth of field, commercial product photography, ultra clean composition, 8K sharp detail, soft earth color grading, no clutter.\nEach grid shows unique shooting angle: full product display, close-up texture detail, partial scene lifestyle match, macro part shot, overhead flat lay, side profile shot, scene matching home environment, dynamic detail shot, partial texture close-up.\nSubject: 3×9 grid product photography moodboard for '{product_name}', consistent minimalist warm neutral home scene, multiple diverse shooting angles covering full view, texture macro, lifestyle scene, detail close-up",
+        "parameters": [
+          {
+            "name": "product_name",
+            "label": "电商产品完整名称",
+            "type": "text",
+            "placeholder": [
+              "black semi-automatic espresso coffee machine",
+              "dark gray hard-shell rolling luggage suitcase",
+              "genuine leather women's handbag collection",
+              "neutral tone silk chiffon scarf",
+              "white wireless bluetooth earbuds",
+              "square silicone band smart watch"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-9-grid-ecommerce-product-lifestyle-moodboard-espresso-machine-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "merch-commerce",
+      "product",
+      "moodboard",
+      "lifestyle"
+    ]
+  },
+  {
+    "id": "template-football-f4-garden-romantic-academy-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Vertical Romantic Elite Academy Movie Character Poster Generator, Football F4 Garden series) Tall vertical movie poster, dreamy sunset purple-pink gradient sky, grand European baroque boarding school mansion background, climbing pink rose vines, floating rose petals, soft magical glitter sparkles all over scene.\nUnified visual setting: Dark navy school blazer with pink piping, white shirt, striped burgundy-pink tie, F4 Academy embroidered crest badge on chest, lush pink roses frame all four sides of canvas.\nText style: Glittering pink metallic curly serif title font, delicate crown, shield, heart decorative ornaments, soft glowing text glow effect.\nTwo fixed layout modes to choose:\n1. Group ensemble poster: Multiple full-body cast characters layered together center frame, top main series title FOOTBALL F4 GARDEN, bottom global tagline, each character small name label beside their portrait.\n2. Solo character individual poster: Single central full-body portrait of one character, top FOOTBALL F4 GARDEN logo banner, middle large glitter character name + subtitle title, three small bullet-point trait icons & descriptions below name, bottom signature iconic quote framed by tiny crown.\nLighting: Cinematic warm dusk rim light, soft portrait studio shading, romantic dreamy teen romance drama aesthetic, hyper detailed 8K photorealistic illustration, sharp clean print quality.\nSubject: {poster_mode} poster for FOOTBALL F4 GARDEN series, character: {character_full_info}",
+        "parameters": [
+          {
+            "name": "poster_mode",
+            "label": "海报模式 / Poster mode (group or solo)",
+            "type": "text",
+            "placeholder": [
+              "Group ensemble cast poster",
+              "Solo individual character poster"
+            ]
+          },
+          {
+            "name": "character_full_info",
+            "label": "角色阵容与人设 / Character line-up + persona",
+            "type": "text",
+            "placeholder": [
+              "full cast: Haaland The Ice Prince, Ronaldo The Eternal Star, Kevin De Bruyne The Professor, Mbappé The Golden Boy, Vini Jr The Fun Prince",
+              "Erling Haaland, The Ice Prince, cool blond hero",
+              "Cristiano Ronaldo, The Eternal Star, elegant captain"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-football-f4-garden-romantic-academy-poster-f4-group-main-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "posters",
+      "character",
+      "sports",
+      "illustration"
+    ]
+  },
+  {
+    "id": "template-kids-bilingual-cartoon-learning-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kids Bilingual Animation Subtitle Learning Card Generator, Vertical Wide Educational Worksheet) Horizontal wide worksheet, traditional scroll border top header, main title 'Subtitles & Translation', red ribbon subtitle '[动画名] Learning Card', top left page number label.\nLeft half: two-column clean text table, left blue header 'English', right green header '中文翻译', 10 lines simple short story sentences with Chinese translation matched line by line.\nRight half: large full scene cartoon illustration matching animation plot, bottom three small square character icon boxes with character English & Chinese labels.\nBottom section: cloud scroll tip box labeled 'Tips', contains 1-2 key vocabulary explanations + moral lesson from story.\nTwo unified art styles to choose:\n1. Chinese classic fairy tale style: soft Chinese watercolor cartoon, cloud, ancient palace/mountain forest scroll decoration, warm vivid kid-friendly color.\n2. Western preschool cartoon style: flat warm picture book illustration, countryside garden home scene, soft pastel tone, no sharp outlines.\nClean paper texture background, educational printable worksheet, 8K ultra clear, suitable for children English learning.\nSubject: Bilingual learning card themed '{cartoon_theme}', full matching scene illustration, complete 10-line story subtitle table, vocabulary tips box, full decorative scroll cloud frame",
+        "parameters": [
+          {
+            "name": "cartoon_theme",
+            "label": "动画主题完整描述",
+            "type": "text",
+            "placeholder": [
+              "Havoc in Heaven, Sun Wukong Monkey King fight heavenly soldiers, Chinese watercolor cartoon style",
+              "Peppa Pig, pig family jump muddy puddles countryside cartoon, western picture book flat style",
+              "Black Cat Detective, forest town police team catch criminals, Chinese vintage cartoon style",
+              "Calabash Brothers, seven magic gourd boys fight snake demon mountain scene, Chinese watercolor illustration",
+              "Three Little Pigs, straw wood brick house and big bad wolf, warm western fairy tale picture book",
+              "Bluey dog family backyard play game adventure, soft pastel preschool cartoon",
+              "Journey to the West, Tang Monk Guanyin and Sun Wukong tight headband spell plot, Chinese ink watercolor cartoon"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-kids-bilingual-cartoon-learning-card-peppa-pig-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "flashcards",
+      "study-sheets",
+      "education",
+      "bilingual",
+      "kids"
+    ]
+  },
+  {
+    "id": "template-cartoon-english-quiz-learning-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kids Cartoon Themed English Quiz Learning Card Generator, Horizontal Wide Printable Worksheet) Wide horizontal educational quiz sheet, top scroll-style header with main title '小测验 | Quiz Time', red ribbon subtitle '[动画IP名]动画学习卡 · [English IP Name] Learning Card', top left mark page number '第X页 共6页'.\nLayout split into 3 fixed modules:\n1. Left top: A. Multiple Choice section, 3 single-choice questions with 3 options each, cartoon plot related.\n2. Left bottom: B. True or False section, 2 judgement questions about character & setting facts.\n3. Right side split into two parts: large matching cartoon scene illustration at top; C. Fill in the Blank section at bottom, 1 blank-filling question with 3-word word bank.\nBottom area: parchment scroll Answer Key box with full correct answers, decorative red banner with text 'Great job! 你真棒！' and star ornament.\nUnified art style rules: Chinese classic animations adopt traditional Chinese watercolor cartoon with scroll/cloud/landscape/palace decorations; Western preschool animations adopt warm flat picture-book illustration with countryside home scenes, bright kid-friendly soft color palette, clean paper texture, 8K sharp printable quality.\nSubject: Complete quiz card themed '{cartoon_ip_theme}', fully matched plot illustration, standard 3+2+1 question structure, pre-set answer key box, full vintage scroll decorative frame",
+        "parameters": [
+          {
+            "name": "cartoon_ip_theme",
+            "label": "动画IP主题完整设定",
+            "type": "text",
+            "placeholder": [
+              "Calabash Brothers葫芦娃, 7 magic gourd brothers fight snake and scorpion spirit, Chinese mountain fairy tale watercolor cartoon",
+              "Havoc in Heaven大闹天宫, Sun Wukong in Heavenly Palace with golden cudgel, Chinese palace style cartoon",
+              "The Three Little Pigs三只小猪, three pigs and big bad wolf with straw/wood/brick houses, western countryside fairy tale illustration",
+              "Black Cat Detective黑猫警长, forest town police cat guard woodland animals, Chinese vintage cartoon style",
+              "Peppa Pig小猪佩奇, pig family jump muddy puddles on grassland, original flat preschool cartoon",
+              "Bluey布鲁伊, Australian heeler dog family backyard play, soft warm western kids illustration"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-cartoon-english-quiz-learning-card-three-little-pigs-prev.jpg",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "flashcards",
+      "study-sheets",
+      "education",
+      "kids"
+    ]
+  },
+  {
+    "id": "template-cartoon-english-wordcard-learning-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kids Cartoon Themed English Word Card Learning Sheet Generator, Horizontal Wide Printable Worksheet) Wide horizontal kids English vocabulary learning worksheet, top antique scroll decorative header with main title '[动画IP中文名] | Word Cards', red ribbon subtitle '《[动画IP中文名]》动画学习卡 · [英文IP名称] Learning Card', top left corner page label '第X页 共6页'.\nCore layout rule: Total 8 vocabulary card boxes, arranged in 2 rows × 4 columns grid.\nEach single vocabulary card unified structure:\n1. Top left blue serial number circle + colored English word + part of speech (n./v./adj.) + Chinese translation below the word.\n2. Middle small matching cartoon illustration corresponding to this word.\n3. Bottom one simple example English sentence + matching Chinese translation sentence.\nWhole page decorative layout:\n1. Left vertical large full-body main character illustration of this cartoon IP as decorative background.\n2. Right background full scene drawing of the cartoon core setting (palace/forest/country house/mountain cave etc.).\n3. Bottom parchment scroll study tip box, fixed text content: English line 'Read the word aloud, then use it in your own sentence!' + Chinese line '先大声读单词，再试着自己造句！', with golden star ornament labeled '学习贴士 Study Tip'.\n4. Bottom right small circular avatar thumbnails of core cartoon characters as decorative embellishment.\nUnified art style classification rules:\n- Chinese classic traditional animations (大闹天宫/葫芦娃/黑猫警长): Chinese traditional watercolor cartoon style, antique scroll cloud, golden palace, mountain cave, ancient Chinese architectural decorative elements, warm retro ink painting texture, soft bright kid-friendly color.\n- Western preschool animation IP (三只小猪/小猪佩奇/布鲁伊): Warm flat picture book illustration style, countryside villa, lawn garden, pastoral scenery, low-saturation soft pastel color palette, clean matte paper texture.\nGlobal image quality standard: 8K ultra clear, printable educational worksheet, neat border for each word card, no messy overlapping elements, suitable for children English learning.\nSubject requirement: Generate full word card sheet themed '{cartoon_ip_theme}', all illustrations strictly match the cartoon plot and characters, fixed 2×4 eight-word card grid layout, complete scroll vintage decorative frame, consistent style matching the IP",
+        "parameters": [
+          {
+            "name": "cartoon_ip_theme",
+            "label": "动画IP主题完整设定",
+            "type": "text",
+            "placeholder": [
+              "Calabash Brothers葫芦娃, seven magic gourd brothers fight snake demon, Chinese mountain fairy tale watercolor cartoon, vocabulary list: gourd, brother, mountain, rescue, demon, power, brave, defeat",
+              "Havoc in Heaven大闹天宫, Sun Wukong holding golden cudgel in Lingxiao Palace, Chinese heavenly palace scroll cartoon, vocabulary list: monkey, palace, staff, cloud, heaven, fight, general, freedom",
+              "Three Little Pigs三只小猪, three little pigs build straw/stick/brick houses against big bad wolf, western countryside fairy tale flat illustration, vocabulary list: pig, straw, stick, brick, wolf, blow, house, safe",
+              "Black Cat Detective黑猫警长, black cat policeman guard forest small animals, vintage Chinese forest cartoon, vocabulary list: police, cat, whistle, forest, clue, thief, protect, justice",
+              "Peppa Pig小猪佩奇, pink pig family jump muddy puddles in garden, original preschool flat cartoon, vocabulary list: family, puddle, jump, muddy, brother, picnic, laugh, play",
+              "Bluey布鲁伊, Australian blue heeler dog family play backyard games, soft warm western kids picture book illustration, vocabulary list: puppy, sister, game, imagination, dad, mum, dance, fun"
+            ]
+          }
+        ]
+      },
+      "zh": {
+        "base_prompt": "（儿童动画主题英语单词学习卡生成器，横向可打印宽幅学习工作表）横向宽版少儿英语词汇学习海报，顶部古风卷轴装饰大标题「[动画IP中文名] | Word Cards」，红色缎带副标题「《[动画IP中文名]》动画学习卡 · [英文IP名称] Learning Card」，左上角标注页码「第X页 共6页」。\n固定核心排版规则：整张卡片包含8个单词格子，分为2行4列整齐排布。\n单个单词卡片统一固定结构：\n1. 左上角蓝色序号圆圈 + 彩色英文单词 + 词性标注(n./v./adj.)，单词下方标注中文释义；\n2. 卡片中部搭配对应单词的卡通小插图；\n3. 卡片底部1句简易英文例句 + 配套中文翻译句。\n整页装饰布局规范：\n1. 页面左侧竖版放置该动画IP核心主角全身大图作为装饰底图；\n2. 页面右侧绘制动画核心世界观完整场景（天宫/森林/乡村小屋/山洞等）；\n3. 底部羊皮纸卷轴样式学习贴士框，固定文字：英文「Read the word aloud, then use it in your own sentence!」+ 中文「先大声读单词，再试着自己造句！」，搭配金色星星标识「学习贴士 Study Tip」；\n4. 右下角放置动画核心角色圆形小头像作为点缀装饰。\n美术风格分类统一标准：\n- 国产经典动画（大闹天宫/葫芦娃/黑猫警长）：中式传统水彩动画画风，搭配祥云卷轴、金殿、山洞、古建筑国风装饰，复古水墨柔和鲜亮儿童向配色；\n- 欧美低幼动画（三只小猪/小猪佩奇/布鲁伊）：暖调平涂绘本插画风格，乡村别墅、草坪庭院田园场景，低饱和柔和马卡龙色系，干净哑光纸张质感。\n图像通用标准：8K超清、印刷级清晰画质，每个单词卡片边框整洁，元素无杂乱重叠，适配少儿英语启蒙使用。\n生成要求：以「cartoon_ip_theme」为主题完整生成整套单词卡，全部插画严格贴合动画剧情与人物，固定2行4列共8词卡片网格，完整古风卷轴装饰边框，画风与IP高度统一",
+        "parameters": {
+          "name": "cartoon_ip_theme",
+          "label": "动画IP主题完整设定",
+          "type": "text",
+          "placeholder": [
+            "Calabash Brothers葫芦娃，七兄弟合力对抗蛇精蝎子精，中式山间神话水彩动画，配套词汇：gourd葫芦, brother兄弟, mountain大山, rescue营救, demon妖怪, power力量, brave勇敢的, defeat打败",
+            "Havoc in Heaven大闹天宫，孙悟空持金箍棒大闹凌霄宝殿，国风天宫卷轴动画，配套词汇：monkey猴子, palace宫殿, staff金箍棒, cloud云, heaven天宫, fight战斗, general天将, freedom自由",
+            "Three Little Pigs三只小猪，三只小猪搭建稻草/木头/砖头房屋对抗大灰狼，欧美乡村童话平涂插画，配套词汇：pig小猪, straw稻草, stick木棍, brick砖块, wolf狼, blow吹, house房子, safe安全的",
+            "Black Cat Detective黑猫警长，黑猫警察守护森林小动物，复古国产森林动画，配套词汇：police警察, cat猫, whistle哨子, forest森林, clue线索, thief小偷, protect保护, justice正义",
+            "Peppa Pig小猪佩奇，粉色小猪一家在花园踩泥坑，原版低幼平涂卡通，配套词汇：family家庭, puddle水坑, jump跳, muddy泥泞的, brother弟弟, picnic野餐, laugh大笑, play玩耍",
+            "Bluey布鲁伊，澳洲牧牛犬一家在后院玩耍，柔和温暖欧美儿童绘本插画，配套词汇：puppy小狗, sister姐妹, game游戏, imagination想象力, dad爸爸, mum妈妈, dance跳舞, fun乐趣"
+          ]
+        }
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-cartoon-english-wordcard-learning-card-calabash-brothers-prev.jpg",
+    "description": "适配国产/欧美经典动画IP的儿童英语单词卡通用生成模板，输入动画完整主题描述、配套8组中英词汇即可生成和参考图版式、结构、画风完全统一的横向打印学习卡，内置中英双语prompt，区分国风水彩/欧美绘本两套美术体系",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "flashcards",
+      "vocabulary",
+      "education",
+      "kids"
+    ]
+  },
+  {
+    "id": "template-cartoon-mini-script-learning-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kids Cartoon Mini Script Role-play Learning Card Generator, Horizontal Wide Printable Worksheet) Wide horizontal children drama script worksheet, top antique scroll decorative header with main title '剧本 | Mini Script', red ribbon subtitle '《[动画IP中文名]》动画学习卡 · [英文IP名称] Learning Card', top left corner page mark '第X页 共6页'.\nFixed full layout split into 3 core vertical zones:\n1. Left Zone: Full script dialogue panel with blue top title bar labeled 'Scene: [场景中文名称]'. Vertical numbered dialogue list, every line contains small character avatar icon + colored character name tag + Chinese script line, the last line is Narrator marked with scroll icon.\n2. Right Large Illustration Zone: Full big scene drawing matching the script plot, with numbered speech bubble quotes overlayed on corresponding characters to match dialogue lines from left script panel.\n3. Bottom Zone: Mask decorative red scroll box named '表演小提示 Acting Tips', inside horizontal row of circular character avatars, each paired with character name + acting tone reminder text.\nUnified art style classification rules:\n- Chinese classic traditional animations (大闹天宫/葫芦娃/黑猫警长): Chinese traditional watercolor cartoon style, antique scroll cloud, golden palace, mountain cave, ancient Chinese architectural decorative elements, warm retro ink painting texture, soft bright kid-friendly color.\n- Western preschool animation IP (三只小猪/小猪佩奇/布鲁伊): Warm flat picture book illustration style, countryside villa, lawn garden, pastoral scenery, low-saturation soft pastel color palette, clean matte paper texture.\nGlobal image quality standard: 8K ultra clear, printable educational worksheet, neat dividing borders between zones, elements no messy overlapping, suitable for children role-play English & Chinese drama learning.\nSubject requirement: Generate full mini script sheet themed '{cartoon_ip_theme}', all illustrations strictly match the script plot and characters, fixed three-area layout, complete vintage scroll decorative frame, consistent style matching the IP",
+        "parameters": [
+          {
+            "name": "cartoon_ip_theme",
+            "label": "动画IP主题完整设定",
+            "type": "text",
+            "placeholder": [
+              "Calabash Brothers葫芦娃, scene:穿山甲救爷爷, seven gourd brothers fight monster to rescue grandpa, Chinese mountain fairy tale watercolor cartoon, full character list:Narrator,穿山甲,爷爷,大娃,二娃,三娃,四娃,五娃,六娃,七娃, acting tips:大娃语音洪亮,三娃语气坚定,七娃语气神秘",
+              "Havoc in Heaven大闹天宫, scene:悟空大闹天宫, Sun Wukong fights heavenly army in Lingxiao Palace, Chinese heavenly palace scroll cartoon, full character list:Narrator,孙悟空,天兵甲,天兵乙,哪吒,太上老君,玉帝,如来佛祖, acting tips:孙悟空语气自信,天兵语气紧张,如来佛祖语气平和",
+              "Three Little Pigs三只小猪, scene:猪妈妈的提醒, three pigs build houses with straw/stick/brick, western countryside fairy tale flat illustration, full character list:Narrator,猪妈妈,大猪,二猪,小猪, acting tips:猪妈妈语气温柔,大猪语气骄傲,小猪语气坚定",
+              "Black Cat Detective黑猫警长, scene:追捕偷粮食的老鼠, black cat police chase rat thieves in forest, vintage Chinese forest cartoon, full character list:Narrator,黑猫警长,白鸽侦探,侦察员,老鼠甲,老鼠乙, acting tips:黑猫警长语气严厉,白鸽侦探语气温和,老鼠语气慌张",
+              "Peppa Pig小猪佩奇, scene:佩奇去游乐场, pink pig family play in amusement park, original preschool flat cartoon, full character list:Narrator, Peppa, George, Daddy Pig, Mummy Pig, acting tips:Peppa语气开心, George语气兴奋, Daddy Pig语气温和",
+              "Bluey布鲁伊, scene:和爸爸一起玩, Australian blue heeler dog family backyard ball game, soft warm western kids picture book illustration, full character list:Narrator, Bluey, Bingo, Dad, acting tips:Bluey语气活泼, Bingo语气可爱, Dad语气亲切"
+            ]
+          }
+        ]
+      },
+      "zh": {
+        "base_prompt": "（儿童动画迷你角色扮演剧本学习卡生成器，横向可打印宽幅工作表）横向宽版少儿双语戏剧剧本学习海报，顶部古风卷轴装饰大标题「剧本 | Mini Script」，红色缎带副标题「《[动画IP中文名]》动画学习卡 · [英文IP名称] Learning Card」，左上角标注页码「第X页 共6页」。\n页面固定三分区竖版布局规范：\n1. 左侧区域：完整对白剧本面板，顶部蓝色标题栏写「Scene: [场景中文名称]」；竖向有序号台词列表，每一行包含小型角色头像图标+彩色角色名标签+中文剧本台词，最后一行为带卷轴图标的旁白Narrator。\n2. 右侧大图区域：匹配剧本剧情的完整场景主插画，画面内对应角色身上标注带数字的对话气泡，气泡文字和左侧剧本台词一一对应。\n3. 底部区域：面具装饰红色卷轴框，标题为「表演小提示 Acting Tips」，框内横向排列圆形角色头像，每个头像旁搭配角色名+表演语气提示文字。\n美术风格分类统一标准：\n- 国产经典动画（大闹天宫/葫芦娃/黑猫警长）：中式传统水彩动画画风，搭配祥云卷轴、金殿、山洞、古建筑国风装饰，复古水墨柔和鲜亮儿童向配色；\n- 欧美低幼动画（三只小猪/小猪佩奇/布鲁伊）：暖调平涂绘本插画风格，乡村别墅、草坪庭院田园场景，低饱和柔和马卡龙色系，干净哑光纸张质感。\n图像通用标准：8K超清、印刷级清晰画质，三大分区分割边框整洁，元素无杂乱重叠，适配少儿课堂角色扮演、双语戏剧启蒙使用。\n生成要求：以「cartoon_ip_theme」为主题完整生成整套迷你剧本卡，全部插画严格匹配剧本剧情与人物，固定左剧本+右场景+底部表演提示三区布局，完整古风卷轴装饰边框，画风与IP高度统一",
+        "parameters": {
+          "name": "cartoon_ip_theme",
+          "label": "动画IP主题完整设定",
+          "type": "text",
+          "placeholder": [
+            "Calabash Brothers葫芦娃，场景：穿山甲救爷爷，七兄弟联手对抗妖怪营救爷爷，中式山间神话水彩动画，完整角色：旁白、穿山甲、爷爷、大娃、二娃、三娃、四娃、五娃、六娃、七娃，表演提示：大娃语音洪亮，三娃语气坚定，七娃语气神秘",
+            "Havoc in Heaven大闹天宫，场景：悟空大闹天宫，孙悟空在凌霄宝殿大战天兵天将，国风天宫卷轴动画，完整角色：旁白、孙悟空、天兵甲、天兵乙、哪吒、太上老君、玉帝、如来佛祖，表演提示：孙悟空语气自信，天兵语气紧张，如来佛祖语气平和",
+            "Three Little Pigs三只小猪，场景：猪妈妈的提醒，三只小猪分别搭建稻草/木头/砖头房屋，欧美乡村童话平涂插画，完整角色：旁白、猪妈妈、大猪、二猪、小猪，表演提示：猪妈妈语气温柔，大猪语气骄傲，小猪语气坚定",
+            "Black Cat Detective黑猫警长，场景：追捕偷粮食的老鼠，黑猫警长在森林追捕偷粮老鼠，复古国产森林动画，完整角色：旁白、黑猫警长、白鸽侦探、侦察员、老鼠甲、老鼠乙，表演提示：黑猫警长语气严厉，白鸽侦探语气温和，老鼠语气慌张",
+            "Peppa Pig小猪佩奇，场景：佩奇去游乐场，小猪一家在游乐场玩耍，原版低幼平涂卡通，完整角色：旁白、佩奇、乔治、猪爸爸、猪妈妈，表演提示：佩奇语气开心，乔治语气兴奋，猪爸爸语气温和",
+            "Bluey布鲁伊，场景：和爸爸一起玩，澳洲牧牛犬一家在后院玩皮球游戏，柔和温暖欧美儿童绘本插画，完整角色：旁白、布鲁伊、宾果、爸爸，表演提示：布鲁伊语气活泼，宾果语气可爱，爸爸语气亲切"
+          ]
+        }
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-cartoon-mini-script-learning-card-black-cat-detective-prev.jpg",
+    "description": "适配国产/欧美经典动画IP的儿童角色扮演迷你剧本通用生成模板，输入动画完整主题描述、场景名称、全套角色与台词、表演提示即可生成和参考图版式、分区、画风完全统一的横向打印戏剧学习卡，内置中英双语prompt，区分国风水彩/欧美绘本两套美术体系",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "study-sheets",
+      "learning-materials",
+      "education",
+      "kids"
+    ]
+  },
+  {
+    "id": "template-kids-english-phonics-sentence-flashcard",
+    "locales": {
+      "en": {
+        "base_prompt": "(Preschool English Phonics & Sentence Flashcard Generator, Horizontal Printable Worksheet) Wide horizontal kids early education flashcard with clean white background and thin black outer border, split into 2 horizontal equal-height sections:\n1. Top section: Left large text area (custom sentence, key target word rendered in bold big colored font), right small square sub-grid with 1 cartoon item illustration + its English noun label below.\n2. Bottom section: Evenly split into 4 vertical sub-grids with thin dashed dividing lines, each grid has 1 cute cartoon object drawing + matching English noun caption underneath.\nUnified illustration style: Cute kawaii cartoon design, all objects have friendly smiling face, soft bright pastel colors, thick clean outline, matte flat picture-book texture, kid-friendly visual style, 8K sharp printable resolution.\nTwo usable template modes:\nMode 1 Alphabet Phonics: Top left shows uppercase + lowercase bold colorful letters + text 'is for', top right is the starting-letter example noun image; bottom 4 items are other words starting with the same letter.\nMode 2 Theme Sentence: Top left is fixed-structure simple sentence with theme keyword highlighted in colored bold font, top right is theme-matching example image; bottom 4 items belong to the same theme category.\nLayout rule: All text uses clear rounded sans-serif kids font, all illustrations center-aligned inside their grid cells, neat spacing without overlapping elements.\nSubject requirement: Generate flashcard following {flashcard_custom_info}, keep the 2-row + bottom-4-column fixed layout, consistent cute cartoon style",
+        "parameters": [
+          {
+            "name": "flashcard_custom_info",
+            "label": "闪卡自定义完整参数",
+            "type": "text",
+            "placeholder": [
+              "Mode 1 Alphabet Phonics | Letter Dd (purple letter) | Top right example: dog | Bottom 4 items: duck, doll, drum, desk",
+              "Mode 2 Theme Sentence | Sentence: I see a pink | Highlight word: pink | Top right example: pink dress | Bottom 4 items: pink rose, flamingo, strawberry, hairclip",
+              "Mode 2 Theme Sentence | Sentence: I like to play | Highlight word: play | Top right example: ball | Bottom 4 items: slide, swing, kite, blocks"
+            ]
+          }
+        ]
+      },
+      "zh": {
+        "base_prompt": "（幼儿英语自然拼读/短句启蒙闪卡生成器，横向可打印工作表）横向宽版低幼早教英语闪卡，纯白底色+细黑色外边框，整体分为上下等高两大区域：\n1. 上半区：左侧大文本区放置定制句子，核心目标单词用加粗大号彩色字体突出；右侧小方格放1个卡通物品插画+下方对应的英文名词标注。\n2. 下半区：用细虚线均匀划分4个竖向方格，每个方格内是1个带可爱笑脸的卡通物品+底部配套英文名词。\n统一插画规范：萌系卡通风，所有物品绘制软萌笑脸，柔和明亮马卡龙配色，轮廓清晰粗线条，哑光绘本平涂质感，适配幼儿审美，8K高清印刷级画质。\n两种可切换模板模式：\n模式1 字母自然拼读：左上是加粗彩色大小写字母+文字「is for」，右上是该字母开头的示范单词配图；下方4格是其他同首字母的单词配图。\n模式2 主题短句句型：左上是固定结构简单短句，主题关键词用彩色加粗突出，右上是该主题示范配图；下方4格为同主题分类的其他物品。\n排版规则：全部文字用圆润无衬线幼儿字体，所有插画在各自格子居中排布，间距整洁无元素重叠。\n生成要求：根据填写的[模板模式]+[自定义内容]生成闪卡，严格保持上分区+下4列的固定版式，全程统一软萌卡通画风",
+        "parameters": {
+          "name": "flashcard_custom_info",
+          "label": "闪卡自定义完整参数",
+          "type": "text",
+          "placeholder": [
+            "模式1 字母拼读 | 字母Dd（紫色字体） | 右上角示范图：小狗dog | 下方4个物品：鸭子duck、玩偶doll、鼓drum、书桌desk",
+            "模式2 主题短句 | 句子：I see a pink | 高亮单词pink | 右上角示范：粉色连衣裙pink dress | 下方4个物品：粉玫瑰、火烈鸟、草莓、发夹",
+            "模式2 主题短句 | 句子：I like to play | 高亮单词play | 右上角示范：皮球ball | 下方4个物品：滑梯、秋千、风筝、积木"
+          ]
+        }
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-kids-english-phonics-sentence-flashcard-phonics-letter-d-prev.jpg",
+    "description": "适配字母自然拼读、主题句型两类幼儿英语启蒙闪卡的通用模板，输入模式、文字内容、配套物品清单就能生成和参考图版式、画风完全一致的可打印闪卡，支持中英双语设定",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "flashcards",
+      "study-sheets",
+      "education",
+      "kids"
+    ]
+  },
+  {
+    "id": "template-cartoon-character-map-learning-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kids Cartoon Character Relationship Map Learning Card Generator, Horizontal Wide Printable Worksheet) Wide horizontal children English story learning worksheet, top antique scroll decorative header with main title '人物关系图 | Character Map', red ribbon subtitle '《[动画IP中文名]》动画学习卡 · [英文IP名称] Learning Card', top left corner page mark '第X页 共6页'.\nFixed layout rules, whole page split into top character relation zone + bottom story focus scroll zone:\n1. Top core layout: 3 equal circular character avatar frames arranged horizontally with cloud lace border.\n    - Left character circle links to middle main character circle via blue two-way arrow, arrow box with English verb phrase + Chinese translation to describe their relation. Bottom blue rectangular label box with character name (Chinese + English) + two-line trait description (Chinese adjective | English adjective phrase).\n    - Middle main character circle links to right character circle via two bidirectional arrows (green upper arrow, orange lower arrow), each arrow with separate English phrase + Chinese translation for their interaction. Bottom middle rectangular label box with main character name (Chinese + English) + two-line trait description.\n    - Middle ↔ Right has purple two-way arrow at bottom, box text for core relation category (enemies / rivals / family / sisters / brothers etc.) + Chinese translation. Bottom right rectangular label box with third character name (Chinese + English) + two-line trait description.\n2. Background: Full scene illustration matching the cartoon original setting (heaven palace / mountain gourd vine / countryside house / forest police station etc.).\n3. Bottom zone: Vintage scroll parchment box titled '故事重点 Story Focus', left small circular main character avatar, middle one English core story sentence + matching Chinese translation, right small decorative illustration of core story symbol (golden cudgel / gourd / brick house / police badge etc.).\nUnified art style classification rules:\n- Chinese classic traditional animations (大闹天宫/葫芦娃/黑猫警长): Chinese traditional watercolor cartoon style, antique scroll cloud, golden palace, mountain cave, ancient Chinese architectural decorative elements, warm retro ink painting texture, soft bright kid-friendly color.\n- Western preschool animation IP (三只小猪/小猪佩奇/布鲁伊): Warm flat picture book illustration style, countryside villa, lawn garden, pastoral scenery, low-saturation soft pastel color palette, clean matte paper texture.\nGlobal image quality standard: 8K ultra clear, printable educational worksheet, neat dividing borders between zones, elements no messy overlapping, suitable for children story & English reading learning.\nSubject requirement: Generate full character map sheet themed '{cartoon_ip_theme}', all character illustrations strictly match the cartoon original design, fixed 3-horizontal-character layout + bottom story focus scroll, complete vintage scroll decorative frame, consistent style matching the IP",
+        "parameters": [
+          {
+            "name": "cartoon_ip_theme",
+            "label": "动画IP主题完整设定",
+            "type": "text",
+            "placeholder": [
+              "Calabash Brothers葫芦娃, page 2, 3 core characters: Grandpa (left), First Brother (middle main), Snake Spirit (right). Relations: Grandpa → raises him; First Brother ↔ Snake Spirit: fights her / captures Grandpa, core relation: enemies. Character traits: Grandpa kind and caring; First Brother brave and strong; Snake Spirit cunning and evil. Story Focus sentence: The Calabash Brothers work together to save Grandpa. Background: mountain waterfall gourd vine scene, right decor: golden gourd",
+              "Havoc in Heaven大闹天宫, page 4, 3 core characters: Jade Emperor (left), Sun Wukong (middle main), Erlang Shen (right). Relations: Jade Emperor → orders capture; Sun Wukong ↔ Erlang Shen: fights him / stops him, core relation: rivals. Character traits: Jade Emperor ruler of Heaven; Sun Wukong fearless hero; Erlang Shen powerful warrior. Story Focus sentence: Wukong refuses unfair rules and shakes Heaven. Background: Lingxiao Palace cloud heaven scene, right decor: golden magic staff",
+              "Three Little Pigs三只小猪, page 1, 3 core characters: First Pig (left), Third Pig (middle main), Big Bad Wolf (right). Relations: First Pig → brothers; Third Pig ↔ Big Bad Wolf: warns everyone / tries to blow the house, core relation: enemies. Character traits: First Pig lazy but cheerful; Third Pig smart and hardworking; Big Bad Wolf tricky and greedy. Story Focus sentence: The brick house keeps the little pigs safe. Background: countryside straw/wood/brick houses scene, right decor: red brick house",
+              "Black Cat Sheriff黑猫警长, page 3, 3 core characters: White Pigeon (left), Black Cat Sheriff (middle main), One-Ear Rat (right). Relations: White Pigeon → reports clues; Black Cat Sheriff ↔ One-Ear: hunts him / causes trouble, core relation: police and thief. Character traits: White Pigeon alert helper; Black Cat Sheriff brave and fair; One-Ear sly criminal. Story Focus sentence: Black Cat Sheriff protects the forest and catches criminals. Background: forest police tower scene, right decor: police star badge",
+              "Peppa Pig小猪佩奇, page 5, 3 core characters: Mummy Pig (left), Peppa (middle main), George (right). Relations: Mummy Pig → cares for her; Peppa ↔ George: big sister / plays with her, core relation: family. Character traits: Mummy Pig gentle and patient; Peppa curious and cheerful; George cute little brother. Story Focus sentence: Peppa learns and grows through family play. Background: green hills countryside villa scene, right decor: muddy puddle",
+              "Bluey布鲁伊, page 6, 3 core characters: Bandit Dad (left), Bluey (middle main), Bingo (right). Relations: Bandit → plays with her; Bluey ↔ Bingo: big sister / learns together, core relation: sisters. Character traits: Bandit playful dad; Bluey imaginative and lively; Bingo sweet little sister. Story Focus sentence: Bluey and Bingo turn everyday life into adventures. Background: backyard lawn family house scene, right decor: toy box with rainbow"
+            ]
+          }
+        ]
+      },
+      "zh": {
+        "base_prompt": "（儿童动画人物关系图英语学习卡生成器，横向可打印宽幅工作表）横向宽版少儿故事英语学习海报，顶部古风卷轴装饰大标题「人物关系图 | Character Map」，红色缎带副标题「《[动画IP中文名]》动画学习卡 · [英文IP名称] Learning Card」，左上角标注页码「第X页 共6页」。\n固定全局排版规范，页面分为【上方三角色关系区】+【底部故事重点卷轴区】两大模块：\n1. 上方核心布局：横向等距排布3个带云朵花边边框的圆形角色头像框\n    - 左侧角色圆框与中间主角圆框用蓝色双向箭头连接，箭头方框内标注英文动词短语+对应中文释义，框底部蓝色矩形标签栏：角色中文名+英文名 + 两行人物性格描述（中文形容词 | 英文形容词短语）。\n    - 中间主角圆框与右侧角色圆框分上下两条双向箭头（上绿箭头、下橙箭头），每条箭头单独标注一组互动英文短句+中文翻译；中间与右下角底部增设紫色双向箭头，方框标注二者核心关系分类（敌人/对手/家人/姐妹/兄弟等）+中文。中间、右侧圆框底部各配对应底色矩形角色信息栏，格式同左侧。\n2. 背景画面：完整还原动画原作核心场景（天宫云海/山间葫芦藤/乡村小屋/森林警局等）。\n3. 底部区域：羊皮纸复古卷轴框，标题「故事重点 Story Focus」，左侧放置小型主角圆形头像，中间一行英文核心主旨句+配套中文翻译，右侧绘制该故事标志性小装饰插画（金箍棒/葫芦/砖房/警徽等）。\n美术风格分类统一标准：\n- 国产经典动画（大闹天宫/葫芦娃/黑猫警长）：中式传统水彩动画画风，搭配祥云卷轴、金殿、山洞、古建筑国风装饰，复古水墨柔和鲜亮儿童向配色；\n- 欧美低幼动画（三只小猪/小猪佩奇/布鲁伊）：暖调平涂绘本插画风格，乡村别墅、草坪庭院田园场景，低饱和柔和马卡龙色系，干净哑光纸张质感。\n图像通用标准：8K超清、印刷级清晰画质，分区边框整洁，元素无杂乱重叠，适配少儿故事阅读、双语启蒙课堂使用。\n生成要求：以「cartoon_ip_theme」为主题完整生成整套人物关系卡，全部角色插画严格匹配动画原版人设，固定横向三角色布局+底部故事卷轴模块，完整古风卷轴装饰边框，画风与IP高度统一",
+        "parameters": {
+          "name": "cartoon_ip_theme",
+          "label": "动画IP主题完整设定",
+          "type": "text",
+          "placeholder": [
+            "Calabash Brothers葫芦娃，第2页，三位核心角色：爷爷（左）、大娃（中间主角）、蛇精（右）。关系：爷爷→抚养他；大娃↔蛇精：与她战斗 / 抓走爷爷，核心关系：敌人。人物性格：爷爷 慈祥又善良 | kind and caring；大娃 勇敢又强壮 | brave and strong；蛇精 狡猾又邪恶 | cunning and evil。故事重点英文句：The Calabash Brothers work together to save Grandpa. 背景：山间瀑布葫芦藤场景，右侧装饰：金色葫芦",
+            "Havoc in Heaven大闹天宫，第4页，三位核心角色：玉皇大帝（左）、孙悟空（中间主角）、二郎神（右）。关系：玉皇大帝→下令捉拿；孙悟空↔二郎神：与他大战 / 阻止他，核心关系：强强对决。人物性格：玉皇大帝 天宫的统治者 | ruler of Heaven；孙悟空 无畏的英雄 | fearless hero；二郎神 强大的神将 | powerful warrior。故事重点英文句：Wukong refuses unfair rules and shakes Heaven. 背景：凌霄宝殿云海天宫场景，右侧装饰：金箍棒",
+            "Three Little Pigs三只小猪，第1页，三位核心角色：猪老大（左）、猪老三（中间主角）、大灰狼（右）。关系：猪老大→兄弟；猪老三↔大灰狼：提醒大家 / 想吹倒房子，核心关系：对手。人物性格：猪老大 轻松但有点懒 | lazy but cheerful；猪老三 聪明又勤劳 | smart and hardworking；大灰狼 狡猾又贪心 | tricky and greedy。故事重点英文句：The brick house keeps the little pigs safe. 背景：乡村稻草/木头/砖房田园场景，右侧装饰：红砖小屋",
+            "Black Cat Sheriff黑猫警长，第3页，三位核心角色：白鸽侦察员（左）、黑猫警长（中间主角）、一只耳（右）。关系：白鸽→提供线索；黑猫警长↔一只耳：追捕他 / 制造麻烦，核心关系：警匪对立。人物性格：白鸽 机敏的助手 | alert helper；黑猫警长 勇敢又公正 | brave and fair；一只耳 狡猾的坏蛋 | sly criminal。故事重点英文句：Black Cat Sheriff protects the forest and catches criminals. 背景：森林瞭望警局场景，右侧装饰：警星盾牌徽章",
+            "Peppa Pig小猪佩奇，第5页，三位核心角色：猪妈妈（左）、佩奇（中间主角）、乔治（右）。关系：猪妈妈→照顾她；佩奇↔乔治：姐姐 / 和她玩，核心关系：家人。人物性格：猪妈妈 温柔又耐心 | gentle and patient；佩奇 好奇又开朗 | curious and cheerful；乔治 可爱的小弟弟 | little brother。故事重点英文句：Peppa learns and grows through family play. 背景：青山乡村小屋草坪场景，右侧装饰：泥水坑",
+            "Bluey布鲁伊，第6页，三位核心角色：班底特爸爸（左）、布鲁伊（中间主角）、宾果（右）。关系：爸爸→陪她玩耍；布鲁伊↔宾果：姐姐 / 一起成长，核心关系：姐妹。人物性格：爸爸 爱玩的爸爸 | playful dad；布鲁伊 想象力丰富又活泼 | imaginative and lively；宾果 甜美的小妹妹 | sweet little sister。故事重点英文句：Bluey and Bingo turn everyday life into adventures. 背景：后院草坪家庭住宅场景，右侧装饰：彩虹玩具箱"
+          ]
+        }
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-cartoon-character-map-learning-card-havoc-in-heaven-prev.jpg",
+    "description": "适配国产/欧美经典动画IP的儿童双语人物关系图学习卡通用生成模板，输入动画完整主题、页码、三位核心角色、双向关系描述、人物性格、故事主旨、场景元素即可生成和参考图版式、分区、画风完全统一的横向打印启蒙学习卡，内置中英双语两套生成指令，自动区分国风水墨/欧美绘本两套美术体系",
+    "rank_score": 90.0,
+    "base_rank_score": 90.0,
+    "topics": [
+      "study-sheets",
+      "education",
+      "kids",
+      "character"
     ]
   }
 ]

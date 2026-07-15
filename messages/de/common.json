@@ -340,7 +340,9 @@
   "magic": {
     "errors": {
       "NO_SPEECH": "Das Video scheint keine hörbare Sprache zu haben. Wir können Gebärdensprache oder stummes Filmmaterial nicht transkribieren – bitte laden Sie ein Video mit gesprochener Audiospur hoch.",
-      "default": "Ihr Auftrag ist fehlgeschlagen. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support."
+      "default": "Ihr Auftrag ist fehlgeschlagen. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support.",
+      "INSUFFICIENT_CREDITS": "Sie haben nicht genügend Credits, um diesen Auftrag auszuführen. Laden Sie Ihr Guthaben auf, um fortzufahren.",
+      "topUpCta": "Credits aufladen"
     }
   }
 }

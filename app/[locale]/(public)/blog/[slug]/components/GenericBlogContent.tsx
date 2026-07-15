@@ -1,6 +1,7 @@
 import BlogInlineClickTracker from "./BlogInlineClickTracker";
 import BlogCodeBlockCopyTracker from "./BlogCodeBlockCopyTracker";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import VisualSearchQueryCardsSection from "./VisualSearchQueryCardsSection";
 
 interface GenericBlogContentProps {
   hasKey: (key: string) => boolean;
@@ -251,12 +252,16 @@ export default function GenericBlogContent({
 
       <section>
         <h2 className="text-2xl font-bold mb-4">{hasKey("toolsTitle") ? safeT("toolsTitle") : "Tools & Resources"}</h2>
-        <div 
-          className="prose prose-lg max-w-none mb-4"
-          dangerouslySetInnerHTML={{ 
-            __html: hasKey("toolsContent") ? formatContent(safeT("toolsContent")) : "<p>Learn about the best tools available...</p>"
-          }} 
-        />
+        {slug === "visual-search-platform-comparison" ? (
+          <VisualSearchQueryCardsSection locale={locale} />
+        ) : (
+          <div
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{
+              __html: hasKey("toolsContent") ? formatContent(safeT("toolsContent")) : "<p>Learn about the best tools available...</p>"
+            }}
+          />
+        )}
       </section>
 
       <section>

@@ -340,7 +340,9 @@
   "magic": {
     "errors": {
       "NO_SPEECH": "Videoda duyulabilir bir konuşma yok gibi görünüyor. İşaret dilini veya sessiz görüntüleri transkribe edemiyoruz — lütfen konuşmalı bir ses içeren bir video yükleyin.",
-      "default": "İşleminiz başarısız oldu. Lütfen tekrar deneyin veya destekle iletişime geçin."
+      "default": "İşleminiz başarısız oldu. Lütfen tekrar deneyin veya destekle iletişime geçin.",
+      "INSUFFICIENT_CREDITS": "Bu işi çalıştırmak için yeterli krediniz yok. Devam etmek için kredi yükleyin.",
+      "topUpCta": "Kredi yükle"
     }
   }
 }

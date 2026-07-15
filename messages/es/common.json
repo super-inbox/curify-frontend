@@ -340,7 +340,9 @@
   "magic": {
     "errors": {
       "NO_SPEECH": "El video parece no tener audio audible. No podemos transcribir el lenguaje de señas o imágenes en silencio; por favor, sube un video con audio hablado.",
-      "default": "Tu trabajo falló. Por favor, inténtalo de nuevo o contacta con soporte."
+      "default": "Tu trabajo falló. Por favor, inténtalo de nuevo o contacta con soporte.",
+      "INSUFFICIENT_CREDITS": "No tienes créditos suficientes para ejecutar este trabajo. Recarga para continuar.",
+      "topUpCta": "Recargar créditos"
     }
   }
 }

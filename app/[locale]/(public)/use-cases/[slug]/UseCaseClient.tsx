@@ -39,7 +39,7 @@ const USE_CASE_VIDEO_KEY: Record<string, string> = {
   "for-parents":          "parents",
   "for-creators":         "creators",
   "for-dtc-brands":       "dtc",
-  "for-publishers":       "publisher",
+  "for-publishers":       "learning-packs",
   "for-programmatic-seo": "seo",
   "for-marketers":        "marketer",
   "for-merch-operators":  "merch",
@@ -47,11 +47,13 @@ const USE_CASE_VIDEO_KEY: Record<string, string> = {
 
 // Aspect ratio per video pair. Most use-case explainers are vertical 9:16
 // (phone-shot / Reels-style) — the default. The merch pair is 3:4
-// (960x1280), so it gets its own box to avoid the <video> default
-// object-fit:fill stretching faces. Add an entry here for any future
-// pair whose source aspect isn't 9:16.
+// (960x1280) and the learning-packs pair is 16:9 (1920x1080, landscape),
+// so each gets its own box to avoid the <video> default object-fit:fill
+// stretching. Landscape entries (aspect-video) also widen the hero column
+// below. Add an entry here for any future pair whose source aspect isn't 9:16.
 const USE_CASE_VIDEO_ASPECT: Record<string, string> = {
   merch: "aspect-[3/4]",
+  "learning-packs": "aspect-video",
 };
 const DEFAULT_VIDEO_ASPECT = "aspect-[9/16]";
 
@@ -404,7 +406,11 @@ export default function UseCaseClient({
       </section>
 
         {videoKey && (
-          <div className="mx-auto w-full max-w-[320px] lg:mx-0 lg:w-[280px] lg:flex-shrink-0">
+          <div className={`mx-auto w-full lg:mx-0 lg:flex-shrink-0 ${
+            (USE_CASE_VIDEO_ASPECT[videoKey] ?? DEFAULT_VIDEO_ASPECT) === "aspect-video"
+              ? "max-w-[560px] lg:w-[460px]"   // landscape (16:9) needs a wider column
+              : "max-w-[320px] lg:w-[280px]"    // portrait default
+          }`}>
             <UseCaseVideo
               slug={slug}
               videoKey={videoKey}
