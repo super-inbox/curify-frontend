@@ -30,6 +30,8 @@
  *   node scripts/i18n_autotranslate.cjs --base en --skip hi fr es de --write
  *   node scripts/i18n_autotranslate.cjs --base en --files common home --write
  *   node scripts/i18n_autotranslate.cjs --base en --files nano --write
+ *   node scripts/i18n_autotranslate.cjs --base en --files blog --prefix blog.somePost --write
+ *   node scripts/i18n_autotranslate.cjs --base en --files blog --prefix blog.somePost --key-prefix section --force --write
  *
  * Notes:
  * - `--files` accepts file basenames without .json (e.g. "common home pricing"),
@@ -54,6 +56,9 @@ function parseArgs(argv) {
     only: null, // array or null
     skip: null, // array or null
     files: null, // array of basenames (without .json) or null -> discover from base folder
+    prefix: null, // optional dotted-key prefix, e.g. blog.somePost
+    keyPrefix: null, // optional leaf-key prefix within --prefix, e.g. economics
+    force: false, // overwrite selected existing target strings; requires --prefix and --key-prefix
     model: "gpt-4o-mini",
     chunkSize: 30,
     write: false,
@@ -68,6 +73,7 @@ function parseArgs(argv) {
     else if (a === "--chunkSize") args.chunkSize = parseInt(argv[++i], 10);
     else if (a === "--write") args.write = true;
     else if (a === "--dry-run" || a === "--dryRun") args.dryRun = true;
+    else if (a === "--force") args.force = true;
     else if (a === "--only") {
       const list = [];
       while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
@@ -80,6 +86,10 @@ function parseArgs(argv) {
       const list = [];
       while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
       args.files = list.length ? list : null;
+    } else if (a === "--prefix" || a === "--namespace") {
+      args.prefix = argv[++i] || null;
+    } else if (a === "--key-prefix") {
+      args.keyPrefix = argv[++i] || null;
     } else {
       console.warn(`[warn] Unknown arg: ${a}`);
     }
@@ -88,6 +98,11 @@ function parseArgs(argv) {
 }
 
 const args = parseArgs(process.argv);
+
+if (args.force && (!args.prefix || !args.keyPrefix)) {
+  console.error("--force requires both --prefix and --key-prefix to limit overwrite scope.");
+  process.exit(1);
+}
 
 /** -----------------------
  * Paths & locale discovery
@@ -259,11 +274,11 @@ function setValueByPath(obj, dottedKey, value) {
   }
 }
 
-// Merge ONLY missing keys into target object
-function mergeMissing(targetObj, patchMap) {
+// Merge missing keys, or overwrite only when a deliberately scoped --force run is used.
+function mergeTranslations(targetObj, patchMap, overwrite = false) {
   for (const [k, v] of Object.entries(patchMap)) {
     const existing = getValueByPath(targetObj, k);
-    if (typeof existing === "undefined") setValueByPath(targetObj, k, v);
+    if (overwrite || typeof existing === "undefined") setValueByPath(targetObj, k, v);
   }
 }
 
@@ -323,6 +338,7 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
     "Rules:",
     "- Preserve placeholders exactly (e.g., {label}, {count}, {name}). Do NOT translate or alter them.",
     "- Do not translate product names like Curify or Curify Studio or Nano Banana.",
+    "- Return strings that start with /, http://, https://, or mailto: byte-for-byte unchanged.",
     "- Keep tone concise, natural, product/marketing friendly.",
     "- CRITICAL: Return ONLY a valid JSON object. No markdown, no code fences, no explanations.",
     "- Ensure all JSON syntax is correct: commas between properties, no trailing commas, proper quotes.",
@@ -420,6 +436,9 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
     if (!samePlaceholders(src, parsed[k])) {
       throw new Error(`Placeholder mismatch for key '${k}'\nsrc: ${src}\ndst: ${parsed[k]}`);
     }
+    if (/^(?:\/|https?:\/\/|mailto:)/i.test(src) && parsed[k] !== src) {
+      throw new Error(`Protected URL/path changed for key '${k}'\nsrc: ${src}\ndst: ${parsed[k]}`);
+    }
   }
 
   return parsed;
@@ -432,6 +451,9 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
   console.log(`[dir] ${messagesDir}`);
   console.log(`[base] ${args.base}`);
   console.log(`[files] ${baseFiles.join(", ")}`);
+  console.log(`[prefix] ${args.prefix || "(all keys)"}`);
+  console.log(`[key prefix] ${args.keyPrefix || "(all leaf keys)"}`);
+  console.log(`[force] ${args.force ? "yes" : "no"}`);
   console.log(`[found locales] ${locales.join(", ")}`);
   console.log(`[targets] ${targetLocales.join(", ") || "(none)"}`);
 
@@ -453,8 +475,20 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
       continue;
     }
 
+    const allKeys = getKeys(obj);
+    const namespaceKeys = args.prefix
+      ? allKeys.filter((key) => key === args.prefix || key.startsWith(`${args.prefix}.`))
+      : allKeys;
+    const selectedKeys = args.keyPrefix
+      ? namespaceKeys.filter((key) => key.split(".").at(-1).startsWith(args.keyPrefix))
+      : namespaceKeys;
+
+    if (args.prefix && !selectedKeys.length) {
+      console.warn(`[warn] no keys matched prefix '${args.prefix}' in ${basePath}`);
+    }
+
     baseFileObjs[fileBase] = obj;
-    baseFileKeySets[fileBase] = new Set(getKeys(obj));
+    baseFileKeySets[fileBase] = new Set(selectedKeys);
   }
 
   const effectiveFiles = Object.keys(baseFileObjs).sort();
@@ -487,16 +521,18 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
 
       const targetKeys = new Set(getKeys(targetObj));
       const missingKeys = [...baseKeys].filter((k) => !targetKeys.has(k));
+      const translationKeys = args.force ? [...baseKeys] : missingKeys;
 
       const missingItems = {};
-      for (const k of missingKeys) {
+      for (const k of translationKeys) {
         const v = getValueByPath(baseObj, k);
         if (typeof v === "string") missingItems[k] = v;
       }
 
       console.log(`\n--- ${loc}/${fileBase}.json ---`);
       console.log(
-        `missing keys: ${missingKeys.length} (string missing: ${Object.keys(missingItems).length})`
+        `${args.force ? "selected keys (forced)" : "missing keys"}: ${translationKeys.length} ` +
+          `(string keys: ${Object.keys(missingItems).length})`
       );
 
       if (!Object.keys(missingItems).length) {
@@ -527,7 +563,7 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
         // and a re-run picks up exactly where it left off (since missingKeys
         // is recomputed against what's already in the target file).
         if (args.write && !args.dryRun) {
-          mergeMissing(targetObj, translated);
+          mergeTranslations(targetObj, translated, args.force);
           writeJson(targetPath, targetObj);
         }
       }

@@ -204,6 +204,24 @@ const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
       Icon: MessageCircle,
     },
   ],
+  "agentic-generative-capability": [
+    {
+      id: "design-templates",
+      label: "Browse Design Templates",
+      description:
+        "Compare structured visual directions, then remix the format that fits your brief.",
+      href: "/topics/design",
+      Icon: Wrench,
+    },
+    {
+      id: "use-cases-for-designers",
+      label: "Designers playbook",
+      description:
+        "See where Curify fits in ideation, direction setting, and repeatable visual production.",
+      href: "/use-cases/for-designers",
+      Icon: MessageCircle,
+    },
+  ],
   // B2B sales-narrative posts shaped like engineering deep-dives — readers
   // come with buyer intent (EdTech / Publisher / Agency / DTC / ProgSEO).
   // Category defaults (content-automation → /contact + Calendly; or
