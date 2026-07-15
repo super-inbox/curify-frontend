@@ -5950,6 +5950,31 @@
       "curifyContent": "Each piece above maps to a Curify surface — the video tools turn your clip into subtitles, a script, and a summary; the templates turn that text into word cards, a character map, and reading lessons. Grab them below.\n\nMore on the approach in [Visual Learning Tools](/blog/visual-learning-tools) and the full pipeline in [From Months to Minutes](/blog/multimodal-ai-educational-publishing). Browse everything under the [Learning topic](/topics/learning).",
       "conclusionTitle": "One paste, a whole lesson",
       "conclusionContent": "Video is underused in teaching not because videos are bad lessons, but because turning a video into a lesson has always meant an hour of manual work. Collapse that to 30 seconds and the math flips: every clip becomes a full, aligned, multimodal learning pack. Start with one scene — paste it into [Bilingual Subtitles](/tools/bilingual-subtitles) and build out the word cards, quiz, and speaking practice from there."
+    },
+    "urlToProductVideo": {
+      "title": "URL to Product Video: Turn Any Product Page Into a 30-Second Ad",
+      "metaDescription": "Paste a product URL and get a 30-second marketing video — scraped images, an AI-planned storyboard, neural voice-over, and a composed MP4 for TikTok, Amazon, and Reels. Why per-SKU video is the e-commerce bottleneck, and how an automated pipeline (GPT-4o-mini + Azure TTS + FFmpeg) clears it at catalog scale.",
+      "seoKeywords": "url to product video, product video generator, ai product video, turn product page into video, ecommerce video generator, tiktok product video, amazon product video, ai product ad video, automated product video, product video maker",
+      "date": "July 16, 2026",
+      "readTime": "5 min read",
+      "intro": "Video sells. On TikTok Shop, Amazon, and Instagram Reels, a short product video converts far better than a static photo — but making one per SKU is the bottleneck. A single video means a videographer, a script, an editor, a day of work, and a few hundred dollars. Multiply that across a 500-SKU catalog and it simply doesn't happen. This post walks through an automated pipeline that collapses the cost to near zero: paste a product URL, and out comes a 30-second marketing video — images, storyboard, voice-over, and all.",
+      "whatIsTitle": "The real problem: video that doesn't scale",
+      "whatIsContent": "The conversion case for product video is settled — listings with video convert meaningfully better, and short-form video is now the default ad unit on every major channel. The unsolved part is supply. Manual production is priced and paced for a handful of hero products, not a full catalog, so most sellers ship video for their top 5 SKUs and static images for the other 495 — leaving the majority of the catalog at a conversion disadvantage.\n\nThe business unlock isn't a better single video; it's **video at catalog scale** — one per SKU, refreshed on demand, at the cost of an API call. That is what turns product video from a hero-SKU luxury into a default for every listing.",
+      "howTitle": "How the pipeline works",
+      "step1Title": "1. Scrape the product page",
+      "step1Content": "The scraper takes any product URL and pulls what a video needs: product images, title, feature bullets, and price. An image validator drops logos, icons, and low-resolution junk so only usable product shots move forward. No URL? Structured product JSON with image URLs works as the input too.",
+      "step2Title": "2. Plan the storyboard (GPT-4o-mini)",
+      "step2Content": "GPT-4o-mini reads the scraped content and writes a 4–6 scene storyboard — a hook, feature scenes, price, and a call-to-action — each with an on-screen caption and one line of narration. This is the step that turns raw product data into a sequenced sales pitch rather than a slideshow.",
+      "step3Title": "3. Generate the voice-over (Azure Neural TTS)",
+      "step3Content": "Each scene's narration is synthesized with Microsoft Azure neural voices — natural, broadcast-quality speech, with the voice and language swappable in one line. That last point is commercial, not cosmetic: the same product page yields an English, Spanish, or Japanese ad by changing the voice, not re-shooting.",
+      "step4Title": "4. Compose the video (MoviePy + FFmpeg)",
+      "step4Content": "MoviePy and FFmpeg assemble everything into a finished MP4: product-image overlays, animated text scenes, the narration track, optional background music, and crossfade transitions — 15–30 seconds, exported at 1080p or a vertical crop for TikTok and Reels. The output is a ready-to-post ad, no editor in the loop.",
+      "challengesTitle": "Where it pays off",
+      "challengesContent": "The economics change what's possible:\n\n- **Catalog-scale video** — one ad per SKU across a 500-product store, generated in a batch instead of a quarter.\n- **TikTok Shop & Reels** — a native vertical video for every product, the format those channels reward.\n- **Amazon listings** — a video module on every ASIN, not just the flagship.\n- **Localized ads** — swap the TTS voice to ship the same video in each market.\n- **Cheap A/B testing** — regenerate ten storyboard variants and let the platform pick the winner, because each one costs an API call, not a shoot.",
+      "curifyTitle": "Try it",
+      "curifyContent": "Curify runs this as [Product Video](/tools/product-video) — paste a product URL or upload your shots, and get the composed video back. Pair it with [AI Product Photo Generator](/tools/ai-product-photo-generator) and [E-commerce Photo](/tools/ecommerce-photo) to clean up the source images first, then turn them into video. More on the image side in [Product Photo to E-commerce Listing](/blog/ai-product-photo-to-ecommerce-listing). Browse the full set under the [Product topic](/topics/product).",
+      "conclusionTitle": "Video, per SKU, at API cost",
+      "conclusionContent": "Product video stopped being a creative problem a while ago — it is a supply problem. When a 30-second ad costs an API call instead of a shoot, the answer to \"which products get video?\" becomes \"all of them.\" Paste a URL and see the first one."
     }
   },
   "aiPlatform": {

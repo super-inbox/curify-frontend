@@ -46,6 +46,7 @@ export function createBlogPostsConfig() {
       'mbti-character-generator': 'mbtiCharacterGenerator',
       'footballer-mbti-types': 'footballerMbtiTypes',
       'video-to-learning-pack': 'videoToLearningPack',
+      'url-to-product-video': 'urlToProductVideo',
       'content-tagging-system': 'contentTaggingSystem',
       'visual-learning-tools': 'visualLearningTools',
       'ai-content-distribution-system': 'aiContentDistributionSystem',
@@ -149,6 +150,7 @@ export const blogPosts = createBlogPostsConfig();
 
 // Define which keys exist for each blog post type
 export const availableKeys: Record<string, string[]> = {
+  'urlToProductVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'videoToLearningPack': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'footballerMbtiTypes': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'aiPlatform': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
