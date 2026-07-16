@@ -6824,5 +6824,44 @@
         "prompts": "Deneyin 'Cennette Kargaşa — Jade İmparatoru, Sun Wukong, Erlang Shen', 'Üç Küçük Domuz — üç domuz ve büyük kötü kurt'."
       }
     }
+  },
+  "template-minimalist-product-design-presentation-board": {
+    "category": "Minimalist Ürün Tasarım Panosu",
+    "description": "Bir ürün konseptini temiz bir minimalist ürün tasarım sunum panosuna dönüştürün.",
+    "title": "Nano Banana Prompt: Minimalist Ürün Tasarım Sunum Panosu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, {product_design_info} temalı minimalist bir ürün tasarım sunum panosunu sunar: kahraman ürün render'ı, tasarım ilham notları, özellik vurguları, malzemeler/rengin tonları ve temiz bir editoryal ızgara içinde teknik özellikler ile sabit çok modüllü bir düzen.",
+        "who": "Ürün ve endüstriyel tasarımcılar, donanım girişimleri, ajanslar ve sunum/portföy panoları oluşturan tasarım öğrencileri.",
+        "how": "Ürün adını + tasarım hikayesini (ilham, ana özellikler, malzemeler) girin. Tek tıklama ile pano oluşturulur.",
+        "prompts": "'WAVE Taşınabilir Hoparlör, kıyısal akış eğrisi ilhamı, kumaş + alüminyum', 'AURA Akıllı Lamba, minimalist İskandinav konsepti' deneyin."
+      }
+    }
+  },
+  "template-interior-design-moodboard": {
+    "category": "İç Mekan Tasarım Moodboard'u",
+    "description": "Herhangi bir alan ve estetik için stilize edilmiş bir iç mekan tasarım moodboard'u oluşturun.",
+    "title": "Nano Banana Prompt: İç Mekan Tasarım Moodboard'u | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, {interior_style_theme} temalı bir iç mekan tasarım moodboard'u sunar: oda render'ı, malzeme ve bitiş örnekleri, renk paleti, mobilya ve dekor referansları ile stil notları içeren koordineli bir pano.",
+        "who": "İç mekan tasarımcıları, ev sahneleyicileri, yenileme müşterileri ve dekor içerik üreticileri.",
+        "how": "Alanı + stili girin (örneğin, 'Japandi oturma odası', 'modern kömür lüks konut'). Tek tıklama ile moodboard oluşturulur.",
+        "prompts": "'Modern Lüks Kömür Konutu, koyu şık palet', 'Japandi oturma odası, sıcak ahşap + keten', 'Kıyısal minimalist yatak odası' deneyin."
+      }
+    }
+  },
+  "template-industrial-design-product-presentation-board": {
+    "category": "Endüstriyel Tasarım Sunum Panosu",
+    "description": "Render'lar, vurgular ve teknik özelliklerle bir endüstriyel tasarım ürün sunum panosu oluşturun.",
+    "title": "Nano Banana Prompt: Endüstriyel Tasarım Ürün Sunum Panosu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, {product_design_param} temalı bir endüstriyel tasarım ürün sunum panosunu sunar: kahraman render ve slogan, özellik/fayda vurguları, kullanım sahneleri, boyutlar ve malzeme teknik özellikleri ile şık bir ürün pazarlama düzeni.",
+        "who": "Endüstriyel tasarımcılar, DTC ve donanım markaları, kitle fonlaması yaratıcıları ve tasarım ajansları.",
+        "how": "Ürün adını, sloganı ve ana özellikleri girin. Tek tıklama ile sunum panosu oluşturulur.",
+        "prompts": "'PORTATİF KARMA MAKİNESİ ŞİŞESİ, Taşınabilir. Güçlü. Taze.', 'Ergonomik Ofis Sandalyeleri, tüm gün konfor' deneyin."
+      }
+    }
   }
 }

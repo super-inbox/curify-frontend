@@ -6823,5 +6823,44 @@
         "prompts": "尝试 '天宫浩劫 — 玉皇大帝、孙悟空、二郎神'，'三只小猪 — 三只猪和大坏狼'。"
       }
     }
+  },
+  "template-minimalist-product-design-presentation-board": {
+    "category": "极简产品设计板",
+    "description": "将产品概念转化为干净的极简产品设计展示板。",
+    "title": "Nano Banana Prompt: 极简产品设计展示板 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "该模板呈现以 {product_design_info} 为主题的极简产品设计展示板：一个固定的多模块布局，包含主产品渲染、设计灵感笔记、功能提示、材料/颜色和规格，采用干净的编辑网格。",
+        "who": "产品和工业设计师、硬件初创公司、代理机构和构建推介/作品集板的设计学生。",
+        "how": "输入产品名称 + 设计故事（灵感、关键特征、材料）。一键生成展示板。",
+        "prompts": "尝试 'WAVE 便携式扬声器，海岸流线灵感，面料 + 铝材'，'AURA 智能灯，极简斯堪的纳维亚概念'。"
+      }
+    }
+  },
+  "template-interior-design-moodboard": {
+    "category": "室内设计情绪板",
+    "description": "为任何空间和美学生成风格化的室内设计情绪板。",
+    "title": "Nano Banana Prompt: 室内设计情绪板 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "该模板呈现以 {interior_style_theme} 为主题的室内设计情绪板：一个协调的板，包含房间渲染、材料和饰面样本、色彩调色板、家具和装饰参考，以及风格笔记。",
+        "who": "室内设计师、家居布置师、翻新客户和装饰内容创作者。",
+        "how": "输入空间 + 风格（例如 'Japandi 客厅'，'现代木炭奢华住宅'）。一键生成情绪板。",
+        "prompts": "尝试 '现代奢华木炭住宅，深色优雅调色板'，'Japandi 客厅，温暖的木材 + 亚麻'，'海岸极简卧室'。"
+      }
+    }
+  },
+  "template-industrial-design-product-presentation-board": {
+    "category": "工业设计展示板",
+    "description": "创建一个包含渲染、提示和规格的工业设计产品展示板。",
+    "title": "Nano Banana Prompt: 工业设计产品展示板 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "该模板呈现以 {product_design_param} 为主题的工业设计产品展示板：主渲染加标语、功能/优势提示、使用场景、尺寸和材料规格，采用精致的产品营销布局。",
+        "who": "工业设计师、DTC 和硬件品牌、众筹创作者和设计机构。",
+        "how": "输入产品名称、标语和关键特征。一键生成展示板。",
+        "prompts": "尝试 '便携式搅拌瓶，便携。强大。新鲜。'，'人体工学办公椅，全天舒适。'"
+      }
+    }
   }
 }
