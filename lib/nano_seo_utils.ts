@@ -204,12 +204,20 @@ export function buildNanoTemplateMetadata(opts: {
 }
 
 /**
- * Derive the display H1 from the localized title by stripping the
- * "| Curify AI" suffix that's typically appended for search engines.
+ * Derive the display H1 from the localized title. Strips the SEO-only
+ * decorations that belong in the <title> tag but read as jargon in the
+ * visible heading: the leading "Nano Banana Prompt:" prefix (English, the
+ * French "Prompt :" spacing variant, and the Hindi translation) and the
+ * trailing "| Curify AI" suffix. The <title> meta tag keeps the full string,
+ * so the "nano banana" keyword is retained where it matters for SEO.
  */
 export function buildNanoH1(title: string | undefined, fallback: string): string {
   const raw = normalizeText(title) || fallback;
-  return raw.replace(/\s*[｜|]\s*Curify AI\s*$/i, "");
+  const cleaned = raw
+    .replace(/^\s*(?:Nano Banana Prompt|नैनो बनाना प्रॉम्प्ट)\s*[:：]\s*/i, "")
+    .replace(/\s*[｜|]\s*(?:Curify AI|क्यूरिफाई एआई)\s*$/i, "");
+  // Never return an empty heading if a title was somehow only decorations.
+  return cleaned.trim() || normalizeText(title) || fallback;
 }
 
 /**
