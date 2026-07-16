@@ -70,7 +70,11 @@ import ContentTaggingSystemContent from "./components/ContentTaggingSystemConten
 import BilingualFlashcardsContent from "./components/BilingualFlashcardsContent";
 import UGCVideoTranslationContent from "./components/UGCVideoTranslationContent";
 import AIFacelessChannelPipelineWrapper from './components/AIFacelessChannelPipelineWrapper';
+import AgenticGenerativeCapabilityContent from "./components/AgenticGenerativeCapabilityContent";
 import blogsData from "@/public/data/blogs.json";
+import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
+import { TOOL_REGISTRY } from "@/lib/tools-registry";
+import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import nanoInspirationData from "@/public/data/nano_inspiration.json";
 
 // Build example_id → template_id lookup at module init (server-component
@@ -144,6 +148,10 @@ export async function generateMetadata({
         hasDescription,
         availableKeys: Object.keys(t).filter(k => !['rich', 'markup', 'raw', 'has'].includes(k))
       });
+      // getTranslations returns a callable translator even when the requested
+      // namespace is absent. Throw explicitly so the English fallback below
+      // runs instead of rendering the dot-path key in non-English locales.
+      throw new Error(`Incomplete blog namespace: blog.${blogConfig.namespace}`);
     }
     
     const metadata: Metadata = {
@@ -229,7 +237,14 @@ export default async function BlogPostPage({
   // Try to get namespace-specific translations with fallback
   let tNamespace = null;
   try {
-    tNamespace = await getTranslations({ locale, namespace: `blog.${blogConfig.namespace}` });
+    const candidate = await getTranslations({ locale, namespace: `blog.${blogConfig.namespace}` });
+    // Missing namespaces do not make getTranslations throw. Verify the title
+    // key before accepting the translator so English-only releases degrade to
+    // readable English rather than visible dot-path keys.
+    if (!candidate.has(blogConfig.titleKey)) {
+      throw new Error(`Missing blog namespace: blog.${blogConfig.namespace}`);
+    }
+    tNamespace = candidate;
   } catch (error) {
     // Fallback to English if locale translations not found
     try {
@@ -333,6 +348,12 @@ export default async function BlogPostPage({
     }
   }
 
+  const displayTitle = tNamespace
+    ? (tNamespace.has("displayTitle")
+        ? tNamespace("displayTitle")
+        : tNamespace(blogConfig.titleKey))
+    : slug.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+
   return (
     <article className="mx-auto xl:ml-16 xl:mr-64 max-w-6xl pt-4 pb-12 text-[18px] leading-8 px-4 md:px-8 lg:px-10">
       <AutoTableOfContents />
@@ -340,7 +361,7 @@ export default async function BlogPostPage({
       <header className="mb-6">
         <BlogCategoryLabel category={blogConfig.category} />
         <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
-          {tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+          {displayTitle}
         </h1>
 
         <div className="flex items-center justify-between gap-3 text-sm text-gray-500">
@@ -395,6 +416,7 @@ export default async function BlogPostPage({
               - 1:1 square → fills height (384px × 384px on desktop)
             Visual area roughly matched across orientations; nothing is
             cropped. */}
+        {slug !== 'agentic-generative-capability' && (
         <div className="mb-4 mx-auto max-w-lg md:max-w-xl md:float-right md:ml-6 md:mx-0 flex items-center justify-center">
           {/* WC blogs: wrap hero in a link to the most relevant WC topic
               page (parent /topics/world-cup or country-specific). Hero is
@@ -405,7 +427,7 @@ export default async function BlogPostPage({
             const heroNode = useMermaidThumbnail ? (
               <DynamicThumbnail
                 slug={thumbnailType || slug}
-                title={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                title={displayTitle}
                 category={blogConfig.category}
                 existingImage={blogConfig.image}
                 forceType="mermaid"
@@ -413,7 +435,7 @@ export default async function BlogPostPage({
             ) : (
               <CdnImage
                 src={blogConfig.image}
-                alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                alt={displayTitle}
                 width={672}
                 height={448}
                 className="block max-w-full max-h-96 w-auto h-auto rounded-lg shadow hover:opacity-90 transition-opacity"
@@ -457,6 +479,7 @@ export default async function BlogPostPage({
             return heroNode;
           })()}
         </div>
+        )}
 
         {/* Dynamic content rendering based on slug */}
         {(slug.startsWith('translate-youtube-video') || slug === 'ai-youtube-video-translator' || slug === 'translate-youtube-video-to-english') && (
@@ -537,6 +560,9 @@ export default async function BlogPostPage({
         {slug === 'ai-faceless-channel-pipeline' && (
           <AIFacelessChannelPipelineWrapper slug={slug} t={safeT} locale={locale} />
         )}
+        {slug === 'agentic-generative-capability' && (
+          <AgenticGenerativeCapabilityContent slug={slug} t={safeT} locale={locale} />
+        )}
 
         {/* Original blog posts - use generic content renderer */}
         {!slug.startsWith('translate-youtube-video') &&
@@ -563,7 +589,8 @@ export default async function BlogPostPage({
          slug !== 'image-to-narrative-video' &&
          slug !== 'series-infographic-vs-notebooklm' &&
          slug !== 'mbti-character-generator' &&
-         slug !== 'content-tagging-system' && (
+         slug !== 'content-tagging-system' &&
+         slug !== 'agentic-generative-capability' && (
           <GenericBlogContent
             hasKey={hasKey}
             safeT={safeT}
@@ -583,6 +610,30 @@ export default async function BlogPostPage({
           `nanoTemplates`. Filters by groupKey prefix so each post only
           surfaces the cards keyed to its own slug. WC poster posts render this
           near the top instead (above), so skip the bottom copy for them. */}
+      {slug === 'video-to-learning-pack' && (
+        <div className="max-w-5xl mx-auto px-4 my-8 space-y-10">
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">The video tools behind each step</h3>
+            <ToolsGrid tools={TOOL_REGISTRY.filter((t) => ["bilingual-subtitles","video-transcript-generator","video-summarizer","speech-translator"].includes(t.slug))} />
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">Learning templates to build each asset</h3>
+            <ExampleImagesGrid
+              locale={locale}
+              showCaption
+              maxRows={1}
+              fixedCols={4}
+              items={[
+                { id: "template-cartoon-english-vocabulary-flashcards-fruits", title: "Word cards", preview: "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-fruits-prev.jpg", templateId: "template-cartoon-english-vocabulary-flashcards" },
+                { id: "template-bilingual-chinese-vocabulary-word-card-poster-shijian-time", title: "Bilingual word card", preview: "/images/nano_insp_preview/template-bilingual-chinese-vocabulary-word-card-poster-shijian-time-prev.jpg", templateId: "template-bilingual-chinese-vocabulary-word-card-poster" },
+                { id: "template-educational-flashcard-ontology-mindmap-infographic-animal-learning-card-structure-mindmap", title: "Character map", preview: "/images/nano_insp_preview/template-educational-flashcard-ontology-mindmap-infographic-animal-learning-card-structure-mindmap-prev.jpg", templateId: "template-educational-flashcard-ontology-mindmap-infographic" },
+                { id: "template-hsk-bilingual-reading-text-lesson-poster-hsk1-day-at-school", title: "Reading lesson", preview: "/images/nano_insp_preview/template-hsk-bilingual-reading-text-lesson-poster-hsk1-day-at-school-prev.jpg", templateId: "template-hsk-bilingual-reading-text-lesson-poster" },
+              ]}
+            />
+          </div>
+        </div>
+      )}
+
       {blogData?.nanoTemplates?.length > 0 && !WC_BLOG_SLUGS.has(slug) && (
         <NanoBananaExamples locale={locale} blogSlug={slug} />
       )}
@@ -625,4 +676,3 @@ export default async function BlogPostPage({
     </article>
   );
 }
-

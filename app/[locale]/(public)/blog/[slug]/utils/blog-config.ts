@@ -45,6 +45,8 @@ export function createBlogPostsConfig() {
       'character-prompt-generator': 'characterPromptGenerator',
       'mbti-character-generator': 'mbtiCharacterGenerator',
       'footballer-mbti-types': 'footballerMbtiTypes',
+      'video-to-learning-pack': 'videoToLearningPack',
+      'url-to-product-video': 'urlToProductVideo',
       'content-tagging-system': 'contentTaggingSystem',
       'visual-learning-tools': 'visualLearningTools',
       'ai-content-distribution-system': 'aiContentDistributionSystem',
@@ -100,7 +102,8 @@ export function createBlogPostsConfig() {
       'self-improving-multimodal-search': 'selfImprovingMultimodalSearch',
       'ai-event-card-manus-vs-genspark-vs-curify': 'aiEventCardManusGensparkCurify',
       'ai-last-mile-problem': 'aiLastMileProblem',
-      'visual-search-platform-comparison': 'visualSearchPlatformComparison'
+      'visual-search-platform-comparison': 'visualSearchPlatformComparison',
+      'agentic-generative-capability': 'agenticGenerativeCapability'
     };
     
     namespace = namespaceMap[slug] || namespace;
@@ -148,6 +151,8 @@ export const blogPosts = createBlogPostsConfig();
 
 // Define which keys exist for each blog post type
 export const availableKeys: Record<string, string[]> = {
+  'urlToProductVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
+  'videoToLearningPack': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'footballerMbtiTypes': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'aiPlatform': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
   'qaBotToTask': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
@@ -236,5 +241,6 @@ export const availableKeys: Record<string, string[]> = {
   'selfImprovingMultimodalSearch': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'aiEventCardManusGensparkCurify': ['title', 'date', 'readTime', 'heroImage', 'heroImageAlt', 'heroCtaText', 'heroCtaHref', 'intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'aiLastMileProblem': ['title', 'date', 'readTime', 'heroImage', 'heroImageAlt', 'heroCtaText', 'heroCtaHref', 'intro', 'whatIsTitle', 'whatIsContent', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
-  'visualSearchPlatformComparison': ['title', 'metaDescription', 'seoKeywords', 'date', 'readTime', 'heroImage', 'heroImageAlt', 'intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'useCasesTitle', 'useCasesContent', 'toolsTitle', 'toolsContent', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'ctaText', 'ctaLink']
+  'visualSearchPlatformComparison': ['title', 'metaDescription', 'seoKeywords', 'date', 'readTime', 'heroImage', 'heroImageAlt', 'intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'useCasesTitle', 'useCasesContent', 'toolsTitle', 'toolsContent', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'ctaText', 'ctaLink'],
+  'agenticGenerativeCapability': ['title', 'displayTitle', 'metaDescription', 'seoKeywords', 'date', 'readTime', 'heroImage', 'heroImageAlt', 'heroCaption', 'heroCtaText', 'heroCtaHref', 'intro', 'differencesTitle', 'differencesIntro', 'ontologyImage', 'ontologyImageAlt', 'ontologyCaption', 'differencesBridge', 'guidanceTitle', 'guidanceGptLabel', 'guidanceGptContent', 'guidanceCanvaLabel', 'guidanceCanvaContent', 'guidanceCurifyLabel', 'guidanceCurifyContent', 'stressTestTitle', 'stressTestIntro', 'economicsTitle', 'economicsImage', 'economicsImageAlt', 'economicsCaption', 'economicsGptLabel', 'economicsGptContent', 'economicsCanvaLabel', 'economicsCanvaContent', 'economicsCurifyLabel', 'economicsCurifyIntro', 'economicsBullet1Label', 'economicsBullet1Content', 'economicsBullet2Label', 'economicsBullet2Content', 'economicsBullet3Label', 'economicsBullet3Content', 'economicsCurifyConclusion', 'chiikawaTitle', 'chiikawaImage', 'chiikawaImageAlt', 'chiikawaCaption', 'chiikawaGptCanvaLabel', 'chiikawaGptCanvaContent', 'chiikawaCurifyLabel', 'chiikawaCurifyContent', 'readingTitle', 'readingImage', 'readingImageAlt', 'readingCaption', 'readingGptLabel', 'readingGptContent', 'readingCanvaLabel', 'readingCanvaContent', 'readingCurifyLabel', 'readingCurifyContent', 'valueTitle', 'valueIntro', 'businessCaseTitle', 'businessCaseLead', 'businessCaseContent', 'direction1Label', 'direction1Content', 'direction2Label', 'direction2Content', 'direction3Label', 'direction3Content', 'businessCaseImage', 'businessCaseImageAlt', 'businessCaseCaption', 'businessValuesLead', 'businessValue1Label', 'businessValue1Content', 'businessValue2Label', 'businessValue2Content', 'businessValue3Label', 'businessValue3Content', 'conclusionTitle', 'conclusionParagraph1', 'conclusionParagraph2', 'conclusionParagraph3']
 };
