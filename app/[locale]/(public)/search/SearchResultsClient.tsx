@@ -317,16 +317,20 @@ export default function SearchResultsClient({
       </p>
 
       {!hasResults ? (
-        <div className="py-12">
-          <p className="mb-4 text-center text-neutral-400">
-            Try browsing a topic instead:
-          </p>
-          <TopicStrip
-            items={relatedTopicStripItems}
-            locale={locale}
-            trackPrefix="search-empty-strip"
-          />
-        </div>
+        <>
+          {/* With no examples, generation becomes the primary recovery path. */}
+          <GenerableTemplatesSection query={query} locale={locale} />
+          <div className="py-12">
+            <p className="mb-4 text-center text-neutral-400">
+              Try browsing a topic instead:
+            </p>
+            <TopicStrip
+              items={relatedTopicStripItems}
+              locale={locale}
+              trackPrefix="search-empty-strip"
+            />
+          </div>
+        </>
       ) : (
         <>
           {/* Intent chip row — Pinterest-style "Explore further" derived
@@ -412,6 +416,10 @@ export default function SearchResultsClient({
             </section>
           )}
 
+          {/* Keep the creation action directly after the inspiration examples:
+              browse first, then generate the searched idea in place. */}
+          <GenerableTemplatesSection query={query} locale={locale} />
+
           {/* Templates rail (middle): renders the matched template cards
               with the same component the topic page uses. */}
           {matchedTemplates.length > 0 && (
@@ -428,12 +436,6 @@ export default function SearchResultsClient({
               />
             </section>
           )}
-
-          {/* Generable templates (LLM-matched): templates that COULD
-              generate the query even if no inspiration exists for it
-              yet. Lazy-fetched after mount so initial render stays
-              fast. See docs/search-generation-bridge.md. */}
-          <GenerableTemplatesSection query={query} locale={locale} />
 
           {/* Gallery prompts (bottom): Redis-backed nano-banana prompts
               matching the query as an exact tag. Renders with the same

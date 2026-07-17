@@ -5,6 +5,10 @@ import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 
 import { nanoGenerateService } from "@/services/nanoGenerate";
+import {
+  NanoGenerationError,
+  pollNanoResult,
+} from "@/services/pollNanoResult";
 import { buildExampleId } from "@/lib/nano_pure";
 import { findDuplicate, type ExistingExampleRef } from "@/lib/editDistance";
 import { useTracking, type TrackingTarget } from "@/services/useTracking";
@@ -12,46 +16,11 @@ import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
 const CREDITS_COST = 10;
 
-// Async generation poll. Generation runs as a backend background task (image2image
-// can take >60s — the old synchronous request timed out on the client while the
-// backend completed, orphaning the result). We poll /projects/{id}/status until
-// COMPLETED (returns a signed result_url) or FAILED.
-const POLL_INTERVAL_MS = 2500;
-const POLL_MAX_MS = 180_000; // 3 min ceiling
-const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
-
 // Mark an error as carrying a clean, user-facing message (e.g. the backend's
 // CONTENT_BLOCKED reason) so the catch surfaces it verbatim instead of the
 // generic fallback. Network/unknown errors stay unmarked → generic message.
 function userError(message: string): Error {
-  const e = new Error(message);
-  (e as Error & { userFacing?: boolean }).userFacing = true;
-  return e;
-}
-
-async function pollNanoResult(projectId: string): Promise<string> {
-  const deadline = Date.now() + POLL_MAX_MS;
-  await sleep(1500); // let the background task start
-  while (Date.now() < deadline) {
-    let st;
-    try {
-      st = await nanoGenerateService.getProjectStatus(projectId);
-    } catch {
-      await sleep(POLL_INTERVAL_MS); // transient network / 429 — retry
-      continue;
-    }
-    const status = (st?.status || "").toUpperCase();
-    if (status === "COMPLETED") {
-      if (st.result_url) return st.result_url;
-      throw userError("Generation finished but no image came back — please try again.");
-    }
-    if (status === "FAILED") {
-      // failure_reason is a clean user-facing line (e.g. content-blocked).
-      throw userError(st.failure_reason || "Generation failed. Please try again.");
-    }
-    await sleep(POLL_INTERVAL_MS);
-  }
-  throw userError("This is taking longer than usual — please try again in a moment.");
+  return new NanoGenerationError(message);
 }
 
 type Options = {
