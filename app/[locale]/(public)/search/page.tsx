@@ -344,6 +344,23 @@ export default async function SearchPage({ params, searchParams }: Props) {
     }
   >;
   const templateSearchBlob = new Map<string, string>(); // template_id -> blob
+  // Direction 7 / Stage 10 root-cause finding: template-level strict
+  // promotion (below) treats a match ANYWHERE in this blob as equally
+  // strong evidence, including the long free-text `content.sections.what`
+  // "how it works" paragraph. Confirmed live: template-mbti-breakingbad's
+  // sections.what literally contains "periodic table typography" / zh
+  // "元素周期表排版" (a decorative motif description for a Breaking-Bad-
+  // themed MBTI CHARACTER CARD template, unrelated to actual periodic-
+  // table educational content) -- this alone strict-matches "periodic
+  // table" / "元素周期表" and promotes all 20 of that template's character
+  // card inspirations to score=100 strict. templateTitleCategoryBlob
+  // captures ONLY the high-signal category+title fields (no long
+  // description/how-to text) so the Stage 7/9 scorer can tell "matched
+  // via title/category" apart from "matched only via the description
+  // prose" for template-promoted records, without changing WHICH
+  // templates strict-match (that stays as-is to avoid any recall/zero-
+  // result regression -- see 15_BROAD_TEMPLATE_ROOT_CAUSE_ANALYSIS.md).
+  const templateTitleCategoryBlob = new Map<string, string>();
   for (const loc of localesToScan) {
     let entries: NanoTemplateMessages = {};
     try {
@@ -364,6 +381,15 @@ export default async function SearchPage({ params, searchParams }: Props) {
         tid,
         (templateSearchBlob.get(tid) ?? "") + " " + normalizeForSearch(parts.join(" "))
       );
+      const titleCatParts = [e?.category, e?.title].filter(
+        (v): v is string => typeof v === "string" && v.length > 0
+      );
+      if (titleCatParts.length > 0) {
+        templateTitleCategoryBlob.set(
+          tid,
+          (templateTitleCategoryBlob.get(tid) ?? "") + " " + normalizeForSearch(titleCatParts.join(" "))
+        );
+      }
     }
   }
   // Augment the i18n blob with each template's topic slugs so queries
@@ -608,26 +634,59 @@ export default async function SearchPage({ params, searchParams }: Props) {
     for (const r of nanoInspiration as InspRecord[]) {
       if (promoteAllUnderStrictTpl && strictTpl.has(r.template_id)) {
         // Template-level strict promotion: broad-recall path (see doc
-        // comment above). The signal backing this record IS the
-        // template's own blob (title/category/description), so treat
-        // title+tags as present for scoring purposes; check the actual
-        // template blob for exact-phrase evidence rather than assuming.
-        const tplBlob = templateSearchBlob.get(r.template_id) ?? "";
-        let exactPhraseHit = originalProtectedPhrases.some((p) => tplBlob.includes(p));
+        // comment above) -- retrieval/promotion itself is UNCHANGED (an
+        // inspiration is still promoted whenever its template strict-
+        // matches anywhere in the full blob, preserving recall / not
+        // risking a new zero-result case). What changed (Stage 10 root-
+        // cause fix) is the SCORING evidence: previously this branch
+        // hardcoded titleHit/tagsHit/subjectPresent=true unconditionally,
+        // which meant a match buried in the template's long free-text
+        // `content.sections.what` "how it works" prose scored identically
+        // to a match in the title/category. Confirmed live: template-
+        // mbti-breakingbad's sections.what literally contains "periodic
+        // table typography" (a decorative motif description, not
+        // periodic-table content), which strict-matched "periodic table"
+        // / "元素周期表" and promoted all 20 Breaking-Bad character cards
+        // with no scoring penalty at all — see
+        // 15_BROAD_TEMPLATE_ROOT_CAUSE_ANALYSIS.md. Now titleHit /
+        // subjectPresent are evaluated against templateTitleCategoryBlob
+        // (title+category ONLY, no description/how-to text); a match
+        // that only exists in the broader description still promotes the
+        // record (recall preserved) but is correctly scored as weaker
+        // evidence.
+        const tplTitleCatBlob = templateTitleCategoryBlob.get(r.template_id) ?? "";
+        let exactPhraseHit = originalProtectedPhrases.some((p) => tplTitleCatBlob.includes(p));
         if (!exactPhraseHit && originalQueryPhraseText.includes(" ")) {
-          exactPhraseHit = tplBlob.includes(originalQueryPhraseText);
+          exactPhraseHit = tplTitleCatBlob.includes(originalQueryPhraseText);
+        }
+        const titleHit =
+          scoreBlob(tplTitleCatBlob, tokens).allPrimary ||
+          scoreBlob(tplTitleCatBlob, tokens).bigramHits > 0;
+        let subjectPresent: boolean;
+        if (originalProtectedPhrases.length > 0) {
+          const anchors = getAnchorTokens(originalProtectedPhrases);
+          subjectPresent =
+            originalProtectedPhrases.some((p) => tplTitleCatBlob.includes(p)) ||
+            anchors.some((a) => tokenInBlob(tplTitleCatBlob, a));
+        } else if (originalPrimaryTokensForSubject.length <= 1) {
+          subjectPresent = titleHit;
+        } else {
+          const subjectToken = [...originalPrimaryTokensForSubject].sort(
+            (a, b) => b.length - a.length
+          )[0];
+          subjectPresent = tokenInBlob(tplTitleCatBlob, subjectToken);
         }
         scored.push({
           rec: r,
           score: 100,
           strict: true,
           fields: {
-            titleHit: true,
-            tagsHit: true,
+            titleHit,
+            tagsHit: true, // the full blob (tags/topics/description) did strict-match by definition
             paramsOnlyHit: false,
             exactPhraseHit,
             substringOnly: false,
-            subjectPresent: true,
+            subjectPresent,
           },
         });
         continue;
