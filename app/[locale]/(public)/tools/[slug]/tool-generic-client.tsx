@@ -28,6 +28,7 @@ import EcommercePhotoGenerate, {
   type EcommercePhotoData,
 } from "@/app/[locale]/_components/EcommercePhotoGenerate";
 import ProductVideoGenerate from "@/app/[locale]/_components/ProductVideoGenerate";
+import CostumeTryonGenerate from "@/app/[locale]/_components/CostumeTryonGenerate";
 import CreateNewModal from "../CreateNewModal";
 
 // Map the existing "deep.usecases.X" subsection keys to the persona slugs
@@ -151,6 +152,10 @@ export default function ToolGenericClient({
         ) : tool.action?.type === "product_video" ? (
           // Real inline product-video tool: structured input → PRODUCT_VIDEO job.
           <ProductVideoGenerate />
+        ) : tool.action?.type === "costume_tryon" ? (
+          // Anonymous viral costume try-on: upload one photo → dynasty-costume
+          // transformation mp4. No sign-in required (own multipart endpoint).
+          <CostumeTryonGenerate />
         ) : tool.status === "create" && tool.action?.type === "modal" ? (
           <button
             onClick={handleTryItClick}

@@ -12,6 +12,11 @@ export type ToolAction =
   // Inline product-video generate surface (structured input → mp4) on the tool
   // page — backed by the PRODUCT_VIDEO backend job.
   | { type: "product_video" }
+  // Anonymous viral "Chinese costume try-on" video surface — upload one photo
+  // → cinematic dynasty-costume transformation mp4. No sign-in; the raw file is
+  // posted straight to /costume-tryon/generate (bypasses the auth-gated
+  // /images/upload flow). Rendered by CostumeTryonGenerate.
+  | { type: "costume_tryon" }
   | { type: "none" };
 
 export type ToolDemo =
@@ -356,6 +361,29 @@ export const TOOL_REGISTRY: ToolDef[] = [
       type: "single_video",
       src: "/video/demo_product_video.mp4",
     },
+  },
+
+  {
+    // Viral top-of-funnel toy: upload one selfie → a cinematic Chinese
+    // dynasty-costume transformation video ("try on 5,000 years of Chinese
+    // fashion"). Deliberately ANONYMOUS (no sign-in) to maximize share-driven
+    // reach — the raw photo is posted straight to /costume-tryon/generate and
+    // we poll /projects/{id}/status for the mp4. status "demo" keeps the card
+    // navigating to the tool page; the "costume_tryon" action relabels the CTA
+    // "Create" and renders the inline CostumeTryonGenerate surface (3 demo
+    // clips + upload → gender toggle → optional email → generate). No demo
+    // asset on the registry — the page shows the demo videos itself.
+    id: "chinese-costume-tryon",
+    slug: "chinese-costume-tryon",
+    groupId: "video",
+    status: "demo",
+    // Unused by the costume_tryon action (its own service bypasses the nano
+    // job path); required field.
+    job_type: "video_transcript",
+    namespace: "costumeTryon",
+    action: { type: "costume_tryon" },
+    i18n: toolKeys("costume_tryon"),
+    seo: seoKeys("costume_tryon"),
   },
 
   {
