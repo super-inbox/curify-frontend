@@ -5,7 +5,53 @@ import ToolGenericClient from "./tool-generic-client";
 import { resolveToolNamespaceOr404 } from "@/lib/tool-page-guard";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import type { EcommercePhotoData } from "@/app/[locale]/_components/EcommercePhotoGenerate";
-import type { TemplateParameter } from "@/lib/nano_pure";
+import type { TemplateParameter, NanoInspirationCardType } from "@/lib/nano_pure";
+import {
+  buildNanoRegistry,
+  type RawTemplate,
+  type RawNanoImageRecord,
+} from "@/lib/nano_utils";
+import { buildNanoFeedCards } from "@/lib/nano_page_data";
+import { resolveContentLocale } from "@/lib/locale_utils";
+import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoImages from "@/public/data/nano_inspiration.json";
+
+// Curated, intent-matched related templates per image-gen tool. Rendered as a
+// 1-2 row strip directly below the inline workflow to deepen the landing page
+// and lift conversion. Hand-picked (not topic-auto) so each tool surfaces
+// on-intent templates; excludes the tool's own backing template.
+const TOOL_RELATED_TEMPLATE_IDS: Record<string, string[]> = {
+  "character-sticker-sheet": [
+    "template-football-star-chibi-sticker-set",
+    "template-ip-character-sprite-emoji-sheet",
+    "template-celebrity-meme-sticker-merchandise-collection-poster",
+    "template-food-photo-doodle-sticker-overlay",
+    "template-city-landmark-fridge-magnet-collection",
+    "template-ip-creative-cultural-goods-mockup-set",
+    "template-ip-gift-box-stationery-set-mockup",
+    "template-brand-ip-mascot-design-board",
+  ],
+  mockup: [
+    "template-ip-creative-cultural-goods-mockup-set",
+    "template-ip-gift-box-stationery-set-mockup",
+    "template-brand-vi-full-visual-pack-mockup",
+    "template-brand-ip-mascot-design-board",
+    "template-brand-identity-moodboard-visual-system-poster",
+    "template-vintage-collage-fashion-collection-poster",
+    "template-mbti-nba",
+    "template-football-star-chibi-sticker-set",
+  ],
+  "ecommerce-photo": [
+    "template-fruit-commercial-lifestyle-infographic-poster",
+    "template-amazon-long-scroll-product-infographic-template",
+    "template-eco-farm-food-uniform-product-label",
+    "template-luxury-vintage-gem-necklace-design-sheet",
+    "template-fashion-shape-guide-infographic",
+    "template-ip-gift-box-stationery-set-mockup",
+    "template-ip-creative-cultural-goods-mockup-set",
+    "template-brand-identity-moodboard-visual-system-poster",
+  ],
+};
 
 export async function generateMetadata({
   params,
@@ -75,5 +121,38 @@ export default async function ToolPage({
     };
   }
 
-  return <ToolGenericClient slug={slug} generateData={generateData} />;
+  // Curated related-templates strip (rendered below the workbench) for the 3
+  // image-gen tools. Built SERVER-SIDE from the registry — the client receives
+  // only the small serialized card array, never the templates JSON.
+  let relatedTemplateCards: NanoInspirationCardType[] | undefined;
+  const curatedIds = TOOL_RELATED_TEMPLATE_IDS[slug];
+  if (curatedIds?.length) {
+    const tNano = await getTranslations({ locale, namespace: "nano" });
+    const translateNano = (key: string): string => {
+      try {
+        return tNano(key as never) ?? "";
+      } catch {
+        return "";
+      }
+    };
+    const reg = buildNanoRegistry(
+      nanoTemplates as unknown as RawTemplate[],
+      nanoImages as unknown as RawNanoImageRecord[]
+    );
+    relatedTemplateCards = buildNanoFeedCards(reg, resolveContentLocale(locale), {
+      templateIds: curatedIds,
+      translate: translateNano,
+      perTemplateMaxImages: 1,
+      strictLocale: false,
+      limit: 8,
+    });
+  }
+
+  return (
+    <ToolGenericClient
+      slug={slug}
+      generateData={generateData}
+      relatedTemplateCards={relatedTemplateCards}
+    />
+  );
 }
