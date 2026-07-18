@@ -118,7 +118,8 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
               // A "generate" action is a real inline tool (not a demo), so
               // label it Create even though it navigates like a demo card.
               tool.action?.type === "generate" ||
-              tool.action?.type === "product_video" ? (
+              tool.action?.type === "product_video" ||
+              tool.action?.type === "costume_tryon" ? (
                 // Real inline tool (image2image or product-video) → primary
                 // "Create" button, same look as the video Create cards.
                 // Navigates (via the wrapping <Link>) to the tool page's inline
@@ -147,7 +148,10 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
             <Link
               key={tool.id}
               href={`/tools/${tool.slug}${
-                tool.action?.type === "generate" ? "#reproduce" : ""
+                tool.action?.type === "generate" ||
+                tool.action?.type === "costume_tryon"
+                  ? "#reproduce"
+                  : ""
               }`}
               onClick={() => {
                 // For demo cards (canNavigate but not canCreate), the card

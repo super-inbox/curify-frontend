@@ -6824,5 +6824,44 @@
         "prompts": "Versuchen Sie 'Havoc in Heaven — Jade Emperor, Sun Wukong, Erlang Shen', 'Die drei kleinen Schweinchen — drei Schweine und der große böse Wolf'."
       }
     }
+  },
+  "template-minimalist-product-design-presentation-board": {
+    "category": "Minimalist Produktdesign-Board",
+    "description": "Verwandeln Sie ein Produktkonzept in ein sauberes, minimalistisches Produktdesign-Präsentationsboard.",
+    "title": "Nano Banana Prompt: Minimalistisches Produktdesign-Präsentationsboard | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein minimalistisches Produktdesign-Präsentationsboard zum Thema {product_design_info}: ein festes Multi-Modul-Layout mit einer Hero-Produktdarstellung, Design-Inspirationsnotizen, Feature-Highlights, Materialien/Farbvarianten und Spezifikationen in einem sauberen redaktionellen Raster.",
+        "who": "Produkt- und Industriedesigner, Hardware-Startups, Agenturen und Designstudenten, die Pitch-/Portfolio-Boards erstellen.",
+        "how": "Geben Sie den Produktnamen + die Designgeschichte ein (Inspiration, Hauptmerkmale, Materialien). Ein Klick erstellt das Board.",
+        "prompts": "Versuchen Sie 'WAVE Tragbarer Lautsprecher, Küsten-inspirierte fließende Kurven, Stoff + Aluminium', 'AURA Smart Lampe, minimalistisches skandinavisches Konzept'."
+      }
+    }
+  },
+  "template-interior-design-moodboard": {
+    "category": "Innenarchitektur Moodboard",
+    "description": "Erstellen Sie ein stilvolles Innenarchitektur-Moodboard für jeden Raum und jede Ästhetik.",
+    "title": "Nano Banana Prompt: Innenarchitektur Moodboard | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein Innenarchitektur-Moodboard zum Thema {interior_style_theme}: ein koordiniertes Board mit Raumdarstellung, Material- und Oberflächenmustern, Farbpalette, Möbel- und Dekorreferenzen sowie Stilnotizen.",
+        "who": "Innenarchitekten, Home Stager, Renovierungskunden und Dekor-Inhaltsersteller.",
+        "how": "Geben Sie den Raum + Stil ein (z.B. 'Japandi-Wohnzimmer', 'moderne Kohle-Luxusresidenz'). Ein Klick erstellt das Moodboard.",
+        "prompts": "Versuchen Sie 'Moderne Luxus-Kohle-Residenz, dunkle elegante Palette', 'Japandi-Wohnzimmer, warmes Holz + Leinen', 'Küsten-minimalistisches Schlafzimmer'."
+      }
+    }
+  },
+  "template-industrial-design-product-presentation-board": {
+    "category": "Industriedesign-Präsentationsboard",
+    "description": "Erstellen Sie ein Industriedesign-Produktpräsentationsboard mit Darstellungen, Highlights und Spezifikationen.",
+    "title": "Nano Banana Prompt: Industriedesign-Produktpräsentationsboard | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein Industriedesign-Produktpräsentationsboard zum Thema {product_design_param}: Hero-Darstellung plus Tagline, Feature-/Nutzen-Highlights, Nutzungsszenen, Abmessungen und Material-Spezifikationen in einem polierten Produktmarketing-Layout.",
+        "who": "Industriedesigner, DTC- und Hardware-Marken, Crowdfunding-Ersteller und Designagenturen.",
+        "how": "Geben Sie den Produktnamen, die Tagline und die Hauptmerkmale ein. Ein Klick erstellt das Präsentationsboard.",
+        "prompts": "Versuchen Sie 'PORTABLE BLENDER BOTTLE, Tragbar. Leistungsstark. Frisch.', 'Ergonomischer Bürostuhl, den ganzen Tag Komfort'."
+      }
+    }
   }
 }

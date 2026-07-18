@@ -6824,5 +6824,44 @@
         "prompts": "Essayez 'Havoc in Heaven — Empereur de Jade, Sun Wukong, Erlang Shen', 'Trois Petits Cochons — trois cochons et le grand méchant loup'."
       }
     }
+  },
+  "template-minimalist-product-design-presentation-board": {
+    "category": "Tableau de Présentation de Design de Produit Minimaliste",
+    "description": "Transformez un concept de produit en un tableau de présentation de design de produit minimaliste et épuré.",
+    "title": "Nano Banana Prompt: Tableau de Présentation de Design de Produit Minimaliste | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle rend un tableau de présentation de design de produit minimaliste thématique {product_design_info} : une mise en page multi-modules fixe avec un rendu de produit héros, des notes d'inspiration de design, des appels de fonctionnalités, des matériaux/coloris et des spécifications dans une grille éditoriale épurée.",
+        "who": "Designers de produits et industriels, startups matérielles, agences et étudiants en design construisant des tableaux de pitch/portfolio.",
+        "how": "Entrez le nom du produit + l'histoire de design (inspiration, caractéristiques clés, matériaux). Un clic rend le tableau.",
+        "prompts": "Essayez 'Haut-parleur Portable WAVE, inspiration de courbe fluide côtière, tissu + aluminium', 'Lampe Intelligente AURA, concept scandinave minimaliste'."
+      }
+    }
+  },
+  "template-interior-design-moodboard": {
+    "category": "Moodboard de Design Intérieur",
+    "description": "Générez un moodboard de design intérieur stylé pour n'importe quel espace et esthétique.",
+    "title": "Nano Banana Prompt: Moodboard de Design Intérieur | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle rend un moodboard de design intérieur thématique {interior_style_theme} : un tableau coordonné avec rendu de pièce, échantillons de matériaux et de finitions, palette de couleurs, références de meubles et de décor, et notes de style.",
+        "who": "Designers d'intérieur, home stagers, clients de rénovation et créateurs de contenu de décor.",
+        "how": "Entrez l'espace + le style (par exemple, 'salon Japandi', 'résidence de luxe moderne en charbon'). Un clic rend le moodboard.",
+        "prompts": "Essayez 'Résidence de Luxe Moderne en Charbon, palette élégante sombre', 'salon Japandi, bois chaud + lin', 'chambre minimaliste côtière'."
+      }
+    }
+  },
+  "template-industrial-design-product-presentation-board": {
+    "category": "Tableau de Présentation de Design Industriel",
+    "description": "Créez un tableau de présentation de produit de design industriel avec rendus, appels et spécifications.",
+    "title": "Nano Banana Prompt: Tableau de Présentation de Produit de Design Industriel | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle rend un tableau de présentation de produit de design industriel thématique {product_design_param} : rendu héros plus slogan, appels de fonctionnalités/bénéfices, scènes d'utilisation, dimensions et spécifications de matériaux dans une mise en page de marketing produit soignée.",
+        "who": "Designers industriels, marques DTC et matérielles, créateurs de crowdfunding et agences de design.",
+        "how": "Entrez le nom du produit, le slogan et les caractéristiques clés. Un clic rend le tableau de présentation.",
+        "prompts": "Essayez 'BOUTEILLE DE MIXEUR PORTABLE, Portable. Puissant. Frais.', 'Chaise de Bureau Ergonomique, confort toute la journée'."
+      }
+    }
   }
 }

@@ -27,9 +27,15 @@ export interface NanoProjectStatus {
 }
 
 export const nanoGenerateService = {
-  async generate(data: NanoGenerateRequest): Promise<NanoGenerateResponse> {
+  async generate(
+    data: NanoGenerateRequest,
+    options: { locale?: string } = {},
+  ): Promise<NanoGenerateResponse> {
     return apiClient.request<NanoGenerateResponse>("/nano-templates/generate", {
       method: "POST",
+      headers: options.locale
+        ? { "Accept-Language": options.locale }
+        : undefined,
       body: JSON.stringify(data),
     });
   },

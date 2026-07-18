@@ -14,6 +14,7 @@
 import OpenAI from "openai";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import enNano from "@/messages/en/nano.json";
+import capabilityKb from "@/scripts/configs/template_capability_kb.json";
 import { getOutputIntent, INTENT_META, type OutputIntent } from "@/lib/output_intent";
 
 const MODEL = "gpt-4o-mini";
@@ -27,6 +28,21 @@ type TemplateShape = {
 };
 
 type NanoMessages = Record<string, { description?: string } | undefined>;
+
+type CapabilityEntry = {
+  template_id: string;
+  sample_param_values?: string[];
+  search_aliases?: string[];
+  inspiration_topics?: string[];
+  template_topics?: string[];
+};
+
+const CAPABILITY_BY_ID = new Map(
+  (capabilityKb.templates as CapabilityEntry[]).map((entry) => [
+    entry.template_id,
+    entry,
+  ]),
+);
 
 // Build the catalog blob once at module load. Limits to templates with
 // allow_generation=true so the matcher can't suggest a template the
@@ -45,6 +61,48 @@ function buildCatalogBlob(): string {
       .filter((n): n is string => Boolean(n))
       .join(",");
     lines.push(`- ${t.id} | params=[${params}] | ${desc}`);
+  }
+  return lines.join("\n");
+}
+
+/**
+ * Build a small evidence-rich catalog for the hybrid planner's final pass.
+ * The global matcher stays description-only for recall diversity; only the
+ * union of Path A + Path B candidates receives capability evidence here, so
+ * real aliases/examples help the decision without sending the entire 500KB KB
+ * to the model on every search.
+ */
+function buildTargetedCatalogBlob(templateIds: string[]): string {
+  const wanted = new Set(templateIds);
+  const lines: string[] = [];
+  const en = enNano as NanoMessages;
+  for (const t of nanoTemplates as TemplateShape[]) {
+    if (!wanted.has(t.id) || t.allow_generation !== true) continue;
+    const desc = (en[t.id]?.description ?? "")
+      .replace(/\s+/g, " ")
+      .slice(0, 240);
+    const params = (t.locales?.en?.parameters ?? [])
+      .map((p) => p?.name)
+      .filter((n): n is string => Boolean(n));
+    const kb = CAPABILITY_BY_ID.get(t.id);
+    const examples = (kb?.sample_param_values ?? []).slice(0, 8);
+    const evidence = [
+      ...(kb?.search_aliases ?? []),
+      ...(kb?.inspiration_topics ?? []),
+      ...(kb?.template_topics ?? []),
+    ];
+    const aliases = [...new Set(evidence)].slice(0, 12);
+    lines.push(
+      [
+        `- ${t.id}`,
+        `required_params=[${params.join(",")}]`,
+        desc,
+        examples.length ? `examples=[${examples.join("; ")}]` : "",
+        aliases.length ? `capabilities=[${aliases.join(", ")}]` : "",
+      ]
+        .filter(Boolean)
+        .join(" | "),
+    );
   }
   return lines.join("\n");
 }
@@ -225,6 +283,89 @@ export async function matchTemplatesForQuery(
         template_id: tid,
         params: sanitizeParams((m as { params?: unknown }).params),
         confidence: conf,
+        reason: String((m as { reason?: unknown }).reason ?? ""),
+        og_image: TEMPLATE_OG.get(tid),
+        output_intent: intent,
+        cta: INTENT_META[intent].cta,
+      });
+      if (cleanedMatches.length >= 3) break;
+    }
+    cacheSet(cacheKey, cleanedMatches);
+    return cleanedMatches;
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Final hybrid-planner pass over a targeted Path A + Path B candidate pool.
+ * Reuses the production matcher contract, but supplies richer evidence and
+ * never lets the model select outside the provided candidates.
+ */
+export async function rerankTemplateCandidatesForQuery(
+  query: string,
+  candidateIds: string[],
+): Promise<TemplateMatch[]> {
+  const trimmed = query.trim();
+  const allowedIds = [...new Set(candidateIds)]
+    .filter((id) => TEMPLATE_IDS.has(id))
+    .slice(0, 14);
+  if (trimmed.length < 2 || allowedIds.length === 0) return [];
+
+  const client = getClient();
+  if (!client) return [];
+
+  const catalog = buildTargetedCatalogBlob(allowedIds);
+  if (!catalog) return [];
+  const cacheKey = `targeted:${trimmed.toLowerCase()}:${allowedIds.join(",")}`;
+  const cached = cacheGet(cacheKey);
+  if (cached) return cached;
+
+  try {
+    const res = await client.chat.completions.create({
+      model: MODEL,
+      temperature: 0.1,
+      max_tokens: 800,
+      messages: [
+        {
+          role: "system",
+          content:
+            SYSTEM_PROMPT.replace("{catalog}", catalog) +
+            "\n\nEvery required_params key must be present and non-empty. " +
+            "Return 1-3 candidates only when confidence is at least 0.60. " +
+            "Do not pad the list and do not select a template outside this catalog.",
+        },
+        { role: "user", content: `Query: ${trimmed}` },
+      ],
+    });
+    const raw = res.choices?.[0]?.message?.content?.trim() ?? "";
+    const cleaned = raw
+      .replace(/^```(?:json)?\s*/i, "")
+      .replace(/```\s*$/i, "")
+      .trim();
+    const parsed = JSON.parse(cleaned);
+    const matches = Array.isArray(parsed?.matches) ? parsed.matches : [];
+    const allowed = new Set(allowedIds);
+    const cleanedMatches: TemplateMatch[] = [];
+    const seen = new Set<string>();
+    for (const m of matches) {
+      if (!m || typeof m !== "object") continue;
+      const tid = (m as { template_id?: unknown }).template_id;
+      if (typeof tid !== "string" || !allowed.has(tid) || seen.has(tid)) {
+        continue;
+      }
+      const confRaw = (m as { confidence?: unknown }).confidence;
+      const confidence =
+        typeof confRaw === "number"
+          ? Math.max(0, Math.min(1, confRaw))
+          : 0;
+      if (confidence < 0.6) continue;
+      seen.add(tid);
+      const intent = getOutputIntent(tid);
+      cleanedMatches.push({
+        template_id: tid,
+        params: sanitizeParams((m as { params?: unknown }).params),
+        confidence,
         reason: String((m as { reason?: unknown }).reason ?? ""),
         og_image: TEMPLATE_OG.get(tid),
         output_intent: intent,

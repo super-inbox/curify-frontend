@@ -24,10 +24,13 @@ import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVi
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
+import TemplateStrip from "@/app/[locale]/_components/TemplateStrip";
+import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import EcommercePhotoGenerate, {
   type EcommercePhotoData,
 } from "@/app/[locale]/_components/EcommercePhotoGenerate";
 import ProductVideoGenerate from "@/app/[locale]/_components/ProductVideoGenerate";
+import CostumeTryonGenerate from "@/app/[locale]/_components/CostumeTryonGenerate";
 import CreateNewModal from "../CreateNewModal";
 
 // Map the existing "deep.usecases.X" subsection keys to the persona slugs
@@ -43,11 +46,15 @@ const USECASE_SECTION_TO_PERSONA: Record<string, string> = {
 export default function ToolGenericClient({
   slug,
   generateData,
+  relatedTemplateCards,
 }: {
   slug: string;
   // Template data for "generate"-action tools (ecommerce-photo), loaded
   // server-side and threaded down so the client never imports the templates JSON.
   generateData?: EcommercePhotoData;
+  // Curated related-template cards for the image-gen tools, built server-side
+  // in page.tsx (small serialized array — no templates JSON in the client bundle).
+  relatedTemplateCards?: NanoInspirationCardType[];
 }) {
   const tool = getToolBySlug(slug);
   if (!tool) return null;
@@ -151,6 +158,10 @@ export default function ToolGenericClient({
         ) : tool.action?.type === "product_video" ? (
           // Real inline product-video tool: structured input → PRODUCT_VIDEO job.
           <ProductVideoGenerate />
+        ) : tool.action?.type === "costume_tryon" ? (
+          // Anonymous viral costume try-on: upload one photo → dynasty-costume
+          // transformation mp4. No sign-in required (own multipart endpoint).
+          <CostumeTryonGenerate />
         ) : tool.status === "create" && tool.action?.type === "modal" ? (
           <button
             onClick={handleTryItClick}
@@ -168,6 +179,21 @@ export default function ToolGenericClient({
           </p>
         )}
       </div>
+
+      {/* Related templates — 1-2 rows of on-intent template cards directly below
+          the inline workflow, to give visitors more to try and lift conversion. */}
+      {relatedTemplateCards && relatedTemplateCards.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold mb-4 text-[var(--c1)]">
+            {tGlobal("interconnection.relatedTemplates")}
+          </h2>
+          <TemplateStrip
+            cards={relatedTemplateCards}
+            trackPrefix="tool-related-templates"
+            maxRows={8}
+          />
+        </section>
+      )}
 
       <section className="mt-16">
         <h2 className="text-2xl font-semibold mb-4 text-[var(--c1)]">{t("why.title")}</h2>

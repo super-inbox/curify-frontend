@@ -6824,5 +6824,44 @@
         "prompts": "Prueba 'Caos en el Cielo — Emperador de Jade, Sun Wukong, Erlang Shen', 'Los Tres Cerditos — tres cerdos y el gran lobo malo'."
       }
     }
+  },
+  "template-minimalist-product-design-presentation-board": {
+    "category": "Tablero de Diseño de Producto Minimalista",
+    "description": "Convierte un concepto de producto en un tablero de presentación de diseño de producto minimalista y limpio.",
+    "title": "Nano Banana Prompt: Tablero de Presentación de Diseño de Producto Minimalista | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un tablero de presentación de diseño de producto minimalista con el tema {product_design_info}: un diseño de múltiples módulos fijo con un render de producto destacado, notas de inspiración de diseño, llamadas a características, materiales/colores y especificaciones en una cuadrícula editorial limpia.",
+        "who": "Diseñadores de productos e industriales, startups de hardware, agencias y estudiantes de diseño que construyen tableros de presentación/portafolio.",
+        "how": "Ingresa el nombre del producto + historia de diseño (inspiración, características clave, materiales). Un clic genera el tablero.",
+        "prompts": "Prueba 'ALTAVOZ PORTÁTIL WAVE, inspiración de curva fluida costera, tela + aluminio', 'LÁMPARA INTELIGENTE AURA, concepto escandinavo minimalista'."
+      }
+    }
+  },
+  "template-interior-design-moodboard": {
+    "category": "Tablero de Estilo de Diseño de Interiores",
+    "description": "Genera un tablero de estilo de diseño de interiores para cualquier espacio y estética.",
+    "title": "Nano Banana Prompt: Tablero de Diseño de Interiores | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un tablero de estilo de diseño de interiores con el tema {interior_style_theme}: un tablero coordinado con render de habitación, muestras de materiales y acabados, paleta de colores, referencias de muebles y decoración, y notas de estilo.",
+        "who": "Diseñadores de interiores, organizadores de casas, clientes de renovación y creadores de contenido de decoración.",
+        "how": "Ingresa el espacio + estilo (por ejemplo, 'salón Japandi', 'residencia de lujo moderna en carbón'). Un clic genera el tablero de estilo.",
+        "prompts": "Prueba 'Residencia de Lujo Moderna en Carbón, paleta oscura y elegante', 'salón Japandi, madera cálida + lino', 'dormitorio costero minimalista'."
+      }
+    }
+  },
+  "template-industrial-design-product-presentation-board": {
+    "category": "Tablero de Presentación de Diseño Industrial",
+    "description": "Crea un tablero de presentación de producto de diseño industrial con renders, llamadas y especificaciones.",
+    "title": "Nano Banana Prompt: Tablero de Presentación de Producto de Diseño Industrial | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un tablero de presentación de producto de diseño industrial con el tema {product_design_param}: render destacado más eslogan, llamadas a características/beneficios, escenas de uso, dimensiones y especificaciones de materiales en un diseño de marketing de producto pulido.",
+        "who": "Diseñadores industriales, marcas DTC y de hardware, creadores de crowdfunding y agencias de diseño.",
+        "how": "Ingresa el nombre del producto, eslogan y características clave. Un clic genera el tablero de presentación.",
+        "prompts": "Prueba 'BOTELLA DE MEZCLADOR PORTÁTIL, Portátil. Potente. Fresco.', 'Silla de Oficina Ergonómica, comodidad todo el día'."
+      }
+    }
   }
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Wand2 } from "lucide-react";
+import { Wand2, Copy } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
@@ -184,8 +184,8 @@ export default function ExampleGeneratePanel({
             type="button"
             className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 cursor-pointer"
           >
-            <Wand2 className="h-4 w-4" />
-            {copied ? t("copied") : t("generate")}
+            <Copy className="h-4 w-4" />
+            {copied ? t("copied") : t("copyPrompt")}
           </button>
         )}
       </div>
