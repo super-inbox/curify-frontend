@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { Wand2, Loader2, Download, ArrowUpRight, ChevronDown } from "lucide-react";
+import { Wand2, Loader2, Download, ArrowUpRight, ChevronDown, Copy } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 
@@ -484,7 +484,7 @@ export default function ReproduceWorkbench({
                   onClick={handleCopyGenerate}
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700"
                 >
-                  <Wand2 className="h-4 w-4" /> {copied ? t("copied") : t("generate")}
+                  <Copy className="h-4 w-4" /> {copied ? t("copied") : t("copyPrompt")}
                 </button>
               )}
             </div>
