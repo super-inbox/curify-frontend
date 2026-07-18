@@ -19,10 +19,12 @@ import { normalizePrefills, type TemplateParameter } from "@/lib/nano_prompt_uti
 import type { ExistingExampleRef } from "@/lib/editDistance";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
-import { getTemplateWorkflows, videoShowWorkflow } from "@/lib/template_workflows";
+import { getTemplateWorkflows, videoShowWorkflow, packPdfWorkflow } from "@/lib/template_workflows";
+import { getPackTiers } from "@/lib/template_packs";
 import { getOutputIntent } from "@/lib/output_intent";
 import { resizeToSocialBundle, sliceIntoGrid, makePrintReady } from "@/lib/resize_bundle";
-import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
+import { templatePacksService } from "@/services/templatePacks";
+import { userAtom, clientMountedAtom, drawerAtom, modalAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
 
 const CREDITS_COST = 10;
@@ -107,6 +109,8 @@ export default function ReproduceWorkbench({
   const { trackAction, track } = useTracking();
   const [user] = useAtom(userAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
+  const [, setDrawer] = useAtom(drawerAtom);
+  const [, setModal] = useAtom(modalAtom);
 
   // Seed empty params from their placeholder/default so a required field is
   // never sent blank (some examples ship empty values + have no picker).
@@ -197,16 +201,21 @@ export default function ReproduceWorkbench({
   const transformSource = heroUrl;
   const workflows = useMemo(() => {
     const base = getTemplateWorkflows(templateId);
-    // Lead column 3 with a zero-cost reveal tile for the ~109 templates that ship
-    // a rendered intro video — no wait, no credits. Vocab/education templates get
-    // "Read this" (readable narrative asset); visual templates get "Watch video".
-    if (!introVideoUrl) return base;
     const educational = getOutputIntent(templateId) === "education";
-    const videoTile = videoShowWorkflow(
-      introVideoUrl,
-      educational ? { label: "Read this", hint: "Read the lesson" } : undefined,
-    );
-    return [videoTile, ...base];
+    // Lead column 3 with the concrete deliverables: any downloadable PDF pack
+    // (free 5-pack + paid 50/100 via points) first, then a zero-cost intro-video
+    // reveal tile for templates that ship one. Vocab/education templates label the
+    // video "Read this" (readable narrative asset); visual templates "Watch video".
+    const lead = getPackTiers(templateId).map(packPdfWorkflow);
+    if (introVideoUrl) {
+      lead.push(
+        videoShowWorkflow(
+          introVideoUrl,
+          educational ? { label: "Read this", hint: "Read the lesson" } : undefined,
+        ),
+      );
+    }
+    return [...lead, ...base];
   }, [templateId, introVideoUrl]);
 
   const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
@@ -244,6 +253,48 @@ export default function ReproduceWorkbench({
       setSoonNote(null);
       setShownVideoUrl(wf.videoUrl);
       track({ contentId: `workflow-video:${templateId}`, contentType: tracking.contentType, actionType: "click" });
+      return;
+    }
+    // Download a pre-built PDF pack: free 5-pack, or a paid 50/100-pack via points.
+    // The backend serves the signed URL and charges points on the first paid
+    // download (buy-once; free re-download after). Insufficient balance comes back
+    // as success:false + code INSUFFICIENT_CREDITS (200) → open the top-up modal.
+    if (wf.kind === "pack-pdf") {
+      const size = (wf.packSize ?? 5) as 5 | 50 | 100;
+      if (!user) {
+        track({ contentId: `auth-modal:pack-pdf:${templateId}`, contentType: "topic_capsule", actionType: "click" });
+        setDrawer("signin");
+        return;
+      }
+      if (activeKey) return;
+      setSoonNote(null);
+      setActiveKey(wf.key);
+      try {
+        const res = await templatePacksService.downloadPack({ template_id: templateId, size, format: "pdf" });
+        if (!res?.success) {
+          if (res?.code === "INSUFFICIENT_CREDITS") {
+            setSoonNote(
+              `This ${size}-card pack costs ${res.points_required} points — you have ${res.balance ?? 0}. Top up to unlock.`,
+            );
+            setModal("topup");
+            return;
+          }
+          throw new Error(res?.message || "Missing download_url");
+        }
+        if (res.download_url) {
+          const a = document.createElement("a");
+          a.href = res.download_url;
+          a.rel = "noopener noreferrer";
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+        }
+        track({ contentId: `workflow-${wf.key}:${templateId}`, contentType: tracking.contentType, actionType: "download" });
+      } catch {
+        setSoonNote("Couldn't prepare the PDF pack. Please try again.");
+      } finally {
+        setActiveKey(null);
+      }
       return;
     }
     if (wf.kind === "soon") {

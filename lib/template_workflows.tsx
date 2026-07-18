@@ -1,4 +1,4 @@
-import { Crop, Images, LayoutGrid, PlayCircle, Printer, Scissors, Shapes, type LucideIcon } from "lucide-react";
+import { Crop, FileDown, Images, LayoutGrid, Lock, PlayCircle, Printer, Scissors, Shapes, type LucideIcon } from "lucide-react";
 import { PRODUCTION_TILES } from "./gallery_production_tiles";
 import { getOutputIntent, type OutputIntent } from "./output_intent";
 
@@ -32,13 +32,39 @@ export type TemplateWorkflow = {
   // "transform"  = preset image2image prompt through the freeform pipeline;
   // "resize"     = client-side canvas export (no backend, no credits);
   // "video-show" = reveal an already-rendered template intro video (free, instant);
+  // "print-ready"= client-side bleed pass on an already-poster result;
+  // "pack-pdf"   = download a pre-built PDF pack (free 5 / paid 50·100 via points);
   // "soon"       = un-promptable future deliverable (placeholder).
-  kind: "transform" | "resize" | "soon" | "video-show" | "print-ready";
+  kind: "transform" | "resize" | "soon" | "video-show" | "print-ready" | "pack-pdf";
   /** Preset image2image prompt — present for kind "transform". */
   prompt?: string;
   /** Relative CDN video path — present for kind "video-show". */
   videoUrl?: string;
+  /** Pack size (5/50/100) — present for kind "pack-pdf". */
+  packSize?: number;
+  /** Points cost of the pack (0 = free) — present for kind "pack-pdf". */
+  packPointsCost?: number;
 };
+
+// Column-3 download tile for a template that has a pre-built PDF pack (registry:
+// lib/template_packs.json → backend app/data/template_packs.json). Free 5-pack or
+// a paid 50/100-pack charged in points. Clicking calls
+// templatePacksService.downloadPack({template_id, size, format:"pdf"}) and, for a
+// paid tier the user can't afford, opens the top-up modal (handled in
+// ReproduceWorkbench.runWorkflow). Prepended so the printable deliverable leads
+// column 3 for education templates.
+export function packPdfWorkflow(tier: { size: number; pointsCost: number }): TemplateWorkflow {
+  const free = tier.pointsCost <= 0;
+  return {
+    key: `pack-pdf-${tier.size}`,
+    label: free ? `Free ${tier.size}-card PDF` : `${tier.size}-card pack · ${tier.pointsCost} pts`,
+    hint: free ? "Print-ready sampler" : "Full printable set — points",
+    icon: free ? FileDown : Lock,
+    kind: "pack-pdf",
+    packSize: tier.size,
+    packPointsCost: tier.pointsCost,
+  };
+}
 
 // "Watch video" tile for the ~109 templates that already ship a rendered intro
 // video (nano_templates.json `intro_video_url`). Clicking it just reveals the
