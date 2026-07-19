@@ -68,6 +68,59 @@ describe("search generation planner", () => {
     );
   });
 
+  it("maps Chinese aromatherapy wording to a direct-generation template", () => {
+    const matches = retrieveCapabilityCandidates("香薰");
+    expect(matches).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          template_id: "template-lifestyle-info-card",
+          params: { topic: "香薰" },
+        }),
+      ]),
+    );
+  });
+
+  it("normalizes the common Meet Gala misspelling for matching", async () => {
+    const plan = await buildSearchGenerationPlan("meet gala", "en", {
+      globalMatcher: async (query) => {
+        expect(query).toBe("Met Gala");
+        return [];
+      },
+      targetedReranker: async (query, candidateIds) => {
+        expect(query).toBe("Met Gala");
+        expect(candidateIds).toContain("template-lifestyle-photo-grid");
+        return [
+          {
+            template_id: "template-lifestyle-photo-grid",
+            params: { theme: "Met Gala red carpet" },
+            confidence: 0.9,
+            reason: "Met Gala red carpet photo grid",
+          },
+        ];
+      },
+    });
+    expect(plan.directions).toEqual([
+      expect.objectContaining({
+        template_id: "template-lifestyle-photo-grid",
+        params: { theme: "Met Gala red carpet" },
+      }),
+    ]);
+  });
+
+  it("does not substitute a text-only grid for an ID photo request", async () => {
+    const plan = await buildSearchGenerationPlan("证件照", "zh", {
+      globalMatcher: async () => {
+        throw new Error("matcher should not run");
+      },
+      targetedReranker: async () => {
+        throw new Error("reranker should not run");
+      },
+    });
+    expect(plan.directions).toEqual([]);
+    expect(plan.total_credits).toBe(0);
+    expect(plan.notice).toContain("上传本人照片");
+  });
+
   it("uses the targeted candidate reranker for ordinary queries", async () => {
     const plan = await buildSearchGenerationPlan("beginner astronomy", "en", {
       globalMatcher: async () => [
