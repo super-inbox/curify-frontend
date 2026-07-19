@@ -75,7 +75,8 @@ export function buildToolsHub(params: {
       // ✅ only non-coming-soon have pages; generate tools deep-link to the
       // inline image2image reproduce section on the tool page.
       href: canNavigate
-        ? tool.action?.type === "generate"
+        ? tool.action?.type === "generate" ||
+          tool.action?.type === "costume_tryon"
           ? `${href}#reproduce`
           : href
         : undefined,
@@ -83,8 +84,12 @@ export function buildToolsHub(params: {
       // ✅ only create tools open the modal
       onClick: canCreate ? () => openToolModal(tool.id) : undefined,
 
+      // Real inline tools (image2image / product-video / costume try-on) are
+      // functional surfaces, not demos → label the CTA "Create", not "See demo".
       isGenerate:
-        tool.action?.type === "generate" || tool.action?.type === "product_video",
+        tool.action?.type === "generate" ||
+        tool.action?.type === "product_video" ||
+        tool.action?.type === "costume_tryon",
     };
   };
 

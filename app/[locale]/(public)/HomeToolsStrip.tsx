@@ -24,7 +24,8 @@ export default function HomeToolsStrip() {
     (tool) =>
       tool.status === "create" ||
       tool.action?.type === "generate" ||
-      tool.action?.type === "product_video",
+      tool.action?.type === "product_video" ||
+      tool.action?.type === "costume_tryon",
   );
 
   if (tools.length === 0) return null;
