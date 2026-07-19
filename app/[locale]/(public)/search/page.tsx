@@ -243,6 +243,33 @@ function scoreBlob(
   };
 }
 
+// V2-R3 mechanism B: fraction of the ORIGINAL query's required terms
+// found in a candidate blob. Required terms are the original query's
+// primary tokens for multi-token (typically EN) queries, or the
+// original query's bigrams for an unsegmented CJK compound (see
+// isMultiTermQuery doc above for why bigrams are the CJK equivalent).
+// Always uses the ORIGINAL query's terms/bigrams (never a specific
+// rewrite/decomposition path's), matching the existing subjectPresent
+// discipline -- a narrow path must not be able to self-satisfy coverage
+// for the user's actual query. Returns 1 (trivial full coverage) for a
+// genuine single-term query, matching relevanceScorer.ts's expectation
+// that single-term queries are unaffected by the coverage gate.
+function computeCoverageRatio(
+  combinedBlob: string,
+  originalPrimaryTokens: string[],
+  originalBigrams: string[],
+): number {
+  if (originalPrimaryTokens.length > 1) {
+    const matched = originalPrimaryTokens.filter((t) => tokenInBlob(combinedBlob, t)).length;
+    return matched / originalPrimaryTokens.length;
+  }
+  if (originalBigrams.length > 1) {
+    const matched = originalBigrams.filter((b) => combinedBlob.includes(b)).length;
+    return matched / originalBigrams.length;
+  }
+  return 1;
+}
+
 export default async function SearchPage({ params, searchParams }: Props) {
   // Intent narrowing: chip aggregator (commit 17b56686) sends users to
   // /search?q=<query>&within=<output-type-slug>. Reuses the full /search
@@ -312,6 +339,18 @@ export default async function SearchPage({ params, searchParams }: Props) {
   const originalQueryPhraseText = tokens.primary.join(" ");
   const originalProtectedPhrases = findProtectedPhrases(originalQueryPhraseText);
   const originalPrimaryTokensForSubject = tokens.primary;
+  // V2-R3 mechanism B inputs (relevanceScorer.ts required-coverage /
+  // isolated-hit cap) -- query-level, computed once. A query is
+  // "multi-term" when it decomposes into 2+ required terms: 2+
+  // whitespace/punctuation-separated primary tokens (EN and similar), or
+  // 2+ bigrams for an unsegmented CJK compound (the tokenizer never
+  // splits CJK on whitespace, so a query like "新品横幅" is one primary
+  // token but 3 bigrams -- bigram coverage is the CJK-consistent
+  // equivalent of primary-token coverage for EN). See
+  // 05_V2_R3_MINIMAL_FIX_DESIGN.md section 5 / relevanceScorerConfig.ts.
+  const isMultiTermQuery =
+    originalPrimaryTokensForSubject.length > 1 || tokens.bigrams.length > 1;
+  const hasProtectedPhraseQuery = originalProtectedPhrases.length > 0;
 
   // Pull localized topic displayNames for this locale so e.g. zh "动漫" still
   // resolves to slug "anime". Mirrors the relative-path import style used in
@@ -520,6 +559,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
     protectedPhrases: string[],
     fullQueryPhrase: string,
     originalPrimaryTokens: string[],
+    originalBigrams: string[],
   ): FieldHitInfo {
     const combined = titleBlob + " " + tagsBlob;
     const titleScore = scoreBlob(titleBlob, callTokens);
@@ -563,6 +603,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
       const subjectToken = [...originalPrimaryTokens].sort((a, b) => b.length - a.length)[0];
       subjectPresent = tokenInBlob(combined, subjectToken);
     }
+    const coverageRatio = computeCoverageRatio(combined, originalPrimaryTokens, originalBigrams);
     return {
       titleHit,
       tagsHit,
@@ -570,6 +611,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
       exactPhraseHit,
       substringOnly,
       subjectPresent,
+      coverageRatio,
     };
   }
 
@@ -632,65 +674,11 @@ export default async function SearchPage({ params, searchParams }: Props) {
     // able to satisfy "black friday"'s protected-phrase/subject check
     // just because it has no phrase concept of its own).
     for (const r of nanoInspiration as InspRecord[]) {
-      if (promoteAllUnderStrictTpl && strictTpl.has(r.template_id)) {
-        // Template-level strict promotion: broad-recall path (see doc
-        // comment above) -- retrieval/promotion itself is UNCHANGED (an
-        // inspiration is still promoted whenever its template strict-
-        // matches anywhere in the full blob, preserving recall / not
-        // risking a new zero-result case). What changed (Stage 10 root-
-        // cause fix) is the SCORING evidence: previously this branch
-        // hardcoded titleHit/tagsHit/subjectPresent=true unconditionally,
-        // which meant a match buried in the template's long free-text
-        // `content.sections.what` "how it works" prose scored identically
-        // to a match in the title/category. Confirmed live: template-
-        // mbti-breakingbad's sections.what literally contains "periodic
-        // table typography" (a decorative motif description, not
-        // periodic-table content), which strict-matched "periodic table"
-        // / "元素周期表" and promoted all 20 Breaking-Bad character cards
-        // with no scoring penalty at all — see
-        // 15_BROAD_TEMPLATE_ROOT_CAUSE_ANALYSIS.md. Now titleHit /
-        // subjectPresent are evaluated against templateTitleCategoryBlob
-        // (title+category ONLY, no description/how-to text); a match
-        // that only exists in the broader description still promotes the
-        // record (recall preserved) but is correctly scored as weaker
-        // evidence.
-        const tplTitleCatBlob = templateTitleCategoryBlob.get(r.template_id) ?? "";
-        let exactPhraseHit = originalProtectedPhrases.some((p) => tplTitleCatBlob.includes(p));
-        if (!exactPhraseHit && originalQueryPhraseText.includes(" ")) {
-          exactPhraseHit = tplTitleCatBlob.includes(originalQueryPhraseText);
-        }
-        const titleHit =
-          scoreBlob(tplTitleCatBlob, tokens).allPrimary ||
-          scoreBlob(tplTitleCatBlob, tokens).bigramHits > 0;
-        let subjectPresent: boolean;
-        if (originalProtectedPhrases.length > 0) {
-          const anchors = getAnchorTokens(originalProtectedPhrases);
-          subjectPresent =
-            originalProtectedPhrases.some((p) => tplTitleCatBlob.includes(p)) ||
-            anchors.some((a) => tokenInBlob(tplTitleCatBlob, a));
-        } else if (originalPrimaryTokensForSubject.length <= 1) {
-          subjectPresent = titleHit;
-        } else {
-          const subjectToken = [...originalPrimaryTokensForSubject].sort(
-            (a, b) => b.length - a.length
-          )[0];
-          subjectPresent = tokenInBlob(tplTitleCatBlob, subjectToken);
-        }
-        scored.push({
-          rec: r,
-          score: 100,
-          strict: true,
-          fields: {
-            titleHit,
-            tagsHit: true, // the full blob (tags/topics/description) did strict-match by definition
-            paramsOnlyHit: false,
-            exactPhraseHit,
-            substringOnly: false,
-            subjectPresent,
-          },
-        });
-        continue;
-      }
+      // Per-inspiration blobs, computed unconditionally (both the
+      // template-promoted and standard branches below need them --
+      // V2-R3 mechanism A requires the template-promoted branch to be
+      // able to evaluate each sibling's OWN evidence, not just the
+      // template's).
       const localeFields = Object.values(r.locales ?? {}).flatMap((l) => [
         l?.title,
         l?.category,
@@ -713,7 +701,6 @@ export default async function SearchPage({ params, searchParams }: Props) {
           .filter((v): v is string => typeof v === "string" && v.length > 0)
           .join(" ")
       );
-      const s = scoreBlob(blob, tokens);
       // titleBlob / tagsBlob: the same field split the scorer uses to
       // tell "matched in a high-signal field" from "matched only via a
       // low-signal params dump" — hoisted out of the demoteToRelaxed
@@ -733,6 +720,111 @@ export default async function SearchPage({ params, searchParams }: Props) {
           .filter((v): v is string => typeof v === "string" && v.length > 0)
           .join(" ")
       );
+      const s = scoreBlob(blob, tokens);
+      if (promoteAllUnderStrictTpl && strictTpl.has(r.template_id)) {
+        // Template-level strict promotion: broad-recall path (see doc
+        // comment above) -- retrieval/promotion itself is UNCHANGED (an
+        // inspiration is still promoted whenever its template strict-
+        // matches anywhere in the full blob, preserving recall / not
+        // risking a new zero-result case). What changed (Stage 10 root-
+        // cause fix) is the SCORING evidence: previously this branch
+        // hardcoded titleHit/tagsHit/subjectPresent=true unconditionally,
+        // which meant a match buried in the template's long free-text
+        // `content.sections.what` "how it works" prose scored identically
+        // to a match in the title/category. Confirmed live: template-
+        // mbti-breakingbad's sections.what literally contains "periodic
+        // table typography" (a decorative motif description, not
+        // periodic-table content), which strict-matched "periodic table"
+        // / "元素周期表" and promoted all 20 Breaking-Bad character cards
+        // with no scoring penalty at all — see
+        // 15_BROAD_TEMPLATE_ROOT_CAUSE_ANALYSIS.md.
+        //
+        // V2-R3 mechanism A (per-inspiration re-scoring): the residual
+        // defect Direction 7 above did NOT fix is that titleHit/
+        // subjectPresent were still computed at the TEMPLATE level (the
+        // SAME value copied onto every sibling under the template) and
+        // tagsHit was unconditionally hardcoded true for every sibling
+        // regardless of that sibling's own content. Fix: evaluate each
+        // sibling against its OWN title/tags blob (the exact same
+        // titleBlob/topicalBlob the non-template branch below already
+        // uses) via the shared deriveFieldHits helper. Two-tier fallback:
+        //   - Tier 1 (used whenever the sibling has ANY own descriptive
+        //     content -- own locale title/category, own tags, own
+        //     topics, or own search_aliases): score against that own
+        //     content ONLY. A genuinely on-topic sibling still scores
+        //     exactly as it does today (its own blob matches); an
+        //     unrelated sibling under the same promoted template no
+        //     longer inherits the template's flat score.
+        //   - Tier 2 (safe fallback, ONLY when the sibling has ZERO own
+        //     descriptive content at all): fall back to today's
+        //     template-level evidence so a genuinely content-less record
+        //     is not unfairly zeroed out just for lacking metadata.
+        // Retrieval/inclusion is untouched either way -- every sibling
+        // is still pushed to `scored` with score:100 (base_retrieval
+        // stays capped at 20 regardless of tier), preserving Direction 1
+        // existence-floor recall. Only the FIELD evidence that feeds
+        // scoreRecord's title/tags/subject/coverage terms changes.
+        const tplTitleCatBlob = templateTitleCategoryBlob.get(r.template_id) ?? "";
+        let tplExactPhraseHit = originalProtectedPhrases.some((p) => tplTitleCatBlob.includes(p));
+        if (!tplExactPhraseHit && originalQueryPhraseText.includes(" ")) {
+          tplExactPhraseHit = tplTitleCatBlob.includes(originalQueryPhraseText);
+        }
+        const tplTitleHit =
+          scoreBlob(tplTitleCatBlob, tokens).allPrimary ||
+          scoreBlob(tplTitleCatBlob, tokens).bigramHits > 0;
+        let tplSubjectPresent: boolean;
+        if (originalProtectedPhrases.length > 0) {
+          const anchors = getAnchorTokens(originalProtectedPhrases);
+          tplSubjectPresent =
+            originalProtectedPhrases.some((p) => tplTitleCatBlob.includes(p)) ||
+            anchors.some((a) => tokenInBlob(tplTitleCatBlob, a));
+        } else if (originalPrimaryTokensForSubject.length <= 1) {
+          tplSubjectPresent = tplTitleHit;
+        } else {
+          const subjectToken = [...originalPrimaryTokensForSubject].sort(
+            (a, b) => b.length - a.length
+          )[0];
+          tplSubjectPresent = tokenInBlob(tplTitleCatBlob, subjectToken);
+        }
+        const templateFallbackFields: FieldHitInfo = {
+          titleHit: tplTitleHit,
+          tagsHit: true, // the full blob (tags/topics/description) did strict-match by definition
+          paramsOnlyHit: false,
+          exactPhraseHit: tplExactPhraseHit,
+          substringOnly: false,
+          subjectPresent: tplSubjectPresent,
+          coverageRatio: computeCoverageRatio(
+            tplTitleCatBlob,
+            originalPrimaryTokensForSubject,
+            tokens.bigrams
+          ),
+        };
+        const hasOwnContent =
+          localeFields.some((v): v is string => typeof v === "string" && v.length > 0) ||
+          (r.tags?.length ?? 0) > 0 ||
+          (r.topics?.length ?? 0) > 0 ||
+          (r.search_aliases?.length ?? 0) > 0;
+        const fieldsForSibling = hasOwnContent
+          ? deriveFieldHits(
+              titleBlob,
+              topicalBlob,
+              false,
+              s,
+              tokens,
+              originalProtectedPhrases,
+              originalQueryPhraseText,
+              originalPrimaryTokensForSubject,
+              tokens.bigrams,
+            )
+          : templateFallbackFields;
+        scored.push({
+          rec: r,
+          score: 100,
+          strict: true,
+          fields: fieldsForSibling,
+        });
+        continue;
+      }
       // Compound-noun precision guard: a single-token ASCII query that hits
       // an inspiration ONLY because the token is one word inside a multi-word
       // param value (e.g. `snake` matching `plant_name: "snake plant"`) gets
@@ -774,6 +866,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
         originalProtectedPhrases,
         originalQueryPhraseText,
         originalPrimaryTokensForSubject,
+        tokens.bigrams,
       );
       if ((s.allPrimary || s.bigramHits >= bigramThr) && !demoteToRelaxed) {
         scored.push({ rec: r, score: s.primaryHits + s.bigramHits, strict: true, fields });
@@ -815,6 +908,10 @@ export default async function SearchPage({ params, searchParams }: Props) {
       exactPhraseHit: a.exactPhraseHit || b.exactPhraseHit,
       substringOnly: a.substringOnly && b.substringOnly,
       subjectPresent: a.subjectPresent || b.subjectPresent,
+      // V2-R3 mechanism B: keep the BETTER (higher) coverage seen across
+      // paths -- a record two independent paths converge on is at least
+      // as well-covered as either path alone found it.
+      coverageRatio: Math.max(a.coverageRatio, b.coverageRatio),
     };
   }
 
@@ -983,7 +1080,12 @@ export default async function SearchPage({ params, searchParams }: Props) {
     isOriginal: originalIds.has(x.rec.id),
     breakdown: scoreRecord(
       x.fields,
-      { pathHits: pathHitsById.get(x.rec.id) ?? 1, templateId: x.rec.template_id },
+      {
+        pathHits: pathHitsById.get(x.rec.id) ?? 1,
+        templateId: x.rec.template_id,
+        isMultiTermQuery,
+        hasProtectedPhraseQuery,
+      },
       x.score,
     ),
   }));

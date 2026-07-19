@@ -22,7 +22,13 @@
 // not sufficient justification per the task's explicit instruction not
 // to "mechanically implement every candidate feature."
 
-import { SCORER_WEIGHTS, MIN_SCORE_WHEN_ORIGINAL_NONEMPTY } from "./relevanceScorerConfig";
+import {
+  SCORER_WEIGHTS,
+  MIN_SCORE_WHEN_ORIGINAL_NONEMPTY,
+  REQUIRED_TERM_COVERAGE_MIN_RATIO,
+  ISOLATED_HIT_MAX_COVERAGE_RATIO,
+  ISOLATED_HIT_SCORE_CAP,
+} from "./relevanceScorerConfig";
 
 export type FieldHitInfo = {
   /** Whole-token (ASCII) or substring (CJK) hit in the record's
@@ -41,9 +47,20 @@ export type FieldHitInfo = {
   /** The record's ONLY match evidence is a CJK bigram/substring fallback
    *  hit with no ASCII whole-token or phrase hit anywhere. */
   substringOnly: boolean;
-  /** Whether every primary query token that constitutes the CORE
-   *  SUBJECT (see subjectTokens) is present somewhere in title or tags. */
+  /** Whether the query's designated subject/anchor token (protected-
+   *  phrase anchor, or the longest primary token / longest bigram for a
+   *  single-term query) is present somewhere in title or tags. RAW
+   *  signal -- for a multi-term query this is combined with
+   *  `coverageRatio` by scoreRecord (see ISOLATED_HIT / coverage-gate
+   *  logic below) before it is treated as "subject genuinely present". */
   subjectPresent: boolean;
+  /** V2-R3 mechanism B: fraction (0..1) of the query's required terms
+   *  found as whole-token hits (or, for an unsegmented CJK compound,
+   *  matched bigrams) anywhere in this record's title/tags blob. Always
+   *  1 for single-term queries (nothing to cover) -- see
+   *  relevanceScorerConfig.ts REQUIRED_TERM_COVERAGE_MIN_RATIO /
+   *  ISOLATED_HIT_MAX_COVERAGE_RATIO for how this is used. */
+  coverageRatio: number;
 };
 
 export type ScoreContext = {
@@ -51,6 +68,20 @@ export type ScoreContext = {
    *  passes) that independently matched this record. */
   pathHits: number;
   templateId: string;
+  /** V2-R3 mechanism B: true when the ORIGINAL query decomposes into 2+
+   *  required terms (2+ primary tokens, or 2+ bigrams for an
+   *  unsegmented CJK compound) -- gates the coverage/isolated-hit logic
+   *  below. False for genuine single-term queries, which this mechanism
+   *  deliberately does not touch. Query-level, not candidate-level, so
+   *  it lives on the context rather than FieldHitInfo. */
+  isMultiTermQuery: boolean;
+  /** V2-R3 mechanism B: true when the ORIGINAL query contains a
+   *  lib/searchPhraseProtection.ts protected phrase. That mechanism
+   *  already has its own, narrower anchor-token subject-presence
+   *  semantics (a deliberate partial-coverage allowance); the coverage
+   *  gate / isolated-hit cap below are skipped entirely for these
+   *  queries so the two mechanisms compose without conflict. */
+  hasProtectedPhraseQuery: boolean;
 };
 
 export type ScoreBreakdown = {
@@ -98,6 +129,26 @@ export function scoreRecord(
     reasons.push("whole_token_hit_in_tags");
   }
 
+  // V2-R3 mechanism B (required multi-term coverage): for a multi-term
+  // query not governed by a protected phrase, the raw subjectPresent
+  // signal (which the caller derives from just the ONE designated
+  // subject/anchor token) is only treated as genuine subject presence
+  // when coverageRatio also clears a majority threshold -- otherwise a
+  // wrong-sense hit on a single token of a multi-word query (e.g.
+  // "banner" -> Marvel "Bruce Banner") no longer gets a free pass just
+  // because that one token happened to be the longest. Protected-phrase
+  // queries keep their existing, narrower anchor-token allowance
+  // untouched (see ScoreContext.hasProtectedPhraseQuery doc).
+  const coverageGateApplies = ctx.isMultiTermQuery && !ctx.hasProtectedPhraseQuery;
+  const subjectPresent = coverageGateApplies
+    ? fields.subjectPresent && fields.coverageRatio >= REQUIRED_TERM_COVERAGE_MIN_RATIO
+    : fields.subjectPresent;
+  if (coverageGateApplies && fields.subjectPresent && !subjectPresent) {
+    reasons.push(
+      `subject_token_present_but_coverage_${fields.coverageRatio.toFixed(2)}_below_required_${REQUIRED_TERM_COVERAGE_MIN_RATIO}`
+    );
+  }
+
   // Cross-path agreement is only credited when the record actually
   // carries the query's core subject. Multiple broad/generic rewrite or
   // decomposition paths (e.g. a single-word "banner" output slot)
@@ -110,7 +161,7 @@ export function scoreRecord(
   // hit) outscored genuinely Black-Friday-relevant content purely on
   // path count, even though missing_subject_penalty correctly fired.
   let path_agreement = 0;
-  if (ctx.pathHits > 1 && fields.subjectPresent) {
+  if (ctx.pathHits > 1 && subjectPresent) {
     path_agreement = Math.min(
       (ctx.pathHits - 1) * w.path_agreement_per_hit,
       w.path_agreement_cap
@@ -127,13 +178,32 @@ export function scoreRecord(
   }
 
   let missing_subject_penalty = 0;
-  if (!fields.subjectPresent) {
+  if (!subjectPresent) {
     missing_subject_penalty = w.missing_subject_penalty;
     reasons.push("core_subject_not_present_in_title_or_tags");
   }
 
   if (fields.paramsOnlyHit) {
     reasons.push("match_relies_on_low_signal_params_field_only");
+  }
+
+  // V2-R3 mechanism B (isolated-hit cap): a multi-term-query candidate
+  // whose only real evidence is a single matched term/bigram (coverage
+  // at or below the isolated threshold) and no exact-phrase
+  // corroboration should not stack both the title and tags whole-token
+  // weights -- that combination is reserved for genuine multi-signal
+  // agreement. Composes with (does not replace) the phrase-protection
+  // dictionary: any query with a protected phrase is exempted above via
+  // coverageGateApplies, and any candidate with an actual exact-phrase
+  // hit is exempted via the !fields.exactPhraseHit check below.
+  if (
+    coverageGateApplies &&
+    !fields.exactPhraseHit &&
+    fields.coverageRatio <= ISOLATED_HIT_MAX_COVERAGE_RATIO &&
+    whole_token > ISOLATED_HIT_SCORE_CAP
+  ) {
+    whole_token = ISOLATED_HIT_SCORE_CAP;
+    reasons.push("isolated_single_term_hit_capped");
   }
 
   const final_score =

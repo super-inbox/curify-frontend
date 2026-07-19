@@ -68,3 +68,47 @@ export const MIN_SCORE_WHEN_ORIGINAL_NONEMPTY = -5;
 // Direction 5: per-path and total candidate pool caps.
 export const PATH_CANDIDATE_CAP = 40; // max candidates a single non-original path may contribute
 export const TOTAL_CANDIDATE_POOL_CAP = 80; // unchanged from V0's existing .slice(0, 80)
+
+// V2-R3 mechanism B (required multi-term coverage + isolated-hit cap --
+// see docs/daily_report/7.19/search-relevance-prod-main-v2/v2-r3-root-cause-fix/05_V2_R3_MINIMAL_FIX_DESIGN.md
+// section 5). Both apply ONLY to multi-term queries (2+ primary tokens,
+// e.g. English "black friday banner", or 2+ CJK bigrams for an
+// unsegmented compound like "新品横幅") and are gated OFF for queries
+// governed by a protected phrase (lib/searchPhraseProtection.ts already
+// has its own narrower anchor-token semantics for those, composed with
+// rather than overridden by this mechanism). Single-term queries are
+// completely unaffected (coverage of 1/1 is trivial) per the task's
+// explicit instruction not to mechanically penalize single-word queries.
+
+// Minimum fraction of a multi-term query's required terms (primary
+// tokens, or bigrams for an unsegmented CJK compound) that must be found
+// in a candidate's title/tags blob for the query's subject to be
+// considered present. A MAJORITY, not all terms: requiring 100% would
+// wrongly zero out legitimate results missing one modifier word (e.g. a
+// record literally titled "wine" for query "wine label" whose blob
+// happens not to literally contain "label"). Calibrated against the
+// V2-R3 14-query calibration set only (03_V2_R3_CASE_SPLIT.csv).
+export const REQUIRED_TERM_COVERAGE_MIN_RATIO = 0.5;
+
+// Maximum coverage ratio (see above) at or below which a candidate's
+// whole-token evidence is considered "isolated" -- i.e. its only real
+// signal is a single matched term (or bigram) with no exact-phrase
+// corroboration. This is the general, non-blacklist mechanism behind
+// the confirmed "banner" -> Marvel "Bruce Banner" MBTI-card and similar
+// wrong-sense-collision regressions: a candidate that matches only one
+// of a multi-term query's tokens should not score as if it matched the
+// whole query. Deliberately the SAME default value as
+// REQUIRED_TERM_COVERAGE_MIN_RATIO (see relevanceScorer.scoreRecord for
+// why sharing the boundary is intentional -- an exactly-half-covered
+// 2-term candidate can still legitimately clear the subject-presence bar
+// while its raw score is still capped for being single-signal evidence).
+export const ISOLATED_HIT_MAX_COVERAGE_RATIO = 0.5;
+
+// Cap on the COMBINED whole_token_title + whole_token_tags contribution
+// when the isolated-hit condition above is met -- prevents a single
+// isolated term hit from stacking both the title (18) and tags (8)
+// weights (26 total) the way genuine multi-signal agreement does. Set
+// equal to whole_token_tags (the medium-signal weight): an isolated hit
+// should score like a medium-confidence tag match, not a strong title
+// match plus a tag match.
+export const ISOLATED_HIT_SCORE_CAP = 8;
