@@ -447,9 +447,7 @@ export default function GenerableTemplatesSection({
           )}
         </>
       ) : (
-        <p className="mt-6 text-sm text-neutral-500">
-          {plan?.notice || copy.noDirections}
-        </p>
+        <p className="mt-6 text-sm text-neutral-500">{copy.noDirections}</p>
       )}
 
       {error && (

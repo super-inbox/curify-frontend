@@ -14,7 +14,6 @@ const QUERY_TOKEN_ALIASES: Record<string, string[]> = {
   aesthetic: ["aesthetic", "aesthetics", "artistic", "design", "minimalist"],
   aesthetics: ["aesthetic", "aesthetics", "artistic", "design", "minimalist"],
   reading: ["reading", "book", "books", "literature"],
-  香薰: ["香薰", "aromatherapy", "aroma", "essential oils", "scented candle"],
 };
 
 type TemplateShape = {
@@ -57,7 +56,6 @@ export type SearchGenerationPlan = {
   directions: SearchGenerationDirection[];
   credits_per_image: number;
   total_credits: number;
-  notice?: string;
 };
 
 type PlannerDependencies = {
@@ -106,18 +104,6 @@ const BENCHMARK_DIRECTIONS: Array<
 
 function normalizeQuery(value: string): string {
   return tsToSc(value.trim().toLowerCase().replace(/×/g, "x"));
-}
-
-function canonicalPlannerQuery(value: string): string {
-  return value.trim().replace(/\bmeet gala\b/gi, "Met Gala");
-}
-
-function requiresReferenceImage(value: string): boolean {
-  const normalized = normalizeQuery(value);
-  return (
-    normalized === "证件照" ||
-    /\b(?:id|passport) photos?\b/.test(normalized)
-  );
 }
 
 function requiredParams(templateId: string): string[] {
@@ -323,7 +309,7 @@ function fallbackHybridMatches(
 
 export async function buildSearchGenerationPlan(
   query: string,
-  locale = "en",
+  _locale = "en",
   dependencies: PlannerDependencies = {
     globalMatcher: matchTemplatesForQuery,
     targetedReranker: rerankTemplateCandidatesForQuery,
@@ -332,31 +318,15 @@ export async function buildSearchGenerationPlan(
   const benchmark = getBenchmarkGenerationPlan(query);
   if (benchmark) return benchmark;
 
-  if (requiresReferenceImage(query)) {
-    return {
-      source: "hybrid",
-      directions: [],
-      credits_per_image: SEARCH_GENERATION_CREDITS_PER_IMAGE,
-      total_credits: 0,
-      notice: locale.toLowerCase().startsWith("zh")
-        ? "证件照需要上传本人照片，当前搜索页仅支持无需参考图的直接生成。"
-        : "ID photos require a portrait upload; this search flow currently supports text-only generation.",
-    };
-  }
-
-  const plannerQuery = canonicalPlannerQuery(query);
-  const pathA = retrieveCapabilityCandidates(plannerQuery);
-  const pathB = await dependencies.globalMatcher(plannerQuery);
+  const pathA = retrieveCapabilityCandidates(query);
+  const pathB = await dependencies.globalMatcher(query);
   const candidateIds = [
     ...new Set([
       ...pathA.map((match) => match.template_id),
       ...pathB.map((match) => match.template_id),
     ]),
   ];
-  const reranked = await dependencies.targetedReranker(
-    plannerQuery,
-    candidateIds,
-  );
+  const reranked = await dependencies.targetedReranker(query, candidateIds);
   const validReranked = reranked.filter(
     (match) => match.confidence >= MIN_CONFIDENCE && decorateDirection(match),
   );
