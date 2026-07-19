@@ -28,7 +28,8 @@ export interface CostumeTryonStatus {
 }
 
 const POLL_INTERVAL_MS = 3000;
-const POLL_MAX_MS = 240_000; // 4-min ceiling (render can take 1–2 min + upload)
+const POLL_MAX_MS = 480_000; // 8-min ceiling. On timeout the render still finishes
+// server-side and the (required) email delivers it — pollResult signals "pending".
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 export const costumeTryonService = {
@@ -76,6 +77,9 @@ export const costumeTryonService = {
       }
       await sleep(POLL_INTERVAL_MS);
     }
-    throw new Error("This is taking longer than usual — please try again in a moment.");
+    // Render is still going server-side and will be EMAILED when done. Signal
+    // "pending" (not a hard error) so the UI reassures instead of prompting a
+    // wasteful re-generate.
+    throw Object.assign(new Error("still-rendering"), { pending: true });
   },
 };
