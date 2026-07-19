@@ -1,0 +1,16 @@
+{
+  "_note": "Client mirror of the backend pack registry (curify_background/app/data/template_packs.json) — ONLY the fields needed to render the column-3 download tiles (size + points_cost). No blob_path/secrets here. Keep in sync when adding packs. size 5 = free (points_cost 0); 50/100 = paid (points).",
+  "packs": {
+    "template-hsk-bilingual-reading-text-lesson-poster": { "5": { "points_cost": 0 }, "50": { "points_cost": 70 } },
+    "template-vocabulary": { "5": { "points_cost": 0 } },
+    "template-education-card": { "5": { "points_cost": 0 } },
+    "template-phonics-consonant-blend": { "5": { "points_cost": 0 } },
+    "template-kids-vocabulary-poster": { "5": { "points_cost": 0 } },
+    "template-cuisine-food-vocab-poster": { "5": { "points_cost": 0 } },
+    "template-chinese-character-learning-poster": { "5": { "points_cost": 0 } },
+    "template-bilingual-chinese-vocabulary-word-card-poster": { "5": { "points_cost": 0 } },
+    "template-chinese-idiom-learning-card": { "5": { "points_cost": 0 } },
+    "template-language-word-comparison-educational-poster": { "5": { "points_cost": 0 } },
+    "template-detailed-vocab-flashcard": { "5": { "points_cost": 0 } }
+  }
+}

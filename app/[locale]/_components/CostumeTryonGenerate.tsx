@@ -36,9 +36,12 @@ export default function CostumeTryonGenerate() {
   const [progress, setProgress] = useState<string | null>(null);
   const [resultUrl, setResultUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [dragging, setDragging] = useState(false);
+  const [pending, setPending] = useState<string | null>(null);
 
-  const emailedNotice = email.trim().length > 0;
-  const canGenerate = !!file && !isGenerating;
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+  const emailedNotice = emailValid;
+  const canGenerate = !!file && emailValid && !isGenerating;
 
   const onPickFile = (f: File | null) => {
     setError(null);
@@ -67,9 +70,12 @@ export default function CostumeTryonGenerate() {
   const handleGenerate = async () => {
     if (!canGenerate || !file) return;
     setError(null);
+    setPending(null);
     setResultUrl(null);
     setIsGenerating(true);
-    setProgress("Dressing you in dynasty silk… this usually takes 1–2 minutes.");
+    setProgress(
+      `Dressing you in dynasty silk… ~1–2 minutes. You can close this tab — we'll email your video to ${email.trim()} when it's ready.`,
+    );
     try {
       track({
         contentId: "chinese-costume-tryon:generate",
@@ -79,15 +85,24 @@ export default function CostumeTryonGenerate() {
       const res = await costumeTryonService.generate({
         file,
         gender,
-        email: email.trim() || undefined,
+        email: email.trim(),
       });
-      if (!res.success || !res.project_id) {
+      // The anon /costume-tryon/generate endpoint returns { project_id } (no
+      // `success` flag) — gate on project_id, not a success field that isn't sent.
+      if (!res.project_id) {
         throw new Error(res.message || "Couldn't start your costume video.");
       }
       const url = await costumeTryonService.pollResult(res.project_id);
       setResultUrl(url);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Costume video generation failed. Please try again.");
+      if ((e as { pending?: boolean } | undefined)?.pending) {
+        // Render is still running server-side; it will be emailed. Reassure, don't error.
+        setPending(
+          `Still rendering — we'll email your video to ${email.trim()} as soon as it's ready. You can safely close this tab.`,
+        );
+      } else {
+        setError(e instanceof Error ? e.message : "Costume video generation failed. Please try again.");
+      }
     } finally {
       setIsGenerating(false);
       setProgress(null);
@@ -182,10 +197,30 @@ export default function CostumeTryonGenerate() {
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="flex h-40 w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-purple-300 bg-purple-50/50 p-6 text-center transition-colors hover:bg-purple-50"
+            onDragOver={(e) => {
+              e.preventDefault();
+              if (!dragging) setDragging(true);
+            }}
+            onDragEnter={(e) => e.preventDefault()}
+            onDragLeave={(e) => {
+              e.preventDefault();
+              setDragging(false);
+            }}
+            onDrop={(e) => {
+              e.preventDefault();
+              setDragging(false);
+              onPickFile(e.dataTransfer.files?.[0] ?? null);
+            }}
+            className={`flex h-40 w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed p-6 text-center transition-colors ${
+              dragging
+                ? "border-purple-500 bg-purple-100 ring-2 ring-purple-300"
+                : "border-purple-300 bg-purple-50/50 hover:bg-purple-50"
+            }`}
           >
             <UploadIcon className="h-6 w-6 text-purple-500" />
-            <span className="text-sm font-semibold text-purple-700">Upload a portrait photo</span>
+            <span className="text-sm font-semibold text-purple-700">
+              {dragging ? "Drop your photo to start" : "Upload or drop a portrait photo"}
+            </span>
             <span className="text-xs text-neutral-500">Free — no sign-in needed. JPG or PNG, up to 15MB.</span>
           </button>
         )}
@@ -206,13 +241,15 @@ export default function CostumeTryonGenerate() {
           </div>
         </div>
 
-        {/* Optional email */}
+        {/* Email — required. We deliver the finished video here so you can close
+            the tab and still get it (renders take ~1–2 minutes). */}
         <div className="mt-4">
           <label className="mb-1.5 block text-xs font-semibold text-neutral-700">
-            Email me my video <span className="font-normal text-neutral-400">(optional)</span>
+            Your email <span className="font-normal text-neutral-400">— we&apos;ll send your video here</span>
           </label>
           <input
             type="email"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
@@ -230,9 +267,11 @@ export default function CostumeTryonGenerate() {
           {isGenerating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
           {isGenerating ? "Generating…" : "Generate my costume video"}
         </button>
-        {!file && (
+        {!isGenerating && (!file || !emailValid) && (
           <p className="mt-1.5 text-center text-[11px] text-neutral-500">
-            Upload a photo to get started — it&apos;s free.
+            {!file
+              ? "Upload a photo to get started — it's free."
+              : "Enter your email so we can send you the finished video."}
           </p>
         )}
 
@@ -241,9 +280,9 @@ export default function CostumeTryonGenerate() {
             <Loader2 className="h-4 w-4 animate-spin" /> {progress}
           </p>
         )}
-        {progress && emailedNotice && (
-          <p className="mt-2 text-center text-[11px] text-neutral-500">
-            We&apos;ll also email it to you when it&apos;s ready.
+        {pending && (
+          <p className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+            ✅ {pending}
           </p>
         )}
         {error && (
