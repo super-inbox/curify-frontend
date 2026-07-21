@@ -22,6 +22,8 @@ import { findProtectedPhrases, getAnchorTokens } from "../searchPhraseProtection
 import {
   REQUIRED_TERM_COVERAGE_MIN_RATIO,
   ISOLATED_HIT_SCORE_CAP,
+  NON_ORIGINAL_BASE_FACTOR,
+  RESULT_RICH_MIN_ONSUBJECT,
 } from "../relevanceScorerConfig";
 
 function fields(overrides: Partial<FieldHitInfo> = {}): FieldHitInfo {
@@ -48,7 +50,39 @@ function ctx(overrides: Partial<ScoreContext> = {}): ScoreContext {
     templateId: "t",
     isMultiTermQuery: false,
     hasProtectedPhraseQuery: false,
+    // Default isOriginal: true so every pre-existing numeric expectation below
+    // (which was calibrated before the v1.1 per-path base discount) is
+    // unchanged -- full base trust is the original-query behavior. New v1.1
+    // tests set isOriginal: false explicitly.
+    isOriginal: true,
     ...overrides,
+  };
+}
+
+// Convenience: a scored candidate for selectFinalCandidates tests.
+function cand(
+  id: string,
+  final_score: number,
+  subjectPresent: boolean,
+  isOriginal = false,
+  templateId = "t",
+): ScoredCandidate {
+  return {
+    id,
+    templateId,
+    isOriginal,
+    breakdown: {
+      base_retrieval: 0,
+      exact_phrase: 0,
+      whole_token: 0,
+      path_agreement: 0,
+      substring_penalty: 0,
+      missing_subject_penalty: 0,
+      family_saturation_penalty: 0,
+      final_score,
+      subjectPresent,
+      reasons: [],
+    },
   };
 }
 
@@ -376,6 +410,7 @@ describe("relevanceScorer.applyFamilySaturation", () => {
         missing_subject_penalty: 0,
         family_saturation_penalty: 0,
         final_score: score,
+        subjectPresent: false,
         reasons: [],
       },
     };
@@ -420,7 +455,7 @@ describe("relevanceScorer.selectFinalCandidates (Direction 1 floor invariant)", 
       breakdown: {
         base_retrieval: 0, exact_phrase: 0, whole_token: 0, path_agreement: 0,
         substring_penalty: 0, missing_subject_penalty: 0, family_saturation_penalty: 0,
-        final_score: score, reasons: [],
+        final_score: score, subjectPresent: false, reasons: [],
       },
     };
   }
@@ -461,5 +496,63 @@ describe("relevanceScorer.selectFinalCandidates (Direction 1 floor invariant)", 
     const result = selectFinalCandidates(scored, new Set());
     expect(result.some((c) => c.id === "bad-1")).toBe(false);
     expect(result.some((c) => c.id === "bad-2")).toBe(false);
+  });
+});
+
+describe("relevanceScorer v1.1 -- per-path weighting + result-rich subject gate", () => {
+  it("trusts a non-original candidate's base_retrieval less than an identical original one", () => {
+    const f = fields({ titleHit: true, subjectPresent: true });
+    const original = scoreRecord(f, ctx({ isOriginal: true }), 20);
+    const rewrite = scoreRecord(f, ctx({ isOriginal: false }), 20);
+    // Only the low-weight base term is path-scaled; the on-subject signal
+    // (whole_token/subject) is preserved so an on-subject rewrite stays positive.
+    expect(rewrite.final_score).toBeLessThan(original.final_score);
+    expect(rewrite.base_retrieval).toBeCloseTo(original.base_retrieval * NON_ORIGINAL_BASE_FACTOR);
+    expect(rewrite.final_score).toBeGreaterThan(0);
+  });
+
+  it("ranks a relevant on-subject card above an off-subject rewrite hit (笔袋 food regression)", () => {
+    // Regression: a non-original off-subject poster (spurious tag hit, high raw
+    // token-overlap) outranked the relevant stationery card. It must now rank
+    // strictly below, and score negative (so a floor/gate can drop it).
+    const relevantStationery = scoreRecord(
+      fields({ titleHit: true, tagsHit: true, subjectPresent: true }),
+      ctx({ isOriginal: false }),
+      10,
+    );
+    const offSubjectFoodPoster = scoreRecord(
+      fields({ tagsHit: true, subjectPresent: false }),
+      ctx({ isOriginal: false }),
+      20,
+    );
+    expect(offSubjectFoodPoster.final_score).toBeLessThan(relevantStationery.final_score);
+    expect(offSubjectFoodPoster.final_score).toBeLessThan(0);
+  });
+
+  it("drops off-subject non-original candidates on a RESULT-RICH query", () => {
+    const onSubject = Array.from({ length: RESULT_RICH_MIN_ONSUBJECT }, (_, i) =>
+      cand(`on-${i}`, 30, true, false));
+    const offSubjectNonOriginal = cand("food", 5, false, false);
+    const originalIds = new Set(["on-0"]); // original-nonempty branch
+    const kept = selectFinalCandidates([...onSubject, offSubjectNonOriginal], originalIds);
+    expect(kept.some((c) => c.id === "food")).toBe(false);
+    expect(kept.filter((c) => c.breakdown.subjectPresent).length).toBe(RESULT_RICH_MIN_ONSUBJECT);
+  });
+
+  it("keeps off-subject non-original candidates on a THIN query (few-results leniency)", () => {
+    const onSubject = Array.from({ length: 3 }, (_, i) => cand(`on-${i}`, 30, true, false));
+    const offSubjectNonOriginal = cand("food", 5, false, false);
+    const originalIds = new Set(["on-0"]);
+    const kept = selectFinalCandidates([...onSubject, offSubjectNonOriginal], originalIds);
+    expect(kept.some((c) => c.id === "food")).toBe(true);
+  });
+
+  it("never gates an ORIGINAL candidate out, even off-subject on a rich query", () => {
+    const onSubject = Array.from({ length: RESULT_RICH_MIN_ONSUBJECT }, (_, i) =>
+      cand(`on-${i}`, 30, true, false));
+    const offSubjectOriginal = cand("orig-offsubject", 5, false, true);
+    const originalIds = new Set(["orig-offsubject", "on-0"]);
+    const kept = selectFinalCandidates([...onSubject, offSubjectOriginal], originalIds);
+    expect(kept.some((c) => c.id === "orig-offsubject")).toBe(true);
   });
 });

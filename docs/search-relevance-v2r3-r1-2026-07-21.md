@@ -1,0 +1,53 @@
+# Search V2-R3 — Revision R1 (per-path weighting + result-count-aware filtering)
+
+_2026-07-21. Branch `baobao/search-relevance-prod-main-v2-r3-root-cause-fix-2026-07-19`. Scorer config `v1.1.0-2026-07-21`. Driven by the reviewer's search-eval-07-21 feedback (case screenshots in `raw/search-eval-07-21/`, v0 = prod, "new" = V2-R3). Companion to `docs/search-quality.md` (runbook) and `docs/search-and-content.md` thread-a._
+
+## Why R1
+
+V2-R3 replaced V0's **binary `hasStrict` gate + simple token score** with a single **uniform** deterministic scorer (`scoreRecord`), applying one weight set to every candidate regardless of which retrieval path surfaced it (original / rewrite / decomposition / relaxed). The eval-07-21 review confirmed the direction is right (six queries improved) but surfaced two structural problems the uniform schema causes:
+
+1. **Off-subject candidates from non-original paths leak in and rank high on thin queries.** Removing the binary gate — which dropped *all* relaxed-only records once any strict hit existed — also removed the one thing it did right: dropping records that only matched a *rewrite/decomposition* of the query, not the query itself. The uniform scorer gives a rewrite-path token-overlap the same `base_retrieval` credit as a match on the user's actual query.
+2. **No result-count awareness.** The floor (`MIN_SCORE_WHEN_ORIGINAL_NONEMPTY`) gates on original-empty-vs-nonempty, not on *how many* relevant results exist. Reviewer's principle: **result-rich queries should score+filter to push the relevant up and drop the clearly-irrelevant; result-poor queries should be left alone (filtering must not shrink an already-thin set).**
+
+## Case analysis (search-eval-07-21)
+
+### Improvements V2-R3 already delivered — R1 must preserve
+| Query | Verdict | Mechanism to keep |
+|---|---|---|
+| 电影海报 (movie poster) | clearly better | subject/coverage gate |
+| sticker pack | better — tennis/volleyball demoted | missing-subject + coverage |
+| product photo | better — 植物/cat/dog demoted | missing-subject |
+| 日历 (calendar) | top-5 better (top-10 ~same) | scoring |
+| logo | slightly better | scoring |
+| 人体图解 (anatomy) | new ≥ v0 | scoring |
+
+### Regressions / non-improvements R1 targets
+| Query | Problem | R1 fix |
+|---|---|---|
+| **笔袋 (pencil case)** | **regressed** — two western-food "doodle" posters + two Google-Gemini case-study infographics injected ABOVE the one relevant stationery card; v0's relevant stationery grid (en-zh "Pencil Case 笔袋", moyu, panda sets, boogi kits) displaced | per-path base discount + non-original off-subject extra demotion → food/Gemini score negative and drop; relevant stationery leads |
+| **促销海报 (promo poster)** | not significantly better — 4th result still irrelevant; top-3 swapped relevant-for-relevant | result-rich subject gate drops the off-subject tail |
+| 拼读卡 (phonics card) | no significant top-10 difference | neutral — no R1 change needed; noted, not forced |
+
+## R1 mechanisms (scorer `v1.1`)
+
+All additive to `scoreRecord` / `selectFinalCandidates`; **an extension of the strict/relaxed distinction, not a return to the binary gate.** Weights centralised in `lib/relevanceScorerConfig.ts`.
+
+1. **Per-path base trust** (`NON_ORIGINAL_BASE_FACTOR = 0.5`). `base_retrieval` (the carried-over primaryHits+bigramHits token-overlap, cap 20) is trusted in full only for original-query candidates; a non-original candidate measured that overlap against a *rewritten* slot, so it counts at ½. Only this low-weight term is path-scaled — the high-signal `exact_phrase` / `whole_token` / subject terms are path-independent, so a genuinely on-subject rewrite result is barely affected.
+
+2. **Non-original off-subject extra demotion** (`NON_ORIGINAL_OFFSUBJECT_EXTRA_PENALTY = -10`, added to `missing_subject_penalty`). The graded successor to `hasStrict`: an off-subject record surfaced **only** by a rewrite/decomposition/relaxed path (the exact 笔袋 food/Gemini profile) is demoted below the inclusion floor. Gated by `!subjectPresent`, so on-subject relaxed results — R3's whole point — are never touched. Net for the food poster: `base 10 + tags 8 − 15 − 10 = −7` < floor → dropped.
+
+3. **Result-count-aware subject gate** (`RESULT_RICH_MIN_ONSUBJECT = 8`, in `selectFinalCandidates`). A query is *result-rich* once ≥8 candidates are genuinely on-subject (subjectPresent AND positive score). For a rich query, a **non-original** candidate must carry the query subject to be included at all → prunes 促销海报's off-subject 4th and any 笔袋 food that survived mechanism 2. For a *thin* query the gate never engages — scoring+filtering cannot shrink an already-thin result (reviewer's "对返回结果少的 query 评分+过滤不影响结果"). Original-query candidates are never gated (Direction-1 floor invariant intact).
+
+### Invariants preserved
+- Original-pass records always kept when original is non-empty (Direction 1).
+- Never-zero guarantee when original is empty (top-N fallback ignores both floor and gate).
+- No new LLM calls / embeddings / learned reranker — every signal deterministic from catalog+query text.
+
+### Known residual (follow-up, not blocking)
+- `subjectPresent` for single-token CJK queries is the weak `titleHit || tagsHit` heuristic; a candidate with a *spurious* subject-token hit still reads as on-subject and escapes both mechanisms 2 and 3 (it is only demoted by mechanism 1). A stronger single-token subject test (e.g. requiring the hit in title, not just tags) is the next lever if 笔袋-class residue remains.
+- Calibration used the eval-07-21 case set only, per the standing prohibition on query-by-query overfitting against the full 326-query benchmark. Re-run the benchmark before promoting to prod.
+
+## Verification
+- `npx vitest run --config vitest.unit.config.ts lib/__tests__/relevanceScorer.test.ts` — 37/37 (5 new v1.1 cases: per-path base discount, 笔袋 food demotion-below-relevant-and-negative, rich-query drop, thin-query leniency, original-never-gated).
+- `npx tsc --noEmit` — clean.
+- Live re-eval against search-eval-07-21 queries + the full benchmark pending before prod promotion.

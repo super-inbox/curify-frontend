@@ -1085,6 +1085,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
         templateId: x.rec.template_id,
         isMultiTermQuery,
         hasProtectedPhraseQuery,
+        isOriginal: originalIds.has(x.rec.id),
       },
       x.score,
     ),

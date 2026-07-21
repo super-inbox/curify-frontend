@@ -28,6 +28,9 @@ import {
   REQUIRED_TERM_COVERAGE_MIN_RATIO,
   ISOLATED_HIT_MAX_COVERAGE_RATIO,
   ISOLATED_HIT_SCORE_CAP,
+  NON_ORIGINAL_BASE_FACTOR,
+  NON_ORIGINAL_OFFSUBJECT_EXTRA_PENALTY,
+  RESULT_RICH_MIN_ONSUBJECT,
 } from "./relevanceScorerConfig";
 
 export type FieldHitInfo = {
@@ -82,6 +85,13 @@ export type ScoreContext = {
    *  gate / isolated-hit cap below are skipped entirely for these
    *  queries so the two mechanisms compose without conflict. */
   hasProtectedPhraseQuery: boolean;
+  /** v1.1 per-path weighting: true when this candidate came from the
+   *  ORIGINAL (non-rewrite) query pass. Non-original candidates matched a
+   *  REWRITTEN/decomposed query slot, so their carried-over base_retrieval
+   *  token-overlap is weaker evidence and is trusted at NON_ORIGINAL_BASE_FACTOR
+   *  (config). The high-signal exact_phrase/whole_token/subject terms are
+   *  path-independent — an on-subject rewrite result is barely affected. */
+  isOriginal: boolean;
 };
 
 export type ScoreBreakdown = {
@@ -93,6 +103,11 @@ export type ScoreBreakdown = {
   missing_subject_penalty: number;
   family_saturation_penalty: number;
   final_score: number;
+  /** v1.1: the EFFECTIVE subject-presence decision (raw subjectPresent
+   *  combined with the multi-term coverage gate). Exposed so the pool-level
+   *  selectFinalCandidates can apply the result-rich subject gate without
+   *  re-deriving it. */
+  subjectPresent: boolean;
   reasons: string[];
 };
 
@@ -111,7 +126,16 @@ export function scoreRecord(
   const reasons: string[] = [];
   const w = SCORER_WEIGHTS;
 
-  const base_retrieval = Math.min(baseRetrievalScore, 20) * w.base_retrieval;
+  // v1.1 per-path weighting: trust the carried-over token-overlap base signal
+  // in full only for original-query candidates; a non-original candidate's
+  // overlap was measured against a rewritten/decomposed slot, so it is weaker
+  // evidence (NON_ORIGINAL_BASE_FACTOR). Only this low-weight base term is
+  // path-scaled — the high-signal terms below are path-independent.
+  const pathBaseFactor = ctx.isOriginal ? 1 : NON_ORIGINAL_BASE_FACTOR;
+  const base_retrieval = Math.min(baseRetrievalScore, 20) * w.base_retrieval * pathBaseFactor;
+  if (!ctx.isOriginal && base_retrieval > 0) {
+    reasons.push(`non_original_base_trust_${NON_ORIGINAL_BASE_FACTOR}`);
+  }
 
   let exact_phrase = 0;
   if (fields.exactPhraseHit) {
@@ -181,6 +205,15 @@ export function scoreRecord(
   if (!subjectPresent) {
     missing_subject_penalty = w.missing_subject_penalty;
     reasons.push("core_subject_not_present_in_title_or_tags");
+    // v1.1 per-path extension of V0's binary hasStrict gate: an off-subject
+    // candidate surfaced ONLY by a non-original (rewrite/decomposition/relaxed)
+    // path -- the exact profile V0's gate dropped wholesale (笔袋 food / Gemini
+    // posters) -- gets an extra demotion so it falls below the inclusion floor.
+    // On-subject relaxed results are untouched (subjectPresent short-circuits).
+    if (!ctx.isOriginal) {
+      missing_subject_penalty += NON_ORIGINAL_OFFSUBJECT_EXTRA_PENALTY;
+      reasons.push("non_original_off_subject_extra_demotion");
+    }
   }
 
   if (fields.paramsOnlyHit) {
@@ -226,6 +259,7 @@ export function scoreRecord(
     missing_subject_penalty,
     family_saturation_penalty: 0,
     final_score,
+    subjectPresent,
     reasons,
   };
 }
@@ -302,21 +336,41 @@ export function selectFinalCandidates(
   scored: ScoredCandidate[],
   originalIds: Set<string>
 ): ScoredCandidate[] {
+  // v1.1 result-count-aware inclusion. A query is "result-rich" once it has
+  // >= RESULT_RICH_MIN_ONSUBJECT genuinely on-subject candidates (subject
+  // present AND a positive final_score). For a RICH query, a NON-ORIGINAL
+  // (rewrite/decomposition/relaxed) candidate must itself carry the query
+  // subject to be included -- this prunes the off-subject tail (the promo-
+  // poster "第四个结果不相关" case, and the 笔袋 western-food / Gemini posters
+  // once enough real stationery candidates are present) on top of the existing
+  // score floor. For a THIN query the gate never engages, so scoring+filtering
+  // cannot shrink an already-thin result (reviewer directive: "对返回结果少的
+  // query 评分+过滤不影响结果"). Original-query candidates are NEVER gated here
+  // -- the Direction-1 floor invariant preserves them regardless.
+  const onSubjectCount = scored.filter(
+    (c) => c.breakdown.subjectPresent && c.breakdown.final_score > 0
+  ).length;
+  const isResultRich = onSubjectCount >= RESULT_RICH_MIN_ONSUBJECT;
+  const passesRichGate = (c: ScoredCandidate) =>
+    !isResultRich || originalIds.has(c.id) || c.breakdown.subjectPresent;
+
   if (originalIds.size === 0) {
     const aboveFloor = scored.filter(
-      (c) => c.breakdown.final_score >= MIN_SCORE_WHEN_ORIGINAL_EMPTY
+      (c) => c.breakdown.final_score >= MIN_SCORE_WHEN_ORIGINAL_EMPTY && passesRichGate(c)
     );
     if (aboveFloor.length >= Math.min(MIN_KEPT_WHEN_ORIGINAL_EMPTY, scored.length)) {
       return aboveFloor;
     }
-    // Not enough candidates clear the floor -- never-zero guarantee:
-    // take the top-scoring candidates regardless of the floor rather
-    // than returning an emptier (or empty) set.
+    // Not enough candidates clear the floor/gate -- never-zero guarantee:
+    // take the top-scoring candidates regardless of the floor AND the rich
+    // gate rather than returning an emptier (or empty) set.
     return [...scored]
       .sort((a, b) => b.breakdown.final_score - a.breakdown.final_score)
       .slice(0, MIN_KEPT_WHEN_ORIGINAL_EMPTY);
   }
   return scored.filter(
-    (c) => originalIds.has(c.id) || c.breakdown.final_score >= MIN_SCORE_WHEN_ORIGINAL_NONEMPTY
+    (c) =>
+      originalIds.has(c.id) ||
+      (c.breakdown.final_score >= MIN_SCORE_WHEN_ORIGINAL_NONEMPTY && passesRichGate(c))
   );
 }

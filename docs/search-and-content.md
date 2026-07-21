@@ -52,6 +52,8 @@ A bug in any one thread can leak across — most often we discover the wrong thr
 
 **Runbook:** [`docs/search-quality.md`](./search-quality.md). Already detailed there; recapping the open items:
 
+**Relevance scorer — V2-R3 → R1 (2026-07-21, in revision):** the unified deterministic `scoreRecord` (branch `baobao/search-relevance-prod-main-v2-r3-root-cause-fix-2026-07-19`) replaced V0's binary `hasStrict` gate. The search-eval-07-21 review (six queries improved: 电影海报/sticker pack/product photo/日历/logo/人体图解) flagged two structural issues from the **uniform** weight schema: (1) off-subject candidates from rewrite/decomposition paths leak in and rank high on thin queries (**笔袋** regression — western-food + Gemini posters injected above the relevant stationery card); (2) no result-count awareness (**促销海报** keeps an irrelevant 4th). **R1** (scorer `v1.1`) extends the strict/relaxed distinction into a per-path weighting + a result-count-aware subject gate — full change log + per-case rationale in [`docs/search-relevance-v2r3-r1-2026-07-21.md`](./search-relevance-v2r3-r1-2026-07-21.md). Live re-eval + full-benchmark run pending before prod promotion.
+
 ### Open follow-ups
 1. **Confirm `SEARCH_LOWRESULT` in admin portal.** The frontend ships the event (commit `8217070`), the Postgres enum has the value (migration ran 2026-05-18, verified via `pg_enum`). But `curify_background/app/crud/admin.py` lines 751-798 only aggregates `SEARCH_NORESULT` — the low-result panel hasn't been added. Until that lands, the low-result events accumulate in the DB but nobody surfaces them. **Half-day backend task.**
 
