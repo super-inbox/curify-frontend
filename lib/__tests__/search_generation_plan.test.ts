@@ -126,4 +126,39 @@ describe("search generation planner", () => {
       }),
     ]);
   });
+
+  it("uses a general visual explainer when no specialized template matches", async () => {
+    const plan = await buildSearchGenerationPlan(
+      "unmatched niche concept",
+      "en",
+      {
+        globalMatcher: async () => [],
+        targetedReranker: async () => [],
+      },
+    );
+
+    expect(plan.source).toBe("fallback");
+    expect(plan.total_credits).toBe(10);
+    expect(plan.directions).toEqual([
+      expect.objectContaining({
+        template_id: "template-education",
+        params: { topic: "unmatched niche concept" },
+      }),
+    ]);
+  });
+
+  it("explains when a query requires a reference portrait", async () => {
+    const plan = await buildSearchGenerationPlan("证件照", "zh", {
+      globalMatcher: async () => {
+        throw new Error("matcher should not run");
+      },
+      targetedReranker: async () => {
+        throw new Error("reranker should not run");
+      },
+    });
+
+    expect(plan.directions).toEqual([]);
+    expect(plan.total_credits).toBe(0);
+    expect(plan.notice).toContain("上传本人照片");
+  });
 });
