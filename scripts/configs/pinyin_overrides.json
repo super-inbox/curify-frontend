@@ -1,0 +1,35 @@
+{
+  "_note": "Machine-readable companion to docs/pinyin-generation-guide.md. 多音字 (polyphone) reading overrides + sandhi rules for generating pinyin on bilingual Chinese cards (HSK reading posters, flashcards, caption overlays). Consume in a pinyin pass (e.g. after pypinyin) to force the correct reading in context. Keep in sync with the doc's tables.",
+  "sandhi": {
+    "yi": {
+      "char": "一",
+      "rule": "citation yī only when counting/standalone/final/ordinal; yì before 1st/2nd/3rd tone; yí before 4th tone; neutral in verb reduplication (看一看)",
+      "examples": {"一天": "yì tiān", "一条": "yì tiáo", "一起": "yì qǐ", "一点": "yì diǎn", "一个": "yí gè", "一位": "yí wèi", "一样": "yí yàng", "第一": "dì yī"}
+    },
+    "bu": {
+      "char": "不",
+      "rule": "bù normally; bú ONLY before a 4th tone",
+      "examples": {"不是": "bú shì", "不舒服": "bù shū fu", "不多": "bù duō", "不好": "bù hǎo"}
+    }
+  },
+  "polyphones": {
+    "圈": {"here": "juàn", "context": "羊圈 pen/fold", "avoid": "quān"},
+    "只": {"here": "zhī", "context": "measure word 一只", "avoid": "zhǐ (only, in 只有/只是)"},
+    "觉": {"here": "jiào", "context": "睡觉 sleep", "avoid": "jué (feel)"},
+    "长": {"here": "zhǎng", "context": "长大 grow", "avoid": "cháng (long)"},
+    "地": {"here": "de", "context": "adverbial 高兴地", "avoid": "dì (ground)"},
+    "着": {"here": "zhe|zháo", "context": "笑着 zhe / 着急 zháo", "avoid": "zhuó"},
+    "得": {"here": "de|dé|děi", "context": "跑得快 de / 得到 dé / 得走 děi", "avoid": ""},
+    "大夫": {"here": "dài fu", "context": "doctor", "avoid": "dà fū"},
+    "都": {"here": "dōu", "context": "大家都 all", "avoid": "dū (capital)"},
+    "为": {"here": "wèi|wéi", "context": "因为/为了 wèi / 成为 wéi", "avoid": ""},
+    "还": {"here": "hái|huán", "context": "还有 hái / 还书 huán", "avoid": ""},
+    "乐": {"here": "lè|yuè", "context": "快乐 lè / 音乐 yuè", "avoid": ""},
+    "少": {"here": "shǎo|shào", "context": "多少 shǎo / 少年 shào", "avoid": ""},
+    "教": {"here": "jiāo|jiào", "context": "教书 jiāo / 教室 jiào", "avoid": ""},
+    "空": {"here": "kōng|kòng", "context": "天空 kōng / 有空 kòng", "avoid": ""},
+    "称": {"here": "chēng|chèn", "context": "称象 chēng / 称心 chèn", "avoid": ""},
+    "差": {"here": "chà|chā", "context": "差不多 chà / 差别 chā", "avoid": ""}
+  },
+  "neutral_tone_words": ["妈妈:māma", "眼睛:yǎnjing", "姐姐:jiějie", "孩子:háizi", "朋友:péngyou", "喜欢:xǐhuan", "舒服:shūfu", "东西:dōngxi", "先生:xiānsheng", "衣服:yīfu", "怎么:zěnme"]
+}
