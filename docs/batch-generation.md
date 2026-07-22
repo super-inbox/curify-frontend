@@ -109,6 +109,14 @@ Existing example configs:
 
 ---
 
+## Rendering Chinese text WITH pinyin (bilingual cards)
+
+Any template that bakes Chinese **plus pinyin** into the image (HSK reading posters, flashcards, caption overlays) has a special failure mode: the model gets the characters right but the **pinyin tones wrong** (一/不 sandhi, 多音字 like 圈=juàn, 只=zhī) — pervasive (~80% of cards) and invisible to a "does the text make sense" check. Do **not** let the model compose the passage; author correct text+pinyin and make it typeset verbatim, then run a native-level 声调 QA pass.
+
+Full method, failure taxonomy, sandhi rules, and the 多音字 table: **[`docs/pinyin-generation-guide.md`](./pinyin-generation-guide.md)** (machine-readable overrides in `scripts/configs/pinyin_overrides.json`).
+
+---
+
 ## Where things live
 
 | Surface | Path |
@@ -121,6 +129,7 @@ Existing example configs:
 | Generated previews | `public/images/nano_insp_preview/<id>-prev.jpg` |
 | Inspiration records (canonical) | `public/data/nano_inspiration.json` |
 | Template registry | `public/data/nano_templates.json` |
+| Pinyin correctness guide (Chinese cards) | `docs/pinyin-generation-guide.md` + `scripts/configs/pinyin_overrides.json` |
 | Sibling status docs | `docs/blog-quality.md`, `docs/search-quality.md`, `docs/interconnection.md`, `docs/etsy-packs.md` |
 
 ---
