@@ -48,12 +48,36 @@ The scorer-v1.1 full-326 eval (`visual-search-adhoc/…/scorer-v1.1-evaluation-2
 
 **Fix:** make the single-token branch consistent with the multi-term branch — `subjectPresent = tokenInBlob(combined, subj)` where `subj` is the ORIGINAL query's subject token (`originalPrimaryTokens[0] ?? originalBigrams[0] ?? fullQueryPhrase`), a whole-token (ASCII) / substring (CJK) hit against the record's own blob, independent of the path's callTokens. The food (no `笔袋`) → `subjectPresent=false` → mechanisms 2+3 fire → dropped; genuine `Stationery`/`en-zh` cards (which literally contain `笔袋`) stay. Multi-term wins are untouched (different branch); single-token wins (`logo`, `日历`) keep their subject because their relevant results carry the token. Tradeoff to watch in re-eval: a CJK single-token query whose only relevant items are English-tagged (no CJK term) loses subject-presence — bounded, and the never-empty + original-floor invariants prevent new zeros. `tsc` clean; 37/37 scorer units still pass (they assert scoreRecord/selectFinalCandidates given a subjectPresent, unaffected by this upstream fix).
 
-Cluster A (multi-term head-noun/modifier: wine label, 字母海报, banner→"Bruce Banner"; and the 人体图解 preserved-win break) is the **next** lever — not in this commit; land + re-gate B first.
+### Fix A (Cluster A) — landed 2026-07-22 (format-word-aware subject)
+
+Cluster A = multi-term **head-noun + format** queries where the scorer picked the wrong subject. `deriveFieldHits` approximated a query's subject as its **longest ORIGINAL token**; for "head-noun + format/output" queries that is almost always the FORMAT word, not the theme:
+
+| Query | longest token (old subject) | correct subject | wrong-sense winner it promoted |
+|---|---|---|---|
+| wine **label** | `label` (5 > `wine` 4) | wine | "label printer" / blank product-label mockups |
+| 字母**海报** (alphabet poster) | `海报` wins the compound | 字母 (alphabet) | MBTI/generic "poster" group shots |
+| 巧克力**礼盒** (chocolate gift-box) | `礼盒` | 巧克力 (chocolate) | generic gift-box / hamper merch |
+| 人体**图解** (anatomy diagram) | `图解` | 人体 (human body) | architecture / how-to "图解" explainers |
+
+Because the wrong-sense content carries the format word, it read as subject-present (`+MISSING_SUBJECT` avoided) while the genuine head-noun results — which lack the format word — took the `−15` missing-subject penalty and sank. Confirmed live on all four via scorer instrumentation (e.g. wine label: subject picked = `label` → label-printers `subj=1`, actual wines `subj=0 → −4`).
+
+**Fix:** the subject is the query's **theme / head-noun content — the non-format token(s)**. New `lib/searchSubject.ts` exports `subjectUnits(primaryTokens, bigrams, fullQueryPhrase)` and a `FORMAT_TOKENS` lexicon; `deriveFieldHits`'s single-token + multi-term branches collapse into `subjectPresent = subjectUnits(...).some(u => tokenInBlob(combined, u))`.
+
+- **Segmented query** (`wine label`) → content primary tokens (`wine`); a candidate carrying only `label` is off-subject → `−15` → demoted.
+- **CJK compound with a format bigram** (`字母海报` = 字母 + 海报, `人体图解` = 人体 + 图解) → the non-format content bigrams (`字母` / `人体`); wrong-sense results with only `海报` / `图解` are off-subject.
+- **Single concept** — ASCII single word (`logo`) or CJK compound with **no** format word (`笔袋`, `元素周期表`) → the whole token. This **preserves Fix B's strictness** (require the full compound, never a partial bigram), so a record carrying only `元素` is not subject-present for `元素周期表`.
+- **All-format query** (`poster`) → falls back to the tokens themselves so a bare-format query still has a subject.
+
+**Leverages the taxonomy (per review Q).** `FORMAT_TOKENS`' English entries are the format/output subset of `lib/taxonomy.json` `content_shapes` + `information_types` (poster, card, flashcard, grid, packaging, map, quote, timeline, infographic…) — the same **subject-vs-shape** separation the taxonomy already draws, not a parallel hand-rolled axis. The taxonomy carries **no CJK shape surface forms** (海报/图解/礼盒/包装 all absent), yet every confirmed CJK Cluster-A regression hinges on one, so the CJK entries are a curated 2-char supplement. Calibration guardrail baked into tests: theme words that merely co-occur with a format (**sticker**, **logo**, map地图, recipe, menu) are kept OUT — so `sticker pack` still resolves subject=`sticker` (`pack` is the format word). Known gap: 3-char CJK shape words (信息图 / 缩略图) don't match a clean trailing bigram — deferred.
+
+Bonus: this also **hardens the 人体图解 preserved-win** (subject now `人体`, not `图解`). Not fixed here: **black friday banner** (`banner` → Marvel's "Bruce Banner") — that one is a *protected-phrase* case (`banner` is not part of the "black friday" anchor, so subject-presence already excludes it); the residual is that Marvel's whole-token TITLE hit on `banner` is uncapped because a protected phrase disables the isolated-hit cap. That needs a **separate** lever (apply the isolated-hit cap under protected phrases) — filed as follow-up, not in this commit.
+
+Tests: `lib/__tests__/searchSubject.test.ts` (16) — the 4 Cluster-A cases, the 6 preserved wins, the 2 Fix-B single-concept cases, all-format fallback, and lexicon calibration (format words present; theme words absent). `tsc` clean; existing 37 scorer units unaffected (they assert `scoreRecord`/`selectFinalCandidates` given a `subjectPresent`, upstream of this change).
 
 ### Known residual (follow-up, not blocking)
 - Calibration used the eval-07-21 case set only, per the standing prohibition on query-by-query overfitting against the full 326-query benchmark. Re-run the benchmark before promoting to prod.
 
 ## Verification
-- `npx vitest run --config vitest.unit.config.ts lib/__tests__/relevanceScorer.test.ts` — 37/37 (5 new v1.1 cases: per-path base discount, 笔袋 food demotion-below-relevant-and-negative, rich-query drop, thin-query leniency, original-never-gated).
-- `npx tsc --noEmit` — clean.
-- Live re-eval against search-eval-07-21 queries + the full benchmark pending before prod promotion.
+- `npx vitest run --config vitest.unit.config.ts lib/__tests__/relevanceScorer.test.ts lib/__tests__/searchSubject.test.ts` — 53/53 (37 scorer v1.1 + 16 Fix-A `subjectUnits`: 4 Cluster-A cases, 6 preserved wins, 2 Fix-B single-concept, all-format fallback, lexicon calibration).
+- `npx tsc --noEmit` — clean (0 errors).
+- Live re-eval against search-eval-07-21 queries + the full 326-query benchmark pending before prod promotion (Fix B **and** Fix A now both landed; re-gate covers both).

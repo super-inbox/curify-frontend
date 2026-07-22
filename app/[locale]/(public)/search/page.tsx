@@ -43,6 +43,7 @@ import {
   type ScoredCandidate,
 } from "@/lib/relevanceScorer";
 import { TOTAL_CANDIDATE_POOL_CAP, PATH_CANDIDATE_CAP } from "@/lib/relevanceScorerConfig";
+import { subjectUnits } from "@/lib/searchSubject";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Threshold below which we trigger the LLM multi-query expansion path
@@ -597,26 +598,21 @@ export default async function SearchPage({ params, searchParams }: Props) {
       subjectPresent =
         protectedPhrases.some((p) => combined.includes(p)) ||
         anchors.some((a) => tokenInBlob(combined, a));
-    } else if (originalPrimaryTokens.length <= 1) {
-      // Fix B (2026-07-21, scorer-v1.1 eval Cluster B / 笔袋 flagship): make
-      // single-token subject-presence CONSISTENT with the multi-term branch
-      // below — require the ORIGINAL query's subject token to actually appear
-      // (whole-token for ASCII, substring for CJK) in the title/tags blob, NOT
-      // the `titleHit || tagsHit` shortcut, which is derived from THIS path's
-      // (possibly rewritten/decomposed) callTokens and includes a CJK
-      // bigram/substring fallback. That shortcut let an off-subject non-original
-      // candidate whose only 袋-content was an alias like 帆布袋设计 (canvas tote
-      // bag) read as subject-present for the query 笔袋 — via a decomposition
-      // slot's CJK bigram — and so bypass NON_ORIGINAL_OFFSUBJECT_EXTRA_PENALTY
-      // and the result-rich gate, ranking #1 over genuine stationery (Step-6
-      // residual, confirmed live). Uses originalPrimaryTokens per the design
-      // note above (a narrow decomposition slot must not self-satisfy the
-      // subject for an unrelated original query).
-      const subj = originalPrimaryTokens[0] ?? originalBigrams[0] ?? fullQueryPhrase;
-      subjectPresent = subj ? tokenInBlob(combined, subj) : false;
     } else {
-      const subjectToken = [...originalPrimaryTokens].sort((a, b) => b.length - a.length)[0];
-      subjectPresent = tokenInBlob(combined, subjectToken);
+      // Fix B (2026-07-21, Cluster B / 笔袋) + Cluster-A format-word fix
+      // (2026-07-22, wine label / 字母海报 / 巧克力礼盒 / 人体图解): derive the
+      // subject unit(s) from the ORIGINAL query with FORMAT/output words removed
+      // (see lib/searchSubject.ts). This replaces the old "longest ORIGINAL
+      // primary token = subject" heuristic, which for "head-noun + format"
+      // queries picked the FORMAT word (label > wine, 海报, 礼盒, 图解) and let
+      // wrong-sense content that merely carried the format word read as
+      // subject-present. subjectUnits() keeps Fix B's strictness for
+      // single-concept CJK compounds (require the whole token, not a partial
+      // bigram) and, per the design note above, uses the user's actual query
+      // tokens — NOT this path's possibly-narrower callTokens — so a decomposition
+      // slot cannot self-satisfy the subject for an unrelated original query.
+      const subj = subjectUnits(originalPrimaryTokens, originalBigrams, fullQueryPhrase);
+      subjectPresent = subj.some((u) => tokenInBlob(combined, u));
     }
     const coverageRatio = computeCoverageRatio(combined, originalPrimaryTokens, originalBigrams);
     return {

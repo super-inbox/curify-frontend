@@ -11,7 +11,10 @@
 // for the frozen snapshot (weights + version + calibration-set hash +
 // freeze timestamp + adjustment rationale).
 
-export const SCORER_CONFIG_VERSION = "v1.1.0-2026-07-21";
+// v1.2.0 (2026-07-22): Fix A / Cluster A — format-word-aware query subject
+// (lib/searchSubject.ts). No SCORER_WEIGHTS change; subject derivation upstream
+// in deriveFieldHits now excludes FORMAT_TOKENS. See docs/search-relevance-v2r3-r1-2026-07-21.md.
+export const SCORER_CONFIG_VERSION = "v1.2.0-2026-07-22";
 
 export const SCORER_WEIGHTS = {
   // ---- Positive signals ----
