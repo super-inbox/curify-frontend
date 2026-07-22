@@ -43,8 +43,14 @@ All additive to `scoreRecord` / `selectFinalCandidates`; **an extension of the s
 - Never-zero guarantee when original is empty (top-N fallback ignores both floor and gate).
 - No new LLM calls / embeddings / learned reranker — every signal deterministic from catalog+query text.
 
+### Fix B — landed 2026-07-22 (single-token subject-presence bypass)
+The scorer-v1.1 full-326 eval (`visual-search-adhoc/…/scorer-v1.1-evaluation-2026-07-21`) confirmed this residual live: for 笔袋 the flagship regressed (PARTIAL→FAIL) because an off-subject non-original candidate (a canvas-tote-bag food template whose only 袋-content is the alias `帆布袋设计`, no `笔` char) read as **subject-present** and bypassed mechanism 2's `−10` penalty and mechanism 3's rich-gate. Root cause: the single-token branch of `deriveFieldHits` (`page.tsx`) computed `subjectPresent = titleHit || tagsHit`, where those hits come from *this path's* (rewritten/decomposed) `callTokens` and include a CJK bigram/substring fallback — so a decomposition slot's bigram (`帆布袋`) satisfied it.
+
+**Fix:** make the single-token branch consistent with the multi-term branch — `subjectPresent = tokenInBlob(combined, subj)` where `subj` is the ORIGINAL query's subject token (`originalPrimaryTokens[0] ?? originalBigrams[0] ?? fullQueryPhrase`), a whole-token (ASCII) / substring (CJK) hit against the record's own blob, independent of the path's callTokens. The food (no `笔袋`) → `subjectPresent=false` → mechanisms 2+3 fire → dropped; genuine `Stationery`/`en-zh` cards (which literally contain `笔袋`) stay. Multi-term wins are untouched (different branch); single-token wins (`logo`, `日历`) keep their subject because their relevant results carry the token. Tradeoff to watch in re-eval: a CJK single-token query whose only relevant items are English-tagged (no CJK term) loses subject-presence — bounded, and the never-empty + original-floor invariants prevent new zeros. `tsc` clean; 37/37 scorer units still pass (they assert scoreRecord/selectFinalCandidates given a subjectPresent, unaffected by this upstream fix).
+
+Cluster A (multi-term head-noun/modifier: wine label, 字母海报, banner→"Bruce Banner"; and the 人体图解 preserved-win break) is the **next** lever — not in this commit; land + re-gate B first.
+
 ### Known residual (follow-up, not blocking)
-- `subjectPresent` for single-token CJK queries is the weak `titleHit || tagsHit` heuristic; a candidate with a *spurious* subject-token hit still reads as on-subject and escapes both mechanisms 2 and 3 (it is only demoted by mechanism 1). A stronger single-token subject test (e.g. requiring the hit in title, not just tags) is the next lever if 笔袋-class residue remains.
 - Calibration used the eval-07-21 case set only, per the standing prohibition on query-by-query overfitting against the full 326-query benchmark. Re-run the benchmark before promoting to prod.
 
 ## Verification
