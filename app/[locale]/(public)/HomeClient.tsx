@@ -12,8 +12,6 @@ import HomeHero from "./HomeHero";
 import HomeImageWorkbench from "./HomeImageWorkbench";
 import HomeSolutionsGrid from "./HomeSolutionsGrid";
 import HomeWorkflow from "./HomeWorkflow";
-import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
-import { TOP_QUERIES } from "@/app/[locale]/(public)/topics/[slug]/TopSearchSuggestions";
 import HomeFusedRow, { type TopRemixPrompt, type HomeExampleTile } from "./HomeFusedRow";
 
 const inter = Inter({
@@ -96,9 +94,6 @@ export default function HomeClient({
             searchQueries={searchQueries}
             locale={locale}
             maxRows={8}
-            topRightCell={
-              <WcRotatingSlot locale={locale} queries={TOP_QUERIES["world-cup"]} />
-            }
           />
         ) : (
           // Fallback when the gallery snapshot is empty — render the
