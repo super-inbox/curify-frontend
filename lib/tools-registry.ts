@@ -477,6 +477,25 @@ export const TOOL_REGISTRY: ToolDef[] = [
     i18n: toolKeys("speech_translator"),
     seo: seoKeys("speech_translator"),
   },
+
+  {
+    id: "worksheet-from-video",
+    slug: "worksheet-from-video",
+    groupId: "video",
+    status: "demo",
+    job_type: "video_transcript",
+    namespace: "worksheetFromVideo",
+    i18n: toolKeys("worksheet_from_video"),
+    seo: seoKeys("worksheet_from_video"),
+    demo: {
+      type: "language_switch",
+      defaultLang: "en",
+      languages: {
+        en: { flag: "\uD83C\uDDFA\uD83C\uDDF8", video: "/video/blog/video-to-learning-pack-en.mp4", label: "EN" },
+        zh: { flag: "\uD83C\uDDE8\uD83C\uDDF3", video: "/video/blog/video-to-learning-pack-cn.mp4", label: "ZH" },
+      },
+    },
+  },
 ];
 
 export function getToolBySlug(slug: string) {

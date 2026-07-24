@@ -299,8 +299,8 @@
       "title": "AI 제품 사진 생성기",
       "desc": "템플릿 프롬프트를 사용하여 브랜드에 맞는 제품 사진을 대량으로 생성합니다 — 9개 이미지 그리드, 포장, 의상 착용, 라이프스타일 샷.",
       "meta": {
-        "title": "AI 제품 사진 생성기 | 대량 템플릿 카탈로그 사진 | Curify",
-        "description": "템플릿 비주얼 스타일을 가진 AI 제품 사진 생성기 — 하나의 프롬프트로 9개 이미지 제품 그리드, 포장 목업, 의상 착용, 라이프스타일 샷을 제공합니다. 데모 + 조기 액세스."
+        "title": "AI Product Photo Generator | Templated Catalog Photos at Scale | Curify",
+        "description": "AI product photo generator with templated visual style — 9-image grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Free demo + early access."
       }
     },
     "ecommerce_photo": {
@@ -333,6 +333,14 @@
       "meta": {
         "title": "중국 전통 의상 가상 착용 영상 생성기 | 무료 AI 한푸 착용 | Curify",
         "description": "사진 한 장을 올리고 AI가 당신을 중국 왕조 의상의 영화 같은 영상으로 변신시키는 것을 지켜보세요. 5,000년 중국 패션을 입어보세요 — 무료, 로그인 없이, 즉시 공유 가능."
+      }
+    },
+    "worksheet_from_video": {
+      "title": "AI Worksheet Generator from Video",
+      "desc": "Paste a video — even a YouTube clip — and get a complete worksheet: subtitles, word cards, a quiz, the script, and speaking practice. Free demo.",
+      "meta": {
+        "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
+        "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
       }
     }
   },
@@ -1205,6 +1213,61 @@
         "educationBody": "중국 역사와 전통 복식이 궁금한 누구나 말 그대로 5,000년 패션 속으로 들어가, 당, 송, 명 스타일이 자신에게 어떻게 어울릴지 탐험할 수 있습니다.",
         "businessTitle": "브랜드 & 이벤트 마케터",
         "businessBody": "문화 축제, 박물관, 코스프레 및 문화유산 브랜드는 이 가상 착용을 인터랙티브하고 공유하기 좋은 캠페인 후크로 활용합니다. 무료이고 로그인이 필요 없어 자연스럽게 확산됩니다."
+      }
+    }
+  },
+  "worksheetFromVideo": {
+    "metadata": {
+      "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
+      "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
+    },
+    "title": "AI Worksheet Generator from Video",
+    "description": "Turn any video into a ready-to-teach worksheet pack — bilingual subtitles, word cards, a comprehension quiz, the script, a character map, and speaking practice — in about 30 seconds. Paste a YouTube clip or upload your own. Free demo below.",
+    "example": "Example: a Journey to the West clip turned into a full worksheet — subtitles, word cards, quiz, and speaking practice, all aligned to the same video.",
+    "cta": "Join Early Access",
+    "demo": {
+      "aria": "Demo video: turning a clip into a worksheet pack",
+      "caption": "Watch a video become a complete worksheet pack",
+      "nowPlaying": "Now playing: {lang}"
+    },
+    "why": {
+      "title": "Why a worksheet generator built for video?",
+      "point1": "Most worksheet generators start from a topic or a PDF. This one starts from a video — a YouTube clip, an animation, a lecture recording — and pulls the vocabulary, dialogue, and comprehension questions straight from what's on screen.",
+      "point2": "One paste produces the whole pack: bilingual subtitles, illustrated word cards, a comprehension quiz, the speaker-labeled script, a character map, and spoken speaking practice — already aligned to the same clip.",
+      "point3": "Built for teachers, tutors, homeschoolers, and self-study learners who teach from video and don't want to spend an hour per clip building the worksheet by hand.",
+      "point4": "Demo-only today; join early access to run your own videos through the pipeline when it opens."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "What does the AI worksheet generator produce from a video?",
+      "a1": "From one video it generates a complete worksheet pack: bilingual subtitles, vocabulary word cards, a multiple-choice comprehension quiz, the full speaker-labeled script, a character-relationship map, and AI speaking practice — all keyed to the clip.",
+      "q2": "Can it use a YouTube video?",
+      "a2": "Yes — the workflow is built around exactly that: paste a YouTube (or other) video link and the generator turns the clip into a worksheet. Short clips (2-8 minutes) work best so the vocabulary set stays learnable.",
+      "q3": "How is this different from a generic worksheet generator?",
+      "a3": "Generic worksheet generators start from a topic or a document. This one starts from a video and extracts the language and comprehension material from the actual footage — so the worksheet matches what students just watched, not a generic topic."
+    },
+    "deep": {
+      "what": {
+        "title": "What is a video worksheet generator?",
+        "p1": "A video worksheet generator turns a video clip into printable, teachable study material — subtitles, vocabulary cards, comprehension questions, a script, and speaking prompts — without a teacher building each piece by hand.",
+        "p2": "The workflow transcribes the clip into time-aligned bilingual subtitles, extracts the standout vocabulary as illustrated cards, writes a short comprehension quiz, labels the dialogue by speaker, maps the characters, and generates spoken practice questions.",
+        "p3": "The result is a complete learning pack aligned end-to-end to one clip — the difference between a student passively watching and actively practicing what's on screen."
+      },
+      "how": {
+        "title": "How the video-to-worksheet pipeline works",
+        "p1": "First, the video is transcribed into accurate, time-aligned subtitles in both the target and the learner's native language.",
+        "p2": "Second, the transcript is mined for study assets: the standout vocabulary becomes illustrated word cards, the plot becomes a 2-3 question comprehension quiz, and the dialogue becomes a speaker-labeled script.",
+        "p3": "Third, for story-based clips the cast is mapped into a character-relationship diagram, and spoken speaking-practice questions are generated so the learner produces the language, not just recognizes it.",
+        "p4": "All of it comes from one paste and stays aligned to the same clip — so the worksheet is about exactly what the student watched."
+      },
+      "usecases": {
+        "title": "Where a video worksheet generator matters",
+        "creatorsTitle": "For language teachers and tutors",
+        "creatorsBody": "Turn any YouTube clip into a full lesson — subtitles, word cards, a quiz, and a role-play script — in the time it takes to make coffee. See the full workflow at /blog/video-to-learning-pack.",
+        "educationTitle": "For homeschool and parents",
+        "educationBody": "Let a child watch an animation and practice while watching, with word cards and a quiz keyed to what's on screen — the exact Journey to the West example in the demo.",
+        "businessTitle": "For self-study learners and edu creators",
+        "businessBody": "Paste any show you love and get study-ready subtitles plus speaking practice; or ship a matching worksheet set for every video you publish, at near-zero prep."
       }
     }
   }
