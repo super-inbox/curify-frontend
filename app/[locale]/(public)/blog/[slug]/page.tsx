@@ -566,6 +566,21 @@ export default async function BlogPostPage({
           <AgenticGenerativeCapabilityContent slug={slug} t={safeT} locale={locale} />
         )}
 
+        {slug === 'video-to-learning-pack' && (
+          <figure className="my-6 max-w-2xl mx-auto">
+            <h2 className="text-xl font-semibold mb-3 text-gray-900">Watch: turn a video into a worksheet pack in 30 seconds</h2>
+            <CdnVideo
+              src={locale === 'zh' ? '/video/blog/video-to-learning-pack-cn.mp4' : '/video/blog/video-to-learning-pack-en.mp4'}
+              poster={cdn('/images/blog/video-to-learning-pack/demo-poster.jpg')}
+              controls
+              preload="none"
+              playsInline
+              className="w-full rounded-lg shadow"
+            />
+            <figcaption className="text-sm text-gray-500 mt-2 text-center">A video → bilingual subtitles, word cards, a quiz, the script, a character map, and speaking practice.</figcaption>
+          </figure>
+        )}
+
         {/* Original blog posts - use generic content renderer */}
         {!slug.startsWith('translate-youtube-video') &&
          slug !== 'ai-youtube-video-translator' &&
@@ -593,20 +608,6 @@ export default async function BlogPostPage({
          slug !== 'mbti-character-generator' &&
          slug !== 'content-tagging-system' &&
          slug !== 'agentic-generative-capability' && (
-          {slug === 'video-to-learning-pack' && (
-            <figure className="my-6 max-w-2xl mx-auto">
-              <h2 className="text-xl font-semibold mb-3 text-gray-900">Watch: turn a video into a worksheet pack in 30 seconds</h2>
-              <CdnVideo
-                src={locale === 'zh' ? '/video/blog/video-to-learning-pack-cn.mp4' : '/video/blog/video-to-learning-pack-en.mp4'}
-                poster={cdn('/images/blog/video-to-learning-pack/demo-poster.jpg')}
-                controls
-                preload="none"
-                playsInline
-                className="w-full rounded-lg shadow"
-              />
-              <figcaption className="text-sm text-gray-500 mt-2 text-center">A video → bilingual subtitles, word cards, a quiz, the script, a character map, and speaking practice.</figcaption>
-            </figure>
-          )}
           <GenericBlogContent
             hasKey={hasKey}
             safeT={safeT}
