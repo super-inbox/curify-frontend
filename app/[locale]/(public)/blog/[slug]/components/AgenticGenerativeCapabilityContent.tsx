@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
 import type { ReactNode } from "react";
 import BlogInlineClickTracker from "./BlogInlineClickTracker";
 import BlogCodeBlockCopyTracker from "./BlogCodeBlockCopyTracker";
@@ -43,7 +43,7 @@ function EditorialFigure({
             : "bg-white"
         }
       >
-        <Image
+        <CdnImage
           src={src}
           alt={alt}
           width={width}
