@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { Metadata } from "next";
@@ -298,6 +299,24 @@ export default async function BlogPostPage({
     return currentKeys.includes(key);
   };
 
+  // Rich-text translation helper for strings that need inline emphasis
+  // (e.g. "<emphasis>see</emphasis>") without resorting to
+  // dangerouslySetInnerHTML. Returns null when the key or namespace
+  // translator isn't available so callers can fall back to safeT().
+  const richT = (
+    key: string,
+    tags: Record<string, (chunks: ReactNode) => ReactNode>
+  ): ReactNode => {
+    if (!currentKeys.includes(key) || !tNamespace) {
+      return null;
+    }
+    try {
+      return tNamespace.rich(key, tags);
+    } catch (error) {
+      return null;
+    }
+  };
+
   // Pre-load array data for the component
   let arrayData: Record<string, any> = {};
   try {
@@ -594,6 +613,7 @@ export default async function BlogPostPage({
           <GenericBlogContent
             hasKey={hasKey}
             safeT={safeT}
+            richT={richT}
             formatContent={formatContent}
             getVideoDubbingUrl={getVideoDubbingUrl}
             locale={locale}
