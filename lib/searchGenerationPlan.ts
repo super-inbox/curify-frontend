@@ -52,10 +52,11 @@ export type SearchGenerationDirection = {
 };
 
 export type SearchGenerationPlan = {
-  source: "benchmark" | "hybrid";
+  source: "benchmark" | "hybrid" | "fallback";
   directions: SearchGenerationDirection[];
   credits_per_image: number;
   total_credits: number;
+  notice?: string;
 };
 
 type PlannerDependencies = {
@@ -104,6 +105,14 @@ const BENCHMARK_DIRECTIONS: Array<
 
 function normalizeQuery(value: string): string {
   return tsToSc(value.trim().toLowerCase().replace(/×/g, "x"));
+}
+
+function requiresReferenceImage(value: string): boolean {
+  const normalized = normalizeQuery(value);
+  return (
+    normalized === "证件照" ||
+    /\b(?:id|passport) photos?\b/.test(normalized)
+  );
 }
 
 function requiredParams(templateId: string): string[] {
@@ -307,9 +316,21 @@ function fallbackHybridMatches(
     .sort((left, right) => right.confidence - left.confidence);
 }
 
+function genericFallbackDirection(
+  query: string,
+): SearchGenerationDirection | null {
+  return decorateDirection({
+    template_id: "template-education",
+    params: { topic: query.trim() },
+    confidence: MIN_CONFIDENCE,
+    reason:
+      "No specialized template matched, so Curify will create a general visual explainer.",
+  });
+}
+
 export async function buildSearchGenerationPlan(
   query: string,
-  _locale = "en",
+  locale = "en",
   dependencies: PlannerDependencies = {
     globalMatcher: matchTemplatesForQuery,
     targetedReranker: rerankTemplateCandidatesForQuery,
@@ -317,6 +338,18 @@ export async function buildSearchGenerationPlan(
 ): Promise<SearchGenerationPlan> {
   const benchmark = getBenchmarkGenerationPlan(query);
   if (benchmark) return benchmark;
+
+  if (requiresReferenceImage(query)) {
+    return {
+      source: "hybrid",
+      directions: [],
+      credits_per_image: SEARCH_GENERATION_CREDITS_PER_IMAGE,
+      total_credits: 0,
+      notice: locale.toLowerCase().startsWith("zh")
+        ? "证件照需要上传本人照片，当前搜索页仅支持无需参考图的直接生成。"
+        : "ID photos require a portrait upload; this search flow currently supports text-only generation.",
+    };
+  }
 
   const pathA = retrieveCapabilityCandidates(query);
   const pathB = await dependencies.globalMatcher(query);
@@ -335,7 +368,7 @@ export async function buildSearchGenerationPlan(
     : fallbackHybridMatches(pathA, pathB);
 
   const seen = new Set<string>();
-  const directions = selected
+  let directions = selected
     .filter((match) => match.confidence >= MIN_CONFIDENCE)
     .map(decorateDirection)
     .filter((direction): direction is SearchGenerationDirection => {
@@ -345,8 +378,17 @@ export async function buildSearchGenerationPlan(
     })
     .slice(0, MAX_DIRECTIONS);
 
+  let source: SearchGenerationPlan["source"] = "hybrid";
+  if (directions.length === 0) {
+    const fallback = genericFallbackDirection(query);
+    if (fallback) {
+      directions = [fallback];
+      source = "fallback";
+    }
+  }
+
   return {
-    source: "hybrid",
+    source,
     directions,
     credits_per_image: SEARCH_GENERATION_CREDITS_PER_IMAGE,
     total_credits:

@@ -163,6 +163,7 @@ export default function GenerableTemplatesSection({
     setError(null);
     fetch("/api/search-generation-plan", {
       method: "POST",
+      cache: "no-store",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query, locale }),
       signal: controller.signal,
@@ -447,7 +448,9 @@ export default function GenerableTemplatesSection({
           )}
         </>
       ) : (
-        <p className="mt-6 text-sm text-neutral-500">{copy.noDirections}</p>
+        <p className="mt-6 text-sm text-neutral-500">
+          {plan?.notice || copy.noDirections}
+        </p>
       )}
 
       {error && (
