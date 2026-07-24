@@ -201,12 +201,19 @@ export async function generateMetadata({
   // of leaked CTR across the family.
   const isMbtiTemplate = slug.includes("mbti");
 
+  // MBTI examples whose backfilled title already contains "MBTI" (e.g.
+  // "Erling Haaland — ISTP ... MBTI Basketball Card") must NOT get a second
+  // " MBTI" appended — that produced double-"MBTI", over-length <title>s that
+  // Google truncated and hurt CTR on pos 1-9 bleeders (2026-07-24 GSC review).
+  const titleHasMbti = /\bmbti\b/i.test(title);
+  const mbtiTitle = titleHasMbti ? title : `${title} MBTI`;
+
   // Use locale-specific metaDescription when available; fall back to a
   // generic template-derived sentence for non-allow_i18n / not-yet-translated.
   const description =
     metaDescription ||
     (isMbtiTemplate
-      ? `${title} MBTI personality type — AI-generated character card. Generate similar images with Nano Banana; full prompt + breakdown + example outputs.`
+      ? `${mbtiTitle} personality type — AI-generated character card. Generate similar images with Nano Banana; full prompt + breakdown + example outputs.`
       : `Generate images like "${title}" with Nano Banana. See the full prompt, breakdown, and use cases for this ${categoryText} template.`);
 
   // Build hreflang alternates for allow_i18n entries (10 locales) so Google
@@ -244,10 +251,10 @@ export async function generateMetadata({
   // MBTI: inject "MBTI" head term right after the character name so the
   // SERP title bolds the matched query ("kobe bryant mbti" etc).
   const pageTitle = isMbtiTemplate
-    ? `${title} MBTI — Nano Banana Character Card`
+    ? (titleHasMbti ? title : `${mbtiTitle} — Nano Banana Character Card`)
     : `${title} — Nano Banana Prompt Generator`;
   const ogTitleStr = isMbtiTemplate
-    ? `${title} MBTI | Nano Banana`
+    ? `${mbtiTitle} | Nano Banana`
     : `${title} | Nano Banana`;
 
   return {

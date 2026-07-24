@@ -9,6 +9,7 @@ import {
   SEO_RETITLED_LASTMOD,
   SEO_RETITLED_TEMPLATE_IDS,
   I18N_DESCRIPTIONS_LASTMOD,
+  MBTI_RECRAWL_LASTMOD,
 } from "@/lib/seo_retitled_templates";
 
 // Example IDs that have per-locale SEO copy in messages/<locale>/example.json.
@@ -201,7 +202,11 @@ export async function GET() {
     //  2. Examples whose parent template was retitled in the SEO pass —
     //     bumped to that pass's date so the new h1 is recrawled.
     //  3. Fallback to the example's own updated_at / lastmod, or STABLE.
-    const lastmod = EXAMPLE_I18N_IDS.has(exampleId)
+    // MBTI family gets the newest lastmod (canonical + title-dedup fixes,
+    // 2026-07-24) — highest priority so it overrides the May i18n date.
+    const lastmod = templateId.includes("mbti")
+      ? MBTI_RECRAWL_LASTMOD
+      : EXAMPLE_I18N_IDS.has(exampleId)
       ? I18N_DESCRIPTIONS_LASTMOD
       : SEO_RETITLED_TEMPLATE_IDS.has(templateId)
       ? SEO_RETITLED_LASTMOD

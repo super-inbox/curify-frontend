@@ -653,3 +653,18 @@ _Living log of posts that underwent significant content rewriting to improve qua
 **Cumulative status as of 2026-05-29:** 13 significant content rewrites since 2026-05-25 (5 days; voice-cloning-tools counts once despite three passes). Roughly 2-3 per day. At this pace the P2 backlog (~20 posts) would clear in ~2 weeks of focused work.
 
 ---
+
+
+---
+
+## 2026-07-24 — KD review across verticals (GSC standing + competitor audit)
+
+Recorded the previously-unsaved **2026-07-15 learning KD**: AI worksheet generator (KD 30, vol 880, $1.21 CPC), YouTube worksheet generator (KD 10), AI language learning (KD 50). Cadence + full findings now tracked in memory `project_weekly_semrush_kd`.
+
+**GSC (90d) standing on saved KD head terms — pos 40+ or absent on ALL, despite shipped content:** programmatic-seo-tool (KD 9) pos 40 · ai-product-photo-generator (36) not ranking · ai-worksheet-generator (30) not ranking · ai-packaging-design pos 39 · style-transfer only long-tail ("preserve-facial-features") pos 3.5 · visual-learning pos 17.6.
+
+**Competitor top-2:** "ai worksheet generator" → NoteGPT, MagicSchool (free-TOOL pages); "ai product photo generator" → Fotor, Flair.ai (free-TOOL pages); "programmatic seo tool" → Byword (tool) + SEOmatic/thewebsiteflip (specialist listicles).
+
+**Root causes:** (1) page-type⇄intent mismatch — "X generator" SERPs rank tool landing pages, not blogs; (2) domain-authority gap (pos 40+ everywhere = wedge1). **Levers:** match format to intent (ship `/tools/<x>` for head terms, blog as spoke); fix why `/tools/ai-product-photo-generator` doesn't rank (index + internal links); chase differentiated long-tail we win ("worksheet generator FROM VIDEO", "product photo TO listing"); push near-page-1 (ai-packaging-design pos 39, visual-learning-tools 17.6); authority (wedge1 link-injection + SMM backlink loop) is the ceiling.
+
+**Improvement #1 (this commit):** embedded the en+zh demo video on `/blog/video-to-learning-pack` (55MB→4.6MB 720p, CDN) to strengthen the differentiated "worksheet generator from video" long-tail — the lane we can actually win vs. the entrenched free-tool brands.
