@@ -18,6 +18,16 @@ export const SEO_RETITLED_LASTMOD = "2026-05-05T00:00:00.000Z";
 // messages/en/example.json keys — see sitemap-examples.xml/route.ts).
 export const I18N_DESCRIPTIONS_LASTMOD = "2026-05-14T00:00:00.000Z";
 
+// MBTI example pages: bumped 2026-07-24 to force recrawl after two fixes —
+// (a) the absolute-canonical fix (3fb7b42f, 2026-07-11) that un-folds these
+// pages from the homepage canonical Google had mistakenly assigned, and
+// (b) the double-"MBTI" title dedup (2026-07-24). GSC review found ~2,000
+// impressions/mo across MBTI example pages ranking pos 1-9 with ~0 clicks;
+// their indexed title/snippet were the stale pre-fix versions. Highest
+// lastmod priority (see sitemap-examples.xml/route.ts) so it wins over the
+// May i18n-descriptions date these same examples otherwise carry.
+export const MBTI_RECRAWL_LASTMOD = "2026-07-24T00:00:00.000Z";
+
 export const SEO_RETITLED_TEMPLATE_IDS: ReadonlySet<string> = new Set([
   "template-gardening-how-to-infographic",
   "template-pet-care-guide",
