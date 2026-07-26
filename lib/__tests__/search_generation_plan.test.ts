@@ -1,81 +1,48 @@
 import { describe, expect, it } from "vitest";
-import {
-  buildSearchGenerationPlan,
-  getBenchmarkGenerationPlan,
-  retrieveCapabilityCandidates,
-} from "../searchGenerationPlan";
+import { buildSearchGenerationPlan } from "../searchGenerationPlan";
 
 describe("search generation planner", () => {
-  it.each(["Fun Economics", " fun economics ", "FUN ECONOMICS"])(
-    "returns the benchmark directions for %s",
-    (query) => {
-      const plan = getBenchmarkGenerationPlan(query);
-      expect(plan?.source).toBe("benchmark");
-      expect(plan?.total_credits).toBe(30);
-      expect(plan?.directions).toEqual([
-        expect.objectContaining({
-          template_id:
-            "template-weird-cold-knowledge-popular-science-card",
-          params: { science_topic: "Fun Economics Facts" },
-        }),
+  it.each(["fun economics", "funny economics", "趣味经济学"])(
+    "routes an evaluation query through the regular similarity planner: %s",
+    async (query) => {
+      const plan = await buildSearchGenerationPlan(query, "en", {
+        candidateRetriever: async (receivedQuery) => {
+          expect(receivedQuery).toBe(query);
+          return [
+            {
+              template_id: "template-education",
+            },
+          ];
+        },
+        targetedReranker: async (receivedQuery, candidateIds) => {
+          expect(receivedQuery).toBe(query);
+          expect(candidateIds).toContain("template-education");
+          return [
+            {
+              template_id: "template-education",
+              params: { topic: query },
+              confidence: 0.9,
+              reason: "Semantic similarity match",
+            },
+          ];
+        },
+      });
+
+      expect(plan.source).toBe("similarity");
+      expect(plan.directions).toEqual([
         expect.objectContaining({
           template_id: "template-education",
-          params: { topic: "Basic Economics Concepts" },
-        }),
-        expect.objectContaining({
-          template_id: "template-hotspot-card",
-          params: { hotspot_name: "Inflation" },
+          params: { topic: query },
         }),
       ]);
     },
   );
 
-  it("retrieves valid capability candidates for a broad CJK query", () => {
-    const matches = retrieveCapabilityCandidates("经济学知识卡片");
-    expect(matches.length).toBeGreaterThan(0);
-    expect(new Set(matches.map((match) => match.template_id)).size).toBe(
-      matches.length,
-    );
-    expect(matches.every((match) => match.confidence >= 0.6)).toBe(true);
-  });
-
-  it("treats aesthetic wording as a modifier when retrieving a subject", () => {
-    const matches = retrieveCapabilityCandidates("Reading aesthetics");
-    expect(matches.map((match) => match.template_id)).toContain(
-      "template-book-recommendation-grid-poster",
-    );
-  });
-
-  it("uses sensible defaults for travel timing parameters", () => {
-    const matches = retrieveCapabilityCandidates("remote destination");
-    expect(matches).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          template_id: "template-travel",
-          params: {
-            destination: "remote destination",
-            date_range: "Flexible dates",
-          },
-        }),
-        expect.objectContaining({
-          template_id: "template-series-travel",
-          params: {
-            destination_name: "remote destination",
-            trip_duration: "7",
-          },
-        }),
-      ]),
-    );
-  });
-
   it("uses the targeted candidate reranker for ordinary queries", async () => {
     const plan = await buildSearchGenerationPlan("beginner astronomy", "en", {
-      globalMatcher: async () => [
+      candidateRetriever: async () => [
         {
           template_id: "template-education",
-          params: { topic: "Beginner Astronomy" },
-          confidence: 0.82,
-          reason: "Educational concept map",
         },
       ],
       targetedReranker: async (_query, candidateIds) => {
@@ -90,7 +57,7 @@ describe("search generation planner", () => {
         ];
       },
     });
-    expect(plan.source).toBe("hybrid");
+    expect(plan.source).toBe("similarity");
     expect(plan.total_credits).toBe(10);
     expect(plan.directions).toEqual([
       expect.objectContaining({
@@ -100,14 +67,11 @@ describe("search generation planner", () => {
     ]);
   });
 
-  it("falls back when the targeted reranker omits required params", async () => {
+  it("uses the generic fallback when the reranker omits required params", async () => {
     const plan = await buildSearchGenerationPlan("classroom chemistry", "en", {
-      globalMatcher: async () => [
+      candidateRetriever: async () => [
         {
           template_id: "template-education",
-          params: { topic: "Classroom Chemistry" },
-          confidence: 0.84,
-          reason: "Educational concept map",
         },
       ],
       targetedReranker: async () => [
@@ -122,7 +86,7 @@ describe("search generation planner", () => {
     expect(plan.directions).toEqual([
       expect.objectContaining({
         template_id: "template-education",
-        params: { topic: "Classroom Chemistry" },
+        params: { topic: "classroom chemistry" },
       }),
     ]);
   });
@@ -132,7 +96,7 @@ describe("search generation planner", () => {
       "unmatched niche concept",
       "en",
       {
-        globalMatcher: async () => [],
+        candidateRetriever: async () => [],
         targetedReranker: async () => [],
       },
     );
@@ -149,7 +113,7 @@ describe("search generation planner", () => {
 
   it("explains when a query requires a reference portrait", async () => {
     const plan = await buildSearchGenerationPlan("证件照", "zh", {
-      globalMatcher: async () => {
+      candidateRetriever: async () => {
         throw new Error("matcher should not run");
       },
       targetedReranker: async () => {
