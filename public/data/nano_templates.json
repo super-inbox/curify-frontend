@@ -19787,5 +19787,44 @@
       "industrial-design"
     ],
     "allow_generation": true
+  },
+  {
+    "id": "template-landmark-four-seasons-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Landmark Four Seasons Designer) You are an illustrator. Based on the user-specified {landmark_name}, generate a single clean 2x2 grid (four cells) showing the SAME landmark in four seasonal variations: SPRING (pink cherry blossoms, fresh green, soft blue sky), SUMMER (lush deep green, bright vivid sky), AUTUMN (golden and red foliage, warm amber light), WINTER (snow-covered, cool pale sky). Keep the landmark's architecture, silhouette, viewpoint and proportions IDENTICAL in every cell — only the surrounding foliage, sky, weather and lighting change with the season. Even spacing, equal cells, centered, crisp flat illustration with vivid faithful colors, no text or labels. Subject: {landmark_name} Four Seasons.",
+        "parameters": [
+          {
+            "name": "landmark_name",
+            "label": "Landmark Name",
+            "type": "text",
+            "placeholder": [
+              "The Statue of Liberty",
+              "Tiananmen",
+              "The Great Wall of China",
+              "The Eiffel Tower",
+              "Mount Fuji"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-landmark-four-seasons-poster-statue-liberty-prev.jpg",
+    "topics": [
+      "design",
+      "posters",
+      "travel",
+      "art-prints",
+      "wall-art",
+      "illustration",
+      "seasons",
+      "modern",
+      "playful",
+      "cozy"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-26"
   }
 ]

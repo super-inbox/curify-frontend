@@ -220315,5 +220315,92 @@
       "卡通角色",
       "动漫角色"
     ]
+  },
+  {
+    "id": "template-landmark-four-seasons-poster-great-wall",
+    "template_id": "template-landmark-four-seasons-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-landmark-four-seasons-poster-great-wall.png",
+      "preview_image_url": "/images/nano_insp_preview/template-landmark-four-seasons-poster-great-wall-prev.jpg"
+    },
+    "params": {
+      "landmark_name": "great wall"
+    },
+    "locales": {
+      "en": {
+        "title": "Great Wall"
+      }
+    },
+    "topics": [
+      "illustration"
+    ],
+    "search_aliases": [
+      "长城",
+      "Great Wall",
+      "world landmark",
+      "四季海报",
+      "landmark poster",
+      "中国地标",
+      "illustration",
+      "monument"
+    ]
+  },
+  {
+    "id": "template-landmark-four-seasons-poster-statue-liberty",
+    "template_id": "template-landmark-four-seasons-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-landmark-four-seasons-poster-statue-liberty.png",
+      "preview_image_url": "/images/nano_insp_preview/template-landmark-four-seasons-poster-statue-liberty-prev.jpg"
+    },
+    "params": {
+      "landmark_name": "statue liberty"
+    },
+    "locales": {
+      "en": {
+        "title": "Statue of Liberty"
+      }
+    },
+    "topics": [
+      "illustration"
+    ],
+    "search_aliases": [
+      "自由女神像",
+      "Statue of Liberty",
+      "world landmark",
+      "四季海报",
+      "four seasons",
+      "New York",
+      "美国地标",
+      "季节变化"
+    ]
+  },
+  {
+    "id": "template-landmark-four-seasons-poster-tiananmen",
+    "template_id": "template-landmark-four-seasons-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-landmark-four-seasons-poster-tiananmen.png",
+      "preview_image_url": "/images/nano_insp_preview/template-landmark-four-seasons-poster-tiananmen-prev.jpg"
+    },
+    "params": {
+      "landmark_name": "tiananmen"
+    },
+    "locales": {
+      "en": {
+        "title": "Tiananmen"
+      }
+    },
+    "topics": [
+      "illustration"
+    ],
+    "search_aliases": [
+      "天安门",
+      "Tiananmen",
+      "world landmark",
+      "四季海报",
+      "four seasons",
+      "Beijing",
+      "北京地标",
+      "季节变化"
+    ]
   }
 ]

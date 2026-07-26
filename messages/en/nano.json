@@ -6862,5 +6862,28 @@
         "prompts": "Try 'PORTABLE BLENDER BOTTLE, Portable. Powerful. Fresh.', 'Ergonomic Office Chair, all-day comfort'."
       }
     }
+  },
+  "template-landmark-four-seasons-poster": {
+    "category": "Landmark Four Seasons",
+    "description": "Generate a four-season grid of any world landmark — the same monument across spring blossoms, summer green, autumn foliage, and winter snow, in one clean 2x2 poster.",
+    "title": "Nano Banana Prompt: Landmark Four Seasons Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template turns any world landmark into a single 2x2 four-season grid: the same monument — identical architecture and viewpoint — shown across spring cherry blossoms, lush summer green, golden autumn foliage, and winter snow. Only the season's scenery, sky, and light change from cell to cell.",
+        "who": "Perfect for travel creators, tourism boards, souvenir and merch designers, and anyone who wants a clean, giftable four-seasons view of a famous landmark for prints, postcards, stickers, or social posts.",
+        "how": [
+          "Enter a landmark name (e.g. The Statue of Liberty, Tiananmen, The Great Wall).",
+          "The template renders one 2x2 grid with the landmark in spring, summer, autumn, and winter.",
+          "Architecture, silhouette, and viewpoint stay identical across all four cells.",
+          "Only the foliage, sky, weather, and lighting shift with each season.",
+          "Download for travel content, souvenir prints, postcards, or seasonal merch."
+        ],
+        "prompts": [
+          "Generate a four-season 2x2 grid of the Eiffel Tower — same view across spring, summer, autumn, winter.",
+          "Create a four-seasons landmark poster of Mount Fuji — cherry blossoms, green, red foliage, snow.",
+          "Design a four-season grid of the Great Wall of China — identical viewpoint, seasonal scenery only."
+        ]
+      }
+    }
   }
 }

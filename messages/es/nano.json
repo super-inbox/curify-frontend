@@ -6863,5 +6863,28 @@
         "prompts": "Prueba 'BOTELLA DE MEZCLADOR PORTÁTIL, Portátil. Potente. Fresco.', 'Silla de Oficina Ergonómica, comodidad todo el día'."
       }
     }
+  },
+  "template-landmark-four-seasons-poster": {
+    "category": "Monumento Cuatro Estaciones",
+    "description": "Genera una cuadrícula de cuatro estaciones de cualquier monumento mundial: el mismo monumento a través de las flores de primavera, el verde del verano, el follaje de otoño y la nieve del invierno, en un limpio póster 2x2.",
+    "title": "Nano Banana Prompt: Generador de Póster de Monumento Cuatro Estaciones | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla convierte cualquier monumento mundial en una única cuadrícula 2x2 de cuatro estaciones: el mismo monumento — arquitectura y punto de vista idénticos — mostrado a través de las flores de cerezo de primavera, el verde exuberante del verano, el follaje dorado de otoño y la nieve del invierno. Solo el paisaje de la estación, el cielo y la luz cambian de celda a celda.",
+        "who": "Perfecto para creadores de viajes, oficinas de turismo, diseñadores de souvenirs y mercancías, y cualquier persona que quiera una vista limpia y regalable de cuatro estaciones de un famoso monumento para impresiones, postales, pegatinas o publicaciones sociales.",
+        "how": [
+          "Ingresa el nombre de un monumento (por ejemplo, La Estatua de la Libertad, Tiananmen, La Gran Muralla).",
+          "La plantilla genera una cuadrícula 2x2 con el monumento en primavera, verano, otoño e invierno.",
+          "La arquitectura, la silueta y el punto de vista permanecen idénticos en las cuatro celdas.",
+          "Solo el follaje, el cielo, el clima y la iluminación cambian con cada estación.",
+          "Descarga para contenido de viajes, impresiones de souvenirs, postales o mercancía estacional."
+        ],
+        "prompts": [
+          "Genera una cuadrícula de cuatro estaciones 2x2 de la Torre Eiffel — misma vista a través de primavera, verano, otoño, invierno.",
+          "Crea un póster de monumento de cuatro estaciones del Monte Fuji — flores de cerezo, verde, follaje rojo, nieve.",
+          "Diseña una cuadrícula de cuatro estaciones de la Gran Muralla China — punto de vista idéntico, solo paisaje estacional."
+        ]
+      }
+    }
   }
 }
