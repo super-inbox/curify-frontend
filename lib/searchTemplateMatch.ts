@@ -1,21 +1,15 @@
-// Search ⇄ generation bridge — LLM matcher.
+// Search ⇄ generation bridge — candidate reranker.
 //
-// Given a search query, asks gpt-4o-mini which Curify templates could
-// GENERATE content for that query (with concrete params filled in),
-// even when no inspirations exist today. Used by the search page to
-// surface a "Generate from these templates" section alongside the
-// existing inspirations grid.
-//
-// Validated against the 10-query ProgSEO baseline at top-3 100%,
-// top-1 90% (see scripts/eval_template_matcher.cjs).
-//
-// Same prompt + scoring + cache shape as lib/searchRewrite.ts.
+// Multi-route vector retrieval happens in searchTemplateRetrieval.ts. This
+// module performs the final LLM pass over that bounded candidate pool, checks
+// the returned IDs, and fills every required generation parameter.
 
 import OpenAI from "openai";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import enNano from "@/messages/en/nano.json";
 import capabilityKb from "@/scripts/configs/template_capability_kb.json";
 import { getOutputIntent, INTENT_META, type OutputIntent } from "@/lib/output_intent";
+import { retrieveTemplateCandidatesForQuery } from "@/lib/searchTemplateRetrieval";
 
 const MODEL = "gpt-4o-mini";
 const TIMEOUT_MS = 15_000;
@@ -31,9 +25,9 @@ type NanoMessages = Record<string, { description?: string } | undefined>;
 
 type CapabilityEntry = {
   template_id: string;
-  sample_param_values?: string[];
-  search_aliases?: string[];
-  inspiration_topics?: string[];
+  title?: string;
+  category?: string;
+  description?: string;
   template_topics?: string[];
 };
 
@@ -44,33 +38,10 @@ const CAPABILITY_BY_ID = new Map(
   ]),
 );
 
-// Build the catalog blob once at module load. Limits to templates with
-// allow_generation=true so the matcher can't suggest a template the
-// user can't actually generate from. ~11K tokens at the current 200-
-// template catalog.
-function buildCatalogBlob(): string {
-  const lines: string[] = [];
-  const en = enNano as NanoMessages;
-  for (const t of nanoTemplates as TemplateShape[]) {
-    if (t.allow_generation !== true) continue;
-    const desc = (en[t.id]?.description ?? "")
-      .replace(/\s+/g, " ")
-      .slice(0, 180);
-    const params = (t.locales?.en?.parameters ?? [])
-      .map((p) => p?.name)
-      .filter((n): n is string => Boolean(n))
-      .join(",");
-    lines.push(`- ${t.id} | params=[${params}] | ${desc}`);
-  }
-  return lines.join("\n");
-}
-
 /**
- * Build a small evidence-rich catalog for the hybrid planner's final pass.
- * The global matcher stays description-only for recall diversity; only the
- * union of Path A + Path B candidates receives capability evidence here, so
- * real aliases/examples help the decision without sending the entire 500KB KB
- * to the model on every search.
+ * Build a generic capability catalog for the final rerank. Search aliases and
+ * sample values are intentionally excluded because they may contain evaluation
+ * queries; runtime routing must remain independent from benchmark inputs.
  */
 function buildTargetedCatalogBlob(templateIds: string[]): string {
   const wanted = new Set(templateIds);
@@ -85,20 +56,16 @@ function buildTargetedCatalogBlob(templateIds: string[]): string {
       .map((p) => p?.name)
       .filter((n): n is string => Boolean(n));
     const kb = CAPABILITY_BY_ID.get(t.id);
-    const examples = (kb?.sample_param_values ?? []).slice(0, 8);
-    const evidence = [
-      ...(kb?.search_aliases ?? []),
-      ...(kb?.inspiration_topics ?? []),
-      ...(kb?.template_topics ?? []),
-    ];
-    const aliases = [...new Set(evidence)].slice(0, 12);
     lines.push(
       [
         `- ${t.id}`,
+        kb?.title ? `title=${kb.title}` : "",
+        kb?.category ? `category=${kb.category}` : "",
         `required_params=[${params.join(",")}]`,
-        desc,
-        examples.length ? `examples=[${examples.join("; ")}]` : "",
-        aliases.length ? `capabilities=[${aliases.join(", ")}]` : "",
+        kb?.description || desc,
+        kb?.template_topics?.length
+          ? `capabilities=[${kb.template_topics.join(", ")}]`
+          : "",
       ]
         .filter(Boolean)
         .join(" | "),
@@ -107,7 +74,6 @@ function buildTargetedCatalogBlob(templateIds: string[]): string {
   return lines.join("\n");
 }
 
-const CATALOG_BLOB = buildCatalogBlob();
 const TEMPLATE_IDS = new Set(
   (nanoTemplates as TemplateShape[])
     .filter((t) => t.allow_generation === true)
@@ -121,48 +87,24 @@ for (const t of nanoTemplates as TemplateShape[]) {
   if (t.og_image) TEMPLATE_OG.set(t.id, t.og_image);
 }
 
-const SYSTEM_PROMPT = `You match user search queries to Curify image-generation templates that could create content for those queries.
+const SYSTEM_PROMPT = `You rerank a bounded candidate set of Curify image-generation templates for a user query.
 
-For EACH query, decide:
-- top 2-3 best-fit templates (ordered by confidence desc; fewer is fine if no clear fit)
-- for each pick: concrete parameter values extracted from the query
-- confidence in 0.0..1.0 (be honest — 0.3 + reason is fine if uncertain)
+For the query, decide:
+- the top 1-3 best-fit candidates, ordered by confidence descending
+- concrete values for every required parameter
+- confidence in 0.0..1.0
 - short reason (<= 80 chars)
 
-CRITICAL — read EVERY modifier in the query, not just the subject noun. Templates are differentiated by visual style AND layout, not only topic:
+Treat subject compatibility as a hard gate. Then evaluate explicit style,
+format/layout, audience, and artifact modifiers. A shared word or shared layout
+does not compensate for a mismatched core subject. Return fewer candidates, or
+an empty list, instead of padding with weak matches. Never select a template
+outside the supplied candidate catalog. A generic template explicitly designed
+for any topic is subject-compatible when its required parameters can faithfully
+carry the query. When several candidates are valid, prefer complementary
+information structures instead of near-duplicate directions.
 
-- **Style modifiers** (watercolor / retro / vintage / minimalist / photorealistic / anime / kawaii / ink / monochrome) — pick a template whose OUTPUT natively has that style. "Watercolor map" needs a watercolor map template, not a generic destination list.
-- **Format / layout modifiers** (chart / grid / list of N / top 10 / 16 types / dual / before-after / comparison / timeline) — pick the template whose LAYOUT matches. "Chart of 16 MBTI types" needs a grid/chart template, NOT a single-character profile.
-- **Audience modifiers** (for kids / for beginners / educational) — pick the template whose style fits.
-- **Artifact-type modifiers** (recipe poster / promotional poster / care guide / how-to / infographic) — these name the artifact directly. Prefer the template that explicitly produces that artifact.
-
-Pick templates that can GENERATE content for the query AS TYPED, not just templates whose tags overlap with one word.
-
-SUBJECT MATCH IS A HARD GATE (from human eval 2026-06-17). Verify the template's CORE SUBJECT actually serves the query's specific noun BEFORE you return it:
-
-- **REJECT a template whose subject-axis is disjoint from the query, even if it shares the layout/format axis.**
-  · "Brazil national team" wants a SQUAD POSTER → do NOT return mbti-of-team templates (different subject-axis: personality typing vs roster lineup).
-  · "english spanish word comparison" → do NOT return english-CHINESE comparison templates (language-pair mismatch is a subject mismatch).
-  · "diy craft tutorial poster" → do NOT return vegetable-planting-tutorial or action-vocab-card templates (their subjects are vegetables / language, not crafts).
-  · "evolution snacks infographic" → do NOT return history-timeline or fashion-evolution templates (subjects are history / clothing, not food).
-  · "amusement park map infographic" → do NOT return generic travel-poster templates (subject is parks / rides, not destinations).
-  · "1950s vintage diner illustration" → do NOT return evolution / travel-journal / festival templates (none match the era + venue).
-
-- **Franchise / IP-specific queries need IP-aware templates.** Generic "character info card" is NOT a fit for "chiikawa" or named characters — return the kawaii / franchise-specific template if one exists; if not, return [] rather than a generic fallback.
-
-- **Iconic-moment / event-analysis intent ≠ team-or-player templates.** "Maradona Hand of God" / "most memorable World Cup moments" want sports iconic-event-analysis-poster (single-moment deep-dive), NOT squad poster or schedule.
-
-- **When NO catalog template has the right subject, return fewer picks — or [] — rather than padding with layout-matching but subject-wrong templates.** An honest [] is a real signal that beats a confident wrong pick.
-
-Quick worked examples (from human eval ground truth):
-  Q: "fifa 2026" → ✓ world cup poster + world cup schedule (subject + format align)
-  Q: "Maradona Hand of God" → ✓ sports iconic-event-analysis-poster; ✗ generic football poster
-  Q: "english spanish word comparison" → ✓ english-spanish vocabulary template if any; ✗ english-chinese comparison
-  Q: "chiikawa" → ✓ kawaii-IP profile/grid template; ✗ generic character analysis
-  Q: "diy craft tutorial poster" → ✓ crafting-step-by-step-tutorial template; ✗ vegetable planting or action vocab
-  Q: "证件照 / id photo" → ✓ portrait-id-photo template; ✗ product poster
-
-Catalog:
+Candidate catalog:
 {catalog}
 
 Return ONLY a JSON object: {"matches": [{"template_id": "template-...", "params": {"key": "value"}, "confidence": 0.85, "reason": "..."}]}.
@@ -233,74 +175,31 @@ function sanitizeParams(raw: unknown): Record<string, string> {
   return out;
 }
 
-/**
- * Ask gpt-4o-mini for up to 3 templates that could generate content
- * matching `query`. Returns [] on any failure (missing key, timeout,
- * malformed response, hallucinated template_ids) — caller should treat
- * empty as "no matcher rail to show this query."
- */
+/** Compatibility entry point for the existing API: retrieve across independent
+ * semantic routes, then rerank the merged candidate IDs. */
 export async function matchTemplatesForQuery(
   query: string,
 ): Promise<TemplateMatch[]> {
   const trimmed = query.trim();
   if (trimmed.length < 2) return [];
 
-  const cacheKey = trimmed.toLowerCase();
+  const cacheKey = `final:${trimmed.toLowerCase()}`;
   const cached = cacheGet(cacheKey);
   if (cached) return cached;
 
-  const client = getClient();
-  if (!client) return [];
-
-  try {
-    const res = await client.chat.completions.create({
-      model: MODEL,
-      temperature: 0.2,
-      max_tokens: 800,
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT.replace("{catalog}", CATALOG_BLOB) },
-        { role: "user", content: `Query: ${trimmed}` },
-      ],
-    });
-    const raw = res.choices?.[0]?.message?.content?.trim() ?? "";
-    const cleaned = raw.replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/i, "").trim();
-    const parsed = JSON.parse(cleaned);
-    const matches = Array.isArray(parsed?.matches) ? parsed.matches : [];
-    const cleanedMatches: TemplateMatch[] = [];
-    const seen = new Set<string>();
-    for (const m of matches) {
-      if (!m || typeof m !== "object") continue;
-      const tid = (m as { template_id?: unknown }).template_id;
-      if (typeof tid !== "string") continue;
-      if (!TEMPLATE_IDS.has(tid)) continue; // reject hallucinations
-      if (seen.has(tid)) continue;
-      seen.add(tid);
-      const confRaw = (m as { confidence?: unknown }).confidence;
-      const conf =
-        typeof confRaw === "number" ? Math.max(0, Math.min(1, confRaw)) : 0.5;
-      const intent = getOutputIntent(tid);
-      cleanedMatches.push({
-        template_id: tid,
-        params: sanitizeParams((m as { params?: unknown }).params),
-        confidence: conf,
-        reason: String((m as { reason?: unknown }).reason ?? ""),
-        og_image: TEMPLATE_OG.get(tid),
-        output_intent: intent,
-        cta: INTENT_META[intent].cta,
-      });
-      if (cleanedMatches.length >= 3) break;
-    }
-    cacheSet(cacheKey, cleanedMatches);
-    return cleanedMatches;
-  } catch {
-    return [];
-  }
+  const candidates = await retrieveTemplateCandidatesForQuery(trimmed);
+  const matches = await rerankTemplateCandidatesForQuery(
+    trimmed,
+    candidates.map((candidate) => candidate.template_id),
+  );
+  if (matches.length > 0) cacheSet(cacheKey, matches);
+  return matches;
 }
 
 /**
- * Final hybrid-planner pass over a targeted Path A + Path B candidate pool.
- * Reuses the production matcher contract, but supplies richer evidence and
- * never lets the model select outside the provided candidates.
+ * Final similarity-planner pass over the global semantic candidate pool.
+ * Reuses the production matcher contract, supplies richer evidence, and never
+ * lets the model select outside the provided candidates.
  */
 export async function rerankTemplateCandidatesForQuery(
   query: string,
@@ -309,7 +208,7 @@ export async function rerankTemplateCandidatesForQuery(
   const trimmed = query.trim();
   const allowedIds = [...new Set(candidateIds)]
     .filter((id) => TEMPLATE_IDS.has(id))
-    .slice(0, 14);
+    .slice(0, 18);
   if (trimmed.length < 2 || allowedIds.length === 0) return [];
 
   const client = getClient();
@@ -321,61 +220,75 @@ export async function rerankTemplateCandidatesForQuery(
   const cached = cacheGet(cacheKey);
   if (cached) return cached;
 
-  try {
-    const res = await client.chat.completions.create({
-      model: MODEL,
-      temperature: 0.1,
-      max_tokens: 800,
-      messages: [
-        {
-          role: "system",
-          content:
-            SYSTEM_PROMPT.replace("{catalog}", catalog) +
-            "\n\nEvery required_params key must be present and non-empty. " +
-            "Return 1-3 candidates only when confidence is at least 0.60. " +
-            "Do not pad the list and do not select a template outside this catalog.",
-        },
-        { role: "user", content: `Query: ${trimmed}` },
-      ],
-    });
-    const raw = res.choices?.[0]?.message?.content?.trim() ?? "";
-    const cleaned = raw
-      .replace(/^```(?:json)?\s*/i, "")
-      .replace(/```\s*$/i, "")
-      .trim();
-    const parsed = JSON.parse(cleaned);
-    const matches = Array.isArray(parsed?.matches) ? parsed.matches : [];
-    const allowed = new Set(allowedIds);
-    const cleanedMatches: TemplateMatch[] = [];
-    const seen = new Set<string>();
-    for (const m of matches) {
-      if (!m || typeof m !== "object") continue;
-      const tid = (m as { template_id?: unknown }).template_id;
-      if (typeof tid !== "string" || !allowed.has(tid) || seen.has(tid)) {
-        continue;
-      }
-      const confRaw = (m as { confidence?: unknown }).confidence;
-      const confidence =
-        typeof confRaw === "number"
-          ? Math.max(0, Math.min(1, confRaw))
-          : 0;
-      if (confidence < 0.6) continue;
-      seen.add(tid);
-      const intent = getOutputIntent(tid);
-      cleanedMatches.push({
-        template_id: tid,
-        params: sanitizeParams((m as { params?: unknown }).params),
-        confidence,
-        reason: String((m as { reason?: unknown }).reason ?? ""),
-        og_image: TEMPLATE_OG.get(tid),
-        output_intent: intent,
-        cta: INTENT_META[intent].cta,
+  const allowed = new Set(allowedIds);
+  let lastError: unknown;
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    try {
+      const res = await client.chat.completions.create({
+        model: MODEL,
+        temperature: 0,
+        seed: 42,
+        max_tokens: 800,
+        response_format: { type: "json_object" },
+        messages: [
+          {
+            role: "system",
+            content:
+              SYSTEM_PROMPT.replace("{catalog}", catalog) +
+              "\n\nEvery required_params key must be present and non-empty. " +
+              "Return 1-3 candidates only when confidence is at least 0.60. " +
+              "Do not pad the list and do not select a template outside this catalog." +
+              (attempt > 0
+                ? " This is a recovery pass: assess every candidate independently before returning an empty list. Generic any-topic templates remain valid when they can faithfully carry the query."
+                : ""),
+          },
+          { role: "user", content: `Query: ${trimmed}` },
+        ],
       });
-      if (cleanedMatches.length >= 3) break;
+      const raw = res.choices?.[0]?.message?.content?.trim() ?? "";
+      const cleaned = raw
+        .replace(/^```(?:json)?\s*/i, "")
+        .replace(/```\s*$/i, "")
+        .trim();
+      const parsed = JSON.parse(cleaned);
+      const matches = Array.isArray(parsed?.matches) ? parsed.matches : [];
+      const cleanedMatches: TemplateMatch[] = [];
+      const seen = new Set<string>();
+      for (const m of matches) {
+        if (!m || typeof m !== "object") continue;
+        const tid = (m as { template_id?: unknown }).template_id;
+        if (typeof tid !== "string" || !allowed.has(tid) || seen.has(tid)) {
+          continue;
+        }
+        const confRaw = (m as { confidence?: unknown }).confidence;
+        const confidence =
+          typeof confRaw === "number"
+            ? Math.max(0, Math.min(1, confRaw))
+            : 0;
+        if (confidence < 0.6) continue;
+        seen.add(tid);
+        const intent = getOutputIntent(tid);
+        cleanedMatches.push({
+          template_id: tid,
+          params: sanitizeParams((m as { params?: unknown }).params),
+          confidence,
+          reason: String((m as { reason?: unknown }).reason ?? ""),
+          og_image: TEMPLATE_OG.get(tid),
+          output_intent: intent,
+          cta: INTENT_META[intent].cta,
+        });
+        if (cleanedMatches.length >= 3) break;
+      }
+      if (cleanedMatches.length > 0) {
+        cacheSet(cacheKey, cleanedMatches);
+        return cleanedMatches;
+      }
+    } catch (error) {
+      lastError = error;
     }
-    cacheSet(cacheKey, cleanedMatches);
-    return cleanedMatches;
-  } catch {
-    return [];
   }
+  if (lastError) {
+    console.error("[search-template-rerank] failed after retry", lastError);
+  }
+  return [];
 }

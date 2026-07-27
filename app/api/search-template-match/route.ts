@@ -4,11 +4,11 @@ import { matchTemplatesForQuery } from "@/lib/searchTemplateMatch";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// Lazy-loaded matcher endpoint for the search page.
+// Lazy-loaded multi-route retrieval + rerank endpoint for the search page.
 //
 // Client posts the query AFTER initial page render so Section A
 // (existing inspirations) appears immediately; Section B fills in
-// ~2-3s later when this endpoint resolves.
+// after the semantic retrieval and bounded rerank resolve.
 //
 // Caching is process-local in lib/searchTemplateMatch.ts; same shape
 // as the rewriter LRU. Vercel serverless invocations don't share
