@@ -26,10 +26,11 @@
 // SearchBar shuffles the pool on mount (Fisher-Yates) before rotating.
 
 export const POPULAR_PREFILL_QUERIES: ReadonlyArray<string> = [
-  // === world-cup (3 — light during off-game days, scale up around match days) ===
+  // === football / world-cup (1 — deemphasized 2026-07-24: WC 2026 is over,
+  // so the tournament-specific pull is gone. Kept ONE evergreen squad-poster
+  // query (people make these year-round); dropped the now-stale "world cup 2026
+  // schedule" and the second squad entry. Scale back up near the next tournament.) ===
   "brazil world cup squad poster",
-  "england 1966 world cup squad",
-  "world cup 2026 schedule",
 
   // === character (mbti / anime / film / portrait / sports, 3) ===
   // Dropped 2026-06-21: "dual character comparison infographic" (4/1 narrow).

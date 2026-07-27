@@ -48,7 +48,6 @@ type Copy = {
   download: string;
   customize: string;
   workspace: string;
-  benchmark: string;
 };
 
 const EN_COPY: Copy = {
@@ -76,7 +75,6 @@ const EN_COPY: Copy = {
   download: "Download",
   customize: "Customize",
   workspace: "View workspace",
-  benchmark: "Benchmark directions",
 };
 
 const ZH_COPY: Copy = {
@@ -103,7 +101,6 @@ const ZH_COPY: Copy = {
   download: "下载",
   customize: "自定义",
   workspace: "查看工作区",
-  benchmark: "Benchmark 固定方向",
 };
 
 function copyForLocale(locale: string): Copy {
@@ -163,6 +160,7 @@ export default function GenerableTemplatesSection({
     setError(null);
     fetch("/api/search-generation-plan", {
       method: "POST",
+      cache: "no-store",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query, locale }),
       signal: controller.signal,
@@ -290,11 +288,6 @@ export default function GenerableTemplatesSection({
             <h2 className="text-xl font-bold text-neutral-900">
               {copy.title(query)}
             </h2>
-            {plan?.source === "benchmark" && (
-              <span className="rounded-full bg-purple-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
-                {copy.benchmark}
-              </span>
-            )}
             <button
               type="button"
               disabled={
@@ -447,7 +440,9 @@ export default function GenerableTemplatesSection({
           )}
         </>
       ) : (
-        <p className="mt-6 text-sm text-neutral-500">{copy.noDirections}</p>
+        <p className="mt-6 text-sm text-neutral-500">
+          {plan?.notice || copy.noDirections}
+        </p>
       )}
 
       {error && (

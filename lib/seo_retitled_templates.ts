@@ -26,7 +26,7 @@ export const I18N_DESCRIPTIONS_LASTMOD = "2026-05-14T00:00:00.000Z";
 // their indexed title/snippet were the stale pre-fix versions. Highest
 // lastmod priority (see sitemap-examples.xml/route.ts) so it wins over the
 // May i18n-descriptions date these same examples otherwise carry.
-export const MBTI_RECRAWL_LASTMOD = "2026-07-24T00:00:00.000Z";
+export const MBTI_RECRAWL_LASTMOD = "2026-07-26T00:00:00.000Z";
 
 export const SEO_RETITLED_TEMPLATE_IDS: ReadonlySet<string> = new Set([
   "template-gardening-how-to-infographic",

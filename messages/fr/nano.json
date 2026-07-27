@@ -6863,5 +6863,28 @@
         "prompts": "Essayez 'BOUTEILLE DE MIXEUR PORTABLE, Portable. Puissant. Frais.', 'Chaise de Bureau Ergonomique, confort toute la journée'."
       }
     }
+  },
+  "template-landmark-four-seasons-poster": {
+    "category": "Monument Quatre Saisons",
+    "description": "Générez une grille de quatre saisons de n'importe quel monument mondial — le même monument à travers les fleurs de printemps, le vert d'été, le feuillage d'automne et la neige d'hiver, dans un poster propre 2x2.",
+    "title": "Nano Banana Prompt : Générateur de Poster Monument Quatre Saisons | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle transforme n'importe quel monument mondial en une grille unique 2x2 de quatre saisons : le même monument — architecture et point de vue identiques — montré à travers les fleurs de cerisier du printemps, le vert luxuriant de l'été, le feuillage doré de l'automne et la neige d'hiver. Seul le paysage de la saison, le ciel et la lumière changent d'une cellule à l'autre.",
+        "who": "Parfait pour les créateurs de voyages, les offices de tourisme, les designers de souvenirs et de marchandises, et quiconque souhaite une vue propre et cadeau d'un monument célèbre à quatre saisons pour des impressions, des cartes postales, des autocollants ou des publications sur les réseaux sociaux.",
+        "how": [
+          "Entrez le nom d'un monument (par exemple, La Statue de la Liberté, Tiananmen, La Grande Muraille).",
+          "Le modèle rend une grille 2x2 avec le monument au printemps, en été, en automne et en hiver.",
+          "L'architecture, la silhouette et le point de vue restent identiques à travers les quatre cellules.",
+          "Seul le feuillage, le ciel, la météo et l'éclairage changent avec chaque saison.",
+          "Téléchargez pour du contenu de voyage, des impressions de souvenirs, des cartes postales ou des marchandises saisonnières."
+        ],
+        "prompts": [
+          "Générez une grille 2x2 de quatre saisons de la Tour Eiffel — même vue à travers le printemps, l'été, l'automne, l'hiver.",
+          "Créez un poster de monument à quatre saisons du Mont Fuji — fleurs de cerisier, vert, feuillage rouge, neige.",
+          "Concevez une grille de quatre saisons de la Grande Muraille de Chine — point de vue identique, paysage saisonnier uniquement."
+        ]
+      }
+    }
   }
 }

@@ -23,9 +23,8 @@ import {
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic, getTopicNavList } from "@/lib/topicRegistry";
-import TopSearchSuggestions, { TOP_QUERIES } from "./TopSearchSuggestions";
+import TopSearchSuggestions from "./TopSearchSuggestions";
 import SearchRedirectTracker from "./SearchRedirectTracker";
-import WcRotatingSlot from "@/app/[locale]/_components/WcRotatingSlot";
 
 // Topic data is bundled (nano_templates.json + nano_inspiration.json +
 // blogs.json) plus a single fetch for related prompts. Bundled data
@@ -377,20 +376,7 @@ export default async function Page({ params }: Props) {
             maxRows={3}
             desktopOpensExample
             showCaption
-            topRightCell={
-              (slug === "world-cup" || slug === "sports")
-                ? <WcRotatingSlot locale={localeStr} queries={TOP_QUERIES["world-cup"]} />
-                : undefined
-            }
           />
-        </section>
-      ) : (slug === "world-cup" || slug === "sports") ? (
-        <section className="mx-auto max-w-[1600px] px-4 pb-6 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            <div className="col-start-2 row-start-1 sm:col-start-3 lg:col-start-5">
-              <WcRotatingSlot locale={localeStr} queries={TOP_QUERIES["world-cup"]} />
-            </div>
-          </div>
         </section>
       ) : null}
 
