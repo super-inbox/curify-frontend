@@ -196,9 +196,43 @@ Per `discussion.txt`: design the schema, hand-enrich a small cohort, measure, th
 - `nano-template/[slug]/page.tsx` — renders the chip strip under the H1, the knowledge block after "About this template", and per-vertical JSON-LD.
 - **Pilot page**: `template-hsk-bilingual-reading-text-lesson-poster` (Education) enriched in `messages/{en,zh}/nano.json` → renders `HSK 2 · Age 8–10 · Reading · 15 min` chips + Learning objectives / Includes / Background + `LearningResource` JSON-LD.
 
+## Pilot cohort — GSC-mined (2026-07-28)
+
+The strict 20-enrich + 20-control A/B was **dropped**: the GSC data is too thin/noisy for a clean
+matched control (most template pages sit at single/low-double-digit impressions with ~0 CTR, and the
+biggest MBTI/merch numbers are a transient World-Cup footballer spike). Instead — a **focused pilot of
+~3–4 TEMPLATE pages per vertical** (the layer renders on the template page and lifts its whole example
+family), chosen from `raw/gsc-recent-2026-07-13/Pages.csv` rolled up to parent templates:
+
+| Vertical | Pilot template | GSC signal (impr · avgPos · #urls) | Why |
+|---|---|---|---|
+| Education | `template-hsk-bilingual-reading-text-lesson-poster` | (HSK; durable) | ✅ **shipped** — rich edu ontology |
+| Education | `template-chinese-idiom-learning-card` | 75 · **16.4** · 11 | high impr, **rank ≥ 10** = discovered-not-ranking |
+| Education | `template-education-card` | 95 · 9.0 · 34 | biggest edu family (34 urls) |
+| Education | `template-kids-vocabulary-poster` | 16 · 9.0 · 3 | clean vocab ontology fit |
+| MBTI | `template-mbti-generic` | **833 · 13.7 · 88** | anchor; huge impr but poor rank → best lift target |
+| MBTI | `template-mbti-yellowstone` | 684 · 8.6 · 51 | durable fandom (not WC-transient) |
+| MBTI | `template-friends-character-mbti` | 240 · 10.1 · 43 | durable fandom |
+| MBTI | `template-chinese-classic-character-mbti` | 110 · 9.1 · 43 | CN-locale depth |
+| Merch | `template-city-landmark-fridge-magnet-collection` | 15 · 7.0 · 3 | perfect material/process/DPI depth |
+| Merch | `template-food-product-packaging-design` | 20 · 9.2 · 6 | packaging spec depth |
+| Merch | `template-ip-creative-cultural-goods-mockup-set` | 3 · 30 · 1 | 文创 anchor; needs the story+spec layer most |
+| Merch | `template-fridge-magnet-merch` | (new) | fresh top-10-drop template |
+
+_Excluded as primary (transient WC spike — watch, don't anchor on):_ `template-mbti-nba` (3231 impr),
+`template-world-cup-team-sticker-poster` (244 impr).
+
+**Measurement (no rigid control — self-referential + qualitative):** for each enriched template track its
+OWN before/after over 4–6 weeks — (a) does it start surfacing for **domain/long-tail queries** (e.g.
+"hsk 2 reading practice", "INFJ personality poster", "fridge magnet material"), not just brand/name
+queries; (b) impressions & avg-position trend on the template's query set; (c) Generate CTR; (d)
+rich-result eligibility (Search Console → Enhancements, once JSON-LD is crawled). A few un-touched
+same-vertical templates serve as a loose directional reference, not a statistical control.
+
 ## Roadmap / TODO (next steps)
-1. **GSC mining → pick the pilot & control cohorts.** For each of education/mbti/merch, mine `raw/gsc-*` + `scripts/pull_gsc_performance.cjs` for pages with impressions > 0 but avg rank ≥ 10 (discovered-not-ranking) that already have `content.sections`; pick **20 to enrich + 20 similar as control**. Record the cohort lists so the 4–6 week read-out is a clean A/B.
-2. **Author the 20×3 enrichment** (attributes + vertical knowledge in nano.json) once cohorts are fixed. Do NOT batch-generate.
+1. **Author the ~12 pilot enrichments** above (attributes + vertical knowledge in nano.json, en+zh),
+   mirroring the shipped HSK entry. Do NOT batch-generate. Re-pull GSC (`scripts/pull_gsc_performance.cjs`)
+   at enrich-time to confirm each page still has live impressions.
 3. **Render on the example page too** — today `example/[exampleId]/page.tsx` shows no domain prose; add the same chip strip + (lighter) knowledge + JSON-LD so example URLs also carry the vertical layer.
 4. **Vertical v2 — culture (服饰) + ecommerce.** Add their schemas to `VERTICAL_SCHEMAS` (fields already specified in §2.3 / §2.5) once the first read-out validates the approach. Culture is a Curify strength (costume/herbal/cultural-relic templates) and a natural 4th.
 5. **Taxonomy additions.** Promote the NEW ontology axes into `lib/taxonomy.json` so facets derive from one source: `grade`, `skill`, `resource_type` (education); `mbti-type` (16 types, tier3) + type×type compatibility; `material`/`process`/`product_type` (merch). Ties into `project_taxonomy_shape_i18n`.
