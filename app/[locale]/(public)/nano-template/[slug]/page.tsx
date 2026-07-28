@@ -23,6 +23,7 @@ import {
   resolveContentSections,
   resolveVerticalSections,
   buildVerticalJsonLd,
+  toAbsUrlMaybe,
 } from "@/lib/nano_seo_utils";
 import { getCanonicalUrl } from "@/lib/canonical";
 import {
@@ -152,14 +153,16 @@ export default async function NanoTemplatePage({ params }: Props) {
   // VerticalPageSchema v1 (Pillars 1 & 2) — null unless the template is in a pilot
   // vertical AND has authored content.attributes/content.vertical (see nano.json).
   const vertical = resolveVerticalSections(templateId, templateTopics, nanoMessages);
+
+  const imageViews = getImageViewsForTemplate(reg, templateId, contentLocale);
+
+  // Vertical JSON-LD (uses the first example image; TemplateView has no og_image).
   const verticalJsonLd = buildVerticalJsonLd(vertical, {
     name: h1,
     description: intro,
     url: getCanonicalUrl(pageLocale, `/nano-template/${slug}`),
-    image: template.og_image,
+    image: toAbsUrlMaybe(imageViews[0]?.image_url),
   });
-
-  const imageViews = getImageViewsForTemplate(reg, templateId, contentLocale);
 
   const orderedImageIds =
     template.cards?.length > 0
