@@ -220412,5 +220412,1138 @@
       "北京地标",
       "季节变化"
     ]
+  },
+  {
+    "id": "template-achievement-certificate-award-certificate-of-academic-achievement",
+    "template_id": "template-achievement-certificate-award",
+    "asset": {
+      "image_url": "/images/nano_insp/template-achievement-certificate-award-certificate-of-academic-achievement.png",
+      "preview_image_url": "/images/nano_insp_preview/template-achievement-certificate-award-certificate-of-academic-achievement-prev.jpg"
+    },
+    "params": {
+      "award_title": "Certificate of Academic Achievement",
+      "recipient_name": "Emma Rodriguez",
+      "org_name": "Maple Grove Elementary School",
+      "award_reason": "For outstanding achievement in Mathematics during the Fall semester",
+      "date": "December 12, 2026",
+      "signature_name": "Mrs. Patricia Chen, Principal",
+      "palette_variant": "pastel classroom-friendly (soft blue and cream)"
+    },
+    "locales": {
+      "en": {
+        "title": "Certificate of Academic Achievement"
+      }
+    },
+    "search_aliases": [
+      "academic achievement certificate",
+      "学业成就证书",
+      "教育证书",
+      "学生奖状",
+      "成绩证书"
+    ]
+  },
+  {
+    "id": "template-achievement-certificate-award-certificate-of-athletic-achievement",
+    "template_id": "template-achievement-certificate-award",
+    "asset": {
+      "image_url": "/images/nano_insp/template-achievement-certificate-award-certificate-of-athletic-achievement.png",
+      "preview_image_url": "/images/nano_insp_preview/template-achievement-certificate-award-certificate-of-athletic-achievement-prev.jpg"
+    },
+    "params": {
+      "award_title": "Certificate of Athletic Achievement",
+      "recipient_name": "Jamal Okafor",
+      "org_name": "Riverside Middle School Athletics",
+      "award_reason": "For first place in the Annual Fall Track & Field Day",
+      "date": "September 20, 2026",
+      "signature_name": "Coach Luis Fernandez",
+      "palette_variant": "pastel classroom-friendly (green and gold)"
+    },
+    "locales": {
+      "en": {
+        "title": "Certificate of Athletic Achievement"
+      }
+    },
+    "search_aliases": [
+      "athletic achievement certificate",
+      "体育成就证书",
+      "运动奖状",
+      "运动员证书",
+      "体育奖项"
+    ]
+  },
+  {
+    "id": "template-achievement-certificate-award-certificate-of-course-completion",
+    "template_id": "template-achievement-certificate-award",
+    "asset": {
+      "image_url": "/images/nano_insp/template-achievement-certificate-award-certificate-of-course-completion.png",
+      "preview_image_url": "/images/nano_insp_preview/template-achievement-certificate-award-certificate-of-course-completion-prev.jpg"
+    },
+    "params": {
+      "award_title": "Certificate of Course Completion",
+      "recipient_name": "Priya Venkataraman",
+      "org_name": "Northfield Professional Development Institute",
+      "award_reason": "For successfully completing the 40-hour Advanced Project Management certification course",
+      "date": "July 18, 2026",
+      "signature_name": "Dr. Alan Whitcombe, Program Director",
+      "palette_variant": "gold and navy classic"
+    },
+    "locales": {
+      "en": {
+        "title": "Certificate of Course Completion"
+      }
+    },
+    "search_aliases": [
+      "course completion certificate",
+      "课程完成证书",
+      "结业证书",
+      "培训证书",
+      "学习证明"
+    ]
+  },
+  {
+    "id": "template-achievement-certificate-award-certificate-of-excellence",
+    "template_id": "template-achievement-certificate-award",
+    "asset": {
+      "image_url": "/images/nano_insp/template-achievement-certificate-award-certificate-of-excellence.png",
+      "preview_image_url": "/images/nano_insp_preview/template-achievement-certificate-award-certificate-of-excellence-prev.jpg"
+    },
+    "params": {
+      "award_title": "Certificate of Excellence",
+      "recipient_name": "Marcus Thibodeaux",
+      "org_name": "Alderbrook Consulting Group",
+      "award_reason": "In recognition of outstanding leadership and dedication during Q3 2026",
+      "date": "October 1, 2026",
+      "signature_name": "Dana Whitfield, VP of People",
+      "palette_variant": "gold and navy classic"
+    },
+    "locales": {
+      "en": {
+        "title": "Certificate of Excellence"
+      }
+    },
+    "topics": [
+      "calligraphy"
+    ],
+    "search_aliases": [
+      "certificate of excellence",
+      "卓越证书",
+      "优秀奖状",
+      "杰出成就证书",
+      "表彰证书",
+      "calligraphy"
+    ]
+  },
+  {
+    "id": "template-chocolate-giftbox-packaging-corporate-year-end-gifting",
+    "template_id": "template-chocolate-giftbox-packaging",
+    "asset": {
+      "image_url": "/images/nano_insp/template-chocolate-giftbox-packaging-corporate-year-end-gifting.png",
+      "preview_image_url": "/images/nano_insp_preview/template-chocolate-giftbox-packaging-corporate-year-end-gifting-prev.jpg"
+    },
+    "params": {
+      "occasion": "corporate year-end gifting",
+      "compartment_contents": "an assorted set of dark chocolate bars and a small branded notecard",
+      "brand_name": "Sterling & Oak Corporate Gifts",
+      "ribbon_color": "navy grosgrain ribbon",
+      "box_pattern": "matte navy box with subtle gold foil embossing"
+    },
+    "locales": {
+      "en": {
+        "title": "corporate year-end gifting"
+      }
+    },
+    "search_aliases": [
+      "corporate year end gifting",
+      "企业年终礼品",
+      "巧克力礼盒",
+      "公司礼物",
+      "年终奖品"
+    ]
+  },
+  {
+    "id": "template-chocolate-giftbox-packaging-mid-autumn-festival-mooncake-adjacent",
+    "template_id": "template-chocolate-giftbox-packaging",
+    "asset": {
+      "image_url": "/images/nano_insp/template-chocolate-giftbox-packaging-mid-autumn-festival-mooncake-adjacent.png",
+      "preview_image_url": "/images/nano_insp_preview/template-chocolate-giftbox-packaging-mid-autumn-festival-mooncake-adjacent-prev.jpg"
+    },
+    "params": {
+      "occasion": "Mid-Autumn Festival (mooncake-adjacent)",
+      "compartment_contents": "four individually wrapped mooncakes with a small lotus-motif card",
+      "brand_name": "Golden Lotus Bakery",
+      "ribbon_color": "burgundy silk ribbon",
+      "box_pattern": "burgundy box with a gold lotus-pattern lid"
+    },
+    "locales": {
+      "en": {
+        "title": "Mid-Autumn Festival (mooncake-adjacent)"
+      }
+    },
+    "topics": [
+      "illustration"
+    ],
+    "search_aliases": [
+      "中秋节",
+      "月饼",
+      "chocolate gift box",
+      "gift packaging",
+      "mid autumn festival",
+      "节日礼物",
+      "illustration"
+    ]
+  },
+  {
+    "id": "template-chocolate-giftbox-packaging-valentine-s-day",
+    "template_id": "template-chocolate-giftbox-packaging",
+    "asset": {
+      "image_url": "/images/nano_insp/template-chocolate-giftbox-packaging-valentine-s-day.png",
+      "preview_image_url": "/images/nano_insp_preview/template-chocolate-giftbox-packaging-valentine-s-day-prev.jpg"
+    },
+    "params": {
+      "occasion": "Valentine's Day",
+      "compartment_contents": "heart-shaped chocolate pralines in pink and red wrappers",
+      "brand_name": "Rosette Chocolaterie",
+      "ribbon_color": "blush pink satin ribbon",
+      "box_pattern": "soft pink box with a subtle heart pattern"
+    },
+    "locales": {
+      "en": {
+        "title": "Valentine's Day"
+      }
+    },
+    "topics": [
+      "vintage"
+    ],
+    "search_aliases": [
+      "情人节",
+      "valentine's day",
+      "chocolate gift box",
+      "vintage packaging",
+      "romantic gift",
+      "illustration"
+    ]
+  },
+  {
+    "id": "template-chocolate-giftbox-packaging-winter-holiday",
+    "template_id": "template-chocolate-giftbox-packaging",
+    "asset": {
+      "image_url": "/images/nano_insp/template-chocolate-giftbox-packaging-winter-holiday.png",
+      "preview_image_url": "/images/nano_insp_preview/template-chocolate-giftbox-packaging-winter-holiday-prev.jpg"
+    },
+    "params": {
+      "occasion": "winter holiday",
+      "compartment_contents": "an assortment of foil-wrapped chocolate truffles in gold and red wrappers",
+      "brand_name": "Maple & Cocoa Chocolatiers",
+      "ribbon_color": "deep red satin ribbon",
+      "box_pattern": "matte forest-green box with gold foil trim"
+    },
+    "locales": {
+      "en": {
+        "title": "winter holiday"
+      }
+    },
+    "topics": [
+      "vintage"
+    ],
+    "search_aliases": [
+      "冬季假期",
+      "winter holiday",
+      "chocolate gift box",
+      "vintage packaging",
+      "holiday gift",
+      "illustration"
+    ]
+  },
+  {
+    "id": "template-discount-coupon-voucher-basil-vine-trattoria",
+    "template_id": "template-discount-coupon-voucher",
+    "asset": {
+      "image_url": "/images/nano_insp/template-discount-coupon-voucher-basil-vine-trattoria.png",
+      "preview_image_url": "/images/nano_insp_preview/template-discount-coupon-voucher-basil-vine-trattoria-prev.jpg"
+    },
+    "params": {
+      "business_name": "Basil & Vine Trattoria",
+      "discount_amount": "$10 OFF",
+      "discount_type": "Any purchase of $40 or more",
+      "expiry_date": "Expires September 15, 2026",
+      "terms_text": "Dine-in only. Not valid on holidays.",
+      "color_scheme": "deep green and cream"
+    },
+    "locales": {
+      "en": {
+        "title": "Basil & Vine Trattoria"
+      }
+    },
+    "search_aliases": [
+      "basil vine trattoria",
+      "餐厅优惠券",
+      "discount coupon",
+      "voucher",
+      "意大利餐厅",
+      "food discount"
+    ]
+  },
+  {
+    "id": "template-discount-coupon-voucher-cedar-lane-home-goods",
+    "template_id": "template-discount-coupon-voucher",
+    "asset": {
+      "image_url": "/images/nano_insp/template-discount-coupon-voucher-cedar-lane-home-goods.png",
+      "preview_image_url": "/images/nano_insp_preview/template-discount-coupon-voucher-cedar-lane-home-goods-prev.jpg"
+    },
+    "params": {
+      "business_name": "Cedar Lane Home Goods",
+      "discount_amount": "25% OFF",
+      "discount_type": "Any single item, storewide",
+      "expiry_date": "Expires August 31, 2026",
+      "terms_text": "One per customer. Cannot combine with other offers.",
+      "color_scheme": "red and white"
+    },
+    "locales": {
+      "en": {
+        "title": "Cedar Lane Home Goods"
+      }
+    },
+    "search_aliases": [
+      "cedar lane home goods",
+      "家居用品",
+      "discount coupon",
+      "voucher",
+      "home goods discount",
+      "购物优惠"
+    ]
+  },
+  {
+    "id": "template-discount-coupon-voucher-daybreak-coffee-roasters",
+    "template_id": "template-discount-coupon-voucher",
+    "asset": {
+      "image_url": "/images/nano_insp/template-discount-coupon-voucher-daybreak-coffee-roasters.png",
+      "preview_image_url": "/images/nano_insp_preview/template-discount-coupon-voucher-daybreak-coffee-roasters-prev.jpg"
+    },
+    "params": {
+      "business_name": "Daybreak Coffee Roasters",
+      "discount_amount": "BOGO",
+      "discount_type": "Buy one specialty drink, get one free",
+      "expiry_date": "Expires October 5, 2026",
+      "terms_text": "Equal or lesser value. Valid after 2pm only.",
+      "color_scheme": "warm amber and espresso brown"
+    },
+    "locales": {
+      "en": {
+        "title": "Daybreak Coffee Roasters"
+      }
+    }
+  },
+  {
+    "id": "template-discount-coupon-voucher-summit-fitness-club-loyalty-rewards",
+    "template_id": "template-discount-coupon-voucher",
+    "asset": {
+      "image_url": "/images/nano_insp/template-discount-coupon-voucher-summit-fitness-club-loyalty-rewards.png",
+      "preview_image_url": "/images/nano_insp_preview/template-discount-coupon-voucher-summit-fitness-club-loyalty-rewards-prev.jpg"
+    },
+    "params": {
+      "business_name": "Summit Fitness Club Loyalty Rewards",
+      "discount_amount": "1 FREE MONTH",
+      "discount_type": "Redeemable after 10 punches on your loyalty card",
+      "expiry_date": "Redeem within 90 days of final punch",
+      "terms_text": "Non-transferable. Valid for existing members only. See front desk for details.",
+      "color_scheme": "navy and silver"
+    },
+    "locales": {
+      "en": {
+        "title": "Summit Fitness Club Loyalty Rewards"
+      }
+    }
+  },
+  {
+    "id": "template-fridge-magnet-merch-brand-promotional",
+    "template_id": "template-fridge-magnet-merch",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fridge-magnet-merch-brand-promotional.png",
+      "preview_image_url": "/images/nano_insp_preview/template-fridge-magnet-merch-brand-promotional-prev.jpg"
+    },
+    "params": {
+      "theme": "brand promotional",
+      "shape_variant": "circle",
+      "face_subject": "a bold minimalist coffee-cup logo icon",
+      "brand_wordmark": "Daybreak Coffee Roasters",
+      "palette": "espresso brown and cream"
+    },
+    "locales": {
+      "en": {
+        "title": "brand promotional"
+      }
+    },
+    "topics": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "template-fridge-magnet-merch-custom-photo",
+    "template_id": "template-fridge-magnet-merch",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fridge-magnet-merch-custom-photo.png",
+      "preview_image_url": "/images/nano_insp_preview/template-fridge-magnet-merch-custom-photo-prev.jpg"
+    },
+    "params": {
+      "theme": "custom photo",
+      "shape_variant": "rounded rectangle",
+      "face_subject": "a warm illustrated family portrait scene with a dog",
+      "brand_wordmark": "PicPerfect Prints",
+      "palette": "neutral cream frame"
+    },
+    "locales": {
+      "en": {
+        "title": "custom photo"
+      }
+    },
+    "topics": [
+      "photorealistic"
+    ]
+  },
+  {
+    "id": "template-fridge-magnet-merch-holiday-seasonal",
+    "template_id": "template-fridge-magnet-merch",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fridge-magnet-merch-holiday-seasonal.png",
+      "preview_image_url": "/images/nano_insp_preview/template-fridge-magnet-merch-holiday-seasonal-prev.jpg"
+    },
+    "params": {
+      "theme": "holiday seasonal",
+      "shape_variant": "rounded rectangle",
+      "face_subject": "a small illustrated snow-covered pine tree with string lights",
+      "brand_wordmark": "Northgate Holiday Market",
+      "palette": "holiday red and green"
+    },
+    "locales": {
+      "en": {
+        "title": "holiday seasonal"
+      }
+    },
+    "topics": [
+      "vintage"
+    ]
+  },
+  {
+    "id": "template-fridge-magnet-merch-quote-decorative",
+    "template_id": "template-fridge-magnet-merch",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fridge-magnet-merch-quote-decorative.png",
+      "preview_image_url": "/images/nano_insp_preview/template-fridge-magnet-merch-quote-decorative-prev.jpg"
+    },
+    "params": {
+      "theme": "quote/decorative",
+      "shape_variant": "circle",
+      "face_subject": "a hand-lettered illustration of the short phrase 'Home Is Where the Kitchen Is' surrounded by small floral accents",
+      "brand_wordmark": "Homestead Paper Co.",
+      "palette": "soft sage and cream"
+    },
+    "locales": {
+      "en": {
+        "title": "quote/decorative"
+      }
+    },
+    "topics": [
+      "artistic"
+    ]
+  },
+  {
+    "id": "template-jigsaw-puzzle-box-coastal-city-map",
+    "template_id": "template-jigsaw-puzzle-box",
+    "asset": {
+      "image_url": "/images/nano_insp/template-jigsaw-puzzle-box-coastal-city-map.png",
+      "preview_image_url": "/images/nano_insp_preview/template-jigsaw-puzzle-box-coastal-city-map-prev.jpg"
+    },
+    "params": {
+      "cover_art_subject": "a stylized illustrated map of a coastal city's landmarks",
+      "theme_ip": "Coastal City Map",
+      "piece_count": "300 pieces (travel size)",
+      "palette": "teal and sandy beige"
+    },
+    "locales": {
+      "en": {
+        "title": "Coastal City Map"
+      }
+    },
+    "topics": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "template-jigsaw-puzzle-box-forest-friends",
+    "template_id": "template-jigsaw-puzzle-box",
+    "asset": {
+      "image_url": "/images/nano_insp/template-jigsaw-puzzle-box-forest-friends.png",
+      "preview_image_url": "/images/nano_insp_preview/template-jigsaw-puzzle-box-forest-friends-prev.jpg"
+    },
+    "params": {
+      "cover_art_subject": "a group illustration of five friendly cartoon animal characters in a forest clearing",
+      "theme_ip": "Forest Friends",
+      "piece_count": "500 pieces",
+      "palette": "bright green and playful yellow"
+    },
+    "locales": {
+      "en": {
+        "title": "Forest Friends"
+      }
+    },
+    "topics": [
+      "cartoon"
+    ]
+  },
+  {
+    "id": "template-jigsaw-puzzle-box-mountain-lake",
+    "template_id": "template-jigsaw-puzzle-box",
+    "asset": {
+      "image_url": "/images/nano_insp/template-jigsaw-puzzle-box-mountain-lake.png",
+      "preview_image_url": "/images/nano_insp_preview/template-jigsaw-puzzle-box-mountain-lake-prev.jpg"
+    },
+    "params": {
+      "cover_art_subject": "a vivid painted illustration of a mountain lake at sunset with pine trees",
+      "theme_ip": "Mountain Lake",
+      "piece_count": "1000 pieces",
+      "palette": "deep blue and warm sunset orange"
+    },
+    "locales": {
+      "en": {
+        "title": "Mountain Lake"
+      }
+    },
+    "topics": [
+      "photorealistic"
+    ]
+  },
+  {
+    "id": "template-jigsaw-puzzle-box-night-market",
+    "template_id": "template-jigsaw-puzzle-box",
+    "asset": {
+      "image_url": "/images/nano_insp/template-jigsaw-puzzle-box-night-market.png",
+      "preview_image_url": "/images/nano_insp_preview/template-jigsaw-puzzle-box-night-market-prev.jpg"
+    },
+    "params": {
+      "cover_art_subject": "a detailed illustration of a bustling night market with lanterns and food stalls",
+      "theme_ip": "Night Market",
+      "piece_count": "2000 pieces (deluxe edition)",
+      "palette": "deep purple and warm lantern gold"
+    },
+    "locales": {
+      "en": {
+        "title": "Night Market"
+      }
+    }
+  },
+  {
+    "id": "template-perfume-cosmetic-bottle-mockup-lavender-calm-roll-on",
+    "template_id": "template-perfume-cosmetic-bottle-mockup",
+    "asset": {
+      "image_url": "/images/nano_insp/template-perfume-cosmetic-bottle-mockup-lavender-calm-roll-on.png",
+      "preview_image_url": "/images/nano_insp_preview/template-perfume-cosmetic-bottle-mockup-lavender-calm-roll-on-prev.jpg"
+    },
+    "params": {
+      "bottle_shape_variant": "a small amber-glass roller-bottle with a wooden cap",
+      "brand_name": "Still Grove",
+      "product_name": "Lavender Calm Roll-On",
+      "backdrop_tone": "warm neutral linen gradient",
+      "palette": "amber and sage"
+    },
+    "locales": {
+      "en": {
+        "title": "Lavender Calm Roll-On"
+      }
+    },
+    "topics": [
+      "photorealistic"
+    ],
+    "search_aliases": [
+      "lavender calm roll on",
+      "薰衣草舒缓滚珠",
+      "lavender oil",
+      "calming essential oil",
+      "roll-on perfume",
+      "香薰滚珠",
+      "aromatherapy roll on"
+    ]
+  },
+  {
+    "id": "template-perfume-cosmetic-bottle-mockup-renewing-vitamin-c-serum",
+    "template_id": "template-perfume-cosmetic-bottle-mockup",
+    "asset": {
+      "image_url": "/images/nano_insp/template-perfume-cosmetic-bottle-mockup-renewing-vitamin-c-serum.png",
+      "preview_image_url": "/images/nano_insp_preview/template-perfume-cosmetic-bottle-mockup-renewing-vitamin-c-serum-prev.jpg"
+    },
+    "params": {
+      "bottle_shape_variant": "a frosted glass cosmetic pump bottle with a chrome pump head",
+      "brand_name": "Verdalis",
+      "product_name": "Renewing Vitamin C Serum",
+      "backdrop_tone": "soft sage green gradient",
+      "palette": "sage green and matte white"
+    },
+    "locales": {
+      "en": {
+        "title": "Renewing Vitamin C Serum"
+      }
+    },
+    "topics": [
+      "photorealistic"
+    ],
+    "search_aliases": [
+      "renewing vitamin c serum",
+      "维生素C精华",
+      "anti-aging serum",
+      "skin brightening serum",
+      "vitamin c skincare",
+      "护肤精华",
+      "美容精华"
+    ]
+  },
+  {
+    "id": "template-perfume-cosmetic-bottle-mockup-signature-trio-gift-set",
+    "template_id": "template-perfume-cosmetic-bottle-mockup",
+    "asset": {
+      "image_url": "/images/nano_insp/template-perfume-cosmetic-bottle-mockup-signature-trio-gift-set.png",
+      "preview_image_url": "/images/nano_insp_preview/template-perfume-cosmetic-bottle-mockup-signature-trio-gift-set-prev.jpg"
+    },
+    "params": {
+      "bottle_shape_variant": "a trio of three coordinated glass perfume bottles of varying heights arranged in a cluster",
+      "brand_name": "Maison Argent",
+      "product_name": "Signature Trio Gift Set",
+      "backdrop_tone": "deep charcoal with soft chrome highlight gradient",
+      "palette": "chrome silver and deep charcoal"
+    },
+    "locales": {
+      "en": {
+        "title": "Signature Trio Gift Set"
+      }
+    },
+    "topics": [
+      "photorealistic"
+    ],
+    "search_aliases": [
+      "signature trio gift set",
+      "三件套礼品",
+      "perfume gift set",
+      "signature fragrance",
+      "礼品套装",
+      "香水礼盒",
+      "gift for her"
+    ]
+  },
+  {
+    "id": "template-perfume-cosmetic-bottle-mockup-velvet-amber-eau-de-parfum",
+    "template_id": "template-perfume-cosmetic-bottle-mockup",
+    "asset": {
+      "image_url": "/images/nano_insp/template-perfume-cosmetic-bottle-mockup-velvet-amber-eau-de-parfum.png",
+      "preview_image_url": "/images/nano_insp_preview/template-perfume-cosmetic-bottle-mockup-velvet-amber-eau-de-parfum-prev.jpg"
+    },
+    "params": {
+      "bottle_shape_variant": "a classic tall rectangular glass perfume bottle with a faceted cap",
+      "brand_name": "Lumière",
+      "product_name": "Velvet Amber Eau de Parfum",
+      "backdrop_tone": "soft blush pink gradient",
+      "palette": "rose gold and blush"
+    },
+    "locales": {
+      "en": {
+        "title": "Velvet Amber Eau de Parfum"
+      }
+    },
+    "topics": [
+      "photorealistic"
+    ],
+    "search_aliases": [
+      "velvet amber eau de parfum",
+      "天鹅绒琥珀香水",
+      "amber fragrance",
+      "luxury perfume",
+      "eau de parfum",
+      "香水",
+      "女性香水"
+    ]
+  },
+  {
+    "id": "template-price-tag-product-label-cedarwood-soy-candle",
+    "template_id": "template-price-tag-product-label",
+    "asset": {
+      "image_url": "/images/nano_insp/template-price-tag-product-label-cedarwood-soy-candle.png",
+      "preview_image_url": "/images/nano_insp_preview/template-price-tag-product-label-cedarwood-soy-candle-prev.jpg"
+    },
+    "params": {
+      "brand_name": "Ember & Oak Candle Co.",
+      "price": "$12.00 (was $18.00)",
+      "product_name": "Cedarwood Soy Candle",
+      "tag_shape_variant": "scalloped edge",
+      "seasonal_motif": "small sale-burst starburst icon",
+      "color_scheme": "sale red and cream"
+    },
+    "locales": {
+      "en": {
+        "title": "Cedarwood Soy Candle"
+      }
+    },
+    "topics": [
+      "artistic"
+    ],
+    "search_aliases": [
+      "cedarwood soy candle",
+      "雪松大豆蜡烛",
+      "scented candle",
+      "natural candle",
+      "aromatic candle",
+      "香薰蜡烛",
+      "home fragrance"
+    ]
+  },
+  {
+    "id": "template-price-tag-product-label-ceramic-lake-view-mug",
+    "template_id": "template-price-tag-product-label",
+    "asset": {
+      "image_url": "/images/nano_insp/template-price-tag-product-label-ceramic-lake-view-mug.png",
+      "preview_image_url": "/images/nano_insp_preview/template-price-tag-product-label-ceramic-lake-view-mug-prev.jpg"
+    },
+    "params": {
+      "brand_name": "Lakeside General Store",
+      "price": "$9.50",
+      "product_name": "Ceramic Lake-View Mug",
+      "tag_shape_variant": "rounded rectangle",
+      "seasonal_motif": "small pine-tree icon",
+      "color_scheme": "lake blue and natural kraft"
+    },
+    "locales": {
+      "en": {
+        "title": "Ceramic Lake-View Mug"
+      }
+    },
+    "topics": [
+      "artistic"
+    ],
+    "search_aliases": [
+      "ceramic mug",
+      "湖景陶瓷杯",
+      "lake view mug",
+      "artistic mug",
+      "coffee cup"
+    ]
+  },
+  {
+    "id": "template-price-tag-product-label-hand-painted-glass-ornament-set",
+    "template_id": "template-price-tag-product-label",
+    "asset": {
+      "image_url": "/images/nano_insp/template-price-tag-product-label-hand-painted-glass-ornament-set.png",
+      "preview_image_url": "/images/nano_insp_preview/template-price-tag-product-label-hand-painted-glass-ornament-set-prev.jpg"
+    },
+    "params": {
+      "brand_name": "Northgate Holiday Market",
+      "price": "$22.00",
+      "product_name": "Hand-Painted Glass Ornament Set (3-pack)",
+      "tag_shape_variant": "scalloped edge",
+      "seasonal_motif": "holly-leaf corner icon",
+      "color_scheme": "holiday green and gold"
+    },
+    "locales": {
+      "en": {
+        "title": "Hand-Painted Glass Ornament Set (3-pack)"
+      }
+    },
+    "topics": [
+      "artistic"
+    ],
+    "search_aliases": [
+      "hand painted ornaments",
+      "手绘玻璃装饰品",
+      "glass ornament set",
+      "artistic decorations",
+      "holiday ornaments"
+    ]
+  },
+  {
+    "id": "template-price-tag-product-label-linen-wrap-dress",
+    "template_id": "template-price-tag-product-label",
+    "asset": {
+      "image_url": "/images/nano_insp/template-price-tag-product-label-linen-wrap-dress.png",
+      "preview_image_url": "/images/nano_insp_preview/template-price-tag-product-label-linen-wrap-dress-prev.jpg"
+    },
+    "params": {
+      "brand_name": "Willow & Birch Boutique",
+      "price": "$34.00",
+      "product_name": "Linen Wrap Dress",
+      "tag_shape_variant": "rounded rectangle",
+      "seasonal_motif": "none, standard tag",
+      "color_scheme": "kraft brown and white"
+    },
+    "locales": {
+      "en": {
+        "title": "Linen Wrap Dress"
+      }
+    },
+    "search_aliases": [
+      "linen dress",
+      "亚麻裹身裙",
+      "wrap dress",
+      "summer dress",
+      "casual dress"
+    ]
+  },
+  {
+    "id": "template-promotional-flyer-golden-wok-bistro",
+    "template_id": "template-promotional-flyer",
+    "asset": {
+      "image_url": "/images/nano_insp/template-promotional-flyer-golden-wok-bistro.png",
+      "preview_image_url": "/images/nano_insp_preview/template-promotional-flyer-golden-wok-bistro-prev.jpg"
+    },
+    "params": {
+      "headline": "Golden Wok Bistro - Weekday Lunch Special",
+      "hero_image_subject": "an appetizing flat-illustration of a steaming noodle bowl with chopsticks",
+      "offer_details": "20% off all lunch combos, Monday-Friday 11am-2pm. Dine-in or takeout.",
+      "date_time": "Every Mon-Fri, 11:00 AM - 2:00 PM",
+      "contact_info": "123 Maple Street, Springfield - (555) 201-4477",
+      "cta_text": "Show this flyer to redeem",
+      "color_scheme": "warm red and gold"
+    },
+    "locales": {
+      "en": {
+        "title": "Golden Wok Bistro"
+      }
+    },
+    "topics": [
+      "gold"
+    ],
+    "search_aliases": [
+      "golden wok bistro",
+      "金锅餐厅",
+      "Asian bistro",
+      "restaurant flyer",
+      "food promotion"
+    ]
+  },
+  {
+    "id": "template-promotional-flyer-harbor-pine-boutique",
+    "template_id": "template-promotional-flyer",
+    "asset": {
+      "image_url": "/images/nano_insp/template-promotional-flyer-harbor-pine-boutique.png",
+      "preview_image_url": "/images/nano_insp_preview/template-promotional-flyer-harbor-pine-boutique-prev.jpg"
+    },
+    "params": {
+      "headline": "Harbor & Pine Boutique - End of Season Sale",
+      "hero_image_subject": "a flat-illustration of a folded sweater and a price tag with a percent sign",
+      "offer_details": "Up to 40% off select fall inventory. New markdowns added daily.",
+      "date_time": "Sat Aug 1 - Sun Aug 9",
+      "contact_info": "45 Harbor Ave, Unit 2 - @harborandpine",
+      "cta_text": "In-store only, while supplies last",
+      "color_scheme": "cool teal and cream"
+    },
+    "locales": {
+      "en": {
+        "title": "Harbor & Pine Boutique"
+      }
+    },
+    "search_aliases": [
+      "harbor pine boutique",
+      "港口松树精品店",
+      "boutique flyer",
+      "fashion store",
+      "shopping promotion"
+    ]
+  },
+  {
+    "id": "template-promotional-flyer-lincoln-elementary",
+    "template_id": "template-promotional-flyer",
+    "asset": {
+      "image_url": "/images/nano_insp/template-promotional-flyer-lincoln-elementary.png",
+      "preview_image_url": "/images/nano_insp_preview/template-promotional-flyer-lincoln-elementary-prev.jpg"
+    },
+    "params": {
+      "headline": "Lincoln Elementary - Parent-Teacher Conference Week",
+      "hero_image_subject": "a flat-illustration of a calendar page with a pencil and a small school-building icon",
+      "offer_details": "Sign up for a 15-minute slot with your child's teacher. Slots available before and after school.",
+      "date_time": "Nov 3-7, sign-up sheets posted outside each classroom",
+      "contact_info": "Front Office - (555) 330-1200 ext. 2",
+      "cta_text": "Please sign up by Oct 27",
+      "color_scheme": "school navy and gold"
+    },
+    "locales": {
+      "en": {
+        "title": "Lincoln Elementary"
+      }
+    },
+    "search_aliases": [
+      "lincoln elementary",
+      "林肯小学",
+      "school event",
+      "教育活动",
+      "community flyer",
+      "社区宣传单"
+    ]
+  },
+  {
+    "id": "template-promotional-flyer-riverside-fall-festival",
+    "template_id": "template-promotional-flyer",
+    "asset": {
+      "image_url": "/images/nano_insp/template-promotional-flyer-riverside-fall-festival.png",
+      "preview_image_url": "/images/nano_insp_preview/template-promotional-flyer-riverside-fall-festival-prev.jpg"
+    },
+    "params": {
+      "headline": "Riverside Fall Festival",
+      "hero_image_subject": "a flat-illustration of string lights over a row of festival food stalls",
+      "offer_details": "Live music, local food vendors, kids' craft corner, and a pumpkin-carving contest.",
+      "date_time": "Saturday, October 10, 4:00 PM - 9:00 PM",
+      "contact_info": "Riverside Park - free admission - riversidefallfest.org",
+      "cta_text": "Bring the whole family",
+      "color_scheme": "autumn orange and deep green"
+    },
+    "locales": {
+      "en": {
+        "title": "Riverside Fall Festival"
+      }
+    },
+    "search_aliases": [
+      "riverside fall festival",
+      "河边秋季节",
+      "fall festival",
+      "秋季节日",
+      "community event",
+      "社区活动"
+    ]
+  },
+  {
+    "id": "template-stem-classroom-teaching-aid-basic-circuit-board",
+    "template_id": "template-stem-classroom-teaching-aid",
+    "asset": {
+      "image_url": "/images/nano_insp/template-stem-classroom-teaching-aid-basic-circuit-board.png",
+      "preview_image_url": "/images/nano_insp_preview/template-stem-classroom-teaching-aid-basic-circuit-board-prev.jpg"
+    },
+    "params": {
+      "equipment_type": "a simple classroom circuit board with a battery, switch, wires, and a small lightbulb",
+      "topic_title": "The Basic Circuit Board",
+      "part_labels": "battery, switch, wire, lightbulb, connection point",
+      "caption_text": "Shows how a closed circuit lets electricity flow to light the bulb.",
+      "color_palette": "warm yellow and charcoal"
+    },
+    "locales": {
+      "en": {
+        "title": "The Basic Circuit Board"
+      }
+    },
+    "topics": [
+      "technology"
+    ],
+    "search_aliases": [
+      "basic circuit board",
+      "基本电路板",
+      "circuit board",
+      "电路板",
+      "STEM education",
+      "科技教育",
+      "technology",
+      "技术"
+    ]
+  },
+  {
+    "id": "template-stem-classroom-teaching-aid-classroom-whiteboard",
+    "template_id": "template-stem-classroom-teaching-aid",
+    "asset": {
+      "image_url": "/images/nano_insp/template-stem-classroom-teaching-aid-classroom-whiteboard.png",
+      "preview_image_url": "/images/nano_insp_preview/template-stem-classroom-teaching-aid-classroom-whiteboard-prev.jpg"
+    },
+    "params": {
+      "equipment_type": "a classroom whiteboard on a rolling stand with markers and an eraser tray",
+      "topic_title": "The Classroom Whiteboard",
+      "part_labels": "writing surface, marker tray, dry-erase marker, magnetic surface",
+      "caption_text": "Used daily for lessons, notes, and group brainstorming.",
+      "color_palette": "soft blue and white"
+    },
+    "locales": {
+      "en": {
+        "title": "The Classroom Whiteboard"
+      }
+    },
+    "topics": [
+      "school"
+    ],
+    "search_aliases": [
+      "classroom whiteboard",
+      "教室白板",
+      "whiteboard",
+      "白板",
+      "school supplies",
+      "学校用品",
+      "teaching aid",
+      "教学辅助"
+    ]
+  },
+  {
+    "id": "template-stem-classroom-teaching-aid-compound-microscope",
+    "template_id": "template-stem-classroom-teaching-aid",
+    "asset": {
+      "image_url": "/images/nano_insp/template-stem-classroom-teaching-aid-compound-microscope.png",
+      "preview_image_url": "/images/nano_insp_preview/template-stem-classroom-teaching-aid-compound-microscope-prev.jpg"
+    },
+    "params": {
+      "equipment_type": "a classic compound light microscope on a lab bench",
+      "topic_title": "The Compound Microscope",
+      "part_labels": "eyepiece, objective lens, stage, focus knob",
+      "caption_text": "Used to magnify and examine small specimens in the science lab.",
+      "color_palette": "muted green and grey"
+    },
+    "locales": {
+      "en": {
+        "title": "The Compound Microscope"
+      }
+    },
+    "search_aliases": [
+      "compound microscope",
+      "复合显微镜",
+      "microscope",
+      "显微镜",
+      "science equipment",
+      "科学设备",
+      "laboratory tools",
+      "实验室工具"
+    ]
+  },
+  {
+    "id": "template-stem-classroom-teaching-aid-counting-abacus",
+    "template_id": "template-stem-classroom-teaching-aid",
+    "asset": {
+      "image_url": "/images/nano_insp/template-stem-classroom-teaching-aid-counting-abacus.png",
+      "preview_image_url": "/images/nano_insp_preview/template-stem-classroom-teaching-aid-counting-abacus-prev.jpg"
+    },
+    "params": {
+      "equipment_type": "a wooden counting abacus with colorful beads on rods",
+      "topic_title": "The Counting Abacus",
+      "part_labels": "frame, rod, bead, counting row",
+      "caption_text": "A hands-on tool for practicing addition and place value.",
+      "color_palette": "warm wood tones with red and yellow beads"
+    },
+    "locales": {
+      "en": {
+        "title": "The Counting Abacus"
+      }
+    },
+    "topics": [
+      "school"
+    ],
+    "search_aliases": [
+      "计数算盘",
+      "counting abacus",
+      "school supplies",
+      "数学教具",
+      "教育工具"
+    ]
+  },
+  {
+    "id": "template-workbook-practice-book-cover-english-chinese-vocabulary-practice",
+    "template_id": "template-workbook-practice-book-cover",
+    "asset": {
+      "image_url": "/images/nano_insp/template-workbook-practice-book-cover-english-chinese-vocabulary-practice.png",
+      "preview_image_url": "/images/nano_insp_preview/template-workbook-practice-book-cover-english-chinese-vocabulary-practice-prev.jpg"
+    },
+    "params": {
+      "subject_name": "English-Chinese Vocabulary Practice / 中英文词汇练习",
+      "grade_level": "Ages 6-8",
+      "series_brand": "双语启蒙 Bilingual Beginnings",
+      "accent_color": "warm coral (#F26B5B)",
+      "subject_motif": "a flat-vector illustration of an open alphabet book with Latin letters and Chinese character strokes side by side"
+    },
+    "locales": {
+      "en": {
+        "title": "English-Chinese Vocabulary Practice / 中英文词汇练习"
+      }
+    },
+    "topics": [
+      "school"
+    ],
+    "search_aliases": [
+      "英语汉语词汇练习",
+      "english chinese vocabulary practice",
+      "学习书",
+      "词汇书",
+      "学校教材"
+    ]
+  },
+  {
+    "id": "template-workbook-practice-book-cover-mixed-subject-weekly-review",
+    "template_id": "template-workbook-practice-book-cover",
+    "asset": {
+      "image_url": "/images/nano_insp/template-workbook-practice-book-cover-mixed-subject-weekly-review.png",
+      "preview_image_url": "/images/nano_insp_preview/template-workbook-practice-book-cover-mixed-subject-weekly-review-prev.jpg"
+    },
+    "params": {
+      "subject_name": "Mixed-Subject Weekly Review",
+      "grade_level": "Grades 4-5",
+      "series_brand": "Summit Test-Prep Publishing Co.",
+      "accent_color": "deep purple (#6A4C9C)",
+      "subject_motif": "a flat-vector illustration of a stack of three books with a pencil and a checkmark badge on top"
+    },
+    "locales": {
+      "en": {
+        "title": "Mixed-Subject Weekly Review"
+      }
+    },
+    "topics": [
+      "school"
+    ],
+    "search_aliases": [
+      "综合科目周复习",
+      "mixed subject weekly review",
+      "学习手册",
+      "复习书",
+      "学校作业"
+    ]
+  },
+  {
+    "id": "template-workbook-practice-book-cover-multiplication-division-practice",
+    "template_id": "template-workbook-practice-book-cover",
+    "asset": {
+      "image_url": "/images/nano_insp/template-workbook-practice-book-cover-multiplication-division-practice.png",
+      "preview_image_url": "/images/nano_insp_preview/template-workbook-practice-book-cover-multiplication-division-practice-prev.jpg"
+    },
+    "params": {
+      "subject_name": "Multiplication & Division Practice",
+      "grade_level": "Grade 3",
+      "series_brand": "BrightPath Learning",
+      "accent_color": "cornflower blue (#4C7EF3)",
+      "subject_motif": "a friendly flat-vector illustration of colorful numbers and a small abacus motif"
+    },
+    "locales": {
+      "en": {
+        "title": "Multiplication & Division Practice"
+      }
+    },
+    "topics": [
+      "school"
+    ],
+    "search_aliases": [
+      "乘法除法练习",
+      "multiplication division practice",
+      "数学练习册",
+      "学校练习",
+      "数学书"
+    ]
+  },
+  {
+    "id": "template-workbook-practice-book-cover-states-of-matter-practice",
+    "template_id": "template-workbook-practice-book-cover",
+    "asset": {
+      "image_url": "/images/nano_insp/template-workbook-practice-book-cover-states-of-matter-practice.png",
+      "preview_image_url": "/images/nano_insp_preview/template-workbook-practice-book-cover-states-of-matter-practice-prev.jpg"
+    },
+    "params": {
+      "subject_name": "States of Matter Practice",
+      "grade_level": "Grade 6",
+      "series_brand": "Curiosity Labs",
+      "accent_color": "leaf green (#3FAE6B)",
+      "subject_motif": "a flat-vector illustration of a beaker with bubbling liquid and a small molecule diagram"
+    },
+    "locales": {
+      "en": {
+        "title": "States of Matter Practice"
+      }
+    },
+    "search_aliases": [
+      "物质状态练习",
+      "states of matter practice",
+      "科学练习册",
+      "学校教材",
+      "物理书"
+    ]
   }
 ]
