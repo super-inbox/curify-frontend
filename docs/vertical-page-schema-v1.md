@@ -33,6 +33,38 @@ Each vertical page is built from four pillars — **Know → Structure → Show 
 Pillars 3 & 4 exist. **Pillars 1 & 2 are the work** — 1 deepens what's there; 2 is net-new and is what
 the reference sites actually have that we don't (the "Education Ontology" behind TpT, not just its look).
 
+## Which level: template vs example (the key design decision)
+
+**The demand — and the lift — is at the example level.** GSC (`raw/gsc-recent-2026-07-13/Pages.csv`,
+rolled up): of nano-template impressions, **85% land on example pages (8,551 impr / 1,331 URLs) vs 15%
+on template landing pages (1,486 / 288)**, and there are **10× more example URLs** (3,550 examples vs
+346 templates). Enriching only the template pages touches ~15% of the opportunity and leaves the
+impression-earning long tail flat.
+
+**But the two pillars live at different levels** — this is the core rule:
+
+| Pillar | Authored at | Rendered on | Why |
+|---|---|---|---|
+| **1 · Knowledge** (prose: "what is HSK 2", the INFJ profile, fridge-magnet material) | **Template** (once) | Template (full) + example (1–2 line **summary** only) | Identical across all of a template's examples. Pasting the full prose on 88 example pages = **duplicate-content penalty** — near-dup pages get devalued, so verbatim reuse would *hurt*. |
+| **2 · Attributes** (the ontology values) | **Example** (per instance) | Example (full chips + JSON-LD) + template (the *schema*/facets) | Each example's values are **unique** (`HSK 1 · A Day at School · Reading` vs `Football · Messi/Ronaldo`) → unique per-example structured data + faceting; this is what makes 3,550 thin pages each distinct without dup-content risk. |
+
+**Model = pillar-cluster (hub & spoke):** the **template is the hub** (full authoritative knowledge +
+format-level JSON-LD + internal links down to its examples → consolidates the vertical's authority);
+**examples are the spokes** (unique attribute chips + per-example JSON-LD — a `LearningResource` per
+card, an `Article` per MBTI instance — + a short knowledge summary + a link *up* to the hub).
+
+**Scale unlock — example attributes DERIVE from `params`, they are not hand-authored.** Every example
+already carries its instance data: HSK `hsk_article_title:"HSK1 …"` → `grade_band`, story title; MBTI
+`mbti_topic:"Football"` + `character_set` → topic/subjects; merch `city_info:"nanjing landmarks"` → the
+instance. Template-constant attributes (subject, age band, difficulty, material) **inherit from the
+template**. So you hand-author **~12 template schemas + knowledge** and **auto-project** per-example
+attributes across all 3,550 — the whole point of an ontology is that it's programmatic, not manual.
+
+**Rollout implication:** v1 (template page, shipped) is the cheap 15%. The **highest-lift next step is
+rendering the layer on the example page** with a `deriveExampleAttributes(schema, example.params)`
+projection + per-example JSON-LD — and **measuring on example URLs**, where 85% of impressions live.
+See the Roadmap.
+
 ## The 5 verticals
 
 User-defined categories, each mapped to a reference model + existing taxonomy:
@@ -230,11 +262,17 @@ rich-result eligibility (Search Console → Enhancements, once JSON-LD is crawle
 same-vertical templates serve as a loose directional reference, not a statistical control.
 
 ## Roadmap / TODO (next steps)
-1. **Author the ~12 pilot enrichments** above (attributes + vertical knowledge in nano.json, en+zh),
-   mirroring the shipped HSK entry. Do NOT batch-generate. Re-pull GSC (`scripts/pull_gsc_performance.cjs`)
-   at enrich-time to confirm each page still has live impressions.
-3. **Render on the example page too** — today `example/[exampleId]/page.tsx` shows no domain prose; add the same chip strip + (lighter) knowledge + JSON-LD so example URLs also carry the vertical layer.
-4. **Vertical v2 — culture (服饰) + ecommerce.** Add their schemas to `VERTICAL_SCHEMAS` (fields already specified in §2.3 / §2.5) once the first read-out validates the approach. Culture is a Curify strength (costume/herbal/cultural-relic templates) and a natural 4th.
+1. **Author the ~12 template-hub enrichments** above — Pillar-1 knowledge + the template-constant
+   attributes + facet schema in nano.json (en+zh), mirroring the shipped HSK entry. Hand-authored, ~12
+   pages. Do NOT batch-generate. Re-pull GSC (`scripts/pull_gsc_performance.cjs`) at enrich-time to
+   confirm each page still has live impressions.
+2. **⭐ Highest-lift: example-level attributes (the 85%).** Build `deriveExampleAttributes(schema,
+   example.params)` — project each vertical schema's attributes onto an example's `params` (variable
+   values) + template-constant attributes (inherited); render the chip strip + a knowledge *summary* +
+   **per-example JSON-LD** on `example/[exampleId]/page.tsx` (today shows no domain prose). This scales
+   the layer to all 3,550 example URLs at ~zero authoring cost and is where the impressions are.
+   **Measure on example URLs**, not just template landing pages. (See "Which level" above.)
+3. **Vertical v2 — culture (服饰) + ecommerce.** Add their schemas to `VERTICAL_SCHEMAS` (fields already specified in §2.3 / §2.5) once the first read-out validates the approach. Culture is a Curify strength (costume/herbal/cultural-relic templates) and a natural 4th.
 5. **Taxonomy additions.** Promote the NEW ontology axes into `lib/taxonomy.json` so facets derive from one source: `grade`, `skill`, `resource_type` (education); `mbti-type` (16 types, tier3) + type×type compatibility; `material`/`process`/`product_type` (merch). Ties into `project_taxonomy_shape_i18n`.
 6. **Phase 2 — faceted browse (programmatic SEO).** Once attributes are DB-backed, generate `/topics/language?grade=…&subject=…&type=…` facet pages (`Preschool → Reading → Worksheet`). Only after the pilot read-out.
 7. **i18n the attribute LABELS.** v1 labels are hardcoded English in `vertical_schema.ts`; move to messages so `[Grade / Level]` localizes (values already per-locale).
