@@ -13,6 +13,10 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import { CDN_BASE, SITE_URL } from "@/lib/constants";
 import { SUPPORTED_LOCALES } from "@/lib/generated/locales";
 import { getCanonicalUrl } from "@/lib/canonical";
+import {
+  resolveVerticalForTopics,
+  type VerticalSchema,
+} from "@/lib/vertical_schema";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 export type SeoContentSections = {
@@ -33,6 +37,11 @@ export type NanoLocaleMessageEntry = {
       how?: unknown;
       prompts?: unknown;
     };
+    // VerticalPageSchema v1 — Pillar 2 (ontology values → chip strip + schema.org)
+    // and Pillar 1 authored knowledge slots. Both are flat string maps keyed by the
+    // vertical schema's attribute/knowledge-slot keys. See lib/vertical_schema.ts.
+    attributes?: Record<string, unknown>;
+    vertical?: Record<string, unknown>;
   };
 };
 
@@ -387,6 +396,93 @@ export function resolveContentSections(
   };
 }
 
+// ─── VerticalPageSchema v1 (Pillars 1 & 2) ──────────────────────────────────────
+
+export type ResolvedVerticalPage = {
+  schema: VerticalSchema;
+  /** ontology values present for this page → chip strip + JSON-LD (Pillar 2) */
+  attributes: { key: string; label: string; value: string; facet: boolean }[];
+  /** authored knowledge slots present for this page (Pillar 1) */
+  knowledge: { key: string; label: string; text: string }[];
+};
+
+/**
+ * Resolve the vertical domain-knowledge layer for a template page: route it to a
+ * vertical by `topics`, then join the schema's field defs with the per-locale
+ * `content.attributes` / `content.vertical` values from nano.json. Returns null when
+ * the template is in no vertical OR has no authored vertical values yet (page renders
+ * unchanged — safe to roll out incrementally over the pilot cohort).
+ */
+export function resolveVerticalSections(
+  templateId: string,
+  topics: string[] | undefined | null,
+  nanoMessages: NanoMessagesDict | null | undefined
+): ResolvedVerticalPage | null {
+  const schema = resolveVerticalForTopics(topics);
+  if (!schema) return null;
+
+  const content = resolveLocaleMessage(templateId, nanoMessages)?.content;
+  const attrVals = (content?.attributes ?? {}) as Record<string, string>;
+  const vertVals = (content?.vertical ?? {}) as Record<string, string>;
+
+  const attributes = schema.attributes
+    .map((a) => ({ key: a.key, label: a.label, value: normalizeText(attrVals[a.key]), facet: !!a.facet }))
+    .filter((a) => a.value);
+
+  const knowledge = schema.knowledgeSlots
+    .map((k) => ({ key: k.key, label: k.label, text: normalizeText(vertVals[k.key]) }))
+    .filter((k) => k.text);
+
+  if (attributes.length === 0 && knowledge.length === 0) return null;
+  return { schema, attributes, knowledge };
+}
+
+/**
+ * schema.org JSON-LD for a vertical page. Uses the vertical's @type and maps the
+ * best-fit ontology fields to native schema.org properties, exposing the full
+ * ontology as `additionalProperty` PropertyValue[] (the rich-result unlock the flat
+ * pages can't earn). Returns null when there's nothing to emit.
+ */
+export function buildVerticalJsonLd(
+  resolved: ResolvedVerticalPage | null,
+  opts: { name: string; description?: string; url: string; image?: string }
+): Record<string, unknown> | null {
+  if (!resolved) return null;
+  const { schema, attributes } = resolved;
+  const val = (k: string) => attributes.find((a) => a.key === k)?.value;
+
+  const node: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": schema.schemaOrgType,
+    name: opts.name,
+    url: opts.url,
+  };
+  if (opts.description) node.description = opts.description;
+  if (opts.image) node.image = opts.image;
+
+  if (schema.id === "education") {
+    if (val("resource_type")) node.learningResourceType = val("resource_type");
+    if (val("grade_band")) node.educationalLevel = val("grade_band");
+    if (val("age_range")) node.typicalAgeRange = val("age_range");
+    if (val("subject")) node.about = val("subject");
+    const teaches = resolved.knowledge.find((k) => k.key === "learning_objective")?.text;
+    if (teaches) node.teaches = teaches;
+    if (val("duration_min")) node.timeRequired = `PT${String(val("duration_min")).replace(/\D/g, "")}M`;
+  } else if (schema.id === "merch") {
+    if (val("material")) node.material = val("material");
+    if (val("product_type")) node.category = val("product_type");
+  } else if (schema.id === "mbti") {
+    if (val("type_code")) node.about = val("type_code");
+  }
+
+  node.additionalProperty = attributes.map((a) => ({
+    "@type": "PropertyValue",
+    name: a.label,
+    value: a.value,
+  }));
+  return node;
+}
+
 export function normalizeNanoLocaleMessageEntry(
   entry: unknown
 ): NanoLocaleMessageEntry {
@@ -405,6 +501,16 @@ export function normalizeNanoLocaleMessageEntry(
       ? (content.sections as Record<string, unknown>)
       : {};
 
+  const normStringMap = (v: unknown): Record<string, string> => {
+    if (!v || typeof v !== "object") return {};
+    const out: Record<string, string> = {};
+    for (const [k, val] of Object.entries(v as Record<string, unknown>)) {
+      const s = normalizeText(val);
+      if (s) out[k] = s;
+    }
+    return out;
+  };
+
   return {
     title: normalizeText(obj.title),
     category: normalizeText(obj.category),
@@ -416,6 +522,8 @@ export function normalizeNanoLocaleMessageEntry(
         how: normalizeStringArray(sections.how),
         prompts: normalizeStringArray(sections.prompts),
       },
+      attributes: normStringMap(content.attributes),
+      vertical: normStringMap(content.vertical),
     },
   };
 }
