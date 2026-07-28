@@ -63,3 +63,11 @@ packs/**/*.jpeg
 packs/**/*.png
 packs/**/*.webp
 public/blog-assets/
+
+# SKU-mode pack bundles are large (Azure-only); template-mode packs/template-*/pack.zip stays tracked.
+packs/**/*.pdf
+packs/herbal/pack.zip
+packs/hsk-reading/pack.zip
+packs/vocab-scenes/pack.zip
+packs/travel-maps/pack.zip
+packs/world-costumes/pack.zip

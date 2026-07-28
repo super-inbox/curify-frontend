@@ -19829,5 +19829,841 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "creation_date": "2026-07-26"
+  },
+  {
+    "id": "template-workbook-practice-book-cover",
+    "locales": {
+      "en": {
+        "base_prompt": "Design a printable workbook / practice-book COVER, 3:4 portrait aspect ratio, output size 1200x1600. FIXED LAYOUT (must match across every variant of this template): a top title band occupying about the top 18% of the frame containing the subject-name title and a small grade-level ribbon badge in the top-right corner; a large center illustration zone (about the middle 55% of the frame) containing exactly one large flat-vector subject motif illustration relevant to the subject; a thin colored border frame around the entire cover; a bottom footer bar (about the bottom 12%) with a small left-aligned series/brand wordmark. Clean flat-vector illustration style, no photorealism, consistent with a children's educational worksheet/flashcard visual language. VARIABLE CONTENT for this specific example: subject name = \"{subject_name}\", grade level badge text = \"{grade_level}\", series/brand footer text = \"{series_brand}\", accent color = {accent_color}, center subject illustration = {subject_motif}. Render the subject name and grade-level badge as real, legible, correctly spelled text exactly as given -- do not add any other text. Do not add a watermark. Do not crop the illustration at the frame edges.",
+        "parameters": [
+          {
+            "name": "subject_name",
+            "label": "Subject Name",
+            "type": "text",
+            "placeholder": [
+              "Multiplication & Division Practice",
+              "English-Chinese Vocabulary Practice / 中英文词汇练习",
+              "States of Matter Practice",
+              "Mixed-Subject Weekly Review"
+            ]
+          },
+          {
+            "name": "grade_level",
+            "label": "Grade Level",
+            "type": "text",
+            "placeholder": [
+              "Grade 3",
+              "Ages 6-8",
+              "Grade 6",
+              "Grades 4-5"
+            ]
+          },
+          {
+            "name": "series_brand",
+            "label": "Series Brand",
+            "type": "text",
+            "placeholder": [
+              "BrightPath Learning",
+              "双语启蒙 Bilingual Beginnings",
+              "Curiosity Labs",
+              "Summit Test-Prep Publishing Co."
+            ]
+          },
+          {
+            "name": "accent_color",
+            "label": "Accent Color",
+            "type": "text",
+            "placeholder": [
+              "cornflower blue (#4C7EF3)",
+              "warm coral (#F26B5B)",
+              "leaf green (#3FAE6B)",
+              "deep purple (#6A4C9C)"
+            ]
+          },
+          {
+            "name": "subject_motif",
+            "label": "Subject Motif",
+            "type": "text",
+            "placeholder": [
+              "a friendly flat-vector illustration of colorful numbers and a small abacus motif",
+              "a flat-vector illustration of an open alphabet book with Latin letters and Chinese character strokes side by side",
+              "a flat-vector illustration of a beaker with bubbling liquid and a small molecule diagram",
+              "a flat-vector illustration of a stack of three books with a pencil and a checkmark badge on top"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-workbook-practice-book-cover-multiplication-division-practice-prev.jpg",
+    "topics": [
+      "education",
+      "learning",
+      "printable",
+      "book-cover",
+      "worksheet",
+      "classroom",
+      "kids",
+      "design"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-28"
+  },
+  {
+    "id": "template-promotional-flyer",
+    "locales": {
+      "en": {
+        "base_prompt": "Design a single-page promotional FLYER (not a wall poster), 4:5 portrait aspect ratio, output size 1600x2000. FIXED LAYOUT (must match across every variant of this template): a top headline band (top ~20% of frame) with the business/event name and headline; a hero image/graphic block (upper-middle ~35%) with one dominant visual; an offer/detail text block (lower-middle ~30%) containing the offer, date/time, and 2-3 supporting detail lines; a bottom contact/QR footer bar (~15%) with a QR-code-shaped placeholder graphic, address/phone line, and a short call-to-action line. Keep the layout compact and info-dense like a real commercial flyer, NOT a sparse wall-poster. VARIABLE CONTENT for this specific example: business/event name and headline = \"{headline}\", hero image = {hero_image_subject}, offer details = \"{offer_details}\", date/time = \"{date_time}\", contact footer text = \"{contact_info}\", call-to-action text = \"{cta_text}\", color scheme = {color_scheme}. Render all specified text exactly as given, legible and correctly spelled. The QR-code placeholder should look like a generic scannable QR pattern graphic, not a real functional code. Do not add a watermark.",
+        "parameters": [
+          {
+            "name": "headline",
+            "label": "Headline",
+            "type": "text",
+            "placeholder": [
+              "Golden Wok Bistro - Weekday Lunch Special",
+              "Harbor & Pine Boutique - End of Season Sale",
+              "Riverside Fall Festival",
+              "Lincoln Elementary - Parent-Teacher Conference Week"
+            ]
+          },
+          {
+            "name": "offer_details",
+            "label": "Offer Details",
+            "type": "text",
+            "placeholder": [
+              "20% off all lunch combos, Monday-Friday 11am-2pm. Dine-in or takeout.",
+              "Up to 40% off select fall inventory. New markdowns added daily.",
+              "Live music, local food vendors, kids' craft corner, and a pumpkin-carving contest.",
+              "Sign up for a 15-minute slot with your child's teacher. Slots available before and after school."
+            ]
+          },
+          {
+            "name": "date_time",
+            "label": "Date Time",
+            "type": "text",
+            "placeholder": [
+              "Every Mon-Fri, 11:00 AM - 2:00 PM",
+              "Sat Aug 1 - Sun Aug 9",
+              "Saturday, October 10, 4:00 PM - 9:00 PM",
+              "Nov 3-7, sign-up sheets posted outside each classroom"
+            ]
+          },
+          {
+            "name": "contact_info",
+            "label": "Contact Info",
+            "type": "text",
+            "placeholder": [
+              "123 Maple Street, Springfield - (555) 201-4477",
+              "45 Harbor Ave, Unit 2 - @harborandpine",
+              "Riverside Park - free admission - riversidefallfest.org",
+              "Front Office - (555) 330-1200 ext. 2"
+            ]
+          },
+          {
+            "name": "cta_text",
+            "label": "Cta Text",
+            "type": "text",
+            "placeholder": [
+              "Show this flyer to redeem",
+              "In-store only, while supplies last",
+              "Bring the whole family",
+              "Please sign up by Oct 27"
+            ]
+          },
+          {
+            "name": "hero_image_subject",
+            "label": "Hero Image Subject",
+            "type": "text",
+            "placeholder": [
+              "an appetizing flat-illustration of a steaming noodle bowl with chopsticks",
+              "a flat-illustration of a folded sweater and a price tag with a percent sign",
+              "a flat-illustration of string lights over a row of festival food stalls",
+              "a flat-illustration of a calendar page with a pencil and a small school-building icon"
+            ]
+          },
+          {
+            "name": "color_scheme",
+            "label": "Color Scheme",
+            "type": "text",
+            "placeholder": [
+              "warm red and gold",
+              "cool teal and cream",
+              "autumn orange and deep green",
+              "school navy and gold"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-promotional-flyer-golden-wok-bistro-prev.jpg",
+    "topics": [
+      "design",
+      "marketing",
+      "poster",
+      "flyer",
+      "business",
+      "promotion",
+      "event"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-28"
+  },
+  {
+    "id": "template-stem-classroom-teaching-aid",
+    "locales": {
+      "en": {
+        "base_prompt": "Design a labeled STEM classroom teaching-aid illustration, 1:1 square aspect ratio, output size 1600x1600. FIXED LAYOUT (must match across every variant of this template): a top title band (~12% of frame) with the equipment/topic name; a large center illustration (~55% of frame) of exactly one piece of classroom or lab equipment, in flat/vector style, fully visible with nothing cropped at the edges; thin callout lines radiating from 3-4 key parts of the equipment out to short label text placed in the surrounding margin; a bottom caption strip (~12%) with a short one-line classroom-use caption. VARIABLE CONTENT for this specific example: equipment = {equipment_type}, title text = \"{topic_title}\", part labels = {part_labels}, bottom caption text = \"{caption_text}\", color palette = {color_palette}. Render the title, part labels, and caption as real, legible, correctly spelled text exactly as given. Do not add a watermark. Do not crop the equipment illustration at the frame edges.",
+        "parameters": [
+          {
+            "name": "equipment_type",
+            "label": "Equipment Type",
+            "type": "text",
+            "placeholder": [
+              "a classroom whiteboard on a rolling stand with markers and an eraser tray",
+              "a classic compound light microscope on a lab bench",
+              "a wooden counting abacus with colorful beads on rods",
+              "a simple classroom circuit board with a battery, switch, wires, and a small lightbulb"
+            ]
+          },
+          {
+            "name": "part_labels",
+            "label": "Part Labels",
+            "type": "text",
+            "placeholder": [
+              "writing surface, marker tray, dry-erase marker, magnetic surface",
+              "eyepiece, objective lens, stage, focus knob",
+              "frame, rod, bead, counting row",
+              "battery, switch, wire, lightbulb, connection point"
+            ]
+          },
+          {
+            "name": "topic_title",
+            "label": "Topic Title",
+            "type": "text",
+            "placeholder": [
+              "The Classroom Whiteboard",
+              "The Compound Microscope",
+              "The Counting Abacus",
+              "The Basic Circuit Board"
+            ]
+          },
+          {
+            "name": "caption_text",
+            "label": "Caption Text",
+            "type": "text",
+            "placeholder": [
+              "Used daily for lessons, notes, and group brainstorming.",
+              "Used to magnify and examine small specimens in the science lab.",
+              "A hands-on tool for practicing addition and place value.",
+              "Shows how a closed circuit lets electricity flow to light the bulb."
+            ]
+          },
+          {
+            "name": "color_palette",
+            "label": "Color Palette",
+            "type": "text",
+            "placeholder": [
+              "soft blue and white",
+              "muted green and grey",
+              "warm wood tones with red and yellow beads",
+              "warm yellow and charcoal"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-stem-classroom-teaching-aid-classroom-whiteboard-prev.jpg",
+    "topics": [
+      "education",
+      "science",
+      "learning",
+      "infographic",
+      "classroom",
+      "diagram",
+      "stem"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-28"
+  },
+  {
+    "id": "template-price-tag-product-label",
+    "locales": {
+      "en": {
+        "base_prompt": "Design a die-cut-style retail PRICE TAG, 2:3 portrait aspect ratio, output size 1000x1500. FIXED LAYOUT (must match across every variant of this template): a die-cut tag silhouette (rounded rectangle or scalloped edge) with a small punched string hole at the top-center; a brand/shop name band directly below the hole; a large center price display as the dominant text element; a product/item name line directly below the price; a bottom strip with a generic barcode-pattern graphic. VARIABLE CONTENT for this specific example: brand/shop name = \"{brand_name}\", price = \"{price}\", product/item name = \"{product_name}\", tag shape = {tag_shape_variant}, seasonal motif = {seasonal_motif}, color scheme = {color_scheme}. Render the brand name, price, and product name as real, legible, correctly spelled text exactly as given. The barcode graphic should look like a generic scannable barcode pattern, not a real functional code. Do not add a watermark.",
+        "parameters": [
+          {
+            "name": "brand_name",
+            "label": "Brand Name",
+            "type": "text",
+            "placeholder": [
+              "Willow & Birch Boutique",
+              "Ember & Oak Candle Co.",
+              "Lakeside General Store",
+              "Northgate Holiday Market"
+            ]
+          },
+          {
+            "name": "price",
+            "label": "Price",
+            "type": "text",
+            "placeholder": [
+              "$34.00",
+              "$12.00 (was $18.00)",
+              "$9.50",
+              "$22.00"
+            ]
+          },
+          {
+            "name": "product_name",
+            "label": "Product Name",
+            "type": "text",
+            "placeholder": [
+              "Linen Wrap Dress",
+              "Cedarwood Soy Candle",
+              "Ceramic Lake-View Mug",
+              "Hand-Painted Glass Ornament Set (3-pack)"
+            ]
+          },
+          {
+            "name": "tag_shape_variant",
+            "label": "Tag Shape Variant",
+            "type": "text",
+            "placeholder": [
+              "rounded rectangle",
+              "scalloped edge"
+            ]
+          },
+          {
+            "name": "seasonal_motif",
+            "label": "Seasonal Motif",
+            "type": "text",
+            "placeholder": [
+              "none, standard tag",
+              "small sale-burst starburst icon",
+              "small pine-tree icon",
+              "holly-leaf corner icon"
+            ]
+          },
+          {
+            "name": "color_scheme",
+            "label": "Color Scheme",
+            "type": "text",
+            "placeholder": [
+              "kraft brown and white",
+              "sale red and cream",
+              "lake blue and natural kraft",
+              "holiday green and gold"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-price-tag-product-label-linen-wrap-dress-prev.jpg",
+    "topics": [
+      "design",
+      "product",
+      "label",
+      "retail",
+      "packaging",
+      "ecommerce"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-28"
+  },
+  {
+    "id": "template-achievement-certificate-award",
+    "locales": {
+      "en": {
+        "base_prompt": "Design a formal ACHIEVEMENT CERTIFICATE, 4:3 landscape aspect ratio, output size 1600x1200. FIXED LAYOUT (must match across every variant of this template): a decorative border frame around the entire certificate; a seal or ribbon motif badge positioned top-center; a title banner near the top with the award/certificate title in large formal lettering; a recipient name line in the middle in large script or serif lettering; an award reason/description line directly below the recipient name; a bottom row with a signature line on the left and a date line on the right. VARIABLE CONTENT for this specific example: award title = \"{award_title}\", recipient name = \"{recipient_name}\", organization name = \"{org_name}\", award reason = \"{award_reason}\", date = \"{date}\", signature name = \"{signature_name}\", palette = {palette_variant}. Render all specified text exactly as given, legible and correctly spelled. Do not add a watermark.",
+        "parameters": [
+          {
+            "name": "award_title",
+            "label": "Award Title",
+            "type": "text",
+            "placeholder": [
+              "Certificate of Academic Achievement",
+              "Certificate of Excellence",
+              "Certificate of Athletic Achievement",
+              "Certificate of Course Completion"
+            ]
+          },
+          {
+            "name": "recipient_name",
+            "label": "Recipient Name",
+            "type": "text",
+            "placeholder": [
+              "Emma Rodriguez",
+              "Marcus Thibodeaux",
+              "Jamal Okafor",
+              "Priya Venkataraman"
+            ]
+          },
+          {
+            "name": "org_name",
+            "label": "Org Name",
+            "type": "text",
+            "placeholder": [
+              "Maple Grove Elementary School",
+              "Alderbrook Consulting Group",
+              "Riverside Middle School Athletics",
+              "Northfield Professional Development Institute"
+            ]
+          },
+          {
+            "name": "award_reason",
+            "label": "Award Reason",
+            "type": "text",
+            "placeholder": [
+              "For outstanding achievement in Mathematics during the Fall semester",
+              "In recognition of outstanding leadership and dedication during Q3 2026",
+              "For first place in the Annual Fall Track & Field Day",
+              "For successfully completing the 40-hour Advanced Project Management certification course"
+            ]
+          },
+          {
+            "name": "date",
+            "label": "Date",
+            "type": "text",
+            "placeholder": [
+              "December 12, 2026",
+              "October 1, 2026",
+              "September 20, 2026",
+              "July 18, 2026"
+            ]
+          },
+          {
+            "name": "signature_name",
+            "label": "Signature Name",
+            "type": "text",
+            "placeholder": [
+              "Mrs. Patricia Chen, Principal",
+              "Dana Whitfield, VP of People",
+              "Coach Luis Fernandez",
+              "Dr. Alan Whitcombe, Program Director"
+            ]
+          },
+          {
+            "name": "palette_variant",
+            "label": "Palette Variant",
+            "type": "text",
+            "placeholder": [
+              "pastel classroom-friendly (soft blue and cream)",
+              "gold and navy classic",
+              "pastel classroom-friendly (green and gold)"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-achievement-certificate-award-certificate-of-academic-achievement-prev.jpg",
+    "topics": [
+      "design",
+      "printable",
+      "certificate",
+      "award",
+      "education",
+      "template"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-28"
+  },
+  {
+    "id": "template-perfume-cosmetic-bottle-mockup",
+    "locales": {
+      "en": {
+        "base_prompt": "Design a studio product-photography style MOCKUP of a perfume or cosmetic bottle, 3:4 portrait aspect ratio, output size 1200x1600. FIXED LAYOUT (must match across every variant of this template): one centered glass-bottle silhouette occupying about half the frame height, fully visible with nothing cropped; a soft studio-lighting backdrop with a subtle gradient and a soft shadow beneath the bottle; a label area on the bottle body reserved for the brand/product name; a small, understated brand wordmark repeated at the very bottom of the frame. VARIABLE CONTENT for this specific example: bottle shape = {bottle_shape_variant}, label brand/product name text = \"{brand_name} - {product_name}\", backdrop tone = {backdrop_tone}, palette = {palette}. Render the label brand/product name as real, legible, correctly spelled text on the bottle label. Do not add a watermark. Do not crop the bottle at the frame edges.",
+        "parameters": [
+          {
+            "name": "bottle_shape_variant",
+            "label": "Bottle Shape Variant",
+            "type": "text",
+            "placeholder": [
+              "a classic tall rectangular glass perfume bottle with a faceted cap",
+              "a frosted glass cosmetic pump bottle with a chrome pump head",
+              "a small amber-glass roller-bottle with a wooden cap",
+              "a trio of three coordinated glass perfume bottles of varying heights arranged in a cluster"
+            ]
+          },
+          {
+            "name": "brand_name",
+            "label": "Brand Name",
+            "type": "text",
+            "placeholder": [
+              "Lumière",
+              "Verdalis",
+              "Still Grove",
+              "Maison Argent"
+            ]
+          },
+          {
+            "name": "product_name",
+            "label": "Product Name",
+            "type": "text",
+            "placeholder": [
+              "Velvet Amber Eau de Parfum",
+              "Renewing Vitamin C Serum",
+              "Lavender Calm Roll-On",
+              "Signature Trio Gift Set"
+            ]
+          },
+          {
+            "name": "palette",
+            "label": "Palette",
+            "type": "text",
+            "placeholder": [
+              "rose gold and blush",
+              "sage green and matte white",
+              "amber and sage",
+              "chrome silver and deep charcoal"
+            ]
+          },
+          {
+            "name": "backdrop_tone",
+            "label": "Backdrop Tone",
+            "type": "text",
+            "placeholder": [
+              "soft blush pink gradient",
+              "soft sage green gradient",
+              "warm neutral linen gradient",
+              "deep charcoal with soft chrome highlight gradient"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-perfume-cosmetic-bottle-mockup-velvet-amber-eau-de-parfum-prev.jpg",
+    "topics": [
+      "design",
+      "product",
+      "packaging",
+      "mockup",
+      "beauty",
+      "cosmetics",
+      "luxury"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-28"
+  },
+  {
+    "id": "template-chocolate-giftbox-packaging",
+    "locales": {
+      "en": {
+        "base_prompt": "Design an open GIFT-BOX packaging mockup, 1:1 square aspect ratio, output size 1600x1600. FIXED LAYOUT (must match across every variant of this template): the gift box shown at a 3/4 angle with the lid tilted open, revealing a compartmentalized interior with individual items nestled in each compartment; a ribbon wrapped around the closed portion of the box tied in a bow at the front-left; a small seasonal motif badge in the top-right corner; a brand label centered on the box lid exterior. VARIABLE CONTENT for this specific example: occasion = {occasion}, box contents = {compartment_contents}, brand label text = \"{brand_name}\", ribbon color = {ribbon_color}, box pattern = {box_pattern}. Render the brand label as real, legible, correctly spelled text. Do not add a watermark.",
+        "parameters": [
+          {
+            "name": "occasion",
+            "label": "Occasion",
+            "type": "text",
+            "placeholder": [
+              "winter holiday",
+              "Valentine's Day",
+              "corporate year-end gifting",
+              "Mid-Autumn Festival (mooncake-adjacent)"
+            ]
+          },
+          {
+            "name": "brand_name",
+            "label": "Brand Name",
+            "type": "text",
+            "placeholder": [
+              "Maple & Cocoa Chocolatiers",
+              "Rosette Chocolaterie",
+              "Sterling & Oak Corporate Gifts",
+              "Golden Lotus Bakery"
+            ]
+          },
+          {
+            "name": "ribbon_color",
+            "label": "Ribbon Color",
+            "type": "text",
+            "placeholder": [
+              "deep red satin ribbon",
+              "blush pink satin ribbon",
+              "navy grosgrain ribbon",
+              "burgundy silk ribbon"
+            ]
+          },
+          {
+            "name": "box_pattern",
+            "label": "Box Pattern",
+            "type": "text",
+            "placeholder": [
+              "matte forest-green box with gold foil trim",
+              "soft pink box with a subtle heart pattern",
+              "matte navy box with subtle gold foil embossing",
+              "burgundy box with a gold lotus-pattern lid"
+            ]
+          },
+          {
+            "name": "compartment_contents",
+            "label": "Compartment Contents",
+            "type": "text",
+            "placeholder": [
+              "an assortment of foil-wrapped chocolate truffles in gold and red wrappers",
+              "heart-shaped chocolate pralines in pink and red wrappers",
+              "an assorted set of dark chocolate bars and a small branded notecard",
+              "four individually wrapped mooncakes with a small lotus-motif card"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-chocolate-giftbox-packaging-winter-holiday-prev.jpg",
+    "topics": [
+      "design",
+      "product",
+      "packaging",
+      "giftbox",
+      "food",
+      "celebration"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-28"
+  },
+  {
+    "id": "template-jigsaw-puzzle-box",
+    "locales": {
+      "en": {
+        "base_prompt": "Design a jigsaw PUZZLE BOX cover mockup, 4:3 landscape aspect ratio, output size 1600x1200. FIXED LAYOUT (must match across every variant of this template): the box front shown flat-on filling the frame; a large center cover-art area showing the puzzle's completed-image artwork; a brand/series logo band across the top; a jigsaw-piece-shaped cutout accent graphic in the bottom-right corner; a piece-count badge in the bottom-left corner. VARIABLE CONTENT for this specific example: cover art subject = {cover_art_subject}, theme = {theme_ip}, brand/series logo text = \"{theme_ip} Puzzle Co.\", piece-count badge text = \"{piece_count}\", palette = {palette}. Render the brand/series logo and piece-count badge as real, legible, correctly spelled text. Do not add a watermark.",
+        "parameters": [
+          {
+            "name": "theme_ip",
+            "label": "Theme Ip",
+            "type": "text",
+            "placeholder": [
+              "Mountain Lake",
+              "Coastal City Map",
+              "Forest Friends",
+              "Night Market"
+            ]
+          },
+          {
+            "name": "piece_count",
+            "label": "Piece Count",
+            "type": "text",
+            "placeholder": [
+              "1000 pieces",
+              "300 pieces (travel size)",
+              "500 pieces",
+              "2000 pieces (deluxe edition)"
+            ]
+          },
+          {
+            "name": "palette",
+            "label": "Palette",
+            "type": "text",
+            "placeholder": [
+              "deep blue and warm sunset orange",
+              "teal and sandy beige",
+              "bright green and playful yellow",
+              "deep purple and warm lantern gold"
+            ]
+          },
+          {
+            "name": "cover_art_subject",
+            "label": "Cover Art Subject",
+            "type": "text",
+            "placeholder": [
+              "a vivid painted illustration of a mountain lake at sunset with pine trees",
+              "a stylized illustrated map of a coastal city's landmarks",
+              "a group illustration of five friendly cartoon animal characters in a forest clearing",
+              "a detailed illustration of a bustling night market with lanterns and food stalls"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-jigsaw-puzzle-box-mountain-lake-prev.jpg",
+    "topics": [
+      "design",
+      "product",
+      "puzzle",
+      "game",
+      "collectible",
+      "merch"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-28"
+  },
+  {
+    "id": "template-discount-coupon-voucher",
+    "locales": {
+      "en": {
+        "base_prompt": "Design a tear-tab ticket-style DISCOUNT COUPON, 5:2 wide horizontal aspect ratio, output size 2000x800. FIXED LAYOUT (must match across every variant of this template): a horizontal ticket shape with a vertical perforated/dashed tear line about a quarter of the way in from the left edge; a left tear-tab stub section containing a large percentage/amount-off callout in bold display numerals; a right main section containing the business name at the top, a short discount description in the middle, and an expiry date plus a barcode-placeholder graphic at the bottom. VARIABLE CONTENT for this specific example: business name = \"{business_name}\", discount callout = \"{discount_amount}\", discount description = \"{discount_type}\", expiry date = \"{expiry_date}\", terms text = \"{terms_text}\", color scheme = {color_scheme}. Render all specified text exactly as given, legible and correctly spelled. The barcode graphic should look like a generic scannable pattern, not a real functional code. Do not add a watermark.",
+        "parameters": [
+          {
+            "name": "business_name",
+            "label": "Business Name",
+            "type": "text",
+            "placeholder": [
+              "Cedar Lane Home Goods",
+              "Basil & Vine Trattoria",
+              "Daybreak Coffee Roasters",
+              "Summit Fitness Club Loyalty Rewards"
+            ]
+          },
+          {
+            "name": "discount_amount",
+            "label": "Discount Amount",
+            "type": "text",
+            "placeholder": [
+              "25% OFF",
+              "$10 OFF",
+              "BOGO",
+              "1 FREE MONTH"
+            ]
+          },
+          {
+            "name": "discount_type",
+            "label": "Discount Type",
+            "type": "text",
+            "placeholder": [
+              "Any single item, storewide",
+              "Any purchase of $40 or more",
+              "Buy one specialty drink, get one free",
+              "Redeemable after 10 punches on your loyalty card"
+            ]
+          },
+          {
+            "name": "expiry_date",
+            "label": "Expiry Date",
+            "type": "text",
+            "placeholder": [
+              "Expires August 31, 2026",
+              "Expires September 15, 2026",
+              "Expires October 5, 2026",
+              "Redeem within 90 days of final punch"
+            ]
+          },
+          {
+            "name": "terms_text",
+            "label": "Terms Text",
+            "type": "text",
+            "placeholder": [
+              "One per customer. Cannot combine with other offers.",
+              "Dine-in only. Not valid on holidays.",
+              "Equal or lesser value. Valid after 2pm only.",
+              "Non-transferable. Valid for existing members only. See front desk for details."
+            ]
+          },
+          {
+            "name": "color_scheme",
+            "label": "Color Scheme",
+            "type": "text",
+            "placeholder": [
+              "red and white",
+              "deep green and cream",
+              "warm amber and espresso brown",
+              "navy and silver"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-discount-coupon-voucher-cedar-lane-home-goods-prev.jpg",
+    "topics": [
+      "design",
+      "marketing",
+      "coupon",
+      "voucher",
+      "business",
+      "promotion",
+      "retail"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-28"
+  },
+  {
+    "id": "template-fridge-magnet-merch",
+    "locales": {
+      "en": {
+        "base_prompt": "Design a small die-cut FRIDGE MAGNET product mockup, 1:1 square aspect ratio, output size 1200x1200, shown against a plain neutral background with a subtle drop shadow beneath the magnet. FIXED LAYOUT (must match across every variant of this template): one centered die-cut magnet shape ({shape_variant}) filling most of the frame; a photo/logo/illustration area filling about 80% of the magnet face; a small, understated brand wordmark band along the bottom edge of the magnet face. VARIABLE CONTENT for this specific example: theme = {theme}, magnet face illustration = {face_subject}, brand wordmark text = \"{brand_wordmark}\", palette = {palette}. Render the brand wordmark as real, legible, correctly spelled text. Do not add a watermark. Do not crop the magnet shape at the frame edges.",
+        "parameters": [
+          {
+            "name": "theme",
+            "label": "Theme",
+            "type": "text",
+            "placeholder": [
+              "custom photo",
+              "brand promotional",
+              "holiday seasonal",
+              "quote/decorative"
+            ]
+          },
+          {
+            "name": "shape_variant",
+            "label": "Shape Variant",
+            "type": "text",
+            "placeholder": [
+              "rounded rectangle",
+              "circle"
+            ]
+          },
+          {
+            "name": "palette",
+            "label": "Palette",
+            "type": "text",
+            "placeholder": [
+              "neutral cream frame",
+              "espresso brown and cream",
+              "holiday red and green",
+              "soft sage and cream"
+            ]
+          },
+          {
+            "name": "face_subject",
+            "label": "Face Subject",
+            "type": "text",
+            "placeholder": [
+              "a warm illustrated family portrait scene with a dog",
+              "a bold minimalist coffee-cup logo icon",
+              "a small illustrated snow-covered pine tree with string lights",
+              "a hand-lettered illustration of the short phrase 'Home Is Where the Kitchen Is' surrounded by small floral accents"
+            ]
+          },
+          {
+            "name": "brand_wordmark",
+            "label": "Brand Wordmark",
+            "type": "text",
+            "placeholder": [
+              "PicPerfect Prints",
+              "Daybreak Coffee Roasters",
+              "Northgate Holiday Market",
+              "Homestead Paper Co."
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-fridge-magnet-merch-custom-photo-prev.jpg",
+    "topics": [
+      "design",
+      "merch",
+      "magnet",
+      "souvenir",
+      "product",
+      "decor"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-07-28"
   }
 ]

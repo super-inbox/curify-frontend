@@ -6606,6 +6606,21 @@
         "who": "HSK and Chinese-language teachers, tutoring platforms, and self-study learners.",
         "how": "Enter the HSK level + article title/topic. One click renders the reading worksheet; build a leveled library.",
         "prompts": "Try 'HSK1 A Day at School reading worksheet', 'HSK3 Snow White and the Seven Dwarfs graded reader', 'HSK4 The Boy Who Cried Wolf'."
+      },
+      "attributes": {
+        "grade_band": "HSK 2",
+        "age_range": "8–10",
+        "subject": "Chinese (Mandarin)",
+        "skill": "Reading",
+        "resource_type": "Reading card",
+        "duration_min": "15 min",
+        "difficulty": "Beginner",
+        "language_mode": "Bilingual EN–ZH"
+      },
+      "vertical": {
+        "learning_objective": "Recognize the target vocabulary, read a short 100–150 character passage with full pinyin support, and answer basic comprehension questions.",
+        "includes": "An illustrated bilingual reading passage with full pinyin, simplified 汉字, and an English translation, a target-vocabulary list, and a print-ready PDF.",
+        "background": "HSK 2 is the second of six levels of the standardized Chinese Proficiency Test (HSK / Hanyu Shuiping Kaoshi). At this level a learner knows roughly 300 words and can read short, simple passages on everyday topics. Graded reading cards like these build reading fluency by pairing every character with its pinyin and an English gloss, so beginners can decode and understand a passage independently before moving up to HSK 3."
       }
     }
   },
@@ -6885,5 +6900,55 @@
         ]
       }
     }
+  },
+  "template-workbook-practice-book-cover": {
+    "category": "Workbook & Practice-Book Cover",
+    "description": "Printable subject workbook / homework practice-booklet cover art that Curify's catalog currently has zero coverage for. For teachers, tutoring centers, homeschool parents, edtech content sellers.",
+    "title": "Nano Banana Prompt: Workbook & Practice-Book Cover Collection Generator | Curify AI"
+  },
+  "template-promotional-flyer": {
+    "category": "Flyer & Promotional-Flyer",
+    "description": "Compact, info-dense single-page promotional flyers (restaurant/retail/event/school-notice), distinct from Curify's existing wall-poster format. For restaurants, retail/small business owners, event organizers, schools.",
+    "title": "Nano Banana Prompt: Flyer & Promotional-Flyer Templates Generator | Curify AI"
+  },
+  "template-stem-classroom-teaching-aid": {
+    "category": "STEM Classroom Teaching-Aid Illustrations",
+    "description": "Flat-vector, labeled classroom-equipment illustrations (whiteboard, microscope, abacus, etc.) for K-12 STEM teaching materials. For k-12 teachers, tutoring centers, stem curriculum designers, classroom-decor sellers.",
+    "title": "Nano Banana Prompt: STEM Classroom Teaching-Aid Illustrations Generator | Curify AI"
+  },
+  "template-price-tag-product-label": {
+    "category": "Price Tag & Product Label",
+    "description": "Small die-cut-style retail price tags and product labels for boutique, sale, and gift-shop merchandising. For small retailers, boutique/handmade sellers, e-commerce merchandisers.",
+    "title": "Nano Banana Prompt: Price Tag & Product Label Templates Generator | Curify AI"
+  },
+  "template-achievement-certificate-award": {
+    "category": "Certificates & Achievement Awards",
+    "description": "Formal, bordered achievement/award certificates for classrooms, corporate recognition, and event competitions. For teachers, k-12 schools, corporate hr / recognition programs, event & competition organizers.",
+    "title": "Nano Banana Prompt: Certificates & Achievement Awards Collection Generator | Curify AI"
+  },
+  "template-perfume-cosmetic-bottle-mockup": {
+    "category": "Perfume & Cosmetic Bottle Packaging",
+    "description": "Studio-lit glass-bottle product mockups for perfume/cosmetic brand launches and beauty social-media teasers. For cosmetics/fragrance brands, beauty e-commerce sellers, brand-launch marketers.",
+    "title": "Nano Banana Prompt: Perfume & Cosmetic Bottle Packaging Mockups Generator | Curify AI"
+  },
+  "template-chocolate-giftbox-packaging": {
+    "category": "Chocolate & Specialty Gift-Box Packaging",
+    "description": "Layered gift-box mockups (open lid, visible compartments, ribbon) for chocolate and holiday/gift merchandising, distinct from Curify's existing generic 'mystery box' style. For confectionery/gift retailers, holiday-season sellers, corporate gifting.",
+    "title": "Nano Banana Prompt: Chocolate & Specialty Gift-Box Packaging Generator | Curify AI"
+  },
+  "template-jigsaw-puzzle-box": {
+    "category": "Puzzle & Jigsaw Collectible",
+    "description": "Collectible jigsaw-puzzle box-cover mockups for merch/gift-shop and licensed-IP puzzle products. For collectible/merch sellers, gift shops, licensed-ip merchandise producers.",
+    "title": "Nano Banana Prompt: Puzzle & Jigsaw Collectible Templates Generator | Curify AI"
+  },
+  "template-discount-coupon-voucher": {
+    "category": "Discount Coupon & Promotional Voucher",
+    "description": "Tear-tab ticket-style discount coupons and vouchers for retail, restaurant, and loyalty-program promotions. For retailers, restaurants, membership/loyalty programs.",
+    "title": "Nano Banana Prompt: Discount Coupon & Promotional Voucher Templates Generator | Curify AI"
+  },
+  "template-fridge-magnet-merch": {
+    "category": "Fridge Magnet & Small Merch-Item",
+    "description": "Small die-cut fridge-magnet product mockups beyond Curify's existing single travel-landmark theme. For souvenir/gift shops, small brands doing promotional merch, print-on-demand sellers.",
+    "title": "Nano Banana Prompt: Fridge Magnet & Small Merch-Item Templates Generator | Curify AI"
   }
 }

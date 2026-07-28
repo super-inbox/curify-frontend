@@ -21,7 +21,14 @@ import {
   buildNanoTemplateMetadata,
   buildNanoH1,
   resolveContentSections,
+  resolveVerticalSections,
+  buildVerticalJsonLd,
 } from "@/lib/nano_seo_utils";
+import { getCanonicalUrl } from "@/lib/canonical";
+import {
+  VerticalAttributeChips,
+  VerticalKnowledgeSection,
+} from "@/app/[locale]/_components/VerticalKnowledge";
 
 import {
   buildNanoPageContext,
@@ -142,6 +149,16 @@ export default async function NanoTemplatePage({ params }: Props) {
     template.description ||
     "Copy and customize this Nano Banana prompt to generate structured, shareable visuals in seconds.";
 
+  // VerticalPageSchema v1 (Pillars 1 & 2) — null unless the template is in a pilot
+  // vertical AND has authored content.attributes/content.vertical (see nano.json).
+  const vertical = resolveVerticalSections(templateId, templateTopics, nanoMessages);
+  const verticalJsonLd = buildVerticalJsonLd(vertical, {
+    name: h1,
+    description: intro,
+    url: getCanonicalUrl(pageLocale, `/nano-template/${slug}`),
+    image: template.og_image,
+  });
+
   const imageViews = getImageViewsForTemplate(reg, templateId, contentLocale);
 
   const orderedImageIds =
@@ -173,6 +190,9 @@ export default async function NanoTemplatePage({ params }: Props) {
           <div>
             <h1 className="text-2xl font-bold text-neutral-900">{h1}</h1>
             <p className="mt-2 text-sm text-neutral-600">{intro}</p>
+
+            {/* VerticalPageSchema v1 — Pillar 2 ontology chip strip */}
+            <VerticalAttributeChips vertical={vertical} />
 
             {/* Top template-topic chip row → sr-only on 2026-06-29
                 per operator. The link tonnage matters for Google's
@@ -309,6 +329,16 @@ export default async function NanoTemplatePage({ params }: Props) {
             </div>
           ) : null}
         </section>
+      ) : null}
+
+      {/* VerticalPageSchema v1 — Pillar 1 authored domain-knowledge block */}
+      <VerticalKnowledgeSection vertical={vertical} />
+
+      {verticalJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(verticalJsonLd) }}
+        />
       ) : null}
 
       {/* 'Explore More' tier-3 tag chip row → sr-only on 2026-06-29.
