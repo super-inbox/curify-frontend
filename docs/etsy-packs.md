@@ -21,6 +21,7 @@ The doc is **not** GTM strategy — that lives in `docs/interconnection.md`. Thi
 | `hsk-reading` | HSK 2 Bilingual Reading Stories (50 cards + PDF book) | `https://www.curify-ai.com/pack/hsk-reading` | 50 | 56 MB | `packs/sku/hsk-reading/pack-v1.zip` | 1 |
 | `herbal` | Chinese Herbal Medicine Botanical Posters (54 TCM prints) | `https://www.curify-ai.com/pack/herbal` | 54 | 93 MB | `packs/sku/herbal/pack-v1.zip` | 1 |
 | `vocab-scenes` | Bilingual Vocabulary Scene Posters (32 EN-ZH scenes) | `https://www.curify-ai.com/pack/vocab-scenes` | 32 | 20 MB | `packs/sku/vocab-scenes/pack-v1.zip` | 1 |
+| `travel-maps` | Cute Illustrated Travel Maps (34 city & country posters) | `https://www.curify-ai.com/pack/travel-maps` | 34 | 23 MB | `packs/sku/travel-maps/pack-v1.zip` | 1 |
 
 All packs are `active: true`, `secret: null` (anonymous redemption), no `etsy_listing_url` set yet.
 **Backend-registry status (2026-07-28):** all 5 SKUs now present in BOTH registries; `phonics` +
