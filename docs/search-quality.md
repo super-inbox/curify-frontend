@@ -271,4 +271,17 @@ Re-run the click-attribution SQL. Compare result_ctr_pct against the 5.5% baseli
 
 ---
 
+## V2-R3 unified relevance scorer → R1 (2026-07-19 → 2026-07-21)
+
+`lib/relevanceScorer.ts` + `lib/relevanceScorerConfig.ts` replace V0's binary `hasStrict` gate + `score = primaryHits + bigramHits` with a single explainable weighted score per candidate (`scoreRecord`), applied in `app/[locale]/(public)/search/page.tsx` and gated by `selectFinalCandidates` (Direction-1 floor invariant) + `applyFamilySaturation` (family de-duplication). Branch `baobao/search-relevance-prod-main-v2-r3-root-cause-fix-2026-07-19`.
+
+**R1 (scorer `v1.1.0-2026-07-21`)** — from the search-eval-07-21 review (`raw/search-eval-07-21/`). The uniform weight schema let off-subject rewrite/decomposition candidates rank high on thin queries (**笔袋** regression: food/Gemini posters above the relevant stationery card) and had no result-count awareness (**促销海报** irrelevant 4th). Three additive mechanisms, an *extension* of the strict/relaxed distinction (not a return to the binary gate):
+1. **Per-path base trust** — `base_retrieval` counts at `NON_ORIGINAL_BASE_FACTOR` (0.5) for non-original candidates (a rewrite's token-overlap is weaker evidence than a match on the user's own query).
+2. **Non-original off-subject demotion** — `NON_ORIGINAL_OFFSUBJECT_EXTRA_PENALTY` (−10) added to `missing_subject_penalty` when a candidate is off-subject AND non-original → drops the 笔袋 food/Gemini profile below the floor, without touching on-subject relaxed results.
+3. **Result-count-aware subject gate** — when a query is result-rich (≥ `RESULT_RICH_MIN_ONSUBJECT` = 8 on-subject candidates), non-original candidates must carry the subject to be included (prunes the off-subject tail); thin queries are untouched.
+
+Full per-case analysis + preserved wins + residuals: [`docs/search-relevance-v2r3-r1-2026-07-21.md`](./search-relevance-v2r3-r1-2026-07-21.md). Tests: `lib/__tests__/relevanceScorer.test.ts` (37, run via `vitest.unit.config.ts`). **Not yet prod-promoted** — needs live re-eval + full-benchmark run.
+
+---
+
 _This doc is the source of truth for search quality work. Update after each push that touches the surfaces above._
