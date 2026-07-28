@@ -18,8 +18,14 @@ The doc is **not** GTM strategy — that lives in `docs/interconnection.md`. Thi
 | `vocabulary` | Kids English-Chinese Bilingual Vocabulary Cards | `https://www.curify-ai.com/pack/vocabulary` | 108 | 84 MB | `packs/sku/vocabulary/pack-v1.zip` | 1 |
 | `phonics` | Phonics Pack: 50 Blend, Digraph & Vowel Pattern Posters | `https://www.curify-ai.com/pack/phonics` | 50 | 28 MB | `packs/sku/phonics/pack-v1.zip` | 1 |
 | `wc-2026-squads` | World Cup 2026 National Team Squad Posters (48 Countries) | `https://www.curify-ai.com/pack/wc-2026-squads` | 48 | 36 MB | `packs/sku/wc-2026-squads/pack-v1.zip` | 1 |
+| `hsk-reading` | HSK 2 Bilingual Reading Stories (50 cards + PDF book) | `https://www.curify-ai.com/pack/hsk-reading` | 50 | 56 MB | `packs/sku/hsk-reading/pack-v1.zip` | 1 |
 
-All three packs are `active: true`, `secret: null` (anonymous redemption), no `etsy_listing_url` set yet.
+All packs are `active: true`, `secret: null` (anonymous redemption), no `etsy_listing_url` set yet.
+**Backend-registry status (2026-07-28):** all 5 SKUs now present in BOTH registries; `phonics` +
+`wc-2026-squads` download-404 fixed (backend deploy required to go live), `hsk-reading` added new.
+The `hsk-reading` zip also bundles a print-ready 50-page PDF (`HSK2-Reading-Cards-50.pdf`) alongside
+the 50 card PNGs — the only pack with a PDF, so it was zipped manually then uploaded via `--skip-build`
+(the standard zipper is images-only).
 
 Pack contents (local source bundles, gitignored except for the manifest):
 - `packs/mbti-character/` — 66 Marvel + 23 Studio Ghibli + 11 Friends portraits, plus `pack.zip`.
@@ -76,7 +82,13 @@ Browser redirects to signed Azure URL → ZIP downloads
    ```
    This zips `packs/<sku>/*.jpg` and uploads to `packs/sku/<sku>/pack-v1.zip` on Azure.
 
-2. **Add the registry entry.** Append to the `packs` array in `lib/etsy_packs.json`:
+2. **Add the registry entry — to BOTH registries (⚠️ two files, two repos).** The landing
+   page reads the FRONTEND copy; the download endpoint reads the BACKEND copy. They must be
+   kept in sync or the download 404s while the page still renders. The identical entry goes in:
+   - `curify-frontend/lib/etsy_packs.json` — renders `/pack/<sku>`. Ships on `jwang/vercel`.
+   - `curify-studio/curify_background/app/data/etsy_packs.json` — resolves `blob_path` → signed
+     URL in `GET /etsy_packs/<sku>/download`. Ships on a **backend deploy** (separate repo).
+
    ```json
    {
      "sku": "your-sku",
@@ -92,7 +104,14 @@ Browser redirects to signed Azure URL → ZIP downloads
      "secret": null
    }
    ```
-3. **Verify locally.** `/pack/your-sku` should render with the cover, title, description, and a working Download button. Backend `/etsy_packs/your-sku/download` should return a signed URL.
+   > **History:** `phonics` + `wc-2026-squads` were added to the frontend registry only (2026-05/06),
+   > so their download links returned 404 for ~6-8 weeks until fixed 2026-07-28 (commit adding both +
+   > `hsk-reading` to the backend registry). Always update both, and after any pack deploy re-run the
+   > verification below against the LIVE backend, not just localhost.
+
+3. **Verify.** `/pack/your-sku` should render with the cover, title, description, and a working
+   Download button. Then hit the LIVE backend `GET /etsy_packs/your-sku/download?c=probe` — it must
+   return `200` + a `signed_url` (a `404 "Pack not found"` means the backend registry/deploy is missing).
 4. **Update this doc.** Add a row to the [Live packs](#live-packs-as-of-2026-05-18) table.
 
 ### Rotating after a leak
