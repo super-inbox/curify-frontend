@@ -22,6 +22,7 @@ The doc is **not** GTM strategy — that lives in `docs/interconnection.md`. Thi
 | `herbal` | Chinese Herbal Medicine Botanical Posters (54 TCM prints) | `https://www.curify-ai.com/pack/herbal` | 54 | 93 MB | `packs/sku/herbal/pack-v1.zip` | 1 |
 | `vocab-scenes` | Bilingual Vocabulary Scene Posters (32 EN-ZH scenes) | `https://www.curify-ai.com/pack/vocab-scenes` | 32 | 20 MB | `packs/sku/vocab-scenes/pack-v1.zip` | 1 |
 | `travel-maps` | Cute Illustrated Travel Maps (34 city & country posters) | `https://www.curify-ai.com/pack/travel-maps` | 34 | 23 MB | `packs/sku/travel-maps/pack-v1.zip` | 1 |
+| `world-costumes` | World Traditional Costume Study Posters (46 prints) | `https://www.curify-ai.com/pack/world-costumes` | 46 | 21 MB | `packs/sku/world-costumes/pack-v1.zip` | 1 |
 
 All packs are `active: true`, `secret: null` (anonymous redemption), no `etsy_listing_url` set yet.
 **Backend-registry status (2026-07-28):** all 5 SKUs now present in BOTH registries; `phonics` +
