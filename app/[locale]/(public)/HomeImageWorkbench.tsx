@@ -115,6 +115,9 @@ export default function HomeImageWorkbench({ locale }: { locale: string }) {
             col1={{
               mode: "upload",
               label: "Upload your image",
+              // The column's "1 · Your image" step title already labels this,
+              // so collapse the redundant upload-field label into one layer.
+              hideUploadLabel: true,
               hint: `Drop your image, then Generate — ${wf.hint}.`,
             }}
           />

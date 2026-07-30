@@ -27,6 +27,10 @@ type Props = {
   onRemove?: () => void;
   variant?: "compact" | "full";
   label?: string;
+  /** Suppress the label row entirely (the replace affordance still shows on a
+   *  preview). Use when an outer step title already labels this control, so the
+   *  two headers collapse into one. */
+  hideLabel?: boolean;
   /** Helper line under the dropzone (compact variant). */
   hint?: string;
   /** Text for the remove/replace affordance (full variant). */
@@ -46,6 +50,7 @@ export default function ReferenceImageUpload({
   onRemove,
   variant = "compact",
   label = "Reference image",
+  hideLabel = false,
   hint,
   replaceLabel = "Replace",
   uploadingLabel = "Uploading…",
@@ -81,25 +86,31 @@ export default function ReferenceImageUpload({
 
   return (
     <div className={className}>
-      <div className="mb-1.5 flex items-center justify-between gap-3">
-        <label className="block text-xs font-medium text-neutral-600">
-          {label}
-          {required ? (
-            <span className="text-purple-600"> *</span>
+      {(!hideLabel || previewUrl) && (
+        <div className="mb-1.5 flex items-center justify-between gap-3">
+          {hideLabel ? (
+            <span />
           ) : (
-            <span className="text-neutral-400"> (optional)</span>
+            <label className="block text-xs font-medium text-neutral-600">
+              {label}
+              {required ? (
+                <span className="text-purple-600"> *</span>
+              ) : (
+                <span className="text-neutral-400"> (optional)</span>
+              )}
+            </label>
           )}
-        </label>
-        {previewUrl && (
-          <button
-            type="button"
-            onClick={handleRemove}
-            className="cursor-pointer text-[11px] font-semibold text-purple-600 hover:text-purple-700"
-          >
-            {replaceLabel}
-          </button>
-        )}
-      </div>
+          {previewUrl && (
+            <button
+              type="button"
+              onClick={handleRemove}
+              className="cursor-pointer text-[11px] font-semibold text-purple-600 hover:text-purple-700"
+            >
+              {replaceLabel}
+            </button>
+          )}
+        </div>
+      )}
 
       {previewUrl ? (
         <div className="relative inline-block overflow-hidden rounded-xl border border-neutral-300 bg-neutral-50">
