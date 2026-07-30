@@ -32,7 +32,7 @@ Education 则体现出"面包屑导航 + 同页面下的子主题广度覆盖"�
 
 # Boss Requirement Mapping
 
-| # | 老板要求 | 状态 | 说明 |
+| # | 要求 | 状态 | 说明 |
 |---|---|---|---|
 | 1 | 每类更换搜索词 | **COMPLETE**（MBTI/Education/Merch）；**DEFERRED**（Ecommerce） | MBTI/EDU/MER 各 6 个搜索词已实际执行；MBTI 的 6 词中有 1 词与原计划（`mbti jude bellingham`）不一致，实际执行的是替代词 `MBTI comparison chart`，已在 `DATA_QUALITY_ISSUES.md` 中记录，未重新搜索修正 |
 | 2 | 查看排名靠前页面 | **COMPLETE**（三垂类） | 全部 18 条记录（MBTI/EDU/MER 各 6 条）均记录了 organic_rank（1–5 名）及结果标题/URL |
