@@ -13,7 +13,8 @@ import {
   type SuggestionEntry,
 } from "@/lib/searchIndex";
 import { buildNanoFeedCards } from "@/lib/nano_page_data";
-import { nanoRegistry } from "@/lib/nano_utils";
+import { nanoRegistry, getTemplateView } from "@/lib/nano_utils";
+import { templateExamplesIndexable } from "@/lib/example_indexing";
 import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import { tsToSc } from "@/lib/zh_normalize";
 import { getMultiQueryPaths, flattenPaths } from "@/lib/searchRewrite";
@@ -1279,11 +1280,25 @@ export default async function SearchPage({ params, searchParams }: Props) {
     ? getIntentClusterLabel(getIntentCluster(intentSlug)!, locale)
     : "";
 
+  // Phase 4: server-computed indexable flag per template present in the grid,
+  // so the lightbox picks the right CTA (info-heavy "Customize" + full-page
+  // link vs generator-demo single "Use this template"). Classifier + registry
+  // stay server-side; only the boolean map crosses to the client.
+  const indexableByTemplate: Record<string, boolean> = {};
+  for (const tid of new Set(inspirations.map((r) => r.template_id))) {
+    const tv = getTemplateView(nanoRegistry, tid, contentLocale);
+    indexableByTemplate[tid] = templateExamplesIndexable(
+      tv?.topics ?? [],
+      tv?.index_examples
+    );
+  }
+
   return (
     <SearchResultsClient
       query={query}
       locale={locale}
       inspirations={inspirations}
+      indexableByTemplate={indexableByTemplate}
       relatedTopics={relatedTopics}
       matchedTemplates={matchedTemplates}
       galleryPrompts={galleryPrompts}

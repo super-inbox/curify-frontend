@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
-import ExampleReproduceSurface from "./ExampleReproduceSurface";
+import ExampleAppreciateFirst from "./ExampleAppreciateFirst";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ExampleRelatedTopics from "./ExampleRelatedTopics";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
@@ -45,6 +45,7 @@ import {
   buildOtherTemplateCards,
   getImageViewsForTemplate,
   resolveLocalizedExampleCopy,
+  annotateGridItemsIndexable,
 } from "@/lib/nano_page_data";
 
 // Example data is entirely bundled (nano_inspiration.json) and only
@@ -108,16 +109,24 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     ctx.contentLocale
   );
 
-  const gridItems = buildTemplateImageGridItems(imageViews, imageId);
+  const gridItems = annotateGridItemsIndexable(
+    buildTemplateImageGridItems(imageViews, imageId),
+    ctx.reg,
+    ctx.contentLocale
+  );
 
   // Bumped 12 → 40 on 2026-06-29 so the 'More like this' grid's
   // built-in See More button has a richer pool to expand into (the
   // grid renders 2 rows × 5 cols = 10 visible above the fold; the
   // remaining 30 surface when the user clicks See more).
-  const similarItems = buildSimilarExampleGridItems(ctx.reg, imageId, {
-    limit: 40,
-    maxPerTemplate: 2,
-  });
+  const similarItems = annotateGridItemsIndexable(
+    buildSimilarExampleGridItems(ctx.reg, imageId, {
+      limit: 40,
+      maxPerTemplate: 2,
+    }),
+    ctx.reg,
+    ctx.contentLocale
+  );
 
   const prevNext = buildCircularExampleNav({
     reg: ctx.reg,
@@ -328,6 +337,7 @@ export default async function NanoExampleDetailPage({
     templateAllowGeneration,
     templateRequiresImageUpload,
     templateIntroVideoUrl,
+    templateIndexExamples,
     basePrompt,
     existingExamples,
     bodyDescription,
@@ -335,6 +345,11 @@ export default async function NanoExampleDetailPage({
   } = pageData;
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
+
+  // Phase 4: info-heavy examples (indexable) lead appreciate-first with the
+  // workbench gated behind a Customize click; generator-demos render the
+  // workbench on load. Same classifier as the noindex routing in metadata.
+  const examplesIndexable = templateExamplesIndexable(templateTopics, templateIndexExamples);
 
   const mergedTopics = [
     ...new Set([...(templateTopics ?? []), ...(exampleTopics ?? [])]),
@@ -414,7 +429,8 @@ export default async function NanoExampleDetailPage({
           full width (the old "More like this" right rail is gone; related
           images run full-width at the bottom). Mirrors the gallery surface so
           the generate mental model is identical across template + gallery. */}
-      <ExampleReproduceSurface
+      <ExampleAppreciateFirst
+        appreciateFirst={examplesIndexable}
         locale={rawLocale}
         templateId={templateId}
         slug={slug}

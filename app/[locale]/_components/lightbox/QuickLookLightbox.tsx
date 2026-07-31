@@ -37,6 +37,8 @@ export type PeekItem =
       params?: Record<string, string>;
       /** false → generator-demo template (CTA becomes "Use this template"). */
       indexable?: boolean;
+      /** Sibling tiles from the source grid → "more like this" strip. */
+      related?: PeekItem[];
     }
   | {
       kind: "prompt";
@@ -44,6 +46,7 @@ export type PeekItem =
       title?: string;
       image: string;
       category?: string;
+      related?: PeekItem[];
     };
 
 // ── URL <-> item (compact, path-like so cold-load can reconstruct the page) ──
@@ -146,7 +149,9 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
   return (
     <LightboxCtx.Provider value={{ open, close }}>
       {children}
-      {item ? <Overlay item={item} locale={locale} onClose={close} /> : null}
+      {item ? (
+        <Overlay item={item} locale={locale} onClose={close} onSelect={open} />
+      ) : null}
     </LightboxCtx.Provider>
   );
 }
@@ -155,13 +160,22 @@ function Overlay({
   item,
   locale,
   onClose,
+  onSelect,
 }: {
   item: PeekItem;
   locale: string;
   onClose: () => void;
+  onSelect: (item: PeekItem) => void;
 }) {
   const cta = ctaFor(locale, item);
   const fullHref = fullPagePath(locale, item);
+  // Secondary "Open full page" is shown ONLY when it diverges from the primary
+  // CTA — i.e. info-heavy examples, whose full page is the appreciate-first
+  // read view (distinct from "Customize" → the workbench). For generator-demos
+  // (indexable === false) and prompts, the full page IS the workbench/detail,
+  // so a second link would point at the same place — collapse to one CTA.
+  const showSecondary = item.kind === "example" && item.indexable !== false;
+  const related = item.related ?? [];
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-neutral-900/70 p-4 backdrop-blur-sm"
@@ -205,20 +219,56 @@ function Overlay({
             {item.title || "Untitled"}
           </h2>
 
-          <div className="mt-auto flex flex-col gap-2.5">
+          <div className="flex flex-col gap-2.5">
             <Link
               href={cta.href}
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-purple-700"
             >
               <Sparkles className="h-4 w-4" /> {cta.label}
             </Link>
-            <Link
-              href={fullHref}
-              className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
-            >
-              Open full page <ExternalLink className="h-3.5 w-3.5" />
-            </Link>
+            {showSecondary ? (
+              <Link
+                href={fullHref}
+                className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+              >
+                Open full page <ExternalLink className="h-3.5 w-3.5" />
+              </Link>
+            ) : null}
           </div>
+
+          {/* More like this — sibling tiles from the source grid. Clicking one
+              swaps the overlay content in place (no nav), forwarding the rest
+              of the strip so browsing stays populated. */}
+          {related.length > 0 ? (
+            <div className="mt-2">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                More like this
+              </p>
+              <div className="grid grid-cols-4 gap-2">
+                {related.slice(0, 8).map((r) => (
+                  <button
+                    key={`${r.kind}-${r.id}`}
+                    type="button"
+                    onClick={() =>
+                      onSelect({
+                        ...r,
+                        related: related.filter((x) => x.id !== r.id),
+                      })
+                    }
+                    className="group relative aspect-square overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 transition hover:border-purple-300"
+                    aria-label={r.title || "Related example"}
+                  >
+                    <CdnImage
+                      src={r.image}
+                      alt={r.title || "Related"}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

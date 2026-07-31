@@ -28,6 +28,33 @@ import {
   normalizeNanoLocaleMessageEntry,
 } from "@/lib/nano_seo_utils";
 
+import { templateExamplesIndexable } from "@/lib/example_indexing";
+
+/**
+ * Server-side annotation: stamp each grid item with whether ITS template's
+ * examples are indexable (info-heavy) vs generator-demo. The lightbox reads this
+ * to pick the CTA ("Customize" vs "Use this template") and whether to show the
+ * secondary "Open full page" link. Kept server-only — the classifier is never
+ * imported into the client grid, and only the boolean crosses the boundary
+ * (avoids the nano_utils client-bundle leak). Memoized per template id.
+ */
+export function annotateGridItemsIndexable<T extends { templateId: string }>(
+  items: T[],
+  reg: ReturnType<typeof buildNanoRegistry>,
+  locale: Parameters<typeof getTemplateView>[2]
+): (T & { indexable: boolean })[] {
+  const cache = new Map<string, boolean>();
+  return items.map((it) => {
+    let v = cache.get(it.templateId);
+    if (v === undefined) {
+      const tv = getTemplateView(reg, it.templateId, locale);
+      v = templateExamplesIndexable(tv?.topics ?? [], tv?.index_examples);
+      cache.set(it.templateId, v);
+    }
+    return { ...it, indexable: v };
+  });
+}
+
 export function slugToTemplateId(slug: string) {
   return slug.startsWith("template-") ? slug : `template-${slug}`;
 }

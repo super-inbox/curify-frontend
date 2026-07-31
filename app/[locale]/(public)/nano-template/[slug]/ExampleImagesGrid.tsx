@@ -24,6 +24,9 @@ type Item = {
   params?: Record<string, string>;
   batch?: boolean;
   videoUrl?: string;
+  /** Server-stamped: this template's examples are info-heavy (indexable) vs a
+      generator-demo. Drives the lightbox CTA + secondary-link visibility. */
+  indexable?: boolean;
 };
 
 function getCols() {
@@ -64,10 +67,14 @@ function ExampleImageCard({
   desktopOpensExample = false,
   showCaption = false,
   openInLightbox = false,
+  siblings = [],
 }: {
   item: Item;
   locale: string;
   carouselContext: string; // pre-encoded "&from=...&ids=..."
+  /** Other items in the same grid — surfaced as the lightbox's "more like
+      this" strip so the overlay keeps browsing momentum without a nav. */
+  siblings?: Item[];
   /**
    * When true, the tile click on desktop (≥ lg breakpoint, 1024px) routes
    * to /nano-template/[slug]/example/[exampleId] instead of the carousel.
@@ -195,6 +202,19 @@ function ExampleImageCard({
         title: item.title,
         image: item.preview,
         params: item.params,
+        indexable: item.indexable,
+        related: siblings
+          .filter((s) => s.id !== item.id)
+          .slice(0, 8)
+          .map((s) => ({
+            kind: "example" as const,
+            id: s.id,
+            slug: toSlug(s.templateId),
+            title: s.title,
+            image: s.preview,
+            params: s.params,
+            indexable: s.indexable,
+          })),
       });
     }
   };
@@ -371,6 +391,7 @@ export default function ExampleImagesGrid({
                   desktopOpensExample={desktopOpensExample}
                   showCaption={showCaption}
                   openInLightbox={openInLightbox}
+                  siblings={visible}
                 />
               </div>
             );
@@ -387,6 +408,7 @@ export default function ExampleImagesGrid({
               desktopOpensExample={desktopOpensExample}
               showCaption={showCaption}
               openInLightbox={openInLightbox}
+              siblings={visible}
             />
           );
         })}

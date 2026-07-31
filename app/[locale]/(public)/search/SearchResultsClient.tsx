@@ -36,6 +36,9 @@ type Props = {
   query: string;
   locale: string;
   inspirations: InspRecord[];
+  /** Server-computed: template_id → whether its examples are indexable
+   *  (info-heavy) vs generator-demo. Drives the lightbox CTA. */
+  indexableByTemplate?: Record<string, boolean>;
   relatedTopics: SuggestionEntry[];
   matchedTemplates: NanoInspirationCardType[];
   galleryPrompts: NanoPromptBase[];
@@ -100,6 +103,7 @@ export default function SearchResultsClient({
   query,
   locale,
   inspirations,
+  indexableByTemplate,
   relatedTopics,
   matchedTemplates,
   galleryPrompts,
@@ -180,9 +184,10 @@ export default function SearchResultsClient({
             Object.entries(r.params ?? {}).map(([k, v]) => [k, String(v ?? "")])
           ) as Record<string, string>,
           videoUrl: r.asset.video_url,
+          indexable: indexableByTemplate?.[r.template_id],
         };
       });
-  }, [inspirations, locale]);
+  }, [inspirations, locale, indexableByTemplate]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
