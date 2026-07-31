@@ -21,6 +21,7 @@ import SessionStartTracker from "../_components/SessionStartTracker";
 import { headers } from "next/headers";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import SiteTopBar from "../_layout_components/SiteTopBar";
+import { LightboxProvider } from "../_components/lightbox/QuickLookLightbox";
 
 export async function generateMetadata({
   params,
@@ -100,7 +101,7 @@ export default async function PublicLocaleLayout({
 
               <SiteTopBar locale={locale} />
 
-              {children}
+              <LightboxProvider>{children}</LightboxProvider>
 
               <Toaster />
               </main>

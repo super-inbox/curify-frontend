@@ -7,9 +7,13 @@ import { Link } from '@/i18n/navigation';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
 import { useCopyTracking, useClickTracking } from "@/services/useTracking";
+import { useLightbox } from "@/app/[locale]/_components/lightbox/QuickLookLightbox";
 
 interface PromptCardProps {
   prompt: NanoPromptBase;
+  /** Mixed-browse surfaces (search) open a quick-look overlay on plain click
+      instead of navigating; the <Link href> stays for crawlers + new tabs. */
+  openInLightbox?: boolean;
 }
 
 const PLACEHOLDER_IMAGE =
@@ -29,10 +33,11 @@ const normalizeCdnImageUrl = (imageUrl: string | null | undefined): string => {
   return imageUrl;
 };
 
-export default function PromptCard({ prompt }: PromptCardProps) {
+export default function PromptCard({ prompt, openInLightbox = false }: PromptCardProps) {
   const t = useTranslations('actionButtons');
   const [copied, setCopied] = useState(false);
   const [hasImgError, setHasImgError] = useState(false);
+  const { open: openLightbox } = useLightbox();
 
   const normalizedUrl = normalizeCdnImageUrl(prompt.imageURL);
   const trackingId = `nano_banana_prompts:${prompt.id}`;
@@ -41,6 +46,22 @@ export default function PromptCard({ prompt }: PromptCardProps) {
   // funnel rolls up with the template example funnel in admin analytics.
   const trackCopy = useCopyTracking(trackingId, 'nano_gallery', 'cards');
   const trackClick = useClickTracking(trackingId, 'nano_gallery', 'cards');
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    trackClick();
+    // Plain left-click on a mixed-browse surface → quick-look overlay. Modified
+    // clicks (new tab / etc.) fall through to the real <Link> navigation.
+    if (openInLightbox && !e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0) {
+      e.preventDefault();
+      openLightbox({
+        kind: "prompt",
+        id: prompt.id,
+        title: prompt.title,
+        image: hasImgError ? PLACEHOLDER_IMAGE : normalizedUrl,
+        category: prompt.tags?.[0],
+      });
+    }
+  };
 
   const copyToClipboard = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -59,7 +80,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
   return (
     <Link
       href={`/nano-banana-pro-prompts/${prompt.id}`}
-      onClick={trackClick}
+      onClick={handleCardClick}
       className="group block overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
       aria-label={`View details for ${prompt.title}`}
     >

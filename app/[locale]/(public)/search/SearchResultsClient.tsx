@@ -413,6 +413,7 @@ export default function SearchResultsClient({
                 maxRows={3}
                 showCaption
                 desktopOpensExample
+                openInLightbox
               />
             </section>
           )}
@@ -456,7 +457,7 @@ export default function SearchResultsClient({
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {galleryPrompts.map((p) => (
-                  <PromptCard key={p.id} prompt={p} />
+                  <PromptCard key={p.id} prompt={p} openInLightbox />
                 ))}
               </div>
             </section>

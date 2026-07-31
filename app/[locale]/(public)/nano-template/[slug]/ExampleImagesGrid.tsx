@@ -10,6 +10,7 @@ import CdnImage from "@/app/[locale]/_components/CdnImage";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { SITE_URL } from "@/lib/constants";
 import { toSlug } from "@/lib/nano_pure";
+import { useLightbox } from "@/app/[locale]/_components/lightbox/QuickLookLightbox";
 import { intentCtaLabel, intentCtaContentId } from "@/lib/output_intent";
 import { useClickTracking, useTracking, useVideoTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
@@ -62,6 +63,7 @@ function ExampleImageCard({
   carouselContext,
   desktopOpensExample = false,
   showCaption = false,
+  openInLightbox = false,
 }: {
   item: Item;
   locale: string;
@@ -81,7 +83,14 @@ function ExampleImageCard({
    * /search turns it on because the title is a strong relevance cue.
    */
   showCaption?: boolean;
+  /**
+   * Phase 3: intercept the tile click to open the quick-look lightbox (a shallow
+   * ?peek overlay) instead of navigating. The <Link href> is preserved so
+   * crawlers still follow the link graph to the example page.
+   */
+  openInLightbox?: boolean;
 }) {
+  const { open: openLightbox } = useLightbox();
   const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
   const { trackVideoClick } = useVideoTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
   const { trackAction } = useTracking();
@@ -172,9 +181,22 @@ function ExampleImageCard({
     </>
   );
 
-  const tileOnClick = () => {
+  const tileOnClick = (e?: React.MouseEvent) => {
     trackClick();
     if (hasVideo) trackVideoClick();
+    // Quick-look: on a plain click (no modifier / new-tab intent) open the
+    // lightbox instead of navigating; the href stays for crawlers + ⌘-click.
+    if (openInLightbox && e && !e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0) {
+      e.preventDefault();
+      openLightbox({
+        kind: "example",
+        id: item.id,
+        slug: toSlug(item.templateId),
+        title: item.title,
+        image: item.preview,
+        params: item.params,
+      });
+    }
   };
 
   return (
@@ -277,6 +299,7 @@ export default function ExampleImagesGrid({
   desktopHideFirstN = 0,
   showCaption = false,
   fixedCols,
+  openInLightbox = false,
 }: {
   items: Item[];
   maxRows?: number;
@@ -298,6 +321,8 @@ export default function ExampleImagesGrid({
   showCaption?: boolean;
   /** Force a fixed column count (e.g. blog embeds). Undefined = responsive default, so all existing call sites are unaffected. */
   fixedCols?: number;
+  /** Phase 3: tile clicks open the quick-look lightbox instead of navigating. */
+  openInLightbox?: boolean;
 }) {
   const responsiveCols = useCols();
   const cols = fixedCols ?? responsiveCols;
@@ -345,6 +370,7 @@ export default function ExampleImagesGrid({
                   carouselContext={carouselContext}
                   desktopOpensExample={desktopOpensExample}
                   showCaption={showCaption}
+                  openInLightbox={openInLightbox}
                 />
               </div>
             );
@@ -360,6 +386,7 @@ export default function ExampleImagesGrid({
               carouselContext={carouselContext}
               desktopOpensExample={desktopOpensExample}
               showCaption={showCaption}
+              openInLightbox={openInLightbox}
             />
           );
         })}
