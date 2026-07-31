@@ -68,6 +68,13 @@ export const TIER2_SUGGESTIONS: SuggestionEntry[] = [
   { slug: "trending",       label: "Trending",          emoji: "🔥", tier: 2, aliases: ["trend", "popular", "viral", "hot"] },
   { slug: "digital-canvas", label: "Digital Canvas",    emoji: "🎨", tier: 2, aliases: ["digital art", "canvas", "digital painting"] },
   { slug: "mockups",        label: "Mockups",           emoji: "📱", tier: 2, aliases: ["mockup", "mock-up", "prototype", "preview"] },
+  // `branding` slot — brand-identity design (VI systems, mascot design boards,
+  // logo application). Aliases route natural-language brand queries
+  // ("brand design", "brand identity", "logo design") to /topics/branding
+  // instead of the recall-high matcher, which returns a grab-bag on the bare
+  // token "design". Content tagged with the `branding` topic (see taxonomy
+  // tier3.product + the 4 template-brand-* templates).
+  { slug: "branding",       label: "Brand & Identity",  emoji: "™️", tier: 2, aliases: ["brand", "brand design", "brand identity", "logo", "logo design", "visual identity", "vi", "brand guidelines", "brand kit", "brand style guide", "brand board", "brand system", "品牌", "品牌设计", "vi设计", "logo设计"] },
   { slug: "guides",         label: "Guides",            emoji: "📋", tier: 2, aliases: ["how to", "how-to", "tutorial", "walkthrough", "guide"] },
   // `map` slot — content-shape topic (8 templates, 75 inspirations). Aliases
   // include multi-language map terms so `/search?q=<term>` redirects to
