@@ -744,6 +744,25 @@
           "Create 'MBTI in a meeting': character set as AI entrepreneurs, different personalities presenting different states while discussing product direction in the conference room, clear information, distinct character comparisons, strong poster feel, 3:4.",
           "Generate a thematic image of 'MBTI if living in the Three Kingdoms': mapping different MBTI personalities to Three Kingdoms character prototypes, reflecting personality differences in the scene of discussing battle strategies in the military tent, style as high-quality historical character illustration, 3:4."
         ]
+      },
+      "examples": {
+        "template-mbti-generic-naruto-narutouzumaki": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "The Campaigner",
+            "dimensions": "Extraverted · Intuitive · Feeling · Perceiving",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Naruto Uzumaki is a textbook ENFP: relentlessly optimistic, driven by human bonds and a larger-than-life dream. He runs on possibility and emotion rather than rules, chasing his ninja-way with contagious energy.",
+            "strengths": "Infectious enthusiasm, deep empathy, and the resilience to fail publicly and get back up. His dominant Extraverted Intuition lets him see potential in people everyone else has written off, and his gift for rallying allies is his real superpower.",
+            "weaknesses": "Impulsive and easily distracted, he struggles with routine study, patience, and detail work (the Academy basics). Auxiliary Introverted Feeling makes him take rejection hard and act before thinking.",
+            "communication": "Loud, warm, and persuasive — he leads by heart and personal conviction, winning people over one honest conversation at a time rather than through strategy.",
+            "relationships": "Fiercely loyal and forgiving; he values connection above almost everything and will pursue a rival relentlessly to bring them back. Bonds are his central motivation.",
+            "career": "Natural motivator and front-line leader — the arc toward Hokage fits the ENFP who inspires a community. Real-world analogues: coaching, teaching, activism, team captaincy.",
+            "compatibility": "Balances well with grounded, decisive types (INTJ / ISTJ) who supply the discipline he lacks — mirrored in his lifelong dynamic with Sasuke."
+          }
+        }
       }
     }
   },
@@ -924,6 +943,25 @@
           "Create a 'Yellowstone Personality Analysis Card' for Beth Dutton with INTJ typing, including sharp business-oriented traits, cognitive function breakdown, Enneagram 8w7, and symbolic western imagery reflecting power and control, clean infographic layout, 3:4.",
           "Generate a 'Yellowstone MBTI Infographic' for Rip Wheeler with ISTP personality, featuring rugged ranch aesthetic, cognitive functions, core traits (loyal, tough, silent, fearless), and a grounded identity summary, cinematic western style, 3:4."
         ]
+      },
+      "examples": {
+        "template-mbti-yellowstone-johndutton": {
+          "attributes": {
+            "type_code": "ISTJ",
+            "type_nickname": "The Logistician",
+            "dimensions": "Introverted · Sensing · Thinking · Judging",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "John Dutton reads as an ISTJ: a duty-bound guardian who measures every decision against tradition, legacy, and the survival of the ranch. Reserved and unsentimental on the surface, he is ruled by an iron sense of obligation.",
+            "strengths": "Unshakeable loyalty to land and family, long-range strategic patience, and a willingness to make hard, thankless decisions. Dominant Introverted Sensing gives him deep institutional memory of how the valley works.",
+            "weaknesses": "Rigid, controlling, and slow to trust change; he can sacrifice relationships (and ethics) on the altar of the ranch. Inferior Extraverted Intuition leaves him blindsided by new kinds of threats.",
+            "communication": "Terse and declarative — he communicates through decisions and consequences more than words, expecting others to read the standard he sets.",
+            "relationships": "Protective but emotionally guarded; his love is expressed as provision and defense rather than warmth, which strains his children.",
+            "career": "Steward / executive of a legacy institution — rancher, patriarch, and reluctant political operator defending a way of life.",
+            "compatibility": "Stabilized by loyal, action-oriented types (ISTP / ESTP like his ranch hands) and challenged by intuitive strategists who threaten his fixed order."
+          }
+        }
       }
     }
   },
@@ -971,6 +1009,59 @@
           "Generate an MBTI NBA card for Stephen Curry: ENFP – 'THE MAGICIAN', jersey number 30, traits Range King, 3-Point Legend, Clutch Performer, Team Player.",
           "Create a Michael Jordan MBTI card: ESTJ – 'THE GOAT', jersey number 23, traits Competitive Beast, 6× NBA Champion, Air Jordan, Global Icon."
         ]
+      },
+      "examples": {
+        "template-mbti-nba-erling-haaland": {
+          "attributes": {
+            "type_code": "ISTP",
+            "type_nickname": "The Virtuoso",
+            "dimensions": "Introverted · Sensing · Thinking · Perceiving",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Erling Haaland is commonly fan-typed as an ISTP — an economical, ice-cold finisher who says little and acts with ruthless efficiency. On the pitch he reads space in real time and strikes with minimal wasted motion.",
+            "strengths": "Elite composure under pressure, mechanical precision, and an unflappable present-focus. The ISTP's Introverted Thinking + Extraverted Sensing pairing fits a striker who solves the box like a physics problem.",
+            "weaknesses": "Can seem detached or blunt off the field and disengaged from parts of the game that don't demand his specialty; low appetite for ceremony and media performance.",
+            "communication": "Sparse and dry — lets performance do the talking, with deadpan humor when he does speak.",
+            "relationships": "Selectively close; keeps a small, trusted circle and is loyal but private about it.",
+            "career": "Specialist executor — the archetype excels wherever a single high-skill, high-stakes action decides the outcome (elite athletics, precision trades).",
+            "compatibility": "Meshes with expressive, big-picture teammates who create the chances his specialist role converts."
+          }
+        },
+        "template-mbti-nba-jude": {
+          "attributes": {
+            "type_code": "ESTP",
+            "type_nickname": "The Entrepreneur",
+            "dimensions": "Extraverted · Sensing · Thinking · Perceiving",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Jude Bellingham is commonly typed as an ESTP — a bold, front-foot competitor who thrives on the biggest stage and drags games toward him by force of will. Confident, quick-reading, and unafraid of the decisive moment.",
+            "strengths": "Fearless in high-pressure situations, fast tactical adaptation, and natural leadership presence unusual for his age. Extraverted Sensing makes him a live-in-the-moment big-game player.",
+            "weaknesses": "Risk appetite can tip into over-confidence or friction with authority; patience for slow phases and process isn't the ESTP's strong suit.",
+            "communication": "Vocal and assertive — leads out loud, sets the emotional tone, and demands the ball in key moments.",
+            "relationships": "Charismatic and magnetic; builds strong locker-room bonds and feeds off collective energy.",
+            "career": "Front-line leader / closer — the type that captains, sells, and performs when the result is on the line.",
+            "compatibility": "Complements composed specialist finishers (ISTP) and steady organizers who hold shape while he takes the initiative."
+          }
+        },
+        "template-mbti-nba-lamine-yamal": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "The Entertainer",
+            "dimensions": "Extraverted · Sensing · Feeling · Perceiving",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Lamine Yamal is commonly fan-typed as an ESFP — an expressive, instinctive talent who plays with flair and joy, thriving on crowd energy and the freedom to improvise one-on-one.",
+            "strengths": "Dazzling improvisation, fearlessness in tight spaces, and an entertainer's love of the moment. Extraverted Sensing gives him elite close control and split-second creativity.",
+            "weaknesses": "Consistency and defensive discipline can lag the highlight moments; the ESFP's present-focus can mean streaky end-product until it matures.",
+            "communication": "Playful and demonstrative — celebrates openly and connects with fans and teammates through personality, not reserve.",
+            "relationships": "Warm and popular in the group; feeds on being liked and on the buzz of the crowd.",
+            "career": "Performer / creator — the flair role (winger, entertainer) that rewards spontaneity and showmanship.",
+            "compatibility": "Best alongside structured, tactical minds who give his improvisation a stable platform to shine from."
+          }
+        }
       }
     }
   },
@@ -1628,6 +1719,25 @@
           "Phoebe Buffay ENFP personality poster — the free-spirited optimist.",
           "Chandler Bing ENTP character MBTI — the sarcastic problem-solver."
         ]
+      },
+      "examples": {
+        "template-friends-character-mbti-joey-tribbiani": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "The Entertainer",
+            "dimensions": "Extraverted · Sensing · Feeling · Perceiving",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Joey Tribbiani is a classic ESFP — warm, spontaneous, and fully anchored in the present moment. Food, friends, and fun are his compass; he feels his way through life rather than over-thinking it.",
+            "strengths": "Effortless charisma, genuine loyalty, and an ability to make anyone comfortable. Dominant Extraverted Sensing makes him a natural performer and a friend who shows up.",
+            "weaknesses": "Abstract planning and long-term thinking aren't his strengths; he lives paycheck-to-paycheck and avoids heavy introspection. Can be naive and easily distracted.",
+            "communication": "Expressive, physical, and disarmingly honest — he connects through humor, food, and presence, not through debate.",
+            "relationships": "Deeply loyal and protective of his friends; affectionate and generous, though commitment-shy until he truly cares.",
+            "career": "Performer at heart — acting, hospitality, sales, entertainment. Any role that rewards charm and being in the room.",
+            "compatibility": "Clicks with easygoing feeling types and grounds well next to a structured thinker (like Chandler's dry logic) who covers the planning."
+          }
+        }
       }
     }
   },

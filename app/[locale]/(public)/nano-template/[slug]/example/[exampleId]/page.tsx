@@ -17,7 +17,16 @@ import TopicStrip from "@/app/[locale]/_components/TopicStrip";
 import { resolveTopicPath } from "@/lib/topic_path_overrides";
 import { titleCaseFromSlug } from "@/lib/locale_utils";
 import { getTopicNavList } from "@/lib/topicRegistry";
-import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
+import {
+  toAbsUrlMaybe,
+  resolveExampleVerticalSections,
+  buildVerticalJsonLd,
+} from "@/lib/nano_seo_utils";
+import {
+  VerticalAttributeChips,
+  VerticalKnowledgeSection,
+} from "@/app/[locale]/_components/VerticalKnowledge";
+import { getCanonicalUrl } from "@/lib/canonical";
 import { SITE_URL } from "@/lib/constants";
 
 import { toSlug, getTemplateView, type RawNanoImageRecord } from "@/lib/nano_utils";
@@ -306,6 +315,7 @@ export default async function NanoExampleDetailPage({
     basePrompt,
     existingExamples,
     bodyDescription,
+    nanoMessages,
   } = pageData;
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
@@ -313,6 +323,23 @@ export default async function NanoExampleDetailPage({
   const mergedTopics = [
     ...new Set([...(templateTopics ?? []), ...(exampleTopics ?? [])]),
   ];
+
+  // VerticalPageSchema — example-level ontology + authored domain knowledge.
+  // null unless THIS example (content.examples[exampleId] in nano.json) or its
+  // template has authored vertical values, so unenriched examples render
+  // unchanged. See docs/vertical-page-schema-v1.md.
+  const vertical = resolveExampleVerticalSections(
+    templateId,
+    example.id,
+    mergedTopics,
+    nanoMessages
+  );
+  const verticalJsonLd = buildVerticalJsonLd(vertical, {
+    name: title,
+    description: bodyDescription ?? undefined,
+    url: getCanonicalUrl(pageLocale, `/nano-template/${slug}/example/${rawExampleId}`),
+    image: toAbsUrlMaybe(example.asset?.image_url),
+  });
   const topicNav = getTopicNavList();
   const metaChips =
     mergedTopics.length > 0 || category ? (
@@ -363,6 +390,9 @@ export default async function NanoExampleDetailPage({
         <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">{title}</h1>
         {metaChips ? <div className="flex flex-wrap items-center gap-2">{metaChips}</div> : null}
       </header>
+
+      {/* VerticalPageSchema — Pillar 2 ontology chip strip (example-level) */}
+      <VerticalAttributeChips vertical={vertical} />
 
       {/* Unified reproduce workbench — Source · Make-it-yours · Production tiles,
           full width (the old "More like this" right rail is gone; related
@@ -478,6 +508,17 @@ export default async function NanoExampleDetailPage({
           showReproduce={false}
           showOtherTemplates={true}
         />
+
+        {/* VerticalPageSchema — Pillar 1 authored domain-knowledge block
+            (example-level: MBTI type breakdown, strengths, career fit, etc.). */}
+        <VerticalKnowledgeSection vertical={vertical} />
+
+        {verticalJsonLd ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(verticalJsonLd) }}
+          />
+        ) : null}
 
         {/* W1.2 — Related-topics footer row. Expands the template+example
             topic union with tier-1 / tier-2 ancestors + curated related
