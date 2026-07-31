@@ -120,9 +120,9 @@ export default function ExampleAppreciateFirst({
       {view === "workbench" ? (
         <ExampleReproduceSurface {...surface} />
       ) : (
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
-          <div className="relative flex items-center justify-center overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
-            <div className="relative aspect-[4/5] w-full max-h-[72vh]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
+          <div className="relative mx-auto flex w-full max-w-[380px] items-center justify-center overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
+            <div className="relative aspect-[4/5] w-full">
               {surface.image}
             </div>
           </div>
