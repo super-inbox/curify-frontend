@@ -436,6 +436,25 @@
           "\"Donma\" güneş terimi posteri yapın: üç dönem, temsilci yiyecekler, gelenekler ve tarım, sağlık ipuçları, retro illüstrasyon + bilgi modülü, A3 dikey format.",
           "\"Yaz Dönümü\" güneş terimi bilgi grafiği oluşturun: geçiş bilgileri, dönemsel değişiklikler, kültürel anlam, beslenme ve yaşam önerileri, A3 dikey format yüksek yoğunluk ama okunabilir."
         ]
+      },
+      "examples": {
+        "template-solar-term-xiaoman": {
+          "attributes": {
+            "grade_band": "İlkokul–Ortaokul",
+            "age_range": "7–13",
+            "subject": "Çin kültürü · 24 güneş dönemi (节气)",
+            "skill": "Kültürel okuryazarlık · mevsimsel bilim · kelime bilgisi",
+            "resource_type": "Resimli kültür kartı",
+            "duration_min": "8",
+            "difficulty": "Başlangıç",
+            "language_mode": "Çift Dilli (Çince + İngilizce)"
+          },
+          "vertical": {
+            "learning_objective": "Çin'in 24 güneş döneminden 8.'si olan Xiaoman'ı (小满) ve tarım takviminde ve günlük yaşamda ne anlama geldiğini anlamak.",
+            "includes": "Dönemin adı ve pinyin'i, tarih aralığı, fenoloji (yaz tahılları dolmaya başlar), mevsimsel gelenekler ve yiyecekler ile temalı bir illüstrasyon.",
+            "background": "Xiaoman 'Tahıl Tomurcukları' veya 'Küçük Doluluk' anlamına gelir — yaklaşık 21 Mayıs, yaz tahıllarının dolmaya başladığı ancak henüz olgunlaşmadığı zaman. Bu, ani bir zirveden ziyade kademeli, aceleci olmayan bolluk Çin idealini yakalar."
+          }
+        }
       }
     }
   },
@@ -744,6 +763,25 @@
           "\"MBTI toplantılardayken nasıl görünür\" yapın: karakter seti AI girişimcileri, farklı kişilikler toplantı odasında ürün yönü tartışırken farklı durumlar sergiliyor, bilgi net, karakter karşılaştırmaları belirgin, poster hissi güçlü, 3:4.",
           "\"MBTI eğer Üç Krallık'ta yaşıyor olsaydı\" temalı bir grafik oluşturun: Üç Krallık karakter prototipleri farklı MBTI kişiliklerine yansıtılıyor, askeri çadırda savaş durumunu tartışırken karakter farklılıklarını yansıtıyor, stil yüksek kaliteli tarihi karakter illüstrasyonu, 3:4."
         ]
+      },
+      "examples": {
+        "template-mbti-generic-naruto-narutouzumaki": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "Kampanyacı",
+            "dimensions": "Dışa dönük · Sezgisel · Hisseden · Algılayan",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Naruto Uzumaki, yılmak bilmez bir iyimser, insan bağları ve yaşamdan büyük bir rüya tarafından yönlendirilen tipik bir ENFP'dir. Kurallar yerine olasılıklar ve duygularla hareket eder, ninja yolunu bulaşıcı bir enerjiyle kovalar.",
+            "strengths": "Bulaşıcı coşku, derin empati ve alenen başarısız olup tekrar ayağa kalkma direnci. Baskın Dışa dönük Sezgiselliği, herkesin gözden çıkardığı insanlardaki potansiyeli görmesini sağlar ve müttefikleri bir araya getirme yeteneği onun gerçek süper gücüdür.",
+            "weaknesses": "Dürtüsel ve kolayca dikkati dağılan, rutin çalışma, sabır ve detay işlerinde zorlanır (Akademi temelleri). Yardımcı İçe dönük Hissediş, reddedilmeyi ağır almasına ve düşünmeden hareket etmesine neden olur.",
+            "communication": "Yüksek sesli, sıcak ve ikna edici — strateji yerine, kalbi ve kişisel inançlarıyla liderlik eder, her seferinde tek bir dürüst konuşmayla insanları kazanır.",
+            "relationships": "Şiddetle sadık ve affedici; bağlantıyı neredeyse her şeyin üstünde tutar ve bir rakibini geri getirmek için durmaksızın peşinden koşar. Bağlar onun temel motivasyonudur.",
+            "career": "Doğal bir motivatör ve ön saflarda lider — Hokage'ye giden yolculuk, bir topluluğa ilham veren ENFP'ye uyar. Gerçek dünya karşılıkları: koçluk, öğretmenlik, aktivizm, takım kaptanlığı.",
+            "compatibility": "Ayakları yere basan, kararlı tiplerle (INTJ / ISTJ) iyi denge kurar ve eksik olduğu disiplini onlar sağlar — bu durum, Sasuke ile olan ömür boyu dinamiğine yansır."
+          }
+        }
       }
     }
   },
@@ -900,6 +938,42 @@
           "Itachi Uchiha için INFJ tipi ile bir 'Naruto Kişilik Kartı' oluşturun; klan temalı arka plan, bilişsel işlev ayrıntısı, anahtar özellikler ve sembolik anlatı unsurları ile temiz anime infografik düzeni, 3:4.",
           "Naruto Uzumaki için ENFP kişiliği ile bir 'Naruto MBTI İnfografiği' oluşturun; dinamik aksiyon pozu, parlak chakra efektleri, kişilik özellikleri, bilişsel işlevler ve motive edici kimlik özeti, canlı anime tarzı, 3:4."
         ]
+      },
+      "examples": {
+        "template-mbti-naruto-Neji-Hyuga": {
+          "attributes": {
+            "type_code": "INTJ",
+            "type_nickname": "Mimar",
+            "dimensions": "İçedönük · Sezgisel · Düşünen · Yargılayan",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Neji, güçlü bir iç görü tarafından yönlendirilen, son derece analitik, bağımsız ve kararlı bir stratejisttir; başlangıçta kendi klanı içindeki kaderin değiştirilemez doğasına odaklanmıştır.",
+            "strengths": "Olağanüstü taktik ustalığı, amansız ustalık arayışı ve sarsılmaz inancı, rakiplerini tahmin etmesini ve kesin, etkili stratejiler yürütmesini sağlar.",
+            "weaknesses": "İç mantığına ve geçmiş inançlarına katı bağlılığı, derinlere kök salmış bir kadercilikle birleştiğinde, genellikle kibire ve alternatif bakış açılarını veya anlık duyusal girdileri kabul etmede zorluğa yol açtı.",
+            "communication": "Neji doğrudan, mantıklı ve çoğu zaman açık sözlü iletişim kurar, duygusal yatıştırmadan ziyade verimliliğe ve objektif gerçeğe değer verir, sıklıkla mesafeli veya eleştirel görünür.",
+            "relationships": "Genellikle özel olsa da, ortak amaca ve yetkinliğe saygıya dayalı derin bağlar kurar. Başlangıçta empati kurmakta zorlandı ancak değer verdiği kişileri şiddetle korumayı öğrendi.",
+            "career": "Stratejik planlama, hassas uygulama ve yoğun bağlılık gerektiren rollerde, örneğin yüksek rütbeli bir shinobi lideri veya köy içinde uzmanlaşmış bir taktik uzmanı olarak mükemmeldi.",
+            "compatibility": "Derinliğini ve doğrudanlığını takdir eden, sürekli açık ifade talep etmeden duygusal sıcaklık ve anlayış sunan, genellikle ENFP veya ESFP gibi partnerler için en uygundur."
+          }
+        },
+        "template-mbti-naruto-sasuke": {
+          "attributes": {
+            "type_code": "INTJ",
+            "type_nickname": "Mimar",
+            "dimensions": "İçe dönük · Sezgisel · Düşünceli · Yargılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Sasuke azimli ve stratejik düşünen bir vizyonerdir, uzun vadeli hedeflere yoğun odaklanma ve derin bağımsızlık ile karakterizedir, genellikle düşünceli görünür.",
+            "strengths": "En önemli gücü stratejik öngörü ve titiz planlamasında yatar; sarsılmaz bir kararlılık ve karmaşık, uzun vadeli hedefleri yürütme konusunda müthiş bir yetenekle birleşmiştir.",
+            "weaknesses": "Sasuke'nin derin duygusal izolasyonu ve tünel görüşü, sık sık acımasız karar almasına yol açar, başkalarını yabancılaştırır ve empati kurma veya anlık duygusal etkileri göz önünde bulundurma yeteneğini engeller.",
+            "communication": "İletişimi doğrudan, mantıklı ve son derece özlüdür, sosyal nezaket veya duygusal ifade yerine nesnel bilgiyi önceliklendirdiği için sık sık kaba veya umursamaz görünür.",
+            "relationships": "Yoğun, ancak az sayıda, derin sadık bağlar kurar; genellikle sevgiyi dile getirmekte zorlanır ve tek odak noktası ile bağımsız doğası nedeniyle sevdiklerini sık sık iter.",
+            "career": "İdeal roller, stratejik zekasını ve kararlı icrasını kullanır; usta bir stratejist, devrimci lider veya karmaşık sistemlerin uzun vadeli mimari tasarımını gerektiren herhangi bir pozisyon gibi.",
+            "compatibility": "En iyi uyumluluk, tamamlayıcı duygusal zeka veya dışa dönük enerji sunan tiplerle ortaya çıkar; ENFP'nin hevesli vizyonu veya ENTJ'nin yapılandırılmış dinamizmi gibi."
+          }
+        }
       }
     }
   },
@@ -924,6 +998,93 @@
           "Beth Dutton için INTJ tipi ile 'Yellowstone Kişilik Analiz Kartı' oluşturun, keskin iş odaklı özellikler, bilişsel fonksiyon analizi, Enneagram 8w7 ve güç ile kontrolü yansıtan sembolik batı imgeleri, temiz infografik düzen, 3:4 dahil edin.",
           "Rip Wheeler için ISTP kişiliği ile 'Yellowstone MBTI İnfografiği' oluşturun, sağlam çiftlik estetiği, bilişsel fonksiyonlar, temel özellikler (sadık, sert, sessiz, korkusuz) ve bir kimlik özeti, sinematik batı tarzı, 3:4 dahil edin."
         ]
+      },
+      "examples": {
+        "template-mbti-yellowstone-johndutton": {
+          "attributes": {
+            "type_code": "ISTJ",
+            "type_nickname": "Lojistikçi",
+            "dimensions": "İçe dönük · Algılayıcı · Düşünen · Yargılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "John Dutton bir ISTJ olarak okunur: her kararı geleneğe, mirasa ve çiftliğin hayatta kalmasına göre ölçen, göreve bağlı bir koruyucu. Yüzeyde çekingen ve duygusuz olsa da, demir gibi bir görev bilinciyle yönetilir.",
+            "strengths": "Toprağa ve aileye sarsılmaz sadakat, uzun vadeli stratejik sabır ve zorlu, nankör kararlar alma isteği. Baskın İçe Dönük Algılama, ona vadinin nasıl işlediğine dair derin bir kurumsal hafıza verir.",
+            "weaknesses": "Katı, kontrolcü ve değişime güvenmekte yavaş; ilişkileri (ve etiği) çiftliğin sunağında feda edebilir. Altın Ekstrovert Sezgi, onu yeni tür tehditler karşısında hazırlıksız bırakır.",
+            "communication": "Kısa ve açıklayıcı — kelimelerden çok kararlar ve sonuçlar aracılığıyla iletişim kurar, başkalarının belirlediği standardı okumasını bekler.",
+            "relationships": "Koruyucu ama duygusal olarak mesafeli; sevgisi sıcaklıktan ziyade sağlama ve savunma olarak ifade edilir, bu da çocuklarını zorlar.",
+            "career": "Bir miras kurumunun yöneticisi / icra sorumlusu — çiftçi, patriyark ve bir yaşam tarzını savunan isteksiz bir siyasi aktör.",
+            "compatibility": "Sadık, eylem odaklı tipler (çiftlik çalışanları gibi ISTP / ESTP) tarafından dengelenir ve sabit düzenini tehdit eden sezgisel stratejistler tarafından zorlanır."
+          }
+        },
+        "template-mbti-yellowstone-bethdutton": {
+          "attributes": {
+            "type_code": "ESTJ",
+            "type_nickname": "Yönetici",
+            "dimensions": "Dışa Dönük · Algılayıcı · Düşünen · Yargılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Gözü kara ve iddialı Beth, ailesinin mirasına ve pratik sonuçlara sarsılmaz bir bağlılıkla, acımasız bir verimlilikle çalışan, son derece sadık bir koruyucudur.",
+            "strengths": "Benzersiz kararlılığı, stratejik acımasızlığı ve sarsılmaz sadakati onu çiftliğin ve aile çıkarlarının müthiş bir koruyucusu yapar.",
+            "weaknesses": "Beth'in önemli kör noktaları arasında yoğun duygusal değişkenlik, aşırı dürtüsellik ve kırılganlıkla veya en derin kişisel duygularını yapıcı bir şekilde işlemekle ciddi bir mücadele yer alır.",
+            "communication": "Sarsılmaz bir doğrudanlıkla iletişim kurar, genellikle üstünlük kurmak veya herhangi bir konunun özüne inmek için kaba, çatışmacı ve derin alaycı bir dil kullanır.",
+            "relationships": "Beth, Rip ve John gibi seçtiği birkaç kişiyle son derece sadık, koruyucu bağlar kurar; ancak kırılganlıkla mücadelesi çoğu zaman talepkar ama bir o kadar da şiddetle adanmış bir bağlılık olarak kendini gösterir.",
+            "career": "Yüksek riskli kurumsal finans alanında üstün başarı gösteren Beth, acımasız strateji, kararlı liderlik ve somut sonuçlar gerektiren rollerde gelişir, yönetici düzeyindeki güce mükemmel bir şekilde uygundur.",
+            "compatibility": "Beth genellikle güçlü iradesini takdir edebilen ve sarsılmaz destek sunan, ISTP'ler veya ISFP'ler gibi tamamlayıcı bir istikrar sağlayan, ayakları yere basan, sadık tiplerle en iyi şekilde anlaşır."
+          }
+        },
+        "template-mbti-yellowstone-lloyd-pierce": {
+          "attributes": {
+            "type_code": "ISTP",
+            "type_nickname": "Usta",
+            "dimensions": "İçe Dönük · Algılayıcı · Düşünen · Algılayan",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Lloyd sessiz, gözlemci ve son derece sadık bir çiftlik işçisidir. Pratik bağımsızlığı bünyesinde barındırır ve zorluklara mantıksal kesinlik ve uygulamalı yetkinlikle yaklaşır.",
+            "strengths": "En büyük güçleri, eşsiz pratik becerileri, hızlı problem çözme yeteneği ve Dutton çiftliğine sarsılmaz bağlılığıdır. Fiziksel görevlerde ve kriz yönetiminde üstündür.",
+            "weaknesses": "Lloyd duygularını ifade etmekte ve karmaşık sosyal dinamiklerde yol almakta zorlanır; bu durum genellikle yanlış anlaşılmalara veya iç karışıklıklara yol açar. Dobralığı bazen istemeden çatışmaya neden olabilir.",
+            "communication": "Doğrudan ve özlü iletişim kurar, sözlerden çok eylemleri tercih eder. Lloyd genellikle sessizce gözlem yapar, yalnızca gerekli bilgiyi veya pratik tavsiyeyi iletmek gerektiğinde konuşur.",
+            "relationships": "Lloyd, paylaşılan deneyimler ve sadakat yoluyla derin, dile getirilmemiş bağlar kurar; duygusal yaklaşımlardan çok eylemlere öncelik verir. Sevgisini sarsılmaz varlığı ve pratik desteğiyle gösterir.",
+            "career": "Uygulamalı problem çözme, aletlere hakimiyet ve bağımsızlık gerektiren çiftlik işçisi, tamirci veya zanaatkar gibi roller için idealdir. Pratik, eylem odaklı ortamlarda gelişir.",
+            "compatibility": "Pratik yetkinliği ve doğrudanlığı takdir eden tiplerle iyi anlaşır; diğer SP'ler veya istikrarlı, ayakları yere basan SJ'lerle uyum sağlar."
+          }
+        },
+        "template-mbti-yellowstone-jamie-dutton": {
+          "attributes": {
+            "type_code": "INTP",
+            "type_nickname": "Mantıkçı",
+            "dimensions": "İçedönük · Sezgisel · Mantıksal · Algılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Jamie derinlemesine analitik ve bağımsız bir düşünürdür, genellikle duygusal olarak mesafelidir. İnsan bağlantılarının mantıksızlığıyla mücadele ederek amansızca gerçeği ve mantıklı çözümleri arar.",
+            "strengths": "Güçlü zekası ve stratejik hukuk zihni eşsizdir. Jamie, karmaşık sorunları analiz etmede ve karmaşık, yasal olarak sağlam çözümler geliştirmede üstündür.",
+            "weaknesses": "Duygusal olarak gelişmemiş olan Jamie, genellikle öz-değerle ve gerçek duyguları ifade etmekle mücadele eder, bu da onu manipülasyona ve derin öz-şüpheye açık hale getirir. Mantıksal yaklaşımı genellikle başkalarının duygusal ihtiyaçlarıyla çatışır.",
+            "communication": "Jamie'nin iletişimi doğrudan, gerçeklere dayalı ve hukuki olarak kesindir, genellikle duygusal nüans veya sıcaklıktan yoksundur. Sosyal nezaketlerden ziyade objektif gerçeği önceliklendirir, bu da yanlış anlaşılmalara yol açar.",
+            "relationships": "Derinlemesine kabul görme ve entelektüel bağlantı arzular, ancak duygusal yakınlıkta zorlanır. Jamie'nin ilişkileri, şefkat göstermedeki zorluğu nedeniyle genellikle çıkara dayalı veya gergindir.",
+            "career": "Keskin hukuki zeka ve stratejik düşünme gerektiren roller için uygundur, örneğin Başsavcı veya üst düzey bir danışman. Entelektüel titizliğin önemli olduğu yerlerde başarılı olur, empatik liderlikte daha az.",
+            "compatibility": "Zekasına değer veren ve duygusal sınırlarına saygı duyan sabırlı, anlayışlı partnerlere ihtiyacı vardır. Uyumluluk genellikle mantıksal derinliği takdir eden ve istikrarlı duygusal destek sunan tiplerle sağlanır."
+          }
+        },
+        "template-mbti-yellowstone-ripwheeler": {
+          "attributes": {
+            "type_code": "ISTP",
+            "type_nickname": "Usta",
+            "dimensions": "İçe Dönük · Duyusal · Düşünen · Algılayan",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Rip, seçilmiş az sayıda kişiye derinden bağlı ve şiddetle koruyucu, metanetli, gözlemci bir pragmatisttir. Soyut tartışmalar yerine eylemi ve pratik çözümleri tercih eder.",
+            "strengths": "En büyük güçleri olağanüstü problem çözme yeteneği, kararlı eylemleri ve sarsılmaz sadakatidir. Rip, acil, somut tehditleri acımasız bir verimlilikle ele almada üstündür.",
+            "weaknesses": "Rip, derin duyguları dile getirmekte ve karmaşık sosyal dinamiklerde gezinmekte zorlanır; alt düzey Dışa Dönük Duygusal işlevi nedeniyle sıklıkla mesafeli veya aşırı patavatsız görünür.",
+            "communication": "İletişimi doğrudan, seyrek ve eylem odaklıdır; Rip sadece gerektiğinde konuşur, niyetlerini uzun kelimeler yerine eylemlerle göstermeyi tercih eder.",
+            "relationships": "Rip, ortak deneyimler ve sarsılmaz güven yoluyla bağ kurar; derin sevgiyi sözlü beyanlar yerine hizmet ve koruma eylemleriyle gösterir. Sadakati, bir kez kazanıldığında mutlaktır.",
+            "career": "Zorlayıcı veya çiftlik ustabaşı gibi uygulamalı problem çözme, bağımsızlık ve anında eylem gerektiren rollerde idealdir. Pratik, yüksek riskli ortamlarda başarılı olur.",
+            "compatibility": "Rip, genellikle doğrudanlığını ve sadakatini takdir eden, sözlerden çok eyleme değer veren ve duygusal çekingenliğini anlayışla yönetebilen tiplerle uyum bulur."
+          }
+        }
       }
     }
   },
@@ -971,6 +1132,178 @@
           "Stephen Curry için bir MBTI NBA kartı oluşturun: ENFP – 'THE MAGICIAN', forma numarası 30, Range King, 3-Point Legend, Clutch Performer, Team Player özellikleri ile.",
           "Michael Jordan için bir MBTI kartı oluşturun: ESTJ – 'THE GOAT', forma numarası 23, Competitive Beast, 6× NBA Şampiyonu, Air Jordan, Global Icon özellikleri ile."
         ]
+      },
+      "examples": {
+        "template-mbti-nba-erling-haaland": {
+          "attributes": {
+            "type_code": "ISTP",
+            "type_nickname": "Virtüöz",
+            "dimensions": "İçe Dönük · Algılayan · Düşünen · Algılayan",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Erling Haaland, genellikle hayranlar tarafından bir ISTP olarak tanımlanır — az konuşan ve acımasız bir verimlilikle hareket eden, ekonomik, buz gibi soğuk bir bitirici. Sahada alanı gerçek zamanlı okur ve minimum boşa harcanan hareketle şut çeker.",
+            "strengths": "Baskı altında seçkin soğukkanlılık, mekanik hassasiyet ve sarsılmaz bir ana odaklanma. ISTP'nin İçe Dönük Düşünme + Dışa Dönük Algılama eşleşmesi, ceza sahasını bir fizik problemi gibi çözen bir forvet oyuncusuna uyar.",
+            "weaknesses": "Saha dışında mesafeli veya açık sözlü görünebilir ve uzmanlığını gerektirmeyen oyunun bölümlerinden kopuk olabilir; törenlere ve medya performansına düşük isteklilik.",
+            "communication": "Az ve öz — performansı konuşturur, konuştuğunda ise donuk bir mizahla.",
+            "relationships": "Seçici olarak yakın; küçük, güvenilir bir çevreye sahiptir ve sadıktır ama bu konuda özeldir.",
+            "career": "Uzman icracı — bu arketip, tek bir yüksek becerili, yüksek riskli eylemin sonucu belirlediği her yerde üstündür (elit sporlar, hassas ticaretler).",
+            "compatibility": "Uzman rolünün dönüştürdüğü fırsatları yaratan, ifadeci, büyük resmi gören takım arkadaşlarıyla uyum sağlar."
+          }
+        },
+        "template-mbti-nba-jude": {
+          "attributes": {
+            "type_code": "ENTJ",
+            "type_nickname": "Komutan",
+            "dimensions": "Dışa Dönük · Sezgisel · Düşünsel · Yargılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Jude Bellingham genellikle bir ENTJ olarak tanımlanır — oyunu kendi etrafında organize eden ve en büyük sahnelerde başarılı olan, buyurgan, stratejik bir rakip. İradesiyle liderlik eder, standardı belirler ve herkesin bu standardı karşılamasını bekler.",
+            "strengths": "Kararlı liderlik, amansız rekabetçi ruh ve yaşına göre sıra dışı taktiksel vizyon. ENTJ'nin Dışa Dönük Düşünme + İçe Dönük Sezgi, tempoyu belirleyen ve maçları bir plana göre yönlendiren bir orta saha oyuncusuna uyar.",
+            "weaknesses": "Bu yoğunluk, sabırsızlık veya otoriteyle sürtüşme olarak algılanabilir ve yüksek standartları, takım arkadaşları ve kendisi için talepkar olabilir.",
+            "communication": "Doğrudan, iddialı ve sözlü — duygusal ve taktiksel tonu belirler ve grubu buna bağlı tutar.",
+            "relationships": "Çevresine karşı manyetik ve son derece sadık; sosyal olarak liderlik eder ve güçlü soyunma odası bağları kurar.",
+            "career": "Doğuştan lider ve kaptan — ENTJ arketipi, sonuçlar tehlikede olduğunda takımları ve organizasyonları yönetir.",
+            "compatibility": "Belirlediği vizyonu uygulayan soğukkanlı uzman bitiricileri (ISTP) ve istikrarlı organizatörleri tamamlar."
+          }
+        },
+        "template-mbti-nba-lamine-yamal": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "Eğlendirici",
+            "dimensions": "Dışa Dönük · Duyumsal · Duygusal · Algılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Lamine Yamal, genellikle taraftarlar tarafından bir ESFP olarak tanımlanır — yeteneğini coşku ve neşeyle sergileyen, ifadeci, içgüdüsel bir yetenek; kalabalığın enerjisiyle ve bire birde doğaçlama özgürlüğüyle gelişir.",
+            "strengths": "Göz kamaştırıcı doğaçlama, dar alanlarda korkusuzluk ve anı seven bir eğlendirici ruhu. Dışa Dönük Duyumsama ona seçkin yakın kontrol ve anlık yaratıcılık verir.",
+            "weaknesses": "Tutarlılık ve savunma disiplini, öne çıkan anların gerisinde kalabilir; ESFP'nin an odaklılığı, olgunlaşana kadar inişli çıkışlı bir nihai ürün anlamına gelebilir.",
+            "communication": "Oyunbaz ve gösterişli — açıkça kutlar ve çekingenlik yerine kişiliği aracılığıyla taraftarlar ve takım arkadaşlarıyla bağlantı kurar.",
+            "relationships": "Grupta sıcakkanlı ve popüler; sevilmekten ve kalabalığın coşkusundan beslenir.",
+            "career": "Performansçı / yaratıcı — kendiliğindenliği ve gösterişi ödüllendiren gösterişli rol (kanat oyuncusu, eğlendirici).",
+            "compatibility": "Doğaçlamasına parlayabileceği istikrarlı bir platform sağlayan, yapılı, taktiksel zihinlere sahip kişilerle en iyisi."
+          }
+        },
+        "template-mbti-nba-lionelmessi": {
+          "attributes": {
+            "type_code": "ISFP",
+            "type_nickname": "Maceracı",
+            "dimensions": "İçe Dönük · Algılayıcı · Hisseden · Algılayan",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Lionel Messi, genellikle sakin bir yoğunluk, derin kişisel değerler ve zanaatıyla derin bir bağlantıyla karakterize edilen bir ISFP olarak tanımlanır. Kendini öncelikle kelimelerden ziyade eylemlerle ifade eder.",
+            "strengths": "Onun ISFP güçlü yönleri, sahadaki eşsiz sanatsallığı ve uyum yeteneğinde, gerçek zamanlı fırsatlara içgüdüsel tepki vermesinde kendini gösterir. Messi'nin derin içsel motivasyonu, oyuna olan eşsiz odaklanmasını ve otantik tutkusunu besler.",
+            "weaknesses": "Messi'nin ISFP zayıflıkları, içe dönüklüğe yönelik bir eğilimi içerebilir, bu da onu saha dışında bir lider veya iletişimci olarak daha az dışa dönük hale getirebilir. Dış eleştirilerle de mücadele edebilir.",
+            "communication": "İletişim tarzı ağırlıklı olarak sözsüzdür; mesajını genellikle olağanüstü oyunu ve iş ahlakıyla iletir. Messi, genellikle kapsamlı sözlü beyanlar yerine tutkulu eylemlerle kendini ifade eder.",
+            "relationships": "Messi, kişisel alanına ve değerlerine saygı duyanlarla güçlü, otantik bağlar kurar. Sadakatin ve karşılıklı anlayışın en önemli olduğu destekleyici ilişkilerde başarılı olur, genellikle yakın bir çevreyi tercih eder.",
+            "career": "ISFP'nin kişisel ifade ve ustalık arayışı, Messi'nin elit bir futbolcu kariyeriyle mükemmel bir şekilde örtüşür ve ona benzersiz vizyonunu ve becerisini dinamik, duyusal bir ortamda sergileme olanağı tanır.",
+            "compatibility": "ISFP'ler genellikle, Maceracının kişisel değerlere ve spontane eyleme odaklanmasını tamamlayıcı pratik destek ve yapı sağlayabilen ESFJ'ler veya ESTJ'ler ile uyum bulur."
+          }
+        },
+        "template-mbti-nba-kylianmbappe": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "Eğlence Uzmanı",
+            "dimensions": "Dışadönük · Algılayıcı · Hisseden · Gözlemci",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Taraftarlarca sıklıkla ESFP olarak tiplendirilen Kylian Mbappé, dinamik ve karizmatik bir duruş sergiler, hem saha içinde hem de saha dışında enerjik, aksiyon odaklı yaklaşımıyla ilgi odağı olmayı sever.",
+            "strengths": "Olağanüstü durumsal farkındalığı ve şimşek hızındaki refleksleri, saha içinde inanılmaz bir uyum ve patlayıcı performans sergilemesini sağlar; doğal yeteneği ve baskı altında sarsılmaz özgüveniyle seyircileri büyüler.",
+            "weaknesses": "Mbappé bazen dürtüsellik sergileyebilir, uzun vadeli stratejik planlamaya kıyasla anlık tatmin veya aksiyona öncelik verebilir, şimdiki gerçekliğe dayanmayan soyut, geleceğe yönelik tartışmalarda zorlanabilir.",
+            "communication": "Doğrudan ve etkileyici bir şekilde iletişim kurar, genellikle dinamik eylemler ve samimi röportajlar aracılığıyla; somut tartışmaları tercih eder ve mesajları etkili bir şekilde iletmek için güçlü fiziksel varlığını kullanır.",
+            "relationships": "Mbappé, ortak deneyimler ve aktif katılım yoluyla bağ kurar; takım içinde canlı bir dostluk ortamı geliştirirken, ulaşılabilir ve karizmatik kamusal kişiliği aracılığıyla taraftarlarla otantik bir şekilde bağlantı kurar.",
+            "career": "Elit profesyonel sporlar gibi sürekli aksiyon, dinamik performans ve önemli halk katılımı gerektiren bir kariyer, heyecan, anlık etki ve canlı, değişen bir ortama olan ihtiyacını mükemmel bir şekilde karşılar.",
+            "compatibility": "Tamamlayıcı yapı ve istikrar sağlayan tiplerle veya aynı şekilde hayata benzer bir coşkuya sahip, aktif, şimdiki an deneyimleriyle beslenen kişilerle iyi anlaşır."
+          }
+        },
+        "template-mbti-nba-cristianoronaldo": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "Eğlendirici",
+            "dimensions": "Dışa Dönük · Algılayıcı · Hisseden · Algılayan",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Cristiano Ronaldo genellikle hayranları tarafından bir ESFP olarak sınıflandırılır; enerjik, karizmatik kişiliğiyle ilgi odağı olmayı sever ve dinamik performansları ve tutkusuyla izleyicileri büyülemekte üstündür.",
+            "strengths": "Derin özgüveni ve baskı altında muhteşem performans gösterme yeteneğiyle beslenen eşsiz atletizmi ve rekabetçi ruhu, sahada üstünlük kurmasını sağlayan temel güçleridir.",
+            "weaknesses": "Bazen ortaya çıkan anlık dürtüsellik ve algılanan küçümsemelere karşı güçlü tepkiler, rekabet anlarında uzun vadeli stratejinin önüne geçerek anlık, yoğun duygusal tepkilere yol açabilir.",
+            "communication": "Cristiano niyetleri veya kararlılığı hakkında hiçbir şüpheye yer bırakmayarak, genellikle sahada sergilediği güçlü eylemleri ve tutkulu duygu gösterileri aracılığıyla doğrudan ve dışavurumcu bir şekilde iletişim kurar.",
+            "relationships": "Ortak tutku ve karşılıklı saygıya dayalı sadık bağlar kurar, iç çevresindekilere ilham verirken, bazen özel benliğinden daha korumacı görünebilen bir halk kişiliğini sürdürür.",
+            "career": "Bir ESFP olarak, profesyonel futbolculuk kariyeri idealdir; en üst seviyede performans göstermesine, milyonları eğlendirmesine ve yoğun rekabetçi, sonuç odaklı bir ortamda gelişmesine olanak tanır.",
+            "compatibility": "Dinamik enerjisini takdir eden ve istikrarlı bir temel sağlayan ayakları yere basan, güvenilir tiplerle ve tamamlayıcı bir stratejik bakış açısı sunabilenlerle iyi anlaşır."
+          }
+        },
+        "template-mbti-nba-alleniverson": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "Kampanyacı",
+            "dimensions": "Dışa Dönük · Sezgisel · Duygusal · Algılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Allen Iverson genellikle hayranlar tarafından bir ENFP olarak sınıflandırılır; enerjik, spontane ruhu ve hayata ve sporuna karşı derinlemesine otantik, değer odaklı bir yaklaşımıyla karakterize edilir. Şiddetli bireyselliği ve vizyoner bir yeteneği temsil etti.",
+            "strengths": "Sahadaki eşsiz yaratıcılığı ve takım arkadaşlarını ilham verme yeteneği, doğal sezgisi ve tutkulu inancıyla beslenen temel güçleriydi. Iverson'ın otantikliği ve zafer peşindeki korkusuz arayışı bulaşıcıydı.",
+            "weaknesses": "Iverson bazen geleneksel yapılar ve beklentilerle zorlandı; kişisel değerlerini ve bağımsızlığını geleneksel disiplinin önüne koydu. Büyük resme odaklanması, zaman zaman küçük detayları gözden kaçırmasına neden olabilirdi.",
+            "communication": "Doğrudan ve tutkulu Iverson, kalpten iletişim kurdu; sıklıkla güçlü inançlarını aktarmak ve etrafındakilere ilham vermek için etkileyici bir dil kullandı. Etkileşimlerde otantikliğe ve içtenliğe değer verdi.",
+            "relationships": "Yoğun derecede sadık ve derin bağlar kurdu; her şeyden önce otantikliğe ve karşılıklı saygıya değer verdi; sıklıkla arkadaşları ve takım arkadaşları için bir şampiyon olarak görüldü. Iverson'ın şehri ve hayranlarıyla olan bağlantısı derin ve kişiseldi.",
+            "career": "Yenilik, liderlik ve kişisel dokunuş gerektiren rollerde mükemmeldi; Iverson'ın çığır açan bir NBA oyuncusu olarak kariyeri, spontane dehasını ve bir hayran kitlesiyle bağlantı kurma yeteneğini mükemmel bir şekilde kullandı. Bireyselliğin kutlandığı yerlerde gelişti.",
+            "compatibility": "Iverson, otantikliğini ve vizyonunu takdir eden tiplerle, örneğin sabit, derin bir bağlantı sağlayabilecek INFJ veya INTJ ile sık sık güçlü bir uyum yakaladı. Ayrıca diğer dışa dönük tiplerle de iyi anlaştı."
+          }
+        },
+        "template-mbti-nba-nikola-jokic": {
+          "attributes": {
+            "type_code": "INFP",
+            "type_nickname": "Arabulucu",
+            "dimensions": "İçe Dönük · Sezgisel · Duygusal · Algılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Genellikle hayranlar tarafından INFP olarak tanımlanan Jokic, güçlü bir iç ahlaki pusula ile sessiz, içe dönük bir doğayı temsil eder. Çoğunlukla rahat ve mütevazı görünür, dış onaydan ziyade özgünlüğe öncelik verir.",
+            "strengths": "Baskın İçe Dönük Duygu fonksiyonu, benzersiz, sezgisel oyun kurma vizyonunu ve takım uyumuna derin bağlılığını besler. Bu, sahada alışılmadık çözümler bularak yaratıcı bir şekilde adapte olmasına olanak tanır.",
+            "weaknesses": "Alt işlev olan Dışa Dönük Düşünme, dışsal bir aciliyet eksikliği veya doğrudan, kişisel olmayan çatışmalarda zorluk olarak ortaya çıkabilir. Yapılandırılmış eleştirilerle mücadele edebilir, çatışmadan kaçınmayı tercih eder.",
+            "communication": "Jokic, abartısız bir dürüstlük ve nazik, genellikle dolaylı bir yaklaşımla iletişim kurar. Resmi alışveriş yerine gerçek bağlantıya değer verir, kendini cesur beyanlardan ziyade düşünceli bir şekilde ifade eder.",
+            "relationships": "Karşılıklı saygı ve paylaşılan değerlere dayalı derin, sadık bağlar kurar; yüzeysel etkileşimler yerine özgünlüğe ve sessiz dostluğa değer verir. Ailesi, takım arkadaşları ve güvenilir arkadaşları merkezdedir.",
+            "career": "Rolüyle örneklendirilen ideal kariyer yolu, yaratıcı özgürlük, özerklik ve daha yüksek bir takım hedefine ulaşmayı sağlar. Benzersiz vizyonunun anlamlı bir kolektif amaca hizmet ettiği yerlerde başarılı olur.",
+            "compatibility": "Bir INFP olarak Nikola, sezgisel, değer odaklı yaklaşımını tamamlayan sağlam yapı ve doğrudanlık sağlayan ESTJ tipleriyle sıklıkla uyum bulur. Dış destek için ENFJ'lerle de iyi bağlantı kurar."
+          }
+        },
+        "template-mbti-nba-alexia-putellas": {
+          "attributes": {
+            "type_code": "INFJ",
+            "type_nickname": "Savunucu",
+            "dimensions": "İçe dönük · Sezgisel · Hisseden · Yargılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Alexia Putellas, genellikle hayranlarca INFJ olarak sınıflandırılan, derin empatiyi takımının kolektif başarısı ve stratejik oyununa sarsılmaz bir bağlılıkla birleştiren vizyoner bir ruha sahiptir.",
+            "strengths": "Eşsiz stratejik öngörüsü, oyunu ustaca bir hassasiyetle yönetmesini sağlarken, ilham veren liderliği uyumlu bir takım ortamı oluşturur ve en yüksek performansı motive eder.",
+            "weaknesses": "Alexia, yoğun öz eleştiri ve mükemmeliyetçilikle mücadele edebilir, bu da potansiyel olarak tükenmişliğe yol açabilir ve empatik doğası nedeniyle takım baskılarını derinden içselleştirebilir.",
+            "communication": "Doğrudanlık ve diplomasiyi harmanlayarak iletişim kurar, net vizyonu ve empatik rehberliğiyle takım arkadaşlarını sıklıkla ilhamlandırır, kolektif anlayışa ve stratejik hizalanmaya odaklanır.",
+            "relationships": "Alexia, takımında ve kişisel çevresinde özgünlüğe ve karşılıklı gelişime değer veren destekleyici ve anlayışlı bir figür olarak hareket ederek derin, sadık ilişkiler geliştirir.",
+            "career": "Kaptanlığında açıkça görülen stratejik lider ve oyun kurucu olarak doğal uyumu, bir INFJ'in vizyoner değişimi gerçekleştirmeye ve etkili roller aracılığıyla kolektif başarıya ilham vermeye yönelik dürtüsüyle mükemmel bir şekilde örtüşür.",
+            "compatibility": "Alexia, tamamlayıcı mantıksal doğrudanlık veya paylaşılan tutku sunan tiplerle kurduğu dinamiklerde sıklıkla başarılı olur; entelektüel tartışmalar için ENTP'ler veya ayakları yere basan destek için ESFP'ler ile derin bir bağ kurabilir."
+          }
+        },
+        "template-mbti-nba-kareem-abdul-jabbar": {
+          "attributes": {
+            "type_code": "INFP",
+            "type_nickname": "Arabulucu",
+            "dimensions": "İçe Dönük · Sezgisel · Hisseden · Algılayan",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Sıklıkla INFP olarak tiplendirilen Kareem Abdul-Jabbar, düşünceli aktivizmi ve kendine özgü tarzıyla ifade edilen derin idealizmi, sessiz tefekkürü ve kişisel değerlere olan ilkeli bağlılığını sergiler.",
+            "strengths": "Güçlü iç inancı ve yenilikçi düşüncesi onun atletik büyüklüğünü besledi ve karmaşık sosyal meseleleri derin bir dürüstlükle dile getirmesini sağlayarak, sık sık başkalarına ilham verdi.",
+            "weaknesses": "Derin kişisel değerleri bazen takım dinamiklerinden algılanan bir mesafeye veya kopukluğa yol açtı, potansiyel olarak tamamen objektif, kişisel olmayan eleştiriler veya katı dış yapılarla mücadele etti.",
+            "communication": "Kareem, derin bir düşünce ve inançla iletişim kurar, genellikle yazılı eserler veya dikkatle seçilmiş kelimeler aracılığıyla, yüzeysel alışverişlere girmek yerine derinden bağlı olduğu inançları ifade etmeyi tercih eder.",
+            "relationships": "Karşılıklı anlayışa ve paylaşılan değerlere dayalı derin, özgün bağlar kurar, sadakati ve entelektüel bağlantıyı önemserken, genellikle mesafeli, özel bir tavır sergiler.",
+            "career": "Kareem, yaratıcı ifadeye, entelektüel uğraşlara ve derinden bağlı olduğu inançların savunulmasına olanak tanıyan rollerde gelişir, yazar, sosyal eleştirmen ve etkili bir figür olarak tatmin bulur.",
+            "compatibility": "Kareem, idealizmini ve derinliğini takdir eden tiplerle sık sık uyum bulur, özellikle dış yapı sağlayabilen ve değerlerini savunabilen ENFJ'ler veya ENTJ'ler ile."
+          }
+        }
       }
     }
   },
@@ -1628,6 +1961,42 @@
           "Phoebe Buffay ENFP personality poster — the free-spirited optimist.",
           "Chandler Bing ENTP character MBTI — the sarcastic problem-solver."
         ]
+      },
+      "examples": {
+        "template-friends-character-mbti-joey-tribbiani": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "Kampanyacı",
+            "dimensions": "Dışa Dönük · Sezgisel · Duygusal · Algılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Joey Tribbiani bir ENFP olarak tanımlanır — sıcak, durdurulamaz derecede iyimser ve sonsuz coşkulu. Büyük hayallerin peşinden koşar (şöhret, aşk, mükemmel sandviç) ve planlardan ziyade duygu ve olasılıklarla hareket ederek bir odayı aydınlatır.",
+            "strengths": "Bulaşıcı çekicilik, arkadaşlarına karşı sarsılmaz sadakat ve açık yürekli cömertlik — odadaki herkesi en önemli kişi gibi hissettirir ve büyük çıkışının geleceğine inanmaktan asla vazgeçmez.",
+            "weaknesses": "Dağınık odak ve pratik konularda (para, planlama) zayıf takip; stratejiden çok dürtü ve kalbiyle yönlendirilir.",
+            "communication": "İfadeli, eğlenceli ve silahsızlandırıcı derecede samimi — tartışarak değil, mizah, yemek ve gerçek sıcaklıkla bağlantı kurar.",
+            "relationships": "Derinlemesine sadık ve koruyucu; arkadaş grubunu ailesi gibi görür ve her zaman akıllıca olmasa da cömertçe sever.",
+            "career": "Sahne sanatçısı ve bağ kurucu — oyunculuk, misafirperverlik, çekiciliği, varlığı ve kalbi ödüllendiren her şey.",
+            "compatibility": "Yapılandırılmış, mantıklı bir partnerin (Chandler'ın kuru zekası gibi) yanında iyi temellenir ve onun keyifle atladığı planlamayı üstlenir."
+          }
+        },
+        "template-friends-character-mbti-chandler-bing": {
+          "attributes": {
+            "type_code": "ENTP",
+            "type_nickname": "Münazaracı",
+            "dimensions": "Dışa Dönük · Sezgisel · Düşünen · Algılayan",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Bir ENTP olan Chandler, keskin zekası, hızlı düşünmesi ve doğuştan gelen şüpheciliği ile karakterizedir. Entelektüel şakalaşmalardan keyif alır ve sürekli yeni bakış açıları arar, hayatı yönlendirmek için sık sık mizah kullanır.",
+            "strengths": "En büyük güçleri, olağanüstü problem çözme yetenekleri ve yenilikçi düşüncesinde yatar. Chandler'ın zekice mizahı ve yerinde bir şakayla gerilimi azaltma yeteneği onu son derece uyumlu ve ilgi çekici kılar.",
+            "weaknesses": "Chandler, duygusal kırılganlıktan kaçınmak için sık sık alaycılık ve mizah kullanır, bazen umursamaz veya mesafeli görünebilir. Rutine karşı isteksizliği ve bağlanma korkusu başlangıçta kişisel gelişimini ve istikrarlı karar almasını engellemiştir.",
+            "communication": "Chandler, öncelikle hızlı zekası, alaycılık ve eğlenceli tartışmalar aracılığıyla iletişim kurar, zekasını etkileşim kurmak veya saptırmak için kullanır. Derin duygusal tartışmalar yerine entelektüel atışmayı tercih eder, sık sık mizahı bir kalkan olarak kullanır.",
+            "relationships": "Ortak mizah, entelektüel bağ ve sadakat yoluyla bağ kurar, zekasını takdir eden arkadaşlara değer verir. Başlangıçta bağlanma korkusu olsa da, güvensizliklerinin üstesinden geldiğinde derin, anlamlı bağlantılar arar.",
+            "career": "Chandler, pazarlama, stratejik analiz veya komedi yazarlığı gibi yaratıcı problem çözme, entelektüel zorluklar ve dinamik etkileşim gerektiren roller için en uygundur. Rutin, uyarıcı olmayan işler onun Ne'sini boğar.",
+            "compatibility": "Chandler, mizahını ve zekasını takdir eden tiplerle (Monica'nın istikrar ve anlayış arayışı gibi INFJ'ler, ENFJ'ler veya tartışmalarına katılabilecek diğer NT tipleri gibi) güçlü bir uyumluluk bulur."
+          }
+        }
       }
     }
   },
@@ -3148,6 +3517,25 @@
           "Tavşan ve ağaç kütüğü hikayesini gösteren bir 守株待兔 kartı oluşturun.",
           "Kuyu kurbağası karikatürü ve bir cümle örneği ile bir 井底之蛙 kartı oluşturun."
         ]
+      },
+      "examples": {
+        "template-chinese-idiom-learning-card-hua-she-tian-zu": {
+          "attributes": {
+            "grade_band": "İlkokul–Ortaokul · HSK 3–4",
+            "age_range": "8–14",
+            "subject": "Çince · deyimler (成语)",
+            "skill": "Kelime bilgisi · okuma · kültürel okuryazarlık",
+            "resource_type": "Resimli bilgi kartı",
+            "duration_min": "10",
+            "difficulty": "Orta",
+            "language_mode": "İki dilli (Çince + İngilizce)"
+          },
+          "vertical": {
+            "learning_objective": "画蛇添足 (huà shé tiān zú) deyimini okumayı, telaffuz etmeyi ve doğru kullanmayı öğrenin — gereksiz bir eylemin işleri daha da kötüleştirdiğini fark etmek.",
+            "includes": "Basitleştirilmiş karakterler, pinyin, kelimesi kelimesine bir açıklama ('yılana ayak eklemek'), mecazi anlamı, örnek bir cümle ve orijinal hikayenin bir illüstrasyonu.",
+            "background": "Savaşan Devletler dönemine ait bir hikayeden: yılan çizme yarışmasında en hızlı ressam hava atmak için ayaklar ekledi — ve kaybetti, çünkü yılanların ayağı yoktur. Deyim, bitmiş bir şeyi gereksiz çabayla mahvetmeye karşı uyarır."
+          }
+        }
       }
     }
   },
@@ -4549,6 +4937,40 @@
           "Create an 'Argentina National Team' sticker poster celebrating the 2022 World Cup win.",
           "Generate a 'France National Team' World Cup sticker poster with Mbappé and Griezmann."
         ]
+      },
+      "examples": {
+        "template-world-cup-team-sticker-poster-portugal": {
+          "attributes": {
+            "product_type": "Çıkartma sayfası ve takım posteri",
+            "material": "Mat vinil çıkartma / poster kağıdı",
+            "process": "Dijital baskı + kiss-kesim",
+            "dimensions": "A3 poster · çeşitli kalıp kesim çıkartmalar",
+            "print_spec": "300 DPI · CMYK · 3mm taşma payı",
+            "color_profile": "CMYK — Portekiz kırmızısı ve yeşili",
+            "use_case": "Taraftar ürünleri · maç günü dekorasyonu · dizüstü bilgisayar / şişe çıkartmaları"
+          },
+          "vertical": {
+            "cultural_background": "Portekiz milli takımının kimliği etrafında inşa edildi — kırmızı-yeşil palet, Seleção'nun arma enerjisi ve ülkenin derin futbol gururu.",
+            "design_requirements": "Yüksek kontrastlı takım renkleri, cesur çizgi film oyuncu figürleri ve temiz kiss-kesim silüetleri; ticari marka güvenliğini korumak için resmi rozetleri ve logoları dışarıda bırakın, yalnızca genel benzerlikleri kullanarak.",
+            "manufacturing_notes": "Yapışkan vinil üzerine çizilme ve suya dayanıklılık için laminat üst kaplama ile kiss-kesim; 200gsm mat üzerine poster; düzen, düşük maliyetli POD için toplu baskıya uygundur."
+          }
+        },
+        "template-world-cup-team-sticker-poster-argentina": {
+          "attributes": {
+            "product_type": "Etiket sayfası ve takım posteri",
+            "material": "Mat vinil etiket / poster stoğu",
+            "process": "Dijital baskı + yarım kesim",
+            "dimensions": "A3 poster · çeşitli kalıp kesim etiketler",
+            "print_spec": "300 DPI · CMYK · 3mm taşma payı",
+            "color_profile": "CMYK — Arjantin gök mavisi ve beyaz",
+            "use_case": "Taraftar ürünleri · maç günü dekoru · dizüstü bilgisayar / şişe etiketleri"
+          },
+          "vertical": {
+            "cultural_background": "Arjantin'in albiceleste kimliğine demirlemiş — gök mavisi ve beyaz çizgiler, güneş motifi ve milli takımın arkasındaki ateşli taraftar kültürü.",
+            "design_requirements": "Gök mavisi/beyaz çizgili sistem, cesur çizgi film oyuncu figürleri ve keskin yarım kesim kenarlar; marka tescili güvenliğini korumak için resmi armaları ve sponsor işaretlerini kullanmaktan kaçınarak genel benzerlikleri kullanın.",
+            "manufacturing_notes": "Koruyucu laminatlı yapışkan vinil üzerine yarım kesim; 200gsm mat poster; sayfa, verimli grup baskı-talep üzerine üretim için düzenlenmiştir."
+          }
+        }
       }
     }
   },

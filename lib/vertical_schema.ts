@@ -106,7 +106,7 @@ export const VERTICAL_SCHEMAS: Record<VerticalId, VerticalSchema> = {
       { key: "design_requirements", label: "Design requirements" },
       { key: "manufacturing_notes", label: "Manufacturing notes" },
     ],
-    topicMatch: ["merch", "packaging", "mockup", "sticker", "magnet", "giftbox", "gift-box",
+    topicMatch: ["merch", "packaging", "mockup", "mockups", "sticker", "stickers", "magnet", "giftbox", "gift-box",
       "pod", "print-on-demand", "cultural-creative", "wenchuang", "souvenir", "collectible"],
   },
 };

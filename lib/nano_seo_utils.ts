@@ -40,8 +40,17 @@ export type NanoLocaleMessageEntry = {
     // VerticalPageSchema v1 — Pillar 2 (ontology values → chip strip + schema.org)
     // and Pillar 1 authored knowledge slots. Both are flat string maps keyed by the
     // vertical schema's attribute/knowledge-slot keys. See lib/vertical_schema.ts.
+    // Template-level: applies to the template page AND (as a fallback) every example.
     attributes?: Record<string, unknown>;
     vertical?: Record<string, unknown>;
+    // Example-level overrides — same shape, keyed by example id (the image id,
+    // e.g. "template-mbti-nba-erling-haaland"). Merged over the template-level
+    // maps (example wins) by resolveExampleVerticalSections so a specific
+    // high-SEO example page can carry its own type code / knowledge.
+    examples?: Record<
+      string,
+      { attributes?: Record<string, unknown>; vertical?: Record<string, unknown> }
+    >;
   };
 };
 
@@ -413,18 +422,11 @@ export type ResolvedVerticalPage = {
  * the template is in no vertical OR has no authored vertical values yet (page renders
  * unchanged — safe to roll out incrementally over the pilot cohort).
  */
-export function resolveVerticalSections(
-  templateId: string,
-  topics: string[] | undefined | null,
-  nanoMessages: NanoMessagesDict | null | undefined
+function buildResolvedVertical(
+  schema: NonNullable<ReturnType<typeof resolveVerticalForTopics>>,
+  attrVals: Record<string, string>,
+  vertVals: Record<string, string>
 ): ResolvedVerticalPage | null {
-  const schema = resolveVerticalForTopics(topics);
-  if (!schema) return null;
-
-  const content = resolveLocaleMessage(templateId, nanoMessages)?.content;
-  const attrVals = (content?.attributes ?? {}) as Record<string, string>;
-  const vertVals = (content?.vertical ?? {}) as Record<string, string>;
-
   const attributes = schema.attributes
     .map((a) => ({ key: a.key, label: a.label, value: normalizeText(attrVals[a.key]), facet: !!a.facet }))
     .filter((a) => a.value);
@@ -435,6 +437,52 @@ export function resolveVerticalSections(
 
   if (attributes.length === 0 && knowledge.length === 0) return null;
   return { schema, attributes, knowledge };
+}
+
+export function resolveVerticalSections(
+  templateId: string,
+  topics: string[] | undefined | null,
+  nanoMessages: NanoMessagesDict | null | undefined
+): ResolvedVerticalPage | null {
+  const schema = resolveVerticalForTopics(topics);
+  if (!schema) return null;
+
+  const content = resolveLocaleMessage(templateId, nanoMessages)?.content;
+  return buildResolvedVertical(
+    schema,
+    (content?.attributes ?? {}) as Record<string, string>,
+    (content?.vertical ?? {}) as Record<string, string>
+  );
+}
+
+/**
+ * Example-page variant: same as resolveVerticalSections but merges the
+ * example-specific `content.examples[exampleId]` overrides ON TOP of the
+ * template-level maps (example wins). Lets a specific high-SEO example page
+ * (e.g. an MBTI character with strong impressions) carry its own type code and
+ * authored knowledge while unenriched examples of the same template render
+ * unchanged. Returns null when neither level has authored values.
+ */
+export function resolveExampleVerticalSections(
+  templateId: string,
+  exampleId: string,
+  topics: string[] | undefined | null,
+  nanoMessages: NanoMessagesDict | null | undefined
+): ResolvedVerticalPage | null {
+  const schema = resolveVerticalForTopics(topics);
+  if (!schema) return null;
+
+  const content = resolveLocaleMessage(templateId, nanoMessages)?.content;
+  const ex = content?.examples?.[exampleId];
+  const attrVals = {
+    ...((content?.attributes ?? {}) as Record<string, string>),
+    ...((ex?.attributes ?? {}) as Record<string, string>),
+  };
+  const vertVals = {
+    ...((content?.vertical ?? {}) as Record<string, string>),
+    ...((ex?.vertical ?? {}) as Record<string, string>),
+  };
+  return buildResolvedVertical(schema, attrVals, vertVals);
 }
 
 /**
@@ -511,6 +559,25 @@ export function normalizeNanoLocaleMessageEntry(
     return out;
   };
 
+  // Example-level overrides (content.examples[exampleId].{attributes,vertical}).
+  // Whitelisted through here so resolveExampleVerticalSections can read them.
+  const normExamples = (
+    v: unknown
+  ): Record<string, { attributes: Record<string, string>; vertical: Record<string, string> }> | undefined => {
+    if (!v || typeof v !== "object") return undefined;
+    const out: Record<string, { attributes: Record<string, string>; vertical: Record<string, string> }> = {};
+    for (const [id, ex] of Object.entries(v as Record<string, unknown>)) {
+      if (!ex || typeof ex !== "object") continue;
+      const e = ex as Record<string, unknown>;
+      const attributes = normStringMap(e.attributes);
+      const vertical = normStringMap(e.vertical);
+      if (Object.keys(attributes).length || Object.keys(vertical).length) {
+        out[id] = { attributes, vertical };
+      }
+    }
+    return Object.keys(out).length ? out : undefined;
+  };
+
   return {
     title: normalizeText(obj.title),
     category: normalizeText(obj.category),
@@ -524,6 +591,7 @@ export function normalizeNanoLocaleMessageEntry(
       },
       attributes: normStringMap(content.attributes),
       vertical: normStringMap(content.vertical),
+      examples: normExamples(content.examples),
     },
   };
 }

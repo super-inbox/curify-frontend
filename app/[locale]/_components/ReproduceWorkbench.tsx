@@ -49,7 +49,7 @@ export type WorkbenchCol1 =
       title: string;
       batchEnabled?: boolean;
     }
-  | { mode: "upload"; label?: string; hint?: string }
+  | { mode: "upload"; label?: string; hint?: string; hideUploadLabel?: boolean }
   // A finished project result opens in the workbench: column 1 shows the output,
   // column 3 (designer pack) operates on it, and column 2 is HIDDEN — a loaded
   // project carries no template/params to drive parametric regeneration (that's a
@@ -373,6 +373,7 @@ export default function ReproduceWorkbench({
                 variant="full"
                 required
                 label={col1.label ?? "Your image"}
+                hideLabel={col1.hideUploadLabel}
                 hint={col1.hint ?? "Upload the photo to transform — the template is applied to it."}
                 signInLabel="Sign in to upload your image"
                 onChange={(url) => {

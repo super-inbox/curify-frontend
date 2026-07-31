@@ -6,6 +6,7 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   filterSuggestions,
+  matchToolIntent,
   DEFAULT_FOCUS_SUGGESTIONS,
   TIER1_CHIP_SETS,
   ALL_SUGGESTIONS,
@@ -233,6 +234,10 @@ export default function SearchBar({ locale }: Props) {
     // Try to match a known topic/tool entry; fall back to search results page
     const exact = filterSuggestions(q, 1, localize)[0];
     const exactLocalized = exact ? localize(exact.slug)?.toLowerCase() : undefined;
+    // Confident tool-intent match for natural-language queries the results page
+    // can't serve (it only indexes image templates/inspirations), e.g.
+    // "add subtitles to a video" → /tools/bilingual-subtitles.
+    const toolIntent = matchToolIntent(q);
     if (exact && (exact.slug === q || exact.label.toLowerCase() === q || exactLocalized === q)) {
       if (exact.searchFallback) {
         router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
@@ -240,6 +245,8 @@ export default function SearchBar({ locale }: Props) {
       } else {
         router.push(exact.href ? `/${locale}${exact.href}` : `/${locale}/topics/${exact.slug}`);
       }
+    } else if (toolIntent?.href) {
+      router.push(`/${locale}${toolIntent.href}`);
     } else {
       router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
       router.refresh();

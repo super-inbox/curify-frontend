@@ -23,10 +23,18 @@ The doc is **not** GTM strategy — that lives in `docs/interconnection.md`. Thi
 | `vocab-scenes` | Bilingual Vocabulary Scene Posters (32 EN-ZH scenes) | `https://www.curify-ai.com/pack/vocab-scenes` | 32 | 20 MB | `packs/sku/vocab-scenes/pack-v1.zip` | 1 |
 | `travel-maps` | Cute Illustrated Travel Maps (34 city & country posters) | `https://www.curify-ai.com/pack/travel-maps` | 34 | 23 MB | `packs/sku/travel-maps/pack-v1.zip` | 1 |
 | `world-costumes` | World Traditional Costume Study Posters (46 prints) | `https://www.curify-ai.com/pack/world-costumes` | 46 | 21 MB | `packs/sku/world-costumes/pack-v1.zip` | 1 |
+| `cuisine-cards` | World Cuisine Bilingual Food Vocabulary Cards (30 posters) | `https://www.curify-ai.com/pack/cuisine-cards` | 30 | 26 MB | `packs/sku/cuisine-cards/pack-v1.zip` | 1 |
+| `zhenhuan-mbti` | Empresses in the Palace MBTI Character Posters (16 guofeng prints) | `https://www.curify-ai.com/pack/zhenhuan-mbti` | 16 | 27 MB | `packs/sku/zhenhuan-mbti/pack-v1.zip` | 1 |
+| `confused-chinese-words` | Easily Confused Chinese Characters Study Posters (24 cards) | `https://www.curify-ai.com/pack/confused-chinese-words` | 24 | 12 MB | `packs/sku/confused-chinese-words/pack-v1.zip` | 1 |
 
 All packs are `active: true`, `secret: null` (anonymous redemption), no `etsy_listing_url` set yet.
-**Backend-registry status (2026-07-28):** all 5 SKUs now present in BOTH registries; `phonics` +
-`wc-2026-squads` download-404 fixed (backend deploy required to go live), `hsk-reading` added new.
+**Backend-registry status (2026-07-29):** all 12 SKUs now present in BOTH registries; `cuisine-cards` +
+`zhenhuan-mbti` + `confused-chinese-words` added on backend branch `jwang/etsy-packs-batch3`
+(**backend deploy required to go live** — until deployed their `/etsy_packs/<sku>/download` will 404).
+Earlier: `phonics` + `wc-2026-squads` download-404 fixed, `hsk-reading` added new.
+`confused-chinese-words` has no gallery example, so its cover is a generated card uploaded to
+`gs://curify-static/images/nano_insp/pack-confused-chinese-words-cover.png`. All 3 use
+authored-verbatim CJK text (native-checked pinyin/tones) via `gemini-3-pro-image-preview`.
 The `hsk-reading` zip also bundles a print-ready 50-page PDF (`HSK2-Reading-Cards-50.pdf`) alongside
 the 50 card PNGs — the only pack with a PDF, so it was zipped manually then uploaded via `--skip-build`
 (the standard zipper is images-only).

@@ -68,6 +68,13 @@ export const TIER2_SUGGESTIONS: SuggestionEntry[] = [
   { slug: "trending",       label: "Trending",          emoji: "🔥", tier: 2, aliases: ["trend", "popular", "viral", "hot"] },
   { slug: "digital-canvas", label: "Digital Canvas",    emoji: "🎨", tier: 2, aliases: ["digital art", "canvas", "digital painting"] },
   { slug: "mockups",        label: "Mockups",           emoji: "📱", tier: 2, aliases: ["mockup", "mock-up", "prototype", "preview"] },
+  // `branding` slot — brand-identity design (VI systems, mascot design boards,
+  // logo application). Aliases route natural-language brand queries
+  // ("brand design", "brand identity", "logo design") to /topics/branding
+  // instead of the recall-high matcher, which returns a grab-bag on the bare
+  // token "design". Content tagged with the `branding` topic (see taxonomy
+  // tier3.product + the 4 template-brand-* templates).
+  { slug: "branding",       label: "Brand & Identity",  emoji: "™️", tier: 2, aliases: ["brand", "brand design", "brand identity", "logo", "logo design", "visual identity", "vi", "brand guidelines", "brand kit", "brand style guide", "brand board", "brand system", "品牌", "品牌设计", "vi设计", "logo设计"] },
   { slug: "guides",         label: "Guides",            emoji: "📋", tier: 2, aliases: ["how to", "how-to", "tutorial", "walkthrough", "guide"] },
   // `map` slot — content-shape topic (8 templates, 75 inspirations). Aliases
   // include multi-language map terms so `/search?q=<term>` redirects to
@@ -462,6 +469,58 @@ function fuzzyMatch(target: string, query: string, maxEdits = 1): boolean {
   return false;
 }
 
+/**
+ * True when `phrase` occurs inside the query `q` as a whole word / phrase
+ * (reverse of substring matching). This is what lets a natural-language query
+ * like "add subtitles to a video" resolve to the bilingual-subtitles tool: the
+ * alias "subtitles" is CONTAINED IN the query, rather than the query being a
+ * substring of the alias.
+ *
+ * ASCII phrases are matched on word boundaries so "dub" does NOT fire on
+ * "dublin travel" and "srt" does NOT fire on "dessert". Non-ASCII phrases
+ * (CJK etc. — no word chars to bound) use plain containment, which is safe
+ * because CJK has no intra-word splitting. Phrases shorter than 3 chars are
+ * ignored — too generic to be a reliable intent signal inside a longer query.
+ */
+const PHRASE_IN_QUERY_MIN = 3;
+function phraseInQuery(phrase: string, q: string): boolean {
+  if (phrase.length < PHRASE_IN_QUERY_MIN) return false;
+  if (/^[\x00-\x7F]+$/.test(phrase)) {
+    const esc = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`(?:^|\\W)${esc}(?:\\W|$)`).test(q);
+  }
+  return q.includes(phrase);
+}
+
+/**
+ * Resolve a natural-language query to a concrete TOOL destination when the
+ * query clearly names one (a specific alias/label present as a whole word),
+ * e.g. "add subtitles to a video" → bilingual-subtitles. Used on Enter/submit
+ * so a phrase query routes to the tool page instead of dead-ending on the
+ * image-template results page. Bounded to href-bearing tools; the specificity
+ * floor (ASCII aliases must be ≥6 chars) keeps generic words like "video" from
+ * hijacking navigation. Returns the tool whose LONGEST matching phrase wins.
+ */
+const TOOL_INTENT_MIN_ASCII = 6;
+export function matchToolIntent(query: string): SuggestionEntry | null {
+  const q = query.toLowerCase().trim();
+  if (!q) return null;
+  let best: SuggestionEntry | null = null;
+  let bestLen = 0;
+  for (const t of TOOL_SUGGESTIONS) {
+    if (!t.href || t.searchFallback) continue;
+    const phrases = [t.label.toLowerCase(), ...(t.aliases ?? []).map((a) => a.toLowerCase())];
+    for (const p of phrases) {
+      const specific = /^[\x00-\x7F]+$/.test(p) ? p.length >= TOOL_INTENT_MIN_ASCII : p.length >= 2;
+      if (specific && p.length > bestLen && phraseInQuery(p, q)) {
+        best = t;
+        bestLen = p.length;
+      }
+    }
+  }
+  return best;
+}
+
 // ── Public API ──────────────────────────────────────────────────────────────
 
 /**
@@ -518,6 +577,26 @@ export function filterSuggestions(
         if (a.includes(q)) {
           score = Math.max(score, 60);
           pos = Math.min(pos, a.indexOf(q));
+          break;
+        }
+      }
+    }
+
+    // Reverse containment — the query is a natural-language phrase that
+    // CONTAINS an alias/label as a whole word (e.g. "add subtitles to a
+    // video" → bilingual-subtitles, "how do i dub a video" → video-dubbing).
+    // Scored just below alias-substring so short/precise queries still win.
+    // Only fires for multi-word queries so single-token lookups keep their
+    // existing exact/substring behavior.
+    if (score < 60 && /\s/.test(q)) {
+      const phrases = labelLower.length >= PHRASE_IN_QUERY_MIN
+        ? [labelLower, ...aliases]
+        : aliases;
+      for (const p of phrases) {
+        if (phraseInQuery(p, q)) {
+          score = Math.max(score, 58);
+          const at = q.indexOf(p);
+          pos = Math.min(pos, at >= 0 ? at : 0);
           break;
         }
       }
