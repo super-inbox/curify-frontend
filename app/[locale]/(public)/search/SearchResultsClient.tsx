@@ -412,6 +412,7 @@ export default function SearchResultsClient({
                 locale={locale}
                 maxRows={3}
                 showCaption
+                desktopOpensExample
               />
             </section>
           )}
