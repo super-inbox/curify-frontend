@@ -436,6 +436,25 @@
           "Crea un cartel sobre el término solar 'Shuangjiang': tres fenómenos, alimentos representativos, costumbres y agricultura, consejos de salud, ilustración retro + módulos de información, formato A3 vertical.",
           "Genera una infografía sobre el término solar 'Xiazhi': información de cambio de término, cambios en los fenómenos, connotaciones culturales, sugerencias de alimentación y vida, formato A3 vertical de alta densidad pero legible."
         ]
+      },
+      "examples": {
+        "template-solar-term-xiaoman": {
+          "attributes": {
+            "grade_band": "Primaria–Media",
+            "age_range": "7–13",
+            "subject": "Cultura china · 24 términos solares (节气)",
+            "skill": "Alfabetización cultural · ciencia estacional · vocabulario",
+            "resource_type": "Tarjeta cultural ilustrada",
+            "duration_min": "8",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe (chino + inglés)"
+          },
+          "vertical": {
+            "learning_objective": "Comprender Xiaoman (小满), el 8º de los 24 términos solares de China, y lo que significa en el calendario agrícola y la vida cotidiana.",
+            "includes": "El nombre del término y su pinyin, su período de fecha, la fenología (los granos de verano comienzan a engordar), costumbres y alimentos de temporada, y una ilustración temática.",
+            "background": "Xiaoman significa 'Brotos de Grano' o 'Pequeña Plenitud' — alrededor del 21 de mayo, cuando los granos de verano comienzan a llenarse pero aún no están maduros. Capta el ideal chino de abundancia gradual y sin prisas, en lugar de un pico repentino."
+          }
+        }
       }
     }
   },
@@ -744,6 +763,25 @@
           "Crea 'MBTI en situaciones de reunión': el conjunto de personajes son emprendedores de IA, diferentes personalidades muestran diferentes estados en la sala de reuniones discutiendo la dirección del producto, información clara, comparación de personajes marcada, fuerte sensación de cartel, formato 3:4.",
           "Genera un tema de 'MBTI si viviera en los Tres Reinos': mapeando personajes de los Tres Reinos a diferentes personalidades de MBTI, mostrando sus diferencias de carácter en la escena de discusión de estrategias en el campamento militar, estilo de ilustración de personajes históricos de alta calidad, formato 3:4."
         ]
+      },
+      "examples": {
+        "template-mbti-generic-naruto-narutouzumaki": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "El Activista",
+            "dimensions": "Extravertido · Intuitivo · Sentimental · Perceptivo",
+            "subject_kind": "Ficha de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Naruto Uzumaki es un ENFP de manual: implacablemente optimista, impulsado por los lazos humanos y un sueño desmedido. Se mueve por la posibilidad y la emoción en lugar de las reglas, persiguiendo su camino ninja con energía contagiosa.",
+            "strengths": "Entusiasmo contagioso, empatía profunda y la resiliencia para fallar públicamente y levantarse. Su Intuición Extravertida dominante le permite ver potencial en personas que todos los demás han descartado, y su don para reunir aliados es su verdadero superpoder.",
+            "weaknesses": "Impulsivo y fácilmente distraído, le cuesta el estudio rutinario, la paciencia y el trabajo detallado (lo básico de la Academia). Su Sentimiento Introvertido auxiliar le hace tomar el rechazo con dificultad y actuar antes de pensar.",
+            "communication": "Ruidoso, cálido y persuasivo — lidera con el corazón y la convicción personal, conquistando a la gente una conversación honesta a la vez en lugar de a través de la estrategia.",
+            "relationships": "Ferozmente leal y perdonador; valora la conexión por encima de casi todo y perseguirá a un rival implacablemente para traerlo de vuelta. Los lazos son su motivación central.",
+            "career": "Motivador nato y líder de primera línea — el camino hacia Hokage encaja con el ENFP que inspira a una comunidad. Análogos en el mundo real: entrenamiento, enseñanza, activismo, capitanía de equipo.",
+            "compatibility": "Se equilibra bien con tipos aterrizados y decididos (INTJ / ISTJ) que le proporcionan la disciplina que le falta — reflejado en su dinámica de por vida con Sasuke."
+          }
+        }
       }
     }
   },
@@ -900,6 +938,42 @@
           "Crea una 'Tarjeta de Personalidad de Naruto' para Itachi Uchiha con tipificación INFJ, incluyendo fondo temático del clan, desglose de funciones cognitivas, rasgos clave y elementos narrativos simbólicos, diseño limpio de infografía anime, 3:4.",
           "Genera una 'Infografía MBTI de Naruto' para Naruto Uzumaki con personalidad ENFP, presentando pose de acción dinámica, efectos de chakra brillantes, rasgos de personalidad, funciones cognitivas y resumen de identidad motivacional, estilo anime vibrante, 3:4."
         ]
+      },
+      "examples": {
+        "template-mbti-naruto-Neji-Hyuga": {
+          "attributes": {
+            "type_code": "INTJ",
+            "type_nickname": "El Arquitecto",
+            "dimensions": "Introvertido · Intuitivo · Pensador · Juzgador",
+            "subject_kind": "Ficha de personalidad del personaje"
+          },
+          "vertical": {
+            "traits": "Neji es un estratega altamente analítico, independiente y determinado, impulsado por una fuerte visión interna, inicialmente enfocado en la naturaleza inalterable del destino dentro de su clan.",
+            "strengths": "Su excepcional destreza táctica, su implacable búsqueda de la maestría y su inquebrantable convicción le permiten anticipar a los oponentes y ejecutar estrategias precisas y eficientes.",
+            "weaknesses": "Su rígida adhesión a su lógica interna y a sus creencias pasadas, junto con un fatalismo arraigado, a menudo lo llevaba a la arrogancia y a la dificultad para aceptar perspectivas alternativas o información sensorial inmediata.",
+            "communication": "Neji se comunica de manera directa, lógica y a menudo contundente, valorando la eficiencia y la verdad objetiva por encima de la complacencia emocional, apareciendo con frecuencia distante o crítico.",
+            "relationships": "Forma lazos profundos, aunque a menudo privados, basados en un propósito compartido y respeto por la competencia. Inicialmente luchó con la empatía, pero llegó a proteger ferozmente a quienes valoraba.",
+            "career": "Sobresalió en roles que exigían planificación estratégica, ejecución precisa y dedicación intensa, como un líder shinobi de alto rango o un experto táctico especializado dentro de la aldea.",
+            "compatibility": "Más adecuado para parejas que aprecian su profundidad y franqueza, ofreciendo calidez emocional y comprensión sin exigir una expresión abierta constante, a menudo ENFP o ESFP."
+          }
+        },
+        "template-mbti-naruto-sasuke": {
+          "attributes": {
+            "type_code": "INTJ",
+            "type_nickname": "El Arquitecto",
+            "dimensions": "Introvertido · Intuitivo · Pensador · Juzgador",
+            "subject_kind": "Ficha de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Sasuke es un visionario impulsado y con mentalidad estratégica, caracterizado por un intenso enfoque en objetivos a largo plazo y una profunda independencia, a menudo luciendo melancólico.",
+            "strengths": "Su fuerza primordial radica en la previsión estratégica y la planificación meticulosa, unida a una resolución inquebrantable y una formidable capacidad para ejecutar objetivos complejos a largo plazo.",
+            "weaknesses": "El profundo aislamiento emocional y la visión de túnel de Sasuke frecuentemente llevan a una toma de decisiones despiadada, alejando a los demás y obstaculizando su capacidad para empatizar o considerar los impactos emocionales inmediatos.",
+            "communication": "La comunicación es directa, lógica y extremadamente concisa, a menudo pareciendo brusca o despectiva, ya que prioriza la información objetiva sobre las formalidades sociales o la expresión emocional.",
+            "relationships": "Forma lazos intensos, aunque pocos, profundamente leales, a menudo luchando por articular afecto y frecuentemente alejando a sus seres queridos debido a su enfoque singular y naturaleza independiente.",
+            "career": "Los roles ideales aprovechan su brillantez estratégica y ejecución decisiva, como estratega maestro, líder revolucionario, o cualquier puesto que requiera el diseño arquitectónico a largo plazo de sistemas complejos.",
+            "compatibility": "La mejor compatibilidad surge con tipos que ofrecen inteligencia emocional complementaria o energía externa, como la visión entusiasta de un ENFP o el dinamismo estructurado de un ENTJ."
+          }
+        }
       }
     }
   },
@@ -924,6 +998,93 @@
           "Crea una 'Tarjeta de Análisis de Personalidad de Yellowstone' para Beth Dutton con tipificación INTJ, incluyendo rasgos agudos orientados a los negocios, desglose de funciones cognitivas, Eneagrama 8w7, e imágenes simbólicas del oeste que reflejan poder y control, diseño infográfico limpio, 3:4.",
           "Genera una 'Infografía MBTI de Yellowstone' para Rip Wheeler con personalidad ISTP, presentando una estética de rancho robusta, funciones cognitivas, rasgos centrales (leal, duro, silencioso, valiente) y un resumen de identidad fundamentado, estilo western cinematográfico, 3:4."
         ]
+      },
+      "examples": {
+        "template-mbti-yellowstone-johndutton": {
+          "attributes": {
+            "type_code": "ISTJ",
+            "type_nickname": "El Logista",
+            "dimensions": "Introvertido · Sensorial · Pensador · Juicioso",
+            "subject_kind": "Ficha de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "John Dutton se perfila como un ISTJ: un guardián leal que mide cada decisión contra la tradición, el legado y la supervivencia del rancho. Reservado y poco sentimental en la superficie, está gobernado por un férreo sentido de la obligación.",
+            "strengths": "Lealtad inquebrantable a la tierra y la familia, paciencia estratégica a largo plazo y la disposición a tomar decisiones difíciles y desagradables. Su Sensación Introvertida dominante le otorga una profunda memoria institucional de cómo funciona el valle.",
+            "weaknesses": "Rígido, controlador y lento para confiar en el cambio; puede sacrificar relaciones (y la ética) en el altar del rancho. Su Intuición Extravertida inferior lo deja desprevenido ante nuevos tipos de amenazas.",
+            "communication": "Lacónico y declarativo — se comunica a través de decisiones y consecuencias más que con palabras, esperando que los demás interpreten el estándar que establece.",
+            "relationships": "Protector pero emocionalmente reservado; su amor se expresa como provisión y defensa en lugar de calidez, lo que genera tensión con sus hijos.",
+            "career": "Administrador / ejecutivo de una institución de legado — ranchero, patriarca y reticente operador político que defiende un estilo de vida.",
+            "compatibility": "Estabilizado por tipos leales y orientados a la acción (ISTP / ESTP como sus peones de rancho) y desafiado por estrategas intuitivos que amenazan su orden establecido."
+          }
+        },
+        "template-mbti-yellowstone-bethdutton": {
+          "attributes": {
+            "type_code": "ESTJ",
+            "type_nickname": "La Ejecutiva",
+            "dimensions": "Extravertida · Sensorial · Pensadora · Juzgadora",
+            "subject_kind": "Tarjeta de personalidad del personaje"
+          },
+          "vertical": {
+            "traits": "Formidable y asertiva, Beth es una protectora ferozmente leal, que opera con eficiencia implacable y un compromiso inquebrantable con el legado de su familia y los resultados prácticos.",
+            "strengths": "Su decisión inigualable, implacable estrategia y lealtad inquebrantable la convierten en una formidable protectora del rancho y los intereses familiares.",
+            "weaknesses": "Los puntos ciegos significativos de Beth incluyen una intensa volatilidad emocional, impulsividad extrema y una profunda lucha con la vulnerabilidad o el procesamiento constructivo de sus sentimientos personales más profundos.",
+            "communication": "Se comunica con una franqueza inflexible, empleando a menudo un lenguaje contundente, confrontativo y profundamente sarcástico para afirmar su dominio o ir al grano de cualquier problema.",
+            "relationships": "Beth forma lazos intensamente leales y protectores con sus pocos elegidos, como Rip y John, aunque sus luchas con la vulnerabilidad a menudo se manifiestan como una devoción exigente pero ferozmente dedicada.",
+            "career": "Sobresaliendo en finanzas corporativas de alto riesgo, Beth prospera en roles que exigen una estrategia implacable, liderazgo decisivo y resultados tangibles, perfectamente adecuada para el poder a nivel ejecutivo.",
+            "compatibility": "Beth a menudo conecta mejor con tipos arraigados y leales que pueden apreciar su fuerte voluntad y ofrecer un apoyo inquebrantable, como los ISTP o ISFP, que proporcionan una estabilidad complementaria."
+          }
+        },
+        "template-mbti-yellowstone-lloyd-pierce": {
+          "attributes": {
+            "type_code": "ISTP",
+            "type_nickname": "El Virtuoso",
+            "dimensions": "Introvertido · Sensorial · Pensador · Perceptivo",
+            "subject_kind": "Ficha de personalidad del personaje"
+          },
+          "vertical": {
+            "traits": "Lloyd es un peón de rancho callado, observador y fieramente leal. Encarna la independencia práctica y aborda los desafíos con precisión lógica y competencia práctica.",
+            "strengths": "Sus mayores fortalezas residen en sus inigualables habilidades prácticas, rápida resolución de problemas y dedicación inquebrantable al rancho Dutton. Sobresale en tareas físicas y gestión de crisis.",
+            "weaknesses": "Lloyd tiene dificultades para expresar emociones y navegar por dinámicas sociales complejas, lo que a menudo lleva a malentendidos o conflictos internos. Su franqueza a veces puede causar conflictos de forma inadvertida.",
+            "communication": "Se comunica de forma directa y concisa, prefiriendo la acción a las palabras. Lloyd a menudo observa en silencio, hablando solo cuando es necesario para transmitir información esencial o consejos prácticos.",
+            "relationships": "Lloyd forma lazos profundos e tácitos a través de experiencias compartidas y lealtad, priorizando los hechos sobre las muestras emocionales. Muestra afecto a través de una presencia constante y apoyo práctico.",
+            "career": "Ideal en roles que requieren resolución práctica de problemas, dominio de herramientas e independencia, como peón de rancho, mecánico o artesano. Prospera en entornos prácticos y orientados a la acción.",
+            "compatibility": "A menudo se conecta bien con tipos que aprecian la competencia práctica y la franqueza, encontrando comprensión con otros SPs o SJs estables y con los pies en la tierra."
+          }
+        },
+        "template-mbti-yellowstone-jamie-dutton": {
+          "attributes": {
+            "type_code": "INTP",
+            "type_nickname": "El Lógico",
+            "dimensions": "Introvertido · Intuitivo · Pensador · Perceptivo",
+            "subject_kind": "Tarjeta de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Jamie es un pensador profundamente analítico e independiente, a menudo emocionalmente desapegado. Busca incansablemente la verdad y soluciones lógicas, luchando con la irracionalidad de la conexión humana.",
+            "strengths": "Su intelecto poderoso y mente legal estratégica son inigualables. Jamie destaca en la disección de problemas complejos y la elaboración de soluciones intrincadas y legalmente sólidas.",
+            "weaknesses": "Emocionalmente atrofiado, Jamie a menudo lucha con la autoestima y la expresión de sentimientos genuinos, lo que lo hace susceptible a la manipulación y a una profunda duda de sí mismo. Su enfoque lógico a menudo choca con las necesidades emocionales de los demás.",
+            "communication": "La comunicación de Jamie es directa, fáctica y legalmente precisa, a menudo carente de matices emocionales o calidez. Prioriza la verdad objetiva sobre las formalidades sociales, lo que lleva a malentendidos.",
+            "relationships": "Anhela profundamente la aceptación y la conexión intelectual, pero lucha con la intimidad emocional. Las relaciones de Jamie son a menudo transaccionales o tensas debido a su dificultad para expresar afecto.",
+            "career": "Adecuado para roles que exigen agudeza legal y pensamiento estratégico, como Fiscal General o un asesor de alto nivel. Prospera donde el rigor intelectual es primordial, menos en el liderazgo empático.",
+            "compatibility": "Necesita socios pacientes y comprensivos que valoren su intelecto y respeten sus límites emocionales. La compatibilidad a menudo reside en tipos que aprecian la profundidad lógica y ofrecen apoyo emocional estable."
+          }
+        },
+        "template-mbti-yellowstone-ripwheeler": {
+          "attributes": {
+            "type_code": "ISTP",
+            "type_nickname": "El Virtuoso",
+            "dimensions": "Introvertido · Sensorial · Racional · Perceptivo",
+            "subject_kind": "Tarjeta de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Rip es un pragmático estoico y observador, profundamente leal y ferozmente protector de sus seres queridos. Prefiere la acción y las soluciones prácticas a la discusión abstracta.",
+            "strengths": "Sus mayores fortalezas residen en su excepcional capacidad para resolver problemas, su acción decisiva y su lealtad inquebrantable. Rip sobresale manejando amenazas inmediatas y tangibles con eficiencia brutal.",
+            "weaknesses": "Rip tiene dificultades para verbalizar emociones profundas y para navegar dinámicas sociales complejas, a menudo pareciendo distante o demasiado brusco debido a su Sentimiento Extrovertido inferior.",
+            "communication": "Su comunicación es directa, escasa y orientada a la acción; Rip habla solo cuando es necesario, prefiriendo demostrar sus intenciones a través de hechos en lugar de palabras extensas.",
+            "relationships": "Rip establece vínculos a través de experiencias compartidas y confianza inquebrantable, mostrando afecto profundo mediante actos de servicio y protección en lugar de declaraciones verbales. Su lealtad es absoluta una vez ganada.",
+            "career": "Ideal en roles que requieren resolución práctica de problemas, independencia y acción inmediata, como un ejecutor o capataz de rancho. Prospera en entornos prácticos y de alto riesgo.",
+            "compatibility": "Rip a menudo encuentra compatibilidad con tipos que aprecian su franqueza y lealtad, valorando la acción sobre las palabras, y que pueden navegar su reserva emocional con comprensión."
+          }
+        }
       }
     }
   },
@@ -971,6 +1132,178 @@
           "Genera una tarjeta MBTI NBA para Stephen Curry: ENFP – 'EL MAGO', número de camiseta 30, rasgos Rey del Rango, Leyenda de 3 Puntos, Actuador Clutch, Jugador de Equipo.",
           "Crea una tarjeta MBTI de Michael Jordan: ESTJ – 'EL GOAT', número de camiseta 23, rasgos Bestia Competitiva, 6× Campeón de la NBA, Air Jordan, Ícono Global."
         ]
+      },
+      "examples": {
+        "template-mbti-nba-erling-haaland": {
+          "attributes": {
+            "type_code": "ISTP",
+            "type_nickname": "El Virtuoso",
+            "dimensions": "Introvertido · Sensitivo · Pensador · Perceptivo",
+            "subject_kind": "Tarjeta de personalidad del personaje"
+          },
+          "vertical": {
+            "traits": "Erling Haaland es comúnmente catalogado por los fans como un ISTP — un rematador económico, frío como el hielo, que dice poco y actúa con una eficiencia despiadada. En el campo, lee el espacio en tiempo real y golpea con un movimiento mínimo y sin desperdicio.",
+            "strengths": "Compostura de élite bajo presión, precisión mecánica y un enfoque imperturbable en el presente. La combinación de Pensamiento Introvertido + Sensación Extravertida del ISTP encaja con un delantero que resuelve el área como un problema de física.",
+            "weaknesses": "Puede parecer distante o brusco fuera del campo y desinteresado en partes del juego que no exigen su especialidad; bajo apetito por la ceremonia y las actuaciones mediáticas.",
+            "communication": "Escasa y seca — deja que el rendimiento hable por sí mismo, con humor inexpresivo cuando habla.",
+            "relationships": "Selectivamente cercanos; mantiene un círculo pequeño y de confianza, y es leal pero reservado al respecto.",
+            "career": "Ejecutor especialista — el arquetipo sobresale donde una única acción de alta habilidad y alto riesgo decide el resultado (atletismo de élite, oficios de precisión).",
+            "compatibility": "Encaja con compañeros de equipo expresivos y con visión de conjunto que crean las oportunidades que su rol especialista convierte."
+          }
+        },
+        "template-mbti-nba-jude": {
+          "attributes": {
+            "type_code": "ENTJ",
+            "type_nickname": "El Comandante",
+            "dimensions": "Extrovertido · Intuitivo · Pensador · Juzgador",
+            "subject_kind": "Ficha de personalidad del personaje"
+          },
+          "vertical": {
+            "traits": "Jude Bellingham es comúnmente catalogado como un ENTJ — un competidor dominante y estratégico que organiza el juego a su alrededor y prospera en los escenarios más grandes. Lidera por voluntad, establece el estándar y espera que todos lo cumplan.",
+            "strengths": "Liderazgo decisivo, implacable impulso competitivo y una visión táctica inusual para su edad. El Pensamiento Extrovertido + Intuición Introvertida del ENTJ encaja con un mediocampista que dicta el ritmo y dirige los partidos hacia un plan.",
+            "weaknesses": "Esa intensidad puede interpretarse como impaciencia o fricción con la autoridad, y sus altos estándares pueden ser exigentes para sus compañeros y para sí mismo.",
+            "communication": "Directo, asertivo y vocal — establece el tono emocional y táctico y mantiene al grupo comprometido con él.",
+            "relationships": "Magnético y ferozmente leal a su círculo; lidera socialmente y construye fuertes lazos en el vestuario.",
+            "career": "Líder y capitán nato — el arquetipo ENTJ comanda equipos y organizaciones cuando el resultado está en juego.",
+            "compatibility": "Complementa a rematadores especialistas y serenos (ISTP) y a organizadores estables que ejecutan la visión que él establece."
+          }
+        },
+        "template-mbti-nba-lamine-yamal": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "El Animador",
+            "dimensions": "Extravertido · Sensorial · Emocional · Perceptivo",
+            "subject_kind": "Ficha de personalidad del personaje"
+          },
+          "vertical": {
+            "traits": "Lamine Yamal es comúnmente tipificado por los fans como un ESFP — un talento expresivo e instintivo que juega con estilo y alegría, prosperando con la energía del público y la libertad de improvisar uno contra uno.",
+            "strengths": "Improvisación deslumbrante, audacia en espacios reducidos y el amor de un animador por el momento. La Sensación Extravertida le otorga un control de élite del balón y creatividad en fracciones de segundo.",
+            "weaknesses": "La consistencia y la disciplina defensiva pueden quedar por detrás de los momentos destacados; el enfoque en el presente del ESFP puede resultar en un producto final inconsistente hasta que madure.",
+            "communication": "Juguetón y demostrativo — celebra abiertamente y conecta con fans y compañeros a través de la personalidad, no de la reserva.",
+            "relationships": "Cálido y popular en el grupo; se alimenta de ser apreciado y del entusiasmo del público.",
+            "career": "Artista / creador — el rol de estilo (extremo, animador) que recompensa la espontaneidad y el espectáculo.",
+            "compatibility": "Mejor junto a mentes estructuradas y tácticas que le brinden a su improvisación una plataforma estable desde la que brillar."
+          }
+        },
+        "template-mbti-nba-lionelmessi": {
+          "attributes": {
+            "type_code": "ISFP",
+            "type_nickname": "El Aventurero",
+            "dimensions": "Introvertido · Sensorial · Sentimental · Perceptivo",
+            "subject_kind": "Tarjeta de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Lionel Messi a menudo es clasificado como un ISFP, caracterizado por una intensidad tranquila, valores personales profundos y una conexión profunda con su oficio. Se expresa principalmente a través de la acción en lugar de las palabras.",
+            "strengths": "Sus fortalezas ISFP se manifiestan en su arte y adaptabilidad inigualables en el campo, reaccionando instintivamente a las oportunidades en tiempo real. La profunda motivación interna de Messi alimenta su enfoque singular y su pasión auténtica por el juego.",
+            "weaknesses": "Las debilidades ISFP de Messi podrían incluir una tendencia a la introspección, lo que podría hacerlo menos expresivo como líder o comunicador fuera del campo. También puede tener dificultades con las críticas externas.",
+            "communication": "Su estilo de comunicación es predominantemente no verbal, a menudo transmitiendo su mensaje a través de su juego excepcional y ética de trabajo. Messi suele expresarse mediante acciones apasionadas en lugar de extensas declaraciones verbales.",
+            "relationships": "Messi probablemente construye lazos fuertes y auténticos con quienes respetan su espacio personal y sus valores. Prospera en relaciones de apoyo donde la lealtad y el entendimiento mutuo son primordiales, a menudo prefiriendo un círculo íntimo.",
+            "career": "El impulso del ISFP por la expresión personal y la maestría se alinea perfectamente con la carrera de Messi como futbolista de élite, permitiéndole demostrar su visión y habilidad únicas en un entorno dinámico y sensorial.",
+            "compatibility": "Los ISFP a menudo encuentran compatibilidad con ESFJ o ESTJ, quienes pueden proporcionar apoyo práctico y una estructura que complementa el enfoque del Aventurero en los valores personales y la acción espontánea."
+          }
+        },
+        "template-mbti-nba-kylianmbappe": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "El Animador",
+            "dimensions": "Extravertido · Sensorial · Emocional · Perceptivo",
+            "subject_kind": "Ficha de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Kylian Mbappé, a menudo clasificado por los fans como ESFP, muestra una presencia dinámica y carismática, prosperando en el centro de atención con un enfoque enérgico y orientado a la acción tanto dentro como fuera del campo.",
+            "strengths": "Su excepcional conciencia situacional y reflejos ultrarrápidos permiten una increíble adaptabilidad en el campo y un rendimiento explosivo, cautivando al público con un talento natural y una confianza inquebrantable bajo presión.",
+            "weaknesses": "Mbappé puede ocasionalmente mostrar impulsividad, priorizando la gratificación inmediata o la acción sobre la planificación estratégica a largo plazo, potencialmente luchando con discusiones abstractas orientadas al futuro no basadas en la realidad presente.",
+            "communication": "Se comunica directa y expresivamente, a menudo a través de acciones dinámicas y entrevistas sinceras, prefiriendo discusiones tangibles y aprovechando su potente presencia física para transmitir mensajes de manera efectiva.",
+            "relationships": "Mbappé establece vínculos a través de experiencias compartidas y el compromiso activo, fomentando una vibrante camaradería dentro de su equipo mientras conecta auténticamente con los fans a través de su persona pública accesible y carismática.",
+            "career": "Una carrera que exija acción constante, un rendimiento dinámico y un compromiso público significativo, como los deportes profesionales de élite, se adapta perfectamente a su necesidad de emoción, impacto inmediato y un entorno vibrante y cambiante.",
+            "compatibility": "A menudo se lleva bien con tipos que proporcionan estructura y estabilidad complementarias, o igualmente, con individuos que comparten un similar entusiasmo por la vida y prosperan en experiencias activas del momento presente."
+          }
+        },
+        "template-mbti-nba-cristianoronaldo": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "El Animador",
+            "dimensions": "Extravertido · Sensorial · Sentimental · Perceptivo",
+            "subject_kind": "Tarjeta de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Cristiano Ronaldo es comúnmente catalogado por los fans como un ESFP, encarnando una personalidad enérgica y carismática que prospera en el centro de atención y sobresale cautivando al público con sus actuaciones dinámicas y pasión.",
+            "strengths": "Su atletismo inigualable y su espíritu competitivo, impulsados por una profunda autoconfianza y la capacidad de rendir espectacularmente bajo presión, son fortalezas clave que le permiten dominar en el campo.",
+            "weaknesses": "Pueden surgir la impulsividad ocasional y una fuerte reacción a los desaires percibidos, a veces eclipsando la estrategia a largo plazo en favor de respuestas emocionales inmediatas e intensas durante los momentos competitivos.",
+            "communication": "Cristiano se comunica de manera directa y expresiva, a menudo a través de sus potentes acciones en el campo y sus apasionadas muestras de emoción, sin dejar dudas sobre sus intenciones o determinación.",
+            "relationships": "Forma lazos leales basados en la pasión compartida y el respeto mutuo, inspirando a quienes están en su círculo íntimo mientras mantiene una persona pública que a veces puede parecer más reservada que su yo privado.",
+            "career": "Como ESFP, su carrera como futbolista profesional es ideal, lo que le permite rendir al más alto nivel, entretener a millones y prosperar en un entorno intensamente competitivo y orientado a resultados.",
+            "compatibility": "A menudo encaja bien con tipos sensatos y confiables que aprecian su energía dinámica y proporcionan una base estable, y aquellos que pueden ofrecer una perspectiva estratégica complementaria."
+          }
+        },
+        "template-mbti-nba-alleniverson": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "El Activista",
+            "dimensions": "Extravertido · Intuitivo · Sentimental · Perceptivo",
+            "subject_kind": "Tarjeta de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Allen Iverson es comúnmente clasificado por los fans como un ENFP, caracterizado por un espíritu enérgico y espontáneo, y un enfoque de la vida y el deporte profundamente auténtico y guiado por valores. Encarnó una individualidad feroz y un estilo visionario.",
+            "strengths": "Su creatividad inigualable en la cancha y su capacidad para inspirar a sus compañeros de equipo fueron fortalezas clave, impulsadas por su intuición natural y su apasionada convicción. La autenticidad de Iverson y su búsqueda intrépida de la victoria eran contagiosas.",
+            "weaknesses": "Iverson a veces luchó con las estructuras y expectativas tradicionales, priorizando sus valores personales y su independencia sobre la disciplina convencional. Su enfoque en el panorama general podía llevar ocasionalmente a pasar por alto detalles minúsculos.",
+            "communication": "Directo y apasionado, Iverson se comunicaba desde el corazón, a menudo utilizando un lenguaje expresivo para transmitir sus fuertes convicciones e inspirar a quienes lo rodeaban. Valoraba la autenticidad y la franqueza en las interacciones.",
+            "relationships": "Formó lazos intensamente leales y profundos, valorando la autenticidad y el respeto mutuo por encima de todo, a menudo visto como un defensor de sus amigos y compañeros de equipo. La conexión de Iverson con su ciudad y sus fans era profunda y personal.",
+            "career": "Destacando en roles que exigían innovación, liderazgo y un toque personal, la carrera de Iverson como un innovador jugador de la NBA utilizó perfectamente su genio espontáneo y su capacidad para conectar con una base de fans. Prosperó donde se celebraba la individualidad.",
+            "compatibility": "Iverson a menudo encontró una fuerte afinidad con tipos que apreciaban su autenticidad y visión, como INFJ o INTJ, quienes podían proporcionar una conexión estable y profunda. También se llevaba bien con otros tipos expresivos."
+          }
+        },
+        "template-mbti-nba-nikola-jokic": {
+          "attributes": {
+            "type_code": "INFP",
+            "type_nickname": "El Mediador",
+            "dimensions": "Introvertido · Intuitivo · Sentimental · Perceptivo",
+            "subject_kind": "Ficha de personalidad del personaje"
+          },
+          "vertical": {
+            "traits": "Comúnmente categorizado por los fans como un INFP, Jokic encarna una naturaleza tranquila e introspectiva con una fuerte brújula moral interna. A menudo parece imperturbable y humilde, priorizando la autenticidad sobre la validación externa.",
+            "strengths": "Su función dominante de Sentimiento Introvertido impulsa su visión de juego única e intuitiva y su profundo compromiso con la armonía del equipo. Esto le permite adaptarse creativamente, encontrando soluciones poco convencionales en la cancha.",
+            "weaknesses": "Su función inferior de Pensamiento Extravertido puede manifestarse como una percibida falta de urgencia externa o dificultad con la confrontación directa e impersonal. Puede tener problemas con las críticas estructuradas, prefiriendo evitar el conflicto.",
+            "communication": "Jokic se comunica con una honestidad discreta y un enfoque suave, a menudo indirecto. Valora la conexión genuina sobre el intercambio formal, expresándose reflexivamente en lugar de con declaraciones audaces.",
+            "relationships": "Forma lazos profundos y leales basados en el respeto mutuo y los valores compartidos, valorando la autenticidad y la camaradería tranquila sobre las interacciones superficiales. La familia, los compañeros de equipo y los amigos de confianza son fundamentales.",
+            "career": "Su trayectoria profesional ideal, ejemplificada por su rol, permite la libertad creativa, la autonomía y la búsqueda de un objetivo de equipo superior. Prospera donde su visión única sirve a un propósito colectivo significativo.",
+            "compatibility": "Como un INFP, Nikola a menudo encuentra armonía con tipos ESTJ, quienes proporcionan una estructura sólida y franqueza que complementa su enfoque intuitivo y basado en valores. También conecta bien con los ENFJ para obtener apoyo externo."
+          }
+        },
+        "template-mbti-nba-alexia-putellas": {
+          "attributes": {
+            "type_code": "INFJ",
+            "type_nickname": "El Defensor",
+            "dimensions": "Introvertido · Intuitivo · Sentimental · Juzgador",
+            "subject_kind": "Tarjeta de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Alexia Putellas, a menudo clasificada por los fans como INFJ, encarna un impulso visionario, combinando una profunda empatía con un compromiso inquebrantable con el éxito colectivo de su equipo y el juego estratégico.",
+            "strengths": "Su previsión estratégica inigualable le permite orquestar el juego con una precisión magistral, mientras que su liderazgo inspirador fomenta un ambiente de equipo cohesivo y motiva el máximo rendimiento.",
+            "weaknesses": "Alexia puede tener dificultades con la autocrítica intensa y el perfeccionismo, lo que podría llevar al agotamiento, y podría internalizar profundamente las presiones del equipo debido a su naturaleza empática.",
+            "communication": "Se comunica con una mezcla de franqueza y diplomacia, a menudo inspirando a sus compañeros con su visión clara y orientación empática, centrándose en la comprensión colectiva y la alineación estratégica.",
+            "relationships": "Alexia cultiva relaciones profundas y leales, a menudo actuando como una figura de apoyo y comprensión que valora la autenticidad y el crecimiento mutuo dentro de su equipo y círculos personales.",
+            "career": "Su encaje natural como líder estratégica y creadora de juego, evidente en su capitanía, se alinea perfectamente con el impulso de un INFJ para promulgar un cambio visionario e inspirar el logro colectivo a través de roles impactantes.",
+            "compatibility": "Alexia a menudo prospera en dinámicas con tipos que ofrecen franqueza lógica complementaria o pasión compartida, potencialmente encontrando una conexión profunda con los ENTP para el debate intelectual o los ESFP para un apoyo arraigado."
+          }
+        },
+        "template-mbti-nba-kareem-abdul-jabbar": {
+          "attributes": {
+            "type_code": "INFP",
+            "type_nickname": "El Mediador",
+            "dimensions": "Introvertido · Intuitivo · Sentimental · Perceptivo",
+            "subject_kind": "Tarjeta de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "A menudo clasificado como INFP, Kareem Abdul-Jabbar ejemplifica un profundo idealismo, una contemplación tranquila y un compromiso principista con los valores personales, expresado a través de su activismo reflexivo y su estilo distintivo.",
+            "strengths": "Su poderosa convicción interna y su pensamiento innovador impulsaron su grandeza atlética y le permitieron articular problemas sociales complejos con profunda integridad, a menudo inspirando a otros.",
+            "weaknesses": "Sus profundos valores personales a veces provocaban una percepción de distancia o desapego de la dinámica del equipo, potencialmente luchando con críticas puramente objetivas e impersonales o estructuras externas rígidas.",
+            "communication": "Kareem se comunica con profunda reflexión y convicción, a menudo a través de obras escritas o palabras cuidadosamente elegidas, prefiriendo expresar creencias profundamente arraigadas en lugar de participar en intercambios superficiales.",
+            "relationships": "Forma lazos profundos y auténticos basados en la comprensión mutua y valores compartidos, valorando la lealtad y la conexión intelectual mientras a menudo mantiene un comportamiento reservado y privado.",
+            "career": "Kareem prospera en roles que permiten la expresión creativa, la búsqueda intelectual y la defensa de creencias profundamente arraigadas, encontrando satisfacción como autor, crítico social y figura influyente.",
+            "compatibility": "Kareem a menudo encuentra resonancia con tipos que aprecian su idealismo y profundidad, particularmente ENFJ o ENTJ que pueden proporcionar estructura externa y defender sus valores."
+          }
+        }
       }
     }
   },
@@ -1628,6 +1961,42 @@
           "Phoebe Buffay ENFP personality poster — the free-spirited optimist.",
           "Chandler Bing ENTP character MBTI — the sarcastic problem-solver."
         ]
+      },
+      "examples": {
+        "template-friends-character-mbti-joey-tribbiani": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "El Activista",
+            "dimensions": "Extravertido · Intuitivo · Sentimental · Perceptivo",
+            "subject_kind": "Tarjeta de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Joey Tribbiani se identifica como un ENFP — cálido, irreprimiblemente optimista y eternamente entusiasta. Persigue grandes sueños (estrellato, amor, el sándwich perfecto) e ilumina cualquier habitación, moviéndose por los sentimientos y las posibilidades más que por los planes.",
+            "strengths": "Encanto contagioso, lealtad feroz a sus amigos y generosidad de corazón abierto — hace que todos se sientan como la persona más importante en la habitación y nunca deja de creer que su gran oportunidad está por llegar.",
+            "weaknesses": "Enfoque disperso y seguimiento inconsistente en asuntos prácticos (dinero, planificación); se guía mucho más por el impulso y el corazón que por la estrategia.",
+            "communication": "Expresivo, juguetón y desarmantemente sincero — se conecta a través del humor, la comida y la calidez genuina, no por medio de argumentos.",
+            "relationships": "Profundamente leal y protector; trata a su grupo de amigos como familia y ama generosamente, aunque no siempre con sabiduría.",
+            "career": "Artista y conector — actuación, hostelería, cualquier cosa que recompense el encanto, la presencia y el corazón.",
+            "compatibility": "Se complementa bien con un compañero estructurado y lógico (como el ingenio seco de Chandler) que se encarga de la planificación que él felizmente omite."
+          }
+        },
+        "template-friends-character-mbti-chandler-bing": {
+          "attributes": {
+            "type_code": "ENTP",
+            "type_nickname": "El Debatiente",
+            "dimensions": "Extravertido · Intuitivo · Pensador · Perceptivo",
+            "subject_kind": "Tarjeta de personalidad del personaje"
+          },
+          "vertical": {
+            "traits": "Chandler, un ENTP, se caracteriza por su ingenio agudo, pensamiento rápido y escepticismo inherente. Prospera con el intercambio intelectual y busca constantemente nuevas perspectivas, a menudo usando el humor para navegar la vida.",
+            "strengths": "Sus mayores fortalezas residen en su excepcional capacidad para resolver problemas y su pensamiento innovador. El ingenioso humor de Chandler y su habilidad para desarmar la tensión con un chiste bien colocado también lo hacen muy adaptable y cautivador.",
+            "weaknesses": "Chandler a menudo usa el sarcasmo y el humor para evitar la vulnerabilidad emocional, a veces pareciendo frívolo o distante. Su aversión a la rutina y el miedo al compromiso obstaculizaron inicialmente su crecimiento personal y la toma de decisiones estables.",
+            "communication": "Chandler se comunica principalmente a través de un ingenio rápido, sarcasmo y debates lúdicos, aprovechando su intelecto para involucrar o desviar. Prefiere el combate intelectual a las discusiones emocionales profundas, a menudo usando el humor como escudo.",
+            "relationships": "Él establece lazos a través del humor compartido, la conexión intelectual y la lealtad, valorando a los amigos que aprecian su ingenio. Aunque inicialmente teme al compromiso, Chandler busca conexiones profundas y significativas una vez que supera sus inseguridades.",
+            "career": "Chandler es más adecuado para roles que exigen resolución creativa de problemas, desafíos intelectuales e interacción dinámica, como marketing, análisis estratégico o escritura de comedia. El trabajo rutinario y poco estimulante sofoca su Ne.",
+            "compatibility": "Chandler encuentra una fuerte compatibilidad con tipos que aprecian su humor e intelecto, como INFJ (como el deseo de estabilidad y comprensión de Monica), ENFJ u otros tipos NT, que pueden participar en sus debates."
+          }
+        }
       }
     }
   },
@@ -3148,6 +3517,25 @@
           "Crea una tarjeta de memoria 守株待兔 mostrando la historia del conejo y el tocón de árbol.",
           "Genera una tarjeta de memoria 井底之蛙 con la caricatura de la rana del pozo y un ejemplo de frase."
         ]
+      },
+      "examples": {
+        "template-chinese-idiom-learning-card-hua-she-tian-zu": {
+          "attributes": {
+            "grade_band": "Primaria–Secundaria · HSK 3–4",
+            "age_range": "8–14",
+            "subject": "Idioma chino · modismos (成语)",
+            "skill": "Vocabulario · lectura · alfabetización cultural",
+            "resource_type": "Tarjeta didáctica ilustrada",
+            "duration_min": "10",
+            "difficulty": "Intermedio",
+            "language_mode": "Bilingüe (chino + inglés)"
+          },
+          "vertical": {
+            "learning_objective": "Aprender a leer, pronunciar y usar correctamente el modismo 画蛇添足 (huà shé tiān zú) — reconociendo cuándo una acción adicional es innecesaria y en realidad empeora las cosas.",
+            "includes": "Caracteres simplificados, pinyin, una glosa literal ('dibujar una serpiente, añadir patas'), el significado figurado, una oración de ejemplo y una ilustración de la historia original.",
+            "background": "De un cuento de los Reinos Combatientes: en un concurso de dibujo de serpientes, el pintor más rápido añadió patas para alardear — y perdió, porque las serpientes no tienen ninguna. El modismo advierte contra estropear algo terminado con un esfuerzo superfluo."
+          }
+        }
       }
     }
   },
@@ -4549,6 +4937,40 @@
           "Create an 'Argentina National Team' sticker poster celebrating the 2022 World Cup win.",
           "Generate a 'France National Team' World Cup sticker poster with Mbappé and Griezmann."
         ]
+      },
+      "examples": {
+        "template-world-cup-team-sticker-poster-portugal": {
+          "attributes": {
+            "product_type": "Hoja de pegatinas y póster del equipo",
+            "material": "Pegatina de vinilo mate / papel para póster",
+            "process": "Impresión digital + troquelado suave",
+            "dimensions": "Póster A3 · pegatinas troqueladas surtidas",
+            "print_spec": "300 DPI · CMYK · 3mm de sangrado",
+            "color_profile": "CMYK — rojo y verde de Portugal",
+            "use_case": "Merchandising para fans · decoración para el día del partido · pegatinas para portátil / botella"
+          },
+          "vertical": {
+            "cultural_background": "Construido en torno a la identidad de la selección nacional de Portugal — la paleta rojo y verde, la energía del escudo de la Seleção, y el profundo orgullo futbolístico del país.",
+            "design_requirements": "Colores del equipo de alto contraste, figuras de jugadores de dibujos animados atrevidas y siluetas de troquelado suave limpias; mantener insignias y logotipos oficiales fuera para proteger la marca, usando solo semejanzas genéricas.",
+            "manufacturing_notes": "Troquelado suave en vinilo adhesivo con una capa superior laminada para resistencia a arañazos y al agua; póster en 200gsm mate; el diseño es apto para tiradas combinadas para POD de bajo coste."
+          }
+        },
+        "template-world-cup-team-sticker-poster-argentina": {
+          "attributes": {
+            "product_type": "Hoja de pegatinas y póster del equipo",
+            "material": "Pegatina de vinilo mate / papel para póster",
+            "process": "Impresión digital + troquelado suave",
+            "dimensions": "Póster A3 · pegatinas troqueladas variadas",
+            "print_spec": "300 DPI · CMYK · sangrado de 3mm",
+            "color_profile": "CMYK — Azul celeste y blanco de Argentina",
+            "use_case": "Merchandising para fans · decoración para día de partido · pegatinas para portátil / botella"
+          },
+          "vertical": {
+            "cultural_background": "Anclado en la identidad albiceleste de Argentina — las franjas celestes y blancas, el motivo del sol y la ferviente cultura de aficionados detrás de la selección nacional.",
+            "design_requirements": "Sistema de rayas celestes/blancas, figuras audaces de jugadores de dibujos animados y bordes nítidos de troquelado suave; evitar escudos oficiales y marcas de patrocinadores, utilizando parecidos genéricos para proteger la marca registrada.",
+            "manufacturing_notes": "Troquelado suave en vinilo adhesivo con un laminado protector; póster en mate de 200gsm; la hoja está dispuesta para una impresión bajo demanda eficiente en tiradas agrupadas."
+          }
+        }
       }
     }
   },
