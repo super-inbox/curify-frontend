@@ -84,8 +84,8 @@ export default function HomeClient({
         {/* Storytelling flow — message + audience entry points, layered above
             the existing content rail (kept below for discovery + indexation). */}
         <HomeHero montageImages={montageImages} />
+        <HomeSolutionsGrid />
         <HomeImageWorkbench locale={locale} />
-        <HomeWorkflow />
 
         {topRemixPrompts.length > 0 ? (
           <HomeFusedRow
@@ -109,7 +109,7 @@ export default function HomeClient({
 
         <HomeToolsStrip />
 
-        <HomeSolutionsGrid />
+        <HomeWorkflow />
 
         {discoveryStrip}
       </div>
