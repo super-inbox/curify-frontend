@@ -125,6 +125,7 @@ export function getTemplateView(
     batch: raw.batch,
     allow_generation: raw.allow_generation,
     requires_image_upload: raw.requires_image_upload,
+    index_examples: raw.index_examples,
     archetype: raw.archetype,
     intro_video_url: raw.intro_video_url,
     base_prompt: value.base_prompt,
