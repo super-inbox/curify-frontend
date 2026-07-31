@@ -23,8 +23,10 @@ import {
 } from "react";
 import { useLocale } from "next-intl";
 import Link from "next/link";
-import { X, Sparkles, ExternalLink } from "lucide-react";
+import { X, Sparkles, ExternalLink, Download } from "lucide-react";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
+import { useTracking, type ContentType } from "@/services/useTracking";
 
 export type PeekItem =
   | {
@@ -169,6 +171,23 @@ function Overlay({
 }) {
   const cta = ctaFor(locale, item);
   const fullHref = fullPagePath(locale, item);
+  const { trackAction } = useTracking();
+  // Roll lightbox engagement up with the grid/gallery funnels: examples →
+  // example-grid content type, prompts → gallery. viewMode "cards" matches the
+  // tiles these open from.
+  const tracking = {
+    contentId: String(item.id),
+    contentType: (item.kind === "prompt"
+      ? "nano_gallery"
+      : "nano_inspiration_example_grid") as ContentType,
+    viewMode: "cards" as const,
+  };
+  // Log a "view" each time the overlay shows a new item (initial open + every
+  // "more like this" hop, since onSelect swaps the item in place).
+  useEffect(() => {
+    trackAction(tracking, "view");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [item.kind, item.id]);
   // Secondary "Open full page" is shown ONLY when it diverges from the primary
   // CTA — i.e. info-heavy examples, whose full page is the appreciate-first
   // read view (distinct from "Customize" → the workbench). For generator-demos
@@ -176,100 +195,128 @@ function Overlay({
   // so a second link would point at the same place — collapse to one CTA.
   const showSecondary = item.kind === "example" && item.indexable !== false;
   const related = item.related ?? [];
+  const shareHref =
+    typeof window !== "undefined" ? `${window.location.origin}${fullHref}` : fullHref;
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-neutral-900/70 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-neutral-900/70 p-3 backdrop-blur-sm sm:p-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={item.title || "Preview"}
     >
       <div
-        className="relative flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl sm:flex-row"
+        className="relative my-auto flex w-full max-w-6xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-neutral-700 shadow hover:bg-white"
+          className="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-neutral-700 shadow hover:bg-white"
         >
           <X className="h-5 w-5" />
         </button>
 
-        {/* Image — appreciate first */}
-        <div className="flex items-center justify-center bg-neutral-50 sm:w-1/2">
-          <CdnImage
-            src={item.image}
-            alt={item.title || "Preview"}
-            width={800}
-            height={1000}
-            className="max-h-[45vh] w-auto object-contain sm:max-h-[92vh]"
-          />
-        </div>
-
-        {/* Meta + actions */}
-        <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-5 sm:p-6">
-          {item.category ? (
-            <span className="inline-flex w-fit items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
-              {item.category}
-            </span>
-          ) : null}
-          <h2 className="text-lg font-bold leading-snug text-neutral-900 sm:text-xl">
-            {item.title || "Untitled"}
-          </h2>
-
-          <div className="flex flex-col gap-2.5">
-            <Link
-              href={cta.href}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-purple-700"
-            >
-              <Sparkles className="h-4 w-4" /> {cta.label}
-            </Link>
-            {showSecondary ? (
-              <Link
-                href={fullHref}
-                className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
-              >
-                Open full page <ExternalLink className="h-3.5 w-3.5" />
-              </Link>
-            ) : null}
+        {/* ── Top: large image + meta/actions ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="flex items-center justify-center bg-neutral-50 p-3 sm:p-4">
+            <CdnImage
+              src={item.image}
+              alt={item.title || "Preview"}
+              width={1000}
+              height={1250}
+              className="max-h-[78vh] w-auto rounded-lg object-contain"
+            />
           </div>
 
-          {/* More like this — sibling tiles from the source grid. Clicking one
-              swaps the overlay content in place (no nav), forwarding the rest
-              of the strip so browsing stays populated. */}
-          {related.length > 0 ? (
-            <div className="mt-2">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-400">
-                More like this
-              </p>
-              <div className="grid grid-cols-4 gap-2">
-                {related.slice(0, 8).map((r) => (
-                  <button
-                    key={`${r.kind}-${r.id}`}
-                    type="button"
-                    onClick={() =>
-                      onSelect({
-                        ...r,
-                        related: related.filter((x) => x.id !== r.id),
-                      })
-                    }
-                    className="group relative aspect-square overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 transition hover:border-purple-300"
-                    aria-label={r.title || "Related example"}
-                  >
-                    <CdnImage
-                      src={r.image}
-                      alt={r.title || "Related"}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </button>
-                ))}
-              </div>
+          <div className="flex flex-col gap-4 p-6 sm:p-8">
+            {item.category ? (
+              <span className="inline-flex w-fit items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
+                {item.category}
+              </span>
+            ) : null}
+            <h2 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
+              {item.title || "Untitled"}
+            </h2>
+
+            {/* Save + Share icon actions (common to both example + prompt). */}
+            <div className="flex items-center gap-2">
+              <a
+                href={item.image}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Save image"
+                title="Save image"
+                onClick={() => trackAction(tracking, "download")}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-700 transition-colors hover:bg-neutral-50"
+              >
+                <Download className="h-4 w-4" />
+              </a>
+              <ShareButton
+                url={shareHref}
+                title={item.title}
+                iconOnly
+                onShared={() => trackAction(tracking, "share")}
+              />
             </div>
-          ) : null}
+
+            <div className="mt-1 flex flex-col gap-2.5">
+              <Link
+                href={cta.href}
+                onClick={() => trackAction(tracking, "remix")}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-purple-700"
+              >
+                <Sparkles className="h-4 w-4" /> {cta.label}
+              </Link>
+              {showSecondary ? (
+                <Link
+                  href={fullHref}
+                  onClick={() => trackAction(tracking, "click")}
+                  className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                >
+                  Open full page <ExternalLink className="h-3.5 w-3.5" />
+                </Link>
+              ) : null}
+            </div>
+          </div>
         </div>
+
+        {/* ── More like this — full-width strip below, scroll to reach it.
+            Clicking a tile swaps the overlay content in place (no nav),
+            forwarding the rest of the strip so browsing stays populated. ── */}
+        {related.length > 0 ? (
+          <div className="border-t border-neutral-100 p-6 sm:p-8">
+            <p className="mb-3 text-sm font-semibold text-neutral-800">
+              More like this
+            </p>
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+              {related.map((r) => (
+                <button
+                  key={`${r.kind}-${r.id}`}
+                  type="button"
+                  onClick={() => {
+                    trackAction(tracking, "click");
+                    onSelect({
+                      ...r,
+                      related: related.filter((x) => x.id !== r.id),
+                    });
+                  }}
+                  className="group relative aspect-[4/5] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 transition hover:border-purple-300"
+                  aria-label={r.title || "Related example"}
+                >
+                  <CdnImage
+                    src={r.image}
+                    alt={r.title || "Related"}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );

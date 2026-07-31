@@ -376,6 +376,7 @@ export default async function Page({ params }: Props) {
             maxRows={3}
             desktopOpensExample
             showCaption
+            openInLightbox
           />
         </section>
       ) : null}

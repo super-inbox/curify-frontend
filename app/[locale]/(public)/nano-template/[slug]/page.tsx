@@ -232,6 +232,7 @@ export default async function NanoTemplatePage({ params }: Props) {
           batch={!!template.batch}
           desktopOpensExample
           showCaption
+          openInLightbox
         />
 </section>
 

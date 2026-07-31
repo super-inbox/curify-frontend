@@ -498,6 +498,7 @@ export default function UseCaseClient({
             items={exampleItems}
             locale={locale}
             showCaption
+            openInLightbox
           />
         </section>
       )}

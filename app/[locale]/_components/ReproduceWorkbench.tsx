@@ -7,6 +7,7 @@ import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
@@ -49,7 +50,7 @@ export type WorkbenchCol1 =
       title: string;
       batchEnabled?: boolean;
     }
-  | { mode: "upload"; label?: string; hint?: string; hideUploadLabel?: boolean }
+  | { mode: "upload"; label?: string; hint?: string; hideUploadLabel?: boolean; optional?: boolean }
   // A finished project result opens in the workbench: column 1 shows the output,
   // column 3 (designer pack) operates on it, and column 2 is HIDDEN — a loaded
   // project carries no template/params to drive parametric regeneration (that's a
@@ -80,6 +81,12 @@ type Props = {
    *  a zero-cost "Watch video" tile that reveals this already-rendered MP4. */
   introVideoUrl?: string;
   col1: WorkbenchCol1;
+  /** Extra content injected at the TOP of column 2 (above the params) — e.g. the
+   *  mascot Style + Layout picker. Optional; other surfaces render nothing. */
+  col2Extra?: ReactNode;
+  /** Transform the form params right before generation + prompt preview — e.g.
+   *  fold the mascot style/layout choice into a brand param. Identity by default. */
+  transformParams?: (form: Record<string, string>) => Record<string, string>;
 };
 
 // `kind` distinguishes a PRIMARY result (the main column-2 generation, or a
@@ -104,6 +111,8 @@ export default function ReproduceWorkbench({
   trackingContentId,
   introVideoUrl,
   col1,
+  col2Extra,
+  transformParams,
 }: Props) {
   const t = useTranslations("actionButtons");
   const { trackAction, track } = useTracking();
@@ -152,10 +161,17 @@ export default function ReproduceWorkbench({
     setResults((prev) => [{ id: `${key}-${resultSeq.current}`, url, label, kind }, ...prev]);
   };
 
+  // Effective params sent to generation + shown in the prompt preview. Identity
+  // unless a surface folds in extra widget state (e.g. mascot style/layout).
+  const effectiveForm = useMemo(
+    () => (transformParams ? transformParams(form) : form),
+    [form, transformParams]
+  );
+
   const { generate, dismissAndGenerate, isGenerating: directGenerating, duplicateWarning, clearWarning } =
     useDirectGenerate({
       templateId,
-      params: form,
+      params: effectiveForm,
       existingExamples,
       tracking,
       referenceImageUrl: referenceImageUrl ?? undefined,
@@ -218,7 +234,7 @@ export default function ReproduceWorkbench({
     return [...lead, ...base];
   }, [templateId, introVideoUrl]);
 
-  const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
+  const filledPrompt = useMemo(() => fillPrompt(basePrompt, effectiveForm), [basePrompt, effectiveForm]);
 
   const canGenerateInline = allowGeneration || requiresImageUpload;
   const needsImage = requiresImageUpload && !referenceImageUrl;
@@ -371,7 +387,7 @@ export default function ReproduceWorkbench({
             <div className="flex flex-1 flex-col rounded-2xl border border-neutral-200 bg-white p-3 shadow-sm">
               <ReferenceImageUpload
                 variant="full"
-                required
+                required={!col1.optional}
                 label={col1.label ?? "Your image"}
                 hideLabel={col1.hideUploadLabel}
                 hint={col1.hint ?? "Upload the photo to transform — the template is applied to it."}
@@ -388,8 +404,12 @@ export default function ReproduceWorkbench({
               <div className="relative min-h-[320px] flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
                 {col1.image}
               </div>
-              <div className="mt-2">
-                {col1.mode === "result" ? (
+              {/* Column-1 actions. Copy (→ next to Generate in col 2) and Share
+                  (→ common flipper header, shared by the info + workbench views)
+                  are hoisted OUT of source mode — only batch download remains
+                  here. Result mode keeps its own Download. */}
+              {col1.mode === "result" ? (
+                <div className="mt-2">
                   <a
                     href={col1.downloadHref ?? col1.resultUrl}
                     download
@@ -399,15 +419,15 @@ export default function ReproduceWorkbench({
                   >
                     <Download className="h-4 w-4" /> Download
                   </a>
-                ) : (
+                </div>
+              ) : col1.batchEnabled ? (
+                <div className="mt-2">
                   <UnifiedActionBar
                     tracking={tracking}
-                    copy={{ enabled: true, text: col1.copyText }}
-                    share={{ enabled: true, url: col1.shareUrl, title: col1.title }}
-                    {...(col1.batchEnabled ? { batchDownload: { enabled: true, templateId } } : {})}
+                    batchDownload={{ enabled: true, templateId }}
                   />
-                )}
-              </div>
+                </div>
+              ) : null}
             </>
           )}
         </div>
@@ -417,6 +437,7 @@ export default function ReproduceWorkbench({
         <div className="flex flex-col lg:col-span-4">
           <div className={labelCls}>{col1.mode === "upload" ? "2 · Prompt & generate" : "2 · Make it yours"}</div>
           <div className="flex flex-1 flex-col gap-3">
+            {col2Extra ? <div>{col2Extra}</div> : null}
             {parameters.length > 0 && (
               <div className="flex flex-col gap-3">
                 {parameters.map((p) => {
@@ -513,17 +534,28 @@ export default function ReproduceWorkbench({
             <div className="mt-auto pt-1">
               {canGenerateInline ? (
                 <>
-                  <button
-                    type="button"
-                    onClick={generate}
-                    disabled={anyGenerating || needsImage || isUploadingImage}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60"
-                  >
-                    {directGenerating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
-                    {directGenerating ? t("generating") : t("generate")}
-                    {clientMounted && !user && <span className="ml-1 text-xs opacity-80">🔒</span>}
-                    {clientMounted && user && <span className="ml-1 text-xs opacity-80">· {CREDITS_COST} credits</span>}
-                  </button>
+                  {/* Generate + Copy side by side — Copy (the example's prompt)
+                      is hoisted here from the col-1 action bar so it sits with
+                      the primary action. Only in source mode (has copyText). */}
+                  <div className="flex items-stretch gap-2">
+                    <button
+                      type="button"
+                      onClick={generate}
+                      disabled={anyGenerating || needsImage || isUploadingImage}
+                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60"
+                    >
+                      {directGenerating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
+                      {directGenerating ? t("generating") : t("generate")}
+                      {clientMounted && !user && <span className="ml-1 text-xs opacity-80">🔒</span>}
+                      {clientMounted && user && <span className="ml-1 text-xs opacity-80">· {CREDITS_COST} credits</span>}
+                    </button>
+                    {col1.mode === "source" && (
+                      <CopyPromptButton
+                        text={col1.copyText}
+                        onCopied={() => trackAction(tracking, "copy")}
+                      />
+                    )}
+                  </div>
                   {needsImage && (
                     <p className="mt-1.5 text-[11px] text-neutral-500">
                       {col1.mode === "upload" ? "Upload your image on the left to generate." : "Upload your image above to generate."}

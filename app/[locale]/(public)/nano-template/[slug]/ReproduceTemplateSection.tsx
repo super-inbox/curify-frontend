@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { format } from "date-fns";
@@ -43,12 +43,95 @@ export default function ReproduceTemplateSection(props: {
   sampleImage?: SampleImage;
   initialParams?: Record<string, string>;
 }) {
+  // Mascot design board → shared 3-column workbench (on-par with other
+  // templates), with the Style + Layout picker in column 2 and an OPTIONAL
+  // reference upload in column 1.
+  if (props.template.template_id === "template-brand-ip-mascot-design-board") {
+    return (
+      <MascotWorkbenchSection template={props.template} initialParams={props.initialParams} />
+    );
+  }
   if (props.template.requires_image_upload) {
     return (
       <ImageWorkbenchSection template={props.template} initialParams={props.initialParams} />
     );
   }
   return <TextReproduceSection {...props} />;
+}
+
+// Mascot design board → shared 3-column workbench. Column 1 = optional mascot
+// upload; column 2 = the Style + Layout picker (col2Extra) above the params;
+// the chosen style/layout folds into the brand param via transformParams so it
+// flows into the prompt with no base_prompt change.
+function MascotWorkbenchSection({
+  template,
+  initialParams,
+}: {
+  template: NanoTemplateForDetail;
+  initialParams?: Record<string, string>;
+}) {
+  const searchParams = useSearchParams();
+  const locale = useLocale();
+  const templateUseCases = useMemo(
+    () => getUseCasesForTopics(template.topics ?? []),
+    [template.topics]
+  );
+  const [mascotStyle, setMascotStyle] = useState(MASCOT_STYLE_PRESETS[0].key);
+  const [mascotLayout, setMascotLayout] = useState(MASCOT_LAYOUT_PRESETS[0].key);
+
+  const seeded = useMemo(() => {
+    const next: Record<string, string> = { ...(initialParams ?? {}) };
+    for (const p of template.parameters ?? []) {
+      const qv = searchParams?.get(p.name);
+      if (qv != null && qv.trim() !== "") next[p.name] = qv;
+    }
+    return next;
+  }, [template.parameters, searchParams, initialParams]);
+
+  // Fold the chosen (non-default) style/layout into the brand param so it flows
+  // into the prompt via the existing {brand_info} substitution. Empty suffix
+  // (both defaults) leaves params untouched.
+  const transformParams = useCallback(
+    (form: Record<string, string>) => {
+      const suffix = mascotPromptSuffix(mascotStyle, mascotLayout);
+      if (!suffix) return form;
+      const bi = String(form.brand_info ?? "").trim();
+      return { ...form, brand_info: bi ? `${bi} ${suffix}` : suffix };
+    },
+    [mascotStyle, mascotLayout]
+  );
+
+  return (
+    <section id="reproduce" className="scroll-mt-24">
+      <ReproduceWorkbench
+        locale={locale}
+        templateId={template.template_id}
+        parameters={template.parameters ?? []}
+        initialParams={seeded}
+        basePrompt={template.base_prompt || ""}
+        allowGeneration={!!template.allow_generation}
+        existingExamples={template.existingExamples}
+        useCaseFilter={templateUseCases}
+        trackingContentId={template.template_id}
+        introVideoUrl={template.intro_video_url}
+        col1={{
+          mode: "upload",
+          optional: true,
+          label: "Your mascot image",
+          hint: "Upload a mascot to base the board on — or leave empty to generate from the brand text.",
+        }}
+        col2Extra={
+          <MascotStyleLayoutWidget
+            styleKey={mascotStyle}
+            layoutKey={mascotLayout}
+            onStyle={setMascotStyle}
+            onLayout={setMascotLayout}
+          />
+        }
+        transformParams={transformParams}
+      />
+    </section>
+  );
 }
 
 // image2image template detail → shared 3-column workbench, col-1 upload.
