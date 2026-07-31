@@ -372,35 +372,22 @@ export default async function NanoExampleDetailPage({
     image: toAbsUrlMaybe(example.asset?.image_url),
   });
   const topicNav = getTopicNavList();
-  const metaChips =
-    mergedTopics.length > 0 || category ? (
-      <>
-        {/* Topic chips → sr-only on 2026-06-29 per operator. The
-            Google-crawl tonnage matters (17K example pages × ~5 chips =
-            ~88K links into /topics/<slug>) but they noise up the hero.
-            End-user surface is the merged TopicStrip block at the
-            page bottom. */}
-        {mergedTopics.length > 0 && (
-          <div className="sr-only">
-            <TopicNavRow
-              locale={rawLocale}
-              allTopics={topicNav}
-              topics={mergedTopics}
-              className="mb-0"
-              showDisabled={false}
-              size="small"
-            />
-          </div>
-        )}
-        {category && (
-          <Link
-            href={`/${rawLocale}/nano-template/${slug}`}
-            className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
-          >
-            {category}
-          </Link>
-        )}
-      </>
+  // sr-only topic capsules kept for Google-crawl tonnage (17K example pages ×
+  // ~5 chips = ~88K links into /topics/<slug>). The visible H1 + category chip
+  // now live on the flipper header row inside ExampleAppreciateFirst, so the
+  // Share/Info/Customize actions sit on the same row as the title.
+  const srCrawlTopics =
+    mergedTopics.length > 0 ? (
+      <div className="sr-only">
+        <TopicNavRow
+          locale={rawLocale}
+          allTopics={topicNav}
+          topics={mergedTopics}
+          className="mb-0"
+          showDisabled={false}
+          size="small"
+        />
+      </div>
     ) : null;
 
   return (
@@ -416,11 +403,9 @@ export default async function NanoExampleDetailPage({
         <span className="line-clamp-1 font-medium text-neutral-800">{title}</span>
       </nav>
 
-      {/* Header — H1 + topic capsules */}
-      <header className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2">
-        <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">{title}</h1>
-        {metaChips ? <div className="flex flex-wrap items-center gap-2">{metaChips}</div> : null}
-      </header>
+      {/* H1 + category chip now render on the flipper header row inside
+          ExampleAppreciateFirst (same row as Share/Info/Customize). */}
+      {srCrawlTopics}
 
       {/* VerticalPageSchema — Pillar 2 ontology chip strip (example-level) */}
       <VerticalAttributeChips vertical={vertical} />
@@ -431,6 +416,7 @@ export default async function NanoExampleDetailPage({
           the generate mental model is identical across template + gallery. */}
       <ExampleAppreciateFirst
         appreciateFirst={examplesIndexable}
+        category={category}
         locale={rawLocale}
         templateId={templateId}
         slug={slug}

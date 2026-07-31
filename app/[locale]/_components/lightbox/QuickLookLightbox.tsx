@@ -19,6 +19,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 import { useLocale } from "next-intl";
@@ -115,6 +116,11 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
     []
   );
 
+  // Dismiss on a routing click: the overlay must vanish as we navigate away.
+  // Unlike close(), do NOT history.back() — the <Link> push handles history,
+  // and a back() would race the navigation.
+  const dismiss = useCallback(() => setItem(null), []);
+
   // Back/forward: if the URL no longer carries ?peek, the overlay must close.
   useEffect(() => {
     const onPop = () => {
@@ -152,7 +158,13 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
     <LightboxCtx.Provider value={{ open, close }}>
       {children}
       {item ? (
-        <Overlay item={item} locale={locale} onClose={close} onSelect={open} />
+        <Overlay
+          item={item}
+          locale={locale}
+          onClose={close}
+          onSelect={open}
+          onNavigate={dismiss}
+        />
       ) : null}
     </LightboxCtx.Provider>
   );
@@ -163,11 +175,13 @@ function Overlay({
   locale,
   onClose,
   onSelect,
+  onNavigate,
 }: {
   item: PeekItem;
   locale: string;
   onClose: () => void;
   onSelect: (item: PeekItem) => void;
+  onNavigate: () => void;
 }) {
   const cta = ctaFor(locale, item);
   const fullHref = fullPagePath(locale, item);
@@ -226,7 +240,7 @@ function Overlay({
               alt={item.title || "Preview"}
               width={1000}
               height={1250}
-              className="max-h-[78vh] w-auto rounded-lg object-contain"
+              className="max-h-[62vh] w-auto rounded-lg object-contain"
             />
           </div>
 
@@ -265,7 +279,10 @@ function Overlay({
             <div className="mt-1 flex flex-col gap-2.5">
               <Link
                 href={cta.href}
-                onClick={() => trackAction(tracking, "remix")}
+                onClick={() => {
+                  trackAction(tracking, "remix");
+                  onNavigate();
+                }}
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-purple-700"
               >
                 <Sparkles className="h-4 w-4" /> {cta.label}
@@ -273,7 +290,10 @@ function Overlay({
               {showSecondary ? (
                 <Link
                   href={fullHref}
-                  onClick={() => trackAction(tracking, "click")}
+                  onClick={() => {
+                    trackAction(tracking, "click");
+                    onNavigate();
+                  }}
                   className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
                 >
                   Open full page <ExternalLink className="h-3.5 w-3.5" />
@@ -283,41 +303,82 @@ function Overlay({
           </div>
         </div>
 
-        {/* ── More like this — full-width strip below, scroll to reach it.
-            Clicking a tile swaps the overlay content in place (no nav),
-            forwarding the rest of the strip so browsing stays populated. ── */}
+        {/* ── More like this — full-width, spans the whole modal; reveals more
+            on scroll (infinite-scroll feel). Clicking a tile swaps the overlay
+            content in place (no nav), forwarding the rest of the pool. ── */}
         {related.length > 0 ? (
-          <div className="border-t border-neutral-100 p-6 sm:p-8">
-            <p className="mb-3 text-sm font-semibold text-neutral-800">
-              More like this
-            </p>
-            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
-              {related.map((r) => (
-                <button
-                  key={`${r.kind}-${r.id}`}
-                  type="button"
-                  onClick={() => {
-                    trackAction(tracking, "click");
-                    onSelect({
-                      ...r,
-                      related: related.filter((x) => x.id !== r.id),
-                    });
-                  }}
-                  className="group relative aspect-[4/5] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 transition hover:border-purple-300"
-                  aria-label={r.title || "Related example"}
-                >
-                  <CdnImage
-                    src={r.image}
-                    alt={r.title || "Related"}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </button>
-              ))}
-            </div>
-          </div>
+          <MoreLikeThis
+            items={related}
+            onSelect={(r) =>
+              onSelect({ ...r, related: related.filter((x) => x.id !== r.id) })
+            }
+            onTrackClick={() => trackAction(tracking, "click")}
+          />
         ) : null}
       </div>
+    </div>
+  );
+}
+
+const MLT_PAGE = 18; // tiles revealed per scroll step
+
+function MoreLikeThis({
+  items,
+  onSelect,
+  onTrackClick,
+}: {
+  items: PeekItem[];
+  onSelect: (item: PeekItem) => void;
+  onTrackClick: () => void;
+}) {
+  const [count, setCount] = useState(MLT_PAGE);
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
+
+  // Reveal more as the sentinel scrolls into view (infinite scroll). The pool
+  // is already in memory (grid siblings), so there's nothing to fetch — this
+  // just paces the DOM so we don't mount hundreds of images at once.
+  useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setCount((c) => Math.min(c + MLT_PAGE, items.length));
+        }
+      },
+      { rootMargin: "400px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [items.length]);
+
+  const shown = items.slice(0, count);
+
+  return (
+    <div className="border-t border-neutral-100 p-6 sm:p-8">
+      <p className="mb-3 text-sm font-semibold text-neutral-800">More like this</p>
+      <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+        {shown.map((r) => (
+          <button
+            key={`${r.kind}-${r.id}`}
+            type="button"
+            onClick={() => {
+              onTrackClick();
+              onSelect(r);
+            }}
+            className="group relative aspect-[4/5] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 transition hover:border-purple-300"
+            aria-label={r.title || "Related example"}
+          >
+            <CdnImage
+              src={r.image}
+              alt={r.title || "Related"}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </button>
+        ))}
+      </div>
+      {count < items.length ? <div ref={sentinelRef} className="h-1 w-full" /> : null}
     </div>
   );
 }

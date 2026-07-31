@@ -205,7 +205,7 @@ function ExampleImageCard({
         indexable: item.indexable,
         related: siblings
           .filter((s) => s.id !== item.id)
-          .slice(0, 8)
+          .slice(0, 60)
           .map((s) => ({
             kind: "example" as const,
             id: s.id,
@@ -391,7 +391,7 @@ export default function ExampleImagesGrid({
                   desktopOpensExample={desktopOpensExample}
                   showCaption={showCaption}
                   openInLightbox={openInLightbox}
-                  siblings={visible}
+                  siblings={items}
                 />
               </div>
             );
@@ -408,7 +408,7 @@ export default function ExampleImagesGrid({
               desktopOpensExample={desktopOpensExample}
               showCaption={showCaption}
               openInLightbox={openInLightbox}
-              siblings={visible}
+              siblings={items}
             />
           );
         })}
