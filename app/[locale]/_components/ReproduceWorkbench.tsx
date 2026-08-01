@@ -97,6 +97,12 @@ type Props = {
 // output of the tile before it. See issue (c), 2026-07-15.
 type ResultItem = { id: string; url: string; label: string; kind: "primary" | "derivative" };
 
+// Column-2 parameter ergonomics: collapse the list past this many params
+// (rest behind a "Show N more" toggle), and switch a free-text field to a
+// wrapping textarea once its value/placeholder exceeds this many chars.
+const PARAM_COLLAPSE_AT = 6;
+const LONG_VALUE_CHARS = 60;
+
 export default function ReproduceWorkbench({
   locale,
   templateId,
@@ -137,6 +143,10 @@ export default function ReproduceWorkbench({
   const [results, setResults] = useState<ResultItem[]>([]);
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  // Collapse long parameter lists — show the first few, reveal the rest on
+  // demand. Hidden params stay in `form` (already seeded), so generation is
+  // unaffected; only their inputs are tucked away to keep column 2 scannable.
+  const [showAllParams, setShowAllParams] = useState(false);
   const [soonNote, setSoonNote] = useState<string | null>(null);
   // Set when the user taps the "Watch video" tile — reveals the template's
   // already-rendered intro video in column 3 (free, no generation).
@@ -440,11 +450,17 @@ export default function ReproduceWorkbench({
             {col2Extra ? <div>{col2Extra}</div> : null}
             {parameters.length > 0 && (
               <div className="flex flex-col gap-3">
-                {parameters.map((p) => {
+                {(showAllParams ? parameters : parameters.slice(0, PARAM_COLLAPSE_AT)).map((p) => {
                   const value = form[p.name] ?? "";
                   const { displayPlaceholder, candidates } = normalizePrefills(p.placeholder);
                   const inputClass =
                     "w-full rounded-lg border border-neutral-200 bg-white px-2.5 py-1.5 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200";
+                  // Long prefilled values overflow a single-line input — give
+                  // them a wrapping textarea so the whole value is legible.
+                  const isFreeText = p.type !== "select" && p.type !== "language_pair";
+                  const longText =
+                    isFreeText &&
+                    (value.length > LONG_VALUE_CHARS || (displayPlaceholder?.length ?? 0) > LONG_VALUE_CHARS);
                   return (
                     <div key={p.name}>
                       <div className="mb-1 flex items-start justify-between gap-2">
@@ -456,7 +472,8 @@ export default function ReproduceWorkbench({
                                 key={`${p.name}-${cand}`}
                                 type="button"
                                 onClick={() => onFormChange(p.name, cand)}
-                                className="cursor-pointer rounded-full border border-neutral-200 bg-white px-2 py-0.5 text-[10px] font-semibold text-neutral-700 hover:bg-neutral-50"
+                                title={cand}
+                                className="max-w-[9rem] cursor-pointer truncate rounded-full border border-neutral-200 bg-white px-2 py-0.5 text-[10px] font-semibold text-neutral-700 hover:bg-neutral-50"
                               >
                                 {cand}
                               </button>
@@ -472,6 +489,14 @@ export default function ReproduceWorkbench({
                         </select>
                       ) : p.type === "language_pair" ? (
                         <LanguagePairSelector value={value} onChange={(v) => onFormChange(p.name, v)} className={inputClass} />
+                      ) : longText ? (
+                        <textarea
+                          value={value}
+                          onChange={(e) => onFormChange(p.name, e.target.value)}
+                          placeholder={displayPlaceholder}
+                          rows={2}
+                          className={`${inputClass} resize-y leading-snug`}
+                        />
                       ) : (
                         <input
                           value={value}
@@ -483,6 +508,21 @@ export default function ReproduceWorkbench({
                     </div>
                   );
                 })}
+
+                {parameters.length > PARAM_COLLAPSE_AT && (
+                  <button
+                    type="button"
+                    onClick={() => setShowAllParams((v) => !v)}
+                    className="inline-flex w-fit items-center gap-1 text-xs font-semibold text-purple-600 hover:text-purple-700"
+                  >
+                    <ChevronDown
+                      className={`h-3.5 w-3.5 transition-transform ${showAllParams ? "rotate-180" : ""}`}
+                    />
+                    {showAllParams
+                      ? "Show fewer options"
+                      : `Show ${parameters.length - PARAM_COLLAPSE_AT} more option${parameters.length - PARAM_COLLAPSE_AT === 1 ? "" : "s"}`}
+                  </button>
+                )}
               </div>
             )}
 
