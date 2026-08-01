@@ -66,6 +66,7 @@ export default function ExampleReproduceSurface({
       requiresImageUpload={requiresImageUpload}
       existingExamples={existingExamples}
       useCaseFilter={useCaseFilter}
+      hideInlineUseCases
       trackingContentId={`${templateId}:${exampleId}`}
       introVideoUrl={introVideoUrl}
       col1={{

@@ -75,6 +75,9 @@ type Props = {
   requiresImageUpload?: boolean;
   existingExamples?: ExistingExampleRef[];
   useCaseFilter?: readonly string[];
+  /** Suppress the inline "Use this for" chips in column 2 — the example page
+   *  moves them to a dedicated section at the bottom of the page. */
+  hideInlineUseCases?: boolean;
   /** content_id for tracking (example page: `${templateId}:${exampleId}`; others: templateId). */
   trackingContentId: string;
   /** Template-level intro video (relative CDN path). When present, column 3 gets
@@ -119,6 +122,7 @@ export default function ReproduceWorkbench({
   col1,
   col2Extra,
   transformParams,
+  hideInlineUseCases = false,
 }: Props) {
   const t = useTranslations("actionButtons");
   const { trackAction, track } = useTracking();
@@ -613,7 +617,7 @@ export default function ReproduceWorkbench({
               )}
             </div>
 
-            {(useCaseFilter?.length ?? 0) > 0 && (
+            {!hideInlineUseCases && (useCaseFilter?.length ?? 0) > 0 && (
               <div className="border-t border-neutral-100 pt-3">
                 <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
                   Use this for

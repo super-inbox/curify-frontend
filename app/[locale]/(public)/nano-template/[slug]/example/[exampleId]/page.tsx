@@ -14,6 +14,7 @@ import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
 import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import TopicStrip from "@/app/[locale]/_components/TopicStrip";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import { resolveTopicPath } from "@/lib/topic_path_overrides";
 import { titleCaseFromSlug } from "@/lib/locale_utils";
 import { getTopicNavList } from "@/lib/topicRegistry";
@@ -512,6 +513,17 @@ export default async function NanoExampleDetailPage({
             </h2>
             <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} desktopOpensExample showCaption />
           </>
+        )}
+
+        {/* "Use this for" — moved out of the workbench's middle panel to a
+            dedicated bottom-of-page section. */}
+        {templateUseCases.length > 0 && (
+          <div className="mt-10 border-t border-neutral-100 pt-6">
+            <div className="mb-3 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+              Use this for
+            </div>
+            <UseCaseChipsRow filterTo={templateUseCases} />
+          </div>
         )}
 
         <NanoTemplateDetailClient
