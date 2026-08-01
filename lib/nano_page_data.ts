@@ -92,6 +92,12 @@ export async function buildNanoPageContext(localeStr: string, slug: string) {
   const nanoMessages: NanoMessagesDict = {
     [templateId]: localizedEntry,
   };
+  // Also carry the vertical-group tiers (`__vgroup:mbti:*`, `__vgroup:hsk:*`)
+  // so example pages can resolve the shared MBTI type / HSK level content. A
+  // handful of small entries — kept as authored (not per-template normalized).
+  for (const [k, v] of Object.entries(nanoMessagesRaw)) {
+    if (k.startsWith("__vgroup:")) nanoMessages[k] = v;
+  }
 
   return {
     pageLocale,

@@ -41,9 +41,30 @@ export function VerticalInfoPanel({
 }: {
   vertical: ResolvedVerticalPage | null;
 }) {
-  if (!vertical || (vertical.attributes.length === 0 && vertical.knowledge.length === 0)) {
+  if (
+    !vertical ||
+    (vertical.attributes.length === 0 &&
+      vertical.knowledge.length === 0 &&
+      vertical.groupKnowledge.length === 0)
+  ) {
     return null;
   }
+  const KnowledgeRows = ({
+    items,
+  }: {
+    items: { key: string; label: string; text: string }[];
+  }) => (
+    <div className="flex flex-col gap-3">
+      {items.map((k) => (
+        <div key={k.key}>
+          <div className="text-[11px] font-bold uppercase tracking-wide text-neutral-500">
+            {k.label}
+          </div>
+          <p className="mt-1 text-sm leading-6 text-neutral-700">{k.text}</p>
+        </div>
+      ))}
+    </div>
+  );
   return (
     <div className="flex flex-col gap-4">
       {vertical.attributes.length > 0 && (
@@ -59,18 +80,22 @@ export function VerticalInfoPanel({
           ))}
         </dl>
       )}
-      {vertical.knowledge.length > 0 && (
-        <div className="flex flex-col gap-3">
-          {vertical.knowledge.map((k) => (
-            <div key={k.key}>
-              <div className="text-[11px] font-bold uppercase tracking-wide text-neutral-500">
-                {k.label}
-              </div>
-              <p className="mt-1 text-sm leading-6 text-neutral-700">{k.text}</p>
-            </div>
-          ))}
+
+      {/* Type/level tier — shared across every example of this MBTI type / HSK
+          level. Set apart so it doesn't read as example-specific. */}
+      {vertical.groupKnowledge.length > 0 && (
+        <div className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-neutral-50/60 p-4">
+          <div className="text-sm font-bold text-neutral-900">
+            {vertical.groupLabel
+              ? `About ${vertical.groupLabel}`
+              : `About this ${vertical.schema.label.toLowerCase()}`}
+          </div>
+          <KnowledgeRows items={vertical.groupKnowledge} />
         </div>
       )}
+
+      {/* Example-specific knowledge (this player / this reading card). */}
+      {vertical.knowledge.length > 0 && <KnowledgeRows items={vertical.knowledge} />}
     </div>
   );
 }

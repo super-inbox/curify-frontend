@@ -7030,20 +7030,13 @@
         "prompts": "Try 'HSK1 A Day at School reading worksheet', 'HSK3 Snow White and the Seven Dwarfs graded reader', 'HSK4 The Boy Who Cried Wolf'."
       },
       "attributes": {
-        "grade_band": "HSK 2",
-        "age_range": "8–10",
         "subject": "Chinese (Mandarin)",
         "skill": "Reading",
         "resource_type": "Reading card",
         "duration_min": "15 min",
-        "difficulty": "Beginner",
         "language_mode": "Bilingual EN–ZH"
       },
-      "vertical": {
-        "learning_objective": "Recognize the target vocabulary, read a short 100–150 character passage with full pinyin support, and answer basic comprehension questions.",
-        "includes": "An illustrated bilingual reading passage with full pinyin, simplified 汉字, and an English translation, a target-vocabulary list, and a print-ready PDF.",
-        "background": "HSK 2 is the second of six levels of the standardized Chinese Proficiency Test (HSK / Hanyu Shuiping Kaoshi). At this level a learner knows roughly 300 words and can read short, simple passages on everyday topics. Graded reading cards like these build reading fluency by pairing every character with its pinyin and an English gloss, so beginners can decode and understand a passage independently before moving up to HSK 3."
-      }
+      "vertical": {}
     }
   },
   "template-vintage-classic-novel-book-summary-infographic-poster": {
@@ -7372,5 +7365,281 @@
     "category": "Fridge Magnet & Small Merch-Item",
     "description": "Small die-cut fridge-magnet product mockups beyond Curify's existing single travel-landmark theme. For souvenir/gift shops, small brands doing promotional merch, print-on-demand sellers.",
     "title": "Nano Banana Prompt: Fridge Magnet & Small Merch-Item Templates Generator | Curify AI"
+  },
+  "__vgroup:mbti:ENFP": {
+    "content": {
+      "label": "ENFP · The Campaigner",
+      "attributes": {
+        "type_code": "ENFP",
+        "type_nickname": "The Campaigner",
+        "dimensions": "Extraverted · Intuitive · Feeling · Perceiving"
+      },
+      "vertical": {
+        "strengths": "Infectious enthusiasm, imagination, and a gift for connecting with people and rallying them around an idea.",
+        "weaknesses": "Can over-commit, lose focus on follow-through, and struggle with routine and detail work.",
+        "communication": "Warm, expressive, and idea-driven — thinks out loud and energizes a room.",
+        "relationships": "Seeks deep, authentic connection and freedom; values partners who share their curiosity.",
+        "career": "Thrives in creative, people-facing, or entrepreneurial roles that reward vision and flexibility.",
+        "compatibility": "Pairs well with INTJ or INFJ, whose depth and structure ground their ideas."
+      }
+    }
+  },
+  "__vgroup:mbti:ENTJ": {
+    "content": {
+      "label": "ENTJ · The Commander",
+      "attributes": {
+        "type_code": "ENTJ",
+        "type_nickname": "The Commander",
+        "dimensions": "Extraverted · Intuitive · Thinking · Judging"
+      },
+      "vertical": {
+        "strengths": "Decisive, strategic, and driven — natural at organizing people and resources toward a goal.",
+        "weaknesses": "Can be impatient, blunt, and dismissive of feelings or slower processes.",
+        "communication": "Direct and goal-oriented; states the plan and expects results.",
+        "relationships": "Loyal and committed, but expects competence and shared ambition from partners.",
+        "career": "Excels in leadership, strategy, and building or scaling organizations.",
+        "compatibility": "Complements INTP or INFP, who add reflection and empathy to their drive."
+      }
+    }
+  },
+  "__vgroup:mbti:ENTP": {
+    "content": {
+      "label": "ENTP · The Debater",
+      "attributes": {
+        "type_code": "ENTP",
+        "type_nickname": "The Debater",
+        "dimensions": "Extraverted · Intuitive · Thinking · Perceiving"
+      },
+      "vertical": {
+        "strengths": "Quick, inventive, and endlessly curious — great at reframing problems and debating ideas.",
+        "weaknesses": "May argue for sport, resist routine, and leave projects unfinished once the puzzle is solved.",
+        "communication": "Playful and provocative; challenges assumptions to find a better angle.",
+        "relationships": "Values intellectual spark and banter; needs partners who can keep up and push back.",
+        "career": "Fits innovation, product, consulting, and any role rewarding ideas over process.",
+        "compatibility": "Balances well with INFJ or INTJ, who turn their ideas into follow-through."
+      }
+    }
+  },
+  "__vgroup:mbti:ESFP": {
+    "content": {
+      "label": "ESFP · The Entertainer",
+      "attributes": {
+        "type_code": "ESFP",
+        "type_nickname": "The Entertainer",
+        "dimensions": "Extraverted · Sensing · Feeling · Perceiving"
+      },
+      "vertical": {
+        "strengths": "Spontaneous, warm, and present — brings energy, fun, and practical care to the moment.",
+        "weaknesses": "Can avoid long-term planning and get restless with abstraction or delayed payoff.",
+        "communication": "Expressive and hands-on; connects through shared experience and doing.",
+        "relationships": "Generous and affectionate; thrives on lively, appreciative company.",
+        "career": "Shines in performance, hospitality, sales, and roles full of people and action.",
+        "compatibility": "Matches well with ISTJ or ISFJ, who add steadiness to their spontaneity."
+      }
+    }
+  },
+  "__vgroup:mbti:ESTJ": {
+    "content": {
+      "label": "ESTJ · The Executive",
+      "attributes": {
+        "type_code": "ESTJ",
+        "type_nickname": "The Executive",
+        "dimensions": "Extraverted · Sensing · Thinking · Judging"
+      },
+      "vertical": {
+        "strengths": "Organized, dependable, and results-focused — keeps people and systems on track.",
+        "weaknesses": "Can be rigid, controlling, and impatient with ambiguity or unproven ideas.",
+        "communication": "Clear, direct, and rule-based; says what needs doing and by when.",
+        "relationships": "Committed and traditional; values reliability and clear expectations.",
+        "career": "Strong in operations, management, and any role rewarding order and accountability.",
+        "compatibility": "Complements ISFP or INFP, who soften their structure with warmth."
+      }
+    }
+  },
+  "__vgroup:mbti:INFJ": {
+    "content": {
+      "label": "INFJ · The Advocate",
+      "attributes": {
+        "type_code": "INFJ",
+        "type_nickname": "The Advocate",
+        "dimensions": "Introverted · Intuitive · Feeling · Judging"
+      },
+      "vertical": {
+        "strengths": "Insightful, principled, and quietly determined — reads people and pursues meaning.",
+        "weaknesses": "Prone to perfectionism, burnout, and withdrawing when overwhelmed.",
+        "communication": "Thoughtful and warm; prefers depth and one-on-one over surface chatter.",
+        "relationships": "Seeks rare, authentic bonds built on shared values and trust.",
+        "career": "Drawn to counseling, writing, mission-led and human-centered work.",
+        "compatibility": "Pairs deeply with ENFP or ENTP, whose energy draws them out."
+      }
+    }
+  },
+  "__vgroup:mbti:INFP": {
+    "content": {
+      "label": "INFP · The Mediator",
+      "attributes": {
+        "type_code": "INFP",
+        "type_nickname": "The Mediator",
+        "dimensions": "Introverted · Intuitive · Feeling · Perceiving"
+      },
+      "vertical": {
+        "strengths": "Idealistic, empathetic, and imaginative — guided by strong inner values.",
+        "weaknesses": "Can be self-critical, conflict-averse, and impractical about logistics.",
+        "communication": "Gentle and sincere; communicates best in writing and safe, personal settings.",
+        "relationships": "Devoted and deep; needs partners who honor their values and space.",
+        "career": "Fits creative, humanitarian, and meaning-rich work over rigid hierarchy.",
+        "compatibility": "Balances with ENFJ or ENTJ, who help translate ideals into action."
+      }
+    }
+  },
+  "__vgroup:mbti:INTJ": {
+    "content": {
+      "label": "INTJ · The Architect",
+      "attributes": {
+        "type_code": "INTJ",
+        "type_nickname": "The Architect",
+        "dimensions": "Introverted · Intuitive · Thinking · Judging"
+      },
+      "vertical": {
+        "strengths": "Strategic, independent, and visionary — builds long-range systems and plans.",
+        "weaknesses": "Can seem aloof, overly critical, and dismissive of emotion or convention.",
+        "communication": "Precise and economical; shares conclusions, not the running commentary.",
+        "relationships": "Selective and loyal; values competence, autonomy, and intellectual respect.",
+        "career": "Excels in strategy, research, engineering, and architecting the big picture.",
+        "compatibility": "Complements ENFP or ENTP, whose openness balances their intensity."
+      }
+    }
+  },
+  "__vgroup:mbti:INTP": {
+    "content": {
+      "label": "INTP · The Logician",
+      "attributes": {
+        "type_code": "INTP",
+        "type_nickname": "The Logician",
+        "dimensions": "Introverted · Intuitive · Thinking · Perceiving"
+      },
+      "vertical": {
+        "strengths": "Analytical, original, and curious — dissects ideas and finds the underlying logic.",
+        "weaknesses": "May over-analyze, procrastinate, and neglect practical or social follow-through.",
+        "communication": "Precise and questioning; more comfortable with ideas than small talk.",
+        "relationships": "Values intellectual companionship and independence over convention.",
+        "career": "Fits research, engineering, and any role rewarding deep problem-solving.",
+        "compatibility": "Pairs well with ENTJ or ESTJ, who drive their insights into results."
+      }
+    }
+  },
+  "__vgroup:mbti:ISFP": {
+    "content": {
+      "label": "ISFP · The Adventurer",
+      "attributes": {
+        "type_code": "ISFP",
+        "type_nickname": "The Adventurer",
+        "dimensions": "Introverted · Sensing · Feeling · Perceiving"
+      },
+      "vertical": {
+        "strengths": "Artistic, adaptable, and quietly intense — expresses values through action and craft.",
+        "weaknesses": "Can be conflict-averse, hard to read, and reluctant to plan far ahead.",
+        "communication": "Understated and nonverbal; shows more through what they do than say.",
+        "relationships": "Warm and loyal to a close circle; needs space and genuine respect.",
+        "career": "Thrives in design, craft, performance, and hands-on creative work.",
+        "compatibility": "Matches with ESFJ or ESTJ, who offer structure and steady support."
+      }
+    }
+  },
+  "__vgroup:mbti:ISTJ": {
+    "content": {
+      "label": "ISTJ · The Logistician",
+      "attributes": {
+        "type_code": "ISTJ",
+        "type_nickname": "The Logistician",
+        "dimensions": "Introverted · Sensing · Thinking · Judging"
+      },
+      "vertical": {
+        "strengths": "Dependable, thorough, and principled — the backbone people count on.",
+        "weaknesses": "Can be inflexible, resistant to change, and slow to voice feelings.",
+        "communication": "Factual and measured; prefers clear facts over speculation.",
+        "relationships": "Steadfast and traditional; values commitment and consistency.",
+        "career": "Strong in operations, finance, law, and any role rewarding rigor.",
+        "compatibility": "Complements ESFP or ESTP, who bring spontaneity to their order."
+      }
+    }
+  },
+  "__vgroup:mbti:ISTP": {
+    "content": {
+      "label": "ISTP · The Virtuoso",
+      "attributes": {
+        "type_code": "ISTP",
+        "type_nickname": "The Virtuoso",
+        "dimensions": "Introverted · Sensing · Thinking · Perceiving"
+      },
+      "vertical": {
+        "strengths": "Practical, cool under pressure, and endlessly resourceful — masters tools and systems.",
+        "weaknesses": "Can seem detached, avoid commitment, and grow bored by routine.",
+        "communication": "Terse and action-first; solves quietly rather than explaining.",
+        "relationships": "Independent and low-drama; values partners who respect their autonomy.",
+        "career": "Fits engineering, mechanics, athletics, and hands-on troubleshooting.",
+        "compatibility": "Pairs with ESFJ or ESTJ, who add warmth and structure."
+      }
+    }
+  },
+  "__vgroup:hsk:1": {
+    "content": {
+      "label": "HSK 1",
+      "attributes": {
+        "grade_band": "HSK 1",
+        "age_range": "6–8",
+        "difficulty": "Beginner"
+      },
+      "vertical": {
+        "learning_objective": "Read short, fully-pinyin sentences using the ~150 core HSK 1 words and recognize the most common characters in context.",
+        "includes": "One bilingual reading card: a simple illustrated scene, ~150-word HSK 1 vocabulary, pinyin above every character, and an English gloss.",
+        "background": "HSK 1 is the entry level of the Chinese proficiency scale (~150 words, basic greetings, numbers, and everyday nouns). Reading is supported by full pinyin."
+      }
+    }
+  },
+  "__vgroup:hsk:2": {
+    "content": {
+      "label": "HSK 2",
+      "attributes": {
+        "grade_band": "HSK 2",
+        "age_range": "8–10",
+        "difficulty": "Beginner"
+      },
+      "vertical": {
+        "learning_objective": "Read short bilingual passages using the ~300 HSK 2 words, following simple everyday narratives with pinyin support.",
+        "includes": "One bilingual reading card: an illustrated story, ~300-word HSK 2 vocabulary, pinyin above the characters, and an English translation.",
+        "background": "HSK 2 (~300 words cumulative) covers simple daily topics — family, time, shopping, and routines — in short connected sentences."
+      }
+    }
+  },
+  "__vgroup:hsk:3": {
+    "content": {
+      "label": "HSK 3",
+      "attributes": {
+        "grade_band": "HSK 3",
+        "age_range": "9–12",
+        "difficulty": "Elementary"
+      },
+      "vertical": {
+        "learning_objective": "Read connected multi-sentence passages using the ~600 HSK 3 words, handling everyday topics with reduced pinyin scaffolding.",
+        "includes": "One bilingual reading card: a short narrative, ~600-word HSK 3 vocabulary, selective pinyin, and an English translation.",
+        "background": "HSK 3 (~600 words cumulative) marks the elementary threshold — learners manage basic communication across life, study, and work situations."
+      }
+    }
+  },
+  "__vgroup:hsk:4": {
+    "content": {
+      "label": "HSK 4",
+      "attributes": {
+        "grade_band": "HSK 4",
+        "age_range": "11–14",
+        "difficulty": "Intermediate"
+      },
+      "vertical": {
+        "learning_objective": "Read longer passages and simple stories using the ~1,200 HSK 4 words, following plot and inference with minimal pinyin.",
+        "includes": "One bilingual reading card: an extended story, ~1,200-word HSK 4 vocabulary, minimal pinyin, and an English translation.",
+        "background": "HSK 4 (~1,200 words cumulative) is the intermediate level — learners discuss a fairly wide range of topics fluently in Chinese."
+      }
+    }
   }
 }

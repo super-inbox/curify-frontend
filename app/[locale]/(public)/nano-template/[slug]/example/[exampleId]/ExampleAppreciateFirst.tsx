@@ -129,8 +129,10 @@ export default function ExampleAppreciateFirst({
         <ExampleReproduceSurface {...surface} />
       ) : (
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
-          <div className="relative mx-auto flex w-full max-w-[380px] items-center justify-center overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
-            <div className="relative aspect-[4/5] w-full">
+          {/* Square frame so landscape images aren't squeezed by a portrait
+              container (object-contain centers either orientation). */}
+          <div className="relative mx-auto flex aspect-square w-full max-w-[460px] items-center justify-center overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
+            <div className="relative h-full w-full">
               {surface.image}
             </div>
           </div>

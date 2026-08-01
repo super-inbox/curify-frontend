@@ -411,9 +411,54 @@ export type ResolvedVerticalPage = {
   schema: VerticalSchema;
   /** ontology values present for this page → chip strip + JSON-LD (Pillar 2) */
   attributes: { key: string; label: string; value: string; facet: boolean }[];
-  /** authored knowledge slots present for this page (Pillar 1) */
+  /** authored knowledge specific to THIS example (player / reading card). */
   knowledge: { key: string; label: string; text: string }[];
+  /** authored knowledge shared by the MBTI type / HSK level this example belongs
+   *  to (the middle tier). Rendered as a distinct "About the {groupLabel}"
+   *  section so type/level facts aren't duplicated as if example-specific. */
+  groupKnowledge: { key: string; label: string; text: string }[];
+  /** display label for the group tier, e.g. "ISFP · The Adventurer" or "HSK 2". */
+  groupLabel?: string;
 };
+
+function buildAttributes(
+  schema: NonNullable<ReturnType<typeof resolveVerticalForTopics>>,
+  attrVals: Record<string, string>
+) {
+  return schema.attributes
+    .map((a) => ({ key: a.key, label: a.label, value: normalizeText(attrVals[a.key]), facet: !!a.facet }))
+    .filter((a) => a.value);
+}
+
+function buildKnowledge(
+  schema: NonNullable<ReturnType<typeof resolveVerticalForTopics>>,
+  vertVals: Record<string, string>
+) {
+  return schema.knowledgeSlots
+    .map((k) => ({ key: k.key, label: k.label, text: normalizeText(vertVals[k.key]) }))
+    .filter((k) => k.text);
+}
+
+/**
+ * Derive the type/level group key for an example (the middle tier between
+ * template and example). MBTI → the character's `type_code` (ISFP, ENTJ, …);
+ * HSK → the reading card's level parsed from its id (hsk1/2/3/4). Group content
+ * is authored ONCE per key under `__vgroup:<key>` in nano.json and inherited by
+ * every example of that type/level. Returns null when no group applies.
+ */
+export function deriveVGroupKey(
+  templateId: string,
+  exampleId: string,
+  exAttrs: Record<string, unknown> | undefined
+): string | null {
+  const tc = exAttrs?.type_code;
+  if (typeof tc === "string" && tc.trim()) return `mbti:${tc.trim().toUpperCase()}`;
+  if (/hsk/i.test(templateId)) {
+    const m = /hsk-?(\d)/i.exec(exampleId);
+    if (m) return `hsk:${m[1]}`;
+  }
+  return null;
+}
 
 /**
  * Resolve the vertical domain-knowledge layer for a template page: route it to a
@@ -427,16 +472,10 @@ function buildResolvedVertical(
   attrVals: Record<string, string>,
   vertVals: Record<string, string>
 ): ResolvedVerticalPage | null {
-  const attributes = schema.attributes
-    .map((a) => ({ key: a.key, label: a.label, value: normalizeText(attrVals[a.key]), facet: !!a.facet }))
-    .filter((a) => a.value);
-
-  const knowledge = schema.knowledgeSlots
-    .map((k) => ({ key: k.key, label: k.label, text: normalizeText(vertVals[k.key]) }))
-    .filter((k) => k.text);
-
+  const attributes = buildAttributes(schema, attrVals);
+  const knowledge = buildKnowledge(schema, vertVals);
   if (attributes.length === 0 && knowledge.length === 0) return null;
-  return { schema, attributes, knowledge };
+  return { schema, attributes, knowledge, groupKnowledge: [] };
 }
 
 export function resolveVerticalSections(
@@ -474,15 +513,48 @@ export function resolveExampleVerticalSections(
 
   const content = resolveLocaleMessage(templateId, nanoMessages)?.content;
   const ex = content?.examples?.[exampleId];
+
+  // Middle tier: the MBTI type / HSK level this example belongs to. Authored
+  // once under `__vgroup:<key>` and shared by all examples of that type/level.
+  const groupKey = deriveVGroupKey(
+    templateId,
+    exampleId,
+    (ex?.attributes ?? {}) as Record<string, unknown>
+  );
+  const groupContent = groupKey
+    ? (resolveLocaleMessage(`__vgroup:${groupKey}`, nanoMessages)?.content as
+        | { attributes?: Record<string, string>; vertical?: Record<string, string>; label?: string }
+        | undefined)
+    : undefined;
+
+  // Attributes (profile rows): template → group → example (example wins).
   const attrVals = {
     ...((content?.attributes ?? {}) as Record<string, string>),
+    ...((groupContent?.attributes ?? {}) as Record<string, string>),
     ...((ex?.attributes ?? {}) as Record<string, string>),
   };
-  const vertVals = {
+  // Knowledge stays SPLIT: group tier (type/level) vs example (player/card), so
+  // the shared type/level facts render in their own section, not as if unique.
+  const groupVertVals = {
     ...((content?.vertical ?? {}) as Record<string, string>),
-    ...((ex?.vertical ?? {}) as Record<string, string>),
+    ...((groupContent?.vertical ?? {}) as Record<string, string>),
   };
-  return buildResolvedVertical(schema, attrVals, vertVals);
+  const exVertVals = { ...((ex?.vertical ?? {}) as Record<string, string>) };
+
+  const attributes = buildAttributes(schema, attrVals);
+  const knowledge = buildKnowledge(schema, exVertVals);
+  const groupKnowledge = buildKnowledge(schema, groupVertVals);
+  if (attributes.length === 0 && knowledge.length === 0 && groupKnowledge.length === 0) {
+    return null;
+  }
+
+  const groupLabel =
+    normalizeText(groupContent?.label) ||
+    normalizeText(attrVals.type_code) ||
+    normalizeText(attrVals.grade_band) ||
+    undefined;
+
+  return { schema, attributes, knowledge, groupKnowledge, groupLabel };
 }
 
 /**
