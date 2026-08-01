@@ -18,7 +18,7 @@
  * (only one is mounted at a time).
  */
 
-import { useState, type ComponentProps } from "react";
+import { useState, type ComponentProps, type ReactNode } from "react";
 import Link from "next/link";
 import { Eye, Sparkles, Wand2 } from "lucide-react";
 import ExampleReproduceSurface from "./ExampleReproduceSurface";
@@ -30,6 +30,10 @@ type Props = ComponentProps<typeof ExampleReproduceSurface> & {
   appreciateFirst: boolean;
   /** Category label → chip on the title row, linking to the template page. */
   category?: string;
+  /** VerticalPageSchema (attribute chips + authored knowledge). Rendered as
+   *  server nodes from the page; lives in the Info panel (the read surface).
+   *  Self-hides when the example has no authored values. */
+  infoExtra?: ReactNode;
 };
 
 type View = "info" | "workbench";
@@ -37,6 +41,7 @@ type View = "info" | "workbench";
 export default function ExampleAppreciateFirst({
   appreciateFirst,
   category,
+  infoExtra,
   ...surface
 }: Props) {
   const [view, setView] = useState<View>("info");
@@ -104,12 +109,15 @@ export default function ExampleAppreciateFirst({
     </div>
   );
 
-  // Generator-demo → header (with Share) + workbench on load.
+  // Generator-demo → header (with Share) + workbench on load. Any authored
+  // vertical schema (rare here — e.g. WC sticker pages) renders below it, since
+  // there's no Info panel to host it.
   if (!appreciateFirst) {
     return (
       <div>
         {header}
         <ExampleReproduceSurface {...surface} />
+        {infoExtra ? <div className="mt-8">{infoExtra}</div> : null}
       </div>
     );
   }
@@ -120,35 +128,40 @@ export default function ExampleAppreciateFirst({
       {view === "workbench" ? (
         <ExampleReproduceSurface {...surface} />
       ) : (
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
-          <div className="relative mx-auto flex w-full max-w-[380px] items-center justify-center overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
-            <div className="relative aspect-[4/5] w-full">
-              {surface.image}
+        <div className="flex flex-col gap-6">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
+            <div className="relative mx-auto flex w-full max-w-[380px] items-center justify-center overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
+              <div className="relative aspect-[4/5] w-full">
+                {surface.image}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-5 rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6">
+              {surface.description ? (
+                <p className="whitespace-pre-line text-sm leading-relaxed text-neutral-700">
+                  {surface.description}
+                </p>
+              ) : (
+                <p className="text-sm leading-relaxed text-neutral-500">
+                  Explore this example, then make it your own — tweak the details
+                  and generate your own version.
+                </p>
+              )}
+
+              <div className="mt-auto">
+                <button
+                  type="button"
+                  onClick={() => setView("workbench")}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-purple-700"
+                >
+                  <Sparkles className="h-4 w-4" /> Customize
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-5 rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6">
-            {surface.description ? (
-              <p className="whitespace-pre-line text-sm leading-relaxed text-neutral-700">
-                {surface.description}
-              </p>
-            ) : (
-              <p className="text-sm leading-relaxed text-neutral-500">
-                Explore this example, then make it your own — tweak the details
-                and generate your own version.
-              </p>
-            )}
-
-            <div className="mt-auto">
-              <button
-                type="button"
-                onClick={() => setView("workbench")}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-purple-700"
-              >
-                <Sparkles className="h-4 w-4" /> Customize
-              </button>
-            </div>
-          </div>
+          {/* VerticalPageSchema — attribute chips + authored knowledge block. */}
+          {infoExtra}
         </div>
       )}
     </div>

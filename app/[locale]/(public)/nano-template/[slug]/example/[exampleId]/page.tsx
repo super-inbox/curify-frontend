@@ -408,16 +408,22 @@ export default async function NanoExampleDetailPage({
           ExampleAppreciateFirst (same row as Share/Info/Customize). */}
       {srCrawlTopics}
 
-      {/* VerticalPageSchema — Pillar 2 ontology chip strip (example-level) */}
-      <VerticalAttributeChips vertical={vertical} />
-
       {/* Unified reproduce workbench — Source · Make-it-yours · Production tiles,
           full width (the old "More like this" right rail is gone; related
           images run full-width at the bottom). Mirrors the gallery surface so
-          the generate mental model is identical across template + gallery. */}
+          the generate mental model is identical across template + gallery.
+          The VerticalPageSchema (Pillar 2 attribute chips + Pillar 1 authored
+          knowledge block) rides the Info panel — it's the read/appreciate
+          surface. Both self-hide when the example has no authored values. */}
       <ExampleAppreciateFirst
         appreciateFirst={examplesIndexable}
         category={category}
+        infoExtra={
+          <>
+            <VerticalAttributeChips vertical={vertical} />
+            <VerticalKnowledgeSection vertical={vertical} />
+          </>
+        }
         locale={rawLocale}
         templateId={templateId}
         slug={slug}
@@ -539,10 +545,10 @@ export default async function NanoExampleDetailPage({
           showOtherTemplates={true}
         />
 
-        {/* VerticalPageSchema — Pillar 1 authored domain-knowledge block
-            (example-level: MBTI type breakdown, strengths, career fit, etc.). */}
-        <VerticalKnowledgeSection vertical={vertical} />
-
+        {/* VerticalPageSchema knowledge block now renders inside the Info
+            panel (see ExampleAppreciateFirst infoExtra). JSON-LD stays here,
+            unconditional, so structured data is present regardless of which
+            flipper view is active. */}
         {verticalJsonLd ? (
           <script
             type="application/ld+json"
