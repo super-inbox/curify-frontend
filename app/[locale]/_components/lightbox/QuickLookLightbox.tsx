@@ -29,6 +29,12 @@ import CdnImage from "@/app/[locale]/_components/CdnImage";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { useTracking, type ContentType } from "@/services/useTracking";
 
+// Master switch for the quick-look lightbox. OFF for now — tiles navigate
+// straight to the full page instead of opening the overlay. All the lightbox
+// scripts stay intact (provider, overlay, tracking, more-like-this); flip this
+// to `true` to re-enable everywhere the grids pass `openInLightbox`.
+export const LIGHTBOX_ENABLED = false;
+
 export type PeekItem =
   | {
       kind: "example";

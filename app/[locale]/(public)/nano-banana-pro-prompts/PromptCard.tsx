@@ -7,7 +7,7 @@ import { Link } from '@/i18n/navigation';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
 import { useCopyTracking, useClickTracking } from "@/services/useTracking";
-import { useLightbox } from "@/app/[locale]/_components/lightbox/QuickLookLightbox";
+import { useLightbox, LIGHTBOX_ENABLED } from "@/app/[locale]/_components/lightbox/QuickLookLightbox";
 
 interface PromptCardProps {
   prompt: NanoPromptBase;
@@ -51,7 +51,7 @@ export default function PromptCard({ prompt, openInLightbox = false }: PromptCar
     trackClick();
     // Plain left-click on a mixed-browse surface → quick-look overlay. Modified
     // clicks (new tab / etc.) fall through to the real <Link> navigation.
-    if (openInLightbox && !e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0) {
+    if (LIGHTBOX_ENABLED && openInLightbox && !e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0) {
       e.preventDefault();
       openLightbox({
         kind: "prompt",

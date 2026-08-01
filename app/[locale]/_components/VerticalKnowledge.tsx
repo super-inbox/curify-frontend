@@ -29,6 +29,52 @@ export function VerticalAttributeChips({
   );
 }
 
+/**
+ * Compact profile layout for the example page's Info panel (right column,
+ * above the Customize button): each attribute is its own row (label left,
+ * value right — a profile/spec sheet), followed by the authored knowledge
+ * slots. No-ops when unauthored. Separate from the chip strip so the
+ * template-detail page's VerticalAttributeChips look is untouched.
+ */
+export function VerticalInfoPanel({
+  vertical,
+}: {
+  vertical: ResolvedVerticalPage | null;
+}) {
+  if (!vertical || (vertical.attributes.length === 0 && vertical.knowledge.length === 0)) {
+    return null;
+  }
+  return (
+    <div className="flex flex-col gap-4">
+      {vertical.attributes.length > 0 && (
+        <dl
+          className="divide-y divide-neutral-100 overflow-hidden rounded-xl border border-neutral-200"
+          aria-label={`${vertical.schema.label} attributes`}
+        >
+          {vertical.attributes.map((a) => (
+            <div key={a.key} className="flex items-baseline justify-between gap-3 px-3 py-2">
+              <dt className="text-xs font-medium text-neutral-500">{a.label}</dt>
+              <dd className="text-right text-sm font-semibold text-neutral-900">{a.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      {vertical.knowledge.length > 0 && (
+        <div className="flex flex-col gap-3">
+          {vertical.knowledge.map((k) => (
+            <div key={k.key}>
+              <div className="text-[11px] font-bold uppercase tracking-wide text-neutral-500">
+                {k.label}
+              </div>
+              <p className="mt-1 text-sm leading-6 text-neutral-700">{k.text}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function VerticalKnowledgeSection({
   vertical,
 }: {

@@ -23,10 +23,7 @@ import {
   resolveExampleVerticalSections,
   buildVerticalJsonLd,
 } from "@/lib/nano_seo_utils";
-import {
-  VerticalAttributeChips,
-  VerticalKnowledgeSection,
-} from "@/app/[locale]/_components/VerticalKnowledge";
+import { VerticalInfoPanel } from "@/app/[locale]/_components/VerticalKnowledge";
 import { getCanonicalUrl } from "@/lib/canonical";
 import { templateExamplesIndexable } from "@/lib/example_indexing";
 import { SITE_URL } from "@/lib/constants";
@@ -418,12 +415,7 @@ export default async function NanoExampleDetailPage({
       <ExampleAppreciateFirst
         appreciateFirst={examplesIndexable}
         category={category}
-        infoExtra={
-          <>
-            <VerticalAttributeChips vertical={vertical} />
-            <VerticalKnowledgeSection vertical={vertical} />
-          </>
-        }
+        infoExtra={<VerticalInfoPanel vertical={vertical} />}
         locale={rawLocale}
         templateId={templateId}
         slug={slug}
