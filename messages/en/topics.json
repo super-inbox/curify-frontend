@@ -1775,7 +1775,40 @@
         "consumer-goods",
         "product-package",
         "unboxing"
-      ]
+      ],
+      "format": {
+        "lead": "Packaging visuals show your product wrapped, boxed, or labeled — so a brand idea looks shelf-ready. Curify renders packaging concepts and mockups from your description or artwork.",
+        "howToTitle": "How to make a packaging design",
+        "howTo": [
+          "Pick a packaging template — box, label, pouch, or gift box.",
+          "Describe the product and brand, or upload your artwork.",
+          "Generate a packaging concept with realistic materials.",
+          "Download the image for your deck, listing, or factory brief."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Box and carton designs",
+          "Label and pouch concepts",
+          "Gift-box and hamper presentations",
+          "Food and beverage packaging",
+          "Brand packaging mockups"
+        ],
+        "faqTitle": "Packaging FAQ",
+        "faq": [
+          {
+            "q": "Can I put my own logo or artwork on the packaging?",
+            "a": "Yes — several templates let you upload your design so it appears on the package."
+          },
+          {
+            "q": "Is this a design or a mockup?",
+            "a": "Both — Curify can render a fresh packaging concept or present your design on a realistic package."
+          },
+          {
+            "q": "Can I use it for an online store?",
+            "a": "Yes, the images work as professional product and listing visuals."
+          }
+        ]
+      }
     },
     "ecommerce": {
       "displayName": "Ecommerce",
@@ -1817,7 +1850,40 @@
         "brand-book",
         "color-system",
         "typography"
-      ]
+      ],
+      "format": {
+        "lead": "Brand identity boards pull a brand's look into one visual system — logo direction, colors, type, and mood. Curify explores a cohesive brand board from your brief, so a brand idea becomes something you can see.",
+        "howToTitle": "How to make a brand board",
+        "howTo": [
+          "Pick a brand-identity or moodboard template.",
+          "Describe the brand — name, feel, and audience.",
+          "Generate a cohesive visual system and direction.",
+          "Refine the direction and regenerate, or apply it to mockups."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Brand moodboards and visual systems",
+          "Logo and color direction",
+          "Full-VI presentation boards",
+          "Packaging and application previews",
+          "Brand pitch and deck visuals"
+        ],
+        "faqTitle": "Brand board FAQ",
+        "faq": [
+          {
+            "q": "Do I need design skills?",
+            "a": "No. Describe the brand and Curify explores a coherent visual direction — colors, type, mood, and applications."
+          },
+          {
+            "q": "Is this a final logo?",
+            "a": "It's a direction and visual system to align on; you can iterate and then apply the look to mockups and packaging."
+          },
+          {
+            "q": "Can I present it to a client?",
+            "a": "Yes — the boards are built to look like a professional brand presentation."
+          }
+        ]
+      }
     },
     "naruto": {
       "displayName": "Naruto",
@@ -2260,13 +2326,112 @@
       }
     },
     "recipes": {
-      "displayName": "Recipes"
+      "displayName": "Recipes",
+      "format": {
+        "lead": "Recipe cards make a dish look appetizing and easy to follow — ingredients, steps, and a hero image in one tidy card. Curify designs a beautiful recipe card from your recipe.",
+        "howToTitle": "How to make a recipe card",
+        "howTo": [
+          "Pick a recipe-card template.",
+          "Enter the dish, ingredients, and steps.",
+          "Generate an illustrated, easy-to-follow card.",
+          "Download or print, or save a recipe pack."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Illustrated recipe cards",
+          "Cuisine and dish guides",
+          "Food and cooking tip cards",
+          "Menu-style presentation cards",
+          "Printable recipe collections"
+        ],
+        "faqTitle": "Recipe card FAQ",
+        "faq": [
+          {
+            "q": "Can I use my own recipe?",
+            "a": "Yes — enter your ingredients and steps and Curify designs the card around them."
+          },
+          {
+            "q": "Can I print recipe cards?",
+            "a": "Yes, cards export at high resolution suitable for printing or a recipe binder."
+          },
+          {
+            "q": "Can I make a whole collection?",
+            "a": "Yes — build a set of matching cards, and several templates offer a downloadable pack."
+          }
+        ]
+      }
     },
     "mind-maps": {
-      "displayName": "Mind Maps"
+      "displayName": "Mind Maps",
+      "format": {
+        "lead": "Mind maps branch a central idea into connected concepts — perfect for explaining structure, an ontology, or a study topic at a glance. Curify generates a clear, illustrated mind map from your subject.",
+        "howToTitle": "How to make a mind map",
+        "howTo": [
+          "Pick a mind-map template.",
+          "Enter your central topic and its branches.",
+          "Generate a clear, connected, illustrated map.",
+          "Download to study, present, or print."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Study and revision maps",
+          "Concept and ontology maps",
+          "Animal and science structure maps",
+          "Brainstorm and planning maps",
+          "Educational explainer diagrams"
+        ],
+        "faqTitle": "Mind map FAQ",
+        "faq": [
+          {
+            "q": "Can I define my own branches?",
+            "a": "Yes — enter the central topic and the branches, and Curify lays out and illustrates the map."
+          },
+          {
+            "q": "How many branches can it show?",
+            "a": "Templates handle several levels of branches while keeping the map readable at a glance."
+          },
+          {
+            "q": "Can I print or present it?",
+            "a": "Yes, mind maps export at high resolution for slides, handouts, or wall printing."
+          }
+        ]
+      }
     },
     "study-sheets": {
-      "displayName": "Study Sheets"
+      "displayName": "Study Sheets",
+      "format": {
+        "lead": "Study sheets and worksheets condense a topic into a practice-ready page — vocabulary drills, exercises, and revision summaries. Curify builds a clean, printable worksheet from your subject in seconds.",
+        "howToTitle": "How to make a study sheet",
+        "howTo": [
+          "Pick a study-sheet or worksheet template.",
+          "Enter your subject, terms, or questions.",
+          "Generate an organized, illustrated sheet.",
+          "Download or print it, or grab a PDF pack."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Vocabulary and language practice",
+          "Exam and revision study sheets",
+          "Kids' learning and phonics worksheets",
+          "Subject cheat-summaries",
+          "Printable classroom handouts"
+        ],
+        "faqTitle": "Study sheet FAQ",
+        "faq": [
+          {
+            "q": "Can I print the study sheets?",
+            "a": "Yes — they export at high resolution and several templates offer a downloadable print-ready PDF pack."
+          },
+          {
+            "q": "Can I use my own content?",
+            "a": "Yes. Enter your terms or questions and Curify lays out and illustrates the sheet for you."
+          },
+          {
+            "q": "Are bilingual sheets supported?",
+            "a": "Many are — language templates pair English with Chinese and other languages on the same sheet."
+          }
+        ]
+      }
     },
     "art-prints": {
       "displayName": "Art Prints"
@@ -2278,7 +2443,40 @@
       "displayName": "Memes"
     },
     "social-media-posts": {
-      "displayName": "Social Media Posts"
+      "displayName": "Social Media Posts",
+      "format": {
+        "lead": "Social media posts and carousels turn an idea into scroll-stopping, on-brand slides for Instagram, RedNote, or TikTok. Curify lays out a cohesive multi-slide post from your topic.",
+        "howToTitle": "How to make a social media post",
+        "howTo": [
+          "Pick a social post or carousel template.",
+          "Add your topic, key points, and any names.",
+          "Generate a set of matching, ready-to-post slides.",
+          "Download and post, or refine and regenerate."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Instagram and RedNote carousels",
+          "Tip, how-to, and listicle posts",
+          "Product and promotion posts",
+          "Quote and meme posts",
+          "Event and announcement posts"
+        ],
+        "faqTitle": "Social post FAQ",
+        "faq": [
+          {
+            "q": "Can I make a multi-slide carousel?",
+            "a": "Yes — carousel templates generate a set of matching slides that read as one cohesive post."
+          },
+          {
+            "q": "Are the posts sized for social platforms?",
+            "a": "Yes, outputs are formatted for social feeds and stories so they're ready to upload."
+          },
+          {
+            "q": "Do I need design skills?",
+            "a": "No. Pick a template, add your points, and Curify handles the layout and styling."
+          }
+        ]
+      }
     },
     "stickers": {
       "displayName": "Stickers",
