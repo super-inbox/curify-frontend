@@ -508,7 +508,40 @@
         "versus",
         "comparer",
         "contraste"
-      ]
+      ],
+      "format": {
+        "lead": "Les visuels de comparaison permettent de peser facilement deux éléments côte à côte — avant vs après, A vs B, ceci vs cela. Curify présente le contraste clairement pour que la différence soit instantanément perceptible.",
+        "howToTitle": "Comment créer un tableau comparatif",
+        "howTo": [
+          "Choisissez un modèle de comparaison ou de versus.",
+          "Saisissez les deux sujets et les points que vous souhaitez comparer.",
+          "Générez une mise en page équilibrée côte à côte.",
+          "Téléchargez ou affinez les points et régénérez."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Transformations avant-après",
+          "Cartes de bataille A vs B et 1 contre 1",
+          "Tableaux comparatifs de produits et d'options",
+          "Visuels d'évolution et d'hier à aujourd'hui",
+          "Aides à la décision pour les avantages et les inconvénients"
+        ],
+        "faqTitle": "FAQ sur la comparaison",
+        "faq": [
+          {
+            "q": "Combien d'éléments puis-je comparer ?",
+            "a": "La plupart des modèles se concentrent sur une comparaison claire entre deux éléments, ce qui est le plus facile à lire en un coup d'œil ; des tableaux à plusieurs colonnes sont disponibles pour certains sujets."
+          },
+          {
+            "q": "Puis-je faire des avant-après ?",
+            "a": "Oui — les formats avant/après et d'hier à aujourd'hui sont parmi les formats de comparaison les plus populaires sur Curify."
+          },
+          {
+            "q": "Dois-je concevoir la mise en page ?",
+            "a": "Non. Vous fournissez les deux sujets et les points ; l'IA construit la mise en page équilibrée."
+          }
+        ]
+      }
     },
     "groups": {
       "displayName": "Groupes",
@@ -732,7 +765,40 @@
         "tutoriel",
         "guide étape par étape",
         "guide"
-      ]
+      ],
+      "format": {
+        "lead": "Les guides et les pense-bêtes regroupent un mode d'emploi, une routine ou une référence dans un visuel clair. Curify transforme vos étapes ou conseils en un guide soigné et illustré que les gens peuvent suivre en un coup d'œil.",
+        "howToTitle": "Comment créer un guide",
+        "howTo": [
+          "Choisissez un modèle de guide ou de pense-bête.",
+          "Saisissez vos étapes, conseils ou points de référence.",
+          "Générez une mise en page organisée et illustrée.",
+          "Téléchargez pour partager ou imprimez comme carte de référence."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Guides pratiques étape par étape",
+          "Pense-bêtes et cartes de référence rapide",
+          "Guides de fitness, d'emballage et de routine",
+          "Cartes d'étiquette et de choses à faire et à ne pas faire",
+          "Guides de recettes et de conseils culinaires"
+        ],
+        "faqTitle": "FAQ sur les guides",
+        "faq": [
+          {
+            "q": "Quels types de guides puis-je créer ?",
+            "a": "Tout ce qui est séquentiel ou basé sur des références — modes d'emploi, routines, listes de contrôle, pense-bêtes et cartes de conseils fonctionnent tous bien."
+          },
+          {
+            "q": "Puis-je inclure mes propres étapes ?",
+            "a": "Oui — vous fournissez les étapes ou les points et Curify gère la mise en page, la numérotation et les icônes."
+          },
+          {
+            "q": "Puis-je imprimer le guide ?",
+            "a": "Oui, les guides s'exportent en haute résolution et plusieurs offrent un pack téléchargeable prêt à imprimer."
+          }
+        ]
+      }
     },
     "portrait": {
       "title": "Modèles Visuels Portrait avec IA | Curify AI",
@@ -879,7 +945,40 @@
         "affiche",
         "impression",
         "art mural"
-      ]
+      ],
+      "format": {
+        "lead": "Les affiches rendent un sujet frappant et partageable — événements, voyages, citations, personnages ou produits. Décrivez ce que vous voulez et Curify compose une affiche équilibrée et accrocheuse que vous pouvez publier ou imprimer.",
+        "howToTitle": "Comment créer une affiche",
+        "howTo": [
+          "Choisissez un modèle d'affiche qui correspond à votre sujet ou à votre humeur.",
+          "Ajoutez votre titre, vos détails et tous les noms — l'IA gère la typographie et la mise en page.",
+          "Générez pour voir une affiche finie, prête à imprimer.",
+          "Affinez la formulation ou le style et régénérez jusqu'à ce que ce soit parfait."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Affiches d'événements, de matchs et d'horaires",
+          "Art mural de voyage et de monuments",
+          "Affiches de citations et de typographie",
+          "Affiches de personnages, de sports et de fans",
+          "Affiches de produits et promotionnelles"
+        ],
+        "faqTitle": "FAQ sur les affiches",
+        "faq": [
+          {
+            "q": "Puis-je imprimer les affiches ?",
+            "a": "Oui — les affiches s'exportent en haute résolution, adaptées à l'impression comme art mural ou impressions promotionnelles."
+          },
+          {
+            "q": "Puis-je ajouter mon propre texte ?",
+            "a": "Absolument. Vous fournissez le titre et les détails, et Curify organise la typographie et la composition autour d'eux."
+          },
+          {
+            "q": "Dois-je écrire une invite ?",
+            "a": "Non. Choisissez un modèle et remplissez quelques champs — aucune ingénierie d'invite n'est requise."
+          }
+        ]
+      }
     },
     "digital-canvas": {
       "displayName": "Toile Numérique",
@@ -902,7 +1001,40 @@
         "mock-up",
         "prototype",
         "aperçu"
-      ]
+      ],
+      "format": {
+        "lead": "Les maquettes montrent un design sur un produit réel — marchandise, emballage, appareil ou présentoir de vente au détail — pour qu'il ait l'air fini et vendable. Curify rend des maquettes de produits professionnelles à partir de votre idée ou de votre œuvre d'art.",
+        "howToTitle": "Comment créer une maquette de produit",
+        "howTo": [
+          "Choisissez un modèle de maquette — vêtements, emballages, boîtes cadeaux, appareils, et plus encore.",
+          "Décrivez le produit ou téléchargez votre design ou logo.",
+          "Générez une maquette réaliste avec éclairage et contexte.",
+          "Téléchargez l'image pour votre annonce, votre présentation ou votre boutique."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Maquettes de marchandise et de vêtements",
+          "Présentations d'emballages et de boîtes cadeaux",
+          "Packs visuels de marque et de VI complet",
+          "Présentoirs de produits IP et de personnages",
+          "Images de fiches produits pour le commerce électronique"
+        ],
+        "faqTitle": "FAQ sur les maquettes",
+        "faq": [
+          {
+            "q": "Puis-je mettre mon propre logo ou design sur la maquette ?",
+            "a": "Oui — plusieurs modèles de maquettes vous permettent de télécharger votre œuvre d'art ou votre logo afin qu'il apparaisse sur le produit."
+          },
+          {
+            "q": "Les maquettes sont-elles utiles pour les boutiques en ligne ?",
+            "a": "Oui. Elles sont conçues pour ressembler à des photos de produits professionnelles pour les annonces, les présentations et le marketing."
+          },
+          {
+            "q": "Ai-je besoin de photographie ou de logiciel 3D ?",
+            "a": "Non. Curify rend le produit, l'éclairage et le décor pour vous à partir d'une description."
+          }
+        ]
+      }
     },
     "iran": {
       "displayName": "Iran",
@@ -1570,7 +1702,40 @@
         "landmark-map",
         "travel-map",
         "atlas"
-      ]
+      ],
+      "format": {
+        "lead": "Les cartes visuelles donnent vie à un lieu, un itinéraire ou une région — destinations de voyage, monuments, origines alimentaires ou itinéraires. Curify illustre une carte claire et pleine de caractère à partir de votre sujet.",
+        "howToTitle": "Comment créer une carte visuelle",
+        "howTo": [
+          "Choisissez un modèle de carte — pays, ville, monument ou itinéraire.",
+          "Saisissez le lieu et les points ou arrêts que vous souhaitez montrer.",
+          "Générez une carte illustrée et facile à lire.",
+          "Téléchargez comme art mural ou comme visuel de voyage partageable."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Cartes de voyage et de pays illustrées",
+          "Affiches de cartes de villes et de monuments",
+          "Visuels d'itinéraires et de parcours",
+          "Cartes d'origine alimentaire et culturelles",
+          "Art mural de cartes aquarelles et vintage"
+        ],
+        "faqTitle": "FAQ sur les cartes",
+        "faq": [
+          {
+            "q": "S'agit-il de cartes géographiques précises ?",
+            "a": "Ce sont des cartes illustrées et stylisées destinées à la narration et à l'art mural plutôt qu'à une navigation précise."
+          },
+          {
+            "q": "Puis-je marquer mes propres arrêts ou monuments ?",
+            "a": "Oui — saisissez les lieux ou les points d'itinéraire que vous souhaitez présenter et l'IA les organise."
+          },
+          {
+            "q": "Puis-je imprimer une carte comme art mural ?",
+            "a": "Oui, les cartes s'exportent en haute résolution, adaptées à l'encadrement et à l'impression."
+          }
+        ]
+      }
     },
     "quiz": {
       "displayName": "Quizzes",
@@ -1610,7 +1775,40 @@
         "consumer-goods",
         "product-package",
         "unboxing"
-      ]
+      ],
+      "format": {
+        "lead": "Les visuels d'emballage montrent votre produit emballé, mis en boîte ou étiqueté — pour qu'une idée de marque semble prête à être mise en rayon. Curify rend des concepts et des maquettes d'emballage à partir de votre description ou de votre œuvre d'art.",
+        "howToTitle": "Comment créer un design d'emballage",
+        "howTo": [
+          "Choisissez un modèle d'emballage — boîte, étiquette, pochette ou boîte cadeau.",
+          "Décrivez le produit et la marque, ou téléchargez votre œuvre d'art.",
+          "Générez un concept d'emballage avec des matériaux réalistes.",
+          "Téléchargez l'image pour votre présentation, votre annonce ou votre brief d'usine."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Designs de boîtes et de cartons",
+          "Concepts d'étiquettes et de pochettes",
+          "Présentations de boîtes cadeaux et de paniers garnis",
+          "Emballages alimentaires et de boissons",
+          "Maquettes d'emballages de marque"
+        ],
+        "faqTitle": "FAQ sur les emballages",
+        "faq": [
+          {
+            "q": "Puis-je mettre mon propre logo ou œuvre d'art sur l'emballage ?",
+            "a": "Oui — plusieurs modèles vous permettent de télécharger votre design afin qu'il apparaisse sur l'emballage."
+          },
+          {
+            "q": "Est-ce un design ou une maquette ?",
+            "a": "Les deux — Curify peut rendre un nouveau concept d'emballage ou présenter votre design sur un emballage réaliste."
+          },
+          {
+            "q": "Puis-je l'utiliser pour une boutique en ligne ?",
+            "a": "Oui, les images fonctionnent comme des visuels de produits et d'annonces professionnels."
+          }
+        ]
+      }
     },
     "ecommerce": {
       "displayName": "Ecommerce",
@@ -1624,7 +1822,40 @@
         "flat-lay",
         "shopify",
         "dtc"
-      ]
+      ],
+      "format": {
+        "lead": "Les visuels de commerce électronique donnent à un produit un aspect professionnel et prêt à être listé — photos de produits nettes, scènes de style de vie et images détaillées en grille de six. Curify les rend à partir de votre produit ou de sa description.",
+        "howToTitle": "Comment créer des images pour le commerce électronique",
+        "howTo": [
+          "Choisissez un modèle de commerce électronique — photo de produit, style de vie ou grille de détails.",
+          "Décrivez le produit, ou téléchargez votre image de produit.",
+          "Générez un visuel professionnel, prêt à être listé.",
+          "Téléchargez pour Amazon, Shopify ou votre boutique."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Images de fiches produits nettes",
+          "Photos de style de vie et en contexte",
+          "Infographies de détails de produits en grille de six",
+          "Créatifs promotionnels et publicitaires",
+          "Maquettes de marque et d'emballage"
+        ],
+        "faqTitle": "FAQ sur le commerce électronique",
+        "faq": [
+          {
+            "q": "Puis-je utiliser ma propre photo de produit ?",
+            "a": "Oui — plusieurs modèles vous permettent de télécharger votre produit afin que la scène soit construite autour de lui."
+          },
+          {
+            "q": "Sont-elles bonnes pour les annonces Amazon / Shopify ?",
+            "a": "Oui, elles sont formatées pour ressembler à des images professionnelles d'annonces et de détails."
+          },
+          {
+            "q": "Ai-je besoin d'un photographe ?",
+            "a": "Non. Curify rend le produit, l'éclairage et le décor à partir d'une description ou de votre photo."
+          }
+        ]
+      }
     },
     "showcase": {
       "displayName": "Showcase",
@@ -1652,7 +1883,40 @@
         "brand-book",
         "color-system",
         "typography"
-      ]
+      ],
+      "format": {
+        "lead": "Les planches d'identité de marque regroupent l'esthétique d'une marque en un système visuel — direction du logo, couleurs, typographie et ambiance. Curify explore une planche de marque cohérente à partir de votre brief, de sorte qu'une idée de marque devienne quelque chose de visible.",
+        "howToTitle": "Comment créer une planche de marque",
+        "howTo": [
+          "Choisissez un modèle d'identité de marque ou de moodboard.",
+          "Décrivez la marque — nom, ambiance et public.",
+          "Générez un système visuel et une direction cohérents.",
+          "Affinez la direction et régénérez, ou appliquez-la aux maquettes."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Moodboards de marque et systèmes visuels",
+          "Direction du logo et des couleurs",
+          "Planches de présentation VI complètes",
+          "Aperçus d'emballages et d'applications",
+          "Visuels de présentation de marque et de pitch"
+        ],
+        "faqTitle": "FAQ sur les planches de marque",
+        "faq": [
+          {
+            "q": "Ai-je besoin de compétences en design ?",
+            "a": "Non. Décrivez la marque et Curify explore une direction visuelle cohérente — couleurs, typographie, ambiance et applications."
+          },
+          {
+            "q": "Est-ce un logo final ?",
+            "a": "C'est une direction et un système visuel sur lesquels s'aligner ; vous pouvez itérer puis appliquer l'esthétique aux maquettes et aux emballages."
+          },
+          {
+            "q": "Puis-je le présenter à un client ?",
+            "a": "Oui — les planches sont conçues pour ressembler à une présentation de marque professionnelle."
+          }
+        ]
+      }
     },
     "naruto": {
       "displayName": "Naruto",
@@ -1979,7 +2243,40 @@
         "文创周边",
         "周边设计"
       ],
-      "displayName": "Merch & Autocollants"
+      "displayName": "Merch & Autocollants",
+      "format": {
+        "lead": "Le merchandising transforme un personnage, une marque ou une idée en produits vendables — packs d'autocollants, vêtements, boîtes cadeaux et familles de produits complètes. Curify rend des maquettes de merchandising professionnelles et des illustrations de produits à partir de votre concept.",
+        "howToTitle": "Comment créer du merchandising",
+        "howTo": [
+          "Choisissez un modèle de merchandising — pack d'autocollants, vêtements, boîte cadeau ou ensemble complet.",
+          "Décrivez le personnage ou la marque, ou téléchargez votre design.",
+          "Générez une maquette de merchandising réaliste ou une fiche produit.",
+          "Téléchargez pour votre boutique, votre annonce ou votre brief d'usine."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Packs d'autocollants et feuilles découpées",
+          "Maquettes de vêtements et d'accessoires",
+          "Boîtes cadeaux et ensembles de papeterie",
+          "Produits IP et de personnages",
+          "Fiches SKU / de familles de produits complètes"
+        ],
+        "faqTitle": "FAQ sur le merchandising",
+        "faq": [
+          {
+            "q": "Est-ce prêt pour l'impression à la demande ?",
+            "a": "Oui — de nombreux modèles produisent des actifs prêts à imprimer, prêts à être découpés ou prêts à être listés pour le POD et les marketplaces comme Etsy."
+          },
+          {
+            "q": "Puis-je mettre mon propre personnage ou logo dessus ?",
+            "a": "Oui, plusieurs modèles vous permettent de télécharger votre œuvre d'art afin qu'elle apparaisse sur le produit."
+          },
+          {
+            "q": "Puis-je créer une gamme de produits complète ?",
+            "a": "Oui — créez un ensemble cohérent de produits autour d'un personnage ou d'une marque."
+          }
+        ]
+      }
     },
     "asl": {
       "displayName": "ASL · Langue des Signes Américaine",
@@ -2011,13 +2308,87 @@
       ]
     },
     "infographic": {
-      "displayName": "Infographies"
+      "displayName": "Infographies",
+      "format": {
+        "lead": "Les infographies transforment des informations denses — données, étapes, comparaisons, chronologies — en un seul visuel scannable. Sur Curify, vous décrivez le sujet et obtenez une infographie finie, conforme à la marque, en quelques secondes, sans compétences en design ou en rédaction d'invites.",
+        "howToTitle": "Comment créer une infographie",
+        "howTo": [
+          "Choisissez un modèle d'infographie ci-dessous, ou partez de votre propre sujet.",
+          "Remplissez votre sujet, vos points clés et votre langue — Curify planifie la mise en page pour vous.",
+          "Générez ; l'IA organise le texte, les icônes et les couleurs en une composition nette.",
+          "Téléchargez l'image haute résolution, ou ajustez n'importe quel détail et régénérez."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Explications éducatives et résumés d'études",
+          "Diagrammes d'affaires, de processus et de fonctionnement",
+          "Cartes d'information culturelles, alimentaires et de voyage",
+          "Visualisations de données et de statistiques",
+          "Affiches d'apprentissage bilingues (EN–ZH)"
+        ],
+        "faqTitle": "FAQ sur les infographies",
+        "faq": [
+          {
+            "q": "Ai-je besoin de compétences en design pour créer une infographie ?",
+            "a": "Non. Curify gère automatiquement la mise en page, la hiérarchie, les icônes et les couleurs — vous fournissez le sujet et les points clés, et l'IA compose une infographie finie."
+          },
+          {
+            "q": "Puis-je créer des infographies bilingues ?",
+            "a": "Oui. De nombreux modèles prennent en charge l'anglais-chinois et d'autres paires de langues, de sorte que la même infographie est rendue en deux langues simultanément."
+          },
+          {
+            "q": "Quelle résolution j'obtiens ?",
+            "a": "Les infographies s'exportent sous forme d'images haute résolution adaptées au partage sur les médias sociaux ou à l'impression en tant qu'affiches."
+          }
+        ]
+      }
     },
     "anatomy": {
       "displayName": "Anatomie"
     },
     "comic": {
-      "displayName": "Bande dessinée"
+      "displayName": "Bande dessinée",
+      "title": "Invites, modèles et inspiration pour les bandes dessinées et les mangas",
+      "description": "Créez des bandes dessinées, des pages de manga et des intros de personnages avec l'IA — mises en page multi-panneaux, art expressif et rebondissements narratifs, aucune compétence en dessin requise.",
+      "intro": "Explorez les modèles d'IA de bandes dessinées et de mangas pour transformer un personnage, une blague ou une histoire en panneaux finis. Que vous créiez une bande de mèmes, une page de style manga, une double-page d'introduction de personnage ou une courte histoire visuelle, ces modèles gèrent la mise en page, le découpage en panneaux et le style artistique afin que vous puissiez vous concentrer sur l'histoire.",
+      "keywords": [
+        "manga",
+        "bande dessinée",
+        "webtoon"
+      ],
+      "format": {
+        "lead": "Les bandes dessinées et les mangas transforment une histoire ou une blague en panneaux séquentiels avec des personnages expressifs. Curify organise les panneaux, l'art et le flux à partir de votre idée — aucun dessin n'est requis.",
+        "howToTitle": "Comment créer une bande dessinée",
+        "howTo": [
+          "Choisissez un modèle de bande dessinée ou de manga.",
+          "Décrivez vos personnages et les rebondissements de l'histoire ou la chute.",
+          "Générez une page multi-panneaux finie.",
+          "Téléchargez pour partager ou imprimer, ou ajustez et régénérez."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Bandes dessinées multi-panneaux",
+          "Pages de style manga",
+          "Double-pages d'introduction de personnages",
+          "Bandes dessinées de mèmes et de blagues",
+          "Courtes histoires visuelles"
+        ],
+        "faqTitle": "FAQ sur les bandes dessinées",
+        "faq": [
+          {
+            "q": "Dois-je dessiner ?",
+            "a": "Non. Vous fournissez les personnages et l'histoire ; Curify gère le découpage en panneaux, l'art et le lettrage."
+          },
+          {
+            "q": "Puis-je garder un personnage cohérent sur plusieurs panneaux ?",
+            "a": "Oui — les modèles conservent l'apparence d'un personnage sur les panneaux d'une page."
+          },
+          {
+            "q": "Puis-je imprimer la bande dessinée ?",
+            "a": "Oui, les pages s'exportent en haute résolution pour le partage ou l'impression."
+          }
+        ]
+      }
     },
     "step-by-step-tutorial": {
       "displayName": "Tutoriels étape par étape"
@@ -2026,16 +2397,148 @@
       "displayName": "Illustration"
     },
     "flashcards": {
-      "displayName": "Cartes mémoire"
+      "displayName": "Cartes mémoire",
+      "format": {
+        "lead": "Les flashcards facilitent l'apprentissage du vocabulaire, des faits et des concepts en un coup d'œil. Curify génère des cartes illustrées, souvent bilingues, à partir de votre liste de mots ou de votre sujet — prêtes à être étudiées, imprimées ou partagées.",
+        "howToTitle": "Comment créer des flashcards",
+        "howTo": [
+          "Choisissez un modèle de flashcard pour votre sujet ou votre paire de langues.",
+          "Saisissez vos mots, termes ou sujet — l'IA illustre chaque carte.",
+          "Générez un ensemble cohérent de cartes prêtes à l'étude.",
+          "Téléchargez ou imprimez le jeu, ou téléchargez un pack PDF."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Cartes de vocabulaire et de langues (EN–ZH et plus)",
+          "Cartes de faits scientifiques, historiques et biologiques",
+          "Jeux d'apprentissage et de phonétique pour enfants",
+          "Fiches d'étude pour examens et révisions",
+          "Matériel pédagogique imprimable"
+        ],
+        "faqTitle": "FAQ sur les flashcards",
+        "faq": [
+          {
+            "q": "Les flashcards sont-elles bilingues ?",
+            "a": "Beaucoup le sont — les modèles de langues associent l'anglais au chinois, au français, au japonais, au coréen, à l'espagnol, et plus encore."
+          },
+          {
+            "q": "Puis-je imprimer un jeu complet ?",
+            "a": "Oui. Les ensembles s'exportent sous forme d'images et plusieurs modèles offrent un pack PDF téléchargeable prêt à imprimer."
+          },
+          {
+            "q": "Puis-je utiliser ma propre liste de mots ?",
+            "a": "Oui — saisissez vos termes et Curify illustre et organise chaque carte pour vous."
+          }
+        ]
+      }
     },
     "recipes": {
-      "displayName": "Recettes"
+      "displayName": "Recettes",
+      "format": {
+        "lead": "Les fiches recettes rendent un plat appétissant et facile à suivre — ingrédients, étapes et une image principale dans une seule fiche soignée. Curify conçoit une belle fiche recette à partir de votre recette.",
+        "howToTitle": "Comment créer une fiche recette",
+        "howTo": [
+          "Choisissez un modèle de fiche recette.",
+          "Saisissez le plat, les ingrédients et les étapes.",
+          "Générez une fiche illustrée et facile à suivre.",
+          "Téléchargez ou imprimez, ou enregistrez un pack de recettes."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Fiches recettes illustrées",
+          "Guides de cuisine et de plats",
+          "Fiches de conseils culinaires",
+          "Cartes de présentation de style menu",
+          "Collections de recettes imprimables"
+        ],
+        "faqTitle": "FAQ sur les fiches recettes",
+        "faq": [
+          {
+            "q": "Puis-je utiliser ma propre recette ?",
+            "a": "Oui — saisissez vos ingrédients et étapes et Curify conçoit la fiche autour d'eux."
+          },
+          {
+            "q": "Puis-je imprimer des fiches recettes ?",
+            "a": "Oui, les fiches s'exportent en haute résolution, adaptées à l'impression ou à un classeur de recettes."
+          },
+          {
+            "q": "Puis-je créer une collection complète ?",
+            "a": "Oui — créez un ensemble de fiches assorties, et plusieurs modèles offrent un pack téléchargeable."
+          }
+        ]
+      }
     },
     "mind-maps": {
-      "displayName": "Cartes mentales"
+      "displayName": "Cartes mentales",
+      "format": {
+        "lead": "Les cartes mentales ramifient une idée centrale en concepts connectés — parfait pour expliquer une structure, une ontologie ou un sujet d'étude en un coup d'œil. Curify génère une carte mentale claire et illustrée à partir de votre sujet.",
+        "howToTitle": "Comment créer une carte mentale",
+        "howTo": [
+          "Choisissez un modèle de carte mentale.",
+          "Saisissez votre sujet central et ses branches.",
+          "Générez une carte claire, connectée et illustrée.",
+          "Téléchargez pour étudier, présenter ou imprimer."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Cartes d'étude et de révision",
+          "Cartes de concepts et d'ontologies",
+          "Cartes de structures animales et scientifiques",
+          "Cartes de brainstorming et de planification",
+          "Diagrammes explicatifs éducatifs"
+        ],
+        "faqTitle": "FAQ sur les cartes mentales",
+        "faq": [
+          {
+            "q": "Puis-je définir mes propres branches ?",
+            "a": "Oui — saisissez le sujet central et les branches, et Curify organise et illustre la carte."
+          },
+          {
+            "q": "Combien de branches peut-elle afficher ?",
+            "a": "Les modèles gèrent plusieurs niveaux de branches tout en gardant la carte lisible en un coup d'œil."
+          },
+          {
+            "q": "Puis-je l'imprimer ou le présenter ?",
+            "a": "Oui, les cartes mentales s'exportent en haute résolution pour les diapositives, les documents ou l'impression murale."
+          }
+        ]
+      }
     },
     "study-sheets": {
-      "displayName": "Fiches de révision"
+      "displayName": "Fiches de révision",
+      "format": {
+        "lead": "Les fiches d'étude et les feuilles d'exercices condensent un sujet en une page prête à la pratique — exercices de vocabulaire, exercices et résumés de révision. Curify construit une feuille d'exercices propre et imprimable à partir de votre sujet en quelques secondes.",
+        "howToTitle": "Comment créer une fiche d'étude",
+        "howTo": [
+          "Choisissez un modèle de fiche d'étude ou de feuille d'exercices.",
+          "Saisissez votre sujet, vos termes ou vos questions.",
+          "Générez une feuille organisée et illustrée.",
+          "Téléchargez ou imprimez-la, ou prenez un pack PDF."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Pratique du vocabulaire et des langues",
+          "Fiches d'étude pour examens et révisions",
+          "Fiches d'exercices d'apprentissage et de phonétique pour enfants",
+          "Résumés de triche par sujet",
+          "Documents de cours imprimables"
+        ],
+        "faqTitle": "FAQ sur les fiches d'étude",
+        "faq": [
+          {
+            "q": "Puis-je imprimer les fiches d'étude ?",
+            "a": "Oui — elles s'exportent en haute résolution et plusieurs modèles offrent un pack PDF téléchargeable prêt à imprimer."
+          },
+          {
+            "q": "Puis-je utiliser mon propre contenu ?",
+            "a": "Oui. Saisissez vos termes ou questions et Curify organise et illustre la feuille pour vous."
+          },
+          {
+            "q": "Les feuilles bilingues sont-elles prises en charge ?",
+            "a": "Beaucoup le sont — les modèles de langues associent l'anglais au chinois et à d'autres langues sur la même feuille."
+          }
+        ]
+      }
     },
     "art-prints": {
       "displayName": "Impressions artistiques"
@@ -2047,16 +2550,165 @@
       "displayName": "Mèmes"
     },
     "social-media-posts": {
-      "displayName": "Publications sur les réseaux sociaux"
+      "displayName": "Publications sur les réseaux sociaux",
+      "format": {
+        "lead": "Les publications et carrousels pour les médias sociaux transforment une idée en diapositives accrocheuses et conformes à la marque pour Instagram, RedNote ou TikTok. Curify organise une publication cohérente à plusieurs diapositives à partir de votre sujet.",
+        "howToTitle": "Comment créer une publication pour les médias sociaux",
+        "howTo": [
+          "Choisissez un modèle de publication sociale ou de carrousel.",
+          "Ajoutez votre sujet, vos points clés et tous les noms.",
+          "Générez un ensemble de diapositives assorties, prêtes à être publiées.",
+          "Téléchargez et publiez, ou affinez et régénérez."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Carrousels Instagram et RedNote",
+          "Publications de conseils, de tutoriels et de listes",
+          "Publications de produits et de promotions",
+          "Publications de citations et de mèmes",
+          "Publications d'événements et d'annonces"
+        ],
+        "faqTitle": "FAQ sur les publications sociales",
+        "faq": [
+          {
+            "q": "Puis-je créer un carrousel à plusieurs diapositives ?",
+            "a": "Oui — les modèles de carrousel génèrent un ensemble de diapositives assorties qui forment une publication cohérente."
+          },
+          {
+            "q": "Les publications sont-elles dimensionnées pour les plateformes sociales ?",
+            "a": "Oui, les sorties sont formatées pour les fils d'actualité et les stories sociales afin qu'elles soient prêtes à être téléchargées."
+          },
+          {
+            "q": "Ai-je besoin de compétences en design ?",
+            "a": "Non. Choisissez un modèle, ajoutez vos points, et Curify gère la mise en page et le style."
+          }
+        ]
+      }
     },
     "stickers": {
-      "displayName": "Autocollants"
+      "displayName": "Autocollants",
+      "format": {
+        "lead": "Les packs d'autocollants transforment un personnage, une mascotte ou une idée en un ensemble de designs expressifs, prêts à être découpés. Curify génère une feuille complète d'autocollants assortis que vous pouvez partager, vendre ou imprimer.",
+        "howToTitle": "Comment créer un pack d'autocollants",
+        "howTo": [
+          "Choisissez un modèle d'autocollant — mascottes, feuilles d'emojis, packs chibi, et plus encore.",
+          "Décrivez votre personnage ou téléchargez une référence pour le baser.",
+          "Générez une feuille complète de poses et d'expressions d'autocollants assorties.",
+          "Téléchargez sous forme d'images, ou convertissez-les en fichiers de découpe prêts à imprimer."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Feuilles d'autocollants de personnages et de mascottes",
+          "Packs d'emojis et d'expressions",
+          "Ensembles d'autocollants chibi et kawaii",
+          "Collections d'IP et de fan-art",
+          "Produits d'autocollants pour l'impression à la demande et Etsy"
+        ],
+        "faqTitle": "FAQ sur les autocollants",
+        "faq": [
+          {
+            "q": "Puis-je créer un ensemble complet assorti en une seule fois ?",
+            "a": "Oui. Les modèles d'autocollants génèrent une feuille complète de poses et d'expressions cohérentes, pas seulement une seule image."
+          },
+          {
+            "q": "Puis-je vendre les autocollants ?",
+            "a": "Les sorties d'autocollants de Curify sont conçues pour l'impression à la demande et les marketplaces comme Etsy — beaucoup incluent des options prêtes à être découpées."
+          },
+          {
+            "q": "Puis-je baser des autocollants sur mon propre personnage ?",
+            "a": "Oui — plusieurs modèles vous permettent de télécharger une référence afin que l'ensemble soit basé sur votre mascotte ou votre design."
+          }
+        ]
+      }
     },
     "mascots": {
-      "displayName": "Mascottes"
+      "displayName": "Mascottes",
+      "title": "Invites, modèles et inspiration pour la conception de mascottes",
+      "description": "Concevez des mascottes de marque et de personnages avec l'IA — un personnage amical et distinctif dans des poses cohérentes, prêt pour les autocollants, le merchandising et les applications.",
+      "intro": "Explorez les modèles d'IA de conception de mascottes pour donner un visage mémorable à une marque, une équipe ou un produit. Décrivez la personnalité et obtenez une mascotte rendue dans un style cohérent à travers les poses et les expressions — prête à être transformée en autocollants, merchandising et applications de marque.",
+      "keywords": [
+        "conception de mascotte",
+        "personnage de marque",
+        "mascotte kawaii"
+      ],
+      "format": {
+        "lead": "Les mascottes donnent à une marque, une équipe ou un produit un visage mémorable et distinctif. Curify conçoit une mascotte dans un style cohérent à travers différentes poses et expressions, prête pour les autocollants, le merchandising et les applications.",
+        "howToTitle": "Comment concevoir une mascotte",
+        "howTo": [
+          "Choisissez un modèle de conception de mascotte.",
+          "Décrivez la personnalité, la marque et le style.",
+          "Générez une mascotte avec des poses et des expressions cohérentes.",
+          "Transformez-la en autocollants, merchandising ou applications de marque."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Mascottes de marque et d'équipe",
+          "Personnages kawaii et chibi",
+          "Feuilles de poses et d'expressions de mascottes",
+          "Ensembles d'autocollants et d'emojis",
+          "Applications de merchandising et d'emballage"
+        ],
+        "faqTitle": "FAQ sur les mascottes",
+        "faq": [
+          {
+            "q": "Puis-je garder la mascotte cohérente ?",
+            "a": "Oui — les modèles conservent un seul modèle de mascotte à travers les poses et les expressions afin que l'ensemble soit unifié."
+          },
+          {
+            "q": "Puis-je la baser sur ma marque ?",
+            "a": "Oui — décrivez la marque et le style, ou téléchargez une référence, et la mascotte est construite autour d'eux."
+          },
+          {
+            "q": "Puis-je l'utiliser sur des produits ?",
+            "a": "Oui — les mascottes sont conçues pour être appliquées sur des autocollants, du merchandising et des emballages."
+          }
+        ]
+      }
     },
     "character-ip": {
-      "displayName": "Propriété intellectuelle de personnage"
+      "displayName": "Propriété intellectuelle de personnage",
+      "title": "Invites, modèles et inspiration pour la conception de personnages et d'IP",
+      "description": "Concevez des personnages originaux et des IP avec l'IA — planches de modèles, vues de face/dos, feuilles d'expressions, mascottes et poses prêtes pour le merchandising, toutes cohérentes sur l'ensemble.",
+      "intro": "Explorez les modèles d'IA de conception de personnages et d'IP pour créer un personnage original de toutes pièces ou en développer un en un ensemble complet d'actifs. Des planches de modèles et vues de face/dos aux feuilles d'expressions, poses d'autocollants et maquettes de merchandising, ces modèles maintiennent le personnage cohérent sur chaque sortie.",
+      "keywords": [
+        "fiche de personnage",
+        "personnage original",
+        "design IP",
+        "mascotte"
+      ],
+      "format": {
+        "lead": "La conception de personnages transforme une idée en un personnage distinctif — avec un modèle, des expressions et des poses cohérents que vous pouvez réutiliser pour les autocollants, les bandes dessinées et le merchandising. Curify génère l'ensemble complet à partir d'une description ou d'une référence.",
+        "howToTitle": "Comment concevoir un personnage",
+        "howTo": [
+          "Choisissez un modèle de conception de personnage — planche de modèle, vue de face/dos, ou ensemble d'expressions.",
+          "Décrivez votre personnage, ou téléchargez une référence pour le baser.",
+          "Générez un ensemble cohérent de vues et de poses.",
+          "Réutilisez le personnage pour les autocollants, les bandes dessinées et le merchandising."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Planches de modèles de personnages et vues de face/dos",
+          "Feuilles d'expressions et de poses",
+          "Designs de personnages originaux (OC) et d'IP",
+          "Poses de mascotte et prêtes pour les autocollants",
+          "Maquettes de merchandising et de produits du personnage"
+        ],
+        "faqTitle": "FAQ sur la conception de personnages",
+        "faq": [
+          {
+            "q": "Puis-je garder le personnage cohérent sur toutes les sorties ?",
+            "a": "Oui — c'est le but : les modèles conservent un seul modèle de personnage à travers les poses, les expressions et les applications."
+          },
+          {
+            "q": "Puis-je baser un personnage sur mon propre art ou ma photo ?",
+            "a": "Oui, plusieurs modèles vous permettent de télécharger une référence afin que l'ensemble soit construit à partir de votre design."
+          },
+          {
+            "q": "Puis-je utiliser le personnage commercialement ?",
+            "a": "Les sorties sont conçues pour l'utilisation IP et merchandising — autocollants, impression à la demande et applications de marque."
+          }
+        ]
+      }
     },
     "fan-art": {
       "displayName": "Art de fans"
@@ -2090,6 +2742,96 @@
     },
     "narrative-comic": {
       "displayName": "Bandes dessinées narratives"
+    },
+    "mood-board": {
+      "displayName": "Mood Boards",
+      "title": "Invites, modèles et inspiration pour les Mood Boards",
+      "description": "Créez des mood boards et des planches de direction visuelle avec l'IA — couleurs, textures, typographie et imagerie regroupées dans une esthétique cohérente pour une marque, un produit ou un projet.",
+      "intro": "Explorez les modèles d'IA de mood board pour définir un style avant de construire. Décrivez une marque, un produit ou une ambiance et obtenez une planche cohérente de couleurs, de textures, de typographie et d'images de référence — la première étape de tout projet de design ou de branding, générée en quelques secondes.",
+      "keywords": [
+        "moodboard",
+        "direction visuelle",
+        "planche esthétique",
+        "ambiance de marque"
+      ],
+      "format": {
+        "lead": "Les mood boards définissent un style avant de construire — couleurs, textures, typographie et imagerie dans une esthétique cohérente. Curify explore un mood board pour une marque, un produit ou une ambiance à partir de votre brief.",
+        "howToTitle": "Comment créer un mood board",
+        "howTo": [
+          "Choisissez un modèle de mood board.",
+          "Décrivez la marque, le produit ou l'ambiance que vous recherchez.",
+          "Générez une planche cohérente de couleurs, de textures et d'images.",
+          "Affinez la direction et régénérez, ou appliquez-la aux designs."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Mood boards de marque et de produit",
+          "Direction esthétique et d'ambiance",
+          "Exploration des couleurs et des textures",
+          "Mood boards d'intérieur et de mode",
+          "Planches de pitch et de concept"
+        ],
+        "faqTitle": "FAQ sur les mood boards",
+        "faq": [
+          {
+            "q": "Ai-je besoin de compétences en design ?",
+            "a": "Non. Décrivez l'ambiance et Curify assemble une planche cohérente de couleurs, de textures et d'images de référence."
+          },
+          {
+            "q": "Puis-je l'utiliser pour un pitch client ?",
+            "a": "Oui — les planches sont conçues pour présenter une direction visuelle claire."
+          },
+          {
+            "q": "Puis-je transformer la direction en designs ?",
+            "a": "Oui — utilisez la palette et l'ambiance du mood board comme brief pour les logos, les emballages ou les maquettes de produits."
+          }
+        ]
+      }
+    },
+    "industrial-design": {
+      "displayName": "Design Industriel",
+      "title": "Invites, modèles et inspiration pour le Design Industriel",
+      "description": "Créez des concepts de design industriel avec l'IA — planches de concept de produit, feuilles de présentation et croquis de concept qui donnent à une idée un aspect conçu et constructible.",
+      "intro": "Explorez les modèles d'IA de design industriel pour transformer une idée de produit en un concept conçu. Des croquis de concept et planches de présentation aux mises en page de style spécification, ces modèles rendent un produit avec les matériaux, la forme et le contexte afin qu'un concept ait l'air fait en studio — utile pour les pitchs, les présentations et les briefs d'usine.",
+      "keywords": [
+        "design de produit",
+        "planche de concept",
+        "concept de produit",
+        "croquis de design"
+      ],
+      "format": {
+        "lead": "Le design industriel transforme une idée de produit en un concept conçu et constructible — croquis de concept, planches de présentation et mises en page de style spécification. Curify le rend avec les matériaux, la forme et le contexte à partir de votre brief.",
+        "howToTitle": "Comment créer un concept de design industriel",
+        "howTo": [
+          "Choisissez un modèle de design industriel — croquis de concept ou planche de présentation.",
+          "Décrivez le produit, les matériaux et le cas d'utilisation.",
+          "Générez un concept de qualité studio avec forme et contexte.",
+          "Téléchargez pour votre pitch deck, votre portfolio ou votre brief d'usine."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Planches de concept de produit",
+          "Croquis de concept et d'idéation",
+          "Mises en page de présentation et de style spécification",
+          "Exploration des matériaux et des finitions",
+          "Visuels de pitch et de portfolio"
+        ],
+        "faqTitle": "FAQ sur le design industriel",
+        "faq": [
+          {
+            "q": "Ai-je besoin d'un logiciel de CAO ou 3D ?",
+            "a": "Non. Curify rend le concept de produit, les matériaux et le contexte à partir d'une description."
+          },
+          {
+            "q": "Est-ce un design de production final ?",
+            "a": "C'est un concept et une présentation — une direction conçue sur laquelle s'aligner et itérer, pas un fichier de fabrication."
+          },
+          {
+            "q": "Puis-je le présenter à un client ou à une usine ?",
+            "a": "Oui — les planches sont conçues pour ressembler à une présentation de design professionnelle."
+          }
+        ]
+      }
     }
   },
   "topicPage": {
