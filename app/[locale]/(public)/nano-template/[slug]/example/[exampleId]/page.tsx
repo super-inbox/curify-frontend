@@ -27,6 +27,7 @@ import {
   VerticalKnowledgeSection,
 } from "@/app/[locale]/_components/VerticalKnowledge";
 import { getCanonicalUrl } from "@/lib/canonical";
+import { templateExamplesIndexable } from "@/lib/example_indexing";
 import { SITE_URL } from "@/lib/constants";
 
 import { toSlug, getTemplateView, type RawNanoImageRecord } from "@/lib/nano_utils";
@@ -159,6 +160,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     templateParameters,
     templateAllowGeneration,
     templateRequiresImageUpload,
+    templateIndexExamples: templateView?.index_examples,
     templateIntroVideoUrl: templateView?.intro_video_url,
     basePrompt,
     existingExamples,
@@ -194,7 +196,7 @@ export async function generateMetadata({
   const pageData = await getPageData(rawLocale, slug, rawExampleId);
   if (!pageData) return {};
 
-  const { title, category, example, templateTopics, allowI18n, metaDescription } = pageData;
+  const { title, category, example, templateTopics, allowI18n, metaDescription, templateIndexExamples } = pageData;
   const ogImage = toAbsUrlMaybe(example.asset.preview_image_url);
 
   const topicText = templateTopics?.length ? templateTopics[0] : "";
@@ -245,17 +247,31 @@ export async function generateMetadata({
   // x-default mirrors the canonical (root-domain English path).
   languages["x-default"] = `${SITE_URL}${route}`;
 
+  // Generator-demo templates (expression sheets, product mockups, sticker packs):
+  // each example is one thin variation of the tool, so the TEMPLATE is the SEO
+  // target — noindex the example page and canonical it to the template page so
+  // authority consolidates on the generator instead of splitting across hundreds
+  // of variations. Info-heavy examples (MBTI, HSK, culture/recipe infographics)
+  // stay indexed. Classifier reuses topics; see lib/example_indexing.
+  const examplesIndexable = templateExamplesIndexable(templateTopics, templateIndexExamples);
+
   // Non-allow_i18n entries on non-en/zh locales render with template-level
   // fallbacks (thin) — noindex them to avoid SEO penalties for thin content.
-  const noindex = !allowI18n && rawLocale !== "en" && rawLocale !== "zh";
+  const localeThin = !allowI18n && rawLocale !== "en" && rawLocale !== "zh";
+  const noindex = !examplesIndexable || localeThin;
 
-  // When noindex'd, point canonical at the EN version (the page Google
-  // should actually index) instead of self. A noindex page that
-  // canonicals to itself sends conflicting signals — Google ends up
-  // classifying it as "Duplicate without user-selected canonical".
-  // EN uses no locale prefix (localePrefix: as-needed).
-  const canonicalLocale = noindex ? "en" : rawLocale;
-  const canonicalPath = canonicalLocale === "en" ? route : `/${canonicalLocale}${route}`;
+  // Canonical target:
+  //  - generator-demo → the TEMPLATE page (consolidate authority on the tool).
+  //  - locale-thin    → the EN example (the page Google should index).
+  //  - otherwise      → self.
+  // A noindex page that canonicals to itself sends conflicting signals — Google
+  // classifies it as "Duplicate without user-selected canonical".
+  const canonicalPath = !examplesIndexable
+    ? (rawLocale === "en" ? `/nano-template/${slug}` : `/${rawLocale}/nano-template/${slug}`)
+    : (() => {
+        const canonicalLocale = localeThin ? "en" : rawLocale;
+        return canonicalLocale === "en" ? route : `/${canonicalLocale}${route}`;
+      })();
 
   // MBTI: inject "MBTI" head term right after the character name so the
   // SERP title bolds the matched query ("kobe bryant mbti" etc).

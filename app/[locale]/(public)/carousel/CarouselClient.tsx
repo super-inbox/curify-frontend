@@ -203,13 +203,45 @@ type PromptGalleryProps = {
 
 type Props = TemplateExampleProps | PromptGalleryProps;
 
+// The carousel is circular (goTo wraps), so an unbounded slide list would scroll
+// forever. Cap it to a window of UNIQUE images centered on the opened slide.
+const MAX_UNIQUE_SLIDES = 24;
+
+function capUniqueSlides<T extends { id: string | number; imageUrl: string }>(
+  slides: T[],
+  initialIndex: number,
+  max: number,
+): { slides: T[]; initialIndex: number } {
+  const keyOf = (s: T) => s.imageUrl || String(s.id);
+  const openedKey = slides[initialIndex] ? keyOf(slides[initialIndex]) : null;
+  const seen = new Set<string>();
+  const deduped: T[] = [];
+  for (const s of slides) {
+    const k = keyOf(s);
+    if (seen.has(k)) continue;
+    seen.add(k);
+    deduped.push(s);
+  }
+  let di = openedKey != null ? deduped.findIndex((s) => keyOf(s) === openedKey) : 0;
+  if (di < 0) di = 0;
+  if (deduped.length <= max) return { slides: deduped, initialIndex: di };
+  let start = Math.max(0, di - Math.floor(max / 2));
+  start = Math.min(start, deduped.length - max);
+  return { slides: deduped.slice(start, start + max), initialIndex: di - start };
+}
+
 // ── Component ──────────────────────────────────────────────────────────────
 
 export default function CarouselClient(props: Props) {
   const router = useRouter();
   const isMobileDevice = useIsMobileLikeDevice();
-  const { mode, slides, locale, siteUrl } = props;
-  const [index, setIndex] = useState(props.initialIndex);
+  const { mode, locale, siteUrl } = props;
+  // Dedupe + cap so the circular loop stays a bounded set of unique images.
+  const { slides, initialIndex } = useMemo(
+    () => capUniqueSlides(props.slides as Slide[], props.initialIndex, MAX_UNIQUE_SLIDES),
+    [props.slides, props.initialIndex],
+  );
+  const [index, setIndex] = useState(initialIndex);
   const [dragX, setDragX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [animate, setAnimate] = useState(true);

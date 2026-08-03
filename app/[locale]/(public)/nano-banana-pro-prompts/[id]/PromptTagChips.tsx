@@ -29,18 +29,36 @@ export default function PromptTagChips({
   tags,
   locale,
   size = "small",
+  maxVisible = 8,
 }: {
   tags: string[];
   locale: string;
   size?: "default" | "small";
+  /**
+   * Cap the number of VISIBLE tag chips (some prompts carry 25-30 tags, which
+   * swamps the page). The overflow tags are still rendered as real <Link>s in an
+   * sr-only wrapper, so the internal link graph to /tag/<tag> is unchanged for
+   * crawlers — only the visual display is trimmed.
+   */
+  maxVisible?: number;
 }) {
   if (!tags.length) return null;
 
+  const visible = tags.slice(0, maxVisible);
+  const overflow = tags.slice(maxVisible);
+
   return (
     <>
-      {tags.map((tag, i) => (
+      {visible.map((tag, i) => (
         <TagChip key={`${tag}-${i}`} tag={tag} locale={locale} size={size} />
       ))}
+      {overflow.length > 0 ? (
+        <span className="sr-only">
+          {overflow.map((tag, i) => (
+            <TagChip key={`ov-${tag}-${i}`} tag={tag} locale={locale} size={size} />
+          ))}
+        </span>
+      ) : null}
     </>
   );
 }

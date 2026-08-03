@@ -1303,6 +1303,23 @@
             "career": "Kareem thrives in roles allowing creative expression, intellectual pursuit, and advocacy for deeply held beliefs, finding fulfillment as an author, social critic, and influential figure.",
             "compatibility": "Kareem often finds resonance with types that appreciate his idealism and depth, particularly ENFJs or ENTJs who can provide external structure and champion his values."
           }
+        },
+        "template-mbti-nba-michaeljordan": {
+          "attributes": {
+            "type_code": "ESTP",
+            "type_nickname": "The Entrepreneur",
+            "dimensions": "Extraverted · Sensing · Thinking · Perceiving",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Michael Jordan is often typed as an ESTP — fiercely competitive, present-focused, and at his best under pressure, reading the game and acting decisively in the moment.",
+            "strengths": "Relentless drive, clutch decision-making, and the ability to raise his level when the stakes are highest — ESTP boldness turned into an unmatched will to win.",
+            "weaknesses": "That same intensity could read as impatience or a hard edge with teammates who didn't match his competitive standard.",
+            "communication": "Direct and challenging — he led by example and by daring others to meet him, not by soft reassurance.",
+            "relationships": "Loyal to a tight circle who earned his respect through effort and performance.",
+            "career": "The ultimate competitor's arena — a stage that rewards nerve, improvisation, and raw will, which is peak ESTP territory.",
+            "compatibility": "Works best alongside steady, structured types who provide the framework his in-the-moment brilliance can build on."
+          }
         }
       }
     }
@@ -3024,6 +3041,20 @@
           "Create a 'Basic Chinese Antonym Verbs' learning chart for beginners.",
           "Generate an 'Everyday Chinese Action Words' opposites infographic."
         ]
+      },
+      "attributes": {
+        "grade_band": "Intermediate",
+        "age_range": "8+",
+        "subject": "Chinese (Mandarin)",
+        "skill": "Vocabulary",
+        "resource_type": "Infographic",
+        "duration_min": "10 min",
+        "difficulty": "Intermediate",
+        "language_mode": "Bilingual EN–ZH"
+      },
+      "vertical": {
+        "learning_objective": "Learn pairs of opposite Chinese verbs (antonyms) with their pinyin and meanings, building active vocabulary through contrast.",
+        "background": "Teaching verbs in opposite pairs (open/close, buy/sell) uses contrast to make each word easier to recall than learning them in isolation."
       }
     }
   },
@@ -3555,6 +3586,20 @@
           "Create a Cloudy weather poster with cloud-formation panels.",
           "Generate a Foggy weather kids infographic with mist watercolor scenes."
         ]
+      },
+      "attributes": {
+        "grade_band": "Elementary",
+        "age_range": "6–10",
+        "subject": "Science",
+        "skill": "Reading & vocabulary",
+        "resource_type": "Infographic",
+        "duration_min": "10 min",
+        "difficulty": "Beginner",
+        "language_mode": "Bilingual EN–ZH"
+      },
+      "vertical": {
+        "learning_objective": "Recognize common weather types and the basic science behind them, with the vocabulary to describe the weather.",
+        "background": "Weather is a concrete, everyday science topic that pairs naturally with picture-based vocabulary for young learners."
       }
     }
   },
@@ -6643,6 +6688,20 @@
           "Create an anthropomorphized matcha latte sticker sheet.",
           "Generate an office plant succulent buddy emotion stickers."
         ]
+      },
+      "attributes": {
+        "product_type": "Die-cut sticker pack",
+        "material": "Vinyl",
+        "process": "Die-cut print",
+        "dimensions": "Sheet + individual cuts",
+        "print_spec": "300 DPI, transparent PNG",
+        "color_profile": "CMYK-ready",
+        "use_case": "IP / merch"
+      },
+      "vertical": {
+        "cultural_background": "Original-character sticker packs turn a mascot or persona into a collectible set — the core unit of the 谷子 (goods) and creator-merch economy.",
+        "design_requirements": "A consistent character model across poses, clean silhouettes for die-cutting, bold readable expressions, and a transparent background.",
+        "manufacturing_notes": "Export as high-resolution transparent PNGs; add a cut line and bleed for die-cut printing and print-on-demand fulfillment."
       }
     }
   },
@@ -6924,6 +6983,20 @@
           "Create a classroom sheet for 'Accept vs Except'.",
           "Generate an educational poster for 'Complement vs Compliment'."
         ]
+      },
+      "attributes": {
+        "grade_band": "All levels",
+        "age_range": "10+",
+        "subject": "English",
+        "skill": "Vocabulary",
+        "resource_type": "Educational poster",
+        "duration_min": "10 min",
+        "difficulty": "Beginner–Intermediate",
+        "language_mode": "Bilingual EN–ZH"
+      },
+      "vertical": {
+        "learning_objective": "Tell apart commonly confused English word pairs (e.g. affect vs. effect) and use each correctly, with a memorable example for every pair.",
+        "background": "Confusable word pairs are one of the most frequent sources of writing errors for English learners; pairing each with a picture and an example sentence anchors the distinction in memory."
       }
     }
   },
@@ -7041,7 +7114,6 @@
       },
       "vertical": {
         "learning_objective": "Recognize the target vocabulary, read a short 100–150 character passage with full pinyin support, and answer basic comprehension questions.",
-        "includes": "An illustrated bilingual reading passage with full pinyin, simplified 汉字, and an English translation, a target-vocabulary list, and a print-ready PDF.",
         "background": "HSK 2 is the second of six levels of the standardized Chinese Proficiency Test (HSK / Hanyu Shuiping Kaoshi). At this level a learner knows roughly 300 words and can read short, simple passages on everyday topics. Graded reading cards like these build reading fluency by pairing every character with its pinyin and an English gloss, so beginners can decode and understand a passage independently before moving up to HSK 3."
       }
     }
@@ -7087,8 +7159,8 @@
   },
   "template-ip-character-expression-sheet": {
     "category": "Character Expression Sheet",
-    "description": "Upload one character → a 9-pose expression sheet (表情差分) on a clean 3×3 grid: happy, sad, angry, love, crying, surprised, and more — the same character in every cell.",
-    "title": "Character Expression Sheet (差分) Generator",
+    "description": "Upload one character → a 9-pose expression sheet on a clean 3×3 grid: happy, sad, angry, love, crying, surprised, and more — the same character in every cell.",
+    "title": "Character Expression Sheet Generator",
     "content": {
       "sections": {
         "what": "This template takes one uploaded drawing of a character and generates a 9-pose expression sheet of the same character — happy, laughing, sad, crying, angry, surprised, love, shy, thinking — arranged on a clean 3×3 white grid, ready to cut into stickers or emotes.",

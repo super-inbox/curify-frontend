@@ -29,6 +29,10 @@ export type RawTemplate = {
   batch?: boolean;
   allow_generation?: boolean;
   requires_image_upload?: boolean;
+  /** Explicit override for example-page indexing (see lib/example_indexing).
+   *  Absent → derived from topics (info-heavy → index, generator-demo → noindex).
+   *  Set to true/false only to override the topic-derived default per template. */
+  index_examples?: boolean;
   /** "creation" (default, absent) vs "consumption" — gates UI for templates
    *  the operator publishes for viewing rather than user-driven generation
    *  (daily recaps, news cards, scheduled standings). See memory
@@ -90,6 +94,8 @@ export type TemplateView = {
   batch?: boolean;
   allow_generation?: boolean;
   requires_image_upload?: boolean;
+  /** Explicit override for example-page indexing (see lib/example_indexing). */
+  index_examples?: boolean;
   archetype?: "creation" | "consumption";
   /** Template-level intro/demo video (relative CDN path). See RawTemplate. */
   intro_video_url?: string;

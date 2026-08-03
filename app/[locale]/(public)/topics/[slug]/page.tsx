@@ -5,6 +5,9 @@ import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slu
 import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import TopicStrip from "@/app/[locale]/_components/TopicStrip";
+import TopicFormatContent, {
+  type TopicFormatContent as FormatContent,
+} from "@/app/[locale]/_components/TopicFormatContent";
 import { resolveTopicPath } from "@/lib/topic_path_overrides";
 
 import {
@@ -272,6 +275,9 @@ export default async function Page({ params }: Props) {
     translateTopics(`topics.${slug}.displayName`) ||
     titleCaseFromSlug(slug);
 
+  const topicDisplayName =
+    translateTopics(`topics.${slug}.displayName`) || titleCaseFromSlug(slug);
+
   const topicDescription =
     translateTopics(`topics.${slug}.description`) || "";
 
@@ -279,6 +285,15 @@ export default async function Page({ params }: Props) {
   // each locale enough unique localized prose for Google to treat it as
   // its own page rather than a duplicate of the en version.
   const topicIntro = translateTopics(`topics.${slug}.intro`) || "";
+
+  // Visual-format topics (infographic, poster, sticker, …) carry an authored
+  // `format` block → a visible rich-content body (how-to + use cases + FAQ).
+  // Raw read since it's structured (arrays/objects), not a plain string.
+  const formatContent: FormatContent | null = tTopicsRoot.has(
+    `topics.${slug}.format`
+  )
+    ? (tTopicsRoot.raw(`topics.${slug}.format`) as FormatContent)
+    : null;
 
   const exampleImagesHeading =
     translateTopics("topicPage.exampleImagesHeading") || "Example Images";
@@ -418,6 +433,10 @@ export default async function Page({ params }: Props) {
           showOtherTemplateTitle={false}
         />
       </section>
+
+      {/* Visible authored body for visual-format topics (how-to + uses + FAQ).
+          Below the template feed so the page still leads with visuals. */}
+      <TopicFormatContent content={formatContent} displayName={topicDisplayName} />
 
       {(() => {
         // Merge tier-2 navSubTopics + tier-3 tagSubTopics into ONE

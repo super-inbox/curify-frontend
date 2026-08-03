@@ -1303,6 +1303,23 @@
             "career": "卡里姆在允许创意表达、智力追求以及为根深蒂固的信仰而倡导的职业中茁壮成长，作为作家、社会评论家和有影响力的人物找到成就感。",
             "compatibility": "卡里姆常与那些欣赏他理想主义和深度的类型产生共鸣，特别是ENFJ或ENTJ，他们能够提供外部结构并支持他的价值观。"
           }
+        },
+        "template-mbti-nba-michaeljordan": {
+          "attributes": {
+            "type_code": "ESTP",
+            "type_nickname": "企业家",
+            "dimensions": "外向 · 实感 · 思考 · 知觉",
+            "subject_kind": "角色人格卡"
+          },
+          "vertical": {
+            "traits": "迈克尔·乔丹常被归为 ESTP——极度好胜、专注当下，越是高压越出色，能在瞬间读懂比赛并果断出手。",
+            "strengths": "永不停歇的驱动力、关键时刻的决断，以及在最紧要关头把状态拉满的能力——ESTP 的果敢化作无与伦比的求胜欲。",
+            "weaknesses": "同样的强度，有时会让达不到其竞争标准的队友感到不耐烦或过于强硬。",
+            "communication": "直接而具挑战性——他以身作则、以激将带动他人，而非柔性的安抚。",
+            "relationships": "对以努力和表现赢得他尊重的小圈子极为忠诚。",
+            "career": "极致竞争者的舞台——奖励胆识、临场应变与纯粹意志，正是 ESTP 的巅峰领域。",
+            "compatibility": "与沉稳、有结构的类型搭配最佳，他们能为其临场的天赋提供可依托的框架。"
+          }
         }
       }
     }
@@ -3022,6 +3039,20 @@
           "为初学者创建一张'基础汉语反义动词'学习图表。",
           "生成一张'日常汉语动作词'反义词信息图。"
         ]
+      },
+      "attributes": {
+        "grade_band": "中级",
+        "age_range": "8+",
+        "subject": "中文（普通话）",
+        "skill": "词汇",
+        "resource_type": "信息图",
+        "duration_min": "10 分钟",
+        "difficulty": "中级",
+        "language_mode": "中英双语"
+      },
+      "vertical": {
+        "learning_objective": "学习成对的反义中文动词及其拼音和释义，通过对比积累主动词汇。",
+        "background": "以反义成对（开/关、买/卖）来教动词，利用对比让每个词比孤立记忆更容易记住。"
       }
     },
     "description": "一本教育视觉指南，将相对的中文动词与拼音、英文释义和对比插图配对。使用AI提示生成您自己的普通话学习图表。",
@@ -3555,6 +3586,20 @@
           "创建一张多云天气海报，包含云形成面板。",
           "生成一张雾天气儿童信息图，附带雾的水彩场景。"
         ]
+      },
+      "attributes": {
+        "grade_band": "小学",
+        "age_range": "6–10",
+        "subject": "科学",
+        "skill": "阅读与词汇",
+        "resource_type": "信息图",
+        "duration_min": "10 分钟",
+        "difficulty": "初级",
+        "language_mode": "中英双语"
+      },
+      "vertical": {
+        "learning_objective": "认识常见天气类型及其背后的基本科学原理，并掌握描述天气的词汇。",
+        "background": "天气是贴近生活、具象的科学主题，非常适合与图画词汇结合，供低龄学习者使用。"
       }
     }
   },
@@ -6643,6 +6688,20 @@
           "Create an anthropomorphized matcha latte sticker sheet.",
           "Generate an office plant succulent buddy emotion stickers."
         ]
+      },
+      "attributes": {
+        "product_type": "刀模贴纸包",
+        "material": "乙烯基",
+        "process": "刀模印刷",
+        "dimensions": "整张 + 单枚裁切",
+        "print_spec": "300 DPI，透明 PNG",
+        "color_profile": "可 CMYK 印刷",
+        "use_case": "IP / 文创"
+      },
+      "vertical": {
+        "cultural_background": "原创角色贴纸包把一个吉祥物或人设变成可收藏的一套——正是谷子经济与创作者周边的核心单元。",
+        "design_requirements": "多姿势下角色形象保持一致、便于刀模的干净轮廓、醒目易读的表情，以及透明背景。",
+        "manufacturing_notes": "导出高分辨率透明 PNG；为刀模印刷与按需生产加上裁切线与出血。"
       }
     }
   },
@@ -6924,6 +6983,20 @@
           "为 'Accept vs Except' 制作课堂学习单。",
           "为 'Complement vs Compliment' 生成教育海报。"
         ]
+      },
+      "attributes": {
+        "grade_band": "全阶段",
+        "age_range": "10+",
+        "subject": "英语",
+        "skill": "词汇",
+        "resource_type": "教学海报",
+        "duration_min": "10 分钟",
+        "difficulty": "初级—中级",
+        "language_mode": "中英双语"
+      },
+      "vertical": {
+        "learning_objective": "区分英语中常见易混词对（如 affect 与 effect），并能正确使用，每对都配一个好记的例子。",
+        "background": "易混词对是英语学习者写作出错最常见的来源之一；为每对配上图画和例句，能把区别牢牢印在记忆里。"
       }
     }
   },
@@ -7041,7 +7114,6 @@
       },
       "vertical": {
         "learning_objective": "认识目标词汇，在完整拼音辅助下阅读 100–150 字的短文，并回答基础理解问题。",
-        "includes": "一篇配插图的中英双语阅读短文（含完整拼音、简体汉字与英文翻译）、目标词汇表，以及可打印的 PDF。",
         "background": "HSK 2 是标准化汉语水平考试（HSK）六个等级中的第二级。该等级的学习者掌握约 300 个词，能够阅读日常话题的简短文段。此类分级阅读卡为每个汉字标注拼音并附英文释义，帮助初学者在升入 HSK 3 之前独立解码并理解短文，从而建立阅读流利度。"
       }
     }

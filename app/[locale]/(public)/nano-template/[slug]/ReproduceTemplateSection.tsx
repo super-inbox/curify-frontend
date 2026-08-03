@@ -8,6 +8,11 @@ import Link from "next/link";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
+import MascotStyleLayoutWidget, {
+  MASCOT_STYLE_PRESETS,
+  MASCOT_LAYOUT_PRESETS,
+  mascotPromptSuffix,
+} from "@/app/[locale]/_components/MascotStyleLayoutWidget";
 import ReproduceWorkbench from "@/app/[locale]/_components/ReproduceWorkbench";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
@@ -123,6 +128,28 @@ function TextReproduceSection(props: {
   const [referenceImageUrl, setReferenceImageUrl] = useState<string | null>(null);
   const [isUploadingImage, setIsUploadingImage] = useState(false);
 
+  // Mascot design board: column-2 gets an OPTIONAL reference-image upload plus a
+  // Style + Layout picker. Both dropdowns default to the template's current
+  // style, so an untouched widget reproduces today's output.
+  const showMascotWidgets =
+    template.template_id === "template-brand-ip-mascot-design-board";
+  const [mascotStyle, setMascotStyle] = useState(MASCOT_STYLE_PRESETS[0].key);
+  const [mascotLayout, setMascotLayout] = useState(MASCOT_LAYOUT_PRESETS[0].key);
+
+  // Fold the chosen (non-default) style/layout into the brand param so it flows
+  // into the prompt via the existing {brand_info} substitution — no base_prompt
+  // change needed. Empty suffix (both defaults) leaves params untouched.
+  const generateParams = useMemo(() => {
+    if (!showMascotWidgets) return form as Record<string, string>;
+    const suffix = mascotPromptSuffix(mascotStyle, mascotLayout);
+    if (!suffix) return form as Record<string, string>;
+    const bi = String(form.brand_info ?? "").trim();
+    return {
+      ...(form as Record<string, string>),
+      brand_info: bi ? `${bi} ${suffix}` : suffix,
+    };
+  }, [form, showMascotWidgets, mascotStyle, mascotLayout]);
+
   useEffect(() => {
     const next: Record<string, any> = {};
     for (const p of params) {
@@ -145,7 +172,7 @@ function TextReproduceSection(props: {
 
   const { generate, dismissAndGenerate, isGenerating, duplicateWarning, clearWarning } = useDirectGenerate({
     templateId: template.template_id,
-    params: form as Record<string, string>,
+    params: generateParams,
     existingExamples: template.existingExamples,
     tracking,
     referenceImageUrl: referenceImageUrl ?? undefined,
@@ -240,13 +267,24 @@ function TextReproduceSection(props: {
 
           {/* Left: parameter inputs + action bar */}
           <div className="lg:col-span-5 flex flex-col gap-3">
-            {/* Reference image upload — only for image-to-image templates
-                (requires_image_upload). Generate is gated on this below. */}
-            {requiresImageUpload && (
+            {/* Reference image upload — required for image-to-image templates
+                (requires_image_upload); OPTIONAL for the mascot design board
+                (base a mascot on your own image, or leave empty). Generate is
+                gated on this below only when required. */}
+            {(requiresImageUpload || showMascotWidgets) && (
               <ReferenceImageUpload
                 variant="full"
-                required
-                label={t("reproduce.referenceImageLabel")}
+                required={requiresImageUpload}
+                label={
+                  showMascotWidgets
+                    ? "Your mascot image"
+                    : t("reproduce.referenceImageLabel")
+                }
+                hint={
+                  showMascotWidgets
+                    ? "Upload a mascot to base the board on — or leave empty to generate from the brand text."
+                    : undefined
+                }
                 replaceLabel={t("reproduce.replaceImage")}
                 uploadingLabel={t("reproduce.uploadingImage")}
                 onChange={setReferenceImageUrl}
@@ -255,6 +293,17 @@ function TextReproduceSection(props: {
                   setGeneratedImageUrl(null);
                   setGeneratedExampleId(null);
                 }}
+              />
+            )}
+
+            {/* Mascot design board: Style + Layout picker (defaults to the
+                template's current style/layout). */}
+            {showMascotWidgets && (
+              <MascotStyleLayoutWidget
+                styleKey={mascotStyle}
+                layoutKey={mascotLayout}
+                onStyle={setMascotStyle}
+                onLayout={setMascotLayout}
               />
             )}
 
