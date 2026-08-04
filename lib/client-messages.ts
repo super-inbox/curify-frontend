@@ -17,9 +17,12 @@ const LIGHT = new Set([
   "subtitle", "ogImage", "keywords", "seoKeywords", "author", "tag", "tags",
 ]);
 // Presence of any of these ⇒ the object is a heavy blog article body.
+// Blog-specific body fields ONLY. Deliberately excludes generic "intro"/"content"
+// which also appear on non-blog namespaces (e.g. topics.<x>.intro) — matching those
+// would wrongly strip topics.<x>.displayName (caused MISSING_MESSAGE, fixed here).
 const HEAVY_MARKERS = [
-  "intro", "whatIsContent", "conclusionContent", "challengesContent",
-  "curifyContent", "step1Content", "modelsContent", "howContent", "content",
+  "whatIsContent", "conclusionContent", "challengesContent", "curifyContent",
+  "step1Content", "step2Content", "modelsContent", "howContent", "conclusionTitle",
 ];
 
 function isArticle(v: Msg): v is { [k: string]: Msg } {
