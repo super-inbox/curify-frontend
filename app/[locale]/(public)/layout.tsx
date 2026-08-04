@@ -1,6 +1,7 @@
 import "../../globals.css";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { pickClientMessages } from "@/lib/client-messages";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import JotaiProvider from "@/app/[locale]/_components/JotaiProvider";
@@ -60,6 +61,10 @@ export default async function PublicLocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound();
 
   const messages = await getMessages();
+  // Trim blog bodies + nano from the CLIENT payload (server rendering unaffected).
+  // Prevents the ~1.6MB catalog from being serialized into every page (was
+  // folding ~44 blogs into the homepage canonical as near-duplicates).
+  const clientMessages = pickClientMessages(messages);
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -90,7 +95,7 @@ export default async function PublicLocaleLayout({
         </Script>
 
         <JotaiProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
+          <NextIntlClientProvider locale={locale} messages={clientMessages}>
             <AppWrapper user={null}>
               <Header />
 
