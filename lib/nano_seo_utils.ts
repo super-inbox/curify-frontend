@@ -474,14 +474,19 @@ export function resolveExampleVerticalSections(
 
   const content = resolveLocaleMessage(templateId, nanoMessages)?.content;
   const ex = content?.examples?.[exampleId];
+  // Attributes INHERIT from the template (short structured facts that are genuinely
+  // true of every example — e.g. an education template's subject/language_mode —
+  // and being identical across examples is correct, not duplicate content), with
+  // example-level values overriding per key.
   const attrVals = {
     ...((content?.attributes ?? {}) as Record<string, string>),
     ...((ex?.attributes ?? {}) as Record<string, string>),
   };
-  const vertVals = {
-    ...((content?.vertical ?? {}) as Record<string, string>),
-    ...((ex?.vertical ?? {}) as Record<string, string>),
-  };
+  // Authored PROSE (knowledge slots) comes from the example ONLY. Template-level
+  // prose stays on the (canonical) template page; inheriting it here would render
+  // the same paragraphs on every indexed example page of the template — duplicate
+  // content. An un-enriched example therefore shows the chip strip but no prose.
+  const vertVals = { ...((ex?.vertical ?? {}) as Record<string, string>) };
   return buildResolvedVertical(schema, attrVals, vertVals);
 }
 

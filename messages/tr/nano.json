@@ -16,6 +16,25 @@
           "“Angelica” bitkisi için Parçalı Sayfa oluşturun: dilim yapısı, tanıma noktaları (renk/koku/kesit), ana etkiler, eşleştirme fikirleri (isteğe bağlı), yasak uyarıları, net ok işaretlemeleri, 3:4.",
           "“Kuru portakal kabuğu” parçalı görünüm oluşturun: üretim yeri ve yıl farklılıkları, görünüm doku yakın çekimi, tat ve özellikler, günlük kullanım senaryoları (çay demlemek/yemek), retro ama ferah bir Çince bilgi grafiği düzeni, 3:4."
         ]
+      },
+      "examples": {
+        "template-herbal-astragalus": {
+          "attributes": {
+            "grade_band": "Genel",
+            "age_range": "Tüm yaşlar",
+            "subject": "Bitkisel ve sağlıklı yaşam eğitimi",
+            "skill": "Referans",
+            "resource_type": "Bitki referans kartı",
+            "duration_min": "5 dk",
+            "difficulty": "Başlangıç",
+            "language_mode": "İki Dilli EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Astragalus'u (黄芪, huángqí) tanıyın — bitkinin neye benzediğini, kullanılan kısmını ve geleneksel sağlıklı yaşam uygulamasındaki yerini, hızlı bir resimli referans olarak.",
+            "includes": "Botanik illüstrasyon, yaygın ve Çince isimler, kullanılan kısım ve kısa referans notları içeren resimli bir bitki kartı.",
+            "background": "Astragalus membranaceus (黄芪), Geleneksel Çin Tıbbı'nda temel bir tonik bitkidir; burada kurutulmuş kök geleneksel olarak qi ve canlılığı desteklemek için kullanılır. Bu kart eğiticidir ve geleneksel kullanımı açıklar, tıbbi tavsiye değildir."
+          }
+        }
       }
     },
     "description": "Herbal tıbbın anatomisi, özellikleri ve modern kullanımlarıyla ilgili bilimsel bir görsel rehber. Kendi bitkisel ilaç posterinizi oluşturmak için AI istemini kullanın.",
@@ -348,6 +367,25 @@
           "“Süpermarket sahnesi kelime grafiği” oluşturun: raflar, kasa, alışveriş arabası vb. içermeli, 25 yüksek frekanslı isim etiketleyin, İngilizce + IPA + Türkçe üç satır etiket, nesnelere yakın ama örtmemeye çalışın, 3:4 dikey.",
           "“Hayvanat bahçesi sahnesi kelime posteri” oluşturun: hayvanlar ve tesisleri etiketleyin (kapı, kafes, bilet, harita vb.), İngilizce/IPA/Türkçe üç satır formatında, basıma uygun."
         ]
+      },
+      "examples": {
+        "template-word-scene-military-base 1": {
+          "attributes": {
+            "grade_band": "Başlangıç Seviyesi / ESL",
+            "age_range": "6–12",
+            "subject": "Dil (EN–ZH)",
+            "skill": "Temalı kelime bilgisi",
+            "resource_type": "Kelime sahnesi",
+            "duration_min": "8 dk",
+            "difficulty": "Başlangıç",
+            "language_mode": "İki Dilli EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Bir askeri üs etrafında temalı bir İngilizce-Çince kelime seti oluşturun — asker, tank, silah, komuta merkezi ve eğitim alanı gibi kelimeler — tek bir etiketli resimli sahnede sabitlenmiş olarak.",
+            "includes": "Anahtar nesneler üzerinde iki dilli EN–ZH etiketleri bulunan tek bir resimli askeri üs sahnesi, böylece tüm bir kelime kümesi bağlam içinde öğrenilir.",
+            "background": "Kelime-sahne öğrenimi, bir grup ilgili kelimeyi akılda kalıcı bir resme bağlar; görsel bağlam, öğrencilerin kelime dağarcığını izole kelime listelerinden çok daha iyi akılda tutmalarına yardımcı olur."
+          }
+        }
       }
     }
   },
@@ -892,6 +930,25 @@
           "Elon Musk için bir MBTI teknoloji kurucusu posteri oluşturun: ENTP – 'The Visionary, AI Revolution Leader', roket, AI çipi ve elektrikli araç unsurları ile çevrili.",
           "Bill Gates için bir MBTI görselleştirmesi oluşturun: INTP – 'The Logician, Analytical Innovator', klasik bilgisayar ve yazılım sembolleri ile gelecekteki bir teknoloji ortamında."
         ]
+      },
+      "examples": {
+        "template-mbti-siliconvalley-founder": {
+          "attributes": {
+            "type_code": "ENTJ",
+            "type_nickname": "Komutan · İmparatorluk Kurucusu",
+            "dimensions": "Dışa Dönük · Sezgisel · Düşünsel · Yargılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Burada bir ENTJ olarak canlandırılan startup kurucusu rolü — kararlı, stratejik ve inşa etmeye odaklı. Bu, belirli bir kişi hakkında değil, şirket kurucusu arketipi hakkında bir kişilik-rol kartıdır.",
+            "strengths": "Vizyon, kararlılık ve bir ekibi uzun vadeli bir planın arkasında toplama yeteneği. ENTJ Dışa Dönük Düşünce, belirsizliği bir yol haritasına ve bir yol haritasını bir imparatorluğa dönüştürür.",
+            "weaknesses": "Aynı yoğunluk sabırsızlık veya ezici bir tavır olarak algılanabilir ve ENTJ'ler genellikle sadece kendilerinin tutabileceğine inandıkları kontrolü devretmekte zorlanırlar.",
+            "communication": "Doğrudan, buyurgan ve hedef odaklı — her sohbeti amaca göre şekillendirir.",
+            "relationships": "Yetkinliğe ve sonuçlara değer verir, son derece sadık, yüksek performanslı ekipler kurar.",
+            "career": "Kurucu ve CEO — strateji, ölçek ve komuta alanının arketipsel ENTJ arenası.",
+            "compatibility": "İnsani ve taktiksel uçları kapsayan empatik duygusal tipler ve detay odaklı operatörler tarafından en iyi şekilde dengelenir."
+          }
+        }
       }
     }
   },
@@ -1319,6 +1376,57 @@
             "relationships": "Çaba ve performansla saygısını kazanan dar bir çevreye sadık.",
             "career": "Nihai rekabetçinin arenası — cesaret, doğaçlama ve saf iradeyi ödüllendiren bir sahne, ki bu da ESTP'nin zirve noktasıdır.",
             "compatibility": "Anlık dehasının üzerine inşa edebileceği çerçeveyi sağlayan istikrarlı, yapılandırılmış tiplerle en iyi şekilde çalışır."
+          }
+        },
+        "template-mbti-nba-marta": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "Sanatçı",
+            "dimensions": "Dışa Dönük · Duyusal · Duygusal · Algılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Marta Vieira da Silva burada bir ESFP olarak canlandırılıyor — dışavurumcu, neşeli ve doğaçlama yeteneğine sahip, altı kez FIFA Yılın En İyi Oyuncusu ve Dünya Kupaları'nın tüm zamanların en golcü oyuncusu olarak bir maçı performansa dönüştürüyor.",
+            "strengths": "Spontane yetenek, kalabalığı coşturan enerji ve anlık parlaklık. ESFP'nin canlı bir durumu okuma ve anında tepki verme yeteneği, yoktan gol pozisyonları yaratan bir forvete çok yakışır.",
+            "weaknesses": "ESFP'nin coşkusu katı sistemlerle çatışabilir; bu arketip, sıkıca yazılmış bir yapıdan ziyade özgürlük ve ifade üzerinde gelişir.",
+            "communication": "Sıcak ve dışavurumcu — ders vermek yerine görünür neşe ve örnek olarak liderlik eder.",
+            "relationships": "Kolayca ve cömertçe bağlantı kurar, grubun ruh halini yükselten duygusal olarak açık bir takım arkadaşıdır.",
+            "career": "Elit futbol — yetenek, spontanlık ve gösterişi ödüllendiren bir sahne, klasik ESFP alanı.",
+            "compatibility": "Kendi çerçeveleri içinde doğaçlama yapma özgürlüğü veren yapılandırılmış, taktiksel tiplerle iyi uyum sağlar."
+          }
+        },
+        "template-mbti-nba-derrickrose": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "Kampanyacı",
+            "dimensions": "Dışa Dönük · Sezgisel · Duygusal · Algılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Derrick Rose burada bir ENFP olarak canlandırılıyor — yaratıcı, içten ve azimli. NBA tarihindeki en genç MVP, patlayıcı hücum oyunu ve sevilen geri dönüş hikayesi sıcak, hayalperest ENFP'ye uyuyor.",
+            "strengths": "Patlayıcı doğaçlama, duygusal dayanıklılık ve şehriyle ve hayranlarıyla gerçek bir bağ. ENFP tutkusu hem erken dönemdeki parlaklığını hem de sakatlıktan uzun mücadelesini besledi.",
+            "weaknesses": "ENFP'ler kendilerine karşı sert olabilir ve aksiliklerden derinden etkilenebilirler — tekrarlayan sakatlıkların duygusal ağırlığı bu idealizmi sınadı.",
+            "communication": "Alçakgönüllü ve içten; gösterişten ziyade samimiyetle liderlik eder.",
+            "relationships": "Derinlemesine sadık ve aile odaklı, yakın çevresinden güç alır.",
+            "career": "Yaratıcı oyun kurucu — vizyonu, spontanlığı ve yeteneği ödüllendiren bir rol.",
+            "compatibility": "Doğaçlama oyununa yapı sağlayan istikrarlı, ayakları yere basan tiplerle dengelenir."
+          }
+        },
+        "template-mbti-nba-shaquilleoneal": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "Sanatçı",
+            "dimensions": "Dışa Dönük · Duyusal · Duygusal · Algılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Shaquille O'Neal burada bir ESFP olarak canlandırılıyor — hayat dolu, manyetik ve sonsuz eğlenceli. Gelmiş geçmiş en dominant pivotlardan biri, ezici fiziksel gücünü doğal bir şovmenin karizmasıyla birleştirdi.",
+            "strengths": "Etkileyici duruş, mizah ve her kalabalıkla içgüdüsel bir bağ. ESFP'nin anlık yeteneği onu sahada durdurulamaz ve sahanın çok ötesinde bir yıldız yaptı.",
+            "weaknesses": "Serbest akışlı ESFP enerjisi rutin ve tekrarlarla pek uyuşmazdı — ünlü serbest atış sorunları ve aynı anda birçok girişime yönelme isteği.",
+            "communication": "Komik, manyetik ve silahsızlandırıcı; kişiliğiyle odayı fetheder.",
+            "relationships": "Geniş bir sosyal çevresi olan, cömert ve başkalarını hızla dahil eden sosyal biridir.",
+            "career": "Dominant pivot, medya eğlencecisine dönüştü — kamera önünde doğal bir ESFP ikinci perdesi.",
+            "compatibility": "İçgüdüsel, anlık dominasyonuna yapı kazandıran analitik stratejistler tarafından tamamlanır."
           }
         }
       }
@@ -1957,6 +2065,42 @@
           "Lin Daiyu INFP personality poster — the poetic dreamer.",
           "Cao Cao INTJ character MBTI — the strategic mastermind."
         ]
+      },
+      "examples": {
+        "template-chinese-classic-character-mbti-liu-bei": {
+          "attributes": {
+            "type_code": "INFJ",
+            "type_nickname": "Shu Han'ın Hayırsever Hükümdarı",
+            "dimensions": "İçe Dönük · Sezgisel · Duygusal · Yargılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Üç Krallık Romanı'nda Shu Han'ın kurucu imparatoru Liu Bei, INFJ olarak tanımlanmıştır — mütevazı köklerden yükselen ve güç yerine erdem (仁德) yoluyla sadakat kazanan hayırsever idealist.",
+            "strengths": "Derin ahlaki inanç, bağlılık ilham verme yeteneği ve yetenek arayışındaki alçakgönüllülük — Zhuge Liang'ın kulübesini üç kez ziyaret etmesiyle ünlüdür. INFJ vizyonu, yıllarca süren zorluklara rağmen uzun vadeli bir ideali sürdürmesini sağladı.",
+            "weaknesses": "INFJ kararları duygu tarafından yönetilir: yeminli kardeşlerinin intikamını almak için başlattığı Yiling seferi, stratejiyi hiçe saydı ve felaketle sonuçlandı.",
+            "communication": "Ciddi ve değer odaklı, savaşlardan önce kalpleri kazanır.",
+            "relationships": "Derin sadakatle bağlı — Şeftali Bahçesi Kardeşliği Yemini hayatını tanımladı.",
+            "career": "Ahlaki otoriteyle liderlik eden hayırsever hükümdar ve hanedan kurucusu.",
+            "compatibility": "Yol gösterici vizyonuna taktiksel zekayı sağlayan Zhuge Liang gibi stratejik düşünürler tarafından tamamlanır."
+          }
+        },
+        "template-chinese-classic-character-mbti-miaoyu": {
+          "attributes": {
+            "type_code": "INTJ",
+            "type_nickname": "Mimar",
+            "dimensions": "İçe Dönük · Sezgisel · Düşünsel · Yargılayıcı",
+            "subject_kind": "Karakter kişilik kartı"
+          },
+          "vertical": {
+            "traits": "Kırmızı Köşkün Rüyası'ndaki mesafeli rahibe Miaoyu, INTJ olarak tanımlanmıştır — rafine, titiz ve şiddetle bağımsız, Prospect Garden'ın Yeşil Kafes Manastırı'nda ayrı yaşayarak çay sanatında ustalaşmıştır.",
+            "strengths": "Müthiş entelektüel ve estetik ustalık, tavizsiz standartlar ve kendine yeterlilik. INTJ'nin içsel bir ideali takip etmesi, onun uzmanlığında ve geleneklere boyun eğmeyi reddetmesinde kendini gösterir.",
+            "weaknesses": "Aynı mesafeli duruş ve 'saflık takıntısı' (洁癖) onu izole eder; INTJ gururu ve sıradanlığa duyduğu küçümseme dünyayı ondan uzak tutar.",
+            "communication": "Saklı ve kesin, az şey açıklar ve çok şey bekler.",
+            "relationships": "Az ve dikkatle seçilmiş; neredeyse herkesten bilinçli bir mesafe korur.",
+            "career": "Kendi titiz şartlarıyla, rafine, nadir bir bilgi birikiminin koruyucusu.",
+            "compatibility": "Sadece standartlarına saygı duyan ve derinliğini paylaşan kişilerde dengini bulur."
+          }
+        }
       }
     }
   },
@@ -2232,7 +2376,28 @@
   "template-historical-event-map-illustration": {
     "category": "Tarihi Olay Haritasi",
     "description": "Her tarihi olay icin ayrintili illustre harita ve sahne olusturun — suluboya tarz, rota haritalari ve dramatik an illustrasyonlariyla.",
-    "title": "Tarihi Olay Harita Illustrasyonu | Nano Banana"
+    "title": "Tarihi Olay Harita Illustrasyonu | Nano Banana",
+    "content": {
+      "examples": {
+        "template-historical-event-map-illustration-constantinople-siege": {
+          "attributes": {
+            "grade_band": "Ortaokul–Lise",
+            "age_range": "12+",
+            "subject": "Dünya tarihi",
+            "skill": "Tarihsel analiz",
+            "resource_type": "Resimli olay haritası",
+            "duration_min": "12 dk",
+            "difficulty": "Orta",
+            "language_mode": "İngilizce"
+          },
+          "vertical": {
+            "learning_objective": "1453 İstanbul'un Fethi'ni anlayın — şehrin coğrafyası, kuşatmanın ana hamleleri ve ünlü surlarının neden nihayet düştüğünü.",
+            "includes": "Teodosian Surları'nı, Haliç'i, Osmanlı mevzilerini ve büyük bombardıman toplarının yerleşimini gösteren kuşatmanın resimli bir haritası.",
+            "background": "1453'te Osmanlı padişahı II. Mehmed Bizans başkentini kuşattı; devasa toplar uzun süre aşılamaz olan Teodosian Surları'nı aştı, Bizans İmparatorluğu'nu sona erdirdi ve Avrupa ile Asya arasındaki ticareti ve gücü yeniden şekillendirdi."
+          }
+        }
+      }
+    }
   },
   "template-national-theme-map-infographic": {
     "category": "Ulusal Tema Haritasi",
@@ -2397,6 +2562,25 @@
           "'just' vs 'only' dilbilgisi karşılaştırma posteri oluştur: çizgi film karakterleri, kalın etiketler, 4K dikey.",
           "'their' vs 'there' vs 'they're' kelime posteri tasarla: 3 kawaii panel, görsel örnekler, 4K dikey."
         ]
+      },
+      "examples": {
+        "template-language-word-comparison-educational-poster-haishi-huozhe": {
+          "attributes": {
+            "grade_band": "HSK 2–3",
+            "age_range": "10+",
+            "subject": "Çince dilbilgisi",
+            "skill": "Dilbilgisi ve kullanım",
+            "resource_type": "Karşılaştırma posteri",
+            "duration_min": "8 dk",
+            "difficulty": "Orta",
+            "language_mode": "İki Dilli EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Her ikisi de 'veya' olarak çevrilen iki Çince kelimeyi — 还是 (háishì) ve 或者 (huòzhě) — ayırt edin ve sorularla ifadelerde hangisini kullanacağınızı, yan yana örnek cümlelerle öğrenin.",
+            "includes": "还是 ve 或者'yı örnek cümleler, İngilizce açıklamalar ve basit bir pratik kural ile karşılaştıran bir karşılaştırma posteri.",
+            "background": "Çok yaygın bir öğrenci karışıklığı: 还是 bir soru içinde alternatifler sunar ('çay mı kahve mi?'), oysa 或者 bir ifade içinde alternatifleri bağlar ('çay veya kahve fark etmez'). Onları eşleştirilmiş görmek ayrımı düzeltir."
+          }
+        }
       }
     }
   },
@@ -2599,6 +2783,42 @@
           "Dunyanin Jeolojik Caglari infografigi.",
           "Insan Evrimi infografigi."
         ]
+      },
+      "examples": {
+        "template-science-education-infographic-ocean-zones": {
+          "attributes": {
+            "grade_band": "Başlangıç Seviyesi–Ortaokul",
+            "age_range": "8–13",
+            "subject": "Yer ve deniz bilimi",
+            "skill": "Bilimsel kavramlar",
+            "resource_type": "Bilim infografiği",
+            "duration_min": "10 dk",
+            "difficulty": "Başlangıç",
+            "language_mode": "İngilizce"
+          },
+          "vertical": {
+            "learning_objective": "Okyanusun derinlik bölgelerini — güneşli yüzeyden en derin çukurlara kadar — ve ışık, sıcaklık ve basıncın her seviyede bulunan yaşamı nasıl şekillendirdiğini belirleyin.",
+            "includes": "Okyanus bölgelerinin (gün ışığı, alacakaranlık, gece yarısı, abisal ve hadal) derinlik aralıkları, koşulları ve temsili canlıları ile dikey bir infografik.",
+            "background": "Okyanus derinliğe göre katmanlara ayrılmıştır: güneşli epipelajik bölge çoğu deniz yaşamını desteklerken, ışık azalır ve basınç hadal çukurlara doğru artar, burada sadece özel olarak adapte olmuş organizmalar hayatta kalır."
+          }
+        },
+        "template-science-education-infographic-atmosphere-layers": {
+          "attributes": {
+            "grade_band": "Başlangıç Seviyesi–Ortaokul",
+            "age_range": "8–13",
+            "subject": "Yer bilimi",
+            "skill": "Bilimsel kavramlar",
+            "resource_type": "Bilim infografiği",
+            "duration_min": "10 dk",
+            "difficulty": "Başlangıç",
+            "language_mode": "İngilizce"
+          },
+          "vertical": {
+            "learning_objective": "Dünya'nın atmosferik katmanlarını sırasıyla ve her birinin ana özelliklerini belirleyin — hava olaylarının nerede gerçekleştiğini, ozon tabakasının nerede bulunduğunu, meteorların nerede yandığını ve auroraların nerede parladığını.",
+            "includes": "Troposfer, stratosfer, mezosfer, termosfer ve ekzosferin irtifa aralıkları ve karakteristik fenomenleri ile etiketli dikey bir infografik.",
+            "background": "Dünya'nın atmosferi, sıcaklığın irtifa ile nasıl değiştiğine göre katmanlara ayrılmıştır: hava olayları troposferde meydana gelir, koruyucu ozon tabakası stratosferde bulunur, meteorlar mezosferde yanar ve auroralar termosferde görünür."
+          }
+        }
       }
     }
   },
@@ -3164,6 +3384,25 @@
           "Pixar ile DreamWorks animasyon stüdyosu karşılaştırma posteri oluşturun.",
           "Kyoto Animation ile Ufotable stüdyo karşılaştırması infografiği oluşturun."
         ]
+      },
+      "examples": {
+        "template-animation-studio-comparison-infographic-wit-vs-ufotable": {
+          "attributes": {
+            "grade_band": "Ortaokul–Lise / Genel",
+            "age_range": "12+",
+            "subject": "Medya ve animasyon okuryazarlığı",
+            "skill": "Karşılaştırma ve analiz",
+            "resource_type": "Karşılaştırma infografiği",
+            "duration_min": "8 dk",
+            "difficulty": "Başlangıç",
+            "language_mode": "İngilizce"
+          },
+          "vertical": {
+            "learning_objective": "İki beğenilen anime stüdyosunu — Wit Studio ve ufotable — imza eserleri, görsel tarzları ve üretim teknikleri açısından karşılaştırın.",
+            "includes": "Her stüdyonun dikkat çekici eserlerini, sanat yönetmenliğini ve teknik güçlü yönlerini karşılaştıran yan yana bir infografik.",
+            "background": "Wit Studio, kinetik aksiyonuyla (Attack on Titan 1–3. sezonlar, Vinland Saga) tanınırken, ufotable CGI'ı elle çizilmiş animasyon ve gösterişli efektlerle birleştirmesiyle ünlüdür (Demon Slayer, Fate serisi). Onları karşılaştırmak, medya okuryazarlığına dostane bir başlangıçtır."
+          }
+        }
       }
     },
     "description": "Logolar, kuruluş yılı, sanat tarzı, dikkat çekici eserler ve miras hakkında bilgi veren canlı bir stüdyo-vs-stüdyo görsel rehberi. Kendi anime stüdyo karşılaştırma posterinizi oluşturmak için AI istemini kullanın.",
@@ -3565,6 +3804,40 @@
             "learning_objective": "画蛇添足 (huà shé tiān zú) deyimini okumayı, telaffuz etmeyi ve doğru kullanmayı öğrenin — gereksiz bir eylemin işleri daha da kötüleştirdiğini fark etmek.",
             "includes": "Basitleştirilmiş karakterler, pinyin, kelimesi kelimesine bir açıklama ('yılana ayak eklemek'), mecazi anlamı, örnek bir cümle ve orijinal hikayenin bir illüstrasyonu.",
             "background": "Savaşan Devletler dönemine ait bir hikayeden: yılan çizme yarışmasında en hızlı ressam hava atmak için ayaklar ekledi — ve kaybetti, çünkü yılanların ayağı yoktur. Deyim, bitmiş bir şeyi gereksiz çabayla mahvetmeye karşı uyarır."
+          }
+        },
+        "template-chinese-idiom-learning-card-shou-zhu-dai-tu-1": {
+          "attributes": {
+            "grade_band": "HSK 3–4 / Başlangıç Seviyesi",
+            "age_range": "8–12",
+            "subject": "Çince (Mandarin)",
+            "skill": "Deyimler ve kelime bilgisi",
+            "resource_type": "Deyim bilgi kartı",
+            "duration_min": "10 dk",
+            "difficulty": "Orta",
+            "language_mode": "İki Dilli EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Çince deyim 守株待兔 (shǒu zhū dài tù)'yu öğrenin — bir ağaç kütüğünü tavşan beklemek için koruma şeklindeki kelime anlamını, çaba yerine şansa güvenme şeklindeki mecazi anlamını, ayrıca pinyin ve örnek bir cümleyi.",
+            "includes": "Çince karakterler, pinyin, kelime ve mecazi anlamlar, köken hikayesi ve kullanım örneği içeren resimli bir deyim kartı — iki dilli EN–ZH öğrenenler için tasarlanmıştır.",
+            "background": "Deyim Han Feizi (韩非子)'den gelir: bir çiftçi bir tavşanın bir ağaç kütüğüne çarpıp öldüğünü görür, sonra daha fazlasını beklemek için tarlalarını terk eder — pasifliğe ve şansa güvenmeye karşı uyaran klasik bir meseldir."
+          }
+        },
+        "template-chinese-idiom-learning-card-jing-di-zhi-wa": {
+          "attributes": {
+            "grade_band": "HSK 3–4 / Başlangıç Seviyesi",
+            "age_range": "8–12",
+            "subject": "Çince (Mandarin)",
+            "skill": "Deyimler ve kelime bilgisi",
+            "resource_type": "Deyim bilgi kartı",
+            "duration_min": "10 dk",
+            "difficulty": "Orta",
+            "language_mode": "İki Dilli EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Çince deyim 井底之蛙 (jǐng dǐ zhī wā)'yı öğrenin — 'kuyunun dibindeki bir kurbağa' — ve anlamını: dünyayı dar, sınırlı bir bakış açısıyla gören biri, pinyin ve örnek bir cümle ile.",
+            "includes": "İki dilli EN–ZH öğrenenler için karakterler, pinyin, kelime ve mecazi anlamlar, köken hikayesi ve kullanım örneği içeren resimli bir deyim kartı.",
+            "background": "Deyim Zhuangzi (庄子)'den gelir: bir kuyuda yaşayan bir kurbağa, Doğu Denizi'nden bir kaplumbağa okyanusun enginliğini anlatana kadar kuyunun tüm dünya olduğuna inanır — sınırlı bakış açısı hakkında bir ders."
           }
         }
       }

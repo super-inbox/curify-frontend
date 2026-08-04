@@ -16,6 +16,25 @@
           "Faites une 'feuille décomposée de l'herbe Angelica' : structure des tranches, points de distinction (couleur / odeur / section), principale fonction, idées de combinaison (facultatif), conseils de précaution, annotations claires avec flèches, 3:4.",
           "Générez une 'vue décomposée de l'orange séchée' : points de différence selon la région et l'année, gros plan de l'apparence et de la texture, saveur et méridien, scénarios d'utilisation quotidienne (infusion / cuisine), mise en page d'infographie en chinois rétro mais rafraîchissante, 3:4."
         ]
+      },
+      "examples": {
+        "template-herbal-astragalus": {
+          "attributes": {
+            "grade_band": "Général",
+            "age_range": "Tous âges",
+            "subject": "Éducation sur les herbes et le bien-être",
+            "skill": "Référence",
+            "resource_type": "Fiche de référence d'herbe",
+            "duration_min": "5 min",
+            "difficulty": "Débutant",
+            "language_mode": "Bilingue AN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Apprenez à connaître l'astragale (黄芪, huángqí) — à quoi ressemble la plante, la partie utilisée et sa place dans la pratique traditionnelle du bien-être, comme référence illustrée rapide.",
+            "includes": "Une fiche d'herbe illustrée avec une illustration botanique, les noms communs et chinois, la partie utilisée et des notes de référence concises.",
+            "background": "Astragalus membranaceus (黄芪) est une herbe tonique fondamentale en Médecine Traditionnelle Chinoise, où la racine séchée est traditionnellement utilisée pour soutenir le qi et la vitalité. Cette fiche est éducative et décrit l'utilisation traditionnelle, non un avis médical."
+          }
+        }
       }
     },
     "description": "Un guide visuel scientifique pour toute herbe chinoise traditionnelle avec anatomie, propriétés et usages modernes. Utilisez l'invite AI pour générer votre propre affiche de médecine à base de plantes.",
@@ -348,6 +367,25 @@
           "Générez une \"image de vocabulaire dans la scène de supermarché\" : incluant étagères, caisse, chariot, etc., annotant 25 noms fréquents, annotations en trois lignes (anglais + IPA + chinois), aussi près que possible des objets sans masquer, format portrait 3:4.",
           "Générez une \"affiche de vocabulaire dans la scène de zoo\" : annotant les animaux et les installations (porte, cage, billet, carte, etc.), format en trois lignes (anglais/IPA/chinois), adapté pour impression."
         ]
+      },
+      "examples": {
+        "template-word-scene-military-base 1": {
+          "attributes": {
+            "grade_band": "Élémentaire / ESL",
+            "age_range": "6–12 ans",
+            "subject": "Langue (AN–ZH)",
+            "skill": "Vocabulaire thématique",
+            "resource_type": "Scène de vocabulaire",
+            "duration_min": "8 min",
+            "difficulty": "Débutant",
+            "language_mode": "Bilingue AN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Construisez un ensemble de vocabulaire thématique anglais-chinois autour d'une base militaire — des mots comme soldat, char, arme, centre de commandement et terrain d'entraînement — ancré dans une scène illustrée et étiquetée.",
+            "includes": "Une seule scène illustrée de base militaire avec des étiquettes bilingues AN–ZH sur les objets clés, de sorte qu'un ensemble de vocabulaire entier est appris en contexte.",
+            "background": "L'apprentissage par scènes de mots ancre un groupe de mots liés à une image mémorable ; le contexte visuel aide les apprenants à retenir le vocabulaire bien mieux que les listes de mots isolées."
+          }
+        }
       }
     }
   },
@@ -892,6 +930,25 @@
           "Créez une affiche de fondateur technologique MBTI pour Elon Musk : ENTP – 'Le Visionnaire, Leader de la Révolution IA', entouré d'éléments de fusée, de puce IA et de véhicule électrique.",
           "Générez une visualisation MBTI pour Bill Gates : INTP – 'Le Logicien, Innovateur Analytique', avec des symboles classiques de l'informatique et des logiciels dans un environnement technologique futuriste."
         ]
+      },
+      "examples": {
+        "template-mbti-siliconvalley-founder": {
+          "attributes": {
+            "type_code": "ENTJ",
+            "type_nickname": "Le Commandant · Bâtisseur d'Empire",
+            "dimensions": "Extraverti · Intuitif · Rationnel · Juge",
+            "subject_kind": "Fiche de personnalité de personnage"
+          },
+          "vertical": {
+            "traits": "Le rôle de fondateur de startup, présenté ici comme un ENTJ — décisif, stratégique et motivé par la construction. Il s'agit d'une fiche de rôle de personnalité sur l'archétype du bâtisseur d'entreprise, et non d'une personne spécifique.",
+            "strengths": "Vision, décision et capacité à rallier une équipe autour d'un plan à long terme. La Pensée Extravertie des ENTJ transforme l'ambiguïté en feuille de route et une feuille de route en empire.",
+            "weaknesses": "La même intensité peut être perçue comme de l'impatience ou de l'autoritarisme, et les ENTJ ont souvent du mal à déléguer un contrôle qu'ils croient être les seuls à pouvoir exercer.",
+            "communication": "Direct, autoritaire et orienté vers les objectifs — il cadre chaque conversation autour de l'objectif.",
+            "relationships": "Valorise la compétence et les résultats, bâtissant des équipes très performantes et farouchement loyales.",
+            "career": "Fondateur et PDG — l'arène archétypale des ENTJ de la stratégie, de l'échelle et du commandement.",
+            "compatibility": "Mieux équilibré par des types empathiques et des opérateurs axés sur les détails qui couvrent les aspects humains et tactiques."
+          }
+        }
       }
     }
   },
@@ -1319,6 +1376,57 @@
             "relationships": "Loyal envers un cercle restreint qui a gagné son respect par l'effort et la performance.",
             "career": "L'arène du compétiteur ultime — une scène qui récompense le cran, l'improvisation et la volonté pure, ce qui est le territoire de l'ESTP par excellence.",
             "compatibility": "Fonctionne mieux aux côtés de types stables et structurés qui fournissent le cadre sur lequel sa brillance du moment peut s'appuyer."
+          }
+        },
+        "template-mbti-nba-marta": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "Le Performer",
+            "dimensions": "Extraverti · Sensoriel · Sentimental · Perceptif",
+            "subject_kind": "Fiche de personnalité de personnage"
+          },
+          "vertical": {
+            "traits": "Marta Vieira da Silva est présentée ici comme une ESFP — expressive, joyeuse et improvisatrice, six fois Meilleure Joueuse de la FIFA et la meilleure buteuse de tous les temps en Coupes du Monde, qui transforme chaque match en un spectacle.",
+            "strengths": "Un flair spontané, une énergie qui soulève les foules et une brillance dans l'instant présent. Le don des ESFP pour lire une situation en direct et réagir instantanément convient à une attaquante qui invente des occasions à partir de rien.",
+            "weaknesses": "La verve des ESFP peut se heurter aux systèmes rigides ; cet archétype prospère sur la liberté et l'expression plutôt que sur une structure étroitement scénarisée.",
+            "communication": "Chaleureuse et expressive — elle mène avec une joie visible et par l'exemple plutôt que par des discours.",
+            "relationships": "Se connecte facilement et généreusement, une coéquipière émotionnellement ouverte qui améliore l'ambiance du groupe.",
+            "career": "Football d'élite — une scène qui récompense le flair, la spontanéité et le sens du spectacle, un territoire ESFP classique.",
+            "compatibility": "S'accorde bien avec les types structurés et tactiques qui lui donnent la liberté d'improviser au sein de leur cadre."
+          }
+        },
+        "template-mbti-nba-derrickrose": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "Le Militant",
+            "dimensions": "Extraverti · Intuitif · Sentimental · Perceptif",
+            "subject_kind": "Fiche de personnalité de personnage"
+          },
+          "vertical": {
+            "traits": "Derrick Rose est présenté ici comme un ENFP — créatif, sincère et déterminé. Le plus jeune MVP de l'histoire de la NBA, son jeu offensif explosif et son histoire de retour tant aimée correspondent à l'ENFP chaleureux et imaginatif.",
+            "strengths": "Improvisation explosive, résilience émotionnelle et un lien authentique avec sa ville et ses fans. La passion ENFP a alimenté à la fois sa brillance précoce et sa longue lutte pour revenir après une blessure.",
+            "weaknesses": "Les ENFP peuvent être durs envers eux-mêmes et sont profondément affectés par les revers — le poids émotionnel des blessures répétées a mis à l'épreuve cet idéalisme.",
+            "communication": "Humble et sincère ; il mène avec sincérité plutôt qu'avec bravade.",
+            "relationships": "Profondément loyal et axé sur la famille, puisant sa force dans un cercle intime.",
+            "career": "Meneur créatif — un rôle qui récompense la vision, la spontanéité et le flair.",
+            "compatibility": "Équilibré par des types stables et terre-à-terre qui apportent une structure à son jeu d'improvisation."
+          }
+        },
+        "template-mbti-nba-shaquilleoneal": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "Le Performer",
+            "dimensions": "Extraverti · Sensoriel · Sentimental · Perceptif",
+            "subject_kind": "Fiche de personnalité de personnage"
+          },
+          "vertical": {
+            "traits": "Shaquille O'Neal est présenté ici comme un ESFP — plus grand que nature, magnétique et infiniment divertissant. L'un des pivots les plus dominants de tous les temps, il a associé une force physique écrasante au charisme naturel d'un showman.",
+            "strengths": "Présence imposante, humour et une connexion instinctive avec n'importe quelle foule. Le flair ESFP pour l'instant l'a rendu inarrêtable sur le terrain et une star bien au-delà.",
+            "weaknesses": "L'énergie ESFP, libre et fluide, s'accordait mal avec la routine et la répétition — les célèbres difficultés aux lancers francs et une attirance vagabonde vers de nombreuses entreprises à la fois.",
+            "communication": "Drôle, magnétique et désarmant ; il conquiert l'auditoire par sa personnalité.",
+            "relationships": "Grégaire avec un vaste cercle social, généreux et prompt à inclure les autres.",
+            "career": "Pivot dominant devenu animateur médiatique — un second acte ESFP naturel devant la caméra.",
+            "compatibility": "Complété par des stratèges analytiques qui donnent une structure à sa dominance instinctive et instantanée."
           }
         }
       }
@@ -1957,6 +2065,42 @@
           "Lin Daiyu INFP personality poster — the poetic dreamer.",
           "Cao Cao INTJ character MBTI — the strategic mastermind."
         ]
+      },
+      "examples": {
+        "template-chinese-classic-character-mbti-liu-bei": {
+          "attributes": {
+            "type_code": "INFJ",
+            "type_nickname": "Souverain Bienveillant de Shu Han",
+            "dimensions": "Introverti · Intuitif · Sentimental · Juge",
+            "subject_kind": "Fiche de personnalité de personnage"
+          },
+          "vertical": {
+            "traits": "Liu Bei, empereur fondateur de Shu Han dans Le Roman des Trois Royaumes, est de type INFJ — l'idéaliste bienveillant qui s'est élevé de modestes origines et a gagné la loyauté par la vertu (仁德) plutôt que par la force.",
+            "strengths": "Une profonde conviction morale, un don pour inspirer la dévotion et l'humilité de rechercher les talents — visitant notamment la chaumière de Zhuge Liang à trois reprises. La vision INFJ lui a permis de maintenir un idéal à long terme à travers des années de difficultés.",
+            "weaknesses": "Les décisions INFJ sont régies par le sentiment : sa campagne à Yiling, lancée pour venger ses frères jurés, a primé sur la stratégie et s'est terminée en désastre.",
+            "communication": "Sincère et axé sur les valeurs, gagnant les cœurs avant les batailles.",
+            "relationships": "Lié par une loyauté profonde — la fraternité du Serment du Jardin des Pêchers a défini sa vie.",
+            "career": "Dirigeant bienveillant et fondateur de dynastie qui a dirigé par autorité morale.",
+            "compatibility": "Complété par des penseurs stratégiques comme Zhuge Liang qui ont fourni l'esprit tactique à sa vision directrice."
+          }
+        },
+        "template-chinese-classic-character-mbti-miaoyu": {
+          "attributes": {
+            "type_code": "INTJ",
+            "type_nickname": "L'Architecte",
+            "dimensions": "Introverti · Intuitif · Rationnel · Juge",
+            "subject_kind": "Fiche de personnalité de personnage"
+          },
+          "vertical": {
+            "traits": "Miaoyu, la nonne distante du Rêve dans le Pavillon Rouge, est de type INTJ — raffinée, exigeante et farouchement indépendante, vivant à part dans le Couvent de la Treille Verte du Jardin de la Grande Vue et maîtrisant l'art du thé.",
+            "strengths": "Une formidable maîtrise intellectuelle et esthétique, des standards intransigeants et une autosuffisance. La quête INTJ d'un idéal intérieur se manifeste dans son expertise et son refus de se plier aux conventions.",
+            "weaknesses": "Cette même distance et « obsession de la pureté » (洁癖) l'isolent ; la fierté INTJ et le dédain pour l'ordinaire maintiennent le monde à distance.",
+            "communication": "Réservée et précise, elle divulgue peu et attend beaucoup.",
+            "relationships": "Peu nombreux et soigneusement choisis ; elle maintient une distance délibérée avec presque tout le monde.",
+            "career": "Gardienne d'un corpus de connaissances raffiné et raréfié, selon ses propres termes exigeants.",
+            "compatibility": "Ne trouve son égal que chez ceux qui respectent ses standards et partagent sa profondeur."
+          }
+        }
       }
     }
   },
@@ -2232,7 +2376,28 @@
   "template-historical-event-map-illustration": {
     "category": "Carte d'Evenement Historique",
     "description": "Generez une carte illustree et une scene pour tout evenement historique — aquarelle, cartes d'itineraires et illustrations de moments dramatiques.",
-    "title": "Illustration de Carte d'Evenement Historique | Nano Banana"
+    "title": "Illustration de Carte d'Evenement Historique | Nano Banana",
+    "content": {
+      "examples": {
+        "template-historical-event-map-illustration-constantinople-siege": {
+          "attributes": {
+            "grade_band": "Collège–Lycée",
+            "age_range": "12 ans et plus",
+            "subject": "Histoire mondiale",
+            "skill": "Analyse historique",
+            "resource_type": "Carte d'événement illustrée",
+            "duration_min": "12 min",
+            "difficulty": "Intermédiaire",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Comprendre la chute de Constantinople en 1453 — la géographie de la ville, les mouvements clés du siège et pourquoi ses célèbres murs sont finalement tombés.",
+            "includes": "Une carte illustrée du siège montrant les Murs Théodosiens, la Corne d'Or, les positions ottomanes et le placement des grands bombardes.",
+            "background": "En 1453, le sultan ottoman Mehmed II assiégea la capitale byzantine ; d'énormes canons brisèrent les Murs Théodosiens, longtemps imprenables, mettant fin à l'Empire byzantin et remodelant le commerce et le pouvoir entre l'Europe et l'Asie."
+          }
+        }
+      }
+    }
   },
   "template-national-theme-map-infographic": {
     "category": "Carte Thematique Nationale",
@@ -2397,6 +2562,25 @@
           "Générez une affiche de comparaison pour 'just' vs 'only' — personnages illustrés, étiquettes en gras, 4K vertical.",
           "Concevez une affiche pour 'their' vs 'there' vs 'they're' — trois panneaux kawaii avec exemples visuels, 4K vertical."
         ]
+      },
+      "examples": {
+        "template-language-word-comparison-educational-poster-haishi-huozhe": {
+          "attributes": {
+            "grade_band": "HSK 2–3",
+            "age_range": "10 ans et plus",
+            "subject": "Grammaire chinoise",
+            "skill": "Grammaire et utilisation",
+            "resource_type": "Affiche comparative",
+            "duration_min": "8 min",
+            "difficulty": "Intermédiaire",
+            "language_mode": "Bilingue AN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Distinguer deux mots chinois qui se traduisent tous deux par « ou » — 还是 (háishì) et 或者 (huòzhě) — et savoir lequel utiliser dans les questions par rapport aux affirmations, avec des phrases d'exemple côte à côte.",
+            "includes": "Une affiche comparative contrastant 还是 et 或者 avec des phrases d'exemple, des gloses en anglais et une règle simple.",
+            "background": "Une confusion très courante chez les apprenants : 还是 propose des alternatives dans une question (« thé ou café ? »), tandis que 或者 relie des alternatives dans une affirmation (« thé ou café, c'est bien »). Les voir associés permet de fixer la distinction."
+          }
+        }
       }
     }
   },
@@ -2599,6 +2783,42 @@
           "Infographie des Ages Geologiques de la Terre.",
           "Infographie de l'Evolution Humaine."
         ]
+      },
+      "examples": {
+        "template-science-education-infographic-ocean-zones": {
+          "attributes": {
+            "grade_band": "Élémentaire–Collège",
+            "age_range": "8–13 ans",
+            "subject": "Sciences de la Terre et marines",
+            "skill": "Concepts scientifiques",
+            "resource_type": "Infographie scientifique",
+            "duration_min": "10 min",
+            "difficulty": "Débutant",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Identifier les zones de profondeur de l'océan — de la surface ensoleillée aux fosses les plus profondes — et comment la lumière, la température et la pression façonnent la vie trouvée à chaque niveau.",
+            "includes": "Une infographie verticale des zones océaniques (ensoleillée, crépusculaire, minuit, abyssale et hadale) avec les plages de profondeur, les conditions et les créatures représentatives.",
+            "background": "L'océan est stratifié par profondeur : la zone épipélagique ensoleillée soutient la majeure partie de la vie marine, tandis que la lumière s'estompe et la pression augmente vers les fosses hadales, où seuls des organismes spécialement adaptés survivent."
+          }
+        },
+        "template-science-education-infographic-atmosphere-layers": {
+          "attributes": {
+            "grade_band": "Élémentaire–Collège",
+            "age_range": "8–13 ans",
+            "subject": "Sciences de la Terre",
+            "skill": "Concepts scientifiques",
+            "resource_type": "Infographie scientifique",
+            "duration_min": "10 min",
+            "difficulty": "Débutant",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Identifier les couches atmosphériques de la Terre dans l'ordre et les caractéristiques clés de chacune — où se produisent les phénomènes météorologiques, où se trouve la couche d'ozone, où les météores se consument et où les aurores brillent.",
+            "includes": "Une infographie verticale étiquetée de la troposphère, de la stratosphère, de la mésosphère, de la thermosphère et de l'exosphère avec les plages d'altitude et les phénomènes caractéristiques.",
+            "background": "L'atmosphère terrestre est divisée en couches selon la variation de température avec l'altitude : les phénomènes météorologiques se produisent dans la troposphère, la couche d'ozone protectrice se trouve dans la stratosphère, les météores se consument dans la mésosphère, et les aurores apparaissent dans la thermosphère."
+          }
+        }
       }
     }
   },
@@ -3164,6 +3384,25 @@
           "Créez une affiche de comparaison de studios d'animation entre Pixar et DreamWorks.",
           "Générez une infographie d'affrontement entre Kyoto Animation et Ufotable."
         ]
+      },
+      "examples": {
+        "template-animation-studio-comparison-infographic-wit-vs-ufotable": {
+          "attributes": {
+            "grade_band": "Collège–Lycée / Général",
+            "age_range": "12 ans et plus",
+            "subject": "Littératie médiatique et d'animation",
+            "skill": "Comparaison et analyse",
+            "resource_type": "Infographie comparative",
+            "duration_min": "8 min",
+            "difficulty": "Débutant",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Comparez deux studios d'anime acclamés — Wit Studio et ufotable — à travers leurs œuvres emblématiques, leur style visuel et leurs techniques de production.",
+            "includes": "Une infographie côte à côte contrastant les œuvres notables, la direction artistique et les forces techniques de chaque studio.",
+            "background": "Wit Studio est connu pour son action cinétique (Attack on Titan saisons 1–3, Vinland Saga), tandis que ufotable est réputé pour fusionner le CGI avec l'animation dessinée à la main et des effets somptueux (Demon Slayer, la série Fate). Les comparer est une introduction conviviale à la littératie médiatique."
+          }
+        }
       }
     },
     "description": "Un guide visuel vibrant comparant les studios — logos, année de fondation, style artistique, œuvres notables et héritage. Utilisez l'invite AI pour générer votre propre affiche de comparaison de studios d'anime.",
@@ -3565,6 +3804,40 @@
             "learning_objective": "Apprendre à lire, prononcer et utiliser correctement l'expression idiomatique 画蛇添足 (huà shé tiān zú) — reconnaître quand une action supplémentaire est inutile et aggrave en fait les choses.",
             "includes": "Caractères simplifiés, pinyin, une traduction littérale ('dessiner un serpent, ajouter des pieds'), le sens figuré, une phrase d'exemple et une illustration de l'histoire originale.",
             "background": "Tiré d'un conte des Royaumes combattants : lors d'un concours de dessin de serpent, le peintre le plus rapide a ajouté des pieds pour se vanter — et a perdu, car les serpents n'en ont pas. L'expression idiomatique met en garde contre le fait de gâcher une chose terminée par un effort superflu."
+          }
+        },
+        "template-chinese-idiom-learning-card-shou-zhu-dai-tu-1": {
+          "attributes": {
+            "grade_band": "HSK 3–4 / Élémentaire",
+            "age_range": "8–12 ans",
+            "subject": "Chinois (Mandarin)",
+            "skill": "Idiomes et vocabulaire",
+            "resource_type": "Fiche d'idiome",
+            "duration_min": "10 min",
+            "difficulty": "Intermédiaire",
+            "language_mode": "Bilingue AN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Apprenez l'idiome chinois 守株待兔 (shǒu zhū dài tù) — son image littérale de garder une souche d'arbre pour attendre un lapin, sa signification figurative de se fier à la chance plutôt qu'à l'effort, avec le pinyin et une phrase d'exemple.",
+            "includes": "Une fiche d'idiome illustrée avec les caractères chinois, le pinyin, les significations littérale et figurative, l'histoire d'origine et un exemple d'utilisation — conçue pour les apprenants bilingues AN–ZH.",
+            "background": "L'idiome vient de Han Feizi (韩非子) : un fermier voit un lapin courir dans une souche d'arbre et mourir, puis abandonne ses champs pour en attendre d'autres — une parabole classique avertissant contre la passivité et la dépendance au hasard."
+          }
+        },
+        "template-chinese-idiom-learning-card-jing-di-zhi-wa": {
+          "attributes": {
+            "grade_band": "HSK 3–4 / Élémentaire",
+            "age_range": "8–12 ans",
+            "subject": "Chinois (Mandarin)",
+            "skill": "Idiomes et vocabulaire",
+            "resource_type": "Fiche d'idiome",
+            "duration_min": "10 min",
+            "difficulty": "Intermédiaire",
+            "language_mode": "Bilingue AN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Apprenez l'idiome chinois 井底之蛙 (jǐng dǐ zhī wā) — « une grenouille au fond d'un puits » — et sa signification : quelqu'un avec une vision étroite et limitée du monde, avec le pinyin et une phrase d'exemple.",
+            "includes": "Une fiche d'idiome illustrée avec les caractères, le pinyin, les significations littérale et figurative, l'histoire d'origine et un exemple d'utilisation pour les apprenants bilingues AN–ZH.",
+            "background": "L'idiome vient de Zhuangzi (庄子) : une grenouille vivant dans un puits croit que le puits est le monde entier, jusqu'à ce qu'une tortue de la Mer de l'Est décrive l'immensité de l'océan — une leçon sur la perspective limitée."
           }
         }
       }

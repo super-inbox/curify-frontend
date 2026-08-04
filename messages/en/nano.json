@@ -18,6 +18,25 @@
           "Create an 'Angelica' Herb Exploded Sheet: slice structure, key identification points (color/smell/cross-section), main effects, pairing ideas (optional), precaution tips, clear arrow annotations, 3:4.",
           "Generate a 'Chenpi' decomposition diagram: key points of origin and year differences, close-up of appearance texture, properties and meridians, daily usage scenarios (tea brewing/cooking), retro yet refreshing Chinese infographic layout, 3:4."
         ]
+      },
+      "examples": {
+        "template-herbal-astragalus": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "All ages",
+            "subject": "Herbal & wellness education",
+            "skill": "Reference",
+            "resource_type": "Herb reference card",
+            "duration_min": "5 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Get to know astragalus (黄芪, huángqí) — what the plant looks like, the part used, and its place in traditional wellness practice, as a quick illustrated reference.",
+            "includes": "An illustrated herb card with a botanical illustration, common and Chinese names, the part used and concise reference notes.",
+            "background": "Astragalus membranaceus (黄芪) is a foundational tonic herb in Traditional Chinese Medicine, where the dried root is traditionally used to support qi and vitality. This card is educational and describes traditional use, not medical advice."
+          }
+        }
       }
     }
   },
@@ -348,6 +367,25 @@
           "Generate a 'supermarket scene vocabulary image': include shelves, checkout counters, shopping carts, etc., annotate 25 high-frequency nouns, English + IPA + Chinese three-line annotations, as close to the objects as possible without obscuring, 3:4 portrait.",
           "Generate a 'zoo scene vocabulary poster': annotate animals and facilities (gate, cage, ticket, map, etc.), in English/IPA/Chinese three-line format, suitable for printing."
         ]
+      },
+      "examples": {
+        "template-word-scene-military-base 1": {
+          "attributes": {
+            "grade_band": "Elementary / ESL",
+            "age_range": "6–12",
+            "subject": "Language (EN–ZH)",
+            "skill": "Themed vocabulary",
+            "resource_type": "Vocabulary scene",
+            "duration_min": "8 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Build a themed English–Chinese vocabulary set around a military base — words like soldier, tank, weapon, command center and training ground — anchored in one labeled illustrated scene.",
+            "includes": "A single illustrated military-base scene with bilingual EN–ZH labels on the key objects, so a whole vocabulary cluster is learned in context.",
+            "background": "Word-scene learning anchors a group of related words to one memorable picture; the visual context helps learners retain vocabulary far better than isolated word lists."
+          }
+        }
       }
     }
   },
@@ -892,6 +930,25 @@
           "Create an MBTI tech founder poster for Elon Musk: ENTP – 'The Visionary, AI Revolution Leader', surrounded by rocket, AI chip, and electric vehicle elements.",
           "Generate an MBTI visualization for Bill Gates: INTP – 'The Logician, Analytical Innovator', with classic computing and software symbols in a futuristic tech environment."
         ]
+      },
+      "examples": {
+        "template-mbti-siliconvalley-founder": {
+          "attributes": {
+            "type_code": "ENTJ",
+            "type_nickname": "The Commander · Empire Builder",
+            "dimensions": "Extraverted · Intuitive · Thinking · Judging",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "The startup founder role, played here as an ENTJ — decisive, strategic and driven to build. This is a personality-role card about the archetype of the company builder, not a specific person.",
+            "strengths": "Vision, decisiveness and the ability to rally a team behind a long-range plan. ENTJ Extraverted Thinking turns ambiguity into a roadmap and a roadmap into an empire.",
+            "weaknesses": "The same intensity can read as impatience or steamrolling, and ENTJs often struggle to delegate control they believe only they can hold.",
+            "communication": "Direct, commanding and goal-oriented — frames every conversation around the objective.",
+            "relationships": "Values competence and results, building fiercely loyal high-performing teams.",
+            "career": "Founder and CEO — the archetypal ENTJ arena of strategy, scale and command.",
+            "compatibility": "Best balanced by empathetic feeling types and detail-focused operators who cover the human and tactical edges."
+          }
+        }
       }
     }
   },
@@ -1319,6 +1376,57 @@
             "relationships": "Loyal to a tight circle who earned his respect through effort and performance.",
             "career": "The ultimate competitor's arena — a stage that rewards nerve, improvisation, and raw will, which is peak ESTP territory.",
             "compatibility": "Works best alongside steady, structured types who provide the framework his in-the-moment brilliance can build on."
+          }
+        },
+        "template-mbti-nba-marta": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "The Performer",
+            "dimensions": "Extraverted · Sensing · Feeling · Perceiving",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Marta Vieira da Silva is played here as an ESFP — expressive, joyful and improvisational, a six-time FIFA Best Player and the all-time top scorer at World Cups who turns a match into a performance.",
+            "strengths": "Spontaneous flair, crowd-lifting energy and present-moment brilliance. The ESFP gift for reading a live situation and reacting instantly suits a forward who invents chances out of nothing.",
+            "weaknesses": "ESFP verve can chafe against rigid systems; this archetype thrives on freedom and expression rather than tightly scripted structure.",
+            "communication": "Warm and expressive — leads with visible joy and by example rather than by lecture.",
+            "relationships": "Connects easily and generously, an emotionally open teammate who lifts the group's mood.",
+            "career": "Elite football — a stage that rewards flair, spontaneity and showmanship, classic ESFP territory.",
+            "compatibility": "Pairs well with structured, tactical types who give her the freedom to improvise inside their framework."
+          }
+        },
+        "template-mbti-nba-derrickrose": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "The Campaigner",
+            "dimensions": "Extraverted · Intuitive · Feeling · Perceiving",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Derrick Rose is played here as an ENFP — creative, heartfelt and driven. The youngest MVP in NBA history, his explosive attacking play and beloved comeback story fit the warm, imaginative ENFP.",
+            "strengths": "Explosive improvisation, emotional resilience and a genuine bond with his city and fans. ENFP passion powered both his early brilliance and his long fight back from injury.",
+            "weaknesses": "ENFPs can be hard on themselves and are deeply affected by setbacks — the emotional weight of repeated injuries tested that idealism.",
+            "communication": "Humble and heartfelt; leads with sincerity rather than bravado.",
+            "relationships": "Deeply loyal and family-oriented, drawing strength from a close inner circle.",
+            "career": "Creative point guard — a role that rewards vision, spontaneity and flair.",
+            "compatibility": "Balanced by steady, grounded types who provide structure around his improvisational game."
+          }
+        },
+        "template-mbti-nba-shaquilleoneal": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "The Performer",
+            "dimensions": "Extraverted · Sensing · Feeling · Perceiving",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Shaquille O'Neal is played here as an ESFP — larger-than-life, magnetic and endlessly entertaining. One of the most dominant centers ever, he paired overwhelming physical force with a natural showman's charisma.",
+            "strengths": "Commanding presence, humor and an instinctive connection with any crowd. The ESFP flair for the moment made him unstoppable inside and a star well beyond the court.",
+            "weaknesses": "Free-flowing ESFP energy sat uneasily with routine and repetition — the famous free-throw struggles and a wandering pull toward many ventures at once.",
+            "communication": "Funny, magnetic and disarming; wins the room through personality.",
+            "relationships": "Gregarious with a huge social circle, generous and quick to include others.",
+            "career": "Dominant center turned media entertainer — a natural ESFP second act in front of the camera.",
+            "compatibility": "Complemented by analytical strategists who give structure to his instinctive, in-the-moment dominance."
           }
         }
       }
@@ -1957,6 +2065,42 @@
           "Lin Daiyu INFP personality poster — the poetic dreamer.",
           "Cao Cao INTJ character MBTI — the strategic mastermind."
         ]
+      },
+      "examples": {
+        "template-chinese-classic-character-mbti-liu-bei": {
+          "attributes": {
+            "type_code": "INFJ",
+            "type_nickname": "Benevolent Sovereign of Shu Han",
+            "dimensions": "Introverted · Intuitive · Feeling · Judging",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Liu Bei, founding emperor of Shu Han in Romance of the Three Kingdoms, typed INFJ — the benevolent idealist who rose from humble roots and won loyalty through virtue (仁德) rather than force.",
+            "strengths": "Deep moral conviction, a gift for inspiring devotion, and the humility to seek out talent — famously visiting Zhuge Liang's cottage three times. INFJ vision let him hold a long-term ideal through years of hardship.",
+            "weaknesses": "INFJ decisions ruled by feeling: his campaign at Yiling, launched to avenge his sworn brothers, overrode strategy and ended in disaster.",
+            "communication": "Earnest and values-driven, winning hearts before battles.",
+            "relationships": "Bound by profound loyalty — the Oath of the Peach Garden brotherhood defined his life.",
+            "career": "Benevolent ruler and dynasty founder who led by moral authority.",
+            "compatibility": "Complemented by strategic thinkers like Zhuge Liang who supplied the tactical mind to his guiding vision."
+          }
+        },
+        "template-chinese-classic-character-mbti-miaoyu": {
+          "attributes": {
+            "type_code": "INTJ",
+            "type_nickname": "The Architect",
+            "dimensions": "Introverted · Intuitive · Thinking · Judging",
+            "subject_kind": "Character personality card"
+          },
+          "vertical": {
+            "traits": "Miaoyu, the aloof nun of Dream of the Red Chamber, typed INTJ — refined, exacting and fiercely independent, living apart in Prospect Garden's Green Lattice Nunnery and mastering the art of tea.",
+            "strengths": "Formidable intellectual and aesthetic mastery, uncompromising standards and self-sufficiency. The INTJ pursuit of an inner ideal shows in her connoisseurship and her refusal to bend to convention.",
+            "weaknesses": "That same aloofness and 'purity obsession' (洁癖) isolate her; INTJ pride and disdain for the ordinary keep the world at arm's length.",
+            "communication": "Reserved and precise, disclosing little and expecting much.",
+            "relationships": "Few and carefully chosen; she keeps a deliberate distance from almost everyone.",
+            "career": "Keeper of a refined, rarefied body of knowledge, on her own exacting terms.",
+            "compatibility": "Meets her match only in those who respect her standards and share her depth."
+          }
+        }
       }
     }
   },
@@ -2232,7 +2376,28 @@
   "template-historical-event-map-illustration": {
     "category": "Historical Event Map",
     "description": "Generate a detailed illustrated map and scene for any historical event — watercolor-style artwork, route maps, and dramatic moment illustrations.",
-    "title": "Historical Event Map Illustration | Nano Banana"
+    "title": "Historical Event Map Illustration | Nano Banana",
+    "content": {
+      "examples": {
+        "template-historical-event-map-illustration-constantinople-siege": {
+          "attributes": {
+            "grade_band": "Middle–High",
+            "age_range": "12+",
+            "subject": "World history",
+            "skill": "Historical analysis",
+            "resource_type": "Illustrated event map",
+            "duration_min": "12 min",
+            "difficulty": "Intermediate",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Understand the 1453 fall of Constantinople — the city's geography, the key moves of the siege, and why its famous walls finally fell.",
+            "includes": "An illustrated map of the siege showing the Theodosian Walls, the Golden Horn, Ottoman positions and the placement of the great bombards.",
+            "background": "In 1453 the Ottoman sultan Mehmed II besieged the Byzantine capital; enormous cannon breached the long-impregnable Theodosian Walls, ending the Byzantine Empire and reshaping trade and power between Europe and Asia."
+          }
+        }
+      }
+    }
   },
   "template-national-theme-map-infographic": {
     "category": "National Theme Map",
@@ -2397,6 +2562,25 @@
           "Generate a grammar comparison poster for 'just' vs 'only' — illustrated examples with cute characters demonstrating each word's usage, bold labels, 4K vertical.",
           "Design a vocabulary comparison poster for 'their' vs 'there' vs 'they're' — three-panel kawaii style, example sentences with visual highlights, 4K vertical."
         ]
+      },
+      "examples": {
+        "template-language-word-comparison-educational-poster-haishi-huozhe": {
+          "attributes": {
+            "grade_band": "HSK 2–3",
+            "age_range": "10+",
+            "subject": "Chinese grammar",
+            "skill": "Grammar & usage",
+            "resource_type": "Comparison poster",
+            "duration_min": "8 min",
+            "difficulty": "Intermediate",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Tell apart two Chinese words that both translate as 'or' — 还是 (háishì) and 或者 (huòzhě) — and know which to use in questions versus statements, with side-by-side example sentences.",
+            "includes": "A comparison poster contrasting 还是 and 或者 with example sentences, English glosses and a simple rule of thumb.",
+            "background": "A very common learner confusion: 还是 offers alternatives inside a question ('tea or coffee?'), while 或者 links alternatives inside a statement ('tea or coffee is fine'). Seeing them paired fixes the distinction."
+          }
+        }
       }
     }
   },
@@ -2599,6 +2783,42 @@
           "Generate an Earth's Geological Ages infographic from Precambrian to present.",
           "Create a Human Evolution infographic showing key evolutionary stages."
         ]
+      },
+      "examples": {
+        "template-science-education-infographic-ocean-zones": {
+          "attributes": {
+            "grade_band": "Elementary–Middle",
+            "age_range": "8–13",
+            "subject": "Earth & marine science",
+            "skill": "Science concepts",
+            "resource_type": "Science infographic",
+            "duration_min": "10 min",
+            "difficulty": "Beginner",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Identify the ocean's depth zones — from the sunlit surface down to the deepest trenches — and how light, temperature and pressure shape the life found at each level.",
+            "includes": "A vertical infographic of the ocean zones (sunlight, twilight, midnight, abyssal and hadal) with depth ranges, conditions and representative creatures.",
+            "background": "The ocean is layered by depth: the sunlit epipelagic zone supports most sea life, while light fades and pressure climbs downward to the hadal trenches, where only specially adapted organisms survive."
+          }
+        },
+        "template-science-education-infographic-atmosphere-layers": {
+          "attributes": {
+            "grade_band": "Elementary–Middle",
+            "age_range": "8–13",
+            "subject": "Earth science",
+            "skill": "Science concepts",
+            "resource_type": "Science infographic",
+            "duration_min": "10 min",
+            "difficulty": "Beginner",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Identify Earth's atmospheric layers in order and the key features of each — where weather happens, where the ozone layer sits, where meteors burn up and where auroras glow.",
+            "includes": "A labeled vertical infographic of the troposphere, stratosphere, mesosphere, thermosphere and exosphere with altitude ranges and signature phenomena.",
+            "background": "Earth's atmosphere is divided into layers by how temperature changes with altitude: weather occurs in the troposphere, the protective ozone layer sits in the stratosphere, meteors burn in the mesosphere, and auroras appear in the thermosphere."
+          }
+        }
       }
     }
   },
@@ -3165,6 +3385,25 @@
           "Create a Pixar vs DreamWorks animation studio comparison poster.",
           "Generate a Kyoto Animation vs Ufotable studio showdown infographic."
         ]
+      },
+      "examples": {
+        "template-animation-studio-comparison-infographic-wit-vs-ufotable": {
+          "attributes": {
+            "grade_band": "Middle–High / General",
+            "age_range": "12+",
+            "subject": "Media & animation literacy",
+            "skill": "Comparison & analysis",
+            "resource_type": "Comparison infographic",
+            "duration_min": "8 min",
+            "difficulty": "Beginner",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Compare two acclaimed anime studios — Wit Studio and ufotable — across their signature works, visual style and production techniques.",
+            "includes": "A side-by-side infographic contrasting each studio's notable works, art direction and technical strengths.",
+            "background": "Wit Studio is known for kinetic action (Attack on Titan seasons 1–3, Vinland Saga), while ufotable is renowned for fusing CGI with hand-drawn animation and lavish effects (Demon Slayer, the Fate series). Comparing them is a friendly on-ramp to media literacy."
+          }
+        }
       }
     }
   },
@@ -3564,6 +3803,40 @@
             "learning_objective": "Learn to read, pronounce, and correctly use the idiom 画蛇添足 (huà shé tiān zú) — recognising when an extra action is unnecessary and actually makes things worse.",
             "includes": "Simplified characters, pinyin, a literal gloss ('draw a snake, add feet'), the figurative meaning, an example sentence, and an illustration of the original story.",
             "background": "From a Warring States tale: in a snake-drawing contest the fastest painter added feet to show off — and lost, because snakes have none. The idiom warns against spoiling a finished thing with superfluous effort."
+          }
+        },
+        "template-chinese-idiom-learning-card-shou-zhu-dai-tu-1": {
+          "attributes": {
+            "grade_band": "HSK 3–4 / Elementary",
+            "age_range": "8–12",
+            "subject": "Chinese (Mandarin)",
+            "skill": "Idioms & vocabulary",
+            "resource_type": "Idiom flashcard",
+            "duration_min": "10 min",
+            "difficulty": "Intermediate",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Learn the Chinese idiom 守株待兔 (shǒu zhū dài tù) — its literal image of guarding a tree stump to wait for a rabbit, its figurative meaning of trusting to luck instead of effort, plus pinyin and an example sentence.",
+            "includes": "An illustrated idiom card with the Chinese characters, pinyin, literal and figurative meanings, the origin story and a usage example — designed for bilingual EN–ZH learners.",
+            "background": "The idiom comes from Han Feizi (韩非子): a farmer sees a rabbit run into a tree stump and die, then abandons his fields to wait for more — a classic parable warning against passivity and reliance on chance."
+          }
+        },
+        "template-chinese-idiom-learning-card-jing-di-zhi-wa": {
+          "attributes": {
+            "grade_band": "HSK 3–4 / Elementary",
+            "age_range": "8–12",
+            "subject": "Chinese (Mandarin)",
+            "skill": "Idioms & vocabulary",
+            "resource_type": "Idiom flashcard",
+            "duration_min": "10 min",
+            "difficulty": "Intermediate",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Learn the Chinese idiom 井底之蛙 (jǐng dǐ zhī wā) — 'a frog at the bottom of a well' — and its meaning: someone with a narrow, limited view of the world, with pinyin and an example sentence.",
+            "includes": "An illustrated idiom card with characters, pinyin, literal and figurative meanings, the origin story and a usage example for bilingual EN–ZH learners.",
+            "background": "The idiom comes from Zhuangzi (庄子): a frog living in a well believes the well is the whole world, until a turtle from the Eastern Sea describes the vastness of the ocean — a lesson about limited perspective."
           }
         }
       }
