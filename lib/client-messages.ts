@@ -51,8 +51,11 @@ export function pickClientMessages<T extends Record<string, unknown>>(messages: 
     }
     if (v && typeof v === "object" && !Array.isArray(v)) {
       // Container namespace (e.g. `blog`): reduce article children, keep the rest.
+      // Cast the entries value to Msg — TS doesn't flow the recursive Msg union
+      // through Object.entries here, so it widens to `unknown` without this.
       const inner: { [k: string]: Msg } = {};
-      for (const [ik, iv] of Object.entries(v)) inner[ik] = isArticle(iv) ? lighten(iv) : iv;
+      for (const [ik, iv] of Object.entries(v) as [string, Msg][])
+        inner[ik] = isArticle(iv) ? lighten(iv) : iv;
       out[k] = inner;
       continue;
     }
