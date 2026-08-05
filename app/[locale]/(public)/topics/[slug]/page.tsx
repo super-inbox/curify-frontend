@@ -25,7 +25,7 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic, getTopicNavList } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getFurtherExplorationTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic, getTopicNavList } from "@/lib/topicRegistry";
 import TopSearchSuggestions from "./TopSearchSuggestions";
 import SearchRedirectTracker from "./SearchRedirectTracker";
 
@@ -306,7 +306,16 @@ export default async function Page({ params }: Props) {
   // entries). Without this, sections like "Explore More" / "Browse by
   // Category" render an empty h2 above zero chips — see WC pages
   // pre-2026-06-04 where tier3.world-cup had 12 unlocalized editions.
-  const relatedTopicIds = getRelatedTopics(slug).filter((id) => isLocalizedTopic(id));
+  // "Further exploration" row at the top: a topic-SPECIFIC set (next-tier
+  // children → siblings → co-occurring topics) that reframes navigation around
+  // where THIS topic leads, instead of repeating the global entry-bar list (now
+  // hidden on /topics/* — see SiteTopBar). Prefer the curated manual related
+  // links when present, then fill/extend with the derived set, capped.
+  const furtherTopicIds = Array.from(
+    new Set([...getRelatedTopics(slug), ...getFurtherExplorationTopics(slug)])
+  )
+    .filter((id) => id !== slug && isLocalizedTopic(id))
+    .slice(0, 8);
 
   const parentTopicId = getParentTopic(slug);
 
@@ -352,12 +361,16 @@ export default async function Page({ params }: Props) {
             <p className="sr-only whitespace-pre-line">{topicIntro}</p>
           ) : null}
 
-          {relatedTopicIds.length > 0 && (
+          {furtherTopicIds.length > 0 && (
             <div className="mt-4">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                {translateTopics("topicPage.furtherExplorationHeading") ||
+                  "Explore further"}
+              </p>
               <TopicNavRow
                 locale={localeStr}
                 allTopics={getTopicNavList()}
-                topics={relatedTopicIds}
+                topics={furtherTopicIds}
                 activeTopic={slug}
                 showDisabled={false}
                 size="small"

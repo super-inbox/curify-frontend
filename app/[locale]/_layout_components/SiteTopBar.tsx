@@ -38,7 +38,11 @@ export default function SiteTopBar({ locale }: { locale: string }) {
     /\/nano-template\/[^/]+/.test(pathname) ||
     /\/nano-banana-pro-prompts\/\d+(?:\/|$)/.test(pathname) ||
     /\/search(?:\/|$|\?)/.test(pathname) ||
-    /\/tools(?:\/|$|\?)/.test(pathname);
+    /\/tools(?:\/|$|\?)/.test(pathname) ||
+    // On a topic page the generic top-level strip is replaced by the page's own
+    // topic-specific "Explore further" row (see topics/[slug]/page.tsx), so the
+    // duplicate global strip is hidden here.
+    /\/topics\/[^/]+/.test(pathname);
 
   // Build TopicStrip items from the curated ENTRY_BAR_ITEMS so the
   // top-bar surface keeps showing the same hand-picked tier-1 topics
