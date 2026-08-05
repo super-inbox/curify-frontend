@@ -87,6 +87,13 @@ type Props = {
    *  Other mount sites (topic page bottom, search related-topics) are
    *  below the fold and should stay lazy. */
   priorityFirst?: number;
+  /** When false, skip the topic_thumbnails/icons manifest filter so every
+   *  (already-curated, localized) item renders as a tile — thumbnail-less ones
+   *  fall back to a label-only colored tile. Used by the "Explore further" row,
+   *  whose items are hand-derived (children/co-occurrence) and already real
+   *  pages, so the manifest gate would wrongly drop format topics like
+   *  art-prints / illustration. Defaults to true (manifest-gated). */
+  requireThumbnail?: boolean;
 };
 
 function TopicTile({
@@ -160,6 +167,7 @@ export default function TopicStrip({
   trackPrefix = "topic-strip",
   className,
   singleRow,
+  requireThumbnail = true,
 }: Props) {
   const t = useTranslations();
   void t; // reserved for future "See more" UX
@@ -171,7 +179,9 @@ export default function TopicStrip({
   // real /topics/<slug> page. 2026-06-29 fix per operator: those slugs
   // were leaking onto /topics/<slug> bottom strips because the
   // upstream getTagChildren includes everything under tier3.lifestyle.
-  items = items.filter((item) => item.slug in THUMBS || item.slug in ICONS);
+  if (requireThumbnail) {
+    items = items.filter((item) => item.slug in THUMBS || item.slug in ICONS);
+  }
 
   if (items.length === 0) return null;
 

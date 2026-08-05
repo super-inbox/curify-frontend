@@ -72,9 +72,4 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     emoji: "🍳",
     path: "/topics/food",
   },
-  {
-    id: "lifestyle",
-    emoji: "🌿",
-    path: "/topics/lifestyle",
-  },
 ];
