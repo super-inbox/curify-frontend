@@ -7718,5 +7718,27 @@
     "category": "İndirim Kuponu & Promosyon Vouchers",
     "description": "Perakende, restoran ve sadakat programı promosyonları için tear-tab bilet tarzı indirim kuponları ve voucherlar. Perakendeciler, restoranlar, üyelik/sadakat programları için.",
     "title": "Nano Banana Prompt: İndirim Kuponu & Promosyon Voucher Şablonları Üretici | Curify AI"
+  },
+  "template-brand-logo-variant-set": {
+    "category": "Brand Logo Exploration Sheet",
+    "description": "Generate a six-variant brand logo exploration sheet from a brand name, a visual brief, and a color palette — a line mark, filled emblem, monogram, badge/seal, icon+wordmark lockup, and a mascot, all sharing one consistent color system on a clean white board.",
+    "title": "Nano Banana Prompt: Brand Logo Variant Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates one board with SIX distinct logo concepts for your brand, arranged in a numbered 2×3 grid on a pure white background. Each concept explores a different direction — a flat line-drawing mark, a solid filled emblem, a monogram/lettermark, a badge/seal lockup, a minimalist icon+wordmark lockup, and a playful mascot — while every variant integrates your brand name as legible lettering and shares one consistent color palette. It mirrors the way a studio presents an early logo exploration, so you can compare directions and pick one to develop.",
+        "who": "Made for brand and graphic designers running a logo exploration, DTC and small-business founders naming a new product, and marketers or agencies who need a fast set of on-brand logo directions to react to — no vector software required.",
+        "how": [
+          "Enter your brand name in {brand_name} (e.g. 'CATTÉ COFFEE 喵咖').",
+          "Describe the visual elements and style in {logo_brief} (e.g. 'flat line-drawn cat + coffee cup, round and friendly').",
+          "Enter your colors in {palette_desc}, taken from your brand's color spec.",
+          "Generate a 6-variant logo sheet, then isolate and refine the concept you like best."
+        ],
+        "prompts": [
+          "Generate a 6-logo sheet for 'CATTÉ COFFEE 喵咖' — flat line-drawn cat + coffee cup, cozy blue, cream, and coffee brown.",
+          "Create six logo concepts for '北岳茶事' — line-drawn mountain + tea leaf, calm oriental minimalism, sage green and ink black.",
+          "Generate a logo exploration sheet for 'Bloom Botanicals' — geometric bloom petal monogram, dusty rose, gold, and deep plum."
+        ]
+      }
+    }
   }
 }
