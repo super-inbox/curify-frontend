@@ -7720,23 +7720,23 @@
     "title": "Nano Banana Prompt: 割引クーポンとプロモーションバウチャー テンプレートジェネレーター | Curify AI"
   },
   "template-brand-logo-variant-set": {
-    "category": "Brand Logo Exploration Sheet",
-    "description": "Generate a six-variant brand logo exploration sheet from a brand name, a visual brief, and a color palette — a line mark, filled emblem, monogram, badge/seal, icon+wordmark lockup, and a mascot, all sharing one consistent color system on a clean white board.",
-    "title": "Nano Banana Prompt: Brand Logo Variant Generator | Curify AI",
+    "category": "ブランドロゴ探索シート",
+    "description": "ブランド名、ビジュアル概要、カラーパレットから、6種類のブランドロゴ探索シートを生成します。ラインマーク、塗りつぶしエンブレム、モノグラム、バッジ/シール、アイコン+ワードマークの組み合わせ、マスコットの各バリアントは、すべて清潔な白いボード上で一貫したカラーシステムを共有します。",
+    "title": "Nano Banana プロンプト: ブランドロゴバリエーション生成ツール | Curify AI",
     "content": {
       "sections": {
-        "what": "This template generates one board with SIX distinct logo concepts for your brand, arranged in a numbered 2×3 grid on a pure white background. Each concept explores a different direction — a flat line-drawing mark, a solid filled emblem, a monogram/lettermark, a badge/seal lockup, a minimalist icon+wordmark lockup, and a playful mascot — while every variant integrates your brand name as legible lettering and shares one consistent color palette. It mirrors the way a studio presents an early logo exploration, so you can compare directions and pick one to develop.",
-        "who": "Made for brand and graphic designers running a logo exploration, DTC and small-business founders naming a new product, and marketers or agencies who need a fast set of on-brand logo directions to react to — no vector software required.",
+        "what": "このテンプレートは、純粋な白の背景に番号付きの2×3グリッドで配置された、あなたのブランドのための6つの異なるロゴコンセプトを含む1枚のボードを生成します。各コンセプトは、フラットな線画マーク、ソリッドな塗りつぶしエンブレム、モノグラム/レターマーク、バッジ/シールロックアップ、ミニマリストなアイコン+ワードマークロックアップ、そして遊び心のあるマスコットという異なる方向性を探求します。すべてのバリアントは、ブランド名を読みやすいレタリングとして統合し、一貫したカラーパレットを共有します。これは、スタジオが初期のロゴ探索を提示する方法を反映しており、方向性を比較し、開発するものを選択できます。",
+        "who": "ロゴ探索を行うブランドおよびグラフィックデザイナー、新製品に名前を付けるDTCおよび中小企業の創業者、そして迅速にブランドに合ったロゴの方向性が必要なマーケターや代理店向けに作られました — ベクターソフトウェアは不要です。",
         "how": [
-          "Enter your brand name in {brand_name} (e.g. 'CATTÉ COFFEE 喵咖').",
-          "Describe the visual elements and style in {logo_brief} (e.g. 'flat line-drawn cat + coffee cup, round and friendly').",
-          "Enter your colors in {palette_desc}, taken from your brand's color spec.",
-          "Generate a 6-variant logo sheet, then isolate and refine the concept you like best."
+          "{brand_name}にブランド名を入力します（例：'CATTÉ COFFEE 喵咖'）。",
+          "{logo_brief}に視覚要素とスタイルを記述します（例：'平らな線画の猫＋コーヒーカップ、丸くて親しみやすい'）。",
+          "{palette_desc}に、ブランドのカラースペックから色を入力します。",
+          "6種類のロゴシートを生成し、最も気に入ったコンセプトを分離して洗練させます。"
         ],
         "prompts": [
-          "Generate a 6-logo sheet for 'CATTÉ COFFEE 喵咖' — flat line-drawn cat + coffee cup, cozy blue, cream, and coffee brown.",
-          "Create six logo concepts for '北岳茶事' — line-drawn mountain + tea leaf, calm oriental minimalism, sage green and ink black.",
-          "Generate a logo exploration sheet for 'Bloom Botanicals' — geometric bloom petal monogram, dusty rose, gold, and deep plum."
+          "「CATTÉ COFFEE 喵咖」の6ロゴシートを生成 — 平らな線画の猫＋コーヒーカップ、落ち着いた青、クリーム色、コーヒーブラウン。",
+          "「北岳茶事」の6つのロゴコンセプトを作成 — 線画の山＋茶葉、穏やかな東洋のミニマリズム、セージグリーン、墨黒。",
+          "「Bloom Botanicals」のロゴ探索シートを生成 — 幾何学的な花びらのモノグラム、ダスティローズ、ゴールド、ディーププラム。"
         ]
       }
     }

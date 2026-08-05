@@ -7720,23 +7720,23 @@
     "title": "Nano Banana Prompt: 할인 쿠폰 및 프로모션 바우처 템플릿 생성기 | Curify AI"
   },
   "template-brand-logo-variant-set": {
-    "category": "Brand Logo Exploration Sheet",
-    "description": "Generate a six-variant brand logo exploration sheet from a brand name, a visual brief, and a color palette — a line mark, filled emblem, monogram, badge/seal, icon+wordmark lockup, and a mascot, all sharing one consistent color system on a clean white board.",
-    "title": "Nano Banana Prompt: Brand Logo Variant Generator | Curify AI",
+    "category": "브랜드 로고 탐색 시트",
+    "description": "브랜드 이름, 시각적 브리프, 색상 팔레트를 사용하여 6가지 변형의 브랜드 로고 탐색 시트를 생성합니다. 라인 마크, 채워진 엠블럼, 모노그램, 배지/씰, 아이콘+워드마크 조합, 마스코트 등 모든 변형이 깨끗한 흰색 보드 위에서 일관된 색상 시스템을 공유합니다.",
+    "title": "Nano Banana 프롬프트: 브랜드 로고 변형 생성기 | Curify AI",
     "content": {
       "sections": {
-        "what": "This template generates one board with SIX distinct logo concepts for your brand, arranged in a numbered 2×3 grid on a pure white background. Each concept explores a different direction — a flat line-drawing mark, a solid filled emblem, a monogram/lettermark, a badge/seal lockup, a minimalist icon+wordmark lockup, and a playful mascot — while every variant integrates your brand name as legible lettering and shares one consistent color palette. It mirrors the way a studio presents an early logo exploration, so you can compare directions and pick one to develop.",
-        "who": "Made for brand and graphic designers running a logo exploration, DTC and small-business founders naming a new product, and marketers or agencies who need a fast set of on-brand logo directions to react to — no vector software required.",
+        "what": "이 템플릿은 순백색 배경에 번호가 매겨진 2x3 그리드로 배열된, 귀하의 브랜드를 위한 6가지 독특한 로고 컨셉이 담긴 보드를 생성합니다. 각 컨셉은 평면적인 선 드로잉 마크, 단색으로 채워진 엠블럼, 모노그램/레터마크, 배지/씰 조합, 미니멀리스트 아이콘+워드마크 조합, 그리고 장난기 넘치는 마스코트 등 서로 다른 방향을 탐구합니다. 모든 변형은 귀하의 브랜드 이름을 읽기 쉬운 글자로 통합하고 일관된 색상 팔레트를 공유합니다. 이는 스튜디오가 초기 로고 탐색을 제시하는 방식을 반영하여, 다양한 방향을 비교하고 개발할 컨셉을 선택할 수 있도록 돕습니다.",
+        "who": "로고 탐색을 진행하는 브랜드 및 그래픽 디자이너, 신제품 이름을 짓는 DTC 및 소규모 비즈니스 창업자, 그리고 빠르게 브랜드에 맞는 로고 방향을 파악해야 하는 마케터 또는 에이전시를 위해 제작되었습니다 — 벡터 소프트웨어는 필요하지 않습니다.",
         "how": [
-          "Enter your brand name in {brand_name} (e.g. 'CATTÉ COFFEE 喵咖').",
-          "Describe the visual elements and style in {logo_brief} (e.g. 'flat line-drawn cat + coffee cup, round and friendly').",
-          "Enter your colors in {palette_desc}, taken from your brand's color spec.",
-          "Generate a 6-variant logo sheet, then isolate and refine the concept you like best."
+          "{brand_name}에 브랜드 이름을 입력하세요 (예: 'CATTÉ COFFEE 喵咖').",
+          "{logo_brief}에 시각적 요소와 스타일을 설명하세요 (예: '평면적인 선으로 그린 고양이 + 커피잔, 둥글고 친근한').",
+          "브랜드의 색상 사양에서 가져온 색상을 {palette_desc}에 입력하세요.",
+          "6가지 변형 로고 시트를 생성한 다음, 가장 마음에 드는 컨셉을 분리하여 다듬으세요."
         ],
         "prompts": [
-          "Generate a 6-logo sheet for 'CATTÉ COFFEE 喵咖' — flat line-drawn cat + coffee cup, cozy blue, cream, and coffee brown.",
-          "Create six logo concepts for '北岳茶事' — line-drawn mountain + tea leaf, calm oriental minimalism, sage green and ink black.",
-          "Generate a logo exploration sheet for 'Bloom Botanicals' — geometric bloom petal monogram, dusty rose, gold, and deep plum."
+          "'CATTÉ COFFEE 喵咖'를 위한 6가지 로고 시트를 생성하세요 — 평면적인 선으로 그린 고양이 + 커피잔, 아늑한 파란색, 크림색, 커피 갈색.",
+          "'北岳茶事'를 위한 6가지 로고 컨셉을 만드세요 — 선으로 그린 산 + 찻잎, 차분한 동양적 미니멀리즘, 세이지 그린, 먹물 검정.",
+          "'Bloom Botanicals'를 위한 로고 탐색 시트를 생성하세요 — 기하학적인 꽃잎 모노그램, 더스티 로즈, 골드, 짙은 자두색."
         ]
       }
     }

@@ -7720,23 +7720,23 @@
     "title": "Nano Banana Prompt: Generador de Plantillas de Cupón de Descuento y Vale Promocional | Curify AI"
   },
   "template-brand-logo-variant-set": {
-    "category": "Brand Logo Exploration Sheet",
-    "description": "Generate a six-variant brand logo exploration sheet from a brand name, a visual brief, and a color palette — a line mark, filled emblem, monogram, badge/seal, icon+wordmark lockup, and a mascot, all sharing one consistent color system on a clean white board.",
-    "title": "Nano Banana Prompt: Brand Logo Variant Generator | Curify AI",
+    "category": "Hoja de Exploración de Logotipos de Marca",
+    "description": "Genera una hoja de exploración de logotipos de marca de seis variantes a partir de un nombre de marca, un resumen visual y una paleta de colores — una marca lineal, un emblema relleno, un monograma, una insignia/sello, un logotipo combinado de icono y texto, y una mascota, todos compartiendo un sistema de color consistente en un tablero blanco limpio.",
+    "title": "Nano Banana Prompt: Generador de Variantes de Logotipos de Marca | Curify AI",
     "content": {
       "sections": {
-        "what": "This template generates one board with SIX distinct logo concepts for your brand, arranged in a numbered 2×3 grid on a pure white background. Each concept explores a different direction — a flat line-drawing mark, a solid filled emblem, a monogram/lettermark, a badge/seal lockup, a minimalist icon+wordmark lockup, and a playful mascot — while every variant integrates your brand name as legible lettering and shares one consistent color palette. It mirrors the way a studio presents an early logo exploration, so you can compare directions and pick one to develop.",
-        "who": "Made for brand and graphic designers running a logo exploration, DTC and small-business founders naming a new product, and marketers or agencies who need a fast set of on-brand logo directions to react to — no vector software required.",
+        "what": "Esta plantilla genera un tablero con SEIS conceptos de logotipo distintos para tu marca, dispuestos en una cuadrícula numerada de 2×3 sobre un fondo blanco puro. Cada concepto explora una dirección diferente — una marca de dibujo lineal plano, un emblema sólido relleno, un monograma/letra, una insignia/sello, un logotipo combinado de icono y texto minimalista, y una mascota juguetona — mientras que cada variante integra el nombre de tu marca como letras legibles y comparte una paleta de colores consistente. Refleja la forma en que un estudio presenta una exploración inicial de logotipos, para que puedas comparar direcciones y elegir una para desarrollar.",
+        "who": "Hecho para diseñadores gráficos y de marca que realizan una exploración de logotipos, fundadores de empresas DTC y pequeñas empresas que nombran un nuevo producto, y especialistas en marketing o agencias que necesitan un conjunto rápido de direcciones de logotipo de marca para reaccionar — no se requiere software vectorial.",
         "how": [
-          "Enter your brand name in {brand_name} (e.g. 'CATTÉ COFFEE 喵咖').",
-          "Describe the visual elements and style in {logo_brief} (e.g. 'flat line-drawn cat + coffee cup, round and friendly').",
-          "Enter your colors in {palette_desc}, taken from your brand's color spec.",
-          "Generate a 6-variant logo sheet, then isolate and refine the concept you like best."
+          "Introduce el nombre de tu marca en {brand_name} (ej. 'CATTÉ COFFEE 喵咖').",
+          "Describe los elementos visuales y el estilo en {logo_brief} (ej. 'gato de dibujo lineal plano + taza de café, redondo y amigable').",
+          "Introduce tus colores en {palette_desc}, tomados de la especificación de color de tu marca.",
+          "Genera una hoja de logotipos de 6 variantes, luego aísla y refina el concepto que más te guste."
         ],
         "prompts": [
-          "Generate a 6-logo sheet for 'CATTÉ COFFEE 喵咖' — flat line-drawn cat + coffee cup, cozy blue, cream, and coffee brown.",
-          "Create six logo concepts for '北岳茶事' — line-drawn mountain + tea leaf, calm oriental minimalism, sage green and ink black.",
-          "Generate a logo exploration sheet for 'Bloom Botanicals' — geometric bloom petal monogram, dusty rose, gold, and deep plum."
+          "Genera una hoja de 6 logotipos para 'CATTÉ COFFEE 喵咖' — gato de dibujo lineal plano + taza de café, azul acogedor, crema y marrón café.",
+          "Crea seis conceptos de logotipo para '北岳茶事' — montaña de dibujo lineal + hoja de té, minimalismo oriental tranquilo, verde salvia y negro tinta.",
+          "Genera una hoja de exploración de logotipos para 'Bloom Botanicals' — monograma geométrico de pétalo de flor, rosa empolvado, dorado y ciruela intenso."
         ]
       }
     }

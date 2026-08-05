@@ -7720,23 +7720,23 @@
     "title": "Nano Banana Prompt: छूट कूपन और प्रचार वाउचर टेम्पलेट जनरेटर | Curify AI"
   },
   "template-brand-logo-variant-set": {
-    "category": "Brand Logo Exploration Sheet",
-    "description": "Generate a six-variant brand logo exploration sheet from a brand name, a visual brief, and a color palette — a line mark, filled emblem, monogram, badge/seal, icon+wordmark lockup, and a mascot, all sharing one consistent color system on a clean white board.",
-    "title": "Nano Banana Prompt: Brand Logo Variant Generator | Curify AI",
+    "category": "ब्रांड लोगो अन्वेषण शीट",
+    "description": "एक ब्रांड नाम, एक विज़ुअल ब्रीफ और एक रंग पैलेट से छह-वेरिएंट ब्रांड लोगो अन्वेषण शीट बनाएं — एक लाइन मार्क, भरा हुआ प्रतीक, मोनोग्राम, बैज/सील, आइकन+वर्डमार्क लॉकअप, और एक शुभंकर, सभी एक साफ सफेद बोर्ड पर एक सुसंगत रंग प्रणाली साझा करते हुए।",
+    "title": "Nano Banana प्रॉम्प्ट: ब्रांड लोगो वेरिएंट जनरेटर | Curify AI",
     "content": {
       "sections": {
-        "what": "This template generates one board with SIX distinct logo concepts for your brand, arranged in a numbered 2×3 grid on a pure white background. Each concept explores a different direction — a flat line-drawing mark, a solid filled emblem, a monogram/lettermark, a badge/seal lockup, a minimalist icon+wordmark lockup, and a playful mascot — while every variant integrates your brand name as legible lettering and shares one consistent color palette. It mirrors the way a studio presents an early logo exploration, so you can compare directions and pick one to develop.",
-        "who": "Made for brand and graphic designers running a logo exploration, DTC and small-business founders naming a new product, and marketers or agencies who need a fast set of on-brand logo directions to react to — no vector software required.",
+        "what": "यह टेम्पलेट आपके ब्रांड के लिए छह अलग-अलग लोगो अवधारणाओं वाला एक बोर्ड बनाता है, जिसे शुद्ध सफेद पृष्ठभूमि पर 2×3 ग्रिड में व्यवस्थित किया गया है। प्रत्येक अवधारणा एक अलग दिशा की पड़ताल करती है — एक सपाट रेखा-चित्रण चिह्न, एक ठोस भरा हुआ प्रतीक, एक मोनोग्राम/लेटरमार्क, एक बैज/सील लॉकअप, एक न्यूनतम आइकन+वर्डमार्क लॉकअप, और एक चंचल शुभंकर — जबकि प्रत्येक वेरिएंट आपके ब्रांड नाम को सुपाठ्य अक्षरों के रूप में एकीकृत करता है और एक सुसंगत रंग पैलेट साझा करता है। यह उस तरीके को दर्शाता है जैसे एक स्टूडियो प्रारंभिक लोगो अन्वेषण प्रस्तुत करता है, ताकि आप दिशाओं की तुलना कर सकें और विकसित करने के लिए एक चुन सकें।",
+        "who": "लोगो अन्वेषण चलाने वाले ब्रांड और ग्राफिक डिजाइनरों, नए उत्पाद का नामकरण करने वाले डीटीसी और छोटे व्यवसाय के संस्थापकों, और विपणक या एजेंसियों के लिए बनाया गया है जिन्हें प्रतिक्रिया देने के लिए ऑन-ब्रांड लोगो दिशाओं का एक त्वरित सेट चाहिए — किसी वेक्टर सॉफ्टवेयर की आवश्यकता नहीं है।",
         "how": [
-          "Enter your brand name in {brand_name} (e.g. 'CATTÉ COFFEE 喵咖').",
-          "Describe the visual elements and style in {logo_brief} (e.g. 'flat line-drawn cat + coffee cup, round and friendly').",
-          "Enter your colors in {palette_desc}, taken from your brand's color spec.",
-          "Generate a 6-variant logo sheet, then isolate and refine the concept you like best."
+          "{brand_name} में अपना ब्रांड नाम दर्ज करें (उदाहरण के लिए 'CATTÉ COFFEE 喵咖')।",
+          "{logo_brief} में दृश्य तत्वों और शैली का वर्णन करें (उदाहरण के लिए 'सपाट रेखा-चित्रित बिल्ली + कॉफी कप, गोल और मैत्रीपूर्ण')।",
+          "{palette_desc} में अपने रंग दर्ज करें, जो आपके ब्रांड के रंग विनिर्देश से लिए गए हैं।",
+          "एक 6-वेरिएंट लोगो शीट बनाएं, फिर उस अवधारणा को अलग करें और परिष्कृत करें जिसे आप सबसे ज्यादा पसंद करते हैं।"
         ],
         "prompts": [
-          "Generate a 6-logo sheet for 'CATTÉ COFFEE 喵咖' — flat line-drawn cat + coffee cup, cozy blue, cream, and coffee brown.",
-          "Create six logo concepts for '北岳茶事' — line-drawn mountain + tea leaf, calm oriental minimalism, sage green and ink black.",
-          "Generate a logo exploration sheet for 'Bloom Botanicals' — geometric bloom petal monogram, dusty rose, gold, and deep plum."
+          "'CATTÉ COFFEE 喵咖' के लिए एक 6-लोगो शीट बनाएं — सपाट रेखा-चित्रित बिल्ली + कॉफी कप, आरामदायक नीला, क्रीम और कॉफी भूरा।",
+          "'北岳茶事' के लिए छह लोगो अवधारणाएं बनाएं — रेखा-चित्रित पहाड़ + चाय पत्ती, शांत प्राच्य न्यूनतमवाद, सेज हरा और स्याही काला।",
+          "'Bloom Botanicals' के लिए एक लोगो अन्वेषण शीट बनाएं — ज्यामितीय खिलने वाली पंखुड़ी का मोनोग्राम, डस्टी रोज़, सुनहरा और गहरा प्लम।"
         ]
       }
     }

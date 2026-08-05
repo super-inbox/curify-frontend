@@ -7720,23 +7720,23 @@
     "title": "Nano Banana Prompt: İndirim Kuponu & Promosyon Voucher Şablonları Üretici | Curify AI"
   },
   "template-brand-logo-variant-set": {
-    "category": "Brand Logo Exploration Sheet",
-    "description": "Generate a six-variant brand logo exploration sheet from a brand name, a visual brief, and a color palette — a line mark, filled emblem, monogram, badge/seal, icon+wordmark lockup, and a mascot, all sharing one consistent color system on a clean white board.",
-    "title": "Nano Banana Prompt: Brand Logo Variant Generator | Curify AI",
+    "category": "Marka Logo Keşif Sayfası",
+    "description": "Bir marka adı, görsel bir özet ve bir renk paletinden altı varyantlı bir marka logosu keşif sayfası oluşturun — bir çizgi işareti, dolgulu amblem, monogram, rozet/mühür, ikon+kelime işareti birleşimi ve bir maskot, hepsi temiz beyaz bir zeminde tutarlı bir renk sistemini paylaşır.",
+    "title": "Nano Banana İstem: Marka Logo Varyant Üreticisi | Curify AI",
     "content": {
       "sections": {
-        "what": "This template generates one board with SIX distinct logo concepts for your brand, arranged in a numbered 2×3 grid on a pure white background. Each concept explores a different direction — a flat line-drawing mark, a solid filled emblem, a monogram/lettermark, a badge/seal lockup, a minimalist icon+wordmark lockup, and a playful mascot — while every variant integrates your brand name as legible lettering and shares one consistent color palette. It mirrors the way a studio presents an early logo exploration, so you can compare directions and pick one to develop.",
-        "who": "Made for brand and graphic designers running a logo exploration, DTC and small-business founders naming a new product, and marketers or agencies who need a fast set of on-brand logo directions to react to — no vector software required.",
+        "what": "Bu şablon, markanız için saf beyaz bir arka plan üzerinde numaralandırılmış 2×3'lük bir ızgarada düzenlenmiş ALTI farklı logo konsepti içeren bir pano oluşturur. Her konsept farklı bir yönü keşfeder — düz bir çizgi çizim işareti, sağlam dolgulu bir amblem, bir monogram/harf işareti, bir rozet/mühür birleşimi, minimalist bir ikon+kelime işareti birleşimi ve eğlenceli bir maskot — her varyant markanızın adını okunaklı bir yazı olarak bütünleştirir ve tutarlı bir renk paletini paylaşır. Bir stüdyonun erken bir logo keşfini sunma şeklini yansıtır, böylece yönleri karşılaştırabilir ve geliştirmek için birini seçebilirsiniz.",
+        "who": "Logo keşfi yapan marka ve grafik tasarımcıları, yeni bir ürüne isim veren DTC ve küçük işletme kurucuları ve hızlı bir şekilde markaya uygun logo yönlerine ihtiyaç duyan pazarlamacılar veya ajanslar için yapılmıştır — vektör yazılımı gerektirmez.",
         "how": [
-          "Enter your brand name in {brand_name} (e.g. 'CATTÉ COFFEE 喵咖').",
-          "Describe the visual elements and style in {logo_brief} (e.g. 'flat line-drawn cat + coffee cup, round and friendly').",
-          "Enter your colors in {palette_desc}, taken from your brand's color spec.",
-          "Generate a 6-variant logo sheet, then isolate and refine the concept you like best."
+          "Marka adınızı {brand_name} alanına girin (örn. 'CATTÉ COFFEE 喵咖').",
+          "Görsel öğeleri ve stili {logo_brief} alanında açıklayın (örn. 'düz çizgi çizimi kedi + kahve fincanı, yuvarlak ve samimi').",
+          "Renklerinizi markanızın renk spesifikasyonundan alarak {palette_desc} alanına girin.",
+          "6 varyantlı bir logo sayfası oluşturun, ardından en beğendiğiniz konsepti izole edin ve geliştirin."
         ],
         "prompts": [
-          "Generate a 6-logo sheet for 'CATTÉ COFFEE 喵咖' — flat line-drawn cat + coffee cup, cozy blue, cream, and coffee brown.",
-          "Create six logo concepts for '北岳茶事' — line-drawn mountain + tea leaf, calm oriental minimalism, sage green and ink black.",
-          "Generate a logo exploration sheet for 'Bloom Botanicals' — geometric bloom petal monogram, dusty rose, gold, and deep plum."
+          "'CATTÉ COFFEE 喵咖' için 6 logolu bir sayfa oluşturun — düz çizgi çizimi kedi + kahve fincanı, rahatlatıcı mavi, krem ve kahve kahverengisi.",
+          "'北岳茶事' için altı logo konsepti oluşturun — çizgi çizimi dağ + çay yaprağı, sakin oryantal minimalizm, adaçayı yeşili ve mürekkep siyahı.",
+          "'Bloom Botanicals' için bir logo keşif sayfası oluşturun — geometrik çiçek yaprağı monogramı, toz pembe, altın ve koyu mor."
         ]
       }
     }
