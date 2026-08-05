@@ -115,11 +115,15 @@ function TopicTile({
     "topic_capsule",
     "cards"
   );
+  // compact tiles (sticky top bar / home rail): let two-word labels like
+  // "Product & E-commerce" wrap to a second line instead of truncating, and let
+  // the tile size to its content (min-w floor, no fixed width) so short labels
+  // like "Packaging" don't reserve dead space.
   const sizeClass = compact
-    ? "h-[56px] min-w-[150px] flex-shrink-0"
+    ? "h-[56px] min-w-[132px] max-w-[210px] flex-shrink-0"
     : "h-[88px] min-w-[180px] flex-1";
   const labelClass = compact
-    ? "line-clamp-1 text-sm font-semibold leading-tight text-neutral-900"
+    ? "line-clamp-2 text-sm font-semibold leading-tight text-neutral-900"
     : "line-clamp-2 text-base font-semibold leading-tight text-neutral-900";
   const padClass = compact ? "px-3 py-2" : "px-4 py-3";
   const thumbWidth = compact ? "w-[56px]" : "w-[82px]";
