@@ -71,7 +71,7 @@ interface Props {
   ) => void;
   onPreviewReady?: (localPreviewUrl: string, file: File) => void;
   onUploadStart?: () => void;
-  onUploadError?: (error: string) => void;
+  onUploadError?: (error: string, isAuthError?: boolean) => void;
   /** What kind of file this Upload accepts. Defaults to "video". */
   acceptedKinds?: UploadKind;
   /** Audio-only tools: extract the audio track in the browser and upload just
@@ -146,9 +146,20 @@ export default function Upload({
       }
     } catch (err) {
       console.error("❌ Upload failed:", err);
-      const errorMsg = "Upload failed, please try again.";
-      alert(errorMsg);
-      onUploadError?.(errorMsg);
+      // A 401 here means the session token lapsed (access tokens are long-lived
+      // but do expire). Retrying can't help — the user must re-authenticate — so
+      // surface that distinctly and let the caller route to sign-in instead of a
+      // dead-end "try again". apiClient already cleared the stale token and fired
+      // `auth:expired`, so an image dropzone will also flip to its sign-in CTA.
+      const raw = String((err as { message?: string })?.message || "");
+      const isAuthError =
+        /\b401\b/.test(raw) || /not authenticated|validate credentials/i.test(raw);
+      const errorMsg = isAuthError
+        ? "Your session expired — please sign in again."
+        : "Upload failed, please try again.";
+      // Skip the jarring alert for the auth case; the sign-in CTA/drawer handles it.
+      if (!isAuthError) alert(errorMsg);
+      onUploadError?.(errorMsg, isAuthError);
     }
   };
 
