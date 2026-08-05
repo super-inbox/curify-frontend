@@ -28,6 +28,7 @@ import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import { getTemplatesForTopic, getRelatedTopics, getFurtherExplorationTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic, getTopicNavList } from "@/lib/topicRegistry";
 import { getTopicWorkbenchPreset } from "@/lib/topic_workbench";
 import ImageWorkbench from "@/app/[locale]/_components/ImageWorkbench";
+import BrandWorkflow from "@/app/[locale]/_components/BrandWorkflow";
 import TopSearchSuggestions from "./TopSearchSuggestions";
 import SearchRedirectTracker from "./SearchRedirectTracker";
 
@@ -392,6 +393,11 @@ export default async function Page({ params }: Props) {
               <ImageWorkbench locale={localeStr} preset={workbenchPreset} />
             </div>
           )}
+
+          {/* Brand-design topic leads with the bespoke 5-step brand workflow
+              (palette → logo → typeface → packaging → brand kit) instead of the
+              generic upload workbench — its steps are generative, not upload. */}
+          {slug === "branding" && <BrandWorkflow locale={localeStr} />}
 
           {/* tier-2 navSubTopics moved into the bottom unified topic
               strip (merged with tagSubTopics) per 2026-06-29 operator

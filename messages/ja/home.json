@@ -1271,5 +1271,36 @@
         "businessBody": "Paste any show you love and get study-ready subtitles plus speaking practice; or ship a matching worksheet set for every video you publish, at near-zero prep."
       }
     }
+  },
+  "brandWorkflow": {
+    "heading": "ブランドデザインワークフロー",
+    "subtitle": "カラーシステムからブランドキットまで、5ステップで完全なブランドを構築。",
+    "steps": {
+      "palette": {
+        "name": "カラーシステム",
+        "desc": "テーマや画像から、hexコードで統一パレットを抽出。",
+        "cta": "パレットを生成"
+      },
+      "logo": {
+        "name": "ロゴ",
+        "desc": "1つのパレットを共有する6つのロゴ案 — 方向性を選択。",
+        "cta": "ロゴを生成"
+      },
+      "typeface": {
+        "name": "書体",
+        "desc": "ブランド名とスタイルに合わせた6つのフォント見本。",
+        "cta": "近日公開"
+      },
+      "packaging": {
+        "name": "パッケージ",
+        "desc": "ロゴと色を反映した製品パッケージとモックアップ。",
+        "cta": "パッケージをデザイン"
+      },
+      "kit": {
+        "name": "ブランドキット",
+        "desc": "完全なVIモックアップパックで、ブランドを適用。",
+        "cta": "VIパックを作成"
+      }
+    }
   }
 }

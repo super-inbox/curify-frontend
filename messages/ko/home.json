@@ -1271,5 +1271,36 @@
         "businessBody": "Paste any show you love and get study-ready subtitles plus speaking practice; or ship a matching worksheet set for every video you publish, at near-zero prep."
       }
     }
+  },
+  "brandWorkflow": {
+    "heading": "브랜드 디자인 워크플로우",
+    "subtitle": "컬러 시스템부터 재사용 가능한 브랜드 키트까지, 5단계로 완벽한 브랜드 아이덴티티를 구축하세요.",
+    "steps": {
+      "palette": {
+        "name": "컬러 시스템",
+        "desc": "테마나 참고 이미지에서 hex 코드로 조화로운 팔레트 추출.",
+        "cta": "팔레트 생성"
+      },
+      "logo": {
+        "name": "로고",
+        "desc": "하나의 팔레트를 공유하는 6가지 로고 컨셉 — 방향 선택.",
+        "cta": "로고 생성"
+      },
+      "typeface": {
+        "name": "타입페이스",
+        "desc": "브랜드 이름과 스타일에 맞는 6가지 폰트 견본.",
+        "cta": "출시 예정"
+      },
+      "packaging": {
+        "name": "패키징",
+        "desc": "로고와 컬러를 담은 제품 패키징 및 목업.",
+        "cta": "패키징 디자인"
+      },
+      "kit": {
+        "name": "브랜드 키트",
+        "desc": "전체 시각 아이덴티티 목업 팩에 아이덴티티 적용.",
+        "cta": "VI 팩 구축"
+      }
+    }
   }
 }
