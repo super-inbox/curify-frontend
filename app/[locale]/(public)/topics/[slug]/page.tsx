@@ -317,7 +317,7 @@ export default async function Page({ params }: Props) {
     new Set([...getRelatedTopics(slug), ...getFurtherExplorationTopics(slug)])
   )
     .filter((id) => id !== slug && isLocalizedTopic(id))
-    .slice(0, 8);
+    .slice(0, 6);
 
   // Commerce topics (merch / product / ecommerce) open a use-case-scoped
   // 3-column image workbench at the top of the page.
@@ -360,6 +360,7 @@ export default async function Page({ params }: Props) {
                 }
                 trackPrefix={`topic-explore-further:${slug}`}
                 requireThumbnail={false}
+                singleRow
                 items={furtherTopicIds.map((subSlug) => ({
                   slug: subSlug,
                   path: resolveTopicPath(subSlug),
