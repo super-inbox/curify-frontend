@@ -26,6 +26,8 @@ import {
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getFurtherExplorationTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic, getTopicNavList } from "@/lib/topicRegistry";
+import { getTopicWorkbenchPreset } from "@/lib/topic_workbench";
+import ImageWorkbench from "@/app/[locale]/_components/ImageWorkbench";
 import TopSearchSuggestions from "./TopSearchSuggestions";
 import SearchRedirectTracker from "./SearchRedirectTracker";
 
@@ -317,6 +319,10 @@ export default async function Page({ params }: Props) {
     .filter((id) => id !== slug && isLocalizedTopic(id))
     .slice(0, 8);
 
+  // Commerce topics (merch / product / ecommerce) open a use-case-scoped
+  // 3-column image workbench at the top of the page.
+  const workbenchPreset = getTopicWorkbenchPreset(slug);
+
   const parentTopicId = getParentTopic(slug);
 
   // Resolve the Tier 1 ancestor for this page (itself if Tier 1, parent if Tier 2, Tier 1 root if Tier 3 tag)
@@ -375,6 +381,15 @@ export default async function Page({ params }: Props) {
                 showDisabled={false}
                 size="small"
               />
+            </div>
+          )}
+
+          {/* Use-case-scoped 3-column workbench at the top of commerce topics
+              (merch / product / ecommerce): upload → pick a workflow restricted to
+              this topic's use case → generate → design work. */}
+          {workbenchPreset && (
+            <div className="mt-5">
+              <ImageWorkbench locale={localeStr} preset={workbenchPreset} />
             </div>
           )}
 
