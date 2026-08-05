@@ -16,6 +16,25 @@
           "Haz una 'Hoja Explosiva de Hierba' para 'Donggui': estructura de rodajas, puntos de identificación (color/olor/sección transversal), efectos principales, ideas de combinación (opcional), advertencias, anotaciones claras con flechas, 3:4.",
           "Genera un diagrama desglosado de 'Chenpi': puntos clave sobre diferencias de origen y año, primer plano de apariencia y textura, propiedades y meridianos, escenarios de uso diario (infusiones/ingredientes), diseño gráfico retro pero fresco en chino, 3:4."
         ]
+      },
+      "examples": {
+        "template-herbal-astragalus": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "Todas las edades",
+            "subject": "Educación sobre hierbas y bienestar",
+            "skill": "Referencia",
+            "resource_type": "Tarjeta de referencia de hierbas",
+            "duration_min": "5 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Conocer el astrágalo (黄芪, huángqí) — cómo es la planta, la parte utilizada y su lugar en la práctica tradicional de bienestar, como una referencia ilustrada rápida.",
+            "includes": "Una tarjeta de hierbas ilustrada con una ilustración botánica, nombres comunes y chinos, la parte utilizada y notas de referencia concisas.",
+            "background": "Astragalus membranaceus (黄芪) es una hierba tónica fundamental en la Medicina Tradicional China, donde la raíz seca se usa tradicionalmente para apoyar el qi y la vitalidad. Esta tarjeta es educativa y describe el uso tradicional, no un consejo médico."
+          }
+        }
       }
     },
     "description": "Una guía visual científica para cualquier hierba china tradicional con anatomía, propiedades y usos modernos. Usa el aviso de IA para generar tu propio cartel de medicina herbal.",
@@ -348,6 +367,25 @@
           "Genera un gráfico de vocabulario sobre la escena de \"supermercado\": incluye estantes, caja registradora, carrito de compras, etc., anota 25 sustantivos de alta frecuencia, anotación en inglés + IPA + chino en tres líneas, lo más cerca posible de los objetos pero sin cubrir, vertical 3:4.",
           "Genera un cartel de vocabulario sobre la escena de \"zoológico\": anota animales e instalaciones (puerta, jaula, boleto, mapa, etc.), formato de tres líneas en inglés/IPA/chino, adecuado para impresión."
         ]
+      },
+      "examples": {
+        "template-word-scene-military-base 1": {
+          "attributes": {
+            "grade_band": "Elemental / ESL",
+            "age_range": "6–12",
+            "subject": "Idioma (EN–ZH)",
+            "skill": "Vocabulario temático",
+            "resource_type": "Escena de vocabulario",
+            "duration_min": "8 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Construir un conjunto de vocabulario temático inglés–chino en torno a una base militar — palabras como soldado, tanque, arma, centro de mando y campo de entrenamiento — anclado en una escena ilustrada etiquetada.",
+            "includes": "Una única escena ilustrada de base militar con etiquetas bilingües EN–ZH en los objetos clave, para que un grupo completo de vocabulario se aprenda en contexto.",
+            "background": "El aprendizaje por escenas de palabras ancla un grupo de palabras relacionadas a una imagen memorable; el contexto visual ayuda a los estudiantes a retener el vocabulario mucho mejor que las listas de palabras aisladas."
+          }
+        }
       }
     }
   },
@@ -892,6 +930,25 @@
           "Crea un cartel de fundador tecnológico MBTI para Elon Musk: ENTP – 'El Visionario, Líder de la Revolución de IA', rodeado de elementos de cohete, chip de IA y vehículo eléctrico.",
           "Genera una visualización MBTI para Bill Gates: INTP – 'El Lógico, Innovador Analítico', con símbolos clásicos de computación y software en un entorno tecnológico futurista."
         ]
+      },
+      "examples": {
+        "template-mbti-siliconvalley-founder": {
+          "attributes": {
+            "type_code": "ENTJ",
+            "type_nickname": "El Comandante · Constructor de Imperios",
+            "dimensions": "Extravertido · Intuitivo · Pensador · Juzgador",
+            "subject_kind": "Ficha de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "El rol de fundador de startup, interpretado aquí como un ENTJ — decisivo, estratégico e impulsado a construir. Esta es una ficha de rol de personalidad sobre el arquetipo del constructor de empresas, no una persona específica.",
+            "strengths": "Visión, decisión y la capacidad de unir a un equipo detrás de un plan a largo plazo. El Pensamiento Extravertido ENTJ convierte la ambigüedad en una hoja de ruta y una hoja de ruta en un imperio.",
+            "weaknesses": "La misma intensidad puede interpretarse como impaciencia o autoritarismo, y los ENTJ a menudo luchan por delegar el control que creen que solo ellos pueden mantener.",
+            "communication": "Directo, autoritario y orientado a objetivos — enmarca cada conversación en torno al objetivo.",
+            "relationships": "Valora la competencia y los resultados, construyendo equipos de alto rendimiento ferozmente leales.",
+            "career": "Fundador y CEO — la arena arquetípica ENTJ de estrategia, escala y mando.",
+            "compatibility": "Mejor equilibrado por tipos sentimentales empáticos y operadores enfocados en los detalles que cubren los aspectos humanos y tácticos."
+          }
+        }
       }
     }
   },
@@ -1302,6 +1359,74 @@
             "relationships": "Forma lazos profundos y auténticos basados en la comprensión mutua y valores compartidos, valorando la lealtad y la conexión intelectual mientras a menudo mantiene un comportamiento reservado y privado.",
             "career": "Kareem prospera en roles que permiten la expresión creativa, la búsqueda intelectual y la defensa de creencias profundamente arraigadas, encontrando satisfacción como autor, crítico social y figura influyente.",
             "compatibility": "Kareem a menudo encuentra resonancia con tipos que aprecian su idealismo y profundidad, particularmente ENFJ o ENTJ que pueden proporcionar estructura externa y defender sus valores."
+          }
+        },
+        "template-mbti-nba-michaeljordan": {
+          "attributes": {
+            "type_code": "ESTP",
+            "type_nickname": "El Emprendedor",
+            "dimensions": "Extravertido · Sensorial · Pensador · Perceptivo",
+            "subject_kind": "Tarjeta de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Michael Jordan es a menudo clasificado como un ESTP — ferozmente competitivo, enfocado en el presente, y en su mejor momento bajo presión, leyendo el juego y actuando decisivamente en el momento.",
+            "strengths": "Impulso implacable, toma de decisiones cruciales y la capacidad de elevar su nivel cuando las apuestas son más altas — la audacia ESTP convertida en una voluntad inigualable de ganar.",
+            "weaknesses": "Esa misma intensidad podría interpretarse como impaciencia o una actitud dura con compañeros de equipo que no igualaban su estándar competitivo.",
+            "communication": "Directo y desafiante — lideraba con el ejemplo y retando a otros a igualarlo, no con suaves palabras de aliento.",
+            "relationships": "Leal a un círculo cercano que se ganó su respeto a través del esfuerzo y el rendimiento.",
+            "career": "La arena del competidor definitivo — un escenario que recompensa el coraje, la improvisación y la pura voluntad, lo cual es territorio ESTP puro.",
+            "compatibility": "Funciona mejor junto a tipos estables y estructurados que proporcionan el marco sobre el cual su brillantez del momento puede construir."
+          }
+        },
+        "template-mbti-nba-marta": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "La Intérprete",
+            "dimensions": "Extravertida · Sensorial · Sentimental · Perceptiva",
+            "subject_kind": "Ficha de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Marta Vieira da Silva se presenta aquí como una ESFP — expresiva, alegre e improvisadora, seis veces Mejor Jugadora de la FIFA y la máxima goleadora histórica en Copas del Mundo que convierte un partido en una actuación.",
+            "strengths": "Talento espontáneo, energía que eleva a la multitud y brillantez en el momento presente. La habilidad ESFP para leer una situación en vivo y reaccionar al instante se adapta a una delantera que inventa oportunidades de la nada.",
+            "weaknesses": "El entusiasmo ESFP puede chocar con sistemas rígidos; este arquetipo prospera con la libertad y la expresión en lugar de una estructura rígidamente guionizada.",
+            "communication": "Cálida y expresiva — lidera con alegría visible y con el ejemplo en lugar de con sermones.",
+            "relationships": "Conecta fácil y generosamente, una compañera de equipo emocionalmente abierta que eleva el ánimo del grupo.",
+            "career": "Fútbol de élite — un escenario que recompensa el talento, la espontaneidad y el espectáculo, territorio clásico ESFP.",
+            "compatibility": "Combina bien con tipos estructurados y tácticos que le dan la libertad de improvisar dentro de su marco."
+          }
+        },
+        "template-mbti-nba-derrickrose": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "El Activista",
+            "dimensions": "Extravertido · Intuitivo · Sentimental · Perceptivo",
+            "subject_kind": "Ficha de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Derrick Rose se presenta aquí como un ENFP — creativo, sincero e impulsado. El MVP más joven en la historia de la NBA, su juego de ataque explosivo y su querida historia de regreso encajan con el cálido e imaginativo ENFP.",
+            "strengths": "Improvisación explosiva, resiliencia emocional y un vínculo genuino con su ciudad y sus fans. La pasión ENFP impulsó tanto su brillantez temprana como su larga lucha para recuperarse de las lesiones.",
+            "weaknesses": "Los ENFP pueden ser duros consigo mismos y se ven profundamente afectados por los contratiempos — el peso emocional de las lesiones repetidas puso a prueba ese idealismo.",
+            "communication": "Humilde y sincero; lidera con sinceridad en lugar de bravuconería.",
+            "relationships": "Profundamente leal y orientado a la familia, extrayendo fuerza de un círculo íntimo cercano.",
+            "career": "Base creativo — un rol que recompensa la visión, la espontaneidad y el talento.",
+            "compatibility": "Equilibrado por tipos estables y con los pies en la tierra que proporcionan estructura a su juego improvisado."
+          }
+        },
+        "template-mbti-nba-shaquilleoneal": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "El Intérprete",
+            "dimensions": "Extravertido · Sensorial · Sentimental · Perceptivo",
+            "subject_kind": "Ficha de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Shaquille O'Neal se presenta aquí como un ESFP — más grande que la vida, magnético e infinitamente entretenido. Uno de los pívots más dominantes de la historia, combinó una fuerza física abrumadora con el carisma natural de un showman.",
+            "strengths": "Presencia imponente, humor y una conexión instintiva con cualquier multitud. El talento ESFP para el momento lo hizo imparable en la cancha y una estrella mucho más allá de ella.",
+            "weaknesses": "La energía ESFP de flujo libre se sentía incómoda con la rutina y la repetición — las famosas dificultades con los tiros libres y una tendencia a incursionar en muchos proyectos a la vez.",
+            "communication": "Divertido, magnético y desarmante; conquista el ambiente a través de su personalidad.",
+            "relationships": "Sociable con un enorme círculo social, generoso y rápido para incluir a otros.",
+            "career": "Pívot dominante convertido en animador de medios — un segundo acto natural ESFP frente a la cámara.",
+            "compatibility": "Complementado por estrategas analíticos que dan estructura a su dominio instintivo y del momento."
           }
         }
       }
@@ -1940,6 +2065,42 @@
           "Lin Daiyu INFP personality poster — the poetic dreamer.",
           "Cao Cao INTJ character MBTI — the strategic mastermind."
         ]
+      },
+      "examples": {
+        "template-chinese-classic-character-mbti-liu-bei": {
+          "attributes": {
+            "type_code": "INFJ",
+            "type_nickname": "Soberano Benevolente de Shu Han",
+            "dimensions": "Introvertido · Intuitivo · Sentimental · Juzgador",
+            "subject_kind": "Ficha de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Liu Bei, emperador fundador de Shu Han en Romance de los Tres Reinos, clasificado como INFJ — el idealista benevolente que surgió de orígenes humildes y ganó lealtad a través de la virtud (仁德) en lugar de la fuerza.",
+            "strengths": "Profunda convicción moral, un don para inspirar devoción y la humildad para buscar talento — visitando famosamente la cabaña de Zhuge Liang tres veces. La visión INFJ le permitió mantener un ideal a largo plazo a través de años de adversidad.",
+            "weaknesses": "Decisiones INFJ gobernadas por el sentimiento: su campaña en Yiling, lanzada para vengar a sus hermanos jurados, anuló la estrategia y terminó en desastre.",
+            "communication": "Sincero y guiado por valores, ganando corazones antes que batallas.",
+            "relationships": "Unido por una lealtad profunda — el Juramento de la Hermandad del Jardín de Duraznos definió su vida.",
+            "career": "Gobernante benevolente y fundador de dinastía que lideró por autoridad moral.",
+            "compatibility": "Complementado por pensadores estratégicos como Zhuge Liang que aportaron la mente táctica a su visión guía."
+          }
+        },
+        "template-chinese-classic-character-mbti-miaoyu": {
+          "attributes": {
+            "type_code": "INTJ",
+            "type_nickname": "La Arquitecta",
+            "dimensions": "Introvertida · Intuitiva · Pensadora · Juzgadora",
+            "subject_kind": "Ficha de personalidad de personaje"
+          },
+          "vertical": {
+            "traits": "Miaoyu, la monja distante de Sueño en el Pabellón Rojo, clasificada como INTJ — refinada, exigente y ferozmente independiente, viviendo apartada en el Convento de Celosía Verde del Jardín de la Perspectiva y dominando el arte del té.",
+            "strengths": "Formidable maestría intelectual y estética, estándares intransigentes y autosuficiencia. La búsqueda INTJ de un ideal interno se muestra en su conocedora y su negativa a doblegarse a la convención.",
+            "weaknesses": "Esa misma distancia y 'obsesión por la pureza' (洁癖) la aíslan; el orgullo INTJ y el desdén por lo ordinario mantienen al mundo a distancia.",
+            "communication": "Reservada y precisa, revelando poco y esperando mucho.",
+            "relationships": "Pocas y cuidadosamente elegidas; mantiene una distancia deliberada de casi todos.",
+            "career": "Guardiana de un cuerpo de conocimiento refinado y enrarecido, en sus propios términos exigentes.",
+            "compatibility": "Solo encuentra su igual en aquellos que respetan sus estándares y comparten su profundidad."
+          }
+        }
       }
     }
   },
@@ -2215,7 +2376,28 @@
   "template-historical-event-map-illustration": {
     "category": "Mapa de Evento Historico",
     "description": "Genera un mapa ilustrado y escena para cualquier evento historico — arte acuarela, mapas de rutas e ilustraciones de momentos dramaticos.",
-    "title": "Ilustracion de Mapa de Evento Historico | Nano Banana"
+    "title": "Ilustracion de Mapa de Evento Historico | Nano Banana",
+    "content": {
+      "examples": {
+        "template-historical-event-map-illustration-constantinople-siege": {
+          "attributes": {
+            "grade_band": "Secundaria–Bachillerato",
+            "age_range": "12+",
+            "subject": "Historia mundial",
+            "skill": "Análisis histórico",
+            "resource_type": "Mapa de evento ilustrado",
+            "duration_min": "12 min",
+            "difficulty": "Intermedio",
+            "language_mode": "Inglés"
+          },
+          "vertical": {
+            "learning_objective": "Comprender la caída de Constantinopla en 1453 — la geografía de la ciudad, los movimientos clave del asedio y por qué sus famosas murallas finalmente cayeron.",
+            "includes": "Un mapa ilustrado del asedio que muestra las Murallas Teodosianas, el Cuerno de Oro, las posiciones otomanas y la ubicación de los grandes bombardas.",
+            "background": "En 1453, el sultán otomano Mehmed II asedió la capital bizantina; enormes cañones abrieron brechas en las largamente inexpugnables Murallas Teodosianas, poniendo fin al Imperio Bizantino y remodelando el comercio y el poder entre Europa y Asia."
+          }
+        }
+      }
+    }
   },
   "template-national-theme-map-infographic": {
     "category": "Mapa Tematico Nacional",
@@ -2380,6 +2562,25 @@
           "Genera un póster de comparación gramatical para 'just' vs 'only' — personajes ilustrados con ejemplos, etiquetas en negrita, 4K vertical.",
           "Diseña un póster de vocabulario para 'their' vs 'there' vs 'they're' — tres paneles kawaii con ejemplos visuales, 4K vertical."
         ]
+      },
+      "examples": {
+        "template-language-word-comparison-educational-poster-haishi-huozhe": {
+          "attributes": {
+            "grade_band": "HSK 2–3",
+            "age_range": "10+",
+            "subject": "Gramática china",
+            "skill": "Gramática y uso",
+            "resource_type": "Póster comparativo",
+            "duration_min": "8 min",
+            "difficulty": "Intermedio",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Distinguir dos palabras chinas que ambas se traducen como 'o' — 还是 (háishì) y 或者 (huòzhě) — y saber cuál usar en preguntas versus afirmaciones, con oraciones de ejemplo lado a lado.",
+            "includes": "Un póster comparativo que contrasta 还是 y 或者 con oraciones de ejemplo, glosas en inglés y una regla general sencilla.",
+            "background": "Una confusión muy común para los estudiantes: 还是 ofrece alternativas dentro de una pregunta ('¿té o café?'), mientras que 或者 enlaza alternativas dentro de una afirmación ('té o café está bien'). Verlos emparejados corrige la distinción."
+          }
+        }
       }
     }
   },
@@ -2582,6 +2783,42 @@
           "Infografia de Eras Geologicas de la Tierra.",
           "Infografia de Evolucion Humana."
         ]
+      },
+      "examples": {
+        "template-science-education-infographic-ocean-zones": {
+          "attributes": {
+            "grade_band": "Elemental–Secundaria",
+            "age_range": "8–13",
+            "subject": "Ciencias de la Tierra y marinas",
+            "skill": "Conceptos científicos",
+            "resource_type": "Infografía científica",
+            "duration_min": "10 min",
+            "difficulty": "Principiante",
+            "language_mode": "Inglés"
+          },
+          "vertical": {
+            "learning_objective": "Identificar las zonas de profundidad del océano — desde la superficie iluminada por el sol hasta las fosas más profundas — y cómo la luz, la temperatura y la presión moldean la vida que se encuentra en cada nivel.",
+            "includes": "Una infografía vertical de las zonas oceánicas (iluminada por el sol, crepuscular, medianoche, abisal y hadal) con rangos de profundidad, condiciones y criaturas representativas.",
+            "background": "El océano está estratificado por profundidad: la zona epipelágica iluminada por el sol sustenta la mayor parte de la vida marina, mientras que la luz se desvanece y la presión aumenta hacia abajo hasta las fosas hadales, donde solo sobreviven organismos especialmente adaptados."
+          }
+        },
+        "template-science-education-infographic-atmosphere-layers": {
+          "attributes": {
+            "grade_band": "Elemental–Secundaria",
+            "age_range": "8–13",
+            "subject": "Ciencias de la Tierra",
+            "skill": "Conceptos científicos",
+            "resource_type": "Infografía científica",
+            "duration_min": "10 min",
+            "difficulty": "Principiante",
+            "language_mode": "Inglés"
+          },
+          "vertical": {
+            "learning_objective": "Identificar las capas atmosféricas de la Tierra en orden y las características clave de cada una — dónde ocurre el clima, dónde se encuentra la capa de ozono, dónde se queman los meteoros y dónde brillan las auroras.",
+            "includes": "Una infografía vertical etiquetada de la troposfera, estratosfera, mesosfera, termosfera y exosfera con rangos de altitud y fenómenos distintivos.",
+            "background": "La atmósfera de la Tierra se divide en capas según cómo cambia la temperatura con la altitud: el clima ocurre en la troposfera, la capa protectora de ozono se encuentra en la estratosfera, los meteoros se queman en la mesosfera y las auroras aparecen en la termosfera."
+          }
+        }
       }
     }
   },
@@ -3023,6 +3260,20 @@
           "Crea un gráfico de aprendizaje de 'Verbos Antónimos Básicos en Chino' para principiantes.",
           "Genera una infografía de opuestos de 'Palabras de Acción Cotidianas en Chino'."
         ]
+      },
+      "attributes": {
+        "grade_band": "Intermedio",
+        "age_range": "8+",
+        "subject": "Chino (Mandarín)",
+        "skill": "Vocabulario",
+        "resource_type": "Infografía",
+        "duration_min": "10 min",
+        "difficulty": "Intermedio",
+        "language_mode": "Bilingüe EN–ZH"
+      },
+      "vertical": {
+        "learning_objective": "Aprende pares de verbos chinos opuestos (antónimos) con su pinyin y significados, construyendo vocabulario activo a través del contraste.",
+        "background": "Enseñar verbos en pares opuestos (abrir/cerrar, comprar/vender) utiliza el contraste para que cada palabra sea más fácil de recordar que aprenderlas de forma aislada."
       }
     },
     "description": "Una guía visual educativa que empareja verbos chinos opuestos con pinyin, traducciones al inglés e ilustraciones contrastantes. Usa el aviso de IA para generar tu propio gráfico de aprendizaje de mandarín.",
@@ -3133,6 +3384,25 @@
           "Crea un cartel de comparación de estudios de animación entre Pixar y DreamWorks.",
           "Genera una infografía de enfrentamiento entre Kyoto Animation y Ufotable."
         ]
+      },
+      "examples": {
+        "template-animation-studio-comparison-infographic-wit-vs-ufotable": {
+          "attributes": {
+            "grade_band": "Secundaria–Bachillerato / General",
+            "age_range": "12+",
+            "subject": "Alfabetización mediática y de animación",
+            "skill": "Comparación y análisis",
+            "resource_type": "Infografía comparativa",
+            "duration_min": "8 min",
+            "difficulty": "Principiante",
+            "language_mode": "Inglés"
+          },
+          "vertical": {
+            "learning_objective": "Comparar dos aclamados estudios de anime — Wit Studio y ufotable — a través de sus obras distintivas, estilo visual y técnicas de producción.",
+            "includes": "Una infografía lado a lado que contrasta las obras notables de cada estudio, la dirección de arte y las fortalezas técnicas.",
+            "background": "Wit Studio es conocido por la acción cinética (Attack on Titan temporadas 1–3, Vinland Saga), mientras que ufotable es reconocido por fusionar CGI con animación dibujada a mano y efectos suntuosos (Demon Slayer, la serie Fate). Compararlos es una introducción amigable a la alfabetización mediática."
+          }
+        }
       }
     },
     "description": "Una guía visual vibrante de estudio contra estudio que cubre logotipos, año de fundación, estilo artístico, obras notables y legado. Usa el aviso de IA para generar tu propio cartel de comparación de estudios de anime.",
@@ -3535,6 +3805,40 @@
             "includes": "Caracteres simplificados, pinyin, una glosa literal ('dibujar una serpiente, añadir patas'), el significado figurado, una oración de ejemplo y una ilustración de la historia original.",
             "background": "De un cuento de los Reinos Combatientes: en un concurso de dibujo de serpientes, el pintor más rápido añadió patas para alardear — y perdió, porque las serpientes no tienen ninguna. El modismo advierte contra estropear algo terminado con un esfuerzo superfluo."
           }
+        },
+        "template-chinese-idiom-learning-card-shou-zhu-dai-tu-1": {
+          "attributes": {
+            "grade_band": "HSK 3–4 / Elemental",
+            "age_range": "8–12",
+            "subject": "Chino (Mandarín)",
+            "skill": "Modismos y vocabulario",
+            "resource_type": "Tarjeta de modismo",
+            "duration_min": "10 min",
+            "difficulty": "Intermedio",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Aprender el modismo chino 守株待兔 (shǒu zhū dài tù) — su imagen literal de guardar un tocón de árbol para esperar un conejo, su significado figurado de confiar en la suerte en lugar del esfuerzo, además de pinyin y una oración de ejemplo.",
+            "includes": "Una tarjeta de modismo ilustrada con los caracteres chinos, pinyin, significados literal y figurado, la historia de origen y un ejemplo de uso — diseñada para estudiantes bilingües EN–ZH.",
+            "background": "El modismo proviene de Han Feizi (韩非子): un agricultor ve un conejo chocar contra un tocón de árbol y morir, luego abandona sus campos para esperar más — una parábola clásica que advierte contra la pasividad y la dependencia del azar."
+          }
+        },
+        "template-chinese-idiom-learning-card-jing-di-zhi-wa": {
+          "attributes": {
+            "grade_band": "HSK 3–4 / Elemental",
+            "age_range": "8–12",
+            "subject": "Chino (Mandarín)",
+            "skill": "Modismos y vocabulario",
+            "resource_type": "Tarjeta de modismo",
+            "duration_min": "10 min",
+            "difficulty": "Intermedio",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Aprender el modismo chino 井底之蛙 (jǐng dǐ zhī wā) — 'una rana en el fondo de un pozo' — y su significado: alguien con una visión estrecha y limitada del mundo, con pinyin y una oración de ejemplo.",
+            "includes": "Una tarjeta de modismo ilustrada con caracteres, pinyin, significados literal y figurado, la historia de origen y un ejemplo de uso para estudiantes bilingües EN–ZH.",
+            "background": "El modismo proviene de Zhuangzi (庄子): una rana que vive en un pozo cree que el pozo es todo el mundo, hasta que una tortuga del Mar del Este describe la inmensidad del océano — una lección sobre la perspectiva limitada."
+          }
         }
       }
     }
@@ -3556,6 +3860,20 @@
           "Crea un cartel sobre el clima Nublado con paneles de formación de nubes.",
           "Genera una infografía sobre el clima Nebuloso para niños con escenas en acuarela de niebla."
         ]
+      },
+      "attributes": {
+        "grade_band": "Primaria",
+        "age_range": "6–10",
+        "subject": "Ciencias",
+        "skill": "Lectura y vocabulario",
+        "resource_type": "Infografía",
+        "duration_min": "10 min",
+        "difficulty": "Principiante",
+        "language_mode": "Bilingüe EN–ZH"
+      },
+      "vertical": {
+        "learning_objective": "Reconoce los tipos de clima comunes y la ciencia básica detrás de ellos, con el vocabulario para describir el tiempo.",
+        "background": "El clima es un tema científico concreto y cotidiano que se combina naturalmente con vocabulario basado en imágenes para jóvenes estudiantes."
       }
     }
   },
@@ -6644,6 +6962,20 @@
           "Crea una hoja de stickers de matcha latte antropomorfizado.",
           "Genera stickers de emoción de amigo suculento de planta de oficina."
         ]
+      },
+      "attributes": {
+        "product_type": "Paquete de pegatinas troqueladas",
+        "material": "Vinilo",
+        "process": "Impresión troquelada",
+        "dimensions": "Hoja + cortes individuales",
+        "print_spec": "300 DPI, PNG transparente",
+        "color_profile": "Listo para CMYK",
+        "use_case": "IP / merchandising"
+      },
+      "vertical": {
+        "cultural_background": "Los paquetes de pegatinas de personajes originales convierten una mascota o personaje en un conjunto coleccionable — la unidad central de 谷子 (productos) y la economía de merchandising de creadores.",
+        "design_requirements": "Un modelo de personaje consistente en todas las poses, siluetas limpias para el troquelado, expresiones audaces y legibles, y un fondo transparente.",
+        "manufacturing_notes": "Exportar como PNGs transparentes de alta resolución; añadir una línea de corte y sangrado para la impresión troquelada y el cumplimiento de impresión bajo demanda."
       }
     }
   },
@@ -6925,6 +7257,20 @@
           "Crear una hoja para el aula para 'Accept vs Except'.",
           "Generar un cartel educativo para 'Complement vs Compliment'."
         ]
+      },
+      "attributes": {
+        "grade_band": "Todos los niveles",
+        "age_range": "10+",
+        "subject": "Inglés",
+        "skill": "Vocabulario",
+        "resource_type": "Póster educativo",
+        "duration_min": "10 min",
+        "difficulty": "Principiante-Intermedio",
+        "language_mode": "Bilingüe EN–ZH"
+      },
+      "vertical": {
+        "learning_objective": "Distingue pares de palabras en inglés que se confunden comúnmente (ej. affect vs. effect) y usa cada una correctamente, con un ejemplo memorable para cada par.",
+        "background": "Los pares de palabras que se confunden son una de las fuentes más frecuentes de errores de escritura para los estudiantes de inglés; emparejar cada una con una imagen y una oración de ejemplo ancla la distinción en la memoria."
       }
     }
   },
@@ -7029,6 +7375,20 @@
         "who": "Profesores de HSK y de chino, plataformas de tutoría y estudiantes autodidactas.",
         "how": "Ingresa el nivel HSK + título del artículo/tema. Un clic genera la hoja de trabajo de lectura; construye una biblioteca nivelada.",
         "prompts": "Prueba 'HSK1 Un Día en la Escuela hoja de trabajo de lectura', 'HSK3 Blancanieves y los Siete Enanitos lector graduado', 'HSK4 El Niño que Gritó Lobo'."
+      },
+      "attributes": {
+        "grade_band": "HSK 2",
+        "age_range": "8–10",
+        "subject": "Chino (Mandarín)",
+        "skill": "Lectura",
+        "resource_type": "Tarjeta de lectura",
+        "duration_min": "15 min",
+        "difficulty": "Principiante",
+        "language_mode": "Bilingüe EN–ZH"
+      },
+      "vertical": {
+        "learning_objective": "Reconocer el vocabulario objetivo, leer un pasaje corto de 100 a 150 caracteres con soporte completo de pinyin y responder preguntas básicas de comprensión.",
+        "background": "HSK 2 es el segundo de seis niveles del Examen Estandarizado de Competencia en Chino (HSK / Hanyu Shuiping Kaoshi). En este nivel, un estudiante conoce aproximadamente 300 palabras y puede leer pasajes cortos y sencillos sobre temas cotidianos. Las tarjetas de lectura graduadas como estas desarrollan la fluidez lectora al emparejar cada carácter con su pinyin y una glosa en inglés, para que los principiantes puedan decodificar y comprender un pasaje de forma independiente antes de avanzar al HSK 3."
       }
     }
   },
@@ -7358,5 +7718,27 @@
     "category": "Cupón de Descuento y Vale Promocional",
     "description": "Cupones de descuento y vales estilo ticket con perforación para promociones de retail, restaurantes y programas de lealtad. Para minoristas, restaurantes, programas de membresía/lealtad.",
     "title": "Nano Banana Prompt: Generador de Plantillas de Cupón de Descuento y Vale Promocional | Curify AI"
+  },
+  "template-brand-logo-variant-set": {
+    "category": "Hoja de Exploración de Logotipos de Marca",
+    "description": "Genera una hoja de exploración de logotipos de marca de seis variantes a partir de un nombre de marca, un resumen visual y una paleta de colores — una marca lineal, un emblema relleno, un monograma, una insignia/sello, un logotipo combinado de icono y texto, y una mascota, todos compartiendo un sistema de color consistente en un tablero blanco limpio.",
+    "title": "Nano Banana Prompt: Generador de Variantes de Logotipos de Marca | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un tablero con SEIS conceptos de logotipo distintos para tu marca, dispuestos en una cuadrícula numerada de 2×3 sobre un fondo blanco puro. Cada concepto explora una dirección diferente — una marca de dibujo lineal plano, un emblema sólido relleno, un monograma/letra, una insignia/sello, un logotipo combinado de icono y texto minimalista, y una mascota juguetona — mientras que cada variante integra el nombre de tu marca como letras legibles y comparte una paleta de colores consistente. Refleja la forma en que un estudio presenta una exploración inicial de logotipos, para que puedas comparar direcciones y elegir una para desarrollar.",
+        "who": "Hecho para diseñadores gráficos y de marca que realizan una exploración de logotipos, fundadores de empresas DTC y pequeñas empresas que nombran un nuevo producto, y especialistas en marketing o agencias que necesitan un conjunto rápido de direcciones de logotipo de marca para reaccionar — no se requiere software vectorial.",
+        "how": [
+          "Introduce el nombre de tu marca en {brand_name} (ej. 'CATTÉ COFFEE 喵咖').",
+          "Describe los elementos visuales y el estilo en {logo_brief} (ej. 'gato de dibujo lineal plano + taza de café, redondo y amigable').",
+          "Introduce tus colores en {palette_desc}, tomados de la especificación de color de tu marca.",
+          "Genera una hoja de logotipos de 6 variantes, luego aísla y refina el concepto que más te guste."
+        ],
+        "prompts": [
+          "Genera una hoja de 6 logotipos para 'CATTÉ COFFEE 喵咖' — gato de dibujo lineal plano + taza de café, azul acogedor, crema y marrón café.",
+          "Crea seis conceptos de logotipo para '北岳茶事' — montaña de dibujo lineal + hoja de té, minimalismo oriental tranquilo, verde salvia y negro tinta.",
+          "Genera una hoja de exploración de logotipos para 'Bloom Botanicals' — monograma geométrico de pétalo de flor, rosa empolvado, dorado y ciruela intenso."
+        ]
+      }
+    }
   }
 }

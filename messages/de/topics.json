@@ -508,7 +508,40 @@
         "gegenüber",
         "vergleichen",
         "kontrastieren"
-      ]
+      ],
+      "format": {
+        "lead": "Vergleichsvisualisierungen machen es einfach, zwei Dinge nebeneinander abzuwägen – vorher vs. nachher, A vs. B, dies vs. das. Curify stellt den Kontrast klar dar, sodass der Unterschied sofort erkennbar ist.",
+        "howToTitle": "So erstellen Sie eine Vergleichstabelle",
+        "howTo": [
+          "Wählen Sie eine Vergleichs- oder Versus-Vorlage.",
+          "Geben Sie die beiden Themen und die Punkte ein, die Sie gegenüberstellen möchten.",
+          "Erstellen Sie ein ausgewogenes Side-by-Side-Layout.",
+          "Laden Sie es herunter oder verfeinern Sie die Punkte und generieren Sie es neu."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Vorher-Nachher-Transformationen",
+          "A vs. B und 1-gegen-1-Kampfkarten",
+          "Produkt- und Optionsvergleichstabellen",
+          "Damals-vs.-Heute- und Evolutionsvisualisierungen",
+          "Entscheidungshilfen für Vor- und Nachteile"
+        ],
+        "faqTitle": "Vergleichs-FAQ",
+        "faq": [
+          {
+            "q": "Wie viele Dinge kann ich vergleichen?",
+            "a": "Die meisten Vorlagen konzentrieren sich auf einen klaren Zwei-Wege-Vergleich, der auf den ersten Blick am besten lesbar ist; mehrspaltige Diagramme sind für einige Themen verfügbar."
+          },
+          {
+            "q": "Kann ich Vorher-Nachher-Vergleiche erstellen?",
+            "a": "Ja – Vorher/Nachher und Damals-vs.-Heute gehören zu den beliebtesten Vergleichsformaten auf Curify."
+          },
+          {
+            "q": "Muss ich das Layout selbst gestalten?",
+            "a": "Nein. Sie geben die beiden Themen und die Punkte an; die KI erstellt das ausgewogene Layout."
+          }
+        ]
+      }
     },
     "groups": {
       "displayName": "Gruppen",
@@ -732,7 +765,40 @@
         "Tutorial",
         "Schritt-für-Schritt-Anleitung",
         "Leitfaden"
-      ]
+      ],
+      "format": {
+        "lead": "Anleitungen und Spickzettel fassen Anleitungen, Routinen oder Referenzen in einer klaren Visualisierung zusammen. Curify verwandelt Ihre Schritte oder Tipps in eine übersichtliche, illustrierte Anleitung, der man auf einen Blick folgen kann.",
+        "howToTitle": "So erstellen Sie eine Anleitung",
+        "howTo": [
+          "Wählen Sie eine Anleitungs- oder Spickzettel-Vorlage.",
+          "Geben Sie Ihre Schritte, Tipps oder Referenzpunkte ein.",
+          "Erstellen Sie ein organisiertes, illustriertes Layout.",
+          "Zum Teilen herunterladen oder als Referenzkarte ausdrucken."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Schritt-für-Schritt-Anleitungen",
+          "Spickzettel und Schnellreferenzkarten",
+          "Fitness-, Pack- und Routineanleitungen",
+          "Etikette- und Verhaltensregeln-Karten",
+          "Rezept- und Food-Tipp-Anleitungen"
+        ],
+        "faqTitle": "Anleitungs-FAQ",
+        "faq": [
+          {
+            "q": "Welche Arten von Anleitungen kann ich erstellen?",
+            "a": "Alles, was sequenziell oder referenzbasiert ist – Anleitungen, Routinen, Checklisten, Spickzettel und Tippkarten funktionieren alle gut."
+          },
+          {
+            "q": "Kann ich meine eigenen Schritte einfügen?",
+            "a": "Ja – Sie geben die Schritte oder Punkte an und Curify übernimmt das Layout, die Nummerierung und die Symbole."
+          },
+          {
+            "q": "Kann ich die Anleitung ausdrucken?",
+            "a": "Ja, Anleitungen werden in hoher Auflösung exportiert und einige bieten ein herunterladbares druckfertiges Paket an."
+          }
+        ]
+      }
     },
     "portrait": {
       "title": "Porträt-Visualvorlagen mit KI | Curify AI",
@@ -879,7 +945,40 @@
         "Plakat",
         "Druck",
         "Wandkunst"
-      ]
+      ],
+      "format": {
+        "lead": "Poster lassen ein Thema auffallend und teilbar aussehen – Ereignisse, Reisen, Zitate, Charaktere oder Produkte. Beschreiben Sie, was Sie möchten, und Curify erstellt ein ausgewogenes, auffälliges Poster, das Sie posten oder drucken können.",
+        "howToTitle": "So erstellen Sie ein Poster",
+        "howTo": [
+          "Wählen Sie eine Poster-Vorlage, die zu Ihrem Thema oder Ihrer Stimmung passt.",
+          "Fügen Sie Ihren Titel, Details und eventuelle Namen hinzu – die KI übernimmt Typografie und Layout.",
+          "Generieren Sie, um ein fertiges, druckfertiges Poster zu sehen.",
+          "Verfeinern Sie die Formulierung oder den Stil und generieren Sie es neu, bis es passt."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Event-, Spiel- und Terminposter",
+          "Reise- und Wahrzeichen-Wandkunst",
+          "Zitate- und Typografie-Poster",
+          "Charakter-, Sport- und Fan-Poster",
+          "Produkt- und Werbeposter"
+        ],
+        "faqTitle": "Poster-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich die Poster ausdrucken?",
+            "a": "Ja – Poster werden in hoher Auflösung exportiert, geeignet zum Drucken als Wandkunst oder Werbedrucke."
+          },
+          {
+            "q": "Kann ich meinen eigenen Text hinzufügen?",
+            "a": "Absolut. Sie liefern den Titel und die Details, und Curify arrangiert die Typografie und Komposition darum herum."
+          },
+          {
+            "q": "Muss ich einen Prompt schreiben?",
+            "a": "Nein. Wählen Sie eine Vorlage und füllen Sie einige Felder aus – es ist kein Prompt-Engineering erforderlich."
+          }
+        ]
+      }
     },
     "digital-canvas": {
       "displayName": "Digitale Leinwand",
@@ -902,7 +1001,40 @@
         "Mock-up",
         "Prototyp",
         "Vorschau"
-      ]
+      ],
+      "format": {
+        "lead": "Mockups zeigen ein Design auf einem echten Produkt – Merch, Verpackung, ein Gerät oder eine Ladenpräsentation – sodass es fertig und verkaufsbereit aussieht. Curify erstellt professionelle Produkt-Mockups aus Ihrer Idee oder Ihrem Artwork.",
+        "howToTitle": "So erstellen Sie ein Produkt-Mockup",
+        "howTo": [
+          "Wählen Sie eine Mockup-Vorlage – Bekleidung, Verpackung, Geschenkbox, Gerät und mehr.",
+          "Beschreiben Sie das Produkt oder laden Sie Ihr Design oder Logo hoch.",
+          "Erstellen Sie ein realistisches Mockup mit Beleuchtung und Kontext.",
+          "Laden Sie das Bild für Ihr Angebot, Ihre Präsentation oder Ihren Shop herunter."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Merch- und Bekleidungs-Mockups",
+          "Verpackungs- und Geschenkbox-Präsentationen",
+          "Marken- und vollständige VI-Visual-Packs",
+          "IP- und Charakterartikel-Displays",
+          "E-Commerce-Produktlistungsbilder"
+        ],
+        "faqTitle": "Mockup-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich mein eigenes Logo oder Design auf dem Mockup platzieren?",
+            "a": "Ja – mehrere Mockup-Vorlagen ermöglichen es Ihnen, Ihr Artwork oder Logo hochzuladen, sodass es auf dem Produkt erscheint."
+          },
+          {
+            "q": "Sind Mockups gut für Online-Shops?",
+            "a": "Ja. Sie sind so konzipiert, dass sie wie professionelle Produktfotos für Angebote, Präsentationen und Marketing aussehen."
+          },
+          {
+            "q": "Benötige ich Fotografie- oder 3D-Software?",
+            "a": "Nein. Curify rendert das Produkt, die Beleuchtung und die Umgebung für Sie anhand einer Beschreibung."
+          }
+        ]
+      }
     },
     "iran": {
       "displayName": "Iran",
@@ -1570,7 +1702,40 @@
         "landmark-map",
         "travel-map",
         "atlas"
-      ]
+      ],
+      "format": {
+        "lead": "Visuelle Karten erwecken einen Ort, eine Route oder eine Region zum Leben – Reiseziele, Wahrzeichen, Lebensmittelherkünfte oder Reiserouten. Curify illustriert eine klare, charaktervolle Karte aus Ihrem Thema.",
+        "howToTitle": "So erstellen Sie eine visuelle Karte",
+        "howTo": [
+          "Wählen Sie eine Kartenvorlage – Land, Stadt, Wahrzeichen oder Reiseroute.",
+          "Geben Sie den Ort und die Punkte oder Haltestellen ein, die Sie zeigen möchten.",
+          "Erstellen Sie eine illustrierte, leicht lesbare Karte.",
+          "Als Wandkunst oder teilbare Reisevisualisierung herunterladen."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Illustrierte Reise- und Landkarten",
+          "Stadt- und Wahrzeichenkarten-Poster",
+          "Reiserouten- und Routenvisualisierungen",
+          "Karten zu Lebensmittelherkünften und Kultur",
+          "Aquarell- und Vintage-Karten-Wandkunst"
+        ],
+        "faqTitle": "Karten-FAQ",
+        "faq": [
+          {
+            "q": "Sind das genaue geografische Karten?",
+            "a": "Es sind illustrierte, stilisierte Karten, die für Storytelling und Wandkunst gedacht sind, und nicht für präzise Navigation."
+          },
+          {
+            "q": "Kann ich meine eigenen Haltestellen oder Wahrzeichen markieren?",
+            "a": "Ja – geben Sie die Orte oder Routenpunkte ein, die Sie hervorheben möchten, und die KI ordnet sie an."
+          },
+          {
+            "q": "Kann ich eine Karte als Wandkunst drucken?",
+            "a": "Ja, Karten werden in hoher Auflösung exportiert, geeignet zum Rahmen und Drucken."
+          }
+        ]
+      }
     },
     "quiz": {
       "displayName": "Quizzes",
@@ -1610,7 +1775,45 @@
         "consumer-goods",
         "product-package",
         "unboxing"
-      ]
+      ],
+      "format": {
+        "lead": "Verpackungen sind das Erste, was ein Käufer im Regal oder in einem Angebots-Thumbnail sieht. Curify erstellt regalfertige Verpackungen – Kartons, Etiketten, Beutel, Flaschen und Geschenksets – basierend auf einer Produktbeschreibung oder Ihrem eigenen Design, mit realistischen Materialien und Oberflächen. Bereit für Pitch Decks, Marktplatz-Listings und Fabrik-Briefings.",
+        "howToTitle": "So gestalten Sie Verpackungen mit Curify",
+        "howTo": [
+          "Wählen Sie eine Verpackungsvorlage – Karton, Etikett, Beutel, Kosmetikflasche oder Geschenkbox.",
+          "Beschreiben Sie das Produkt und die Marke oder laden Sie Ihr Logo und Ihre Grafiken hoch.",
+          "Curify generiert ein Verpackungskonzept mit realistischen Materialien, Beleuchtung und Oberflächen.",
+          "Laden Sie das Mockup für Ihr Deck, Ihr Marktplatz-Listing oder Ihr Hersteller-Briefing herunter."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Karton- und Schachteldesigns",
+          "Etiketten- und Beutelkonzepte",
+          "Mockups für Kosmetik- und Getränkeflaschen",
+          "Geschenkbox- und Präsentkorb-Präsentationen",
+          "Lebensmittel- und Getränkeverpackungen",
+          "Markenverpackungs-Mockups mit Ihrem Logo"
+        ],
+        "faqTitle": "Verpackungs-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich mein eigenes Logo oder Design auf die Verpackung anbringen?",
+            "a": "Ja – mehrere Vorlagen ermöglichen es Ihnen, Ihr Design hochzuladen, sodass es auf dem gerenderten Karton, Etikett oder der Flasche erscheint."
+          },
+          {
+            "q": "Sind die Mockups realistisch genug für einen Kunden-Pitch?",
+            "a": "Ja – Verpackungen werden mit realistischen Materialien, Beleuchtung und Oberflächen gerendert, sodass sie in Decks und Listings wie echte Produktfotos wirken."
+          },
+          {
+            "q": "Kann ich dies für ein Fabrik- oder Herstellungs-Briefing verwenden?",
+            "a": "Die Konzepte sind ideal, um Absichten zu kommunizieren. Druckfertige Stanzformen erhalten Sie weiterhin von Ihrem Hersteller, aber die Visualisierung zeigt genau, was Sie möchten."
+          },
+          {
+            "q": "Welche Arten von Verpackungen kann ich gestalten?",
+            "a": "Kartons und Schachteln, Etiketten, Beutel, Kosmetik- und Getränkeflaschen, Geschenkboxen sowie Lebensmittel- und Getränkeverpackungen."
+          }
+        ]
+      }
     },
     "ecommerce": {
       "displayName": "Ecommerce",
@@ -1624,7 +1827,49 @@
         "flat-lay",
         "shopify",
         "dtc"
-      ]
+      ],
+      "format": {
+        "lead": "E-Commerce-Visuals entscheiden, ob ein Käufer klickt und kauft. Curify verwandelt ein einzelnes Produktfoto – oder nur eine Beschreibung – in ein vollständiges Listing-Set: klare Hero-Shots mit weißem Hintergrund, On-Model- und Lifestyle-Szenen sowie Amazon-ähnliche Sechs-Raster- und Langscroll-Detailinfografiken. Kein Studio, kein Fotograf, kein Designteam.",
+        "howToTitle": "Wie Curify Ihre E-Commerce-Bilder erstellt",
+        "howTo": [
+          "Laden Sie Ihr Produktfoto hoch oder beschreiben Sie das Produkt und die Marke.",
+          "Wählen Sie das benötigte Visual – Hero-Listing-Shot, Lifestyle-Szene, On-Model-Anprobe oder eine Sechs-Raster-Detailinfografik.",
+          "Curify rendert das Produkt, die Beleuchtung, Modelle und das Layout nach einem Listing-bereiten Standard.",
+          "Herunterladen, angepasst für Amazon, Shopify, TikTok Shop oder Ihren eigenen Shop."
+        ],
+        "usesTitle": "Was Sie für Ihren Shop erstellen können",
+        "uses": [
+          "Hero-Listing-Bilder mit weißem Hintergrund",
+          "Lifestyle- und In-Context-Produktszenen",
+          "Amazon Sechs-Raster- und Langscroll A+ Detailinfografiken",
+          "On-Model- und Outfit-Anprobe-Aufnahmen für Mode",
+          "Werbebanner, Preisschilder und Anzeigenmotive",
+          "Verpackungs- und Produkt-Mockups"
+        ],
+        "faqTitle": "E-Commerce-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich mein eigenes Produktfoto verwenden?",
+            "a": "Ja – laden Sie Ihr Produkt hoch und Curify erstellt die Aufnahme, Szene oder das Detailraster um den echten Artikel herum, damit es dem entspricht, was Sie verkaufen."
+          },
+          {
+            "q": "Sind diese für Amazon- und Shopify-Listings formatiert?",
+            "a": "Ja. Vorlagen wie die Sechs-Raster- und Langscroll-Infografiken folgen den Hero- und A+-Detail-Layouts, die Marktplätze erwarten."
+          },
+          {
+            "q": "Benötige ich einen Fotografen oder ein Studio?",
+            "a": "Nein. Curify rendert das Produkt, die Beleuchtung, den Hintergrund und sogar On-Model-Aufnahmen basierend auf einer Beschreibung oder Ihrem Foto."
+          },
+          {
+            "q": "Kann ich das Produkt an einem Model zeigen?",
+            "a": "Ja – Mode- und Anprobe-Vorlagen platzieren Bekleidung und Accessoires an einem Model ohne Fotoshooting."
+          },
+          {
+            "q": "Werden die Bilder zu meiner Marke passen?",
+            "a": "Beschreiben Sie Ihren Markenstil oder laden Sie Grafiken und Verpackungen hoch, und die Visuals werden passend zu Ihren Farben und Ihrem Ton gerendert."
+          }
+        ]
+      }
     },
     "showcase": {
       "displayName": "Showcase",
@@ -1652,7 +1897,40 @@
         "brand-book",
         "color-system",
         "typography"
-      ]
+      ],
+      "format": {
+        "lead": "Markenidentitäts-Boards fassen das Erscheinungsbild einer Marke in einem visuellen System zusammen – Logo-Richtung, Farben, Typografie und Stimmung. Curify entwickelt ein kohärentes Marken-Board aus Ihrem Briefing, sodass eine Markenidee sichtbar wird.",
+        "howToTitle": "So erstellen Sie ein Brand Board",
+        "howTo": [
+          "Wählen Sie eine Markenidentitäts- oder Moodboard-Vorlage.",
+          "Beschreiben Sie die Marke – Name, Gefühl und Zielgruppe.",
+          "Erstellen Sie ein kohärentes visuelles System und eine Richtung.",
+          "Verfeinern Sie die Richtung und generieren Sie sie neu, oder wenden Sie sie auf Mockups an."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Marken-Moodboards und visuelle Systeme",
+          "Logo- und Farbrichtung",
+          "Vollständige VI-Präsentationsboards",
+          "Verpackungs- und Anwendungs-Vorschauen",
+          "Marken-Pitch- und Präsentationsvisualisierungen"
+        ],
+        "faqTitle": "Brand Board-FAQ",
+        "faq": [
+          {
+            "q": "Benötige ich Designkenntnisse?",
+            "a": "Nein. Beschreiben Sie die Marke und Curify entwickelt eine kohärente visuelle Richtung – Farben, Typografie, Stimmung und Anwendungen."
+          },
+          {
+            "q": "Ist das ein finales Logo?",
+            "a": "Es ist eine Richtung und ein visuelles System zur Abstimmung; Sie können iterieren und das Aussehen dann auf Mockups und Verpackungen anwenden."
+          },
+          {
+            "q": "Kann ich es einem Kunden präsentieren?",
+            "a": "Ja – die Boards sind so konzipiert, dass sie wie eine professionelle Markenpräsentation aussehen."
+          }
+        ]
+      }
     },
     "naruto": {
       "displayName": "Naruto",
@@ -1979,7 +2257,40 @@
         "文创周边",
         "周边设计"
       ],
-      "displayName": "Merch & Aufkleber"
+      "displayName": "Merch & Aufkleber",
+      "format": {
+        "lead": "Merch verwandelt einen Charakter, eine Marke oder eine Idee in verkaufsfähige Artikel – Sticker-Packs, Bekleidung, Geschenkboxen und ganze Produktfamilien. Curify erstellt professionelle Merch-Mockups und Produktgrafiken aus Ihrem Konzept.",
+        "howToTitle": "So erstellen Sie Merch",
+        "howTo": [
+          "Wählen Sie eine Merch-Vorlage – Sticker-Pack, Bekleidung, Geschenkbox oder komplettes Set.",
+          "Beschreiben Sie den Charakter oder die Marke oder laden Sie Ihr Design hoch.",
+          "Erstellen Sie ein realistisches Merch-Mockup oder Produktblatt.",
+          "Für Ihren Shop, Ihr Angebot oder Ihr Fabrikbriefing herunterladen."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Sticker-Packs und gestanzte Bögen",
+          "Bekleidungs- und Accessoire-Mockups",
+          "Geschenkboxen und Schreibwaren-Sets",
+          "IP- und Charakterartikel",
+          "Vollständige SKU / Produktfamilienblätter"
+        ],
+        "faqTitle": "Merch-FAQ",
+        "faq": [
+          {
+            "q": "Ist das bereit für Print-on-Demand?",
+            "a": "Ja – viele Vorlagen liefern druckfertige, stanzfertige oder angebotsbereite Assets für POD und Marktplätze wie Etsy."
+          },
+          {
+            "q": "Kann ich meinen eigenen Charakter oder mein Logo darauf platzieren?",
+            "a": "Ja, mehrere Vorlagen ermöglichen es Ihnen, Ihr Artwork hochzuladen, sodass es auf dem Produkt erscheint."
+          },
+          {
+            "q": "Kann ich eine ganze Produktlinie erstellen?",
+            "a": "Ja – erstellen Sie ein konsistentes Set von Artikeln rund um einen Charakter oder eine Marke."
+          }
+        ]
+      }
     },
     "asl": {
       "displayName": "ASL · Amerikanische Gebärdensprache",
@@ -2011,13 +2322,87 @@
       ]
     },
     "infographic": {
-      "displayName": "Infografiken"
+      "displayName": "Infografiken",
+      "format": {
+        "lead": "Infografiken verwandeln dichte Informationen – Daten, Schritte, Vergleiche, Zeitachsen – in eine einzige, scannbare Visualisierung. Auf Curify beschreiben Sie das Thema und erhalten in Sekundenschnelle eine fertige, markengerechte Infografik, ohne Design- oder Prompt-Schreibkenntnisse.",
+        "howToTitle": "So erstellen Sie eine Infografik",
+        "howTo": [
+          "Wählen Sie unten eine Infografik-Vorlage oder beginnen Sie mit Ihrem eigenen Thema.",
+          "Geben Sie Ihr Thema, die wichtigsten Punkte und die Sprache ein – Curify plant das Layout für Sie.",
+          "Generieren Sie; die KI ordnet Text, Symbole und Farben zu einer sauberen Komposition an.",
+          "Laden Sie das hochauflösende Bild herunter oder passen Sie Details an und generieren Sie es neu."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Bildungs-Erklärungen und Lernzusammenfassungen",
+          "Geschäfts-, Prozess- und Funktionsdiagramme",
+          "Kultur-, Lebensmittel- und Reiseinformationskarten",
+          "Daten- und Statistikvisualisierungen",
+          "Zweisprachige (EN–ZH) Lernposter"
+        ],
+        "faqTitle": "Infografik-FAQ",
+        "faq": [
+          {
+            "q": "Benötige ich Designkenntnisse, um eine Infografik zu erstellen?",
+            "a": "Nein. Curify übernimmt Layout, Hierarchie, Symbole und Farben automatisch – Sie geben das Thema und die wichtigsten Punkte an, und die KI erstellt eine fertige Infografik."
+          },
+          {
+            "q": "Kann ich zweisprachige Infografiken erstellen?",
+            "a": "Ja. Viele Vorlagen unterstützen Englisch-Chinesisch und andere Sprachpaare, sodass dieselbe Infografik gleichzeitig in zwei Sprachen gerendert wird."
+          },
+          {
+            "q": "Welche Auflösung erhalte ich?",
+            "a": "Infografiken werden als hochauflösende Bilder exportiert, die sich zum Teilen in sozialen Medien oder zum Drucken als Poster eignen."
+          }
+        ]
+      }
     },
     "anatomy": {
       "displayName": "Anatomie"
     },
     "comic": {
-      "displayName": "Comic"
+      "displayName": "Comic",
+      "title": "Comic- & Manga-Prompts, Vorlagen und Inspiration",
+      "description": "Erstellen Sie Comicstrips, Manga-Seiten und Charakter-Intros mit KI – Multi-Panel-Layouts, ausdrucksstarke Kunst und Story-Beats, keine Zeichenkenntnisse erforderlich.",
+      "intro": "Entdecken Sie KI-Comic- und Manga-Vorlagen, um einen Charakter, einen Witz oder eine Geschichte in fertige Panels zu verwandeln. Egal, ob Sie einen Meme-Strip, eine Manga-Stil-Seite, eine Charakter-Intro-Spread oder eine kurze visuelle Geschichte erstellen, diese Vorlagen übernehmen das Layout, die Panel-Anordnung und den Kunststil, sodass Sie sich auf die Geschichte konzentrieren können.",
+      "keywords": [
+        "Manga",
+        "Comicstrip",
+        "Webtoon"
+      ],
+      "format": {
+        "lead": "Comics und Manga verwandeln eine Geschichte oder einen Witz in sequentielle Panels mit ausdrucksstarken Charakteren. Curify legt die Panels, die Kunst und den Fluss Ihrer Idee fest – kein Zeichnen erforderlich.",
+        "howToTitle": "So erstellen Sie einen Comic",
+        "howTo": [
+          "Wählen Sie eine Comic- oder Manga-Vorlage.",
+          "Beschreiben Sie Ihre Charaktere und die Story-Beats oder Pointe.",
+          "Erstellen Sie eine fertige Multi-Panel-Seite.",
+          "Zum Teilen oder Drucken herunterladen, oder anpassen und neu generieren."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Multi-Panel-Comicstrips",
+          "Manga-Stil-Seiten",
+          "Charakter-Intro-Spreads",
+          "Meme- und Witz-Comics",
+          "Kurze visuelle Geschichten"
+        ],
+        "faqTitle": "Comic-FAQ",
+        "faq": [
+          {
+            "q": "Muss ich zeichnen?",
+            "a": "Nein. Sie liefern die Charaktere und die Geschichte; Curify übernimmt die Panel-Anordnung, die Kunst und das Lettering."
+          },
+          {
+            "q": "Kann ich einen Charakter über mehrere Panels hinweg konsistent halten?",
+            "a": "Ja – Vorlagen behalten das Aussehen eines Charakters über die Panels einer Seite hinweg bei."
+          },
+          {
+            "q": "Kann ich den Comic ausdrucken?",
+            "a": "Ja, Seiten werden in hoher Auflösung zum Teilen oder Drucken exportiert."
+          }
+        ]
+      }
     },
     "step-by-step-tutorial": {
       "displayName": "Schritt-für-Schritt-Tutorials"
@@ -2026,16 +2411,148 @@
       "displayName": "Illustration"
     },
     "flashcards": {
-      "displayName": "Karteikarten"
+      "displayName": "Karteikarten",
+      "format": {
+        "lead": "Lernkarten machen Vokabeln, Fakten und Konzepte auf einen Blick leicht erlernbar. Curify erstellt illustrierte, oft zweisprachige Karten aus Ihrer Wortliste oder Ihrem Thema – bereit zum Lernen, Drucken oder Teilen.",
+        "howToTitle": "So erstellen Sie Lernkarten",
+        "howTo": [
+          "Wählen Sie eine Lernkarten-Vorlage für Ihr Thema oder Sprachpaar.",
+          "Geben Sie Ihre Wörter, Begriffe oder Ihr Thema ein – die KI illustriert jede Karte.",
+          "Erstellen Sie einen konsistenten Satz lernbereiter Karten.",
+          "Laden Sie das Deck herunter oder drucken Sie es aus, oder laden Sie ein PDF-Paket herunter."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Vokabel- und Sprachkarten (EN–ZH und mehr)",
+          "Wissenschafts-, Geschichts- und Biologie-Faktenkarten",
+          "Lern- und Phonics-Decks für Kinder",
+          "Prüfungs- und Wiederholungs-Lernblätter",
+          "Druckbares Unterrichtsmaterial"
+        ],
+        "faqTitle": "Lernkarten-FAQ",
+        "faq": [
+          {
+            "q": "Sind die Lernkarten zweisprachig?",
+            "a": "Viele sind es – Sprachvorlagen paaren Englisch mit Chinesisch, Französisch, Japanisch, Koreanisch, Spanisch und mehr."
+          },
+          {
+            "q": "Kann ich ein ganzes Deck ausdrucken?",
+            "a": "Ja. Sets werden als Bilder exportiert und mehrere Vorlagen bieten ein herunterladbares druckfertiges PDF-Paket an."
+          },
+          {
+            "q": "Kann ich meine eigene Wortliste verwenden?",
+            "a": "Ja – geben Sie Ihre Begriffe ein und Curify illustriert und gestaltet jede Karte für Sie."
+          }
+        ]
+      }
     },
     "recipes": {
-      "displayName": "Rezepte"
+      "displayName": "Rezepte",
+      "format": {
+        "lead": "Rezeptkarten lassen ein Gericht appetitlich und leicht nachvollziehbar aussehen – Zutaten, Schritte und ein Hero-Bild auf einer übersichtlichen Karte. Curify gestaltet eine schöne Rezeptkarte aus Ihrem Rezept.",
+        "howToTitle": "So erstellen Sie eine Rezeptkarte",
+        "howTo": [
+          "Wählen Sie eine Rezeptkarten-Vorlage.",
+          "Geben Sie das Gericht, die Zutaten und die Schritte ein.",
+          "Erstellen Sie eine illustrierte, leicht verständliche Karte.",
+          "Herunterladen oder ausdrucken, oder ein Rezeptpaket speichern."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Illustrierte Rezeptkarten",
+          "Küchen- und Gerichtsanleitungen",
+          "Koch- und Food-Tipp-Karten",
+          "Menü-Stil-Präsentationskarten",
+          "Druckbare Rezeptsammlungen"
+        ],
+        "faqTitle": "Rezeptkarten-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich mein eigenes Rezept verwenden?",
+            "a": "Ja – geben Sie Ihre Zutaten und Schritte ein und Curify gestaltet die Karte darum herum."
+          },
+          {
+            "q": "Kann ich Rezeptkarten ausdrucken?",
+            "a": "Ja, Karten werden in hoher Auflösung exportiert, geeignet zum Drucken oder für einen Rezeptordner."
+          },
+          {
+            "q": "Kann ich eine ganze Sammlung erstellen?",
+            "a": "Ja – erstellen Sie ein Set passender Karten, und mehrere Vorlagen bieten ein herunterladbares Paket an."
+          }
+        ]
+      }
     },
     "mind-maps": {
-      "displayName": "Mind Maps"
+      "displayName": "Mind Maps",
+      "format": {
+        "lead": "Mindmaps verzweigen eine zentrale Idee in verbundene Konzepte – perfekt, um Struktur, eine Ontologie oder ein Lernthema auf einen Blick zu erklären. Curify erstellt eine klare, illustrierte Mindmap aus Ihrem Thema.",
+        "howToTitle": "So erstellen Sie eine Mindmap",
+        "howTo": [
+          "Wählen Sie eine Mindmap-Vorlage.",
+          "Geben Sie Ihr zentrales Thema und seine Verzweigungen ein.",
+          "Erstellen Sie eine klare, verbundene, illustrierte Karte.",
+          "Zum Lernen, Präsentieren oder Drucken herunterladen."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Lern- und Wiederholungskarten",
+          "Konzept- und Ontologiekarten",
+          "Tier- und Wissenschaftsstrukturkarten",
+          "Brainstorming- und Planungskarten",
+          "Bildungs-Erklärdiagramme"
+        ],
+        "faqTitle": "Mindmap-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich meine eigenen Verzweigungen definieren?",
+            "a": "Ja – geben Sie das zentrale Thema und die Verzweigungen ein, und Curify gestaltet und illustriert die Karte."
+          },
+          {
+            "q": "Wie viele Verzweigungen kann es zeigen?",
+            "a": "Vorlagen verarbeiten mehrere Verzweigungsebenen, während die Karte auf einen Blick lesbar bleibt."
+          },
+          {
+            "q": "Kann ich es drucken oder präsentieren?",
+            "a": "Ja, Mindmaps werden in hoher Auflösung für Folien, Handouts oder Wanddrucke exportiert."
+          }
+        ]
+      }
     },
     "study-sheets": {
-      "displayName": "Studienblätter"
+      "displayName": "Studienblätter",
+      "format": {
+        "lead": "Lernblätter und Arbeitsblätter fassen ein Thema auf einer übungsbereiten Seite zusammen – Vokabelübungen, Aufgaben und Wiederholungszusammenfassungen. Curify erstellt in Sekundenschnelle ein sauberes, druckbares Arbeitsblatt aus Ihrem Thema.",
+        "howToTitle": "So erstellen Sie ein Lernblatt",
+        "howTo": [
+          "Wählen Sie eine Lernblatt- oder Arbeitsblatt-Vorlage.",
+          "Geben Sie Ihr Thema, Begriffe oder Fragen ein.",
+          "Erstellen Sie ein organisiertes, illustriertes Blatt.",
+          "Herunterladen oder ausdrucken, oder ein PDF-Paket holen."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Vokabel- und Sprachübungen",
+          "Prüfungs- und Wiederholungs-Lernblätter",
+          "Lern- und Phonics-Arbeitsblätter für Kinder",
+          "Fach-Spickzettel-Zusammenfassungen",
+          "Druckbare Unterrichtsmaterialien"
+        ],
+        "faqTitle": "Lernblatt-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich die Lernblätter ausdrucken?",
+            "a": "Ja – sie werden in hoher Auflösung exportiert und mehrere Vorlagen bieten ein herunterladbares druckfertiges PDF-Paket an."
+          },
+          {
+            "q": "Kann ich meine eigenen Inhalte verwenden?",
+            "a": "Ja. Geben Sie Ihre Begriffe oder Fragen ein und Curify gestaltet und illustriert das Blatt für Sie."
+          },
+          {
+            "q": "Werden zweisprachige Blätter unterstützt?",
+            "a": "Viele sind es – Sprachvorlagen paaren Englisch mit Chinesisch und anderen Sprachen auf demselben Blatt."
+          }
+        ]
+      }
     },
     "art-prints": {
       "displayName": "Kunstdrucke"
@@ -2047,16 +2564,165 @@
       "displayName": "Memes"
     },
     "social-media-posts": {
-      "displayName": "Soziale Medien Beiträge"
+      "displayName": "Soziale Medien Beiträge",
+      "format": {
+        "lead": "Social-Media-Posts und Karussells verwandeln eine Idee in scroll-stoppende, markengerechte Slides für Instagram, RedNote oder TikTok. Curify erstellt einen kohärenten Multi-Slide-Post aus Ihrem Thema.",
+        "howToTitle": "So erstellen Sie einen Social-Media-Post",
+        "howTo": [
+          "Wählen Sie eine Social-Post- oder Karussell-Vorlage.",
+          "Fügen Sie Ihr Thema, die wichtigsten Punkte und eventuelle Namen hinzu.",
+          "Erstellen Sie einen Satz passender, postfertiger Slides.",
+          "Herunterladen und posten, oder verfeinern und neu generieren."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Instagram- und RedNote-Karussells",
+          "Tipp-, Anleitungs- und Listicle-Posts",
+          "Produkt- und Werbe-Posts",
+          "Zitate- und Meme-Posts",
+          "Event- und Ankündigungs-Posts"
+        ],
+        "faqTitle": "Social Post-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich ein Multi-Slide-Karussell erstellen?",
+            "a": "Ja – Karussell-Vorlagen generieren einen Satz passender Slides, die als ein kohärenter Post gelesen werden."
+          },
+          {
+            "q": "Sind die Posts für soziale Plattformen dimensioniert?",
+            "a": "Ja, die Ausgaben sind für soziale Feeds und Stories formatiert, sodass sie zum Hochladen bereit sind."
+          },
+          {
+            "q": "Benötige ich Designkenntnisse?",
+            "a": "Nein. Wählen Sie eine Vorlage, fügen Sie Ihre Punkte hinzu, und Curify übernimmt das Layout und Styling."
+          }
+        ]
+      }
     },
     "stickers": {
-      "displayName": "Aufkleber"
+      "displayName": "Aufkleber",
+      "format": {
+        "lead": "Sticker-Packs verwandeln einen Charakter, ein Maskottchen oder eine Idee in eine Reihe ausdrucksstarker, stanzfertiger Designs. Curify erstellt ein vollständiges Blatt passender Sticker, die Sie teilen, verkaufen oder drucken können.",
+        "howToTitle": "So erstellen Sie ein Sticker-Pack",
+        "howTo": [
+          "Wählen Sie eine Sticker-Vorlage – Maskottchen, Emoji-Blätter, Chibi-Packs und mehr.",
+          "Beschreiben Sie Ihren Charakter oder laden Sie eine Referenz hoch, auf der er basieren soll.",
+          "Erstellen Sie ein vollständiges Blatt passender Sticker-Posen und -Ausdrücke.",
+          "Als Bilder herunterladen oder in druckfertige Stanzdateien umwandeln."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Charakter- und Maskottchen-Stickerbögen",
+          "Emoji- und Ausdrucks-Packs",
+          "Chibi- und Kawaii-Sticker-Sets",
+          "IP- und Fan-Art-Sammlungen",
+          "Print-on-Demand- und Etsy-Sticker-Produkte"
+        ],
+        "faqTitle": "Sticker-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich ein ganzes passendes Set auf einmal erstellen?",
+            "a": "Ja. Sticker-Vorlagen generieren ein vollständiges Blatt konsistenter Posen und Ausdrücke, nicht nur ein einzelnes Bild."
+          },
+          {
+            "q": "Kann ich die Sticker verkaufen?",
+            "a": "Curifys Sticker-Ausgaben sind für Print-on-Demand und Marktplätze wie Etsy konzipiert – viele enthalten stanzfertige Optionen."
+          },
+          {
+            "q": "Kann ich Sticker auf meinem eigenen Charakter basieren lassen?",
+            "a": "Ja – mehrere Vorlagen ermöglichen es Ihnen, eine Referenz hochzuladen, sodass das Set auf Ihrem Maskottchen oder Design basiert."
+          }
+        ]
+      }
     },
     "mascots": {
-      "displayName": "Maskottchen"
+      "displayName": "Maskottchen",
+      "title": "Maskottchen-Design-Prompts, Vorlagen und Inspiration",
+      "description": "Entwerfen Sie Marken- und Charakter-Maskottchen mit KI – ein freundlicher, unverwechselbarer Charakter in konsistenten Posen, bereit für Sticker, Merch und Anwendungen.",
+      "intro": "Entdecken Sie KI-Maskottchen-Design-Vorlagen, um einer Marke, einem Team oder einem Produkt ein einprägsames Gesicht zu verleihen. Beschreiben Sie die Persönlichkeit und erhalten Sie ein Maskottchen, das in einem konsistenten Stil über Posen und Ausdrücke hinweg gerendert wird – bereit, in Sticker, Merch und Markenanwendungen verwandelt zu werden.",
+      "keywords": [
+        "Maskottchen-Design",
+        "Markencharakter",
+        "Kawaii-Maskottchen"
+      ],
+      "format": {
+        "lead": "Maskottchen verleihen einer Marke, einem Team oder einem Produkt ein einprägsames, unverwechselbares Gesicht. Curify entwirft ein Maskottchen in einem konsistenten Stil über Posen und Ausdrücke hinweg, bereit für Sticker, Merch und Anwendungen.",
+        "howToTitle": "So entwerfen Sie ein Maskottchen",
+        "howTo": [
+          "Wählen Sie eine Maskottchen-Design-Vorlage.",
+          "Beschreiben Sie die Persönlichkeit, Marke und den Stil.",
+          "Erstellen Sie ein Maskottchen in konsistenten Posen und Ausdrücken.",
+          "Verwandeln Sie es in Sticker, Merch oder Markenanwendungen."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Marken- und Team-Maskottchen",
+          "Kawaii- und Chibi-Charaktere",
+          "Maskottchen-Posen- und Ausdrucksblätter",
+          "Sticker- und Emoji-Sets",
+          "Merch- und Verpackungsanwendungen"
+        ],
+        "faqTitle": "Maskottchen-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich das Maskottchen konsistent halten?",
+            "a": "Ja – Vorlagen behalten ein Maskottchenmodell über Posen und Ausdrücke hinweg bei, sodass das Set einheitlich aussieht."
+          },
+          {
+            "q": "Kann ich es auf meiner Marke basieren lassen?",
+            "a": "Ja – beschreiben Sie die Marke und den Stil oder laden Sie eine Referenz hoch, und das Maskottchen wird darum herum aufgebaut."
+          },
+          {
+            "q": "Kann ich es auf Produkten verwenden?",
+            "a": "Ja – Maskottchen sind dafür konzipiert, auf Sticker, Merch und Verpackungen angewendet zu werden."
+          }
+        ]
+      }
     },
     "character-ip": {
-      "displayName": "Charakter-IP"
+      "displayName": "Charakter-IP",
+      "title": "Charakterdesign & IP-Prompts, Vorlagen und Inspiration",
+      "description": "Entwerfen Sie Original-Charaktere und IP mit KI – Modellblätter, Turnarounds, Ausdrucksblätter, Maskottchen und Merch-fertige Posen, alles konsistent über das Set hinweg.",
+      "intro": "Entdecken Sie KI-Charakterdesign- und IP-Vorlagen, um einen Original-Charakter von Grund auf neu zu erstellen oder ihn zu einem vollständigen Asset-Set zu erweitern. Von Modellblättern und Turnarounds bis hin zu Ausdrucksblättern, Sticker-Posen und Merch-Mockups halten diese Vorlagen den Charakter über jede Ausgabe hinweg konsistent.",
+      "keywords": [
+        "Charakterblatt",
+        "Original-Charakter",
+        "IP-Design",
+        "Maskottchen"
+      ],
+      "format": {
+        "lead": "Charakterdesign verwandelt eine Idee in einen unverwechselbaren Charakter – mit einem konsistenten Modell, Ausdrücken und Posen, die Sie für Sticker, Comics und Merch wiederverwenden können. Curify generiert das gesamte Set aus einer Beschreibung oder Referenz.",
+        "howToTitle": "So entwerfen Sie einen Charakter",
+        "howTo": [
+          "Wählen Sie eine Charakter-Design-Vorlage – Modellblatt, Turnaround oder Ausdrucks-Set.",
+          "Beschreiben Sie Ihren Charakter oder laden Sie eine Referenz hoch, auf der er basieren soll.",
+          "Erstellen Sie einen konsistenten Satz von Ansichten und Posen.",
+          "Verwenden Sie den Charakter für Sticker, Comics und Merch wieder."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Charakter-Modellblätter und Turnarounds",
+          "Ausdrucks- und Posenblätter",
+          "Original-Charakter (OC) und IP-Designs",
+          "Maskottchen- und Sticker-fertige Posen",
+          "Merch- und Produkt-Mockups des Charakters"
+        ],
+        "faqTitle": "Charakterdesign-FAQ",
+        "faq": [
+          {
+            "q": "Kann ich den Charakter über alle Ausgaben hinweg konsistent halten?",
+            "a": "Ja – das ist der Punkt: Vorlagen behalten ein Charaktermodell über Posen, Ausdrücke und Anwendungen hinweg bei."
+          },
+          {
+            "q": "Kann ich einen Charakter auf meiner eigenen Kunst oder meinem Foto basieren lassen?",
+            "a": "Ja, mehrere Vorlagen ermöglichen es Ihnen, eine Referenz hochzuladen, sodass das Set aus Ihrem Design erstellt wird."
+          },
+          {
+            "q": "Kann ich den Charakter kommerziell nutzen?",
+            "a": "Ausgaben sind für IP- und Merch-Nutzung konzipiert – Sticker, Print-on-Demand und Markenanwendungen."
+          }
+        ]
+      }
     },
     "fan-art": {
       "displayName": "Fan-Art"
@@ -2090,6 +2756,96 @@
     },
     "narrative-comic": {
       "displayName": "Erzählende Comics"
+    },
+    "mood-board": {
+      "displayName": "Moodboards",
+      "title": "Moodboard-Prompts, Vorlagen und Inspiration",
+      "description": "Erstellen Sie Moodboards und Visual-Direction-Boards mit KI – Farben, Texturen, Typografie und Bilder, die zu einer kohärenten Ästhetik für eine Marke, ein Produkt oder ein Projekt zusammengefügt werden.",
+      "intro": "Entdecken Sie KI-Moodboard-Vorlagen, um einen Look festzulegen, bevor Sie bauen. Beschreiben Sie eine Marke, ein Produkt oder eine Stimmung und erhalten Sie ein kohärentes Board aus Farben, Texturen, Typografie und Referenzbildern – der erste Schritt jedes Design- oder Branding-Projekts, in Sekundenschnelle generiert.",
+      "keywords": [
+        "Moodboard",
+        "visuelle Richtung",
+        "ästhetisches Board",
+        "Markenstimmung"
+      ],
+      "format": {
+        "lead": "Moodboards legen einen Look fest, bevor Sie bauen – Farben, Texturen, Typografie und Bilder in einer kohärenten Ästhetik. Curify entwickelt ein Moodboard für eine Marke, ein Produkt oder eine Stimmung aus Ihrem Briefing.",
+        "howToTitle": "So erstellen Sie ein Moodboard",
+        "howTo": [
+          "Wählen Sie eine Moodboard-Vorlage.",
+          "Beschreiben Sie die Marke, das Produkt oder das Gefühl, das Sie anstreben.",
+          "Erstellen Sie ein kohärentes Board aus Farben, Texturen und Bildern.",
+          "Verfeinern Sie die Richtung und generieren Sie sie neu, oder wenden Sie sie auf Designs an."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Marken- und Produkt-Moodboards",
+          "Ästhetik- und Stimmungsrichtung",
+          "Farb- und Texturerkundung",
+          "Interieur- und Mode-Moodboards",
+          "Pitch- und Konzeptboards"
+        ],
+        "faqTitle": "Moodboard-FAQ",
+        "faq": [
+          {
+            "q": "Benötige ich Designkenntnisse?",
+            "a": "Nein. Beschreiben Sie das Gefühl und Curify erstellt ein kohärentes Board aus Farben, Texturen und Referenzbildern."
+          },
+          {
+            "q": "Kann ich es für einen Kunden-Pitch verwenden?",
+            "a": "Ja – Boards sind dafür konzipiert, eine klare visuelle Richtung zu präsentieren."
+          },
+          {
+            "q": "Kann ich die Richtung in Designs umwandeln?",
+            "a": "Ja – verwenden Sie die Farbpalette und Stimmung des Boards als Briefing für Logos, Verpackungen oder Produkt-Mockups."
+          }
+        ]
+      }
+    },
+    "industrial-design": {
+      "displayName": "Industriedesign",
+      "title": "Industriedesign-Prompts, Vorlagen und Inspiration",
+      "description": "Erstellen Sie Industriedesign-Konzepte mit KI – Produktkonzept-Boards, Präsentationsblätter und Konzeptskizzen, die eine Idee gestaltet und baubar aussehen lassen.",
+      "intro": "Entdecken Sie KI-Industriedesign-Vorlagen, um eine Produktidee in ein gestaltetes Konzept zu verwandeln. Von Konzeptskizzen und Präsentationsboards bis hin zu Layouts im Spezifikationsstil rendern diese Vorlagen ein Produkt mit Materialien, Form und Kontext, sodass ein Konzept wie aus dem Studio aussieht – nützlich für Pitches, Präsentationen und Fabrikbriefings.",
+      "keywords": [
+        "Produktdesign",
+        "Konzeptboard",
+        "Produktkonzept",
+        "Designskizze"
+      ],
+      "format": {
+        "lead": "Industriedesign verwandelt eine Produktidee in ein gestaltetes, baubares Konzept – Konzeptskizzen, Präsentationsboards und Layouts im Spezifikationsstil. Curify rendert es mit Materialien, Form und Kontext aus Ihrem Briefing.",
+        "howToTitle": "So erstellen Sie ein Industriedesign-Konzept",
+        "howTo": [
+          "Wählen Sie eine Industriedesign-Vorlage – Konzeptskizze oder Präsentationsboard.",
+          "Beschreiben Sie das Produkt, die Materialien und den Anwendungsfall.",
+          "Erstellen Sie ein Konzept in Studioqualität mit Form und Kontext.",
+          "Für Ihr Pitch Deck, Portfolio oder Fabrikbriefing herunterladen."
+        ],
+        "usesTitle": "Was Sie erstellen können",
+        "uses": [
+          "Produktkonzept-Boards",
+          "Konzept- und Ideenfindungsskizzen",
+          "Präsentations- und Spezifikations-Layouts",
+          "Material- und Oberflächenerkundung",
+          "Pitch- und Portfolio-Visualisierungen"
+        ],
+        "faqTitle": "Industriedesign-FAQ",
+        "faq": [
+          {
+            "q": "Benötige ich CAD- oder 3D-Software?",
+            "a": "Nein. Curify rendert das Produktkonzept, die Materialien und den Kontext anhand einer Beschreibung."
+          },
+          {
+            "q": "Ist das ein finales Produktionsdesign?",
+            "a": "Es ist ein Konzept und eine Präsentation – eine entworfene Richtung zur Abstimmung und Iteration, keine Fertigungsdatei."
+          },
+          {
+            "q": "Kann ich es einem Kunden oder einer Fabrik präsentieren?",
+            "a": "Ja – die Boards sind so konzipiert, dass sie wie eine professionelle Designpräsentation aussehen."
+          }
+        ]
+      }
     }
   },
   "topicPage": {
@@ -2097,6 +2853,7 @@
     "exampleImagesHeading": "Beispielbilder",
     "templatesHeading": "Vorlagen",
     "exploreMoreHeading": "Mehr entdecken",
-    "subTopicsHeading": "Nach Kategorie"
+    "subTopicsHeading": "Nach Kategorie",
+    "furtherExplorationHeading": "Weiter erkunden"
   }
 }

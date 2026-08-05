@@ -16,6 +16,25 @@
           "做“当归”Herb Exploded Sheet：饮片结构、鉴别要点（颜色/气味/断面）、主功效、搭配思路（可选）、禁忌提示，清晰箭头注释，3:4。",
           "生成“陈皮”分解图：产地与年份差异要点、外观纹理特写、性味归经、日常使用场景（泡茶/入膳），复古但清爽的中文信息图排版，3:4。"
         ]
+      },
+      "examples": {
+        "template-herbal-astragalus": {
+          "attributes": {
+            "grade_band": "通用",
+            "age_range": "所有年龄段",
+            "subject": "草药与健康教育",
+            "skill": "参考",
+            "resource_type": "草药参考卡",
+            "duration_min": "5 分钟",
+            "difficulty": "初级",
+            "language_mode": "双语 英–中"
+          },
+          "vertical": {
+            "learning_objective": "通过一份快速插图参考，了解黄芪 (huángqí)——这种植物的外观、使用的部分以及它在传统健康实践中的地位。",
+            "includes": "一张配有插图的草药卡片，包含植物插图、常用名和中文名、使用的部分以及简洁的参考说明。",
+            "background": "黄芪 (Astragalus membranaceus) 是中医药中的一种基础补益草药，其干燥的根传统上用于支持气和活力。此卡片旨在提供教育信息并描述传统用法，而非医疗建议。"
+          }
+        }
       }
     },
     "description": "一本科学的视觉指南，介绍任何传统中草药的解剖、特性和现代用途。使用AI提示生成您自己的草药海报。",
@@ -326,6 +345,25 @@
           "生成“超市场景词汇图”：包含货架、收银台、购物车等，标注 25 个高频名词，英文+IPA+中文三行标注，尽量靠近物体但不遮挡，3:4竖版。",
           "生成“动物园场景词汇海报”：标注动物与设施（gate, cage, ticket, map 等），英文/IPA/中文三行格式，适合打印。"
         ]
+      },
+      "examples": {
+        "template-word-scene-military-base 1": {
+          "attributes": {
+            "grade_band": "初级 / ESL",
+            "age_range": "6–12 岁",
+            "subject": "语言（英–中）",
+            "skill": "主题词汇",
+            "resource_type": "词汇场景",
+            "duration_min": "8 分钟",
+            "difficulty": "初级",
+            "language_mode": "双语 英–中"
+          },
+          "vertical": {
+            "learning_objective": "围绕军事基地构建一套主题英–中词汇，例如士兵、坦克、武器、指挥中心和训练场等词汇——以一个带有标注的插图场景为核心。",
+            "includes": "一个带有插图的军事基地场景，主要物体上标有双语英–中标签，以便在语境中学习整个词汇群。",
+            "background": "词汇场景学习将一组相关词汇锚定在一张令人难忘的图片上；视觉语境比孤立的词汇列表更能帮助学习者记住词汇。"
+          }
+        }
       }
     }
   },
@@ -892,6 +930,25 @@
           "为埃隆·马斯克创建一张MBTI科技创始人海报：ENTP – '愿景者，AI革命领袖'，周围有火箭、AI芯片和电动车元素。",
           "为比尔·盖茨生成一张MBTI可视化：INTP – '逻辑学家，分析创新者'，在未来科技环境中有经典计算和软件符号。"
         ]
+      },
+      "examples": {
+        "template-mbti-siliconvalley-founder": {
+          "attributes": {
+            "type_code": "ENTJ",
+            "type_nickname": "指挥官 · 帝国缔造者",
+            "dimensions": "外向 · 直觉 · 思考 · 判断",
+            "subject_kind": "人物性格卡"
+          },
+          "vertical": {
+            "traits": "创业公司创始人角色，在这里被塑造成 ENTJ 类型——果断、有战略性并致力于建设。这是一张关于公司建设者原型的性格角色卡，而非针对特定人物。",
+            "strengths": "远见、果断以及凝聚团队执行长期计划的能力。ENTJ 的外向思维将模糊性转化为路线图，并将路线图转化为一个帝国。",
+            "weaknesses": "同样的强度可能被解读为不耐烦或强行推进，ENTJ 往往难以放权，因为他们认为只有自己才能掌控。",
+            "communication": "直接、有号召力且目标导向——将每次对话都围绕目标展开。",
+            "relationships": "重视能力和结果，建立起忠诚度高、表现卓越的团队。",
+            "career": "创始人兼 CEO——典型的 ENTJ 领域，涵盖战略、规模和指挥。",
+            "compatibility": "最好由富有同理心的情感类型和注重细节的执行者来平衡，他们能弥补人际和战术方面的不足。"
+          }
+        }
       }
     }
   },
@@ -1319,6 +1376,57 @@
             "relationships": "对以努力和表现赢得他尊重的小圈子极为忠诚。",
             "career": "极致竞争者的舞台——奖励胆识、临场应变与纯粹意志，正是 ESTP 的巅峰领域。",
             "compatibility": "与沉稳、有结构的类型搭配最佳，他们能为其临场的天赋提供可依托的框架。"
+          }
+        },
+        "template-mbti-nba-marta": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "表演者",
+            "dimensions": "外向 · 实感 · 情感 · 感知",
+            "subject_kind": "人物性格卡"
+          },
+          "vertical": {
+            "traits": "Marta Vieira da Silva 在这里被塑造成 ESFP 类型——富有表现力、充满喜悦、即兴发挥。她曾六次获得 FIFA 最佳球员称号，是世界杯历史上的最佳射手，能将一场比赛变成一场精彩的表演。",
+            "strengths": "自发的天赋、振奋人心的能量和当下时刻的精彩。ESFP 善于解读现场情况并即时反应，这非常适合那些能凭空创造机会的前锋。",
+            "weaknesses": "ESFP 的活力可能会与僵化的体系产生摩擦；这种原型在自由和表达中茁壮成长，而非严密的脚本结构。",
+            "communication": "热情且富有表现力——通过明显的喜悦和以身作则来领导，而非说教。",
+            "relationships": "轻松慷慨地建立联系，是一位情感开放的队友，能提升团队士气。",
+            "career": "精英足球——一个奖励天赋、自发性和表演力的舞台，典型的 ESFP 领域。",
+            "compatibility": "与那些结构化、战术性的类型配合良好，这些类型能在其框架内给予她即兴发挥的自由。"
+          }
+        },
+        "template-mbti-nba-derrickrose": {
+          "attributes": {
+            "type_code": "ENFP",
+            "type_nickname": "竞选者",
+            "dimensions": "外向 · 直觉 · 情感 · 感知",
+            "subject_kind": "人物性格卡"
+          },
+          "vertical": {
+            "traits": "Derrick Rose 在这里被塑造成 ENFP 类型——富有创造力、真诚且充满动力。作为 NBA 历史上最年轻的 MVP，他爆发性的进攻表现和备受喜爱的复出故事，完美契合热情、富有想象力的 ENFP。",
+            "strengths": "爆发性的即兴发挥、情感韧性以及与他的城市和球迷之间真挚的联系。ENFP 的热情驱动了他早期的辉煌，也支撑了他漫长的伤病复出之路。",
+            "weaknesses": "ENFP 可能会对自己很苛刻，并深受挫折的影响——反复受伤的情感重压考验了这种理想主义。",
+            "communication": "谦逊真诚；以真挚而非虚张声势来领导。",
+            "relationships": "极其忠诚且以家庭为重，从亲密的圈子中汲取力量。",
+            "career": "富有创造力的控球后卫——一个奖励远见、自发性和天赋的角色。",
+            "compatibility": "由稳重、脚踏实地的类型来平衡，他们能为他的即兴发挥提供结构支持。"
+          }
+        },
+        "template-mbti-nba-shaquilleoneal": {
+          "attributes": {
+            "type_code": "ESFP",
+            "type_nickname": "表演者",
+            "dimensions": "外向 · 实感 · 情感 · 感知",
+            "subject_kind": "人物性格卡"
+          },
+          "vertical": {
+            "traits": "Shaquille O'Neal 在这里被塑造成 ESFP 类型——超凡脱俗、极具魅力且娱乐性十足。作为有史以来最具统治力的中锋之一，他将压倒性的身体力量与天生的表演者魅力结合在一起。",
+            "strengths": "强大的气场、幽默感以及与任何人群的本能连接。ESFP 对当下时刻的敏锐天赋使他在内线势不可挡，并成为球场之外的明星。",
+            "weaknesses": "ESFP 自由流动的能量与常规和重复格格不入——著名的罚球挣扎以及同时涉足多项事业的倾向。",
+            "communication": "风趣、有魅力且令人放松；通过个性赢得全场。",
+            "relationships": "善于交际，拥有庞大的社交圈，慷慨且乐于接纳他人。",
+            "career": "从统治级中锋转变为媒体艺人——这是 ESFP 在镜头前的自然第二幕。",
+            "compatibility": "由分析型策略师补充，他们能为他本能的、即时性的统治力提供结构支持。"
           }
         }
       }
@@ -1957,6 +2065,42 @@
           "林黛玉 INFP性格海报——诗意的梦想家。",
           "曹操 INTJ人物MBTI——深谋远虑的战略大师。"
         ]
+      },
+      "examples": {
+        "template-chinese-classic-character-mbti-liu-bei": {
+          "attributes": {
+            "type_code": "INFJ",
+            "type_nickname": "蜀汉昭烈帝 · 仁德之君",
+            "dimensions": "内向 · 直觉 · 情感 · 判断",
+            "subject_kind": "角色性格卡"
+          },
+          "vertical": {
+            "traits": "《三国演义》中蜀汉的开国皇帝刘备，在此被归类为 INFJ——白手起家的仁德理想主义者，以德服人而非以力压人。",
+            "strengths": "坚定的道德信念、感召人心的能力，以及求贤若渴的谦逊——三顾茅庐便是明证。INFJ 的远见让他在多年颠沛中始终坚守理想。",
+            "weaknesses": "INFJ 易被情感主导：为替结义兄弟报仇而发动的夷陵之战压过了战略考量，终致惨败。",
+            "communication": "真诚而重情义，先得人心，后图大业。",
+            "relationships": "以深厚的忠义为纽带——桃园结义的兄弟情贯穿其一生。",
+            "career": "以道德威望治国的仁君与开国之主。",
+            "compatibility": "与诸葛亮这样的战略家相辅相成，为其理想补上谋略之才。"
+          }
+        },
+        "template-chinese-classic-character-mbti-miaoyu": {
+          "attributes": {
+            "type_code": "INTJ",
+            "type_nickname": "建筑师 · The Architect",
+            "dimensions": "内向 · 直觉 · 思考 · 判断",
+            "subject_kind": "角色性格卡"
+          },
+          "vertical": {
+            "traits": "《红楼梦》中带发修行的孤高女尼妙玉，在此被归类为 INTJ——清雅、严苛而极其独立，寄居大观园栊翠庵，精通茶道。",
+            "strengths": "非凡的才学与审美造诣、不肯妥协的高标准与自足独立。INTJ 对内在理想的追求，体现在她的品鉴功夫与不随流俗之上。",
+            "weaknesses": "同样的孤傲与'精神洁癖'使她自我孤立；INTJ 的清高与对世俗的鄙夷让她与人始终隔着距离。",
+            "communication": "含蓄而精准，言语不多，要求却高。",
+            "relationships": "交游极少且极为挑剔，刻意与几乎所有人保持距离。",
+            "career": "以自己严苛的标准，守护一门精微高雅的学问。",
+            "compatibility": "唯有尊重其标准、与她同样有深度的人，方能与之相契。"
+          }
+        }
       }
     }
   },
@@ -2232,7 +2376,28 @@
   "template-historical-event-map-illustration": {
     "category": "历史事件地图",
     "description": "为任意历史事件生成精美插画地图与场景，包含水彩风格插画、路线图和关键时刻还原。",
-    "title": "历史事件地图插画 | Nano Banana"
+    "title": "历史事件地图插画 | Nano Banana",
+    "content": {
+      "examples": {
+        "template-historical-event-map-illustration-constantinople-siege": {
+          "attributes": {
+            "grade_band": "初高中",
+            "age_range": "12 岁以上",
+            "subject": "世界历史",
+            "skill": "历史分析",
+            "resource_type": "插图事件地图",
+            "duration_min": "12 分钟",
+            "difficulty": "中级",
+            "language_mode": "英语"
+          },
+          "vertical": {
+            "learning_objective": "了解 1453 年君士坦丁堡的陷落——包括城市的地理位置、围城战的关键行动以及其著名城墙最终为何失守。",
+            "includes": "一张围城战的插图地图，展示了狄奥多西城墙、金角湾、奥斯曼帝国阵地以及巨型轰炸机的部署位置。",
+            "background": "1453 年，奥斯曼苏丹穆罕默德二世围攻拜占庭首都；巨大的火炮攻破了长期以来坚不可摧的狄奥多西城墙，结束了拜占庭帝国，并重塑了欧亚之间的贸易和权力格局。"
+          }
+        }
+      }
+    }
   },
   "template-national-theme-map-infographic": {
     "category": "国家主题地图",
@@ -2397,6 +2562,25 @@
           "生成'just'vs'only'语法对比海报——可爱人物演示每个词的用法，粗体标签，4K竖版。",
           "设计'their'vs'there'vs'they're'词汇对比海报——三面板卡哇伊风格，带视觉高亮的例句，4K竖版。"
         ]
+      },
+      "examples": {
+        "template-language-word-comparison-educational-poster-haishi-huozhe": {
+          "attributes": {
+            "grade_band": "HSK 2–3 级",
+            "age_range": "10 岁以上",
+            "subject": "中文语法",
+            "skill": "语法与用法",
+            "resource_type": "对比海报",
+            "duration_min": "8 分钟",
+            "difficulty": "中级",
+            "language_mode": "双语 英–中"
+          },
+          "vertical": {
+            "learning_objective": "区分两个都翻译为“or”的中文词——“还是 (háishì)”和“或者 (huòzhě)”——并了解在疑问句和陈述句中分别使用哪个，附有并列例句。",
+            "includes": "一张对比海报，通过例句、英文释义和简单的经验法则来区分“还是”和“或者”。",
+            "background": "学习者常见的困惑：“还是”用于疑问句中提供选择（“茶还是咖啡？”），而“或者”用于陈述句中连接选择（“茶或者咖啡都可以”）。将它们并列展示有助于明确区分。"
+          }
+        }
       }
     }
   },
@@ -2599,6 +2783,42 @@
           "生成从前寒武纪到现代的地质时代信息图。",
           "创建展示关键进化阶段的人类进化信息图。"
         ]
+      },
+      "examples": {
+        "template-science-education-infographic-ocean-zones": {
+          "attributes": {
+            "grade_band": "小学–初中",
+            "age_range": "8–13 岁",
+            "subject": "地球与海洋科学",
+            "skill": "科学概念",
+            "resource_type": "科学信息图",
+            "duration_min": "10 分钟",
+            "difficulty": "初级",
+            "language_mode": "英语"
+          },
+          "vertical": {
+            "learning_objective": "识别海洋的深度区域——从阳光普照的表层到最深的海沟——以及光照、温度和压力如何塑造每个深度层次的生命。",
+            "includes": "一张海洋深度区域（阳光区、暮光区、午夜区、深渊区和超深渊区）的垂直信息图，包含深度范围、环境条件和代表性生物。",
+            "background": "海洋按深度分层：阳光充足的表层带支持着大部分海洋生物，而光线逐渐减弱，压力向下递增，直至超深渊海沟，那里只有特殊适应的生物才能生存。"
+          }
+        },
+        "template-science-education-infographic-atmosphere-layers": {
+          "attributes": {
+            "grade_band": "小学–初中",
+            "age_range": "8–13 岁",
+            "subject": "地球科学",
+            "skill": "科学概念",
+            "resource_type": "科学信息图",
+            "duration_min": "10 分钟",
+            "difficulty": "初级",
+            "language_mode": "英语"
+          },
+          "vertical": {
+            "learning_objective": "按顺序识别地球的大气层及其主要特征——天气发生在哪里、臭氧层在哪里、流星在哪里燃烧以及极光在哪里发光。",
+            "includes": "一张带有标注的垂直信息图，展示了对流层、平流层、中间层、热层和外逸层，包括海拔范围和标志性现象。",
+            "background": "地球大气层根据温度随海拔的变化而分层：天气发生在大气对流层，保护性臭氧层位于平流层，流星在中间层燃烧，极光出现在热层。"
+          }
+        }
       }
     }
   },
@@ -3163,6 +3383,25 @@
           "创建一个皮克斯与梦工厂的动画工作室比较海报。",
           "生成一个京都动画与Ufotable工作室对决的信息图。"
         ]
+      },
+      "examples": {
+        "template-animation-studio-comparison-infographic-wit-vs-ufotable": {
+          "attributes": {
+            "grade_band": "初高中 / 通用",
+            "age_range": "12 岁以上",
+            "subject": "媒体与动画素养",
+            "skill": "比较与分析",
+            "resource_type": "对比信息图",
+            "duration_min": "8 分钟",
+            "difficulty": "初级",
+            "language_mode": "英语"
+          },
+          "vertical": {
+            "learning_objective": "比较两家备受赞誉的动漫工作室——Wit Studio 和 ufotable——涵盖它们的代表作品、视觉风格和制作技术。",
+            "includes": "一张并列信息图，对比了两家工作室的著名作品、艺术指导和技术优势。",
+            "background": "Wit Studio 以其动感十足的动作场面而闻名（《进击的巨人》第 1-3 季，《文兰传奇》），而 ufotable 则以将 CGI 与手绘动画和华丽特效融合而著称（《鬼灭之刃》，《Fate》系列）。比较它们是通往媒体素养的友好入门。"
+          }
+        }
       }
     },
     "description": "一本生动的工作室对比视觉指南，涵盖标志、成立年份、艺术风格、著名作品和遗产。使用AI提示生成您自己的动漫工作室对比海报。",
@@ -3564,6 +3803,40 @@
             "learning_objective": "学习阅读、发音并正确使用成语 画蛇添足 (huà shé tiān zú) ——认识到何时多余的举动是不必要的，甚至会适得其反。",
             "includes": "简体字、拼音、字面含义（'画蛇，添足'）、引申义、例句以及原故事插图。",
             "background": "出自战国时期的一个故事：在一个画蛇比赛中，最快的画者为了炫耀给蛇添了足——结果输了，因为蛇本来就没有脚。这个成语告诫人们不要画蛇添足，用多余的努力反而破坏了已完成的事物。"
+          }
+        },
+        "template-chinese-idiom-learning-card-shou-zhu-dai-tu-1": {
+          "attributes": {
+            "grade_band": "HSK 3–4 级 / 初级",
+            "age_range": "8–12 岁",
+            "subject": "中文（普通话）",
+            "skill": "成语与词汇",
+            "resource_type": "成语闪卡",
+            "duration_min": "10 分钟",
+            "difficulty": "中级",
+            "language_mode": "双语 英–中"
+          },
+          "vertical": {
+            "learning_objective": "学习中文成语“守株待兔 (shǒu zhū dài tù)”——其字面含义是守着树桩等待兔子，其比喻意义是寄希望于运气而非努力，并附有拼音和例句。",
+            "includes": "一张配有插图的成语卡片，包含汉字、拼音、字面和比喻意义、典故以及用法示例——专为双语英–中学习者设计。",
+            "background": "该成语出自《韩非子》：一个农夫看到一只兔子撞上树桩而死，于是他放弃耕作，等待更多兔子——这是一个经典的寓言，警示人们不要消极被动，不要依赖侥幸。"
+          }
+        },
+        "template-chinese-idiom-learning-card-jing-di-zhi-wa": {
+          "attributes": {
+            "grade_band": "HSK 3–4 级 / 初级",
+            "age_range": "8–12 岁",
+            "subject": "中文（普通话）",
+            "skill": "成语与词汇",
+            "resource_type": "成语闪卡",
+            "duration_min": "10 分钟",
+            "difficulty": "中级",
+            "language_mode": "双语 英–中"
+          },
+          "vertical": {
+            "learning_objective": "学习中文成语“井底之蛙 (jǐng dǐ zhī wā)”——字面意思是“井底的青蛙”，其含义是形容一个人眼界狭窄、见识有限，并附有拼音和例句。",
+            "includes": "一张配有插图的成语卡片，包含汉字、拼音、字面和比喻意义、典故以及用法示例，专为双语英–中学习者设计。",
+            "background": "该成语出自《庄子》：一只住在井里的青蛙认为井就是整个世界，直到一只来自东海的海龟描述了海洋的浩瀚——这是一个关于有限视角的教训。"
           }
         }
       }
@@ -7444,5 +7717,27 @@
     "category": "折扣券和促销券",
     "description": "用于零售、餐饮和忠诚度计划促销的撕拉票式折扣券和券。适用于零售商、餐厅、会员/忠诚度计划。",
     "title": "Nano Banana Prompt: 折扣券和促销券模板生成器 | Curify AI"
+  },
+  "template-brand-logo-variant-set": {
+    "category": "品牌 Logo 探索方案图",
+    "description": "根据品牌名、视觉简述和配色，一次生成六款不同方向的品牌 Logo 探索方案——线描标志、实心徽标、字母组合、徽章印章、图标+字体组合，以及吉祥物款，六款共用同一套配色，排布在干净的白色画板上。",
+    "title": "Nano Banana 提示词：品牌 Logo 多方案生成器 | Curify AI",
+    "content": {
+      "sections": {
+        "what": "本模板一次生成一张包含六款不同 Logo 方案的画板，以编号 2×3 网格排布在纯白背景上。六款各探索一个方向——扁平线描标志、实心徽标、字母组合（monogram）、徽章/印章式锁定、极简图标+字体组合，以及俏皮的吉祥物款；每一款都将你的品牌名作为清晰的定制字体融入其中，并共用同一套配色。它还原了设计工作室呈现早期 Logo 探索的方式，方便你横向对比方向、选定一款继续深化。",
+        "who": "适合正在做 Logo 探索的品牌与平面设计师、为新产品取名的 DTC 与小微企业创始人，以及需要快速拿到一组符合品牌调性的 Logo 方向来筛选的市场人员或代理商——无需任何矢量软件。",
+        "how": [
+          "在 {brand_name} 中填写你的品牌名（例如 “CATTÉ COFFEE 喵咖”）。",
+          "在 {logo_brief} 中描述视觉元素与风格（例如 “扁平简笔画风的猫咪 + 咖啡杯，圆润友好”）。",
+          "在 {palette_desc} 中填写取自品牌色彩规范的配色。",
+          "生成六款 Logo 方案图，再单独提取并深化你最喜欢的一款。"
+        ],
+        "prompts": [
+          "为 “CATTÉ COFFEE 喵咖” 生成六款 Logo——扁平简笔画猫咪 + 咖啡杯，配色采用暖蓝、奶油与咖啡棕。",
+          "为 “北岳茶事” 创作六款 Logo 方案——线描山峰 + 茶叶，东方极简，鼠尾草绿与墨黑。",
+          "为 “Bloom Botanicals” 生成 Logo 探索方案图——几何花瓣字母组合，藕荷粉、金色与深梅红。"
+        ]
+      }
+    }
   }
 }

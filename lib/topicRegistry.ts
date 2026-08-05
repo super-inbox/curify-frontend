@@ -14,12 +14,16 @@ import {
   EXPLICIT_PARENT_TOPIC,
   TIER1_TAG_CHILDREN,
   normalizeTopicValues,
+  isLocalizedTopic,
+  getTagChildren,
+  getExplicitSiblings,
   type TemplateLike,
   type InspirationLike,
   type TopicWithTemplates,
   type TopicRegistry,
   type TopicNavItem,
 } from "./topicRegistry_pure";
+import TOPIC_COOCCURRENCE from "@/lib/generated/topic_cooccurrence.json";
 
 // Re-export every client-safe helper + type so existing server imports from
 // "@/lib/topicRegistry" keep working unchanged.
@@ -155,4 +159,36 @@ export function isTopicEnabled(topicId: string): boolean {
 /** Navigational subtopics for a parent topic (shown at top of page). */
 export function getNavigationalChildren(topicId: string): string[] {
   return (EXPLICIT_CHILD_TOPICS[topicId] ?? []).filter((id) => isTopicEnabled(id));
+}
+
+const COOCCURRENCE = TOPIC_COOCCURRENCE as Record<string, string[]>;
+
+/**
+ * "Further exploration" topics for the top of a /topics/<slug> page — a
+ * topic-SPECIFIC row that reframes navigation around where this topic leads,
+ * instead of repeating the global top-level entry-bar list. Order of preference:
+ *   1. this topic's own next-tier children (tier-2 navigational + tier-3 tags),
+ *   2. its explicit sibling group,
+ *   3. co-occurring topics (topics that share templates/inspirations with it —
+ *      `lib/generated/topic_cooccurrence.json`, built from the `topics[]` arrays)
+ *      as the fallback/fill for leaf topics that have no children.
+ * Every candidate is filtered to a real localized /topics page, de-duped, and the
+ * current slug is excluded. Capped at `limit` so the row never gets too long.
+ */
+export function getFurtherExplorationTopics(topicId: string, limit = 8): string[] {
+  const seen = new Set<string>([topicId]);
+  const out: string[] = [];
+  const push = (ids: string[]) => {
+    for (const id of ids) {
+      if (out.length >= limit) return;
+      if (!id || seen.has(id) || !isLocalizedTopic(id)) continue;
+      seen.add(id);
+      out.push(id);
+    }
+  };
+  push(getNavigationalChildren(topicId)); // next-tier: tier-2 children (if parent)
+  push(getTagChildren(topicId)); //           next-tier: tier-3 tags (if tier-1)
+  push(getExplicitSiblings(topicId)); //      lateral: sibling group
+  push(COOCCURRENCE[topicId] ?? []); //       fallback/fill: co-occurring topics
+  return out;
 }

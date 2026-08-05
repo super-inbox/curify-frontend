@@ -1777,35 +1777,40 @@
         "unboxing"
       ],
       "format": {
-        "lead": "Packaging visuals show your product wrapped, boxed, or labeled — so a brand idea looks shelf-ready. Curify renders packaging concepts and mockups from your description or artwork.",
-        "howToTitle": "How to make a packaging design",
+        "lead": "Packaging is the first thing a buyer sees on the shelf or in a listing thumbnail. Curify renders shelf-ready packaging — boxes, labels, pouches, bottles, and gift sets — from a product description or your own artwork, with realistic materials and finishes. Ready for pitch decks, marketplace listings, and factory briefs.",
+        "howToTitle": "How to design packaging with Curify",
         "howTo": [
-          "Pick a packaging template — box, label, pouch, or gift box.",
-          "Describe the product and brand, or upload your artwork.",
-          "Generate a packaging concept with realistic materials.",
-          "Download the image for your deck, listing, or factory brief."
+          "Pick a packaging template — box, label, pouch, cosmetic bottle, or gift box.",
+          "Describe the product and brand, or upload your logo and artwork.",
+          "Curify generates a packaging concept with realistic materials, lighting, and finish.",
+          "Download the mockup for your deck, marketplace listing, or manufacturer brief."
         ],
         "usesTitle": "What you can make",
         "uses": [
           "Box and carton designs",
           "Label and pouch concepts",
+          "Cosmetic and beverage bottle mockups",
           "Gift-box and hamper presentations",
           "Food and beverage packaging",
-          "Brand packaging mockups"
+          "Branded packaging mockups with your logo"
         ],
         "faqTitle": "Packaging FAQ",
         "faq": [
           {
             "q": "Can I put my own logo or artwork on the packaging?",
-            "a": "Yes — several templates let you upload your design so it appears on the package."
+            "a": "Yes — several templates let you upload your design so it appears on the rendered box, label, or bottle."
           },
           {
-            "q": "Is this a design or a mockup?",
-            "a": "Both — Curify can render a fresh packaging concept or present your design on a realistic package."
+            "q": "Are the mockups realistic enough for a client pitch?",
+            "a": "Yes — packaging is rendered with realistic materials, lighting, and finishes, so it reads like a real product shot in decks and listings."
           },
           {
-            "q": "Can I use it for an online store?",
-            "a": "Yes, the images work as professional product and listing visuals."
+            "q": "Can I use this for a factory or manufacturing brief?",
+            "a": "The concepts are ideal for communicating intent. Print-ready dielines still come from your manufacturer, but the visual shows exactly what you want."
+          },
+          {
+            "q": "What kinds of packaging can I design?",
+            "a": "Boxes and cartons, labels, pouches, cosmetic and beverage bottles, gift boxes, and food & beverage packaging."
           }
         ]
       }
@@ -1822,7 +1827,49 @@
         "flat-lay",
         "shopify",
         "dtc"
-      ]
+      ],
+      "format": {
+        "lead": "Ecommerce visuals decide whether a shopper clicks and buys. Curify turns a single product photo — or just a description — into a full listing set: clean white-background hero shots, on-model and lifestyle scenes, and Amazon-style six-grid and long-scroll detail infographics. No studio, no photographer, no design team.",
+        "howToTitle": "How Curify builds your ecommerce images",
+        "howTo": [
+          "Upload your product photo, or describe the product and brand.",
+          "Pick the visual you need — hero listing shot, lifestyle scene, on-model try-on, or a six-grid detail infographic.",
+          "Curify renders the product, lighting, models, and layout to a listing-ready standard.",
+          "Download sized for Amazon, Shopify, TikTok Shop, or your own store."
+        ],
+        "usesTitle": "What you can make for your store",
+        "uses": [
+          "White-background hero listing images",
+          "Lifestyle and in-context product scenes",
+          "Amazon six-grid and long-scroll A+ detail infographics",
+          "On-model and outfit try-on shots for fashion",
+          "Promotional banners, price tags, and ad creatives",
+          "Packaging and product mockups"
+        ],
+        "faqTitle": "Ecommerce FAQ",
+        "faq": [
+          {
+            "q": "Can I use my own product photo?",
+            "a": "Yes — upload your product and Curify builds the shot, scene, or detail grid around the real item so it stays true to what you sell."
+          },
+          {
+            "q": "Are these formatted for Amazon and Shopify listings?",
+            "a": "Yes. Templates like the six-grid and long-scroll infographics follow the hero and A+ detail layouts marketplaces expect."
+          },
+          {
+            "q": "Do I need a photographer or studio?",
+            "a": "No. Curify renders the product, lighting, background, and even on-model shots from a description or your photo."
+          },
+          {
+            "q": "Can I show the product on a model?",
+            "a": "Yes — fashion and try-on templates place apparel and accessories on a model without a photoshoot."
+          },
+          {
+            "q": "Will the images match my brand?",
+            "a": "Describe your brand style, or upload artwork and packaging, and the visuals are rendered to match your colors and tone."
+          }
+        ]
+      }
     },
     "showcase": {
       "displayName": "Showcase",
@@ -2210,7 +2257,40 @@
         "cultural creative goods",
         "文创周边",
         "周边设计"
-      ]
+      ],
+      "format": {
+        "lead": "Merch turns a character, brand, or idea into sellable goods — sticker packs, apparel, gift boxes, and full product families. Curify renders professional merch mockups and product art from your concept.",
+        "howToTitle": "How to make merch",
+        "howTo": [
+          "Pick a merch template — sticker pack, apparel, gift box, or full set.",
+          "Describe the character or brand, or upload your design.",
+          "Generate a realistic merch mockup or product sheet.",
+          "Download for your store, listing, or factory brief."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Sticker packs and die-cut sheets",
+          "Apparel and accessory mockups",
+          "Gift boxes and stationery sets",
+          "IP and character goods",
+          "Full SKU / product-family sheets"
+        ],
+        "faqTitle": "Merch FAQ",
+        "faq": [
+          {
+            "q": "Is this ready for print-on-demand?",
+            "a": "Yes — many templates output print-ready, die-cut-ready, or listing-ready assets for POD and marketplaces like Etsy."
+          },
+          {
+            "q": "Can I put my own character or logo on it?",
+            "a": "Yes, several templates let you upload your artwork so it appears on the product."
+          },
+          {
+            "q": "Can I make a whole product line?",
+            "a": "Yes — build a consistent set of goods around one character or brand."
+          }
+        ]
+      }
     },
     "asl": {
       "displayName": "ASL · American Sign Language",
@@ -2281,7 +2361,48 @@
       "displayName": "Anatomy"
     },
     "comic": {
-      "displayName": "Comic"
+      "displayName": "Comic",
+      "title": "Comic & Manga Prompts, Templates and Inspiration",
+      "description": "Create comic strips, manga pages, and character intros with AI — multi-panel layouts, expressive art, and story beats, no drawing skills needed.",
+      "intro": "Explore AI comic and manga templates for turning a character, joke, or story into finished panels. Whether you're making a meme strip, a manga-style page, a character intro spread, or a short visual story, these templates handle the layout, paneling, and art style so you can focus on the story.",
+      "keywords": [
+        "manga",
+        "comic strip",
+        "webtoon"
+      ],
+      "format": {
+        "lead": "Comics and manga turn a story or joke into sequential panels with expressive characters. Curify lays out the panels, art, and flow from your idea — no drawing required.",
+        "howToTitle": "How to make a comic",
+        "howTo": [
+          "Pick a comic or manga template.",
+          "Describe your characters and the story beats or punchline.",
+          "Generate a finished multi-panel page.",
+          "Download to share or print, or tweak and regenerate."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Multi-panel comic strips",
+          "Manga-style pages",
+          "Character intro spreads",
+          "Meme and joke comics",
+          "Short visual stories"
+        ],
+        "faqTitle": "Comic FAQ",
+        "faq": [
+          {
+            "q": "Do I need to draw?",
+            "a": "No. You provide the characters and story; Curify handles the paneling, art, and lettering."
+          },
+          {
+            "q": "Can I keep a character consistent across panels?",
+            "a": "Yes — templates hold one character's look across the panels of a page."
+          },
+          {
+            "q": "Can I print the comic?",
+            "a": "Yes, pages export at high resolution for sharing or print."
+          }
+        ]
+      }
     },
     "step-by-step-tutorial": {
       "displayName": "Step-by-Step Tutorials"
@@ -2515,10 +2636,93 @@
       }
     },
     "mascots": {
-      "displayName": "Mascots"
+      "displayName": "Mascots",
+      "title": "Mascot Design Prompts, Templates and Inspiration",
+      "description": "Design brand and character mascots with AI — a friendly, ownable character in consistent poses, ready for stickers, merch, and applications.",
+      "intro": "Explore AI mascot-design templates for giving a brand, team, or product a memorable face. Describe the personality and get a mascot rendered in a consistent style across poses and expressions — ready to turn into stickers, merch, and brand applications.",
+      "keywords": [
+        "mascot design",
+        "brand character",
+        "kawaii mascot"
+      ],
+      "format": {
+        "lead": "Mascots give a brand, team, or product a memorable, ownable face. Curify designs a mascot in a consistent style across poses and expressions, ready for stickers, merch, and applications.",
+        "howToTitle": "How to design a mascot",
+        "howTo": [
+          "Pick a mascot-design template.",
+          "Describe the personality, brand, and style.",
+          "Generate a mascot in consistent poses and expressions.",
+          "Turn it into stickers, merch, or brand applications."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Brand and team mascots",
+          "Kawaii and chibi characters",
+          "Mascot pose and expression sheets",
+          "Sticker and emoji sets",
+          "Merch and packaging applications"
+        ],
+        "faqTitle": "Mascot FAQ",
+        "faq": [
+          {
+            "q": "Can I keep the mascot consistent?",
+            "a": "Yes — templates hold one mascot model across poses and expressions so the set looks unified."
+          },
+          {
+            "q": "Can I base it on my brand?",
+            "a": "Yes — describe the brand and style, or upload a reference, and the mascot is built around it."
+          },
+          {
+            "q": "Can I use it on products?",
+            "a": "Yes — mascots are built to apply to stickers, merch, and packaging."
+          }
+        ]
+      }
     },
     "character-ip": {
-      "displayName": "Character IP"
+      "displayName": "Character IP",
+      "title": "Character Design & IP Prompts, Templates and Inspiration",
+      "description": "Design original characters and IP with AI — model sheets, turnarounds, expression sheets, mascots, and merch-ready poses, all consistent across the set.",
+      "intro": "Explore AI character-design and IP templates for building an original character from scratch or expanding one into a full asset set. From model sheets and turnarounds to expression sheets, sticker poses, and merch mockups, these templates keep the character consistent across every output.",
+      "keywords": [
+        "character sheet",
+        "original character",
+        "IP design",
+        "mascot"
+      ],
+      "format": {
+        "lead": "Character design turns an idea into an ownable character — with a consistent model, expressions, and poses you can reuse across stickers, comics, and merch. Curify generates the whole set from one description or reference.",
+        "howToTitle": "How to design a character",
+        "howTo": [
+          "Pick a character-design template — model sheet, turnaround, or expression set.",
+          "Describe your character, or upload a reference to base it on.",
+          "Generate a consistent set of views and poses.",
+          "Reuse the character across stickers, comics, and merch."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Character model sheets and turnarounds",
+          "Expression and pose sheets",
+          "Original character (OC) and IP designs",
+          "Mascot and sticker-ready poses",
+          "Merch and product mockups of the character"
+        ],
+        "faqTitle": "Character design FAQ",
+        "faq": [
+          {
+            "q": "Can I keep the character consistent across outputs?",
+            "a": "Yes — that's the point: templates hold one character model across poses, expressions, and applications."
+          },
+          {
+            "q": "Can I base a character on my own art or photo?",
+            "a": "Yes, several templates let you upload a reference so the set is built from your design."
+          },
+          {
+            "q": "Can I use the character commercially?",
+            "a": "Outputs are built for IP and merch use — stickers, print-on-demand, and brand applications."
+          }
+        ]
+      }
     },
     "fan-art": {
       "displayName": "Fan Art"
@@ -2552,6 +2756,96 @@
     },
     "narrative-comic": {
       "displayName": "Narrative Comics"
+    },
+    "mood-board": {
+      "displayName": "Mood Boards",
+      "title": "Mood Board Prompts, Templates and Inspiration",
+      "description": "Create mood boards and visual-direction boards with AI — colors, textures, type, and imagery pulled into one cohesive aesthetic for a brand, product, or project.",
+      "intro": "Explore AI mood-board templates for pinning down a look before you build. Describe a brand, product, or vibe and get a cohesive board of colors, textures, typography, and reference imagery — the first step of any design or branding project, generated in seconds.",
+      "keywords": [
+        "moodboard",
+        "visual direction",
+        "aesthetic board",
+        "brand mood"
+      ],
+      "format": {
+        "lead": "Mood boards pin down a look before you build — colors, textures, type, and imagery in one cohesive aesthetic. Curify explores a mood board for a brand, product, or vibe from your brief.",
+        "howToTitle": "How to make a mood board",
+        "howTo": [
+          "Pick a mood-board template.",
+          "Describe the brand, product, or feeling you're after.",
+          "Generate a cohesive board of colors, textures, and imagery.",
+          "Refine the direction and regenerate, or apply it to designs."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Brand and product mood boards",
+          "Aesthetic and vibe direction",
+          "Color and texture exploration",
+          "Interior and fashion mood boards",
+          "Pitch and concept boards"
+        ],
+        "faqTitle": "Mood board FAQ",
+        "faq": [
+          {
+            "q": "Do I need design skills?",
+            "a": "No. Describe the feeling and Curify assembles a coherent board of colors, textures, and reference imagery."
+          },
+          {
+            "q": "Can I use it for a client pitch?",
+            "a": "Yes — boards are built to present a clear visual direction."
+          },
+          {
+            "q": "Can I turn the direction into designs?",
+            "a": "Yes — use the board's palette and mood as the brief for logos, packaging, or product mockups."
+          }
+        ]
+      }
+    },
+    "industrial-design": {
+      "displayName": "Industrial Design",
+      "title": "Industrial Design Prompts, Templates and Inspiration",
+      "description": "Create industrial-design concepts with AI — product concept boards, presentation sheets, and concept sketches that make an idea look designed and buildable.",
+      "intro": "Explore AI industrial-design templates for turning a product idea into a designed concept. From concept sketches and presentation boards to spec-style layouts, these templates render a product with materials, form, and context so a concept looks studio-made — useful for pitches, decks, and factory briefs.",
+      "keywords": [
+        "product design",
+        "concept board",
+        "product concept",
+        "design sketch"
+      ],
+      "format": {
+        "lead": "Industrial design turns a product idea into a designed, buildable concept — concept sketches, presentation boards, and spec-style layouts. Curify renders it with materials, form, and context from your brief.",
+        "howToTitle": "How to make an industrial-design concept",
+        "howTo": [
+          "Pick an industrial-design template — concept sketch or presentation board.",
+          "Describe the product, materials, and use case.",
+          "Generate a studio-quality concept with form and context.",
+          "Download for your pitch deck, portfolio, or factory brief."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Product concept boards",
+          "Concept and ideation sketches",
+          "Presentation and spec-style layouts",
+          "Material and finish exploration",
+          "Pitch and portfolio visuals"
+        ],
+        "faqTitle": "Industrial design FAQ",
+        "faq": [
+          {
+            "q": "Do I need CAD or 3D software?",
+            "a": "No. Curify renders the product concept, materials, and context from a description."
+          },
+          {
+            "q": "Is this a final production design?",
+            "a": "It's a concept and presentation — a designed direction to align on and iterate, not a manufacturing file."
+          },
+          {
+            "q": "Can I present it to a client or factory?",
+            "a": "Yes — the boards are built to look like a professional design presentation."
+          }
+        ]
+      }
     }
   },
   "topicPage": {
@@ -2559,6 +2853,7 @@
     "exampleImagesHeading": "Example Images",
     "templatesHeading": "Templates",
     "exploreMoreHeading": "Explore More",
-    "subTopicsHeading": "Browse by Category"
+    "subTopicsHeading": "Browse by Category",
+    "furtherExplorationHeading": "Explore further"
   }
 }

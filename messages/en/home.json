@@ -508,7 +508,8 @@
     "exampleImagesHeading": "Example Images",
     "templatesHeading": "Templates",
     "subTopicsHeading": "Browse by Category",
-    "exploreMoreHeading": "Explore More"
+    "exploreMoreHeading": "Explore More",
+    "furtherExplorationHeading": "Explore further"
   },
   "videoTranscriptGenerator": {
     "metadata": {
@@ -1207,6 +1208,37 @@
         "educationBody": "Let a child watch an animation and practice while watching, with word cards and a quiz keyed to what's on screen — the exact Journey to the West example in the demo.",
         "businessTitle": "For self-study learners and edu creators",
         "businessBody": "Paste any show you love and get study-ready subtitles plus speaking practice; or ship a matching worksheet set for every video you publish, at near-zero prep."
+      }
+    }
+  },
+  "brandWorkflow": {
+    "heading": "Brand design workflow",
+    "subtitle": "Build a complete brand identity in five steps — from a color system to a reusable brand kit.",
+    "steps": {
+      "palette": {
+        "name": "Color system",
+        "desc": "Extract a cohesive palette with hex codes from your theme or a reference image.",
+        "cta": "Generate palette"
+      },
+      "logo": {
+        "name": "Logo",
+        "desc": "Six distinct logo concepts that share one palette — pick your direction.",
+        "cta": "Generate logos"
+      },
+      "typeface": {
+        "name": "Typeface",
+        "desc": "Six on-brand font specimens from your brand name and style.",
+        "cta": "Coming soon"
+      },
+      "packaging": {
+        "name": "Packaging",
+        "desc": "Product packaging and mockups carrying your logo and colors.",
+        "cta": "Design packaging"
+      },
+      "kit": {
+        "name": "Brand kit",
+        "desc": "Apply your identity across a full visual-identity mockup pack.",
+        "cta": "Build VI pack"
       }
     }
   }

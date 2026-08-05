@@ -508,7 +508,40 @@
         "versus",
         "comparar",
         "contraste"
-      ]
+      ],
+      "format": {
+        "lead": "Los visuales de comparación facilitan la evaluación de dos cosas lado a lado — antes vs después, A vs B, esto vs aquello. Curify presenta el contraste claramente para que la diferencia se perciba al instante.",
+        "howToTitle": "Cómo hacer un gráfico comparativo",
+        "howTo": [
+          "Elige una plantilla de comparación o versus.",
+          "Introduce los dos sujetos y los puntos que deseas contrastar.",
+          "Genera un diseño equilibrado lado a lado.",
+          "Descarga o refina los puntos y vuelve a generar."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Transformaciones de antes y después",
+          "Tarjetas de batalla A vs B y 1v1",
+          "Gráficos de comparación de productos y opciones",
+          "Visuales de entonces vs ahora y evolución",
+          "Ayudas para la toma de decisiones (pros y contras)"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre comparaciones",
+        "faq": [
+          {
+            "q": "¿Cuántas cosas puedo comparar?",
+            "a": "La mayoría de las plantillas se centran en una comparación clara de dos vías, que es lo que se lee mejor de un vistazo; hay gráficos de varias columnas disponibles para algunos temas."
+          },
+          {
+            "q": "¿Puedo hacer antes y después?",
+            "a": "Sí — antes/después y entonces-vs-ahora se encuentran entre los formatos de comparación más populares en Curify."
+          },
+          {
+            "q": "¿Necesito diseñar el diseño?",
+            "a": "No. Tú proporcionas los dos sujetos y los puntos; la IA construye el diseño equilibrado."
+          }
+        ]
+      }
     },
     "groups": {
       "displayName": "Grupos",
@@ -732,7 +765,40 @@
         "tutorial",
         "guía",
         "guía"
-      ]
+      ],
+      "format": {
+        "lead": "Las guías y hojas de trucos condensan un instructivo, una rutina o una referencia en un visual claro. Curify convierte tus pasos o consejos en una guía ordenada e ilustrada que la gente puede seguir de un vistazo.",
+        "howToTitle": "Cómo hacer una guía",
+        "howTo": [
+          "Elige una plantilla de guía u hoja de trucos.",
+          "Introduce tus pasos, consejos o puntos de referencia.",
+          "Genera un diseño organizado e ilustrado.",
+          "Descarga para compartir o imprime como tarjeta de referencia."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Guías paso a paso",
+          "Hojas de trucos y tarjetas de referencia rápida",
+          "Guías de fitness, empaque y rutina",
+          "Tarjetas de etiqueta y de lo que se debe y no se debe hacer",
+          "Guías de recetas y consejos de cocina"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre guías",
+        "faq": [
+          {
+            "q": "¿Qué tipos de guías puedo crear?",
+            "a": "Cualquier cosa secuencial o basada en referencias — instructivos, rutinas, listas de verificación, hojas de trucos y tarjetas de consejos funcionan bien."
+          },
+          {
+            "q": "¿Puedo incluir mis propios pasos?",
+            "a": "Sí — tú proporcionas los pasos o puntos y Curify se encarga del diseño, la numeración y los iconos."
+          },
+          {
+            "q": "¿Puedo imprimir la guía?",
+            "a": "Sí, las guías se exportan en alta resolución y varias ofrecen un paquete descargable listo para imprimir."
+          }
+        ]
+      }
     },
     "portrait": {
       "title": "Plantillas Visuales de Retrato con IA | Curify AI",
@@ -879,7 +945,40 @@
         "cartel",
         "impresión",
         "arte de pared"
-      ]
+      ],
+      "format": {
+        "lead": "Los pósteres hacen que un tema luzca impactante y compartible — eventos, viajes, citas, personajes o productos. Describe lo que quieres y Curify compone un póster equilibrado y llamativo que puedes publicar o imprimir.",
+        "howToTitle": "Cómo hacer un póster",
+        "howTo": [
+          "Elige una plantilla de póster que coincida con tu tema o estado de ánimo.",
+          "Añade tu título, detalles y cualquier nombre — la IA se encarga de la tipografía y el diseño.",
+          "Genera para ver un póster terminado y listo para imprimir.",
+          "Refina la redacción o el estilo y vuelve a generar hasta que esté perfecto."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Pósteres de eventos, partidos y horarios",
+          "Arte de pared de viajes y puntos de referencia",
+          "Pósteres de citas y tipografía",
+          "Pósteres de personajes, deportes y fans",
+          "Pósteres de productos y promocionales"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre pósteres",
+        "faq": [
+          {
+            "q": "¿Puedo imprimir los pósteres?",
+            "a": "Sí — los pósteres se exportan en alta resolución, adecuados para imprimir como arte de pared o impresiones promocionales."
+          },
+          {
+            "q": "¿Puedo añadir mi propio texto?",
+            "a": "Absolutamente. Tú proporcionas el título y los detalles, y Curify organiza la tipografía y la composición alrededor de ellos."
+          },
+          {
+            "q": "¿Necesito escribir un prompt?",
+            "a": "No. Elige una plantilla y rellena algunos campos — no se requiere ingeniería de prompts."
+          }
+        ]
+      }
     },
     "digital-canvas": {
       "displayName": "Lienzo Digital",
@@ -902,7 +1001,40 @@
         "mock-up",
         "prototipo",
         "vista previa"
-      ]
+      ],
+      "format": {
+        "lead": "Los mockups muestran un diseño en un producto real — merchandising, empaque, un dispositivo o un expositor minorista — para que luzca terminado y vendible. Curify renderiza mockups de productos profesionales a partir de tu idea o diseño.",
+        "howToTitle": "Cómo hacer un mockup de producto",
+        "howTo": [
+          "Elige una plantilla de mockup — ropa, empaque, caja de regalo, dispositivo y más.",
+          "Describe el producto o sube tu diseño o logo.",
+          "Genera un mockup realista con iluminación y contexto.",
+          "Descarga la imagen para tu listado, presentación o tienda."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Mockups de merchandising y ropa",
+          "Presentaciones de empaques y cajas de regalo",
+          "Paquetes visuales de marca y VI completo",
+          "Expositores de IP y productos de personajes",
+          "Imágenes de listado de productos para Ecommerce"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre mockups",
+        "faq": [
+          {
+            "q": "¿Puedo poner mi propio logo o diseño en el mockup?",
+            "a": "Sí — varias plantillas de mockup te permiten subir tu diseño o logo para que aparezca en el producto."
+          },
+          {
+            "q": "¿Son los mockups buenos para tiendas online?",
+            "a": "Sí. Están diseñados para parecer fotos de productos profesionales para listados, presentaciones y marketing."
+          },
+          {
+            "q": "¿Necesito fotografía o software 3D?",
+            "a": "No. Curify renderiza el producto, la iluminación y el entorno por ti a partir de una descripción."
+          }
+        ]
+      }
     },
     "iran": {
       "displayName": "Irán",
@@ -1570,7 +1702,40 @@
         "landmark-map",
         "travel-map",
         "atlas"
-      ]
+      ],
+      "format": {
+        "lead": "Los mapas visuales dan vida a un lugar, ruta o región — destinos de viaje, puntos de referencia, orígenes de alimentos o itinerarios. Curify ilustra un mapa claro y con carácter a partir de tu tema.",
+        "howToTitle": "Cómo hacer un mapa visual",
+        "howTo": [
+          "Elige una plantilla de mapa — país, ciudad, punto de referencia o itinerario.",
+          "Introduce el lugar y los puntos o paradas que deseas mostrar.",
+          "Genera un mapa ilustrado y fácil de leer.",
+          "Descarga como arte de pared o un visual de viaje compartible."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Mapas ilustrados de viajes y países",
+          "Pósteres de mapas de ciudades y puntos de referencia",
+          "Visuales de itinerarios y rutas",
+          "Mapas de origen de alimentos y culturales",
+          "Arte de pared de mapas en acuarela y vintage"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre mapas",
+        "faq": [
+          {
+            "q": "¿Son estos mapas geográficos precisos?",
+            "a": "Son mapas ilustrados y estilizados, pensados para contar historias y como arte de pared, más que para una navegación precisa."
+          },
+          {
+            "q": "¿Puedo marcar mis propias paradas o puntos de referencia?",
+            "a": "Sí — introduce los lugares o puntos de ruta que deseas destacar y la IA los organiza."
+          },
+          {
+            "q": "¿Puedo imprimir un mapa como arte de pared?",
+            "a": "Sí, los mapas se exportan en alta resolución, adecuados para enmarcar e imprimir."
+          }
+        ]
+      }
     },
     "quiz": {
       "displayName": "Quizzes",
@@ -1610,7 +1775,45 @@
         "consumer-goods",
         "product-package",
         "unboxing"
-      ]
+      ],
+      "format": {
+        "lead": "El packaging es lo primero que un comprador ve en el estante o en la miniatura de un anuncio. Curify crea packaging listo para estantería —cajas, etiquetas, bolsas, botellas y sets de regalo— a partir de una descripción de producto o de tu propio diseño, con materiales y acabados realistas. Listo para presentaciones, listados de marketplace y especificaciones de fábrica.",
+        "howToTitle": "Cómo diseñar packaging con Curify",
+        "howTo": [
+          "Elige una plantilla de packaging —caja, etiqueta, bolsa, botella cosmética o caja de regalo.",
+          "Describe el producto y la marca, o sube tu logo y diseño.",
+          "Curify genera un concepto de packaging con materiales, iluminación y acabados realistas.",
+          "Descarga el mockup para tu presentación, listado de marketplace o especificación del fabricante."
+        ],
+        "usesTitle": "Qué puedes crear",
+        "uses": [
+          "Diseños de cajas y cartones",
+          "Conceptos de etiquetas y bolsas",
+          "Mockups de botellas cosméticas y de bebidas",
+          "Presentaciones de cajas de regalo y cestas",
+          "Packaging para alimentos y bebidas",
+          "Mockups de packaging de marca con tu logo"
+        ],
+        "faqTitle": "Preguntas Frecuentes sobre Packaging",
+        "faq": [
+          {
+            "q": "¿Puedo poner mi propio logo o diseño en el packaging?",
+            "a": "Sí — varias plantillas te permiten subir tu diseño para que aparezca en la caja, etiqueta o botella renderizada."
+          },
+          {
+            "q": "¿Son los mockups lo suficientemente realistas para una presentación a un cliente?",
+            "a": "Sí — el packaging se renderiza con materiales, iluminación y acabados realistas, por lo que parece una foto de producto real en presentaciones y listados."
+          },
+          {
+            "q": "¿Puedo usar esto para una especificación de fábrica o fabricación?",
+            "a": "Los conceptos son ideales para comunicar la intención. Los troqueles listos para imprimir aún provienen de tu fabricante, pero la imagen muestra exactamente lo que quieres."
+          },
+          {
+            "q": "¿Qué tipos de packaging puedo diseñar?",
+            "a": "Cajas y cartones, etiquetas, bolsas, botellas cosméticas y de bebidas, cajas de regalo y packaging para alimentos y bebidas."
+          }
+        ]
+      }
     },
     "ecommerce": {
       "displayName": "Ecommerce",
@@ -1624,7 +1827,49 @@
         "flat-lay",
         "shopify",
         "dtc"
-      ]
+      ],
+      "format": {
+        "lead": "Los elementos visuales de ecommerce deciden si un comprador hace clic y compra. Curify convierte una sola foto de producto —o simplemente una descripción— en un set completo para un anuncio: fotos de producto principales con fondo blanco limpio, escenas de estilo de vida y con modelo, e infografías de detalle tipo Amazon de seis cuadrículas y desplazamiento largo. Sin estudio, sin fotógrafo, sin equipo de diseño.",
+        "howToTitle": "Cómo Curify crea tus imágenes de ecommerce",
+        "howTo": [
+          "Sube la foto de tu producto, o describe el producto y la marca.",
+          "Elige el visual que necesitas —foto principal del anuncio, escena de estilo de vida, prueba con modelo, o una infografía de detalle de seis cuadrículas.",
+          "Curify renderiza el producto, la iluminación, los modelos y el diseño a un estándar listo para el anuncio.",
+          "Descarga con el tamaño adecuado para Amazon, Shopify, TikTok Shop, o tu propia tienda."
+        ],
+        "usesTitle": "Qué puedes crear para tu tienda",
+        "uses": [
+          "Imágenes principales de anuncio con fondo blanco",
+          "Escenas de estilo de vida y de producto en contexto",
+          "Infografías de detalle A+ de seis cuadrículas y desplazamiento largo tipo Amazon",
+          "Fotos con modelo y de prueba de atuendos para moda",
+          "Banners promocionales, etiquetas de precio y creatividades publicitarias",
+          "Mockups de packaging y producto"
+        ],
+        "faqTitle": "Preguntas Frecuentes sobre Ecommerce",
+        "faq": [
+          {
+            "q": "¿Puedo usar mi propia foto de producto?",
+            "a": "Sí — sube tu producto y Curify crea la toma, escena o cuadrícula de detalle alrededor del artículo real para que se mantenga fiel a lo que vendes."
+          },
+          {
+            "q": "¿Están formateados para listados de Amazon y Shopify?",
+            "a": "Sí. Plantillas como las infografías de seis cuadrículas y desplazamiento largo siguen los diseños de detalle principales y A+ que los marketplaces esperan."
+          },
+          {
+            "q": "¿Necesito un fotógrafo o estudio?",
+            "a": "No. Curify renderiza el producto, la iluminación, el fondo e incluso las tomas con modelo a partir de una descripción o de tu foto."
+          },
+          {
+            "q": "¿Puedo mostrar el producto en un modelo?",
+            "a": "Sí — las plantillas de moda y prueba colocan prendas y accesorios en un modelo sin necesidad de una sesión de fotos."
+          },
+          {
+            "q": "¿Las imágenes coincidirán con mi marca?",
+            "a": "Describe el estilo de tu marca, o sube diseños y packaging, y los elementos visuales se renderizan para que coincidan con tus colores y tono."
+          }
+        ]
+      }
     },
     "showcase": {
       "displayName": "Showcase",
@@ -1652,7 +1897,40 @@
         "brand-book",
         "color-system",
         "typography"
-      ]
+      ],
+      "format": {
+        "lead": "Los tableros de identidad de marca unifican el aspecto de una marca en un sistema visual — dirección del logo, colores, tipografía y ambiente. Curify explora un tablero de marca cohesivo a partir de tu informe, para que una idea de marca se convierta en algo que puedas ver.",
+        "howToTitle": "Cómo hacer un tablero de marca",
+        "howTo": [
+          "Elige una plantilla de identidad de marca o moodboard.",
+          "Describe la marca — nombre, sensación y audiencia.",
+          "Genera un sistema visual y una dirección cohesivos.",
+          "Refina la dirección y vuelve a generar, o aplícala a mockups."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Moodboards de marca y sistemas visuales",
+          "Dirección de logo y color",
+          "Tableros de presentación VI completos",
+          "Vistas previas de empaques y aplicaciones",
+          "Visuales para presentaciones de marca y decks"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre tableros de marca",
+        "faq": [
+          {
+            "q": "¿Necesito habilidades de diseño?",
+            "a": "No. Describe la marca y Curify explora una dirección visual coherente — colores, tipografía, ambiente y aplicaciones."
+          },
+          {
+            "q": "¿Es este un logo final?",
+            "a": "Es una dirección y un sistema visual para alinear; puedes iterar y luego aplicar el aspecto a mockups y empaques."
+          },
+          {
+            "q": "¿Puedo presentarlo a un cliente?",
+            "a": "Sí — los tableros están diseñados para parecer una presentación de marca profesional."
+          }
+        ]
+      }
     },
     "naruto": {
       "displayName": "Naruto",
@@ -1979,7 +2257,40 @@
         "文创周边",
         "周边设计"
       ],
-      "displayName": "Merch y Stickers"
+      "displayName": "Merch y Stickers",
+      "format": {
+        "lead": "El merchandising convierte un personaje, marca o idea en productos vendibles — paquetes de stickers, ropa, cajas de regalo y familias de productos completas. Curify renderiza mockups de merchandising profesionales y arte de producto a partir de tu concepto.",
+        "howToTitle": "Cómo hacer merchandising",
+        "howTo": [
+          "Elige una plantilla de merchandising — paquete de stickers, ropa, caja de regalo o set completo.",
+          "Describe el personaje o la marca, o sube tu diseño.",
+          "Genera un mockup de merchandising realista o una hoja de producto.",
+          "Descarga para tu tienda, listado o informe de fábrica."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Paquetes de stickers y hojas troqueladas",
+          "Mockups de ropa y accesorios",
+          "Cajas de regalo y sets de papelería",
+          "Productos de IP y personajes",
+          "Hojas completas de SKU / familia de productos"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre merchandising",
+        "faq": [
+          {
+            "q": "¿Está listo para impresión bajo demanda?",
+            "a": "Sí — muchas plantillas generan activos listos para imprimir, troquelar o listar para POD y marketplaces como Etsy."
+          },
+          {
+            "q": "¿Puedo poner mi propio personaje o logo en él?",
+            "a": "Sí, varias plantillas te permiten subir tu diseño para que aparezca en el producto."
+          },
+          {
+            "q": "¿Puedo hacer una línea de productos completa?",
+            "a": "Sí — construye un conjunto consistente de productos alrededor de un personaje o marca."
+          }
+        ]
+      }
     },
     "asl": {
       "displayName": "ASL · Lengua de Señas Americana",
@@ -2011,13 +2322,87 @@
       ]
     },
     "infographic": {
-      "displayName": "Infografías"
+      "displayName": "Infografías",
+      "format": {
+        "lead": "Las infografías convierten información densa — datos, pasos, comparaciones, líneas de tiempo — en un único visual escaneable. En Curify describes el tema y obtienes una infografía terminada y de marca en segundos, sin necesidad de habilidades de diseño o de escritura de prompts.",
+        "howToTitle": "Cómo hacer una infografía",
+        "howTo": [
+          "Elige una plantilla de infografía a continuación, o empieza con tu propio tema.",
+          "Rellena tu tema, puntos clave e idioma — Curify planifica el diseño por ti.",
+          "Genera; la IA organiza el texto, los iconos y el color en una composición limpia.",
+          "Descarga la imagen de alta resolución, o ajusta cualquier detalle y vuelve a generar."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Explicaciones educativas y resúmenes de estudio",
+          "Diagramas de negocios, procesos y cómo funciona",
+          "Tarjetas de información cultural, gastronómica y de viajes",
+          "Visualizaciones de datos y estadísticas",
+          "Pósteres de aprendizaje bilingües (EN–ZH)"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre infografías",
+        "faq": [
+          {
+            "q": "¿Necesito habilidades de diseño para hacer una infografía?",
+            "a": "No. Curify maneja automáticamente el diseño, la jerarquía, los iconos y el color — tú proporcionas el tema y los puntos clave, y la IA compone una infografía terminada."
+          },
+          {
+            "q": "¿Puedo hacer infografías bilingües?",
+            "a": "Sí. Muchas plantillas admiten pares de idiomas inglés-chino y otros, por lo que la misma infografía se renderiza en dos idiomas a la vez."
+          },
+          {
+            "q": "¿Qué resolución obtengo?",
+            "a": "Las infografías se exportan como imágenes de alta resolución adecuadas para compartir en redes sociales o imprimir como pósteres."
+          }
+        ]
+      }
     },
     "anatomy": {
       "displayName": "Anatomía"
     },
     "comic": {
-      "displayName": "Cómic"
+      "displayName": "Cómic",
+      "title": "Prompts, Plantillas e Inspiración para Cómics y Manga",
+      "description": "Crea tiras cómicas, páginas de manga e introducciones de personajes con IA — diseños de múltiples paneles, arte expresivo y puntos clave de la historia, sin necesidad de habilidades de dibujo.",
+      "intro": "Explora plantillas de cómics y manga con IA para convertir un personaje, un chiste o una historia en paneles terminados. Ya sea que estés creando una tira de memes, una página estilo manga, una presentación de introducción de personajes o una historia visual corta, estas plantillas se encargan del diseño, el panelado y el estilo artístico para que puedas concentrarte en la historia.",
+      "keywords": [
+        "manga",
+        "tira cómica",
+        "webtoon"
+      ],
+      "format": {
+        "lead": "Los cómics y el manga convierten una historia o un chiste en paneles secuenciales con personajes expresivos. Curify organiza los paneles, el arte y el flujo a partir de tu idea — no se requiere dibujar.",
+        "howToTitle": "Cómo hacer un cómic",
+        "howTo": [
+          "Elige una plantilla de cómic o manga.",
+          "Describe tus personajes y los puntos clave de la historia o el remate.",
+          "Genera una página terminada de múltiples paneles.",
+          "Descarga para compartir o imprimir, o ajusta y vuelve a generar."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Tiras cómicas de múltiples paneles",
+          "Páginas estilo manga",
+          "Presentaciones de introducción de personajes",
+          "Cómics de memes y chistes",
+          "Historias visuales cortas"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre cómics",
+        "faq": [
+          {
+            "q": "¿Necesito dibujar?",
+            "a": "No. Tú proporcionas los personajes y la historia; Curify se encarga del panelado, el arte y el rotulado."
+          },
+          {
+            "q": "¿Puedo mantener un personaje consistente en todos los paneles?",
+            "a": "Sí — las plantillas mantienen el aspecto de un personaje en todos los paneles de una página."
+          },
+          {
+            "q": "¿Puedo imprimir el cómic?",
+            "a": "Sí, las páginas se exportan en alta resolución para compartir o imprimir."
+          }
+        ]
+      }
     },
     "step-by-step-tutorial": {
       "displayName": "Tutoriales Paso a Paso"
@@ -2026,16 +2411,148 @@
       "displayName": "Ilustración"
     },
     "flashcards": {
-      "displayName": "Tarjetas de Estudio"
+      "displayName": "Tarjetas de Estudio",
+      "format": {
+        "lead": "Las flashcards hacen que el vocabulario, los hechos y los conceptos sean fáciles de aprender de un vistazo. Curify genera tarjetas ilustradas, a menudo bilingües, a partir de tu lista de palabras o tema — listas para estudiar, imprimir o compartir.",
+        "howToTitle": "Cómo hacer flashcards",
+        "howTo": [
+          "Elige una plantilla de flashcard para tu tema o par de idiomas.",
+          "Introduce tus palabras, términos o tema — la IA ilustra cada tarjeta.",
+          "Genera un conjunto consistente de tarjetas listas para estudiar.",
+          "Descarga o imprime el mazo, o descarga un paquete PDF."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Tarjetas de vocabulario e idiomas (EN–ZH y más)",
+          "Tarjetas de hechos de ciencia, historia y biología",
+          "Mazos de aprendizaje y fonética para niños",
+          "Hojas de estudio para exámenes y repaso",
+          "Material imprimible para el aula"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre flashcards",
+        "faq": [
+          {
+            "q": "¿Son bilingües las flashcards?",
+            "a": "Muchas lo son — las plantillas de idiomas emparejan inglés con chino, francés, japonés, coreano, español y más."
+          },
+          {
+            "q": "¿Puedo imprimir un mazo completo?",
+            "a": "Sí. Los conjuntos se exportan como imágenes y varias plantillas ofrecen un paquete PDF descargable listo para imprimir."
+          },
+          {
+            "q": "¿Puedo usar mi propia lista de palabras?",
+            "a": "Sí — introduce tus términos y Curify ilustra y organiza cada tarjeta por ti."
+          }
+        ]
+      }
     },
     "recipes": {
-      "displayName": "Recetas"
+      "displayName": "Recetas",
+      "format": {
+        "lead": "Las tarjetas de recetas hacen que un plato luzca apetitoso y fácil de seguir — ingredientes, pasos y una imagen principal en una tarjeta ordenada. Curify diseña una hermosa tarjeta de receta a partir de tu receta.",
+        "howToTitle": "Cómo hacer una tarjeta de receta",
+        "howTo": [
+          "Elige una plantilla de tarjeta de receta.",
+          "Introduce el plato, los ingredientes y los pasos.",
+          "Genera una tarjeta ilustrada y fácil de seguir.",
+          "Descarga o imprime, o guarda un paquete de recetas."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Tarjetas de recetas ilustradas",
+          "Guías de cocina y platos",
+          "Tarjetas de consejos de comida y cocina",
+          "Tarjetas de presentación estilo menú",
+          "Colecciones de recetas imprimibles"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre tarjetas de recetas",
+        "faq": [
+          {
+            "q": "¿Puedo usar mi propia receta?",
+            "a": "Sí — introduce tus ingredientes y pasos y Curify diseña la tarjeta alrededor de ellos."
+          },
+          {
+            "q": "¿Puedo imprimir tarjetas de recetas?",
+            "a": "Sí, las tarjetas se exportan en alta resolución, adecuadas para imprimir o para un archivador de recetas."
+          },
+          {
+            "q": "¿Puedo hacer una colección completa?",
+            "a": "Sí — construye un conjunto de tarjetas a juego, y varias plantillas ofrecen un paquete descargable."
+          }
+        ]
+      }
     },
     "mind-maps": {
-      "displayName": "Mapas Mentales"
+      "displayName": "Mapas Mentales",
+      "format": {
+        "lead": "Los mapas mentales ramifican una idea central en conceptos conectados — perfectos para explicar una estructura, una ontología o un tema de estudio de un vistazo. Curify genera un mapa mental claro e ilustrado a partir de tu tema.",
+        "howToTitle": "Cómo hacer un mapa mental",
+        "howTo": [
+          "Elige una plantilla de mapa mental.",
+          "Introduce tu tema central y sus ramas.",
+          "Genera un mapa claro, conectado e ilustrado.",
+          "Descarga para estudiar, presentar o imprimir."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Mapas de estudio y repaso",
+          "Mapas de conceptos y ontología",
+          "Mapas de estructura de animales y ciencia",
+          "Mapas de lluvia de ideas y planificación",
+          "Diagramas explicativos educativos"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre mapas mentales",
+        "faq": [
+          {
+            "q": "¿Puedo definir mis propias ramas?",
+            "a": "Sí — introduce el tema central y las ramas, y Curify organiza e ilustra el mapa."
+          },
+          {
+            "q": "¿Cuántas ramas puede mostrar?",
+            "a": "Las plantillas manejan varios niveles de ramas manteniendo el mapa legible de un vistazo."
+          },
+          {
+            "q": "¿Puedo imprimirlo o presentarlo?",
+            "a": "Sí, los mapas mentales se exportan en alta resolución para diapositivas, folletos o impresión mural."
+          }
+        ]
+      }
     },
     "study-sheets": {
-      "displayName": "Hojas de Estudio"
+      "displayName": "Hojas de Estudio",
+      "format": {
+        "lead": "Las hojas de estudio y los cuadernos de trabajo condensan un tema en una página lista para practicar — ejercicios de vocabulario, ejercicios y resúmenes de repaso. Curify construye una hoja de trabajo limpia e imprimible a partir de tu tema en segundos.",
+        "howToTitle": "Cómo hacer una hoja de estudio",
+        "howTo": [
+          "Elige una plantilla de hoja de estudio o cuaderno de trabajo.",
+          "Introduce tu tema, términos o preguntas.",
+          "Genera una hoja organizada e ilustrada.",
+          "Descárgala o imprímela, o consigue un paquete PDF."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Práctica de vocabulario e idiomas",
+          "Hojas de estudio para exámenes y repaso",
+          "Cuadernos de aprendizaje y fonética para niños",
+          "Resúmenes de trucos por asignatura",
+          "Material imprimible para el aula"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre hojas de estudio",
+        "faq": [
+          {
+            "q": "¿Puedo imprimir las hojas de estudio?",
+            "a": "Sí — se exportan en alta resolución y varias plantillas ofrecen un paquete PDF descargable listo para imprimir."
+          },
+          {
+            "q": "¿Puedo usar mi propio contenido?",
+            "a": "Sí. Introduce tus términos o preguntas y Curify organiza e ilustra la hoja por ti."
+          },
+          {
+            "q": "¿Se admiten hojas bilingües?",
+            "a": "Muchas lo son — las plantillas de idiomas emparejan inglés con chino y otros idiomas en la misma hoja."
+          }
+        ]
+      }
     },
     "art-prints": {
       "displayName": "Impresiones de Arte"
@@ -2047,16 +2564,165 @@
       "displayName": "Memes"
     },
     "social-media-posts": {
-      "displayName": "Publicaciones en Redes Sociales"
+      "displayName": "Publicaciones en Redes Sociales",
+      "format": {
+        "lead": "Las publicaciones y carruseles para redes sociales convierten una idea en diapositivas que detienen el scroll y son de marca para Instagram, RedNote o TikTok. Curify diseña una publicación cohesiva de múltiples diapositivas a partir de tu tema.",
+        "howToTitle": "Cómo hacer una publicación para redes sociales",
+        "howTo": [
+          "Elige una plantilla de publicación social o carrusel.",
+          "Añade tu tema, puntos clave y cualquier nombre.",
+          "Genera un conjunto de diapositivas a juego, listas para publicar.",
+          "Descarga y publica, o refina y vuelve a generar."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Carruseles de Instagram y RedNote",
+          "Publicaciones de consejos, instructivos y listas",
+          "Publicaciones de productos y promociones",
+          "Publicaciones de citas y memes",
+          "Publicaciones de eventos y anuncios"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre publicaciones sociales",
+        "faq": [
+          {
+            "q": "¿Puedo hacer un carrusel de múltiples diapositivas?",
+            "a": "Sí — las plantillas de carrusel generan un conjunto de diapositivas a juego que se leen como una publicación cohesiva."
+          },
+          {
+            "q": "¿Las publicaciones están dimensionadas para plataformas sociales?",
+            "a": "Sí, los resultados están formateados para feeds y stories sociales, por lo que están listos para subir."
+          },
+          {
+            "q": "¿Necesito habilidades de diseño?",
+            "a": "No. Elige una plantilla, añade tus puntos y Curify se encarga del diseño y el estilo."
+          }
+        ]
+      }
     },
     "stickers": {
-      "displayName": "Calcomanías"
+      "displayName": "Calcomanías",
+      "format": {
+        "lead": "Los paquetes de stickers convierten un personaje, mascota o idea en un conjunto de diseños expresivos y listos para troquelar. Curify genera una hoja completa de stickers a juego que puedes compartir, vender o imprimir.",
+        "howToTitle": "Cómo hacer un paquete de stickers",
+        "howTo": [
+          "Elige una plantilla de stickers — mascotas, hojas de emojis, paquetes chibi y más.",
+          "Describe tu personaje o sube una referencia para basarte en ella.",
+          "Genera una hoja completa de poses y expresiones de stickers a juego.",
+          "Descarga como imágenes, o llévalas a archivos troquelados listos para imprimir."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Hojas de stickers de personajes y mascotas",
+          "Paquetes de emojis y expresiones",
+          "Sets de stickers chibi y kawaii",
+          "Colecciones de IP y fan-art",
+          "Productos de stickers para impresión bajo demanda y Etsy"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre stickers",
+        "faq": [
+          {
+            "q": "¿Puedo hacer un conjunto completo a juego a la vez?",
+            "a": "Sí. Las plantillas de stickers generan una hoja completa de poses y expresiones consistentes, no solo una imagen individual."
+          },
+          {
+            "q": "¿Puedo vender los stickers?",
+            "a": "Los resultados de stickers de Curify están diseñados para impresión bajo demanda y marketplaces como Etsy — muchos incluyen opciones listas para troquelar."
+          },
+          {
+            "q": "¿Puedo basar los stickers en mi propio personaje?",
+            "a": "Sí — varias plantillas te permiten subir una referencia para que el conjunto se base en tu mascota o diseño."
+          }
+        ]
+      }
     },
     "mascots": {
-      "displayName": "Mascotas"
+      "displayName": "Mascotas",
+      "title": "Prompts, Plantillas e Inspiración para el Diseño de Mascotas",
+      "description": "Diseña mascotas de marca y personajes con IA — un personaje amigable y propio en poses consistentes, listo para stickers, merchandising y aplicaciones.",
+      "intro": "Explora plantillas de diseño de mascotas con IA para darle a una marca, equipo o producto una cara memorable. Describe la personalidad y obtén una mascota renderizada en un estilo consistente en poses y expresiones — lista para convertirse en stickers, merchandising y aplicaciones de marca.",
+      "keywords": [
+        "diseño de mascota",
+        "personaje de marca",
+        "mascota kawaii"
+      ],
+      "format": {
+        "lead": "Las mascotas le dan a una marca, equipo o producto una cara memorable y propia. Curify diseña una mascota con un estilo consistente en poses y expresiones, lista para stickers, merchandising y aplicaciones.",
+        "howToTitle": "Cómo diseñar una mascota",
+        "howTo": [
+          "Elige una plantilla de diseño de mascota.",
+          "Describe la personalidad, la marca y el estilo.",
+          "Genera una mascota en poses y expresiones consistentes.",
+          "Conviértela en stickers, merchandising o aplicaciones de marca."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Mascotas de marca y equipo",
+          "Personajes kawaii y chibi",
+          "Hojas de poses y expresiones de mascotas",
+          "Sets de stickers y emojis",
+          "Aplicaciones de merchandising y empaque"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre mascotas",
+        "faq": [
+          {
+            "q": "¿Puedo mantener la mascota consistente?",
+            "a": "Sí — las plantillas mantienen un modelo de mascota en todas las poses y expresiones para que el conjunto luzca unificado."
+          },
+          {
+            "q": "¿Puedo basarlo en mi marca?",
+            "a": "Sí — describe la marca y el estilo, o sube una referencia, y la mascota se construye alrededor de ello."
+          },
+          {
+            "q": "¿Puedo usarlo en productos?",
+            "a": "Sí — las mascotas están diseñadas para aplicarse a stickers, merchandising y empaques."
+          }
+        ]
+      }
     },
     "character-ip": {
-      "displayName": "IP de Personaje"
+      "displayName": "IP de Personaje",
+      "title": "Prompts, Plantillas e Inspiración para Diseño de Personajes e IP",
+      "description": "Diseña personajes originales e IP con IA — hojas de modelo, giros, hojas de expresiones, mascotas y poses listas para merchandising, todo consistente en el conjunto.",
+      "intro": "Explora plantillas de diseño de personajes e IP con IA para construir un personaje original desde cero o expandirlo a un conjunto completo de activos. Desde hojas de modelo y giros hasta hojas de expresiones, poses para stickers y mockups de merchandising, estas plantillas mantienen el personaje consistente en cada salida.",
+      "keywords": [
+        "hoja de personaje",
+        "personaje original",
+        "diseño de IP",
+        "mascota"
+      ],
+      "format": {
+        "lead": "El diseño de personajes convierte una idea en un personaje propio — con un modelo, expresiones y poses consistentes que puedes reutilizar en stickers, cómics y merchandising. Curify genera todo el conjunto a partir de una descripción o referencia.",
+        "howToTitle": "Cómo diseñar un personaje",
+        "howTo": [
+          "Elige una plantilla de diseño de personaje — hoja de modelo, giro o conjunto de expresiones.",
+          "Describe tu personaje, o sube una referencia para basarte en ella.",
+          "Genera un conjunto consistente de vistas y poses.",
+          "Reutiliza el personaje en stickers, cómics y merchandising."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Hojas de modelo y giros de personajes",
+          "Hojas de expresiones y poses",
+          "Diseños de personaje original (OC) e IP",
+          "Poses de mascota y listas para stickers",
+          "Mockups de merchandising y productos del personaje"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre diseño de personajes",
+        "faq": [
+          {
+            "q": "¿Puedo mantener el personaje consistente en todas las salidas?",
+            "a": "Sí — ese es el objetivo: las plantillas mantienen un modelo de personaje en poses, expresiones y aplicaciones."
+          },
+          {
+            "q": "¿Puedo basar un personaje en mi propio arte o foto?",
+            "a": "Sí, varias plantillas te permiten subir una referencia para que el conjunto se construya a partir de tu diseño."
+          },
+          {
+            "q": "¿Puedo usar el personaje comercialmente?",
+            "a": "Los resultados están diseñados para uso de IP y merchandising — stickers, impresión bajo demanda y aplicaciones de marca."
+          }
+        ]
+      }
     },
     "fan-art": {
       "displayName": "Arte de Fans"
@@ -2090,6 +2756,96 @@
     },
     "narrative-comic": {
       "displayName": "Cómics Narrativos"
+    },
+    "mood-board": {
+      "displayName": "Mood Boards",
+      "title": "Prompts, Plantillas e Inspiración para Mood Boards",
+      "description": "Crea mood boards y tableros de dirección visual con IA — colores, texturas, tipografía e imágenes unificadas en una estética cohesiva para una marca, producto o proyecto.",
+      "intro": "Explora plantillas de mood board con IA para definir un estilo antes de construir. Describe una marca, producto o ambiente y obtén un tablero cohesivo de colores, texturas, tipografía e imágenes de referencia — el primer paso de cualquier proyecto de diseño o branding, generado en segundos.",
+      "keywords": [
+        "moodboard",
+        "dirección visual",
+        "tablero estético",
+        "ambiente de marca"
+      ],
+      "format": {
+        "lead": "Los mood boards definen un estilo antes de construir — colores, texturas, tipografía e imágenes en una estética cohesiva. Curify explora un mood board para una marca, producto o ambiente a partir de tu informe.",
+        "howToTitle": "Cómo hacer un mood board",
+        "howTo": [
+          "Elige una plantilla de mood board.",
+          "Describe la marca, el producto o la sensación que buscas.",
+          "Genera un tablero cohesivo de colores, texturas e imágenes.",
+          "Refina la dirección y vuelve a generar, o aplícala a los diseños."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Mood boards de marca y producto",
+          "Dirección estética y de ambiente",
+          "Exploración de color y textura",
+          "Mood boards de interiores y moda",
+          "Tableros de presentación y concepto"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre mood boards",
+        "faq": [
+          {
+            "q": "¿Necesito habilidades de diseño?",
+            "a": "No. Describe la sensación y Curify ensambla un tablero coherente de colores, texturas e imágenes de referencia."
+          },
+          {
+            "q": "¿Puedo usarlo para una presentación a un cliente?",
+            "a": "Sí — los tableros están diseñados para presentar una dirección visual clara."
+          },
+          {
+            "q": "¿Puedo convertir la dirección en diseños?",
+            "a": "Sí — usa la paleta y el ambiente del tablero como el informe para logos, empaques o mockups de productos."
+          }
+        ]
+      }
+    },
+    "industrial-design": {
+      "displayName": "Diseño Industrial",
+      "title": "Prompts, Plantillas e Inspiración para Diseño Industrial",
+      "description": "Crea conceptos de diseño industrial con IA — tableros de concepto de producto, hojas de presentación y bocetos de concepto que hacen que una idea luzca diseñada y construible.",
+      "intro": "Explora plantillas de diseño industrial con IA para convertir una idea de producto en un concepto diseñado. Desde bocetos de concepto y tableros de presentación hasta diseños estilo especificación, estas plantillas renderizan un producto con materiales, forma y contexto para que un concepto luzca hecho en estudio — útil para presentaciones, decks e informes de fábrica.",
+      "keywords": [
+        "diseño de producto",
+        "tablero de concepto",
+        "concepto de producto",
+        "boceto de diseño"
+      ],
+      "format": {
+        "lead": "El diseño industrial convierte una idea de producto en un concepto diseñado y construible — bocetos de concepto, tableros de presentación y diseños estilo especificación. Curify lo renderiza con materiales, forma y contexto a partir de tu informe.",
+        "howToTitle": "Cómo hacer un concepto de diseño industrial",
+        "howTo": [
+          "Elige una plantilla de diseño industrial — boceto de concepto o tablero de presentación.",
+          "Describe el producto, los materiales y el caso de uso.",
+          "Genera un concepto con calidad de estudio con forma y contexto.",
+          "Descarga para tu pitch deck, portafolio o informe de fábrica."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Tableros de concepto de producto",
+          "Bocetos de concepto e ideación",
+          "Diseños de presentación y estilo especificación",
+          "Exploración de materiales y acabados",
+          "Visuales para pitch y portafolio"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre diseño industrial",
+        "faq": [
+          {
+            "q": "¿Necesito software CAD o 3D?",
+            "a": "No. Curify renderiza el concepto de producto, los materiales y el contexto a partir de una descripción."
+          },
+          {
+            "q": "¿Es este un diseño de producción final?",
+            "a": "Es un concepto y una presentación — una dirección diseñada para alinear e iterar, no un archivo de fabricación."
+          },
+          {
+            "q": "¿Puedo presentarlo a un cliente o fábrica?",
+            "a": "Sí — los tableros están diseñados para parecer una presentación de diseño profesional."
+          }
+        ]
+      }
     }
   },
   "topicPage": {
@@ -2097,6 +2853,7 @@
     "exampleImagesHeading": "Imágenes de ejemplo",
     "templatesHeading": "Plantillas",
     "exploreMoreHeading": "Explorar más",
-    "subTopicsHeading": "Por categoría"
+    "subTopicsHeading": "Por categoría",
+    "furtherExplorationHeading": "Explorar más"
   }
 }

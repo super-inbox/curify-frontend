@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
-import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import TopicStrip from "@/app/[locale]/_components/TopicStrip";
 import TopicFormatContent, {
   type TopicFormatContent as FormatContent,
@@ -25,7 +24,10 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic, getTopicNavList } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getFurtherExplorationTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic, getTopicNavList } from "@/lib/topicRegistry";
+import { getTopicWorkbenchPreset } from "@/lib/topic_workbench";
+import ImageWorkbench from "@/app/[locale]/_components/ImageWorkbench";
+import BrandWorkflow from "@/app/[locale]/_components/BrandWorkflow";
 import TopSearchSuggestions from "./TopSearchSuggestions";
 import SearchRedirectTracker from "./SearchRedirectTracker";
 
@@ -306,30 +308,21 @@ export default async function Page({ params }: Props) {
   // entries). Without this, sections like "Explore More" / "Browse by
   // Category" render an empty h2 above zero chips — see WC pages
   // pre-2026-06-04 where tier3.world-cup had 12 unlocalized editions.
-  const relatedTopicIds = getRelatedTopics(slug).filter((id) => isLocalizedTopic(id));
+  // "Further exploration" row at the top: a topic-SPECIFIC set (next-tier
+  // children → siblings → co-occurring topics) that reframes navigation around
+  // where THIS topic leads, instead of repeating the global entry-bar list (now
+  // hidden on /topics/* — see SiteTopBar). Prefer the curated manual related
+  // links when present, then fill/extend with the derived set, capped.
+  const furtherTopicIds = Array.from(
+    new Set([...getRelatedTopics(slug), ...getFurtherExplorationTopics(slug)])
+  )
+    .filter((id) => id !== slug && isLocalizedTopic(id))
+    .slice(0, 6);
 
-  const parentTopicId = getParentTopic(slug);
+  // Commerce topics (merch / product / ecommerce) open a use-case-scoped
+  // 3-column image workbench at the top of the page.
+  const workbenchPreset = getTopicWorkbenchPreset(slug);
 
-  // Resolve the Tier 1 ancestor for this page (itself if Tier 1, parent if Tier 2, Tier 1 root if Tier 3 tag)
-  const tier1Ancestor = getTier1Ancestor(slug);
-
-  // Tier 2 navigational subtopics — shown at top on all tiers
-  const navSubTopics = (tier1Ancestor ? getNavigationalChildren(tier1Ancestor) : [])
-    .filter((id) => isLocalizedTopic(id));
-
-  // Tier 3 tag subtopics — shown at bottom on all tiers. Filtered by
-  // isLocalizedTopic so unlocalized tier-3 vocabulary entries (e.g.,
-  // tier3.world-cup's 12 tournament editions that intentionally stay
-  // vocabulary-only per the i18n-gating rule) don't show an empty
-  // section header.
-  const tagSubTopics = (tier1Ancestor
-    ? getTagChildren(tier1Ancestor).filter((id) => id !== slug)
-    : []
-  ).filter((id) => isLocalizedTopic(id));
-
-  const subTopicsHeading = !!parentTopicId
-    ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"
-    : translateTopics("topicPage.subTopicsHeading") || "Browse by Category";
 
   return (
     <main className="min-h-screen">
@@ -352,24 +345,32 @@ export default async function Page({ params }: Props) {
             <p className="sr-only whitespace-pre-line">{topicIntro}</p>
           ) : null}
 
-          {relatedTopicIds.length > 0 && (
+          {/* "Explore further" — topic-specific next-tier + co-occurrence topics,
+              rendered with the same TopicStrip tile UI as the entry bar. Uses
+              requireThumbnail=false so hand-derived format topics (art-prints,
+              illustration…) that lack a manifest thumbnail still show as tiles.
+              This replaces the old bottom "Explore More" strip. */}
+          {furtherTopicIds.length > 0 && (
             <div className="mt-4">
-              <TopicNavRow
+              <TopicStrip
                 locale={localeStr}
-                allTopics={getTopicNavList()}
-                topics={relatedTopicIds}
-                activeTopic={slug}
-                showDisabled={false}
-                size="small"
+                heading={
+                  translateTopics("topicPage.furtherExplorationHeading") ||
+                  "Explore further"
+                }
+                trackPrefix={`topic-explore-further:${slug}`}
+                requireThumbnail={false}
+                singleRow
+                items={furtherTopicIds.map((subSlug) => ({
+                  slug: subSlug,
+                  path: resolveTopicPath(subSlug),
+                  label:
+                    translateTopics(`topics.${subSlug}.displayName`) ||
+                    titleCaseFromSlug(subSlug),
+                }))}
               />
             </div>
           )}
-
-          {/* tier-2 navSubTopics moved into the bottom unified topic
-              strip (merged with tagSubTopics) per 2026-06-29 operator
-              ask. The page now leads with the related-topics chip row
-              + the content, and the merged sub-topics block sits at
-              the bottom as a single browse surface. */}
         </div>
       </section>
 
@@ -394,6 +395,20 @@ export default async function Page({ params }: Props) {
           />
         </section>
       ) : null}
+
+      {/* "Start a workflow" — placed BELOW the example grid so the page leads
+          with visuals; the workbench/brand-workflow is the do-it-yourself CTA
+          after the user has scanned examples. Commerce topics (merch / product /
+          ecommerce) get the use-case-scoped 3-column upload workbench; the brand
+          topic gets its bespoke 5-step generative ladder. */}
+      {(workbenchPreset || slug === "branding") && (
+        <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
+          {workbenchPreset && (
+            <ImageWorkbench locale={localeStr} preset={workbenchPreset} />
+          )}
+          {slug === "branding" && <BrandWorkflow locale={localeStr} />}
+        </section>
+      )}
 
       {galleryPrompts.length > 0 && (
         <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
@@ -438,35 +453,9 @@ export default async function Page({ params }: Props) {
           Below the template feed so the page still leads with visuals. */}
       <TopicFormatContent content={formatContent} displayName={topicDisplayName} />
 
-      {(() => {
-        // Merge tier-2 navSubTopics + tier-3 tagSubTopics into ONE
-        // unified TopicStrip block at the bottom per 2026-06-29
-        // operator ask. Dedupe by slug; preserve tier-2-first ordering
-        // since the tier-2 items are the canonical landing categories
-        // and tier-3 items are subject sub-tags under them.
-        const merged: string[] = [];
-        const seen = new Set<string>([slug]);
-        for (const id of [...navSubTopics, ...tagSubTopics]) {
-          if (seen.has(id)) continue;
-          seen.add(id);
-          merged.push(id);
-        }
-        if (merged.length === 0) return null;
-        return (
-          <section className="mx-auto max-w-[1600px] px-4 pb-16 sm:px-6 lg:px-8">
-            <TopicStrip
-              locale={localeStr}
-              heading={subTopicsHeading}
-              trackPrefix={`topic-bottom-strip:${slug}`}
-              items={merged.map((subSlug) => ({
-                slug: subSlug,
-                path: resolveTopicPath(subSlug),
-                label: translateTopics(`topics.${subSlug}.displayName`) || titleCaseFromSlug(subSlug),
-              }))}
-            />
-          </section>
-        );
-      })()}
+      {/* The old bottom "Explore More" / "Browse by Category" strip (tier-2
+          navSubTopics + tier-3 tagSubTopics) was removed: the top "Explore
+          further" row now covers that same next-tier exploration. */}
 
       {/* Top-query suggestions — rendered at the bottom of the page so they
           act as exploration prompts AFTER the user has scanned the content

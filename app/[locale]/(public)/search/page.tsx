@@ -43,7 +43,7 @@ import {
   type ScoredCandidate,
 } from "@/lib/relevanceScorer";
 import { TOTAL_CANDIDATE_POOL_CAP, PATH_CANDIDATE_CAP } from "@/lib/relevanceScorerConfig";
-import { subjectUnits } from "@/lib/searchSubject";
+import { subjectUnits, FORMAT_TOKENS } from "@/lib/searchSubject";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Threshold below which we trigger the LLM multi-query expansion path
@@ -194,6 +194,31 @@ function buildSearchTokens(query: string): {
       if (/^[一-龥]{2}$/.test(bg)) bigrams.push(bg);
     }
   }
+
+  // CJK retrieval bridge: a no-whitespace CJK compound that CONTAINS a known
+  // FORMAT word (海报 / 图解 / 礼盒 / 样机 …) fails the 3-of-N bigram gate even
+  // when we have exactly that format's content — e.g. 咖啡店开业海报 yields 6
+  // bigrams but 海报 is only 1 of them (< bigramHitThreshold of 3), so poster
+  // records are never retrieved and the query returns zero. `searchSubject.ts`
+  // already recognises these format words for *scoring*; here we surface the
+  // format word as its own gating token so the relaxed pool actually RETRIEVES
+  // format-matching records (the subject bigrams still rank the on-topic ones
+  // higher). Only fires for a single CJK token ≥3 chars → ASCII / spaced /
+  // short-CJK queries are untouched.
+  if (
+    primary.length === 1 &&
+    /^[一-龥]+$/.test(primary[0]) &&
+    primary[0].length >= 3
+  ) {
+    const w = primary[0];
+    const fmts = [...FORMAT_TOKENS].filter(
+      (f) => /[一-龥]/.test(f) && f.length >= 2 && f !== w && w.includes(f)
+    );
+    if (fmts.length > 0) {
+      return { primary: Array.from(new Set([...primary, ...fmts])), bigrams };
+    }
+  }
+
   return { primary, bigrams };
 }
 

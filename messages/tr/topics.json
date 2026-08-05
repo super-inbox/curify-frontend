@@ -508,7 +508,40 @@
         "karşılaştırma",
         "karşılaştır",
         "zıtlık"
-      ]
+      ],
+      "format": {
+        "lead": "Karşılaştırma görselleri, iki şeyi yan yana kolayca tartmanızı sağlar — önce vs sonra, A vs B, bu vs şu. Curify, farkı anında anlaşılır kılmak için zıtlığı net bir şekilde ortaya koyar.",
+        "howToTitle": "Karşılaştırma tablosu nasıl yapılır",
+        "howTo": [
+          "Bir karşılaştırma veya 'vs' şablonu seçin.",
+          "İki konuyu ve karşılaştırmak istediğiniz noktaları girin.",
+          "Dengeli bir yan yana düzen oluşturun.",
+          "İndirin veya noktaları iyileştirip yeniden oluşturun."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Önce-sonra dönüşümleri",
+          "A vs B ve 1v1 savaş kartları",
+          "Ürün ve seçenek karşılaştırma tabloları",
+          "O zaman-şimdi ve evrim görselleri",
+          "Artılar-eksiler karar yardımcıları"
+        ],
+        "faqTitle": "Karşılaştırma SSS",
+        "faq": [
+          {
+            "q": "Kaç şeyi karşılaştırabilirim?",
+            "a": "Çoğu şablon, bir bakışta en iyi okunan net bir iki yönlü karşılaştırmaya odaklanır; bazı konular için çok sütunlu tablolar mevcuttur."
+          },
+          {
+            "q": "Önce-sonra yapabilir miyim?",
+            "a": "Evet — önce/sonra ve o zaman-şimdi, Curify'deki en popüler karşılaştırma formatları arasındadır."
+          },
+          {
+            "q": "Düzeni tasarlamam gerekiyor mu?",
+            "a": "Hayır. İki konuyu ve noktaları siz sağlarsınız; yapay zeka dengeli düzeni oluşturur."
+          }
+        ]
+      }
     },
     "groups": {
       "displayName": "Gruplar",
@@ -732,7 +765,40 @@
         "öğretici",
         "kılavuz",
         "rehber"
-      ]
+      ],
+      "format": {
+        "lead": "Rehberler ve kopya kağıtları, nasıl yapılır, rutin veya referans bilgilerini tek bir net görselde toplar. Curify, adımlarınızı veya ipuçlarınızı insanların bir bakışta takip edebileceği düzenli, resimli bir rehbere dönüştürür.",
+        "howToTitle": "Rehber nasıl yapılır",
+        "howTo": [
+          "Bir rehber veya kopya kağıdı şablonu seçin.",
+          "Adımlarınızı, ipuçlarınızı veya referans noktalarınızı girin.",
+          "Düzenli, resimli bir düzen oluşturun.",
+          "Paylaşmak veya referans kartı olarak yazdırmak için indirin."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Adım adım nasıl yapılır rehberleri",
+          "Kopya kağıtları ve hızlı referans kartları",
+          "Fitness, paketleme ve rutin rehberleri",
+          "Görgü kuralları ve yapılması/yapılmaması gerekenler kartları",
+          "Yemek tarifi ve yemek ipucu rehberleri"
+        ],
+        "faqTitle": "Rehber SSS",
+        "faq": [
+          {
+            "q": "Ne tür rehberler yapabilirim?",
+            "a": "Sıralı veya referans tabanlı her şey — nasıl yapılırlar, rutinler, kontrol listeleri, kopya kağıtları ve ipucu kartları hepsi iyi çalışır."
+          },
+          {
+            "q": "Kendi adımlarımı ekleyebilir miyim?",
+            "a": "Evet — adımları veya noktaları siz sağlarsınız ve Curify düzeni, numaralandırmayı ve simgeleri halleder."
+          },
+          {
+            "q": "Rehberi yazdırabilir miyim?",
+            "a": "Evet, rehberler yüksek çözünürlükte dışa aktarılır ve birkaçı indirilebilir baskıya hazır bir paket sunar."
+          }
+        ]
+      }
     },
     "portrait": {
       "title": "Portre Görsel Şablonları ve AI Promptları | Curify AI",
@@ -879,7 +945,40 @@
         "afiş",
         "baskı",
         "duvar sanatı"
-      ]
+      ],
+      "format": {
+        "lead": "Posterler bir konuyu çarpıcı ve paylaşılabilir gösterir — etkinlikler, seyahat, alıntılar, karakterler veya ürünler. Ne istediğinizi açıklayın ve Curify, yayınlayabileceğiniz veya yazdırabileceğiniz dengeli, göz alıcı bir poster oluşturur.",
+        "howToTitle": "Poster nasıl yapılır",
+        "howTo": [
+          "Konunuza veya ruh halinize uygun bir poster şablonu seçin.",
+          "Başlığınızı, detaylarınızı ve varsa isimleri ekleyin — yapay zeka tipografi ve düzeni halleder.",
+          "Bitmiş, baskıya hazır bir poster görmek için oluşturun.",
+          "İfadeyi veya stili iyileştirin ve doğru olana kadar yeniden oluşturun."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Etkinlik, maç ve program posterleri",
+          "Seyahat ve simge yapı duvar sanatı",
+          "Alıntı ve tipografi posterleri",
+          "Karakter, spor ve hayran posterleri",
+          "Ürün ve tanıtım posterleri"
+        ],
+        "faqTitle": "Poster SSS",
+        "faq": [
+          {
+            "q": "Posterleri yazdırabilir miyim?",
+            "a": "Evet — posterler, duvar sanatı veya tanıtım baskıları olarak yazdırmaya uygun yüksek çözünürlükte dışa aktarılır."
+          },
+          {
+            "q": "Kendi metnimi ekleyebilir miyim?",
+            "a": "Kesinlikle. Başlığı ve detayları siz sağlarsınız, Curify ise tipografiyi ve kompozisyonu bunların etrafında düzenler."
+          },
+          {
+            "q": "Bir komut yazmam gerekiyor mu?",
+            "a": "Hayır. Bir şablon seçin ve birkaç alanı doldurun — komut mühendisliği gerekmez."
+          }
+        ]
+      }
     },
     "digital-canvas": {
       "displayName": "Dijital Tuval",
@@ -902,7 +1001,40 @@
         "mock-up",
         "prototip",
         "önizleme"
-      ]
+      ],
+      "format": {
+        "lead": "Mockup'lar bir tasarımı gerçek bir ürün üzerinde gösterir — ürün, ambalaj, bir cihaz veya perakende teşhir — böylece bitmiş ve satılabilir görünür. Curify, fikrinizden veya sanat eserinizden profesyonel ürün mockup'ları oluşturur.",
+        "howToTitle": "Ürün mockup'ı nasıl yapılır",
+        "howTo": [
+          "Bir mockup şablonu seçin — giyim, ambalaj, hediye kutusu, cihaz ve daha fazlası.",
+          "Ürünü açıklayın veya tasarımınızı ya da logonuzu yükleyin.",
+          "Aydınlatma ve bağlam ile gerçekçi bir mockup oluşturun.",
+          "Listelemeniz, sunumunuz veya mağazanız için görseli indirin."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Ürün ve giyim mockup'ları",
+          "Ambalaj ve hediye kutusu sunumları",
+          "Marka ve tam VI görsel paketleri",
+          "IP ve karakter ürünleri teşhirleri",
+          "E-ticaret ürün listeleme görselleri"
+        ],
+        "faqTitle": "Mockup SSS",
+        "faq": [
+          {
+            "q": "Kendi logomu veya tasarımımı mockup'a yerleştirebilir miyim?",
+            "a": "Evet — birkaç mockup şablonu, sanat eserinizi veya logonuzu yüklemenize olanak tanır, böylece ürün üzerinde görünür."
+          },
+          {
+            "q": "Mockup'lar çevrimiçi mağazalar için iyi midir?",
+            "a": "Evet. Listelemeler, sunumlar ve pazarlama için profesyonel ürün fotoğrafları gibi görünmek üzere tasarlanmışlardır."
+          },
+          {
+            "q": "Fotoğrafçılık veya 3D yazılıma ihtiyacım var mı?",
+            "a": "Hayır. Curify, ürün, aydınlatma ve ayarı sizin için bir açıklamadan oluşturur."
+          }
+        ]
+      }
     },
     "iran": {
       "displayName": "İran",
@@ -1570,7 +1702,40 @@
         "landmark-map",
         "travel-map",
         "atlas"
-      ]
+      ],
+      "format": {
+        "lead": "Görsel haritalar bir yeri, rotayı veya bölgeyi canlandırır — seyahat destinasyonları, simge yapılar, yemek kökenleri veya seyahat programları. Curify, konunuzdan net, karakterli bir harita çizer.",
+        "howToTitle": "Görsel harita nasıl yapılır",
+        "howTo": [
+          "Bir harita şablonu seçin — ülke, şehir, simge yapı veya seyahat programı.",
+          "Gösterilmesini istediğiniz yeri ve noktaları veya durakları girin.",
+          "Resimli, kolay okunur bir harita oluşturun.",
+          "Duvar sanatı veya paylaşılabilir bir seyahat görseli olarak indirin."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Resimli seyahat ve ülke haritaları",
+          "Şehir ve simge yapı harita posterleri",
+          "Seyahat programı ve rota görselleri",
+          "Yemek kökeni ve kültürel haritalar",
+          "Sulu boya ve vintage harita duvar sanatı"
+        ],
+        "faqTitle": "Harita SSS",
+        "faq": [
+          {
+            "q": "Bunlar doğru coğrafi haritalar mı?",
+            "a": "Bunlar, kesin navigasyon yerine hikaye anlatımı ve duvar sanatı için tasarlanmış resimli, stilize haritalardır."
+          },
+          {
+            "q": "Kendi duraklarımı veya simge yapılarımı işaretleyebilir miyim?",
+            "a": "Evet — öne çıkarılmasını istediğiniz yerleri veya rota noktalarını girin ve yapay zeka bunları düzenler."
+          },
+          {
+            "q": "Bir haritayı duvar sanatı olarak yazdırabilir miyim?",
+            "a": "Evet, haritalar çerçeveleme ve yazdırma için uygun yüksek çözünürlükte dışa aktarılır."
+          }
+        ]
+      }
     },
     "quiz": {
       "displayName": "Quizzes",
@@ -1610,7 +1775,45 @@
         "consumer-goods",
         "product-package",
         "unboxing"
-      ]
+      ],
+      "format": {
+        "lead": "Ambalaj, bir alıcının rafta veya liste küçük resminde gördüğü ilk şeydir. Curify, ürün açıklamalarından veya kendi tasarımlarınızdan, gerçekçi malzemeler ve yüzeylerle rafa hazır ambalajlar — kutular, etiketler, poşetler, şişeler ve hediye setleri — oluşturur. Sunumlar, pazar yeri listelemeleri ve fabrika brifingleri için hazır.",
+        "howToTitle": "Curify ile Ambalaj Nasıl Tasarlanır",
+        "howTo": [
+          "Bir ambalaj şablonu seçin — kutu, etiket, poşet, kozmetik şişesi veya hediye kutusu.",
+          "Ürünü ve markayı açıklayın veya logonuzu ve tasarımınızı yükleyin.",
+          "Curify, gerçekçi malzemeler, aydınlatma ve yüzeylerle bir ambalaj konsepti oluşturur.",
+          "Sunumunuz, pazar yeri listelemeniz veya üretici brifinginiz için maketi indirin."
+        ],
+        "usesTitle": "Neler Yapabilirsiniz",
+        "uses": [
+          "Kutu ve karton tasarımları",
+          "Etiket ve poşet konseptleri",
+          "Kozmetik ve içecek şişesi maketleri",
+          "Hediye kutusu ve sepet sunumları",
+          "Yiyecek ve içecek ambalajları",
+          "Logonuzla markalı ambalaj maketleri"
+        ],
+        "faqTitle": "Ambalaj SSS",
+        "faq": [
+          {
+            "q": "Kendi logomu veya tasarımımı ambalaja ekleyebilir miyim?",
+            "a": "Evet — bazı şablonlar, tasarımınızı yüklemenize olanak tanır, böylece oluşturulan kutu, etiket veya şişe üzerinde görünür."
+          },
+          {
+            "q": "Maketler bir müşteri sunumu için yeterince gerçekçi mi?",
+            "a": "Evet — ambalaj, gerçekçi malzemeler, aydınlatma ve yüzeylerle oluşturulur, böylece sunumlarda ve listelemelerde gerçek bir ürün çekimi gibi görünür."
+          },
+          {
+            "q": "Bunu bir fabrika veya üretim brifingi için kullanabilir miyim?",
+            "a": "Konseptler, niyeti iletmek için idealdir. Baskıya hazır kalıp kesimler hala üreticinizden gelir, ancak görsel tam olarak ne istediğinizi gösterir."
+          },
+          {
+            "q": "Ne tür ambalajlar tasarlayabilirim?",
+            "a": "Kutular ve kartonlar, etiketler, poşetler, kozmetik ve içecek şişeleri, hediye kutuları ve yiyecek & içecek ambalajları."
+          }
+        ]
+      }
     },
     "ecommerce": {
       "displayName": "Ecommerce",
@@ -1624,7 +1827,49 @@
         "flat-lay",
         "shopify",
         "dtc"
-      ]
+      ],
+      "format": {
+        "lead": "E-ticaret görselleri, bir alıcının tıklayıp satın alıp almayacağına karar verir. Curify, tek bir ürün fotoğrafını — veya sadece bir açıklamayı — eksiksiz bir liste setine dönüştürür: temiz beyaz arka planlı ana görseller, model üzerinde ve yaşam tarzı sahneleri ve Amazon tarzı altı ızgaralı ve uzun kaydırmalı detay infografikleri. Stüdyo yok, fotoğrafçı yok, tasarım ekibi yok.",
+        "howToTitle": "Curify E-ticaret Görsellerinizi Nasıl Oluşturur",
+        "howTo": [
+          "Ürün fotoğrafınızı yükleyin veya ürünü ve markayı açıklayın.",
+          "İhtiyacınız olan görseli seçin — ana liste çekimi, yaşam tarzı sahnesi, model üzerinde deneme veya altı ızgaralı detay infografiği.",
+          "Curify, ürünü, aydınlatmayı, modelleri ve düzeni liste hazır bir standarda göre oluşturur.",
+          "Amazon, Shopify, TikTok Shop veya kendi mağazanız için boyutlandırılmış olarak indirin."
+        ],
+        "usesTitle": "Mağazanız İçin Neler Yapabilirsiniz",
+        "uses": [
+          "Beyaz arka planlı ana liste görselleri",
+          "Yaşam tarzı ve bağlam içi ürün sahneleri",
+          "Amazon altı ızgaralı ve uzun kaydırmalı A+ detay infografikleri",
+          "Moda için model üzerinde ve kıyafet deneme çekimleri",
+          "Promosyon bannerları, fiyat etiketleri ve reklam görselleri",
+          "Ambalaj ve ürün maketleri"
+        ],
+        "faqTitle": "E-ticaret SSS",
+        "faq": [
+          {
+            "q": "Kendi ürün fotoğrafımı kullanabilir miyim?",
+            "a": "Evet — ürününüzü yükleyin ve Curify, çekimi, sahneyi veya detay ızgarasını gerçek ürün etrafında oluşturur, böylece sattığınız şeye sadık kalır."
+          },
+          {
+            "q": "Bunlar Amazon ve Shopify listelemeleri için biçimlendirilmiş mi?",
+            "a": "Evet. Altı ızgaralı ve uzun kaydırmalı infografikler gibi şablonlar, pazar yerlerinin beklediği ana ve A+ detay düzenlerini takip eder."
+          },
+          {
+            "q": "Bir fotoğrafçıya veya stüdyoya ihtiyacım var mı?",
+            "a": "Hayır. Curify, ürünü, aydınlatmayı, arka planı ve hatta model üzerindeki çekimleri bir açıklamadan veya fotoğrafınızdan oluşturur."
+          },
+          {
+            "q": "Ürünü bir model üzerinde gösterebilir miyim?",
+            "a": "Evet — moda ve deneme şablonları, giyim ve aksesuarları bir fotoğraf çekimine gerek kalmadan bir model üzerine yerleştirir."
+          },
+          {
+            "q": "Görseller markama uygun olacak mı?",
+            "a": "Marka tarzınızı açıklayın veya tasarım ve ambalaj yükleyin, görseller renklerinize ve tonunuza uyacak şekilde oluşturulur."
+          }
+        ]
+      }
     },
     "showcase": {
       "displayName": "Showcase",
@@ -1652,7 +1897,40 @@
         "brand-book",
         "color-system",
         "typography"
-      ]
+      ],
+      "format": {
+        "lead": "Marka kimliği panoları, bir markanın görünümünü tek bir görsel sisteme çeker — logo yönü, renkler, tip ve ruh hali. Curify, brifinginizden tutarlı bir marka panosu keşfeder, böylece bir marka fikri görebileceğiniz bir şeye dönüşür.",
+        "howToTitle": "Marka panosu nasıl yapılır",
+        "howTo": [
+          "Bir marka kimliği veya moodboard şablonu seçin.",
+          "Markayı açıklayın — adı, hissi ve hedef kitlesi.",
+          "Tutarlı bir görsel sistem ve yön oluşturun.",
+          "Yönü iyileştirin ve yeniden oluşturun veya mockup'lara uygulayın."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Marka moodboard'ları ve görsel sistemler",
+          "Logo ve renk yönü",
+          "Tam VI sunum panoları",
+          "Ambalaj ve uygulama önizlemeleri",
+          "Marka sunumu ve desteği görselleri"
+        ],
+        "faqTitle": "Marka panosu SSS",
+        "faq": [
+          {
+            "q": "Tasarım becerilerine ihtiyacım var mı?",
+            "a": "Hayır. Markayı açıklayın ve Curify tutarlı bir görsel yönü keşfeder — renkler, tip, ruh hali ve uygulamalar."
+          },
+          {
+            "q": "Bu nihai bir logo mu?",
+            "a": "Bu, üzerinde hizalanacak bir yön ve görsel sistemdir; yineleyebilir ve ardından görünümü mockup'lara ve ambalaja uygulayabilirsiniz."
+          },
+          {
+            "q": "Bir müşteriye sunabilir miyim?",
+            "a": "Evet — panolar profesyonel bir marka sunumu gibi görünmek üzere tasarlanmıştır."
+          }
+        ]
+      }
     },
     "naruto": {
       "displayName": "Naruto",
@@ -1979,7 +2257,40 @@
         "文创周边",
         "周边设计"
       ],
-      "displayName": "Ürünler & Çıkartmalar"
+      "displayName": "Ürünler & Çıkartmalar",
+      "format": {
+        "lead": "Ürünler (Merch), bir karakteri, markayı veya fikri satılabilir ürünlere dönüştürür — çıkartma paketleri, giyim, hediye kutuları ve tam ürün aileleri. Curify, konseptinizden profesyonel ürün mockup'ları ve ürün sanatı oluşturur.",
+        "howToTitle": "Ürün (Merch) nasıl yapılır",
+        "howTo": [
+          "Bir ürün (merch) şablonu seçin — çıkartma paketi, giyim, hediye kutusu veya tam set.",
+          "Karakteri veya markayı açıklayın veya tasarımınızı yükleyin.",
+          "Gerçekçi bir ürün (merch) mockup'ı veya ürün sayfası oluşturun.",
+          "Mağazanız, listelemeniz veya fabrika brifinginiz için indirin."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Çıkartma paketleri ve kalıp kesim sayfaları",
+          "Giyim ve aksesuar mockup'ları",
+          "Hediye kutuları ve kırtasiye setleri",
+          "IP ve karakter ürünleri",
+          "Tam SKU / ürün ailesi sayfaları"
+        ],
+        "faqTitle": "Ürün (Merch) SSS",
+        "faq": [
+          {
+            "q": "Bu, isteğe bağlı baskı (POD) için hazır mı?",
+            "a": "Evet — birçok şablon, POD ve Etsy gibi pazar yerleri için baskıya hazır, kalıp kesime hazır veya listelemeye hazır varlıklar üretir."
+          },
+          {
+            "q": "Kendi karakterimi veya logomu üzerine yerleştirebilir miyim?",
+            "a": "Evet, birkaç şablon, sanat eserinizi yüklemenize olanak tanır, böylece ürün üzerinde görünür."
+          },
+          {
+            "q": "Tüm bir ürün serisi yapabilir miyim?",
+            "a": "Evet — tek bir karakter veya marka etrafında tutarlı bir ürün seti oluşturun."
+          }
+        ]
+      }
     },
     "asl": {
       "displayName": "ASL · Amerikan İşaret Dili",
@@ -2011,13 +2322,87 @@
       ]
     },
     "infographic": {
-      "displayName": "İnfografikler"
+      "displayName": "İnfografikler",
+      "format": {
+        "lead": "İnfografikler, yoğun bilgiyi — veri, adımlar, karşılaştırmalar, zaman çizelgeleri — tek bir taranabilir görsele dönüştürür. Curify'de konuyu açıklarsınız ve saniyeler içinde bitmiş, markanıza uygun bir infografik elde edersiniz, tasarım veya komut yazma becerilerine gerek kalmadan.",
+        "howToTitle": "İnfografik nasıl yapılır",
+        "howTo": [
+          "Aşağıdaki infografik şablonlarından birini seçin veya kendi konunuzdan başlayın.",
+          "Konunuzu, ana noktalarınızı ve dilinizi doldurun — Curify düzeni sizin için planlar.",
+          "Oluşturun; yapay zeka metni, simgeleri ve rengi temiz bir kompozisyonda düzenler.",
+          "Yüksek çözünürlüklü görseli indirin veya herhangi bir detayı ayarlayıp yeniden oluşturun."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Eğitimsel açıklamalar ve çalışma özetleri",
+          "İş, süreç ve nasıl çalıştığını gösteren diyagramlar",
+          "Kültürel, yemek ve seyahat bilgi kartları",
+          "Veri ve istatistik görselleştirmeleri",
+          "İki dilli (EN–ZH) öğrenme posterleri"
+        ],
+        "faqTitle": "İnfografik SSS",
+        "faq": [
+          {
+            "q": "İnfografik yapmak için tasarım becerilerine ihtiyacım var mı?",
+            "a": "Hayır. Curify düzeni, hiyerarşiyi, simgeleri ve rengi otomatik olarak halleder — konuyu ve ana noktaları siz sağlarsınız ve yapay zeka bitmiş bir infografik oluşturur."
+          },
+          {
+            "q": "İki dilli infografikler yapabilir miyim?",
+            "a": "Evet. Birçok şablon İngilizce-Çince ve diğer dil çiftlerini destekler, böylece aynı infografik aynı anda iki dilde oluşturulur."
+          },
+          {
+            "q": "Hangi çözünürlüğü alırım?",
+            "a": "İnfografikler, sosyal medyada paylaşım veya poster olarak yazdırma için uygun yüksek çözünürlüklü görseller olarak dışa aktarılır."
+          }
+        ]
+      }
     },
     "anatomy": {
       "displayName": "Anatomi"
     },
     "comic": {
-      "displayName": "Çizgi Roman"
+      "displayName": "Çizgi Roman",
+      "title": "Çizgi Roman ve Manga Komutları, Şablonları ve İlham Kaynakları",
+      "description": "Yapay zeka ile çizgi roman şeritleri, manga sayfaları ve karakter tanıtımları oluşturun — çok panelli düzenler, etkileyici sanat ve hikaye akışları, çizim becerilerine gerek yok.",
+      "intro": "Bir karakteri, şakayı veya hikayeyi bitmiş panellere dönüştürmek için yapay zeka çizgi roman ve manga şablonlarını keşfedin. İster bir meme şeridi, ister manga tarzı bir sayfa, ister bir karakter tanıtım sayfası veya kısa bir görsel hikaye yapıyor olun, bu şablonlar düzeni, panel düzenini ve sanat stilini halleder, böylece hikayeye odaklanabilirsiniz.",
+      "keywords": [
+        "manga",
+        "comic strip",
+        "webtoon"
+      ],
+      "format": {
+        "lead": "Çizgi romanlar ve mangalar bir hikayeyi veya şakayı etkileyici karakterlerle sıralı panellere dönüştürür. Curify, fikrinizden panelleri, sanatı ve akışı düzenler — çizim yapmaya gerek yok.",
+        "howToTitle": "Çizgi roman nasıl yapılır",
+        "howTo": [
+          "Bir çizgi roman veya manga şablonu seçin.",
+          "Karakterlerinizi ve hikaye akışını veya espriyi açıklayın.",
+          "Bitmiş çok panelli bir sayfa oluşturun.",
+          "Paylaşmak veya yazdırmak için indirin ya da ayarlayıp yeniden oluşturun."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Çok panelli çizgi roman şeritleri",
+          "Manga tarzı sayfalar",
+          "Karakter tanıtım sayfaları",
+          "Meme ve şaka çizgi romanları",
+          "Kısa görsel hikayeler"
+        ],
+        "faqTitle": "Çizgi Roman SSS",
+        "faq": [
+          {
+            "q": "Çizim yapmam gerekiyor mu?",
+            "a": "Hayır. Karakterleri ve hikayeyi siz sağlarsınız; Curify panel düzenini, sanatı ve yazıları halleder."
+          },
+          {
+            "q": "Bir karakteri paneller arasında tutarlı tutabilir miyim?",
+            "a": "Evet — şablonlar, bir sayfanın panelleri boyunca bir karakterin görünümünü tutarlı tutar."
+          },
+          {
+            "q": "Çizgi romanı yazdırabilir miyim?",
+            "a": "Evet, sayfalar paylaşım veya baskı için yüksek çözünürlükte dışa aktarılır."
+          }
+        ]
+      }
     },
     "step-by-step-tutorial": {
       "displayName": "Adım Adım Eğitimler"
@@ -2026,16 +2411,148 @@
       "displayName": "İllüstrasyon"
     },
     "flashcards": {
-      "displayName": "Flash Kartlar"
+      "displayName": "Flash Kartlar",
+      "format": {
+        "lead": "Bilgi kartları, kelime dağarcığını, gerçekleri ve kavramları bir bakışta öğrenmeyi kolaylaştırır. Curify, kelime listenizden veya konunuzdan resimli, genellikle iki dilli kartlar oluşturur — çalışmaya, yazdırmaya veya paylaşmaya hazır.",
+        "howToTitle": "Bilgi kartları nasıl yapılır",
+        "howTo": [
+          "Konunuza veya dil çiftinize uygun bir bilgi kartı şablonu seçin.",
+          "Kelimelerinizi, terimlerinizi veya konunuzu girin — yapay zeka her kartı resimler.",
+          "Tutarlı bir çalışma hazır kart seti oluşturun.",
+          "Desteyi indirin veya yazdırın ya da bir PDF paketi indirin."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Kelime dağarcığı ve dil kartları (EN–ZH ve daha fazlası)",
+          "Bilim, tarih ve biyoloji bilgi kartları",
+          "Çocuk öğrenimi ve fonetik desteleri",
+          "Sınav ve tekrar çalışma sayfaları",
+          "Yazdırılabilir sınıf materyali"
+        ],
+        "faqTitle": "Bilgi Kartı SSS",
+        "faq": [
+          {
+            "q": "Bilgi kartları iki dilli mi?",
+            "a": "Çoğu öyle — dil şablonları İngilizce'yi Çince, Fransızca, Japonca, Korece, İspanyolca ve daha fazlasıyla eşleştirir."
+          },
+          {
+            "q": "Tüm bir desteyi yazdırabilir miyim?",
+            "a": "Evet. Setler görsel olarak dışa aktarılır ve birkaç şablon indirilebilir baskıya hazır bir PDF paketi sunar."
+          },
+          {
+            "q": "Kendi kelime listemi kullanabilir miyim?",
+            "a": "Evet — terimlerinizi girin ve Curify her kartı sizin için resimler ve düzenler."
+          }
+        ]
+      }
     },
     "recipes": {
-      "displayName": "Tarifler"
+      "displayName": "Tarifler",
+      "format": {
+        "lead": "Tarif kartları bir yemeği iştah açıcı ve takip etmesi kolay gösterir — malzemeler, adımlar ve tek bir düzenli kartta bir ana görsel. Curify, tarifinizden güzel bir tarif kartı tasarlar.",
+        "howToTitle": "Tarif kartı nasıl yapılır",
+        "howTo": [
+          "Bir tarif kartı şablonu seçin.",
+          "Yemeği, malzemeleri ve adımları girin.",
+          "Resimli, kolay takip edilebilir bir kart oluşturun.",
+          "İndirin veya yazdırın ya da bir tarif paketi kaydedin."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Resimli tarif kartları",
+          "Mutfak ve yemek rehberleri",
+          "Yemek ve pişirme ipucu kartları",
+          "Menü tarzı sunum kartları",
+          "Yazdırılabilir tarif koleksiyonları"
+        ],
+        "faqTitle": "Tarif Kartı SSS",
+        "faq": [
+          {
+            "q": "Kendi tarifimi kullanabilir miyim?",
+            "a": "Evet — malzemelerinizi ve adımlarınızı girin ve Curify kartı bunların etrafında tasarlar."
+          },
+          {
+            "q": "Tarif kartlarını yazdırabilir miyim?",
+            "a": "Evet, kartlar yazdırma veya bir tarif defteri için uygun yüksek çözünürlükte dışa aktarılır."
+          },
+          {
+            "q": "Tüm bir koleksiyon yapabilir miyim?",
+            "a": "Evet — eşleşen kartlardan oluşan bir set oluşturun ve birkaç şablon indirilebilir bir paket sunar."
+          }
+        ]
+      }
     },
     "mind-maps": {
-      "displayName": "Zihin Haritaları"
+      "displayName": "Zihin Haritaları",
+      "format": {
+        "lead": "Zihin haritaları, merkezi bir fikri bağlantılı kavramlara ayırır — bir yapıyı, bir ontolojiyi veya bir çalışma konusunu bir bakışta açıklamak için mükemmeldir. Curify, konunuzdan net, resimli bir zihin haritası oluşturur.",
+        "howToTitle": "Zihin haritası nasıl yapılır",
+        "howTo": [
+          "Bir zihin haritası şablonu seçin.",
+          "Merkezi konunuzu ve dallarını girin.",
+          "Net, bağlantılı, resimli bir harita oluşturun.",
+          "Çalışmak, sunmak veya yazdırmak için indirin."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Çalışma ve tekrar haritaları",
+          "Konsept ve ontoloji haritaları",
+          "Hayvan ve bilim yapısı haritaları",
+          "Beyin fırtınası ve planlama haritaları",
+          "Eğitimsel açıklayıcı diyagramlar"
+        ],
+        "faqTitle": "Zihin Haritası SSS",
+        "faq": [
+          {
+            "q": "Kendi dallarımı tanımlayabilir miyim?",
+            "a": "Evet — merkezi konuyu ve dalları girin ve Curify haritayı düzenler ve resimler."
+          },
+          {
+            "q": "Kaç dal gösterebilir?",
+            "a": "Şablonlar, haritayı bir bakışta okunabilir tutarken birkaç seviye dalı işler."
+          },
+          {
+            "q": "Yazdırabilir veya sunabilir miyim?",
+            "a": "Evet, zihin haritaları slaytlar, el ilanları veya duvar baskısı için yüksek çözünürlükte dışa aktarılır."
+          }
+        ]
+      }
     },
     "study-sheets": {
-      "displayName": "Çalışma Sayfaları"
+      "displayName": "Çalışma Sayfaları",
+      "format": {
+        "lead": "Çalışma sayfaları ve çalışma kağıtları, bir konuyu alıştırmaya hazır bir sayfaya yoğunlaştırır — kelime dağarcığı alıştırmaları, egzersizler ve tekrar özetleri. Curify, konunuzdan saniyeler içinde temiz, yazdırılabilir bir çalışma kağıdı oluşturur.",
+        "howToTitle": "Çalışma sayfası nasıl yapılır",
+        "howTo": [
+          "Bir çalışma sayfası veya çalışma kağıdı şablonu seçin.",
+          "Konunuzu, terimlerinizi veya sorularınızı girin.",
+          "Düzenli, resimli bir sayfa oluşturun.",
+          "İndirin veya yazdırın ya da bir PDF paketi alın."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Kelime dağarcığı ve dil pratiği",
+          "Sınav ve tekrar çalışma sayfaları",
+          "Çocuk öğrenimi ve fonetik çalışma kağıtları",
+          "Konu kopya özetleri",
+          "Yazdırılabilir sınıf el ilanları"
+        ],
+        "faqTitle": "Çalışma Sayfası SSS",
+        "faq": [
+          {
+            "q": "Çalışma sayfalarını yazdırabilir miyim?",
+            "a": "Evet — yüksek çözünürlükte dışa aktarılırlar ve birkaç şablon indirilebilir baskıya hazır bir PDF paketi sunar."
+          },
+          {
+            "q": "Kendi içeriğimi kullanabilir miyim?",
+            "a": "Evet. Terimlerinizi veya sorularınızı girin ve Curify sayfayı sizin için düzenler ve resimler."
+          },
+          {
+            "q": "İki dilli sayfalar destekleniyor mu?",
+            "a": "Çoğu destekleniyor — dil şablonları İngilizce'yi Çince ve diğer dillerle aynı sayfada eşleştirir."
+          }
+        ]
+      }
     },
     "art-prints": {
       "displayName": "Sanat Baskıları"
@@ -2047,16 +2564,165 @@
       "displayName": "Meme'ler"
     },
     "social-media-posts": {
-      "displayName": "Sosyal Medya Paylaşımları"
+      "displayName": "Sosyal Medya Paylaşımları",
+      "format": {
+        "lead": "Sosyal medya gönderileri ve karuselleri, bir fikri Instagram, RedNote veya TikTok için kaydırmayı durduran, markaya uygun slaytlara dönüştürür. Curify, konunuzdan tutarlı, çok slaytlı bir gönderi düzenler.",
+        "howToTitle": "Sosyal medya gönderisi nasıl yapılır",
+        "howTo": [
+          "Bir sosyal gönderi veya karusel şablonu seçin.",
+          "Konunuzu, ana noktalarınızı ve varsa isimleri ekleyin.",
+          "Eşleşen, gönderime hazır slaytlar seti oluşturun.",
+          "İndirin ve gönderin veya iyileştirip yeniden oluşturun."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Instagram ve RedNote karuselleri",
+          "İpucu, nasıl yapılır ve listeleme gönderileri",
+          "Ürün ve tanıtım gönderileri",
+          "Alıntı ve meme gönderileri",
+          "Etkinlik ve duyuru gönderileri"
+        ],
+        "faqTitle": "Sosyal Gönderi SSS",
+        "faq": [
+          {
+            "q": "Çok slaytlı bir karusel yapabilir miyim?",
+            "a": "Evet — karusel şablonları, tek bir tutarlı gönderi olarak okunan eşleşen slaytlar seti oluşturur."
+          },
+          {
+            "q": "Gönderiler sosyal platformlar için boyutlandırılmış mı?",
+            "a": "Evet, çıktılar sosyal akışlar ve hikayeler için biçimlendirilmiştir, böylece yüklemeye hazırdırlar."
+          },
+          {
+            "q": "Tasarım becerilerine ihtiyacım var mı?",
+            "a": "Hayır. Bir şablon seçin, noktalarınızı ekleyin ve Curify düzeni ve stilini halleder."
+          }
+        ]
+      }
     },
     "stickers": {
-      "displayName": "Çıkartmalar"
+      "displayName": "Çıkartmalar",
+      "format": {
+        "lead": "Çıkartma paketleri, bir karakteri, maskotu veya fikri etkileyici, kalıp kesime hazır tasarımlar setine dönüştürür. Curify, paylaşabileceğiniz, satabileceğiniz veya yazdırabileceğiniz tam bir eşleşen çıkartma sayfası oluşturur.",
+        "howToTitle": "Çıkartma paketi nasıl yapılır",
+        "howTo": [
+          "Bir çıkartma şablonu seçin — maskotlar, emoji sayfaları, chibi paketleri ve daha fazlası.",
+          "Karakterinizi açıklayın veya temel alacağınız bir referans yükleyin.",
+          "Eşleşen çıkartma pozları ve ifadelerinden oluşan tam bir sayfa oluşturun.",
+          "Görsel olarak indirin veya baskıya hazır kalıp kesim dosyalarına dönüştürün."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Karakter ve maskot çıkartma sayfaları",
+          "Emoji ve ifade paketleri",
+          "Chibi ve kawaii çıkartma setleri",
+          "IP ve hayran sanatı koleksiyonları",
+          "İsteğe bağlı baskı (POD) ve Etsy çıkartma ürünleri"
+        ],
+        "faqTitle": "Çıkartma SSS",
+        "faq": [
+          {
+            "q": "Tüm bir eşleşen seti aynı anda yapabilir miyim?",
+            "a": "Evet. Çıkartma şablonları, sadece tek bir görsel değil, tutarlı pozlar ve ifadelerden oluşan tam bir sayfa oluşturur."
+          },
+          {
+            "q": "Çıkartmaları satabilir miyim?",
+            "a": "Curify'nin çıkartma çıktıları, isteğe bağlı baskı (POD) ve Etsy gibi pazar yerleri için tasarlanmıştır — birçoğu kalıp kesime hazır seçenekler içerir."
+          },
+          {
+            "q": "Çıkartmaları kendi karakterime göre yapabilir miyim?",
+            "a": "Evet — birkaç şablon, bir referans yüklemenize olanak tanır, böylece set maskotunuza veya tasarımınıza göre oluşturulur."
+          }
+        ]
+      }
     },
     "mascots": {
-      "displayName": "Maskotlar"
+      "displayName": "Maskotlar",
+      "title": "Maskot Tasarımı Komutları, Şablonları ve İlham Kaynakları",
+      "description": "Yapay zeka ile marka ve karakter maskotları tasarlayın — tutarlı pozlarda, çıkartmalar, ürünler ve uygulamalar için hazır, samimi, sahiplenilebilir bir karakter.",
+      "intro": "Bir markaya, takıma veya ürüne akılda kalıcı bir yüz vermek için yapay zeka maskot tasarım şablonlarını keşfedin. Kişiliği açıklayın ve pozlar ve ifadeler arasında tutarlı bir tarzda oluşturulmuş bir maskot elde edin — çıkartmalara, ürünlere ve marka uygulamalarına dönüştürmeye hazır.",
+      "keywords": [
+        "mascot design",
+        "brand character",
+        "kawaii mascot"
+      ],
+      "format": {
+        "lead": "Maskotlar bir markaya, takıma veya ürüne akılda kalıcı, sahiplenilebilir bir yüz verir. Curify, pozlar ve ifadeler arasında tutarlı bir tarzda bir maskot tasarlar, çıkartmalar, ürünler ve uygulamalar için hazır.",
+        "howToTitle": "Maskot nasıl tasarlanır",
+        "howTo": [
+          "Bir maskot tasarım şablonu seçin.",
+          "Kişiliği, markayı ve stili açıklayın.",
+          "Tutarlı pozlar ve ifadelerle bir maskot oluşturun.",
+          "Onu çıkartmalara, ürünlere veya marka uygulamalarına dönüştürün."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Marka ve takım maskotları",
+          "Kawaii ve chibi karakterleri",
+          "Maskot poz ve ifade sayfaları",
+          "Çıkartma ve emoji setleri",
+          "Ürün ve ambalaj uygulamaları"
+        ],
+        "faqTitle": "Maskot SSS",
+        "faq": [
+          {
+            "q": "Maskotu tutarlı tutabilir miyim?",
+            "a": "Evet — şablonlar, bir maskot modelini pozlar ve ifadeler arasında tutarlı tutar, böylece set birleşik görünür."
+          },
+          {
+            "q": "Markama göre yapabilir miyim?",
+            "a": "Evet — markayı ve stili açıklayın veya bir referans yükleyin, maskot onun etrafında oluşturulur."
+          },
+          {
+            "q": "Ürünlerde kullanabilir miyim?",
+            "a": "Evet — maskotlar çıkartmalara, ürünlere ve ambalajlara uygulanmak üzere tasarlanmıştır."
+          }
+        ]
+      }
     },
     "character-ip": {
-      "displayName": "Karakter IP"
+      "displayName": "Karakter IP",
+      "title": "Karakter Tasarımı ve IP Komutları, Şablonları ve İlham Kaynakları",
+      "description": "Yapay zeka ile orijinal karakterler ve IP tasarlayın — model sayfaları, dönüşler, ifade sayfaları, maskotlar ve ürünlere hazır pozlar, hepsi set boyunca tutarlı.",
+      "intro": "Sıfırdan orijinal bir karakter oluşturmak veya bir karakteri tam bir varlık setine genişletmek için yapay zeka karakter tasarım ve IP şablonlarını keşfedin. Model sayfalarından ve dönüşlerden ifade sayfalarına, çıkartma pozlarına ve ürün mockup'larına kadar, bu şablonlar karakteri her çıktıda tutarlı tutar.",
+      "keywords": [
+        "character sheet",
+        "original character",
+        "IP design",
+        "mascot"
+      ],
+      "format": {
+        "lead": "Karakter tasarımı, bir fikri sahiplenilebilir bir karaktere dönüştürür — çıkartmalar, çizgi romanlar ve ürünler arasında yeniden kullanabileceğiniz tutarlı bir model, ifadeler ve pozlarla. Curify, tüm seti tek bir açıklamadan veya referanstan oluşturur.",
+        "howToTitle": "Karakter nasıl tasarlanır",
+        "howTo": [
+          "Bir karakter tasarım şablonu seçin — model sayfası, dönüş veya ifade seti.",
+          "Karakterinizi açıklayın veya temel alacağınız bir referans yükleyin.",
+          "Tutarlı bir görünüm ve poz seti oluşturun.",
+          "Karakteri çıkartmalar, çizgi romanlar ve ürünler arasında yeniden kullanın."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Karakter model sayfaları ve dönüşleri",
+          "İfade ve poz sayfaları",
+          "Orijinal karakter (OC) ve IP tasarımları",
+          "Maskot ve çıkartmaya hazır pozlar",
+          "Karakterin ürün ve ürün mockup'ları"
+        ],
+        "faqTitle": "Karakter Tasarımı SSS",
+        "faq": [
+          {
+            "q": "Karakteri çıktılar arasında tutarlı tutabilir miyim?",
+            "a": "Evet — amaç bu: şablonlar, bir karakter modelini pozlar, ifadeler ve uygulamalar arasında tutarlı tutar."
+          },
+          {
+            "q": "Bir karakteri kendi sanat eserime veya fotoğrafıma göre yapabilir miyim?",
+            "a": "Evet, birkaç şablon, bir referans yüklemenize olanak tanır, böylece set tasarımınızdan oluşturulur."
+          },
+          {
+            "q": "Karakteri ticari olarak kullanabilir miyim?",
+            "a": "Çıktılar IP ve ürün kullanımı için tasarlanmıştır — çıkartmalar, isteğe bağlı baskı (POD) ve marka uygulamaları."
+          }
+        ]
+      }
     },
     "fan-art": {
       "displayName": "Hayran Sanatı"
@@ -2090,6 +2756,96 @@
     },
     "narrative-comic": {
       "displayName": "Anlatı Çizgi Romanları"
+    },
+    "mood-board": {
+      "displayName": "Moodboard'lar",
+      "title": "Moodboard Komutları, Şablonları ve İlham Kaynakları",
+      "description": "Yapay zeka ile moodboard'lar ve görsel yön panoları oluşturun — bir marka, ürün veya proje için renkler, dokular, tip ve görseller tek bir tutarlı estetik içinde bir araya getirilir.",
+      "intro": "Bir şey inşa etmeden önce bir görünümü belirlemek için yapay zeka moodboard şablonlarını keşfedin. Bir markayı, ürünü veya atmosferi açıklayın ve renkler, dokular, tipografi ve referans görsellerden oluşan tutarlı bir pano elde edin — herhangi bir tasarım veya markalama projesinin ilk adımı, saniyeler içinde oluşturulur.",
+      "keywords": [
+        "moodboard",
+        "visual direction",
+        "aesthetic board",
+        "brand mood"
+      ],
+      "format": {
+        "lead": "Moodboard'lar, bir şey inşa etmeden önce bir görünümü belirler — renkler, dokular, tip ve görseller tek bir tutarlı estetik içinde. Curify, brifinginizden bir marka, ürün veya atmosfer için bir moodboard keşfeder.",
+        "howToTitle": "Moodboard nasıl yapılır",
+        "howTo": [
+          "Bir moodboard şablonu seçin.",
+          "Aradığınız markayı, ürünü veya hissi açıklayın.",
+          "Renkler, dokular ve görsellerden oluşan tutarlı bir pano oluşturun.",
+          "Yönü iyileştirin ve yeniden oluşturun veya tasarımlara uygulayın."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Marka ve ürün moodboard'ları",
+          "Estetik ve atmosfer yönü",
+          "Renk ve doku keşfi",
+          "İç mekan ve moda moodboard'ları",
+          "Sunum ve konsept panoları"
+        ],
+        "faqTitle": "Moodboard SSS",
+        "faq": [
+          {
+            "q": "Tasarım becerilerine ihtiyacım var mı?",
+            "a": "Hayır. Hissi açıklayın ve Curify tutarlı bir renk, doku ve referans görsel panosu oluşturur."
+          },
+          {
+            "q": "Bir müşteri sunumu için kullanabilir miyim?",
+            "a": "Evet — panolar net bir görsel yön sunmak için tasarlanmıştır."
+          },
+          {
+            "q": "Yönü tasarımlara dönüştürebilir miyim?",
+            "a": "Evet — panonun paletini ve ruh halini logolar, ambalajlar veya ürün mockup'ları için brifing olarak kullanın."
+          }
+        ]
+      }
+    },
+    "industrial-design": {
+      "displayName": "Endüstriyel Tasarım",
+      "title": "Endüstriyel Tasarım Komutları, Şablonları ve İlham Kaynakları",
+      "description": "Yapay zeka ile endüstriyel tasarım konseptleri oluşturun — bir fikrin tasarlanmış ve inşa edilebilir görünmesini sağlayan ürün konsept panoları, sunum sayfaları ve konsept eskizleri.",
+      "intro": "Bir ürün fikrini tasarlanmış bir konsepte dönüştürmek için yapay zeka endüstriyel tasarım şablonlarını keşfedin. Konsept eskizlerinden ve sunum panolarından teknik özellik tarzı düzenlere kadar, bu şablonlar bir ürünü malzemeler, form ve bağlam ile oluşturur, böylece bir konsept stüdyo yapımı gibi görünür — sunumlar, desteler ve fabrika brifingleri için kullanışlıdır.",
+      "keywords": [
+        "product design",
+        "concept board",
+        "product concept",
+        "design sketch"
+      ],
+      "format": {
+        "lead": "Endüstriyel tasarım, bir ürün fikrini tasarlanmış, inşa edilebilir bir konsepte dönüştürür — konsept eskizleri, sunum panoları ve teknik özellik tarzı düzenler. Curify, brifinginizden malzemeler, form ve bağlam ile bunu oluşturur.",
+        "howToTitle": "Endüstriyel tasarım konsepti nasıl yapılır",
+        "howTo": [
+          "Bir endüstriyel tasarım şablonu seçin — konsept eskizi veya sunum panosu.",
+          "Ürünü, malzemeleri ve kullanım senaryosunu açıklayın.",
+          "Form ve bağlam ile stüdyo kalitesinde bir konsept oluşturun.",
+          "Sunum desteniz, portföyünüz veya fabrika brifinginiz için indirin."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Ürün konsept panoları",
+          "Konsept ve fikir eskizleri",
+          "Sunum ve teknik özellik tarzı düzenler",
+          "Malzeme ve bitiş keşfi",
+          "Sunum ve portföy görselleri"
+        ],
+        "faqTitle": "Endüstriyel Tasarım SSS",
+        "faq": [
+          {
+            "q": "CAD veya 3D yazılıma ihtiyacım var mı?",
+            "a": "Hayır. Curify, ürün konseptini, malzemeleri ve bağlamı bir açıklamadan oluşturur."
+          },
+          {
+            "q": "Bu nihai bir üretim tasarımı mı?",
+            "a": "Bu bir konsept ve sunumdur — üzerinde hizalanacak ve yinelenecek tasarlanmış bir yön, bir üretim dosyası değil."
+          },
+          {
+            "q": "Bir müşteriye veya fabrikaya sunabilir miyim?",
+            "a": "Evet — panolar profesyonel bir tasarım sunumu gibi görünmek üzere tasarlanmıştır."
+          }
+        ]
+      }
     }
   },
   "topicPage": {
@@ -2097,6 +2853,7 @@
     "exampleImagesHeading": "Ornek Gorseller",
     "templatesHeading": "Sablonlar",
     "exploreMoreHeading": "Daha fazla kesfet",
-    "subTopicsHeading": "Kategoriye gore"
+    "subTopicsHeading": "Kategoriye gore",
+    "furtherExplorationHeading": "Daha fazlasını keşfet"
   }
 }

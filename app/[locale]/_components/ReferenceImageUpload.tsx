@@ -178,10 +178,13 @@ export default function ReferenceImageUpload({
               onChange(blobUrl);
               setUploadingState(false);
             }}
-            onUploadError={(err) => {
+            onUploadError={(err, isAuthError) => {
               setUploadingState(false);
               setPreviewUrl(null);
               setError(err);
+              // Session expired mid-upload: open sign-in so the fix is one click
+              // away (apiClient's `auth:expired` also flips this to the CTA).
+              if (isAuthError) setDrawer("signin");
             }}
           />
         </div>

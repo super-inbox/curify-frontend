@@ -5,16 +5,47 @@ export type EntryBarItem = {
   isHot?: boolean;
 };
 
-// 2026-06-19 entry bar refresh: pivots from abstract topic framing to
-// action-oriented "what you can make" framing. Order picks supply
-// (inspirations per bucket) AND demand (gallery copy signal) — see
-// docs/visual-layer-distribution-2026-06-19.md for the per-bucket counts.
-// Culture dropped (covered by Travel + Social Media Assets + Food).
-// AI Portraits added because ~22 of top-25 gallery copies are
-// photorealistic AI portraits/selfies — dominant remix demand.
-// Recipes & Food Cards added: 346 inspirations, currently invisible
-// from top-level nav.
+// 2026-08-05 entry-bar reorder: lead with the highest-priority commerce/design
+// topics (merch, product, education, brand design, packaging, social media),
+// then a shorter tail of consumer/seasonal topics. Order = business priority
+// (per operator), not raw supply. "Education" routes to /topics/learning (the
+// infographic/study-material topic), replacing the old EdTech-flashcards
+// (/topics/language) slot. branding/packaging/social-media-posts are new
+// top-level entries — each has a thumbnail in topic_thumbnails.json so it
+// survives the TopicStrip manifest filter.
 export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
+  // — most important (commerce & design) —
+  {
+    id: "merch",
+    emoji: "🎁",
+    path: "/topics/merch",
+  },
+  {
+    id: "product",
+    emoji: "🛍️",
+    path: "/topics/product",
+  },
+  {
+    id: "learning",
+    emoji: "🧠",
+    path: "/topics/learning",
+  },
+  {
+    id: "branding",
+    emoji: "✨",
+    path: "/topics/branding",
+  },
+  {
+    id: "packaging",
+    emoji: "📦",
+    path: "/topics/packaging",
+  },
+  {
+    id: "social-media-posts",
+    emoji: "📱",
+    path: "/topics/social-media-posts",
+  },
+  // — tail (consumer / seasonal) —
   {
     id: "world-cup",
     emoji: "⚽",
@@ -32,21 +63,6 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     path: "/topics/portrait",
   },
   {
-    id: "learning",
-    emoji: "🧠",
-    path: "/topics/learning",
-  },
-  {
-    id: "language",
-    emoji: "🗣️",
-    path: "/topics/language",
-  },
-  {
-    id: "lifestyle",
-    emoji: "🌿",
-    path: "/topics/lifestyle",
-  },
-  {
     id: "travel",
     emoji: "✈️",
     path: "/topics/travel",
@@ -55,20 +71,5 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     id: "food",
     emoji: "🍳",
     path: "/topics/food",
-  },
-  {
-    id: "visual",
-    emoji: "🎨",
-    path: "/topics/design",
-  },
-  {
-    id: "product",
-    emoji: "🛍️",
-    path: "/topics/product",
-  },
-  {
-    id: "merch",
-    emoji: "🎁",
-    path: "/topics/merch",
   },
 ];

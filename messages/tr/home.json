@@ -569,7 +569,8 @@
     "exampleImagesHeading": "Örnek Görseller",
     "templatesHeading": "Şablonlar",
     "subTopicsHeading": "Kategoriye göre gözat",
-    "exploreMoreHeading": "Daha fazla keşfet"
+    "exploreMoreHeading": "Daha fazla keşfet",
+    "furtherExplorationHeading": "Daha fazlasını keşfet"
   },
   "videoTranscriptGenerator": {
     "metadata": {
@@ -1353,6 +1354,37 @@
         "educationBody": "Let a child watch an animation and practice while watching, with word cards and a quiz keyed to what's on screen — the exact Journey to the West example in the demo.",
         "businessTitle": "For self-study learners and edu creators",
         "businessBody": "Paste any show you love and get study-ready subtitles plus speaking practice; or ship a matching worksheet set for every video you publish, at near-zero prep."
+      }
+    }
+  },
+  "brandWorkflow": {
+    "heading": "Marka tasarım iş akışı",
+    "subtitle": "Renk sisteminden yeniden kullanılabilir bir marka kitine kadar beş adımda eksiksiz bir marka kimliği oluşturun.",
+    "steps": {
+      "palette": {
+        "name": "Renk sistemi",
+        "desc": "Temanızdan veya referans bir görselden hex kodlarıyla uyumlu bir palet çıkarın.",
+        "cta": "Palet oluştur"
+      },
+      "logo": {
+        "name": "Logo",
+        "desc": "Tek bir paleti paylaşan altı farklı logo konsepti — yönünüzü seçin.",
+        "cta": "Logo oluştur"
+      },
+      "typeface": {
+        "name": "Yazı tipi",
+        "desc": "Marka adınız ve tarzınızdan altı markaya uygun yazı tipi örneği.",
+        "cta": "Çok yakında"
+      },
+      "packaging": {
+        "name": "Ambalaj",
+        "desc": "Logonuzu ve renklerinizi taşıyan ürün ambalajları ve maketleri.",
+        "cta": "Ambalaj tasarla"
+      },
+      "kit": {
+        "name": "Marka kiti",
+        "desc": "Kimliğinizi eksiksiz bir görsel kimlik (VI) maket paketiyle uygulayın.",
+        "cta": "VI paketi oluştur"
       }
     }
   }

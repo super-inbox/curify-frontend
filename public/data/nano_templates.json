@@ -6063,7 +6063,8 @@
       "minimalist",
       "industrial",
       "art-prints",
-      "digital-canvas"
+      "digital-canvas",
+      "industrial-design"
     ],
     "base_rank_score": 50,
     "allow_generation": true,
@@ -19715,7 +19716,8 @@
       "posters",
       "product",
       "design",
-      "merch-commerce"
+      "merch-commerce",
+      "industrial-design"
     ],
     "allow_generation": true,
     "creation_date": "2026-07-23"
@@ -20665,5 +20667,68 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "creation_date": "2026-07-28"
+  },
+  {
+    "id": "template-brand-logo-variant-set",
+    "locales": {
+      "en": {
+        "base_prompt": "(Brand Logo Exploration Sheet) A clean logo design board presenting SIX distinct logo concepts for the brand '{brand_name}', arranged in a 2-row × 3-column grid on a pure white background, each cell numbered 1 to 6. Brief: {logo_brief}. Every logo integrates the brand name '{brand_name}' as legible custom lettering and shares a consistent color palette of {palette_desc}. Vary the SIX concepts across: a flat line-drawing mark, a solid filled emblem, a monogram/lettermark, a badge/seal lockup, a minimalist icon+wordmark lockup, and a playful mascot-style mark. Style: professional vector brand identity, flat design, crisp edges, balanced negative space, no photographic texture, no mockup, no 3D, print-ready. Each variant clearly separated with even spacing.",
+        "parameters": [
+          {
+            "name": "brand_name",
+            "label": "品牌名 Brand name",
+            "type": "text",
+            "placeholder": [
+              "CATTÉ COFFEE 喵咖",
+              "Bloom Botanicals",
+              "北岳茶事",
+              "Nimbus Studio"
+            ]
+          },
+          {
+            "name": "logo_brief",
+            "label": "视觉元素 + 风格 Visual elements + style",
+            "type": "text",
+            "placeholder": [
+              "扁平简笔画风的猫咪 + 咖啡杯，圆润友好",
+              "line-drawn mountain + tea leaf, calm oriental minimalism",
+              "geometric bloom petal monogram, modern boutique",
+              "cloud + sparkle mascot, soft playful tech"
+            ]
+          },
+          {
+            "name": "palette_desc",
+            "label": "配色 Palette (from your 色彩规范)",
+            "type": "text",
+            "placeholder": [
+              "cozy blue, cream, coffee brown, accent red, accent yellow",
+              "sage green, oat cream, terracotta, ink black",
+              "dusty rose, gold, deep plum, off-white"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-brand-logo-variant-set-catte-coffee-prev.jpg",
+    "topics": [
+      "design",
+      "branding",
+      "logos",
+      "guides",
+      "posters",
+      "minimalist",
+      "mockups",
+      "composition",
+      "vibrant",
+      "digital-canvas"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "creation_date": "2026-08-05",
+    "use_cases": [
+      "for-designers",
+      "for-dtc-brands"
+    ],
+    "allow_generation": true
   }
 ]
