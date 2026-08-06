@@ -238,10 +238,12 @@ export const TOOL_REGISTRY: ToolDef[] = [
     action: { type: "generate", templateId: "template-product-poster" },
     i18n: toolKeys("ecommerce_photo"),
     seo: seoKeys("ecommerce_photo"),
+    // Deploys the ecommerce_workflow demo asset (curify-gallery →
+    // cdn.curify-ai.com/video/workflow_demos/): one product photo → a full
+    // marketing kit (product shots, lifestyle scenes, banners, video ad).
     demo: {
-      type: "single_image",
-      src: "/images/nano_insp/template-fashion-ecommerce-cycling-jersey-aerodynamic.jpg",
-      alt: "Upload a product photo, get an e-commerce ready listing image — cycling jersey rendered as a vertical detail-shot layout",
+      type: "single_video",
+      src: "/video/workflow_demos/product_to_marketing_kit_en.mp4",
     },
   },
 
