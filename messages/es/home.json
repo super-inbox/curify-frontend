@@ -342,6 +342,14 @@
         "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
         "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
       }
+    },
+    "die_cut_sticker_file": {
+      "title": "Archivo de fábrica de pegatinas troqueladas",
+      "desc": "Convierte cualquier diseño en un archivo de pegatina troquelada listo para imprimir: arte transparente de 300 DPI, una línea de corte precisa en mm y un PDF en CMYK en un ZIP que tu impresora puede usar sin complicaciones de preimpresión.",
+      "meta": {
+        "title": "Creador de archivos de pegatinas troqueladas — Línea de corte + CMYK, listo para imprimir | Curify",
+        "description": "Convierte cualquier imagen en un archivo de pegatina troquelada listo para la fábrica: PNG transparente de 300 DPI, línea de corte CutContour precisa en mm (SVG) y PDF en CMYK listo para imprimir en un ZIP. Para vendedores de pegatinas, POD y mercancía de 谷子."
+      }
     }
   },
   "bilingual": {
@@ -1300,6 +1308,59 @@
         "name": "Kit de marca",
         "desc": "Aplica tu identidad en un paquete completo de maquetas de identidad visual.",
         "cta": "Crear paquete VI"
+      }
+    }
+  },
+  "dieCutStickerFile": {
+    "metadata": {
+      "title": "Creador de archivos de pegatinas troqueladas — Línea de corte + CMYK, listo para imprimir | Curify",
+      "description": "Convierte cualquier imagen en un archivo de pegatina troquelada listo para la fábrica: PNG transparente de 300 DPI, línea de corte CutContour precisa en mm (SVG) y PDF en CMYK listo para imprimir en un ZIP. Para vendedores de pegatinas, POD y mercancía de 谷子."
+    },
+    "title": "Cualquier diseño → Un archivo de pegatina troquelada listo para la fábrica",
+    "description": "Sube una imagen y obtén todo el paquete de impresión que necesita una fábrica de pegatinas: un PNG de arte transparente de 300 DPI, una línea de corte troquelada precisa en milímetros (CutContour), un PDF en CMYK listo para imprimir, una vista previa y una hoja de especificaciones, todo empaquetado en un ZIP. La eliminación de fondo, la línea de corte, el sangrado y el CMYK se manejan por ti, así que omites la preimpresión y entregas el archivo directamente a tu impresora.",
+    "example": "Ejemplo: un diseño → un archivo de pegatina troquelada con la línea de corte desplazada 3 mm alrededor del arte.",
+    "cta": "Contáctanos para un archivo o un pedido al por mayor",
+    "why": {
+      "title": "¿Por qué hacer archivos de pegatinas a través de Curify?",
+      "point1": "Una imagen entra, un paquete completo sale: el arte transparente de 300 DPI, una línea de corte vectorial y un PDF de impresión en CMYK, no solo un PNG que aún tienes que preparar.",
+      "point2": "La línea de corte es determinista, no AI. Trazamos y desplazamos la silueta en código, así que el troquelado es preciso en mm y reproducible; nunca un camino alucinado que desecha un lote en la cortadora.",
+      "point3": "Maneja entradas desordenadas. Cualquier fondo (foto, cuadros, escena) se elimina automáticamente, y las pegatinas de múltiples elementos se mantienen completas y envueltas por un contorno limpio con un sangrado de 3 mm.",
+      "point4": "Color listo para imprimir. Convertimos a CMYK a través de un perfil ICC (no un cambio de espacio de color plano) y precompensamos la saturación, para que tus colores no salgan deslavados."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q1": "¿Qué exactamente obtengo?",
+      "a1": "Un ZIP listo para la fábrica: un PNG de arte transparente de 300 DPI, una línea de corte precisa en milímetros como un SVG CutContour, un PDF en CMYK listo para imprimir, una imagen de vista previa y una hoja de especificaciones (tamaño / DPI / sangrado / material). Entregalo directamente a tu impresora.",
+      "q2": "El borde de corte se ve un poco irregular — ¿se imprimirá limpio? ¿Es el PNG más preciso?",
+      "a2": "La vista previa en pantalla traza el contorno a resolución de pantalla, por lo que puede verse ligeramente irregular, pero el archivo entregado es diferente: el arte es un PNG de alta resolución de 300 DPI con bordes limpios, y la línea de corte en sí es un verdadero vector (SVG) preciso al milímetro, por lo que se mantiene nítido a cualquier tamaño y la cortadora lo sigue suavemente. Para los bordes más nítidos, comienza desde un PNG con fondo transparente en lugar de un JPG.",
+      "q3": "¿Por qué el color se ve deslavado (发灰) después de convertir a CMYK?",
+      "a3": "CMYK tiene un gamut más pequeño que RGB, por lo que los colores brillantes se apagan, y un perfil genérico los apaga más. Pre-aumentamos la saturación y convertimos a través de un perfil ICC para recuperar el color; para un color de producción exacto, envía el perfil recubierto de tu impresora (por ejemplo, Japan Color 2001 Coated o US Web Coated SWOP) y lo utilizaremos.",
+      "q4": "¿Realmente han hecho archivos de fábrica reales con esto?",
+      "a4": "Sí — construimos el pipeline nosotros mismos (geometría de línea de corte determinista, pegatinas de múltiples elementos, sangrado de 3 mm, ICC CMYK) y hemos ejecutado archivos reales de extremo a extremo, incluyendo pegatinas ilustradas complejas y figuras de IP. Manejamos la preimpresión para que no tengas que aprenderlo."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué es un archivo de fábrica de pegatinas troqueladas?",
+        "p1": "Una pegatina troquelada no es un rectángulo: se corta según la forma de tu arte. Para imprimir una, una fábrica necesita más que una imagen: el arte a resolución de impresión con un fondo transparente, una línea de corte separada (el camino del cuchillo) que sigue la forma con un pequeño sangrado, y el color en CMYK.",
+        "p2": "Ensamblar esos a mano en Photoshop/Illustrator — eliminar el fondo, dibujar y desplazar el camino de corte, establecer el sangrado, convertir a CMYK — es el paso de 'preimpresión' lento y propenso a errores que la mayoría de los vendedores de pegatinas temen y que las fábricas rechazan.",
+        "p3": "Esta herramienta produce todo el paquete a partir de una imagen, por lo que incluso un principiante puede entregar un archivo a una fábrica que funcione sin idas y venidas."
+      },
+      "how": {
+        "title": "Cómo funciona",
+        "p1": "Sube un diseño: un PNG transparente es ideal, pero cualquier imagen (incluso una foto con un fondo ocupado) funciona.",
+        "p2": "El fondo se elimina automáticamente y el sujeto se aísla (los stickers de múltiples elementos permanecen enteros).",
+        "p3": "La línea de corte se traza y se desplaza de la silueta por tu sangrado (predeterminado 3 mm) como un vector preciso en mm — un color spot CutContour que el RIP lee como la ruta del cuchillo.",
+        "p4": "La obra se renderiza a 300 DPI sobre un fondo transparente y se convierte a CMYK listo para impresión a través de un perfil ICC.",
+        "p5": "Todo se agrupa en un ZIP — PNG de la obra, SVG de la línea de corte, PDF en CMYK, vista previa y hoja de especificaciones — listo para enviar a la fábrica."
+      },
+      "usecases": {
+        "title": "Para quién es",
+        "creatorsTitle": "Vendedores de stickers y artistas",
+        "creatorsBody": "Vende stickers troquelados en Etsy, TikTok o 小红书 sin aprender preimpresión — convierte tu arte en archivos que las fábricas aceptan y destaca con diseños originales (sin licencias de clip-art).",
+        "educationTitle": "谷子 / POD y mercancía de fandom",
+        "educationBody": "Crea llaveros de acrílico, insignias 吧唧, imanes de nevera y mercancía de 谷子 según las estrictas especificaciones de entrada de la fábrica — línea de corte, sangrado y CMYK manejados según especificaciones.",
+        "businessTitle": "Pequeñas tiendas y pedidos al por mayor",
+        "businessBody": "¿Necesitas un lote de diseños convertidos en archivos de producción? Lo ofrecemos como un servicio hecho para ti / al por mayor — envía tu arte, recibe ZIPs listos para la fábrica."
       }
     }
   }

@@ -342,6 +342,14 @@
         "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
         "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
       }
+    },
+    "die_cut_sticker_file": {
+      "title": "Die-Cut Sticker Fabrika Dosyası",
+      "desc": "Herhangi bir tasarımı baskıya hazır die-cut sticker dosyasına dönüştürün — 300 DPI şeffaf sanat eseri, mm hassasiyetinde kesim hattı ve bir ZIP içinde baskı öncesi zorluk olmadan çalıştırılabilen bir CMYK PDF.",
+      "meta": {
+        "title": "Die-Cut Sticker Dosya Yapıcı — Kesim Hattı + CMYK, Baskıya Hazır | Curify",
+        "description": "Herhangi bir resmi fabrikaya hazır die-cut sticker dosyasına dönüştürün: 300 DPI şeffaf PNG, mm hassasiyetinde CutContour kesim hattı (SVG) ve baskıya hazır CMYK PDF bir ZIP içinde. Sticker satıcıları, POD ve 谷子 ürünleri için."
+      }
     }
   },
   "bilingual": {
@@ -1385,6 +1393,59 @@
         "name": "Marka kiti",
         "desc": "Kimliğinizi eksiksiz bir görsel kimlik (VI) maket paketiyle uygulayın.",
         "cta": "VI paketi oluştur"
+      }
+    }
+  },
+  "dieCutStickerFile": {
+    "metadata": {
+      "title": "Die-Cut Sticker Dosya Yapıcı — Kesim Hattı + CMYK, Baskıya Hazır | Curify",
+      "description": "Herhangi bir resmi fabrikaya hazır die-cut sticker dosyasına dönüştürün: 300 DPI şeffaf PNG, mm hassasiyetinde CutContour kesim hattı (SVG) ve baskıya hazır CMYK PDF bir ZIP içinde. Sticker satıcıları, POD ve 谷子 ürünleri için."
+    },
+    "title": "Herhangi Bir Tasarım → Fabrikaya Hazır Die-Cut Sticker Dosyası",
+    "description": "Bir resmi yükleyin ve bir sticker fabrikasının ihtiyaç duyduğu tüm baskı paketini alın — 300 DPI şeffaf sanat eseri PNG, milimetre hassasiyetinde die-cut hattı (CutContour), baskıya hazır CMYK PDF, bir önizleme ve bir spesifikasyon sayfası — hepsi bir ZIP içinde paketlenmiş. Arka plan kaldırma, kesim konturu, bleed ve CMYK sizin için halledilir, böylece baskı öncesini atlayıp dosyayı doğrudan yazıcınıza verebilirsiniz.",
+    "example": "Örnek: bir tasarım → sanat eserinin etrafında temiz bir 3 mm offset ile bir die-cut sticker dosyası.",
+    "cta": "Bir dosya veya toplu sipariş için bizimle iletişime geçin",
+    "why": {
+      "title": "Neden Curify üzerinden sticker dosyası yapmalısınız?",
+      "point1": "Bir resim yükleyin, tam bir fabrika paketi alın — şeffaf 300 DPI sanat eseri, bir vektör kesim hattı ve bir CMYK baskı PDF'si, sadece hazırlamanız gereken bir PNG değil.",
+      "point2": "Kesim hattı deterministiktir, AI değildir. Silueti kodda izliyoruz ve offsetliyoruz, böylece die-cut mm hassasiyetinde ve tekrar üretilebilir — asla bir batch'i kesim makinesinde çöpe atan hayali bir yol değil.",
+      "point3": "Dağınık girişi yönetir. Herhangi bir arka plan (fotoğraf, kareli, sahne) otomatik olarak kaldırılır ve çok elemanlı stickerlar bir temiz kontur ile bir arada tutulur ve 3 mm bleed ile sarılır.",
+      "point4": "Baskıya hazır renk. Renkleri solgun çıkmaması için ICC profili aracılığıyla CMYK'ya dönüştürüyoruz (düz bir renk alanı dönüşümü değil) ve doygunluğu önceden telafi ediyoruz."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Tam olarak ne alıyorum?",
+      "a1": "Fabrikaya hazır bir ZIP: 300 DPI şeffaf sanat eseri PNG, milimetre hassasiyetinde bir die-cut hattı olarak CutContour SVG, baskıya hazır CMYK PDF, bir önizleme resmi ve bir spesifikasyon sayfası (boyut / DPI / bleed / malzeme). Bunu doğrudan yazıcınıza verin.",
+      "q2": "Kesim kenarı biraz pürüzlü görünüyor — temiz mi basacak? PNG daha mı hassas?",
+      "a2": "Ekrandaki önizleme, ekran çözünürlüğünde konturu izler, bu yüzden biraz pürüzlü görünebilir — ama teslim edilen dosya farklıdır: sanat eseri yüksek çözünürlüklü 300 DPI PNG ile temiz kenarlara sahiptir ve kesim hattı kendisi milimetreye doğru bir gerçek vektördür (SVG), bu yüzden her boyutta keskin kalır ve kesim makinesi onu düzgün takip eder. En keskin kenarlar için, JPG yerine şeffaf arka plana sahip bir PNG ile başlayın.",
+      "q3": "CMYK'ya dönüştürdükten sonra neden renk solgun görünüyor (发灰)?",
+      "a3": "CMYK, RGB'den daha küçük bir gamut'a sahiptir, bu yüzden parlak renkler soluklaşır — ve genel bir profil en çok soluklaştırır. Doygunluğu önceden artırıyoruz ve rengi geri getirmek için ICC profili aracılığıyla dönüştürüyoruz; tam üretim rengi için, yazıcınızın kaplanmış profilini (örneğin, Japan Color 2001 Coated veya US Web Coated SWOP) gönderin ve biz onu kullanacağız.",
+      "q4": "Bununla gerçekten gerçek fabrika dosyaları yaptınız mı?",
+      "a4": "Evet — kendimiz bir pipeline oluşturduk (deterministik kesim hattı geometrisi, çok elemanlı stickerlar, 3 mm bleed, ICC CMYK) ve karmaşık illüstrasyonlu stickerlar ve IP figürleri dahil olmak üzere gerçek dosyaları uçtan uca çalıştırdık. Baskı öncesini hallediyoruz, böylece bunu öğrenmek zorunda kalmazsınız."
+    },
+    "deep": {
+      "what": {
+        "title": "Die-cut sticker fabrikası dosyası nedir?",
+        "p1": "Bir die-cut sticker bir dikdörtgen değildir — sanat eserinizin şekline kesilir. Bir tane basmak için, bir fabrikanın bir görüntüden fazlasına ihtiyacı vardır: şeffaf bir arka plana sahip baskı çözünürlüğünde sanat eseri, şekli takip eden ayrı bir kesim hattı (bıçak yolu) ve CMYK'da renk.",
+        "p2": "Bunları Photoshop/Illustrator'da elle bir araya getirmek — arka planı kaldırmak, kesim yolunu çizmek ve offsetlemek, bleed ayarlamak, CMYK'ya dönüştürmek — çoğu sticker satıcısının korktuğu ve fabrikaların dosyaları reddettiği yavaş, hata yapmaya açık 'baskı öncesi' adımıdır.",
+        "p3": "Bu araç, tek bir görüntüden tüm paketi üretir, böylece bir acemi bile bir fabrikaya geri dönüş olmadan çalışacak bir dosya verebilir."
+      },
+      "how": {
+        "title": "Nasıl çalışır",
+        "p1": "Bir tasarım yükleyin — şeffaf bir PNG idealdir, ancak herhangi bir görüntü (yoğun bir arka plana sahip bir fotoğraf bile) işe yarar.",
+        "p2": "Arka plan otomatik olarak kaldırılır ve konu izole edilir (çoklu elemanlı çıkartmalar bütün kalır).",
+        "p3": "Kesim hattı, siluetten kanamanızla (varsayılan 3 mm) offsetlenerek izlenir ve mm hassasiyetinde bir vektör olarak oluşturulur — RIP'in bıçak yolu olarak okuduğu bir CutContour spot rengi.",
+        "p4": "Sanat eseri, şeffaf bir arka planda 300 DPI'da işlenir ve bir ICC profili aracılığıyla baskıya hazır CMYK'ya dönüştürülür.",
+        "p5": "Her şey tek bir ZIP dosyasında birleştirilir — sanat eseri PNG, kesim hattı SVG, CMYK PDF, önizleme ve spesifikasyon sayfası — fabrikaya göndermeye hazır."
+      },
+      "usecases": {
+        "title": "Kimin için",
+        "creatorsTitle": "Çıkartma satıcıları ve sanatçılar",
+        "creatorsBody": "Etsy, TikTok veya 小红书'da ön baskı öğrenmeden die-cut çıkartmalar satın — sanatınızı fabrikaların kabul ettiği dosyalara dönüştürün ve orijinal tasarımlarla öne çıkın (clip-art lisansı yok).",
+        "educationTitle": "谷子 / POD ve fandom ürünleri",
+        "educationBody": "Akrilik anahtarlıklar, 吧唧 rozetleri, buzdolabı magnetleri ve 谷子 ürünleri için sıkı fabrika 入稿 spesifikasyonlarına uygun olarak yapın — kesim hattı, kanama ve CMYK spesifikasyona göre işlenir.",
+        "businessTitle": "Küçük dükkanlar ve toplu siparişler",
+        "businessBody": "Bir dizi tasarımın üretim dosyalarına dönüştürülmesine mi ihtiyacınız var? Bunu sizin için yapılmış / toplu bir hizmet olarak sunuyoruz — sanatınızı gönderin, fabrikaya hazır ZIP'leri geri alın."
       }
     }
   }

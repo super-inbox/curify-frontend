@@ -342,6 +342,14 @@
         "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
         "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
       }
+    },
+    "die_cut_sticker_file": {
+      "title": "刀模贴纸工厂文件",
+      "desc": "把任意图变成工厂能直接开印的刀模贴纸文件：300 DPI 透明图 + 毫米级刀线 + CMYK 印刷 PDF，一个 ZIP 甩给工厂，免入稿烦恼。",
+      "meta": {
+        "title": "刀模贴纸文件制作 — 刀线+CMYK，工厂直接开印 | Curify",
+        "description": "把任意图变成工厂能开印的刀模贴纸文件：300 DPI 透明 PNG、毫米级 CutContour 刀线(SVG)、CMYK 印刷 PDF，打包成一个 ZIP。适合贴纸卖家、POD、谷子周边。"
+      }
     }
   },
   "bilingual": {
@@ -1420,6 +1428,59 @@
         "name": "品牌工具包",
         "desc": "将您的品牌形象应用于完整的视觉识别模型包。",
         "cta": "构建 VI 包"
+      }
+    }
+  },
+  "dieCutStickerFile": {
+    "metadata": {
+      "title": "刀模贴纸文件制作 — 刀线+CMYK，工厂直接开印 | Curify",
+      "description": "把任意图变成工厂能开印的刀模贴纸文件：300 DPI 透明 PNG、毫米级 CutContour 刀线(SVG)、CMYK 印刷 PDF，打包成一个 ZIP。适合贴纸卖家、POD、谷子周边。"
+    },
+    "title": "任意图 → 工厂能直接开印的刀模贴纸文件",
+    "description": "丢一张图进来，就能拿到贴纸工厂需要的整套文件——300 DPI 透明图 PNG、毫米级刀线（CutContour）、CMYK 印刷 PDF、预览图、规格单，打包成一个 ZIP。抠图、刀线、出血、CMYK 全自动搞定，省掉入稿步骤，文件直接甩给工厂。",
+    "example": "示例：一张图 → 一份刀模贴纸文件，刀线在图形四周留出干净的 3mm 出血。",
+    "cta": "联系我们出文件 / 批量下单",
+    "why": {
+      "title": "为什么用 Curify 出贴纸文件？",
+      "point1": "一张图进，整套工厂文件出。透明 300 DPI 图形、矢量刀线、CMYK 印刷 PDF 全都有，而不是一张还要自己处理的 PNG。",
+      "point2": "刀线是代码算的，不是 AI 画的。用程序描边并外扩轮廓，毫米级精准、可复现，绝不会因为一条乱刀线让整批报废。",
+      "point3": "乱背景也能吃。照片、格子、场景背景都自动抠掉；多元素贴纸整体保留，用一条干净轮廓 + 3mm 出血包住。",
+      "point4": "颜色可印。用 ICC 配置转 CMYK（不是简单切色彩空间），并提前补偿饱和度，颜色不会发灰。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "q1": "我具体能拿到什么？",
+      "a1": "一个工厂可用的 ZIP：300 DPI 透明图 PNG、毫米级刀线（CutContour SVG）、CMYK 印刷 PDF、预览图、规格单（尺寸/DPI/出血/材质）。直接甩给工厂就行。",
+      "q2": "边缘看着有点锯齿，打印出来会不会不准？是不是 PNG 更精准？",
+      "a2": "屏幕上的预览是按屏幕分辨率描的轮廓，所以看着会有点锯齿；但交付的文件不一样：图形是 300 DPI 高清 PNG，边缘很干净；刀线本身是矢量（SVG），毫米级精准，放大也不虚，切割机跟着走很顺。想要最干净的边缘，建议用透明底 PNG，而不是 JPG。",
+      "q3": "转成 CMYK 之后颜色发灰怎么办？",
+      "a3": "CMYK 色域比 RGB 小，鲜艳色会变暗，用通用配置最容易发灰。我们会提前补一点饱和度、再用 ICC 配置转换，把颜色拉回来；要精准还原生产色，把工厂的涂布配置（如 Japan Color 2001 Coated / US Web Coated SWOP）发给我们，我们套上去。",
+      "q4": "你们真的做过工厂文件吗？",
+      "a4": "做过——这套流程是我们自己搭的（刀线几何算法、多元素贴纸、3mm 出血、ICC CMYK），也跑过真实文件，包括复杂插画贴纸和 IP 手办。入稿这步我们帮你搞定，你不用学。"
+    },
+    "deep": {
+      "what": {
+        "title": "什么是刀模贴纸工厂文件？",
+        "p1": "刀模贴纸不是方块——它按图形轮廓切。要印一张，工厂需要的不只是一张图：还要印刷分辨率的透明底图形、一条沿轮廓外扩一点出血的独立刀线（切割路径）、以及 CMYK 颜色。",
+        "p2": "在 PS/AI 里手动做这些——抠图、画刀线、外扩、设出血、转 CMYK——就是大多数贴纸卖家最怕、工厂最容易退稿的「入稿」环节。",
+        "p3": "这个工具一张图就能出整套，小白也能给工厂一个不用来回改的文件。"
+      },
+      "how": {
+        "title": "怎么用",
+        "p1": "上传一张图——透明 PNG 最好，但任意图（哪怕背景很乱的照片）都行。",
+        "p2": "自动抠掉背景、分离主体（多元素贴纸整体保留）。",
+        "p3": "刀线沿轮廓外扩你的出血（默认 3mm），生成毫米级矢量——RIP 认的 CutContour 专色切割路径。",
+        "p4": "图形按 300 DPI 透明底渲染，并用 ICC 配置转成可印的 CMYK。",
+        "p5": "全部打包成一个 ZIP——图形 PNG、刀线 SVG、CMYK PDF、预览、规格单，直接发工厂。"
+      },
+      "usecases": {
+        "title": "适合谁",
+        "creatorsTitle": "贴纸卖家 & 画手",
+        "creatorsBody": "在 Etsy、TikTok、小红书卖刀模贴纸，不用学入稿——把画变成工厂认的文件，用原创设计脱颖而出（无需买版权素材）。",
+        "educationTitle": "谷子 / POD & 周边",
+        "educationBody": "做亚克力钥匙扣、吧唧、冰箱贴、谷子周边，按工厂严格入稿规范来——刀线、出血、CMYK 都到位。",
+        "businessTitle": "小店 & 批量下单",
+        "businessBody": "一批设计要出成生产文件？我们提供代做 / 批量服务——把画发来，拿回工厂可用的 ZIP。"
       }
     }
   }

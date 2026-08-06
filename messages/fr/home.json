@@ -342,6 +342,14 @@
         "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
         "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
       }
+    },
+    "die_cut_sticker_file": {
+      "title": "Fichier de Sticker Découpé",
+      "desc": "Transformez n'importe quel design en un fichier de sticker découpé prêt à imprimer — œuvre d'art transparente à 300 DPI, ligne de découpe précise au mm, et un PDF CMYK dans un ZIP que votre imprimeur peut utiliser sans tracas de prépresse.",
+      "meta": {
+        "title": "Créateur de Fichier de Sticker Découpé — Ligne de Découpe + CMYK, Prêt à Imprimer | Curify",
+        "description": "Transformez n'importe quelle image en un fichier de sticker découpé prêt pour l'usine : PNG transparent à 300 DPI, ligne de découpe CutContour précise au mm (SVG), et PDF CMYK prêt à imprimer dans un ZIP. Pour les vendeurs de stickers, POD & merch 谷子."
+      }
     }
   },
   "bilingual": {
@@ -1300,6 +1308,59 @@
         "name": "Kit de marque",
         "desc": "Appliquez votre identité sur un pack complet de maquettes d'identité visuelle.",
         "cta": "Créer le pack VI"
+      }
+    }
+  },
+  "dieCutStickerFile": {
+    "metadata": {
+      "title": "Créateur de Fichier de Sticker Découpé — Ligne de Découpe + CMYK, Prêt à Imprimer | Curify",
+      "description": "Transformez n'importe quelle image en un fichier de sticker découpé prêt pour l'usine : PNG transparent à 300 DPI, ligne de découpe CutContour précise au mm (SVG), et PDF CMYK prêt à imprimer dans un ZIP. Pour les vendeurs de stickers, POD & merch 谷子."
+    },
+    "title": "Tout Design → Un Fichier de Sticker Découpé Prêt pour l'Usine",
+    "description": "Déposez une image et obtenez tout le pack d'impression dont une usine de stickers a besoin — un PNG d'œuvre d'art transparente à 300 DPI, une ligne de découpe précise au millimètre (CutContour), un PDF CMYK prêt à imprimer, une image de prévisualisation, et une fiche technique — regroupés dans un ZIP. La suppression de fond, le contour de découpe, le débordement et le CMYK sont tous gérés pour vous, vous évitant ainsi le prépresse et permettant de remettre le fichier directement à votre imprimeur.",
+    "example": "Exemple : un design → un fichier de sticker découpé avec la ligne de découpe décalée de 3 mm autour de l'œuvre.",
+    "cta": "Contactez-nous pour un fichier ou une commande en gros",
+    "why": {
+      "title": "Pourquoi créer des fichiers de stickers via Curify ?",
+      "point1": "Une image entrée, un pack complet sorti — l'œuvre d'art transparente à 300 DPI, une ligne de découpe vectorielle, et un PDF d'impression CMYK, pas juste un PNG que vous devez encore préparer.",
+      "point2": "La ligne de découpe est déterministe, pas AI. Nous traçons et décalons la silhouette dans le code, donc la découpe est précise au mm et reproductible — jamais un chemin halluciné qui jette un lot à la découpeuse.",
+      "point3": "Gère les entrées désordonnées. Tout arrière-plan (photo, vichy, scène) est supprimé automatiquement, et les stickers multi-éléments sont conservés entiers et enveloppés par un seul contour propre avec un débordement de 3 mm.",
+      "point4": "Couleur prête à imprimer. Nous convertissons en CMYK via un profil ICC (pas un simple changement de couleurs) et pré-compensons la saturation, donc vos couleurs ne ressortent pas délavées."
+    },
+    "faq": {
+      "title": "Questions fréquemment posées",
+      "q1": "Que reçois-je exactement ?",
+      "a1": "Un ZIP prêt pour l'usine : un PNG d'œuvre d'art transparente à 300 DPI, une ligne de découpe précise au millimètre en tant que SVG CutContour, un PDF CMYK prêt à imprimer, une image de prévisualisation, et une fiche technique (taille / DPI / débordement / matériau). Remettez-le directement à votre imprimeur.",
+      "q2": "Le bord de découpe semble un peu dentelé — va-t-il imprimer proprement ? Le PNG est-il plus précis ?",
+      "a2": "L'aperçu à l'écran trace le contour à la résolution de l'écran, donc il peut sembler légèrement dentelé — mais le fichier livré est différent : l'œuvre est un PNG haute résolution à 300 DPI avec des bords nets, et la ligne de découpe elle-même est un vrai vecteur (SVG) précis au millimètre, donc elle reste nette à n'importe quelle taille et la découpeuse la suit en douceur. Pour des bords les plus nets, commencez par un PNG avec fond transparent plutôt qu'un JPG.",
+      "q3": "Pourquoi la couleur semble-t-elle délavée (发灰) après la conversion en CMYK ?",
+      "a3": "Le CMYK a une gamme plus petite que le RGB, donc les couleurs vives s'estompent — et un profil générique les estompe le plus. Nous pré-boostons la saturation et convertissons via un profil ICC pour ramener la couleur ; pour une couleur de production exacte, envoyez le profil revêtu de votre imprimeur (par exemple, Japan Color 2001 Coated ou US Web Coated SWOP) et nous l'utiliserons.",
+      "q4": "Avez-vous réellement créé de vrais fichiers d'usine avec cela ?",
+      "a4": "Oui — nous avons construit le pipeline nous-mêmes (géométrie de ligne de découpe déterministe, stickers multi-éléments, débordement de 3 mm, ICC CMYK) et avons exécuté de vrais fichiers de bout en bout, y compris des stickers illustrés complexes et des figures IP. Nous gérons le prépresse pour que vous n'ayez pas à l'apprendre."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce qu'un fichier de sticker découpé ?",
+        "p1": "Un sticker découpé n'est pas un rectangle — il est découpé selon la forme de votre œuvre. Pour en imprimer un, une usine a besoin de plus qu'une image : l'œuvre à la résolution d'impression avec un fond transparent, une ligne de découpe séparée (le chemin de la lame) qui suit la forme avec un petit débordement, et la couleur en CMYK.",
+        "p2": "Assembler cela à la main dans Photoshop/Illustrator — supprimer le fond, dessiner et décaler le chemin de découpe, définir le débordement, convertir en CMYK — est l'étape de prépresse lente et sujette aux erreurs que la plupart des vendeurs de stickers redoutent et que les usines rejettent.",
+        "p3": "Cet outil produit tout le pack à partir d'une seule image, donc même un débutant peut remettre un fichier à une usine qui fonctionne sans allers-retours."
+      },
+      "how": {
+        "title": "Comment ça fonctionne",
+        "p1": "Téléchargez un design — un PNG transparent est idéal, mais n'importe quelle image (même une photo avec un arrière-plan chargé) fonctionne.",
+        "p2": "L'arrière-plan est automatiquement supprimé et le sujet est isolé (les autocollants multi-éléments restent entiers).",
+        "p3": "La ligne de découpe est tracée et décalée de la silhouette par votre fond perdu (par défaut 3 mm) en tant que vecteur précis au mm — une couleur spot CutContour que le RIP lit comme le chemin de la lame.",
+        "p4": "L'œuvre est rendue à 300 DPI sur un fond transparent et convertie en CMJN prête à imprimer via un profil ICC.",
+        "p5": "Tout est regroupé dans un seul ZIP — œuvre PNG, ligne de découpe SVG, PDF CMJN, aperçu et fiche technique — prêt à être envoyé à l'usine."
+      },
+      "usecases": {
+        "title": "Pour qui c'est",
+        "creatorsTitle": "Vendeurs d'autocollants & artistes",
+        "creatorsBody": "Vendez des autocollants découpés sur Etsy, TikTok ou 小红书 sans apprendre le prépresse — transformez votre art en fichiers acceptés par les usines et démarquez-vous avec des designs originaux (pas de licence de clip-art).",
+        "educationTitle": "谷子 / POD & marchandises de fandom",
+        "educationBody": "Fabriquez des porte-clés en acrylique, des badges 吧唧, des aimants de réfrigérateur et des marchandises 谷子 selon des spécifications strictes d'entrée à l'usine — ligne de découpe, fond perdu et CMJN gérés selon les spécifications.",
+        "businessTitle": "Petites boutiques & commandes en gros",
+        "businessBody": "Besoin d'un lot de designs transformés en fichiers de production ? Nous l'offrons en tant que service clé en main / en gros — envoyez votre art, recevez des ZIP prêts pour l'usine."
       }
     }
   }

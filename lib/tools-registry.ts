@@ -54,6 +54,12 @@ export type ToolDef = {
 
   action?: ToolAction;
 
+  // Optional CTA override. "contact" renders a "Contact us" button linking to
+  // /contact instead of the create/coming-soon states — for tools we offer as a
+  // done-for-you / bulk service rather than a self-serve generate (e.g. the
+  // die-cut sticker factory-file service).
+  cta?: "contact";
+
   i18n: {
     titleKey: string;
     descKey: string;
@@ -271,6 +277,25 @@ export const TOOL_REGISTRY: ToolDef[] = [
       type: "single_image",
       src: "/images/nano_insp/template-ip-character-sprite-emoji-sheet-graduation-alpaca.jpg",
       alt: "Upload one character drawing, get a 9-pose expression sticker sheet — graduation alpaca rendered across a 3x3 grid",
+    },
+  },
+  {
+    id: "die-cut-sticker-file",
+    slug: "die-cut-sticker-file",
+    groupId: "image",
+    status: "demo",
+    // No self-serve backend job — offered as a done-for-you / bulk service via
+    // the contact CTA. job_type is a required field but unused for this tool.
+    job_type: "video_transcript",
+    namespace: "dieCutStickerFile",
+    action: { type: "none" },
+    cta: "contact",
+    i18n: toolKeys("die_cut_sticker_file"),
+    seo: seoKeys("die_cut_sticker_file"),
+    demo: {
+      type: "single_image",
+      src: "/images/tools/die-cut-sticker-file.jpg",
+      alt: "One design image turned into a die-cut sticker factory file — 300 DPI transparent artwork PNG, mm-accurate CutContour cutline SVG, print-ready CMYK PDF, preview and spec sheet in one ZIP",
     },
   },
 

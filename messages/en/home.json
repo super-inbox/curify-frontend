@@ -379,6 +379,14 @@
         "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
         "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
       }
+    },
+    "die_cut_sticker_file": {
+      "title": "Die-Cut Sticker Factory File",
+      "desc": "Turn any design into a print-ready die-cut sticker file — 300 DPI transparent artwork, a mm-accurate cut line, and a CMYK PDF in one ZIP your printer can run without prepress hassle.",
+      "meta": {
+        "title": "Die-Cut Sticker File Maker — Cut Line + CMYK, Print-Ready | Curify",
+        "description": "Turn any image into a factory-ready die-cut sticker file: 300 DPI transparent PNG, mm-accurate CutContour cut line (SVG), and print-ready CMYK PDF in one ZIP. For sticker sellers, POD & 谷子 merch."
+      }
     }
   },
   "bilingual": {
@@ -1239,6 +1247,59 @@
         "name": "Brand kit",
         "desc": "Apply your identity across a full visual-identity mockup pack.",
         "cta": "Build VI pack"
+      }
+    }
+  },
+  "dieCutStickerFile": {
+    "metadata": {
+      "title": "Die-Cut Sticker File Maker — Cut Line + CMYK, Print-Ready | Curify",
+      "description": "Turn any image into a factory-ready die-cut sticker file: 300 DPI transparent PNG, mm-accurate CutContour cut line (SVG), and print-ready CMYK PDF in one ZIP. For sticker sellers, POD & 谷子 merch."
+    },
+    "title": "Any Design → A Factory-Ready Die-Cut Sticker File",
+    "description": "Drop in one image and get the whole print pack a sticker factory needs — a 300 DPI transparent artwork PNG, a millimetre-accurate die-cut line (CutContour), a print-ready CMYK PDF, a preview, and a spec sheet — bundled into one ZIP. Background removal, the cut contour, bleed, and CMYK are all handled for you, so you skip the prepress and hand the file straight to your printer.",
+    "example": "Example: one design → a die-cut sticker file with the cut line offset a clean 3 mm around the artwork.",
+    "cta": "Contact us for a file or bulk order",
+    "why": {
+      "title": "Why make sticker files through Curify?",
+      "point1": "One image in, a full factory pack out — the transparent 300 DPI artwork, a vector cut line, and a CMYK print PDF, not just a PNG you still have to prep.",
+      "point2": "The cut line is deterministic, not AI. We trace and offset the silhouette in code, so the die-cut is mm-accurate and reproducible — never a hallucinated path that scraps a batch at the cutter.",
+      "point3": "Handles messy input. Any background (photo, gingham, scene) is removed automatically, and multi-element stickers are kept whole and wrapped by one clean contour with a 3 mm bleed.",
+      "point4": "Print-ready color. We convert to CMYK through an ICC profile (not a flat colorspace flip) and pre-compensate saturation, so your colors don't come out washed-out."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "What exactly do I get?",
+      "a1": "A factory-ready ZIP: a 300 DPI transparent artwork PNG, a millimetre-accurate die-cut line as a CutContour SVG, a print-ready CMYK PDF, a preview image, and a spec sheet (size / DPI / bleed / material). Hand it straight to your printer.",
+      "q2": "The cut edge looks a little jagged — will it print clean? Is PNG more precise?",
+      "a2": "The on-screen preview traces the outline at screen resolution, so it can look slightly jagged — but the delivered file is different: the artwork is a high-resolution 300 DPI PNG with clean edges, and the cut line itself is a true vector (SVG) accurate to the millimetre, so it stays crisp at any size and the cutter follows it smoothly. For the sharpest edges, start from a transparent-background PNG rather than a JPG.",
+      "q3": "Why does the color look washed-out (发灰) after converting to CMYK?",
+      "a3": "CMYK has a smaller gamut than RGB, so bright colors dull — and a generic profile dulls them most. We pre-boost saturation and convert through an ICC profile to bring the color back; for exact production color, send your printer's coated profile (e.g. Japan Color 2001 Coated or US Web Coated SWOP) and we'll use it.",
+      "q4": "Have you actually made real factory files with this?",
+      "a4": "Yes — we built the pipeline ourselves (deterministic cut-line geometry, multi-element stickers, 3 mm bleed, ICC CMYK) and have run real files end-to-end, including complex illustrated stickers and IP figures. We handle the prepress so you don't have to learn it."
+    },
+    "deep": {
+      "what": {
+        "title": "What is a die-cut sticker factory file?",
+        "p1": "A die-cut sticker isn't a rectangle — it's cut to the shape of your artwork. To print one, a factory needs more than an image: the artwork at print resolution with a transparent background, a separate cut line (the knife path) that follows the shape with a small bleed, and the color in CMYK.",
+        "p2": "Assembling those by hand in Photoshop/Illustrator — removing the background, drawing and offsetting the cut path, setting bleed, converting to CMYK — is the slow, error-prone 'prepress' step most sticker sellers dread and factories reject files over.",
+        "p3": "This tool produces the whole pack from one image, so even a beginner can hand a factory a file that runs without back-and-forth."
+      },
+      "how": {
+        "title": "How it works",
+        "p1": "Upload one design — a transparent PNG is ideal, but any image (even a photo with a busy background) works.",
+        "p2": "The background is removed automatically and the subject is isolated (multi-element stickers stay whole).",
+        "p3": "The die-cut line is traced and offset from the silhouette by your bleed (default 3 mm) as a mm-accurate vector — a CutContour spot color the RIP reads as the knife path.",
+        "p4": "The artwork is rendered at 300 DPI on a transparent background and converted to print-ready CMYK via an ICC profile.",
+        "p5": "Everything is bundled into one ZIP — artwork PNG, cut line SVG, CMYK PDF, preview, and spec sheet — ready to send to the factory."
+      },
+      "usecases": {
+        "title": "Who it's for",
+        "creatorsTitle": "Sticker sellers & artists",
+        "creatorsBody": "Sell die-cut stickers on Etsy, TikTok, or 小红书 without learning prepress — turn your art into files factories accept, and stand out with original designs (no clip-art licensing).",
+        "educationTitle": "谷子 / POD & fandom merch",
+        "educationBody": "Make acrylic keychains, 吧唧 badges, fridge magnets, and 谷子 merch to strict factory 入稿 specs — cut line, bleed, and CMYK handled to spec.",
+        "businessTitle": "Small shops & bulk orders",
+        "businessBody": "Need a batch of designs turned into production files? We offer it as a done-for-you / bulk service — send your art, get factory-ready ZIPs back."
       }
     }
   }
