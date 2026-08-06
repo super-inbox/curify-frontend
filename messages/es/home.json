@@ -350,6 +350,14 @@
         "title": "Creador de archivos de pegatinas troqueladas — Línea de corte + CMYK, listo para imprimir | Curify",
         "description": "Convierte cualquier imagen en un archivo de pegatina troquelada listo para la fábrica: PNG transparente de 300 DPI, línea de corte CutContour precisa en mm (SVG) y PDF en CMYK listo para imprimir en un ZIP. Para vendedores de pegatinas, POD y mercancía de 谷子."
       }
+    },
+    "packaging_mockup": {
+      "title": "Generador de Mockup de Packaging AI",
+      "desc": "Convierte un dieline plano (.ai/PDF) en un mockup de packaging 3D realista: una caja plegada mostrada de frente o en un ángulo de 45°, con las proporciones reales de la caja leídas de tu archivo (no un cubo genérico).",
+      "meta": {
+        "title": "Generador de Mockup de Packaging AI — Dieline a Caja 3D | Curify",
+        "description": "Convierte tu dieline (.ai/PDF) en mockups de packaging 3D realistas: caja plegada, frente / 45° / fondo blanco de comercio electrónico. Proporciones reales de la caja de tu archivo. Para packaging de marca, 文创, regalos y POD."
+      }
     }
   },
   "bilingual": {
@@ -1361,6 +1369,61 @@
         "educationBody": "Crea llaveros de acrílico, insignias 吧唧, imanes de nevera y mercancía de 谷子 según las estrictas especificaciones de entrada de la fábrica — línea de corte, sangrado y CMYK manejados según especificaciones.",
         "businessTitle": "Pequeñas tiendas y pedidos al por mayor",
         "businessBody": "¿Necesitas un lote de diseños convertidos en archivos de producción? Lo ofrecemos como un servicio hecho para ti / al por mayor — envía tu arte, recibe ZIPs listos para la fábrica."
+      }
+    }
+  },
+  "packagingMockup": {
+    "metadata": {
+      "title": "Generador de Mockup de Packaging AI — Dieline a Caja 3D | Curify",
+      "description": "Convierte tu dieline (.ai/PDF) en mockups de packaging 3D realistas: caja plegada, frente / 45° / fondo blanco de comercio electrónico. Proporciones reales de la caja de tu archivo. Para packaging de marca, 文创, regalos y POD."
+    },
+    "title": "Tu Dieline → Un Mockup de Caja 3D Realista",
+    "description": "Envía un dieline plano (刀版展开图, .ai o PDF) y obtén un mockup de packaging 3D plegado realista: frente, 45° tres cuartos, o fondo blanco de comercio electrónico, con tu diseño mapeado en las caras de la caja y las proporciones reales leídas del archivo, para que un cartón plano se mantenga plano en lugar de convertirse en un cubo genérico. Perfecto para la aprobación del cliente, informes para el jefe y páginas de productos.",
+    "example": "Ejemplo: un dieline de caja de regalo 仁寿 plegado en un mockup 3D de 45°: una caja plana de 117×114×39 mm, no un cubo.",
+    "cta": "Contáctanos para un mockup o pedido al por mayor",
+    "why": {
+      "title": "¿Por qué hacer mockups de packaging a través de Curify?",
+      "point1": "Dieline dentro, caja 3D realista fuera. Tu arte plano se pliega y se mapea en las caras de la caja: una foto del producto terminado que puedes entregar a un cliente o colocar en una página de comercio electrónico.",
+      "point2": "Proporciones reales, de tu archivo. Leemos el verdadero Ancho × Alto × Profundidad de tu dieline, para que un cartón plano/shallow se mantenga plano, no el cubo genérico que la mayoría de las herramientas de IA generan.",
+      "point3": "Cualquier ángulo que necesites. Elevación frontal, 45° tres cuartos, o un fondo blanco limpio de comercio electrónico: mismo diseño, mapeado correctamente.",
+      "point4": "Escala. Un dieline o un lote de SKUs: lo ofrecemos como un servicio hecho para ti / al por mayor."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q1": "¿Qué obtengo?",
+      "a1": "Una imagen de mockup 3D de alta resolución (JPG/PNG) de tu caja plegada: frente, 45° o fondo blanco de comercio electrónico, en un fondo de estudio limpio con una sombra suave. Listo para la confirmación del cliente, presentaciones o páginas de productos.",
+      "q2": "¿Las proporciones de la caja son precisas a mi dieline?",
+      "a2": "Sí, ese es el objetivo. Leemos el verdadero Ancho × Alto × Profundidad de tu archivo (el .ai/PDF está dibujado 1:1) y hacemos cumplir esas proporciones, para que un cartón plano/shallow se renderice plano en lugar de convertirse en un cubo genérico. Envíanos las dimensiones si las tienes y las ajustaremos exactamente.",
+      "q3": "¿Puedo obtener un modelo 3D editable, o otros ángulos?",
+      "a3": "Sí. Más allá de la imagen del mockup, podemos construir un modelo 3D editable (.glb/.obj): una malla de caja a tus milímetros exactos con cada panel del dieline mapeado en UV, para que puedas cambiar el ángulo, la iluminación o animarlo. Y renderizamos cualquier ángulo que necesites (frente / 45° / fondo blanco).",
+      "q4": "¿Es este un archivo de fábrica / producción?",
+      "a4": "No, un mockup 3D es para mostrar el diseño, no para la imprenta. Una fábrica de packaging necesita el dieline (AI/CDR/PDF) con CMYK, sangrado, áreas de impresión y notas de proceso: eso es un entregable de archivo de fábrica separado que también podemos hacer.",
+      "q5": "¿Qué formato debo enviar?",
+      "a5": "Un dieline en .ai o PDF es ideal (leemos las dimensiones reales de él); un arte plano de alta resolución (PNG/JPG) también funciona si nos das el Ancho×Alto×Profundidad de la caja. Dinos el ángulo que deseas (frente / 45° / fondo blanco)."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué es un mockup de packaging?",
+        "p1": "Un mockup de packaging es una imagen realista de tu caja tal como se ve cuando está plegada e impresa: el dieline plano (con todas las caras dispuestas) renderizado como una foto de producto 3D.",
+        "p2": "Es lo que muestras a un cliente para confirmar el diseño, incluir en un informe o usar en una página de comercio electrónico, antes de comprometerte a una tirada de impresión física.",
+        "p3": "No es un archivo de fábrica: un mockup 3D muestra el diseño; la producción necesita el dieline + CMYK + sangrado + especificaciones de proceso (un entregable separado)."
+      },
+      "how": {
+        "title": "Cómo funciona",
+        "p1": "Envía tu dielínea: un .ai o PDF (dibujado 1:1) es ideal; un arte plano de alta resolución también funciona con las dimensiones de la caja.",
+        "p2": "Leemos el ancho × alto × profundidad reales de la caja del archivo (o de tus especificaciones).",
+        "p3": "Tu arte se pliega y se mapea en las caras de la caja con esas proporciones reales: una caja plana se mantiene plana.",
+        "p4": "Renderizamos el ángulo que deseas: frontal, 45° tres cuartos, o un fondo blanco limpio de comercio electrónico, con iluminación suave de estudio y sombra.",
+        "p5": "¿Lo necesitas editable? También podemos entregar un modelo 3D (.glb/.obj) que puedes re-ángulo, re-iluminar o animar."
+      },
+      "usecases": {
+        "title": "Para quién es",
+        "creatorsTitle": "Diseñadores de marca y embalaje",
+        "creatorsBody": "Muestra a los clientes una caja 3D terminada a partir de tu dielínea plana para una rápida aprobación: frontal, 45° o fotos de empaque con fondo blanco, sin necesidad de configurar una escena 3D tú mismo.",
+        "educationTitle": "文创 / marcas de regalo y 谷子",
+        "educationBody": "Convierte las dielíneas de cajas de regalo, té y productos culturales en maquetas de página de producto y promoción que coincidan con la forma real de la caja.",
+        "businessTitle": "Comercio electrónico y pedidos al por mayor",
+        "businessBody": "¿Necesitas fotos de empaque para un catálogo de SKU? Ofrecemos dielínea → maqueta como un servicio hecho para ti / al por mayor, y podemos agregar modelos 3D editables."
       }
     }
   }

@@ -350,6 +350,14 @@
         "title": "Die-Cut Sticker Dosya Yapıcı — Kesim Hattı + CMYK, Baskıya Hazır | Curify",
         "description": "Herhangi bir resmi fabrikaya hazır die-cut sticker dosyasına dönüştürün: 300 DPI şeffaf PNG, mm hassasiyetinde CutContour kesim hattı (SVG) ve baskıya hazır CMYK PDF bir ZIP içinde. Sticker satıcıları, POD ve 谷子 ürünleri için."
       }
+    },
+    "packaging_mockup": {
+      "title": "AI Ambalaj Mockup Üretici",
+      "desc": "Düz bir die çizimini (.ai/PDF) gerçekçi bir 3D ambalaj mockup'ına dönüştürün — ön veya 45° açıdan gösterilen katlanmış bir kutu, dosyanızdan okunan gerçek kutu oranlarıyla (genel bir küp değil).",
+      "meta": {
+        "title": "AI Ambalaj Mockup Üretici — Die Çiziminden 3D Kutulara | Curify",
+        "description": "Die çiziminizi (.ai/PDF) gerçekçi 3D ambalaj mockup'larına dönüştürün — katlanmış kutu, ön / 45° / e-ticaret beyaz arka plan. Dosyanızdan gerçek kutu oranları. Marka, 文创, hediye ve POD ambalajları için."
+      }
     }
   },
   "bilingual": {
@@ -1446,6 +1454,61 @@
         "educationBody": "Akrilik anahtarlıklar, 吧唧 rozetleri, buzdolabı magnetleri ve 谷子 ürünleri için sıkı fabrika 入稿 spesifikasyonlarına uygun olarak yapın — kesim hattı, kanama ve CMYK spesifikasyona göre işlenir.",
         "businessTitle": "Küçük dükkanlar ve toplu siparişler",
         "businessBody": "Bir dizi tasarımın üretim dosyalarına dönüştürülmesine mi ihtiyacınız var? Bunu sizin için yapılmış / toplu bir hizmet olarak sunuyoruz — sanatınızı gönderin, fabrikaya hazır ZIP'leri geri alın."
+      }
+    }
+  },
+  "packagingMockup": {
+    "metadata": {
+      "title": "AI Ambalaj Mockup Üretici — Die Çiziminden 3D Kutulara | Curify",
+      "description": "Die çiziminizi (.ai/PDF) gerçekçi 3D ambalaj mockup'larına dönüştürün — katlanmış kutu, ön / 45° / e-ticaret beyaz arka plan. Dosyanızdan gerçek kutu oranları. Marka, 文创, hediye ve POD ambalajları için."
+    },
+    "title": "Die Çiziminiz → Gerçekçi 3D Kutü Mockup'ı",
+    "description": "Düz bir die çizimi (刀版展开图, .ai veya PDF) gönderin ve gerçekçi bir katlanmış 3D ambalaj mockup'ı alın — ön, 45° üç çeyrek veya e-ticaret beyaz arka plan — sanat eseriniz kutu yüzeylerine yerleştirilmiş ve dosyadan okunan gerçek oranlarla, böylece düz bir karton düz kalır, genel bir küp haline gelmez. Müşteri onayı, patron raporları ve ürün sayfaları için mükemmel.",
+    "example": "Örnek: bir 仁寿 hediye kutusu die çizimi 45° 3D mockup'a katlanmış — düz 117×114×39 mm kutu, küp değil.",
+    "cta": "Mockup veya toplu sipariş için bizimle iletişime geçin",
+    "why": {
+      "title": "Neden Curify üzerinden ambalaj mockup'ları yapmalısınız?",
+      "point1": "Die çizimi girin, gerçekçi 3D kutu çıkın. Düz sanat eseriniz katlanır ve kutu yüzeylerine yerleştirilir — bir müşteriye verebileceğiniz veya bir e-ticaret sayfasına koyabileceğiniz bitmiş bir ürün fotoğrafı.",
+      "point2": "Gerçek oranlar, dosyanızdan. Die çiziminizden gerçek Genişlik × Yükseklik × Derinlik okuyoruz, böylece düz/şalow bir karton düz kalır — çoğu AI aracının ürettiği genel küp değil.",
+      "point3": "İhtiyacınız olan her açı. Ön görünüm, 45° üç çeyrek veya temiz bir e-ticaret beyaz arka plan — aynı tasarım, doğru şekilde yerleştirilmiş.",
+      "point4": "Büyütülebilir. Bir die çizimi veya bir SKU partisi — bunu sizin için yapılmış / toplu hizmet olarak sunuyoruz."
+    },
+    "faq": {
+      "title": "Sıkça sorulan sorular",
+      "q1": "Ne alırım?",
+      "a1": "Katlanmış kutunuzun yüksek çözünürlüklü 3D mockup görüntüsü (JPG/PNG) — ön, 45° veya e-ticaret beyaz arka plan, temiz bir stüdyo arka planında yumuşak bir gölge ile. Müşteri onayı, sunumlar veya ürün sayfaları için hazır.",
+      "q2": "Kutu oranları die çizimime uygun mu?",
+      "a2": "Evet — bu tam olarak amaç. Dosyanızdan gerçek Genişlik × Yükseklik × Derinlik okuyoruz (ai/PDF 1:1 çizilir) ve bu oranları zorunlu kılıyoruz, böylece düz/şalow bir karton düz kalır, genel bir küp haline gelmez. Eğer varsa boyutları gönderin, tam olarak ayarlayalım.",
+      "q3": "Düzenlenebilir bir 3D model veya başka açılar alabilir miyim?",
+      "a3": "Evet. Mockup görüntüsünün ötesinde, düzenlenebilir bir 3D model (.glb/.obj) oluşturabiliriz — her die çizim panelinin UV haritalandığı tam milimetre ölçülerinde bir kutu ağı — böylece açısını değiştirebilir, ışıklandırabilir veya animasyon yapabilirsiniz. Ve ihtiyacınız olan her açıyı render ediyoruz (ön / 45° / beyaz arka plan).",
+      "q4": "Bu bir fabrika / üretim dosyası mı?",
+      "a4": "Hayır — bir 3D mockup tasarımı göstermek içindir, baskı atölyesi için değil. Bir ambalaj fabrikası, CMYK, bleed, baskı alanları ve süreç notları ile die çizimini (AI/CDR/PDF) gerektirir — bu ayrı bir fabrika dosyası teslimatıdır, bunu da yapabiliriz.",
+      "q5": "Hangi formatta göndermeliyim?",
+      "a5": ".ai veya PDF olarak bir die çizimi idealdir (gerçek boyutları ondan okuyoruz); yüksek çözünürlüklü düz bir sanat eseri (PNG/JPG) de işe yarar eğer bize kutunun G×Y×D'sini verirseniz. İstediğiniz açıyı söyleyin (ön / 45° / beyaz arka plan)."
+    },
+    "deep": {
+      "what": {
+        "title": "Ambalaj mockup'ı nedir?",
+        "p1": "Ambalaj mockup'ı, kutunuzun katlanmış ve basılmış halinin gerçekçi bir görüntüsüdür — düz die çizimi (tüm yüzler serilmiş) 3D ürün fotoğrafı olarak render edilir.",
+        "p2": "Bu, tasarımı onaylamak için bir müşteriye gösterdiğiniz, bir rapora koyduğunuz veya bir e-ticaret sayfasında kullandığınız şeydir — fiziksel bir baskı üretimine geçmeden önce.",
+        "p3": "Bu bir fabrika dosyası değildir: bir 3D mockup tasarımı gösterir; üretim die çizimi + CMYK + bleed + süreç spesifikasyonları gerektirir (ayrı bir teslimat)."
+      },
+      "how": {
+        "title": "Nasıl çalışır",
+        "p1": "Dielinenizi gönderin — .ai veya PDF (1:1 çizilmiş) idealdir; yüksek çözünürlüklü düz bir sanat eseri de kutu boyutlarıyla çalışır.",
+        "p2": "Gerçek kutu Genişlik × Yükseklik × Derinliği dosyadan (veya spesifikasyonunuzdan) okuyoruz.",
+        "p3": "Sanat eseriniz, bu gerçek oranlarda kutu yüzeylerine katlanır ve haritalanır — düz bir kutu düz kalır.",
+        "p4": "İstediğiniz açıyı renderlıyoruz — ön, 45° üç çeyrek veya temiz e-ticaret beyaz arka plan — yumuşak stüdyo aydınlatması ve gölge ile.",
+        "p5": "Düzenlenebilir mi istiyorsunuz? Ayrıca açısını değiştirebileceğiniz, aydınlatmasını ayarlayabileceğiniz veya animasyon yapabileceğiniz bir 3D model (.glb/.obj) de teslim edebiliriz."
+      },
+      "usecases": {
+        "title": "Kimin için",
+        "creatorsTitle": "Marka ve ambalaj tasarımcıları",
+        "creatorsBody": "Müşterilere düz dielinenizden hızlı onay için bitmiş bir 3D kutu gösterin — ön, 45° veya beyaz arka plan paket çekimleri — 3D sahne kurmadan.",
+        "educationTitle": "文创 / hediye & 谷子 markaları",
+        "educationBody": "Hediye kutusu, çay ve kültürel ürün dielinelerini gerçek kutu şekline uyan ürün sayfası ve promosyon mockuplarına dönüştürün.",
+        "businessTitle": "E-ticaret ve toplu siparişler",
+        "businessBody": "SKU'lar için bir katalogda paket çekimlerine mi ihtiyacınız var? Dieline → mockup olarak yapılmış bir hizmet sunuyoruz ve düzenlenebilir 3D modeller ekleyebiliriz."
       }
     }
   }

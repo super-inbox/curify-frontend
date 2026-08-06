@@ -350,6 +350,14 @@
         "title": "Créateur de Fichier de Sticker Découpé — Ligne de Découpe + CMYK, Prêt à Imprimer | Curify",
         "description": "Transformez n'importe quelle image en un fichier de sticker découpé prêt pour l'usine : PNG transparent à 300 DPI, ligne de découpe CutContour précise au mm (SVG), et PDF CMYK prêt à imprimer dans un ZIP. Pour les vendeurs de stickers, POD & merch 谷子."
       }
+    },
+    "packaging_mockup": {
+      "title": "Générateur de maquettes d'emballage AI",
+      "desc": "Transformez un gabarit plat (.ai/PDF) en une maquette d'emballage 3D réaliste — une boîte pliée montrée de face ou à un angle de 45°, avec les vraies proportions de la boîte lues à partir de votre fichier (pas un cube générique).",
+      "meta": {
+        "title": "Générateur de maquettes d'emballage AI — Gabarit vers boîte 3D | Curify",
+        "description": "Transformez votre gabarit (.ai/PDF) en maquettes d'emballage 3D réalistes — boîte pliée, de face / 45° / fond blanc e-commerce. Vraies proportions de la boîte à partir de votre fichier. Pour marque, 文创, emballages cadeaux et POD."
+      }
     }
   },
   "bilingual": {
@@ -1361,6 +1369,61 @@
         "educationBody": "Fabriquez des porte-clés en acrylique, des badges 吧唧, des aimants de réfrigérateur et des marchandises 谷子 selon des spécifications strictes d'entrée à l'usine — ligne de découpe, fond perdu et CMJN gérés selon les spécifications.",
         "businessTitle": "Petites boutiques & commandes en gros",
         "businessBody": "Besoin d'un lot de designs transformés en fichiers de production ? Nous l'offrons en tant que service clé en main / en gros — envoyez votre art, recevez des ZIP prêts pour l'usine."
+      }
+    }
+  },
+  "packagingMockup": {
+    "metadata": {
+      "title": "Générateur de maquettes d'emballage AI — Gabarit vers boîte 3D | Curify",
+      "description": "Transformez votre gabarit (.ai/PDF) en maquettes d'emballage 3D réalistes — boîte pliée, de face / 45° / fond blanc e-commerce. Vraies proportions de la boîte à partir de votre fichier. Pour marque, 文创, emballages cadeaux et POD."
+    },
+    "title": "Votre gabarit → Une maquette de boîte 3D réaliste",
+    "description": "Envoyez un gabarit plat (刀版展开图, .ai ou PDF) et obtenez une maquette d'emballage 3D pliée réaliste — de face, à 45° ou fond blanc e-commerce — avec votre artwork mappé sur les faces de la boîte et les vraies proportions lues à partir du fichier, de sorte qu'un carton plat reste plat au lieu de devenir un cube générique. Parfait pour l'approbation du client, les rapports pour le patron et les pages produits.",
+    "example": "Exemple : un gabarit de carton cadeau 仁寿 plié en une maquette 3D à 45° — une boîte plate de 117×114×39 mm, pas un cube.",
+    "cta": "Contactez-nous pour une maquette ou une commande en gros",
+    "why": {
+      "title": "Pourquoi créer des maquettes d'emballage via Curify ?",
+      "point1": "Gabarit à l'entrée, boîte 3D réaliste à la sortie. Votre artwork plat est plié et mappé sur les faces de la boîte — une photo de produit finie que vous pouvez remettre à un client ou mettre sur une page e-commerce.",
+      "point2": "Vraies proportions, à partir de votre fichier. Nous lisons la vraie Largeur × Hauteur × Profondeur de votre gabarit, de sorte qu'un carton plat/peu profond reste plat — pas le cube générique que la plupart des outils AI produisent.",
+      "point3": "N'importe quel angle dont vous avez besoin. Élévation de face, 45° trois-quarts, ou un fond blanc e-commerce propre — même design, mappé correctement.",
+      "point4": "Ça s'adapte. Un gabarit ou un lot de SKU — nous l'offrons en tant que service clé en main / en gros."
+    },
+    "faq": {
+      "title": "Questions fréquemment posées",
+      "q1": "Que vais-je recevoir ?",
+      "a1": "Une image de maquette 3D haute résolution (JPG/PNG) de votre boîte pliée — de face, à 45° ou fond blanc e-commerce, sur un fond de studio propre avec une ombre douce. Prête pour la confirmation du client, les présentations ou les pages produits.",
+      "q2": "Les proportions de la boîte sont-elles exactes par rapport à mon gabarit ?",
+      "a2": "Oui — c'est tout l'intérêt. Nous lisons la vraie Largeur × Hauteur × Profondeur de votre fichier (le .ai/PDF est dessiné au 1:1) et appliquons ces proportions, de sorte qu'un carton plat/peu profond reste plat au lieu de devenir un cube générique. Envoyez les dimensions si vous les avez et nous les ajusterons exactement.",
+      "q3": "Puis-je obtenir un modèle 3D modifiable, ou d'autres angles ?",
+      "a3": "Oui. Au-delà de l'image de maquette, nous pouvons créer un modèle 3D modifiable (.glb/.obj) — un maillage de boîte à vos millimètres exacts avec chaque panneau de gabarit mappé en UV — afin que vous puissiez le réorienter, le rééclairer ou l'animer. Et nous rendons n'importe quel angle dont vous avez besoin (de face / 45° / fond blanc).",
+      "q4": "Est-ce un fichier de production / d'usine ?",
+      "a4": "Non — une maquette 3D est destinée à montrer le design, pas pour l'imprimerie. Une usine d'emballage a besoin du gabarit (AI/CDR/PDF) avec CMYK, fond perdu, zones d'impression et notes de processus — c'est un livrable de fichier d'usine séparé que nous pouvons également réaliser.",
+      "q5": "Quel format devrais-je envoyer ?",
+      "a5": "Un gabarit au format .ai ou PDF est idéal (nous lisons les vraies dimensions à partir de celui-ci) ; un artwork plat haute résolution (PNG/JPG) fonctionne également si vous nous donnez la Largeur×Hauteur×Profondeur de la boîte. Dites-nous l'angle que vous souhaitez (de face / 45° / fond blanc)."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce qu'une maquette d'emballage ?",
+        "p1": "Une maquette d'emballage est une image réaliste de votre boîte telle qu'elle apparaît lorsqu'elle est pliée et imprimée — le gabarit plat (avec toutes les faces disposées) rendu en tant que photo de produit 3D.",
+        "p2": "C'est ce que vous montrez à un client pour confirmer le design, mettre dans un rapport, ou utiliser sur une page e-commerce — avant de vous engager dans une impression physique.",
+        "p3": "Ce n'est pas un fichier d'usine : une maquette 3D montre le design ; la production a besoin du gabarit + CMYK + fond perdu + spécifications de processus (un livrable séparé)."
+      },
+      "how": {
+        "title": "Comment ça fonctionne",
+        "p1": "Envoyez votre gabarit — un .ai ou PDF (dessiné 1:1) est idéal ; un artwork flat haute résolution fonctionne également avec les dimensions de la boîte.",
+        "p2": "Nous lisons la largeur × hauteur × profondeur réelles de la boîte à partir du fichier (ou de votre spécification).",
+        "p3": "Votre artwork est plié et mappé sur les faces de la boîte selon ces vraies proportions — une boîte plate reste plate.",
+        "p4": "Nous rendons l'angle que vous souhaitez — de face, 45° trois-quarts, ou un fond blanc e-commerce propre — avec un éclairage doux en studio et des ombres.",
+        "p5": "Besoin d'un modèle modifiable ? Nous pouvons également livrer un modèle 3D (.glb/.obj) que vous pouvez réorienter, rééclairer ou animer."
+      },
+      "usecases": {
+        "title": "Pour qui c'est",
+        "creatorsTitle": "Designers de marques et d'emballages",
+        "creatorsBody": "Montrez à vos clients une boîte 3D finie à partir de votre gabarit plat pour une validation rapide — de face, à 45° ou des pack shots sur fond blanc — sans avoir à configurer une scène 3D vous-même.",
+        "educationTitle": "文创 / marques de cadeaux & 谷子",
+        "educationBody": "Transformez les gabarits de boîtes cadeaux, de thé et de produits culturels en maquettes de page produit et de promotion qui correspondent à la forme réelle de la boîte.",
+        "businessTitle": "E-commerce & commandes en gros",
+        "businessBody": "Besoin de pack shots pour un catalogue de SKU ? Nous offrons un service gabarit → maquette clé en main / en gros, et pouvons ajouter des modèles 3D modifiables."
       }
     }
   }

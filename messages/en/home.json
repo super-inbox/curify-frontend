@@ -387,6 +387,14 @@
         "title": "Die-Cut Sticker File Maker — Cut Line + CMYK, Print-Ready | Curify",
         "description": "Turn any image into a factory-ready die-cut sticker file: 300 DPI transparent PNG, mm-accurate CutContour cut line (SVG), and print-ready CMYK PDF in one ZIP. For sticker sellers, POD & 谷子 merch."
       }
+    },
+    "packaging_mockup": {
+      "title": "AI Packaging Mockup Generator",
+      "desc": "Turn a flat dieline (.ai/PDF) into a realistic 3D packaging mockup — a folded box shown front or at a 45° angle, with the real box proportions read from your file (not a generic cube).",
+      "meta": {
+        "title": "AI Packaging Mockup Generator — Dieline to 3D Box | Curify",
+        "description": "Turn your dieline (.ai/PDF) into realistic 3D packaging mockups — folded box, front / 45° / e-commerce white-bg. True box proportions from your file. For brand, 文创, gift & POD packaging."
+      }
     }
   },
   "bilingual": {
@@ -1300,6 +1308,61 @@
         "educationBody": "Make acrylic keychains, 吧唧 badges, fridge magnets, and 谷子 merch to strict factory 入稿 specs — cut line, bleed, and CMYK handled to spec.",
         "businessTitle": "Small shops & bulk orders",
         "businessBody": "Need a batch of designs turned into production files? We offer it as a done-for-you / bulk service — send your art, get factory-ready ZIPs back."
+      }
+    }
+  },
+  "packagingMockup": {
+    "metadata": {
+      "title": "AI Packaging Mockup Generator — Dieline to 3D Box | Curify",
+      "description": "Turn your dieline (.ai/PDF) into realistic 3D packaging mockups — folded box, front / 45° / e-commerce white-bg. True box proportions from your file. For brand, 文创, gift & POD packaging."
+    },
+    "title": "Your Dieline → A Realistic 3D Box Mockup",
+    "description": "Send a flat dieline (刀版展开图, .ai or PDF) and get a realistic folded 3D packaging mockup — front, 45° three-quarter, or e-commerce white-background — with your artwork mapped onto the box faces and the true proportions read from the file, so a flat carton stays flat instead of becoming a generic cube. Perfect for client sign-off, boss reports, and product pages.",
+    "example": "Example: a 仁寿 gift-carton dieline folded into a 45° 3D mockup — a flat 117×114×39 mm box, not a cube.",
+    "cta": "Contact us for a mockup or bulk order",
+    "why": {
+      "title": "Why make packaging mockups through Curify?",
+      "point1": "Dieline in, realistic 3D box out. Your flat artwork is folded and mapped onto the box faces — a finished product photo you can hand a client or drop on an e-commerce page.",
+      "point2": "True proportions, from your file. We read the real Width × Height × Depth from your dieline, so a flat/shallow carton stays flat — not the generic cube most AI tools spit out.",
+      "point3": "Any angle you need. Front elevation, 45° three-quarter, or a clean e-commerce white-background — same design, mapped correctly.",
+      "point4": "It scales up. One dieline or a batch of SKUs — we offer it as a done-for-you / bulk service."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "What do I get?",
+      "a1": "A high-resolution 3D mockup image (JPG/PNG) of your folded box — front, 45°, or e-commerce white-background, on a clean studio background with a soft shadow. Ready for client confirmation, decks, or product pages.",
+      "q2": "Are the box proportions accurate to my dieline?",
+      "a2": "Yes — that's the whole point. We read the real Width × Height × Depth from your file (the .ai/PDF is drawn 1:1) and enforce those proportions, so a flat/shallow carton renders flat instead of becoming a generic cube. Send the dimensions if you have them and we'll pin them exactly.",
+      "q3": "Can I get an editable 3D model, or other angles?",
+      "a3": "Yes. Beyond the mockup image, we can build an editable 3D model (.glb/.obj) — a box mesh at your exact millimetres with each dieline panel UV-mapped — so you can re-angle, re-light, or animate it. And we render any angle you need (front / 45° / white-bg).",
+      "q4": "Is this a factory / production file?",
+      "a4": "No — a 3D mockup is for showing the design, not for the print shop. A packaging factory needs the dieline (AI/CDR/PDF) with CMYK, bleed, print areas and process notes — that's a separate factory-file deliverable we can also do.",
+      "q5": "What format should I send?",
+      "a5": "A dieline as .ai or PDF is ideal (we read the real dimensions from it); a high-resolution flat artwork (PNG/JPG) also works if you give us the box W×H×D. Tell us the angle you want (front / 45° / white-bg)."
+    },
+    "deep": {
+      "what": {
+        "title": "What is a packaging mockup?",
+        "p1": "A packaging mockup is a realistic image of your box as it looks when folded and printed — the flat dieline (with all faces laid out) rendered as a 3D product photo.",
+        "p2": "It's what you show a client to confirm the design, put in a report, or use on an e-commerce page — before committing to a physical print run.",
+        "p3": "It is not a factory file: a 3D mockup shows the design; production needs the dieline + CMYK + bleed + process specs (a separate deliverable)."
+      },
+      "how": {
+        "title": "How it works",
+        "p1": "Send your dieline — a .ai or PDF (drawn 1:1) is ideal; a high-res flat artwork also works with the box dimensions.",
+        "p2": "We read the real box Width × Height × Depth from the file (or your spec).",
+        "p3": "Your artwork is folded and mapped onto the box faces at those true proportions — a flat box stays flat.",
+        "p4": "We render the angle you want — front, 45° three-quarter, or clean e-commerce white-background — with soft studio lighting and shadow.",
+        "p5": "Need it editable? We can also deliver a 3D model (.glb/.obj) you can re-angle, re-light, or animate."
+      },
+      "usecases": {
+        "title": "Who it's for",
+        "creatorsTitle": "Brand & packaging designers",
+        "creatorsBody": "Show clients a finished 3D box from your flat dieline for fast sign-off — front, 45°, or white-background pack shots — without setting up a 3D scene yourself.",
+        "educationTitle": "文创 / gift & 谷子 brands",
+        "educationBody": "Turn gift-box, tea, and cultural-product dielines into product-page and promo mockups that match the real box shape.",
+        "businessTitle": "E-commerce & bulk orders",
+        "businessBody": "Need pack shots for a catalog of SKUs? We offer dieline → mockup as a done-for-you / bulk service, and can add editable 3D models."
       }
     }
   }

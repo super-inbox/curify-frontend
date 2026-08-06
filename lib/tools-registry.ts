@@ -298,6 +298,25 @@ export const TOOL_REGISTRY: ToolDef[] = [
       alt: "One design image turned into a die-cut sticker factory file — 300 DPI transparent artwork PNG, mm-accurate CutContour cutline SVG, print-ready CMYK PDF, preview and spec sheet in one ZIP",
     },
   },
+  {
+    id: "packaging-mockup",
+    slug: "packaging-mockup",
+    groupId: "image",
+    status: "demo",
+    // No self-serve backend job — offered as a done-for-you / bulk service via
+    // the contact CTA. job_type is a required field but unused for this tool.
+    job_type: "video_transcript",
+    namespace: "packagingMockup",
+    action: { type: "none" },
+    cta: "contact",
+    i18n: toolKeys("packaging_mockup"),
+    seo: seoKeys("packaging_mockup"),
+    demo: {
+      type: "single_image",
+      src: "/images/tools/packaging-mockup.jpg",
+      alt: "A flat packaging dieline turned into a realistic folded 3D box mockup at a 45-degree angle — the box proportions read from the file's real dimensions, not a generic cube",
+    },
+  },
 
   {
     // Merch mockup generator — upload a character/artwork, get a full flat-lay
