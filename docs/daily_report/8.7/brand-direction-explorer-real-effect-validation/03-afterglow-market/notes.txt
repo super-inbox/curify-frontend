@@ -1,0 +1,34 @@
+Case: event-poster — Afterglow Market
+
+Verification:
+- Request reached the internal Next.js API route: POST http://localhost:3000/api/brand-direction-explorer/directions (HTTP 200)
+- Round-trip latency: ~8.84s — consistent with a real live OpenAI call
+- OpenAI returned exactly 3 directions: vibrant-abstract, retro-vinyl, minimalist-geometric (all unique ids)
+- No static fallback was used — same architecture guarantee as the other two cases (no direction content in lib/brand_direction_explorer.ts)
+- UI confirmed by user: spinner, then 3 real direction cards rendered (see stage1-directions-full-page.png)
+- Model: gpt-4o-mini (MODEL constant, lib/brandDirectionOpenAI.ts)
+- No secret values appeared in any terminal or browser output during this run
+- All 5 event-poster fields (eventName, eventDateTime, location, eventHighlights, visualTone) fit their maxLength on the first attempt — no schema fixes needed this time (unlike coffee-opening and tea-brand-exploration)
+
+Quality observations:
+- Strongest: titles again meaningfully distinct ("Vibrant Abstract" / "Retro Vinyl" / "Minimalist Geometric"), each styleTags set clearly differentiated (vibrant/abstract/youthful/experimental vs retro/nostalgic/community/music vs minimalist/geometric/clean/modern) — matches the requested "energetic, youthful, slightly experimental" tone well
+- Weakest: n/a — no repeated-title or malformed-output issue observed on this run
+
+--- Stage 2 (final image generation) ---
+
+The user ran Stage 2 independently through the browser UI and provided two resulting images
+(already saved into this folder), renamed here as:
+- generated-output-primary.jpg (362,445 bytes, JPEG) — user-identified as the primary result:
+  a bright neon/cyberpunk nightlife poster with "AFTERGLOW MARKET", event date/location,
+  a food truck, vinyl record, and a silhouetted live band — visually closest to the
+  vibrant-abstract direction
+- generated-output-alternative.jpg (373,947 bytes, JPEG) — user-identified as the alternative
+  result: a warm woodgrain background with a circular badge of hand-illustrated icons (food
+  bowl, tote bag, vinyl record, guitar and mic) — a calmer, more rustic/illustrated take,
+  further from the "energetic, youthful, experimental" brief than the primary but still a
+  real, distinct generation
+
+Labeling for the report: these two images are Stage 2 output from the existing Gemini-backed
+Curify backend, NOT OpenAI-generated. As with the other two cases, this session did not
+independently verify which of the 3 Stage 1 directions was selected for each generation —
+documented based on the user's description and visual inspection of the files.
