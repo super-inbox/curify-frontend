@@ -1,16 +1,24 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Check, ChevronDown, Download, Loader2 } from "lucide-react";
 import {
   BRAND_DIRECTION_CASES,
   buildBrandDirectionPrompt,
+  toCreativeDirection,
   type BrandDirectionCase,
   type CreativeDirection,
+  type GeneratedCreativeDirection,
   type SupportedBrandDirectionLocale,
 } from "@/lib/brand_direction_explorer";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
 import { useTracking } from "@/services/useTracking";
+
+// This component calls only the internal Next.js API route below — it never
+// imports lib/brandDirectionOpenAI.ts (that module is `server-only`-guarded
+// and would fail the build if a client component imported it).
+const DIRECTIONS_ENDPOINT = "/api/brand-direction-explorer/directions";
+const DIRECTIONS_FETCH_DEBOUNCE_MS = 600;
 
 type Copy = {
   heroTitle: string;
@@ -34,6 +42,9 @@ type Copy = {
   generatingResultText: string;
   resultSectionTitle: string;
   resultEmptyState: string;
+  directionsFieldsHint: string;
+  directionsLoadingLabel: string;
+  directionsRetryLabel: string;
   faqTitle: string;
   faq: [{ q: string; a: string }, { q: string; a: string }, { q: string; a: string }];
 };
@@ -61,11 +72,14 @@ const EN_COPY: Copy = {
   generatingResultText: "Generating your visual…",
   resultSectionTitle: "Result",
   resultEmptyState: "Your generated visual will appear here.",
+  directionsFieldsHint: "Fill in the required fields above to generate three creative directions.",
+  directionsLoadingLabel: "Generating directions…",
+  directionsRetryLabel: "Try again",
   faqTitle: "FAQ",
   faq: [
     {
       q: "Are these directions generated automatically in real time?",
-      a: "The directions in this P0 are curated by hand, to keep presentation quality and stability predictable.",
+      a: "Yes — each set of three directions is generated in real time by OpenAI based on what you enter above.",
     },
     {
       q: "How many results does one generation produce?",
@@ -100,9 +114,12 @@ const ZH_COPY: Copy = {
   generatingResultText: "正在生成视觉方案…",
   resultSectionTitle: "生成结果",
   resultEmptyState: "生成结果将在这里显示。",
+  directionsFieldsHint: "填写上方必填字段后，将自动生成三个创意方向。",
+  directionsLoadingLabel: "正在生成方向…",
+  directionsRetryLabel: "重试",
   faqTitle: "常见问题",
   faq: [
-    { q: "这些方向是实时自动生成的吗？", a: "P0 中的方向是经过人工预置的，以保证展示质量和稳定性。" },
+    { q: "这些方向是实时自动生成的吗？", a: "是的 —— 每组三个方向都是根据你在上方填写的内容，由 OpenAI 实时生成的。" },
     { q: "一次会生成几个结果？", a: "用户选择一个方向后，一次只生成一个结果。" },
     { q: "生成文字是否保证完全准确？", a: "短标题通常更适合图像生成，重要文字仍应在后续编辑中复核。" },
   ],
@@ -118,29 +135,18 @@ function resolveUiLocale(locale: string): SupportedBrandDirectionLocale {
   return locale.toLowerCase().startsWith("zh") ? "zh" : "en";
 }
 
-// Purely presentational — keyed by direction id, not part of the seed data in
-// lib/brand_direction_explorer.ts (that file stays UI-agnostic). Every
-// previewImage.src is null in P0, so these are static, hand-picked Tailwind
-// treatments standing in for a real image: coffee directions get one blended
-// gradient card; tea directions get a small palette-swatch strip loosely
-// matching each direction's actual color palette described in its
-// promptModifier, so the three tea cards read as visually distinct at a
-// glance even before there is a preview photo.
-const COFFEE_PREVIEW_GRADIENT: Record<string, string> = {
-  "coffee-warm-neighborhood": "bg-gradient-to-br from-amber-100 via-orange-100 to-amber-300",
-  "coffee-modern-specialty": "bg-gradient-to-br from-stone-50 via-neutral-100 to-stone-300",
-  "coffee-retro-roastery": "bg-gradient-to-br from-red-900 via-amber-800 to-stone-900",
-};
-const COFFEE_PREVIEW_TEXT_CLASS: Record<string, string> = {
-  "coffee-warm-neighborhood": "text-amber-900/70",
-  "coffee-modern-specialty": "text-neutral-500",
-  "coffee-retro-roastery": "text-amber-50/80",
-};
-const TEA_PREVIEW_SWATCHES: Record<string, string[]> = {
-  "tea-zen-minimalist": ["bg-green-200", "bg-stone-100", "bg-neutral-900", "bg-amber-300"],
-  "tea-apothecary-vintage": ["bg-amber-50", "bg-amber-700", "bg-green-800", "bg-neutral-900"],
-  "tea-modern-oriental": ["bg-green-900", "bg-neutral-900", "bg-orange-700", "bg-stone-50"],
-};
+// Purely presentational, per-case (not per-direction, since direction ids
+// are now model-generated slugs rather than fixed keys): coffee/event
+// directions render as a gradient card, tea directions render as a
+// palette-swatch strip. Neither carries any creative-direction content —
+// that all comes from the API response.
+function previewKindForCase(caseId: BrandDirectionCase["id"]): "placeholder" | "preset-reference" {
+  return caseId === "tea-brand-exploration" ? "preset-reference" : "placeholder";
+}
+
+const GENERIC_PREVIEW_GRADIENT = "bg-gradient-to-br from-stone-50 via-neutral-100 to-stone-300";
+const GENERIC_PREVIEW_TEXT_CLASS = "text-neutral-500";
+const GENERIC_PREVIEW_SWATCHES = ["bg-stone-100", "bg-neutral-300", "bg-neutral-900", "bg-amber-200"];
 
 function aspectClassFor(brandCase: BrandDirectionCase): string {
   return brandCase.outputFormat.aspectRatio === "4:5" ? "aspect-[4/5]" : "aspect-[3/4]";
@@ -159,11 +165,9 @@ function DirectionPreview({
 
   if (direction.previewImage.kind === "placeholder") {
     return (
-      <div
-        className={`relative ${aspect} w-full overflow-hidden rounded-t-2xl ${COFFEE_PREVIEW_GRADIENT[direction.id] ?? "bg-neutral-100"}`}
-      >
+      <div className={`relative ${aspect} w-full overflow-hidden rounded-t-2xl ${GENERIC_PREVIEW_GRADIENT}`}>
         <div
-          className={`absolute inset-0 flex items-center justify-center px-3 text-center text-xs font-semibold uppercase tracking-wide ${COFFEE_PREVIEW_TEXT_CLASS[direction.id] ?? "text-neutral-500"}`}
+          className={`absolute inset-0 flex items-center justify-center px-3 text-center text-xs font-semibold uppercase tracking-wide ${GENERIC_PREVIEW_TEXT_CLASS}`}
         >
           {copy.previewComingSoon}
         </div>
@@ -171,16 +175,12 @@ function DirectionPreview({
     );
   }
 
-  const swatches = TEA_PREVIEW_SWATCHES[direction.id] ?? [];
   return (
     <div className={`relative ${aspect} w-full overflow-hidden rounded-t-2xl bg-neutral-50`}>
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4">
         <div className="flex gap-1.5">
-          {swatches.map((swatchClass, i) => (
-            <span
-              key={i}
-              className={`h-8 w-8 rounded-md border border-black/5 ${swatchClass}`}
-            />
+          {GENERIC_PREVIEW_SWATCHES.map((swatchClass, i) => (
+            <span key={i} className={`h-8 w-8 rounded-md border border-black/5 ${swatchClass}`} />
           ))}
         </div>
         <span className="text-center text-[11px] font-semibold uppercase tracking-wide text-neutral-500">
@@ -253,14 +253,14 @@ function DirectionCard({
 }
 
 // Snapshot of exactly what a generation was run with, captured at click time
-// and set alongside the result once it lands — never derived from whatever
-// activeCaseId/selectedDirectionId/fieldValues happen to be *now*, since the
-// user could switch case/direction/fields while a generation is in flight in
-// principle (in practice those controls are disabled during isGenerating, but
-// this keeps the result's label/alt text correct regardless).
+// and set alongside the result once it lands. Carries the full selected
+// CreativeDirection (not just an id) because directions are now fetched
+// per-request from the API — there is no static case-level list left to
+// re-look-up an id against after fields change or a new fetch completes.
 type GeneratedContext = {
   caseId: BrandDirectionCase["id"];
-  directionId: string;
+  caseTitle: { en: string; zh: string };
+  direction: CreativeDirection;
   prompt: string;
   fieldValues: Record<string, string>;
 };
@@ -279,10 +279,80 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
   const [resultUrl, setResultUrl] = useState<string | null>(null);
   const [generatedContext, setGeneratedContext] = useState<GeneratedContext | null>(null);
 
+  // Stage 1 — OpenAI-generated creative directions, fetched from our own
+  // internal API route (never from lib/brandDirectionOpenAI.ts directly).
+  // No fallback branch: on failure, `directions` stays null and
+  // `directionsError` carries the server's sanitized message.
+  const [directions, setDirections] = useState<CreativeDirection[] | null>(null);
+  const [directionsLoading, setDirectionsLoading] = useState(false);
+  const [directionsError, setDirectionsError] = useState<string | null>(null);
+  const fetchSeqRef = useRef(0);
+
   const activeCase = useMemo(
     () => BRAND_DIRECTION_CASES.find((c) => c.id === activeCaseId) ?? BRAND_DIRECTION_CASES[0],
     [activeCaseId],
   );
+
+  const fetchDirections = useCallback(
+    async (caseId: BrandDirectionCase["id"], values: Record<string, string>) => {
+      const seq = (fetchSeqRef.current += 1);
+      setDirectionsLoading(true);
+      setDirectionsError(null);
+
+      let data: { success: boolean; directions?: GeneratedCreativeDirection[]; error?: string };
+      let ok = false;
+      try {
+        const res = await fetch(DIRECTIONS_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ caseId, fieldValues: values }),
+        });
+        ok = res.ok;
+        data = await res.json();
+      } catch {
+        if (seq !== fetchSeqRef.current) return;
+        setDirections(null);
+        setDirectionsError("Could not generate directions right now. Please try again.");
+        setDirectionsLoading(false);
+        return;
+      }
+
+      if (seq !== fetchSeqRef.current) return; // a newer request superseded this one
+
+      if (!ok || !data.success || !data.directions) {
+        setDirections(null);
+        setDirectionsError(
+          typeof data.error === "string" && data.error
+            ? data.error
+            : "Could not generate directions right now. Please try again.",
+        );
+        setDirectionsLoading(false);
+        return;
+      }
+
+      const kind = previewKindForCase(caseId);
+      setDirections(data.directions.map((g) => toCreativeDirection(g, kind)));
+      setDirectionsLoading(false);
+    },
+    [],
+  );
+
+  const allRequiredFieldsFilled = activeCase.inputFields.every(
+    (field) => !field.required || (fieldValues[field.id] ?? "").trim().length > 0,
+  );
+
+  // Debounced fetch: fires ~600ms after the fields last changed (or on case
+  // switch, since activeCaseId is a dependency), only once every required
+  // field is filled. Invalidated by fetchSeqRef if a newer edit supersedes
+  // it before the response lands.
+  useEffect(() => {
+    if (!allRequiredFieldsFilled) return;
+    const timer = setTimeout(() => {
+      fetchDirections(activeCaseId, fieldValues);
+    }, DIRECTIONS_FETCH_DEBOUNCE_MS);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeCaseId, allRequiredFieldsFilled, fieldValues, fetchDirections]);
 
   // useFreeformGenerate's own `args`/`meta` threading already survives the
   // anonymous-user auth stash + post-signin auto-resume (see pendingArgsRef in
@@ -303,12 +373,16 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
   const handleSelectCase = (caseId: BrandDirectionCase["id"]) => {
     if (isGenerating) return;
     if (caseId === activeCaseId) return;
+    fetchSeqRef.current += 1; // invalidate any in-flight fetch for the old case
     setActiveCaseId(caseId);
     setFieldValues({});
     setSelectedDirectionId(null);
     setPromptPreviewExpanded(false);
     setResultUrl(null);
     setGeneratedContext(null);
+    setDirections(null);
+    setDirectionsError(null);
+    setDirectionsLoading(false);
   };
 
   const handleFieldChange = (fieldId: string, value: string) => {
@@ -316,6 +390,12 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
     setFieldValues((prev) => ({ ...prev, [fieldId]: value }));
     setResultUrl(null);
     setGeneratedContext(null);
+    // A field edit invalidates the previous set of directions — they were
+    // generated from the old field values and their ids won't necessarily
+    // match whatever the next fetch returns.
+    setSelectedDirectionId(null);
+    setDirections(null);
+    setDirectionsError(null);
   };
 
   const handleSelectDirection = (directionId: string) => {
@@ -328,12 +408,8 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
   };
 
   const selectedDirection = useMemo(
-    () => activeCase.directions.find((d) => d.id === selectedDirectionId) ?? null,
-    [activeCase, selectedDirectionId],
-  );
-
-  const allRequiredFieldsFilled = activeCase.inputFields.every(
-    (field) => !field.required || (fieldValues[field.id] ?? "").trim().length > 0,
+    () => directions?.find((d) => d.id === selectedDirectionId) ?? null,
+    [directions, selectedDirectionId],
   );
 
   const promptPreview = useMemo(() => {
@@ -347,6 +423,9 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
     }
   }, [activeCase, selectedDirection, allRequiredFieldsFilled, fieldValues]);
 
+  // Stage 2 is unreachable without a `selectedDirection` sourced from a
+  // successfully loaded OpenAI response — there is no other way for
+  // `directions` (and therefore `selectedDirection`) to be non-null.
   const canGenerate = allRequiredFieldsFilled && !!selectedDirection && !isGenerating;
 
   // Shared by the Generate button and Regenerate — same case/direction/fields
@@ -372,36 +451,23 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
       },
       meta: {
         caseId: activeCase.id,
-        directionId: selectedDirection.id,
+        caseTitle: activeCase.title,
+        direction: selectedDirection,
         prompt,
         fieldValues: { ...fieldValues },
       } satisfies GeneratedContext,
     });
   };
 
-  const generatedCase = useMemo(
-    () =>
-      generatedContext
-        ? BRAND_DIRECTION_CASES.find((c) => c.id === generatedContext.caseId) ?? null
-        : null,
-    [generatedContext],
-  );
-  const generatedDirection = useMemo(
-    () =>
-      generatedCase && generatedContext
-        ? generatedCase.directions.find((d) => d.id === generatedContext.directionId) ?? null
-        : null,
-    [generatedCase, generatedContext],
-  );
-  const resultAlt = generatedCase && generatedDirection
-    ? `${generatedCase.title[uiLocale]} ${generatedDirection.title[uiLocale]} generated visual`
+  const resultAlt = generatedContext
+    ? `${generatedContext.caseTitle[uiLocale]} ${generatedContext.direction.title[uiLocale]} generated visual`
     : "generated visual";
 
   const handleDownloadClick = () => {
     if (!generatedContext) return;
     trackAction(
       {
-        contentId: `brand-direction-explorer:download:${generatedContext.caseId}:${generatedContext.directionId}`,
+        contentId: `brand-direction-explorer:download:${generatedContext.caseId}:${generatedContext.direction.id}`,
         contentType: "tool_card",
       },
       "download",
@@ -510,20 +576,41 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
         <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
           {copy.directionsSectionTitle}
         </h2>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {activeCase.directions.map((direction) => (
-            <DirectionCard
-              key={direction.id}
-              brandCase={activeCase}
-              direction={direction}
-              selected={direction.id === selectedDirectionId}
-              disabled={controlsDisabled}
-              onSelect={() => handleSelectDirection(direction.id)}
-              copy={copy}
-              uiLocale={uiLocale}
-            />
-          ))}
-        </div>
+
+        {!allRequiredFieldsFilled ? (
+          <p className="text-sm text-neutral-500">{copy.directionsFieldsHint}</p>
+        ) : directionsLoading ? (
+          <div className="flex items-center gap-2 rounded-2xl border border-dashed border-neutral-200 bg-neutral-50 p-6 text-sm text-neutral-500">
+            <Loader2 className="h-4 w-4 animate-spin text-indigo-500" />
+            {copy.directionsLoadingLabel}
+          </div>
+        ) : directionsError ? (
+          <div className="space-y-3 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+            <p>{directionsError}</p>
+            <button
+              type="button"
+              onClick={() => fetchDirections(activeCaseId, fieldValues)}
+              className="inline-flex items-center rounded-lg border border-red-300 bg-white px-3 py-1.5 text-sm font-semibold text-red-700 transition hover:bg-red-100"
+            >
+              {copy.directionsRetryLabel}
+            </button>
+          </div>
+        ) : directions && directions.length > 0 ? (
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {directions.map((direction) => (
+              <DirectionCard
+                key={direction.id}
+                brandCase={activeCase}
+                direction={direction}
+                selected={direction.id === selectedDirectionId}
+                disabled={controlsDisabled}
+                onSelect={() => handleSelectDirection(direction.id)}
+                copy={copy}
+                uiLocale={uiLocale}
+              />
+            ))}
+          </div>
+        ) : null}
 
         {/* ── Prompt preview ─────────────────────────────────────────── */}
         <div className="rounded-2xl border border-neutral-200 bg-white shadow-sm">
