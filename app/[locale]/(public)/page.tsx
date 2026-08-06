@@ -32,9 +32,49 @@ async function buildHomeNanoCards(): Promise<NanoInspirationCardType[]> {
       nanoTemplates as unknown as RawTemplate[],
       nanoInspiration as unknown as RawNanoImageRecord[]
     );
+    // Curated 80-card home feed (was ~345 → ~728KB inline payload). Prioritise
+    // the strategic verticals (merch / edu / branding / packaging / e-commerce)
+    // via round-robin so each is represented, ordered by rank_score, then fill
+    // with global rank_score. Pass as ordered templateIds + limit so
+    // buildNanoFeedCards emits at most 80 cards (skips template w/o images).
+    const HOME_CARD_CAP = 80;
+    const TARGET_TOPICS: Record<string, string[]> = {
+      merch: ["merch", "merchandise", "merch-commerce", "stickers", "pod"],
+      packaging: ["packaging", "cosmetic-packaging", "gift-packaging"],
+      branding: ["branding", "brand", "design"],
+      ecommerce: ["ecommerce", "e-commerce", "product", "product-lineup"],
+      edu: ["learning", "kids-learning", "vocabulary", "flashcards", "education", "learning-materials", "early-childhood-learning"],
+    };
+    const allTpl = (nanoTemplates as unknown as Array<{ id: string; topics?: string[]; rank_score?: number }>);
+    const score = (x: { rank_score?: number }) => x.rank_score ?? 1;
+    const assigned = new Set<string>();
+    const buckets: string[][] = [];
+    for (const slugs of Object.values(TARGET_TOPICS)) {
+      const set = new Set(slugs);
+      const ids = allTpl
+        .filter((tp) => !assigned.has(tp.id) && (tp.topics || []).some((t2) => set.has(t2)))
+        .sort((a, b) => score(b) - score(a))
+        .map((tp) => tp.id);
+      ids.forEach((id) => assigned.add(id));
+      buckets.push(ids);
+    }
+    const ordered: string[] = [];
+    for (let i = 0; ordered.length < 120 && buckets.some((b) => b.length); i++) {
+      for (const b of buckets) if (b[i]) ordered.push(b[i]);
+    }
+    // fillers: remaining templates by rank_score (keeps the feed full if a
+    // vertical is thin or many curated templates lack example images)
+    const filler = allTpl
+      .filter((tp) => !assigned.has(tp.id))
+      .sort((a, b) => score(b) - score(a))
+      .map((tp) => tp.id);
+    const candidateIds = [...ordered, ...filler].slice(0, 200);
+
     return buildNanoFeedCards(reg, "en", {
       perTemplateMaxImages: 2,
       strictLocale: true,
+      templateIds: candidateIds,
+      limit: HOME_CARD_CAP,
       translate: (key: string) => {
         try {
           return (t as any)(key) ?? "";
