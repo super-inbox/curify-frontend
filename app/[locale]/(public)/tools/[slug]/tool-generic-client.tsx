@@ -123,13 +123,14 @@ export default function ToolGenericClient({
         />
       ) : demo?.type === "single_video" ? (
         <>
-          {/* Cap at max-w-2xl (672px) and center within the wider
-              max-w-5xl main container. Demo source videos are 1080p
-              horizontal — letting them stretch to w-full at the
-              main-container width made them ~976px wide × ~549px
-              tall on desktop and dominated the page. */}
+          {/* Dual cap so BOTH orientations stay reasonable and centered:
+              max-w-2xl (672px) bounds landscape width; max-h-[70vh] bounds
+              portrait height (9:16 workflow demos are 1080×1920 — without a
+              height cap a 672px-wide portrait video renders ~1200px tall and
+              dominates the page). w-auto lets the video keep its aspect ratio
+              within whichever bound binds first. */}
           <CdnVideo
-            className="w-full max-w-2xl mx-auto rounded-xl shadow mb-4"
+            className="w-auto max-w-2xl max-h-[70vh] mx-auto rounded-xl shadow mb-4"
             controls
             poster={demo.poster}
             src={demo.src}
