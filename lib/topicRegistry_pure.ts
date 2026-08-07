@@ -123,6 +123,13 @@ for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
 
 // Gallery tag to pull from nano-banana-pro-prompts for a topic page.
 const TOPIC_GALLERY_TAG: Record<string, string> = {
+  // Style-exploration niche topics — populate their /topics pages from the
+  // gallery until seeded inspirations (sneaker playbook) fill in.
+  "sneaker-design":        "sneakers",
+  "eyewear-design":        "sunglasses",
+  "coffee-shop-branding":  "café",
+  "flower-shop-branding":  "flowers-in-the-garden",
+  "museum-merchandise":    "modernized-artifact",
   character:      "character",
   nostalgia:      "nostalgic",
   product:        "product",

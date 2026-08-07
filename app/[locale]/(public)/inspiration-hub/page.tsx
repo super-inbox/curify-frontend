@@ -27,6 +27,15 @@ const TOPIC_ROWS = [
 
 const ROW_LIMIT = 12;
 
+// Style-exploration niche topics, surfaced as SEO tag chips at the top of the
+// hub. Each resolves to a `topics.<slug>` entry (messages/*/topics.json) and a
+// server-rendered /topics/<slug> style-gallery page. Grouped for scannability.
+const NICHE_TAG_GROUPS: { label: string; slugs: string[] }[] = [
+  { label: "E-commerce", slugs: ["sneaker-design", "jewelry-design", "eyewear-design", "handbag-design"] },
+  { label: "Brand & 文创", slugs: ["coffee-shop-branding", "tea-brand-design", "flower-shop-branding", "museum-merchandise"] },
+  { label: "Packaging", slugs: ["candle-packaging", "wine-label-design", "chocolate-packaging"] },
+];
+
 export async function generateMetadata({
   params,
 }: {
@@ -189,6 +198,26 @@ export default async function InspirationHubPage({
             Browse curated AI templates and examples by topic — from MBTI
             personality cards to watercolor illustrations.
           </p>
+
+          {/* Style-exploration niches — SEO tag chips → /topics/<slug> */}
+          <div className="mt-5 flex flex-col gap-2.5">
+            {NICHE_TAG_GROUPS.map((group) => (
+              <div key={group.label} className="flex flex-wrap items-center gap-2">
+                <span className="mr-1 text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                  {group.label}
+                </span>
+                {group.slugs.map((slug) => (
+                  <Link
+                    key={slug}
+                    href={`/${locale}/topics/${slug}`}
+                    className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 transition-colors hover:border-purple-300 hover:bg-purple-50 hover:text-purple-700"
+                  >
+                    {safeT(`topics.${slug}.displayName`) || slug}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </div>
         </header>
 
         {/* Topic rows: localized name + 1-line description + grid of
