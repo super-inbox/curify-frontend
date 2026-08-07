@@ -1,13 +1,182 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. This is the scope/definition of the "SEO + SMM + Growth
-> Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
+> Defined 2026-06-26. **Last updated 2026-08-07.** This is the scope/definition of the "SEO + SMM +
+> Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
 
 This workstream has three legs that converge on one outcome: **measurable
 revenue + retention growth** for the platform and (under the 2026-06-26 POD
 reframe) for the merchants who use it.
+
+---
+
+## 2026-08-07 — state of play (catch-up for 2026-07-14 → 08-07)
+
+_The doc's previous dated entry was 2026-07-13. This section is the current read; the leg
+sections below hold the standing scope. Read this first._
+
+### Traffic reality — the evergreen base is decaying, not flat
+
+Three consecutive 28-day GSC windows, split WC vs non-WC by URL pattern (sources:
+`raw/gsc-prior-2026-06-15/`, `raw/gsc-recent-2026-07-13/`, `raw/gsc-2026-08-03/`, and the fresh
+API pull `raw/gsc-2026-08-07/w28/`):
+
+| Window | Total clicks | Total impr | Non-WC impr | Non-WC impr/day |
+|---|---:|---:|---:|---:|
+| 2026-05-19 → 06-15 | 5,405 | 257,240 | 48,048 | **1,716** |
+| 2026-06-16 → 07-13 | 1,156 | 148,526 | 24,439 | **873** |
+| 2026-07-06 → 08-02 | 190 | 12,615 | 10,658 | **381** |
+| 2026-07-09 → 08-05 (API) | 160 | 11,789 | 10,054 | **359** |
+
+**This corrects the July framing.** The "non-WC floor is ~1,200–1,400 impr/day" line recorded on
+2026-07-05 is no longer true — the non-WC base fell **1,716 → 359 impr/day (-79%) in two months**.
+Site total is now **~420 impr/day, ~6 clicks/day**.
+
+Caveat on the headline number: the 148K-impression middle window is dominated by a single page —
+`/blog/world-cup-2026-top-contenders` took **91,062 impressions and 1 click** (61% of that window)
+off the semifinal refresh. So the raw "-91% impressions" is mostly that spike unwinding. The real
+signal is the **non-WC column**, which decays steadily and independently of WC.
+
+### Why: the canonical fold is the dominant suppressor — and it is NOT yet cleared
+
+**Diagnosed 2026-08-04** (memory `project_blog_canonical_fold`): **44/103 blogs (43%) folded into
+the homepage canonical** — `coverage="Duplicate without user-selected canonical"`,
+`googleCanonical=https://www.curify-ai.com/`. Root cause was **not** the canonical tag (present and
+correct in SSR); it was that every page shipped an identical **1.6MB inline i18n catalog** (97% of
+2.17MB HTML) via `NextIntlClientProvider`, making unrelated pages ~90% byte-identical to Googlebot
+→ near-duplicate clustering → collapse to the homepage. Same suppressor hits the example pages
+(memory `project_mbti_names_ctr_bleed`).
+
+**Fix shipped and live:** `f93bad79` + `c2759e55` (`lib/client-messages.ts` `pickClientMessages()`)
+— merged to main, confirmed in production 2026-08-05. Verified live 2026-08-07: a blog page is now
+**735KB total / 555KB largest inline chunk** (was 2.17MB / 1,616KB).
+
+**Verification 2026-08-07 (URL Inspection API, 13 pages) — the fold has NOT lifted, because Google
+has not recrawled:**
+
+| Page | Coverage | lastCrawl | googleCanonical |
+|---|---|---|---|
+| `…/example/template-mbti-nba-erling-haaland` | **Submitted and indexed** ✅ | 2026-07-25 | self |
+| `…/example/template-mbti-nba-jude` | Duplicate w/o user-selected canonical | 2026-07-30 | homepage |
+| `/blog/world-cup-2026-ai-prompt-hub` | Duplicate w/o user-selected canonical | 2026-07-31 | homepage |
+| `/blog/ai-packaging-design-guide` | Duplicate w/o user-selected canonical | 2026-07-28 | homepage |
+| `/blog/portugal-soccer-poster-prompts` | Duplicate w/o user-selected canonical | 2026-07-23 | homepage |
+| `/blog/voice-cloning-tools` | Duplicate w/o user-selected canonical | 2026-07-17 | homepage |
+| `/blog/france-soccer-poster-prompts` | Duplicate w/o user-selected canonical | **2026-08-07** | homepage |
+
+Two reads, both actionable:
+
+1. **The 08-04 Indexing-API ping of the 48 folded URLs fired one day BEFORE the fix went live
+   (08-05)** — so whatever recrawl it triggered hit the still-bloated HTML. Memory predicted exactly
+   this ("recrawl alone will likely RE-FOLD until the 1.6MB bloat is fixed"). **The ping needs to be
+   re-fired now that the fix is live.** A 12-blog random sample on 08-07 shows 6 folded / 3 indexed /
+   2 crawled-not-indexed / 1 discovered-not-indexed — i.e. **fold rate unchanged (~50%)**, and
+   **11 of 12 were last crawled before 2026-08-05**. Organic recrawl of the blog corpus spans
+   March–August; waiting is not a plan.
+2. **One page WAS crawled post-fix (france-soccer-poster-prompts, 2026-08-07T04:07Z) and still
+   folded.** Caveats: it is a genuine country-swap near-duplicate of the portugal/brazil posts (a
+   bad test case), and GSC coverage state can lag canonical re-evaluation after a fresh crawl. But
+   it is a warning that the trim may be **necessary-not-sufficient**: measured 08-07, two unrelated
+   blog pages are still **99% similar whole-page** (555KB shared catalog vs ~180KB unique article) —
+   down from 97% shared to 75% shared, which may not be enough separation. **If the 08-19 pull shows
+   no un-fold, the next lever is trimming the residual 555KB catalog further (route-scoped message
+   namespaces), not more pings.**
+
+### MBTI CTR bleed — fold cleared where recrawled, CTR still not recovering
+
+The 07-24 fixes (`8be3591a` title dedup · `97d552f2` MBTI lastmod · top-60 Indexing-API ping) plus
+`ac3093ec` (07-26, "Basketball Card"→"Football Card" in EN + 9 locales) are **all on main and live**
+(verified 08-07: titles render clean, absolute self-canonical). Pre/post read from the fresh pull
+(`raw/gsc-2026-08-07/{pre_mbti,post_mbti}/`, 12 days each side of the ship):
+
+| Window | MBTI clicks | MBTI impr | CTR |
+|---|---:|---:|---:|
+| 2026-07-12 → 07-23 (pre) | 9 | 1,903 | 0.47% |
+| 2026-07-25 → 08-05 (post) | 9 | 2,282 | **0.39%** |
+
+**No CTR recovery yet.** Impressions grew +20% while the site fell — MBTI remains the one growing
+cluster, consistent with the 07-05 cluster-scorecard pick. What did change: the ranking URL moved
+from the `/tr/` localized variant to the **unprefixed EN** page (hreflang/canonical fix working),
+and `erling-haaland` **un-folded** (self-canonical, "Submitted and indexed") after its 07-25
+recrawl. Yet it still earns 831 impr / 1 click at pos 9.5. Since the title is now clean and the
+fold is gone on that URL, the residual gap is **position (9–10) + intent mismatch** — "erling
+haaland mbti" searchers want a personality answer, not an AI-image template page. **Next lever for
+this cluster is answer-shaped content on the page (the VerticalPageSchema Knowledge pillar), not
+more title surgery.** `jude` (927 impr / 3 clicks) is still folded — it needs the re-ping above.
+
+### What shipped 2026-07-14 → 08-07
+
+**SEO — technical / indexation**
+- **Wedge1 hygiene gate PASSED** 2026-07-14 — 0/280 sampled URLs flagged (was 54/275 = 19.6%).
+  Sitemap 25,764 → 14,650. **And link injection turned out to be already shipped** (W1.1/W1.2/W1.4
+  live since 06-27) — the June "these edges are missing" premise is STALE; don't rebuild. Remaining
+  genuine gaps are narrow: example→tools (0), blog→tools (0), home→blog (0), topic breadth (21 of
+  104 slugs home-linked). Memory `project_wedge1_indexation`.
+- `4a21ce4b` (07-31) noindex generator-demo example pages, canonical to the template.
+- `f429f55a` (08-06) home feed capped to 80 curated cards (~345 → ~728KB payload). The homepage
+  still ships a ~726KB own-data chunk — a **separate** perf item from the i18n fold.
+- **Negative-SEO disavow** prepared 2026-07-29 — `raw/seo-disavow-2026-07-29/disavow.txt`, 58
+  domains (`seo-cartel-*.xyz` coffee-varietal PBN + 3 IP clusters). **Manual upload only.** Framed
+  honestly as hygiene/insurance, not a penalty fix — nearly every toxic link is nofollow, and
+  Semrush Authority Score is not a Google ranking factor. Memory `project_negative_seo_disavow`.
+
+**SEO — content authority (the strategic shift of this period)**
+- **VerticalPageSchema v1** — `docs/vertical-page-schema-v1.md` (07-28, from
+  `raw/seo-content-authority-07-28/discussion.txt`). Reframes the problem from "get more pages
+  discovered" to **"once discovered, why should Google rank them?"** Answer: a vertical
+  domain-knowledge layer on the existing URLs — 4 pillars **Know → Structure → Show → Make**.
+  Knowledge (prose) authored at **template** level; Attributes (ontology values) at **example**
+  level — because **85% of nano-template impressions land on example pages** and pasting identical
+  prose across 88 examples would be a duplicate-content own-goal. Ships: `672c48fe` (v1 + HSK
+  pilot) · `05940a13`/`258dc8b8` (top-6 → top-20 MBTI + edu/merch, 10-locale i18n) ·
+  `fd4dc1e3` (15 GSC-high-impression example pages) · `9481e0c0` (drop duplicative `includes` slot).
+  Companion docs: `a45318d7` template-vs-example pillar split + 12-template pilot, `06f282be`
+  GSC-mined pilot cohort.
+- **Visual-format ontology** — `f89f53d1` (08-03) visible rich content (lead + how-to + uses + FAQ +
+  JSON-LD) on visual-format topic pages, `a9b5125a` +6 more formats, `946d4a08`/`0cfb6971` 8-locale
+  backfill, `5120af77` 7 design/commerce topics enriched. Memory `project_visual_format_ontology`.
+- **2026-07-24 SEMrush KD review** (recorded in `docs/blog-quality.md`): **pos 40+ or absent on
+  every saved KD head term** despite having content — programmatic-seo-tool pos 40,
+  ai-product-photo-generator not ranking, ai-worksheet-generator not ranking, ai-packaging-design
+  pos 39. Root causes: (1) **page-type⇄intent mismatch** — "X generator" SERPs rank free-TOOL
+  landing pages (NoteGPT, MagicSchool, Fotor, Flair), not blogs; (2) domain-authority gap. Levers:
+  ship `/tools/<x>` for head terms with blog as spoke; chase the differentiated long-tail we win
+  ("worksheet generator FROM VIDEO" — demo video embedded on `/blog/video-to-learning-pack`,
+  `3f9806a6`); push near-page-1 pages. Memory `project_weekly_semrush_kd`.
+
+**SMM — the FB reset (biggest SMM change since the doc was written)**
+- **Diagnosis 2026-08-04** (memory `project_fb_follower_growth`): Page `885537721308600` "Curify AI"
+  at **89 followers** after ~50 posts in 6 days (8.3/day). Four structural faults, all against the
+  Account-Positioning playbook: (1) **~90% photo carousels** — the proven-dead format; (2) content =
+  template-**generator showcases** (product-output paradox) rather than the reach-authority identity
+  (Sinosphere culture/awe); (3) **external link in every post body** → FB reach throttle; (4) 8/day
+  of low-engagement posts trains the algo down. Plus a QA bug that shipped a post captioned with raw
+  prompt JSON.
+- **Fix merged** (curify-studio PR #417, `3f71edb`, merged `15cee0a` 08-05): FB carousels disabled
+  (single native posts), CTA link moved to the **first comment** via `_comment_on_post()`,
+  `_social_title()` guard rejects JSON/prompt-blob captions. `86a123e` (08-06) fixed a missing CTA
+  url + added a second (education) Page.
+- **Native-video track live** (`3ba763d`): `facebook_client.post_video_to_facebook_page()` +
+  `scripts/run_fb_video_batch.py`. Ran live — **all 8 八仙 (Eight Immortals) videos scheduled as
+  native FB video, 1/day 2026-08-05 → 08-12 @16:00 UTC**, culture-forward hooks, no body link,
+  public-domain (no IP risk). This is the first test of the reach-authority identity as a
+  *follower-growth* play rather than a broadcast.
+- **Still open:** Sinosphere infographic queue; cadence cut on the photo autopost
+  (`autopost.yaml` cron 8/day → 1-2/day); the short-video library (curify-gallery `merch_IP`,
+  `ecommerce_workflow`) is still NOT in the autopost item pool.
+
+### Checkpoints — dated, with owner action
+
+| Due | Check | Method | Status |
+|---|---|---|---|
+| **now** | **Re-fire Indexing-API ping** on the 44 folded blogs + top folded example pages — the 08-04 ping predates the 08-05 fix | `node scripts/submit_indexing_api.cjs --urls-file=… --state=…` (200/day quota) | **not done — highest-value open action** |
+| 2026-08-12 | 八仙 FB video series ends → pull `fan_count` (baseline **89** on 08-04) | Graph `/me?fields=fan_count` | pending |
+| 2026-08-19 | Blog un-fold confirmation | GSC pull + URL Inspection re-run on the same 13 URLs | pending |
+| 2026-08-19 | If no un-fold → trim the residual **555KB** shared catalog (route-scoped namespaces) | follow-up to `pickClientMessages()` | conditional |
+| 2026-08-25 | Wedge1 8-week post-ship measurement | per-family distinct-impressed-URL breadth, WC-stripped; baseline window 05-12→06-08 (topics 320, example 2840, use-cases 15, tools 61) | pending |
+| overdue | SEMrush KD pull (≥7d cadence; last 2026-07-24) | user-provided screenshots → `docs/blog-quality.md` | overdue |
+| open | Disavow upload (manual, no API) | search.google.com/search-console/disavow-links | awaiting user |
 
 ---
 
@@ -147,6 +316,9 @@ organic impressions, yet Commerce is the biggest gallery bucket (954, users *mak
 to the POD track (tool-conversion + trending + social), not the evergreen-SEO bet. (4) Most durable
 non-WC evergreen is off-list — **Voice/Video AI tools** (~400 impr/d floor = the live backend; weak
 CTR is the gap). WC = 87% of impressions at peak; the non-WC floor is ~1,200–1,400 impr/d.
+> ⚠️ **Superseded 2026-08-07:** the non-WC floor is not a floor — it fell to **359 impr/day** by the
+> 07-09→08-05 window (-79% in two months). See the 2026-08-07 state-of-play section at the top; the
+> cluster *ranking* below still stands, the traffic baseline does not.
 
 **First cluster = MBTI & Character.** The MBTI ladder absorbs two weaker clusters as lower rungs:
 MBTI test → character MBTI charts → fandom/anime grids → character **sticker packs** (=Merch rung)
@@ -205,9 +377,21 @@ no `/images/upload` anon gate). Full phased plan in `docs/mbti-character-cluster
   168 items max-out at 2-in-bucket). v2 picks the template family GLOBALLY by slot+theme,
   slides a CAROUSEL_MAX-sized window per slot. Tested against the real corpus: 24/24
   simulated slots produce a carousel. Cap = 3-8 photos (memory `feedback_fb_carousel_size_cap.md`).
-- Once merged, expect 6 FB carousels/day replacing the current single-photo broadcast.
+- ~~Once merged, expect 6 FB carousels/day replacing the current single-photo broadcast.~~
+
+> ⚠️ **REVERSED 2026-08-04/05 — do not ship the carousel batcher.** The 89-follower diagnosis found
+> FB photo carousels are the *proven-dead* format for this Page, so `3f71edb` **disabled FB
+> carousels entirely** (dispatch no longer calls `pick_carousel_global`). The carousel-batch
+> generator on `jwang/card-narration-refactor` is now dead code for FB — do not merge it as a
+> growth ship. Current FB direction = single native posts + native video, CTA link in the first
+> comment. See the 2026-08-07 state-of-play section and memory `project_fb_follower_growth`.
 
 **Queued (not started):**
+- Cadence cut: `autopost.yaml` cron 8/day → 1-2/day (an 8/day low-engagement firehose trains the
+  algo down)
+- Sinosphere infographic queue (the reach-authority identity per `feedback_smm_account_positioning`)
+- Add the short-video library (curify-gallery `merch_IP`, `ecommerce_workflow`) to the autopost item
+  pool — today only the 八仙 batch was scheduled, by hand
 - Group-aware FB routing (use item `topics` to pick 5-10 relevant groups vs blanket cross-post)
 - Spam-risk audit on cross-post volume
 
@@ -231,6 +415,11 @@ no `/images/upload` anon gate). Full phased plan in `docs/mbti-character-cluster
   (funnel pulls, search-eval cycles, video-user attribution)
 
 **Date-stamped findings docs (most recent first):**
+- **GSC state-of-play + canonical-fold verification (2026-08-07)** — in the top section of this doc.
+  Raw pulls: `raw/gsc-2026-08-07/w28` (28d), `pre_mbti` (07-12→07-23), `post_mbti` (07-25→08-05),
+  produced by `node scripts/pull_gsc_performance.cjs --from=… --to=… --out=…`. URL-Inspection
+  verification recipe in memory `project_mbti_names_ctr_bleed` (run from `curify-frontend` or set
+  `NODE_PATH` to its `node_modules` — the SA JSON lives in curify-studio).
 - **First paid user + near-converter analysis (2026-07-13)** — memory `project_first_paid_user`.
   First paying customer (user 1359) = a **Spanish-speaking football-sticker POD maker**: Google
   organic → landed directly on the `/nano-template/*/example/*` page for
