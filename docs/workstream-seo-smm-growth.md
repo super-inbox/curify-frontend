@@ -77,11 +77,55 @@ Two reads, both actionable:
 2. **One page WAS crawled post-fix (france-soccer-poster-prompts, 2026-08-07T04:07Z) and still
    folded.** Caveats: it is a genuine country-swap near-duplicate of the portugal/brazil posts (a
    bad test case), and GSC coverage state can lag canonical re-evaluation after a fresh crawl. But
-   it is a warning that the trim may be **necessary-not-sufficient**: measured 08-07, two unrelated
-   blog pages are still **99% similar whole-page** (555KB shared catalog vs ~180KB unique article) —
-   down from 97% shared to 75% shared, which may not be enough separation. **If the 08-19 pull shows
-   no un-fold, the next lever is trimming the residual 555KB catalog further (route-scoped message
-   namespaces), not more pings.**
+   it is a warning that the trim was **necessary-not-sufficient**: measured 08-07, two unrelated
+   blog pages were still **99% similar whole-page** (555KB shared catalog vs ~180KB unique article)
+   — down from 97% shared to 75% shared, which is not obviously enough separation. That drove the
+   follow-up ship below.
+
+### The 08-04 trim broke 6 live blog posts — fixed 2026-08-07 (`98b0e4b5`)
+
+Auditing the residual payload surfaced a **production regression in the fold fix itself**. The
+08-04 trim identified blog articles by sniffing field names (`whatIsContent`, `step1Content`, …).
+About 21 posts render their body through a **dedicated CLIENT component**
+(`useTranslations("blog.<ns>")`), and the heuristic stripped 7 of those namespaces — so those pages
+served **raw i18n keys instead of prose**. Confirmed live before the fix:
+
+| Page | raw i18n keys in HTML |
+|---|---:|
+| `/blog/ai-video-dubbing-tutorial` | 91 |
+| `/blog/best-ai-tools` | 71 |
+| `/blog/best-programmatic-seo-tools` | 71 |
+| `/blog/mbti-relationship-style-visualizer` | 43 |
+| `/blog/weird-science-facts-classroom-engagement` | 43 |
+| `/blog/ai-collage-digital-wallpaper-guide` | 35 |
+
+Note the compounding irony: a page whose article text is replaced by key strings has *lost its
+unique content*, which makes it **more** near-duplicate, not less — the opposite of what the trim
+was for.
+
+**Fix (`98b0e4b5`, on `jwang/vercel`):**
+- The field-name guess is gone. `scripts/scan_blog_client_namespaces.cjs` statically scans the
+  source for every client component that reads a blog namespace and emits
+  `lib/blog-client-namespaces.generated.ts`; a namespace a client reads is **never** stripped.
+  Run with `--check` to fail CI when the map goes stale.
+- **Route-scoped payload.** Those ~21 articles (~217KB) used to ride along on all ~20k pages. The
+  layout now reads `x-pathname` and keeps only the current route's article, so a blog page ships
+  its own (unique) body and every other page ships none. This is free: the `(public)` layout's
+  `generateMetadata` **already** calls `headers()`, so the tree is dynamically rendered either way
+  — verified on prod (`cache-control: private, no-cache`, `x-vercel-cache: MISS`). Two rejected
+  alternatives, recorded so they aren't re-tried: a nested `NextIntlClientProvider` (use-intl's
+  `IntlProvider` **replaces** `messages` instead of merging, so shared children like RelatedBlogs /
+  BlogCTACard would lose their namespaces), and prerender-safe route detection (there is none that
+  doesn't read headers).
+- `nanoPromptsTags` (~41KB, read only by a server page) dropped from the client payload too.
+
+**Client catalog per page: 1,935KB → 543KB (08-05) → 336KB now**; the 21 blog routes with a client
+component land at 340–355KB. Verified on a dev server across 13 routes (the 6 repaired posts, 4
+folded blogs, home, `/topics`, `/blog`, a `/zh/` blog route): 0 raw keys, 0 MISSING_MESSAGE, prose
+renders, related-blog titles intact, `tsc` clean.
+
+**This resets the fold clock.** The recrawl push below should fire *after* this deploys, not before
+— the same one-day-early mistake as the 08-04 ping would waste it again.
 
 ### MBTI CTR bleed — fold cleared where recrawled, CTR still not recovering
 
@@ -170,10 +214,12 @@ more title surgery.** `jude` (927 impr / 3 clicks) is still folded — it needs 
 
 | Due | Check | Method | Status |
 |---|---|---|---|
-| **now** | **Re-fire Indexing-API ping** on the 44 folded blogs + top folded example pages — the 08-04 ping predates the 08-05 fix | `node scripts/submit_indexing_api.cjs --urls-file=… --state=…` (200/day quota) | **not done — highest-value open action** |
+| **now** | **Merge `jwang/vercel` → main and deploy `98b0e4b5`** — 6 blog posts are serving raw i18n keys until it lands | normal deploy | **blocking the two rows below** |
+| after deploy | **Re-fire Indexing-API ping** on the 44 folded blogs + top folded example pages (incl. `…mbti-nba-jude`). The 08-04 ping predates the 08-05 fix; firing before `98b0e4b5` deploys would waste it the same way | `node scripts/submit_indexing_api.cjs --urls-file=… --state=…` (200/day quota) | **highest-value open action** |
+| after deploy | Re-verify the 6 repaired posts render prose on prod (`grep -c 'blog\.[a-zA-Z]*\.'` on the HTML should be 0) | curl | pending |
 | 2026-08-12 | 八仙 FB video series ends → pull `fan_count` (baseline **89** on 08-04) | Graph `/me?fields=fan_count` | pending |
 | 2026-08-19 | Blog un-fold confirmation | GSC pull + URL Inspection re-run on the same 13 URLs | pending |
-| 2026-08-19 | If no un-fold → trim the residual **555KB** shared catalog (route-scoped namespaces) | follow-up to `pickClientMessages()` | conditional |
+| 2026-08-19 | If still no un-fold → the remaining shared bytes are `topics` (~153KB, read by client chips with dynamic keys) + the UI namespaces; next lever is per-route namespace loading, not another blanket trim | follow-up to `pickClientMessages()` | conditional |
 | 2026-08-25 | Wedge1 8-week post-ship measurement | per-family distinct-impressed-URL breadth, WC-stripped; baseline window 05-12→06-08 (topics 320, example 2840, use-cases 15, tools 61) | pending |
 | overdue | SEMrush KD pull (≥7d cadence; last 2026-07-24) | user-provided screenshots → `docs/blog-quality.md` | overdue |
 | open | Disavow upload (manual, no API) | search.google.com/search-console/disavow-links | awaiting user |
