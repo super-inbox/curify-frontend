@@ -342,6 +342,22 @@
         "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
         "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
       }
+    },
+    "die_cut_sticker_file": {
+      "title": "Stanzaufkleber-Fabrikdatei",
+      "desc": "Verwandeln Sie jedes Design in eine druckfertige Stanzaufkleberdatei – 300 DPI transparente Grafiken, eine millimetergenau Schnittlinie und ein CMYK-PDF in einer ZIP, die Ihr Drucker ohne Vorstufe verarbeiten kann.",
+      "meta": {
+        "title": "Stanzaufkleber-Dateimaker – Schnittlinie + CMYK, druckfertig | Curify",
+        "description": "Verwandeln Sie jedes Bild in eine fabrikfertige Stanzaufkleberdatei: 300 DPI transparente PNG, millimetergenau CutContour-Schnittlinie (SVG) und druckfertiges CMYK-PDF in einer ZIP. Für Aufkleberverkäufer, POD & 谷子 Merch."
+      }
+    },
+    "packaging_mockup": {
+      "title": "AI Verpackungs-Mockup-Generator",
+      "desc": "Verwandeln Sie eine flache Dieline (.ai/PDF) in ein realistisches 3D-Verpackungs-Mockup — eine gefaltete Box, die von vorne oder in einem 45°-Winkel gezeigt wird, mit den echten Boxproportionen aus Ihrer Datei (kein generischer Würfel).",
+      "meta": {
+        "title": "AI Verpackungs-Mockup-Generator — Dieline zu 3D-Box | Curify",
+        "description": "Verwandeln Sie Ihre Dieline (.ai/PDF) in realistische 3D-Verpackungs-Mockups — gefaltete Box, vorne / 45° / E-Commerce-Weiß-Hintergrund. Echte Boxproportionen aus Ihrer Datei. Für Marken, 文创, Geschenke & POD-Verpackungen."
+      }
     }
   },
   "bilingual": {
@@ -1300,6 +1316,114 @@
         "name": "Markenkit",
         "desc": "Wenden Sie Ihre Identität auf ein komplettes Mockup-Paket für visuelle Identität an.",
         "cta": "VI-Paket erstellen"
+      }
+    }
+  },
+  "dieCutStickerFile": {
+    "metadata": {
+      "title": "Stanzaufkleber-Dateimaker – Schnittlinie + CMYK, druckfertig | Curify",
+      "description": "Verwandeln Sie jedes Bild in eine fabrikfertige Stanzaufkleberdatei: 300 DPI transparente PNG, millimetergenau CutContour-Schnittlinie (SVG) und druckfertiges CMYK-PDF in einer ZIP. Für Aufkleberverkäufer, POD & 谷子 Merch."
+    },
+    "title": "Jedes Design → Eine fabrikfertige Stanzaufkleberdatei",
+    "description": "Laden Sie ein Bild hoch und erhalten Sie das gesamte Druckpaket, das eine Aufkleberfabrik benötigt – eine 300 DPI transparente Grafik-PNG, eine millimetergenau Stanzlinie (CutContour), ein druckfertiges CMYK-PDF, eine Vorschau und ein Datenblatt – gebündelt in einer ZIP. Hintergrundentfernung, die Schnittkontur, Beschnitt und CMYK werden für Sie erledigt, sodass Sie die Vorstufe überspringen und die Datei direkt an Ihren Drucker weitergeben können.",
+    "example": "Beispiel: ein Design → eine Stanzaufkleberdatei mit der Schnittlinie, die 3 mm sauber um die Grafik versetzt ist.",
+    "cta": "Kontaktieren Sie uns für eine Datei oder eine Großbestellung",
+    "why": {
+      "title": "Warum Stanzaufkleberdateien über Curify erstellen?",
+      "point1": "Ein Bild rein, ein komplettes Fabrikpaket raus – die transparente 300 DPI Grafik, eine Vektorschnittlinie und ein CMYK-Druck-PDF, nicht nur ein PNG, das Sie noch vorbereiten müssen.",
+      "point2": "Die Schnittlinie ist deterministisch, nicht KI. Wir verfolgen und versetzen die Silhouette im Code, sodass die Stanzung millimetergenau und reproduzierbar ist – niemals ein halluzinierter Pfad, der eine Charge am Cutter verwirft.",
+      "point3": "Verarbeitet unordentliche Eingaben. Jeder Hintergrund (Foto, Karomuster, Szene) wird automatisch entfernt, und mehrelementige Aufkleber bleiben ganz und werden von einer sauberen Kontur mit 3 mm Beschnitt umgeben.",
+      "point4": "Druckfertige Farben. Wir konvertieren in CMYK über ein ICC-Profil (nicht einen flachen Farbraumwechsel) und kompensieren die Sättigung im Voraus, sodass Ihre Farben nicht ausgewaschen erscheinen."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Was genau bekomme ich?",
+      "a1": "Eine fabrikfertige ZIP: eine 300 DPI transparente Grafik-PNG, eine millimetergenau Stanzlinie als CutContour SVG, ein druckfertiges CMYK-PDF, ein Vorschau-Bild und ein Datenblatt (Größe / DPI / Beschnitt / Material). Geben Sie es direkt an Ihren Drucker weiter.",
+      "q2": "Die Schnittkante sieht ein wenig gezackt aus – wird sie sauber drucken? Ist PNG präziser?",
+      "a2": "Die Bildschirmvorschau verfolgt die Kontur in Bildschirmauflösung, sodass sie leicht gezackt aussehen kann – aber die gelieferte Datei ist anders: die Grafik ist eine hochauflösende 300 DPI PNG mit sauberen Kanten, und die Schnittlinie selbst ist ein echter Vektor (SVG), der millimetergenau ist, sodass sie in jeder Größe scharf bleibt und der Cutter ihr sanft folgt. Für die schärfsten Kanten beginnen Sie mit einer transparenten PNG anstelle eines JPG.",
+      "q3": "Warum sieht die Farbe nach der Umwandlung in CMYK ausgewaschen (发灰) aus?",
+      "a3": "CMYK hat einen kleineren Farbraum als RGB, sodass helle Farben stumpf werden – und ein generisches Profil macht sie am meisten stumpf. Wir erhöhen die Sättigung im Voraus und konvertieren über ein ICC-Profil, um die Farbe zurückzubringen; für exakte Produktionsfarben senden Sie das beschichtete Profil Ihres Druckers (z. B. Japan Color 2001 Coated oder US Web Coated SWOP) und wir verwenden es.",
+      "q4": "Haben Sie tatsächlich echte Fabrikdateien damit erstellt?",
+      "a4": "Ja – wir haben die Pipeline selbst aufgebaut (deterministische Schnittliniengeometrie, mehrelementige Aufkleber, 3 mm Beschnitt, ICC CMYK) und haben echte Dateien von Anfang bis Ende verarbeitet, einschließlich komplexer illustrierten Aufkleber und IP-Figuren. Wir kümmern uns um die Vorstufe, damit Sie es nicht lernen müssen."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist eine Stanzaufkleber-Fabrikdatei?",
+        "p1": "Ein Stanzaufkleber ist kein Rechteck – er wird in die Form Ihrer Grafik geschnitten. Um einen zu drucken, benötigt eine Fabrik mehr als ein Bild: die Grafik in Druckauflösung mit transparentem Hintergrund, eine separate Schnittlinie (der Messerpfad), die der Form mit einem kleinen Beschnitt folgt, und die Farbe in CMYK.",
+        "p2": "Diese manuell in Photoshop/Illustrator zusammenzustellen – den Hintergrund entfernen, den Schnittpfad zeichnen und versetzen, Beschnitt festlegen, in CMYK konvertieren – ist der langsame, fehleranfällige 'Vorstufen'-Schritt, den die meisten Aufkleberverkäufer fürchten und über den Fabriken Dateien ablehnen.",
+        "p3": "Dieses Tool produziert das gesamte Paket aus einem Bild, sodass selbst ein Anfänger einer Fabrik eine Datei übergeben kann, die ohne Hin und Her funktioniert."
+      },
+      "how": {
+        "title": "So funktioniert es",
+        "p1": "Laden Sie ein Design hoch – eine transparente PNG ist ideal, aber jedes Bild (auch ein Foto mit einem unruhigen Hintergrund) funktioniert.",
+        "p2": "Der Hintergrund wird automatisch entfernt und das Motiv isoliert (mehrere Elemente bleiben ganz).",
+        "p3": "Die Stanzlinie wird nachgezeichnet und um Ihren Beschnitt (Standard 3 mm) von der Silhouette versetzt als millimetergenaues Vektor — eine CutContour-Sonderfarbe, die der RIP als Schneidpfad liest.",
+        "p4": "Die Grafik wird mit 300 DPI auf einem transparenten Hintergrund gerendert und über ein ICC-Profil in druckfertiges CMYK umgewandelt.",
+        "p5": "Alles wird in einer ZIP-Datei gebündelt — Grafik-PNG, Schnittlinien-SVG, CMYK-PDF, Vorschau und Spezifikationsblatt — bereit zum Versand an die Fabrik."
+      },
+      "usecases": {
+        "title": "Für wen es gedacht ist",
+        "creatorsTitle": "Stickerverkäufer & Künstler",
+        "creatorsBody": "Verkaufen Sie gestanzte Sticker auf Etsy, TikTok oder 小红书, ohne Vorabdruck lernen zu müssen — verwandeln Sie Ihre Kunst in Dateien, die Fabriken akzeptieren, und heben Sie sich mit originellen Designs ab (keine Clipart-Lizenzierung).",
+        "educationTitle": "谷子 / POD & Fandom-Merch",
+        "educationBody": "Erstellen Sie Acryl-Schlüsselanhänger, 吧唧-Abzeichen, Kühlschrankmagneten und 谷子-Merch nach strengen Fabrik-Einreichspezifikationen — Schnittlinie, Beschnitt und CMYK nach Spezifikation behandelt.",
+        "businessTitle": "Kleine Geschäfte & Großbestellungen",
+        "businessBody": "Benötigen Sie eine Reihe von Designs, die in Produktionsdateien umgewandelt werden? Wir bieten es als Rundum-Service / Großdienstleistung an — senden Sie Ihre Kunst, erhalten Sie fabrikfertige ZIPs zurück."
+      }
+    }
+  },
+  "packagingMockup": {
+    "metadata": {
+      "title": "AI Verpackungs-Mockup-Generator — Dieline zu 3D-Box | Curify",
+      "description": "Verwandeln Sie Ihre Dieline (.ai/PDF) in realistische 3D-Verpackungs-Mockups — gefaltete Box, vorne / 45° / E-Commerce-Weiß-Hintergrund. Echte Boxproportionen aus Ihrer Datei. Für Marken, 文创, Geschenke & POD-Verpackungen."
+    },
+    "title": "Ihre Dieline → Ein realistisches 3D-Box-Mockup",
+    "description": "Senden Sie eine flache Dieline (刀版展开图, .ai oder PDF) und erhalten Sie ein realistisches gefaltetes 3D-Verpackungs-Mockup — vorne, 45° Dreiviertel oder E-Commerce-Weiß-Hintergrund — mit Ihrem Artwork auf die Boxflächen übertragen und den echten Proportionen aus der Datei, sodass ein flacher Karton flach bleibt und nicht zu einem generischen Würfel wird. Perfekt für die Genehmigung durch den Kunden, Berichte für den Chef und Produktseiten.",
+    "example": "Beispiel: eine 仁寿 Geschenkkarton-Dieline, gefaltet in ein 45° 3D-Mockup — eine flache Box von 117×114×39 mm, kein Würfel.",
+    "cta": "Kontaktieren Sie uns für ein Mockup oder eine Großbestellung",
+    "why": {
+      "title": "Warum Verpackungs-Mockups über Curify erstellen?",
+      "point1": "Dieline rein, realistisches 3D-Box-Mockup raus. Ihr flaches Artwork wird gefaltet und auf die Boxflächen übertragen — ein fertiges Produktfoto, das Sie einem Kunden übergeben oder auf einer E-Commerce-Seite verwenden können.",
+      "point2": "Echte Proportionen, aus Ihrer Datei. Wir lesen die echten Breite × Höhe × Tiefe aus Ihrer Dieline, sodass ein flacher/flacher Karton flach bleibt — nicht der generische Würfel, den die meisten KI-Tools ausspucken.",
+      "point3": "Jeder Winkel, den Sie benötigen. Vorderansicht, 45° Dreiviertel oder ein sauberer E-Commerce-Weiß-Hintergrund — dasselbe Design, korrekt übertragen.",
+      "point4": "Es skaliert. Eine Dieline oder eine Charge von SKUs — wir bieten es als einen Rundum-Service / Großservice an."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Was bekomme ich?",
+      "a1": "Ein hochauflösendes 3D-Mockup-Bild (JPG/PNG) Ihrer gefalteten Box — vorne, 45° oder E-Commerce-Weiß-Hintergrund, auf einem sauberen Studio-Hintergrund mit einem sanften Schatten. Bereit für die Bestätigung durch den Kunden, Präsentationen oder Produktseiten.",
+      "q2": "Sind die Boxproportionen genau zu meiner Dieline?",
+      "a2": "Ja — das ist der ganze Punkt. Wir lesen die echten Breite × Höhe × Tiefe aus Ihrer Datei (die .ai/PDF ist 1:1 gezeichnet) und setzen diese Proportionen durch, sodass ein flacher/flacher Karton flach gerendert wird, anstatt zu einem generischen Würfel zu werden. Senden Sie die Maße, wenn Sie sie haben, und wir werden sie genau festlegen.",
+      "q3": "Kann ich ein bearbeitbares 3D-Modell oder andere Winkel erhalten?",
+      "a3": "Ja. Neben dem Mockup-Bild können wir ein bearbeitbares 3D-Modell (.glb/.obj) erstellen — ein Box-Mesh in Ihren genauen Millimetern mit jedem Dieline-Panel UV-mapped — sodass Sie es neu winkeln, neu beleuchten oder animieren können. Und wir rendern jeden Winkel, den Sie benötigen (vorne / 45° / Weiß-Hintergrund).",
+      "q4": "Ist dies eine Fabrik-/Produktionsdatei?",
+      "a4": "Nein — ein 3D-Mockup dient zur Darstellung des Designs, nicht für die Druckerei. Eine Verpackungsfabrik benötigt die Dieline (AI/CDR/PDF) mit CMYK, Beschnitt, Druckbereichen und Prozessnotizen — das ist ein separates Lieferobjekt, das wir ebenfalls erstellen können.",
+      "q5": "In welchem Format soll ich senden?",
+      "a5": "Eine Dieline als .ai oder PDF ist ideal (wir lesen die echten Maße daraus); ein hochauflösendes flaches Artwork (PNG/JPG) funktioniert ebenfalls, wenn Sie uns die Box W×H×D geben. Teilen Sie uns den gewünschten Winkel mit (vorne / 45° / Weiß-Hintergrund)."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist ein Verpackungs-Mockup?",
+        "p1": "Ein Verpackungs-Mockup ist ein realistisches Bild Ihrer Box, wie sie aussieht, wenn sie gefaltet und gedruckt ist — die flache Dieline (mit allen Flächen ausgelegt) als 3D-Produktfoto gerendert.",
+        "p2": "Es ist das, was Sie einem Kunden zeigen, um das Design zu bestätigen, in einem Bericht zu verwenden oder auf einer E-Commerce-Seite zu nutzen — bevor Sie sich für einen physischen Drucklauf entscheiden.",
+        "p3": "Es ist keine Fabrikdatei: Ein 3D-Mockup zeigt das Design; die Produktion benötigt die Dieline + CMYK + Beschnitt + Prozess-Spezifikationen (ein separates Lieferobjekt)."
+      },
+      "how": {
+        "title": "Wie es funktioniert",
+        "p1": "Senden Sie Ihre Dieline – eine .ai oder PDF (im Maßstab 1:1) ist ideal; ein hochauflösendes flaches Artwork funktioniert ebenfalls mit den Boxabmessungen.",
+        "p2": "Wir lesen die tatsächliche Box Breite × Höhe × Tiefe aus der Datei (oder Ihrer Spezifikation).",
+        "p3": "Ihr Artwork wird gefaltet und auf die Boxflächen in diesen echten Proportionen abgebildet – eine flache Box bleibt flach.",
+        "p4": "Wir rendern den gewünschten Winkel – frontal, 45° Dreiviertelansicht oder sauberen E-Commerce Weiß-Hintergrund – mit sanfter Studio-Beleuchtung und Schatten.",
+        "p5": "Brauchen Sie es bearbeitbar? Wir können auch ein 3D-Modell (.glb/.obj) liefern, das Sie neu winkeln, neu beleuchten oder animieren können."
+      },
+      "usecases": {
+        "title": "Für wen es gedacht ist",
+        "creatorsTitle": "Marken- & Verpackungsdesigner",
+        "creatorsBody": "Zeigen Sie Ihren Kunden eine fertige 3D-Box aus Ihrer flachen Dieline für eine schnelle Genehmigung – frontal, 45° oder Packshots mit Weiß-Hintergrund – ohne selbst eine 3D-Szene einrichten zu müssen.",
+        "educationTitle": "文创 / Geschenk- & 谷子 Marken",
+        "educationBody": "Verwandeln Sie Dielines für Geschenkboxen, Tee und Kulturprodukte in Produktseiten- und Promo-Mockups, die der tatsächlichen Boxform entsprechen.",
+        "businessTitle": "E-Commerce & Großbestellungen",
+        "businessBody": "Brauchen Sie Packshots für einen Katalog von SKUs? Wir bieten Dieline → Mockup als einen Rundum-Service für Sie an und können bearbeitbare 3D-Modelle hinzufügen."
       }
     }
   }

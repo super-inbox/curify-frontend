@@ -123,6 +123,13 @@ for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
 
 // Gallery tag to pull from nano-banana-pro-prompts for a topic page.
 const TOPIC_GALLERY_TAG: Record<string, string> = {
+  // Style-exploration niche topics — only ON-INTENT gallery tags. The
+  // gallery is consumer AI-art, so most niches have no clean design pool;
+  // those stay gallery-less until seeded (sneaker playbook). Dropped
+  // "café" (café selfies, not branding) + "flowers-in-the-garden" (garden
+  // photos, not florist design) — they surfaced off-topic images.
+  "sneaker-design":        "sneakers",
+  "museum-merchandise":    "modernized-artifact",
   character:      "character",
   nostalgia:      "nostalgic",
   product:        "product",

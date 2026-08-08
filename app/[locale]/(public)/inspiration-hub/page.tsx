@@ -3,7 +3,10 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
 import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
+import HomeFusedRow, { type HomeExampleTile, type TopRemixPrompt } from "@/app/[locale]/(public)/HomeFusedRow";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
+import { getGalleryTag } from "@/lib/topicRegistry";
+import { nanoPromptsService } from "@/services/nanoPrompts";
 import { routing } from "@/i18n/routing";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 import nanoTemplates from "@/public/data/nano_templates.json";
@@ -26,6 +29,17 @@ const TOPIC_ROWS = [
 ] as const;
 
 const ROW_LIMIT = 12;
+
+// Style-exploration niche design topics, surfaced as their own rows at the TOP
+// of the hub (before "MBTI & Personality"). Each resolves to a `topics.<slug>`
+// entry (messages/*/topics.json) and a server-rendered /topics/<slug> page.
+// Ordered so populated niches lead; the rest carry SEO heading + description +
+// link (grids fill as they're seeded via the sneaker playbook).
+const NICHE_TOPIC_SLUGS = [
+  "sneaker-design", "museum-merchandise", "coffee-shop-branding", "tea-brand-design",
+  "jewelry-design", "eyewear-design", "handbag-design", "flower-shop-branding",
+  "candle-packaging", "wine-label-design", "chocolate-packaging",
+] as const;
 
 export async function generateMetadata({
   params,
@@ -87,13 +101,17 @@ type Inspiration = {
 
 type Template = { id: string; topics?: string[]; rank_score?: number };
 
-function buildTopicRows(locale: string) {
+function buildRowsForTopics(
+  locale: string,
+  slugs: readonly string[],
+  dropEmpty: boolean,
+) {
   const templates = nanoTemplates as unknown as Template[];
   const inspirations = nanoInspiration as unknown as Inspiration[];
 
   const templateById = new Map(templates.map((t) => [t.id, t]));
 
-  return TOPIC_ROWS.map((topic) => {
+  return slugs.map((topic) => {
     // Group matched inspirations by template so the row showcases
     // multiple templates instead of being dominated by whichever
     // template happens to have the most examples tagged with this topic.
@@ -148,7 +166,7 @@ function buildTopicRows(locale: string) {
     }));
 
     return { topic, items };
-  }).filter((row) => row.items.length > 0);
+  }).filter((row) => (dropEmpty ? row.items.length > 0 : true));
 }
 
 export default async function InspirationHubPage({
@@ -163,7 +181,48 @@ export default async function InspirationHubPage({
     try { return t(key as never) ?? ""; } catch { return ""; }
   };
 
-  const topicRows = buildTopicRows(locale);
+  const topicRows = buildRowsForTopics(locale, TOPIC_ROWS, true);
+  // Niche design topics keep their row even with an empty grid (dropEmpty:
+  // false) so the SEO heading + description still render above MBTI.
+  const nicheRows = buildRowsForTopics(locale, NICHE_TOPIC_SLUGS, false);
+
+  // Build a fused (examples + gallery) rail per niche topic so the hub rows
+  // show images even when a niche has no inspiration-tagged examples yet — the
+  // gallery prompts (via TOPIC_GALLERY_TAG) fill in. Mirrors the topic page's
+  // HomeFusedRow surface.
+  const nicheFused = await Promise.all(
+    nicheRows.map(async ({ topic, items }) => {
+      const examples: HomeExampleTile[] = items
+        .map((x) => ({
+          id: x.id,
+          templateId: x.templateId,
+          title: x.title,
+          preview: x.preview,
+        }))
+        .filter((e) => Boolean(e.preview));
+      let gallery: TopRemixPrompt[] = [];
+      const gtag = getGalleryTag(topic);
+      if (gtag) {
+        try {
+          const raw = await nanoPromptsService.getNanoPromptsByTag(gtag, { limit: 18 });
+          gallery = raw
+            .filter((p) => !(p.tags ?? []).includes("revealing-female"))
+            .map((p) => ({
+              id: p.id,
+              title: p.title,
+              image_url: (p as unknown as { imageURL?: string }).imageURL || "",
+              tags: p.tags || [],
+              unique_copies_30d: 0,
+              total_copies_30d: 0,
+            }))
+            .filter((g) => Boolean(g.image_url));
+        } catch {
+          // gallery is non-critical; row falls back to heading + description
+        }
+      }
+      return { topic, examples, gallery };
+    }),
+  );
 
   const jsonLd = generateJsonLd(
     topicRows.map(({ topic }) => ({
@@ -190,6 +249,49 @@ export default async function InspirationHubPage({
             personality cards to watercolor illustrations.
           </p>
         </header>
+
+        {/* Design-niche rows — style-exploration topics surfaced above the
+            general topic rows. Each carries its SEO heading + description +
+            link; the fused rail (examples + gallery) fills with images where
+            the niche has content (gallery via TOPIC_GALLERY_TAG or seeded
+            examples), else falls back to heading + description. */}
+        {nicheFused.map(({ topic, examples, gallery }) => {
+          const displayName = safeT(`topics.${topic}.displayName`) || topic;
+          const description = safeT(`topics.${topic}.description`);
+          const hasContent = examples.length + gallery.length > 0;
+          return (
+            <section key={`niche-${topic}`} className={hasContent ? "mb-10" : "mb-6"}>
+              <div className="flex items-end justify-between gap-3">
+                <div>
+                  <h2 className="text-xl font-bold text-neutral-900">
+                    <Link href={`/${locale}/topics/${topic}`} className="hover:text-purple-700">
+                      {displayName}
+                    </Link>
+                  </h2>
+                  {description ? (
+                    <p className="mt-1 max-w-3xl text-sm text-neutral-600">{description}</p>
+                  ) : null}
+                </div>
+                <Link
+                  href={`/${locale}/topics/${topic}`}
+                  className="shrink-0 text-sm font-semibold text-purple-700 hover:text-purple-900"
+                >
+                  See all →
+                </Link>
+              </div>
+              {hasContent ? (
+                <div className="mt-3">
+                  <HomeFusedRow
+                    examples={examples}
+                    galleryPrompts={gallery}
+                    locale={locale}
+                    maxRows={1}
+                  />
+                </div>
+              ) : null}
+            </section>
+          );
+        })}
 
         {/* Topic rows: localized name + 1-line description + grid of
             top-ranked examples for that topic. */}
