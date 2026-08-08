@@ -396,10 +396,11 @@ export default async function Page({ params }: Props) {
               {topicDescription ? (
                 <p className="mt-2 text-base text-neutral-700">{topicDescription}</p>
               ) : null}
+              {/* intro kept indexable but hidden — the visible lead is the
+                  description above; the fuller prose lives in the FAQ block
+                  at the bottom, so we don't render two near-identical paras. */}
               {topicIntro ? (
-                <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-neutral-600">
-                  {topicIntro}
-                </p>
+                <p className="sr-only whitespace-pre-line">{topicIntro}</p>
               ) : null}
             </div>
           ) : (
