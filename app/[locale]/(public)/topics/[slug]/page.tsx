@@ -383,13 +383,35 @@ export default async function Page({ params }: Props) {
               and screen readers see them) but visually hidden via sr-only.
               They're our main per-locale prose used to differentiate
               topic pages across the 10 supported languages. */}
-          {topicDescription ? (
-            <p className="sr-only">{topicDescription}</p>
-          ) : null}
-
-          {topicIntro ? (
-            <p className="sr-only whitespace-pre-line">{topicIntro}</p>
-          ) : null}
+          {/* Niche style-exploration topics render VISIBLE SEO body (title +
+              description + intro) so the page has real indexable prose above
+              the fused rail — matches the inspiration-hub row pattern. Broad
+              topics keep the sr-only treatment (their visible content is the
+              example grid + format block). */}
+          {isNicheStyleTopic ? (
+            <div className="mb-6 max-w-3xl">
+              <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">
+                {topicDisplayName}
+              </h1>
+              {topicDescription ? (
+                <p className="mt-2 text-base text-neutral-700">{topicDescription}</p>
+              ) : null}
+              {topicIntro ? (
+                <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-neutral-600">
+                  {topicIntro}
+                </p>
+              ) : null}
+            </div>
+          ) : (
+            <>
+              {topicDescription ? (
+                <p className="sr-only">{topicDescription}</p>
+              ) : null}
+              {topicIntro ? (
+                <p className="sr-only whitespace-pre-line">{topicIntro}</p>
+              ) : null}
+            </>
+          )}
 
           {/* "Explore further" — topic-specific next-tier + co-occurrence topics,
               rendered with the same TopicStrip tile UI as the entry bar. Uses

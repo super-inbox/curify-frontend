@@ -27,14 +27,16 @@ const TOPIC_ROWS = [
 
 const ROW_LIMIT = 12;
 
-// Style-exploration niche topics, surfaced as SEO tag chips at the top of the
-// hub. Each resolves to a `topics.<slug>` entry (messages/*/topics.json) and a
-// server-rendered /topics/<slug> style-gallery page. Grouped for scannability.
-const NICHE_TAG_GROUPS: { label: string; slugs: string[] }[] = [
-  { label: "E-commerce", slugs: ["sneaker-design", "jewelry-design", "eyewear-design", "handbag-design"] },
-  { label: "Brand & 文创", slugs: ["coffee-shop-branding", "tea-brand-design", "flower-shop-branding", "museum-merchandise"] },
-  { label: "Packaging", slugs: ["candle-packaging", "wine-label-design", "chocolate-packaging"] },
-];
+// Style-exploration niche design topics, surfaced as their own rows at the TOP
+// of the hub (before "MBTI & Personality"). Each resolves to a `topics.<slug>`
+// entry (messages/*/topics.json) and a server-rendered /topics/<slug> page.
+// Ordered so populated niches lead; the rest carry SEO heading + description +
+// link (grids fill as they're seeded via the sneaker playbook).
+const NICHE_TOPIC_SLUGS = [
+  "sneaker-design", "museum-merchandise", "coffee-shop-branding", "tea-brand-design",
+  "jewelry-design", "eyewear-design", "handbag-design", "flower-shop-branding",
+  "candle-packaging", "wine-label-design", "chocolate-packaging",
+] as const;
 
 export async function generateMetadata({
   params,
@@ -96,13 +98,17 @@ type Inspiration = {
 
 type Template = { id: string; topics?: string[]; rank_score?: number };
 
-function buildTopicRows(locale: string) {
+function buildRowsForTopics(
+  locale: string,
+  slugs: readonly string[],
+  dropEmpty: boolean,
+) {
   const templates = nanoTemplates as unknown as Template[];
   const inspirations = nanoInspiration as unknown as Inspiration[];
 
   const templateById = new Map(templates.map((t) => [t.id, t]));
 
-  return TOPIC_ROWS.map((topic) => {
+  return slugs.map((topic) => {
     // Group matched inspirations by template so the row showcases
     // multiple templates instead of being dominated by whichever
     // template happens to have the most examples tagged with this topic.
@@ -157,7 +163,7 @@ function buildTopicRows(locale: string) {
     }));
 
     return { topic, items };
-  }).filter((row) => row.items.length > 0);
+  }).filter((row) => (dropEmpty ? row.items.length > 0 : true));
 }
 
 export default async function InspirationHubPage({
@@ -172,7 +178,10 @@ export default async function InspirationHubPage({
     try { return t(key as never) ?? ""; } catch { return ""; }
   };
 
-  const topicRows = buildTopicRows(locale);
+  const topicRows = buildRowsForTopics(locale, TOPIC_ROWS, true);
+  // Niche design topics keep their row even with an empty grid (dropEmpty:
+  // false) so the SEO heading + description still render above MBTI.
+  const nicheRows = buildRowsForTopics(locale, NICHE_TOPIC_SLUGS, false);
 
   const jsonLd = generateJsonLd(
     topicRows.map(({ topic }) => ({
@@ -198,27 +207,42 @@ export default async function InspirationHubPage({
             Browse curated AI templates and examples by topic — from MBTI
             personality cards to watercolor illustrations.
           </p>
-
-          {/* Style-exploration niches — SEO tag chips → /topics/<slug> */}
-          <div className="mt-5 flex flex-col gap-2.5">
-            {NICHE_TAG_GROUPS.map((group) => (
-              <div key={group.label} className="flex flex-wrap items-center gap-2">
-                <span className="mr-1 text-xs font-semibold uppercase tracking-wide text-neutral-400">
-                  {group.label}
-                </span>
-                {group.slugs.map((slug) => (
-                  <Link
-                    key={slug}
-                    href={`/${locale}/topics/${slug}`}
-                    className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 transition-colors hover:border-purple-300 hover:bg-purple-50 hover:text-purple-700"
-                  >
-                    {safeT(`topics.${slug}.displayName`) || slug}
-                  </Link>
-                ))}
-              </div>
-            ))}
-          </div>
         </header>
+
+        {/* Design-niche rows — style-exploration topics surfaced above the
+            general topic rows. Each carries its SEO heading + description +
+            link; grids populate as niches are seeded. */}
+        {nicheRows.map(({ topic, items }) => {
+          const displayName = safeT(`topics.${topic}.displayName`) || topic;
+          const description = safeT(`topics.${topic}.description`);
+          return (
+            <section key={`niche-${topic}`} className={items.length > 0 ? "mb-10" : "mb-6"}>
+              <div className="flex items-end justify-between gap-3">
+                <div>
+                  <h2 className="text-xl font-bold text-neutral-900">
+                    <Link href={`/${locale}/topics/${topic}`} className="hover:text-purple-700">
+                      {displayName}
+                    </Link>
+                  </h2>
+                  {description ? (
+                    <p className="mt-1 max-w-3xl text-sm text-neutral-600">{description}</p>
+                  ) : null}
+                </div>
+                <Link
+                  href={`/${locale}/topics/${topic}`}
+                  className="shrink-0 text-sm font-semibold text-purple-700 hover:text-purple-900"
+                >
+                  See all →
+                </Link>
+              </div>
+              {items.length > 0 ? (
+                <div className="mt-3">
+                  <ExampleImagesGrid items={items} maxRows={1} locale={locale} showCaption />
+                </div>
+              ) : null}
+            </section>
+          );
+        })}
 
         {/* Topic rows: localized name + 1-line description + grid of
             top-ranked examples for that topic. */}
