@@ -446,23 +446,6 @@ export default async function Page({ params }: Props) {
             </div>
           )}
 
-          {/* Topic → use-case cross-link: route captured demand from the
-              programmatic-SEO topic surface to the persona conversion page. */}
-          {topicUseCase && (
-            <div className="mt-4">
-              <Link
-                href={`/${localeStr}/use-cases/${topicUseCase.slug}`}
-                className="flex items-center justify-between gap-3 rounded-2xl border border-purple-200 bg-purple-50 px-4 py-3 text-sm transition hover:bg-purple-100"
-              >
-                <span className="text-neutral-800">
-                  Using {topicDisplayName} for work? See the{" "}
-                  <span className="font-semibold text-purple-700">{topicUseCase.label}</span>{" "}
-                  workflow.
-                </span>
-                <span className="shrink-0 font-semibold text-purple-700">Explore →</span>
-              </Link>
-            </div>
-          )}
         </div>
       </section>
 
@@ -509,15 +492,15 @@ export default async function Page({ params }: Props) {
           topic gets its bespoke 5-step generative ladder. */}
       {(workbenchPreset || slug === "branding") && (
         <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
-          {workbenchPreset && (
-            <ImageWorkbench locale={localeStr} preset={workbenchPreset} />
-          )}
+          {/* Design-workflow ladder ABOVE the "start a workflow" upload
+              workbench: brand topics get BrandWorkflow; merch/product get the
+              commerce ladder chaining the existing template pipeline. */}
           {slug === "branding" && <BrandWorkflow locale={localeStr} />}
-          {/* Commerce topics (merch / product / ecommerce) get a guided
-              deliverable ladder chaining the existing template pipeline —
-              the merch/product analogue of BrandWorkflow. */}
           {getTopicWorkflow(workbenchPreset) && (
             <TopicWorkflow locale={localeStr} config={getTopicWorkflow(workbenchPreset)!} />
+          )}
+          {workbenchPreset && (
+            <ImageWorkbench locale={localeStr} preset={workbenchPreset} />
           )}
         </section>
       )}
@@ -564,6 +547,22 @@ export default async function Page({ params }: Props) {
       {/* Visible authored body for visual-format topics (how-to + uses + FAQ).
           Below the template feed so the page still leads with visuals. */}
       <TopicFormatContent content={formatContent} displayName={topicDisplayName} />
+
+      {/* Topic → use-case cross-link chip at the bottom: routes captured demand
+          from this SEO topic to the persona conversion page. */}
+      {topicUseCase && (
+        <section className="mx-auto max-w-[1600px] px-4 pb-12 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center gap-2 text-sm">
+            <span className="text-neutral-500">Built for professionals:</span>
+            <Link
+              href={`/${localeStr}/use-cases/${topicUseCase.slug}`}
+              className="rounded-full border border-purple-200 bg-purple-50 px-3 py-1 font-semibold text-purple-700 transition hover:bg-purple-100"
+            >
+              {topicUseCase.label} →
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* The old bottom "Explore More" / "Browse by Category" strip (tier-2
           navSubTopics + tier-3 tagSubTopics) was removed: the top "Explore
