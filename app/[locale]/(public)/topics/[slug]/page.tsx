@@ -28,6 +28,8 @@ import { getTemplatesForTopic, getRelatedTopics, getFurtherExplorationTopics, ge
 import { getTopicWorkbenchPreset } from "@/lib/topic_workbench";
 import ImageWorkbench from "@/app/[locale]/_components/ImageWorkbench";
 import BrandWorkflow from "@/app/[locale]/_components/BrandWorkflow";
+import TopicWorkflow from "@/app/[locale]/_components/TopicWorkflow";
+import { getTopicWorkflow } from "@/lib/topic_workflows";
 import TopSearchSuggestions from "./TopSearchSuggestions";
 import SearchRedirectTracker from "./SearchRedirectTracker";
 
@@ -490,6 +492,12 @@ export default async function Page({ params }: Props) {
             <ImageWorkbench locale={localeStr} preset={workbenchPreset} />
           )}
           {slug === "branding" && <BrandWorkflow locale={localeStr} />}
+          {/* Commerce topics (merch / product / ecommerce) get a guided
+              deliverable ladder chaining the existing template pipeline —
+              the merch/product analogue of BrandWorkflow. */}
+          {getTopicWorkflow(workbenchPreset) && (
+            <TopicWorkflow locale={localeStr} config={getTopicWorkflow(workbenchPreset)!} />
+          )}
         </section>
       )}
 
