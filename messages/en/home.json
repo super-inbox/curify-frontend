@@ -1365,5 +1365,69 @@
         "businessBody": "Need pack shots for a catalog of SKUs? We offer dieline → mockup as a done-for-you / bulk service, and can add editable 3D models."
       }
     }
+  },
+  "topicWorkflows": {
+    "merch": {
+      "heading": "Merch design workflow",
+      "subtitle": "Turn one character or IP into a full line of sellable merch — from stickers to packaging.",
+      "steps": {
+        "sticker": {
+          "name": "Character sticker pack",
+          "desc": "Turn your character or IP into a consistent expression / sticker sheet.",
+          "cta": "Make stickers"
+        },
+        "mockups": {
+          "name": "Merch mockups",
+          "desc": "Apply the artwork across a full mockup set — mug, tote, keychain, phone case.",
+          "cta": "Generate mockups"
+        },
+        "packaging": {
+          "name": "Packaging",
+          "desc": "Design product packaging and gift boxes carrying your IP.",
+          "cta": "Design packaging"
+        },
+        "collection": {
+          "name": "Collection display",
+          "desc": "Lay the full merch line out as a collection display board.",
+          "cta": "Build collection"
+        },
+        "poster": {
+          "name": "Promo poster",
+          "desc": "A promotional poster to launch and sell the collection.",
+          "cta": "Make poster"
+        }
+      }
+    },
+    "product": {
+      "heading": "Product & e-commerce workflow",
+      "subtitle": "Turn one product photo into a full set of listing-ready visuals — from hero shot to marketplace listing.",
+      "steps": {
+        "poster": {
+          "name": "Product poster",
+          "desc": "Turn your product photo into a clean promotional hero poster.",
+          "cta": "Make poster"
+        },
+        "listing": {
+          "name": "E-commerce listing",
+          "desc": "A 9:16 detail page with features, specs and lifestyle shots.",
+          "cta": "Build listing"
+        },
+        "tryon": {
+          "name": "Model / try-on",
+          "desc": "Put your product on a model for lifestyle and try-on visuals.",
+          "cta": "Generate try-on"
+        },
+        "promo": {
+          "name": "Promotional poster",
+          "desc": "An eye-catching sale or campaign poster for the product.",
+          "cta": "Make promo"
+        },
+        "infographic": {
+          "name": "Listing infographic",
+          "desc": "A six-grid feature infographic for Amazon / marketplace listings.",
+          "cta": "Build infographic"
+        }
+      }
+    }
   }
 }

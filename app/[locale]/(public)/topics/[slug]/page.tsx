@@ -31,7 +31,7 @@ import BrandWorkflow from "@/app/[locale]/_components/BrandWorkflow";
 import TopicWorkflow from "@/app/[locale]/_components/TopicWorkflow";
 import { getTopicWorkflow } from "@/lib/topic_workflows";
 import { getUseCaseForTopic } from "@/lib/topic_use_case";
-import Link from "next/link";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import TopSearchSuggestions from "./TopSearchSuggestions";
 import SearchRedirectTracker from "./SearchRedirectTracker";
 
@@ -548,19 +548,12 @@ export default async function Page({ params }: Props) {
           Below the template feed so the page still leads with visuals. */}
       <TopicFormatContent content={formatContent} displayName={topicDisplayName} />
 
-      {/* Topic → use-case cross-link chip at the bottom: routes captured demand
-          from this SEO topic to the persona conversion page. */}
+      {/* Topic → use-case cross-link at the bottom: reuse the existing
+          use-case chip row (EntryBar pills + click tracking), filtered to the
+          persona this topic maps to. Routes captured SEO demand to conversion. */}
       {topicUseCase && (
         <section className="mx-auto max-w-[1600px] px-4 pb-12 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center gap-2 text-sm">
-            <span className="text-neutral-500">Built for professionals:</span>
-            <Link
-              href={`/${localeStr}/use-cases/${topicUseCase.slug}`}
-              className="rounded-full border border-purple-200 bg-purple-50 px-3 py-1 font-semibold text-purple-700 transition hover:bg-purple-100"
-            >
-              {topicUseCase.label} →
-            </Link>
-          </div>
+          <UseCaseChipsRow filterTo={[topicUseCase.slug]} showQuestion />
         </section>
       )}
 

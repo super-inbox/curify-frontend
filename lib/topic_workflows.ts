@@ -18,12 +18,15 @@ export type WorkflowStep = {
 };
 
 export type TopicWorkflowConfig = {
+  /** i18n subtree key under the `topicWorkflows` namespace (merch | product). */
+  key: string;
   heading: string;
   subtitle: string;
   steps: WorkflowStep[];
 };
 
 const MERCH: TopicWorkflowConfig = {
+  key: "merch",
   heading: "Merch design workflow",
   subtitle:
     "Turn one character or IP into a full line of sellable merch — from stickers to packaging.",
@@ -42,6 +45,7 @@ const MERCH: TopicWorkflowConfig = {
 };
 
 const PRODUCT: TopicWorkflowConfig = {
+  key: "product",
   heading: "Product & e-commerce workflow",
   subtitle:
     "Turn one product photo into a full set of listing-ready visuals — from hero shot to marketplace listing.",
