@@ -125,11 +125,11 @@ for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
 const TOPIC_GALLERY_TAG: Record<string, string> = {
   // Style-exploration niche topics — only ON-INTENT gallery tags. The
   // gallery is consumer AI-art, so most niches have no clean design pool;
-  // those stay gallery-less until seeded (sneaker playbook). Dropped
-  // "café" (café selfies, not branding) + "flowers-in-the-garden" (garden
-  // photos, not florist design) — they surfaced off-topic images.
+  // those stay gallery-less and rely on template examples (topics[]-tagged
+  // inspirations). Dropped "café"/"flowers-in-the-garden" (off-topic) and
+  // "modernized-artifact" for museum-merchandise (gallery mostly irrelevant;
+  // museum/文创 has plenty of real template examples instead).
   "sneaker-design":        "sneakers",
-  "museum-merchandise":    "modernized-artifact",
   character:      "character",
   nostalgia:      "nostalgic",
   product:        "product",
