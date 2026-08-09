@@ -1,6 +1,6 @@
 # Curify product workstreams — index
 
-_Last updated: 2026-06-26. Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
+_Last updated: 2026-08-07 (workstream C). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
 
 The canonical pointer for the four **product** workstreams (search, tools, growth, vertical use-cases). Companion outbound/GTM workstreams index lives separately at `~/curify-studio/gtm_tools/INDEX.md`.
 
@@ -79,8 +79,21 @@ Other product workstream docs (single-track, not part of the four):
 - **Docked**: ASL captioning (no viable tech path — memory `project_asl_captioning_demand`)
 
 ### C. SEO + SMM + Growth
+- **2026-08-07** State-of-play catch-up + GSC pull — non-WC impressions **1,716 → 359/day** over 2
+  months (the "non-WC floor" framing is dead); canonical fold **not yet cleared** (only 1 of 13
+  inspected pages recrawled since the 08-05 fix); MBTI CTR flat at 0.39%. See the dated section at
+  the top of `workstream-seo-smm-growth.md`
+- **2026-08-05** Blog canonical-fold fix LIVE (`f93bad79` + `c2759e55`) — client payload
+  1935KB → 498KB; FB autopost reset merged (carousels killed, link→first comment)
+- **2026-08-04** 八仙 native-FB-video batch scheduled 1/day 08-05→08-12 (`3ba763d`)
+- **2026-07-28** VerticalPageSchema v1 — vertical domain-knowledge layer (`672c48fe`), the shift
+  from "get discovered" to "why should Google rank this"
+- **2026-07-24** MBTI CTR-bleed fixes (`8be3591a` title dedup, `97d552f2` lastmod) + SEMrush KD
+  review: pos 40+ or absent on every head term
+- **2026-07-14** Wedge1 hygiene gate PASSED (0/280); link injection found ALREADY SHIPPED
+- **2026-07-11** Duplicate-canonical P0 fixed on 17,650 example pages (`3fb7b42f`)
 - **2026-06-26** POD reframe section + new doc shipped (POD-C1..C11) — commit `a03ac94c`
-- **2026-06-26** Carousel-batch generator v2 (global template-first selection) — commit `e721e82` on `jwang/card-narration-refactor`, pending main merge → expect 6 FB carousels/day
+- ~~**2026-06-26** Carousel-batch generator v2 — commit `e721e82` on `jwang/card-narration-refactor`, pending main merge → expect 6 FB carousels/day~~ **REVERSED 2026-08-04: FB carousels are the proven-dead format; `3f71edb` disabled them. Do not merge the carousel batcher as a growth ship.**
 - **2026-06-26** Video-user attribution findings — `docs/video-user-attribution-2026-06-26.md` (only ~15% attributable due to 2-month user_interactions retention)
 - **2026-06-23** Indexing API pushes — 10 homepage + 10 inspiration-hub URLs (structured-data error cleanup)
 - **2026-06-23** Themed-day rotation + engagement-prompt captions on main — commits `93fdf60` (PR #382) + `bb90daf` (PR #384)

@@ -47,6 +47,19 @@ import type { NanoPromptBase } from "@/types/nanoPrompts";
 import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
 import MBTIQuizCapsule from "@/app/[locale]/_components/MBTIQuizCapsule";
 import RelatedBlogCard from "@/app/[locale]/_components/RelatedBlogCard";
+import HomeFusedRow, { type HomeExampleTile, type TopRemixPrompt } from "@/app/[locale]/(public)/HomeFusedRow";
+
+// Style-exploration niche topics render a single FUSED surface (template
+// examples + gallery prompts interleaved, same tile UI as the home rail)
+// instead of the default separate example-grid + gallery sections. As
+// seeded inspirations land (tagged with the topic in topics[]), they flow
+// straight into this rail. See docs/subject-style-exploration-pages.
+const NICHE_STYLE_TOPICS = new Set<string>([
+  "sneaker-design", "jewelry-design", "eyewear-design", "handbag-design",
+  "coffee-shop-branding", "tea-brand-design", "candle-packaging",
+  "wine-label-design", "chocolate-packaging", "flower-shop-branding",
+  "museum-merchandise",
+]);
 
 
 type Props = {
@@ -323,6 +336,39 @@ export default async function Page({ params }: Props) {
   // 3-column image workbench at the top of the page.
   const workbenchPreset = getTopicWorkbenchPreset(slug);
 
+  // Niche style-exploration topics: build a fused (examples + gallery) pool.
+  // Examples come from inspirations tagged with THIS topic in topics[]
+  // (clean, curated); gallery from the on-intent TOPIC_GALLERY_TAG (if any).
+  const isNicheStyleTopic = NICHE_STYLE_TOPICS.has(slug);
+  const fusedExamples: HomeExampleTile[] = isNicheStyleTopic
+    ? filteredImages
+        .map((x: any) => ({
+          id: x.id,
+          templateId: x.template_id,
+          title:
+            x.locales?.[contentLocale]?.title ||
+            x.locales?.en?.title ||
+            x.locales?.zh?.title ||
+            "",
+          preview: x.asset?.preview_image_url || x.asset?.image_url || "",
+        }))
+        .filter((e: HomeExampleTile) => Boolean(e.preview))
+        .slice(0, 40)
+    : [];
+  const fusedGallery: TopRemixPrompt[] = isNicheStyleTopic
+    ? galleryPrompts
+        .map((p) => ({
+          id: p.id,
+          title: p.title,
+          image_url: (p as unknown as { imageURL?: string }).imageURL || "",
+          tags: p.tags || [],
+          unique_copies_30d: 0,
+          total_copies_30d: 0,
+        }))
+        .filter((g) => Boolean(g.image_url))
+    : [];
+  const hasFused = fusedExamples.length + fusedGallery.length > 0;
+
 
   return (
     <main className="min-h-screen">
@@ -337,13 +383,36 @@ export default async function Page({ params }: Props) {
               and screen readers see them) but visually hidden via sr-only.
               They're our main per-locale prose used to differentiate
               topic pages across the 10 supported languages. */}
-          {topicDescription ? (
-            <p className="sr-only">{topicDescription}</p>
-          ) : null}
-
-          {topicIntro ? (
-            <p className="sr-only whitespace-pre-line">{topicIntro}</p>
-          ) : null}
+          {/* Niche style-exploration topics render VISIBLE SEO body (title +
+              description + intro) so the page has real indexable prose above
+              the fused rail — matches the inspiration-hub row pattern. Broad
+              topics keep the sr-only treatment (their visible content is the
+              example grid + format block). */}
+          {isNicheStyleTopic ? (
+            <div className="mb-6 max-w-3xl">
+              <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">
+                {topicDisplayName}
+              </h1>
+              {topicDescription ? (
+                <p className="mt-2 text-base text-neutral-700">{topicDescription}</p>
+              ) : null}
+              {/* intro kept indexable but hidden — the visible lead is the
+                  description above; the fuller prose lives in the FAQ block
+                  at the bottom, so we don't render two near-identical paras. */}
+              {topicIntro ? (
+                <p className="sr-only whitespace-pre-line">{topicIntro}</p>
+              ) : null}
+            </div>
+          ) : (
+            <>
+              {topicDescription ? (
+                <p className="sr-only">{topicDescription}</p>
+              ) : null}
+              {topicIntro ? (
+                <p className="sr-only whitespace-pre-line">{topicIntro}</p>
+              ) : null}
+            </>
+          )}
 
           {/* "Explore further" — topic-specific next-tier + co-occurrence topics,
               rendered with the same TopicStrip tile UI as the entry bar. Uses
@@ -380,11 +449,25 @@ export default async function Page({ params }: Props) {
         </section>
       )}
 
+      {/* Niche style-exploration topics: one fused rail (template examples +
+          gallery prompts interleaved) instead of the separate grid + gallery
+          sections below. */}
+      {isNicheStyleTopic && hasFused && (
+        <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
+          <HomeFusedRow
+            examples={fusedExamples}
+            galleryPrompts={fusedGallery}
+            locale={localeStr}
+            maxRows={4}
+          />
+        </section>
+      )}
+
       {/* WC 2026 calendar widget — slot into the top-right cell of the
           ExampleImagesGrid on WC-family + sports pages. When the page
           has no gridItems, fall back to a standalone single-cell row.
           Auto-hides after July 19, 2026 via the widget itself. */}
-      {gridItems.length > 0 ? (
+      {!isNicheStyleTopic && gridItems.length > 0 ? (
         <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
           <ExampleImagesGrid
             items={gridItems}
@@ -410,7 +493,7 @@ export default async function Page({ params }: Props) {
         </section>
       )}
 
-      {galleryPrompts.length > 0 && (
+      {!isNicheStyleTopic && galleryPrompts.length > 0 && (
         <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             Gallery

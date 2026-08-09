@@ -1,0 +1,36 @@
+Case: coffee-opening — Morrow Coffee
+Request time (UTC): 2026-08-06T15:24:12Z
+
+Verification:
+- Request reached the internal Next.js API route: POST http://localhost:3000/api/brand-direction-explorer/directions (HTTP 200)
+- Round-trip latency: ~10.55s — consistent with a real live OpenAI call, not an instant mock
+- OpenAI returned exactly 3 directions: warm-invitation, minimalistic-appeal, artistic-collage (all unique ids)
+- No static fallback was used — lib/brand_direction_explorer.ts carries no direction content for any case (verified in Step 1); the route's only path to a direction is generateCreativeDirections() in lib/brandDirectionOpenAI.ts
+- UI confirmed by user: briefly showed "Generating directions..." spinner, then rendered 3 real direction cards (see stage1-directions-full-page.png)
+- Model: gpt-4o-mini (MODEL constant, lib/brandDirectionOpenAI.ts) — this run's response is not echoed with a model field by the route (by design, to avoid leaking implementation details to the client), confirmed from source instead
+- No secret values (API key, cookies, credentials, authorization headers) appeared in any terminal or browser output during this run
+
+Quality observations:
+- Strongest: promptModifiers are genuinely distinct in composition/palette/mood across the 3 directions (565/561/627 chars), each grounded in the actual brief (specialty coffee tasting, warm/contemporary/Instagram-suitable tone)
+- Weakest: all 3 directions share the identical title.en "Morrow Coffee" (only subtitle/styleTags differ) — a real content-quality gap, not a validation failure (schema only requires non-empty bilingual title, doesn't require titles to differ from the shop name or from each other). Worth a future prompt-tuning pass but out of scope for this validation run.
+
+Labeling for the report: these are OpenAI (gpt-4o-mini) generated creative directions — Stage 1 only.
+
+--- Stage 2 (final image generation) ---
+
+The user ran Stage 2 independently through the browser UI (outside this session's own
+API calls) and provided two resulting images, copied here as:
+- generated-output-primary.jpg (284,353 bytes, JPEG, 928x1152 — 4:5 aspect ratio, matches
+  the coffee-opening case's outputFormat) — user-identified as the illustrated brown
+  coffee-cup poster, the primary result
+- generated-output-alternative.jpg (213,398 bytes, JPEG, 928x1152 — same aspect ratio) —
+  user-identified as the minimalist green poster, the alternative/regenerated result
+
+Labeling for the report: these two images are Stage 2 output from the existing
+Gemini-backed Curify backend (the same /nano-freeform/generate path documented in the
+architecture audit — google-genai / GEMINI_IMAGE_MODEL, via curify-studio/curify_background).
+They are NOT OpenAI-generated. This session did not independently re-verify which of the 3
+Stage 1 directions was selected, whether both images came from one generation + one
+regenerate, or from two separate direction selections — that detail is not visible from the
+files alone and was not directly observed via this session's own API calls (unlike the
+Stage 1 companion curl call above). Documented here based on the user's description.

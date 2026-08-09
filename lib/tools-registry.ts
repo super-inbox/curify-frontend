@@ -54,6 +54,12 @@ export type ToolDef = {
 
   action?: ToolAction;
 
+  // Optional CTA override. "contact" renders a "Contact us" button linking to
+  // /contact instead of the create/coming-soon states — for tools we offer as a
+  // done-for-you / bulk service rather than a self-serve generate (e.g. the
+  // die-cut sticker factory-file service).
+  cta?: "contact";
+
   i18n: {
     titleKey: string;
     descKey: string;
@@ -238,10 +244,12 @@ export const TOOL_REGISTRY: ToolDef[] = [
     action: { type: "generate", templateId: "template-product-poster" },
     i18n: toolKeys("ecommerce_photo"),
     seo: seoKeys("ecommerce_photo"),
+    // Deploys the ecommerce_workflow demo asset (curify-gallery →
+    // cdn.curify-ai.com/video/workflow_demos/): one product photo → a full
+    // marketing kit (product shots, lifestyle scenes, banners, video ad).
     demo: {
-      type: "single_image",
-      src: "/images/nano_insp/template-fashion-ecommerce-cycling-jersey-aerodynamic.jpg",
-      alt: "Upload a product photo, get an e-commerce ready listing image — cycling jersey rendered as a vertical detail-shot layout",
+      type: "single_video",
+      src: "/video/workflow_demos/product_to_marketing_kit_en.mp4",
     },
   },
 
@@ -269,6 +277,44 @@ export const TOOL_REGISTRY: ToolDef[] = [
       type: "single_image",
       src: "/images/nano_insp/template-ip-character-sprite-emoji-sheet-graduation-alpaca.jpg",
       alt: "Upload one character drawing, get a 9-pose expression sticker sheet — graduation alpaca rendered across a 3x3 grid",
+    },
+  },
+  {
+    id: "die-cut-sticker-file",
+    slug: "die-cut-sticker-file",
+    groupId: "image",
+    status: "demo",
+    // No self-serve backend job — offered as a done-for-you / bulk service via
+    // the contact CTA. job_type is a required field but unused for this tool.
+    job_type: "video_transcript",
+    namespace: "dieCutStickerFile",
+    action: { type: "none" },
+    cta: "contact",
+    i18n: toolKeys("die_cut_sticker_file"),
+    seo: seoKeys("die_cut_sticker_file"),
+    demo: {
+      type: "single_image",
+      src: "/images/tools/die-cut-sticker-file.jpg",
+      alt: "One design image turned into a die-cut sticker factory file — 300 DPI transparent artwork PNG, mm-accurate CutContour cutline SVG, print-ready CMYK PDF, preview and spec sheet in one ZIP",
+    },
+  },
+  {
+    id: "packaging-mockup",
+    slug: "packaging-mockup",
+    groupId: "image",
+    status: "demo",
+    // No self-serve backend job — offered as a done-for-you / bulk service via
+    // the contact CTA. job_type is a required field but unused for this tool.
+    job_type: "video_transcript",
+    namespace: "packagingMockup",
+    action: { type: "none" },
+    cta: "contact",
+    i18n: toolKeys("packaging_mockup"),
+    seo: seoKeys("packaging_mockup"),
+    demo: {
+      type: "single_image",
+      src: "/images/tools/packaging-mockup.jpg",
+      alt: "A flat packaging dieline turned into a realistic folded 3D box mockup at a 45-degree angle — the box proportions read from the file's real dimensions, not a generic cube",
     },
   },
 

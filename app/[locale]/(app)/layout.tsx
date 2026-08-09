@@ -32,8 +32,9 @@ export default async function AppLocaleLayout({
   const messages = await getMessages();
   // Trim blog bodies + nano from the CLIENT payload (server rendering unaffected).
   // Prevents the ~1.6MB catalog from being serialized into every page (was
-  // folding ~44 blogs into the homepage canonical as near-duplicates).
-  const clientMessages = pickClientMessages(messages);
+  // folding ~44 blogs into the homepage canonical as near-duplicates). No blog
+  // route lives under (app), so no article body is ever needed here.
+  const clientMessages = pickClientMessages(messages, []);
 
   // 👇 detect path
   const headerList = await headers();

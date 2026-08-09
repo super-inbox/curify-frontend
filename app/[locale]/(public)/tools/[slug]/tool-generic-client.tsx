@@ -123,13 +123,14 @@ export default function ToolGenericClient({
         />
       ) : demo?.type === "single_video" ? (
         <>
-          {/* Cap at max-w-2xl (672px) and center within the wider
-              max-w-5xl main container. Demo source videos are 1080p
-              horizontal — letting them stretch to w-full at the
-              main-container width made them ~976px wide × ~549px
-              tall on desktop and dominated the page. */}
+          {/* Dual cap so BOTH orientations stay reasonable and centered:
+              max-w-2xl (672px) bounds landscape width; max-h-[70vh] bounds
+              portrait height (9:16 workflow demos are 1080×1920 — without a
+              height cap a 672px-wide portrait video renders ~1200px tall and
+              dominates the page). w-auto lets the video keep its aspect ratio
+              within whichever bound binds first. */}
           <CdnVideo
-            className="w-full max-w-2xl mx-auto rounded-xl shadow mb-4"
+            className="w-auto max-w-2xl max-h-[70vh] mx-auto rounded-xl shadow mb-4"
             controls
             poster={demo.poster}
             src={demo.src}
@@ -162,6 +163,13 @@ export default function ToolGenericClient({
           // Anonymous viral costume try-on: upload one photo → dynasty-costume
           // transformation mp4. No sign-in required (own multipart endpoint).
           <CostumeTryonGenerate />
+        ) : tool.cta === "contact" ? (
+          <Link
+            href="/contact"
+            className="inline-block mt-4 text-white px-6 py-3 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg text-lg"
+          >
+            {t("cta")}
+          </Link>
         ) : tool.status === "create" && tool.action?.type === "modal" ? (
           <button
             onClick={handleTryItClick}
@@ -208,11 +216,32 @@ export default function ToolGenericClient({
       <section className="mt-16">
         <h2 className="text-2xl font-semibold mb-4 text-[var(--c1)]">{t("faq.title")}</h2>
 
-        <p className="text-base mb-2">{t("faq.q1")}</p>
-        <p className="text-sm text-gray-600 mb-4">{t("faq.a1")}</p>
+        {[1, 2, 3, 4, 5]
+          .filter((i) => (t as any).has(`faq.q${i}`) && (t as any).has(`faq.a${i}`))
+          .map((i) => (
+            <div key={i}>
+              <p className="text-base mb-2 font-medium">{t(`faq.q${i}` as never)}</p>
+              <p className="text-sm text-gray-600 mb-4">{t(`faq.a${i}` as never)}</p>
+            </div>
+          ))}
 
-        <p className="text-base mb-2">{t("faq.q2")}</p>
-        <p className="text-sm text-gray-600 mb-4">{t("faq.a2")}</p>
+        {/* FAQPage JSON-LD — rich results for the tool's FAQ */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [1, 2, 3, 4, 5]
+                .filter((i) => (t as any).has(`faq.q${i}`) && (t as any).has(`faq.a${i}`))
+                .map((i) => ({
+                  "@type": "Question",
+                  name: t(`faq.q${i}` as never),
+                  acceptedAnswer: { "@type": "Answer", text: t(`faq.a${i}` as never) },
+                })),
+            }),
+          }}
+        />
       </section>
 
       <section className="mt-20 space-y-10">

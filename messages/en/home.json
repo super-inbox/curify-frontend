@@ -379,6 +379,22 @@
         "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
         "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
       }
+    },
+    "die_cut_sticker_file": {
+      "title": "Die-Cut Sticker Factory File",
+      "desc": "Turn any design into a print-ready die-cut sticker file — 300 DPI transparent artwork, a mm-accurate cut line, and a CMYK PDF in one ZIP your printer can run without prepress hassle.",
+      "meta": {
+        "title": "Die-Cut Sticker File Maker — Cut Line + CMYK, Print-Ready | Curify",
+        "description": "Turn any image into a factory-ready die-cut sticker file: 300 DPI transparent PNG, mm-accurate CutContour cut line (SVG), and print-ready CMYK PDF in one ZIP. For sticker sellers, POD & 谷子 merch."
+      }
+    },
+    "packaging_mockup": {
+      "title": "AI Packaging Mockup Generator",
+      "desc": "Turn a flat dieline (.ai/PDF) into a realistic 3D packaging mockup — a folded box shown front or at a 45° angle, with the real box proportions read from your file (not a generic cube).",
+      "meta": {
+        "title": "AI Packaging Mockup Generator — Dieline to 3D Box | Curify",
+        "description": "Turn your dieline (.ai/PDF) into realistic 3D packaging mockups — folded box, front / 45° / e-commerce white-bg. True box proportions from your file. For brand, 文创, gift & POD packaging."
+      }
     }
   },
   "bilingual": {
@@ -975,7 +991,7 @@
       "title": "Why turn product photos into listings through Curify?",
       "point1": "Two shipped templates cover the two dominant e-commerce visual grammars — warm cozy hero shots for Etsy / DTC brand pages, and 9:16 vertical detail-shot layouts for Shopee, TikTok Shop, and RedNote. Pick the one that matches where you list.",
       "point2": "Upload the product photo you already have. The template preserves the exact product identity — shape, proportions, colors, materials, branding — while replacing the scene with cozy interior lighting or a clean brand-catalog layout.",
-      "point3": "Output is a listing-ready still. Not a mood board, not a 'concept'. The generated image drops directly into an Etsy / Shopify / TikTok Shop listing without post-production.",
+      "point3": "Output is a listing-ready still — not a mood board, not a 'concept'. It drops straight into your listing with no cropping, color-correcting, or scene cleanup.",
       "point4": "Demo runs on real templates. Early-access opens the batch pipeline — upload a folder of SKUs, get back a coordinated set of listing images with locked visual style across the catalog."
     },
     "faq": {
@@ -989,7 +1005,7 @@
       "what": {
         "title": "What is an AI e-commerce listing image?",
         "p1": "An e-commerce listing image is the main product photo that appears on a marketplace or DTC storefront — the image that shows up in search grids, on product cards, and at the top of the listing page. It's the highest-impact visual asset in the conversion funnel. Traditional catalog photography requires a physical studio, lighting kit, and photographer per SKU.",
-        "p2": "AI e-commerce listing generation replaces that workflow. Upload the product (a phone shot on your kitchen counter is enough), and the AI renders it inside a properly-composed listing scene — warm cozy interior, or clean vertical detail-shot layout — while preserving product fidelity: same shape, same color, same texture, same branding. The output is a still image ready to upload to Etsy, Shopify, Amazon, TikTok Shop, RedNote, or your DTC storefront.",
+        "p2": "AI e-commerce listing generation replaces that entire workflow. A phone shot on your kitchen counter is enough — the model re-renders the product inside a properly-composed listing scene while keeping its exact identity intact, so there's no studio, no lighting kit, and no per-SKU photographer.",
         "p3": "The 2026 generation of image-to-image models (Nano Banana Pro, Gemini 3 Pro Image, GPT Image 2) ship the underlying capability. What was missing until now is the templating layer — a way to guarantee that every generation lands in the same visual register, so a catalog of 50 products reads as one brand instead of 50 disparate AI outputs."
       },
       "how": {
@@ -1239,6 +1255,114 @@
         "name": "Brand kit",
         "desc": "Apply your identity across a full visual-identity mockup pack.",
         "cta": "Build VI pack"
+      }
+    }
+  },
+  "dieCutStickerFile": {
+    "metadata": {
+      "title": "Die-Cut Sticker File Maker — Cut Line + CMYK, Print-Ready | Curify",
+      "description": "Turn any image into a factory-ready die-cut sticker file: 300 DPI transparent PNG, mm-accurate CutContour cut line (SVG), and print-ready CMYK PDF in one ZIP. For sticker sellers, POD & 谷子 merch."
+    },
+    "title": "Any Design → A Factory-Ready Die-Cut Sticker File",
+    "description": "Drop in one image and get the whole print pack a sticker factory needs — a 300 DPI transparent artwork PNG, a millimetre-accurate die-cut line (CutContour), a print-ready CMYK PDF, a preview, and a spec sheet — bundled into one ZIP. Background removal, the cut contour, bleed, and CMYK are all handled for you, so you skip the prepress and hand the file straight to your printer.",
+    "example": "Example: one design → a die-cut sticker file with the cut line offset a clean 3 mm around the artwork.",
+    "cta": "Contact us for a file or bulk order",
+    "why": {
+      "title": "Why make sticker files through Curify?",
+      "point1": "One image in, a full factory pack out — the transparent 300 DPI artwork, a vector cut line, and a CMYK print PDF, not just a PNG you still have to prep.",
+      "point2": "The cut line is deterministic, not AI. We trace and offset the silhouette in code, so the die-cut is mm-accurate and reproducible — never a hallucinated path that scraps a batch at the cutter.",
+      "point3": "Handles messy input. Any background (photo, gingham, scene) is removed automatically, and multi-element stickers are kept whole and wrapped by one clean contour with a 3 mm bleed.",
+      "point4": "Print-ready color. We convert to CMYK through an ICC profile (not a flat colorspace flip) and pre-compensate saturation, so your colors don't come out washed-out."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "What exactly do I get?",
+      "a1": "A factory-ready ZIP: a 300 DPI transparent artwork PNG, a millimetre-accurate die-cut line as a CutContour SVG, a print-ready CMYK PDF, a preview image, and a spec sheet (size / DPI / bleed / material). Hand it straight to your printer.",
+      "q2": "The cut edge looks a little jagged — will it print clean? Is PNG more precise?",
+      "a2": "The on-screen preview traces the outline at screen resolution, so it can look slightly jagged — but the delivered file is different: the artwork is a high-resolution 300 DPI PNG with clean edges, and the cut line itself is a true vector (SVG) accurate to the millimetre, so it stays crisp at any size and the cutter follows it smoothly. For the sharpest edges, start from a transparent-background PNG rather than a JPG.",
+      "q3": "Why does the color look washed-out (发灰) after converting to CMYK?",
+      "a3": "CMYK has a smaller gamut than RGB, so bright colors dull — and a generic profile dulls them most. We pre-boost saturation and convert through an ICC profile to bring the color back; for exact production color, send your printer's coated profile (e.g. Japan Color 2001 Coated or US Web Coated SWOP) and we'll use it.",
+      "q4": "Have you actually made real factory files with this?",
+      "a4": "Yes — we built the pipeline ourselves (deterministic cut-line geometry, multi-element stickers, 3 mm bleed, ICC CMYK) and have run real files end-to-end, including complex illustrated stickers and IP figures. We handle the prepress so you don't have to learn it."
+    },
+    "deep": {
+      "what": {
+        "title": "What is a die-cut sticker factory file?",
+        "p1": "A die-cut sticker isn't a rectangle — it's cut to the shape of your artwork. To print one, a factory needs more than an image: the artwork at print resolution with a transparent background, a separate cut line (the knife path) that follows the shape with a small bleed, and the color in CMYK.",
+        "p2": "Assembling those by hand in Photoshop/Illustrator — removing the background, drawing and offsetting the cut path, setting bleed, converting to CMYK — is the slow, error-prone 'prepress' step most sticker sellers dread and factories reject files over.",
+        "p3": "This tool produces the whole pack from one image, so even a beginner can hand a factory a file that runs without back-and-forth."
+      },
+      "how": {
+        "title": "How it works",
+        "p1": "Upload one design — a transparent PNG is ideal, but any image (even a photo with a busy background) works.",
+        "p2": "The background is removed automatically and the subject is isolated (multi-element stickers stay whole).",
+        "p3": "The die-cut line is traced and offset from the silhouette by your bleed (default 3 mm) as a mm-accurate vector — a CutContour spot color the RIP reads as the knife path.",
+        "p4": "The artwork is rendered at 300 DPI on a transparent background and converted to print-ready CMYK via an ICC profile.",
+        "p5": "Everything is bundled into one ZIP — artwork PNG, cut line SVG, CMYK PDF, preview, and spec sheet — ready to send to the factory."
+      },
+      "usecases": {
+        "title": "Who it's for",
+        "creatorsTitle": "Sticker sellers & artists",
+        "creatorsBody": "Sell die-cut stickers on Etsy, TikTok, or 小红书 without learning prepress — turn your art into files factories accept, and stand out with original designs (no clip-art licensing).",
+        "educationTitle": "谷子 / POD & fandom merch",
+        "educationBody": "Make acrylic keychains, 吧唧 badges, fridge magnets, and 谷子 merch to strict factory 入稿 specs — cut line, bleed, and CMYK handled to spec.",
+        "businessTitle": "Small shops & bulk orders",
+        "businessBody": "Need a batch of designs turned into production files? We offer it as a done-for-you / bulk service — send your art, get factory-ready ZIPs back."
+      }
+    }
+  },
+  "packagingMockup": {
+    "metadata": {
+      "title": "AI Packaging Mockup Generator — Dieline to 3D Box | Curify",
+      "description": "Turn your dieline (.ai/PDF) into realistic 3D packaging mockups — folded box, front / 45° / e-commerce white-bg. True box proportions from your file. For brand, 文创, gift & POD packaging."
+    },
+    "title": "Your Dieline → A Realistic 3D Box Mockup",
+    "description": "Send a flat dieline (刀版展开图, .ai or PDF) and get a realistic folded 3D packaging mockup — front, 45° three-quarter, or e-commerce white-background — with your artwork mapped onto the box faces and the true proportions read from the file, so a flat carton stays flat instead of becoming a generic cube. Perfect for client sign-off, boss reports, and product pages.",
+    "example": "Example: a 仁寿 gift-carton dieline folded into a 45° 3D mockup — a flat 117×114×39 mm box, not a cube.",
+    "cta": "Contact us for a mockup or bulk order",
+    "why": {
+      "title": "Why make packaging mockups through Curify?",
+      "point1": "Dieline in, realistic 3D box out. Your flat artwork is folded and mapped onto the box faces — a finished product photo you can hand a client or drop on an e-commerce page.",
+      "point2": "True proportions, from your file. We read the real Width × Height × Depth from your dieline, so a flat/shallow carton stays flat — not the generic cube most AI tools spit out.",
+      "point3": "Any angle you need. Front elevation, 45° three-quarter, or a clean e-commerce white-background — same design, mapped correctly.",
+      "point4": "It scales up. One dieline or a batch of SKUs — we offer it as a done-for-you / bulk service."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "What do I get?",
+      "a1": "A high-resolution 3D mockup image (JPG/PNG) of your folded box — front, 45°, or e-commerce white-background, on a clean studio background with a soft shadow. Ready for client confirmation, decks, or product pages.",
+      "q2": "Are the box proportions accurate to my dieline?",
+      "a2": "Yes — that's the whole point. We read the real Width × Height × Depth from your file (the .ai/PDF is drawn 1:1) and enforce those proportions, so a flat/shallow carton renders flat instead of becoming a generic cube. Send the dimensions if you have them and we'll pin them exactly.",
+      "q3": "Can I get an editable 3D model, or other angles?",
+      "a3": "Yes. Beyond the mockup image, we can build an editable 3D model (.glb/.obj) — a box mesh at your exact millimetres with each dieline panel UV-mapped — so you can re-angle, re-light, or animate it. And we render any angle you need (front / 45° / white-bg).",
+      "q4": "Is this a factory / production file?",
+      "a4": "No — a 3D mockup is for showing the design, not for the print shop. A packaging factory needs the dieline (AI/CDR/PDF) with CMYK, bleed, print areas and process notes — that's a separate factory-file deliverable we can also do.",
+      "q5": "What format should I send?",
+      "a5": "A dieline as .ai or PDF is ideal (we read the real dimensions from it); a high-resolution flat artwork (PNG/JPG) also works if you give us the box W×H×D. Tell us the angle you want (front / 45° / white-bg)."
+    },
+    "deep": {
+      "what": {
+        "title": "What is a packaging mockup?",
+        "p1": "A packaging mockup is a realistic image of your box as it looks when folded and printed — the flat dieline (with all faces laid out) rendered as a 3D product photo.",
+        "p2": "It's what you show a client to confirm the design, put in a report, or use on an e-commerce page — before committing to a physical print run.",
+        "p3": "It is not a factory file: a 3D mockup shows the design; production needs the dieline + CMYK + bleed + process specs (a separate deliverable)."
+      },
+      "how": {
+        "title": "How it works",
+        "p1": "Send your dieline — a .ai or PDF (drawn 1:1) is ideal; a high-res flat artwork also works with the box dimensions.",
+        "p2": "We read the real box Width × Height × Depth from the file (or your spec).",
+        "p3": "Your artwork is folded and mapped onto the box faces at those true proportions — a flat box stays flat.",
+        "p4": "We render the angle you want — front, 45° three-quarter, or clean e-commerce white-background — with soft studio lighting and shadow.",
+        "p5": "Need it editable? We can also deliver a 3D model (.glb/.obj) you can re-angle, re-light, or animate."
+      },
+      "usecases": {
+        "title": "Who it's for",
+        "creatorsTitle": "Brand & packaging designers",
+        "creatorsBody": "Show clients a finished 3D box from your flat dieline for fast sign-off — front, 45°, or white-background pack shots — without setting up a 3D scene yourself.",
+        "educationTitle": "文创 / gift & 谷子 brands",
+        "educationBody": "Turn gift-box, tea, and cultural-product dielines into product-page and promo mockups that match the real box shape.",
+        "businessTitle": "E-commerce & bulk orders",
+        "businessBody": "Need pack shots for a catalog of SKUs? We offer dieline → mockup as a done-for-you / bulk service, and can add editable 3D models."
       }
     }
   }

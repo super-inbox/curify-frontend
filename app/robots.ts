@@ -30,15 +30,37 @@ export default function robots(): MetadataRoute.Robots {
         // ImagesiftBot, Diffbot), heavy SEO crawlers we don't use
         // (MJ12bot, DataForSeoBot, DotBot), news scrapers (omgilibot),
         // and a link-preview bot (TelegramBot) that hits hot when shared.
+        //
+        // 2026-08-09 correction — TRAINING vs RETRIEVAL. The 06-23 list
+        // treated both as one category. They are not:
+        //   * TRAINING corpora (GPTBot, CCBot, cohere-ai, anthropic-ai,
+        //     Meta-External*, ImagesiftBot, Diffbot) ingest in bulk and
+        //     never attribute. No citation is possible. Still blocked.
+        //   * RETRIEVAL/CITATION fetchers (ChatGPT-User, PerplexityBot)
+        //     fetch on demand when a user asks and cite the source with a
+        //     link. That is the GEO surface, and it is low volume by
+        //     nature — an on-demand fetch, not a bulk crawl.
+        // AI referrals are our best-converting traffic by a wide margin
+        // (90d: chatgpt.com 79 visitors/70 actions, gemini 57/61, doubao
+        // 15/43, perplexity 12/15 — versus m.facebook.com's 1,557
+        // visitors at ~0 actions), so blocking the fetchers that feed it
+        // cost far more than the transfer it saved. ChatGPT-User and
+        // PerplexityBot are therefore removed from this list; OAI-SearchBot
+        // was never on it. See docs/workstream-seo-smm-growth.md.
+        //
+        // The cost rationale also did not hold: /carousel/* is not listed
+        // below, so the blocked crawlers simply moved there —
+        // meta-externalagent put 18,484 of its 18,572 90-day events on
+        // /carousel/template-example/* and zero on /nano-template/. Same
+        // content, different URL shape.
         userAgent: [
           // Original blocklist (2026-05)
           'Amazonbot',
           'VelenPublicWebCrawler',
           'Bytespider',
-          'GPTBot',
+          'GPTBot',               // OpenAI TRAINING crawler (not search)
           'ClaudeBot',
           'Claude-Web',
-          'PerplexityBot',
           // 2026-06-23 cost-reduction expansion
           'CCBot',                // Common Crawl
           'MJ12bot',              // Majestic SEO heavy crawler
@@ -46,7 +68,6 @@ export default function robots(): MetadataRoute.Robots {
           'DotBot',               // OpenSiteExplorer / Moz
           'Meta-ExternalAgent',   // Meta AI training fetcher
           'Meta-ExternalFetcher',
-          'ChatGPT-User',         // OpenAI on-demand (separate from GPTBot)
           'cohere-ai',            // Cohere training fetcher
           'anthropic-ai',         // Anthropic sibling to ClaudeBot
           'omgilibot',            // Webhose / news scraper

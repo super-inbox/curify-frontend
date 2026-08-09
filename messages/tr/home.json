@@ -342,6 +342,22 @@
         "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
         "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
       }
+    },
+    "die_cut_sticker_file": {
+      "title": "Die-Cut Sticker Fabrika Dosyası",
+      "desc": "Herhangi bir tasarımı baskıya hazır die-cut sticker dosyasına dönüştürün — 300 DPI şeffaf sanat eseri, mm hassasiyetinde kesim hattı ve bir ZIP içinde baskı öncesi zorluk olmadan çalıştırılabilen bir CMYK PDF.",
+      "meta": {
+        "title": "Die-Cut Sticker Dosya Yapıcı — Kesim Hattı + CMYK, Baskıya Hazır | Curify",
+        "description": "Herhangi bir resmi fabrikaya hazır die-cut sticker dosyasına dönüştürün: 300 DPI şeffaf PNG, mm hassasiyetinde CutContour kesim hattı (SVG) ve baskıya hazır CMYK PDF bir ZIP içinde. Sticker satıcıları, POD ve 谷子 ürünleri için."
+      }
+    },
+    "packaging_mockup": {
+      "title": "AI Ambalaj Mockup Üretici",
+      "desc": "Düz bir die çizimini (.ai/PDF) gerçekçi bir 3D ambalaj mockup'ına dönüştürün — ön veya 45° açıdan gösterilen katlanmış bir kutu, dosyanızdan okunan gerçek kutu oranlarıyla (genel bir küp değil).",
+      "meta": {
+        "title": "AI Ambalaj Mockup Üretici — Die Çiziminden 3D Kutulara | Curify",
+        "description": "Die çiziminizi (.ai/PDF) gerçekçi 3D ambalaj mockup'larına dönüştürün — katlanmış kutu, ön / 45° / e-ticaret beyaz arka plan. Dosyanızdan gerçek kutu oranları. Marka, 文创, hediye ve POD ambalajları için."
+      }
     }
   },
   "bilingual": {
@@ -1385,6 +1401,114 @@
         "name": "Marka kiti",
         "desc": "Kimliğinizi eksiksiz bir görsel kimlik (VI) maket paketiyle uygulayın.",
         "cta": "VI paketi oluştur"
+      }
+    }
+  },
+  "dieCutStickerFile": {
+    "metadata": {
+      "title": "Die-Cut Sticker Dosya Yapıcı — Kesim Hattı + CMYK, Baskıya Hazır | Curify",
+      "description": "Herhangi bir resmi fabrikaya hazır die-cut sticker dosyasına dönüştürün: 300 DPI şeffaf PNG, mm hassasiyetinde CutContour kesim hattı (SVG) ve baskıya hazır CMYK PDF bir ZIP içinde. Sticker satıcıları, POD ve 谷子 ürünleri için."
+    },
+    "title": "Herhangi Bir Tasarım → Fabrikaya Hazır Die-Cut Sticker Dosyası",
+    "description": "Bir resmi yükleyin ve bir sticker fabrikasının ihtiyaç duyduğu tüm baskı paketini alın — 300 DPI şeffaf sanat eseri PNG, milimetre hassasiyetinde die-cut hattı (CutContour), baskıya hazır CMYK PDF, bir önizleme ve bir spesifikasyon sayfası — hepsi bir ZIP içinde paketlenmiş. Arka plan kaldırma, kesim konturu, bleed ve CMYK sizin için halledilir, böylece baskı öncesini atlayıp dosyayı doğrudan yazıcınıza verebilirsiniz.",
+    "example": "Örnek: bir tasarım → sanat eserinin etrafında temiz bir 3 mm offset ile bir die-cut sticker dosyası.",
+    "cta": "Bir dosya veya toplu sipariş için bizimle iletişime geçin",
+    "why": {
+      "title": "Neden Curify üzerinden sticker dosyası yapmalısınız?",
+      "point1": "Bir resim yükleyin, tam bir fabrika paketi alın — şeffaf 300 DPI sanat eseri, bir vektör kesim hattı ve bir CMYK baskı PDF'si, sadece hazırlamanız gereken bir PNG değil.",
+      "point2": "Kesim hattı deterministiktir, AI değildir. Silueti kodda izliyoruz ve offsetliyoruz, böylece die-cut mm hassasiyetinde ve tekrar üretilebilir — asla bir batch'i kesim makinesinde çöpe atan hayali bir yol değil.",
+      "point3": "Dağınık girişi yönetir. Herhangi bir arka plan (fotoğraf, kareli, sahne) otomatik olarak kaldırılır ve çok elemanlı stickerlar bir temiz kontur ile bir arada tutulur ve 3 mm bleed ile sarılır.",
+      "point4": "Baskıya hazır renk. Renkleri solgun çıkmaması için ICC profili aracılığıyla CMYK'ya dönüştürüyoruz (düz bir renk alanı dönüşümü değil) ve doygunluğu önceden telafi ediyoruz."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Tam olarak ne alıyorum?",
+      "a1": "Fabrikaya hazır bir ZIP: 300 DPI şeffaf sanat eseri PNG, milimetre hassasiyetinde bir die-cut hattı olarak CutContour SVG, baskıya hazır CMYK PDF, bir önizleme resmi ve bir spesifikasyon sayfası (boyut / DPI / bleed / malzeme). Bunu doğrudan yazıcınıza verin.",
+      "q2": "Kesim kenarı biraz pürüzlü görünüyor — temiz mi basacak? PNG daha mı hassas?",
+      "a2": "Ekrandaki önizleme, ekran çözünürlüğünde konturu izler, bu yüzden biraz pürüzlü görünebilir — ama teslim edilen dosya farklıdır: sanat eseri yüksek çözünürlüklü 300 DPI PNG ile temiz kenarlara sahiptir ve kesim hattı kendisi milimetreye doğru bir gerçek vektördür (SVG), bu yüzden her boyutta keskin kalır ve kesim makinesi onu düzgün takip eder. En keskin kenarlar için, JPG yerine şeffaf arka plana sahip bir PNG ile başlayın.",
+      "q3": "CMYK'ya dönüştürdükten sonra neden renk solgun görünüyor (发灰)?",
+      "a3": "CMYK, RGB'den daha küçük bir gamut'a sahiptir, bu yüzden parlak renkler soluklaşır — ve genel bir profil en çok soluklaştırır. Doygunluğu önceden artırıyoruz ve rengi geri getirmek için ICC profili aracılığıyla dönüştürüyoruz; tam üretim rengi için, yazıcınızın kaplanmış profilini (örneğin, Japan Color 2001 Coated veya US Web Coated SWOP) gönderin ve biz onu kullanacağız.",
+      "q4": "Bununla gerçekten gerçek fabrika dosyaları yaptınız mı?",
+      "a4": "Evet — kendimiz bir pipeline oluşturduk (deterministik kesim hattı geometrisi, çok elemanlı stickerlar, 3 mm bleed, ICC CMYK) ve karmaşık illüstrasyonlu stickerlar ve IP figürleri dahil olmak üzere gerçek dosyaları uçtan uca çalıştırdık. Baskı öncesini hallediyoruz, böylece bunu öğrenmek zorunda kalmazsınız."
+    },
+    "deep": {
+      "what": {
+        "title": "Die-cut sticker fabrikası dosyası nedir?",
+        "p1": "Bir die-cut sticker bir dikdörtgen değildir — sanat eserinizin şekline kesilir. Bir tane basmak için, bir fabrikanın bir görüntüden fazlasına ihtiyacı vardır: şeffaf bir arka plana sahip baskı çözünürlüğünde sanat eseri, şekli takip eden ayrı bir kesim hattı (bıçak yolu) ve CMYK'da renk.",
+        "p2": "Bunları Photoshop/Illustrator'da elle bir araya getirmek — arka planı kaldırmak, kesim yolunu çizmek ve offsetlemek, bleed ayarlamak, CMYK'ya dönüştürmek — çoğu sticker satıcısının korktuğu ve fabrikaların dosyaları reddettiği yavaş, hata yapmaya açık 'baskı öncesi' adımıdır.",
+        "p3": "Bu araç, tek bir görüntüden tüm paketi üretir, böylece bir acemi bile bir fabrikaya geri dönüş olmadan çalışacak bir dosya verebilir."
+      },
+      "how": {
+        "title": "Nasıl çalışır",
+        "p1": "Bir tasarım yükleyin — şeffaf bir PNG idealdir, ancak herhangi bir görüntü (yoğun bir arka plana sahip bir fotoğraf bile) işe yarar.",
+        "p2": "Arka plan otomatik olarak kaldırılır ve konu izole edilir (çoklu elemanlı çıkartmalar bütün kalır).",
+        "p3": "Kesim hattı, siluetten kanamanızla (varsayılan 3 mm) offsetlenerek izlenir ve mm hassasiyetinde bir vektör olarak oluşturulur — RIP'in bıçak yolu olarak okuduğu bir CutContour spot rengi.",
+        "p4": "Sanat eseri, şeffaf bir arka planda 300 DPI'da işlenir ve bir ICC profili aracılığıyla baskıya hazır CMYK'ya dönüştürülür.",
+        "p5": "Her şey tek bir ZIP dosyasında birleştirilir — sanat eseri PNG, kesim hattı SVG, CMYK PDF, önizleme ve spesifikasyon sayfası — fabrikaya göndermeye hazır."
+      },
+      "usecases": {
+        "title": "Kimin için",
+        "creatorsTitle": "Çıkartma satıcıları ve sanatçılar",
+        "creatorsBody": "Etsy, TikTok veya 小红书'da ön baskı öğrenmeden die-cut çıkartmalar satın — sanatınızı fabrikaların kabul ettiği dosyalara dönüştürün ve orijinal tasarımlarla öne çıkın (clip-art lisansı yok).",
+        "educationTitle": "谷子 / POD ve fandom ürünleri",
+        "educationBody": "Akrilik anahtarlıklar, 吧唧 rozetleri, buzdolabı magnetleri ve 谷子 ürünleri için sıkı fabrika 入稿 spesifikasyonlarına uygun olarak yapın — kesim hattı, kanama ve CMYK spesifikasyona göre işlenir.",
+        "businessTitle": "Küçük dükkanlar ve toplu siparişler",
+        "businessBody": "Bir dizi tasarımın üretim dosyalarına dönüştürülmesine mi ihtiyacınız var? Bunu sizin için yapılmış / toplu bir hizmet olarak sunuyoruz — sanatınızı gönderin, fabrikaya hazır ZIP'leri geri alın."
+      }
+    }
+  },
+  "packagingMockup": {
+    "metadata": {
+      "title": "AI Ambalaj Mockup Üretici — Die Çiziminden 3D Kutulara | Curify",
+      "description": "Die çiziminizi (.ai/PDF) gerçekçi 3D ambalaj mockup'larına dönüştürün — katlanmış kutu, ön / 45° / e-ticaret beyaz arka plan. Dosyanızdan gerçek kutu oranları. Marka, 文创, hediye ve POD ambalajları için."
+    },
+    "title": "Die Çiziminiz → Gerçekçi 3D Kutü Mockup'ı",
+    "description": "Düz bir die çizimi (刀版展开图, .ai veya PDF) gönderin ve gerçekçi bir katlanmış 3D ambalaj mockup'ı alın — ön, 45° üç çeyrek veya e-ticaret beyaz arka plan — sanat eseriniz kutu yüzeylerine yerleştirilmiş ve dosyadan okunan gerçek oranlarla, böylece düz bir karton düz kalır, genel bir küp haline gelmez. Müşteri onayı, patron raporları ve ürün sayfaları için mükemmel.",
+    "example": "Örnek: bir 仁寿 hediye kutusu die çizimi 45° 3D mockup'a katlanmış — düz 117×114×39 mm kutu, küp değil.",
+    "cta": "Mockup veya toplu sipariş için bizimle iletişime geçin",
+    "why": {
+      "title": "Neden Curify üzerinden ambalaj mockup'ları yapmalısınız?",
+      "point1": "Die çizimi girin, gerçekçi 3D kutu çıkın. Düz sanat eseriniz katlanır ve kutu yüzeylerine yerleştirilir — bir müşteriye verebileceğiniz veya bir e-ticaret sayfasına koyabileceğiniz bitmiş bir ürün fotoğrafı.",
+      "point2": "Gerçek oranlar, dosyanızdan. Die çiziminizden gerçek Genişlik × Yükseklik × Derinlik okuyoruz, böylece düz/şalow bir karton düz kalır — çoğu AI aracının ürettiği genel küp değil.",
+      "point3": "İhtiyacınız olan her açı. Ön görünüm, 45° üç çeyrek veya temiz bir e-ticaret beyaz arka plan — aynı tasarım, doğru şekilde yerleştirilmiş.",
+      "point4": "Büyütülebilir. Bir die çizimi veya bir SKU partisi — bunu sizin için yapılmış / toplu hizmet olarak sunuyoruz."
+    },
+    "faq": {
+      "title": "Sıkça sorulan sorular",
+      "q1": "Ne alırım?",
+      "a1": "Katlanmış kutunuzun yüksek çözünürlüklü 3D mockup görüntüsü (JPG/PNG) — ön, 45° veya e-ticaret beyaz arka plan, temiz bir stüdyo arka planında yumuşak bir gölge ile. Müşteri onayı, sunumlar veya ürün sayfaları için hazır.",
+      "q2": "Kutu oranları die çizimime uygun mu?",
+      "a2": "Evet — bu tam olarak amaç. Dosyanızdan gerçek Genişlik × Yükseklik × Derinlik okuyoruz (ai/PDF 1:1 çizilir) ve bu oranları zorunlu kılıyoruz, böylece düz/şalow bir karton düz kalır, genel bir küp haline gelmez. Eğer varsa boyutları gönderin, tam olarak ayarlayalım.",
+      "q3": "Düzenlenebilir bir 3D model veya başka açılar alabilir miyim?",
+      "a3": "Evet. Mockup görüntüsünün ötesinde, düzenlenebilir bir 3D model (.glb/.obj) oluşturabiliriz — her die çizim panelinin UV haritalandığı tam milimetre ölçülerinde bir kutu ağı — böylece açısını değiştirebilir, ışıklandırabilir veya animasyon yapabilirsiniz. Ve ihtiyacınız olan her açıyı render ediyoruz (ön / 45° / beyaz arka plan).",
+      "q4": "Bu bir fabrika / üretim dosyası mı?",
+      "a4": "Hayır — bir 3D mockup tasarımı göstermek içindir, baskı atölyesi için değil. Bir ambalaj fabrikası, CMYK, bleed, baskı alanları ve süreç notları ile die çizimini (AI/CDR/PDF) gerektirir — bu ayrı bir fabrika dosyası teslimatıdır, bunu da yapabiliriz.",
+      "q5": "Hangi formatta göndermeliyim?",
+      "a5": ".ai veya PDF olarak bir die çizimi idealdir (gerçek boyutları ondan okuyoruz); yüksek çözünürlüklü düz bir sanat eseri (PNG/JPG) de işe yarar eğer bize kutunun G×Y×D'sini verirseniz. İstediğiniz açıyı söyleyin (ön / 45° / beyaz arka plan)."
+    },
+    "deep": {
+      "what": {
+        "title": "Ambalaj mockup'ı nedir?",
+        "p1": "Ambalaj mockup'ı, kutunuzun katlanmış ve basılmış halinin gerçekçi bir görüntüsüdür — düz die çizimi (tüm yüzler serilmiş) 3D ürün fotoğrafı olarak render edilir.",
+        "p2": "Bu, tasarımı onaylamak için bir müşteriye gösterdiğiniz, bir rapora koyduğunuz veya bir e-ticaret sayfasında kullandığınız şeydir — fiziksel bir baskı üretimine geçmeden önce.",
+        "p3": "Bu bir fabrika dosyası değildir: bir 3D mockup tasarımı gösterir; üretim die çizimi + CMYK + bleed + süreç spesifikasyonları gerektirir (ayrı bir teslimat)."
+      },
+      "how": {
+        "title": "Nasıl çalışır",
+        "p1": "Dielinenizi gönderin — .ai veya PDF (1:1 çizilmiş) idealdir; yüksek çözünürlüklü düz bir sanat eseri de kutu boyutlarıyla çalışır.",
+        "p2": "Gerçek kutu Genişlik × Yükseklik × Derinliği dosyadan (veya spesifikasyonunuzdan) okuyoruz.",
+        "p3": "Sanat eseriniz, bu gerçek oranlarda kutu yüzeylerine katlanır ve haritalanır — düz bir kutu düz kalır.",
+        "p4": "İstediğiniz açıyı renderlıyoruz — ön, 45° üç çeyrek veya temiz e-ticaret beyaz arka plan — yumuşak stüdyo aydınlatması ve gölge ile.",
+        "p5": "Düzenlenebilir mi istiyorsunuz? Ayrıca açısını değiştirebileceğiniz, aydınlatmasını ayarlayabileceğiniz veya animasyon yapabileceğiniz bir 3D model (.glb/.obj) de teslim edebiliriz."
+      },
+      "usecases": {
+        "title": "Kimin için",
+        "creatorsTitle": "Marka ve ambalaj tasarımcıları",
+        "creatorsBody": "Müşterilere düz dielinenizden hızlı onay için bitmiş bir 3D kutu gösterin — ön, 45° veya beyaz arka plan paket çekimleri — 3D sahne kurmadan.",
+        "educationTitle": "文创 / hediye & 谷子 markaları",
+        "educationBody": "Hediye kutusu, çay ve kültürel ürün dielinelerini gerçek kutu şekline uyan ürün sayfası ve promosyon mockuplarına dönüştürün.",
+        "businessTitle": "E-ticaret ve toplu siparişler",
+        "businessBody": "SKU'lar için bir katalogda paket çekimlerine mi ihtiyacınız var? Dieline → mockup olarak yapılmış bir hizmet sunuyoruz ve düzenlenebilir 3D modeller ekleyebiliriz."
       }
     }
   }

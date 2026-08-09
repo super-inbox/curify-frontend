@@ -24,7 +24,7 @@ The four threads:
 | **a** | Search quality + experience | `app/[locale]/(public)/search/`, `lib/searchRewrite.ts`, admin SQL panels | [`docs/search-quality.md`](./search-quality.md) |
 | **b** | Content tagging + topic taxonomy | `lib/topicRegistry.ts`, `lib/topic_tag_mappings.json`, `lib/subject_topic_seeds.json`, tags on inspirations / templates / gallery prompts | (this doc — section [Thread b](#thread-b--content-tagging--topic-taxonomy)) |
 | **c** | Content production + daily drop | `scripts/generate_template_examples.cjs`, `scripts/configs/*.json`, the daily-content-drop workflow | [`docs/batch-generation.md`](./batch-generation.md) + [`docs/pinyin-generation-guide.md`](./pinyin-generation-guide.md) (Chinese+pinyin cards) + memory `project_daily_template_workflow.md` |
-| **d** | Upstream inspiration / demand sensing | `curify-studio/curify_background/app/routers/proposals.py` + adapters (`search_no_result_utils`, `template_gap_utils`, `reddit_utils`); admin UI in `admin_portal/js/proposals.js` | (this doc — section [Thread d](#thread-d--upstream-inspiration--demand-sensing)) |
+| **d** | Upstream inspiration / demand sensing | `curify-studio/curify_background/app/routers/proposals.py` + adapters (`search_no_result_utils`, `template_gap_utils`, `reddit_utils`); admin UI in `admin_portal/js/proposals.js` | (this doc — section [Thread d](#thread-d--upstream-inspiration--demand-sensing)) + strategy: [`docs/inspiration-intelligence-and-onboarding-2026-08-05.md`](./inspiration-intelligence-and-onboarding-2026-08-05.md) |
 
 The arrow of causation flows **upstream → downstream**:
 
@@ -254,6 +254,8 @@ Live-prod failing queries that the catalog could theoretically host but does not
 ---
 
 ## Thread d — Upstream inspiration / demand sensing
+
+**Strategic direction (2026-08-05):** [`docs/inspiration-intelligence-and-onboarding-2026-08-05.md`](./inspiration-intelligence-and-onboarding-2026-08-05.md) reframes this thread from "sense demand to feed content-gen" up to a **design-knowledge intelligence layer** — extract structured design understanding (object/style/color/type/material/use-case/workflow) from high-authority sources (portfolios / Etsy / studio sites, NOT scraped Pinterest), store it as the retrieval substrate for search + the Design Agent, then layer designer-workspace onboarding (Phase 2) and Etsy/POD affiliate (Phase 3) on top. Content Intelligence first (no cold-start); creator network later. That doc is the WHY/roadmap; the proposals pipeline below is today's tactical slice of Phase 1.
 
 ### Current state
 

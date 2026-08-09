@@ -1,0 +1,48 @@
+Case: tea-brand-exploration — 山岚茶事
+Request time (UTC, corrected run): see stage1-directions.json call timing — round-trip ~8.63s
+
+Field-mapping correction (mid-run):
+The tea case originally had only 2 fields (Brand name, Tea/product type, 80-char max).
+The user's brief did not include a short "product type" at all — it had brand name, a long
+brand description, applications, and desired tone. First attempt incorrectly put the long
+description into productType (80-char field) and got a real 400 validation error (correctly
+caught before any OpenAI call — zero cost). Fixed by, with user approval: adding a new
+brandDescription field (400-char max) to lib/brand_direction_explorer.ts, updating
+TEA_BASE_BRIEF, updating tests, rebuilding, restarting the dev server, and re-verifying with
+a zero-cost validation-only request before re-running for real. Re-ran vitest (54/54 pass)
+and npm run build (exit 0) after this change, same as after the coffee-opening expansion.
+
+Verification (corrected run):
+- Request reached the internal Next.js API route: POST http://localhost:3000/api/brand-direction-explorer/directions (HTTP 200)
+- Round-trip latency: ~8.63s — consistent with a real live OpenAI call
+- OpenAI returned exactly 3 directions: modern-minimalism, earthy-elegance, contemporary-vibrance (all unique ids)
+- No static fallback was used — same architecture guarantee as Morrow Coffee (no direction content in lib/brand_direction_explorer.ts)
+- UI confirmed by user: spinner, then 3 real direction cards rendered (see stage1-directions-full-page.png, the corrected post-fix run)
+- Model: gpt-4o-mini (MODEL constant, lib/brandDirectionOpenAI.ts)
+- No secret values appeared in any terminal or browser output during this run
+
+Quality observations:
+- Strongest: titles are meaningfully distinct this time ("Modern Minimalism" / "Earthy Elegance" / "Contemporary Vibrance") — an improvement over the Morrow Coffee run, where all 3 titles were identical to the shop name
+- Weakest: n/a for this run — no repeated-title issue observed
+
+--- Stage 2 (final image generation) ---
+
+The user ran Stage 2 independently through the browser UI and provided two resulting images
+(already saved into this folder, not from Downloads this time), renamed here as:
+- generated-output-primary.jpg (346,868 bytes, JPEG) — user-identified as the primary result:
+  a sage-green ceramic tea jar on a linen moodboard, calm/minimal composition with a 4-color
+  palette strip and "Direction: Modern, Refined, Culturally Grounded, Distinctive" label —
+  visually closest to the earthy-elegance / modern-minimalism directions
+- generated-output-alternative.jpg (341,301 bytes, JPEG) — user-identified as the alternative
+  result: an ornate red-and-gold lacquered tea tin with decorative gold/green swirl
+  linework and the 5 application icons (storefront signage, takeaway cups, packaging, social
+  media posts, launch poster) illustrated directly on the poster — visually closest to
+  contemporary-vibrance
+
+Labeling for the report: these two images are Stage 2 output from the existing Gemini-backed
+Curify backend, NOT OpenAI-generated. As with Morrow Coffee, this session did not
+independently verify which of the 3 Stage 1 directions was selected for each generation, or
+whether one was a "Regenerate" of the other — documented based on the user's description and
+visual inspection of the files, not directly observed via this session's own API calls.
+
+User explicitly instructed: do not generate any additional 山岚茶事 images or spend more credits.
