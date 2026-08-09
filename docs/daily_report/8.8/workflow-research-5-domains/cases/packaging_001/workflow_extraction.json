@@ -1,0 +1,107 @@
+{
+  "case_id": "packaging_001",
+  "domain": "packaging",
+  "input": "A new-to-market pet grooming product ('Combat Comb') from a startup brand entering an unfamiliar product category, with the goal of producing shelf-ready packaging suitable for distribution in major retailers. No prior packaging existed for this product; the agency (Catalpha) started from the physical product itself.",
+  "workflow_steps": [
+    {
+      "step_id": "step_01",
+      "step_name": "Measuring Up (Determine Package Size, Type & Structure)",
+      "step_description": "The agency took careful physical measurements of the product (width, length, depth) and used them to determine the package type and structure, selecting a hanging box with a display window so the packaging would optimize shelf space while still showing the product's function.",
+      "input": "Physical 'Combat Comb' product; target retail shelf environment",
+      "action": "Measure product dimensions (width/length/depth); select structural package type (hanging box with window) based on shelf-space and product-visibility needs",
+      "output": "Product measurements; chosen structural concept (hanging box with window)",
+      "professional_rule": "Shelf-ready retail packaging structure must be chosen to optimize shelf space while still visually communicating the product's function, not decided on aesthetics alone.",
+      "evidence_ids": ["E01", "E02"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_02",
+      "step_name": "Mockup Testing (Check Fit & Structural Integrity)",
+      "step_description": "Using the measurements from step_01, the agency trimmed a rough blank physical prototype to further test the design and internal structure, using it to work out sizing, stock (paper) weight, and the folding required for internal structural elements such as the angled platform and window placement.",
+      "input": "Product measurements and notes from step_01",
+      "action": "Build a rough blank physical mockup; test sizing, stock weight, and required folding of internal structural elements",
+      "output": "Validated physical mockup with confirmed sizing, stock weight, and folding parameters",
+      "professional_rule": "Physical prototyping (blank mockups) is required to validate stock weight and folding feasibility before any digital dieline work begins.",
+      "evidence_ids": ["E03", "E04"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_03",
+      "step_name": "Initial Creative Exploration (Design Visuals for Client Review)",
+      "step_description": "The agency developed four distinct design concepts, each varying visual look, copy, and messaging, evaluated against three explicit goals: (1) jump off the shelf, (2) clearly communicate what the product does and how it benefits the shopper, (3) create a solid branded look. These were presented to the client for feedback.",
+      "input": "Validated structural mockup from step_02; brand/product positioning goals",
+      "action": "Generate four design concept layouts with copy/messaging variations; present to client against the three stated goals",
+      "output": "Four design concept layouts presented for client review and feedback",
+      "professional_rule": "Concept design is evaluated against explicit, named criteria (shelf impact, clear product communication, brand consistency) rather than aesthetic judgment alone.",
+      "evidence_ids": ["E05"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_04",
+      "step_name": "Dieline Drafting (Create Digital Dieline for Print Production)",
+      "step_description": "With design concepts out for client feedback, the agency drafted the actual production dieline needed to lay out the package for final printing, sized from the mockup measurements and modified to account for internal structural elements. The dieline's accuracy was checked periodically using 3D software.",
+      "input": "Client feedback on design concepts (step_03); validated mockup measurements (step_02)",
+      "action": "Draft a digital dieline accounting for proper folding, paper (stock) weight, and print feasibility; periodically verify dieline accuracy using 3D software",
+      "output": "Print-production-ready digital dieline",
+      "professional_rule": "A dieline must be engineered to account simultaneously for folding, stock weight, and print feasibility, and its accuracy must be checked with 3D software rather than trusted as a flat 2D layout alone.",
+      "evidence_ids": ["E06", "E07", "E08"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_05",
+      "step_name": "Final Package Production (Lay Out Full Package on Dieline for Print)",
+      "step_description": "After the client chose one design layout (with edits) to move forward with, the agency laid out the full approved package artwork — including product photography, feature callouts, and graphics emphasizing the product's function — onto the verified dieline. 3D software was used again throughout as a check, since flat layouts can look correct but require adjustment in 3D.",
+      "input": "Client-approved design layout with edits (step_03/step_04 outputs); verified dieline (step_04)",
+      "action": "Lay out final approved artwork (photography, feature callouts, graphics) onto the dieline; re-check via 3D software",
+      "output": "Final, print-ready package artwork",
+      "professional_rule": "Flat 2D layouts must be re-verified in 3D before finalization because visual correctness in 2D does not guarantee correctness once folded.",
+      "evidence_ids": ["E09", "E10"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_06",
+      "step_name": "Product Launch",
+      "step_description": "The final package design was printed and the product was launched into major retailers.",
+      "input": "Final print-ready package artwork (step_05)",
+      "action": "Print packaging; distribute product into major retail channels",
+      "output": "Physical, launched packaging on shelf in major retailers",
+      "professional_rule": null,
+      "evidence_ids": ["E11"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "medium"
+    }
+  ],
+  "final_outputs": [
+    "Print-ready digital dieline and final package artwork",
+    "Physical shelf-ready package (hanging box with window) launched in major retailers",
+    "Product/feature photography and graphics used on the final package"
+  ],
+  "professional_constraints": [
+    "Retail shelf-space optimization drives structural package type choice (hanging box with window)",
+    "Physical product must remain visible/legible through packaging to communicate function",
+    "Structural integrity constraints: sizing, stock (paper) weight, and folding must be validated via physical mockup before digital work",
+    "Dieline must simultaneously satisfy folding requirements, stock weight, and print feasibility",
+    "3D software verification is used at two separate points (dieline drafting and final production) because flat 2D layouts can misrepresent the folded 3D result",
+    "Design concepts are judged against explicit stated goals: shelf impact, clear product communication, brand consistency",
+    "Client feedback/approval gates exist between creative exploration and dieline drafting, and again before final production layout"
+  ],
+  "production_or_delivery_requirements": [
+    "A physical blank mockup/prototype is required before any digital dieline is drafted",
+    "Digital dieline must be print-production ready (accounts for paper weight, folding, print feasibility)",
+    "Final artwork must be laid out directly onto the verified dieline, not designed independently of it",
+    "Client sign-off on a chosen layout (with edits) is required before final production layout begins",
+    "UNKNOWN: specific printer/press requirements, exact paper/stock specification values, timeline, and budget are not disclosed in the source"
+  ],
+  "source_limitations": [
+    "Single first-party source (agency's own blog); no independent/trade-press corroboration of this specific project was found",
+    "No disclosed budget, timeline, project cost, or named retailer(s)",
+    "No disclosed material specification values (only general 'stock weight' and 'paper weight' terminology, not specific gsm/caliper values)",
+    "Article does not disclose how many rounds of client feedback occurred, or details of what the 'edits' to the chosen layout were",
+    "Images were referenced via WebFetch-derived captions/alt text, not independently visually inspected pixel-by-pixel; image evidence was used only as corroboration of an already text-established step order, never as the sole basis for causal sequencing"
+  ]
+}

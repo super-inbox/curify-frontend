@@ -1,0 +1,180 @@
+{
+  "case_id": "merch_001",
+  "domain": "merch",
+  "input": "On-site scouting and photography (supplemented by Google Street View, aerial photography, and original architectural drawings where site visits were impossible) of NUS and NTU campus buildings, across two production rounds (2018 and 2020).",
+  "workflow_steps": [
+    {
+      "step_id": "step_01",
+      "step_name": "Reference gathering & conceptualization",
+      "step_description": "Designer scouted campus buildings, using Google Street View as a base but noting many details/angles required on-site shooting; for inaccessible angles she used aerial photography or referenced original architectural design drawings (平立剖). This fed into large-scale Photoshop photo collaging and many rounds of rough sketching to simplify the buildings into an illustration-ready visual language.",
+      "input": "Physical campus buildings; Google Street View imagery; original architectural drawings where available",
+      "action": "On-site photography + Street View reference gathering + Photoshop photo collaging + rough sketch simplification of building forms",
+      "output": "Simplified sketch references establishing visual approach per building",
+      "professional_rule": "Digital reference (Street View) is insufficient alone for illustration-grade accuracy; on-site or drawing-derived reference is needed for detail/angle fidelity.",
+      "evidence_ids": ["EV-01"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_02",
+      "step_name": "Illustration drawing pipeline",
+      "step_description": "Fixed production pipeline stated explicitly: Photoshop photo base -> sketch tracing -> line cleanup -> Adobe Illustrator vector drawing -> color blocking -> Photoshop refinement -> multi-size adaptation. Throughput cited as ~10 illustrations/month, ~3 days per piece, with 2-3 sketches discarded mid-way and some compositions fully redrawn due to dissatisfaction.",
+      "input": "Sketch references from step_01",
+      "action": "PS photo base -> sketch tracing -> line cleanup -> AI vector drawing -> color blocking -> PS refinement -> multi-size adaptation",
+      "output": "Finished vector/raster illustration per building, adapted to multiple base sizes",
+      "professional_rule": "Iteration and rework (full redraws, discarded drafts) is a built-in, budgeted part of the illustration timeline, not an exception.",
+      "evidence_ids": ["EV-02"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_03",
+      "step_name": "Product design / format recomposition (2 weeks)",
+      "step_description": "Each finished illustration had to be substantially recomposed — not simply cropped or scaled — to fit each product's aspect ratio: postcard (horizontal), phone case (vertical), badge/magnet (square). Background and scenery elements required significant repositioning and supplemental painting; one building illustration is described as undergoing near-total compositional rearrangement (\"乾坤大挪移\") with extensive repainting of ground, stairs, and plants.",
+      "input": "Finished illustrations from step_02",
+      "action": "Per-SKU-format recomposition: reposition/supplement background and scenery elements to match postcard / phone case / badge / magnet aspect ratios",
+      "output": "Format-specific artwork files ready for each product SKU",
+      "professional_rule": "A single illustration cannot be mechanically resized across differing product aspect ratios; each format requires dedicated recomposition and supplemental painting.",
+      "evidence_ids": ["EV-03"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_04",
+      "step_name": "Packaging design (1 week)",
+      "step_description": "Designer researched packaging/sizing and the customer unboxing experience. Faced a factory MOQ of ~10,000 units for custom-printed packaging against her actual need of ~500 units; solved this by having a custom stamp made to hand-apply the logo to packaging on demand, and hand-folding all packaging boxes/labels herself. Delivery protection used kraft paper bags inside plastic bags, layered for protection.",
+      "input": "Format-specific product artwork from step_03; product quantity estimate (~500 units)",
+      "action": "Design packaging/unboxing experience; work around factory MOQ via custom stamp + hand-folded packaging instead of factory-printed packaging",
+      "output": "Branded, hand-assembled packaging suitable for low-volume production",
+      "professional_rule": "Factory minimum order quantities for custom packaging (~10,000 units) commonly exceed small independent-designer production runs; low-volume producers must substitute manual/DIY branding methods (stamps, hand-folding) rather than commercial print runs.",
+      "evidence_ids": ["EV-04"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_05",
+      "step_name": "Manufacturer sampling / vendor selection",
+      "step_description": "Each product type was tested with three to five different manufacturers before committing to one, with selection criteria being color accuracy (色差), price, and packaging specification compliance.",
+      "input": "Format-specific artwork and packaging design",
+      "action": "Commission samples from 3-5 candidate manufacturers per product; compare on color accuracy, price, packaging spec compliance",
+      "output": "Selected manufacturer(s) per product type",
+      "professional_rule": "Multi-vendor sample comparison (3-5 manufacturers) on defined criteria (color/price/spec) is used to de-risk a small-batch production commitment before full order.",
+      "evidence_ids": ["EV-05"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_06",
+      "step_name": "Legal / trademark / copyright clearance",
+      "step_description": "Given Singapore's strict IP laws, the designer reviewed relevant chapters of the Trade Mark Act and Copyright Act and consulted lawyers multiple times to confirm the products did not infringe. Resulting constraint: products could never use the universities' logos or registered trademarked names — from packaging to the product itself, no NTU/NUS logos or full school names appeared. She also noted that some buildings carry architectural/image (portrait) rights and could not be illustrated at all.",
+      "input": "Product concept and target market (Singapore, university-adjacent)",
+      "action": "Review Trade Mark Act and Copyright Act provisions; consult lawyers; exclude any trademarked institutional marks/names from designs; exclude buildings with asserted image rights",
+      "output": "Legally cleared product line labeled as unofficial/non-institutional merchandise",
+      "professional_rule": "Fan-made / independent merchandise referencing real institutions must avoid registered trademarks and names entirely (not just avoid literal logos) and must account for image/portrait rights potentially attached to specific buildings; legal review should precede or run parallel to production commitments.",
+      "evidence_ids": ["EV-06"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_07",
+      "step_name": "Pricing strategy",
+      "step_description": "Designer explicitly rejected a low-price/high-volume strategy given the time investment, instead pricing according to the Singapore market and her primary buyer persona (university students): postcards ~$1 SGD, fridge magnets ~$4 SGD, mugs ~$12 SGD, with a 7-8% discount for complete bundled sets, plus tiered spend-based promotions (e.g. spend $35 SGD for a $5 discount, a free postcard set, and free delivery to NTU/NUS dorms).",
+      "input": "Product cost basis; target buyer persona (university students); local market price expectations",
+      "action": "Set per-SKU pricing against Singapore market comparables; define bundle discount and spend-tier promotions",
+      "output": "Published price list with bundle/promotion tiers",
+      "professional_rule": "Reject race-to-the-bottom pricing for labor-intensive small-batch design goods; price against local market comparables and target-buyer willingness to pay, using bundling/spend-tier promotions to lift average order value.",
+      "evidence_ids": ["EV-07"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_08",
+      "step_name": "Incoming quality inspection (QC)",
+      "step_description": "On receiving stock, the designer found she had initially under-invested in QC, causing significant product-to-product variation. Documented defect categories: sphere magnets with substandard weight/height, magnet displacement, or broken glass; phone cases with character/print shadowing or incorrectly cut images. Defective units triggered refund processing and were described as accounting for most of her financial losses; she stated she would be more careful with future orders.",
+      "input": "Delivered manufactured stock from selected vendor(s)",
+      "action": "Inspect incoming units against defined defect categories (weight/height tolerance, magnet position, glass integrity, print alignment/ghosting); refund/write off defective units",
+      "output": "QC-passed sellable inventory; documented loss from rejected units",
+      "professional_rule": "Under-resourcing incoming QC on a first production run is a recognized failure mode; specific, checkable defect categories (dimensional tolerance, print alignment, material integrity) should be defined and checked per unit, with losses absorbed by the designer/seller rather than passed to customers.",
+      "evidence_ids": ["EV-08"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_09",
+      "step_name": "Listing preparation / product photography",
+      "step_description": "With roughly 100+ product variants, the designer set up a simple in-house photo studio to shoot product photography for listings ahead of launch.",
+      "input": "QC-passed inventory (~100+ SKUs/variants)",
+      "action": "Build simple photography setup; shoot product photos for all variants",
+      "output": "Product photography assets for listings",
+      "professional_rule": null,
+      "evidence_ids": ["EV-09"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_10",
+      "step_name": "Marketing/promotion preparation",
+      "step_description": "Promotion only began once inventory was in hand. Pre-launch prep required product photography plus roughly 200 promotional/detail-page images across all sales platforms, coordination with the delivery team on specific handoff locations/times/frequency, and full listing setup (inventory counts, pricing) before going live.",
+      "input": "Product photography from step_09; finalized pricing from step_07",
+      "action": "Produce ~200 promotional/detail-page images across platforms; coordinate delivery-team logistics; finalize listings with stock/pricing",
+      "output": "Fully prepared, launch-ready listings across sales platforms",
+      "professional_rule": "Sequence promotion strictly after inventory is confirmed in hand, not before, to avoid overselling undelivered stock.",
+      "evidence_ids": ["EV-10"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_11",
+      "step_name": "Logistics & delivery packaging",
+      "step_description": "Primary sales channel was a campus food-delivery app; because products traveled alongside food (oil contamination / crushing risk), each pickup point received a labeled cardboard box containing kraft paper bags inside plastic bags for multi-layer protection. Labels were formatted and printed via Excel.",
+      "input": "Packaged products from step_04; delivery-team coordination from step_10",
+      "action": "Multi-layer protective packaging (kraft paper bag inside plastic bag) per pickup point; Excel-formatted printed labels; box-level distribution to food-delivery pickup points",
+      "output": "Delivered, damage-protected product batches at designated pickup points",
+      "professional_rule": "When distribution shares a channel not designed for the product category (e.g., food delivery), add channel-specific protective packaging layers to mitigate contamination/crush risk.",
+      "evidence_ids": ["EV-11"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_12",
+      "step_name": "Ongoing operations (approx. 1 month)",
+      "step_description": "As sole shop operator, the designer handled backend listing edits and repeated information verification, order intake, customer service, inventory/stock management, order fulfillment, delivery coordination, after-sales handling, financial reporting, and profit calculation.",
+      "input": "Live sales channel with active listings",
+      "action": "Ongoing backend management: order processing, customer service, inventory, fulfillment coordination, after-sales, financial reporting, profit calculation",
+      "output": "Completed sales cycle with reconciled financials/profit figures",
+      "professional_rule": null,
+      "evidence_ids": ["EV-12"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    }
+  ],
+  "final_outputs": [
+    "Postcards (NUS/NTU architecture illustrations)",
+    "Phone cases",
+    "Refrigerator magnets",
+    "Badges",
+    "Mugs",
+    "Approximately 100+ total product variants across formats"
+  ],
+  "professional_constraints": [
+    "Cannot use university logos or registered trademarked names/marks (governed by Singapore's Trade Mark Act); products carried no NTU/NUS logo or full school name anywhere, including packaging",
+    "Some buildings carry asserted architectural/image (portrait) rights and were excluded from illustration entirely",
+    "Manufacturer minimum order quantities for custom packaging (~10,000 units) far exceed small-batch designer needs (~500 units), forcing manual workaround branding (custom stamp, hand-folded boxes) instead of factory print runs",
+    "Each product format (postcard / phone case / badge / magnet) requires full illustration recomposition — not simple crop or resize — due to differing aspect ratios",
+    "Incoming QC must check specific, defined defect categories (dimensional tolerance, magnet position, glass integrity, print alignment/ghosting); under-resourcing this step was the designer's largest source of financial loss",
+    "Distribution via a food-delivery channel not designed for the product category required added multi-layer protective packaging to mitigate contamination/crush risk"
+  ],
+  "production_or_delivery_requirements": [
+    "Sample and compare 3-5 manufacturers per product line on color accuracy, price, and packaging spec compliance before committing to a production vendor",
+    "Legal review (Trade Mark Act / Copyright Act, lawyer consultation) required before/alongside production due to real institutional references in the product line",
+    "Post-delivery QC with documented defect categories and a refund process for rejected units",
+    "Promotion/marketing materials (~200 images) and listing setup must be prepared but not published until inventory is physically in hand",
+    "Multi-layer protective packaging required when distribution shares a channel (food delivery) not designed for the product category"
+  ],
+  "source_limitations": [
+    "Single first-person account from one independent designer; no independent corroboration of the specific figures cited (defect rates, cost/loss amounts, MOQ figures, pricing)",
+    "WebFetch text extraction did not retrieve embedded images; any sketch/illustration-stage visuals referenced on the page were not independently viewed, so illustration-stage claims rely on the surrounding text rather than viewed visual evidence",
+    "The article's 12 numbered sections (【1】-【12】) are the author's own narrative organization; while explicitly sequenced and labeled by the source itself (not inferred from image ordering), the narrative order may not perfectly match strict production chronology — e.g., legal/copyright clearance appears as section 6, after sample testing in section 5, though in practice IP clearance plausibly needed to happen before/alongside early production commitments",
+    "Describes a single independent-creator, small-batch (~500 unit) production run in one market (Singapore); professional-knowledge claims (MOQ figures, pricing) may not generalize beyond that scale/market"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "case_id": "brand_logo_001",
+  "domain": "brand_logo",
+  "input": "Existing London Life \"Constellation Managed Portfolios\" program, tool, and materials, following the January 2020 merger of three insurance entities into Canada Life; the new Canada Life corporate brand identity that the legacy materials needed to be brought into alignment with.",
+  "workflow_steps": [
+    {
+      "step_id": "step_01_define_objectives",
+      "step_name": "Define rebrand objectives",
+      "step_description": "Following the Canada Life merger, three explicit project objectives were set: (1) rebrand the existing London Life Constellation Managed Portfolios tool and materials to the new Canada Life brand, (2) help Constellation better resonate with advisors and their clients (via personas), (3) increase advisor awareness and adoption of the Constellation managed program.",
+      "input": "Legacy London Life Constellation program materials + new Canada Life corporate identity",
+      "action": "Documented three named objectives under an \"Objective\" section of the case study",
+      "output": "A written, three-part objective/brief statement guiding the rest of the project",
+      "professional_rule": null,
+      "evidence_ids": ["EV01", "EV02"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_02_client_persona_research",
+      "step_name": "Develop client personas",
+      "step_description": "Five distinct client personas were developed: small-business owners, young same-sex couples, middle-aged families, young adventurous couples, and single high-net-worth individuals, under a \"Client marketing materials\" section. A secondary/target audience was also defined quantitatively: mass-affluent to affluent clients with a minimum of $25,000 to invest per household, ages 25-50.",
+      "input": "Objective #2 (advisor/client resonance)",
+      "action": "Researched and documented 5 client personas plus a quantified secondary audience definition",
+      "output": "Five named client personas with associated photography/paired content, used as a basis for subsequent creative materials",
+      "professional_rule": null,
+      "evidence_ids": ["EV03", "EV04"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_03_advisor_persona_research",
+      "step_name": "Develop advisor personas",
+      "step_description": "Three advisor personas were developed under an \"Advisor marketing materials\" section: newer advisors (under 4 years), tenured advisors (10+ years), and newer advisors serving Asian-market clients, each paired with dedicated photography/content.",
+      "input": "Objective #2 (advisor/client resonance)",
+      "action": "Researched and documented 3 advisor personas",
+      "output": "Three named advisor personas used as a basis for advisor-facing materials",
+      "professional_rule": null,
+      "evidence_ids": ["EV05"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_04_creative_device",
+      "step_name": "Create distinguishing visual device (keyline square)",
+      "step_description": "A \"keyline square over photography\" was created as a distinctive design element used exclusively on Constellation materials. Per the case study's own text, the keyline \"draws attention to our client and advisor personas and only appears over photography on Constellation materials,\" distinguishing Constellation collateral from other Canada Life collateral. Separately, the page's \"Challenges\" section names \"differentiating Constellation through design\" as one of three key challenges faced on the project, providing contextual (though not explicitly stated as directly causal) support for why a distinguishing device was needed.",
+      "input": "Client and advisor personas (steps 2-3); need to visually distinguish Constellation from other Canada Life collateral",
+      "action": "Designed and applied a keyline-square treatment over persona photography",
+      "output": "A repeatable visual device applied across Constellation materials",
+      "professional_rule": "A sub-brand operating inside a larger corporate identity system needs its own consistent, minimal distinguishing device (rather than a full separate identity) to remain recognizable as distinct collateral while staying within the parent brand system.",
+      "evidence_ids": ["EV06", "EV07"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "MEDIUM"
+    },
+    {
+      "step_id": "step_05_localization",
+      "step_name": "Localize personas and materials for Mandarin/Cantonese markets",
+      "step_description": "Under a \"Mandarin and Cantonese adaptations\" section, client and advisor personas were explicitly described as customized/modified for better alignment with Chinese-market segments (in addition to English/French as base languages).",
+      "input": "Base client and advisor personas (steps 2-3); target Mandarin/Cantonese-speaking advisor and client segments",
+      "action": "Adapted/modified persona representation and materials specifically for Mandarin and Cantonese market segments, rather than direct translation of the English/French materials",
+      "output": "Mandarin- and Cantonese-adapted persona materials, distinct from a straight translation of the base set",
+      "professional_rule": "Localization for a target-language market segment requires adapting persona representation to that segment (not merely translating existing base-language creative), when the underlying audience's cultural/demographic makeup differs from the base-market audience.",
+      "evidence_ids": ["EV08"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_06_applications_production",
+      "step_name": "Produce multi-format applications",
+      "step_description": "Materials were produced across multiple formats: an advisor brochure (\"about how Constellation can help them find balance in their busy world\"), client kits (\"the primary client marketing materials produced\"), die-cut brochures, large-format printed pieces, and one-pagers/posters.",
+      "input": "Personas (steps 2-3), keyline square device (step 4), localized variants (step 5)",
+      "action": "Produced advisor brochure, client enrollment kits, die-cut brochures, large-format prints, and posters/one-pagers applying the persona photography and keyline device",
+      "output": "A multi-format, multi-language set of physical and print marketing/enrollment materials",
+      "professional_rule": null,
+      "evidence_ids": ["EV09", "EV10", "EV11"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_07_vendor_coordination",
+      "step_name": "Coordinate digital tool updates with external vendor",
+      "step_description": "The case study's \"Challenges\" section states: \"the digital Constellation tool is developed and updated by an external vendor. Coordinating the design and content updates with an external party presented another challenge.\" This required the design/rebrand work to be coordinated through a third-party vendor for the digital-tool surface, separate from print/collateral production which was produced directly.",
+      "input": "Rebrand design system (steps 1-4); pre-existing externally-hosted digital Constellation tool",
+      "action": "Coordinated design and content updates for the digital tool with the external vendor maintaining that platform",
+      "output": "Digital tool reflecting the rebranded Constellation identity",
+      "professional_rule": "When a deliverable surface (e.g. a digital tool) is built/maintained by a third-party vendor outside the design team's direct control, rebrand rollout requires an explicit coordination step with that vendor, distinct from and in addition to producing owned print/collateral.",
+      "evidence_ids": ["EV12"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    },
+    {
+      "step_id": "step_08_launch",
+      "step_name": "Launch campaign",
+      "step_description": "The rebranded Constellation program and materials launched on January 6, 2020, with materials produced in English and French as base languages, plus some materials in Mandarin and Cantonese.",
+      "input": "Completed applications (step 6) and vendor-coordinated digital tool (step 7)",
+      "action": "Rolled out the rebranded materials and digital tool on a fixed launch date across the defined language set",
+      "output": "Live, launched Constellation rebrand across advisor/client-facing print, digital, and enrollment materials",
+      "professional_rule": null,
+      "evidence_ids": ["EV13"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "HIGH"
+    }
+  ],
+  "final_outputs": [
+    "Rebranded Constellation Managed Portfolios identity aligned to the new Canada Life corporate brand",
+    "A keyline-square visual device used exclusively on Constellation materials to distinguish them from other Canada Life collateral",
+    "Five client personas and three advisor personas, each with dedicated photography/creative treatment",
+    "Multi-format collateral: advisor brochure, client enrollment kits, die-cut brochures, large-format prints, posters/one-pagers",
+    "Mandarin- and Cantonese-adapted persona materials in addition to English/French base materials",
+    "An updated externally-hosted digital Constellation tool, coordinated with a third-party vendor",
+    "Campaign launched January 6, 2020"
+  ],
+  "professional_constraints": [
+    "Sub-brand must remain visually distinguishable from parent corporate brand collateral while staying within the parent identity system (addressed via the keyline-square device; explicitly named as one of the project's three core 'Challenges').",
+    "Multilingual/multi-market localization requirement: base materials in English and French, with additional Mandarin and Cantonese versions; personas themselves (not just copy) were adapted for the Chinese-market segments, not merely translated.",
+    "Dependency on an external, third-party-maintained digital tool vendor for the digital surface of the rebrand, requiring explicit design/content coordination outside the core creative team's direct control (named as a core project 'Challenge').",
+    "Fixed hard launch date (January 6, 2020) that all production/localization/vendor-coordination work had to be completed against; page's 'Challenges' section names meeting firm launch deadlines as one of the three core project challenges (this specific 'deadline pressure' framing is corroborated by only one of the four fetch passes and is therefore treated as PARTIALLY_SUPPORTED context rather than a confirmed formal step — see CASE_SUMMARY.md)."
+  ],
+  "production_or_delivery_requirements": [
+    "Materials required production in at least 4 language variants (English, French, Mandarin, Cantonese), not all deliverables produced in all 4 (only 'some printed materials' extended to Mandarin/Cantonese per source text).",
+    "Digital-tool deliverable required coordination with an external vendor rather than direct production by the design team.",
+    "Deliverables spanned both print (die-cut brochures, large-format prints, posters/one-pagers, brochures, kits) and digital (tool screens) formats."
+  ],
+  "source_limitations": [
+    "The source page is organized by topic section (Launch, Languages, Target audiences, Objective, Client marketing materials, Challenges, Advisor marketing materials, Mandarin and Cantonese adaptations, Success and results, Credits) rather than as an explicitly labeled chronological/numbered process (no 'Step 1 / Phase 1' style headers were found across 4 independent fetch passes). The step sequence in this file is a logical reconstruction based on stated content dependencies (e.g., personas explicitly described as serving the stated objectives; localized personas explicitly described as adaptations of the base personas; the keyline square explicitly described as applied over persona photography), not a source-declared chronological order. Confidence in exact step ORDER (as opposed to step existence/content) should be treated as MEDIUM, not HIGH.",
+    "No sketches, draft/rejected concepts, or explicit before/after imagery were found or independently verifiable via WebFetch (text-only extraction); this is a text-and-final-artifact case study, not a documented iteration trail.",
+    "Specific internal financial/adoption figures (total net sales, year-over-year growth, advisor adoption count) and the client testimonial are self-reported on an individual's portfolio page and were not independently cross-verified against a second, external (e.g. Canada Life corporate) source. They are therefore excluded from this file's confirmed workflow_steps/final_outputs and are documented only as PARTIALLY_SUPPORTED context in CASE_SUMMARY.md.",
+    "WebFetch renders Behance's JS-heavy page as converted markdown/text; visual assets (photography, actual keyline-square imagery, persona photography) were not independently inspected by this agent — only the page's textual descriptions of them."
+  ]
+}

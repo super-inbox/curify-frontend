@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspiration Source Pilot — Offline Gallery</title>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --surface: #ffffff;
+    --surface-alt: #f0f0f3;
+    --border: #dcdce2;
+    --text: #1b1b1f;
+    --text-muted: #5a5a63;
+    --text-faint: #86868f;
+    --accent: #3355dd;
+    --accent-ink: #ffffff;
+    --grade-a: #1f8a4c;
+    --grade-a-bg: #e6f5ec;
+    --grade-b: #9a6a00;
+    --grade-b-bg: #fbf1dc;
+    --grade-c: #b3261e;
+    --grade-c-bg: #fbe6e4;
+    --chip-bg: #eceef7;
+    --chip-text: #2f3a66;
+    --pending-bg: #fdf0d6;
+    --pending-text: #7a5300;
+    --shadow: 0 1px 2px rgba(20,20,30,0.06), 0 4px 16px rgba(20,20,30,0.06);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --surface-alt: #26262e;
+      --border: #34343e;
+      --text: #eeeef2;
+      --text-muted: #b0b0ba;
+      --text-faint: #82828c;
+      --accent: #7d93ff;
+      --accent-ink: #14142080;
+      --grade-a: #59d68a;
+      --grade-a-bg: #123522;
+      --grade-b: #e0b34d;
+      --grade-b-bg: #3a2c0e;
+      --grade-c: #f0796f;
+      --grade-c-bg: #3a1512;
+      --chip-bg: #2a2f45;
+      --chip-text: #c3cbf7;
+      --pending-bg: #3a2c0e;
+      --pending-text: #e6bd63;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16161a;
+    --surface: #1e1e24;
+    --surface-alt: #26262e;
+    --border: #34343e;
+    --text: #eeeef2;
+    --text-muted: #b0b0ba;
+    --text-faint: #82828c;
+    --accent: #7d93ff;
+    --accent-ink: #14142080;
+    --grade-a: #59d68a;
+    --grade-a-bg: #123522;
+    --grade-b: #e0b34d;
+    --grade-b-bg: #3a2c0e;
+    --grade-c: #f0796f;
+    --grade-c-bg: #3a1512;
+    --chip-bg: #2a2f45;
+    --chip-text: #c3cbf7;
+    --pending-bg: #3a2c0e;
+    --pending-text: #e6bd63;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.35);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.45;
+  }
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 28px 24px 64px; }
+  header.page-head h1 { font-size: 1.55rem; margin: 0 0 4px; }
+  header.page-head p.sub { color: var(--text-muted); margin: 0 0 20px; font-size: 0.92rem; }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    box-shadow: var(--shadow);
+  }
+  .stat-card .stat-value { font-size: 1.35rem; font-weight: 650; }
+  .stat-card .stat-label { color: var(--text-muted); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 2px; }
+  .stat-card .stat-detail { color: var(--text-faint); font-size: 0.72rem; margin-top: 4px; }
+
+  .controls {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+  }
+  .field { display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
+  .field label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
+  .field select, .field input[type="search"] {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 8px;
+    padding: 7px 9px;
+    font-size: 0.86rem;
+    min-width: 150px;
+  }
+  .field input[type="search"] { min-width: 220px; }
+  .quality-toggle { display: flex; gap: 6px; }
+  .quality-toggle button {
+    border: 1px solid var(--border);
+    background: var(--surface-alt);
+    color: var(--text);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .quality-toggle button[aria-pressed="true"][data-grade="A"] { background: var(--grade-a-bg); color: var(--grade-a); border-color: var(--grade-a); }
+  .quality-toggle button[aria-pressed="true"][data-grade="B"] { background: var(--grade-b-bg); color: var(--grade-b); border-color: var(--grade-b); }
+  .quality-toggle button[aria-pressed="true"][data-grade="C"] { background: var(--grade-c-bg); color: var(--grade-c); border-color: var(--grade-c); }
+  .reset-btn {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 0.82rem;
+    cursor: pointer;
+  }
+  .reset-btn:hover { color: var(--text); border-color: var(--text-faint); }
+
+  .result-count { color: var(--text-muted); font-size: 0.84rem; margin: 0 0 14px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+  }
+  .thumb-wrap {
+    aspect-ratio: 4 / 3;
+    background: var(--surface-alt);
+    overflow: hidden;
+    position: relative;
+  }
+  .thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb-fallback {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-faint); font-size: 0.78rem; text-align: center; padding: 10px;
+  }
+  .badge-row {
+    position: absolute; top: 8px; left: 8px; right: 8px;
+    display: flex; justify-content: space-between; gap: 6px; pointer-events: none;
+  }
+  .grade-badge {
+    font-weight: 700; font-size: 0.74rem; padding: 3px 9px; border-radius: 999px;
+    box-shadow: var(--shadow);
+  }
+  .grade-badge.grade-A { background: var(--grade-a-bg); color: var(--grade-a); }
+  .grade-badge.grade-B { background: var(--grade-b-bg); color: var(--grade-b); }
+  .grade-badge.grade-C { background: var(--grade-c-bg); color: var(--grade-c); }
+  .review-badge {
+    font-weight: 600; font-size: 0.68rem; padding: 3px 9px; border-radius: 999px;
+    background: var(--pending-bg); color: var(--pending-text);
+    box-shadow: var(--shadow);
+  }
+
+  .card-body { padding: 14px 15px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .card-title { font-size: 0.98rem; font-weight: 650; margin: 0; }
+  .meta-line { font-size: 0.78rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 4px 8px; }
+  .meta-line .domain-chip {
+    background: var(--chip-bg); color: var(--chip-text); border-radius: 6px; padding: 1px 7px; font-weight: 600;
+  }
+  .creator-line { font-size: 0.82rem; color: var(--text); }
+  .creator-line .label { color: var(--text-faint); }
+  .source-line { font-size: 0.78rem; color: var(--text-muted); }
+  .content-understanding { font-size: 0.82rem; color: var(--text); }
+  .tags-row { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag-chip { background: var(--chip-bg); color: var(--chip-text); font-size: 0.7rem; padding: 2px 8px; border-radius: 999px; }
+  .expansion-note { font-size: 0.74rem; color: var(--text-faint); border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 2px; }
+  .discovered-via { font-size: 0.74rem; color: var(--text-faint); }
+  .card-footer { margin-top: auto; padding-top: 8px; }
+  .open-source-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent); color: var(--accent-ink);
+    text-decoration: none; font-size: 0.82rem; font-weight: 650;
+    padding: 8px 12px; border-radius: 9px; width: 100%; justify-content: center;
+  }
+  .open-source-btn:hover { filter: brightness(1.08); }
+  .canonical-note { font-size: 0.7rem; color: var(--text-faint); margin-top: 4px; text-align: center; }
+
+  .empty-state {
+    text-align: center; padding: 60px 20px; color: var(--text-muted);
+  }
+  footer.page-foot { margin-top: 36px; color: var(--text-faint); font-size: 0.74rem; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page-head">
+    <h1>Inspiration Source Pilot — Offline Gallery</h1>
+    <p class="sub">C3 research artifact. 10-query pilot across 5 target domains (merch, ecommerce, education, brand/logo, packaging). Not production UI — for manager/team visual review of the persisted C2 candidate set only. All data loads from local files in this folder; no external network calls are made to render this page.</p>
+  </header>
+
+  <section class="stats-bar" id="stats-bar" aria-label="Summary statistics"></section>
+
+  <section class="controls" aria-label="Filters">
+    <div class="field">
+      <label for="f-domain">Domain</label>
+      <select id="f-domain"><option value="">All domains</option></select>
+    </div>
+    <div class="field">
+      <label for="f-query">Query</label>
+      <select id="f-query"><option value="">All queries</option></select>
+    </div>
+    <div class="field">
+      <label for="f-type">Source type</label>
+      <select id="f-type"><option value="">All source types</option></select>
+    </div>
+    <div class="field">
+      <label for="f-review">Human review status</label>
+      <select id="f-review"><option value="">All statuses</option></select>
+    </div>
+    <div class="field">
+      <label>Quality</label>
+      <div class="quality-toggle" id="quality-toggle">
+        <button type="button" data-grade="A" aria-pressed="false">A</button>
+        <button type="button" data-grade="B" aria-pressed="false">B</button>
+        <button type="button" data-grade="C" aria-pressed="false">C</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="f-search">Search (title, creator, tags, content)</label>
+      <input type="search" id="f-search" placeholder="e.g. blind box, mascot, coffee..." />
+    </div>
+    <button type="button" class="reset-btn" id="reset-filters">Reset filters</button>
+  </section>
+
+  <p class="result-count" id="result-count"></p>
+  <section class="grid" id="grid" aria-label="Inspiration candidates"></section>
+  <div class="empty-state" id="empty-state" hidden>No candidates match the current filters.</div>
+
+  <footer class="page-foot">Generated from SOURCE_CANDIDATES.csv / inspirations.jsonl / SOURCE_EXPANSION_RESULTS.csv / SOURCE_QUALITY_REVIEW.csv — Phase C3, 8/8 Curify research task.</footer>
+</div>
+
+<script id="gallery-data" type="application/json">[
+{
+"source_id": "merch_v004_001",
+"query_id": "V004",
+"query": "figure",
+"domain": "merch",
+"subdomain": "figure_generic",
+"title": "MIKO® ART-TOY",
+"thumbnail": "thumbnails/merch_v004_001.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/252973693/MIKO-ART-TOY",
+"canonical_url": "https://www.behance.net/gallery/252973693/MIKO-ART-TOY",
+"source_domain": "behance.net",
+"creator_or_author": "Miguel Guercio (Parma, Italy)",
+"discovered_via": "WebSearch + Behance toy-design curated gallery",
+"source_type": "designer_portfolio_project",
+"tags": [
+"merch",
+"figure",
+"character_design",
+"3d_toy",
+"art_toy",
+"cute_style"
+],
+"content_understanding": "3D-rendered collectible art-toy character design; colorful, cute stylization; single-character focus shown across multiple render angles; built in Blender with Illustrator/Photoshop finishing per stated tools.",
+"automated_quality": "B",
+"source_quality_reason": "Real individual designer's own Behance publication with credited tools and consistent professional presentation, but a single-character project with moderate engagement and no visible production/process documentation beyond final renders.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 5/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: SUPPORTED; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "merch_v004_002",
+"query_id": "V004",
+"query": "figure",
+"domain": "merch",
+"subdomain": "figure_generic",
+"title": "Vinyl Figures: Logo + Full Collection",
+"thumbnail": "thumbnails/merch_v004_002.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/250994817/Vinyl-Figures-Logo-Full-Collection",
+"canonical_url": "https://www.behance.net/gallery/250994817/Vinyl-Figures-Logo-Full-Collection",
+"source_domain": "behance.net",
+"creator_or_author": "Irina Bolgova (Russian Federation) for brand BLOBBO",
+"discovered_via": "WebSearch + Behance toy-design curated gallery",
+"source_type": "designer_portfolio_project",
+"tags": [
+"merch",
+"figure",
+"character_design",
+"vinyl_figure",
+"logo_brand_identity",
+"collection_set"
+],
+"content_understanding": "Combined logo-design-plus-toy-collection case study for a vinyl collectible figure brand (BLOBBO); ~15+ images show consistent branding/visual language applied across a multi-figure lineup.",
+"automated_quality": "B",
+"source_quality_reason": "Real named designer's own case study combining brand identity and a full figure collection, professionally presented; single freelance project, moderate engagement, no external site beyond Behance/Telegram.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "merch_v004_003",
+"query_id": "V004",
+"query": "figure",
+"domain": "merch",
+"subdomain": "figure_generic",
+"title": "Octopus Starfy Dessert Blind Box",
+"thumbnail": "thumbnails/merch_v004_003.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/247684035/Octopus-Starfy-Dessert-Blind-Box",
+"canonical_url": "https://www.behance.net/gallery/247684035/Octopus-Starfy-Dessert-Blind-Box",
+"source_domain": "behance.net",
+"creator_or_author": "RACCOON FACTORY (Seoul, Korea) — established character-brand studio, active since 2017",
+"discovered_via": "WebSearch + Behance toy-design curated gallery",
+"source_type": "studio_portfolio_project",
+"tags": [
+"merch",
+"figure",
+"character_design",
+"blind_box",
+"dessert_theme",
+"product_photography"
+],
+"content_understanding": "Blind-box collectible figure collection (dessert-themed octopus character 'Starfy'); page shows design sketches and prototype-development images alongside final product photography against neutral backgrounds, illustrating concept-to-production stages.",
+"automated_quality": "A",
+"source_quality_reason": "Established, multi-year active character-brand studio with a consistent published IP (Starfy) across many projects; this page shows sketch/prototype/product-photo stages (not just final output) plus a real commercial sales link and social presence.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 5/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: SUPPORTED; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "merch_v004_004",
+"query_id": "V004",
+"query": "figure",
+"domain": "merch",
+"subdomain": "figure_generic",
+"title": "TAG Blind Box Series 01 \"Thai Culture\"",
+"thumbnail": "thumbnails/merch_v004_004.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/246538595/TAG-Blind-Box-Series-01-Thai-Culture",
+"canonical_url": "https://www.behance.net/gallery/246538595/TAG-Blind-Box-Series-01-Thai-Culture",
+"source_domain": "behance.net",
+"creator_or_author": "Tripuck Supawattana (Bangkok, Thailand; Behance Pro status)",
+"discovered_via": "WebSearch + Behance toy-design curated gallery",
+"source_type": "designer_portfolio_project",
+"tags": [
+"merch",
+"figure",
+"character_design",
+"blind_box",
+"soft_vinyl",
+"cultural_theme"
+],
+"content_understanding": "Soft-vinyl blind-box collectible series produced as a multi-artist collaboration on a Thai-culture theme; page shows multiple designer character figures plus collectible cards and design variations.",
+"automated_quality": "B",
+"source_quality_reason": "Pro-status designer with a distinctive cultural-collaboration angle and dedicated Instagram channel; strong specialist inspiration value, but single collaborative series with no process/production imagery shown.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "merch_v004_005",
+"query_id": "V004",
+"query": "figure",
+"domain": "merch",
+"subdomain": "figure_generic",
+"title": "BATON OFFICE | BLIND BOX COLLECTION",
+"thumbnail": "thumbnails/merch_v004_005.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/248907745/BATON-OFFICE-BLIND-BOX-COLLECTION",
+"canonical_url": "https://www.behance.net/gallery/248907745/BATON-OFFICE-BLIND-BOX-COLLECTION",
+"source_domain": "behance.net",
+"creator_or_author": "One Republic studio team (Ho Chi Minh City, Vietnam) — credited members linhoabch, KaydenMonday, momoneverknow, onethink",
+"discovered_via": "WebSearch + Behance toy-design curated gallery",
+"source_type": "studio_portfolio_project",
+"tags": [
+"merch",
+"figure",
+"character_design",
+"blind_box",
+"packaging",
+"retail_display"
+],
+"content_understanding": "Office-life-themed blind-box character collection (3 animal protagonists) spanning figure design, primary blind-box packaging, secondary retail display, and social assets; minimalist pastel 3D style built in Blender.",
+"automated_quality": "A",
+"source_quality_reason": "Named multi-person studio team with individually linked portfolios, professionally presented end-to-end deliverable set (figures + packaging + retail display + social), directly useful as a merch-to-packaging cross-domain reference.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "ecom_v174_001",
+"query_id": "V174",
+"query": "product photo",
+"domain": "ecommerce",
+"subdomain": "product_photography",
+"title": "Amazon Listing Images | Luxury Skincare",
+"thumbnail": "thumbnails/ecom_v174_001.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/247950949/Amazon-Listing-Images-Luxury-Skincare",
+"canonical_url": "https://www.behance.net/gallery/247950949/Amazon-Listing-Images-Luxury-Skincare",
+"source_domain": "behance.net",
+"creator_or_author": "Abdullah Jahangir (Sialkot, Pakistan; Behance Pro)",
+"discovered_via": "WebSearch + Behance project-search results",
+"source_type": "designer_portfolio_project",
+"tags": [
+"ecommerce",
+"product_photography",
+"listing_design",
+"skincare",
+"amazon_a_plus",
+"lifestyle_photography"
+],
+"content_understanding": "Full Amazon-listing visual system for a micellar-water cleanser: product photography, lifestyle imagery, ingredient infographics, and how-to panels in a stated royal-navy/Playfair Display + Montserrat identity aimed at conveying clean luxury and clinical trust.",
+"automated_quality": "A",
+"source_quality_reason": "Named Pro designer with an active multi-project portfolio (6+ similar Amazon-listing case studies confirmed on profile); this page shows a complete, stated multi-component listing system (benefits/ingredients/usage/certification) with explicit design rationale, not just a single hero shot.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 5/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: SUPPORTED; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "ecom_v174_002",
+"query_id": "V174",
+"query": "product photo",
+"domain": "ecommerce",
+"subdomain": "product_photography",
+"title": "Meno8 Menopause Supplement Product Photography",
+"thumbnail": "thumbnails/ecom_v174_002.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/182137947/Meno8-Menopause-Supplement-Product-Photography",
+"canonical_url": "https://www.behance.net/gallery/182137947/Meno8-Menopause-Supplement-Product-Photography",
+"source_domain": "behance.net",
+"creator_or_author": "Ivy Stewart / Bulletfish Creative (United Kingdom)",
+"discovered_via": "WebSearch + Behance project-search results",
+"source_type": "studio_portfolio_project",
+"tags": [
+"ecommerce",
+"product_photography",
+"supplement",
+"studio_lighting",
+"neutral_background"
+],
+"content_understanding": "Styled and edited studio product photography for a supplement brand; product packaging shot against neutral backgrounds with professional lighting typical of e-commerce listing photography.",
+"automated_quality": "B",
+"source_quality_reason": "Named UK studio (Bulletfish Creative) with a clear commercial specialty in supplement/health product photography; clean, competent, conventional studio work, single project without process documentation.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "ecom_v174_003",
+"query_id": "V174",
+"query": "product photo",
+"domain": "ecommerce",
+"subdomain": "product_photography",
+"title": "High-End E-commerce Retouching: Footwear",
+"thumbnail": "thumbnails/ecom_v174_003.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/247830083/High-End-E-commerce-Retouching-Footwear",
+"canonical_url": "https://www.behance.net/gallery/247830083/High-End-E-commerce-Retouching-Footwear",
+"source_domain": "behance.net",
+"creator_or_author": "Marina Shipilova (Almaty, Kazakhstan)",
+"discovered_via": "WebSearch + Behance project-search results",
+"source_type": "designer_portfolio_project",
+"tags": [
+"ecommerce",
+"product_photography",
+"retouching",
+"footwear",
+"before_after",
+"process_documentation"
+],
+"content_understanding": "Footwear product-retouching case study showing before/after comparisons and animated (GIF) sequences of the retouching transformation, aimed at listing clarity/consistency; commercial product photography with visible editing-process documentation.",
+"automated_quality": "A",
+"source_quality_reason": "Named designer with a well-engaged project (231 appreciates); distinguished from typical single-image portfolios by showing explicit before/after and animated process documentation, giving genuine process visibility rather than only a final result.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 4/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: PARTIAL; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "ecom_v174_004",
+"query_id": "V174",
+"query": "product photo",
+"domain": "ecommerce",
+"subdomain": "product_photography",
+"title": "Luxury Jewelry Ring Still Life Photography & Retouching",
+"thumbnail": "thumbnails/ecom_v174_004.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/234853381/Luxury-Jewelry-Ring-Still-Life-Photography-Retouching",
+"canonical_url": "https://www.behance.net/gallery/234853381/Luxury-Jewelry-Ring-Still-Life-Photography-Retouching",
+"source_domain": "behance.net",
+"creator_or_author": "Muhammad Hasan and ProPixFix (Rangpur, Bangladesh)",
+"discovered_via": "WebSearch + Behance project-search results",
+"source_type": "studio_portfolio_project",
+"tags": [
+"ecommerce",
+"product_photography",
+"jewelry",
+"still_life",
+"studio_lighting",
+"retouching"
+],
+"content_understanding": "Studio still-life photography of gold/diamond rings with strategic lighting to emphasize sparkle and texture on neutral backgrounds, combined with detail-level post-processing retouching for commercial use.",
+"automated_quality": "B",
+"source_quality_reason": "Two named collaborating creators with a clear jewelry-photography specialty; competent studio still-life work with stated retouching detail, but a single project with no broader process/system shown.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "ecom_v174_005",
+"query_id": "V174",
+"query": "product photo",
+"domain": "ecommerce",
+"subdomain": "product_photography",
+"title": "AMAZON A+ Content & Listing Images",
+"thumbnail": "thumbnails/ecom_v174_005.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/190268013/AMAZON-A-Content-Listing-Images",
+"canonical_url": "https://www.behance.net/gallery/190268013/AMAZON-A-Content-Listing-Images",
+"source_domain": "behance.net",
+"creator_or_author": "Shakil Ahmed (Bangladesh; Behance Pro)",
+"discovered_via": "WebSearch + Behance project-search results",
+"source_type": "freelance_service_portfolio",
+"tags": [
+"ecommerce",
+"product_photography",
+"listing_design",
+"amazon_a_plus",
+"freelance_service"
+],
+"content_understanding": "Generic Amazon EBC/A+ content and listing-image layouts presented as a freelance-service portfolio; standard marketplace-style product presentation formatting without a distinctive visual identity.",
+"automated_quality": "C",
+"source_quality_reason": "Freelance-solicitation-style page (direct email/WhatsApp contact) with a generic, unverified conversion-rate marketing claim ('300% better conversion') and conventional layout; lower distinctive craft/provenance value than the other 4 candidates for this query.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "DO_NOT_SCALE"
+},
+{
+"source_id": "merch_v014_001",
+"query_id": "V014",
+"query": "sticker",
+"domain": "merch",
+"subdomain": "sticker",
+"title": "UNHCR character Stickers",
+"thumbnail": "thumbnails/merch_v014_001.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/251388765/UNHCR-character-Stickers",
+"canonical_url": "https://www.behance.net/gallery/251388765/UNHCR-character-Stickers",
+"source_domain": "behance.net",
+"creator_or_author": "Jungmin Studio (Rotterdam, Netherlands)",
+"discovered_via": "WebSearch + Behance project-search results (sticker sheet)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"merch",
+"sticker",
+"character_design",
+"emoji",
+"animated_gif",
+"institutional_client"
+],
+"content_understanding": "Animated (GIF-format) emoji-style character sticker set created for UNHCR (United Nations High Commissioner for Refugees); vibrant, friendly character illustrations designed for humanitarian-organization messaging use.",
+"automated_quality": "A",
+"source_quality_reason": "Real institutional client (UNHCR) with creator-stated in-person collaboration with the client team; named studio with an active Instagram presence; a genuine professional commission rather than a speculative personal project.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 5/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: SUPPORTED; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "merch_v014_002",
+"query_id": "V014",
+"query": "sticker",
+"domain": "merch",
+"subdomain": "sticker",
+"title": "'Sweetless' Sticker Sheet",
+"thumbnail": "thumbnails/merch_v014_002.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/248254715/Sweetless-Sticker-Sheet",
+"canonical_url": "https://www.behance.net/gallery/248254715/Sweetless-Sticker-Sheet",
+"source_domain": "behance.net",
+"creator_or_author": "Samantha Gutierrez (Lima, Peru)",
+"discovered_via": "WebSearch + Behance project-search results (sticker sheet)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"merch",
+"sticker",
+"character_design",
+"digital_illustration",
+"animated_gif"
+],
+"content_understanding": "Sticker sheet combining animated GIFs and static PNGs with expressive character illustrations in a cohesive digital-art style, built in Photoshop.",
+"automated_quality": "B",
+"source_quality_reason": "Named independent illustrator with an active Instagram portfolio presence beyond Behance; competent, cohesive single sticker-sheet project with moderate engagement.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "merch_v014_003",
+"query_id": "V014",
+"query": "sticker",
+"domain": "merch",
+"subdomain": "sticker",
+"title": "It's giving Anye — Sticker Pack",
+"thumbnail": "thumbnails/merch_v014_003.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/250183369/Its-giving-Anye-Sticker-Pack",
+"canonical_url": "https://www.behance.net/gallery/250183369/Its-giving-Anye-Sticker-Pack",
+"source_domain": "behance.net",
+"creator_or_author": "Angie Quintero / ANYE (Bogota, Colombia)",
+"discovered_via": "WebSearch + Behance project-search results (sticker sheet)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"merch",
+"sticker",
+"character_design",
+"digital_illustration",
+"special_finish"
+],
+"content_understanding": "Personal-brand sticker sheet with eclectic, self-referential character illustration; creator states the final designs were produced in glitter and holographic-starry finishes, marking a stylistic evolution toward more volume/texture/depth.",
+"automated_quality": "B",
+"source_quality_reason": "Named independent illustrator documenting a personal stylistic evolution with a distinctive voice; single project, Behance-only portfolio presence, stated (not verified) special-finish printing claim.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "merch_v014_004",
+"query_id": "V014",
+"query": "sticker",
+"domain": "merch",
+"subdomain": "sticker",
+"title": "Personal sticker pack for messengers",
+"thumbnail": "thumbnails/merch_v014_004.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/246494945/Personal-sticker-pack-for-messengers",
+"canonical_url": "https://www.behance.net/gallery/246494945/Personal-sticker-pack-for-messengers",
+"source_domain": "behance.net",
+"creator_or_author": "Nina Shipkova (Moscow, Russian Federation)",
+"discovered_via": "WebSearch + Behance project-search results (sticker sheet)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"merch",
+"sticker",
+"character_design",
+"messenger_app",
+"animated_gif"
+],
+"content_understanding": "Cartoon-style character sticker set designed to convey emotion/expression inside messenger apps; digital illustration with animated GIF variations across multiple poses/expressions.",
+"automated_quality": "B",
+"source_quality_reason": "Named independent illustrator with a real, live deployment channel (an active Telegram sticker pack linked directly from the project), showing the work in actual end-use rather than only as a portfolio render.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "merch_v014_005",
+"query_id": "V014",
+"query": "sticker",
+"domain": "merch",
+"subdomain": "sticker",
+"title": "Sexy Veggies sticker sheet",
+"thumbnail": "thumbnails/merch_v014_005.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/190367193/Sexy-Veggies-sticker-sheet",
+"canonical_url": "https://www.behance.net/gallery/190367193/Sexy-Veggies-sticker-sheet",
+"source_domain": "behance.net",
+"creator_or_author": "Carly Berry (Tallahassee, FL, USA)",
+"discovered_via": "WebSearch + Behance project-search results (sticker sheet)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"merch",
+"sticker",
+"character_design",
+"food_theme",
+"vintage_style",
+"illustration"
+],
+"content_understanding": "Anthropomorphized-vegetable character sticker sheet in a vintage-inspired cartoon style, built in Illustrator; high engagement (978 appreciations, 7.7K views) and sold via the creator's own commerce site.",
+"automated_quality": "A",
+"source_quality_reason": "High-engagement, distinctively-styled independent creator with a verified professional hub beyond Behance (carlyberry.design / 'it's not that weird' brand, wholesale-via-Faire, Patreon) confirming this is an established working illustrator, not a one-off portfolio piece.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 4/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: SUPPORTED; L4 section: PARTIAL; L5 domain: SUPPORTED",
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "ecom_v216_001",
+"query_id": "V216",
+"query": "influencer post",
+"domain": "ecommerce",
+"subdomain": "social_commerce_content",
+"title": "AI Generated UGC Style Ad | Novara Skincare",
+"thumbnail": "thumbnails/ecom_v216_001.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/247113277/AI-Generated-UGC-Style-Ad-Novara-Skincare",
+"canonical_url": "https://www.behance.net/gallery/247113277/AI-Generated-UGC-Style-Ad-Novara-Skincare",
+"source_domain": "behance.net",
+"creator_or_author": "Nancy Verma (New Delhi, India)",
+"discovered_via": "WebSearch + Behance project-search results (ugc style ad)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"ecommerce",
+"social_commerce_content",
+"ugc_style",
+"skincare",
+"ai_generated",
+"social_media_post"
+],
+"content_understanding": "Static set of six AI-generated social-media ad compositions styled to look like organic user-generated content for a skincare brand (Novara), combining AI-assisted imagery with skincare branding elements across multiple mockups.",
+"automated_quality": "B",
+"source_quality_reason": "Named designer with a coherent, purpose-built static UGC-style ad set for a specific named brand; single project, Behance-only presence, no independent verification of the brand relationship.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "ecom_v216_002",
+"query_id": "V216",
+"query": "influencer post",
+"domain": "ecommerce",
+"subdomain": "social_commerce_content",
+"title": "从零到一，用对方法让小红书种草笔记的流量自己找上门",
+"thumbnail": "thumbnails/ecom_v216_002.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.designkit.cn/article/xiaohongshuzhongcaobiji-sheji",
+"canonical_url": "https://www.designkit.cn/article/xiaohongshuzhongcaobiji-sheji",
+"source_domain": "designkit.cn",
+"creator_or_author": "Meitu Design Studio (Meitu Inc.)",
+"discovered_via": "WebSearch (station-specific Chinese query on Xiaohongshu content design)",
+"source_type": "vendor_guidance_article",
+"tags": [
+"ecommerce",
+"social_commerce_content",
+"xiaohongshu",
+"template_design",
+"layout_ratio",
+"content_strategy"
+],
+"content_understanding": "Vendor guidance article on designing Xiaohongshu (社交种草) posts: stresses cross-post visual/color/font consistency, category-specific template selection (beauty/fashion/home/food), and concrete layout specs (3:4 cover ratio, 1080x1440px); shows template-gallery examples across styles rather than one single worked project.",
+"automated_quality": "B",
+"source_quality_reason": "Real, identifiable company (Meitu) publishing concrete, checkable design specifications (exact ratio/pixel guidance) for this exact content type; downgraded from A because it is general design-education/template-promotion content, not a single worked case with a specific before/after example.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "NEEDS_HUMAN_REVIEW"
+},
+{
+"source_id": "ecom_v216_003",
+"query_id": "V216",
+"query": "influencer post",
+"domain": "ecommerce",
+"subdomain": "social_commerce_content",
+"title": "Influencer Media Kit",
+"thumbnail": "thumbnails/ecom_v216_003.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/68508883/Influencer-Media-Kit",
+"canonical_url": "https://www.behance.net/gallery/68508883/Influencer-Media-Kit",
+"source_domain": "behance.net",
+"creator_or_author": "Fallon Gerst (Tampa, FL, USA)",
+"discovered_via": "WebSearch + Behance project-search results (influencer media kit)",
+"source_type": "designer_product_portfolio",
+"tags": [
+"ecommerce",
+"social_commerce_content",
+"media_kit",
+"influencer_branding",
+"template_design",
+"typography"
+],
+"content_understanding": "Bundle of 4 Photoshop media-kit template layouts for fashion/lifestyle bloggers and beauty influencers to use when pitching brand collaborations; ~12 page-layout variations shown with bold modern typography and placeholder areas for metrics/imagery.",
+"automated_quality": "B",
+"source_quality_reason": "Named creator with an independently verifiable personal brand beyond Behance (own site fallontravels.com, Creative Market shop selling related digital products) confirming an established working creator, not a one-off listing; product is a template, not a single documented real campaign.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 4/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: SUPPORTED; L4 section: PARTIAL; L5 domain: SUPPORTED",
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "ecom_v216_004",
+"query_id": "V216",
+"query": "influencer post",
+"domain": "ecommerce",
+"subdomain": "social_commerce_content",
+"title": "UGC-Style Ad — Facial Serum | TikTok & Facebook",
+"thumbnail": "thumbnails/ecom_v216_004.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/248753981/UGC-Style-Ad-Facial-Serum-TikTok-Facebook",
+"canonical_url": "https://www.behance.net/gallery/248753981/UGC-Style-Ad-Facial-Serum-TikTok-Facebook",
+"source_domain": "behance.net",
+"creator_or_author": "gabriel queiroz (Sao Paulo, Brazil)",
+"discovered_via": "WebSearch + Behance project-search results (ugc style ad)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"ecommerce",
+"social_commerce_content",
+"ugc_style",
+"video_ad",
+"skincare"
+],
+"content_understanding": "Short-form video advertisement for a facial serum, edited for native TikTok/Facebook feed appearance using animated captions and dynamic cuts; page content does not describe specific static frame composition, palette, or layout in detail.",
+"automated_quality": "C",
+"source_quality_reason": "Genuine named creator and real UGC-style ad format matching the query intent, but page provides minimal extractable visual/compositional detail (only production software is listed) and no static imagery description, limiting content-understanding confidence relative to the other 3 candidates.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "DO_NOT_SCALE"
+},
+{
+"source_id": "edu_v248_001",
+"query_id": "V248",
+"query": "flashcard",
+"domain": "education",
+"subdomain": "flashcard_generic",
+"title": "My First Vehicles Flashcards – 20 Printable 3D Cartoon",
+"thumbnail": "thumbnails/edu_v248_001.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/228273137/My-First-Vehicles-Flashcards-20-Printable-3D-Cartoon",
+"canonical_url": "https://www.behance.net/gallery/228273137/My-First-Vehicles-Flashcards-20-Printable-3D-Cartoon",
+"source_domain": "behance.net",
+"creator_or_author": "Creative Bayte (Agadir, Morocco)",
+"discovered_via": "WebSearch + Behance project-search results (flashcards design)",
+"source_type": "designer_product_portfolio",
+"tags": [
+"education",
+"flashcard",
+"vehicle_theme",
+"3d_cartoon_style",
+"printable",
+"early_learning"
+],
+"content_understanding": "Set of 20 printable flashcards with vibrant 3D cartoon vehicle illustrations (fire truck, school bus, police car, airplane, boat) aimed at ages 2-5; formatted as US-Letter PDFs for home/professional printing.",
+"automated_quality": "B",
+"source_quality_reason": "Named designer/studio with a real commercial sales channel (linked Etsy listing) and a concrete, age-targeted product spec (print format, size); single product line, exact Etsy shop not independently re-verified.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 4/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: PARTIAL; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "edu_v248_002",
+"query_id": "V248",
+"query": "flashcard",
+"domain": "education",
+"subdomain": "flashcard_generic",
+"title": "Animals Flashcard Design",
+"thumbnail": "thumbnails/edu_v248_002.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/225981187/Animals-Flashcard-Design",
+"canonical_url": "https://www.behance.net/gallery/225981187/Animals-Flashcard-Design",
+"source_domain": "behance.net",
+"creator_or_author": "YB Digital Atelier (USA)",
+"discovered_via": "WebSearch + Behance project-search results (flashcards design)",
+"source_type": "designer_product_portfolio",
+"tags": [
+"education",
+"flashcard",
+"animal_theme",
+"cartoon_style",
+"montessori",
+"preschool"
+],
+"content_understanding": "Cartoon animal flashcard set with simplified, child-friendly illustrations against light backgrounds, consistent composition across cards, tagged for preschool/homeschool/Montessori use.",
+"automated_quality": "B",
+"source_quality_reason": "Named studio with a real commercial sales channel (linked Etsy shop); clean, consistent card-to-card visual system suited to the education domain's flashcard sub-intent; single product line.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "edu_v248_003",
+"query_id": "V248",
+"query": "flashcard",
+"domain": "education",
+"subdomain": "flashcard_generic",
+"title": "Kids Alphabet and Number Cartoon Flash Card Design",
+"thumbnail": "thumbnails/edu_v248_003.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/155261851/Kids-Alphabet-and-Number-Cartoon-Flash-Card-Design",
+"canonical_url": "https://www.behance.net/gallery/155261851/Kids-Alphabet-and-Number-Cartoon-Flash-Card-Design",
+"source_domain": "behance.net",
+"creator_or_author": "Anagata Art (Indonesia)",
+"discovered_via": "WebSearch + Behance project-search results (flashcards design)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"education",
+"flashcard",
+"alphabet",
+"numbers",
+"cartoon_style"
+],
+"content_understanding": "Cartoon-style alphabet-letter and number flashcards for children, playful age-appropriate illustration style.",
+"automated_quality": "B",
+"source_quality_reason": "Named independent illustrator with a clear specialty in this exact sub-intent (alphabet/number flashcards); single project, contact via email only, no verified external shop/site.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "edu_v248_004",
+"query_id": "V248",
+"query": "flashcard",
+"domain": "education",
+"subdomain": "flashcard_generic",
+"title": "Color Flashcard Design",
+"thumbnail": "thumbnails/edu_v248_004.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/206490159/Color-Flashcard-Design",
+"canonical_url": "https://www.behance.net/gallery/206490159/Color-Flashcard-Design",
+"source_domain": "behance.net",
+"creator_or_author": "Rakibul Hasan (Dhaka, Bangladesh)",
+"discovered_via": "WebSearch + Behance project-search results (flashcards design)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"education",
+"flashcard",
+"color_recognition",
+"grid_layout"
+],
+"content_understanding": "Color-recognition flashcard set with bright, vibrant hues intended to teach color vocabulary to young learners; multiple card designs presented in a grid layout.",
+"automated_quality": "B",
+"source_quality_reason": "Named independent designer covering a distinct flashcard sub-concept (color recognition, vs. animals/alphabet/vehicles in the other candidates); single project, Behance-only presence.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "brand_v084_001",
+"query_id": "V084",
+"query": "logo",
+"domain": "brand_logo",
+"subdomain": "logo",
+"title": "Uncle Joe's Branding Case Study",
+"thumbnail": "thumbnails/brand_v084_001.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/223081363/Uncle-Joes-Branding-Case-Study",
+"canonical_url": "https://www.behance.net/gallery/223081363/Uncle-Joes-Branding-Case-Study",
+"source_domain": "behance.net",
+"creator_or_author": "Shmart Studio (Istanbul, Turkey)",
+"discovered_via": "WebSearch + Behance project-search results (logo case study)",
+"source_type": "studio_portfolio_project",
+"tags": [
+"brand_logo",
+"logo",
+"emblem",
+"vintage_style",
+"typography",
+"food_branding"
+],
+"content_understanding": "Full visual-identity redesign for a pizzeria brand centered on an engraving-style portrait mark, plus a monogram for small applications and an iconic badge for packaging; bold serif paired with elegant script typography in a vintage, heritage-craftsmanship style.",
+"automated_quality": "A",
+"source_quality_reason": "Pro-level studio with a multi-lockup logo system (portrait mark, monogram, badge) demonstrating real applied logo-system thinking rather than a single static mark, plus an external Linktree confirming an active professional presence beyond Behance.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "brand_v084_002",
+"query_id": "V084",
+"query": "logo",
+"domain": "brand_logo",
+"subdomain": "logo",
+"title": "Goufoo Case study | Agriculture Brand identity 2023",
+"thumbnail": "thumbnails/brand_v084_002.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/165211261/Goufoo-Case-study-Agriculture-Brand-identity-2023",
+"canonical_url": "https://www.behance.net/gallery/165211261/Goufoo-Case-study-Agriculture-Brand-identity-2023",
+"source_domain": "behance.net",
+"creator_or_author": "Rihan Art (Dhaka, Bangladesh)",
+"discovered_via": "WebSearch + Behance project-search results (logo case study)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"brand_logo",
+"logo",
+"agriculture",
+"organic_style",
+"typography",
+"brand_guidelines"
+],
+"content_understanding": "Complete identity system for an agriculture/organic-food brand: modern, nature-inspired logo mark, clean typography, earthy color palette, shown alongside brand-guideline pages and marketing-material applications.",
+"automated_quality": "A",
+"source_quality_reason": "High engagement (39.7K views, 1.5K appreciations, 161 comments) with verified multi-platform social presence (LinkedIn, Instagram, Dribbble, Facebook) confirming an established working designer beyond a single portfolio listing.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "brand_v084_003",
+"query_id": "V084",
+"query": "logo",
+"domain": "brand_logo",
+"subdomain": "logo",
+"title": "Design Monks - UX/UI Agency Brand Identity & Logo Design",
+"thumbnail": "thumbnails/brand_v084_003.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/236620489/Design-Monks-UXUI-Agency-Brand-Identity-Logo-Design",
+"canonical_url": "https://www.behance.net/gallery/236620489/Design-Monks-UXUI-Agency-Brand-Identity-Logo-Design",
+"source_domain": "behance.net",
+"creator_or_author": "Design Monks (agency; Atiqur Rahaman and Abdullah Al Noman, Dhaka, Bangladesh)",
+"discovered_via": "WebSearch + Behance project-search results (logo case study)",
+"source_type": "agency_self_branding_project",
+"tags": [
+"brand_logo",
+"logo",
+"agency_self_brand",
+"minimalism",
+"typography",
+"geometric_mark"
+],
+"content_understanding": "Agency's own self-branding identity system: minimalist geometric logo mark, balanced typography, restrained color palette stated to convey 'calm confidence,' applied across agency website and landing-page materials.",
+"automated_quality": "A",
+"source_quality_reason": "Real, independently verified, fully operational multi-office agency (designmonks.co, 200+ claimed clients, named case studies for named clients, 4.9-star rating) — the strongest independently-confirmed professional presence of any V084 candidate.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 5/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: SUPPORTED; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "brand_v084_004",
+"query_id": "V084",
+"query": "logo",
+"domain": "brand_logo",
+"subdomain": "logo",
+"title": "Zendo | SaaS Productivity Branding Case Study",
+"thumbnail": "thumbnails/brand_v084_004.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/246708321/Zendo-SaaS-Productivity-Branding-Case-Study",
+"canonical_url": "https://www.behance.net/gallery/246708321/Zendo-SaaS-Productivity-Branding-Case-Study",
+"source_domain": "behance.net",
+"creator_or_author": "Habib Munshi (Budapest, Hungary) with HAS Branding Agency (Melbourne, Australia)",
+"discovered_via": "WebSearch + Behance project-search results (logo case study)",
+"source_type": "designer_agency_collab_project",
+"tags": [
+"brand_logo",
+"logo",
+"saas",
+"isotype",
+"visual_identity",
+"task_management"
+],
+"content_understanding": "Brand identity for a fictional/conceptual SaaS task-management platform, including logo, isotype elements, and a structured visual-identity system across multiple project modules/collateral.",
+"automated_quality": "B",
+"source_quality_reason": "Named individual designer in collaboration with a named agency (HAS Branding Agency), decent engagement (635 appreciations, 8.2K views); no external site beyond respective Behance profiles was found in this page.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "brand_v084_005",
+"query_id": "V084",
+"query": "logo",
+"domain": "brand_logo",
+"subdomain": "logo",
+"title": "SkyRuote Logo case study and Stationary Design",
+"thumbnail": "thumbnails/brand_v084_005.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/244591329/SkyRuote-Logo-case-study-and-Stationary-Design",
+"canonical_url": "https://www.behance.net/gallery/244591329/SkyRuote-Logo-case-study-and-Stationary-Design",
+"source_domain": "behance.net",
+"creator_or_author": "Robin Hossen (Dhaka, Bangladesh)",
+"discovered_via": "WebSearch + Behance project-search results (logo case study)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"brand_logo",
+"logo",
+"aviation",
+"stationery",
+"grid_construction",
+"typography"
+],
+"content_understanding": "Aviation-sector brand identity ('speed, direction, reliability') including a dynamic logo symbol, stated grid/construction structure, and stationery-application mockups demonstrating brand consistency across formats.",
+"automated_quality": "B",
+"source_quality_reason": "Named designer with independently listed LinkedIn presence; shows logo construction/grid documentation (some process visibility) plus a real secondary application (stationery), directly bridging this query with the V094 business-card sub-intent.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "edu_v260_001",
+"query_id": "V260",
+"query": "certificate",
+"domain": "education",
+"subdomain": "certificate_generic",
+"title": "Certificate & Formal Document Design 2024/2025",
+"thumbnail": "thumbnails/edu_v260_001.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/239433419/Certificate-Formal-Document-Design-20242025",
+"canonical_url": "https://www.behance.net/gallery/239433419/Certificate-Formal-Document-Design-20242025",
+"source_domain": "behance.net",
+"creator_or_author": "Yakoub Matmour (Annaba, Algeria)",
+"discovered_via": "WebSearch + Behance project-search results (certificate design)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"education",
+"certificate",
+"formal_document",
+"typography",
+"minimal_layout"
+],
+"content_understanding": "Collection of certificate/formal-document templates for events and academic purposes, described by the creator as emphasizing clean layouts, balanced typography, and clear hierarchy for both digital and print use.",
+"automated_quality": "B",
+"source_quality_reason": "Named independent designer with a coherent, recently-published (2024/2025) multi-certificate portfolio piece; single Behance-only presence, page does not specify exact achievement type (completion/graduation/award) per certificate.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "edu_v260_002",
+"query_id": "V260",
+"query": "certificate",
+"domain": "education",
+"subdomain": "certificate_generic",
+"title": "Certificate Design as a Brand Touchpoint",
+"thumbnail": "thumbnails/edu_v260_002.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/242821429/Certificate-Design-as-a-Brand-Touchpoint",
+"canonical_url": "https://www.behance.net/gallery/242821429/Certificate-Design-as-a-Brand-Touchpoint",
+"source_domain": "behance.net",
+"creator_or_author": "Anastasiia Kotomkina (Ukraine)",
+"discovered_via": "WebSearch + Behance profile listing (thekotomkina)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"education",
+"certificate",
+"course_completion",
+"brand_touchpoint",
+"minimal_design",
+"typography"
+],
+"content_understanding": "Certificate designs framed explicitly as course-completion brand touchpoints intended to build trust and positive recipient sentiment; stated minimalist, refined typography with a 'calm, confident visual language.'",
+"automated_quality": "A",
+"source_quality_reason": "Named designer with a broader active portfolio (6+ branding projects on profile) and a distinctive point of view (certificate-as-brand-touchpoint) rather than a generic template; linked external site could not be independently verified in this session (see expansion notes).",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 4/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: ACCESS_BLOCKED; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "edu_v260_003",
+"query_id": "V260",
+"query": "certificate",
+"domain": "education",
+"subdomain": "certificate_generic",
+"title": "Certificate of Completion (Course Certificate)",
+"thumbnail": "thumbnails/edu_v260_003.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/242784499/Certificate-of-Completion-(Course-Certificate)",
+"canonical_url": "https://www.behance.net/gallery/242784499/Certificate-of-Completion-(Course-Certificate)",
+"source_domain": "behance.net",
+"creator_or_author": "Sehar Raza (Islamabad, Pakistan)",
+"discovered_via": "WebSearch + Behance project-search results (certificate of completion)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"education",
+"certificate",
+"course_completion",
+"achievement",
+"template_design"
+],
+"content_understanding": "Course-completion certificate template demonstrating achievement-recognition design conventions; built in Illustrator/Photoshop.",
+"automated_quality": "B",
+"source_quality_reason": "Named independent designer with moderate engagement (1,616 views); single generic template project without a named real course/institution attached.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "edu_v260_004",
+"query_id": "V260",
+"query": "certificate",
+"domain": "education",
+"subdomain": "certificate_generic",
+"title": "AI Fluency for Students – Certificate of Completion",
+"thumbnail": "thumbnails/edu_v260_004.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/252742691/AI-Fluency-for-Students-Certificate-of-Completion",
+"canonical_url": "https://www.behance.net/gallery/252742691/AI-Fluency-for-Students-Certificate-of-Completion",
+"source_domain": "behance.net",
+"creator_or_author": "Dhruv Desai (Surat, India) — recipient, not the certificate's designer",
+"discovered_via": "WebSearch + Behance project-search results (certificate of completion)",
+"source_type": "recipient_shared_real_credential",
+"tags": [
+"education",
+"certificate",
+"course_completion",
+"ai_literacy",
+"real_institution"
+],
+"content_understanding": "An actual issued certificate of completion for 'AI Fluency for Students,' a real named program from Anthropic covering AI fundamentals, prompt engineering, ethical AI use, and productivity applications; posted by the student who earned it, not by its original designer.",
+"automated_quality": "B",
+"source_quality_reason": "Genuine real-world certificate artifact from a well-known, verifiable issuing organization (Anthropic) rather than a speculative freelance template — strong authenticity on the issuer side; downgraded from A because this is a recipient's repost of their own credential, not a design case study with process/rationale from the certificate's actual designer.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "NEEDS_HUMAN_REVIEW"
+},
+{
+"source_id": "brand_v094_001",
+"query_id": "V094",
+"query": "business card",
+"domain": "brand_logo",
+"subdomain": "print_collateral",
+"title": "Corporate Branding Stationery",
+"thumbnail": "thumbnails/brand_v094_001.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/66506709/Corporate-Branding-Stationery",
+"canonical_url": "https://www.behance.net/gallery/66506709/Corporate-Branding-Stationery",
+"source_domain": "behance.net",
+"creator_or_author": "Jahan Ullah (Dhaka, Bangladesh)",
+"discovered_via": "WebSearch + Behance project-search results (business card/stationery)",
+"source_type": "designer_product_portfolio",
+"tags": [
+"brand_logo",
+"print_collateral",
+"business_card",
+"letterhead",
+"envelope",
+"stationery_system"
+],
+"content_understanding": "8-piece corporate stationery template system (business cards, letterheads, invoices, presentation folders, DL/C4 envelopes, compliment slips, CD/DVD case+labels) shown as coordinated mockups with consistent typography/color, sold as customizable source files on GraphicRiver.",
+"automated_quality": "B",
+"source_quality_reason": "Named designer with verified external presence (Dribbble, Instagram, GraphicRiver commerce listing); comprehensive stationery system but a generic customizable template, not a real specific client project.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "brand_v094_002",
+"query_id": "V094",
+"query": "business card",
+"domain": "brand_logo",
+"subdomain": "print_collateral",
+"title": "Letterpress Business Cards",
+"thumbnail": "thumbnails/brand_v094_002.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/12278583/Letterpress-Business-Cards",
+"canonical_url": "https://www.behance.net/gallery/12278583/Letterpress-Business-Cards",
+"source_domain": "behance.net",
+"creator_or_author": "Deb Pang Davis (Minneapolis, MN, USA)",
+"discovered_via": "WebSearch + Behance project-search results (letterpress business card)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"brand_logo",
+"print_collateral",
+"business_card",
+"letterpress",
+"kraft_paper",
+"production_technique"
+],
+"content_understanding": "Custom letterpress business cards for a named real client (Jason Monfort, a Portland, Oregon wood designer), using kraft paper stock and varnish finish -- concrete stated production technique and material detail.",
+"automated_quality": "A",
+"source_quality_reason": "Real named individual client tied to a specific craft (wood design) with explicit production-technique and material detail (letterpress, kraft paper, varnish) rather than a generic template; directly useful for professional-constraint / production-method reference.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "brand_v094_003",
+"query_id": "V094",
+"query": "business card",
+"domain": "brand_logo",
+"subdomain": "print_collateral",
+"title": "CLIFFARD SEAFOOD RESTAURANT",
+"thumbnail": "thumbnails/brand_v094_003.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/137638661/CLIFFARD-SEAFOOD-RESTAURANT",
+"canonical_url": "https://www.behance.net/gallery/137638661/CLIFFARD-SEAFOOD-RESTAURANT",
+"source_domain": "behance.net",
+"creator_or_author": "Daria Klets (Prague, Czech Republic)",
+"discovered_via": "WebSearch + Behance project-search results (business card design)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"brand_logo",
+"print_collateral",
+"business_card",
+"restaurant",
+"mascot_character",
+"illustration"
+],
+"content_understanding": "Full restaurant brand identity built around an illustrated elf mascot character, applied across business cards and other branding materials in a cohesive palette combining vector and raster illustration techniques.",
+"automated_quality": "A",
+"source_quality_reason": "High engagement (1.5K appreciations, 11.3K views, 96 comments) with a distinctive, non-generic mascot-driven identity system directly relevant to Curify's character-illustration strengths; single project, Behance-only presence.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "brand_v094_004",
+"query_id": "V094",
+"query": "business card",
+"domain": "brand_logo",
+"subdomain": "print_collateral",
+"title": "GOOD Interior Studio Logo & Visual Identity",
+"thumbnail": "thumbnails/brand_v094_004.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/234897027/GOOD-Interior-Studio-Logo-Visual-Identity",
+"canonical_url": "https://www.behance.net/gallery/234897027/GOOD-Interior-Studio-Logo-Visual-Identity",
+"source_domain": "behance.net",
+"creator_or_author": "Aryna Bukel (Minsk, Belarus)",
+"discovered_via": "WebSearch + Behance project-search results (business card design)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"brand_logo",
+"print_collateral",
+"business_card",
+"interior_design",
+"pattern_design",
+"gift_certificate"
+],
+"content_understanding": "Premium-positioned interior-design-studio identity with a custom geometric pattern derived from architectural blueprint line work and a square logo referencing floor-plan units; applied across business cards, project folders, door hangers, posters, gift certificates, and paper bags.",
+"automated_quality": "A",
+"source_quality_reason": "Named designer with stated, specific design rationale (pattern sourced from architectural drawings) and a wide, coherent collateral system spanning business card through gift-certificate and packaging touchpoints; decent engagement (430 appreciations, 2,757 views).",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "brand_v094_005",
+"query_id": "V094",
+"query": "business card",
+"domain": "brand_logo",
+"subdomain": "print_collateral",
+"title": "Nook Coffee",
+"thumbnail": "thumbnails/brand_v094_005.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/223494785/Nook-Coffee",
+"canonical_url": "https://www.behance.net/gallery/223494785/Nook-Coffee",
+"source_domain": "behance.net",
+"creator_or_author": "Bruno Lopes (Pelotas, Brazil)",
+"discovered_via": "WebSearch + Behance project-search results (business card design)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"brand_logo",
+"print_collateral",
+"business_card",
+"coffee_shop",
+"monogram",
+"typography"
+],
+"content_understanding": "Coffee-shop brand identity for a real, currently-operating cafe (Nook, Pelotas, Brazil, co-located with a furniture store); humanist typeface with coffee-bean shapes worked into the letterforms, beige/black/terracotta/burnt-green palette, applied across business cards, stationery, and a style guide.",
+"automated_quality": "A",
+"source_quality_reason": "Independently verified via WebSearch as a real, currently-operating business at a specific real-world location (Pelotas, Brazil) matching the case study's own description exactly; named designer with verified LinkedIn/Instagram.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 5/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: SUPPORTED; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "pack_v098_001",
+"query_id": "V098",
+"query": "coffee package",
+"domain": "packaging",
+"subdomain": "food_beverage_packaging",
+"title": "CRAVEA | Coffee Brand Identity & Packaging | Case Study",
+"thumbnail": "thumbnails/pack_v098_001.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/241739091/CRAVEA-Coffee-Brand-Identity-Packaging-Case-Study",
+"canonical_url": "https://www.behance.net/gallery/241739091/CRAVEA-Coffee-Brand-Identity-Packaging-Case-Study",
+"source_domain": "behance.net",
+"creator_or_author": "Sleeko Studio x DewApples Studio (Dhaka, Bangladesh)",
+"discovered_via": "WebSearch + Behance project-search results (coffee bag packaging)",
+"source_type": "studio_collaboration_project",
+"tags": [
+"packaging",
+"food_beverage_packaging",
+"coffee",
+"bag_format",
+"illustration",
+"brand_identity"
+],
+"content_understanding": "Full coffee-brand identity and packaging system spanning logo, illustrated packaging elements, and UI/digital touchpoints in a single collaborative case study, combining illustration with modern typography and a coffee-category color palette.",
+"automated_quality": "A",
+"source_quality_reason": "Two named collaborating studios with extensive independently-listed social presence (Facebook, Dribbble, LinkedIn, Instagram, X) and direct business contact info; comprehensive cross-touchpoint (packaging + digital) case study rather than packaging alone.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "pack_v098_002",
+"query_id": "V098",
+"query": "coffee package",
+"domain": "packaging",
+"subdomain": "food_beverage_packaging",
+"title": "ALTO ROASTERS | Coffee Brand Identity & Packaging",
+"thumbnail": "thumbnails/pack_v098_002.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/239303367/ALTO-ROASTERS-Coffee-Brand-Identity-Packaging",
+"canonical_url": "https://www.behance.net/gallery/239303367/ALTO-ROASTERS-Coffee-Brand-Identity-Packaging",
+"source_domain": "behance.net",
+"creator_or_author": "Catherine & Vlad / July Studio (Nicosia, Cyprus)",
+"discovered_via": "WebSearch + Behance project-search results (coffee packaging)",
+"source_type": "studio_portfolio_project",
+"tags": [
+"packaging",
+"food_beverage_packaging",
+"coffee",
+"bag_format",
+"typography",
+"premium_branding"
+],
+"content_understanding": "Complete coffee-brand identity and packaging system (coffee bags plus branded collateral) with modern typography and a refined color palette aimed at premium positioning.",
+"automated_quality": "A",
+"source_quality_reason": "High engagement (2.3K appreciations, 19.5K views) with independent third-party recognition (featured in 'Best of Behance' and MindSparkle Magazine) plus verified Instagram/email contact -- external validation beyond the platform itself.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "pack_v098_003",
+"query_id": "V098",
+"query": "coffee package",
+"domain": "packaging",
+"subdomain": "food_beverage_packaging",
+"title": "Swerl Coffee Roasters - Brand identity & packaging",
+"thumbnail": "thumbnails/pack_v098_003.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/151709757/Swerl-Coffee-Roasters-Brand-identity-packaging",
+"canonical_url": "https://andreaspedersen.se/work/swerlcoffeeroasters",
+"source_domain": "andreaspedersen.se (discovered via behance.net)",
+"creator_or_author": "Andreas Pedersen",
+"discovered_via": "WebSearch (coffee roastery branding); discovery surface Behance, canonical source is designer's own portfolio site",
+"source_type": "designer_own_site_project",
+"tags": [
+"packaging",
+"food_beverage_packaging",
+"coffee",
+"bag_format",
+"retro_style",
+"mascot"
+],
+"content_understanding": "Retro-inspired ('1972 Mercedes van') brand identity for a real specialty coffee roastery: custom swirling wordmark with chunky oval serifs evoking latte art and 1970s design, a falcon mascot derived from the city of Falkenberg's crest, applied across coffee bags, loyalty cards, and vehicle graphics.",
+"automated_quality": "A",
+"source_quality_reason": "Independently verified as a real, award-winning specialty roastery (ranked in Top 100 Specialty Coffee Roasters globally; 2nd place Nordic's Best Roasters 2025) with an active commerce site (swerl.se), social channels, and municipal tourism listing -- the strongest real-business confirmation of any V098 candidate. Canonical source set to the designer's own portfolio page (richer rationale) rather than the Behance discovery listing.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 5/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: SUPPORTED; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "pack_v098_004",
+"query_id": "V098",
+"query": "coffee package",
+"domain": "packaging",
+"subdomain": "food_beverage_packaging",
+"title": "SIPPA drip bags | Brand identity | Packaging design",
+"thumbnail": "thumbnails/pack_v098_004.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/247587755/SIPPA-drip-bags-Brand-identity-Packaging-design",
+"canonical_url": "https://www.behance.net/gallery/247587755/SIPPA-drip-bags-Brand-identity-Packaging-design",
+"source_domain": "behance.net",
+"creator_or_author": "Anna Bitens (Saint Petersburg, Russia)",
+"discovered_via": "WebSearch + Behance project-search results (coffee drip bag)",
+"source_type": "designer_portfolio_project",
+"tags": [
+"packaging",
+"food_beverage_packaging",
+"coffee",
+"drip_bag_format",
+"minimalist",
+"box_design"
+],
+"content_understanding": "Minimalist drip-bag coffee packaging built around a simple smile symbol representing 'the quiet joy of a good cup of coffee' rather than product imagery; neutral palette, refined typography, consistent across drip-bag and outer-box formats.",
+"automated_quality": "B",
+"source_quality_reason": "Named designer with a distinct format (drip bags, vs. whole-bean bags in the other candidates) and a clearly stated conceptual rationale; decent engagement (515 appreciations, 5.7K views), Behance-only presence.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "pack_v098_005",
+"query_id": "V098",
+"query": "coffee package",
+"domain": "packaging",
+"subdomain": "food_beverage_packaging",
+"title": "KakaoBank Brand Goods Drip Bag Coffee Duo",
+"thumbnail": "thumbnails/pack_v098_005.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/239381383/KakaoBank-Brand-Goods-Drip-Bag-Coffee-Duo",
+"canonical_url": "https://www.behance.net/gallery/239381383/KakaoBank-Brand-Goods-Drip-Bag-Coffee-Duo",
+"source_domain": "behance.net",
+"creator_or_author": "Kakaobank Design (Seoul, Korea) -- Seunghyun Lee, Ziyoung Kim, Hyeram Kim",
+"discovered_via": "WebSearch + Behance project-search results (coffee drip bag)",
+"source_type": "institutional_inhouse_team_project",
+"tags": [
+"packaging",
+"food_beverage_packaging",
+"coffee",
+"drip_bag_format",
+"corporate_merchandise",
+"qr_integration"
+],
+"content_understanding": "Branded merchandise drip-bag coffee set (two blends, 12-pack) co-developed by KakaoBank's in-house design team and a named roastery partner (ACR), with QR codes linking to financial-themed content; minimalist packaging with dual-variation labeling.",
+"automated_quality": "A",
+"source_quality_reason": "Real, well-known institution (KakaoBank, a major Korean digital bank) with a named in-house design team and named external roastery collaborator (ACR) -- the strongest institutional-authority example among all V098 candidates, though this is a corporate merch tie-in rather than an independent coffee brand's core packaging.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "pack_v120_001",
+"query_id": "V120",
+"query": "gift box",
+"domain": "packaging",
+"subdomain": "gift_packaging",
+"title": "Edifier Valentine's Day Gift Box Packaging Design",
+"thumbnail": "thumbnails/pack_v120_001.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/233463469/Edifier-Valentines-Day-Gift-Box-Packaging-Design",
+"canonical_url": "https://www.behance.net/gallery/233463469/Edifier-Valentines-Day-Gift-Box-Packaging-Design",
+"source_domain": "behance.net",
+"creator_or_author": "zwqy .lab (Hong Kong SAR) and zwqy. LIDIN (Guangzhou, China)",
+"discovered_via": "WebSearch + Behance project-search results (gift box packaging)",
+"source_type": "designer_studio_project_for_named_brand",
+"tags": [
+"packaging",
+"gift_packaging",
+"electronics",
+"dual_opening_structure",
+"magnetic_closure",
+"illustration"
+],
+"content_understanding": "Co-branded Valentine's Day gift box for audio brand Edifier: dual-opening case with magnetic closure revealing a heart-shaped gold earring under transparent PVC, plus a hidden drawer with headphones and a message card; hand-painted botanical/musical illustration motifs in champagne and gold tones.",
+"automated_quality": "A",
+"source_quality_reason": "Real, well-known, established audio-electronics manufacturer (Edifier, founded 1996, global retail presence) as the named client, with a genuinely complex structural packaging mechanism (dual-opening, magnetic closure, hidden drawer) rather than a simple box.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "TESTED",
+"expansion_summary": "Best level reached: 5/5 — L1 asset: SUPPORTED; L2 page: SUPPORTED; L3 creator: SUPPORTED; L4 section: SUPPORTED; L5 domain: SUPPORTED",
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "pack_v120_002",
+"query_id": "V120",
+"query": "gift box",
+"domain": "packaging",
+"subdomain": "gift_packaging",
+"title": "2026小红书校招礼盒设计 (2026 Xiaohongshu Campus Recruitment Gift Box Design)",
+"thumbnail": "thumbnails/pack_v120_002.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/240616709/2026",
+"canonical_url": "https://www.behance.net/gallery/240616709/2026",
+"source_domain": "behance.net",
+"creator_or_author": "Waves 海浪设计, Eric 邱, shuli ren, Vince Hu (Kunming, China / Italy)",
+"discovered_via": "WebSearch + Behance project-search results (gift box packaging)",
+"source_type": "designer_studio_project_for_named_brand",
+"tags": [
+"packaging",
+"gift_packaging",
+"corporate_merchandise",
+"kraft_paper",
+"mixed_media",
+"illustration"
+],
+"content_understanding": "Corporate campus-recruitment gift box for Xiaohongshu (RED), themed around 'recording': kraft-paper exterior with transparent acrylic panels, containing a disposable film camera, notebook, pens, and calendar, plus four illustrated rigid cards in colorful geometric-abstraction style.",
+"automated_quality": "A",
+"source_quality_reason": "Real, major, well-known institution (Xiaohongshu/RED, a leading Chinese social-commerce platform) as the named client; concrete stated material detail (kraft paper + acrylic) and a coherent multi-item gift-set concept rather than a single box render.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "pack_v120_003",
+"query_id": "V120",
+"query": "gift box",
+"domain": "packaging",
+"subdomain": "gift_packaging",
+"title": "KOOKYCREAM - NEW YEAR GIFT BOX",
+"thumbnail": "thumbnails/pack_v120_003.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/183841943/KOOKYCREAM-NEW-YEAR-GIFT-BOX",
+"canonical_url": "https://www.behance.net/gallery/183841943/KOOKYCREAM-NEW-YEAR-GIFT-BOX",
+"source_domain": "behance.net",
+"creator_or_author": "COOOT Studio (China)",
+"discovered_via": "WebSearch + Behance project-search results (gift box packaging)",
+"source_type": "studio_portfolio_project",
+"tags": [
+"packaging",
+"gift_packaging",
+"chinese_new_year",
+"food_gifting",
+"3d_rendering"
+],
+"content_understanding": "Chinese New Year gift box set blending traditional culinary imagery with a modern, playful visual style; built using advanced 3D tools (Substance 3D Painter/Stager/Sampler, Cinema 4D) alongside Illustrator/Photoshop.",
+"automated_quality": "B",
+"source_quality_reason": "Named Pro-status studio with a real seasonal-gifting occasion concept; specific packaging materials/structure not disclosed on the page, limiting content-understanding depth relative to the other candidates.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "SECONDARY_SOURCE"
+},
+{
+"source_id": "pack_v120_004",
+"query_id": "V120",
+"query": "gift box",
+"domain": "packaging",
+"subdomain": "gift_packaging",
+"title": "Flourishing Banquet Gift Box｜花果盛宴禮盒設計",
+"thumbnail": "thumbnails/pack_v120_004.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/253344779/Flourishing-Banquet-Gift-Box",
+"canonical_url": "https://www.behance.net/gallery/253344779/Flourishing-Banquet-Gift-Box",
+"source_domain": "behance.net",
+"creator_or_author": "AAOO STUDIO (Taipei, Taiwan)",
+"discovered_via": "WebSearch + Behance project-search results (gift box packaging)",
+"source_type": "studio_portfolio_project",
+"tags": [
+"packaging",
+"gift_packaging",
+"botanical_illustration",
+"gold_foil",
+"food_beverage",
+"box_and_interior"
+],
+"content_understanding": "Botanical-garden-inspired gift box (floral/fruit/bird illustration) with stated gold-foil accents on the exterior, and an interior that integrates brewing instructions with product display, evoking a collectible botanical-encyclopedia aesthetic.",
+"automated_quality": "A",
+"source_quality_reason": "Named studio with a specific stated production/finishing detail (gold foil accents) and a considered exterior/interior functional distinction (brand identity outside, usage instructions inside) rather than a generic render.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+},
+{
+"source_id": "pack_v120_005",
+"query_id": "V120",
+"query": "gift box",
+"domain": "packaging",
+"subdomain": "gift_packaging",
+"title": "Freaky Lizard | Branding & Packaging",
+"thumbnail": "thumbnails/pack_v120_005.jpg",
+"thumbnail_status": "AVAILABLE",
+"source_url": "https://www.behance.net/gallery/253127379/Freaky-Lizard-Branding-Packaging",
+"canonical_url": "https://www.behance.net/gallery/253127379/Freaky-Lizard-Branding-Packaging",
+"source_domain": "behance.net",
+"creator_or_author": "WeDesign Studio -- Yevheniia Dutchak and Elena Bolotina (Poland)",
+"discovered_via": "WebSearch + Behance project-search results (gift box packaging)",
+"source_type": "studio_portfolio_project",
+"tags": [
+"packaging",
+"gift_packaging",
+"mascot_design",
+"glass_bottle",
+"fmcg",
+"display_window"
+],
+"content_understanding": "Sauce-brand identity with a mascot lizard that becomes a distinct character per flavor across custom glass bottles with colored metal caps; includes a 3-bottle gift box with a display window alongside individual label/bottle designs and lifestyle photography.",
+"automated_quality": "A",
+"source_quality_reason": "Named two-designer studio with a full FMCG system (bottles, labels, lifestyle photography, plus the gift-box format itself) rather than the gift box in isolation, giving strong cross-reference value to the broader packaging domain.",
+"human_review_status": "PENDING",
+"access_status": "ACCESSIBLE",
+"source_expansion_status": "NOT_TESTED",
+"expansion_summary": null,
+"recommended_long_term_role": "PRIMARY_SOURCE"
+}
+]</script>
+<script>
+(function () {
+  "use strict";
+
+  var DATA = JSON.parse(document.getElementById("gallery-data").textContent);
+
+  function text(tag, className, content) {
+    var el = document.createElement(tag);
+    if (className) el.className = className;
+    if (content !== undefined && content !== null) el.textContent = content;
+    return el;
+  }
+
+  function safeExternalUrl(url) {
+    try {
+      var u = new URL(url, window.location.href);
+      if (u.protocol === "http:" || u.protocol === "https:") return u.href;
+    } catch (e) {}
+    return null;
+  }
+
+  // ---------- Summary stats (computed from DATA, not hardcoded) ----------
+  function renderStats() {
+    var total = DATA.length;
+    var domainCounts = {};
+    var qualityCounts = { A: 0, B: 0, C: 0 };
+    var reviewCounts = {};
+    var thumbAvailable = 0;
+
+    DATA.forEach(function (r) {
+      domainCounts[r.domain] = (domainCounts[r.domain] || 0) + 1;
+      if (qualityCounts.hasOwnProperty(r.automated_quality)) qualityCounts[r.automated_quality]++;
+      reviewCounts[r.human_review_status] = (reviewCounts[r.human_review_status] || 0) + 1;
+      if (r.thumbnail_status === "AVAILABLE") thumbAvailable++;
+    });
+
+    var bar = document.getElementById("stats-bar");
+    bar.innerHTML = "";
+
+    function statCard(value, label, detail) {
+      var card = text("div", "stat-card");
+      card.appendChild(text("div", "stat-value", String(value)));
+      card.appendChild(text("div", "stat-label", label));
+      if (detail) card.appendChild(text("div", "stat-detail", detail));
+      bar.appendChild(card);
+    }
+
+    statCard(total, "Total candidates", "retained C2 pilot records");
+
+    var domainDetail = Object.keys(domainCounts).sort().map(function (d) {
+      return d + ": " + domainCounts[d];
+    }).join(" · ");
+    statCard(Object.keys(domainCounts).length, "Domains covered", domainDetail);
+
+    statCard(
+      qualityCounts.A + " / " + qualityCounts.B + " / " + qualityCounts.C,
+      "Quality A / B / C",
+      "automated grade, not human-reviewed"
+    );
+
+    var reviewDetail = Object.keys(reviewCounts).map(function (s) {
+      return s + ": " + reviewCounts[s];
+    }).join(" · ");
+    statCard(reviewCounts.PENDING || 0, "Human review PENDING", reviewDetail || "no record auto-approved");
+
+    statCard(thumbAvailable + " / " + total, "Thumbnails available", "loaded from local thumbnails/ folder");
+  }
+
+  // ---------- Filter population ----------
+  function uniqueSorted(arr) {
+    return Array.from(new Set(arr)).sort();
+  }
+
+  function populateSelect(id, values, formatter) {
+    var sel = document.getElementById(id);
+    values.forEach(function (v) {
+      var opt = document.createElement("option");
+      opt.value = v;
+      opt.textContent = formatter ? formatter(v) : v;
+      sel.appendChild(opt);
+    });
+  }
+
+  populateSelect("f-domain", uniqueSorted(DATA.map(function (r) { return r.domain; })));
+  populateSelect("f-query", uniqueSorted(DATA.map(function (r) { return r.query_id + " — " + r.query; })), function (v) { return v; });
+  populateSelect("f-type", uniqueSorted(DATA.map(function (r) { return r.source_type; })));
+  populateSelect("f-review", uniqueSorted(DATA.map(function (r) { return r.human_review_status; })));
+
+  var state = { domain: "", query: "", type: "", review: "", grades: new Set(), search: "" };
+
+  function matches(r) {
+    if (state.domain && r.domain !== state.domain) return false;
+    if (state.query && (r.query_id + " — " + r.query) !== state.query) return false;
+    if (state.type && r.source_type !== state.type) return false;
+    if (state.review && r.human_review_status !== state.review) return false;
+    if (state.grades.size > 0 && !state.grades.has(r.automated_quality)) return false;
+    if (state.search) {
+      var hay = [r.title, r.creator_or_author, r.content_understanding].concat(r.tags || []).join(" ").toLowerCase();
+      if (hay.indexOf(state.search) === -1) return false;
+    }
+    return true;
+  }
+
+  // ---------- Card rendering ----------
+  function buildCard(r) {
+    var card = text("article", "card");
+    card.dataset.sourceId = r.source_id;
+
+    var thumbWrap = text("div", "thumb-wrap");
+    var img = document.createElement("img");
+    img.src = r.thumbnail;
+    img.loading = "lazy";
+    img.alt = r.title || r.source_id;
+    var fallback = text("div", "thumb-fallback", "Thumbnail unavailable locally");
+    fallback.hidden = true;
+    img.addEventListener("error", function () {
+      img.hidden = true;
+      fallback.hidden = false;
+    });
+    thumbWrap.appendChild(img);
+    thumbWrap.appendChild(fallback);
+
+    var badgeRow = text("div", "badge-row");
+    badgeRow.appendChild(text("span", "grade-badge grade-" + r.automated_quality, r.automated_quality));
+    badgeRow.appendChild(text("span", "review-badge", r.human_review_status));
+    thumbWrap.appendChild(badgeRow);
+    card.appendChild(thumbWrap);
+
+    var body = text("div", "card-body");
+
+    body.appendChild(text("h3", "card-title", r.title));
+
+    var metaLine = text("div", "meta-line");
+    metaLine.appendChild(text("span", "domain-chip", r.domain));
+    metaLine.appendChild(text("span", null, "query: " + r.query + " (" + r.query_id + ")"));
+    metaLine.appendChild(text("span", null, "· " + r.source_type.replace(/_/g, " ")));
+    body.appendChild(metaLine);
+
+    var creatorLine = text("div", "creator-line");
+    var creatorLabel = text("span", "label", "Creator: ");
+    creatorLine.appendChild(creatorLabel);
+    creatorLine.appendChild(document.createTextNode(r.creator_or_author || "Unknown"));
+    body.appendChild(creatorLine);
+
+    var sourceLine = text("div", "source-line", "Source domain: " + r.source_domain);
+    body.appendChild(sourceLine);
+
+    var discoveredLine = text("div", "discovered-via", "Discovered via: " + r.discovered_via);
+    body.appendChild(discoveredLine);
+
+    body.appendChild(text("p", "content-understanding", r.content_understanding));
+
+    if (r.tags && r.tags.length) {
+      var tagsRow = text("div", "tags-row");
+      r.tags.forEach(function (t) {
+        tagsRow.appendChild(text("span", "tag-chip", t));
+      });
+      body.appendChild(tagsRow);
+    }
+
+    if (r.expansion_summary) {
+      body.appendChild(text("div", "expansion-note", r.expansion_summary));
+    } else {
+      body.appendChild(text("div", "expansion-note", "Source-expansion: NOT_TESTED in this pilot."));
+    }
+
+    var footer = text("div", "card-footer");
+    var url = safeExternalUrl(r.canonical_url);
+    if (url) {
+      var link = document.createElement("a");
+      link.className = "open-source-btn";
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Open original source ↗";
+      footer.appendChild(link);
+    } else {
+      footer.appendChild(text("div", "open-source-btn", "No valid source link"));
+    }
+    if (r.canonical_url !== r.source_url) {
+      footer.appendChild(text(
+        "div", "canonical-note",
+        "Canonical differs from discovery link (discovered via " + r.source_domain + "; routes to original creator site)"
+      ));
+    }
+    body.appendChild(footer);
+
+    card.appendChild(body);
+    return card;
+  }
+
+  function render() {
+    var grid = document.getElementById("grid");
+    var empty = document.getElementById("empty-state");
+    grid.innerHTML = "";
+    var filtered = DATA.filter(matches);
+    document.getElementById("result-count").textContent =
+      filtered.length + " of " + DATA.length + " candidates shown";
+    if (filtered.length === 0) {
+      empty.hidden = false;
+    } else {
+      empty.hidden = true;
+      filtered.forEach(function (r) { grid.appendChild(buildCard(r)); });
+    }
+  }
+
+  document.getElementById("f-domain").addEventListener("change", function (e) { state.domain = e.target.value; render(); });
+  document.getElementById("f-query").addEventListener("change", function (e) { state.query = e.target.value; render(); });
+  document.getElementById("f-type").addEventListener("change", function (e) { state.type = e.target.value; render(); });
+  document.getElementById("f-review").addEventListener("change", function (e) { state.review = e.target.value; render(); });
+  document.getElementById("f-search").addEventListener("input", function (e) { state.search = e.target.value.trim().toLowerCase(); render(); });
+
+  document.querySelectorAll("#quality-toggle button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var g = btn.dataset.grade;
+      var pressed = btn.getAttribute("aria-pressed") === "true";
+      btn.setAttribute("aria-pressed", String(!pressed));
+      if (pressed) state.grades.delete(g); else state.grades.add(g);
+      render();
+    });
+  });
+
+  document.getElementById("reset-filters").addEventListener("click", function () {
+    state = { domain: "", query: "", type: "", review: "", grades: new Set(), search: "" };
+    document.getElementById("f-domain").value = "";
+    document.getElementById("f-query").value = "";
+    document.getElementById("f-type").value = "";
+    document.getElementById("f-review").value = "";
+    document.getElementById("f-search").value = "";
+    document.querySelectorAll("#quality-toggle button").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", "false");
+    });
+    render();
+  });
+
+  renderStats();
+  render();
+})();
+</script>
+
+</body>
+</html>

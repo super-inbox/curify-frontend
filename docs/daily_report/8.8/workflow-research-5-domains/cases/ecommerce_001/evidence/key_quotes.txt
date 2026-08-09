@@ -1,0 +1,76 @@
+ecommerce_001 — Key extracted quotes and paraphrases from source
+Source: https://www.designkit.cn/article/tianmaoxiangqingye-zhizuo
+Title: 从原片到高转化，天猫详情页制作的设计新思路
+Fetched: 2026-08-09 via direct WebFetch of live page (not solely the B1 candidate summary)
+
+=== PROBLEM STATEMENT ===
+Article opens on the core e-commerce problem: even with a competitive product, click-through
+stays low if the detail page fails to answer three consumer questions -- "这是什么" (What is
+this?), "它为什么好" (Why is it good?), "为什么要在这买" (Why buy here?). Example product used
+throughout: an outdoor folding/collapsible water bottle targeting young camping/hiking
+consumers.
+
+=== INPUT (raw photo) ===
+Original photo: taken at an office desk, adequate lighting, but background clutter --
+"desktop reflections, pencil holder nearby, monitor in distance" -- and "completely fails to
+convey 'outdoor' attributes." Article uses this to argue that professional studio photography
+is not required: "a phone-shot image with clear product and correct angle is completely
+sufficient."
+
+=== PROCESS -- section heading: 从"毛坯"到"精装"：一张原图的逆袭 ===
+("From Raw to Refined: One Photo's Transformation")
+
+Sub-step 1 -- 原片入场 (Raw photo intake)
+  Upload the office-desk phone photo to the tool's backend as the starting asset.
+
+Sub-step 2 -- 核心指令 (Core instructions)
+  Input specific selling points as text: "食品级硅胶折叠结构、轻量化设计、户外挂扣系统"
+  (food-grade silicone folding structure, lightweight design, outdoor carabiner/clip system).
+  Article: "each word serves a purpose -- 'food-grade' addresses safety concerns, 'lightweight'
+  targets hiking pain points, 'carabiner system' differentiates functionality."
+
+Sub-step 3 -- 风格定调 (Style selection)
+  Choose 1 of 4 style directions: outdoor vitality / tech quality / home casual / luxury.
+  Outdoor-vitality style selected -- stated to produce higher click-through rates for this
+  product category (no methodology disclosed for this claim).
+
+Sub-step 4 -- 套图生成 (Image-suite generation)
+  Choose "smart matching" or "custom configuration." Recommends minimum 7 images across 4
+  categories:
+    - White background shots (folded + unfolded states)
+    - Scene images (kitchen counter, backpack side pocket)
+    - Selling-point close-ups (silicone material texture, carabiner detail)
+    - System-recommended fold/unfold comparison image
+
+Sub-step 5 -- 生成与落位 (Generation and placement)
+  Generate high-quality final assets; integrate into the existing detail-page layout/framework.
+
+=== NUMBERS / RATIOS / CONSTRAINTS ===
+- Minimum image count: 7, for adequate "information density"
+- 4 required image-type categories (see sub-step 4)
+- Product main-body composition: "recommend maintaining 60% or above" of frame
+- Aspect ratio: "3:4 vertical composition maximizes mobile screen utilization"
+- White-background image implied as a mandatory inclusion for platform norms
+
+=== TOOL / AI FEATURE ===
+美图设计室 (Meitu Design Studio) -- "AI商品图" (AI Product Image) feature: "一键生成海量场景图"
+(generate multiple scene images with one click); background removal + scene composition;
+automated image-type classification/generation; smart-matching mode vs. custom configuration.
+
+=== TIME / EFFICIENCY CLAIM ===
+"以前可能需要一个设计师花两天时间完成的场景合成工作，现在压缩到了半小时以内"
+(Work previously requiring a designer two days now compressed to under thirty minutes),
+"while quality remains more stable and controllable."
+-- Self-reported vendor claim, no independent verification or methodology given.
+
+=== FINAL OUTPUT ===
+"A set of stylistically unified, high-quality materials with natural depth of field effects."
+Once placed into the page: "even without complex layout or elaborate typography effects, the
+entire page's trust factor and immersion substantially increase."
+
+=== COMPARISON CHECK (used only for candidate selection, not as ecommerce_001 step evidence) ===
+Re-fetched https://soona.co/case-studies/swoon (ECOM-03 candidate) directly on 2026-08-09.
+Confirmed: "This is primarily a narrative case study emphasizing outcomes and relationship
+benefits rather than a detailed production workflow" -- no source-labeled sequential steps,
+unlike ECOM-01's explicitly named 5-sub-step section. This confirmed ECOM-01 as the stronger
+process-visibility candidate per the SELECTION RULE.

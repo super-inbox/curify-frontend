@@ -1,0 +1,122 @@
+BRAND_LOGO_001 — Evidence Source: Sabrina Young, RGD, "CASE STUDY: Constellation Rebrand and Launch Campaign" (Behance)
+URL: https://www.behance.net/gallery/185658399/CASE-STUDY-Constellation-rebrand-and-launch-campaign
+Client project: Canada Life (Constellation Managed Portfolios program)
+Retrieved via WebFetch: 2026-08-09, four independent passes during initial B2 build (general
+content, verbatim-quote pass, targeted fact-check pass, page-structure/section-order pass);
+re-verified with a fifth independent WebFetch pass during B2 recovery on 2026-08-09, which
+returned matching content and additionally confirmed "timeline pressure" / firm launch
+deadline as an explicitly named third challenge.
+
+This file stores quotes and section content extracted directly from the source page, used as
+the evidence base for workflow_extraction.json and evidence_manifest.csv. The page is a
+Behance portfolio case study (JS-rendered; WebFetch markdown conversion), not an explicitly
+numbered step-by-step process — section headings are the article's own subheads, and no
+"Step 1 / Phase 1" style labels were found on any fetch pass.
+
+================================================================================
+SECTION: Overview / Title
+================================================================================
+- "The rebrand and launch campaign of the Canada Life's Constellation managed portfolios
+   program and digital tool"
+- Author: Sabrina Young, RGD (Creative Design Lead / Sr. Graphic Designer)
+
+================================================================================
+SECTION: Objective
+================================================================================
+- (1) "Rebrand the existing London Life Constellation Managed Portfolios tool and materials
+   to the new Canada Life brand"
+- (2) "Help Constellation better resonate with advisors and their clients"
+- (3) "Increase advisor awareness and adoption of the Constellation managed program"
+
+================================================================================
+SECTION: Target audiences
+================================================================================
+- Primary: newer advisors (under 4 years service) and tenured advisors (10+ years service)
+- Secondary: "mass-affluent to affluent clients with a minimum of $25,000 to invest per
+   household, targeting ages 25-50"
+- Tertiary: newer advisors serving Asian-market/Chinese clients
+
+================================================================================
+SECTION: Client marketing materials
+================================================================================
+- Five client personas: small-business owners; young same-sex couple (starting a family);
+  middle-aged family with children; young adventurous couple; single high-net-worth individual
+- "The client kits were the primary client marketing materials produced."
+
+================================================================================
+SECTION: Advisor marketing materials
+================================================================================
+- Three advisor personas: newer advisors (under 4 years); tenured advisors (10+ years);
+  newer advisors serving Asian-market clients
+- "including an advisor brochure about how Constellation can help them find balance in their
+   busy world"
+- Keyline square device: "A keyline square over photography. The keyline draws attention to
+   our client and advisor personas and only appears over photography on Constellation
+   materials."
+- Additional applications referenced across the client/advisor sections: die-cut brochures,
+  large-format printed pieces, one-pagers/posters
+
+================================================================================
+SECTION: Challenges
+================================================================================
+Three named challenges:
+1. Standing out / differentiating Constellation through design — positioning Constellation to
+   excite advisors, emphasizing administrative relief so advisors could "focus on building
+   client relationships and uncovering new opportunities."
+2. Vendor coordination — "the digital Constellation tool is developed and updated by an
+   external vendor. Coordinating the design and content updates with an external party
+   presented another challenge." A "minimal viable product (MVP) approach" was used for
+   initial launch materials.
+3. Timeline pressure — regulatory requirements tied to the company amalgamation created "a
+   firm launch deadline," requiring "significant overtime hours." (Confirmed explicitly as a
+   third named challenge on the 2026-08-09 recovery re-fetch pass; treated as PARTIALLY
+   corroborated context in evidence_manifest.csv since it was not equally explicit across all
+   original fetch passes.)
+
+================================================================================
+SECTION: Mandarin and Cantonese adaptations
+================================================================================
+- Client and advisor personas were customized/"modified for better alignment" to Chinese-
+  market segments
+- Base languages English and French; "some printed materials were produced in Mandarin and
+  Cantonese"
+
+================================================================================
+SECTION: Launch
+================================================================================
+- "Date: January 6, 2020"
+- Languages: English, French, plus Mandarin/Cantonese for some printed materials
+
+================================================================================
+SECTION: Success and results (self-reported, PARTIAL support — not independently corroborated
+against a second external source; excluded from formal workflow_steps and final_outputs)
+================================================================================
+- "Total net sales through Constellation for that year was $123 million. That's up $20 million
+   from the $103 million total net sales in 2019"
+- "helped more than 1,000 advisors take their clients through the goals-based investment
+   process"
+- Testimonial — Melanie Churchill, Associate Marketing Manager, Wealth Marketing, Canada Life:
+  "The level of thought and understanding of the target markets...shone through in the
+  creative concept." "...tailoring the client-facing materials to more broadly reflect
+  different cultures and demographics in Canada, dramatically improved the reach."
+
+================================================================================
+SECTION: Credits
+================================================================================
+- Lead: Sabrina Young (Creative Design Lead/Sr. Graphic Designer)
+- Supporting designers, communications, marketing leadership, and production staff named on
+  page (not individually cited as workflow evidence)
+
+================================================================================
+PAGE STRUCTURE / SECTION ORDER (confirmed top-to-bottom, no numbered process labels found)
+================================================================================
+Title/overview -> Launch -> Languages -> Target audiences -> Objective -> Client marketing
+materials -> Challenges -> Advisor marketing materials -> Mandarin and Cantonese adaptations
+-> Success and results -> Credits
+
+NOTE: This topic-based section order is NOT treated as a source-declared chronological
+process order. The step sequence in workflow_extraction.json is a logical reconstruction
+based on stated content dependencies (e.g., personas explicitly serve the stated objective;
+localized personas are explicitly described as adaptations of the base personas; the keyline
+square is explicitly applied over persona photography). Step ORDER confidence is therefore
+MEDIUM; step EXISTENCE/CONTENT confidence is HIGH, per source text.

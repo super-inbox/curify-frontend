@@ -1,0 +1,144 @@
+{
+  "case_id": "education_001",
+  "domain": "education",
+  "input": "A weekly curriculum theme with an associated target vocabulary / sentence-pattern set (English-language, aimed at children roughly 3-7 years old). Confirmed by source quote: \"每周学习一个主题\" (\"each week, [the learner] studies one theme\"), section: 一、拆解还原：斑马英语的一周课程之旅？(intro, before component list).",
+  "workflow_steps": [
+    {
+      "step_id": "step_01_video_story_lesson",
+      "step_name": "Daily Story Video Lesson (Video / 视频童话剧)",
+      "step_description": "Monday-through-Thursday, a 3-5 minute, fully English audio-visual video lesson delivered in fairy-tale-drama format with a real foreign teacher on screen. The four days' episodes connect into one continuous storyline across the week. Children are intended to perceive/notice the week's target words and sentence patterns by following and guessing at the unfolding plot, rather than through direct drilling.",
+      "input": "Weekly theme + target vocabulary/sentence-pattern set",
+      "action": "Present a serialized fairy-tale-drama video episode (English, 3-5 min) featuring a live foreign teacher; episodes are designed to interlock into a single weekly story arc.",
+      "output": "Initial listening/visual exposure to the day's target words and sentence patterns; narrative engagement/curiosity as the entry point into the day's content.",
+      "professional_rule": "Content is deliberately structured as a continuous multi-day 'story line' (rather than isolated daily drills) to match young children's concrete, narrative-based cognitive processing, and blends life-knowledge/values guidance into the plot.",
+      "evidence_ids": ["EV02", "EV03", "EV01"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_02_word_cards",
+      "step_name": "Illustrated Audio Word Cards (Word / 词卡)",
+      "step_description": "Digital word cards paired with an illustration and audio pronunciation for each target vocabulary word introduced that day.",
+      "input": "Day's target vocabulary items (drawn from the video's story content)",
+      "action": "Present each target word as an illustrated, audio-enabled digital flashcard.",
+      "output": "Discrete word-level recognition asset (image + sound + word) reinforcing vocabulary surfaced in the video.",
+      "professional_rule": null,
+      "evidence_ids": ["EV05"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "medium — component's existence and content (illustrated + audio word card) are directly quoted; its exact position within the day's sequence relative to Quiz/Zebra Call is inferred from the article's own listed order (heading 3, after Video/TV-live at 1-2), not from explicit 'then/next' language."
+    },
+    {
+      "step_id": "step_03_story_reading_and_followalong",
+      "step_name": "Picture-Book Reading & Follow-Along (Story & Speaking / 绘本阅读&跟读)",
+      "step_description": "Monday-through-Thursday, a picture-book (绘本) segment presenting the day's target content inside a new situational/contextual mini-story, first as silent/guided reading, then as read-aloud follow-along practice. Explicitly framed by the source as reinforcement of that day's already-introduced material.",
+      "input": "Day's target words/patterns (already introduced via Video and Word Cards) placed into a new contextual mini-story",
+      "action": "Present a picture-book passage embedding the day's target language in a new context; learner reads it, then repeats/follows along aloud.",
+      "output": "Reinforced comprehension of the day's vocabulary/patterns in written context, plus spoken-repetition practice.",
+      "professional_rule": "Reinforcement is done through re-contextualization (new situational story each time) rather than verbatim repetition, and follows a fixed micro-sequence: read first, then follow-read aloud ('先阅读后跟读').",
+      "evidence_ids": ["EV06"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_04_quiz",
+      "step_name": "Multi-Dimensional Quiz (Quiz / 测验)",
+      "step_description": "A deliberately plain/unadorned quiz format (source: 'no elaborate visual packaging') whose design emphasis is on testing the same knowledge point across multiple dimensions rather than on presentation. A single target word is tested separately on pronunciation, meaning, and written/character form.",
+      "input": "Day's target vocabulary/sentence patterns",
+      "action": "Administer short quiz items that test the same word/pattern across separate dimensions: pronunciation, meaning, and written form.",
+      "output": "Practice/retrieval-testing data point per knowledge dimension for that word/pattern.",
+      "professional_rule": "Multi-dimensional testing of a single knowledge point (pronunciation / meaning / form tested separately) rather than a single combined test item.",
+      "evidence_ids": ["EV07"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "medium — component's existence and design principle are directly quoted; exact position within the day's sequence relative to Word Cards/Zebra Call is inferred from listed article order, not explicit sequencing language."
+    },
+    {
+      "step_id": "step_05_zebra_call",
+      "step_name": "Simulated Foreign-Teacher Phone Call (Zebra Call)",
+      "step_description": "A foreign teacher addresses the camera directly as if on a phone/video call with the child, using objects around them to review that day's knowledge, asking repeated interactive questions, and explicitly pausing to leave blank response time for the child to answer.",
+      "input": "Day's target vocabulary/sentence patterns already covered by Video/Word/Story/Quiz",
+      "action": "Deliver a direct-address, call-style video segment in which the foreign teacher quizzes/reviews the day's content conversationally, with built-in pause time for child response.",
+      "output": "Spoken-interaction review checkpoint for the day's material, simulating live conversational practice.",
+      "professional_rule": "Explicitly framed as a 'review today's knowledge' (复习今天的知识) checkpoint — i.e., positioned as reinforcement occurring after initial content introduction, not as first exposure.",
+      "evidence_ids": ["EV08"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high for content/purpose; medium for exact position within the day's step order relative to Word Cards/Quiz."
+    },
+    {
+      "step_id": "step_06_wechat_teacher_video",
+      "step_name": "WeChat Chinese-Teacher Mini-Video (微信『中教小视频』)",
+      "step_description": "Every day, a Chinese-speaking teacher posts a short video to WeChat containing a follow-along read-through of that day's words/sentence patterns, together with an explanation of pronunciation points to watch for.",
+      "input": "Day's target words/sentence patterns",
+      "action": "Chinese-speaking teacher records and posts a daily WeChat mini-video: read-aloud of the day's content + pronunciation-point explanation.",
+      "output": "Supplementary native-language-mediated pronunciation coaching delivered outside the core app, daily.",
+      "professional_rule": null,
+      "evidence_ids": ["EV09"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high (explicit daily/'每天' framing)."
+    },
+    {
+      "step_id": "step_07_wechat_group_homework",
+      "step_name": "WeChat Group Recorded-Practice Task & Feedback (微信群点评服务)",
+      "step_description": "Every day, a teacher posts a small 'record a video' task in the WeChat class group, asking the child to find real objects around them and use them to practice that day's vocabulary/sentence patterns; the child submits a video and receives teacher feedback in the group.",
+      "input": "Day's target vocabulary/sentence patterns",
+      "action": "Teacher posts a daily recorded-practice prompt in WeChat group; child records themselves practicing with real-world objects and submits; teacher reviews/comments.",
+      "output": "Child-generated practice video + teacher feedback in group, functioning as daily homework with human review.",
+      "professional_rule": "Practice is anchored to real objects in the child's own environment rather than purely on-screen drilling, and closes the loop with human (teacher) feedback rather than only automated scoring.",
+      "evidence_ids": ["EV10"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high (explicit daily/'每天' framing)."
+    },
+    {
+      "step_id": "step_08_friday_live_class",
+      "step_name": "Friday Interactive Live-Format Class (TV直播课 / 互动视频童话剧)",
+      "step_description": "On Friday, a roughly 20-minute interactive video class simulating a live foreign-teacher class with student competition ('外教直播上课，同学竞争'), serving as a synthesis/culmination session drawing on the week's accumulated content.",
+      "input": "The week's accumulated vocabulary/sentence patterns from steps 1-7",
+      "action": "Deliver a live-format (simulated live) interactive video class with competitive game-style interaction.",
+      "output": "Consolidated, higher-energy review/practice session closing out the week's new-content phase.",
+      "professional_rule": null,
+      "evidence_ids": ["EV04"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high (explicit Friday/周五 placement)."
+    }
+  ],
+  "final_outputs": [
+    {
+      "output_name": "Parent-facing learning report (学习报告)",
+      "description": "Referenced only briefly, as part of the article's discussion of why parents perceive the product as 'effective': the app produces a 学习报告 (learning report) that the source describes as functioning as an 'immediate-effectiveness signal' (即时效果暗示) to parents. Section: 二、分析思考 > 1. 关键因素 > \"『有效』的第二层\".",
+      "evidence_ids": ["EV12"],
+      "evidence_status": "PARTIALLY_SUPPORTED",
+      "note": "The report's existence and purpose (parent-facing progress signal) is directly quoted, but the article gives no detail on its actual content, format, or what data feeds it — so it cannot be reconstructed as a workflow step, only listed as a known output artifact."
+    },
+    {
+      "output_name": "Weekly review/consolidation (last 2 days of the week)",
+      "description": "The source states the weekly cadence overall is '前三天为新课日，后两天为复习日' (first three days = new-content days, last two days = review days), but the component-level evidence only explicitly labels Video/Story&Speaking as Monday-Thursday (4 days) and TV直播课 as Friday — see source_limitations below for the resulting internal inconsistency.",
+      "evidence_ids": ["EV01"],
+      "evidence_status": "PARTIALLY_SUPPORTED",
+      "note": "High-level cadence claim is directly quoted, but does not cleanly reconcile with the day-specific labels given for individual components; the 'review days' (day 5 onward, e.g. Saturday) content/steps are not described anywhere in the article."
+    }
+  ],
+  "professional_constraints": [
+    "Cognitive-load ceiling: children aged 3-7 have short-term memory capacity of only '3±2' (3 plus/minus 2) chunks, cited as the working-memory constraint that motivates the whole repetition/reinforcement design. Quote: \"3-7岁儿童的短时记忆容量仅为『3加减2』个组块，3岁基本只有无意识记忆，5岁之前普遍还没有形成记忆策略。\" Section: 二、分析思考 > 1. 关键因素 > 『有效』的第二层 > 第3点.",
+    "Spaced/varied repetition target: each target word is cycled through at least 9+ distinct exposures per week, deliberately varied in modality/format. Quote: \"这个单词在一周中至少被循环9+次，且形式多样，包含『视听输入，多通道呈现、多维度训练、书面语境中阅读、口头语境中交流、带读、开口跟读、自己表达』.\" Same section as above.",
+    "Teaching-methodology principle (stated generally, not tied to one single named step): foreign teachers combine rhythm-based instruction and TPR (Total Physical Response) methods — songs/rhythm, exaggerated expressions/gestures, and repetition. Quote: \"外教综合运用韵律教学，tpr教学等方法，通过歌曲韵律+夸张的动作表情+不断重复.\" Section: 二、分析思考 > 1. 关键因素 > 『有效』的第二层 > 第2点.",
+    "Quiz-design principle: test the same knowledge point across multiple separate dimensions (pronunciation / meaning / written form) rather than a single combined test format; visual/production polish of the quiz itself is explicitly deprioritized ('最朴素的形式，没有做太多炫丽的包装').",
+    "Build-vs-license strategy: the company explicitly chose '自研' (in-house, self-developed content) rather than licensing existing copyrighted curricula — noted by the article as a deliberate, harder, 'different path' choice. Section: 三、写在最后."
+  ],
+  "production_or_delivery_requirements": {
+    "confirmed": [
+      "Self-developed ('自研') content strategy chosen over licensing outside curricula — the only confirmed production-strategy fact in the source."
+    ],
+    "not_disclosed_by_source": [
+      "Internal content/教研 (teaching-research) team structure or role division (writers, instructional designers, engineers, etc.)",
+      "End-to-end course-development timeline or production pipeline",
+      "Curriculum copyright/licensing sourcing details",
+      "Internal QA/review or content-approval mechanisms"
+    ]
+  },
+  "source_limitations": [
+    "The article reconstructs the LEARNER-FACING weekly content-delivery/consumption sequence (what a child/parent experiences across a week), not Zebra's internal editorial/production workflow for how that content is authored — the source explicitly does not cover team roles, production pipeline, or QA process (see production_or_delivery_requirements.not_disclosed_by_source).",
+    "Internal ordering of Word Cards / Quiz / Zebra Call within a single day is not given explicit 'then/next' sequencing language in the source; the order used in workflow_steps follows the article's own listed presentation order (numbered 1-8) plus contextual 'today' framing, and should be read with medium rather than high confidence on the exact intra-day micro-sequence.",
+    "Internal inconsistency in the source: the overall weekly-cadence claim ('前三天新课，后两天复习' — first 3 days new, last 2 days review) does not cleanly reconcile with the day-specific labels given elsewhere in the same article (Video/Story&Speaking explicitly labeled Monday-Thursday = 4 days; TV直播课 explicitly labeled Friday). The content of the stated 'review days' (day 5+, e.g. Saturday) is never described.",
+    "The source itself flags weaknesses in the product design: it states the 'AI' branding is still largely conceptual/marketing rather than reflecting substantive personalization technology ('AI仍停留概念阶段'), and that overall content volume/density is relatively low ('内容含量较低'). Section: 三、写在最后.",
+    "This is third-party analyst commentary (woshipm.com), not an official first-party account from the product's own company — so process claims, while specific and quoted, are external interpretation rather than the company's own documentation."
+  ]
+}

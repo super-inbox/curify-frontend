@@ -1,0 +1,97 @@
+{
+  "case_id": "ecommerce_001",
+  "domain": "ecommerce",
+  "input": {
+    "description": "A single smartphone-captured photo of a collapsible outdoor water bottle, taken at an office desk. Lighting is adequate but the background is cluttered (desk reflections, a nearby pen holder, a monitor visible in the distance) and conveys no 'outdoor' context.",
+    "medium": "smartphone photo",
+    "evidence_ids": ["EV01"]
+  },
+  "workflow_steps": [
+    {
+      "step_id": "step_1",
+      "step_name": "原片入场 (Raw photo intake)",
+      "step_description": "The raw, unedited office-desk phone photo of the product is uploaded into the Meitu Design Studio tool as the starting asset.",
+      "input": "Raw smartphone product photo (cluttered background, adequate lighting)",
+      "action": "Upload photo to tool backend",
+      "output": "Ingested source image ready for AI processing",
+      "professional_rule": "Professional studio photography is not required as input; a phone photo with a clear subject and correct angle is sufficient starting material.",
+      "evidence_ids": ["EV01", "EV03"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_2",
+      "step_name": "核心指令 (Core instructions / selling-point input)",
+      "step_description": "The user inputs specific product selling points as text instructions: 'food-grade silicone folding structure, lightweight design, outdoor carabiner/clip system.' Each phrase is chosen to map to a specific consumer concern (food-grade -> safety; lightweight -> hiking pain point; carabiner system -> functional differentiation from competitors).",
+      "input": "Ingested source image + product attribute knowledge",
+      "action": "Enter selling-point text prompts mapped to consumer benefit framing",
+      "output": "Structured selling-point instructions attached to the image-generation job",
+      "professional_rule": "Raw product attributes should be translated into consumer-facing benefit language before generation, not passed through as raw specs.",
+      "evidence_ids": ["EV04"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_3",
+      "step_name": "风格定调 (Style selection)",
+      "step_description": "One of four defined visual-direction styles is selected: outdoor vitality, tech quality, home casual, or luxury. For this product, 'outdoor vitality' was chosen because it was reported to produce higher click-through rates for this product category.",
+      "input": "Structured selling-point instructions",
+      "action": "Select a style direction from four defined options based on category/audience fit",
+      "output": "Chosen visual style direction (outdoor vitality) applied to subsequent generation",
+      "professional_rule": "Style selection should be driven by category-level performance data (e.g., CTR by style) rather than aesthetic preference alone.",
+      "evidence_ids": ["EV05"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_4",
+      "step_name": "套图生成 (Image-suite generation)",
+      "step_description": "Using 'smart matching' or 'custom configuration' mode, a minimum 7-image suite is generated spanning four required categories: white-background shots (folded and unfolded states), scene images (kitchen counter, backpack side pocket), selling-point close-ups (material texture, carabiner detail), and a system-recommended fold/unfold comparison image.",
+      "input": "Chosen style direction + selling-point instructions + source image",
+      "action": "Generate multi-category image suite via AI tool (smart matching or custom configuration)",
+      "output": "A minimum 7-image suite covering white-background, scene, selling-point, and comparison categories",
+      "professional_rule": "A Tmall-style detail page requires a minimum of 7 images across 4 categories for adequate information density; a white-background image is mandatory for platform norms; product body should occupy >=60% of frame composition; images should use a 3:4 vertical ratio to maximize mobile screen space.",
+      "evidence_ids": ["EV06", "EV08"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "high"
+    },
+    {
+      "step_id": "step_5",
+      "step_name": "生成与落位 (Generation and page placement)",
+      "step_description": "The final high-quality image assets are rendered and placed into the existing detail-page layout/framework to produce the finished page.",
+      "input": "Generated 7+ image suite",
+      "action": "Render final assets and integrate into detail-page layout",
+      "output": "Completed Tmall product detail page with unified visual style",
+      "professional_rule": null,
+      "evidence_ids": ["EV07", "EV10"],
+      "evidence_status": "EXTERNAL_SOURCE_CONFIRMED",
+      "confidence": "medium"
+    }
+  ],
+  "final_outputs": [
+    "A stylistically unified set of at least 7 product images meeting stated platform composition norms (mandatory white-background shot, >=60% product-body composition, 3:4 vertical ratio)",
+    "A finished Tmall product detail page assembled from the generated image suite"
+  ],
+  "professional_constraints": [
+    "Minimum 7 images required for adequate information density on a Tmall detail page",
+    "4 required image-type categories: white-background, scene, selling-point close-up, comparison",
+    "White-background image is a mandatory inclusion",
+    "Product body should occupy 60% or more of image composition",
+    "3:4 vertical image ratio recommended to maximize mobile-screen utilization",
+    "Selling points should be translated into consumer benefit language, not listed as raw specs",
+    "Style direction should be chosen based on category-level click-through-rate performance"
+  ],
+  "production_or_delivery_requirements": [
+    "Minimum 7-image suite spanning 4 defined categories before a page is considered complete",
+    "White-background image mandatory (implied platform/marketplace requirement)",
+    "3:4 vertical aspect ratio for mobile optimization"
+  ],
+  "source_limitations": [
+    "Vendor tutorial content published by Meitu to promote its own AI Design Studio product; not independently authored or third-party audited",
+    "No external/independent outcome metric (e.g. actual sales lift) provided; only a self-reported internal efficiency claim ('2 designer-days -> under 30 minutes') and an unmethodologized CTR claim for style selection",
+    "Single worked example (one folding water bottle); illustrative of intended tool workflow rather than an audited independent commercial project",
+    "No detail on photography equipment/settings beyond 'phone camera, adequate lighting'",
+    "No timing information for the human decision steps (selling-point entry, style choice), only for the automated generation step",
+    "Source is Chinese-language; step names and quotes are translated/paraphrased for this case file, with original Chinese terms retained for traceability"
+  ]
+}
