@@ -13,6 +13,7 @@ import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage"
 import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
 import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import TopicStrip from "@/app/[locale]/_components/TopicStrip";
 import { resolveTopicPath } from "@/lib/topic_path_overrides";
 import { titleCaseFromSlug } from "@/lib/locale_utils";
@@ -599,6 +600,17 @@ export default async function NanoExampleDetailPage({
           }),
         }}
       />
+
+      {/* Use-case chips — moved to the bottom of the example page (persona nav
+          as a secondary fork after the content, not mid-page in the right column). */}
+      {templateUseCases.length > 0 && (
+        <section className="mt-10 pb-8">
+          <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+            Use this example for
+          </div>
+          <UseCaseChipsRow filterTo={templateUseCases} />
+        </section>
+      )}
     </main>
   );
 }

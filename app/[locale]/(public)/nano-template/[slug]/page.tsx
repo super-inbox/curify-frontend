@@ -40,6 +40,8 @@ import {
 } from "@/lib/nano_page_data";
 
 import { getTagChildren, getPrimaryTagTier1, getTopicNavList } from "@/lib/topicRegistry";
+import { getUseCasesForTopics } from "@/lib/topicRegistry_pure";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -134,6 +136,7 @@ export default async function NanoTemplatePage({ params }: Props) {
 
   const { template } = data;
   const templateTopics = template.topics ?? [];
+  const templateUseCases = getUseCasesForTopics(templateTopics);
 
   const { h2What, h2Who, h2How, h2Prompts } = resolveContentSections(
     templateId,
@@ -392,6 +395,17 @@ export default async function NanoTemplatePage({ params }: Props) {
           </section>
         );
       })()}
+
+      {/* Use-case chips — moved to the bottom of the page (persona nav is a
+          secondary fork after the content, not mid-page in the reproduce panel). */}
+      {templateUseCases.length > 0 && (
+        <section className="mt-10 pb-8">
+          <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+            Use this template for
+          </div>
+          <UseCaseChipsRow filterTo={templateUseCases} />
+        </section>
+      )}
 
     </main>
   );
