@@ -30,6 +30,8 @@ import ImageWorkbench from "@/app/[locale]/_components/ImageWorkbench";
 import BrandWorkflow from "@/app/[locale]/_components/BrandWorkflow";
 import TopicWorkflow from "@/app/[locale]/_components/TopicWorkflow";
 import { getTopicWorkflow } from "@/lib/topic_workflows";
+import { getUseCaseForTopic } from "@/lib/topic_use_case";
+import Link from "next/link";
 import TopSearchSuggestions from "./TopSearchSuggestions";
 import SearchRedirectTracker from "./SearchRedirectTracker";
 
@@ -337,6 +339,7 @@ export default async function Page({ params }: Props) {
   // Commerce topics (merch / product / ecommerce) open a use-case-scoped
   // 3-column image workbench at the top of the page.
   const workbenchPreset = getTopicWorkbenchPreset(slug);
+  const topicUseCase = getUseCaseForTopic(slug);
 
   // Niche style-exploration topics: build a fused (examples + gallery) pool.
   // Examples come from inspirations tagged with THIS topic in topics[]
@@ -440,6 +443,24 @@ export default async function Page({ params }: Props) {
                     titleCaseFromSlug(subSlug),
                 }))}
               />
+            </div>
+          )}
+
+          {/* Topic → use-case cross-link: route captured demand from the
+              programmatic-SEO topic surface to the persona conversion page. */}
+          {topicUseCase && (
+            <div className="mt-4">
+              <Link
+                href={`/${localeStr}/use-cases/${topicUseCase.slug}`}
+                className="flex items-center justify-between gap-3 rounded-2xl border border-purple-200 bg-purple-50 px-4 py-3 text-sm transition hover:bg-purple-100"
+              >
+                <span className="text-neutral-800">
+                  Using {topicDisplayName} for work? See the{" "}
+                  <span className="font-semibold text-purple-700">{topicUseCase.label}</span>{" "}
+                  workflow.
+                </span>
+                <span className="shrink-0 font-semibold text-purple-700">Explore →</span>
+              </Link>
             </div>
           )}
         </div>
