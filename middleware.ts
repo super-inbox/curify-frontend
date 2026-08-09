@@ -1,11 +1,31 @@
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { NextResponse, type NextRequest } from "next/server";
+import { clientIpFrom, isBlockedIp } from "./lib/blocked-networks";
 
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(req: NextRequest) {
   const url = req.nextUrl;
+
+  // 0) Refuse the corpus-harvesting networks before doing any other work.
+  // Every page render here is dynamic (the (public) layout calls headers()),
+  // so an un-blocked request costs a full origin render + transfer. See
+  // lib/blocked-networks.ts for the evidence, why this matches on IP only (the
+  // pool's user-agent is the stock Mac Chrome string that thousands of real
+  // visitors also send), and why it has no GEO value.
+  if (process.env.BLOCK_NETWORKS_DISABLED !== "1") {
+    const ip = clientIpFrom(req.headers);
+    if (isBlockedIp(ip)) {
+      return new NextResponse("Forbidden", {
+        status: 403,
+        headers: {
+          "cache-control": "public, max-age=86400",
+          "x-blocked-reason": "network",
+        },
+      });
+    }
+  }
 
   // 1) Force www redirect (apex -> www)
   const host = req.headers.get("host");
