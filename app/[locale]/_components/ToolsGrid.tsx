@@ -85,13 +85,13 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
 
         const card = (
           <div
-            className={`group flex flex-col justify-between rounded-2xl border border-gray-100 bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] p-5 shadow-lg transition-shadow ${
+            className={`group flex h-full flex-col justify-between rounded-2xl border border-gray-100 bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] p-5 shadow-lg transition-shadow ${
               canNavigate ? "cursor-pointer hover:shadow-xl" : ""
             }`}
           >
             <div className="flex-grow">
               <h3 className="mb-2 text-lg font-bold text-gray-900">{title}</h3>
-              <p className="mb-4 text-sm text-gray-600">{desc}</p>
+              <p className="mb-4 line-clamp-3 text-sm text-gray-600">{desc}</p>
             </div>
 
             {canCreate ? (
@@ -160,14 +160,14 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
                 // so we'd double-count if we tracked here too. Guard.
                 if (!canCreate) trackToolClick(tool.id);
               }}
-              className="block hover:no-underline"
+              className="block h-full hover:no-underline"
             >
               {card}
             </Link>
           );
         }
 
-        return <div key={tool.id}>{card}</div>;
+        return <div key={tool.id} className="h-full">{card}</div>;
       })}
     </div>
   );

@@ -135,7 +135,7 @@ export default function ToolsClient() {
                   {group.items.map((tool) => {
                     const Card = (
                       <div
-                        className={`group rounded-2xl shadow-lg p-5 flex flex-col justify-between
+                        className={`group h-full rounded-2xl shadow-lg p-5 flex flex-col justify-between
                         bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)]
                         border border-gray-100 transition-shadow
                         ${
@@ -149,7 +149,7 @@ export default function ToolsClient() {
                         <div className="flex-grow">
                           <h3 className="text-lg font-bold text-gray-900 mb-2">{tool.title}</h3>
 
-                          <p className="text-sm text-gray-600 mb-4">
+                          <p className="text-sm text-gray-600 mb-4 line-clamp-3">
                             {"desc" in tool ? tool.desc : ""}
                           </p>
                         </div>
@@ -215,7 +215,7 @@ export default function ToolsClient() {
                             // when the whole-card button-wrapper also fires.
                             if (tool.status !== "create") trackToolClick(tool.id);
                           }}
-                          className="block hover:no-underline"
+                          className="block h-full hover:no-underline"
                         >
                           {Card}
                         </Link>
@@ -232,14 +232,14 @@ export default function ToolsClient() {
                             trackToolClick(tool.id);
                             tool.onClick?.();
                           }}
-                          className="text-left"
+                          className="block h-full w-full text-left"
                         >
                           {Card}
                         </button>
                       );
                     }
 
-                    return <div key={tool.id}>{Card}</div>;
+                    return <div key={tool.id} className="h-full">{Card}</div>;
                   })}
                 </div>
               </div>

@@ -15,9 +15,13 @@ import type { TopicWorkflowConfig } from "@/lib/topic_workflows";
 export default async function TopicWorkflow({
   locale,
   config,
+  topicHref,
 }: {
   locale: string;
   config: TopicWorkflowConfig;
+  /** When set, the heading links to the topic page carrying the full guided
+   *  version (used on the home "Design workflows" section). */
+  topicHref?: string;
 }) {
   const tRoot = await getTranslations({ locale });
   const t = makeSafeTranslator(tRoot);
@@ -29,7 +33,28 @@ export default async function TopicWorkflow({
   return (
     <section className="mt-5">
       <div className="rounded-3xl border border-neutral-200 bg-white/80 p-5 shadow-sm backdrop-blur sm:p-6">
-        <h2 className="text-lg font-bold text-neutral-900">{heading}</h2>
+        <div className="flex items-start justify-between gap-3">
+          <h2 className="text-lg font-bold text-neutral-900">
+            {topicHref ? (
+              <Link
+                href={getCanonicalPath(locale, topicHref)}
+                className="hover:text-purple-700"
+              >
+                {heading}
+              </Link>
+            ) : (
+              heading
+            )}
+          </h2>
+          {topicHref ? (
+            <Link
+              href={getCanonicalPath(locale, topicHref)}
+              className="shrink-0 whitespace-nowrap text-sm font-semibold text-purple-700 hover:text-purple-900"
+            >
+              {t("topicWorkflows.seeFull") || "See full workflow →"}
+            </Link>
+          ) : null}
+        </div>
         <p className="mt-1 text-sm text-neutral-600">{subtitle}</p>
 
         <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">

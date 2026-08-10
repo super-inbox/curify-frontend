@@ -35,6 +35,19 @@
       "subtitle": "将模板转换为可用的视频、翻译或设计——或尝试我们的演示。",
       "seeAll": "查看所有工具 →"
     },
+    "workflowRows": {
+      "title": "设计工作流",
+      "subtitle": "把模板串成完整成品——选一个工作流开始。",
+      "cta": "查看工作流 →"
+    },
+    "exampleGrid": {
+      "title": "热门模板与示例",
+      "subtitle": "来自社区、被复刻最多的新鲜设计——任选一个二次创作。"
+    },
+    "nicheTopics": {
+      "title": "按细分领域探索",
+      "subtitle": "已做风格探索的设计细分领域——先看范围，再做你自己的。"
+    },
     "discovery": {
       "topicsTitle": "按主题浏览",
       "topicsSubtitle": "我们最受欢迎类别中的模板。",
@@ -362,7 +375,7 @@
   },
   "bilingual": {
     "metadata": {
-      "title": "免费双语字幕生成器 — 无水印 | Curify",
+      "title": "免费双语字幕生成器 — 无水印",
       "description": "免费双语字幕生成器 — 导出无水印，支持170+种语言对，帧精确计时。为YouTube、TikTok和营销视频而生。一个多语言资产，而不是每个市场的剪辑。"
     },
     "why": {
@@ -1112,7 +1125,7 @@
   },
   "aiProductPhotoGenerator": {
     "metadata": {
-      "title": "AI 产品照片生成器 | 大规模模板目录照片 | Curify",
+      "title": "AI 产品照片生成器 | 大规模模板目录照片",
       "description": "具有模板视觉风格的AI产品照片生成器——从一个提示生成9张产品网格、包装模型、服装试穿和生活方式照片。演示 + 提前访问。"
     },
     "title": "AI 产品照片生成器",
@@ -1161,7 +1174,7 @@
   },
   "ecommercePhoto": {
     "metadata": {
-      "title": "上传产品照片 → 电子商务列表图像 | AI工具 | Curify",
+      "title": "上传产品照片 → 电子商务列表图像 | AI工具",
       "description": "上传任何产品照片 — 30秒内获取准备上市的电子商务图像。温馨的主图 + 9:16细节图布局。免费演示；加入早期访问以进行批量上传。"
     },
     "title": "上传您的产品 → 电子商务上市图像",
@@ -1210,7 +1223,7 @@
   },
   "characterStickerSheet": {
     "metadata": {
-      "title": "角色表情差分生成器——1 张画稿 → 9 个姿势 | Curify",
+      "title": "角色表情差分生成器——1 张画稿 → 9 个姿势",
       "description": "上传一张角色画稿 → 30 秒内得到 9 姿势的表情差分贴纸表。适合原创角色画师、VTuber、表情包和按需印刷贴纸卖家。免费体验。"
     },
     "title": "上传你的角色 → 9 姿势表情差分表",
@@ -1259,7 +1272,7 @@
   },
   "mockupGenerator": {
     "metadata": {
-      "title": "AI Merch Mockup Generator | Curify",
+      "title": "AI Merch Mockup Generator",
       "description": "Upload a character or design → a full merch mockup set with your art on every product."
     },
     "title": "AI Merch Mockup Generator",
@@ -1308,7 +1321,7 @@
   },
   "costumeTryon": {
     "metadata": {
-      "title": "中国古装试穿视频生成器 | 免费 AI 汉服试穿 | Curify",
+      "title": "中国古装试穿视频生成器 | 免费 AI 汉服试穿",
       "description": "上传一张照片，即可获得身着中国传统朝代服饰的电影级视频。试穿五千年中国时尚——免费、匿名，即刻分享。"
     },
     "title": "试穿五千年中国时尚",
@@ -1355,7 +1368,7 @@
   },
   "worksheetFromVideo": {
     "metadata": {
-      "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
+      "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet",
       "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
     },
     "title": "AI Worksheet Generator from Video",
@@ -1441,7 +1454,7 @@
   },
   "dieCutStickerFile": {
     "metadata": {
-      "title": "刀模贴纸文件制作 — 刀线+CMYK，工厂直接开印 | Curify",
+      "title": "刀模贴纸文件制作 — 刀线+CMYK，工厂直接开印",
       "description": "把任意图变成工厂能开印的刀模贴纸文件：300 DPI 透明 PNG、毫米级 CutContour 刀线(SVG)、CMYK 印刷 PDF，打包成一个 ZIP。适合贴纸卖家、POD、谷子周边。"
     },
     "title": "任意图 → 工厂能直接开印的刀模贴纸文件",
@@ -1494,7 +1507,7 @@
   },
   "packagingMockup": {
     "metadata": {
-      "title": "AI 包装样机生成器 — 刀版转 3D 盒子 | Curify",
+      "title": "AI 包装样机生成器 — 刀版转 3D 盒子",
       "description": "把刀版（.ai/PDF）变成逼真 3D 包装样机——折叠盒子，正面 / 45° / 电商白底。盒型比例来自你的文件。适合品牌、文创、礼品、POD 包装。"
     },
     "title": "你的刀版 → 逼真的 3D 盒子样机",
@@ -1548,6 +1561,7 @@
     }
   },
   "topicWorkflows": {
+    "seeFull": "查看完整流程 →",
     "merch": {
       "heading": "周边设计流程",
       "subtitle": "把一个角色或 IP 变成一整套可售卖的周边——从贴纸到包装。",
@@ -1607,6 +1621,99 @@
           "name": "卖点信息图",
           "desc": "为亚马逊/电商平台制作六宫格卖点信息图。",
           "cta": "生成信息图"
+        }
+      }
+    },
+    "brand": {
+      "heading": "品牌设计流程",
+      "subtitle": "从配色系统到可复用的品牌套件，打造完整的品牌形象。",
+      "steps": {
+        "palette": {
+          "name": "配色系统",
+          "desc": "从你的主题或参考图中提取一套带十六进制色值的协调配色。",
+          "cta": "生成配色"
+        },
+        "logo": {
+          "name": "Logo",
+          "desc": "共用一套配色的六个不同 Logo 概念——挑选你的方向。",
+          "cta": "生成 Logo"
+        },
+        "typeface": {
+          "name": "字体规范",
+          "desc": "根据品牌名与风格生成六款契合品牌的字体样张。",
+          "cta": "生成样张"
+        },
+        "packaging": {
+          "name": "包装",
+          "desc": "带有你 Logo 与配色的产品包装与效果图。",
+          "cta": "设计包装"
+        },
+        "kit": {
+          "name": "品牌套件",
+          "desc": "把品牌形象应用到一整套 VI 效果图套件上。",
+          "cta": "生成 VI 套件"
+        }
+      }
+    },
+    "edtech": {
+      "heading": "教育内容流程",
+      "subtitle": "把一个主题变成完整教学素材——识读卡、词汇、练习题与海报。",
+      "steps": {
+        "reading": {
+          "name": "识读卡片",
+          "desc": "把单词与场景、例句配对的插图卡片。",
+          "cta": "生成卡片"
+        },
+        "vocab": {
+          "name": "词汇表",
+          "desc": "带插图与双语标注的主题词汇海报。",
+          "cta": "生成词汇"
+        },
+        "worksheet": {
+          "name": "练习题",
+          "desc": "可打印的填空练习，用来巩固单词。",
+          "cta": "生成练习"
+        },
+        "scene": {
+          "name": "插图场景",
+          "desc": "把词汇放进语境的对话场景。",
+          "cta": "生成场景"
+        },
+        "poster": {
+          "name": "学习海报",
+          "desc": "适合课堂张贴、巩固本课内容的海报。",
+          "cta": "生成海报"
+        }
+      }
+    },
+    "packaging": {
+      "heading": "包装设计流程",
+      "subtitle": "从裸品到上架成品包装——结构、正面主图、系列变体、刀线打样与零售视觉。",
+      "steps": {
+        "concept": {
+          "name": "包装结构与形态",
+          "desc": "选择包装形态——纸盒、挂盒、开窗盒——并在你的产品上预览。",
+          "cta": "设计包装"
+        },
+        "label": {
+          "name": "正面主图与标签",
+          "desc": "面向货架的正面：产品名称、核心卖点，以及消费者几秒内会读到的信息。",
+          "cta": "设计标签"
+        },
+        "variants": {
+          "name": "礼盒与季节变体",
+          "desc": "无需从头设计，把同一包装扩展成礼盒与季节限定版。",
+          "cta": "生成变体"
+        },
+        "dieline": {
+          "name": "刀线 → 3D 打样",
+          "desc": "在打印前，把平面刀线按真实长×宽×高折成 3D 效果图。",
+          "cta": "折叠刀线"
+        },
+        "shelf": {
+          "name": "货架与商品视觉",
+          "desc": "成品包装的主图，用于零售商品页、提案和买手演示。",
+          "cta": "生成视觉"
         }
       }
     }

@@ -5,13 +5,12 @@ import { Inter } from "next/font/google";
 import { useRequireAuth } from "@/services/useRequireAuth";
 
 import TemplateStrip from "@/app/[locale]/_components/TemplateStrip";
+import { useTranslations } from "next-intl";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import HomeToolsStrip from "./HomeToolsStrip";
 import HomeHero from "./HomeHero";
-import HomeImageWorkbench from "./HomeImageWorkbench";
 import HomeSolutionsGrid from "./HomeSolutionsGrid";
-import HomeWorkflow from "./HomeWorkflow";
 import HomeFusedRow, { type TopRemixPrompt, type HomeExampleTile } from "./HomeFusedRow";
 
 const inter = Inter({
@@ -30,6 +29,8 @@ export default function HomeClient({
   topRemixPrompts = [],
   searchQueries = [],
   discoveryStrip,
+  designWorkflows,
+  nicheTopics,
 }: {
   locale?: string;
   /** Template-collage cards for the legacy fallback rail (used when
@@ -54,7 +55,15 @@ export default function HomeClient({
    *  the tools strip so the homepage finally links to /topics and
    *  /use-cases. */
   discoveryStrip?: ReactNode;
+  /** Server-rendered "Design workflows" section — the topic-page workflow
+   *  ladders (brand / edtech / merch / e-commerce / packaging), rendered
+   *  below the example grid. */
+  designWorkflows?: ReactNode;
+  /** Server-rendered "Explore by niche" section — a few of the
+   *  inspiration-hub niche design topics surfaced as image rows. */
+  nicheTopics?: ReactNode;
 }) {
+  const tHome = useTranslations("home");
   const requireAuth = useRequireAuth({ variant: "signup" });
 
   const [modalState, setModalState] = useState<{
@@ -84,32 +93,49 @@ export default function HomeClient({
         {/* Storytelling flow — message + audience entry points, layered above
             the existing content rail (kept below for discovery + indexation). */}
         <HomeHero montageImages={montageImages} />
-        <HomeSolutionsGrid />
-        <HomeImageWorkbench locale={locale} />
 
-        {topRemixPrompts.length > 0 ? (
-          <HomeFusedRow
-            examples={homeExamples}
-            galleryPrompts={topRemixPrompts}
-            searchQueries={searchQueries}
-            locale={locale}
-            maxRows={8}
-          />
-        ) : (
-          // Fallback when the gallery snapshot is empty — render the
-          // legacy template list as the new strip UI (name + small icon
-          // + save). Live rail (above) is the primary path; this branch
-          // only fires when top_remix_prompts.json is empty.
-          <TemplateStrip
-            cards={nanoCards}
-            trackPrefix="home-fallback-template-strip"
-            maxRows={24}
-          />
-        )}
+        <section className="mt-8 w-full max-w-[1600px]">
+          <div className="mb-4 pl-1">
+            <h2 className="text-xl font-bold tracking-tight text-neutral-900 md:text-2xl">
+              {tHome.has("exampleGrid.title")
+                ? tHome("exampleGrid.title")
+                : "Trending templates & examples"}
+            </h2>
+            <p className="mt-1 text-sm text-neutral-600">
+              {tHome.has("exampleGrid.subtitle")
+                ? tHome("exampleGrid.subtitle")
+                : "Fresh, most-copied designs from the community — remix any one."}
+            </p>
+          </div>
+
+          {topRemixPrompts.length > 0 ? (
+            <HomeFusedRow
+              examples={homeExamples}
+              galleryPrompts={topRemixPrompts}
+              searchQueries={searchQueries}
+              locale={locale}
+              maxRows={3}
+            />
+          ) : (
+            // Fallback when the gallery snapshot is empty — render the
+            // legacy template list as the new strip UI (name + small icon
+            // + save). Live rail (above) is the primary path; this branch
+            // only fires when top_remix_prompts.json is empty.
+            <TemplateStrip
+              cards={nanoCards}
+              trackPrefix="home-fallback-template-strip"
+              maxRows={24}
+            />
+          )}
+        </section>
+
+        {designWorkflows}
+
+        {nicheTopics}
+
+        <HomeSolutionsGrid />
 
         <HomeToolsStrip />
-
-        <HomeWorkflow />
 
         {discoveryStrip}
       </div>

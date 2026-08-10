@@ -90,8 +90,69 @@ const PACKAGING: TopicWorkflowConfig = {
   ],
 };
 
+/**
+ * Brand-identity ladder — mirrors the /topics/branding BrandWorkflow steps so
+ * the home "Design workflows" section can render brand in the same shape as
+ * the other commerce ladders (BrandWorkflow keeps its own richer copy on the
+ * topic page; this config drives the home teaser via `topicWorkflows.brand`).
+ */
+const BRAND: TopicWorkflowConfig = {
+  key: "brand",
+  heading: "Brand design workflow",
+  subtitle:
+    "Build a complete brand identity — from a color system to a reusable brand kit.",
+  steps: [
+    { key: "palette", n: 1, emoji: "🎨", href: "/nano-template/theme-color-palette-card",
+      name: "Color system", desc: "Extract a cohesive palette with hex codes from your theme or a reference image.", cta: "Generate palette" },
+    { key: "logo", n: 2, emoji: "✒️", href: "/nano-template/brand-logo-variant-set",
+      name: "Logo", desc: "Six distinct logo concepts that share one palette — pick your direction.", cta: "Generate logos" },
+    { key: "typeface", n: 3, emoji: "🔤", href: "/nano-template/brand-font-specimen-set",
+      name: "Typeface", desc: "Six on-brand font specimens from your brand name and style.", cta: "Generate specimens" },
+    { key: "packaging", n: 4, emoji: "📦", href: "/nano-template/food-product-packaging-design",
+      name: "Packaging", desc: "Product packaging and mockups carrying your logo and colors.", cta: "Design packaging" },
+    { key: "kit", n: 5, emoji: "🎁", href: "/nano-template/brand-vi-full-visual-pack-mockup",
+      name: "Brand kit", desc: "Apply your identity across a full visual-identity mockup pack.", cta: "Build VI pack" },
+  ],
+};
+
+/**
+ * Education-content ladder for /topics/learning — turn one topic into a full
+ * teaching pack. Each step links to a shipped education template.
+ */
+const EDTECH: TopicWorkflowConfig = {
+  key: "edtech",
+  heading: "Education content workflow",
+  subtitle:
+    "Turn one topic into a full teaching pack — reading cards, vocabulary, worksheets and posters.",
+  steps: [
+    { key: "reading", n: 1, emoji: "📖", href: "/nano-template/detailed-vocab-flashcard",
+      name: "Reading cards", desc: "Illustrated flashcards that pair a word with a scene and a sentence.", cta: "Make cards" },
+    { key: "vocab", n: 2, emoji: "🔤", href: "/nano-template/vocabulary",
+      name: "Vocabulary sheet", desc: "A themed vocabulary poster with pictures and bilingual labels.", cta: "Build vocab" },
+    { key: "worksheet", n: 3, emoji: "🧩", href: "/nano-template/kids-theme-fill-in-worksheet",
+      name: "Worksheet", desc: "A printable fill-in worksheet to practice the words.", cta: "Make worksheet" },
+    { key: "scene", n: 4, emoji: "🖼️", href: "/nano-template/english-dialogue-scene",
+      name: "Illustrated scene", desc: "A dialogue scene that puts the vocabulary into context.", cta: "Generate scene" },
+    { key: "poster", n: 5, emoji: "📣", href: "/nano-template/kids-vocabulary-poster",
+      name: "Study poster", desc: "A classroom-ready poster to reinforce the lesson.", cta: "Make poster" },
+  ],
+};
+
 const BY_PRESET: Record<string, TopicWorkflowConfig> = { merch: MERCH, product: PRODUCT };
 const BY_SLUG: Record<string, TopicWorkflowConfig> = { packaging: PACKAGING };
+
+/**
+ * Ordered workflow ladders surfaced on the home "Design workflows" section —
+ * each rendered in the same TopicWorkflow ladder shape as the topic pages,
+ * with a link to the topic page that carries the full guided version.
+ */
+export const HOME_WORKFLOWS: { config: TopicWorkflowConfig; topicHref: string }[] = [
+  { config: BRAND, topicHref: "/topics/branding" },
+  { config: EDTECH, topicHref: "/topics/learning" },
+  { config: MERCH, topicHref: "/topics/merch" },
+  { config: PRODUCT, topicHref: "/topics/product" },
+  { config: PACKAGING, topicHref: "/topics/packaging" },
+];
 
 /**
  * Returns the workflow ladder for a topic — slug-keyed ladders win over
