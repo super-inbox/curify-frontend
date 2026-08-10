@@ -71,6 +71,33 @@ const nextConfig: NextConfig = {
     const LOCALE_RE = routing.locales.join("|");
 
     const manualRedirects: RedirectRule[] = [
+      // The tool's slug is `die-cut-sticker-file`, but `die-cut-sticker` is the
+      // shape people (and we) reach for — it is also the head of the KD-25
+      // "die cut sticker maker" cluster. Unrouted it renders a chrome-only
+      // soft 404 (HTTP 200 + noindex), which burns crawl budget on a topic whose
+      // real page is already stuck in "Discovered - currently not indexed".
+      {
+        source: "/tools/die-cut-sticker",
+        destination: "/tools/die-cut-sticker-file",
+        permanent: true,
+      },
+      {
+        source: `/:locale(${LOCALE_RE})/tools/die-cut-sticker`,
+        destination: "/:locale/tools/die-cut-sticker-file",
+        permanent: true,
+      },
+      // Singular /topics/sticker is not a taxonomy entry; the tagged topic is
+      // `stickers` (10 templates). Same soft-404 shape as above.
+      {
+        source: "/topics/sticker",
+        destination: "/topics/stickers",
+        permanent: true,
+      },
+      {
+        source: `/:locale(${LOCALE_RE})/topics/sticker`,
+        destination: "/:locale/topics/stickers",
+        permanent: true,
+      },
       {
         source: "/bilingual-subtitles",
         destination: "/tools/bilingual-subtitles",
