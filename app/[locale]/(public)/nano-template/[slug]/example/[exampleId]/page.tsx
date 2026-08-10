@@ -22,6 +22,7 @@ import {
   toAbsUrlMaybe,
   resolveExampleVerticalSections,
   buildVerticalJsonLd,
+  buildVerticalFaqJsonLd,
 } from "@/lib/nano_seo_utils";
 import {
   VerticalAttributeChips,
@@ -357,6 +358,9 @@ export default async function NanoExampleDetailPage({
     url: getCanonicalUrl(pageLocale, `/nano-template/${slug}/example/${rawExampleId}`),
     image: toAbsUrlMaybe(example.asset?.image_url),
   });
+  // Answer-shaped markup for informational "<name> mbti" queries — see
+  // buildVerticalFaqJsonLd. Null unless this page has authored knowledge.
+  const verticalFaqJsonLd = buildVerticalFaqJsonLd(vertical, { name: title });
   const topicNav = getTopicNavList();
   const metaChips =
     mergedTopics.length > 0 || category ? (
@@ -534,6 +538,13 @@ export default async function NanoExampleDetailPage({
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(verticalJsonLd) }}
+          />
+        ) : null}
+
+        {verticalFaqJsonLd ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(verticalFaqJsonLd) }}
           />
         ) : null}
 

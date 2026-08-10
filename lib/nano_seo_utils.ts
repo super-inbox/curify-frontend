@@ -536,6 +536,100 @@ export function buildVerticalJsonLd(
   return node;
 }
 
+/**
+ * Question phrasing per MBTI knowledge slot. `{name}` is the page subject.
+ *
+ * Slot LABELS ("Strengths", "Career fit") are headings, not questions, and
+ * Google requires FAQPage `Question.name` to be an actual question — so the
+ * mapping is explicit rather than derived from the label.
+ */
+const MBTI_FAQ_QUESTIONS: Record<string, string> = {
+  traits: "What are {name}'s personality traits?",
+  strengths: "What are {name}'s strengths?",
+  weaknesses: "What are {name}'s weaknesses?",
+  communication: "What is {name}'s communication style?",
+  relationships: "How does {name} approach relationships?",
+  career: "What careers suit {name}'s personality type?",
+  compatibility: "Who is {name} most compatible with?",
+};
+
+/**
+ * The bare subject out of an example page title.
+ *
+ * Titles are SEO-shaped, not names — "Erling Haaland — ISTP Goal Scorer MBTI
+ * Football Card", "Joey Tribbiani — ENFP 미식가 MBTI 포스터 | Friends 캐릭터 가이드".
+ * Everything from the first separator on is descriptive, so the subject is the
+ * head segment. Splits on em/en dash, pipe, and the CJK full-width equivalents.
+ * Returns "" when nothing usable is left, which suppresses the FAQ block.
+ */
+export function mbtiSubjectFromTitle(title: string | null | undefined): string {
+  if (!title) return "";
+  const head = String(title).split(/\s[—–|｜]\s|[—–|｜]/)[0] ?? "";
+  const cleaned = head.replace(/\s+/g, " ").trim();
+  // Guard against a title that is only a type code or otherwise degenerate.
+  if (cleaned.length < 2 || /^[A-Z]{4}$/.test(cleaned)) return "";
+  return cleaned;
+}
+
+/**
+ * FAQPage JSON-LD for MBTI pages, built from the Pillar-1 authored knowledge.
+ *
+ * WHY: `<name> mbti` queries are INFORMATIONAL — the searcher wants the type,
+ * not a design tool. These pages rank pos 4–9 and convert at ~10% of
+ * position-typical CTR (7d 2026-08-09: 534 top-10 impressions → 2 clicks vs ~20
+ * expected; positions 2–8 returned zero). Titles already lead with the type, so
+ * that is not the gap. The gap is that we mark ourselves up as `HowTo` + `Article`
+ * — a TOOL — while the authored answer prose in `knowledge` never reaches the
+ * markup at all. This exposes it as an extractable Q&A.
+ *
+ * Emits null unless there is real authored content, so pages without knowledge
+ * slots never ship an empty FAQPage (which is a structured-data error).
+ * The leading "What is X's MBTI type?" entry is the one that matches the actual
+ * bleeding query, and is only added when a `type_code` attribute exists.
+ *
+ * See memory `project_mbti_names_ctr_bleed`.
+ */
+export function buildVerticalFaqJsonLd(
+  resolved: ResolvedVerticalPage | null,
+  opts: { name: string }
+): Record<string, unknown> | null {
+  if (!resolved || resolved.schema.id !== "mbti") return null;
+  const name = mbtiSubjectFromTitle(opts.name);
+  if (!name) return null;
+
+  const attr = (k: string) => resolved.attributes.find((a) => a.key === k)?.value;
+  const entries: { q: string; a: string }[] = [];
+
+  const typeCode = attr("type_code");
+  if (typeCode) {
+    const nickname = attr("type_nickname");
+    entries.push({
+      q: `What is ${name}'s MBTI type?`,
+      a: nickname
+        ? `${name} is typed as ${typeCode} — ${nickname}.`
+        : `${name} is typed as ${typeCode}.`,
+    });
+  }
+
+  for (const k of resolved.knowledge) {
+    const tpl = MBTI_FAQ_QUESTIONS[k.key];
+    const text = (k.text || "").trim();
+    if (!tpl || !text) continue;
+    entries.push({ q: tpl.replace("{name}", name), a: text });
+  }
+
+  if (!entries.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: entries.map((e) => ({
+      "@type": "Question",
+      name: e.q,
+      acceptedAnswer: { "@type": "Answer", text: e.a },
+    })),
+  };
+}
+
 export function normalizeNanoLocaleMessageEntry(
   entry: unknown
 ): NanoLocaleMessageEntry {
