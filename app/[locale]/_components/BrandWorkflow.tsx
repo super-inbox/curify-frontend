@@ -45,10 +45,10 @@ const STEPS: Step[] = [
     key: "typeface",
     n: 3,
     emoji: "🔤",
-    href: null, // template-brand-font-specimen-set not built yet
+    href: "/nano-template/brand-font-specimen-set",
     fallbackName: "Typeface",
     fallbackDesc: "Six on-brand font specimens from your brand name and style.",
-    fallbackCta: "Coming soon",
+    fallbackCta: "Generate specimens",
   },
   {
     key: "packaging",
