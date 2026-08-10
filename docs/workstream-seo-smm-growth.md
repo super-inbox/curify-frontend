@@ -225,7 +225,8 @@ _Updated 2026-08-10. The three deploy-gated rows below are **done**; corrections
 | 2026-08-19 | Blog un-fold confirmation + CTR capture-rate re-measure | GSC pull + URL Inspection | pending |
 | 2026-08-24 | **FAQPage effect on MBTI CTR** — compare capture rate vs the 10% baseline below, NOT raw clicks | position-bucket CTR table | pending |
 | 2026-08-25 | Wedge1 8-week post-ship measurement | per-family distinct-impressed-URL breadth, WC-stripped | pending |
-| overdue | SEMrush KD pull (≥7d cadence; last 2026-07-24) — **keyword set chosen 08-10, see below** | screenshots → `docs/blog-quality.md` | overdue |
+| ~~overdue~~ | ~~SEMrush KD pull~~ | screenshots → `docs/blog-quality.md` | **DONE 08-10** — 6/13 returned data; recorded in `docs/blog-quality.md` |
+| 2026-08-17 | **Re-measure `programmatic seo tools` (KD 10, was pos 24) + `ai packaging design` (KD 29, was pos 39)** — two suppressors lifted this week (fold + title). Do this BEFORE writing new copy | GSC pull | pending |
 | open | Disavow upload (manual, no API) | search.google.com/search-console/disavow-links | awaiting user |
 
 ---
@@ -294,7 +295,16 @@ authored content, so no page ships an empty FAQPage. 8 assertions; suite 303 gre
 **Measure on 08-24 with the capture-rate table above, not raw clicks** — raw clicks move with
 impressions and will mislead.
 
-### SEMrush KD — the keyword set to pull
+### SEMrush KD — pulled 2026-08-10 (full table in `docs/blog-quality.md`)
+
+**Result: 6 of 13 returned data; the 7 zero-result terms were the commercial MBTI
+variants — there is no commercial-intent MBTI demand at all.** The MBTI cluster is
+~95% of impressions and structurally informational, so it is a brand surface, not a
+conversion path. `programmatic seo tools` is the best ratio in the set (KD **10**,
+CPC **$8.98**) and acting on it surfaced a title bug suppressing 10 posts — see
+`docs/blog-quality.md` and the commit for `_dedicated-metadata.ts`.
+
+Original proposed set, for the record:
 
 Do **not** pull KD on `<name> mbti` head terms: we already rank pos 8–9 there and the
 constraint is intent, not difficulty. Pull these three groups:
