@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import HomeClient from "./HomeClient";
 import HomeDiscoveryStrip from "./HomeDiscoveryStrip";
+import HomeDesignWorkflows from "./HomeDesignWorkflows";
+import HomeNicheTopics from "./HomeNicheTopics";
 // 1. Import your service and mapper
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import { SITE_URL } from "@/lib/constants";
@@ -278,6 +280,8 @@ export default async function HomePage({
         topRemixPrompts={topRemixSnapshot.prompts}
         searchQueries={searchQueries}
         discoveryStrip={<HomeDiscoveryStrip locale={locale} />}
+        designWorkflows={<HomeDesignWorkflows locale={locale} />}
+        nicheTopics={<HomeNicheTopics locale={locale} />}
       />
     </>
   );

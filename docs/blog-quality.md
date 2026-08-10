@@ -668,3 +668,68 @@ Recorded the previously-unsaved **2026-07-15 learning KD**: AI worksheet generat
 **Root causes:** (1) page-type⇄intent mismatch — "X generator" SERPs rank tool landing pages, not blogs; (2) domain-authority gap (pos 40+ everywhere = wedge1). **Levers:** match format to intent (ship `/tools/<x>` for head terms, blog as spoke); fix why `/tools/ai-product-photo-generator` doesn't rank (index + internal links); chase differentiated long-tail we win ("worksheet generator FROM VIDEO", "product photo TO listing"); push near-page-1 (ai-packaging-design pos 39, visual-learning-tools 17.6); authority (wedge1 link-injection + SMM backlink loop) is the ceiling.
 
 **Improvement #1 (this commit):** embedded the en+zh demo video on `/blog/video-to-learning-pack` (55MB→4.6MB 720p, CDN) to strengthen the differentiated "worksheet generator from video" long-tail — the lane we can actually win vs. the entrenched free-tool brands.
+
+---
+
+## 2026-08-10 — KD pull (SEMrush batch, 13 keywords) + the title bug it exposed
+
+Raw: `raw/seo-kd-08-10/`. **6 of 13 returned data; the other 7 returned NO RESULTS.**
+
+| keyword | intent | vol | KD | CPC | our pos | asset |
+|---|---|---:|---:|---:|---:|---|
+| ai video dubbing | C | 480 | **72** 🔴 | $1.98 | 56.6 | `/tools/video-dubbing` |
+| ai packaging design | I | 170 | 29 🟢 | $3.53 | 39.4 | `/blog/ai-packaging-design-guide` *(folded)* |
+| die cut sticker maker | I+C | 170 | 25 🟢 | $2.25 | — | `/tools/die-cut-sticker` exists |
+| **programmatic seo tools** | I | 140 | **10** 🟢 | **$8.98** | **23.9** | `/blog/best-programmatic-seo-tools` |
+| voice cloning tools | C | 110 | 56 🟠 | $2.88 | — | `/blog/voice-cloning-tools` *(folded)* |
+| ai product photo generator | C | 70 | 45 🟡 | $3.67 | 58–84 | `/blog/ai-product-photo-generator-guide` |
+
+**The 7 zero-result keywords are the finding.** They were the proposed "commercial
+MBTI variants" — `mbti poster generator`, `mbti character card maker`,
+`personality poster maker`, `mbti art generator` and siblings. No SEMrush volume at
+all. **There is no commercial-intent MBTI demand to graduate our informational MBTI
+traffic into.** That kills the "capture the commercial variant" plan outright: the
+MBTI cluster is ~95% of our impressions and is structurally informational. Treat it
+as a brand/awareness surface, not a conversion path, and put commercial effort on
+the POD/packaging terms that *do* have volume.
+
+**`programmatic seo tools` is the best ratio in the set** — lowest KD (10) with the
+highest CPC ($8.98, ~4× the rest) — and we had a page already ranking. Which led to:
+
+### The title bug (found while acting on this KD data)
+
+`/blog/best-programmatic-seo-tools` was serving
+`"Curify Blog | AI Video Generation & Content Creation | Curify Studio"` as its
+`<title>` — the **blog-index default** — while its `<h1>` was correct. At KD 10 we
+sat at position 24 because Google was told the page was about AI video generation.
+
+Root cause: ~30 posts have a dedicated route folder (they render a bespoke client
+component), which bypasses `[slug]/page.tsx` `generateMetadata`. Unless the folder
+supplies its own metadata it inherits the `(public)` layout default. **20 of 30 had
+no `generateMetadata`; 10 were confirmed serving the generic title on production:**
+
+`ai-collage-digital-wallpaper-guide` · `ai-video-dubbing-tutorial` ·
+`best-programmatic-seo-tools` · `curify-ai-growth-engine` · `emotion-tts-movie` ·
+`image-to-narrative-video` · `mbti-relationship-style-visualizer` ·
+`preserve-facial-features-ai-generation` · `red-carpet-ai-looks` ·
+`weird-science-facts-classroom-engagement`
+
+Note the overlap with the 08-07 raw-i18n-key regression — four of these were
+carrying *both* defects. `preserve-facial-features-ai-generation` is also logged
+above as a "top untouched bleeder" on 2026-05-25; it has been title-less this whole
+time, which reframes that entry.
+
+**Fix:** `app/[locale]/(public)/blog/_dedicated-metadata.ts` —
+`dedicatedBlogMetadata(slug)` reads title/metaDescription from the post's own i18n
+namespace (resolved via the generated slug→namespace map that already backs the
+client-payload trim, so one source of truth) and emits canonical **+ hreflang**.
+The pre-existing per-folder static `metadata` workaround hardcoded English and
+emitted no `alternates`, so dedicated routes were also losing their hreflang map —
+that is fixed for the 10 as a side effect. 4 structural assertions in
+`lib/__tests__/dedicated_blog_metadata.test.ts` fail the build if a new dedicated
+route ships without metadata or declares a mismatched slug.
+
+**Expect movement without any content work.** Two independent suppressors were
+lifted on these pages this week (the canonical fold + now the title), so re-measure
+`programmatic seo tools` and `ai packaging design` on 08-17 before writing any new
+copy for them.

@@ -892,6 +892,90 @@
       "expected": "rich",
       "expected_templates": "moderate",
       "notes": "Adopted to pool (path A from inspect_prefill_pool_quality findings)"
+    },
+    {
+      "query": "NCT Dream photocard template",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Fix 1 (phrase protection + alias injection). BEFORE: bucket=moderate (4 relaxed hits) — all 4 were false positives, generic 'dream'+'template' token collisions against 'Dream of the Red Chamber' character-card inspirations and a 'dream career' kids worksheet, unrelated to K-pop/NCT/photocards. AFTER: bucket=empty (0) — the nct-dream phrase rule protects 'dream' and the false positives are gone. No genuine NCT-Dream/photocard catalog content exists (confirmed by direct grep), so empty is the honest floor; the kpop-idol-profile-vintage-passport-poster template now surfaces in the relaxed *template* rail (i18n-tpl=1) via the kpop/idol/card alias groups as the closest fallback. expected_templates left unset (not matcher-verified — skipped the LLM cost per Fix 1 scope)."
+    },
+    {
+      "query": "maker space label set printable",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Fix 1 (phrase protection + alias injection). BEFORE and AFTER both bucket=empty (0) — no astronomy/space-topic false positive materialized with the current catalog+query combination even pre-fix (the compound-noun collision this rule guards against is a structural risk from lib/searchIndex.ts's `space` topic alias set, not one that happened to be triggered by this exact 5-token query). The maker-space phrase rule still protects 'space' defensively and adds workshop/label/diy alias vocabulary; a relaxed template hit (template-lifestyle-watercolor-infographic) surfaces via generic 'label'/'printable' token overlap — pre-existing generic-word noise, not introduced by this fix. No maker-space-specific catalog content exists (confirmed by grep) — a genuine content gap, out of scope (no public/data changes)."
+    },
+    {
+      "query": "光与夜之恋 卡面设计参考图",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Fix 1 (phrase protection). Spaced variant — tokenizes as 2 whitespace-split primary tokens, so the bigram-decomposition fallback never fires regardless (only triggers for a single whitespace-free CJK token). BEFORE and AFTER both bucket=empty (0); no regression. Companion case to the unspaced variant below, which DOES demonstrate the bug this rule fixes. No 光与夜之恋 catalog content exists (confirmed by grep) — genuine content gap, out of scope."
+    },
+    {
+      "query": "光与夜之恋卡面设计参考图",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Fix 1 (atomic-entity phrase protection). BEFORE: bucket=rich (13 strict hits!) — a pure false positive. Unspaced, this query collapses to ONE primary token and hits the bigram-decomposition fallback, producing bigrams 光与/与夜/夜之/之恋/恋卡/卡面/面设/设计/计参/参考/考图; 3 unrelated templates (template-mood-board-interior-designgenerator, template-educational-topic-cheat-sheet-poster, template-theme-color-palette-card) strict-matched purely via the generic bigrams 设计('design')/参考('reference')/考图/面设 — none related to the named IP. AFTER: the atomicEntity guard on '光与夜之恋' skips bigram decomposition entirely for this query, bucket=empty (0). This is the clearest evidence case for the phrase-protection fix. No genuine content exists for this entity (confirmed by grep), so empty is the correct, honest result post-fix."
+    },
+    {
+      "query": "小红书香薰产品种草图",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "moderate",
+      "expected_templates": "",
+      "notes": "UPDATED BY FIX 2 — this is a CORRECTION, not a regression. Fix 1 shipped this query as bucket=rich (23 strict hits) and its own regression test asserted 'stays rich' as a success. That was wrong: all 23 hits came from template-fashion-ecommerce's inspiration cascade (eyemask/pendant/ring/scarf/musical-instrument/...), triggered purely because that template's audience blurb contains the boilerplate phrase '小红书种草内容创作者' (Xiaohongshu content-marketing creators) — the bigrams 小红/红书/种草 coincidentally cleared the strict bigram threshold against ANY template mentioning that generic audience line, independent of the query's actual subject. NONE of the 23 were about aromatherapy. Fix 2 adds a '小红书' atomicEntity rule (lib/query_phrase_aliases.ts) that suppresses bigram decomposition for this and any other query embedding the Xiaohongshu platform name, while leaving the existing '香薰' alias group (aromatherapy/fragrance/scent/candle/diffuser, added in Fix 1) fully intact and independently functional. AFTER Fix 2: bucket=moderate (6 hits), and all 6 are genuinely aromatherapy-related — template-product-poster-aroma-diffuser, template-product-poster-aromatherapy-diffuser, template-soft-decoration-design-guide-aromatherapy-spa-retreat-bedroom, template-interior-design-mood-board-generator-aromatherapy-spa-corner, template-herbal-lavender-aromatherapy, template-lifestyle-info-card-aromatherapy-essential-oils. Lower count, correct content — the eval bucket alone cannot distinguish 'rich but wrong' from 'moderate but right', which is exactly why this note exists."
+    },
+    {
+      "query": "Amazon EBC enhanced brand content layout",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Fix 1 (acronym alias injection). BEFORE: strict=0, i18n-tpl=11 (relaxed template pool) — 11 templates incidentally cleared the old relaxedThr=3 via scattered generic word overlap ('brand'/'content'/'layout' individually), a noisy/imprecise signal. AFTER: strict=0, i18n-tpl=1 — the ebc alias group ('enhanced brand content'/'amazon') raises the required-slot denominator, which filters out the 11 incidental relaxed hits and leaves exactly template-amazon-long-scroll-product-infographic-template (the one genuinely relevant catalog template, verified: it strict-matches at 4/4 required slots with the alias group satisfied by 'amazon'). Inspirations grid stays empty (0) — no inspiration for that template carries EBC-specific vocabulary in its own tags/aliases, a data-level gap (out of scope, no public/data changes)."
+    },
+    {
+      "query": "Amazon brand story module design",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "thin",
+      "expected_templates": "",
+      "notes": "Fix 1 (phrase alias injection). BEFORE and AFTER both bucket=thin (1 relaxed hit, same template-amazon-long-scroll-product-infographic-template both times) — no regression, no change. The brand-story phrase rule matches ('brand' immediately followed by 'story') and adds an alias group, but the Amazon template was already reachable via plain generic-word overlap ('amazon'+'brand'+'design') at the old threshold too, so this query didn't demonstrate a failure the rule needed to fix — kept as a coverage/regression case."
+    },
+    {
+      "query": "Y2K chrome skincare launch poster",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Fix 1 (phrase alias injection) — coverage case, genuine content gap. Both chrome-skincare and launch-poster phrase rules fire (adding y2k/skincare and product-launch-poster/campaign-poster/brand-launch-visual alias groups respectively), but no catalog template combines the Y2K aesthetic with skincare/beauty product-launch content (confirmed by grep — only generic Y2K fashion-outfit templates and a generic skincare-tutorial template exist, no overlap). BEFORE and AFTER both bucket=empty (0) — no regression; closing this gap would require public/data content additions, explicitly out of scope for Fix 1."
+    },
+    {
+      "query": "K-beauty glass skin brand launch visual",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Fix 1 (phrase alias injection). BEFORE: bucket=moderate (4 relaxed hits, all 4 from template-product-theme-promotional-poster variants — baby-care-brand/spring-beauty-festival/summer-beach-sale/summer-snack-festival) matched purely via 3 generic marketing words ('brand'+'launch'+'visual'), none specifically about K-beauty or glass skin. AFTER: bucket=empty (0) — the glass-skin alias group raises the required-slot denominator past what those 4 generic-overlap inspirations clear. This is the same class of generic-word coincidental match the rest of Fix 1 targets (comparable to the NCT-Dream and 光与夜之恋 cases), not a loss of genuine relevant content — no K-beauty/glass-skin-specific catalog content exists (confirmed by grep)."
+    },
+    {
+      "query": "手冲咖啡工作室视觉手册",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "rich",
+      "expected_templates": "",
+      "notes": "Fix 2 (atomicEntity + alias group). BEFORE Fix 2: bucket=rich (11 strict hits, ALL WRONG) — unspaced query collapsed to one primary token, bigram-decomposed, and 工作/作室/视觉 coincidentally strict-matched template-ethnic-costume-deconstruction-board ('时尚工作室摄影' fashion-studio-photography style copy) and template-animation-studio-comparison-infographic ('动画工作室对比' anime studio comparison) — neither related to coffee or brand visual manuals. AFTER Fix 2: the '手冲咖啡' atomicEntity rule suppresses bigram decomposition (the 2 wrong templates no longer match), and its 'brand identity'/'visual identity' alias group (verified narrow — only 2 templates catalog-wide contain that literal English phrase) surfaces bucket=rich (16 relaxed hits) from the CORRECT family: template-brand-identity-moodboard-visual-system-poster and template-brand-vi-full-visual-pack-mockup, including genuine coffee-brand instances (...brew-and-co-coffee-shop, ...riseup-coffee). Same bucket label as before (rich), but the underlying content flipped from 100% wrong to genuinely on-topic — verify by inspection, not just the bucket count."
+    },
+    {
+      "query": "二手奢侈品鉴定品牌视觉",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Fix 2 (atomicEntity, purely defensive). BEFORE Fix 2: bucket=moderate (31 strict hits, ALL WRONG) — 品牌/牌视/视觉 bigrams coincidentally strict-matched template-fashion-ecommerce via its boilerplate '品牌视觉团队' (brand visual team) audience blurb, completely ignoring the query's actual distinguishing subject (二手奢侈品鉴定 = secondhand luxury goods AUTHENTICATION). AFTER Fix 2: the '二手奢侈品' atomicEntity rule suppresses bigram decomposition, bucket=empty (0). No alias tokens added — no secondhand-luxury-authentication content exists anywhere in the catalog (confirmed by grep for 二手/奢侈品/鉴定, all zero hits), so empty is the honest, correct floor rather than inventing an unsupported fallback. Same class of fix as 光与夜之恋 above: eliminate the false positive, don't fabricate a match."
+    },
+    {
+      "query": "低饱和国风茶包装设计",
+      "source": "search-relevance-phrase-alias-2026-07-09",
+      "expected": "rich",
+      "expected_templates": "",
+      "notes": "Fix 2 no-op guard — deliberately NOT given a phrase rule. BEFORE and AFTER both bucket=rich (84 strict hits), unchanged. Verified via direct inspection that the match is genuine: template-food-product-packaging-design and template-eco-farm-food-uniform-product-label both strict-match via 包装/装设/设计 bigrams against their own '食品包装设计' (food packaging design) text — a real, on-topic match, just broader than tea/guofeng-specific (no 国风-tea-packaging-specific content exists, confirmed by grep). Kept in the eval set as a regression guard proving Fix 2's new rules don't touch queries that were never broken — 低饱和/国风/茶 do not appear in any Fix 2 phrase rule."
     }
   ]
 }

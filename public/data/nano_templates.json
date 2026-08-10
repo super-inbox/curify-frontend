@@ -20730,5 +20730,67 @@
       "for-dtc-brands"
     ],
     "allow_generation": true
+  },
+  {
+    "id": "template-brand-font-specimen-set",
+    "locales": {
+      "en": {
+        "base_prompt": "(Brand Font Specimen Sheet) A clean typography specimen board presenting SIX distinct font / typeface treatments for the brand name '{brand_name}', arranged in a 2-row × 3-column grid on a pure white background, each cell numbered 1 to 6. Brief: {font_brief}. Every specimen sets the brand name '{brand_name}' as large legible display lettering, with a small caption naming the type style and a short pangram or tagline beneath. Vary the SIX treatments across: a refined serif, a clean geometric sans-serif, an elegant script, a bold condensed display, a friendly rounded sans, and a hand-lettered custom mark. Use the brand palette {palette_desc} sparingly for accents (e.g. one red variant for packaging, one blue for signage). Style: professional type specimen, flat vector, crisp edges, generous negative space, legible typography, no photographic texture, no mockup, no 3D, print-ready. Each specimen clearly separated with even spacing.",
+        "parameters": [
+          {
+            "name": "brand_name",
+            "label": "品牌名 Brand name",
+            "type": "text",
+            "placeholder": [
+              "CATTÉ COFFEE 喵咖",
+              "Bloom Botanicals",
+              "北岳茶事",
+              "Nimbus Studio"
+            ]
+          },
+          {
+            "name": "font_brief",
+            "label": "字体风格 Type personality + direction",
+            "type": "text",
+            "placeholder": [
+              "warm friendly rounded sans + one playful script, cozy cafe",
+              "modern boutique, geometric sans + elegant serif",
+              "classic oriental serif + ink brush script",
+              "bold contemporary display, tech"
+            ]
+          },
+          {
+            "name": "palette_desc",
+            "label": "配色 Palette (from your 色彩规范)",
+            "type": "text",
+            "placeholder": [
+              "cozy blue, cream, coffee brown, accent red",
+              "sage green, oat cream, terracotta, ink black",
+              "dusty rose, gold, deep plum, off-white"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-brand-font-specimen-set-catte-coffee-prev.jpg",
+    "topics": [
+      "design",
+      "branding",
+      "typography",
+      "fonts",
+      "guides",
+      "posters",
+      "minimalist",
+      "composition",
+      "digital-canvas"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "creation_date": "2026-08-10",
+    "use_cases": [
+      "for-designers",
+      "for-dtc-brands"
+    ],
+    "allow_generation": true
   }
 ]

@@ -15,7 +15,6 @@ import MascotStyleLayoutWidget, {
 } from "@/app/[locale]/_components/MascotStyleLayoutWidget";
 import ReproduceWorkbench from "@/app/[locale]/_components/ReproduceWorkbench";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
-import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { toSlug } from "@/lib/nano_pure";
 import { getUseCasesForTopics } from "@/lib/topicRegistry_pure";
@@ -546,17 +545,8 @@ function TextReproduceSection(props: {
                   }}
                 />
 
-                {/* Use-case chips — derived from the template's tier-1
-                    topic. After the action bar so the persona nav is a
-                    secondary fork, not above the CTA. */}
-                {templateUseCases.length > 0 && (
-                  <div className="border-t border-neutral-100 pt-3">
-                    <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-                      Use this template for
-                    </div>
-                    <UseCaseChipsRow filterTo={templateUseCases} />
-                  </div>
-                )}
+                {/* Use-case chips moved to the bottom of the template page
+                    (see page.tsx) — kept out of the reproduce panel. */}
               </>
             )}
           </div>

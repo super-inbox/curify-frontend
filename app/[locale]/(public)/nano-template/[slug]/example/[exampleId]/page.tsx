@@ -13,6 +13,7 @@ import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage"
 import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
 import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import TopicStrip from "@/app/[locale]/_components/TopicStrip";
 import { resolveTopicPath } from "@/lib/topic_path_overrides";
 import { titleCaseFromSlug } from "@/lib/locale_utils";
@@ -21,6 +22,7 @@ import {
   toAbsUrlMaybe,
   resolveExampleVerticalSections,
   buildVerticalJsonLd,
+  buildVerticalFaqJsonLd,
 } from "@/lib/nano_seo_utils";
 import {
   VerticalAttributeChips,
@@ -356,6 +358,9 @@ export default async function NanoExampleDetailPage({
     url: getCanonicalUrl(pageLocale, `/nano-template/${slug}/example/${rawExampleId}`),
     image: toAbsUrlMaybe(example.asset?.image_url),
   });
+  // Answer-shaped markup for informational "<name> mbti" queries — see
+  // buildVerticalFaqJsonLd. Null unless this page has authored knowledge.
+  const verticalFaqJsonLd = buildVerticalFaqJsonLd(vertical, { name: title });
   const topicNav = getTopicNavList();
   const metaChips =
     mergedTopics.length > 0 || category ? (
@@ -536,6 +541,13 @@ export default async function NanoExampleDetailPage({
           />
         ) : null}
 
+        {verticalFaqJsonLd ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(verticalFaqJsonLd) }}
+          />
+        ) : null}
+
         {/* W1.2 — Related-topics footer row. Expands the template+example
             topic union with tier-1 / tier-2 ancestors + curated related
             entries, filtered to fully-localized topics. Injects internal
@@ -599,6 +611,17 @@ export default async function NanoExampleDetailPage({
           }),
         }}
       />
+
+      {/* Use-case chips — moved to the bottom of the example page (persona nav
+          as a secondary fork after the content, not mid-page in the right column). */}
+      {templateUseCases.length > 0 && (
+        <section className="mt-10 pb-8">
+          <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+            Use this example for
+          </div>
+          <UseCaseChipsRow filterTo={templateUseCases} />
+        </section>
+      )}
     </main>
   );
 }

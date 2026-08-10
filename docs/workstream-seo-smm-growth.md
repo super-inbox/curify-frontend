@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-08-07.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-08-10.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -212,17 +212,116 @@ more title surgery.** `jude` (927 impr / 3 clicks) is still folded — it needs 
 
 ### Checkpoints — dated, with owner action
 
+_Updated 2026-08-10. The three deploy-gated rows below are **done**; corrections to the
+2026-08-07 diagnosis are in the section that follows._
+
 | Due | Check | Method | Status |
 |---|---|---|---|
-| **now** | **Merge `jwang/vercel` → main and deploy `98b0e4b5`** — 6 blog posts are serving raw i18n keys until it lands | normal deploy | **blocking the two rows below** |
-| after deploy | **Re-fire Indexing-API ping** on the 44 folded blogs + top folded example pages (incl. `…mbti-nba-jude`). The 08-04 ping predates the 08-05 fix; firing before `98b0e4b5` deploys would waste it the same way | `node scripts/submit_indexing_api.cjs --urls-file=… --state=…` (200/day quota) | **highest-value open action** |
-| after deploy | Re-verify the 6 repaired posts render prose on prod (`grep -c 'blog\.[a-zA-Z]*\.'` on the HTML should be 0) | curl | pending |
-| 2026-08-12 | 八仙 FB video series ends → pull `fan_count` (baseline **89** on 08-04) | Graph `/me?fields=fan_count` | pending |
-| 2026-08-19 | Blog un-fold confirmation | GSC pull + URL Inspection re-run on the same 13 URLs | pending |
-| 2026-08-19 | If still no un-fold → the remaining shared bytes are `topics` (~153KB, read by client chips with dynamic keys) + the UI namespaces; next lever is per-route namespace loading, not another blanket trim | follow-up to `pickClientMessages()` | conditional |
-| 2026-08-25 | Wedge1 8-week post-ship measurement | per-family distinct-impressed-URL breadth, WC-stripped; baseline window 05-12→06-08 (topics 320, example 2840, use-cases 15, tools 61) | pending |
-| overdue | SEMrush KD pull (≥7d cadence; last 2026-07-24) | user-provided screenshots → `docs/blog-quality.md` | overdue |
+| ~~now~~ | ~~Merge `jwang/vercel` → main and deploy `98b0e4b5`~~ | normal deploy | **DONE** — `98b0e4b5` + `0c4ceb9b` on main + live |
+| ~~after deploy~~ | ~~Re-verify the 6 repaired posts render prose on prod~~ | curl | **DONE 08-10** — 0 raw keys on all 6; blog HTML 480KB |
+| ~~after deploy~~ | ~~Re-fire Indexing-API ping on the folded set~~ | `submit_indexing_api.cjs` | **DONE 08-10** — 42 URLs, 0 failed |
+| 2026-08-12 | 八仙 FB video series → pull `fan_count` (baseline **89** on 08-04) | Graph `/me?fields=fan_count` | pending |
+| 2026-08-17 | **Un-fold check on the 42 pinged URLs** (ping fired 08-10; allow ~1wk) | re-run `scan_fold.cjs` | pending |
+| 2026-08-19 | Blog un-fold confirmation + CTR capture-rate re-measure | GSC pull + URL Inspection | pending |
+| 2026-08-24 | **FAQPage effect on MBTI CTR** — compare capture rate vs the 10% baseline below, NOT raw clicks | position-bucket CTR table | pending |
+| 2026-08-25 | Wedge1 8-week post-ship measurement | per-family distinct-impressed-URL breadth, WC-stripped | pending |
+| ~~overdue~~ | ~~SEMrush KD pull~~ | screenshots → `docs/blog-quality.md` | **DONE 08-10** — 6/13 returned data; recorded in `docs/blog-quality.md` |
+| 2026-08-17 | **Re-measure `programmatic seo tools` (KD 10, was pos 24) + `ai packaging design` (KD 29, was pos 39)** — two suppressors lifted this week (fold + title). Do this BEFORE writing new copy | GSC pull | pending |
 | open | Disavow upload (manual, no API) | search.google.com/search-console/disavow-links | awaiting user |
+
+---
+
+## 2026-08-10 — corrections + the two P0s worked
+
+### The fold fix is CONFIRMED working (and two earlier explanations were wrong)
+
+Full URL-Inspection sweep of **all 103 blogs**: **60 indexed clean · 41 folded but never
+recrawled since the 08-05 fix · 2 folded despite a post-fix recrawl · 0 errors.**
+
+**`/blog/world-cup-2026-ai-prompt-hub` un-folded** — self-canonical, "Submitted and indexed",
+recrawled 08-07. It was the biggest traffic-bearing casualty (831 impr / 30 clk), so the
+mechanism is proven end-to-end. The fold is a **recrawl-latency** problem now, not a
+payload problem: 41 of the 43 still-folded blogs simply have not been revisited.
+
+**Two claims in the 08-07 section are retracted:**
+
+1. **"france/portugal/brazil are genuine country-swap near-duplicates" — false.** Measured
+   visible-text similarity: france↔portugal **0.284**, france↔brazil **0.142**,
+   portugal↔brazil **0.105**. Not near-duplicates. That explanation should not be reused.
+2. **Neither residual payload nor content volume separates folded from un-folded.**
+   Whole-page HTML similarity against an unrelated blog: un-folded wc-hub **0.943**, folded
+   france **0.957** — indistinguishable. Folded portugal carries *more* unique text (16,903
+   chars) than un-folded wc-hub (16,416); cleanly-indexed travel-itinerary has only 8,232.
+   **So the "next lever = trim `topics` (~153KB)" row in the 08-07 table was aimed at the
+   wrong target and is dropped.**
+
+Real residual exposure: unique visible text is **1.6–3.0% of page bytes** (~500KB HTML
+carrying 8–17K chars). Absolute size fell 4.5× (2.17MB → 735KB → **480KB**) but pages are
+still ~95% shared chrome. Fixing that ratio means less chrome per page, not a smaller catalog.
+
+### P0 #1 — Indexing-API ping: FIRED 2026-08-10
+
+42 URLs (41 folded-and-stale blogs + `…/example/template-mbti-nba-jude`), 0 failed. Targets
+were selected as **folded AND last-crawled before 2026-08-05**, so no quota went to pages
+Google has already re-evaluated post-fix — the mistake that wasted the 08-04 ping.
+
+### P0 #2 — CTR bleed: quantified, and the assumed fix was already shipped
+
+Actual CTR vs position-typical CTR, all queries, 7d (08-03→08-09):
+
+| pos | impr | clicks | actual | typical | expected |
+|---|---:|---:|---:|---:|---:|
+| 4 | 27 | **0** | 0% | 8% | 2.2 |
+| 7 | 71 | **0** | 0% | 4% | 2.8 |
+| 9 | 264 | 1 | 0.38% | 2.5% | 6.6 |
+| **top-10** | **534** | **2** | — | — | **~20** |
+
+**We capture 10% of position-normal CTR.** Positions 2–8 return literally zero. Site-wide,
+**276 of 288 top-10-ranking pages (96%) earn zero clicks = 63% of top-10 impressions.**
+This is a real anomaly, not "we rank at 9".
+
+**The assumed fix — put the MBTI type in the title — is already live** and is not the lever:
+prod serves `Erling Haaland — ISTP Goal Scorer MBTI Football Card`, and the ru/es/ko variants
+are properly localized. Do not redo title surgery.
+
+**What was actually missing:** example pages carry `Article` + `HowTo` + `HowToStep` JSON-LD
+and **no `FAQPage`** — we mark ourselves up as a TOOL for a query whose intent is a QUESTION.
+Worse, the Pillar-1 authored knowledge (`traits`, `strengths`, `career`, `compatibility`…)
+never reached the markup at all. Shipped `buildVerticalFaqJsonLd()`
+(`lib/nano_seo_utils.ts`): emits FAQPage from that authored prose, led by
+*"What is {name}'s MBTI type?"* — the exact bleeding query. Suppressed when there is no
+authored content, so no page ships an empty FAQPage. 8 assertions; suite 303 green.
+
+**Measure on 08-24 with the capture-rate table above, not raw clicks** — raw clicks move with
+impressions and will mislead.
+
+### SEMrush KD — pulled 2026-08-10 (full table in `docs/blog-quality.md`)
+
+**Result: 6 of 13 returned data; the 7 zero-result terms were the commercial MBTI
+variants — there is no commercial-intent MBTI demand at all.** The MBTI cluster is
+~95% of impressions and structurally informational, so it is a brand surface, not a
+conversion path. `programmatic seo tools` is the best ratio in the set (KD **10**,
+CPC **$8.98**) and acting on it surfaced a title bug suppressing 10 posts — see
+`docs/blog-quality.md` and the commit for `_dedicated-metadata.ts`.
+
+Original proposed set, for the record:
+
+Do **not** pull KD on `<name> mbti` head terms: we already rank pos 8–9 there and the
+constraint is intent, not difficulty. Pull these three groups:
+
+1. **Commercial variants of what we already rank for** — `mbti poster generator`,
+   `mbti character card maker`, `personality poster maker`, `mbti art generator`.
+2. **The decaying evergreen base** (359 impr/day, −79%) — `ai packaging design`,
+   `ai sticker design prompts`, `ai product photo generator`, `ai travel itinerary template`,
+   `ai video dubbing`, `voice cloning tools`, `programmatic seo tools`.
+3. **The POD/merch wedge** (where the paying customer is) — `die cut sticker maker`,
+   `custom sticker design ai`, `print on demand design generator`, `merch design generator`.
+
+Skip World-Cup terms — the 91K-impression spike unwound and will not return.
+
+Supporting signal for group 3: on-site search shows an unserved merch-substrate cluster —
+`挂绳`/lanyard, `手机壳`, `瓶子`, `雕像`, `咖啡杯`, `手提袋` all returning ≤4 results, and
+`bobblehead` returning none.
 
 ---
 

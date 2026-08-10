@@ -10,7 +10,6 @@ import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
-import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { fillPrompt } from "@/lib/nano_pure";
 import { normalizePrefills } from "@/lib/nano_prompt_utils";
@@ -376,15 +375,8 @@ export default function ExampleRightColumn({
 
       {/* Use-case chips — after the primary action bar so the persona
           nav is a secondary fork, not above the CTA. Filter derives
-          from the template's tier-1 topic. */}
-      {(useCaseFilter?.length ?? 0) > 0 && (
-        <div className="border-t border-neutral-100 pt-3">
-          <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-            Use this example for
-          </div>
-          <UseCaseChipsRow filterTo={useCaseFilter} />
-        </div>
-      )}
+          from the template's tier-1 topic. Moved to the bottom of the
+          example page (see example/[exampleId]/page.tsx). */}
 
       {/* Generated image result */}
       {generatedImageUrl && (

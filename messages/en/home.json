@@ -35,6 +35,19 @@
       "subtitle": "Take a template into a working video, translation, or design — or try one of our demos.",
       "seeAll": "See all tools →"
     },
+    "workflowRows": {
+      "title": "Design workflows",
+      "subtitle": "Chain our templates into a complete deliverable — pick a workflow to start.",
+      "cta": "View workflow →"
+    },
+    "exampleGrid": {
+      "title": "Trending templates & examples",
+      "subtitle": "Fresh, most-copied designs from the community — remix any one."
+    },
+    "nicheTopics": {
+      "title": "Explore by niche",
+      "subtitle": "Style-explored design niches — see the range, then make your own."
+    },
     "discovery": {
       "topicsTitle": "Browse by topic",
       "topicsSubtitle": "Templates across our most popular categories.",
@@ -399,7 +412,7 @@
   },
   "bilingual": {
     "metadata": {
-      "title": "Free Bilingual Subtitles Generator — No Watermark | Curify",
+      "title": "Free Bilingual Subtitles Generator — No Watermark",
       "description": "Free bilingual subtitle generator — no watermark on exports, 170+ language pairs, frame-accurate timing. Built for YouTube, TikTok, and marketing video. One multilingual asset, not per-market cuts."
     },
     "title": "Free Bilingual Subtitles for Video — No Watermark, 170+ Languages",
@@ -931,7 +944,7 @@
   },
   "aiProductPhotoGenerator": {
     "metadata": {
-      "title": "AI Product Photo Generator | Templated Catalog Photos at Scale | Curify",
+      "title": "AI Product Photo Generator | Templated Catalog Photos at Scale",
       "description": "AI product photo generator with templated visual style — ship 9-image product grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Demo + early access."
     },
     "title": "AI Product Photo Generator",
@@ -980,7 +993,7 @@
   },
   "ecommercePhoto": {
     "metadata": {
-      "title": "Upload Product Photo → E-Commerce Listing Image | AI Tool | Curify",
+      "title": "Upload Product Photo → E-Commerce Listing Image | AI Tool",
       "description": "Upload any product photo — get a ready-to-list e-commerce image in 30 seconds. Cozy warm hero shots + 9:16 detail-shot layouts. Free demo; join early access for batch upload."
     },
     "title": "Upload Your Product → E-Commerce Listing Image",
@@ -1029,7 +1042,7 @@
   },
   "characterStickerSheet": {
     "metadata": {
-      "title": "Character Expression Sheet Generator — 1 Drawing → 9 Poses | Curify",
+      "title": "Character Expression Sheet Generator — 1 Drawing → 9 Poses",
       "description": "Upload one character drawing → get a 9-pose expression sticker sheet (差分) in 30 seconds. For OC artists, VTubers, emote packs, and print-on-demand sticker sellers. Free demo."
     },
     "title": "Upload Your Character → 9-Pose Expression Sheet",
@@ -1078,7 +1091,7 @@
   },
   "mockupGenerator": {
     "metadata": {
-      "title": "AI Merch Mockup Generator | Curify",
+      "title": "AI Merch Mockup Generator",
       "description": "Upload a character or design → a full merch mockup set with your art on every product."
     },
     "title": "AI Merch Mockup Generator",
@@ -1127,7 +1140,7 @@
   },
   "costumeTryon": {
     "metadata": {
-      "title": "Chinese Costume Try-On Video Generator | Free AI Hanfu Try-On | Curify",
+      "title": "Chinese Costume Try-On Video Generator | Free AI Hanfu Try-On",
       "description": "Upload one photo and get a cinematic video of yourself in traditional Chinese dynasty costumes. Try on 5,000 years of Chinese fashion — free, anonymous, and instantly shareable."
     },
     "title": "Try on 5,000 years of Chinese fashion",
@@ -1174,7 +1187,7 @@
   },
   "worksheetFromVideo": {
     "metadata": {
-      "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet | Curify",
+      "title": "AI Worksheet Generator from Video | Turn Any Clip into a Worksheet",
       "description": "Paste a video — even a YouTube clip — and generate a complete worksheet: bilingual subtitles, vocabulary cards, a quiz, the script, and speaking practice. The AI worksheet generator built for video. Free demo."
     },
     "title": "AI Worksheet Generator from Video",
@@ -1244,7 +1257,7 @@
       "typeface": {
         "name": "Typeface",
         "desc": "Six on-brand font specimens from your brand name and style.",
-        "cta": "Coming soon"
+        "cta": "Generate specimens"
       },
       "packaging": {
         "name": "Packaging",
@@ -1260,7 +1273,7 @@
   },
   "dieCutStickerFile": {
     "metadata": {
-      "title": "Die-Cut Sticker File Maker — Cut Line + CMYK, Print-Ready | Curify",
+      "title": "Die-Cut Sticker File Maker — Cut Line + CMYK, Print-Ready",
       "description": "Turn any image into a factory-ready die-cut sticker file: 300 DPI transparent PNG, mm-accurate CutContour cut line (SVG), and print-ready CMYK PDF in one ZIP. For sticker sellers, POD & 谷子 merch."
     },
     "title": "Any Design → A Factory-Ready Die-Cut Sticker File",
@@ -1313,7 +1326,7 @@
   },
   "packagingMockup": {
     "metadata": {
-      "title": "AI Packaging Mockup Generator — Dieline to 3D Box | Curify",
+      "title": "AI Packaging Mockup Generator — Dieline to 3D Box",
       "description": "Turn your dieline (.ai/PDF) into realistic 3D packaging mockups — folded box, front / 45° / e-commerce white-bg. True box proportions from your file. For brand, 文创, gift & POD packaging."
     },
     "title": "Your Dieline → A Realistic 3D Box Mockup",
@@ -1363,6 +1376,144 @@
         "educationBody": "Turn gift-box, tea, and cultural-product dielines into product-page and promo mockups that match the real box shape.",
         "businessTitle": "E-commerce & bulk orders",
         "businessBody": "Need pack shots for a catalog of SKUs? We offer dieline → mockup as a done-for-you / bulk service, and can add editable 3D models."
+      }
+    }
+  },
+  "topicWorkflows": {
+    "seeFull": "See full workflow →",
+    "merch": {
+      "heading": "Merch design workflow",
+      "subtitle": "Turn one character or IP into a full line of sellable merch — from stickers to packaging.",
+      "steps": {
+        "sticker": {
+          "name": "Character sticker pack",
+          "desc": "Turn your character or IP into a consistent expression / sticker sheet.",
+          "cta": "Make stickers"
+        },
+        "mockups": {
+          "name": "Merch mockups",
+          "desc": "Apply the artwork across a full mockup set — mug, tote, keychain, phone case.",
+          "cta": "Generate mockups"
+        },
+        "packaging": {
+          "name": "Packaging",
+          "desc": "Design product packaging and gift boxes carrying your IP.",
+          "cta": "Design packaging"
+        },
+        "collection": {
+          "name": "Collection display",
+          "desc": "Lay the full merch line out as a collection display board.",
+          "cta": "Build collection"
+        },
+        "poster": {
+          "name": "Promo poster",
+          "desc": "A promotional poster to launch and sell the collection.",
+          "cta": "Make poster"
+        }
+      }
+    },
+    "product": {
+      "heading": "Product & e-commerce workflow",
+      "subtitle": "Turn one product photo into a full set of listing-ready visuals — from hero shot to marketplace listing.",
+      "steps": {
+        "poster": {
+          "name": "Product poster",
+          "desc": "Turn your product photo into a clean promotional hero poster.",
+          "cta": "Make poster"
+        },
+        "listing": {
+          "name": "E-commerce listing",
+          "desc": "A 9:16 detail page with features, specs and lifestyle shots.",
+          "cta": "Build listing"
+        },
+        "tryon": {
+          "name": "Model / try-on",
+          "desc": "Put your product on a model for lifestyle and try-on visuals.",
+          "cta": "Generate try-on"
+        },
+        "promo": {
+          "name": "Promotional poster",
+          "desc": "An eye-catching sale or campaign poster for the product.",
+          "cta": "Make promo"
+        },
+        "infographic": {
+          "name": "Listing infographic",
+          "desc": "A six-grid feature infographic for Amazon / marketplace listings.",
+          "cta": "Build infographic"
+        }
+      }
+    },
+    "brand": {
+      "heading": "Brand design workflow",
+      "subtitle": "Build a complete brand identity — from a color system to a reusable brand kit.",
+      "steps": {
+        "palette": {
+          "name": "Color system"
+        },
+        "logo": {
+          "name": "Logo"
+        },
+        "typeface": {
+          "name": "Typeface"
+        },
+        "packaging": {
+          "name": "Packaging"
+        },
+        "kit": {
+          "name": "Brand kit"
+        }
+      }
+    },
+    "edtech": {
+      "heading": "Education content workflow",
+      "subtitle": "Turn one topic into a full teaching pack — reading cards, vocabulary, worksheets and posters.",
+      "steps": {
+        "reading": {
+          "name": "Reading cards"
+        },
+        "vocab": {
+          "name": "Vocabulary sheet"
+        },
+        "worksheet": {
+          "name": "Worksheet"
+        },
+        "scene": {
+          "name": "Illustrated scene"
+        },
+        "poster": {
+          "name": "Study poster"
+        }
+      }
+    },
+    "packaging": {
+      "heading": "Packaging design workflow",
+      "subtitle": "Take a product from bare item to shelf-ready pack — structure, front panel, variants, dieline proof and retail visuals.",
+      "steps": {
+        "concept": {
+          "name": "Pack concept & structure",
+          "desc": "Choose the format — carton, hanging box, window pack — and see it on your product.",
+          "cta": "Design the pack"
+        },
+        "label": {
+          "name": "Front panel & label",
+          "desc": "The shelf-facing panel: product name, the core benefit, and claims a shopper reads in seconds.",
+          "cta": "Design the label"
+        },
+        "variants": {
+          "name": "Gift & seasonal variants",
+          "desc": "Spin the same pack into gift and seasonal editions without restarting the design.",
+          "cta": "Make variants"
+        },
+        "dieline": {
+          "name": "Dieline → 3D proof",
+          "desc": "Fold your flat dieline into a 3D mockup at true width × height × depth, before anything is printed.",
+          "cta": "Fold the dieline"
+        },
+        "shelf": {
+          "name": "Shelf & listing visuals",
+          "desc": "Hero shots of the finished pack for retail listings, decks and buyer presentations.",
+          "cta": "Make visuals"
+        }
       }
     }
   }

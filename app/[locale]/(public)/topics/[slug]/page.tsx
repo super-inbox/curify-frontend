@@ -28,6 +28,10 @@ import { getTemplatesForTopic, getRelatedTopics, getFurtherExplorationTopics, ge
 import { getTopicWorkbenchPreset } from "@/lib/topic_workbench";
 import ImageWorkbench from "@/app/[locale]/_components/ImageWorkbench";
 import BrandWorkflow from "@/app/[locale]/_components/BrandWorkflow";
+import TopicWorkflow from "@/app/[locale]/_components/TopicWorkflow";
+import { getTopicWorkflow } from "@/lib/topic_workflows";
+import { getUseCaseForTopic } from "@/lib/topic_use_case";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import TopSearchSuggestions from "./TopSearchSuggestions";
 import SearchRedirectTracker from "./SearchRedirectTracker";
 
@@ -335,6 +339,7 @@ export default async function Page({ params }: Props) {
   // Commerce topics (merch / product / ecommerce) open a use-case-scoped
   // 3-column image workbench at the top of the page.
   const workbenchPreset = getTopicWorkbenchPreset(slug);
+  const topicUseCase = getUseCaseForTopic(slug);
 
   // Niche style-exploration topics: build a fused (examples + gallery) pool.
   // Examples come from inspirations tagged with THIS topic in topics[]
@@ -440,6 +445,7 @@ export default async function Page({ params }: Props) {
               />
             </div>
           )}
+
         </div>
       </section>
 
@@ -484,12 +490,18 @@ export default async function Page({ params }: Props) {
           after the user has scanned examples. Commerce topics (merch / product /
           ecommerce) get the use-case-scoped 3-column upload workbench; the brand
           topic gets its bespoke 5-step generative ladder. */}
-      {(workbenchPreset || slug === "branding") && (
+      {(workbenchPreset || slug === "branding" || getTopicWorkflow(workbenchPreset, slug)) && (
         <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
+          {/* Design-workflow ladder ABOVE the "start a workflow" upload
+              workbench: brand topics get BrandWorkflow; merch/product get the
+              commerce ladder chaining the existing template pipeline. */}
+          {slug === "branding" && <BrandWorkflow locale={localeStr} />}
+          {getTopicWorkflow(workbenchPreset, slug) && (
+            <TopicWorkflow locale={localeStr} config={getTopicWorkflow(workbenchPreset, slug)!} />
+          )}
           {workbenchPreset && (
             <ImageWorkbench locale={localeStr} preset={workbenchPreset} />
           )}
-          {slug === "branding" && <BrandWorkflow locale={localeStr} />}
         </section>
       )}
 
@@ -535,6 +547,15 @@ export default async function Page({ params }: Props) {
       {/* Visible authored body for visual-format topics (how-to + uses + FAQ).
           Below the template feed so the page still leads with visuals. */}
       <TopicFormatContent content={formatContent} displayName={topicDisplayName} />
+
+      {/* Topic → use-case cross-link at the bottom: reuse the existing
+          use-case chip row (EntryBar pills + click tracking), filtered to the
+          persona this topic maps to. Routes captured SEO demand to conversion. */}
+      {topicUseCase && (
+        <section className="mx-auto max-w-[1600px] px-4 pb-12 sm:px-6 lg:px-8">
+          <UseCaseChipsRow filterTo={[topicUseCase.slug]} showQuestion />
+        </section>
+      )}
 
       {/* The old bottom "Explore More" / "Browse by Category" strip (tier-2
           navSubTopics + tier-3 tagSubTopics) was removed: the top "Explore
