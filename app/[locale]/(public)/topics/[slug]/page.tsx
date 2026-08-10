@@ -490,14 +490,14 @@ export default async function Page({ params }: Props) {
           after the user has scanned examples. Commerce topics (merch / product /
           ecommerce) get the use-case-scoped 3-column upload workbench; the brand
           topic gets its bespoke 5-step generative ladder. */}
-      {(workbenchPreset || slug === "branding") && (
+      {(workbenchPreset || slug === "branding" || getTopicWorkflow(workbenchPreset, slug)) && (
         <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
           {/* Design-workflow ladder ABOVE the "start a workflow" upload
               workbench: brand topics get BrandWorkflow; merch/product get the
               commerce ladder chaining the existing template pipeline. */}
           {slug === "branding" && <BrandWorkflow locale={localeStr} />}
-          {getTopicWorkflow(workbenchPreset) && (
-            <TopicWorkflow locale={localeStr} config={getTopicWorkflow(workbenchPreset)!} />
+          {getTopicWorkflow(workbenchPreset, slug) && (
+            <TopicWorkflow locale={localeStr} config={getTopicWorkflow(workbenchPreset, slug)!} />
           )}
           {workbenchPreset && (
             <ImageWorkbench locale={localeStr} preset={workbenchPreset} />

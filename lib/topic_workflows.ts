@@ -63,9 +63,44 @@ const PRODUCT: TopicWorkflowConfig = {
   ],
 };
 
-const BY_PRESET: Record<string, TopicWorkflowConfig> = { merch: MERCH, product: PRODUCT };
+/**
+ * Retail-packaging ladder for /topics/packaging. Ordered after how packaging
+ * actually reaches a shelf — settle the pack format and size first, then the
+ * front panel that has to sell the product in a two-second glance, then
+ * seasonal variants, then the dieline/3D proof, then the retail visuals.
+ * Unlike MERCH/PRODUCT this one is keyed by SLUG: the packaging topic has no
+ * upload workbench preset, the ladder is the whole point of the section.
+ */
+const PACKAGING: TopicWorkflowConfig = {
+  key: "packaging",
+  heading: "Packaging design workflow",
+  subtitle:
+    "Take a product from bare item to shelf-ready pack — structure, front panel, variants, dieline proof and retail visuals.",
+  steps: [
+    { key: "concept", n: 1, emoji: "📦", href: "/nano-template/food-product-packaging-design",
+      name: "Pack concept & structure", desc: "Choose the format — carton, hanging box, window pack — and see it on your product.", cta: "Design the pack" },
+    { key: "label", n: 2, emoji: "🏷️", href: "/nano-template/eco-farm-food-uniform-product-label",
+      name: "Front panel & label", desc: "The shelf-facing panel: product name, the core benefit, and claims a shopper reads in seconds.", cta: "Design the label" },
+    { key: "variants", n: 3, emoji: "🎁", href: "/nano-template/chocolate-giftbox-packaging",
+      name: "Gift & seasonal variants", desc: "Spin the same pack into gift and seasonal editions without restarting the design.", cta: "Make variants" },
+    { key: "dieline", n: 4, emoji: "📐", href: "/tools/packaging-mockup",
+      name: "Dieline → 3D proof", desc: "Fold your flat dieline into a 3D mockup at true width × height × depth, before anything is printed.", cta: "Fold the dieline" },
+    { key: "shelf", n: 5, emoji: "🛒", href: "/nano-template/product-poster",
+      name: "Shelf & listing visuals", desc: "Hero shots of the finished pack for retail listings, decks and buyer presentations.", cta: "Make visuals" },
+  ],
+};
 
-/** Returns the commerce-workflow ladder for a workbench preset, or null. */
-export function getTopicWorkflow(preset: string | null): TopicWorkflowConfig | null {
+const BY_PRESET: Record<string, TopicWorkflowConfig> = { merch: MERCH, product: PRODUCT };
+const BY_SLUG: Record<string, TopicWorkflowConfig> = { packaging: PACKAGING };
+
+/**
+ * Returns the workflow ladder for a topic — slug-keyed ladders win over
+ * preset-keyed ones, so a topic can carry a ladder without a workbench preset.
+ */
+export function getTopicWorkflow(
+  preset: string | null,
+  slug?: string | null,
+): TopicWorkflowConfig | null {
+  if (slug && BY_SLUG[slug]) return BY_SLUG[slug];
   return preset ? BY_PRESET[preset] ?? null : null;
 }
