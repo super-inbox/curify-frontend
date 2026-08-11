@@ -25,7 +25,7 @@ export type PlanStep = {
   n: number;
   tool_id: string;
   label: string;
-  /** Why this step exists — shown in the UI, and the trace record. */
+  /** Why this step exists — rendered in the UI. (No trace store exists yet.) */
   reason: string;
   template_id?: string;
   params?: Record<string, string>;

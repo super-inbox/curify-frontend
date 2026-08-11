@@ -8,9 +8,13 @@
  *   client  execution — reuses the authed generate services, so long image jobs
  *           never hit a serverless timeout and auth works exactly as elsewhere
  *
- * The loop is bounded and observable: plan → execute → observe → verify, with a
- * single re-plan on failure. Steps whose tool is a declared GAP are shown with
- * the tool that would run them rather than being skipped or faked.
+ * The loop is bounded and observable: plan → execute → observe → verify.
+ * Steps whose tool is a declared GAP are shown with the tool that would run
+ * them rather than being skipped or faked.
+ *
+ * NOT yet implemented (do not infer from the shape of this file): re-planning
+ * after a failed step, retry, state persistence across reloads, and any trace
+ * store. A failure stops that step and the loop moves on.
  */
 import { useCallback, useState } from "react";
 import Image from "next/image";
