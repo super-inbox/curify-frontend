@@ -50,6 +50,9 @@ type StepState = {
   verify?: { ok: boolean; note: string };
 };
 
+type Suggestion = { label: string; why: string; query: string; domain: string };
+type SuggestResult = { context: string; suggestions: Suggestion[] };
+
 export default function DesignAgentClient({ locale }: { locale: string }) {
   const [query, setQuery] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -58,11 +61,59 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
   const [states, setStates] = useState<Record<number, StepState>>({});
   const [phase, setPhase] = useState<"idle" | "planning" | "running" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
+  const [suggest, setSuggest] = useState<SuggestResult | null>(null);
+  const [suggesting, setSuggesting] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const pickFile = (f: File | null) => {
+  /** Downsize locally so classification runs BEFORE the authed upload — anonymous
+   *  users still get suggestions, and we ship ~40KB instead of a 5MB photo. */
+  const toSmallDataUrl = (f: File): Promise<string> =>
+    new Promise((resolve, reject) => {
+      const img = new window.Image();
+      const url = URL.createObjectURL(f);
+      img.onload = () => {
+        const scale = Math.min(1, 512 / Math.max(img.width, img.height));
+        const c = document.createElement("canvas");
+        c.width = Math.round(img.width * scale);
+        c.height = Math.round(img.height * scale);
+        c.getContext("2d")?.drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        resolve(c.toDataURL("image/jpeg", 0.7));
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("bad image")); };
+      img.src = url;
+    });
+
+  const fetchSuggestions = useCallback(
+    async (payload: Record<string, unknown>) => {
+      setSuggesting(true);
+      try {
+        const res = await fetch("/api/design-agent/suggest", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        if (res.ok) setSuggest(await res.json());
+      } catch {
+        /* suggestions are additive — never block the run */
+      } finally {
+        setSuggesting(false);
+      }
+    },
+    [],
+  );
+
+  const pickFile = async (f: File | null) => {
     setFile(f);
     setPreview(f ? URL.createObjectURL(f) : null);
+    setSuggest(null);
+    if (!f) return;
+    try {
+      const dataUrl = await toSmallDataUrl(f);
+      await fetchSuggestions({ imageDataUrl: dataUrl });
+    } catch {
+      await fetchSuggestions({});
+    }
   };
 
   const setStep = (n: number, patch: Partial<StepState>) =>
@@ -81,10 +132,14 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
     }
   }, []);
 
-  const run = useCallback(async () => {
+  const run = useCallback(async (queryOverride?: string) => {
+    const q = (queryOverride ?? query).trim();
+    if (!q) return;
+    if (queryOverride) setQuery(queryOverride);
     setError(null);
     setStates({});
     setPlan(null);
+    setSuggest(null);
     setPhase("planning");
 
     // 1. upload the reference image first, so the planner knows it exists
@@ -110,7 +165,7 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
       const res = await fetch("/api/design-agent/plan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query, hasImage: Boolean(referenceUrl), locale }),
+        body: JSON.stringify({ query: q, hasImage: Boolean(referenceUrl), locale }),
       });
       if (!res.ok) throw new Error(String(res.status));
       p = await res.json();
@@ -179,7 +234,17 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
       }
     }
     setPhase("done");
-  }, [query, file, locale, verifyArtifact]);
+
+    // observe → suggest: what the ladder says comes after what we just produced
+    const producedKeys = p.steps
+      .filter((s) => !s.blocked)
+      .map((s) => s.template_id ?? s.tool_id);
+    void fetchSuggestions({
+      query: q,
+      completedToolIds: p.steps.map((s) => s.tool_id),
+      producedKeys,
+    });
+  }, [query, file, locale, verifyArtifact, fetchSuggestions]);
 
   const badge = (s?: StepState) => {
     const st = s?.status ?? "pending";
@@ -236,14 +301,51 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
           <button
             type="button"
             disabled={!query.trim() || phase === "planning" || phase === "running"}
-            onClick={run}
+            onClick={() => void run()}
             className="ml-auto rounded-full bg-purple-600 px-5 py-2 text-sm font-semibold text-white disabled:opacity-40"
           >
             {phase === "planning" ? "Planning…" : phase === "running" ? "Running…" : "Run agent"}
           </button>
         </div>
         {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
+        {!query.trim() && file && !suggest && !suggesting && (
+          <p className="mt-3 text-xs text-neutral-500">
+            Pick a suggestion below, or describe what you want.
+          </p>
+        )}
       </div>
+
+      {/* ---- next actions: state-aware, always exactly three ---- */}
+      {(suggesting || suggest) && phase !== "running" && phase !== "planning" && (
+        <div className="mt-5 rounded-2xl border border-purple-200 bg-purple-50/60 p-4">
+          <h2 className="text-sm font-bold text-purple-900">
+            {phase === "done" ? "What next?" : "Suggested next steps"}
+          </h2>
+          {suggesting ? (
+            <p className="mt-2 text-sm text-purple-800">Looking at it…</p>
+          ) : (
+            <>
+              <p className="mt-1 text-sm text-purple-800">{suggest?.context}</p>
+              <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                {suggest?.suggestions.map((s, i) => (
+                  <button
+                    key={`${s.domain}-${i}`}
+                    type="button"
+                    onClick={() => void run(s.query)}
+                    className="rounded-xl border border-purple-200 bg-white p-3 text-left transition hover:border-purple-400 hover:shadow-sm"
+                  >
+                    <span className="block text-sm font-semibold text-neutral-900">{s.label}</span>
+                    <span className="mt-0.5 block text-xs text-neutral-600">{s.why}</span>
+                    <span className="mt-1.5 block text-[11px] font-medium uppercase tracking-wide text-purple-600">
+                      {s.domain}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
 
       {/* ---- routing decision ---- */}
       {plan && (

@@ -142,6 +142,19 @@ const BY_PRESET: Record<string, TopicWorkflowConfig> = { merch: MERCH, product: 
 const BY_SLUG: Record<string, TopicWorkflowConfig> = { packaging: PACKAGING };
 
 /**
+ * Every ladder, keyed by domain. These are expert-authored canonical plans, so
+ * the design agent reuses them as its source of "what comes next" rather than
+ * inventing a sequence (see design-agent-v0-spec.md §7c).
+ */
+export const WORKFLOWS_BY_DOMAIN: Record<string, TopicWorkflowConfig> = {
+  merch: MERCH,
+  product: PRODUCT,
+  packaging: PACKAGING,
+  brand: BRAND,
+  education: EDTECH,
+};
+
+/**
  * Ordered workflow ladders surfaced on the home "Design workflows" section —
  * each rendered in the same TopicWorkflow ladder shape as the topic pages,
  * with a link to the topic page that carries the full guided version.
