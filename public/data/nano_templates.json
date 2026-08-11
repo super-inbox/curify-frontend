@@ -20792,5 +20792,98 @@
       "for-dtc-brands"
     ],
     "allow_generation": true
+  },
+  {
+    "id": "template-fruit-drink-scene-photography",
+    "locales": {
+      "en": {
+        "base_prompt": "(Fruit-Drink Scene Photography) 围绕【{drink_concept}】生成一张融合极简食品摄影、自然光静物美学、高端饮品广告与柔和复古胶片质感的 3:4 竖版商业视觉。画面明亮、温暖、清透、柔和且有食欲感，通过统一色系、真实食材和简洁构图突出核心产品。场景为极简室内摄影棚，背景与桌面采用与核心食材相呼应的低饱和同色系浅色，墙面带细腻灰泥/磨砂纸质感，背景干净简洁无多余家具。柔和自然光从左上方斜射，形成通透高光、柔和渐变阴影与轻微空气感，背景中央有朦胧光斑与柔和叶影。中央稳定构图，主体集中在画面下方约三分之一，上方留大面积呼吸空间。中央偏左放一只具有雕塑感的透明高脚玻璃杯，杯中盛放与主题相符的分层饮品，杯壁有真实折射、高光与冷凝水珠；中央偏右放一只简约磨砂透明方形饮品瓶，瓶身无复杂文字。主体两侧自然摆放与该饮品相关的新鲜水果、花材、香草或茶叶，一侧切开、一侧完整，高低错落。商业静物摄影，85mm 镜头，正面略低机位，浅景深，材质真实、液体通透、玻璃折射自然、阴影方向统一。高清细节，画面干净无杂质，无多余文字、无水印、无畸形器皿、无过度曝光。Subject: 'Fruit drink scene photography'",
+        "parameters": [
+          {
+            "name": "drink_concept",
+            "label": "饮品主题 Drink concept",
+            "type": "text",
+            "placeholder": [
+              "青提茉莉气泡饮",
+              "草莓玫瑰牛乳饮",
+              "芒果百香果气泡饮",
+              "蜜桃乌龙鲜果茶",
+              "blueberry lavender milk"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-fruit-drink-scene-photography-green-grape-jasmine-prev.jpg",
+    "requires_image_upload": false,
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-08-11",
+    "allow_generation": true,
+    "use_cases": [
+      "for-dtc-brands",
+      "for-designers"
+    ],
+    "topics": [
+      "fruit-drinks",
+      "product",
+      "ecommerce",
+      "food-and-drink",
+      "food",
+      "product-photography",
+      "commercial-photography",
+      "beverage",
+      "promotional-poster",
+      "minimalist",
+      "soft-light",
+      "warm",
+      "modern"
+    ]
+  },
+  {
+    "id": "template-home-textiles-ecommerce",
+    "locales": {
+      "en": {
+        "base_prompt": "(Home-Textiles E-commerce Photography) Create a bright, airy, all-white studio e-commerce main image of {product}. Soft even daylight, ultra-clean minimal set, sharp product focus, premium tactile detail showing the quilted / knit texture, stitching and softness. Composition suited to a marketplace listing hero (Amazon / Tmall / independent store): the product is the unmistakable hero, comfortable and inviting, no clutter. Photorealistic, true-to-life fabric, natural soft shadows. The ONLY thing shown is the product (optionally a hand or relaxed model demonstrating a feature); no text, no logo, no watermark. Subject: 'Home textiles e-commerce photography'",
+        "parameters": [
+          {
+            "name": "product",
+            "label": "家纺产品 Home-textile product",
+            "type": "text",
+            "placeholder": [
+              "waterproof quilted mattress protector",
+              "cooling quilted mattress topper",
+              "breathable knit pillow protector",
+              "cotton comforter / duvet set",
+              "antibacterial fitted bed sheet"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-home-textiles-ecommerce-waterproof-demo-prev.jpg",
+    "requires_image_upload": false,
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-08-11",
+    "allow_generation": true,
+    "use_cases": [
+      "for-dtc-brands",
+      "for-merch-operators"
+    ],
+    "topics": [
+      "home-textiles",
+      "product",
+      "ecommerce",
+      "interior",
+      "lifestyle",
+      "product-photography",
+      "commercial-photography",
+      "mockups",
+      "minimalist",
+      "soft-light",
+      "cozy",
+      "modern"
+    ]
   }
 ]

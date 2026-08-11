@@ -34,6 +34,8 @@ const TOPIC_USE_CASE: Record<string, UseCaseLink> = {
   "candle-packaging": DTC,
   "wine-label-design": DTC,
   "chocolate-packaging": DTC,
+  "fruit-drinks": DTC,
+  "home-textiles": DTC,
   // Design craft → designers
   design: DESIGNERS,
   posters: DESIGNERS,
