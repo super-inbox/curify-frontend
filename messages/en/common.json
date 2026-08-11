@@ -307,7 +307,29 @@
       "bullet2": "Print-grade output. StickerApp, Printify, Printful, SPOD, Prodigi — first-pass print, no manual cleanup pass between design and production.",
       "bullet3": "Niche-disciplined by default. Single-store-shape from the first design. No multi-category bundling that screams cheap.",
       "bullet4": "No customer ever sees it, no relationship damage. The design work the operator does at the desk — not the customer-service work that destroys carrier and buyer trust.",
-      "bullet5": "Packaged as: monthly-design-quota tiers (50 / 200 / 1,000 / unlimited) OR engine license for in-house design pipelines — pick a shape, no custom dev."
+      "bullet5": "Packaged as: monthly-design-quota tiers (50 / 200 / 1,000 / unlimited) OR engine license for in-house design pipelines — pick a shape, no custom dev.",
+      "case": {
+        "eyebrow": "Worked example",
+        "title": "One character drawing → a full merch SKU family",
+        "inputLabel": "Input:",
+        "input": "A single character reference — a sketch, a logo mascot, or an existing IP frame.",
+        "stepsLabel": "Steps",
+        "step0": "Lock a character canon so the face stays consistent across every later render.",
+        "step1": "Generate a 9-pose expression sheet from the canon (the character-sticker-sheet tool).",
+        "step2": "Expand the sheet into a 16-piece sticker pack, kiss-cut or die-cut.",
+        "step3": "Render gift-box and packaging mockups from the same canon.",
+        "step4": "Extend to a full SKU family — tees, totes, mugs — for the listing or the factory brief.",
+        "outputLabel": "What you get",
+        "output0": "9-pose expression sheet (character consistency locked)",
+        "output1": "16-piece sticker pack, print-ready",
+        "output2": "Die-cut file with cut line and CMYK for the printer",
+        "output3": "Gift-box and packaging mockups",
+        "output4": "Full SKU family renders for marketplace listings",
+        "costLabel": "Cost:",
+        "cost": "10 credits per generation step — re-run any step without redoing the others.",
+        "ctaLabel": "See the full walkthrough",
+        "ctaHref": "/ip-merch-demo"
+      }
     },
     "learningMaterialsHeading": "Learning Materials"
   },

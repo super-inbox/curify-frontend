@@ -30,6 +30,19 @@ type LearningMaterial = {
 
 const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3", "bullet4", "bullet5", "bullet6"] as const;
 
+// Worked-case block (docs/asset-authority-distribution-inventory.md §8).
+// Case studies are the one asset class that is genuinely unique per page —
+// template and persona pages are otherwise near-identical to Googlebot, which
+// is what folded 2 of 5 use-case pages into the homepage canonical. The VIDEO is
+// evidence; this PROSE is the indexable, citable part, so it renders as real
+// text rather than a caption.
+//
+// Entirely opt-in: every key is gated on t.has(), so a persona without a
+// `case.*` block renders exactly as before. Add a case by authoring the keys —
+// no component change needed.
+const CASE_STEP_KEYS = ["step0", "step1", "step2", "step3", "step4"] as const;
+const CASE_OUTPUT_KEYS = ["output0", "output1", "output2", "output3", "output4"] as const;
+
 // Use cases that have an explainer video pair under /public/video/.
 // File naming convention: `use-case-{key}-{en|cn}.mp4`. Extend this map
 // when a new pair is uploaded; pages without an entry simply skip the
@@ -390,6 +403,70 @@ export default function UseCaseClient({
             </li>
           ))}
         </ul>
+
+        {t.has(`${slug}.case.title` as never) && (
+          <section className="mt-8 rounded-2xl border border-neutral-200 bg-neutral-50/70 p-5">
+            <div className="text-[11px] font-bold uppercase tracking-wider text-purple-600">
+              {t(`${slug}.case.eyebrow` as never)}
+            </div>
+            <h2 className="mt-1.5 text-lg font-bold text-neutral-900">
+              {t(`${slug}.case.title` as never)}
+            </h2>
+
+            <p className="mt-3 text-sm text-neutral-700">
+              <span className="font-semibold text-neutral-900">
+                {t(`${slug}.case.inputLabel` as never)}{" "}
+              </span>
+              {t(`${slug}.case.input` as never)}
+            </p>
+
+            <div className="mt-4 text-sm font-semibold text-neutral-900">
+              {t(`${slug}.case.stepsLabel` as never)}
+            </div>
+            <ol className="mt-1.5 space-y-1.5">
+              {CASE_STEP_KEYS.filter((k) => t.has(`${slug}.case.${k}` as never)).map((k, i) => (
+                <li key={k} className="flex gap-2.5 text-sm text-neutral-700">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-100 text-[11px] font-bold text-purple-700">
+                    {i + 1}
+                  </span>
+                  {t(`${slug}.case.${k}` as never)}
+                </li>
+              ))}
+            </ol>
+
+            <div className="mt-4 text-sm font-semibold text-neutral-900">
+              {t(`${slug}.case.outputLabel` as never)}
+            </div>
+            <ul className="mt-1.5 space-y-1.5">
+              {CASE_OUTPUT_KEYS.filter((k) => t.has(`${slug}.case.${k}` as never)).map((k) => (
+                <li key={k} className="flex items-start gap-2 text-sm text-neutral-700">
+                  <span className="mt-0.5 text-purple-500">→</span>
+                  {t(`${slug}.case.${k}` as never)}
+                </li>
+              ))}
+            </ul>
+
+            {t.has(`${slug}.case.cost` as never) && (
+              <p className="mt-4 text-sm text-neutral-600">
+                <span className="font-semibold text-neutral-900">
+                  {t(`${slug}.case.costLabel` as never)}{" "}
+                </span>
+                {t(`${slug}.case.cost` as never)}
+              </p>
+            )}
+
+            {t.has(`${slug}.case.ctaHref` as never) && (
+              <IntlLink
+                href={t(`${slug}.case.ctaHref` as never)}
+                onClick={() => handleDemoClick("case-cta")}
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-purple-700 underline-offset-2 hover:underline"
+              >
+                {t(`${slug}.case.ctaLabel` as never)}
+                <span aria-hidden="true">→</span>
+              </IntlLink>
+            )}
+          </section>
+        )}
 
         {isB2B && (
           <p className="mt-5 text-sm font-medium text-neutral-700">
