@@ -47,6 +47,8 @@ type StepState = {
   status: "pending" | "running" | "done" | "blocked" | "failed";
   resultUrl?: string;
   error?: string;
+  /** Actionable interpretation of `error` — shown under it. */
+  hint?: string;
   verify?: { ok: boolean; note: string };
 };
 
@@ -185,14 +187,22 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
         const verify = await verifyArtifact(url);
         setStep(step.n, { status: verify.ok ? "done" : "failed", resultUrl: url, verify });
       } catch (e) {
+        const msg = e instanceof Error ? e.message : "generation failed";
+        // Distinguish what the caller can act on. A backend failure_reason is
+        // passed through verbatim, with the usual culprits named — credit
+        // exhaustion in particular used to surface as an opaque "try again".
+        const hint = /401|expired|sign in/i.test(msg)
+          ? "You need to be signed in to generate."
+          : /credit|quota|insufficient/i.test(msg)
+            ? "Looks like a credits problem — each image costs 10."
+            : /longer than usual|timeout/i.test(msg)
+              ? "The job is still running — it may complete server-side."
+              : "This came from the generation backend, not the plan. " +
+                "The request was well-formed; check credits (10/image) and the worker.";
         setStep(step.n, {
           status: "failed",
-          error:
-            e instanceof Error && /401|expired|sign in/i.test(e.message)
-              ? "sign-in required to generate"
-              : e instanceof Error
-                ? e.message
-                : "generation failed",
+          error: /401|expired|sign in/i.test(msg) ? "sign-in required to generate" : msg,
+          hint,
         });
       }
     }
@@ -357,7 +367,10 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
                   </div>
                 )}
                 {st?.error && !s.blocked && (
-                  <p className="mt-2 text-xs text-red-600">{st.error}</p>
+                  <div className="mt-2 rounded-xl bg-red-50 p-3">
+                    <p className="text-xs font-medium text-red-700">{st.error}</p>
+                    {st.hint && <p className="mt-1 text-xs text-red-600/80">{st.hint}</p>}
+                  </div>
                 )}
                 {st?.resultUrl && (
                   <div className="mt-3">

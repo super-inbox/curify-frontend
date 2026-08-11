@@ -231,11 +231,20 @@ async function planSteps(
   );
 }
 
+/**
+ * Tools that are part of ROUTING, not of the plan. The model sometimes emits
+ * search_templates as step 1 because it is in the catalog, but routing already
+ * ran server-side before planning — leaving it in produces a dead step the
+ * client can only mark "blocked".
+ */
+const ROUTING_ONLY_TOOLS = new Set(["search_templates"]);
+
 function finalize(
   raw: Array<Partial<PlanStep> & { tool_id: string; reason: string }>,
   opts: { hasImage: boolean },
 ): PlanStep[] {
   return raw
+    .filter((s) => !ROUTING_ONLY_TOOLS.has(s.tool_id))
     // drop steps that need an image we don't have
     .filter((s) => !(TOOLS_BY_ID[s.tool_id]?.acceptsImage === "required" && !opts.hasImage
       && TOOLS_BY_ID[s.tool_id]?.status === "available"))
