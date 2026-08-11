@@ -31,8 +31,13 @@ export type Suggestion = {
 };
 
 export type SuggestState = {
-  /** Small JPEG data URL, classified before upload so anon users get suggestions. */
-  imageDataUrl?: string;
+  /**
+   * Reference image to classify — either an uploaded URL (from
+   * ReferenceImageUpload's blob_url) or a data: URL. Both are accepted by the
+   * vision call; if the URL isn't fetchable by the model we fall back to the
+   * non-vision suggestions rather than failing.
+   */
+  imageRef?: string;
   query?: string;
   /** Tool ids already executed this run. */
   completedToolIds?: string[];
@@ -85,7 +90,7 @@ Return JSON:
 Order domains by fit. Use only the five ids above.`;
 
 async function classifyImage(
-  imageDataUrl: string,
+  imageRef: string,
 ): Promise<{ subject: string; domains: string[] } | null> {
   const client = getClient();
   if (!client) return null;
@@ -101,7 +106,7 @@ async function classifyImage(
           role: "user",
           content: [
             { type: "text", text: "Classify this image." },
-            { type: "image_url", image_url: { url: imageDataUrl, detail: "low" } },
+            { type: "image_url", image_url: { url: imageRef, detail: "low" } },
           ],
         },
       ],
@@ -140,8 +145,8 @@ export async function buildSuggestions(state: SuggestState): Promise<SuggestResu
   }
 
   // --- cold start with an image --------------------------------------------
-  if (state.imageDataUrl) {
-    const classified = await classifyImage(state.imageDataUrl);
+  if (state.imageRef) {
+    const classified = await classifyImage(state.imageRef);
     if (classified) {
       const { subject, domains } = classified;
       const picks = domains.slice(0, 3);

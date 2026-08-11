@@ -12,7 +12,7 @@ const MAX_IMAGE_CHARS = 1_500_000; // ~1MB of base64; client downsizes to 512px
 
 export async function POST(req: Request) {
   let body: {
-    imageDataUrl?: unknown;
+    imageRef?: unknown;
     query?: unknown;
     completedToolIds?: unknown;
     producedKeys?: unknown;
@@ -23,17 +23,19 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid JSON body" }, { status: 400 });
   }
 
-  const imageDataUrl =
-    typeof body.imageDataUrl === "string" && body.imageDataUrl.startsWith("data:image/")
-      ? body.imageDataUrl
+  // Accept either the uploaded blob_url (ReferenceImageUpload) or a data: URL.
+  const imageRef =
+    typeof body.imageRef === "string" &&
+    (body.imageRef.startsWith("data:image/") || /^https?:\/\//.test(body.imageRef))
+      ? body.imageRef
       : undefined;
-  if (imageDataUrl && imageDataUrl.length > MAX_IMAGE_CHARS) {
+  if (imageRef && imageRef.length > MAX_IMAGE_CHARS) {
     return NextResponse.json({ error: "image too large" }, { status: 413 });
   }
 
   try {
     const result = await buildSuggestions({
-      imageDataUrl,
+      imageRef,
       query: typeof body.query === "string" ? body.query : undefined,
       completedToolIds: Array.isArray(body.completedToolIds)
         ? (body.completedToolIds as string[])

@@ -12,9 +12,9 @@
  * single re-plan on failure. Steps whose tool is a declared GAP are shown with
  * the tool that would run them rather than being skipped or faked.
  */
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import Image from "next/image";
-import { imageService } from "@/services/image";
+import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { freeformGenerateService } from "@/services/freeformGenerate";
 import { pollNanoResult } from "@/services/pollNanoResult";
@@ -55,34 +55,16 @@ type SuggestResult = { context: string; suggestions: Suggestion[] };
 
 export default function DesignAgentClient({ locale }: { locale: string }) {
   const [query, setQuery] = useState("");
-  const [file, setFile] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
+  // blob_url from ReferenceImageUpload — the component owns upload, preview,
+  // error and the anonymous sign-in gate (/images/upload requires auth).
+  const [referenceUrl, setReferenceUrl] = useState<string | null>(null);
+  const [uploading, setUploading] = useState(false);
   const [plan, setPlan] = useState<AgentPlan | null>(null);
   const [states, setStates] = useState<Record<number, StepState>>({});
   const [phase, setPhase] = useState<"idle" | "planning" | "running" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
   const [suggest, setSuggest] = useState<SuggestResult | null>(null);
   const [suggesting, setSuggesting] = useState(false);
-  const fileRef = useRef<HTMLInputElement>(null);
-
-  /** Downsize locally so classification runs BEFORE the authed upload — anonymous
-   *  users still get suggestions, and we ship ~40KB instead of a 5MB photo. */
-  const toSmallDataUrl = (f: File): Promise<string> =>
-    new Promise((resolve, reject) => {
-      const img = new window.Image();
-      const url = URL.createObjectURL(f);
-      img.onload = () => {
-        const scale = Math.min(1, 512 / Math.max(img.width, img.height));
-        const c = document.createElement("canvas");
-        c.width = Math.round(img.width * scale);
-        c.height = Math.round(img.height * scale);
-        c.getContext("2d")?.drawImage(img, 0, 0, c.width, c.height);
-        URL.revokeObjectURL(url);
-        resolve(c.toDataURL("image/jpeg", 0.7));
-      };
-      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("bad image")); };
-      img.src = url;
-    });
 
   const fetchSuggestions = useCallback(
     async (payload: Record<string, unknown>) => {
@@ -103,18 +85,15 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
     [],
   );
 
-  const pickFile = async (f: File | null) => {
-    setFile(f);
-    setPreview(f ? URL.createObjectURL(f) : null);
-    setSuggest(null);
-    if (!f) return;
-    try {
-      const dataUrl = await toSmallDataUrl(f);
-      await fetchSuggestions({ imageDataUrl: dataUrl });
-    } catch {
-      await fetchSuggestions({});
-    }
-  };
+  /** ReferenceImageUpload reports the uploaded blob_url — classify it for suggestions. */
+  const onReferenceChange = useCallback(
+    (blobUrl: string | null) => {
+      setReferenceUrl(blobUrl);
+      setSuggest(null);
+      if (blobUrl) void fetchSuggestions({ imageRef: blobUrl });
+    },
+    [fetchSuggestions],
+  );
 
   const setStep = (n: number, patch: Partial<StepState>) =>
     setStates((s) => ({ ...s, [n]: { ...(s[n] ?? { status: "pending" }), ...patch } }));
@@ -142,24 +121,8 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
     setSuggest(null);
     setPhase("planning");
 
-    // 1. upload the reference image first, so the planner knows it exists
-    let referenceUrl: string | undefined;
-    if (file) {
-      try {
-        const up = await imageService.uploadImage(file);
-        referenceUrl = up.blob_url;
-      } catch (e) {
-        setPhase("idle");
-        setError(
-          e instanceof Error && /401|expired|sign in/i.test(e.message)
-            ? "Image upload needs you to be signed in — sign in, or run text-only."
-            : "Image upload failed. You can still run text-only.",
-        );
-        return;
-      }
-    }
-
-    // 2. plan (server-side reasoning)
+    // 1. plan (server-side reasoning). The reference image, if any, was already
+    //    uploaded by ReferenceImageUpload — we just carry its blob_url through.
     let p: AgentPlan;
     try {
       const res = await fetch("/api/design-agent/plan", {
@@ -177,7 +140,7 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
     setPlan(p);
     setPhase("running");
 
-    // 3. execute, observing each step
+    // 2. execute, observing each step
     for (const step of p.steps) {
       if (step.blocked) {
         setStep(step.n, { status: "blocked" });
@@ -244,7 +207,7 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
       completedToolIds: p.steps.map((s) => s.tool_id),
       producedKeys,
     });
-  }, [query, file, locale, verifyArtifact, fetchSuggestions]);
+  }, [query, referenceUrl, locale, verifyArtifact, fetchSuggestions]);
 
   const badge = (s?: StepState) => {
     const st = s?.status ?? "pending";
@@ -275,40 +238,36 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
           placeholder="e.g. a die-cut sticker sheet of my cat character, ready for printing"
           className="w-full resize-none rounded-xl border border-neutral-200 p-3 text-sm outline-none focus:border-purple-400"
         />
-        <div className="mt-3 flex flex-wrap items-center gap-3">
-          <input
-            ref={fileRef}
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={(e) => pickFile(e.target.files?.[0] ?? null)}
+        <div className="mt-4">
+          <ReferenceImageUpload
+            variant="full"
+            label="Reference image"
+            hint="Drop an image and the agent will suggest what to do with it."
+            replaceLabel="Replace"
+            signInLabel="Sign in to upload a reference image"
+            onChange={onReferenceChange}
+            onUploadingChange={setUploading}
           />
+        </div>
+
+        <div className="mt-4 flex items-center gap-3">
           <button
             type="button"
-            onClick={() => fileRef.current?.click()}
-            className="rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 hover:border-purple-400"
-          >
-            {file ? "Change image" : "+ Reference image"}
-          </button>
-          {preview && (
-            <span className="flex items-center gap-2 text-xs text-neutral-500">
-              <Image src={preview} alt="reference" width={40} height={40} unoptimized
-                className="h-10 w-10 rounded-lg object-cover" />
-              {file?.name}
-              <button type="button" onClick={() => pickFile(null)} className="underline">remove</button>
-            </span>
-          )}
-          <button
-            type="button"
-            disabled={!query.trim() || phase === "planning" || phase === "running"}
+            disabled={!query.trim() || uploading || phase === "planning" || phase === "running"}
             onClick={() => void run()}
             className="ml-auto rounded-full bg-purple-600 px-5 py-2 text-sm font-semibold text-white disabled:opacity-40"
           >
-            {phase === "planning" ? "Planning…" : phase === "running" ? "Running…" : "Run agent"}
+            {uploading
+              ? "Uploading…"
+              : phase === "planning"
+                ? "Planning…"
+                : phase === "running"
+                  ? "Running…"
+                  : "Run agent"}
           </button>
         </div>
         {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
-        {!query.trim() && file && !suggest && !suggesting && (
+        {!query.trim() && referenceUrl && !suggest && !suggesting && (
           <p className="mt-3 text-xs text-neutral-500">
             Pick a suggestion below, or describe what you want.
           </p>
