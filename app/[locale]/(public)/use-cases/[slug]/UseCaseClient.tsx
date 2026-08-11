@@ -40,8 +40,12 @@ const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3", "bullet4", "bul
 // Entirely opt-in: every key is gated on t.has(), so a persona without a
 // `case.*` block renders exactly as before. Add a case by authoring the keys —
 // no component change needed.
-const CASE_STEP_KEYS = ["step0", "step1", "step2", "step3", "step4"] as const;
-const CASE_OUTPUT_KEYS = ["output0", "output1", "output2", "output3", "output4"] as const;
+//
+// The step-by-step body is NOT authored here. It is the SAME ladder the topic
+// page renders (lib/topic_workflows.ts → TopicWorkflow), passed in as the
+// `workflow` slot from the server page. Re-authoring the steps in i18n would
+// duplicate copy that already exists, drift from the shipped templates the
+// ladder links to, and repeat the mistake this page was just deduped for.
 
 // Use cases that have an explainer video pair under /public/video/.
 // File naming convention: `use-case-{key}-{en|cn}.mp4`. Extend this map
@@ -292,8 +296,15 @@ export default function UseCaseClient({
   exampleItems,
   tools,
   learningMaterials,
+  workflow,
 }: {
   slug: string;
+  /** Server-rendered <TopicWorkflow> ladder for personas mapped in
+   *  PERSONA_WORKFLOW_PRESET (page.tsx). Passed as a slot because
+   *  TopicWorkflow is an async server component and this file is a client
+   *  component — and because the ladder must stay the single source shared
+   *  with /topics/<slug>. Null for personas without a mapped workflow. */
+  workflow?: React.ReactNode;
   /** Flattened example items for the ExampleImagesGrid (2026-06-29
    *  swap from NanoInspirationRow / template-list UI). Each item is
    *  one rendered inspiration, filtered server-side to this use-case. */
@@ -420,31 +431,10 @@ export default function UseCaseClient({
               {t(`${slug}.case.input` as never)}
             </p>
 
-            <div className="mt-4 text-sm font-semibold text-neutral-900">
-              {t(`${slug}.case.stepsLabel` as never)}
-            </div>
-            <ol className="mt-1.5 space-y-1.5">
-              {CASE_STEP_KEYS.filter((k) => t.has(`${slug}.case.${k}` as never)).map((k, i) => (
-                <li key={k} className="flex gap-2.5 text-sm text-neutral-700">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-100 text-[11px] font-bold text-purple-700">
-                    {i + 1}
-                  </span>
-                  {t(`${slug}.case.${k}` as never)}
-                </li>
-              ))}
-            </ol>
-
-            <div className="mt-4 text-sm font-semibold text-neutral-900">
-              {t(`${slug}.case.outputLabel` as never)}
-            </div>
-            <ul className="mt-1.5 space-y-1.5">
-              {CASE_OUTPUT_KEYS.filter((k) => t.has(`${slug}.case.${k}` as never)).map((k) => (
-                <li key={k} className="flex items-start gap-2 text-sm text-neutral-700">
-                  <span className="mt-0.5 text-purple-500">→</span>
-                  {t(`${slug}.case.${k}` as never)}
-                </li>
-              ))}
-            </ul>
+            {/* The shipped ladder from lib/topic_workflows.ts — identical to
+                /topics/merch, so the steps stay in one place and every step
+                links to the template that actually produces it. */}
+            {workflow && <div className="mt-3 -mx-1">{workflow}</div>}
 
             {t.has(`${slug}.case.cost` as never) && (
               <p className="mt-4 text-sm text-neutral-600">
