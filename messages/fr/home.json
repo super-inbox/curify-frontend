@@ -358,6 +358,14 @@
         "title": "Générateur de maquettes d'emballage AI — Gabarit vers boîte 3D | Curify",
         "description": "Transformez votre gabarit (.ai/PDF) en maquettes d'emballage 3D réalistes — boîte pliée, de face / 45° / fond blanc e-commerce. Vraies proportions de la boîte à partir de votre fichier. Pour marque, 文创, emballages cadeaux et POD."
       }
+    },
+    "brand_direction_explorer": {
+      "title": "Brand Direction Explorer",
+      "desc": "One-line brief → three creative directions → generate the visual. No prompt writing.",
+      "meta": {
+        "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+        "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+      }
     }
   },
   "bilingual": {
@@ -1426,5 +1434,13 @@
         "businessBody": "Besoin de pack shots pour un catalogue de SKU ? Nous offrons un service gabarit → maquette clé en main / en gros, et pouvons ajouter des modèles 3D modifiables."
       }
     }
+  },
+  "brandDirectionExplorer": {
+    "metadata": {
+      "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+      "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+    },
+    "title": "Explore three creative directions from one brief",
+    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
   }
 }

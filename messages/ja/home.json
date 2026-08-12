@@ -358,6 +358,14 @@
         "title": "AIパッケージングモックアップジェネレーター — ダイラインから3Dボックス | Curify",
         "description": "ダイライン（.ai/PDF）をリアルな3Dパッケージングモックアップに変換します — 折りたたみボックス、前面 / 45° / eコマースの白背景。ファイルからの真のボックス比率。ブランド、文創、ギフト、PODパッケージングに最適です。"
       }
+    },
+    "brand_direction_explorer": {
+      "title": "Brand Direction Explorer",
+      "desc": "One-line brief → three creative directions → generate the visual. No prompt writing.",
+      "meta": {
+        "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+        "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+      }
     }
   },
   "bilingual": {
@@ -1426,5 +1434,13 @@
         "businessBody": "SKUのカタログ用のパックショットが必要ですか？ダイライン → モックアップを完了済み / 大口サービスとして提供し、編集可能な3Dモデルを追加できます。"
       }
     }
+  },
+  "brandDirectionExplorer": {
+    "metadata": {
+      "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+      "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+    },
+    "title": "Explore three creative directions from one brief",
+    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
   }
 }

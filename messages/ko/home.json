@@ -358,6 +358,14 @@
         "title": "AI 포장 목업 생성기 — 다이라인에서 3D 박스로 | Curify",
         "description": "당신의 다이라인 (.ai/PDF)을 현실감 있는 3D 포장 목업으로 변환합니다 — 접힌 상자, 앞면 / 45° / 전자상거래 화이트 배경. 파일에서 가져온 실제 상자 비율. 브랜드, 문창, 선물 및 POD 포장에 적합합니다."
       }
+    },
+    "brand_direction_explorer": {
+      "title": "Brand Direction Explorer",
+      "desc": "One-line brief → three creative directions → generate the visual. No prompt writing.",
+      "meta": {
+        "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+        "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+      }
     }
   },
   "bilingual": {
@@ -1426,5 +1434,13 @@
         "businessBody": "SKU 카탈로그를 위한 패키지 샷이 필요하신가요? 우리는 다이라인 → 모형을 완료된 서비스 / 대량 서비스로 제공하며, 편집 가능한 3D 모델을 추가할 수 있습니다."
       }
     }
+  },
+  "brandDirectionExplorer": {
+    "metadata": {
+      "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+      "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+    },
+    "title": "Explore three creative directions from one brief",
+    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
   }
 }

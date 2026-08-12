@@ -71,6 +71,20 @@ const nextConfig: NextConfig = {
     const LOCALE_RE = routing.locales.join("|");
 
     const manualRedirects: RedirectRule[] = [
+      // brand-direction-explorer moved from a standalone route to /tools/<slug>
+      // on 2026-08-12 so it lives with the other tools. 301 rather than delete:
+      // the old URL was just added to the sitemap and pinged, and it is the
+      // surface that produced 30% of the week's projects.
+      {
+        source: "/brand-direction-explorer",
+        destination: "/tools/brand-direction-explorer",
+        permanent: true,
+      },
+      {
+        source: `/:locale(${LOCALE_RE})/brand-direction-explorer`,
+        destination: "/:locale/tools/brand-direction-explorer",
+        permanent: true,
+      },
       // The tool's slug is `die-cut-sticker-file`, but `die-cut-sticker` is the
       // shape people (and we) reach for — it is also the head of the KD-25
       // "die cut sticker maker" cluster. Unrouted it renders a chrome-only

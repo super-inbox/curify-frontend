@@ -358,6 +358,14 @@
         "title": "AI पैकेजिंग मॉकअप जनरेटर — डाईलाइन से 3D बॉक्स | Curify",
         "description": "अपनी डाईलाइन (.ai/PDF) को यथार्थवादी 3D पैकेजिंग मॉकअप में बदलें - मुड़ी हुई बॉक्स, सामने / 45° / ई-कॉमर्स सफेद-पीछे। आपकी फ़ाइल से वास्तविक बॉक्स अनुपात। ब्रांड, 文创, उपहार और POD पैकेजिंग के लिए।"
       }
+    },
+    "brand_direction_explorer": {
+      "title": "Brand Direction Explorer",
+      "desc": "One-line brief → three creative directions → generate the visual. No prompt writing.",
+      "meta": {
+        "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+        "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+      }
     }
   },
   "bilingual": {
@@ -1426,5 +1434,13 @@
         "businessBody": "क्या आपको SKU के कैटलॉग के लिए पैक शॉट्स की आवश्यकता है? हम डाईलाइन → मॉकअप को एक तैयार-के-लिए / थोक सेवा के रूप में पेश करते हैं, और संपादनीय 3D मॉडल जोड़ सकते हैं।"
       }
     }
+  },
+  "brandDirectionExplorer": {
+    "metadata": {
+      "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+      "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+    },
+    "title": "Explore three creative directions from one brief",
+    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
   }
 }

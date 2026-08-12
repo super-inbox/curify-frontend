@@ -358,6 +358,14 @@
         "title": "AI Ambalaj Mockup Üretici — Die Çiziminden 3D Kutulara | Curify",
         "description": "Die çiziminizi (.ai/PDF) gerçekçi 3D ambalaj mockup'larına dönüştürün — katlanmış kutu, ön / 45° / e-ticaret beyaz arka plan. Dosyanızdan gerçek kutu oranları. Marka, 文创, hediye ve POD ambalajları için."
       }
+    },
+    "brand_direction_explorer": {
+      "title": "Brand Direction Explorer",
+      "desc": "One-line brief → three creative directions → generate the visual. No prompt writing.",
+      "meta": {
+        "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+        "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+      }
     }
   },
   "bilingual": {
@@ -1511,5 +1519,13 @@
         "businessBody": "SKU'lar için bir katalogda paket çekimlerine mi ihtiyacınız var? Dieline → mockup olarak yapılmış bir hizmet sunuyoruz ve düzenlenebilir 3D modeller ekleyebiliriz."
       }
     }
+  },
+  "brandDirectionExplorer": {
+    "metadata": {
+      "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+      "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+    },
+    "title": "Explore three creative directions from one brief",
+    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
   }
 }

@@ -311,13 +311,26 @@ producing new content. Ranked by evidence × addressable size × effort._
 | Google | **"URL is unknown to Google" — never crawled** |
 
 Shipped as a pitch/demo surface; the noindex was right then and wrong now.
-**Done 08-12:** removed the noindex, added canonical + hreflang, added to
-`STATIC_ROUTES` in the sitemap (10 locales), and surfaced it as a card on
-`for-designers` + `for-dtc-brands` via the demo-card slot. **URL deliberately NOT
-moved under `/tools/<slug>`** — that needs a registry entry + home.json namespace,
-and relocating the one surface that converts best is not worth the risk.
-*Follow-up:* ping it to the Indexing API after the merge (it has never been
-crawled), and consider a proper registry entry later.
+
+**Done 08-12 — now a first-class tool at `/tools/brand-direction-explorer`.**
+Removed the noindex, added canonical + hreflang, and (per operator decision)
+**moved it under `/tools/<slug>` rather than leaving it standalone**: added a
+`TOOL_REGISTRY` entry with a new `brand_direction` action, authored the
+`brandDirectionExplorer` + `tools.brand_direction_explorer` namespaces across all
+10 locales (en/zh authored, 8 carry the EN copy), and wired the bespoke
+`BrandDirectionExplorerClient` into `tool-generic-client`'s action branch — the
+same mechanism `costume_tryon` and `product_video` use, so the interactive UI
+moved intact. `for-designers` and `for-dtc-brands` now reference it through
+`toolSlugs` (the demo-card workaround was removed as redundant).
+
+The old URL **301s** to the new one (`next.config.ts`, plus the locale variant),
+so the sitemap entry and the crawl request already made are not wasted. The
+sitemap now emits it via `getToolRoutes()` instead of `STATIC_ROUTES`.
+
+*Follow-up:* ping `/tools/brand-direction-explorer` to the Indexing API after the
+merge — the old URL was never crawled, so there is no equity to inherit; the new
+URL needs its own discovery. Note the route is `dynamic = "force-dynamic"`, so
+every crawl is an origin render — free while nothing crawled it, worth watching now.
 
 **#2 `/topics/language` — proven external demand, blocked at indexation.**
 Landing page for **1point3acres**, the best-converting external source found:

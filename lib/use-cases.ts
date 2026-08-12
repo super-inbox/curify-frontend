@@ -54,7 +54,9 @@ export const USE_CASES: UseCaseDef[] = [
   // translation tool, not a design tool) so the sole tool card is the
   // genuine designer fit. The designer value on this page is carried by
   // the curated designer-style template feed, not the tool grid.
-  { slug: "for-designers",    tier: "consumer", toolSlugs: ["style-transfer", "character-sticker-sheet"] },
+  // brand-direction-explorer first: it produced 30% of the projects created in
+  // the week to 2026-08-11, the highest-throughput surface on the site.
+  { slug: "for-designers",    tier: "consumer", toolSlugs: ["brand-direction-explorer", "style-transfer", "character-sticker-sheet"] },
 
   // --- B2B ICPs (cold-outreach + reference-deal surface) ---
   // Slug kept for SEO continuity; copy and toolSlugs rewritten to target
@@ -83,7 +85,7 @@ export const USE_CASES: UseCaseDef[] = [
   // manga-translation for cross-border manga/comic merch SKUs.
   // image-translation removed pending tool ship (status=coming_soon)
   // — was the original headline tool, plan to restore once live.
-  { slug: "for-dtc-brands",   tier: "b2b",      toolSlugs: ["style-transfer", "video-dubbing", "manga-translation"] },
+  { slug: "for-dtc-brands",   tier: "b2b",      toolSlugs: ["brand-direction-explorer", "style-transfer", "video-dubbing", "manga-translation"] },
 
   // NEW. Programmatic SEO builders — hub-and-spoke generator with original
   // imagery. Horizontal engine play (page leads with the meta angle:
