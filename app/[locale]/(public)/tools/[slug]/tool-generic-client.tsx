@@ -31,6 +31,7 @@ import EcommercePhotoGenerate, {
 } from "@/app/[locale]/_components/EcommercePhotoGenerate";
 import ProductVideoGenerate from "@/app/[locale]/_components/ProductVideoGenerate";
 import CostumeTryonGenerate from "@/app/[locale]/_components/CostumeTryonGenerate";
+import BrandDirectionExplorerClient from "@/app/[locale]/(public)/brand-direction-explorer/BrandDirectionExplorerClient";
 import CreateNewModal from "../CreateNewModal";
 
 // Map the existing "deep.usecases.X" subsection keys to the persona slugs
@@ -159,6 +160,11 @@ export default function ToolGenericClient({
         ) : tool.action?.type === "product_video" ? (
           // Real inline product-video tool: structured input → PRODUCT_VIDEO job.
           <ProductVideoGenerate />
+        ) : tool.action?.type === "brand_direction" ? (
+          // One-line brief → three preset creative directions → generate the
+          // chosen visual. Moved here from the standalone
+          // /brand-direction-explorer route on 2026-08-12 (301 in next.config).
+          <BrandDirectionExplorerClient locale={locale} />
         ) : tool.action?.type === "costume_tryon" ? (
           // Anonymous viral costume try-on: upload one photo → dynasty-costume
           // transformation mp4. No sign-in required (own multipart endpoint).

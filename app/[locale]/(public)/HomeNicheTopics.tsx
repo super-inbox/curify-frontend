@@ -22,6 +22,8 @@ import nanoTemplates from "@/public/data/nano_templates.json";
  */
 const HOME_NICHE_SLUGS = [
   "sneaker-design",
+  "fruit-drinks",
+  "home-textiles",
   "museum-merchandise",
   "coffee-shop-branding",
 ] as const;

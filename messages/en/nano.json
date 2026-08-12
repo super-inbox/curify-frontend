@@ -7739,5 +7739,47 @@
         ]
       }
     }
+  },
+  "template-fruit-drink-scene-photography": {
+    "category": "Fruit-Drink Scene Photography",
+    "description": "Turn one line of description into a 3:4 vertical commercial beverage photograph — a minimal natural-light food-scene with a layered glass, a frosted bottle and fresh-ingredient styling, all in one cohesive palette. Ready for menus, e-commerce listings, social posts and brand decks.",
+    "title": "Nano Banana Prompt: Fruit-Drink Scene Photography Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a 3:4 vertical commercial beverage photograph of your drink in a minimal, natural-light food-photography style — a sculptural layered glass beside a frosted bottle, styled with fresh fruit, flowers or tea leaves, all held in one cohesive palette drawn from the drink itself. It mirrors the clean, appetizing look of premium beverage advertising: soft directional light, gentle leaf shadows, real ingredients and a calm same-color background.",
+        "who": "Made for beverage and café brands, tea / juice / soda DTC founders, food stylists and e-commerce sellers who need clean, on-brand drink photography for menus, listings and social — without booking a studio shoot.",
+        "how": [
+          "Describe your drink in {drink_concept} (e.g. '青提茉莉气泡饮' or 'strawberry rose milk').",
+          "AI builds a 3:4 natural-light scene: a layered glass, a frosted bottle and matching fresh ingredients in one palette.",
+          "Generate several flavors for a cohesive product line, then pick and refine your favorites."
+        ],
+        "prompts": [
+          "Green grape jasmine sparkling drink — layered glass + frosted bottle, mint-green palette, jasmine and green tea leaves.",
+          "Strawberry rose milk — cream and blush palette, fresh strawberries, pink roses and dried rose buds.",
+          "Peach oolong fruit tea — warm peach and caramel palette, sliced peach and oolong leaves."
+        ]
+      }
+    }
+  },
+  "template-home-textiles-ecommerce": {
+    "category": "Home-Textiles E-commerce Photography",
+    "description": "Turn a home-textile product into bright white-studio e-commerce images — clean main images plus feature demos (waterproof / breathable), lifestyle shots and fabric-texture close-ups for mattress protectors, toppers, pillows and bedding.",
+    "title": "Nano Banana Prompt: Home-Textiles E-commerce Photography Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates bright, airy, all-white studio e-commerce images of home textiles — a clean listing hero image plus supporting shots: a feature demonstration (a liquid beading on a waterproof surface), a comfortable lifestyle shot, a quilted / knit fabric-texture macro, and a folded-stack presentation. Photorealistic, true-to-life fabric with soft even daylight, ready for Amazon / Tmall / independent store listings.",
+        "who": "Made for home-textiles and bedding brands, DTC sellers and marketplace operators who need clean, consistent listing imagery for mattress protectors, toppers, pillows, comforters and sheet sets.",
+        "how": [
+          "Describe the item in {product} (e.g. 'waterproof quilted mattress protector').",
+          "AI builds a clean bright white-studio main image plus feature-demo, lifestyle, texture and folded-stack shots.",
+          "Generate the full set for one SKU, then reuse the look across your catalog."
+        ],
+        "prompts": [
+          "Waterproof quilted mattress protector — hand pouring blue liquid that beads on the surface, bright white studio.",
+          "Cooling quilted mattress topper — relaxed model resting on it, soft daylight, comfort lifestyle.",
+          "Breathable knit pillow protector — macro of the quilted air-layer texture and stitching."
+        ]
+      }
+    }
   }
 }

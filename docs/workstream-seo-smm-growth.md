@@ -220,7 +220,7 @@ _Updated 2026-08-10. The three deploy-gated rows below are **done**; corrections
 | ~~now~~ | ~~Merge `jwang/vercel` → main and deploy `98b0e4b5`~~ | normal deploy | **DONE** — `98b0e4b5` + `0c4ceb9b` on main + live |
 | ~~after deploy~~ | ~~Re-verify the 6 repaired posts render prose on prod~~ | curl | **DONE 08-10** — 0 raw keys on all 6; blog HTML 480KB |
 | ~~after deploy~~ | ~~Re-fire Indexing-API ping on the folded set~~ | `submit_indexing_api.cjs` | **DONE 08-10** — 42 URLs, 0 failed |
-| 2026-08-12 | 八仙 FB video series → pull `fan_count` (baseline **89** on 08-04) | Graph `/me?fields=fan_count` | pending |
+| ~~2026-08-12~~ | ~~八仙 FB video series → pull `fan_count`~~ | Graph API | **DONE 08-12: 89 → 90.** But the 8 reels got **0–1 views each** — the thesis was never actually tested. See the SMM note below. |
 | 2026-08-17 | **Un-fold check on the 42 pinged URLs** (ping fired 08-10; allow ~1wk) | re-run `scan_fold.cjs` | pending |
 | 2026-08-19 | Blog un-fold confirmation + CTR capture-rate re-measure | GSC pull + URL Inspection | pending |
 | 2026-08-24 | **FAQPage effect on MBTI CTR** — compare capture rate vs the 10% baseline below, NOT raw clicks | position-bucket CTR table | pending |
@@ -294,6 +294,115 @@ authored content, so no page ships an empty FAQPage. 8 assertions; suite 303 gre
 
 **Measure on 08-24 with the capture-rate table above, not raw clicks** — raw clicks move with
 impressions and will mislead.
+
+### 2026-08-12 — growth suggestions, ranked (updated)
+
+_Four of the five are **removing a blocker on something that already works**, not
+producing new content. Ranked by evidence × addressable size × effort._
+
+**#1 `brand-direction-explorer` — the best-converting surface was hidden. STARTED 08-12.**
+
+| signal | value |
+|---|---|
+| projects in the week to 08-11 | **6 of 20 (30%)** — highest-throughput surface on the site |
+| behaviour | generate → download → generate → download loops (users 1269, 1399) |
+| TOOL_REGISTRY / `/tools` / sitemap | **absent from all three** |
+| robots | **`noindex, nofollow`** |
+| Google | **"URL is unknown to Google" — never crawled** |
+
+Shipped as a pitch/demo surface; the noindex was right then and wrong now.
+
+**Done 08-12 — now a first-class tool at `/tools/brand-direction-explorer`.**
+Removed the noindex, added canonical + hreflang, and (per operator decision)
+**moved it under `/tools/<slug>` rather than leaving it standalone**: added a
+`TOOL_REGISTRY` entry with a new `brand_direction` action, authored the
+`brandDirectionExplorer` + `tools.brand_direction_explorer` namespaces across all
+10 locales (en/zh authored, 8 carry the EN copy), and wired the bespoke
+`BrandDirectionExplorerClient` into `tool-generic-client`'s action branch — the
+same mechanism `costume_tryon` and `product_video` use, so the interactive UI
+moved intact. `for-designers` and `for-dtc-brands` now reference it through
+`toolSlugs` (the demo-card workaround was removed as redundant).
+
+The old URL **301s** to the new one (`next.config.ts`, plus the locale variant),
+so the sitemap entry and the crawl request already made are not wasted. The
+sitemap now emits it via `getToolRoutes()` instead of `STATIC_ROUTES`.
+
+*Follow-up:* ping `/tools/brand-direction-explorer` to the Indexing API after the
+merge — the old URL was never crawled, so there is no equity to inherit; the new
+URL needs its own discovery. Note the route is `dynamic = "force-dynamic"`, so
+every crawl is an origin render — free while nothing crawled it, worth watching now.
+
+**#2 `/topics/language` — proven external demand, blocked at indexation.**
+Landing page for **1point3acres**, the best-converting external source found:
+27 visitors at a **33% act rate** (vs Facebook's 1,557 visitors at ~0), entirely
+unplanned. Status: **"Crawled – currently not indexed", last crawled 2026-05-27.**
+Two moves: fix indexation, and treat the forum placement as repeatable rather than
+accidental — one link outperformed a third of the social output.
+
+**#3 Pinterest — the structural bet.** The only platform in the mix that is **not
+a recommendation feed**: a visual search engine with persistent, indexable pins,
+so identity-drift does not apply and product content is not penalised — which is
+exactly what kills YouTube (median 6) and FB (median 15). 2,600+ prompt images and
+the template-example library are already produced. The playbook has no row for it.
+Highest upside, zero current presence.
+
+**#4 Unserved on-site search demand.** 36 `SEARCH_LOWRESULT` events clustered in
+merch substrate — `挂绳`/lanyard, `手机壳`, `瓶子`, `雕像`, `咖啡杯`, `手提袋`,
+`charm`, `puzzle` — all ≤4 results, plus `bobblehead` at **zero**. People are
+on-site, typing what they want, leaving empty. Lines up with the
+`die cut sticker maker` cluster (KD 25) and the first paying customer's segment.
+
+**#5 CTR recovery — largest mechanical multiplier, smallest absolute base.**
+288 pages rank top-10 and capture **10% of position-normal CTR**; 63% of top-10
+impressions earn zero clicks. Half-normal ≈ 5× the clicks with no new content and
+no ranking work. Honest caveat: 5× of ~6 clicks/day is still small — it is the
+leading indicator, not the revenue event. First experiment is the FAQPage schema
+(measure 08-24).
+
+### 2026-08-12 — FB Reels: it is a distribution problem, not a content problem
+
+**Correction to the first read of this checkpoint.** I initially closed it as "8
+culture-forward videos → +1 follower, so the follower-growth thesis fails." That
+was wrong: pulling the reel-level numbers shows the 八仙 videos **got 0–1 views
+each**. Nothing was tested. You cannot judge content nobody saw.
+
+Full page inventory (Graph `/video_reels`, 24 reels, all `published=true`,
+`privacy=Public`):
+
+| views | len | posted | caption |
+|---:|---:|---|---|
+| **3,365** | 30s | 2026-03-23 01:25 | 400 years of American history, kindly produced… |
+| **18** | 35s | 2026-03-23 09:29 | 400 years of American history, brought to you… |
+| 209 | 21s | 2026-07-04 | Luka Modrić / croatia |
+| 34 | 11s | 2026-01-23 | Olympic Park covered by snow |
+| … | | | (long tail 24 → 4) |
+| 0–1 ×7 | 13s | 2026-08-04 | 八仙 series |
+
+**The decisive fact is the top two rows.** The SAME Americana content, posted the
+same day 8 hours apart, got **3,365 vs 18 views — a 187× spread**. Content
+category cannot explain that. The 3,365 was an algorithmic lottery win, not a
+reproducible property of the content.
+
+Supporting numbers: **Americana alone is 88% of all views the page has ever
+earned** (3,365 of 3,813 across 24 reels), and **22 of 24 reels are under 35
+views**, median ≈15. That is the real baseline; 3,365 is an outlier, not a
+benchmark. fan_count over the same window: 89 → **90**.
+
+**Do NOT run the 5-category reel test.** With a 187× noise floor on identical
+content and a ~15-view median, no 5-arm comparison at this volume can produce a
+readable result. Content selection is not the binding variable — distribution is,
+and a 90-follower page with no engagement history has none to allocate.
+
+**Also correct the referral read.** FB strips all path info (every referrer is a
+bare host: `m.facebook.com`, `l.facebook.com`, …), so Page posts, reels and
+personal group posts are **indistinguishable** in `user_interactions`. The 八仙
+reels carried no body link by design, so they *structurally cannot* generate
+referral traffic. The 114 FB visitors / 0 projects over 14d therefore measures the
+autopost + **manual group posting**, not reels — and the deep, curated landing
+pages (`/nano-template/east-asian-culture-comparison-infographic` 18 visitors,
+`/tools/chinese-costume-tryon` 10, `/topics/*`) look like hand-placed group links.
+**That is the channel actually producing traffic, and it is manual.** Systematize
+that before producing more reels.
 
 ### SEMrush KD — pulled 2026-08-10 (full table in `docs/blog-quality.md`)
 

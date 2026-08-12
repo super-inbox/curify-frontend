@@ -30,6 +30,23 @@ type LearningMaterial = {
 
 const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3", "bullet4", "bullet5", "bullet6"] as const;
 
+// Worked-case block (docs/asset-authority-distribution-inventory.md §8).
+// Case studies are the one asset class that is genuinely unique per page —
+// template and persona pages are otherwise near-identical to Googlebot, which
+// is what folded 2 of 5 use-case pages into the homepage canonical. The VIDEO is
+// evidence; this PROSE is the indexable, citable part, so it renders as real
+// text rather than a caption.
+//
+// Entirely opt-in: every key is gated on t.has(), so a persona without a
+// `case.*` block renders exactly as before. Add a case by authoring the keys —
+// no component change needed.
+//
+// The step-by-step body is NOT authored here. It is the SAME ladder the topic
+// page renders (lib/topic_workflows.ts → TopicWorkflow), passed in as the
+// `workflow` slot from the server page. Re-authoring the steps in i18n would
+// duplicate copy that already exists, drift from the shipped templates the
+// ladder links to, and repeat the mistake this page was just deduped for.
+
 // Use cases that have an explainer video pair under /public/video/.
 // File naming convention: `use-case-{key}-{en|cn}.mp4`. Extend this map
 // when a new pair is uploaded; pages without an entry simply skip the
@@ -279,8 +296,15 @@ export default function UseCaseClient({
   exampleItems,
   tools,
   learningMaterials,
+  workflow,
 }: {
   slug: string;
+  /** Server-rendered <TopicWorkflow> ladder for personas mapped in
+   *  PERSONA_WORKFLOW_PRESET (page.tsx). Passed as a slot because
+   *  TopicWorkflow is an async server component and this file is a client
+   *  component — and because the ladder must stay the single source shared
+   *  with /topics/<slug>. Null for personas without a mapped workflow. */
+  workflow?: React.ReactNode;
   /** Flattened example items for the ExampleImagesGrid (2026-06-29
    *  swap from NanoInspirationRow / template-list UI). Each item is
    *  one rendered inspiration, filtered server-side to this use-case. */
@@ -426,39 +450,46 @@ export default function UseCaseClient({
         )}
       </div>
 
-      {/* Featured pitch-demo CTA cards — for personas with dedicated
-          walkthrough surfaces (merch → /ip-merch-demo + /illustrator-demo;
-          designer → /illustrator-demo). Sits directly below the hero so it
-          reads as the primary next action. One card = full width; two =
-          side-by-side on md+. */}
-      {demos.length > 0 && (
-        <section className="mb-10">
-          <div className={`grid gap-4 ${demos.length > 1 ? "md:grid-cols-2" : "grid-cols-1"}`}>
-            {demos.map((demo) => (
-              <IntlLink
-                key={demo.key}
-                href={demo.href}
-                onClick={() => handleDemoClick(demo.key)}
-                className="group flex h-full flex-col rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-white p-6 transition hover:border-purple-300 hover:shadow-md"
-              >
-                <div className="flex-grow">
-                  <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-purple-600">
-                    {demo.copy.eyebrow}
-                  </div>
-                  <div className="text-lg font-bold text-neutral-900">
-                    {demo.copy.title}
-                  </div>
-                  <p className="mt-1 text-sm leading-relaxed text-neutral-600">
-                    {demo.copy.subtitle}
-                  </p>
-                </div>
-                <span className="mt-4 inline-flex w-fit items-center justify-center gap-1.5 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-purple-700">
-                  {demo.copy.button}
-                  <ArrowRight className="h-4 w-4" />
-                </span>
-              </IntlLink>
-            ))}
+      {t.has(`${slug}.case.title` as never) && (
+        <section className="mb-10 rounded-2xl border border-neutral-200 bg-neutral-50/70 p-6 sm:p-8">
+          <div className="text-[11px] font-bold uppercase tracking-wider text-purple-600">
+            {t(`${slug}.case.eyebrow` as never)}
           </div>
+          <h2 className="mt-1.5 text-lg font-bold text-neutral-900">
+            {t(`${slug}.case.title` as never)}
+          </h2>
+
+          <p className="mt-3 text-sm text-neutral-700">
+            <span className="font-semibold text-neutral-900">
+              {t(`${slug}.case.inputLabel` as never)}{" "}
+            </span>
+            {t(`${slug}.case.input` as never)}
+          </p>
+
+          {/* The shipped ladder from lib/topic_workflows.ts — identical to
+              /topics/merch, so the steps stay in one place and every step
+              links to the template that actually produces it. */}
+          {workflow && <div className="mt-3 -mx-1">{workflow}</div>}
+
+          {t.has(`${slug}.case.cost` as never) && (
+            <p className="mt-4 text-sm text-neutral-600">
+              <span className="font-semibold text-neutral-900">
+                {t(`${slug}.case.costLabel` as never)}{" "}
+              </span>
+              {t(`${slug}.case.cost` as never)}
+            </p>
+          )}
+
+          {t.has(`${slug}.case.ctaHref` as never) && (
+            <IntlLink
+              href={t(`${slug}.case.ctaHref` as never)}
+              onClick={() => handleDemoClick("case-cta")}
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-purple-700 underline-offset-2 hover:underline"
+            >
+              {t(`${slug}.case.ctaLabel` as never)}
+              <span aria-hidden="true">→</span>
+            </IntlLink>
+          )}
         </section>
       )}
 
@@ -474,15 +505,42 @@ export default function UseCaseClient({
             ))}
           </div>
         </section>
-      ) : tools.length > 0 && (
+      ) : (tools.length > 0 || demos.length > 0) && (
         <section className="mb-10">
           <h2 className="mb-4 text-xl font-bold text-neutral-900">
             {t("toolsHeading")}
           </h2>
-          <ToolsGrid
-            tools={tools}
-            gridClassName="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
-          />
+          {/* Demos and tools share ONE grid so the cards are the same size.
+              ToolsGrid renders its own wrapper, so it gets `contents` — its
+              children then become direct grid items of this container instead
+              of a nested grid with its own track sizing. */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {demos.map((demo) => (
+              <IntlLink
+                key={demo.key}
+                href={demo.href}
+                onClick={() => handleDemoClick(demo.key)}
+                className="group flex h-full flex-col justify-between rounded-2xl border border-gray-100 bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] p-5 shadow-lg transition-shadow hover:shadow-xl"
+              >
+                <div className="flex-grow">
+                  <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-purple-600">
+                    {demo.copy.eyebrow}
+                  </div>
+                  <h3 className="mb-2 text-lg font-bold text-gray-900">
+                    {demo.copy.title}
+                  </h3>
+                  <p className="mb-4 line-clamp-3 text-sm text-gray-600">
+                    {demo.copy.subtitle}
+                  </p>
+                </div>
+                <span className="relative mt-4 flex w-full items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-center font-bold text-white shadow-lg transition-opacity duration-300 group-hover:opacity-90">
+                  {demo.copy.button}
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </IntlLink>
+            ))}
+            {tools.length > 0 && <ToolsGrid tools={tools} gridClassName="contents" />}
+          </div>
         </section>
       )}
 

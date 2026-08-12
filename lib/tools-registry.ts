@@ -17,6 +17,10 @@ export type ToolAction =
   // posted straight to /costume-tryon/generate (bypasses the auth-gated
   // /images/upload flow). Rendered by CostumeTryonGenerate.
   | { type: "costume_tryon" }
+  // Brand Direction Explorer — one-line brief → three preset creative
+  // directions → generate the chosen visual. Bespoke client, rendered inline
+  // on the tool page like the costume_tryon / product_video surfaces.
+  | { type: "brand_direction" }
   | { type: "none" };
 
 export type ToolDemo =
@@ -430,6 +434,20 @@ export const TOOL_REGISTRY: ToolDef[] = [
     action: { type: "costume_tryon" },
     i18n: toolKeys("costume_tryon"),
     seo: seoKeys("costume_tryon"),
+  },
+
+  {
+    id: "brand-direction-explorer",
+    slug: "brand-direction-explorer",
+    groupId: "image",
+    status: "demo",
+    // Unused by the brand_direction action (its own client posts directly);
+    // required field.
+    job_type: "video_transcript",
+    namespace: "brandDirectionExplorer",
+    action: { type: "brand_direction" },
+    i18n: toolKeys("brand_direction_explorer"),
+    seo: seoKeys("brand_direction_explorer"),
   },
 
   {

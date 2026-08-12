@@ -358,6 +358,14 @@
         "title": "Generador de Mockup de Packaging AI — Dieline a Caja 3D | Curify",
         "description": "Convierte tu dieline (.ai/PDF) en mockups de packaging 3D realistas: caja plegada, frente / 45° / fondo blanco de comercio electrónico. Proporciones reales de la caja de tu archivo. Para packaging de marca, 文创, regalos y POD."
       }
+    },
+    "brand_direction_explorer": {
+      "title": "Brand Direction Explorer",
+      "desc": "One-line brief → three creative directions → generate the visual. No prompt writing.",
+      "meta": {
+        "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+        "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+      }
     }
   },
   "bilingual": {
@@ -1426,5 +1434,13 @@
         "businessBody": "¿Necesitas fotos de empaque para un catálogo de SKU? Ofrecemos dielínea → maqueta como un servicio hecho para ti / al por mayor, y podemos agregar modelos 3D editables."
       }
     }
+  },
+  "brandDirectionExplorer": {
+    "metadata": {
+      "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+      "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+    },
+    "title": "Explore three creative directions from one brief",
+    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
   }
 }

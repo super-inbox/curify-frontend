@@ -18,7 +18,23 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 
 import UseCaseClient from "./UseCaseClient";
+import TopicWorkflow from "@/app/[locale]/_components/TopicWorkflow";
+import { getTopicWorkflow } from "@/lib/topic_workflows";
 import { routing } from "@/i18n/routing";
+
+/**
+ * Personas whose worked-case block renders a guided deliverable ladder, keyed
+ * by the same workbench preset the topic pages use (lib/topic_workflows.ts).
+ *
+ * The ladder is SHARED with /topics/<slug> rather than re-authored here: each
+ * step links to the shipped template that produces that deliverable, so the
+ * case walks a reader into the product instead of describing it. Re-authoring
+ * the steps in the use-case i18n would duplicate copy and drift from the
+ * templates as they change.
+ */
+const PERSONA_WORKFLOW_PRESET: Record<string, { preset: string; topicHref: string }> = {
+  "for-merch-operators": { preset: "merch", topicHref: "/topics/merch" },
+};
 
 // Prerender every locale x use-case (bundled data, bounded set) -> edge-cached
 // instead of a per-request render. Must enumerate BOTH params so all locales
@@ -148,12 +164,20 @@ export default async function UseCasePage({ params }: Props) {
           }))
       : undefined;
 
+  const wf = PERSONA_WORKFLOW_PRESET[useCase.slug];
+  const wfConfig = wf ? getTopicWorkflow(wf.preset) : null;
+
   return (
     <UseCaseClient
       slug={useCase.slug}
       exampleItems={exampleItems}
       tools={tools}
       learningMaterials={learningMaterials}
+      workflow={
+        wfConfig ? (
+          <TopicWorkflow locale={localeStr} config={wfConfig} topicHref={wf!.topicHref} />
+        ) : null
+      }
     />
   );
 }

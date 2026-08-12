@@ -36,9 +36,10 @@ const ROW_LIMIT = 12;
 // Ordered so populated niches lead; the rest carry SEO heading + description +
 // link (grids fill as they're seeded via the sneaker playbook).
 const NICHE_TOPIC_SLUGS = [
-  "sneaker-design", "museum-merchandise", "coffee-shop-branding", "tea-brand-design",
-  "jewelry-design", "eyewear-design", "handbag-design", "flower-shop-branding",
-  "candle-packaging", "wine-label-design", "chocolate-packaging",
+  "sneaker-design", "museum-merchandise", "coffee-shop-branding", "fruit-drinks",
+  "home-textiles", "tea-brand-design", "jewelry-design", "eyewear-design",
+  "handbag-design", "flower-shop-branding", "candle-packaging", "wine-label-design",
+  "chocolate-packaging",
 ] as const;
 
 export async function generateMetadata({

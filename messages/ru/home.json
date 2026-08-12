@@ -358,6 +358,14 @@
         "title": "Генератор макетов упаковки на основе ИИ — Шаблон в 3D коробку | Curify",
         "description": "Преобразуйте ваш шаблон (.ai/PDF) в реалистичные 3D макеты упаковки — сложенная коробка, спереди / 45° / белый фон для электронной коммерции. Реальные пропорции коробки из вашего файла. Для брендов, 文创, подарков и упаковки POD."
       }
+    },
+    "brand_direction_explorer": {
+      "title": "Brand Direction Explorer",
+      "desc": "One-line brief → three creative directions → generate the visual. No prompt writing.",
+      "meta": {
+        "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+        "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+      }
     }
   },
   "bilingual": {
@@ -1546,5 +1554,13 @@
         "businessBody": "Нужны фотографии упаковки для каталога SKU? Мы предлагаем услугу шаблон → макет как готовое решение / оптовую услугу и можем добавить редактируемые 3D модели."
       }
     }
+  },
+  "brandDirectionExplorer": {
+    "metadata": {
+      "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
+      "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+    },
+    "title": "Explore three creative directions from one brief",
+    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
   }
 }
