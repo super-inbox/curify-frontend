@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BrandDirectionExplorerClient from "./BrandDirectionExplorerClient";
+import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -9,6 +10,19 @@ export const dynamic = "force-dynamic";
 // This route is intentionally not wired into TOOL_REGISTRY / messages/*/home.json
 // (see lib/tool-page-guard.ts) — it's a standalone route, so it does not go
 // through resolveToolNamespaceOr404 and does not show up on /tools.
+//
+// INDEXABLE since 2026-08-12. It shipped noindex as a pitch/demo surface, but it
+// turned out to be the highest-throughput surface on the site: 6 of the 20
+// projects created in the week to 08-11 came from here (30%), two users running
+// generate → download → generate → download loops. Meanwhile it was
+// `noindex, nofollow`, absent from the sitemap, absent from /tools, and
+// "URL is unknown to Google — never crawled". The product was working and
+// nothing could find it.
+//
+// The URL is deliberately NOT moved under /tools/<slug>: that would need a
+// TOOL_REGISTRY entry plus a home.json namespace, and relocating the one surface
+// that converts best is not worth the risk. Discovery is solved instead by the
+// sitemap entry (app/sitemap.xml/route.ts) and by cards on the use-case pages.
 const META: Record<string, { title: string; description: string }> = {
   en: {
     title: "Brand Direction Explorer — pick a direction, generate a visual",
@@ -30,7 +44,13 @@ export async function generateMetadata({
   const { locale } = await params;
   const lang = (locale || "en").toLowerCase().split("-")[0];
   const m = META[lang] ?? META.en;
-  return { ...m, robots: { index: false, follow: false } };
+  return {
+    ...m,
+    alternates: {
+      canonical: getCanonicalUrl(locale, "/brand-direction-explorer"),
+      languages: getLanguagesMap("/brand-direction-explorer"),
+    },
+  };
 }
 
 export default async function BrandDirectionExplorerPage({

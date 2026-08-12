@@ -125,9 +125,33 @@ const ILLUSTRATOR_DEMO: DemoDef = {
   },
 };
 
+const BRAND_DIRECTION_EXPLORER: DemoDef = {
+  key: "brand-direction-explorer",
+  href: "/brand-direction-explorer",
+  en: {
+    eyebrow: "Try it now",
+    title: "Explore three creative directions from one brief",
+    subtitle:
+      "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing.",
+    button: "Open the direction explorer",
+  },
+  zh: {
+    eyebrow: "立即体验",
+    title: "一句话简报，三个创意方向",
+    subtitle:
+      "用一句话描述品牌或活动，从三个预置创意方向中挑一个，直接生成对应视觉方案。无需写提示词。",
+    button: "打开方向探索器",
+  },
+};
+
 const USE_CASE_DEMO: Record<string, DemoDef[]> = {
   "for-merch-operators": [IP_MERCH_DEMO, ILLUSTRATOR_DEMO],
-  "for-designers": [ILLUSTRATOR_DEMO],
+  // brand-direction-explorer is surfaced through the demo-card slot rather than
+  // toolSlugs: it lives at a standalone /brand-direction-explorer URL, not under
+  // /tools/<slug>, so it has no TOOL_REGISTRY entry to reference. The cards now
+  // render inside the tools grid at tool-card size, so it reads as a tool.
+  "for-designers": [BRAND_DIRECTION_EXPLORER, ILLUSTRATOR_DEMO],
+  "for-dtc-brands": [BRAND_DIRECTION_EXPLORER],
 };
 
 function UseCaseVideo({

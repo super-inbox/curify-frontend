@@ -52,6 +52,10 @@ const STATIC_ROUTES = [
   "/agreement",
   "/nano-banana-pro-prompts",
   "/inspiration-hub",
+  // Standalone tool route (not under /tools/<slug>, so getToolRoutes misses it).
+  // Added 2026-08-12: it produced 30% of the week's projects while being
+  // noindex + unknown to Google. See the route's page.tsx header.
+  "/brand-direction-explorer",
 ];
 
 function getNanoTemplateRoutes(): Array<{
