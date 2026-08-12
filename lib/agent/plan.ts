@@ -14,6 +14,8 @@
 import OpenAI from "openai";
 import { buildSearchGenerationPlan } from "@/lib/searchGenerationPlan";
 import { AGENT_TOOLS, TOOLS_BY_ID, toolCatalogForPrompt } from "@/lib/agent/tools";
+import { classifyDeliverable, type DeliverableRoute } from "@/lib/agent/deliverable";
+import { WORKFLOWS_BY_DOMAIN } from "@/lib/topic_workflows";
 
 const MODEL = "gpt-4o-mini";
 const TIMEOUT_MS = 20_000;
@@ -42,6 +44,8 @@ export type AgentPlan = {
     /** Present when abstained — what we need from the user. */
     clarification?: string;
     matched_templates: Array<{ template_id: string; title: string; confidence: number }>;
+    /** What SHAPE of job this is — see lib/agent/deliverable.ts. */
+    deliverable?: DeliverableRoute;
   };
   steps: PlanStep[];
   gaps: Array<{ tool_id: string; implementedBy: string; blocker: string }>;
@@ -103,11 +107,18 @@ export async function buildAgentPlan(
   }
 
   const best = directions[0]?.confidence ?? 0;
-  const abstained = directions.length === 0 || best < CONFIDENCE_FLOOR;
+
+  // --- 1b. what SHAPE of job is this? --------------------------------------
+  // Replaces the old "abstain below 0.60" rule. A weak single-template score is
+  // now read as "not a one-template job" rather than "give up" — see
+  // lib/agent/deliverable.ts for the measurement that motivated this.
+  const deliverable = classifyDeliverable(query, { hasImage, topConfidence: best });
+  const abstained = deliverable.type === "unsupported" || directions.length === 0;
 
   const routing: AgentPlan["routing"] = {
     confidence: best,
     abstained,
+    deliverable,
     matched_templates: directions.slice(0, 3).map((d) => ({
       template_id: d.template_id,
       title: d.title,
@@ -115,11 +126,49 @@ export async function buildAgentPlan(
     })),
   };
 
-  // --- 2. abstain rather than commit to a weak match -----------------------
+  // A multi-asset system: expand the matching ladder instead of collapsing the
+  // request onto whichever single template happened to score highest.
+  if (deliverable.type === "system" && deliverable.domain) {
+    const wf = WORKFLOWS_BY_DOMAIN[deliverable.domain];
+    const steps: PlanStep[] = wf.steps.slice(0, MAX_STEPS).map((s, i) => ({
+      n: i + 1,
+      tool_id: "generate_from_template",
+      label: s.name,
+      reason: s.desc,
+      template_id: s.href.replace("/nano-template/", "template-"),
+      params: {},
+    }));
+    return {
+      query,
+      routing,
+      steps,
+      gaps: collectGaps(steps),
+      notice: deliverable.rationale,
+    };
+  }
+
+  // Editing an image the user already has — freeform image-to-image.
+  if (deliverable.type === "edit") {
+    const steps: PlanStep[] = [
+      {
+        n: 1,
+        tool_id: "generate_freeform",
+        label: TOOLS_BY_ID.generate_freeform.label,
+        reason: deliverable.rationale,
+        prompt: query,
+      },
+    ];
+    return { query, routing, steps, gaps: collectGaps(steps), notice: deliverable.rationale };
+  }
+
+  // --- 2. abstain only when the catalog genuinely cannot do it -------------
   if (abstained) {
     routing.clarification =
-      "No template matched confidently. Generating freeform instead — " +
-      "tell me the format (poster / sticker sheet / packaging / worksheet) for a stronger match.";
+      deliverable.type === "unsupported"
+        ? deliverable.rationale +
+          " I can still generate a visual concept of it — say the word."
+        : "No template matched. Generating freeform instead — tell me the format " +
+          "(poster / sticker sheet / packaging / worksheet) for a stronger match.";
     const steps: PlanStep[] = [
       {
         n: 1,
