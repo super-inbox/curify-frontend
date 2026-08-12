@@ -1,6 +1,12 @@
 /**
  * Design trajectory capture (P0-B).
  *
+ * ⚠️ NOT CANONICAL. `agent_runtime/tracing.py` + `persistence.py` in
+ * agentic-adhoc/design-agent-v0 already implement trace capture with typed
+ * steps, a pluggable sink and redaction. This module covers the frontend demo
+ * only; the redaction below is deliberately copied from that implementation so
+ * the two agree. Merge target, not a second system — see spec §7h.
+ *
  * The 08-12 digest argues the scarce, un-scrapable asset is not images or
  * prompts but the DESIGN TRAJECTORY:
  *
@@ -71,6 +77,29 @@ export function newRunId(): string {
 }
 
 /**
+ * Redact before persisting. Mirrors the discipline in the backend runtime's
+ * `agent_runtime/tracing.py` (`safe_error` / `safe_summary`), which strips
+ * signed URLs and upload refs out of traces. Artifact URLs are time-limited
+ * signed GCS links and upload paths embed a user id, so neither belongs in a
+ * durable log; the object path is enough to identify an artifact later.
+ */
+function redact(value: string): string {
+  return value
+    // keep the object path, drop the signature/query string
+    .replace(/(https?:\/\/[^\s?]+)\?[^\s]*/g, "$1")
+    .replace(/images\/uploads\/\d+\/([\w.-]+)/g, "images/uploads/[user]/$1")
+    .slice(0, 2000);
+}
+
+function redactEvent<T extends TrajectoryEvent>(ev: T): T {
+  const out = { ...ev } as Record<string, unknown>;
+  for (const k of ["artifact_url", "before_url", "after_url", "error"]) {
+    if (typeof out[k] === "string") out[k] = redact(out[k] as string);
+  }
+  return out as T;
+}
+
+/**
  * Fire-and-forget recorder. Never throws and never blocks the agent — a lost
  * trajectory event must not cost a user their generation.
  */
@@ -101,7 +130,7 @@ export function createTrajectoryRecorder(runId: string) {
   return {
     runId,
     record(ev: TrajectoryEvent) {
-      queue.push({ ...ev, run_id: runId, seq: seq++, ts: new Date().toISOString() });
+      queue.push({ ...redactEvent(ev), run_id: runId, seq: seq++, ts: new Date().toISOString() });
       void flush();
     },
   };

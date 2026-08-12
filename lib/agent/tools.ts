@@ -1,6 +1,14 @@
 /**
  * Design-agent tool registry.
  *
+ * ⚠️ NOT CANONICAL. `agentic-adhoc/design-agent-v0/curify-integration/
+ * curify_background/app/agent_runtime/{registry,tools}.py` is the real registry
+ * and is further along: capability lanes with an analyze → render → verify →
+ * store quartet per lane, a bounded runtime, and typed schemas. This module
+ * exists so the /design-agent demo can run entirely in the frontend; it should
+ * migrate to calling the backend runtime rather than growing.
+ * See design-agent-v0-spec.md §7h.
+ *
  * One uniform schema over every capability the agent can invoke — templates,
  * freeform generation, programmatic composition, and the production pipelines
  * that still live as local Python. This is the layer the agent selects on, so
