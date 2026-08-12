@@ -22,6 +22,7 @@ import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUploa
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { freeformGenerateService } from "@/services/freeformGenerate";
 import { pollNanoResult } from "@/services/pollNanoResult";
+import { createTrajectoryRecorder, newRunId } from "@/lib/agent/trajectory";
 
 type PlanStep = {
   n: number;
@@ -41,6 +42,8 @@ type AgentPlan = {
     abstained: boolean;
     clarification?: string;
     matched_templates: Array<{ template_id: string; title: string; confidence: number }>;
+    /** What shape of job this is — see lib/agent/deliverable.ts. */
+    deliverable?: { type: string; domain?: string; count?: number; rationale: string };
   };
   steps: PlanStep[];
   gaps: Array<{ tool_id: string; implementedBy: string; blocker: string }>;
@@ -127,6 +130,21 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
     setSuggest(null);
     setPhase("planning");
 
+    // one trajectory per run — events group by run_id, no server session needed
+    const traj = createTrajectoryRecorder(newRunId());
+    traj.record({ type: "run_started", query: q, hasImage: Boolean(referenceUrl), locale });
+    if (queryOverride && suggest) {
+      const picked = suggest.suggestions.find((s) => s.query === queryOverride);
+      if (picked) {
+        traj.record({
+          type: "suggestion_chosen",
+          label: picked.label,
+          domain: picked.domain,
+          query: queryOverride,
+        });
+      }
+    }
+
     // 1. plan (server-side reasoning). The reference image, if any, was already
     //    uploaded by ReferenceImageUpload — we just carry its blob_url through.
     let p: AgentPlan;
@@ -145,14 +163,42 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
     }
     setPlan(p);
     setPhase("running");
+    traj.record({
+      type: "routed",
+      confidence: p.routing.confidence,
+      abstained: p.routing.abstained,
+      deliverableType: p.routing.deliverable?.type,
+      deliverableRationale: p.routing.deliverable?.rationale,
+      matched: p.routing.matched_templates.map((m) => ({
+        template_id: m.template_id,
+        confidence: m.confidence,
+      })),
+    });
+    traj.record({
+      type: "planned",
+      steps: p.steps.map((s) => ({
+        n: s.n,
+        tool_id: s.tool_id,
+        template_id: s.template_id,
+        blocked: Boolean(s.blocked),
+      })),
+    });
 
     // 2. execute, observing each step
     for (const step of p.steps) {
       if (step.blocked) {
         setStep(step.n, { status: "blocked" });
+        traj.record({ type: "step_result", n: step.n, tool_id: step.tool_id, status: "blocked" });
         continue;
       }
       setStep(step.n, { status: "running" });
+      traj.record({
+        type: "step_started",
+        n: step.n,
+        tool_id: step.tool_id,
+        template_id: step.template_id,
+        params: step.params,
+      });
       try {
         let projectId: string | undefined;
 
@@ -190,6 +236,14 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
         const url = await pollNanoResult(projectId);
         const verify = await verifyArtifact(url);
         setStep(step.n, { status: verify.ok ? "done" : "failed", resultUrl: url, verify });
+        traj.record({
+          type: "step_result",
+          n: step.n,
+          tool_id: step.tool_id,
+          status: verify.ok ? "done" : "failed",
+          artifact_url: url,
+          verify_ok: verify.ok,
+        });
       } catch (e) {
         const msg = e instanceof Error ? e.message : "generation failed";
         // Distinguish what the caller can act on. A backend failure_reason is
@@ -208,9 +262,21 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
           error: /401|expired|sign in/i.test(msg) ? "sign-in required to generate" : msg,
           hint,
         });
+        traj.record({
+          type: "step_result",
+          n: step.n,
+          tool_id: step.tool_id,
+          status: "failed",
+          error: msg,
+        });
       }
     }
     setPhase("done");
+    traj.record({
+      type: "run_finished",
+      outcome: p.steps.every((s) => s.blocked) ? "failed" : "completed",
+      artifacts: p.steps.filter((s) => !s.blocked).length,
+    });
 
     // observe → suggest: what the ladder says comes after what we just produced
     const producedKeys = p.steps
@@ -221,7 +287,7 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
       completedToolIds: p.steps.map((s) => s.tool_id),
       producedKeys,
     });
-  }, [query, referenceUrl, locale, verifyArtifact, fetchSuggestions]);
+  }, [query, referenceUrl, locale, verifyArtifact, fetchSuggestions, suggest]);
 
   const badge = (s?: StepState) => {
     const st = s?.status ?? "pending";
