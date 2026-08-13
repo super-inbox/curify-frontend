@@ -60,8 +60,21 @@ export type TrajectoryEvent =
       error?: string;
     }
   | { type: "suggestions_shown"; context: string; options: Array<{ label: string; domain: string }> }
-  /** The preference signal: which of the offered directions a human chose. */
-  | { type: "suggestion_chosen"; label: string; domain: string; query: string }
+  /**
+   * A setwise preference observation, not a click. `rejected` carries the
+   * alternatives that were on screen and passed over — without them this is
+   * unusable as preference data, because no comparison can be reconstructed.
+   * Yields pairs (chosen > each rejected) for judge/reward training or DPO.
+   */
+  | {
+      type: "suggestion_chosen";
+      label: string;
+      domain: string;
+      query: string;
+      rejected: Array<{ label: string; domain: string }>;
+      /** Why these three were offered — the state the choice was made in. */
+      shown_context?: string;
+    }
   /** Reserved for P0-F — the before → feedback → after triple. */
   | { type: "feedback"; n?: number; sentiment: "positive" | "negative"; text?: string; before_url?: string; after_url?: string }
   | { type: "run_finished"; outcome: "completed" | "partial" | "failed"; artifacts: number };

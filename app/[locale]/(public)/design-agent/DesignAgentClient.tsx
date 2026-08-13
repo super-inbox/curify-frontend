@@ -141,6 +141,12 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
           label: picked.label,
           domain: picked.domain,
           query: queryOverride,
+          // the alternatives that were on screen and passed over — without
+          // these the event is a click, not a comparison
+          rejected: suggest.suggestions
+            .filter((s) => s.query !== queryOverride)
+            .map((s) => ({ label: s.label, domain: s.domain })),
+          shown_context: suggest.context,
         });
       }
     }
