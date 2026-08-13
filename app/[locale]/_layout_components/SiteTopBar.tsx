@@ -42,7 +42,12 @@ export default function SiteTopBar({ locale }: { locale: string }) {
     // On a topic page the generic top-level strip is replaced by the page's own
     // topic-specific "Explore further" row (see topics/[slug]/page.tsx), so the
     // duplicate global strip is hidden here.
-    /\/topics\/[^/]+/.test(pathname);
+    /\/topics\/[^/]+/.test(pathname) ||
+    // /enterprise is a B2B procurement surface — the reader is a CIO, bid lead
+    // or SI partnerships lead evaluating whether we're a credible vendor. A
+    // consumer template rail ("Merch & Stickers", "World Cup") directly under
+    // the hero undercuts exactly the signal the page exists to send.
+    /\/enterprise(?:\/|$|\?)/.test(pathname);
 
   // Build TopicStrip items from the curated ENTRY_BAR_ITEMS so the
   // top-bar surface keeps showing the same hand-picked tier-1 topics
