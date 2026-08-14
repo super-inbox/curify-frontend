@@ -55,20 +55,20 @@ export function directionRationale(domain: string, hasImage: boolean): string {
 }
 
 /**
- * Existing creative-exploration cases the agent can borrow.
+ * The creative-exploration case the agent uses.
  *
- * ⚠️ WIRING GAP: `BrandDirectionCase["id"]` is a closed union of three demo
- * cases, so the agent cannot yet ask for directions on an arbitrary domain — it
- * can only reuse the closest existing case. Widening that type (or extracting a
- * domain-agnostic `generateDirections(brief)`) is the real fix; mapping onto
- * demo cases is the honest interim, and it is why merch/product map to a poster
- * case rather than something purpose-built.
+ * All domains share `agent-brief`, a domain-neutral case added alongside the
+ * three fixed demo scenarios. Those demo cases each hard-code their subject —
+ * the tea case says "a Chinese tea brand's product packaging" — so borrowing
+ * one made every direction inherit that subject: "modern coffee shop" came back
+ * as tea packaging. `agent-brief` takes the subject from the user's sentence,
+ * which is the whole difference between a fixed-scenario tool and an agent.
  */
 export const DIRECTION_CASE_BY_DOMAIN: Record<string, string> = {
-  brand: "tea-brand-exploration",
-  packaging: "tea-brand-exploration",
-  merch: "event-poster",
-  product: "event-poster",
+  brand: "agent-brief",
+  packaging: "agent-brief",
+  merch: "agent-brief",
+  product: "agent-brief",
 };
 
 export function directionCaseFor(domain: string): string | null {

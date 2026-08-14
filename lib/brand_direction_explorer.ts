@@ -86,7 +86,7 @@ export type GeneratedCreativeDirection = {
 };
 
 export type BrandDirectionCase = {
-  id: "coffee-opening" | "tea-brand-exploration" | "event-poster";
+  id: "coffee-opening" | "tea-brand-exploration" | "event-poster" | "agent-brief";
   title: {
     en: string;
     zh: string;
@@ -128,6 +128,19 @@ const TEA_BASE_BRIEF =
   '"{productType}" — both must appear as small visible label text near the hero shot. Brand context: ' +
   '"{brandDescription}". The brand identity should extend cleanly to these applications: "{applications}". The ' +
   'desired tone is: "{desiredTone}". Do not invent additional fictional certifications, prices, or barcodes.';
+
+// Domain-neutral. The three demo cases each hard-code their subject — the tea
+// case literally says "a Chinese tea brand's product packaging" — which is right
+// for a fixed-scenario tool but wrong for the agent, where the subject arrives
+// as free text. Routing "modern coffee shop" through the tea case produced
+// tea-flavoured directions. Here the subject IS the brief, nothing else.
+const AGENT_BASE_BRIEF =
+  "Design a single vertical brand-concept moodboard for the subject described below. It must read as a " +
+  "cohesive brand-identity presentation board — a hero visual appropriate to that subject as the dominant " +
+  "element, a small colour-palette swatch strip (3-4 colours), and a short direction label. " +
+  'The subject is: "{brief}". The brand name is "{brandName}" and must appear as small visible label text ' +
+  "near the hero visual. Interpret the subject faithfully — do NOT substitute a different product category. " +
+  "Do not invent fictional certifications, prices, or barcodes.";
 
 const EVENT_BASE_BRIEF =
   'Design a single vertical promotional poster for a market or community event. This is the hero visual for a ' +
@@ -290,6 +303,34 @@ export const BRAND_DIRECTION_CASES: BrandDirectionCase[] = [
     ],
     baseBrief: EVENT_BASE_BRIEF,
     outputFormat: { aspectRatio: "4:5", surface: "poster" },
+  },
+  {
+    // Used by the design agent, not by the /brand-direction-explorer tool: its
+    // subject comes from the user's own sentence rather than a fixed scenario.
+    id: "agent-brief",
+    title: { en: "From your brief", zh: "来自你的描述" },
+    description: {
+      en: "Creative directions generated from a free-text brief, for any subject.",
+      zh: "根据自由文本描述生成创意方向，适用于任意主题。",
+    },
+    inputFields: [
+      {
+        id: "brandName",
+        label: { en: "Brand or project name", zh: "品牌/项目名称" },
+        placeholder: { en: "Maple & Grind", zh: "枫谷" },
+        maxLength: 60,
+        required: true,
+      },
+      {
+        id: "brief",
+        label: { en: "What is it", zh: "这是什么" },
+        placeholder: { en: "a modern coffee shop for young professionals", zh: "面向年轻白领的现代咖啡馆" },
+        maxLength: 400,
+        required: true,
+      },
+    ],
+    baseBrief: AGENT_BASE_BRIEF,
+    outputFormat: { aspectRatio: "4:5", surface: "moodboard" },
   },
 ];
 

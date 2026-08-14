@@ -112,7 +112,7 @@ export default function DesignAgentClient({
   // Arriving from a workflow entry shows a BRIEF, not a running job. The button
   // on the topic page is navigation; turning a navigation click into a 50-credit
   // spend (5 steps x 10) with no confirmation was the worst defect in the audit.
-  const [showBrief, setShowBrief] = useState(Boolean(initialWorkflow));
+  const [showBrief, setShowBrief] = useState(true);
   const ladder = workflowDomain ? WORKFLOWS_BY_DOMAIN[workflowDomain] : undefined;
   const [selected, setSelected] = useState<Set<number>>(
     () => new Set((ladder?.steps ?? []).map((_, i) => i)),
@@ -468,8 +468,10 @@ export default function DesignAgentClient({
     return <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${map[st]}`}>{st}</span>;
   };
 
+  // Widened from max-w-3xl: the panel carries a 3-up step grid, a side-by-side
+  // brief + reference drop, and 3-up direction cards — all cramped at 768px.
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <h1 className="text-2xl font-bold text-neutral-900">Design Agent</h1>
       <p className="mt-1 text-sm text-neutral-600">
         Describe what you want, optionally with a reference image. The agent routes it against the
@@ -478,27 +480,69 @@ export default function DesignAgentClient({
 
       {/* ---- workflow brief: ready-to-run, NOT running ----
            Everything the run needs, priced, before anything is spent. */}
-      {showBrief && ladder && (
+      {showBrief && (
         <div className="mt-5 rounded-2xl border border-purple-200 bg-purple-50/40 p-5 shadow-sm">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <p className="text-lg font-bold text-neutral-900">{ladder.heading}</p>
-            <p className="text-sm font-semibold text-purple-800">
-              {selected.size} step{selected.size === 1 ? "" : "s"} · ~
-              {selected.size * CREDITS_PER_STEP} credits
+            <p className="text-lg font-bold text-neutral-900">
+              {ladder ? ladder.heading : "What do you want to make?"}
             </p>
+            {ladder && (
+              <p className="text-sm font-semibold text-purple-800">
+                {selected.size} step{selected.size === 1 ? "" : "s"} · ~
+                {selected.size * CREDITS_PER_STEP} credits
+              </p>
+            )}
           </div>
-          <p className="mt-1 text-sm text-neutral-600">{ladder.subtitle}</p>
+          <p className="mt-1 text-sm text-neutral-600">
+            {ladder
+              ? ladder.subtitle
+              : "Pick a workflow to run the whole set, or just describe it and the agent will route it."}
+          </p>
+
+          {/* Same chooser the topic pages offer, so arriving with no ?workflow
+              lands on the identical surface rather than a different one. */}
+          {!ladder && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {Object.entries(WORKFLOWS_BY_DOMAIN).map(([d, wf]) => (
+                <button
+                  key={d}
+                  type="button"
+                  onClick={() => {
+                    setWorkflowDomain(d);
+                    setSelected(new Set(wf.steps.map((_, i) => i)));
+                  }}
+                  className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-700 transition hover:border-purple-400 hover:text-purple-800"
+                >
+                  {wf.heading.replace(/ workflow$/i, "")}
+                </button>
+              ))}
+            </div>
+          )}
 
           <label className="mt-4 block text-xs font-semibold text-neutral-700">
             What is it? — this is what every step is generated from
           </label>
-          <textarea
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            rows={2}
-            placeholder="e.g. a modern coffee shop for young professionals"
-            className="mt-1 w-full resize-none rounded-xl border border-neutral-200 p-3 text-sm outline-none focus:border-purple-400"
-          />
+          <div className="mt-1 flex items-stretch gap-3">
+            <textarea
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              rows={2}
+              placeholder="e.g. a modern coffee shop for young professionals"
+              className="min-w-0 flex-1 resize-none rounded-xl border border-neutral-200 p-3 text-sm outline-none focus:border-purple-400"
+            />
+            {/* Small drop target beside the text, not a second panel. An image
+                can replace the direction step entirely (see direction.ts), so it
+                belongs next to the brief rather than behind a mode switch. */}
+            <div className="w-40 shrink-0">
+              <ReferenceImageUpload
+                variant="compact"
+                label="Reference"
+                hint="optional"
+                onChange={onReferenceChange}
+                onUploadingChange={setUploading}
+              />
+            </div>
+          </div>
 
           {dirFields.map((f) => (
             <input
@@ -510,7 +554,7 @@ export default function DesignAgentClient({
             />
           ))}
 
-          <p className="mt-4 text-xs font-semibold text-neutral-700">Steps</p>
+          {ladder && (<><p className="mt-4 text-xs font-semibold text-neutral-700">Steps</p>
           <ul className="mt-1 grid grid-cols-1 gap-1.5 sm:grid-cols-2 lg:grid-cols-3">
             {ladder.steps.map((ls, i) => (
               <li key={ls.key}>
@@ -532,15 +576,16 @@ export default function DesignAgentClient({
                 </label>
               </li>
             ))}
-          </ul>
+          </ul></>)}
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <button
               type="button"
               disabled={
-                selected.size === 0 ||
+                uploading ||
                 !query.trim() ||
-                dirFields.some((f) => !(dirValues[f.id] ?? "").trim())
+                (Boolean(ladder) && selected.size === 0) ||
+                (Boolean(ladder) && dirFields.some((f) => !(dirValues[f.id] ?? "").trim()))
               }
               onClick={() =>
                 workflowDomain && requiresDirection(workflowDomain, Boolean(referenceUrl))
@@ -551,16 +596,11 @@ export default function DesignAgentClient({
             >
               {workflowDomain && requiresDirection(workflowDomain, Boolean(referenceUrl))
                 ? "Choose a direction →"
-                : `Run ${selected.size} step${selected.size === 1 ? "" : "s"} · ~${
-                    selected.size * CREDITS_PER_STEP
-                  } credits`}
-            </button>
-            <button
-              type="button"
-              onClick={() => setShowBrief(false)}
-              className="text-sm font-semibold text-neutral-500 hover:text-neutral-800"
-            >
-              Write my own brief instead
+                : ladder
+                  ? `Run ${selected.size} step${selected.size === 1 ? "" : "s"} · ~${
+                      selected.size * CREDITS_PER_STEP
+                    } credits`
+                  : "Run agent →"}
             </button>
           </div>
           <p className="mt-2 text-xs text-neutral-500">
@@ -568,75 +608,6 @@ export default function DesignAgentClient({
             {CREDITS_PER_STEP} credits.
           </p>
         </div>
-      )}
-
-      {/* ---- input ---- */}
-      {!showBrief && (
-      <div className="mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
-        {/* Sticky workflow context, shown because it is sticky. It survives
-            edits to the brief on purpose — adding a brand name should refine the
-            run, not silently drop the ladder — but invisible sticky state is
-            worse than none, so it is visible and clearable. */}
-        {workflowDomain ? (
-          <div className="mb-3 flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-800 ring-1 ring-purple-200">
-              {workflowDomain} workflow
-              <button
-                type="button"
-                onClick={() => setWorkflowDomain(undefined)}
-                aria-label="Clear workflow context"
-                className="text-purple-500 hover:text-purple-900"
-              >
-                ×
-              </button>
-            </span>
-            <span className="text-xs text-neutral-500">
-              runs the full ladder — clear it to plan from your text alone
-            </span>
-          </div>
-        ) : null}
-        <textarea
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          rows={3}
-          placeholder="e.g. a die-cut sticker sheet of my cat character, ready for printing"
-          className="w-full resize-none rounded-xl border border-neutral-200 p-3 text-sm outline-none focus:border-purple-400"
-        />
-        <div className="mt-4">
-          <ReferenceImageUpload
-            variant="full"
-            label="Reference image"
-            hint="Drop an image and the agent will suggest what to do with it."
-            replaceLabel="Replace"
-            signInLabel="Sign in to upload a reference image"
-            onChange={onReferenceChange}
-            onUploadingChange={setUploading}
-          />
-        </div>
-
-        <div className="mt-4 flex items-center gap-3">
-          <button
-            type="button"
-            disabled={!query.trim() || uploading || phase === "planning" || phase === "running"}
-            onClick={() => void run()}
-            className="ml-auto rounded-full bg-purple-600 px-5 py-2 text-sm font-semibold text-white disabled:opacity-40"
-          >
-            {uploading
-              ? "Uploading…"
-              : phase === "planning"
-                ? "Planning…"
-                : phase === "running"
-                  ? "Running…"
-                  : "Run agent"}
-          </button>
-        </div>
-        {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
-        {!query.trim() && referenceUrl && !suggest && !suggesting && (
-          <p className="mt-3 text-xs text-neutral-500">
-            Pick a suggestion below, or describe what you want.
-          </p>
-        )}
-      </div>
       )}
 
       {/* ---- next actions: state-aware, always exactly three ---- */}

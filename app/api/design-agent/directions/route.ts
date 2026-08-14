@@ -35,6 +35,9 @@ const MAX_QUERY = 400;
  */
 function fieldValuesFor(caseId: string, query: string): Record<string, string> {
   const brief = query.slice(0, MAX_QUERY);
+  if (caseId === "agent-brief") {
+    return { brandName: "", brief };      // brandName is asked for, never invented
+  }
   if (caseId === "tea-brand-exploration") {
     return {
       brandName: "",                       // unknown — the model must not print one
