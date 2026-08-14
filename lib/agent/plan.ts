@@ -89,11 +89,58 @@ function wantsPhysicalOutput(query: string): boolean {
   return /sticker|贴纸|die.?cut|刀线|packaging|包装|print|印刷|cmyk|出血|pdf|dieline|刀版/i.test(query);
 }
 
+/**
+ * Expand an expert-authored ladder into plan steps. Shared by the inferred path
+ * (a query classified as a `system`) and the stated path (a workflow button), so
+ * both produce byte-identical plans — one entry point cannot drift from the other.
+ */
+function expandWorkflowPlan(
+  query: string,
+  domain: string,
+  routing: AgentPlan["routing"],
+): AgentPlan {
+  const wf = WORKFLOWS_BY_DOMAIN[domain];
+  const steps: PlanStep[] = wf.steps.slice(0, MAX_STEPS).map((s, i) => ({
+    n: i + 1,
+    tool_id: "generate_from_template",
+    label: s.name,
+    reason: s.desc,
+    template_id: s.href.replace("/nano-template/", "template-"),
+    params: {},
+  }));
+  return {
+    query,
+    routing,
+    steps,
+    gaps: collectGaps(steps),
+    notice: routing.deliverable?.rationale,
+  };
+}
+
 export async function buildAgentPlan(
   query: string,
-  opts: { hasImage?: boolean; locale?: string } = {},
+  opts: { hasImage?: boolean; locale?: string; workflowDomain?: string } = {},
 ): Promise<AgentPlan> {
-  const { hasImage = false, locale = "en" } = opts;
+  const { hasImage = false, locale = "en", workflowDomain } = opts;
+
+  // A one-click workflow entry states its domain outright. Do NOT round-trip
+  // that through the lexical classifier: the caller already knows which ladder
+  // the user clicked, and making the button depend on a regex matching the
+  // sentence the button itself generated is a failure waiting to happen (a copy
+  // tweak silently reroutes the workflow). Explicit intent wins over inference —
+  // the same rule §7g settled for stated-vs-scored deliverable shape.
+  if (workflowDomain && WORKFLOWS_BY_DOMAIN[workflowDomain]) {
+    return expandWorkflowPlan(query, workflowDomain, {
+      confidence: 1,
+      abstained: false,
+      deliverable: {
+        type: "system",
+        domain: workflowDomain,
+        rationale: "Started from a workflow entry point — the ladder is stated, not inferred.",
+      },
+      matched_templates: [],
+    });
+  }
 
   // --- 1. route against the existing KB-grounded matcher -------------------
   let directions: Awaited<ReturnType<typeof buildSearchGenerationPlan>>["directions"] = [];
@@ -129,22 +176,7 @@ export async function buildAgentPlan(
   // A multi-asset system: expand the matching ladder instead of collapsing the
   // request onto whichever single template happened to score highest.
   if (deliverable.type === "system" && deliverable.domain) {
-    const wf = WORKFLOWS_BY_DOMAIN[deliverable.domain];
-    const steps: PlanStep[] = wf.steps.slice(0, MAX_STEPS).map((s, i) => ({
-      n: i + 1,
-      tool_id: "generate_from_template",
-      label: s.name,
-      reason: s.desc,
-      template_id: s.href.replace("/nano-template/", "template-"),
-      params: {},
-    }));
-    return {
-      query,
-      routing,
-      steps,
-      gaps: collectGaps(steps),
-      notice: deliverable.rationale,
-    };
+    return expandWorkflowPlan(query, deliverable.domain, routing);
   }
 
   // Editing an image the user already has — freeform image-to-image.

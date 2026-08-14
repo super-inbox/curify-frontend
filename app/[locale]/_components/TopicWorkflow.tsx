@@ -57,6 +57,22 @@ export default async function TopicWorkflow({
         </div>
         <p className="mt-1 text-sm text-neutral-600">{subtitle}</p>
 
+        {/* Run the whole ladder instead of walking it template by template. The
+            agent expands this exact config (WORKFLOWS_BY_DOMAIN), so the tiles
+            below stay the manual path for anyone who wants one asset — the two
+            routes cannot diverge because they read the same source. */}
+        <Link
+          href={getCanonicalPath(locale, `/design-agent?workflow=${config.domain}`)}
+          className="mt-3 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
+        >
+          {t("topicWorkflows.runAll") || "Run the whole workflow"}
+          <span aria-hidden>→</span>
+        </Link>
+        <p className="mt-1.5 text-xs text-neutral-500">
+          {t("topicWorkflows.runAllHint") ||
+            `Generates all ${config.steps.length} steps — you confirm the creative direction first.`}
+        </p>
+
         <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {config.steps.map((s) => {
             const name = t(`${base}.steps.${s.key}.name`) || s.name;

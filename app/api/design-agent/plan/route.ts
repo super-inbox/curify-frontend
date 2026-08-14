@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 const MAX_QUERY_LEN = 400;
 
 export async function POST(req: Request) {
-  let body: { query?: unknown; hasImage?: unknown; locale?: unknown };
+  let body: { query?: unknown; hasImage?: unknown; locale?: unknown; workflowDomain?: unknown };
   try {
     body = await req.json();
   } catch {
@@ -22,6 +22,10 @@ export async function POST(req: Request) {
   const query = typeof body.query === "string" ? body.query.trim() : "";
   const hasImage = body.hasImage === true;
   const locale = typeof body.locale === "string" ? body.locale : "en";
+  // Stated by a workflow entry point; validated against the ladder registry
+  // in buildAgentPlan, so an unknown value falls back to normal classification.
+  const workflowDomain =
+    typeof body.workflowDomain === "string" ? body.workflowDomain : undefined;
 
   if (!query || query.length > MAX_QUERY_LEN) {
     return NextResponse.json(
@@ -31,7 +35,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const plan = await buildAgentPlan(query, { hasImage, locale });
+    const plan = await buildAgentPlan(query, { hasImage, locale, workflowDomain });
     return NextResponse.json(plan);
   } catch (error) {
     console.error("[design-agent/plan]", error);

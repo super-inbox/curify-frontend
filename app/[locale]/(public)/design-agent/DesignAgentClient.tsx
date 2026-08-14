@@ -16,8 +16,9 @@
  * after a failed step, retry, state persistence across reloads, and any trace
  * store. A failure stops that step and the loop moves on.
  */
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { WORKFLOWS_BY_DOMAIN } from "@/lib/topic_workflows";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { freeformGenerateService } from "@/services/freeformGenerate";
@@ -62,8 +63,17 @@ type StepState = {
 type Suggestion = { label: string; why: string; query: string; domain: string };
 type SuggestResult = { context: string; suggestions: Suggestion[] };
 
-export default function DesignAgentClient({ locale }: { locale: string }) {
-  const [query, setQuery] = useState("");
+export default function DesignAgentClient({
+  locale,
+  initialWorkflow,
+  initialQuery,
+}: {
+  locale: string;
+  /** Ladder name from a one-click entry (?workflow=merch). */
+  initialWorkflow?: string;
+  initialQuery?: string;
+}) {
+  const [query, setQuery] = useState(initialQuery ?? "");
   // blob_url from ReferenceImageUpload — the component owns upload, preview,
   // error and the anonymous sign-in gate (/images/upload requires auth).
   const [referenceUrl, setReferenceUrl] = useState<string | null>(null);
@@ -120,7 +130,7 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
     }
   }, []);
 
-  const run = useCallback(async (queryOverride?: string) => {
+  const run = useCallback(async (queryOverride?: string, workflowDomain?: string) => {
     const q = (queryOverride ?? query).trim();
     if (!q) return;
     if (queryOverride) setQuery(queryOverride);
@@ -158,7 +168,12 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
       const res = await fetch("/api/design-agent/plan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: q, hasImage: Boolean(referenceUrl), locale }),
+        body: JSON.stringify({
+          query: q,
+          hasImage: Boolean(referenceUrl),
+          locale,
+          workflowDomain,
+        }),
       });
       if (!res.ok) throw new Error(String(res.status));
       p = await res.json();
@@ -294,6 +309,22 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
       producedKeys,
     });
   }, [query, referenceUrl, locale, verifyArtifact, fetchSuggestions, suggest]);
+
+  // One-click workflow entry: the user already chose the ladder on the topic or
+  // home page, so re-asking them to type a brief would undo the whole point.
+  // Runs once — the ref guards against a second dispatch on re-render, which
+  // would double-charge credits.
+  const autoStarted = useRef(false);
+  useEffect(() => {
+    if (autoStarted.current || !initialWorkflow) return;
+    const wf = WORKFLOWS_BY_DOMAIN[initialWorkflow];
+    if (!wf) return;                       // unknown ladder → normal manual entry
+    autoStarted.current = true;
+    const seed = initialQuery?.trim() || wf.heading;
+    setQuery(seed);
+    void run(seed, initialWorkflow);
+  }, [initialWorkflow, initialQuery, run]);
+
 
   const badge = (s?: StepState) => {
     const st = s?.status ?? "pending";
