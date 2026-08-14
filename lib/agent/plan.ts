@@ -16,6 +16,7 @@ import { buildSearchGenerationPlan } from "@/lib/searchGenerationPlan";
 import { AGENT_TOOLS, TOOLS_BY_ID, toolCatalogForPrompt } from "@/lib/agent/tools";
 import { classifyDeliverable, type DeliverableRoute } from "@/lib/agent/deliverable";
 import { WORKFLOWS_BY_DOMAIN } from "@/lib/topic_workflows";
+import { directionCaseFor, directionRationale, requiresDirection } from "@/lib/agent/direction";
 
 const MODEL = "gpt-4o-mini";
 const TIMEOUT_MS = 20_000;
@@ -32,6 +33,10 @@ export type PlanStep = {
   template_id?: string;
   params?: Record<string, string>;
   prompt?: string;
+  /** `choose_direction` only — which creative-exploration case to borrow. */
+  direction_case?: string;
+  /** `choose_direction` only — the ladder to expand once a direction is picked. */
+  domain?: string;
   /** Declared but not executable yet; carries the tool that implements it. */
   blocked?: { implementedBy: string; blocker: string };
 };
@@ -98,15 +103,42 @@ function expandWorkflowPlan(
   query: string,
   domain: string,
   routing: AgentPlan["routing"],
+  opts: { hasImage?: boolean; direction?: string } = {},
 ): AgentPlan {
   const wf = WORKFLOWS_BY_DOMAIN[domain];
+  const { hasImage = false, direction } = opts;
+
+  // Gate BEFORE expanding. Running the ladder without a shared direction
+  // produces five assets that do not match each other, and costs 5x a single
+  // generation to find that out — so an unset direction yields ONE step, not
+  // five. A reference image can satisfy the gate outright (see direction.ts).
+  if (!direction && requiresDirection(domain, hasImage)) {
+    return {
+      query,
+      routing,
+      steps: [
+        {
+          n: 1,
+          tool_id: "choose_direction",
+          label: "Choose a creative direction",
+          reason: directionRationale(domain, hasImage),
+          direction_case: directionCaseFor(domain) ?? undefined,
+          domain,
+        },
+      ],
+      gaps: [],
+      notice: directionRationale(domain, hasImage),
+    };
+  }
   const steps: PlanStep[] = wf.steps.slice(0, MAX_STEPS).map((s, i) => ({
     n: i + 1,
     tool_id: "generate_from_template",
     label: s.name,
     reason: s.desc,
     template_id: s.href.replace("/nano-template/", "template-"),
-    params: {},
+    // The direction is a SHARED constraint, not a per-step choice — this is the
+    // whole reason the gate exists.
+    params: (direction ? { style_direction: direction } : {}) as Record<string, string>,
   }));
   return {
     query,
@@ -119,9 +151,15 @@ function expandWorkflowPlan(
 
 export async function buildAgentPlan(
   query: string,
-  opts: { hasImage?: boolean; locale?: string; workflowDomain?: string } = {},
+  opts: {
+    hasImage?: boolean;
+    locale?: string;
+    workflowDomain?: string;
+    /** Set once the user confirms a direction — unblocks the ladder. */
+    direction?: string;
+  } = {},
 ): Promise<AgentPlan> {
-  const { hasImage = false, locale = "en", workflowDomain } = opts;
+  const { hasImage = false, locale = "en", workflowDomain, direction } = opts;
 
   // A one-click workflow entry states its domain outright. Do NOT round-trip
   // that through the lexical classifier: the caller already knows which ladder
@@ -139,7 +177,7 @@ export async function buildAgentPlan(
         rationale: "Started from a workflow entry point — the ladder is stated, not inferred.",
       },
       matched_templates: [],
-    });
+    }, { hasImage, direction });
   }
 
   // --- 1. route against the existing KB-grounded matcher -------------------
@@ -176,7 +214,7 @@ export async function buildAgentPlan(
   // A multi-asset system: expand the matching ladder instead of collapsing the
   // request onto whichever single template happened to score highest.
   if (deliverable.type === "system" && deliverable.domain) {
-    return expandWorkflowPlan(query, deliverable.domain, routing);
+    return expandWorkflowPlan(query, deliverable.domain, routing, { hasImage, direction });
   }
 
   // Editing an image the user already has — freeform image-to-image.
