@@ -74,6 +74,11 @@ export default function DesignAgentClient({
   initialQuery?: string;
 }) {
   const [query, setQuery] = useState(initialQuery ?? "");
+  // The ladder this session belongs to. MUST outlive the auto-start: the seeded
+  // text alone does not classify back to a workflow ("Brand design workflow"
+  // routes to a SINGLE template), so re-running after editing the brief would
+  // silently drop the whole ladder and generate one image instead of five.
+  const [workflowDomain, setWorkflowDomain] = useState<string | undefined>(initialWorkflow);
   // blob_url from ReferenceImageUpload — the component owns upload, preview,
   // error and the anonymous sign-in gate (/images/upload requires auth).
   const [referenceUrl, setReferenceUrl] = useState<string | null>(null);
@@ -130,9 +135,10 @@ export default function DesignAgentClient({
     }
   }, []);
 
-  const run = useCallback(async (queryOverride?: string, workflowDomain?: string) => {
+  const run = useCallback(async (queryOverride?: string, domainOverride?: string) => {
     const q = (queryOverride ?? query).trim();
     if (!q) return;
+    const workflowDomain = domainOverride ?? workflowDomainRef.current;
     if (queryOverride) setQuery(queryOverride);
     setError(null);
     setStates({});
@@ -317,6 +323,11 @@ export default function DesignAgentClient({
   // home page, so re-asking them to type a brief would undo the whole point.
   // Runs once — the ref guards against a second dispatch on re-render, which
   // would double-charge credits.
+  const workflowDomainRef = useRef<string | undefined>(initialWorkflow);
+  useEffect(() => {
+    workflowDomainRef.current = workflowDomain;
+  }, [workflowDomain]);
+
   const autoStarted = useRef(false);
   useEffect(() => {
     if (autoStarted.current || !initialWorkflow) return;
@@ -351,6 +362,28 @@ export default function DesignAgentClient({
 
       {/* ---- input ---- */}
       <div className="mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
+        {/* Sticky workflow context, shown because it is sticky. It survives
+            edits to the brief on purpose — adding a brand name should refine the
+            run, not silently drop the ladder — but invisible sticky state is
+            worse than none, so it is visible and clearable. */}
+        {workflowDomain ? (
+          <div className="mb-3 flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-800 ring-1 ring-purple-200">
+              {workflowDomain} workflow
+              <button
+                type="button"
+                onClick={() => setWorkflowDomain(undefined)}
+                aria-label="Clear workflow context"
+                className="text-purple-500 hover:text-purple-900"
+              >
+                ×
+              </button>
+            </span>
+            <span className="text-xs text-neutral-500">
+              runs the full ladder — clear it to plan from your text alone
+            </span>
+          </div>
+        ) : null}
         <textarea
           value={query}
           onChange={(e) => setQuery(e.target.value)}

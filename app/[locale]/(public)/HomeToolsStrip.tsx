@@ -31,7 +31,7 @@ export default function HomeToolsStrip() {
   if (tools.length === 0) return null;
 
   return (
-    <section className="mt-12 w-full max-w-[1400px]">
+    <section className="mt-12 w-full max-w-[1600px]">
       <div className="mb-4 flex items-end justify-between gap-3 pl-3">
         <div>
           <h2 className="text-xl font-bold tracking-tight text-neutral-900 md:text-2xl">
