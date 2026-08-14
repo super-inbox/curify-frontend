@@ -242,6 +242,9 @@ export default function DesignAgentClient({
     }
     setPlan(p);
     setPhase("running");
+    // Steps that actually produced a verified artifact. Derived here rather
+    // than from `states`, which is React state and still stale in this closure.
+    const succeeded: typeof p.steps = [];
     traj.record({
       type: "routed",
       confidence: p.routing.confidence,
@@ -314,6 +317,7 @@ export default function DesignAgentClient({
         if (!projectId) throw new Error("no project id returned");
         const url = await pollNanoResult(projectId);
         const verify = await verifyArtifact(url);
+        if (verify.ok) succeeded.push(step);
         setStep(step.n, { status: verify.ok ? "done" : "failed", resultUrl: url, verify });
         traj.record({
           type: "step_result",
@@ -357,13 +361,24 @@ export default function DesignAgentClient({
       artifacts: p.steps.filter((s) => !s.blocked).length,
     });
 
-    // observe → suggest: what the ladder says comes after what we just produced
-    const producedKeys = p.steps
-      .filter((s) => !s.blocked)
-      .map((s) => s.template_id ?? s.tool_id);
+    // observe → suggest: what the ladder says comes after what we just produced.
+    // Two things this must get right, both previously wrong:
+    //  1. only steps that VERIFIABLY produced an artifact count. Filtering on
+    //     the plan's static `blocked` flag reported five failed generations as
+    //     "done so far".
+    //  2. the suggester matches ladder STEP KEYS (palette, logo…), not template
+    //     ids. Emitting `template-…` matched nothing, so it re-offered the exact
+    //     steps that had just run.
+    const ladder = WORKFLOWS_BY_DOMAIN[p.routing.deliverable?.domain ?? workflowDomain ?? ""];
+    const keyByTemplateId = new Map(
+      (ladder?.steps ?? []).map((ls) => [ls.href.replace("/nano-template/", "template-"), ls.key]),
+    );
+    const producedKeys = succeeded
+      .map((s) => (s.template_id ? keyByTemplateId.get(s.template_id) : undefined) ?? s.tool_id)
+      .filter(Boolean);
     void fetchSuggestions({
       query: q,
-      completedToolIds: p.steps.map((s) => s.tool_id),
+      completedToolIds: succeeded.map((s) => s.tool_id),
       producedKeys,
       // The ladder is known when the run came from a workflow entry — without
       // it the suggester infers from produced artifacts and defaults to merch.
