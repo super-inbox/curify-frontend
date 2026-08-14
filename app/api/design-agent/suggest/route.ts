@@ -16,6 +16,7 @@ export async function POST(req: Request) {
     query?: unknown;
     completedToolIds?: unknown;
     producedKeys?: unknown;
+    domain?: unknown;
   };
   try {
     body = await req.json();
@@ -43,6 +44,7 @@ export async function POST(req: Request) {
       producedKeys: Array.isArray(body.producedKeys)
         ? (body.producedKeys as string[])
         : undefined,
+      domain: typeof body.domain === "string" ? body.domain : undefined,
     });
     return NextResponse.json(result);
   } catch (error) {

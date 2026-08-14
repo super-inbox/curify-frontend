@@ -307,6 +307,9 @@ export default function DesignAgentClient({
       query: q,
       completedToolIds: p.steps.map((s) => s.tool_id),
       producedKeys,
+      // The ladder is known when the run came from a workflow entry — without
+      // it the suggester infers from produced artifacts and defaults to merch.
+      domain: p.routing.deliverable?.domain ?? workflowDomain,
     });
   }, [query, referenceUrl, locale, verifyArtifact, fetchSuggestions, suggest]);
 
