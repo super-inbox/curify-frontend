@@ -46,31 +46,22 @@ export default async function TopicWorkflow({
               heading
             )}
           </h2>
-          {topicHref ? (
-            <Link
-              href={getCanonicalPath(locale, topicHref)}
-              className="shrink-0 whitespace-nowrap text-sm font-semibold text-purple-700 hover:text-purple-900"
-            >
-              {t("topicWorkflows.seeFull") || "See full workflow →"}
-            </Link>
-          ) : null}
+          {/* Primary action sits top-right, where the "see full workflow" link
+              used to be: running the ladder is the point of the section, and a
+              secondary navigation link competing for that slot buried it. */}
+          <Link
+            href={getCanonicalPath(locale, `/design-agent?workflow=${config.domain}`)}
+            className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
+          >
+            {t("topicWorkflows.runAll") || "Run the whole workflow"}
+            <span aria-hidden>→</span>
+          </Link>
         </div>
         <p className="mt-1 text-sm text-neutral-600">{subtitle}</p>
 
-        {/* Run the whole ladder instead of walking it template by template. The
-            agent expands this exact config (WORKFLOWS_BY_DOMAIN), so the tiles
-            below stay the manual path for anyone who wants one asset — the two
-            routes cannot diverge because they read the same source. */}
-        <Link
-          href={getCanonicalPath(locale, `/design-agent?workflow=${config.domain}`)}
-          className="mt-3 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
-        >
-          {t("topicWorkflows.runAll") || "Run the whole workflow"}
-          <span aria-hidden>→</span>
-        </Link>
-        <p className="mt-1.5 text-xs text-neutral-500">
+        <p className="mt-1 text-xs text-neutral-500">
           {t("topicWorkflows.runAllHint") ||
-            `Generates all ${config.steps.length} steps — you confirm the creative direction first.`}
+            `Runs all ${config.steps.length} steps — you confirm the creative direction first. Or start from any single step below.`}
         </p>
 
         <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">

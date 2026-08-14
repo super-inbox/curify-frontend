@@ -150,7 +150,15 @@ const EDTECH: TopicWorkflowConfig = {
 };
 
 const BY_PRESET: Record<string, TopicWorkflowConfig> = { merch: MERCH, product: PRODUCT };
-const BY_SLUG: Record<string, TopicWorkflowConfig> = { packaging: PACKAGING };
+// Slug-keyed ladders. `learning` is here rather than preset-keyed because the
+// edtech topic page has no workbench preset — without this entry it rendered no
+// ladder and therefore no "run the whole workflow" action. `branding` is
+// deliberately absent: that page has its own BrandWorkflow section, which
+// carries the run action itself, and adding this one would duplicate it.
+const BY_SLUG: Record<string, TopicWorkflowConfig> = {
+  packaging: PACKAGING,
+  learning: EDTECH,
+};
 
 /**
  * Every ladder, keyed by domain. These are expert-authored canonical plans, so

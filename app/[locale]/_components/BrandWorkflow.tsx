@@ -77,12 +77,29 @@ export default async function BrandWorkflow({ locale }: { locale: string }) {
   return (
     <section className="mt-5">
       <div className="rounded-3xl border border-neutral-200 bg-white/80 p-5 shadow-sm backdrop-blur sm:p-6">
-        <h2 className="text-lg font-bold text-neutral-900">
-          {t("brandWorkflow.heading") || "Brand design workflow"}
-        </h2>
+        <div className="flex items-start justify-between gap-3">
+          <h2 className="text-lg font-bold text-neutral-900">
+            {t("brandWorkflow.heading") || "Brand design workflow"}
+          </h2>
+          {/* Same action as TopicWorkflow's, duplicated here rather than mapping
+              the brand ladder onto this slug — that would render two workflow
+              sections on /topics/branding. This page keeps its bespoke section
+              and gains the run action; both point at the same brand ladder. */}
+          <Link
+            href={getCanonicalPath(locale, "/design-agent?workflow=brand")}
+            className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
+          >
+            {t("topicWorkflows.runAll") || "Run the whole workflow"}
+            <span aria-hidden>→</span>
+          </Link>
+        </div>
         <p className="mt-1 text-sm text-neutral-600">
           {t("brandWorkflow.subtitle") ||
             "Build a complete brand identity in five steps — from a color system to a reusable brand kit."}
+        </p>
+        <p className="mt-1 text-xs text-neutral-500">
+          {t("topicWorkflows.runAllHint") ||
+            "Runs all 5 steps — you confirm the creative direction first. Or start from any single step below."}
         </p>
 
         <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
