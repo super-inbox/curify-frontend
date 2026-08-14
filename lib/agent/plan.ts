@@ -17,6 +17,7 @@ import { AGENT_TOOLS, TOOLS_BY_ID, toolCatalogForPrompt } from "@/lib/agent/tool
 import { classifyDeliverable, type DeliverableRoute } from "@/lib/agent/deliverable";
 import { WORKFLOWS_BY_DOMAIN } from "@/lib/topic_workflows";
 import { directionCaseFor, directionRationale, requiresDirection } from "@/lib/agent/direction";
+import { fillLadderParams, templateNeedsImage } from "@/lib/agent/templateParams";
 
 const MODEL = "gpt-4o-mini";
 const TIMEOUT_MS = 20_000;
@@ -99,14 +100,33 @@ function wantsPhysicalOutput(query: string): boolean {
  * (a query classified as a `system`) and the stated path (a workflow button), so
  * both produce byte-identical plans — one entry point cannot drift from the other.
  */
-function expandWorkflowPlan(
+async function expandWorkflowPlan(
   query: string,
   domain: string,
   routing: AgentPlan["routing"],
   opts: { hasImage?: boolean; direction?: string } = {},
-): AgentPlan {
+): Promise<AgentPlan> {
   const wf = WORKFLOWS_BY_DOMAIN[domain];
   const { hasImage = false, direction } = opts;
+
+  // This ladder's FIRST deliverable may be image-to-image (merch starts from
+  // your character, product from your product shot). Measured: a text-only merch
+  // run passed the direction gate and then died at step 1 with "This template
+  // requires a reference image upload." Ask for the image instead of planning a
+  // run that cannot start.
+  const firstTemplate = wf.steps[0]?.href.replace("/nano-template/", "template-");
+  if (!hasImage && firstTemplate && templateNeedsImage(firstTemplate)) {
+    const why =
+      `The ${domain} workflow starts from your own image — ${wf.steps[0].name.toLowerCase()} ` +
+      "is generated from it. Add a reference image to continue.";
+    return {
+      query,
+      routing,
+      steps: [{ n: 1, tool_id: "needs_image", label: "Add a reference image", reason: why, domain }],
+      gaps: [],
+      notice: why,
+    };
+  }
 
   // Gate BEFORE expanding. Running the ladder without a shared direction
   // produces five assets that do not match each other, and costs 5x a single
@@ -136,10 +156,16 @@ function expandWorkflowPlan(
     label: s.name,
     reason: s.desc,
     template_id: s.href.replace("/nano-template/", "template-"),
-    // The direction is a SHARED constraint, not a per-step choice — this is the
-    // whole reason the gate exists.
-    params: (direction ? { style_direction: direction } : {}) as Record<string, string>,
+    params: {},
   }));
+
+  // Fill each template's DECLARED parameters from the brief. Without this the
+  // backend falls back to placeholder defaults and the run generates the
+  // template's demo content — see templateParams.ts for the measurement. The
+  // direction is threaded in here rather than as its own key, because
+  // `style_direction` is not a parameter any template declares.
+  const filled = await fillLadderParams(steps, query, direction);
+  for (const st of steps) st.params = filled[st.n] ?? {};
   return {
     query,
     routing,
@@ -168,7 +194,7 @@ export async function buildAgentPlan(
   // tweak silently reroutes the workflow). Explicit intent wins over inference —
   // the same rule §7g settled for stated-vs-scored deliverable shape.
   if (workflowDomain && WORKFLOWS_BY_DOMAIN[workflowDomain]) {
-    return expandWorkflowPlan(query, workflowDomain, {
+    return await expandWorkflowPlan(query, workflowDomain, {
       confidence: 1,
       abstained: false,
       deliverable: {
@@ -214,7 +240,7 @@ export async function buildAgentPlan(
   // A multi-asset system: expand the matching ladder instead of collapsing the
   // request onto whichever single template happened to score highest.
   if (deliverable.type === "system" && deliverable.domain) {
-    return expandWorkflowPlan(query, deliverable.domain, routing, { hasImage, direction });
+    return await expandWorkflowPlan(query, deliverable.domain, routing, { hasImage, direction });
   }
 
   // Editing an image the user already has — freeform image-to-image.
