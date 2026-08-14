@@ -19,6 +19,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { WORKFLOWS_BY_DOMAIN } from "@/lib/topic_workflows";
+import { requiresDirection } from "@/lib/agent/direction";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { freeformGenerateService } from "@/services/freeformGenerate";
@@ -59,6 +60,9 @@ type StepState = {
   hint?: string;
   verify?: { ok: boolean; note: string };
 };
+
+/** Matches nano_template_pipeline.GENERATION_CREDITS. Shown BEFORE spending. */
+const CREDITS_PER_STEP = 10;
 
 type Suggestion = { label: string; why: string; query: string; domain: string };
 type GeneratedDirection = {
@@ -105,6 +109,14 @@ export default function DesignAgentClient({
   const [directions, setDirections] = useState<GeneratedDirection[] | null>(null);
   const [dirLoading, setDirLoading] = useState(false);
   const [dirError, setDirError] = useState<string | null>(null);
+  // Arriving from a workflow entry shows a BRIEF, not a running job. The button
+  // on the topic page is navigation; turning a navigation click into a 50-credit
+  // spend (5 steps x 10) with no confirmation was the worst defect in the audit.
+  const [showBrief, setShowBrief] = useState(Boolean(initialWorkflow));
+  const ladder = workflowDomain ? WORKFLOWS_BY_DOMAIN[workflowDomain] : undefined;
+  const [selected, setSelected] = useState<Set<number>>(
+    () => new Set((ladder?.steps ?? []).map((_, i) => i)),
+  );
 
   const fetchSuggestions = useCallback(
     async (payload: Record<string, unknown>) => {
@@ -239,6 +251,16 @@ export default function DesignAgentClient({
       setPhase("idle");
       setError("Could not build a plan. Try rephrasing the request.");
       return;
+    }
+    // Honour the step selection from the brief. The planner returns the whole
+    // ladder; dropping rows here (rather than server-side) keeps one plan shape
+    // and lets the panel recompute cost without a round trip.
+    const sel = selectedRef.current;
+    if (workflowDomain && sel && sel.size && sel.size < p.steps.length) {
+      p = {
+        ...p,
+        steps: p.steps.filter((_, i) => sel.has(i)).map((st, i) => ({ ...st, n: i + 1 })),
+      };
     }
     setPlan(p);
     setPhase("running");
@@ -390,21 +412,48 @@ export default function DesignAgentClient({
   // home page, so re-asking them to type a brief would undo the whole point.
   // Runs once — the ref guards against a second dispatch on re-render, which
   // would double-charge credits.
+  const selectedRef = useRef<Set<number> | undefined>(undefined);
+  useEffect(() => {
+    selectedRef.current = selected;
+  }, [selected]);
+
   const workflowDomainRef = useRef<string | undefined>(initialWorkflow);
   useEffect(() => {
     workflowDomainRef.current = workflowDomain;
   }, [workflowDomain]);
 
-  const autoStarted = useRef(false);
+  // Ask the direction generator which identity facts it needs, up front, so the
+  // brief collects them in ONE place instead of interrupting mid-run. Cheap: the
+  // route validates and returns needFields before it ever calls the model.
+  const prefetched = useRef(false);
   useEffect(() => {
-    if (autoStarted.current || !initialWorkflow) return;
-    const wf = WORKFLOWS_BY_DOMAIN[initialWorkflow];
-    if (!wf) return;                       // unknown ladder → normal manual entry
-    autoStarted.current = true;
-    const seed = initialQuery?.trim() || wf.heading;
-    setQuery(seed);
-    void run(seed, initialWorkflow);
-  }, [initialWorkflow, initialQuery, run]);
+    if (prefetched.current || !initialWorkflow) return;
+    if (!WORKFLOWS_BY_DOMAIN[initialWorkflow]) return;   // unknown ladder → manual entry
+    if (!requiresDirection(initialWorkflow, false)) return;
+    prefetched.current = true;
+    void (async () => {
+      try {
+        const res = await fetch("/api/design-agent/directions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query: initialQuery || "brief", domain: initialWorkflow }),
+        });
+        const data = await res.json();
+        if (data.needFields) setDirFields(data.needFields);
+      } catch {
+        /* the gate will ask later if this fails — not worth surfacing here */
+      }
+    })();
+  }, [initialWorkflow, initialQuery]);
+
+  /** Start the run from the brief panel. Only a deliberate click reaches here. */
+  const startFromBrief = useCallback(
+    (direction?: string) => {
+      setShowBrief(false);
+      void run(query.trim() || ladder?.heading, workflowDomainRef.current, direction);
+    },
+    [query, ladder, run],
+  );
 
 
   const badge = (s?: StepState) => {
@@ -427,7 +476,102 @@ export default function DesignAgentClient({
         template capability KB, shows you the plan, then executes it step by step.
       </p>
 
+      {/* ---- workflow brief: ready-to-run, NOT running ----
+           Everything the run needs, priced, before anything is spent. */}
+      {showBrief && ladder && (
+        <div className="mt-5 rounded-2xl border border-purple-200 bg-purple-50/40 p-5 shadow-sm">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <p className="text-lg font-bold text-neutral-900">{ladder.heading}</p>
+            <p className="text-sm font-semibold text-purple-800">
+              {selected.size} step{selected.size === 1 ? "" : "s"} · ~
+              {selected.size * CREDITS_PER_STEP} credits
+            </p>
+          </div>
+          <p className="mt-1 text-sm text-neutral-600">{ladder.subtitle}</p>
+
+          <label className="mt-4 block text-xs font-semibold text-neutral-700">
+            What is it? — this is what every step is generated from
+          </label>
+          <textarea
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            rows={2}
+            placeholder="e.g. a modern coffee shop for young professionals"
+            className="mt-1 w-full resize-none rounded-xl border border-neutral-200 p-3 text-sm outline-none focus:border-purple-400"
+          />
+
+          {dirFields.map((f) => (
+            <input
+              key={f.id}
+              value={dirValues[f.id] ?? ""}
+              onChange={(e) => setDirValues((v) => ({ ...v, [f.id]: e.target.value }))}
+              placeholder={`${f.label} — e.g. ${f.placeholder}`}
+              className="mt-2 w-full rounded-xl border border-neutral-200 p-2.5 text-sm outline-none focus:border-purple-400"
+            />
+          ))}
+
+          <p className="mt-4 text-xs font-semibold text-neutral-700">Steps</p>
+          <ul className="mt-1 grid grid-cols-1 gap-1.5 sm:grid-cols-2 lg:grid-cols-3">
+            {ladder.steps.map((ls, i) => (
+              <li key={ls.key}>
+                <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={selected.has(i)}
+                    onChange={() =>
+                      setSelected((prev) => {
+                        const next = new Set(prev);
+                        if (next.has(i)) next.delete(i);
+                        else next.add(i);
+                        return next;
+                      })
+                    }
+                  />
+                  <span aria-hidden>{ls.emoji}</span>
+                  <span className="text-neutral-800">{ls.name}</span>
+                </label>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              disabled={
+                selected.size === 0 ||
+                !query.trim() ||
+                dirFields.some((f) => !(dirValues[f.id] ?? "").trim())
+              }
+              onClick={() =>
+                workflowDomain && requiresDirection(workflowDomain, Boolean(referenceUrl))
+                  ? void fetchDirections(dirValues).then(() => setShowBrief(false))
+                  : startFromBrief()
+              }
+              className="rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-5 py-2.5 text-sm font-bold text-white shadow-sm disabled:opacity-40"
+            >
+              {workflowDomain && requiresDirection(workflowDomain, Boolean(referenceUrl))
+                ? "Choose a direction →"
+                : `Run ${selected.size} step${selected.size === 1 ? "" : "s"} · ~${
+                    selected.size * CREDITS_PER_STEP
+                  } credits`}
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowBrief(false)}
+              className="text-sm font-semibold text-neutral-500 hover:text-neutral-800"
+            >
+              Write my own brief instead
+            </button>
+          </div>
+          <p className="mt-2 text-xs text-neutral-500">
+            Nothing is generated until you press the button above. Each image costs{" "}
+            {CREDITS_PER_STEP} credits.
+          </p>
+        </div>
+      )}
+
       {/* ---- input ---- */}
+      {!showBrief && (
       <div className="mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
         {/* Sticky workflow context, shown because it is sticky. It survives
             edits to the brief on purpose — adding a brand name should refine the
@@ -493,6 +637,7 @@ export default function DesignAgentClient({
           </p>
         )}
       </div>
+      )}
 
       {/* ---- next actions: state-aware, always exactly three ---- */}
       {(suggesting || suggest) && phase !== "running" && phase !== "planning" && (

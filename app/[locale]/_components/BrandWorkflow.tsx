@@ -99,7 +99,7 @@ export default async function BrandWorkflow({ locale }: { locale: string }) {
         </p>
         <p className="mt-1 text-xs text-neutral-500">
           {t("topicWorkflows.runAllHint") ||
-            "Runs all 5 steps — you confirm the creative direction first. Or start from any single step below."}
+            "Review the brief first — 5 steps, ~50 credits, and you pick a creative direction before anything is generated. Or start from any single step below."}
         </p>
 
         <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
