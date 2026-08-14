@@ -61,6 +61,14 @@ type StepState = {
 };
 
 type Suggestion = { label: string; why: string; query: string; domain: string };
+type GeneratedDirection = {
+  id: string;
+  title: { en: string; zh: string };
+  subtitle: { en: string; zh: string };
+  description: { en: string; zh: string };
+  styleTags: string[];
+  promptModifier: string;
+};
 type SuggestResult = { context: string; suggestions: Suggestion[] };
 
 export default function DesignAgentClient({
@@ -89,6 +97,14 @@ export default function DesignAgentClient({
   const [error, setError] = useState<string | null>(null);
   const [suggest, setSuggest] = useState<SuggestResult | null>(null);
   const [suggesting, setSuggesting] = useState(false);
+  // Creative-direction gate state. `needFields` are the identity facts the
+  // direction generator will not invent (a brand name); `directions` are the
+  // 2-3 options once it has them.
+  const [dirFields, setDirFields] = useState<{ id: string; label: string; placeholder: string }[]>([]);
+  const [dirValues, setDirValues] = useState<Record<string, string>>({});
+  const [directions, setDirections] = useState<GeneratedDirection[] | null>(null);
+  const [dirLoading, setDirLoading] = useState(false);
+  const [dirError, setDirError] = useState<string | null>(null);
 
   const fetchSuggestions = useCallback(
     async (payload: Record<string, unknown>) => {
@@ -119,6 +135,40 @@ export default function DesignAgentClient({
     [fetchSuggestions],
   );
 
+  // Fetch directions from the SAME generator the /brand-direction-explorer tool
+  // uses (via /api/design-agent/directions), so directions do not drift between
+  // the tool and the agent and there is one prompt to improve, not two.
+  const fetchDirections = useCallback(
+    async (values: Record<string, string>) => {
+      const domain = workflowDomainRef.current;
+      if (!domain) return;
+      setDirLoading(true);
+      setDirError(null);
+      try {
+        const res = await fetch("/api/design-agent/directions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query, domain, fieldValues: values }),
+        });
+        const data = await res.json();
+        if (data.needFields) {
+          setDirFields(data.needFields);        // ask, then come back
+          setDirections(null);
+        } else if (data.success) {
+          setDirections(data.directions);
+          setDirFields([]);
+        } else {
+          setDirError(data.error ?? "Could not generate directions.");
+        }
+      } catch {
+        setDirError("Could not generate directions.");
+      } finally {
+        setDirLoading(false);
+      }
+    },
+    [query],
+  );
+
   const setStep = (n: number, patch: Partial<StepState>) =>
     setStates((s) => ({ ...s, [n]: { ...(s[n] ?? { status: "pending" }), ...patch } }));
 
@@ -135,10 +185,11 @@ export default function DesignAgentClient({
     }
   }, []);
 
-  const run = useCallback(async (queryOverride?: string, domainOverride?: string) => {
+  const run = useCallback(async (queryOverride?: string, domainOverride?: string, direction?: string) => {
     const q = (queryOverride ?? query).trim();
     if (!q) return;
     const workflowDomain = domainOverride ?? workflowDomainRef.current;
+    if (!direction) { setDirections(null); setDirFields([]); setDirError(null); }
     if (queryOverride) setQuery(queryOverride);
     setError(null);
     setStates({});
@@ -179,6 +230,7 @@ export default function DesignAgentClient({
           hasImage: Boolean(referenceUrl),
           locale,
           workflowDomain,
+          direction,
         }),
       });
       if (!res.ok) throw new Error(String(res.status));
@@ -486,8 +538,78 @@ export default function DesignAgentClient({
         </div>
       )}
 
+      {/* ---- creative-direction gate ----
+           Rendered instead of the step list when the plan is a single
+           choose_direction step. Without this the gate showed as a "blocked"
+           badge with nothing to click — correct behaviour, dead-end UI. */}
+      {plan && plan.steps.length === 1 && plan.steps[0].tool_id === "choose_direction" && (
+        <div className="mt-5 rounded-2xl border border-purple-200 bg-purple-50/40 p-4 shadow-sm">
+          <p className="font-semibold text-neutral-900">Choose a creative direction</p>
+          <p className="mt-1 text-sm text-neutral-600">{plan.steps[0].reason}</p>
+
+          {!directions && dirFields.length === 0 && !dirLoading && (
+            <button
+              type="button"
+              onClick={() => void fetchDirections(dirValues)}
+              className="mt-3 rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-sm font-bold text-white"
+            >
+              Show me directions
+            </button>
+          )}
+
+          {dirFields.length > 0 && (
+            <div className="mt-3 space-y-2">
+              <p className="text-xs text-neutral-500">
+                One detail first — we will not invent this, it ends up printed in the artwork:
+              </p>
+              {dirFields.map((f) => (
+                <input
+                  key={f.id}
+                  value={dirValues[f.id] ?? ""}
+                  onChange={(e) => setDirValues((v) => ({ ...v, [f.id]: e.target.value }))}
+                  placeholder={`${f.label} — e.g. ${f.placeholder}`}
+                  className="w-full rounded-xl border border-neutral-200 p-2.5 text-sm outline-none focus:border-purple-400"
+                />
+              ))}
+              <button
+                type="button"
+                disabled={dirFields.some((f) => !(dirValues[f.id] ?? "").trim())}
+                onClick={() => void fetchDirections(dirValues)}
+                className="rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-sm font-bold text-white disabled:opacity-40"
+              >
+                Show me directions
+              </button>
+            </div>
+          )}
+
+          {dirLoading && <p className="mt-3 text-sm text-neutral-500">Exploring directions…</p>}
+          {dirError && <p className="mt-3 text-sm text-red-600">{dirError}</p>}
+
+          {directions && (
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {directions.map((d) => (
+                <button
+                  key={d.id}
+                  type="button"
+                  onClick={() => void run(query, workflowDomainRef.current, d.promptModifier)}
+                  className="rounded-2xl border border-neutral-200 bg-white p-3.5 text-left transition hover:border-purple-400 hover:shadow-sm"
+                >
+                  <p className="text-sm font-bold text-neutral-900">{d.title.en}</p>
+                  <p className="mt-0.5 text-xs text-neutral-500">{d.subtitle.en}</p>
+                  <p className="mt-2 text-xs leading-5 text-neutral-600">{d.description.en}</p>
+                  <p className="mt-2 text-[11px] text-purple-700">{d.styleTags.slice(0, 4).join(" · ")}</p>
+                  <span className="mt-2 inline-block text-xs font-semibold text-purple-700">
+                    Use this direction →
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* ---- plan + execution ---- */}
-      {plan && (
+      {plan && !(plan.steps.length === 1 && plan.steps[0].tool_id === "choose_direction") && (
         <ol className="mt-5 space-y-3">
           {plan.steps.map((s) => {
             const st = states[s.n];
