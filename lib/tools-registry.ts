@@ -543,6 +543,28 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // ASL → subtitled video. Priced at 8 credits/min (JOB_CREDIT_COST.ASL_TRANSLATION)
+    // and deliberately NOT on the free monthly_subtitle_minutes quota that plain
+    // captioning uses — this runs vision inference over ~96 sampled frames per
+    // job, so it cannot be a loss-leader the way subtitle_only is.
+    //
+    // status "demo" ON PURPOSE: the recogniser is a general VLM and its output
+    // failed a reversal control on 2026-08-16 (see
+    // curify-studio/docs/asl-translation-mvp-spec.md). Output is labelled
+    // unverified end-to-end. Do not promote to "create" until a recogniser lands
+    // that reads ASL rather than plausibly guessing it.
+    id: "asl-translator",
+    slug: "asl-translator",
+    groupId: "video",
+    status: "demo",
+    job_type: "asl_translation",
+    namespace: "aslTranslator",
+    action: { type: "modal", mode: "translation" },
+    i18n: toolKeys("asl_translator"),
+    seo: seoKeys("asl_translator"),
+  },
+
+  {
     id: "worksheet-from-video",
     slug: "worksheet-from-video",
     groupId: "video",
