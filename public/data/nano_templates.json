@@ -20891,5 +20891,48 @@
       "cozy",
       "modern"
     ]
+  },
+  {
+    "id": "template-ecommerce-product-photography",
+    "locales": {
+      "en": {
+        "base_prompt": "(E-commerce Product Photography) Create a clean, professional e-commerce product photograph of {product}. Photorealistic, sharp focus, premium studio look, soft even lighting, tasteful composition suited to a marketplace listing (hero shot, detail macro, lifestyle scene or colorway lineup). The product is the unmistakable hero; no text, no watermark. Subject: 'E-commerce product photography'",
+        "parameters": [
+          {
+            "name": "product",
+            "label": "产品 Product",
+            "type": "text",
+            "placeholder": [
+              "gold pendant necklace",
+              "acetate sunglasses",
+              "minimalist LED desk lamp",
+              "smart insulated water bottle",
+              "portable bluetooth speaker"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-ecommerce-product-photography-jewelry-01-hero-prev.jpg",
+    "requires_image_upload": false,
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-08-14",
+    "allow_generation": true,
+    "use_cases": [
+      "for-dtc-brands",
+      "for-merch-operators"
+    ],
+    "topics": [
+      "product",
+      "ecommerce",
+      "product-photography",
+      "commercial-photography",
+      "mockups",
+      "showcase",
+      "minimalist",
+      "soft-light",
+      "modern"
+    ]
   }
 ]
