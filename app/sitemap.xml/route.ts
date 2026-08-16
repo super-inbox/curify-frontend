@@ -37,13 +37,30 @@ const LOCALES = routing.locales;
 // The 08-05 fold fix changed the rendered HTML of every template page.
 const NANO_TEMPLATES_LASTMOD = "2026-08-05T00:00:00.000Z";
 
-// 08-05 fold fix + 08-12 authored topics.stickers title/description/keywords.
-const TOPICS_LASTMOD = "2026-08-12T00:00:00.000Z";
+// Base for topic pages: the 08-05 fold fix, which is the last change that hit
+// ALL of them. Pages that changed later take an override below — claiming a
+// later date for the whole group would overstate freshness for 108 of 109
+// topics, and an overstated lastmod is what teaches Google to discount the
+// signal entirely.
+const TOPICS_LASTMOD = "2026-08-05T00:00:00.000Z";
 
-// Static + tool + use-case routes. 08-12: 90 tool metadata titles lost a
-// duplicated "| Curify" suffix, and the use-case pages gained the worked-case
-// block; the 08-05 fold fix applies to all of them.
-const STABLE_LASTMOD = "2026-08-12T00:00:00.000Z";
+// Per-page overrides, keyed by topic slug. Only pages that genuinely changed.
+const TOPIC_LASTMOD_OVERRIDES: Record<string, string> = {
+  // 08-12: authored title / description / keywords across 10 locales.
+  stickers: "2026-08-12T00:00:00.000Z",
+};
+
+// Genuinely-static routes (/about, /privacy, /agreement, /contact, /pricing…).
+// Their last real change is the 08-05 fold fix; nothing since has altered them.
+const STABLE_LASTMOD = "2026-08-05T00:00:00.000Z";
+
+// Tool pages: 08-12 stripped a duplicated "| Curify" from 90 metadata titles,
+// which changes the <title> a crawler sees on every one of them.
+const TOOLS_LASTMOD = "2026-08-12T00:00:00.000Z";
+
+// Use-case pages: 08-12 added the worked-case block and moved the demo cards
+// into the tools grid — a visible change on all of them.
+const USE_CASES_LASTMOD = "2026-08-12T00:00:00.000Z";
 
 // Added 2026-07-05 — the 16 /personality/[type] (MBTI) pages were never emitted
 // in the sitemap, leaving them invisible to Google's crawl (MBTI & Character
@@ -235,9 +252,11 @@ export async function GET() {
 
   // Topic pages
   topicRoutes.forEach((route) => {
+    const slug = route.replace("/topics/", "");
+    const topicLastmod = TOPIC_LASTMOD_OVERRIDES[slug] ?? TOPICS_LASTMOD;
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
-        lastmod: TOPICS_LASTMOD,
+        lastmod: topicLastmod,
         changefreq: "weekly",
         priority: "0.8",
       });
@@ -261,7 +280,7 @@ export async function GET() {
   useCaseRoutes.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
-        lastmod: STABLE_LASTMOD,
+        lastmod: USE_CASES_LASTMOD,
         changefreq: "weekly",
         priority: "0.8",
       });
@@ -272,7 +291,7 @@ export async function GET() {
   toolRoutes.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
-        lastmod: STABLE_LASTMOD,
+        lastmod: TOOLS_LASTMOD,
         changefreq: "weekly",
         priority: "0.8",
       });
