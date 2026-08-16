@@ -1,8 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { getCanonicalPath } from "@/lib/canonical";
+import RunWorkflowComingSoon from "./RunWorkflowComingSoon";
 import { makeSafeTranslator } from "@/lib/locale_utils";
 import type { TopicWorkflowConfig } from "@/lib/topic_workflows";
+import { requiresDirection } from "@/lib/agent/direction";
 
 /**
  * Guided commerce-workflow ladder for the merch / product topic pages — the
@@ -46,16 +48,28 @@ export default async function TopicWorkflow({
               heading
             )}
           </h2>
-          {topicHref ? (
-            <Link
-              href={getCanonicalPath(locale, topicHref)}
-              className="shrink-0 whitespace-nowrap text-sm font-semibold text-purple-700 hover:text-purple-900"
-            >
-              {t("topicWorkflows.seeFull") || "See full workflow →"}
-            </Link>
-          ) : null}
+          {/* Primary action sits top-right, where the "see full workflow" link
+              used to be: running the ladder is the point of the section, and a
+              secondary navigation link competing for that slot buried it. */}
+          {/* Resolves to an in-place coming-soon message instead of routing to
+              /design-agent, which is not ready. Clicks are tracked as demand
+              signal per domain — see RunWorkflowComingSoon. */}
+          <RunWorkflowComingSoon domain={config.domain} />
         </div>
         <p className="mt-1 text-sm text-neutral-600">{subtitle}</p>
+
+        {/* Copy states cost, and only promises a direction step where one
+            actually fires. It previously claimed "you confirm the creative
+            direction first" on every ladder, which is false for education (no
+            gate) and for any run that arrives with a reference image. */}
+        <p className="mt-1 text-xs text-neutral-500">
+          {t("topicWorkflows.runAllHint") ||
+            `Review the brief first — ${config.steps.length} steps, ~${config.steps.length * 10} credits${
+              requiresDirection(config.domain, false)
+                ? ", and you pick a creative direction before anything is generated"
+                : ""
+            }. Or start from any single step below.`}
+        </p>
 
         <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {config.steps.map((s) => {

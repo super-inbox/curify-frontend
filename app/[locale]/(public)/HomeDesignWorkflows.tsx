@@ -15,7 +15,7 @@ export default async function HomeDesignWorkflows({ locale }: { locale: string }
   const t = makeSafeTranslator(tRoot);
 
   return (
-    <section className="mt-12 w-full max-w-[1400px]">
+    <section className="mt-12 w-full max-w-[1600px]">
       <div className="pl-1">
         <h2 className="text-xl font-bold tracking-tight text-neutral-900 md:text-2xl">
           {t("home.workflowRows.title") || "Design workflows"}

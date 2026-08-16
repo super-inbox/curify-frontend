@@ -54,6 +54,14 @@ const STATIC_ROUTES = [
   "/inspiration-hub",
 ];
 
+// NOTE (2026-08-12): /enterprise is intentionally NOT listed here. It is a
+// relationship + outbound landing surface, not a search surface — every
+// reader arrives from a conversation, a LinkedIn post or an email, and the
+// CN half of that pipeline is entirely WeChat-sourced. It is bilingual
+// (en + zh) with correct per-locale canonicals and is not noindexed, so a
+// buyer searching the company name still finds it; we just don't ask Google
+// to crawl or rank it. See docs/workstream-vertical-use-cases.md §2026-08-12.
+
 function getNanoTemplateRoutes(): Array<{
   route: string;
   locales: string[];

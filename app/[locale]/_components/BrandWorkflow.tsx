@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { getCanonicalPath } from "@/lib/canonical";
+import RunWorkflowComingSoon from "./RunWorkflowComingSoon";
 import { makeSafeTranslator } from "@/lib/locale_utils";
 
 /**
@@ -77,12 +78,24 @@ export default async function BrandWorkflow({ locale }: { locale: string }) {
   return (
     <section className="mt-5">
       <div className="rounded-3xl border border-neutral-200 bg-white/80 p-5 shadow-sm backdrop-blur sm:p-6">
-        <h2 className="text-lg font-bold text-neutral-900">
-          {t("brandWorkflow.heading") || "Brand design workflow"}
-        </h2>
+        <div className="flex items-start justify-between gap-3">
+          <h2 className="text-lg font-bold text-neutral-900">
+            {t("brandWorkflow.heading") || "Brand design workflow"}
+          </h2>
+          {/* Same action as TopicWorkflow's, duplicated here rather than mapping
+              the brand ladder onto this slug — that would render two workflow
+              sections on /topics/branding. This page keeps its bespoke section
+              and gains the run action; both point at the same brand ladder. */}
+          {/* Same coming-soon treatment as TopicWorkflow's action. */}
+          <RunWorkflowComingSoon domain="brand" />
+        </div>
         <p className="mt-1 text-sm text-neutral-600">
           {t("brandWorkflow.subtitle") ||
             "Build a complete brand identity in five steps — from a color system to a reusable brand kit."}
+        </p>
+        <p className="mt-1 text-xs text-neutral-500">
+          {t("topicWorkflows.runAllHint") ||
+            "Review the brief first — 5 steps, ~50 credits, and you pick a creative direction before anything is generated. Or start from any single step below."}
         </p>
 
         <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">

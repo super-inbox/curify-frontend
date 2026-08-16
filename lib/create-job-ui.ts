@@ -55,6 +55,26 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     ratePerMinute: 5,
     ctaLabel: "Start Translation",
   },
+  asl_translation: {
+    title: "Translate Sign Language Video",
+    allowUpload: true,
+    allowYoutube: true,
+    // Source language is fixed — the input IS sign language, so there is
+    // nothing for the user to pick. Target is the language of the captions.
+    showSourceLang: false,
+    showTargetLang: true,
+    // No TTS voice-over: the pipeline produces captions and re-muxes whatever
+    // audio the source had (usually none). Revisit if voiceover is wired in.
+    allowVoiceover: false,
+    allowSubtitles: true,
+    subtitleOptions: ["Target", "Bilingual"],
+    // 8 credits/min — must stay in sync with JOB_CREDIT_COST["ASL_TRANSLATION"]
+    // in curify_background. Explicitly NOT 0: unlike subtitle_only above, ASL is
+    // never covered by the FREE plan's monthly subtitle minutes, because each job
+    // runs vision inference over ~96 sampled frames.
+    ratePerMinute: 8,
+    ctaLabel: "Translate Signing",
+  },
   subtitle_only: {
     title: "Add Subtitles",
     allowUpload: true,

@@ -16,8 +16,10 @@
  * after a failed step, retry, state persistence across reloads, and any trace
  * store. A failure stops that step and the loop moves on.
  */
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { WORKFLOWS_BY_DOMAIN } from "@/lib/topic_workflows";
+import { requiresDirection } from "@/lib/agent/direction";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { freeformGenerateService } from "@/services/freeformGenerate";
@@ -59,11 +61,36 @@ type StepState = {
   verify?: { ok: boolean; note: string };
 };
 
+/** Matches nano_template_pipeline.GENERATION_CREDITS. Shown BEFORE spending. */
+const CREDITS_PER_STEP = 10;
+
 type Suggestion = { label: string; why: string; query: string; domain: string };
+type GeneratedDirection = {
+  id: string;
+  title: { en: string; zh: string };
+  subtitle: { en: string; zh: string };
+  description: { en: string; zh: string };
+  styleTags: string[];
+  promptModifier: string;
+};
 type SuggestResult = { context: string; suggestions: Suggestion[] };
 
-export default function DesignAgentClient({ locale }: { locale: string }) {
-  const [query, setQuery] = useState("");
+export default function DesignAgentClient({
+  locale,
+  initialWorkflow,
+  initialQuery,
+}: {
+  locale: string;
+  /** Ladder name from a one-click entry (?workflow=merch). */
+  initialWorkflow?: string;
+  initialQuery?: string;
+}) {
+  const [query, setQuery] = useState(initialQuery ?? "");
+  // The ladder this session belongs to. MUST outlive the auto-start: the seeded
+  // text alone does not classify back to a workflow ("Brand design workflow"
+  // routes to a SINGLE template), so re-running after editing the brief would
+  // silently drop the whole ladder and generate one image instead of five.
+  const [workflowDomain, setWorkflowDomain] = useState<string | undefined>(initialWorkflow);
   // blob_url from ReferenceImageUpload — the component owns upload, preview,
   // error and the anonymous sign-in gate (/images/upload requires auth).
   const [referenceUrl, setReferenceUrl] = useState<string | null>(null);
@@ -74,6 +101,22 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
   const [error, setError] = useState<string | null>(null);
   const [suggest, setSuggest] = useState<SuggestResult | null>(null);
   const [suggesting, setSuggesting] = useState(false);
+  // Creative-direction gate state. `needFields` are the identity facts the
+  // direction generator will not invent (a brand name); `directions` are the
+  // 2-3 options once it has them.
+  const [dirFields, setDirFields] = useState<{ id: string; label: string; placeholder: string }[]>([]);
+  const [dirValues, setDirValues] = useState<Record<string, string>>({});
+  const [directions, setDirections] = useState<GeneratedDirection[] | null>(null);
+  const [dirLoading, setDirLoading] = useState(false);
+  const [dirError, setDirError] = useState<string | null>(null);
+  // Arriving from a workflow entry shows a BRIEF, not a running job. The button
+  // on the topic page is navigation; turning a navigation click into a 50-credit
+  // spend (5 steps x 10) with no confirmation was the worst defect in the audit.
+  const [showBrief, setShowBrief] = useState(true);
+  const ladder = workflowDomain ? WORKFLOWS_BY_DOMAIN[workflowDomain] : undefined;
+  const [selected, setSelected] = useState<Set<number>>(
+    () => new Set((ladder?.steps ?? []).map((_, i) => i)),
+  );
 
   const fetchSuggestions = useCallback(
     async (payload: Record<string, unknown>) => {
@@ -104,6 +147,40 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
     [fetchSuggestions],
   );
 
+  // Fetch directions from the SAME generator the /brand-direction-explorer tool
+  // uses (via /api/design-agent/directions), so directions do not drift between
+  // the tool and the agent and there is one prompt to improve, not two.
+  const fetchDirections = useCallback(
+    async (values: Record<string, string>) => {
+      const domain = workflowDomainRef.current;
+      if (!domain) return;
+      setDirLoading(true);
+      setDirError(null);
+      try {
+        const res = await fetch("/api/design-agent/directions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query, domain, fieldValues: values }),
+        });
+        const data = await res.json();
+        if (data.needFields) {
+          setDirFields(data.needFields);        // ask, then come back
+          setDirections(null);
+        } else if (data.success) {
+          setDirections(data.directions);
+          setDirFields([]);
+        } else {
+          setDirError(data.error ?? "Could not generate directions.");
+        }
+      } catch {
+        setDirError("Could not generate directions.");
+      } finally {
+        setDirLoading(false);
+      }
+    },
+    [query],
+  );
+
   const setStep = (n: number, patch: Partial<StepState>) =>
     setStates((s) => ({ ...s, [n]: { ...(s[n] ?? { status: "pending" }), ...patch } }));
 
@@ -120,9 +197,11 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
     }
   }, []);
 
-  const run = useCallback(async (queryOverride?: string) => {
+  const run = useCallback(async (queryOverride?: string, domainOverride?: string, direction?: string) => {
     const q = (queryOverride ?? query).trim();
     if (!q) return;
+    const workflowDomain = domainOverride ?? workflowDomainRef.current;
+    if (!direction) { setDirections(null); setDirFields([]); setDirError(null); }
     if (queryOverride) setQuery(queryOverride);
     setError(null);
     setStates({});
@@ -141,6 +220,12 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
           label: picked.label,
           domain: picked.domain,
           query: queryOverride,
+          // the alternatives that were on screen and passed over — without
+          // these the event is a click, not a comparison
+          rejected: suggest.suggestions
+            .filter((s) => s.query !== queryOverride)
+            .map((s) => ({ label: s.label, domain: s.domain })),
+          shown_context: suggest.context,
         });
       }
     }
@@ -152,7 +237,13 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
       const res = await fetch("/api/design-agent/plan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: q, hasImage: Boolean(referenceUrl), locale }),
+        body: JSON.stringify({
+          query: q,
+          hasImage: Boolean(referenceUrl),
+          locale,
+          workflowDomain,
+          direction,
+        }),
       });
       if (!res.ok) throw new Error(String(res.status));
       p = await res.json();
@@ -161,8 +252,21 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
       setError("Could not build a plan. Try rephrasing the request.");
       return;
     }
+    // Honour the step selection from the brief. The planner returns the whole
+    // ladder; dropping rows here (rather than server-side) keeps one plan shape
+    // and lets the panel recompute cost without a round trip.
+    const sel = selectedRef.current;
+    if (workflowDomain && sel && sel.size && sel.size < p.steps.length) {
+      p = {
+        ...p,
+        steps: p.steps.filter((_, i) => sel.has(i)).map((st, i) => ({ ...st, n: i + 1 })),
+      };
+    }
     setPlan(p);
     setPhase("running");
+    // Steps that actually produced a verified artifact. Derived here rather
+    // than from `states`, which is React state and still stale in this closure.
+    const succeeded: typeof p.steps = [];
     traj.record({
       type: "routed",
       confidence: p.routing.confidence,
@@ -235,6 +339,7 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
         if (!projectId) throw new Error("no project id returned");
         const url = await pollNanoResult(projectId);
         const verify = await verifyArtifact(url);
+        if (verify.ok) succeeded.push(step);
         setStep(step.n, { status: verify.ok ? "done" : "failed", resultUrl: url, verify });
         traj.record({
           type: "step_result",
@@ -278,16 +383,78 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
       artifacts: p.steps.filter((s) => !s.blocked).length,
     });
 
-    // observe → suggest: what the ladder says comes after what we just produced
-    const producedKeys = p.steps
-      .filter((s) => !s.blocked)
-      .map((s) => s.template_id ?? s.tool_id);
+    // observe → suggest: what the ladder says comes after what we just produced.
+    // Two things this must get right, both previously wrong:
+    //  1. only steps that VERIFIABLY produced an artifact count. Filtering on
+    //     the plan's static `blocked` flag reported five failed generations as
+    //     "done so far".
+    //  2. the suggester matches ladder STEP KEYS (palette, logo…), not template
+    //     ids. Emitting `template-…` matched nothing, so it re-offered the exact
+    //     steps that had just run.
+    const ladder = WORKFLOWS_BY_DOMAIN[p.routing.deliverable?.domain ?? workflowDomain ?? ""];
+    const keyByTemplateId = new Map(
+      (ladder?.steps ?? []).map((ls) => [ls.href.replace("/nano-template/", "template-"), ls.key]),
+    );
+    const producedKeys = succeeded
+      .map((s) => (s.template_id ? keyByTemplateId.get(s.template_id) : undefined) ?? s.tool_id)
+      .filter(Boolean);
     void fetchSuggestions({
       query: q,
-      completedToolIds: p.steps.map((s) => s.tool_id),
+      completedToolIds: succeeded.map((s) => s.tool_id),
       producedKeys,
+      // The ladder is known when the run came from a workflow entry — without
+      // it the suggester infers from produced artifacts and defaults to merch.
+      domain: p.routing.deliverable?.domain ?? workflowDomain,
     });
   }, [query, referenceUrl, locale, verifyArtifact, fetchSuggestions, suggest]);
+
+  // One-click workflow entry: the user already chose the ladder on the topic or
+  // home page, so re-asking them to type a brief would undo the whole point.
+  // Runs once — the ref guards against a second dispatch on re-render, which
+  // would double-charge credits.
+  const selectedRef = useRef<Set<number> | undefined>(undefined);
+  useEffect(() => {
+    selectedRef.current = selected;
+  }, [selected]);
+
+  const workflowDomainRef = useRef<string | undefined>(initialWorkflow);
+  useEffect(() => {
+    workflowDomainRef.current = workflowDomain;
+  }, [workflowDomain]);
+
+  // Ask the direction generator which identity facts it needs, up front, so the
+  // brief collects them in ONE place instead of interrupting mid-run. Cheap: the
+  // route validates and returns needFields before it ever calls the model.
+  const prefetched = useRef(false);
+  useEffect(() => {
+    if (prefetched.current || !initialWorkflow) return;
+    if (!WORKFLOWS_BY_DOMAIN[initialWorkflow]) return;   // unknown ladder → manual entry
+    if (!requiresDirection(initialWorkflow, false)) return;
+    prefetched.current = true;
+    void (async () => {
+      try {
+        const res = await fetch("/api/design-agent/directions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query: initialQuery || "brief", domain: initialWorkflow }),
+        });
+        const data = await res.json();
+        if (data.needFields) setDirFields(data.needFields);
+      } catch {
+        /* the gate will ask later if this fails — not worth surfacing here */
+      }
+    })();
+  }, [initialWorkflow, initialQuery]);
+
+  /** Start the run from the brief panel. Only a deliberate click reaches here. */
+  const startFromBrief = useCallback(
+    (direction?: string) => {
+      setShowBrief(false);
+      void run(query.trim() || ladder?.heading, workflowDomainRef.current, direction);
+    },
+    [query, ladder, run],
+  );
+
 
   const badge = (s?: StepState) => {
     const st = s?.status ?? "pending";
@@ -301,58 +468,147 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
     return <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${map[st]}`}>{st}</span>;
   };
 
+  // Widened from max-w-3xl: the panel carries a 3-up step grid, a side-by-side
+  // brief + reference drop, and 3-up direction cards — all cramped at 768px.
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <h1 className="text-2xl font-bold text-neutral-900">Design Agent</h1>
       <p className="mt-1 text-sm text-neutral-600">
         Describe what you want, optionally with a reference image. The agent routes it against the
         template capability KB, shows you the plan, then executes it step by step.
       </p>
 
-      {/* ---- input ---- */}
-      <div className="mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
-        <textarea
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          rows={3}
-          placeholder="e.g. a die-cut sticker sheet of my cat character, ready for printing"
-          className="w-full resize-none rounded-xl border border-neutral-200 p-3 text-sm outline-none focus:border-purple-400"
-        />
-        <div className="mt-4">
-          <ReferenceImageUpload
-            variant="full"
-            label="Reference image"
-            hint="Drop an image and the agent will suggest what to do with it."
-            replaceLabel="Replace"
-            signInLabel="Sign in to upload a reference image"
-            onChange={onReferenceChange}
-            onUploadingChange={setUploading}
-          />
-        </div>
-
-        <div className="mt-4 flex items-center gap-3">
-          <button
-            type="button"
-            disabled={!query.trim() || uploading || phase === "planning" || phase === "running"}
-            onClick={() => void run()}
-            className="ml-auto rounded-full bg-purple-600 px-5 py-2 text-sm font-semibold text-white disabled:opacity-40"
-          >
-            {uploading
-              ? "Uploading…"
-              : phase === "planning"
-                ? "Planning…"
-                : phase === "running"
-                  ? "Running…"
-                  : "Run agent"}
-          </button>
-        </div>
-        {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
-        {!query.trim() && referenceUrl && !suggest && !suggesting && (
-          <p className="mt-3 text-xs text-neutral-500">
-            Pick a suggestion below, or describe what you want.
+      {/* ---- workflow brief: ready-to-run, NOT running ----
+           Everything the run needs, priced, before anything is spent. */}
+      {showBrief && (
+        <div className="mt-5 rounded-2xl border border-purple-200 bg-purple-50/40 p-5 shadow-sm">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <p className="text-lg font-bold text-neutral-900">
+              {ladder ? ladder.heading : "What do you want to make?"}
+            </p>
+            {ladder && (
+              <p className="text-sm font-semibold text-purple-800">
+                {selected.size} step{selected.size === 1 ? "" : "s"} · ~
+                {selected.size * CREDITS_PER_STEP} credits
+              </p>
+            )}
+          </div>
+          <p className="mt-1 text-sm text-neutral-600">
+            {ladder
+              ? ladder.subtitle
+              : "Pick a workflow to run the whole set, or just describe it and the agent will route it."}
           </p>
-        )}
-      </div>
+
+          {/* Same chooser the topic pages offer, so arriving with no ?workflow
+              lands on the identical surface rather than a different one. */}
+          {!ladder && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {Object.entries(WORKFLOWS_BY_DOMAIN).map(([d, wf]) => (
+                <button
+                  key={d}
+                  type="button"
+                  onClick={() => {
+                    setWorkflowDomain(d);
+                    setSelected(new Set(wf.steps.map((_, i) => i)));
+                  }}
+                  className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-700 transition hover:border-purple-400 hover:text-purple-800"
+                >
+                  {wf.heading.replace(/ workflow$/i, "")}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <label className="mt-4 block text-xs font-semibold text-neutral-700">
+            What is it? — this is what every step is generated from
+          </label>
+          <div className="mt-1 flex items-stretch gap-3">
+            <textarea
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              rows={2}
+              placeholder="e.g. a modern coffee shop for young professionals"
+              className="min-w-0 flex-1 resize-none rounded-xl border border-neutral-200 p-3 text-sm outline-none focus:border-purple-400"
+            />
+            {/* Small drop target beside the text, not a second panel. An image
+                can replace the direction step entirely (see direction.ts), so it
+                belongs next to the brief rather than behind a mode switch. */}
+            <div className="w-40 shrink-0">
+              <ReferenceImageUpload
+                variant="compact"
+                label="Reference"
+                hint="optional"
+                onChange={onReferenceChange}
+                onUploadingChange={setUploading}
+              />
+            </div>
+          </div>
+
+          {dirFields.map((f) => (
+            <input
+              key={f.id}
+              value={dirValues[f.id] ?? ""}
+              onChange={(e) => setDirValues((v) => ({ ...v, [f.id]: e.target.value }))}
+              placeholder={`${f.label} — e.g. ${f.placeholder}`}
+              className="mt-2 w-full rounded-xl border border-neutral-200 p-2.5 text-sm outline-none focus:border-purple-400"
+            />
+          ))}
+
+          {ladder && (<><p className="mt-4 text-xs font-semibold text-neutral-700">Steps</p>
+          <ul className="mt-1 grid grid-cols-1 gap-1.5 sm:grid-cols-2 lg:grid-cols-3">
+            {ladder.steps.map((ls, i) => (
+              <li key={ls.key}>
+                <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={selected.has(i)}
+                    onChange={() =>
+                      setSelected((prev) => {
+                        const next = new Set(prev);
+                        if (next.has(i)) next.delete(i);
+                        else next.add(i);
+                        return next;
+                      })
+                    }
+                  />
+                  <span aria-hidden>{ls.emoji}</span>
+                  <span className="text-neutral-800">{ls.name}</span>
+                </label>
+              </li>
+            ))}
+          </ul></>)}
+
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              disabled={
+                uploading ||
+                !query.trim() ||
+                (Boolean(ladder) && selected.size === 0) ||
+                (Boolean(ladder) && dirFields.some((f) => !(dirValues[f.id] ?? "").trim()))
+              }
+              onClick={() =>
+                workflowDomain && requiresDirection(workflowDomain, Boolean(referenceUrl))
+                  ? void fetchDirections(dirValues).then(() => setShowBrief(false))
+                  : startFromBrief()
+              }
+              className="rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-5 py-2.5 text-sm font-bold text-white shadow-sm disabled:opacity-40"
+            >
+              {workflowDomain && requiresDirection(workflowDomain, Boolean(referenceUrl))
+                ? "Choose a direction →"
+                : ladder
+                  ? `Run ${selected.size} step${selected.size === 1 ? "" : "s"} · ~${
+                      selected.size * CREDITS_PER_STEP
+                    } credits`
+                  : "Run agent →"}
+            </button>
+          </div>
+          <p className="mt-2 text-xs text-neutral-500">
+            Nothing is generated until you press the button above. Each image costs{" "}
+            {CREDITS_PER_STEP} credits.
+          </p>
+        </div>
+      )}
 
       {/* ---- next actions: state-aware, always exactly three ---- */}
       {(suggesting || suggest) && phase !== "running" && phase !== "planning" && (
@@ -413,8 +669,78 @@ export default function DesignAgentClient({ locale }: { locale: string }) {
         </div>
       )}
 
+      {/* ---- creative-direction gate ----
+           Rendered instead of the step list when the plan is a single
+           choose_direction step. Without this the gate showed as a "blocked"
+           badge with nothing to click — correct behaviour, dead-end UI. */}
+      {plan && plan.steps.length === 1 && plan.steps[0].tool_id === "choose_direction" && (
+        <div className="mt-5 rounded-2xl border border-purple-200 bg-purple-50/40 p-4 shadow-sm">
+          <p className="font-semibold text-neutral-900">Choose a creative direction</p>
+          <p className="mt-1 text-sm text-neutral-600">{plan.steps[0].reason}</p>
+
+          {!directions && dirFields.length === 0 && !dirLoading && (
+            <button
+              type="button"
+              onClick={() => void fetchDirections(dirValues)}
+              className="mt-3 rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-sm font-bold text-white"
+            >
+              Show me directions
+            </button>
+          )}
+
+          {dirFields.length > 0 && (
+            <div className="mt-3 space-y-2">
+              <p className="text-xs text-neutral-500">
+                One detail first — we will not invent this, it ends up printed in the artwork:
+              </p>
+              {dirFields.map((f) => (
+                <input
+                  key={f.id}
+                  value={dirValues[f.id] ?? ""}
+                  onChange={(e) => setDirValues((v) => ({ ...v, [f.id]: e.target.value }))}
+                  placeholder={`${f.label} — e.g. ${f.placeholder}`}
+                  className="w-full rounded-xl border border-neutral-200 p-2.5 text-sm outline-none focus:border-purple-400"
+                />
+              ))}
+              <button
+                type="button"
+                disabled={dirFields.some((f) => !(dirValues[f.id] ?? "").trim())}
+                onClick={() => void fetchDirections(dirValues)}
+                className="rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-sm font-bold text-white disabled:opacity-40"
+              >
+                Show me directions
+              </button>
+            </div>
+          )}
+
+          {dirLoading && <p className="mt-3 text-sm text-neutral-500">Exploring directions…</p>}
+          {dirError && <p className="mt-3 text-sm text-red-600">{dirError}</p>}
+
+          {directions && (
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {directions.map((d) => (
+                <button
+                  key={d.id}
+                  type="button"
+                  onClick={() => void run(query, workflowDomainRef.current, d.promptModifier)}
+                  className="rounded-2xl border border-neutral-200 bg-white p-3.5 text-left transition hover:border-purple-400 hover:shadow-sm"
+                >
+                  <p className="text-sm font-bold text-neutral-900">{d.title.en}</p>
+                  <p className="mt-0.5 text-xs text-neutral-500">{d.subtitle.en}</p>
+                  <p className="mt-2 text-xs leading-5 text-neutral-600">{d.description.en}</p>
+                  <p className="mt-2 text-[11px] text-purple-700">{d.styleTags.slice(0, 4).join(" · ")}</p>
+                  <span className="mt-2 inline-block text-xs font-semibold text-purple-700">
+                    Use this direction →
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* ---- plan + execution ---- */}
-      {plan && (
+      {plan && !(plan.steps.length === 1 && plan.steps[0].tool_id === "choose_direction") && (
         <ol className="mt-5 space-y-3">
           {plan.steps.map((s) => {
             const st = states[s.n];

@@ -52,6 +52,8 @@ import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCa
 import MBTIQuizCapsule from "@/app/[locale]/_components/MBTIQuizCapsule";
 import RelatedBlogCard from "@/app/[locale]/_components/RelatedBlogCard";
 import HomeFusedRow, { type HomeExampleTile, type TopRemixPrompt } from "@/app/[locale]/(public)/HomeFusedRow";
+import ExternalInspirationRow from "@/app/[locale]/_components/ExternalInspirationRow";
+import { getExternalInspirationForTopic } from "@/lib/externalInspiration";
 
 // Style-exploration niche topics render a single FUSED surface (template
 // examples + gallery prompts interleaved, same tile UI as the home rail)
@@ -345,6 +347,9 @@ export default async function Page({ params }: Props) {
   // Examples come from inspirations tagged with THIS topic in topics[]
   // (clean, curated); gallery from the on-intent TOPIC_GALLERY_TAG (if any).
   const isNicheStyleTopic = NICHE_STYLE_TOPICS.has(slug);
+  // Third content source: prompt-less external inspiration references mapped to
+  // this topic (image + outbound attribution link). See lib/externalInspiration.
+  const externalInspiration = getExternalInspirationForTopic(slug);
   const fusedExamples: HomeExampleTile[] = isNicheStyleTopic
     ? filteredImages
         .map((x: any) => ({
@@ -515,6 +520,12 @@ export default async function Page({ params }: Props) {
               <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} />
             ))}
           </div>
+        </section>
+      )}
+
+      {externalInspiration.length > 0 && (
+        <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
+          <ExternalInspirationRow locale={localeStr} items={externalInspiration} />
         </section>
       )}
 

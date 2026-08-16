@@ -12,9 +12,15 @@ export const metadata: Metadata = {
 
 export default async function DesignAgentPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ workflow?: string; q?: string }>;
 }) {
   const { locale } = await params;
-  return <DesignAgentClient locale={locale} />;
+  // Context handed over by a one-click workflow entry (topic page / home
+  // ladder). `workflow` names a ladder in WORKFLOWS_BY_DOMAIN and is validated
+  // server-side in buildAgentPlan; `q` seeds the brief for the fallback path.
+  const { workflow, q } = await searchParams;
+  return <DesignAgentClient locale={locale} initialWorkflow={workflow} initialQuery={q} />;
 }

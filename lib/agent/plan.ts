@@ -16,6 +16,8 @@ import { buildSearchGenerationPlan } from "@/lib/searchGenerationPlan";
 import { AGENT_TOOLS, TOOLS_BY_ID, toolCatalogForPrompt } from "@/lib/agent/tools";
 import { classifyDeliverable, type DeliverableRoute } from "@/lib/agent/deliverable";
 import { WORKFLOWS_BY_DOMAIN } from "@/lib/topic_workflows";
+import { directionCaseFor, directionRationale, requiresDirection } from "@/lib/agent/direction";
+import { fillLadderParams, templateNeedsImage } from "@/lib/agent/templateParams";
 
 const MODEL = "gpt-4o-mini";
 const TIMEOUT_MS = 20_000;
@@ -32,6 +34,10 @@ export type PlanStep = {
   template_id?: string;
   params?: Record<string, string>;
   prompt?: string;
+  /** `choose_direction` only — which creative-exploration case to borrow. */
+  direction_case?: string;
+  /** `choose_direction` only — the ladder to expand once a direction is picked. */
+  domain?: string;
   /** Declared but not executable yet; carries the tool that implements it. */
   blocked?: { implementedBy: string; blocker: string };
 };
@@ -89,11 +95,116 @@ function wantsPhysicalOutput(query: string): boolean {
   return /sticker|贴纸|die.?cut|刀线|packaging|包装|print|印刷|cmyk|出血|pdf|dieline|刀版/i.test(query);
 }
 
+/**
+ * Expand an expert-authored ladder into plan steps. Shared by the inferred path
+ * (a query classified as a `system`) and the stated path (a workflow button), so
+ * both produce byte-identical plans — one entry point cannot drift from the other.
+ */
+async function expandWorkflowPlan(
+  query: string,
+  domain: string,
+  routing: AgentPlan["routing"],
+  opts: { hasImage?: boolean; direction?: string } = {},
+): Promise<AgentPlan> {
+  const wf = WORKFLOWS_BY_DOMAIN[domain];
+  const { hasImage = false, direction } = opts;
+
+  // This ladder's FIRST deliverable may be image-to-image (merch starts from
+  // your character, product from your product shot). Measured: a text-only merch
+  // run passed the direction gate and then died at step 1 with "This template
+  // requires a reference image upload." Ask for the image instead of planning a
+  // run that cannot start.
+  const firstTemplate = wf.steps[0]?.href.replace("/nano-template/", "template-");
+  if (!hasImage && firstTemplate && templateNeedsImage(firstTemplate)) {
+    const why =
+      `The ${domain} workflow starts from your own image — ${wf.steps[0].name.toLowerCase()} ` +
+      "is generated from it. Add a reference image to continue.";
+    return {
+      query,
+      routing,
+      steps: [{ n: 1, tool_id: "needs_image", label: "Add a reference image", reason: why, domain }],
+      gaps: [],
+      notice: why,
+    };
+  }
+
+  // Gate BEFORE expanding. Running the ladder without a shared direction
+  // produces five assets that do not match each other, and costs 5x a single
+  // generation to find that out — so an unset direction yields ONE step, not
+  // five. A reference image can satisfy the gate outright (see direction.ts).
+  if (!direction && requiresDirection(domain, hasImage)) {
+    return {
+      query,
+      routing,
+      steps: [
+        {
+          n: 1,
+          tool_id: "choose_direction",
+          label: "Choose a creative direction",
+          reason: directionRationale(domain, hasImage),
+          direction_case: directionCaseFor(domain) ?? undefined,
+          domain,
+        },
+      ],
+      gaps: [],
+      notice: directionRationale(domain, hasImage),
+    };
+  }
+  const steps: PlanStep[] = wf.steps.slice(0, MAX_STEPS).map((s, i) => ({
+    n: i + 1,
+    tool_id: "generate_from_template",
+    label: s.name,
+    reason: s.desc,
+    template_id: s.href.replace("/nano-template/", "template-"),
+    params: {},
+  }));
+
+  // Fill each template's DECLARED parameters from the brief. Without this the
+  // backend falls back to placeholder defaults and the run generates the
+  // template's demo content — see templateParams.ts for the measurement. The
+  // direction is threaded in here rather than as its own key, because
+  // `style_direction` is not a parameter any template declares.
+  const filled = await fillLadderParams(steps, query, direction);
+  for (const st of steps) st.params = filled[st.n] ?? {};
+  return {
+    query,
+    routing,
+    steps,
+    gaps: collectGaps(steps),
+    notice: routing.deliverable?.rationale,
+  };
+}
+
 export async function buildAgentPlan(
   query: string,
-  opts: { hasImage?: boolean; locale?: string } = {},
+  opts: {
+    hasImage?: boolean;
+    locale?: string;
+    workflowDomain?: string;
+    /** Set once the user confirms a direction — unblocks the ladder. */
+    direction?: string;
+  } = {},
 ): Promise<AgentPlan> {
-  const { hasImage = false, locale = "en" } = opts;
+  const { hasImage = false, locale = "en", workflowDomain, direction } = opts;
+
+  // A one-click workflow entry states its domain outright. Do NOT round-trip
+  // that through the lexical classifier: the caller already knows which ladder
+  // the user clicked, and making the button depend on a regex matching the
+  // sentence the button itself generated is a failure waiting to happen (a copy
+  // tweak silently reroutes the workflow). Explicit intent wins over inference —
+  // the same rule §7g settled for stated-vs-scored deliverable shape.
+  if (workflowDomain && WORKFLOWS_BY_DOMAIN[workflowDomain]) {
+    return await expandWorkflowPlan(query, workflowDomain, {
+      confidence: 1,
+      abstained: false,
+      deliverable: {
+        type: "system",
+        domain: workflowDomain,
+        rationale: "Started from a workflow entry point — the ladder is stated, not inferred.",
+      },
+      matched_templates: [],
+    }, { hasImage, direction });
+  }
 
   // --- 1. route against the existing KB-grounded matcher -------------------
   let directions: Awaited<ReturnType<typeof buildSearchGenerationPlan>>["directions"] = [];
@@ -129,22 +240,7 @@ export async function buildAgentPlan(
   // A multi-asset system: expand the matching ladder instead of collapsing the
   // request onto whichever single template happened to score highest.
   if (deliverable.type === "system" && deliverable.domain) {
-    const wf = WORKFLOWS_BY_DOMAIN[deliverable.domain];
-    const steps: PlanStep[] = wf.steps.slice(0, MAX_STEPS).map((s, i) => ({
-      n: i + 1,
-      tool_id: "generate_from_template",
-      label: s.name,
-      reason: s.desc,
-      template_id: s.href.replace("/nano-template/", "template-"),
-      params: {},
-    }));
-    return {
-      query,
-      routing,
-      steps,
-      gaps: collectGaps(steps),
-      notice: deliverable.rationale,
-    };
+    return await expandWorkflowPlan(query, deliverable.domain, routing, { hasImage, direction });
   }
 
   // Editing an image the user already has — freeform image-to-image.

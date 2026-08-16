@@ -2,10 +2,11 @@
 
 import { DiscordLogo, XLogo } from "@phosphor-icons/react";
 import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const locale = useLocale();
 
   return (
     <footer className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-16 py-6 w-full text-sm text-gray-500">
@@ -34,6 +35,14 @@ export default function Footer() {
         <span className="text-gray-400">|</span>
         <Link href="/about" className="hover:underline">
           {t("aboutUs")}
+        </Link>
+        <span className="text-gray-400">|</span>
+        {/* Enterprise AI line (2026-08-12). /enterprise is bilingual (en + zh
+            only — see its copy.ts), so the label follows the same rule rather
+            than going through the 10-locale `footer` namespace: a localized
+            label in ja/ko/tr would promise copy that doesn't exist. */}
+        <Link href="/enterprise" className="hover:underline">
+          {locale === "zh" ? "企业 AI" : "Enterprise AI"}
         </Link>
         <span className="text-gray-400">|</span>
         <Link href="/contact" className="hover:underline">

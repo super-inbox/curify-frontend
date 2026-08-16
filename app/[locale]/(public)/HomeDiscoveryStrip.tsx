@@ -16,7 +16,7 @@ export default async function HomeDiscoveryStrip({ locale }: { locale: string })
   const t = await getTranslations({ locale, namespace: "home.discovery" });
 
   return (
-    <section className="mt-12 w-full max-w-[1400px]">
+    <section className="mt-12 w-full max-w-[1600px]">
       <div className="mb-3 pl-3">
         <h2 className="text-xl font-bold tracking-tight text-neutral-900 md:text-2xl">
           {t("useCasesTitle")}

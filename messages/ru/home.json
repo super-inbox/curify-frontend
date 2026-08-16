@@ -218,7 +218,8 @@
     "groups": {
       "video": "Видеоинструменты",
       "image": "Инструменты для изображений",
-      "audio": "Аудиоинструменты"
+      "audio": "Аудиоинструменты",
+      "design": "Дизайн → Производство"
     },
     "video_transcript_generator": {
       "title": "Генератор транскрипций видео",
@@ -366,6 +367,14 @@
         "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
         "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
       }
+    },
+    "sticker_factory_export": {
+      "title": "Die-Cut Sticker Factory Files",
+      "desc": "Artwork in, production package out: 300 DPI transparent art, a mm-accurate die-cut line, CMYK PDF, preview and spec sheet — one zip a printer can quote from."
+    },
+    "acrylic_factory_export": {
+      "title": "Acrylic Standee & Keychain Factory Files",
+      "desc": "Front, mirrored back, white-ink underbase choked so it cannot halo, a cutline with a computed keychain hole, and a spec sheet."
     }
   },
   "bilingual": {
@@ -1562,5 +1571,10 @@
     },
     "title": "Explore three creative directions from one brief",
     "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+  },
+  "topicWorkflows": {
+    "runAll": "Run the whole workflow",
+    "comingSoonTitle": "Almost ready ✨",
+    "comingSoonBody": "One-click end-to-end runs are coming soon. In the meantime every step below works on its own — start anywhere."
   }
 }

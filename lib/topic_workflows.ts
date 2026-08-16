@@ -20,6 +20,12 @@ export type WorkflowStep = {
 export type TopicWorkflowConfig = {
   /** i18n subtree key under the `topicWorkflows` namespace (merch | product). */
   key: string;
+  /**
+   * Key into WORKFLOWS_BY_DOMAIN — what the design agent expands on a one-click
+   * start. Deliberately separate from `key`: edtech's i18n key is "edtech" but
+   * its domain is "education", so reusing `key` would silently 404 that ladder.
+   */
+  domain: string;
   heading: string;
   subtitle: string;
   steps: WorkflowStep[];
@@ -27,6 +33,7 @@ export type TopicWorkflowConfig = {
 
 const MERCH: TopicWorkflowConfig = {
   key: "merch",
+  domain: "merch",
   heading: "Merch design workflow",
   subtitle:
     "Turn one character or IP into a full line of sellable merch — from stickers to packaging.",
@@ -46,6 +53,7 @@ const MERCH: TopicWorkflowConfig = {
 
 const PRODUCT: TopicWorkflowConfig = {
   key: "product",
+  domain: "product",
   heading: "Product & e-commerce workflow",
   subtitle:
     "Turn one product photo into a full set of listing-ready visuals — from hero shot to marketplace listing.",
@@ -73,6 +81,7 @@ const PRODUCT: TopicWorkflowConfig = {
  */
 const PACKAGING: TopicWorkflowConfig = {
   key: "packaging",
+  domain: "packaging",
   heading: "Packaging design workflow",
   subtitle:
     "Take a product from bare item to shelf-ready pack — structure, front panel, variants, dieline proof and retail visuals.",
@@ -98,6 +107,7 @@ const PACKAGING: TopicWorkflowConfig = {
  */
 const BRAND: TopicWorkflowConfig = {
   key: "brand",
+  domain: "brand",
   heading: "Brand design workflow",
   subtitle:
     "Build a complete brand identity — from a color system to a reusable brand kit.",
@@ -121,6 +131,7 @@ const BRAND: TopicWorkflowConfig = {
  */
 const EDTECH: TopicWorkflowConfig = {
   key: "edtech",
+  domain: "education",
   heading: "Education content workflow",
   subtitle:
     "Turn one topic into a full teaching pack — reading cards, vocabulary, worksheets and posters.",
@@ -139,7 +150,15 @@ const EDTECH: TopicWorkflowConfig = {
 };
 
 const BY_PRESET: Record<string, TopicWorkflowConfig> = { merch: MERCH, product: PRODUCT };
-const BY_SLUG: Record<string, TopicWorkflowConfig> = { packaging: PACKAGING };
+// Slug-keyed ladders. `learning` is here rather than preset-keyed because the
+// edtech topic page has no workbench preset — without this entry it rendered no
+// ladder and therefore no "run the whole workflow" action. `branding` is
+// deliberately absent: that page has its own BrandWorkflow section, which
+// carries the run action itself, and adding this one would duplicate it.
+const BY_SLUG: Record<string, TopicWorkflowConfig> = {
+  packaging: PACKAGING,
+  learning: EDTECH,
+};
 
 /**
  * Every ladder, keyed by domain. These are expert-authored canonical plans, so

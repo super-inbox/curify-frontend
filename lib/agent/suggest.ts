@@ -43,6 +43,13 @@ export type SuggestState = {
   completedToolIds?: string[];
   /** Deliverable keys already produced (ladder step keys). */
   producedKeys?: string[];
+  /**
+   * The ladder this run is already in, when the caller knows it (a one-click
+   * workflow entry does). Inferring the domain from produced artifacts fails
+   * when nothing has been produced yet — it silently fell back to "merch", so a
+   * brand run was told what was "next in the merch design workflow".
+   */
+  domain?: string;
 };
 
 export type SuggestResult = {
@@ -124,15 +131,25 @@ async function classifyImage(
 
 export async function buildSuggestions(state: SuggestState): Promise<SuggestResult> {
   const produced = new Set(state.producedKeys ?? []);
+  const completed = state.completedToolIds ?? [];
+
+  // Blocked on the direction gate: nothing is produced and the only thing that
+  // "ran" is the gate itself. Offering ladder steps here contradicts the screen
+  // — it tells the user to pick a direction, then invites them to skip it.
+  if (produced.size === 0 && completed.length > 0 && completed.every((t) => t === "choose_direction")) {
+    return { context: "Pick a creative direction to continue — every step will share it.", suggestions: [] };
+  }
 
   // --- in-flight: continue the ladder we're already in ----------------------
-  if (produced.size > 0 || (state.completedToolIds?.length ?? 0) > 0) {
+  if (produced.size > 0 || completed.length > 0) {
     const subject = state.query?.slice(0, 60) || "this design";
-    // Pick the domain whose ladder best covers what has been produced.
+    // Prefer the ladder the caller already knows; only infer when it doesn't.
     const domain =
+      (state.domain && WORKFLOWS_BY_DOMAIN[state.domain] ? state.domain : undefined) ??
       DOMAIN_ORDER.find((d) =>
         WORKFLOWS_BY_DOMAIN[d].steps.some((s) => produced.has(s.key)),
-      ) ?? "merch";
+      ) ??
+      "merch";
     const next = fromLadder(domain, subject, produced).slice(0, 3);
     return {
       context: `Done so far: ${[...produced].join(", ") || "first artifact"}. Next in the ${

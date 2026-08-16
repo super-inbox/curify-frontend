@@ -83,7 +83,7 @@ function SidebarToolSkeleton() {
 export default function Loading() {
   return (
     <main className="min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-6">
-      <div className="mx-auto max-w-[1400px] animate-pulse">
+      <div className="mx-auto max-w-[1600px] animate-pulse">
         <div className="pt-10 pb-6">
           <div className="mx-auto max-w-4xl">
             <div className="h-10 w-3/4 rounded-xl bg-neutral-200" />

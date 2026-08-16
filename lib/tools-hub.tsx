@@ -22,7 +22,7 @@ export type ToolItem = {
   isGenerate?: boolean;
 };
 
-export type ToolGroupId = "video" | "image" | "audio";
+export type ToolGroupId = "video" | "image" | "design" | "audio";
 
 export type ToolGroup = {
   groupId: ToolGroupId;
@@ -103,6 +103,13 @@ export function buildToolsHub(params: {
       groupId: "image",
       title: t("tools.groups.image"),
       items: grouped.image.map(toItem),
+    },
+    {
+      // Factory / pre-press outputs: files a manufacturer can quote from, as
+      // opposed to the image group, which produces artwork to look at.
+      groupId: "design",
+      title: t("tools.groups.design") || "Design → manufacturing",
+      items: grouped.design.map(toItem),
     },
     {
       groupId: "audio",

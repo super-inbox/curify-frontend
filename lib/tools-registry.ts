@@ -302,10 +302,42 @@ export const TOOL_REGISTRY: ToolDef[] = [
       alt: "One design image turned into a die-cut sticker factory file — 300 DPI transparent artwork PNG, mm-accurate CutContour cutline SVG, print-ready CMYK PDF, preview and spec sheet in one ZIP",
     },
   },
+  // ---- Design → manufacturing -------------------------------------------
+  // Factory-ready output: files a manufacturer quotes from, not artwork to look
+  // at. The backend pipelines exist (POST /design-tools/*) but the self-serve
+  // frontend flow does not, so these carry the contact CTA rather than an
+  // inline generate block — status must not claim more than is reachable.
+  {
+    id: "sticker-factory-export",
+    slug: "sticker-factory-export",
+    groupId: "design",
+    status: "demo",
+    // Backend: POST /design-tools/sticker-export (20 credits). Not yet wired to
+    // a self-serve UI; offered as a done-for-you service meanwhile.
+    job_type: "video_transcript",
+    namespace: "stickerFactoryExport",
+    action: { type: "none" },
+    cta: "contact",
+    i18n: toolKeys("sticker_factory_export"),
+    seo: seoKeys("sticker_factory_export"),
+  },
+  {
+    id: "acrylic-factory-export",
+    slug: "acrylic-factory-export",
+    groupId: "design",
+    status: "demo",
+    // Dev script only (factory/acrylic_exporter.py) — no backend pipeline yet.
+    job_type: "video_transcript",
+    namespace: "acrylicFactoryExport",
+    action: { type: "none" },
+    cta: "contact",
+    i18n: toolKeys("acrylic_factory_export"),
+    seo: seoKeys("acrylic_factory_export"),
+  },
   {
     id: "packaging-mockup",
     slug: "packaging-mockup",
-    groupId: "image",
+    groupId: "design",
     status: "demo",
     // No self-serve backend job — offered as a done-for-you / bulk service via
     // the contact CTA. job_type is a required field but unused for this tool.
@@ -349,13 +381,31 @@ export const TOOL_REGISTRY: ToolDef[] = [
     // closes the loop with a visible demo + waitlist CTA. 2026-05-30 GSC
     // pull: 8 distinct tool-intent ASL queries at pos 9-26, zero clicks
     // (no /tools/asl-* landing existed).
+    // 2026-08-16: PROMOTED FROM DEMO LANDING TO LIVE TOOL. It now fronts the
+    // real ASL pipeline (JobType.ASL_TRANSLATION); job_type was previously a
+    // placeholder ("video_transcript") because no backend existed.
+    //
+    // Upgraded IN PLACE rather than adding a second "asl-translator" slug: this
+    // one already ranks for the tool-intent queries and already has i18n copy in
+    // all 10 locales. A near-identical second slug would split that signal.
+    //
+    // Paid — 8 credits/min (JOB_CREDIT_COST.ASL_TRANSLATION, mirrored in
+    // create-job-ui ratePerMinute). Deliberately NOT on the free monthly
+    // subtitle quota that plain captioning uses: each job runs vision inference
+    // over ~96 adaptively sampled frames.
+    //
+    // ⚠️ The recogniser is a general VLM that failed a frame-reversal control
+    // (curify-studio/docs/asl-translation-mvp-spec.md). Going live does not
+    // change that — the pipeline stamps asl_unverified/review_required on every
+    // job and prefixes the first caption "[AI-generated ASL translation —
+    // unverified]". Keep those until a real sign-language model replaces it.
     id: "asl-video-translator",
     slug: "asl-video-translator",
     groupId: "video",
-    status: "demo",
-    job_type: "video_transcript",
+    status: "create",
+    job_type: "asl_translation",
     namespace: "aslVideoTranslator",
-    action: { type: "page" },
+    action: { type: "modal", mode: "translation" },
     i18n: toolKeys("asl_video_translator"),
     seo: seoKeys("asl_video_translator"),
     demo: {
@@ -576,7 +626,7 @@ export function groupTools(): Record<ToolGroupId, ToolDef[]> {
       acc[tool.groupId].push(tool);
       return acc;
     },
-    { video: [], image: [], audio: [] } as Record<ToolGroupId, ToolDef[]>
+    { video: [], image: [], design: [], audio: [] } as Record<ToolGroupId, ToolDef[]>
   );
 }
 

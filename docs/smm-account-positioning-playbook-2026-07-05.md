@@ -163,3 +163,51 @@ history (this table is the v1 answer; refine with real data):
 ROI is high because it **adds no work** — it just makes every existing post more
 consistent, which on recommender-feed platforms matters more than any single
 post's polish.
+
+---
+
+## Evidence refresh 2026-08-12 — 产品内容在两个平台都被算法惩罚
+
+_新数据。与 2026-07-06 那轮一致的结论，但样本大得多、可读性强。_
+
+### YouTube (TonyStark_AI) — 43 subs · 160 videos · 57,209 views · median 64
+
+按内容类型切分（n=160，样本足够，不是噪声）：
+
+| 类型 | n | median views | max |
+|---|---:|---:|---:|
+| 产品 / workflow demo | 46 | **6** | 1,004 |
+| 其他（文化 / 纪实 / 热点） | 114 | **105** | 5,102 |
+
+**中位数差 17.5×。** Top: 雪中擦邻居车 5,102 · flute 街头演奏 1,939 · salute to Croatia 1,684 ·
+Celestial Realm of Chinese Mythology 210（08-03）。同一周发的纯 workflow demo：
+`Great Wall AI Merch Collection` 0 · `Tiananmen` 1 · `Statue of Liberty` 1 ·
+`Turn One Episode Into a Full Learning Pack` 0 · `Product Photo → Full Ad Kit` 3。
+
+**细分很重要**：八仙系列（文化主题 + merch 包装）拿到 42/68/73/13/7/2；纯 workflow demo
+（无文化主题）0–5。**主题决定分发，包装决定折损** —— 文化主题即使套上 merch 标题仍能跑，
+没有文化主题的产品演示直接归零。
+
+### Facebook (Curify Page) — 90 followers · 24 reels · 3,813 total views
+
+- **22 / 24 reels 低于 35 views**，median ≈15。
+- `Americana` 3,365 = **全站 88% 的观看量**。
+- 决定性反例：**同一条 Americana 内容、同一天、相隔 8 小时发两次 → 3,365 vs 18 views（187×）**。
+  内容类别无法解释这个差距 —— 那 3,365 是算法抽奖，不是可复制的内容属性。
+- 八仙 8 条 reels：**0/0/0/0/0/1/1 views**（全部 published + public）。**这条不是"文化路线失败"，
+  是"根本没被分发"** —— 没人看过的内容无法证伪任何假设。
+
+**因此：不要做"5 个品类 reels A/B"。** 在 187× 噪声底 + median 15 的量级上，任何多臂对比都不可读。
+
+### 结论：Page reels 不是渠道，Groups 才是
+
+Playbook §账号定位表 早就写了 FB = **单图/单视频投放到兴趣 Groups，软链 `/topics/*`**。
+现在有数据支持这条：FB 引荐流量落在**人工精选的深链**上
+（`/nano-template/east-asian-culture-comparison-infographic` 18 visitors ·
+`/tools/chinese-costume-tryon` 10 · `/topics/*`），而 reels 按设计不带正文链接，
+**结构上不可能产生引荐流量**。FB referrer 全部被剥成裸域名，Page / reels / Groups
+在 `user_interactions` 里无法区分 —— 所以"FB 0 转化"衡量的是 autopost + 人工 Groups，不是 reels。
+
+**TikTok 四账号（ecommerce/brand · hsk reading · merch IP · education workflow）跑得好，
+是本 playbook 核心论点最强的一次验证** —— 一个账号一个身份。FB 与 YouTube 仍是"什么都发"
+的单账号，这正是它们产品内容 median 6–15 的原因。

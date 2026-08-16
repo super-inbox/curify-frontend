@@ -1,12 +1,12 @@
 # Curify product workstreams — index
 
-_Last updated: 2026-08-07 (workstream C). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
+_Last updated: 2026-08-12 (workstream D — first measurement + P0 reset; memory table repaired). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
 
 The canonical pointer for the four **product** workstreams (search, tools, growth, vertical use-cases). Companion outbound/GTM workstreams index lives separately at `~/curify-studio/gtm_tools/INDEX.md`.
 
 ## Scope
 
-Four product workstreams that converge under the **2026-06-26 POD / Merch Design strategic reframe** (memory `project_pod_merch_strategic_reframe_2026_06_26.md`):
+Four product workstreams that converge under the **2026-06-26 POD / Merch Design strategic reframe** — recorded in the POD reframe section of `workstream-vertical-use-cases.md`, which now carries a 2026-08-12 gating status:
 
 - **A. Search & Content** — demand surface, intent routing, daily content drop, niche discovery
 - **B. Tools (image + video)** — generic tools the platform ships (merch-grade design + mockup studio under the POD lens)
@@ -14,6 +14,13 @@ Four product workstreams that converge under the **2026-06-26 POD / Merch Design
 - **D. Vertical Use Cases** — persona-shaped packaging that turns horizontal capability into specific buyer solutions
 
 Funnel under POD: *A finds demand → B produces design → C distributes & ranks → D packages for a named buyer with first-$100-sale path.*
+
+> **2026-08-12 reality check on that funnel.** The D leg was measured for the first time
+> and it does not currently function as described: `/use-cases/*` draws ~2 human visits/day
+> in total, 0 GSC clicks, and no first-$100-sale path was ever shipped (POD-D9). All ten
+> persona pages combined rank 12th of site routes. The D-workstream doc's 2026-08-12
+> section carries the evidence and a five-item P0 reset; POD-D1..D4 are gated on a demand
+> signal rather than queued. Read that before scoping anything in D.
 
 ---
 
@@ -31,11 +38,25 @@ Other product workstream docs (single-track, not part of the four):
 - `~/curify-studio/docs/workstream-customer-delivery-pipeline.md` — customer delivery 4-gap punch list (held)
 - `~/curify-studio/docs/workstream-education-content-supply.md` — education content supply 2-phase plan (held)
 
+### GTM motions that feed (or bypass) these workstreams
+
+Outbound/GTM execution lives in `~/curify-studio/gtm_tools/INDEX.md`, but **which surface each
+motion lands on is a D-workstream concern** — recorded here because the 2026-08-12 review found
+none of them measurable:
+
+| Motion | Owner doc | Lands on |
+|---|---|---|
+| **Outbound email** (817 sent, 475 leads) | `gtm_tools/INDEX.md` | `/tools/*` for the POD voices (259 of 475 leads); 4 legacy persona pages for the rest |
+| **Thought leadership** — LinkedIn · RedNote · FB · Medium | `docs/smm-account-positioning-playbook-2026-07-05.md` | **no countable landing path** — these channels strip or forbid referrers, so referrer-based attribution structurally cannot work (UC-P0-1) |
+| **RedNote need-based DM outreach** | *(no doc / no tracker — UC-P0-3)* | WeChat reply channel; nothing logged |
+| **Crawling** (Pinterest / Apollo / shop harvests) | `gtm_tools/INDEX.md` | list-building only — **produced leads, never traffic**; do not count as a growth channel |
+| **Enterprise AI B2B** (2nd B2B line, from 2026-07-25) | `~/curify-studio/docs/workstream-enterprise-ai-b2b.md` | **`/enterprise` — shipped 2026-08-12** (UC-P0-2). English-only, EN-only in the sitemap, footer-linked, per-CTA click tracking |
+
 ---
 
 ## POD / Merch Design reframe (2026-06-26, cross-cutting)
 
-**Source:** 2026-06-26 strategy discussion (user-provided, Chinese). Memory `project_pod_merch_strategic_reframe_2026_06_26.md`.
+**Source:** 2026-06-26 strategy discussion (user-provided, Chinese). The reframe section of `workstream-vertical-use-cases.md` is the surviving record (the former memory of this name no longer exists).
 
 **Thesis:** recenter Curify around Merch Design + POD as the primary revenue surface. 28 work items POD-A1..POD-D10 land in the 4 docs above. Each item is namespaced — `POD-A*` in Search, `POD-B*` in Tools, `POD-C*` in SEO+SMM+Growth, `POD-D*` in Vertical Use Cases.
 
@@ -69,7 +90,7 @@ Other product workstream docs (single-track, not part of the four):
 - **2026-06-15** Visual intent routing eval framework — `docs/eval-framework-visual-intent-routing-2026-06-15.md`
 - **2026-06-14** Visual search benchmark + taxonomy gap audit (Canva/Pinterest) — `docs/eval-framework-visual-search-benchmark-2026-06-14.md`, `docs/taxonomy-gap-canva-pinterest-2026-06-14.md`
 - **2026-06-03** World Cup expansion plan section in `search-and-content.md`
-- Weekly search-eval cadence — `node scripts/eval_search.cjs --quiet` per ~7d (memory `project_weekly_search_eval.md`, last_run_date 2026-05-22)
+- Weekly search-eval cadence — `node scripts/eval_search.cjs --quiet` per ~7d (memory `project_search_weekly_review`)
 
 ### B. Tools & Engineering
 - **2026-06-26** POD reframe section added (POD-B1..B7) — commit `244ba7a`
@@ -104,12 +125,41 @@ Other product workstream docs (single-track, not part of the four):
 - **robots.txt expansion** blocking 11 more crawlers from `/nano-template/*` + `/nano-banana-pro-prompts/*` (commit `94c0e6ac`, Vercel cost reduction)
 
 ### D. Vertical Use Cases
+- **2026-08-12** **First measurement of the workstream + P0 reset** — 60d `user_interactions`
+  pull + GSC 28d. `/use-cases/[slug]` = **273 users / 346 events over 60 days** (12th of all
+  routes, behind `/blog` and `/inspiration-hub`); **31 GSC impressions, 0 clicks** at positions
+  1.0–9.0; the only genuine product action across all ten pages is **learning-material
+  downloads on `for-parents`**, which hits the auth wall. **POD-D1..D10: 0 of 10 shipped**;
+  D1–D4 + D7/D8/D9 now **gated on a demand signal**. Five P0s recorded (UC-P0-1..5:
+  countable landing paths · ship `/enterprise` · track RedNote need-DMs · A/B the POD
+  outbound CTA · unblock the learning-material download). See the dated section at the top of
+  `workstream-vertical-use-cases.md`
+- **2026-08-12** Persona-list correction — the doc had listed `for-esl-tutors`, `for-agencies`,
+  `for-edtech`, `for-museum-shops` as live; **none of those routes ever existed**, and five
+  live pages were missing from the list
+- **2026-08-05→08-11** Use-case page ships (previously unrecorded): worked-case block +
+  `/topics/merch` workflow-ladder reuse + full-width case layout (`ea50b1a0`, `d50f4ea1`,
+  `a3bb09e6`); `for-merch-operators` copy dedupe (`1871c5ea`)
+- **2026-07-11** `character-sticker-sheet` (M9 char-batch P0) wired into `for-merch-operators`
+  — the first genuine POD/merch-design tool on a persona page
+- **2026-07-07→07-09** GTM tighten pass — `/ip-merch-demo` + `/illustrator-demo` banners on the
+  merch + designer pages (`02890505`, `9c7d5954`), merch explainer video (`6d0b78ec`), persona
+  copy tightening (`cec65cd6`), product-photo tools reverted off merch (persona mismatch)
 - **2026-06-26** Workstream doc created + POD reframe (POD-D1..D10) — commit `a03ac94c`
 - **2026-06-07** `/use-cases/for-merch-operators` shipped (RedNote demand mining)
-- **Currently live**: 8 verticals — dtc-brands, esl-tutors, publishers, agencies, edtech, museum-shops, forwarder-back-office, merch-operators
-- **Queued landing pages** under POD reframe: `/use-cases/for-creator-merch`, `/use-cases/for-pet-merch`, `/use-cases/for-team-swag`, `/use-cases/for-seasonal-pod`
+- **Currently live**: **10** personas on one dynamic route (`/use-cases/[slug]`) — for-parents,
+  for-esl-learners, for-creators, for-designers, for-marketers, for-publishers, for-dtc-brands,
+  for-programmatic-seo, for-forwarder-back-office (chip hidden), for-merch-operators. Source of
+  truth is `lib/use-cases.ts`
+- **Gated (not queued)** under POD reframe: `/use-cases/for-creator-merch`, `/for-pet-merch`,
+  `/for-team-swag`, `/for-seasonal-pod` — four more pages on a surface drawing ~2 human
+  visits/day is the wrong move until a channel feeds it
 - **Demo pages live**: `/ip-merch-demo`, `/illustrator-demo`, `/progseo-demo`
-- **Demo pages queued**: `/pet-demo` (POD-D2), `/creator-merch-demo` (POD-D1), `/pptx-edit` (memory `project_pptx_edit_polish_pattern.md`)
+- **2026-08-12** **`/enterprise` shipped** (UC-P0-2) — landing surface for the Enterprise-AI line,
+  built from `enterprise-ai-capability-one-pager.md`. English-only: canonical points at the EN URL
+  from every locale, sitemap emits `en` only (`ENGLISH_ONLY_STATIC_ROUTES`), consumer topic strip
+  suppressed on the route, footer-linked, `enterprise::cta-*` click tracking
+- **Not built**: `/pet-demo`, `/creator-merch-demo`
 
 ---
 
@@ -137,67 +187,73 @@ Other product workstream docs (single-track, not part of the four):
 
 ## Memory entries (persist across sessions; pull when relevant)
 
+> **Repaired 2026-08-12.** The previous version of this section listed **43 memory files,
+> every one of which no longer exists** — the memory store was regenerated under a new
+> naming scheme at some point and this index was never updated, which meant onboarding
+> step 3 ("read memory X first") had been unexecutable for weeks. The table below was
+> rebuilt by listing the memory directory. **Verify before citing:** memory names are not
+> stable across regenerations, so treat `MEMORY.md` (the loaded index) as authoritative and
+> re-audit this table whenever a name here fails to resolve.
+
 ### Cross-workstream / strategic
 | Memory | Purpose |
 |---|---|
-| `project_pod_merch_strategic_reframe_2026_06_26.md` | The 2026-06-26 POD reframe — read first for any POD-tagged work |
-| `feedback_workstream_scope_growth_seo_blogs.md` | Workstream scope discipline — daily-drop is SEPARATE workstream |
+| `project_growth_drivers` | traffic × conversion — the top-level growth model |
+| `project_key_actions_strategy` | remix/gen/copy/download underperform; value-ladder framing |
+| `project_conversion_funnel_auth_wall` | auth wall is the dominant conversion bottleneck |
+| `project_first_paying_customer_pod` | the POD wedge — WC LatAm die-cut sticker maker |
+| `feedback_reuse_admin_panel` | `user_interactions` analysis → `/admin/interaction-analytics` or `app/crud/admin.py`; don't fork |
+| `project_alibaba_corpus_scrape` | 43.119/47.82 /16s = 91% of raw traffic — filter before reading any volume number |
+| `project_dau_activation_analysis` | refined DAU; no-action + empty-referrer = bot |
 
 ### A. Search & Content
 | Memory | Purpose |
 |---|---|
-| `project_daily_template_workflow.md` | hongjie28-patch-N onboarding recipe (separate workstream) |
-| `project_weekly_search_eval.md` | Weekly eval cadence reminder |
-| `feedback_search_event_weighting.md` | NORESULT + LOWRESULT weight=1 per query rollup |
-| `feedback_topic_registration_checklist.md` | New tier-2/3 topic checklist (registry + TOPIC_GALLERY_TAG + i18n) |
-| `feedback_template_topic_source_of_truth.md` | nano_templates.json is the source (NOT taxonomy.json) |
-| `feedback_daily_drop_gallery_fetch.md` | Fetch curify-gallery before sync_nano_inspiration |
+| `project_search_weekly_review` | weekly NORESULT/LOWRESULT → alias-family or content expansion |
+| `project_visual_search_eval_framework` · `project_visual_intent_routing_eval` | eval frameworks |
+| `feedback_add_searchable_topic_playbook` | tag topics[]/tags[]/aliases when adding a topic |
+| `feedback_creation_vs_consumption_templates` | the two template archetypes |
+| `project_section_b_evolution_options` | template matcher PARKED; Section A is focus |
+| `feedback_daily_drop_i18n` · `feedback_daily_drop_rank_score` | daily-drop must ship i18n + rank_score |
+| `feedback_template_subjects_pattern` · `feedback_taxonomy_vs_template_tagging_separation` | taxonomy vs template tagging |
 
 ### B. Tools & Engineering
 | Memory | Purpose |
 |---|---|
-| `feedback_curify_frontend_cdn_helper.md` | Use `toCdnUrl`, not raw `cdn()` |
-| `feedback_demo_image_use_cdn_helper.md` | Demo pages must wrap images with `toCdnUrl()` |
-| `feedback_test_artifacts_to_tmp.md` | Review-only test outputs → `/tmp/`, not gallery/frontend trees |
-| `feedback_video_default_visuals_only.md` | Template-to-video defaults `WITH_NARRATION=False` |
-| `reference_batch_image_generation.md` | `scripts/generate_template_examples.cjs` mature pipeline |
-| `reference_autopost_pipeline.md` | Autopost pipeline (Twitter + FB hash-bucketed) |
+| `project_tooling_eng_workstream` | pointer to the Tools workstream doc |
+| `project_video_image_workstream` | image→video track; read `dev/jayw/README.md` first |
+| `project_design_agent_v0` · `project_packaging_mockup` | design-agent + packaging mockup specs |
+| `feedback_pipeline_wrapper_architecture` | `app/pipelines/*` thin; logic in `app/utils/*` |
+| `project_cdn_assets` | `public/{video,images,audio}` gitignored; CdnImage/CdnVideo + sync script |
+| `feedback_image2image_prompt_hygiene` · `feedback_image2image_three_modes` | image2image conventions |
 
 ### C. SEO + SMM + Growth
 | Memory | Purpose |
 |---|---|
-| `reference_curify_canonical_url.md` | Canonical URL = `curify-ai.com` (NOT `curify.ai`) |
-| `reference_gsc_api_access.md` | GSC + Indexing API programmatic access |
-| `reference_growth_analytics.md` | `app/crud/admin.py` 7-query analytics module |
-| `reference_video_user_attribution.md` | Video user channel attribution script + findings |
-| `feedback_gsc_weekly_review.md` | Weekly GSC export reminder (~7d cadence) |
-| `feedback_gsc_bot_pattern_exclusion.md` | Bot-pattern queries inflate GSC on analysis-titled pages |
-| `feedback_indexing_api_default_skip.md` | Don't auto-fire on every new blog |
-| `feedback_indexing_api_reindex_flux.md` | Expect 1-3d SERP flux after a push |
-| `feedback_indexing_api_all_locales.md` | Submit all 10 locales explicitly |
-| `feedback_blog_lastmod_bump.md` | Bump `lastmod` in `blogs.json` when editing title/meta |
-| `feedback_blog_slug_pipeline.md` | `/blog/[slug]` ≠ only — many dedicated route folders bypass it |
-| `feedback_blog_quality_workflow.md` | Two tracks (bleeder CTR rewrite vs significant rewrite) |
-| `feedback_blog_draft_default_tighter.md` | Aim ~1,700w on first pass |
-| `feedback_bundled_blog_ship_pattern.md` | Bundle 3-5 posts in one window (autotranslate batch saves 30-50 min) |
-| `feedback_gsc_serp_emulation.md` | GSC query → crawl top SERP → emulate methodology |
-| `reference_interconnection_layer.md` | Blog ⇄ use-case ⇄ tool cross-link audit |
-| `reference_i18n_autotranslate.md` | Run `scripts/i18n_autotranslate.cjs` for i18n work |
-| `feedback_fb_carousel_size_cap.md` | FB carousel cap 3-8 (not API max 10) |
-| `feedback_template_ship_nano_i18n.md` | New template ships need nano.json i18n entries |
-| `feedback_topic_gallery_reverse_map.md` | Tag-to-topic reverse map uses `EXTRA_TAG_TO_TOPICS` |
+| `project_blog_canonical_fold` | 43% of blogs folded to the homepage canonical — dominant suppressor |
+| `project_mbti_names_ctr_bleed` | examples folded to homepage canonical (fixed `3fb7b42f`) |
+| `project_wedge1_indexation` | indexation hygiene gate |
+| `reference_gsc_api_pull` | `pull_gsc_performance.cjs` + SA json; two windows → diff. No manual export |
+| `project_weekly_semrush_kd` | weekly KD pull → `blog-quality.md` |
+| `feedback_dedicated_blog_route_metadata` | own route folder bypasses `[slug]` generateMetadata |
+| `project_fb_follower_growth` | FB autopost state (carousels dead) |
+| `feedback_smm_account_positioning` | **per-account positioning — the thought-leadership motion's operating rule** |
+| `project_referral_sources_2026_08` | where referrals actually come from |
+| `project_geo_crawler_policy` | training crawlers blocked, retrieval/citation allowed |
+| `project_negative_seo_disavow` | PBN disavow list |
 
 ### D. Vertical Use Cases
 | Memory | Purpose |
 |---|---|
-| `reference_vip_clients_roster.md` | 15 VIPs across 7 verticals; `b2b_clients.json` `vip:true` schema |
-| `reference_merch_operators_vertical.md` | Merch operators demand mining (R/printondemand + 张总) |
-| `reference_gallery_demos.md` | Gallery demo assets for tools/SEO pages |
-| `feedback_tool_ship_persona_remapping.md` | Live-only persona ↔ tool mapping policy |
-| `project_merch_imagery_backlog_2026_06_18.md` | RedNote refs — NO reposts (copyright) |
-| `project_demo_illustrator_pickscale.md` | Future `/illustrator-demo` spec (generate → pick → scale) |
-| `feedback_factory_language_for_merch_icp.md` | Manufacturer/OEM/ODM vocabulary for ICP search |
-| `feedback_cn_b2b_solution_framing.md` | CN factory copy = solution-shape, not anti-replacement |
+| `project_use_case_gtm_pages` | index = `lib/use-cases.ts`; GOTCHA — untagged templates leak via the `TIER1_USE_CASES` fallback |
+| `project_teacher_learning_packs_demand` | wedge = VISUAL PACKAGING, not text; no topic→pack tool |
+| `project_first_paying_customer_pod` | the POD buyer we actually have |
+| `project_pod_layered_tools_competitor_test` | competitor line-art test → POD-B fast-track |
+| `feedback_outreach_tracker_separation` | b2b vs investor trackers — never mix (applies to the new RedNote tracker, UC-P0-3) |
+| `feedback_exec_outreach_framing` | Founder/CEO/CTO — consultative audit framing, not a pitch |
+| `feedback_polish_on_traffic_signal` | don't pre-polish a surface before it has visits |
+| `feedback_us_federal_eligibility_greencard` | founder is a green-card holder — gates US federal bids |
+| `project_investor_outreach` | investor tracker + signal-triggered cadence |
 
 ---
 
@@ -205,7 +261,8 @@ Other product workstream docs (single-track, not part of the four):
 
 1. **Read this `workstream-index.md`** (you're here).
 2. If the task touches a specific workstream, **open that workstream's doc** and read the section closest in time to the task (most recent dated section at top).
-3. If the task is POD-tagged or touches merch/POD framing, **read `project_pod_merch_strategic_reframe_2026_06_26.md` memory first**, then check the POD reframe section in the relevant workstream doc.
+3. If the task is POD-tagged or touches merch/POD framing, **read the POD reframe section of `workstream-vertical-use-cases.md` first** (including its 2026-08-12 gating status), then check the POD reframe section in the relevant workstream doc.
 4. **Cross-workstream dependencies** — check the "Critical cross-workstream dependencies" table above before scoping. If your task is gated on a POD-B4 / POD-C5 / POD-A2 / POD-A6 / POD-D5 ship, surface that gating in the response.
-5. **Outbound/GTM tasks** are NOT in scope of these 4 product workstreams — those live in `~/curify-studio/gtm_tools/INDEX.md`.
-6. **Out-of-scope reminders:** the daily-content-drop hongjie-patch workflow is a SEPARATE workstream (memory `feedback_workstream_scope_growth_seo_blogs.md`); the customer delivery pipeline + education content supply workstreams are HELD pending triggers.
+5. **Outbound/GTM *execution*** is NOT in scope of these 4 product workstreams — it lives in `~/curify-studio/gtm_tools/INDEX.md` (plus `~/curify-studio/docs/workstream-enterprise-ai-b2b.md` for the 2nd B2B line). **But which surface a motion lands on IS in scope** — see the "GTM motions" table above; as of 2026-08-12 none of the four motions is measurable, which is UC-P0-1.
+6. **Out-of-scope reminders:** the daily-content-drop hongjie-patch workflow is a SEPARATE workstream (scope rule stated in the `workstream-seo-smm-growth.md` header); the customer delivery pipeline + education content supply workstreams are HELD pending triggers.
+7. **Before quoting any number from this index**, check its date. Traffic figures decay fast (the non-WC base fell 79% in two months) and this index has previously carried a persona list that was wrong for weeks. Re-derive from `lib/use-cases.ts`, a fresh GSC pull, or a `user_interactions` query rather than trusting a table.
