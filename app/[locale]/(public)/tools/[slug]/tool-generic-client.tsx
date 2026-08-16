@@ -44,6 +44,8 @@ const USECASE_SECTION_TO_PERSONA: Record<string, string> = {
   business: "for-marketers",
 };
 
+
+
 export default function ToolGenericClient({
   slug,
   generateData,
@@ -60,6 +62,7 @@ export default function ToolGenericClient({
   const tool = getToolBySlug(slug);
   if (!tool) return null;
 
+  const ucPersonas = tool?.usecasePersonas ?? USECASE_SECTION_TO_PERSONA;
   const t = useTranslations(tool.namespace);
   const tGlobal = useTranslations();
   // Locale string needed by RelatedBlogsByCategory and (less directly) for
@@ -277,7 +280,7 @@ export default function ToolGenericClient({
           <div className="space-y-2">
             <h3 className="text-lg font-semibold text-[var(--c1)]">
               <Link
-                href={`/use-cases/${USECASE_SECTION_TO_PERSONA.creators}`}
+                href={`/use-cases/${ucPersonas.creators}`}
                 className="hover:text-purple-700 hover:underline"
               >
                 {t("deep.usecases.creatorsTitle")} →
@@ -289,7 +292,7 @@ export default function ToolGenericClient({
           <div className="space-y-2">
             <h3 className="text-lg font-semibold text-[var(--c1)]">
               <Link
-                href={`/use-cases/${USECASE_SECTION_TO_PERSONA.education}`}
+                href={`/use-cases/${ucPersonas.education}`}
                 className="hover:text-purple-700 hover:underline"
               >
                 {t("deep.usecases.educationTitle")} →
@@ -301,7 +304,7 @@ export default function ToolGenericClient({
           <div className="space-y-2">
             <h3 className="text-lg font-semibold text-[var(--c1)]">
               <Link
-                href={`/use-cases/${USECASE_SECTION_TO_PERSONA.business}`}
+                href={`/use-cases/${ucPersonas.business}`}
                 className="hover:text-purple-700 hover:underline"
               >
                 {t("deep.usecases.businessTitle")} →
