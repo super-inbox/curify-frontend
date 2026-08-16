@@ -257,6 +257,64 @@
           "做“蓝染”非遗展板：染料来源、扎染/蜡染要点、流程分步、常见纹样与象征、当代穿搭应用，3:4。",
           "生成“木版年画”展板：刻版/套印流程、色彩体系、代表题材、传承与现代设计融合案例，清晰中文模块，3:4。"
         ]
+      },
+      "examples": {
+        "template-intangible-heritage-paper-cutting": {
+          "attributes": {
+            "region": "中国",
+            "period": "传统至今",
+            "tradition": "中国剪纸 (剪纸)",
+            "content_format": "工艺过程海报"
+          },
+          "vertical": {
+            "what_it_is": "一张关于中国剪纸的过程海报，从折叠到完成的对称设计。",
+            "cultural_background": "自纸张变得可负担以来，已实践约1500年，主要由农村家庭的女性进行。红纸在节日中占主导地位；图案基于谜语，因此蝙蝠 (蝠 fú) 代表着财富 (福 fú)。",
+            "why_it_matters": "2009年被联合国教科文组织列入。谜语逻辑通常在翻译中丢失——这些设计是被阅读的，而不仅仅是被观看的。",
+            "how_to_read": "面板按制作顺序排列；说明文字列出了每个步骤的工具和材料。"
+          }
+        },
+        "template-intangible-heritage-cloisonne": {
+          "attributes": {
+            "region": "中国",
+            "period": "传统至今",
+            "tradition": "景泰蓝 (景泰蓝)",
+            "content_format": "工艺过程海报"
+          },
+          "vertical": {
+            "what_it_is": "一张关于景泰蓝珐琅工艺的过程海报，从铺线到抛光。",
+            "cultural_background": "铜线弯曲并固定在主体上形成格子，填充珐琅浆，反复烧制，直到珐琅沉淀，然后磨平并镀金。中文名称景泰蓝指的是其蓝色的景泰年间。",
+            "why_it_matters": "这是对“古老工艺”框架的有力反击：景泰蓝通过伊斯兰世界传入中国，并经过几个世纪的适应而成为中国的工艺。",
+            "how_to_read": "面板按制作顺序排列；说明文字列出了每个步骤的工具和材料。"
+          }
+        },
+        "template-intangible-heritage-lion-dance": {
+          "attributes": {
+            "region": "中国",
+            "period": "传统至今",
+            "tradition": "舞狮 (舞狮)",
+            "content_format": "工艺过程海报"
+          },
+          "vertical": {
+            "what_it_is": "一张关于舞狮的海报——两个主要的区域风格及其动作的含义。",
+            "cultural_background": "北方舞狮以杂技和家庭为基础；南方（粤语）舞狮则是武术，和功夫学校相关，并以采青——用红包抓取生菜束为高潮。",
+            "why_it_matters": "北方和南方风格在国外常常被混淆，尽管服装、音乐和意义有很大不同。",
+            "how_to_read": "面板按制作顺序排列；说明文字列出了每个步骤的工具和材料。"
+          }
+        },
+        "template-intangible-heritage-woodblock-new-year-paintings": {
+          "attributes": {
+            "region": "中国",
+            "period": "传统至今",
+            "tradition": "年画 (年画)",
+            "content_format": "工艺过程海报"
+          },
+          "vertical": {
+            "what_it_is": "一张关于年画木版年画的过程海报。",
+            "cultural_background": "每种颜色需要其自己的雕刻版块，手动登记。门神、胖乎乎的孩子和粮仓场景反复出现；这些印刷品在新年时贴上，每年更换，因此它们被设计为一次性使用。",
+            "why_it_matters": "因为它们是消耗品而非艺术品，早期的例子很少存留——这种工艺的记录比其产出更为详尽。",
+            "how_to_read": "面板按照制作顺序排列；说明文字列出了每个步骤所用的工具和材料。"
+          }
+        }
       }
     }
   },
@@ -386,6 +444,78 @@
           "做“越王勾践剑”复古信息图：四象限讲清工艺特点、历史背景、发现故事、当代文化影响，复古纸张质感，3:4。",
           "生成“唐三彩骆驼俑”信息图：艺术风格、贸易/丝路关联、考古价值、现代审美影响，四象限结构，3:4。"
         ]
+      },
+      "examples": {
+        "template-cultural-relic-retro-infographic-simu-wu-ding": {
+          "attributes": {
+            "region": "中国 · 安阳，河南",
+            "period": "商朝，约公元前1200年",
+            "tradition": "仪式青铜器",
+            "content_format": "文物参考海报"
+          },
+          "vertical": {
+            "what_it_is": "后母戊鼎（前称司母戊鼎）的参考海报——现存最重的古代中国青铜器，重达832公斤。",
+            "cultural_background": "约公元前1200年为一位商朝女王铸造，其铭文提到后母戊（'Queen Mother Wu'）。铸造它需要估计超过一千名工人，涉及矿石、合金、模具和浇铸——这是商朝在当时其他地方远远超越的分块铸造工艺。",
+            "why_it_matters": "鼎是仪式器具和权威的象征；短语问鼎（'to ask about the ding'）至今仍意味着争夺权力。它是中国一类一保护文物，不能离开国家。",
+            "how_to_read": "海报提供了尺寸和质量，以及铸造方法和铭文，因此物体的规模和制作过程是一起解读的。"
+          }
+        },
+        "template-cultural-relic-retro-infographic-terracotta-warriors": {
+          "attributes": {
+            "region": "中国 · 临潼，陕西",
+            "period": "秦朝，公元前210年",
+            "tradition": "中国古物",
+            "content_format": "文物参考海报"
+          },
+          "vertical": {
+            "what_it_is": "秦始皇陵的兵马俑参考海报。",
+            "cultural_background": "约8000个雕像，每个都有个性化的头部，由模具部件组装而成，由在工作上盖上工头名字的作坊大规模生产——一种早期的问责制。他们最初用明亮的漆料涂装，挖掘后几分钟内就会剥落。",
+            "why_it_matters": "颜料的流失是该遗址大部分故意不进行挖掘的原因：目前尚不存在保存颜色的技术。",
+            "how_to_read": "尺寸和年代与制作和发现背景并列，因此规模和技术是一起解读的。"
+          }
+        },
+        "template-cultural-relic-retro-infographic-dunhuang-mogao-grottoes": {
+          "attributes": {
+            "region": "中国 · 敦煌，甘肃",
+            "period": "4至14世纪",
+            "tradition": "中国古物",
+            "content_format": "文物参考海报"
+          },
+          "vertical": {
+            "what_it_is": "莫高窟的参考海报——丝绸之路上的492个彩绘洞窟寺庙。",
+            "cultural_background": "在丝绸之路交汇处历时千年开凿，这些洞窟拥有约45000平方米的壁画。密封的藏经洞于1900年被打开，出土了约50000份手稿，包括公元868年的《金刚经》，这是最早的有日期的印刷书籍。",
+            "why_it_matters": "大部分藏经洞的材料现在在伦敦、巴黎和圣彼得堡——莫高窟是遗产如何被分散的案例研究。",
+            "how_to_read": "尺寸和年代与制作和发现背景并列，因此规模和技术是一起解读的。"
+          }
+        },
+        "template-cultural-relic-retro-infographic-yuewang-goujian-sword": {
+          "attributes": {
+            "region": "中国 · 湖北",
+            "period": "春秋时期，约公元前500年",
+            "tradition": "中国古物",
+            "content_format": "文物参考海报"
+          },
+          "vertical": {
+            "what_it_is": "越王勾践剑的参考海报——2500年后仍然光亮如新。",
+            "cultural_background": "1965年从一个水淹的墓中出土，仍然锋利到可以切纸。它的抗腐蚀性来自于高锡边缘、坚韧的低锡核心和硫化物表面层，加上厌氧埋藏条件。",
+            "why_it_matters": "这是青铜时代中国冶金的标准例证，远比单一合金模型所暗示的要复杂得多。",
+            "how_to_read": "尺寸和年代与制作和发现背景并列，因此规模和技术是一起解读的。"
+          }
+        },
+        "template-cultural-relic-retro-infographic-longmen-grottoes": {
+          "attributes": {
+            "region": "中国 · 洛阳，河南",
+            "period": "北魏至唐，493–1127",
+            "tradition": "中国古董",
+            "content_format": "文物参考海报"
+          },
+          "vertical": {
+            "what_it_is": "一张关于龙门石窟的参考海报——超过100,000尊雕刻在石灰岩悬崖上的佛像。",
+            "cultural_background": "雕刻始于北魏于493年将首都迁至洛阳，并持续了六个世纪。风格从细长、简朴的魏代人物明显转变为更丰满、更自然的唐代人物，最著名的是17米高的毗卢遮那佛。",
+            "why_it_matters": "由于年代在长时间跨度内是可靠的，龙门石窟作为中国佛教雕塑的参考序列。",
+            "how_to_read": "尺寸和年代与制作和发现背景并列，因此规模和技术是一起解读的。"
+          }
+        }
       }
     }
   },
@@ -469,6 +599,76 @@
             "learning_objective": "了解小满，中国二十四节气中的第八个节气，以及它在农事日历和日常生活中所预示的意义。",
             "includes": "该节气的名称和拼音、其日期范围、物候（夏季谷物开始饱满）、季节习俗和食物，以及一张主题插图。",
             "background": "小满，意即“谷粒初盈”或“小满”——大约在5月21日，此时夏季谷物开始饱满但尚未成熟。它体现了中国循序渐进、从容不迫的丰盛而非骤然达到顶峰的理想。"
+          }
+        },
+        "template-solar-term-dongzhi": {
+          "attributes": {
+            "region": "中国",
+            "period": "汉朝至今",
+            "tradition": "二十四节气",
+            "content_format": "季节信息卡"
+          },
+          "vertical": {
+            "what_it_is": "关于冬至的插图卡片——一年中最短的一天，也是二十四节气中的第二十二个。",
+            "cultural_background": "节气根据太阳的位置划分年份，而不是月亮，这就是它们与农业年如此紧密相关的原因。冬至的重要性使得“冬至大如年”这句话至今仍然流传。北方人吃饺子；南方人吃汤圆。",
+            "why_it_matters": "联合国教科文组织于2016年将二十四节气列入非物质文化遗产。它们在中国的天气谈话、食品季节性和传统医学中仍然被日常使用——一个实用的日历，而非博物馆的展品。",
+            "how_to_read": "这张卡片将节气的日期和太阳位置与其习惯食品和传统上与之相关的季节标志配对。"
+          }
+        },
+        "template-solar-term-chunfen": {
+          "attributes": {
+            "region": "中国",
+            "period": "汉朝至今",
+            "tradition": "二十四节气",
+            "content_format": "季节信息卡"
+          },
+          "vertical": {
+            "what_it_is": "关于春分的插图卡片，二十四节气中的第四个。",
+            "cultural_background": "昼夜平分；该节气标志着黄河流域春耕的开始。习俗包括竖立鸡蛋和放风筝。",
+            "why_it_matters": "二十四节气于2016年被联合国教科文组织列入非物质文化遗产，并在食品季节性和传统医学中继续被日常使用。",
+            "how_to_read": "这张卡片将节气的日期和太阳位置与其习惯食品和季节标志配对。"
+          }
+        },
+        "template-solar-term-qingming": {
+          "attributes": {
+            "region": "中国",
+            "period": "汉朝至今",
+            "tradition": "二十四节气",
+            "content_format": "季节信息卡"
+          },
+          "vertical": {
+            "what_it_is": "关于清明的插图卡片，既是一个节气，也是中国的扫墓节。",
+            "cultural_background": "唯一一个也是公共假期的节气。家庭清扫祖先的坟墓并烧纸；这也是吃青团的时候，天气变得温暖到足以种植。",
+            "why_it_matters": "它表明节气不仅仅是农业的——它们还承载着仪式义务以及农业日历。",
+            "how_to_read": "这张卡片将节气的日期和太阳位置与其习惯食品和季节标志配对。"
+          }
+        },
+        "template-solar-term-lichun": {
+          "attributes": {
+            "region": "中国",
+            "period": "汉朝至今",
+            "tradition": "二十四节气",
+            "content_format": "季节信息卡"
+          },
+          "vertical": {
+            "what_it_is": "关于立春的插图卡片，二十四节气中的第一个。",
+            "cultural_background": "立春在每年大约2月4日开启农业年。打春牛的仪式——击打泥牛——由官员执行，以标志耕作的开始，既是国家仪式也是民间仪式。",
+            "why_it_matters": "作为第一个，它锚定了整个周期；传统的新年是从这里开始计算的，而不是从农历新年。",
+            "how_to_read": "这张卡片将节气的日期和太阳位置与其传统食物和季节性标志配对。"
+          }
+        },
+        "template-solar-term-daxue": {
+          "attributes": {
+            "region": "中国",
+            "period": "汉朝至今",
+            "tradition": "二十四节气",
+            "content_format": "季节信息卡"
+          },
+          "vertical": {
+            "what_it_is": "关于大雪的插图卡片，这是第21个节气。",
+            "cultural_background": "命名为北方中国预计降雪加重的时点。传统习俗转向食物保存——腌制肉类、腌制蔬菜——以及在中国饮食理论中温暖食物。",
+            "why_it_matters": "这些节气是根据黄河流域校准的，这就是为什么在亚热带的南方中国，雪的名称听起来有些奇怪——这是一个有用的提醒，日历有其特定的地理。",
+            "how_to_read": "这张卡片将节气的日期和太阳位置与其传统食物和季节性标志配对。"
           }
         }
       }
@@ -772,6 +972,93 @@
           "制作银杏树科普信息图：主体为完整植物插画，模块含分类、叶片特征、生长环境、历史意义和应用价值，排版清晰。",
           "生成帝王蝶知识图卡：主体写实插画居中，周围加入生命周期、迁徙路线、食物来源与保护信息，适合教育传播。"
         ]
+      },
+      "examples": {
+        "template-species-science-red-crowned-crane": {
+          "attributes": {
+            "grade_band": "小学高年级至成人",
+            "age_range": "9岁及以上",
+            "subject": "生物学 · 保护",
+            "skill": "参考",
+            "resource_type": "物种信息卡",
+            "duration_min": "5分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 英文–中文"
+          },
+          "vertical": {
+            "learning_objective": "识别丹顶鹤并了解其迁徙和保护状态。",
+            "includes": "包含学名、大小、分布、栖息地、饮食和IUCN状态的科学插图。",
+            "background": "丹顶鹤的数量大约为3000只。大陆种群在中国东北和朝鲜半岛之间迁徙；北海道种群是常驻的。红冠是裸露的皮肤，而不是羽毛。它在中国和日本艺术中是长寿的象征。"
+          }
+        },
+        "template-species-science-giant-panda": {
+          "attributes": {
+            "grade_band": "小学高年级至成人",
+            "age_range": "9岁及以上",
+            "subject": "生物学 · 保护",
+            "skill": "参考",
+            "resource_type": "物种信息卡",
+            "duration_min": "5分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 英文–中文"
+          },
+          "vertical": {
+            "learning_objective": "识别大熊猫并了解为什么一只肉食动物的肠道几乎只吃竹子。",
+            "includes": "包含学名、大小、分布、栖息地、饮食和IUCN状态的科学插图。",
+            "background": "大熊猫保留了短肉食动物消化道，因此从竹子中提取的能量很少，需通过每天吃12-38公斤竹子和缓慢移动来补偿。'伪拇指'是一个增大的腕骨，而不是一个手指。2016年从濒危物种降级为易危物种。"
+          }
+        },
+        "template-species-science-ginkgo-tree": {
+          "attributes": {
+            "grade_band": "小学高年级至成人",
+            "age_range": "9岁及以上",
+            "subject": "生物学 · 保护",
+            "skill": "参考",
+            "resource_type": "物种信息卡",
+            "duration_min": "5分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 英文–中文"
+          },
+          "vertical": {
+            "learning_objective": "识别银杏并理解为什么它被称为活化石。",
+            "includes": "包含二名法名称、大小、分布、栖息地、饮食和IUCN状态的科学插图。",
+            "background": "银杏（Ginkgo biloba）是一个在2亿年前广泛分布的目中唯一幸存的物种，其化石叶子与现代叶子几乎相同。它是雌雄异株的；只有雌树会产生难闻的种子外壳。几棵银杏在广岛轰炸中幸存并依然屹立。"
+          }
+        },
+        "template-species-science-green-peafowl": {
+          "attributes": {
+            "grade_band": "高年级到成人",
+            "age_range": "9岁及以上",
+            "subject": "生物学 · 保护",
+            "skill": "参考",
+            "resource_type": "物种信息卡",
+            "duration_min": "5分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "识别绿孔雀并将其与更常见的蓝孔雀区分开。",
+            "includes": "包含二名法名称、大小、分布、栖息地、饮食和IUCN状态的科学插图。",
+            "background": "绿孔雀（Pavo muticus）属于濒危物种，可能在中国仅剩几百只。它与熟悉的印度蓝孔雀不同，具有绿色鳞片的脖子、直立的冠羽和更大的体型——这两者常常被混淆，这掩盖了它的稀有性。"
+          }
+        },
+        "template-species-science-hawksbill": {
+          "attributes": {
+            "grade_band": "高年级到成人",
+            "age_range": "9岁及以上",
+            "subject": "生物学 · 保护",
+            "skill": "参考",
+            "resource_type": "物种信息卡",
+            "duration_min": "5分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "识别玳瑁海龟并理解为什么它的壳使其被列为极度濒危状态。",
+            "includes": "包含二名法名称、大小、分布、栖息地、饮食和IUCN状态的科学插图。",
+            "background": "玳瑁（Eretmochelys imbricata）具有重叠的鳞片，曾是商业“龟壳”的来源。根据CITES，贸易被禁止但仍然存在。它主要以海绵为食，这影响了珊瑚礁的群落结构——它的减少不仅改变了自身数量，也改变了珊瑚礁。"
+          }
+        }
       }
     }
   },
@@ -1832,6 +2119,110 @@
           "Cuisine learning poster with food names.",
           "Food vocabulary for language learning."
         ]
+      },
+      "examples": {
+        "template-cuisine-food-vocab-poster-japan": {
+          "attributes": {
+            "grade_band": "一般",
+            "age_range": "所有年龄",
+            "subject": "日语食品词汇",
+            "skill": "词汇",
+            "resource_type": "插图词汇海报",
+            "duration_min": "10分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 EN–JA"
+          },
+          "vertical": {
+            "learning_objective": "识别并用日语和英语命名常见的日本菜肴和食材，插图传达含义，因此不需要翻译步骤。",
+            "includes": "一张日本菜肴的插图海报，每道菜都标有其日语名称、罗马字读音和英文释义。",
+            "background": "食品词汇对初学者来说异常高效：这些词是具体的，立即有用，并且与可以指向的事物相关。日本菜名也有值得早期注意的结构——丼（donburi，饭碗）和烧（yaki，烤）在许多菜肴中反复出现，因此学习几个词根可以解锁整个词汇家族。"
+          }
+        },
+        "template-cuisine-food-vocab-poster-thai": {
+          "attributes": {
+            "grade_band": "一般",
+            "age_range": "所有年龄",
+            "subject": "泰语食品词汇",
+            "skill": "词汇",
+            "resource_type": "插图词汇海报",
+            "duration_min": "10分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 EN–TH"
+          },
+          "vertical": {
+            "learning_objective": "识别并命名常见的泰国菜肴和食材，插图传达含义，因此不需要翻译步骤。",
+            "includes": "一张泰国菜肴的插图海报，每道菜都标有其源语言名称、读音和英文释义。",
+            "background": "泰国菜名通常是描述性复合词——tom（煮）、yam（沙拉）、phat（炒）——因此学习少量的烹饪方法词汇可以解码大部分菜单。"
+          }
+        },
+        "template-cuisine-food-vocab-poster-korea": {
+          "attributes": {
+            "grade_band": "一般",
+            "age_range": "所有年龄",
+            "subject": "韩语食品词汇",
+            "skill": "词汇",
+            "resource_type": "插图词汇海报",
+            "duration_min": "10分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 EN–KO"
+          },
+          "vertical": {
+            "learning_objective": "识别并命名常见的韩国菜肴和食材，插图传达了含义，因此不需要翻译步骤。",
+            "includes": "一张插图海报，展示韩国菜肴，每道菜都标有其在源语言中的名称、读音和英文释义。",
+            "background": "韩国菜名通常以方法结尾：-guk（汤）、-jjigae（炖菜）、-bokkeum（炒）、-jeon（煎）。这个后缀在你了解食材之前就告诉你菜肴的形式。"
+          }
+        },
+        "template-cuisine-food-vocab-poster-vietnam": {
+          "attributes": {
+            "grade_band": "一般",
+            "age_range": "所有年龄",
+            "subject": "越南食品词汇",
+            "skill": "词汇",
+            "resource_type": "插图词汇海报",
+            "duration_min": "10分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 EN–VI"
+          },
+          "vertical": {
+            "learning_objective": "识别并命名常见的越南菜肴和食材，插图传达了含义，因此不需要翻译步骤。",
+            "includes": "一张插图海报，展示越南菜肴，每道菜都标有其在源语言中的名称、读音和英文释义。",
+            "background": "越南菜单项通常是名词加修饰语 — bún（米粉）、phở（平米粉）、bánh（广义的蛋糕、面包和包裹） — 所以第一个词缩小了格式。"
+          }
+        },
+        "template-cuisine-food-vocab-poster-mexico": {
+          "attributes": {
+            "grade_band": "一般",
+            "age_range": "所有年龄",
+            "subject": "墨西哥食品词汇",
+            "skill": "词汇",
+            "resource_type": "插图词汇海报",
+            "duration_min": "10分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 EN–ES"
+          },
+          "vertical": {
+            "learning_objective": "识别并命名常见的墨西哥菜肴和食材，插图传达了含义，因此不需要翻译步骤。",
+            "includes": "一张插图海报，展示墨西哥菜肴，每道菜都标有其在源语言中的名称、读音和英文释义。",
+            "background": "墨西哥菜名通常命名容器或折叠，而不是填充物：taco、tlacoyo、sope、huarache。这个词告诉你masa的形状，而填充物可以自由变化。"
+          }
+        },
+        "template-cuisine-food-vocab-poster-beijing": {
+          "attributes": {
+            "grade_band": "一般",
+            "age_range": "所有年龄",
+            "subject": "北京地区中国食品词汇",
+            "skill": "词汇",
+            "resource_type": "插图词汇海报",
+            "duration_min": "10分钟",
+            "difficulty": "初学者",
+            "language_mode": "双语 EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "识别并命名常见的北京地方菜肴和食材，插图传达含义，因此无需翻译步骤。",
+            "includes": "一张插图海报，展示北京地方菜肴，每道菜都标有源语言名称、拼音和英文释义。",
+            "background": "北京菜名依赖于烹饪方法和产地 — 烤、涮、炸酱 — 并且有几个与特定历史餐馆相关，这也是词汇的一部分。"
+          }
+        }
       }
     }
   },
@@ -1938,6 +2329,78 @@
           "韩国传统服装跨朝代历史信息图。",
           "法国时尚从中世纪到当代的演变历程。"
         ]
+      },
+      "examples": {
+        "template-clothing-evolution-poster-chinese": {
+          "attributes": {
+            "region": "中国",
+            "period": "周朝到明朝",
+            "tradition": "汉服 (Hanfu)",
+            "content_format": "演变时间线海报"
+          },
+          "vertical": {
+            "what_it_is": "汉民族服饰在各个朝代的时间线——轮廓、领口、袖子和腰线。",
+            "cultural_background": "汉服是一系列形式的集合，而不是单一的服装。交领右衽的设计贯穿始终，而比例则发生了剧烈变化：高腰的唐代襦裙、含蓄的宋代服饰、宽袖的明代立领服装。",
+            "why_it_matters": "汉服复兴使得历史准确性成为公众争论的话题，因此将各个时代区分开来比一个笼统的“传统中国服饰”更有用。",
+            "how_to_read": "每个面板代表一个时期；比较各个面板的领口、袖子和腰线，以查看实际变化。"
+          }
+        },
+        "template-clothing-evolution-poster-japanese": {
+          "attributes": {
+            "region": "日本",
+            "period": "平安到明治",
+            "tradition": "和服",
+            "content_format": "演变时间线海报"
+          },
+          "vertical": {
+            "what_it_is": "从平安宫廷的层叠到现代和服轮廓的日本服饰时间线。",
+            "cultural_background": "平安时期的十二单衣层叠多达十二件，根据领口和袖子的颜色渐变进行评判。其下的小袖逐渐成为外衣，到江户时期成为正式的和服；随着服装的简化，带子逐渐加宽。",
+            "why_it_matters": "今天被视为“永恒”的形象是长期简化的晚期阶段——现代和服更接近江户而非平安。",
+            "how_to_read": "每个面板代表一个时期；比较各个面板的领口、袖子和腰线，以查看实际变化。"
+          }
+        },
+        "template-clothing-evolution-poster-korean": {
+          "attributes": {
+            "region": "韩国",
+            "period": "高句丽到朝鲜",
+            "tradition": "韩服",
+            "content_format": "演变时间线海报"
+          },
+          "vertical": {
+            "what_it_is": "展示高腰上衣和裙子轮廓变化的韩国服饰时间线。",
+            "cultural_background": "高句丽的墓壁画展示了男女皆穿的合身夹克和裤子。在朝鲜，女性的上衣显著上升并缩短，而裙子则加宽，形成了现在被视为经典的钟形轮廓。",
+            "why_it_matters": "人们想象中的经典韩服比例特指晚期朝鲜——早期形式看起来截然不同。",
+            "how_to_read": "每个面板代表一个时期；比较各个面板的领口、袖子和腰线，以查看实际变化。"
+          }
+        },
+        "template-clothing-evolution-poster-indian": {
+          "attributes": {
+            "region": "印度",
+            "period": "毛利亚到莫卧儿",
+            "tradition": "披肩服装 · 纱丽",
+            "content_format": "演变时间线海报"
+          },
+          "vertical": {
+            "what_it_is": "从未缝合的披肩到莫卧儿时代的裁剪的印度服饰时间线。",
+            "cultural_background": "早期的印度服饰主要是未缝合的——antariya、uttariya、kayabandh——以披肩代替裁剪。中亚和波斯的影响在莫卧儿时期引入了缝合形式：angarkha、churidar和结构化的jama。",
+            "why_it_matters": "缝合/未缝合的区别是真正的变化轴，它与接触和征服相关，而不仅仅是时尚。",
+            "how_to_read": "每个面板代表一个时期；比较各面板的领口、袖子和腰线，以查看实际变化。"
+          }
+        },
+        "template-clothing-evolution-poster-egyptian": {
+          "attributes": {
+            "region": "埃及",
+            "period": "古王国至托勒密时期",
+            "tradition": "亚麻裙",
+            "content_format": "演变时间线海报"
+          },
+          "vertical": {
+            "what_it_is": "三千年间古埃及服饰的时间线，形式 remarkably 稳定。",
+            "cultural_background": "亚麻占主导地位，因为亚麻在尼罗河谷生长，而羊毛在寺庙中受到仪式限制。男性的 schenti 裙和女性的 kalasiris 变化缓慢；褶皱、透明度和珠宝比剪裁更能体现地位。",
+            "why_it_matters": "这是一个有用的反例：服装历史通常被教授为不断变化，而埃及展示了几千年的连续性是什么样的。",
+            "how_to_read": "每个面板代表一个时期；比较各面板的领口、袖子和腰线，以查看实际变化。"
+          }
+        }
       }
     }
   },
@@ -2468,6 +2931,76 @@
           "创建达芬奇关键理念信息图——水彩风格肖像，艺术、科学与发明原则网格，含图标和描述。",
           "设计孙子原则海报——水彩肖像含卷轴，6条孙子兵法策略网格含要点，极简布局，4K竖向格式。"
         ]
+      },
+      "examples": {
+        "template-figure-principles-infographic-marie-curie": {
+          "attributes": {
+            "grade_band": "中学到成人",
+            "age_range": "13岁及以上",
+            "subject": "科学与思想史",
+            "skill": "理解能力",
+            "resource_type": "原则信息图",
+            "duration_min": "8分钟",
+            "difficulty": "中级",
+            "language_mode": "英语"
+          },
+          "vertical": {
+            "learning_objective": "理解居里的研究背后的工作原理——测量属性，而不仅仅是化学。",
+            "includes": "一张将肖像与核心工作原理配对的信息图，每个原理都以简短的规则表述，并用实际意义进行说明。",
+            "background": "居里处理了数吨铀矿石，以分离出几克镭，通过电离而非仅仅化学来跟踪进展，将放射性视为原子的属性。她是唯一一位在两种不同科学领域获得诺贝尔奖的人，并拒绝为分离过程申请专利。"
+          }
+        },
+        "template-figure-principles-infographic-albert-einstein": {
+          "attributes": {
+            "grade_band": "中学到成人",
+            "age_range": "13岁及以上",
+            "subject": "科学与思想史",
+            "skill": "理解能力",
+            "resource_type": "原则信息图",
+            "duration_min": "8分钟",
+            "difficulty": "中级",
+            "language_mode": "英语"
+          },
+          "vertical": {
+            "learning_objective": "理解爱因斯坦物理学背后的工作原理——思想实验，并坚持理论在其核心应简单。",
+            "includes": "一张将肖像与核心工作原理配对的信息图，每个原理都以简短的规则表述，并用实际意义进行说明。",
+            "background": "爱因斯坦1905年的论文源于想象的情境推向其逻辑终点：与光束并行骑行，无法区分的下落电梯与空无空间。他从原理出发，而不是从数据拟合，这就是为什么相对论作为一种重新框架而非修正出现。"
+          }
+        },
+        "template-figure-principles-infographic-leonardo-da-vinci": {
+          "attributes": {
+            "grade_band": "中学到成人",
+            "age_range": "13岁及以上",
+            "subject": "科学与思想史",
+            "skill": "理解能力",
+            "resource_type": "原则信息图",
+            "duration_min": "8分钟",
+            "difficulty": "中级",
+            "language_mode": "英语"
+          },
+          "vertical": {
+            "learning_objective": "理解达芬奇的方法——先观察，解剖验证，把绘画视为思考。",
+            "includes": "一张将肖像与核心工作原则配对的信息图，每个原则都以简短规则的形式陈述，并用实际意义进行说明。",
+            "background": "达芬奇解剖了大约三十具尸体，以绘制从加伦那里复制了几个世纪的解剖学。他的笔记本将工程学、解剖学和绘画混合在一起，因为他将它们视为对事物构建方式的一个调查。大部分内容在他生前未曾发表。"
+          }
+        },
+        "template-figure-principles-infographic-sun-tzu": {
+          "attributes": {
+            "grade_band": "中学到成人",
+            "age_range": "13岁及以上",
+            "subject": "科学与思想的历史",
+            "skill": "理解能力",
+            "resource_type": "原则信息图",
+            "duration_min": "8分钟",
+            "difficulty": "中级",
+            "language_mode": "英语"
+          },
+          "vertical": {
+            "learning_objective": "理解《孙子兵法》的核心原则——在战斗前获胜，了解双方，塑造条件。",
+            "includes": "一张将肖像与核心工作原则配对的信息图，每个原则都以简短规则的形式陈述，并用实际意义进行说明。",
+            "background": "《孙子兵法》将战斗视为一个昂贵的最后手段，而这个过程应该已经通过位置、信息和准备来决定。它在军事之外的影响——尤其是在商业战略中——源于这种框架是一般性的，而不是战术性的。"
+          }
+        }
       }
     },
     "description": "一本教育视觉指南，介绍著名人物的生活原则和习惯——爱因斯坦、达芬奇、居里夫人。使用AI提示生成您自己的名人信息图。",
@@ -2627,6 +3160,92 @@
           "创建送礼传统文化对比信息图——中日韩送礼方式、禁忌和贴士，插图说明，4K竖版。",
           "设计茶文化对比信息图——中国功夫茶、日本抹茶道、韩国传统茶，3列插图布局，4K竖版。"
         ]
+      },
+      "examples": {
+        "template-east-asian-culture-comparison-infographic-tea-culture-traditions": {
+          "attributes": {
+            "region": "中国 · 日本 · 韩国",
+            "period": "唐朝至今",
+            "tradition": "茶文化",
+            "content_format": "对比信息图"
+          },
+          "vertical": {
+            "what_it_is": "一张并排比较海报，展示中国、日本和韩国如何准备、享用和理解茶——同样的茶叶，三种不同的社交仪式。",
+            "cultural_background": "茶通过佛教僧侣网络从中国传播：在9世纪传入日本，成为茶道（chadō），一种受禅宗影响的规范美学实践；在韩国，发展为较为安静、非正式的仪式（다도，dado）。中国自身保留了最广泛的形式，从潮州功夫茶到日常的茶叶。",
+            "why_it_matters": "这三种传统常常被简化为一个“亚洲茶道”。将它们并排展示可以显示出实际的差异——器具、水温、谁倒茶、如何使用沉默——并使每一种都能在其自身的条款下被理解。",
+            "how_to_read": "横向阅读一行以比较各国之间的一个元素；纵向阅读一列以查看单一传统的完整内容。"
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-gift-giving-traditions": {
+          "attributes": {
+            "region": "中国 · 日本 · 韩国",
+            "period": "传统至今",
+            "tradition": "赠礼礼仪",
+            "content_format": "对比信息图"
+          },
+          "vertical": {
+            "what_it_is": "中国、日本和韩国的赠礼习俗并排比较——赠送什么、如何呈现以及需要避免的事项。",
+            "cultural_background": "三者都分享双手呈递和互惠的期望，但在细节上有所不同：日本的伴手礼是强制性的和地方性的；中国的礼物避免钟表（送钟听起来像送终，参加葬礼）；韩国的礼物则集中在如中秋节和春节等节日。",
+            "why_it_matters": "这些是实际上在商业和家庭环境中造成冒犯的错误，并且在三国之间并不可以互换。",
+            "how_to_read": "横向阅读一行以比较各国之间的一个元素；纵向阅读一列以查看单一国家的完整内容。"
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-business-card-etiquette": {
+          "attributes": {
+            "region": "中国 · 日本 · 韩国",
+            "period": "传统至今",
+            "tradition": "名片交换",
+            "content_format": "对比信息图"
+          },
+          "vertical": {
+            "what_it_is": "中国、日本和韩国名片交换方式的比较。",
+            "cultural_background": "日本的名片交换是最规范的——双手递交，名片面向接收者，阅读后放在桌上，绝不放在后口袋。韩国的做法与之相近。中国的交换通常不那么正式，但在与长辈的交流中仍然是双手递交。",
+            "why_it_matters": "这是商务会议的前30秒，也是访客最常出错的时刻。",
+            "how_to_read": "横向阅读一行以比较各国之间的一个元素；纵向阅读一列以查看单一国家的完整内容。"
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-wedding-traditions": {
+          "attributes": {
+            "region": "中国 · 日本 · 韩国",
+            "period": "传统至今",
+            "tradition": "婚礼习俗",
+            "content_format": "对比信息图"
+          },
+          "vertical": {
+            "what_it_is": "中国、日本和韩国婚礼颜色、服装、仪式结构和礼金的比较。",
+            "cultural_background": "红色在中国婚礼中占主导地位，象征着好运；日本的神道仪式使用白色的白无垢；韩国的拜伯克保留了向新郎父母鞠躬和投掷栗子与枣的传统。现金礼物在三国中都是标准，但信封和礼仪各有不同。",
+            "why_it_matters": "婚礼习俗是西方报道中三种文化最常模糊在一起的地方，也是差异最明显的地方。",
+            "how_to_read": "横向阅读一行以比较各国之间的一个元素；纵向阅读一列以了解一个国家的整体情况。"
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-greeting-customs": {
+          "attributes": {
+            "region": "中国 · 日本 · 韩国",
+            "period": "传统到现在",
+            "tradition": "问候",
+            "content_format": "比较信息图"
+          },
+          "vertical": {
+            "what_it_is": "对中国、日本和韩国的鞠躬、握手和称呼形式的比较。",
+            "cultural_background": "日本的鞠躬根据角度和持续时间分级；韩国的鞠躬类似，但配合敬语；中国大陆的问候现在主要是握手或点头，鞠躬则保留用于仪式。",
+            "why_it_matters": "问候是最频繁的互动，因此错误的默认设置会整天重复。",
+            "how_to_read": "横向阅读一行以比较各国之间的一个元素；纵向阅读一列以了解一个国家的整体情况。"
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-festival-celebrations": {
+          "attributes": {
+            "region": "中国 · 日本 · 韩国",
+            "period": "传统到现在",
+            "tradition": "节日",
+            "content_format": "比较信息图"
+          },
+          "vertical": {
+            "what_it_is": "对中国、日本和韩国主要年度节日及其实际意义的比较。",
+            "cultural_background": "农历新年是共享的，但名称和庆祝方式不同 — 春节、설날 (Seollal) — 而日本在1873年转向公历新年。中秋节分别以中秋节、Chuseok和Tsukimi的形式出现，强调团圆、祭祖和赏月。",
+            "why_it_matters": "共享的农历创建了一种相似性的假设，而实际的庆祝活动并不支持这一点。",
+            "how_to_read": "横向阅读一行以比较各国之间的一个元素；纵向阅读一列以了解一个国家的整体情况。"
+          }
+        }
       }
     }
   },
@@ -2842,6 +3461,64 @@
           "创建罗马斗兽场复古地标海报——棕褐色调、建筑史实、手绘风格，4K竖版。",
           "设计吉萨金字塔复古信息海报——地标插图、历史事实、古典排版，4K竖版。"
         ]
+      },
+      "examples": {
+        "template-world-landmark-vintage-info-poster-colosseum": {
+          "attributes": {
+            "region": "意大利 · 罗马",
+            "period": "公元70–80年",
+            "tradition": "斗兽场",
+            "content_format": "地标信息海报"
+          },
+          "vertical": {
+            "what_it_is": "一张关于罗马斗兽场的复古风格信息海报。",
+            "cultural_background": "一个可容纳50,000人的圆形剧场，由耶路撒冷围攻的战利品资助，拥有80个编号的入口，可以在几分钟内清空建筑——现代体育场的祖先。地下的地下室有电梯和笼子。",
+            "why_it_matters": "大约三分之二的原始石材已经消失，被开采用于文艺复兴时期的罗马——这座废墟讲述的是重用的故事，而不仅仅是衰败。",
+            "how_to_read": "日期、尺寸和建筑说明与插图并排放置，便于快速参考。"
+          }
+        },
+        "template-world-landmark-vintage-info-poster-petra": {
+          "attributes": {
+            "region": "约旦 · 马安",
+            "period": "公元前4世纪 – 公元1世纪",
+            "tradition": "佩特拉",
+            "content_format": "地标信息海报"
+          },
+          "vertical": {
+            "what_it_is": "一张关于佩特拉，纳巴泰岩石城市的复古风格信息海报。",
+            "cultural_background": "纳巴泰人直接在砂岩上雕刻外立面，更重要的是，设计了使沙漠贸易中心可行的水坝、蓄水池和陶瓷管道。阿尔哈兹内是一个墓葬外立面，而不是宝库。",
+            "why_it_matters": "水利工程是真正的成就，而著名的外立面照片从未展示过这一部分。",
+            "how_to_read": "日期、尺寸和建筑说明与插图并排放置，便于快速参考。"
+          }
+        },
+        "template-world-landmark-vintage-info-poster-great-wall": {
+          "attributes": {
+            "region": "中国",
+            "period": "公元前7世纪 – 公元17世纪",
+            "tradition": "长城",
+            "content_format": "地标信息海报"
+          },
+          "vertical": {
+            "what_it_is": "一张关于长城的复古风格信息海报。",
+            "cultural_background": "不是一堵墙，而是许多墙，由连续的国家在两千年间建造和重建；游客看到的大部分是明代的砖石，远晚于夯土的秦代部分。",
+            "why_it_matters": "单一连续墙的形象是对它的最持久误解，而日期面板是纠正这一点的。",
+            "how_to_read": "日期、尺寸和建筑说明与插图并排放置，便于快速参考。"
+          }
+        },
+        "template-world-landmark-vintage-info-poster-taj-mahal": {
+          "attributes": {
+            "region": "印度 · 阿格拉",
+            "period": "1632–1653",
+            "tradition": "泰姬陵",
+            "content_format": "地标信息海报"
+          },
+          "vertical": {
+            "what_it_is": "一张关于泰姬陵的复古风格信息海报。",
+            "cultural_background": "为穆姆塔兹·玛哈尔建造的陵墓，采用白色大理石镶嵌半宝石。四个尖塔微微向外倾斜，以便在地震中从墓穴上倒下。",
+            "why_it_matters": "它是一个陵墓而不是宫殿，这改变了对对称性和花园布局的解读方式。",
+            "how_to_read": "日期、尺寸和施工说明与插图并排放置，方便快速参考。"
+          }
+        }
       }
     }
   },
