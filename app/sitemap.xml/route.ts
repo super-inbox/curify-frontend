@@ -17,24 +17,40 @@ export const runtime = "nodejs";
 const BASE_URL = "https://www.curify-ai.com";
 const LOCALES = routing.locales;
 
-// Bump this only when nano template pages materially change. Bumped
-// 2026-05-08 to recrawl after restricting hreflang/canonical to the
-// locales each template actually localizes (fixes "Duplicate without
-// user-selected canonical" reports for non-en/zh template URLs).
-const NANO_TEMPLATES_LASTMOD = "2026-05-08T00:00:00.000Z";
+// ── lastmod policy ───────────────────────────────────────────────────────────
+// These are the primary at-scale recrawl signal. The Indexing API is capped at
+// 200 URLs/day; lastmod covers all ~1,000 at once, so a stale value here
+// suppresses recrawl far more broadly than any ping campaign can compensate for.
+//
+// Audited 2026-08-16 and every constant was months stale: 1,624 URLs advertised
+// 2026-05-08 and 912 advertised 2026-03-01, while a 420-URL inspection sweep
+// found only ~20% of the sitemap indexed — dominated by "Discovered, never
+// crawled". We had materially changed these pages and then told Google they had
+// not: the 2026-08-05 canonical-fold fix cut every page's HTML from 2.17MB to
+// 480KB (the largest change the site has had), followed by blog titles, tool
+// titles, topic i18n and FAQPage schema on 2026-08-12.
+//
+// Bump the relevant constant whenever a change alters what a crawler sees. Do
+// NOT wire these to the build date — a sitemap whose lastmod moves on every
+// deploy stops carrying information and Google learns to discount it.
 
-// Bumped 2026-05-08 — topic pages got per-locale `intro` paragraphs +
-// keywords (fixes "Crawled - currently not indexed" for non-en/zh
-// topic URLs that previously rendered near-identical content).
-const TOPICS_LASTMOD = "2026-05-08T00:00:00.000Z";
+// The 08-05 fold fix changed the rendered HTML of every template page.
+const NANO_TEMPLATES_LASTMOD = "2026-08-05T00:00:00.000Z";
 
-// Keep unchanged pages stable
-const STABLE_LASTMOD = "2026-03-01T00:00:00.000Z";
+// 08-05 fold fix + 08-12 authored topics.stickers title/description/keywords.
+const TOPICS_LASTMOD = "2026-08-12T00:00:00.000Z";
+
+// Static + tool + use-case routes. 08-12: 90 tool metadata titles lost a
+// duplicated "| Curify" suffix, and the use-case pages gained the worked-case
+// block; the 08-05 fold fix applies to all of them.
+const STABLE_LASTMOD = "2026-08-12T00:00:00.000Z";
 
 // Added 2026-07-05 — the 16 /personality/[type] (MBTI) pages were never emitted
 // in the sitemap, leaving them invisible to Google's crawl (MBTI & Character
 // cluster build M1, docs/mbti-character-cluster-build-2026-07-05.md).
-const PERSONALITY_LASTMOD = "2026-07-05T00:00:00.000Z";
+// 0% of the 16 MBTI pages were indexed as of the 2026-08-16 sweep (all
+// "Discovered, never crawled"). The 08-05 fold fix applies here too.
+const PERSONALITY_LASTMOD = "2026-08-05T00:00:00.000Z";
 
 // MBTI type pages hand-localize EN/zh/es only (lib/mbti-meta.ts pickLang);
 // other locales render EN-fallback copy, so restrict sitemap emission to the
@@ -87,9 +103,15 @@ function getNanoTemplateRoutes(): Array<{
       return {
         route: `/nano-template/${encodeURIComponent(toSlug(t.id.trim()))}`,
         locales: localized.length > 0 ? localized : ["en"],
-        lastmod: SEO_RETITLED_TEMPLATE_IDS.has(t.id.trim())
-          ? SEO_RETITLED_LASTMOD
-          : NANO_TEMPLATES_LASTMOD,
+        // Take the LATER of the two. The retitle date (2026-05-05) predates the
+        // 08-05 fold fix, so using it verbatim would advertise the 41 retitled
+        // templates as STALER than every other template — the opposite of the
+        // intent, and it would exclude exactly the pages we most want recrawled.
+        lastmod:
+          SEO_RETITLED_TEMPLATE_IDS.has(t.id.trim()) &&
+          SEO_RETITLED_LASTMOD > NANO_TEMPLATES_LASTMOD
+            ? SEO_RETITLED_LASTMOD
+            : NANO_TEMPLATES_LASTMOD,
       };
     });
 }
