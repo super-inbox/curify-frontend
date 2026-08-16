@@ -218,7 +218,8 @@
     "groups": {
       "video": "비디오 도구",
       "image": "이미지 도구",
-      "audio": "오디오 도구"
+      "audio": "오디오 도구",
+      "design": "디자인 → 제조"
     },
     "video_transcript_generator": {
       "title": "비디오 전사 생성기",
@@ -366,6 +367,14 @@
         "title": "Brand Direction Explorer — Pick a Creative Direction, Generate the Visual",
         "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
       }
+    },
+    "sticker_factory_export": {
+      "title": "Die-Cut Sticker Factory Files",
+      "desc": "Artwork in, production package out: 300 DPI transparent art, a mm-accurate die-cut line, CMYK PDF, preview and spec sheet — one zip a printer can quote from."
+    },
+    "acrylic_factory_export": {
+      "title": "Acrylic Standee & Keychain Factory Files",
+      "desc": "Front, mirrored back, white-ink underbase choked so it cannot halo, a cutline with a computed keychain hole, and a spec sheet."
     }
   },
   "bilingual": {

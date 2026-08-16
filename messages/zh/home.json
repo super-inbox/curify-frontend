@@ -231,7 +231,8 @@
     "groups": {
       "video": "视频工具",
       "image": "图像工具",
-      "audio": "音频工具"
+      "audio": "音频工具",
+      "design": "设计 → 生产"
     },
     "video_transcript_generator": {
       "title": "视频转录生成器",
@@ -379,6 +380,14 @@
         "title": "品牌创意方向探索 —— 选择方向，生成视觉方案",
         "description": "用一句话描述品牌或活动，从三个预置创意方向中挑一个，直接生成对应的视觉方案。无需编写提示词。"
       }
+    },
+    "sticker_factory_export": {
+      "title": "模切贴纸工厂文件",
+      "desc": "一张图进，一套生产文件出：300DPI 透明图、毫米级刀线、CMYK PDF、预览和规格表，打包成印厂能直接报价的 zip。"
+    },
+    "acrylic_factory_export": {
+      "title": "亚克力立牌 / 钥匙扣工厂文件",
+      "desc": "正面图、背面镜像图、白墨打底层（内缩防露白）、带孔位的刀线，以及规格表。"
     }
   },
   "bilingual": {
