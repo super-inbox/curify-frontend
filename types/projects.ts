@@ -21,7 +21,8 @@ export type BackendJobType =
 | "video_summarizer"
 | "speech_translator"
 | "youtube_subtitles"
-| "nano_template_generation";
+| "nano_template_generation"
+| "asl_translation";   // ASL video → subtitles. Paid (8 credits/min), never on the free subtitle quota.
 
 
 // Job settings interface aligned with backend

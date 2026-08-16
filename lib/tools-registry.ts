@@ -349,13 +349,31 @@ export const TOOL_REGISTRY: ToolDef[] = [
     // closes the loop with a visible demo + waitlist CTA. 2026-05-30 GSC
     // pull: 8 distinct tool-intent ASL queries at pos 9-26, zero clicks
     // (no /tools/asl-* landing existed).
+    // 2026-08-16: PROMOTED FROM DEMO LANDING TO LIVE TOOL. It now fronts the
+    // real ASL pipeline (JobType.ASL_TRANSLATION); job_type was previously a
+    // placeholder ("video_transcript") because no backend existed.
+    //
+    // Upgraded IN PLACE rather than adding a second "asl-translator" slug: this
+    // one already ranks for the tool-intent queries and already has i18n copy in
+    // all 10 locales. A near-identical second slug would split that signal.
+    //
+    // Paid — 8 credits/min (JOB_CREDIT_COST.ASL_TRANSLATION, mirrored in
+    // create-job-ui ratePerMinute). Deliberately NOT on the free monthly
+    // subtitle quota that plain captioning uses: each job runs vision inference
+    // over ~96 adaptively sampled frames.
+    //
+    // ⚠️ The recogniser is a general VLM that failed a frame-reversal control
+    // (curify-studio/docs/asl-translation-mvp-spec.md). Going live does not
+    // change that — the pipeline stamps asl_unverified/review_required on every
+    // job and prefixes the first caption "[AI-generated ASL translation —
+    // unverified]". Keep those until a real sign-language model replaces it.
     id: "asl-video-translator",
     slug: "asl-video-translator",
     groupId: "video",
-    status: "demo",
-    job_type: "video_transcript",
+    status: "create",
+    job_type: "asl_translation",
     namespace: "aslVideoTranslator",
-    action: { type: "page" },
+    action: { type: "modal", mode: "translation" },
     i18n: toolKeys("asl_video_translator"),
     seo: seoKeys("asl_video_translator"),
     demo: {
@@ -540,28 +558,6 @@ export const TOOL_REGISTRY: ToolDef[] = [
     action: { type: "modal", mode: "translation" },
     i18n: toolKeys("speech_translator"),
     seo: seoKeys("speech_translator"),
-  },
-
-  {
-    // ASL → subtitled video. Priced at 8 credits/min (JOB_CREDIT_COST.ASL_TRANSLATION)
-    // and deliberately NOT on the free monthly_subtitle_minutes quota that plain
-    // captioning uses — this runs vision inference over ~96 sampled frames per
-    // job, so it cannot be a loss-leader the way subtitle_only is.
-    //
-    // status "demo" ON PURPOSE: the recogniser is a general VLM and its output
-    // failed a reversal control on 2026-08-16 (see
-    // curify-studio/docs/asl-translation-mvp-spec.md). Output is labelled
-    // unverified end-to-end. Do not promote to "create" until a recogniser lands
-    // that reads ASL rather than plausibly guessing it.
-    id: "asl-translator",
-    slug: "asl-translator",
-    groupId: "video",
-    status: "demo",
-    job_type: "asl_translation",
-    namespace: "aslTranslator",
-    action: { type: "modal", mode: "translation" },
-    i18n: toolKeys("asl_translator"),
-    seo: seoKeys("asl_translator"),
   },
 
   {
