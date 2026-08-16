@@ -19,8 +19,9 @@ import type { ExistingExampleRef } from "@/lib/editDistance";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
-const CREDITS_COST = 10;
+const CREDITS_COST = IMAGE_GENERATION_CREDITS;
 
 type Props = {
   title: string;

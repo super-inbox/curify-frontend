@@ -1,4 +1,5 @@
 "use client";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
 /**
  * Design-agent demo — text + image in, a visible plan out, executed step by step.
@@ -62,7 +63,7 @@ type StepState = {
 };
 
 /** Matches nano_template_pipeline.GENERATION_CREDITS. Shown BEFORE spending. */
-const CREDITS_PER_STEP = 10;
+const CREDITS_PER_STEP = IMAGE_GENERATION_CREDITS;
 
 type Suggestion = { label: string; why: string; query: string; domain: string };
 type GeneratedDirection = {

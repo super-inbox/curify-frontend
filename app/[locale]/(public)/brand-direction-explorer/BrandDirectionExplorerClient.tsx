@@ -1,4 +1,5 @@
 "use client";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Check, ChevronDown, Download, Loader2 } from "lucide-react";
@@ -65,9 +66,9 @@ const EN_COPY: Copy = {
   generateReadyLabel: "Generate visual",
   generatingLabel: "Generating",
   perGenerationInfo: "1 image per generation",
-  creditsInfo: "10 credits",
+  creditsInfo: `${IMAGE_GENERATION_CREDITS} credits`,
   regenerateLabel: "Regenerate",
-  regenerateCreditsNotice: "Regenerating uses another 10 credits.",
+  regenerateCreditsNotice: `Regenerating uses another ${IMAGE_GENERATION_CREDITS} credits.`,
   downloadLabel: "Download",
   generatingResultText: "Generating your visual…",
   resultSectionTitle: "Result",
@@ -107,9 +108,9 @@ const ZH_COPY: Copy = {
   generateReadyLabel: "生成视觉",
   generatingLabel: "生成中",
   perGenerationInfo: "每次生成 1 张图片",
-  creditsInfo: "10 积分",
+  creditsInfo: `${IMAGE_GENERATION_CREDITS} 积分`,
   regenerateLabel: "重新生成",
-  regenerateCreditsNotice: "重新生成将再消耗 10 积分。",
+  regenerateCreditsNotice: `重新生成将再消耗 ${IMAGE_GENERATION_CREDITS} 积分。`,
   downloadLabel: "下载",
   generatingResultText: "正在生成视觉方案…",
   resultSectionTitle: "生成结果",

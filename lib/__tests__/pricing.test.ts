@@ -1,0 +1,73 @@
+import { describe, expect, it } from "vitest";
+import { readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
+
+import {
+  IMAGE_GENERATION_CREDITS,
+  PACKAGING_MOCKUP_CREDITS,
+  STICKER_EXPORT_CREDITS,
+} from "@/lib/pricing";
+
+/** What the backend actually charges, as of 2026-08-16.
+ *
+ *  This is a TRIPWIRE, not verification — this repo cannot import from
+ *  curify_background, so these numbers are transcribed by hand. The test's job is
+ *  to fail loudly when someone edits lib/pricing.ts alone, as a reminder that the
+ *  charge lives in the other repo and both have to move together. If the backend
+ *  changed and this file did not, the test passes and lies; the only defence is
+ *  updating both in the same change. Sources:
+ *    nano_template_pipeline.GENERATION_CREDITS   = 5.0
+ *    nano_freeform_pipeline.GENERATION_CREDITS   = 5.0
+ *    design_tool_pipelines.STICKER_EXPORT_CREDITS   = 20.0
+ *    design_tool_pipelines.PACKAGING_MOCKUP_CREDITS = 15.0 */
+const BACKEND_CHARGES = {
+  image: 5,
+  stickerExport: 20,
+  packagingMockup: 15,
+} as const;
+
+describe("credit pricing", () => {
+  it("mirrors the backend charge for image generation", () => {
+    expect(IMAGE_GENERATION_CREDITS).toBe(BACKEND_CHARGES.image);
+  });
+
+  it("mirrors the backend charge for the design-to-manufacturing tools", () => {
+    expect(STICKER_EXPORT_CREDITS).toBe(BACKEND_CHARGES.stickerExport);
+    expect(PACKAGING_MOCKUP_CREDITS).toBe(BACKEND_CHARGES.packagingMockup);
+  });
+
+  /** The bug this whole module exists to prevent: a locale file stating a price
+   *  in prose. Those strings are invisible to a constant change, so they keep
+   *  quoting last quarter's number long after the charge moved. Prices must
+   *  arrive as ICU parameters. */
+  it("no locale file hardcodes a credit amount in prose", () => {
+    const dir = join(process.cwd(), "messages");
+    const offenders: string[] = [];
+    // "1 credit ≈ $X" is a rate DEFINITION — the unit is inherently 1 and the
+    // dollar side is already a parameter, so it never goes stale. What must never
+    // be hardcoded is a quantity charged for an action ("requires 10 credits"),
+    // which is always 2 or more. Hence the leading [2-9] / multi-digit alternation.
+    const priceWord =
+      /(?:[2-9]|\d{2,})\s*(credits?|crédits?|créditos?|积分|クレジット|크레딧|кредит\w*|kredi)/i;
+
+    for (const locale of readdirSync(dir)) {
+      const file = join(dir, locale, "common.json");
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(readFileSync(file, "utf8"));
+      } catch {
+        continue; // locale has no common.json
+      }
+      const walk = (node: unknown, path: string) => {
+        if (typeof node === "string") {
+          if (priceWord.test(node)) offenders.push(`${locale}${path}: ${node}`);
+        } else if (node && typeof node === "object") {
+          for (const [k, v] of Object.entries(node)) walk(v, `${path}.${k}`);
+        }
+      };
+      walk(parsed, "");
+    }
+
+    expect(offenders).toEqual([]);
+  });
+});

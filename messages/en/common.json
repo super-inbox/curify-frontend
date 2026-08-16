@@ -148,7 +148,7 @@
     "batchDownloadFailed": "Failed to download pack. Please try again.",
     "generating": "Generating...",
     "generateFailed": "Generation failed. Please try again.",
-    "insufficientCredits": "Not enough credits. This action requires 10 credits.",
+    "insufficientCredits": "Not enough credits. This action requires {credits} credits.",
     "readMore": "Read more",
     "readLess": "Read less",
     "remixThis": "Make your own",
@@ -314,7 +314,7 @@
         "inputLabel": "Input:",
         "input": "A single character reference — a sketch, a logo mascot, or an existing IP frame.",
         "costLabel": "Cost:",
-        "cost": "10 credits per generation step — re-run any step without redoing the others.",
+        "cost": "{credits} credits per generation step — re-run any step without redoing the others.",
         "ctaLabel": "See the full walkthrough",
         "ctaHref": "/ip-merch-demo"
       }

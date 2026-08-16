@@ -12,8 +12,9 @@ import type { TemplateParameter } from "@/lib/nano_pure";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
-const CREDITS_COST = 10;
+const CREDITS_COST = IMAGE_GENERATION_CREDITS;
 
 type Props = {
   templateId: string;
@@ -75,7 +76,7 @@ export default function ExampleGeneratePanel({
       ((user as any)?.non_expiring_credits ?? 0) +
       ((user as any)?.expiring_credits ?? 0);
     if (credits < CREDITS_COST) {
-      alert(t("insufficientCredits"));
+      alert(t("insufficientCredits", { credits: CREDITS_COST }));
       isGeneratingRef.current = false;
       return;
     }

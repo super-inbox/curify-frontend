@@ -1,4 +1,5 @@
 "use client";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
 import { useRef, useState } from "react";
 import Link from "next/link";
@@ -191,7 +192,9 @@ export default function GalleryReproduceSurface({
               ) : (
                 <Sparkles className="h-4 w-4" />
               )}
-              {activeKey === "custom" ? t("generating") : "Generate (10 credits)"}
+              {activeKey === "custom"
+                ? t("generating")
+                : `Generate (${IMAGE_GENERATION_CREDITS} credits)`}
             </button>
           </div>
         </div>
@@ -202,7 +205,9 @@ export default function GalleryReproduceSurface({
             <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
               3 · Turn it into design work
             </span>
-            <span className="text-[11px] text-neutral-400">10 credits each</span>
+            <span className="text-[11px] text-neutral-400">
+              {IMAGE_GENERATION_CREDITS} credits each
+            </span>
           </div>
 
           {/* Smaller tiles — 3-up compact grid. */}

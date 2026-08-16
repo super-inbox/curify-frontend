@@ -146,7 +146,7 @@
     "batchDownloadFailed": "下载包失败。请再试一次。",
     "generating": "生成中...",
     "generateFailed": "生成失败，请重试。",
-    "insufficientCredits": "积分不足，此操作需要 10 积分。",
+    "insufficientCredits": "积分不足，此操作需要 {credits} 积分。",
     "saved": "已保存",
     "download": "下载",
     "readMore": "阅读更多",
@@ -336,7 +336,7 @@
         "inputLabel": "输入：",
         "input": "一张角色参考图 —— 手稿、品牌吉祥物，或已有 IP 的一帧。",
         "costLabel": "消耗：",
-        "cost": "每个生成步骤 10 credits —— 任一步可单独重跑，不必重做其他步骤。",
+        "cost": "每个生成步骤 {credits} 积分 —— 任一步可单独重跑，不必重做其他步骤。",
         "ctaLabel": "查看完整流程演示",
         "ctaHref": "/ip-merch-demo"
       }

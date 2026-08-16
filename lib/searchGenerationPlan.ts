@@ -1,13 +1,16 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
 import capabilityKb from "@/scripts/configs/template_capability_kb.json";
 import { tsToSc } from "@/lib/zh_normalize";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 import {
   rerankTemplateCandidatesForQuery,
   type TemplateMatch,
 } from "@/lib/searchTemplateMatch";
 import { retrieveTemplateCandidatesForQuery } from "@/lib/searchTemplateRetrieval";
 
-export const SEARCH_GENERATION_CREDITS_PER_IMAGE = 10;
+/** Re-exported from lib/pricing so the search plan and the generate buttons can
+ *  never quote different numbers. Do not redefine the literal here. */
+export const SEARCH_GENERATION_CREDITS_PER_IMAGE = IMAGE_GENERATION_CREDITS;
 const MIN_CONFIDENCE = 0.6;
 const MAX_DIRECTIONS = 3;
 

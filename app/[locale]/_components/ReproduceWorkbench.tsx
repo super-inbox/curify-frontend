@@ -26,8 +26,9 @@ import { resizeToSocialBundle, sliceIntoGrid, makePrintReady } from "@/lib/resiz
 import { templatePacksService } from "@/services/templatePacks";
 import { userAtom, clientMountedAtom, drawerAtom, modalAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
-const CREDITS_COST = 10;
+const CREDITS_COST = IMAGE_GENERATION_CREDITS;
 
 /**
  * Column-1 configuration. The 3-column workbench is shared across surfaces; the

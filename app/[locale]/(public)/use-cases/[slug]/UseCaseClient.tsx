@@ -17,6 +17,7 @@ import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCat
 import type { ToolDef } from "@/lib/tools-registry";
 import { USE_CASES, PERSONA_BLOG_CATEGORIES, getUseCaseBySlug } from "@/lib/use-cases";
 import useCaseTranscripts from "@/lib/use_case_transcripts.json";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
 type LearningMaterial = {
   templateId: string;
@@ -476,7 +477,9 @@ export default function UseCaseClient({
               <span className="font-semibold text-neutral-900">
                 {t(`${slug}.case.costLabel` as never)}{" "}
               </span>
-              {t(`${slug}.case.cost` as never)}
+              {t(`${slug}.case.cost` as never, {
+                credits: IMAGE_GENERATION_CREDITS,
+              } as never)}
             </p>
           )}
 

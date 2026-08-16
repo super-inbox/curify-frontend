@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Wand2, Sparkles, Download, Bookmark, Printer } from "lucide-react";
 
-const GENERATE_CREDITS_COST = 10;
+const GENERATE_CREDITS_COST = IMAGE_GENERATION_CREDITS;
 import { useTranslations } from "next-intl";
 import { useAtom } from "jotai";
 
@@ -14,6 +14,7 @@ import { useTracking, useSaveTracking, type TrackingTarget } from "@/services/us
 import { templatePacksService } from "@/services/templatePacks";
 import { getOutputIntent } from "@/lib/output_intent";
 import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
 type GenerateConfig = {
   enabled: boolean;

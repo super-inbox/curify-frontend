@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildSearchGenerationPlan } from "../searchGenerationPlan";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
 describe("search generation planner", () => {
   it.each(["fun economics", "funny economics", "趣味经济学"])(
@@ -58,7 +59,9 @@ describe("search generation planner", () => {
       },
     });
     expect(plan.source).toBe("similarity");
-    expect(plan.total_credits).toBe(10);
+    expect(plan.total_credits).toBe(
+      plan.directions.length * IMAGE_GENERATION_CREDITS,
+    );
     expect(plan.directions).toEqual([
       expect.objectContaining({
         template_id: "template-education",
@@ -102,7 +105,9 @@ describe("search generation planner", () => {
     );
 
     expect(plan.source).toBe("fallback");
-    expect(plan.total_credits).toBe(10);
+    expect(plan.total_credits).toBe(
+      plan.directions.length * IMAGE_GENERATION_CREDITS,
+    );
     expect(plan.directions).toEqual([
       expect.objectContaining({
         template_id: "template-education",
