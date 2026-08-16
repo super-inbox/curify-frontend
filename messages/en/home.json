@@ -1544,5 +1544,115 @@
     },
     "title": "Explore three creative directions from one brief",
     "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+  },
+  "acrylicFactoryExport": {
+    "metadata": {
+      "title": "Acrylic Standee & Keychain Factory Files — White Ink + Cutline",
+      "description": "Turn artwork into an acrylic production package: front, mirrored back, choked white-ink underbase, die cutline with a wall-checked keychain hole, and a spec sheet a factory can quote from."
+    },
+    "title": "Your Artwork → Acrylic Factory Files",
+    "description": "Acrylic is transparent, so colour printed straight onto it reads as a washed-out tint. Factories print an opaque white plate underneath first — and that plate is a separate file most people never send. Upload artwork and get the full set: front, mirrored back, the white underbase choked 0.25 mm so it cannot halo, a die cutline, a keychain hole placed against the cut path, and a spec sheet.",
+    "example": "Example: a 70 mm die-cut character standee — front, mirrored back, white plate, cutline with a 4 mm hole kept 2 mm clear of the cut edge, and a spec PDF, packaged as one zip.",
+    "cta": "Contact us for acrylic factory files",
+    "why": {
+      "title": "Why produce acrylic files through Curify?",
+      "point1": "The white underbase is generated for you — the plate customers do not know they need and cannot see, because it is white on white.",
+      "point2": "White is choked inward, not spread. Press registration is never exact, and un-choked white shows as a pale halo around every edge.",
+      "point3": "The keychain hole is computed against the cut path and refused when no legal position exists, instead of shipping a part that tears out.",
+      "point4": "Everything is deterministic geometry — no model guesses at a cutline or a dimension."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "What do I get?",
+      "a1": "A zip with front artwork, mirrored back, white-ink plate, cutline SVG including the hole, a preview and a spec sheet.",
+      "q2": "Why is the back mirrored?",
+      "a2": "On a double-sided acrylic piece the reverse prints through the material, so an un-mirrored back reads backwards once assembled.",
+      "q3": "What is the white ink layer for?",
+      "a3": "Acrylic is clear. Without an opaque white plate under the colour, the print looks washed out — so the factory either builds one or prints it wrong.",
+      "q4": "Can I choose where the hole goes?",
+      "a4": "Yes. There is a default near the top of the piece, and a position you specify is still checked against the minimum wall so it cannot crack.",
+      "q5": "Are these tooling drawings?",
+      "a5": "No. They are print and cut files. Confirm tolerances, material and thickness with your factory before production."
+    },
+    "deep": {
+      "what": {
+        "title": "What are acrylic factory files?",
+        "p1": "They are the set of files an acrylic manufacturer needs to quote and produce a standee or keychain without a designer re-doing the artwork.",
+        "p2": "That set is larger than most people expect: front, back, a white underbase, a cutline and a hole position — five things, where most orders arrive with one flat image.",
+        "p3": "Missing any of them usually means the factory adds a design fee or produces something that does not match the intent."
+      },
+      "how": {
+        "title": "How it works",
+        "p1": "Upload artwork with a clear subject; the subject is isolated and scaled to your stated physical size.",
+        "p2": "A die cutline is traced from the silhouette and offset outward by your chosen margin.",
+        "p3": "A white plate is derived from the same silhouette and eroded inward so it stays under the colour.",
+        "p4": "A keychain hole is placed near the top and validated against the cut path for a minimum wall.",
+        "p5": "Everything is packaged with a spec sheet listing size, thickness, print, choke and cut values."
+      },
+      "usecases": {
+        "title": "Who uses this",
+        "creatorsTitle": "IP & 谷子 creators",
+        "creatorsBody": "Turn character art into standees and keychains without learning pre-press.",
+        "educationTitle": "Studios & agencies",
+        "educationBody": "Hand a factory a complete package instead of trading revisions over what is missing.",
+        "businessTitle": "Merch sellers",
+        "businessBody": "Quote faster: a factory can price a complete file set immediately."
+      }
+    }
+  },
+  "stickerFactoryExport": {
+    "metadata": {
+      "title": "Die-Cut Sticker Factory Files — Cutline, CMYK, Spec",
+      "description": "Turn artwork into a die-cut sticker production package: 300 DPI transparent art, a mm-accurate cutline, CMYK PDF, preview and spec sheet — one zip a printer can quote from."
+    },
+    "title": "Your Artwork → Die-Cut Sticker Factory Files",
+    "description": "Upload artwork and get the files a sticker printer actually asks for: 300 DPI transparent art, a die-cut contour traced from the silhouette and offset in millimetres, a CMYK PDF, a preview with the cutline overlaid, and a spec sheet.",
+    "example": "Example: a 60 mm die-cut sticker — transparent artwork, a 3 mm offset cutline, CMYK PDF and spec, packaged as one zip.",
+    "cta": "Contact us for sticker factory files",
+    "why": {
+      "title": "Why produce sticker files through Curify?",
+      "point1": "The cutline is traced and offset in millimetres, not drawn by hand or guessed by a model.",
+      "point2": "Colour is converted to CMYK before hand-off, so what the printer sees is what gets printed.",
+      "point3": "Every file a printer expects arrives in one zip, so quoting does not stall on a missing plate.",
+      "point4": "Deterministic geometry throughout — the same artwork always produces the same cut path."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "What do I get?",
+      "a1": "A zip with 300 DPI transparent artwork, a cutline SVG, a CMYK PDF, a preview and a spec sheet.",
+      "q2": "What size can I order?",
+      "a2": "Any longest side between 10 mm and 500 mm; the artwork is scaled to it at your chosen DPI.",
+      "q3": "What is the cut offset?",
+      "a3": "The cutline is offset outward from the subject silhouette, 3 mm by default, giving the familiar die-cut border.",
+      "q4": "Does the artwork need a transparent background?",
+      "a4": "It helps. If there is none, the subject is separated from a plain background automatically.",
+      "q5": "Are these tooling drawings?",
+      "a5": "No. They are print and cut files. Confirm material, finish and tolerances with your printer."
+    },
+    "deep": {
+      "what": {
+        "title": "What are die-cut sticker factory files?",
+        "p1": "They are the files a sticker printer needs to cut and print without redrawing anything.",
+        "p2": "The cutline is the part most orders are missing: a printer cannot cut to a shape that has not been described as a path.",
+        "p3": "With artwork, a cutline and CMYK in hand, a printer can quote immediately."
+      },
+      "how": {
+        "title": "How it works",
+        "p1": "The subject is isolated from the background and cropped.",
+        "p2": "It is scaled so its longest side matches your stated size at print resolution.",
+        "p3": "The silhouette is traced and simplified into a smooth closed contour.",
+        "p4": "That contour is offset outward to form the die-cut path.",
+        "p5": "Colour is converted to CMYK and everything is packaged with a spec sheet."
+      },
+      "usecases": {
+        "title": "Who uses this",
+        "creatorsTitle": "Artists & IP creators",
+        "creatorsBody": "Sell die-cut stickers without learning pre-press.",
+        "educationTitle": "Studios & agencies",
+        "educationBody": "Deliver print-ready files with the cutline already included.",
+        "businessTitle": "Merch sellers",
+        "businessBody": "Move from artwork to a printer quote in one step."
+      }
+    }
   }
 }
