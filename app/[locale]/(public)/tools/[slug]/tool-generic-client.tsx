@@ -2,6 +2,7 @@
 "use client";
 
 import { Link } from "@/i18n/navigation";
+import { personasForTool } from "@/lib/tool-personas";
 import { useTranslations, useLocale } from "next-intl";
 import { useTracking } from "@/services/useTracking";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
@@ -38,11 +39,8 @@ import CreateNewModal from "../CreateNewModal";
 // they describe, so each subsection's h3 becomes a link to the matching
 // /use-cases/<persona> landing page. Wraps a static text section in a
 // cross-link without rewriting the i18n content.
-const USECASE_SECTION_TO_PERSONA: Record<string, string> = {
-  creators: "for-creators",
-  education: "for-parents",
-  business: "for-marketers",
-};
+// Destinations live in lib/tool-personas.ts — see the note there on why the
+// old single hard-coded map sent almost every tool to a parents page.
 
 
 
@@ -62,7 +60,7 @@ export default function ToolGenericClient({
   const tool = getToolBySlug(slug);
   if (!tool) return null;
 
-  const ucPersonas = tool?.usecasePersonas ?? USECASE_SECTION_TO_PERSONA;
+  const ucPersonas = personasForTool(slug);
   const t = useTranslations(tool.namespace);
   const tGlobal = useTranslations();
   // Locale string needed by RelatedBlogsByCategory and (less directly) for

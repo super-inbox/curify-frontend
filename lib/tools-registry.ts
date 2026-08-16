@@ -48,14 +48,6 @@ export type ToolDef = {
   id: string;
   slug: string;
   groupId: ToolGroupId;
-  /**
-   * Overrides the "Who it's for" destinations. The three slots are keyed
-   * creators/education/business for historical reasons and default to
-   * for-creators / for-parents / for-marketers — which is wrong for factory
-   * tools, where the middle card described studios and 谷子 brands while linking
-   * to a PARENTS page. Label and destination must agree.
-   */
-  usecasePersonas?: { creators: string; education: string; business: string };
   status: ToolStatus;
 
   // backend job type (for job submission)
@@ -317,7 +309,6 @@ export const TOOL_REGISTRY: ToolDef[] = [
   // inline generate block — status must not claim more than is reachable.
   {
     id: "sticker-factory-export",
-    usecasePersonas: { creators: "for-designers", education: "for-merch-operators", business: "for-dtc-brands" },
     slug: "sticker-factory-export",
     groupId: "design",
     status: "demo",
@@ -332,7 +323,6 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
   {
     id: "acrylic-factory-export",
-    usecasePersonas: { creators: "for-designers", education: "for-merch-operators", business: "for-dtc-brands" },
     slug: "acrylic-factory-export",
     groupId: "design",
     status: "demo",
@@ -346,7 +336,6 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
   {
     id: "packaging-mockup",
-    usecasePersonas: { creators: "for-designers", education: "for-merch-operators", business: "for-dtc-brands" },
     slug: "packaging-mockup",
     groupId: "design",
     status: "demo",
