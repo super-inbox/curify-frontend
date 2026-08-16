@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { getCanonicalPath } from "@/lib/canonical";
+import RunWorkflowComingSoon from "./RunWorkflowComingSoon";
 import { makeSafeTranslator } from "@/lib/locale_utils";
 import type { TopicWorkflowConfig } from "@/lib/topic_workflows";
 import { requiresDirection } from "@/lib/agent/direction";
@@ -50,13 +51,10 @@ export default async function TopicWorkflow({
           {/* Primary action sits top-right, where the "see full workflow" link
               used to be: running the ladder is the point of the section, and a
               secondary navigation link competing for that slot buried it. */}
-          <Link
-            href={getCanonicalPath(locale, `/design-agent?workflow=${config.domain}`)}
-            className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
-          >
-            {t("topicWorkflows.runAll") || "Run the whole workflow"}
-            <span aria-hidden>→</span>
-          </Link>
+          {/* Resolves to an in-place coming-soon message instead of routing to
+              /design-agent, which is not ready. Clicks are tracked as demand
+              signal per domain — see RunWorkflowComingSoon. */}
+          <RunWorkflowComingSoon domain={config.domain} />
         </div>
         <p className="mt-1 text-sm text-neutral-600">{subtitle}</p>
 

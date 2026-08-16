@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { getCanonicalPath } from "@/lib/canonical";
+import RunWorkflowComingSoon from "./RunWorkflowComingSoon";
 import { makeSafeTranslator } from "@/lib/locale_utils";
 
 /**
@@ -85,13 +86,8 @@ export default async function BrandWorkflow({ locale }: { locale: string }) {
               the brand ladder onto this slug — that would render two workflow
               sections on /topics/branding. This page keeps its bespoke section
               and gains the run action; both point at the same brand ladder. */}
-          <Link
-            href={getCanonicalPath(locale, "/design-agent?workflow=brand")}
-            className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] px-4 py-2 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
-          >
-            {t("topicWorkflows.runAll") || "Run the whole workflow"}
-            <span aria-hidden>→</span>
-          </Link>
+          {/* Same coming-soon treatment as TopicWorkflow's action. */}
+          <RunWorkflowComingSoon domain="brand" />
         </div>
         <p className="mt-1 text-sm text-neutral-600">
           {t("brandWorkflow.subtitle") ||
