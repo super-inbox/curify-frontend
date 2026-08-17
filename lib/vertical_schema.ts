@@ -14,7 +14,7 @@
  * the doc and queued.
  */
 
-export type VerticalId = "education" | "mbti" | "merch";
+export type VerticalId = "education" | "mbti" | "merch" | "culture";
 
 /** One ontology field. `facet` marks it as a future browse filter; `taxonomyAxis`
  *  records the lib/taxonomy.json axis it derives from (or "NEW"). */
@@ -88,6 +88,38 @@ export const VERTICAL_SCHEMAS: Record<VerticalId, VerticalSchema> = {
     ],
     topicMatch: ["mbti", "personality", "16-personalities", "personality-type"],
   },
+  // Culture & heritage pages: costume evolution, solar terms, relics, cross-country
+  // comparison infographics. Added 2026-08-16 — the /topics/culture cluster had
+  // NO schema, so its five highest-volume templates (costume 47 examples,
+  // east-asian-comparison 24, clothing-evolution 18, solar-term 11, relic 10)
+  // resolved null and could not carry authored knowledge at all, however much
+  // prose we wrote. `education` was the wrong home: these are heritage reference
+  // pages, not learning resources with an objective and a duration.
+  //
+  // schema.org Article rather than CreativeWork: these are explanatory editorial
+  // pages about a subject, which is what Article models. Same choice the mbti
+  // vertical makes for the same reason.
+  culture: {
+    id: "culture",
+    label: "Culture & Heritage",
+    schemaOrgType: "Article",
+    attributes: [
+      { key: "region", label: "Region", facet: true, taxonomyAxis: "NEW" },
+      { key: "period", label: "Period", facet: true, taxonomyAxis: "NEW" },
+      { key: "tradition", label: "Tradition", facet: true, taxonomyAxis: "NEW" },
+      { key: "content_format", label: "Format", facet: true, taxonomyAxis: "content_shapes" },
+    ],
+    knowledgeSlots: [
+      { key: "what_it_is", label: "What it is" },
+      { key: "cultural_background", label: "Cultural background" },
+      { key: "why_it_matters", label: "Why it matters" },
+      { key: "how_to_read", label: "How to read this" },
+    ],
+    topicMatch: [
+      "culture", "china", "history", "heritage", "tradition", "festival",
+      "cultural-festivals", "costumes", "relic", "solar-term", "folklore",
+    ],
+  },
   merch: {
     id: "merch",
     label: "文创 / Merch",
@@ -116,8 +148,22 @@ export const VERTICAL_SCHEMAS: Record<VerticalId, VerticalSchema> = {
 export function resolveVerticalForTopics(topics: string[] | undefined | null): VerticalSchema | null {
   if (!Array.isArray(topics) || topics.length === 0) return null;
   const set = new Set(topics.map((t) => String(t).toLowerCase()));
-  // deterministic order: education, mbti, merch
-  for (const id of ["education", "mbti", "merch"] as VerticalId[]) {
+  // Deterministic order: mbti, education, merch, culture — FIRST MATCH WINS.
+  //
+  // mbti is FIRST because it is the most specific signal a template can carry.
+  // Three MBTI templates (mbti-yellowstone, harry-potter-mbti-infographic,
+  // mbti-stereotype-vs-reality-infographic) are also tagged `study-sheets`,
+  // which put them under `education` when education was checked first. That was
+  // not merely a mislabel: buildResolvedVertical filters attributes and
+  // knowledge by the RESOLVED schema's slot keys, so authored MBTI content
+  // (type_code, traits, compatibility) matched none of education's slots and
+  // was dropped silently. All five enriched mbti-yellowstone examples — and
+  // their 10-locale translations — rendered nothing at all.
+  //
+  // culture stays LAST for the mirror-image reason: a template tagged both
+  // `culture` and `learning` (cultural-travel-journey) really is a learning
+  // resource and should keep `education`.
+  for (const id of ["mbti", "education", "merch", "culture"] as VerticalId[]) {
     const schema = VERTICAL_SCHEMAS[id];
     if (schema.topicMatch.some((t) => set.has(t))) return schema;
   }

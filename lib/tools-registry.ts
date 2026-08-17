@@ -21,6 +21,9 @@ export type ToolAction =
   // directions → generate the chosen visual. Bespoke client, rendered inline
   // on the tool page like the costume_tryon / product_video surfaces.
   | { type: "brand_direction" }
+  | { type: "sticker_export" }
+  | { type: "acrylic_export" }
+  | { type: "packaging_mockup" }
   | { type: "none" };
 
 export type ToolDemo =
@@ -286,14 +289,15 @@ export const TOOL_REGISTRY: ToolDef[] = [
   {
     id: "die-cut-sticker-file",
     slug: "die-cut-sticker-file",
-    groupId: "image",
+    // Consolidated home of the sticker factory export (2026-08-17): this slug
+    // owns the keyword and the card art, so the duplicate newer tool 301s here.
+    groupId: "design",
     status: "demo",
-    // No self-serve backend job — offered as a done-for-you / bulk service via
-    // the contact CTA. job_type is a required field but unused for this tool.
+    // Self-serve since 2026-08-17 — POST /design-tools/packaging-mockup (15
+    // credits). job_type is a required field but unused for this tool.
     job_type: "video_transcript",
     namespace: "dieCutStickerFile",
-    action: { type: "none" },
-    cta: "contact",
+    action: { type: "sticker_export" },
     i18n: toolKeys("die_cut_sticker_file"),
     seo: seoKeys("die_cut_sticker_file"),
     demo: {
@@ -307,30 +311,20 @@ export const TOOL_REGISTRY: ToolDef[] = [
   // at. The backend pipelines exist (POST /design-tools/*) but the self-serve
   // frontend flow does not, so these carry the contact CTA rather than an
   // inline generate block — status must not claim more than is reachable.
-  {
-    id: "sticker-factory-export",
-    slug: "sticker-factory-export",
-    groupId: "design",
-    status: "demo",
-    // Backend: POST /design-tools/sticker-export (20 credits). Not yet wired to
-    // a self-serve UI; offered as a done-for-you service meanwhile.
-    job_type: "video_transcript",
-    namespace: "stickerFactoryExport",
-    action: { type: "none" },
-    cta: "contact",
-    i18n: toolKeys("sticker_factory_export"),
-    seo: seoKeys("sticker_factory_export"),
-  },
-  {
+    {
     id: "acrylic-factory-export",
     slug: "acrylic-factory-export",
     groupId: "design",
     status: "demo",
-    // Dev script only (factory/acrylic_exporter.py) — no backend pipeline yet.
+    // Self-serve since 2026-08-17 — POST /design-tools/acrylic-export (25 credits).
     job_type: "video_transcript",
     namespace: "acrylicFactoryExport",
-    action: { type: "none" },
-    cta: "contact",
+    action: { type: "acrylic_export" },
+    demo: {
+      type: "single_image",
+      src: "/images/tools/acrylic-factory-export.jpg",
+      alt: "The four plates an acrylic factory needs — front print, mirrored back, the opaque white ink underbase shown on a dark board because it is invisible on white, and the die cutline with a keychain hole",
+    },
     i18n: toolKeys("acrylic_factory_export"),
     seo: seoKeys("acrylic_factory_export"),
   },
@@ -343,8 +337,7 @@ export const TOOL_REGISTRY: ToolDef[] = [
     // the contact CTA. job_type is a required field but unused for this tool.
     job_type: "video_transcript",
     namespace: "packagingMockup",
-    action: { type: "none" },
-    cta: "contact",
+    action: { type: "packaging_mockup" },
     i18n: toolKeys("packaging_mockup"),
     seo: seoKeys("packaging_mockup"),
     demo: {

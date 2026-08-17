@@ -279,6 +279,64 @@
           "Crea un panel sobre el patrimonio inmaterial \"tingido azul\": origen de los tintes, puntos clave del atado y la cera, pasos del proceso, patrones comunes y simbolismo, aplicaciones contemporáneas, 3:4.",
           "Genera un panel sobre \"pintura de bloques de madera\": proceso de grabado/impresión, sistema de colores, temas representativos, casos de fusión entre transmisión y diseño moderno, módulos en chino claros, 3:4."
         ]
+      },
+      "examples": {
+        "template-intangible-heritage-paper-cutting": {
+          "attributes": {
+            "region": "China",
+            "period": "Tradicional hasta el presente",
+            "tradition": "Corte de papel chino (剪纸)",
+            "content_format": "Póster del proceso artesanal"
+          },
+          "vertical": {
+            "what_it_is": "Un póster del proceso para el corte de papel chino, desde el plegado hasta el diseño simétrico terminado.",
+            "cultural_background": "Practicado durante unos 1,500 años desde que el papel se volvió asequible, y abrumadoramente por mujeres en hogares rurales. El papel rojo domina en festivales; los motivos se basan en rebus, así que un murciélago (蝠 fú) se lee como fortuna (福 fú).",
+            "why_it_matters": "Inscrito por la UNESCO en 2009. La lógica del rebus es la parte que generalmente se pierde en la traducción: los diseños se leen, no solo se miran.",
+            "how_to_read": "Los paneles siguen el proceso de creación en orden; la leyenda nombra las herramientas y materiales en cada paso."
+          }
+        },
+        "template-intangible-heritage-cloisonne": {
+          "attributes": {
+            "region": "China",
+            "period": "Tradicional hasta el presente",
+            "tradition": "Cloisonné (景泰蓝)",
+            "content_format": "Póster del proceso artesanal"
+          },
+          "vertical": {
+            "what_it_is": "Un póster del proceso para el trabajo en esmalte cloisonné, desde la colocación de alambres hasta el pulido.",
+            "cultural_background": "Los alambres de cobre se doblan y fijan a un cuerpo para formar celdas, que se llenan con pasta de esmalte, se hornean repetidamente a medida que el esmalte se hunde, luego se muelen y se doran. El nombre chino 景泰蓝 se refiere al reinado de Jingtai cuyo azul es definitivo.",
+            "why_it_matters": "Es un contrapunto útil al marco de 'artesanía antigua': el cloisonné llegó a China a través del mundo islámico y se convirtió en chino a través de varios siglos de adaptación.",
+            "how_to_read": "Los paneles siguen el proceso de creación en orden; la leyenda nombra las herramientas y materiales en cada paso."
+          }
+        },
+        "template-intangible-heritage-lion-dance": {
+          "attributes": {
+            "region": "China",
+            "period": "Tradicional hasta el presente",
+            "tradition": "Danza del león (舞狮)",
+            "content_format": "Póster del proceso artesanal"
+          },
+          "vertical": {
+            "what_it_is": "Un póster sobre la danza del león: los dos estilos regionales principales y lo que significan los movimientos.",
+            "cultural_background": "La danza del león del norte es acrobática y familiar; la danza del león del sur (cantonesa) es marcial, vinculada a escuelas de kung fu, y culmina en 采青 — 'cosechando las verduras', apoderándose de un manojo de lechuga con un sobre rojo.",
+            "why_it_matters": "Los estilos del norte y del sur se confunden rutinariamente en el extranjero, aunque los trajes, la música y el significado difieren sustancialmente.",
+            "how_to_read": "Los paneles siguen el proceso de creación en orden; la leyenda nombra las herramientas y materiales en cada paso."
+          }
+        },
+        "template-intangible-heritage-woodblock-new-year-paintings": {
+          "attributes": {
+            "region": "China",
+            "period": "Tradicional hasta el presente",
+            "tradition": "Impresiones de Año Nuevo en bloque de madera (年画)",
+            "content_format": "Póster del proceso artesanal"
+          },
+          "vertical": {
+            "what_it_is": "Un póster del proceso para las impresiones de Año Nuevo nianhua en bloque de madera.",
+            "cultural_background": "Cada color necesita su propio bloque tallado, registrado a mano. Los dioses de la puerta, los niños regordetes y las escenas de granero son recurrentes; las impresiones se pegaban en el Año Nuevo y se reemplazaban anualmente, por lo que estaban diseñadas para ser desechables.",
+            "why_it_matters": "Debido a que eran consumibles en lugar de objetos de arte, pocos ejemplos tempranos sobreviven; la artesanía está mejor documentada que su producción.",
+            "how_to_read": "Los paneles siguen el proceso de creación en orden; el pie de foto nombra las herramientas y materiales en cada paso."
+          }
+        }
       }
     }
   },
@@ -408,6 +466,78 @@
           "Crea un gráfico retro sobre la \"espada de Goujian\": cuatro cuadrantes que explican características de la artesanía, antecedentes históricos, historia del descubrimiento, influencia cultural contemporánea, textura de papel retro, 3:4.",
           "Genera un gráfico sobre \"figuritas de camello de la dinastía Tang\": estilo artístico, relación con el comercio/Ruta de la Seda, valor arqueológico, influencia estética moderna, estructura de cuatro cuadrantes, 3:4."
         ]
+      },
+      "examples": {
+        "template-cultural-relic-retro-infographic-simu-wu-ding": {
+          "attributes": {
+            "region": "China · Anyang, Henan",
+            "period": "Dinastía Shang, c. 1200 a.C.",
+            "tradition": "Bronces rituales",
+            "content_format": "Póster de referencia de artefacto"
+          },
+          "vertical": {
+            "what_it_is": "Un póster de referencia para el Houmuwu ding (后母戊鼎, anteriormente Simuwu ding) — el bronce chino antiguo más pesado que sobrevive, con 832 kg.",
+            "cultural_background": "Fundido alrededor de 1200 a.C. para una reina Shang, su inscripción nombra a 后母戊 ('Reina Madre Wu'). Su producción requirió un estimado de más de mil trabajadores en mineral, aleación, molde y vertido — un proceso de molde por piezas que los Shang habían refinado mucho más allá de cualquier cosa contemporánea en otros lugares.",
+            "why_it_matters": "El ding era un recipiente ritual y una declaración de autoridad; la frase 问鼎 ('preguntar sobre el ding') todavía significa hacer una oferta por el poder. Es uno de los artefactos protegidos de primera clase de China y no puede salir del país.",
+            "how_to_read": "El póster proporciona dimensiones y masa junto con el método de fundición y la inscripción, por lo que la escala del objeto y su fabricación se leen juntas."
+          }
+        },
+        "template-cultural-relic-retro-infographic-terracotta-warriors": {
+          "attributes": {
+            "region": "China · Lintong, Shaanxi",
+            "period": "Dinastía Qin, 210 a.C.",
+            "tradition": "Antigüedades chinas",
+            "content_format": "Póster de referencia de artefacto"
+          },
+          "vertical": {
+            "what_it_is": "Un póster de referencia para el Ejército de Terracota que protege la tumba de Qin Shi Huang.",
+            "cultural_background": "Aproximadamente 8,000 figuras, cada una con una cabeza individualizada ensamblada a partir de partes moldeadas, producidas en masa por talleres que estampaban el nombre de su capataz en el trabajo — un sistema de responsabilidad temprana. Originalmente estaban pintadas con pigmentos de laca brillante que se descascaran en minutos tras la excavación.",
+            "why_it_matters": "La pérdida de pigmento es la razón por la que gran parte del sitio se deja deliberadamente sin excavar: la tecnología para preservar el color aún no existe.",
+            "how_to_read": "Las dimensiones y la datación se sitúan junto a la fabricación y el contexto del hallazgo, por lo que la escala y la técnica se leen juntas."
+          }
+        },
+        "template-cultural-relic-retro-infographic-dunhuang-mogao-grottoes": {
+          "attributes": {
+            "region": "China · Dunhuang, Gansu",
+            "period": "Siglo IV–XIV",
+            "tradition": "Antigüedades chinas",
+            "content_format": "Póster de referencia de artefacto"
+          },
+          "vertical": {
+            "what_it_is": "Un póster de referencia para las Cuevas Mogao — 492 templos de cueva pintados en la Ruta de la Seda.",
+            "cultural_background": "Cortadas durante más de mil años en un cruce de la Ruta de la Seda, las cuevas albergan unos 45,000 m² de murales. La Cueva de la Biblioteca, sellada, se abrió en 1900 y produjo alrededor de 50,000 manuscritos, incluido el Sutra del Diamante de 868 d.C., el libro impreso fechado más antiguo.",
+            "why_it_matters": "La mayor parte del material de la Cueva de la Biblioteca ahora se encuentra en Londres, París y San Petersburgo — Mogao es un estudio de caso sobre cómo se dispersa el patrimonio.",
+            "how_to_read": "Las dimensiones y la datación se sitúan junto a la fabricación y el contexto del hallazgo, por lo que la escala y la técnica se leen juntas."
+          }
+        },
+        "template-cultural-relic-retro-infographic-yuewang-goujian-sword": {
+          "attributes": {
+            "region": "China · Hubei",
+            "period": "Período de Primavera y Otoño, c. 500 a.C.",
+            "tradition": "Antigüedades chinas",
+            "content_format": "Póster de referencia de artefacto"
+          },
+          "vertical": {
+            "what_it_is": "Un póster de referencia para la Espada de Goujian, Rey de Yue — sin deslustre después de 2,500 años.",
+            "cultural_background": "Recuperada de una tumba anegada en 1965, aún lo suficientemente afilada como para cortar papel. Su resistencia a la corrosión proviene de un borde de alto estaño, un núcleo de bajo estaño más resistente y una capa superficial de sulfuro, además de las condiciones de enterramiento anaeróbicas.",
+            "why_it_matters": "Es el ejemplo estándar de la metalurgia china de la Edad de Bronce, que es mucho más sofisticada de lo que sugiere un modelo de aleación única.",
+            "how_to_read": "Las dimensiones y la datación se sitúan junto a la fabricación y el contexto del hallazgo, por lo que la escala y la técnica se leen juntas."
+          }
+        },
+        "template-cultural-relic-retro-infographic-longmen-grottoes": {
+          "attributes": {
+            "region": "China · Luoyang, Henan",
+            "period": "Wei del Norte a Tang, 493–1127",
+            "tradition": "Antigüedades chinas",
+            "content_format": "Póster de referencia de artefactos"
+          },
+          "vertical": {
+            "what_it_is": "Un póster de referencia para las Grutas de Longmen: más de 100,000 estatuas budistas talladas en acantilados de piedra caliza.",
+            "cultural_background": "La talla comenzó cuando los Wei del Norte trasladaron su capital a Luoyang en 493 y continuó durante seis siglos. El estilo cambia visiblemente de las figuras alargadas y austeras de Wei a las más completas y naturalistas de Tang, siendo la más famosa el Buda Vairocana de 17 metros.",
+            "why_it_matters": "Debido a que la datación es segura a lo largo de un largo período, Longmen funciona como una secuencia de referencia para la escultura budista china.",
+            "how_to_read": "Las dimensiones y la datación se sitúan junto a la fabricación y el contexto del hallazgo, por lo que la escala y la técnica se leen juntas."
+          }
+        }
       }
     }
   },
@@ -491,6 +621,76 @@
             "learning_objective": "Comprender Xiaoman (小满), el 8º de los 24 términos solares de China, y lo que significa en el calendario agrícola y la vida cotidiana.",
             "includes": "El nombre del término y su pinyin, su período de fecha, la fenología (los granos de verano comienzan a engordar), costumbres y alimentos de temporada, y una ilustración temática.",
             "background": "Xiaoman significa 'Brotos de Grano' o 'Pequeña Plenitud' — alrededor del 21 de mayo, cuando los granos de verano comienzan a llenarse pero aún no están maduros. Capta el ideal chino de abundancia gradual y sin prisas, en lugar de un pico repentino."
+          }
+        },
+        "template-solar-term-dongzhi": {
+          "attributes": {
+            "region": "China",
+            "period": "Dinastía Han hasta el presente",
+            "tradition": "24 términos solares (二十四节气)",
+            "content_format": "Tarjeta de información estacional"
+          },
+          "vertical": {
+            "what_it_is": "Una tarjeta ilustrada para 冬至 (Dōngzhì, Solsticio de Invierno) — el día más corto del año y el 22º de los 24 términos solares.",
+            "cultural_background": "Los términos solares dividen el año según la posición del sol, no de la luna, por lo que siguen de cerca el año agrícola. Dongzhi fue lo suficientemente significativo como para que la frase 冬至大如年 — 'el Solsticio de Invierno es tan grande como el Año Nuevo' — sobreviva hoy. En el norte de China se comen dumplings; en el sur se comen 汤圆.",
+            "why_it_matters": "La UNESCO inscribió los 24 términos solares como Patrimonio Cultural Inmaterial en 2016. Siguen en uso diario en la conversación sobre el clima chino, la estacionalidad de los alimentos y la medicina tradicional — un calendario funcional, no una pieza de museo.",
+            "how_to_read": "La tarjeta empareja la fecha del término y la posición solar con sus alimentos habituales y los signos estacionales tradicionalmente asociados."
+          }
+        },
+        "template-solar-term-chunfen": {
+          "attributes": {
+            "region": "China",
+            "period": "Dinastía Han hasta el presente",
+            "tradition": "24 términos solares (二十四节气)",
+            "content_format": "Tarjeta de información estacional"
+          },
+          "vertical": {
+            "what_it_is": "Una tarjeta ilustrada para el Equinoccio de Primavera, el 4º de los 24 términos solares.",
+            "cultural_background": "El día y la noche son iguales; el término marca el momento en que comienza la siembra de primavera en serio en la cuenca del río Amarillo. Las costumbres incluyen poner un huevo de pie y volar cometas.",
+            "why_it_matters": "Los términos solares fueron inscritos por la UNESCO como Patrimonio Cultural Inmaterial en 2016 y siguen en uso diario en la estacionalidad de los alimentos y la medicina tradicional.",
+            "how_to_read": "La tarjeta empareja la fecha del término y la posición solar con sus alimentos habituales y marcadores estacionales."
+          }
+        },
+        "template-solar-term-qingming": {
+          "attributes": {
+            "region": "China",
+            "period": "Dinastía Han hasta el presente",
+            "tradition": "24 términos solares (二十四节气)",
+            "content_format": "Tarjeta de información estacional"
+          },
+          "vertical": {
+            "what_it_is": "Una tarjeta ilustrada para Qingming, tanto un término solar como el festival de limpieza de tumbas de China.",
+            "cultural_background": "El único término solar que también es un día festivo. Las familias limpian las tumbas de sus antepasados y queman ofrendas; también es cuando se comen los qingtuan verdes y el clima se vuelve lo suficientemente cálido para plantar.",
+            "why_it_matters": "Muestra que los términos solares no son puramente agrícolas — llevan una obligación ritual además de un calendario agrícola.",
+            "how_to_read": "La tarjeta empareja la fecha del término y la posición solar con sus alimentos habituales y marcadores estacionales."
+          }
+        },
+        "template-solar-term-lichun": {
+          "attributes": {
+            "region": "China",
+            "period": "Dinastía Han hasta el presente",
+            "tradition": "24 términos solares (二十四节气)",
+            "content_format": "Tarjeta de información estacional"
+          },
+          "vertical": {
+            "what_it_is": "Una tarjeta ilustrada para Lichun, el primero de los 24 términos solares.",
+            "cultural_background": "Lichun abre el año agrícola alrededor del 4 de febrero. El rito 打春牛 — golpear un buey de arcilla — era realizado por funcionarios para marcar el inicio de la siembra, una ceremonia estatal tanto como una popular.",
+            "why_it_matters": "Ser el primero ancla todo el ciclo; el año nuevo tradicional se contaba desde aquí en lugar de desde el año nuevo lunar.",
+            "how_to_read": "La tarjeta empareja la fecha del término y la posición solar con sus alimentos y marcadores estacionales habituales."
+          }
+        },
+        "template-solar-term-daxue": {
+          "attributes": {
+            "region": "China",
+            "period": "Dinastía Han hasta el presente",
+            "tradition": "24 términos solares (二十四节气)",
+            "content_format": "Tarjeta de información estacional"
+          },
+          "vertical": {
+            "what_it_is": "Una tarjeta ilustrada para Daxue, el 21º término solar.",
+            "cultural_background": "Nombrado por el momento en que se espera que la nieve se vuelva pesada en el norte de China. La práctica tradicional se centra en la conservación de alimentos: curar carne, encurtir verduras, y en calentar alimentos según la teoría dietética china.",
+            "why_it_matters": "Los términos están calibrados al cuenca del río Amarillo, por lo que los nombres de nieve suenan extraños en el sur subtropical de China; un recordatorio útil de que el calendario tiene una geografía específica.",
+            "how_to_read": "La tarjeta empareja la fecha del término y la posición solar con sus alimentos y marcadores estacionales habituales."
           }
         }
       }
@@ -691,6 +891,93 @@
           "Crea una infografía sobre el ginkgo: el sujeto es una ilustración completa de la planta, los módulos incluyen clasificación, características de las hojas, entorno de crecimiento, significado histórico y valor de aplicación, diseño claro.",
           "Genera una tarjeta de conocimiento sobre la mariposa monarca: ilustración realista en el centro, rodeada de información sobre ciclo de vida, rutas migratorias, fuentes de alimento y datos de conservación, adecuada para difusión educativa."
         ]
+      },
+      "examples": {
+        "template-species-science-red-crowned-crane": {
+          "attributes": {
+            "grade_band": "Primaria superior a adulto",
+            "age_range": "9+",
+            "subject": "Biología · conservación",
+            "skill": "Referencia",
+            "resource_type": "Tarjeta de información sobre especies",
+            "duration_min": "5 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Identificar la grulla de corona roja y entender su migración y estado de conservación.",
+            "includes": "Una ilustración científica con el nombre binomial, tamaño, rango, hábitat, dieta y estado de la UICN.",
+            "background": "Grus japonensis tiene aproximadamente 3,000 aves. La población continental migra entre el noreste de China y la península de Corea; la población de Hokkaido es residente. La corona roja es piel desnuda, no pluma. Es un emblema de longevidad en el arte chino y japonés."
+          }
+        },
+        "template-species-science-giant-panda": {
+          "attributes": {
+            "grade_band": "Primaria superior a adulto",
+            "age_range": "9+",
+            "subject": "Biología · conservación",
+            "skill": "Referencia",
+            "resource_type": "Tarjeta de información sobre especies",
+            "duration_min": "5 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Identificar el panda gigante y entender por qué un animal con un sistema digestivo carnívoro come casi solo bambú.",
+            "includes": "Una ilustración científica con el nombre binomial, tamaño, rango, hábitat, dieta y estado de la UICN.",
+            "background": "Ailuropoda melanoleuca conserva un tracto digestivo carnívoro corto, por lo que extrae poca energía del bambú y compensa comiendo 12–38 kg al día y moviéndose lentamente. El 'pseudo-dedo' es un hueso de la muñeca agrandado, no un dígito. Clasificado de En Peligro a Vulnerable en 2016."
+          }
+        },
+        "template-species-science-ginkgo-tree": {
+          "attributes": {
+            "grade_band": "Primaria superior a adulto",
+            "age_range": "9+",
+            "subject": "Biología · conservación",
+            "skill": "Referencia",
+            "resource_type": "Tarjeta de información sobre especies",
+            "duration_min": "5 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Identificar el ginkgo y entender por qué se le llama un fósil viviente.",
+            "includes": "Una ilustración científica con el nombre binomial, tamaño, rango, hábitat, dieta y estado de la UICN.",
+            "background": "Ginkgo biloba es el único sobreviviente de un orden que fue común hace 200 millones de años, con hojas fósiles casi idénticas a las modernas. Es dioico; solo los árboles hembra producen la cáscara de semilla de mal olor. Varios ginkgos sobrevivieron al bombardeo de Hiroshima y aún se mantienen en pie."
+          }
+        },
+        "template-species-science-green-peafowl": {
+          "attributes": {
+            "grade_band": "Desde primaria alta hasta adultos",
+            "age_range": "9+",
+            "subject": "Biología · conservación",
+            "skill": "Referencia",
+            "resource_type": "Tarjeta de información sobre la especie",
+            "duration_min": "5 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Identificar el pavo real verde y distinguirlo del mucho más común pavo real azul.",
+            "includes": "Una ilustración científica con el nombre binomial, tamaño, rango, hábitat, dieta y estado de la UICN.",
+            "background": "Pavo muticus está en peligro, con quizás unos pocos cientos restantes en China. Se diferencia del familiar pavo real azul indio por su cuello con escamas verdes, penacho erguido y mayor tamaño; los dos se confunden rutinariamente, lo que oscurece cuán raro es este."
+          }
+        },
+        "template-species-science-hawksbill": {
+          "attributes": {
+            "grade_band": "Desde primaria alta hasta adultos",
+            "age_range": "9+",
+            "subject": "Biología · conservación",
+            "skill": "Referencia",
+            "resource_type": "Tarjeta de información sobre la especie",
+            "duration_min": "5 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Identificar la tortuga carey y entender por qué su caparazón la llevó a un estado de Peligro Crítico.",
+            "includes": "Una ilustración científica con el nombre binomial, tamaño, rango, hábitat, dieta y estado de la UICN.",
+            "background": "Eretmochelys imbricata tiene escudos superpuestos que fueron la fuente de 'carey' comercial. El comercio está prohibido bajo CITES pero persiste. Se alimenta principalmente de esponjas, lo que moldea la estructura de la comunidad del arrecife; su declive cambia el arrecife, no solo sus propios números."
+          }
+        }
       }
     }
   },
@@ -1832,6 +2119,110 @@
           "Cuisine learning poster with food names.",
           "Food vocabulary for language learning."
         ]
+      },
+      "examples": {
+        "template-cuisine-food-vocab-poster-japan": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "Todas las edades",
+            "subject": "Vocabulario de comida japonesa",
+            "skill": "Vocabulario",
+            "resource_type": "Póster de vocabulario ilustrado",
+            "duration_min": "10 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–JA"
+          },
+          "vertical": {
+            "learning_objective": "Reconocer y nombrar platos e ingredientes japoneses comunes en japonés e inglés, con la ilustración llevando el significado, por lo que no se necesita un paso de traducción.",
+            "includes": "Un póster ilustrado de platos japoneses, cada uno etiquetado con su nombre en japonés, lectura en romaji y glosa en inglés.",
+            "background": "El vocabulario de comida es inusualmente eficiente para principiantes: las palabras son concretas, inmediatamente útiles y están asociadas a algo que puedes señalar. Los nombres de los platos japoneses también tienen una estructura que vale la pena notar desde el principio: 丼 (donburi, tazón de arroz) y 焼き (yaki, a la parrilla) aparecen en muchos platos, por lo que aprender algunos términos desbloquea familias enteras de palabras."
+          }
+        },
+        "template-cuisine-food-vocab-poster-thai": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "Todas las edades",
+            "subject": "Vocabulario de comida tailandesa",
+            "skill": "Vocabulario",
+            "resource_type": "Póster de vocabulario ilustrado",
+            "duration_min": "10 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–TH"
+          },
+          "vertical": {
+            "learning_objective": "Reconocer y nombrar platos e ingredientes tailandeses comunes, con la ilustración llevando el significado, por lo que no se necesita un paso de traducción.",
+            "includes": "Un póster ilustrado de platos tailandeses, cada uno etiquetado con su nombre en el idioma original, una lectura y una glosa en inglés.",
+            "background": "Los nombres de los platos tailandeses son a menudo compuestos descriptivos: tom (hervir), yam (ensalada), phat (salteado), por lo que aprender un puñado de palabras de métodos de cocción descodifica la mayor parte de un menú."
+          }
+        },
+        "template-cuisine-food-vocab-poster-korea": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "Todas las edades",
+            "subject": "Vocabulario de comida coreana",
+            "skill": "Vocabulario",
+            "resource_type": "Póster de vocabulario ilustrado",
+            "duration_min": "10 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–KO"
+          },
+          "vertical": {
+            "learning_objective": "Reconocer y nombrar platos e ingredientes coreanos comunes, con la ilustración llevando el significado, por lo que no se necesita un paso de traducción.",
+            "includes": "Un cartel ilustrado de platos coreanos, cada uno etiquetado con su nombre en el idioma original, una lectura y un glosario en inglés.",
+            "background": "Los nombres de los platos coreanos a menudo terminan en el método: -guk (sopa), -jjigae (estofado), -bokkeum (salteado), -jeon (frito en sartén). El sufijo te indica la forma del plato antes de que conozcas el ingrediente."
+          }
+        },
+        "template-cuisine-food-vocab-poster-vietnam": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "Todas las edades",
+            "subject": "Vocabulario de comida vietnamita",
+            "skill": "Vocabulario",
+            "resource_type": "Cartel de vocabulario ilustrado",
+            "duration_min": "10 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–VI"
+          },
+          "vertical": {
+            "learning_objective": "Reconocer y nombrar platos e ingredientes vietnamitas comunes, con la ilustración llevando el significado, por lo que no se necesita un paso de traducción.",
+            "includes": "Un cartel ilustrado de platos vietnamitas, cada uno etiquetado con su nombre en el idioma original, una lectura y un glosario en inglés.",
+            "background": "Los elementos del menú vietnamita suelen ser sustantivo más modificador — bún (fideos de arroz), phở (fideos de arroz planos), bánh (una amplia categoría de pasteles, panes y envolturas) — por lo que la primera palabra acota el formato."
+          }
+        },
+        "template-cuisine-food-vocab-poster-mexico": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "Todas las edades",
+            "subject": "Vocabulario de comida mexicana",
+            "skill": "Vocabulario",
+            "resource_type": "Cartel de vocabulario ilustrado",
+            "duration_min": "10 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–ES"
+          },
+          "vertical": {
+            "learning_objective": "Reconocer y nombrar platos e ingredientes mexicanos comunes, con la ilustración llevando el significado, por lo que no se necesita un paso de traducción.",
+            "includes": "Un cartel ilustrado de platos mexicanos, cada uno etiquetado con su nombre en el idioma original, una lectura y un glosario en inglés.",
+            "background": "Los nombres de los platos mexicanos a menudo nombran el recipiente o el pliegue en lugar del relleno: taco, tlacoyo, sope, huarache. La palabra te indica la forma de la masa, y el relleno varía libremente."
+          }
+        },
+        "template-cuisine-food-vocab-poster-beijing": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "Todas las edades",
+            "subject": "Vocabulario de comida regional china de Pekín",
+            "skill": "Vocabulario",
+            "resource_type": "Cartel de vocabulario ilustrado",
+            "duration_min": "10 min",
+            "difficulty": "Principiante",
+            "language_mode": "Bilingüe EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Reconocer y nombrar platos e ingredientes comunes de la región de Beijing, con la ilustración que lleva el significado, por lo que no se necesita un paso de traducción.",
+            "includes": "Un póster ilustrado de platos de la región de Beijing, cada uno etiquetado con su nombre en el idioma de origen, una lectura y un glosario en inglés.",
+            "background": "Los nombres de los platos de Beijing se basan en el método de cocción y el lugar de origen — 烤 (asar), 涮 (enjuagar-hervir), 炸酱 (salsa frita) — y varios están ligados a restaurantes históricos específicos, que es parte del vocabulario."
+          }
+        }
       }
     }
   },
@@ -1938,6 +2329,78 @@
           "Korean traditional dress history infographic across dynasties.",
           "French fashion evolution from medieval to contemporary styles."
         ]
+      },
+      "examples": {
+        "template-clothing-evolution-poster-chinese": {
+          "attributes": {
+            "region": "China",
+            "period": "Dinastía Zhou a Ming",
+            "tradition": "Hanfu (汉服)",
+            "content_format": "Póster de línea de tiempo de evolución"
+          },
+          "vertical": {
+            "what_it_is": "Una línea de tiempo del vestido Han chino a través de las dinastías: silueta, cuello, manga y cintura.",
+            "cultural_background": "El hanfu es una familia de formas, no una prenda única. El cierre de cuello cruzado de izquierda a derecha (交领右衽) persiste a lo largo del tiempo, mientras que la proporción cambia drásticamente: el ruqun de cintura alta de la dinastía Tang, el contenido de la dinastía Song, la manga ancha de la dinastía Ming con su cuello erguido.",
+            "why_it_matters": "El renacimiento del hanfu ha hecho que la precisión histórica sea objeto de debate público, por lo que separar las eras es más útil que un genérico 'vestido tradicional chino'.",
+            "how_to_read": "Cada panel representa un período; compara el cuello, la manga y la cintura a través de los paneles para ver qué ha cambiado realmente."
+          }
+        },
+        "template-clothing-evolution-poster-japanese": {
+          "attributes": {
+            "region": "Japón",
+            "period": "Heian a Meiji",
+            "tradition": "Kimono",
+            "content_format": "Póster de línea de tiempo de evolución"
+          },
+          "vertical": {
+            "what_it_is": "Una línea de tiempo del vestido japonés desde las capas de la corte Heian hasta la silueta moderna del kimono.",
+            "cultural_background": "El jūnihitoe de Heian se componía de hasta doce túnicas, juzgadas por los gradientes de color en el cuello y la manga. El kosode debajo gradualmente se convirtió en prenda exterior y para la época Edo era el kimono propiamente dicho; el obi se ensanchó a medida que la prenda se simplificó.",
+            "why_it_matters": "Lo que hoy se considera 'atemporal' es una etapa tardía de una larga simplificación: el kimono moderno está más cerca de Edo que de Heian.",
+            "how_to_read": "Cada panel representa un período; compara el cuello, la manga y la cintura a través de los paneles para ver qué ha cambiado realmente."
+          }
+        },
+        "template-clothing-evolution-poster-korean": {
+          "attributes": {
+            "region": "Corea",
+            "period": "Goguryeo a Joseon",
+            "tradition": "Hanbok",
+            "content_format": "Póster de línea de tiempo de evolución"
+          },
+          "vertical": {
+            "what_it_is": "Una línea de tiempo del vestido coreano mostrando el cambio a la silueta de jeogori y chima de cintura alta.",
+            "cultural_background": "Los murales de las tumbas de Goguryeo muestran una chaqueta ajustada y pantalones para ambos sexos. A lo largo de Joseon, el jeogori de las mujeres se acortó y se elevó drásticamente mientras que la chima se ensanchó, produciendo la silueta de campana que ahora se considera definitiva.",
+            "why_it_matters": "Las proporciones que la gente imagina como el hanbok clásico son específicamente de finales de Joseon: las formas anteriores se ven muy diferentes.",
+            "how_to_read": "Cada panel representa un período; compara el cuello, la manga y la cintura a través de los paneles para ver qué ha cambiado realmente."
+          }
+        },
+        "template-clothing-evolution-poster-indian": {
+          "attributes": {
+            "region": "India",
+            "period": "Maurya a Mughal",
+            "tradition": "Prendas drapeadas · sari",
+            "content_format": "Póster de línea de tiempo de evolución"
+          },
+          "vertical": {
+            "what_it_is": "Una línea de tiempo del vestido indio desde el drapeado sin coser hasta la sastrería de la era Mughal.",
+            "cultural_background": "El vestido indio temprano era abrumadoramente sin coser: antariya, uttariya, kayabandh, con el drapeado haciendo el trabajo de la sastrería. La influencia de Asia Central y Persia bajo los Mughal introdujo formas cosidas: angarkha, churidar y el jama estructurado.",
+            "why_it_matters": "La distinción entre cosido/no cosido es el verdadero eje del cambio aquí, y se relaciona más con el contacto y la conquista que con la moda sola.",
+            "how_to_read": "Cada panel representa un período; compara el cuello, la manga y la cintura entre los paneles para ver lo que realmente cambió."
+          }
+        },
+        "template-clothing-evolution-poster-egyptian": {
+          "attributes": {
+            "region": "Egipto",
+            "period": "Antiguo Reino a Ptolemaico",
+            "tradition": "Vestido de lino",
+            "content_format": "Póster de línea de tiempo de evolución"
+          },
+          "vertical": {
+            "what_it_is": "Una línea de tiempo del vestido antiguo egipcio a lo largo de tres milenios de forma notablemente estable.",
+            "cultural_background": "El lino dominaba porque el lino crecía en el valle del Nilo y la lana estaba ritual y restringida en los templos. El kilt schenti de los hombres y el kalasiris de las mujeres cambiaron lentamente; los pliegues, la transparencia y las joyas llevaban estatus más que el corte.",
+            "why_it_matters": "Es un útil contraejemplo: la historia del vestido generalmente se enseña como un cambio constante, y Egipto muestra cómo se ve varios miles de años de continuidad.",
+            "how_to_read": "Cada panel representa un período; compara el cuello, la manga y la cintura entre los paneles para ver lo que realmente cambió."
+          }
+        }
       }
     }
   },
@@ -2468,6 +2931,76 @@
           "Crea una infografía de Leonardo da Vinci — retrato acuarela, cuadrícula de arte, ciencia e invención con íconos.",
           "Diseña un póster de Sun Tzu — retrato acuarela con pergamino, 6 estrategias del Arte de la Guerra, layout minimalista, 4K vertical."
         ]
+      },
+      "examples": {
+        "template-figure-principles-infographic-marie-curie": {
+          "attributes": {
+            "grade_band": "Secundaria a adulto",
+            "age_range": "13+",
+            "subject": "Historia de la ciencia y las ideas",
+            "skill": "Comprensión",
+            "resource_type": "Infografía de principios",
+            "duration_min": "8 min",
+            "difficulty": "Intermedio",
+            "language_mode": "Inglés"
+          },
+          "vertical": {
+            "learning_objective": "Entender los principios de trabajo detrás de la investigación de Curie: medir la propiedad, no solo la química.",
+            "includes": "Una infografía que empareja un retrato con principios de trabajo clave, cada uno expresado como una regla corta e ilustrado con lo que significaba en la práctica.",
+            "background": "Curie procesó toneladas de pechblenda para aislar fracciones de un gramo de radio, rastreando el progreso por ionización en lugar de solo por química, tratando la radiactividad como una propiedad del átomo. Es la única persona que ha ganado premios Nobel en dos ciencias diferentes y rechazó patentar el proceso de aislamiento."
+          }
+        },
+        "template-figure-principles-infographic-albert-einstein": {
+          "attributes": {
+            "grade_band": "Secundaria a adulto",
+            "age_range": "13+",
+            "subject": "Historia de la ciencia y las ideas",
+            "skill": "Comprensión",
+            "resource_type": "Infografía de principios",
+            "duration_min": "8 min",
+            "difficulty": "Intermedio",
+            "language_mode": "Inglés"
+          },
+          "vertical": {
+            "learning_objective": "Entender los principios de trabajo detrás de la física de Einstein: experimentos mentales, e insistir en que una teoría sea simple en su núcleo.",
+            "includes": "Una infografía que empareja un retrato con principios de trabajo clave, cada uno expresado como una regla corta e ilustrado con lo que significaba en la práctica.",
+            "background": "Los artículos de Einstein de 1905 surgieron de situaciones imaginadas llevadas a su fin lógico: montando junto a un rayo de luz, un ascensor en caída indistinguible del espacio vacío. Trabajó a partir de principios en lugar de ajustar datos, por lo que la relatividad llegó como un replanteamiento en lugar de una corrección."
+          }
+        },
+        "template-figure-principles-infographic-leonardo-da-vinci": {
+          "attributes": {
+            "grade_band": "Secundaria a adulto",
+            "age_range": "13+",
+            "subject": "Historia de la ciencia y las ideas",
+            "skill": "Comprensión",
+            "resource_type": "Infografía de principios",
+            "duration_min": "8 min",
+            "difficulty": "Intermedio",
+            "language_mode": "Inglés"
+          },
+          "vertical": {
+            "learning_objective": "Entender el método de Leonardo: observar primero, diseccionar para verificar y tratar el dibujo como un pensamiento.",
+            "includes": "Una infografía que empareja un retrato con principios de trabajo fundamentales, cada uno expresado como una regla corta e ilustrado con lo que significaba en la práctica.",
+            "background": "Leonardo diseccionó unos treinta cadáveres para dibujar anatomía que había sido copiada de Galeno durante siglos. Sus cuadernos mezclan ingeniería, anatomía y pintura porque los trató como una sola investigación sobre cómo se construyen las cosas. La mayor parte no se publicó en su vida."
+          }
+        },
+        "template-figure-principles-infographic-sun-tzu": {
+          "attributes": {
+            "grade_band": "Secundaria a adulto",
+            "age_range": "13+",
+            "subject": "Historia de la ciencia y las ideas",
+            "skill": "Comprensión",
+            "resource_type": "Infografía de principios",
+            "duration_min": "8 min",
+            "difficulty": "Intermedio",
+            "language_mode": "Inglés"
+          },
+          "vertical": {
+            "learning_objective": "Entender los principios fundamentales del Arte de la Guerra: ganar antes de luchar, conocer ambos lados, moldear las condiciones.",
+            "includes": "Una infografía que empareja un retrato con principios de trabajo fundamentales, cada uno expresado como una regla corta e ilustrado con lo que significaba en la práctica.",
+            "background": "El Arte de la Guerra trata la batalla como el costoso último recurso de un proceso que ya debería haberse decidido por posición, información y preparación. Su influencia fuera del ámbito militar, especialmente en la estrategia empresarial, proviene de que ese marco es general en lugar de táctico."
+          }
+        }
       }
     },
     "description": "Una guía visual educativa sobre los principios de vida y hábitos de figuras famosas — Einstein, da Vinci, Marie Curie. Usa el aviso de IA para generar tu propia infografía de figuras famosas.",
@@ -2627,6 +3160,92 @@
           "Crea una infografía de tradiciones de regalos — China, Japón y Corea comparados, tabúes y consejos, 4K vertical.",
           "Diseña una infografía de cultura del té — té chino, matcha japonés, té coreano, 3 columnas ilustradas, 4K vertical."
         ]
+      },
+      "examples": {
+        "template-east-asian-culture-comparison-infographic-tea-culture-traditions": {
+          "attributes": {
+            "region": "China · Japón · Corea",
+            "period": "Dinastía Tang hasta el presente",
+            "tradition": "Cultura del té",
+            "content_format": "Infografía comparativa"
+          },
+          "vertical": {
+            "what_it_is": "Un cartel comparativo de cómo se prepara, sirve y entiende el té en China, Japón y Corea: la misma hoja, tres rituales sociales diferentes.",
+            "cultural_background": "El té se difundió desde China a través de redes monásticas budistas: a Japón en el siglo IX, donde se convirtió en 茶道 (chadō), una práctica estética codificada moldeada por el Zen; y a Corea, donde el 다도 (dado) se desarrolló como una ceremonia más tranquila y menos formalizada. China, por su parte, mantuvo la gama más amplia, desde la preparación gongfu de Chaozhou hasta hojas comunes en un frasco.",
+            "why_it_matters": "Las tres tradiciones se reducen constantemente a una 'ceremonia del té asiática'. Colocarlas una al lado de la otra muestra lo que realmente difiere: el recipiente, la temperatura del agua, quién sirve, cómo se utiliza el silencio, y hace que cada una sea legible en sus propios términos.",
+            "how_to_read": "Lee a lo largo de una fila para comparar un elemento entre países; lee hacia abajo en una columna para ver una sola tradición de principio a fin."
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-gift-giving-traditions": {
+          "attributes": {
+            "region": "China · Japón · Corea",
+            "period": "Tradicional hasta el presente",
+            "tradition": "Etiqueta de regalo",
+            "content_format": "Infografía comparativa"
+          },
+          "vertical": {
+            "what_it_is": "Un comparativo de las costumbres de regalo en China, Japón y Corea: qué dar, cómo presentarlo y qué evitar.",
+            "cultural_background": "Los tres comparten la presentación con las dos manos y la expectativa de reciprocidad, pero divergen en los detalles: el omiyage japonés es obligatorio y regional; los regalos chinos evitan los relojes (送钟 suena como 送终, asistir a un funeral); los regalos coreanos se agrupan en torno a festividades como Chuseok y Seollal.",
+            "why_it_matters": "Estos son los errores que realmente causan ofensa en entornos empresariales y familiares, y no son intercambiables entre los tres países.",
+            "how_to_read": "Lee a lo largo de una fila para comparar un elemento entre países; lee hacia abajo en una columna para un solo país de principio a fin."
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-business-card-etiquette": {
+          "attributes": {
+            "region": "China · Japón · Corea",
+            "period": "Tradicional hasta el presente",
+            "tradition": "Intercambio de tarjetas de presentación",
+            "content_format": "Infografía comparativa"
+          },
+          "vertical": {
+            "what_it_is": "Una comparación de cómo se intercambian las tarjetas de presentación en China, Japón y Corea.",
+            "cultural_background": "El intercambio de meishi japonés es el más codificado: dos manos, tarjeta frente al destinatario, leerla, colocarla en la mesa, nunca en un bolsillo trasero. La práctica coreana es similar. El intercambio chino es generalmente menos formal pero aún se realiza con dos manos con los mayores.",
+            "why_it_matters": "Son los primeros treinta segundos de una reunión de negocios y el momento que más a menudo se confunde por los visitantes.",
+            "how_to_read": "Lee a lo largo de una fila para comparar un elemento entre países; lee hacia abajo en una columna para un solo país de principio a fin."
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-wedding-traditions": {
+          "attributes": {
+            "region": "China · Japón · Corea",
+            "period": "Tradicional hasta el presente",
+            "tradition": "Costumbres de boda",
+            "content_format": "Infografía comparativa"
+          },
+          "vertical": {
+            "what_it_is": "Una comparación del color de las bodas, el vestido, la estructura de la ceremonia y el dinero de regalo en China, Japón y Corea.",
+            "cultural_background": "El rojo domina las bodas chinas como el color de la suerte; las ceremonias sintoístas japonesas utilizan el blanco shiromuku; el paebaek coreano conserva la reverencia a los padres del novio y el lanzamiento de castañas y jujubes. Los regalos en efectivo son estándar en los tres, pero con diferentes sobres y etiqueta.",
+            "why_it_matters": "La costumbre de la boda es donde las tres culturas a menudo se confunden en la cobertura occidental, y donde las diferencias son más visibles.",
+            "how_to_read": "Lee a lo largo de una fila para comparar un elemento entre países; lee hacia abajo en una columna para un solo país de principio a fin."
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-greeting-customs": {
+          "attributes": {
+            "region": "China · Japón · Corea",
+            "period": "Tradicional hasta el presente",
+            "tradition": "Saludos",
+            "content_format": "Infografía comparativa"
+          },
+          "vertical": {
+            "what_it_is": "Una comparación de las reverencias, apretones de manos y formas de dirección en China, Japón y Corea.",
+            "cultural_background": "La reverencia japonesa se clasifica por ángulo y duración; la reverencia coreana es similar pero se combina con niveles de habla honorífica; el saludo en China continental es ahora predominantemente un apretón de manos o un asentimiento, con la reverencia reservada para ceremonias.",
+            "why_it_matters": "El saludo es la interacción de mayor frecuencia que existe, por lo que un error en el saludo se repite todo el día.",
+            "how_to_read": "Lee a lo largo de una fila para comparar un elemento entre países; lee hacia abajo en una columna para un solo país de principio a fin."
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-festival-celebrations": {
+          "attributes": {
+            "region": "China · Japón · Corea",
+            "period": "Tradicional hasta el presente",
+            "tradition": "Festivales",
+            "content_format": "Infografía comparativa"
+          },
+          "vertical": {
+            "what_it_is": "Una comparación de los principales festivales anuales en China, Japón y Corea y lo que cada uno realmente celebra.",
+            "cultural_background": "El Año Nuevo Lunar se comparte pero se nombra y observa de manera diferente — 春节, 설날 (Seollal) — mientras que Japón pasó al Año Nuevo Gregoriano en 1873. El medio otoño aparece como 中秋节, Chuseok y Tsukimi con diferentes énfasis: reunión, ritos ancestrales y observación de la luna respectivamente.",
+            "why_it_matters": "El calendario lunar compartido crea una suposición de similitud que las observancias reales no respaldan.",
+            "how_to_read": "Lee a lo largo de una fila para comparar un elemento entre países; lee hacia abajo en una columna para un solo país de principio a fin."
+          }
+        }
       }
     }
   },
@@ -2842,6 +3461,64 @@
           "Póster vintage del Coliseo, 4K vertical.",
           "Póster vintage de las Pirámides de Guiza, 4K vertical."
         ]
+      },
+      "examples": {
+        "template-world-landmark-vintage-info-poster-colosseum": {
+          "attributes": {
+            "region": "Italia · Roma",
+            "period": "70–80 d.C.",
+            "tradition": "Coliseo",
+            "content_format": "Póster de información sobre monumentos"
+          },
+          "vertical": {
+            "what_it_is": "Un póster de información de estilo vintage para el Coliseo Romano.",
+            "cultural_background": "Un anfiteatro de 50,000 asientos financiado por los botines del Sitio de Jerusalén, con 80 entradas numeradas que podían despejar el edificio en minutos: el ancestro de los vomitorios modernos. El hipogeo debajo contenía ascensores y jaulas.",
+            "why_it_matters": "Aproximadamente dos tercios de la piedra original han desaparecido, extraída para la Roma renacentista: la ruina es una historia sobre reutilización, no solo sobre decadencia.",
+            "how_to_read": "Fechas, dimensiones y notas de construcción se encuentran junto a la ilustración para una referencia rápida."
+          }
+        },
+        "template-world-landmark-vintage-info-poster-petra": {
+          "attributes": {
+            "region": "Jordania · Ma'an",
+            "period": "Siglo IV a.C. – Siglo I d.C.",
+            "tradition": "Petra",
+            "content_format": "Póster de información sobre monumentos"
+          },
+          "vertical": {
+            "what_it_is": "Un póster de información de estilo vintage para Petra, la ciudad nabatea tallada en roca.",
+            "cultural_background": "Los nabateos tallaron fachadas directamente en la arenisca y, más importante aún, diseñaron presas, cisternas y tuberías de cerámica que hicieron viable un centro comercial en el desierto. Al-Khazneh es una fachada de tumba, no un tesoro.",
+            "why_it_matters": "La ingeniería hidráulica es el verdadero logro y la parte que la famosa fotografía de la fachada nunca muestra.",
+            "how_to_read": "Fechas, dimensiones y notas de construcción se encuentran junto a la ilustración para una referencia rápida."
+          }
+        },
+        "template-world-landmark-vintage-info-poster-great-wall": {
+          "attributes": {
+            "region": "China",
+            "period": "Siglo VII a.C. – Siglo XVII d.C.",
+            "tradition": "Gran Muralla",
+            "content_format": "Póster de información sobre monumentos"
+          },
+          "vertical": {
+            "what_it_is": "Un póster de información de estilo vintage para la Gran Muralla.",
+            "cultural_background": "No es una sola muralla, sino muchas, construidas y reconstruidas por estados sucesivos durante dos milenios; la mayor parte de lo que los visitantes ven es de ladrillo y piedra de la era Ming, mucho más tarde que las secciones de tierra apisonada de Qin.",
+            "why_it_matters": "La imagen de una muralla continua es la concepción errónea más persistente sobre ella, y el panel de datación es lo que la corrige.",
+            "how_to_read": "Fechas, dimensiones y notas de construcción se encuentran junto a la ilustración para una referencia rápida."
+          }
+        },
+        "template-world-landmark-vintage-info-poster-taj-mahal": {
+          "attributes": {
+            "region": "India · Agra",
+            "period": "1632–1653",
+            "tradition": "Taj Mahal",
+            "content_format": "Póster de información sobre monumentos"
+          },
+          "vertical": {
+            "what_it_is": "Un póster de información de estilo vintage para el Taj Mahal.",
+            "cultural_background": "Un mausoleo para Mumtaz Mahal, construido en mármol blanco incrustado con piedra semipreciosa pietra dura. Los cuatro minaretes se inclinan muy ligeramente hacia afuera para que caigan lejos de la tumba en un terremoto.",
+            "why_it_matters": "Es una tumba en lugar de un palacio, lo que cambia la forma en que se debe interpretar la simetría y el diseño del jardín.",
+            "how_to_read": "Fechas, dimensiones y notas de construcción se encuentran al lado de la ilustración para una referencia rápida."
+          }
+        }
       }
     }
   },
@@ -7737,6 +8414,48 @@
           "Genera una hoja de 6 logotipos para 'CATTÉ COFFEE 喵咖' — gato de dibujo lineal plano + taza de café, azul acogedor, crema y marrón café.",
           "Crea seis conceptos de logotipo para '北岳茶事' — montaña de dibujo lineal + hoja de té, minimalismo oriental tranquilo, verde salvia y negro tinta.",
           "Genera una hoja de exploración de logotipos para 'Bloom Botanicals' — monograma geométrico de pétalo de flor, rosa empolvado, dorado y ciruela intenso."
+        ]
+      }
+    }
+  },
+  "template-fruit-drink-scene-photography": {
+    "category": "Fotografía de Escena de Bebidas de Frutas",
+    "description": "Convierte una línea de descripción en una fotografía comercial de bebida vertical 3:4: una escena de comida minimalista con luz natural, un vaso en capas, una botella helada y un estilo de ingredientes frescos, todo en una paleta cohesiva. Listo para menús, listados de comercio electrónico, publicaciones sociales y presentaciones de marca.",
+    "title": "Nano Banana Prompt: Generador de Fotografía de Escena de Bebidas de Frutas | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una fotografía comercial de bebida vertical 3:4 de tu bebida en un estilo de fotografía de comida minimalista y con luz natural: un vaso en capas junto a una botella helada, estilizado con frutas frescas, flores o hojas de té, todo mantenido en una paleta cohesiva extraída de la propia bebida. Refleja el aspecto limpio y apetitoso de la publicidad de bebidas premium: luz direccional suave, sombras de hojas suaves, ingredientes reales y un fondo calmado de un mismo color.",
+        "who": "Hecho para marcas de bebidas y cafeterías, fundadores DTC de té / jugo / soda, estilistas de alimentos y vendedores de comercio electrónico que necesitan fotografía de bebida limpia y acorde a la marca para menús, listados y redes sociales, sin necesidad de reservar una sesión de estudio.",
+        "how": [
+          "Describe tu bebida en {drink_concept} (por ejemplo, '青提茉莉气泡饮' o 'leche de rosa con fresa').",
+          "La IA construye una escena de luz natural 3:4: un vaso en capas, una botella helada y ingredientes frescos a juego en una paleta.",
+          "Genera varios sabores para una línea de productos cohesiva, luego elige y refina tus favoritos."
+        ],
+        "prompts": [
+          "Bebida espumosa de uva verde jazmín — vaso en capas + botella helada, paleta verde menta, jazmín y hojas de té verde.",
+          "Leche de rosa con fresa — paleta de crema y rubor, fresas frescas, rosas rosas y capullos de rosa secos.",
+          "Té de fruta oolong de durazno — paleta de durazno cálido y caramelo, durazno en rodajas y hojas de oolong."
+        ]
+      }
+    }
+  },
+  "template-home-textiles-ecommerce": {
+    "category": "Fotografía de E-commerce de Textiles para el Hogar",
+    "description": "Convierte un producto de textil para el hogar en imágenes de e-commerce en un estudio blanco brillante: imágenes principales limpias más demostraciones de características (impermeable / transpirable), fotos de estilo de vida y primeros planos de la textura de la tela para protectores de colchón, toppers, almohadas y ropa de cama.",
+    "title": "Nano Banana Prompt: Generador de Fotografía de E-commerce de Textiles para el Hogar | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera imágenes de e-commerce de textiles para el hogar en un estudio blanco brillante y aireado: una imagen principal limpia más tomas de apoyo: una demostración de características (un líquido que forma gotas sobre una superficie impermeable), una foto de estilo de vida cómoda, un macro de textura de tela acolchada / de punto, y una presentación en pila doblada. Textura de tela fotorrealista, fiel a la vida, con luz diurna suave y uniforme, lista para listados en Amazon / Tmall / tiendas independientes.",
+        "who": "Hecho para marcas de textiles para el hogar y ropa de cama, vendedores DTC y operadores de mercado que necesitan imágenes de listados limpias y consistentes para protectores de colchón, toppers, almohadas, edredones y juegos de sábanas.",
+        "how": [
+          "Describe el artículo en {product} (por ejemplo, 'protector de colchón acolchado impermeable').",
+          "La IA crea una imagen principal limpia en un estudio blanco brillante más demostraciones de características, estilo de vida, textura y tomas en pila doblada.",
+          "Genera el conjunto completo para un SKU, luego reutiliza el estilo en tu catálogo."
+        ],
+        "prompts": [
+          "Protector de colchón acolchado impermeable — vertiendo a mano líquido azul que forma gotas sobre la superficie, estudio blanco brillante.",
+          "Toper de colchón acolchado refrescante — modelo relajado descansando sobre él, luz diurna suave, estilo de vida cómodo.",
+          "Protector de almohada de punto transpirable — macro de la textura de la capa de aire acolchada y la costura."
         ]
       }
     }

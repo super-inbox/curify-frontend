@@ -1435,12 +1435,12 @@
       },
       "usecases": {
         "title": "Für wen es gedacht ist",
-        "creatorsTitle": "Marken- & Verpackungsdesigner",
-        "creatorsBody": "Zeigen Sie Ihren Kunden eine fertige 3D-Box aus Ihrer flachen Dieline für eine schnelle Genehmigung – frontal, 45° oder Packshots mit Weiß-Hintergrund – ohne selbst eine 3D-Szene einrichten zu müssen.",
-        "educationTitle": "文创 / Geschenk- & 谷子 Marken",
-        "educationBody": "Verwandeln Sie Dielines für Geschenkboxen, Tee und Kulturprodukte in Produktseiten- und Promo-Mockups, die der tatsächlichen Boxform entsprechen.",
-        "businessTitle": "E-Commerce & Großbestellungen",
-        "businessBody": "Brauchen Sie Packshots für einen Katalog von SKUs? Wir bieten Dieline → Mockup als einen Rundum-Service für Sie an und können bearbeitbare 3D-Modelle hinzufügen."
+        "creatorsTitle": "Brand & packaging designers",
+        "creatorsBody": "Show clients a finished 3D box from your flat dieline for fast sign-off.",
+        "educationTitle": "文创 / gift & 谷子 brands",
+        "educationBody": "Turn gift-box, tea and cultural-product dielines into product-page and catalogue shots.",
+        "businessTitle": "DTC & e-commerce brands",
+        "businessBody": "Need pack shots across a catalogue of SKUs? Dieline → mockup is available as a bulk service."
       }
     }
   },
@@ -1450,7 +1450,48 @@
       "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
     },
     "title": "Explore three creative directions from one brief",
-    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing.",
+    "deep": {
+      "usecases": {
+        "title": "Warum kreative Richtungen zählen",
+        "creatorsTitle": "Für Designer und Studios",
+        "creatorsBody": "Kein leeres Blatt mehr. Erzeuge in Sekunden drei eigenständige, briefinggerechte Kreativrichtungen – Stimmung, Palette, Typografie und Komposition – und bring die, auf die dein Kunde reagiert, in die Produktion. Mehr Richtungen pro Stunde, schnellere Pitches.",
+        "educationTitle": "Für Gründer und DTC-Marken",
+        "educationBody": "Eine Marke benennen oder neu starten, ohne festen Designer? Mach aus einem Briefing in Alltagssprache drei professionelle visuelle Richtungen, vergleiche sie nebeneinander und gib die beste an dein Umsetzungsteam weiter – ohne Agentur-Retainer nur zum Ausprobieren.",
+        "businessTitle": "Für Marketing- und Event-Teams",
+        "businessBody": "Ein Kampagnen- oder Event-Briefing, drei sofort bewertbare Key-Visual-Richtungen. Stimme Stakeholder auf einen Look ab, bevor Budget fließt, und steuere die Richtungen mit den optionalen „Bevorzugen / Vermeiden“-Feldern zu deinen Markenrichtlinien."
+      },
+      "what": {
+        "title": "Was ist die Erkundung kreativer Richtungen?",
+        "p1": "Vor jedem finalen Design braucht eine Marke oder Kampagne eine Richtung – Stimmung, Palette, Typografie und Komposition, an denen sich alles andere orientiert. Die Erkundung kreativer Richtungen macht aus einem kurzen Briefing mehrere eigenständige Richtungen zur Auswahl, statt sich auf die erste Idee festzulegen.",
+        "p2": "Der Brand Direction Explorer nimmt ein Briefing in Alltagssprache (Marke oder Event, Zweck, gewünschtes Gefühl) und erzeugt in Sekunden drei wirklich unterschiedliche Richtungen. Jede ist ein konkreter, beschreibbarer Look – kein vages Adjektiv –, sodass du reagieren, vergleichen und wählen kannst.",
+        "p3": "Ein optionales Bevorzugen/Vermeiden lenkt die Richtungen zu deinem Geschmack oder deinen Markenrichtlinien, ohne sie zu überschränken; die drei bleiben auch bei starker Vorliebe unterscheidbar."
+      },
+      "how": {
+        "title": "So funktioniert der Brand Direction Explorer",
+        "p1": "Wähle ein Szenario – Café-Eröffnung, Tee-Marken-Erkundung, Event-Poster oder ein freies Briefing – und fülle ein paar Felder in Alltagssprache aus. Kein Design-Vokabular nötig.",
+        "p2": "Stufe eins läuft auf einem OpenAI-Modell, das das Briefing liest und drei eigenständige Kreativrichtungen schreibt, jede mit eigener Begründung für Stimmung, Palette, Typografie und Komposition. Ein Prüfschritt verwirft doppelte oder fast identische Richtungen und versucht es erneut.",
+        "p3": "Fügst du ein Bevorzugen/Vermeiden hinzu, wird es als explizite Vorgabe an den Prompt angehängt – das Briefing hat immer Vorrang, und die drei Richtungen müssen unterscheidbar bleiben –, sodass die Vorliebe den Look prägt, ohne die Bandbreite zusammenfallen zu lassen.",
+        "p4": "Stufe zwei verwandelt die gewählte Richtung in ein fertiges Visual (Gemini-gestützte Bildgenerierung), sodass Erkundung und Produktion in einem Fluss liegen.",
+        "p5": "Das Ergebnis ist ein schnellerer Weg vom Briefing zum abgestimmten Look: mehr Richtungen pro Stunde und abgestimmte Stakeholder, bevor Budget oder Produktionszeit fließen."
+      }
+    },
+    "cta": "Markenrichtungen erkunden",
+    "example": "Beispiel: ein Briefing zur Café-Eröffnung → drei eigenständige Richtungen (rustikal-warm, modern-gold, vintage-pastell), jede mit eigener Palette, Typografie und Komposition.",
+    "why": {
+      "title": "Warum zuerst Richtungen erkunden?",
+      "point1": "Drei eigenständige Optionen statt einer – du wählst aus einer Bandbreite, statt auf eine einzige Vermutung zu reagieren.",
+      "point2": "Briefing in Alltagssprache rein, professionelle visuelle Richtungen raus – kein Design-Vokabular nötig.",
+      "point3": "Optionales Bevorzugen/Vermeiden lenkt den Look zu deiner Marke, ohne die drei zu einer zusammenfallen zu lassen.",
+      "point4": "Erkundung und finales Visual in einem Fluss – die gewählte Richtung geht direkt in die Produktion."
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "q1": "Wie viele Richtungen bekomme ich?",
+      "a1": "Drei eigenständige Kreativrichtungen pro Briefing, jede mit eigener Stimmung, Palette, Typografie und Komposition. Ein Prüfschritt verwirft nahezu identische Richtungen und versucht es erneut.",
+      "q2": "Kann ich den Stil steuern?",
+      "a2": "Ja – das optionale Bevorzugen/Vermeiden fügt eine explizite Vorgabe hinzu. Das Briefing hat weiterhin Vorrang und die drei Richtungen bleiben unterscheidbar, sodass die Vorliebe den Look prägt, ohne deine Optionen einzuengen."
+    }
   },
   "topicWorkflows": {
     "runAll": "Run the whole workflow",
@@ -1502,13 +1543,13 @@
         "p5": "Everything is packaged with a spec sheet listing size, thickness, print, choke and cut values."
       },
       "usecases": {
-        "title": "Who uses this",
-        "creatorsTitle": "IP & 谷子 creators",
-        "creatorsBody": "Turn character art into standees and keychains without learning pre-press.",
-        "educationTitle": "Studios & agencies",
-        "educationBody": "Hand a factory a complete package instead of trading revisions over what is missing.",
-        "businessTitle": "Merch sellers",
-        "businessBody": "Quote faster: a factory can price a complete file set immediately."
+        "title": "Who it's for",
+        "creatorsTitle": "Designers & studios",
+        "creatorsBody": "Hand a factory a complete acrylic package — white plate, cutline and hole included — instead of trading revisions over what is missing.",
+        "educationTitle": "谷子 & merch operators",
+        "educationBody": "Turn character art into standees and keychains without learning pre-press, and quote the same day.",
+        "businessTitle": "DTC & IP brands",
+        "businessBody": "Order acrylic merch at volume with files a manufacturer can price immediately."
       }
     }
   },
@@ -1557,13 +1598,13 @@
         "p5": "Colour is converted to CMYK and everything is packaged with a spec sheet."
       },
       "usecases": {
-        "title": "Who uses this",
-        "creatorsTitle": "Artists & IP creators",
-        "creatorsBody": "Sell die-cut stickers without learning pre-press.",
-        "educationTitle": "Studios & agencies",
-        "educationBody": "Deliver print-ready files with the cutline already included.",
-        "businessTitle": "Merch sellers",
-        "businessBody": "Move from artwork to a printer quote in one step."
+        "title": "Who it's for",
+        "creatorsTitle": "Designers & studios",
+        "creatorsBody": "Deliver print-ready sticker files with the die-cut path already traced and offset.",
+        "educationTitle": "谷子 & merch operators",
+        "educationBody": "Go from artwork to a printer quote in one step, with CMYK and the cutline already handled.",
+        "businessTitle": "DTC & IP brands",
+        "businessBody": "Run sticker SKUs at volume without a designer in the loop for every variant."
       }
     }
   }

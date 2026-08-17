@@ -1568,12 +1568,12 @@
       },
       "usecases": {
         "title": "适合谁",
-        "creatorsTitle": "品牌 & 包装设计师",
-        "creatorsBody": "用平面刀版给客户看成品 3D 盒子、快速过稿——正面、45°、白底效果图——不用自己搭 3D 场景。",
-        "educationTitle": "文创 / 礼品 & 谷子品牌",
-        "educationBody": "把礼盒、茶叶、文创刀版变成贴合真实盒型的电商图和宣传样机。",
-        "businessTitle": "电商 & 批量下单",
-        "businessBody": "一整批 SKU 要出图？我们提供刀版 → 样机的代做 / 批量服务，还能加可编辑 3D 模型。"
+        "creatorsTitle": "Brand & packaging designers",
+        "creatorsBody": "Show clients a finished 3D box from your flat dieline for fast sign-off.",
+        "educationTitle": "文创 / gift & 谷子 brands",
+        "educationBody": "Turn gift-box, tea and cultural-product dielines into product-page and catalogue shots.",
+        "businessTitle": "DTC & e-commerce brands",
+        "businessBody": "Need pack shots across a catalogue of SKUs? Dieline → mockup is available as a bulk service."
       }
     }
   },
@@ -1744,7 +1744,48 @@
       "description": "用一句话描述品牌或活动，从三个预置创意方向中挑一个，直接生成对应的视觉方案。无需编写提示词。"
     },
     "title": "一句话简报，三个创意方向",
-    "description": "用一句话描述品牌或活动，从三个预置创意方向中挑一个，直接生成对应视觉方案。无需编写提示词。"
+    "description": "用一句话描述品牌或活动，从三个预置创意方向中挑一个，直接生成对应视觉方案。无需编写提示词。",
+    "deep": {
+      "usecases": {
+        "title": "创意方向的价值所在",
+        "creatorsTitle": "面向设计师与工作室",
+        "creatorsBody": "告别空白画布。几秒内生成三个符合 brief、彼此不同的创意方向——氛围、配色、字体与构图——把客户最有反应的那一个直接推进生产。单位时间探索更多方向，提案更快。",
+        "educationTitle": "面向创始人与 DTC 品牌",
+        "educationBody": "没有专职设计师，也要给品牌命名或焕新？把一句话 brief 变成三个专业视觉方向，并排对比，再把选定的方向交给执行方——无需签约代理商就能探索选项。",
+        "businessTitle": "面向市场与活动团队",
+        "businessBody": "一份活动或 campaign brief，三个可直接评估的主视觉方向。在投入预算前先对齐风格，并可用可选的「偏好 / 避免」控件，把方向引导到品牌规范上。"
+      },
+      "what": {
+        "title": "什么是创意方向探索？",
+        "p1": "在最终稿之前，品牌或活动需要先有一个方向——氛围、配色、字体与构图，其余一切都随之而来。创意方向探索把一句话 brief 变成几个彼此不同的方向供你选择，而不是一上来就锁定第一个想法。",
+        "p2": "品牌方向探索器接收平实语言的 brief（品牌或活动、用途、想要的感觉），几秒内生成三个真正不同的方向。每个都是具体、可描述的视觉，而非模糊的形容词，方便你做出反应、对比、选择。",
+        "p3": "可选的「偏好 / 避免」输入让你把方向引导到自己的品味或品牌规范上，又不至于过度约束；即便偏好很强，三个方向仍保持差异。"
+      },
+      "how": {
+        "title": "品牌方向探索器如何工作",
+        "p1": "选择一个场景——咖啡店开业、茶品牌探索、活动海报，或自由 brief——用平实语言填几个字段，无需任何设计术语。",
+        "p2": "第一阶段由 OpenAI 模型读取 brief，写出三个彼此不同的创意方向，各自带有氛围、配色、字体与构图的说明。一个校验环节会剔除重复或高度相似的方向并重试。",
+        "p3": "若加入「偏好 / 避免」，它会作为明确指引附加到提示词中——brief 始终优先，且三个方向必须保持差异——因此偏好会塑造视觉，却不会让方向趋同。",
+        "p4": "第二阶段把你选定的方向变成成品视觉（基于 Gemini 的图像生成），让探索与生产在同一条流程里完成。",
+        "p5": "结果是从 brief 到确定风格的更快路径：单位时间探索更多方向，并在投入预算或制作前先对齐相关方。"
+      }
+    },
+    "cta": "探索品牌方向",
+    "example": "示例：一份咖啡店开业 brief → 三个不同方向（质朴暖调、现代金色、复古粉彩），各有自己的配色、字体与构图。",
+    "why": {
+      "title": "为什么先探索方向？",
+      "point1": "三个不同选项，而非一个——你在一组方案里挑选，而不是对着单一猜测做反应。",
+      "point2": "输入平实语言的 brief，产出专业视觉方向——无需任何设计术语。",
+      "point3": "可选的「偏好 / 避免」把视觉引向你的品牌，又不会让三个方向趋同。",
+      "point4": "探索与成品视觉在同一条流程里，你选定的方向可直接进入生产。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "q1": "我能得到几个方向？",
+      "a1": "每份 brief 三个不同的创意方向，各有自己的氛围、配色、字体与构图。一个校验环节会剔除高度相似的方向并重试。",
+      "q2": "我能引导风格吗？",
+      "a2": "可以——可选的「偏好 / 避免」会加入明确指引。brief 仍然优先，三个方向保持差异，因此偏好塑造视觉，却不会缩小你的选项。"
+    }
   },
   "acrylicFactoryExport": {
     "metadata": {
@@ -1791,13 +1832,13 @@
         "p5": "Everything is packaged with a spec sheet listing size, thickness, print, choke and cut values."
       },
       "usecases": {
-        "title": "Who uses this",
-        "creatorsTitle": "IP & 谷子 creators",
-        "creatorsBody": "Turn character art into standees and keychains without learning pre-press.",
-        "educationTitle": "Studios & agencies",
-        "educationBody": "Hand a factory a complete package instead of trading revisions over what is missing.",
-        "businessTitle": "Merch sellers",
-        "businessBody": "Quote faster: a factory can price a complete file set immediately."
+        "title": "Who it's for",
+        "creatorsTitle": "Designers & studios",
+        "creatorsBody": "Hand a factory a complete acrylic package — white plate, cutline and hole included — instead of trading revisions over what is missing.",
+        "educationTitle": "谷子 & merch operators",
+        "educationBody": "Turn character art into standees and keychains without learning pre-press, and quote the same day.",
+        "businessTitle": "DTC & IP brands",
+        "businessBody": "Order acrylic merch at volume with files a manufacturer can price immediately."
       }
     }
   },
@@ -1846,13 +1887,13 @@
         "p5": "Colour is converted to CMYK and everything is packaged with a spec sheet."
       },
       "usecases": {
-        "title": "Who uses this",
-        "creatorsTitle": "Artists & IP creators",
-        "creatorsBody": "Sell die-cut stickers without learning pre-press.",
-        "educationTitle": "Studios & agencies",
-        "educationBody": "Deliver print-ready files with the cutline already included.",
-        "businessTitle": "Merch sellers",
-        "businessBody": "Move from artwork to a printer quote in one step."
+        "title": "Who it's for",
+        "creatorsTitle": "Designers & studios",
+        "creatorsBody": "Deliver print-ready sticker files with the die-cut path already traced and offset.",
+        "educationTitle": "谷子 & merch operators",
+        "educationBody": "Go from artwork to a printer quote in one step, with CMYK and the cutline already handled.",
+        "businessTitle": "DTC & IP brands",
+        "businessBody": "Run sticker SKUs at volume without a designer in the loop for every variant."
       }
     }
   }

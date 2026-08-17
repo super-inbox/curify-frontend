@@ -279,6 +279,64 @@
           "Create an exhibition board for 'blue dyeing' intangible heritage: dye sources, key points of tie-dyeing/wax dyeing, step-by-step process, common patterns and symbols, contemporary fashion applications, 3:4.",
           "Generate an exhibition board for 'woodblock New Year paintings': carving/printing process, color system, representative themes, cases of inheritance and modern design integration, clear Chinese modules, 3:4."
         ]
+      },
+      "examples": {
+        "template-intangible-heritage-paper-cutting": {
+          "attributes": {
+            "region": "China",
+            "period": "Traditional to present",
+            "tradition": "Chinese paper-cutting (剪纸)",
+            "content_format": "Craft process poster"
+          },
+          "vertical": {
+            "what_it_is": "A process poster for Chinese paper-cutting, from folding to the finished symmetrical design.",
+            "cultural_background": "Practised for some 1,500 years since paper became affordable, and overwhelmingly by women in rural households. Red paper dominates for festivals; motifs are rebus-based, so a bat (蝠 fú) reads as fortune (福 fú).",
+            "why_it_matters": "Inscribed by UNESCO in 2009. The rebus logic is the part usually lost in translation — the designs are read, not just looked at.",
+            "how_to_read": "The panels follow the making in order; the caption names the tools and materials at each step."
+          }
+        },
+        "template-intangible-heritage-cloisonne": {
+          "attributes": {
+            "region": "China",
+            "period": "Traditional to present",
+            "tradition": "Cloisonné (景泰蓝)",
+            "content_format": "Craft process poster"
+          },
+          "vertical": {
+            "what_it_is": "A process poster for cloisonné enamelwork, from wire-laying to polishing.",
+            "cultural_background": "Copper wires are bent and fixed to a body to form cells, which are filled with enamel paste, fired repeatedly as the enamel sinks, then ground flat and gilded. The Chinese name 景泰蓝 refers to the Jingtai reign whose blue is definitive.",
+            "why_it_matters": "It is a useful counter to 'ancient craft' framing: cloisonné arrived in China via the Islamic world and became Chinese through several centuries of adaptation.",
+            "how_to_read": "The panels follow the making in order; the caption names the tools and materials at each step."
+          }
+        },
+        "template-intangible-heritage-lion-dance": {
+          "attributes": {
+            "region": "China",
+            "period": "Traditional to present",
+            "tradition": "Lion dance (舞狮)",
+            "content_format": "Craft process poster"
+          },
+          "vertical": {
+            "what_it_is": "A poster on lion dance — the two main regional styles and what the movements mean.",
+            "cultural_background": "Northern lion dance is acrobatic and family-based; southern (Cantonese) lion dance is martial, tied to kung fu schools, and culminates in 采青 — 'plucking the greens', seizing a lettuce bundle with a red packet.",
+            "why_it_matters": "Northern and southern styles are routinely conflated abroad, though the costumes, music and meaning differ substantially.",
+            "how_to_read": "The panels follow the making in order; the caption names the tools and materials at each step."
+          }
+        },
+        "template-intangible-heritage-woodblock-new-year-paintings": {
+          "attributes": {
+            "region": "China",
+            "period": "Traditional to present",
+            "tradition": "Woodblock New Year prints (年画)",
+            "content_format": "Craft process poster"
+          },
+          "vertical": {
+            "what_it_is": "A process poster for nianhua woodblock New Year prints.",
+            "cultural_background": "Each colour needs its own carved block, registered by hand. Door gods, chubby children and granary scenes recur; the prints were pasted up at New Year and replaced annually, so they were designed to be disposable.",
+            "why_it_matters": "Because they were consumables rather than art objects, few early examples survive — the craft is better documented than its output.",
+            "how_to_read": "The panels follow the making in order; the caption names the tools and materials at each step."
+          }
+        }
       }
     }
   },
@@ -408,6 +466,78 @@
           "Create a retro infographic on 'Sword of Goujian': four quadrants explaining craftsmanship features, historical background, discovery story, contemporary cultural influence, retro paper texture, 3:4.",
           "Generate an infographic on 'Tang Sancai Camel Figurine': artistic style, trade/Silk Road connections, archaeological value, modern aesthetic influence, four-quadrant structure, 3:4."
         ]
+      },
+      "examples": {
+        "template-cultural-relic-retro-infographic-simu-wu-ding": {
+          "attributes": {
+            "region": "China · Anyang, Henan",
+            "period": "Shang dynasty, c. 1200 BCE",
+            "tradition": "Ritual bronzes",
+            "content_format": "Artefact reference poster"
+          },
+          "vertical": {
+            "what_it_is": "A reference poster for the Houmuwu ding (后母戊鼎, formerly Simuwu ding) — the heaviest surviving ancient Chinese bronze, at 832 kg.",
+            "cultural_background": "Cast around 1200 BCE for a Shang queen, its inscription names 后母戊 ('Queen Mother Wu'). Producing it required an estimated thousand-plus workers across ore, alloy, mould and pour — a piece-mould process the Shang had refined far beyond anything contemporary elsewhere.",
+            "why_it_matters": "The ding was a ritual vessel and a statement of authority; the phrase 问鼎 ('to ask about the ding') still means to make a bid for power. It is one of China's first-class protected artefacts and may not leave the country.",
+            "how_to_read": "The poster gives dimensions and mass alongside the casting method and the inscription, so the object's scale and its making are read together."
+          }
+        },
+        "template-cultural-relic-retro-infographic-terracotta-warriors": {
+          "attributes": {
+            "region": "China · Lintong, Shaanxi",
+            "period": "Qin dynasty, 210 BCE",
+            "tradition": "Chinese antiquities",
+            "content_format": "Artefact reference poster"
+          },
+          "vertical": {
+            "what_it_is": "A reference poster for the Terracotta Army guarding the tomb of Qin Shi Huang.",
+            "cultural_background": "Roughly 8,000 figures, each with an individualised head assembled from moulded parts, mass-produced by workshops that stamped their foreman's name on the work — an early accountability system. They were originally painted in bright lacquer pigments that flake within minutes of excavation.",
+            "why_it_matters": "The pigment loss is why much of the site is deliberately left unexcavated: the technology to preserve the colour does not yet exist.",
+            "how_to_read": "Dimensions and dating sit alongside the making and the find context, so scale and technique are read together."
+          }
+        },
+        "template-cultural-relic-retro-infographic-dunhuang-mogao-grottoes": {
+          "attributes": {
+            "region": "China · Dunhuang, Gansu",
+            "period": "4th–14th century",
+            "tradition": "Chinese antiquities",
+            "content_format": "Artefact reference poster"
+          },
+          "vertical": {
+            "what_it_is": "A reference poster for the Mogao Caves — 492 painted cave temples on the Silk Road.",
+            "cultural_background": "Cut over a thousand years at a Silk Road junction, the caves hold some 45,000 m² of murals. The sealed Library Cave, opened in 1900, yielded around 50,000 manuscripts including the Diamond Sutra of 868 CE, the earliest dated printed book.",
+            "why_it_matters": "Most of the Library Cave material now sits in London, Paris and St Petersburg — Mogao is a case study in how heritage gets dispersed.",
+            "how_to_read": "Dimensions and dating sit alongside the making and the find context, so scale and technique are read together."
+          }
+        },
+        "template-cultural-relic-retro-infographic-yuewang-goujian-sword": {
+          "attributes": {
+            "region": "China · Hubei",
+            "period": "Spring and Autumn period, c. 500 BCE",
+            "tradition": "Chinese antiquities",
+            "content_format": "Artefact reference poster"
+          },
+          "vertical": {
+            "what_it_is": "A reference poster for the Sword of Goujian, King of Yue — untarnished after 2,500 years.",
+            "cultural_background": "Recovered from a waterlogged tomb in 1965 still sharp enough to cut paper. Its resistance to corrosion comes from a high-tin edge, a tougher low-tin core, and a sulphide surface layer, plus the anaerobic burial conditions.",
+            "why_it_matters": "It is the standard example of Bronze Age Chinese metallurgy being far more sophisticated than a single-alloy model suggests.",
+            "how_to_read": "Dimensions and dating sit alongside the making and the find context, so scale and technique are read together."
+          }
+        },
+        "template-cultural-relic-retro-infographic-longmen-grottoes": {
+          "attributes": {
+            "region": "China · Luoyang, Henan",
+            "period": "Northern Wei to Tang, 493–1127",
+            "tradition": "Chinese antiquities",
+            "content_format": "Artefact reference poster"
+          },
+          "vertical": {
+            "what_it_is": "A reference poster for the Longmen Grottoes — over 100,000 Buddhist statues cut into limestone cliffs.",
+            "cultural_background": "Carving began when the Northern Wei moved their capital to Luoyang in 493 and continued for six centuries. The style shifts visibly from the elongated, austere Wei figures to the fuller, more naturalistic Tang ones, most famously the 17-metre Vairocana Buddha.",
+            "why_it_matters": "Because the dating is secure across a long span, Longmen functions as a reference sequence for Chinese Buddhist sculpture.",
+            "how_to_read": "Dimensions and dating sit alongside the making and the find context, so scale and technique are read together."
+          }
+        }
       }
     }
   },
@@ -491,6 +621,76 @@
             "learning_objective": "Understand Xiaoman (小满), the 8th of China's 24 solar terms, and what it signals in the farming calendar and everyday life.",
             "includes": "The term's name and pinyin, its date window, the phenology (summer grains begin to plump), seasonal customs and foods, and a themed illustration.",
             "background": "Xiaoman means 'Grain Buds' or 'Small Fullness' — around 21 May, when summer grains start to fill out but are not yet ripe. It captures the Chinese ideal of gradual, unhurried abundance rather than a sudden peak."
+          }
+        },
+        "template-solar-term-dongzhi": {
+          "attributes": {
+            "region": "China",
+            "period": "Han dynasty to present",
+            "tradition": "24 solar terms (二十四节气)",
+            "content_format": "Seasonal information card"
+          },
+          "vertical": {
+            "what_it_is": "An illustrated card for 冬至 (Dōngzhì, Winter Solstice) — the shortest day of the year and the 22nd of the 24 solar terms.",
+            "cultural_background": "The solar terms divide the year by the sun's position, not the moon, which is why they track the agricultural year so closely. Dongzhi was significant enough that the phrase 冬至大如年 — 'the Winter Solstice is as big as New Year' — survives today. Northern China eats dumplings; the south eats 汤圆.",
+            "why_it_matters": "UNESCO inscribed the 24 solar terms as Intangible Cultural Heritage in 2016. They remain in daily use in Chinese weather talk, food seasonality and traditional medicine — a working calendar, not a museum piece.",
+            "how_to_read": "The card pairs the term's date and solar position with its customary foods and the seasonal signs traditionally associated with it."
+          }
+        },
+        "template-solar-term-chunfen": {
+          "attributes": {
+            "region": "China",
+            "period": "Han dynasty to present",
+            "tradition": "24 solar terms (二十四节气)",
+            "content_format": "Seasonal information card"
+          },
+          "vertical": {
+            "what_it_is": "An illustrated card for the Spring Equinox, the 4th of the 24 solar terms.",
+            "cultural_background": "Day and night are equal; the term marks the point when spring ploughing begins in earnest across the Yellow River basin. Customs include standing an egg on end and flying kites.",
+            "why_it_matters": "The solar terms were inscribed by UNESCO as Intangible Cultural Heritage in 2016 and remain in daily use in food seasonality and traditional medicine.",
+            "how_to_read": "The card pairs the term's date and solar position with its customary foods and seasonal markers."
+          }
+        },
+        "template-solar-term-qingming": {
+          "attributes": {
+            "region": "China",
+            "period": "Han dynasty to present",
+            "tradition": "24 solar terms (二十四节气)",
+            "content_format": "Seasonal information card"
+          },
+          "vertical": {
+            "what_it_is": "An illustrated card for Qingming, both a solar term and China's tomb-sweeping festival.",
+            "cultural_background": "The only solar term that is also a public holiday. Families clean ancestral graves and burn offerings; it is also when green qingtuan are eaten and the weather turns reliably warm enough for planting.",
+            "why_it_matters": "It shows the solar terms are not purely agricultural — they carry ritual obligation as well as a farming calendar.",
+            "how_to_read": "The card pairs the term's date and solar position with its customary foods and seasonal markers."
+          }
+        },
+        "template-solar-term-lichun": {
+          "attributes": {
+            "region": "China",
+            "period": "Han dynasty to present",
+            "tradition": "24 solar terms (二十四节气)",
+            "content_format": "Seasonal information card"
+          },
+          "vertical": {
+            "what_it_is": "An illustrated card for Lichun, the first of the 24 solar terms.",
+            "cultural_background": "Lichun opens the agricultural year around 4 February. The 打春牛 rite — striking a clay ox — was performed by officials to mark the start of ploughing, a state ceremony as much as a folk one.",
+            "why_it_matters": "Being first, it anchors the whole cycle; the traditional new year was reckoned from here rather than from the lunar new year.",
+            "how_to_read": "The card pairs the term's date and solar position with its customary foods and seasonal markers."
+          }
+        },
+        "template-solar-term-daxue": {
+          "attributes": {
+            "region": "China",
+            "period": "Han dynasty to present",
+            "tradition": "24 solar terms (二十四节气)",
+            "content_format": "Seasonal information card"
+          },
+          "vertical": {
+            "what_it_is": "An illustrated card for Daxue, the 21st solar term.",
+            "cultural_background": "Named for the point when snow is expected to become heavy in northern China. Traditional practice turns to food preservation — curing meat, pickling vegetables — and to warming foods in Chinese dietary theory.",
+            "why_it_matters": "The terms are calibrated to the Yellow River basin, which is why the snow names read oddly in subtropical southern China — a useful reminder that the calendar has a specific geography.",
+            "how_to_read": "The card pairs the term's date and solar position with its customary foods and seasonal markers."
           }
         }
       }
@@ -691,6 +891,93 @@
           "Create a ginkgo tree popular science infographic: the main subject is a complete plant illustration, modules include classification, leaf characteristics, growth environment, historical significance, and application value, clear layout.",
           "Generate a monarch butterfly knowledge card: realistic illustration centered, surrounding information includes life cycle, migration route, food sources, and conservation information, suitable for educational dissemination."
         ]
+      },
+      "examples": {
+        "template-species-science-red-crowned-crane": {
+          "attributes": {
+            "grade_band": "Upper primary to adult",
+            "age_range": "9+",
+            "subject": "Biology · conservation",
+            "skill": "Reference",
+            "resource_type": "Species information card",
+            "duration_min": "5 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Identify the red-crowned crane and understand its migration and conservation status.",
+            "includes": "A scientific illustration with the binomial name, size, range, habitat, diet and IUCN status.",
+            "background": "Grus japonensis numbers roughly 3,000 birds. The mainland population migrates between north-east China and the Korean peninsula; the Hokkaido population is resident. The red crown is bare skin, not feather. It is a long-standing emblem of longevity in Chinese and Japanese art."
+          }
+        },
+        "template-species-science-giant-panda": {
+          "attributes": {
+            "grade_band": "Upper primary to adult",
+            "age_range": "9+",
+            "subject": "Biology · conservation",
+            "skill": "Reference",
+            "resource_type": "Species information card",
+            "duration_min": "5 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Identify the giant panda and understand why an animal with a carnivore's gut eats almost only bamboo.",
+            "includes": "A scientific illustration with the binomial name, size, range, habitat, diet and IUCN status.",
+            "background": "Ailuropoda melanoleuca retains a short carnivore digestive tract, so it extracts little energy from bamboo and compensates by eating 12–38 kg a day and moving slowly. The 'pseudo-thumb' is an enlarged wrist bone, not a digit. Downlisted from Endangered to Vulnerable in 2016."
+          }
+        },
+        "template-species-science-ginkgo-tree": {
+          "attributes": {
+            "grade_band": "Upper primary to adult",
+            "age_range": "9+",
+            "subject": "Biology · conservation",
+            "skill": "Reference",
+            "resource_type": "Species information card",
+            "duration_min": "5 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Identify ginkgo and understand why it is called a living fossil.",
+            "includes": "A scientific illustration with the binomial name, size, range, habitat, diet and IUCN status.",
+            "background": "Ginkgo biloba is the sole survivor of an order that was widespread 200 million years ago, with fossil leaves near-identical to modern ones. It is dioecious; only female trees produce the foul-smelling seed coat. Several ginkgos survived the Hiroshima bombing and still stand."
+          }
+        },
+        "template-species-science-green-peafowl": {
+          "attributes": {
+            "grade_band": "Upper primary to adult",
+            "age_range": "9+",
+            "subject": "Biology · conservation",
+            "skill": "Reference",
+            "resource_type": "Species information card",
+            "duration_min": "5 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Identify the green peafowl and distinguish it from the far commoner blue peafowl.",
+            "includes": "A scientific illustration with the binomial name, size, range, habitat, diet and IUCN status.",
+            "background": "Pavo muticus is Endangered, with perhaps a few hundred left in China. It differs from the familiar Indian blue peafowl in its green-scaled neck, upright crest tuft and larger size — the two are routinely confused, which obscures how rare this one is."
+          }
+        },
+        "template-species-science-hawksbill": {
+          "attributes": {
+            "grade_band": "Upper primary to adult",
+            "age_range": "9+",
+            "subject": "Biology · conservation",
+            "skill": "Reference",
+            "resource_type": "Species information card",
+            "duration_min": "5 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Identify the hawksbill sea turtle and understand why its shell drove it to Critically Endangered status.",
+            "includes": "A scientific illustration with the binomial name, size, range, habitat, diet and IUCN status.",
+            "background": "Eretmochelys imbricata has overlapping scutes that were the source of commercial 'tortoiseshell'. Trade is banned under CITES but persists. It feeds largely on sponges, which shapes reef community structure — its decline changes the reef, not just its own numbers."
+          }
+        }
       }
     }
   },
@@ -1832,6 +2119,110 @@
           "Cuisine learning poster with food names.",
           "Food vocabulary for language learning."
         ]
+      },
+      "examples": {
+        "template-cuisine-food-vocab-poster-japan": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "All ages",
+            "subject": "Japanese food vocabulary",
+            "skill": "Vocabulary",
+            "resource_type": "Illustrated vocabulary poster",
+            "duration_min": "10 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–JA"
+          },
+          "vertical": {
+            "learning_objective": "Recognise and name common Japanese dishes and ingredients in Japanese and English, with the illustration carrying the meaning so no translation step is needed.",
+            "includes": "An illustrated poster of Japanese dishes, each labelled with its Japanese name, romaji reading and English gloss.",
+            "background": "Food vocabulary is unusually efficient for beginners: the words are concrete, immediately useful, and attached to something you can point at. Japanese dish names also carry structure worth noticing early — 丼 (donburi, rice bowl) and 焼き (yaki, grilled) recur across many dishes, so learning a few heads unlocks whole families of words."
+          }
+        },
+        "template-cuisine-food-vocab-poster-thai": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "All ages",
+            "subject": "Thai food vocabulary",
+            "skill": "Vocabulary",
+            "resource_type": "Illustrated vocabulary poster",
+            "duration_min": "10 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–TH"
+          },
+          "vertical": {
+            "learning_objective": "Recognise and name common Thai dishes and ingredients, with the illustration carrying the meaning so no translation step is needed.",
+            "includes": "An illustrated poster of Thai dishes, each labelled with its name in the source language, a reading, and an English gloss.",
+            "background": "Thai dish names are often descriptive compounds — tom (boil), yam (salad), phat (stir-fry) — so learning a handful of cooking-method words decodes most of a menu."
+          }
+        },
+        "template-cuisine-food-vocab-poster-korea": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "All ages",
+            "subject": "Korean food vocabulary",
+            "skill": "Vocabulary",
+            "resource_type": "Illustrated vocabulary poster",
+            "duration_min": "10 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–KO"
+          },
+          "vertical": {
+            "learning_objective": "Recognise and name common Korean dishes and ingredients, with the illustration carrying the meaning so no translation step is needed.",
+            "includes": "An illustrated poster of Korean dishes, each labelled with its name in the source language, a reading, and an English gloss.",
+            "background": "Korean dish names frequently end in the method: -guk (soup), -jjigae (stew), -bokkeum (stir-fry), -jeon (pan-fried). The suffix tells you the dish's form before you know the ingredient."
+          }
+        },
+        "template-cuisine-food-vocab-poster-vietnam": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "All ages",
+            "subject": "Vietnamese food vocabulary",
+            "skill": "Vocabulary",
+            "resource_type": "Illustrated vocabulary poster",
+            "duration_min": "10 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–VI"
+          },
+          "vertical": {
+            "learning_objective": "Recognise and name common Vietnamese dishes and ingredients, with the illustration carrying the meaning so no translation step is needed.",
+            "includes": "An illustrated poster of Vietnamese dishes, each labelled with its name in the source language, a reading, and an English gloss.",
+            "background": "Vietnamese menu items are usually noun-plus-modifier — bún (rice vermicelli), phở (flat rice noodle), bánh (a broad category of cakes, breads and wrappers) — so the first word narrows the format."
+          }
+        },
+        "template-cuisine-food-vocab-poster-mexico": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "All ages",
+            "subject": "Mexican food vocabulary",
+            "skill": "Vocabulary",
+            "resource_type": "Illustrated vocabulary poster",
+            "duration_min": "10 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–ES"
+          },
+          "vertical": {
+            "learning_objective": "Recognise and name common Mexican dishes and ingredients, with the illustration carrying the meaning so no translation step is needed.",
+            "includes": "An illustrated poster of Mexican dishes, each labelled with its name in the source language, a reading, and an English gloss.",
+            "background": "Mexican dish names often name the vessel or the fold rather than the filling: taco, tlacoyo, sope, huarache. The word tells you the shape of the masa, and the filling varies freely."
+          }
+        },
+        "template-cuisine-food-vocab-poster-beijing": {
+          "attributes": {
+            "grade_band": "General",
+            "age_range": "All ages",
+            "subject": "Beijing regional Chinese food vocabulary",
+            "skill": "Vocabulary",
+            "resource_type": "Illustrated vocabulary poster",
+            "duration_min": "10 min",
+            "difficulty": "Beginner",
+            "language_mode": "Bilingual EN–ZH"
+          },
+          "vertical": {
+            "learning_objective": "Recognise and name common Beijing regional Chinese dishes and ingredients, with the illustration carrying the meaning so no translation step is needed.",
+            "includes": "An illustrated poster of Beijing regional Chinese dishes, each labelled with its name in the source language, a reading, and an English gloss.",
+            "background": "Beijing dish names lean on cooking method and place of origin — 烤 (roast), 涮 (rinse-boil), 炸酱 (fried sauce) — and several are tied to specific historic restaurants, which is part of the vocabulary."
+          }
+        }
       }
     }
   },
@@ -1938,6 +2329,78 @@
           "Korean traditional dress history infographic across dynasties.",
           "French fashion evolution from medieval to contemporary styles."
         ]
+      },
+      "examples": {
+        "template-clothing-evolution-poster-chinese": {
+          "attributes": {
+            "region": "China",
+            "period": "Zhou to Ming dynasty",
+            "tradition": "Hanfu (汉服)",
+            "content_format": "Evolution timeline poster"
+          },
+          "vertical": {
+            "what_it_is": "A timeline of Han Chinese dress across dynasties — silhouette, collar, sleeve and waistline.",
+            "cultural_background": "Hanfu is a family of forms, not one garment. The cross-collar closing left over right (交领右衽) persists throughout, while proportion shifts sharply: the high-waisted Tang ruqun, the restrained Song, the broad-sleeved Ming with its stand collar.",
+            "why_it_matters": "The hanfu revival has made period accuracy publicly contested, so separating the eras is more useful than one generic 'traditional Chinese dress'.",
+            "how_to_read": "Each panel is one period; compare collar, sleeve and waistline across panels to see what actually changed."
+          }
+        },
+        "template-clothing-evolution-poster-japanese": {
+          "attributes": {
+            "region": "Japan",
+            "period": "Heian to Meiji",
+            "tradition": "Kimono",
+            "content_format": "Evolution timeline poster"
+          },
+          "vertical": {
+            "what_it_is": "A timeline of Japanese dress from Heian court layering to the modern kimono silhouette.",
+            "cultural_background": "The Heian jūnihitoe layered up to twelve robes, judged on the colour gradients at collar and sleeve. The kosode beneath it gradually became outerwear and by Edo was the kimono proper; the obi widened as the garment simplified.",
+            "why_it_matters": "What reads today as 'timeless' is a late stage of a long simplification — the modern kimono is closer to Edo than to Heian.",
+            "how_to_read": "Each panel is one period; compare collar, sleeve and waistline across panels to see what actually changed."
+          }
+        },
+        "template-clothing-evolution-poster-korean": {
+          "attributes": {
+            "region": "Korea",
+            "period": "Goguryeo to Joseon",
+            "tradition": "Hanbok",
+            "content_format": "Evolution timeline poster"
+          },
+          "vertical": {
+            "what_it_is": "A timeline of Korean dress showing the shift to the high-waisted jeogori-and-chima silhouette.",
+            "cultural_background": "Goguryeo tomb murals show a fitted jacket and trousers for both sexes. Across Joseon the women's jeogori rose and shortened dramatically while the chima widened, producing the bell silhouette now read as definitive.",
+            "why_it_matters": "The proportions people picture as classic hanbok are specifically late Joseon — the earlier forms look very different.",
+            "how_to_read": "Each panel is one period; compare collar, sleeve and waistline across panels to see what actually changed."
+          }
+        },
+        "template-clothing-evolution-poster-indian": {
+          "attributes": {
+            "region": "India",
+            "period": "Maurya to Mughal",
+            "tradition": "Draped garments · sari",
+            "content_format": "Evolution timeline poster"
+          },
+          "vertical": {
+            "what_it_is": "A timeline of Indian dress from unstitched draping to Mughal-era tailoring.",
+            "cultural_background": "Early Indian dress was overwhelmingly unstitched — antariya, uttariya, kayabandh — with the drape doing the work of tailoring. Central Asian and Persian influence under the Mughals introduced stitched forms: angarkha, churidar, and the structured jama.",
+            "why_it_matters": "The stitched/unstitched distinction is the real axis of change here, and it maps onto contact and conquest rather than fashion alone.",
+            "how_to_read": "Each panel is one period; compare collar, sleeve and waistline across panels to see what actually changed."
+          }
+        },
+        "template-clothing-evolution-poster-egyptian": {
+          "attributes": {
+            "region": "Egypt",
+            "period": "Old Kingdom to Ptolemaic",
+            "tradition": "Linen dress",
+            "content_format": "Evolution timeline poster"
+          },
+          "vertical": {
+            "what_it_is": "A timeline of ancient Egyptian dress across three millennia of remarkably stable form.",
+            "cultural_background": "Linen dominated because flax grew in the Nile valley and wool was ritually restricted in temples. The men's schenti kilt and women's kalasiris changed slowly; pleating, transparency and jewellery carried status more than cut did.",
+            "why_it_matters": "It is a useful counter-example: dress history is usually taught as constant change, and Egypt shows what several thousand years of continuity looks like.",
+            "how_to_read": "Each panel is one period; compare collar, sleeve and waistline across panels to see what actually changed."
+          }
+        }
       }
     }
   },
@@ -2470,6 +2933,76 @@
           "Create a key concepts infographic for Leonardo da Vinci — watercolor style portrait, grid layout of his art, science, and invention principles with icons and descriptions.",
           "Design a principles poster for Sun Tzu — watercolor portrait with scroll, grid of 6 Art of War strategies with bullet points, minimalist layout, 4K vertical format."
         ]
+      },
+      "examples": {
+        "template-figure-principles-infographic-marie-curie": {
+          "attributes": {
+            "grade_band": "Secondary to adult",
+            "age_range": "13+",
+            "subject": "History of science and ideas",
+            "skill": "Comprehension",
+            "resource_type": "Principles infographic",
+            "duration_min": "8 min",
+            "difficulty": "Intermediate",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Understand the working principles behind Curie's research — measure the property, not just the chemistry.",
+            "includes": "An infographic pairing a portrait with core working principles, each stated as a short rule and illustrated with what it meant in practice.",
+            "background": "Curie processed tonnes of pitchblende to isolate fractions of a gram of radium, tracking progress by ionisation rather than chemistry alone, treating radioactivity as a property of the atom. She is the only person to win Nobel Prizes in two different sciences, and declined to patent the isolation process."
+          }
+        },
+        "template-figure-principles-infographic-albert-einstein": {
+          "attributes": {
+            "grade_band": "Secondary to adult",
+            "age_range": "13+",
+            "subject": "History of science and ideas",
+            "skill": "Comprehension",
+            "resource_type": "Principles infographic",
+            "duration_min": "8 min",
+            "difficulty": "Intermediate",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Understand the working principles behind Einstein's physics — thought experiments, and insisting a theory be simple at its core.",
+            "includes": "An infographic pairing a portrait with core working principles, each stated as a short rule and illustrated with what it meant in practice.",
+            "background": "Einstein's 1905 papers came from imagined situations pushed to their logical end: riding alongside a light beam, a falling lift indistinguishable from empty space. He worked from principles rather than from data-fitting, which is why relativity arrived as a reframing rather than a correction."
+          }
+        },
+        "template-figure-principles-infographic-leonardo-da-vinci": {
+          "attributes": {
+            "grade_band": "Secondary to adult",
+            "age_range": "13+",
+            "subject": "History of science and ideas",
+            "skill": "Comprehension",
+            "resource_type": "Principles infographic",
+            "duration_min": "8 min",
+            "difficulty": "Intermediate",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Understand Leonardo's method — observe first, dissect to verify, and treat drawing as thinking.",
+            "includes": "An infographic pairing a portrait with core working principles, each stated as a short rule and illustrated with what it meant in practice.",
+            "background": "Leonardo dissected some thirty cadavers to draw anatomy that had been copied from Galen for centuries. His notebooks mix engineering, anatomy and painting because he treated them as one investigation into how things are built. Most of it went unpublished in his lifetime."
+          }
+        },
+        "template-figure-principles-infographic-sun-tzu": {
+          "attributes": {
+            "grade_band": "Secondary to adult",
+            "age_range": "13+",
+            "subject": "History of science and ideas",
+            "skill": "Comprehension",
+            "resource_type": "Principles infographic",
+            "duration_min": "8 min",
+            "difficulty": "Intermediate",
+            "language_mode": "English"
+          },
+          "vertical": {
+            "learning_objective": "Understand the core principles of the Art of War — win before fighting, know both sides, shape conditions.",
+            "includes": "An infographic pairing a portrait with core working principles, each stated as a short rule and illustrated with what it meant in practice.",
+            "background": "The Art of War treats battle as the expensive last resort of a process that should already have been decided by position, information and preparation. Its influence outside the military — in business strategy especially — comes from that framing being general rather than tactical."
+          }
+        }
       }
     }
   },
@@ -2627,6 +3160,92 @@
           "Create a cultural comparison infographic for Gift Giving Traditions — how China, Japan, and Korea approach gift-giving, taboos and tips, illustrated, 4K vertical.",
           "Design a Tea Culture comparison infographic — Chinese gongfu tea, Japanese matcha ceremony, Korean traditional tea, illustrated 3-column layout, 4K vertical."
         ]
+      },
+      "examples": {
+        "template-east-asian-culture-comparison-infographic-tea-culture-traditions": {
+          "attributes": {
+            "region": "China · Japan · Korea",
+            "period": "Tang dynasty to present",
+            "tradition": "Tea culture",
+            "content_format": "Comparison infographic"
+          },
+          "vertical": {
+            "what_it_is": "A side-by-side comparison poster of how tea is prepared, served and understood in China, Japan and Korea — the same leaf, three different social rituals.",
+            "cultural_background": "Tea spread from China through Buddhist monastic networks: to Japan in the 9th century, where it became 茶道 (chadō), a codified aesthetic practice shaped by Zen; and to Korea, where 다도 (dado) developed as a quieter, less formalised ceremony. China itself kept the widest range, from Chaozhou gongfu brewing to plain everyday leaf in a jar.",
+            "why_it_matters": "The three traditions are constantly flattened into one 'Asian tea ceremony'. Setting them beside each other shows what actually differs — vessel, water temperature, who pours, how silence is used — and makes each one legible on its own terms.",
+            "how_to_read": "Read across a row to compare one element between countries; read down a column to see a single tradition end to end."
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-gift-giving-traditions": {
+          "attributes": {
+            "region": "China · Japan · Korea",
+            "period": "Traditional to present",
+            "tradition": "Gift-giving etiquette",
+            "content_format": "Comparison infographic"
+          },
+          "vertical": {
+            "what_it_is": "A side-by-side of gift customs in China, Japan and Korea — what to give, how to present it, and what to avoid.",
+            "cultural_background": "All three share the two-handed presentation and the expectation of reciprocity, but diverge on specifics: Japanese omiyage is obligatory and regional; Chinese gifts avoid clocks (送钟 sounds like 送终, attending a funeral); Korean gifts cluster around holidays like Chuseok and Seollal.",
+            "why_it_matters": "These are the mistakes that actually cause offence in business and family settings, and they are not interchangeable between the three countries.",
+            "how_to_read": "Read across a row to compare one element between countries; read down a column for a single country end to end."
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-business-card-etiquette": {
+          "attributes": {
+            "region": "China · Japan · Korea",
+            "period": "Traditional to present",
+            "tradition": "Business-card exchange",
+            "content_format": "Comparison infographic"
+          },
+          "vertical": {
+            "what_it_is": "A comparison of how business cards are exchanged in China, Japan and Korea.",
+            "cultural_background": "Japanese meishi exchange is the most codified — two hands, card facing the recipient, read it, place it on the table, never in a back pocket. Korean practice is close to it. Chinese exchange is generally less formal but still two-handed with seniors.",
+            "why_it_matters": "It is the first thirty seconds of a business meeting and the moment most often got wrong by visitors.",
+            "how_to_read": "Read across a row to compare one element between countries; read down a column for a single country end to end."
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-wedding-traditions": {
+          "attributes": {
+            "region": "China · Japan · Korea",
+            "period": "Traditional to present",
+            "tradition": "Wedding customs",
+            "content_format": "Comparison infographic"
+          },
+          "vertical": {
+            "what_it_is": "A comparison of wedding colour, dress, ceremony structure and gift money across China, Japan and Korea.",
+            "cultural_background": "Red dominates Chinese weddings as the colour of luck; Japanese Shinto ceremonies use white shiromuku; Korean paebaek retains the bow to the groom's parents and the chestnut-and-jujube throw. Cash gifts are standard in all three but with different envelopes and etiquette.",
+            "why_it_matters": "Wedding custom is where the three cultures are most often blurred together in Western coverage, and where the differences are most visible.",
+            "how_to_read": "Read across a row to compare one element between countries; read down a column for a single country end to end."
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-greeting-customs": {
+          "attributes": {
+            "region": "China · Japan · Korea",
+            "period": "Traditional to present",
+            "tradition": "Greetings",
+            "content_format": "Comparison infographic"
+          },
+          "vertical": {
+            "what_it_is": "A comparison of bowing, handshakes and address forms in China, Japan and Korea.",
+            "cultural_background": "Japanese bowing is graded by angle and duration; Korean bowing is similar but paired with honorific speech levels; mainland Chinese greeting is now predominantly a handshake or a nod, with bowing reserved for ceremony.",
+            "why_it_matters": "Greeting is the highest-frequency interaction there is, so a wrong default repeats all day.",
+            "how_to_read": "Read across a row to compare one element between countries; read down a column for a single country end to end."
+          }
+        },
+        "template-east-asian-culture-comparison-infographic-festival-celebrations": {
+          "attributes": {
+            "region": "China · Japan · Korea",
+            "period": "Traditional to present",
+            "tradition": "Festivals",
+            "content_format": "Comparison infographic"
+          },
+          "vertical": {
+            "what_it_is": "A comparison of the major annual festivals in China, Japan and Korea and what each actually marks.",
+            "cultural_background": "Lunar New Year is shared but named and observed differently — 春节, 설날 (Seollal) — while Japan moved to the Gregorian New Year in 1873. Mid-autumn appears as 中秋节, Chuseok and Tsukimi with different emphases: reunion, ancestral rites, and moon-viewing respectively.",
+            "why_it_matters": "The shared lunar calendar creates an assumption of sameness that the actual observances do not support.",
+            "how_to_read": "Read across a row to compare one element between countries; read down a column for a single country end to end."
+          }
+        }
       }
     }
   },
@@ -2842,6 +3461,64 @@
           "Create a vintage landmark poster for the Colosseum — sepia tones, architectural facts, hand-drawn style, 4K vertical.",
           "Design a vintage info poster for the Pyramids of Giza — illustrated landmark, historical facts, antique typography, 4K vertical."
         ]
+      },
+      "examples": {
+        "template-world-landmark-vintage-info-poster-colosseum": {
+          "attributes": {
+            "region": "Italy · Rome",
+            "period": "70–80 CE",
+            "tradition": "Colosseum",
+            "content_format": "Landmark information poster"
+          },
+          "vertical": {
+            "what_it_is": "A vintage-style information poster for the Roman Colosseum.",
+            "cultural_background": "A 50,000-seat amphitheatre funded by spoils from the Siege of Jerusalem, with 80 numbered entrances that could clear the building in minutes — the ancestor of modern stadium vomitoria. The hypogeum beneath held lifts and cages.",
+            "why_it_matters": "Roughly two-thirds of the original stone is gone, quarried for Renaissance Rome — the ruin is a story about reuse, not only decay.",
+            "how_to_read": "Dates, dimensions and construction notes sit beside the illustration for quick reference."
+          }
+        },
+        "template-world-landmark-vintage-info-poster-petra": {
+          "attributes": {
+            "region": "Jordan · Ma'an",
+            "period": "4th century BCE – 1st century CE",
+            "tradition": "Petra",
+            "content_format": "Landmark information poster"
+          },
+          "vertical": {
+            "what_it_is": "A vintage-style information poster for Petra, the Nabataean rock-cut city.",
+            "cultural_background": "The Nabataeans cut facades directly into sandstone and, more importantly, engineered dams, cisterns and ceramic pipes that made a desert trade hub viable. Al-Khazneh is a tomb facade, not a treasury.",
+            "why_it_matters": "The water engineering is the real achievement and the part the famous facade photograph never shows.",
+            "how_to_read": "Dates, dimensions and construction notes sit beside the illustration for quick reference."
+          }
+        },
+        "template-world-landmark-vintage-info-poster-great-wall": {
+          "attributes": {
+            "region": "China",
+            "period": "7th century BCE – 17th century CE",
+            "tradition": "Great Wall",
+            "content_format": "Landmark information poster"
+          },
+          "vertical": {
+            "what_it_is": "A vintage-style information poster for the Great Wall.",
+            "cultural_background": "Not one wall but many, built and rebuilt by successive states over two millennia; most of what visitors see is Ming-era brick and stone, far later than the rammed-earth Qin sections.",
+            "why_it_matters": "The single-continuous-wall image is the most persistent misconception about it, and the dating panel is what corrects it.",
+            "how_to_read": "Dates, dimensions and construction notes sit beside the illustration for quick reference."
+          }
+        },
+        "template-world-landmark-vintage-info-poster-taj-mahal": {
+          "attributes": {
+            "region": "India · Agra",
+            "period": "1632–1653",
+            "tradition": "Taj Mahal",
+            "content_format": "Landmark information poster"
+          },
+          "vertical": {
+            "what_it_is": "A vintage-style information poster for the Taj Mahal.",
+            "cultural_background": "A mausoleum for Mumtaz Mahal, built in white marble inlaid with pietra dura semi-precious stone. The four minarets tilt very slightly outward so that they would fall away from the tomb in an earthquake.",
+            "why_it_matters": "It is a tomb rather than a palace, which changes how the symmetry and the garden layout are meant to be read.",
+            "how_to_read": "Dates, dimensions and construction notes sit beside the illustration for quick reference."
+          }
+        }
       }
     }
   },

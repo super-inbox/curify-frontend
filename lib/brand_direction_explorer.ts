@@ -100,6 +100,16 @@ export type BrandDirectionCase = {
   outputFormat: BrandDirectionOutputFormat;
 };
 
+// Optional, stateless, per-request visual-preference input — not persisted,
+// not tied to an account. Both fields are free text describing qualities the
+// user wants to see more or less of; either or both may be absent.
+export type PreferenceProfile = {
+  likes?: string;
+  dislikes?: string;
+};
+
+export const MAX_PREFERENCE_FIELD_LEN = 400;
+
 // Appended verbatim to every generated prompt, after the direction's
 // promptModifier. Aspect ratio / surface wording is inserted ahead of this
 // by buildBrandDirectionPrompt (it varies per case), so this block only
@@ -390,6 +400,34 @@ function normalizeFieldValue(value: string): string {
 
 function promptSection(heading: string, body: string): string {
   return `${heading}\n${body}`;
+}
+
+function normalizePreferenceField(value: unknown): string {
+  if (typeof value !== "string") return "";
+  return normalizeFieldValue(value).slice(0, MAX_PREFERENCE_FIELD_LEN);
+}
+
+/**
+ * Normalizes a raw, already-shape-validated preferenceProfile-like value
+ * (see route.ts's own request-shape check, which runs before this) into a
+ * clean PreferenceProfile: same whitespace normalization as a brief field,
+ * capped at MAX_PREFERENCE_FIELD_LEN, empty/whitespace-only fields dropped.
+ *
+ * Returns undefined if the input isn't preference-shaped at all, or if both
+ * likes/dislikes are empty after normalization — callers should treat
+ * undefined identically to "no preference supplied" rather than sending an
+ * empty object through to the prompt. Never throws.
+ */
+export function normalizePreferenceProfile(raw: unknown): PreferenceProfile | undefined {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return undefined;
+  const obj = raw as Record<string, unknown>;
+  const likes = normalizePreferenceField(obj.likes);
+  const dislikes = normalizePreferenceField(obj.dislikes);
+  if (!likes && !dislikes) return undefined;
+  const profile: PreferenceProfile = {};
+  if (likes) profile.likes = likes;
+  if (dislikes) profile.dislikes = dislikes;
+  return profile;
 }
 
 // Shared by buildProjectBrief and buildBrandDirectionPrompt: normalizes every

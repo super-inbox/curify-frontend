@@ -5,11 +5,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Check, ChevronDown, Download, Loader2 } from "lucide-react";
 import {
   BRAND_DIRECTION_CASES,
+  MAX_PREFERENCE_FIELD_LEN,
   buildBrandDirectionPrompt,
   toCreativeDirection,
   type BrandDirectionCase,
   type CreativeDirection,
   type GeneratedCreativeDirection,
+  type PreferenceProfile,
   type SupportedBrandDirectionLocale,
 } from "@/lib/brand_direction_explorer";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
@@ -26,6 +28,12 @@ type Copy = {
   heroDescription: string;
   steps: [string, string, string];
   fieldsSectionTitle: string;
+  preferenceSectionTitle: string;
+  preferenceHelperText: string;
+  preferenceLikesLabel: string;
+  preferenceLikesPlaceholder: string;
+  preferenceDislikesLabel: string;
+  preferenceDislikesPlaceholder: string;
   directionsSectionTitle: string;
   charCount: (len: number, max: number) => string;
   previewComingSoon: string;
@@ -56,6 +64,13 @@ const EN_COPY: Copy = {
     "Pick a creative direction from a preset scenario, then generate the matching visual.",
   steps: ["Choose a scenario", "Pick a direction", "Generate a visual"],
   fieldsSectionTitle: "Tell us about your brand",
+  preferenceSectionTitle: "Visual preference (optional)",
+  preferenceHelperText:
+    "Optional — tell Curify what visual qualities you prefer or want to avoid.",
+  preferenceLikesLabel: "Prefer",
+  preferenceLikesPlaceholder: "e.g. editorial typography, warm natural materials",
+  preferenceDislikesLabel: "Avoid",
+  preferenceDislikesPlaceholder: "e.g. cute mascot illustration, neon gradients",
   directionsSectionTitle: "Pick a direction",
   charCount: (len, max) => `${len}/${max}`,
   previewComingSoon: "Preview coming soon",
@@ -98,6 +113,12 @@ const ZH_COPY: Copy = {
   heroDescription: "从预置场景中选择一个创意方向，再生成对应的视觉方案。",
   steps: ["选择场景", "选择方向", "生成视觉"],
   fieldsSectionTitle: "填写品牌基本信息",
+  preferenceSectionTitle: "视觉偏好（可选）",
+  preferenceHelperText: "可选 —— 告诉 Curify 你偏好或想避免的视觉风格。",
+  preferenceLikesLabel: "偏好",
+  preferenceLikesPlaceholder: "例如：编辑感排版、温暖天然材质",
+  preferenceDislikesLabel: "避免",
+  preferenceDislikesPlaceholder: "例如：可爱吉祥物插画、霓虹渐变",
   directionsSectionTitle: "选择方向",
   charCount: (len, max) => `${len}/${max}`,
   previewComingSoon: "预览图待生成",
@@ -275,6 +296,8 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
     BRAND_DIRECTION_CASES[0].id,
   );
   const [fieldValues, setFieldValues] = useState<Record<string, string>>({});
+  const [preferenceLikes, setPreferenceLikes] = useState("");
+  const [preferenceDislikes, setPreferenceDislikes] = useState("");
   const [selectedDirectionId, setSelectedDirectionId] = useState<string | null>(null);
   const [promptPreviewExpanded, setPromptPreviewExpanded] = useState(false);
   const [resultUrl, setResultUrl] = useState<string | null>(null);
@@ -294,8 +317,26 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
     [activeCaseId],
   );
 
+  // Trimmed to undefined-when-empty here (not just on the server) so the
+  // debounce effect below and the request body both key off the same stable
+  // "is there actually a preference" signal — a whitespace-only textarea
+  // does not count as a preference and does not trigger a refetch by itself.
+  const preferenceProfile = useMemo<PreferenceProfile | undefined>(() => {
+    const likes = preferenceLikes.trim();
+    const dislikes = preferenceDislikes.trim();
+    if (!likes && !dislikes) return undefined;
+    const profile: PreferenceProfile = {};
+    if (likes) profile.likes = likes;
+    if (dislikes) profile.dislikes = dislikes;
+    return profile;
+  }, [preferenceLikes, preferenceDislikes]);
+
   const fetchDirections = useCallback(
-    async (caseId: BrandDirectionCase["id"], values: Record<string, string>) => {
+    async (
+      caseId: BrandDirectionCase["id"],
+      values: Record<string, string>,
+      preference: PreferenceProfile | undefined,
+    ) => {
       const seq = (fetchSeqRef.current += 1);
       setDirectionsLoading(true);
       setDirectionsError(null);
@@ -306,7 +347,11 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
         const res = await fetch(DIRECTIONS_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ caseId, fieldValues: values }),
+          body: JSON.stringify({
+            caseId,
+            fieldValues: values,
+            ...(preference ? { preferenceProfile: preference } : {}),
+          }),
         });
         ok = res.ok;
         data = await res.json();
@@ -349,11 +394,11 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
   useEffect(() => {
     if (!allRequiredFieldsFilled) return;
     const timer = setTimeout(() => {
-      fetchDirections(activeCaseId, fieldValues);
+      fetchDirections(activeCaseId, fieldValues, preferenceProfile);
     }, DIRECTIONS_FETCH_DEBOUNCE_MS);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeCaseId, allRequiredFieldsFilled, fieldValues, fetchDirections]);
+  }, [activeCaseId, allRequiredFieldsFilled, fieldValues, preferenceProfile, fetchDirections]);
 
   // useFreeformGenerate's own `args`/`meta` threading already survives the
   // anonymous-user auth stash + post-signin auto-resume (see pendingArgsRef in
@@ -394,6 +439,21 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
     // A field edit invalidates the previous set of directions — they were
     // generated from the old field values and their ids won't necessarily
     // match whatever the next fetch returns.
+    setSelectedDirectionId(null);
+    setDirections(null);
+    setDirectionsError(null);
+  };
+
+  // Same invalidation as handleFieldChange — a preference edit changes what
+  // the next fetch will return, so the previous direction set/selection is
+  // stale. Preference is intentionally not cleared on scenario switch (see
+  // handleSelectCase): it describes the user's taste, not the case's brief.
+  const handlePreferenceChange = (field: "likes" | "dislikes", value: string) => {
+    if (isGenerating) return;
+    if (field === "likes") setPreferenceLikes(value);
+    else setPreferenceDislikes(value);
+    setResultUrl(null);
+    setGeneratedContext(null);
     setSelectedDirectionId(null);
     setDirections(null);
     setDirectionsError(null);
@@ -572,6 +632,58 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
         </div>
       </section>
 
+      {/* ── Visual preference (optional) ─────────────────────────────── */}
+      <section className="space-y-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm sm:p-6">
+        <div>
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
+            {copy.preferenceSectionTitle}
+          </h2>
+          <p className="mt-1 text-xs text-neutral-500">{copy.preferenceHelperText}</p>
+        </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="space-y-1.5">
+            <div className="flex items-baseline justify-between">
+              <label htmlFor="bde-preference-likes" className="text-sm font-medium text-neutral-800">
+                {copy.preferenceLikesLabel}
+              </label>
+              <span className="text-[11px] text-neutral-400">
+                {copy.charCount(preferenceLikes.length, MAX_PREFERENCE_FIELD_LEN)}
+              </span>
+            </div>
+            <textarea
+              id="bde-preference-likes"
+              value={preferenceLikes}
+              maxLength={MAX_PREFERENCE_FIELD_LEN}
+              rows={2}
+              disabled={controlsDisabled}
+              placeholder={copy.preferenceLikesPlaceholder}
+              onChange={(e) => handlePreferenceChange("likes", e.target.value)}
+              className="w-full resize-none rounded-lg border border-neutral-200 px-3 py-2 text-sm text-neutral-900 outline-none transition focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:opacity-60"
+            />
+          </div>
+          <div className="space-y-1.5">
+            <div className="flex items-baseline justify-between">
+              <label htmlFor="bde-preference-dislikes" className="text-sm font-medium text-neutral-800">
+                {copy.preferenceDislikesLabel}
+              </label>
+              <span className="text-[11px] text-neutral-400">
+                {copy.charCount(preferenceDislikes.length, MAX_PREFERENCE_FIELD_LEN)}
+              </span>
+            </div>
+            <textarea
+              id="bde-preference-dislikes"
+              value={preferenceDislikes}
+              maxLength={MAX_PREFERENCE_FIELD_LEN}
+              rows={2}
+              disabled={controlsDisabled}
+              placeholder={copy.preferenceDislikesPlaceholder}
+              onChange={(e) => handlePreferenceChange("dislikes", e.target.value)}
+              className="w-full resize-none rounded-lg border border-neutral-200 px-3 py-2 text-sm text-neutral-900 outline-none transition focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:opacity-60"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ── Direction cards ──────────────────────────────────────────── */}
       <section className="space-y-4">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
@@ -590,7 +702,7 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
             <p>{directionsError}</p>
             <button
               type="button"
-              onClick={() => fetchDirections(activeCaseId, fieldValues)}
+              onClick={() => fetchDirections(activeCaseId, fieldValues, preferenceProfile)}
               className="inline-flex items-center rounded-lg border border-red-300 bg-white px-3 py-1.5 text-sm font-semibold text-red-700 transition hover:bg-red-100"
             >
               {copy.directionsRetryLabel}

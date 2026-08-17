@@ -1435,12 +1435,12 @@
       },
       "usecases": {
         "title": "Pour qui c'est",
-        "creatorsTitle": "Designers de marques et d'emballages",
-        "creatorsBody": "Montrez à vos clients une boîte 3D finie à partir de votre gabarit plat pour une validation rapide — de face, à 45° ou des pack shots sur fond blanc — sans avoir à configurer une scène 3D vous-même.",
-        "educationTitle": "文创 / marques de cadeaux & 谷子",
-        "educationBody": "Transformez les gabarits de boîtes cadeaux, de thé et de produits culturels en maquettes de page produit et de promotion qui correspondent à la forme réelle de la boîte.",
-        "businessTitle": "E-commerce & commandes en gros",
-        "businessBody": "Besoin de pack shots pour un catalogue de SKU ? Nous offrons un service gabarit → maquette clé en main / en gros, et pouvons ajouter des modèles 3D modifiables."
+        "creatorsTitle": "Brand & packaging designers",
+        "creatorsBody": "Show clients a finished 3D box from your flat dieline for fast sign-off.",
+        "educationTitle": "文创 / gift & 谷子 brands",
+        "educationBody": "Turn gift-box, tea and cultural-product dielines into product-page and catalogue shots.",
+        "businessTitle": "DTC & e-commerce brands",
+        "businessBody": "Need pack shots across a catalogue of SKUs? Dieline → mockup is available as a bulk service."
       }
     }
   },
@@ -1450,7 +1450,48 @@
       "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
     },
     "title": "Explore three creative directions from one brief",
-    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing.",
+    "deep": {
+      "usecases": {
+        "title": "Pourquoi les directions créatives comptent",
+        "creatorsTitle": "Pour les designers et studios",
+        "creatorsBody": "Fini la page blanche. Générez en quelques secondes trois directions créatives distinctes et fidèles au brief — ambiance, palette, typographie et composition — puis mettez en production celle qui séduit votre client. Plus de directions explorées par heure, des pitchs plus rapides.",
+        "educationTitle": "Pour les fondateurs et marques DTC",
+        "educationBody": "Nommer ou relancer une marque sans designer en interne ? Transformez un brief en langage courant en trois directions visuelles professionnelles, comparez-les côte à côte et confiez la meilleure à qui produira vos visuels — sans contrat d'agence juste pour explorer.",
+        "businessTitle": "Pour les équipes marketing et événementiel",
+        "businessBody": "Un brief de campagne ou d'événement, trois directions de visuel clé prêtes à évaluer. Alignez les parties prenantes sur un style avant d'engager le budget, et utilisez les champs facultatifs Préférer / Éviter pour orienter les directions vers votre charte de marque."
+      },
+      "what": {
+        "title": "Qu'est-ce que l'exploration de directions créatives ?",
+        "p1": "Avant tout visuel final, une marque ou une campagne a besoin d'une direction — l'ambiance, la palette, la typographie et la composition que tout le reste suit. L'exploration de directions créatives transforme un brief court en plusieurs directions distinctes à comparer, au lieu de s'enfermer dans la première idée.",
+        "p2": "Le Brand Direction Explorer part d'un brief en langage courant (la marque ou l'événement, son objectif, l'émotion recherchée) et génère trois directions vraiment différentes en quelques secondes. Chacune est un look concret et descriptible — pas un adjectif vague — pour réagir, comparer et choisir.",
+        "p3": "Un champ facultatif Préférer/Éviter oriente les directions vers votre goût ou votre charte sans trop les contraindre ; les trois restent distinctes même sous une préférence forte."
+      },
+      "how": {
+        "title": "Comment fonctionne le Brand Direction Explorer",
+        "p1": "Choisissez un scénario — ouverture de café, exploration de marque de thé, affiche d'événement ou brief libre — et remplissez quelques champs en langage courant. Aucun vocabulaire de design requis.",
+        "p2": "L'étape une s'appuie sur un modèle OpenAI qui lit le brief et rédige trois directions créatives distinctes, chacune avec sa logique d'ambiance, de palette, de typographie et de composition. Un contrôle rejette les directions dupliquées ou quasi identiques et relance.",
+        "p3": "Si vous ajoutez une préférence Préférer/Éviter, elle est ajoutée au prompt comme consigne explicite — le brief prime toujours et les trois directions doivent rester distinctes — pour que la préférence façonne le look sans réduire l'éventail.",
+        "p4": "L'étape deux transforme la direction choisie en visuel final (génération d'image via Gemini), pour que exploration et production tiennent dans un seul flux.",
+        "p5": "Résultat : un chemin plus rapide du brief à un look validé — plus de directions explorées par heure et des parties prenantes alignées avant d'engager budget ou temps de production."
+      }
+    },
+    "cta": "Explorer les directions de marque",
+    "example": "Exemple : un brief d'ouverture de café → trois directions distinctes (rustique-chaleureux, moderne-doré, vintage-pastel), chacune avec sa palette, sa typographie et sa composition.",
+    "why": {
+      "title": "Pourquoi explorer les directions d'abord ?",
+      "point1": "Trois options distinctes, pas une — vous choisissez dans un éventail au lieu de réagir à une seule proposition.",
+      "point2": "Un brief en langage courant en entrée, des directions visuelles professionnelles en sortie — sans vocabulaire de design.",
+      "point3": "Le Préférer/Éviter facultatif oriente le look vers votre marque sans réduire les trois à une seule.",
+      "point4": "Exploration et visuel final dans un seul flux : la direction choisie passe directement en production."
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "q1": "Combien de directions vais-je obtenir ?",
+      "a1": "Trois directions créatives distinctes par brief, chacune avec son ambiance, sa palette, sa typographie et sa composition. Un contrôle écarte les directions quasi identiques et relance.",
+      "q2": "Puis-je orienter le style ?",
+      "a2": "Oui — le champ facultatif Préférer/Éviter ajoute une consigne explicite. Le brief prime toujours et les trois directions restent distinctes : la préférence façonne le look sans réduire vos options."
+    }
   },
   "topicWorkflows": {
     "runAll": "Run the whole workflow",
@@ -1502,13 +1543,13 @@
         "p5": "Everything is packaged with a spec sheet listing size, thickness, print, choke and cut values."
       },
       "usecases": {
-        "title": "Who uses this",
-        "creatorsTitle": "IP & 谷子 creators",
-        "creatorsBody": "Turn character art into standees and keychains without learning pre-press.",
-        "educationTitle": "Studios & agencies",
-        "educationBody": "Hand a factory a complete package instead of trading revisions over what is missing.",
-        "businessTitle": "Merch sellers",
-        "businessBody": "Quote faster: a factory can price a complete file set immediately."
+        "title": "Who it's for",
+        "creatorsTitle": "Designers & studios",
+        "creatorsBody": "Hand a factory a complete acrylic package — white plate, cutline and hole included — instead of trading revisions over what is missing.",
+        "educationTitle": "谷子 & merch operators",
+        "educationBody": "Turn character art into standees and keychains without learning pre-press, and quote the same day.",
+        "businessTitle": "DTC & IP brands",
+        "businessBody": "Order acrylic merch at volume with files a manufacturer can price immediately."
       }
     }
   },
@@ -1557,13 +1598,13 @@
         "p5": "Colour is converted to CMYK and everything is packaged with a spec sheet."
       },
       "usecases": {
-        "title": "Who uses this",
-        "creatorsTitle": "Artists & IP creators",
-        "creatorsBody": "Sell die-cut stickers without learning pre-press.",
-        "educationTitle": "Studios & agencies",
-        "educationBody": "Deliver print-ready files with the cutline already included.",
-        "businessTitle": "Merch sellers",
-        "businessBody": "Move from artwork to a printer quote in one step."
+        "title": "Who it's for",
+        "creatorsTitle": "Designers & studios",
+        "creatorsBody": "Deliver print-ready sticker files with the die-cut path already traced and offset.",
+        "educationTitle": "谷子 & merch operators",
+        "educationBody": "Go from artwork to a printer quote in one step, with CMYK and the cutline already handled.",
+        "businessTitle": "DTC & IP brands",
+        "businessBody": "Run sticker SKUs at volume without a designer in the loop for every variant."
       }
     }
   }

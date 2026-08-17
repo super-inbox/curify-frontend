@@ -1,10 +1,12 @@
 import { describe, expect, it } from "vitest";
 import {
   BRAND_DIRECTION_CASES,
+  MAX_PREFERENCE_FIELD_LEN,
   SHARED_OUTPUT_CONSTRAINTS,
   buildBrandDirectionPrompt,
   buildProjectBrief,
   getBrandDirectionCase,
+  normalizePreferenceProfile,
   toCreativeDirection,
   type CreativeDirection,
   type GeneratedCreativeDirection,
@@ -33,8 +35,8 @@ function fixtureDirection(overrides: Partial<GeneratedCreativeDirection> = {}): 
 }
 
 describe("BRAND_DIRECTION_CASES shape", () => {
-  it("has exactly 3 cases", () => {
-    expect(BRAND_DIRECTION_CASES).toHaveLength(3);
+  it("has exactly 4 cases", () => {
+    expect(BRAND_DIRECTION_CASES).toHaveLength(4);
   });
 
   it("has unique case ids", () => {
@@ -294,6 +296,10 @@ describe("buildBrandDirectionPrompt — shared constraints", () => {
         eventHighlights: "Live music, local vendors, sunset views",
         visualTone: "Warm, golden-hour, laid-back",
       },
+      "agent-brief": {
+        brandName: "Nimbus Studio",
+        brief: "A calm, modern design studio for indie founders; soft neutral palette.",
+      },
     };
 
     for (const brandCase of BRAND_DIRECTION_CASES) {
@@ -384,5 +390,49 @@ describe("toCreativeDirection", () => {
     expect(direction.previewImage.kind).toBe("placeholder");
     expect(direction.provisional).toBe(true);
     expect(direction.id).toBe("gen-1");
+  });
+});
+
+describe("normalizePreferenceProfile", () => {
+  it("returns undefined for undefined input", () => {
+    expect(normalizePreferenceProfile(undefined)).toBeUndefined();
+  });
+
+  it("returns undefined for non-object input", () => {
+    expect(normalizePreferenceProfile("editorial")).toBeUndefined();
+    expect(normalizePreferenceProfile(42)).toBeUndefined();
+    expect(normalizePreferenceProfile(["editorial"])).toBeUndefined();
+  });
+
+  it("returns undefined when both likes and dislikes are empty or whitespace-only", () => {
+    expect(normalizePreferenceProfile({})).toBeUndefined();
+    expect(normalizePreferenceProfile({ likes: "   ", dislikes: "\n\t " })).toBeUndefined();
+  });
+
+  it("trims and collapses whitespace the same way a brief field is normalized", () => {
+    const result = normalizePreferenceProfile({
+      likes: "  editorial   typography \n restrained  palette  ",
+      dislikes: "neon\tgradients",
+    });
+    expect(result).toEqual({
+      likes: "editorial typography restrained palette",
+      dislikes: "neon gradients",
+    });
+  });
+
+  it("keeps a likes-only or dislikes-only profile as a partial object", () => {
+    expect(normalizePreferenceProfile({ likes: "warm materials" })).toEqual({ likes: "warm materials" });
+    expect(normalizePreferenceProfile({ dislikes: "neon gradients" })).toEqual({ dislikes: "neon gradients" });
+  });
+
+  it("caps each field at MAX_PREFERENCE_FIELD_LEN", () => {
+    const long = "x".repeat(MAX_PREFERENCE_FIELD_LEN + 50);
+    const result = normalizePreferenceProfile({ likes: long });
+    expect(result?.likes).toHaveLength(MAX_PREFERENCE_FIELD_LEN);
+  });
+
+  it("ignores non-string likes/dislikes values rather than throwing", () => {
+    expect(normalizePreferenceProfile({ likes: 123, dislikes: null })).toBeUndefined();
+    expect(normalizePreferenceProfile({ likes: 123, dislikes: "neon" })).toEqual({ dislikes: "neon" });
   });
 });
