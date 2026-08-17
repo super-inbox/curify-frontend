@@ -22,6 +22,8 @@ export type ToolAction =
   // on the tool page like the costume_tryon / product_video surfaces.
   | { type: "brand_direction" }
   | { type: "sticker_export" }
+  | { type: "acrylic_export" }
+  | { type: "packaging_mockup" }
   | { type: "none" };
 
 export type ToolDemo =
@@ -289,8 +291,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "die-cut-sticker-file",
     groupId: "image",
     status: "demo",
-    // No self-serve backend job — offered as a done-for-you / bulk service via
-    // the contact CTA. job_type is a required field but unused for this tool.
+    // Self-serve since 2026-08-17 — POST /design-tools/packaging-mockup (15
+    // credits). job_type is a required field but unused for this tool.
     job_type: "video_transcript",
     namespace: "dieCutStickerFile",
     action: { type: "none" },
@@ -326,11 +328,10 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "acrylic-factory-export",
     groupId: "design",
     status: "demo",
-    // Dev script only (factory/acrylic_exporter.py) — no backend pipeline yet.
+    // Self-serve since 2026-08-17 — POST /design-tools/acrylic-export (25 credits).
     job_type: "video_transcript",
     namespace: "acrylicFactoryExport",
-    action: { type: "none" },
-    cta: "contact",
+    action: { type: "acrylic_export" },
     i18n: toolKeys("acrylic_factory_export"),
     seo: seoKeys("acrylic_factory_export"),
   },
@@ -343,8 +344,7 @@ export const TOOL_REGISTRY: ToolDef[] = [
     // the contact CTA. job_type is a required field but unused for this tool.
     job_type: "video_transcript",
     namespace: "packagingMockup",
-    action: { type: "none" },
-    cta: "contact",
+    action: { type: "packaging_mockup" },
     i18n: toolKeys("packaging_mockup"),
     seo: seoKeys("packaging_mockup"),
     demo: {

@@ -3,6 +3,8 @@
 
 import { Link } from "@/i18n/navigation";
 import StickerExportForm from "@/app/[locale]/_components/StickerExportForm";
+import AcrylicExportForm from "@/app/[locale]/_components/AcrylicExportForm";
+import PackagingMockupForm from "@/app/[locale]/_components/PackagingMockupForm";
 import { personasForTool } from "@/lib/tool-personas";
 import { useTranslations, useLocale } from "next-intl";
 import { useTracking } from "@/services/useTracking";
@@ -171,6 +173,10 @@ export default function ToolGenericClient({
           // Self-serve factory export — the first surface that actually calls
           // POST /design-tools/*. Charges 20 credits, stated before the click.
           <StickerExportForm />
+        ) : tool.action?.type === "acrylic_export" ? (
+          <AcrylicExportForm />
+        ) : tool.action?.type === "packaging_mockup" ? (
+          <PackagingMockupForm />
         ) : tool.action?.type === "costume_tryon" ? (
           // Anonymous viral costume try-on: upload one photo → dynasty-costume
           // transformation mp4. No sign-in required (own multipart endpoint).

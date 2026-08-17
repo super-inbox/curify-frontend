@@ -10,6 +10,8 @@ import { nanoGenerateService, type NanoProjectStatus } from "./nanoGenerate";
  * artifact exists, so a failed run costs the user nothing.
  */
 export const STICKER_EXPORT_CREDITS = 20;
+export const ACRYLIC_EXPORT_CREDITS = 25;
+export const PACKAGING_MOCKUP_CREDITS = 15;
 
 export interface StickerExportRequest {
   /** blob_url from the image upload — a bucket object path, not a data URL. */
@@ -19,6 +21,27 @@ export interface StickerExportRequest {
   dpi?: number;
   /** Die-cut offset from the silhouette, mm. */
   cut_mm?: number;
+}
+
+export interface AcrylicExportRequest {
+  image_url: string;
+  mm?: number;
+  dpi?: number;
+  cut_mm?: number;
+  /** Keychain hole diameter, mm. Backend bounds 2–12. */
+  hole_mm?: number;
+  thickness_mm?: number;
+  /** Emit a hole at all; refused server-side if no legal position exists. */
+  hole?: boolean;
+}
+
+export interface PackagingMockupRequest {
+  /** Dieline. See the note on the form: the upload path is image-only today. */
+  image_url: string;
+  w_mm: number;
+  h_mm: number;
+  d_mm: number;
+  angle?: "45" | "front";
 }
 
 export interface FactoryExportResponse {
@@ -31,6 +54,20 @@ export interface FactoryExportResponse {
 export const factoryExportService = {
   async stickerExport(data: StickerExportRequest): Promise<FactoryExportResponse> {
     return apiClient.request<FactoryExportResponse>("/design-tools/sticker-export", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  },
+
+  async acrylicExport(data: AcrylicExportRequest): Promise<FactoryExportResponse> {
+    return apiClient.request<FactoryExportResponse>("/design-tools/acrylic-export", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  },
+
+  async packagingMockup(data: PackagingMockupRequest): Promise<FactoryExportResponse> {
+    return apiClient.request<FactoryExportResponse>("/design-tools/packaging-mockup", {
       method: "POST",
       body: JSON.stringify(data),
     });
