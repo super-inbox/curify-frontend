@@ -21,6 +21,7 @@ export type ToolAction =
   // directions → generate the chosen visual. Bespoke client, rendered inline
   // on the tool page like the costume_tryon / product_video surfaces.
   | { type: "brand_direction" }
+  | { type: "sticker_export" }
   | { type: "none" };
 
 export type ToolDemo =
@@ -312,12 +313,11 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "sticker-factory-export",
     groupId: "design",
     status: "demo",
-    // Backend: POST /design-tools/sticker-export (20 credits). Not yet wired to
-    // a self-serve UI; offered as a done-for-you service meanwhile.
+    // Self-serve since 2026-08-17: the card renders StickerExportForm, which
+    // calls POST /design-tools/sticker-export (20 credits) directly.
     job_type: "video_transcript",
     namespace: "stickerFactoryExport",
-    action: { type: "none" },
-    cta: "contact",
+    action: { type: "sticker_export" },
     i18n: toolKeys("sticker_factory_export"),
     seo: seoKeys("sticker_factory_export"),
   },

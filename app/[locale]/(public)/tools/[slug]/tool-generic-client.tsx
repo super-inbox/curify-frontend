@@ -2,6 +2,7 @@
 "use client";
 
 import { Link } from "@/i18n/navigation";
+import StickerExportForm from "@/app/[locale]/_components/StickerExportForm";
 import { personasForTool } from "@/lib/tool-personas";
 import { useTranslations, useLocale } from "next-intl";
 import { useTracking } from "@/services/useTracking";
@@ -166,6 +167,10 @@ export default function ToolGenericClient({
           // chosen visual. Moved here from the standalone
           // /brand-direction-explorer route on 2026-08-12 (301 in next.config).
           <BrandDirectionExplorerClient locale={locale} />
+        ) : tool.action?.type === "sticker_export" ? (
+          // Self-serve factory export — the first surface that actually calls
+          // POST /design-tools/*. Charges 20 credits, stated before the click.
+          <StickerExportForm />
         ) : tool.action?.type === "costume_tryon" ? (
           // Anonymous viral costume try-on: upload one photo → dynasty-costume
           // transformation mp4. No sign-in required (own multipart endpoint).
