@@ -148,12 +148,22 @@ export const VERTICAL_SCHEMAS: Record<VerticalId, VerticalSchema> = {
 export function resolveVerticalForTopics(topics: string[] | undefined | null): VerticalSchema | null {
   if (!Array.isArray(topics) || topics.length === 0) return null;
   const set = new Set(topics.map((t) => String(t).toLowerCase()));
-  // Deterministic order: education, mbti, merch, culture — FIRST MATCH WINS.
-  // culture is last on purpose. A template tagged both `culture` and `learning`
-  // (e.g. cultural-travel-journey) is genuinely a learning resource and should
-  // keep the education schema; only templates with no learning/merch signal at
-  // all fall through to culture.
-  for (const id of ["education", "mbti", "merch", "culture"] as VerticalId[]) {
+  // Deterministic order: mbti, education, merch, culture — FIRST MATCH WINS.
+  //
+  // mbti is FIRST because it is the most specific signal a template can carry.
+  // Three MBTI templates (mbti-yellowstone, harry-potter-mbti-infographic,
+  // mbti-stereotype-vs-reality-infographic) are also tagged `study-sheets`,
+  // which put them under `education` when education was checked first. That was
+  // not merely a mislabel: buildResolvedVertical filters attributes and
+  // knowledge by the RESOLVED schema's slot keys, so authored MBTI content
+  // (type_code, traits, compatibility) matched none of education's slots and
+  // was dropped silently. All five enriched mbti-yellowstone examples — and
+  // their 10-locale translations — rendered nothing at all.
+  //
+  // culture stays LAST for the mirror-image reason: a template tagged both
+  // `culture` and `learning` (cultural-travel-journey) really is a learning
+  // resource and should keep `education`.
+  for (const id of ["mbti", "education", "merch", "culture"] as VerticalId[]) {
     const schema = VERTICAL_SCHEMAS[id];
     if (schema.topicMatch.some((t) => set.has(t))) return schema;
   }
