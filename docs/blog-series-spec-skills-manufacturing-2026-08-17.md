@@ -34,28 +34,32 @@ plan diverges from the 08-17 discussion.
 
 | target keyword | vol | KD | CPC | backing asset | verdict |
 |---|---:|---:|---:|---|---|
-| `dieline generator` | 170 | 19 | **$2.75** | `/tools/die-cut-sticker-file` LIVE · `factory/sticker_exporter.py` (real cutline SVG + CMYK + 300DPI ZIP) · case assets | **strongest — real product behind it** |
+| `dieline generator` | 170 | 19 | **$2.75** | `/tools/die-cut-sticker-file` LIVE · sticker + acrylic exporters · 仁寿盒 刀版展开图 + .ai source · `labubu-刀线预览` · **CMYK washed-vs-fixed** · production ZIPs | **strongest — real product AND before/after proof** |
 | `claude code design skills` | 70 | 19 | **$11.14** | 39 candidates, 19 deep reviews, 12-item S/A shortlist, 10-dimension rubric | **strongest content moat** |
 | `claude code frontend design` | 90 | 27 | $12.32 | Anthropic `frontend-design` deep review (S-tier) | good |
-| `character turnaround sheet` | 480 | 20 | **$0.00** | **1 template** (`3d-chibi-football-player-turnaround-sheet`) | biggest traffic, **thinnest assets, zero commercial intent** |
+| `character turnaround sheet` | 480 | 20 | **$0.00** | `threeview/` — 3 documented cases + `image_to_threeview.py` + **factory floor photos** (`smm_daily/2026-08-17-three-view-factory`) | **best-evidenced post in the plan** |
 | `best claude code skills` | 260 | 36 | — | same corpus | good, later |
-| `AI tech pack generator` | 90 | **1** | $2.79 | **NOTHING — no tool, no pipeline, no examples** | **content-only or don't ship** |
+| `AI tech pack generator` | 90 | **1** | $2.79 | partial — `case_acrylic/_pkg/06_spec.pdf`, white-ink + cutline layers, layered-PSD set; no tech-pack *tool* | **explainer, built from the spec package** |
 | `claude code figma` | 390 | 43 | — | `figma-implement-design` (deprecated host) | later |
 | `codex skills` | 1,900 | 47 | — | `Codex-Skills` deep review | pillar, last |
 
-**Two corrections to the discussion's ranking:**
+**Correction to an earlier draft of this spec (2026-08-17):** the first version claimed
+`character turnaround sheet` had one backing template and `AI tech pack generator` had
+nothing. That was from surveying `nano_templates.json` only and never opening the asset
+folders. Both were wrong — see §3. The manufacturing cluster is the *better-evidenced* of
+the two, not the weaker one.
 
-- **`AI tech pack generator` is ranked too high at #4.** KD 1 is genuinely remarkable, but we
-  have no tech-pack tool, no pipeline and no example output. Writing a page titled like a
-  generator with nothing behind it is the same failure as `/blog/best-programmatic-seo-tools`
-  ranking p24 while its title advertised the wrong subject — a page that mismatches intent.
-  Either ship it as an honest **explainer** ("what a tech pack contains, and how to produce
-  one") with no generator claim, or build the tool first. Do not ship a fake tool page.
-- **`character turnaround sheet` leads on volume but trails on everything else.** CPC $0.00
-  and informational intent mean no commercial pull, and we have exactly one template — a
-  football-chibi one. It is a real opportunity but needs **asset work before content work**.
+**One correction to the discussion's ranking still stands:**
 
-**Revised order:** lead each cluster with the target whose assets already exist.
+- **`AI tech pack generator` should not be titled as a generator.** KD 1 is remarkable and we
+  do have partial assets — `06_spec.pdf`, the white-ink/cutline layer set, layered-PSD — but
+  there is no tech-pack *tool*. A generator-shaped title with no generator is the same
+  intent mismatch that left `/blog/best-programmatic-seo-tools` at p24 advertising the wrong
+  subject. Ship it as an explainer built from the spec package; revisit as a tool page if it
+  earns impressions.
+
+**Revised order:** `character turnaround sheet` moves to the FRONT of Cluster B on the
+strength of its evidence, not its volume.
 
 ---
 
@@ -112,35 +116,76 @@ authority first.
 
 ## 3. Cluster B — design → manufacturing
 
-### B1 · `/blog/dieline-generator-guide` · `dieline generator` — 170 / KD 19 / CPC $2.75
-**Ships first in this cluster** because the product exists. `factory/sticker_exporter.py`
-already produces `01_artwork.png` (transparent 300DPI), `02_cutline.svg`, and a CMYK
-print-ready PDF — a real ZIP, not a mockup.
+**This is the better-evidenced cluster.** It has something Cluster A does not: real factory
+output, including a documented failure and photographs from an actual production floor.
 
-- What a dieline is; cut line vs. bleed vs. safe area; why printers reject files.
-- Worked example using real exporter output.
-- Links → `/tools/die-cut-sticker-file`, `/tools/acrylic-factory-export`, `/topics/stickers`.
-- **This post is also the fix for `/tools/die-cut-sticker-file` never having been crawled** —
-  it gives that page its first real inbound links.
+### B1 · `/blog/character-turnaround-sheet-guide` · `character turnaround sheet` — 480 / KD 20
+**Now leads the cluster.** Highest volume in either cluster *and* the strongest evidence.
 
-### B2 · `/blog/character-turnaround-sheet-guide` · `character turnaround sheet` — 480 / KD 20
-Highest volume in either cluster, but **blocked on assets**: one football-chibi template is
-not a gallery. Needs 6–8 turnaround examples across styles first (chibi, realistic,
-mascot, mecha). Treat the example generation as a prerequisite task, not part of the writing.
-Angle: turnaround sheet → 3D → manufacturing, which is the path Curify actually walks.
-Links → `/tools/character-sticker-sheet`, `template-ip-character-expression-sheet`.
+Assets (`designAI_manufacturing/threeview/`, pipeline
+`dev/jayw/design-agent-v0/threeview/image_to_threeview.py`):
+
+| case | input | outcome |
+|---|---|---|
+| **haarland** | our own chibi turnaround sheet | ✅ reference case, `--band-only`, no model call |
+| **dragon** | one photo of a metal figurine | ✅ coherent front/side/top, consistent scale |
+| **snake** | one photo of a coiled figurine | ❌ **three different sculptures** — loop topology differs per view |
+
+Plus `smm_daily/2026-08-17-three-view-factory/factory_live{1,2,3}.jpg` — photographs from the
+factory floor.
+
+The post writes itself around the README's two theses, both non-obvious and both ours:
+
+1. **"AI draws the views; code draws every number."** The prompt *forbids* the model from
+   rendering dimension lines, because a number on a drawing reads as authoritative and the
+   model's numbers are decorative. That single sentence is the whole argument for why a
+   render is not a spec.
+2. **"The lesson is about the INPUT, not the prompt."** The snake failed because a
+   self-occluding glossy coil cannot be resolved from one photo — no prompt fixes that.
+
+Publishing the snake failure is the credibility move, exactly as the rejects section is in
+A1. And the framing — *a factory can quote from a dimensioned three-view; it cannot quote
+from a render* — is the commercial point the $0.00 CPC hides.
+
+Links → `/tools/character-sticker-sheet`, `/tools/acrylic-factory-export`,
+`template-ip-character-expression-sheet`.
+
+### B2 · `/blog/dieline-generator-guide` · `dieline generator` — 170 / KD 19 / CPC $2.75
+Best commercial intent, and better supported than the first draft credited:
+
+- **仁寿盒** (`3D-mockup/fortune-box/`) — a real 刀版展开图 dieline, the `.ai` source, 45°
+  and front renders, plus the `renshou-dieline-to-3d-EN` and `packaging-3d-proportion-trap-EN`
+  cards.
+- **`labubu-刀线预览.png`** — cutline preview over live artwork.
+- **`CMYK-washed-vs-fixed-EN.jpg`** — a before/after of exactly the failure the post is
+  about: why printers reject files.
+- `factory/case_acrylic/_pkg/` — `01_artwork_front`, `02_artwork_back`, `03_white_ink`,
+  `04_cutline.svg`, `05_preview`, `06_spec.pdf`, plus shipped production ZIPs.
+
+Structure: what a dieline is · cut line vs bleed vs safe area · **the CMYK washout, shown
+before and after** · dieline → 3D proof · the packaging proportion trap.
+
+Links → `/tools/die-cut-sticker-file`, `/tools/acrylic-factory-export`, `/topics/stickers`,
+`/topics/packaging`. **This is still the fix for `/tools/die-cut-sticker-file` never having
+been crawled.**
 
 ### B3 · `/blog/what-is-a-tech-pack` · `AI tech pack generator` — 90 / KD 1
-**Explainer only.** No generator exists; the post must not imply one. Cover what a tech pack
-contains (BOM, measurements, colourways, construction) and how the pieces map onto assets we
-do produce. Revisit as a tool page if the explainer earns impressions — KD 1 makes it a
-cheap test of whether the demand is real.
+Explainer, not a generator page. Build it from `case_acrylic/_pkg/06_spec.pdf` and the
+white-ink/cutline layer set — that package *is* a tech pack in everything but name — plus
+the `layered-PSD` set (labubu, cinnamoroll, mbti, product; EN+ZH). Cover BOM, measurements,
+colourways, construction, and which of those Curify already emits. Revisit as a tool page if
+it earns impressions; KD 1 makes it a cheap test.
 
 ### B4 · programmatic supporting pages — the 20-volume tail
 `acrylic keychain template` · `acrylic standee template` · `plush design template` ·
 `sticker dieline` · `sticker cut line` · `production ready artwork` · `product tech pack`.
-All 20/mo, KD unavailable. **Not the wedge** — hold until B1–B3 prove the cluster indexes at
-all, then generate as templated supporting pages under the B1 pillar.
+All 20/mo, KD unavailable. Hold until B1–B3 prove the cluster indexes, then template them
+under the B1/B2 pillars. Note `acrylic/acrylic_plates_{en,zh}.jpg` and
+`smm_daily/2026-08-16-acrylic-factory-files` already cover the two acrylic terms.
+
+**Tool pages already carry demo images** — `die-cut-sticker-file`, `acrylic-factory-export`,
+`packaging-mockup` and `character-sticker-sheet` all have `demo.src` registered, so every
+internal link from these posts lands on a page with a visual, not a bare description.
 
 ---
 
@@ -152,11 +197,11 @@ the same row is done first.
 | week | date | post | prerequisite |
 |---|---|---|---|
 | 1 | 08-19 | **A1** pillar — best Claude Code design skills | merge `visual-search-adhoc@7a5879d`; capture skill screenshots (§5) |
-| 1 | 08-21 | **B1** dieline generator guide | export a real sample ZIP from `sticker_exporter.py` |
+| 1 | 08-21 | **B1** character turnaround sheet | none — `threeview/` cases + factory photos already exist |
 | 2 | 08-26 | **A2** Claude Code frontend design | — |
-| 2 | 08-28 | **B3** what is a tech pack (explainer) | — |
+| 2 | 08-28 | **B2** dieline generator guide | pull frames from 仁寿盒 + CMYK washed-vs-fixed |
 | 3 | 09-02 | **A3** design validation loops | — |
-| 3 | 09-04 | **B2** character turnaround sheet | **generate 6–8 turnaround examples first** |
+| 3 | 09-04 | **B3** what is a tech pack (explainer) | — |
 | 4 | 09-09 | **A4** best Claude Code skills | A1–A3 live and linking |
 | 4 | 09-11 | review checkpoint — no new post | see §6 |
 | 6 | 09-23 | **A5** Codex design skills | A1–A4 indexed |
@@ -169,13 +214,55 @@ tools` / `ai packaging design`, and the FAQPage capture-rate test). Left deliber
 
 ## 5. Quality lift: images
 
-The skills research is text-only. Adding **one screenshot of real output per shortlisted
-skill** is the highest-value single improvement to A1 — it converts a list into evidence, and
-it is what the competing posts cannot cheaply fake. `gallery.html` already exists in the
-research folder as a starting point.
+**The two clusters are opposites here, and that asymmetry should drive sequencing.**
 
-Constraint: screenshots of third-party repos are fine as fair-use documentation, but caption
-each with its source URL and license, and do not reproduce any skill's proprietary output.
+**Cluster A is image-poor.** The skills research is text-only. One screenshot of real output
+per shortlisted skill is the highest-value single improvement to A1 — it converts a list into
+evidence, and it is what competing posts cannot cheaply fake. `gallery.html` in the research
+folder is the starting point. Constraint: screenshots of third-party repos are fine as
+fair-use documentation, but caption each with source URL and license, and do not reproduce
+any skill's proprietary output.
+
+**Cluster B is image-rich and needs no new generation** — the images are ours, already
+produced, and several are the *only* proof of the argument (a failure case and a CMYK
+before/after cannot be argued in prose). Manifest in Appendix A.
+
+Practical consequence: B1 could ship before A1 if screenshot capture slips. The schedule in
+§4 keeps A1 first only because merging `visual-search-adhoc` is already on the critical path.
+
+---
+
+## Appendix A — Cluster B asset manifest
+
+Paths relative to `~/curify-gallery/designAI_manufacturing/` unless noted.
+
+**B1 · turnaround**
+- `threeview/README.md` — the two theses, verbatim source for the post's argument
+- `threeview/haarland/`, `threeview/dragon/`, `threeview/snake/` — the three cases
+- `dev/jayw/design-agent-v0/threeview/image_to_threeview.py` — the pipeline
+- `~/curify-gallery/smm_daily/2026-08-17-three-view-factory/factory_live{1,2,3}.jpg`
+
+**B2 · dieline**
+- `3D-mockup/fortune-box/仁寿盒-刀版展开图-脱敏.png` + `.ai` source + 45度/正面效果图
+- `3D-mockup/fortune-box/xhs/renshou-dieline-to-3d-EN.jpg`,
+  `packaging-3d-proportion-trap-EN.jpg`
+- `sticker-print/cinnamoroll-teacup/xhs/CMYK-washed-vs-fixed-EN.jpg` ← the money shot
+- `sticker-print/.../labubu-刀线预览.png`, `labubu-前后对比.jpg`
+- `dev/jayw/design-agent-v0/factory/case_acrylic/_pkg/0{1..6}` + production ZIPs
+
+**B3 · tech pack**
+- `case_acrylic/_pkg/06_spec.pdf`, `03_white_ink.png`, `04_cutline.svg`
+- `layered-PSD/` — 8 images (labubu · cinnamoroll · mbti · product, EN+ZH)
+
+**B4 · acrylic tail**
+- `acrylic/acrylic_plates_{en,zh}.jpg`, `smm_daily/2026-08-16-acrylic-factory-files`
+
+**Already-live tool-page demos** (link targets that render a visual, not a bare description):
+`/tools/die-cut-sticker-file` · `/tools/acrylic-factory-export` · `/tools/packaging-mockup` ·
+`/tools/character-sticker-sheet` · `/tools/ai-product-photo-generator`.
+
+Licensing note: 仁寿盒 is a real client dieline and the filename is marked 脱敏 (desensitised).
+Confirm the client is unidentifiable in any frame published, or substitute the labubu preview.
 
 ---
 
@@ -188,10 +275,11 @@ keyword, and inbound internal-link count.
 
 - If A1 is not indexed by 09-11, **stop writing Cluster A** and fix crawl/authority first —
   more posts into an unindexed site is the mistake this plan exists to avoid.
-- If B1 is indexed but flat on impressions by 09-11, the dieline demand is not real at our
-  authority level; drop B4 entirely.
-- If `character turnaround sheet` examples aren't generated by 09-02, **skip B2** for this
-  cycle rather than shipping a one-template gallery.
+- If B2 (dieline) is indexed but flat on impressions by 09-11, the dieline demand is not
+  real at our authority level; drop B4 entirely.
+- If B1 (turnaround) does not index, that is the strongest evidence in the plan failing to
+  land — treat it as a site-wide crawl verdict, not a content verdict, and stop publishing
+  until indexation is fixed.
 
 ---
 
