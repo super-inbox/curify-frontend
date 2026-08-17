@@ -320,6 +320,13 @@ export const TOOL_REGISTRY: ToolDef[] = [
     job_type: "video_transcript",
     namespace: "stickerFactoryExport",
     action: { type: "sticker_export" },
+    demo: {
+      type: "single_image",
+      // Reuses the die-cut-sticker-file card art: same capability, same package,
+      // already on the CDN. See the duplication note on that tool.
+      src: "/images/tools/die-cut-sticker-file.jpg",
+      alt: "A die-cut sticker artwork turned into a factory package — transparent 300 DPI art, a magenta CutContour die-cut line with 3mm bleed, CMYK PDF, preview and spec sheet",
+    },
     i18n: toolKeys("sticker_factory_export"),
     seo: seoKeys("sticker_factory_export"),
   },
@@ -332,6 +339,11 @@ export const TOOL_REGISTRY: ToolDef[] = [
     job_type: "video_transcript",
     namespace: "acrylicFactoryExport",
     action: { type: "acrylic_export" },
+    demo: {
+      type: "single_image",
+      src: "/images/tools/acrylic-factory-export.jpg",
+      alt: "The four plates an acrylic factory needs — front print, mirrored back, the opaque white ink underbase shown on a dark board because it is invisible on white, and the die cutline with a keychain hole",
+    },
     i18n: toolKeys("acrylic_factory_export"),
     seo: seoKeys("acrylic_factory_export"),
   },
