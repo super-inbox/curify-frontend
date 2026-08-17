@@ -1,7 +1,7 @@
 # Blog series spec — AI-agent design skills × design-to-manufacturing
 
 _Drafted 2026-08-17. Inputs: `raw/seo-skills-manufacture-08-17/` (SEMrush KD + discussion),
-`visual-search-adhoc@7a5879d docs/daily_report/8.16/design-skills-research/`,
+`visual-search-adhoc@main docs/daily_report/8.16/design-skills-research/` (merged 7a5879d),
 `curify-studio/docs/tool-inventory.md`, `dev/jayw/design-agent-v0/factory/`,
 `curify-gallery/designAI_manufacturing/`._
 
@@ -65,8 +65,18 @@ strength of its evidence, not its volume.
 
 ## 2. Cluster A — AI agent × design
 
-Source: `visual-search-adhoc@7a5879d`. **This branch is unmerged** — merge it before
-publishing anything that cites it, so the research is a stable citable artifact.
+Source: `visual-search-adhoc@main`, `docs/daily_report/8.16/design-skills-research/`
+(merged as `7a5879d`) — a stable citable artifact, no prerequisite.
+
+**Twelve files, not one.** An earlier draft of this spec treated the corpus as a single
+findings doc. Four of them change what the posts should be:
+
+| file | feeds | why it matters |
+|---|---|---|
+| `SOCIAL_MEDIA_SHORTLIST.md` | **A1 body** | The 12 picks are already written in publish shape: source · helps-with · who-it's-for · strongest capability · what makes it different · **important caveat** · social angle. A1 is largely an edit, not a draft. |
+| `SOCIAL_MEDIA_DRAFT.md` | SMM | Post copy — feeds the social distribution of A1, not the post itself. |
+| `CURIFY_CAPABILITY_FINDINGS.md` | **A3** | Patterns abstracted from the reviewed skills and mapped to *our* workflows, each with underlying principle, failure prevented, and risks. This is the original argument. |
+| `INTERNAL_EXPERIMENTS.md` | **A3** | Five experiments tiered `worth_studying` / `worth_experimenting` / `worth_adopting`, with the explicit statement that **nothing has graduated to `worth_adopting`**. |
 
 The differentiator is that this is not an awesome-list. It scores 19 skills across 10
 dimensions, separates *strong implementation* from *strong presentation*, and documents what
@@ -84,6 +94,12 @@ honesty is the moat — every competing post is a link dump.
   image API; `visual-verdict` states no license).
 - A section on what got **cut and why** — `theme-factory`, `hyperframes-creative`,
   `platform-design-skills`, `photo-abstract-editorial`. Nobody else publishes their rejects.
+  Note the shortlist also cut three genuinely **A-tier** resources (`webapp-testing`,
+  `figma-implement-design`, `video-shotcraft`) for category-diversity reasons, not quality —
+  they're in README honorable mentions and are ready-made follow-up posts.
+- Carry each pick's **caveat** through verbatim; they are the post's spine, not footnotes
+  (`guizang` AGPL-3.0 — flag on every mention; `product-shots` needs a paid image API;
+  `styleseed`'s +5.3-point benchmark is self-reported and its own demo self-scores 58/100).
 - **Images required.** The research is text-only today; screenshots of each skill's actual
   output are the single biggest quality lift available (see §5).
 - Internal links out → `/tools/brand-direction-explorer`, `/topics/branding`, `/design-agent`.
@@ -95,11 +111,23 @@ and that its self-critique is **human-in-the-loop, not automated**, which is why
 with `impeccable` or `styleseed`. Cross-link A1.
 
 ### A3 · `/blog/ai-design-validation-loops` · long-tail, no direct KD
-The strongest *original* argument in the corpus: what separates a real skill from a prompt
-wrapper is a **deterministic validation loop**. Concrete specimens: `impeccable`'s 59-rule
-engine, `styleseed`'s dual gate, `excalidraw-diagram-skill`'s render→inspect→fix, and
-`visual-verdict`'s JSON verdict contract (`score`, `verdict`, `differences[]`). This is the
-link-earning post, not the traffic post. Ships third because it's the one others will cite.
+The strongest *original* argument in the corpus, and better supported than first credited —
+`CURIFY_CAPABILITY_FINDINGS.md` Pattern 2 is exactly this post, already argued.
+
+Thesis: **generation and verification are different competencies and should be separate
+steps**, not conflated into "generate well the first time." Five specimens, all verified:
+`impeccable`'s 59 deterministic rules (no LLM call in the detection step), `styleseed`'s
+dual gate (rule score *and* rendered pixels), `excalidraw-diagram-skill`'s Playwright
+render→screenshot→fix, `guizang`'s `validate-social-deck.mjs` (9 fault classes post-render),
+and `visual-verdict`'s JSON contract (`score` 0–100, `verdict`, `differences[]`,
+`suggestions[]`) gated at 90+ specifically to drive iterate-until-pass.
+
+Close with `INTERNAL_EXPERIMENTS.md`: five experiments we derived, tiered, **none of which
+has graduated to `worth_adopting`**. Publishing a "here's what we haven't adopted yet"
+section is the same credibility play as A1's rejects — and it's honest, since E1–E5 are
+proposals, not shipped work. Do not imply otherwise.
+
+This is the link-earning post, not the traffic post.
 
 ### A4 · `/blog/best-claude-code-skills` · `best claude code skills` — 260 / KD 36
 Broader roundup; only after A1–A3 give it internal links to inherit.
@@ -196,7 +224,7 @@ the same row is done first.
 
 | week | date | post | prerequisite |
 |---|---|---|---|
-| 1 | 08-19 | **A1** pillar — best Claude Code design skills | merge `visual-search-adhoc@7a5879d`; capture skill screenshots (§5) |
+| 1 | 08-19 | **A1** pillar — best Claude Code design skills | capture skill screenshots (§5) — research already merged |
 | 1 | 08-21 | **B1** character turnaround sheet | none — `threeview/` cases + factory photos already exist |
 | 2 | 08-26 | **A2** Claude Code frontend design | — |
 | 2 | 08-28 | **B2** dieline generator guide | pull frames from 仁寿盒 + CMYK washed-vs-fixed |
