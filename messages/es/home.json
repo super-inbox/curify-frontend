@@ -1450,7 +1450,48 @@
       "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
     },
     "title": "Explore three creative directions from one brief",
-    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
+    "description": "Give it a brand or a campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing.",
+    "deep": {
+      "usecases": {
+        "title": "Por qué importan las direcciones creativas",
+        "creatorsTitle": "Para diseñadores y estudios",
+        "creatorsBody": "Olvídate del lienzo en blanco. Genera en segundos tres direcciones creativas distintas y fieles al brief —ambiente, paleta, tipografía y composición— y lleva a producción la que entusiasme a tu cliente. Más direcciones exploradas por hora, propuestas más rápidas.",
+        "educationTitle": "Para fundadores y marcas DTC",
+        "educationBody": "¿Nombrar o relanzar una marca sin diseñador en plantilla? Convierte un brief en lenguaje sencillo en tres direcciones visuales profesionales, compáralas y entrega la ganadora a quien cree tus recursos: sin contratar una agencia solo para explorar opciones.",
+        "businessTitle": "Para equipos de marketing y eventos",
+        "businessBody": "Un brief de campaña o evento, tres direcciones de imagen clave listas para evaluar. Alinea a los responsables sobre un estilo antes de invertir presupuesto y usa los campos opcionales de Preferir / Evitar para orientar las direcciones hacia tus pautas de marca."
+      },
+      "what": {
+        "title": "¿Qué es la exploración de direcciones creativas?",
+        "p1": "Antes de cualquier arte final, una marca o campaña necesita una dirección: el ambiente, la paleta, la tipografía y la composición que todo lo demás sigue. La exploración de direcciones creativas convierte un brief breve en varias direcciones distintas para elegir, en lugar de casarse con la primera idea.",
+        "p2": "El Brand Direction Explorer toma un brief en lenguaje sencillo (la marca o el evento, para qué es, la sensación que buscas) y genera tres direcciones realmente distintas en segundos. Cada una es un look concreto y descriptible —no un adjetivo vago— para que reacciones, compares y elijas.",
+        "p3": "Un campo opcional de Preferir/Evitar orienta las direcciones hacia tu gusto o tus pautas de marca sin sobrerrestringirlas; las tres siguen siendo distintas incluso con una preferencia fuerte."
+      },
+      "how": {
+        "title": "Cómo funciona el Brand Direction Explorer",
+        "p1": "Elige un escenario —apertura de cafetería, exploración de marca de té, póster de evento o un brief libre— y completa unos campos en lenguaje sencillo. No hace falta vocabulario de diseño.",
+        "p2": "La etapa uno se ejecuta en un modelo de OpenAI que lee el brief y escribe tres direcciones creativas distintas, cada una con su propio razonamiento de ambiente, paleta, tipografía y composición. Una verificación descarta direcciones duplicadas o casi idénticas y reintenta.",
+        "p3": "Si añades una preferencia Preferir/Evitar, se anexa al prompt como guía explícita —el brief siempre manda y las tres direcciones deben seguir distintas—, de modo que la preferencia moldea el look sin colapsar la variedad.",
+        "p4": "La etapa dos convierte la dirección que elijas en un visual terminado (generación de imagen con Gemini), para que exploración y producción vivan en un solo flujo.",
+        "p5": "El resultado es un camino más rápido del brief a un look acordado: más direcciones exploradas por hora y responsables alineados antes de comprometer presupuesto o tiempo de producción."
+      }
+    },
+    "cta": "Explorar direcciones de marca",
+    "example": "Ejemplo: un brief de apertura de cafetería → tres direcciones distintas (rústica-cálida, moderna-dorada, vintage-pastel), cada una con su paleta, tipografía y composición.",
+    "why": {
+      "title": "¿Por qué explorar direcciones primero?",
+      "point1": "Tres opciones distintas, no una: eliges entre un abanico en vez de reaccionar a una sola apuesta.",
+      "point2": "Brief en lenguaje sencillo dentro, direcciones visuales profesionales fuera: sin vocabulario de diseño.",
+      "point3": "El opcional Preferir/Evitar orienta el look hacia tu marca sin fundir las tres en una.",
+      "point4": "Exploración y visual final en un solo flujo: la dirección que elijas pasa directa a producción."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q1": "¿Cuántas direcciones obtengo?",
+      "a1": "Tres direcciones creativas distintas por brief, cada una con su ambiente, paleta, tipografía y composición. Una verificación descarta direcciones casi idénticas y reintenta.",
+      "q2": "¿Puedo orientar el estilo?",
+      "a2": "Sí: el campo opcional Preferir/Evitar añade una guía explícita. El brief sigue mandando y las tres direcciones siguen distintas, así la preferencia moldea el look sin reducir tus opciones."
+    }
   },
   "topicWorkflows": {
     "runAll": "Run the whole workflow",

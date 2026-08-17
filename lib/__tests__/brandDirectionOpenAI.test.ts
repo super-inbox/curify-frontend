@@ -157,6 +157,38 @@ describe("parseAndValidateDirections", () => {
     const result = parseAndValidateDirections(JSON.stringify(payload));
     expect(result.ok).toBe(false);
   });
+
+  // Regression test for the real, observed quality gap documented in
+  // docs/daily_report/8.16/creative-direction-trajectory/FINDINGS.md (P1-0):
+  // a real captured run returned all 3 directions titled "Morrow Coffee",
+  // differing only in subtitle/description. title.en must now be distinct.
+  it("rejects a response where two directions share the same title.en", async () => {
+    const { parseAndValidateDirections } = await import("../brandDirectionOpenAI");
+    const payload = JSON.parse(validDirectionsPayload());
+    payload.directions[1].title.en = payload.directions[0].title.en;
+    const result = parseAndValidateDirections(JSON.stringify(payload));
+    expect(result.ok).toBe(false);
+    if (!result.ok) expect(result.reason).toContain("duplicate_direction_title");
+  });
+
+  it("rejects duplicate titles case-insensitively", async () => {
+    const { parseAndValidateDirections } = await import("../brandDirectionOpenAI");
+    const payload = JSON.parse(validDirectionsPayload());
+    payload.directions[0].title.en = "Warm Neighborhood";
+    payload.directions[1].title.en = "warm neighborhood";
+    const result = parseAndValidateDirections(JSON.stringify(payload));
+    expect(result.ok).toBe(false);
+  });
+
+  it("accepts 3 directions with distinct titles.en", async () => {
+    const { parseAndValidateDirections } = await import("../brandDirectionOpenAI");
+    const payload = JSON.parse(validDirectionsPayload());
+    payload.directions[0].title.en = "Warm Neighborhood";
+    payload.directions[1].title.en = "Zen Minimalist";
+    payload.directions[2].title.en = "Bold Editorial";
+    const result = parseAndValidateDirections(JSON.stringify(payload));
+    expect(result.ok).toBe(true);
+  });
 });
 
 describe("generateCreativeDirections", () => {
@@ -271,6 +303,112 @@ describe("generateCreativeDirections", () => {
     expect(result.success).toBe(false);
     if (!result.success) expect(result.kind).toBe("invalid_input");
     expect(mockCreate).not.toHaveBeenCalled();
+  });
+
+  // --- preferenceProfile integration (Task C product iteration) ---
+
+  it("baseline request (no preferenceProfile) sends a user message with no VISUAL PREFERENCE section", async () => {
+    mockCreate.mockResolvedValueOnce(chatResponse(validDirectionsPayload()));
+    const { generateCreativeDirections } = await import("../brandDirectionOpenAI");
+
+    await generateCreativeDirections(coffeeCase, COFFEE_FULL_FIELDS);
+
+    const userMessage: string = mockCreate.mock.calls[0][0].messages.find(
+      (m: { role: string }) => m.role === "user",
+    ).content;
+    expect(userMessage).not.toContain("VISUAL PREFERENCE");
+  });
+
+  it("includes a likes-only preference in the real OpenAI user message", async () => {
+    mockCreate.mockResolvedValueOnce(chatResponse(validDirectionsPayload()));
+    const { generateCreativeDirections } = await import("../brandDirectionOpenAI");
+
+    await generateCreativeDirections(coffeeCase, COFFEE_FULL_FIELDS, {
+      likes: "editorial typography, restrained warm palette",
+    });
+
+    const userMessage: string = mockCreate.mock.calls[0][0].messages.find(
+      (m: { role: string }) => m.role === "user",
+    ).content;
+    expect(userMessage).toContain("VISUAL PREFERENCE");
+    expect(userMessage).toContain("editorial typography, restrained warm palette");
+    expect(userMessage).not.toContain("Wants to avoid");
+  });
+
+  it("includes a dislikes-only preference in the real OpenAI user message", async () => {
+    mockCreate.mockResolvedValueOnce(chatResponse(validDirectionsPayload()));
+    const { generateCreativeDirections } = await import("../brandDirectionOpenAI");
+
+    await generateCreativeDirections(coffeeCase, COFFEE_FULL_FIELDS, {
+      dislikes: "cute mascot illustration, neon gradients",
+    });
+
+    const userMessage: string = mockCreate.mock.calls[0][0].messages.find(
+      (m: { role: string }) => m.role === "user",
+    ).content;
+    expect(userMessage).toContain("VISUAL PREFERENCE");
+    expect(userMessage).toContain("cute mascot illustration, neon gradients");
+    expect(userMessage).not.toContain("Prefers:");
+  });
+
+  it("includes both likes and dislikes together", async () => {
+    mockCreate.mockResolvedValueOnce(chatResponse(validDirectionsPayload()));
+    const { generateCreativeDirections } = await import("../brandDirectionOpenAI");
+
+    await generateCreativeDirections(coffeeCase, COFFEE_FULL_FIELDS, {
+      likes: "tactile natural materials",
+      dislikes: "neon gradients",
+    });
+
+    const userMessage: string = mockCreate.mock.calls[0][0].messages.find(
+      (m: { role: string }) => m.role === "user",
+    ).content;
+    expect(userMessage).toContain("tactile natural materials");
+    expect(userMessage).toContain("neon gradients");
+  });
+
+  it("normalizes whitespace-only preference fields to no preference section at all", async () => {
+    mockCreate.mockResolvedValueOnce(chatResponse(validDirectionsPayload()));
+    const { generateCreativeDirections } = await import("../brandDirectionOpenAI");
+
+    await generateCreativeDirections(coffeeCase, COFFEE_FULL_FIELDS, {
+      likes: "   ",
+      dislikes: "\n\t",
+    });
+
+    const userMessage: string = mockCreate.mock.calls[0][0].messages.find(
+      (m: { role: string }) => m.role === "user",
+    ).content;
+    expect(userMessage).not.toContain("VISUAL PREFERENCE");
+  });
+
+  it("safely ignores a malformed preferenceProfile (wrong type) instead of throwing", async () => {
+    mockCreate.mockResolvedValueOnce(chatResponse(validDirectionsPayload()));
+    const { generateCreativeDirections } = await import("../brandDirectionOpenAI");
+
+    // @ts-expect-error deliberately malformed to exercise the runtime guard
+    const result = await generateCreativeDirections(coffeeCase, COFFEE_FULL_FIELDS, "not-an-object");
+
+    expect(result.success).toBe(true);
+    const userMessage: string = mockCreate.mock.calls[0][0].messages.find(
+      (m: { role: string }) => m.role === "user",
+    ).content;
+    expect(userMessage).not.toContain("VISUAL PREFERENCE");
+  });
+
+  it("retries when the model returns duplicate titles, then succeeds", async () => {
+    const duplicateTitlePayload = JSON.parse(validDirectionsPayload());
+    duplicateTitlePayload.directions[0].title.en = "Same Title";
+    duplicateTitlePayload.directions[1].title.en = "Same Title";
+    mockCreate
+      .mockResolvedValueOnce(chatResponse(JSON.stringify(duplicateTitlePayload)))
+      .mockResolvedValueOnce(chatResponse(validDirectionsPayload()));
+    const { generateCreativeDirections } = await import("../brandDirectionOpenAI");
+
+    const result = await generateCreativeDirections(coffeeCase, COFFEE_FULL_FIELDS);
+
+    expect(result.success).toBe(true);
+    expect(mockCreate).toHaveBeenCalledTimes(2);
   });
 });
 
