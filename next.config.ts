@@ -85,6 +85,21 @@ const nextConfig: NextConfig = {
         destination: "/:locale/tools/brand-direction-explorer",
         permanent: true,
       },
+      // sticker-factory-export was a duplicate of die-cut-sticker-file — same
+      // capability, two slugs, two SEO pages, two i18n namespaces. Consolidated
+      // 2026-08-17 onto the older slug: it owns the "die cut sticker" keyword
+      // and the card art, while the newer slug had ZERO GSC impressions since
+      // 2026-06-01, so nothing was lost by folding it in.
+      {
+        source: "/tools/sticker-factory-export",
+        destination: "/tools/die-cut-sticker-file",
+        permanent: true,
+      },
+      {
+        source: `/:locale(${LOCALE_RE})/tools/sticker-factory-export`,
+        destination: "/:locale/tools/die-cut-sticker-file",
+        permanent: true,
+      },
       // The tool's slug is `die-cut-sticker-file`, but `die-cut-sticker` is the
       // shape people (and we) reach for — it is also the head of the KD-25
       // "die cut sticker maker" cluster. Unrouted it renders a chrome-only

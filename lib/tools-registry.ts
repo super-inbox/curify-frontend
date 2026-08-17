@@ -289,14 +289,15 @@ export const TOOL_REGISTRY: ToolDef[] = [
   {
     id: "die-cut-sticker-file",
     slug: "die-cut-sticker-file",
-    groupId: "image",
+    // Consolidated home of the sticker factory export (2026-08-17): this slug
+    // owns the keyword and the card art, so the duplicate newer tool 301s here.
+    groupId: "design",
     status: "demo",
     // Self-serve since 2026-08-17 — POST /design-tools/packaging-mockup (15
     // credits). job_type is a required field but unused for this tool.
     job_type: "video_transcript",
     namespace: "dieCutStickerFile",
-    action: { type: "none" },
-    cta: "contact",
+    action: { type: "sticker_export" },
     i18n: toolKeys("die_cut_sticker_file"),
     seo: seoKeys("die_cut_sticker_file"),
     demo: {
@@ -310,27 +311,7 @@ export const TOOL_REGISTRY: ToolDef[] = [
   // at. The backend pipelines exist (POST /design-tools/*) but the self-serve
   // frontend flow does not, so these carry the contact CTA rather than an
   // inline generate block — status must not claim more than is reachable.
-  {
-    id: "sticker-factory-export",
-    slug: "sticker-factory-export",
-    groupId: "design",
-    status: "demo",
-    // Self-serve since 2026-08-17: the card renders StickerExportForm, which
-    // calls POST /design-tools/sticker-export (20 credits) directly.
-    job_type: "video_transcript",
-    namespace: "stickerFactoryExport",
-    action: { type: "sticker_export" },
-    demo: {
-      type: "single_image",
-      // Reuses the die-cut-sticker-file card art: same capability, same package,
-      // already on the CDN. See the duplication note on that tool.
-      src: "/images/tools/die-cut-sticker-file.jpg",
-      alt: "A die-cut sticker artwork turned into a factory package — transparent 300 DPI art, a magenta CutContour die-cut line with 3mm bleed, CMYK PDF, preview and spec sheet",
-    },
-    i18n: toolKeys("sticker_factory_export"),
-    seo: seoKeys("sticker_factory_export"),
-  },
-  {
+    {
     id: "acrylic-factory-export",
     slug: "acrylic-factory-export",
     groupId: "design",
