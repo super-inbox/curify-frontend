@@ -97,6 +97,19 @@
           "desc": "SEO + API로 번역·현지화·배포."
         }
       }
+    },
+    "workflowRows": {
+      "title": "워크플로우 디자인",
+      "subtitle": "템플릿을 연결하여 완전한 결과물을 만드세요 — 시작할 워크플로우를 선택하세요.",
+      "cta": "워크플로우 보기 →"
+    },
+    "exampleGrid": {
+      "title": "트렌드 템플릿 및 예시",
+      "subtitle": "커뮤니티에서 가장 많이 복사된 신선한 디자인 — 원하는 것을 리믹스하세요."
+    },
+    "nicheTopics": {
+      "title": "니치별 탐색",
+      "subtitle": "스타일 탐색된 디자인 니치 — 범위를 보고, 나만의 것을 만들어보세요."
     }
   },
   "coreFeatures": {
@@ -1496,7 +1509,148 @@
   "topicWorkflows": {
     "runAll": "Run the whole workflow",
     "comingSoonTitle": "Almost ready ✨",
-    "comingSoonBody": "One-click end-to-end runs are coming soon. In the meantime every step below works on its own — start anywhere."
+    "comingSoonBody": "One-click end-to-end runs are coming soon. In the meantime every step below works on its own — start anywhere.",
+    "seeFull": "전체 워크플로우 보기 →",
+    "merch": {
+      "heading": "머천다이즈 디자인 워크플로우",
+      "subtitle": "하나의 캐릭터 또는 IP를 판매 가능한 머천다이즈 전체 라인으로 변환하세요 — 스티커부터 포장까지.",
+      "steps": {
+        "sticker": {
+          "name": "캐릭터 스티커 팩",
+          "desc": "당신의 캐릭터 또는 IP를 일관된 표현 / 스티커 시트로 변환하세요.",
+          "cta": "스티커 만들기"
+        },
+        "mockups": {
+          "name": "머천다이즈 목업",
+          "desc": "전체 목업 세트에 아트를 적용하세요 — 머그, 토트백, 열쇠고리, 전화 케이스.",
+          "cta": "목업 생성하기"
+        },
+        "packaging": {
+          "name": "포장",
+          "desc": "당신의 IP를 담은 제품 포장 및 선물 상자를 디자인하세요.",
+          "cta": "포장 디자인하기"
+        },
+        "collection": {
+          "name": "컬렉션 디스플레이",
+          "desc": "전체 머천다이즈 라인을 컬렉션 디스플레이 보드로 배치하세요.",
+          "cta": "컬렉션 만들기"
+        },
+        "poster": {
+          "name": "프로모션 포스터",
+          "desc": "컬렉션을 출시하고 판매하기 위한 프로모션 포스터.",
+          "cta": "포스터 만들기"
+        },
+        "factory": {
+          "name": "공장 준비 완료 인쇄 파일",
+          "desc": "아트를 실제 생산 파일로 내보내세요 — 컷 라인, 블리드 및 CMYK — 프린터가 견적을 낼 수 있도록.",
+          "cta": "파일 내보내기"
+        }
+      }
+    },
+    "product": {
+      "heading": "제품 및 전자상거래 워크플로우",
+      "subtitle": "하나의 제품 사진을 목록 준비가 완료된 비주얼 세트로 변환하세요 — 히어로 샷부터 마켓플레이스 목록까지.",
+      "steps": {
+        "poster": {
+          "name": "제품 포스터",
+          "desc": "제품 사진을 깔끔한 홍보용 히어로 포스터로 변환하세요.",
+          "cta": "포스터 만들기"
+        },
+        "listing": {
+          "name": "전자상거래 목록",
+          "desc": "기능, 사양 및 라이프스타일 사진이 포함된 9:16 상세 페이지입니다.",
+          "cta": "목록 만들기"
+        },
+        "tryon": {
+          "name": "모델 / 착용해보기",
+          "desc": "제품을 모델에 올려 라이프스타일 및 착용해보기 비주얼을 제공합니다.",
+          "cta": "착용해보기 생성"
+        },
+        "promo": {
+          "name": "홍보 포스터",
+          "desc": "제품을 위한 눈길을 끄는 세일 또는 캠페인 포스터입니다.",
+          "cta": "프로모션 만들기"
+        },
+        "infographic": {
+          "name": "목록 인포그래픽",
+          "desc": "Amazon / 마켓플레이스 목록을 위한 6그리드 기능 인포그래픽입니다.",
+          "cta": "인포그래픽 만들기"
+        }
+      }
+    },
+    "brand": {
+      "heading": "브랜드 디자인 워크플로우",
+      "subtitle": "색상 시스템부터 재사용 가능한 브랜드 키트까지 완전한 브랜드 아이덴티티를 구축하세요.",
+      "steps": {
+        "palette": {
+          "name": "색상 시스템"
+        },
+        "logo": {
+          "name": "로고"
+        },
+        "typeface": {
+          "name": "서체"
+        },
+        "packaging": {
+          "name": "포장"
+        },
+        "kit": {
+          "name": "브랜드 키트"
+        }
+      }
+    },
+    "edtech": {
+      "heading": "교육 콘텐츠 워크플로우",
+      "subtitle": "하나의 주제를 전체 교육 팩으로 변환하세요 — 읽기 카드, 어휘, 워크시트 및 포스터.",
+      "steps": {
+        "reading": {
+          "name": "읽기 카드"
+        },
+        "vocab": {
+          "name": "어휘 시트"
+        },
+        "worksheet": {
+          "name": "워크시트"
+        },
+        "scene": {
+          "name": "일러스트 장면"
+        },
+        "poster": {
+          "name": "학습 포스터"
+        }
+      }
+    },
+    "packaging": {
+      "heading": "포장 디자인 워크플로우",
+      "subtitle": "제품을 기본 아이템에서 선반 준비 완료 패키지로 가져오기 — 구조, 전면 패널, 변형, 다이라인 증명 및 소매 비주얼.",
+      "steps": {
+        "concept": {
+          "name": "패키지 개념 및 구조",
+          "desc": "형식을 선택하세요 — 카톤, 걸이 상자, 창 패키지 — 그리고 제품에서 확인하세요.",
+          "cta": "패키지를 디자인하세요"
+        },
+        "label": {
+          "name": "전면 패널 및 라벨",
+          "desc": "선반을 향한 패널: 제품 이름, 핵심 이점 및 쇼핑객이 몇 초 안에 읽는 주장.",
+          "cta": "라벨 디자인하기"
+        },
+        "variants": {
+          "name": "선물 및 시즌 변형",
+          "desc": "디자인을 다시 시작하지 않고 동일한 패키지를 선물 및 시즌 에디션으로 변형하세요.",
+          "cta": "변형 만들기"
+        },
+        "dieline": {
+          "name": "다이라인 → 3D 증명",
+          "desc": "인쇄되기 전에 평면 다이라인을 실제 너비 × 높이 × 깊이로 3D 모형으로 접으세요.",
+          "cta": "다이라인 접기"
+        },
+        "shelf": {
+          "name": "선반 및 목록 비주얼",
+          "desc": "소매 목록, 프레젠테이션 및 구매자 발표를 위한 완성된 패키지의 히어로 샷.",
+          "cta": "비주얼 만들기"
+        }
+      }
+    }
   },
   "acrylicFactoryExport": {
     "metadata": {

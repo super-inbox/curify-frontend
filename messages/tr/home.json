@@ -97,6 +97,19 @@
           "desc": "SEO + API ile çevir, yerelleştir ve dağıt."
         }
       }
+    },
+    "workflowRows": {
+      "title": "İş akışlarını tasarla",
+      "subtitle": "Şablonlarımızı tam bir teslimat haline getirin - başlamak için bir iş akışı seçin.",
+      "cta": "İş akışını görüntüle →"
+    },
+    "exampleGrid": {
+      "title": "Trend olan şablonlar & örnekler",
+      "subtitle": "Topluluk tarafından en çok kopyalanan, taze tasarımlar - herhangi birini yeniden düzenleyin."
+    },
+    "nicheTopics": {
+      "title": "Nişe göre keşfet",
+      "subtitle": "Tarzı keşfedilmiş tasarım nişleri - aralığı görün, sonra kendi tasarımınızı yapın."
     }
   },
   "coreFeatures": {
@@ -1581,7 +1594,148 @@
   "topicWorkflows": {
     "runAll": "Run the whole workflow",
     "comingSoonTitle": "Almost ready ✨",
-    "comingSoonBody": "One-click end-to-end runs are coming soon. In the meantime every step below works on its own — start anywhere."
+    "comingSoonBody": "One-click end-to-end runs are coming soon. In the meantime every step below works on its own — start anywhere.",
+    "seeFull": "Tam iş akışını görüntüle →",
+    "merch": {
+      "heading": "Ürün tasarım iş akışı",
+      "subtitle": "Bir karakteri veya IP'yi satılabilir bir ürün serisine dönüştürün - çıkartmalardan ambalaja kadar.",
+      "steps": {
+        "sticker": {
+          "name": "Karakter çıkartma paketi",
+          "desc": "Karakterinizi veya IP'nizi tutarlı bir ifade / çıkartma sayfasına dönüştürün.",
+          "cta": "Çıkartma yap"
+        },
+        "mockups": {
+          "name": "Ürün maketleri",
+          "desc": "Sanatı tam bir maket setine uygulayın - kupa, çanta, anahtarlık, telefon kılıfı.",
+          "cta": "Maketleri oluştur"
+        },
+        "packaging": {
+          "name": "Ambalaj",
+          "desc": "Ürün ambalajı ve IP'nizi taşıyan hediye kutuları tasarlayın.",
+          "cta": "Ambalaj tasarla"
+        },
+        "collection": {
+          "name": "Koleksiyon sergisi",
+          "desc": "Tam ürün serisini bir koleksiyon sergi panosu olarak düzenleyin.",
+          "cta": "Koleksiyonu oluştur"
+        },
+        "poster": {
+          "name": "Tanıtım afişi",
+          "desc": "Koleksiyonu başlatmak ve satmak için bir tanıtım afişi.",
+          "cta": "Afiş yap"
+        },
+        "factory": {
+          "name": "Fabrika hazır baskı dosyası",
+          "desc": "Sanatı gerçek bir üretim dosyası olarak dışa aktarın - kesim hattı, taşma ve CMYK - böylece bir matbaa buna göre fiyat verebilir.",
+          "cta": "Dosyayı dışa aktar"
+        }
+      }
+    },
+    "product": {
+      "heading": "Ürün & e-ticaret iş akışı",
+      "subtitle": "Bir ürün fotoğrafını listelemeye hazır görsellerin tam setine dönüştürün - kahraman çekiminden pazar yeri listesine kadar.",
+      "steps": {
+        "poster": {
+          "name": "Ürün afişi",
+          "desc": "Ürün fotoğrafınızı temiz bir tanıtım afişine dönüştürün.",
+          "cta": "Afiş yap"
+        },
+        "listing": {
+          "name": "E-ticaret listesi",
+          "desc": "Özellikler, teknik özellikler ve yaşam tarzı fotoğrafları ile 9:16 detay sayfası.",
+          "cta": "Liste oluştur"
+        },
+        "tryon": {
+          "name": "Model / deneme",
+          "desc": "Ürününüzü yaşam tarzı ve deneme görselleri için bir modelin üzerine koyun.",
+          "cta": "Deneme oluştur"
+        },
+        "promo": {
+          "name": "Tanıtım afişi",
+          "desc": "Ürün için dikkat çekici bir satış veya kampanya afişi.",
+          "cta": "Tanıtım yap"
+        },
+        "infographic": {
+          "name": "Liste infografiği",
+          "desc": "Amazon / pazar listeleri için altı ızgara özellik infografiği.",
+          "cta": "İnfografik oluştur"
+        }
+      }
+    },
+    "brand": {
+      "heading": "Marka tasarım iş akışı",
+      "subtitle": "Tam bir marka kimliği oluşturun — bir renk sisteminden yeniden kullanılabilir bir marka kitine kadar.",
+      "steps": {
+        "palette": {
+          "name": "Renk sistemi"
+        },
+        "logo": {
+          "name": "Logo"
+        },
+        "typeface": {
+          "name": "Yazı tipi"
+        },
+        "packaging": {
+          "name": "Ambalaj"
+        },
+        "kit": {
+          "name": "Marka kiti"
+        }
+      }
+    },
+    "edtech": {
+      "heading": "Eğitim içeriği iş akışı",
+      "subtitle": "Bir konuyu tam bir öğretim paketine dönüştürün — okuma kartları, kelime bilgisi, çalışma sayfaları ve afişler.",
+      "steps": {
+        "reading": {
+          "name": "Okuma kartları"
+        },
+        "vocab": {
+          "name": "Kelime bilgisi sayfası"
+        },
+        "worksheet": {
+          "name": "Çalışma sayfası"
+        },
+        "scene": {
+          "name": "Açıklamalı sahne"
+        },
+        "poster": {
+          "name": "Çalışma afişi"
+        }
+      }
+    },
+    "packaging": {
+      "heading": "Ambalaj tasarım iş akışı",
+      "subtitle": "Bir ürünü çıplak maddeden raf hazır pakete taşıyın — yapı, ön panel, varyantlar, die çizimi ve perakende görselleri.",
+      "steps": {
+        "concept": {
+          "name": "Paket konsepti ve yapısı",
+          "desc": "Formatı seçin — karton, asma kutu, pencere paketi — ve ürününüzde görün.",
+          "cta": "Paketi tasarla"
+        },
+        "label": {
+          "name": "Ön panel ve etiket",
+          "desc": "Rafa bakan panel: ürün adı, temel fayda ve bir alıcının birkaç saniyede okuduğu iddialar.",
+          "cta": "Etiketi tasarla"
+        },
+        "variants": {
+          "name": "Hediye ve mevsimsel varyantlar",
+          "desc": "Aynı paketi hediye ve mevsimsel baskılara dönüştürün, tasarımı yeniden başlatmadan.",
+          "cta": "Varyantları oluştur"
+        },
+        "dieline": {
+          "name": "Die çizimi → 3D kanıt",
+          "desc": "Düz die çiziminizi gerçek genişlik × yükseklik × derinlikte 3D maket haline getirin, hiçbir şey basılmadan önce.",
+          "cta": "Die çizimini katla"
+        },
+        "shelf": {
+          "name": "Raf ve liste görselleri",
+          "desc": "Perakende listeleri, sunumlar ve alıcı sunumları için bitmiş paketin hero çekimleri.",
+          "cta": "Görselleri oluştur"
+        }
+      }
+    }
   },
   "acrylicFactoryExport": {
     "metadata": {
