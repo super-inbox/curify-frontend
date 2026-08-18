@@ -21,7 +21,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { WORKFLOWS_BY_DOMAIN } from "@/lib/topic_workflows";
 import { requiresDirection } from "@/lib/agent/direction";
-import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
+import ReferenceImagesUpload from "@/app/[locale]/_components/ReferenceImagesUpload";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { freeformGenerateService } from "@/services/freeformGenerate";
 import { pollNanoResult } from "@/services/pollNanoResult";
@@ -94,7 +94,11 @@ export default function DesignAgentClient({
   const [workflowDomain, setWorkflowDomain] = useState<string | undefined>(initialWorkflow);
   // blob_url from ReferenceImageUpload — the component owns upload, preview,
   // error and the anonymous sign-in gate (/images/upload requires auth).
-  const [referenceUrl, setReferenceUrl] = useState<string | null>(null);
+  // Ordered references. `referenceUrl` is the derived base image so the
+  // direction gate, suggestions and trajectory checks below keep working
+  // unchanged — they only ever asked "is there an image?".
+  const [referenceUrls, setReferenceUrls] = useState<string[]>([]);
+  const referenceUrl = referenceUrls[0] ?? null;
   const [uploading, setUploading] = useState(false);
   const [plan, setPlan] = useState<AgentPlan | null>(null);
   const [states, setStates] = useState<Record<number, StepState>>({});
@@ -138,12 +142,14 @@ export default function DesignAgentClient({
     [],
   );
 
-  /** ReferenceImageUpload reports the uploaded blob_url — classify it for suggestions. */
-  const onReferenceChange = useCallback(
-    (blobUrl: string | null) => {
-      setReferenceUrl(blobUrl);
+  /** Ordered references in; the BASE image drives image classification. */
+  const onReferencesChange = useCallback(
+    (urls: string[]) => {
+      setReferenceUrls(urls);
       setSuggest(null);
-      if (blobUrl) void fetchSuggestions({ imageRef: blobUrl });
+      // Classify off the base image only — suggestions answer "what is this?",
+      // and that question is about the subject, not the whole reference set.
+      if (urls[0]) void fetchSuggestions({ imageRef: urls[0] });
     },
     [fetchSuggestions],
   );
@@ -314,6 +320,12 @@ export default function DesignAgentClient({
               params: step.params ?? {},
               example_id: `${step.template_id}-agent-${Date.now().toString(36)}`,
               ...(referenceUrl ? { reference_image_url: referenceUrl } : {}),
+            ...(referenceUrls.length > 1
+              ? { reference_image_urls: referenceUrls.slice(1) }
+              : {}),
+              ...(referenceUrls.length > 1
+                ? { reference_image_urls: referenceUrls.slice(1) }
+                : {}),
             },
             { locale },
           );
@@ -407,7 +419,7 @@ export default function DesignAgentClient({
       // it the suggester infers from produced artifacts and defaults to merch.
       domain: p.routing.deliverable?.domain ?? workflowDomain,
     });
-  }, [query, referenceUrl, locale, verifyArtifact, fetchSuggestions, suggest]);
+  }, [query, referenceUrl, referenceUrls, locale, verifyArtifact, fetchSuggestions, suggest]);
 
   // One-click workflow entry: the user already chose the ladder on the topic or
   // home page, so re-asking them to type a brief would undo the whole point.
@@ -534,13 +546,14 @@ export default function DesignAgentClient({
             {/* Small drop target beside the text, not a second panel. An image
                 can replace the direction step entirely (see direction.ts), so it
                 belongs next to the brief rather than behind a mode switch. */}
-            <div className="w-40 shrink-0">
-              <ReferenceImageUpload
-                variant="compact"
-                label="Reference"
-                hint="optional"
-                onChange={onReferenceChange}
+            <div className="w-56 shrink-0">
+              <ReferenceImagesUpload
+                value={referenceUrls}
+                onChange={onReferencesChange}
                 onUploadingChange={setUploading}
+                max={5}
+                label="References"
+                hint="First is the base. Add up to 5."
               />
             </div>
           </div>
