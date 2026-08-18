@@ -41,6 +41,17 @@ export default function middleware(req: NextRequest) {
   // 3) Pass pathname to layout
   res.headers.set("x-pathname", url.pathname);
 
+  // 3b) Keep non-canonical hosts (the *.vercel.app deployment URLs) out of
+  // the index. app/robots.ts already serves them a closed robots.txt, but a
+  // disallow only stops *future* crawls — Google has already discovered
+  // /zh/tools/mockup and others via curify-frontend.vercel.app, and a
+  // disallowed-but-linked URL can still surface as a bare URL entry. This
+  // header drops those. Deliberately not a redirect to www: preview
+  // deployments must stay browsable for review.
+  if (host && host !== "www.curify-ai.com") {
+    res.headers.set("x-robots-tag", "noindex, nofollow");
+  }
+
   // 4) Auth is enforced client-side in app/[locale]/authProvider.tsx
   // (PROTECTED_PREFIXES checks profile validity on mount). The
   // previous server-side gate here read `next-auth.session-token`

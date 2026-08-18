@@ -48,6 +48,18 @@ const MERCH: TopicWorkflowConfig = {
       name: "Collection display", desc: "Lay the full merch line out as a collection display board.", cta: "Build collection" },
     { key: "poster", n: 5, emoji: "📣", href: "/nano-template/product-poster",
       name: "Promo poster", desc: "A promotional poster to launch and sell the collection.", cta: "Make poster" },
+    // 2026-08-17: the ladder used to end at the promo poster — i.e. at
+    // marketing visuals, one step short of anything a factory can actually
+    // print. That is the opposite of the positioning ("design agents →
+    // factory-ready output"), and it left /tools/die-cut-sticker-file with a
+    // single inbound link site-wide (the /tools index) while the packaging
+    // ladder's step 4 gave /tools/packaging-mockup three, including one from
+    // the home page. Measured 08-17: the two tool pages with 1 inbound link
+    // have NEVER been crawled; every tool page added on or before 07-11 is
+    // indexed and every one added since 08-06 is not. This step closes the
+    // ladder on the merits and puts the tool on a crawled path at the same time.
+    { key: "factory", n: 6, emoji: "🏭", href: "/tools/die-cut-sticker-file",
+      name: "Factory-ready print file", desc: "Export the artwork as a real production file — cut line, bleed and CMYK — so a printer can quote from it.", cta: "Export the file" },
   ],
 };
 

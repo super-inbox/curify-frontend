@@ -56,7 +56,13 @@ export const USE_CASES: UseCaseDef[] = [
   // the curated designer-style template feed, not the tool grid.
   // brand-direction-explorer first: it produced 30% of the projects created in
   // the week to 2026-08-11, the highest-throughput surface on the site.
-  { slug: "for-designers",    tier: "consumer", toolSlugs: ["brand-direction-explorer", "style-transfer", "character-sticker-sheet"] },
+  // 2026-08-17: added acrylic-factory-export. lib/tool-personas.ts already
+  // routes it to for-designers; this was the missing half. It also gives that
+  // never-crawled page a third inbound link from an indexed source (this page,
+  // last crawl 05-17) — /tools/packaging-mockup got crawled on 3 links while
+  // the 1-link pages never did. NOT adding die-cut-sticker-file here:
+  // tool-personas maps it to creators/merch-operators/dtc, not designers.
+  { slug: "for-designers",    tier: "consumer", toolSlugs: ["brand-direction-explorer", "style-transfer", "character-sticker-sheet", "acrylic-factory-export"] },
 
   // --- B2B ICPs (cold-outreach + reference-deal surface) ---
   // Slug kept for SEO continuity; copy and toolSlugs rewritten to target
@@ -139,7 +145,20 @@ export const USE_CASES: UseCaseDef[] = [
   // (upload character → 9-pose 表情差分 sheet), unlike the product-photo
   // tools, so it belongs here. Coexists with the /ip-merch-demo banner
   // (banner = pitch/walkthrough, tool = do-it-now).
-  { slug: "for-merch-operators", tier: "b2b", toolSlugs: ["character-sticker-sheet"] },
+  // 2026-08-17: added die-cut-sticker-file + acrylic-factory-export. Both are
+  // status="demo" (live-only policy satisfied) and lib/tool-personas.ts ALREADY
+  // routes both to for-merch-operators — this file was the missing half of that
+  // mapping, so the tool pages claimed the persona while the persona page did
+  // not list the tools. They belong here by the same test that admitted
+  // character-sticker-sheet: they are POD/merch-design tools an operator uses at
+  // their desk, not DTC listing-image tools.
+  //
+  // Also a crawl fix. Measured 08-17 via URL Inspection: both pages had exactly
+  // ONE inbound internal link site-wide (the /tools index) and have NEVER been
+  // crawled, while /tools/packaging-mockup — 3 inbound links including the home
+  // page — was crawled 08-09. This page is indexed (last crawl 06-06), so it is
+  // a real crawl path. See also the merch ladder's new step 6.
+  { slug: "for-merch-operators", tier: "b2b", toolSlugs: ["character-sticker-sheet", "die-cut-sticker-file", "acrylic-factory-export"] },
 ];
 
 export function getUseCaseBySlug(slug: string): UseCaseDef | undefined {

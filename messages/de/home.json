@@ -97,6 +97,19 @@
           "desc": "Übersetzen, lokalisieren & verteilen via SEO + API."
         }
       }
+    },
+    "workflowRows": {
+      "title": "Workflows gestalten",
+      "subtitle": "Ketten Sie unsere Vorlagen zu einem vollständigen Ergebnis — wählen Sie einen Workflow, um zu beginnen.",
+      "cta": "Workflow anzeigen →"
+    },
+    "exampleGrid": {
+      "title": "Beliebte Vorlagen & Beispiele",
+      "subtitle": "Frische, meistkopierte Designs aus der Community — remixen Sie eines davon."
+    },
+    "nicheTopics": {
+      "title": "Nach Nische erkunden",
+      "subtitle": "Stil-erforschte Designnischen — sehen Sie die Auswahl und erstellen Sie Ihr eigenes."
     }
   },
   "coreFeatures": {
@@ -1496,7 +1509,148 @@
   "topicWorkflows": {
     "runAll": "Run the whole workflow",
     "comingSoonTitle": "Almost ready ✨",
-    "comingSoonBody": "One-click end-to-end runs are coming soon. In the meantime every step below works on its own — start anywhere."
+    "comingSoonBody": "One-click end-to-end runs are coming soon. In the meantime every step below works on its own — start anywhere.",
+    "seeFull": "Vollen Workflow anzeigen →",
+    "merch": {
+      "heading": "Merch-Design-Workflow",
+      "subtitle": "Verwandeln Sie einen Charakter oder IP in eine vollständige Reihe verkäuflicher Merch-Artikel — von Aufklebern bis Verpackungen.",
+      "steps": {
+        "sticker": {
+          "name": "Charakter-Aufkleberpaket",
+          "desc": "Verwandeln Sie Ihren Charakter oder IP in einen konsistenten Ausdruck / Aufkleberbogen.",
+          "cta": "Aufkleber erstellen"
+        },
+        "mockups": {
+          "name": "Merch-Mockups",
+          "desc": "Wenden Sie die Grafiken auf ein vollständiges Mockup-Set an — Tasse, Tasche, Schlüsselanhänger, Handyhülle.",
+          "cta": "Mockups generieren"
+        },
+        "packaging": {
+          "name": "Verpackung",
+          "desc": "Gestalten Sie Produktverpackungen und Geschenkboxen mit Ihrer IP.",
+          "cta": "Verpackung gestalten"
+        },
+        "collection": {
+          "name": "Sammlungsanzeige",
+          "desc": "Legen Sie die gesamte Merch-Linie als Sammlungsanzeige aus.",
+          "cta": "Sammlung erstellen"
+        },
+        "poster": {
+          "name": "Promo-Poster",
+          "desc": "Ein Werbeplakat, um die Sammlung zu starten und zu verkaufen.",
+          "cta": "Poster erstellen"
+        },
+        "factory": {
+          "name": "Druckdatei für die Fabrik",
+          "desc": "Exportieren Sie die Grafiken als echte Produktionsdatei — Schnittlinie, Beschnitt und CMYK — damit ein Drucker ein Angebot erstellen kann.",
+          "cta": "Datei exportieren"
+        }
+      }
+    },
+    "product": {
+      "heading": "Produkt- & E-Commerce-Workflow",
+      "subtitle": "Verwandeln Sie ein Produktfoto in ein vollständiges Set von listingsbereiten Visuals — vom Hero-Shot bis zur Marktplatzauflistung.",
+      "steps": {
+        "poster": {
+          "name": "Produktposter",
+          "desc": "Verwandeln Sie Ihr Produktfoto in ein sauberes, werbewirksames Hero-Poster.",
+          "cta": "Poster erstellen"
+        },
+        "listing": {
+          "name": "E-Commerce-Listing",
+          "desc": "Eine 9:16 Detailseite mit Funktionen, Spezifikationen und Lifestyle-Aufnahmen.",
+          "cta": "Listing erstellen"
+        },
+        "tryon": {
+          "name": "Modell / Anprobe",
+          "desc": "Präsentieren Sie Ihr Produkt an einem Modell für Lifestyle- und Anprobe-Visualisierungen.",
+          "cta": "Anprobe generieren"
+        },
+        "promo": {
+          "name": "Werbeplakat",
+          "desc": "Ein auffälliges Verkaufs- oder Kampagnenplakat für das Produkt.",
+          "cta": "Promo erstellen"
+        },
+        "infographic": {
+          "name": "Listing-Infografik",
+          "desc": "Eine sechs-Grid-Feature-Infografik für Amazon / Marktplatz-Listings.",
+          "cta": "Infografik erstellen"
+        }
+      }
+    },
+    "brand": {
+      "heading": "Markendesign-Workflow",
+      "subtitle": "Erstellen Sie eine vollständige Markenidentität – von einem Farbsystem bis zu einem wiederverwendbaren Marken-Kit.",
+      "steps": {
+        "palette": {
+          "name": "Farbsystem"
+        },
+        "logo": {
+          "name": "Logo"
+        },
+        "typeface": {
+          "name": "Schriftart"
+        },
+        "packaging": {
+          "name": "Verpackung"
+        },
+        "kit": {
+          "name": "Marken-Kit"
+        }
+      }
+    },
+    "edtech": {
+      "heading": "Bildungsinhalts-Workflow",
+      "subtitle": "Verwandeln Sie ein Thema in ein vollständiges Lehrpaket – Lesekarten, Vokabeln, Arbeitsblätter und Poster.",
+      "steps": {
+        "reading": {
+          "name": "Lesekarten"
+        },
+        "vocab": {
+          "name": "Vokabelblatt"
+        },
+        "worksheet": {
+          "name": "Arbeitsblatt"
+        },
+        "scene": {
+          "name": "Illustrierte Szene"
+        },
+        "poster": {
+          "name": "Studienplakat"
+        }
+      }
+    },
+    "packaging": {
+      "heading": "Verpackungsdesign-Workflow",
+      "subtitle": "Nehmen Sie ein Produkt von einem nackten Artikel zu einem verkaufsfertigen Paket — Struktur, Vorderseite, Varianten, Dieline-Proof und Einzelhandelsvisualisierungen.",
+      "steps": {
+        "concept": {
+          "name": "Packkonzept & Struktur",
+          "desc": "Wählen Sie das Format — Karton, Hängeschachtel, Fensterpackung — und sehen Sie es auf Ihrem Produkt.",
+          "cta": "Das Paket gestalten"
+        },
+        "label": {
+          "name": "Vorderseite & Etikett",
+          "desc": "Das Regal-Panel: Produktname, der Hauptvorteil und Ansprüche, die ein Käufer in Sekunden liest.",
+          "cta": "Das Etikett gestalten"
+        },
+        "variants": {
+          "name": "Geschenk- & saisonale Varianten",
+          "desc": "Drehen Sie dasselbe Paket in Geschenk- und saisonale Ausgaben, ohne das Design neu zu starten.",
+          "cta": "Varianten erstellen"
+        },
+        "dieline": {
+          "name": "Dieline → 3D-Proof",
+          "desc": "Falten Sie Ihre flache Dieline in ein 3D-Modell in echter Breite × Höhe × Tiefe, bevor etwas gedruckt wird.",
+          "cta": "Die Dieline falten"
+        },
+        "shelf": {
+          "name": "Regal- & Listing-Visualisierungen",
+          "desc": "Hero-Shots des fertigen Pakets für Einzelhandelslisten, Decks und Käuferpräsentationen.",
+          "cta": "Visualisierungen erstellen"
+        }
+      }
+    }
   },
   "acrylicFactoryExport": {
     "metadata": {

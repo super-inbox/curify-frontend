@@ -233,6 +233,55 @@ _Updated 2026-08-10. The three deploy-gated rows below are **done**; corrections
 
 ## 2026-08-10 — corrections + the two P0s worked
 
+### New pages stopped being crawled around mid-July (2026-08-17)
+
+`/tools/packaging-mockup` came back **"Duplicate without user-selected canonical",
+`googleCanonical: https://www.curify-ai.com/`** — folded to the home page. It looked like a
+page defect. It is not. **Six hypotheses tested and all eliminated:**
+
+| # | hypothesis | measurement | verdict |
+|---|---|---|---|
+| 1 | near-duplicate of the home page | folded page 0.669 visible-text similarity; **indexed** sibling 0.857 | ❌ backwards |
+| 2 | page absent at crawl time | merged to main 08-09 00:50 UTC, crawled 04:55 UTC | ❌ live 4 h prior |
+| 3 | the i18n-namespace 404 (`ba7d6358`) | that bug hit acrylic/sticker-factory-export, not this | ❌ wrong page |
+| 4 | canonical buried past head | byte 3,980 of a 6,413-byte head — same as the indexed page | ❌ visible |
+| 5 | tool pages duplicate each other | pairwise visible-text similarity **0.10–0.22** | ❌ not close |
+| 6 | thin content | `speech-translator` is **indexed at 4,685 B**, thinner than every non-indexed page | ❌ no threshold |
+
+**The variable that separates them perfectly (12/12, zero overlap) is AGE.**
+
+| indexed | added | | not indexed | added |
+|---|---|---|---|---|
+| bilingual-subtitles, style-transfer, video-dubbing, speech-translator | 03-04 | | die-cut-sticker-file | 08-06 |
+| ai-product-photo-generator | 05-31 | | packaging-mockup | 08-06 |
+| ecommerce-photo | 07-02 | | brand-direction-explorer | 08-12 |
+| character-sticker-sheet, mockup | 07-11 | | acrylic-factory-export | 08-16 |
+
+Every tool page added **on or before 07-11 is indexed**; every one added **since 08-06 is
+not**. This is the site-wide *"Discovered — currently not indexed"* bucket seen from inside a
+single route. **Do not look for page defects on new pages — the crawl never happened.**
+
+**Inbound internal links track the one exception.** `/tools` is indexed (crawled 08-09) and
+links to all four new tools, so *discovery* is not the gap — Google found them and declined
+to fetch. What differed:
+
+- `/tools/packaging-mockup` — **3** inbound sources (`/tools`, `/topics/packaging`, home) → **crawled 08-09**
+- `/tools/die-cut-sticker-file` — **1** (`/tools` only) → never crawled
+- `/tools/acrylic-factory-export` — **1** (`/tools` only) → never crawled
+
+So the lever is **link paths from pages Google actually crawls**, not page content. Fixed in
+`564ff33c`: merch ladder step 6 → die-cut (renders on home + `/topics/merch`, the same slot
+that got packaging-mockup crawled), and the two tools added to `for-merch-operators` /
+`for-designers` in `lib/use-cases.ts` — which `lib/tool-personas.ts` already claimed, so this
+was the missing half of an existing mapping. Link counts: die-cut **1 → 4**, acrylic **1 → 3**.
+
+⚠️ **Sequencing:** submit these to the Indexing API only *after* the links deploy. Pinging
+first repeats the packaging-mockup outcome — a crawl that arrives before there is any reason
+to index. Useless link sources measured on the way: `/topics/stickers` (never crawled) and
+`/use-cases/for-dtc-brands` (itself folded).
+
+---
+
 ### The fold fix is CONFIRMED working (and two earlier explanations were wrong)
 
 Full URL-Inspection sweep of **all 103 blogs**: **60 indexed clean · 41 folded but never

@@ -1,6 +1,30 @@
 import { MetadataRoute } from 'next'
+import { headers } from 'next/headers'
 
-export default function robots(): MetadataRoute.Robots {
+/** The only host that should ever appear in a search index. Local const, not
+ *  exported: Next validates the export shape of metadata route files. */
+const CANONICAL_HOST = 'www.curify-ai.com'
+
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  // 2026-08-17: the Vercel deployment host serves a byte-identical copy of
+  // the site with `Allow: /`, and Google found it — URL Inspection reports
+  // https://curify-frontend.vercel.app/... as the *referring URL* that
+  // discovered /zh/tools/mockup, /zh/tools/packaging-mockup and the en
+  // mockup-set template page. Pages there do emit a cross-domain canonical
+  // back to www, so index signal isn't split, but every crawl of that host
+  // is a full dynamic render (the (public) layout calls headers()) billed as
+  // Fast Origin Transfer — the same cost line that drove the 06-23 bot
+  // blocklist. Serve a closed robots.txt on any non-canonical host.
+  //
+  // Host-based, NOT VERCEL_ENV-based: the *.vercel.app alias of a production
+  // deployment reports VERCEL_ENV=production, so an env check would silently
+  // never fire. Pairs with the x-robots-tag noindex set in middleware.ts,
+  // which covers URLs Google already knows before this propagates.
+  const host = (await headers()).get('host') ?? ''
+  if (host && host !== CANONICAL_HOST && host !== 'curify-ai.com') {
+    return { rules: [{ userAgent: '*', disallow: '/' }] }
+  }
+
   return {
     rules: [
       {

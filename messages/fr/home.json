@@ -97,6 +97,19 @@
           "desc": "Traduisez, localisez et diffusez via SEO + API."
         }
       }
+    },
+    "workflowRows": {
+      "title": "Concevoir des workflows",
+      "subtitle": "Chaînez nos modèles en un livrable complet — choisissez un workflow pour commencer.",
+      "cta": "Voir le workflow →"
+    },
+    "exampleGrid": {
+      "title": "Modèles et exemples tendance",
+      "subtitle": "Designs frais et les plus copiés de la communauté — remixez-en un."
+    },
+    "nicheTopics": {
+      "title": "Explorer par niche",
+      "subtitle": "Niches de design explorées par style — voyez la gamme, puis créez la vôtre."
     }
   },
   "coreFeatures": {
@@ -1496,7 +1509,148 @@
   "topicWorkflows": {
     "runAll": "Run the whole workflow",
     "comingSoonTitle": "Almost ready ✨",
-    "comingSoonBody": "One-click end-to-end runs are coming soon. In the meantime every step below works on its own — start anywhere."
+    "comingSoonBody": "One-click end-to-end runs are coming soon. In the meantime every step below works on its own — start anywhere.",
+    "seeFull": "Voir le workflow complet →",
+    "merch": {
+      "heading": "Workflow de design de merch",
+      "subtitle": "Transformez un personnage ou une IP en une gamme complète de merch vendable — des autocollants à l'emballage.",
+      "steps": {
+        "sticker": {
+          "name": "Pack d'autocollants de personnage",
+          "desc": "Transformez votre personnage ou IP en une expression cohérente / feuille d'autocollants.",
+          "cta": "Créer des autocollants"
+        },
+        "mockups": {
+          "name": "Maquettes de merch",
+          "desc": "Appliquez l'œuvre sur un ensemble complet de maquettes — tasse, sac, porte-clés, coque de téléphone.",
+          "cta": "Générer des maquettes"
+        },
+        "packaging": {
+          "name": "Emballage",
+          "desc": "Concevez des emballages de produits et des boîtes cadeaux portant votre IP.",
+          "cta": "Concevoir l'emballage"
+        },
+        "collection": {
+          "name": "Affichage de collection",
+          "desc": "Disposez la gamme complète de merch en tant que tableau d'affichage de collection.",
+          "cta": "Construire la collection"
+        },
+        "poster": {
+          "name": "Affiche promotionnelle",
+          "desc": "Une affiche promotionnelle pour lancer et vendre la collection.",
+          "cta": "Créer l'affiche"
+        },
+        "factory": {
+          "name": "Fichier d'impression prêt pour l'usine",
+          "desc": "Exportez l'œuvre en tant que fichier de production réel — ligne de coupe, fond perdu et CMJN — afin qu'un imprimeur puisse établir un devis.",
+          "cta": "Exporter le fichier"
+        }
+      }
+    },
+    "product": {
+      "heading": "Workflow produit & e-commerce",
+      "subtitle": "Transformez une photo de produit en un ensemble complet de visuels prêts à être listés — de la photo principale à la liste sur le marché.",
+      "steps": {
+        "poster": {
+          "name": "Affiche produit",
+          "desc": "Transformez votre photo de produit en une affiche promotionnelle épurée.",
+          "cta": "Créer une affiche"
+        },
+        "listing": {
+          "name": "Liste e-commerce",
+          "desc": "Une page de détails 9:16 avec caractéristiques, spécifications et photos de style de vie.",
+          "cta": "Créer une liste"
+        },
+        "tryon": {
+          "name": "Modèle / essayage",
+          "desc": "Mettez votre produit sur un modèle pour des visuels de style de vie et d'essayage.",
+          "cta": "Générer un essayage"
+        },
+        "promo": {
+          "name": "Affiche promotionnelle",
+          "desc": "Une affiche accrocheuse pour une vente ou une campagne pour le produit.",
+          "cta": "Créer une promo"
+        },
+        "infographic": {
+          "name": "Infographie de liste",
+          "desc": "Une infographie à six grilles pour les listes Amazon / marketplace.",
+          "cta": "Créer une infographie"
+        }
+      }
+    },
+    "brand": {
+      "heading": "Flux de travail de conception de marque",
+      "subtitle": "Construisez une identité de marque complète — d'un système de couleurs à un kit de marque réutilisable.",
+      "steps": {
+        "palette": {
+          "name": "Système de couleurs"
+        },
+        "logo": {
+          "name": "Logo"
+        },
+        "typeface": {
+          "name": "Typographie"
+        },
+        "packaging": {
+          "name": "Emballage"
+        },
+        "kit": {
+          "name": "Kit de marque"
+        }
+      }
+    },
+    "edtech": {
+      "heading": "Flux de travail de contenu éducatif",
+      "subtitle": "Transformez un sujet en un pack d'enseignement complet — cartes de lecture, vocabulaire, fiches de travail et affiches.",
+      "steps": {
+        "reading": {
+          "name": "Cartes de lecture"
+        },
+        "vocab": {
+          "name": "Fiche de vocabulaire"
+        },
+        "worksheet": {
+          "name": "Fiche de travail"
+        },
+        "scene": {
+          "name": "Scène illustrée"
+        },
+        "poster": {
+          "name": "Affiche d'étude"
+        }
+      }
+    },
+    "packaging": {
+      "heading": "Flux de travail de conception d'emballage",
+      "subtitle": "Transformez un produit d'un article nu à un emballage prêt à être mis en rayon — structure, panneau avant, variantes, preuve de découpe et visuels de vente.",
+      "steps": {
+        "concept": {
+          "name": "Concept et structure de l'emballage",
+          "desc": "Choisissez le format — carton, boîte suspendue, emballage avec fenêtre — et visualisez-le sur votre produit.",
+          "cta": "Concevez l'emballage"
+        },
+        "label": {
+          "name": "Panneau avant et étiquette",
+          "desc": "Le panneau face au rayon : nom du produit, bénéfice principal et revendications qu'un acheteur lit en quelques secondes.",
+          "cta": "Concevez l'étiquette"
+        },
+        "variants": {
+          "name": "Variantes cadeaux et saisonnières",
+          "desc": "Transformez le même emballage en éditions cadeaux et saisonnières sans redémarrer le design.",
+          "cta": "Créer des variantes"
+        },
+        "dieline": {
+          "name": "Découpe → preuve 3D",
+          "desc": "Pliez votre découpe plate en un modèle 3D aux dimensions réelles × hauteur × profondeur, avant que quoi que ce soit ne soit imprimé.",
+          "cta": "Pliez la découpe"
+        },
+        "shelf": {
+          "name": "Visuels de rayon et de liste",
+          "desc": "Photos héroïques de l'emballage fini pour les listes de vente, les présentations et les présentations aux acheteurs.",
+          "cta": "Créer des visuels"
+        }
+      }
+    }
   },
   "acrylicFactoryExport": {
     "metadata": {
