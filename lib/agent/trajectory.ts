@@ -129,7 +129,7 @@ export function createTrajectoryRecorder(runId: string) {
       await fetch("/api/design-agent/trajectory", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ events: batch }),
+        body: JSON.stringify({ run_id: runId, events: batch }),
         keepalive: true,
       });
     } catch {
