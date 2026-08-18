@@ -23,6 +23,7 @@ import { WORKFLOWS_BY_DOMAIN } from "@/lib/topic_workflows";
 import { requiresDirection } from "@/lib/agent/direction";
 import ReferenceImagesUpload from "@/app/[locale]/_components/ReferenceImagesUpload";
 import { nanoGenerateService } from "@/services/nanoGenerate";
+import { factoryExportService } from "@/services/factoryExport";
 import { freeformGenerateService } from "@/services/freeformGenerate";
 import { pollNanoResult } from "@/services/pollNanoResult";
 import { createTrajectoryRecorder, newRunId } from "@/lib/agent/trajectory";
@@ -295,7 +296,11 @@ export default function DesignAgentClient({
       })),
     });
 
-    // 2. execute, observing each step
+    // 2. execute, observing each step.
+    // Carries the most recent VERIFIED artifact so a downstream export step has
+    // something real to consume. Only set after verifyArtifact passes, so a
+    // failed generation cannot be handed to the factory exporter.
+    let lastArtifactUrl: string | undefined = referenceUrl;
     for (const step of p.steps) {
       if (step.blocked) {
         setStep(step.n, { status: "blocked" });
@@ -320,9 +325,6 @@ export default function DesignAgentClient({
               params: step.params ?? {},
               example_id: `${step.template_id}-agent-${Date.now().toString(36)}`,
               ...(referenceUrl ? { reference_image_url: referenceUrl } : {}),
-            ...(referenceUrls.length > 1
-              ? { reference_image_urls: referenceUrls.slice(1) }
-              : {}),
               ...(referenceUrls.length > 1
                 ? { reference_image_urls: referenceUrls.slice(1) }
                 : {}),
@@ -335,6 +337,31 @@ export default function DesignAgentClient({
             prompt: step.prompt || p.query,
             ...(referenceUrl ? { reference_image_url: referenceUrl } : {}),
           });
+          projectId = r.project_id;
+        } else if (step.tool_id === "export_print_package") {
+          // The planner has emitted this all along; there was no branch for it,
+          // so it fell through to `blocked`. That is eval class D: the brief
+          // asks for a printable production file and the ladder either stalls
+          // or the model answers with an infographic ABOUT print files.
+          // The exporters already exist under /design-tools — this is wiring.
+          if (!lastArtifactUrl) {
+            setStep(step.n, {
+              status: "blocked",
+              error: "needs an upstream image — generate the artwork first",
+            });
+            continue;
+          }
+          const wantsAcrylic =
+            /acrylic|keychain|charm|亚克力|钥匙扣|挂件/i.test(
+              `${step.prompt ?? ""} ${p.query}`,
+            );
+          // Packaging is deliberately NOT auto-selected: it requires real
+          // W×H×D and Gemini invents a near-cube when they are unstated
+          // (see docs/packaging-mockup-pipeline.md). Without dimensions in the
+          // plan, a die-cut export is the honest default.
+          const r = wantsAcrylic
+            ? await factoryExportService.acrylicExport({ image_url: lastArtifactUrl })
+            : await factoryExportService.stickerExport({ image_url: lastArtifactUrl });
           projectId = r.project_id;
         } else if (step.tool_id === "compose_grid") {
           // compose runs over prior artifacts; with one upstream image there is
@@ -353,6 +380,7 @@ export default function DesignAgentClient({
         const url = await pollNanoResult(projectId);
         const verify = await verifyArtifact(url);
         if (verify.ok) succeeded.push(step);
+        if (verify.ok) lastArtifactUrl = url;
         setStep(step.n, { status: verify.ok ? "done" : "failed", resultUrl: url, verify });
         traj.record({
           type: "step_result",
