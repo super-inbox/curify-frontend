@@ -47,9 +47,52 @@ export type DeliverableRoute = {
 const SYSTEM_RE =
   /\b(vi|visual identity|brand identity|design system|identity system|brand kit|full set|whole set)\b|完整|整套|全套|系统|视觉识别|品牌视觉|品牌形象|系列/i;
 
-/** Edits act on an image the user already has. */
-const EDIT_RE =
-  /\b(replace|remove|swap|retouch|enhance|upscale|background|relight)\b|换背景|替换|精修|修图|去背|抠图|增强|质感|细节增强/i;
+/**
+ * Edits act on an image the user already has.
+ *
+ * The 21q eval (spec §7o class A) had 7 cases where the agent "completely
+ * ignored the supplied source image and replaced it with an entirely new
+ * design". The edit BRANCH was fine — it routes to image-to-image. Detection
+ * was the hole: this pattern matched only 3 of 12 edit-shaped queries, so the
+ * rest fell through to template text-to-image and got redrawn.
+ *
+ * The tell is that the two it did match — "香水瓶玻璃质感精修" and
+ * "金属五金工具产品细节增强" — are the two whose outputs actually edited the
+ * source. Everything it missed was rewritten from scratch.
+ *
+ * Split in two because they are different asks that share one requirement
+ * (consume the source):
+ *   MODIFY  — change something about this image (resize, move, recolour, swap)
+ *   BOUND   — the output must contain the supplied subject (try-on, "my photo")
+ *
+ * Both are gated on hasImage below, which is what keeps them from swallowing
+ * ordinary generation. Deliberately NOT included: bare "做成"/"make into",
+ * which would misfire on "把这个贴纸做成模切刀线的生产文件" (an export, AR-010).
+ */
+const EDIT_MODIFY_RE =
+  /\b(replace|remove|swap|retouch|enhance|upscale|background|relight|bigger|larger|smaller|brighten|recolou?r|reposition|move it|crop)\b|change the (colou?r|background)|换背景|换个?背景|背景色|替换|精修|修图|去背|抠图|增强|质感|细节增强|放大|缩小|调大|调小|移到|挪到|调整/i;
+
+/** The deliverable must contain the person/garment the user supplied. */
+const EDIT_BOUND_RE =
+  /\btry[\s-]?on\b|\blookbook\b|\bmy photo\b|\bon me\b|试穿|穿上|我的照片|用我的|自拍|前后对比/i;
+
+const EDIT_RE = new RegExp(`${EDIT_MODIFY_RE.source}|${EDIT_BOUND_RE.source}`, "i");
+
+/**
+ * Asks to JUDGE supplied candidates, not to change them.
+ *
+ * These must never be read as edits. "这4款包装，站在消费者角度哪款更有质感？"
+ * contains 质感, which is an edit token, and today it only escapes because
+ * BATCH_RE ("4款") happens to match first — swap those two checks and the case
+ * silently becomes an edit. Depending on rule order for correctness is the kind
+ * of thing that breaks a year later, so the exclusion is explicit.
+ *
+ * This is a GUARD, not the eventual fix. §7o class B (4 cases) needs a real
+ * evaluate/rank deliverable type; until then these fall through to the normal
+ * path rather than being mis-routed to image-to-image.
+ */
+const EVALUATE_RE =
+  /\bvote\b|\brank\b|which (one )?is better|\bcritique\b|投票|评审|打分|哪款|哪个更|选出|排序|优劣/i;
 
 /** Batch asks name a count or a variant axis. */
 const BATCH_RE = /(\d{1,3})\s*(?:个|张|款|种|色|sku|skus|variants?|colou?rways?|items?|cells?)/i;
@@ -119,10 +162,12 @@ export function classifyDeliverable(
 
   // An edit needs something to edit. Without a reference image it is really a
   // "make me one of these" request, so fall through to the normal path.
-  if (EDIT_RE.test(query) && hasImage) {
+  if (EDIT_RE.test(query) && hasImage && !EVALUATE_RE.test(query)) {
     return {
       type: "edit",
-      rationale: "Modifies an existing image — runs image-to-image from your reference.",
+      rationale: EDIT_BOUND_RE.test(query)
+        ? "Has to use the photo you supplied — runs image-to-image so the subject survives."
+        : "Modifies an existing image — runs image-to-image from your reference.",
     };
   }
 
