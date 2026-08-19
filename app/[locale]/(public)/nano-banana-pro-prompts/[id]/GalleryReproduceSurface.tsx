@@ -3,7 +3,7 @@ import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import { Sparkles, Download, Loader2, ArrowUpRight } from "lucide-react";
+import { Sparkles, Download, Loader2, ArrowUpRight, Wand2, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import CdnImage from "@/app/[locale]/_components/CdnImage";
@@ -159,30 +159,43 @@ export default function GalleryReproduceSurface({
         <div className="flex flex-col lg:col-span-4">
           <div className={labelCls}>2 · Make it yours</div>
           <div className="flex flex-1 flex-col gap-3">
-            <div className="flex flex-1 flex-col">
-              <label
-                htmlFor={`remix-prompt-${promptId}`}
-                className="mb-1.5 block text-xs font-medium text-neutral-600"
-              >
-                Prompt
-              </label>
-              <textarea
-                id={`remix-prompt-${promptId}`}
-                value={editedPrompt}
-                onChange={(e) => setEditedPrompt(e.target.value)}
-                className="min-h-[120px] w-full flex-1 resize-none rounded-xl border border-neutral-300 bg-white p-3 text-sm leading-relaxed text-neutral-800 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-100"
-                placeholder="Edit the prompt to make it your own…"
-              />
-              {editedPrompt !== initialPrompt && (
-                <button
-                  type="button"
-                  onClick={handleResetPrompt}
-                  className="mt-1.5 self-start text-xs font-medium text-neutral-500 underline-offset-2 hover:text-neutral-800 hover:underline"
-                >
-                  Reset to original
-                </button>
-              )}
-            </div>
+            {/* Prompt folds into a disclosure, same as the template-example
+                workbench — collapsed by default; expand to customize. */}
+            <details className="group rounded-xl border border-neutral-200 bg-white">
+              <summary className="flex cursor-pointer items-center justify-between gap-2 px-3 py-2 text-xs font-semibold text-neutral-600 [&::-webkit-details-marker]:hidden">
+                <span className="inline-flex items-center gap-1.5">
+                  <Wand2 className="h-3.5 w-3.5 text-neutral-400" />
+                  Advanced prompt editing
+                  {editedPrompt !== initialPrompt && (
+                    <span className="rounded-full bg-purple-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-purple-700">
+                      edited
+                    </span>
+                  )}
+                </span>
+                <ChevronDown className="h-4 w-4 text-neutral-400 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="border-t border-neutral-100 p-3">
+                <label htmlFor={`remix-prompt-${promptId}`} className="sr-only">
+                  Prompt
+                </label>
+                <textarea
+                  id={`remix-prompt-${promptId}`}
+                  value={editedPrompt}
+                  onChange={(e) => setEditedPrompt(e.target.value)}
+                  className="min-h-[140px] w-full resize-y rounded-lg border border-neutral-300 bg-white p-3 text-sm leading-relaxed text-neutral-800 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-100"
+                  placeholder="Edit the prompt to make it your own…"
+                />
+                {editedPrompt !== initialPrompt && (
+                  <button
+                    type="button"
+                    onClick={handleResetPrompt}
+                    className="mt-1.5 self-start text-xs font-medium text-neutral-500 underline-offset-2 hover:text-neutral-800 hover:underline"
+                  >
+                    Reset to original
+                  </button>
+                )}
+              </div>
+            </details>
 
             <ReferenceImageUpload
               onChange={setReferenceImageUrl}
