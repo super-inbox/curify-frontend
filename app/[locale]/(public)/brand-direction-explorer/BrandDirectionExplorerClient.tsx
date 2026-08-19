@@ -193,9 +193,17 @@ function DirectionPreview({
   // from this direction's style keywords, in place of a blank placeholder.
   const matched = direction.matchedImages ?? [];
   if (matched.length > 0) {
+    // Explicit rows are required: the cells hold absolutely-positioned (fill)
+    // images, so without grid-rows they collapse to zero height.
+    const gridCls =
+      matched.length === 1
+        ? "grid-cols-1 grid-rows-1"
+        : matched.length === 2
+          ? "grid-cols-2 grid-rows-1"
+          : "grid-cols-2 grid-rows-2";
     return (
-      <div className={`relative ${aspect} w-full overflow-hidden rounded-t-2xl bg-neutral-100`}>
-        <div className={`grid h-full w-full gap-0.5 ${matched.length === 1 ? "grid-cols-1" : "grid-cols-2"}`}>
+      <div className={`relative ${aspect} min-h-[150px] w-full overflow-hidden rounded-t-2xl bg-neutral-100`}>
+        <div className={`grid h-full w-full gap-0.5 ${gridCls}`}>
           {matched.slice(0, 4).map((src, i) => (
             <div key={i} className="relative overflow-hidden bg-neutral-200">
               <CdnImage src={src} alt="" fill className="object-cover" />
