@@ -23,6 +23,7 @@ import {
   resolveExampleVerticalSections,
   buildVerticalJsonLd,
   buildVerticalFaqJsonLd,
+  buildNanoH1,
 } from "@/lib/nano_seo_utils";
 import {
   VerticalAttributeChips,
@@ -336,6 +337,11 @@ export default async function NanoExampleDetailPage({
     nanoMessages,
   } = pageData;
 
+  // Visible heading = SEO title with the "Nano Banana Prompt:" prefix + "| Curify
+  // AI" suffix stripped (those read as jargon on-page); the raw `title` still
+  // drives the <title> meta / OG in generateMetadata above.
+  const displayTitle = buildNanoH1(title, category || slug);
+
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
 
   const mergedTopics = [
@@ -403,12 +409,14 @@ export default async function NanoExampleDetailPage({
           {category || slug}
         </Link>
         <span>/</span>
-        <span className="line-clamp-1 font-medium text-neutral-800">{title}</span>
+        <span className="line-clamp-1 font-medium text-neutral-800">{displayTitle}</span>
       </nav>
 
-      {/* Header — H1 + topic capsules */}
+      {/* Header — H1 + topic capsules. The visible heading strips the SEO-only
+          "Nano Banana Prompt:" prefix + "| Curify AI" suffix (they belong in the
+          <title> tag, not the on-page H1); the raw `title` still drives the meta. */}
       <header className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2">
-        <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">{title}</h1>
+        <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">{displayTitle}</h1>
         {metaChips ? <div className="flex flex-wrap items-center gap-2">{metaChips}</div> : null}
       </header>
 

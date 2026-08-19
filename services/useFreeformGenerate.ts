@@ -76,9 +76,14 @@ type Options = {
   // Fires after a started generation settles (success or failure) — pair with
   // onStart to clear per-trigger UI state.
   onSettled?: (args: FreeformGenerateArgs) => void;
+  // Fires when the create request is rejected for insufficient credits. Lets the
+  // surface open the top-up modal (like the PDF-pack path) instead of dead-ending
+  // on a generic "Generation failed" alert. When provided, the credit rejection
+  // is handled here and NOT alerted.
+  onInsufficientCredits?: () => void;
 };
 
-export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled }: Options) {
+export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, onInsufficientCredits }: Options) {
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
   const { trackAction, track } = useTracking();
@@ -136,6 +141,15 @@ export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled }:
         ...(args.sourcePromptId ? { source_prompt_id: args.sourcePromptId } : {}),
       });
       if (!res?.success || !res.project_id) {
+        // Insufficient credits is the common non-error rejection — route it to
+        // the top-up modal (via onInsufficientCredits) rather than a dead-end
+        // alert, matching the PDF-pack path. This is what made the "merch mockup
+        // failed" report look like a hard failure (2026-08-19 diagnosis: the
+        // backend merch gen itself works; the request was credit-gated).
+        if (onInsufficientCredits && /insufficient credits/i.test(res?.message || "")) {
+          onInsufficientCredits();
+          return null;
+        }
         throw userError(res?.message || "Generation failed");
       }
       const imageUrl = await pollFreeformResult(res.project_id);

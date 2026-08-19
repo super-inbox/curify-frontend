@@ -1,4 +1,4 @@
-import { Crop, FileDown, Images, LayoutGrid, Lock, PlayCircle, Printer, Scissors, Shapes, type LucideIcon } from "lucide-react";
+import { Camera, Crop, FileDown, Image as ImageIcon, Images, LayoutGrid, Lock, PlayCircle, Printer, Scissors, Shapes, type LucideIcon } from "lucide-react";
 import { PRODUCTION_TILES } from "./gallery_production_tiles";
 import { getOutputIntent, type OutputIntent } from "./output_intent";
 
@@ -143,6 +143,17 @@ const VECTOR_ICONS = wf(
   "vector-icons", "Vector icon set", "Flat minimalist icons", Shapes,
   "Extract the key subjects/landmarks from the attached image and render them as a clean set of flat, minimalist vector-style icons arranged on a plain neutral background — consistent line weight, limited cohesive color palette, evenly spaced.",
 );
+// Photo-appropriate output formats for PRODUCT / e-commerce photography templates
+// (the deliverable is a photograph, not stylized art) — used by the photo pattern
+// rule below. These preserve the real product; they do NOT restyle it.
+const PACKSHOT = wf(
+  "packshot", "Studio packshot", "Clean white-background shot", Camera,
+  "Reshoot the product from the attached image as a clean e-commerce packshot: the SAME product centered on a seamless pure-white studio background, soft even lighting, a subtle contact reflection, crisp focus, no extra props. Preserve the product's exact shape, label, text, and colors.",
+);
+const SCENE_VARIANT = wf(
+  "scene-variant", "New scene", "Alternate lifestyle background", ImageIcon,
+  "Place the EXACT product from the attached image into a fresh natural lifestyle scene with tasteful complementary props and soft daylight, e-commerce catalog style. Keep the product's shape, label, text, and colors identical — change only the surrounding scene.",
+);
 
 // Exact-id overrides for flagship templates.
 const OVERRIDES_EXACT: Record<string, TemplateWorkflow[]> = {
@@ -161,6 +172,18 @@ const OVERRIDES_EXACT: Record<string, TemplateWorkflow[]> = {
 
 // Broad pattern rules (matched against the template id, after exact overrides).
 const PATTERN_RULES: { test: RegExp; workflows: TemplateWorkflow[] }[] = [
+  {
+    // Product / food / e-commerce PHOTOGRAPHY templates: the deliverable is a
+    // real PHOTO, not stylized art or merch. Offer photo-appropriate output
+    // formats (marketplace/social resizes, a clean studio packshot, an alternate
+    // lifestyle scene) — never sticker / merch / comic / watercolor /
+    // poster-wallpaper (2026-08-19, product-photo report). Must precede the
+    // moodboard + poster rules since these ids can also contain those tokens.
+    // Excludes education "scene" templates (word-scene, dialogue-scene) and the
+    // food-photo-doodle-STICKER overlay (sticker is its actual deliverable).
+    test: /photograph|photo-grid|product-lifestyle|lifestyle-moodboard|scene-photography|-ecommerce\b|ecommerce-product|ecommerce-store/i,
+    workflows: [RESIZE_BUNDLE, PACKSHOT, SCENE_VARIANT],
+  },
   {
     test: /travel.*map|map.*travel|itinerary|city-?guide/i,
     workflows: [PRINT_READY, RESIZE_BUNDLE, VECTOR_ICONS],

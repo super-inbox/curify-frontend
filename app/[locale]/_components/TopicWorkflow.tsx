@@ -2,9 +2,11 @@ import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { getCanonicalPath } from "@/lib/canonical";
 import RunWorkflowComingSoon from "./RunWorkflowComingSoon";
+import WorkflowStepLink from "./WorkflowStepLink";
 import { makeSafeTranslator } from "@/lib/locale_utils";
 import type { TopicWorkflowConfig } from "@/lib/topic_workflows";
 import { requiresDirection } from "@/lib/agent/direction";
+import { getStepThumbnail } from "@/lib/template_thumbnails";
 
 /**
  * Guided commerce-workflow ladder for the merch / product topic pages — the
@@ -78,24 +80,16 @@ export default async function TopicWorkflow({
             const cta = t(`${base}.steps.${s.key}.cta`) || s.cta;
             return (
               <li key={s.key} className="h-full">
-                <Link
+                <WorkflowStepLink
                   href={getCanonicalPath(locale, s.href)}
-                  className="flex h-full flex-col rounded-2xl border border-neutral-200 bg-white p-3.5 transition hover:border-purple-300 hover:shadow-sm"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-purple-100 text-xs font-bold text-purple-700">
-                      {s.n}
-                    </span>
-                    <span className="text-lg" aria-hidden>
-                      {s.emoji}
-                    </span>
-                    <span className="text-sm font-semibold text-neutral-900">{name}</span>
-                  </div>
-                  <p className="mt-2 flex-1 text-xs leading-5 text-neutral-600">{desc}</p>
-                  <span className="mt-3 inline-block text-xs font-semibold text-purple-700">
-                    {cta} →
-                  </span>
-                </Link>
+                  trackId={`home-workflow-step:${config.domain}:${s.key}`}
+                  n={s.n}
+                  emoji={s.emoji}
+                  thumbnail={getStepThumbnail(s.href)}
+                  name={name}
+                  desc={desc}
+                  cta={cta}
+                />
               </li>
             );
           })}
