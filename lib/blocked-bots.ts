@@ -23,6 +23,17 @@
 // string that 2,681 real visitors also send. Every token below is a
 // self-declared bot name with no human collision.
 //
+// BYTESPIDER IS DELIBERATELY NOT ENFORCED HERE, though it stays in the
+// robots.txt list. Bytespider is ByteDance's crawler and Doubao is ByteDance's
+// assistant — and app/robots.ts records doubao at 15 visitors / 43 actions over
+// 90 days, the highest action-per-visitor ratio of any AI referrer we have.
+// Robots.txt has disallowed Bytespider since 2026-05 and the Doubao referrals
+// exist anyway, which means something ByteDance-side is fetching regardless of
+// the advisory rule. A 403 would be the first mechanism that actually stops it,
+// so enforcing here risks killing a converting channel to save transfer — the
+// exact trade the 08-09 training-vs-retrieval note warns about. Revisit only
+// with referral data showing Doubao has gone to zero anyway.
+//
 // DELIBERATELY ABSENT — the retrieval/citation fetchers. ChatGPT-User,
 // OAI-SearchBot and PerplexityBot fetch on demand when a user asks and cite
 // the source with a link. AI referrals are our best-converting traffic by a
@@ -37,7 +48,6 @@ export const BLOCKED_BOT_UAS: ReadonlyArray<string> = [
   "anthropic-ai",
   "claudebot",
   "claude-web",
-  "bytespider",
   "amazonbot",
   "imagesiftbot",
   "diffbot",
