@@ -519,12 +519,12 @@ export default function ReproduceWorkbench({
               <ReferenceImageUpload
                 variant="full"
                 required={!col1.optional}
-                label={col1.label ?? (col1.optional ? "Your product photo (optional)" : "Your image")}
+                label={col1.label ?? (col1.optional ? "Your photo (optional)" : "Your image")}
                 hideLabel={col1.hideUploadLabel}
                 hint={
                   col1.hint ??
                   (col1.optional
-                    ? "Optional — upload your own product photo to apply this template to it, or just Generate from the options."
+                    ? "Optional — upload your own photo or subject to apply this template to it, or just Generate from the options."
                     : "Upload the photo to transform — the template is applied to it.")
                 }
                 signInLabel="Sign in to upload your image"
