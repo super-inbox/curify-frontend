@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
 import ExampleReproduceSurface from "./ExampleReproduceSurface";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ExampleRelatedTopics from "./ExampleRelatedTopics";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
@@ -418,6 +419,10 @@ export default async function NanoExampleDetailPage({
       <header className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2">
         <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">{displayTitle}</h1>
         {metaChips ? <div className="flex flex-wrap items-center gap-2">{metaChips}</div> : null}
+        {/* Share sits on the H1 row (moved off the column-1 image). */}
+        <div className="ml-auto">
+          <ShareButton url={examplePageUrl} title={displayTitle} />
+        </div>
       </header>
 
       {/* VerticalPageSchema — Pillar 2 ontology chip strip (example-level) */}

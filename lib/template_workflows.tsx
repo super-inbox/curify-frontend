@@ -185,6 +185,21 @@ const PATTERN_RULES: { test: RegExp; workflows: TemplateWorkflow[] }[] = [
     workflows: [RESIZE_BUNDLE, PACKSHOT, SCENE_VARIANT],
   },
   {
+    // Packaging / product-label designs: the artifact IS the finished design, so
+    // the ONLY useful output format is a social resize to share it — NOT merch
+    // mockups / stickers / style riffs (2026-08-19 report). Must precede the merch
+    // intent fallback.
+    test: /packaging|product-label|uniform-product-label/i,
+    workflows: [RESIZE_BUNDLE],
+  },
+  {
+    // Other finished design artifacts — spec / technical / design sheets,
+    // industrial concept sketches, book spreads: a social resize to share plus a
+    // print-ready pass. Not merch / sticker / character-style tiles.
+    test: /design-sheet|technical-design|concept-sketch|industrial-design|book-spread/i,
+    workflows: [RESIZE_BUNDLE, PRINT_READY],
+  },
+  {
     test: /travel.*map|map.*travel|itinerary|city-?guide/i,
     workflows: [PRINT_READY, RESIZE_BUNDLE, VECTOR_ICONS],
   },

@@ -6,7 +6,6 @@ import { Wand2, Loader2, Download, ArrowUpRight, ChevronDown, Copy } from "lucid
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 
-import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
@@ -151,6 +150,10 @@ export default function ReproduceWorkbench({
   // source AND the base every design-work tile builds from. Cleared when a fresh
   // primary generation lands (that becomes the new hero) or via the revert (✕).
   const [promotedUrl, setPromotedUrl] = useState<string | null>(null);
+  // (B) The output format the Generate button produces. null = the default
+  // "standard image" (base template generation); otherwise a workflow key whose
+  // transform runs on Generate. Chosen ABOVE the Generate button.
+  const [selectedFormat, setSelectedFormat] = useState<string | null>(null);
   const resultSeq = useRef(0);
 
   const tracking = {
@@ -252,7 +255,31 @@ export default function ReproduceWorkbench({
     return [...lead, ...base];
   }, [templateId, introVideoUrl]);
 
+  // (B) Output formats the Generate button can produce (select-then-generate):
+  // the image-producing workflows (transform / resize / print-ready). PDF packs
+  // and the video-reveal are different-natured quick actions, kept separate.
+  const genFormats = useMemo(
+    () => workflows.filter((w) => w.kind === "transform" || w.kind === "resize" || w.kind === "print-ready"),
+    [workflows],
+  );
+  const quickActions = useMemo(
+    () => workflows.filter((w) => w.kind === "pack-pdf" || w.kind === "video-show" || w.kind === "soon"),
+    [workflows],
+  );
+  const selectedWf = selectedFormat ? genFormats.find((w) => w.key === selectedFormat) ?? null : null;
+
   const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
+
+  // Generate the SELECTED output format: the default (null) is the base template
+  // generation (the plain image); any other selection runs that format's transform
+  // on the current source/hero.
+  const handlePrimaryGenerate = () => {
+    if (selectedWf) {
+      runWorkflow(selectedWf);
+      return;
+    }
+    generate();
+  };
 
   const canGenerateInline = allowGeneration || requiresImageUpload;
   const needsImage = requiresImageUpload && !referenceImageUrl;
@@ -395,55 +422,49 @@ export default function ReproduceWorkbench({
 
   const labelCls = "mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500";
 
-  // (d) The design-work tiles, reframed as "output formats": the primary Generate
-  // above produces the default output (the plain image); each tile is an alternate
-  // finished format built from the current source/hero. Rendered in column 2 in the
-  // normal (template/example) layout, or in the wide column 3 in result mode (where
-  // column 2 is hidden because a loaded project carries no params).
+  // One click-to-run workflow tile. Shared by the result-mode tile grid (col 3,
+  // where there's no Generate button) and the col-2 quick-actions row (PDF packs /
+  // lesson-video reveal).
+  const tileButton = (wf: (typeof workflows)[number]) => {
+    const Icon = wf.icon;
+    const busy = activeKey === wf.key;
+    const isSoon = wf.kind === "soon";
+    const isFree = wf.kind === "video-show"; // free/instant — stays enabled during a gen
+    return (
+      <button
+        key={wf.key}
+        type="button"
+        title={wf.hint}
+        disabled={anyGenerating && !isSoon && !isFree}
+        onClick={() => runWorkflow(wf)}
+        className={`group relative flex flex-col items-center gap-1.5 rounded-xl border p-2 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 ${
+          isSoon ? "border-dashed border-neutral-300 bg-neutral-50" : "border-neutral-200 bg-white hover:border-purple-300"
+        }`}
+      >
+        {isSoon && (
+          <span className="absolute right-1 top-1 rounded bg-neutral-200 px-1 text-[9px] font-bold uppercase tracking-wide text-neutral-500">
+            Soon
+          </span>
+        )}
+        <span className={`inline-flex h-7 w-7 items-center justify-center rounded-lg ${isSoon ? "bg-neutral-100 text-neutral-400" : "bg-purple-50 text-purple-600"}`}>
+          {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Icon className="h-4 w-4" />}
+        </span>
+        <span className="text-[11px] font-semibold leading-tight text-neutral-700">{wf.label}</span>
+      </button>
+    );
+  };
+
+  // Result-mode only (a loaded project, col 2 hidden): all workflows as
+  // click-to-run tiles, since there's no Generate button to drive them.
   const outputFormats = workflows.length > 0 && (
     <>
       {transformSource && (
         <p className="mb-2 text-[11px] text-neutral-400">
           Each format builds from your{" "}
-          {results.some((r) => r.kind === "primary")
-            ? "latest generation"
-            : promotedUrl
-              ? "selected result"
-              : "source image"}
-          .
+          {results.some((r) => r.kind === "primary") ? "latest generation" : promotedUrl ? "selected result" : "source image"}.
         </p>
       )}
-      <div className="grid grid-cols-3 gap-2">
-        {workflows.map((wf) => {
-          const Icon = wf.icon;
-          const busy = activeKey === wf.key;
-          const isSoon = wf.kind === "soon";
-          // Free/instant tiles (video reveal) stay enabled during a generation.
-          const isFree = wf.kind === "video-show";
-          return (
-            <button
-              key={wf.key}
-              type="button"
-              title={wf.hint}
-              disabled={anyGenerating && !isSoon && !isFree}
-              onClick={() => runWorkflow(wf)}
-              className={`group relative flex flex-col items-center gap-1.5 rounded-xl border p-2 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 ${
-                isSoon ? "border-dashed border-neutral-300 bg-neutral-50" : "border-neutral-200 bg-white hover:border-purple-300"
-              }`}
-            >
-              {isSoon && (
-                <span className="absolute right-1 top-1 rounded bg-neutral-200 px-1 text-[9px] font-bold uppercase tracking-wide text-neutral-500">
-                  Soon
-                </span>
-              )}
-              <span className={`inline-flex h-7 w-7 items-center justify-center rounded-lg ${isSoon ? "bg-neutral-100 text-neutral-400" : "bg-purple-50 text-purple-600"}`}>
-                {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Icon className="h-4 w-4" />}
-              </span>
-              <span className="text-[11px] font-semibold leading-tight text-neutral-700">{wf.label}</span>
-            </button>
-          );
-        })}
-      </div>
+      <div className="grid grid-cols-3 gap-2">{workflows.map(tileButton)}</div>
       {soonNote && <p className="mt-2 text-[11px] text-neutral-500">{soonNote}</p>}
     </>
   );
@@ -507,11 +528,14 @@ export default function ReproduceWorkbench({
             </div>
           ) : (
             <>
-              <div className="relative min-h-[320px] flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+              {/* (C) Larger source image; the copy + download-pack buttons were
+                  removed and Share moved to the page H1 row. Only a loaded
+                  project (result mode) keeps its Download here. */}
+              <div className="relative min-h-[460px] flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
                 {col1.image}
               </div>
-              <div className="mt-2">
-                {col1.mode === "result" ? (
+              {col1.mode === "result" && (
+                <div className="mt-2">
                   <a
                     href={col1.downloadHref ?? col1.resultUrl}
                     download
@@ -521,15 +545,8 @@ export default function ReproduceWorkbench({
                   >
                     <Download className="h-4 w-4" /> Download
                   </a>
-                ) : (
-                  <UnifiedActionBar
-                    tracking={tracking}
-                    copy={{ enabled: true, text: col1.copyText }}
-                    share={{ enabled: true, url: col1.shareUrl, title: col1.title }}
-                    {...(col1.batchEnabled ? { batchDownload: { enabled: true, templateId } } : {})}
-                  />
-                )}
-              </div>
+                </div>
+              )}
             </>
           )}
         </div>
@@ -662,51 +679,102 @@ export default function ReproduceWorkbench({
               </div>
             )}
 
-            <div className="mt-auto pt-1">
-              {canGenerateInline ? (
-                <>
+            <div className="mt-auto flex flex-col gap-3 pt-2">
+              {/* (B) Output format — chosen ABOVE Generate. Default = the standard
+                  image; picking another format makes Generate produce that format
+                  (a transform of the current source/hero). (b) the old use-case
+                  chips were removed. */}
+              {canGenerateInline && genFormats.length > 0 && (
+                <div>
+                  <div className="mb-2 flex items-baseline justify-between">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+                      Output format
+                    </span>
+                    <span className="text-[11px] text-neutral-400">{CREDITS_COST} credits</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    {[{ key: null as string | null, label: "Standard image", icon: Wand2 }, ...genFormats].map((opt) => {
+                      const active = (opt.key ?? null) === selectedFormat;
+                      const Icon = opt.icon;
+                      return (
+                        <button
+                          key={opt.key ?? "__standard"}
+                          type="button"
+                          onClick={() => setSelectedFormat(opt.key ?? null)}
+                          aria-pressed={active}
+                          className={`flex flex-col items-center gap-1 rounded-xl border p-2 text-center transition ${
+                            active
+                              ? "border-purple-500 bg-purple-50 ring-1 ring-purple-300"
+                              : "border-neutral-200 bg-white hover:border-purple-300"
+                          }`}
+                        >
+                          <span className={`inline-flex h-6 w-6 items-center justify-center rounded-lg ${active ? "bg-purple-600 text-white" : "bg-purple-50 text-purple-600"}`}>
+                            <Icon className="h-3.5 w-3.5" />
+                          </span>
+                          <span className="text-[11px] font-semibold leading-tight text-neutral-700">{opt.label}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              <div>
+                {canGenerateInline ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={handlePrimaryGenerate}
+                      disabled={anyGenerating || needsImage || isUploadingImage}
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60"
+                    >
+                      {(selectedWf ? activeKey === selectedWf.key : directGenerating) ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Wand2 className="h-4 w-4" />
+                      )}
+                      {selectedWf
+                        ? activeKey === selectedWf.key
+                          ? t("generating")
+                          : `${t("generate")} · ${selectedWf.label}`
+                        : directGenerating
+                          ? t("generating")
+                          : t("generate")}
+                      {clientMounted && !user && <span className="ml-1 text-xs opacity-80">🔒</span>}
+                      {clientMounted && user && <span className="ml-1 text-xs opacity-80">· {CREDITS_COST} credits</span>}
+                    </button>
+                    {needsImage && (
+                      <p className="mt-1.5 text-[11px] text-neutral-500">
+                        {col1.mode === "upload" ? "Upload your image on the left to generate." : "Upload your image above to generate."}
+                      </p>
+                    )}
+                    {selectedWf && !needsImage && !transformSource && (
+                      <p className="mt-1.5 text-[11px] text-neutral-500">
+                        Generate a standard image first (or upload your photo), then switch to this format.
+                      </p>
+                    )}
+                  </>
+                ) : (
                   <button
                     type="button"
-                    onClick={generate}
-                    disabled={anyGenerating || needsImage || isUploadingImage}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60"
+                    onClick={handleCopyGenerate}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700"
                   >
-                    {directGenerating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
-                    {directGenerating ? t("generating") : t("generate")}
-                    {clientMounted && !user && <span className="ml-1 text-xs opacity-80">🔒</span>}
-                    {clientMounted && user && <span className="ml-1 text-xs opacity-80">· {CREDITS_COST} credits</span>}
+                    <Copy className="h-4 w-4" /> {copied ? t("copied") : t("copyPrompt")}
                   </button>
-                  {needsImage && (
-                    <p className="mt-1.5 text-[11px] text-neutral-500">
-                      {col1.mode === "upload" ? "Upload your image on the left to generate." : "Upload your image above to generate."}
-                    </p>
-                  )}
-                </>
-              ) : (
-                <button
-                  type="button"
-                  onClick={handleCopyGenerate}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700"
-                >
-                  <Copy className="h-4 w-4" /> {copied ? t("copied") : t("copyPrompt")}
-                </button>
+                )}
+              </div>
+
+              {soonNote && <p className="text-[11px] text-neutral-500">{soonNote}</p>}
+
+              {/* Quick actions — PDF packs + the lesson-video reveal. Not "generate"
+                  outputs, so they stay one-click tiles separate from the selector. */}
+              {quickActions.length > 0 && (
+                <div className="border-t border-neutral-100 pt-3">
+                  <div className="grid grid-cols-3 gap-2">{quickActions.map(tileButton)}</div>
+                </div>
               )}
             </div>
-
-            {/* (d) Output formats — the primary Generate above is the default
-                output (the plain image); these tiles are alternate finished
-                formats. (b) The old "Use this for" use-case chips were removed. */}
-            {outputFormats && (
-              <div className="border-t border-neutral-100 pt-3">
-                <div className="mb-2 flex items-baseline justify-between">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-                    Output formats
-                  </span>
-                  <span className="text-[11px] text-neutral-400">{CREDITS_COST} credits each</span>
-                </div>
-                {outputFormats}
-              </div>
-            )}
           </div>
         </div>
         )}
