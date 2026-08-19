@@ -62,6 +62,10 @@ export type CreativeDirection = {
   };
   promptModifier: string;
   provisional: boolean;
+  // Closest existing gallery images, matched server-side by this direction's
+  // styleTags (see lib/direction_image_match). Rendered as a mini moodboard
+  // preview — a keyword-similarity stand-in until a visual is generated.
+  matchedImages?: string[];
 };
 
 // The shape the OpenAI call is expected to return — a subset of

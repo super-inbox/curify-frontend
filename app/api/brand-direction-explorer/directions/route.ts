@@ -9,6 +9,7 @@ import {
   generateCreativeDirections,
   type GenerateDirectionsFailureKind,
 } from "@/lib/brandDirectionOpenAI";
+import { matchImagesByKeywords } from "@/lib/direction_image_match";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -137,7 +138,14 @@ export async function POST(req: Request) {
   );
 
   if (result.success) {
-    return NextResponse.json({ success: true, directions: result.directions }, { status: 200 });
+    // Attach the closest existing gallery images per direction, matched by the
+    // direction's style keywords (styleTags). Gives each direction a real
+    // "preview" (a mini moodboard of similar visuals) without a fresh generation.
+    const directions = result.directions.map((d) => ({
+      ...d,
+      matchedImages: matchImagesByKeywords(d.styleTags, 4).map((m) => m.imageUrl),
+    }));
+    return NextResponse.json({ success: true, directions }, { status: 200 });
   }
 
   const status = STATUS_BY_FAILURE_KIND[result.kind] ?? 502;
