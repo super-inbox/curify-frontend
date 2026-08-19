@@ -2,11 +2,14 @@ import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { NextResponse, type NextRequest } from "next/server";
 import { clientIpFrom, isBlockedIp } from "./lib/blocked-networks";
+import { isBlockedBot, isCorpusPath } from "./lib/blocked-bots";
 
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(req: NextRequest) {
   const url = req.nextUrl;
+  // Hoisted above the block gates below, which both branch on it.
+  const host = req.headers.get("host");
 
   // 0) Refuse the corpus-harvesting networks before doing any other work.
   // Every page render here is dynamic (the (public) layout calls headers()),
@@ -27,8 +30,39 @@ export default function middleware(req: NextRequest) {
     }
   }
 
+  // 0b) Refuse bulk training crawlers on the corpus routes.
+  //
+  // 2026-08-19: meta-externalagent was walking
+  // /hi/carousel/template-example/... at ~531 MB Fluid and 90-260 ms per
+  // request. These routes render dynamically (the (public) layout calls
+  // headers()), so every hit is an origin render — a 403 here costs a
+  // middleware invocation instead.
+  //
+  // Scoped to the corpus paths on purpose: these crawlers may still fetch the
+  // home page, blog and tool pages, which are cheap and occasionally useful
+  // for link previews. The bleed is the 20k-URL prompt corpus.
+  //
+  // On a NON-CANONICAL host (the *.vercel.app deployment URL) every bot hit is
+  // pure waste — that host must never be indexed at all — so there the block
+  // is not path-scoped. Humans reviewing a preview deployment are unaffected
+  // because the match is on self-declared bot UAs only.
+  if (process.env.BLOCK_BOTS_DISABLED !== "1") {
+    const ua = req.headers.get("user-agent");
+    if (isBlockedBot(ua)) {
+      const nonCanonicalHost = !!host && host !== "www.curify-ai.com";
+      if (nonCanonicalHost || isCorpusPath(url.pathname)) {
+        return new NextResponse("Forbidden", {
+          status: 403,
+          headers: {
+            "cache-control": "public, max-age=86400",
+            "x-blocked-reason": nonCanonicalHost ? "bot-on-preview-host" : "bot-on-corpus",
+          },
+        });
+      }
+    }
+  }
+
   // 1) Force www redirect (apex -> www)
-  const host = req.headers.get("host");
   if (host === "curify-ai.com") {
     const redirectUrl = new URL(req.url);
     redirectUrl.host = "www.curify-ai.com";
