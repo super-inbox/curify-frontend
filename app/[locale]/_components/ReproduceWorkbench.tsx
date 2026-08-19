@@ -146,10 +146,10 @@ export default function ReproduceWorkbench({
   const [shownVideoUrl, setShownVideoUrl] = useState<string | null>(null);
   const [referenceImageUrl, setReferenceImageUrl] = useState<string | null>(null);
   const [isUploadingImage, setIsUploadingImage] = useState(false);
-  // Which image tab is active in the column-1 workspace: "source" (the system
-  // image + your upload) or a result id. The active tab IS the base every output
-  // format builds from, and a fresh generation switches to its own tab.
-  const [activeTab, setActiveTab] = useState<string>("source");
+  // (e) A result the user clicked to "move to column 1": it becomes the visible
+  // source AND the base every design-work tile builds from. Cleared when a fresh
+  // primary generation lands (that becomes the new hero) or via the revert (✕).
+  const [promotedUrl, setPromotedUrl] = useState<string | null>(null);
   // (B) The output format the Generate button produces. null = the default
   // "standard image" (base template generation); otherwise a workflow key whose
   // transform runs on Generate. Chosen ABOVE the Generate button.
@@ -171,10 +171,7 @@ export default function ReproduceWorkbench({
     kind: "primary" | "derivative" = "derivative",
   ) => {
     resultSeq.current += 1;
-    const id = `${key}-${resultSeq.current}`;
-    setResults((prev) => [{ id, url, label, kind }, ...prev]);
-    // A new output opens (and activates) its own tab in the workspace.
-    setActiveTab(id);
+    setResults((prev) => [{ id: `${key}-${resultSeq.current}`, url, label, kind }, ...prev]);
   };
 
   const { generate, dismissAndGenerate, isGenerating: directGenerating, duplicateWarning, clearWarning } =
@@ -184,7 +181,12 @@ export default function ReproduceWorkbench({
       existingExamples,
       tracking,
       referenceImageUrl: referenceImageUrl ?? undefined,
-      onSuccess: (signedUrl) => pushResult("generate", "Your generation", signedUrl, "primary"),
+      onSuccess: (signedUrl) => {
+        // A fresh primary is the new hero — drop any pinned/promoted result so
+        // the design-work tiles build from this generation, not a stale pin.
+        setPromotedUrl(null);
+        pushResult("generate", "Your generation", signedUrl, "primary");
+      },
     });
 
   const { generate: freeformGenerate, isGenerating: freeformGenerating } = useFreeformGenerate({
@@ -217,18 +219,21 @@ export default function ReproduceWorkbench({
   });
 
   const anyGenerating = directGenerating || freeformGenerating;
-  // The "source" tab image: the example (source mode), the loaded project result
-  // (result mode), or the user's uploaded photo (upload mode; "" until uploaded).
+  const latestUrl = results[0]?.url ?? null;
   const col1Source =
     col1.mode === "source" ? col1.sourceReferenceUrl
     : col1.mode === "result" ? col1.resultUrl
     : referenceImageUrl ?? "";
-  // The image showing in the active workspace tab — the source, or a chosen
-  // result. This IS the base an output-format transform builds on: the user picks
-  // the base simply by switching tabs.
-  const activeResult = activeTab === "source" ? null : results.find((r) => r.id === activeTab) ?? null;
-  const activeUrl = activeResult?.url ?? col1Source;
-  const transformSource = activeUrl;
+  // Reference image for the designer-pack workflows = the "hero": the latest
+  // PRIMARY result (the main generation), or — before any generation — the
+  // column-1 source (loaded project result / uploaded / source image). It is
+  // deliberately NOT `latestUrl`: designer-pack tiles are parallel finishing
+  // passes on the hero, so applying several in a row must each read the hero,
+  // not the previous tile's derivative output (issue (c), 2026-07-15).
+  const heroUrl = results.find((r) => r.kind === "primary")?.url ?? col1Source;
+  // A promoted (clicked-to-source) result wins as the transform base — that IS
+  // the "move it to column 1" gesture (e): tiles then build on what the user picked.
+  const transformSource = promotedUrl ?? heroUrl;
   const workflows = useMemo(() => {
     const base = getTemplateWorkflows(templateId);
     // Education / learning / language templates: the intro video is a readable
@@ -280,14 +285,18 @@ export default function ReproduceWorkbench({
 
   const canGenerateInline = allowGeneration || requiresImageUpload;
   const needsImage = requiresImageUpload && !referenceImageUrl;
-  // "result" mode = a finished project loaded to keep producing (no template/
-  // params), so the CREATE column is hidden and the workspace widens.
+  // In upload mode the reference upload is column 1; in source mode it stays in
+  // column 2 (only rendered there for image2image templates).
+  const uploadInCol2 = col1.mode === "source" && requiresImageUpload;
+  // "result" mode = a finished project loaded to keep producing. Column 2 is
+  // hidden, so column 1 + column 3 widen to fill the 12-col grid.
   const resultMode = col1.mode === "result";
-  // Two-column layout: column 1 = the tabbed image workspace (source/upload +
-  // one tab per result), column 2 = create controls. No column 3 — results live
-  // as tabs in the workspace.
-  const col1Span = resultMode ? "lg:col-span-7" : "lg:col-span-6";
-  const col2Span = resultMode ? "lg:col-span-5" : "lg:col-span-6";
+  const col1Span = resultMode ? "lg:col-span-4" : "lg:col-span-3";
+  // (d) Design-work tiles now live in column 2 (as "output formats"), so column 2
+  // is wider and column 3 (the result panel only) is narrower. Result mode keeps
+  // the old split (col 2 is hidden; tiles fall back into the wide column 3).
+  const col2Span = "lg:col-span-5";
+  const col3Span = resultMode ? "lg:col-span-8" : "lg:col-span-4";
 
   const onFormChange = (name: string, value: string) => {
     clearWarning();
@@ -461,7 +470,7 @@ export default function ReproduceWorkbench({
       {transformSource && (
         <p className="mb-2 text-[11px] text-neutral-400">
           Each format builds from your{" "}
-          {activeResult ? "active result" : "source image"}.
+          {results.some((r) => r.kind === "primary") ? "latest generation" : promotedUrl ? "selected result" : "source image"}.
         </p>
       )}
       <div className="grid grid-cols-3 gap-2">{workflows.map(tileButton)}</div>
@@ -474,132 +483,87 @@ export default function ReproduceWorkbench({
       {description ? <p className="sr-only whitespace-pre-line">{description}</p> : null}
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
-        {/* ── 1. WORKSPACE (tabbed: source/upload + one tab per result) ── */}
+        {/* ── 1. SOURCE / YOUR IMAGE ────────────────────────────────── */}
         <div className={`flex flex-col ${col1Span}`}>
-          <div className={labelCls}>1 · Workspace</div>
-
-          {/* Tabs: the source/upload, then each generated result. The active tab
-              is the image shown below AND the base the next output format uses. */}
-          <div className="mb-2 flex items-center gap-1.5 overflow-x-auto pb-0.5">
-            <button
-              type="button"
-              onClick={() => setActiveTab("source")}
-              className={`shrink-0 rounded-lg border px-2.5 py-1 text-[11px] font-semibold transition ${
-                activeTab === "source"
-                  ? "border-purple-500 bg-purple-50 text-purple-700"
-                  : "border-neutral-200 bg-white text-neutral-600 hover:border-purple-300"
-              }`}
-            >
-              {col1.mode === "upload"
+          <div className={labelCls}>
+            {promotedUrl
+              ? "1 · Your result"
+              : col1.mode === "upload"
                 ? col1.optional
-                  ? "System + your photo"
-                  : "Your image"
+                  ? "1 · Your photo (optional)"
+                  : "1 · Your image"
                 : col1.mode === "result"
-                  ? "Loaded result"
-                  : "System image"}
-            </button>
-            {results.map((r, i) => {
-              const on = activeTab === r.id;
-              const n = results.length - i; // newest is index 0 → highest number
-              return (
-                <button
-                  key={r.id}
-                  type="button"
-                  onClick={() => setActiveTab(r.id)}
-                  title={r.label}
-                  className={`shrink-0 rounded-lg border px-2.5 py-1 text-[11px] font-semibold transition ${
-                    on
-                      ? "border-purple-500 bg-purple-50 text-purple-700"
-                      : "border-neutral-200 bg-white text-neutral-600 hover:border-purple-300"
-                  }`}
-                >
-                  {r.kind === "primary" ? `Result ${n}` : r.label}
-                </button>
-              );
-            })}
+                  ? "1 · Your result"
+                  : "1 · Source"}
           </div>
-
-          {/* Active tab body. (C) Larger image (+15%); copy + download-pack removed,
-              Share lives on the page H1 row. */}
-          <div className="relative flex min-h-[530px] flex-1 flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
-            {activeResult ? (
-              <>
+          {promotedUrl ? (
+            <>
+              <div className="relative min-h-[320px] flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={activeResult.url} alt={activeResult.label} className="h-full w-full object-contain" />
-                <a
-                  href={activeResult.url}
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Download"
-                  className="absolute right-2 top-2 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-black/55 text-white backdrop-blur-sm transition hover:bg-black/75"
+                <img src={promotedUrl} alt="Selected result" className="h-full w-full object-contain" />
+                <button
+                  type="button"
+                  onClick={() => setPromotedUrl(null)}
+                  aria-label="Revert to source"
+                  className="absolute right-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-lg bg-black/55 text-white backdrop-blur-sm transition hover:bg-black/75"
                 >
-                  <Download className="h-4 w-4" />
-                </a>
-              </>
-            ) : col1.mode === "upload" ? (
-              <div className="flex flex-1 flex-col p-3">
-                <ReferenceImageUpload
-                  variant="full"
-                  required={!col1.optional}
-                  label={col1.label ?? (col1.optional ? "Your product photo (optional)" : "Your image")}
-                  hideLabel={col1.hideUploadLabel}
-                  hint={
-                    col1.hint ??
-                    (col1.optional
-                      ? "Optional — upload your own product photo to apply this template to it, or just Generate from the options."
-                      : "Upload the photo to transform — the template is applied to it.")
-                  }
-                  signInLabel="Sign in to upload your image"
-                  onChange={(url) => {
-                    clearWarning();
-                    setReferenceImageUrl(url);
-                  }}
-                  onUploadingChange={setIsUploadingImage}
-                />
+                  ✕
+                </button>
               </div>
-            ) : (
-              col1.image
-            )}
-          </div>
-
-          {activeResult && (
-            <p className="mt-1.5 text-center text-[11px] text-neutral-400">
-              Output formats now build on this result. Switch tabs to work from a different image.
-            </p>
-          )}
-
-          {col1.mode === "result" && !activeResult && (
-            <div className="mt-2">
-              <a
-                href={col1.downloadHref ?? col1.resultUrl}
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
-              >
-                <Download className="h-4 w-4" /> Download
-              </a>
+              <p className="mt-2 text-[11px] text-neutral-500">
+                Working from this result — output formats now build on it.
+              </p>
+            </>
+          ) : col1.mode === "upload" ? (
+            <div className="flex flex-1 flex-col rounded-2xl border border-neutral-200 bg-white p-3 shadow-sm">
+              <ReferenceImageUpload
+                variant="full"
+                required={!col1.optional}
+                label={col1.label ?? (col1.optional ? "Your product photo (optional)" : "Your image")}
+                hideLabel={col1.hideUploadLabel}
+                hint={
+                  col1.hint ??
+                  (col1.optional
+                    ? "Optional — upload your own product photo to apply this template to it, or just Generate from the options."
+                    : "Upload the photo to transform — the template is applied to it.")
+                }
+                signInLabel="Sign in to upload your image"
+                onChange={(url) => {
+                  clearWarning();
+                  setReferenceImageUrl(url);
+                }}
+                onUploadingChange={setIsUploadingImage}
+              />
             </div>
-          )}
-
-          {/* Result mode has no CREATE column, so the output-format tiles (click to
-              run) live under the workspace here. */}
-          {resultMode && workflows.length > 0 && (
-            <div className="mt-3 border-t border-neutral-100 pt-3">
-              <div className="mb-2 flex items-baseline justify-between">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">Turn it into design work</span>
-                <span className="text-[11px] text-neutral-400">{CREDITS_COST} credits each</span>
+          ) : (
+            <>
+              {/* (C) Larger source image; the copy + download-pack buttons were
+                  removed and Share moved to the page H1 row. Only a loaded
+                  project (result mode) keeps its Download here. */}
+              <div className="relative min-h-[460px] flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+                {col1.image}
               </div>
-              {outputFormats}
-            </div>
+              {col1.mode === "result" && (
+                <div className="mt-2">
+                  <a
+                    href={col1.downloadHref ?? col1.resultUrl}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                  >
+                    <Download className="h-4 w-4" /> Download
+                  </a>
+                </div>
+              )}
+            </>
           )}
         </div>
 
-        {/* ── 2. CREATE — params + output-format selector + generate (hidden in result mode) ── */}
+        {/* ── 2. MAKE IT YOURS / PROMPT & GENERATE (hidden in result mode) ── */}
         {!resultMode && (
         <div className={`flex flex-col ${col2Span}`}>
-          <div className={labelCls}>2 · Create</div>
+          <div className={labelCls}>{col1.mode === "upload" ? "2 · Prompt & generate" : "2 · Make it yours"}</div>
           <div className="flex flex-1 flex-col gap-3">
             {parameters.length > 0 && (
               <div className="flex flex-col gap-3">
@@ -677,6 +641,18 @@ export default function ReproduceWorkbench({
                   </button>
                 )}
               </div>
+            )}
+
+            {/* image2image upload lives in column 2 only in "source" mode. */}
+            {uploadInCol2 && (
+              <ReferenceImageUpload
+                required
+                label="Your image"
+                hint="Upload the photo to transform — the template is applied to it."
+                signInLabel="Sign in to upload your image"
+                onChange={setReferenceImageUrl}
+                onUploadingChange={setIsUploadingImage}
+              />
             )}
 
             {/* Prompt preview — kept in the DOM for SEO + power users. Opened by
@@ -825,8 +801,6 @@ export default function ReproduceWorkbench({
 
               {soonNote && <p className="text-[11px] text-neutral-500">{soonNote}</p>}
 
-              {anyGenerating && <p className="text-[11px] text-neutral-500">Generating… your result opens as a new tab in the workspace.</p>}
-
               {/* Quick actions — PDF packs + the lesson-video reveal. Not "generate"
                   outputs, so they stay one-click tiles separate from the selector. */}
               {quickActions.length > 0 && (
@@ -834,34 +808,113 @@ export default function ReproduceWorkbench({
                   <div className="grid grid-cols-3 gap-2">{quickActions.map(tileButton)}</div>
                 </div>
               )}
-
-              {/* Template intro video, revealed by the free "Read this" tile. */}
-              {shownVideoUrl && (
-                <div className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-black shadow-sm">
-                  <CdnVideo key={shownVideoUrl} src={shownVideoUrl} controls autoPlay playsInline className="h-auto w-full" />
-                  <button
-                    type="button"
-                    onClick={() => setShownVideoUrl(null)}
-                    aria-label="Close video"
-                    className="absolute right-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-lg bg-black/55 text-white backdrop-blur-sm transition hover:bg-black/75"
-                  >
-                    ✕
-                  </button>
-                </div>
-              )}
-
-              {results.length > 0 && (
-                <Link
-                  href={`/${locale}/workspace`}
-                  className="inline-flex items-center gap-1 self-start text-[11px] font-medium text-purple-600 hover:text-purple-800"
-                >
-                  All results in your workspace <ArrowUpRight className="h-3 w-3" />
-                </Link>
-              )}
             </div>
           </div>
         </div>
         )}
+
+        {/* ── 3. RESULT ─────────────────────────────────────────────── */}
+        <div className={`flex flex-col ${col3Span}`}>
+          <div className="mb-2 flex items-baseline justify-between">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+              {resultMode ? "2 · Turn it into design work" : "3 · Result"}
+            </span>
+            {resultMode && <span className="text-[11px] text-neutral-400">{CREDITS_COST} credits each</span>}
+          </div>
+
+          {/* In result mode column 2 is hidden, so the output-format tiles live
+              here in the wide column 3. In the normal layout they're in column 2. */}
+          {resultMode && outputFormats}
+
+          {/* Template intro video, revealed by the free "Read this" tile. */}
+          {shownVideoUrl && (
+            <div className="relative mt-3 overflow-hidden rounded-2xl border border-neutral-200 bg-black shadow-sm">
+              <CdnVideo
+                key={shownVideoUrl}
+                src={shownVideoUrl}
+                controls
+                autoPlay
+                playsInline
+                className="h-auto w-full"
+              />
+              <button
+                type="button"
+                onClick={() => setShownVideoUrl(null)}
+                aria-label="Close video"
+                className="absolute right-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-lg bg-black/55 text-white backdrop-blur-sm transition hover:bg-black/75"
+              >
+                ✕
+              </button>
+            </div>
+          )}
+
+          <div className="mt-3 flex flex-1 flex-col">
+            <div className="relative flex min-h-[200px] flex-1 items-center justify-center overflow-hidden rounded-2xl border border-dashed border-neutral-300 bg-white p-2">
+              {latestUrl ? (
+                // (e) Clicking the generated image moves it to column 1 as the
+                // working source (every output-format tile then builds from it).
+                <button
+                  type="button"
+                  onClick={() => setPromotedUrl(latestUrl)}
+                  title="Use as source — move to column 1"
+                  className="block h-full w-full cursor-pointer"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={latestUrl} alt={results[0]?.label} className="mx-auto h-full max-h-[420px] w-auto rounded-lg object-contain" />
+                </button>
+              ) : (
+                <p className="px-4 text-center text-xs text-neutral-400">
+                  {anyGenerating
+                    ? "Generating…"
+                    : "Fill the parameters and Generate, or pick an output format — results appear here and save to your workspace."}
+                </p>
+              )}
+              {latestUrl && (
+                <a
+                  href={latestUrl}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download"
+                  className="absolute right-2 top-2 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-black/55 text-white backdrop-blur-sm transition hover:bg-black/75"
+                >
+                  <Download className="h-4 w-4" />
+                </a>
+              )}
+            </div>
+
+            {latestUrl && promotedUrl !== latestUrl && (
+              <p className="mt-1.5 text-center text-[11px] text-neutral-400">
+                Click the image to move it to column 1 and keep building from it.
+              </p>
+            )}
+
+            {results.length > 0 && (
+              <div className="mt-2 flex items-center gap-2">
+                <div className="flex flex-1 gap-2 overflow-x-auto">
+                  {results.slice(1).map((r) => (
+                    <button
+                      key={r.id}
+                      type="button"
+                      onClick={() => setPromotedUrl(r.url)}
+                      title={`${r.label} — use as source`}
+                      className="relative h-10 w-10 shrink-0 cursor-pointer overflow-hidden rounded-md border border-neutral-200 bg-neutral-100"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={r.url} alt={r.label} className="h-full w-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+                <Link
+                  href={`/${locale}/workspace`}
+                  className="inline-flex shrink-0 items-center gap-1 text-[11px] font-medium text-purple-600 hover:text-purple-800"
+                >
+                  Workspace <ArrowUpRight className="h-3 w-3" />
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );
