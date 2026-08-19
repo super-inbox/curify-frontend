@@ -9,7 +9,7 @@ import {
   generateCreativeDirections,
   type GenerateDirectionsFailureKind,
 } from "@/lib/brandDirectionOpenAI";
-import { matchImagesByKeywords } from "@/lib/direction_image_match";
+import { matchImagesForDirections } from "@/lib/direction_image_match";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -138,13 +138,22 @@ export async function POST(req: Request) {
   );
 
   if (result.success) {
-    // Attach the closest existing gallery images per direction, matched by the
-    // direction's style keywords (styleTags). Gives each direction a real
-    // "preview" (a mini moodboard of similar visuals) without a fresh generation.
-    const directions = result.directions.map((d) => ({
-      ...d,
-      matchedImages: matchImagesByKeywords(d.styleTags, 4).map((m) => m.imageUrl),
-    }));
+    // Attach the closest existing gallery images per direction as a preview
+    // moodboard. Anchored on the brief's PRODUCT/SUBJECT words (so a coffee brand
+    // pulls coffee/brand/packaging visuals, not off-subject style matches), with
+    // the direction's styleTags as the secondary signal and a global dedup so the
+    // three directions get distinct sets.
+    const fv = fieldValues as Record<string, string>;
+    const contextText = [
+      brandCase.title?.en,
+      brandCase.description?.en,
+      brandCase.baseBrief,
+      ...Object.values(fv),
+    ]
+      .filter(Boolean)
+      .join(" ");
+    const matched = matchImagesForDirections(result.directions, { contextText, perDirection: 4 });
+    const directions = result.directions.map((d, i) => ({ ...d, matchedImages: matched[i] }));
     return NextResponse.json({ success: true, directions }, { status: 200 });
   }
 

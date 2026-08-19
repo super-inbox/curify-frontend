@@ -1,8 +1,15 @@
-// Server-only: match a creative direction's style keywords against the tags of
-// our existing gallery images (nano_inspiration) to surface the closest real
-// visuals as a direction "preview" — instead of a static placeholder or a fresh
-// (slow, paid) image generation. Import from server code only (route handlers):
-// nano_inspiration.json is multi-MB and must not enter the client bundle.
+// Server-only: pick the closest existing gallery images (nano_inspiration) as a
+// preview "moodboard" for each generated creative direction. Import from server
+// code only (route handlers) — nano_inspiration.json is multi-MB and must not
+// enter the client bundle.
+//
+// Relevance model (2026-08): match against each image's tags + topics + aliases,
+// and score the brief's PRODUCT/SUBJECT words (coffee, cafe, brand, packaging…)
+// far above the direction's generic STYLE words (earthy, modern…). Style words
+// alone surfaced off-subject, repetitive images (a coffee brief pulling up
+// Journey-to-the-West character art); anchoring on the subject fixes that. The
+// three directions are matched together with a global dedup so each gets a
+// distinct set.
 import inspiration from "@/public/data/nano_inspiration.json";
 
 type InspRec = {
@@ -15,64 +22,89 @@ type InspRec = {
 
 const RECS = (inspiration as unknown as InspRec[]) ?? [];
 
-// Inverted index: normalized tag -> record indices. Built once at module load.
-const TAG_INDEX = new Map<string, number[]>();
-RECS.forEach((r, i) => {
-  for (const raw of r.tags ?? []) {
-    const k = raw.toLowerCase().trim();
-    if (!k) continue;
-    const arr = TAG_INDEX.get(k);
-    if (arr) arr.push(i);
-    else TAG_INDEX.set(k, [i]);
+// Each record's searchable vocabulary (tags + topics + aliases), normalized.
+const REC_TERMS: Set<string>[] = RECS.map((r) => {
+  const s = new Set<string>();
+  for (const t of [...(r.tags ?? []), ...(r.topics ?? []), ...(r.search_aliases ?? [])]) {
+    const k = t.toLowerCase().trim();
+    if (k) s.add(k);
   }
+  return s;
 });
 
-// IDF weight per tag: a rare, specific keyword ("artisanal") should count far
-// more than a generic one ("warm", on hundreds of images), so matches skew
-// toward the distinctive part of a direction instead of the common mood words.
+// Inverted index term -> record indices, + IDF per term (rarer = more telling).
+const TERM_INDEX = new Map<string, number[]>();
+REC_TERMS.forEach((terms, i) => {
+  for (const term of terms) {
+    const arr = TERM_INDEX.get(term);
+    if (arr) arr.push(i);
+    else TERM_INDEX.set(term, [i]);
+  }
+});
 const TOTAL = Math.max(1, RECS.length);
-const IDF = new Map<string, number>();
-for (const [tag, recIdxs] of TAG_INDEX) {
-  IDF.set(tag, Math.log(TOTAL / recIdxs.length));
+function idf(term: string): number {
+  const df = TERM_INDEX.get(term)?.length ?? 0;
+  return df > 0 ? Math.log(TOTAL / df) : 0;
 }
 
-export type MatchedImage = { id?: string; imageUrl: string; score: number; matchedTags: string[] };
+// The whole corpus vocabulary — used to keep only meaningful subject words out of
+// a free-text brief (drop "the", "opening", a shop's made-up name, etc.).
+const VOCAB = new Set(TERM_INDEX.keys());
+
+const SUBJECT_WEIGHT = 4; // product/subject match counts 4x a style match
+const STYLE_WEIGHT = 1;
+
+function tokenize(text: string): string[] {
+  return Array.from(
+    new Set(
+      (text.toLowerCase().match(/[a-z][a-z-]{2,}/g) ?? []).filter((w) => VOCAB.has(w)),
+    ),
+  );
+}
 
 /**
- * Rank existing gallery images by keyword overlap with a direction's style tags.
- * Score = number of the direction's keywords that appear in the image's tags.
- * Returns up to `limit` distinct images, highest overlap first.
+ * Match every direction's preview images at once (global dedup so the three sets
+ * are distinct). `contextText` is the brief (case title/description + field
+ * values); its in-vocabulary words become the high-weight subject anchor.
+ * Returns image URLs per direction, parallel to `directions`.
  */
-export function matchImagesByKeywords(keywords: string[], limit = 4): MatchedImage[] {
-  const kws = Array.from(
-    new Set(keywords.map((k) => k.toLowerCase().trim()).filter(Boolean)),
-  );
-  if (kws.length === 0) return [];
+export function matchImagesForDirections(
+  directions: { styleTags: string[] }[],
+  opts: { contextText?: string; perDirection?: number } = {},
+): string[][] {
+  const perDir = opts.perDirection ?? 4;
+  const subjectKws = tokenize(opts.contextText ?? "");
+  const used = new Set<string>(); // global dedup across directions
 
-  // Accumulate per-record IDF-weighted overlap + which keywords hit. Weighting
-  // by IDF means a distinctive shared keyword outranks several generic ones.
-  const score = new Map<number, number>();
-  const hits = new Map<number, string[]>();
-  for (const kw of kws) {
-    const w = IDF.get(kw) ?? 0;
-    for (const idx of TAG_INDEX.get(kw) ?? []) {
-      score.set(idx, (score.get(idx) ?? 0) + w);
-      const h = hits.get(idx);
-      if (h) h.push(kw);
-      else hits.set(idx, [kw]);
+  const scoreFor = (styleTags: string[]) => {
+    const styleKws = Array.from(
+      new Set(styleTags.map((k) => k.toLowerCase().trim()).filter(Boolean)),
+    );
+    const score = new Map<number, number>();
+    const bump = (kw: string, weight: number) => {
+      const w = weight * idf(kw);
+      if (w <= 0) return;
+      for (const idx of TERM_INDEX.get(kw) ?? []) score.set(idx, (score.get(idx) ?? 0) + w);
+    };
+    for (const kw of subjectKws) bump(kw, SUBJECT_WEIGHT);
+    for (const kw of styleKws) bump(kw, STYLE_WEIGHT);
+    return score;
+  };
+
+  return directions.map((d) => {
+    const score = scoreFor(d.styleTags);
+    // Prefer images that hit the subject at all — a subject match is worth far
+    // more than any number of style matches, so those sort to the top naturally.
+    const ranked = [...score.entries()].sort((a, b) => b[1] - a[1]);
+    const out: string[] = [];
+    for (const [idx] of ranked) {
+      const r = RECS[idx];
+      const url = r.asset?.preview_image_url || r.asset?.image_url;
+      if (!url || used.has(url)) continue;
+      used.add(url);
+      out.push(url);
+      if (out.length >= perDir) break;
     }
-  }
-
-  const ranked = [...score.entries()].sort((a, b) => b[1] - a[1]);
-  const out: MatchedImage[] = [];
-  const seen = new Set<string>();
-  for (const [idx, s] of ranked) {
-    const r = RECS[idx];
-    const url = r.asset?.preview_image_url || r.asset?.image_url;
-    if (!url || seen.has(url)) continue;
-    seen.add(url);
-    out.push({ id: r.id, imageUrl: url, score: s, matchedTags: hits.get(idx) ?? [] });
-    if (out.length >= limit) break;
-  }
-  return out;
+    return out;
+  });
 }
