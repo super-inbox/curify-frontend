@@ -20,7 +20,7 @@ import { useFreeformGenerate } from "@/services/useFreeformGenerate";
 import { getTemplateWorkflows, videoShowWorkflow, packPdfWorkflow } from "@/lib/template_workflows";
 import { getPackTiers } from "@/lib/template_packs";
 import { getOutputIntent } from "@/lib/output_intent";
-import { resizeToSocialBundle, sliceIntoGrid, makePrintReady } from "@/lib/resize_bundle";
+import { resizeToSocialBundle, resizeToAspect, sliceIntoGrid, makePrintReady, SOCIAL_ASPECTS } from "@/lib/resize_bundle";
 import { templatePacksService } from "@/services/templatePacks";
 import { userAtom, clientMountedAtom, drawerAtom, modalAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
@@ -154,6 +154,8 @@ export default function ReproduceWorkbench({
   // "standard image" (base template generation); otherwise a workflow key whose
   // transform runs on Generate. Chosen ABOVE the Generate button.
   const [selectedFormat, setSelectedFormat] = useState<string | null>(null);
+  // Chosen ratio for the "Resize for socials" format ("all" = every size).
+  const [resizeAspect, setResizeAspect] = useState<string>("1x1");
   const resultSeq = useRef(0);
 
   const tracking = {
@@ -377,8 +379,15 @@ export default function ReproduceWorkbench({
       setActiveKey(wf.key);
       track({ contentId: `workflow-${wf.key}:${templateId}`, contentType: tracking.contentType, actionType: "download" });
       try {
-        const variants = await resizeToSocialBundle(transformSource);
-        variants.forEach((v) => pushResult(`resize-${v.key}`, v.label, v.url));
+        // The ratio picker drives this: a specific aspect → one file; "all" → the
+        // full social bundle.
+        if (resizeAspect === "all") {
+          const variants = await resizeToSocialBundle(transformSource);
+          variants.forEach((v) => pushResult(`resize-${v.key}`, v.label, v.url));
+        } else {
+          const v = await resizeToAspect(transformSource, resizeAspect);
+          pushResult(`resize-${v.key}`, v.label, v.url);
+        }
       } catch {
         setSoonNote("Couldn't resize this image here. Generate a fresh result first, then try again.");
       } finally {
@@ -716,6 +725,31 @@ export default function ReproduceWorkbench({
                       );
                     })}
                   </div>
+
+                  {/* (1) Resize aspect-ratio picker — shown only when the resize
+                      format is selected. "All" produces the full social bundle. */}
+                  {selectedFormat === "resize-bundle" && (
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {[...SOCIAL_ASPECTS, { key: "all", label: "All sizes" }].map((a) => {
+                        const on = resizeAspect === a.key;
+                        return (
+                          <button
+                            key={a.key}
+                            type="button"
+                            onClick={() => setResizeAspect(a.key)}
+                            aria-pressed={on}
+                            className={`rounded-full border px-2.5 py-1 text-[11px] font-semibold transition ${
+                              on
+                                ? "border-purple-500 bg-purple-600 text-white"
+                                : "border-neutral-200 bg-white text-neutral-700 hover:border-purple-300"
+                            }`}
+                          >
+                            {a.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               )}
 

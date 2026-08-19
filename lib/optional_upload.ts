@@ -9,7 +9,7 @@
 //
 // Pure / client-safe: a single regex, no data imports.
 const OPTIONAL_UPLOAD_RE =
-  /photograph|photo-grid|product-lifestyle|lifestyle-moodboard|scene-photography|-ecommerce\b|ecommerce-product|ecommerce-store|product-scene|packshot|fashion-collection/i;
+  /photograph|photo-grid|product-lifestyle|lifestyle-moodboard|scene-photography|-ecommerce\b|ecommerce-product|ecommerce-store|product-scene|packshot|fashion-collection|\bproduct\b|product-|mockup|packaging|product-label|\bmerch\b|merchandise|magnet|promotional|commercial-ad|product-ad|perfume-cosmetic|gift-box|giftbox|presentation-board/i;
 
 /** True when the template should offer (but not require) an own-photo upload. */
 export function allowsOptionalImageUpload(templateId: string | undefined | null): boolean {

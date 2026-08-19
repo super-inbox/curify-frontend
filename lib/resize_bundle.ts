@@ -13,8 +13,9 @@
 export type SocialAspect = { key: string; label: string; w: number; h: number };
 
 export const SOCIAL_ASPECTS: readonly SocialAspect[] = [
-  { key: "9x16", label: "Story / Reel 9:16", w: 1080, h: 1920 },
   { key: "1x1", label: "Square 1:1", w: 1080, h: 1080 },
+  { key: "4x5", label: "Portrait 4:5", w: 1080, h: 1350 },
+  { key: "9x16", label: "Story 9:16", w: 1080, h: 1920 },
   { key: "16x9", label: "Wide 16:9", w: 1920, h: 1080 },
 ] as const;
 
@@ -69,6 +70,19 @@ export async function resizeToSocialBundle(imageUrl: string): Promise<ResizedVar
       out.push({ key: aspect.key, label: aspect.label, url, filename: `curify-${aspect.key}.png` });
     }
     return out;
+  } finally {
+    bmp.close();
+  }
+}
+
+/** Resize to a SINGLE chosen social aspect ratio (cover-crop). Powers the ratio
+ *  picker on the "Resize for socials" output format. */
+export async function resizeToAspect(imageUrl: string, aspectKey: string): Promise<ResizedVariant> {
+  const aspect = SOCIAL_ASPECTS.find((a) => a.key === aspectKey) ?? SOCIAL_ASPECTS[0];
+  const bmp = await loadBitmap(imageUrl);
+  try {
+    const url = await canvasToUrl(coverCrop(bmp, aspect));
+    return { key: aspect.key, label: aspect.label, url, filename: `curify-${aspect.key}.png` };
   } finally {
     bmp.close();
   }
