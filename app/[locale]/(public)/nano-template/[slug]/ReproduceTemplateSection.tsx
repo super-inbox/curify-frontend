@@ -18,7 +18,6 @@ import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { toSlug } from "@/lib/nano_pure";
 import { getUseCasesForTopics } from "@/lib/topicRegistry_pure";
-import { allowsOptionalImageUpload } from "@/lib/optional_upload";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 
 import {
@@ -43,16 +42,20 @@ export default function ReproduceTemplateSection(props: {
   sampleImage?: SampleImage;
   initialParams?: Record<string, string>;
 }) {
-  if (props.template.requires_image_upload) {
+  // Reference-input mode is an explicit per-template field (nano_templates.json
+  // `image_input`), with the legacy `requires_image_upload` flag as fallback.
+  const mode =
+    props.template.image_input ??
+    (props.template.requires_image_upload ? "required" : "none");
+  if (mode === "required") {
     return (
       <ImageWorkbenchSection template={props.template} initialParams={props.initialParams} />
     );
   }
-  // Product / e-commerce / photography templates: offer an OPTIONAL own-photo
-  // upload so the visitor can apply the template to their own product (or just
-  // generate from the options). Routes to the same 3-column workbench, col-1
-  // upload but not required. See lib/optional_upload.
-  if (allowsOptionalImageUpload(props.template.template_id)) {
+  // "optional" → same 3-column workbench, col-1 upload offered but not required:
+  // the visitor can generate from params (text), upload their own product/subject
+  // (image), or both (text+image).
+  if (mode === "optional") {
     return (
       <ImageWorkbenchSection
         template={props.template}
