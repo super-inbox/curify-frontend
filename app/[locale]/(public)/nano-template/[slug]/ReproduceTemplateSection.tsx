@@ -42,28 +42,45 @@ export default function ReproduceTemplateSection(props: {
   sampleImage?: SampleImage;
   initialParams?: Record<string, string>;
 }) {
-  if (props.template.requires_image_upload) {
+  // Reference-input mode is an explicit per-template field (nano_templates.json
+  // `image_input`), with the legacy `requires_image_upload` flag as fallback.
+  const mode =
+    props.template.image_input ??
+    (props.template.requires_image_upload ? "required" : "none");
+  if (mode === "required") {
     return (
       <ImageWorkbenchSection template={props.template} initialParams={props.initialParams} />
+    );
+  }
+  // "optional" → same 3-column workbench, col-1 upload offered but not required:
+  // the visitor can generate from params (text), upload their own product/subject
+  // (image), or both (text+image).
+  if (mode === "optional") {
+    return (
+      <ImageWorkbenchSection
+        template={props.template}
+        initialParams={props.initialParams}
+        optionalUpload
+      />
     );
   }
   return <TextReproduceSection {...props} />;
 }
 
 // image2image template detail → shared 3-column workbench, col-1 upload.
+// `optionalUpload` = the upload is offered but not required (text→image still
+// works); otherwise the upload is required (classic image2image template).
 function ImageWorkbenchSection({
   template,
   initialParams,
+  optionalUpload = false,
 }: {
   template: NanoTemplateForDetail;
   initialParams?: Record<string, string>;
+  optionalUpload?: boolean;
 }) {
   const searchParams = useSearchParams();
   const locale = useLocale();
-  const templateUseCases = useMemo(
-    () => getUseCasesForTopics(template.topics ?? []),
-    [template.topics]
-  );
 
   // Query-param overrides for parameters; the workbench seeds the rest from
   // each param's placeholder default.
@@ -84,13 +101,15 @@ function ImageWorkbenchSection({
         parameters={template.parameters ?? []}
         initialParams={seeded}
         basePrompt={template.base_prompt || ""}
-        allowGeneration={!!template.allow_generation}
-        requiresImageUpload
+        // Offering an upload implies this is a generation template; force it on
+        // for the optional case so a clobbered allow_generation flag can't leave
+        // the visitor with a dead Copy-prompt button.
+        allowGeneration={optionalUpload ? true : !!template.allow_generation}
+        requiresImageUpload={!optionalUpload}
         existingExamples={template.existingExamples}
-        useCaseFilter={templateUseCases}
         trackingContentId={template.template_id}
         introVideoUrl={template.intro_video_url}
-        col1={{ mode: "upload" }}
+        col1={{ mode: "upload", optional: optionalUpload }}
       />
     </section>
   );

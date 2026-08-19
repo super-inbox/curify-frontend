@@ -233,6 +233,54 @@ _Updated 2026-08-10. The three deploy-gated rows below are **done**; corrections
 
 ## 2026-08-10 — corrections + the two P0s worked
 
+### Indexing-API experiment — submitted 2026-08-18, READ 2026-08-25
+
+Deployed the link fix (`564ff33c`) and submitted 3 URLs. **This is the decision point for
+the whole indexation plan**: if a direct submission with links in place does not produce a
+crawl, link topology is not the lever and the remaining 16 audit URLs need a different
+approach.
+
+**Treatment — links added 08-17, pinged 08-18:**
+
+| URL | inbound sources before → after | state at submit |
+|---|---|---|
+| `/tools/die-cut-sticker-file` | 1 → **4** (tools, home, topics/merch, use-cases/merch-ops) | never crawled |
+| `/tools/acrylic-factory-export` | 1 → **3** (tools, use-cases/merch-ops, use-cases/designers) | never crawled |
+
+**Treatment — links already existed for weeks, pinged 08-18:**
+
+| URL | inbound sources | state at submit |
+|---|---|---|
+| `/nano-template/ip-character-expression-sheet` | home ×2, `/topics/merch` ×5, `/use-cases/for-merch-operators` ×7 | never crawled |
+
+This one separates the two variables. It has had links from *indexed* pages all along and
+was never fetched, so if it now indexes, the ping did the work, not the links.
+
+**CONTROL — links but deliberately NOT pinged.** These are ladder steps, so they already
+carry home + topic-page links on exactly the pattern applied to the treatment group. Leaving
+them un-pinged is what makes the read interpretable:
+
+- `/nano-template/brand-font-specimen-set` (never crawled)
+- `/nano-template/brand-vi-full-visual-pack-mockup` (never crawled)
+- `/nano-template/amazon-product-six-grid-infographic-listing-poster` (never crawled)
+- `/nano-template/chocolate-giftbox-packaging` (unknown to Google)
+- `/nano-template/eco-farm-food-uniform-product-label` (unknown to Google)
+
+**How to read it on 08-25:**
+
+- treatment crawled, control not → **ping is the lever**; spend the 200/day quota on the
+  never-crawled backlog.
+- both crawled → the 08-17 links did it; pings are unnecessary and the recipe is free.
+- neither crawled → link topology is NOT sufficient. Stop the link-injection plan and treat
+  this as a site-authority problem.
+- crawled but "Crawled – currently not indexed" → worst case, and the same verdict
+  `/topics/language` and 4 edtech templates already carry: Google looked and declined. That
+  is a content problem, not a plumbing one, and no amount of linking or pinging fixes it.
+
+Do NOT ping the control group before the 08-25 read, however tempting.
+
+---
+
 ### New pages stopped being crawled around mid-July (2026-08-17)
 
 `/tools/packaging-mockup` came back **"Duplicate without user-selected canonical",

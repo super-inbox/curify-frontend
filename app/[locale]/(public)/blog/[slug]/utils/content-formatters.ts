@@ -507,6 +507,24 @@ export function formatContent(content: string): string {
     // Image-as-link [![alt](src)](href) — MUST run before the standalone
     // image rule so the inner ![alt](src) isn't replaced first and orphan
     // the wrapping [](href). Same same-tab/_blank rule as plain links.
+    // Side-by-side image row:  :::pair\n![a](x)\n![b](y)\n:::
+    // Two full-width stacked images push the surrounding argument off-screen;
+    // a comparison the reader is asked to judge (success vs failure) has to be
+    // visible at once. auto-fit/minmax keeps it responsive — it collapses back
+    // to one column below ~240px per cell instead of squashing. Must run BEFORE
+    // the standalone-image rule so the inner ![]() are still intact, and before
+    // the \n\n paragraph split.
+    .replace(/:::pair\n([\s\S]*?)\n:::/g, (_m: string, inner: string) => {
+      const imgs = Array.from(inner.matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g));
+      if (imgs.length < 2) return _m;
+      const cells = imgs
+        .map(
+          (m) =>
+            `<figure style="margin:0"><img src="${toCdnUrl(m[2])}" alt="${m[1]}" style="width:100%;height:auto;border-radius:8px;display:block" /><figcaption style="font-size:0.8rem;line-height:1.35;color:#6b7280;margin-top:8px;text-align:center">${m[1]}</figcaption></figure>`
+        )
+        .join("");
+      return `</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:24px 0">${cells}</div><p class="mb-4">`;
+    })
     // Image styling matches the standalone-image rule below so the visual
     // is identical whether or not the image is wrapped in a link.
     .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, (_m: string, alt: string, src: string, href: string) => {

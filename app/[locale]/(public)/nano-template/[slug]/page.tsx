@@ -249,6 +249,12 @@ export default async function NanoTemplatePage({ params }: Props) {
       batch: !!template.batch,
       allow_generation: !!template.allow_generation,
       requires_image_upload: !!template.requires_image_upload,
+      image_input:
+        template.image_input === "required" || template.image_input === "optional"
+          ? template.image_input
+          : template.requires_image_upload
+            ? "required"
+            : "none",
       archetype: template.archetype === "consumption" ? "consumption" : "creation",
       intro_video_url: template.intro_video_url,
       existingExamples: imageViews

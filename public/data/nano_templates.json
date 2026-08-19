@@ -55,7 +55,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-herbal.mp4",
-    "creation_date": "2026-04-02"
+    "creation_date": "2026-04-02",
+    "image_input": "optional"
   },
   {
     "id": "template-evolution",
@@ -124,7 +125,8 @@
       "for-publishers"
     ],
     "intro_video_url": "/video/template_intro/template-evolution.mp4",
-    "creation_date": "2026-04-03"
+    "creation_date": "2026-04-03",
+    "image_input": "none"
   },
   {
     "id": "template-travel",
@@ -396,7 +398,8 @@
     "creation_date": "2026-04-03",
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-architecture",
@@ -449,7 +452,8 @@
     "creation_date": "2026-04-03",
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-species",
@@ -507,7 +511,8 @@
     "rank_score": 80,
     "base_rank_score": 80,
     "allow_generation": true,
-    "creation_date": "2026-04-03"
+    "creation_date": "2026-04-03",
+    "image_input": "optional"
   },
   {
     "id": "template-character",
@@ -768,7 +773,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-character.mp4",
-    "creation_date": "2026-04-04"
+    "creation_date": "2026-04-04",
+    "image_input": "optional"
   },
   {
     "id": "template-recipe",
@@ -832,7 +838,8 @@
     "creation_date": "2026-04-04",
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-character-analysis",
@@ -915,7 +922,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-character-analysis.mp4",
-    "creation_date": "2026-04-04"
+    "creation_date": "2026-04-04",
+    "image_input": "none"
   },
   {
     "id": "template-weather",
@@ -971,7 +979,8 @@
     "rank_score": 80,
     "base_rank_score": 80,
     "allow_generation": true,
-    "creation_date": "2026-04-04"
+    "creation_date": "2026-04-04",
+    "image_input": "optional"
   },
   {
     "id": "template-education",
@@ -1027,7 +1036,8 @@
     ],
     "base_rank_score": 80,
     "allow_generation": true,
-    "creation_date": "2026-04-05"
+    "creation_date": "2026-04-05",
+    "image_input": "optional"
   },
   {
     "id": "template-hot-event-analysis",
@@ -1119,7 +1129,8 @@
     ],
     "base_rank_score": 60,
     "creation_date": "2026-04-05",
-    "archetype": "consumption"
+    "archetype": "consumption",
+    "image_input": "none"
   },
   {
     "id": "template-intangible-heritage",
@@ -1178,7 +1189,8 @@
     "base_rank_score": 70,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-intangible-heritage.mp4",
-    "creation_date": "2026-04-05"
+    "creation_date": "2026-04-05",
+    "image_input": "optional"
   },
   {
     "id": "template-education-card",
@@ -1351,7 +1363,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-education-card.mp4",
-    "creation_date": "2026-04-05"
+    "creation_date": "2026-04-05",
+    "image_input": "optional"
   },
   {
     "id": "template-costume",
@@ -1410,7 +1423,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-costume.mp4",
-    "creation_date": "2026-04-06"
+    "creation_date": "2026-04-06",
+    "image_input": "optional"
   },
   {
     "id": "template-book-series",
@@ -1470,7 +1484,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-book-series.mp4",
-    "creation_date": "2026-04-06"
+    "creation_date": "2026-04-06",
+    "image_input": "optional"
   },
   {
     "id": "template-word-scene",
@@ -1562,7 +1577,8 @@
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-word-scene.mp4",
     "creation_date": "2026-04-06",
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-cultural-relic-retro-infographic",
@@ -1630,7 +1646,8 @@
     "base_rank_score": 1,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-cultural-relic-retro-infographic.mp4",
-    "creation_date": "2026-04-06"
+    "creation_date": "2026-04-06",
+    "image_input": "none"
   },
   {
     "id": "template-dog-breed-retro-infographic",
@@ -1733,7 +1750,8 @@
     "base_rank_score": 1,
     "intro_video_url": "/video/template_intro/template-dog-breed-retro-infographic.mp4",
     "creation_date": "2026-04-07",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-food",
@@ -1793,7 +1811,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-food.mp4",
-    "creation_date": "2026-04-07"
+    "creation_date": "2026-04-07",
+    "image_input": "optional"
   },
   {
     "id": "template-solar-term",
@@ -1892,7 +1911,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-solar-term.mp4",
-    "creation_date": "2026-04-07"
+    "creation_date": "2026-04-07",
+    "image_input": "optional"
   },
   {
     "id": "template-fruit",
@@ -1944,7 +1964,8 @@
       "for-parents"
     ],
     "intro_video_url": "/video/template_intro/template-fruit.mp4",
-    "creation_date": "2026-04-07"
+    "creation_date": "2026-04-07",
+    "image_input": "optional"
   },
   {
     "id": "template-what-if-history",
@@ -2016,7 +2037,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-what-if-history.mp4",
-    "creation_date": "2026-04-08"
+    "creation_date": "2026-04-08",
+    "image_input": "none"
   },
   {
     "id": "template-character-comparison",
@@ -2087,7 +2109,8 @@
     ],
     "base_rank_score": 1,
     "allow_generation": true,
-    "creation_date": "2026-04-08"
+    "creation_date": "2026-04-08",
+    "image_input": "none"
   },
   {
     "id": "template-mbti-animal",
@@ -2161,7 +2184,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-mbti-animal.mp4",
-    "creation_date": "2026-04-08"
+    "creation_date": "2026-04-08",
+    "image_input": "none"
   },
   {
     "id": "template-battle",
@@ -2254,7 +2278,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-battle.mp4",
-    "creation_date": "2026-04-08"
+    "creation_date": "2026-04-08",
+    "image_input": "optional"
   },
   {
     "id": "template-fashion-ecommerce",
@@ -2459,7 +2484,8 @@
     "creation_date": "2026-04-09",
     "use_cases": [
       "for-merch-operators"
-    ]
+    ],
+    "image_input": "required"
   },
   {
     "id": "template-portrait-retouching-blueprint",
@@ -2496,7 +2522,8 @@
     "base_rank_score": 80,
     "requires_image_upload": true,
     "intro_video_url": "/video/template_intro/template-portrait-retouching-blueprint.mp4",
-    "creation_date": "2026-04-09"
+    "creation_date": "2026-04-09",
+    "image_input": "required"
   },
   {
     "id": "template-mbti-contrast",
@@ -2608,7 +2635,8 @@
     "base_rank_score": 80,
     "intro_video_url": "/video/template_intro/template-mbti-contrast.mp4",
     "creation_date": "2026-04-09",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-guofeng-scroll",
@@ -2664,7 +2692,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-guofeng-scroll.mp4",
-    "creation_date": "2026-04-09"
+    "creation_date": "2026-04-09",
+    "image_input": "optional"
   },
   {
     "id": "template-species-science",
@@ -2727,7 +2756,8 @@
       "for-parents"
     ],
     "intro_video_url": "/video/template_intro/template-species-science.mp4",
-    "creation_date": "2026-04-10"
+    "creation_date": "2026-04-10",
+    "image_input": "optional"
   },
   {
     "id": "template-city-miniature",
@@ -2925,7 +2955,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-city-miniature.mp4",
-    "creation_date": "2026-04-10"
+    "creation_date": "2026-04-10",
+    "image_input": "optional"
   },
   {
     "id": "template-hotspot-card",
@@ -2987,7 +3018,8 @@
     ],
     "base_rank_score": 70,
     "allow_generation": true,
-    "creation_date": "2026-04-10"
+    "creation_date": "2026-04-10",
+    "image_input": "optional"
   },
   {
     "id": "template-constellation-steampunk",
@@ -3080,7 +3112,8 @@
     "base_rank_score": 80,
     "intro_video_url": "/video/template_intro/template-constellation-steampunk.mp4",
     "creation_date": "2026-04-10",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-mbti-generic",
@@ -3402,7 +3435,8 @@
     ],
     "base_rank_score": 80,
     "creation_date": "2026-04-11",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-mbti-marvel",
@@ -3614,7 +3648,8 @@
     "creation_date": "2026-04-11",
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-mbti-nba",
@@ -3803,7 +3838,8 @@
     "intro_video_url": "/video/template_intro/template-mbti-nba.mp4",
     "creation_date": "2026-04-11",
     "use_cases": [],
-    "requires_image_upload": false
+    "requires_image_upload": false,
+    "image_input": "none"
   },
   {
     "id": "template-mbti-siliconvalley",
@@ -3996,7 +4032,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-mbti-siliconvalley.mp4",
-    "creation_date": "2026-04-11"
+    "creation_date": "2026-04-11",
+    "image_input": "none"
   },
   {
     "id": "template-mbti-breakingbad",
@@ -4184,7 +4221,8 @@
     "base_rank_score": 70,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-mbti-breakingbad.mp4",
-    "creation_date": "2026-04-12"
+    "creation_date": "2026-04-12",
+    "image_input": "none"
   },
   {
     "id": "template-sports-battle",
@@ -4240,7 +4278,8 @@
     "base_rank_score": 1,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-sports-battle.mp4",
-    "creation_date": "2026-04-12"
+    "creation_date": "2026-04-12",
+    "image_input": "optional"
   },
   {
     "id": "template-mbti-naruto",
@@ -4290,7 +4329,8 @@
     "base_rank_score": 8,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-mbti-naruto.mp4",
-    "creation_date": "2026-04-12"
+    "creation_date": "2026-04-12",
+    "image_input": "none"
   },
   {
     "id": "template-mbti-yellowstone",
@@ -4479,7 +4519,8 @@
     "base_rank_score": 70,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-mbti-yellowstone.mp4",
-    "creation_date": "2026-04-12"
+    "creation_date": "2026-04-12",
+    "image_input": "none"
   },
   {
     "id": "template-mbti-ghibli",
@@ -4673,7 +4714,8 @@
     "base_rank_score": 100,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-mbti-ghibli.mp4",
-    "creation_date": "2026-04-13"
+    "creation_date": "2026-04-13",
+    "image_input": "none"
   },
   {
     "id": "template-vocabulary",
@@ -4767,7 +4809,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-vocabulary.mp4",
-    "creation_date": "2026-04-13"
+    "creation_date": "2026-04-13",
+    "image_input": "none"
   },
   {
     "id": "template-series-infographic",
@@ -4854,7 +4897,8 @@
     ],
     "base_rank_score": 70,
     "creation_date": "2026-04-13",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-english-top5-phrases",
@@ -4950,7 +4994,8 @@
     "base_rank_score": 80,
     "intro_video_url": "/video/template_intro/template-english-top5-phrases.mp4",
     "creation_date": "2026-04-13",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-english-error-correction",
@@ -5039,7 +5084,8 @@
     "base_rank_score": 80,
     "intro_video_url": "/video/template_intro/template-english-error-correction.mp4",
     "creation_date": "2026-04-14",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-english-dialogue-scene",
@@ -5131,7 +5177,8 @@
     "intro_video_url": "/video/template_intro/template-english-dialogue-scene.mp4",
     "creation_date": "2026-04-14",
     "batch": true,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-movie-poster",
@@ -5174,7 +5221,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-movie-poster.mp4",
-    "creation_date": "2026-04-14"
+    "creation_date": "2026-04-14",
+    "image_input": "optional"
   },
   {
     "id": "template-series-travel",
@@ -5227,7 +5275,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-series-travel.mp4",
-    "creation_date": "2026-04-14"
+    "creation_date": "2026-04-14",
+    "image_input": "optional"
   },
   {
     "id": "template-fat-loss-plan",
@@ -5359,7 +5408,8 @@
     "rank_score": 1,
     "base_rank_score": 1,
     "creation_date": "2026-04-15",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-child-hobby-skill",
@@ -5437,7 +5487,8 @@
     "base_rank_score": 2,
     "intro_video_url": "/video/template_intro/template-child-hobby-skill.mp4",
     "creation_date": "2026-04-15",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-detailed-vocab-flashcard",
@@ -5489,7 +5540,8 @@
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-detailed-vocab-flashcard.mp4",
     "creation_date": "2026-04-15",
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-custom-character-card",
@@ -5602,7 +5654,8 @@
     "base_rank_score": 2,
     "intro_video_url": "/video/template_intro/template-custom-character-card.mp4",
     "creation_date": "2026-04-15",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-detective-conan",
@@ -5789,7 +5842,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-detective-conan.mp4",
-    "creation_date": "2026-04-16"
+    "creation_date": "2026-04-16",
+    "image_input": "optional"
   },
   {
     "id": "template-children-english-vocab-spelling",
@@ -5839,7 +5893,8 @@
     ],
     "base_rank_score": 80,
     "allow_generation": true,
-    "creation_date": "2026-04-16"
+    "creation_date": "2026-04-16",
+    "image_input": "none"
   },
   {
     "id": "template-daily-essentials-learning-card",
@@ -5888,7 +5943,8 @@
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-daily-essentials-learning-card.mp4",
     "creation_date": "2026-04-16",
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-native-english-expressions",
@@ -5934,7 +5990,8 @@
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-native-english-expressions.mp4",
     "creation_date": "2026-04-16",
-    "batch": true
+    "batch": true,
+    "image_input": "optional"
   },
   {
     "id": "template-theme-overview-poster",
@@ -5976,7 +6033,8 @@
     "base_rank_score": 100,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-theme-overview-poster.mp4",
-    "creation_date": "2026-04-17"
+    "creation_date": "2026-04-17",
+    "image_input": "optional"
   },
   {
     "id": "template-cuisine-food-vocab-poster",
@@ -6024,7 +6082,8 @@
     ],
     "intro_video_url": "/video/template_intro/template-cuisine-food-vocab-poster.mp4",
     "creation_date": "2026-04-17",
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-industrial-design-concept-sketch",
@@ -6071,7 +6130,8 @@
     "use_cases": [
       "for-merch-operators",
       "for-designers"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-varieties-food-poster",
@@ -6116,7 +6176,8 @@
     "base_rank_score": 100,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-varieties-food-poster.mp4",
-    "creation_date": "2026-04-17"
+    "creation_date": "2026-04-17",
+    "image_input": "optional"
   },
   {
     "id": "template-warmup-routine",
@@ -6164,7 +6225,8 @@
       "for-parents"
     ],
     "intro_video_url": "/video/template_intro/template-warmup-routine.mp4",
-    "creation_date": "2026-04-18"
+    "creation_date": "2026-04-18",
+    "image_input": "optional"
   },
   {
     "id": "template-group-vocab-category",
@@ -6208,7 +6270,8 @@
       "kids-learning"
     ],
     "allow_generation": true,
-    "creation_date": "2026-04-18"
+    "creation_date": "2026-04-18",
+    "image_input": "none"
   },
   {
     "id": "template-city-mbti",
@@ -6255,7 +6318,8 @@
     ],
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-city-mbti.mp4",
-    "creation_date": "2026-04-18"
+    "creation_date": "2026-04-18",
+    "image_input": "none"
   },
   {
     "id": "template-clothing-evolution-poster",
@@ -6301,7 +6365,8 @@
     ],
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-clothing-evolution-poster.mp4",
-    "creation_date": "2026-04-18"
+    "creation_date": "2026-04-18",
+    "image_input": "none"
   },
   {
     "id": "template-soft-decoration-design-guide",
@@ -6360,7 +6425,8 @@
     "use_cases": [
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "required"
   },
   {
     "id": "template-home-organization-before-after",
@@ -6408,7 +6474,8 @@
     "creation_date": "2026-04-19",
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "required"
   },
   {
     "id": "template-stick-figure-vocab",
@@ -6455,7 +6522,8 @@
       "illustration"
     ],
     "allow_generation": true,
-    "creation_date": "2026-04-19"
+    "creation_date": "2026-04-19",
+    "image_input": "none"
   },
   {
     "id": "template-nostalgic-first-item-poster",
@@ -6501,7 +6569,8 @@
     "rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-nostalgic-first-item-poster.mp4",
-    "creation_date": "2026-04-19"
+    "creation_date": "2026-04-19",
+    "image_input": "optional"
   },
   {
     "id": "template-tool-ai-category",
@@ -6547,7 +6616,8 @@
     "rank_score": 70,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-tool-ai-category.mp4",
-    "creation_date": "2026-04-20"
+    "creation_date": "2026-04-20",
+    "image_input": "optional"
   },
   {
     "id": "template-chinese-classic-character-mbti",
@@ -6592,7 +6662,8 @@
     "rank_score": 70,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-chinese-classic-character-mbti.mp4",
-    "creation_date": "2026-04-20"
+    "creation_date": "2026-04-20",
+    "image_input": "none"
   },
   {
     "id": "template-friends-character-mbti",
@@ -6644,7 +6715,8 @@
     "rank_score": 90.15,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-friends-character-mbti.mp4",
-    "creation_date": "2026-04-20"
+    "creation_date": "2026-04-20",
+    "image_input": "none"
   },
   {
     "id": "template-poetry-ink-wash-illustration",
@@ -6688,7 +6760,8 @@
     "rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-poetry-ink-wash-illustration.mp4",
-    "creation_date": "2026-04-20"
+    "creation_date": "2026-04-20",
+    "image_input": "optional"
   },
   {
     "id": "template-financial-habit-infographic-poster",
@@ -6732,7 +6805,8 @@
     "rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-financial-habit-infographic-poster.mp4",
-    "creation_date": "2026-04-21"
+    "creation_date": "2026-04-21",
+    "image_input": "none"
   },
   {
     "id": "template-bilingual-object-structure-labeling",
@@ -6781,7 +6855,8 @@
     "batch": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-interior-design-mood-board-generator",
@@ -6993,7 +7068,8 @@
     "creation_date": "2026-04-21",
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "required"
   },
   {
     "id": "template-fashion-before-after-outfit-annotation-card",
@@ -7040,7 +7116,8 @@
     "requires_image_upload": true,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-fashion-before-after-outfit-annotation-card.mp4",
-    "creation_date": "2026-04-21"
+    "creation_date": "2026-04-21",
+    "image_input": "required"
   },
   {
     "id": "template-pain-relief-infographic",
@@ -7086,7 +7163,8 @@
     ],
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-pain-relief-infographic.mp4",
-    "creation_date": "2026-04-22"
+    "creation_date": "2026-04-22",
+    "image_input": "none"
   },
   {
     "id": "template-equipment-muscle-guide",
@@ -7131,7 +7209,8 @@
     "creation_date": "2026-04-22",
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-kids-vocabulary-poster",
@@ -7180,7 +7259,8 @@
     ],
     "intro_video_url": "/video/template_intro/template-kids-vocabulary-poster.mp4",
     "creation_date": "2026-04-22",
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-beauty-step-by-step-guide",
@@ -7224,7 +7304,8 @@
       "digital-canvas"
     ],
     "allow_generation": true,
-    "creation_date": "2026-04-22"
+    "creation_date": "2026-04-22",
+    "image_input": "none"
   },
   {
     "id": "template-3d-region-landmark-map",
@@ -7268,7 +7349,8 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-3d-region-landmark-map.mp4",
-    "creation_date": "2026-04-23"
+    "creation_date": "2026-04-23",
+    "image_input": "none"
   },
   {
     "id": "template-whimsical-travel-map",
@@ -7317,7 +7399,8 @@
     "creation_date": "2026-04-23",
     "use_cases": [
       "for-merch-operators"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-pop-culture-matching-chart",
@@ -7363,7 +7446,8 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-pop-culture-matching-chart.mp4",
-    "creation_date": "2026-04-23"
+    "creation_date": "2026-04-23",
+    "image_input": "none"
   },
   {
     "id": "template-training-muscle-equipment",
@@ -7411,7 +7495,8 @@
     "base_rank_score": 70,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-training-muscle-equipment.mp4",
-    "creation_date": "2026-04-23"
+    "creation_date": "2026-04-23",
+    "image_input": "optional"
   },
   {
     "id": "template-posture-correctness-comparison",
@@ -7460,7 +7545,8 @@
       "for-parents"
     ],
     "intro_video_url": "/video/template_intro/template-posture-correctness-comparison.mp4",
-    "creation_date": "2026-04-24"
+    "creation_date": "2026-04-24",
+    "image_input": "none"
   },
   {
     "id": "template-personality-choice-quiz-card",
@@ -7516,7 +7602,8 @@
     "base_rank_score": 70,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-personality-choice-quiz-card.mp4",
-    "creation_date": "2026-04-24"
+    "creation_date": "2026-04-24",
+    "image_input": "none"
   },
   {
     "id": "template-lifestyle-info-card",
@@ -7558,7 +7645,8 @@
     "base_rank_score": 70,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-lifestyle-info-card.mp4",
-    "creation_date": "2026-04-24"
+    "creation_date": "2026-04-24",
+    "image_input": "optional"
   },
   {
     "id": "template-historical-event-map-illustration",
@@ -7604,7 +7692,8 @@
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-historical-event-map-illustration.mp4",
     "creation_date": "2026-04-24",
-    "archetype": "consumption"
+    "archetype": "consumption",
+    "image_input": "none"
   },
   {
     "id": "template-national-theme-map-infographic",
@@ -7660,7 +7749,8 @@
     "base_rank_score": 70,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-national-theme-map-infographic.mp4",
-    "creation_date": "2026-04-25"
+    "creation_date": "2026-04-25",
+    "image_input": "none"
   },
   {
     "id": "template-fandom-character-grid-poster",
@@ -7709,7 +7799,8 @@
     "allow_generation": true,
     "base_rank_score": 70,
     "intro_video_url": "/video/template_intro/template-fandom-character-grid-poster.mp4",
-    "creation_date": "2026-04-25"
+    "creation_date": "2026-04-25",
+    "image_input": "optional"
   },
   {
     "id": "template-cartoon-character-profile-card-kawaii-style",
@@ -7788,7 +7879,8 @@
     "base_rank_score": 70,
     "intro_video_url": "/video/template_intro/template-cartoon-character-profile-card-kawaii-style.mp4",
     "creation_date": "2026-04-25",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-cartoon-english-vocabulary-flashcards",
@@ -7836,7 +7928,8 @@
       "for-parents"
     ],
     "base_rank_score": 70,
-    "creation_date": "2026-04-25"
+    "creation_date": "2026-04-25",
+    "image_input": "none"
   },
   {
     "id": "template-figure-principles-infographic",
@@ -7882,7 +7975,8 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-figure-principles-infographic.mp4",
-    "creation_date": "2026-04-26"
+    "creation_date": "2026-04-26",
+    "image_input": "none"
   },
   {
     "id": "template-book-recommendation-grid-poster",
@@ -7926,7 +8020,8 @@
     "base_rank_score": 90,
     "intro_video_url": "/video/template_intro/template-book-recommendation-grid-poster.mp4",
     "creation_date": "2026-04-26",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-organ-health-food-guide-infographic",
@@ -7972,7 +8067,8 @@
     "base_rank_score": 90,
     "intro_video_url": "/video/template_intro/template-organ-health-food-guide-infographic.mp4",
     "creation_date": "2026-04-26",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-language-word-comparison-educational-poster",
@@ -8036,7 +8132,8 @@
       "for-designers",
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-world-travel-map-illustration",
@@ -8079,7 +8176,8 @@
     "base_rank_score": 80,
     "intro_video_url": "/video/template_intro/template-world-travel-map-illustration.mp4",
     "creation_date": "2026-04-27",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-east-asian-culture-comparison-infographic",
@@ -8118,7 +8216,8 @@
     "base_rank_score": 90,
     "intro_video_url": "/video/template_intro/template-east-asian-culture-comparison-infographic.mp4",
     "creation_date": "2026-04-27",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-watercolor-painting-tutorial-guide",
@@ -8164,7 +8263,8 @@
     ],
     "intro_video_url": "/video/template_intro/template-watercolor-painting-tutorial-guide.mp4",
     "creation_date": "2026-04-27",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-personal-journey-wolf-path-illustration",
@@ -8212,7 +8312,8 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-personal-journey-wolf-path-illustration.mp4",
-    "creation_date": "2026-04-27"
+    "creation_date": "2026-04-27",
+    "image_input": "optional"
   },
   {
     "id": "template-multilingual-vocabulary-poster-watercolor",
@@ -8289,7 +8390,8 @@
     "batch": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-premium-recipe-card-infographic",
@@ -8481,7 +8583,8 @@
     "creation_date": "2026-04-28",
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-zhenhuan-mbti-character-analysis",
@@ -8545,7 +8648,8 @@
     "rank_score": 80.15,
     "base_rank_score": 80,
     "allow_generation": true,
-    "creation_date": "2026-04-28"
+    "creation_date": "2026-04-28",
+    "image_input": "none"
   },
   {
     "id": "template-quote-poster-generator",
@@ -8588,7 +8692,8 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-quote-poster-generator.mp4",
-    "creation_date": "2026-04-28"
+    "creation_date": "2026-04-28",
+    "image_input": "optional"
   },
   {
     "id": "template-science-education-infographic",
@@ -8770,7 +8875,8 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-04-29"
+    "creation_date": "2026-04-29",
+    "image_input": "none"
   },
   {
     "id": "template-world-landmark-vintage-info-poster",
@@ -8814,7 +8920,8 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-world-landmark-vintage-info-poster.mp4",
-    "creation_date": "2026-04-29"
+    "creation_date": "2026-04-29",
+    "image_input": "optional"
   },
   {
     "id": "template-princess-pearl-mbti-character-card",
@@ -8879,7 +8986,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-princess-pearl-mbti-character-card.mp4",
-    "creation_date": "2026-04-29"
+    "creation_date": "2026-04-29",
+    "image_input": "none"
   },
   {
     "id": "template-CVC-english-word-coloring-flower-card",
@@ -8921,7 +9029,8 @@
       "kids-learning"
     ],
     "intro_video_url": "/video/template_intro/template-CVC-english-word-coloring-flower-card.mp4",
-    "creation_date": "2026-04-29"
+    "creation_date": "2026-04-29",
+    "image_input": "optional"
   },
   {
     "id": "template-weird-cold-knowledge-popular-science-card",
@@ -8967,7 +9076,8 @@
       "kids-learning"
     ],
     "intro_video_url": "/video/template_intro/template-weird-cold-knowledge-popular-science-card.mp4",
-    "creation_date": "2026-04-30"
+    "creation_date": "2026-04-30",
+    "image_input": "none"
   },
   {
     "id": "template-country-top10-travel-destinations",
@@ -9010,7 +9120,8 @@
       "modern"
     ],
     "intro_video_url": "/video/template_intro/template-country-top10-travel-destinations.mp4",
-    "creation_date": "2026-04-30"
+    "creation_date": "2026-04-30",
+    "image_input": "optional"
   },
   {
     "id": "template-book-minimalist",
@@ -9056,7 +9167,8 @@
       "infographic"
     ],
     "intro_video_url": "/video/template_intro/template-book-minimalist.mp4",
-    "creation_date": "2026-04-30"
+    "creation_date": "2026-04-30",
+    "image_input": "optional"
   },
   {
     "id": "template-verb-action-learning-cards",
@@ -9102,7 +9214,8 @@
     "intro_video_url": "/video/template_intro/template-verb-action-learning-cards.mp4",
     "creation_date": "2026-04-30",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-pet-care-guide",
@@ -9161,7 +9274,8 @@
     "use_cases": [
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-9-traits-info-grid",
@@ -9208,7 +9322,8 @@
     "rank_score": 90,
     "intro_video_url": "/video/template_intro/template-9-traits-info-grid.mp4",
     "creation_date": "2026-05-01",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-english-phrasal-verb",
@@ -9258,7 +9373,8 @@
     "batch": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-hairstyle-color-recommendation",
@@ -9291,7 +9407,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-01",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-country-souvenirs-watercolor",
@@ -9340,7 +9457,8 @@
     "rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-country-souvenirs-watercolor.mp4",
-    "creation_date": "2026-05-02"
+    "creation_date": "2026-05-02",
+    "image_input": "optional"
   },
   {
     "id": "template-pet-safe-human-food-infographic",
@@ -9390,7 +9508,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-phonics-consonant-blend",
@@ -9440,7 +9559,8 @@
     "intro_video_url": "/video/template_intro/template-phonics-consonant-blend.mp4",
     "creation_date": "2026-05-02",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "image_input": "optional"
   },
   {
     "id": "template-media-theme-wallpaper-poster",
@@ -9490,7 +9610,8 @@
     "rank_score": 90.15,
     "intro_video_url": "/video/template_intro/template-media-theme-wallpaper-poster.mp4",
     "creation_date": "2026-05-02",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-chinese-character-learning-poster",
@@ -9540,7 +9661,8 @@
     "batch": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-mbti-relationship-infographic",
@@ -9604,7 +9726,8 @@
     "rank_score": 80,
     "intro_video_url": "/video/template_intro/template-mbti-relationship-infographic.mp4",
     "creation_date": "2026-05-03",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-chinese-verb-opposite-infographic",
@@ -9650,7 +9773,8 @@
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-chinese-verb-opposite-infographic.mp4",
     "creation_date": "2026-05-03",
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-ai-outfit-try-on-poster",
@@ -9687,7 +9811,8 @@
       "for-merch-operators"
     ],
     "requires_image_upload": true,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "required"
   },
   {
     "id": "template-lifestyle-watercolor-infographic",
@@ -9744,7 +9869,8 @@
     "rank_score": 90,
     "intro_video_url": "/video/template_intro/template-lifestyle-watercolor-infographic.mp4",
     "creation_date": "2026-05-04",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-gardening-how-to-infographic",
@@ -9792,7 +9918,8 @@
     "rank_score": 90,
     "intro_video_url": "/video/template_intro/template-gardening-how-to-infographic.mp4",
     "creation_date": "2026-05-04",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-ethnic-costume-deconstruction-board",
@@ -9845,7 +9972,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-animation-studio-comparison-infographic",
@@ -9899,7 +10027,8 @@
     "rank_score": 80,
     "intro_video_url": "/video/template_intro/template-animation-studio-comparison-infographic.mp4",
     "creation_date": "2026-05-04",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-travel-packing-guide-infographic",
@@ -9967,7 +10096,8 @@
     "rank_score": 80,
     "intro_video_url": "/video/template_intro/template-travel-packing-guide-infographic.mp4",
     "creation_date": "2026-05-05",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-history-timeline-infographic",
@@ -10011,7 +10141,8 @@
     "rank_score": 80,
     "intro_video_url": "/video/template_intro/template-history-timeline-infographic.mp4",
     "creation_date": "2026-05-05",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-word-origins-map-infographic",
@@ -10052,7 +10183,8 @@
     "base_rank_score": 80,
     "rank_score": 80,
     "creation_date": "2026-05-05",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-then-vs-now-comparison-infographic",
@@ -10097,7 +10229,8 @@
     "base_rank_score": 80,
     "rank_score": 80,
     "creation_date": "2026-05-05",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-weird-science-facts-infographic",
@@ -10145,7 +10278,8 @@
     "intro_video_url": "/video/template_intro/template-weird-science-facts-infographic.mp4",
     "creation_date": "2026-05-06",
     "allow_generation": true,
-    "archetype": "consumption"
+    "archetype": "consumption",
+    "image_input": "none"
   },
   {
     "id": "template-vintage-ultimate-guide-infographic",
@@ -10187,7 +10321,8 @@
     "base_rank_score": 80,
     "rank_score": 80,
     "creation_date": "2026-05-06",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-artist-biography-infographic",
@@ -10396,7 +10531,8 @@
     "rank_score": 90,
     "intro_video_url": "/video/template_intro/template-artist-biography-infographic.mp4",
     "creation_date": "2026-05-06",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-celebrity-filmography-infographic",
@@ -10443,7 +10579,8 @@
     "rank_score": 90,
     "intro_video_url": "/video/template_intro/template-celebrity-filmography-infographic.mp4",
     "creation_date": "2026-05-06",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-harry-potter-mbti-infographic",
@@ -10492,7 +10629,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-educational-topic-infographic",
@@ -10537,7 +10675,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-07",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-fashion-inspired-gown-design-sheet",
@@ -10585,7 +10724,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-historical-figure-vs-infographic",
@@ -10644,7 +10784,8 @@
     "use_cases": [
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-relationship-advice-infographic",
@@ -10707,7 +10848,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-09",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-fashion-nail-art-design",
@@ -10756,7 +10898,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-room-vocabulary-infographic",
@@ -10806,7 +10949,8 @@
     "batch": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-english-word-difference-infographic",
@@ -10853,7 +10997,8 @@
     "batch": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-personal-fashion-outfit-style-variations",
@@ -10902,7 +11047,8 @@
       "for-designers"
     ],
     "allow_generation": true,
-    "requires_image_upload": true
+    "requires_image_upload": true,
+    "image_input": "required"
   },
   {
     "id": "template-chinese-idiom-learning-card",
@@ -10943,7 +11089,8 @@
     "rank_score": 90,
     "creation_date": "2026-05-10",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-weather-education-infographic",
@@ -10991,7 +11138,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-product-poster",
@@ -11028,7 +11176,8 @@
     "use_cases": [
       "for-designers",
       "for-merch-operators"
-    ]
+    ],
+    "image_input": "required"
   },
   {
     "id": "template-mbti-stereotype-vs-reality-infographic",
@@ -11076,7 +11225,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-space-planet-fact-infographic",
@@ -11126,7 +11276,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-emotion-vs-emotion-illustration",
@@ -11189,7 +11340,8 @@
     "rank_score": 90,
     "creation_date": "2026-05-10",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "image_input": "optional"
   },
   {
     "id": "template-ielts-3-to-9-vocabulary-poster",
@@ -11230,7 +11382,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-10",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-kids-opposite-concept-education",
@@ -11272,7 +11425,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-11",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-celebrity-movie-group-poster",
@@ -11480,7 +11634,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-11",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-english-vocabulary-upgrade",
@@ -11527,7 +11682,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-publishers"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-lifestyle-photo-grid",
@@ -11573,7 +11729,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-designers"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-chinese-radical-learning",
@@ -11623,7 +11780,8 @@
     "use_cases": [
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-houseplant-care-guide-infographic",
@@ -11667,7 +11825,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-14",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-historical-figure-educational",
@@ -11720,7 +11879,8 @@
     "use_cases": [
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-cultural-festival-poster",
@@ -11763,7 +11923,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-14",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-nutrition-food-guide-poster",
@@ -11803,7 +11964,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-14",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-sports-technique-guide",
@@ -11846,7 +12008,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-14",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-anatomy-cut-guide",
@@ -11891,7 +12054,8 @@
     "use_cases": [
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-home-lifestyle-guide-infographic",
@@ -11935,7 +12099,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-05-16",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-vintage-travel-scrapbook-poster",
@@ -11985,7 +12150,8 @@
     "use_cases": [
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-national-culture-history-infographic",
@@ -12030,7 +12196,8 @@
     "use_cases": [
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-watercolor-world-map-illustration",
@@ -12077,7 +12244,8 @@
     "use_cases": [
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-watercolor-theme-collage-illustration",
@@ -12124,7 +12292,8 @@
     "use_cases": [
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-vintage-stamp-collection-illustration",
@@ -12171,7 +12340,8 @@
     "use_cases": [
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-watercolor-travel-journal-collage",
@@ -12220,7 +12390,8 @@
     "use_cases": [
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-manga-artist-infographic-poster",
@@ -12269,7 +12440,8 @@
     "use_cases": [
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-food-photo-doodle-sticker-overlay",
@@ -12339,7 +12511,8 @@
       "for-marketers"
     ],
     "intro_video_url": "/video/template_intro/template-food-photo-doodle-sticker-overlay.mp4",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-mbti-in-love-infographic",
@@ -12390,7 +12563,8 @@
     "use_cases": [
       "for-creators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-flowing-journey-infographic",
@@ -12439,7 +12613,8 @@
       "for-designers",
       "for-marketers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-regional-names-old-money-style",
@@ -12490,7 +12665,8 @@
       "for-creators",
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-regional-alcoholic-drinks-infographic",
@@ -12543,7 +12719,8 @@
       "for-creators",
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-fashion-shape-guide-infographic",
@@ -12595,7 +12772,8 @@
       "for-marketers",
       "for-dtc-brands"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-country-dos-and-donts-infographic",
@@ -12647,7 +12825,8 @@
       "for-publishers",
       "for-marketers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-slang-week-recap-infographic",
@@ -12700,7 +12879,8 @@
       "for-parents"
     ],
     "allow_generation": true,
-    "archetype": "consumption"
+    "archetype": "consumption",
+    "image_input": "none"
   },
   {
     "id": "template-food-recipe-tip-infographic",
@@ -12750,7 +12930,8 @@
       "for-creators",
       "for-marketers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-music-style-visual-infographic",
@@ -12806,7 +12987,8 @@
       "for-creators",
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-kids-theme-fill-in-worksheet",
@@ -12853,7 +13035,8 @@
       "for-parents",
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-wine-variety-intro-infographic",
@@ -12908,7 +13091,8 @@
       "for-marketers",
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-finance-comparison-infographic",
@@ -12958,7 +13142,8 @@
       "for-marketers",
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-mbti-group-comparison-infographic",
@@ -13011,7 +13196,8 @@
     "use_cases": [
       "for-creators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-mbti-comparison-infographic",
@@ -13062,7 +13248,8 @@
     "use_cases": [
       "for-creators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-cartoon-action-visual-guide-infographic",
@@ -13109,7 +13296,8 @@
       "for-publishers",
       "for-parents"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-historical-figure-profile-infographic",
@@ -13161,7 +13349,8 @@
       "for-publishers",
       "for-parents"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-product-theme-promotional-poster",
@@ -13221,7 +13410,8 @@
       "for-designers",
       "for-merch-operators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-pet-life-journey-infographic",
@@ -13273,7 +13463,8 @@
       "for-publishers",
       "for-parents"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-life-journey-curve-infographic",
@@ -13322,7 +13513,8 @@
       "for-publishers",
       "for-parents"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-lifestyle-habit-infographic",
@@ -13373,7 +13565,8 @@
       "for-parents",
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-english-grammar-wordlist-infographic",
@@ -13425,7 +13618,8 @@
       "for-parents",
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-english-homograph-educational-poster",
@@ -13475,7 +13669,8 @@
       "for-parents",
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-cultural-travel-journey-infographic",
@@ -13526,7 +13721,8 @@
       "for-publishers",
       "for-marketers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-english-grammar-lesson",
@@ -13577,7 +13773,8 @@
       "for-parents",
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-evolution-timeline-infographic",
@@ -13623,7 +13820,8 @@
       "for-publishers",
       "for-parents"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-historical-evolution-timeline-infographic",
@@ -13673,7 +13871,8 @@
       "for-parents"
     ],
     "allow_generation": true,
-    "archetype": "consumption"
+    "archetype": "consumption",
+    "image_input": "none"
   },
   {
     "id": "template-generation-comparison-infographic",
@@ -13720,7 +13919,8 @@
       "for-publishers",
       "for-marketers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-tourist-spot-watercolor-map-infographic",
@@ -13772,7 +13972,8 @@
       "for-publishers",
       "for-marketers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-dual-character-comparison-infographic",
@@ -13821,7 +14022,8 @@
       "for-publishers",
       "for-parents"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-best-cities-travel-infographic",
@@ -13871,7 +14073,8 @@
       "for-marketers",
       "for-publishers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-self-care-illustration-poster",
@@ -13923,7 +14126,8 @@
       "for-publishers",
       "for-parents"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-top10-visual-guide-infographic",
@@ -13973,7 +14177,8 @@
       "for-publishers",
       "for-marketers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-dessert-color-lab-infographic",
@@ -14025,7 +14230,8 @@
       "for-marketers",
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-food-product-packaging-design",
@@ -14075,7 +14281,8 @@
     "use_cases": [
       "for-merch-operators",
       "for-designers"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-educational-career-field-infographic",
@@ -14120,7 +14327,8 @@
     "rank_score": 85,
     "creation_date": "2026-05-28",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-lunar-new-year-red-envelope-set",
@@ -14172,7 +14380,8 @@
     "batch": true,
     "use_cases": [
       "for-merch-operators"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-mbti-personality-compatibility-infographic",
@@ -14219,7 +14428,8 @@
     "rank_score": 92,
     "creation_date": "2026-05-28",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-professional-category-guide-infographic",
@@ -14262,7 +14472,8 @@
     "rank_score": 85,
     "creation_date": "2026-05-29",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-mbti-group-anime-character-poster",
@@ -14307,7 +14518,8 @@
     "rank_score": 92,
     "creation_date": "2026-05-29",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-self-help-infographic-poster",
@@ -14353,7 +14565,8 @@
     "rank_score": 85,
     "creation_date": "2026-05-29",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-hairstyle-guide-infographic",
@@ -14395,7 +14608,8 @@
     "rank_score": 85,
     "creation_date": "2026-05-29",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "image_input": "none"
   },
   {
     "id": "template-self-help-book-visual-summary-infographic",
@@ -14442,7 +14656,8 @@
     "creation_date": "2026-05-29",
     "allow_generation": true,
     "batch": true,
-    "archetype": "consumption"
+    "archetype": "consumption",
+    "image_input": "none"
   },
   {
     "id": "template-world-cup-team-sticker-poster",
@@ -14655,7 +14870,8 @@
     "use_cases": [
       "for-merch-operators"
     ],
-    "intro_video_url": "/video/template_intro/template-world-cup-team-sticker-poster.mp4"
+    "intro_video_url": "/video/template_intro/template-world-cup-team-sticker-poster.mp4",
+    "image_input": "optional"
   },
   {
     "id": "template-yellow-themed-illustrated-journey-infographic",
@@ -14704,7 +14920,8 @@
     "base_rank_score": 80,
     "batch": true,
     "allow_generation": true,
-    "creation_date": "2026-05-31"
+    "creation_date": "2026-05-31",
+    "image_input": "none"
   },
   {
     "id": "template-sports-trophy-infographic",
@@ -14748,7 +14965,8 @@
     "base_rank_score": 80,
     "batch": true,
     "allow_generation": true,
-    "creation_date": "2026-05-31"
+    "creation_date": "2026-05-31",
+    "image_input": "none"
   },
   {
     "id": "template-football-tournament-group-stage-bracket-infographic",
@@ -14797,7 +15015,8 @@
     "batch": true,
     "allow_generation": true,
     "creation_date": "2026-06-02",
-    "archetype": "consumption"
+    "archetype": "consumption",
+    "image_input": "none"
   },
   {
     "id": "template-international-event-promotional-poster",
@@ -14844,7 +15063,8 @@
     "base_rank_score": 80,
     "batch": true,
     "allow_generation": true,
-    "creation_date": "2026-06-02"
+    "creation_date": "2026-06-02",
+    "image_input": "optional"
   },
   {
     "id": "template-player-vintage-stats-card-poster",
@@ -14892,7 +15112,8 @@
     "base_rank_score": 80,
     "batch": true,
     "allow_generation": true,
-    "creation_date": "2026-06-02"
+    "creation_date": "2026-06-02",
+    "image_input": "none"
   },
   {
     "id": "template-yellow-themed-illustrated-timeline-infographic",
@@ -14940,7 +15161,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-06-04",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-fashion-style-outfit-breakdown-infographic",
@@ -14994,7 +15216,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-06-04",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-annual-event-calendar-infographic",
@@ -15043,7 +15266,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-06-04",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-soccer-star-comic-retro-poster-card",
@@ -15095,7 +15319,8 @@
     "base_rank_score": 90,
     "rank_score": 91.05,
     "creation_date": "2026-06-04",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-all-sports-tournament-schedule-infographic",
@@ -15145,7 +15370,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-04",
     "allow_generation": true,
-    "archetype": "consumption"
+    "archetype": "consumption",
+    "image_input": "none"
   },
   {
     "id": "template-universal-event-split-schedule-flyer-poster",
@@ -15191,7 +15417,8 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "creation_date": "2026-06-04",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-global-city-walkability-infographic-card",
@@ -15234,7 +15461,8 @@
     "base_rank_score": 80,
     "batch": true,
     "allow_generation": true,
-    "creation_date": "2026-06-04"
+    "creation_date": "2026-06-04",
+    "image_input": "none"
   },
   {
     "id": "template-sports-team-mbti-character-card-poster",
@@ -15283,7 +15511,8 @@
     "base_rank_score": 80,
     "batch": true,
     "allow_generation": true,
-    "creation_date": "2026-06-04"
+    "creation_date": "2026-06-04",
+    "image_input": "none"
   },
   {
     "id": "template-group-team-vertical-banner-country-poster",
@@ -15328,7 +15557,8 @@
     "base_rank_score": 80,
     "batch": true,
     "allow_generation": true,
-    "creation_date": "2026-06-04"
+    "creation_date": "2026-06-04",
+    "image_input": "optional"
   },
   {
     "id": "template-ip-creative-cultural-goods-mockup-set",
@@ -15370,7 +15600,8 @@
       "for-designers"
     ],
     "requires_image_upload": true,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "required"
   },
   {
     "id": "template-ip-gift-box-stationery-set-mockup",
@@ -15416,7 +15647,8 @@
     "use_cases": [
       "for-merch-operators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-ip-character-sprite-emoji-sheet",
@@ -15462,7 +15694,8 @@
     "use_cases": [
       "for-merch-operators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-ip-emoji-sticker-sheet-poster",
@@ -15507,7 +15740,8 @@
       "for-merch-operators"
     ],
     "intro_video_url": "/video/template_intro/template-ip-emoji-sticker-sheet-poster.mp4",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-world-cup-debut-team-preview-poster",
@@ -15550,7 +15784,8 @@
     ],
     "creation_date": "2026-06-06",
     "base_rank_score": 90,
-    "archetype": "consumption"
+    "archetype": "consumption",
+    "image_input": "optional"
   },
   {
     "id": "template-science-myth-bust-infographic-poster",
@@ -15588,7 +15823,8 @@
       "vibrant-colors",
       "minimalist",
       "dynamic"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-brand-ip-mascot-design-board",
@@ -15633,7 +15869,8 @@
       "for-merch-operators",
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-sports-iconic-event-analysis-poster",
@@ -15672,7 +15909,8 @@
       "moody-lighting",
       "modern",
       "playful"
-    ]
+    ],
+    "image_input": "none"
   },
   {
     "id": "template-football-team-all-time-lineup-poster",
@@ -15711,7 +15949,8 @@
       "vibrant",
       "composition"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-ip-character-design-specification-sheet",
@@ -15759,7 +15998,8 @@
       "for-merch-operators",
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-sports-ball-evolution-infographic",
@@ -15799,7 +16039,8 @@
       "social-media-posts",
       "dynamic"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-disney-character-color-grid-art",
@@ -15841,7 +16082,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-07",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-asl-sign-language-tutorial-infographic",
@@ -15882,7 +16124,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-08",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-educational-topic-cheat-sheet-poster",
@@ -15922,7 +16165,8 @@
     "rank_score": 91.2,
     "creation_date": "2026-06-08",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-figure-to-abstract-portrait-series",
@@ -15964,7 +16208,8 @@
     "creation_date": "2026-06-08",
     "base_rank_score": 90,
     "requires_image_upload": true,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "required"
   },
   {
     "id": "template-crafting-step-by-step-tutorial-infographic",
@@ -16003,7 +16248,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-08",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-disney-character-costume-themed-grid-collection",
@@ -16043,7 +16289,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-09",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-city-landmark-fridge-magnet-collection",
@@ -16085,7 +16332,8 @@
     "use_cases": [
       "for-merch-operators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-museum-gift-themed-merchandise-collection-display",
@@ -16129,7 +16377,8 @@
     "use_cases": [
       "for-merch-operators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-football-tournament-retro-infographic-poster",
@@ -16171,7 +16420,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-09",
     "base_rank_score": 90,
-    "archetype": "consumption"
+    "archetype": "consumption",
+    "image_input": "none"
   },
   {
     "id": "template-football-themed-ball-infographic",
@@ -16212,7 +16462,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-10",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-sport-rules-handdrawn-infographic",
@@ -16252,7 +16503,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-10",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-character-multi-panel-comic-strip-poster",
@@ -16295,7 +16547,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-10",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-brand-vi-full-visual-pack-mockup",
@@ -16342,7 +16595,8 @@
       "for-merch-operators",
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-football-player-graffiti-poster",
@@ -16383,7 +16637,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-11",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-vintage-football-jersey-intro-watercolor-poster",
@@ -16425,7 +16680,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-11",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-brand-ip-full-design-board",
@@ -16474,7 +16730,8 @@
       "for-merch-operators",
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-theme-color-palette-card",
@@ -16517,7 +16774,8 @@
     "use_cases": [
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-corporate-news-editorial-hero",
@@ -16564,7 +16822,8 @@
     },
     "archetype": "consumption",
     "creation_date": "2026-06-13",
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "image_input": "none"
   },
   {
     "id": "template-isometric-business-process-roadmap-infographic",
@@ -16606,7 +16865,8 @@
     ],
     "creation_date": "2026-06-13",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-person-self-portrait-infographic-poster",
@@ -16648,7 +16908,8 @@
     ],
     "creation_date": "2026-06-13",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-disney-dual-character-intro-book-spread",
@@ -16690,7 +16951,8 @@
     ],
     "creation_date": "2026-06-14",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-popular-science-health-infographic-poster",
@@ -16732,7 +16994,8 @@
     ],
     "creation_date": "2026-06-14",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-custom-ip-character-profile-poster-card",
@@ -16774,7 +17037,8 @@
     ],
     "creation_date": "2026-06-14",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-vintage-musical-instrument-technical-illustration-poster",
@@ -16814,7 +17078,8 @@
     ],
     "creation_date": "2026-06-14",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-pro-athlete-stat-infographic-poster",
@@ -16857,7 +17122,8 @@
     ],
     "creation_date": "2026-06-15",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-sports-league-qb-team-order-infographic",
@@ -16898,7 +17164,8 @@
     ],
     "creation_date": "2026-06-15",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-high-saturation-sports-equipment-segment-card",
@@ -16940,7 +17207,8 @@
     ],
     "creation_date": "2026-06-15",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-two-column-sports-comparison-infographic",
@@ -16981,7 +17249,8 @@
     ],
     "creation_date": "2026-06-15",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-wc-fan-outfit-poster",
@@ -17036,7 +17305,8 @@
       "for-merch-operators"
     ],
     "requires_image_upload": true,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "required"
   },
   {
     "id": "template-sports-court-shot-trajectory-analysis-infographic",
@@ -17079,7 +17349,8 @@
     ],
     "creation_date": "2026-06-16",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-wc-daily-recap-poster",
@@ -17119,7 +17390,8 @@
     "rank_score": 92,
     "base_rank_score": 92,
     "archetype": "consumption",
-    "creation_date": "2026-06-16"
+    "creation_date": "2026-06-16",
+    "image_input": "none"
   },
   {
     "id": "template-classical-famous-painting-analysis-cartoon-infographic",
@@ -17160,7 +17432,8 @@
     ],
     "creation_date": "2026-06-16",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-chikawa-monthly-calendar-vertical-poster",
@@ -17202,7 +17475,8 @@
     ],
     "creation_date": "2026-06-16",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-historical-figure-biography-vintage-infographic",
@@ -17244,7 +17518,8 @@
     ],
     "creation_date": "2026-06-17",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-musical-instrument-technical-infographic-poster",
@@ -17287,7 +17562,8 @@
     ],
     "creation_date": "2026-06-17",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-kawaii-cartoon-ip-profile-grid-infographic",
@@ -17328,7 +17604,8 @@
     ],
     "creation_date": "2026-06-17",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-exam-vocabulary-two-column-list-poster",
@@ -17369,7 +17646,8 @@
     ],
     "creation_date": "2026-06-17",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-health-tips-six-method-cartoon-poster",
@@ -17413,7 +17691,8 @@
     ],
     "creation_date": "2026-06-18",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-kid-friendly-grid-fun-fact-infographic",
@@ -17458,7 +17737,8 @@
     ],
     "creation_date": "2026-06-18",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-nature-ecology-double-page-book-spread-infographic",
@@ -17503,7 +17783,8 @@
     ],
     "creation_date": "2026-06-18",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-classic-spirits-cocktail-recipe-grid-poster",
@@ -17545,7 +17826,8 @@
     ],
     "creation_date": "2026-06-18",
     "base_rank_score": 90,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-fruit-commercial-lifestyle-infographic-poster",
@@ -17586,7 +17868,8 @@
     ],
     "creation_date": "2026-06-29",
     "base_rank_score": 107,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-educational-flashcard-ontology-mindmap-infographic",
@@ -17631,7 +17914,8 @@
     ],
     "creation_date": "2026-06-29",
     "base_rank_score": 107,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-musical-score-illustrated-art-poster",
@@ -17672,7 +17956,8 @@
     ],
     "creation_date": "2026-06-29",
     "base_rank_score": 107,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-vintage-collage-fashion-collection-poster",
@@ -17721,7 +18006,8 @@
     "use_cases": [
       "for-merch-operators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-kpop-idol-profile-vintage-passport-poster",
@@ -17764,7 +18050,8 @@
     ],
     "creation_date": "2026-06-30",
     "base_rank_score": 109,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-full-year-12-month-cartoon-character-calendar-poster",
@@ -17803,7 +18090,8 @@
       "kids-learning"
     ],
     "creation_date": "2026-06-30",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-men-lifestyle-step-guide-infographic-poster",
@@ -17846,7 +18134,8 @@
       "lifestyle-shot"
     ],
     "creation_date": "2026-06-30",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-ballroom-dance-step-vintage-tutorial-infographic",
@@ -17886,7 +18175,8 @@
       "digital-canvas"
     ],
     "creation_date": "2026-07-01",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-anime-crew-vintage-newspaper-character-infographic-poster",
@@ -17927,7 +18217,8 @@
       "whimsical"
     ],
     "creation_date": "2026-07-01",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-kids-origami-step-tutorial-infographic-poster",
@@ -17969,7 +18260,8 @@
       "composition"
     ],
     "creation_date": "2026-07-01",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-vintage-fruit-market-label-poster",
@@ -18013,7 +18305,8 @@
     "use_cases": [
       "for-merch-operators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-original-character-daily-life-grid",
@@ -18074,7 +18367,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-24",
     "allow_generation": true,
-    "og_image": "/images/nano_insp_preview/template-original-character-daily-life-grid-bronze-worker-mythical-beast-prev.jpg"
+    "og_image": "/images/nano_insp_preview/template-original-character-daily-life-grid-bronze-worker-mythical-beast-prev.jpg",
+    "image_input": "optional"
   },
   {
     "id": "template-original-character-sticker-pack",
@@ -18137,7 +18431,8 @@
     "og_image": "/images/nano_insp_preview/template-original-character-sticker-pack-bronze-worker-mythical-beast-prev.jpg",
     "use_cases": [
       "for-merch-operators"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-modernized-artifact-poster",
@@ -18200,7 +18495,8 @@
     "rank_score": 90,
     "creation_date": "2026-06-24",
     "allow_generation": true,
-    "og_image": "/images/nano_insp_preview/template-modernized-artifact-poster-bronze-ding-corporate-executive-prev.jpg"
+    "og_image": "/images/nano_insp_preview/template-modernized-artifact-poster-bronze-ding-corporate-executive-prev.jpg",
+    "image_input": "optional"
   },
   {
     "id": "template-chinese-ancient-bronze-cultural-creative-product-technical-design-sheet",
@@ -18250,7 +18546,8 @@
       "for-merch-operators",
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-brand-identity-moodboard-visual-system-poster",
@@ -18312,7 +18609,8 @@
       "for-merch-operators",
       "for-designers"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-wc-knockout-matchup-poster",
@@ -18369,7 +18667,8 @@
     "rank_score": 350,
     "creation_date": "2026-07-02",
     "base_rank_score": 350,
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-celebrity-meme-sticker-merchandise-collection-poster",
@@ -18432,7 +18731,8 @@
     "use_cases": [
       "for-merch-operators"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-layered-systems-architecture",
@@ -18481,7 +18781,8 @@
     "base_rank_score": 90,
     "rank_score": 90.15,
     "creation_date": "2026-07-01",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-amazon-long-scroll-product-infographic-template",
@@ -18529,7 +18830,8 @@
       "for-merch-operators"
     ],
     "creation_date": "2026-07-08",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-eco-farm-food-uniform-product-label",
@@ -18575,7 +18877,8 @@
       "for-merch-operators"
     ],
     "creation_date": "2026-07-08",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-luxury-vintage-gem-necklace-design-sheet",
@@ -18620,7 +18923,8 @@
       "for-designers"
     ],
     "creation_date": "2026-07-08",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-football-star-chibi-sticker-set",
@@ -18667,7 +18971,8 @@
     ],
     "creation_date": "2026-07-09",
     "intro_video_url": "/video/template_intro/template-football-star-chibi-sticker-set.mp4",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-world-cup-premium-gold-text-poster",
@@ -18710,7 +19015,8 @@
       "modern"
     ],
     "creation_date": "2026-07-09",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-japanese-traditional-music-instrument-info-poster",
@@ -18754,7 +19060,8 @@
       "soft-light"
     ],
     "creation_date": "2026-07-09",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-english-confusing-word-pair-educational-poster",
@@ -18800,7 +19107,8 @@
       "posters"
     ],
     "creation_date": "2026-07-09",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-vietnam-traditional-handicraft-village-curved-wave-art-poster",
@@ -18832,7 +19140,8 @@
       "vibrant"
     ],
     "creation_date": "2026-07-11",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-mechanical-keycap-mini-diorama-3d-art-poster",
@@ -18864,7 +19173,8 @@
       "wall-art"
     ],
     "creation_date": "2026-07-11",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-one-piece-valentine-flat-magazine-character-card-poster",
@@ -18895,7 +19205,8 @@
       "collectible"
     ],
     "creation_date": "2026-07-11",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-amazon-product-six-grid-infographic-listing-poster",
@@ -18926,7 +19237,8 @@
       "posters"
     ],
     "creation_date": "2026-07-12",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-micro-worker-big-smartphone-ecommerce-store-3d-art-poster",
@@ -18958,7 +19270,8 @@
       "illustration"
     ],
     "creation_date": "2026-07-12",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-einstein-character-russian-product-ad-poster",
@@ -18989,7 +19302,8 @@
       "character"
     ],
     "creation_date": "2026-07-12",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-bilingual-chinese-vocabulary-word-card-poster",
@@ -19026,7 +19340,8 @@
       "bilingual"
     ],
     "creation_date": "2026-07-12",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-hsk-bilingual-reading-text-lesson-poster",
@@ -19060,7 +19375,8 @@
       "bilingual"
     ],
     "creation_date": "2026-07-13",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-vintage-classic-novel-book-summary-infographic-poster",
@@ -19093,7 +19409,8 @@
       "education"
     ],
     "creation_date": "2026-07-13",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-3d-chibi-football-player-turnaround-sheet",
@@ -19139,7 +19456,8 @@
       "illustration"
     ],
     "creation_date": "2026-07-13",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-chinese-compound-word-literacy-cartoon",
@@ -19173,7 +19491,8 @@
       "illustration"
     ],
     "creation_date": "2026-07-13",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-ip-character-expression-sheet",
@@ -19207,7 +19526,8 @@
     "use_cases": [
       "for-merch-operators",
       "for-designers"
-    ]
+    ],
+    "image_input": "required"
   },
   {
     "id": "template-vintage-watercolor-hobby-sticker-sheet",
@@ -19242,7 +19562,8 @@
       "collectible"
     ],
     "creation_date": "2026-07-14",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-vintage-food-menu-scientific-sketch-illustration",
@@ -19275,7 +19596,8 @@
       "wall-art"
     ],
     "creation_date": "2026-07-14",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-clay-cute-3d-icon-grid-sheet",
@@ -19305,7 +19627,8 @@
       "collectible"
     ],
     "creation_date": "2026-07-14",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-surreal-macro-product-commercial-ad-poster",
@@ -19340,7 +19663,8 @@
       "3d"
     ],
     "creation_date": "2026-07-14",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-9-grid-ecommerce-product-lifestyle-moodboard",
@@ -19374,7 +19698,8 @@
       "lifestyle"
     ],
     "creation_date": "2026-07-15",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-football-f4-garden-romantic-academy-poster",
@@ -19414,7 +19739,8 @@
       "illustration"
     ],
     "creation_date": "2026-07-15",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-kids-bilingual-cartoon-learning-card",
@@ -19450,7 +19776,8 @@
       "kids"
     ],
     "creation_date": "2026-07-15",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-cartoon-english-quiz-learning-card",
@@ -19484,7 +19811,8 @@
       "kids"
     ],
     "creation_date": "2026-07-15",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-cartoon-english-wordcard-learning-card",
@@ -19537,7 +19865,8 @@
       "kids"
     ],
     "creation_date": "2026-07-16",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-cartoon-mini-script-learning-card",
@@ -19590,7 +19919,8 @@
       "kids"
     ],
     "creation_date": "2026-07-16",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-kids-english-phonics-sentence-flashcard",
@@ -19635,7 +19965,8 @@
       "kids"
     ],
     "creation_date": "2026-07-16",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-cartoon-character-map-learning-card",
@@ -19688,7 +20019,8 @@
       "character"
     ],
     "creation_date": "2026-07-16",
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "none"
   },
   {
     "id": "template-minimalist-product-design-presentation-board",
@@ -19725,7 +20057,8 @@
       "industrial-design"
     ],
     "allow_generation": true,
-    "creation_date": "2026-07-23"
+    "creation_date": "2026-07-23",
+    "image_input": "optional"
   },
   {
     "id": "template-interior-design-moodboard",
@@ -19761,7 +20094,8 @@
       "design"
     ],
     "allow_generation": true,
-    "creation_date": "2026-07-23"
+    "creation_date": "2026-07-23",
+    "image_input": "optional"
   },
   {
     "id": "template-industrial-design-product-presentation-board",
@@ -19796,7 +20130,8 @@
       "industrial-design"
     ],
     "allow_generation": true,
-    "creation_date": "2026-07-23"
+    "creation_date": "2026-07-23",
+    "image_input": "optional"
   },
   {
     "id": "template-landmark-four-seasons-poster",
@@ -19835,7 +20170,8 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-26"
+    "creation_date": "2026-07-26",
+    "image_input": "optional"
   },
   {
     "id": "template-workbook-practice-book-cover",
@@ -19915,7 +20251,8 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-28"
+    "creation_date": "2026-07-28",
+    "image_input": "optional"
   },
   {
     "id": "template-promotional-flyer",
@@ -20016,7 +20353,8 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-28"
+    "creation_date": "2026-07-28",
+    "image_input": "optional"
   },
   {
     "id": "template-stem-classroom-teaching-aid",
@@ -20095,7 +20433,8 @@
     "rank_score": 90.3,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-28"
+    "creation_date": "2026-07-28",
+    "image_input": "none"
   },
   {
     "id": "template-price-tag-product-label",
@@ -20182,7 +20521,8 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-28"
+    "creation_date": "2026-07-28",
+    "image_input": "optional"
   },
   {
     "id": "template-achievement-certificate-award",
@@ -20281,7 +20621,8 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-28"
+    "creation_date": "2026-07-28",
+    "image_input": "optional"
   },
   {
     "id": "template-perfume-cosmetic-bottle-mockup",
@@ -20360,7 +20701,8 @@
     "rank_score": 90.3,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-28"
+    "creation_date": "2026-07-28",
+    "image_input": "optional"
   },
   {
     "id": "template-chocolate-giftbox-packaging",
@@ -20438,7 +20780,8 @@
     "rank_score": 90.15,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-28"
+    "creation_date": "2026-07-28",
+    "image_input": "optional"
   },
   {
     "id": "template-jigsaw-puzzle-box",
@@ -20505,7 +20848,8 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-28"
+    "creation_date": "2026-07-28",
+    "image_input": "optional"
   },
   {
     "id": "template-discount-coupon-voucher",
@@ -20595,7 +20939,8 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-28"
+    "creation_date": "2026-07-28",
+    "image_input": "optional"
   },
   {
     "id": "template-fridge-magnet-merch",
@@ -20671,7 +21016,8 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true,
-    "creation_date": "2026-07-28"
+    "creation_date": "2026-07-28",
+    "image_input": "optional"
   },
   {
     "id": "template-brand-logo-variant-set",
@@ -20734,7 +21080,8 @@
       "for-designers",
       "for-dtc-brands"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-brand-font-specimen-set",
@@ -20796,7 +21143,8 @@
       "for-designers",
       "for-dtc-brands"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "image_input": "optional"
   },
   {
     "id": "template-fruit-drink-scene-photography",
@@ -20843,7 +21191,8 @@
       "soft-light",
       "warm",
       "modern"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-home-textiles-ecommerce",
@@ -20889,7 +21238,8 @@
       "soft-light",
       "cozy",
       "modern"
-    ]
+    ],
+    "image_input": "optional"
   },
   {
     "id": "template-ecommerce-product-photography",
@@ -20932,6 +21282,7 @@
       "minimalist",
       "soft-light",
       "modern"
-    ]
+    ],
+    "image_input": "optional"
   }
 ]

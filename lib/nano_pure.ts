@@ -29,6 +29,9 @@ export type RawTemplate = {
   batch?: boolean;
   allow_generation?: boolean;
   requires_image_upload?: boolean;
+  /** Reference-input mode: "none" (text-only) | "optional" (text/image/both) |
+   *  "required" (must upload). Source of truth for the reproduce upload UI. */
+  image_input?: "none" | "optional" | "required";
   /** Explicit override for example-page indexing (see lib/example_indexing).
    *  Absent → derived from topics (info-heavy → index, generator-demo → noindex).
    *  Set to true/false only to override the topic-derived default per template. */
@@ -94,6 +97,9 @@ export type TemplateView = {
   batch?: boolean;
   allow_generation?: boolean;
   requires_image_upload?: boolean;
+  /** Reference-input mode: "none" (text-only) | "optional" (text/image/both) |
+   *  "required" (must upload). Source of truth for the reproduce upload UI. */
+  image_input?: "none" | "optional" | "required";
   /** Explicit override for example-page indexing (see lib/example_indexing). */
   index_examples?: boolean;
   archetype?: "creation" | "consumption";

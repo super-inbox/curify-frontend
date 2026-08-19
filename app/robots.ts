@@ -103,6 +103,15 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
         disallow: [
           '/*/nano-banana-pro-prompts/',
           '/*/nano-template/',
+          // 2026-08-19: added after a meta-externalagent spike walking
+          // /hi/carousel/template-example/... The note above (08-09) already
+          // recorded that this crawler put 18,484 of its 18,572 90-day events
+          // on /carousel/template-example/* and zero on /nano-template/ —
+          // same content, different URL shape — but the path was never
+          // actually added to this list. Both the bare and locale-prefixed
+          // forms, since /carousel/... and /hi/carousel/... both render.
+          '/carousel/',
+          '/*/carousel/',
         ],
       },
     ],

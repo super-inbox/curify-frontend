@@ -20,8 +20,15 @@ export type NanoTemplateForDetail = {
   allow_generation?: boolean;
   // image-to-image templates: the user must upload a reference image before
   // generating. When true, ReproduceTemplateSection shows the image upload UI
-  // and gates Generate on a reference image being present.
+  // and gates Generate on a reference image being present. Kept in sync with
+  // `image_input === "required"` for the many existing consumers of this flag.
   requires_image_upload?: boolean;
+  // Reference-input mode (source of truth for the reproduce upload UI):
+  //   "none"     — text-only (params → image); no upload.
+  //   "optional" — text, image, OR text+image; upload offered, not required.
+  //   "required" — must upload a reference (classic image2image).
+  // ReproduceTemplateSection routes on this. See nano_templates.json.
+  image_input?: "none" | "optional" | "required";
   // Template archetype — "creation" (default; user fills params + generates
   // their own variant) vs "consumption" (we publish a fresh output the user
   // just looks at; daily recap, news event, scheduled standings, etc.).
