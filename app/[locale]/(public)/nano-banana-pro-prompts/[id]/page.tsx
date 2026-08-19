@@ -7,6 +7,7 @@ import { getCanonicalPath } from "@/lib/canonical";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
 import PromptTagChips from "./PromptTagChips";
 import GalleryReproduceSurface from "./GalleryReproduceSurface";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPrompt } from "@/types/nanoPrompts";
 import PromptCard from "../PromptCard";
@@ -225,6 +226,10 @@ export default async function PromptDetailPage({
             {prompt.title}
           </h1>
           <PromptTagChips tags={prompt.tags} locale={locale} size="small" />
+          {/* Share on the H1 row (upper right), same as the template example. */}
+          <div className="ml-auto">
+            <ShareButton url={buildPromptPath(locale, prompt.id)} title={prompt.title} />
+          </div>
         </header>
 
         {/* Unified reproduce surface — Source · Make-it-yours · Production

@@ -8,7 +8,6 @@ import { useTranslations } from "next-intl";
 
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
-import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
 import { PRODUCTION_TILES } from "@/lib/gallery_production_tiles";
 
@@ -37,8 +36,6 @@ export default function GalleryReproduceSurface({
   sourceImageUrl,
   sourceReferenceUrl,
   sourceImageAlt,
-  copyText,
-  shareUrl,
   title,
 }: Props) {
   const t = useTranslations("actionButtons");
@@ -145,13 +142,6 @@ export default function GalleryReproduceSurface({
                 className="object-contain"
               />
             </div>
-          </div>
-          <div className="mt-2">
-            <UnifiedActionBar
-              tracking={tracking}
-              copy={{ enabled: true, text: copyText }}
-              share={{ enabled: true, url: shareUrl, title }}
-            />
           </div>
         </div>
 
