@@ -42,7 +42,8 @@ import {
   type FieldHitInfo,
   type ScoredCandidate,
 } from "@/lib/relevanceScorer";
-import { TOTAL_CANDIDATE_POOL_CAP, PATH_CANDIDATE_CAP } from "@/lib/relevanceScorerConfig";
+import { TOTAL_CANDIDATE_POOL_CAP, PATH_CANDIDATE_CAP, INTENT_RERANK_ENABLED } from "@/lib/relevanceScorerConfig";
+import { queryIntentBucket, intentAlignmentDelta } from "@/lib/intentAlignment";
 import { subjectUnits, FORMAT_TOKENS } from "@/lib/searchSubject";
 import { applyPhraseAliasRules } from "@/lib/query_phrase_aliases";
 import SearchResultsClient from "./SearchResultsClient";
@@ -1157,6 +1158,10 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // 5's Template Family Saturation is enforced by applyFamilySaturation.
   // See lib/relevanceScorer.ts and 08_RELEVANCE_SCORER_DESIGN.md.
   const originalIds = new Set(baseResult.scored.map((s) => s.rec.id));
+  // Intent-alignment re-rank: query bucket computed once; per-record delta
+  // demotes cross-intent keyword matches (education/vocab/MBTI cards on a
+  // design/commerce query). Flag-gated; a no-op (0) for education queries.
+  const qIntentBucket = INTENT_RERANK_ENABLED ? queryIntentBucket(q) : "education";
   const scoredCandidates: ScoredCandidate[] = Array.from(inspirationById.values()).map((x) => ({
     id: x.rec.id,
     templateId: x.rec.template_id,
@@ -1169,6 +1174,9 @@ export default async function SearchPage({ params, searchParams }: Props) {
         isMultiTermQuery,
         hasProtectedPhraseQuery,
         isOriginal: originalIds.has(x.rec.id),
+        intentAlignmentDelta: INTENT_RERANK_ENABLED
+          ? intentAlignmentDelta(x.rec.template_id, x.rec.topics ?? [], x.rec.tags ?? [], qIntentBucket)
+          : 0,
       },
       x.score,
     ),

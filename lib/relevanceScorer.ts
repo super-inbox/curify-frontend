@@ -92,6 +92,11 @@ export type ScoreContext = {
    *  (config). The high-signal exact_phrase/whole_token/subject terms are
    *  path-independent — an on-subject rewrite result is barely affected. */
   isOriginal: boolean;
+  /** Intent-alignment delta (0 or negative penalty / small positive boost) for
+   *  this candidate, precomputed by the caller via lib/intentAlignment. 0 when
+   *  the flag is off or the query is educational. Kept out of scoreRecord's
+   *  internals so the scorer stays a pure sum of provided signals. */
+  intentAlignmentDelta?: number;
 };
 
 export type ScoreBreakdown = {
@@ -101,6 +106,7 @@ export type ScoreBreakdown = {
   path_agreement: number;
   substring_penalty: number;
   missing_subject_penalty: number;
+  intent_alignment: number;
   family_saturation_penalty: number;
   final_score: number;
   /** v1.1: the EFFECTIVE subject-presence decision (raw subjectPresent
@@ -239,13 +245,24 @@ export function scoreRecord(
     reasons.push("isolated_single_term_hit_capped");
   }
 
+  // Intent-alignment: a caller-computed penalty/boost that demotes records whose
+  // INTENT mismatches the query's (e.g. an education/vocab card on a design
+  // query). Soft — it only re-ranks; the Direction-1 floor still preserves
+  // original-query records, so it can never create a zero-result case.
+  let intent_alignment = 0;
+  if (ctx.intentAlignmentDelta) {
+    intent_alignment = ctx.intentAlignmentDelta;
+    reasons.push(intent_alignment < 0 ? "cross_intent_penalty" : "intent_aligned_boost");
+  }
+
   const final_score =
     base_retrieval +
     exact_phrase +
     whole_token +
     path_agreement +
     substring_penalty +
-    missing_subject_penalty;
+    missing_subject_penalty +
+    intent_alignment;
   // family_saturation_penalty filled in by applyFamilySaturation after
   // the full candidate set is known (it's a pool-level, not per-record,
   // signal).
@@ -257,6 +274,7 @@ export function scoreRecord(
     path_agreement,
     substring_penalty,
     missing_subject_penalty,
+    intent_alignment,
     family_saturation_penalty: 0,
     final_score,
     subjectPresent,
