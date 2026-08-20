@@ -39,13 +39,39 @@
     },
     "design": {
       "title": "Prompts Visuales de Diseño, Plantillas e Inspiración",
-      "description": "Descubre visuales de IA relacionados con el diseño, plantillas creativas e inspiración para branding, maquetas, conceptos visuales y exploraciones estéticas.",
-      "intro": "Explora nuestra galería curada de visuales de IA relacionados con el diseño, que presenta una diversa colección de plantillas, ejemplos y prompts adaptados para creadores, educadores y diseñadores. Ya sea que busques inspiración para branding, ideas de diseño o conceptos visuales únicos, esta colección tiene algo para todos. Sumérgete en las plantillas y ejemplos a continuación para estimular tu creatividad y elevar tus proyectos de diseño.",
       "keywords": [
         "arte",
         "diseño gráfico"
       ],
-      "displayName": "Carteles y Diseños"
+      "displayName": "Carteles y Diseños",
+      "description": "Plantillas de diseño con IA para carteles, logotipos, maquetas, hojas de pegatinas, tableros de presentación y empaques: 84 generadores que cubren todo el camino desde un concepto visual hasta un diseño listo para el producto.",
+      "intro": "El diseño es la colección más amplia en Curify: 84 generadores que cubren el trabajo entre tener una idea y tener algo que puedes imprimir, publicar o entregar a un cliente. Se divide según las líneas en las que los diseñadores realmente trabajan. Carteles y maquetación: carteles de enfrentamiento, arte de puntuación ilustrado, tableros de vista general de temas y composiciones editoriales donde la jerarquía y la tipografía hacen el trabajo. Marca e identidad: conjuntos de variantes de logotipos que mantienen una marca a través de pesos y configuraciones, y tableros de presentación que muestran un concepto de la manera en que un cliente espera revisarlo. Personajes y merchandising: hojas de expresión que mantienen un personaje consistente en diferentes poses, paquetes de pegatinas y maquetas de cajas de regalo y papelería que colocan obras de arte en superficies de productos reales. Cada generador toma un breve o una imagen de referencia y devuelve un resultado editable, por lo que una sola plantilla se convierte en una serie al cambiar el sujeto, la paleta o el formato en lugar de comenzar de nuevo. Si buscas una selección más específica, las colecciones más ajustadas se encuentran debajo de esta: carteles, maquetas, merchandising, composición, iluminación y lienzo digital, cada uno tiene su propia página. Explora los ejemplos a continuación y comienza con el que coincida con el entregable que debes a alguien.",
+      "format": {
+        "lead": "Diseña con IA en carteles, logotipos, maquetas, hojas de personajes y tableros de presentación — 84 generadores editables.",
+        "faqTitle": "Preguntas Frecuentes",
+        "faq": [
+          {
+            "q": "¿Qué tipos de diseño puedo hacer aquí?",
+            "a": "Pósters y diseños editoriales, variantes de logotipos e identidad de marca, hojas de expresión de personajes, paquetes de pegatinas, maquetas de productos y empaques, y tableros de presentación. Cada uno es un generador separado con su propia estructura en lugar de una sola caja de solicitud."
+          },
+          {
+            "q": "¿Necesito un resumen o una imagen de referencia?",
+            "a": "Cualquiera de los dos. Algunos generadores funcionan a partir de un resumen escrito, otros toman una imagen de referencia —un personaje, una foto de producto, un logotipo— y la aplican. La plantilla te indica qué se espera antes de comenzar."
+          },
+          {
+            "q": "¿Puedo crear una serie completa en lugar de una sola imagen?",
+            "a": "Ese es el objetivo de las plantillas. Cambia el tema, la paleta o el formato y la lógica del diseño se mantiene, de modo que una plantilla produce un conjunto coherente en lugar de cinco imágenes no relacionadas."
+          },
+          {
+            "q": "¿Los resultados están listos para imprimir?",
+            "a": "Estos son resultados de diseño y maquetas. Una impresora necesita un archivo de producción con una línea de corte, sangrado y CMYK — consulta las herramientas de exportación de pegatinas troqueladas y acrílicas para ese paso."
+          },
+          {
+            "q": "¿Dónde puedo encontrar un tema más específico?",
+            "a": "Pósters, maquetas, merchandising, composición, iluminación y lienzo digital tienen cada uno una colección dedicada con las mismas plantillas filtradas."
+          }
+        ]
+      }
     },
     "nature": {
       "displayName": "Naturaleza",
@@ -1811,62 +1837,6 @@
           {
             "q": "¿Qué tipos de packaging puedo diseñar?",
             "a": "Cajas y cartones, etiquetas, bolsas, botellas cosméticas y de bebidas, cajas de regalo y packaging para alimentos y bebidas."
-          }
-        ]
-      }
-    },
-    "ecommerce": {
-      "displayName": "Ecommerce",
-      "title": "Ecommerce Product Visual Prompts, Templates and Inspiration",
-      "description": "Explore ecommerce AI visuals — product detail images, hero banners, lifestyle shots, and flat-lay templates that lift product-page conversion.",
-      "intro": "Dive into our ecommerce-focused AI visual templates — product detail shots, hero banners, lifestyle imagery, and conversion-optimized product photography. Whether you're a DTC brand, Shopify seller, marketplace merchant, or ecommerce designer, these templates give you a fast way to produce platform-ready product visuals. Browse the examples below.",
-      "keywords": [
-        "product-photography",
-        "detail-image",
-        "hero-banner",
-        "flat-lay",
-        "shopify",
-        "dtc"
-      ],
-      "format": {
-        "lead": "Los elementos visuales de ecommerce deciden si un comprador hace clic y compra. Curify convierte una sola foto de producto —o simplemente una descripción— en un set completo para un anuncio: fotos de producto principales con fondo blanco limpio, escenas de estilo de vida y con modelo, e infografías de detalle tipo Amazon de seis cuadrículas y desplazamiento largo. Sin estudio, sin fotógrafo, sin equipo de diseño.",
-        "howToTitle": "Cómo Curify crea tus imágenes de ecommerce",
-        "howTo": [
-          "Sube la foto de tu producto, o describe el producto y la marca.",
-          "Elige el visual que necesitas —foto principal del anuncio, escena de estilo de vida, prueba con modelo, o una infografía de detalle de seis cuadrículas.",
-          "Curify renderiza el producto, la iluminación, los modelos y el diseño a un estándar listo para el anuncio.",
-          "Descarga con el tamaño adecuado para Amazon, Shopify, TikTok Shop, o tu propia tienda."
-        ],
-        "usesTitle": "Qué puedes crear para tu tienda",
-        "uses": [
-          "Imágenes principales de anuncio con fondo blanco",
-          "Escenas de estilo de vida y de producto en contexto",
-          "Infografías de detalle A+ de seis cuadrículas y desplazamiento largo tipo Amazon",
-          "Fotos con modelo y de prueba de atuendos para moda",
-          "Banners promocionales, etiquetas de precio y creatividades publicitarias",
-          "Mockups de packaging y producto"
-        ],
-        "faqTitle": "Preguntas Frecuentes sobre Ecommerce",
-        "faq": [
-          {
-            "q": "¿Puedo usar mi propia foto de producto?",
-            "a": "Sí — sube tu producto y Curify crea la toma, escena o cuadrícula de detalle alrededor del artículo real para que se mantenga fiel a lo que vendes."
-          },
-          {
-            "q": "¿Están formateados para listados de Amazon y Shopify?",
-            "a": "Sí. Plantillas como las infografías de seis cuadrículas y desplazamiento largo siguen los diseños de detalle principales y A+ que los marketplaces esperan."
-          },
-          {
-            "q": "¿Necesito un fotógrafo o estudio?",
-            "a": "No. Curify renderiza el producto, la iluminación, el fondo e incluso las tomas con modelo a partir de una descripción o de tu foto."
-          },
-          {
-            "q": "¿Puedo mostrar el producto en un modelo?",
-            "a": "Sí — las plantillas de moda y prueba colocan prendas y accesorios en un modelo sin necesidad de una sesión de fotos."
-          },
-          {
-            "q": "¿Las imágenes coincidirán con mi marca?",
-            "a": "Describe el estilo de tu marca, o sube diseños y packaging, y los elementos visuales se renderizan para que coincidan con tus colores y tono."
           }
         ]
       }
