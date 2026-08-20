@@ -21,6 +21,11 @@ import Upload from "@/app/[locale]/_components/Upload";
  * `onUploadingChange`.
  */
 type Props = {
+  /** Optional controlled value. When provided, the preview follows it instead
+   *  of only internal state — needed by multi-slot callers, where a parent
+   *  re-render must not silently drop the thumbnail. Omit it and the component
+   *  stays uncontrolled exactly as before (all pre-existing callers do). */
+  value?: string | null;
   onChange: (blobUrl: string | null) => void;
   onUploadingChange?: (uploading: boolean) => void;
   /** Extra side-effect on remove (e.g. clear a stale generated result). */
@@ -45,6 +50,7 @@ type Props = {
 };
 
 export default function ReferenceImageUpload({
+  value,
   onChange,
   onUploadingChange,
   onRemove,
@@ -66,7 +72,10 @@ export default function ReferenceImageUpload({
   // a logged-in user swaps to the real uploader post-mount via an effect.
   const user = clientMounted ? rawUser : null;
 
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [internalPreview, setInternalPreview] = useState<string | null>(null);
+  // Controlled when `value` is supplied; uncontrolled otherwise.
+  const previewUrl = value !== undefined ? value : internalPreview;
+  const setPreviewUrl = setInternalPreview;
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
