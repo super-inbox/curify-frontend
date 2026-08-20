@@ -20,12 +20,24 @@ import nanoTemplates from "@/public/data/nano_templates.json";
  *
  * Only populated niches are listed here so every home row shows images.
  */
+// 2026-08-20 rebalance. The previous five were commercial niches with almost
+// nothing behind them — sneaker-design (0 templates / 6 examples),
+// coffee-shop-branding (0 / 4), fruit-drinks (1 / 5) and home-textiles (1 / 5).
+// All four were never indexed, and sneaker-design was crawled on 08-17 and
+// FOLDED to the home page, which is a verdict on the page rather than a
+// crawl-budget accident. Between them they consumed 16 home-page links — the
+// scarcest crawl asset the site has — pointing at pages that do not rank.
+//
+// Replaced with design specialisms that have real depth AND need the crawl
+// path: stickers (10 templates / 29 examples, never crawled), branding
+// (6 / 63, never crawled) and character-ip (75 examples, never crawled).
+// museum-merchandise stays — 8 templates and 89 examples, and its copy was
+// enriched on 08-20 for exactly this reason.
 const HOME_NICHE_SLUGS = [
-  "sneaker-design",
-  "fruit-drinks",
-  "home-textiles",
   "museum-merchandise",
-  "coffee-shop-branding",
+  "stickers",
+  "branding",
+  "character-ip",
 ] as const;
 
 const ROW_ITEM_LIMIT = 10;
