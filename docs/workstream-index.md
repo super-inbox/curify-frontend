@@ -37,6 +37,9 @@ Other product workstream docs (single-track, not part of the four):
 - [`workstream-agentic-image-rong.md`](workstream-agentic-image-rong.md) — agentic image (rong)
 - `~/curify-studio/docs/workstream-customer-delivery-pipeline.md` — customer delivery 4-gap punch list (held)
 - `~/curify-studio/docs/workstream-education-content-supply.md` — education content supply 2-phase plan (held)
+  - demand basis: `teacher-learning-packs-demand-and-validation-2026-08-05.md` (wedge = visual packaging, not text)
+    + `teacher-pinterest-lesson-prep-demand-2026-08-20.md` (Pinterest = aesthetic yardstick more than sourcing tool;
+    constrained on curriculum / autonomous on materials; districts blocking TPT)
 
 ### GTM motions that feed (or bypass) these workstreams
 
