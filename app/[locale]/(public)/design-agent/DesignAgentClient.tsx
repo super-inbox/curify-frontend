@@ -24,6 +24,8 @@ import { requiresDirection } from "@/lib/agent/direction";
 import ReferenceImagesUpload from "@/app/[locale]/_components/ReferenceImagesUpload";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { factoryExportService } from "@/services/factoryExport";
+import { designAgentRunService } from "@/services/designAgentRun";
+import { runtimeTaskType, runtimeNeedsPaidGeneration } from "@/lib/agent/runtimeTask";
 import { freeformGenerateService } from "@/services/freeformGenerate";
 import { pollNanoResult } from "@/services/pollNanoResult";
 import { createTrajectoryRecorder, newRunId } from "@/lib/agent/trajectory";
@@ -295,6 +297,57 @@ export default function DesignAgentClient({
         blocked: Boolean(s.blocked),
       })),
     });
+
+    // 2a. Hand the turn to the BACKEND runtime when a real skill exists for it.
+    //
+    // agent_runtime implements design-vote and tryon-poster end to end —
+    // deterministic decision board, per-poster identity/garment verification
+    // with retry — and POST /design-agent/runs is live. Neither was reachable
+    // from here, so the client re-implemented a weaker version: three
+    // unverified poster prompts, and nothing at all for ranking.
+    //
+    // Verified against production: a design_vote run returns a rendered report
+    // PNG plus an analysis JSON tagged `manifest`, which is the second artifact
+    // nine 21q cases were short of. See spec §7h — agent_runtime is canonical.
+    const runtimeTask = runtimeTaskType(p.query);
+    if (runtimeTask && referenceUrls.length > 0) {
+      try {
+        const { run_id } = await designAgentRunService.start({
+          prompt: p.query,
+          image_urls: referenceUrls,
+          locale,
+          allow_paid_generation: runtimeNeedsPaidGeneration(runtimeTask),
+        });
+        traj.record({ type: "step_started", n: 1, tool_id: `runtime:${runtimeTask}` });
+        const done = await designAgentRunService.poll(run_id);
+        const arts = done.artifacts ?? [];
+        setStep(1, {
+          status: done.status === "COMPLETED" ? "done" : "failed",
+          // `code` carries the skill's own refusal (e.g. a capability gate),
+          // which is more useful than a generic failure.
+          error: done.status === "COMPLETED" ? undefined : (done.code ?? "runtime run failed"),
+          resultUrl: arts.find((a) => a.signed_url)?.signed_url,
+        });
+        traj.record({
+          type: "step_result",
+          n: 1,
+          tool_id: `runtime:${runtimeTask}`,
+          status: done.status === "COMPLETED" ? "done" : "failed",
+          verify_ok: done.status === "COMPLETED",
+        });
+        setPhase("done");
+        traj.record({
+          type: "run_finished",
+          outcome: done.status === "COMPLETED" ? "completed" : "failed",
+          artifacts: arts.length,
+        });
+        return;
+      } catch (e) {
+        // Fall through to the ladder rather than dead-ending the user; the
+        // client path is weaker but it does produce something.
+        console.error("agent runtime failed, falling back to the ladder", e);
+      }
+    }
 
     // 2. execute, observing each step.
     // Carries the most recent VERIFIED artifact so a downstream export step has
