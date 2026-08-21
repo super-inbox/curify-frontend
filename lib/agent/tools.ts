@@ -112,12 +112,18 @@ export const AGENT_TOOLS: AgentTool[] = [
     mode: "post_process",
     acceptsImage: "required",
     produces: "package",
-    status: "gap",
+    // Was `status: "gap"` with the note "local Python, not exposed as a
+    // service. Needs an HTTP wrapper or a job type." Both shipped: the
+    // exporters are live at /design-tools/{sticker,acrylic,packaging-mockup}
+    // and DesignAgentClient executes this step via factoryExportService.
+    //
+    // The stale flag made P0-3 dead code — plan.ts turns `status: "gap"` into
+    // a `blocked` step and the client's run loop `continue`s on step.blocked
+    // BEFORE reaching the dispatch, so the wiring was never reachable. The 21q
+    // run showed the step planned and then blocked, which is why the three
+    // export cases produced one artifact each against a contract of three.
+    status: "available",
     checkable: true,
-    gap: {
-      implementedBy: "curify-studio/dev/jayw/design-agent-v0/factory/sticker_exporter.py",
-      blocker: "local Python, not exposed as a service. Needs an HTTP wrapper or a job type.",
-    },
   },
   {
     id: "fold_dieline_3d",

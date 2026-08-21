@@ -324,12 +324,38 @@
     "design": {
       "displayName": "Posters & Designs",
       "title": "Design Visual Prompts, Templates and Inspiration",
-      "description": "Discover design-related AI visuals, creative templates, and inspiration for branding, layouts, visual concepts, and aesthetic explorations.",
-      "intro": "Explore our curated gallery of design-related AI visuals, featuring a diverse collection of templates, examples, and prompts tailored for creators, educators, and designers. Whether you're looking for inspiration for branding, layout ideas, or unique visual concepts, this collection has something for everyone. Dive into the templates and examples below to spark your creativity and elevate your design projects.",
+      "description": "AI design templates across posters, logos, mockups, sticker sheets, presentation boards and packaging — 84 generators covering the whole path from a visual concept to a product-ready layout.",
+      "intro": "Design is the widest collection on Curify — 84 generators covering the work between having an idea and having something you can print, post or hand to a client. It splits along the lines designers actually work in. Posters and layout: matchup posters, illustrated score art, theme overview boards and editorial compositions where hierarchy and type do the work. Brand and identity: logo variant sets that hold one mark across weights and lockups, and presentation boards that show a concept the way a client expects to review it. Character and merch: expression sheets that keep a character consistent across poses, sticker packs, and gift-box and stationery mockups that put artwork onto real product surfaces. Each generator takes a brief or a reference image and returns an editable result, so a single template becomes a series by swapping the subject, palette or format rather than starting again. If you are looking for a narrower slice, the tighter collections sit underneath this one — posters, mockups, merch, composition, lighting and digital canvas each have their own page. Browse the examples below and start from whichever one matches the deliverable you owe someone.",
       "keywords": [
         "art",
         "graphic design"
-      ]
+      ],
+      "format": {
+        "lead": "Design with AI across posters, logos, mockups, character sheets and presentation boards — 84 editable generators.",
+        "faqTitle": "Frequently Asked Questions",
+        "faq": [
+          {
+            "q": "What kinds of design can I make here?",
+            "a": "Posters and editorial layouts, logo and brand-identity variants, character expression sheets, sticker packs, product and packaging mockups, and presentation boards. Each is a separate generator with its own structure rather than one prompt box."
+          },
+          {
+            "q": "Do I need a brief or a reference image?",
+            "a": "Either. Some generators work from a written brief, others take a reference image — a character, a product photo, a logo — and apply it. The template tells you which it expects before you start."
+          },
+          {
+            "q": "Can I make a whole series instead of one image?",
+            "a": "That is the point of the templates. Swap the subject, palette or format and the layout logic holds, so one template produces a consistent set rather than five unrelated images."
+          },
+          {
+            "q": "Are the results print-ready?",
+            "a": "These are design and mockup outputs. A printer needs a production file with a cut line, bleed and CMYK — see the die-cut sticker and acrylic export tools for that step."
+          },
+          {
+            "q": "Where do I go for a narrower topic?",
+            "a": "Posters, mockups, merch, composition, lighting and digital canvas each have a dedicated collection with the same templates filtered down."
+          }
+        ]
+      }
     },
     "architecture": {
       "displayName": "Architecture",
@@ -1815,62 +1841,6 @@
         ]
       }
     },
-    "ecommerce": {
-      "displayName": "Ecommerce",
-      "title": "Ecommerce Product Visual Prompts, Templates and Inspiration",
-      "description": "Explore ecommerce AI visuals — product detail images, hero banners, lifestyle shots, and flat-lay templates that lift product-page conversion.",
-      "intro": "Dive into our ecommerce-focused AI visual templates — product detail shots, hero banners, lifestyle imagery, and conversion-optimized product photography. Whether you're a DTC brand, Shopify seller, marketplace merchant, or ecommerce designer, these templates give you a fast way to produce platform-ready product visuals. Browse the examples below.",
-      "keywords": [
-        "product-photography",
-        "detail-image",
-        "hero-banner",
-        "flat-lay",
-        "shopify",
-        "dtc"
-      ],
-      "format": {
-        "lead": "Ecommerce visuals decide whether a shopper clicks and buys. Curify turns a single product photo — or just a description — into a full listing set: clean white-background hero shots, on-model and lifestyle scenes, and Amazon-style six-grid and long-scroll detail infographics. No studio, no photographer, no design team.",
-        "howToTitle": "How Curify builds your ecommerce images",
-        "howTo": [
-          "Upload your product photo, or describe the product and brand.",
-          "Pick the visual you need — hero listing shot, lifestyle scene, on-model try-on, or a six-grid detail infographic.",
-          "Curify renders the product, lighting, models, and layout to a listing-ready standard.",
-          "Download sized for Amazon, Shopify, TikTok Shop, or your own store."
-        ],
-        "usesTitle": "What you can make for your store",
-        "uses": [
-          "White-background hero listing images",
-          "Lifestyle and in-context product scenes",
-          "Amazon six-grid and long-scroll A+ detail infographics",
-          "On-model and outfit try-on shots for fashion",
-          "Promotional banners, price tags, and ad creatives",
-          "Packaging and product mockups"
-        ],
-        "faqTitle": "Ecommerce FAQ",
-        "faq": [
-          {
-            "q": "Can I use my own product photo?",
-            "a": "Yes — upload your product and Curify builds the shot, scene, or detail grid around the real item so it stays true to what you sell."
-          },
-          {
-            "q": "Are these formatted for Amazon and Shopify listings?",
-            "a": "Yes. Templates like the six-grid and long-scroll infographics follow the hero and A+ detail layouts marketplaces expect."
-          },
-          {
-            "q": "Do I need a photographer or studio?",
-            "a": "No. Curify renders the product, lighting, background, and even on-model shots from a description or your photo."
-          },
-          {
-            "q": "Can I show the product on a model?",
-            "a": "Yes — fashion and try-on templates place apparel and accessories on a model without a photoshoot."
-          },
-          {
-            "q": "Will the images match my brand?",
-            "a": "Describe your brand style, or upload artwork and packaging, and the visuals are rendered to match your colors and tone."
-          }
-        ]
-      }
-    },
     "showcase": {
       "displayName": "Showcase",
       "title": "Product Showcase Visual Prompts, Templates and Inspiration",
@@ -3181,7 +3151,7 @@
     "museum-merchandise": {
       "displayName": "Museum & Cultural Merch (文创)",
       "title": "Museum & Cultural Merch Design — AI 文创 Product Templates",
-      "description": "AI museum and cultural-creative (文创) merch design: artifact-inspired products, packaging and gift visuals across multiple styles.",
+      "description": "AI museum and cultural-creative (文创) merch design: artifact-inspired product lines, stationery mockup sets, relic infographics, intangible-heritage craft boards and gift packaging — eight generators, 89 worked examples.",
       "keywords": [
         "museum merchandise",
         "cultural creative design",
@@ -3190,7 +3160,7 @@
         "museum gift design",
         "artifact merchandise"
       ],
-      "intro": "Explore AI museum and cultural-creative (文创) merch design — artifact-inspired products, packaging and gift sets. Turn a cultural motif into a coordinated merchandise line across styles.",
+      "intro": "Museum and cultural-creative merchandise — 文创 — is the design problem of turning a single artifact or motif into a coherent product range that a museum shop can actually stock, and this collection covers that whole arc. The IP Cultural & Stationery Merchandise Mockup Set generator is the workhorse, with 54 worked examples: one motif applied across notebooks, tote bags, magnets, desk items and boxed gift sets so the line reads as one family rather than a pile of separate products. Around it sit seven more — Chinese Cultural Relics Retro Infographic and Modernized Artifact Poster for the interpretive material that explains the object a shopper is buying a version of; Intangible Cultural Heritage Craft Board for the technique behind it; National Style Character Long Scroll for narrative display pieces; Fridge Magnet and Small Merch-Item templates for the low-price impulse tier every shop needs; Museum Gift Merchandise Display for laying the finished range out as a collection board; and Chinese Ancient Bronze Cultural Creative Product Technical Design for when a piece has to move toward manufacture. It is built for museum retail teams, cultural-IP licensors and heritage brands who need a range rather than a single hero image, and for designers pitching a concept before a shop commits to tooling. Browse the examples below and start from whichever product tier you are designing.",
       "format": {
         "lead": "Design museum and cultural-creative (文创) merch with AI — artifact-inspired products, packaging and gift sets across styles.",
         "faqTitle": "Frequently Asked Questions",
@@ -3206,6 +3176,18 @@
           {
             "q": "Can I use these for a museum shop or brand?",
             "a": "Yes — build a cohesive cultural-creative merchandise range for retail, gifting and cultural IP."
+          },
+          {
+            "q": "What is 文创 (cultural-creative) merchandise?",
+            "a": "Product designed around a museum artifact, motif or cultural technique — the object is reinterpreted as something sellable (stationery, textiles, magnets, gift sets) while keeping a visible link to the original."
+          },
+          {
+            "q": "Can I design around a real museum artifact?",
+            "a": "The artifact itself is usually long out of copyright, but a specific museum's photography, catalogue text and branding are not. Design from the motif and shoot or generate your own visuals; clear anything that reproduces a particular institution's assets."
+          },
+          {
+            "q": "Do these produce factory-ready files?",
+            "a": "No — these are design and mockup templates. A print vendor needs a production file with a cut line, bleed and CMYK; see the die-cut sticker and acrylic export tools for that step."
           }
         ]
       }

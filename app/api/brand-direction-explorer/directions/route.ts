@@ -9,6 +9,7 @@ import {
   generateCreativeDirections,
   type GenerateDirectionsFailureKind,
 } from "@/lib/brandDirectionOpenAI";
+import { matchImagesForDirections } from "@/lib/direction_image_match";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -137,7 +138,23 @@ export async function POST(req: Request) {
   );
 
   if (result.success) {
-    return NextResponse.json({ success: true, directions: result.directions }, { status: 200 });
+    // Attach the closest existing gallery images per direction as a preview
+    // moodboard. Anchored on the brief's PRODUCT/SUBJECT words (so a coffee brand
+    // pulls coffee/brand/packaging visuals, not off-subject style matches), with
+    // the direction's styleTags as the secondary signal and a global dedup so the
+    // three directions get distinct sets.
+    const fv = fieldValues as Record<string, string>;
+    const contextText = [
+      brandCase.title?.en,
+      brandCase.description?.en,
+      brandCase.baseBrief,
+      ...Object.values(fv),
+    ]
+      .filter(Boolean)
+      .join(" ");
+    const matched = matchImagesForDirections(result.directions, { contextText, perDirection: 4 });
+    const directions = result.directions.map((d, i) => ({ ...d, matchedImages: matched[i] }));
+    return NextResponse.json({ success: true, directions }, { status: 200 });
   }
 
   const status = STATUS_BY_FAILURE_KIND[result.kind] ?? 502;

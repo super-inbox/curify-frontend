@@ -58,7 +58,23 @@ export const SCORER_WEIGHTS = {
   family_saturation_threshold: 6,
   family_saturation_penalty_per_excess: -6,
   family_saturation_penalty_cap: -30,
+
+  // Intent-alignment (2026-08): a record that keyword-matches but serves a
+  // DIFFERENT intent than the query (an education/vocab/MBTI/language card
+  // surfacing on a design/commerce query like "coffee shop") is demoted. Only
+  // applies when the query itself is NOT educational — so education queries are
+  // never penalized. Sized to exceed whole_token_title (18) so a cross-intent
+  // record falls below on-intent ones without hard-filtering (soft demote).
+  cross_intent_education_penalty: -20,
+  off_topic_penalty_per: -6, // per off-topic tag/topic (mbti/vocab/dialogue/…), capped at 3
+  off_topic_penalty_max_hits: 3,
+  intent_aligned_boost: 4, // small nudge for on-intent (merch/print-art/social/presentation)
 } as const;
+
+// Feature flag for the intent-alignment re-rank term. Flip to false to fully
+// disable (scoreRecord then adds 0). Default on — validated on the 137-query
+// eval set (design noise@8 13.6%→0, education 0%→0, other 55%→4.4%).
+export const INTENT_RERANK_ENABLED = true;
 
 // Minimum final_score for a record to be included in the ranked result
 // set AT ALL when the original (non-rewrite) query already produced at

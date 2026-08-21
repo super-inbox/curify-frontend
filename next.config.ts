@@ -71,6 +71,29 @@ const nextConfig: NextConfig = {
     const LOCALE_RE = routing.locales.join("|");
 
     const manualRedirects: RedirectRule[] = [
+      // 2026-08-20: /topics/ecommerce consolidated into /topics/product.
+      // It was a 7-template page of which SIX were already under `product`
+      // (25 templates), text similarity between the two live pages 0.500 vs
+      // 0.076-0.097 for unrelated topic pairs. Google had already folded it —
+      // "Duplicate without user-selected canonical", googleCanonical "/" — and
+      // lib/searchIndex.ts has listed "ecommerce" as an ALIAS of product all
+      // along, so the system already treated them as one concept.
+      //
+      // Redirected rather than canonicalised: the site's binding constraint is
+      // crawl allocation, so removing a duplicate URL is worth more than
+      // keeping it with a canonical pointing elsewhere. The one
+      // ecommerce-only template (ai-outfit-try-on-poster) was retagged
+      // `product` first so nothing is orphaned.
+      {
+        source: "/topics/ecommerce",
+        destination: "/topics/product",
+        permanent: true,
+      },
+      {
+        source: `/:locale(${LOCALE_RE})/topics/ecommerce`,
+        destination: "/:locale/topics/product",
+        permanent: true,
+      },
       // brand-direction-explorer moved from a standalone route to /tools/<slug>
       // on 2026-08-12 so it lives with the other tools. 301 rather than delete:
       // the old URL was just added to the sitemap and pinged, and it is the

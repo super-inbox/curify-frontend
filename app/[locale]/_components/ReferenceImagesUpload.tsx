@@ -71,8 +71,14 @@ export default function ReferenceImagesUpload({
 
       <div className="mt-2 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {slots.map((url, i) => (
-          <div key={`${url || "empty"}-${i}`}>
+          // Key by INDEX only. Keying on the url remounted the slot the moment
+          // an upload landed — the child holds its preview in internal state,
+          // so the remount wiped it and the thumbnail vanished while the
+          // counter still read n/5. Passing `value` makes the preview follow
+          // the parent, which also keeps removal correct.
+          <div key={i}>
             <ReferenceImageUpload
+              value={url || null}
               variant="compact"
               label={i === 0 ? "Base" : `Ref ${i + 1}`}
               hint={i === 0 ? "primary" : "optional"}

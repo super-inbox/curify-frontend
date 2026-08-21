@@ -39,13 +39,39 @@
     },
     "design": {
       "title": "Invitations Visuelles, Modèles et Inspirations en Design",
-      "description": "Découvrez des visuels AI liés au design, des modèles créatifs et des inspirations pour le branding, les mises en page, les concepts visuels et les explorations esthétiques.",
-      "intro": "Explorez notre galerie soigneusement sélectionnée de visuels d'IA liés au design, présentant une collection diversifiée de modèles, d'exemples et d'incitations adaptés aux créateurs, éducateurs et designers. Que vous cherchiez de l'inspiration pour le branding, des idées de mise en page ou des concepts visuels uniques, cette collection a quelque chose pour tout le monde. Plongez dans les modèles et exemples ci-dessous pour stimuler votre créativité et élever vos projets de design.",
       "keywords": [
         "art",
         "design graphique"
       ],
-      "displayName": "Affiches & Designs"
+      "displayName": "Affiches & Designs",
+      "description": "Modèles de conception IA pour affiches, logos, maquettes, planches d'autocollants, tableaux de présentation et emballages — 84 générateurs couvrant tout le parcours d'un concept visuel à une mise en page prête pour le produit.",
+      "intro": "Le design est la plus vaste collection sur Curify — 84 générateurs couvrant le travail entre avoir une idée et avoir quelque chose que vous pouvez imprimer, publier ou remettre à un client. Elle se divise selon les lignes sur lesquelles les designers travaillent réellement. Affiches et mise en page : affiches de confrontation, art de score illustré, tableaux de présentation thématique et compositions éditoriales où la hiérarchie et la typographie font le travail. Marque et identité : ensembles de variantes de logos qui maintiennent une marque à travers les poids et les verrouillages, et tableaux de présentation qui montrent un concept de la manière dont un client s'attend à le revoir. Personnage et merchandising : feuilles d'expression qui maintiennent un personnage cohérent à travers les poses, packs d'autocollants, et maquettes de boîtes cadeaux et de papeterie qui placent l'art sur des surfaces de produits réels. Chaque générateur prend un brief ou une image de référence et renvoie un résultat éditable, de sorte qu'un seul modèle devient une série en échangeant le sujet, la palette ou le format plutôt que de recommencer. Si vous recherchez une tranche plus étroite, les collections plus ciblées se trouvent sous celle-ci — affiches, maquettes, merchandising, composition, éclairage et toile numérique ont chacun leur propre page. Parcourez les exemples ci-dessous et commencez par celui qui correspond au livrable que vous devez à quelqu'un.",
+      "format": {
+        "lead": "Concevez avec l'IA à travers des affiches, logos, maquettes, fiches de personnages et tableaux de présentation — 84 générateurs modifiables.",
+        "faqTitle": "Questions Fréquemment Posées",
+        "faq": [
+          {
+            "q": "Quels types de design puis-je créer ici ?",
+            "a": "Affiches et mises en page éditoriales, variantes de logo et d'identité de marque, feuilles d'expression de personnages, packs d'autocollants, maquettes de produits et d'emballages, et planches de présentation. Chacun est un générateur distinct avec sa propre structure plutôt qu'une seule boîte de saisie."
+          },
+          {
+            "q": "Ai-je besoin d'un brief ou d'une image de référence ?",
+            "a": "Les deux. Certains générateurs fonctionnent à partir d'un brief écrit, d'autres prennent une image de référence — un personnage, une photo de produit, un logo — et l'appliquent. Le modèle vous indique ce qu'il attend avant de commencer."
+          },
+          {
+            "q": "Puis-je créer toute une série au lieu d'une seule image ?",
+            "a": "C'est le but des modèles. Changez le sujet, la palette ou le format et la logique de mise en page reste, de sorte qu'un modèle produit un ensemble cohérent plutôt que cinq images sans rapport."
+          },
+          {
+            "q": "Les résultats sont-ils prêts à être imprimés ?",
+            "a": "Ce sont des sorties de conception et de maquette. Une imprimante a besoin d'un fichier de production avec une ligne de découpe, un fond perdu et CMJN — consultez les outils d'exportation d'autocollants découpés et d'acrylique pour cette étape."
+          },
+          {
+            "q": "Où puis-je aller pour un sujet plus restreint ?",
+            "a": "Affiches, maquettes, produits dérivés, composition, éclairage et toile numérique ont chacun une collection dédiée avec les mêmes modèles filtrés."
+          }
+        ]
+      }
     },
     "nature": {
       "displayName": "Nature",
@@ -1815,62 +1841,6 @@
         ]
       }
     },
-    "ecommerce": {
-      "displayName": "Ecommerce",
-      "title": "Ecommerce Product Visual Prompts, Templates and Inspiration",
-      "description": "Explore ecommerce AI visuals — product detail images, hero banners, lifestyle shots, and flat-lay templates that lift product-page conversion.",
-      "intro": "Dive into our ecommerce-focused AI visual templates — product detail shots, hero banners, lifestyle imagery, and conversion-optimized product photography. Whether you're a DTC brand, Shopify seller, marketplace merchant, or ecommerce designer, these templates give you a fast way to produce platform-ready product visuals. Browse the examples below.",
-      "keywords": [
-        "product-photography",
-        "detail-image",
-        "hero-banner",
-        "flat-lay",
-        "shopify",
-        "dtc"
-      ],
-      "format": {
-        "lead": "Les visuels e-commerce décident si un acheteur clique et achète. Curify transforme une seule photo de produit — ou simplement une description — en un ensemble complet d'annonces : des images héroïques sur fond blanc épuré, des scènes avec modèle et de style de vie, et des infographies détaillées de type Amazon à six grilles et à défilement long. Pas de studio, pas de photographe, pas d'équipe de design.",
-        "howToTitle": "Comment Curify crée vos images e-commerce",
-        "howTo": [
-          "Téléchargez la photo de votre produit, ou décrivez le produit et la marque.",
-          "Choisissez le visuel dont vous avez besoin — image héroïque d'annonce, scène de style de vie, essai sur modèle, ou une infographie détaillée à six grilles.",
-          "Curify rend le produit, l'éclairage, les modèles et la mise en page selon un standard prêt pour l'annonce.",
-          "Téléchargez au format adapté pour Amazon, Shopify, TikTok Shop, ou votre propre boutique."
-        ],
-        "usesTitle": "Ce que vous pouvez créer pour votre boutique",
-        "uses": [
-          "Images héroïques d'annonce sur fond blanc",
-          "Scènes de produit de style de vie et en contexte",
-          "Infographies détaillées A+ à six grilles et à défilement long pour Amazon",
-          "Photos d'essai sur modèle et de tenues pour la mode",
-          "Bannières promotionnelles, étiquettes de prix et créatifs publicitaires",
-          "Mockups d'emballages et de produits"
-        ],
-        "faqTitle": "FAQ E-commerce",
-        "faq": [
-          {
-            "q": "Puis-je utiliser ma propre photo de produit ?",
-            "a": "Oui — téléchargez votre produit et Curify construit la photo, la scène ou la grille de détails autour de l'article réel afin qu'il reste fidèle à ce que vous vendez."
-          },
-          {
-            "q": "Sont-ils formatés pour les annonces Amazon et Shopify ?",
-            "a": "Oui. Des modèles comme les infographies à six grilles et à défilement long suivent les mises en page de détails héroïques et A+ que les marketplaces attendent."
-          },
-          {
-            "q": "Ai-je besoin d'un photographe ou d'un studio ?",
-            "a": "Non. Curify rend le produit, l'éclairage, l'arrière-plan, et même les prises de vue sur modèle à partir d'une description ou de votre photo."
-          },
-          {
-            "q": "Puis-je montrer le produit sur un modèle ?",
-            "a": "Oui — les modèles de mode et d'essai placent les vêtements et accessoires sur un modèle sans séance photo."
-          },
-          {
-            "q": "Les images correspondront-elles à ma marque ?",
-            "a": "Décrivez le style de votre marque, ou téléchargez des illustrations et des emballages, et les visuels seront rendus pour correspondre à vos couleurs et à votre ton."
-          }
-        ]
-      }
-    },
     "showcase": {
       "displayName": "Showcase",
       "title": "Product Showcase Visual Prompts, Templates and Inspiration",
@@ -3186,7 +3156,6 @@
     "museum-merchandise": {
       "displayName": "Marchandises de Musées & Culturelles (文创)",
       "title": "Conception de Marchandises de Musées & Culturelles — Modèles de Produits IA 文创",
-      "description": "Conception de marchandises de musée et créatives culturelles (文创) par IA : produits inspirés d'artefacts, emballages et visuels de cadeaux dans plusieurs styles.",
       "keywords": [
         "marchandise de musée",
         "design créatif culturel",
@@ -3195,25 +3164,38 @@
         "design de cadeaux de musée",
         "marchandise d'artefact"
       ],
-      "intro": "Découvrez la conception de marchandises de musée et créatives culturelles (文创) par IA — produits inspirés d'artefacts, emballages et ensembles de cadeaux. Transformez un motif culturel en une ligne de marchandises coordonnée à travers les styles.",
       "format": {
-        "lead": "Concevez des marchandises de musée et créatives culturelles (文创) avec IA — produits inspirés d'artefacts, emballages et ensembles de cadeaux dans plusieurs styles.",
         "faqTitle": "Questions Fréquemment Posées",
+        "lead": "Concevez des produits dérivés de musées et culturels-créatifs (文创) avec l'IA — produits inspirés d'artefacts, emballages et coffrets cadeaux dans divers styles.",
         "faq": [
           {
-            "q": "Comment concevoir des marchandises 文创 / de musée avec IA ?",
-            "a": "Commencez par un motif culturel ou un artefact et choisissez un style ; générez une ligne de marchandises coordonnée — impressions, papeterie, emballages et cadeaux."
+            "q": "Comment concevoir des produits 文创 / de musée avec l'IA ?",
+            "a": "Commencez par un motif ou un artefact culturel et choisissez un style ; générez une ligne de marchandises coordonnée — impressions, papeterie, emballages et cadeaux."
           },
           {
-            "q": "Quels produits créatifs culturels puis-je créer ?",
-            "a": "Impressions inspirées d'artefacts, carnets, sacs fourre-tout, aimants, ensembles de cadeaux en boîte et emballages partageant un même langage de design."
+            "q": "Quels produits culturels-créatifs puis-je créer ?",
+            "a": "Impressions inspirées d'artefacts, carnets, sacs fourre-tout, aimants, coffrets cadeaux et emballages partageant un même langage de design."
           },
           {
             "q": "Puis-je les utiliser pour une boutique de musée ou une marque ?",
-            "a": "Oui — construisez une gamme de marchandises culturelles cohérente pour la vente au détail, les cadeaux et la propriété intellectuelle culturelle."
+            "a": "Oui — créez une gamme de produits culturels-créatifs cohérente pour la vente au détail, les cadeaux et la propriété intellectuelle culturelle."
+          },
+          {
+            "q": "Qu'est-ce que le merchandising 文创 (culturel-créatif) ?",
+            "a": "Produit conçu autour d'un artefact de musée, d'un motif ou d'une technique culturelle — l'objet est réinterprété comme quelque chose de vendable (papeterie, textiles, aimants, ensembles cadeaux) tout en gardant un lien visible avec l'original."
+          },
+          {
+            "q": "Puis-je concevoir autour d'un véritable artefact de musée ?",
+            "a": "L'artefact lui-même est généralement hors droits d'auteur depuis longtemps, mais la photographie, le texte du catalogue et la marque d'un musée spécifique ne le sont pas. Concevez à partir du motif et réalisez ou générez vos propres visuels ; clarifiez tout ce qui reproduit les actifs d'une institution particulière."
+          },
+          {
+            "q": "Est-ce que ceux-ci produisent des fichiers prêts pour l'usine ?",
+            "a": "Non — ce sont des modèles de conception et de maquette. Un fournisseur d'impression a besoin d'un fichier de production avec une ligne de coupe, une marge de fond perdu et en CMJN ; consultez les outils d'exportation d'autocollants découpés et d'acrylique pour cette étape."
           }
         ]
-      }
+      },
+      "description": "Conception de marchandises muséales et culturelles-créatives (文创) par IA : lignes de produits inspirées d'artefacts, ensembles de maquettes de papeterie, infographies de reliques, panneaux d'artisanat du patrimoine immatériel et emballages cadeaux — huit générateurs, 89 exemples travaillés.",
+      "intro": "Les produits dérivés des musées et culturels-créatifs — 文创 — représentent le défi de conception consistant à transformer un seul artefact ou motif en une gamme de produits cohérente qu'une boutique de musée peut réellement stocker, et cette collection couvre tout cet arc. Le générateur de maquettes IP Cultural & Stationery Merchandise Mockup Set est le cheval de bataille, avec 54 exemples travaillés : un motif appliqué sur des carnets, des sacs fourre-tout, des aimants, des articles de bureau et des coffrets cadeaux pour que la ligne soit perçue comme une famille plutôt qu'un tas de produits séparés. Autour de cela, sept autres éléments — Infographie rétro des reliques culturelles chinoises et Affiche d'artefact modernisé pour le matériel interprétatif qui explique l'objet dont un acheteur acquiert une version ; Tableau d'artisanat du patrimoine culturel immatériel pour la technique qui le sous-tend ; Long rouleau de caractères de style national pour les pièces d'exposition narratives ; Modèles d'aimants de réfrigérateur et de petits articles de marchandise pour le niveau d'achat impulsif à bas prix dont chaque boutique a besoin ; Présentation de produits cadeaux de musée pour disposer la gamme finie comme un tableau de collection ; et Conception technique de produits créatifs culturels en bronze ancien chinois pour quand une pièce doit évoluer vers la fabrication. Il est conçu pour les équipes de vente au détail de musées, les licenciés de propriété intellectuelle culturelle et les marques patrimoniales qui ont besoin d'une gamme plutôt que d'une seule image phare, et pour les designers présentant un concept avant qu'une boutique ne s'engage dans l'outillage. Parcourez les exemples ci-dessous et commencez par le niveau de produit que vous concevez."
     },
     "fruit-drinks": {
       "displayName": "Photographie de Boissons aux Fruits",

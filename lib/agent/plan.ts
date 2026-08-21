@@ -175,6 +175,49 @@ async function expandWorkflowPlan(
   };
 }
 
+/**
+ * Try-on / lookbook posters are a commercial SET. Returns the distinct
+ * directions to generate, or a single empty entry when the ask is a plain edit.
+ *
+ * The three treatments are standard ecommerce poster framings, kept generic so
+ * they read as art direction rather than a fixed template — subject and garment
+ * still come from the user's own references, and each prompt says so.
+ */
+// Keyed on TRY-ON, not on "poster". Matching 海报/poster anywhere fired on
+// "把海报的标题放大一点" — a plain edit — and would have tripled the user's
+// credits for a one-line change. A try-on request is the commercial deliverable
+// where three directions is the norm; editing an existing poster is not.
+const POSTER_SET_RE = /\btry[\s-]?on\b|\blookbook\b|试穿|穿搭/i;
+
+function posterSetDirections(
+  query: string,
+): Array<{ label: string; reason: string; prompt: string }> {
+  if (!POSTER_SET_RE.test(query)) return [{ label: "", reason: "", prompt: "" }];
+  return [
+    {
+      label: "studio",
+      reason: "Clean studio direction — the safe ecommerce hero.",
+      prompt:
+        "Direction 1 of 3 — STUDIO: seamless neutral backdrop, even soft light, " +
+        "product-forward framing. Keep the supplied person and garment exact.",
+    },
+    {
+      label: "lifestyle",
+      reason: "Lifestyle direction — context and mood.",
+      prompt:
+        "Direction 2 of 3 — LIFESTYLE: real-world setting, natural light, shallow " +
+        "depth of field. Keep the supplied person and garment exact.",
+    },
+    {
+      label: "editorial",
+      reason: "Editorial direction — stronger styling for campaign use.",
+      prompt:
+        "Direction 3 of 3 — EDITORIAL: bolder composition, considered colour and " +
+        "negative space for copy. Keep the supplied person and garment exact.",
+    },
+  ];
+}
+
 export async function buildAgentPlan(
   query: string,
   opts: {
@@ -245,6 +288,33 @@ export async function buildAgentPlan(
 
   // Editing an image the user already has — freeform image-to-image.
   if (deliverable.type === "edit") {
+    // A commercial try-on / lookbook poster is a SET, not one image: three
+    // directions to choose between, the same "offer three" pattern the
+    // direction step already uses. One poster is not a usable commercial
+    // deliverable.
+    //
+    // Deliberately narrow — only the poster/lookbook shape expands. A plain
+    // "make the title bigger" stays one step, because tripling a routine edit
+    // would triple the user's credits for nothing.
+    const directions = posterSetDirections(query);
+    if (directions.length > 1) {
+      const steps: PlanStep[] = directions.map((d, i) => ({
+        n: i + 1,
+        tool_id: "generate_freeform",
+        label: `${TOOLS_BY_ID.generate_freeform.label} — ${d.label}`,
+        reason: d.reason,
+        prompt: `${query}\n\n${d.prompt}`,
+      }));
+      return {
+        query,
+        routing,
+        steps,
+        gaps: collectGaps(steps),
+        notice:
+          `Commercial poster — generating ${directions.length} distinct directions ` +
+          `so there is something to choose between (${directions.length} images).`,
+      };
+    }
     const steps: PlanStep[] = [
       {
         n: 1,

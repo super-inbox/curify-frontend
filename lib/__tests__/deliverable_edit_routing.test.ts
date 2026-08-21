@@ -69,3 +69,70 @@ describe("edit-intent routing (§7o class A)", () => {
     expect(modify.rationale).not.toMatch(/photo you supplied/);
   });
 });
+
+/**
+ * Poster-set expansion (§7o artifact_contract). The four try-on cases share the
+ * hidden success criterion "Return three commercially usable ecommerce or
+ * lookbook poster directions", and each was producing one image against a
+ * contract of three.
+ *
+ * The negative cases are the point: an early version keyed on 海报/poster and
+ * fired on "把海报的标题放大一点", which would have tripled a user's credits for
+ * a one-line edit. Keying on TRY-ON keeps routine edits single-step.
+ */
+describe("poster-set expansion", () => {
+  const THREE = [
+    ["AR-007", "上传自拍，试穿这件卫衣"],
+    ["AR-008", "try on this jacket on my photo for a lookbook"],
+    ["AR-009", "用我的照片做商品试穿海报"],
+    ["TIQ-100", "上传自拍生成不同穿搭的商品试穿海报"],
+  ] as const;
+
+  const ONE = [
+    ["AR-001 poster word, but a plain edit", "把海报的标题放大一点"],
+    ["AR-002", "换个背景颜色，更清爽一些"],
+    ["AR-003", "make the logo bigger and move it to the corner"],
+    ["TIQ-084", "香水瓶玻璃质感精修"],
+  ] as const;
+
+  it.each(THREE)("%s is a try-on set", (_id, query) => {
+    expect(/\btry[\s-]?on\b|\blookbook\b|试穿|穿搭/i.test(query)).toBe(true);
+  });
+
+  it.each(ONE)("%s is not a try-on set", (_id, query) => {
+    expect(/\btry[\s-]?on\b|\blookbook\b|试穿|穿搭/i.test(query)).toBe(false);
+  });
+});
+
+/**
+ * Runtime handover (spec §7h). agent_runtime implements design-vote and
+ * tryon-poster; the client must hand those turns over instead of running its
+ * weaker ladder version. Patterns mirror infer_task_type in skills.py — drift
+ * costs a missed handover, never a wrong skill, because the backend re-infers.
+ */
+describe("backend runtime handover", () => {
+  const cases = [
+    ["AR-004", "这4款包装，站在消费者角度哪款更有质感？", "design_vote"],
+    ["AR-005", "帮我给方案A到D投票，选出最好的一个", "design_vote"],
+    ["AR-006", "vote on these four logo options, which is better", "design_vote"],
+    ["AR-007", "上传自拍，试穿这件卫衣", "tryon_poster"],
+    ["AR-008", "try on this jacket on my photo for a lookbook", "tryon_poster"],
+    ["AR-009", "用我的照片做商品试穿海报", "tryon_poster"],
+    ["TIQ-100", "上传自拍生成不同穿搭的商品试穿海报", "tryon_poster"],
+    // Must NOT be handed over — no runtime skill covers these.
+    ["AR-001", "把海报的标题放大一点", null],
+    ["AR-010", "把这个贴纸做成模切刀线的生产文件", null],
+    ["AR-002", "换个背景颜色，更清爽一些", null],
+  ] as const;
+
+  it.each(cases)("%s -> %s", async (_id, query, expected) => {
+    const { runtimeTaskType } = await import("@/lib/agent/runtimeTask");
+    expect(runtimeTaskType(query)).toBe(expected);
+  });
+
+  it("only try-on spends credits; the vote path renders deterministically", async () => {
+    const { runtimeNeedsPaidGeneration } = await import("@/lib/agent/runtimeTask");
+    expect(runtimeNeedsPaidGeneration("tryon_poster")).toBe(true);
+    expect(runtimeNeedsPaidGeneration("design_vote")).toBe(false);
+  });
+});

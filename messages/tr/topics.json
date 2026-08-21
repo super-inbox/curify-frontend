@@ -39,13 +39,39 @@
     },
     "design": {
       "title": "Görsel İpuçları, Şablonlar ve İlham ile Tasarım",
-      "description": "Markalaşma, düzenler, görsel kavramlar ve estetik keşifler için tasarım ile ilgili AI görselleri, yaratıcı şablonlar ve ilham keşfedin.",
-      "intro": "Yaratıcılar, eğitimciler ve tasarımcılar için özel olarak hazırlanmış tasarım odaklı AI görsellerinin yer aldığı küratörlü galeriimizi keşfedin. Markalaşma, düzen fikirleri veya benzersiz görsel konseptler için ilham arıyorsanız, bu koleksiyon herkes için bir şeyler sunuyor. Yaratıcılığınızı ateşlemek ve tasarım projelerinizi yükseltmek için aşağıdaki şablonları ve örnekleri keşfedin.",
       "keywords": [
         "sanat",
         "grafik tasarım"
       ],
-      "displayName": "Afişler & Tasarımlar"
+      "displayName": "Afişler & Tasarımlar",
+      "description": "Posterler, logolar, maketler, çıkartma sayfaları, sunum panoları ve ambalajlar için AI tasarım şablonları — görsel bir konseptten ürün hazır bir düzene kadar tüm yolu kapsayan 84 jeneratör.",
+      "intro": "Tasarım, Curify'deki en geniş koleksiyondur — bir fikre sahip olmaktan, yazdırabileceğiniz, yayınlayabileceğiniz veya bir müşteriye verebileceğiniz bir şeye sahip olmaya kadar olan çalışmayı kapsayan 84 jeneratör. Tasarımcıların gerçekten çalıştığı çizgiler boyunca ayrılır. Afişler ve düzen: eşleşme afişleri, illüstrasyonlu skor sanatı, tema genel bakış panoları ve hiyerarşi ve tipografinin işi yaptığı editoryal kompozisyonlar. Marka ve kimlik: bir markayı ağırlıklar ve kilit düzenlemeler arasında tutan logo varyant setleri ve bir konsepti müşterinin incelemesini beklediği şekilde gösteren sunum panoları. Karakter ve ürün: bir karakteri pozlar arasında tutarlı tutan ifade sayfaları, çıkartma paketleri ve sanatı gerçek ürün yüzeylerine yerleştiren hediye kutusu ve kırtasiye maketleri. Her jeneratör, bir özet veya referans görüntü alır ve düzenlenebilir bir sonuç döndürür, böylece tek bir şablon, konuyu, paleti veya formatı değiştirerek bir dizi haline gelir, baştan başlamadan. Daha dar bir dilim arıyorsanız, daha sıkı koleksiyonlar bunun altında yer alır — afişler, maketler, ürün, kompozisyon, aydınlatma ve dijital tuvalin her biri kendi sayfasına sahiptir. Aşağıdaki örneklere göz atın ve birine borçlu olduğunuz teslimata uyan herhangi birinden başlayın.",
+      "format": {
+        "lead": "Afişler, logolar, maketler, karakter sayfaları ve sunum panoları üzerinde AI ile tasarım yapın — 84 düzenlenebilir oluşturucu.",
+        "faqTitle": "Sıkça Sorulan Sorular",
+        "faq": [
+          {
+            "q": "Burada ne tür tasarımlar yapabilirim?",
+            "a": "Posterler ve editoryal düzenler, logo ve marka kimliği varyantları, karakter ifade sayfaları, çıkartma paketleri, ürün ve ambalaj maketleri ve sunum panoları. Her biri, tek bir komut kutusu yerine kendi yapısına sahip ayrı bir üreticidir."
+          },
+          {
+            "q": "Bir brief veya referans görseline ihtiyacım var mı?",
+            "a": "Her ikisi de olabilir. Bazı jeneratörler yazılı bir brifingden çalışır, diğerleri ise bir referans görüntü — bir karakter, bir ürün fotoğrafı, bir logo — alır ve uygular. Şablon, başlamadan önce hangisini beklediğini size söyler."
+          },
+          {
+            "q": "Tek bir resim yerine bir dizi oluşturabilir miyim?",
+            "a": "Bu, şablonların amacıdır. Konuyu, paleti veya formatı değiştirin ve düzen mantığı korunur, böylece bir şablon beş ilgisiz görüntü yerine tutarlı bir set üretir."
+          },
+          {
+            "q": "Sonuçlar baskıya hazır mı?",
+            "a": "Bunlar tasarım ve maket çıktılarıdır. Bir yazıcının, kesim çizgisi, taşma payı ve CMYK içeren bir üretim dosyasına ihtiyacı vardır — bu adım için kalıp kesim çıkartma ve akrilik dışa aktarma araçlarına bakın."
+          },
+          {
+            "q": "Daha dar bir konu için nereye gitmeliyim?",
+            "a": "Posterler, maketler, ürünler, kompozisyon, aydınlatma ve dijital tuval, aynı şablonların filtrelendiği özel bir koleksiyona sahiptir."
+          }
+        ]
+      }
     },
     "nature": {
       "displayName": "Doğa",
@@ -1815,62 +1841,6 @@
         ]
       }
     },
-    "ecommerce": {
-      "displayName": "Ecommerce",
-      "title": "Ecommerce Product Visual Prompts, Templates and Inspiration",
-      "description": "Explore ecommerce AI visuals — product detail images, hero banners, lifestyle shots, and flat-lay templates that lift product-page conversion.",
-      "intro": "Dive into our ecommerce-focused AI visual templates — product detail shots, hero banners, lifestyle imagery, and conversion-optimized product photography. Whether you're a DTC brand, Shopify seller, marketplace merchant, or ecommerce designer, these templates give you a fast way to produce platform-ready product visuals. Browse the examples below.",
-      "keywords": [
-        "product-photography",
-        "detail-image",
-        "hero-banner",
-        "flat-lay",
-        "shopify",
-        "dtc"
-      ],
-      "format": {
-        "lead": "E-ticaret görselleri, bir alıcının tıklayıp satın alıp almayacağına karar verir. Curify, tek bir ürün fotoğrafını — veya sadece bir açıklamayı — eksiksiz bir liste setine dönüştürür: temiz beyaz arka planlı ana görseller, model üzerinde ve yaşam tarzı sahneleri ve Amazon tarzı altı ızgaralı ve uzun kaydırmalı detay infografikleri. Stüdyo yok, fotoğrafçı yok, tasarım ekibi yok.",
-        "howToTitle": "Curify E-ticaret Görsellerinizi Nasıl Oluşturur",
-        "howTo": [
-          "Ürün fotoğrafınızı yükleyin veya ürünü ve markayı açıklayın.",
-          "İhtiyacınız olan görseli seçin — ana liste çekimi, yaşam tarzı sahnesi, model üzerinde deneme veya altı ızgaralı detay infografiği.",
-          "Curify, ürünü, aydınlatmayı, modelleri ve düzeni liste hazır bir standarda göre oluşturur.",
-          "Amazon, Shopify, TikTok Shop veya kendi mağazanız için boyutlandırılmış olarak indirin."
-        ],
-        "usesTitle": "Mağazanız İçin Neler Yapabilirsiniz",
-        "uses": [
-          "Beyaz arka planlı ana liste görselleri",
-          "Yaşam tarzı ve bağlam içi ürün sahneleri",
-          "Amazon altı ızgaralı ve uzun kaydırmalı A+ detay infografikleri",
-          "Moda için model üzerinde ve kıyafet deneme çekimleri",
-          "Promosyon bannerları, fiyat etiketleri ve reklam görselleri",
-          "Ambalaj ve ürün maketleri"
-        ],
-        "faqTitle": "E-ticaret SSS",
-        "faq": [
-          {
-            "q": "Kendi ürün fotoğrafımı kullanabilir miyim?",
-            "a": "Evet — ürününüzü yükleyin ve Curify, çekimi, sahneyi veya detay ızgarasını gerçek ürün etrafında oluşturur, böylece sattığınız şeye sadık kalır."
-          },
-          {
-            "q": "Bunlar Amazon ve Shopify listelemeleri için biçimlendirilmiş mi?",
-            "a": "Evet. Altı ızgaralı ve uzun kaydırmalı infografikler gibi şablonlar, pazar yerlerinin beklediği ana ve A+ detay düzenlerini takip eder."
-          },
-          {
-            "q": "Bir fotoğrafçıya veya stüdyoya ihtiyacım var mı?",
-            "a": "Hayır. Curify, ürünü, aydınlatmayı, arka planı ve hatta model üzerindeki çekimleri bir açıklamadan veya fotoğrafınızdan oluşturur."
-          },
-          {
-            "q": "Ürünü bir model üzerinde gösterebilir miyim?",
-            "a": "Evet — moda ve deneme şablonları, giyim ve aksesuarları bir fotoğraf çekimine gerek kalmadan bir model üzerine yerleştirir."
-          },
-          {
-            "q": "Görseller markama uygun olacak mı?",
-            "a": "Marka tarzınızı açıklayın veya tasarım ve ambalaj yükleyin, görseller renklerinize ve tonunuza uyacak şekilde oluşturulur."
-          }
-        ]
-      }
-    },
     "showcase": {
       "displayName": "Showcase",
       "title": "Product Showcase Visual Prompts, Templates and Inspiration",
@@ -3186,7 +3156,6 @@
     "museum-merchandise": {
       "displayName": "Müze & Kültürel Ürünler (文创)",
       "title": "Müze & Kültürel Ürün Tasarımı — AI 文创 Ürün Şablonları",
-      "description": "Yapay zeka müze ve kültürel yaratıcı (文创) ürün tasarımı: eserlerden ilham alan ürünler, ambalaj ve hediye görselleri çeşitli stillerde.",
       "keywords": [
         "müze ürünleri",
         "kültürel yaratıcı tasarım",
@@ -3195,25 +3164,38 @@
         "müze hediye tasarımı",
         "eser ürünleri"
       ],
-      "intro": "Yapay zeka müze ve kültürel yaratıcı (文创) ürün tasarımını keşfedin — eserlerden ilham alan ürünler, ambalaj ve hediye setleri. Bir kültürel motifin çeşitli stillerde uyumlu bir ürün serisine dönüşmesini sağlayın.",
       "format": {
-        "lead": "Yapay zeka ile müze ve kültürel yaratıcı (文创) ürün tasarlayın — eserlerden ilham alan ürünler, ambalaj ve hediye setleri çeşitli stillerde.",
         "faqTitle": "Sıkça Sorulan Sorular",
+        "lead": "Tasarım müzesi ve kültürel-yaratıcı (文创) ürünleri AI ile — eserlerden ilham alan ürünler, ambalajlar ve hediye setleri çeşitli stillerde.",
         "faq": [
           {
-            "q": "Yapay zeka ile nasıl 文创 / müze ürünleri tasarlarım?",
-            "a": "Bir kültürel motif veya eser ile başlayın ve bir stil seçin; uyumlu bir ürün serisi oluşturun — baskılar, kırtasiye, ambalaj ve hediyeler."
+            "q": "AI ile 文创 / müze ürünlerini nasıl tasarlarım?",
+            "a": "Kültürel bir motif veya eserden başlayın ve bir stil seçin; uyumlu bir ürün serisi oluşturun — baskılar, kırtasiye, ambalaj ve hediyeler."
           },
           {
-            "q": "Hangi kültürel yaratıcı ürünleri oluşturabilirim?",
-            "a": "Eserlerden ilham alan baskılar, defterler, çanta, magnetler, kutulu hediye setleri ve tek bir tasarım dili paylaşan ambalajlar."
+            "q": "Hangi kültürel-yaratıcı ürünleri oluşturabilirim?",
+            "a": "Eserlerden ilham alan baskılar, defterler, bez çantalar, mıknatıslar, kutulu hediye setleri ve tek bir tasarım dili paylaşan ambalajlar."
           },
           {
-            "q": "Bunları bir müze dükkanı veya marka için kullanabilir miyim?",
-            "a": "Evet — perakende, hediye verme ve kültürel IP için uyumlu bir kültürel yaratıcı ürün yelpazesi oluşturun."
+            "q": "Bunları bir müze mağazası veya marka için kullanabilir miyim?",
+            "a": "Evet — perakende, hediye ve kültürel IP için uyumlu bir kültürel-yaratıcı ürün yelpazesi oluşturun."
+          },
+          {
+            "q": "文创 (kültürel-yaratıcı) ürünler nedir?",
+            "a": "Bir müze eseri, motif veya kültürel teknik etrafında tasarlanmış ürün — obje, orijinaliyle görünür bir bağlantı koruyarak satılabilir bir şey (kırtasiye, tekstil, mıknatıs, hediye setleri) olarak yeniden yorumlanır."
+          },
+          {
+            "q": "Gerçek bir müze eseri etrafında tasarım yapabilir miyim?",
+            "a": "Eserin kendisi genellikle telif hakkı süresini doldurmuş olur, ancak belirli bir müzenin fotoğrafçılığı, katalog metni ve markası telif hakkına tabidir. Motiften tasarım yapın ve kendi görsellerinizi çekin veya oluşturun; belirli bir kuruma ait varlıkları çoğaltan her şeyi onaylatın."
+          },
+          {
+            "q": "Bunlar fabrika hazır dosyalar üretiyor mu?",
+            "a": "Hayır — bunlar tasarım ve mockup şablonlarıdır. Bir baskı satıcısının kesim çizgisi, taşma payı ve CMYK içeren bir üretim dosyasına ihtiyacı vardır; bu adım için kalıp kesim çıkartma ve akrilik dışa aktarma araçlarına bakın."
           }
         ]
-      }
+      },
+      "description": "AI müzesi ve kültürel-yaratıcı (文创) ürün tasarımı: eserlerden ilham alan ürün serileri, kırtasiye maket setleri, kalıntı infografikleri, somut olmayan miras zanaat panoları ve hediye ambalajları — sekiz jeneratör, 89 çalışılmış örnek.",
+      "intro": "Müze ve kültürel-yaratıcı ürünler — 文创 — tek bir eseri veya motifi müze mağazasının gerçekten stoklayabileceği uyumlu bir ürün yelpazesine dönüştürme tasarım problemidir ve bu koleksiyon bu sürecin tamamını kapsar. IP Kültürel & Kırtasiye Ürünleri Mockup Seti jeneratörü, 54 çalışılmış örnekle iş yükünü üstlenir: bir motif defterler, bez çantalar, mıknatıslar, masa eşyaları ve kutulu hediye setleri üzerinde uygulanarak ürün serisinin ayrı ürün yığını yerine bir aile gibi görünmesini sağlar. Bunun etrafında yedi tane daha bulunur — Çin Kültürel Kalıntıları Retro Bilgilendirme ve Modernize Edilmiş Eser Posteri, bir alışverişçinin satın aldığı nesnenin bir versiyonunu açıklayan yorumlayıcı materyal için; Maddi Olmayan Kültürel Miras El Sanatları Panosu, arkasındaki teknik için; Ulusal Tarz Karakter Uzun Parşömen, anlatı sergileme parçaları için; Buzdolabı Mıknatısı ve her mağazanın ihtiyaç duyduğu düşük fiyatlı ani satın alma katmanı için Küçük Ürün Şablonları; bitmiş yelpazeyi bir koleksiyon panosu olarak sergilemek için Müze Hediye Ürünleri Sergisi; ve bir parçanın üretime doğru ilerlemesi gerektiğinde Çin Antik Bronz Kültürel Yaratıcı Ürün Teknik Tasarımı. Tek bir kahraman görüntü yerine bir yelpazeye ihtiyaç duyan müze perakende ekipleri, kültürel-IP lisans sahipleri ve miras markaları için ve bir mağaza aletlere yatırım yapmadan önce bir konsept sunan tasarımcılar için tasarlanmıştır. Aşağıdaki örneklere göz atın ve tasarladığınız ürün katmanından başlayın."
     },
     "fruit-drinks": {
       "displayName": "Meyve İçeceği Fotoğrafçılığı",

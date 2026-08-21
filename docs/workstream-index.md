@@ -37,6 +37,9 @@ Other product workstream docs (single-track, not part of the four):
 - [`workstream-agentic-image-rong.md`](workstream-agentic-image-rong.md) — agentic image (rong)
 - `~/curify-studio/docs/workstream-customer-delivery-pipeline.md` — customer delivery 4-gap punch list (held)
 - `~/curify-studio/docs/workstream-education-content-supply.md` — education content supply 2-phase plan (held)
+  - demand basis: `teacher-learning-packs-demand-and-validation-2026-08-05.md` (wedge = visual packaging, not text)
+    + `teacher-pinterest-lesson-prep-demand-2026-08-20.md` (Pinterest = aesthetic yardstick more than sourcing tool;
+    constrained on curriculum / autonomous on materials; districts blocking TPT)
 
 ### GTM motions that feed (or bypass) these workstreams
 
@@ -100,6 +103,10 @@ none of them measurable:
 - **Docked**: ASL captioning (no viable tech path — memory `project_asl_captioning_demand`)
 
 ### C. SEO + SMM + Growth
+- **2026-08-21** Pinterest v5 publishing built and validated end to end; BLOCKED on Pinterest
+  **Standard access** (Trial cannot create Pins in production — measured, incl. secret boards).
+  OAuth refresh-token flow done, 5 boards mapped to topic landing pages, demo video submitted.
+  See [`pinterest-publishing-2026-08-21.md`](pinterest-publishing-2026-08-21.md)
 - **2026-08-07** State-of-play catch-up + GSC pull — non-WC impressions **1,716 → 359/day** over 2
   months (the "non-WC floor" framing is dead); canonical fold **not yet cleared** (only 1 of 13
   inspected pages recrawled since the 08-05 fix); MBTI CTR flat at 0.39%. See the dated section at
@@ -175,6 +182,7 @@ none of them measurable:
 | [`blogs-hub-and-spoke-architecture.md`](blogs-hub-and-spoke-architecture.md) | C | Hub/spoke blog architecture |
 | [`onboarding-runbook.md`](onboarding-runbook.md) | D, C | Onboarding flow runbook |
 | [`key-actions-strategy.md`](key-actions-strategy.md) | C, D | Conversion key-actions framework |
+| [`pinterest-publishing-2026-08-21.md`](pinterest-publishing-2026-08-21.md) | C | Pinterest API publishing: status, Trial-tier limits, board→landing map |
 | [`gallery-tag-taxonomy.md`](gallery-tag-taxonomy.md) | A | Gallery tag → topic registry mapping |
 | [`gap-classifier-phase1.md`](gap-classifier-phase1.md) | A | Content-gap classification |
 | [`home-discoverability-ideas-2026-06-14.md`](home-discoverability-ideas-2026-06-14.md) | C | Homepage discoverability options |

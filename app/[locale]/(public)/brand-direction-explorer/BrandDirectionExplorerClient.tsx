@@ -16,6 +16,7 @@ import {
 } from "@/lib/brand_direction_explorer";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
 import { useTracking } from "@/services/useTracking";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
 
 // This component calls only the internal Next.js API route below — it never
 // imports lib/brandDirectionOpenAI.ts (that module is `server-only`-guarded
@@ -38,6 +39,7 @@ type Copy = {
   charCount: (len: number, max: number) => string;
   previewComingSoon: string;
   presetStyleReference: string;
+  matchedLabel: string;
   selectedBadge: string;
   promptPreviewLabel: string;
   promptPreviewHint: string;
@@ -75,6 +77,7 @@ const EN_COPY: Copy = {
   charCount: (len, max) => `${len}/${max}`,
   previewComingSoon: "Preview coming soon",
   presetStyleReference: "Preset style reference",
+  matchedLabel: "Closest existing visuals",
   selectedBadge: "Selected",
   promptPreviewLabel: "Prompt preview",
   promptPreviewHint: "Fill in the fields above and pick a direction to preview the prompt.",
@@ -123,6 +126,7 @@ const ZH_COPY: Copy = {
   charCount: (len, max) => `${len}/${max}`,
   previewComingSoon: "预览图待生成",
   presetStyleReference: "预置风格参考",
+  matchedLabel: "相似图库参考",
   selectedBadge: "已选择",
   promptPreviewLabel: "提示词预览",
   promptPreviewHint: "填写上方字段并选择一个方向后，即可预览提示词。",
@@ -184,6 +188,34 @@ function DirectionPreview({
   copy: Copy;
 }) {
   const aspect = aspectClassFor(brandCase);
+
+  // Keyword-matched existing visuals (mini moodboard) — a real preview derived
+  // from this direction's style keywords, in place of a blank placeholder.
+  const matched = direction.matchedImages ?? [];
+  if (matched.length > 0) {
+    // Explicit rows are required: the cells hold absolutely-positioned (fill)
+    // images, so without grid-rows they collapse to zero height.
+    const gridCls =
+      matched.length === 1
+        ? "grid-cols-1 grid-rows-1"
+        : matched.length === 2
+          ? "grid-cols-2 grid-rows-1"
+          : "grid-cols-2 grid-rows-2";
+    return (
+      <div className={`relative ${aspect} min-h-[150px] w-full overflow-hidden rounded-t-2xl bg-neutral-100`}>
+        <div className={`grid h-full w-full gap-0.5 ${gridCls}`}>
+          {matched.slice(0, 4).map((src, i) => (
+            <div key={i} className="relative overflow-hidden bg-neutral-200">
+              <CdnImage src={src} alt="" fill className="object-cover" />
+            </div>
+          ))}
+        </div>
+        <span className="absolute bottom-1.5 left-1.5 rounded bg-black/55 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
+          {copy.matchedLabel}
+        </span>
+      </div>
+    );
+  }
 
   if (direction.previewImage.kind === "placeholder") {
     return (
@@ -341,7 +373,11 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
       setDirectionsLoading(true);
       setDirectionsError(null);
 
-      let data: { success: boolean; directions?: GeneratedCreativeDirection[]; error?: string };
+      let data: {
+        success: boolean;
+        directions?: (GeneratedCreativeDirection & { matchedImages?: string[] })[];
+        error?: string;
+      };
       let ok = false;
       try {
         const res = await fetch(DIRECTIONS_ENDPOINT, {
@@ -377,7 +413,12 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
       }
 
       const kind = previewKindForCase(caseId);
-      setDirections(data.directions.map((g) => toCreativeDirection(g, kind)));
+      setDirections(
+        data.directions.map((g) => ({
+          ...toCreativeDirection(g, kind),
+          matchedImages: g.matchedImages,
+        })),
+      );
       setDirectionsLoading(false);
     },
     [],
@@ -539,18 +580,9 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
 
   return (
     <main className="mx-auto max-w-5xl space-y-12 px-4 py-10 sm:px-6">
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <header className="space-y-3 text-center sm:text-left">
-        <h1 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
-          {copy.heroTitle}
-          <span className="ml-2 text-lg font-normal text-neutral-400 sm:text-xl">
-            {uiLocale === "en" ? "品牌创意方向探索" : "Brand Direction Explorer"}
-          </span>
-        </h1>
-        <p className="mx-auto max-w-2xl text-sm text-neutral-600 sm:mx-0">
-          {copy.heroDescription}
-        </p>
-      </header>
+      {/* The tools page (tool-generic-client) already renders the hero H1 +
+          description, so the client no longer repeats its own header — that was
+          the duplicated content at the top of the page. */}
 
       {/* ── 3-step explainer ─────────────────────────────────────────── */}
       <section className="grid grid-cols-1 gap-4 sm:grid-cols-3">

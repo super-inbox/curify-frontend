@@ -45,7 +45,64 @@ const EVAL_SET = JSON.parse(fs.readFileSync(path.join(ROOT, "scripts/configs/sea
 const argv = process.argv.slice(2);
 const USE_REWRITE = argv.includes("--rewrite");
 const USE_MATCHER = argv.includes("--matcher");
+const USE_INTENT = argv.includes("--intent");
 const QUIET = argv.includes("--quiet");
+
+// ---- Intent-purity dimension (mirror of lib/intentAlignment.ts + relevanceScorer
+// intent term). Measures noise@8 = fraction of the top-8 that is cross-intent
+// (an education/vocab/MBTI record on a non-education query), BEFORE vs AFTER the
+// intent re-rank, grouped by query intent. Confirms design/other queries get
+// cleaner while education queries never regress. CJS mirror because this script
+// can't require the .ts modules. ----
+const TEMPLATE_INTENTS = USE_INTENT
+  ? JSON.parse(fs.readFileSync(path.join(ROOT, "lib/template_intents.json"), "utf-8"))
+  : {};
+const INSP_BY_ID = new Map(INSP.map((r) => [r.id, r]));
+const OFF_TOPICS = new Set([
+  "mbti", "personality", "vocabulary", "dialogue", "language", "language-english",
+  "flashcards", "kids-learning", "early-childhood-learning", "character",
+  "anthropomorphic", "history", "timeline", "original-ip",
+]);
+const EDU_Q = /vocab|word|单词|词汇|flashcard|phonic|\besl\b|dialogue|homophone|homonym|bilingual|language|反义词|worksheet|拼音|拼读|lesson|grammar|spelling/i;
+const DES_Q = /brand|logo|packaging|mockup|品牌|包装|视觉|\bebc\b|详情图|电商|listing|手册|种草|launch|storefront|signage|menu|identity|moodboard/i;
+function qBucket(q) { if (EDU_Q.test(q)) return "education"; if (DES_Q.test(q)) return "design"; return "other"; }
+function outIntent(r) { return TEMPLATE_INTENTS[r.template_id] || "remix"; }
+function offTopicHits(r) {
+  let n = 0;
+  for (const t of [...(r.topics || []), ...(r.tags || [])]) if (OFF_TOPICS.has(String(t).toLowerCase())) n++;
+  return n;
+}
+function intentDelta(r, bucket) {
+  if (bucket === "education") return 0;
+  let d = 0;
+  const oi = outIntent(r);
+  if (oi === "education") d -= 20;
+  d -= Math.min(offTopicHits(r), 3) * 6;
+  if (["merch", "print-art", "social", "presentation"].includes(oi)) d += 4;
+  return d;
+}
+function recBlobFor(r) {
+  const localeFields = Object.values(r.locales ?? {}).flatMap((l) => [l && l.title, l && l.category]);
+  return normalizeForSearch(
+    [r.id, r.template_id, ...(r.tags ?? []), ...(r.search_aliases ?? []),
+     ...Object.values(r.params ?? {}), ...localeFields]
+      .filter((v) => typeof v === "string" && v.length > 0).join(" "),
+  );
+}
+function isNoise(r, bucket) {
+  return bucket !== "education" && (outIntent(r) === "education" || offTopicHits(r) >= 2);
+}
+function intentPurity(query, matchedIds) {
+  const bucket = qBucket(query);
+  const toks = buildSearchTokens(query);
+  const cand = [...matchedIds].map((id) => INSP_BY_ID.get(id)).filter(Boolean);
+  const baseScore = (r) => { const s = scoreBlob(recBlobFor(r), toks); return s.primaryHits * 2 + s.bigramHits; };
+  const top = (fn) => [...cand].sort((a, b) => fn(b) - fn(a)).slice(0, 8);
+  const before = top((r) => baseScore(r));
+  const after = top((r) => baseScore(r) + intentDelta(r, bucket));
+  const noise = (arr) => (arr.length ? arr.filter((r) => isNoise(r, bucket)).length / arr.length : 0);
+  return { bucket, n: cand.length, before: noise(before), after: noise(after) };
+}
 
 // Production threshold from app/[locale]/(public)/search/GenerableTemplatesSection.tsx
 const MATCHER_MIN_CONFIDENCE = 0.4;
@@ -400,8 +457,10 @@ async function main() {
   }
 
   const results = [];
+  const intentRows = [];
   for (const q of EVAL_SET.queries) {
     const base = scoreOnce(q.query);
+    if (USE_INTENT) intentRows.push({ query: q.query, ...intentPurity(q.query, base.matchedIds) });
     let rewrites = [];
     let unionIds = new Set(base.matchedIds);
     if (USE_REWRITE) {
@@ -455,6 +514,21 @@ async function main() {
       }
       console.log(`  notes: ${q.notes}`);
     }
+  }
+
+  // Intent-purity summary (noise@8 before vs after the intent re-rank).
+  if (USE_INTENT) {
+    const byBucket = { design: [], education: [], other: [] };
+    for (const r of intentRows) byBucket[r.bucket].push(r);
+    const mean = (a, k) => (a.length ? a.reduce((s, r) => s + r[k], 0) / a.length : 0);
+    console.log(`\n${"─".repeat(70)}\nINTENT-PURITY (noise@8: cross-intent share of top-8)\n${"─".repeat(70)}`);
+    for (const b of ["design", "education", "other"]) {
+      const a = byBucket[b];
+      if (!a.length) continue;
+      console.log(`  [${b.padEnd(9)}] n=${String(a.length).padStart(3)}  before ${(mean(a, "before") * 100).toFixed(1).padStart(5)}%  →  after ${(mean(a, "after") * 100).toFixed(1).padStart(5)}%`);
+    }
+    const worse = intentRows.filter((r) => r.after > r.before);
+    console.log(`  regressions (after worse than before): ${worse.length}${worse.length ? " — " + worse.map((r) => r.query).slice(0, 6).join(", ") : ""}`);
   }
 
   // Summary table.

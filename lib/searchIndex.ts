@@ -210,7 +210,7 @@ export const TIER1_CHIP_SETS: Array<{ tier1: string; chips: string[] }> = [
   { tier1: "culture",     chips: ["food", "costumes", "cultural-festivals", "china", "india"] },
   { tier1: "lifestyle",   chips: ["fashion", "fitness", "beauty", "interior", "finance"] },
   { tier1: "design",      chips: ["posters", "mockups", "watercolor", "photorealistic", "illustration"] },
-  { tier1: "product",     chips: ["packaging", "ecommerce", "branding", "hero-banner", "mood-board"] },
+  { tier1: "product",     chips: ["packaging", "branding", "hero-banner", "mood-board"] },
 ];
 
 // Tools — overall /tools page + each tool with status === "create" in
