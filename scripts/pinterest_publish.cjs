@@ -140,6 +140,24 @@ function build() {
   };
 }
 
+/** JPEG dimensions without decoding the whole file. */
+async function imageRatio(url) {
+  try {
+    const buf = Buffer.from(await (await fetch(url)).arrayBuffer());
+    let i = 2;
+    while (i < buf.length) {
+      if (buf[i] !== 0xff) { i++; continue; }
+      const m = buf[i + 1];
+      if (m >= 0xc0 && m <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(m)) {
+        const h = buf.readUInt16BE(i + 5), w = buf.readUInt16BE(i + 7);
+        return { w, h, ratio: w / h };
+      }
+      i += 2 + buf.readUInt16BE(i + 2);
+    }
+  } catch { /* non-fatal — ratio advice only */ }
+  return null;
+}
+
 async function main() {
   if (process.argv.includes("--sandbox")) API = API_SANDBOX;
   const { exampleId, templateId, payload, fallbackUrl } = build();
@@ -166,6 +184,22 @@ async function main() {
       console.log(`\n${label} ${url}\n  -> HTTP ${r.status}${label === "image" ? ` ${r.headers.get("content-type")}` : ""}`);
       if (!r.ok) console.log(`  !! Pinterest will reject a non-200 ${label}`);
     } catch (e) { console.log(`\n${label} ${url}\n  -> FETCH FAILED ${e.message}`); }
+  }
+
+  // Pinterest's feed is fixed-width masonry, so height is the only variable
+  // you control: a 2:3 Pin occupies ~2x the vertical space of a 3:2 one and
+  // gets proportionally more attention. 61% of our library is already portrait
+  // with a median ratio of 0.67 (exactly 2:3), so this is a SELECTION problem,
+  // not a rendering one — warn rather than block.
+  const dim = await imageRatio(payload.media_source.url);
+  if (dim) {
+    const verdict =
+      dim.ratio <= 0.72 ? "ideal (2:3 or taller)"
+      : dim.ratio <= 0.9 ? "acceptable (portrait)"
+      : dim.ratio < 1.05 ? "square — displays smaller than a 2:3 Pin"
+      : "LANDSCAPE — displays ~half the height of a 2:3 Pin in feed";
+    console.log(`\nimage ${dim.w}x${dim.h}  ratio ${dim.ratio.toFixed(2)}  ${verdict}`);
+    if (dim.ratio > 1.05) console.log("  consider a portrait example: 1,969 of ours are already 2:3.");
   }
 
   if (dry) { console.log("\n(dry run — nothing published)"); return; }
