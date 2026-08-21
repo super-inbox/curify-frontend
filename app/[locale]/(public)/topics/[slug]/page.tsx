@@ -25,7 +25,7 @@ import {
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getFurtherExplorationTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag, getBlogSlugsForTopic, isLocalizedTopic, getTopicNavList } from "@/lib/topicRegistry";
-import { getTopicWorkbenchPreset } from "@/lib/topic_workbench";
+import { getTopicWorkbenchPreset, isSelfieScopedTopic, SELFIE_TEMPLATE_IDS } from "@/lib/topic_workbench";
 import ImageWorkbench from "@/app/[locale]/_components/ImageWorkbench";
 import BrandWorkflow from "@/app/[locale]/_components/BrandWorkflow";
 import TopicWorkflow from "@/app/[locale]/_components/TopicWorkflow";
@@ -169,8 +169,17 @@ export default async function Page({ params }: Props) {
       .filter((id): id is string => typeof id === "string" && id.length > 0)
   );
 
-  // Union of both sources
-  const allFilteredIds = new Set([...templateTaggedIds, ...inspirationTaggedIds]);
+  // Union of both sources. The AI Selfie topic (portrait) reuses the broad
+  // "portrait" tag, which also covers MBTI cards, movie posters, fandom grids,
+  // costumes, K-pop, etc. — scope its example grid + template feed to genuine
+  // "restyle your own photo" templates so it reads as a selfie collection.
+  // (The gallery-prompt row and nav sections are unaffected.)
+  const selfieScoped = isSelfieScopedTopic(slug);
+  const allFilteredIds = new Set(
+    [...templateTaggedIds, ...inspirationTaggedIds].filter(
+      (id) => !selfieScoped || SELFIE_TEMPLATE_IDS.has(id)
+    )
+  );
 
   // 404 if the slug lacks EN i18n in messages/en/topics.json. Many
   // taxonomy entries (mood / aesthetic / lighting / temporal / product
@@ -196,6 +205,8 @@ export default async function Page({ params }: Props) {
   for (const img of allImages) {
     const id = (img as any).id;
     if (!img?.template_id || !id || seenImageIds.has(id)) continue;
+    // Selfie topic: only genuine restyle-your-photo templates (see allowlist).
+    if (selfieScoped && !SELFIE_TEMPLATE_IDS.has(img.template_id)) continue;
     const fromTemplate = templateTaggedIds.has(img.template_id);
     const fromInspiration = ((img as any).topics ?? []).includes(slug);
     if (fromTemplate || fromInspiration) {

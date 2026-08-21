@@ -1086,7 +1086,7 @@
       }
     },
     "portrait": {
-      "displayName": "AI Portraits",
+      "displayName": "AI Selfie",
       "title": "AI Selfie & Portrait Templates — Restyle Your Photo | Curify AI",
       "description": "Upload your selfie and restyle it into sticker packs, art portraits, new hairstyles, outfit try-ons and merch — plus AI templates for character portraits, profile cards, and MBTI identity cards.",
       "intro": "Turn your own photo into something new. Upload a selfie and restyle it into a sticker pack, an art portrait, a fresh hairstyle, an outfit try-on, or printable merch — then explore our curated collection of portrait templates and AI prompts. Whether you're making an avatar, a profile card, an MBTI identity card, or a stylized personal portrait, the workbench and examples below give you the inspiration and structure to start from your own face.",
@@ -1098,7 +1098,45 @@
         "face",
         "headshot",
         "person"
-      ]
+      ],
+      "format": {
+        "lead": "AI selfie turns your own photo into something new — a sticker pack, an art portrait, a fresh hairstyle, a virtual outfit try-on, or printable merch. Upload a selfie and Curify restyles it while keeping your likeness, then hands you a downloadable result.",
+        "howToTitle": "How to make an AI selfie",
+        "howTo": [
+          "Upload a clear, front-facing photo of yourself.",
+          "Pick a style — sticker pack, art portrait, retouch, new hairstyle, outfit try-on, or merch.",
+          "Generate: Curify restyles your photo while preserving your face.",
+          "Download the result or save it to your workspace."
+        ],
+        "usesTitle": "What you can make from a selfie",
+        "uses": [
+          "Expression sticker packs of your own face",
+          "Artistic and painterly portrait series",
+          "Professional headshot retouching",
+          "New hairstyle and hair-color previews",
+          "Virtual outfit try-ons and lookbooks",
+          "Your face on mugs, totes, and stickers"
+        ],
+        "faqTitle": "AI selfie FAQ",
+        "faq": [
+          {
+            "q": "Does it keep my face and likeness?",
+            "a": "Yes. The photo-input styles are built to preserve your identity and facial features while changing the style, outfit, hairstyle, or setting."
+          },
+          {
+            "q": "What kind of photo works best?",
+            "a": "A clear, well-lit, front-facing photo of one person gives the most accurate results. Avoid heavy filters, sunglasses, and busy backgrounds."
+          },
+          {
+            "q": "Do I need an account?",
+            "a": "You can browse every style for free. Uploading your own photo to generate takes a quick sign-in."
+          },
+          {
+            "q": "Can I use the results for my profile or prints?",
+            "a": "Yes — results are yours to use as profile pictures, art prints, gifts, or print-on-demand merch."
+          }
+        ]
+      }
     },
     "monochrome": {
       "displayName": "Monochrome",
