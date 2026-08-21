@@ -59,8 +59,14 @@ const BOARDS = {
 
 const CDN = "https://cdn.curify-ai.com";
 const SITE = "https://www.curify-ai.com";
-const API = "https://api.pinterest.com/v5";
+// Trial-access apps are refused on production ("code 29: Apps with Trial
+// access may not create Pins in production") and must use the sandbox until
+// Standard access is granted. --sandbox switches host; everything else is
+// identical, so the payload is validated for real either way.
+const API_PROD = "https://api.pinterest.com/v5";
+const API_SANDBOX = "https://api-sandbox.pinterest.com/v5";
 
+let API = API_PROD;
 function arg(name, def = null) {
   const i = process.argv.indexOf(`--${name}`);
   if (i === -1) return def;
@@ -135,6 +141,7 @@ function build() {
 }
 
 async function main() {
+  if (process.argv.includes("--sandbox")) API = API_SANDBOX;
   const { exampleId, templateId, payload, fallbackUrl } = build();
   // Not every example has a full render; fall back to the thumbnail rather
   // than posting a Pin that Pinterest cannot fetch.
@@ -178,6 +185,14 @@ async function main() {
     // The most common first-run failure: a token generated with read scopes
     // only. Board listing succeeds (boards:read) so the token looks valid
     // right up until the POST.
+    if (res.status === 403 && /Trial access/i.test(body)) {
+      console.error(
+        "\nThe Pinterest APP is on Trial access, which cannot create Pins in\n" +
+        "production regardless of token scopes. Either request Standard access\n" +
+        "in the developer console (review process), or re-run with --sandbox to\n" +
+        "validate the pipeline against api-sandbox.pinterest.com.",
+      );
+    }
     if (res.status === 401 && /scopes|permissions/i.test(body)) {
       console.error(
         "\nThe token is read-only. Regenerate it with WRITE scopes:\n" +
