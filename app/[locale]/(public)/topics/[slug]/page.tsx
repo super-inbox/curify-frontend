@@ -379,6 +379,25 @@ export default async function Page({ params }: Props) {
     : [];
   const hasFused = fusedExamples.length + fusedGallery.length > 0;
 
+  // The "start a workflow" workbench normally sits BELOW the example grid
+  // (scan examples, then do-it-yourself). The selfie surface (/topics/portrait)
+  // is a tool-first experience, so it leads with the workbench instead.
+  const workbenchAboveExamples = workbenchPreset === "selfie";
+  const workbenchSection =
+    workbenchPreset || slug === "branding" || getTopicWorkflow(workbenchPreset, slug) ? (
+      <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
+        {/* Design-workflow ladder ABOVE the "start a workflow" upload
+            workbench: brand topics get BrandWorkflow; merch/product get the
+            commerce ladder chaining the existing template pipeline. */}
+        {slug === "branding" && <BrandWorkflow locale={localeStr} />}
+        {getTopicWorkflow(workbenchPreset, slug) && (
+          <TopicWorkflow locale={localeStr} config={getTopicWorkflow(workbenchPreset, slug)!} />
+        )}
+        {workbenchPreset && (
+          <ImageWorkbench locale={localeStr} preset={workbenchPreset} />
+        )}
+      </section>
+    ) : null;
 
   return (
     <main className="min-h-screen">
@@ -474,6 +493,10 @@ export default async function Page({ params }: Props) {
         </section>
       )}
 
+      {/* Tool-first topics (selfie): the upload workbench leads, above the
+          example grid. */}
+      {workbenchAboveExamples && workbenchSection}
+
       {/* WC 2026 calendar widget — slot into the top-right cell of the
           ExampleImagesGrid on WC-family + sports pages. When the page
           has no gridItems, fall back to a standalone single-cell row.
@@ -490,25 +513,11 @@ export default async function Page({ params }: Props) {
         </section>
       ) : null}
 
-      {/* "Start a workflow" — placed BELOW the example grid so the page leads
-          with visuals; the workbench/brand-workflow is the do-it-yourself CTA
-          after the user has scanned examples. Commerce topics (merch / product /
-          ecommerce) get the use-case-scoped 3-column upload workbench; the brand
-          topic gets its bespoke 5-step generative ladder. */}
-      {(workbenchPreset || slug === "branding" || getTopicWorkflow(workbenchPreset, slug)) && (
-        <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
-          {/* Design-workflow ladder ABOVE the "start a workflow" upload
-              workbench: brand topics get BrandWorkflow; merch/product get the
-              commerce ladder chaining the existing template pipeline. */}
-          {slug === "branding" && <BrandWorkflow locale={localeStr} />}
-          {getTopicWorkflow(workbenchPreset, slug) && (
-            <TopicWorkflow locale={localeStr} config={getTopicWorkflow(workbenchPreset, slug)!} />
-          )}
-          {workbenchPreset && (
-            <ImageWorkbench locale={localeStr} preset={workbenchPreset} />
-          )}
-        </section>
-      )}
+      {/* "Start a workflow" — for most workbench topics (merch / product /
+          ecommerce / branding) this sits BELOW the example grid: scan examples
+          first, then do-it-yourself. The selfie surface leads with it instead
+          (rendered above via workbenchAboveExamples). */}
+      {!workbenchAboveExamples && workbenchSection}
 
       {!isNicheStyleTopic && galleryPrompts.length > 0 && (
         <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
