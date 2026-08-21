@@ -27,7 +27,7 @@ import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox"
 import NanoBananaExamples from "@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
-import ToolHandoffBanner from "@/app/[locale]/_components/ToolHandoffBanner";
+import MbtiUniversePicker from "@/app/[locale]/_components/MbtiUniversePicker";
 
 // Helper function to decode HTML entities (server-safe)
 function decodeHTMLEntities(text: string): string {
@@ -116,19 +116,16 @@ export default function MBTICharacterGeneratorPage() {
             {t('hero.title')}
           </h1>
 
-          {/* Tool-intent hand-off. This post ranks pos ~5.7 for "mbti generator"
-              (286 impr / 6 clicks) and pos 5.9 for "random mbti generator"
-              (271 impr / ZERO clicks). The searcher wants a generator, not an
-              article; the existing Try-Now block sits two thirds down the page. */}
-          <ToolHandoffBanner
-            locale={locale}
-            href="/nano-template/mbti-generic"
-            label="Generate one now"
-            title="MBTI Character Generator — pick a type, get a character"
-          />
           <p className="text-lg text-gray-600">
             {t('hero.subtitle')}
           </p>
+
+          {/* Tool-intent hand-off. "mbti generator" ranks pos 5.7 here
+              (286 impr / 6 clicks); "random mbti generator" pos 5.9 with 271
+              impressions and ZERO clicks. The article's own promise is "10
+              universes" — so let the reader pick one and land on that generator
+              instead of reading first. */}
+          <MbtiUniversePicker locale={locale} />
         </header>
 
         {/* Introduction — plain prose paragraphs (was a gradient card with

@@ -1,44 +1,61 @@
 import Link from "next/link";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { getCanonicalPath } from "@/lib/canonical";
 
 /**
  * Above-the-fold hand-off from an article to the tool it describes.
  *
- * WHY (measured 2026-08-21): 89% of our tool-intent search impressions land on
- * /blog/* rather than on a tool or template page — "mbti generator" ranks at
- * position 5.7 with our ARTICLE, 286 impressions and 6 clicks. Someone typing
- * "…generator" wants a generator, and we answered with prose, so they bounce.
- * When a tool page does surface for those queries it converts at 15.4% versus
- * the blog's 2.1%.
+ * Same image-card UI as the heroCta block in GenericBlogContent, whose own
+ * comment records it at "33% engagement vs 0% for plain GenericBlogContent" —
+ * the pattern was originally ported OUT of this page, so this puts it back.
  *
- * The article can keep ranking — it just has to hand off in the first screen
- * instead of two thirds of the way down.
+ * WHY (measured 2026-08-21): 89% of tool-intent impressions land on /blog/*
+ * rather than a tool page. "mbti generator" ranks pos 5.7 with this article
+ * (286 impr / 6 clicks); "random mbti generator" pos 5.9 with 271 impressions
+ * and ZERO clicks. The searcher wants a generator and gets prose.
  */
 export default function ToolHandoffBanner({
   locale,
   href,
+  image,
+  imageAlt,
   label,
   title,
-  cta = "Open it →",
+  cta = "Try it →",
 }: {
   locale: string;
   href: string;
-  label: string;
+  image: string;
+  imageAlt?: string;
+  label?: string;
   title: string;
   cta?: string;
 }) {
   return (
-    <Link
-      href={getCanonicalPath(locale, href)}
-      className="not-prose mb-8 flex items-center justify-between gap-4 rounded-xl border border-purple-200 bg-purple-50 px-5 py-4 no-underline transition hover:border-purple-300 hover:bg-purple-100"
-    >
-      <div className="min-w-0">
-        <div className="text-xs font-semibold uppercase tracking-wide text-purple-700">{label}</div>
-        <div className="truncate text-base font-semibold text-gray-900">{title}</div>
-      </div>
-      <span className="flex-shrink-0 rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white">
-        {cta}
-      </span>
-    </Link>
+    <section className="mb-8 not-prose">
+      <Link
+        href={getCanonicalPath(locale, href)}
+        className="block group rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all bg-white no-underline"
+      >
+        <div className="aspect-[16/9] w-full overflow-hidden bg-gray-100">
+          <CdnImage
+            src={image}
+            alt={imageAlt || title}
+            className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform"
+          />
+        </div>
+        <div className="px-6 py-5 flex items-center justify-between gap-4">
+          <div className="min-w-0">
+            {label && (
+              <div className="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-1">{label}</div>
+            )}
+            <div className="text-base font-semibold text-gray-900 truncate">{title}</div>
+          </div>
+          <div className="flex-shrink-0 rounded-lg bg-blue-600 text-white px-4 py-2 text-sm font-semibold group-hover:bg-blue-700 transition">
+            {cta}
+          </div>
+        </div>
+      </Link>
+    </section>
   );
 }

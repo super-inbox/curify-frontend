@@ -341,7 +341,16 @@ export function buildProPromptMetadata(
     locale,
   } = input;
 
-  const fullTitle = `${title} | Nano Banana Pro Prompts`;
+  // Same double-brand bug as the template titles (fixed above): this appended
+  // "| Nano Banana Pro Prompts" and then the (public) layout appends
+  // "| Curify Studio" on top, giving e.g.
+  //   "Retro Glam: A Nostalgic 80s Captured Moment | Nano Banana Pro Prompts | Curify Studio"
+  // at 85 chars, so Google truncates. 1,535 prompt pages are affected. Keep the
+  // section label only when the title is short enough for both to survive.
+  const SERP_BUDGET = 60 - " | Curify Studio".length;
+  const section = " | Nano Banana Pro Prompts";
+  const fullTitle =
+    title.length + section.length <= SERP_BUDGET ? `${title}${section}` : title;
 
   // Prompt content (title/description/promptText) is en-only — even when
   // rendered under /zh/, /de/, etc., the body is the same English text.
