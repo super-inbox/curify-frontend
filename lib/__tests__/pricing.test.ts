@@ -19,13 +19,13 @@ import {
  *  updating both in the same change. Sources:
  *    nano_template_pipeline.GENERATION_CREDITS   = 5.0
  *    nano_freeform_pipeline.GENERATION_CREDITS   = 5.0
- *    design_tool_pipelines.STICKER_EXPORT_CREDITS   = 190.0
- *    design_tool_pipelines.ACRYLIC_EXPORT_CREDITS   = 240.0
+ *    design_tool_pipelines.STICKER_EXPORT_CREDITS   = 90.0
+ *    design_tool_pipelines.ACRYLIC_EXPORT_CREDITS   = 120.0
  *    design_tool_pipelines.PACKAGING_MOCKUP_CREDITS = 15.0 */
 const BACKEND_CHARGES = {
   image: 5,
-  stickerExport: 190,
-  acrylicExport: 240,
+  stickerExport: 90,
+  acrylicExport: 120,
   packagingMockup: 15,
 } as const;
 

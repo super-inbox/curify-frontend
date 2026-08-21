@@ -42,20 +42,23 @@ export const IMAGE_GENERATION_CREDITS = 5;
  *  buying a manufacturing input. This is the moat; discounting it would trade the
  *  defensible surface for the commodity one.
  *
- *  2026-08-21 — 20 → 190 ($2.00 → $19.00). The paragraph above named the right
- *  comparable and then charged $2.00 anyway; a printer's own file-prep fee is
- *  $50–150. Nobody has ever bought one at any price, so $19 is a test, not a
- *  derived number. Also carved out of the free signup grant in the backend
- *  (design_tool_pipelines.FREE_GRANT_EXCLUDED_JOBS): at 20 credits the 50-credit
- *  grant handed every new account two free factory files. */
-export const STICKER_EXPORT_CREDITS = 190;
+ *  2026-08-21 — 20 → 90 ($2.00 → $9.00). Briefly 190 ($19) on value grounds; the
+ *  paragraph above named the right comparable and then charged $2.00, and a
+ *  printer's own file-prep fee is $50–150. Walked back the same day: the binding
+ *  constraint is not margin but that almost nobody reaches our paywall at all (50
+ *  users of 705, lifetime, one of whom paid). Value pricing presumes buyers we
+ *  have not established. $9 buys the first transactions and the data with them.
+ *  Cost constrains nothing here — deterministic CPU, no vendor bill, ~100% margin
+ *  at any of these numbers. Also carved out of the free signup grant in the
+ *  backend (design_tool_pipelines.FREE_GRANT_EXCLUDED_JOBS). */
+export const STICKER_EXPORT_CREDITS = 90;
 
 /** Credits for a print-ready acrylic standee / keychain package.
  *  Mirrors `design_tool_pipelines.ACRYLIC_EXPORT_CREDITS`.
  *
  *  Above the sticker export because it is strictly more pre-press: the same
  *  geometry plus a choked white underbase plate and a wall-checked hole. */
-export const ACRYLIC_EXPORT_CREDITS = 240;
+export const ACRYLIC_EXPORT_CREDITS = 120;
 
 /** Credits for an AI packaging mockup (dieline → folded 3D box render).
  *  Mirrors `design_tool_pipelines.PACKAGING_MOCKUP_CREDITS`. One Gemini call plus
