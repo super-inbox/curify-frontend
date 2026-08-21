@@ -38,8 +38,11 @@ for (const line of fs.existsSync(ENV) ? fs.readFileSync(ENV, "utf8").split("\n")
 
 const APP_ID = process.env.PINTEREST_APP_ID || process.env.PINTEREST_CLIENT_ID;
 const SECRET = process.env.PINTEREST_SECRET_KEY;
-// Pinterest requires https. This must be registered on the app verbatim.
-const REDIRECT = process.env.PINTEREST_REDIRECT_URI || "https://www.curify-ai.com/";
+// Must match a redirect URI registered on the app VERBATIM (trailing slash
+// included). The operator registered the localhost callback below, which is
+// why --serve can catch the code without any copy/paste.
+const REDIRECT =
+  process.env.PINTEREST_REDIRECT_URI || "http://localhost:3000/api/oauth/pinterest/callback";
 const SCOPES = ["boards:read", "boards:write", "pins:read", "pins:write", "user_accounts:read"];
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i === -1 ? null : (process.argv[i + 1] || true); };
@@ -95,5 +98,40 @@ async function tokenCall(body) {
     console.log(`\nscopes: ${d.scope}`);
     return;
   }
-  console.log("usage: --url | --code <CODE> | --refresh");
+  if (arg("serve")) {
+    // Catch the callback locally and exchange in one go, so there is no code
+    // to copy. Requires port 3000 free (the registered redirect URI).
+    const http = require("http");
+    const u = new URL("https://www.pinterest.com/oauth/");
+    u.searchParams.set("client_id", APP_ID);
+    u.searchParams.set("redirect_uri", REDIRECT);
+    u.searchParams.set("response_type", "code");
+    u.searchParams.set("scope", SCOPES.join(","));
+    const port = Number(new URL(REDIRECT).port || 80);
+
+    const server = http.createServer(async (req, res) => {
+      const got = new URL(req.url, REDIRECT);
+      const code = got.searchParams.get("code");
+      const err = got.searchParams.get("error");
+      if (!code && !err) { res.writeHead(204).end(); return; }
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.end(`<h2>${code ? "Pinterest authorized — you can close this tab." : "Authorization failed: " + err}</h2>`);
+      server.close();
+      if (err) { console.error(`\nauthorization failed: ${err}`); process.exit(1); }
+      console.log("\ncode received, exchanging...");
+      const d = await tokenCall({ grant_type: "authorization_code", code, redirect_uri: REDIRECT });
+      console.log("\nPaste into curify-studio/curify_background/.env:\n");
+      console.log(`PINTEREST_ACCESS_TOKEN=${d.access_token}`);
+      console.log(`PINTEREST_REFRESH_TOKEN=${d.refresh_token}`);
+      console.log(`\nscopes: ${d.scope}`);
+      process.exit(0);
+    });
+    server.listen(port, () => {
+      console.log(`listening on ${REDIRECT}\n`);
+      console.log("Open this URL, approve, and this script will do the rest:\n");
+      console.log(u.toString());
+    });
+    return;
+  }
+  console.log("usage: --serve (recommended) | --url | --code <CODE> | --refresh");
 })();
