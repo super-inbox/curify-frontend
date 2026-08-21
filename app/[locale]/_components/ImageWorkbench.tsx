@@ -9,6 +9,10 @@ import {
   Package,
   Shirt,
   LayoutGrid,
+  Sparkles,
+  Palette,
+  Scissors,
+  Smile,
   type LucideIcon,
 } from "lucide-react";
 import ReproduceWorkbench from "@/app/[locale]/_components/ReproduceWorkbench";
@@ -78,6 +82,51 @@ const IP_MOCKUPS: Workflow = {
   params: [],
 };
 
+// --- Selfie workflows: transform the USER'S OWN photo (image_input:required,
+// prompts operate on "the attached/uploaded photo" & preserve identity). ---
+const SELFIE_STICKERS: Workflow = {
+  id: "template-ip-character-expression-sheet",
+  label: "Selfie → Sticker pack",
+  hint: "A 9-expression sticker sheet from your photo",
+  icon: Smile,
+  params: [],
+};
+const SELFIE_ART: Workflow = {
+  id: "template-figure-to-abstract-portrait-series",
+  label: "Selfie → Art portrait",
+  hint: "An artistic portrait series from your photo",
+  icon: Palette,
+  params: [],
+};
+const SELFIE_RETOUCH: Workflow = {
+  id: "template-portrait-retouching-blueprint",
+  label: "Selfie → Retouch",
+  hint: "A pro before/after headshot retouch",
+  icon: Sparkles,
+  params: [],
+};
+const SELFIE_HAIR: Workflow = {
+  id: "template-hairstyle-color-recommendation",
+  label: "Selfie → New hairstyle",
+  hint: "Try new hairstyles & hair colors on your photo",
+  icon: Scissors,
+  params: [],
+};
+const SELFIE_TRYON: Workflow = {
+  id: "template-ai-outfit-try-on-poster",
+  label: "Selfie → Outfit try-on",
+  hint: "See yourself in a new outfit",
+  icon: Shirt,
+  params: [],
+};
+const SELFIE_MERCH: Workflow = {
+  id: "template-ip-creative-cultural-goods-mockup-set",
+  label: "Selfie → Merch",
+  hint: "Your photo on stickers, totes & mugs",
+  icon: Package,
+  params: [],
+};
+
 /** Curated workflow sets, keyed by preset (home + use-case-scoped topics). */
 const PRESETS: Record<string, Workflow[]> = {
   home: [PRODUCT_POSTER, PRODUCT_LISTING, IP_STICKERS, IP_MOCKUPS],
@@ -85,13 +134,26 @@ const PRESETS: Record<string, Workflow[]> = {
   merch: [IP_STICKERS, IP_MOCKUPS, PRODUCT_POSTER],
   // product / ecommerce = turn a product photo into listing-ready visuals.
   product: [PRODUCT_POSTER, PRODUCT_LISTING, PRODUCT_TRYON],
+  // selfie = restyle your own photo (drives /topics/portrait workbench).
+  selfie: [
+    SELFIE_STICKERS,
+    SELFIE_ART,
+    SELFIE_RETOUCH,
+    SELFIE_HAIR,
+    SELFIE_TRYON,
+    SELFIE_MERCH,
+  ],
 };
 
 const FALLBACK_HEADING = "Start a workflow";
+const HEADINGS: Record<string, string> = {
+  selfie: "Turn your selfie into…",
+};
 const SUBTITLE: Record<string, string> = {
   home: "Upload a product or character image, pick a workflow, and turn it into finished design work.",
   merch: "Upload your character or IP, pick a workflow, and turn it into sellable merch.",
   product: "Upload your product photo, pick a workflow, and turn it into listing-ready visuals.",
+  selfie: "Upload your photo, pick a style, and turn your selfie into stickers, art, a new look, and more.",
 };
 
 export function hasImageWorkbench(preset: string): boolean {
@@ -113,7 +175,7 @@ export default function ImageWorkbench({
   const workflows = PRESETS[preset] ?? PRESETS.home;
   const [wf, setWf] = useState<Workflow>(workflows[0]);
   const prefix = trackPrefix ?? (preset === "home" ? "home-workflow" : `${preset}-workflow`);
-  const title = heading ?? (preset === "home" ? t("heading") : FALLBACK_HEADING);
+  const title = heading ?? HEADINGS[preset] ?? (preset === "home" ? t("heading") : FALLBACK_HEADING);
   const subtitle = SUBTITLE[preset] ?? SUBTITLE.home;
   const Grid = LayoutGrid;
 

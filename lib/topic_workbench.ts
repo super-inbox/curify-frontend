@@ -9,6 +9,8 @@ export const TOPIC_WORKBENCH_PRESET: Record<string, string> = {
   merch: "merch",
   product: "product",
   ecommerce: "product",
+  // portrait doubles as the "AI selfie" surface — restyle your own photo.
+  portrait: "selfie",
 };
 
 export function getTopicWorkbenchPreset(slug: string): string | null {

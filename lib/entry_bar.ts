@@ -46,21 +46,18 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     path: "/topics/social-media-posts",
   },
   // — tail (consumer / seasonal) —
+  // AI Selfie replaces the retired World Cup slot: reuses /topics/portrait,
+  // which now opens the "restyle your own photo" 3-column workbench.
   {
-    id: "world-cup",
-    emoji: "⚽",
-    path: "/topics/world-cup",
+    id: "ai-portrait",
+    emoji: "🤳",
+    path: "/topics/portrait",
     isHot: true,
   },
   {
     id: "character",
     emoji: "🎭",
     path: "/topics/character",
-  },
-  {
-    id: "ai-portrait",
-    emoji: "📸",
-    path: "/topics/portrait",
   },
   {
     id: "travel",
