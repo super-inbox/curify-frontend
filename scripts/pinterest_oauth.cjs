@@ -43,7 +43,16 @@ const SECRET = process.env.PINTEREST_SECRET_KEY;
 // why --serve can catch the code without any copy/paste.
 const REDIRECT =
   process.env.PINTEREST_REDIRECT_URI || "http://localhost:3000/api/oauth/pinterest/callback";
-const SCOPES = ["boards:read", "boards:write", "pins:read", "pins:write", "user_accounts:read"];
+// Trial-tier apps can write "standard Pins" but they are visible only to the
+// creating user — i.e. SECRET pins on a SECRET board. Public pins/boards use
+// pins:write / boards:write; the creator-only variants need the *_secret
+// scopes. Request both sets so the same token covers Trial now and Standard
+// later without another consent round-trip.
+const SCOPES = [
+  "boards:read", "boards:write", "boards:read_secret", "boards:write_secret",
+  "pins:read", "pins:write", "pins:read_secret", "pins:write_secret",
+  "user_accounts:read",
+];
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i === -1 ? null : (process.argv[i + 1] || true); };
 
