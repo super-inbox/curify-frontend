@@ -27,6 +27,7 @@ import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox"
 import NanoBananaExamples from "@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples";
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
+import ToolHandoffBanner from "@/app/[locale]/_components/ToolHandoffBanner";
 
 // Helper function to decode HTML entities (server-safe)
 function decodeHTMLEntities(text: string): string {
@@ -114,6 +115,17 @@ export default function MBTICharacterGeneratorPage() {
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3 text-gray-900">
             {t('hero.title')}
           </h1>
+
+          {/* Tool-intent hand-off. This post ranks pos ~5.7 for "mbti generator"
+              (286 impr / 6 clicks) and pos 5.9 for "random mbti generator"
+              (271 impr / ZERO clicks). The searcher wants a generator, not an
+              article; the existing Try-Now block sits two thirds down the page. */}
+          <ToolHandoffBanner
+            locale={locale}
+            href="/nano-template/mbti-generic"
+            label="Generate one now"
+            title="MBTI Character Generator — pick a type, get a character"
+          />
           <p className="text-lg text-gray-600">
             {t('hero.subtitle')}
           </p>
