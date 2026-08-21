@@ -21,6 +21,7 @@ import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUploa
 import {
   factoryExportService,
   STICKER_EXPORT_CREDITS,
+  USD_PER_CREDIT,
 } from "@/services/factoryExport";
 
 type Phase = "idle" | "running" | "done" | "failed";
@@ -103,13 +104,24 @@ export default function StickerExportForm() {
     <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <p className="text-lg font-bold text-neutral-900">Make the production files</p>
+        {/* Lead with dollars. "190 credits" means nothing to someone holding a
+            printer's quote; "$19" is the number they compare against the $50-150
+            a printer charges to prep the same file. Credits stay visible because
+            credits are what actually get deducted. */}
         <p className="text-sm font-semibold text-purple-800">
-          {STICKER_EXPORT_CREDITS} credits
+          ${(STICKER_EXPORT_CREDITS * USD_PER_CREDIT).toFixed(0)}
+          <span className="ml-1.5 font-medium text-neutral-500">
+            ({STICKER_EXPORT_CREDITS} credits)
+          </span>
         </p>
       </div>
       <p className="mt-1 text-sm text-neutral-600">
         Upload artwork with a clear subject. You get 300&nbsp;DPI transparent art, a die-cut
-        line, a CMYK PDF, a preview and a spec sheet — as one zip.
+        line, a CMYK PDF, a preview and a spec sheet — as one zip. Files a factory
+        accepts as-is; most printers charge $50–150 to prepare the same thing.
+      </p>
+      <p className="mt-1 text-xs text-neutral-500">
+        Production files aren&apos;t covered by free signup credits.
       </p>
 
       <div className="mt-4">
@@ -158,7 +170,7 @@ export default function StickerExportForm() {
       >
         {busy
           ? "Building files…"
-          : `Export factory files · ${STICKER_EXPORT_CREDITS} credits`}
+          : `Export factory files · $${(STICKER_EXPORT_CREDITS * USD_PER_CREDIT).toFixed(0)}`}
       </button>
       <p className="mt-2 text-xs text-neutral-500">
         Nothing is charged until the files exist — a failed run costs nothing.
