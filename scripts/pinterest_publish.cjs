@@ -30,6 +30,33 @@
 const fs = require("fs");
 const path = require("path");
 
+// Credentials live in the BACKEND env (curify_background/.env), not the
+// frontend one — that is where the operator saved them.
+const BACKEND_ENV = path.join(process.env.HOME, "curify-studio/curify_background/.env");
+function loadBackendEnv() {
+  try {
+    for (const line of fs.readFileSync(BACKEND_ENV, "utf8").split("\n")) {
+      const m = line.match(/^\s*(PINTEREST_[A-Z_]+)\s*=\s*(.*)$/);
+      if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim().replace(/^["']|["']$/g, "");
+    }
+  } catch { /* fall back to the ambient env */ }
+}
+loadBackendEnv();
+
+// board slug -> { id, landing }. The landing page is the topic hub for that
+// board, so a Pin sends traffic to a browsable collection rather than a single
+// template. NOTE ecommerce points at /topics/product: /topics/ecommerce was
+// consolidated into it on 2026-08-20 and now 308s, and a Pin should never link
+// through a redirect.
+const BOARDS = {
+  merch:     { id: "570831390209279192", landing: "/topics/merch" },
+  brand:     { id: "570831390209279198", landing: "/topics/branding" },
+  ecommerce: { id: "570831390209279199", landing: "/topics/product" },
+  packaging: { id: "570831390209279197", landing: "/topics/packaging" },
+  edtech:    { id: "570831390209279196", landing: "/topics/learning" },
+  mbti:      { id: "570831390209262804", landing: "/topics/mbti" },
+};
+
 const CDN = "https://cdn.curify-ai.com";
 const SITE = "https://www.curify-ai.com";
 const API = "https://api.pinterest.com/v5";
@@ -78,7 +105,15 @@ function build() {
   const imageUrl = relPrev.startsWith("http") ? relPrev : `${CDN}${relFull}`;
   const fallbackUrl = `${CDN}${relPrev}`;
 
-  const linkPath = arg("link") && arg("link") !== true ? arg("link") : `/nano-template/${slug}`;
+  const boardKey = arg("board") && arg("board") !== true ? String(arg("board")) : null;
+  const board = boardKey && BOARDS[boardKey] ? BOARDS[boardKey] : null;
+  if (boardKey && !board && !/^\d+$/.test(boardKey))
+    throw new Error(`unknown board "${boardKey}" — known: ${Object.keys(BOARDS).join(", ")}`);
+  // Landing precedence: explicit --link > the board's topic hub > template page.
+  const linkPath =
+    arg("link") && arg("link") !== true ? arg("link")
+    : board ? board.landing
+    : `/nano-template/${slug}`;
   const utm = arg("no-utm") ? "" : "?utm_source=pinterest&utm_medium=social&utm_campaign=template-examples";
   const link = `${SITE}${linkPath}${utm}`;
 
@@ -92,7 +127,7 @@ function build() {
       title: `${subject.replace(/\b\w/g, (c) => c.toUpperCase())} — ${rawTitle}`.slice(0, 100),
       description: ((tpl.description || "") + " Made with Curify AI — upload one character and get a consistent set.").trim().slice(0, 800),
       alt_text: `${subject} character expression sheet, nine poses on a grid`.slice(0, 500),
-      board_id: arg("board") || process.env.PINTEREST_BOARD_ID || "<PINTEREST_BOARD_ID>",
+      board_id: (board && board.id) || boardKey || process.env.PINTEREST_BOARD_ID || "<PINTEREST_BOARD_ID>",
       link,
       media_source: { source_type: "image_url", url: imageUrl },
     },
@@ -139,7 +174,21 @@ async function main() {
   });
   const body = await res.text();
   console.log(`\nHTTP ${res.status}\n${body}`);
-  if (!res.ok) process.exitCode = 1;
+  if (!res.ok) {
+    // The most common first-run failure: a token generated with read scopes
+    // only. Board listing succeeds (boards:read) so the token looks valid
+    // right up until the POST.
+    if (res.status === 401 && /scopes|permissions/i.test(body)) {
+      console.error(
+        "\nThe token is read-only. Regenerate it with WRITE scopes:\n" +
+        "  boards:read, boards:write, pins:read, pins:write\n" +
+        "Pinterest developer console -> My apps -> your app -> generate token,\n" +
+        "tick the write scopes, then update PINTEREST_ACCESS_TOKEN in\n" +
+        "curify-studio/curify_background/.env (tokens expire in 24h).",
+      );
+    }
+    process.exitCode = 1;
+  }
 }
 
 main().catch((e) => { console.error(`ERROR: ${e.message}`); process.exitCode = 1; });
