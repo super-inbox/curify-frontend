@@ -111,7 +111,6 @@ export default function MBTICharacterGeneratorPage() {
             pass). */}
         <header className="mb-10">
           <AutoTableOfContents />
-          <BlogCategoryLabel slug="mbti-character-generator" />
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3 text-gray-900">
             {t('hero.title')}
           </h1>
@@ -119,6 +118,9 @@ export default function MBTICharacterGeneratorPage() {
           <p className="text-lg text-gray-600">
             {t('hero.subtitle')}
           </p>
+          <div className="mt-4">
+            <BlogCategoryLabel slug="mbti-character-generator" />
+          </div>
 
           {/* Tool-intent hand-off. "mbti generator" ranks pos 5.7 here
               (286 impr / 6 clicks); "random mbti generator" pos 5.9 with 271
@@ -152,7 +154,6 @@ export default function MBTICharacterGeneratorPage() {
             <p className="text-gray-700 max-w-2xl mx-auto">{t('universes.description')}</p>
             <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full mt-3"></div>
           </div>
-          <NanoBananaExamples locale={locale} blogSlug="mbti-character-generator-universe" />
         </section>
 
         {/* Social Share */}
@@ -177,26 +178,6 @@ export default function MBTICharacterGeneratorPage() {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('basics.whatIsMBTI.title')}</h3>
-                <p className="text-gray-700 mb-6 text-lg">{t('basics.whatIsMBTI.description')}</p>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  {[
-                    { type: 'E/I', label: 'Extraversion/Introversion', desc: 'How you direct and receive energy' },
-                    { type: 'S/N', label: 'Sensing/Intuition', desc: 'How you take in information' },
-                    { type: 'T/F', label: 'Thinking/Feeling', desc: 'How you make decisions' },
-                    { type: 'J/P', label: 'Judging/Perceiving', desc: 'How you approach the outside world' }
-                  ].map((dimension, index) => (
-                    <div key={index} className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="font-bold text-gray-900">{dimension.type}</h4>
-                      <h5 className="font-semibold text-gray-800 mb-1">{dimension.label}</h5>
-                      <p className="text-sm text-gray-600">{dimension.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-lg border border-blue-100">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('basics.aiGeneration.title')}</h3>
                 <p className="text-gray-700 mb-6 text-lg">{t('basics.aiGeneration.description')}</p>
