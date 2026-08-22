@@ -99,8 +99,18 @@ export function offersPhysicalProduct(templateId: string | undefined | null): bo
 export const PRESET_IMAGE_PARAM = "image";
 
 export const ACRYLIC_TOOL_SLUG = "acrylic-factory-export";
+export const STICKER_TOOL_SLUG = "die-cut-sticker-file";
+
+function toolHandoffHref(locale: string, slug: string, imageUrl: string): string {
+  return `/${locale}/tools/${slug}?${PRESET_IMAGE_PARAM}=${encodeURIComponent(imageUrl)}`;
+}
 
 /** Build the handoff URL from a completed generation to the acrylic exporter. */
 export function acrylicOfferHref(locale: string, imageUrl: string): string {
-  return `/${locale}/tools/${ACRYLIC_TOOL_SLUG}?${PRESET_IMAGE_PARAM}=${encodeURIComponent(imageUrl)}`;
+  return toolHandoffHref(locale, ACRYLIC_TOOL_SLUG, imageUrl);
+}
+
+/** Build the handoff URL from a completed generation to the die-cut exporter. */
+export function stickerOfferHref(locale: string, imageUrl: string): string {
+  return toolHandoffHref(locale, STICKER_TOOL_SLUG, imageUrl);
 }

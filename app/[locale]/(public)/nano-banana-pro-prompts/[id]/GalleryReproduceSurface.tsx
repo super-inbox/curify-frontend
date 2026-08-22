@@ -7,6 +7,7 @@ import { Sparkles, Download, Loader2, ArrowUpRight, Wand2, ChevronDown } from "l
 import { useTranslations } from "next-intl";
 
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import PostGenerationExports from "@/app/[locale]/_components/PostGenerationExports";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { useFreeformGenerate } from "@/services/useFreeformGenerate";
 import { PRODUCTION_TILES } from "@/lib/gallery_production_tiles";
@@ -285,6 +286,17 @@ export default function GalleryReproduceSurface({
                 </a>
               )}
             </div>
+
+            {/* Result-dependent exports. templateId is deliberately omitted: a
+                gallery prompt is arbitrary, so we cannot claim it yields a single
+                cut-outable subject and the Manufacture group stays hidden. The
+                gap this closes here is Reformat — this surface previously offered
+                a download and nothing else. */}
+            <PostGenerationExports
+              imageUrl={latest?.url ?? null}
+              locale={locale}
+              tracking={tracking}
+            />
 
             {/* Earlier generations this session + workspace link. */}
             {results.length > 0 && (

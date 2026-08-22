@@ -5,11 +5,7 @@ import { Wand2, Copy } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import {
-  offersPhysicalProduct,
-  acrylicOfferHref,
-} from "@/lib/physical_product_offer";
-import { ACRYLIC_EXPORT_CREDITS, USD_PER_CREDIT } from "@/lib/pricing";
+import PostGenerationExports from "@/app/[locale]/_components/PostGenerationExports";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { buildExampleId } from "@/lib/nano_pure";
@@ -204,31 +200,6 @@ export default function ExampleGeneratePanel({
             alt="Generated result"
             className="max-h-[280px] w-auto rounded-2xl border border-neutral-200 object-contain"
           />
-          {/* Physical-product offer. Shown only when the template emits a single
-              cut-outable subject (lib/physical_product_offer.ts), and placed here
-              because this is the one moment a user is holding finished artwork.
-              The acrylic tool has had ZERO uses in its lifetime, so what is being
-              tested is discovery, not capability. Price stated before the click,
-              same rule the exporters follow. Coverage is only ~2% of generations
-              today — see the note in physical_product_offer.ts before reading a
-              low click count as disinterest. */}
-          {offersPhysicalProduct(templateId) && (
-            <a
-              href={acrylicOfferHref(locale, generatedImageUrl)}
-              onClick={() => trackAction(tracking, "click")}
-              className="flex items-center justify-between gap-3 rounded-xl border border-purple-200 bg-purple-50 px-4 py-3 transition-colors hover:bg-purple-100"
-            >
-              <span className="text-sm font-semibold text-neutral-900">
-                Turn this into a real acrylic charm
-                <span className="ml-2 font-normal text-neutral-600">
-                  print-ready files a factory accepts
-                </span>
-              </span>
-              <span className="shrink-0 text-sm font-bold text-purple-800">
-                ${(ACRYLIC_EXPORT_CREDITS * USD_PER_CREDIT).toFixed(0)}
-              </span>
-            </a>
-          )}
           <UnifiedActionBar
             tracking={tracking}
             remix={
@@ -243,6 +214,12 @@ export default function ExampleGeneratePanel({
               title,
               text: `Check out this Nano Banana example: ${title}`,
             }}
+          />
+          <PostGenerationExports
+            imageUrl={generatedImageUrl}
+            locale={locale}
+            templateId={templateId}
+            tracking={tracking}
           />
         </div>
       )}
