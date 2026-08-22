@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import BlogInlineClickTracker from "./BlogInlineClickTracker";
 import BlogCodeBlockCopyTracker from "./BlogCodeBlockCopyTracker";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
@@ -6,6 +7,10 @@ import VisualSearchQueryCardsSection from "./VisualSearchQueryCardsSection";
 interface GenericBlogContentProps {
   hasKey: (key: string) => boolean;
   safeT: (key: string, defaultValue?: string) => string;
+  richT: (
+    key: string,
+    tags: Record<string, (chunks: ReactNode) => ReactNode>
+  ) => ReactNode;
   formatContent: (content: string) => string;
   getVideoDubbingUrl: (locale: string) => string;
   locale: string;
@@ -15,6 +20,7 @@ interface GenericBlogContentProps {
 export default function GenericBlogContent({
   hasKey,
   safeT,
+  richT,
   formatContent,
   getVideoDubbingUrl,
   locale,
@@ -61,7 +67,13 @@ export default function GenericBlogContent({
       )}
 
       <p className="text-lg font-semibold text-blue-600 mb-4">
-        {hasKey("intro") ? safeT("intro") : "Introduction"}
+        {hasKey("intro")
+          ? richT("intro", {
+              emphasis: (chunks) => (
+                <strong className="font-extrabold text-blue-800">{chunks}</strong>
+              ),
+            }) ?? safeT("intro")
+          : "Introduction"}
       </p>
       
       <section>
