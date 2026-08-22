@@ -25,33 +25,36 @@
     "plans": {
       "free": {
         "name": "Free",
-        "description": "Great for testing tools and light work",
+        "description": "Great for trying things out — outputs carry a small Curify badge",
         "features": [
-          "Download videos without watermark",
+          "Watermarked video & image downloads",
           "1 hour free subtitle processing",
-          "Export SRT files"
+          "Export SRT files",
+          "50 credits to start"
         ]
       },
       "creator": {
         "name": "Creator",
-        "description": "Ideal for small creators doing regular subtitling and light dubbing",
+        "description": "For creators shipping real work — clean, unbadged deliverables",
         "plusTitle": "Everything in Free, plus:",
         "features": [
-          "Lip Syncing",
+          "Watermark-free video & image downloads",
+          "Lip syncing",
           "Batch processing",
           "5 hours free subtitle processing",
-          "Up to 30 minutes per task"
+          "200 credits / month"
         ]
       },
       "pro": {
         "name": "Pro",
-        "description": "Coming Soon — Designed for high-volume creators",
+        "description": "Coming Soon — for high-volume creators",
         "plusTitle": "Everything in Creator, plus:",
         "features": [
+          "Everything in Creator",
           "Voice beautification & noise removal",
           "Priority queue",
           "Up to 60 min per task",
-          "Unlimited subtitle minutes"
+          "1,200 credits / month"
         ]
       },
       "enterprise": {

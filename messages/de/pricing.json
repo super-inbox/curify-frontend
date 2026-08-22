@@ -25,33 +25,36 @@
     "plans": {
       "free": {
         "name": "Kostenlos",
-        "description": "Ideal zum Testen von Tools und für leichte Arbeiten",
+        "description": "Zum Ausprobieren — Ergebnisse tragen ein kleines Curify-Badge",
         "features": [
-          "Videos ohne Wasserzeichen herunterladen",
-          "1 Stunde kostenlose Untertitelverarbeitung",
-          "SRT-Dateien exportieren"
+          "Video- und Bild-Downloads mit Wasserzeichen",
+          "1 Stunde Untertitel gratis",
+          "SRT-Export",
+          "50 Credits zum Start"
         ]
       },
       "creator": {
         "name": "Kreator",
-        "description": "Ideal für kleine Creators mit regelmäßiger Untertitelung und leichter Synchronisation",
+        "description": "Für Creator mit echten Deliverables — ohne Wasserzeichen",
         "plusTitle": "Alles in Kostenlos, plus:",
         "features": [
+          "Downloads ohne Wasserzeichen",
           "Lippensynchronisation",
           "Stapelverarbeitung",
-          "5 Stunden kostenlose Untertitelverarbeitung",
-          "Bis zu 30 Minuten pro Aufgabe"
+          "5 Stunden Untertitel gratis",
+          "200 Credits / Monat"
         ]
       },
       "pro": {
         "name": "Pro",
-        "description": "Demnächst verfügbar — Entwickelt für Creators mit hohem Volumen",
+        "description": "Demnächst — für hohe Volumen",
         "plusTitle": "Alles in Creator, plus:",
         "features": [
-          "Stimmverschönerung & Rauschunterdrückung",
-          "Prioritätswarteschlange",
-          "Bis zu 60 Min. pro Aufgabe",
-          "Unbegrenzte Untertitelminuten"
+          "Alles aus Creator",
+          "Stimmoptimierung & Rauschunterdrückung",
+          "Priorisierte Warteschlange",
+          "Bis zu 60 Min pro Aufgabe",
+          "1.200 Credits / Monat"
         ]
       },
       "enterprise": {
