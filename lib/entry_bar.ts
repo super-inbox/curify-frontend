@@ -14,6 +14,17 @@ export type EntryBarItem = {
 // top-level entries — each has a thumbnail in topic_thumbnails.json so it
 // survives the TopicStrip manifest filter.
 export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
+  // AI Selfie leads the rail (replaced the retired World Cup slot). Uses id
+  // "portrait" — a real topic that already has a generated icon/thumbnail — so
+  // the TopicStrip manifest filter (requireThumbnail) never drops it (the old
+  // "ai-portrait" id had no manifest entry and was silently filtered out).
+  // Opens the "restyle your own photo" 3-column workbench on /topics/portrait.
+  {
+    id: "portrait",
+    emoji: "🤳",
+    path: "/topics/portrait",
+    isHot: true,
+  },
   // — most important (commerce & design) —
   {
     id: "merch",
@@ -47,20 +58,9 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
   },
   // — tail (consumer / seasonal) —
   {
-    id: "world-cup",
-    emoji: "⚽",
-    path: "/topics/world-cup",
-    isHot: true,
-  },
-  {
     id: "character",
     emoji: "🎭",
     path: "/topics/character",
-  },
-  {
-    id: "ai-portrait",
-    emoji: "📸",
-    path: "/topics/portrait",
   },
   {
     id: "travel",

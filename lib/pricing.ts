@@ -40,8 +40,25 @@ export const IMAGE_GENERATION_CREDITS = 5;
  *  and the comparable is a freelance designer charging $15–50 for the same file,
  *  not a consumer image generator. Volume is low and the buyer is a business
  *  buying a manufacturing input. This is the moat; discounting it would trade the
- *  defensible surface for the commodity one. */
-export const STICKER_EXPORT_CREDITS = 20;
+ *  defensible surface for the commodity one.
+ *
+ *  2026-08-21 — 20 → 90 ($2.00 → $9.00). Briefly 190 ($19) on value grounds; the
+ *  paragraph above named the right comparable and then charged $2.00, and a
+ *  printer's own file-prep fee is $50–150. Walked back the same day: the binding
+ *  constraint is not margin but that almost nobody reaches our paywall at all (50
+ *  users of 705, lifetime, one of whom paid). Value pricing presumes buyers we
+ *  have not established. $9 buys the first transactions and the data with them.
+ *  Cost constrains nothing here — deterministic CPU, no vendor bill, ~100% margin
+ *  at any of these numbers. Also carved out of the free signup grant in the
+ *  backend (design_tool_pipelines.FREE_GRANT_EXCLUDED_JOBS). */
+export const STICKER_EXPORT_CREDITS = 90;
+
+/** Credits for a print-ready acrylic standee / keychain package.
+ *  Mirrors `design_tool_pipelines.ACRYLIC_EXPORT_CREDITS`.
+ *
+ *  Above the sticker export because it is strictly more pre-press: the same
+ *  geometry plus a choked white underbase plate and a wall-checked hole. */
+export const ACRYLIC_EXPORT_CREDITS = 120;
 
 /** Credits for an AI packaging mockup (dieline → folded 3D box render).
  *  Mirrors `design_tool_pipelines.PACKAGING_MOCKUP_CREDITS`. One Gemini call plus

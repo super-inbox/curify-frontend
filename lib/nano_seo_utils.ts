@@ -186,7 +186,22 @@ export function buildNanoTemplateMetadata(opts: {
     localizedLocales.map((locale) => [locale, getCanonicalUrl(locale, path)])
   );
 
-  const title = normalizeText(message?.title) || fallbackTitle;
+  // SERP title hygiene (2026-08-21). Two problems measured in the live SERP:
+  //   "Nano Banana Prompt: MBTI Character Visualization Generator | Curify AI | Curify Studio"
+  // 1. The "Nano Banana Prompt:" prefix opens 209 of 353 template titles with a
+  //    phrase nobody searches, eating the first ~20 chars of a ~60-char SERP slot.
+  // 2. The brand appears TWICE — the authored title ends "| Curify AI" and the
+  //    (public) layout metadata template appends "| Curify Studio" on top.
+  // Between them ~40 of ~85 chars were boilerplate, so the keyword was being
+  // truncated away. Templates rank at avg position 8.6 on tool-intent queries but
+  // convert at 0.51% CTR — worse than blogs at position 11.3 — and this is the
+  // most likely cause. Sanitized here rather than in 353 titles x 10 locales.
+  const stripTitleBoilerplate = (t: string): string =>
+    t
+      .replace(/^\s*Nano\s*Banana\s*Prompt\s*[::]\s*/i, "")
+      .replace(/\s*[|｜]\s*Curify(\s+AI|\s+Studio)?\s*$/i, "")
+      .trim();
+  const title = stripTitleBoilerplate(normalizeText(message?.title) || fallbackTitle);
   const description = normalizeText(message?.description) || fallbackDescription;
   const ogImage = toAbsUrlMaybe(templateCore?.og_image);
 
@@ -326,7 +341,16 @@ export function buildProPromptMetadata(
     locale,
   } = input;
 
-  const fullTitle = `${title} | Nano Banana Pro Prompts`;
+  // Same double-brand bug as the template titles (fixed above): this appended
+  // "| Nano Banana Pro Prompts" and then the (public) layout appends
+  // "| Curify Studio" on top, giving e.g.
+  //   "Retro Glam: A Nostalgic 80s Captured Moment | Nano Banana Pro Prompts | Curify Studio"
+  // at 85 chars, so Google truncates. 1,535 prompt pages are affected. Keep the
+  // section label only when the title is short enough for both to survive.
+  const SERP_BUDGET = 60 - " | Curify Studio".length;
+  const section = " | Nano Banana Pro Prompts";
+  const fullTitle =
+    title.length + section.length <= SERP_BUDGET ? `${title}${section}` : title;
 
   // Prompt content (title/description/promptText) is en-only — even when
   // rendered under /zh/, /de/, etc., the body is the same English text.

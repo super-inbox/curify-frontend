@@ -9,9 +9,17 @@ import { nanoGenerateService, type NanoProjectStatus } from "./nanoGenerate";
  * reimplemented. These endpoints charge credits and deduct only AFTER the
  * artifact exists, so a failed run costs the user nothing.
  */
-export const STICKER_EXPORT_CREDITS = 20;
-export const ACRYLIC_EXPORT_CREDITS = 25;
-export const PACKAGING_MOCKUP_CREDITS = 15;
+// Re-exported, NOT redefined. These three used to be declared here with their
+// own literals, which is how the UI kept rendering "20 credits" on 2026-08-21
+// after lib/pricing.ts and the backend had both moved to 190 — the pricing test
+// only guards lib/pricing.ts, so a second copy drifts silently. lib/pricing.ts
+// is the single source of truth for anything shown to a user.
+export {
+  STICKER_EXPORT_CREDITS,
+  ACRYLIC_EXPORT_CREDITS,
+  PACKAGING_MOCKUP_CREDITS,
+  USD_PER_CREDIT,
+} from "@/lib/pricing";
 
 export interface StickerExportRequest {
   /** blob_url from the image upload — a bucket object path, not a data URL. */
