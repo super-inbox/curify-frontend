@@ -25,33 +25,36 @@
     "plans": {
       "free": {
         "name": "Ücretsiz",
-        "description": "Araçları test etmek ve hafif işler için harika",
+        "description": "Denemek için — çıktılarda küçük bir Curify rozeti olur",
         "features": [
-          "Filigran olmadan video indirme",
+          "Video ve görsel indirmelerinde filigran",
           "1 saat ücretsiz altyazı işleme",
-          "SRT dosyalarını dışa aktarma"
+          "SRT dışa aktarma",
+          "Başlangıçta 50 kredi"
         ]
       },
       "creator": {
         "name": "Üretici",
-        "description": "Düzenli altyazı ve hafif dublaj yapan küçük içerik oluşturucular için ideal",
+        "description": "Gerçek iş teslim eden üreticiler için — filigransız",
         "plusTitle": "Ücretsiz plandaki her şey, artı:",
         "features": [
-          "Dudak Senkronizasyonu",
+          "Filigransız indirmeler",
+          "Dudak senkronizasyonu",
           "Toplu işleme",
           "5 saat ücretsiz altyazı işleme",
-          "Görev başına 30 dakikaya kadar"
+          "Aylık 200 kredi"
         ]
       },
       "pro": {
         "name": "Profesyonel",
-        "description": "Yakında — Yüksek hacimli içerik oluşturucular için tasarlandı",
+        "description": "Yakında — yüksek hacimli üreticiler için",
         "plusTitle": "Üretici planındaki her şey, artı:",
         "features": [
-          "Ses güzelleştirme ve gürültü giderme",
-          "Öncelik sırası",
+          "Creator'daki her şey",
+          "Ses iyileştirme ve gürültü giderme",
+          "Öncelikli kuyruk",
           "Görev başına 60 dakikaya kadar",
-          "Sınırsız altyazı dakikası"
+          "Aylık 1.200 kredi"
         ]
       },
       "enterprise": {

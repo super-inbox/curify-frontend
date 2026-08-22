@@ -239,6 +239,16 @@ export default async function Page({ params }: Props) {
     }
   }
 
+  // Perf: only ship an INITIAL WINDOW of interleaved examples into the RSC
+  // payload. The client grid renders ~2-3 rows and reveals the rest via
+  // "See more"; shipping ALL examples (up to ~1700 on big topics like
+  // /topics/posters) bloated the page to >1.3 MB even though only a few rows
+  // ever render. The round-robin above keeps the first N diverse across
+  // templates. Mirrors the nanoCards feed cap below. (True progressive /
+  // fetch-more is a planned follow-up; 96 still gives a generous expand.)
+  const GRID_INITIAL_CAP = 96;
+  const gridItemsInitial = gridItems.slice(0, GRID_INITIAL_CAP);
+
   const nanoCards = buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
@@ -515,7 +525,7 @@ export default async function Page({ params }: Props) {
       {!isNicheStyleTopic && gridItems.length > 0 ? (
         <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
           <ExampleImagesGrid
-            items={gridItems}
+            items={gridItemsInitial}
             locale={localeStr}
             maxRows={3}
             desktopOpensExample
