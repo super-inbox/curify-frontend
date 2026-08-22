@@ -4,6 +4,8 @@
 import { Link } from "@/i18n/navigation";
 import StickerExportForm from "@/app/[locale]/_components/StickerExportForm";
 import AcrylicExportForm from "@/app/[locale]/_components/AcrylicExportForm";
+import { useSearchParams } from "next/navigation";
+import { PRESET_IMAGE_PARAM } from "@/lib/physical_product_offer";
 import PackagingMockupForm from "@/app/[locale]/_components/PackagingMockupForm";
 import { personasForTool } from "@/lib/tool-personas";
 import { useTranslations, useLocale } from "next-intl";
@@ -64,6 +66,10 @@ export default function ToolGenericClient({
   if (!tool) return null;
 
   const ucPersonas = personasForTool(slug);
+  // Handoff from a completed generation (lib/physical_product_offer.ts):
+  // ?image=<signed url> pre-fills the exporter so the user is not asked to
+  // re-upload artwork they just made here.
+  const presetImageUrl = useSearchParams()?.get(PRESET_IMAGE_PARAM) ?? null;
   const t = useTranslations(tool.namespace);
   const tGlobal = useTranslations();
   // Locale string needed by RelatedBlogsByCategory and (less directly) for
@@ -174,7 +180,7 @@ export default function ToolGenericClient({
           // POST /design-tools/*. Charges 20 credits, stated before the click.
           <StickerExportForm />
         ) : tool.action?.type === "acrylic_export" ? (
-          <AcrylicExportForm />
+          <AcrylicExportForm presetImageUrl={presetImageUrl} />
         ) : tool.action?.type === "packaging_mockup" ? (
           <PackagingMockupForm />
         ) : tool.action?.type === "costume_tryon" ? (
