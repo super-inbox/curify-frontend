@@ -202,9 +202,11 @@ function applyPhraseAliasRules(normalizedQuery, primaryTokens) {
 function buildSearchTokens(query) {
   const normalizedQuery = normalizeForSearch(query);
   let primary = normalizedQuery
-    .split(/[\s,，、。.:：=·\/|()\[\]+*]+/)
+    // Mirror of lib/searchTokenSplit.ts — hyphen/underscore split + length-1
+    // ASCII fragment drop (delimiter-invariant recall). Keep in sync.
+    .split(/[\s,，、。.:：=·\/|()\[\]+*\-_]+/)
     .map((w) => w.trim())
-    .filter((w) => w && !STOPWORDS.has(w));
+    .filter((w) => w && !STOPWORDS.has(w) && !(w.length === 1 && /[a-z0-9]/.test(w)));
   const phraseResult = applyPhraseAliasRules(normalizedQuery, primary);
   primary = phraseResult.primary;
   const bigrams = [];

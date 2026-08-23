@@ -31,7 +31,10 @@ function normalizeForSearch(s) {
 function buildSearchTokens(query) {
   const norm = normalizeForSearch(query);
   if (!norm) return { primary: [], bigrams: [] };
-  const raw = norm.split(/\s+/).filter(Boolean);
+  // Hyphen/underscore split so `facial-expressions` ≡ `facial expressions`
+  // (mirror of lib/searchTokenSplit.ts). normalizeForSearch keeps hyphens,
+  // so split them here alongside whitespace.
+  const raw = norm.split(/[\s\-_]+/).filter(Boolean);
   const primary = [];
   for (const t of raw) {
     if (t.length < 2) continue;
@@ -75,7 +78,7 @@ function templateBlobFor(t) {
   const parts = [t.id, ...(Array.isArray(t.topics) ? t.topics : String(t.topics || "").split(","))];
   for (const loc of Object.values(t.locales ?? {})) {
     parts.push(loc?.base_prompt);
-    for (const p of loc?.parameters ?? []) {
+    for (const p of Array.isArray(loc?.parameters) ? loc.parameters : Object.values(loc?.parameters ?? {})) {
       if (p?.label) parts.push(p.label);
       if (Array.isArray(p?.placeholder)) parts.push(...p.placeholder);
     }
