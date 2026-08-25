@@ -4,6 +4,7 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 import exampleI18nEn from "@/messages/en/example.json";
 import exampleVisibilityWhitelist from "@/public/data/example_visibility_whitelist.json";
+import exampleLocaleKeeplist from "@/public/data/example_locale_keeplist.json";
 import { toSlug } from "@/lib/nano_utils";
 import { templateExamplesIndexable } from "@/lib/example_indexing";
 import {
@@ -66,6 +67,19 @@ type NanoExample = {
   date?: string;
   allow_i18n?: boolean;
 };
+
+// Localized example URLs that have actually earned an impression, as
+// "<locale>|<route>". Bare EN is always emitted and is NOT in this set.
+//
+// WHY: this sitemap advertised 11,190 URLs, 85% locale-prefixed and 75.8% with
+// ZERO impressions in 90 days. Listing every locale variant and hoping Google
+// filters is the wrong pattern — hreflang is the mechanism for alternates, and
+// every example page emits a full alternates set, so a variant dropped here is
+// still discoverable. Bulk-listing dead variants only costs sitemap credibility
+// and crawl budget. Regenerate with scripts/build_example_locale_keeplist.cjs.
+const LOCALE_KEEP = new Set<string>(
+  (exampleLocaleKeeplist as { keep?: string[] }).keep ?? []
+);
 
 // templateId -> whether its example pages are indexable at all. Mirrors the
 // noindex rule in the example route's generateMetadata:
@@ -190,6 +204,7 @@ export async function GET() {
   let skipped = 0;
   let skippedNoindex = 0;
   let skippedThinLocale = 0;
+  let skippedDeadLocale = 0;
   for (const ex of examples) {
     if (!ex?.id || !ex?.template_id) continue;
 
@@ -218,6 +233,10 @@ export async function GET() {
     // copy lives in messages/<locale>/example.json). Other entries stick
     // with whatever locales they actually have data for, falling back to
     // the parent template's locale set.
+    const route = `/nano-template/${encodeURIComponent(
+      toSlug(templateId)
+    )}/example/${encodeURIComponent(exampleId)}`;
+
     const exampleLocales = ex.locales ? Object.keys(ex.locales) : [];
     let availableLocales: readonly string[] = ex.allow_i18n
       ? LOCALES
@@ -234,9 +253,17 @@ export async function GET() {
       skippedThinLocale += before - availableLocales.length;
     }
 
-    const route = `/nano-template/${encodeURIComponent(
-      toSlug(templateId)
-    )}/example/${encodeURIComponent(exampleId)}`;
+    // hreflang must stay COMPLETE: it is the mechanism that keeps a de-listed
+    // variant discoverable, so alternates are built from the full locale set.
+    const alternateLocales = availableLocales;
+
+    // Only the <loc> entries are pruned: bare EN always, plus locale variants
+    // that have actually earned an impression.
+    const emitLocales = availableLocales.filter(
+      (l) => l === "en" || LOCALE_KEEP.has(`${l}|${route}`)
+    );
+    skippedDeadLocale += alternateLocales.length - emitLocales.length;
+
 
     // Lastmod priority:
     //  1. Examples with i18n SEO copy in messages/<loc>/example.json —
@@ -257,12 +284,12 @@ export async function GET() {
       ? SEO_RETITLED_LASTMOD
       : pickLastmod(ex) ?? STABLE_LASTMOD;
 
-    for (const locale of availableLocales) {
+    for (const locale of emitLocales) {
       urls += generateUrlEntry(locale, route, {
         lastmod,
         changefreq: "weekly",
         priority: "0.5",
-        availableLocales,
+        availableLocales: alternateLocales,
       });
     }
   }
