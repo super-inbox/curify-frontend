@@ -4,7 +4,7 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 import exampleI18nEn from "@/messages/en/example.json";
 import exampleVisibilityWhitelist from "@/public/data/example_visibility_whitelist.json";
-import exampleLocaleKeeplist from "@/public/data/example_locale_keeplist.json";
+import exampleSitemapExperiment from "@/public/data/example_sitemap_experiment.json";
 import { toSlug } from "@/lib/nano_utils";
 import { templateExamplesIndexable } from "@/lib/example_indexing";
 import {
@@ -68,17 +68,30 @@ type NanoExample = {
   allow_i18n?: boolean;
 };
 
-// Localized example URLs that have actually earned an impression, as
-// "<locale>|<route>". Bare EN is always emitted and is NOT in this set.
+// SITEMAP A/B (2026-08-26). Localized example URLs de-listed as the TREATMENT
+// arm of a live experiment. Keyed "<locale>|<route>"; bare EN is never here.
 //
-// WHY: this sitemap advertised 11,190 URLs, 85% locale-prefixed and 75.8% with
-// ZERO impressions in 90 days. Listing every locale variant and hoping Google
-// filters is the wrong pattern — hreflang is the mechanism for alternates, and
-// every example page emits a full alternates set, so a variant dropped here is
-// still discoverable. Bulk-listing dead variants only costs sitemap credibility
-// and crawl budget. Regenerate with scripts/build_example_locale_keeplist.cjs.
-const LOCALE_KEEP = new Set<string>(
-  (exampleLocaleKeeplist as { keep?: string[] }).keep ?? []
+// QUESTION: does a <loc> entry for a locale variant do anything, given every
+// example page already emits a complete hreflang alternates set? Nobody knows,
+// so this measures it instead of guessing.
+//
+// An earlier revision of this file answered "nothing" by assertion and cut the
+// sitemap 11,190 -> 3,146 (-72%) in one step. That was too aggressive to be
+// safe: it de-listed 7,319 URLs on a 90d-impression rule, and an un-measured
+// site-wide cut has no way to tell "hreflang was sufficient" apart from "we
+// just buried 7,319 URLs". Reverted in favour of the cohort below.
+//
+// Both arms were drawn from the SAME pool: non-EN, zero impressions in BOTH a
+// 180d and a 28d window, surviving the noindex + thin-locale gates so the arms
+// are not contaminated by URLs dropped for other reasons. Treatment (~2,000)
+// is de-listed here; control (~4,969) stays in the sitemap. Every URL started
+// at zero impressions, so any later impression is attributable.
+//
+// DO NOT regenerate the cohort file mid-flight -- it would reshuffle the arms
+// and destroy the comparison. Read out in 4-8 weeks (due ~2026-09-23) with
+// scripts/read_example_sitemap_experiment.cjs.
+const TREATMENT_DELISTED = new Set<string>(
+  (exampleSitemapExperiment as { treatment?: string[] }).treatment ?? []
 );
 
 // templateId -> whether its example pages are indexable at all. Mirrors the
@@ -257,11 +270,22 @@ export async function GET() {
     // variant discoverable, so alternates are built from the full locale set.
     const alternateLocales = availableLocales;
 
-    // Only the <loc> entries are pruned: bare EN always, plus locale variants
-    // that have actually earned an impression.
-    const emitLocales = availableLocales.filter(
-      (l) => l === "en" || LOCALE_KEEP.has(`${l}|${route}`)
+    // Only the <loc> entries are pruned, and only for the treatment arm. Bare
+    // EN is always emitted; every other locale variant stays unless it was
+    // assigned to treatment. Control and unassigned variants are untouched.
+    let emitLocales: readonly string[] = availableLocales.filter(
+      (l) => l === "en" || !TREATMENT_DELISTED.has(`${l}|${route}`)
     );
+
+    // A handful of examples have no `en` locale at all (e.g. locales: {zh}).
+    // If every locale they do have lands in treatment, the filter above empties
+    // the list and the example emits NO <url> at all -- which also deletes its
+    // hreflang block, because alternates live inside the <url> entry. That
+    // would make treatment mean "removed from the index entirely" rather than
+    // "de-listed but still hreflang-reachable", quietly breaking the very thing
+    // the experiment is trying to measure. Never let an entry disappear.
+    if (emitLocales.length === 0) emitLocales = availableLocales;
+
     skippedDeadLocale += alternateLocales.length - emitLocales.length;
 
 

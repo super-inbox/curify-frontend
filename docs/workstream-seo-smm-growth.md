@@ -1005,6 +1005,67 @@ across docs hides the funnel; unifying them here surfaces it.
 
 ---
 
+## 2026-08-26 — sitemap-examples: locale A/B instead of a site-wide cut
+
+**Reverted an over-aggressive cut and replaced it with a measured experiment.**
+The 08-25 change took `sitemap-examples.xml` from 11,190 → 3,146 URLs (−72%) by
+de-listing every locale variant without a 90d impression. That was the right
+*hypothesis* (hreflang, not `<loc>`, is the discovery mechanism for alternates)
+asserted as a *conclusion*. A site-wide cut also destroys the evidence: if
+traffic later drops there is no way to tell "hreflang was sufficient" apart from
+"we buried 7,319 URLs."
+
+**Now:** 11,190 → **8,232** (−2,958, −26.4%), composed of
+- 958 URLs dropped by the `noindex` gate (already-approved hygiene — these pages
+  emit `noindex, follow` and canonical to their template, so advertising them
+  contradicted their own meta),
+- 1 by the thin-locale gate (effectively a no-op; kept as a guard), and
+- **1,999 as the treatment arm of a live A/B.**
+
+**Design.** Eligible pool = non-EN example URLs with **zero impressions in BOTH a
+180d and a 28d window**, surviving the noindex/thin gates so the arms aren't
+contaminated by URLs dropped for other reasons. Treatment (1,999) de-listed;
+control (4,670) stays listed. Stratified by locale, so both arms carry the same
+language mix at a consistent ~1:2.3 ratio. Assignment is a djb2 hash of the path,
+not `Math.random` — rerunning reproduces the identical split, so the cohort is
+rebuildable and auditable. Every URL starts at zero impressions, so **any** later
+impression is attributable.
+
+- Build: `scripts/build_example_sitemap_experiment.cjs` → `public/data/example_sitemap_experiment.json`
+- Read out: `scripts/read_example_sitemap_experiment.cjs` (**due ~2026-09-23**)
+- Primary metric: share of URLs per arm gaining ≥1 impression. Arms are unequal
+  by design — **compare rates, never counts.**
+- **Do not regenerate the cohort mid-flight.** It reshuffles arms and destroys
+  the comparison.
+
+**Gate A is cheaper than it looked.** The noindex gate drops 3,121 impressions /
+68 clicks measured over 180d, which reads alarming — but only **72 impressions /
+3 clicks** of that falls in the last 28d. The noindex rule shipped 2026-07-31, so
+a 180d window straddles it and most of that traffic predates the rule. It is
+already gone and the sitemap is not what's holding it.
+
+**Two bugs caught by verifying against the rendered sitemap rather than a replica:**
+1. **Invented locales.** The builder hardcoded a locale list including `ar` and
+   `pt`. This site ships `tr` and `ru` and neither `ar` nor `pt` — so 1,922 of the
+   assigned URLs *could not exist*. They'd have sat in both arms as permanent
+   zeroes and guaranteed a null result no matter what the sitemap did. The
+   builder now parses `i18n/routing.ts` and throws on an implausible parse.
+   Confirmed by exact arithmetic: the phantom locales accounted for precisely the
+   1,370 missing control URLs and 552 of 553 hreflang misses.
+2. **An entry could vanish entirely.** A few examples have no `en` locale (e.g.
+   `locales: {zh}`). If every locale they have lands in treatment, the filter
+   empties and the example emits no `<url>` at all — which deletes its hreflang
+   block too, since alternates live *inside* the entry. Treatment would then mean
+   "removed from discovery entirely," breaking exactly what the experiment
+   measures. Fixed in both layers: the route never lets `emitLocales` go empty,
+   and the builder only treats examples that also emit a bare-EN entry.
+
+Verified on the dev-rendered XML: treatment 0/1,999 listed, control 4,670/4,670
+listed, treatment 1,999/1,999 still hreflang-reachable, `<url>` count == `<loc>`
+count (8,232).
+
+---
+
 ## Related docs / threads
 - `docs/search-and-content.md` — Search & Content workstream (companion A)
 - `~/curify-studio/docs/workstream-tooling-and-engineering.md` — Tools workstream (companion B)
