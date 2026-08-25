@@ -5,6 +5,7 @@ import nanoInspiration from "@/public/data/nano_inspiration.json";
 import exampleI18nEn from "@/messages/en/example.json";
 import exampleVisibilityWhitelist from "@/public/data/example_visibility_whitelist.json";
 import { toSlug } from "@/lib/nano_utils";
+import { templateExamplesIndexable } from "@/lib/example_indexing";
 import {
   SEO_RETITLED_LASTMOD,
   SEO_RETITLED_TEMPLATE_IDS,
@@ -50,6 +51,8 @@ const LOCALES = routing.locales;
 const STABLE_LASTMOD = "2026-03-01T00:00:00.000Z";
 
 type NanoTemplate = {
+  topics?: string[] | string;
+  index_examples?: boolean | null;
   id: string;
   locales?: Record<string, any>;
 };
@@ -63,6 +66,27 @@ type NanoExample = {
   date?: string;
   allow_i18n?: boolean;
 };
+
+// templateId -> whether its example pages are indexable at all. Mirrors the
+// noindex rule in the example route's generateMetadata:
+//   noindex = !templateExamplesIndexable(topics, index_examples) || localeThin
+// Generator-demo templates (expression sheets, mockups, sticker packs) noindex
+// every example and canonical to the template, so emitting them in the sitemap
+// advertises URLs we have explicitly told Google not to index.
+function buildExamplesIndexableMap(): Map<string, boolean> {
+  const raws = nanoTemplates as unknown as NanoTemplate[];
+  const m = new Map<string, boolean>();
+  for (const t of raws) {
+    if (!t?.id) continue;
+    const topics = Array.isArray(t.topics)
+      ? t.topics
+      : typeof t.topics === "string"
+        ? t.topics.split(",").map((x) => x.trim())
+        : [];
+    m.set(String(t.id).trim(), templateExamplesIndexable(topics, t.index_examples));
+  }
+  return m;
+}
 
 // templateId -> available locales
 function getTemplateLocalesMap(): Map<string, string[]> {
@@ -158,10 +182,14 @@ export async function GET() {
   const templateLocalesMap = getTemplateLocalesMap();
   const examples = nanoInspiration as unknown as NanoExample[];
 
+  const examplesIndexableMap = buildExamplesIndexableMap();
+
   let urls = "";
 
   let emitted = 0;
   let skipped = 0;
+  let skippedNoindex = 0;
+  let skippedThinLocale = 0;
   for (const ex of examples) {
     if (!ex?.id || !ex?.template_id) continue;
 
@@ -176,6 +204,14 @@ export async function GET() {
       skipped++;
       continue;
     }
+
+    // Gate against the page's own noindex rule. Without this the sitemap
+    // advertises URLs whose <meta robots> says noindex — a direct
+    // contradiction, and 75.8% of this sitemap had zero impressions in 90d.
+    if (examplesIndexableMap.get(templateId) === false) {
+      skippedNoindex++;
+      continue;
+    }
     emitted++;
 
     // allow_i18n entries surface in all 10 locales (their per-locale SEO
@@ -183,11 +219,20 @@ export async function GET() {
     // with whatever locales they actually have data for, falling back to
     // the parent template's locale set.
     const exampleLocales = ex.locales ? Object.keys(ex.locales) : [];
-    const availableLocales: readonly string[] = ex.allow_i18n
+    let availableLocales: readonly string[] = ex.allow_i18n
       ? LOCALES
       : (exampleLocales.length
           ? exampleLocales
           : templateLocalesMap.get(templateId)) || LOCALES;
+
+    // localeThin: a non-allow_i18n example renders template-level fallbacks on
+    // any locale other than en/zh, and the page noindexes it. Emitting those was
+    // the bulk of the waste — 85% of this sitemap was locale-prefixed.
+    if (!ex.allow_i18n) {
+      const before = availableLocales.length;
+      availableLocales = availableLocales.filter((l) => l === "en" || l === "zh");
+      skippedThinLocale += before - availableLocales.length;
+    }
 
     const route = `/nano-template/${encodeURIComponent(
       toSlug(templateId)
