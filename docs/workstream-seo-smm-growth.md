@@ -233,6 +233,28 @@ _Updated 2026-08-10. The three deploy-gated rows below are **done**; corrections
 
 ## 2026-08-10 — corrections + the two P0s worked
 
+### RESULT of the Indexing-API experiment — read 2026-08-25
+
+| arm | crawled | indexed |
+|---|---|---|
+| treatment (pinged 08-18) | 1 of 3 | **1 of 3** — `/tools/die-cut-sticker-file`, crawled 08-23 |
+| control (never pinged) | 1 of 3 | 0 of 3 — `brand-font-specimen-set` crawled 08-25, "crawled – not indexed" |
+
+**Verdict: the ping is not the lever, and n is too small to claim it is.** Both arms got
+exactly one page crawled in seven days. The single treatment success is also the page that
+received the biggest link fix on 08-17 (1 → 4 inbound sources including the home page), so
+its indexation cannot be attributed to the ping. `acrylic-factory-export` got links (1 → 3)
+AND a ping and is still never-crawled.
+
+**What actually worked in the same window, with neither:** the two blog posts published
+08-18 were crawled and indexed within a day, unpinged, on one inbound link. That remains the
+strongest signal, and it points at prefix quality rather than links or pings — `/blog` earns
+712.8 impressions/page against `/nano-template`'s 9.4 across 3,966 pages.
+
+**Actions:** stop spending Indexing-API quota on `/tools/*` and `/nano-template/*`. Treat
+`/blog/*` as the ranking surface and tool pages as click destinations. The 3,966-page
+`/nano-template/` tranche generating ~9 impressions each is the thing to fix.
+
 ### Indexing-API experiment — submitted 2026-08-18, READ 2026-08-25
 
 Deployed the link fix (`564ff33c`) and submitted 3 URLs. **This is the decision point for
