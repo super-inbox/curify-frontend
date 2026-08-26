@@ -265,6 +265,32 @@ for (const group of EXPLICIT_SIBLING_GROUPS) {
 // the back-link chip since the country is already in the page title.
 // Extend this map when other topic pairs warrant explicit cross-link.
 const RELATED_LINKS: Record<string, string[]> = {
+  // 2026-08-26 crawl-topology fix. /topics/stickers was "Discovered - currently
+  // not indexed", never crawled. What predicts a crawl is the number of
+  // DISTINCT linking pages that Google already crawls, not the raw link count:
+  // /tools/packaging-mockup reached 3 sources and was crawled 08-09, while the
+  // tool pages sitting on 1 source have never been crawled at all.
+  //
+  // Measured on the rendered HTML (a source grep cannot see these -- the hrefs
+  // are built at runtime by resolveTopicPath, so they exist in no source file):
+  // stickers had 2 sources, home (x2 links) and /topics/product (x1). These two
+  // entries add merch and design, both verified indexed and both crawled within
+  // the last three weeks (08-08 / 08-22), taking it to 4 sources.
+  //
+  // Curated entries LEAD the "Explore further" row and it caps at 6, so on a
+  // full row a curated entry evicts the last derived one. Chosen accordingly:
+  //   packaging - renders only 2 topics today, so this displaces NOTHING.
+  //   design    - full, and evicts `composition`, a tier-3 format topic that is
+  //               linked from plenty of other pages.
+  // NOT merch, despite it being the strongest relation and the most recently
+  // crawled: its row is full and the entry it would evict is /topics/character,
+  // a tier-1 topic whose ONLY other linking source is the home page. Trading a
+  // tier-1 topic down to a single source to promote a tier-3 one is a net loss,
+  // and it is exactly the kind of quiet regression this row makes easy to miss.
+  // Both remaining relations are honest: a die-cut sticker is a printed product
+  // format, and a sticker sheet is a design deliverable.
+  packaging: ["stickers"],
+  design:    ["stickers"],
   brazil:    ["brazil-world-cup"],
   argentina: ["argentina-world-cup"],
   france:    ["france-world-cup"],
