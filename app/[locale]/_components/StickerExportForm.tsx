@@ -29,11 +29,18 @@ type Phase = "idle" | "running" | "done" | "failed";
 const POLL_MS = 4000;
 const MAX_POLLS = 75; // ~5 min: tracing + CMYK convert is CPU-bound, not instant
 
-export default function StickerExportForm() {
+type Props = {
+  /** Already-generated image handed off from a result surface — see
+   *  lib/physical_product_offer.ts. Skips the upload step so the user is not
+   *  asked to re-upload artwork they just made here. */
+  presetImageUrl?: string | null;
+};
+
+export default function StickerExportForm({ presetImageUrl }: Props = {}) {
   const user = useAtomValue(userAtom);
   const setDrawer = useSetAtom(drawerAtom);
 
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const [imageUrl, setImageUrl] = useState<string | null>(presetImageUrl ?? null);
   const [uploading, setUploading] = useState(false);
   const [mm, setMm] = useState(60);
   const [cutMm, setCutMm] = useState(3);
@@ -125,15 +132,38 @@ export default function StickerExportForm() {
       </p>
 
       <div className="mt-4">
-        <ReferenceImageUpload
-          variant="full"
-          label="Artwork"
-          hint="PNG with a transparent or plain background works best."
-          replaceLabel="Replace"
-          signInLabel="Sign in to upload artwork"
-          onChange={(blobUrl: string | null) => setImageUrl(blobUrl)}
-          onUploadingChange={setUploading}
-        />
+        {presetImageUrl && imageUrl === presetImageUrl ? (
+          <div className="flex items-center gap-3 rounded-xl border border-purple-200 bg-purple-50 p-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={presetImageUrl}
+              alt="Your generated artwork"
+              className="h-20 w-20 rounded-lg border border-purple-200 bg-white object-contain"
+            />
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-neutral-900">
+                Using the design you just made
+              </p>
+              <button
+                type="button"
+                onClick={() => setImageUrl(null)}
+                className="mt-0.5 text-xs font-medium text-purple-700 underline-offset-2 hover:underline"
+              >
+                Use a different image
+              </button>
+            </div>
+          </div>
+        ) : (
+          <ReferenceImageUpload
+            variant="full"
+            label="Artwork"
+            hint="PNG with a transparent or plain background works best."
+            replaceLabel="Replace"
+            signInLabel="Sign in to upload artwork"
+            onChange={(blobUrl: string | null) => setImageUrl(blobUrl)}
+            onUploadingChange={setUploading}
+          />
+        )}
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-3">

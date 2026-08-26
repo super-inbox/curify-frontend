@@ -24,6 +24,7 @@
 import { describe, it, expect } from "vitest";
 import inspirationData from "../../public/data/nano_inspiration.json";
 import enNano from "../../messages/en/nano.json";
+import { splitPrimaryTokens } from "../searchTokenSplit";
 
 // ─── Minimal tokenizer + scorer (mirrors eval_search.cjs) ────────────────────
 
@@ -44,10 +45,8 @@ function normalizeForSearch(s: string): string {
 }
 
 function buildPrimaryTokens(query: string): string[] {
-  return normalizeForSearch(query)
-    .split(/[\s,，、。.:：=·\/|()\[\]+*]+/)
-    .map((w) => w.trim())
-    .filter((w) => w && !STOPWORDS.has(w));
+  // Shared with app/[locale]/(public)/search/page.tsx via searchTokenSplit.
+  return splitPrimaryTokens(normalizeForSearch(query), STOPWORDS);
 }
 
 function tokenInBlob(blob: string, t: string): boolean {
@@ -414,4 +413,36 @@ describe("regression: WARN query fixes still intact", () => {
     expect(strictIds.size).toBeGreaterThanOrEqual(49);
     expect(strictIds.has("template-intangible-heritage-paper-cutting")).toBe(true);
   });
+});
+
+// ─── Delimiter invariance: hyphen vs space must not gate recall ───────────────
+// Root cause: the tokenizer kept hyphenated queries whole, so `facial-expressions`
+// (a concept the corpus spells with a SPACE) returned junk while `facial
+// expressions` returned the expression-sheet templates. Hyphen/underscore now
+// split like spaces. See lib/searchTokenSplit.ts.
+
+describe("delimiter invariance (hyphen/underscore == space)", () => {
+  const VARIANTS: Array<[string, string]> = [
+    ["facial-expressions", "facial expressions"],
+    ["facial_expressions", "facial expressions"],
+    ["english-chinese", "english chinese"],
+    ["before-after", "before after"],
+  ];
+
+  for (const [delimited, spaced] of VARIANTS) {
+    it(`"${delimited}" recalls the same set as "${spaced}"`, () => {
+      const a = scoreAll(delimited);
+      const b = scoreAll(spaced);
+      // Same effective result set — a user's delimiter choice is invisible.
+      expect([...a.strictIds].sort()).toEqual([...b.strictIds].sort());
+      // ...and it is the RICH set, not the empty/junk fallback.
+      expect(a.strictIds.size).toBeGreaterThan(0);
+    });
+  }
+
+  // NOTE: this mirror scores against a narrower blob than the shipped pipeline
+  // (no base_prompt / template-strict cascade), so it can't demonstrate the
+  // *richness* win here — the delimited==spaced set-equality above is the
+  // durable regression guard. The rich recall (facial-expressions: 76 vs 4)
+  // is verified end-to-end by scripts/score_user_queries.cjs + eval_search.cjs.
 });

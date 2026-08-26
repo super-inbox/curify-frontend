@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-08-10.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-08-25.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -221,17 +221,106 @@ _Updated 2026-08-10. The three deploy-gated rows below are **done**; corrections
 | ~~after deploy~~ | ~~Re-verify the 6 repaired posts render prose on prod~~ | curl | **DONE 08-10** — 0 raw keys on all 6; blog HTML 480KB |
 | ~~after deploy~~ | ~~Re-fire Indexing-API ping on the folded set~~ | `submit_indexing_api.cjs` | **DONE 08-10** — 42 URLs, 0 failed |
 | ~~2026-08-12~~ | ~~八仙 FB video series → pull `fan_count`~~ | Graph API | **DONE 08-12: 89 → 90.** But the 8 reels got **0–1 views each** — the thesis was never actually tested. See the SMM note below. |
-| 2026-08-17 | **Un-fold check on the 42 pinged URLs** (ping fired 08-10; allow ~1wk) | re-run `scan_fold.cjs` | pending |
-| 2026-08-19 | Blog un-fold confirmation + CTR capture-rate re-measure | GSC pull + URL Inspection | pending |
-| 2026-08-24 | **FAQPage effect on MBTI CTR** — compare capture rate vs the 10% baseline below, NOT raw clicks | position-bucket CTR table | pending |
+| 2026-08-17 | **Un-fold check on the 42 pinged URLs** (ping fired 08-10; allow ~1wk) | re-run `scan_fold.cjs` | **DONE 08-25** — fold 43→34, but 29 of 34 never recrawled; see the 08-25 section |
+| 2026-08-19 | Blog un-fold confirmation + CTR capture-rate re-measure | GSC pull + URL Inspection | **DONE 08-25** — indexed 60→49; blog indexation is DECLINING |
+| 2026-08-24 | **FAQPage effect on MBTI CTR** — compare capture rate vs the 10% baseline below, NOT raw clicks | position-bucket CTR table | **DONE 08-25** — capture 3.4%→1.4%; demand is image-shaped, markup cannot fix it |
 | 2026-08-25 | Wedge1 8-week post-ship measurement | per-family distinct-impressed-URL breadth, WC-stripped | pending |
 | ~~overdue~~ | ~~SEMrush KD pull~~ | screenshots → `docs/blog-quality.md` | **DONE 08-10** — 6/13 returned data; recorded in `docs/blog-quality.md` |
-| 2026-08-17 | **Re-measure `programmatic seo tools` (KD 10, was pos 24) + `ai packaging design` (KD 29, was pos 39)** — two suppressors lifted this week (fold + title). Do this BEFORE writing new copy | GSC pull | pending |
+| 2026-08-17 | **Re-measure `programmatic seo tools` (KD 10, was pos 24) + `ai packaging design` (KD 29, was pos 39)** — two suppressors lifted this week (fold + title). Do this BEFORE writing new copy | GSC pull | **DONE 08-25** — both went backwards; packaging design to ZERO impressions |
 | open | Disavow upload (manual, no API) | search.google.com/search-console/disavow-links | awaiting user |
 
 ---
 
+## 2026-08-25 — four overdue checkpoints measured. Three negatives and one reframe.
+
+_All four were pending from the 08-10 checkpoint table. None of the interventions worked;
+the useful output is why._
+
+### 1+3. Un-fold check on the 42 pinged URLs + blog re-sweep
+
+Full URL-Inspection sweep of all 105 blogs (the 42-URL ping list was never recorded as a
+list, so this re-derives it):
+
+| state | count |
+|---|---:|
+| Submitted and indexed | **49** |
+| Duplicate without user-selected canonical (folded) | **34** |
+| Crawled – currently not indexed | 16 |
+| Discovered – currently not indexed | 6 |
+
+Fold is down 43 → 34, and 33 of the 34 still fold to `/`. **But 29 of those 34 have not been
+recrawled since before the 08-05 fix** — crawl dates run 06-22 to 07-10, i.e. 15 days after a
+ping that was supposed to force a revisit. The ping did not force recrawls.
+
+**Worse, blog indexation is going backwards.** The 08-19 sweep recorded 60 indexed of 103.
+Today: 49 of 105. Eleven posts left "indexed" for crawled-not-indexed or discovered. The fold
+count improving is not the same as the situation improving.
+
+### 2. `programmatic seo tools` + `ai packaging design` re-measure
+
+Six weeks before the ping vs the two weeks after, normalised per day:
+
+| cluster | before | after |
+|---|---|---|
+| `programmatic seo*` | 27 impr (0.6/day), pos 19.7, **0 clicks** | 3 impr (0.2/day), pos 15.0, **0 clicks** |
+| `*packaging design*` | 230 impr (5.5/day), pos 36.2, **0 clicks** | **0 impressions** |
+
+Position nudged up for one while impressions fell two-thirds; the other disappeared. **Neither
+keyword has ever produced a single click.** The checkpoint said to do this before writing new
+copy — the answer is don't.
+
+### 4. FAQPage effect on MBTI CTR — and the reframe
+
+| window | impressions | clicks | capture rate |
+|---|---:|---:|---:|
+| before FAQPage (07-13 → 08-09) | 3,001 | 4 | **3.4%** |
+| after FAQPage (08-11 → 08-24) | 1,251 | 1 | **1.4%** |
+
+Positions 1–8 returned **zero clicks in both windows**, across 4,252 impressions.
+
+**Then the actual explanation: the demand is image-shaped.** Split by search type for the same
+window, MBTI pages get **3,339 impressions from IMAGE search vs 2,885 from web**, and image
+CTR is **0.03%** — one click from 3,339 impressions. People find our MBTI cards as pictures,
+look at them, and never need the page. FAQPage markup only affects the web SERP, so it could
+never have moved this. Do not attempt further snippet surgery on MBTI pages.
+
+⚠️ **Baseline discrepancy:** the 08-10 section records a 10% capture rate; this measurement
+puts the "before" window at 3.4% using standard position-CTR benchmarks. Different benchmark
+table or page set — treat them as separate series, not a like-for-like decline.
+
+### What these four together say
+
+The Indexing API does not trigger recrawls for this site (29 of 34 unrecrawled after 15 days,
+plus the separate 08-18 experiment where treatment and control both crawled 1 of 3). Two
+tracked keywords are dead. The MBTI CTR problem is an image-search artifact, not a markup
+problem. **Every remaining lever in this workstream is upstream of the SERP: which pages
+exist, and whether the directory they live in is worth crawling.**
+
+---
+
 ## 2026-08-10 — corrections + the two P0s worked
+
+### RESULT of the Indexing-API experiment — read 2026-08-25
+
+| arm | crawled | indexed |
+|---|---|---|
+| treatment (pinged 08-18) | 1 of 3 | **1 of 3** — `/tools/die-cut-sticker-file`, crawled 08-23 |
+| control (never pinged) | 1 of 3 | 0 of 3 — `brand-font-specimen-set` crawled 08-25, "crawled – not indexed" |
+
+**Verdict: the ping is not the lever, and n is too small to claim it is.** Both arms got
+exactly one page crawled in seven days. The single treatment success is also the page that
+received the biggest link fix on 08-17 (1 → 4 inbound sources including the home page), so
+its indexation cannot be attributed to the ping. `acrylic-factory-export` got links (1 → 3)
+AND a ping and is still never-crawled.
+
+**What actually worked in the same window, with neither:** the two blog posts published
+08-18 were crawled and indexed within a day, unpinged, on one inbound link. That remains the
+strongest signal, and it points at prefix quality rather than links or pings — `/blog` earns
+712.8 impressions/page against `/nano-template`'s 9.4 across 3,966 pages.
+
+**Actions:** stop spending Indexing-API quota on `/tools/*` and `/nano-template/*`. Treat
+`/blog/*` as the ranking surface and tool pages as click destinations. The 3,966-page
+`/nano-template/` tranche generating ~9 impressions each is the thing to fix.
 
 ### Indexing-API experiment — submitted 2026-08-18, READ 2026-08-25
 
@@ -913,6 +1002,67 @@ across docs hides the funnel; unifying them here surfaces it.
   or can it ride on the existing `user_interactions` schema with a discriminator?
   (Probably the latter — 2-month retention limit on `user_interactions` is the
   main risk per memory `reference_video_user_attribution.md`.)
+
+---
+
+## 2026-08-26 — sitemap-examples: locale A/B instead of a site-wide cut
+
+**Reverted an over-aggressive cut and replaced it with a measured experiment.**
+The 08-25 change took `sitemap-examples.xml` from 11,190 → 3,146 URLs (−72%) by
+de-listing every locale variant without a 90d impression. That was the right
+*hypothesis* (hreflang, not `<loc>`, is the discovery mechanism for alternates)
+asserted as a *conclusion*. A site-wide cut also destroys the evidence: if
+traffic later drops there is no way to tell "hreflang was sufficient" apart from
+"we buried 7,319 URLs."
+
+**Now:** 11,190 → **8,232** (−2,958, −26.4%), composed of
+- 958 URLs dropped by the `noindex` gate (already-approved hygiene — these pages
+  emit `noindex, follow` and canonical to their template, so advertising them
+  contradicted their own meta),
+- 1 by the thin-locale gate (effectively a no-op; kept as a guard), and
+- **1,999 as the treatment arm of a live A/B.**
+
+**Design.** Eligible pool = non-EN example URLs with **zero impressions in BOTH a
+180d and a 28d window**, surviving the noindex/thin gates so the arms aren't
+contaminated by URLs dropped for other reasons. Treatment (1,999) de-listed;
+control (4,670) stays listed. Stratified by locale, so both arms carry the same
+language mix at a consistent ~1:2.3 ratio. Assignment is a djb2 hash of the path,
+not `Math.random` — rerunning reproduces the identical split, so the cohort is
+rebuildable and auditable. Every URL starts at zero impressions, so **any** later
+impression is attributable.
+
+- Build: `scripts/build_example_sitemap_experiment.cjs` → `public/data/example_sitemap_experiment.json`
+- Read out: `scripts/read_example_sitemap_experiment.cjs` (**due ~2026-09-23**)
+- Primary metric: share of URLs per arm gaining ≥1 impression. Arms are unequal
+  by design — **compare rates, never counts.**
+- **Do not regenerate the cohort mid-flight.** It reshuffles arms and destroys
+  the comparison.
+
+**Gate A is cheaper than it looked.** The noindex gate drops 3,121 impressions /
+68 clicks measured over 180d, which reads alarming — but only **72 impressions /
+3 clicks** of that falls in the last 28d. The noindex rule shipped 2026-07-31, so
+a 180d window straddles it and most of that traffic predates the rule. It is
+already gone and the sitemap is not what's holding it.
+
+**Two bugs caught by verifying against the rendered sitemap rather than a replica:**
+1. **Invented locales.** The builder hardcoded a locale list including `ar` and
+   `pt`. This site ships `tr` and `ru` and neither `ar` nor `pt` — so 1,922 of the
+   assigned URLs *could not exist*. They'd have sat in both arms as permanent
+   zeroes and guaranteed a null result no matter what the sitemap did. The
+   builder now parses `i18n/routing.ts` and throws on an implausible parse.
+   Confirmed by exact arithmetic: the phantom locales accounted for precisely the
+   1,370 missing control URLs and 552 of 553 hreflang misses.
+2. **An entry could vanish entirely.** A few examples have no `en` locale (e.g.
+   `locales: {zh}`). If every locale they have lands in treatment, the filter
+   empties and the example emits no `<url>` at all — which deletes its hreflang
+   block too, since alternates live *inside* the entry. Treatment would then mean
+   "removed from discovery entirely," breaking exactly what the experiment
+   measures. Fixed in both layers: the route never lets `emitLocales` go empty,
+   and the builder only treats examples that also emit a bare-EN entry.
+
+Verified on the dev-rendered XML: treatment 0/1,999 listed, control 4,670/4,670
+listed, treatment 1,999/1,999 still hreflang-reachable, `<url>` count == `<loc>`
+count (8,232).
 
 ---
 

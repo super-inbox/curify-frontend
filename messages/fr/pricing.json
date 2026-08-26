@@ -25,33 +25,36 @@
     "plans": {
       "free": {
         "name": "Gratuit",
-        "description": "Idéal pour tester les outils et les travaux légers",
+        "description": "Pour essayer — les fichiers portent un petit badge Curify",
         "features": [
-          "Télécharger des vidéos sans filigrane",
-          "1 heure de traitement de sous-titres gratuit",
-          "Exporter des fichiers SRT"
+          "Téléchargements vidéo et image filigranés",
+          "1 heure de sous-titrage offerte",
+          "Export SRT",
+          "50 crédits pour commencer"
         ]
       },
       "creator": {
         "name": "Créateur",
-        "description": "Idéal pour les petits créateurs faisant du sous-titrage régulier et du doublage léger",
+        "description": "Pour les créateurs qui livrent — fichiers sans filigrane",
         "plusTitle": "Tout ce qui est dans Gratuit, plus :",
         "features": [
+          "Téléchargements sans filigrane",
           "Synchronisation labiale",
           "Traitement par lots",
-          "5 heures de traitement de sous-titres gratuit",
-          "Jusqu'à 30 minutes par tche"
+          "5 heures de sous-titrage offertes",
+          "200 crédits / mois"
         ]
       },
       "pro": {
         "name": "Pro",
-        "description": "Bientôt disponible — Conçu pour les créateurs à grand volume",
+        "description": "Bientôt disponible — pour les gros volumes",
         "plusTitle": "Tout ce qui est dans Créateur, plus :",
         "features": [
-          "Embellissement de la voix et suppression du bruit",
-          "File d'attente prioritaire",
-          "Jusqu'à 60 min par tche",
-          "Minutes de sous-titrage illimitées"
+          "Tout Creator",
+          "Amélioration vocale et réduction de bruit",
+          "File prioritaire",
+          "Jusqu'à 60 min par tâche",
+          "1 200 crédits / mois"
         ]
       },
       "enterprise": {

@@ -11,10 +11,24 @@
 import { useState } from "react";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { useFactoryExport } from "@/services/useFactoryExport";
-import { factoryExportService, ACRYLIC_EXPORT_CREDITS } from "@/services/factoryExport";
+import {
+  factoryExportService,
+  ACRYLIC_EXPORT_CREDITS,
+  USD_PER_CREDIT,
+} from "@/services/factoryExport";
 
-export default function AcrylicExportForm() {
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
+type Props = {
+  /** An already-generated image handed off from elsewhere in the product (see
+   *  lib/physical_product_offer.ts). Skips the upload step: making a user download
+   *  their own generation and re-upload it is where this handoff would otherwise
+   *  die. The backend's _materialize() fetches http(s) URLs as well as bucket
+   *  paths, so a signed generation URL works as-is — but signed URLs expire, so
+   *  this is a click-now handoff, not a durable link. */
+  presetImageUrl?: string | null;
+};
+
+export default function AcrylicExportForm({ presetImageUrl }: Props = {}) {
+  const [imageUrl, setImageUrl] = useState<string | null>(presetImageUrl ?? null);
   const [uploading, setUploading] = useState(false);
   const [mm, setMm] = useState(70);
   const [holeMm, setHoleMm] = useState(4);
@@ -26,7 +40,12 @@ export default function AcrylicExportForm() {
     <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <p className="text-lg font-bold text-neutral-900">Make the production files</p>
-        <p className="text-sm font-semibold text-purple-800">{ACRYLIC_EXPORT_CREDITS} credits</p>
+        <p className="text-sm font-semibold text-purple-800">
+          ${(ACRYLIC_EXPORT_CREDITS * USD_PER_CREDIT).toFixed(0)}
+          <span className="ml-1.5 font-medium text-neutral-500">
+            ({ACRYLIC_EXPORT_CREDITS} credits)
+          </span>
+        </p>
       </div>
       <p className="mt-1 text-sm text-neutral-600">
         Front, mirrored back, an opaque white underbase choked 0.25&nbsp;mm so it cannot halo,
@@ -34,15 +53,38 @@ export default function AcrylicExportForm() {
       </p>
 
       <div className="mt-4">
-        <ReferenceImageUpload
-          variant="full"
-          label="Artwork"
-          hint="PNG with a transparent or plain background works best."
-          replaceLabel="Replace"
-          signInLabel="Sign in to upload artwork"
-          onChange={(blobUrl: string | null) => setImageUrl(blobUrl)}
-          onUploadingChange={setUploading}
-        />
+        {presetImageUrl && imageUrl === presetImageUrl ? (
+          <div className="flex items-center gap-3 rounded-xl border border-purple-200 bg-purple-50 p-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={presetImageUrl}
+              alt="Your generated artwork"
+              className="h-20 w-20 rounded-lg border border-purple-200 bg-white object-contain"
+            />
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-neutral-900">
+                Using the design you just made
+              </p>
+              <button
+                type="button"
+                onClick={() => setImageUrl(null)}
+                className="mt-0.5 text-xs font-medium text-purple-700 underline-offset-2 hover:underline"
+              >
+                Use a different image
+              </button>
+            </div>
+          </div>
+        ) : (
+          <ReferenceImageUpload
+            variant="full"
+            label="Artwork"
+            hint="PNG with a transparent or plain background works best."
+            replaceLabel="Replace"
+            signInLabel="Sign in to upload artwork"
+            onChange={(blobUrl: string | null) => setImageUrl(blobUrl)}
+            onUploadingChange={setUploading}
+          />
+        )}
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">

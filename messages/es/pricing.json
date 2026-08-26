@@ -25,33 +25,36 @@
     "plans": {
       "free": {
         "name": "Gratis",
-        "description": "Genial para probar herramientas y trabajo ligero",
+        "description": "Para probar — las salidas llevan un pequeño distintivo de Curify",
         "features": [
-          "Descargar videos sin marca de agua",
-          "1 hora de procesamiento de subtítulos gratis",
-          "Exportar archivos SRT"
+          "Descargas de vídeo e imagen con marca de agua",
+          "1 hora de subtítulos gratis",
+          "Exportar archivos SRT",
+          "50 créditos al empezar"
         ]
       },
       "creator": {
         "name": "Creador",
-        "description": "Ideal para pequeños creadores que hacen subtitulado regular y doblaje ligero",
+        "description": "Para creadores que entregan trabajo real — sin marca de agua",
         "plusTitle": "Todo en Gratis, más:",
         "features": [
+          "Descargas sin marca de agua",
           "Sincronización labial",
           "Procesamiento por lotes",
-          "5 horas de procesamiento de subtítulos gratis",
-          "Hasta 30 minutos por tarea"
+          "5 horas de subtítulos gratis",
+          "200 créditos / mes"
         ]
       },
       "pro": {
         "name": "Profesional",
-        "description": "Próximamente — Diseñado para creadores de alto volumen",
+        "description": "Próximamente — para creadores de alto volumen",
         "plusTitle": "Todo en Creador, más:",
         "features": [
-          "Embellecimiento de voz y eliminación de ruido",
+          "Todo lo de Creator",
+          "Mejora de voz y reducción de ruido",
           "Cola prioritaria",
           "Hasta 60 min por tarea",
-          "Minutos de subtítulos ilimitados"
+          "1.200 créditos / mes"
         ]
       },
       "enterprise": {

@@ -1,0 +1,79 @@
+GSC manual Request-Indexing shortlist — generated 2026-08-25
+inspected 47 candidates: 33 already indexed, 4 ready, 10 blocked
+
+=== SUBMIT THESE (top 10, paste into GSC URL Inspection -> Request Indexing) ===
+ 1. https://www.curify-ai.com/tools/acrylic-factory-export
+      Discovered - currently not indexed | last crawl NEVER | tool page (tool-intent surface)
+ 2. https://www.curify-ai.com/topics/stickers
+      Discovered - currently not indexed | last crawl NEVER | workflow topic hub
+ 3. https://www.curify-ai.com/blog/ai-product-photo-to-ecommerce-listing
+      URL is unknown to Google | last crawl NEVER | blog fixed 08-25 (was rendering raw i18n keys)
+ 4. https://www.curify-ai.com/topics/language
+      Crawled - currently not indexed | last crawl 2026-05-27 | tier-1 topic hub
+
+=== DO NOT SUBMIT — fix first, Google will just re-fold these (10) ===
+  /tools/youtube-subtitle-downloader
+      blockers: noindex
+      GSC: URL is unknown to Google
+  /tools/video-subtitle-extractor
+      blockers: noindex
+      GSC: URL is unknown to Google
+  /tools/translate-subtitles
+      blockers: noindex
+      GSC: URL is unknown to Google
+  /tools/storyboard-generator
+      blockers: noindex
+      GSC: URL is unknown to Google
+  /tools/image-translation
+      blockers: noindex
+      GSC: URL is unknown to Google
+  /tools/voice-clone
+      blockers: noindex
+      GSC: URL is unknown to Google
+  /topics/brand
+      blockers: noindex
+      GSC: URL is unknown to Google
+  /topics/edtech
+      blockers: noindex
+      GSC: URL is unknown to Google
+  /topics/character
+      blockers: Google folded -> / (duplicate detection, not markup)
+      GSC: Duplicate without user-selected canonical
+  /topics/personality
+      blockers: Google folded -> / (duplicate detection, not markup)
+      GSC: Duplicate without user-selected canonical
+
+=== ALREADY INDEXED — no action (33) ===
+  /tools/video-dubbing  [Submitted and indexed, crawled 2026-08-20]
+  /tools/bilingual-subtitles  [Submitted and indexed, crawled 2026-08-23]
+  /tools/video-transcript-generator  [Submitted and indexed, crawled 2026-06-11]
+  /tools/video-summarizer  [Submitted and indexed, crawled 2026-08-21]
+  /tools/ai-product-photo-generator  [Submitted and indexed, crawled 2026-06-27]
+  /tools/ecommerce-photo  [Submitted and indexed, crawled 2026-07-02]
+  /tools/character-sticker-sheet  [Submitted and indexed, crawled 2026-07-11]
+  /tools/die-cut-sticker-file  [Submitted and indexed, crawled 2026-08-23]
+  /tools/packaging-mockup  [Submitted and indexed, crawled 2026-08-23]
+  /tools/mockup  [Submitted and indexed, crawled 2026-07-13]
+  /tools/asl-video-translator  [Submitted and indexed, crawled 2026-08-20]
+  /tools/video-enhance  [Submitted and indexed, crawled 2026-08-13]
+  /tools/product-video  [Submitted and indexed, crawled 2026-07-07]
+  /tools/chinese-costume-tryon  [Submitted and indexed, crawled 2026-07-22]
+  /tools/brand-direction-explorer  [Submitted and indexed, crawled 2026-08-25]
+  /tools/manga-translation  [Submitted and indexed, crawled 2026-05-22]
+  /tools/style-transfer  [Submitted and indexed, crawled 2026-05-22]
+  /tools/speech-translator  [Submitted and indexed, crawled 2026-05-22]
+  /tools/worksheet-from-video  [Submitted and indexed, crawled 2026-08-25]
+  /tools  [Submitted and indexed, crawled 2026-08-21]
+  /topics/merch  [Submitted and indexed, crawled 2026-08-08]
+  /topics/product  [Submitted and indexed, crawled 2026-07-01]
+  /topics/packaging  [Submitted and indexed, crawled 2026-05-31]
+  /topics/world-cup  [Submitted and indexed, crawled 2026-08-14]
+  /topics/learning  [Submitted and indexed, crawled 2026-05-26]
+  /topics/travel  [Submitted and indexed, crawled 2026-06-05]
+  /topics/culture  [Submitted and indexed, crawled 2026-05-28]
+  /topics/lifestyle  [Submitted and indexed, crawled 2026-06-05]
+  /topics/design  [Submitted and indexed, crawled 2026-08-22]
+  /blog/50-wimbledon-2026-ai-prompts  [Submitted and indexed, crawled 2026-08-20]
+  /blog/mbti-character-generator  [Submitted and indexed, crawled 2026-08-21]
+  /blog/best-claude-code-design-skills  [Submitted and indexed, crawled 2026-08-19]
+  /blog/character-turnaround-sheet-guide  [Submitted and indexed, crawled 2026-08-19]

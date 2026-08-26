@@ -16,6 +16,20 @@ export default function PricingClient() {
   const t = useTranslations('pricing');
   const setDrawerState = useSetAtom(drawerAtom);
   const user = useAtomValue(userAtom);
+    // Mirrors curify_background subscription_constants.SUBSCRIPTION_PLANS.
+  // Repriced 2026-08-21 (CREATOR 500->200, PRO 5000->1200) because the old
+  // allowances sold credits BELOW vendor cost; the page still showed the old
+  // numbers, which is exactly the drift lib/pricing.ts exists to prevent.
+  const PLAN_CREDITS = { FREE: 50, CREATOR: 200, PRO: 1200 } as const;
+
+  // Feature bullets were rendered by hardcoded index (features.0 … features.3),
+  // so any bullet added to a locale file silently never rendered. Driven by the
+  // list length instead.
+  const featureList = (key: string): string[] => {
+    const raw = t.raw(`plans.${key}.features`);
+    return Array.isArray(raw) ? (raw as string[]) : [];
+  };
+
   const plan = mockPlan ?? user?.plan_name ?? null;
 
   const isLoggedIn = !!plan;
@@ -118,11 +132,13 @@ export default function PricingClient() {
             <span className="text-gray-600 ml-1 text-base">/ {t('common.month')}</span>
           </div>
           {renderButton('FREE')}
-          <p className="text-sm text-gray-600 mb-4 text-center">{t('common.receive')} <strong>50 🐚</strong>/{t('common.month')}</p>
+          <p className="text-sm text-gray-600 mb-4 text-center">{t('common.receive')} <strong>{PLAN_CREDITS.FREE} 🐚</strong>/{t('common.month')}</p>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.free.features.0')}</li>
-            <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.free.features.1')}</li>
-            <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.free.features.2')}</li>
+              {featureList("free").map((f) => (
+                <li key={f} className="flex items-center">
+                  <span className="text-green-600 mr-3">✓</span> {f}
+                </li>
+              ))}
           </ul>
         </div>
 
@@ -135,14 +151,15 @@ export default function PricingClient() {
             <span className="text-gray-600 ml-1 text-base">/ {t('common.month')}</span>
           </div>
           {renderButton('CREATOR')}
-          <p className="text-sm text-gray-600 mb-4 text-center">{t('common.receive')} <strong>500 🐚</strong>/{t('common.month')}</p>
+          <p className="text-sm text-gray-600 mb-4 text-center">{t('common.receive')} <strong>{PLAN_CREDITS.CREATOR} 🐚</strong>/{t('common.month')}</p>
           <div className="mb-4">
             <p className="font-semibold text-gray-800 mb-2 text-sm">{t('plans.creator.plusTitle')}</p>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.creator.features.0')}</li>
-              <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.creator.features.1')}</li>
-              <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.creator.features.2')}</li>
-              <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.creator.features.3')}</li>
+              {featureList("creator").map((f) => (
+                <li key={f} className="flex items-center">
+                  <span className="text-green-600 mr-3">✓</span> {f}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -156,14 +173,15 @@ export default function PricingClient() {
             <span className="text-gray-500 ml-1 text-base">/ {t('common.month')}</span>
           </div>
           {renderButton('PRO')}
-          <p className="text-sm text-gray-500 mb-4 text-center">{t('common.receive')} <strong>5,000 🐚</strong>/{t('common.month')}</p>
+          <p className="text-sm text-gray-500 mb-4 text-center">{t('common.receive')} <strong>{PLAN_CREDITS.PRO.toLocaleString()} 🐚</strong>/{t('common.month')}</p>
           <div className="mb-4">
             <p className="font-semibold text-gray-600 mb-2 text-sm">{t('plans.pro.plusTitle')}</p>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li className="flex items-center"><span className="text-gray-500 mr-3">✓</span> {t('plans.pro.features.0')}</li>
-              <li className="flex items-center"><span className="text-gray-500 mr-3">✓</span> {t('plans.pro.features.1')}</li>
-              <li className="flex items-center"><span className="text-gray-500 mr-3">✓</span> {t('plans.pro.features.2')}</li>
-              <li className="flex items-center"><span className="text-gray-500 mr-3">✓</span> {t('plans.pro.features.3')}</li>
+              {featureList("pro").map((f) => (
+                <li key={f} className="flex items-center">
+                  <span className="text-gray-500 mr-3">✓</span> {f}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -183,11 +201,11 @@ export default function PricingClient() {
           <div className="mb-4">
             <p className="font-semibold text-gray-800 mb-2 text-sm">{t('plans.enterprise.plusTitle')}</p>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.enterprise.features.0')}</li>
-              <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.enterprise.features.1')}</li>
-              <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.enterprise.features.2')}</li>
-              <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.enterprise.features.3')}</li>
-              <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> {t('plans.enterprise.features.4')}</li>
+              {featureList("enterprise").map((f) => (
+                <li key={f} className="flex items-center">
+                  <span className="text-green-600 mr-3">✓</span> {f}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -277,8 +295,8 @@ export default function PricingClient() {
                 </tr>
                 <tr>
                   <td className="px-6 py-4 font-medium text-gray-900 text-base">{t('table.rows.monthlyCredits')}</td>
-                  <td className="px-6 py-4 text-center text-base">50 🐚</td>
-                  <td className="px-6 py-4 text-center text-base">500 🐚</td>
+                  <td className="px-6 py-4 text-center text-base">{PLAN_CREDITS.FREE} 🐚</td>
+                  <td className="px-6 py-4 text-center text-base">{PLAN_CREDITS.CREATOR} 🐚</td>
                   <td className="px-6 py-4 text-center text-base text-gray-400">5,000 🐚</td>
                   <td className="px-6 py-4 text-center text-base">{t('plans.enterprise.customPricing')}</td>
                 </tr>

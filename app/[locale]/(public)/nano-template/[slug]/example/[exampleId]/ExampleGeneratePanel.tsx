@@ -5,6 +5,7 @@ import { Wand2, Copy } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import PostGenerationExports from "@/app/[locale]/_components/PostGenerationExports";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { buildExampleId } from "@/lib/nano_pure";
@@ -213,6 +214,12 @@ export default function ExampleGeneratePanel({
               title,
               text: `Check out this Nano Banana example: ${title}`,
             }}
+          />
+          <PostGenerationExports
+            imageUrl={generatedImageUrl}
+            locale={locale}
+            templateId={templateId}
+            tracking={tracking}
           />
         </div>
       )}

@@ -46,6 +46,7 @@ import { TOTAL_CANDIDATE_POOL_CAP, PATH_CANDIDATE_CAP, INTENT_RERANK_ENABLED } f
 import { queryIntentBucket, intentAlignmentDelta } from "@/lib/intentAlignment";
 import { subjectUnits, FORMAT_TOKENS } from "@/lib/searchSubject";
 import { applyPhraseAliasRules } from "@/lib/query_phrase_aliases";
+import { splitPrimaryTokens } from "@/lib/searchTokenSplit";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Threshold below which we trigger the LLM multi-query expansion path
@@ -161,17 +162,13 @@ function buildSearchTokens(query: string): {
   aliasGroups: string[][];
 } {
   const normalizedQuery = normalizeForSearch(query);
-  let primary = normalizedQuery
-    // Split on whitespace + structural punctuation. Beyond the original
-    // whitespace + sentence-end characters, we also break on `: = · / | ( ) [ ]
-    // + *` and full-width colon — these show up in analyst-style structured
-    // query labels (e.g. `topics: english-chinese`, `word1=theory · word2`)
-    // and otherwise become literal one-blob-shaped tokens that never match.
-    // Hyphens are deliberately NOT included so `english-chinese` stays a
-    // single content token and matches templates tagged that way.
-    .split(/[\s,，、。.:：=·\/|()\[\]+*]+/)
-    .map((w) => w.trim())
-    .filter((w) => w && !STOPWORDS.has(w));
+  // Delimiter-invariant primary tokens (lib/searchTokenSplit.ts). Splits on
+  // whitespace + structural punctuation AND hyphen/underscore, so a user's
+  // delimiter choice (`facial-expressions` vs `facial expressions`) never
+  // gates recall — the corpus spells compounds both ways and `tokenInBlob`
+  // treats a hyphen as a word boundary, so split constituents still match
+  // hyphenated corpus. Length-1 ASCII fragments are dropped (t-shirt → shirt).
+  let primary = splitPrimaryTokens(normalizedQuery, STOPWORDS);
 
   // English plural stem: single ASCII primary token ending in `s` gets
   // singularized so `snakes` matches records tagged `snake`. Conservative
