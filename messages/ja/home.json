@@ -381,6 +381,14 @@
         "description": "Describe a brand or campaign in one line, pick one of three preset creative directions, and generate the visual from it. No prompt writing."
       }
     },
+    "personal_design_system": {
+      "title": "Personal Design System Generator",
+      "desc": "Describe your portfolio in your own words → get a structured, reusable personal design system: style, color, typography, composition, motifs, and principles.",
+      "meta": {
+        "title": "Personal Design System Generator — Turn Your Portfolio Into a Design System",
+        "description": "Describe your portfolio in your own words and get a structured personal design system covering visual style, color, typography, composition, signature motifs, and design principles."
+      }
+    },
     "sticker_factory_export": {
       "title": "Die-Cut Sticker Factory Files",
       "desc": "Artwork in, production package out: 300 DPI transparent art, a mm-accurate die-cut line, CMYK PDF, preview and spec sheet — one zip a printer can quote from."
@@ -1504,6 +1512,59 @@
       "a1": "ブリーフごとに、ムード・パレット・書体・構図がそれぞれ異なる3つの方向。検証ステップがほぼ同一の方向を却下し再試行します。",
       "q2": "スタイルを誘導できますか？",
       "a2": "はい——任意の「好む／避ける」が明示的なガイドを加えます。ブリーフが優先され、3案は互いに異なるまま保たれるため、好みは選択肢を狭めずにルックを形づくります。"
+    }
+  },
+  "personalDesignSystem": {
+    "metadata": {
+      "title": "Personal Design System Generator — Turn Your Portfolio Into a Design System",
+      "description": "Describe your portfolio in your own words and get a structured personal design system covering visual style, color, typography, composition, signature motifs, and design principles."
+    },
+    "title": "Personal Design System Generator",
+    "description": "Turn your portfolio into a reusable personal design system. Describe your work in your own words and get back a structured breakdown of your visual style, color system, typography, composition, signature motifs, image language, and design principles.",
+    "why": {
+      "title": "Why turn your portfolio into a design system?",
+      "point1": "A reusable reference, not a one-off mood board — the same structured system you can hand to a client, collaborator, or future project.",
+      "point2": "Works across disciplines — graphic design, branding, packaging, illustration, editorial, and product/UI all use the same structure in their own vocabulary.",
+      "point3": "Structured sections, not a vague paragraph — visual style, color, typography, composition, motifs, image language, and principles, each named on its own.",
+      "point4": "Connects straight into the Brand Direction Explorer, so the design system you get here can generate an actual visual next."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Does this analyze my portfolio URL or my images?",
+      "a1": "No. There is no portfolio-link or image-upload analysis in this tool — you describe your work yourself, in your own words, and an OpenAI model structures that description into a design system.",
+      "q2": "What if my description doesn't mention typography or color?",
+      "a2": "The model fills in a reasonable inference from your medium and the rest of your description, and states it as an inference rather than inventing specific typefaces or brands you never mentioned.",
+      "q3": "Can I use this for any kind of design work?",
+      "a3": "Yes — the sections are written to work for graphic design, branding/identity, packaging, illustration, editorial/print, and UI/product work alike. Pick a discipline chip to steer the vocabulary, or leave it unset.",
+      "q4": "What can I do with the result?",
+      "a4": "Copy it as plain text to reuse anywhere, or continue straight into the Brand Direction Explorer to generate an actual visual in the same direction.",
+      "q5": "Is the result guaranteed to be accurate?",
+      "a5": "It's a structured synthesis of what you wrote, generated in real time — review it before using it as a final deliverable, the same way you'd review any AI-assisted first draft."
+    },
+    "deep": {
+      "what": {
+        "title": "What is a personal design system?",
+        "p1": "A personal design system is a structured summary of a designer's visual language — the color choices, typographic habits, compositional instincts, recurring motifs, and underlying principles that make their work recognizably theirs.",
+        "p2": "It's the kind of thing designers usually keep in their head, or scattered across old case studies and mood boards. Writing it down as one structured reference makes it usable — for a client pitch, a portfolio site, a new collaborator, or briefing yourself on a new project.",
+        "p3": "This tool turns a plain-language description of your work into that structured reference in under a minute, instead of you writing it from scratch."
+      },
+      "how": {
+        "title": "How the Personal Design System Generator works",
+        "p1": "Describe your portfolio in your own words — the mediums you work in, colors and materials you keep returning to, typographic habits, recurring motifs, and a project you're proud of. Optionally add your name and primary discipline.",
+        "p2": "An OpenAI model reads your description and structures it into seven sections: visual style, color system (with an actual swatch palette), typography, composition, signature motifs, image/illustration/photography language, and design principles.",
+        "p3": "There is no portfolio-URL crawler and no image analysis behind this — the model only ever sees the text you write, so the result is only as specific as your description. A short, generic description gets a shorter, more general system back.",
+        "p4": "The result is grounded in what you actually wrote — a validation step rejects responses that don't include real hex colors or that leave a section empty, and the model is instructed not to invent client names or specific typefaces you never mentioned.",
+        "p5": "From the result, a direct link continues into the Brand Direction Explorer, so the design system you just got can generate a concrete visual — a poster, moodboard, or key visual — in the same direction."
+      },
+      "usecases": {
+        "title": "Who a personal design system is for",
+        "creatorsTitle": "For designers building a portfolio or pitch",
+        "creatorsBody": "Turn scattered instinct into a structured reference you can drop into a portfolio site, a case study, or the front of a client pitch deck — in your own words, organized into sections a client or collaborator can actually skim.",
+        "educationTitle": "For freelancers briefing new clients",
+        "educationBody": "Hand a new client or collaborator a one-page summary of how you work — color, type, composition, and principles — instead of pointing them at a portfolio and hoping they infer the pattern themselves.",
+        "businessTitle": "For studios documenting a designer's style",
+        "businessBody": "Capture an individual designer's visual language as a structured reference before a handoff, a style guide update, or onboarding a new team member into how that designer's work reads."
+      }
     }
   },
   "topicWorkflows": {

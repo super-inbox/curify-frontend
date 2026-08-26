@@ -21,6 +21,13 @@ export type ToolAction =
   // directions → generate the chosen visual. Bespoke client, rendered inline
   // on the tool page like the costume_tryon / product_video surfaces.
   | { type: "brand_direction" }
+  // Personal Design System Generator — a designer describes their own
+  // portfolio in free text → OpenAI structures it into a reusable design
+  // system (visual style, color, typography, composition, motifs, image
+  // language, principles). No portfolio-URL/image ingestion — see
+  // lib/personalDesignSystemOpenAI.ts. Bespoke client, same pattern as
+  // brand_direction above.
+  | { type: "personal_design_system" }
   | { type: "sticker_export" }
   | { type: "acrylic_export" }
   | { type: "packaging_mockup" }
@@ -491,6 +498,29 @@ export const TOOL_REGISTRY: ToolDef[] = [
     action: { type: "brand_direction" },
     i18n: toolKeys("brand_direction_explorer"),
     seo: seoKeys("brand_direction_explorer"),
+  },
+
+  {
+    // Personal Design System Generator — SEO tool: a designer describes
+    // their own portfolio in free text and gets back a structured, reusable
+    // "personal design system" (visual style, color, typography,
+    // composition, motifs, image language, principles). Real OpenAI-backed
+    // synthesis (same architecture as brand-direction-explorer's Stage 1) —
+    // there is no portfolio-URL crawler or image-analysis backend behind
+    // this, by design; see lib/personalDesignSystemOpenAI.ts. Result links
+    // out to Brand Direction Explorer to turn the system into a visual.
+    id: "personal-design-system",
+    slug: "personal-design-system",
+    groupId: "image",
+    status: "demo",
+    // Unused by the personal_design_system action (its own client posts
+    // directly, and never generates an image/credit-consuming job);
+    // required field.
+    job_type: "video_transcript",
+    namespace: "personalDesignSystem",
+    action: { type: "personal_design_system" },
+    i18n: toolKeys("personal_design_system"),
+    seo: seoKeys("personal_design_system"),
   },
 
   {

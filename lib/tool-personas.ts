@@ -46,6 +46,7 @@ export const TOOL_PERSONAS: Record<string, ToolPersonas> = {
   "ai-product-photo-generator": p("for-dtc-brands", "for-programmatic-seo", "for-marketers"),
   "ecommerce-photo": p("for-dtc-brands", "for-programmatic-seo", "for-merch-operators"),
   "brand-direction-explorer": p("for-designers", "for-dtc-brands", "for-marketers"),
+  "personal-design-system": p("for-designers", "for-dtc-brands", "for-marketers"),
   "character-sticker-sheet": p("for-creators", "for-designers", "for-merch-operators"),
   "die-cut-sticker-file": p("for-creators", "for-merch-operators", "for-dtc-brands"),
   mockup: p("for-creators", "for-designers", "for-dtc-brands"),

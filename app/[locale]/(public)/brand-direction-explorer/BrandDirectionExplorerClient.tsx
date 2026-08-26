@@ -2,6 +2,7 @@
 import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Check, ChevronDown, Download, Loader2 } from "lucide-react";
 import {
   BRAND_DIRECTION_CASES,
@@ -324,10 +325,25 @@ export default function BrandDirectionExplorerClient({ locale }: { locale: strin
   const copy = copyForLocale(uiLocale);
   const { trackAction } = useTracking();
 
+  // Optional deep-link from another tool (e.g. the Personal Design System
+  // Generator's "Explore a new creative direction" CTA): ?brief=&brandName=
+  // preselects the free-form "agent-brief" case and prefills its fields. Read
+  // once on mount only — after that this behaves exactly like a normal case
+  // switch, including the existing debounced directions fetch below.
+  const searchParams = useSearchParams();
+  const initialBrief = searchParams?.get("brief")?.trim() ?? "";
+
   const [activeCaseId, setActiveCaseId] = useState<BrandDirectionCase["id"]>(
-    BRAND_DIRECTION_CASES[0].id,
+    initialBrief ? "agent-brief" : BRAND_DIRECTION_CASES[0].id,
   );
-  const [fieldValues, setFieldValues] = useState<Record<string, string>>({});
+  const [fieldValues, setFieldValues] = useState<Record<string, string>>(() => {
+    if (!initialBrief) return {};
+    const brandName = searchParams?.get("brandName")?.trim() ?? "";
+    return {
+      brief: initialBrief.slice(0, 400),
+      ...(brandName ? { brandName: brandName.slice(0, 60) } : {}),
+    };
+  });
   const [preferenceLikes, setPreferenceLikes] = useState("");
   const [preferenceDislikes, setPreferenceDislikes] = useState("");
   const [selectedDirectionId, setSelectedDirectionId] = useState<string | null>(null);
