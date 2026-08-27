@@ -67,9 +67,16 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     emoji: "✈️",
     path: "/topics/travel",
   },
+  // 2026-08-27: fashion replaces food in the tail slot, ahead of the Sept-Oct
+  // SS27 fashion-week circuit (NYFW 09-10 → Paris 10-07). /topics/fashion is
+  // already indexed and carries 44 template cards — more than merch's 35 — but
+  // earned 0 impressions in 90d on a single inbound linking source. It is the
+  // best-stocked fashion asset we have and the entry bar is the strongest link
+  // on the site, rendering site-wide. `fashion` has a topic_thumbnails entry,
+  // so it survives the TopicStrip manifest filter.
   {
-    id: "food",
-    emoji: "🍳",
-    path: "/topics/food",
+    id: "fashion",
+    emoji: "👗",
+    path: "/topics/fashion",
   },
 ];

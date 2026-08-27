@@ -923,7 +923,40 @@
         "style",
         "apparel",
         "wear"
-      ]
+      ],
+      "format": {
+        "lead": "Fashion design covers everything from a single outfit breakdown to a full seasonal lookbook — style analysis cards, silhouette and body-shape guides, gown and garment design sheets, hairstyle and colour recommendations, and runway-style collection posters. Curify turns a reference photo or a written brief into publishable fashion visuals without a studio shoot.",
+        "howToTitle": "How to create fashion visuals",
+        "howTo": [
+          "Pick a fashion template — outfit breakdown, style guide, gown design sheet, or collection poster.",
+          "Upload a reference photo, or describe the look, fabric, and silhouette you want.",
+          "Generate the visual, then refine the palette, styling, or layout.",
+          "Download for a lookbook, product listing, moodboard, or social post."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Outfit breakdown and personal style-analysis cards.",
+          "Body-shape and silhouette guides that explain what suits whom.",
+          "Gown, garment, and nail-art design sheets for a collection.",
+          "Hairstyle and colour recommendation boards built from a portrait.",
+          "Seasonal lookbooks and runway-style collection posters."
+        ],
+        "faqTitle": "Fashion design FAQ",
+        "faq": [
+          {
+            "q": "Do I need a photoshoot to make a lookbook?",
+            "a": "No. Most fashion templates work from a written description, and the ones that restyle a person work from a single reference photo. That is the point of the format — you get publishable styling visuals before any sample garment or studio time exists."
+          },
+          {
+            "q": "Can I design an outfit around a real person's photo?",
+            "a": "Yes. Upload a portrait and the outfit, hairstyle, and colour-analysis templates build their recommendations around that person's proportions, colouring, and features rather than a generic model."
+          },
+          {
+            "q": "Is this useful for an actual clothing brand?",
+            "a": "For concepting, styling, and listing visuals, yes. For manufacturing, treat the output as a design reference rather than a spec: a garment still needs measured patterns and a tech pack before a factory can quote it."
+          }
+        ]
+      }
     },
     "anime": {
       "displayName": "Anime",
