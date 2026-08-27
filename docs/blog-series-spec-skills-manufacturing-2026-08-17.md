@@ -194,8 +194,22 @@ Structure: what a dieline is · cut line vs bleed vs safe area · **the CMYK was
 before and after** · dieline → 3D proof · the packaging proportion trap.
 
 Links → `/tools/die-cut-sticker-file`, `/tools/acrylic-factory-export`, `/topics/stickers`,
-`/topics/packaging`. **This is still the fix for `/tools/die-cut-sticker-file` never having
-been crawled.**
+`/topics/packaging`.
+
+> **2026-08-27 correction.** The line here used to read "this is still the fix for
+> `/tools/die-cut-sticker-file` never having been crawled." **That is now out of date** —
+> measured 08-27, die-cut-sticker-file is *Submitted and indexed*, crawled 08-23. The merch
+> workflow-ladder step added on 08-17 fixed it without B2. The link argument still holds,
+> but it now points at two DIFFERENT pages:
+>   - `/tools/acrylic-factory-export` — *Discovered, never crawled*, still on 1 real source.
+>   - `/topics/stickers` — never crawled; link topology raised from 2 sources to 4 on 08-26,
+>     and it sits on the manual Request-Indexing shortlist.
+>
+> This matters for sequencing because A1 was published 08-18 and crawled **08-19 — one day**.
+> The blog is the fastest-indexing surface we have, so a blog post is the most reliable way
+> to inject links into pages that Google otherwise refuses to crawl. That is an argument for
+> running **B2 before A2**, inverting the schedule below: B2 is also lower difficulty
+> (KD 19 vs 27), higher volume (170 vs 90), and carries commercial intent ($2.75 CPC).
 
 ### B3 · `/blog/what-is-a-tech-pack` · `AI tech pack generator` — 90 / KD 1
 Explainer, not a generator page. Build it from `case_acrylic/_pkg/06_spec.pdf` and the

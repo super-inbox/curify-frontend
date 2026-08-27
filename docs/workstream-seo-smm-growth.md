@@ -1066,6 +1066,45 @@ count (8,232).
 
 ---
 
+## 2026-08-27 — A1/B1 readout + 30/60-day checkpoints
+
+Both posts published **2026-08-18**. Both are **indexed** — A1 crawled 08-19, one day
+after publish. Against the rest of this workstream (tool pages from 08-06 still not
+indexed, `/topics/stickers` never crawled) **the blog surface is by far the fastest
+route into the index**, which should drive sequencing decisions elsewhere.
+
+| post | 28d impr | clicks | named queries |
+|---|---|---|---|
+| `/blog/best-claude-code-design-skills` | 25 | 0 | 5 (1 impression each) |
+| `/blog/character-turnaround-sheet-guide` | 1 | 0 | 0 |
+
+**Do not touch the SERP copy — the sample cannot support any conclusion.** Expected
+clicks at benchmark CTR for the observed positions is **0.18**, and
+**P(0 clicks | benchmark CTR holds) = 82.8%**. Zero is the single most likely outcome.
+It takes ~59 impressions at pos ~6 before a zero is significant at p<.05; we have 5
+named. The "pos 6 / pos 4" figures are each derived from a SINGLE impression — one
+appearance, not a ranking. A1's title/description/H1 were checked and are strong and
+correctly served by `[slug]` (no dedicated-route metadata trap). Changing copy now
+would only reset what little signal exists.
+
+Note GSC page-level (25) and query-level (5) totals disagree because rare queries are
+anonymized. Use page-level for volume, query-level for diagnosis — never mix them.
+
+### CHECKPOINT 2026-09-17 (30d)
+Re-pull both posts. Expect A1 to clear ~59 impressions; only then is a CTR read valid.
+If impressions are still <30, the constraint is demand or depth, NOT the SERP — go get
+external volume data rather than rewriting titles. `raw/seo-kd-08-10/` is a screenshot,
+not a dataset; this needs a real SEMrush pull.
+
+### CHECKPOINT 2026-10-17 (60d)
+Decide A4/A5 on evidence. A5 (`codex skills`, 1,900/mo, KD 47) is the volume prize and
+today we have **zero impressions on any codex term** despite A1's description naming
+Codex — consistent with the spec's ladder (19 → 27 → 36 → 47), which defers A5 until
+A1–A4 build authority. If A1 has not cleared ~100 impressions by 60d, do not attempt
+A5; the ladder has not been earned.
+
+---
+
 ## Related docs / threads
 - `docs/search-and-content.md` — Search & Content workstream (companion A)
 - `~/curify-studio/docs/workstream-tooling-and-engineering.md` — Tools workstream (companion B)
