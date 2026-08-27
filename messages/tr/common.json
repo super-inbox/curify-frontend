@@ -215,7 +215,8 @@
       "food": "Yemek",
       "branding": "Marka Tasarımı",
       "packaging": "Ambalaj",
-      "social-media-posts": "Sosyal Medya"
+      "social-media-posts": "Sosyal Medya",
+      "fashion": "Moda"
     },
     "useCasesQuestion": "Kullanım senaryolarına göre keşfet:",
     "useCases": {
@@ -329,7 +330,17 @@
       "bullet2": "Baskı kalitesinde çıktı. StickerApp, Printify, Printful, SPOD, Prodigi — ilk geçiş baskısı, tasarım ile üretim arasında manuel temizlik geçişi yok.",
       "bullet3": "Varsayılan olarak niş-disiplinli. İlk tasarımdan itibaren tek mağaza şekli. Ucuz olduğu izlenimi veren çok kategorili paketleme yok.",
       "bullet4": "Operatörün masada yaptığı tasarım çalışması — taşıyıcı ve alıcı güvenini yok eden müşteri hizmeti çalışması değil.",
-      "bullet5": "Aşağıdaki gibi paketlenmiştir: aylık-tasarım-kota katmanları (50 / 200 / 1,000 / sınırsız) veya iç tasarım hatları için motor lisansı — bir şekil seçin, özel geliştirme yok."
+      "bullet5": "Aşağıdaki gibi paketlenmiştir: aylık-tasarım-kota katmanları (50 / 200 / 1,000 / sınırsız) veya iç tasarım hatları için motor lisansı — bir şekil seçin, özel geliştirme yok.",
+      "case": {
+        "eyebrow": "Çalışılmış örnek",
+        "title": "Bir karakter çizimi → tam bir merch SKU ailesi",
+        "inputLabel": "Girdi:",
+        "input": "Tek bir karakter referansı — bir taslak, bir logo maskotu veya mevcut bir IP çerçevesi.",
+        "costLabel": "Maliyet:",
+        "cost": "{credits} kredi her üretim adımı için — diğerlerini yeniden yapmadan herhangi bir adımı yeniden çalıştırın.",
+        "ctaLabel": "Tam yürütmeyi görün",
+        "ctaHref": "/ip-merch-demo"
+      }
     }
   },
   "interconnection": {
@@ -349,5 +360,18 @@
       "INSUFFICIENT_CREDITS": "Bu işi çalıştırmak için yeterli krediniz yok. Devam etmek için kredi yükleyin.",
       "topUpCta": "Kredi yükle"
     }
+  },
+  "bulkCallout": {
+    "eyebrow": "Toplu üretim",
+    "title": "Bir resim örnektir. Bir ürün serisi tüm seti gerektirir.",
+    "titleWithSubject": "Sadece bir tane değil, tüm {subject} setine mi ihtiyacınız var?",
+    "body": "Her Curify şablonu toplu olarak çalışır. Listeyi gönderin — SKU'lar, kelimeler, karakterler, takımlar, sahneler — ve biz, bir kilitli görsel yönelime karşı üretilen tam seti geri döneriz, böylece seri, kırk alakasız görüntü yerine bir koleksiyon olarak okunur.",
+    "point1": "Herhangi bir şablonda çalışır, özel birkaçında değil — aynı istem yapısı tüm listenize uygulanır.",
+    "point2": "Set boyunca bir kilitli görsel yönelim, böylece 40 tasarım serisi baştan sona markaya uygun kalır.",
+    "point3": "Formatın gerektirdiği yerlerde üretime hazır çıktı — kesim yolları, die çizgileri, baskı çözünürlüğü.",
+    "cta": "Bize toplu bir çalışma hakkında konuşun",
+    "note": "Bize yaklaşık kaç tasarım ve ne için olduklarını söyleyin. Bir örnek ve fiyat ile geri döneceğiz.",
+    "contactSubject": "Toplu çalışma",
+    "contactSubjectWith": "Toplu çalışma — {subject}"
   }
 }

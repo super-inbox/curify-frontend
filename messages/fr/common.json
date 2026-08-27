@@ -215,7 +215,8 @@
       "food": "Cuisine",
       "branding": "Branding",
       "packaging": "Packaging",
-      "social-media-posts": "Réseaux Sociaux"
+      "social-media-posts": "Réseaux Sociaux",
+      "fashion": "Mode"
     },
     "useCasesQuestion": "Explorez par cas d'usage pour :",
     "useCases": {
@@ -329,7 +330,17 @@
       "bullet2": "Sortie de qualité impression. StickerApp, Printify, Printful, SPOD, Prodigi — impression au premier passage, sans nettoyage manuel entre le design et la production.",
       "bullet3": "Discipline de niche par défaut. Forme de magasin unique dès le premier design. Pas de regroupement multi-catégories qui crie bon marché.",
       "bullet4": "Le travail de design que l'opérateur fait au bureau — pas le travail de service client qui détruit la confiance entre le transporteur et l'acheteur.",
-      "bullet5": "Emballé sous forme de : niveaux de quota de design mensuel (50 / 200 / 1 000 / illimité) OU licence moteur pour pipelines de design internes — choisissez une forme, pas de développement personnalisé."
+      "bullet5": "Emballé sous forme de : niveaux de quota de design mensuel (50 / 200 / 1 000 / illimité) OU licence moteur pour pipelines de design internes — choisissez une forme, pas de développement personnalisé.",
+      "case": {
+        "eyebrow": "Exemple concret",
+        "title": "Un dessin de personnage → une famille de SKU merch complète",
+        "inputLabel": "Entrée :",
+        "input": "Une référence de personnage unique — un croquis, une mascotte de logo ou un cadre de propriété intellectuelle existant.",
+        "costLabel": "Coût :",
+        "cost": "{credits} crédits par étape de génération — relancez n'importe quelle étape sans refaire les autres.",
+        "ctaLabel": "Voir le guide complet",
+        "ctaHref": "/ip-merch-demo"
+      }
     }
   },
   "interconnection": {
@@ -349,5 +360,18 @@
       "INSUFFICIENT_CREDITS": "Vous n'avez pas assez de crédits pour exécuter cette tâche. Rechargez pour continuer.",
       "topUpCta": "Recharger des crédits"
     }
+  },
+  "bulkCallout": {
+    "eyebrow": "Production en gros",
+    "title": "Une image est un échantillon. Une ligne de produits a besoin de l'ensemble complet.",
+    "titleWithSubject": "Besoin de l'ensemble complet de {subject}, pas juste d'un ?",
+    "body": "Chaque modèle Curify fonctionne en gros. Envoyez la liste — SKU, mots, personnages, équipes, scènes — et nous renvoyons l'ensemble complet généré contre une direction visuelle verrouillée, afin que la ligne se lise comme une collection plutôt que quarante images non liées.",
+    "point1": "Fonctionne sur n'importe quel modèle, pas seulement quelques-uns — la même structure de prompt appliquée à l'ensemble de votre liste.",
+    "point2": "Une direction visuelle verrouillée sur l'ensemble, afin qu'une ligne de 40 designs reste cohérente du début à la fin.",
+    "point3": "Sortie prête pour la production là où le format l'exige — chemins découpés, lignes de découpe, résolution d'impression.",
+    "cta": "Parlez-nous d'une production en gros",
+    "note": "Dites-nous à peu près combien de designs et à quoi ils servent. Nous reviendrons avec un échantillon et un prix.",
+    "contactSubject": "Exécution en masse",
+    "contactSubjectWith": "Exécution en masse — {subject}"
   }
 }

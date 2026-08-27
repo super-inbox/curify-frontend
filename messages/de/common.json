@@ -215,7 +215,8 @@
       "food": "Essen",
       "branding": "Markendesign",
       "packaging": "Verpackung",
-      "social-media-posts": "Social Media"
+      "social-media-posts": "Social Media",
+      "fashion": "Mode"
     },
     "useCasesQuestion": "Anwendungsfälle erkunden für:",
     "useCases": {
@@ -329,7 +330,17 @@
       "bullet2": "Druckqualität. StickerApp, Printify, Printful, SPOD, Prodigi — Erstdruck, kein manueller Nachbearbeitungsschritt zwischen Design und Produktion.",
       "bullet3": "Standardmäßig niche-diszipliniert. Einzelgeschäftsform vom ersten Design an. Keine Multi-Kategorie-Bündelung, die billig schreit.",
       "bullet4": "Die Designarbeit, die der Operator am Schreibtisch leistet — nicht die Kundenservice-Arbeit, die Vertrauen zwischen Carrier und Käufer zerstört.",
-      "bullet5": "Verpackt als: monatliche Design-Quota-Stufen (50 / 200 / 1.000 / unbegrenzt) ODER Engine-Lizenz für interne Design-Pipelines — wähle eine Form, keine individuelle Entwicklung."
+      "bullet5": "Verpackt als: monatliche Design-Quota-Stufen (50 / 200 / 1.000 / unbegrenzt) ODER Engine-Lizenz für interne Design-Pipelines — wähle eine Form, keine individuelle Entwicklung.",
+      "case": {
+        "eyebrow": "Beispiel",
+        "title": "Eine Charakterzeichnung → eine vollständige Merch-SKU-Familie",
+        "inputLabel": "Eingabe:",
+        "input": "Ein einzelner Charakterreferenz — eine Skizze, ein Logo-Maskottchen oder ein bestehender IP-Rahmen.",
+        "costLabel": "Kosten:",
+        "cost": "{credits} Credits pro Generationsschritt — führe jeden Schritt erneut aus, ohne die anderen zu wiederholen.",
+        "ctaLabel": "Sieh dir die vollständige Anleitung an",
+        "ctaHref": "/ip-merch-demo"
+      }
     }
   },
   "interconnection": {
@@ -349,5 +360,18 @@
       "INSUFFICIENT_CREDITS": "Sie haben nicht genügend Credits, um diesen Auftrag auszuführen. Laden Sie Ihr Guthaben auf, um fortzufahren.",
       "topUpCta": "Credits aufladen"
     }
+  },
+  "bulkCallout": {
+    "eyebrow": "Massenproduktion",
+    "title": "Ein Bild ist ein Muster. Eine Produktlinie benötigt das gesamte Set.",
+    "titleWithSubject": "Brauchen Sie das gesamte {subject} Set, nicht nur eines?",
+    "body": "Jede Curify-Vorlage läuft in großen Mengen. Senden Sie die Liste — SKUs, Wörter, Charaktere, Teams, Szenen — und wir liefern das vollständige Set, das gegen eine festgelegte visuelle Richtung generiert wurde, sodass die Linie als Sammlung und nicht als vierzig nicht verwandte Bilder wahrgenommen wird.",
+    "point1": "Funktioniert mit jeder Vorlage, nicht nur mit wenigen speziellen — dieselbe Eingabestruktur wird auf Ihre gesamte Liste angewendet.",
+    "point2": "Eine festgelegte visuelle Richtung über das Set, sodass eine 40-Design-Linie durchgehend markenkonform bleibt.",
+    "point3": "Produktionsbereite Ausgaben, wo das Format es erfordert — Stanzpfade, Dielinien, Druckauflösung.",
+    "cta": "Sprechen Sie mit uns über eine Großproduktion",
+    "note": "Teilen Sie uns grob mit, wie viele Designs und wofür sie gedacht sind. Wir kommen mit einem Muster und einem Preis zurück.",
+    "contactSubject": "Massenlauf",
+    "contactSubjectWith": "Massenlauf — {subject}"
   }
 }

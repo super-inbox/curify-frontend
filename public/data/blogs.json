@@ -1,5 +1,22 @@
 [
   {
+    "slug": "dieline-generator-guide",
+    "title": "Dieline Generators for Packaging: What a Printer Actually Needs",
+    "date": "August 28, 2026",
+    "readTime": "10 min read",
+    "tag": "Design to Manufacturing",
+    "image": "/images/blog/dieline-generator-guide/dieline-to-3d.jpg",
+    "heroLink": "/tools/packaging-mockup",
+    "category": "merch-pod",
+    "relatedLinks": [
+      "character-turnaround-sheet-guide",
+      "ai-packaging-design-guide",
+      "ip-merch-design-ai-workflow"
+    ],
+    "lastmod": "2026-08-28",
+    "metaDescription": "A printer cannot quote from a render. It quotes from a dieline — a flat cutting plan with real millimetres, fold lines, bleed and safe area. What that file must contain, the proportion trap that makes most AI packaging mockups unusable, and the one number you must never let a model guess."
+  },
+  {
     "slug": "character-turnaround-sheet-guide",
     "title": "Character Turnaround Sheets for Manufacturing: What a Factory Actually Needs",
     "date": "August 18, 2026",
@@ -1203,6 +1220,7 @@
     "image": "/images/nano_insp/template-mbti-ghibli-howl.jpg",
     "category": "creator-tools",
     "relatedLinks": [
+      "50-ai-makeover-prompts",
       "best-ai-tools",
       "best-programmatic-seo-tools",
       "image-generation-model-comparison"
@@ -1968,7 +1986,8 @@
     "image": "/images/nano_insp/template-costume-zh-tang-qixiong.jpg",
     "category": "nano-template",
     "relatedLinks": [
-      "ultimate-directory-of-nano-banana-prompts"
+      "ultimate-directory-of-nano-banana-prompts",
+      "50-ai-makeover-prompts"
     ],
     "lastmod": "2026-05-18",
     "nanoTemplates": [
@@ -3052,6 +3071,7 @@
     "heroLink": "/nano-template/fashion-before-after-outfit-annotation-card/example/template-fashion-before-after-outfit-annotation-card-bridal-hairstyle",
     "category": "ai-strategy",
     "relatedLinks": [
+      "50-ai-makeover-prompts",
       "ai-packaging-design-guide",
       "ai-sticker-design-guide",
       "ip-merch-design-ai-workflow"

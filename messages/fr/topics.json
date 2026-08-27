@@ -664,7 +664,40 @@
         "style",
         "habillement",
         "porter"
-      ]
+      ],
+      "format": {
+        "lead": "Le design de mode couvre tout, de l'analyse d'une tenue unique à un lookbook saisonnier complet — cartes d'analyse de style, guides de silhouettes et de morphologies, fiches de conception de robes et de vêtements, recommandations de coiffures et de couleurs, et affiches de collections style défilé. Curify transforme une photo de référence ou un brief écrit en visuels de mode publiables sans séance photo en studio.",
+        "howToTitle": "Comment créer des visuels de mode",
+        "howTo": [
+          "Choisissez un modèle de mode — décomposition de tenue, guide de style, fiche de conception de robe ou affiche de collection.",
+          "Téléchargez une photo de référence ou décrivez le look, le tissu et la silhouette que vous souhaitez.",
+          "Générez le visuel, puis affinez la palette, le style ou la mise en page.",
+          "Téléchargez pour un lookbook, une liste de produits, un moodboard ou une publication sur les réseaux sociaux."
+        ],
+        "usesTitle": "Ce que vous pouvez créer",
+        "uses": [
+          "Décomposition de tenue et cartes d'analyse de style personnel.",
+          "Guides sur la morphologie et la silhouette qui expliquent ce qui convient à qui.",
+          "Fiches de conception de robes, vêtements et nail art pour une collection.",
+          "Tableaux de recommandations de coiffure et de couleur créés à partir d'un portrait.",
+          "Lookbooks saisonniers et affiches de collections style défilé."
+        ],
+        "faqTitle": "FAQ sur le design de mode",
+        "faq": [
+          {
+            "q": "Ai-je besoin d'une séance photo pour créer un lookbook ?",
+            "a": "Non. La plupart des modèles de mode fonctionnent à partir d'une description écrite, et ceux qui restylent une personne utilisent une seule photo de référence. C'est le but du format : vous obtenez des visuels de style publiables avant même qu'un échantillon de vêtement ou du temps en studio n'existe."
+          },
+          {
+            "q": "Puis-je concevoir une tenue à partir de la photo d'une personne réelle ?",
+            "a": "Oui. Téléchargez un portrait et les modèles de tenue, de coiffure et d'analyse des couleurs construisent leurs recommandations autour des proportions, de la coloration et des caractéristiques de cette personne plutôt que d'un modèle générique."
+          },
+          {
+            "q": "Est-ce utile pour une véritable marque de vêtements ?",
+            "a": "Pour la conception, le stylisme et la création de visuels, oui. Pour la fabrication, considérez le résultat comme une référence de design plutôt qu'une spécification : un vêtement nécessite encore des patrons mesurés et un dossier technique avant qu'une usine puisse en établir le coût."
+          }
+        ]
+      }
     },
     "anime": {
       "displayName": "Animé",

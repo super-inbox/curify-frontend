@@ -1066,6 +1066,124 @@ count (8,232).
 
 ---
 
+## 2026-08-27 — A1/B1 readout + 30/60-day checkpoints
+
+Both posts published **2026-08-18**. Both are **indexed** — A1 crawled 08-19, one day
+after publish. Against the rest of this workstream (tool pages from 08-06 still not
+indexed, `/topics/stickers` never crawled) **the blog surface is by far the fastest
+route into the index**, which should drive sequencing decisions elsewhere.
+
+| post | 28d impr | clicks | named queries |
+|---|---|---|---|
+| `/blog/best-claude-code-design-skills` | 25 | 0 | 5 (1 impression each) |
+| `/blog/character-turnaround-sheet-guide` | 1 | 0 | 0 |
+
+**Do not touch the SERP copy — the sample cannot support any conclusion.** Expected
+clicks at benchmark CTR for the observed positions is **0.18**, and
+**P(0 clicks | benchmark CTR holds) = 82.8%**. Zero is the single most likely outcome.
+It takes ~59 impressions at pos ~6 before a zero is significant at p<.05; we have 5
+named. The "pos 6 / pos 4" figures are each derived from a SINGLE impression — one
+appearance, not a ranking. A1's title/description/H1 were checked and are strong and
+correctly served by `[slug]` (no dedicated-route metadata trap). Changing copy now
+would only reset what little signal exists.
+
+Note GSC page-level (25) and query-level (5) totals disagree because rare queries are
+anonymized. Use page-level for volume, query-level for diagnosis — never mix them.
+
+### CHECKPOINT 2026-09-17 (30d)
+Re-pull both posts. Expect A1 to clear ~59 impressions; only then is a CTR read valid.
+If impressions are still <30, the constraint is demand or depth, NOT the SERP — go get
+external volume data rather than rewriting titles. `raw/seo-kd-08-10/` is a screenshot,
+not a dataset; this needs a real SEMrush pull.
+
+### CHECKPOINT 2026-10-17 (60d)
+Decide A4/A5 on evidence. A5 (`codex skills`, 1,900/mo, KD 47) is the volume prize and
+today we have **zero impressions on any codex term** despite A1's description naming
+Codex — consistent with the spec's ladder (19 → 27 → 36 → 47), which defers A5 until
+A1–A4 build authority. If A1 has not cleared ~100 impressions by 60d, do not attempt
+A5; the ladder has not been earned.
+
+---
+
+## 2026-08-27 — fashion KD (SEMrush) and what it rules out
+
+Source: `raw/fashion-seo-08-27/` (SEMrush bulk keyword analysis, 19 terms).
+**Recorded here because the screenshot is the only copy** — `raw/seo-kd-08-10/` is
+also just a screenshot, and that is why the "is there demand for codex terms"
+question could not be answered from local data on 08-26.
+
+| keyword | intent | volume | KD | CPC | our asset |
+|---|---|---|---|---|---|
+| dress for body type | I | 550,000 | 39 | $0.60 | fashion-shape-guide-infographic (indexed, pos 6.9) |
+| seasonal color analysis | I | 5,400 | 35 | $0.87 | hairstyle-color-recommendation (FOLDED) |
+| personal color analysis | I | 3,600 | 38 | $0.91 | same (FOLDED) |
+| ai outfit generator | I | 1,300 | 30 | $1.08 | — |
+| **hairstyle for face shape** | I | **1,000** | **23** | $0.64 | **hairstyle-guide-infographic (indexed)** |
+| **haircut for face shape** | I | **880** | **25** | $0.64 | **same** |
+| ai try on clothes | I | 390 | 35 | $1.15 | chinese-costume-tryon (indexed, 0 impr) |
+| how to dress for your body shape | I | 390 | 35 | $1.12 | fashion-shape-guide-infographic |
+| **best hairstyle for my face shape** | C | **320** | **24** | $0.72 | **hairstyle-guide-infographic** |
+| what colors suit me | I | 320 | 30 | $0.49 | — |
+| what to wear for your body type | I | 70 | 33 | $1.15 | fashion-shape-guide-infographic |
+| virtual try on ai | I | 50 | 35 | $1.04 | — |
+| body shape style guide | — | 20 | n/a | $0.98 | — |
+
+**Only three terms are green, and they are one cluster: face-shape hairstyle
+(KD 23-25, ~2,200/mo combined).** Everything else is KD 30-39 — precisely the band
+`blog-quality.md` records us as "pos 40+ or absent on ALL" head terms, with the
+root cause logged as a domain-authority gap, not content. So the rest of this list
+is not a content problem and should not be attacked with more pages.
+
+**Do not read `dress for body type` as a win.** 550,000/mo at KD 39 with us at
+pos 6.9 is not credible on its face, and the position rests on **10 impressions
+over 180 days**. A position averaged over 10 impressions is one appearance, not a
+ranking — the same error made with A1's "pos 6" (1 impression). Treat the volume
+figure as suspect too: it is ~100x its nearest neighbours in the same list.
+
+**Actions taken.** Retitled `template-hairstyle-guide-infographic` — already
+indexed and self-canonical, but titled "Hairstyle Guide Infographic Generator"
+with the target phrase only in the description. Now
+"Hairstyle for Face Shape — AI Haircut Guide" (exact head term, front-loaded,
+59 chars incl. suffix), description leading with "best hairstyle for your face
+shape" to also cover the KD 24 variant. 10 locales. Scoped recrawl via
+`FASHION_RECRAWL_TEMPLATE_IDS` — one template, not a group bump.
+
+**Deprioritised with reason:** the colour-analysis cluster (KD 35-38) has the
+volume but its asset `hairstyle-color-recommendation` is **folded to the homepage
+canonical**, so it would need both an un-fold and authority we do not have.
+General virtual try-on (KD 35) is retail-giant territory and our try-on tool is
+Chinese-costume-specific — a page-type/intent mismatch.
+
+### `/blog/50-ai-makeover-prompts` — folded, now linked
+
+Confirmed folded (`Duplicate without user-selected canonical`, googleCanonical=`/`).
+**The recorded root cause did not hold.** `project_blog_canonical_fold` attributes
+folds to the 1.6MB i18n catalog making pages near-identical — but measured, the
+folded page is the *healthiest* of the three: 88.7% script boilerplate and 15,858
+visible chars, versus 93.0%/10,592 and 93.6%/8,404 for two blogs that ARE indexed.
+Markup is clean too: distinct 107-char title, matching h1, correct self-canonical,
+served by `[slug]`.
+
+What it actually had was **one inbound internal link** — the `/blog` index — and
+zero blogs referencing it. Added it to the `relatedLinks` of three verified-indexed
+siblings (`ai-makeover-templates`, `style-transfer-ai-guide`,
+`chinese-costume-history-infographic`), taking it to 4 sources, per the ≥3-crawled-
+sources rule in `project_new_page_crawl_collapse`. Its 107-char title also truncates
+at ~60 in SERP; left alone for now since the fold is the binding constraint.
+
+**Trap worth remembering:** `RelatedBlogs` slices `relatedLinks` to **3**
+(`maxRelated = 3`). Appending to a list that already had 3+ entries renders
+NOTHING — the first attempt here silently added zero links to two of the three
+donors, and looked correct in the JSON. Verified against the rendered page, not
+the data. Fixed by moving the target to position 1, which displaces
+`ip-merch-design-ai-workflow` and `image-generation-model-comparison` from those
+two pages' visible related lists.
+
+**This is a bet, not a fix.** Request Indexing does not override duplicate
+detection, and links are the only lever with evidence behind them here.
+
+---
+
 ## Related docs / threads
 - `docs/search-and-content.md` — Search & Content workstream (companion A)
 - `~/curify-studio/docs/workstream-tooling-and-engineering.md` — Tools workstream (companion B)

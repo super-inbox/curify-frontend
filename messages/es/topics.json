@@ -664,7 +664,40 @@
         "estilo",
         "prendas",
         "usar"
-      ]
+      ],
+      "format": {
+        "lead": "El diseño de moda abarca desde el desglose de un solo atuendo hasta un lookbook completo de temporada: tarjetas de análisis de estilo, guías de silueta y forma corporal, hojas de diseño de vestidos y prendas, recomendaciones de peinados y colores, y carteles de colección al estilo pasarela. Curify convierte una foto de referencia o un resumen escrito en visuales de moda publicables sin una sesión de estudio.",
+        "howToTitle": "Cómo crear visuales de moda",
+        "howTo": [
+          "Elige una plantilla de moda: desglose de atuendo, guía de estilo, hoja de diseño de vestido o póster de colección.",
+          "Sube una foto de referencia o describe el look, la tela y la silueta que deseas.",
+          "Genera el visual, luego ajusta la paleta, el estilo o el diseño.",
+          "Descarga para un lookbook, listado de productos, moodboard o publicación en redes sociales."
+        ],
+        "usesTitle": "Lo que puedes hacer",
+        "uses": [
+          "Desglose de atuendos y tarjetas de análisis de estilo personal.",
+          "Guías de forma corporal y silueta que explican qué le queda bien a cada persona.",
+          "Hojas de diseño de vestidos, prendas y arte de uñas para una colección.",
+          "Tableros de recomendaciones de peinados y colores creados a partir de un retrato.",
+          "Lookbooks de temporada y carteles de colección estilo pasarela."
+        ],
+        "faqTitle": "Preguntas frecuentes sobre diseño de moda",
+        "faq": [
+          {
+            "q": "¿Necesito una sesión de fotos para hacer un lookbook?",
+            "a": "No. La mayoría de las plantillas de moda funcionan a partir de una descripción escrita, y las que restilan a una persona lo hacen a partir de una sola foto de referencia. Ese es el objetivo del formato: obtienes visuales de estilo publicables antes de que exista cualquier prenda de muestra o tiempo de estudio."
+          },
+          {
+            "q": "¿Puedo diseñar un atuendo alrededor de la foto de una persona real?",
+            "a": "Sí. Sube un retrato y las plantillas de atuendo, peinado y análisis de color construirán sus recomendaciones en torno a las proporciones, el color y las características de esa persona en lugar de un modelo genérico."
+          },
+          {
+            "q": "¿Es esto útil para una marca de ropa real?",
+            "a": "Para la conceptualización, el estilo y la lista de visuales, sí. Para la fabricación, trate el resultado como una referencia de diseño en lugar de una especificación: una prenda aún necesita patrones medidos y un paquete técnico antes de que una fábrica pueda cotizarla."
+          }
+        ]
+      }
     },
     "anime": {
       "displayName": "Anime",

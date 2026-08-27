@@ -14,6 +14,7 @@
 import Link from "next/link";
 import { Mail, ExternalLink, Wrench, GraduationCap, MessageCircle, Calendar } from "lucide-react";
 import { useClickTracking } from "@/services/useTracking";
+import BulkDesignCallout from "./BulkDesignCallout";
 
 type Props = {
   category: string;
@@ -51,6 +52,20 @@ const CREATOR_TOOL_OVERRIDES: Record<string, { href: string; label: string }> = 
     label: "Browse Creator Tools",
   },
 };
+
+// Collection-style categories — posts that are essentially template
+// catalogues ("50+ sticker prompts", merch/POD workflows, programmatic-SEO
+// hubs). Their reader has just scrolled 50 designs, which is the moment the
+// "I need the whole set, not one" ask lands, so these get the bulk callout
+// above the regular CTA fork. Categories whose reader wants a tool or
+// coaching (creator-tools, ds-ai-engineering, ai-strategy, video-*) do not.
+const BULK_CALLOUT_CATEGORIES = new Set([
+  "nano-template",
+  "merch-pod",
+  "design-branding",
+  "programmatic-seo",
+  "learning-education",
+]);
 
 const MENTORCRUISE = "https://mentorcruise.com/mentor/jaywang/";
 const CALENDLY = "https://calendly.com/qqwjq9916/15-minute-meeting";
@@ -469,6 +484,70 @@ function ctasFor(category: string, locale: string, slug?: string): CTA[] {
         },
       ];
 
+    // merch-pod / design-branding / programmatic-seo used to fall through to
+    // `default: return []`, so 18 posts — the whole merch, POD and surface-design
+    // library — rendered no call to action at all. Their reader is a buyer, so
+    // they fork to the matching persona page plus a direct scoping conversation.
+    case "merch-pod":
+      return [
+        {
+          id: "use-cases-for-merch-operators",
+          label: "Merch operators playbook",
+          description:
+            "Past the 20-design wall: how a small team ships a full SKU line without a designer per product.",
+          href: `/${locale}/use-cases/for-merch-operators`,
+          Icon: MessageCircle,
+        },
+        {
+          id: "contact-bulk-merch",
+          label: "Scope a bulk run",
+          description:
+            "Send your SKU list and what it's for — we come back with a sample and a price.",
+          href: `/${locale}/contact`,
+          Icon: Mail,
+        },
+      ];
+
+    case "design-branding":
+      return [
+        {
+          id: "design-templates",
+          label: "Browse Design Templates",
+          description:
+            "Brand systems, moodboards, poster series — the template families these posts walk through.",
+          href: `/${locale}/topics/design`,
+          Icon: Wrench,
+        },
+        {
+          id: "contact-bulk-design",
+          label: "Scope a design series",
+          description:
+            "Series consistency across a licensable product family, produced to print spec.",
+          href: `/${locale}/contact`,
+          Icon: Mail,
+        },
+      ];
+
+    case "programmatic-seo":
+      return [
+        {
+          id: "use-cases-for-programmatic-seo",
+          label: "Programmatic SEO playbook",
+          description:
+            "Hub-and-spoke page generation with original hero imagery, not stock — the buyer-side build.",
+          href: `/${locale}/use-cases/for-programmatic-seo`,
+          Icon: MessageCircle,
+        },
+        {
+          id: "calendly-15min",
+          label: "Book a 15-min audit",
+          description: "Direct calendar — pipeline review of your existing SEO content stack.",
+          href: CALENDLY,
+          external: true,
+          Icon: Calendar,
+        },
+      ];
+
     default:
       return [];
   }
@@ -548,8 +627,17 @@ function CtaButton({
 
 export default function BlogCTACard({ category, slug, locale }: Props) {
   const ctas = ctasFor(category, locale, slug);
-  if (ctas.length === 0) return null;
+  const showBulk = BULK_CALLOUT_CATEGORIES.has(category);
+  if (ctas.length === 0 && !showBulk) return null;
   return (
+    <>
+      {showBulk && (
+        <BulkDesignCallout
+          source={slug ? `blog/${slug}` : `blog-category/${category}`}
+          className="mt-12"
+        />
+      )}
+      {ctas.length > 0 && (
     <section className="mt-12 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
       <h2 className="mb-1 text-xl font-bold text-neutral-900">
         Take the next step
@@ -574,5 +662,7 @@ export default function BlogCTACard({ category, slug, locale }: Props) {
         ))}
       </div>
     </section>
+      )}
+    </>
   );
 }

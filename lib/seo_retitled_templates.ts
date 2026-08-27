@@ -28,6 +28,24 @@ export const I18N_DESCRIPTIONS_LASTMOD = "2026-05-14T00:00:00.000Z";
 // May i18n-descriptions date these same examples otherwise carry.
 export const MBTI_RECRAWL_LASTMOD = "2026-07-26T00:00:00.000Z";
 
+// Fashion retitle, 2026-08-27. SEMrush KD came back with exactly three green
+// keywords in the whole fashion set — hairstyle for face shape (1,000/mo, KD 23),
+// haircut for face shape (880, KD 25), best hairstyle for my face shape (320,
+// KD 24). Every other fashion term is KD 30-39, the band where blog-quality.md
+// records us as "pos 40+ or absent on ALL" head terms. So this is the one
+// winnable cluster, and template-hairstyle-guide-infographic is the asset: it is
+// already "Submitted and indexed" and self-canonical, but its title read
+// "Hairstyle Guide Infographic Generator" — the target phrase appeared only in
+// the description. Retitled to lead with the exact head term.
+//
+// Scoped to a single template on purpose: a group-wide bump would overstate
+// freshness for templates that did not change, which is what teaches Google to
+// discount lastmod (see the note in app/sitemap.xml/route.ts).
+export const FASHION_RECRAWL_LASTMOD = "2026-08-27T00:00:00.000Z";
+export const FASHION_RECRAWL_TEMPLATE_IDS: ReadonlySet<string> = new Set([
+  "template-hairstyle-guide-infographic",
+]);
+
 export const SEO_RETITLED_TEMPLATE_IDS: ReadonlySet<string> = new Set([
   "template-gardening-how-to-infographic",
   "template-pet-care-guide",
