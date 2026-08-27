@@ -12,6 +12,7 @@ export const revalidate = false;
 import ExampleImagesGrid from "./ExampleImagesGrid";
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
 
+import BulkDesignCallout from "@/app/[locale]/_components/BulkDesignCallout";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import TopicStrip from "@/app/[locale]/_components/TopicStrip";
 import { resolveTopicPath } from "@/lib/topic_path_overrides";
@@ -271,6 +272,13 @@ export default async function NanoTemplatePage({ params }: Props) {
     showOtherTemplates={false}
   />
 </section>
+
+      <section className="mt-10">
+        <BulkDesignCallout
+          source={`nano-template/${slug}`}
+          subject={categoryLabel || undefined}
+        />
+      </section>
 
       <section className="mt-8">
        

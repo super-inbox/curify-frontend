@@ -360,5 +360,18 @@
       "INSUFFICIENT_CREDITS": "You don't have enough credits to run this job. Top up to continue.",
       "topUpCta": "Top up credits"
     }
+  },
+  "bulkCallout": {
+    "eyebrow": "Bulk production",
+    "title": "One image is a sample. A product line needs the whole set.",
+    "titleWithSubject": "Need the whole {subject} set, not just one?",
+    "body": "Every Curify template runs in bulk. Send the list — SKUs, words, characters, teams, scenes — and we return the full set generated against one locked visual direction, so the line reads as a collection instead of forty unrelated images.",
+    "point1": "Works on any template, not a special few — the same prompt structure applied across your whole list.",
+    "point2": "One locked visual direction across the set, so a 40-design line stays on-brand end to end.",
+    "point3": "Production-ready output where the format calls for it — die-cut paths, dielines, print resolution.",
+    "cta": "Talk to us about a bulk run",
+    "note": "Tell us roughly how many designs and what they're for. We'll come back with a sample and a price.",
+    "contactSubject": "Bulk run",
+    "contactSubjectWith": "Bulk run — {subject}"
   }
 }

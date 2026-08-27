@@ -511,6 +511,23 @@
     "metadata": {
       "title": "문의하기 | Curify Studio",
       "description": "지원, 판매 또는 파트너십을 위해 Curify 팀에 문의하세요. 우리는 귀하가 콘텐츠를 전 세계적으로 확장하도록 돕기 위해 여기 있습니다."
+    },
+    "title": "Curify 팀에 문의하기",
+    "chooseMethod": "방법 선택",
+    "form": {
+      "title": "요청 제출",
+      "description": "이 양식을 사용하여 대량 및 맞춤 디자인 요청, 일반 문의, 기술 지원 또는 제품 피드백을 제출하세요. 더 빠른 지원을 위해 관련 세부 정보를 포함해 주세요.",
+      "emailPlaceholder": "귀하의 이메일 주소",
+      "subjectPlaceholder": "제목 (예: 대량 실행, 체험 요청, 버그 보고)",
+      "contentPlaceholder": "요청 내용을 자세히 설명해 주세요...",
+      "submit": "메시지 전송",
+      "sending": "전송 중...",
+      "success": "감사합니다 — 귀하의 메시지를 받았으며, 영업일 기준 1일 이내에 답변드리겠습니다.",
+      "error": "메시지를 전송할 수 없습니다. 다시 시도하시거나 team@curify-ai.com으로 직접 이메일을 보내 주세요."
+    },
+    "call": {
+      "title": "전화 예약",
+      "description": "대량 실행, 파트너십, 판매 또는 기술 논의에 적합합니다. 편하신 시간에 15분 미팅을 예약하세요 — 저희가 준비해 가겠습니다."
     }
   },
   "nanoGallery": {

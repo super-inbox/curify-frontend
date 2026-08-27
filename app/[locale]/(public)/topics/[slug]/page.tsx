@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import TopicStrip from "@/app/[locale]/_components/TopicStrip";
+import BulkDesignCallout from "@/app/[locale]/_components/BulkDesignCallout";
 import TopicFormatContent, {
   type TopicFormatContent as FormatContent,
 } from "@/app/[locale]/_components/TopicFormatContent";
@@ -582,6 +583,13 @@ export default async function Page({ params }: Props) {
           showReproduce={false}
           showOtherTemplates={true}
           showOtherTemplateTitle={false}
+        />
+      </section>
+
+      <section className="mx-auto max-w-[1600px] px-4 pb-12 sm:px-6 lg:px-8">
+        <BulkDesignCallout
+          source={`topics/${slug}`}
+          subject={topicDisplayName || undefined}
         />
       </section>
 
