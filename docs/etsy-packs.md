@@ -163,7 +163,9 @@ original), which does not scale and drifts in layout between SKUs.
     python scripts/build_etsy_delivery_pdf.py <sku> [<sku>…]  # specific SKUs
     python scripts/build_etsy_delivery_pdf.py --code=etsy-fall-sale <sku>
 
-Output: `raw/etsy-packs/<sku>-delivery.pdf`.
+Output: `curify-gallery/etsy-packs/<sku>-delivery.pdf` — the gallery repo, alongside
+the original hand-made Canva example, not the frontend's `raw/`. Override with
+`--out=<dir>` or `ETSY_PDF_OUT` for throwaway review copies.
 
 The link is emitted as a real PDF **link annotation**, not just text on the page — an
 Etsy buyer on a phone taps, they do not retype a URL, and a text-only URL silently

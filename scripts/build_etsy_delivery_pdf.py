@@ -31,7 +31,11 @@ from reportlab.pdfgen import canvas
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REGISTRY = os.path.join(ROOT, "lib", "etsy_packs.json")
-OUT_DIR = os.path.join(ROOT, "raw", "etsy-packs")
+# Delivery PDFs live in the gallery repo alongside the original hand-made Canva
+# example, not in the frontend's raw/ — that is where the operator looks for them
+# and where they are version-controlled with the rest of the merch collateral.
+# Override with --out=<dir> when generating throwaway copies for review.
+OUT_DIR = os.environ.get("ETSY_PDF_OUT", "/Users/qqwjq/curify-gallery/etsy-packs")
 CDN = "https://cdn.curify-ai.com"
 SITE = "https://www.curify-ai.com"
 PAGE_W, PAGE_H = letter
@@ -147,6 +151,10 @@ def build(pack, code=None):
 
 
 def main():
+    global OUT_DIR
+    out_override = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--out=")), None)
+    if out_override:
+        OUT_DIR = out_override
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     code = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--code=")), None)
     packs = load_packs("--include-inactive" in sys.argv)
@@ -159,7 +167,7 @@ def main():
     for p in packs:
         out, url = build(p, code)
         print(f"  {p['sku']:<26} {os.path.getsize(out)/1024:6.0f} KB  {url}")
-    print(f"  {len(packs)} PDF(s) -> raw/etsy-packs/")
+    print(f"  {len(packs)} PDF(s) -> {OUT_DIR}")
 
 
 if __name__ == "__main__":
