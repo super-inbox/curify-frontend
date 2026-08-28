@@ -126,6 +126,29 @@ Browser redirects to signed Azure URL → ZIP downloads
    return `200` + a `signed_url` (a `404 "Pack not found"` means the backend registry/deploy is missing).
 4. **Update this doc.** Add a row to the [Live packs](#live-packs-as-of-2026-05-18) table.
 
+### Building the delivery PDF (automated)
+
+The file the buyer downloads from Etsy is a one-page PDF: hero image + the redemption
+link. It used to be hand-made in Canva (see `curify-gallery/etsy-packs/` for the
+original), which does not scale and drifts in layout between SKUs.
+
+    python scripts/build_etsy_delivery_pdf.py                 # all active packs
+    python scripts/build_etsy_delivery_pdf.py <sku> [<sku>…]  # specific SKUs
+    python scripts/build_etsy_delivery_pdf.py --code=etsy-fall-sale <sku>
+
+Output: `raw/etsy-packs/<sku>-delivery.pdf`.
+
+The link is emitted as a real PDF **link annotation**, not just text on the page — an
+Etsy buyer on a phone taps, they do not retype a URL, and a text-only URL silently
+loses most redemptions. That requirement is why this uses `reportlab` (a build-only
+dependency) instead of the Pillow pipeline in `scripts/images_to_pdf.py`, which
+cannot emit annotations. Verify after generating:
+
+    python3 -c "import re;d=open('raw/etsy-packs/<sku>-delivery.pdf','rb').read();print(re.findall(rb'/URI\s*\(([^)]+)\)',d))"
+
+Attribution `?c=etsy-<sku>-listing` is baked in by default, so redemptions are
+traceable per listing without remembering to append it by hand.
+
 ### Rotating after a leak
 1. Build a fresh asset bundle (different filename — typically bump `pack-v2.zip`).
 2. Update `lib/etsy_packs.json` for the affected SKU:
