@@ -866,9 +866,51 @@
       "keywords": [
         "yüz",
         "portre",
+        "kişi",
+        "avatar",
+        "yüz",
+        "baş çekimi",
         "kişi"
       ],
-      "displayName": "Yapay Zeka Portreleri"
+      "displayName": "Yapay Zeka Portreleri",
+      "format": {
+        "lead": "AI selfie, kendi fotoğrafınızı yeni bir şeye dönüştürür — bir çıkartma paketi, sanat portresi, yeni bir saç modeli, sanal kıyafet denemesi veya baskı yapılabilir ürünler. Bir selfie yükleyin ve Curify, benzerliğinizi koruyarak onu yeniden şekillendirir, ardından indirilebilir bir sonuç sunar.",
+        "howToTitle": "AI selfie nasıl yapılır",
+        "howTo": [
+          "Kendinizin net, önden çekilmiş bir fotoğrafını yükleyin.",
+          "Bir stil seçin — çıkartma paketi, sanat portresi, rötuş, yeni saç modeli, kıyafet denemesi veya ürün.",
+          "Oluştur: Curify, yüzünüzü koruyarak fotoğrafınızı yeniden şekillendirir.",
+          "Sonucu indirin veya çalışma alanınıza kaydedin."
+        ],
+        "usesTitle": "Bir selfieden neler yapabilirsiniz",
+        "uses": [
+          "Kendi yüzünüzün ifade çıkartma paketleri",
+          "Sanatsal ve resimsi portre serileri",
+          "Profesyonel vesikalık rötuş",
+          "Yeni saç modeli ve saç rengi önizlemeleri",
+          "Sanal kıyafet denemeleri ve lookbook'lar",
+          "Yüzünüzün kupalarda, çantalarda ve çıkartmalarda olması"
+        ],
+        "faqTitle": "AI selfie SSS",
+        "faq": [
+          {
+            "q": "Yüzümü ve benzerliğimi koruyor mu?",
+            "a": "Evet. Fotoğraf giriş stilleri, kimliğinizi ve yüz hatlarınızı koruyarak stil, kıyafet, saç modeli veya ortamı değiştirir."
+          },
+          {
+            "q": "Hangi tür fotoğraf en iyi sonucu verir?",
+            "a": "Net, iyi aydınlatılmış, önden çekilmiş bir kişinin fotoğrafı en doğru sonuçları verir. Ağır filtrelerden, güneş gözlüklerinden ve karmaşık arka planlardan kaçının."
+          },
+          {
+            "q": "Bir hesaba ihtiyacım var mı?",
+            "a": "Her stili ücretsiz olarak gezinebilirsiniz. Kendi fotoğrafınızı yükleyip oluşturmak için hızlı bir giriş yapmanız gerekir."
+          },
+          {
+            "q": "Sonuçları profilim veya baskılarım için kullanabilir miyim?",
+            "a": "Evet — sonuçlar profil resimleri, sanat baskıları, hediyeler veya talep üzerine baskı ürünleri olarak kullanmanız için sizin."
+          }
+        ]
+      }
     },
     "monochrome": {
       "displayName": "Monokrom",
@@ -993,7 +1035,40 @@
         "makyaj",
         "kozmetik",
         "kozmetikler"
-      ]
+      ],
+      "format": {
+        "lead": "Güzellik, gardıroptan ziyade yüzü kapsar — makyaj, cilt, saç ve renk. Curify, gerçek bir portre etrafında oluşturulmuş analiz kartları, adım adım kılavuzlar ve öneri panoları üretir.",
+        "howToTitle": "Güzellik rehberi görselleri nasıl oluşturulur",
+        "howTo": [
+          "Bir güzellik şablonu seçin — makyaj adım adım, renk analizi veya saç önerisi.",
+          "Net, eşit aydınlatılmış bir portre yükleyin; güzellik çıktısı, girdinin ışığına bağlıdır.",
+          "İstediğiniz bitişi adlandırın — nemli, mat, şekillendirilmiş, çıplak.",
+          "Tek bir sonuç yerine yan yana karşılaştırmalar oluşturun."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Makyaj adım adım kılavuz posterleri.",
+          "Kişisel renk ve cilt tonu analiz kartları.",
+          "Saç modeli ve saç rengi öneri panoları.",
+          "Öncesi ve sonrası güzellik karşılaştırmaları.",
+          "Salon ve klinik eğitim görselleri."
+        ],
+        "faqTitle": "Güzellik SSS",
+        "faq": [
+          {
+            "q": "Portrem neden rötuşlanmış olarak geri geliyor?",
+            "a": "Varsayılan rötuşlama, cildi porselen gibi yapar. Gözenekleri ve cilt dokusunu korumayı ve sadece kusurları rötuşlamayı isteyin — aksi takdirde sonuç yapay görünür."
+          },
+          {
+            "q": "Hangi fotoğraf en iyi girdi olarak çalışır?",
+            "a": "Yüzde ağır gölge olmadan, önden gelen eşit ışık ve kılavuz yüz şekli kapsıyorsa alnı açık saç. Girdi aydınlatması, sonraki her şeyi sınırlar."
+          },
+          {
+            "q": "Renk önerileri güvenilir mi?",
+            "a": "Onları teşhis değil, yönlendirme olarak değerlendirin. Ekran rengi ile basılı veya giyilen renk farklıdır, bu yüzden çıktıyı seçimleri daraltmak için kullanın, nihai karar için değil."
+          }
+        ]
+      }
     },
     "posters": {
       "displayName": "Afişler & El İlanları",
@@ -1411,7 +1486,40 @@
         "nötr palet görselleri",
         "sade moda örnekleri",
         "basit stil ilhamı"
-      ]
+      ],
+      "format": {
+        "lead": "Minimalist moda, niyetle yapılan bir azaltmadır — az sayıda unsur, bol negatif alan ve disiplinli bir palet. Curify, temiz düzenler, ölçülü stil ve hiçbir şeyin rekabet etmediği sessiz kompozisyonlar üretir.",
+        "howToTitle": "Minimalist moda görselleri nasıl oluşturulur",
+        "howTo": [
+          "Minimalist bir stil, kapsül veya temiz düzen şablonu seçin.",
+          "Özeti kısaltın: bir siluet, bir vurgu, bir arka plan tonu.",
+          "Bol negatif alan talep edin — modeller varsayılan olarak çerçeveleri doldurur.",
+          "Sonucu küçük resim boyutunda kontrol edin; hala net okunuyorsa, işe yarıyor demektir."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Kapsül gardırop ızgaraları ve sadeleştirilmiş lookbook'lar.",
+          "Temiz ürün ve giysi sunumu.",
+          "Nötr palet stil panoları.",
+          "Güçlü negatif alanla sessiz editoryal düzenler.",
+          "Minimal marka ve ambalaj görselleri."
+        ],
+        "faqTitle": "Minimalist stil SSS",
+        "faq": [
+          {
+            "q": "Neden minimalist talebim yoğun geri dönüyor?",
+            "a": "\"Minimal\" bir stil kelimesidir, talimat değil. Ne çıkarılacağını belirtin — aksesuar yok, düz dikişsiz arka plan, tek giysi, geniş kenar boşlukları."
+          },
+          {
+            "q": "Kaç renk çok azdır?",
+            "a": "İki artı bir nötr genellikle yeterlidir. Bunun altında, dokunun tüm görüntüyü taşıması gerekir, bu da güçlü bir malzeme gerektirir."
+          },
+          {
+            "q": "Minimalist bej mi demek?",
+            "a": "Hayır. Belirli bir palet değil, karar sayısında kısıtlama anlamına gelir. Boş bir zeminde tek bir doygun renk hala minimalisttir."
+          }
+        ]
+      }
     },
     "soft-girl": {
       "displayName": "Soft Girl",
@@ -1424,7 +1532,40 @@
         "hayalperest portre örnekleri",
         "feminen moda fikirleri",
         "rahat atmosfer görselleri"
-      ]
+      ],
+      "format": {
+        "lead": "Soft-girl, tanımlanmış bir internet estetiğidir — pastel paletler, yumuşak ışık, romantik detaylar ve kasıtlı olarak genç bir üslup. Curify, bunu portreler, kıyafet panoları ve sosyal düzenlerde tutarlı bir şekilde sunar.",
+        "howToTitle": "Soft-girl görselleri nasıl oluşturulur",
+        "howTo": [
+          "Bir portre veya kıyafet stil şablonu seçin.",
+          "Paleti tam olarak adlandırın — allık, tereyağı, leylak, adaçayı — \"pastel\" demek yerine.",
+          "Dağınık veya arkadan aydınlatmalı ışık isteyin; sert gölge estetiği anında bozar.",
+          "Onu tanımlayan romantik detayları ekleyin: fırfır, kurdele, çiçek, yumuşak örgü."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Pastel kıyafet panoları ve stil ızgaraları.",
+          "Yumuşak ışık portre işlemleri.",
+          "Tutarlı bir paletle sosyal medya düzenleri.",
+          "Romantik mevsimlik lookbook'lar.",
+          "Tek bir hesap için koordineli içerik setleri."
+        ],
+        "faqTitle": "Soft-girl estetiği SSS",
+        "faq": [
+          {
+            "q": "Tüm seti nasıl tutarlı tutarım?",
+            "a": "Her bir istemde paleti ve ışığı sabitleyin ve tek bir şablon üzerinden oluşturun. Gönderiler arasında tutarlılık, estetiği okunabilir kılan şeydir."
+          },
+          {
+            "q": "Neden çıktım yumuşak yerine soluk görünüyor?",
+            "a": "Pastel ve düşük kontrast farklı şeylerdir. Paleti hafif tutun ama gözlerde ve saçlarda kontrastı koruyun, aksi takdirde görüntü düzleşir."
+          },
+          {
+            "q": "Bu kendi fotoğrafımda işe yarar mı?",
+            "a": "Evet — portre şablonları bir referans fotoğrafı yeniden şekillendirir ve kimliği korur, böylece estetik size uygulanır, genel bir yüze değil."
+          }
+        ]
+      }
     },
     "edgy": {
       "displayName": "Edgy",
@@ -1450,7 +1591,40 @@
         "aktif yaşam tarzı görselleri",
         "spor salonundan sokağa stil",
         "moda tasarım ipuçları"
-      ]
+      ],
+      "format": {
+        "lead": "Athleisure, performans ve sokak arasında yer alır — teknik kumaş, spor oranı ve pist dışında da işe yarayan stil. Curify, aktif giyim görünümleri, ürün sunumu ve yaşam tarzı bağlamında görseller oluşturur.",
+        "howToTitle": "Athleisure görselleri nasıl oluşturulur",
+        "howTo": [
+          "Bir aktif giyim veya yaşam tarzı stil şablonu seçin.",
+          "Kumaş davranışını adlandırın — sıkıştırma, nervürlü örgü, mat teknik, fırçalanmış polar.",
+          "Bağlamı ayarlayın: stüdyo, sokak, yolculuk veya spor salonu zemini.",
+          "Bir renk yolu çalışması oluşturun ve aynı parçayı bir palet üzerinde karşılaştırın."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Aktif giyim lookbook'ları ve sezonluk düşüşler.",
+          "Tayt, dış giyim ve ayakkabı için ürün sunumu.",
+          "Stüdyodan sokağa stil rehberleri.",
+          "Renk yolu varyasyon sayfaları.",
+          "Mekan çekimi olmadan yaşam tarzı bağlam çekimleri."
+        ],
+        "faqTitle": "Athleisure SSS",
+        "faq": [
+          {
+            "q": "Teknik kumaşın doğru görünmesini nasıl sağlarım?",
+            "a": "Ne olduğundan ziyade nasıl davrandığını tarif edin: \"hafif sıkıştırma parlaklığına sahip mat dört yönlü esneme\" \"spor kumaşı\"ndan daha iyidir."
+          },
+          {
+            "q": "Aynı parçayı birkaç renkte gösterebilir miyim?",
+            "a": "Evet — bunun için varyasyon şablonları var ve yeniden çekim yapmadan bir renk kartelası oluşturmanın en hızlı yolu bu."
+          },
+          {
+            "q": "Bu bir ürün listesi için yeterince iyi mi?",
+            "a": "Yaşam tarzı ve bağlam görselleri için genellikle evet. Ana listeleme görseli için, çoğu pazar yeri gerçek ürünün gerçek bir fotoğrafını bekler."
+          }
+        ]
+      }
     },
     "chic": {
       "displayName": "Chic",
@@ -1463,7 +1637,40 @@
         "Paris tarzı görseller",
         "zamansız kıyafet örnekleri",
         "sofistike tasarım ilhamı"
-      ]
+      ],
+      "format": {
+        "lead": "Şıklık, zorlanmadan görünen bir ciladır — düşünülmüş oran, kaliteli malzeme ve aşırıya kaçmayan unsurlar. Curify, bu algıyı kıyafet panoları, portreler ve stil rehberlerinde sunar.",
+        "howToTitle": "Şık stil görselleri nasıl oluşturulur",
+        "howTo": [
+          "Bir stil, kıyafet varyasyonu veya rafine portre şablonu seçin.",
+          "Parçaları marka isimleriyle değil, kesim ve malzeme açısından tanımlayın.",
+          "Aksesuarları tek bir kasıtlı seçimle sınırlayın.",
+          "Gün ışığı veya yumuşak pencere ışığı hedefleyin; sert stüdyo ışığı ticari, değil şık olarak algılanır."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Günlük lüks kıyafet panoları.",
+          "Paris tarzı kapsül görünümler.",
+          "Şık portre ve profil stilizasyonu.",
+          "Aksesuar odaklı stil rehberleri.",
+          "Mevsim geçişi lookbook'ları."
+        ],
+        "faqTitle": "Şık stil SSS",
+        "faq": [
+          {
+            "q": "Şık olanı sadece zarif olandan ayıran nedir?",
+            "a": "Çaba seviyesi. Zarif, resmi ve derli topludur; şık ise hızlıca bir araya getirilmiş gibi görünür ve işe yarar. \"Dağınık\" veya \"yapısız\" diyerek bu noktaya ulaşabilirsiniz."
+          },
+          {
+            "q": "Şık bir görünümde kaç aksesuar olmalı?",
+            "a": "Dikkat çeken bir tane. Şık stil, ikinci bir odak aksesuarı ilkine rakip olduğunda bozulma eğilimindedir."
+          },
+          {
+            "q": "Şık stil belirli bir palete mi bağlıdır?",
+            "a": "Hayır, ama bu malzemenin dürüstlüğüne bağlıdır — keten keten gibi, yün yün gibi okunmalıdır. Kumaşın adını koymak, rengini adlandırmaktan daha fazlasını yapar."
+          }
+        ]
+      }
     },
     "vintage-retro": {
       "displayName": "Vintage / Retro",
@@ -1476,7 +1683,40 @@
         "nostaljik görseller",
         "geçmiş moda ipuçları",
         "zamansız stil ilhamı"
-      ]
+      ],
+      "format": {
+        "lead": "Vintage ve retro stil, dönem doğruluğu artı atmosferdir — on yıla özgü silüetler, film dönemi renkleri ve zamanın doku ve baskı kalitesi. Curify, \"eski\"yi taklit etmek yerine bu kayıtları yeniden oluşturur.",
+        "howToTitle": "Vintage ve retro görseller nasıl oluşturulur",
+        "howTo": [
+          "Bir vintage veya retro stil şablonu seçin.",
+          "On yılı ve bölgeyi adlandırın — 1970'ler Milano, 1970'ler Kaliforniya gibi okunmaz.",
+          "Ortamı ve kıyafetleri belirtin: film stoğu, baskı süreci, renk tonu.",
+          "Filtrelenmişten ziyade dönemine uygun hissettiren artefaktlar elde edene kadar ince ayar yapın."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "On yıla özgü stil ve lookbook'lar.",
+          "Retro poster ve albüm tarzı düzenler.",
+          "Dönem kostüm referansları.",
+          "Nostaljik marka ve ambalaj görselleri.",
+          "Film dönemi portre uygulamaları."
+        ],
+        "faqTitle": "Vintage & retro SSS",
+        "faq": [
+          {
+            "q": "Neden retro görüntüm, filtreli modern bir fotoğraf gibi görünüyor?",
+            "a": "Çünkü sadece renk belirtildi. Dönem görünümü, siluet, saç, bakım ve baskı artefaktlarının birleşiminden gelir — bu dört unsuru belirtin."
+          },
+          {
+            "q": "Dönem ne kadar spesifik olmalı?",
+            "a": "Çok. \"Vintage\" seksen yılı kapsar. Bir on yıl ve bir yer, modele yeniden inşa edilecek somut bir şey verir."
+          },
+          {
+            "q": "Bunu gerçek tarihsel referans için kullanabilir miyim?",
+            "a": "Ruh hali ve yön için evet. Kostüm veya akademik doğruluk için, gerçek dönem kaynaklarıyla doğrulayın — model yaklaşık bir tahmin yapar ve küçük detaylar kayabilir."
+          }
+        ]
+      }
     },
     "elegant": {
       "displayName": "Elegant",
@@ -1489,7 +1729,40 @@
         "sofistike görseller",
         "zarif portre örnekleri",
         "yüksek kaliteli stil ilhamı"
-      ]
+      ],
+      "format": {
+        "lead": "Zarif stil, iyi yapılmış bir kısıtlamadır — temiz terzilik, düşünülmüş oranlar ve sessiz kalan bir palet. Curify, resmi ve gece görünümleri, rafine portreler ve tam boyutta da etkileyici düzenler oluşturur.",
+        "howToTitle": "Zarif stil görselleri nasıl oluşturulur",
+        "howTo": [
+          "Bir resmi giyim, gece veya rafine portre şablonu seçin.",
+          "Kumaşı ve kesimi adlandırın — ipek, yün krep, sütun hattı, belirgin bir omuz.",
+          "Paleti dar tutun; zarafet çeşitlilikten değil, kısıtlamadan okunur.",
+          "Yumuşak yönlendirilmiş ışık ve düzenli bir arka planla bitirin."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Akşam ve resmi giyim görünümleri.",
+          "Zarif portre ve vesikalık stil.",
+          "Düğün ve özel gün giyim panoları.",
+          "Zamansız kapsül gardırop düzenleri.",
+          "Gösterişsiz ürün ve mücevher sunumu."
+        ],
+        "faqTitle": "Zarif stil SSS",
+        "faq": [
+          {
+            "q": "Genel-resmi görünen çıktılardan nasıl kaçınırım?",
+            "a": "Yapıyı belirtin. \"Siyah elbise\" size stok bir görüntü verir; \"eğik kesim ipek sütun, drapeli yaka, mat yüzey\" size bir giysi verir."
+          },
+          {
+            "q": "Hangi palet en iyi çalışır?",
+            "a": "İki veya üç ton, tek bir doku ile çalışıyor. Zarafet, malzeme ve kesimden gelir, bu yüzden ilginin kumaşta olmasına izin verin."
+          },
+          {
+            "q": "Bunu düğün planlaması için kullanabilir miyim?",
+            "a": "Evet, yönlendirme ve moodboardlar için. Bir görünümün kamerada nasıl göründüğünü gösterir, ki çoğu çiftin aslında karar verdiği şey budur."
+          }
+        ]
+      }
     },
     "casual": {
       "displayName": "Casual",
@@ -1502,7 +1775,40 @@
         "kıyafet temelleri",
         "rahat görseller",
         "stil ilhamı"
-      ]
+      ],
+      "format": {
+        "lead": "Günlük stil, insanların gerçekten giydiği şeydir — denim, triko, katmanlama ve günlük oranlar. Curify, bir açıklamadan veya kendi fotoğrafınızdan, kasıtlı görünen rahat kıyafet görselleri oluşturur.",
+        "howToTitle": "Günlük kıyafet görselleri nasıl oluşturulur",
+        "howTo": [
+          "Günlük bir kıyafet, katmanlama veya sokak stili şablonu seçin.",
+          "Parçaları ve uyumu tanımlayın — rahat, kısa, bol, dar.",
+          "Bağlamı belirleyin: hafta sonu, işe gidip gelme, seyahat, kampüs.",
+          "Yan yana stil yönlerini karşılaştırmak için varyasyonlar oluşturun."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Günlük kıyafet ızgaraları ve haftalık stil içerikleri.",
+          "Denim ve triko katmanlama rehberleri.",
+          "Seyahat veya işe gidip gelme için kapsül görünümler.",
+          "Gündelik bir etiket için rahat lookbook'lar.",
+          "Öncesi ve sonrası stil karşılaştırmaları."
+        ],
+        "faqTitle": "Gündelik stil SSS",
+        "faq": [
+          {
+            "q": "Gündelik görünümün çıktıda dağınık görünmesini nasıl önlerim?",
+            "a": "Uyumu belirtin. Gündelik stil, oran kasıtlı olduğunda kasıtlı olarak algılanır — \"rahat düz paça, kısa kutu tişört, yapılı dış giyim\" demek, \"gündelik kıyafet\" demekten daha etkilidir."
+          },
+          {
+            "q": "Zaten sahip olduğum kıyafetler etrafında stil oluşturabilir miyim?",
+            "a": "Evet — parçanın bir fotoğrafını yükleyin ve görünümün geri kalanını bunun etrafında oluşturun. Bu, kıyafet varyasyon şablonlarının yaygın bir kullanım şeklidir."
+          },
+          {
+            "q": "Hangi bağlamı belirtmeliyim?",
+            "a": "Ayakkabı ve dış giyimi belirleyen her şey. \"Hafta sonu işleri\" ve \"ofis-gündelik Cuma\" hiçbir bağlam olmamasına göre çok farklı ve daha kullanışlı sonuçlar verir."
+          }
+        ]
+      }
     },
     "high-fashion": {
       "displayName": "High Fashion",
@@ -1515,7 +1821,40 @@
         "editoryal stil",
         "cesur silüetler",
         "moda şablonları"
-      ]
+      ],
+      "format": {
+        "lead": "Yüksek moda, spektrumun editoryal ucudur — couture silüetler, kavramsal stil ve mağazalara gitmek yerine bakılmak için tasarlanmış podyumdan ilham alan görseller. Curify, avangart görünümler, dramatik aydınlatma ve dergi tarzı kompozisyonları bir açıklama veya referans fotoğrafından oluşturur.",
+        "howToTitle": "Yüksek moda görselleri nasıl oluşturulur",
+        "howTo": [
+          "Editoryal veya avangart bir şablon seçin — podyum görünümü, kavramsal portre veya koleksiyon posteri.",
+          "Silueti, kumaşın davranışını ve ruh halini tanımlayın veya bir referans figürü yükleyin.",
+          "Stili zorlayın: abartılı oran, heykelsi hacim, beklenmedik malzeme.",
+          "Aydınlatmayı ve arka planı, katalogdan ziyade editoryal olarak okunana kadar ince ayarlayın."
+        ],
+        "usesTitle": "Neler yapabilirsiniz",
+        "uses": [
+          "Podyumdan ilham alan görünümler ve kavramsal siluetler.",
+          "Editoryal kapaklar ve moda dergisi yayılımları.",
+          "Bir koleksiyon konsepti için avangart stil panoları.",
+          "Dramatik güzellik ve couture portreler.",
+          "Bir sezon veya yaratıcı bir yön için moodboardlar."
+        ],
+        "faqTitle": "Yüksek moda SSS",
+        "faq": [
+          {
+            "q": "Bir görüntüyü normal bir kıyafet fotoğrafından ziyade yüksek moda olarak okutan nedir?",
+            "a": "Oran ve aydınlatma, giysiden daha önemlidir. Editoryal çalışma, silueti abartır, tek bir güçlü ışığa odaklanır ve arka planı kompozisyonun bir parçası olarak ele alır. Bunları açıkça tanımlamak, bir tasarımcıyı adlandırmaktan daha önemlidir."
+          },
+          {
+            "q": "Gerçekten yapılabilecek bir couture parça tasarlayabilir miyim?",
+            "a": "Çıktıyı bir kalıp değil, bir konsept olarak ele alın. Yönlendirme, sunum dosyaları ve moodboardlar için kullanışlıdır; gerçek bir giysi için yine de teknik çizim ve ölçülü kalıp gereklidir."
+          },
+          {
+            "q": "Belirli bir tasarımcıya veya moda evine referans verebilir miyim?",
+            "a": "Yaşayan bir tasarımcıyı veya moda evini adlandırmak yerine estetiği — hacim, palet, dönem, yapı — tanımlayın. İstediğinize daha yakın olursunuz ve başkasının markası üzerinden ticaret yapmaktan kaçınırsınız."
+          }
+        ]
+      }
     },
     "food-and-drink": {
       "displayName": "Yiyecek & İçecek",

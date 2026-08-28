@@ -866,9 +866,51 @@
       "keywords": [
         "cara",
         "foto de perfil",
+        "persona",
+        "avatar",
+        "cara",
+        "retrato",
         "persona"
       ],
-      "displayName": "Retratos de IA"
+      "displayName": "Retratos de IA",
+      "format": {
+        "lead": "El selfie con IA transforma tu propia foto en algo nuevo: un paquete de stickers, un retrato artístico, un peinado fresco, una prueba de atuendo virtual o merchandising imprimible. Sube un selfie y Curify lo reestiliza manteniendo tu semejanza, luego te entrega un resultado descargable.",
+        "howToTitle": "Cómo hacer un selfie con IA",
+        "howTo": [
+          "Sube una foto clara y de frente de ti mismo.",
+          "Elige un estilo: paquete de stickers, retrato artístico, retoque, nuevo peinado, prueba de atuendo o merchandising.",
+          "Generar: Curify reestiliza tu foto mientras preserva tu rostro.",
+          "Descarga el resultado o guárdalo en tu espacio de trabajo."
+        ],
+        "usesTitle": "Lo que puedes hacer con un selfie",
+        "uses": [
+          "Paquetes de stickers de expresión de tu propia cara",
+          "Serie de retratos artísticos y pictóricos",
+          "Retoque profesional de fotos de perfil",
+          "Previsualizaciones de nuevos peinados y colores de cabello",
+          "Pruebas virtuales de atuendos y lookbooks",
+          "Tu rostro en tazas, bolsas y pegatinas"
+        ],
+        "faqTitle": "Preguntas frecuentes sobre selfies con IA",
+        "faq": [
+          {
+            "q": "¿Conserva mi rostro y semejanza?",
+            "a": "Sí. Los estilos de entrada de fotos están diseñados para preservar tu identidad y rasgos faciales mientras cambian el estilo, atuendo, peinado o entorno."
+          },
+          {
+            "q": "¿Qué tipo de foto funciona mejor?",
+            "a": "Una foto clara, bien iluminada y de frente de una persona da los resultados más precisos. Evita filtros pesados, gafas de sol y fondos cargados."
+          },
+          {
+            "q": "¿Necesito una cuenta?",
+            "a": "Puedes explorar cada estilo de forma gratuita. Subir tu propia foto para generar requiere un inicio de sesión rápido."
+          },
+          {
+            "q": "¿Puedo usar los resultados para mi perfil o impresiones?",
+            "a": "Sí, los resultados son tuyos para usar como fotos de perfil, impresiones artísticas, regalos o merchandising bajo demanda."
+          }
+        ]
+      }
     },
     "monochrome": {
       "displayName": "Monocromo",
@@ -993,7 +1035,40 @@
         "maquillaje",
         "cosmético",
         "cosméticos"
-      ]
+      ],
+      "format": {
+        "lead": "La belleza cubre el rostro más que el vestuario: maquillaje, piel, cabello y color. Curify genera tarjetas de análisis, guías paso a paso y tableros de recomendaciones basados en un retrato real.",
+        "howToTitle": "Cómo crear visuales de guías de belleza",
+        "howTo": [
+          "Elige una plantilla de belleza: paso a paso de maquillaje, análisis de color o recomendación de cabello.",
+          "Sube un retrato claro y bien iluminado; el resultado de belleza depende más de la luz de entrada que del aviso.",
+          "Nombra el acabado que deseas: luminoso, mate, esculpido, natural.",
+          "Genera comparaciones lado a lado en lugar de un solo resultado."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Pósters de guías paso a paso de maquillaje.",
+          "Tarjetas de análisis personal de color y tono de piel.",
+          "Tableros de recomendaciones de peinados y color de cabello.",
+          "Comparaciones de belleza antes y después.",
+          "Visuales educativos para salones y clínicas."
+        ],
+        "faqTitle": "Preguntas frecuentes sobre belleza",
+        "faq": [
+          {
+            "q": "¿Por qué mi retrato vuelve retocado?",
+            "a": "El retoque predeterminado deja la piel como porcelana. Siempre pide preservar los poros y la textura de la piel y retocar solo las imperfecciones, de lo contrario, el resultado parece artificial."
+          },
+          {
+            "q": "¿Qué foto funciona mejor como entrada?",
+            "a": "Luz frontal uniforme sin sombras marcadas en el rostro, y el cabello fuera de la frente si la guía cubre la forma del rostro. La iluminación de entrada limita todo lo posterior."
+          },
+          {
+            "q": "¿Son fiables las recomendaciones de color?",
+            "a": "Trátalas como una orientación, no como un diagnóstico. El color en pantalla y el color impreso o usado difieren, así que usa el resultado para reducir opciones en lugar de decidir definitivamente."
+          }
+        ]
+      }
     },
     "posters": {
       "displayName": "Carteles & Folletos",
@@ -1411,7 +1486,40 @@
         "visualizaciones de paleta neutra",
         "ejemplos de moda discreta",
         "inspiración de estilo simple"
-      ]
+      ],
+      "format": {
+        "lead": "La moda minimalista es reducción con intención: pocos elementos, espacio negativo generoso y una paleta disciplinada. Curify produce diseños limpios, estilos contenidos y composiciones tranquilas donde nada compite.",
+        "howToTitle": "Cómo crear visuales de moda minimalista",
+        "howTo": [
+          "Elige una plantilla de estilo minimalista, cápsula o diseño limpio.",
+          "Reduce el resumen: una silueta, un acento, un tono de fondo.",
+          "Pide explícitamente un espacio negativo generoso: los modelos llenan los marcos por defecto.",
+          "Verifica el resultado en tamaño miniatura; si aún se lee claramente, está funcionando."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Cuadrículas de armario cápsula y lookbooks simplificados.",
+          "Presentación limpia de productos y prendas.",
+          "Tableros de estilo con paleta neutra.",
+          "Diseños editoriales tranquilos con fuerte espacio negativo.",
+          "Visuales minimalistas de marca y empaque."
+        ],
+        "faqTitle": "Preguntas frecuentes sobre estilo minimalista",
+        "faq": [
+          {
+            "q": "¿Por qué mi solicitud minimalista parece recargada?",
+            "a": "Porque \"minimalista\" es una palabra de estilo, no una instrucción. Especifica qué eliminar: sin accesorios, fondo liso sin costuras, una sola prenda, márgenes amplios."
+          },
+          {
+            "q": "¿Cuántos colores son demasiado pocos?",
+            "a": "Dos más un neutro suelen ser suficientes. Por debajo de eso, la textura tiene que sostener toda la imagen, lo que requiere un material fuerte para funcionar."
+          },
+          {
+            "q": "¿Minimalista significa beige?",
+            "a": "No. Significa moderación en el número de decisiones, no una paleta particular. Un solo color saturado sobre un fondo vacío sigue siendo minimalista."
+          }
+        ]
+      }
     },
     "soft-girl": {
       "displayName": "Chica Suave",
@@ -1424,7 +1532,40 @@
         "ejemplos de retratos soñadores",
         "ideas de moda femenina",
         "visualizaciones de ambiente acogedor"
-      ]
+      ],
+      "format": {
+        "lead": "Soft-girl es una estética definida en internet: paletas pastel, luz suave, detalles románticos y un registro deliberadamente juvenil. Curify lo representa consistentemente en retratos, tableros de atuendos y diseños sociales.",
+        "howToTitle": "Cómo crear visuales soft-girl",
+        "howTo": [
+          "Elige una plantilla de retrato o de estilo de atuendo.",
+          "Nombra la paleta con precisión: rubor, mantequilla, lila, salvia, en lugar de decir \"pastel\".",
+          "Pide luz difusa o a contraluz; una sombra dura rompe la estética inmediatamente.",
+          "Añade los detalles románticos que la definen: volantes, lazos, flores, tejido suave."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Tableros de atuendos pastel y cuadrículas de estilo.",
+          "Tratamientos de retratos con luz suave.",
+          "Diseños para redes sociales en una paleta consistente.",
+          "Lookbooks románticos de temporada.",
+          "Conjuntos de contenido coordinados para una sola cuenta."
+        ],
+        "faqTitle": "Preguntas frecuentes sobre la estética soft-girl",
+        "faq": [
+          {
+            "q": "¿Cómo mantengo consistente todo un conjunto?",
+            "a": "Fija la paleta y la luz en cada indicación, y genera a través de una plantilla. La consistencia en las publicaciones es lo que hace que la estética sea legible."
+          },
+          {
+            "q": "¿Por qué mi resultado parece deslavado en lugar de suave?",
+            "a": "Pastel y bajo contraste son cosas diferentes. Mantén la paleta clara pero conserva el contraste en los ojos y el cabello, o la imagen se verá plana."
+          },
+          {
+            "q": "¿Funciona esto en mi propia foto?",
+            "a": "Sí — las plantillas de retrato restilan una foto de referencia y preservan la identidad, por lo que la estética se aplica a ti en lugar de a un rostro genérico."
+          }
+        ]
+      }
     },
     "edgy": {
       "displayName": "Atrevido",
@@ -1450,7 +1591,40 @@
         "visualizaciones de estilo de vida activo",
         "estilo de gimnasio a calle",
         "sugerencias de diseño de moda"
-      ]
+      ],
+      "format": {
+        "lead": "El athleisure se sitúa entre el rendimiento y la calle: tejido técnico, proporción deportiva y estilo que funciona fuera de la pista. Curify representa looks de ropa activa, presentación de productos e imágenes en contexto de estilo de vida.",
+        "howToTitle": "Cómo crear visuales de athleisure",
+        "howTo": [
+          "Elige una plantilla de ropa activa o estilo de vida.",
+          "Nombra el comportamiento del tejido: compresión, punto acanalado, técnico mate, forro polar cepillado.",
+          "Establece el contexto: estudio, calle, trayecto o gimnasio.",
+          "Genera una serie de combinaciones de colores para comparar la misma pieza en una paleta."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Lookbooks de ropa activa y lanzamientos de temporada.",
+          "Presentación de productos para leggings, ropa exterior y calzado.",
+          "Guías de estilo de estudio a calle.",
+          "Hojas de variación de combinaciones de colores.",
+          "Imágenes de contexto de estilo de vida sin una sesión en locación."
+        ],
+        "faqTitle": "Preguntas frecuentes sobre athleisure",
+        "faq": [
+          {
+            "q": "¿Cómo hago para que la tela técnica se vea bien?",
+            "a": "Describe cómo se comporta en lugar de lo que es: \"tejido mate de cuatro vías con un ligero brillo de compresión\" es mejor que \"tela deportiva\"."
+          },
+          {
+            "q": "¿Puedo mostrar la misma prenda en varios colores?",
+            "a": "Sí, para eso son las plantillas de variación, y es la forma más rápida de crear una hoja de colores sin volver a fotografiar."
+          },
+          {
+            "q": "¿Es esto lo suficientemente bueno para una lista de productos?",
+            "a": "Para imágenes de estilo de vida y contexto, a menudo sí. Para la imagen principal de la lista, la mayoría de los mercados esperan una fotografía real del producto real."
+          }
+        ]
+      }
     },
     "chic": {
       "displayName": "Chic",
@@ -1463,7 +1637,40 @@
         "visuales de estilo parisino",
         "ejemplos de vestuario atemporal",
         "inspiración de diseño sofisticado"
-      ]
+      ],
+      "format": {
+        "lead": "Chic es elegancia que parece sin esfuerzo: proporción considerada, material de calidad y nada que intente demasiado. Curify lo representa en tableros de conjuntos, retratos y guías de estilo.",
+        "howToTitle": "Cómo crear visuales de estilo chic",
+        "howTo": [
+          "Elige una plantilla de estilo, variación de conjunto o retrato refinado.",
+          "Describe las piezas en términos de corte y material, no por nombres de marca.",
+          "Limita los accesorios a una elección deliberada.",
+          "Apunta a luz diurna o luz suave de ventana; la luz dura de estudio se percibe como comercial, no chic."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Tableros de atuendos de lujo diario.",
+          "Looks de cápsula estilo parisino.",
+          "Estilo pulido para retratos y perfiles.",
+          "Guías de estilo centradas en accesorios.",
+          "Lookbooks de transición estacional."
+        ],
+        "faqTitle": "Preguntas frecuentes sobre estilo chic",
+        "faq": [
+          {
+            "q": "¿Qué diferencia al chic de lo simplemente elegante?",
+            "a": "El nivel de esfuerzo. Elegante es formal y compuesto; chic parece ensamblado rápidamente y funciona. Di \"deshecho\" o \"sin estructura\" para lograrlo."
+          },
+          {
+            "q": "¿Cuántos accesorios debe tener un look chic?",
+            "a": "Uno que se note. El chic tiende a romperse cuando un segundo accesorio focal compite con el primero."
+          },
+          {
+            "q": "¿El chic depende de una paleta específica?",
+            "a": "No, pero depende de la honestidad del material: el lino debe parecer lino, la lana debe parecer lana. Nombrar la tela hace más que nombrar el color."
+          }
+        ]
+      }
     },
     "vintage-retro": {
       "displayName": "Vintage / Retro",
@@ -1476,7 +1683,40 @@
         "visuales nostálgicos",
         "prompts de moda retro",
         "inspiración de estilo atemporal"
-      ]
+      ],
+      "format": {
+        "lead": "El estilo vintage y retro es precisión de época más atmósfera: siluetas específicas de la década, colores de la era del cine, y la calidad de grano e impresión de la época. Curify reconstruye esos registros en lugar de aproximar lo \"viejo\".",
+        "howToTitle": "Cómo crear visuales vintage y retro",
+        "howTo": [
+          "Elige una plantilla de estilo vintage o retro.",
+          "Nombra la década y la región: los años 70 en Milán no se parecen en nada a los años 70 en California.",
+          "Especifica el medio además de la ropa: tipo de película, proceso de impresión, tono de color.",
+          "Refina hasta que los artefactos se sientan correctos para la época en lugar de filtrados."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Estilismo y lookbooks específicos de la década.",
+          "Diseños de carteles retro y estilo de álbum.",
+          "Referencias de vestuario de época.",
+          "Visuales nostálgicos de marca y empaque.",
+          "Tratamientos de retratos de la era del cine."
+        ],
+        "faqTitle": "Preguntas frecuentes sobre vintage y retro",
+        "faq": [
+          {
+            "q": "¿Por qué mi imagen retro parece una foto moderna con un filtro?",
+            "a": "Porque solo se especificó el color. El aspecto de época proviene de la silueta, el peinado, el arreglo personal y los artefactos de impresión juntos — nombra los cuatro."
+          },
+          {
+            "q": "¿Qué tan específica debe ser la era?",
+            "a": "Muy. \"Vintage\" abarca ochenta años. Una década más un lugar le da al modelo algo concreto para reconstruir."
+          },
+          {
+            "q": "¿Puedo usar esto como referencia histórica genuina?",
+            "a": "Para ambiente y dirección, sí. Para precisión en vestuario o académica, verifica con fuentes reales de la época — el modelo aproxima, y los pequeños detalles pueden variar."
+          }
+        ]
+      }
     },
     "elegant": {
       "displayName": "Elegante",
@@ -1489,7 +1729,40 @@
         "visuales sofisticados",
         "ejemplos de retratos refinados",
         "inspiración de estilo de alta gama"
-      ]
+      ],
+      "format": {
+        "lead": "El estilo elegante es la moderación bien hecha — sastrería limpia, proporciones consideradas y una paleta que se mantiene discreta. Curify genera looks formales y de noche, retratos refinados y diseños pulidos que se mantienen bien a tamaño completo.",
+        "howToTitle": "Cómo crear visuales de estilo elegante",
+        "howTo": [
+          "Elige una plantilla de ropa formal, de noche o de retrato refinado.",
+          "Nombra la tela y el corte — seda, crepé de lana, una línea de columna, un hombro definido.",
+          "Mantén la paleta estrecha; la elegancia se percibe a través de la moderación, no de la variedad.",
+          "Termina con luz direccional suave y un fondo despejado."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Looks de noche y vestimenta formal.",
+          "Estilo refinado para retratos y fotos de perfil.",
+          "Tableros de bodas y vestimenta para ocasiones especiales.",
+          "Diseños de guardarropa cápsula atemporales.",
+          "Presentación discreta de productos y joyería."
+        ],
+        "faqTitle": "Preguntas frecuentes sobre estilo elegante",
+        "faq": [
+          {
+            "q": "¿Cómo evito un resultado que parezca genérico-formal?",
+            "a": "Especifica la construcción. \"Vestido negro\" te da una imagen de stock; \"columna de seda al bies, cuello drapeado, acabado mate\" te da una prenda."
+          },
+          {
+            "q": "¿Qué paleta funciona mejor?",
+            "a": "Dos o tres tonos con una textura haciendo el trabajo. La elegancia proviene del material y el corte, así que deja que la tela lleve el interés."
+          },
+          {
+            "q": "¿Puedo usar esto para la planificación de bodas?",
+            "a": "Sí, para dirección y moodboards. Muestra cómo se ve un look en cámara, que es lo que la mayoría de las parejas realmente están decidiendo."
+          }
+        ]
+      }
     },
     "casual": {
       "displayName": "Casual",
@@ -1502,7 +1775,40 @@
         "lo básico del vestuario",
         "visuales relajados",
         "inspiración de estilo"
-      ]
+      ],
+      "format": {
+        "lead": "El estilo casual es lo que la gente realmente usa: denim, prendas de punto, capas y proporciones cotidianas. Curify crea visuales de atuendos relajados que aún se ven intencionales, a partir de una descripción o tu propia foto.",
+        "howToTitle": "Cómo crear visuales de atuendos casuales",
+        "howTo": [
+          "Elige un atuendo cotidiano, capas o una plantilla de estilo urbano.",
+          "Describe las piezas y el ajuste: relajado, corto, sobredimensionado, ajustado.",
+          "Establece el contexto: fin de semana, traslado, viaje, campus.",
+          "Genera variaciones para comparar direcciones de estilo lado a lado."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Cuadrículas de atuendos cotidianos y contenido de estilo semanal.",
+          "Guías de capas de denim y prendas de punto.",
+          "Looks de cápsula para viajar o desplazarse.",
+          "Lookbooks relajados para una etiqueta casual.",
+          "Comparaciones de estilo antes y después."
+        ],
+        "faqTitle": "Preguntas frecuentes sobre estilo casual",
+        "faq": [
+          {
+            "q": "¿Cómo evito que lo casual se vea desaliñado en el resultado?",
+            "a": "Especifica el ajuste. Lo casual se percibe como intencional cuando la proporción es deliberada — por ejemplo, \"pantalón recto relajado, camiseta corta estructurada, prenda exterior estructurada\" en lugar de \"atuendo casual\"."
+          },
+          {
+            "q": "¿Puedo estilizar alrededor de la ropa que ya tengo?",
+            "a": "Sí — sube una foto de la prenda y construye el resto del look a su alrededor. Ese es el uso común para las plantillas de variación de atuendos."
+          },
+          {
+            "q": "¿Qué contexto debo nombrar?",
+            "a": "Cualquiera que establezca el calzado y la prenda exterior. \"Recados de fin de semana\" y \"viernes casual en la oficina\" producen resultados muy diferentes y más útiles que no tener contexto alguno."
+          }
+        ]
+      }
     },
     "high-fashion": {
       "displayName": "Alta Moda",
@@ -1515,7 +1821,40 @@
         "estilismo editorial",
         "siluetas audaces",
         "plantillas de moda"
-      ]
+      ],
+      "format": {
+        "lead": "La alta costura es el extremo editorial del espectro: siluetas de alta costura, estilismo conceptual e imágenes inspiradas en pasarelas hechas para ser vistas más que para ser usadas en las tiendas. Curify genera looks vanguardistas, iluminación dramática y composiciones estilo revista a partir de una descripción o una foto de referencia.",
+        "howToTitle": "Cómo crear visuales de alta costura",
+        "howTo": [
+          "Elige una plantilla editorial o vanguardista: look de pasarela, retrato conceptual o póster de colección.",
+          "Describe la silueta, el comportamiento de la tela y el ambiente, o sube una figura de referencia.",
+          "Impulsa el estilo: proporción exagerada, volumen escultórico, material inesperado.",
+          "Refina la iluminación y el fondo hasta que se lea como editorial en lugar de catálogo."
+        ],
+        "usesTitle": "Lo que puedes crear",
+        "uses": [
+          "Looks inspirados en la pasarela y siluetas conceptuales.",
+          "Portadas editoriales y extensiones de revistas de moda.",
+          "Tableros de estilo vanguardista para un concepto de colección.",
+          "Retratos de belleza dramática y alta costura.",
+          "Moodboards para una temporada o una dirección creativa."
+        ],
+        "faqTitle": "Preguntas frecuentes sobre alta costura",
+        "faq": [
+          {
+            "q": "¿Qué hace que una imagen se perciba como alta costura en lugar de una foto de atuendo normal?",
+            "a": "Proporción e iluminación más que la prenda. El trabajo editorial exagera la silueta, se compromete con una luz fuerte y trata el fondo como parte de la composición. Describir eso explícitamente importa más que nombrar a un diseñador."
+          },
+          {
+            "q": "¿Puedo diseñar una pieza de alta costura que realmente se pueda hacer?",
+            "a": "Trata el resultado como un concepto, no un patrón. Es útil para dirección, presentaciones y moodboards; una prenda real aún necesita un dibujo técnico y un patrón medido."
+          },
+          {
+            "q": "¿Puedo referenciar a un diseñador o casa específica?",
+            "a": "Describe la estética — volumen, paleta, época, construcción — en lugar de nombrar a un diseñador vivo o una casa. Te acercas más a lo que quieres y evitas aprovecharte de la marca de alguien más."
+          }
+        ]
+      }
     },
     "food-and-drink": {
       "displayName": "Comida y Bebida",
