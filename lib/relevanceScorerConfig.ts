@@ -14,7 +14,14 @@
 // v1.2.0 (2026-07-22): Fix A / Cluster A — format-word-aware query subject
 // (lib/searchSubject.ts). No SCORER_WEIGHTS change; subject derivation upstream
 // in deriveFieldHits now excludes FORMAT_TOKENS. See docs/search-relevance-v2r3-r1-2026-07-21.md.
-export const SCORER_CONFIG_VERSION = "v1.2.0-2026-07-22";
+// v1.3.0 (2026-08-28): two generic completeness/exactness signals so the most
+// complete / most genuine match wins (the "confusing english words" mis-rank,
+// where a template matching the query only via an incidental param value —
+// base-promoted, no own field hit — out-ranked the template whose tags actually
+// name the query). Adds `coverage_bonus` (reward query-term completeness) and
+// `template_only_base_factor` (discount a promotion base that has no own field
+// hit). See lib/relevanceScorer.ts.
+export const SCORER_CONFIG_VERSION = "v1.3.0-2026-08-28";
 
 export const SCORER_WEIGHTS = {
   // ---- Positive signals ----
@@ -22,6 +29,17 @@ export const SCORER_WEIGHTS = {
   // primaryHits+bigramHits count -- kept small relative to the new
   // explainable signals below so it nudges rather than dominates.
   base_retrieval: 1.0,
+  // A template-promoted record with NO individual field evidence of its own
+  // (no whole-token title/tags hit AND no exact phrase) rode in purely on its
+  // TEMPLATE matching the query somewhere — often an incidental param value
+  // (e.g. an example literally named "confusing-spelling" makes a broad
+  // word-difference template match the token "confusing"). Its large flat
+  // promotion base (20) otherwise out-ranks records carrying a GENUINE title/
+  // tag hit, so it is scaled down to this fraction. Records with any real
+  // own-field hit are unaffected (factor 1.0). This is the general mechanism
+  // behind the "confusing english words" mis-rank (a template matched only via
+  // a param value outscored the template whose tags actually name the query).
+  template_only_base_factor: 0.25,
   // Full protected phrase (lib/searchPhraseProtection.ts) or the
   // complete multi-token query found verbatim (word-boundary-checked)
   // in the record's high-signal blob (title/category).
@@ -37,6 +55,17 @@ export const SCORER_WEIGHTS = {
   // irrelevant record (see PATH_AGREEMENT_CAP below).
   path_agreement_per_hit: 3,
   path_agreement_cap: 12,
+  // Query-term COMPLETENESS reward. The scorer already PENALIZES low coverage
+  // (isolated-hit cap, missing_subject) but gives no CREDIT for matching MORE
+  // of the query, so a candidate covering EVERY query term ties one covering a
+  // bare majority — the "confusing english words" mis-rank, where a template
+  // matching only "english words" out-ranks the one matching all three terms.
+  // Scaled linearly from 0 at the majority gate (REQUIRED_TERM_COVERAGE_MIN_RATIO)
+  // to this full value at coverageRatio 1.0, so the most-complete match wins.
+  // Multi-term queries only (coverage is trivially 1.0 for single-term) and only
+  // when the subject is genuinely present. Sized below whole_token_title (18) so
+  // it breaks ties / nudges rather than overriding strong title/phrase signals.
+  coverage_bonus: 12,
 
   // ---- Negative signals ----
   // Match relied only on a CJK substring/bigram fallback or an ASCII

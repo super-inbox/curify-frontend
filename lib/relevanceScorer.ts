@@ -104,6 +104,7 @@ export type ScoreBreakdown = {
   exact_phrase: number;
   whole_token: number;
   path_agreement: number;
+  coverage_bonus: number;
   substring_penalty: number;
   missing_subject_penalty: number;
   intent_alignment: number;
@@ -138,9 +139,21 @@ export function scoreRecord(
   // evidence (NON_ORIGINAL_BASE_FACTOR). Only this low-weight base term is
   // path-scaled — the high-signal terms below are path-independent.
   const pathBaseFactor = ctx.isOriginal ? 1 : NON_ORIGINAL_BASE_FACTOR;
-  const base_retrieval = Math.min(baseRetrievalScore, 20) * w.base_retrieval * pathBaseFactor;
+  // Own-evidence guard: a record contributing NO individual field hit (no
+  // whole-token title/tags hit, no exact phrase) matched only because its
+  // TEMPLATE matched the query elsewhere (template-promotion, often via an
+  // incidental param value). Its promotion base is discounted so it cannot
+  // out-rank records with a genuine title/tag hit. Records with any real
+  // own-field evidence keep full base (factor 1.0).
+  const noOwnFieldHit = !fields.titleHit && !fields.tagsHit && !fields.exactPhraseHit;
+  const ownEvidenceFactor = noOwnFieldHit ? w.template_only_base_factor : 1;
+  const base_retrieval =
+    Math.min(baseRetrievalScore, 20) * w.base_retrieval * pathBaseFactor * ownEvidenceFactor;
   if (!ctx.isOriginal && base_retrieval > 0) {
     reasons.push(`non_original_base_trust_${NON_ORIGINAL_BASE_FACTOR}`);
+  }
+  if (noOwnFieldHit && baseRetrievalScore > 20) {
+    reasons.push(`template_only_promotion_base_x${w.template_only_base_factor}`);
   }
 
   let exact_phrase = 0;
@@ -199,6 +212,25 @@ export function scoreRecord(
     reasons.push(`matched_by_${ctx.pathHits}_paths`);
   } else if (ctx.pathHits > 1) {
     reasons.push(`matched_by_${ctx.pathHits}_paths_but_subject_missing_no_bonus`);
+  }
+
+  // Query-term completeness reward (symmetric to the low-coverage penalties
+  // above): credit coverage ABOVE the majority gate so a candidate matching
+  // every query term out-ranks one matching only a subset. Multi-term queries
+  // only, and only when the (effective) subject is present — an off-subject or
+  // below-gate candidate is already demoted and must not be lifted here. Scales
+  // 0 at the gate → w.coverage_bonus at coverageRatio 1.0.
+  let coverage_bonus = 0;
+  if (
+    ctx.isMultiTermQuery &&
+    subjectPresent &&
+    fields.coverageRatio > REQUIRED_TERM_COVERAGE_MIN_RATIO
+  ) {
+    const span = 1 - REQUIRED_TERM_COVERAGE_MIN_RATIO;
+    coverage_bonus =
+      w.coverage_bonus *
+      ((fields.coverageRatio - REQUIRED_TERM_COVERAGE_MIN_RATIO) / span);
+    reasons.push(`term_coverage_${fields.coverageRatio.toFixed(2)}_completeness_bonus`);
   }
 
   let substring_penalty = 0;
@@ -260,6 +292,7 @@ export function scoreRecord(
     exact_phrase +
     whole_token +
     path_agreement +
+    coverage_bonus +
     substring_penalty +
     missing_subject_penalty +
     intent_alignment;
@@ -272,6 +305,7 @@ export function scoreRecord(
     exact_phrase,
     whole_token,
     path_agreement,
+    coverage_bonus,
     substring_penalty,
     missing_subject_penalty,
     intent_alignment,
