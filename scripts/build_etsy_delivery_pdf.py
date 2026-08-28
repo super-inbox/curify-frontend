@@ -38,13 +38,37 @@ PAGE_W, PAGE_H = letter
 MARGIN = 54  # 0.75"
 
 
-def load_packs():
+def load_packs(include_inactive=False):
+    """active=False packs are pre-launch: the ZIP is not on Azure yet. Their PDF is
+    still needed to prepare the Etsy listing, so --include-inactive allows it."""
     with open(REGISTRY, encoding="utf-8") as fh:
-        return [p for p in json.load(fh)["packs"] if p.get("active")]
+        packs = json.load(fh)["packs"]
+    return packs if include_inactive else [p for p in packs if p.get("active")]
 
 
-def fetch_cover(path):
-    """cover_image is a site-relative path; the bytes live on the CDN."""
+def fetch_cover(path, sku=None):
+    """Resolve the hero image, cleanest source first.
+
+    1. packs/<sku>/<name> — the CLEAN pre-watermark copy. This must win: the buyer
+       has already paid, and shipping them a watermarked hero looks like a mistake.
+       The gallery copy under public/images/nano_insp/ has the SAME FILENAME but is
+       watermarked in place at ingest, so resolving cover_image naively picks the
+       wrong bytes (measured: 939,876 watermarked vs 1,026,644 clean).
+    2. public/<cover_image> — local gallery copy; fine for packs with a dedicated
+       pack-*-cover asset that was never watermarked.
+    3. CDN — for packs whose local copies are gone.
+    """
+    name = os.path.basename(path)
+    if sku:
+        clean = os.path.join(ROOT, "packs", sku, name)
+        if os.path.exists(clean):
+            with open(clean, "rb") as fh:
+                return io.BytesIO(fh.read())
+    if not path.startswith("http"):
+        local = os.path.join(ROOT, "public", path.lstrip("/"))
+        if os.path.exists(local):
+            with open(local, "rb") as fh:
+                return io.BytesIO(fh.read())
     url = path if path.startswith("http") else f"{CDN}{path}"
     req = urllib.request.Request(url, headers={"User-Agent": "curify-pack-builder"})
     with urllib.request.urlopen(req, timeout=60) as r:
@@ -87,7 +111,7 @@ def build(pack, code=None):
 
     # Hero image, aspect preserved, capped so the CTA always stays above the fold
     y -= 18
-    img = ImageReader(fetch_cover(pack["cover_image"]))
+    img = ImageReader(fetch_cover(pack["cover_image"], sku))
     iw, ih = img.getSize()
     max_w, max_h = PAGE_W - 2 * MARGIN, 430
     scale = min(max_w / iw, max_h / ih)
@@ -125,7 +149,7 @@ def build(pack, code=None):
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     code = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--code=")), None)
-    packs = load_packs()
+    packs = load_packs("--include-inactive" in sys.argv)
     if args:
         by_sku = {p["sku"]: p for p in packs}
         missing = [s for s in args if s not in by_sku]
