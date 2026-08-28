@@ -88,10 +88,23 @@ def main():
             ("blob_path", f"packs/sku/{sku}/pack-v1.zip"), ("version", 1),
             ("etsy_listing_url", None), ("active", False), ("secret", None),
         ])
-        if sku not in fe_have:
-            fe["packs"].append(rec)
-        if sku not in be_have:
-            be["packs"].append(json.loads(json.dumps(rec)))
+        # Re-registering an existing SKU must UPDATE it, not silently no-op. A pack
+        # that grows from 10 to 30 cards otherwise keeps advertising card_count=10
+        # on its landing page while the ZIP holds 30 — the listing and the product
+        # disagree, and nothing errors. Preserve the fields an operator owns
+        # (active, etsy_listing_url, secret, version); refresh what the files decide.
+        OWNED = ("active", "etsy_listing_url", "secret", "version")
+        for reg, have in ((fe, fe_have), (be, be_have)):
+            if sku in have:
+                cur = next(r for r in reg["packs"] if r["sku"] == sku)
+                before = cur.get("card_count")
+                for k, v in rec.items():
+                    if k not in OWNED:
+                        cur[k] = v
+                if before != count:
+                    print(f"  {sku:<26} card_count {before} -> {count} (updated in place)")
+            else:
+                reg["packs"].append(json.loads(json.dumps(rec)))
         print(f"  {sku:<26} {count} cards  {mb:5.1f} MB  -> {os.path.basename(zpath)}")
 
     save(FE, fe)

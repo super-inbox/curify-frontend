@@ -126,6 +126,33 @@ Browser redirects to signed Azure URL → ZIP downloads
    return `200` + a `signed_url` (a `404 "Pack not found"` means the backend registry/deploy is missing).
 4. **Update this doc.** Add a row to the [Live packs](#live-packs-as-of-2026-05-18) table.
 
+### Scaling an existing pack
+
+`scripts/register_etsy_pack.py <sku>` re-registers in place: it refreshes
+`card_count`, `file_size_mb` and `cover_image` from the files on disk while
+preserving the operator-owned fields (`active`, `etsy_listing_url`, `secret`,
+`version`). Without that, a pack grown from 10 to 30 cards keeps advertising
+`card_count: 10` on its landing page while the ZIP holds 30 — the listing and the
+product disagree and nothing errors.
+
+Order is still register → upload → `--activate`.
+
+### Generation failures are SILENT at the summary level
+
+`generate_template_examples.cjs` prints a per-item `✗ {error}` line but ends with a
+tidy `Added / Skipped / Failed` block and **exits 0 even when every item failed**.
+Filtering its output (`| grep -E "^Added|^Failed"`) throws away the only line that
+says why — you get "Failed: 20" three times and no cause.
+
+Measured 2026-08-28: a 60-image scale-up returned 0/60 with exit code 0. The real
+cause only appeared on an unfiltered single-item rerun:
+
+    429 RESOURCE_EXHAUSTED — "Your project has exceeded its monthly spending cap"
+
+Raise it at https://ai.studio/spend, or wait for the monthly reset. **Never filter
+this script's output**, and treat `Failed: N` with N == entry count as an
+infrastructure fault rather than a content problem.
+
 ### Building the delivery PDF (automated)
 
 The file the buyer downloads from Etsy is a one-page PDF: hero image + the redemption
