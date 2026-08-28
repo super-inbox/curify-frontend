@@ -99,14 +99,23 @@ describe("robots.ts — non-canonical hosts", () => {
     }
   };
 
-  it("serves a fully closed robots.txt on the Vercel deployment host", async () => {
+  it("lets search crawlers read the noindex on the Vercel deployment host, and blocks everyone else", async () => {
+    // 2026-08-28: this used to assert a blanket Disallow, which was the bug.
+    // middleware.ts sets `x-robots-tag: noindex` on this host, but a crawler
+    // that is Disallowed never fetches the page and so never SEES the noindex —
+    // so URLs indexed before the block stayed indexed. Measured 08-28,
+    // curify-frontend.vercel.app outranked www for "Glamour and Edge curify".
+    // Removal requires letting the crawler IN to read the noindex.
     const r = await withHost("curify-frontend.vercel.app");
     const list = Array.isArray(r.rules) ? r.rules : [r.rules];
-    expect(list).toHaveLength(1);
-    expect(list[0].userAgent).toBe("*");
-    expect(list[0].disallow).toBe("/");
-    expect(list[0].allow).toBeUndefined();
-    // No sitemap/host on a copy we do not want crawled at all.
+    const allowRule = list.find((x) => x.allow === "/");
+    const denyRule = list.find((x) => x.userAgent === "*");
+
+    expect(allowRule, "search crawlers must be allowed to read the noindex").toBeDefined();
+    expect(allowRule!.userAgent).toContain("Googlebot");
+    expect(denyRule, "everyone else stays out").toBeDefined();
+    expect(denyRule!.disallow).toBe("/");
+    // Still no sitemap: we never want this host *discovered*, only re-read.
     expect(r.sitemap).toBeUndefined();
   });
 

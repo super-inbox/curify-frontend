@@ -22,7 +22,31 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   // which covers URLs Google already knows before this propagates.
   const host = (await headers()).get('host') ?? ''
   if (host && host !== CANONICAL_HOST && host !== 'curify-ai.com') {
-    return { rules: [{ userAgent: '*', disallow: '/' }] }
+    // 2026-08-28 CORRECTION. This used to be a blanket `disallow: '/'`, which
+    // was self-defeating: middleware.ts sets `x-robots-tag: noindex` on this
+    // host, but a crawler that is DISALLOWED never fetches the page and so
+    // never sees the noindex. Pages indexed before the 08-17 block therefore
+    // stayed indexed forever — measured 08-28, curify-frontend.vercel.app
+    // ranked ABOVE www.curify-ai.com for "Glamour and Edge curify", taking two
+    // of the top three results and showing "Vercel" as the source.
+    //
+    // noindex and Disallow are mutually exclusive tools. To REMOVE a URL you
+    // must let the crawler in to read the noindex; Disallow only prevents
+    // future discovery, and a disallowed-but-linked URL can still be listed.
+    //
+    // So: let the search crawlers through (they will read the noindex header
+    // and drop these URLs), keep everything else out. The bot blocklist in
+    // middleware.ts still 403s the bulk training crawlers on this host
+    // unconditionally, so this does not reopen the transfer-cost hole that
+    // motivated the original rule.
+    //
+    // Revert to a blanket disallow once GSC shows the vercel.app URLs gone.
+    return {
+      rules: [
+        { userAgent: ['Googlebot', 'Googlebot-Image', 'Bingbot', 'DuckDuckBot'], allow: '/' },
+        { userAgent: '*', disallow: '/' },
+      ],
+    }
   }
 
   return {
