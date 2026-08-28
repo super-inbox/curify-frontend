@@ -1294,7 +1294,40 @@
         "makeup",
         "cosmetic",
         "cosmetics"
-      ]
+      ],
+      "format": {
+        "lead": "Beauty covers the face rather than the wardrobe — makeup, skin, hair, and colour. Curify generates analysis cards, step-by-step guides, and recommendation boards built around a real portrait.",
+        "howToTitle": "How to create beauty guide visuals",
+        "howTo": [
+          "Pick a beauty template — makeup step-by-step, colour analysis, or hair recommendation.",
+          "Upload a clear, evenly lit portrait; beauty output depends more on input light than on the prompt.",
+          "Name the finish you want — dewy, matte, sculpted, bare.",
+          "Generate side-by-side comparisons rather than a single result."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Makeup step-by-step guide posters.",
+          "Personal colour and skin-tone analysis cards.",
+          "Hairstyle and hair-colour recommendation boards.",
+          "Before-and-after beauty comparisons.",
+          "Salon and clinic educational visuals."
+        ],
+        "faqTitle": "Beauty FAQ",
+        "faq": [
+          {
+            "q": "Why does my portrait come back airbrushed?",
+            "a": "Default retouching pushes skin to porcelain. Always ask to preserve pores and skin texture and to retouch only blemishes — otherwise the result reads as artificial."
+          },
+          {
+            "q": "What photo works best as input?",
+            "a": "Even, front-facing light with no heavy shadow across the face, and hair off the forehead if the guide covers face shape. Input lighting limits everything downstream."
+          },
+          {
+            "q": "Are colour recommendations reliable?",
+            "a": "Treat them as direction, not diagnosis. Screen colour and printed or worn colour differ, so use the output to narrow choices rather than to decide finally."
+          }
+        ]
+      }
     },
     "posters": {
       "displayName": "Posters & Flyers",
@@ -1549,7 +1582,40 @@
         "neutral palette visuals",
         "understated fashion examples",
         "simple style inspiration"
-      ]
+      ],
+      "format": {
+        "lead": "Minimalist fashion is reduction with intent — few elements, generous negative space, and a disciplined palette. Curify produces clean layouts, restrained styling, and quiet compositions where nothing competes.",
+        "howToTitle": "How to create minimalist fashion visuals",
+        "howTo": [
+          "Pick a minimalist styling, capsule, or clean-layout template.",
+          "Cut the brief down: one silhouette, one accent, one background tone.",
+          "Ask for generous negative space explicitly — models fill frames by default.",
+          "Check the result at thumbnail size; if it still reads clearly, it is working."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Capsule wardrobe grids and pared-back lookbooks.",
+          "Clean product and garment presentation.",
+          "Neutral-palette styling boards.",
+          "Quiet editorial layouts with strong negative space.",
+          "Minimal brand and packaging visuals."
+        ],
+        "faqTitle": "Minimalist style FAQ",
+        "faq": [
+          {
+            "q": "Why does my minimalist prompt come back busy?",
+            "a": "Because \"minimal\" is a style word, not an instruction. Name what to remove — no props, plain seamless background, single garment, wide margins."
+          },
+          {
+            "q": "How few colours is too few?",
+            "a": "Two plus a neutral is usually enough. Below that, texture has to carry the whole image, which needs a strong material to work."
+          },
+          {
+            "q": "Does minimalist mean beige?",
+            "a": "No. It means restraint in the number of decisions, not a particular palette. A single saturated colour on an empty ground is still minimalist."
+          }
+        ]
+      }
     },
     "soft-girl": {
       "displayName": "Soft Girl",
@@ -1562,7 +1628,40 @@
         "dreamy portrait examples",
         "feminine fashion ideas",
         "cozy mood visuals"
-      ]
+      ],
+      "format": {
+        "lead": "Soft-girl is a defined internet aesthetic — pastel palettes, gentle light, romantic detail, and a deliberately youthful register. Curify renders it consistently across portraits, outfit boards, and social layouts.",
+        "howToTitle": "How to create soft-girl visuals",
+        "howTo": [
+          "Pick a portrait or outfit-styling template.",
+          "Name the palette precisely — blush, butter, lilac, sage — rather than saying \"pastel\".",
+          "Ask for diffused or backlit light; hard shadow breaks the aesthetic immediately.",
+          "Add the romantic details that define it: ruffle, bow, floral, soft knit."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Pastel outfit boards and styling grids.",
+          "Soft-light portrait treatments.",
+          "Social-media layouts in a consistent palette.",
+          "Romantic seasonal lookbooks.",
+          "Coordinated content sets for a single account."
+        ],
+        "faqTitle": "Soft-girl aesthetic FAQ",
+        "faq": [
+          {
+            "q": "How do I keep a whole set consistent?",
+            "a": "Lock the palette and the light in every prompt, and generate through one template. Consistency across posts is what makes the aesthetic legible."
+          },
+          {
+            "q": "Why does my output look washed out rather than soft?",
+            "a": "Pastel and low-contrast are different things. Keep the palette light but retain contrast in the eyes and hair, or the image goes flat."
+          },
+          {
+            "q": "Does this work on my own photo?",
+            "a": "Yes — the portrait templates restyle a reference photo and preserve identity, so the aesthetic is applied to you rather than to a generic face."
+          }
+        ]
+      }
     },
     "edgy": {
       "displayName": "Edgy",
@@ -1588,7 +1687,40 @@
         "active lifestyle visuals",
         "gym-to-street style",
         "fashion design prompts"
-      ]
+      ],
+      "format": {
+        "lead": "Athleisure sits between performance and street — technical fabric, sport proportion, and styling that works off the track. Curify renders activewear looks, product presentation, and lifestyle-context imagery.",
+        "howToTitle": "How to create athleisure visuals",
+        "howTo": [
+          "Pick an activewear or lifestyle-styling template.",
+          "Name the fabric behaviour — compression, ribbed knit, matte technical, brushed fleece.",
+          "Set the context: studio, street, commute, or gym floor.",
+          "Generate a colourway run to compare the same piece across a palette."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Activewear lookbooks and seasonal drops.",
+          "Product presentation for leggings, outerwear, and footwear.",
+          "Studio-to-street styling guides.",
+          "Colourway variation sheets.",
+          "Lifestyle context shots without a location shoot."
+        ],
+        "faqTitle": "Athleisure FAQ",
+        "faq": [
+          {
+            "q": "How do I get technical fabric to look right?",
+            "a": "Describe how it behaves rather than what it is: \"matte four-way stretch with slight compression sheen\" beats \"sports fabric\"."
+          },
+          {
+            "q": "Can I show the same piece in several colours?",
+            "a": "Yes — that is what variation templates are for, and it is the fastest way to build a colourway sheet without reshooting."
+          },
+          {
+            "q": "Is this good enough for a product listing?",
+            "a": "For lifestyle and context imagery, often yes. For the primary listing image, most marketplaces expect a real photograph of the actual product."
+          }
+        ]
+      }
     },
     "chic": {
       "displayName": "Chic",
@@ -1601,7 +1733,40 @@
         "Parisian style visuals",
         "timeless wardrobe examples",
         "sophisticated design inspiration"
-      ]
+      ],
+      "format": {
+        "lead": "Chic is polish that looks unforced — considered proportion, quality material, and nothing trying too hard. Curify renders that register across outfit boards, portraits, and styling guides.",
+        "howToTitle": "How to create chic styling visuals",
+        "howTo": [
+          "Choose a styling, outfit-variation, or refined-portrait template.",
+          "Describe the pieces in terms of cut and material, not brand names.",
+          "Keep accessories to one deliberate choice.",
+          "Aim for daylight or soft window light; hard studio light reads as commercial, not chic."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Everyday-luxury outfit boards.",
+          "Parisian-style capsule looks.",
+          "Polished portrait and profile styling.",
+          "Accessory-led styling guides.",
+          "Seasonal transition lookbooks."
+        ],
+        "faqTitle": "Chic style FAQ",
+        "faq": [
+          {
+            "q": "What separates chic from simply elegant?",
+            "a": "Effort level. Elegant is formal and composed; chic reads like it was assembled quickly and happens to work. Say \"undone\" or \"unstructured\" to get there."
+          },
+          {
+            "q": "How many accessories should a chic look have?",
+            "a": "One that is noticed. Chic tends to break when a second focal accessory competes with the first."
+          },
+          {
+            "q": "Does chic depend on a specific palette?",
+            "a": "No, but it depends on material honesty — linen reading as linen, wool as wool. Naming the fabric does more than naming the colour."
+          }
+        ]
+      }
     },
     "vintage-retro": {
       "displayName": "Vintage / Retro",
@@ -1614,7 +1779,40 @@
         "nostalgic visuals",
         "throwback fashion prompts",
         "timeless style inspiration"
-      ]
+      ],
+      "format": {
+        "lead": "Vintage and retro styling is period accuracy plus atmosphere — decade-specific silhouettes, film-era colour, and the grain and print quality of the time. Curify reconstructs those registers rather than approximating \"old\".",
+        "howToTitle": "How to create vintage and retro visuals",
+        "howTo": [
+          "Pick a vintage or retro styling template.",
+          "Name the decade and the region — 1970s Milan reads nothing like 1970s California.",
+          "Specify the medium as well as the clothes: film stock, print process, colour cast.",
+          "Refine until the artefacts feel period-correct rather than filtered."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Decade-specific styling and lookbooks.",
+          "Retro poster and album-style layouts.",
+          "Period costume references.",
+          "Nostalgic brand and packaging visuals.",
+          "Film-era portrait treatments."
+        ],
+        "faqTitle": "Vintage & retro FAQ",
+        "faq": [
+          {
+            "q": "Why does my retro image look like a modern photo with a filter?",
+            "a": "Because only the colour was specified. Period look comes from silhouette, hair, grooming, and print artefacts together — name all four."
+          },
+          {
+            "q": "How specific should the era be?",
+            "a": "Very. \"Vintage\" spans eighty years. A decade plus a place gives the model something concrete to reconstruct."
+          },
+          {
+            "q": "Can I use this for genuine historical reference?",
+            "a": "For mood and direction, yes. For costume or academic accuracy, verify against real period sources — the model approximates, and small details drift."
+          }
+        ]
+      }
     },
     "elegant": {
       "displayName": "Elegant",
@@ -1627,7 +1825,40 @@
         "sophisticated visuals",
         "refined portrait examples",
         "high-end style inspiration"
-      ]
+      ],
+      "format": {
+        "lead": "Elegant styling is restraint done well — clean tailoring, considered proportion, and a palette that stays quiet. Curify generates formal and evening looks, refined portraits, and polished layouts that hold up at full size.",
+        "howToTitle": "How to create elegant styling visuals",
+        "howTo": [
+          "Choose a formalwear, evening, or refined-portrait template.",
+          "Name the fabric and cut — silk, wool crepe, a column line, a defined shoulder.",
+          "Keep the palette narrow; elegance reads through restraint, not variety.",
+          "Finish with soft directional light and an uncluttered background."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Evening and formalwear looks.",
+          "Refined portrait and headshot styling.",
+          "Wedding and occasion-wear boards.",
+          "Timeless capsule-wardrobe layouts.",
+          "Understated product and jewellery presentation."
+        ],
+        "faqTitle": "Elegant style FAQ",
+        "faq": [
+          {
+            "q": "How do I avoid output that looks generic-formal?",
+            "a": "Specify the construction. \"Black dress\" gives you a stock image; \"bias-cut silk column, cowl neck, matte finish\" gives you a garment."
+          },
+          {
+            "q": "What palette works best?",
+            "a": "Two or three tones with one texture doing the work. Elegance comes from material and cut, so let the fabric carry the interest."
+          },
+          {
+            "q": "Can I use this for wedding planning?",
+            "a": "Yes, for direction and moodboards. It shows how a look reads on camera, which is what most couples are actually deciding."
+          }
+        ]
+      }
     },
     "casual": {
       "displayName": "Casual",
@@ -1640,7 +1871,40 @@
         "wardrobe basics",
         "relaxed visuals",
         "style inspiration"
-      ]
+      ],
+      "format": {
+        "lead": "Casual styling is what people actually wear — denim, knitwear, layering, and everyday proportion. Curify builds relaxed outfit visuals that still look intentional, from a description or your own photo.",
+        "howToTitle": "How to create casual outfit visuals",
+        "howTo": [
+          "Pick an everyday outfit, layering, or street-style template.",
+          "Describe the pieces and the fit — relaxed, cropped, oversized, tapered.",
+          "Set the context: weekend, commute, travel, campus.",
+          "Generate variations to compare styling directions side by side."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Everyday outfit grids and weekly styling content.",
+          "Denim and knitwear layering guides.",
+          "Capsule looks for travel or commuting.",
+          "Relaxed lookbooks for a casual label.",
+          "Before-and-after styling comparisons."
+        ],
+        "faqTitle": "Casual style FAQ",
+        "faq": [
+          {
+            "q": "How do I stop casual looking sloppy in the output?",
+            "a": "Specify fit. Casual reads as intentional when proportion is deliberate — say \"relaxed straight leg, cropped box tee, structured outer\" rather than \"casual outfit\"."
+          },
+          {
+            "q": "Can I style around clothes I already own?",
+            "a": "Yes — upload a photo of the piece and build the rest of the look around it. That is the common use for outfit-variation templates."
+          },
+          {
+            "q": "What context should I name?",
+            "a": "Whatever sets the footwear and outerwear. \"Weekend errands\" and \"office-casual Friday\" produce very different, and more useful, results than no context at all."
+          }
+        ]
+      }
     },
     "high-fashion": {
       "displayName": "High Fashion",
@@ -1653,7 +1917,40 @@
         "editorial styling",
         "bold silhouettes",
         "fashion templates"
-      ]
+      ],
+      "format": {
+        "lead": "High fashion is the editorial end of the spectrum — couture silhouettes, conceptual styling, and runway-inspired imagery made to be looked at rather than worn to the shops. Curify renders avant-garde looks, dramatic lighting, and magazine-style compositions from a description or a reference photo.",
+        "howToTitle": "How to create high-fashion visuals",
+        "howTo": [
+          "Pick an editorial or avant-garde template — runway look, conceptual portrait, or collection poster.",
+          "Describe the silhouette, fabric behaviour, and mood, or upload a reference figure.",
+          "Push the styling: exaggerated proportion, sculptural volume, unexpected material.",
+          "Refine lighting and background until it reads as editorial rather than catalogue."
+        ],
+        "usesTitle": "What you can make",
+        "uses": [
+          "Runway-inspired looks and conceptual silhouettes.",
+          "Editorial covers and fashion-magazine spreads.",
+          "Avant-garde styling boards for a collection concept.",
+          "Dramatic beauty and couture portraits.",
+          "Moodboards for a season or a creative direction."
+        ],
+        "faqTitle": "High fashion FAQ",
+        "faq": [
+          {
+            "q": "What makes an image read as high fashion rather than a normal outfit photo?",
+            "a": "Proportion and lighting more than the garment. Editorial work exaggerates silhouette, commits to a single strong light, and treats the background as part of the composition. Describing those explicitly matters more than naming a designer."
+          },
+          {
+            "q": "Can I design a couture piece that could actually be made?",
+            "a": "Treat the output as a concept, not a pattern. It is useful for direction, pitch decks, and moodboards; an actual garment still needs a technical drawing and measured pattern."
+          },
+          {
+            "q": "Can I reference a specific designer or house?",
+            "a": "Describe the aesthetic — volume, palette, era, construction — rather than naming a living designer or a house. You get closer to what you want and avoid trading on someone else's brand."
+          }
+        ]
+      }
     },
     "food-and-drink": {
       "displayName": "Food & Drink",

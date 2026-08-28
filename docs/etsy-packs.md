@@ -126,6 +126,58 @@ Browser redirects to signed Azure URL → ZIP downloads
    return `200` + a `signed_url` (a `404 "Pack not found"` means the backend registry/deploy is missing).
 4. **Update this doc.** Add a row to the [Live packs](#live-packs-as-of-2026-05-18) table.
 
+### Scaling an existing pack
+
+`scripts/register_etsy_pack.py <sku>` re-registers in place: it refreshes
+`card_count`, `file_size_mb` and `cover_image` from the files on disk while
+preserving the operator-owned fields (`active`, `etsy_listing_url`, `secret`,
+`version`). Without that, a pack grown from 10 to 30 cards keeps advertising
+`card_count: 10` on its landing page while the ZIP holds 30 — the listing and the
+product disagree and nothing errors.
+
+Order is still register → upload → `--activate`.
+
+### Generation failures are SILENT at the summary level
+
+`generate_template_examples.cjs` prints a per-item `✗ {error}` line but ends with a
+tidy `Added / Skipped / Failed` block and **exits 0 even when every item failed**.
+Filtering its output (`| grep -E "^Added|^Failed"`) throws away the only line that
+says why — you get "Failed: 20" three times and no cause.
+
+Measured 2026-08-28: a 60-image scale-up returned 0/60 with exit code 0. The real
+cause only appeared on an unfiltered single-item rerun:
+
+    429 RESOURCE_EXHAUSTED — "Your project has exceeded its monthly spending cap"
+
+Raise it at https://ai.studio/spend, or wait for the monthly reset. **Never filter
+this script's output**, and treat `Failed: N` with N == entry count as an
+infrastructure fault rather than a content problem.
+
+### Building the delivery PDF (automated)
+
+The file the buyer downloads from Etsy is a one-page PDF: hero image + the redemption
+link. It used to be hand-made in Canva (see `curify-gallery/etsy-packs/` for the
+original), which does not scale and drifts in layout between SKUs.
+
+    python scripts/build_etsy_delivery_pdf.py                 # all active packs
+    python scripts/build_etsy_delivery_pdf.py <sku> [<sku>…]  # specific SKUs
+    python scripts/build_etsy_delivery_pdf.py --code=etsy-fall-sale <sku>
+
+Output: `curify-gallery/etsy-packs/<sku>-delivery.pdf` — the gallery repo, alongside
+the original hand-made Canva example, not the frontend's `raw/`. Override with
+`--out=<dir>` or `ETSY_PDF_OUT` for throwaway review copies.
+
+The link is emitted as a real PDF **link annotation**, not just text on the page — an
+Etsy buyer on a phone taps, they do not retype a URL, and a text-only URL silently
+loses most redemptions. That requirement is why this uses `reportlab` (a build-only
+dependency) instead of the Pillow pipeline in `scripts/images_to_pdf.py`, which
+cannot emit annotations. Verify after generating:
+
+    python3 -c "import re;d=open('raw/etsy-packs/<sku>-delivery.pdf','rb').read();print(re.findall(rb'/URI\s*\(([^)]+)\)',d))"
+
+Attribution `?c=etsy-<sku>-listing` is baked in by default, so redemptions are
+traceable per listing without remembering to append it by hand.
+
 ### Rotating after a leak
 1. Build a fresh asset bundle (different filename — typically bump `pack-v2.zip`).
 2. Update `lib/etsy_packs.json` for the affected SKU:

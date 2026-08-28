@@ -76,6 +76,7 @@ function cand(
       exact_phrase: 0,
       whole_token: 0,
       path_agreement: 0,
+      coverage_bonus: 0,
       substring_penalty: 0,
       missing_subject_penalty: 0,
       intent_alignment: 0,
@@ -394,6 +395,37 @@ describe("relevanceScorer.scoreRecord (V2-R3 mechanism B: coverage + isolated-hi
     );
     expect(wholeToken.final_score).toBeGreaterThan(substringOnly.final_score);
   });
+
+  it("query-term completeness bonus: full coverage out-ranks majority coverage with otherwise-identical signals (the 'confusing english words' fix)", () => {
+    const full = scoreRecord(
+      fields({ titleHit: true, tagsHit: true, subjectPresent: true, coverageRatio: 1 }),
+      ctx({ isMultiTermQuery: true, templateId: "t-complete" }),
+      1,
+    );
+    const majority = scoreRecord(
+      fields({ titleHit: true, tagsHit: true, subjectPresent: true, coverageRatio: 2 / 3 }),
+      ctx({ isMultiTermQuery: true, templateId: "t-partial" }),
+      1,
+    );
+    expect(full.coverage_bonus).toBeGreaterThan(majority.coverage_bonus);
+    expect(full.final_score).toBeGreaterThan(majority.final_score);
+    expect(full.reasons.some((r) => r.includes("completeness_bonus"))).toBe(true);
+  });
+
+  it("completeness bonus is gated: not applied to single-term queries, nor when the subject is absent", () => {
+    const singleTerm = scoreRecord(
+      fields({ titleHit: true, subjectPresent: true, coverageRatio: 1 }),
+      ctx({ isMultiTermQuery: false, templateId: "t" }),
+      1,
+    );
+    const offSubject = scoreRecord(
+      fields({ titleHit: true, subjectPresent: false, coverageRatio: 1 }),
+      ctx({ isMultiTermQuery: true, templateId: "t" }),
+      1,
+    );
+    expect(singleTerm.coverage_bonus).toBe(0);
+    expect(offSubject.coverage_bonus).toBe(0);
+  });
 });
 
 describe("relevanceScorer.applyFamilySaturation", () => {
@@ -407,6 +439,7 @@ describe("relevanceScorer.applyFamilySaturation", () => {
         exact_phrase: 0,
         whole_token: 0,
         path_agreement: 0,
+        coverage_bonus: 0,
         substring_penalty: 0,
         missing_subject_penalty: 0,
         intent_alignment: 0,
@@ -455,7 +488,7 @@ describe("relevanceScorer.selectFinalCandidates (Direction 1 floor invariant)", 
       templateId: "t",
       isOriginal: false,
       breakdown: {
-        base_retrieval: 0, exact_phrase: 0, whole_token: 0, path_agreement: 0,
+        base_retrieval: 0, exact_phrase: 0, whole_token: 0, path_agreement: 0, coverage_bonus: 0,
         substring_penalty: 0, missing_subject_penalty: 0, intent_alignment: 0, family_saturation_penalty: 0,
         final_score: score, subjectPresent: false, reasons: [],
       },

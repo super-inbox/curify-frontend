@@ -132,6 +132,13 @@ none of them measurable:
 - **robots.txt expansion** blocking 11 more crawlers from `/nano-template/*` + `/nano-banana-pro-prompts/*` (commit `94c0e6ac`, Vercel cost reduction)
 
 ### D. Vertical Use Cases
+- **2026-08-25→08-28** **Cute city-illustration 文创 exploration** — Q版 城市文创插画 in the
+  小红书「陶瓷冰箱贴 · <省>限定」genre; Shanghai pilot (6 landmark tiles, recurring 弄堂猫 mascot).
+  Winning recipe = **solid hand-drawn lines (线条实) + warm colored-pencil, anchor the style-ref to
+  the client's preferred sample**. Generator `scripts/oneoff_cute_shanghai_2026-08-25.cjs`, outputs
+  in `raw/cute-city-08-25/` (final candidates `out_v4a` / `out_v4b`). **Exploratory — no order yet**
+  (cf. the paid 黎族 `project_lizu_merch_baicha`). Doc:
+  [`client-projects/city-illustration-cute.md`](client-projects/city-illustration-cute.md)
 - **2026-08-12** **First measurement of the workstream + P0 reset** — 60d `user_interactions`
   pull + GSC 28d. `/use-cases/[slug]` = **273 users / 346 events over 60 days** (12th of all
   routes, behind `/blog` and `/inspiration-hub`); **31 GSC impressions, 0 clicks** at positions
@@ -256,6 +263,8 @@ none of them measurable:
 | `project_use_case_gtm_pages` | index = `lib/use-cases.ts`; GOTCHA — untagged templates leak via the `TIER1_USE_CASES` fallback |
 | `project_teacher_learning_packs_demand` | wedge = VISUAL PACKAGING, not text; no topic→pack tool |
 | `project_first_paying_customer_pod` | the POD buyer we actually have |
+| `project_cute_city_magnet_style` | cute city 陶瓷冰箱贴 文创 recipe — 线条实 + colored-pencil; anchor style-ref to preferred sample. Doc: `client-projects/city-illustration-cute.md` |
+| `project_lizu_merch_baicha` | paid 黎族景区文创 order — the adjacent 文创 deliverable |
 | `project_pod_layered_tools_competitor_test` | competitor line-art test → POD-B fast-track |
 | `feedback_outreach_tracker_separation` | b2b vs investor trackers — never mix (applies to the new RedNote tracker, UC-P0-3) |
 | `feedback_exec_outreach_framing` | Founder/CEO/CTO — consultative audit framing, not a pitch |
