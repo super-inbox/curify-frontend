@@ -304,7 +304,7 @@
     "asl_video_translator": {
       "meta": {
         "title": "Traductor de Video de Lengua de Señas: Subtítulos y Texto de ASL a Inglés | Curify",
-        "description": "Traductor de video de lengua de señas (ASL → Inglés). Traduce el material firmado a texto y subtítulos en inglés. Demostración en vivo con video real de ASL: únete al acceso anticipado para tus propias cargas."
+        "description": "Traductor de vídeo en lengua de signos (ASL → inglés). Convierta vídeos signados en texto y subtítulos en inglés. Gratuito y experimental: suba su propio vídeo en ASL."
       },
       "title": "Traductor de Video de Lengua de Señas (ASL)",
       "desc": "Traductor de video de lengua de señas: traduce el material firmado en ASL a texto y subtítulos en inglés, automáticamente. Demostración en vivo con video real."
@@ -986,12 +986,12 @@
   "aslVideoTranslator": {
     "metadata": {
       "title": "Traductor de Video ASL con IA | Lengua de Señas a Subtítulos en Inglés | Curify AI",
-      "description": "Traduce videos en lengua de señas ASL a texto o subtítulos en inglés automáticamente. Ve una demostración en tiempo real con material firmado — luego únete al acceso anticipado para tus propias cargas."
+      "description": "Traduzca automáticamente vídeos en lengua de signos ASL a texto o subtítulos en inglés. Gratuito y experimental: suba su propio vídeo signado y vea qué lee."
     },
     "title": "Traductor de Video ASL con IA",
-    "description": "Traduce videos en Lengua de Señas Americana a texto o subtítulos en inglés, automáticamente. La demostración a continuación se basa en un clip real de ASL — la misma pipeline aceptará tus cargas una vez que se abra el acceso anticipado.",
+    "description": "Traduzca automáticamente vídeos en Lengua de Signos Americana a texto o subtítulos en inglés. Gratuito mientras es experimental: suba su clip y revise usted mismo el resultado; la traducción automática de lengua de signos no es fiable y su salida necesita revisión.",
     "example": "Ejemplo: un breve clip conversacional de ASL traducido a subtítulos en inglés en una sola pasada. Sin intérprete, sin transcripción manual.",
-    "cta": "Únete al Acceso Anticipado",
+    "cta": "Pruébelo gratis",
     "demo": {
       "aria": "Demostración de traducción de video en lengua de señas ASL",
       "caption": "Mira el clip de demostración para ver ASL traducido a subtítulos en inglés.",
@@ -1002,12 +1002,12 @@
       "point1": "Automático — sin paso manual de intérprete. Sube un video firmado, obtén subtítulos en inglés.",
       "point2": "Diseñado para contenido, no para demostraciones de laboratorio — maneja ángulos de cámara del mundo real, estilos de firma variados y ritmo conversacional.",
       "point3": "Formatos de salida diseñados para distribución: subtítulos incrustados, SRT para YouTube, o texto de transcripción simple.",
-      "point4": "Solo demostración hoy; regístrate para el acceso anticipado para traducir tu propio material ASL cuando se abra la pipeline."
+      "point4": "Gratuito y experimental. La traducción de lengua de signos es un problema difícil y sin resolver: el resultado es traducción automática sin verificar y a menudo se equivoca, así que compruébelo con lo que se signa antes de publicarlo."
     },
     "faq": {
       "title": "Preguntas Frecuentes",
       "q1": "¿Está disponible hoy el traductor de video ASL?",
-      "a1": "Aún no — esta página es una demostración en tiempo real con un clip real de ASL. La pipeline de producción está en pruebas privadas. Únete al acceso anticipado y nos pondremos en contacto cuando se abra para cargas.",
+      "a1": "Sí, y es gratuito. También es experimental: la traducción la produce un modelo de visión de propósito general, no un modelo entrenado en lengua de signos, y se equivoca con frecuencia, a veces de un modo que suena fluido y seguro. Trate el resultado como un borrador que hay que comprobar, no como una traducción terminada, y nunca lo publique como subtítulo de accesibilidad sin revisarlo.",
       "q2": "¿Funciona en idiomas distintos a ASL?",
       "a2": "La demostración actual se dirige específicamente a la Lengua de Señas Americana. Las lenguas de señas no son mutuamente inteligibles — BSL (Británica), Auslan (Australiana) y LSF (Francesa) tienen diferentes gramáticas y vocabularios. Estamos evaluando lenguas de señas adicionales según la demanda de inscripciones anticipadas."
     },
@@ -1024,7 +1024,7 @@
         "p2": "En segundo lugar, un codificador de visión lee el flujo visual y produce una secuencia de incrustaciones conscientes de la señal: forma de la mano, vectores de movimiento y los marcadores no manuales (expresión facial, inclinación de cabeza, mirada) que cambian una señal de una afirmación a una pregunta.",
         "p3": "En tercer lugar, una cabeza de traducción decodifica esas incrustaciones en texto en inglés. El decodificador está entrenado en corpus de video ASL-inglés paralelos, por lo que reestructura la gramática ASL en inglés natural en lugar de producir un glosario literal.",
         "p4": "En cuarto lugar, el texto traducido se alinea de nuevo al tiempo original: cada oración en inglés está anclada a los segundos de video que la produjeron. Eso te proporciona subtítulos que puedes insertar directamente en un editor de video, además de una exportación SRT que se carga sin problemas en YouTube.",
-        "p5": "La demostración en esta página es el modelo de producción que se ejecuta en un clip conversacional real de ASL. Las cargas de acceso anticipado seguirán el mismo proceso."
+        "p5": "La demostración de esta página es la línea de procesamiento real ejecutándose sobre un clip conversacional de ASL. Sus propios vídeos pasan por el mismo proceso, con las mismas limitaciones."
       },
       "usecases": {
         "title": "Dónde importa la traducción de video ASL",

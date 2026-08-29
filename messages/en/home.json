@@ -343,7 +343,7 @@
       "desc": "Sign language video translator: translate ASL signed footage into English text and subtitles, automatically. Working demo on real video.",
       "meta": {
         "title": "Sign Language Video Translator: ASL to English Subtitles & Text | Curify",
-        "description": "Sign language video translator (ASL → English). Translate signed footage into English text and subtitles. Live demo on real ASL video — join early access for your own uploads."
+        "description": "Sign language video translator (ASL → English). Translate signed footage into English text and subtitles. Free and experimental — upload your own ASL video."
       }
     },
     "ai_product_photo_generator": {
@@ -925,12 +925,12 @@
   "aslVideoTranslator": {
     "metadata": {
       "title": "AI ASL Video Translator | Sign Language to English Subtitles | Curify AI",
-      "description": "Translate ASL sign language video into English text or subtitles automatically. See a working demo on real signed footage — then join early access for your own uploads."
+      "description": "Translate ASL sign language video into English text or subtitles automatically. Free and experimental — upload your own signed footage and see what it reads."
     },
     "title": "AI ASL Video Translator",
-    "description": "Translate American Sign Language video into English text or subtitles, automatically. The demo below runs on a real ASL clip — the same pipeline will accept your uploads once early access opens.",
+    "description": "Translate American Sign Language video into English text or subtitles, automatically. Free while experimental: upload your clip and check the result yourself — machine translation of sign language is unreliable and the output needs review.",
     "example": "Example: a short conversational ASL clip translated into English subtitles in one pass. No interpreter, no manual transcription.",
-    "cta": "Join Early Access",
+    "cta": "Try It Free",
     "demo": {
       "aria": "ASL sign language video translation demo",
       "caption": "Watch the demo clip to see ASL translated into English subtitles.",
@@ -941,12 +941,12 @@
       "point1": "Automatic — no manual interpreter step. Upload a signed video, get English subtitles.",
       "point2": "Built for content, not lab demos — handles real-world camera angles, varied signing styles, and conversational pacing.",
       "point3": "Output formats designed for distribution: burned-in subtitles, SRT for YouTube, or plain transcript text.",
-      "point4": "Demo-only today; sign up for early access to translate your own ASL footage when the pipeline opens."
+      "point4": "Free and experimental. ASL translation is a hard, unsolved problem — the output is unverified machine translation and is often wrong, so check it against the signing before you publish it."
     },
     "faq": {
       "title": "Frequently Asked Questions",
       "q1": "Is the ASL video translator available today?",
-      "a1": "Not yet — this page is a working demo on a real ASL clip. The production pipeline is in private testing. Join early access and we will reach out when it opens for uploads.",
+      "a1": "Yes, and it is free. It is also experimental: the translation is produced by a general-purpose vision model, not a model trained on sign language, and it is frequently wrong — sometimes in ways that read as fluent and confident. Treat the output as a draft to check, not a finished translation, and never publish it as an accessibility caption without review.",
       "q2": "Does it work on languages other than ASL?",
       "a2": "The current demo targets American Sign Language specifically. Sign languages are not mutually intelligible — BSL (British), Auslan (Australian), and LSF (French) have different grammars and vocabularies. We are scoping additional sign languages based on demand from early-access signups."
     },
@@ -963,7 +963,7 @@
         "p2": "Second, a vision encoder reads the visual stream and produces a sequence of sign-aware embeddings: handshape, movement vectors, and the non-manual markers (facial expression, head tilt, eye gaze) that change a sign from a statement into a question.",
         "p3": "Third, a translation head decodes those embeddings into English text. The decoder is trained on parallel ASL-English video corpora, so it restructures ASL grammar into natural English rather than producing a literal gloss.",
         "p4": "Fourth, the translated text is aligned back to the source timing — each English sentence is anchored to the seconds of video that produced it. That gives you subtitles you can drop straight into a video editor, plus an SRT export that loads cleanly into YouTube.",
-        "p5": "The demo on this page is the production model running on one real conversational ASL clip. Early-access uploads will run the same pipeline."
+        "p5": "The demo on this page is the live pipeline running on one real conversational ASL clip. Your own uploads run through the same pipeline, with the same limitations."
       },
       "usecases": {
         "title": "Where ASL video translation matters",

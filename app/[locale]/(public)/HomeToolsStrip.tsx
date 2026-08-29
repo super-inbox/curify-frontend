@@ -7,9 +7,11 @@
 //
 // Shows: `create` tools + `demo`-status tools that are actually functional
 // (inline `generate` / `product_video` surfaces). Excludes coming-soon AND
-// the pure-demo SEO landings (status `demo`, action `page` — asl-video-
-// translator, video-enhance, manga-translation, style-transfer): the home
-// strip is a secondary CTA to working products, not a roadmap/demo teaser.
+// the pure-demo SEO landings (status `demo`, action `page` — video-enhance,
+// manga-translation, style-transfer): the home strip is a secondary CTA to
+// working products, not a roadmap/demo teaser.
+// NB asl-video-translator was in that exclusion list until 2026-08-29 but has
+// been status `create` since 2026-08-16, so it does appear on this strip.
 
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";

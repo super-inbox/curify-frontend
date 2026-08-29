@@ -367,13 +367,11 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
-    // Demo-only SEO landing — no backend pipeline yet. The blog
-    // /blog/asl-video-translator ranks at pos ~13 for "asl video translator"
-    // / "sign language video translator" but as an editorial page the
-    // tool-intent queries convert at 0.75% CTR. Shipping this tool route
-    // closes the loop with a visible demo + waitlist CTA. 2026-05-30 GSC
-    // pull: 8 distinct tool-intent ASL queries at pos 9-26, zero clicks
-    // (no /tools/asl-* landing existed).
+    // Origin (2026-05-30): the blog /blog/asl-video-translator ranked at pos ~13
+    // for "asl video translator" / "sign language video translator", but as an
+    // editorial page the tool-intent queries converted at 0.75% CTR. GSC pull:
+    // 8 distinct tool-intent ASL queries at pos 9-26, zero clicks, because no
+    // /tools/asl-* landing existed. This route closed that loop.
     // 2026-08-16: PROMOTED FROM DEMO LANDING TO LIVE TOOL. It now fronts the
     // real ASL pipeline (JobType.ASL_TRANSLATION); job_type was previously a
     // placeholder ("video_transcript") because no backend existed.
@@ -382,16 +380,21 @@ export const TOOL_REGISTRY: ToolDef[] = [
     // one already ranks for the tool-intent queries and already has i18n copy in
     // all 10 locales. A near-identical second slug would split that signal.
     //
-    // Paid — 8 credits/min (JOB_CREDIT_COST.ASL_TRANSLATION, mirrored in
-    // create-job-ui ratePerMinute). Deliberately NOT on the free monthly
-    // subtitle quota that plain captioning uses: each job runs vision inference
-    // over ~96 adaptively sampled frames.
+    // FREE as of 2026-08-29 (JOB_CREDIT_COST.ASL_TRANSLATION = 0, mirrored in
+    // create-job-ui ratePerMinute and tripwired in lib/__tests__/pricing.test.ts).
+    // It was 8 credits/min from 2026-08-16 and 5 users paid 120 credits for output
+    // we had already documented as untrustworthy. Kept live rather than demoted:
+    // `demo` status has no waitlist in this codebase — it falls through to the
+    // "Coming Soon" paragraph in tool-generic-client — and the live tool is the
+    // only demand signal and evaluation corpus we have.
     //
-    // ⚠️ The recogniser is a general VLM that failed a frame-reversal control
-    // (curify-studio/docs/asl-translation-mvp-spec.md). Going live does not
-    // change that — the pipeline stamps asl_unverified/review_required on every
-    // job and prefixes the first caption "[AI-generated ASL translation —
-    // unverified]". Keep those until a real sign-language model replaces it.
+    // ⚠️ The recogniser is a general VLM that failed a frame-reversal control, and
+    // scored WER 0.92 against human ground truth on the one real user video we can
+    // score (curify-studio/docs/asl-translation-mvp-spec.md). The pipeline stamps
+    // asl_unverified / asl_low_confidence on every job and prefixes the first
+    // caption "[AI-generated ASL translation — unverified]"; as of 2026-08-29 those
+    // flags finally survive to the API and are rendered by AslUnverifiedNotice on
+    // the result page. Keep all of it until a real sign-language model replaces it.
     id: "asl-video-translator",
     slug: "asl-video-translator",
     groupId: "video",
