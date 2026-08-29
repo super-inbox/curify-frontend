@@ -24,6 +24,11 @@ export type ToolAction =
   | { type: "sticker_export" }
   | { type: "acrylic_export" }
   | { type: "packaging_mockup" }
+  // Impromptu speech practice — random topic → 30s prep → 90s webcam take →
+  // playback/download. Entirely client-side (getUserMedia + MediaRecorder):
+  // no upload, no auth, no credits, so an anonymous search visitor can finish
+  // the loop. Rendered by ImpromptuSpeechPractice.
+  | { type: "impromptu_practice" }
   | { type: "none" };
 
 export type ToolDemo =
@@ -77,6 +82,14 @@ export type ToolDef = {
     titleKey: string;
     descriptionKey: string;
   };
+
+  // Locales this tool is actually authored in. Omitted means "all of them",
+  // which is true for every tool whose namespace was copied into all ten
+  // messages/*/home.json files. When set, the sitemap emits only these locales
+  // and the others are served noindex with the canonical pointing at the
+  // authored one — otherwise a single-locale experiment ships nine pages that
+  // render literal key paths ("impromptuSpeech.title") and dilute crawl.
+  locales?: string[];
 
   demo?: ToolDemo;
 };
@@ -605,6 +618,37 @@ export const TOOL_REGISTRY: ToolDef[] = [
         zh: { flag: "\uD83C\uDDE8\uD83C\uDDF3", video: "/video/blog/video-to-learning-pack-cn.mp4", label: "ZH" },
       },
     },
+  },
+
+  {
+    // Impromptu speech practice — 2026-08-29. A demand probe, not a product
+    // line. Semrush: "impromptu speech topics" is 1,300/mo at KD 12 with
+    // INFORMATIONAL intent, and it is ~93% of the volume in this cluster; the
+    // generator/tool queries are the 50-70/mo tail. So the page has to satisfy
+    // "show me a list of topics" first and be a recorder second — the topic
+    // bank is the hook, the timer + camera is the differentiator.
+    //
+    // It is also the first surface here that helps someone PRODUCE a video
+    // rather than requiring they already have one, which is why its CTA points
+    // at the subtitle/transcript tools.
+    //
+    // Review at 4 weeks against: 500+ impressions, >10% start-practice,
+    // >30% recording completion, >5% continue to a subtitle/translate tool.
+    // Do not invest further before those numbers exist.
+    id: "impromptu-speech-practice",
+    slug: "impromptu-speech-practice",
+    groupId: "video",
+    // "demo" (not "create") because status:"create" is hard-wired to the
+    // video CreateNewModal; the inline surface is dispatched via action.
+    status: "demo",
+    // Unused — this tool submits no backend job at all. Required field.
+    job_type: "video_transcript",
+    namespace: "impromptuSpeech",
+    action: { type: "impromptu_practice" },
+    // English only while we find out whether anyone wants it.
+    locales: ["en"],
+    i18n: { ...toolKeys("impromptu_speech_practice"), showFreeBadge: true },
+    seo: seoKeys("impromptu_speech_practice"),
   },
 ];
 

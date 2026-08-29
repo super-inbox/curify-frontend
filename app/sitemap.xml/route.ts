@@ -58,7 +58,9 @@ const STABLE_LASTMOD = "2026-08-05T00:00:00.000Z";
 
 // Tool pages: 08-12 stripped a duplicated "| Curify" from 90 metadata titles,
 // which changes the <title> a crawler sees on every one of them.
-const TOOLS_LASTMOD = "2026-08-12T00:00:00.000Z";
+// 08-29 added /tools/impromptu-speech-practice and made tool emission respect
+// a per-tool locale subset, which changes the URL set on this route.
+const TOOLS_LASTMOD = "2026-08-29T00:00:00.000Z";
 
 // Use-case pages: 08-12 added the worked-case block and moved the demo cards
 // into the tools grid — a visible change on all of them.
@@ -144,10 +146,19 @@ function getTagRoutes(): string[] {
   );
 }
 
-function getToolRoutes(): string[] {
+// Tools carry an optional `locales` field (lib/tools-registry.ts). Most tools
+// omit it and are authored in all ten, so they emit ten URLs as before. A tool
+// that declares a subset — an English-only experiment, say — emits only those,
+// because the unauthored locales render literal i18n key paths and would be
+// nine thin near-duplicates competing with the one real page. Same policy the
+// MBTI and nano tag routes already apply.
+function getToolRoutes(): { route: string; locales: readonly string[] }[] {
   return TOOL_REGISTRY
     .filter((t) => t.status !== "coming_soon")
-    .map((t) => `/tools/${encodeURIComponent(t.slug)}`);
+    .map((t) => ({
+      route: `/tools/${encodeURIComponent(t.slug)}`,
+      locales: t.locales ?? LOCALES,
+    }));
 }
 
 function getUseCaseRoutes(): string[] {
@@ -293,12 +304,15 @@ export async function GET() {
   });
 
   // Tool routes
-  toolRoutes.forEach((route) => {
-    LOCALES.forEach((locale) => {
+  toolRoutes.forEach(({ route, locales }) => {
+    locales.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
         lastmod: TOOLS_LASTMOD,
         changefreq: "weekly",
         priority: "0.8",
+        // Only narrow the hreflang set when the tool actually declares one;
+        // passing the full list here would be a no-op but reads as intent.
+        availableLocales: locales === LOCALES ? undefined : locales,
       });
     });
   });

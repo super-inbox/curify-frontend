@@ -425,6 +425,14 @@
     "acrylic_factory_export": {
       "title": "Acrylic Standee & Keychain Factory Files",
       "desc": "Front, mirrored back, white-ink underbase choked so it cannot halo, a cutline with a computed keychain hole, and a spec sheet."
+    },
+    "impromptu_speech_practice": {
+      "title": "Impromptu Speech Practice",
+      "desc": "88 real impromptu speech topics, a 30-second preparation timer and a 90-second recorder. Draw a topic, think, speak to camera, watch it back. Free, no sign-up, nothing uploaded.",
+      "meta": {
+        "title": "Impromptu Speech Topics — 88 Prompts + Practice Timer",
+        "description": "88 impromptu speech topics from real table-topics sessions, with a 30-second prep timer and a 90-second video recorder built in. Free, no account, and your recording never leaves your browser."
+      }
     }
   },
   "bilingual": {
@@ -1715,6 +1723,61 @@
         "educationBody": "Go from artwork to a printer quote in one step, with CMYK and the cutline already handled.",
         "businessTitle": "DTC & IP brands",
         "businessBody": "Run sticker SKUs at volume without a designer in the loop for every variant."
+      }
+    }
+  },
+  "impromptuSpeech": {
+    "metadata": {
+      "title": "Impromptu Speech Topics — 88 Prompts + Practice Timer",
+      "description": "88 impromptu speech topics from real table-topics sessions, with a 30-second prep timer and a 90-second video recorder built in. Free, no account, and your recording never leaves your browser."
+    },
+    "title": "Impromptu speech topics — and a timer to practise them",
+    "description": "Reading a list of topics does not make you better at speaking on them. Draw one at random, take 30 seconds to think, then answer for 90 seconds on camera and watch yourself back. All 88 topics below come from real table-topics sessions, not a generator.",
+    "example": "Draw a topic, prepare for 30 seconds, speak for 90, then play it back.",
+    "cta": "Start practising",
+    "why": {
+      "title": "Why practise this way",
+      "point1": "The clock is the training. Most people can answer any of these questions given five minutes; the skill is doing it in 30 seconds of thought. Practising against a timer is what separates this from reading a topic list.",
+      "point2": "Watching yourself back is where the improvement happens. Filler words, a wandering middle, and the habit of answering a different question than the one asked are all obvious on video and nearly invisible from the inside.",
+      "point3": "The topics are real. They come from years of running table-topics sessions — every question here has been put to an actual room and produced an actual answer. That is a different thing from 500 questions generated on demand.",
+      "point4": "Nothing is uploaded. The recording is made and played back inside your browser and never reaches a server, so there is no account, no quota and nothing to delete afterwards."
+    },
+    "faq": {
+      "title": "Impromptu speaking — common questions",
+      "q1": "What is an impromptu speech?",
+      "a1": "A short talk given with little or no preparation, usually in response to a question you have not seen before. Toastmasters clubs call this section table topics; job interviews, panel Q&A and classroom cold-calls are all the same skill under a different name. The defining constraint is that you begin speaking before you have finished thinking.",
+      "q2": "How long should an impromptu speech be?",
+      "a2": "One to two minutes is the standard. This tool uses 90 seconds, which is long enough to need a real structure and short enough that rambling is immediately obvious. If you routinely run out of things to say at 40 seconds, the problem is usually that you answered the question in your first sentence and left yourself nowhere to go.",
+      "q3": "How do I structure a speech with only 30 seconds to prepare?",
+      "a3": "Do not plan the whole thing. Decide three things only: your answer in one sentence, one concrete example that supports it, and how you will end. Say the answer first, spend the middle on the example, then close by restating the answer. PREP — point, reason, example, point — is the same idea and is easier to hold in your head under pressure than any longer framework.",
+      "q4": "Is my recording uploaded or stored anywhere?",
+      "a4": "No. The video is captured by your browser and held in memory on your own machine; it is never sent to us and we cannot see it. That also means it is gone when you close or reload the page, so download any take you want to keep.",
+      "q5": "What are good impromptu speech topics for students?",
+      "a5": "Questions with a defensible position and no correct answer — the values and debate sections below are the ones that work in a classroom. Avoid topics that need specific knowledge, because they test recall rather than composure. If you are running a session for a group, drawing the same topic for everyone and comparing approaches teaches more than giving each person a different one."
+    },
+    "deep": {
+      "what": {
+        "title": "What impromptu speaking actually tests",
+        "p1": "An impromptu speech is not a short prepared speech. A prepared speech is judged on its content; an impromptu one is mostly judged on whether you sounded composed while assembling it in public. The audience is not really listening for insight in 90 seconds — they are reading whether you are in control.",
+        "p2": "That distinction changes what is worth practising. Rehearsing answers to specific questions does not transfer, because the next question will be different. What transfers is the habit of committing to a position quickly, reaching for a concrete example instead of a generality, and landing an ending rather than trailing off into \"so, yeah\".",
+        "p3": "The 30-second preparation window is deliberately too short to plan a full talk. It is exactly long enough to choose an answer and one supporting example, which is all the structure a 90-second speech can carry anyway."
+      },
+      "how": {
+        "title": "How to use this tool",
+        "p1": "Draw a topic at random, or pick one from the list below if you want to work on a particular kind of question. Resisting the urge to redraw until you get an easy one is part of the exercise.",
+        "p2": "Take the 30 seconds. Decide your one-sentence answer, one example, and your closing line. Do not write a script; you will not be able to read it and speak naturally at the same time.",
+        "p3": "Speak for 90 seconds to camera. The timer stops the recording on its own, so you do not have to watch the clock. If you finish early, stop — a clean 60 seconds beats 90 seconds of padding.",
+        "p4": "Watch it back before you draw another topic. Count your filler words, and check whether the question you answered is the question you were asked. Most people find the second problem more often than the first.",
+        "p5": "Download the take if you want to compare it with a later attempt on the same topic, or run it through a transcript tool — your own words on the page are noticeably more useful than your memory of what you said."
+      },
+      "usecases": {
+        "title": "Who this is for",
+        "creatorsTitle": "Creators and presenters",
+        "creatorsBody": "Talking to a camera without a script is the core skill for short-form video, live streams and podcast guest spots. Practising against a topic you did not choose is closer to that experience than rehearsing your own material, and the 90-second limit is roughly the length of a short-form take.",
+        "educationTitle": "Students and teachers",
+        "educationBody": "Debate preparation, viva and interview practice, and ESL speaking fluency all rely on the same drill. For a class, project one topic and have several students answer it in turn — the comparison teaches structure faster than feedback does. The topics below are filtered so they can be used with a school group.",
+        "businessTitle": "Interviews and the workplace",
+        "businessBody": "Panel questions, status updates and the moment a meeting turns to you are all impromptu speaking with higher stakes. The failure mode at work is rarely not knowing the answer; it is starting to talk before deciding what the answer is. Thirty seconds of visible thinking is almost always available, and this trains you to use it."
       }
     }
   }

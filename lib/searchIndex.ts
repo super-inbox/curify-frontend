@@ -236,6 +236,27 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
     ],
   },
   {
+    // 2026-08-29 — new /tools/impromptu-speech-practice. The head term
+    // ("impromptu speech topics", 1.3k/mo) is informational, so on-site
+    // searchers are far more likely to type a topic-list phrasing than a
+    // tool name; the aliases lean that way deliberately. Bare "speech" is
+    // left OUT — it collides with speech-translator and voice-clone.
+    slug: "impromptu-speech-practice",
+    href: "/tools/impromptu-speech-practice",
+    label: "Impromptu Speech Practice",
+    emoji: "🎤",
+    tier: 3,
+    aliases: [
+      "impromptu", "impromptu speech", "impromptu speech topics",
+      "impromptu speaking", "impromptu speech generator",
+      "random speech topic", "random speech topic generator",
+      "speech topics", "speech topic generator", "table topics",
+      "toastmasters", "toastmasters topics", "public speaking practice",
+      "speaking practice", "speech practice", "speech timer",
+      "practice speaking english", "presentation practice",
+    ],
+  },
+  {
     slug: "video-dubbing",
     href: "/tools/video-dubbing",
     label: "Video Dubbing",
