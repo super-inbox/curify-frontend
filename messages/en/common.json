@@ -373,5 +373,11 @@
     "note": "Tell us roughly how many designs and what they're for. We'll come back with a sample and a price.",
     "contactSubject": "Bulk run",
     "contactSubjectWith": "Bulk run — {subject}"
+  },
+  "jobWarnings": {
+    "aslUnverifiedTitle": "Machine translation — not verified by a human",
+    "aslUnverifiedBody": "Sign language translation is experimental and often wrong, including in ways that read as fluent and confident. Please check these captions against the signing before relying on them or publishing them.",
+    "aslLowConfidenceTitle": "We could not read this video well",
+    "aslLowConfidenceBody": "This video was too long or too sparsely sampled for us to read reliably, and parts of the transcript below are likely invented. Please do not publish these captions without checking them against the signing."
   }
 }

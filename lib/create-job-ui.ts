@@ -68,11 +68,16 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     allowVoiceover: false,
     allowSubtitles: true,
     subtitleOptions: ["Target", "Bilingual"],
-    // 8 credits/min — must stay in sync with JOB_CREDIT_COST["ASL_TRANSLATION"]
-    // in curify_background. Explicitly NOT 0: unlike subtitle_only above, ASL is
-    // never covered by the FREE plan's monthly subtitle minutes, because each job
-    // runs vision inference over ~96 sampled frames.
-    ratePerMinute: 8,
+    // FREE — must stay in sync with JOB_CREDIT_COST["ASL_TRANSLATION"] in
+    // curify_background, which went to 0 on 2026-08-29. It was 8/min on the
+    // reasoning that vision inference costs more per minute than STT. True, and
+    // beside the point: scored against verified human ground truth the recogniser
+    // returned WER 0.92 on the one real user video we can score, and two runs of
+    // the same video disagreed with each other at WER 0.97. We were charging for
+    // output documented in writing as untrustworthy. Zero rather than removed —
+    // the tool stays live because it is the only demand signal and corpus source
+    // we have. Covered by lib/__tests__/pricing.test.ts.
+    ratePerMinute: 0,
     ctaLabel: "Translate Signing",
   },
   subtitle_only: {

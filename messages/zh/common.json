@@ -373,5 +373,11 @@
     "note": "告诉我们大致数量和用途，我们回一版打样和报价。",
     "contactSubject": "批量需求",
     "contactSubjectWith": "批量需求 — {subject}"
+  },
+  "jobWarnings": {
+    "aslUnverifiedTitle": "机器翻译 — 未经人工校验",
+    "aslUnverifiedBody": "手语翻译目前仍是实验性功能，经常出错，而且错误往往读起来通顺、语气笃定。请先对照视频中的手语核对字幕，再使用或发布。",
+    "aslLowConfidenceTitle": "我们无法准确识别这段视频",
+    "aslLowConfidenceBody": "这段视频过长或采样过于稀疏，我们无法可靠识别，下方字幕中有部分内容很可能是凭空生成的。请务必对照视频中的手语核对后再发布。"
   }
 }

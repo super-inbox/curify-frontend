@@ -373,5 +373,11 @@
     "note": "Dinos aproximadamente cuántos diseños y para qué son. Volveremos con una muestra y un precio.",
     "contactSubject": "Ejecución masiva",
     "contactSubjectWith": "Ejecución masiva — {subject}"
+  },
+  "jobWarnings": {
+    "aslUnverifiedTitle": "Traducción automática: no verificada por una persona",
+    "aslUnverifiedBody": "La traducción de lengua de signos es experimental y con frecuencia se equivoca, a veces de un modo que suena fluido y seguro. Compruebe estos subtítulos con lo que se signa en el vídeo antes de utilizarlos o publicarlos.",
+    "aslLowConfidenceTitle": "No hemos podido leer bien este vídeo",
+    "aslLowConfidenceBody": "Este vídeo era demasiado largo o se muestreó de forma demasiado dispersa para leerlo con fiabilidad, y es probable que parte de la transcripción esté inventada. No publique estos subtítulos sin contrastarlos con lo que se signa."
   }
 }

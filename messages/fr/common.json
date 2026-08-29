@@ -373,5 +373,11 @@
     "note": "Dites-nous à peu près combien de designs et à quoi ils servent. Nous reviendrons avec un échantillon et un prix.",
     "contactSubject": "Exécution en masse",
     "contactSubjectWith": "Exécution en masse — {subject}"
+  },
+  "jobWarnings": {
+    "aslUnverifiedTitle": "Traduction automatique — non vérifiée par un humain",
+    "aslUnverifiedBody": "La traduction de la langue des signes est expérimentale et souvent erronée, parfois d'une manière qui paraît fluide et assurée. Vérifiez ces sous-titres avec ce qui est signé dans la vidéo avant de vous y fier ou de les publier.",
+    "aslLowConfidenceTitle": "Nous n'avons pas pu bien lire cette vidéo",
+    "aslLowConfidenceBody": "Cette vidéo était trop longue ou échantillonnée de façon trop clairsemée pour être lue de manière fiable, et une partie de la transcription ci-dessous est probablement inventée. Ne publiez pas ces sous-titres sans les vérifier avec ce qui est signé."
   }
 }

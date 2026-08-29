@@ -8,6 +8,7 @@ import {
   STICKER_EXPORT_CREDITS,
   ACRYLIC_EXPORT_CREDITS,
 } from "@/lib/pricing";
+import { JOB_UI_CONFIG } from "@/lib/create-job-ui";
 
 /** What the backend actually charges, as of 2026-08-16.
  *
@@ -29,6 +30,20 @@ const BACKEND_CHARGES = {
   packagingMockup: 15,
 } as const;
 
+/** Per-minute job rates, from JOB_CREDIT_COST in
+ *  curify_background/app/constants/subscription_constants.py.
+ *
+ *  Same tripwire caveat as above, and this is the mirror that has actually gone
+ *  stale: create-job-ui's ratePerMinute is a SECOND hand-maintained copy of the
+ *  same backend numbers, and until 2026-08-29 nothing tested it at all. */
+const BACKEND_RATES_PER_MINUTE = {
+  full_translation: 5,
+  speech_translator: 5,
+  asl_translation: 0, // free as of 2026-08-29 — see create-job-ui.ts
+  subtitle_only: 0,
+  video_transcript: 0,
+} as const;
+
 describe("credit pricing", () => {
   it("mirrors the backend charge for image generation", () => {
     expect(IMAGE_GENERATION_CREDITS).toBe(BACKEND_CHARGES.image);
@@ -38,6 +53,15 @@ describe("credit pricing", () => {
     expect(STICKER_EXPORT_CREDITS).toBe(BACKEND_CHARGES.stickerExport);
     expect(ACRYLIC_EXPORT_CREDITS).toBe(BACKEND_CHARGES.acrylicExport);
     expect(PACKAGING_MOCKUP_CREDITS).toBe(BACKEND_CHARGES.packagingMockup);
+  });
+
+  it("mirrors the backend per-minute rates quoted in the create-job modal", () => {
+    for (const [jobType, rate] of Object.entries(BACKEND_RATES_PER_MINUTE)) {
+      expect(
+        JOB_UI_CONFIG[jobType as keyof typeof JOB_UI_CONFIG].ratePerMinute,
+        `${jobType} quotes a different rate than the backend charges`,
+      ).toBe(rate);
+    }
   });
 
   /** The bug this whole module exists to prevent: a locale file stating a price
