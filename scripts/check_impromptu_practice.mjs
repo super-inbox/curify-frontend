@@ -206,6 +206,200 @@ console.log("\n--- switching topic mid-prep releases the camera ---");
   await ctx.close();
 }
 
+// ---------- 5. mic level: audible vs silent vs no track ----------
+// A take with video and a silent audio track is the worst failure this tool
+// has — it looks completely normal until playback, by which point the user has
+// spent 90 seconds. These three cases cover what the meter has to distinguish.
+async function micCase(mode) {
+  const ctx = await browser.newContext({ permissions: ["camera", "microphone"] });
+  const page = await ctx.newPage();
+  wire(page, `mic-${mode}: `);
+  await page.addInitScript(([m]) => {
+    navigator.mediaDevices.getUserMedia = async () => {
+      const cv = Object.assign(document.createElement("canvas"), { width: 320, height: 240 });
+      const g = cv.getContext("2d");
+      setInterval(() => { g.fillStyle = "#" + Math.floor(Math.random() * 16777215).toString(16); g.fillRect(0, 0, 320, 240); }, 100);
+      const video = cv.captureStream(25).getVideoTracks();
+      if (m === "notrack") return new MediaStream(video);
+      const ac = new AudioContext();
+      const dest = ac.createMediaStreamDestination();
+      if (m === "tone") { const o = ac.createOscillator(); o.start(); o.connect(dest); }
+      // "silent": a real audio track carrying nothing — what a dead or
+      // wrongly-selected input device actually produces.
+      return new MediaStream([...video, ...dest.stream.getAudioTracks()]);
+    };
+  }, [mode]);
+  await page.goto(URL_, { waitUntil: "load", timeout: 120000 });
+  await page.waitForSelector("#practice", { timeout: 60000 });
+  await page.waitForTimeout(HYDRATE);
+  await page.getByRole("button", { name: "Draw a topic" }).click();
+  await page.getByRole("button", { name: /Start 30s preparation/ }).click();
+  await page.waitForSelector("#practice video:visible", { timeout: 15000 });
+  await page.waitForTimeout(1500);
+  if (mode === "notrack") {
+    check(await page.locator("text=No microphone track").isVisible(), "[notrack] warns during prep that there is no mic track");
+  } else {
+    const lvl = await page.evaluate(() => {
+      const el = document.querySelector("#practice [data-level]");
+      return el ? Number(el.dataset.level) : -1;
+    });
+    check(mode === "tone" ? lvl >= 1 : lvl === 0,
+          `[${mode}] meter ${mode === "tone" ? "lights up" : "stays dark"} (${lvl}/3 dots)`);
+  }
+  await page.getByRole("button", { name: /I'm ready/ }).click();
+  await page.waitForTimeout(3500);
+  await page.getByRole("button", { name: "Stop" }).click();
+  await page.waitForSelector("text=Download your recording", { timeout: 20000 });
+  const warned = await page.locator("text=This take looks silent").isVisible();
+  check(mode === "tone" ? !warned : warned,
+        mode === "tone" ? "[tone] no false silent-warning on a good take" : `[${mode}] flags the silent take on review`);
+  await ctx.close();
+}
+console.log("\n--- mic level ---");
+for (const m of ["tone", "silent", "notrack"]) await micCase(m);
+
+// ---------- 6. local persistence ----------
+// Nothing is uploaded, so "keep my work" can only mean this browser: the topic
+// in localStorage, the take in IndexedDB. The subtle failure here is ordering —
+// an effect that saves on change also runs on mount with a null topic, and
+// clearing there wipes the stored id just before the async restore reads it.
+console.log("\n--- local persistence ---");
+{
+  const ctx = await browser.newContext({ permissions: ["camera", "microphone"] });
+  const page = await ctx.newPage();
+  wire(page, "persist: ");
+  await page.addInitScript(() => {
+    navigator.mediaDevices.getUserMedia = async () => {
+      const cv = Object.assign(document.createElement("canvas"), { width: 320, height: 240 });
+      const g = cv.getContext("2d");
+      setInterval(() => { g.fillStyle = "#" + Math.floor(Math.random() * 16777215).toString(16); g.fillRect(0, 0, 320, 240); }, 100);
+      const ac = new AudioContext(); const o = ac.createOscillator(); o.start();
+      const d = ac.createMediaStreamDestination(); o.connect(d);
+      return new MediaStream([...cv.captureStream(25).getVideoTracks(), ...d.stream.getAudioTracks()]);
+    };
+  });
+  const topicOf = () => page.locator("#practice p.font-semibold").first().textContent();
+  const load = async (u = URL_) => {
+    await page.goto(u, { waitUntil: "load", timeout: 180000 });
+    await page.waitForSelector("#practice", { timeout: 60000 });
+    await page.waitForTimeout(HYDRATE);
+  };
+
+  await load();
+  await page.getByRole("button", { name: "Draw a topic" }).click();
+  const t1 = (await topicOf())?.trim();
+  await page.goto("http://localhost:3000/tools", { waitUntil: "load", timeout: 180000 });
+  await load();
+  check((await topicOf())?.trim() === t1, "drawn topic survives navigating away and back");
+
+  await page.getByRole("button", { name: /Start 30s preparation/ }).click();
+  await page.waitForSelector("#practice video:visible", { timeout: 15000 });
+  await page.getByRole("button", { name: /I'm ready/ }).click();
+  await page.waitForTimeout(3500);
+  await page.getByRole("button", { name: "Stop" }).click();
+  await page.waitForSelector("text=Download your recording", { timeout: 20000 });
+  check(!(await page.locator("text=could not be saved").isVisible()), "take persisted without a save error");
+
+  await load();
+  check(await page.locator("text=Download your recording").isVisible(), "playback restored after a full reload");
+  check(await page.locator("text=restored from this browser").isVisible(), "says the take was restored");
+  check((await topicOf())?.trim() === t1, "restored take keeps the topic it was recorded for");
+  const bytes = await page.evaluate(async () => {
+    const v = document.querySelector("#practice video[controls]");
+    return (await (await fetch(v.src)).blob()).size;
+  });
+  check(bytes > 1000, `restored blob is intact (${bytes} bytes)`);
+
+  await page.getByRole("button", { name: "Delete this recording" }).click();
+  await page.waitForTimeout(800);
+  check(!(await page.locator("text=Download your recording").isVisible()), "delete clears the review immediately");
+  await load();
+  check(!(await page.locator("text=Download your recording").isVisible()), "deleted take does not come back on reload");
+
+  await load(URL_ + "?topic=f01");
+  check(((await topicOf()) || "").includes("snake"), "a shared ?topic= link beats stored state");
+  await ctx.close();
+}
+
+// ---------- 7. input device picker ----------
+// Reported from real use: Chrome had defaulted to "Microsoft Teams Audio Device
+// (Virtual)", a loopback device that carries no microphone audio, which is why
+// takes came out silent while Google Meet — which has its own picker — worked
+// fine. Simulate exactly that: a silent virtual device holding the default
+// slot, plus a real mic.
+console.log("\n--- input device picker ---");
+{
+  const ctx = await browser.newContext({ permissions: ["camera", "microphone"] });
+  const page = await ctx.newPage();
+  wire(page, "devices: ");
+  const INJECT = () => {
+    // Two inputs, mirroring the reported situation: a virtual conferencing
+    // device holding the default slot and carrying nothing, plus a real mic.
+    const DEVS = [
+      { deviceId: "teams", label: "Microsoft Teams Audio Device (Virtual)", silent: true },
+      { deviceId: "mbp",   label: "MacBook Pro Microphone",                 silent: false },
+    ];
+    navigator.mediaDevices.enumerateDevices = async () => [
+      ...DEVS.map(d => ({ kind: "audioinput", deviceId: d.deviceId, label: d.label, groupId: "g" })),
+      { kind: "videoinput", deviceId: "cam", label: "FaceTime HD Camera", groupId: "g" },
+    ];
+    navigator.mediaDevices.getUserMedia = async (c) => {
+      const want = c?.audio?.deviceId?.exact ?? c?.audio?.deviceId?.ideal ?? "teams";
+      const dev = DEVS.find(d => d.deviceId === want) ?? DEVS[0];
+      const cv = Object.assign(document.createElement("canvas"), { width:320, height:240 });
+      const g = cv.getContext("2d");
+      setInterval(()=>{g.fillStyle="#"+Math.floor(Math.random()*16777215).toString(16);g.fillRect(0,0,320,240);},100);
+      const ac = new AudioContext();
+      const dest = ac.createMediaStreamDestination();
+      if (!dev.silent) { const o = ac.createOscillator(); o.start(); o.connect(dest); }
+      const at = dest.stream.getAudioTracks()[0];
+      Object.defineProperty(at, "label", { value: dev.label });
+      at.getSettings = () => ({ deviceId: dev.deviceId });
+      window.__lastRequested = dev.deviceId;
+      return new MediaStream([...cv.captureStream(25).getVideoTracks(), at]);
+    };
+  };
+  await page.addInitScript(INJECT);
+  const load = async () => { await page.goto(URL_,{waitUntil:"load",timeout:180000}); await page.waitForSelector("#practice",{timeout:60000}); await page.waitForTimeout(6000); };
+  const meter = () => page.evaluate(() => { const e=document.querySelector("#practice [data-level]"); return e?Number(e.dataset.level):-1; });
+  const sel = page.locator("#practice select");
+
+  console.log("\n--- default is the silent virtual device ---");
+  await load();
+  await page.getByRole("button",{name:"Draw a topic"}).click();
+  await page.getByRole("button",{name:/Start 30s preparation/}).click();
+  await page.waitForSelector("#practice video:visible",{timeout:15000});
+  await page.waitForTimeout(1500);
+  check(await sel.isVisible(), "input picker is shown");
+  check(await sel.inputValue() === "teams", "picker reflects the device actually in use (teams)");
+  check((await sel.locator("option").allTextContents()).length === 2, "both inputs listed");
+  check(await meter() === 0, `meter dark on the virtual device (${await meter()}/3 dots)`);
+
+  console.log("\n--- switching input ---");
+  await sel.selectOption("mbp");
+  await page.waitForTimeout(2000);
+  check(await page.evaluate(() => window.__lastRequested) === "mbp", "re-acquired the stream on the chosen device");
+  check(await meter() >= 1, `meter lights up after switching (${await meter()}/3 dots)`);
+  check(await page.locator("text=Preparing").isVisible(), "still in prep — the clock was not lost");
+
+  console.log("\n--- choice is remembered ---");
+  await page.getByRole("button",{name:/I'm ready/}).click();
+  await page.waitForTimeout(2500);
+  check(await sel.isDisabled(), "picker locked during recording");
+  await page.getByRole("button",{name:"Stop"}).click();
+  await page.waitForSelector("text=Download your recording",{timeout:20000});
+  check(!(await page.locator("text=This take looks silent").isVisible()), "good take not flagged silent");
+  await load();
+  // The take persists, so a reload lands in review — start the next one from there.
+  check(await page.locator("text=restored from this browser").isVisible(), "reload restores the take (persistence intact)");
+  await page.getByRole("button",{name:"Same topic again"}).click();
+  await page.waitForSelector("#practice video:visible",{timeout:15000});
+  await page.waitForTimeout(1500);
+  check(await page.evaluate(() => window.__lastRequested) === "mbp", "remembered the chosen mic after a reload");
+  check(await meter() >= 1, "meter live on the remembered device");
+  await ctx.close();
+}
+
 await browser.close();
 console.log(`\nunexpected page/console errors: ${errors.length}`);
 errors.slice(0, 5).forEach((e) => console.log("   ! " + e.slice(0, 160)));
