@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
@@ -8,7 +7,6 @@ import { groupTools } from "@/lib/tools-registry";
 import type { ToolGroupId } from "@/lib/tools-hub";
 
 import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
-import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
@@ -28,44 +26,6 @@ export default function ToolsClient() {
   // larger card with its own CTA button and its own copy of that wiring, so the
   // hub looked unlike every other surface and the two implementations drifted.
   const grouped = groupTools();
-
-  // -------------------------
-  // Language switching demo
-  // -------------------------
-  const [activeLanguage, setActiveLanguage] = useState<"en" | "zh" | "es">("en");
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [currentTime, setCurrentTime] = useState(0);
-  const hasInteracted = useRef(false);
-
-  const languages = {
-    en: { flag: "🇺🇸", video: "/video/training_en.mp4", label: "EN" },
-    zh: { flag: "🇨🇳", video: "/video/training_zh.mp4", label: "ZH" },
-    es: { flag: "🇪🇸", video: "/video/training_es.mp4", label: "ES" },
-  };
-
-  const videoSrc = languages[activeLanguage].video;
-
-  const handleLanguageSwitch = (lang: "en" | "zh" | "es") => {
-    if (videoRef.current) setCurrentTime(videoRef.current.currentTime);
-    hasInteracted.current = true;
-    setActiveLanguage(lang);
-  };
-
-  useEffect(() => {
-    const vid = videoRef.current;
-    if (!vid) return;
-
-    const restoreAndPlay = () => {
-      vid.currentTime = currentTime;
-      if (hasInteracted.current) vid.play().catch(() => {});
-    };
-
-    vid.onloadeddata = restoreAndPlay;
-    return () => {
-      vid.onloadeddata = null;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeLanguage]);
 
   const coreFeatures = [
     { title: t("coreFeatures.oneShot.title"), desc: t("coreFeatures.oneShot.desc"), icon: "🎯" },
@@ -96,60 +56,6 @@ export default function ToolsClient() {
                 </div>
               ) : null,
             )}
-          </div>
-        </section>
-
-        {/* Language switching demo */}
-        <section className="w-full mt-2 mb-20">
-          <div className="text-center mb-8">
-            <p className="text-base sm:text-lg text-[var(--c2)] mb-6">
-              {t("tools.hero.watch_demo")}
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center">
-            {/* Demo container shrunk ~20% from max-w-2xl (672px) → 538px
-                so the video doesn't dominate the hero on wide screens.
-                Aspect ratio preserved via w-full + intrinsic video ratio. */}
-            <div className="w-full max-w-[538px] relative">
-              <CdnVideo
-                ref={videoRef}
-                src={videoSrc}
-                className="rounded-xl w-full shadow-2xl"
-                controls
-                loop
-                preload="metadata"
-                aria-label="AI-translated multilingual demo video"
-              />
-
-              <p className="text-sm text-gray-500 mt-4">
-                {t("tools.hero.transcript_label")}: "{t("tools.hero.training_transcript")}"
-              </p>
-
-              <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-4 z-10">
-                {Object.entries(languages).map(([code, lang]) => (
-                  <button
-                    key={code}
-                    onClick={() => handleLanguageSwitch(code as "en" | "zh" | "es")}
-                    className={`px-5 py-2 rounded-full flex items-center gap-2 text-sm font-semibold backdrop-blur-sm transition-all duration-300 ${
-                      activeLanguage === code
-                        ? "bg-blue-600 text-white shadow-md scale-110"
-                        : "bg-white/80 text-gray-800 hover:bg-gray-100 border border-gray-300"
-                    }`}
-                    type="button"
-                  >
-                    <span className="text-lg">{lang.flag}</span>
-                    <span>{lang.label}</span>
-                  </button>
-                ))}
-              </div>
-
-              <p className="text-center mt-4 text-[var(--c2)] font-medium">
-                {t("tools.hero.currently_playing", {
-                  label: languages[activeLanguage].label,
-                })}
-              </p>
-            </div>
           </div>
         </section>
 
