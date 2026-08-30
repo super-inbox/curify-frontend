@@ -254,6 +254,17 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
       "toastmasters", "toastmasters topics", "public speaking practice",
       "speaking practice", "speech practice", "speech timer",
       "practice speaking english", "presentation practice",
+      // 2026-08-30 — second pass on the same informational head term. The
+      // competition/classroom vocabulary ("extemporaneous", "table topics")
+      // and the duration-prefixed phrasings are how this demand is actually
+      // typed. English-only on purpose: the tool is locales: ["en"] and its
+      // 88 prompts are English, so a localized alias would route a non-English
+      // searcher to a surface they can't use.
+      "impromptu topics", "extemporaneous", "extemporaneous speech",
+      "extemporaneous speaking", "improv speech", "speech prompts",
+      "speaking prompts", "public speaking topics", "speaking topics",
+      "1 minute speech", "one minute speech", "2 minute speech",
+      "two minute speech",
     ],
   },
   {
@@ -332,7 +343,66 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
     aliases: [
       "speech translation", "voice translator", "translate audio",
       "audio translator", "real time translation",
+      // Bare `translator` pinned here on purpose (2026-08-30). Before the
+      // asl-video-translator entry below existed, this was the ONLY suggestion
+      // whose slug contained "translator", so the /search server-side
+      // "unambiguous substring" branch redirected the bare query here. Two
+      // entries now carry that substring, which kills that branch — the exact
+      // alias keeps the destination (both surfaces check exact before
+      // substring). Longer ASL phrases still win matchToolIntent's
+      // longest-match rule, so "sign language translator" is unaffected.
+      "translator",
       "语音翻译", "实时翻译", "traductor de voz", "traducir voz",
+    ],
+  },
+  {
+    // 2026-08-30 — /tools/asl-video-translator has been a live tool since
+    // 2026-08-16 but was never in this index, so EVERY on-site ASL query
+    // (measured: "asl video translations", "asl · american sign language")
+    // dead-ended on /topics/asl or /topics/language. The tool page was
+    // unreachable from search.
+    //
+    // Concept-vs-tool split. /topics/asl holds exactly ONE template
+    // (template-asl-sign-language-tutorial-infographic) and 4 examples, so it
+    // cannot absorb tool intent. The bare concept queries still land there —
+    // "asl", "american sign language", "sign language" are exact aliases of
+    // the tier-2 topic, and both surfaces (SearchBar submit, /search server
+    // routing) resolve exact matches BEFORE tool intent, with the tier-2 entry
+    // ahead of this one on the tie. What routes here is anything LONGER than
+    // the bare concept: "asl video translations", "translate sign language",
+    // and — deliberately — "american sign language <anything>", since with one
+    // ASL template on the site there is no image-side result set worth
+    // protecting. Revisit that last call if ASL template coverage grows.
+    //
+    // Multi-locale aliases are safe here (unlike impromptu-speech-practice,
+    // which is locales: ["en"]): the tool ships i18n copy in all 10 locales.
+    // Every alias is translation-qualified so it can't shadow the topic's own
+    // bare-concept aliases ("手语", "lengua de señas", "langue des signes").
+    slug: "asl-video-translator",
+    href: "/tools/asl-video-translator",
+    label: "ASL Video Translator",
+    emoji: "🧏",
+    tier: 3,
+    aliases: [
+      "asl translator", "asl translation", "asl translations",
+      "asl video translator", "asl video translation", "asl video translations",
+      "translate asl", "asl to english", "asl to text", "asl video to text",
+      "asl captions", "asl subtitles", "asl interpreter", "asl recognition",
+      "american sign language", "american sign language translator",
+      "american sign language translation", "american sign language video",
+      "sign language translator", "sign language translation",
+      "sign language translations", "sign language video translator",
+      "sign language video translation", "translate sign language",
+      "translate sign language video", "sign language to text",
+      "sign language to english", "sign language captions",
+      "sign language subtitles", "sign language interpreter",
+      "sign language recognition",
+      "手语翻译", "美式手语翻译", "手语视频翻译", "手语转文字", "翻译手语",
+      "수어 번역", "수화 번역",
+      "traductor de lengua de señas", "traducir lengua de señas",
+      "traductor de señas", "traduction langue des signes",
+      "traducteur langue des signes", "gebärdensprache übersetzer",
+      "gebärdensprache übersetzen",
     ],
   },
 ];
