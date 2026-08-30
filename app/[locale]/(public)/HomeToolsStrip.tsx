@@ -22,6 +22,13 @@ import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 export default function HomeToolsStrip() {
   const t = useTranslations("home.toolsStrip");
 
+  // NB this list is deliberately NARROWER than isInlineTool() in the registry,
+  // which since 2026-08-30 also covers brand_direction, the three
+  // design→manufacturing exports and impromptu_practice. Those all render real
+  // working surfaces and say "Create" on /tools, so by this strip's own stated
+  // rule they would belong here too — but widening the home page is a separate
+  // decision from labelling the hub correctly. Kept explicit so the difference
+  // reads as a choice rather than an oversight.
   const tools = TOOL_REGISTRY.filter(
     (tool) =>
       tool.status === "create" ||

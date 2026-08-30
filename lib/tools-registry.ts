@@ -660,6 +660,36 @@ export function getToolById(id: string) {
   return TOOL_REGISTRY.find((t) => t.id === id);
 }
 
+/** Actions that render a real, working surface on the tool's own page.
+ *
+ *  These tools are `status: "demo"` for a purely mechanical reason —
+ *  `status: "create"` is hard-wired to the video CreateNewModal (see the notes
+ *  on ToolDef) — but they are finished products, not demo reels. Cards for them
+ *  say "Create" and link to #reproduce; the click lands on the working surface
+ *  instead of opening a dialogue, which is the same promise from the user's
+ *  side.
+ *
+ *  Kept here rather than in a component so the label and the destination cannot
+ *  drift apart: a card that says "Create" and a link that goes to a demo page
+ *  is the failure this replaces. Add new inline `ToolAction` variants here. */
+export const INLINE_TOOL_ACTIONS = new Set<ToolAction["type"]>([
+  "generate",
+  "product_video",
+  "costume_tryon",
+  "brand_direction",
+  // Design → manufacturing: all three POST to /design-tools/* and return real
+  // factory files.
+  "sticker_export",
+  "acrylic_export",
+  "packaging_mockup",
+  "impromptu_practice",
+]);
+
+export function isInlineTool(tool: ToolDef): boolean {
+  const type = tool.action?.type;
+  return !!type && INLINE_TOOL_ACTIONS.has(type);
+}
+
 export function groupTools(): Record<ToolGroupId, ToolDef[]> {
   return TOOL_REGISTRY.reduce(
     (acc, tool) => {
