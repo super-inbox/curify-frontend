@@ -135,6 +135,35 @@ async function main() {
     byPage.map((r) => [r.keys[0], r.clicks, r.impressions, `${(r.ctr * 100).toFixed(2)}%`, r.position.toFixed(1)])
   );
 
+  // PagesQueries.csv
+  //
+  // The one view neither the GSC UI export nor the other files here can give
+  // you: which QUERIES each page actually ranks for. Page-level average
+  // position is a blend and routinely lies — a page showing "position 5" can be
+  // 4.4 on its head term or a mirage averaged over long-tail scraps. It is also
+  // the only way to tell an ANSWER-intent query ("haaland mbti", one word of
+  // answer, near-zero-click by nature) from a CREATION-intent one ("mbti
+  // character maker", which needs a click to deliver anything) — and that
+  // distinction decides whether a page is worth optimising at all.
+  //
+  // Capped to pages with real volume: the pair dimension explodes row count,
+  // and a page with 3 impressions has nothing to diagnose.
+  console.log("→ PagesQueries.csv (page × query)");
+  const MIN_PAGE_IMPRESSIONS = 25;
+  const bigPages = new Set(
+    byPage.filter((r) => r.impressions >= MIN_PAGE_IMPRESSIONS).map((r) => r.keys[0])
+  );
+  const byPageQuery = await queryGsc(sc, site, { ...base, dimensions: ["page", "query"] });
+  const pq = byPageQuery.filter((r) => bigPages.has(r.keys[0]));
+  writeCsv(
+    path.join(args.outDir, "PagesQueries.csv"),
+    ["Page", "Query", "Clicks", "Impressions", "CTR", "Position"],
+    pq
+      .sort((a, b) => b.impressions - a.impressions)
+      .map((r) => [r.keys[0], r.keys[1], r.clicks, r.impressions, `${(r.ctr * 100).toFixed(2)}%`, r.position.toFixed(1)])
+  );
+  console.log(`   ${pq.length} pairs across ${bigPages.size} pages (>=${MIN_PAGE_IMPRESSIONS} impressions)`);
+
   // Countries.csv
   console.log("→ Countries.csv (top countries)");
   const byCountry = await queryGsc(sc, site, { ...base, dimensions: ["country"] });

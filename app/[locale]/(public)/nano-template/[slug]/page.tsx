@@ -43,6 +43,7 @@ import {
 import { getTagChildren, getPrimaryTagTier1, getTopicNavList } from "@/lib/topicRegistry";
 import { getUseCasesForTopics } from "@/lib/topicRegistry_pure";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import MbtiGeneratorLink from "@/app/[locale]/_components/MbtiGeneratorLink";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -360,6 +361,11 @@ export default async function NanoTemplatePage({ params }: Props) {
 
       {/* VerticalPageSchema v1 — Pillar 1 authored domain-knowledge block */}
       <VerticalKnowledgeSection vertical={vertical} />
+
+      {/* Same hand-off as the example pages: these MBTI hubs rank top-ten on
+          answer queries the AI Overview now absorbs, so route their standing
+          to the generator. Renders only for MBTI templates. */}
+      <MbtiGeneratorLink locale={localeStr} templateId={templateId} />
 
       {verticalJsonLd ? (
         <script

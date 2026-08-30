@@ -121,6 +121,48 @@ const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
       Icon: MessageCircle,
     },
   ],
+  // 126 impr at pos 14.8, 3 clicks (28d to 2026-08-29). The head query behind
+  // it, "food packaging design with ai" (pos 32.7), returns a page 1 that is
+  // ENTIRELY tool landing pages — Packify x3, Lovart, Phygital+, Sourceful —
+  // plus two tool-comparison listicles. A prompt list is the wrong shape for
+  // that SERP, and we already own the right shape, so send the reader to it.
+  "50-ai-packaging-design-prompts": [
+    {
+      id: "packaging-mockup-tool",
+      label: "Open the Packaging Mockup Generator",
+      description:
+        "Turn a flat dieline into a folded 3D box render — the prompts above, applied to a real package.",
+      href: "/tools/packaging-mockup",
+      Icon: Wrench,
+    },
+    {
+      id: "packaging-templates",
+      label: "Browse packaging templates",
+      description: "Food, IP merch and brand-VI packaging sets, ready to remix.",
+      href: "/topics/packaging",
+      Icon: Wrench,
+    },
+  ],
+  // 36 impr at pos 13.8, 0 clicks. Its sibling /nano-template/travel ranks 9.4
+  // for "travel map prompt" and is the thing a reader planning a trip actually
+  // wants to operate, so pair them rather than leaving both stranded.
+  "ai-travel-itinerary-templates": [
+    {
+      id: "travel-map-generator",
+      label: "Open the Travel Map Generator",
+      description:
+        "Hand-drawn route maps for the itinerary you just planned — pick a trip and generate.",
+      href: "/nano-template/travel",
+      Icon: Wrench,
+    },
+    {
+      id: "travel-templates",
+      label: "Browse travel templates",
+      description: "Itinerary cards, packing lists and city guides as visual sets.",
+      href: "/topics/travel",
+      Icon: Wrench,
+    },
+  ],
   // 11+ clicks (ko locale especially); readers want to try the prompt patterns,
   // not a partnership conversation.
   "10-prompting-tips-nano-banana": [

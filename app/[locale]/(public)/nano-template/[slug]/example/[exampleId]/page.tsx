@@ -10,6 +10,7 @@ import ExampleReproduceSurface from "./ExampleReproduceSurface";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ExampleRelatedTopics from "./ExampleRelatedTopics";
+import MbtiGeneratorLink from "@/app/[locale]/_components/MbtiGeneratorLink";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
 import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
@@ -553,6 +554,13 @@ export default async function NanoExampleDetailPage({
         {/* VerticalPageSchema — Pillar 1 authored domain-knowledge block
             (example-level: MBTI type breakdown, strengths, career fit, etc.). */}
         <VerticalKnowledgeSection vertical={vertical} />
+
+        {/* Spend the ranking, don't mourn it. These MBTI example pages rank
+            3–9 and take ~zero clicks because Google answers their queries in
+            an AI Overview — so route their standing to the generator, which
+            serves creation-intent queries a click actually satisfies. Renders
+            only for MBTI templates. */}
+        <MbtiGeneratorLink locale={rawLocale} templateId={templateId} />
 
         {verticalJsonLd ? (
           <script
