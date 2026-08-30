@@ -28,6 +28,7 @@ import NanoBananaExamples from "@/app/[locale]/(public)/blog/[slug]/NanoBananaEx
 import BlogCategoryLabel from "@/app/[locale]/_components/BlogCategoryLabel";
 import AutoTableOfContents from "@/app/[locale]/_components/AutoTableOfContents";
 import MbtiUniversePicker from "@/app/[locale]/_components/MbtiUniversePicker";
+import MbtiRandomizer from "@/app/[locale]/_components/MbtiRandomizer";
 
 // Helper function to decode HTML entities (server-safe)
 function decodeHTMLEntities(text: string): string {
@@ -122,11 +123,17 @@ export default function MBTICharacterGeneratorPage() {
             <BlogCategoryLabel slug="mbti-character-generator" />
           </div>
 
-          {/* Tool-intent hand-off. "mbti generator" ranks pos 5.7 here
-              (286 impr / 6 clicks); "random mbti generator" pos 5.9 with 271
-              impressions and ZERO clicks. The article's own promise is "10
-              universes" — so let the reader pick one and land on that generator
-              instead of reading first. */}
+          {/* The thing the query actually asks for. We rank #2 for "random
+              mbti generator" and take ZERO clicks, because every competitor on
+              that SERP is a one-press widget and we were an article. The
+              universe grid below was the 2026-08-21 attempt at the same problem
+              and did not move it — an in-page CTA cannot change what the SERP
+              listing promises, so this ships with a rewritten title/description.
+              See MbtiRandomizer for why it randomises types, not characters. */}
+          <MbtiRandomizer locale={locale} />
+
+          {/* Secondary hand-off: for readers who arrived wanting a specific
+              universe rather than a random draw. */}
           <MbtiUniversePicker locale={locale} />
         </header>
 

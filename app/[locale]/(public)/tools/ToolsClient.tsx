@@ -1,108 +1,31 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
-import { useAtom } from "jotai";
-import {
-  modalAtom,
-  userAtom,
-  drawerAtom,
-  clientMountedAtom,
-  createJobContextAtom, // ✅ NEW
-} from "@/app/atoms/atoms";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
-import { buildToolsHub } from "@/lib/tools-hub";
-import { getToolById } from "@/lib/tools-registry"; // ✅ NEW
+import { groupTools } from "@/lib/tools-registry";
+import type { ToolGroupId } from "@/lib/tools-hub";
 
 import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
-import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
+import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
-import { useTracking } from "@/services/useTracking";
 import CreateNewModal from "./CreateNewModal";
 
-export default function ToolsClient() {
-  const [, setModalState] = useAtom(modalAtom);
-  const [, setCreateJobCtx] = useAtom(createJobContextAtom); // ✅ NEW
-  const [user] = useAtom(userAtom);
-  const [, setDrawerState] = useAtom(drawerAtom);
-  const [clientMounted] = useAtom(clientMountedAtom);
+// Group order on the hub. "design" sits after "image" because it consumes what
+// the image tools produce.
+const GROUP_ORDER: ToolGroupId[] = ["video", "image", "design", "audio"];
 
+export default function ToolsClient() {
   const t = useTranslations();
   const { locale } = useParams<{ locale: string }>();
 
-  // ✅ Open modal only if logged in — otherwise prompt sign-in
-  // ✅ Now uses tool registry job_type (backend-aligned)
-  const openToolModal = useCallback(
-    (toolId: string) => {
-      const tool = getToolById(toolId);
-      if (!tool) return;
-
-      if (!user) {
-        setDrawerState("signin");
-        return;
-      }
-
-      // ✅ CreateNewModal reads this and renders correct UI + submits job_settings.job_type
-      setCreateJobCtx({ toolId: tool.id, slug: tool.slug, job_type: tool.job_type });
-      setModalState("add");
-    },
-    [user, setDrawerState, setCreateJobCtx, setModalState]
-  );
-
-  // ✅ buildToolsHub should now set onClick to call openToolModal(tool.id)
-  const toolGroups = buildToolsHub({ t, openToolModal, locale });
-
-  // Single tool_card interaction event per click (covers both demo Link
-  // navigations and create-button modal opens). Matches the tracking
-  // wired into the shared ToolsGrid component so /tools, /tools/[slug]
-  // related-tools, and /use-cases/[slug] all log identically.
-  const { trackAction } = useTracking();
-  const trackToolClick = (toolId: string) => {
-    trackAction(
-      { contentId: toolId, contentType: "tool_card", viewMode: "cards" },
-      "click",
-    );
-  };
-
-  // -------------------------
-  // Language switching demo
-  // -------------------------
-  const [activeLanguage, setActiveLanguage] = useState<"en" | "zh" | "es">("en");
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [currentTime, setCurrentTime] = useState(0);
-  const hasInteracted = useRef(false);
-
-  const languages = {
-    en: { flag: "🇺🇸", video: "/video/training_en.mp4", label: "EN" },
-    zh: { flag: "🇨🇳", video: "/video/training_zh.mp4", label: "ZH" },
-    es: { flag: "🇪🇸", video: "/video/training_es.mp4", label: "ES" },
-  };
-
-  const videoSrc = languages[activeLanguage].video;
-
-  const handleLanguageSwitch = (lang: "en" | "zh" | "es") => {
-    if (videoRef.current) setCurrentTime(videoRef.current.currentTime);
-    hasInteracted.current = true;
-    setActiveLanguage(lang);
-  };
-
-  useEffect(() => {
-    const vid = videoRef.current;
-    if (!vid) return;
-
-    const restoreAndPlay = () => {
-      vid.currentTime = currentTime;
-      if (hasInteracted.current) vid.play().catch(() => {});
-    };
-
-    vid.onloadeddata = restoreAndPlay;
-    return () => {
-      vid.onloadeddata = null;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeLanguage]);
+  // Cards, auth gating, modal opening and tool_card tracking all live in the
+  // shared ToolsGrid — the same component the home strip, /use-cases/[slug] and
+  // the "Other tools" footer render. This page used to hand-roll a second,
+  // larger card with its own CTA button and its own copy of that wiring, so the
+  // hub looked unlike every other surface and the two implementations drifted.
+  const grouped = groupTools();
 
   const coreFeatures = [
     { title: t("coreFeatures.oneShot.title"), desc: t("coreFeatures.oneShot.desc"), icon: "🎯" },
@@ -122,182 +45,17 @@ export default function ToolsClient() {
 
         {/* Tools hub (grouped) */}
         <section className="w-full mb-14">
-          <div className="space-y-4">
-            {toolGroups.map((group) => (
-              <div key={group.groupId} className="w-full">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl sm:text-2xl font-bold text-[var(--c1)]">
-                    {group.title}
+          <div className="space-y-10">
+            {GROUP_ORDER.map((groupId) =>
+              grouped[groupId].length ? (
+                <div key={groupId} className="w-full">
+                  <h2 className="mb-4 text-xl font-bold text-[var(--c1)] sm:text-2xl">
+                    {t(`tools.groups.${groupId}`)}
                   </h2>
+                  <ToolsGrid tools={grouped[groupId]} />
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                  {group.items.map((tool) => {
-                    const Card = (
-                      <div
-                        className={`group h-full rounded-2xl shadow-lg p-5 flex flex-col justify-between
-                        bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)]
-                        border border-gray-100 transition-shadow
-                        ${
-                          tool.href
-                            ? "cursor-pointer hover:shadow-xl"
-                            : tool.status !== "coming_soon"
-                            ? "cursor-pointer hover:shadow-xl"
-                            : ""
-                        }`}
-                      >
-                        <div className="flex-grow">
-                          <h3 className="text-lg font-bold text-gray-900 mb-2">{tool.title}</h3>
-
-                          <p className="text-sm text-gray-600 mb-4 line-clamp-3">
-                            {"desc" in tool ? tool.desc : ""}
-                          </p>
-                        </div>
-
-                        {tool.status === "create" ? (
-                          <button
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              trackToolClick(tool.id);
-                              // ✅ tool.onClick is auth-gated inside openToolModal
-                              tool.onClick?.();
-                            }}
-                            className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer relative"
-                            type="button"
-                          >
-                            {t("tools.create")}
-                            {clientMounted && !user && (
-                              <span className="ml-2 text-xs opacity-80">🔒</span>
-                            )}
-                          </button>
-                        ) : tool.status === "demo" ? (
-                          // Card itself is wrapped in a Link to the SEO page
-                          // (tool.href is set for demo tools by buildToolsHub),
-                          // so the inner element just needs to look button-like
-                          // for affordance. Lighter accent than Create to
-                          // signal "demo / early access" vs "live tool".
-                          "isGenerate" in tool && tool.isGenerate ? (
-                            // Real inline image2image tool → primary "Create"
-                            // button (same look as video Create). The card is
-                            // wrapped in a <Link> to the tool page's #reproduce
-                            // section.
-                            <span className="relative mt-4 block w-full text-center px-4 py-2 rounded-lg font-bold text-white shadow-lg bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] transition-opacity duration-300 group-hover:opacity-90">
-                              {t("tools.create")}
-                              {clientMounted && !user && (
-                                <span className="ml-2 text-xs opacity-80">🔒</span>
-                              )}
-                            </span>
-                          ) : (
-                            <span className="mt-4 block w-full text-center px-4 py-2 rounded-lg font-semibold border border-purple-200 bg-purple-50 text-purple-700 transition-colors duration-200 group-hover:bg-purple-100 group-hover:border-purple-400">
-                              {t("tools.see_demo")}
-                            </span>
-                          )
-                        ) : (
-                          <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
-                            {t("tools.coming_soon")}
-                          </p>
-                        )}
-                      </div>
-                    );
-
-                    // ✅ Card click navigates if href exists
-                    // ✅ Otherwise (create tools), card click triggers modal open
-                    if (tool.href) {
-                      return (
-                        <Link
-                          key={tool.id}
-                          href={tool.href}
-                          onClick={() => {
-                            // Demo cards: track Link nav. Create cards have
-                            // a button inside that already tracks via the
-                            // onClick path, so guard to avoid double-count
-                            // when the whole-card button-wrapper also fires.
-                            if (tool.status !== "create") trackToolClick(tool.id);
-                          }}
-                          className="block h-full hover:no-underline"
-                        >
-                          {Card}
-                        </Link>
-                      );
-                    }
-
-                    // If it's creatable and has onClick, make the whole card clickable too
-                    if (tool.status === "create" && tool.onClick) {
-                      return (
-                        <button
-                          key={tool.id}
-                          type="button"
-                          onClick={() => {
-                            trackToolClick(tool.id);
-                            tool.onClick?.();
-                          }}
-                          className="block h-full w-full text-left"
-                        >
-                          {Card}
-                        </button>
-                      );
-                    }
-
-                    return <div key={tool.id} className="h-full">{Card}</div>;
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Language switching demo */}
-        <section className="w-full mt-2 mb-20">
-          <div className="text-center mb-8">
-            <p className="text-base sm:text-lg text-[var(--c2)] mb-6">
-              {t("tools.hero.watch_demo")}
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center">
-            {/* Demo container shrunk ~20% from max-w-2xl (672px) → 538px
-                so the video doesn't dominate the hero on wide screens.
-                Aspect ratio preserved via w-full + intrinsic video ratio. */}
-            <div className="w-full max-w-[538px] relative">
-              <CdnVideo
-                ref={videoRef}
-                src={videoSrc}
-                className="rounded-xl w-full shadow-2xl"
-                controls
-                loop
-                preload="metadata"
-                aria-label="AI-translated multilingual demo video"
-              />
-
-              <p className="text-sm text-gray-500 mt-4">
-                {t("tools.hero.transcript_label")}: "{t("tools.hero.training_transcript")}"
-              </p>
-
-              <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-4 z-10">
-                {Object.entries(languages).map(([code, lang]) => (
-                  <button
-                    key={code}
-                    onClick={() => handleLanguageSwitch(code as "en" | "zh" | "es")}
-                    className={`px-5 py-2 rounded-full flex items-center gap-2 text-sm font-semibold backdrop-blur-sm transition-all duration-300 ${
-                      activeLanguage === code
-                        ? "bg-blue-600 text-white shadow-md scale-110"
-                        : "bg-white/80 text-gray-800 hover:bg-gray-100 border border-gray-300"
-                    }`}
-                    type="button"
-                  >
-                    <span className="text-lg">{lang.flag}</span>
-                    <span>{lang.label}</span>
-                  </button>
-                ))}
-              </div>
-
-              <p className="text-center mt-4 text-[var(--c2)] font-medium">
-                {t("tools.hero.currently_playing", {
-                  label: languages[activeLanguage].label,
-                })}
-              </p>
-            </div>
+              ) : null,
+            )}
           </div>
         </section>
 

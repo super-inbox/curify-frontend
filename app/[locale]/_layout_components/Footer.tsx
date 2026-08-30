@@ -37,6 +37,10 @@ export default function Footer() {
           {t("aboutUs")}
         </Link>
         <span className="text-gray-400">|</span>
+        <Link href="/pricing" className="hover:underline">
+          {t("pricing")}
+        </Link>
+        <span className="text-gray-400">|</span>
         {/* Enterprise AI line (2026-08-12). /enterprise is bilingual (en + zh
             only — see its copy.ts), so the label follows the same rule rather
             than going through the 10-locale `footer` namespace: a localized

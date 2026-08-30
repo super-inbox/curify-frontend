@@ -12,7 +12,12 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import { drawerAtom, userAtom } from "@/app/atoms/atoms";
+import {
+  drawerAtom,
+  userAtom,
+  modalAtom,
+  topUpContextAtom,
+} from "@/app/atoms/atoms";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 import { toSlug } from "@/lib/nano_pure";
 import type {
@@ -40,6 +45,8 @@ type Copy = {
   planningFailed: string;
   generationFailed: string;
   insufficient: (needed: number, available: number) => string;
+  /** Names the blocked action in the top-up modal. */
+  batchJobLabel: string;
   confirm: (count: number, credits: number) => string;
   pending: string;
   completed: string;
@@ -66,6 +73,7 @@ const EN_COPY: Copy = {
   generationFailed: "Some images could not be generated. You can retry the batch.",
   insufficient: (needed, available) =>
     `Not enough credits. You need ${needed}, but have ${available}.`,
+  batchJobLabel: "This batch",
   confirm: (count, credits) =>
     `Generate ${count} image${count === 1 ? "" : "s"} for up to ${credits} credits?`,
   pending: "Queued",
@@ -92,6 +100,7 @@ const ZH_COPY: Copy = {
   generationFailed: "部分图片生成失败，可以重新生成本批次。",
   insufficient: (needed, available) =>
     `积分不足：需要 ${needed}，当前可用 ${available}。`,
+  batchJobLabel: "本批生成",
   confirm: (count, credits) =>
     `确认生成 ${count} 张图片吗？最多消耗 ${credits} 积分。`,
   pending: "排队中",
@@ -147,6 +156,8 @@ export default function GenerableTemplatesSection({
   const [isRunning, setIsRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [user, setUser] = useAtom(userAtom);
+  const setModal = useSetAtom(modalAtom);
+  const setTopUpContext = useSetAtom(topUpContextAtom);
   const setDrawer = useSetAtom(drawerAtom);
   const pendingAfterAuth = useRef(false);
   const { track } = useTracking();
@@ -217,7 +228,23 @@ export default function GenerableTemplatesSection({
     }
     const available = totalCredits(profile);
     if (available < plan.total_credits) {
+      // Keep the inline message — this surface has room for it and the batch size
+      // is worth restating — but open the modal too. Until 2026-08-30 this was
+      // the only paywall on the site that stated a shortfall and then offered
+      // nothing to do about it.
       setError(copy.insufficient(plan.total_credits, available));
+      track({
+        contentId: `paywall:search-batch-generate`,
+        contentType: "topic_capsule",
+        actionType: "click",
+      });
+      setTopUpContext({
+        required: plan.total_credits,
+        available,
+        jobLabel: copy.batchJobLabel,
+        surface: "search-batch-generate",
+      });
+      setModal("topup");
       return;
     }
     if (!window.confirm(copy.confirm(plan.directions.length, plan.total_credits))) {

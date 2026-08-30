@@ -10,11 +10,28 @@ import {
   pollNanoResult,
 } from "@/services/pollNanoResult";
 import { buildExampleId } from "@/lib/nano_pure";
-import { findDuplicate, type ExistingExampleRef } from "@/lib/editDistance";
+import {
+  findDuplicate,
+  type DuplicateMatch,
+  type ExistingExampleRef,
+} from "@/lib/editDistance";
 import { useTracking, type TrackingTarget } from "@/services/useTracking";
-import { userAtom, drawerAtom } from "@/app/atoms/atoms";
+import {
+  userAtom,
+  drawerAtom,
+  modalAtom,
+  topUpContextAtom,
+} from "@/app/atoms/atoms";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
-const CREDITS_COST = 10;
+/** The client-side affordability check. Must equal what the backend actually
+ *  charges: this file declared its own `= 10` from the 10-credit era and was
+ *  missed when generation was cut to 5 on 2026-08-16, so from then until
+ *  2026-08-30 anyone holding 5-9 credits was told they could not afford a
+ *  generation they could afford — i.e. the last image of the 50-credit signup
+ *  grant was refused, to the cohort closest to converting. This is a fast path
+ *  only; the backend pre-flight is the real gate. */
+const CREDITS_COST = IMAGE_GENERATION_CREDITS;
 
 // Mark an error as carrying a clean, user-facing message (e.g. the backend's
 // CONTENT_BLOCKED reason) so the catch surfaces it verbatim instead of the
@@ -33,6 +50,17 @@ type Options = {
   // templates with requires_image_upload — the caller gates Generate on it
   // and passes it through here so it lands in the generate request.
   referenceImageUrl?: string;
+  /** Called instead of generating when an existing image already matches.
+   *
+   *  The duplicate check has always BLOCKED the redundant generation — the
+   *  credits were never spent — but all the user got was a sentence and a link to
+   *  another page. Seeing the alternative therefore cost a navigation, while
+   *  "generate anyway" was one click, so the cheap path was the harder one. A
+   *  surface that implements this can render the match in place instead.
+   *
+   *  Only fired when the matched example carried an `imageUrl`; the warning is
+   *  still set either way, so surfaces that do not implement this are unchanged. */
+  onReusedExisting?: (imageUrl: string, match: DuplicateMatch) => void;
 };
 
 export function useDirectGenerate({
@@ -42,18 +70,18 @@ export function useDirectGenerate({
   tracking,
   onSuccess,
   referenceImageUrl,
+  onReusedExisting,
 }: Options) {
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
+  const [, setModal] = useAtom(modalAtom);
+  const [, setTopUpContext] = useAtom(topUpContextAtom);
   const { trackAction, track } = useTracking();
   const t = useTranslations("actionButtons");
 
   const [isGenerating, setIsGenerating] = useState(false);
   const isGeneratingRef = useRef(false);
-  const [duplicateWarning, setDuplicateWarning] = useState<{
-    exampleId: string;
-    score: number;
-  } | null>(null);
+  const [duplicateWarning, setDuplicateWarning] = useState<DuplicateMatch | null>(null);
   const bypassRef = useRef(false);
   // Tracks the exId of the most recent successful generation so a follow-up
   // click with identical params surfaces the duplicate warning instead of
@@ -98,8 +126,25 @@ export function useDirectGenerate({
     const credits =
       ((user as any)?.non_expiring_credits ?? 0) +
       ((user as any)?.expiring_credits ?? 0);
+      // Paywall. This used to be a bare `alert()` with no way to pay from it —
+      // on the surfaces that carry almost all generation traffic, including the
+      // one route our only paying customer converted through. Open the top-up
+      // modal with the blocked job attached, and emit the event that makes the
+      // hit countable: until 2026-08-30 "50 users reached the paywall" was
+      // inferred from balances, never observed.
     if (credits < CREDITS_COST) {
-      alert(t("insufficientCredits"));
+      track({
+        contentId: `paywall:nano-template-generate`,
+        contentType: "topic_capsule",
+        actionType: "click",
+      });
+      setTopUpContext({
+        required: CREDITS_COST,
+        available: credits,
+        jobLabel: t("jobLabelImage"),
+        surface: "nano-template-generate",
+      });
+      setModal("topup");
       isGeneratingRef.current = false;
       return;
     }
@@ -110,6 +155,10 @@ export function useDirectGenerate({
       const dup = findDuplicate(templateId, params, existingExamples);
       if (dup) {
         setDuplicateWarning(dup);
+        // Hand the existing image straight to the surface so it lands in the
+        // result panel. No generate request is made either way; this only
+        // decides whether the user can SEE what they already have.
+        if (dup.imageUrl) onReusedExisting?.(dup.imageUrl, dup);
         isGeneratingRef.current = false;
         return;
       }

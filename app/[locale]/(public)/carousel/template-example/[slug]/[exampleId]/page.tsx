@@ -144,9 +144,13 @@ export default async function TemplateExampleCarouselPage({
   const templateBatch = templateView?.batch ?? false;
   const basePrompt = templateView?.base_prompt ?? "";
 
+  // imageUrl lets a duplicate be SHOWN rather than described — see
+  // ExistingExampleRef. Prefer the preview: it is what the result panel renders,
+  // and it is the smaller fetch.
   const existingExamples = templateImages.map((img) => ({
     id: img.id,
     params: img.params ?? {},
+    imageUrl: img.asset?.preview_image_url ?? img.asset?.image_url,
   }));
 
   return (

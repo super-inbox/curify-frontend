@@ -7,6 +7,7 @@ import { Tab } from "@headlessui/react";
 import { Music2 } from "lucide-react";
 import clsx from "clsx";
 import ExportDialog from "../../../_componentForPage/ExportDialog";
+import AslUnverifiedNotice from "../../../_components/AslUnverifiedNotice";
 import { ProjectDetails } from "@/types/segments";
 import { projectService } from "@/services/projects";
 import { useSetAtom } from "jotai";
@@ -261,6 +262,8 @@ export default function ProjectDetailsPage() {
   return (
     <>
       <div className="min-h-screen bg-white p-6 pt-20 flex flex-col">
+        {/* Renders only for ASL jobs; a no-op for every other job type. */}
+        <AslUnverifiedNotice runtimeConfig={projectDetails.runtime_config} />
         <div className="flex justify-between items-center mb-6">
           <Link
             href="/workspace"

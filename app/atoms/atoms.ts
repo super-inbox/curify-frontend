@@ -101,6 +101,29 @@ export type ModalType =
 
 export const modalAtom = atom<ModalType>(null);
 
+/** Why the top-up modal was opened.
+ *
+ *  `ModalType` is a bare string union that every `setModal` call site already
+ *  passes positionally, so the blocked-job context rides alongside it rather than
+ *  widening that type. Null when the user opened the modal themselves from the
+ *  header, which is the case the modal must still render sensibly.
+ *
+ *  Set this immediately BEFORE `setModal("topup")` at any paywall, and clear it
+ *  when the modal closes — a stale context would tell the next visitor they were
+ *  blocked on something they never attempted. */
+export type TopUpContext = {
+  /** Credits the blocked action needed. */
+  required: number;
+  /** Credits the user held at the moment they were blocked. */
+  available: number;
+  /** Human-readable name of what they were trying to do, already localized. */
+  jobLabel: string;
+  /** Which surface blocked them — mirrors the tracking contentId. */
+  surface: string;
+};
+
+export const topUpContextAtom = atom<TopUpContext | null>(null);
+
 
 // ─────────────────────────────────────────────────────────
 // Footer

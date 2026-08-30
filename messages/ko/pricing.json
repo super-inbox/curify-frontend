@@ -11,7 +11,8 @@
     "common": {
       "month": "월",
       "pricing": "가격",
-      "receive": "수신"
+      "receive": "수신",
+      "onceAtSignup": "가입 시 1회 지급"
     },
     "buttons": {
       "signUp": "가입하기",
@@ -86,7 +87,7 @@
         "subtitleTools": "자막 도구(추가/제거, 번역 없음)",
         "batchProcessing": "일괄 처리",
         "maxVideoLength": "작업당 최대 비디오 길이",
-        "monthlyCredits": "월간 무료 크레딧",
+        "monthlyCredits": "무료 크레딧",
         "priorityQueue": "우선 순위 대기열 / 더 빠른 처리",
         "creditTopUp": "크레딧 충전"
       },
@@ -97,7 +98,8 @@
         "fiveHoursPerMonth": "5시간/월",
         "fiveMinutes": "5분",
         "thirtyMinutes": "30분",
-        "sixtyMinutes": "60분"
+        "sixtyMinutes": "60분",
+        "afterTopUp": "충전 후 해제"
       }
     }
   }

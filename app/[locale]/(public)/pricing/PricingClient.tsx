@@ -1,6 +1,7 @@
 'use client';
 
 import { Link } from "@/i18n/navigation";
+import { PLAN_CREDITS } from "@/lib/pricing";
 import React from 'react';
 import { useAtomValue, useSetAtom } from "jotai";
 import { drawerAtom, userAtom } from "@/app/atoms/atoms";
@@ -16,11 +17,6 @@ export default function PricingClient() {
   const t = useTranslations('pricing');
   const setDrawerState = useSetAtom(drawerAtom);
   const user = useAtomValue(userAtom);
-    // Mirrors curify_background subscription_constants.SUBSCRIPTION_PLANS.
-  // Repriced 2026-08-21 (CREATOR 500->200, PRO 5000->1200) because the old
-  // allowances sold credits BELOW vendor cost; the page still showed the old
-  // numbers, which is exactly the drift lib/pricing.ts exists to prevent.
-  const PLAN_CREDITS = { FREE: 50, CREATOR: 200, PRO: 1200 } as const;
 
   // Feature bullets were rendered by hardcoded index (features.0 … features.3),
   // so any bullet added to a locale file silently never rendered. Driven by the
@@ -132,7 +128,12 @@ export default function PricingClient() {
             <span className="text-gray-600 ml-1 text-base">/ {t('common.month')}</span>
           </div>
           {renderButton('FREE')}
-          <p className="text-sm text-gray-600 mb-4 text-center">{t('common.receive')} <strong>{PLAN_CREDITS.FREE} 🐚</strong>/{t('common.month')}</p>
+          {/* NOT "/month". The backend key is `monthly_credits` but carries
+              grant_type "one_time_at_signup", and nothing refreshes it: no
+              scheduler writes expiring_credits and downgrade_user_if_cycle_expired
+              early-returns for FREE. Saying "per month" here promises a refill
+              that never arrives. */}
+          <p className="text-sm text-gray-600 mb-4 text-center">{t('common.receive')} <strong>{PLAN_CREDITS.FREE} 🐚</strong> {t('common.onceAtSignup')}</p>
           <ul className="space-y-2 text-sm text-gray-700">
               {featureList("free").map((f) => (
                 <li key={f} className="flex items-center">
@@ -225,10 +226,23 @@ export default function PricingClient() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
+                {/* Column 0 is FREE. Both of these rows used to hand the ✓ to
+                    column 0 and print the word "Free" against the paid tiers, so
+                    the page claimed the free plan was the one with unwatermarked
+                    downloads — the exact opposite of delivery_policy.py, and the
+                    single row a user reads when deciding whether to pay.
+                    Free now clears the badge on any top-up too, so its cell says
+                    that rather than a flat ✗. */}
                 <tr>
                   <td className="px-6 py-4 font-medium text-gray-900 text-base">{t('table.rows.videoDownloadWithWatermark')}</td>
                   {[...Array(4)].map((_, i) => (
-                    <td key={i} className="px-6 py-4 text-center text-base">{t('table.values.free')}</td>
+                    <td key={i} className="px-6 py-4 text-center text-base">
+                      {i === 0 ? (
+                        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full text-sm font-bold bg-green-100 text-green-800">✓</span>
+                      ) : (
+                        <span className="text-sm text-gray-400">—</span>
+                      )}
+                    </td>
                   ))}
                 </tr>
                 <tr className="bg-gray-50">
@@ -236,22 +250,20 @@ export default function PricingClient() {
                   {[...Array(4)].map((_, i) => (
                     <td key={i} className="px-6 py-4 text-center">
                       {i === 0 ? (
-                        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full text-sm font-bold bg-green-100 text-green-800">✓</span>
+                        <span className="text-sm text-gray-600">{t('table.values.afterTopUp')}</span>
                       ) : (
-                        <span className="text-sm text-gray-500">{t('table.values.free')}</span>
+                        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full text-sm font-bold bg-green-100 text-green-800">✓</span>
                       )}
                     </td>
                   ))}
                 </tr>
+                {/* SRT is a text file — there is nothing to badge, and no plan
+                    gate for it anywhere in the backend. Available on every tier. */}
                 <tr>
                   <td className="px-6 py-4 font-medium text-gray-900 text-base">{t('table.rows.downloadSrt')}</td>
                   {[...Array(4)].map((_, i) => (
                     <td key={i} className="px-6 py-4 text-center">
-                      {i === 0 ? (
-                        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full text-sm font-bold bg-green-100 text-green-800">✓</span>
-                      ) : (
-                        <span className="text-sm text-gray-500">{t('table.values.free')}</span>
-                      )}
+                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full text-sm font-bold bg-green-100 text-green-800">✓</span>
                     </td>
                   ))}
                 </tr>
@@ -297,7 +309,7 @@ export default function PricingClient() {
                   <td className="px-6 py-4 font-medium text-gray-900 text-base">{t('table.rows.monthlyCredits')}</td>
                   <td className="px-6 py-4 text-center text-base">{PLAN_CREDITS.FREE} 🐚</td>
                   <td className="px-6 py-4 text-center text-base">{PLAN_CREDITS.CREATOR} 🐚</td>
-                  <td className="px-6 py-4 text-center text-base text-gray-400">5,000 🐚</td>
+                  <td className="px-6 py-4 text-center text-base text-gray-400">{PLAN_CREDITS.PRO.toLocaleString()} 🐚</td>
                   <td className="px-6 py-4 text-center text-base">{t('plans.enterprise.customPricing')}</td>
                 </tr>
                 <tr className="bg-gray-50">

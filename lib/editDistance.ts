@@ -2,7 +2,24 @@ import { buildExampleId } from "@/lib/nano_pure";
 
 export const SIMILARITY_THRESHOLD = 0.92;
 
-export type ExistingExampleRef = { id: string; params: Record<string, any> };
+export type ExistingExampleRef = {
+  id: string;
+  params: Record<string, any>;
+  /** Rendered image for this example, when the caller has one.
+   *
+   *  Optional because not every construction site has a URL to hand, but supply
+   *  it wherever possible: a match that carries an image can be shown to the user
+   *  directly instead of being described and linked to. A duplicate the user
+   *  cannot see is one they will regenerate. */
+  imageUrl?: string;
+};
+
+export type DuplicateMatch = {
+  exampleId: string;
+  score: number;
+  /** Present iff the matched ref carried one. */
+  imageUrl?: string;
+};
 
 /**
  * Returns the best duplicate match for the given form, or null if none exceeds the threshold.
@@ -12,21 +29,23 @@ export function findDuplicate(
   currentForm: Record<string, any>,
   existingExamples: ExistingExampleRef[],
   threshold = SIMILARITY_THRESHOLD
-): { exampleId: string; score: number } | null {
+): DuplicateMatch | null {
   if (existingExamples.length === 0) return null;
 
   const currentExampleId = buildExampleId(templateId, currentForm as Record<string, string>);
   const exactMatch = existingExamples.find((ex) => ex.id === currentExampleId);
-  if (exactMatch) return { exampleId: exactMatch.id, score: 1 };
+  if (exactMatch) {
+    return { exampleId: exactMatch.id, score: 1, imageUrl: exactMatch.imageUrl };
+  }
 
   const currentKey = paramsToKey(currentForm);
   if (!currentKey) return null;
 
-  let best: { exampleId: string; score: number } | null = null;
+  let best: DuplicateMatch | null = null;
   for (const ex of existingExamples) {
     const score = similarity(currentKey, paramsToKey(ex.params));
     if (score >= threshold && (!best || score > best.score)) {
-      best = { exampleId: ex.id, score };
+      best = { exampleId: ex.id, score, imageUrl: ex.imageUrl };
     }
   }
   return best;

@@ -42,30 +42,84 @@ export const IMAGE_GENERATION_CREDITS = 5;
  *  buying a manufacturing input. This is the moat; discounting it would trade the
  *  defensible surface for the commodity one.
  *
- *  2026-08-21 — 20 → 90 ($2.00 → $9.00). Briefly 190 ($19) on value grounds; the
- *  paragraph above named the right comparable and then charged $2.00, and a
- *  printer's own file-prep fee is $50–150. Walked back the same day: the binding
- *  constraint is not margin but that almost nobody reaches our paywall at all (50
- *  users of 705, lifetime, one of whom paid). Value pricing presumes buyers we
- *  have not established. $9 buys the first transactions and the data with them.
- *  Cost constrains nothing here — deterministic CPU, no vendor bill, ~100% margin
- *  at any of these numbers. Also carved out of the free signup grant in the
- *  backend (design_tool_pipelines.FREE_GRANT_EXCLUDED_JOBS). */
-export const STICKER_EXPORT_CREDITS = 90;
+ *  2026-08-21 — 20 → 190 ($19) on value grounds, walked back to 90 ($9) the same
+ *  day: the binding constraint is not margin but that almost nobody reaches our
+ *  paywall at all (50 users of 705, lifetime, one of whom paid).
+ *
+ *  2026-08-30 — 90 → 40 ($9.00 → $4.00), per user. $19 and $9 were both run as
+ *  barrier-reduction experiments and both returned ZERO purchases, so price is not
+ *  the variable this is testing any more; the cut is to remove it as a candidate
+ *  explanation entirely before spending effort elsewhere. Cost permits it — this
+ *  calls no vendor model at all (mask, Moore trace, Douglas–Peucker, CMYK convert,
+ *  local rembg/u2net), so margin is ~100% at $2, $4, $9 and $19 alike, and the only
+ *  real cost is worker occupancy on a single worker.
+ *
+ *  ⚠️ 40 is BELOW the 50-credit signup grant, which the previous prices were
+ *  deliberately kept above. The price no longer guards this on its own —
+ *  `design_tool_pipelines.FREE_GRANT_EXCLUDED_JOBS` is now the ONLY thing stopping
+ *  a free grant from buying a factory file. Do not remove that carve-out without
+ *  deciding, separately and on purpose, that a free account should get one. */
+export const STICKER_EXPORT_CREDITS = 40;
 
 /** Credits for a print-ready acrylic standee / keychain package.
  *  Mirrors `design_tool_pipelines.ACRYLIC_EXPORT_CREDITS`.
  *
  *  Above the sticker export because it is strictly more pre-press: the same
- *  geometry plus a choked white underbase plate and a wall-checked hole. */
-export const ACRYLIC_EXPORT_CREDITS = 120;
+ *  geometry plus a choked white underbase plate and a wall-checked hole. Acrylic is
+ *  transparent, so without that white layer the factory either quotes for a
+ *  designer to build it or prints the piece washed out.
+ *
+ *  2026-08-30 — 120 → 50 ($12.00 → $5.00). Moves with the sticker export and must
+ *  never undercut it; 40 → 50 holds the 1:1.25 ratio the two have carried since
+ *  2026-08-21. */
+export const ACRYLIC_EXPORT_CREDITS = 50;
 
 /** Credits for an AI packaging mockup (dieline → folded 3D box render).
  *  Mirrors `design_tool_pipelines.PACKAGING_MOCKUP_CREDITS`. One Gemini call plus
- *  geometry enforcement; same "priced against a designer, not against Midjourney"
- *  logic as the sticker export. */
-export const PACKAGING_MOCKUP_CREDITS = 15;
+ *  geometry enforcement.
+ *
+ *  2026-08-30 — 15 → 10 ($1.50 → $1.00). Unlike the two exports above this one has
+ *  a real vendor bill (~$0.134 for the Gemini call), so it is the only D2M price
+ *  with a floor: 10 credits holds ~87% margin, and it must stay above
+ *  IMAGE_GENERATION_CREDITS because it is that same call plus dieline
+ *  rasterization and geometry enforcement.
+ *
+ *  Stays OUT of FREE_GRANT_EXCLUDED_JOBS. It is a model-rendered picture of a box,
+ *  not a manufacturable file — the commodity side of the line the carve-out draws. */
+export const PACKAGING_MOCKUP_CREDITS = 10;
+
+/** Credits for a URL → product video generation.
+ *  Mirrors `product_video_pipeline.PRODUCT_VIDEO_CREDITS` (30.0). */
+export const PRODUCT_VIDEO_CREDITS = 30;
 
 /** USD value of one credit — `extra_minute_price` on the backend. Used to render
  *  approximate dollar equivalents; never used to compute an actual charge. */
 export const USD_PER_CREDIT = 0.1;
+
+/** Credit allowance per plan. Mirrors `monthly_credits` in
+ *  `subscription_constants.SUBSCRIPTION_PLANS`.
+ *
+ *  ⚠️ FREE's 50 is granted ONCE at signup, not monthly — the backend key is named
+ *  `monthly_credits` but carries `grant_type: "one_time_at_signup"`, and nothing
+ *  refreshes it. Do not render it as a monthly allowance.
+ *
+ *  Lived as a local const in PricingClient.tsx until 2026-08-30, which is how that
+ *  page came to print 5,000 for PRO in the comparison table while the plan card
+ *  above it printed 1,200 from this same source. */
+export const PLAN_CREDITS = { FREE: 50, CREATOR: 200, PRO: 1200 } as const;
+
+/** Dollars for `credits` at top-up.
+ *
+ *  Flat $0.10/credit on every plan, because that is what the backend does:
+ *  `calculate_credits_from_amount` divides by `plan["extra_minute_price"]`, which
+ *  is 0.10 on FREE, CREATOR, PRO and ENTERPRISE alike.
+ *
+ *  Replaces `lib/credit_utils.js`, which applied an invented $0.08 (Pro) / $0.05
+ *  (Enterprise) ladder. That was not merely a second untested price declaration —
+ *  it was wrong in a direction that costs the user: the button would have quoted
+ *  $0.08/credit while the webhook still granted `ceil(usd / 0.10)`, taking the
+ *  money and returning 20% fewer credits than promised. It stayed unreachable only
+ *  because TopUpModal hardcoded the plan to "Free". */
+export function creditsToDollars(credits: number): number {
+  return credits * USD_PER_CREDIT;
+}

@@ -221,6 +221,14 @@ export default async function TagPage({ params }: Props) {
       <div className="min-h-screen bg-gray-50 px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1400px]">
           <header className="mb-8">
+            {/* `title` was computed for <title> and the JSON-LD `name` but never
+                rendered, so all 133 tag pages shipped with NO h1 — the page's
+                own subject was invisible to a crawler reading the body, and the
+                first text in the DOM was a meta description. These pages have
+                the best CTR-per-position on the site (/tag/woman takes 10 clicks
+                from position 26), so they are worth making structurally sound. */}
+            <h1 className="mb-3 text-3xl font-bold text-gray-900">{title}</h1>
+
             {description && (
               <p className="mb-3 text-lg text-gray-600">
                 {description}

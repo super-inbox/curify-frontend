@@ -7,10 +7,11 @@ import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { productVideoService } from "@/services/productVideo";
 import { useTracking } from "@/services/useTracking";
+import { PRODUCT_VIDEO_CREDITS } from "@/lib/pricing";
 
 const MIN_PHOTOS = 3;
 const MAX_PHOTOS = 6;
-const CREDITS_COST = 30;
+const CREDITS_COST = PRODUCT_VIDEO_CREDITS;
 const POLL_INTERVAL_MS = 3000;
 const POLL_MAX_MS = 240_000; // 4-min ceiling (render + upload)
 

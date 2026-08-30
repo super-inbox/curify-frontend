@@ -11,7 +11,8 @@
     "common": {
       "month": "月",
       "pricing": "料金",
-      "receive": "含まれる内容"
+      "receive": "含まれる内容",
+      "onceAtSignup": "登録時に一度だけ"
     },
     "buttons": {
       "signUp": "登録",
@@ -86,7 +87,7 @@
         "subtitleTools": "字幕ツール（追加/削除・翻訳なし）",
         "batchProcessing": "バッチ処理",
         "maxVideoLength": "タスクごとの最大動画長",
-        "monthlyCredits": "毎月の無料クレジット",
+        "monthlyCredits": "無料クレジット",
         "priorityQueue": "優先キュー / 高速処理",
         "creditTopUp": "クレジット追加"
       },
@@ -97,7 +98,8 @@
         "fiveHoursPerMonth": "月5時間",
         "fiveMinutes": "5分",
         "thirtyMinutes": "30分",
-        "sixtyMinutes": "60分"
+        "sixtyMinutes": "60分",
+        "afterTopUp": "チャージ後に解除"
       }
     }
   }

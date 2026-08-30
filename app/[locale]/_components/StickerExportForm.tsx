@@ -111,10 +111,12 @@ export default function StickerExportForm({ presetImageUrl }: Props = {}) {
     <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <p className="text-lg font-bold text-neutral-900">Make the production files</p>
-        {/* Lead with dollars. "190 credits" means nothing to someone holding a
-            printer's quote; "$19" is the number they compare against the $50-150
-            a printer charges to prep the same file. Credits stay visible because
-            credits are what actually get deducted. */}
+        {/* Lead with dollars. A credit count means nothing to someone holding a
+            printer's quote; the dollar figure is the number they compare against
+            the $50-150 a printer charges to prep the same file. Credits stay
+            visible because credits are what actually get deducted. Both are
+            derived from lib/pricing.ts, so neither goes stale on a reprice — the
+            prose here deliberately names no figure for the same reason. */}
         <p className="text-sm font-semibold text-purple-800">
           ${(STICKER_EXPORT_CREDITS * USD_PER_CREDIT).toFixed(0)}
           <span className="ml-1.5 font-medium text-neutral-500">

@@ -11,7 +11,8 @@
     "common": {
       "month": "月",
       "pricing": "定价",
-      "receive": "获得"
+      "receive": "获得",
+      "onceAtSignup": "注册时一次性赠送"
     },
     "buttons": {
       "signUp": "注册",
@@ -86,7 +87,7 @@
         "subtitleTools": "字幕工具(添加/删除,无翻译)",
         "batchProcessing": "批量处理",
         "maxVideoLength": "每个任务最大视频长度",
-        "monthlyCredits": "每月免费额度",
+        "monthlyCredits": "免费积分",
         "priorityQueue": "优先队列 / 更快处理",
         "creditTopUp": "额度充值"
       },
@@ -97,7 +98,8 @@
         "fiveHoursPerMonth": "5小时/月",
         "fiveMinutes": "5分钟",
         "thirtyMinutes": "30分钟",
-        "sixtyMinutes": "60分钟"
+        "sixtyMinutes": "60分钟",
+        "afterTopUp": "充值后即可"
       }
     }
   }

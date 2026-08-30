@@ -76,13 +76,15 @@
   },
   "topUpModal": {
     "title": "Kredi Yükleme",
-    "planLabel": "Planı",
     "minimumTopupError": "Minimum yükleme 0,50$'dır.",
     "paymentStartFailed": "Ödeme başlatılamadı. Lütfen tekrar deneyin.",
     "customCreditsLabel": "Özel kredileri girin",
     "customCreditsPlaceholder": "örneğin 200",
     "paymentsPoweredByStripe": "Ödemeler Stripe tarafından desteklenmektedir.",
-    "creditRate": "1 kredi ≈ ${amount} (Plan: {plan})"
+    "creditRate": "1 kredi ≈ ${amount}",
+    "blockedLine": "{jobLabel} {required} kredi tutuyor, sizde {available} var.",
+    "buysImages": "≈ {count} görsel",
+    "unlocksCleanDownloads": "Herhangi bir yükleme, indirmelerinizden Curify filigranını da kaldırır."
   },
   "transactionHistory": {
     "title": "Kredi Geçmişi",
@@ -132,7 +134,8 @@
     "privacyPolicy": "Gizlilik Politikası",
     "termsOfService": "Hizmet Şartları",
     "aboutUs": "Hakkımızda",
-    "contactUs": "Bize Ulaşın"
+    "contactUs": "Bize Ulaşın",
+    "pricing": "Fiyatlar"
   },
   "actionButtons": {
     "save": "Kaydetmek",
@@ -152,7 +155,10 @@
     "readMore": "Daha fazla oku",
     "readLess": "Daha az oku",
     "remixThis": "Kendin oluştur",
-    "copyPrompt": "İstemi kopyala"
+    "copyPrompt": "İstemi kopyala",
+    "jobLabelImage": "Görsel oluşturma",
+    "batchDownloadLabel": "Bu kart paketi",
+    "printPdfLabel": "Bu baskı PDF'i"
   },
   "dialogCloseButton": {
     "ariaLabel": "İletişim kutusunu kapat"
@@ -373,5 +379,27 @@
     "note": "Bize yaklaşık kaç tasarım ve ne için olduklarını söyleyin. Bir örnek ve fiyat ile geri döneceğiz.",
     "contactSubject": "Toplu çalışma",
     "contactSubjectWith": "Toplu çalışma — {subject}"
+  },
+  "jobWarnings": {
+    "aslUnverifiedTitle": "Makine çevirisi — bir insan tarafından doğrulanmadı",
+    "aslUnverifiedBody": "İşaret dili çevirisi deneyseldir ve sık sık hatalıdır; üstelik bu hatalar akıcı ve kendinden emin görünebilir. Bu altyazılara güvenmeden veya onları yayımlamadan önce videodaki işaretlerle karşılaştırarak kontrol edin.",
+    "aslLowConfidenceTitle": "Bu videoyu iyi okuyamadık",
+    "aslLowConfidenceBody": "Bu video güvenilir biçimde okunamayacak kadar uzundu veya çok seyrek örneklendi; aşağıdaki metnin bir bölümü büyük olasılıkla uydurulmuştur. Bu altyazıları videodaki işaretlerle karşılaştırmadan yayımlamayın."
+  },
+  "topUpSuccess": {
+    "confirming": "Ödemeniz doğrulanıyor…",
+    "confirmingHint": "Bu genellikle birkaç saniye sürer.",
+    "done": "Krediler eklendi",
+    "balance": "Artık {credits} krediniz var.",
+    "cleanDownloads": "İndirmelerinizde artık Curify rozeti yok.",
+    "resume": "{jobLabel} işlemine dön",
+    "continue": "Devam",
+    "slowTitle": "Ödeme alındı",
+    "slowBody": "Kredilerin görünmesi her zamankinden uzun sürüyor. Ödeme başarılı oldu; kısa süre içinde yüklenecek, tekrar ödeme yapmanıza gerek yok."
+  },
+  "topUpCancel": {
+    "title": "Ödeme iptal edildi",
+    "body": "Herhangi bir tahsilat yapılmadı. İstediğiniz zaman yükleme yapabilirsiniz.",
+    "back": "Çalışma alanına dön"
   }
 }

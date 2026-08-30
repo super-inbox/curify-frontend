@@ -11,7 +11,13 @@ import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelecto
 import { buildExampleId } from "@/lib/nano_pure";
 import type { TemplateParameter } from "@/lib/nano_pure";
 import { nanoGenerateService } from "@/services/nanoGenerate";
-import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
+import {
+  userAtom,
+  drawerAtom,
+  clientMountedAtom,
+  modalAtom,
+  topUpContextAtom,
+} from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
 import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
@@ -52,8 +58,10 @@ export default function ExampleGeneratePanel({
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
+  const [, setModal] = useAtom(modalAtom);
+  const [, setTopUpContext] = useAtom(topUpContextAtom);
   const t = useTranslations("actionButtons");
-  const { trackAction } = useTracking();
+  const { trackAction, track } = useTracking();
 
   const tracking = {
     contentId: `${templateId}:${exampleId}`,
@@ -76,8 +84,22 @@ export default function ExampleGeneratePanel({
     const credits =
       ((user as any)?.non_expiring_credits ?? 0) +
       ((user as any)?.expiring_credits ?? 0);
+    // Paywall. This is the route our one paying customer actually converted
+    // through (organic search -> example page -> generate -> exhaust -> buy), and
+    // until 2026-08-30 it ended in a browser alert with no way to pay.
     if (credits < CREDITS_COST) {
-      alert(t("insufficientCredits", { credits: CREDITS_COST }));
+      track({
+        contentId: "paywall:nano-example-generate",
+        contentType: "topic_capsule",
+        actionType: "click",
+      });
+      setTopUpContext({
+        required: CREDITS_COST,
+        available: credits,
+        jobLabel: t("jobLabelImage"),
+        surface: "nano-example-generate",
+      });
+      setModal("topup");
       isGeneratingRef.current = false;
       return;
     }

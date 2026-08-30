@@ -10,6 +10,7 @@ import ExampleReproduceSurface from "./ExampleReproduceSurface";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ExampleRelatedTopics from "./ExampleRelatedTopics";
+import MbtiGeneratorLink from "@/app/[locale]/_components/MbtiGeneratorLink";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
 import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
@@ -142,7 +143,14 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     Array.from(new Set([...(exampleTopics ?? []), ...(templateTopics ?? [])]))
   );
 
-  const existingExamples = imageViews.map((v) => ({ id: v.id, params: v.params }));
+  // imageUrl lets a duplicate be SHOWN rather than described — see
+  // ExistingExampleRef. Prefer the preview: it is what the result panel renders,
+  // and it is the smaller fetch.
+  const existingExamples = imageViews.map((v) => ({
+    id: v.id,
+    params: v.params,
+    imageUrl: v.preview_image_url ?? v.image_url,
+  }));
 
   return {
     ...ctx,
@@ -546,6 +554,13 @@ export default async function NanoExampleDetailPage({
         {/* VerticalPageSchema — Pillar 1 authored domain-knowledge block
             (example-level: MBTI type breakdown, strengths, career fit, etc.). */}
         <VerticalKnowledgeSection vertical={vertical} />
+
+        {/* Spend the ranking, don't mourn it. These MBTI example pages rank
+            3–9 and take ~zero clicks because Google answers their queries in
+            an AI Overview — so route their standing to the generator, which
+            serves creation-intent queries a click actually satisfies. Renders
+            only for MBTI templates. */}
+        <MbtiGeneratorLink locale={rawLocale} templateId={templateId} />
 
         {verticalJsonLd ? (
           <script

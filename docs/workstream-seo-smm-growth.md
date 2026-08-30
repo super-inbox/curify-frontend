@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-08-25.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-08-30.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -1181,6 +1181,115 @@ two pages' visible related lists.
 
 **This is a bet, not a fix.** Request Indexing does not override duplicate
 detection, and links are the only lever with evidence behind them here.
+
+---
+
+## 2026-08-30 — leakage audit: two buckets, and the MBTI web-side explanation
+
+Fresh 28-day pull (`2026-08-02 → 08-27`, baseline persisted at
+`raw/gsc-baseline-2026-08-30/`): **12,318 impressions, 235 clicks, 1.91% site CTR**. 58% of
+site impressions sit in two buckets that need *opposite* remedies.
+
+| bucket | definition | pages | impressions | clicks | CTR |
+|---|---|---:|---:|---:|---:|
+| **A** | ranks page-1, converts nothing (pos ≤10, ≥40 impr, clicks <25% of curve) | 19 | 3,327 (27%) | 6 | **0.18%** |
+| **B** | demand stuck on page 2+ (pos >10, ≥25 impr) | 30 | 3,757 (31%) | 135 | 3.6% |
+
+### The web-side explanation for MBTI CTR — complements the image-search finding
+
+The 08-25 entry established the MBTI bleed is **image-shaped** (3,339 image impressions at
+0.03% CTR) and concluded "do not attempt further snippet surgery on MBTI pages". That still
+holds. This adds the *web* half, which the earlier entry did not explain: web impressions
+alone are 3,327 → 6 clicks.
+
+Two things were verified rather than assumed:
+
+1. **It is not the canonical fold.** Curled the top pages: all `index, follow`, **self-canonical**,
+   titles matching H1s. `project_mbti_names_ctr_bleed`'s recorded cause does not apply here
+   (memory corrected).
+2. **Google now answers these queries itself.** For `haaland mbti` the SERP renders an **AI
+   Overview stating "widely typed as an ISTP"**, citing Personality Database and Reddit. PDB
+   holds #1; Boo, EQVector, getpersonality rank around us; we sit at 9.2 below the AI Overview,
+   PAA and an image block. Our own snippet gives the answer away too. **Impressions on that
+   query are −47%.** `itachi mbti` (pos 3.9), `yellowstone mbti` (6.3), `minato personality`
+   (5.6), `lamine yamal mbti` (5.5) all behave identically.
+
+These are single-fact questions with one-word answers — **structurally near-zero-click**.
+Arithmetic headroom is ~130 clicks (+55% site); realistically ~15–40. Consistent with the
+08-25 instruction, **no snippet surgery was done on the answer pages** — their titles are
+untouched by design.
+
+### What we did instead: harvest the authority
+
+Creation-intent queries need a click to deliver anything, and we already rank for them
+untargeted: `random mbti generator` **pos 6.8 / 88 impr / 0 clicks**, `mbti character maker`
+7.0, `mbti avatar maker` 6.5, `mbti randomizer` 7.4.
+
+The SERP for `random mbti generator` shows why they convert at 0.00% too — and it is **not**
+an AI Overview problem. **We rank #2.** Everyone around us is a one-press widget (Perchance,
+ShindanMaker, GoSpinWheel, spinthewheel); we shipped an article titled "382 Cards from 10
+Universes". **Format mismatch, not thin content.**
+
+⚠️ **`MbtiUniversePicker` (2026-08-21) already attacked these exact numbers and moved nothing.**
+Its own code comment cites "271 impr / ZERO clicks". It failed because an in-page CTA cannot
+change what the *listing* promises — the click decision happens on the SERP. Shipped together
+this time:
+
+- `MbtiRandomizer` — a real one-press widget on `/blog/mbti-character-generator`
+- title/desc rewritten from catalogue to action ("Random MBTI Generator — Spin Any of the 16
+  Types"), in **both** `messages/en/blog.json` and `public/data/blogs.json` (the latter also
+  fed a stale breadcrumb)
+- `MbtiGeneratorLink` on the example + hub routes, routing all 19 page-1 pages into it —
+  which also satisfies the ≥3-crawled-sources rule from `project_new_page_crawl_collapse`
+
+It randomises **types, not characters**: the library's `mbti-<type>` tags are unreliable
+(96 items tagged `mbti-infj`, >2× any other type, when INFJ is the rarest in reality), and a
+wrong typing on a page competing with Personality Database costs more than the feature is worth.
+
+### Bucket B is smaller than it looks
+
+Of 30 pages, only 17 are within striking distance (pos 10–30); 13 sit at 30–124 where content
+depth cannot close the gap. Then:
+
+- **World Cup cluster dropped** — event over, decaying demand (251 impr).
+- **`/tools/asl-video-translator`** is the largest single page (686 impr / 61 clicks, ranks
+  ~3rd) but the product was **closed 2026-08-18** and still charges 8 credits/min. Product
+  decision, not SEO. Untouched.
+- **Homepage's 471 impressions are brand navigation** ("curify" 130, "curify ai" 21), not
+  addressable demand. "curify" is a *contested* brand — curifyapp.gr, curify.us, curifylabs.com,
+  curify.health and two healthcare apps; we are #2 organic. Not solvable with content.
+- **Several pages have no head query at all** — `/blog/50-ai-sticker-design-prompts`,
+  `/blog/50-ai-makeover-prompts` and the chinese-idiom example return **zero query rows**;
+  their impressions are sub-threshold long-tail scatter.
+
+Shipped for the three that survive: packaging + travel cross-links via the existing
+`BlogCTACard` override table, and the tag-page fixes below.
+
+### Tag pages had no `<h1>` — all 133 of them
+
+`/nano-banana-pro-prompts/tag/*` computed `title` for `<title>` and JSON-LD but **never
+rendered it**, so the first body text a crawler saw was a meta description. Fixed template-wide.
+These have the best CTR-per-position on the site (`/tag/woman` takes 10 clicks from **position
+25.9**), so they are worth making structurally sound. `introText` added for the 9 tags with real
+impressions only — `woman` alone is 68% of tag impressions, and boilerplate across all 133 is
+the thin duplicate copy that keeps listing pages on page 3.
+
+### New measurement primitive
+
+`pull_gsc_performance.cjs` now emits **`PagesQueries.csv`** (`dimensions: ["page","query"]`,
+pages ≥25 impressions). Page-level average position routinely lies; this is the only way to
+tell a real head-term ranking from an averaging artifact, and to separate answer-intent from
+creation-intent. Every finding above depended on it — including catching that creation-intent
+converts at 0.00% too, which an earlier 7-row-per-page ad-hoc query had missed.
+
+### Checkpoints
+
+- **2026-09-20 (+21d)** — judge on *creation-intent* queries only (`random mbti generator`,
+  `mbti character maker`, `mbti randomizer`): impressions + position. Bucket A's answer-query
+  clicks are **expected to stay flat**; that is the design, not a failure.
+- **2026-09-27 (+28d)** — Bucket B position deltas on the three surviving pages. Judge on
+  position, not clicks — at 235 clicks/28d click counts are noise.
+- Do **not** regenerate the sitemap before the locale A/B reads out ~2026-09-23.
 
 ---
 

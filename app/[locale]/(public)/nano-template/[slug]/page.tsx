@@ -43,6 +43,7 @@ import {
 import { getTagChildren, getPrimaryTagTier1, getTopicNavList } from "@/lib/topicRegistry";
 import { getUseCasesForTopics } from "@/lib/topicRegistry_pure";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import MbtiGeneratorLink from "@/app/[locale]/_components/MbtiGeneratorLink";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -260,7 +261,14 @@ export default async function NanoTemplatePage({ params }: Props) {
       intro_video_url: template.intro_video_url,
       existingExamples: imageViews
         .filter((v) => v.params && Object.keys(v.params).length > 0)
-        .map((v) => ({ id: v.id, params: v.params as Record<string, string> })),
+        // imageUrl lets a duplicate be SHOWN rather than described — see
+        // ExistingExampleRef. Prefer the preview: it is what the result panel
+        // renders, and it is the smaller fetch.
+        .map((v) => ({
+          id: v.id,
+          params: v.params as Record<string, string>,
+          imageUrl: v.preview_image_url ?? v.image_url,
+        })),
     }}
     sampleImage={imageViews[0] ? {
       url: imageViews[0].image_url,
@@ -353,6 +361,11 @@ export default async function NanoTemplatePage({ params }: Props) {
 
       {/* VerticalPageSchema v1 — Pillar 1 authored domain-knowledge block */}
       <VerticalKnowledgeSection vertical={vertical} />
+
+      {/* Same hand-off as the example pages: these MBTI hubs rank top-ten on
+          answer queries the AI Overview now absorbs, so route their standing
+          to the generator. Renders only for MBTI templates. */}
+      <MbtiGeneratorLink locale={localeStr} templateId={templateId} />
 
       {verticalJsonLd ? (
         <script

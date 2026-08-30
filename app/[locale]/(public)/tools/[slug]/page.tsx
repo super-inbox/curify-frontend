@@ -70,8 +70,18 @@ export async function generateMetadata({
 
   const path = `/tools/${slug}`;
 
+  // A tool may declare the locales it is actually authored in
+  // (lib/tools-registry.ts). On any other locale next-intl falls back to the
+  // literal key path ("impromptuSpeech.title"), so the page is a broken
+  // duplicate rather than a translation: point its canonical at the authored
+  // locale and keep it out of the index. follow stays true so the outbound
+  // links are still crawled. Tools that omit `locales` are unaffected.
+  const authored = tool.locales;
+  const isAuthored = !authored || authored.includes(locale);
+  const canonicalLocale = isAuthored ? locale : authored[0];
+
   // ✅ EN is unprefixed
-  const canonical = getCanonicalUrl(locale, path);
+  const canonical = getCanonicalUrl(canonicalLocale, path);
 
   // ✅ hreflang map for SEO (includes x-default)
   const languages = getLanguagesMap(path);
@@ -81,8 +91,11 @@ export async function generateMetadata({
     description,
     alternates: {
       canonical,
-      languages,
+      // Advertising ten alternates for a page that exists in one is a claim we
+      // cannot back, so a locale-restricted tool omits the map entirely.
+      ...(authored ? {} : { languages }),
     },
+    ...(isAuthored ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
       title,
       description,

@@ -24,6 +24,11 @@ export type ToolAction =
   | { type: "sticker_export" }
   | { type: "acrylic_export" }
   | { type: "packaging_mockup" }
+  // Impromptu speech practice — random topic → 30s prep → 90s webcam take →
+  // playback/download. Entirely client-side (getUserMedia + MediaRecorder):
+  // no upload, no auth, no credits, so an anonymous search visitor can finish
+  // the loop. Rendered by ImpromptuSpeechPractice.
+  | { type: "impromptu_practice" }
   | { type: "none" };
 
 export type ToolDemo =
@@ -77,6 +82,14 @@ export type ToolDef = {
     titleKey: string;
     descriptionKey: string;
   };
+
+  // Locales this tool is actually authored in. Omitted means "all of them",
+  // which is true for every tool whose namespace was copied into all ten
+  // messages/*/home.json files. When set, the sitemap emits only these locales
+  // and the others are served noindex with the canonical pointing at the
+  // authored one — otherwise a single-locale experiment ships nine pages that
+  // render literal key paths ("impromptuSpeech.title") and dilute crawl.
+  locales?: string[];
 
   demo?: ToolDemo;
 };
@@ -367,13 +380,11 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
-    // Demo-only SEO landing — no backend pipeline yet. The blog
-    // /blog/asl-video-translator ranks at pos ~13 for "asl video translator"
-    // / "sign language video translator" but as an editorial page the
-    // tool-intent queries convert at 0.75% CTR. Shipping this tool route
-    // closes the loop with a visible demo + waitlist CTA. 2026-05-30 GSC
-    // pull: 8 distinct tool-intent ASL queries at pos 9-26, zero clicks
-    // (no /tools/asl-* landing existed).
+    // Origin (2026-05-30): the blog /blog/asl-video-translator ranked at pos ~13
+    // for "asl video translator" / "sign language video translator", but as an
+    // editorial page the tool-intent queries converted at 0.75% CTR. GSC pull:
+    // 8 distinct tool-intent ASL queries at pos 9-26, zero clicks, because no
+    // /tools/asl-* landing existed. This route closed that loop.
     // 2026-08-16: PROMOTED FROM DEMO LANDING TO LIVE TOOL. It now fronts the
     // real ASL pipeline (JobType.ASL_TRANSLATION); job_type was previously a
     // placeholder ("video_transcript") because no backend existed.
@@ -382,16 +393,21 @@ export const TOOL_REGISTRY: ToolDef[] = [
     // one already ranks for the tool-intent queries and already has i18n copy in
     // all 10 locales. A near-identical second slug would split that signal.
     //
-    // Paid — 8 credits/min (JOB_CREDIT_COST.ASL_TRANSLATION, mirrored in
-    // create-job-ui ratePerMinute). Deliberately NOT on the free monthly
-    // subtitle quota that plain captioning uses: each job runs vision inference
-    // over ~96 adaptively sampled frames.
+    // FREE as of 2026-08-29 (JOB_CREDIT_COST.ASL_TRANSLATION = 0, mirrored in
+    // create-job-ui ratePerMinute and tripwired in lib/__tests__/pricing.test.ts).
+    // It was 8 credits/min from 2026-08-16 and 5 users paid 120 credits for output
+    // we had already documented as untrustworthy. Kept live rather than demoted:
+    // `demo` status has no waitlist in this codebase — it falls through to the
+    // "Coming Soon" paragraph in tool-generic-client — and the live tool is the
+    // only demand signal and evaluation corpus we have.
     //
-    // ⚠️ The recogniser is a general VLM that failed a frame-reversal control
-    // (curify-studio/docs/asl-translation-mvp-spec.md). Going live does not
-    // change that — the pipeline stamps asl_unverified/review_required on every
-    // job and prefixes the first caption "[AI-generated ASL translation —
-    // unverified]". Keep those until a real sign-language model replaces it.
+    // ⚠️ The recogniser is a general VLM that failed a frame-reversal control, and
+    // scored WER 0.92 against human ground truth on the one real user video we can
+    // score (curify-studio/docs/asl-translation-mvp-spec.md). The pipeline stamps
+    // asl_unverified / asl_low_confidence on every job and prefixes the first
+    // caption "[AI-generated ASL translation — unverified]"; as of 2026-08-29 those
+    // flags finally survive to the API and are rendered by AslUnverifiedNotice on
+    // the result page. Keep all of it until a real sign-language model replaces it.
     id: "asl-video-translator",
     slug: "asl-video-translator",
     groupId: "video",
@@ -603,6 +619,37 @@ export const TOOL_REGISTRY: ToolDef[] = [
       },
     },
   },
+
+  {
+    // Impromptu speech practice — 2026-08-29. A demand probe, not a product
+    // line. Semrush: "impromptu speech topics" is 1,300/mo at KD 12 with
+    // INFORMATIONAL intent, and it is ~93% of the volume in this cluster; the
+    // generator/tool queries are the 50-70/mo tail. So the page has to satisfy
+    // "show me a list of topics" first and be a recorder second — the topic
+    // bank is the hook, the timer + camera is the differentiator.
+    //
+    // It is also the first surface here that helps someone PRODUCE a video
+    // rather than requiring they already have one, which is why its CTA points
+    // at the subtitle/transcript tools.
+    //
+    // Review at 4 weeks against: 500+ impressions, >10% start-practice,
+    // >30% recording completion, >5% continue to a subtitle/translate tool.
+    // Do not invest further before those numbers exist.
+    id: "impromptu-speech-practice",
+    slug: "impromptu-speech-practice",
+    groupId: "video",
+    // "demo" (not "create") because status:"create" is hard-wired to the
+    // video CreateNewModal; the inline surface is dispatched via action.
+    status: "demo",
+    // Unused — this tool submits no backend job at all. Required field.
+    job_type: "video_transcript",
+    namespace: "impromptuSpeech",
+    action: { type: "impromptu_practice" },
+    // English only while we find out whether anyone wants it.
+    locales: ["en"],
+    i18n: { ...toolKeys("impromptu_speech_practice"), showFreeBadge: true },
+    seo: seoKeys("impromptu_speech_practice"),
+  },
 ];
 
 export function getToolBySlug(slug: string) {
@@ -611,6 +658,36 @@ export function getToolBySlug(slug: string) {
 
 export function getToolById(id: string) {
   return TOOL_REGISTRY.find((t) => t.id === id);
+}
+
+/** Actions that render a real, working surface on the tool's own page.
+ *
+ *  These tools are `status: "demo"` for a purely mechanical reason —
+ *  `status: "create"` is hard-wired to the video CreateNewModal (see the notes
+ *  on ToolDef) — but they are finished products, not demo reels. Cards for them
+ *  say "Create" and link to #reproduce; the click lands on the working surface
+ *  instead of opening a dialogue, which is the same promise from the user's
+ *  side.
+ *
+ *  Kept here rather than in a component so the label and the destination cannot
+ *  drift apart: a card that says "Create" and a link that goes to a demo page
+ *  is the failure this replaces. Add new inline `ToolAction` variants here. */
+export const INLINE_TOOL_ACTIONS = new Set<ToolAction["type"]>([
+  "generate",
+  "product_video",
+  "costume_tryon",
+  "brand_direction",
+  // Design → manufacturing: all three POST to /design-tools/* and return real
+  // factory files.
+  "sticker_export",
+  "acrylic_export",
+  "packaging_mockup",
+  "impromptu_practice",
+]);
+
+export function isInlineTool(tool: ToolDef): boolean {
+  const type = tool.action?.type;
+  return !!type && INLINE_TOOL_ACTIONS.has(type);
 }
 
 export function groupTools(): Record<ToolGroupId, ToolDef[]> {

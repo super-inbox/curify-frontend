@@ -26,6 +26,7 @@ import {
   X,
 } from "lucide-react";
 import SearchBar from "@/app/[locale]/_components/SearchBar";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 import {
   primaryLanguages,
   moreLanguages,
@@ -136,6 +137,15 @@ export default function Header() {
   const currentLanguage = getLanguageByCode(locale);
   const isCurrentMoreLang = isMoreLanguage(locale);
   const isLoggedIn = clientMounted && !!user;
+
+  // Both balances spend on the same jobs, so the header shows the total. Floored
+  // rather than rounded: showing "5" to someone holding 4.6 would promise a
+  // generation the backend pre-flight then refuses.
+  const creditBalance = Math.floor(
+    ((user as any)?.expiring_credits ?? 0) +
+      ((user as any)?.non_expiring_credits ?? 0),
+  );
+  const lowBalance = isLoggedIn && creditBalance < IMAGE_GENERATION_CREDITS;
   const avatarInitial = user?.email?.charAt(0)?.toUpperCase() || "?";
 
   const handleLoginClick = () => {
@@ -313,17 +323,34 @@ export default function Header() {
             </button>
           </div>
         ) : (
-          <div className="mb-4">
+          <div className="mb-4 flex flex-col items-center gap-1">
+            {/* Balance + top-up. The balance used to live one click deep in the
+                user dropdown, so the first time anyone learned credits were
+                finite was the moment they were stopped mid-task. Shown here, and
+                turned amber once what is left will not cover another generation,
+                so running out is something a user can see coming. */}
             <button
               onClick={() => setModal("topup")}
               aria-label={t("topUpCredits")}
-              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
+              className={`group relative flex h-12 w-12 items-center justify-center rounded-full text-white cursor-pointer ${
+                lowBalance
+                  ? "bg-amber-500 hover:bg-amber-600"
+                  : "bg-blue-600 hover:bg-blue-700"
+              }`}
             >
               <PlusSquare className="h-6 w-6 stroke-[2]" />
               <span className="pointer-events-none absolute left-full top-1/2 z-50 ml-2 -translate-y-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-xs font-medium text-white opacity-0 shadow-md transition-opacity group-hover:opacity-100">
                 {t("topUpCredits")}
               </span>
             </button>
+            <span
+              className={`text-[11px] font-semibold tabular-nums ${
+                lowBalance ? "text-amber-600" : "text-neutral-500"
+              }`}
+              title={t("topUpCredits")}
+            >
+              {creditBalance} 🐚
+            </span>
           </div>
         )}
 

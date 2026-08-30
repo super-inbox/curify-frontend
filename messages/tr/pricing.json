@@ -11,7 +11,8 @@
     "common": {
       "month": "Ay",
       "pricing": "Fiyatlandırma",
-      "receive": "Al"
+      "receive": "Al",
+      "onceAtSignup": "kayıtta bir kez"
     },
     "buttons": {
       "signUp": "Kaydol",
@@ -86,7 +87,7 @@
         "subtitleTools": "Altyazı Araçları (ekle/kaldır, çeviri yok)",
         "batchProcessing": "Toplu İşleme",
         "maxVideoLength": "Görev Başına Maksimum Video Uzunluğu",
-        "monthlyCredits": "Aylık Ücretsiz Krediler",
+        "monthlyCredits": "Ücretsiz kredi",
         "priorityQueue": "Öncelik Sırası / Daha Hızlı İşleme",
         "creditTopUp": "Kredi Yükleme"
       },
@@ -97,7 +98,8 @@
         "fiveHoursPerMonth": "5 saat/ay",
         "fiveMinutes": "5 dk",
         "thirtyMinutes": "30 dk",
-        "sixtyMinutes": "60 dk"
+        "sixtyMinutes": "60 dk",
+        "afterTopUp": "Herhangi bir yüklemeden sonra"
       }
     }
   }

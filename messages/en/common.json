@@ -76,13 +76,15 @@
   },
   "topUpModal": {
     "title": "Top Up Credits",
-    "planLabel": "Plan",
     "minimumTopupError": "Minimum top-up is $0.50.",
     "paymentStartFailed": "Failed to start payment. Please try again.",
     "customCreditsLabel": "Enter custom credits",
     "customCreditsPlaceholder": "e.g. 200",
     "paymentsPoweredByStripe": "Payments are powered by Stripe.",
-    "creditRate": "1 credit ≈ ${amount} (Plan: {plan})"
+    "creditRate": "1 credit ≈ ${amount}",
+    "blockedLine": "{jobLabel} costs {required} credits — you have {available}.",
+    "buysImages": "≈ {count} images",
+    "unlocksCleanDownloads": "Any top-up also removes the Curify badge from your downloads."
   },
   "transactionHistory": {
     "title": "Credits History",
@@ -132,7 +134,8 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "aboutUs": "About Us",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "pricing": "Pricing"
   },
   "actionButtons": {
     "save": "Save",
@@ -152,7 +155,10 @@
     "readMore": "Read more",
     "readLess": "Read less",
     "remixThis": "Make your own",
-    "copyPrompt": "Copy prompt"
+    "copyPrompt": "Copy prompt",
+    "jobLabelImage": "Image generation",
+    "batchDownloadLabel": "This card pack",
+    "printPdfLabel": "This print PDF"
   },
   "dialogCloseButton": {
     "ariaLabel": "Close dialog"
@@ -373,5 +379,27 @@
     "note": "Tell us roughly how many designs and what they're for. We'll come back with a sample and a price.",
     "contactSubject": "Bulk run",
     "contactSubjectWith": "Bulk run — {subject}"
+  },
+  "jobWarnings": {
+    "aslUnverifiedTitle": "Machine translation — not verified by a human",
+    "aslUnverifiedBody": "Sign language translation is experimental and often wrong, including in ways that read as fluent and confident. Please check these captions against the signing before relying on them or publishing them.",
+    "aslLowConfidenceTitle": "We could not read this video well",
+    "aslLowConfidenceBody": "This video was too long or too sparsely sampled for us to read reliably, and parts of the transcript below are likely invented. Please do not publish these captions without checking them against the signing."
+  },
+  "topUpSuccess": {
+    "confirming": "Confirming your payment…",
+    "confirmingHint": "This usually takes a few seconds.",
+    "done": "Credits added",
+    "balance": "You now have {credits} credits.",
+    "cleanDownloads": "Your downloads no longer carry the Curify badge.",
+    "resume": "Back to {jobLabel}",
+    "continue": "Continue",
+    "slowTitle": "Payment received",
+    "slowBody": "Your credits are taking longer than usual to appear. The payment went through — they will land shortly, and nothing needs paying again."
+  },
+  "topUpCancel": {
+    "title": "Checkout cancelled",
+    "body": "No payment was taken. You can top up any time.",
+    "back": "Back to workspace"
   }
 }

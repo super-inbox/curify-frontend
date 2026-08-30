@@ -37,6 +37,7 @@ import EcommercePhotoGenerate, {
 } from "@/app/[locale]/_components/EcommercePhotoGenerate";
 import ProductVideoGenerate from "@/app/[locale]/_components/ProductVideoGenerate";
 import CostumeTryonGenerate from "@/app/[locale]/_components/CostumeTryonGenerate";
+import ImpromptuSpeechPractice from "@/app/[locale]/_components/ImpromptuSpeechPractice";
 import BrandDirectionExplorerClient from "@/app/[locale]/(public)/brand-direction-explorer/BrandDirectionExplorerClient";
 import CreateNewModal from "../CreateNewModal";
 
@@ -183,6 +184,10 @@ export default function ToolGenericClient({
           <AcrylicExportForm presetImageUrl={presetImageUrl} />
         ) : tool.action?.type === "packaging_mockup" ? (
           <PackagingMockupForm />
+        ) : tool.action?.type === "impromptu_practice" ? (
+          // Random topic → 30s prep → 90s webcam take → playback/download.
+          // Fully client-side; no job, no credits, no sign-in.
+          <ImpromptuSpeechPractice />
         ) : tool.action?.type === "costume_tryon" ? (
           // Anonymous viral costume try-on: upload one photo → dynasty-costume
           // transformation mp4. No sign-in required (own multipart endpoint).

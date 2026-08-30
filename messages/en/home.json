@@ -225,12 +225,6 @@
       "title": "Curify Tools",
       "description": "Explore Curify Studio tools for video dubbing, subtitles, and AI-powered content workflows."
     },
-    "hero": {
-      "watch_demo": "Watch the same video translated across different languages with preserved emotion and lip sync",
-      "transcript_label": "Transcript",
-      "training_transcript": "Welcome to Curify Studio. In this video, we showcase how AI translates and dubs content across languages...",
-      "currently_playing": "Currently playing: {label} version"
-    },
     "products": {
       "title": "Products & Services",
       "subtitle": "Our AI-driven solutions are live and continuously improving — already used by creators and teams worldwide."
@@ -343,7 +337,7 @@
       "desc": "Sign language video translator: translate ASL signed footage into English text and subtitles, automatically. Working demo on real video.",
       "meta": {
         "title": "Sign Language Video Translator: ASL to English Subtitles & Text | Curify",
-        "description": "Sign language video translator (ASL → English). Translate signed footage into English text and subtitles. Live demo on real ASL video — join early access for your own uploads."
+        "description": "Sign language video translator (ASL → English). Translate signed footage into English text and subtitles. Free and experimental — upload your own ASL video."
       }
     },
     "ai_product_photo_generator": {
@@ -425,20 +419,28 @@
     "acrylic_factory_export": {
       "title": "Acrylic Standee & Keychain Factory Files",
       "desc": "Front, mirrored back, white-ink underbase choked so it cannot halo, a cutline with a computed keychain hole, and a spec sheet."
+    },
+    "impromptu_speech_practice": {
+      "title": "Impromptu Speech Practice",
+      "desc": "88 real impromptu speech topics, a 30-second preparation timer and a 90-second recorder. Draw a topic, think, speak to camera, watch it back. Free, no sign-up, nothing uploaded.",
+      "meta": {
+        "title": "Impromptu Speech Topics — 88 Prompts + Practice Timer",
+        "description": "88 impromptu speech topics from real table-topics sessions, with a 30-second prep timer and a 90-second video recorder built in. Free, no account, and your recording never leaves your browser."
+      }
     }
   },
   "bilingual": {
     "metadata": {
-      "title": "Free Bilingual Subtitles Generator — No Watermark",
-      "description": "Free bilingual subtitle generator — no watermark on exports, 170+ language pairs, frame-accurate timing. Built for YouTube, TikTok, and marketing video. One multilingual asset, not per-market cuts."
+      "title": "Free Bilingual Subtitles Generator — Clean SRT, 170+ Languages",
+      "description": "Free bilingual subtitle generator — unwatermarked SRT exports, 170+ language pairs, frame-accurate timing. Built for YouTube, TikTok, and marketing video. One multilingual asset, not per-market cuts."
     },
-    "title": "Free Bilingual Subtitles for Video — No Watermark, 170+ Languages",
-    "description": "Auto-generate dual-language subtitles for YouTube, TikTok, marketing video, and educational content. Free tier with no watermark on exports, accurate timing for stacked tracks, and translation that preserves intent — not just words. Ship one multilingual asset instead of producing localized cuts per market.",
-    "example": "Example: Jensen Huang explaining AI strategy — English + Chinese subtitles auto-generated, no watermark on export.",
+    "title": "Free Bilingual Subtitles for Video — 170+ Languages",
+    "description": "Auto-generate dual-language subtitles for YouTube, TikTok, marketing video, and educational content. Free tier with unwatermarked SRT exports, accurate timing for stacked tracks, and translation that preserves intent — not just words. Ship one multilingual asset instead of producing localized cuts per market.",
+    "example": "Example: Jensen Huang explaining AI strategy — English + Chinese subtitles auto-generated.",
     "cta": "Generate Subtitles — Free",
     "why": {
       "title": "Why Creators and Marketers Pick Curify for Bilingual Subtitles",
-      "point1": "No watermark on exported video or SRT — clean output on the free tier, no upgrade required to remove a logo.",
+      "point1": "SRT and subtitle files export clean on every plan — no watermark, no upgrade. Video downloads with burned-in subtitles carry a small Curify badge on the free tier, and any top-up removes it.",
       "point2": "170+ language pairs with context-aware translation that preserves tone, idiom, and domain vocabulary — not literal word swaps.",
       "point3": "Frame-accurate timing for stacked dual-language tracks — readable on mobile autoplay where 80% of short-form views happen muted.",
       "point4": "Export as SRT, burn into video, or embed as a subtitle track — pick the format the platform needs without re-rendering."
@@ -446,7 +448,7 @@
     "faq": {
       "title": "Frequently Asked Questions",
       "q1": "Is there a watermark on exported videos or subtitle files?",
-      "a1": "No. Curify's free tier exports clean video and SRT files without watermarks. Paid plans add more monthly subtitle minutes, not watermark removal — what you ship on the free plan is what you ship on the Pro plan.",
+      "a1": "SRT and subtitle files are always clean — no watermark, on any plan. Video downloads with burned-in subtitles carry a small Curify badge on the free tier; any credit top-up, or a paid plan, removes it.",
       "q2": "Can I edit subtitles after generation?",
       "a2": "Yes. You can adjust timing, edit either-language translations, restyle the subtitle track, and re-export — all before publishing. Edits are non-destructive; the original auto-generated track stays available."
     },
@@ -925,12 +927,12 @@
   "aslVideoTranslator": {
     "metadata": {
       "title": "AI ASL Video Translator | Sign Language to English Subtitles | Curify AI",
-      "description": "Translate ASL sign language video into English text or subtitles automatically. See a working demo on real signed footage — then join early access for your own uploads."
+      "description": "Translate ASL sign language video into English text or subtitles automatically. Free and experimental — upload your own signed footage and see what it reads."
     },
     "title": "AI ASL Video Translator",
-    "description": "Translate American Sign Language video into English text or subtitles, automatically. The demo below runs on a real ASL clip — the same pipeline will accept your uploads once early access opens.",
+    "description": "Translate American Sign Language video into English text or subtitles, automatically. Free while experimental: upload your clip and check the result yourself — machine translation of sign language is unreliable and the output needs review.",
     "example": "Example: a short conversational ASL clip translated into English subtitles in one pass. No interpreter, no manual transcription.",
-    "cta": "Join Early Access",
+    "cta": "Try It Free",
     "demo": {
       "aria": "ASL sign language video translation demo",
       "caption": "Watch the demo clip to see ASL translated into English subtitles.",
@@ -941,12 +943,12 @@
       "point1": "Automatic — no manual interpreter step. Upload a signed video, get English subtitles.",
       "point2": "Built for content, not lab demos — handles real-world camera angles, varied signing styles, and conversational pacing.",
       "point3": "Output formats designed for distribution: burned-in subtitles, SRT for YouTube, or plain transcript text.",
-      "point4": "Demo-only today; sign up for early access to translate your own ASL footage when the pipeline opens."
+      "point4": "Free and experimental. ASL translation is a hard, unsolved problem — the output is unverified machine translation and is often wrong, so check it against the signing before you publish it."
     },
     "faq": {
       "title": "Frequently Asked Questions",
       "q1": "Is the ASL video translator available today?",
-      "a1": "Not yet — this page is a working demo on a real ASL clip. The production pipeline is in private testing. Join early access and we will reach out when it opens for uploads.",
+      "a1": "Yes, and it is free. It is also experimental: the translation is produced by a general-purpose vision model, not a model trained on sign language, and it is frequently wrong — sometimes in ways that read as fluent and confident. Treat the output as a draft to check, not a finished translation, and never publish it as an accessibility caption without review.",
       "q2": "Does it work on languages other than ASL?",
       "a2": "The current demo targets American Sign Language specifically. Sign languages are not mutually intelligible — BSL (British), Auslan (Australian), and LSF (French) have different grammars and vocabularies. We are scoping additional sign languages based on demand from early-access signups."
     },
@@ -963,7 +965,7 @@
         "p2": "Second, a vision encoder reads the visual stream and produces a sequence of sign-aware embeddings: handshape, movement vectors, and the non-manual markers (facial expression, head tilt, eye gaze) that change a sign from a statement into a question.",
         "p3": "Third, a translation head decodes those embeddings into English text. The decoder is trained on parallel ASL-English video corpora, so it restructures ASL grammar into natural English rather than producing a literal gloss.",
         "p4": "Fourth, the translated text is aligned back to the source timing — each English sentence is anchored to the seconds of video that produced it. That gives you subtitles you can drop straight into a video editor, plus an SRT export that loads cleanly into YouTube.",
-        "p5": "The demo on this page is the production model running on one real conversational ASL clip. Early-access uploads will run the same pipeline."
+        "p5": "The demo on this page is the live pipeline running on one real conversational ASL clip. Your own uploads run through the same pipeline, with the same limitations."
       },
       "usecases": {
         "title": "Where ASL video translation matters",
@@ -989,7 +991,7 @@
       "title": "Why use Curify for AI product photos?",
       "point1": "Template-first generation — lock the visual style once (lighting, composition, framing, color register), and every product variant inherits that style. Ship 1,000 product pages with deterministic on-brand visuals.",
       "point2": "Multiple output formats supported by templated prompts: 9-image lifestyle grids, packaging mockups, outfit try-on cards, before/after fashion variants, promotional posters.",
-      "point3": "Built for scale — DTC catalogs, programmatic SEO pages, A/B-test creative variants. The output is the source files (PNG/JPEG), not a watermarked preview.",
+      "point3": "Built for scale — DTC catalogs, programmatic SEO pages, A/B-test creative variants. The output is source files (PNG/JPEG), not a low-resolution preview. Free-tier downloads carry a small Curify badge; any top-up removes it.",
       "point4": "Demo-only today; sign up for early access to run your own product catalog through the templates when the pipeline opens."
     },
     "faq": {
@@ -1715,6 +1717,61 @@
         "educationBody": "Go from artwork to a printer quote in one step, with CMYK and the cutline already handled.",
         "businessTitle": "DTC & IP brands",
         "businessBody": "Run sticker SKUs at volume without a designer in the loop for every variant."
+      }
+    }
+  },
+  "impromptuSpeech": {
+    "metadata": {
+      "title": "Impromptu Speech Topics — 88 Prompts + Practice Timer",
+      "description": "88 impromptu speech topics from real table-topics sessions, with a 30-second prep timer and a 90-second video recorder built in. Free, no account, and your recording never leaves your browser."
+    },
+    "title": "Impromptu speech topics — and a timer to practise them",
+    "description": "Reading a list of topics does not make you better at speaking on them. Draw one at random, take 30 seconds to think, then answer for 90 seconds on camera and watch yourself back. All 88 topics below come from real table-topics sessions, not a generator.",
+    "example": "Draw a topic, prepare for 30 seconds, speak for 90, then play it back.",
+    "cta": "Start practising",
+    "why": {
+      "title": "Why practise this way",
+      "point1": "The clock is the training. Most people can answer any of these questions given five minutes; the skill is doing it in 30 seconds of thought. Practising against a timer is what separates this from reading a topic list.",
+      "point2": "Watching yourself back is where the improvement happens. Filler words, a wandering middle, and the habit of answering a different question than the one asked are all obvious on video and nearly invisible from the inside.",
+      "point3": "The topics are real. They come from years of running table-topics sessions — every question here has been put to an actual room and produced an actual answer. That is a different thing from 500 questions generated on demand.",
+      "point4": "Nothing is uploaded. The recording is made and played back inside your browser and never reaches a server, so there is no account, no quota and nothing to delete afterwards."
+    },
+    "faq": {
+      "title": "Impromptu speaking — common questions",
+      "q1": "What is an impromptu speech?",
+      "a1": "A short talk given with little or no preparation, usually in response to a question you have not seen before. Toastmasters clubs call this section table topics; job interviews, panel Q&A and classroom cold-calls are all the same skill under a different name. The defining constraint is that you begin speaking before you have finished thinking.",
+      "q2": "How long should an impromptu speech be?",
+      "a2": "One to two minutes is the standard. This tool uses 90 seconds, which is long enough to need a real structure and short enough that rambling is immediately obvious. If you routinely run out of things to say at 40 seconds, the problem is usually that you answered the question in your first sentence and left yourself nowhere to go.",
+      "q3": "How do I structure a speech with only 30 seconds to prepare?",
+      "a3": "Do not plan the whole thing. Decide three things only: your answer in one sentence, one concrete example that supports it, and how you will end. Say the answer first, spend the middle on the example, then close by restating the answer. PREP — point, reason, example, point — is the same idea and is easier to hold in your head under pressure than any longer framework.",
+      "q4": "Is my recording uploaded or stored anywhere?",
+      "a4": "No. The video is captured by your browser and held in memory on your own machine; it is never sent to us and we cannot see it. That also means it is gone when you close or reload the page, so download any take you want to keep.",
+      "q5": "What are good impromptu speech topics for students?",
+      "a5": "Questions with a defensible position and no correct answer — the values and debate sections below are the ones that work in a classroom. Avoid topics that need specific knowledge, because they test recall rather than composure. If you are running a session for a group, drawing the same topic for everyone and comparing approaches teaches more than giving each person a different one."
+    },
+    "deep": {
+      "what": {
+        "title": "What impromptu speaking actually tests",
+        "p1": "An impromptu speech is not a short prepared speech. A prepared speech is judged on its content; an impromptu one is mostly judged on whether you sounded composed while assembling it in public. The audience is not really listening for insight in 90 seconds — they are reading whether you are in control.",
+        "p2": "That distinction changes what is worth practising. Rehearsing answers to specific questions does not transfer, because the next question will be different. What transfers is the habit of committing to a position quickly, reaching for a concrete example instead of a generality, and landing an ending rather than trailing off into \"so, yeah\".",
+        "p3": "The 30-second preparation window is deliberately too short to plan a full talk. It is exactly long enough to choose an answer and one supporting example, which is all the structure a 90-second speech can carry anyway."
+      },
+      "how": {
+        "title": "How to use this tool",
+        "p1": "Draw a topic at random, or pick one from the list below if you want to work on a particular kind of question. Resisting the urge to redraw until you get an easy one is part of the exercise.",
+        "p2": "Take the 30 seconds. Decide your one-sentence answer, one example, and your closing line. Do not write a script; you will not be able to read it and speak naturally at the same time.",
+        "p3": "Speak for 90 seconds to camera. The timer stops the recording on its own, so you do not have to watch the clock. If you finish early, stop — a clean 60 seconds beats 90 seconds of padding.",
+        "p4": "Watch it back before you draw another topic. Count your filler words, and check whether the question you answered is the question you were asked. Most people find the second problem more often than the first.",
+        "p5": "Download the take if you want to compare it with a later attempt on the same topic, or run it through a transcript tool — your own words on the page are noticeably more useful than your memory of what you said."
+      },
+      "usecases": {
+        "title": "Who this is for",
+        "creatorsTitle": "Creators and presenters",
+        "creatorsBody": "Talking to a camera without a script is the core skill for short-form video, live streams and podcast guest spots. Practising against a topic you did not choose is closer to that experience than rehearsing your own material, and the 90-second limit is roughly the length of a short-form take.",
+        "educationTitle": "Students and teachers",
+        "educationBody": "Debate preparation, viva and interview practice, and ESL speaking fluency all rely on the same drill. For a class, project one topic and have several students answer it in turn — the comparison teaches structure faster than feedback does. The topics below are filtered so they can be used with a school group.",
+        "businessTitle": "Interviews and the workplace",
+        "businessBody": "Panel questions, status updates and the moment a meeting turns to you are all impromptu speaking with higher stakes. The failure mode at work is rarely not knowing the answer; it is starting to talk before deciding what the answer is. Thirty seconds of visible thinking is almost always available, and this trains you to use it."
       }
     }
   }

@@ -210,12 +210,6 @@
       "title": "Herramientas de Curify",
       "description": "Explora las herramientas de Curify Studio para doblaje de video, subtítulos y flujos de trabajo de contenido impulsados por IA."
     },
-    "hero": {
-      "watch_demo": "Mira el mismo video traducido en diferentes idiomas con emoción y sincronización labial preservadas",
-      "transcript_label": "Transcripción",
-      "training_transcript": "Bienvenido a Curify Studio. En este video, mostramos cómo la IA traduce y dobla contenido en diferentes idiomas...",
-      "currently_playing": "Reproduciendo actualmente: versión {label}"
-    },
     "products": {
       "title": "Productos y Servicios",
       "subtitle": "Nuestras soluciones impulsadas por IA están en vivo y mejorando continuamente — ya utilizadas por creadores y equipos en todo el mundo."
@@ -304,7 +298,7 @@
     "asl_video_translator": {
       "meta": {
         "title": "Traductor de Video de Lengua de Señas: Subtítulos y Texto de ASL a Inglés | Curify",
-        "description": "Traductor de video de lengua de señas (ASL → Inglés). Traduce el material firmado a texto y subtítulos en inglés. Demostración en vivo con video real de ASL: únete al acceso anticipado para tus propias cargas."
+        "description": "Traductor de vídeo en lengua de signos (ASL → inglés). Convierta vídeos signados en texto y subtítulos en inglés. Gratuito y experimental: suba su propio vídeo en ASL."
       },
       "title": "Traductor de Video de Lengua de Señas (ASL)",
       "desc": "Traductor de video de lengua de señas: traduce el material firmado en ASL a texto y subtítulos en inglés, automáticamente. Demostración en vivo con video real."
@@ -392,12 +386,12 @@
   },
   "bilingual": {
     "metadata": {
-      "title": "Generador de Subtítulos Bilingües Gratuito — Sin Marca de Agua",
-      "description": "Generador de subtítulos bilingües gratuito — sin marca de agua en las exportaciones, más de 170 pares de idiomas, sincronización precisa por fotograma. Diseñado para YouTube, TikTok y videos de marketing. Un activo multilingüe, no cortes por mercado."
+      "title": "Generador de subtítulos bilingües gratis — SRT limpio, 170+ idiomas",
+      "description": "Generador de subtítulos bilingües gratis: exportaciones SRT sin marca de agua, más de 170 pares de idiomas y sincronización exacta. Para YouTube, TikTok y vídeo de marketing."
     },
     "why": {
       "title": "Por Qué los Creadores y Marketers Eligen Curify para Subtítulos Bilingües",
-      "point1": "Sin marca de agua en videos exportados o archivos SRT — salida limpia en el nivel gratuito, sin necesidad de actualizar para eliminar un logo.",
+      "point1": "Los archivos SRT y de subtítulos se exportan limpios en todos los planes, sin marca de agua ni mejoras de plan. Los vídeos con subtítulos incrustados llevan un pequeño sello de Curify en el plan gratuito, y cualquier recarga lo elimina.",
       "point2": "Más de 170 pares de idiomas con traducción consciente del contexto que preserva el tono, el idioma y el vocabulario del dominio — no intercambios literales de palabras.",
       "point3": "Sincronización precisa por fotograma para pistas duales apiladas — legible en la reproducción automática móvil donde el 80% de las vistas de formato corto ocurren en silencio.",
       "point4": "Exportar como SRT, incrustar en video o incluir como pista de subtítulos — elige el formato que necesita la plataforma sin volver a renderizar."
@@ -405,7 +399,7 @@
     "faq": {
       "title": "Preguntas Frecuentes",
       "q1": "¿Hay una marca de agua en los videos exportados o archivos de subtítulos?",
-      "a1": "No. El nivel gratuito de Curify exporta videos y archivos SRT limpios sin marcas de agua. Los planes de pago añaden más minutos de subtítulos mensuales, no la eliminación de marcas de agua — lo que envías en el plan gratuito es lo que envías en el plan Pro.",
+      "a1": "Los archivos SRT y de subtítulos siempre salen limpios, en cualquier plan. Los vídeos descargados con subtítulos incrustados llevan un pequeño sello de Curify en el plan gratuito; cualquier recarga de créditos o plan de pago lo elimina.",
       "q2": "¿Puedo editar subtítulos después de la generación?",
       "a2": "Sí. Puedes ajustar la sincronización, editar traducciones en cualquiera de los idiomas, cambiar el estilo de la pista de subtítulos y volver a exportar — todo antes de publicar. Las ediciones son no destructivas; la pista original generada automáticamente permanece disponible."
     },
@@ -434,9 +428,9 @@
         "businessBody": "Las empresas utilizan subtítulos bilingües para demostraciones de productos, presentaciones a inversores, videos de capacitación y campañas de marketing. En lugar de producir videos localizados separados, puedes enviar un único activo multilingüe, reduciendo el costo de producción mientras expandes el alcance global."
       }
     },
-    "title": "Subtítulos Bilingües Gratuitos para Video — Sin Marca de Agua, Más de 170 Idiomas",
-    "description": "Genera automáticamente subtítulos en dos idiomas para YouTube, TikTok, videos de marketing y contenido educativo. Nivel gratuito sin marca de agua en las exportaciones, sincronización precisa para pistas apiladas y traducción que preserva la intención — no solo palabras. Envía un activo multilingüe en lugar de producir cortes localizados por mercado.",
-    "example": "Ejemplo: Jensen Huang explicando la estrategia de IA — subtítulos en inglés + chino generados automáticamente, sin marca de agua en la exportación.",
+    "title": "Subtítulos bilingües gratis para vídeo — más de 170 idiomas",
+    "description": "Genera subtítulos en dos idiomas para YouTube, TikTok, vídeo de marketing y contenido educativo. Plan gratuito con exportaciones SRT sin marca de agua, tiempos precisos y traducción que conserva la intención, no solo las palabras.",
+    "example": "Ejemplo: Jensen Huang explicando su estrategia de IA — subtítulos en inglés y chino generados automáticamente.",
     "cta": "Generar Subtítulos — Gratis"
   },
   "videoDubbing": {
@@ -986,12 +980,12 @@
   "aslVideoTranslator": {
     "metadata": {
       "title": "Traductor de Video ASL con IA | Lengua de Señas a Subtítulos en Inglés | Curify AI",
-      "description": "Traduce videos en lengua de señas ASL a texto o subtítulos en inglés automáticamente. Ve una demostración en tiempo real con material firmado — luego únete al acceso anticipado para tus propias cargas."
+      "description": "Traduzca automáticamente vídeos en lengua de signos ASL a texto o subtítulos en inglés. Gratuito y experimental: suba su propio vídeo signado y vea qué lee."
     },
     "title": "Traductor de Video ASL con IA",
-    "description": "Traduce videos en Lengua de Señas Americana a texto o subtítulos en inglés, automáticamente. La demostración a continuación se basa en un clip real de ASL — la misma pipeline aceptará tus cargas una vez que se abra el acceso anticipado.",
+    "description": "Traduzca automáticamente vídeos en Lengua de Signos Americana a texto o subtítulos en inglés. Gratuito mientras es experimental: suba su clip y revise usted mismo el resultado; la traducción automática de lengua de signos no es fiable y su salida necesita revisión.",
     "example": "Ejemplo: un breve clip conversacional de ASL traducido a subtítulos en inglés en una sola pasada. Sin intérprete, sin transcripción manual.",
-    "cta": "Únete al Acceso Anticipado",
+    "cta": "Pruébelo gratis",
     "demo": {
       "aria": "Demostración de traducción de video en lengua de señas ASL",
       "caption": "Mira el clip de demostración para ver ASL traducido a subtítulos en inglés.",
@@ -1002,12 +996,12 @@
       "point1": "Automático — sin paso manual de intérprete. Sube un video firmado, obtén subtítulos en inglés.",
       "point2": "Diseñado para contenido, no para demostraciones de laboratorio — maneja ángulos de cámara del mundo real, estilos de firma variados y ritmo conversacional.",
       "point3": "Formatos de salida diseñados para distribución: subtítulos incrustados, SRT para YouTube, o texto de transcripción simple.",
-      "point4": "Solo demostración hoy; regístrate para el acceso anticipado para traducir tu propio material ASL cuando se abra la pipeline."
+      "point4": "Gratuito y experimental. La traducción de lengua de signos es un problema difícil y sin resolver: el resultado es traducción automática sin verificar y a menudo se equivoca, así que compruébelo con lo que se signa antes de publicarlo."
     },
     "faq": {
       "title": "Preguntas Frecuentes",
       "q1": "¿Está disponible hoy el traductor de video ASL?",
-      "a1": "Aún no — esta página es una demostración en tiempo real con un clip real de ASL. La pipeline de producción está en pruebas privadas. Únete al acceso anticipado y nos pondremos en contacto cuando se abra para cargas.",
+      "a1": "Sí, y es gratuito. También es experimental: la traducción la produce un modelo de visión de propósito general, no un modelo entrenado en lengua de signos, y se equivoca con frecuencia, a veces de un modo que suena fluido y seguro. Trate el resultado como un borrador que hay que comprobar, no como una traducción terminada, y nunca lo publique como subtítulo de accesibilidad sin revisarlo.",
       "q2": "¿Funciona en idiomas distintos a ASL?",
       "a2": "La demostración actual se dirige específicamente a la Lengua de Señas Americana. Las lenguas de señas no son mutuamente inteligibles — BSL (Británica), Auslan (Australiana) y LSF (Francesa) tienen diferentes gramáticas y vocabularios. Estamos evaluando lenguas de señas adicionales según la demanda de inscripciones anticipadas."
     },
@@ -1024,7 +1018,7 @@
         "p2": "En segundo lugar, un codificador de visión lee el flujo visual y produce una secuencia de incrustaciones conscientes de la señal: forma de la mano, vectores de movimiento y los marcadores no manuales (expresión facial, inclinación de cabeza, mirada) que cambian una señal de una afirmación a una pregunta.",
         "p3": "En tercer lugar, una cabeza de traducción decodifica esas incrustaciones en texto en inglés. El decodificador está entrenado en corpus de video ASL-inglés paralelos, por lo que reestructura la gramática ASL en inglés natural en lugar de producir un glosario literal.",
         "p4": "En cuarto lugar, el texto traducido se alinea de nuevo al tiempo original: cada oración en inglés está anclada a los segundos de video que la produjeron. Eso te proporciona subtítulos que puedes insertar directamente en un editor de video, además de una exportación SRT que se carga sin problemas en YouTube.",
-        "p5": "La demostración en esta página es el modelo de producción que se ejecuta en un clip conversacional real de ASL. Las cargas de acceso anticipado seguirán el mismo proceso."
+        "p5": "La demostración de esta página es la línea de procesamiento real ejecutándose sobre un clip conversacional de ASL. Sus propios vídeos pasan por el mismo proceso, con las mismas limitaciones."
       },
       "usecases": {
         "title": "Dónde importa la traducción de video ASL",
@@ -1050,7 +1044,7 @@
       "title": "Why use Curify for AI product photos?",
       "point1": "Template-first generation — lock the visual style once (lighting, composition, framing, color register), and every product variant inherits that style. Ship 1,000 product pages with deterministic on-brand visuals.",
       "point2": "Multiple output formats supported by templated prompts: 9-image lifestyle grids, packaging mockups, outfit try-on cards, before/after fashion variants, promotional posters.",
-      "point3": "Built for scale — DTC catalogs, programmatic SEO pages, A/B-test creative variants. The output is the source files (PNG/JPEG), not a watermarked preview.",
+      "point3": "Pensado para escala: catálogos DTC, páginas de SEO programático y variantes creativas para test A/B. La salida son archivos fuente (PNG/JPEG), no una vista previa de baja resolución. Las descargas del plan gratuito llevan un pequeño sello de Curify; cualquier recarga lo elimina.",
       "point4": "Demo-only today; sign up for early access to run your own product catalog through the templates when the pipeline opens."
     },
     "faq": {

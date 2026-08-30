@@ -36,7 +36,7 @@ import {
   clientMountedAtom,
   createJobContextAtom,
 } from "@/app/atoms/atoms";
-import type { ToolDef } from "@/lib/tools-registry";
+import { isInlineTool, type ToolDef } from "@/lib/tools-registry";
 import { useTracking } from "@/services/useTracking";
 
 type Props = {
@@ -49,10 +49,6 @@ type Props = {
 
 const DEFAULT_GRID =
   "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4";
-
-/** Tools that are `demo` in the registry but are really inline tools — they
- *  navigate to their own page's reproduce section rather than a demo reel. */
-const INLINE_ACTIONS = new Set(["generate", "product_video", "costume_tryon"]);
 
 export default function ToolsGrid({ tools, gridClassName }: Props) {
   const [, setModalState] = useAtom(modalAtom);
@@ -127,7 +123,7 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
 
         const canCreate = tool.status === "create";
         const isComingSoon = tool.status === "coming_soon";
-        const isInline = INLINE_ACTIONS.has(tool.action?.type ?? "");
+        const isInline = isInlineTool(tool);
         const isSaved = savedIds.has(tool.id);
 
         // Footer affordance — small, so the card stays compact, but present so

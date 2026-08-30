@@ -76,13 +76,15 @@
   },
   "topUpModal": {
     "title": "Recharger des crédits",
-    "planLabel": "Plan",
     "minimumTopupError": "La recharge minimale est de 0,50 $.",
     "paymentStartFailed": "Échec du démarrage du paiement. Veuillez réessayer.",
     "customCreditsLabel": "Entrez des crédits personnalisés",
     "customCreditsPlaceholder": "par ex. 200",
     "paymentsPoweredByStripe": "Les paiements sont effectués par Stripe.",
-    "creditRate": "1 crédit ≈ ${amount} (Forfait : {plan})"
+    "creditRate": "1 crédit ≈ ${amount}",
+    "blockedLine": "{jobLabel} coûte {required} crédits, vous en avez {available}.",
+    "buysImages": "≈ {count} images",
+    "unlocksCleanDownloads": "Toute recharge supprime aussi le filigrane Curify de vos téléchargements."
   },
   "transactionHistory": {
     "title": "Historique des crédits",
@@ -132,7 +134,8 @@
     "privacyPolicy": "politique de confidentialité",
     "termsOfService": "Conditions d'utilisation",
     "aboutUs": "À propos de nous",
-    "contactUs": "Contactez-nous"
+    "contactUs": "Contactez-nous",
+    "pricing": "Tarifs"
   },
   "actionButtons": {
     "save": "Sauvegarder",
@@ -152,7 +155,10 @@
     "readMore": "Lire la suite",
     "readLess": "Lire moins",
     "remixThis": "Créez le vôtre",
-    "copyPrompt": "Copier le prompt"
+    "copyPrompt": "Copier le prompt",
+    "jobLabelImage": "La génération d'image",
+    "batchDownloadLabel": "Ce pack de cartes",
+    "printPdfLabel": "Ce PDF d'impression"
   },
   "dialogCloseButton": {
     "ariaLabel": "Fermer la boîte de dialogue"
@@ -373,5 +379,27 @@
     "note": "Dites-nous à peu près combien de designs et à quoi ils servent. Nous reviendrons avec un échantillon et un prix.",
     "contactSubject": "Exécution en masse",
     "contactSubjectWith": "Exécution en masse — {subject}"
+  },
+  "jobWarnings": {
+    "aslUnverifiedTitle": "Traduction automatique — non vérifiée par un humain",
+    "aslUnverifiedBody": "La traduction de la langue des signes est expérimentale et souvent erronée, parfois d'une manière qui paraît fluide et assurée. Vérifiez ces sous-titres avec ce qui est signé dans la vidéo avant de vous y fier ou de les publier.",
+    "aslLowConfidenceTitle": "Nous n'avons pas pu bien lire cette vidéo",
+    "aslLowConfidenceBody": "Cette vidéo était trop longue ou échantillonnée de façon trop clairsemée pour être lue de manière fiable, et une partie de la transcription ci-dessous est probablement inventée. Ne publiez pas ces sous-titres sans les vérifier avec ce qui est signé."
+  },
+  "topUpSuccess": {
+    "confirming": "Confirmation de votre paiement…",
+    "confirmingHint": "Cela prend généralement quelques secondes.",
+    "done": "Crédits ajoutés",
+    "balance": "Vous avez maintenant {credits} crédits.",
+    "cleanDownloads": "Vos téléchargements ne portent plus le logo Curify.",
+    "resume": "Retour à {jobLabel}",
+    "continue": "Continuer",
+    "slowTitle": "Paiement reçu",
+    "slowBody": "Vos crédits mettent plus de temps que d'habitude à apparaître. Le paiement a abouti : ils arriveront sous peu, rien n'est à repayer."
+  },
+  "topUpCancel": {
+    "title": "Paiement annulé",
+    "body": "Aucun montant n'a été prélevé. Vous pouvez recharger quand vous le souhaitez.",
+    "back": "Retour à l'espace de travail"
   }
 }

@@ -25,6 +25,10 @@ export interface ProjectDetails {
   image_path?: string | null;
   preview_image_path?: string | null;
   job_type?: string | null;
+  // Per-job flags the pipeline writes (asl_unverified, asl_low_confidence, ...).
+  // GET /projects/{id} has always returned this — ProjectDetailsResponse carries it
+  // — but the type never declared it, so it was discarded on arrival.
+  runtime_config?: Record<string, unknown> | null;
 }
 
 export interface SegmentUpdate {

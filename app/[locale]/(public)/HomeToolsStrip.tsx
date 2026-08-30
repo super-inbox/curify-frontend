@@ -7,9 +7,11 @@
 //
 // Shows: `create` tools + `demo`-status tools that are actually functional
 // (inline `generate` / `product_video` surfaces). Excludes coming-soon AND
-// the pure-demo SEO landings (status `demo`, action `page` — asl-video-
-// translator, video-enhance, manga-translation, style-transfer): the home
-// strip is a secondary CTA to working products, not a roadmap/demo teaser.
+// the pure-demo SEO landings (status `demo`, action `page` — video-enhance,
+// manga-translation, style-transfer): the home strip is a secondary CTA to
+// working products, not a roadmap/demo teaser.
+// NB asl-video-translator was in that exclusion list until 2026-08-29 but has
+// been status `create` since 2026-08-16, so it does appear on this strip.
 
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
@@ -20,6 +22,13 @@ import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 export default function HomeToolsStrip() {
   const t = useTranslations("home.toolsStrip");
 
+  // NB this list is deliberately NARROWER than isInlineTool() in the registry,
+  // which since 2026-08-30 also covers brand_direction, the three
+  // design→manufacturing exports and impromptu_practice. Those all render real
+  // working surfaces and say "Create" on /tools, so by this strip's own stated
+  // rule they would belong here too — but widening the home page is a separate
+  // decision from labelling the hub correctly. Kept explicit so the difference
+  // reads as a choice rather than an oversight.
   const tools = TOOL_REGISTRY.filter(
     (tool) =>
       tool.status === "create" ||

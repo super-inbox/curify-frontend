@@ -210,12 +210,6 @@
       "title": "Curify Tools",
       "description": "Entdecken Sie die Curify Studio-Tools für Video-Dubbing, Untertitel und KI-gestützte Inhaltsworkflows."
     },
-    "hero": {
-      "watch_demo": "Sehen Sie sich dasselbe Video an, das in verschiedene Sprachen übersetzt wurde, mit bewahrter Emotion und Lippen-Synchronisation",
-      "transcript_label": "Transkript",
-      "training_transcript": "Willkommen bei Curify Studio. In diesem Video zeigen wir, wie KI Inhalte über Sprachen hinweg übersetzt und synchronisiert...",
-      "currently_playing": "Aktuell wird gespielt: {label} Version"
-    },
     "products": {
       "title": "Produkte & Dienstleistungen",
       "subtitle": "Unsere KI-gesteuerten Lösungen sind live und verbessern sich kontinuierlich – bereits von Kreativen und Teams weltweit genutzt."
@@ -304,7 +298,7 @@
     "asl_video_translator": {
       "meta": {
         "title": "Gebärdensprache Video Übersetzer: ASL zu Englisch Untertitel & Text | Curify",
-        "description": "Gebärdensprache Video Übersetzer (ASL → Englisch). Übersetze unterzeichnetes Filmmaterial in englischen Text und Untertitel. Live-Demo mit echtem ASL-Video — melde dich für den frühen Zugang an, um deine eigenen Uploads zu machen."
+        "description": "Videoübersetzer für Gebärdensprache (ASL → Englisch). Wandeln Sie gebärdete Videos in englischen Text und Untertitel um. Kostenlos und experimentell – laden Sie Ihr eigenes ASL-Video hoch."
       },
       "title": "Gebärdensprache Video Übersetzer (ASL)",
       "desc": "Gebärdensprache Video Übersetzer: übersetze ASL-unterzeichnetes Filmmaterial automatisch in englischen Text und Untertitel. Funktionierende Demo mit echtem Video."
@@ -392,12 +386,12 @@
   },
   "bilingual": {
     "metadata": {
-      "title": "Kostenloser Bilingualer Untertitelgenerator — Kein Wasserzeichen",
-      "description": "Kostenloser bilingualer Untertitelgenerator — kein Wasserzeichen bei Exporten, 170+ Sprachpaare, frame-genaue Zeitangaben. Entwickelt für YouTube, TikTok und Marketingvideos. Ein mehrsprachiges Asset, keine marktbezogenen Schnitte."
+      "title": "Kostenloser zweisprachiger Untertitel-Generator — SRT ohne Wasserzeichen, 170+ Sprachen",
+      "description": "Kostenloser zweisprachiger Untertitel-Generator: SRT-Exporte ohne Wasserzeichen, über 170 Sprachpaare, bildgenaues Timing. Für YouTube, TikTok und Marketingvideos."
     },
     "why": {
       "title": "Warum Creator und Marketer Curify für Bilinguale Untertitel wählen",
-      "point1": "Kein Wasserzeichen auf exportierten Videos oder SRT — sauberes Output in der kostenlosen Stufe, kein Upgrade erforderlich, um ein Logo zu entfernen.",
+      "point1": "SRT- und Untertiteldateien werden in jedem Tarif ohne Wasserzeichen exportiert, ganz ohne Upgrade. Videos mit eingebrannten Untertiteln tragen im Gratis-Tarif ein kleines Curify-Logo; jede Aufladung entfernt es.",
       "point2": "170+ Sprachpaare mit kontextbewusster Übersetzung, die Ton, Idiom und Fachvokabular bewahrt — keine wörtlichen Wortwechsel.",
       "point3": "Frame-genaue Zeitangaben für gestapelte dualsprachige Tracks — lesbar bei mobilem Autoplay, wo 80% der Kurzformansichten stumm erfolgen.",
       "point4": "Exportieren als SRT, ins Video einbrennen oder als Untertiteltrack einbetten — das Format wählen, das die Plattform benötigt, ohne neu zu rendern."
@@ -405,7 +399,7 @@
     "faq": {
       "title": "Häufig gestellte Fragen",
       "q1": "Gibt es ein Wasserzeichen auf exportierten Videos oder Untertiteldateien?",
-      "a1": "Nein. Curifys kostenlose Stufe exportiert saubere Videos und SRT-Dateien ohne Wasserzeichen. Bezahlte Pläne fügen mehr monatliche Untertitelminuten hinzu, nicht die Entfernung des Wasserzeichens — was Sie im kostenlosen Plan versenden, ist das, was Sie im Pro-Plan versenden.",
+      "a1": "SRT- und Untertiteldateien sind in jedem Tarif sauber. Heruntergeladene Videos mit eingebrannten Untertiteln tragen im Gratis-Tarif ein kleines Curify-Logo; jede Guthaben-Aufladung oder ein bezahlter Tarif entfernt es.",
       "q2": "Kann ich Untertitel nach der Generierung bearbeiten?",
       "a2": "Ja. Sie können die Zeitangaben anpassen, Übersetzungen in beiden Sprachen bearbeiten, den Untertiteltrack neu gestalten und erneut exportieren — alles vor der Veröffentlichung. Änderungen sind nicht destruktiv; der ursprünglich automatisch generierte Track bleibt verfügbar."
     },
@@ -434,9 +428,9 @@
         "businessBody": "Unternehmen nutzen zweisprachige Untertitel für Produktdemos, Investorenpräsentationen, Schulungsvideos und Marketingkampagnen. Anstatt separate lokalisierte Videos zu produzieren, können Sie ein einziges mehrsprachiges Asset bereitstellen – die Produktionskosten senken und die globale Reichweite erweitern."
       }
     },
-    "title": "Kostenlose Bilinguale Untertitel für Videos — Kein Wasserzeichen, 170+ Sprachen",
-    "description": "Automatisch dualsprachige Untertitel für YouTube, TikTok, Marketingvideos und Bildungsinhalte generieren. Kostenlose Stufe ohne Wasserzeichen bei Exporten, genaue Zeitangaben für gestapelte Tracks und Übersetzungen, die die Absicht bewahren — nicht nur Worte. Ein mehrsprachiges Asset versenden, anstatt lokalisierte Schnitte pro Markt zu produzieren.",
-    "example": "Beispiel: Jensen Huang erklärt die KI-Strategie — Englisch + Chinesisch Untertitel automatisch generiert, kein Wasserzeichen beim Export.",
+    "title": "Kostenlose zweisprachige Untertitel für Video — über 170 Sprachen",
+    "description": "Erzeuge automatisch zweisprachige Untertitel für YouTube, TikTok, Marketing- und Lernvideos. Gratis-Tarif mit SRT-Exporten ohne Wasserzeichen, präzisem Timing und Übersetzung, die die Absicht bewahrt – nicht nur die Wörter.",
+    "example": "Beispiel: Jensen Huang erklärt seine KI-Strategie — englische und chinesische Untertitel automatisch erzeugt.",
     "cta": "Untertitel generieren — Kostenlos"
   },
   "videoDubbing": {
@@ -986,12 +980,12 @@
   "aslVideoTranslator": {
     "metadata": {
       "title": "AI ASL Video Übersetzer | Gebärdensprache in englische Untertitel | Curify AI",
-      "description": "Übersetzen Sie ASL-Gebärdensprache-Videos automatisch in englischen Text oder Untertitel. Sehen Sie eine funktionierende Demo mit echten Gebärdenaufnahmen – dann melden Sie sich für den frühen Zugang an, um Ihre eigenen Uploads vorzunehmen."
+      "description": "Übersetzen Sie ASL-Gebärdensprachvideos automatisch in englischen Text oder Untertitel. Kostenlos und experimentell – laden Sie Ihr eigenes gebärdetes Video hoch und sehen Sie, was gelesen wird."
     },
     "title": "AI ASL Video Übersetzer",
-    "description": "Übersetzen Sie Videos in American Sign Language automatisch in englischen Text oder Untertitel. Die folgende Demo läuft mit einem echten ASL-Clip – dieselbe Pipeline akzeptiert Ihre Uploads, sobald der frühe Zugang eröffnet wird.",
+    "description": "Übersetzen Sie Videos in Amerikanischer Gebärdensprache automatisch in englischen Text oder Untertitel. Kostenlos, solange es experimentell ist: Laden Sie Ihren Clip hoch und prüfen Sie das Ergebnis selbst – die maschinelle Übersetzung von Gebärdensprache ist unzuverlässig und muss kontrolliert werden.",
     "example": "Beispiel: ein kurzer konversationeller ASL-Clip, der in einem Durchgang in englische Untertitel übersetzt wird. Kein Dolmetscher, keine manuelle Transkription.",
-    "cta": "Frühen Zugang anfordern",
+    "cta": "Kostenlos testen",
     "demo": {
       "aria": "Demo zur Übersetzung von ASL-Gebärdensprache-Videos",
       "caption": "Sehen Sie sich den Democlip an, um ASL in englische Untertitel übersetzt zu sehen.",
@@ -1002,12 +996,12 @@
       "point1": "Automatisch – kein manueller Dolmetscher-Schritt. Laden Sie ein gebärdetes Video hoch, erhalten Sie englische Untertitel.",
       "point2": "Für Inhalte entwickelt, nicht für Labordemos – bewältigt reale Kamerawinkel, unterschiedliche Gebärdenstile und konversationelles Tempo.",
       "point3": "Ausgabeformate, die für die Verbreitung konzipiert sind: eingebettete Untertitel, SRT für YouTube oder einfacher Transkriptionstext.",
-      "point4": "Heute nur als Demo; melden Sie sich für den frühen Zugang an, um Ihr eigenes ASL-Material zu übersetzen, wenn die Pipeline eröffnet wird."
+      "point4": "Kostenlos und experimentell. Die Übersetzung von Gebärdensprache ist ein schwieriges, ungelöstes Problem: Die Ausgabe ist ungeprüfte maschinelle Übersetzung und häufig falsch. Prüfen Sie sie anhand der Gebärden, bevor Sie sie veröffentlichen."
     },
     "faq": {
       "title": "Häufig gestellte Fragen",
       "q1": "Ist der ASL-Videoübersetzer heute verfügbar?",
-      "a1": "Noch nicht – diese Seite ist eine funktionierende Demo mit einem echten ASL-Clip. Die Produktionspipeline befindet sich in privatem Test. Melden Sie sich für den frühen Zugang an, und wir werden Sie kontaktieren, wenn sie für Uploads geöffnet wird.",
+      "a1": "Ja, und er ist kostenlos. Er ist außerdem experimentell: Die Übersetzung stammt von einem allgemeinen Bildmodell, nicht von einem auf Gebärdensprache trainierten Modell, und sie ist häufig falsch – teils auf eine Weise, die flüssig und selbstsicher klingt. Behandeln Sie die Ausgabe als zu prüfenden Entwurf, nicht als fertige Übersetzung, und veröffentlichen Sie sie niemals ungeprüft als barrierefreien Untertitel.",
       "q2": "Funktioniert es auch mit anderen Sprachen als ASL?",
       "a2": "Die aktuelle Demo richtet sich speziell an American Sign Language. Gebärdensprachen sind nicht gegenseitig verständlich – BSL (Britisch), Auslan (Australisch) und LSF (Französisch) haben unterschiedliche Grammatiken und Wortschätze. Wir prüfen zusätzliche Gebärdensprachen basierend auf der Nachfrage von Anmeldungen für den frühen Zugang."
     },
@@ -1024,7 +1018,7 @@
         "p2": "Zweitens liest ein Vision-Encoder den visuellen Stream und produziert eine Sequenz von gebärdenbewussten Einbettungen: Handform, Bewegungsvektoren und die nicht-manualen Marker (Gesichtsausdruck, Kopfneigung, Augenblick), die eine Gebärde von einer Aussage in eine Frage verwandeln.",
         "p3": "Drittens dekodiert ein Übersetzungskopf diese Einbettungen in englischen Text. Der Decoder ist auf parallelen ASL-Englisch-Video-Korpora trainiert, sodass er die ASL-Grammatik in natürliches Englisch umstrukturiert, anstatt eine wörtliche Übersetzung zu produzieren.",
         "p4": "Viertens wird der übersetzte Text wieder an das Quell-Zeitmaß angepasst – jeder englische Satz wird an die Sekunden des Videos verankert, die ihn erzeugt haben. Das gibt Ihnen Untertitel, die Sie direkt in einen Video-Editor einfügen können, plus einen SRT-Export, der sauber in YouTube geladen wird.",
-        "p5": "Die Demo auf dieser Seite ist das Produktionsmodell, das mit einem echten konversationellen ASL-Clip läuft. Uploads im frühen Zugang werden denselben Prozess durchlaufen."
+        "p5": "Die Demo auf dieser Seite ist die reale Pipeline, angewendet auf einen echten ASL-Gesprächsclip. Ihre eigenen Uploads durchlaufen dieselbe Pipeline – mit denselben Einschränkungen."
       },
       "usecases": {
         "title": "Wo die ASL-Videoübersetzung wichtig ist",
@@ -1050,7 +1044,7 @@
       "title": "Warum Curify für AI Produktfotos verwenden?",
       "point1": "Vorlagenbasierte Generierung – sperren Sie den visuellen Stil einmal (Beleuchtung, Komposition, Rahmen, Farbregistrierung), und jede Produktvariante erbt diesen Stil. Liefern Sie 1.000 Produktseiten mit deterministischen markengerechten Visuals.",
       "point2": "Mehrere Ausgabeformate, die durch vorgefertigte Eingaben unterstützt werden: 9-Bilder-Lifestyle-Gitter, Verpackungs-Mockups, Outfit-Anprobe-Karten, Vorher/Nachher-Modellvarianten, Werbeplakate.",
-      "point3": "Für den großen Maßstab gebaut – DTC-Kataloge, programmatische SEO-Seiten, A/B-Test kreative Varianten. Die Ausgabe sind die Quelldateien (PNG/JPEG), nicht eine mit Wasserzeichen versehene Vorschau.",
+      "point3": "Für Skalierung gebaut – DTC-Kataloge, programmatische SEO-Seiten, A/B-Kreativvarianten. Die Ausgabe sind Quelldateien (PNG/JPEG), keine niedrig aufgelöste Vorschau. Downloads im Gratis-Tarif tragen ein kleines Curify-Logo; jede Aufladung entfernt es.",
       "point4": "Heute nur Demo; melden Sie sich für den Frühzugang an, um Ihr eigenes Produktkatalog durch die Vorlagen zu führen, wenn die Pipeline geöffnet wird."
     },
     "faq": {
