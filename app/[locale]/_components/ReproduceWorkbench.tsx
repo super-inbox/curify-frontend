@@ -187,6 +187,23 @@ export default function ReproduceWorkbench({
         setPromotedUrl(null);
         pushResult("generate", "Your generation", signedUrl, "primary");
       },
+      // An existing image already matches these params, so nothing was
+      // generated. Put it in column 3 anyway: it is what the user asked for, and
+      // it becomes the hero the design-work tiles operate on, so the whole
+      // downstream workflow proceeds without a generation ever being paid for.
+      // Previously this path produced a sentence and an off-page link, which made
+      // "generate anyway" the cheaper gesture than looking at what we already had.
+      onReusedExisting: (imageUrl, match) => {
+        setPromotedUrl(null);
+        pushResult(
+          "reused",
+          match.score >= 1
+            ? "Already generated — reused"
+            : `Existing match (${Math.round(match.score * 100)}%) — reused`,
+          imageUrl,
+          "primary",
+        );
+      },
     });
 
   const { generate: freeformGenerate, isGenerating: freeformGenerating } = useFreeformGenerate({
@@ -689,7 +706,9 @@ export default function ReproduceWorkbench({
               <div className="flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
                 <span className="mt-0.5 shrink-0">⚠️</span>
                 <span>
-                  A very similar image already exists ({Math.round(duplicateWarning.score * 100)}% match).{" "}
+                  {duplicateWarning.imageUrl
+                    ? `Shown on the right — no credits spent (${Math.round(duplicateWarning.score * 100)}% match).`
+                    : `A very similar image already exists (${Math.round(duplicateWarning.score * 100)}% match).`}{" "}
                   <button type="button" className="font-semibold underline hover:text-amber-900 cursor-pointer" onClick={dismissAndGenerate}>
                     generate anyway
                   </button>

@@ -142,7 +142,14 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     Array.from(new Set([...(exampleTopics ?? []), ...(templateTopics ?? [])]))
   );
 
-  const existingExamples = imageViews.map((v) => ({ id: v.id, params: v.params }));
+  // imageUrl lets a duplicate be SHOWN rather than described — see
+  // ExistingExampleRef. Prefer the preview: it is what the result panel renders,
+  // and it is the smaller fetch.
+  const existingExamples = imageViews.map((v) => ({
+    id: v.id,
+    params: v.params,
+    imageUrl: v.preview_image_url ?? v.image_url,
+  }));
 
   return {
     ...ctx,

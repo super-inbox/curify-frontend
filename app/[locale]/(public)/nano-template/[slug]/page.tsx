@@ -260,7 +260,14 @@ export default async function NanoTemplatePage({ params }: Props) {
       intro_video_url: template.intro_video_url,
       existingExamples: imageViews
         .filter((v) => v.params && Object.keys(v.params).length > 0)
-        .map((v) => ({ id: v.id, params: v.params as Record<string, string> })),
+        // imageUrl lets a duplicate be SHOWN rather than described — see
+        // ExistingExampleRef. Prefer the preview: it is what the result panel
+        // renders, and it is the smaller fetch.
+        .map((v) => ({
+          id: v.id,
+          params: v.params as Record<string, string>,
+          imageUrl: v.preview_image_url ?? v.image_url,
+        })),
     }}
     sampleImage={imageViews[0] ? {
       url: imageViews[0].image_url,
