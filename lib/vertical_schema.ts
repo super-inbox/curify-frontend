@@ -123,7 +123,20 @@ export const VERTICAL_SCHEMAS: Record<VerticalId, VerticalSchema> = {
   merch: {
     id: "merch",
     label: "文创 / Merch",
-    schemaOrgType: "Product",
+    // NOT "Product", despite the name. Google validates Product as a rich-result
+    // candidate and rejects any instance without `offers`, `review` or
+    // `aggregateRating` — "Items with this issue are invalid" in GSC, which is
+    // exactly what these pages threw. We cannot satisfy it honestly: a template
+    // page is a generator, not a listing, and it has no price. The only ways to
+    // clear it as a Product would be to invent a price or to fabricate ratings,
+    // and fake reviews are a manual-action offence.
+    //
+    // CreativeWork is what these pages actually are — a design template — and it
+    // has no required properties, so it validates. Nothing is lost: an invalid
+    // Product earns no rich result either, it just also files an error. If merch
+    // pages should ever chase Product rich results, that starts with really
+    // selling something at a price on the page, which is a product decision.
+    schemaOrgType: "CreativeWork",
     attributes: [
       { key: "product_type", label: "Product", facet: true, taxonomyAxis: "NEW" },
       { key: "material", label: "Material", facet: true, taxonomyAxis: "NEW" },
