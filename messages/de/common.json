@@ -76,13 +76,15 @@
   },
   "topUpModal": {
     "title": "Guthaben aufladen",
-    "planLabel": "Planen",
     "minimumTopupError": "Die Mindestaufladung beträgt 0,50 $.",
     "paymentStartFailed": "Die Zahlung konnte nicht gestartet werden. Bitte versuchen Sie es erneut.",
     "customCreditsLabel": "Geben Sie benutzerdefinierte Credits ein",
     "customCreditsPlaceholder": "z.B. 200",
     "paymentsPoweredByStripe": "Zahlungen werden von Stripe unterstützt.",
-    "creditRate": "1 Credit ≈ ${amount} (Plan: {plan})"
+    "creditRate": "1 Credit ≈ ${amount}",
+    "blockedLine": "{jobLabel} kostet {required} Credits – du hast {available}.",
+    "buysImages": "≈ {count} Bilder",
+    "unlocksCleanDownloads": "Jede Aufladung entfernt außerdem das Curify-Wasserzeichen aus deinen Downloads."
   },
   "transactionHistory": {
     "title": "Credits-Geschichte",
@@ -132,7 +134,8 @@
     "privacyPolicy": "Datenschutzrichtlinie",
     "termsOfService": "Nutzungsbedingungen",
     "aboutUs": "Über uns",
-    "contactUs": "Kontaktieren Sie uns"
+    "contactUs": "Kontaktieren Sie uns",
+    "pricing": "Preise"
   },
   "actionButtons": {
     "save": "Speichern",
@@ -152,7 +155,10 @@
     "readMore": "Mehr lesen",
     "readLess": "Weniger lesen",
     "remixThis": "Selbst gestalten",
-    "copyPrompt": "Prompt kopieren"
+    "copyPrompt": "Prompt kopieren",
+    "jobLabelImage": "Bildgenerierung",
+    "batchDownloadLabel": "Dieses Kartenpaket",
+    "printPdfLabel": "Dieses Druck-PDF"
   },
   "dialogCloseButton": {
     "ariaLabel": "Dialog schließen"
@@ -379,5 +385,21 @@
     "aslUnverifiedBody": "Die Übersetzung von Gebärdensprache ist experimentell und häufig falsch, teils auf eine Weise, die flüssig und selbstsicher klingt. Bitte prüfen Sie diese Untertitel anhand der Gebärden im Video, bevor Sie sich darauf verlassen oder sie veröffentlichen.",
     "aslLowConfidenceTitle": "Wir konnten dieses Video nicht gut lesen",
     "aslLowConfidenceBody": "Dieses Video war zu lang oder wurde zu spärlich abgetastet, um es zuverlässig zu lesen; Teile der Abschrift unten sind wahrscheinlich erfunden. Bitte veröffentlichen Sie diese Untertitel nicht, ohne sie anhand der Gebärden zu prüfen."
+  },
+  "topUpSuccess": {
+    "confirming": "Zahlung wird bestätigt…",
+    "confirmingHint": "Das dauert meist nur wenige Sekunden.",
+    "done": "Credits gutgeschrieben",
+    "balance": "Du hast jetzt {credits} Credits.",
+    "cleanDownloads": "Deine Downloads tragen kein Curify-Wasserzeichen mehr.",
+    "resume": "Zurück zu {jobLabel}",
+    "continue": "Weiter",
+    "slowTitle": "Zahlung eingegangen",
+    "slowBody": "Deine Credits brauchen länger als üblich. Die Zahlung war erfolgreich – sie treffen gleich ein, es muss nichts erneut bezahlt werden."
+  },
+  "topUpCancel": {
+    "title": "Bezahlvorgang abgebrochen",
+    "body": "Es wurde nichts abgebucht. Du kannst jederzeit aufladen.",
+    "back": "Zurück zum Workspace"
   }
 }

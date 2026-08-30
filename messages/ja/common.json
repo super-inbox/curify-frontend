@@ -76,13 +76,15 @@
   },
   "topUpModal": {
     "title": "チャージクレジット",
-    "planLabel": "プラン",
     "minimumTopupError": "最小チャージ額は 0.50 ドルです。",
     "paymentStartFailed": "支払いの開始に失敗しました。もう一度試してください。",
     "customCreditsLabel": "カスタム クレジットを入力してください",
     "customCreditsPlaceholder": "例えば200",
     "paymentsPoweredByStripe": "支払いは Stripe によって行われます。",
-    "creditRate": "1 クレジット ≈ ${amount} (計画: {plan})"
+    "creditRate": "1 クレジット ≈ ${amount}",
+    "blockedLine": "{jobLabel} には {required} クレジットが必要です（現在 {available}）。",
+    "buysImages": "≈ {count} 枚",
+    "unlocksCleanDownloads": "チャージすると、ダウンロードから Curify のウォーターマークが外れます。"
   },
   "transactionHistory": {
     "title": "クレジット履歴",
@@ -132,7 +134,8 @@
     "privacyPolicy": "プライバシーポリシー",
     "termsOfService": "利用規約",
     "aboutUs": "私たちについて",
-    "contactUs": "お問い合わせ"
+    "contactUs": "お問い合わせ",
+    "pricing": "料金"
   },
   "actionButtons": {
     "save": "保存",
@@ -152,7 +155,10 @@
     "readMore": "続きを読む",
     "readLess": "続きを読む",
     "remixThis": "自分で作る",
-    "copyPrompt": "プロンプトをコピー"
+    "copyPrompt": "プロンプトをコピー",
+    "jobLabelImage": "画像生成",
+    "batchDownloadLabel": "このカードパック",
+    "printPdfLabel": "この印刷用 PDF"
   },
   "dialogCloseButton": {
     "ariaLabel": "ダイアログを閉じる"
@@ -379,5 +385,21 @@
     "aslUnverifiedBody": "手話の翻訳は実験的な機能で、誤りが多く含まれます。しかもその誤りは、自然で自信のある文章に見えることがあります。字幕をご利用・公開になる前に、映像の手話と照らし合わせてご確認ください。",
     "aslLowConfidenceTitle": "この動画をうまく読み取れませんでした",
     "aslLowConfidenceBody": "この動画は長すぎるか、サンプリングが粗すぎたため確実に読み取れず、以下の字幕には作り出された内容が含まれている可能性が高いです。映像の手話と照合せずに公開しないでください。"
+  },
+  "topUpSuccess": {
+    "confirming": "支払いを確認しています…",
+    "confirmingHint": "通常は数秒で完了します。",
+    "done": "チャージが完了しました",
+    "balance": "現在 {credits} クレジットです。",
+    "cleanDownloads": "ダウンロードから Curify のウォーターマークが外れました。",
+    "resume": "{jobLabel}に戻る",
+    "continue": "続ける",
+    "slowTitle": "支払いを受け付けました",
+    "slowBody": "クレジットの反映に通常より時間がかかっています。支払いは完了しているのでまもなく反映されます。再度のお支払いは不要です。"
+  },
+  "topUpCancel": {
+    "title": "支払いをキャンセルしました",
+    "body": "請求は発生していません。いつでもチャージできます。",
+    "back": "ワークスペースに戻る"
   }
 }

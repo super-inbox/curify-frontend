@@ -195,6 +195,11 @@ export default function ReproduceWorkbench({
     // dead-end alert (matches the PDF-pack path). See (f) 2026-08-19.
     onInsufficientCredits: () => {
       setSoonNote("You're out of credits — top up to run this output format.");
+      track({
+        contentId: "paywall:workbench-output-format",
+        contentType: "topic_capsule",
+        actionType: "click",
+      });
       setModal("topup");
     },
     onStart: (args) => setActiveKey((args.meta?.key as string) ?? null),
@@ -343,6 +348,11 @@ export default function ReproduceWorkbench({
             setSoonNote(
               `This ${size}-card pack costs ${res.points_required} points — you have ${res.balance ?? 0}. Top up to unlock.`,
             );
+            track({
+              contentId: "paywall:workbench-pdf-pack",
+              contentType: "topic_capsule",
+              actionType: "click",
+            });
             setModal("topup");
             return;
           }

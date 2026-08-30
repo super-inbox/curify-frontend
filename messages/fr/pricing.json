@@ -11,7 +11,8 @@
     "common": {
       "month": "Mois",
       "pricing": "Tarification",
-      "receive": "Recevoir"
+      "receive": "Recevoir",
+      "onceAtSignup": "une fois à l'inscription"
     },
     "buttons": {
       "signUp": "S'inscrire",
@@ -86,7 +87,7 @@
         "subtitleTools": "Outils de sous-titrage (ajouter/supprimer, pas de traduction)",
         "batchProcessing": "Traitement par lots",
         "maxVideoLength": "Longueur maximale de vidéo par tche",
-        "monthlyCredits": "Crédits gratuits mensuels",
+        "monthlyCredits": "Crédits gratuits",
         "priorityQueue": "File d'attente prioritaire / Traitement plus rapide",
         "creditTopUp": "Recharge de crédits"
       },
@@ -97,7 +98,8 @@
         "fiveHoursPerMonth": "5 h/mois",
         "fiveMinutes": "5 minutes",
         "thirtyMinutes": "30 minutes",
-        "sixtyMinutes": "60 minutes"
+        "sixtyMinutes": "60 minutes",
+        "afterTopUp": "Après toute recharge"
       }
     }
   }

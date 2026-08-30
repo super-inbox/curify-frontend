@@ -13,7 +13,13 @@ import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { useTracking, useSaveTracking, type TrackingTarget } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
 import { getOutputIntent } from "@/lib/output_intent";
-import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
+import {
+  clientMountedAtom,
+  drawerAtom,
+  modalAtom,
+  topUpContextAtom,
+  userAtom,
+} from "@/app/atoms/atoms";
 import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
 type GenerateConfig = {
@@ -97,6 +103,8 @@ export default function UnifiedActionBar({
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
+  const [, setModal] = useAtom(modalAtom);
+  const [, setTopUpContext] = useAtom(topUpContextAtom);
 
   const [generated, setGenerated] = useState(false);
   const [isBatchDownloading, setIsBatchDownloading] = useState(false);
@@ -146,6 +154,24 @@ export default function UnifiedActionBar({
       });
   
       if (!res?.success || !res?.download_url) {
+        // A paid pack the user cannot afford comes back as success:false with
+        // code INSUFFICIENT_CREDITS on a 200. Falling through to `throw` showed
+        // it as "download failed" — a paywall dressed as a broken product, on
+        // the same service ReproduceWorkbench already handles correctly.
+        if (res?.code === "INSUFFICIENT_CREDITS") {
+          trackAction(
+            { contentType: "topic_capsule", contentId: `paywall:pack-batch-download` },
+            "click",
+          );
+          setTopUpContext({
+            required: res.points_required ?? 0,
+            available: res.balance ?? 0,
+            jobLabel: t("batchDownloadLabel"),
+            surface: "pack-batch-download",
+          });
+          setModal("topup");
+          return;
+        }
         throw new Error(res?.message || "Missing download_url");
       }
   
@@ -180,6 +206,24 @@ export default function UnifiedActionBar({
         format: "pdf",
       });
       if (!res?.success || !res?.download_url) {
+        // A paid pack the user cannot afford comes back as success:false with
+        // code INSUFFICIENT_CREDITS on a 200. Falling through to `throw` showed
+        // it as "download failed" — a paywall dressed as a broken product, on
+        // the same service ReproduceWorkbench already handles correctly.
+        if (res?.code === "INSUFFICIENT_CREDITS") {
+          trackAction(
+            { contentType: "topic_capsule", contentId: `paywall:pack-print-pdf` },
+            "click",
+          );
+          setTopUpContext({
+            required: res.points_required ?? 0,
+            available: res.balance ?? 0,
+            jobLabel: t("printPdfLabel"),
+            surface: "pack-print-pdf",
+          });
+          setModal("topup");
+          return;
+        }
         throw new Error(res?.message || "Missing download_url");
       }
       const a = document.createElement("a");

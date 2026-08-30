@@ -2,7 +2,13 @@
 "use client";
 
 import { useAtom } from "jotai";
-import { modalAtom, userAtom, drawerAtom, createJobContextAtom } from "@/app/atoms/atoms";
+import {
+  modalAtom,
+  userAtom,
+  drawerAtom,
+  createJobContextAtom,
+  topUpContextAtom,
+} from "@/app/atoms/atoms";
 import Modal from "../../_components/Modal";
 import Upload from "../../_components/Upload";
 import { useEffect, useRef, useState } from "react";
@@ -17,6 +23,7 @@ import type { SubtitleFormat, AudioOption } from "@/types/projects";
 import type { BackendJobType } from "@/types/projects";
 import { getJobUiConfig } from "@/lib/create-job-ui";
 import toast from "react-hot-toast";
+import { useTracking } from "@/services/useTracking";
 
 export default function CreateNewModal() {
   const router = useRouter();
@@ -25,6 +32,8 @@ export default function CreateNewModal() {
   const [, setDrawerState] = useAtom(drawerAtom);
 
   const [jobCtx] = useAtom(createJobContextAtom);
+  const [, setTopUpContext] = useAtom(topUpContextAtom);
+  const { trackAction } = useTracking();
   const job_type: BackendJobType = (jobCtx?.job_type as BackendJobType) ?? "subtitle_only";
   const ui = getJobUiConfig(job_type);
 
@@ -182,7 +191,20 @@ export default function CreateNewModal() {
     }
 
     if (cost > remainingCredits) {
-      alert(`Not enough credits. Required: ${cost}, Available: ${remainingCredits}`);
+      // Was an untranslated browser alert with no path to pay, on the surface
+      // that carries every video job — 13% of project volume and the segment
+      // with the clearest repeat-usage shape we have.
+      trackAction(
+        { contentType: "topic_capsule", contentId: `paywall:create-video-job:${job_type}` },
+        "click",
+      );
+      setTopUpContext({
+        required: cost,
+        available: remainingCredits,
+        jobLabel: ui.title,
+        surface: `create-video-job:${job_type}`,
+      });
+      setModalState("topup");
       return;
     }
 

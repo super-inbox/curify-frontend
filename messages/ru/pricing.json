@@ -11,7 +11,8 @@
     "common": {
       "month": "Месяц",
       "pricing": "Цены",
-      "receive": "Получить"
+      "receive": "Получить",
+      "onceAtSignup": "разово при регистрации"
     },
     "buttons": {
       "signUp": "Зарегистрироваться",
@@ -86,7 +87,7 @@
         "subtitleTools": "Инструменты субтитров (добавить/удалить, без перевода)",
         "batchProcessing": "Пакетная обработка",
         "maxVideoLength": "Максимальная длина видео на задачу",
-        "monthlyCredits": "Ежемесячные бесплатные кредиты",
+        "monthlyCredits": "Бесплатные кредиты",
         "priorityQueue": "Приоритетная очередь / Более быстрая обработка",
         "creditTopUp": "Пополнение кредитов"
       },
@@ -97,7 +98,8 @@
         "fiveHoursPerMonth": "5 ч/мес",
         "fiveMinutes": "5 мин",
         "thirtyMinutes": "30 мин",
-        "sixtyMinutes": "60 мин"
+        "sixtyMinutes": "60 мин",
+        "afterTopUp": "После любого пополнения"
       }
     }
   }

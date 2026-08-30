@@ -11,7 +11,8 @@
     "common": {
       "month": "Month",
       "pricing": "Pricing",
-      "receive": "Receive"
+      "receive": "Receive",
+      "onceAtSignup": "once at signup"
     },
     "buttons": {
       "signUp": "Sign up",
@@ -86,7 +87,7 @@
         "subtitleTools": "Subtitle Tools (add/remove, no translation)",
         "batchProcessing": "Batch Processing",
         "maxVideoLength": "Max Video Length per Task",
-        "monthlyCredits": "Monthly Free Credits",
+        "monthlyCredits": "Free credits",
         "priorityQueue": "Priority Queue / Faster Processing",
         "creditTopUp": "Credit Top-up"
       },
@@ -97,7 +98,8 @@
         "fiveHoursPerMonth": "5 hrs/month",
         "fiveMinutes": "5 min",
         "thirtyMinutes": "30 min",
-        "sixtyMinutes": "60 min"
+        "sixtyMinutes": "60 min",
+        "afterTopUp": "After any top-up"
       }
     }
   }

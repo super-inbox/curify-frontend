@@ -11,7 +11,8 @@
     "common": {
       "month": "Monat",
       "pricing": "Preisgestaltung",
-      "receive": "Erhalten"
+      "receive": "Erhalten",
+      "onceAtSignup": "einmalig bei der Anmeldung"
     },
     "buttons": {
       "signUp": "Registrieren",
@@ -86,7 +87,7 @@
         "subtitleTools": "Untertitel-Tools (hinzufügen/entfernen, keine Übersetzung)",
         "batchProcessing": "Stapelverarbeitung",
         "maxVideoLength": "Max. Videolänge pro Aufgabe",
-        "monthlyCredits": "Monatliche kostenlose Credits",
+        "monthlyCredits": "Gratis-Credits",
         "priorityQueue": "Prioritätswarteschlange / Schnellere Verarbeitung",
         "creditTopUp": "Credit-Aufladung"
       },
@@ -97,7 +98,8 @@
         "fiveHoursPerMonth": "5 Std./Monat",
         "fiveMinutes": "5 Min.",
         "thirtyMinutes": "30 Min.",
-        "sixtyMinutes": "60 Min."
+        "sixtyMinutes": "60 Min.",
+        "afterTopUp": "Nach jeder Aufladung"
       }
     }
   }

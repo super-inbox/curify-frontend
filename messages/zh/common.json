@@ -76,13 +76,15 @@
   },
   "topUpModal": {
     "title": "充值积分",
-    "planLabel": "套餐",
     "minimumTopupError": "最低充值金额为 $0.50。",
     "paymentStartFailed": "发起支付失败，请重试。",
     "customCreditsLabel": "输入自定义积分",
     "customCreditsPlaceholder": "例如：200",
     "paymentsPoweredByStripe": "支付由 Stripe 提供支持。",
-    "creditRate": "1 积分 ≈ ${amount}（套餐：{plan}）"
+    "creditRate": "1 积分 ≈ ${amount}",
+    "blockedLine": "{jobLabel} 需要 {required} 积分，你目前有 {available} 积分。",
+    "buysImages": "≈ {count} 张图",
+    "unlocksCleanDownloads": "任意充值后，下载的文件不再带 Curify 水印。"
   },
   "transactionHistory": {
     "title": "积分历史",
@@ -132,7 +134,8 @@
     "privacyPolicy": "隐私政策",
     "termsOfService": "服务条款",
     "aboutUs": "关于我们",
-    "contactUs": "联系我们"
+    "contactUs": "联系我们",
+    "pricing": "价格"
   },
   "actionButtons": {
     "save": "保存",
@@ -152,7 +155,10 @@
     "readMore": "阅读更多",
     "readLess": "阅读更少",
     "remixThis": "生相似",
-    "copyPrompt": "复制提示词"
+    "copyPrompt": "复制提示词",
+    "jobLabelImage": "生成图片",
+    "batchDownloadLabel": "这套卡片包",
+    "printPdfLabel": "这份打印 PDF"
   },
   "dialogCloseButton": {
     "ariaLabel": "关闭对话框"
@@ -379,5 +385,21 @@
     "aslUnverifiedBody": "手语翻译目前仍是实验性功能，经常出错，而且错误往往读起来通顺、语气笃定。请先对照视频中的手语核对字幕，再使用或发布。",
     "aslLowConfidenceTitle": "我们无法准确识别这段视频",
     "aslLowConfidenceBody": "这段视频过长或采样过于稀疏，我们无法可靠识别，下方字幕中有部分内容很可能是凭空生成的。请务必对照视频中的手语核对后再发布。"
+  },
+  "topUpSuccess": {
+    "confirming": "正在确认支付…",
+    "confirmingHint": "通常只需几秒。",
+    "done": "充值成功",
+    "balance": "你现在有 {credits} 积分。",
+    "cleanDownloads": "你的下载文件不再带 Curify 水印。",
+    "resume": "返回{jobLabel}",
+    "continue": "继续",
+    "slowTitle": "已收到支付",
+    "slowBody": "积分到账比平常慢一些。支付已成功，稍后即会到账，无需重复付款。"
+  },
+  "topUpCancel": {
+    "title": "已取消支付",
+    "body": "未产生任何扣款，你可以随时再来充值。",
+    "back": "返回工作台"
   }
 }
