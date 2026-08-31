@@ -39,6 +39,7 @@ import ProductVideoGenerate from "@/app/[locale]/_components/ProductVideoGenerat
 import CostumeTryonGenerate from "@/app/[locale]/_components/CostumeTryonGenerate";
 import ImpromptuSpeechPractice from "@/app/[locale]/_components/ImpromptuSpeechPractice";
 import BrandDirectionExplorerClient from "@/app/[locale]/(public)/brand-direction-explorer/BrandDirectionExplorerClient";
+import PersonalDesignSystemClient from "@/app/[locale]/(public)/personal-design-system/PersonalDesignSystemClient";
 import CreateNewModal from "../CreateNewModal";
 
 // Map the existing "deep.usecases.X" subsection keys to the persona slugs
@@ -176,6 +177,11 @@ export default function ToolGenericClient({
           // chosen visual. Moved here from the standalone
           // /brand-direction-explorer route on 2026-08-12 (301 in next.config).
           <BrandDirectionExplorerClient locale={locale} />
+        ) : tool.action?.type === "personal_design_system" ? (
+          // One free-text portfolio description → a structured, reusable
+          // personal design system (real OpenAI synthesis, no portfolio-URL
+          // or image ingestion).
+          <PersonalDesignSystemClient locale={locale} />
         ) : tool.action?.type === "sticker_export" ? (
           // Self-serve factory export — the first surface that actually calls
           // POST /design-tools/*. Charges 20 credits, stated before the click.
