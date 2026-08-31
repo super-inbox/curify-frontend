@@ -45,6 +45,23 @@ describe("paywall routing", () => {
     expect(offenders, "these surfaces block a user without emitting an event").toEqual([]);
   });
 
+  it("no surface hardcodes the credit price", () => {
+    // The other half of the same failure. `useFreeformGenerate.ts` kept its own
+    // `= 10` from the 10-credit era and was missed when generation was cut to 5
+    // on 2026-08-16, so for two weeks anyone holding 5-9 credits was refused a
+    // generation they could afford — the tail of the 50-credit signup grant, to
+    // the cohort closest to converting. Every other surface already reads the
+    // shared constant; this pins that down so the price can only move in one
+    // place. `lib/pricing.ts` is the source of truth.
+    const offenders: string[] = [];
+    for (const rel of PAYWALL_SURFACES) {
+      const src = read(rel);
+      const literal = src.match(/const\s+\w*CREDITS?_COST\w*\s*(?::[^=]+)?=\s*\d+/);
+      if (literal) offenders.push(`${rel}: ${literal[0].trim()}`);
+    }
+    expect(offenders, "these surfaces can drift from lib/pricing.ts").toEqual([]);
+  });
+
   it("no credit check falls back to a bare alert()", () => {
     // The specific shape that shipped: a balance comparison whose whole response
     // was a browser dialog.
