@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-08-30.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-09-01.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -1293,6 +1293,112 @@ converts at 0.00% too, which an earlier 7-row-per-page ad-hoc query had missed.
 
 ---
 
+## 2026-09-01 — the undefended terms are trade jargon, and we already built the tools
+
+Source: `raw/agent-skills-08-31/` (SEMrush bulk keyword analysis, two screenshots, ~30 terms,
+已更新 1 个月). **Recorded here because the screenshots are the only copy** — same reason as the
+08-27 fashion pull. Candidate list was derived from the five real §7z client-project categories
+(`~/curify-studio/docs/reddit-demand-mining-buyer-side-2026-08-31.md` §I), so this is the
+"second batch" that file queued.
+
+### The pattern
+
+**The SERP is contested wherever a free one-click consumer tool serves the query, and empty
+wherever the query implies a production deliverable** — a file going to a printer or a factory.
+
+| 🟢 trade / production vocabulary | KD | vol | CPC | our asset |
+|---|---:|---:|---:|---|
+| ai ghost mannequin | **0** | 30 | $2.62 | ⚠️ none — nearest is `ecommerce-photo` |
+| ghost mannequin ai | **1** | 110 | $4.11 | ⚠️ none — **the one real gap** |
+| print ready artwork | **9** | 90 | **$5.32** | `/tools/acrylic-factory-export`, `/tools/die-cut-sticker-file` |
+| ai fashion model generator | **16** | 260 | $2.11 | `/tools/ecommerce-photo`, `/tools/ai-product-photo-generator` |
+| dieline generator | **19** | 170 | $2.76 | `/tools/die-cut-sticker-file` |
+| packaging mockup generator | **19** | 50 | $2.93 | `/tools/packaging-mockup` |
+| character consistency ai | **26** | 30 | $2.00 | `/tools/character-sticker-sheet`, `/tools/style-transfer` |
+
+| 🔴 consumer tool vocabulary | KD | vol | CPC | | 🔴 cont. | KD | vol | CPC |
+|---|---:|---:|---:|---|---|---:|---:|---:|
+| image vectorizer | 73 | 3,600 | $1.39 | | product image generator | 44 | 140 | $3.29 |
+| logo vectorizer | 68 | 90 | $2.38 | | png to vector | 43 | 3,600 | $0.88 |
+| product mockup generator | 67 | 320 | $2.69 | | ai product photography | 39 | 390 | $4.72 |
+| ai vectorizer | 64 | 720 | $0.83 | | virtual try on | 38 | 1,300 | $1.62 |
+| ai background replacement | 57 | 40 | $1.04 | | virtual clothing try on | 37 | 30 | $1.38 |
+| image to svg ai | 56 | 140 | $1.21 | | clothes changer ai | 46 | 1,300 | $0.88 |
+| ai product background generator | 54 | 70 | $3.31 | | ai virtual try on | 45 | 170 | $0.94 |
+| **ai clothes changer** | 52 | **9,900** | $0.95 | | ai product photo generator | 45 | 70 | $3.67 |
+
+No-metric tail (all vol ≤ 30): `ai product scene generator`, `amazon product image generator`,
+`flat lay to model ai`, `product background generator`, `product image editing ai`,
+`shopify product image generator`, `ecommerce product image generator` (vol 0),
+`print file preparation`, `consistent character generator`, `die cut line generator`.
+
+**CPC corroborates and makes it an arbitrage.** The undefended trade terms carry *higher* CPC
+($4.11 / $5.32 / $2.76) than the contested consumer terms ($0.83 / $0.88 / $0.95). Advertisers
+pay more for these buyers while organic competition is near zero.
+
+### The headline: this is a targeting and interlinking job, not a build job
+
+**Six of the seven 🟢 terms already have a tool shipped.** `lib/tools-registry.ts:305–307`
+already reasons this way — *"this slug **owns the keyword**"*. What is missing is that the slugs
+own the *wrong* keywords, and two of them have never been crawled at all.
+
+### Reconciling with the "no more pages" rule
+
+Lines 1131–1135 stand: at **KD 30–39** we are pos 40+ or absent on every head term, root-caused
+to **domain authority, not content** — that band should not be attacked with more pages. Every
+term actioned here is **KD 0–26, below that band**, which is precisely why it is worth doing and
+why nothing above KD 30 is actioned. `ai clothes changer` (KD 52) is explicitly deferred despite
+being the volume prize.
+
+### Two corrections
+
+1. **`ai product photography` drifted KD 23 → 39.** The 2026-06-05 batch
+   (`~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md`) declared it the
+   winner and recommended shipping a page "this week". It was never shipped; the window narrowed.
+   Consumer-category terms harden — the trade terms above are far less likely to.
+2. **The `AI + service noun` heuristic from that batch is dead.** `ai vectorizer` 64,
+   `ai background replacement` 57, `ai clothes changer` 52 all carry the shape and are hard. The
+   predictor is trade-vs-consumer vocabulary. ⚠️ That is now the *second* heuristic to convince
+   on one batch and fail on the next — treat this one as provisional too.
+
+### Actions — ordered by the crawl evidence, not by preference
+
+1. **Retarget metadata in `lib/tools-registry.ts`** (zero new URLs, zero engineering):
+   `die-cut-sticker-file` → *dieline generator*; `acrylic-factory-export` → *print ready
+   artwork*; `packaging-mockup` → *packaging mockup generator*; `ecommerce-photo` /
+   `ai-product-photo-generator` → *ai fashion model generator*.
+2. **Add inbound internal links to the two never-crawled tools.** Per lines 321 / 336 / 401–407,
+   inbound links — not Indexing-API pings — determine crawl: `packaging-mockup` 3 inbound →
+   crawled; `die-cut-sticker-file` 1 inbound → never. Retargeting without this changes nothing.
+3. **Blog spokes for the 🟢 terms, each linking down to its tool.** Blog indexes in ~1 day
+   (1070–1073) while tool pages from 08-06 still are not, so the spokes are simultaneously the
+   cheap ranking test *and* the inbound links step 2 needs.
+4. **Ghost mannequin is the one genuine gap** — KD 0–1 at $4.11, no tool. Highest ratio on the
+   board; scope a surface.
+
+### Deprioritised, with reason
+
+- **`ai clothes changer` (9,900, KD 52)** — the volume prize, and we have `chinese-costume-tryon`.
+  Deferred to hub-and-spoke *from* the ranked spokes, per the line-188 doctrine. Not head-on.
+- **The whole 🔴 column** — above the domain-authority band.
+- **No `/pod-niches/*`-style programmatic template** — the duplicate-content open question at
+  lines 998–1000 is still unresolved.
+- **Nothing here touches `sitemap-examples.xml`.** New `/tools/*` and `/blog/*` routes are
+  different sitemap children; the locale A/B is undisturbed.
+
+### Checkpoints
+
+- **2026-09-15 (+14d)** — are `/tools/die-cut-sticker-file` and `/tools/acrylic-factory-export`
+  crawled after gaining inbound links? Judge on crawl status, not position. If they are still
+  uncrawled with 3+ inbound links, the inbound-link theory at line 321 is wrong and needs a rewrite.
+- **2026-10-13 (+6w)** — position for `ghost mannequin ai`, `dieline generator`, `print ready
+  artwork`. **These are KD 0–19; if we cannot reach top-10 here, the low-KD thesis is falsified**
+  and no further pages should be built on it.
+- **2026-10-13** — re-pull the seven 🟢 terms. The `ai product photography` 23 → 39 drift is the
+  reason: a term is not safe because it was soft once.
+
+---
+
 ## Related docs / threads
 - `docs/search-and-content.md` — Search & Content workstream (companion A)
 - `~/curify-studio/docs/workstream-tooling-and-engineering.md` — Tools workstream (companion B)
@@ -1303,3 +1409,6 @@ converts at 0.00% too, which an earlier 7-row-per-page ad-hoc query had missed.
 - `~/curify-studio/curify_background/app/crud/admin.py` — growth analytics queries
 - `~/curify-studio/curify_background/app/utils/autopost_utils.py` — SMM autopost
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
+- `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
+- `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
+- `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md` — turning the 351 templates / 8,775 prompts into Skills that back these pages
