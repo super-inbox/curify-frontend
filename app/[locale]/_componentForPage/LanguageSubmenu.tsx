@@ -2,7 +2,6 @@
 "use client";
 
 import { useRouter, usePathname } from "@/i18n/navigation";
-import { useSearchParams } from "next/navigation";
 import { allLanguages } from "@/lib/language_config";
 
 interface LanguageSubmenuProps {
@@ -24,7 +23,6 @@ export default function LanguageSubmenu({
 }: LanguageSubmenuProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   return (
     <div className={className}>
@@ -36,8 +34,8 @@ export default function LanguageSubmenu({
           <button
             key={langCode}
             onClick={() => {
-              const currentSearchParams = new URLSearchParams(searchParams.toString());
-              const queryString = currentSearchParams.toString();
+              // Click-time read; `useSearchParams()` would block prerendering.
+              const queryString = new URLSearchParams(window.location.search).toString();
               const newPath = queryString ? `${pathname}?${queryString}` : pathname;
 
               router.replace(newPath, { locale: langCode });

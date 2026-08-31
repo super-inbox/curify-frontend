@@ -61,7 +61,7 @@ const SESSION_KEY = "_curify_session_id";
 const LOCALE_PREFIX = /^\/[a-z]{2}(?=\/|$)/;
 
 const ROUTE_PATTERNS: [RegExp, string][] = [
-  // Carousel routes that actually exist under app/[locale]/(public)/carousel/.
+  // Carousel routes that actually exist under app/[locale]/(static)/carousel/.
   // Match these BEFORE the generic /nano-template/* patterns so a path that
   // happens to contain both segments doesn't fall through to the wrong one.
   [/\/carousel\/prompt-gallery\/[^/]+$/,      "/carousel/prompt-gallery/[id]"],

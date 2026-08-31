@@ -187,7 +187,7 @@ function getTopicRoutes(): string[] {
     }
   }
   // Filter to i18n-authored topics only — topics without i18n render
-  // noindex,nofollow (see app/[locale]/(public)/topics/[slug]/page.tsx:62-68),
+  // noindex,nofollow (see app/[locale]/(static)/topics/[slug]/page.tsx:62-68),
   // so emitting them in the sitemap wastes crawl budget. Pre-filter cuts
   // ~71 topics × 10 locales = 710 noindex'd sitemap entries.
   // See docs/wedge1-hygiene-findings-2026-06-26.md.

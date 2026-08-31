@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { useRouter, usePathname } from "@/i18n/navigation";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import {
@@ -18,7 +18,6 @@ export default function LocaleSwitcher() {
   const { locale } = useParams() as { locale: string };
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   const [moreOpen, setMoreOpen] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
@@ -37,7 +36,11 @@ export default function LocaleSwitcher() {
   }, []);
 
   const switchLocale = (nextLocale: string) => {
-    const qs = new URLSearchParams(searchParams.toString()).toString();
+  // Read the query at click time rather than via `useSearchParams()`: that hook
+  // triggers Next's CSR bailout and would make every page rendering this
+  // component un-prerenderable. Only needed inside this handler, where the
+  // browser URL is authoritative anyway.
+    const qs = new URLSearchParams(window.location.search).toString();
     const newPath = qs ? `${pathname}?${qs}` : pathname;
     router.replace(newPath, { locale: nextLocale });
   };

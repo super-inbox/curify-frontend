@@ -1,28 +1,26 @@
-import "../../globals.css";
-import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { pickClientMessages, blogArticleNamespacesForPath } from "@/lib/client-messages";
 import { notFound } from "next/navigation";
-import Script from "next/script";
-import JotaiProvider from "@/app/[locale]/_components/JotaiProvider";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 
-import Header from "../_layout_components/Header";
-import Footer from "../_layout_components/Footer";
-import TopUpModal from "../_componentForPage/TopUpModal";
-import SignDrawer from "../_componentForPage/drawer/SignDrawer";
-import AppWrapper from "../_layout_components/AppWrapper";
-import { Toaster } from "react-hot-toast";
-import GoogleAnalyticsInit from "../_components/GoogleAnalyticsInit";
-
-import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
-import SessionStartTracker from "../_components/SessionStartTracker";
-
 import { headers } from "next/headers";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
-import SiteTopBar from "../_layout_components/SiteTopBar";
+import SiteShell from "../_layout_components/SiteShell";
 
+/**
+ * ⚠️ This layout reads `headers()`, which forces DYNAMIC rendering for every
+ * route beneath it. That is deliberate here and must stay scoped: 21 blog posts
+ * under this group export no metadata at all and depend entirely on the
+ * path-derived canonical below, and the client-payload trim needs the route to
+ * pick a blog article's namespace.
+ *
+ * High-volume programmatic routes (tools, topics, nano-template, carousel,
+ * nano-banana-pro-prompts, use-cases, personality) declare their OWN canonical,
+ * so they live in the sibling `(static)` group and render statically. Do not
+ * move a route back here without giving it a page-level canonical first.
+ */
 export async function generateMetadata({
   params,
 }: {
@@ -74,53 +72,8 @@ export default async function PublicLocaleLayout({
   );
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <head>{/* keep existing scripts */}</head>
-
-      <body suppressHydrationWarning>
-      <GoogleAnalyticsInit />
-
-        <GoogleAnalyticsTracker />
-        <SessionStartTracker />
-        <Script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" strategy="afterInteractive" />
-        <Script id="init-mermaid" strategy="afterInteractive">
-          {`
-            setTimeout(() => {
-              if (typeof mermaid !== 'undefined') {
-                mermaid.initialize({ 
-                  startOnLoad: true, 
-                  theme: 'default',
-                  flowchart: {
-                    useMaxWidth: true,
-                    htmlLabels: true
-                  }
-                });
-                mermaid.run();
-              }
-            }, 1000);
-          `}
-        </Script>
-
-        <JotaiProvider>
-          <NextIntlClientProvider locale={locale} messages={clientMessages}>
-            <AppWrapper user={null}>
-              <Header />
-
-            <main className="min-h-screen lg:ml-[70px]">
-              <TopUpModal />
-              <SignDrawer />
-
-              <SiteTopBar locale={locale} />
-
-              {children}
-
-              <Toaster />
-              </main>
-              <Footer />
-            </AppWrapper>
-          </NextIntlClientProvider>
-        </JotaiProvider>
-      </body>
-    </html>
+    <SiteShell locale={locale} clientMessages={clientMessages}>
+      {children}
+    </SiteShell>
   );
 }

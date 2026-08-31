@@ -6,9 +6,9 @@ import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 
-import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
-import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
-import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
+import ExampleImagesGrid from "@/app/[locale]/(static)/nano-template/[slug]/ExampleImagesGrid";
+import NanoTemplateDetailClient from "@/app/[locale]/(static)/nano-template/[slug]/NanoTemplateDetailClient";
+import PromptCard from "@/app/[locale]/(static)/nano-banana-pro-prompts/PromptCard";
 import GenerableTemplatesSection from "./GenerableTemplatesSection";
 import TopicStrip, { type TopicStripItem } from "@/app/[locale]/_components/TopicStrip";
 import { resolveTopicPath } from "@/lib/topic_path_overrides";

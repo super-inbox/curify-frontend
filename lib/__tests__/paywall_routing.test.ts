@@ -20,8 +20,8 @@ const read = (rel: string) => readFileSync(join(ROOT, rel), "utf8");
 const PAYWALL_SURFACES = [
   "services/useDirectGenerate.ts",
   "services/useFreeformGenerate.ts",
-  "app/[locale]/(public)/nano-template/[slug]/example/[exampleId]/ExampleGeneratePanel.tsx",
-  "app/[locale]/(public)/tools/CreateNewModal.tsx",
+  "app/[locale]/(static)/nano-template/[slug]/example/[exampleId]/ExampleGeneratePanel.tsx",
+  "app/[locale]/(static)/tools/CreateNewModal.tsx",
   "app/[locale]/(public)/search/GenerableTemplatesSection.tsx",
   "app/[locale]/_components/UnifiedActionBar.tsx",
   "app/[locale]/_components/ReproduceWorkbench.tsx",
