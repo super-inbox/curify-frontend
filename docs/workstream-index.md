@@ -132,13 +132,27 @@ none of them measurable:
 - **robots.txt expansion** blocking 11 more crawlers from `/nano-template/*` + `/nano-banana-pro-prompts/*` (commit `94c0e6ac`, Vercel cost reduction)
 
 ### D. Vertical Use Cases
+- **2026-08-27→08-28** **IP pendant / beaded-jewelry 3D engagement** (`client-005`, pseudonymous) —
+  a Beijing four-character IP brand wants a beaded jewelry line (necklace 56cm / bracelet 15.5–16cm /
+  bag charm 12–14cm) around four custom resin pendants, for a Mid-Autumn trade show. Two decks
+  delivered (IP 11pp + industrial 8pp, split after v1 buried the jewelry story under three modelling
+  cases); **pricing deliberately kept out of both**. Reusable output: **三视图 is the quoting key,
+  not the mesh** — a factory quotes from a dimensioned three-view and can do nothing with a render —
+  plus a six-check craft list (size band · hole-vs-CoG · flat back · draft/wall · parting line ·
+  filleted outward features) drawn as a code-authored SVG. Two artefacts generated fresh on our own
+  IP: a `--band-only` pendant three-view and an acrylic four-plate factory export.
+  **Proposal delivered, awaiting response.** Doc:
+  [`client-projects/ip-pendant-3d-merch.md`](client-projects/ip-pendant-3d-merch.md)
 - **2026-08-25→08-28** **Cute city-illustration 文创 exploration** — Q版 城市文创插画 in the
   小红书「陶瓷冰箱贴 · <省>限定」genre; Shanghai pilot (6 landmark tiles, recurring 弄堂猫 mascot).
   Winning recipe = **solid hand-drawn lines (线条实) + warm colored-pencil, anchor the style-ref to
   the client's preferred sample**. Generator `scripts/oneoff_cute_shanghai_2026-08-25.cjs`, outputs
   in `raw/cute-city-08-25/` (final candidates `out_v4a` / `out_v4b`). **Exploratory — no order yet**
   (cf. the paid 黎族 `project_lizu_merch_baicha`). Doc:
-  [`client-projects/city-illustration-cute.md`](client-projects/city-illustration-cute.md)
+  [`client-projects/city-illustration-cute.md`](client-projects/city-illustration-cute.md).
+  **Trajectory record** (§7z corpus, staged): `~/agentic-adhoc-inbox/real-projects/projects/2026-08-25-internal-001-cute-city-illustration.json`
+  — recorded as `internal-001` / `customer_data: false` because the doc contradicts itself on
+  whether a client exists; the record carries the conversion steps if one does.
 - **2026-08-12** **First measurement of the workstream + P0 reset** — 60d `user_interactions`
   pull + GSC 28d. `/use-cases/[slug]` = **273 users / 346 events over 60 days** (12th of all
   routes, behind `/blog` and `/inspiration-hub`); **31 GSC impressions, 0 clicks** at positions
@@ -263,7 +277,8 @@ none of them measurable:
 | `project_use_case_gtm_pages` | index = `lib/use-cases.ts`; GOTCHA — untagged templates leak via the `TIER1_USE_CASES` fallback |
 | `project_teacher_learning_packs_demand` | wedge = VISUAL PACKAGING, not text; no topic→pack tool |
 | `project_first_paying_customer_pod` | the POD buyer we actually have |
-| `project_cute_city_magnet_style` | cute city 陶瓷冰箱贴 文创 recipe — 线条实 + colored-pencil; anchor style-ref to preferred sample. Doc: `client-projects/city-illustration-cute.md` |
+| `reference_merch_operators_vertical` | merch-operator vertical — the buyer this line targets. First real 3D/吊坠 engagement: `client-projects/ip-pendant-3d-merch.md` (三视图 = the quoting key) |
+| `project_cute_city_magnet_style` | ⚠️ **does not exist** (checked 2026-08-31, memory dir empty) — recipe survives only in `client-projects/city-illustration-cute.md` + the staged §7z record. Same drift class as the POD-reframe memory noted above. |
 | `project_lizu_merch_baicha` | paid 黎族景区文创 order — the adjacent 文创 deliverable |
 | `project_pod_layered_tools_competitor_test` | competitor line-art test → POD-B fast-track |
 | `feedback_outreach_tracker_separation` | b2b vs investor trackers — never mix (applies to the new RedNote tracker, UC-P0-3) |

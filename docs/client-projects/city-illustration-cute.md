@@ -5,6 +5,18 @@
 > souvenirs (陶瓷冰箱贴 fridge magnets, postcards, stickers). Sits under **Workstream D — Vertical
 > Use Cases** as a repeatable per-city product line; adjacent to the paid 黎族景区文创 order
 > (`project_lizu_merch_baicha`) and the POD / Merch reframe. **Exploratory — no client order yet.**
+>
+> 📁 **Structured trajectory record** (the centralized §7z corpus, alongside client-005/006/007):
+> `~/agentic-adhoc-inbox/real-projects/projects/2026-08-25-internal-001-cute-city-illustration.json`
+> — staged locally, pending the `agentic-adhoc` clone. **Keep the two in sync**: this doc owns the
+> *how to run it* (generator, paths, model), the JSON owns the *decision trajectory* (alternatives,
+> rejections, preference_memory). Update both in the same commit, per §7z-E2's drift rule.
+>
+> ⚠️ **Unresolved, and the JSON record is blocked on it:** this header says "no client order yet",
+> but the sections below refer to "the client" four times (preferred sample, A-vs-B pick) — while
+> the preferred sample, `codex-output.png`, is our own output from another model. The JSON is
+> therefore recorded as **internal** (`customer_data: false`, id `internal-001`). If a real
+> counterparty exists, say so and both records convert in a few lines.
 
 ---
 
@@ -110,6 +122,9 @@ mascot**, which off-the-shelf AI output does not get right by default.
 3. Export **print-ready 1:1** tiles + a clean 2×3 grid; optional 小红书「上海限定」post layout like the refs.
 4. If validated → template the generator for **other cities** (parameterise landmarks + mascot + palette).
 
-Related memory: `project_cute_city_magnet_style` (the recipe, persisted). Adjacent: `project_lizu_merch_baicha`,
-`feedback_chinese_caption_gemini_model`, `feedback_image2image_prompt_hygiene`, the POD reframe in
-`workstream-vertical-use-cases.md`.
+⚠️ **Memory `project_cute_city_magnet_style` does not exist** (checked 2026-08-31 — the memory
+directory is empty), so the recipe is **not** "persisted" anywhere but in this doc and the JSON
+record above. `workstream-index.md` cites the same name in its memory table. Same drift class as
+the POD-reframe memory that index already records as gone. Treat this doc + the JSON as the only
+copies. Adjacent: `project_lizu_merch_baicha`, `feedback_chinese_caption_gemini_model`,
+`feedback_image2image_prompt_hygiene`, the POD reframe in `workstream-vertical-use-cases.md`.
