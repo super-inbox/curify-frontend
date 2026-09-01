@@ -57,7 +57,7 @@ function TagImageGrid({ items, locale }: { items: GridItem[]; locale: string }) 
         >
           <img
             src={item.url}
-            alt={item.tag}
+            alt={`AI-generated ${item.tag} image — Nano Banana prompt example`}
             loading="lazy"
             className="w-full h-36 object-cover block"
           />

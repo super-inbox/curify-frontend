@@ -9,7 +9,11 @@ import { Bookmark } from "lucide-react";
 
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
-import { makeNanoTemplateUrl, getLocaleFromPath } from "@/lib/nano_pure";
+import {
+  buildImageAlt,
+  makeNanoTemplateUrl,
+  getLocaleFromPath,
+} from "@/lib/nano_pure";
 import { useClickTracking, useTracking } from "@/services/useTracking";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
@@ -90,7 +94,10 @@ function TemplateStripCard({ card, trackPrefix = "template-strip" }: TemplateStr
         <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-neutral-50">
           <CdnImage
             src={thumbnail}
-            alt={card.category || card.id}
+            alt={buildImageAlt({
+              category: card.category,
+              description: card.description,
+            })}
             fill
             sizes="48px"
             className="object-cover"

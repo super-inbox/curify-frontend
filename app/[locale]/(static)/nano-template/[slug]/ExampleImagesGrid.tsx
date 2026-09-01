@@ -10,7 +10,7 @@ import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { SITE_URL } from "@/lib/constants";
-import { toSlug } from "@/lib/nano_pure";
+import { toSlug, buildExampleImageAlt } from "@/lib/nano_pure";
 import { intentCtaLabel, intentCtaContentId } from "@/lib/output_intent";
 import { useClickTracking, useTracking, useVideoTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
@@ -63,10 +63,13 @@ function ExampleImageCard({
   carouselContext,
   desktopOpensExample = false,
   showCaption = false,
+  imageContext,
 }: {
   item: Item;
   locale: string;
   carouselContext: string; // pre-encoded "&from=...&ids=..."
+  /** Template category label, front-loaded into each image's alt text. */
+  imageContext?: string;
   /**
    * When true, the tile click on desktop (≥ lg breakpoint, 1024px) routes
    * to /nano-template/[slug]/example/[exampleId] instead of the carousel.
@@ -153,7 +156,7 @@ function ExampleImageCard({
     <>
       <CdnImage
         src={item.preview}
-        alt={item.title || item.id}
+        alt={buildExampleImageAlt(item, imageContext)}
         className="aspect-[3/4] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
         loading="lazy"
       />
@@ -278,6 +281,7 @@ export default function ExampleImagesGrid({
   desktopHideFirstN = 0,
   showCaption = false,
   fixedCols,
+  imageContext,
 }: {
   items: Item[];
   maxRows?: number;
@@ -297,6 +301,10 @@ export default function ExampleImagesGrid({
   desktopHideFirstN?: number;
   /** Render a 1-line title caption below each thumbnail (used on /search). */
   showCaption?: boolean;
+  /** Template category label (e.g. "Anime MBTI Infographic"), used to build
+   *  descriptive alt text. Optional: omitting it falls back to the example
+   *  title + params, so existing call sites keep working unchanged. */
+  imageContext?: string;
   /** Force a fixed column count (e.g. blog embeds). Undefined = responsive default, so all existing call sites are unaffected. */
   fixedCols?: number;
 }) {
@@ -346,6 +354,7 @@ export default function ExampleImagesGrid({
                   carouselContext={carouselContext}
                   desktopOpensExample={desktopOpensExample}
                   showCaption={showCaption}
+                  imageContext={imageContext}
                 />
               </div>
             );
@@ -361,6 +370,7 @@ export default function ExampleImagesGrid({
               carouselContext={carouselContext}
               desktopOpensExample={desktopOpensExample}
               showCaption={showCaption}
+              imageContext={imageContext}
             />
           );
         })}
