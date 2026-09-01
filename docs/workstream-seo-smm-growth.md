@@ -1363,6 +1363,10 @@ being the volume prize.
 
 ### Actions — ordered by the crawl evidence, not by preference
 
+> **Superseded for ordering by "2026-09-01 — consolidated priority across all three KD batches"
+> at the end of this doc.** The two shipped items below are still the record of what was done;
+> the unshipped ones (3, 4) are re-ranked there against batch 3.
+
 1. ✅ **DONE 2026-09-01 — retargeted.** Metadata lives in `messages/en/home.json` under
    `<namespace>.metadata`, not in the registry's `seo:` field (which `generateMetadata` never
    reads — see the note below). Changed: `dieCutStickerFile` → *Dieline Generator — Die-Cut
@@ -1483,6 +1487,163 @@ the production-file discipline (spec fidelity, measurable acceptance), not being
   and no further pages should be built on it.
 - **2026-10-13** — re-pull the seven 🟢 terms. The `ai product photography` 23 → 39 drift is the
   reason: a term is not safe because it was soft once.
+
+## 2026-09-01 (batch 3) — the ecommerce + education pull, and what it does to the heuristic
+
+Source: `raw/agent-skills-08-31/ecommerce-education-kd.png` (SEMrush 批量关键词分析, 已更新 1 个月).
+Seed list from `raw/kd-check-seeds-2026-09-01.md`, which was itself built from queries we
+**already receive impressions for** on both the web and image surfaces — so demand is verified,
+not guessed. Screenshot is the only copy.
+
+> ⚠️ **16 of 21 rows are legible; 5 are cut off below the fold.** Everything below is drawn from
+> the 16. Re-screenshot the tail before treating this batch as complete.
+
+| keyword | intent | vol | KD | CPC | our asset / rank today |
+|---|---|---:|---:|---:|---|
+| nail art designs | I | **49,500** | 44 | $0.22 | **image search pos 12** — no page |
+| ai poster generator | I | 3,600 | 58 | $1.47 | — |
+| ai portrait generator | I | 2,400 | 63 | $1.52 | `/topics/portrait` (0 organic) |
+| **worksheet generator** | C | **2,400** | **35** | $0.65 | `/tools/worksheet-from-video` — indexed, **0 impressions** |
+| ai infographic generator | C | 1,300 | 74 | $2.52 | — |
+| **costume design template** | I | **590** | **20** | $0.00 | image search pos 42 — no page |
+| photo to cartoon ai | C | 480 | 59 | $0.73 | — |
+| infographic maker free | C | 260 | 69 | $1.32 | — |
+| ai product photo | I | 140 | 51 | **$4.36** | `/tools/ai-product-photo-generator` |
+| dress design template | I | 140 | **24** | $1.20 | image search pos 25 — no page |
+| english vocabulary flashcards | C | 140 | 34 | $0.49 | image search pos 93 |
+| recipe infographic | I | 110 | **17** | **$0.00** | image search pos 44 |
+| plant infographic | I | 70 | **17** | **$0.00** | image search pos 56 |
+| food poster design | I | 50 | **19** | **$0.00** | image search pos 31 |
+| ai sticker design | — | 20 | n/a | $1.89 | `/tools/character-sticker-sheet` |
+| food packaging design ai | — | 20 | n/a | $0.00 | web pos 41 |
+
+### The heuristic survives, but it is not about trade vocabulary
+
+Batch 2 concluded the predictor was **trade/production vocabulary vs consumer vocabulary**. This
+batch has almost no trade vocabulary in it and the split still holds cleanly:
+
+| shape | examples | KD |
+|---|---|---|
+| names a **specific artifact** | recipe infographic, plant infographic, food poster design, costume design template, dress design template | **17–24** |
+| names a **generic tool** | ai infographic generator, infographic maker free, ai portrait generator, photo to cartoon ai, ai poster generator | **58–74** |
+
+So the real predictor is **specific-artifact vs generic-tool**, and trade vocabulary was a
+special case of "specific artifact" rather than the cause. `recipe infographic` (17) against
+`ai infographic generator` (74) is the same word in both queries — what changes the KD by 57
+points is whether the searcher named the *thing they want* or the *machine that makes it*.
+
+⚠️ This is the **third** heuristic in three batches. Batch 1's `AI + service noun` died in batch
+2; batch 2's trade-vocabulary rule is now subsumed rather than falsified. Treat it as provisional
+and re-test on batch 4.
+
+### The counterweight batch 2 did not have: CPC $0.00
+
+Batch 2's thesis was an arbitrage — the undefended terms carried *higher* CPC ($4.11–$5.32) than
+the contested ones. **That does not generalise.** The softest terms in this batch carry **$0.00
+CPC**: `recipe infographic` (KD 17), `plant infographic` (KD 17), `food poster design` (KD 19),
+`costume design template` (KD 20). No advertiser bids on them.
+
+Low KD is not one signal, it is two different situations, and CPC separates them:
+
+- **KD low + CPC high** → undefended commercial demand. Real arbitrage. (batch 2's 🟢 list)
+- **KD low + CPC $0.00** → nobody monetises this traffic. Rankable, but it is audience, not
+  revenue. (this batch's infographic/poster family)
+
+The infographic family is therefore **not** promoted despite being the lowest KD on the board.
+It is the same trap as `dieline to 3d mockup`: winnable and worth little.
+
+### Two findings that need no new page
+
+1. **`nail art designs` — 49,500/mo, KD 44, and we are already at image-search position 12.**
+   The largest-volume term in any batch to date, and we hold a page-2 image ranking on it with no
+   page, no targeting and no intent. This is not a build; it is a **direct read on whether the
+   2026-09-01 image-SEO ship (`08092e73`) works**. If image position improves here, the whole
+   image-native cluster set becomes actionable at near-zero marginal cost.
+2. **`worksheet generator` — 2,400/mo at KD 35, best volume-to-difficulty ratio in the batch —
+   and `/tools/worksheet-from-video` is already indexed and earning zero impressions.** The tool
+   is targeted at *video → worksheet*, which is a workflow nobody searches for; the demand is on
+   the plain artifact. This is the same free retarget that shipped for three tools in batch 2
+   (metadata in `messages/en/home.json`, **not** the registry's dead `seo:` field).
+
+   ⚠️ KD 35 sits inside the 30–39 band that lines 1131–1135 say not to attack. That rule is about
+   **building pages**, and this builds nothing — it re-points a page that already exists and
+   already ranks for nothing. If it fails, it cost a title. Do not read a win here as licence to
+   build into the 30–39 band.
+
+### Deprioritised, with reason
+
+- **The infographic/poster family (KD 17–19)** — $0.00 CPC. See above.
+- **`ai portrait generator` (2,400, KD 63), `ai poster generator` (3,600, KD 58),
+  `photo to cartoon ai` (480, KD 59), `ai infographic generator` (1,300, KD 74)** — generic-tool
+  shape, above the authority band.
+- **`ai product photo` (140, KD 51, CPC $4.36)** — highest CPC in the batch, but KD 51 on 140/mo
+  is a bad trade. The CPC says the buyer is valuable; get to them through the on-model surface
+  (batch 2 action 4), not this term.
+- **`english vocabulary flashcards` (140, KD 34)** — real, and the education cluster's only
+  commercial-ish term, but 140/mo does not justify a surface on its own. Revisit only if the
+  image-SEO checkpoint shows the education cluster moving.
+
+## 2026-09-01 — consolidated priority across all three KD batches
+
+Supersedes the per-batch action lists above. Batches 2 and 3 were pulled within hours of each
+other and their actions interleave, so ranking them separately produced a list that read as six
+independent jobs when it is really **three cheap retargets, one measurement, and one build**.
+
+### Do now — nothing blocks these, none of them build a page
+
+| # | Item | Why first |
+|---|---|---|
+| **1** | **Blog spoke for `ghost mannequin ai`** (KD **1**, 110/mo, CPC **$4.11**) | Best ratio on any board we have. Tests the 400/mo on-model opportunity for the price of one post. Blog indexes in ~1 day; tool pages from 08-06 still are not. Doubles as the inbound link the future tool page needs. |
+| **2** | **Retarget `/tools/worksheet-from-video` → `worksheet generator`** (KD 35, **2,400/mo**) | Best volume-to-difficulty ratio in batch 3, and the page already exists, is indexed, and earns **zero** impressions. Identical mechanics to the three retargets that shipped in batch 2 — edit `messages/en/home.json`, not the dead `seo:` field. Cost is a title. |
+| **3** | **Retarget the fashion-template pair** — `costume design template` (KD **20**, 590/mo, image pos 42) and `dress design template` (KD **24**, 140/mo, image pos 25) | 730/mo combined at KD ≤ 24, and we already hold image-search rankings on both with no page pointed at them. Cheapest volume in batch 3. |
+
+### Free — measurements that gate everything below
+
+| # | Item | What it decides |
+|---|---|---|
+| **4** | **2026-09-15 — did the interlink get `die-cut-sticker-file` crawled?** | If 6 inbound links still do not get it fetched, the block is **domain authority, not content**, and this doc's own rule says the answer to that is not more pages. Items 6–8 all become wrong. |
+| **5** | **2026-09-22 — did the image-SEO ship (`08092e73`) move image position?** | Baseline 19,035 impr / 39 clicks / **pos 41.2**. Read `nail art designs` (49,500/mo, KD 44, **currently image pos 12**) as the single sharpest indicator. If image position improves, the entire image-native cluster set — fashion, education, food, selfie — becomes actionable **without building anything**, which reorders everything below. Judge on position and CTR, not impressions. |
+
+### Gated on #4 passing
+
+| # | Item | Payoff |
+|---|---|---|
+| **6** | **On-model surface** (`ghost mannequin ai` + `ai fashion model generator`) | 370/mo, KD 0–16, CPC $2.11–$4.11. Two of batch 2's seven 🟢 terms are one missing surface. Capability exists unshipped at `~/curify-studio/dev/jayw/design-agent-v0/tools/model-swap/`. Build against the `adworker.ai` teardown, not from scratch — the incumbent holds it with 1,831 words and full schema. |
+| **7** | **FAQ cap + questions** | The other 46% of the 🟢 list, on pages that already own their terms. Needs the real limits/formats/credits so we do not invent claims. |
+| **8** | **`HowTo` + `WebApplication` schema** | Competitor has both, we have neither. Mechanical once #7's cap is raised. |
+
+### Not SEO, and genuinely more urgent than 6–8
+
+| # | Item | Risk |
+|---|---|---|
+| **9** | **The five §7z records are not in version control** | `agentic-adhoc-inbox` is not a git repo. Five trajectories — including the **¥27,800 paid project with 4 rounds of verbatim client feedback** — exist on one machine with no backup. Unrecoverable on disk failure. |
+| **10** | **`client-006` identity** | Still a placeholder in `.client-key.json`. Decays to unrecoverable as memory fades. |
+
+### Strategy — no deadline, high option value
+
+| # | Item |
+|---|---|
+| **11** | The §7ab-E ablation — decides whether the Context Layer is a product, a feature, or nothing. Decision rule is written down in advance so it cannot be rationalised after. |
+| **12** | Skills Stage 1–3 — 4 complete Skills from real projects. No engineering, no network, blocked on nothing. |
+
+### Housekeeping
+
+| # | Item |
+|---|---|
+| **13** | Worktree branch → main (`git push origin worktree-design-skills-spec:main`) |
+| **14** | `ip-pendant-3d-merch.md` untracked while `workstream-index.md:145` links to it — dangling on the remote |
+| **15** | ~~Fix "~600/mo" → 740~~ — **not present in any file**; grepped this repo and `~/curify-studio`. The 🟢 total is confirmed 740/mo (30+110+90+260+170+50+30). Nothing to fix. |
+| **16** | Re-screenshot the 5 cut-off rows of `ecommerce-education-kd.png` (16 of 21 legible) |
+
+### What batch 3 changed about the ordering
+
+- **Added items 2 and 3** — two free retargets that did not exist before the batch, both better
+  ratio than anything gated behind #4.
+- **Added item 5**, and it is the highest-leverage entry on the page: it can make an entire
+  cluster set free.
+- **Did not disturb item 1.** Nothing in batch 3 beats KD 1 at $4.11 CPC.
+- **Demoted the lowest-KD terms on the board.** The infographic family (KD 17–19) is $0.00 CPC
+  and does not appear in this list at all — see the CPC counterweight above.
 
 ---
 
