@@ -1857,12 +1857,28 @@ Against all ~10,766 example pages that exist, roughly 7,100 (90d) and 4,500 (180
 Lead with the sitemap figure — it is exactly verifiable, and Google's own data shows the
 "exists" universe is an undercount.
 
-**The B1 cull is now evicting live pages.** 1,143 example URLs earned impressions in the last 90
-days while **absent from the sitemap**; only 67 of those are the A/B experiment's de-listed
-treatment arm, so **1,076 are the crawl-budget cull** (2,574 over 180 days). The whitelist is
-keyed to a past 28-day window, so it drops pages that later start earning and cannot rediscover
-them. Two-sided problem: ~70% of what we advertise earns nothing, and ~1,000 pages that earn
-something are withheld. Both point at whitelist staleness, not page quality.
+**The B1 cull is evicting live pages — but far fewer than the raw count suggests.** 1,143 example
+URLs earned impressions in the last 90 days while absent from the sitemap; 67 are the A/B
+treatment arm, leaving 1,076 candidates.
+
+⚠️ **CORRECTION (measured after the restore shipped, `5ca04636`): only 351 were real evictions.**
+Restoring them showed where the other 725 actually sit:
+
+| | n |
+|---|---:|
+| restored by the whitelist patch | **351** |
+| blocked by the template-level **noindex** rule (169 templates) | 706 |
+| ids no longer present in `nano_inspiration.json` | 19 |
+| unexplained | 0 |
+
+And the noindex block is mostly correct. **The noindex rule shipped 2026-07-31, inside the 90-day
+window.** Re-measuring on 08-01→08-30 alone: **663 of the 725 had impressions only *before* the
+noindex**, and just **129** still earn after it — part of which is normal noindex-processing lag.
+
+So "~1,000 pages that earn something are withheld" was **wrong**: it counted pre-noindex
+impressions as current demand. That is the same window-straddling error this doc already recorded
+once for this exact noindex rule — a policy change inside a measurement window makes the window
+unusable, and the fix is always to re-measure on the post-change slice.
 
 ### Tier 1 — free measurements, already scheduled
 
