@@ -1593,7 +1593,7 @@ independent jobs when it is really **three cheap retargets, one measurement, and
 
 | # | Item | Why first |
 |---|---|---|
-| **1** | **Blog spoke for `ghost mannequin ai`** (KD **1**, 110/mo, CPC **$4.11**) | Best ratio on any board we have. Tests the 400/mo on-model opportunity for the price of one post. Blog indexes in ~1 day; tool pages from 08-06 still are not. Doubles as the inbound link the future tool page needs. |
+| **1** | ✅ **DONE 2026-09-01 (`b4b89a56`)** — blog spoke for `ghost mannequin ai` (KD **1**, 110/mo, CPC **$4.11**) shipped as `ghost-mannequin-ai-guide` | Best ratio on any board we have. Tested the 400/mo on-model opportunity for the price of one post. Blog indexes in ~1 day; tool pages from 08-06 still are not. Doubles as the inbound link item 6 needs. **Adds a checkpoint: 2026-09-08, is it indexed?** If a KD-1 term with a fresh post cannot reach top-10 by 2026-10-13, the low-KD thesis is falsified and item 6 should not be built. |
 | **2** | **Retarget `/tools/worksheet-from-video` → `worksheet generator`** (KD 35, **2,400/mo**) | Best volume-to-difficulty ratio in batch 3, and the page already exists, is indexed, and earns **zero** impressions. Identical mechanics to the three retargets that shipped in batch 2 — edit `messages/en/home.json`, not the dead `seo:` field. Cost is a title. |
 | **3** | **Retarget the fashion-template pair** — `costume design template` (KD **20**, 590/mo, image pos 42) and `dress design template` (KD **24**, 140/mo, image pos 25) | 730/mo combined at KD ≤ 24, and we already hold image-search rankings on both with no page pointed at them. Cheapest volume in batch 3. |
 
@@ -1641,7 +1641,8 @@ independent jobs when it is really **three cheap retargets, one measurement, and
   ratio than anything gated behind #4.
 - **Added item 5**, and it is the highest-leverage entry on the page: it can make an entire
   cluster set free.
-- **Did not disturb item 1.** Nothing in batch 3 beats KD 1 at $4.11 CPC.
+- **Did not disturb item 1**, which shipped the same morning (`b4b89a56`). Nothing in batch 3
+  beats KD 1 at $4.11 CPC.
 - **Demoted the lowest-KD terms on the board.** The infographic family (KD 17–19) is $0.00 CPC
   and does not appear in this list at all — see the CPC counterweight above.
 
