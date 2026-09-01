@@ -1965,12 +1965,20 @@ identical on folded and indexed posts — so it is not the decision boundary, bu
 boundary is so easy for Google to get wrong. There is nothing on the page asserting *what this
 document is* beyond its URL.
 
-**And no page type on the site emits hreflang at all** — verified on blog, nano-template, topics,
-tools and the homepage. `generateMetadata` sets `alternates.languages` via `getLanguagesMap()`
-and it does not reach the HTML. Locale alternates are declared **only** inside the sitemaps'
-`<xhtml:link>` blocks. With 10 locales that is a large, undefended surface, and it is the most
-concrete lead left: an unresolved `alternates` path is exactly the shape of defect that produces
-`userCanonical: (none)` while a canonical tag is visibly present.
+**CORRECTION 2026-09-01 (same day): hreflang IS present, site-wide, and correct.** An earlier
+revision of this section claimed no page type emits it. That was a **case-sensitive grep**
+artifact — Next.js renders the attribute as `hrefLang`, and `grep -o 'hreflang'` misses it. Every
+page type carries a full alternate set (blog/topics/tools/home 11 alternates + `x-default`;
+nano-template deliberately fewer, per the localized-locales-only policy). `content-type` is
+`text/html`, where attribute names are ASCII case-insensitive, so `hrefLang` parses as `hreflang`.
+**This is not a defect, and the "unresolved alternates path" lead is dead.**
+
+What *does* stand, verified case-insensitively: blog pages carry **no `og:*`, no `twitter:*`, no
+JSON-LD, no `itemprop`, no schema.org markup of any kind**. The only `<meta>` tags are
+`description`, `keywords`, `viewport`, `next-size-adjust`. So the identity signals are: a correct
+canonical, a correct hreflang set, a title and a description — and nothing that states *what kind
+of thing* the document is. That remains the plausible reason the boundary is easy to get wrong,
+but it is a weakness rather than a located bug, and it is identical on folded and indexed posts.
 
 ⚠️ **Note for the locale A/B readout (~09-23):** its stated question is *"does a `<loc>` entry do
 anything when the page already emits complete hreflang alternates?"* **The page emits none.** The
