@@ -1914,6 +1914,82 @@ SEO; both decay to unrecoverable.
 - **Left the free measurements alone.** They cost nothing and three of the five land within a
   fortnight.
 
+## 2026-09-01 — P0-A / P0-B evidence: what the fold is NOT, and why the dead tail is not a demand verdict
+
+### P0-B settles first: the 4,729 are not 4,729 demand verdicts
+
+40 zero-impression example pages, sampled evenly across the list, inspected via URL Inspection:
+
+| index state | n | share |
+|---|---:|---:|
+| Discovered – currently not indexed | 14 | 35% |
+| **Duplicate without user-selected canonical** | **12** | **30%** |
+| Submitted and indexed | 7 | **18%** |
+| URL is unknown to Google | 4 | 10% |
+| Excluded by ‘noindex’ tag | 2 | 5% |
+| Crawled – currently not indexed | 1 | 3% |
+
+**18 of 40 were never crawled at all.**
+
+So **only ~18% are "indexed, given a fair shot, earned nothing"** — the only cohort where zero
+impressions is a demand verdict. Extrapolated over the 4,729: roughly **1,400 are folded** (the
+same P0-A bug, on example pages) and **~2,270 have never been indexed**. Noindexing the set would
+permanently bury ~1,400 pages killed by a canonical bug and ~2,270 that never got a chance.
+
+**This also links P0-A and P0-B: they are the same defect on two surfaces.** Blogs fold at
+**32%** (34/107); the dead example sample folds at **30%**. That is not two problems, it is one
+problem measured twice.
+
+### P0-A: seven hypotheses eliminated — do not re-test these
+
+Comparing folded (`ghost-mannequin-ai-guide` → `/topics/character`, `dieline-generator-guide` →
+`/nano-template/product-theme-promotional-poster`) against indexed
+(`character-turnaround-sheet-guide`, `best-claude-code-design-skills`):
+
+| # | hypothesis | verdict |
+|---|---|---|
+| 1 | canonical tag missing | **NO** — correct absolute self-canonical in SSR on every post |
+| 2 | lexical / visible-text similarity | **NO** — folded↔target **0.709**, indexed↔*same target* 0.657 |
+| 3 | JSON-LD asserts a template identity | **NO** — **zero** JSON-LD blocks on any blog post |
+| 4 | og:url / og:image pointing elsewhere | **NO** — **zero** og:* tags on any blog post |
+| 5 | hreflang mismatch | **NO** — zero hreflang on any post (see the site-wide finding below) |
+| 6 | hero image owned by the fold target | **NO** — the *indexed* post also uses a template-owned image; `dieline` uses its own blog image and folds anyway |
+| 7 | internal anchors pointing at the fold target | **NO** — **zero** links to the chosen canonical from either folded post |
+| 8 | dedicated-route metadata trap | **NO** — all four are on the `[slug]` route |
+
+### What the elimination exposes instead
+
+**Blog pages ship exactly one machine-readable identity signal: `<link rel="canonical">`.** No
+`og:*`, no JSON-LD, no `robots`, no hreflang. That is the thinnest possible identity, and it is
+identical on folded and indexed posts — so it is not the decision boundary, but it is why the
+boundary is so easy for Google to get wrong. There is nothing on the page asserting *what this
+document is* beyond its URL.
+
+**And no page type on the site emits hreflang at all** — verified on blog, nano-template, topics,
+tools and the homepage. `generateMetadata` sets `alternates.languages` via `getLanguagesMap()`
+and it does not reach the HTML. Locale alternates are declared **only** inside the sitemaps'
+`<xhtml:link>` blocks. With 10 locales that is a large, undefended surface, and it is the most
+concrete lead left: an unresolved `alternates` path is exactly the shape of defect that produces
+`userCanonical: (none)` while a canonical tag is visibly present.
+
+⚠️ **Note for the locale A/B readout (~09-23):** its stated question is *"does a `<loc>` entry do
+anything when the page already emits complete hreflang alternates?"* **The page emits none.** The
+alternates live only in the sitemap. Treatment URLs still inherit hreflang from their listed
+siblings' `<url>` blocks, so the arms are not broken — but the hypothesis has to be restated
+before the result is interpreted.
+
+**Deployment is not a factor.** Prod is serving this branch: `sitemap.xml` returns the 10,756
+image entries from `08092e73` and `/tools/worksheet-from-video` shows the `02b114c1` title. The
+folded posts are running current code.
+
+### Cohort split for the 34 folds — three different jobs, not one bug
+
+| cohort | n | action |
+|---|---:|---|
+| stale, last crawled pre-2026-08-10 | **28** | **batch recrawl request, then re-classify.** No debugging. |
+| `/` collapse, crawled 08-10/08-11 | 3 | verify after recrawl — old i18n-catalog mechanism, fix already live |
+| **wrong-content canonical, crawled 08-27+** | **3** | **active P0-A investigation** |
+
 ---
 
 ## Related docs / threads
