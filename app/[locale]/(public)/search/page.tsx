@@ -10,6 +10,7 @@ import type { NanoPromptBase } from "@/types/nanoPrompts";
 import {
   ALL_SUGGESTIONS,
   TIER2_SUGGESTIONS,
+  matchToolIntent,
   type SuggestionEntry,
 } from "@/lib/searchIndex";
 import { buildNanoFeedCards } from "@/lib/nano_page_data";
@@ -577,6 +578,21 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // "cats" (which normalizes to "cat") follow the same routing policy.
   if (target && !target.searchFallback && !shouldSkipTopicRedirect(q)) {
     redirect(target.href ? `/${locale}${target.href}` : `/${locale}/topics/${target.slug}`);
+  }
+
+  // Tool intent — parity with the SearchBar submit handler, which has called
+  // matchToolIntent since the "add subtitles to a video" fix. Only the typed
+  // path went through that handler; a direct /search?q= landing (shared link,
+  // reload, back-navigation, a click from anywhere that links /search) skipped
+  // it entirely and fell into the image-template matcher, which indexes no
+  // tools and can only dead-end. Runs AFTER the topic redirect on purpose:
+  // bare concept queries ("asl", "american sign language") are exact topic
+  // matches and resolve above, so only phrase queries that NAME a tool reach
+  // this line. matchToolIntent's ≥6-char ASCII floor and longest-phrase-wins
+  // rule are what keep generic words ("video") from hijacking navigation.
+  const toolIntent = matchToolIntent(query);
+  if (toolIntent?.href) {
+    redirect(`/${locale}${toolIntent.href}`);
   }
 
   type InspRecord = {

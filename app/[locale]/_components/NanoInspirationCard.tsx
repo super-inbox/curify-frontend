@@ -17,6 +17,7 @@ import { templatePacksService } from "@/services/templatePacks";
 import { intentCtaLabel, intentCtaContentId } from "@/lib/output_intent";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import {
+  buildImageAlt,
   makeNanoTemplateUrl,
   normalizeCarouselUrls,
   getLocaleFromPath,
@@ -220,7 +221,12 @@ export function NanoInspirationCard({
         {displaySrc ? (
           <CdnImage
             src={displaySrc}
-            alt={`${card.category} preview ${currentImageIndex + 1}`}
+            alt={buildImageAlt({
+              category: card.category,
+              description: card.description,
+              index: currentImageIndex + 1,
+              total: normalized.imageUrls.length,
+            })}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-110"
             unoptimized

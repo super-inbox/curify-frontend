@@ -1,0 +1,443 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { toSlug } from "@/lib/nano_utils";
+
+// Template metadata is fully bundled (nano_templates.json + nano_inspiration.json)
+// and only changes on redeploy, so cache the rendered page forever — the next
+// deploy invalidates the Full Route Cache automatically. Avoids pointless ISR
+// rebuilds every 4h with byte-identical output.
+export const revalidate = false;
+
+import ExampleImagesGrid from "./ExampleImagesGrid";
+import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
+
+import BulkDesignCallout from "@/app/[locale]/_components/BulkDesignCallout";
+import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import TopicStrip from "@/app/[locale]/_components/TopicStrip";
+import { resolveTopicPath } from "@/lib/topic_path_overrides";
+import { titleCaseFromSlug } from "@/lib/locale_utils";
+
+import {
+  buildNanoTemplateMetadata,
+  buildNanoH1,
+  resolveContentSections,
+  resolveVerticalSections,
+  buildVerticalJsonLd,
+  toAbsUrlMaybe,
+} from "@/lib/nano_seo_utils";
+import { getCanonicalUrl } from "@/lib/canonical";
+import {
+  VerticalAttributeChips,
+  VerticalKnowledgeSection,
+} from "@/app/[locale]/_components/VerticalKnowledge";
+
+import {
+  buildNanoPageContext,
+  buildOrderedTemplateImageGridItems,
+  buildOtherTemplateCards,
+  getImageViewsForTemplate,
+  buildNanoTemplateDetailData,
+} from "@/lib/nano_page_data";
+
+import { getTagChildren, getPrimaryTagTier1, getTopicNavList } from "@/lib/topicRegistry";
+import { getUseCasesForTopics } from "@/lib/topicRegistry_pure";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import MbtiGeneratorLink from "@/app/[locale]/_components/MbtiGeneratorLink";
+import { setRequestLocale } from "next-intl/server";
+
+type Props = {
+  params: Promise<{ locale: string; slug: string }>;
+};
+
+async function getPageData(localeStr: string, slug: string) {
+  const ctx = await buildNanoPageContext(localeStr, slug);
+
+  const data = buildNanoTemplateDetailData(
+    ctx.reg,
+    ctx.templateId,
+    
+    ctx.contentLocale,
+    ctx.translateNano
+  );
+
+  return {
+    ...ctx,
+    data,
+  };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale: localeStr, slug } = await params;
+  setRequestLocale(localeStr);
+
+  const { templateId, data, nanoMessages, localizedEntry } = await getPageData(
+    localeStr,
+    slug
+  );
+
+  if (!data) {
+    return {
+      title: "Template Not Found",
+      description: "The requested nano template could not be found.",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const { template } = data;
+
+  const fallbackTitle =
+    localizedEntry.title ||
+    localizedEntry.category ||
+    template.category ||
+    template.template_id;
+
+  const fallbackDescription =
+    localizedEntry.description ||
+    template.description ||
+    "Explore this nano template and generate curated outputs with Curify.";
+
+  return buildNanoTemplateMetadata({
+    templateId,
+    localeStr,
+    slug,
+    nanoMessages,
+    fallbackTitle: `${fallbackTitle} | Nano Template`,
+    fallbackDescription,
+  });
+}
+
+export async function generateStaticParams() {
+  // Pre-render every known template at deploy time (en + zh) so bot
+  // crawlers land on pre-baked HTML with no function exec.
+  const mod = (await import("@/public/data/nano_templates.json")) as unknown as {
+    default: Array<{ id: string }>;
+  };
+  const locales = ["en", "zh"];
+  return locales.flatMap((locale) =>
+    mod.default.map((t) => ({
+      locale,
+      slug: toSlug(t.id),
+    }))
+  );
+}
+
+export default async function NanoTemplatePage({ params }: Props) {
+  const { locale: localeStr, slug } = await params;
+  setRequestLocale(localeStr);
+
+  const {
+    pageLocale,
+    contentLocale,
+    templateId,
+    reg,
+    data,
+    nanoMessages,
+    localizedEntry,
+    translateNano,    
+  } = await getPageData(localeStr, slug);
+
+  if (!data) notFound();
+
+  const { template } = data;
+  const templateTopics = template.topics ?? [];
+  const templateUseCases = getUseCasesForTopics(templateTopics);
+
+  const { h2What, h2Who, h2How, h2Prompts } = resolveContentSections(
+    templateId,
+    nanoMessages
+  );
+
+  const categoryLabel =
+    localizedEntry.category || template.category || template.template_id;
+
+  const h1 = buildNanoH1(localizedEntry.title, categoryLabel);
+
+  const intro =
+    localizedEntry.description ||
+    template.description ||
+    "Copy and customize this Nano Banana prompt to generate structured, shareable visuals in seconds.";
+
+  // VerticalPageSchema v1 (Pillars 1 & 2) — null unless the template is in a pilot
+  // vertical AND has authored content.attributes/content.vertical (see nano.json).
+  const vertical = resolveVerticalSections(templateId, templateTopics, nanoMessages);
+
+  const imageViews = getImageViewsForTemplate(reg, templateId, contentLocale);
+
+  // Vertical JSON-LD (uses the first example image; TemplateView has no og_image).
+  const verticalJsonLd = buildVerticalJsonLd(vertical, {
+    name: h1,
+    description: intro,
+    url: getCanonicalUrl(pageLocale, `/nano-template/${slug}`),
+    image: toAbsUrlMaybe(imageViews[0]?.image_url),
+  });
+
+  const orderedImageIds =
+    template.cards?.length > 0
+      ? template.cards.map((c) => c.image_id)
+      : imageViews.map((x) => x.id);
+
+  const section2Images = buildOrderedTemplateImageGridItems(
+    imageViews,
+    orderedImageIds
+  );
+
+  const otherNanoCards = buildOtherTemplateCards(
+    reg,
+    contentLocale,
+    translateNano,
+    template.template_id,
+    templateTopics
+  );
+
+  // Tier 3 tag row: geo tags for lifestyle, language pairs for language, visual tags for design
+  const primaryTagTier1 = getPrimaryTagTier1(templateTopics);
+  const tagSubTopics = primaryTagTier1 ? getTagChildren(primaryTagTier1) : [];
+
+  return (
+    <main className="mx-auto max-w-[1600px] px-4 pt-4 pb-10 sm:px-6 lg:px-8">
+      <div className="mb-6">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h1 className="text-2xl font-bold text-neutral-900">{h1}</h1>
+            <p className="mt-2 text-sm text-neutral-600">{intro}</p>
+
+            {/* VerticalPageSchema v1 — Pillar 2 ontology chip strip */}
+            <VerticalAttributeChips vertical={vertical} />
+
+            {/* Top template-topic chip row → sr-only on 2026-06-29
+                per operator. The link tonnage matters for Google's
+                internal-link graph (templates → /topics/<slug>),
+                but visually it noises up the hero. Moved to the
+                bottom TopicStrip below for end-user display. */}
+            {templateTopics.length > 0 ? (
+              <div className="sr-only">
+                <TopicNavRow
+                  locale={pageLocale}
+                  allTopics={getTopicNavList()}
+                  topics={templateTopics}
+                  className="mt-4 mb-0"
+                  showDisabled={false}
+                />
+              </div>
+            ) : null}
+          </div>
+
+          {categoryLabel ? (
+            <span className="rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
+              {categoryLabel}
+            </span>
+          ) : null}
+        </div>
+      </div>
+
+
+      <section className="mt-8">
+<ExampleImagesGrid
+          items={section2Images}
+          locale={pageLocale}
+          maxRows={2}
+          batch={!!template.batch}
+          desktopOpensExample
+          showCaption
+          imageContext={categoryLabel || undefined}
+        />
+</section>
+
+<section className="mt-8">
+  <NanoTemplateDetailClient
+    locale={pageLocale}
+    template={{
+      template_id: template.template_id,
+      base_prompt: template.base_prompt || "",
+      parameters: template.parameters || [],
+      topics: template.topics,
+      batch: !!template.batch,
+      allow_generation: !!template.allow_generation,
+      requires_image_upload: !!template.requires_image_upload,
+      image_input:
+        template.image_input === "required" || template.image_input === "optional"
+          ? template.image_input
+          : template.requires_image_upload
+            ? "required"
+            : "none",
+      archetype: template.archetype === "consumption" ? "consumption" : "creation",
+      intro_video_url: template.intro_video_url,
+      existingExamples: imageViews
+        .filter((v) => v.params && Object.keys(v.params).length > 0)
+        // imageUrl lets a duplicate be SHOWN rather than described — see
+        // ExistingExampleRef. Prefer the preview: it is what the result panel
+        // renders, and it is the smaller fetch.
+        .map((v) => ({
+          id: v.id,
+          params: v.params as Record<string, string>,
+          imageUrl: v.preview_image_url ?? v.image_url,
+        })),
+    }}
+    sampleImage={imageViews[0] ? {
+      url: imageViews[0].image_url,
+      previewUrl: imageViews[0].preview_image_url ?? imageViews[0].image_url,
+      alt: template.template_id,
+    } : undefined}
+    otherNanoCards={otherNanoCards}
+    showReproduce={true}
+    showOtherTemplates={false}
+  />
+</section>
+
+      <section className="mt-10">
+        <BulkDesignCallout
+          source={`nano-template/${slug}`}
+          subject={categoryLabel || undefined}
+        />
+      </section>
+
+      <section className="mt-8">
+       
+        <NanoTemplateDetailClient
+          locale={pageLocale}
+          template={{
+            template_id: template.template_id,
+            base_prompt: template.base_prompt || "",
+            parameters: [],
+            topics: template.topics,
+          }}
+          otherNanoCards={otherNanoCards}
+          showReproduce={false}
+          showOtherTemplates={true}
+        />
+      </section>
+
+
+      {h2What || h2Who || h2How.length > 0 || h2Prompts.length > 0 ? (
+        <section className="mt-10">
+                    <h2 className="text-lg font-bold text-neutral-900">About this template</h2>
+
+          {h2What ? (
+            <div className="mt-4">
+              <h3 className="text-base font-semibold text-neutral-900">
+                What is this template?
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-neutral-700">{h2What}</p>
+            </div>
+          ) : null}
+
+          {h2Who ? (
+            <div className="mt-5">
+              <h3 className="text-base font-semibold text-neutral-900">
+                Who should use it?
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-neutral-700">{h2Who}</p>
+            </div>
+          ) : null}
+
+          {h2How.length > 0 ? (
+            <div className="mt-5">
+              <h3 className="text-base font-semibold text-neutral-900">
+                How to use it
+              </h3>
+              <ol className="mt-2 list-decimal pl-5 text-sm leading-6 text-neutral-700">
+                {h2How.map((s, i) => (
+                  <li key={i} className="mt-1">
+                    {s}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ) : null}
+
+          {h2Prompts.length > 0 ? (
+            <div className="mt-5">
+              <h3 className="text-base font-semibold text-neutral-900">
+                Example prompts
+              </h3>
+              <ul className="mt-2 list-disc pl-5 text-sm leading-6 text-neutral-700">
+                {h2Prompts.map((s, i) => (
+                  <li key={i} className="mt-1">
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
+
+      {/* VerticalPageSchema v1 — Pillar 1 authored domain-knowledge block */}
+      <VerticalKnowledgeSection vertical={vertical} />
+
+      {/* Same hand-off as the example pages: these MBTI hubs rank top-ten on
+          answer queries the AI Overview now absorbs, so route their standing
+          to the generator. Renders only for MBTI templates. */}
+      <MbtiGeneratorLink locale={localeStr} templateId={templateId} />
+
+      {verticalJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(verticalJsonLd) }}
+        />
+      ) : null}
+
+      {/* 'Explore More' tier-3 tag chip row → sr-only on 2026-06-29.
+          Same SEO-link rationale as the top-of-page chip row. The
+          visible end-user surface is the merged TopicStrip block at
+          the bottom (below). */}
+      {tagSubTopics.length > 0 && (
+        <section className="sr-only mt-10">
+          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
+            Explore More
+          </h2>
+          <TopicNavRow
+            locale={pageLocale}
+            allTopics={getTopicNavList()}
+            topics={tagSubTopics}
+            showDisabled={false}
+            size="default"
+          />
+        </section>
+      )}
+
+      {/* End-user-visible topic browsing surface — merged templateTopics
+          + tagSubTopics into ONE TopicStrip at the bottom (per the
+          /topics/<slug> pattern shipped 094ad8cb). Dedupe preserves
+          template-topics-first ordering since those are the canonical
+          categories this template participates in. */}
+      {(() => {
+        const merged: string[] = [];
+        const seen = new Set<string>();
+        for (const id of [...templateTopics, ...tagSubTopics]) {
+          if (seen.has(id)) continue;
+          seen.add(id);
+          merged.push(id);
+        }
+        if (merged.length === 0) return null;
+        return (
+          <section className="mt-10 pb-4">
+            <TopicStrip
+              locale={pageLocale}
+              heading="Browse topics"
+              trackPrefix="nano-template-bottom-strip"
+              items={merged.map((subSlug) => ({
+                slug: subSlug,
+                path: resolveTopicPath(subSlug),
+                label: titleCaseFromSlug(subSlug),
+              }))}
+            />
+          </section>
+        );
+      })()}
+
+      {/* Use-case chips — moved to the bottom of the page (persona nav is a
+          secondary fork after the content, not mid-page in the reproduce panel). */}
+      {templateUseCases.length > 0 && (
+        <section className="mt-10 pb-8">
+          <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+            Use this template for
+          </div>
+          <UseCaseChipsRow filterTo={templateUseCases} />
+        </section>
+      )}
+
+    </main>
+  );
+}

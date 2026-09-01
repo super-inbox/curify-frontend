@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
-import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
+import ExampleImagesGrid from "@/app/[locale]/(static)/nano-template/[slug]/ExampleImagesGrid";
 import HomeFusedRow, { type HomeExampleTile, type TopRemixPrompt } from "@/app/[locale]/(public)/HomeFusedRow";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import { getGalleryTag } from "@/lib/topicRegistry";

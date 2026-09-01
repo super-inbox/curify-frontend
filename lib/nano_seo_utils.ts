@@ -546,8 +546,11 @@ export function buildVerticalJsonLd(
     if (teaches) node.teaches = teaches;
     if (val("duration_min")) node.timeRequired = `PT${String(val("duration_min")).replace(/\D/g, "")}M`;
   } else if (schema.id === "merch") {
+    // `material` is valid on CreativeWork; `category` is not (schema.org scopes
+    // it to Product/Service/Invoice/…), so emitting it here would be a second,
+    // quieter invalidity. The value is not lost — every attribute, product_type
+    // included, is already exposed below as an additionalProperty PropertyValue.
     if (val("material")) node.material = val("material");
-    if (val("product_type")) node.category = val("product_type");
   } else if (schema.id === "mbti") {
     if (val("type_code")) node.about = val("type_code");
   }

@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter, usePathname } from "@/i18n/navigation";
-import { useSearchParams } from "next/navigation";
 import {
   Clock,
   Globe,
@@ -51,7 +50,6 @@ export default function UserDropdownMenu({
   const t = useTranslations("userDropdown");
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [showLanguageSubmenu, setShowLanguageSubmenu] = useState(false);
   const [transactions, setTransactions] = useState<Transaction[]>([]);

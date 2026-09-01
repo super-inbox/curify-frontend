@@ -77,3 +77,11 @@ packs/confused-chinese-words/pack.zip
 
 # design-agent trajectory capture (local sink; may contain query text)
 .trajectories/
+
+# Raw client material — §7z-C keeps this in the local-only column.
+# NOTE: raw/ as a whole is NOT ignored and already tracks 24 files, so these
+# client-material folders are listed explicitly. Add a line here at INTAKE for
+# any new raw/<client-work>/ folder, before the first commit that touches the tree.
+raw/context-enrichment-08-31/
+raw/cute-city-08-25/
+raw/agent-skills-08-31/

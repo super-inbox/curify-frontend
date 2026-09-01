@@ -73,6 +73,7 @@ export function createBlogPostsConfig() {
       'best-claude-code-design-skills': 'bestClaudeCodeDesignSkills',
       'character-turnaround-sheet-guide': 'characterTurnaroundSheetGuide',
       'dieline-generator-guide': 'dielineGeneratorGuide',
+      'ghost-mannequin-ai-guide': 'ghostMannequinAiGuide',
       'ai-makeover-templates': 'aiMakeoverTemplates',
       'world-cup-fan-outfit-prompts': 'worldCupFanOutfitPrompts',
       '50-world-cup-2026-ai-prompts': 'fiftyWorldCup2026AiPrompts',
@@ -157,6 +158,10 @@ export const availableKeys: Record<string, string[]> = {
   'bestClaudeCodeDesignSkills': ["title", "metaDescription", "seoKeywords", "date", "readTime", "intro", "whatIsTitle", "whatIsContent", "whyTitle", "whyContent", "howTitle", "howContent", "challengesTitle", "challengesContent", "toolsTitle", "toolsContent", "curifyTitle", "curifyContent", "conclusionTitle", "conclusionContent"],
   'characterTurnaroundSheetGuide': ["title", "metaDescription", "seoKeywords", "date", "readTime", "intro", "whatIsTitle", "whatIsContent", "whyTitle", "whyContent", "howTitle", "howContent", "useCasesTitle", "useCasesContent", "challengesTitle", "challengesContent", "toolsTitle", "toolsContent", "curifyTitle", "curifyContent", "conclusionTitle", "conclusionContent"],
   'dielineGeneratorGuide': ["title", "metaDescription", "seoKeywords", "date", "readTime", "intro", "whatIsTitle", "whatIsContent", "whyTitle", "whyContent", "howTitle", "howContent", "useCasesTitle", "useCasesContent", "challengesTitle", "challengesContent", "toolsTitle", "toolsContent", "curifyTitle", "curifyContent", "conclusionTitle", "conclusionContent"],
+  // `production*` carries the FAQ block. GenericBlogContent has no faq slot, and
+  // `production` is the last free section that still renders before tools/curify,
+  // which is where an FAQ belongs. Renaming it would need a component change.
+  'ghostMannequinAiGuide': ["title", "metaDescription", "seoKeywords", "date", "readTime", "intro", "whatIsTitle", "whatIsContent", "whyTitle", "whyContent", "howTitle", "howContent", "useCasesTitle", "useCasesContent", "challengesTitle", "challengesContent", "productionTitle", "productionContent", "toolsTitle", "toolsContent", "curifyTitle", "curifyContent", "conclusionTitle", "conclusionContent"],
   'urlToProductVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'videoToLearningPack': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'footballerMbtiTypes': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],

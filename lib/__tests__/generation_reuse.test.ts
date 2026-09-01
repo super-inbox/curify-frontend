@@ -64,9 +64,9 @@ describe("generation reuse", () => {
    *  just never sees the match and the reuse path stays unattractive. */
   it("every existingExamples construction site supplies an image", () => {
     const SITES = [
-      "app/[locale]/(public)/nano-template/[slug]/page.tsx",
-      "app/[locale]/(public)/nano-template/[slug]/example/[exampleId]/page.tsx",
-      "app/[locale]/(public)/carousel/template-example/[slug]/[exampleId]/page.tsx",
+      "app/[locale]/(static)/nano-template/[slug]/page.tsx",
+      "app/[locale]/(static)/nano-template/[slug]/example/[exampleId]/page.tsx",
+      "app/[locale]/(static)/carousel/template-example/[slug]/[exampleId]/page.tsx",
     ];
     const offenders = SITES.filter((rel) => {
       const src = read(rel);

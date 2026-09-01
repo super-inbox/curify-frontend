@@ -2,7 +2,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useClientSearchParams } from "@/lib/useClientSearchParams";
+
 import { Link } from "@/i18n/navigation";
 import { useTracking } from "@/services/useTracking";
 import {
@@ -104,7 +105,7 @@ function slugify(text: string): string {
 
 export default function ImpromptuSpeechPractice() {
   const { trackAction } = useTracking();
-  const searchParams = useSearchParams();
+  const searchParams = useClientSearchParams();
 
   const [topic, setTopic] = useState<ImpromptuTopic | null>(null);
   const [phase, setPhase] = useState<Phase>("idle");
@@ -297,8 +298,11 @@ export default function ImpromptuSpeechPractice() {
   //   2. a previously recorded take, which also restores the topic it was for
   //   3. the last drawn topic
   useEffect(() => {
+    // `useClientSearchParams` resolves after hydration, so wait for it rather
+    // than restoring from storage first and losing a ?topic= deep link.
+    if (!searchParams) return;
     let alive = true;
-    const fromUrl = getTopicById(searchParams?.get("topic"));
+    const fromUrl = getTopicById(searchParams.get("topic"));
     if (fromUrl) {
       setTopic(fromUrl);
       return;
@@ -323,7 +327,7 @@ export default function ImpromptuSpeechPractice() {
       alive = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [searchParams]);
 
   useEffect(() => {
     phaseRef.current = phase;

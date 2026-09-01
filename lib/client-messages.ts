@@ -133,3 +133,11 @@ export function pickClientMessages<T extends Record<string, unknown>>(
   }
   return out as unknown as T;
 }
+
+/**
+ * Keep-set for routes that never render a blog article body — i.e. every route
+ * in the `(static)` group. Identical to what `blogArticleNamespacesForPath()`
+ * returns for a non-blog path, but derived without reading `x-pathname`, so a
+ * layout using it stays statically renderable.
+ */
+export const NON_BLOG_CLIENT_NAMESPACES: string[] = GLOBAL_CLIENT_ARTICLE_NAMESPACES;

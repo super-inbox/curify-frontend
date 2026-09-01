@@ -8,7 +8,7 @@
  * reads as a washed tint. Customers do not know they need that plate, and
  * cannot see it — it is white on white.
  */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { useFactoryExport } from "@/services/useFactoryExport";
 import {
@@ -29,6 +29,11 @@ type Props = {
 
 export default function AcrylicExportForm({ presetImageUrl }: Props = {}) {
   const [imageUrl, setImageUrl] = useState<string | null>(presetImageUrl ?? null);
+  // `presetImageUrl` comes from the query string, which the tool page now reads
+  // after hydration, so it is null on the first render.
+  useEffect(() => {
+    if (presetImageUrl) setImageUrl(presetImageUrl);
+  }, [presetImageUrl]);
   const [uploading, setUploading] = useState(false);
   const [mm, setMm] = useState(70);
   const [holeMm, setHoleMm] = useState(4);

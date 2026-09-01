@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import blogs from "@/public/data/blogs.json";
 import { routing } from "@/i18n/routing";
+import { imageEntries, IMAGE_NAMESPACE } from "@/lib/sitemap_images";
 
 export const runtime = "nodejs";
 
@@ -29,7 +30,11 @@ function normalizeDate(s: string | undefined): string {
 }
 
 // Blog routes — emit (path, lastmod) per record.
-function getBlogEntries(): { route: string; lastmod: string }[] {
+function getBlogEntries(): {
+  route: string;
+  lastmod: string;
+  images: string[];
+}[] {
   const records = blogs as BlogRecord[];
 
   return records
@@ -37,6 +42,11 @@ function getBlogEntries(): { route: string; lastmod: string }[] {
     .map((b) => ({
       route: `/blog/${encodeURIComponent(b.slug)}`,
       lastmod: normalizeDate(b.lastmod ?? b.date),
+      // Every one of the 106 records carries a hero `image`; it is the only
+      // image we can attribute to a post from data alone (in-body images live
+      // inside per-post components). Guarded anyway so a future record without
+      // one degrades to no <image:image> rather than an invalid entry.
+      images: b.image ? [b.image] : [],
     }));
 }
 
@@ -54,7 +64,12 @@ function generateHreflangLinks(route: string) {
 }
 
 // URL entry
-function generateUrlEntry(locale: string, route: string, lastmod: string) {
+function generateUrlEntry(
+  locale: string,
+  route: string,
+  lastmod: string,
+  images: readonly string[] = []
+) {
   const pathPrefix = locale === "en" ? "" : `/${locale}`;
   const loc = `${BASE_URL}${pathPrefix}${route}`;
 
@@ -64,7 +79,7 @@ function generateUrlEntry(locale: string, route: string, lastmod: string) {
       <lastmod>${lastmod}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.7</priority>
-      ${generateHreflangLinks(route)}
+      ${generateHreflangLinks(route)}${imageEntries(images)}
     </url>
   `;
 }
@@ -74,9 +89,9 @@ export async function GET() {
 
   let urls = "";
 
-  entries.forEach(({ route, lastmod }) => {
+  entries.forEach(({ route, lastmod, images }) => {
     LOCALES.forEach((locale) => {
-      urls += generateUrlEntry(locale, route, lastmod);
+      urls += generateUrlEntry(locale, route, lastmod, images);
     });
   });
 
@@ -85,6 +100,7 @@ export async function GET() {
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  ${IMAGE_NAMESPACE}
 >
 ${urls}
 </urlset>`.trim();

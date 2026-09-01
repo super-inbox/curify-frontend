@@ -6,12 +6,16 @@ import { TOOL_REGISTRY } from "@/lib/tools-registry";
 import { USE_CASES } from "@/lib/use-cases";
 import { MBTI_TYPES } from "@/lib/mbti-meta";
 import { toSlug } from "@/lib/nano_utils";
+import {
+  getTemplateImageMap,
+  imageEntries,
+  IMAGE_NAMESPACE,
+} from "@/lib/sitemap_images";
 import { isLocalizedTopic } from "@/lib/topicRegistry_pure";
 import {
   SEO_RETITLED_LASTMOD,
-  FASHION_RECRAWL_LASTMOD,
-  FASHION_RECRAWL_TEMPLATE_IDS,
   SEO_RETITLED_TEMPLATE_IDS,
+  PER_TEMPLATE_RETITLE_LASTMOD,
 } from "@/lib/seo_retitled_templates";
 
 export const runtime = "nodejs";
@@ -103,6 +107,7 @@ function getNanoTemplateRoutes(): Array<{
   route: string;
   locales: string[];
   lastmod: string;
+  templateId: string;
 }> {
   const raws = nanoTemplates as unknown as Array<{
     id: string;
@@ -122,16 +127,17 @@ function getNanoTemplateRoutes(): Array<{
         (LOCALES as readonly string[]).includes(l)
       );
       return {
+        templateId: t.id.trim(),
         route: `/nano-template/${encodeURIComponent(toSlug(t.id.trim()))}`,
         locales: localized.length > 0 ? localized : ["en"],
         // Take the LATER of the two. The retitle date (2026-05-05) predates the
         // 08-05 fold fix, so using it verbatim would advertise the 41 retitled
         // templates as STALER than every other template — the opposite of the
         // intent, and it would exclude exactly the pages we most want recrawled.
-        // The 08-27 fashion retitle is newer than both dates below, so it takes
-        // precedence for the one template it covers.
-        lastmod: FASHION_RECRAWL_TEMPLATE_IDS.has(t.id.trim())
-          ? FASHION_RECRAWL_LASTMOD
+        // A per-template retitle date is newer than both dates below, so it
+        // takes precedence for the templates it covers.
+        lastmod: PER_TEMPLATE_RETITLE_LASTMOD.get(t.id.trim())
+          ? PER_TEMPLATE_RETITLE_LASTMOD.get(t.id.trim())!
           : SEO_RETITLED_TEMPLATE_IDS.has(t.id.trim()) &&
               SEO_RETITLED_LASTMOD > NANO_TEMPLATES_LASTMOD
             ? SEO_RETITLED_LASTMOD
@@ -187,7 +193,7 @@ function getTopicRoutes(): string[] {
     }
   }
   // Filter to i18n-authored topics only — topics without i18n render
-  // noindex,nofollow (see app/[locale]/(public)/topics/[slug]/page.tsx:62-68),
+  // noindex,nofollow (see app/[locale]/(static)/topics/[slug]/page.tsx:62-68),
   // so emitting them in the sitemap wastes crawl budget. Pre-filter cuts
   // ~71 topics × 10 locales = 710 noindex'd sitemap entries.
   // See docs/wedge1-hygiene-findings-2026-06-26.md.
@@ -224,6 +230,8 @@ function generateUrlEntry(
     changefreq?: string;
     priority?: string;
     availableLocales?: readonly string[];
+    /** Repo-relative asset paths to advertise as <image:image> children. */
+    images?: readonly string[];
   }
 ) {
   const pathPrefix = locale === "en" ? "" : `/${locale}`;
@@ -240,7 +248,7 @@ function generateUrlEntry(
       <lastmod>${lastmod}</lastmod>
       <changefreq>${changefreq}</changefreq>
       <priority>${priority}</priority>
-      ${generateHreflangLinks(route, opts?.availableLocales)}
+      ${generateHreflangLinks(route, opts?.availableLocales)}${imageEntries(opts?.images ?? [])}
     </url>
   `;
 }
@@ -330,23 +338,32 @@ export async function GET() {
     });
   });
 
-  // Nano template detail pages
-  nanoTemplateRoutes.forEach(({ route, locales: availableLocales, lastmod }) => {
-    availableLocales.forEach((locale) => {
-      urls += generateUrlEntry(locale, route, {
-        lastmod,
-        changefreq: "weekly",
-        priority: "0.6",
-        availableLocales,
+  // Nano template detail pages.
+  // Each hub renders its template's inspiration gallery, so it is the correct
+  // and only page we advertise those images on — see lib/sitemap_images.ts for
+  // why the example sitemap deliberately stays out of this.
+  const templateImages = getTemplateImageMap();
+  nanoTemplateRoutes.forEach(
+    ({ route, locales: availableLocales, lastmod, templateId }) => {
+      const images = templateImages.get(templateId) ?? [];
+      availableLocales.forEach((locale) => {
+        urls += generateUrlEntry(locale, route, {
+          lastmod,
+          changefreq: "weekly",
+          priority: "0.6",
+          availableLocales,
+          images,
+        });
       });
-    });
-  });
+    }
+  );
 
   const xml = `
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  ${IMAGE_NAMESPACE}
 >
 ${urls}
 </urlset>`.trim();

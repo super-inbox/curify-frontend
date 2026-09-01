@@ -11,7 +11,7 @@ import {
   clientMountedAtom,
 } from "@/app/atoms/atoms";
 import { usePathname, useRouter, Link } from "@/i18n/navigation";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
 import { useEffect, useState, useRef } from "react";
 import {
@@ -79,7 +79,6 @@ export default function Header() {
   const t = useTranslations("header");
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const { locale } = useParams() as { locale: string };
 
   const [drawerState, setDrawerState] = useAtom(drawerAtom);
@@ -153,8 +152,11 @@ export default function Header() {
   };
 
   const switchLocale = (nextLocale: string) => {
-    const currentSearchParams = new URLSearchParams(searchParams.toString());
-    const queryString = currentSearchParams.toString();
+  // Read the query at click time rather than via `useSearchParams()`: that hook
+  // triggers Next's CSR bailout and would make every page rendering this
+  // component un-prerenderable. Only needed inside this handler, where the
+  // browser URL is authoritative anyway.
+    const queryString = new URLSearchParams(window.location.search).toString();
     const newPath = queryString ? `${pathname}?${queryString}` : pathname;
     router.replace(newPath, { locale: nextLocale });
   };

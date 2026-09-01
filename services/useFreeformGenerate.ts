@@ -7,9 +7,22 @@ import { useTranslations } from "next-intl";
 import { freeformGenerateService } from "@/services/freeformGenerate";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { useTracking, type TrackingTarget } from "@/services/useTracking";
-import { userAtom, drawerAtom } from "@/app/atoms/atoms";
+import {
+  userAtom,
+  drawerAtom,
+  modalAtom,
+  topUpContextAtom,
+} from "@/app/atoms/atoms";
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
-const CREDITS_COST = 10;
+/** The client-side affordability check. Must equal what the backend actually
+ *  charges: this file declared its own `= 10` from the 10-credit era and was
+ *  missed when generation was cut to 5 on 2026-08-16, so from then until
+ *  2026-08-30 anyone holding 5-9 credits was told they could not afford a
+ *  generation they could afford — i.e. the last image of the 50-credit signup
+ *  grant was refused, to the cohort closest to converting. This is a fast path
+ *  only; the backend pre-flight is the real gate. */
+const CREDITS_COST = IMAGE_GENERATION_CREDITS;
 
 // Mirror useDirectGenerate's poll loop: backend runs gen as a background task
 // (image-to-image can take >60s), so we poll /projects/{id}/status until
@@ -86,6 +99,8 @@ type Options = {
 export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, onInsufficientCredits }: Options) {
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
+  const [, setModal] = useAtom(modalAtom);
+  const [, setTopUpContext] = useAtom(topUpContextAtom);
   const { trackAction, track } = useTracking();
   const t = useTranslations("actionButtons");
 
@@ -120,8 +135,25 @@ export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, o
     const credits =
       ((user as any)?.non_expiring_credits ?? 0) +
       ((user as any)?.expiring_credits ?? 0);
+    // Paywall. This used to be a bare `alert()` with no way to pay from it —
+    // on the surfaces that carry almost all generation traffic, including the
+    // one route our only paying customer converted through. Open the top-up
+    // modal with the blocked job attached, and emit the event that makes the
+    // hit countable: until 2026-08-30 "50 users reached the paywall" was
+    // inferred from balances, never observed.
     if (credits < CREDITS_COST) {
-      alert(t("insufficientCredits"));
+      track({
+        contentId: `paywall:gallery-remix-generate`,
+        contentType: "topic_capsule",
+        actionType: "click",
+      });
+      setTopUpContext({
+        required: CREDITS_COST,
+        available: credits,
+        jobLabel: t("jobLabelImage"),
+        surface: "gallery-remix-generate",
+      });
+      setModal("topup");
       isGeneratingRef.current = false;
       return null;
     }

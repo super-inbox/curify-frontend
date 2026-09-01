@@ -74,7 +74,7 @@ import AgenticGenerativeCapabilityContent from "./components/AgenticGenerativeCa
 import blogsData from "@/public/data/blogs.json";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
-import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
+import ExampleImagesGrid from "@/app/[locale]/(static)/nano-template/[slug]/ExampleImagesGrid";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import { cdn } from "@/lib/cdn";
 import nanoInspirationData from "@/public/data/nano_inspiration.json";

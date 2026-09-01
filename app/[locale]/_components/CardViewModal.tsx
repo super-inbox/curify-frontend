@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { InspirationCardType } from "./InspirationCard";
-import { NanoInspirationCardType } from "@/lib/nano_pure";
+import { buildImageAlt, NanoInspirationCardType } from "@/lib/nano_pure";
 
 function normalizeImageSrc(src?: string | null) {
   if (!src) return "";
@@ -338,7 +338,12 @@ function NanoBananaCardDetailView({ card }: { card: NanoInspirationCardType }) {
               >
                 <img
                   src={fullUrl}
-                  alt={`${card.category} example ${idx + 1}`}
+                  alt={buildImageAlt({
+                    category: card.category,
+                    description: card.description,
+                    index: idx + 1,
+                    total: normalized.length,
+                  })}
                   className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300"
                 />
               </div>

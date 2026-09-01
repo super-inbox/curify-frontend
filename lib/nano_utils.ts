@@ -17,6 +17,7 @@ import {
   type RawNanoImageRecord,
   type NanoRegistry,
   type TemplateView,
+  type TemplateParameter,
   type TranslateFn,
 } from "./nano_pure";
 
@@ -130,9 +131,24 @@ export function getTemplateView(
     archetype: raw.archetype,
     intro_video_url: raw.intro_video_url,
     base_prompt: value.base_prompt,
-    parameters: value.parameters,
+    // `parameters` is authored per locale and is occasionally a bare object
+    // where it should be a one-element array (e.g. the zh entry of
+    // template-kids-english-phonics-sentence-flashcard). Consumers call
+    // `.slice()` / `.filter()` on it, so normalise here — the single point
+    // where locale data enters the registry — rather than guarding at each
+    // call site. Wrapping (not dropping) keeps the authored parameter usable.
+    parameters: normalizeParameters(value.parameters),
     cards: raw.cards ?? [],
   };
+}
+
+/** Coerce an authored `parameters` value into the array every consumer expects.
+ *  Accepts a well-formed array, wraps a single parameter object, and treats
+ *  anything else (null/undefined/scalar) as "no parameters". */
+function normalizeParameters(value: unknown): TemplateParameter[] {
+  if (Array.isArray(value)) return value as TemplateParameter[];
+  if (value && typeof value === "object") return [value as TemplateParameter];
+  return [];
 }
 
 export function getTemplateViewWithTranslations(

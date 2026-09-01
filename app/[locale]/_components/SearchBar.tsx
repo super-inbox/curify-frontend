@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import { useClientSearchParams } from "@/lib/useClientSearchParams";
 import { Search, X } from "lucide-react";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   filterSuggestions,
@@ -35,7 +36,7 @@ type Props = { locale: string };
 
 export default function SearchBar({ locale }: Props) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const searchParams = useClientSearchParams();
   // On /search results page: prefill from ?q= and disable rotation
   // (refine mode — matches Google/Bing/Pinterest convention). Match any
   // path ending in /search so locale prefix (/en/search, /zh/search) works.
@@ -43,6 +44,11 @@ export default function SearchBar({ locale }: Props) {
   const urlQuery = searchParams?.get("q") ?? "";
 
   const [query, setQuery] = useState(isSearchPage ? urlQuery : "");
+  // The query arrives one render after mount (see useClientSearchParams), so
+  // seed the input when it lands instead of only in the initial state.
+  useEffect(() => {
+    if (isSearchPage && urlQuery) setQuery(urlQuery);
+  }, [isSearchPage, urlQuery]);
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);

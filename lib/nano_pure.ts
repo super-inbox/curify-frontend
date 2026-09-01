@@ -261,3 +261,137 @@ export function fillPrompt(basePrompt?: string, params?: Record<string, any>) {
   }
   return p;
 }
+
+/**
+ * Descriptive `alt` text for a template's gallery image.
+ *
+ * WHY (measured 2026-09-01). Image search carries more impressions than web
+ * search here (19,035 vs 12,752 over 28d) at position 41, and alt text is one
+ * of the few ranking signals we control on an AI-generated image whose filename
+ * is a hash. What we shipped instead was the taxonomy label — `alt="sports"`,
+ * `alt="world-cup"`, `alt="Anime MBTI Infographic Category"` — or nothing at
+ * all. A bare tag describes a *bucket*, not the picture in it.
+ *
+ * Prefers the template description (a real sentence) and falls back to the
+ * category with its trailing " Category" suffix removed, since that suffix is
+ * an internal taxonomy artifact that reads as noise in a screen reader.
+ */
+export function buildImageAlt(opts: {
+  category?: string;
+  description?: string;
+  /** 1-based position within the gallery. Only rendered when total > 1. */
+  index?: number;
+  total?: number;
+}): string {
+  const { category, description, index, total } = opts;
+
+  // next-intl returns the lookup key verbatim when a message is missing
+  // ("template-mbti-naruto.description"). That must never reach an alt.
+  const usable = (s?: string): string => {
+    const v = (s ?? "").trim();
+    if (!v) return "";
+    if (!v.includes(" ") && v.includes(".")) return "";
+    return v;
+  };
+
+  // Some surfaces pass a polished label ("Anime MBTI Infographic Category"),
+  // others pass a raw tag ("sports"). Title-case the bare-token case so it
+  // reads as a label rather than as a stray slug in front of a sentence.
+  const rawCategory = usable(category).replace(/\s+Category$/i, "");
+  const cleanCategory =
+    rawCategory && rawCategory === rawCategory.toLowerCase()
+      ? rawCategory.replace(/\b[a-z]/g, (c) => c.toUpperCase())
+      : rawCategory;
+  const cleanDescription = usable(description);
+
+  // First sentence only — descriptions run to two or three, and alt text past
+  // ~125 characters is truncated by screen readers and ignored by crawlers.
+  const firstSentence = cleanDescription
+    ? (cleanDescription.split(/(?<=[.!?])\s+/)[0] ?? cleanDescription)
+    : "";
+
+  let base = firstSentence || cleanCategory;
+  if (!base) return "AI-generated image example";
+
+  // Case-INSENSITIVE: the tag surfaces pass "sports" against a description of
+  // "Sports Team MBTI — Brazil (ESFP)". A case-sensitive check let the tag
+  // through and emitted "sports — Sports Team MBTI — Brazil (ESFP)".
+  if (
+    firstSentence &&
+    cleanCategory &&
+    !firstSentence.toLowerCase().includes(cleanCategory.toLowerCase())
+  ) {
+    // Category first reads better as a label and front-loads the keyword.
+    base = `${cleanCategory} — ${firstSentence}`;
+  }
+
+  const suffix =
+    typeof index === "number" && typeof total === "number" && total > 1
+      ? ` (${index} of ${total})`
+      : "";
+
+  const budget = 125 - suffix.length;
+  const trimmed =
+    base.length > budget ? `${base.slice(0, budget - 1).trimEnd()}…` : base;
+
+  return `${trimmed}${suffix}`;
+}
+
+/**
+ * Descriptive `alt` for one example tile in ExampleImagesGrid.
+ *
+ * The grid is the template hub's main image surface — the same images this
+ * repo now advertises in the image sitemap — and it was shipping the raw
+ * example title, which for the Naruto MBTI template means `alt="gaara"` and
+ * `alt="hinata"`. A bare first name tells a crawler (and a screen reader)
+ * nothing about what the picture shows.
+ *
+ * Composes: the subject (title, or the most specific parameter value when the
+ * title is a slug-ish token) + the template's category label. Parameters are
+ * the good stuff — `{character_name: "Gaara", art_style: "Anime"}` — because
+ * they are what actually varies between two images of the same template.
+ */
+export function buildExampleImageAlt(
+  item: {
+    id: string;
+    title?: string;
+    params?: Record<string, string>;
+  },
+  context?: string
+): string {
+  const clean = (s?: string) => (s ?? "").replace(/[-_]+/g, " ").trim();
+
+  // Title-case a bare token so "gaara" reads as "Gaara"; leave real
+  // sentences ("Gaara — sand village") alone.
+  const titleCaseToken = (s: string) =>
+    s.length > 0 && s === s.toLowerCase() && s.split(" ").length <= 3
+      ? s.replace(/\b[a-z]/g, (c) => c.toUpperCase())
+      : s;
+
+  // Last-resort id fallback: drop the "template-" prefix so it does not read
+  // as "Template Travel Kyoto".
+  const fallback = clean(item.id).replace(/^template\s+/i, "");
+  const subject = titleCaseToken(clean(item.title) || fallback);
+
+  // Parameter values, minus any already contained in the subject — an id
+  // fallback of "Travel Kyoto" plus a `{city: "Kyoto"}` param would otherwise
+  // emit "Travel Kyoto, Kyoto".
+  const paramValues = Object.values(item.params ?? {})
+    .map((v) => clean(String(v ?? "")))
+    .filter(
+      (v) => v.length > 0 && !subject.toLowerCase().includes(v.toLowerCase())
+    );
+
+  const parts = [subject, ...paramValues.slice(0, 2)].filter(Boolean);
+  const descriptor = parts.join(", ");
+  const label = clean(context).replace(/\s+Category$/i, "");
+
+  const base = label
+    ? descriptor
+      ? `${descriptor} — ${label}`
+      : label
+    : descriptor;
+
+  if (!base) return "AI-generated image example";
+  return base.length > 125 ? `${base.slice(0, 124).trimEnd()}…` : base;
+}

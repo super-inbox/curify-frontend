@@ -41,9 +41,21 @@ export const MBTI_RECRAWL_LASTMOD = "2026-07-26T00:00:00.000Z";
 // Scoped to a single template on purpose: a group-wide bump would overstate
 // freshness for templates that did not change, which is what teaches Google to
 // discount lastmod (see the note in app/sitemap.xml/route.ts).
-export const FASHION_RECRAWL_LASTMOD = "2026-08-27T00:00:00.000Z";
-export const FASHION_RECRAWL_TEMPLATE_IDS: ReadonlySet<string> = new Set([
-  "template-hairstyle-guide-infographic",
+//
+// 2026-09-01 adds a second single-template retitle, so this is a map keyed by
+// template id rather than a second (SET, DATE) pair — a fourth branch on the
+// ternary in app/sitemap.xml/route.ts was the alternative, and that chain is
+// already three deep.
+export const PER_TEMPLATE_RETITLE_LASTMOD: ReadonlyMap<string, string> = new Map([
+  // 2026-08-27 — retitled to lead with "hairstyle for face shape" (1,000/mo, KD 23).
+  ["template-hairstyle-guide-infographic", "2026-08-27T00:00:00.000Z"],
+  // 2026-09-01 — retitled to lead with "dress design template" (140/mo, KD 24,
+  // batch-3 KD). This template already holds image-search position 25.3 for that
+  // exact query on 40 impressions, with the term absent from its title entirely;
+  // it read "Nature-Inspired Couture Gown Design Sheet Generator". The output is
+  // genuinely a dress design sheet (illustration + technical sketch + notes), so
+  // leading with the term does not overclaim.
+  ["template-fashion-inspired-gown-design-sheet", "2026-09-01T00:00:00.000Z"],
 ]);
 
 export const SEO_RETITLED_TEMPLATE_IDS: ReadonlySet<string> = new Set([

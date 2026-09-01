@@ -256,20 +256,33 @@ export default async function HomePage({
      <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
+    // Organization, NOT SoftwareApplication. Google validates Software App as a
+    // rich-result candidate and requires `aggregateRating` alongside `offers` —
+    // we had the offer and no ratings, so GSC filed the homepage as an invalid
+    // item. We cannot fix that honestly: there is no real review corpus, and
+    // fabricating aggregateRating is a manual-action offence. Same bind as the
+    // `merch` vertical's Product typing (see lib/vertical_schema.ts).
+    //
+    // Organization is the better entity here anyway. "curify" is a CONTESTED
+    // brand term — curifyapp.gr, curify.us, curifylabs.com, curify.health and
+    // two healthcare apps all rank for it, and we sit #2 on our own name. An
+    // Organization node with a logo is the standard way to tell Google which
+    // "Curify" this is. It has no required properties, so it validates.
+    //
+    // `sameAs` is deliberately absent: it is the property that does the real
+    // disambiguation work, but it must list VERIFIED brand profiles. The repo
+    // only contains share-intent URLs and personal LinkedIn pages, and guessing
+    // profile URLs would assert something we have not checked. Add it when the
+    // real handles are known.
     __html: JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "Organization",
       "name": "Curify",
-      "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "Web",
+      "alternateName": "Curify AI",
+      "url": "https://www.curify-ai.com",
+      "logo": "https://www.curify-ai.com/curify_logo_1024.png",
       "description":
         "Curify is an AI-powered visual thinking platform that transforms trends, ideas, and knowledge into structured, shareable visual content including inspiration cards, infographics, and localized media.",
-      "url": "https://www.curify-ai.com",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
     })
   }}
 />

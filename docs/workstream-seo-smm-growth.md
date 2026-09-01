@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-08-30.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-09-01.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -1293,6 +1293,583 @@ converts at 0.00% too, which an earlier 7-row-per-page ad-hoc query had missed.
 
 ---
 
+## 2026-09-01 — the undefended terms are trade jargon, and we already built the tools
+
+Source: `raw/agent-skills-08-31/` (SEMrush bulk keyword analysis, two screenshots, ~30 terms,
+已更新 1 个月). **Recorded here because the screenshots are the only copy** — same reason as the
+08-27 fashion pull. Candidate list was derived from the five real §7z client-project categories
+(`~/curify-studio/docs/reddit-demand-mining-buyer-side-2026-08-31.md` §I), so this is the
+"second batch" that file queued.
+
+### The pattern
+
+**The SERP is contested wherever a free one-click consumer tool serves the query, and empty
+wherever the query implies a production deliverable** — a file going to a printer or a factory.
+
+| 🟢 trade / production vocabulary | KD | vol | CPC | our asset |
+|---|---:|---:|---:|---|
+| ai ghost mannequin | **0** | 30 | $2.62 | ⚠️ none — nearest is `ecommerce-photo` |
+| ghost mannequin ai | **1** | 110 | $4.11 | ⚠️ none — **the one real gap** |
+| print ready artwork | **9** | 90 | **$5.32** | `/tools/acrylic-factory-export`, `/tools/die-cut-sticker-file` |
+| ai fashion model generator | **16** | 260 | $2.11 | `/tools/ecommerce-photo`, `/tools/ai-product-photo-generator` |
+| dieline generator | **19** | 170 | $2.76 | `/tools/die-cut-sticker-file` |
+| packaging mockup generator | **19** | 50 | $2.93 | `/tools/packaging-mockup` |
+| character consistency ai | **26** | 30 | $2.00 | `/tools/character-sticker-sheet`, `/tools/style-transfer` |
+
+| 🔴 consumer tool vocabulary | KD | vol | CPC | | 🔴 cont. | KD | vol | CPC |
+|---|---:|---:|---:|---|---|---:|---:|---:|
+| image vectorizer | 73 | 3,600 | $1.39 | | product image generator | 44 | 140 | $3.29 |
+| logo vectorizer | 68 | 90 | $2.38 | | png to vector | 43 | 3,600 | $0.88 |
+| product mockup generator | 67 | 320 | $2.69 | | ai product photography | 39 | 390 | $4.72 |
+| ai vectorizer | 64 | 720 | $0.83 | | virtual try on | 38 | 1,300 | $1.62 |
+| ai background replacement | 57 | 40 | $1.04 | | virtual clothing try on | 37 | 30 | $1.38 |
+| image to svg ai | 56 | 140 | $1.21 | | clothes changer ai | 46 | 1,300 | $0.88 |
+| ai product background generator | 54 | 70 | $3.31 | | ai virtual try on | 45 | 170 | $0.94 |
+| **ai clothes changer** | 52 | **9,900** | $0.95 | | ai product photo generator | 45 | 70 | $3.67 |
+
+No-metric tail (all vol ≤ 30): `ai product scene generator`, `amazon product image generator`,
+`flat lay to model ai`, `product background generator`, `product image editing ai`,
+`shopify product image generator`, `ecommerce product image generator` (vol 0),
+`print file preparation`, `consistent character generator`, `die cut line generator`.
+
+**CPC corroborates and makes it an arbitrage.** The undefended trade terms carry *higher* CPC
+($4.11 / $5.32 / $2.76) than the contested consumer terms ($0.83 / $0.88 / $0.95). Advertisers
+pay more for these buyers while organic competition is near zero.
+
+### The headline: this is a targeting and interlinking job, not a build job
+
+**Six of the seven 🟢 terms already have a tool shipped.** `lib/tools-registry.ts:305–307`
+already reasons this way — *"this slug **owns the keyword**"*. What is missing is that the slugs
+own the *wrong* keywords, and two of them have never been crawled at all.
+
+### Reconciling with the "no more pages" rule
+
+Lines 1131–1135 stand: at **KD 30–39** we are pos 40+ or absent on every head term, root-caused
+to **domain authority, not content** — that band should not be attacked with more pages. Every
+term actioned here is **KD 0–26, below that band**, which is precisely why it is worth doing and
+why nothing above KD 30 is actioned. `ai clothes changer` (KD 52) is explicitly deferred despite
+being the volume prize.
+
+### Two corrections
+
+1. **`ai product photography` drifted KD 23 → 39.** The 2026-06-05 batch
+   (`~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md`) declared it the
+   winner and recommended shipping a page "this week". It was never shipped; the window narrowed.
+   Consumer-category terms harden — the trade terms above are far less likely to.
+2. **The `AI + service noun` heuristic from that batch is dead.** `ai vectorizer` 64,
+   `ai background replacement` 57, `ai clothes changer` 52 all carry the shape and are hard. The
+   predictor is trade-vs-consumer vocabulary. ⚠️ That is now the *second* heuristic to convince
+   on one batch and fail on the next — treat this one as provisional too.
+
+### Actions — ordered by the crawl evidence, not by preference
+
+> **Superseded for ordering by "2026-09-01 — consolidated priority across all three KD batches"
+> at the end of this doc.** The two shipped items below are still the record of what was done;
+> the unshipped ones (3, 4) are re-ranked there against batch 3.
+
+1. ✅ **DONE 2026-09-01 — retargeted.** Metadata lives in `messages/en/home.json` under
+   `<namespace>.metadata`, not in the registry's `seo:` field (which `generateMetadata` never
+   reads — see the note below). Changed: `dieCutStickerFile` → *Dieline Generator — Die-Cut
+   Sticker Cut Line + CMYK File*; `acrylicFactoryExport` → *Print-Ready Artwork for Acrylic —
+   White Ink + Cutline Files*; `characterStickerSheet` → *Character Consistency AI — 1 Drawing →
+   9 Consistent Poses*. `packagingMockup` was **already** exact-match for its term and was left
+   alone.
+   > ⚠️ **`ecommerce-photo` was deliberately NOT retargeted to *ai fashion model generator*.**
+   > That tool makes product photos; it does not put a garment on a model. Pointing the title at
+   > a query the page cannot satisfy earns a bounce, and Google does not rank a mismatched page
+   > anyway. That term needs the same unbuilt on-model surface as `ghost mannequin ai` — the
+   > capability exists at `~/curify-studio/dev/jayw/design-agent-v0/tools/model-swap/` but has
+   > never been shipped as a page. **Two of the seven soft terms are one missing surface.**
+   >
+   > ⚠️ **Dead code found:** `ToolDef.seo` / `seoKeys()` in `lib/tools-registry.ts` is consumed
+   > by nothing. `tools.<tool>.meta.*` in `messages/en/home.json` is therefore stale copy that
+   > looks authoritative. Left in place, but do not edit it expecting a SERP change.
+2. ✅ **DONE 2026-09-01 — interlinked.** Root cause was narrower than "not enough links":
+   `getSiblingTools()` only linked **within `groupId`**, and the `design` group holds exactly
+   three tools — `die-cut-sticker-file`, `acrylic-factory-export`, `packaging-mockup`. They
+   linked only to each other: **a closed triangle with no inbound edge from the rest of the
+   site**, which is exactly the 1-inbound-link observation at line 336. Added
+   `TOOL_RELATED_TOOLS`, a curated cross-group map keyed by intent, with the group slice kept as
+   the fallback for every tool without an entry. Modelled on the competitor's "More Product
+   Photo Tools" strip, which also cuts across categories. Measured on the registry graph:
+   `die-cut-sticker-file` **2 → 6** inbound, `packaging-mockup` **2 → 5**,
+   `acrylic-factory-export` **2 → 3**. `npx tsc --noEmit` clean.
+3. **Blog spokes for the 🟢 terms, each linking down to its tool.** Blog indexes in ~1 day
+   (1070–1073) while tool pages from 08-06 still are not, so the spokes are simultaneously the
+   cheap ranking test *and* the inbound links step 2 needs.
+4. **Ghost mannequin is the one genuine gap** — KD 0–1 at $4.11, no tool. Highest ratio on the
+   board; scope a surface. **Build it against the teardown below, not from scratch.**
+
+### Reference build: `adworker.ai/tools/ghost-mannequin/`
+
+The page that currently owns this term. Fetched 2026-09-01 (403s to plain fetchers; needs a
+browser UA). **This is the single most useful artifact in this section** — it is a worked
+example of the exact page we are missing, on the exact term.
+
+⚠️ **It also corrects a claim made above.** "Nobody is optimising for them" is too strong: KD 0–1
+means *low difficulty to rank*, not *unclaimed*. One competitor is here and is doing it well. The
+term is still worth taking — a 1,831-word page is beatable — but the bar is a real page, not a
+stub. Everything else in §The pattern stands; only the "nobody" framing was wrong.
+
+**Title / H1** (identical, and note the modifier stack):
+`Free AI Ghost Mannequin Tool Online`
+
+**Structure — teach, then convert:**
+
+| Block | Headings |
+|---|---|
+| Definition + synonym harvest | *What Is Ghost Mannequin?* → *Ghost Mannequin, Invisible Mannequin, and Hollow Man Effect* · *Why Ecommerce Sellers Use Ghost Mannequin Photography* · *AI Ghost Mannequin Tool vs Traditional Editing Services* · *Neck Joint Editing in Ghost Mannequin* |
+| Mechanism | *How the AI 3D Ghost Mannequin Generator Works* → upload ≤3 photos · remove model/mannequin/hanger · rebuild the shape · export |
+| Procedure | *How to Create Ghost Mannequin Product Photos in 3 Steps* |
+| Long-tail harvest | *Frequently Asked Questions about Ghost Mannequin* — **14 questions** |
+| Internal links | *More Product Photo Tools* → Background Remover · White Background · GIF Background Remover |
+| Close | *Try the Free AI Ghost Mannequin Tool — No Sign-up Required* |
+
+**~1,831 visible words. No sign-up, no credit card, no login** — the offer is the CTA.
+
+**Full schema stack**: `WebApplication` + `Offer` (`price: "0"`) + `HowTo` + `HowToStep` +
+`FAQPage` + `Question` + `Answer`.
+
+**The FAQ is a keyword harvester, not a support section.** It absorbs the whole long-tail cluster
+in one URL: *ghost mannequin vs flat lay — which is better for conversions*, *what is neck joint
+editing*, *is there a free ghost mannequin creator I can use online without downloading anything*,
+*ghost mannequin vs on-model photos*, *can Shopify sellers use these directly*, *what clothing
+categories are supported*.
+
+⚠️ **Correction to an earlier draft of this section: our tool pages are not bare.**
+`tool-generic-client.tsx:256–272` already emits `FAQPage` JSON-LD, and every namespace in
+`messages/en/home.json` already carries `faq` and `deep` (`what` / `how` / `usecases`) blocks —
+i.e. the teach-then-convert content exists. The real gaps are narrower and cheaper than "we have
+nothing":
+
+| | them | us |
+|---|---|---|
+| FAQ questions | 14 | **hard-capped at 5** in both the render loop and the schema (`[1, 2, 3, 4, 5]`), and authored 4 / 5 / 5 / 2 / 2 |
+| `HowTo` + `HowToStep` | ✅ | ❌ none |
+| `WebApplication` + `Offer` | ✅ | ❌ none |
+
+Raising the cap is a two-character change that applies to all 27 tools at once; the questions
+then have to be written. `HowTo` markup has a natural source already on the page — the `deep.how`
+block.
+
+**Three things to copy directly:**
+
+1. **The teach-then-convert order.** Definition and technique first (it explains neck joint
+   editing and the invisible-mannequin/hollow-man synonyms), tool last. Our `/tools/*` pages open
+   with the tool and explain nothing — which is also why they have no body copy to rank on.
+2. **The FAQ-as-long-tail block with `FAQPage` markup.** Cheapest way to cover a cluster from one
+   URL, and it applies to `die-cut-sticker-file` and `acrylic-factory-export` unchanged.
+3. **The sibling-tool cross-link block.** This is precisely the inbound-link mechanism action 2
+   needs — a "More Product Photo Tools" strip on each retargeted page links the never-crawled
+   ones into the graph without writing a single new URL.
+
+**One thing not to copy**: their free/no-signup positioning is a volume play. Our §7z evidence is
+that the buyers on these terms are production buyers at $4.11–$5.32 CPC — the differentiator is
+the production-file discipline (spec fidelity, measurable acceptance), not being free.
+
+### Deprioritised, with reason
+
+- **`ai clothes changer` (9,900, KD 52)** — the volume prize, and we have `chinese-costume-tryon`.
+  Deferred to hub-and-spoke *from* the ranked spokes, per the line-188 doctrine. Not head-on.
+- **The whole 🔴 column** — above the domain-authority band.
+- **No `/pod-niches/*`-style programmatic template** — the duplicate-content open question at
+  lines 998–1000 is still unresolved.
+- **Nothing here touches `sitemap-examples.xml`.** New `/tools/*` and `/blog/*` routes are
+  different sitemap children; the locale A/B is undisturbed.
+
+### Checkpoints
+
+- **2026-09-15 (+14d)** — are `/tools/die-cut-sticker-file` and `/tools/acrylic-factory-export`
+  crawled after gaining inbound links? Judge on crawl status, not position. If they are still
+  uncrawled with 3+ inbound links, the inbound-link theory at line 321 is wrong and needs a rewrite.
+- **2026-10-13 (+6w)** — position for `ghost mannequin ai`, `dieline generator`, `print ready
+  artwork`. **These are KD 0–19; if we cannot reach top-10 here, the low-KD thesis is falsified**
+  and no further pages should be built on it.
+- **2026-10-13** — re-pull the seven 🟢 terms. The `ai product photography` 23 → 39 drift is the
+  reason: a term is not safe because it was soft once.
+
+## 2026-09-01 (batch 3) — the ecommerce + education pull, and what it does to the heuristic
+
+Source: `raw/agent-skills-08-31/ecommerce-education-kd.png` (SEMrush 批量关键词分析, 已更新 1 个月).
+Seed list from `raw/kd-check-seeds-2026-09-01.md`, which was itself built from queries we
+**already receive impressions for** on both the web and image surfaces — so demand is verified,
+not guessed. Screenshot is the only copy.
+
+> **This batch is complete at 16 of 21 rows.** The 5 below the fold returned 不可用 — SEMrush has
+> no metrics for them, the same state as `ai sticker design` and `food packaging design ai` in the
+> table below (vol ≤ 20, KD unavailable, "要更新指标数据，请刷新"). Confirmed by the operator
+> 2026-09-01. Nothing is pending; the 16 rows with metrics are the whole usable set.
+>
+> Worth recording as a pattern: **six of the 21 seeds came back with no metrics at all**, and all
+> six sit at vol ≤ 20. A seed returning 不可用 is itself a finding — it means the term is below
+> SEMrush's measurement floor, which is a stronger "no volume" signal than a small number.
+
+| keyword | intent | vol | KD | CPC | our asset / rank today |
+|---|---|---:|---:|---:|---|
+| nail art designs | I | **49,500** | 44 | $0.22 | **image search pos 12** — no page |
+| ai poster generator | I | 3,600 | 58 | $1.47 | — |
+| ai portrait generator | I | 2,400 | 63 | $1.52 | `/topics/portrait` (0 organic) |
+| **worksheet generator** | C | **2,400** | **35** | $0.65 | `/tools/worksheet-from-video` — indexed, **0 impressions** |
+| ai infographic generator | C | 1,300 | 74 | $2.52 | — |
+| **costume design template** | I | **590** | **20** | $0.00 | image search pos 42 — no page |
+| photo to cartoon ai | C | 480 | 59 | $0.73 | — |
+| infographic maker free | C | 260 | 69 | $1.32 | — |
+| ai product photo | I | 140 | 51 | **$4.36** | `/tools/ai-product-photo-generator` |
+| dress design template | I | 140 | **24** | $1.20 | image search pos 25 — no page |
+| english vocabulary flashcards | C | 140 | 34 | $0.49 | image search pos 93 |
+| recipe infographic | I | 110 | **17** | **$0.00** | image search pos 44 |
+| plant infographic | I | 70 | **17** | **$0.00** | image search pos 56 |
+| food poster design | I | 50 | **19** | **$0.00** | image search pos 31 |
+| ai sticker design | — | 20 | n/a | $1.89 | `/tools/character-sticker-sheet` |
+| food packaging design ai | — | 20 | n/a | $0.00 | web pos 41 |
+
+### The heuristic survives, but it is not about trade vocabulary
+
+Batch 2 concluded the predictor was **trade/production vocabulary vs consumer vocabulary**. This
+batch has almost no trade vocabulary in it and the split still holds cleanly:
+
+| shape | examples | KD |
+|---|---|---|
+| names a **specific artifact** | recipe infographic, plant infographic, food poster design, costume design template, dress design template | **17–24** |
+| names a **generic tool** | ai infographic generator, infographic maker free, ai portrait generator, photo to cartoon ai, ai poster generator | **58–74** |
+
+So the real predictor is **specific-artifact vs generic-tool**, and trade vocabulary was a
+special case of "specific artifact" rather than the cause. `recipe infographic` (17) against
+`ai infographic generator` (74) is the same word in both queries — what changes the KD by 57
+points is whether the searcher named the *thing they want* or the *machine that makes it*.
+
+⚠️ This is the **third** heuristic in three batches. Batch 1's `AI + service noun` died in batch
+2; batch 2's trade-vocabulary rule is now subsumed rather than falsified. Treat it as provisional
+and re-test on batch 4.
+
+### The counterweight batch 2 did not have: CPC $0.00
+
+Batch 2's thesis was an arbitrage — the undefended terms carried *higher* CPC ($4.11–$5.32) than
+the contested ones. **That does not generalise.** The softest terms in this batch carry **$0.00
+CPC**: `recipe infographic` (KD 17), `plant infographic` (KD 17), `food poster design` (KD 19),
+`costume design template` (KD 20). No advertiser bids on them.
+
+Low KD is not one signal, it is two different situations, and CPC separates them:
+
+- **KD low + CPC high** → undefended commercial demand. Real arbitrage. (batch 2's 🟢 list)
+- **KD low + CPC $0.00** → nobody monetises this traffic. Rankable, but it is audience, not
+  revenue. (this batch's infographic/poster family)
+
+The infographic family is therefore **not** promoted despite being the lowest KD on the board.
+It is the same trap as `dieline to 3d mockup`: winnable and worth little.
+
+### Two findings that need no new page
+
+1. **`nail art designs` — 49,500/mo, KD 44, and we are already at image-search position 12.**
+   The largest-volume term in any batch to date, and we hold a page-2 image ranking on it with no
+   page, no targeting and no intent. This is not a build; it is a **direct read on whether the
+   2026-09-01 image-SEO ship (`08092e73`) works**. If image position improves here, the whole
+   image-native cluster set becomes actionable at near-zero marginal cost.
+2. **`worksheet generator` — 2,400/mo at KD 35, best volume-to-difficulty ratio in the batch —
+   and `/tools/worksheet-from-video` is already indexed and earning zero impressions.** The tool
+   is targeted at *video → worksheet*, which is a workflow nobody searches for; the demand is on
+   the plain artifact. This is the same free retarget that shipped for three tools in batch 2
+   (metadata in `messages/en/home.json`, **not** the registry's dead `seo:` field).
+
+   ⚠️ KD 35 sits inside the 30–39 band that lines 1131–1135 say not to attack. That rule is about
+   **building pages**, and this builds nothing — it re-points a page that already exists and
+   already ranks for nothing. If it fails, it cost a title. Do not read a win here as licence to
+   build into the 30–39 band.
+
+### Deprioritised, with reason
+
+- **The infographic/poster family (KD 17–19)** — $0.00 CPC. See above.
+- **`ai portrait generator` (2,400, KD 63), `ai poster generator` (3,600, KD 58),
+  `photo to cartoon ai` (480, KD 59), `ai infographic generator` (1,300, KD 74)** — generic-tool
+  shape, above the authority band.
+- **`ai product photo` (140, KD 51, CPC $4.36)** — highest CPC in the batch, but KD 51 on 140/mo
+  is a bad trade. The CPC says the buyer is valuable; get to them through the on-model surface
+  (batch 2 action 4), not this term.
+- **`english vocabulary flashcards` (140, KD 34)** — real, and the education cluster's only
+  commercial-ish term, but 140/mo does not justify a surface on its own. Revisit only if the
+  image-SEO checkpoint shows the education cluster moving.
+
+## 2026-09-01 — consolidated priority across all three KD batches
+
+> **Superseded by "2026-09-01 — reprioritised after the audit" at the end of this doc.** Kept as the record of what was decided before the blog-fold finding; the tier structure below survives, the ordering does not.
+
+Supersedes the per-batch action lists above. Batches 2 and 3 were pulled within hours of each
+other and their actions interleave, so ranking them separately produced a list that read as six
+independent jobs when it is really **three cheap retargets, one measurement, and one build**.
+
+### Do now — nothing blocks these, none of them build a page
+
+| # | Item | Why first |
+|---|---|---|
+| **1** | ✅ **DONE 2026-09-01 (`b4b89a56`)** — blog spoke for `ghost mannequin ai` (KD **1**, 110/mo, CPC **$4.11**) shipped as `ghost-mannequin-ai-guide` | Best ratio on any board we have. Tested the 400/mo on-model opportunity for the price of one post. Blog indexes in ~1 day; tool pages from 08-06 still are not. Doubles as the inbound link item 6 needs. **Adds a checkpoint: 2026-09-08, is it indexed?** If a KD-1 term with a fresh post cannot reach top-10 by 2026-10-13, the low-KD thesis is falsified and item 6 should not be built. |
+| **2** | ✅ **DONE 2026-09-01** — retargeted `/tools/worksheet-from-video` → `worksheet generator` (KD 35, **2,400/mo**). ⚠️ Video input is mandatory, so score it against the video slice, not 2,400/mo — see below. | Best volume-to-difficulty ratio in batch 3, and the page already exists, is indexed, and earns **zero** impressions. Identical mechanics to the three retargets that shipped in batch 2 — edit `messages/en/home.json`, not the dead `seo:` field. Cost is a title. |
+| **3** | ✅ **PARTIAL 2026-09-01** — `dress design template` (KD **24**, 140/mo) retargeted onto `fashion-inspired-gown-design-sheet`, 10 locales. **`costume design template` (KD 20, 590/mo) refused** — no asset serves it; moved to the build tier behind checkpoint #4. | 730/mo combined at KD ≤ 24, and we already hold image-search rankings on both with no page pointed at them. Cheapest volume in batch 3. |
+
+### Free — measurements that gate everything below
+
+| # | Item | What it decides |
+|---|---|---|
+| **4** | **2026-09-15 — did the interlink get `die-cut-sticker-file` crawled?** | If 6 inbound links still do not get it fetched, the block is **domain authority, not content**, and this doc's own rule says the answer to that is not more pages. Items 6–8 all become wrong. |
+| **5** | **2026-09-22 — did the image-SEO ship (`08092e73`) move image position?** | Baseline 19,035 impr / 39 clicks / **pos 41.2**. Read `nail art designs` (49,500/mo, KD 44, **currently image pos 12**) as the single sharpest indicator. If image position improves, the entire image-native cluster set — fashion, education, food, selfie — becomes actionable **without building anything**, which reorders everything below. Judge on position and CTR, not impressions. |
+
+### Gated on #4 passing
+
+| # | Item | Payoff |
+|---|---|---|
+| **6** | **On-model surface** (`ghost mannequin ai` + `ai fashion model generator`) | 370/mo, KD 0–16, CPC $2.11–$4.11. Two of batch 2's seven 🟢 terms are one missing surface. Capability exists unshipped at `~/curify-studio/dev/jayw/design-agent-v0/tools/model-swap/`. Build against the `adworker.ai` teardown, not from scratch — the incumbent holds it with 1,831 words and full schema. |
+| **7** | **FAQ cap + questions** | The other 46% of the 🟢 list, on pages that already own their terms. Needs the real limits/formats/credits so we do not invent claims. |
+| **8** | **`HowTo` + `WebApplication` schema** | Competitor has both, we have neither. Mechanical once #7's cap is raised. |
+
+### Not SEO, and genuinely more urgent than 6–8
+
+| # | Item | Risk |
+|---|---|---|
+| **9** | **The five §7z records are not in version control** | `agentic-adhoc-inbox` is not a git repo. Five trajectories — including the **¥27,800 paid project with 4 rounds of verbatim client feedback** — exist on one machine with no backup. Unrecoverable on disk failure. |
+| **10** | **`client-006` identity** | Still a placeholder in `.client-key.json`. Decays to unrecoverable as memory fades. |
+
+### Strategy — no deadline, high option value
+
+| # | Item |
+|---|---|
+| **11** | The §7ab-E ablation — decides whether the Context Layer is a product, a feature, or nothing. Decision rule is written down in advance so it cannot be rationalised after. |
+| **12** | Skills Stage 1–3 — 4 complete Skills from real projects. No engineering, no network, blocked on nothing. |
+
+### Housekeeping
+
+| # | Item |
+|---|---|
+| **13** | Worktree branch → main (`git push origin worktree-design-skills-spec:main`) |
+| **14** | `ip-pendant-3d-merch.md` untracked while `workstream-index.md:145` links to it — dangling on the remote |
+| **15** | ~~Fix "~600/mo" → 740~~ — **not present in any file**; grepped this repo and `~/curify-studio`. The 🟢 total is confirmed 740/mo (30+110+90+260+170+50+30). Nothing to fix. |
+| **16** | ~~Re-screenshot the 5 cut-off rows of `ecommerce-education-kd.png`~~ — **closed 2026-09-01**: those 5 returned 不可用 (no SEMrush metrics, vol ≤ 20). The batch is complete at 16 rows. |
+
+### 2026-09-01 — retargets 2 and 3 shipped, and one refused
+
+**#2 `worksheet generator` (2,400/mo, KD 35) — shipped, but the addressable share is much
+smaller than the volume figure.** `/tools/worksheet-from-video` has **no `action` in
+`lib/tools-registry.ts`** — only a `demo: {type: "language_switch"}` video — and its `job_type`
+is `video_transcript`. **A video is mandatory.** Most of the 2,400/mo is teachers wanting a
+worksheet from a *topic or text*, and this page cannot serve them. So the title was front-loaded
+onto the head term while keeping the video qualifier inside the promise, rather than dropped onto
+the bare term:
+
+- was: `AI Worksheet Generator from Video | Turn Any Clip into a Worksheet`
+- now: `AI Worksheet Generator — Any Video into a Printable Worksheet`
+
+Description now leads with "Worksheet generator built on video". **Do not score this against
+2,400/mo** — score it against the video-worksheet slice. If it does not move by the checkpoint,
+the conclusion is that the page needs a text/topic input, not a better title.
+
+**#3a `dress design template` (140/mo, KD **24**) — shipped, and it is the clean one.**
+`/nano-template/fashion-inspired-gown-design-sheet` already holds **image-search position 25.3**
+on that exact query (40 impressions) with the term absent from its title, which read
+"Nature-Inspired Couture Gown Design Sheet Generator". Its output genuinely *is* a dress design
+sheet — illustration, technical sketch, handwritten notes — so leading with the term overclaims
+nothing.
+
+- was: `Nature-Inspired Couture Gown Design Sheet Generator`
+- now: `Dress Design Template — Nature-Inspired Couture Gown Sheet`
+
+All 10 locales retitled; EN description also retargeted (the other nine keep their accurate
+descriptions — the target query is English and only the unprefixed EN URL ranks for it). Scoped
+recrawl via `PER_TEMPLATE_RETITLE_LASTMOD`, dated 2026-09-01.
+
+> **Refactor:** `FASHION_RECRAWL_LASTMOD` + `FASHION_RECRAWL_TEMPLATE_IDS` became
+> `PER_TEMPLATE_RETITLE_LASTMOD`, a `Map<templateId, lastmod>`. A second single-template retitle
+> would otherwise have meant a fourth branch on a ternary in `app/sitemap.xml/route.ts` that was
+> already three deep. Still scoped per template — no group-wide bump.
+
+**#3b `costume design template` (590/mo, KD 20) — REFUSED. We have no asset that serves it.**
+This was the largest soft-term prize in batch 3, so the reasoning matters. All five costume-ish
+templates were checked:
+
+| template | what it actually outputs |
+|---|---|
+| `ethnic-costume-deconstruction-board` | labeled breakdown of an *existing* ethnic costume (this is the one ranking, image pos 42.3 on 9 impr) |
+| `costume` | science-popularisation illustration of a traditional costume |
+| `disney-character-costume-themed-grid-collection` | 4×3 grid of one character in 12 themed costumes |
+| `fashion-before-after-outfit-annotation-card` | before/after styling annotation on a photo |
+| `vintage-collage-fashion-collection-poster` | vintage collage poster |
+
+Every one of them *depicts or analyses* a costume. The query wants a **template to design one**.
+Retargeting the deconstruction board would be the `ecommerce-photo` → `ai fashion model
+generator` mistake from batch 2, in the same doc, made twice: pointing a title at a query the
+page cannot satisfy earns a bounce, and Google does not rank a mismatched page anyway.
+
+**Filed as the batch-3 build candidate** — 590/mo at KD 20 with no asset is a better ratio than
+most of what is above it, but it is a *build*, so it belongs behind the 2026-09-15 crawl
+checkpoint with the on-model surface, not in the free-retarget tier.
+
+**Checkpoint 2026-10-01** — position for `dress design template` (image and web) and
+`worksheet generator`. Both are pure retargets, so a null result falsifies the retarget lever for
+these two specifically, not the low-KD thesis.
+
+### What batch 3 changed about the ordering
+
+- **Added items 2 and 3** — two free retargets that did not exist before the batch, both better
+  ratio than anything gated behind #4.
+- **Added item 5**, and it is the highest-leverage entry on the page: it can make an entire
+  cluster set free.
+- **Did not disturb item 1**, which shipped the same morning (`b4b89a56`). Nothing in batch 3
+  beats KD 1 at $4.11 CPC.
+- **Demoted the lowest-KD terms on the board.** The infographic family (KD 17–19) is $0.00 CPC
+  and does not appear in this list at all — see the CPC counterweight above.
+
+## 2026-09-01 — audit of five days of SEO work, and the finding that reorders it
+
+Covers everything from the 08-17 A/B blog-series spec through today's retargets, measured
+rather than recalled. **Supersedes the consolidated priority list above.**
+
+### What actually shipped
+
+| | planned | shipped | not shipped |
+|---|---|---|---|
+| **Cluster A** (AI agent × design) | A1–A5 | **A1** (08-18) | A2, A3, A4, A5 |
+| **Cluster B** (design → manufacturing) | B1–B4 | **B1** (08-18), **B2** (08-28) | B3, B4 |
+| Batch-2 KD actions | 4 | retarget (`4c0715b5`), interlink (`4c0715b5`), ghost-mannequin spoke EN + zh (`b4b89a56`, `1eb7d1f0`) | on-model surface |
+| Batch-3 KD actions | 3 | worksheet + dress-design retargets (`02b114c1`) | costume surface (refused — no asset) |
+| Image SEO | — | sitemaps + alt (`08092e73`) | — |
+
+### Measured outcomes
+
+| post | live | web 28d | image 28d | clicks | index state |
+|---|---|---:|---:|---:|---|
+| A1 `best-claude-code-design-skills` | 08-18 | **53** (was 37 on 08-27) | **82** | 1 | Submitted and indexed |
+| B1 `character-turnaround-sheet-guide` | 08-18 | 14 (was 12) | 13 | 0 | Submitted and indexed |
+| B2 `dieline-generator-guide` | 08-28 | **0** | **0** | 0 | **Duplicate without user-selected canonical** |
+| `ghost-mannequin-ai-guide` | 09-01 | 0 | 0 | 0 | URL is unknown to Google |
+
+⚠️ **Read these page-level.** A query-dimension pull on A1 returns 7 impressions against the
+page-level 53, because rare queries are anonymised — the same trap the 08-27 readout flagged.
+It was walked into again while producing this audit.
+
+### THE FINDING: the blog-spoke strategy has an unmeasured ~33% failure rate
+
+The 08-27 readout concluded *"the blog surface is by far the fastest route into the index, which
+should drive sequencing decisions elsewhere."* **That is materially overstated**, and both the
+batch-2 and batch-3 plans were built on it. URL-Inspection across the 12 most recent posts:
+
+- **7 indexed clean**
+- **4 folded** to the homepage canonical
+- **1 unknown to Google**
+
+And the folds are not all stale crawls. Splitting them by whether they were crawled after the
+fold fix went live (2026-08-10):
+
+| folded post | last crawl | verdict |
+|---|---|---|
+| `dieline-generator-guide` | **2026-08-27** | **post-fix — the fold is real**, `googleCanonical=/` |
+| `url-to-product-video` | **2026-09-01** | **post-fix — the fold is real** |
+| `ai-packaging-design-guide` | 2026-07-28 | pre-fix — needs a recrawl ping |
+| `world-cup-2026-top-contenders` | 2026-07-10 | pre-fix — needs a recrawl ping |
+
+**B2 is the proof, and it is expensive.** `dieline-generator-guide` was written specifically to
+own `dieline generator` — 170/mo, KD **19**, CPC $2.76, one of the seven 🟢 terms. It was crawled
+**17 days after** the fold fix shipped, folds to `/`, has **zero impressions**, and cannot rank
+as itself. The post is not underperforming; it is invisible, and no checkpoint anywhere in this
+doc would have caught that, because every checkpoint measures position and impressions — both of
+which read "0" identically for a folded page and a page nobody searches for.
+
+This is the top priority. Every blog spoke in the batch-2 and batch-3 plans — including the
+ghost-mannequin spoke that is priority 1, now shipped in two languages — is a coin flip until
+this is understood. See [[project_blog_canonical_fold]] for the mechanism and what has already
+been tried.
+
+### Second finding: the A/B series was measured on the wrong surface
+
+A1 earns **82 image impressions against 53 web**. B1 earns 13 image against 14 web. The
+08-27 readout's "~59 impressions before a CTR read is valid" threshold was web-only; counting
+both surfaces, **A1 cleared it days ago** (135 total). The 09-17 and 10-17 checkpoints are
+written web-only and will under-read the series. Every readout from here counts both surfaces —
+see the 2026-09-01 image-search section above.
+
+### Third: the A ladder is stalled by non-execution, not by evidence
+
+A2–A5 were never written. The 10-17 gate on A5 (`codex skills`, 1,900/mo, KD 47) is
+*unevaluable* — the spec defers A5 until A1–A4 build authority, and A2/A3/A4 do not exist. The
+honest status of Cluster A is **not "failing", it is "one post"**. A1 is alive: 135 impressions
+across surfaces, its first click, and the exact target phrase ranking (`best claude code design
+skills`, image pos 18).
+
+### Fourth: nothing links to any of these posts
+
+All four posts report `referringUrls = 0` in URL Inspection. The 08-31 interlink work
+(`4c0715b5`) added `TOOL_RELATED_TOOLS`, which links **tools to tools** — no blog gained an
+inbound edge. The blog spokes were justified partly as "the inbound links the tool pages need",
+but the link only points spoke → tool; nothing points at the spoke.
+
+### Fifth: one cited doc does not exist
+
+`~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md` is referenced in Related docs
+and is not on disk. The design-skills thinking that reference stands for is real — the TypeUI
+read in `raw/agent-skills-08-31/design-skills.txt` argues the prompt/template library should be
+upgraded **Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill** rather than
+extended — but it has no document. Link corrected below to the raw note. See
+[[feedback_docs_cite_memory_names_that_drift]].
+
+---
+
+## 2026-09-01 — reprioritised after the audit
+
+### Tier 0 — the blocker, and it is new information
+
+| # | Item | Why it outranks everything |
+|---|---|---|
+| **1** | **Diagnose the post-fix blog fold.** Two posts crawled after 2026-08-10 still fold to `/`. Establish whether new posts fold at ~1-in-3, and if so what separates `dieline-generator-guide` from `character-turnaround-sheet-guide`, published 10 days apart and both indexed-clean vs folded. | B2 cost a full post to own a KD-19 term and earns zero. Ghost mannequin — the top-ratio term on any board, now shipped in EN **and** hand-written zh (`1eb7d1f0`) — is exposed to the same coin flip and is currently "unknown to Google". Writing more spokes before this is answered is the mistake the 08-17 spec was written to avoid. |
+| **2** | **Re-ping the two pre-fix folds** (`ai-packaging-design-guide`, `world-cup-2026-top-contenders`). | Free, and the mechanism is proven: `world-cup-2026-ai-prompt-hub` un-folded after a post-fix recrawl. Do this *with* #1, not instead of it — a recrawl that un-folds them is also evidence about #1. |
+
+### Tier 1 — free measurements, already scheduled
+
+| when | what | changed by this audit |
+|---|---|---|
+| **09-08** | ghost-mannequin indexed? | **now also: is it folded?** Indexation alone is not the question any more. |
+| **09-15** | did the interlink get `die-cut-sticker-file` crawled? | unchanged — still gates the build tier |
+| **09-17** | A1/B1 30-day re-pull | **count image + web.** Web-only under-reads A1 by ~60%. |
+| **09-22** | image-SEO readout (`08092e73`) | unchanged. `nail art designs` (49,500/mo, KD 44, image pos 12) is the sharpest indicator |
+| **10-01** | `dress design template` + `worksheet generator` retargets | unchanged |
+
+### Tier 2 — cheap, no new pages
+
+| # | Item |
+|---|---|
+| **3** | **Point something at the spokes.** All four posts have 0 referring URLs. `TOOL_RELATED_TOOLS` links tools→tools; the spokes justified themselves as inbound links but have none of their own. Cheapest source is the tool pages the spokes already link down to — make it an edge, not an arrow. |
+| **4** | FAQ cap + questions on the pages that already own their terms (batch-2 action) |
+| **5** | `HowTo` + `WebApplication` schema (batch-2 action, mechanical once #4 lands) |
+
+### Tier 3 — content, and it is gated now
+
+| # | Item | Gate |
+|---|---|---|
+| **6** | **B3 `what is a tech pack`** (90/mo, KD **1**) — same shape as ghost mannequin, best remaining ratio in the B spec | **Gated on Tier 0.** A KD-1 term is worth nothing behind a fold. |
+| **7** | **A2–A4** | **Not yet.** A1 is alive (135 impr, 1 click) but unproven; write A2 only if the 09-17 two-surface re-pull shows A1 still climbing. |
+| **8** | ~~**B4** programmatic supporting pages~~ | **Dropped.** The 08-17 spec's own kill criterion says drop B4 if B2 is flat by 09-11. B2 is worse than flat — it is folded. Same action, firmer reason. |
+| **9** | ~~**A5** `codex skills`~~ (1,900/mo, KD 47) | **Not attemptable.** The ladder it depends on (A1→A4) does not exist, and KD 47 is far above the authority band. |
+
+### Tier 4 — build, gated on 09-15
+
+| # | Item |
+|---|---|
+| **10** | On-model surface (`ghost mannequin ai` + `ai fashion model generator`, 370/mo, KD 0–16) |
+| **11** | `costume design template` surface (590/mo, KD 20 — refused as a retarget on 09-01 because no asset serves it) |
+
+### Unchanged and still more urgent than Tier 3
+
+The five §7z records not in version control, and `client-006`'s placeholder identity. Neither is
+SEO; both decay to unrecoverable.
+
+### What this audit changed
+
+- **Promoted a blocker nobody had:** the post-fix fold. It was invisible because every
+  checkpoint measures impressions, and a folded page and an unwanted page both read zero.
+- **Demoted all new content** behind it, including a KD-1 term.
+- **Killed B4 and A5 on their own pre-agreed criteria** rather than letting them sit as "later".
+- **Corrected the measurement surface** for the A/B series — web-only was under-reading A1 by
+  ~60%.
+- **Left the free measurements alone.** They cost nothing and three of the five land within a
+  fortnight.
+
+---
+
 ## Related docs / threads
 - `docs/search-and-content.md` — Search & Content workstream (companion A)
 - `~/curify-studio/docs/workstream-tooling-and-engineering.md` — Tools workstream (companion B)
@@ -1303,3 +1880,6 @@ converts at 0.00% too, which an earlier 7-row-per-page ad-hoc query had missed.
 - `~/curify-studio/curify_background/app/crud/admin.py` — growth analytics queries
 - `~/curify-studio/curify_background/app/utils/autopost_utils.py` — SMM autopost
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
+- `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
+- `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
+- `raw/agent-skills-08-31/design-skills.txt` — the TypeUI read: upgrade the prompt/template library along Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill rather than extending it. (Replaces a citation to `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md`, which was never written — verified absent 2026-09-01.)

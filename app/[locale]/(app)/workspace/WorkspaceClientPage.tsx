@@ -6,7 +6,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { useAtom } from "jotai";
 import { modalAtom, jobTypeAtom, userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
-import CreateNewModal from "../..//(public)/tools/CreateNewModal";
+import CreateNewModal from "../..//(static)/tools/CreateNewModal";
 import { Project } from "@/types/projects";
 import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
 import DeleteConfirmationDialog from "../../_componentForPage/DeleteConfirmationDialog";
