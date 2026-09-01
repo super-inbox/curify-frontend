@@ -1374,7 +1374,59 @@ being the volume prize.
    (1070–1073) while tool pages from 08-06 still are not, so the spokes are simultaneously the
    cheap ranking test *and* the inbound links step 2 needs.
 4. **Ghost mannequin is the one genuine gap** — KD 0–1 at $4.11, no tool. Highest ratio on the
-   board; scope a surface.
+   board; scope a surface. **Build it against the teardown below, not from scratch.**
+
+### Reference build: `adworker.ai/tools/ghost-mannequin/`
+
+The page that currently owns this term. Fetched 2026-09-01 (403s to plain fetchers; needs a
+browser UA). **This is the single most useful artifact in this section** — it is a worked
+example of the exact page we are missing, on the exact term.
+
+⚠️ **It also corrects a claim made above.** "Nobody is optimising for them" is too strong: KD 0–1
+means *low difficulty to rank*, not *unclaimed*. One competitor is here and is doing it well. The
+term is still worth taking — a 1,831-word page is beatable — but the bar is a real page, not a
+stub. Everything else in §The pattern stands; only the "nobody" framing was wrong.
+
+**Title / H1** (identical, and note the modifier stack):
+`Free AI Ghost Mannequin Tool Online`
+
+**Structure — teach, then convert:**
+
+| Block | Headings |
+|---|---|
+| Definition + synonym harvest | *What Is Ghost Mannequin?* → *Ghost Mannequin, Invisible Mannequin, and Hollow Man Effect* · *Why Ecommerce Sellers Use Ghost Mannequin Photography* · *AI Ghost Mannequin Tool vs Traditional Editing Services* · *Neck Joint Editing in Ghost Mannequin* |
+| Mechanism | *How the AI 3D Ghost Mannequin Generator Works* → upload ≤3 photos · remove model/mannequin/hanger · rebuild the shape · export |
+| Procedure | *How to Create Ghost Mannequin Product Photos in 3 Steps* |
+| Long-tail harvest | *Frequently Asked Questions about Ghost Mannequin* — **14 questions** |
+| Internal links | *More Product Photo Tools* → Background Remover · White Background · GIF Background Remover |
+| Close | *Try the Free AI Ghost Mannequin Tool — No Sign-up Required* |
+
+**~1,831 visible words. No sign-up, no credit card, no login** — the offer is the CTA.
+
+**Full schema stack**: `WebApplication` + `Offer` (`price: "0"`) + `HowTo` + `HowToStep` +
+`FAQPage` + `Question` + `Answer`. We ship `ImageObject` on only two pages site-wide; this is the
+markup profile a tool page should carry.
+
+**The FAQ is a keyword harvester, not a support section.** It absorbs the whole long-tail cluster
+in one URL: *ghost mannequin vs flat lay — which is better for conversions*, *what is neck joint
+editing*, *is there a free ghost mannequin creator I can use online without downloading anything*,
+*ghost mannequin vs on-model photos*, *can Shopify sellers use these directly*, *what clothing
+categories are supported*. Fourteen of these against our tool pages, which carry none.
+
+**Three things to copy directly:**
+
+1. **The teach-then-convert order.** Definition and technique first (it explains neck joint
+   editing and the invisible-mannequin/hollow-man synonyms), tool last. Our `/tools/*` pages open
+   with the tool and explain nothing — which is also why they have no body copy to rank on.
+2. **The FAQ-as-long-tail block with `FAQPage` markup.** Cheapest way to cover a cluster from one
+   URL, and it applies to `die-cut-sticker-file` and `acrylic-factory-export` unchanged.
+3. **The sibling-tool cross-link block.** This is precisely the inbound-link mechanism action 2
+   needs — a "More Product Photo Tools" strip on each retargeted page links the never-crawled
+   ones into the graph without writing a single new URL.
+
+**One thing not to copy**: their free/no-signup positioning is a volume play. Our §7z evidence is
+that the buyers on these terms are production buyers at $4.11–$5.32 CPC — the differentiator is
+the production-file discipline (spec fidelity, measurable acceptance), not being free.
 
 ### Deprioritised, with reason
 
