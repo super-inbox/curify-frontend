@@ -1495,8 +1495,14 @@ Seed list from `raw/kd-check-seeds-2026-09-01.md`, which was itself built from q
 **already receive impressions for** on both the web and image surfaces — so demand is verified,
 not guessed. Screenshot is the only copy.
 
-> ⚠️ **16 of 21 rows are legible; 5 are cut off below the fold.** Everything below is drawn from
-> the 16. Re-screenshot the tail before treating this batch as complete.
+> **This batch is complete at 16 of 21 rows.** The 5 below the fold returned 不可用 — SEMrush has
+> no metrics for them, the same state as `ai sticker design` and `food packaging design ai` in the
+> table below (vol ≤ 20, KD unavailable, "要更新指标数据，请刷新"). Confirmed by the operator
+> 2026-09-01. Nothing is pending; the 16 rows with metrics are the whole usable set.
+>
+> Worth recording as a pattern: **six of the 21 seeds came back with no metrics at all**, and all
+> six sit at vol ≤ 20. A seed returning 不可用 is itself a finding — it means the term is below
+> SEMrush's measurement floor, which is a stronger "no volume" signal than a small number.
 
 | keyword | intent | vol | KD | CPC | our asset / rank today |
 |---|---|---:|---:|---:|---|
@@ -1633,7 +1639,7 @@ independent jobs when it is really **three cheap retargets, one measurement, and
 | **13** | Worktree branch → main (`git push origin worktree-design-skills-spec:main`) |
 | **14** | `ip-pendant-3d-merch.md` untracked while `workstream-index.md:145` links to it — dangling on the remote |
 | **15** | ~~Fix "~600/mo" → 740~~ — **not present in any file**; grepped this repo and `~/curify-studio`. The 🟢 total is confirmed 740/mo (30+110+90+260+170+50+30). Nothing to fix. |
-| **16** | Re-screenshot the 5 cut-off rows of `ecommerce-education-kd.png` (16 of 21 legible) |
+| **16** | ~~Re-screenshot the 5 cut-off rows of `ecommerce-education-kd.png`~~ — **closed 2026-09-01**: those 5 returned 不可用 (no SEMrush metrics, vol ≤ 20). The batch is complete at 16 rows. |
 
 ### 2026-09-01 — retargets 2 and 3 shipped, and one refused
 
