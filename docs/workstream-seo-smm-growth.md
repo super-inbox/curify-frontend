@@ -1815,8 +1815,54 @@ extended — but it has no document. Link corrected below to the raw note. See
 
 | # | Item | Why it outranks everything |
 |---|---|---|
-| **1** | **Diagnose the post-fix blog fold.** Two posts crawled after 2026-08-10 still fold to `/`. Establish whether new posts fold at ~1-in-3, and if so what separates `dieline-generator-guide` from `character-turnaround-sheet-guide`, published 10 days apart and both indexed-clean vs folded. | B2 cost a full post to own a KD-19 term and earns zero. Ghost mannequin — the top-ratio term on any board, now shipped in EN **and** hand-written zh (`1eb7d1f0`) — is exposed to the same coin flip and is currently "unknown to Google". Writing more spokes before this is answered is the mistake the 08-17 spec was written to avoid. |
+| **1** | **Diagnose the post-fix blog fold.** ⚠️ Now measured at **34/107 folded (32%)**, 6 of them post-fix, and **priority 1's own ghost-mannequin post is one of them** — folded to `/topics/character` within hours of publishing. Two posts crawled after 2026-08-10 still fold to `/`. Establish whether new posts fold at ~1-in-3, and if so what separates `dieline-generator-guide` from `character-turnaround-sheet-guide`, published 10 days apart and both indexed-clean vs folded. | B2 cost a full post to own a KD-19 term and earns zero. Ghost mannequin — the top-ratio term on any board, now shipped in EN **and** hand-written zh (`1eb7d1f0`) — is exposed to the same coin flip and is currently "unknown to Google". Writing more spokes before this is answered is the mistake the 08-17 spec was written to avoid. |
 | **2** | **Re-ping the two pre-fix folds** (`ai-packaging-design-guide`, `world-cup-2026-top-contenders`). | Free, and the mechanism is proven: `world-cup-2026-ai-prompt-hub` un-folded after a post-fix recrawl. Do this *with* #1, not instead of it — a recrawl that un-folds them is also evidence about #1. |
+
+
+### 2026-09-01 — the two numbers, measured
+
+**Blogs still folded: 34 of 107 (32%).** Full URL-Inspection sweep, not a sample:
+56 indexed clean, 34 `Duplicate without user-selected canonical`, 15 `Crawled – currently not
+indexed`, 2 `Discovered`. Of the 34, **only 6 were crawled after the 08-10 fix**; the other 28
+are pre-fix and a recrawl ping is the entire fix for them.
+
+**And the mechanism has changed.** The 3 real folds crawled 08-10/08-11 point at `/` — the
+documented i18n-catalog collapse. The 3 crawled 08-27 or later point at *specific content pages*:
+
+| post | crawl | googleCanonical |
+|---|---|---|
+| `dieline-generator-guide` | 08-27 | `/nano-template/product-theme-promotional-poster` |
+| `url-to-product-video` | 09-01 | `/nano-template/product-theme-promotional-poster` |
+| `ghost-mannequin-ai-guide` | 09-01 | `/topics/character` |
+
+⚠️ **Priority 1 is already dead.** `ghost-mannequin-ai-guide` shipped 09-01 in EN and
+hand-written zh to own a KD-1 term, was crawled the same day, and folded. It cannot rank. Two
+unrelated posts folding onto the *same* template page is the signature to chase.
+
+Ruled out by measurement — do not re-test: the canonical tag is present and correct in SSR on
+every post checked (Google reports `userCanonical: (none)` regardless); similarity to the
+canonical target does not separate folded from indexed (folded dieline↔target **0.709**, indexed
+turnaround↔*same target* 0.657, the two blogs 0.927 to each other); none of them is on a
+dedicated route.
+
+**Template example pages with zero impressions** (web **or** image — web-only overstates the
+dead count):
+
+| window | zero-impression | share of the 8,232 in the sitemap |
+|---|---:|---:|
+| last 90 days | **5,723** | **69.5%** |
+| last 180 days | **4,729** | **57.4%** |
+
+Against all ~10,766 example pages that exist, roughly 7,100 (90d) and 4,500 (180d) are dead.
+Lead with the sitemap figure — it is exactly verifiable, and Google's own data shows the
+"exists" universe is an undercount.
+
+**The B1 cull is now evicting live pages.** 1,143 example URLs earned impressions in the last 90
+days while **absent from the sitemap**; only 67 of those are the A/B experiment's de-listed
+treatment arm, so **1,076 are the crawl-budget cull** (2,574 over 180 days). The whitelist is
+keyed to a past 28-day window, so it drops pages that later start earning and cannot rediscover
+them. Two-sided problem: ~70% of what we advertise earns nothing, and ~1,000 pages that earn
+something are withheld. Both point at whitelist staleness, not page quality.
 
 ### Tier 1 — free measurements, already scheduled
 
