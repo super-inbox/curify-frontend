@@ -1,6 +1,21 @@
 #!/usr/bin/env node
 // scripts/build_example_visibility_whitelist.cjs
 //
+// ADMISSION IS A STATE MACHINE, NOT A SNAPSHOT (2026-09-01).
+// This script used to OVERWRITE the whitelist with whatever a single GSC
+// window showed. That made sitemap eligibility a ranking leaderboard and
+// created a trap: a page with a temporary zero-impression window was evicted,
+// which removed its rediscovery path, so it could not come back even after it
+// started earning again. Measured 2026-09-01: 1,143 example URLs had
+// impressions in the last 90 days while absent from the sitemap; only 67 were
+// the locale A/B treatment arm, so ~1,076 were evicted by this rule.
+//
+// So the default is now UNION with the existing file — an id that has ever
+// proven demand stays admitted (hysteresis). Eviction is opt-in via --prune,
+// which must be a deliberate decision made against a long window, never a
+// side effect of a routine refresh. Manual/strategic additions recorded under
+// `patches` are carried forward and never dropped.
+//
 // Emits public/data/example_visibility_whitelist.json — the set of
 // /nano-template/[slug]/example/[id] IDs with recent Google Search
 // Console impressions. Feeds the sitemap-examples.xml route so it can
@@ -21,11 +36,14 @@ const fs = require("fs");
 const path = require("path");
 
 function parseArgs() {
-  const out = { minImpressions: 1, src: null, out: null };
+  const out = { minImpressions: 1, src: null, out: null, prune: false };
   for (const a of process.argv.slice(2)) {
     if (a.startsWith("--min-impressions=")) out.minImpressions = Number(a.split("=")[1]) || 1;
     else if (a.startsWith("--src=")) out.src = a.split("=")[1];
     else if (a.startsWith("--out=")) out.out = a.split("=")[1];
+    // Destructive: drop ids the current snapshot does not contain. Off by
+    // default — see the state-machine note at the top of this file.
+    else if (a === "--prune") out.prune = true;
   }
   return out;
 }
@@ -84,7 +102,18 @@ function main() {
   const nanoInsp = require(path.join(__dirname, "..", "public", "data", "nano_inspiration.json"));
   const inspArr = Array.isArray(nanoInsp) ? nanoInsp : (nanoInsp.nano_inspiration || []);
   const realIds = new Set(inspArr.map((it) => it && it.id).filter(Boolean));
-  const whitelist = [...visible].filter((id) => realIds.has(id)).sort();
+  const fromSnapshot = [...visible].filter((id) => realIds.has(id));
+
+  // Union with whatever is already admitted, unless --prune was passed.
+  let prior = { ids: [], patches: undefined };
+  if (fs.existsSync(outPath)) {
+    try { prior = JSON.parse(fs.readFileSync(outPath, "utf8")); } catch { /* first run */ }
+  }
+  const priorIds = Array.isArray(prior.ids) ? prior.ids.filter((id) => realIds.has(id)) : [];
+  const whitelist = args.prune
+    ? fromSnapshot.slice().sort()
+    : [...new Set([...priorIds, ...fromSnapshot])].sort();
+  const retained = args.prune ? 0 : whitelist.length - fromSnapshot.length;
 
   const payload = {
     source: path.basename(path.dirname(src)),
@@ -94,12 +123,20 @@ function main() {
     visible_in_gsc: whitelist.length,
     with_clicks: [...withClicks].filter((id) => realIds.has(id)).length,
     coverage_pct: Math.round((100 * whitelist.length) / realIds.size),
+    admission: args.prune ? "snapshot (--prune: previously-admitted ids DROPPED)" : "union with prior (hysteresis)",
+    retained_from_prior: retained,
+    ...(prior.patches ? { patches: prior.patches } : {}),
     ids: whitelist,
   };
 
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(payload, null, 2) + "\n");
   console.log(`wrote ${whitelist.length} visible ids → ${outPath}`);
+  console.log(
+    args.prune
+      ? `  MODE: --prune — ${fromSnapshot.length} from snapshot, prior ids DISCARDED`
+      : `  MODE: union — ${fromSnapshot.length} from snapshot + ${retained} retained from prior`
+  );
   console.log(`  coverage: ${payload.coverage_pct}% of ${realIds.size} total examples`);
   console.log(`  with_clicks: ${payload.with_clicks}`);
   console.log(`  source: raw/${payload.source}/`);
