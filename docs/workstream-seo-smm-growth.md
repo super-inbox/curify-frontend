@@ -1591,6 +1591,8 @@ It is the same trap as `dieline to 3d mockup`: winnable and worth little.
 
 ## 2026-09-01 — consolidated priority across all three KD batches
 
+> **Superseded by "2026-09-01 — reprioritised after the audit" at the end of this doc.** Kept as the record of what was decided before the blog-fold finding; the tier structure below survives, the ordering does not.
+
 Supersedes the per-batch action lists above. Batches 2 and 3 were pulled within hours of each
 other and their actions interleave, so ranking them separately produced a list that read as six
 independent jobs when it is really **three cheap retargets, one measurement, and one build**.
@@ -1713,6 +1715,159 @@ these two specifically, not the low-KD thesis.
 - **Demoted the lowest-KD terms on the board.** The infographic family (KD 17–19) is $0.00 CPC
   and does not appear in this list at all — see the CPC counterweight above.
 
+## 2026-09-01 — audit of five days of SEO work, and the finding that reorders it
+
+Covers everything from the 08-17 A/B blog-series spec through today's retargets, measured
+rather than recalled. **Supersedes the consolidated priority list above.**
+
+### What actually shipped
+
+| | planned | shipped | not shipped |
+|---|---|---|---|
+| **Cluster A** (AI agent × design) | A1–A5 | **A1** (08-18) | A2, A3, A4, A5 |
+| **Cluster B** (design → manufacturing) | B1–B4 | **B1** (08-18), **B2** (08-28) | B3, B4 |
+| Batch-2 KD actions | 4 | retarget (`4c0715b5`), interlink (`4c0715b5`), ghost-mannequin spoke EN + zh (`b4b89a56`, `1eb7d1f0`) | on-model surface |
+| Batch-3 KD actions | 3 | worksheet + dress-design retargets (`02b114c1`) | costume surface (refused — no asset) |
+| Image SEO | — | sitemaps + alt (`08092e73`) | — |
+
+### Measured outcomes
+
+| post | live | web 28d | image 28d | clicks | index state |
+|---|---|---:|---:|---:|---|
+| A1 `best-claude-code-design-skills` | 08-18 | **53** (was 37 on 08-27) | **82** | 1 | Submitted and indexed |
+| B1 `character-turnaround-sheet-guide` | 08-18 | 14 (was 12) | 13 | 0 | Submitted and indexed |
+| B2 `dieline-generator-guide` | 08-28 | **0** | **0** | 0 | **Duplicate without user-selected canonical** |
+| `ghost-mannequin-ai-guide` | 09-01 | 0 | 0 | 0 | URL is unknown to Google |
+
+⚠️ **Read these page-level.** A query-dimension pull on A1 returns 7 impressions against the
+page-level 53, because rare queries are anonymised — the same trap the 08-27 readout flagged.
+It was walked into again while producing this audit.
+
+### THE FINDING: the blog-spoke strategy has an unmeasured ~33% failure rate
+
+The 08-27 readout concluded *"the blog surface is by far the fastest route into the index, which
+should drive sequencing decisions elsewhere."* **That is materially overstated**, and both the
+batch-2 and batch-3 plans were built on it. URL-Inspection across the 12 most recent posts:
+
+- **7 indexed clean**
+- **4 folded** to the homepage canonical
+- **1 unknown to Google**
+
+And the folds are not all stale crawls. Splitting them by whether they were crawled after the
+fold fix went live (2026-08-10):
+
+| folded post | last crawl | verdict |
+|---|---|---|
+| `dieline-generator-guide` | **2026-08-27** | **post-fix — the fold is real**, `googleCanonical=/` |
+| `url-to-product-video` | **2026-09-01** | **post-fix — the fold is real** |
+| `ai-packaging-design-guide` | 2026-07-28 | pre-fix — needs a recrawl ping |
+| `world-cup-2026-top-contenders` | 2026-07-10 | pre-fix — needs a recrawl ping |
+
+**B2 is the proof, and it is expensive.** `dieline-generator-guide` was written specifically to
+own `dieline generator` — 170/mo, KD **19**, CPC $2.76, one of the seven 🟢 terms. It was crawled
+**17 days after** the fold fix shipped, folds to `/`, has **zero impressions**, and cannot rank
+as itself. The post is not underperforming; it is invisible, and no checkpoint anywhere in this
+doc would have caught that, because every checkpoint measures position and impressions — both of
+which read "0" identically for a folded page and a page nobody searches for.
+
+This is the top priority. Every blog spoke in the batch-2 and batch-3 plans — including the
+ghost-mannequin spoke that is priority 1, now shipped in two languages — is a coin flip until
+this is understood. See [[project_blog_canonical_fold]] for the mechanism and what has already
+been tried.
+
+### Second finding: the A/B series was measured on the wrong surface
+
+A1 earns **82 image impressions against 53 web**. B1 earns 13 image against 14 web. The
+08-27 readout's "~59 impressions before a CTR read is valid" threshold was web-only; counting
+both surfaces, **A1 cleared it days ago** (135 total). The 09-17 and 10-17 checkpoints are
+written web-only and will under-read the series. Every readout from here counts both surfaces —
+see the 2026-09-01 image-search section above.
+
+### Third: the A ladder is stalled by non-execution, not by evidence
+
+A2–A5 were never written. The 10-17 gate on A5 (`codex skills`, 1,900/mo, KD 47) is
+*unevaluable* — the spec defers A5 until A1–A4 build authority, and A2/A3/A4 do not exist. The
+honest status of Cluster A is **not "failing", it is "one post"**. A1 is alive: 135 impressions
+across surfaces, its first click, and the exact target phrase ranking (`best claude code design
+skills`, image pos 18).
+
+### Fourth: nothing links to any of these posts
+
+All four posts report `referringUrls = 0` in URL Inspection. The 08-31 interlink work
+(`4c0715b5`) added `TOOL_RELATED_TOOLS`, which links **tools to tools** — no blog gained an
+inbound edge. The blog spokes were justified partly as "the inbound links the tool pages need",
+but the link only points spoke → tool; nothing points at the spoke.
+
+### Fifth: one cited doc does not exist
+
+`~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md` is referenced in Related docs
+and is not on disk. The design-skills thinking that reference stands for is real — the TypeUI
+read in `raw/agent-skills-08-31/design-skills.txt` argues the prompt/template library should be
+upgraded **Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill** rather than
+extended — but it has no document. Link corrected below to the raw note. See
+[[feedback_docs_cite_memory_names_that_drift]].
+
+---
+
+## 2026-09-01 — reprioritised after the audit
+
+### Tier 0 — the blocker, and it is new information
+
+| # | Item | Why it outranks everything |
+|---|---|---|
+| **1** | **Diagnose the post-fix blog fold.** Two posts crawled after 2026-08-10 still fold to `/`. Establish whether new posts fold at ~1-in-3, and if so what separates `dieline-generator-guide` from `character-turnaround-sheet-guide`, published 10 days apart and both indexed-clean vs folded. | B2 cost a full post to own a KD-19 term and earns zero. Ghost mannequin — the top-ratio term on any board, now shipped in EN **and** hand-written zh (`1eb7d1f0`) — is exposed to the same coin flip and is currently "unknown to Google". Writing more spokes before this is answered is the mistake the 08-17 spec was written to avoid. |
+| **2** | **Re-ping the two pre-fix folds** (`ai-packaging-design-guide`, `world-cup-2026-top-contenders`). | Free, and the mechanism is proven: `world-cup-2026-ai-prompt-hub` un-folded after a post-fix recrawl. Do this *with* #1, not instead of it — a recrawl that un-folds them is also evidence about #1. |
+
+### Tier 1 — free measurements, already scheduled
+
+| when | what | changed by this audit |
+|---|---|---|
+| **09-08** | ghost-mannequin indexed? | **now also: is it folded?** Indexation alone is not the question any more. |
+| **09-15** | did the interlink get `die-cut-sticker-file` crawled? | unchanged — still gates the build tier |
+| **09-17** | A1/B1 30-day re-pull | **count image + web.** Web-only under-reads A1 by ~60%. |
+| **09-22** | image-SEO readout (`08092e73`) | unchanged. `nail art designs` (49,500/mo, KD 44, image pos 12) is the sharpest indicator |
+| **10-01** | `dress design template` + `worksheet generator` retargets | unchanged |
+
+### Tier 2 — cheap, no new pages
+
+| # | Item |
+|---|---|
+| **3** | **Point something at the spokes.** All four posts have 0 referring URLs. `TOOL_RELATED_TOOLS` links tools→tools; the spokes justified themselves as inbound links but have none of their own. Cheapest source is the tool pages the spokes already link down to — make it an edge, not an arrow. |
+| **4** | FAQ cap + questions on the pages that already own their terms (batch-2 action) |
+| **5** | `HowTo` + `WebApplication` schema (batch-2 action, mechanical once #4 lands) |
+
+### Tier 3 — content, and it is gated now
+
+| # | Item | Gate |
+|---|---|---|
+| **6** | **B3 `what is a tech pack`** (90/mo, KD **1**) — same shape as ghost mannequin, best remaining ratio in the B spec | **Gated on Tier 0.** A KD-1 term is worth nothing behind a fold. |
+| **7** | **A2–A4** | **Not yet.** A1 is alive (135 impr, 1 click) but unproven; write A2 only if the 09-17 two-surface re-pull shows A1 still climbing. |
+| **8** | ~~**B4** programmatic supporting pages~~ | **Dropped.** The 08-17 spec's own kill criterion says drop B4 if B2 is flat by 09-11. B2 is worse than flat — it is folded. Same action, firmer reason. |
+| **9** | ~~**A5** `codex skills`~~ (1,900/mo, KD 47) | **Not attemptable.** The ladder it depends on (A1→A4) does not exist, and KD 47 is far above the authority band. |
+
+### Tier 4 — build, gated on 09-15
+
+| # | Item |
+|---|---|
+| **10** | On-model surface (`ghost mannequin ai` + `ai fashion model generator`, 370/mo, KD 0–16) |
+| **11** | `costume design template` surface (590/mo, KD 20 — refused as a retarget on 09-01 because no asset serves it) |
+
+### Unchanged and still more urgent than Tier 3
+
+The five §7z records not in version control, and `client-006`'s placeholder identity. Neither is
+SEO; both decay to unrecoverable.
+
+### What this audit changed
+
+- **Promoted a blocker nobody had:** the post-fix fold. It was invisible because every
+  checkpoint measures impressions, and a folded page and an unwanted page both read zero.
+- **Demoted all new content** behind it, including a KD-1 term.
+- **Killed B4 and A5 on their own pre-agreed criteria** rather than letting them sit as "later".
+- **Corrected the measurement surface** for the A/B series — web-only was under-reading A1 by
+  ~60%.
+- **Left the free measurements alone.** They cost nothing and three of the five land within a
+  fortnight.
+
 ---
 
 ## Related docs / threads
@@ -1727,4 +1882,4 @@ these two specifically, not the low-KD thesis.
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
 - `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
 - `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
-- `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md` — turning the 351 templates / 8,775 prompts into Skills that back these pages
+- `raw/agent-skills-08-31/design-skills.txt` — the TypeUI read: upgrade the prompt/template library along Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill rather than extending it. (Replaces a citation to `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md`, which was never written — verified absent 2026-09-01.)
