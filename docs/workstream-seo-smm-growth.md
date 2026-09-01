@@ -1594,8 +1594,8 @@ independent jobs when it is really **three cheap retargets, one measurement, and
 | # | Item | Why first |
 |---|---|---|
 | **1** | ✅ **DONE 2026-09-01 (`b4b89a56`)** — blog spoke for `ghost mannequin ai` (KD **1**, 110/mo, CPC **$4.11**) shipped as `ghost-mannequin-ai-guide` | Best ratio on any board we have. Tested the 400/mo on-model opportunity for the price of one post. Blog indexes in ~1 day; tool pages from 08-06 still are not. Doubles as the inbound link item 6 needs. **Adds a checkpoint: 2026-09-08, is it indexed?** If a KD-1 term with a fresh post cannot reach top-10 by 2026-10-13, the low-KD thesis is falsified and item 6 should not be built. |
-| **2** | **Retarget `/tools/worksheet-from-video` → `worksheet generator`** (KD 35, **2,400/mo**) | Best volume-to-difficulty ratio in batch 3, and the page already exists, is indexed, and earns **zero** impressions. Identical mechanics to the three retargets that shipped in batch 2 — edit `messages/en/home.json`, not the dead `seo:` field. Cost is a title. |
-| **3** | **Retarget the fashion-template pair** — `costume design template` (KD **20**, 590/mo, image pos 42) and `dress design template` (KD **24**, 140/mo, image pos 25) | 730/mo combined at KD ≤ 24, and we already hold image-search rankings on both with no page pointed at them. Cheapest volume in batch 3. |
+| **2** | ✅ **DONE 2026-09-01** — retargeted `/tools/worksheet-from-video` → `worksheet generator` (KD 35, **2,400/mo**). ⚠️ Video input is mandatory, so score it against the video slice, not 2,400/mo — see below. | Best volume-to-difficulty ratio in batch 3, and the page already exists, is indexed, and earns **zero** impressions. Identical mechanics to the three retargets that shipped in batch 2 — edit `messages/en/home.json`, not the dead `seo:` field. Cost is a title. |
+| **3** | ✅ **PARTIAL 2026-09-01** — `dress design template` (KD **24**, 140/mo) retargeted onto `fashion-inspired-gown-design-sheet`, 10 locales. **`costume design template` (KD 20, 590/mo) refused** — no asset serves it; moved to the build tier behind checkpoint #4. | 730/mo combined at KD ≤ 24, and we already hold image-search rankings on both with no page pointed at them. Cheapest volume in batch 3. |
 
 ### Free — measurements that gate everything below
 
@@ -1634,6 +1634,67 @@ independent jobs when it is really **three cheap retargets, one measurement, and
 | **14** | `ip-pendant-3d-merch.md` untracked while `workstream-index.md:145` links to it — dangling on the remote |
 | **15** | ~~Fix "~600/mo" → 740~~ — **not present in any file**; grepped this repo and `~/curify-studio`. The 🟢 total is confirmed 740/mo (30+110+90+260+170+50+30). Nothing to fix. |
 | **16** | Re-screenshot the 5 cut-off rows of `ecommerce-education-kd.png` (16 of 21 legible) |
+
+### 2026-09-01 — retargets 2 and 3 shipped, and one refused
+
+**#2 `worksheet generator` (2,400/mo, KD 35) — shipped, but the addressable share is much
+smaller than the volume figure.** `/tools/worksheet-from-video` has **no `action` in
+`lib/tools-registry.ts`** — only a `demo: {type: "language_switch"}` video — and its `job_type`
+is `video_transcript`. **A video is mandatory.** Most of the 2,400/mo is teachers wanting a
+worksheet from a *topic or text*, and this page cannot serve them. So the title was front-loaded
+onto the head term while keeping the video qualifier inside the promise, rather than dropped onto
+the bare term:
+
+- was: `AI Worksheet Generator from Video | Turn Any Clip into a Worksheet`
+- now: `AI Worksheet Generator — Any Video into a Printable Worksheet`
+
+Description now leads with "Worksheet generator built on video". **Do not score this against
+2,400/mo** — score it against the video-worksheet slice. If it does not move by the checkpoint,
+the conclusion is that the page needs a text/topic input, not a better title.
+
+**#3a `dress design template` (140/mo, KD **24**) — shipped, and it is the clean one.**
+`/nano-template/fashion-inspired-gown-design-sheet` already holds **image-search position 25.3**
+on that exact query (40 impressions) with the term absent from its title, which read
+"Nature-Inspired Couture Gown Design Sheet Generator". Its output genuinely *is* a dress design
+sheet — illustration, technical sketch, handwritten notes — so leading with the term overclaims
+nothing.
+
+- was: `Nature-Inspired Couture Gown Design Sheet Generator`
+- now: `Dress Design Template — Nature-Inspired Couture Gown Sheet`
+
+All 10 locales retitled; EN description also retargeted (the other nine keep their accurate
+descriptions — the target query is English and only the unprefixed EN URL ranks for it). Scoped
+recrawl via `PER_TEMPLATE_RETITLE_LASTMOD`, dated 2026-09-01.
+
+> **Refactor:** `FASHION_RECRAWL_LASTMOD` + `FASHION_RECRAWL_TEMPLATE_IDS` became
+> `PER_TEMPLATE_RETITLE_LASTMOD`, a `Map<templateId, lastmod>`. A second single-template retitle
+> would otherwise have meant a fourth branch on a ternary in `app/sitemap.xml/route.ts` that was
+> already three deep. Still scoped per template — no group-wide bump.
+
+**#3b `costume design template` (590/mo, KD 20) — REFUSED. We have no asset that serves it.**
+This was the largest soft-term prize in batch 3, so the reasoning matters. All five costume-ish
+templates were checked:
+
+| template | what it actually outputs |
+|---|---|
+| `ethnic-costume-deconstruction-board` | labeled breakdown of an *existing* ethnic costume (this is the one ranking, image pos 42.3 on 9 impr) |
+| `costume` | science-popularisation illustration of a traditional costume |
+| `disney-character-costume-themed-grid-collection` | 4×3 grid of one character in 12 themed costumes |
+| `fashion-before-after-outfit-annotation-card` | before/after styling annotation on a photo |
+| `vintage-collage-fashion-collection-poster` | vintage collage poster |
+
+Every one of them *depicts or analyses* a costume. The query wants a **template to design one**.
+Retargeting the deconstruction board would be the `ecommerce-photo` → `ai fashion model
+generator` mistake from batch 2, in the same doc, made twice: pointing a title at a query the
+page cannot satisfy earns a bounce, and Google does not rank a mismatched page anyway.
+
+**Filed as the batch-3 build candidate** — 590/mo at KD 20 with no asset is a better ratio than
+most of what is above it, but it is a *build*, so it belongs behind the 2026-09-15 crawl
+checkpoint with the on-model surface, not in the free-retarget tier.
+
+**Checkpoint 2026-10-01** — position for `dress design template` (image and web) and
+`worksheet generator`. Both are pure retargets, so a null result falsifies the retarget lever for
+these two specifically, not the low-KD thesis.
 
 ### What batch 3 changed about the ordering
 

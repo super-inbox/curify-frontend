@@ -14,9 +14,8 @@ import {
 import { isLocalizedTopic } from "@/lib/topicRegistry_pure";
 import {
   SEO_RETITLED_LASTMOD,
-  FASHION_RECRAWL_LASTMOD,
-  FASHION_RECRAWL_TEMPLATE_IDS,
   SEO_RETITLED_TEMPLATE_IDS,
+  PER_TEMPLATE_RETITLE_LASTMOD,
 } from "@/lib/seo_retitled_templates";
 
 export const runtime = "nodejs";
@@ -135,10 +134,10 @@ function getNanoTemplateRoutes(): Array<{
         // 08-05 fold fix, so using it verbatim would advertise the 41 retitled
         // templates as STALER than every other template — the opposite of the
         // intent, and it would exclude exactly the pages we most want recrawled.
-        // The 08-27 fashion retitle is newer than both dates below, so it takes
-        // precedence for the one template it covers.
-        lastmod: FASHION_RECRAWL_TEMPLATE_IDS.has(t.id.trim())
-          ? FASHION_RECRAWL_LASTMOD
+        // A per-template retitle date is newer than both dates below, so it
+        // takes precedence for the templates it covers.
+        lastmod: PER_TEMPLATE_RETITLE_LASTMOD.get(t.id.trim())
+          ? PER_TEMPLATE_RETITLE_LASTMOD.get(t.id.trim())!
           : SEO_RETITLED_TEMPLATE_IDS.has(t.id.trim()) &&
               SEO_RETITLED_LASTMOD > NANO_TEMPLATES_LASTMOD
             ? SEO_RETITLED_LASTMOD
