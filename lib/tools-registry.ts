@@ -702,9 +702,75 @@ export function groupTools(): Record<ToolGroupId, ToolDef[]> {
 
 /** Same-group sibling tools (excluding the current one and any coming-soon
  *  entries). Powers the "Related tools" block on each tool detail page. */
+// Curated cross-group "related tools" links, by INTENT rather than by the
+// internal group taxonomy.
+//
+// WHY (2026-09-01): the group fallback below links only within `groupId`, and
+// the `design` group holds exactly three tools — die-cut-sticker-file,
+// acrylic-factory-export, packaging-mockup. So those three linked only to each
+// other: a closed triangle with no inbound edge from the rest of the site.
+// Two of them had never been crawled (workstream-seo-smm-growth.md 08-25:
+// packaging-mockup 3 inbound → crawled; die-cut-sticker-file 1 inbound →
+// never), and per that doc inbound internal links — not Indexing-API pings —
+// are what gets a /tools/* page crawled.
+//
+// The fix is edges from the crawled image/video tools INTO the design island,
+// which is also how the page that currently owns `ghost mannequin ai` does it
+// (a "More Product Photo Tools" strip that cuts across categories). Keep these
+// intent-true: a link the visitor would plausibly follow is also the link
+// Google counts. Slugs must exist in TOOL_REGISTRY — getSiblingTools drops
+// unknown or coming_soon entries rather than rendering a dead card.
+export const TOOL_RELATED_TOOLS: Record<string, string[]> = {
+  // Product-photo intent → the production-file tools a seller needs next.
+  "ecommerce-photo": ["die-cut-sticker-file", "packaging-mockup", "mockup"],
+  "ai-product-photo-generator": [
+    "ecommerce-photo",
+    "packaging-mockup",
+    "die-cut-sticker-file",
+  ],
+  mockup: ["packaging-mockup", "die-cut-sticker-file", "ecommerce-photo"],
+  // Character / sticker intent → the die-cut file is the production step.
+  "character-sticker-sheet": [
+    "die-cut-sticker-file",
+    "acrylic-factory-export",
+    "style-transfer",
+  ],
+  "style-transfer": ["character-sticker-sheet", "ecommerce-photo", "mockup"],
+  // Design island → link back out, so the triangle is no longer closed.
+  "die-cut-sticker-file": [
+    "acrylic-factory-export",
+    "character-sticker-sheet",
+    "packaging-mockup",
+  ],
+  "acrylic-factory-export": [
+    "die-cut-sticker-file",
+    "character-sticker-sheet",
+    "packaging-mockup",
+  ],
+  "packaging-mockup": [
+    "mockup",
+    "die-cut-sticker-file",
+    "acrylic-factory-export",
+  ],
+};
+
 export function getSiblingTools(slug: string, max = 3): ToolDef[] {
   const current = getToolBySlug(slug);
   if (!current) return [];
+
+  // Curated intent links first; fall back to the same-group slice for every
+  // tool that has no curated entry, so behaviour is unchanged elsewhere.
+  const curated = TOOL_RELATED_TOOLS[slug];
+  if (curated?.length) {
+    const picked = curated
+      .map((s) => getToolBySlug(s))
+      .filter(
+        (t): t is ToolDef =>
+          !!t && t.slug !== slug && t.status !== "coming_soon"
+      );
+    if (picked.length) return picked.slice(0, max);
+  }
+
   return TOOL_REGISTRY
     .filter(
       (t) =>

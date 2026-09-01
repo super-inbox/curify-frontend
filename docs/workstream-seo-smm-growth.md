@@ -1363,13 +1363,33 @@ being the volume prize.
 
 ### Actions — ordered by the crawl evidence, not by preference
 
-1. **Retarget metadata in `lib/tools-registry.ts`** (zero new URLs, zero engineering):
-   `die-cut-sticker-file` → *dieline generator*; `acrylic-factory-export` → *print ready
-   artwork*; `packaging-mockup` → *packaging mockup generator*; `ecommerce-photo` /
-   `ai-product-photo-generator` → *ai fashion model generator*.
-2. **Add inbound internal links to the two never-crawled tools.** Per lines 321 / 336 / 401–407,
-   inbound links — not Indexing-API pings — determine crawl: `packaging-mockup` 3 inbound →
-   crawled; `die-cut-sticker-file` 1 inbound → never. Retargeting without this changes nothing.
+1. ✅ **DONE 2026-09-01 — retargeted.** Metadata lives in `messages/en/home.json` under
+   `<namespace>.metadata`, not in the registry's `seo:` field (which `generateMetadata` never
+   reads — see the note below). Changed: `dieCutStickerFile` → *Dieline Generator — Die-Cut
+   Sticker Cut Line + CMYK File*; `acrylicFactoryExport` → *Print-Ready Artwork for Acrylic —
+   White Ink + Cutline Files*; `characterStickerSheet` → *Character Consistency AI — 1 Drawing →
+   9 Consistent Poses*. `packagingMockup` was **already** exact-match for its term and was left
+   alone.
+   > ⚠️ **`ecommerce-photo` was deliberately NOT retargeted to *ai fashion model generator*.**
+   > That tool makes product photos; it does not put a garment on a model. Pointing the title at
+   > a query the page cannot satisfy earns a bounce, and Google does not rank a mismatched page
+   > anyway. That term needs the same unbuilt on-model surface as `ghost mannequin ai` — the
+   > capability exists at `~/curify-studio/dev/jayw/design-agent-v0/tools/model-swap/` but has
+   > never been shipped as a page. **Two of the seven soft terms are one missing surface.**
+   >
+   > ⚠️ **Dead code found:** `ToolDef.seo` / `seoKeys()` in `lib/tools-registry.ts` is consumed
+   > by nothing. `tools.<tool>.meta.*` in `messages/en/home.json` is therefore stale copy that
+   > looks authoritative. Left in place, but do not edit it expecting a SERP change.
+2. ✅ **DONE 2026-09-01 — interlinked.** Root cause was narrower than "not enough links":
+   `getSiblingTools()` only linked **within `groupId`**, and the `design` group holds exactly
+   three tools — `die-cut-sticker-file`, `acrylic-factory-export`, `packaging-mockup`. They
+   linked only to each other: **a closed triangle with no inbound edge from the rest of the
+   site**, which is exactly the 1-inbound-link observation at line 336. Added
+   `TOOL_RELATED_TOOLS`, a curated cross-group map keyed by intent, with the group slice kept as
+   the fallback for every tool without an entry. Modelled on the competitor's "More Product
+   Photo Tools" strip, which also cuts across categories. Measured on the registry graph:
+   `die-cut-sticker-file` **2 → 6** inbound, `packaging-mockup` **2 → 5**,
+   `acrylic-factory-export` **2 → 3**. `npx tsc --noEmit` clean.
 3. **Blog spokes for the 🟢 terms, each linking down to its tool.** Blog indexes in ~1 day
    (1070–1073) while tool pages from 08-06 still are not, so the spokes are simultaneously the
    cheap ranking test *and* the inbound links step 2 needs.
@@ -1404,14 +1424,29 @@ stub. Everything else in §The pattern stands; only the "nobody" framing was wro
 **~1,831 visible words. No sign-up, no credit card, no login** — the offer is the CTA.
 
 **Full schema stack**: `WebApplication` + `Offer` (`price: "0"`) + `HowTo` + `HowToStep` +
-`FAQPage` + `Question` + `Answer`. We ship `ImageObject` on only two pages site-wide; this is the
-markup profile a tool page should carry.
+`FAQPage` + `Question` + `Answer`.
 
 **The FAQ is a keyword harvester, not a support section.** It absorbs the whole long-tail cluster
 in one URL: *ghost mannequin vs flat lay — which is better for conversions*, *what is neck joint
 editing*, *is there a free ghost mannequin creator I can use online without downloading anything*,
 *ghost mannequin vs on-model photos*, *can Shopify sellers use these directly*, *what clothing
-categories are supported*. Fourteen of these against our tool pages, which carry none.
+categories are supported*.
+
+⚠️ **Correction to an earlier draft of this section: our tool pages are not bare.**
+`tool-generic-client.tsx:256–272` already emits `FAQPage` JSON-LD, and every namespace in
+`messages/en/home.json` already carries `faq` and `deep` (`what` / `how` / `usecases`) blocks —
+i.e. the teach-then-convert content exists. The real gaps are narrower and cheaper than "we have
+nothing":
+
+| | them | us |
+|---|---|---|
+| FAQ questions | 14 | **hard-capped at 5** in both the render loop and the schema (`[1, 2, 3, 4, 5]`), and authored 4 / 5 / 5 / 2 / 2 |
+| `HowTo` + `HowToStep` | ✅ | ❌ none |
+| `WebApplication` + `Offer` | ✅ | ❌ none |
+
+Raising the cap is a two-character change that applies to all 27 tools at once; the questions
+then have to be written. `HowTo` markup has a natural source already on the page — the `deep.how`
+block.
 
 **Three things to copy directly:**
 
