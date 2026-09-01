@@ -2006,6 +2006,39 @@ before the result is interpreted.
 image entries from `08092e73` and `/tools/worksheet-from-video` shows the `02b114c1` title. The
 folded posts are running current code.
 
+
+### 2026-09-02 — rendered-DOM probe: clean. Cause still not located.
+
+Playwright, Googlebot UA, waited for `networkidle`, folded vs indexed posts. **The rendered DOM
+is structurally identical across both**: canonical survives hydration (count=1, correct), title
+unchanged, 11 `<link rel="alternate">` before and after, **zero console or page errors**, no
+redirect, and no injected template content (text grows only 250–320 chars from SSR). So the
+document Google renders on a folded page is correct and self-consistent — and it still refuses
+the declared canonical. **Hypothesis 10 eliminated.**
+
+**A separate, real defect found on the way: `/blog/*` is a soft-404 that self-canonicals.**
+`blog/[slug]/page.tsx:219` calls `notFound()`, but under `(public)` that is swallowed into
+**HTTP 200**; `generateMetadata` returns `{title: "Blog Post Not Found"}` with no `alternates`;
+and `(public)/layout.tsx` then supplies a **path-derived self-canonical for the nonexistent URL**.
+Any arbitrary `/blog/x` therefore returns 200 + 752KB + a self-canonical claiming to be a distinct
+document. `/nano-template/*`, `/topics/*` and `/tools/*` all **404 correctly** — they are in
+`(static)`, which deliberately has no path-derived canonical. `/blog/` is in `(public)`, which is
+where the fold is concentrated.
+
+⚠️ **Suggestive, but not the cause.** Measured blast radius is **one URL**: of the 105 `/blog/`
+slugs with impressions in 180d, 102 are real and 3 are ghosts — 2 of which now 308-redirect. Only
+`/blog/how-to-translate-asl-video` serves the soft-404, and Google has it as "Crawled – currently
+not indexed". One ghost cannot teach Google to distrust the path. Fix it on its own merits: it is
+a latent scaling risk, and `f5-tts-vs-elevenlabs` (619 impr) plus `3x3-grid-collage-ai-prompts`
+(222) show what stranded slugs are worth.
+
+**Where P0-A stands: ten hypotheses eliminated, cause unlocated.** Everything observable in SSR,
+the rendered DOM, response headers and index metadata is correct and identical between folded and
+indexed posts. The next step is not another local probe — it is a **GSC Live Test** on
+`dieline-generator-guide` vs `character-turnaround-sheet-guide`, which returns Google's own
+rendered HTML and canonical reasoning and is not available through the API. That needs a human in
+the GSC UI.
+
 ### Cohort split for the 34 folds — three different jobs, not one bug
 
 | cohort | n | action |
