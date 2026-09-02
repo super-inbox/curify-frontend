@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-09-01.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-09-02.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -2046,6 +2046,60 @@ the GSC UI.
 | stale, last crawled pre-2026-08-10 | **28** | **batch recrawl request, then re-classify.** No debugging. |
 | `/` collapse, crawled 08-10/08-11 | 3 | verify after recrawl — old i18n-catalog mechanism, fix already live |
 | **wrong-content canonical, crawled 08-27+** | **3** | **active P0-A investigation** |
+
+---
+
+## 2026-09-02 — batch-4 seeds: the photography-backdrop cluster, queued not claimed
+
+A 儿童摄影 **场景增强** client trial (`raw/context-enrichment-08-31/`) exposed a capability gap
+— nothing in the 27 tools or 351 templates does a **locked-subject, background-only** retouch.
+`template-studio-digital-backdrop-scene` shipped to close it; the full review, the build and
+the template-vs-tool-page reasoning are in
+[`search-and-content.md`](search-and-content.md) §2026-09-02. What belongs in *this* doc is
+the targeting decision and what it does **not** claim.
+
+**Placement obeys this doc's own gate.** A new `/tools/*` surface is Tier 4, gated on the
+**2026-09-15** crawl checkpoint, so it was not built. The ship is a
+`/nano-template/*` page: **2 net new indexable URLs** (en + zh — the template's `locales`
+holds only the two authored ones), and its example page is `noindex, follow` canonicalled to
+the template, so it adds nothing to the 8,232-URL example sitemap. If 09-15 passes,
+`/tools/<slug>` over this template is a registry entry plus a namespace — the same
+`action: { type: "generate", templateId }` shape as `ecommerce-photo` and
+`character-sticker-sheet`.
+
+**The generic framing was avoided on this doc's evidence.** `ai background replacement`
+(KD 57, 40/mo) and `ai product background generator` (KD 54, 70/mo) are both in the batch-2
+🔴 column and both are generic-tool shape. The title leads on the artifact instead.
+
+⚠️ **Nothing here is a measured keyword play.** No KD was pulled for the artifact terms, and
+the 28d GSC pull (`raw/gsc-baseline-2026-08-30/`, `raw/gsc-cluster-audit-2026-08-31/`) shows
+**zero** photography or backdrop queries — so unlike `raw/kd-check-seeds-2026-09-01.md`, this
+cluster has no verified-demand basis. The page was built for a client engagement; ranking is
+a free option on it. **Do not count it against the low-KD thesis in either direction.**
+
+### Batch-4 seeds — artifact-shaped, all untested
+
+Bring back Volume, KD, Intent, SERP features. The buy signal is unchanged: **Volume ≥ 500/mo
+AND KD ≤ 40**, and per batch 3, **KD low + CPC $0.00 means audience, not revenue** — carry
+CPC back or the row is unreadable.
+
+```
+digital backdrop
+digital backdrops for photographers
+newborn digital backdrop
+studio backdrop replacement
+photo studio background
+kids photography backdrop
+background compositing
+photo retouching outsourcing
+```
+
+Batch 4 is also the **third test of the specific-artifact heuristic** (batch 1's `AI + service
+noun` died in batch 2; batch 2's trade-vocabulary rule was subsumed by batch 3's). It stays
+provisional until this batch either holds or breaks it. Note the shape hedge: half these seeds
+name an artifact (`digital backdrop`, `newborn digital backdrop`) and half name a service
+(`photo retouching outsourcing`, `background compositing`) — that split is deliberate, so the
+batch can separate the two rather than confirm one.
 
 ---
 

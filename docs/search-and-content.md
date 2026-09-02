@@ -1,6 +1,6 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-06-05 (strategic reframe: WC is the entry point, the engine is the destination — "Visual Answers for Every Query". Calendar widget per-match-line clickable upgrade queued for 2026-06-06). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-09-02 (scene-enhancement template shipped — `template-studio-digital-backdrop-scene`, the first locked-subject background-only retouch in the catalog; see the dated section below). Owner: jay. Update after any push that touches the threads below or changes priority order._
 
 ## Why this doc exists
 
@@ -348,6 +348,146 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
    **Full spec**: `docs/programmatic-seo-topic-hubs.md` — covers page anatomy, source pipeline gating, hreflang strategy, risks (duplicate content with /topics, anti-Slop, AI Overview defenses, cannibalization), measurement loop.
 
    **Why prioritize ahead of items 5-8**: items 5-8 all improve internal UX or measurement; only item 9 converts the workstream into a growth flywheel. Should be the next thing built once Generation Bridge Phase 1 has accumulated 2 weeks of CTR data to inform which queries are matcher-ready.
+
+---
+
+## 2026-09-02 — scene enhancement: the one image-in/image-out job the catalog could not do
+
+Source: a 儿童摄影 **场景增强 试稿** (trial brief) dropped into `raw/context-enrichment-08-31/`
+— `场景增强需求试稿.docx` plus `ai-gen.png`, our own AI-generated reproduction of the
+reference sheet. Recorded here because the docx and the render are the only copy.
+
+### The brief, and why it is a template-shaped job
+
+A children's-photography studio wants **70 pairs** of (原图, 结果) plus three keyword sets —
+**全身 / 半身 / 特写** — with a two-person trial of **10 pairs each** first. Their prompt
+template is a strict local edit: the child is a **locked subject** (pixels, pose, expression,
+garments, skin tone all preserved) and the *only* region rewritten is the background outside
+the silhouette, which is rebuilt as a themed set — seamless gradient paper sweep, lightly
+reflective floor, recessed LED strip on the seam, one styled prop arrangement, compound studio
+lighting, and one colour grade held across the whole series. They run it internally on a
+ComfyUI workflow they cannot hand out, so the vendor has to bring their own batch rail.
+Delivery: prompts + images in an Excel sheet, jpg/png, original dimensions, 2K result.
+
+The variable half of that brief is three short fields — scene direction, prop set, shot type.
+The invariant half is the locked-subject discipline and the series-consistency rules. That is
+exactly a parameterised nano template, not a bespoke script.
+
+### Review finding: we had nothing that does this
+
+Checked all 27 tools in `lib/tools-registry.ts` and all 351 templates in
+`public/data/nano_templates.json` (13 of which are `image_input: "required"`):
+
+| nearest thing we had | what it actually does | why it does not serve this |
+|---|---|---|
+| `template-portrait-retouching-blueprint` | two-panel *annotation* board — red markup left, retouched right | an infographic about retouching, not a production retouch |
+| `/tools/ecommerce-photo`, `/tools/ai-product-photo-generator` | product photography | objects, not people; no locked-subject constraint |
+| `template-fruit-drink-scene-photography` | product scene photography | the only template mentioning 棚拍/背景 at all, and it is a drinks still life |
+| `/tools/style-transfer`, `chinese-costume-tryon` | transform the subject | the opposite instruction — these *change* the person |
+
+A grep for background-replacement semantics (`背景替换|换背景|保留人物|棚拍|seamless backdrop|
+lock the subject|…`) across all 351 templates returned **one** hit, the drinks one. Confirmed
+gap.
+
+### Shipped: `template-studio-digital-backdrop-scene`
+
+- **`/nano-template/studio-digital-backdrop-scene`**, EN + hand-written ZH prompt,
+  `image_input: "required"` + `requires_image_upload: true`, `allow_generation: true`.
+- Three params — `scene_theme` / `prop_set` / `framing` — so one spec re-runs across
+  全身 / 半身 / 特写. The prompt carries an explicit close-up rule (carry the colour ramp,
+  lighting direction and prop accent into frame rather than forcing the whole set in), which
+  is the failure mode a naive port of the client's full-body wording would hit.
+- i18n in all 10 locales (`messages/*/nano.json`), EN + native ZH authored, EN copy for the
+  other eight. `locales` on the template itself is `en` + `zh`, so the **sitemap emits 2 URLs,
+  not 10** — the duplicate-canonical policy at `app/sitemap.xml/route.ts:117-128`.
+- **Seven examples**, all cut from `raw/context-enrichment-08-31/ai-gen.png`: the six-pair
+  contact sheet as the hero / `og_image`, plus the six pairs individually
+  (`half-body-grey-plate`, `full-body-white-plate`, `full-body-seated-crate`,
+  `close-up-foreground-poppies`, `full-body-floor-two-directions`,
+  `full-body-high-angle-two-directions`). Panel geometry was measured off the sheet's own
+  gutter, not eyeballed, and each pair is recomposed so it reads **input → result**
+  left-to-right (the source sheet has the navy set on the left). All watermarked through
+  `scripts/sync_nano_inspiration.cjs` and pushed to `gs://curify-static`.
+  - ⚠️ **Two of the six are not before/after.** In `full-body-floor-two-directions` and
+    `full-body-high-angle-two-directions` the second panel is a *different* scene direction
+    (blue smoke, magenta gradient), not the untouched plate. Their titles say so. Do not
+    relabel them — they are the better demo of the actual claim (one locked frame, many
+    sets), but they are not evidence of plate fidelity.
+  - The subjects are AI-generated, so no real child's likeness ships on a public page, and
+    the three framings in the set map onto the brief's 全身 / 半身 / 特写 split.
+- **`batch: true`** — the same pack CTA the other 43 batch templates carry, and it renders
+  localized in all ten (verified: "Download Packs" / 下载合集 / パックをダウンロード). The
+  free 5-pack PDF is built —
+  `raw/template-packs/template-studio-digital-backdrop-scene/pack-5.pdf`, 5p US-Letter — via
+  a new entry in `scripts/configs/template_packs_build.json`.
+  ⚠️ **The button does not serve yet.** See the open follow-ups.
+- Verified rendering locally in **all ten locales**: 200 everywhere, zero raw i18n keys, all
+  seven examples present. EN + ZH are `index, follow` with self-canonicals; the other eight
+  are `noindex, follow` per the thin-content policy. Example pages are `noindex, follow`
+  canonicalled to the template (generator-demo per `lib/example_indexing.ts` — the topics
+  carry no CONTENT_SIGNAL topic). **Net new indexable URLs: 2.** Internal search recalls the
+  template for "studio background replacement".
+
+### Why a template page and not a `/tools/*` page
+
+Both were on the table; the SEO doc settles it.
+
+1. **New `/tools/*` surfaces are Tier 4 and gated on the 2026-09-15 crawl checkpoint**
+   (`workstream-seo-smm-growth.md` §2026-09-01 reprioritised-after-audit). Two tool pages
+   from 08-06 are still uncrawled; the open question is whether the block is domain
+   authority rather than content. Shipping a third uncrawled tool page answers nothing.
+2. **A template page is the asset a tool page would point at anyway.** `ecommerce-photo`,
+   `ai-product-photo-generator` and `character-sticker-sheet` are all
+   `action: { type: "generate", templateId }` wrappers around a `requires_image_upload`
+   template. If the 09-15 checkpoint passes, `/tools/<slug>` over this template is a
+   registry entry plus a namespace — zero rework.
+3. **Template pages already earn image-search rank.** The `dress design template` retarget
+   (2026-09-01) worked because `/nano-template/fashion-inspired-gown-design-sheet` held
+   image position 25.3 with the term absent from its title.
+
+### SEO targeting — what is claimed and what is not
+
+Applying the batch-3 heuristic (**specific-artifact beats generic-tool**), the generic
+framing of this job is already known-bad and was deliberately avoided: `ai background
+replacement` **KD 57 / 40/mo**, `ai product background generator` **KD 54 / 70/mo** — both
+sit in the 🔴 column of the batch-2 pull, and both are generic-tool shape. The title leads on
+the artifact instead ("Studio Digital Backdrop") and carries the trade term ("Scene
+Enhancement").
+
+⚠️ **No KD was pulled for the artifact terms — this is a build on an unmeasured cluster.**
+GSC 28d (`raw/gsc-baseline-2026-08-30/`, `raw/gsc-cluster-audit-2026-08-31/`) has **zero**
+photography/backdrop queries, so there is no verified-demand basis either. The build is
+justified by the client engagement, not by a keyword; the ranking upside is a free option on
+a page we needed anyway. Do not score it as a keyword play.
+
+**Queue for the batch-4 SEMrush pull** (all artifact-shaped, all untested):
+`digital backdrop` · `digital backdrops for photographers` · `newborn digital backdrop` ·
+`studio backdrop replacement` · `photo studio background` · `kids photography backdrop` ·
+`background compositing` · `photo retouching outsourcing`. Batch 4 is also where the
+specific-artifact heuristic gets its third test — it is provisional until then.
+
+### Open follow-ups
+
+- **P0 — the pack CTA is shipped but dead.** `batch: true` renders "Download Packs", which
+  calls `templatePacksService.downloadPack` → the backend registry at
+  `~/curify-studio/curify_background/app/data/template_packs.json`. Two steps remain, both
+  outside this repo: upload
+  `raw/template-packs/template-studio-digital-backdrop-scene/pack-5.pdf` to Azure at
+  `packs/template-studio-digital-backdrop-scene/pack-5.pdf`, then add the registry row
+  (`{"5": {"blob_path": …, "points_cost": 0, "card_count": 5, "active": true}}`) and mirror
+  it into `lib/template_packs.json`. **Until then the button alerts on failure.**
+  > This is the house norm, not a new bug: **43 templates carry `batch: true` and only 11
+  > have a backend pack** — `template-herbal` included. Worth a sweep; a dead CTA on 32
+  > templates is a conversion leak nobody has counted.
+- **Excel deliverable.** The brief wants prompt + image pairs summarised in a spreadsheet.
+  Nothing in the repo emits that; a batch runner over this template would need it.
+- **Batch rail.** 70 pairs × 3 framings is a batch job, not 210 single generations. The
+  template is the unit; the runner is not built. Note the pack CTA is a *download* of
+  pre-built samples — it is not batch generation, so it does not close this.
+- **§7z capture.** This is a real prospect brief with verbatim requirements and it is not in
+  any client record. Same exposure class as the five records flagged at
+  `workstream-seo-smm-growth.md` priority #9.
+- **`/tools/` wrapper** — revisit after the 2026-09-15 crawl checkpoint.
 
 ---
 
