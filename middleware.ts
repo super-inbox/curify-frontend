@@ -3,6 +3,7 @@ import { routing } from "./i18n/routing";
 import { NextResponse, type NextRequest } from "next/server";
 import { clientIpFrom, isBlockedIp } from "./lib/blocked-networks";
 import { isBlockedBot, isCorpusPath } from "./lib/blocked-bots";
+import { BLOG_SLUGS } from "./lib/blog-slugs.generated";
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -57,6 +58,47 @@ export default function middleware(req: NextRequest) {
             "cache-control": "public, max-age=86400",
             "x-blocked-reason": nonCanonicalHost ? "bot-on-preview-host" : "bot-on-corpus",
           },
+        });
+      }
+    }
+  }
+
+  // 0c) Real 404 for unknown /blog/* URLs.
+  //
+  // notFound() inside a (public) page does NOT produce a 404: that layout calls
+  // headers(), which forces a dynamic streaming render, and the status is
+  // committed before the child throws. So every nonexistent /blog/x answered
+  // HTTP 200 with a "Blog Post Not Found" body (project_sitewide_soft_404).
+  // Two page-level fixes were tried and reverted before — permanentRedirect()
+  // in the component and a (public)/not-found.tsx boundary — because neither
+  // runs before the status is committed. Middleware does, which is why the
+  // next.config redirects for retired slugs work and the in-page ones did not.
+  //
+  // Scoped to /blog/ deliberately: /nano-template/*, /topics/* and /tools/*
+  // already 404 correctly (they live in (static), which has no path-derived
+  // canonical), so widening this would add edge work for no gain. The slug set
+  // is generated — see scripts/build_blog_slugs.cjs for why it is not
+  // blogs.json.
+  {
+    const seg = url.pathname.split("/").filter(Boolean);
+    const rest = (routing.locales as readonly string[]).includes(seg[0])
+      ? seg.slice(1)
+      : seg;
+    // Only a bare /blog/<slug>. The blog index (/blog) and any deeper path are
+    // left to the app.
+    if (rest.length === 2 && rest[0] === "blog") {
+      let slug = rest[1];
+      try {
+        slug = decodeURIComponent(slug);
+      } catch {
+        // Malformed percent-encoding — treat the raw segment as the slug.
+      }
+      if (!BLOG_SLUGS.has(slug)) {
+        // Rewrite rather than a bare body so the user still gets the styled
+        // 404 page, but with a real 404 status that Google can act on.
+        return NextResponse.rewrite(new URL("/not-found", req.url), {
+          status: 404,
+          headers: { "x-robots-tag": "noindex, nofollow" },
         });
       }
     }

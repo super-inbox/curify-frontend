@@ -235,6 +235,18 @@ const nextConfig: NextConfig = {
       // worth of link equity.
       { source: "/blog/f5-tts-vs-elevenlabs", destination: "/blog/f5-tts-voice-cloning", permanent: true },
       { source: `/:locale(${LOCALE_RE})/blog/f5-tts-vs-elevenlabs`, destination: "/:locale/blog/f5-tts-voice-cloning", permanent: true },
+
+      // Stranded slug, found 2026-09-02. /blog/how-to-translate-asl-video is
+      // the last /blog/ URL Google still has impressions for that resolves to
+      // nothing (33 impressions / 180d, "Crawled - currently not indexed",
+      // last crawled 2026-03-10). It was serving the soft-404 body — HTTP 200,
+      // title "Blog Post Not Found" — because a notFound() inside (public) is
+      // swallowed into a 200 (see project_sitewide_soft_404). Redirects here
+      // rather than at the page level for exactly that reason: next.config
+      // redirects run before render and therefore actually work, which is why
+      // the two above do.
+      { source: "/blog/how-to-translate-asl-video", destination: "/blog/asl-video-translator", permanent: true },
+      { source: `/:locale(${LOCALE_RE})/blog/how-to-translate-asl-video`, destination: "/:locale/blog/asl-video-translator", permanent: true },
       { source: "/subtitle-generator", destination: "/tools/bilingual-subtitles", permanent: true },
       { source: `/:locale(${LOCALE_RE})/subtitle-generator`, destination: "/:locale/tools/bilingual-subtitles", permanent: true },
       { source: "/video-translator", destination: "/tools/video-dubbing", permanent: true },
