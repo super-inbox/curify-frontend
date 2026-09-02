@@ -126,7 +126,25 @@ export async function generateMetadata({
   
   const blogConfig = blogPosts[slug as keyof typeof blogPosts];
   if (!blogConfig) {
-    return { title: "Blog Post Not Found" };
+    // An unknown slug must NOT advertise itself as a real document.
+    //
+    // Returning only a title let `(public)/layout.tsx` supply its path-derived
+    // `alternates.canonical`, so every nonexistent /blog/* URL answered HTTP
+    // 200 (notFound() is swallowed under this layout — see
+    // project_sitewide_soft_404) with a self-canonical claiming to be a
+    // distinct document, alongside a `noindex`. noindex + self-canonical is a
+    // contradiction: one says "do not index this URL", the other says "this
+    // URL is the canonical version of itself".
+    //
+    // `alternates: {}` overrides the layout's block, since Next merges
+    // metadata by replacing a field wholesale rather than deep-merging it.
+    // The middleware 404 is the real fix; this makes the body honest even for
+    // a request that slips past it.
+    return {
+      title: "Blog Post Not Found",
+      robots: { index: false, follow: false },
+      alternates: {},
+    };
   }
 
   // Per-locale canonical + hreflang, derived from params (NOT request headers),

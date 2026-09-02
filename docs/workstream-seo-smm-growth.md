@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-09-01.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-09-02.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -1815,8 +1815,70 @@ extended — but it has no document. Link corrected below to the raw note. See
 
 | # | Item | Why it outranks everything |
 |---|---|---|
-| **1** | **Diagnose the post-fix blog fold.** Two posts crawled after 2026-08-10 still fold to `/`. Establish whether new posts fold at ~1-in-3, and if so what separates `dieline-generator-guide` from `character-turnaround-sheet-guide`, published 10 days apart and both indexed-clean vs folded. | B2 cost a full post to own a KD-19 term and earns zero. Ghost mannequin — the top-ratio term on any board, now shipped in EN **and** hand-written zh (`1eb7d1f0`) — is exposed to the same coin flip and is currently "unknown to Google". Writing more spokes before this is answered is the mistake the 08-17 spec was written to avoid. |
+| **1** | **Diagnose the post-fix blog fold.** ⚠️ Now measured at **34/107 folded (32%)**, 6 of them post-fix, and **priority 1's own ghost-mannequin post is one of them** — folded to `/topics/character` within hours of publishing. Two posts crawled after 2026-08-10 still fold to `/`. Establish whether new posts fold at ~1-in-3, and if so what separates `dieline-generator-guide` from `character-turnaround-sheet-guide`, published 10 days apart and both indexed-clean vs folded. | B2 cost a full post to own a KD-19 term and earns zero. Ghost mannequin — the top-ratio term on any board, now shipped in EN **and** hand-written zh (`1eb7d1f0`) — is exposed to the same coin flip and is currently "unknown to Google". Writing more spokes before this is answered is the mistake the 08-17 spec was written to avoid. |
 | **2** | **Re-ping the two pre-fix folds** (`ai-packaging-design-guide`, `world-cup-2026-top-contenders`). | Free, and the mechanism is proven: `world-cup-2026-ai-prompt-hub` un-folded after a post-fix recrawl. Do this *with* #1, not instead of it — a recrawl that un-folds them is also evidence about #1. |
+
+
+### 2026-09-01 — the two numbers, measured
+
+**Blogs still folded: 34 of 107 (32%).** Full URL-Inspection sweep, not a sample:
+56 indexed clean, 34 `Duplicate without user-selected canonical`, 15 `Crawled – currently not
+indexed`, 2 `Discovered`. Of the 34, **only 6 were crawled after the 08-10 fix**; the other 28
+are pre-fix and a recrawl ping is the entire fix for them.
+
+**And the mechanism has changed.** The 3 real folds crawled 08-10/08-11 point at `/` — the
+documented i18n-catalog collapse. The 3 crawled 08-27 or later point at *specific content pages*:
+
+| post | crawl | googleCanonical |
+|---|---|---|
+| `dieline-generator-guide` | 08-27 | `/nano-template/product-theme-promotional-poster` |
+| `url-to-product-video` | 09-01 | `/nano-template/product-theme-promotional-poster` |
+| `ghost-mannequin-ai-guide` | 09-01 | `/topics/character` |
+
+⚠️ **Priority 1 is already dead.** `ghost-mannequin-ai-guide` shipped 09-01 in EN and
+hand-written zh to own a KD-1 term, was crawled the same day, and folded. It cannot rank. Two
+unrelated posts folding onto the *same* template page is the signature to chase.
+
+Ruled out by measurement — do not re-test: the canonical tag is present and correct in SSR on
+every post checked (Google reports `userCanonical: (none)` regardless); similarity to the
+canonical target does not separate folded from indexed (folded dieline↔target **0.709**, indexed
+turnaround↔*same target* 0.657, the two blogs 0.927 to each other); none of them is on a
+dedicated route.
+
+**Template example pages with zero impressions** (web **or** image — web-only overstates the
+dead count):
+
+| window | zero-impression | share of the 8,232 in the sitemap |
+|---|---:|---:|
+| last 90 days | **5,723** | **69.5%** |
+| last 180 days | **4,729** | **57.4%** |
+
+Against all ~10,766 example pages that exist, roughly 7,100 (90d) and 4,500 (180d) are dead.
+Lead with the sitemap figure — it is exactly verifiable, and Google's own data shows the
+"exists" universe is an undercount.
+
+**The B1 cull is evicting live pages — but far fewer than the raw count suggests.** 1,143 example
+URLs earned impressions in the last 90 days while absent from the sitemap; 67 are the A/B
+treatment arm, leaving 1,076 candidates.
+
+⚠️ **CORRECTION (measured after the restore shipped, `5ca04636`): only 351 were real evictions.**
+Restoring them showed where the other 725 actually sit:
+
+| | n |
+|---|---:|
+| restored by the whitelist patch | **351** |
+| blocked by the template-level **noindex** rule (169 templates) | 706 |
+| ids no longer present in `nano_inspiration.json` | 19 |
+| unexplained | 0 |
+
+And the noindex block is mostly correct. **The noindex rule shipped 2026-07-31, inside the 90-day
+window.** Re-measuring on 08-01→08-30 alone: **663 of the 725 had impressions only *before* the
+noindex**, and just **129** still earn after it — part of which is normal noindex-processing lag.
+
+So "~1,000 pages that earn something are withheld" was **wrong**: it counted pre-noindex
+impressions as current demand. That is the same window-straddling error this doc already recorded
+once for this exact noindex rule — a policy change inside a measurement window makes the window
+unusable, and the fix is always to re-measure on the post-change slice.
 
 ### Tier 1 — free measurements, already scheduled
 
@@ -1867,6 +1929,177 @@ SEO; both decay to unrecoverable.
   ~60%.
 - **Left the free measurements alone.** They cost nothing and three of the five land within a
   fortnight.
+
+## 2026-09-01 — P0-A / P0-B evidence: what the fold is NOT, and why the dead tail is not a demand verdict
+
+### P0-B settles first: the 4,729 are not 4,729 demand verdicts
+
+40 zero-impression example pages, sampled evenly across the list, inspected via URL Inspection:
+
+| index state | n | share |
+|---|---:|---:|
+| Discovered – currently not indexed | 14 | 35% |
+| **Duplicate without user-selected canonical** | **12** | **30%** |
+| Submitted and indexed | 7 | **18%** |
+| URL is unknown to Google | 4 | 10% |
+| Excluded by ‘noindex’ tag | 2 | 5% |
+| Crawled – currently not indexed | 1 | 3% |
+
+**18 of 40 were never crawled at all.**
+
+So **only ~18% are "indexed, given a fair shot, earned nothing"** — the only cohort where zero
+impressions is a demand verdict. Extrapolated over the 4,729: roughly **1,400 are folded** (the
+same P0-A bug, on example pages) and **~2,270 have never been indexed**. Noindexing the set would
+permanently bury ~1,400 pages killed by a canonical bug and ~2,270 that never got a chance.
+
+**This also links P0-A and P0-B: they are the same defect on two surfaces.** Blogs fold at
+**32%** (34/107); the dead example sample folds at **30%**. That is not two problems, it is one
+problem measured twice.
+
+### P0-A: seven hypotheses eliminated — do not re-test these
+
+Comparing folded (`ghost-mannequin-ai-guide` → `/topics/character`, `dieline-generator-guide` →
+`/nano-template/product-theme-promotional-poster`) against indexed
+(`character-turnaround-sheet-guide`, `best-claude-code-design-skills`):
+
+| # | hypothesis | verdict |
+|---|---|---|
+| 1 | canonical tag missing | **NO** — correct absolute self-canonical in SSR on every post |
+| 2 | lexical / visible-text similarity | **NO** — folded↔target **0.709**, indexed↔*same target* 0.657 |
+| 3 | JSON-LD asserts a template identity | **NO** — **zero** JSON-LD blocks on any blog post |
+| 4 | og:url / og:image pointing elsewhere | **NO** — **zero** og:* tags on any blog post |
+| 5 | hreflang mismatch | **NO** — zero hreflang on any post (see the site-wide finding below) |
+| 6 | hero image owned by the fold target | **NO** — the *indexed* post also uses a template-owned image; `dieline` uses its own blog image and folds anyway |
+| 7 | internal anchors pointing at the fold target | **NO** — **zero** links to the chosen canonical from either folded post |
+| 8 | dedicated-route metadata trap | **NO** — all four are on the `[slug]` route |
+
+### What the elimination exposes instead
+
+**Blog pages ship exactly one machine-readable identity signal: `<link rel="canonical">`.** No
+`og:*`, no JSON-LD, no `robots`, no hreflang. That is the thinnest possible identity, and it is
+identical on folded and indexed posts — so it is not the decision boundary, but it is why the
+boundary is so easy for Google to get wrong. There is nothing on the page asserting *what this
+document is* beyond its URL.
+
+**CORRECTION 2026-09-01 (same day): hreflang IS present, site-wide, and correct.** An earlier
+revision of this section claimed no page type emits it. That was a **case-sensitive grep**
+artifact — Next.js renders the attribute as `hrefLang`, and `grep -o 'hreflang'` misses it. Every
+page type carries a full alternate set (blog/topics/tools/home 11 alternates + `x-default`;
+nano-template deliberately fewer, per the localized-locales-only policy). `content-type` is
+`text/html`, where attribute names are ASCII case-insensitive, so `hrefLang` parses as `hreflang`.
+**This is not a defect, and the "unresolved alternates path" lead is dead.**
+
+What *does* stand, verified case-insensitively: blog pages carry **no `og:*`, no `twitter:*`, no
+JSON-LD, no `itemprop`, no schema.org markup of any kind**. The only `<meta>` tags are
+`description`, `keywords`, `viewport`, `next-size-adjust`. So the identity signals are: a correct
+canonical, a correct hreflang set, a title and a description — and nothing that states *what kind
+of thing* the document is. That remains the plausible reason the boundary is easy to get wrong,
+but it is a weakness rather than a located bug, and it is identical on folded and indexed posts.
+
+⚠️ **Note for the locale A/B readout (~09-23):** its stated question is *"does a `<loc>` entry do
+anything when the page already emits complete hreflang alternates?"* **The page emits none.** The
+alternates live only in the sitemap. Treatment URLs still inherit hreflang from their listed
+siblings' `<url>` blocks, so the arms are not broken — but the hypothesis has to be restated
+before the result is interpreted.
+
+**Deployment is not a factor.** Prod is serving this branch: `sitemap.xml` returns the 10,756
+image entries from `08092e73` and `/tools/worksheet-from-video` shows the `02b114c1` title. The
+folded posts are running current code.
+
+
+### 2026-09-02 — rendered-DOM probe: clean. Cause still not located.
+
+Playwright, Googlebot UA, waited for `networkidle`, folded vs indexed posts. **The rendered DOM
+is structurally identical across both**: canonical survives hydration (count=1, correct), title
+unchanged, 11 `<link rel="alternate">` before and after, **zero console or page errors**, no
+redirect, and no injected template content (text grows only 250–320 chars from SSR). So the
+document Google renders on a folded page is correct and self-consistent — and it still refuses
+the declared canonical. **Hypothesis 10 eliminated.**
+
+**A separate, real defect found on the way: `/blog/*` is a soft-404 that self-canonicals.**
+`blog/[slug]/page.tsx:219` calls `notFound()`, but under `(public)` that is swallowed into
+**HTTP 200**; `generateMetadata` returns `{title: "Blog Post Not Found"}` with no `alternates`;
+and `(public)/layout.tsx` then supplies a **path-derived self-canonical for the nonexistent URL**.
+Any arbitrary `/blog/x` therefore returns 200 + 752KB + a self-canonical claiming to be a distinct
+document. `/nano-template/*`, `/topics/*` and `/tools/*` all **404 correctly** — they are in
+`(static)`, which deliberately has no path-derived canonical. `/blog/` is in `(public)`, which is
+where the fold is concentrated.
+
+⚠️ **Suggestive, but not the cause.** Measured blast radius is **one URL**: of the 105 `/blog/`
+slugs with impressions in 180d, 102 are real and 3 are ghosts — 2 of which now 308-redirect. Only
+`/blog/how-to-translate-asl-video` serves the soft-404, and Google has it as "Crawled – currently
+not indexed". One ghost cannot teach Google to distrust the path. Fix it on its own merits: it is
+a latent scaling risk, and `f5-tts-vs-elevenlabs` (619 impr) plus `3x3-grid-collage-ai-prompts`
+(222) show what stranded slugs are worth.
+
+**Where P0-A stands: ten hypotheses eliminated, cause unlocated.** Everything observable in SSR,
+the rendered DOM, response headers and index metadata is correct and identical between folded and
+indexed posts. The next step is not another local probe — it is a **GSC Live Test** on
+`dieline-generator-guide` vs `character-turnaround-sheet-guide`, which returns Google's own
+rendered HTML and canonical reasoning and is not available through the API. That needs a human in
+the GSC UI.
+
+### Cohort split for the 34 folds — three different jobs, not one bug
+
+| cohort | n | action |
+|---|---:|---|
+| stale, last crawled pre-2026-08-10 | **28** | **batch recrawl request, then re-classify.** No debugging. |
+| `/` collapse, crawled 08-10/08-11 | 3 | verify after recrawl — old i18n-catalog mechanism, fix already live |
+| **wrong-content canonical, crawled 08-27+** | **3** | **active P0-A investigation** |
+
+---
+
+## 2026-09-02 — batch-4 seeds: the photography-backdrop cluster, queued not claimed
+
+A 儿童摄影 **场景增强** client trial (`raw/context-enrichment-08-31/`) exposed a capability gap
+— nothing in the 27 tools or 351 templates does a **locked-subject, background-only** retouch.
+`template-studio-digital-backdrop-scene` shipped to close it; the full review, the build and
+the template-vs-tool-page reasoning are in
+[`search-and-content.md`](search-and-content.md) §2026-09-02. What belongs in *this* doc is
+the targeting decision and what it does **not** claim.
+
+**Placement obeys this doc's own gate.** A new `/tools/*` surface is Tier 4, gated on the
+**2026-09-15** crawl checkpoint, so it was not built. The ship is a
+`/nano-template/*` page: **2 net new indexable URLs** (en + zh — the template's `locales`
+holds only the two authored ones), and its example page is `noindex, follow` canonicalled to
+the template, so it adds nothing to the 8,232-URL example sitemap. If 09-15 passes,
+`/tools/<slug>` over this template is a registry entry plus a namespace — the same
+`action: { type: "generate", templateId }` shape as `ecommerce-photo` and
+`character-sticker-sheet`.
+
+**The generic framing was avoided on this doc's evidence.** `ai background replacement`
+(KD 57, 40/mo) and `ai product background generator` (KD 54, 70/mo) are both in the batch-2
+🔴 column and both are generic-tool shape. The title leads on the artifact instead.
+
+⚠️ **Nothing here is a measured keyword play.** No KD was pulled for the artifact terms, and
+the 28d GSC pull (`raw/gsc-baseline-2026-08-30/`, `raw/gsc-cluster-audit-2026-08-31/`) shows
+**zero** photography or backdrop queries — so unlike `raw/kd-check-seeds-2026-09-01.md`, this
+cluster has no verified-demand basis. The page was built for a client engagement; ranking is
+a free option on it. **Do not count it against the low-KD thesis in either direction.**
+
+### Batch-4 seeds — artifact-shaped, all untested
+
+Bring back Volume, KD, Intent, SERP features. The buy signal is unchanged: **Volume ≥ 500/mo
+AND KD ≤ 40**, and per batch 3, **KD low + CPC $0.00 means audience, not revenue** — carry
+CPC back or the row is unreadable.
+
+```
+digital backdrop
+digital backdrops for photographers
+newborn digital backdrop
+studio backdrop replacement
+photo studio background
+kids photography backdrop
+background compositing
+photo retouching outsourcing
+```
+
+Batch 4 is also the **third test of the specific-artifact heuristic** (batch 1's `AI + service
+noun` died in batch 2; batch 2's trade-vocabulary rule was subsumed by batch 3's). It stays
+provisional until this batch either holds or breaks it. Note the shape hedge: half these seeds
+name an artifact (`digital backdrop`, `newborn digital backdrop`) and half name a service
+(`photo retouching outsourcing`, `background compositing`) — that split is deliberate, so the
+batch can separate the two rather than confirm one.
 
 ---
 

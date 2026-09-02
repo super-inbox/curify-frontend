@@ -1,6 +1,6 @@
 # Curify product workstreams — index
 
-_Last updated: 2026-08-12 (workstream D — first measurement + P0 reset; memory table repaired). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
+_Last updated: 2026-09-02 (workstream A — scene-enhancement template shipped; see the A list below). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
 
 The canonical pointer for the four **product** workstreams (search, tools, growth, vertical use-cases). Companion outbound/GTM workstreams index lives separately at `~/curify-studio/gtm_tools/INDEX.md`.
 
@@ -87,6 +87,18 @@ none of them measurable:
 ## Current progress (recent ships — most recent first)
 
 ### A. Search & Content
+- **2026-09-02** **Scene-enhancement template shipped** — `template-studio-digital-backdrop-scene`
+  (`/nano-template/studio-digital-backdrop-scene`), the catalog's first **locked-subject,
+  background-only** retouch: upload a studio portrait, the person is preserved and only the set
+  behind them is rebuilt (backdrop sweep · reflective floor · LED seam · props · one series-wide
+  grade), parameterised over scene / props / 全身-半身-特写. Closes a gap confirmed across all 27
+  tools and 351 templates. 7 examples + i18n in all 10 locales + the `batch: true` pack CTA
+  (⚠️ the pack blob + backend registry row are still missing — same state as 32 of the 43
+  batch templates). Driven by a 儿童摄影 场景增强 client trial (70 pairs), **not** by a
+  keyword — no KD pulled, zero GSC demand on the cluster; batch-4 seeds queued in
+  `workstream-seo-smm-growth.md` §2026-09-02. Built as a template page, not `/tools/*`, because
+  new tool surfaces are Tier 4 gated on the 2026-09-15 crawl checkpoint. Doc:
+  [`search-and-content.md`](search-and-content.md) §2026-09-02
 - **2026-06-26** POD reframe section added (POD-A1..A6) — commit `a03ac94c`
 - **2026-06-25** Search retrieval improvement plan landed — `docs/search-retrieval-improvement-plan-2026-06-25.md`
 - **2026-06-17** Template matching A vs B audit — `docs/template-matching-section-a-vs-b-2026-06-17.md`

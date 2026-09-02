@@ -21291,5 +21291,104 @@
       "modern"
     ],
     "image_input": "optional"
+  },
+  {
+    "id": "template-studio-digital-backdrop-scene",
+    "locales": {
+      "en": {
+        "base_prompt": "(Studio Scene Enhancement Retoucher) This is a STRICT LOCAL EDIT of the attached photograph — not a re-generation, not a re-drawing of the person. The person in the attached photo is a LOCKED subject: preserve the original pixels, identity and photographic state at maximum fidelity. The ONLY region you may alter is the background outside the subject's silhouette. Do NOT generate, repaint, cover, inpaint or \"enhance\" the head, face, hair, neck, body, arms, hands, clothing or shoes. Keep the subject's exact position, size, pose, facial features, expression, garments and skin tone unchanged.\n\nShot type: {framing}. Build the new set so it reads correctly at this crop — on a close-up only a sliver of the set is visible, so carry the colour ramp, the lighting direction and the prop colour accent into frame instead of forcing the whole set in.\n\nScene direction: {scene_theme}\n\n【Backdrop and floor】One unified two-layer set. Replace the existing background with a single seamless photographic paper sweep running top to bottom through the scene's colour ramp, joined to a lightly reflective floor. Run one horizontal recessed LED strip across the seam where the sweep meets the floor, and let its light fall on both the paper and the floor.\n\n【Rear space】A large, low-saturation seamless sweep with a slight vintage cast. No architecture and no complex spatial detail — it must read as a soft-lit studio backdrop, not a location.\n\n【Props】{prop_set}. Arrange them deliberately, as a composed still life around the subject, and scatter 2–3 loose petals or small elements on the floor. Props may lightly overlap the subject's limbs from in front, but must never cross the face. Keep the identical prop set in every frame so a whole batch reads as one shoot.\n\n【Lighting — the key upgrade】Commercial studio compound lighting. Key light falls softly from the upper right and slightly in front of the subject; add a faint warm fill on the front-left of the face. Give clothing, accessories and hair a cool rim highlight along the silhouette edge. Brighten the upper-right and lower-right of the backdrop and let the left side fall away into the deepest tone of the ramp. The subject stays 100% in focus, the props stay clearly legible, and the backdrop is a smooth studio gradient falloff.\n\n【Colour grading】Hold one standard palette across the whole series: roughly 80% of the frame sits in the low-saturation backdrop ramp plus the floor, with the prop colour as the only high-saturation accent. Stable, restrained, quiet.\n\n【Texture】Keep the subject's natural skin texture and native detail — no plastic smoothing, no beauty filter. Give painted-metal props a horizontal press texture, a metal handle and light wear; petals thin and soft with fine creases at the edge; stems with down and natural bends. The backdrop paper carries no visible texture; the floor is lightly reflective and untextured. Commercial-sample standard for a fashion-magazine studio shoot.\n\n【Mood】{scene_theme} — restrained, cool, editorial. Every frame in the series must transmit the same feeling.\n\n【Prohibited】Do not change the subject's original position, size or proportions. Do not change the facial features, expression, skin tone or make-up. Do not change the clothing. Do not move props that belong to the original shot. Do not regenerate the person and do not add new people. Decorative elements must integrate naturally without breaking the original composition balance.\n\nOutput the retouched photograph only, at the original aspect ratio, 2K or higher.",
+        "parameters": [
+          {
+            "name": "scene_theme",
+            "label": "Scene direction",
+            "type": "text",
+            "placeholder": [
+              "deep navy minimalist Korean fashion-magazine studio",
+              "warm autumn harvest-day set",
+              "clean white gallery with soft morning light"
+            ]
+          },
+          {
+            "name": "prop_set",
+            "label": "Props around the subject",
+            "type": "text",
+            "placeholder": [
+              "a large cream painted-metal flower bucket filled with orange poppies",
+              "a rattan basket of dried wheat and a brass lantern",
+              "a stack of pastel gift boxes and a single tulip"
+            ]
+          },
+          {
+            "name": "framing",
+            "label": "Shot type",
+            "type": "text",
+            "placeholder": [
+              "full body",
+              "half body",
+              "close-up"
+            ]
+          }
+        ]
+      },
+      "zh": {
+        "base_prompt": "（场景增强精修师）这是一次基于原图的严格局部编辑，不是重新生成图片，不是重新绘制人物。原图人物是不可修改的锁定主体，必须最大程度保留原始人物像素、身份特征和摄影状态。唯一允许修改的区域是人物身体外侧的背景区域。不得对人物头部、面部、头发、颈部、身体、手臂、手掌、服装和鞋子区域进行生成、重绘、覆盖、修复或增强。保留原始照片中人物的精确位置、大小、姿势、面部特征、表情、服装和肤色不变。\n\n景别：{framing}。按该景别组织新布景——特写只会露出布景的一小部分，此时把色彩渐变、光线方向和道具的高饱和点缀带进画面即可，不要硬塞整套布景。\n\n背景增强方向：{scene_theme}\n\n【底座与背景】采用统一双层分层布景结构，将原有背景升级为一整面从上至下按场景色阶渐变的无缝摄影纸，下方连接轻微反光的地面。地面与背景交界处有一条横向贯穿的内嵌式白色 LED 灯带，灯光同时照射在背景和地面上。\n\n【空间后景】大面积低饱和度无缝渐变摄影纸背景，轻微复古色调。没有复杂空间细节，像柔光棚拍背景布，而不是一个真实场地。\n\n【道具装饰】{prop_set}。道具精心布置，像精心设计过的构图；地面上散落 2-3 片花瓣或同类小元素。道具可以从前方轻微遮挡人物四肢，但绝不可遮挡面部。整批图片使用完全相同的道具组合，让成套作品看起来出自同一场拍摄。\n\n【光线效果 - 关键增强】采用商业棚拍式复合光线，人物主光从画面右上方偏前的位置柔和照射，同时在面部左前方加入淡淡的暖色补光。人物服装、配饰、头发等轮廓边缘均具有偏冷的高光。背景右上角和右下方亮度较高，背景左侧逐渐过渡为色阶中最深的颜色。人物主体 100% 清晰对焦，道具保持较高辨识度，背景为平滑虚化的棚拍渐变。\n\n【色调调整】统一系列标准配色体系：全画面大约 80% 的颜色集中在低饱和的背景色阶与地面范围内，道具颜色作为唯一的高饱和点缀，呈现稳定、低饱和、清冷、安静的视觉氛围。\n\n【质感强化】完整保留人物自然肌肤肌理与原生细节，无假面磨皮质感。喷漆金属道具带有横向压纹、金属提手和少量使用痕迹；花瓣薄而柔软，边缘有细小褶皱；花茎带有绒毛和弯曲变化。背景是无明显纹理的无缝渐变摄影纸，地面则是轻微反光且无纹理。整体达到时尚杂志摄影商业样片标准。\n\n【氛围营造】{scene_theme}——克制、冷静、杂志感。整个系列每一张都要传递同一种视觉感受。\n\n【禁止事项】不得改变人物的原始位置、大小、比例；不得改变人物的面部特征、五官、表情、肤色、妆容；不得改变人物的服装；不得改变原有道具的基本位置；不得重新生成人物或添加新人物。装饰元素应自然融入，不破坏原有构图平衡。\n\n只输出精修后的照片，保持原图比例，清晰度 2K 以上。",
+        "parameters": [
+          {
+            "name": "scene_theme",
+            "label": "场景方向",
+            "type": "text",
+            "placeholder": [
+              "深海军蓝简约韩系时尚杂志风",
+              "暖调秋日丰收布景",
+              "干净白色展厅与清晨柔光"
+            ]
+          },
+          {
+            "name": "prop_set",
+            "label": "人物周围道具",
+            "type": "text",
+            "placeholder": [
+              "大型米白色喷漆金属花桶，桶内数量较多的橙色虞美人",
+              "藤编篮装干麦穗与黄铜提灯",
+              "一摞马卡龙色礼盒与一支郁金香"
+            ]
+          },
+          {
+            "name": "framing",
+            "label": "景别",
+            "type": "text",
+            "placeholder": [
+              "全身",
+              "半身",
+              "特写"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-studio-digital-backdrop-scene-navy-korean-poppy-prev.jpg",
+    "requires_image_upload": true,
+    "image_input": "required",
+    "topics": [
+      "design",
+      "lifestyle",
+      "portrait",
+      "studio",
+      "lighting",
+      "composition",
+      "photorealistic",
+      "before-and-after",
+      "fashion",
+      "soft-light",
+      "minimalist",
+      "elegant",
+      "sophisticated",
+      "modern"
+    ],
+    "batch": true,
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-09-02",
+    "allow_generation": true
   }
 ]

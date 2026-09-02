@@ -8458,5 +8458,27 @@
         ]
       }
     }
+  },
+  "template-studio-digital-backdrop-scene": {
+    "category": "Studio Scene Enhancement",
+    "description": "Upload a studio portrait and only the set behind the person is rebuilt — seamless backdrop sweep, reflective floor, LED seam, styled props and one series-wide colour grade. Pose, face, clothing and skin are left untouched.",
+    "title": "Studio Digital Backdrop — Scene Enhancement, Subject Locked",
+    "content": {
+      "sections": {
+        "what": "This template performs a strict local edit on an uploaded studio photograph: the person is a locked subject whose pixels, pose, expression, garments and skin tone are preserved, and the only region rewritten is the background outside their silhouette. It builds a unified two-layer set — a seamless photographic paper sweep in your colour ramp joined to a lightly reflective floor with a recessed LED strip along the seam — then adds a styled prop arrangement, commercial studio lighting with a cool rim and a warm face fill, and one restrained colour grade. Because the scene direction, the prop set and the shot type are supplied as three short fields, the same three lines can be re-run across full-body, half-body and close-up frames so an entire batch reads as one shoot rather than a set of unrelated composites.",
+        "who": "Built for photography studios and the retouching desks that serve them — children's and family portrait studios, newborn and milestone shoots, school and senior portraits, and lookbook teams who shoot on plain seamless paper and need a themed set added afterwards. It is also the shape of the job when a studio outsources scene enhancement in batches of dozens of pairs against a written style spec.",
+        "how": [
+          "Upload one studio photograph shot against a plain or simple backdrop.",
+          "Describe the scene direction, the props to place around the subject, and the shot type (full body, half body or close-up).",
+          "Generate — the person is preserved and only the set behind them is rebuilt, at the original aspect ratio.",
+          "Re-run the same three fields on the rest of the batch to keep the whole series on one backdrop, one prop set and one colour grade."
+        ],
+        "prompts": [
+          "Deep navy minimalist Korean fashion-magazine studio, a cream painted-metal flower bucket of orange poppies, full body.",
+          "Warm autumn harvest-day set, a rattan basket of dried wheat and a brass lantern, half body.",
+          "Clean white gallery with soft morning light, a stack of pastel gift boxes and a single tulip, close-up."
+        ]
+      }
+    }
   }
 }
