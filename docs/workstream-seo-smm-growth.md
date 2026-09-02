@@ -2039,6 +2039,46 @@ indexed posts. The next step is not another local probe — it is a **GSC Live T
 rendered HTML and canonical reasoning and is not available through the API. That needs a human in
 the GSC UI.
 
+
+### 2026-09-02 — ⚠️ the "active fold" may not exist. Wrong boundary date.
+
+GSC on `dieline-generator-guide` reports **"User-declared canonical: None"** at a crawl of
+**2026-08-27**. That is not Google refusing our canonical — **there was none to refuse.** The blog
+page only began emitting its own canonical in `76c712e6` ("it didn't before — it relied on the
+shared layout"), which reached **main at 2026-09-01 06:37 UTC** (PR #564).
+
+Every fold above was classified against the **2026-08-10 i18n-catalog fix**. For a *canonical*
+defect the boundary is the **2026-09-01 canonical fix**. Re-checked with exact crawl times:
+
+| post | last crawl (UTC) | vs canonical fix |
+|---|---|---|
+| ai-collage-digital-wallpaper-guide | 2026-08-10T16:00 | before |
+| 10-prompting-tips-nano-banana | 2026-08-10T22:55 | before |
+| ultimate-directory-of-nano-banana-prompts | 2026-08-11T09:47 | before |
+| dieline-generator-guide | 2026-08-27T14:17 | before |
+| url-to-product-video | 2026-09-01T02:53 | before |
+| **ghost-mannequin-ai-guide** | **2026-09-01T06:47** | **+10 min** |
+
+**All 34 folds were crawled against HTML with no page-level canonical.** The one apparent
+exception is ghost-mannequin at ten minutes past the merge — and a production build of this app
+takes ~20 minutes, so that crawl almost certainly hit the previous deploy as well.
+
+**There is no evidence of a fold on any crawl that saw the fixed HTML.** The Tier 0 blocker that
+reordered this whole plan on 09-01 may have been fixed on 08-31, before it was diagnosed.
+
+**What this changes right now:**
+- **The "stop writing blog content" hold is provisional, not established.** It was justified by a
+  live ~1-in-3 fold rate; that rate is not demonstrated on post-fix crawls.
+- **Do not spend engineering on a fold cause** until a post-fix recrawl actually folds. The GSC
+  Live Test is still worth running — it costs two minutes and would settle it immediately — but
+  it is no longer the gate it was.
+- All 34 are queued (28 pinged 09-01, 6 pinged 09-02). **Verdict ~09-09 to 09-15.**
+
+**Method note worth keeping:** when splitting a defect cohort into "before/after the fix", the fix
+must be the one that touches *the signal being measured*. Using the i18n-payload fix as the
+boundary for a canonical defect manufactured six phantom active bugs. Use the **merge-to-main
+time** of the deploy that changed that exact field, not the commit authoring date.
+
 ### Cohort split for the 34 folds — three different jobs, not one bug
 
 | cohort | n | action |
