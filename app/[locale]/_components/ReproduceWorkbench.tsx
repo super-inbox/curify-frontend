@@ -99,6 +99,16 @@ type ResultItem = { id: string; url: string; label: string; kind: "primary" | "d
 const PARAM_COLLAPSE_AT = 6;
 const LONG_VALUE_CHARS = 60;
 
+// Longest prompt that still fits the preview's own `max-h-48` (192px) box
+// without turning into an inner scroll region: ~10 lines of text-xs
+// leading-relaxed at column-2 width. Past this, auto-opening the preview
+// buries the parameters and the Generate button under a wall of text that
+// you then have to scroll *inside* — so long prompts stay folded and the
+// summary row becomes the affordance. Measured 2026-09-02 over the 161
+// upload-capable templates: median prompt 957 chars, so the long half
+// folds; short prompts keep the previous open-by-default behaviour.
+const PROMPT_PREVIEW_AUTOOPEN_MAX_CHARS = 700;
+
 export default function ReproduceWorkbench({
   locale,
   templateId,
@@ -293,6 +303,12 @@ export default function ReproduceWorkbench({
   const selectedWf = selectedFormat ? genFormats.find((w) => w.key === selectedFormat) ?? null : null;
 
   const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
+
+  // Drives the prompt-preview `open` default below. Read off basePrompt, not
+  // filledPrompt: filling params only lengthens the text, and the default must
+  // not flip open/closed as the user types.
+  const promptPreviewFitsUnscrolled =
+    (basePrompt?.length ?? 0) <= PROMPT_PREVIEW_AUTOOPEN_MAX_CHARS;
 
   // Generate the SELECTED output format: the default (null) is the base template
   // generation (the plain image); any other selection runs that format's transform
@@ -683,10 +699,14 @@ export default function ReproduceWorkbench({
             )}
 
             {/* Prompt preview — kept in the DOM for SEO + power users. Opened by
-                default in upload mode (it is column 2's primary content there). */}
+                default in upload mode (it is column 2's primary content there),
+                but only when it fits without scrolling — see
+                PROMPT_PREVIEW_AUTOOPEN_MAX_CHARS. */}
             <details
               className="group rounded-xl border border-neutral-200 bg-white"
-              {...(col1.mode === "upload" ? { open: true } : {})}
+              {...(col1.mode === "upload" && promptPreviewFitsUnscrolled
+                ? { open: true }
+                : {})}
             >
               <summary className="flex cursor-pointer items-center justify-between gap-2 px-3 py-2 text-xs font-semibold text-neutral-600 [&::-webkit-details-marker]:hidden">
                 <span className="inline-flex items-center gap-1.5">
