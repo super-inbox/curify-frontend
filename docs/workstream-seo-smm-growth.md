@@ -1811,6 +1811,8 @@ extended — but it has no document. Link corrected below to the raw note. See
 
 ## 2026-09-01 — reprioritised after the audit
 
+> **Superseded by "2026-09-04 — P0 re-derived" at the end of this doc.** Its Tier 0 (active blog fold) rests on a cohort split against the wrong fix — see the 09-02 correction above.
+
 ### Tier 0 — the blocker, and it is new information
 
 | # | Item | Why it outranks everything |
@@ -2140,6 +2142,79 @@ provisional until this batch either holds or breaks it. Note the shape hedge: ha
 name an artifact (`digital backdrop`, `newborn digital backdrop`) and half name a service
 (`photo retouching outsourcing`, `background compositing`) — that split is deliberate, so the
 batch can separate the two rather than confirm one.
+
+## 2026-09-04 — P0 re-derived after the fold finding + Pinterest Standard
+
+**Supersedes the 2026-09-01 tier list.** Two things invalidated it. The Tier 0 blocker (active
+blog fold) is probably not real — every fold was crawled against HTML that had no page-level
+canonical. And Pinterest Standard access landed, unblocking the only channel that was gated on
+someone else's decision.
+
+Both P0s below are **unblocked, unstarted, and not waiting on a readout.** Everything else on
+this page is now either a scheduled read or gated behind one.
+
+### P0-1 — Publish to Pinterest
+
+The only genuinely new distribution channel, and it is ready today: OAuth solved with a
+long-lived refresh token (no consent round-trip), `scripts/pinterest_publish.cjs` written,
+7 boards live, BUSINESS account. Dry-run verified 2026-09-04 — image 200, landing 200,
+896×1200 at ratio 0.75, UTM tagged, correctly linked to the **template** page.
+
+It also matches the strongest measured demand signal on the site. Image search carries **19,035
+impressions vs web's 12,752**, and the clusters that look dead in the web report are image-native
+(fashion 206×, education 173×, AI-selfie image-only). Pinterest is a visual discovery engine;
+this is the same demand, on a surface we do not have to out-rank Google for.
+
+**Open before scaling:** the live `POST /v5/pins` is still unproven — Trial returned 403 code 29
+there, and only a real post distinguishes Standard from Trial. Do one Pin first, confirm 201,
+then batch.
+
+**Constraints that are already known and must not be relearned** (see
+[[project_pinterest_publishing]]): never link a Pin to an example page — they are `noindex` and
+canonical to the template; persist returned pin ids immediately (the 27 legacy `mbti-curify` pins
+have no recorded ids and no recoverable analytics); pick portrait examples rather than building a
+canvas pipeline (61% of 3,269 images are already portrait at a 0.67 median); and **check the page
+for third-party IP before any submission** — only `/nano-template/custom-character-card` is
+verified original throughout.
+
+### P0-2 — Give the blog posts inbound links
+
+GSC on `dieline-generator-guide` reports **"Referring page: None detected."** All four measured
+posts report `referringUrls = 0`. The 2026-08-31 interlink work (`4c0715b5`) added
+`TOOL_RELATED_TOOLS`, which is tools→tools — no blog gained an inbound edge.
+
+This was P0-adjacent before and kept slipping because the fold looked more urgent. With the fold
+probably resolved, **this becomes the binding constraint on every blog post we have already
+paid for**, including the KD-1 ghost-mannequin spoke. The spokes were justified partly as inbound
+links *for the tools*; nothing points at the spokes.
+
+Cheapest source is the tool pages the spokes already link down to — make it an edge, not an arrow.
+
+### Not P0 — scheduled reads, no work until they land
+
+| date | what |
+|---|---|
+| **09-09** | do the 6 re-pinged folds un-fold? Verdict on whether the fold is real at all |
+| **09-15** | re-classify the 28 stale folds; did `die-cut-sticker-file` get crawled? |
+| **09-22** | image-SEO readout (`08092e73`). Baseline 19,035 impr / pos 41.2 / 39 clicks |
+| **09-23** | locale A/B — ⚠️ restate the hypothesis, it assumed on-page hreflang that is sitemap-only |
+| **10-01** | worksheet + dress-design retargets |
+
+### Not P0, not SEO, still decaying
+
+Carried unchanged from the operator's own 09-01 list, where they were ranked above the SEO build
+tier: the five §7z records are not in version control (`agentic-adhoc-inbox` is not a git repo —
+including the ¥27,800 project with 4 rounds of client feedback), and `client-006` is still a
+placeholder in `.client-key.json`. Both decay to unrecoverable.
+
+### Explicitly deferred
+
+- **Resuming blog publishing** — hold one more week. The "stop writing" hold is provisional, not
+  established, but 09-09 is cheap insurance against publishing into a channel that eats a third
+  of it.
+- **B3 `what is a tech pack`** (90/mo, KD 1) — the best remaining content ratio, unblocked the
+  moment 09-09 comes back clean.
+- **Any engineering on a fold cause** — do not spend until a post-fix recrawl actually folds.
 
 ---
 
