@@ -108,6 +108,19 @@ export const USD_PER_CREDIT = 0.1;
  *  above it printed 1,200 from this same source. */
 export const PLAN_CREDITS = { FREE: 50, CREATOR: 200, PRO: 1200 } as const;
 
+/** Credits to remove the watermark from one generated file (image or video).
+ *
+ *  Mirrors `crud.credits.CLEAN_MASTER_UNLOCK_COST`. Buy-once per project: the
+ *  backend keys entitlement on a deterministic invoice_id, so re-downloading a
+ *  file you already unlocked is free.
+ *
+ *  NOT payable from the free signup grant — the backend gates on the purchased
+ *  balance and debits it, the same carve-out the factory exports carry. A FREE
+ *  account holding only signup credits is refused with NEEDS_PURCHASED_CREDITS
+ *  and routed to a top-up. (Topping up then clears the badge outright, so in
+ *  practice this price is only charged against previously purchased credits.) */
+export const CLEAN_MASTER_UNLOCK_CREDITS = 5;
+
 /** Dollars for `credits` at top-up.
  *
  *  Flat $0.10/credit on every plan, because that is what the backend does:

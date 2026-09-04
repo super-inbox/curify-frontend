@@ -4,6 +4,7 @@ import { join } from "node:path";
 
 import {
   IMAGE_GENERATION_CREDITS,
+  CLEAN_MASTER_UNLOCK_CREDITS,
   PACKAGING_MOCKUP_CREDITS,
   STICKER_EXPORT_CREDITS,
   ACRYLIC_EXPORT_CREDITS,
@@ -24,6 +25,7 @@ import { JOB_UI_CONFIG } from "@/lib/create-job-ui";
  *    design_tool_pipelines.ACRYLIC_EXPORT_CREDITS   = 50.0
  *    design_tool_pipelines.PACKAGING_MOCKUP_CREDITS = 10.0
  *    product_video_pipeline.PRODUCT_VIDEO_CREDITS   = 30.0
+ *    crud.credits.CLEAN_MASTER_UNLOCK_COST          = 5.0
  *
  *  D2M prices cut 2026-08-30 (sticker 90 → 40, acrylic 120 → 50, mockup 15 → 10). */
 const BACKEND_CHARGES = {
@@ -32,6 +34,7 @@ const BACKEND_CHARGES = {
   acrylicExport: 50,
   packagingMockup: 10,
   productVideo: 30,
+  cleanMasterUnlock: 5,
 } as const;
 
 /** Per-minute job rates, from JOB_CREDIT_COST in
@@ -51,6 +54,12 @@ const BACKEND_RATES_PER_MINUTE = {
 describe("credit pricing", () => {
   it("mirrors the backend charge for image generation", () => {
     expect(IMAGE_GENERATION_CREDITS).toBe(BACKEND_CHARGES.image);
+  });
+
+  it("mirrors the backend charge to remove an image watermark", () => {
+    // Buy-once per project. If these drift the button quotes one price and the
+    // ledger takes another — the exact failure lib/credit_utils.js used to have.
+    expect(CLEAN_MASTER_UNLOCK_CREDITS).toBe(BACKEND_CHARGES.cleanMasterUnlock);
   });
 
   it("mirrors the backend charge for the design-to-manufacturing tools", () => {

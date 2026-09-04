@@ -11,7 +11,9 @@ import AslUnverifiedNotice from "../../../_components/AslUnverifiedNotice";
 import { ProjectDetails } from "@/types/segments";
 import { projectService } from "@/services/projects";
 import { useSetAtom } from "jotai";
-import { jobTypeAtom } from "@/app/atoms/atoms";
+import { jobTypeAtom, modalAtom, topUpContextAtom } from "@/app/atoms/atoms";
+import { CLEAN_MASTER_UNLOCK_CREDITS } from "@/lib/pricing";
+import { useTracking } from "@/services/useTracking";
 import { File } from "@/types/projects";
 
 const TEXT_ONLY_JOB_TYPES = new Set(["video_transcript", "video_summarizer"]);
@@ -33,6 +35,62 @@ export default function ProjectDetailsPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   const setJobType = useSetAtom(jobTypeAtom);
+  const setModal = useSetAtom(modalAtom);
+  const { track } = useTracking();
+  const setTopUpContext = useSetAtom(topUpContextAtom);
+  const [unlockingClean, setUnlockingClean] = useState(false);
+  const [cleanUrl, setCleanUrl] = useState<string | null>(null);
+  const [unlockNote, setUnlockNote] = useState<string | null>(null);
+
+  /** Buy the unwatermarked master of this video.
+   *
+   *  Same endpoint and same contract as the image workbench — the mark differs
+   *  by medium, the entitlement does not. Not payable from the free signup
+   *  grant, so NEEDS_PURCHASED_CREDITS routes to a top-up exactly as an empty
+   *  balance would. */
+  const unlockClean = async () => {
+    if (!id || unlockingClean) return;
+    setUnlockNote(null);
+    setUnlockingClean(true);
+    try {
+      const res = await projectService.removeWatermark(id);
+      if (!res?.success) {
+        if (
+          res?.code === "INSUFFICIENT_CREDITS" ||
+          res?.code === "NEEDS_PURCHASED_CREDITS"
+        ) {
+          setUnlockNote(res.message || "Top up to remove the watermark.");
+          track({
+            contentId: "paywall:clean-video-unlock",
+            contentType: "topic_capsule",
+            actionType: "click",
+          });
+          setTopUpContext({
+            required: res.points_required ?? CLEAN_MASTER_UNLOCK_CREDITS,
+            available: res.balance ?? 0,
+            jobLabel: "Watermark-free download",
+            surface: "clean-video-unlock",
+          });
+          setModal("topup");
+          return;
+        }
+        throw new Error(res?.message || "Unlock failed");
+      }
+      if (res.download_url) {
+        setCleanUrl(res.download_url);
+        const a = document.createElement("a");
+        a.href = res.download_url;
+        a.rel = "noopener noreferrer";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+    } catch {
+      setUnlockNote("Couldn't remove the watermark. Please try again.");
+    } finally {
+      setUnlockingClean(false);
+    }
+  };
 
   const buildExportFiles = (data: ProjectDetails): File[] => {
     const extractFileName = (url: string) => {
@@ -398,6 +456,35 @@ export default function ProjectDetailsPage() {
                 </Tab.Panel>
               </Tab.Panels>
             </Tab.Group>
+
+            {projectDetails?.watermarked && (
+              <div className="mt-6 flex flex-col items-center gap-1">
+                {cleanUrl ? (
+                  <a
+                    href={cleanUrl}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-blue-600 bg-white px-4 py-2 text-sm text-blue-600 hover:bg-blue-50"
+                  >
+                    Download without watermark
+                  </a>
+                ) : (
+                  <button
+                    onClick={unlockClean}
+                    disabled={unlockingClean}
+                    className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-blue-600 bg-white px-4 py-2 text-sm text-blue-600 hover:bg-blue-50 disabled:opacity-60"
+                  >
+                    {unlockingClean
+                      ? "Removing…"
+                      : `Download without watermark · ${CLEAN_MASTER_UNLOCK_CREDITS} credits`}
+                  </button>
+                )}
+                {unlockNote && (
+                  <p className="text-xs text-neutral-500">{unlockNote}</p>
+                )}
+              </div>
+            )}
 
             <div className="flex flex-wrap justify-center items-center gap-3 mt-6">
               <button

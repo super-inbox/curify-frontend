@@ -45,7 +45,11 @@ type Options = {
   params: Record<string, string>;
   existingExamples?: ExistingExampleRef[];
   tracking: TrackingTarget;
-  onSuccess: (signedUrl: string, exampleId: string) => void;
+  onSuccess: (
+    signedUrl: string,
+    exampleId: string,
+    meta?: { projectId?: string; watermarked?: boolean },
+  ) => void;
   // image-to-image: blob_url of the uploaded reference image. Required for
   // templates with requires_image_upload — the caller gates Generate on it
   // and passes it through here so it lands in the generate request.
@@ -190,12 +194,17 @@ export function useDirectGenerate({
       // Legacy synchronous backend returned signed_url directly; the async
       // backend returns a project_id we poll until the render completes.
       let imageUrl = res.signed_url;
+      let watermarked = false;
       if (!imageUrl) {
         if (!res.project_id) throw userError(res?.message || "Generation failed");
-        imageUrl = await pollNanoResult(res.project_id);
+        imageUrl = await pollNanoResult(res.project_id, {
+          onComplete: (s) => {
+            watermarked = Boolean(s.result_watermarked);
+          },
+        });
       }
       lastGeneratedExIdRef.current = exId;
-      onSuccess(imageUrl, exId);
+      onSuccess(imageUrl, exId, { projectId: res.project_id, watermarked });
     } catch (err) {
       // Surface clean user-facing messages (content-blocked, timeout, etc.);
       // fall back to the generic alert for network/unknown errors.

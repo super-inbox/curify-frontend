@@ -22,9 +22,10 @@ import { getPackTiers } from "@/lib/template_packs";
 import { getOutputIntent } from "@/lib/output_intent";
 import { resizeToSocialBundle, resizeToAspect, sliceIntoGrid, makePrintReady, SOCIAL_ASPECTS } from "@/lib/resize_bundle";
 import { templatePacksService } from "@/services/templatePacks";
-import { userAtom, clientMountedAtom, drawerAtom, modalAtom } from "@/app/atoms/atoms";
+import { projectService } from "@/services/projects";
+import { userAtom, clientMountedAtom, drawerAtom, modalAtom, topUpContextAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
-import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
+import { IMAGE_GENERATION_CREDITS, CLEAN_MASTER_UNLOCK_CREDITS } from "@/lib/pricing";
 
 const CREDITS_COST = IMAGE_GENERATION_CREDITS;
 
@@ -63,6 +64,10 @@ export type WorkbenchCol1 =
       resultUrl: string;
       title: string;
       downloadHref?: string;
+      /** True when resultUrl/downloadHref is the badged copy. */
+      watermarked?: boolean;
+      /** Needed to buy the clean master. */
+      projectId?: string;
     };
 
 type Props = {
@@ -91,7 +96,15 @@ type Props = {
 // off the latest PRIMARY (the "hero"), never the previous derivative — so
 // applying several design tiles in a row each operates on the hero, not on the
 // output of the tile before it. See issue (c), 2026-07-15.
-type ResultItem = { id: string; url: string; label: string; kind: "primary" | "derivative" };
+type ResultItem = {
+  id: string;
+  url: string;
+  label: string;
+  kind: "primary" | "derivative";
+  /** Set on a primary generation; the two fields the watermark unlock needs. */
+  projectId?: string;
+  watermarked?: boolean;
+};
 
 // Column-2 parameter ergonomics: collapse the list past this many params
 // (rest behind a "Show N more" toggle), and switch a free-text field to a
@@ -151,6 +164,11 @@ export default function ReproduceWorkbench({
   // unaffected; only their inputs are tucked away to keep column 2 scannable.
   const [showAllParams, setShowAllParams] = useState(false);
   const [soonNote, setSoonNote] = useState<string | null>(null);
+  const [, setTopUpContext] = useAtom(topUpContextAtom);
+  const [unlockingClean, setUnlockingClean] = useState(false);
+  // projectId -> signed URL of the clean master, once bought. Keeps the button
+  // useful for the rest of the session without re-hitting the endpoint.
+  const [unlockedClean, setUnlockedClean] = useState<Record<string, string>>({});
   // Set when the user taps the "Watch video" tile — reveals the template's
   // already-rendered intro video in column 3 (free, no generation).
   const [shownVideoUrl, setShownVideoUrl] = useState<string | null>(null);
@@ -179,9 +197,13 @@ export default function ReproduceWorkbench({
     label: string,
     url: string,
     kind: "primary" | "derivative" = "derivative",
+    meta?: { projectId?: string; watermarked?: boolean },
   ) => {
     resultSeq.current += 1;
-    setResults((prev) => [{ id: `${key}-${resultSeq.current}`, url, label, kind }, ...prev]);
+    setResults((prev) => [
+      { id: `${key}-${resultSeq.current}`, url, label, kind, ...meta },
+      ...prev,
+    ]);
   };
 
   const { generate, dismissAndGenerate, isGenerating: directGenerating, duplicateWarning, clearWarning } =
@@ -191,11 +213,11 @@ export default function ReproduceWorkbench({
       existingExamples,
       tracking,
       referenceImageUrl: referenceImageUrl ?? undefined,
-      onSuccess: (signedUrl) => {
+      onSuccess: (signedUrl, _exId, meta) => {
         // A fresh primary is the new hero — drop any pinned/promoted result so
         // the design-work tiles build from this generation, not a stale pin.
         setPromotedUrl(null);
-        pushResult("generate", "Your generation", signedUrl, "primary");
+        pushResult("generate", "Your generation", signedUrl, "primary", meta);
       },
       // An existing image already matches these params, so nothing was
       // generated. Put it in column 3 anyway: it is what the user asked for, and
@@ -252,6 +274,77 @@ export default function ReproduceWorkbench({
 
   const anyGenerating = directGenerating || freeformGenerating;
   const latestUrl = results[0]?.url ?? null;
+
+  /** Buy the clean master of one generated image.
+   *
+   *  Mirrors the pack-pdf branch of runWorkflow: INSUFFICIENT_CREDITS comes
+   *  back on a 200, so it is a branch and not a catch, and it opens the top-up
+   *  modal with the context the modal needs to size the preset.
+   *
+   *  Buy-once — the backend keys entitlement on the project, so a second click
+   *  re-serves the file free. */
+  const unlockClean = async (projectId: string, surface: string) => {
+    if (!user) {
+      track({
+        contentId: `auth-modal:clean-image:${projectId}`,
+        contentType: "topic_capsule",
+        actionType: "click",
+      });
+      setDrawer("signin");
+      return;
+    }
+    if (unlockingClean) return;
+    setSoonNote(null);
+    setUnlockingClean(true);
+    try {
+      const res = await projectService.removeWatermark(projectId);
+      if (!res?.success) {
+        // NEEDS_PURCHASED_CREDITS means the balance exists but is free signup
+        // credit, which does not cover watermark removal. Both codes route to
+        // the same place; the backend supplies the wording that fits.
+        if (
+          res?.code === "INSUFFICIENT_CREDITS" ||
+          res?.code === "NEEDS_PURCHASED_CREDITS"
+        ) {
+          const need = res.points_required ?? CLEAN_MASTER_UNLOCK_CREDITS;
+          setSoonNote(res.message || `Removing the watermark costs ${need} credits.`);
+          setTopUpContext({
+            required: need,
+            available: res.balance ?? 0,
+            jobLabel: "Watermark-free download",
+            surface,
+          });
+          track({
+            contentId: "paywall:clean-image-unlock",
+            contentType: "topic_capsule",
+            actionType: "click",
+          });
+          setModal("topup");
+          return;
+        }
+        throw new Error(res?.message || "Unlock failed");
+      }
+      if (res.download_url) {
+        const url = res.download_url;
+        setUnlockedClean((prev) => ({ ...prev, [projectId]: url }));
+        const a = document.createElement("a");
+        a.href = url;
+        a.rel = "noopener noreferrer";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+      track({
+        contentId: `clean-image-unlock:${projectId}`,
+        contentType: tracking.contentType,
+        actionType: "download",
+      });
+    } catch {
+      setSoonNote("Couldn't remove the watermark. Please try again.");
+    } finally {
+      setUnlockingClean(false);
+    }
+  };
   const col1Source =
     col1.mode === "source" ? col1.sourceReferenceUrl
     : col1.mode === "result" ? col1.resultUrl
@@ -587,7 +680,7 @@ export default function ReproduceWorkbench({
                 {col1.image}
               </div>
               {col1.mode === "result" && (
-                <div className="mt-2">
+                <div className="mt-2 space-y-2">
                   <a
                     href={col1.downloadHref ?? col1.resultUrl}
                     download
@@ -597,6 +690,33 @@ export default function ReproduceWorkbench({
                   >
                     <Download className="h-4 w-4" /> Download
                   </a>
+                  {col1.watermarked && col1.projectId && (
+                    unlockedClean[col1.projectId] ? (
+                      <a
+                        href={unlockedClean[col1.projectId]}
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                      >
+                        <Download className="h-3.5 w-3.5" /> Download without watermark
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => unlockClean(col1.projectId!, "clean-image-unlock")}
+                        disabled={unlockingClean}
+                        className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold text-neutral-700 transition-colors hover:bg-neutral-50 disabled:opacity-60"
+                      >
+                        {unlockingClean ? (
+                          <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                        ) : (
+                          <Download className="h-3.5 w-3.5" />
+                        )}
+                        Download without watermark · {CLEAN_MASTER_UNLOCK_CREDITS} credits
+                      </button>
+                    )
+                  )}
                 </div>
               )}
             </>
@@ -931,6 +1051,39 @@ export default function ReproduceWorkbench({
                 </a>
               )}
             </div>
+
+            {/* Price stated BEFORE the click, per StickerExportForm's rule.
+                Only rendered when the delivered file is actually badged — a
+                paid account never sees it, because it never receives a mark. */}
+            {results[0]?.watermarked && results[0]?.projectId && (
+              <div className="mt-2">
+                {unlockedClean[results[0].projectId] ? (
+                  <a
+                    href={unlockedClean[results[0].projectId]}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                  >
+                    <Download className="h-3.5 w-3.5" /> Download without watermark
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => unlockClean(results[0].projectId!, "clean-image-unlock")}
+                    disabled={unlockingClean}
+                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold text-neutral-700 transition-colors hover:bg-neutral-50 disabled:opacity-60"
+                  >
+                    {unlockingClean ? (
+                      <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    ) : (
+                      <Download className="h-3.5 w-3.5" />
+                    )}
+                    Download without watermark · {CLEAN_MASTER_UNLOCK_CREDITS} credits
+                  </button>
+                )}
+              </div>
+            )}
 
             {latestUrl && promotedUrl !== latestUrl && (
               <p className="mt-1.5 text-center text-[11px] text-neutral-400">
