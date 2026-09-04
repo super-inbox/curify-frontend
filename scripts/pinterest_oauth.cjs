@@ -66,11 +66,61 @@ async function tokenCall(body) {
     body: new URLSearchParams(body).toString(),
   });
   const text = await res.text();
-  if (!res.ok) { console.error(`HTTP ${res.status}\n${text}`); process.exit(1); }
+  if (!res.ok) {
+    // Throw rather than exit: this is imported by pinterest_publish.cjs, where a
+    // hard process.exit inside a batch would strand pins already published but
+    // not yet flushed to the registry.
+    const err = new Error(`token endpoint HTTP ${res.status}: ${text.slice(0, 300)}`);
+    err.status = res.status;
+    if (require.main === module) { console.error(`HTTP ${res.status}\n${text}`); process.exit(1); }
+    throw err;
+  }
   return JSON.parse(text);
 }
 
-(async () => {
+/**
+ * Rewrite only the PINTEREST_*_TOKEN lines of the backend .env, preserving every
+ * other line byte-for-byte.
+ *
+ * Atomic (temp file + rename in the same directory) because curify_background
+ * may be reading this file, and backed up first — the .env.bak convention
+ * already exists per docs/pinterest-publishing-2026-08-21.md.
+ */
+function persistEnvTokens(tokens) {
+  const cur = fs.readFileSync(ENV, "utf8");
+  fs.writeFileSync(`${ENV}.bak`, cur);
+  const next = { PINTEREST_ACCESS_TOKEN: tokens.access_token };
+  if (tokens.refresh_token) next.PINTEREST_REFRESH_TOKEN = tokens.refresh_token;
+  const seen = new Set();
+  const lines = cur.split("\n").map((line) => {
+    const m = line.match(/^\s*(PINTEREST_[A-Z_]+)\s*=\s*(.*)$/);
+    if (m && next[m[1]] !== undefined) { seen.add(m[1]); return `${m[1]}=${next[m[1]]}`; }
+    return line;
+  });
+  for (const [k, v] of Object.entries(next)) if (!seen.has(k)) lines.push(`${k}=${v}`);
+  const tmp = `${ENV}.tmp-${process.pid}`;
+  fs.writeFileSync(tmp, lines.join("\n"));
+  fs.renameSync(tmp, ENV);
+}
+
+/**
+ * Mint a fresh access token from the long-lived refresh token and (by default)
+ * write it back. The CLI --refresh only PRINTED it, so a batch had no way to
+ * recover from an expiry mid-run.
+ */
+async function refreshAccessToken({ persist = true } = {}) {
+  const rt = process.env.PINTEREST_REFRESH_TOKEN;
+  if (!rt) throw new Error("PINTEREST_REFRESH_TOKEN not set — run --serve once");
+  const d = await tokenCall({ grant_type: "refresh_token", refresh_token: rt });
+  if (persist) persistEnvTokens(d);
+  process.env.PINTEREST_ACCESS_TOKEN = d.access_token;
+  if (d.refresh_token) process.env.PINTEREST_REFRESH_TOKEN = d.refresh_token;
+  return d;
+}
+
+module.exports = { tokenCall, refreshAccessToken, persistEnvTokens, SCOPES };
+
+if (require.main === module) (async () => {
   if (!APP_ID) {
     console.error(
       "PINTEREST_APP_ID is missing from curify_background/.env.\n" +

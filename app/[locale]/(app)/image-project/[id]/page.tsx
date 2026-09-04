@@ -92,6 +92,11 @@ export default function ImageProjectPage() {
           resultUrl: fullImageUrl ?? previewImageUrl,
           downloadHref: fullImageUrl ?? previewImageUrl,
           title: project.name,
+          // image_path is the badged copy for a FREE account that has never
+          // topped up (utils/response_helpers.resolve_image_paths); everyone
+          // else already holds the clean master and is offered nothing.
+          watermarked: project.watermarked,
+          projectId: project.project_id,
           image: (
             <CdnImage
               src={previewImageUrl}

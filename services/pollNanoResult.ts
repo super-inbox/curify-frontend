@@ -26,6 +26,10 @@ export async function pollNanoResult(
     intervalMs?: number;
     maxMs?: number;
     getStatus?: (projectId: string) => Promise<NanoProjectStatus>;
+    // Fires once with the COMPLETED status, so callers can read fields beyond
+    // the URL (e.g. result_watermarked) without changing the return type —
+    // three call sites and their tests depend on it resolving to a string.
+    onComplete?: (status: NanoProjectStatus) => void;
   } = {},
 ): Promise<string> {
   const {
@@ -33,6 +37,7 @@ export async function pollNanoResult(
     intervalMs = DEFAULT_POLL_INTERVAL_MS,
     maxMs = DEFAULT_POLL_MAX_MS,
     getStatus = nanoGenerateService.getProjectStatus,
+    onComplete,
   } = options;
   const deadline = Date.now() + maxMs;
   if (initialDelayMs > 0) await sleep(initialDelayMs);
@@ -48,7 +53,10 @@ export async function pollNanoResult(
     }
     const status = (project.status || "").toUpperCase();
     if (status === "COMPLETED") {
-      if (project.result_url) return project.result_url;
+      if (project.result_url) {
+        onComplete?.(project);
+        return project.result_url;
+      }
       throw new NanoGenerationError(
         "Generation finished but no image came back — please try again.",
       );

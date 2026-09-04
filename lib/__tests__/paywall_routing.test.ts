@@ -25,6 +25,7 @@ const PAYWALL_SURFACES = [
   "app/[locale]/(public)/search/GenerableTemplatesSection.tsx",
   "app/[locale]/_components/UnifiedActionBar.tsx",
   "app/[locale]/_components/ReproduceWorkbench.tsx",
+  "app/[locale]/(app)/project_details/[id]/page.tsx",
 ] as const;
 
 describe("paywall routing", () => {

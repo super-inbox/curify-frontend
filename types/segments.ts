@@ -24,6 +24,10 @@ export interface ProjectDetails {
   // nano_template_generation projects
   image_path?: string | null;
   preview_image_path?: string | null;
+  // True when the delivered file is the badged copy — image_path for an image
+  // project, final_video_signed_url for a video one. Drives the "remove
+  // watermark" affordance on both detail pages.
+  watermarked?: boolean;
   job_type?: string | null;
   // Per-job flags the pipeline writes (asl_unverified, asl_low_confidence, ...).
   // GET /projects/{id} has always returned this — ProjectDetailsResponse carries it

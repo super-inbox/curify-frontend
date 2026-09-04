@@ -22,6 +22,9 @@ export interface NanoProjectStatus {
   project_id: string;
   status: string; // STARTED | COMPLETED | FAILED | ...
   result_url?: string | null;
+  // True when result_url points at the badged copy rather than the clean
+  // master. Both are opaque signed URLs, so the client cannot tell otherwise.
+  result_watermarked?: boolean;
   failure_code?: string | null;
   failure_reason?: string | null;
 }
