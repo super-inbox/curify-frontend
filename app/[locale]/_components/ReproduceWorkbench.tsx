@@ -327,12 +327,25 @@ export default function ReproduceWorkbench({
       if (res.download_url) {
         const url = res.download_url;
         setUnlockedClean((prev) => ({ ...prev, [projectId]: url }));
+        // `download` is a fallback here, not the mechanism: the signed URL is
+        // cross-origin (GCS for images, Azure blob for video) and browsers ignore
+        // the attribute there. What keeps the user on the page is the attachment
+        // Content-Disposition the backend stamps on the signed URL — without it
+        // the browser renders the JPEG inline and this click NAVIGATES the tab to
+        // the raw image, throwing the user out of the workbench the instant they
+        // paid. Empty string so the server-supplied filename wins.
         const a = document.createElement("a");
         a.href = url;
+        a.download = "";
         a.rel = "noopener noreferrer";
         document.body.appendChild(a);
         a.click();
         a.remove();
+        setSoonNote(
+          res.already_owned
+            ? "Downloading your watermark-free file."
+            : `Watermark removed — your clean file is downloading. ${CLEAN_MASTER_UNLOCK_CREDITS} credits used.`,
+        );
       }
       track({
         contentId: `clean-image-unlock:${projectId}`,
