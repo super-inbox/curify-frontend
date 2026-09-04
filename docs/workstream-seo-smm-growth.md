@@ -2153,7 +2153,7 @@ someone else's decision.
 Both P0s below are **unblocked, unstarted, and not waiting on a readout.** Everything else on
 this page is now either a scheduled read or gated behind one.
 
-### P0-1 — Publish to Pinterest  ✅ SHIPPED 2026-09-04 (6 of 20 live — see the progress section at the end of this doc)
+### P0-1 — Publish to Pinterest  ✅ COMPLETE 2026-09-05 (all 20 live — see the progress section at the end of this doc)
 
 The only genuinely new distribution channel, and it is ready today: OAuth solved with a
 long-lived refresh token (no consent round-trip), `scripts/pinterest_publish.cjs` written,
@@ -2218,8 +2218,15 @@ placeholder in `.client-key.json`. Both decay to unrecoverable.
 
 ## 2026-09-04 — P0-1 SHIPPED: Pinterest is live
 
-**6 Pins published across all five boards, all verified.** Account 29 → 35. Commits `ffb91370`
-(publisher rebuild + smoke test) and `4130aa3e` (5 more).
+**COMPLETE 2026-09-05: all 20 Pins published, 20/20 verified.** Account **29 → 49**. Commits
+`ffb91370` (publisher rebuild + smoke test), `4130aa3e` (5 more), `39dfc8fe` (final 14).
+
+Final distribution — brand 2 · packaging 3 · merch 4 · ecommerce 5 · edtech 6 — 20 distinct
+templates, 20 distinct pin ids, zero errors across the whole campaign. The 24h abort gate was run
+on all six earlier pins before the final batch: 6/6 still returned 200 with media, so nothing had
+been silently removed.
+
+The first six were:
 
 | board | pin ids |
 |---|---|
@@ -2229,9 +2236,9 @@ placeholder in `.client-key.json`. Both decay to unrecoverable.
 | ecommerce | 570831321549618857 |
 | edtech | 570831321549618861 |
 
-Each verified with `GET /v5/pins/{id}`: media present, and `link` / `title` / `alt_text`
-byte-identical to the registry row. 6 distinct templates, no duplicates.
-**14 rows remain** in `data/pinterest/plan-2026-09-04.json`, IP-approved and ready.
+Every one of the 20 verified with `GET /v5/pins/{id}`: media present, and `link` / `title` /
+`alt_text` byte-identical to the registry row. Pinterest rewrote nothing.
+`data/pinterest/plan-2026-09-04.json` is fully consumed.
 
 ### Four findings worth carrying forward
 
@@ -2292,9 +2299,8 @@ under-credited**. Do not read a weak `utm` number as a weak channel.
 
 ### Next
 
-- **~2026-09-05** — publish the remaining 14 (scheduled; falls back to
-  `node scripts/pinterest_publish.cjs --plan data/pinterest/plan-2026-09-04.json --delay 60`).
-- **T+7d** — per-Pin `IMPRESSION / SAVE / PIN_CLICK / OUTBOUND_CLICK` joined on
+- ~~publish the remaining 14~~ — **done 2026-09-05**, 14/14, zero errors.
+- **~2026-09-12 (T+7d)** — per-Pin `IMPRESSION / SAVE / PIN_CLICK / OUTBOUND_CLICK` joined on
   `pin_id → template_id → board`. The registry carries `ratio`, `bytes` and `image_variant`, so
   this answers which board, which template and which shape — the question the 29 legacy pins
   cannot.
