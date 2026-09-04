@@ -2153,7 +2153,7 @@ someone else's decision.
 Both P0s below are **unblocked, unstarted, and not waiting on a readout.** Everything else on
 this page is now either a scheduled read or gated behind one.
 
-### P0-1 — Publish to Pinterest
+### P0-1 — Publish to Pinterest  ✅ SHIPPED 2026-09-04 (6 of 20 live — see the progress section at the end of this doc)
 
 The only genuinely new distribution channel, and it is ready today: OAuth solved with a
 long-lived refresh token (no consent round-trip), `scripts/pinterest_publish.cjs` written,
@@ -2215,6 +2215,90 @@ placeholder in `.client-key.json`. Both decay to unrecoverable.
 - **B3 `what is a tech pack`** (90/mo, KD 1) — the best remaining content ratio, unblocked the
   moment 09-09 comes back clean.
 - **Any engineering on a fold cause** — do not spend until a post-fix recrawl actually folds.
+
+## 2026-09-04 — P0-1 SHIPPED: Pinterest is live
+
+**6 Pins published across all five boards, all verified.** Account 29 → 35. Commits `ffb91370`
+(publisher rebuild + smoke test) and `4130aa3e` (5 more).
+
+| board | pin ids |
+|---|---|
+| brand | 570831321549616827 · 570831321549618870 |
+| packaging | 570831321549618849 |
+| merch | 570831321549618852 |
+| ecommerce | 570831321549618857 |
+| edtech | 570831321549618861 |
+
+Each verified with `GET /v5/pins/{id}`: media present, and `link` / `title` / `alt_text`
+byte-identical to the registry row. 6 distinct templates, no duplicates.
+**14 rows remain** in `data/pinterest/plan-2026-09-04.json`, IP-approved and ready.
+
+### Four findings worth carrying forward
+
+**1. The tier discriminator is a READ.** `GET /v5/pins/{id}/analytics` returns 200 under Standard
+and 403 `code 29` under Trial. `POST /v5/pins` was already permitted by the time we checked, so
+"the first Pin proves the tier" was wrong — confirm the tier read-only, and spend the first Pin
+validating the *payload* instead.
+
+**2. Never publish the site image — it carries a full-frame TILED watermark.**
+`sync_nano_inspiration.cjs:323` applies it in place at 22% of image width, and the preview
+inherits it. On a save-driven surface that reads as a stock-photo preview, and it would have made
+the batch uninterpretable: weak saves could not have been separated from bad creative. Pins are
+built from the unwatermarked originals in `~/curify-gallery/daily_inspirations/` with a 10% corner
+mark. Clean-source coverage is partial, so its availability is a **selection filter**.
+
+**3. Automated IP screening is not sufficient — visual review rejected 6 of 22.** All six had
+passed both a named-entity denylist and a structural person-template filter:
+
+| rejected | why |
+|---|---|
+| aroma diffuser | `NIIMBOT B21` printed on the device |
+| bluetooth speaker | same brand — so `template-product-poster` is rejected **wholesale** |
+| Busan gift box | `BOOGI` is Busan's official municipal mascot |
+| Suwori festival poster | credits a third party, "Prepared by Civil Navigator" |
+| Denim Chic | `STELLA MCCARTNEY` set in the artwork |
+| Fall Fashion Vibes | visible Canva placeholder text, "123 ANYWHERE ST., ANY CITY" |
+
+**NIIMBOT appears nowhere in the metadata** — the generation model baked a real brand into the
+pixels. No text screen can catch that. `--plan` now refuses to run while any row still says
+`ip_review: PENDING`; build a contact sheet with `magick montage` and look at every image.
+
+**4. Write rate limit, measured:** `100;w=60;name="org_write_app_id_user_id"` — 100 writes per
+60s, far looser than the 60s inter-pin delay defaulted to. The read bucket is a different name;
+do not confuse them.
+
+### Inventory ceilings — two boards are content gaps
+
+In the 2:3 band after every filter, one Pin per template: ecommerce 6 · edtech 6 · merch 4 ·
+**packaging 3** · **brand 2**. Packaging and brand cannot support a second batch. That is a
+content gap, not a selection problem.
+
+### Why this was P0 at all
+
+It is the same demand as the 09-01 image-search finding, on a surface we do not have to out-rank
+Google for: image search carries 19,035 impressions vs web's 12,752, and the clusters that look
+dead in the web report are image-native (fashion 206×, education 173×, AI-selfie image-only).
+
+### Measurement
+
+Registry at **`data/pinterest/pins.jsonl`** — append-only, one row per attempt. Pin-level
+analytics is keyed on the id, so this is the prerequisite for measuring anything; the 29
+pre-existing pins have no recorded ids and are permanently unmeasurable. Baseline captured
+2026-09-04: 29 pins, 53 followers, 89 monthly views.
+
+Attribution is deferred and the limitation is known: `utm_source=pinterest` catches the direct
+click, but view → search → landing attributes to organic, so Pinterest will be **systematically
+under-credited**. Do not read a weak `utm` number as a weak channel.
+
+### Next
+
+- **~2026-09-05** — publish the remaining 14 (scheduled; falls back to
+  `node scripts/pinterest_publish.cjs --plan data/pinterest/plan-2026-09-04.json --delay 60`).
+- **T+7d** — per-Pin `IMPRESSION / SAVE / PIN_CLICK / OUTBOUND_CLICK` joined on
+  `pin_id → template_id → board`. The registry carries `ratio`, `bytes` and `image_variant`, so
+  this answers which board, which template and which shape — the question the 29 legacy pins
+  cannot.
+- Open: **P0-2, inbound links to the four KD-campaign blog posts**, still at `referringUrls = 0`.
 
 ---
 
