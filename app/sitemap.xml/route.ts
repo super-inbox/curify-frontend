@@ -114,8 +114,17 @@ function getNanoTemplateRoutes(): Array<{
     locales?: Record<string, unknown>;
   }>;
 
+  // A template with no inspirations renders an empty page — buildNanoFeedCards
+  // skips zero-image templates, so it is already absent from every card
+  // surface on the site. Advertising it in the sitemap asks Google to spend
+  // crawl on a page we do not link to and cannot fill. 2 of 352 today
+  // (character-comparison, lifestyle-habit-infographic). The map is memoised
+  // at module load and already used below for the <image:image> children.
+  const withImages = getTemplateImageMap();
+
   return raws
     .filter((t) => t?.id && typeof t.id === "string")
+    .filter((t) => (withImages.get(t.id.trim())?.length ?? 0) > 0)
     .map((t) => {
       // Only emit URLs for locales the template actually has content
       // for (typically "en", sometimes "en"+"zh"). Including all 10
