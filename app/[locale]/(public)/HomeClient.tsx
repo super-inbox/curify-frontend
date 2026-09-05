@@ -1,5 +1,7 @@
 "use client";
 
+
+import { toTemplateStripCard } from "@/lib/nano_pure";
 import { useCallback, useState, type ReactNode } from "react";
 import { Inter } from "next/font/google";
 import { useRequireAuth } from "@/services/useRequireAuth";
@@ -122,7 +124,7 @@ export default function HomeClient({
             // + save). Live rail (above) is the primary path; this branch
             // only fires when top_remix_prompts.json is empty.
             <TemplateStrip
-              cards={nanoCards}
+              cards={nanoCards.map(toTemplateStripCard)}
               trackPrefix="home-fallback-template-strip"
               maxRows={24}
             />

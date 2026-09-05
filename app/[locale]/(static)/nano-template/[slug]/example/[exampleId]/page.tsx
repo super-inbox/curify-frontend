@@ -80,6 +80,10 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
   const templateParameters = templateView?.parameters ?? [];
   const templateAllowGeneration = templateView?.allow_generation ?? false;
   const templateRequiresImageUpload = templateView?.requires_image_upload ?? false;
+  // The user supplies the image ⇒ this template is a TOOL, so its examples are
+  // demos rather than rankable content. Drives the noindex+canonical below.
+  const templateNeedsUserImage =
+    templateView?.image_input === "required" || templateRequiresImageUpload;
 
   const fallbackCopy = resolveLocalizedExampleCopy(
     example,
@@ -173,6 +177,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     templateParameters,
     templateAllowGeneration,
     templateRequiresImageUpload,
+    templateNeedsUserImage,
     templateIndexExamples: templateView?.index_examples,
     templateIntroVideoUrl: templateView?.intro_video_url,
     basePrompt,
@@ -190,11 +195,17 @@ export async function generateStaticParams() {
 
   const locales = ["en", "zh"];
 
+  // exampleId must be the DECODED value: Next encodes route params itself when
+  // it builds the static path. Pre-encoding here double-encoded any id with a
+  // space (67 of them, e.g. "…-en 3"), so the prerendered route never matched
+  // the real URL and en/zh 404'd while on-demand locales resolved fine. 225 of
+  // those URLs were in sitemap-examples.xml. Every OTHER encodeURIComponent in
+  // the repo builds a URL string and is correct — this one built a param.
   return locales.flatMap((locale) =>
     mod.default.map((img) => ({
       locale,
       slug: toSlug(img.template_id),
-      exampleId: encodeURIComponent(img.id),
+      exampleId: img.id,
     }))
   );
 }
@@ -210,7 +221,7 @@ export async function generateMetadata({
   const pageData = await getPageData(rawLocale, slug, rawExampleId);
   if (!pageData) return {};
 
-  const { title, category, example, templateTopics, allowI18n, metaDescription, templateIndexExamples } = pageData;
+  const { title, category, example, templateTopics, allowI18n, metaDescription, templateIndexExamples, templateNeedsUserImage } = pageData;
   const ogImage = toAbsUrlMaybe(example.asset.preview_image_url);
 
   const topicText = templateTopics?.length ? templateTopics[0] : "";
@@ -267,7 +278,11 @@ export async function generateMetadata({
   // authority consolidates on the generator instead of splitting across hundreds
   // of variations. Info-heavy examples (MBTI, HSK, culture/recipe infographics)
   // stay indexed. Classifier reuses topics; see lib/example_indexing.
-  const examplesIndexable = templateExamplesIndexable(templateTopics, templateIndexExamples);
+  const examplesIndexable = templateExamplesIndexable(
+    templateTopics,
+    templateIndexExamples,
+    templateNeedsUserImage
+  );
 
   // Non-allow_i18n entries on non-en/zh locales render with template-level
   // fallbacks (thin) — noindex them to avoid SEO penalties for thin content.

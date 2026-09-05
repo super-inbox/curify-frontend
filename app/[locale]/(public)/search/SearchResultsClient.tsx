@@ -1,5 +1,7 @@
 "use client";
 
+
+import { toTemplateStripCard } from "@/lib/nano_pure";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Search } from "lucide-react";
@@ -430,7 +432,7 @@ export default function SearchResultsClient({
               </h2>
               <NanoTemplateDetailClient
                 locale={locale}
-                otherNanoCards={matchedTemplates}
+                otherNanoCards={matchedTemplates.map(toTemplateStripCard)}
                 showReproduce={false}
                 showOtherTemplates={true}
                 showOtherTemplateTitle={false}

@@ -2153,7 +2153,7 @@ someone else's decision.
 Both P0s below are **unblocked, unstarted, and not waiting on a readout.** Everything else on
 this page is now either a scheduled read or gated behind one.
 
-### P0-1 — Publish to Pinterest
+### P0-1 — Publish to Pinterest  ✅ COMPLETE 2026-09-05 (all 20 live — see the progress section at the end of this doc)
 
 The only genuinely new distribution channel, and it is ready today: OAuth solved with a
 long-lived refresh token (no consent round-trip), `scripts/pinterest_publish.cjs` written,
@@ -2215,6 +2215,227 @@ placeholder in `.client-key.json`. Both decay to unrecoverable.
 - **B3 `what is a tech pack`** (90/mo, KD 1) — the best remaining content ratio, unblocked the
   moment 09-09 comes back clean.
 - **Any engineering on a fold cause** — do not spend until a post-fix recrawl actually folds.
+
+## 2026-09-04 — P0-1 SHIPPED: Pinterest is live
+
+**COMPLETE 2026-09-05: all 20 Pins published, 20/20 verified.** Account **29 → 49**. Commits
+`ffb91370` (publisher rebuild + smoke test), `4130aa3e` (5 more), `39dfc8fe` (final 14).
+
+Final distribution — brand 2 · packaging 3 · merch 4 · ecommerce 5 · edtech 6 — 20 distinct
+templates, 20 distinct pin ids, zero errors across the whole campaign. The 24h abort gate was run
+on all six earlier pins before the final batch: 6/6 still returned 200 with media, so nothing had
+been silently removed.
+
+The first six were:
+
+| board | pin ids |
+|---|---|
+| brand | 570831321549616827 · 570831321549618870 |
+| packaging | 570831321549618849 |
+| merch | 570831321549618852 |
+| ecommerce | 570831321549618857 |
+| edtech | 570831321549618861 |
+
+Every one of the 20 verified with `GET /v5/pins/{id}`: media present, and `link` / `title` /
+`alt_text` byte-identical to the registry row. Pinterest rewrote nothing.
+`data/pinterest/plan-2026-09-04.json` is fully consumed.
+
+### Four findings worth carrying forward
+
+**1. The tier discriminator is a READ.** `GET /v5/pins/{id}/analytics` returns 200 under Standard
+and 403 `code 29` under Trial. `POST /v5/pins` was already permitted by the time we checked, so
+"the first Pin proves the tier" was wrong — confirm the tier read-only, and spend the first Pin
+validating the *payload* instead.
+
+**2. Never publish the site image — it carries a full-frame TILED watermark.**
+`sync_nano_inspiration.cjs:323` applies it in place at 22% of image width, and the preview
+inherits it. On a save-driven surface that reads as a stock-photo preview, and it would have made
+the batch uninterpretable: weak saves could not have been separated from bad creative. Pins are
+built from the unwatermarked originals in `~/curify-gallery/daily_inspirations/` with a 10% corner
+mark. Clean-source coverage is partial, so its availability is a **selection filter**.
+
+**3. Automated IP screening is not sufficient — visual review rejected 6 of 22.** All six had
+passed both a named-entity denylist and a structural person-template filter:
+
+| rejected | why |
+|---|---|
+| aroma diffuser | `NIIMBOT B21` printed on the device |
+| bluetooth speaker | same brand — so `template-product-poster` is rejected **wholesale** |
+| Busan gift box | `BOOGI` is Busan's official municipal mascot |
+| Suwori festival poster | credits a third party, "Prepared by Civil Navigator" |
+| Denim Chic | `STELLA MCCARTNEY` set in the artwork |
+| Fall Fashion Vibes | visible Canva placeholder text, "123 ANYWHERE ST., ANY CITY" |
+
+**NIIMBOT appears nowhere in the metadata** — the generation model baked a real brand into the
+pixels. No text screen can catch that. `--plan` now refuses to run while any row still says
+`ip_review: PENDING`; build a contact sheet with `magick montage` and look at every image.
+
+**4. Write rate limit, measured:** `100;w=60;name="org_write_app_id_user_id"` — 100 writes per
+60s, far looser than the 60s inter-pin delay defaulted to. The read bucket is a different name;
+do not confuse them.
+
+### Inventory ceilings — two boards are content gaps
+
+In the 2:3 band after every filter, one Pin per template: ecommerce 6 · edtech 6 · merch 4 ·
+**packaging 3** · **brand 2**. Packaging and brand cannot support a second batch. That is a
+content gap, not a selection problem.
+
+### Why this was P0 at all
+
+It is the same demand as the 09-01 image-search finding, on a surface we do not have to out-rank
+Google for: image search carries 19,035 impressions vs web's 12,752, and the clusters that look
+dead in the web report are image-native (fashion 206×, education 173×, AI-selfie image-only).
+
+### Measurement
+
+Registry at **`data/pinterest/pins.jsonl`** — append-only, one row per attempt. Pin-level
+analytics is keyed on the id, so this is the prerequisite for measuring anything; the 29
+pre-existing pins have no recorded ids and are permanently unmeasurable. Baseline captured
+2026-09-04: 29 pins, 53 followers, 89 monthly views.
+
+Attribution is deferred and the limitation is known: `utm_source=pinterest` catches the direct
+click, but view → search → landing attributes to organic, so Pinterest will be **systematically
+under-credited**. Do not read a weak `utm` number as a weak channel.
+
+### Next
+
+- ~~publish the remaining 14~~ — **done 2026-09-05**, 14/14, zero errors.
+- **~2026-09-12 (T+7d)** — per-Pin `IMPRESSION / SAVE / PIN_CLICK / OUTBOUND_CLICK` joined on
+  `pin_id → template_id → board`. The registry carries `ratio`, `bytes` and `image_variant`, so
+  this answers which board, which template and which shape — the question the 29 legacy pins
+  cannot.
+- Open: **P0-2, inbound links to the four KD-campaign blog posts**, still at `referringUrls = 0`.
+
+---
+
+## 2026-09-05 — the wrong page ranks: four bugs behind one bad SERP
+
+Started from one report — searching **"hsk reading"** returned
+`/nano-template/bilingual-chinese-vocabulary-word-card-poster` (a vocabulary *flashcard*
+template) instead of `/nano-template/hsk-bilingual-reading-text-lesson-poster`. The snippet Google
+composed was the vocab page's meta description followed by the site-wide `bulkCallout` boilerplate.
+
+**This is a pattern, not an anecdote.** In `raw/gsc-cluster-audit-2026-08-31/PagesQueries.csv`,
+`mbti naruto` ranks `/nano-template/mbti-generic` at **position 2** while `/nano-template/mbti-naruto`
+exists, is indexed, and never appears.
+
+### Eliminated first — do not re-test these
+
+| hypothesis | verdict |
+|---|---|
+| specific page not indexed | **NO** — URL Inspection: all four "Submitted and indexed", `INDEXING_ALLOWED`, `SUCCESSFUL` |
+| canonical fold (the 2026-08 blog problem) | **NO** — all self-canonical, `googleCanonical` == self |
+| missing from sitemap | **NO** — both pairs present |
+| bad title/description | **NO** — `HSK Bilingual Reading Text Lesson Poster` is a strong match; descriptions distinct |
+| generic page is simply stronger | **only for MBTI** — HSK scores 90.45 with 59 inspirations vs the vocab page's 90 with 11, and still loses |
+
+### What it actually was — four independent causes, all shipped
+
+1. **Sibling identity injection (the SEO mechanism).** Every template page carries 18 sibling
+   cards which crossed a **client** boundary, so each page serialized its siblings' full
+   `base_prompt` into the RSC payload (18 hoisted rows, **27,428 chars** — the vocabulary page
+   carried the entire HSK prompt verbatim) and `TemplateStrip` put each sibling's full description
+   into an `<img alt>` (~2.4KB of *other* templates' identity text in indexable markup per page).
+   Generic hubs top many siblings' overlap lists, so they accumulate the most: `mbti-generic` is a
+   sibling on **30** pages, `music-style-visual-infographic` on **99**, median 13. Site-wide
+   ≈**5.8MB** of cross-injected prompt text.
+   ⚠️ Google does not index `<script>` text as body copy, so the payload half is byte-level
+   near-duplication (the class the 2026-08-04 diagnosis blamed for the blog fold) rather than a
+   direct ranking mechanism. The **markup** half is the defensible one.
+2. **Unequal hub reinforcement — this explains the HSK case directly.** HSK's topics are
+   `study-sheets, learning-materials, education, bilingual`; only `study-sheets` has a live page —
+   `/topics/education`, `/topics/learning-materials`, `/topics/bilingual` all **404**. The vocab
+   page's topics include `flashcards` and `vocabulary`, both live. Measured on the rendered pages:
+   HSK links to **1** education hub, the vocab page to **3**. Site-wide **117 of 226 template
+   topics (52%) resolve to 404** — mostly style adjectives that should not be hubs (`modern` 263
+   templates, `playful` 262), but also `kids-learning` (42), `promotional-poster` (14),
+   `education` (13), `bilingual` (13). **Not yet fixed — see Open below.**
+3. **`rank_score` anomalies — this explains the MBTI case.** `mbti-naruto` scored **8** against a
+   corpus median of **90**, one of 8 April-2026 templates whose `base_rank_score` was never
+   migrated. `rank_score` orders the homepage feed, inspiration hub, topic pages and sibling
+   strips, so they collected almost no internal links. Backfilled the 7 with inspirations to 90;
+   `character-comparison` has **zero** inspirations so it was dropped from the sitemap instead
+   (`buildNanoFeedCards` already skips zero-image templates, so boosting it would do nothing).
+4. **Shared boilerplate ordering.** `bulkCallout.body` is byte-identical on all 352 template pages
+   and Google used it as the snippet — because it was the largest contiguous prose block near the
+   top of a page whose visible text is only ~4.6KB. `About this template` (authored for 334 of 354)
+   sat *below* it. Reordered.
+
+### Three more bugs found on the way, all user-visible, all fixed
+
+- **225 indexed example URLs returned 404.** `generateStaticParams` returned
+  `encodeURIComponent(img.id)`; Next encodes params itself, so the 67 ids containing a space were
+  double-encoded and the prerendered route never matched the sitemap URL. `en`/`zh` are the only
+  locales in `generateStaticParams`, so exactly those two 404'd while on-demand locales resolved
+  fine — which made it look like a locale bug. The single apostrophe id worked throughout
+  (`encodeURIComponent` leaves `'` alone): the 1-works/67-fail split is now a test.
+- **`/nano-template/template-<slug>` is a self-canonicalling duplicate** of every template page and
+  its children. Not in any sitemap; Google found **11** anyway (36 impressions, incl. a `/zh/`
+  example at **position 1.0**). Now 308s onto the canonical form.
+- **Example pages outrank their own template for tool-intent queries.** Raised on the retouching
+  case. Examples are the **largest impression class and the worst converting**: 5,150 impressions
+  at **0.50% CTR** vs 1.34% (template) and 5.74% (tool); `project_conversion_funnel_auth_wall` has
+  them worst downstream too. `templateExamplesIndexable` keyed only on topics, so `guides` alone
+  dragged `portrait-retouching-blueprint` — `image_input:"required"`, examples literally titled
+  "en 1".."en 5" — into the info-heavy bucket. An image-input template now noindexes + canonicals
+  its examples regardless of topics: **4 templates / 25 example pages**, which carried 10
+  impressions and 1 click. `template-mbti-nba` is untouched (it reads `image_input:"none"` today),
+  so the existing guard test still holds.
+
+### New instrument: `scripts/audit_query_page_mismatch.cjs`
+
+Compares, per GSC query, the page that ranked against the page whose title best matches. Title
+index built offline from the repo's own data (4,613 URLs incl. all 3,916 examples). `--probe`
+fetches the ranking page and reports whether the better page's title/description is embedded in it
+— a correlation becomes a named injection source.
+
+Calibration that mattered: indexing example pages (omitting them produced **189** false positives);
+skipping ranking URLs absent from the index rather than reporting them; and a rival-coverage floor
+of **0.67**, not 0.5 (at 0.5 a two-token query matched on either half — "lipsync model" → a
+jewellery *on-model* example).
+
+**Pre-deploy baseline, 2026-08-04 → 08-31** (`raw/query-page-mismatch-2026-08-31/`): 43 findings,
+27 `RIVAL_INDEXED` / 16 `RIVAL_UNRANKED`. Leaderboard led by `/tools/video-dubbing` (10). Two
+findings beyond this branch:
+
+- The dominant shape is an entity query landing on the **generic template while the specific
+  example stays invisible** — `itachi mbti` 42 impressions at position 4.1 on
+  `/nano-template/mbti-naruto` while its itachi example never appears; same for kevin durant, rip
+  wheeler, tim curry, hulk. That is the original report one level down, and it points the opposite
+  way from the retouching fix — worth resolving deliberately rather than per-case.
+- `ai video dubbing` ranks `/blog/ai-video-dubbing-tutorial` at **position 83** while
+  `/tools/video-dubbing` should, and the probe confirms the blog embeds the tool page's title in
+  markup **and** payload plus its description in the payload.
+
+### Rollout — deliberately phased, so the result is readable
+
+Phases 0 and 1 shipped on `jwang/seo-template-cannibalization` (5 commits). Phase 2 is **held
+back on purpose**: it changes every page on the site, so shipping it together would make it
+impossible to tell whether C1 (markup injection) or C6 (byte duplication) moved the needle.
+
+**Measured on a production build** of the vocabulary page: hoisted prompt rows **27,428 → 8,701**
+(remainder is the page's own prompt plus the topics/blog catalog — that is Phase 2),
+`base_prompt` keys in the payload **20 → 2**, long `alt` attributes **23 → 5**, `"HSK"` **19 → 3**
+(2 in markup: the sibling link's own label and `title` attribute, which are the internal link we
+want to keep).
+
+**Read at ~2026-10-03**, after recrawl: `hsk reading` tests cause 1 (HSK is *not* explained by
+rank_score — it already outscores its rival), `mbti naruto` tests cause 3. A null result falsifies
+cause 1 as dominant and promotes Phase 2.
+
+### Open
+
+- **Phase 2** — `pickClientMessages` still ships **575 foreign `title` keys, 287 `description`,
+  177 `intro`** on every page: `topics.*` beyond `displayName` is 175,576 chars (**33% of the
+  flight payload**), tool bodies 104,834, blog `metaDescription`/`seoKeywords` ~37,700. Verified
+  safe to trim: the only client readers of `topics.*` are `TopicNavRow:124`, `SearchBar:141` and
+  `SearchResultsClient:115`, and **all three read only `<slug>.displayName`**. Sequence and the
+  6-blog regression check are in the plan file.
+- **Cause 2 (topic hubs) is not fixed.** Prefer aliasing dead content topics onto live hubs over
+  minting thin new pages (`project_new_page_crawl_collapse`).
+- **`guides` and `comparison` sit in `CONTENT_SIGNAL_TOPICS` but behave like style tags.** The
+  image-input rule fixes the observed damage without touching the taxonomy; audit separately.
+- Sitemap `lastmod` bump is Phase 2's job — it must be truthful for everything above it.
 
 ---
 

@@ -1,3 +1,4 @@
+import { toTemplateStripCard } from "@/lib/nano_pure";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -296,7 +297,7 @@ export default async function PromptDetailPage({
             </div>
             <NanoTemplateDetailClient
               locale={locale}
-              otherNanoCards={templateCards}
+              otherNanoCards={templateCards.map(toTemplateStripCard)}
               showReproduce={false}
               showOtherTemplates={true}
               showOtherTemplateTitle={false}

@@ -279,36 +279,16 @@ export default async function NanoTemplatePage({ params }: Props) {
       previewUrl: imageViews[0].preview_image_url ?? imageViews[0].image_url,
       alt: template.template_id,
     } : undefined}
-    otherNanoCards={otherNanoCards}
     showReproduce={true}
     showOtherTemplates={false}
   />
 </section>
 
-      <section className="mt-10">
-        <BulkDesignCallout
-          source={`nano-template/${slug}`}
-          subject={categoryLabel || undefined}
-        />
-      </section>
-
-      <section className="mt-8">
-       
-        <NanoTemplateDetailClient
-          locale={pageLocale}
-          template={{
-            template_id: template.template_id,
-            base_prompt: template.base_prompt || "",
-            parameters: [],
-            topics: template.topics,
-          }}
-          otherNanoCards={otherNanoCards}
-          showReproduce={false}
-          showOtherTemplates={true}
-        />
-      </section>
-
-
+      {/* The page's only substantial UNIQUE prose. It sits above the bulk
+          callout on purpose: that callout's body is byte-identical on all 352
+          template pages, and Google was picking it as the SERP snippet because
+          it was the largest contiguous prose block near the top of a page
+          whose visible text is only ~4.6KB. */}
       {h2What || h2Who || h2How.length > 0 || h2Prompts.length > 0 ? (
         <section className="mt-10">
                     <h2 className="text-lg font-bold text-neutral-900">About this template</h2>
@@ -362,6 +342,34 @@ export default async function NanoTemplatePage({ params }: Props) {
           ) : null}
         </section>
       ) : null}
+
+      <section className="mt-10">
+        <BulkDesignCallout
+          source={`nano-template/${slug}`}
+          subject={categoryLabel || undefined}
+        />
+      </section>
+
+      <section className="mt-8">
+       
+        <NanoTemplateDetailClient
+          locale={pageLocale}
+          template={{
+            template_id: template.template_id,
+            // showReproduce={false} ⇒ ReproduceTemplateSection never mounts, so
+            // the prompt would be serialized for nothing. Matches what the
+            // example page already does.
+            base_prompt: "",
+            parameters: [],
+            topics: template.topics,
+          }}
+          otherNanoCards={otherNanoCards}
+          showReproduce={false}
+          showOtherTemplates={true}
+        />
+      </section>
+
+
 
       {/* VerticalPageSchema v1 — Pillar 1 authored domain-knowledge block */}
       <VerticalKnowledgeSection vertical={vertical} />

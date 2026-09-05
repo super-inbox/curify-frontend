@@ -146,6 +146,47 @@ export type NanoInspirationCardType = {
   batch?: boolean;
 };
 
+/**
+ * The ONLY fields TemplateStrip reads. Used for the sibling "other templates"
+ * rails, which cross a client boundary and are therefore serialized into the
+ * page's RSC flight payload.
+ *
+ * The `?: never` members are not decoration. They make NanoInspirationCardType
+ * structurally UNASSIGNABLE to this type, so a full feed card cannot reach a
+ * strip surface by accident. A plain Pick<> would not do it: TS excess-property
+ * checking only fires on object literals, so `otherNanoCards={fullCards}` would
+ * still compile — which is exactly how 18 siblings' complete base_prompt (27KB
+ * of hoisted Flight rows) ended up in every /nano-template/* page, putting the
+ * HSK prompt verbatim on a vocabulary-flashcard page and letting generic hubs
+ * absorb their specific siblings' keywords.
+ */
+export type NanoTemplateStripCard = {
+  id: string;
+  template_id: string;
+  category: string;
+  topics: string[];
+  image_urls: string[];
+  preview_image_urls: string[];
+  base_prompt?: never;
+  template_parameters?: never;
+  sample_parameters?: never;
+  description?: never;
+  example_ids?: never;
+};
+
+/** Project a full feed card down to what a strip actually renders. */
+export function toTemplateStripCard(c: NanoInspirationCardType): NanoTemplateStripCard {
+  return {
+    id: c.id,
+    template_id: c.template_id,
+    category: c.category,
+    topics: c.topics,
+    // The strip renders index 0 only (see TemplateStrip `thumbnail`).
+    image_urls: c.image_urls?.slice(0, 1) ?? [],
+    preview_image_urls: c.preview_image_urls?.slice(0, 1) ?? [],
+  };
+}
+
 export type NanoRegistry = {
   templates: RawTemplate[];
   images: RawNanoImageRecord[];

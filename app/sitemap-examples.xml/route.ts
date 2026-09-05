@@ -56,6 +56,8 @@ type NanoTemplate = {
   index_examples?: boolean | null;
   id: string;
   locales?: Record<string, any>;
+  image_input?: string | null;
+  requires_image_upload?: boolean | null;
 };
 
 type NanoExample = {
@@ -110,7 +112,14 @@ function buildExamplesIndexableMap(): Map<string, boolean> {
       : typeof t.topics === "string"
         ? t.topics.split(",").map((x) => x.trim())
         : [];
-    m.set(String(t.id).trim(), templateExamplesIndexable(topics, t.index_examples));
+    m.set(
+      String(t.id).trim(),
+      templateExamplesIndexable(
+        topics,
+        t.index_examples,
+        t.image_input === "required" || !!t.requires_image_upload
+      )
+    );
   }
   return m;
 }
