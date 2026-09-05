@@ -1,6 +1,8 @@
 // app/[locale]/(static)/tools/[slug]/tool-generic-client.tsx
 "use client";
 
+
+import { toTemplateStripCard } from "@/lib/nano_pure";
 import { Link } from "@/i18n/navigation";
 import { useClientSearchParams } from "@/lib/useClientSearchParams";
 import StickerExportForm from "@/app/[locale]/_components/StickerExportForm";
@@ -224,7 +226,7 @@ export default function ToolGenericClient({
             {tGlobal("interconnection.relatedTemplates")}
           </h2>
           <TemplateStrip
-            cards={relatedTemplateCards}
+            cards={relatedTemplateCards.map(toTemplateStripCard)}
             trackPrefix="tool-related-templates"
             maxRows={8}
           />

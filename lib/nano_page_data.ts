@@ -28,6 +28,8 @@ import {
   normalizeNanoLocaleMessageEntry,
 } from "@/lib/nano_seo_utils";
 
+import { toTemplateStripCard } from "@/lib/nano_pure";
+
 export function slugToTemplateId(slug: string) {
   return slug.startsWith("template-") ? slug : `template-${slug}`;
 }
@@ -335,13 +337,19 @@ export function buildOtherTemplateCards(
     })
     .map((x) => x.id);
 
+  // Projected to NanoTemplateStripCard: these cards are handed to a CLIENT
+  // component, so every field survives into the RSC flight payload. The strip
+  // renders a thumbnail and a label; shipping base_prompt/description/params
+  // put ~27KB of OTHER templates' prompt text on every template page.
+  // buildNanoFeedCards itself is unchanged — CardViewModal, the home feed and
+  // the inspiration hub still need the full card.
   return buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: translateNano,
     limit: OTHER_TEMPLATES_CARD_LIMIT,
     templateIds: ranked,
-  });
+  }).map(toTemplateStripCard);
 }
 
 export function resolveLocalizedExampleCopy(

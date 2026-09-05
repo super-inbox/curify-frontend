@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 
 import TemplateStrip from "@/app/[locale]/_components/TemplateStrip";
-import type { NanoInspirationCardType } from "@/lib/nano_pure";
+import type { NanoTemplateStripCard } from "@/lib/nano_pure";
 
 import ReproduceTemplateSection, { type SampleImage } from "./ReproduceTemplateSection";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
@@ -22,7 +22,10 @@ function countCommonTopics(a?: string[], b?: string[]) {
 export default function NanoTemplateDetailClient(props: {
   locale: string;
   template?: NanoTemplateForDetail;
-  otherNanoCards: NanoInspirationCardType[];
+  /** Optional: the `showOtherTemplates={false}` instance must NOT be handed
+   *  cards — they would still be serialized into the flight payload for a
+   *  section that never renders. */
+  otherNanoCards?: NanoTemplateStripCard[];
   showReproduce?: boolean;
   showOtherTemplates?: boolean;
   showOtherTemplateTitle?: boolean;
@@ -32,7 +35,7 @@ export default function NanoTemplateDetailClient(props: {
 
   const {
     template,
-    otherNanoCards,
+    otherNanoCards = [],
     showReproduce = true,
     showOtherTemplates = true,
     showOtherTemplateTitle = true,

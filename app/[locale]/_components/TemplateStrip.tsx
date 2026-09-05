@@ -8,9 +8,8 @@ import { useAtom } from "jotai";
 import { Bookmark } from "lucide-react";
 
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import type { NanoInspirationCardType } from "@/lib/nano_pure";
+import type { NanoTemplateStripCard } from "@/lib/nano_pure";
 import {
-  buildImageAlt,
   makeNanoTemplateUrl,
   getLocaleFromPath,
 } from "@/lib/nano_pure";
@@ -35,7 +34,7 @@ import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 // view_mode instead ('list' on cards, 'strip' on the new component).
 
 export type TemplateStripCardProps = {
-  card: NanoInspirationCardType;
+  card: NanoTemplateStripCard;
   /** Tracking prefix — splits clicks per surface in admin SQL.
    *  Defaults to 'template-strip'. */
   trackPrefix?: string;
@@ -94,10 +93,14 @@ function TemplateStripCard({ card, trackPrefix = "template-strip" }: TemplateStr
         <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-neutral-50">
           <CdnImage
             src={thumbnail}
-            alt={buildImageAlt({
-              category: card.category,
-              description: card.description,
-            })}
+            // Decorative: the <p> below is this link's accessible name, so a
+            // non-empty alt makes a screen reader announce the template twice.
+            // It also used to carry the SIBLING's full description (18 per
+            // page, ~2.4KB of other templates' identity text in indexable
+            // markup) — which is how a vocabulary page ranked for "hsk
+            // reading" and mbti-generic for "mbti naruto". Same treatment as
+            // TopicStrip's identical 48px-thumbnail-plus-label pattern.
+            alt=""
             fill
             sizes="48px"
             className="object-cover"
@@ -141,7 +144,7 @@ function TemplateStripCard({ card, trackPrefix = "template-strip" }: TemplateStr
 }
 
 export type TemplateStripProps = {
-  cards: NanoInspirationCardType[];
+  cards: NanoTemplateStripCard[];
   /** Tracking prefix per surface (e.g. 'home-fallback-template-strip',
    *  'blog-template-strip', 'other-templates-strip'). */
   trackPrefix?: string;

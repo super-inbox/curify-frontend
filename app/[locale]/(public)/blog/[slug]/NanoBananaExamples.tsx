@@ -1,5 +1,7 @@
 "use client";
 
+
+import { toTemplateStripCard } from "@/lib/nano_pure";
 import TemplateStrip from "@/app/[locale]/_components/TemplateStrip";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import { PageLocale } from "@/lib/locale_utils";
@@ -59,7 +61,7 @@ export default function NanoBananaExamples({ locale, blogSlug }: NanoBananaExamp
         <p className="text-gray-600 mb-6">Explore our most popular Nano Banana prompt templates to see what's possible:</p>
         
         <TemplateStrip
-          cards={filteredCards}
+          cards={filteredCards.map(toTemplateStripCard)}
           trackPrefix="blog-template-strip"
           maxRows={24}
         />

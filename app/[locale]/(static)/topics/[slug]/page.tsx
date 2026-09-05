@@ -1,3 +1,4 @@
+import { toTemplateStripCard } from "@/lib/nano_pure";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -602,7 +603,7 @@ export default async function Page({ params }: Props) {
         </h2>
         <NanoTemplateDetailClient
           locale={localeStr}
-          otherNanoCards={nanoCards}
+          otherNanoCards={nanoCards.map(toTemplateStripCard)}
           showReproduce={false}
           showOtherTemplates={true}
           showOtherTemplateTitle={false}
