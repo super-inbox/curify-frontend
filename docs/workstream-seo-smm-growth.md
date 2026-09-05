@@ -2439,6 +2439,114 @@ cause 1 as dominant and promotes Phase 2.
 
 ---
 
+## 2026-09-06 — the "08-29 → 09-01 drop" is two reading artifacts over one real change
+
+A GSC mobile screenshot (`raw/seo-fix-09-05/`) showed what looked like a hard traffic cliff
+between 08-29 and 09-01. **There was no drop.** Clicks over that window were 25, 20, 21, 23,
+24 — the flattest five days in the month. Two independent reading artifacts stacked to
+manufacture the appearance of one, and the investigation turned up a real structural change
+on 08-31 that is *not* what the screenshot appeared to show.
+
+### Artifact 1 — the cliff at the right edge is a partial day
+
+The GSC apps render `dataState: "all"` (fresh, unfinalised). The Search Console API defaults
+to `"final"`, which omits the most recent 1–2 days entirely. Pulled both:
+
+| date | clicks | impr | position | in `final`? |
+|---|---|---|---|---|
+| 08-29 | 25 | 743 | 28.6 | yes |
+| 08-30 | 20 | 811 | 28.5 | yes |
+| 08-31 | 21 | 938 | 17.0 | yes |
+| 09-01 | 23 | 642 | 14.1 | yes |
+| 09-02 | 24 | 890 | 12.7 | yes |
+| 09-03 | 13 | 662 | 16.6 | yes |
+| 09-04 | 16 | 557 | 10.9 | **no — fresh only** |
+| 09-05 | 1 | 57 | 13.3 | **no — fresh only** |
+
+The screenshot was taken 09-05 23:56 CST = 09-05 15:56 UTC, a few hours into 09-05 Pacific.
+`1 click / 57 impressions` is that partial day. That is the entire cliff.
+
+### Artifact 2 — the falling orange line is Position, and falling is better
+
+Site average position ran 28.6 (08-29) → 17.0 → 14.1 → 12.7 (09-02) → 10.9 (09-04). A
+16-point *improvement*, read as a collapse because the app's right-hand axis puts the better
+number at the bottom.
+
+Clicks/day over the same period **rose**: 16.6 (Aug 16–22) → 18.4 (Aug 23–29) → 20.2
+(Aug 30–Sep 3). The 28-day totals reconcile with the screenshot: measured 359 clicks /
+15,518 impressions / 2.31% CTR against the app's 372 / 15,913 / 2.3%, the gap being the two
+fresh days the API withholds.
+
+### Operating note — how to read the GSC app chart
+
+Three rules, because this cost a full investigation:
+
+1. **The last 1–2 points are always partial.** Never read the final data point as a trend.
+2. **Down is good on the Position line.** It is the only inverted metric on that chart.
+3. **For anything you intend to act on, pull it.** `scripts/pull_gsc_performance.cjs` now
+   emits `Chart.csv` with a `Finalized` column and warns by date:
+   `⚠ 2026-09-04, 2026-09-05 are NOT finalized — partial data, do not read as a trend.`
+   It queries `final` and `all` and labels the difference; the other six files stay on
+   `final`, which is the right basis for ranking a page or query list.
+
+### The real 08-31 change — impressions up 20%, clicks flat, CTR down
+
+On 08-31 the number of our URLs earning impressions went **234 → 859**, and again 245 → 785
+on 09-02. Both are deploy days (PR #564 merged 08-31 09:05Z, PR #565 09-02 09:58Z); 09-01,
+with no deploy, sat at 245. Page-dimension impressions ran **2.4× the site total** on those
+days against 1.1× before — meaning roughly 2.4 of our own URLs per SERP.
+
+The 700 URLs new on 08-31 are overwhelmingly locale-prefixed programmatic pages — `/de/nano-template`
+35, `/tr/topics` 29, `/ru/topics` 26, `/zh/topics` 23, `/es/topics` 23, and so on across all
+ten locales — ranking at average position 6–20, and they earned **zero clicks between them**.
+
+Impressions/day by position bucket, Aug 23–30 → Aug 31–Sep 3:
+
+| position | impr/day | clicks/day |
+|---|---|---|
+| 1–10 | 361 → **872** | 6.9 → 16.3 |
+| 11–20 | 128 → 406 | 8.5 → 1.3 |
+| 21–40 | 54 → 188 | 1.5 → 1.3 |
+| 41–70 | 108 → **56** | 1.0 → 1.8 |
+| 71+ | 70 → **17** | 1.3 → 0.0 |
+
+Deep-tail impressions at position 55–85 were replaced by locale-duplicate impressions at
+position 6–20 that convert at 0%. Total clicks/day barely moved (19.1 → 20.5) and **CTR fell
+2.92% → 2.56%**. Essentially all click growth is one page — `/tools/asl-video-translator`,
+7.3 → 7.5 clicks/day, which is also the site's single largest click source — plus the
+homepage at 2.3 → 4.5.
+
+So the position gain is a **vanity metric**: the average improved because we started
+appearing more often in places that do not convert, not because anything that earns clicks
+moved up.
+
+Eliminated on the way — do not re-test these:
+
+- **Accidental de-indexing.** `/blog`, `/blog/lip-sync-technical-deep-dive` and
+  `/tools/video-dubbing` (the three largest impression losers) all return 200, self-canonical,
+  no `noindex`. Their losses are all deep-tail, position 60–80, and were worth ~0 clicks.
+- **`site:` operator searches inflating the page dimension.** Real, and measured: 30 URLs on
+  one SERP. But 1% of page-dimension impressions on 08-31 and 09-02. Not the cause.
+- **The locale A/B being contaminated.** Intact — PR #565 verified treatment 0/1999 present,
+  control 4670/4670.
+
+### Open
+
+- **Impressions have been falling from the 09-02 peak** — 890 → 662 → 557 — while position
+  keeps improving. Re-read ~2026-09-13 to separate "the deep tail is still shedding" (fine)
+  from "the 08-31 expansion is decaying" (means the locale pages were a crawl artifact).
+- **The locale-duplicate SERP share is the thing to watch**, not average position. The
+  page-dimension ÷ site-total impression ratio is the cheapest instrument for it: 1.1× is
+  normal, 2.4× is two of our URLs competing on the same SERP. It belongs next to the CTR
+  baseline in the weekly read.
+- The `project_sitemap_locale_experiment` readout at **2026-09-23** now has a second question
+  attached: whether de-listing the treatment locales moves CTR, not just impressions.
+- **`jwang/seo-favicon-sitemap` is dead.** 3 commits ahead of `main` but based on `ff9a46db`
+  (2026-07-01), carrying the Wimbledon 2026 hub — an event two months past. Delete it; it
+  keeps reading as unlanded SEO work in the branch list.
+
+---
+
 ## Related docs / threads
 - `docs/search-and-content.md` — Search & Content workstream (companion A)
 - `~/curify-studio/docs/workstream-tooling-and-engineering.md` — Tools workstream (companion B)

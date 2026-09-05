@@ -5,7 +5,7 @@
 // replacing the manual export-and-drop-CSVs-in-raw/ workflow.
 //
 // Mirror of what the manual GSC UI export produces:
-//   - Chart.csv      (per-day clicks/impr/CTR/position)
+//   - Chart.csv      (per-day clicks/impr/CTR/position, + a Finalized column)
 //   - Queries.csv    (top queries with metrics)
 //   - Pages.csv      (top pages with metrics)
 //   - Countries.csv  (top countries with metrics)
@@ -109,13 +109,37 @@ async function main() {
   const base = { startDate: args.from, endDate: args.to, rowLimit: 5000 };
 
   // Chart.csv (per-day totals — no dimension filter needed)
-  console.log("→ Chart.csv (per-day totals)");
-  const byDate = await queryGsc(sc, site, { ...base, dimensions: ["date"] });
+  //
+  // Pulled TWICE, and the second pull is the point. The API defaults to
+  // dataState "final", which silently omits the most recent 1-2 days; the GSC
+  // web and mobile apps default to "all", which includes them as partial data.
+  // Read one against the other and a half-reported day looks like a cliff —
+  // on 2026-09-05 the app showed 1 click / 57 impressions for a day that was a
+  // few hours old, and it was investigated as a traffic collapse. So emit both
+  // and label every row. Only Chart.csv does this; the other files stay on
+  // final, which is the right basis for ranking a page or query list.
+  console.log("→ Chart.csv (per-day totals, final + fresh)");
+  const byDateFinal = await queryGsc(sc, site, { ...base, dimensions: ["date"], dataState: "final" });
+  const byDateAll = await queryGsc(sc, site, { ...base, dimensions: ["date"], dataState: "all" });
+  const finalDates = new Set(byDateFinal.map((r) => r.keys[0]));
+  const unfinalized = byDateAll.map((r) => r.keys[0]).filter((d) => !finalDates.has(d));
   writeCsv(
     path.join(args.outDir, "Chart.csv"),
-    ["Date", "Clicks", "Impressions", "CTR", "Position"],
-    byDate.map((r) => [r.keys[0], r.clicks, r.impressions, `${(r.ctr * 100).toFixed(2)}%`, r.position.toFixed(1)])
+    ["Date", "Clicks", "Impressions", "CTR", "Position", "Finalized"],
+    byDateAll.map((r) => [
+      r.keys[0],
+      r.clicks,
+      r.impressions,
+      `${(r.ctr * 100).toFixed(2)}%`,
+      r.position.toFixed(1),
+      finalDates.has(r.keys[0]) ? "yes" : "no",
+    ])
   );
+  if (unfinalized.length) {
+    console.warn(
+      `   ⚠ ${unfinalized.join(", ")} ${unfinalized.length === 1 ? "is" : "are"} NOT finalized — partial data, do not read as a trend.`
+    );
+  }
 
   // Queries.csv
   console.log("→ Queries.csv (top queries)");
