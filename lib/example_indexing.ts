@@ -42,12 +42,30 @@ export const CONTENT_SIGNAL_TOPICS: ReadonlySet<string> = new Set([
  *
  * @param topics   the template's topics[]
  * @param override optional explicit `index_examples` flag on the template
+ * @param requiresImageUpload whether the template needs the USER's own image
+ *   (`image_input === "required"` / `requires_image_upload`)
  */
 export function templateExamplesIndexable(
   topics: readonly string[] | null | undefined,
-  override?: boolean | null
+  override?: boolean | null,
+  requiresImageUpload?: boolean | null
 ): boolean {
   if (typeof override === "boolean") return override;
+  // An image-input template is a TOOL by definition: the searcher wants to
+  // upload THEIR photo, so the example is a demo of a stranger's input rather
+  // than content anyone searched for. That makes the template the SEO target —
+  // the generator-demo case this file already describes. It is a hard signal
+  // and must beat the topic heuristic, which drags tools into info-heavy on
+  // broad tags: `guides` alone carried portrait-retouching-blueprint (whose
+  // examples are literally titled "en 1".."en 5"), and `comparison` carried
+  // home-organization-before-after.
+  //
+  // Deliberately NOT derived for upload-free templates: the older guard test
+  // below pins template-mbti-nba, which once required an upload and is the
+  // site's highest-impression example set. It reads image_input:"none" today,
+  // so this branch does not touch it — but do not widen the rule past the
+  // upload flag without re-checking that.
+  if (requiresImageUpload) return false;
   if (!topics) return false;
   for (const t of topics) {
     if (CONTENT_SIGNAL_TOPICS.has(String(t).toLowerCase())) return true;
