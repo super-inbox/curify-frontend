@@ -109,6 +109,57 @@ function getUserId(): number | null {
   return null;
 }
 
+/**
+ * Path plus campaign parameters — NOT the raw query string.
+ *
+ * WHY. `current_page_url` was `window.location.pathname`, which drops the query
+ * entirely: measured 2026-09-05, 0 of 341,209 rows in the last 30 days contained
+ * a "?" and 0 contained "utm_". So no campaign has ever been attributable
+ * internally. Only `referrer` worked, and a referrer cannot say which Pin, ad or
+ * post a visit came from — the first Pinterest batch shipped with UTMs that the
+ * database silently discarded.
+ *
+ * WHY AN ALLOWLIST rather than `pathname + search`. Query strings are where
+ * personal data leaks into analytics — an email in a share link, a token in a
+ * reset URL. Storing the whole string would put that in a table we query
+ * casually. Only campaign keys are kept, so the column gains attribution without
+ * gaining a liability.
+ *
+ * Keys are emitted in a fixed order so the same visit always produces the same
+ * string, which makes GROUP BY on this column meaningful.
+ */
+const CAMPAIGN_PARAMS = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_content",
+  "utm_term",
+  "gclid",
+  "fbclid",
+  "ref",
+] as const;
+
+function pathWithCampaign(): string | undefined {
+  if (typeof window === "undefined") return undefined;
+  const path = window.location.pathname;
+  if (!path) return undefined;
+  try {
+    const src = new URLSearchParams(window.location.search);
+    const kept = new URLSearchParams();
+    for (const key of CAMPAIGN_PARAMS) {
+      const v = src.get(key);
+      if (v) kept.set(key, v);
+    }
+    const qs = kept.toString();
+    // max_length is 1024 on the backend column; a truncated URL is worse than
+    // a bare path, so drop the query rather than emit a broken one.
+    const full = qs ? `${path}?${qs}` : path;
+    return full.length <= 1024 ? full : path;
+  } catch {
+    return path;
+  }
+}
+
 function buildPayload(options: TrackingOptions) {
   return {
     content_id: options.contentId,
@@ -120,7 +171,7 @@ function buildPayload(options: TrackingOptions) {
     referrer:
       typeof document !== "undefined" ? document.referrer || undefined : undefined,
     current_page_url:
-      typeof window !== "undefined" ? window.location.pathname || undefined : undefined,
+      typeof window !== "undefined" ? pathWithCampaign() : undefined,
     current_page_route:
       typeof window !== "undefined"
         ? options.currentPageRoute ?? normalizeRoute(window.location.pathname)

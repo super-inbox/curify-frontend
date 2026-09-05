@@ -14,6 +14,7 @@ import {
 import { isLocalizedTopic } from "@/lib/topicRegistry_pure";
 import {
   SEO_RETITLED_LASTMOD,
+  PAYLOAD_TRIM_LASTMOD,
   SEO_RETITLED_TEMPLATE_IDS,
   PER_TEMPLATE_RETITLE_LASTMOD,
 } from "@/lib/seo_retitled_templates";
@@ -40,15 +41,19 @@ const LOCALES = routing.locales;
 // NOT wire these to the build date — a sitemap whose lastmod moves on every
 // deploy stops carrying information and Google learns to discount it.
 
-// The 08-05 fold fix changed the rendered HTML of every template page.
-const NANO_TEMPLATES_LASTMOD = "2026-08-05T00:00:00.000Z";
+// The 08-05 fold fix changed the rendered HTML of every template page; the
+// 09-05 payload trim + section reorder changed it again on every one of them.
+const NANO_TEMPLATES_LASTMOD = PAYLOAD_TRIM_LASTMOD;
 
 // Base for topic pages: the 08-05 fold fix, which is the last change that hit
 // ALL of them. Pages that changed later take an override below — claiming a
 // later date for the whole group would overstate freshness for 108 of 109
 // topics, and an overstated lastmod is what teaches Google to discount the
 // signal entirely.
-const TOPICS_LASTMOD = "2026-08-05T00:00:00.000Z";
+// 09-05: the sibling card rail on every topic page stopped shipping 30
+// templates' base_prompt + descriptions, so all 109 changed together. This is
+// the "ALL of them" case the paragraph above reserves a group bump for.
+const TOPICS_LASTMOD = PAYLOAD_TRIM_LASTMOD;
 
 // Per-page overrides, keyed by topic slug. Only pages that genuinely changed.
 const TOPIC_LASTMOD_OVERRIDES: Record<string, string> = {
@@ -64,7 +69,8 @@ const STABLE_LASTMOD = "2026-08-05T00:00:00.000Z";
 // which changes the <title> a crawler sees on every one of them.
 // 08-29 added /tools/impromptu-speech-practice and made tool emission respect
 // a per-tool locale subset, which changes the URL set on this route.
-const TOOLS_LASTMOD = "2026-08-29T00:00:00.000Z";
+// 09-05: the related-templates strip on every tool page lost the same payload.
+const TOOLS_LASTMOD = PAYLOAD_TRIM_LASTMOD;
 
 // Use-case pages: 08-12 added the worked-case block and moved the demo cards
 // into the tools grid — a visible change on all of them.
@@ -102,6 +108,20 @@ const STATIC_ROUTES = [
 // (en + zh) with correct per-locale canonicals and is not noindexed, so a
 // buyer searching the company name still finds it; we just don't ask Google
 // to crawl or rank it. See docs/workstream-vertical-use-cases.md §2026-08-12.
+
+/**
+ * Latest of a set of ISO-8601 UTC timestamps. These are fixed-width, so they
+ * sort lexicographically in chronological order and a plain sort is correct.
+ *
+ * Replaces a three-deep ternary whose middle branch was permanently dead:
+ * it required SEO_RETITLED_LASTMOD (2026-05-05) > NANO_TEMPLATES_LASTMOD, which
+ * has been false since the 08-05 bump. Taking the max expresses the intent the
+ * surrounding comment already stated, and stays correct when either constant
+ * moves — as NANO_TEMPLATES_LASTMOD just did.
+ */
+function latestLastmod(...xs: Array<string | undefined>): string {
+  return xs.filter(Boolean).sort().pop() as string;
+}
 
 function getNanoTemplateRoutes(): Array<{
   route: string;
@@ -145,12 +165,11 @@ function getNanoTemplateRoutes(): Array<{
         // intent, and it would exclude exactly the pages we most want recrawled.
         // A per-template retitle date is newer than both dates below, so it
         // takes precedence for the templates it covers.
-        lastmod: PER_TEMPLATE_RETITLE_LASTMOD.get(t.id.trim())
-          ? PER_TEMPLATE_RETITLE_LASTMOD.get(t.id.trim())!
-          : SEO_RETITLED_TEMPLATE_IDS.has(t.id.trim()) &&
-              SEO_RETITLED_LASTMOD > NANO_TEMPLATES_LASTMOD
-            ? SEO_RETITLED_LASTMOD
-            : NANO_TEMPLATES_LASTMOD,
+        lastmod: latestLastmod(
+          NANO_TEMPLATES_LASTMOD,
+          PER_TEMPLATE_RETITLE_LASTMOD.get(t.id.trim()),
+          SEO_RETITLED_TEMPLATE_IDS.has(t.id.trim()) ? SEO_RETITLED_LASTMOD : undefined
+        ),
       };
     });
 }
@@ -286,7 +305,11 @@ export async function GET() {
   // Topic pages
   topicRoutes.forEach((route) => {
     const slug = route.replace("/topics/", "");
-    const topicLastmod = TOPIC_LASTMOD_OVERRIDES[slug] ?? TOPICS_LASTMOD;
+    // Take the later of the two. The override exists to claim a NEWER date for
+    // a page that changed after the group; using it unconditionally would now
+    // understate `stickers` (08-12) against the 09-05 group change that hit it
+    // too.
+    const topicLastmod = latestLastmod(TOPICS_LASTMOD, TOPIC_LASTMOD_OVERRIDES[slug]);
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
         lastmod: topicLastmod,
@@ -342,6 +365,9 @@ export async function GET() {
   // budget. See docs/wedge1-hygiene-findings-2026-06-26.md.
   tagRoutes.forEach((route) => {
     urls += generateUrlEntry("en", route, {
+      // These render the same sibling-template rail as the template pages, so
+      // the 09-05 payload trim changed them too.
+      lastmod: PAYLOAD_TRIM_LASTMOD,
       changefreq: "weekly",
       priority: "0.7",
     });

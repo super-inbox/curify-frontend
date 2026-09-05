@@ -61,7 +61,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
  * looking at each image, and it is not optional: the aroma-diffuser poster
  * passes both automated layers and renders "NIIMBOT B21" on the device.
  */
-function propose(boardKey, n) {
+function propose(boardKey, n, perTemplate = 1) {
   const topics = L.BOARD_TOPICS[boardKey];
   if (!topics) throw new Error(`no topic mapping for board "${boardKey}"`);
   const board = L.BOARDS[boardKey];
@@ -107,10 +107,17 @@ function propose(boardKey, n) {
   // Closest to 2:3 first, then at most one per template so a run is not five
   // near-identical pins with the same template-level description.
   rows.sort((a, b) => Math.abs(a.ratio - 0.667) - Math.abs(b.ratio - 0.667));
-  const seen = new Set(), out = [];
+  // perTemplate caps how many examples of one template a run may use. 1 is the
+  // safe default. Batch 2 (2026-09-05) raised it to 2 because four of the five
+  // boards had no templates left that batch 1 had not already used, and the
+  // alternative was letting those boards go silent. Two examples of one template
+  // share a description body and differ only in the subject — acceptable when
+  // the images are visually distinct (cookies vs matcha), not when they are not.
+  const seen = new Map(), out = [];
   for (const r of rows) {
-    if (seen.has(r.template_id)) continue;
-    seen.add(r.template_id);
+    const used = seen.get(r.template_id) || 0;
+    if (used >= perTemplate) continue;
+    seen.set(r.template_id, used + 1);
     out.push(r);
     if (out.length >= n) break;
   }
@@ -279,8 +286,9 @@ async function main() {
   if (flag("propose")) {
     const boardKey = arg("board");
     const n = Number(arg("n", 5)) || 5;
+    const perTemplate = Number(arg("per-template", 1)) || 1;
     if (!boardKey || boardKey === true) throw new Error("--propose needs --board <key>");
-    process.stdout.write(JSON.stringify(propose(String(boardKey), n), null, 2) + "\n");
+    process.stdout.write(JSON.stringify(propose(String(boardKey), n, perTemplate), null, 2) + "\n");
     return;
   }
 

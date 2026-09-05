@@ -368,6 +368,11 @@ const IP_REJECTED_EXAMPLES = new Set([
   "template-ip-gift-box-stationery-set-mockup-busan-boogi-duck",   // Busan municipal mascot
   "template-cultural-festival-poster-suwori-festival",             // credits "Civil Navigator"
   "template-vintage-collage-fashion-collection-poster-denim-chic-stella-mccartney",
+  // Batch 2, 2026-09-05: names and pictures AeroPress, Chemex, Kalita Wave and
+  // V60 — real trademarks with distinctive trade dress. Arguably nominative fair
+  // use in an educational guide, but "Civil Navigator" was rejected on less, and
+  // the standard should not move between batches.
+  "template-professional-category-guide-infographic-coffee-brewing-guide",
 ]);
 
 const IP_TEMPLATE_SHAPE = /(character|figure|celebrity|portrait|scientist|founder|player|actor|idol|mbti|persona|artist)/i;
