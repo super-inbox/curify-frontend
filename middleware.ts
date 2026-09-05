@@ -104,6 +104,33 @@ export default function middleware(req: NextRequest) {
     }
   }
 
+  // 0d) Collapse the /nano-template/template-<slug> duplicate.
+  //
+  // toSlug() strips the leading `template-` from a template id, so the
+  // canonical path is /nano-template/<slug>. The route ALSO resolves the
+  // prefixed form and then emits a self-referential canonical for it, so the
+  // duplicate never consolidates — it is a second indexable copy of every
+  // template page and of its /example/ and /carousel/ children. Not in any
+  // sitemap, but Google found 11 of them anyway (36 impressions in the 28 days
+  // to 2026-08-31, incl. /en/nano-template/template-solar-term at position
+  // 12.6 and a /zh/ example at position 1.0).
+  //
+  // Safe as an unconditional redirect: no real slug starts with `template-`
+  // (checked against all 352 ids — toSlug would have had to strip a doubled
+  // prefix). Everything after the slug segment is preserved.
+  {
+    const seg = url.pathname.split("/").filter(Boolean);
+    const hasLocale = (routing.locales as readonly string[]).includes(seg[0]);
+    const rest = hasLocale ? seg.slice(1) : seg;
+    if (rest[0] === "nano-template" && rest[1]?.startsWith("template-")) {
+      const fixed = [...rest];
+      fixed[1] = fixed[1].replace(/^template-/, "");
+      const redirectUrl = new URL(req.url);
+      redirectUrl.pathname = `/${[...(hasLocale ? [seg[0]] : []), ...fixed].join("/")}`;
+      return NextResponse.redirect(redirectUrl, { status: 308 });
+    }
+  }
+
   // 1) Force www redirect (apex -> www)
   if (host === "curify-ai.com") {
     const redirectUrl = new URL(req.url);
