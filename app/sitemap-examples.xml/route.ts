@@ -9,6 +9,7 @@ import { toSlug } from "@/lib/nano_utils";
 import { templateExamplesIndexable } from "@/lib/example_indexing";
 import {
   SEO_RETITLED_LASTMOD,
+  PAYLOAD_TRIM_LASTMOD,
   SEO_RETITLED_TEMPLATE_IDS,
   I18N_DESCRIPTIONS_LASTMOD,
   MBTI_RECRAWL_LASTMOD,
@@ -49,6 +50,12 @@ export const runtime = "nodejs";
 
 const BASE_URL = "https://www.curify-ai.com";
 const LOCALES = routing.locales;
+/** Latest of a set of ISO-8601 UTC timestamps; fixed-width, so a plain sort
+ *  is chronological. Mirrors the helper in app/sitemap.xml/route.ts. */
+function latestLastmod(...xs: Array<string | undefined>): string {
+  return xs.filter(Boolean).sort().pop() as string;
+}
+
 const STABLE_LASTMOD = "2026-03-01T00:00:00.000Z";
 
 type NanoTemplate = {
@@ -309,13 +316,22 @@ export async function GET() {
     //  3. Fallback to the example's own updated_at / lastmod, or STABLE.
     // MBTI family gets the newest lastmod (canonical + title-dedup fixes,
     // 2026-07-24) — highest priority so it overrides the May i18n date.
-    const lastmod = templateId.includes("mbti")
-      ? MBTI_RECRAWL_LASTMOD
-      : EXAMPLE_I18N_IDS.has(exampleId)
-      ? I18N_DESCRIPTIONS_LASTMOD
-      : SEO_RETITLED_TEMPLATE_IDS.has(templateId)
-      ? SEO_RETITLED_LASTMOD
-      : pickLastmod(ex) ?? STABLE_LASTMOD;
+    //
+    // 09-05 outranks all of them: the payload trim changed every example page's
+    // HTML, and 185 of these URLs went 404 -> 200 (the generateStaticParams
+    // double-encode). Google has those marked not-found and will not retry them
+    // on its own, so this is the signal that gets them re-fetched. Group-wide is
+    // truthful here — no example page is unaffected.
+    const lastmod = latestLastmod(
+      PAYLOAD_TRIM_LASTMOD,
+      templateId.includes("mbti")
+        ? MBTI_RECRAWL_LASTMOD
+        : EXAMPLE_I18N_IDS.has(exampleId)
+        ? I18N_DESCRIPTIONS_LASTMOD
+        : SEO_RETITLED_TEMPLATE_IDS.has(templateId)
+        ? SEO_RETITLED_LASTMOD
+        : pickLastmod(ex) ?? STABLE_LASTMOD
+    );
 
     for (const locale of emitLocales) {
       urls += generateUrlEntry(locale, route, {

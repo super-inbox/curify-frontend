@@ -28,6 +28,25 @@ export const I18N_DESCRIPTIONS_LASTMOD = "2026-05-14T00:00:00.000Z";
 // May i18n-descriptions date these same examples otherwise carry.
 export const MBTI_RECRAWL_LASTMOD = "2026-07-26T00:00:00.000Z";
 
+// Payload trim + example-route fixes, shipped 2026-09-05 (PR #568).
+//
+// Group-wide on purpose, and truthful: this changed the rendered HTML of EVERY
+// template, example, topic and tool page, not a subset.
+//   - sibling "other templates" cards stopped serializing 18 siblings' full
+//     base_prompt into the RSC payload (27,428 chars on a template page) and
+//     their full descriptions into <img alt> (~2.4KB of markup per page);
+//   - the "About this template" section moved above the shared bulk callout,
+//     which changes what Google picks as the snippet;
+//   - 185 example URLs went 404 -> 200 (the generateStaticParams double-encode),
+//     and 25 image-input example pages became noindex + canonical-to-template.
+//
+// Every page in those four classes therefore looks different to a crawler than
+// it did on 08-05, which is exactly the condition the note in
+// app/sitemap.xml/route.ts asks for before a group-wide bump. Pages that did
+// NOT change (/use-cases, /personality, the static routes) keep their old
+// dates — see the same note on why overstating teaches Google to discount this.
+export const PAYLOAD_TRIM_LASTMOD = "2026-09-05T00:00:00.000Z";
+
 // Fashion retitle, 2026-08-27. SEMrush KD came back with exactly three green
 // keywords in the whole fashion set — hairstyle for face shape (1,000/mo, KD 23),
 // haircut for face shape (880, KD 25), best hairstyle for my face shape (320,
