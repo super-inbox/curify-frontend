@@ -1,6 +1,6 @@
 # Bilingual Chinese Card Generation — Pinyin Correctness Guide
 
-_Last updated: 2026-07-18. Owner: jay. Applies to any template that renders Chinese text **with pinyin** — the HSK bilingual reading-lesson poster (`template-hsk-bilingual-reading-text-lesson-poster`), flashcards, word-scene cards, caption overlays, etc. Update when a new failure mode or 多音字 override is found._
+_Last updated: 2026-09-06. Owner: jay. Applies to any template that renders Chinese text **with pinyin** — the HSK bilingual reading-lesson poster (`template-hsk-bilingual-reading-text-lesson-poster`), flashcards, word-scene cards, caption overlays, etc. Update when a new failure mode or 多音字 override is found._
 
 ## Why this doc exists
 
@@ -33,7 +33,7 @@ Measured on the 2026-07-18 HSK2 reading deck (50 cards). The model, left to comp
   - In verb reduplication 一 is neutral: 看一看 kàn yi kàn.
 - **不 sandhi:** `bù` normally; `bú` **only** before a 4th tone — 不是 bú shì, but 不舒服 bù shūfu, 不多 bù duō.
 - **只:** measure word = **zhī** (1st); 只有/只是 (only) = **zhǐ** (3rd).
-- **Neutral tones:** 妈妈 māma, 眼睛 yǎnjing, 姐姐 jiějie, 孩子 háizi, 朋友 péngyou, 喜欢 xǐhuan, 舒服 shūfu, 東西/东西 dōngxi.
+- **Neutral tones:** 妈妈 māma, 眼睛 yǎnjing, 姐姐 jiějie, 孩子 háizi, 朋友 péngyou, 喜欢 xǐhuan, 舒服 shūfu, 東西/东西 dōngxi, 头发 tóufa, 咳嗽 késou, 行李 xíngli, 时候 shíhou, 故事 gùshi, 月亮 yuèliang, 认识 rènshi, 休息 xiūxi, 窗户 chuānghu, 精神 jīngshen, 客气 kèqi.
 
 ### 多音字 seen in kids' stories (extend this table when new ones appear)
 
@@ -54,6 +54,11 @@ The machine-readable version lives in [`scripts/configs/pinyin_overrides.json`](
 | 还 | **hái / huán** | 还有 hái; 还书 huán | — |
 | 乐 | **lè / yuè** | 快乐 lè; 音乐 yuè | — |
 | 长 / 少 / 教 / 空 / 差 / 称 | context-dependent | zhǎng·cháng / shǎo·shào / jiāo·jiào / kōng·kòng / chà·chā / chēng·chèn | — |
+| 发 | **fā / fà** | 发烧 fā shāo; 理发 lǐ fà, 头发 tóu fa, 发型 fà xíng | — |
+| 行 | **háng / xíng** | 银行 yín háng; 行李 xíng li | — |
+| 好 | **hǎo / hào** | 好看 hǎo kàn; 爱好 ài hào | — |
+| 系 | **jì** | 系安全带 fasten a seat belt | xì (relation) |
+| 盛 | **chéng / shèng** | 盛饭 chéng; 盛大 shèng | — |
 
 ## The generation method that holds up: **authored-verbatim typeset**
 
@@ -63,7 +68,7 @@ Do **not** let the model write the passage. Author it, then make the model a typ
 2. **Prompt the model to TYPESET IT VERBATIM** — render every character and every pinyin syllable *with tone marks* exactly as given; do not change, add, remove, reorder, or "correct" anything; each pinyin line sits directly above its own characters; no repeats. State that the tone marks are deliberate (incl. 一/不 sandhi and readings like 圈=juàn) so the model doesn't "helpfully" normalize them.
 3. **Layout instructions still matter:** fixed `适合水平 HSK N` badge, `阅读课文 | Reading Lesson` ribbon, left = passage, right = illustrations only, bottom = `生词 | New Words` 2×4 grid numbered in reading order.
 
-Reference implementations (2026-07-18 HSK2 run): `scratchpad/hsk2_regen_authored.cjs` and `hsk2_fix_tones.cjs` — the `buildPrompt(card)` there is the canonical verbatim-typeset prompt. Optionally seed pinyin with `pypinyin` (Style.TONE + `tone_sandhi`) as a first pass, then hand-fix against the tables above — but **the model still needs the finished pinyin verbatim**; pypinyin alone does not fix the image model.
+**Runnable implementation: [`scripts/generate_hsk_reading_cards.cjs`](../scripts/generate_hsk_reading_cards.cjs)** — reads an authored card config (`scripts/configs/hsk_*.json`), builds the verbatim-typeset prompt, generates, watermarks, previews, and writes the `nano_inspiration` records. Use `--review-dir=` to also drop unwatermarked copies for the 声调 QA pass below. (Its ancestors are the 2026-07-18 one-offs under `raw/hsk2-reading-deliverable/generators/`.) Optionally seed pinyin with `pypinyin` (Style.TONE + `tone_sandhi`) as a first pass, then hand-fix against the tables above — but **the model still needs the finished pinyin verbatim**; pypinyin alone does not fix the image model.
 
 ### Why not just regenerate with a "be careful" addendum?
 
