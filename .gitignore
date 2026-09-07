@@ -74,6 +74,23 @@ packs/world-costumes/pack.zip
 packs/cuisine-cards/pack.zip
 packs/zhenhuan-mbti/pack.zip
 packs/confused-chinese-words/pack.zip
+# 2026-08-28 batch — registered SKUs whose bundles were never listed here (91MB).
+packs/butcher-charts/pack.zip
+packs/city-miniatures/pack.zip
+packs/confusing-english-words/pack.zip
+packs/dessert-color-lab/pack.zip
+packs/watercolor-maps/pack.zip
+# 2026-09-04 batch. Every new SKU needs a line here: the ignore above only covers
+# loose images, so an unlisted packs/<sku>/pack.zip is 7-12MB of binary staged by
+# a plain `git add packs/`.
+packs/character-breakdown/pack.zip
+packs/travel-scrapbook/pack.zip
+packs/landmark-posters/pack.zip
+packs/travel-journal/pack.zip
+packs/world-drinks/pack.zip
+packs/artist-bios/pack.zip
+packs/fashion-collage/pack.zip
+packs/clothing-evolution/pack.zip
 
 # design-agent trajectory capture (local sink; may contain query text)
 .trajectories/
@@ -85,3 +102,15 @@ packs/confused-chinese-words/pack.zip
 raw/context-enrichment-08-31/
 raw/cute-city-08-25/
 raw/agent-skills-08-31/
+raw/studio-retouching-09-02/
+raw/retouching-09-01/
+raw/model-video-09-05/
+
+# Head-swap source and output — a third party's identifiable face (a screenshot of a
+# men's-styling short-video account) plus renders that place that likeness on other
+# people's bodies. No release exists and this repo is public.
+# See docs/client-projects/fashion-head-swap.md.
+raw/fashion-change-09-07/
+
+# HK voice-agent client discussion — a HK finance client's business detail, not for a public repo.
+raw/call-center-09-02/
