@@ -70,7 +70,7 @@ function propose(boardKey, n, perTemplate = 1) {
   const rows = [];
   for (const rec of L.inspIndex().values()) {
     if (already.has(rec.id)) continue;
-    if (!L.inTopics(rec, topics)) continue;
+    if (!L.inTopics(rec, topics, boardKey)) continue;
     const flags = L.ipFlags(rec);
     if (flags.length) continue;
 
@@ -86,6 +86,8 @@ function propose(boardKey, n, perTemplate = 1) {
     let copy;
     try { copy = L.copyFor(rec); L.assertCopy(rec, copy); } catch { continue; }
 
+    const tplDemand = L.demand.score(rec.template_id);
+    const exDemand = L.demand.exampleImpressions(rec.template_id, rec.id);
     rows.push({
       example_id: rec.id,
       template_id: rec.template_id,
@@ -95,6 +97,8 @@ function propose(boardKey, n, perTemplate = 1) {
       ratio: +dim.ratio.toFixed(3),
       mb: +(dim.bytes / 1048576).toFixed(2),
       subject: copy.subject,
+      search_phrase: copy.phrase,
+      demand: { template_score: Math.round(tplDemand), example_image_impressions: exDemand },
       title: copy.title,
       alt_text: copy.alt_text,
       description: copy.description,
@@ -104,9 +108,18 @@ function propose(boardKey, n, perTemplate = 1) {
     });
   }
 
-  // Closest to 2:3 first, then at most one per template so a run is not five
-  // near-identical pins with the same template-level description.
-  rows.sort((a, b) => Math.abs(a.ratio - 0.667) - Math.abs(b.ratio - 0.667));
+  // Rank by MEASURED SEARCH DEMAND, not by shape.
+  //
+  // Batches 1 and 2 sorted by proximity to 2:3 inside a band that is already a
+  // hard filter (0.55–0.80), so the ordering carried no information about
+  // whether anyone wants the image. Those 29 Pins have 0 impressions and 0
+  // saves. GSC knows which of these templates already pull an image-search
+  // query — template-fruit earns 498 image impressions against 1 web
+  // impression — so rank on that and let ratio break ties.
+  rows.sort((a, b) =>
+    (b.demand.example_image_impressions * 3 + b.demand.template_score) -
+    (a.demand.example_image_impressions * 3 + a.demand.template_score) ||
+    Math.abs(a.ratio - 0.667) - Math.abs(b.ratio - 0.667));
   // perTemplate caps how many examples of one template a run may use. 1 is the
   // safe default. Batch 2 (2026-09-05) raised it to 2 because four of the five
   // boards had no templates left that batch 1 had not already used, and the
@@ -255,13 +268,45 @@ const BOARD_COPY = {
     description: "Sticker sheets, keychains, cultural goods and print-ready merch artwork generated from a single design." },
   brand:     { name: "Brand Identity & Logo Design Boards",
     description: "Logo variant sets, full visual-identity packs and brand mockup boards for small studios and new products." },
+
+  // Batch 3, 2026-09-08. Named for what a Pinterest user types, not for our
+  // product taxonomy — boards rank in Pinterest search, and the first five are
+  // named after the tool ("Packaging Design Mockups & Label Templates").
+  beauty:    { name: "Nail Art, Hairstyles & Skincare Routines",
+    description: "Nail art designs, men's and women's hairstyle guides, and simple step-by-step skincare and beauty routines you can save and follow." },
+  fashion:   { name: "Fashion Illustration & Outfit Ideas",
+    description: "Couture fashion illustration and dress design sheets, outfit breakdowns by aesthetic, and traditional costume references from around the world." },
+  food:      { name: "Food Infographics & Nutrition Charts",
+    description: "Fruit nutrition infographics, coffee and dessert variety charts, wine guides and illustrated recipes — the visual kind you actually keep." },
+  travel:    { name: "Travel Journals, Maps & Trip Planning",
+    description: "Watercolor travel journal spreads, 3D landmark maps, city miniatures and packing guides for planning and scrapbooking a trip." },
 };
 
 async function patchBoards({ dry }) {
   for (const [key, copy] of Object.entries(BOARD_COPY)) {
     const board = L.BOARDS[key];
-    console.log(`\n${key} (${board.id})\n  name: ${copy.name}\n  desc: ${copy.description}`);
+    const creating = !board.id;
+    console.log(`\n${key} (${board.id || "NEW"})\n  name: ${copy.name}\n  desc: ${copy.description}`);
     if (dry) continue;
+    // A board declared with id: null does not exist yet — create it, and print
+    // the id so BOARDS can be updated. Boards are created PUBLIC: a SECRET
+    // board's Pins are invisible in Pinterest search, which is the whole point.
+    if (creating) {
+      const res = await fetch(`${API}/boards`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${process.env.PINTEREST_ACCESS_TOKEN}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ ...copy, privacy: "PUBLIC" }),
+      });
+      const text = await res.text();
+      let id = null;
+      try { id = JSON.parse(text).id; } catch { /* keep raw */ }
+      console.log(`  CREATE -> HTTP ${res.status}${id ? `  id=${id}` : ""}`);
+      if (!res.ok) console.error(`  ${text.slice(0, 300)}`);
+      L.recordPin({ status: res.ok ? "board_create" : "error", http_status: res.status,
+        board_key: key, board_id: id, title: copy.name, description: copy.description,
+        api_host: new URL(API).host, error: res.ok ? null : text.slice(0, 300) });
+      continue;
+    }
     const res = await fetch(`${API}/boards/${board.id}`, {
       method: "PATCH",
       headers: { Authorization: `Bearer ${process.env.PINTEREST_ACCESS_TOKEN}`, "Content-Type": "application/json" },

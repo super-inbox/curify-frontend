@@ -673,6 +673,86 @@ Supporting signal for group 3: on-site search shows an unserved merch-substrate 
 
 **GSC 404 report — legacy carousel URLs (RESOLVED, 2026-07-04):** the `raw/curify-ai.com-Coverage-Drilldown-2026-07-03/` "Not found (404)" export shows 642 URLs; **~524 (82%) are legacy `/nano-template/[slug]/carousel/[exampleId]` URLs across all 10 locales** — the pre-`016f8a14` (2026-05-13 route unification) carousel path, which moved to `/carousel/template-example/[slug]/[exampleId]`. **Already fixed:** commit `f52d67bd` (2026-05-31) added the 308 permanent redirect in `next.config.ts:114-123`; verified live 2026-07-04 — single hop old→new, destination returns 200. GSC count already fell 735→642 as Google recrawled, then plateaued ~2026-06-12. **No code action — the only lever is clicking "Validate Fix" in GSC to prompt recrawl.** Remaining buckets are low-value: ~75 `/i/<uuid>` inspiration deep-links (genuine 404, route removed, no clean map — leave or 410 later) + 6 `battle/…/example/*.jpg` image files crawled as pages; rest of the 676 table rows is CSV multi-line noise, not real URLs. Don't re-investigate carousel 404s on the next GSC pull.
 
+**GSC 404 re-pull (2026-09-07, `raw/seo-fix-09-05/curify-ai.com-Coverage-Drilldown-2026-09-07/`) —
+the report is 96% stale, but it surfaced a real indexing bug underneath it.** 491 URLs (down from 642 on 07-03).
+**Only 21 of the 491 have been crawled since 2026-08-01.** The Chart's one step in the whole window
+is 479 → 491 on 08-29; everything else is Google simply not having recrawled URLs it already knows.
+
+| bucket | n | last crawled | verdict |
+|---|---:|---|---|
+| legacy `/nano-template/[slug]/carousel/[id]` | 351 (72%) | 337× May, 14× June | **already fixed** — re-verified 09-07, 9/10 random sample 308→200 single hop |
+| `/i/<uuid>` inspiration deep-links | 75 (15%) | all ≤ June | genuine 404, route removed — 404 is the correct answer |
+| `/nano-template/*/example/*` | 18 | 8 fresh, 10 ≤ June | two real defects, below |
+| `/images/*` + `cdn.curify-ai.com/images/*` | 17 | ≤ April | dead image URLs (several are x.com CDN ids, e.g. `G7JduAQa8AEofUY?format=jpg`) |
+| `/_next/static/css/*.css?dpl=…` | 11 | Aug–Sep | old deploy hashes 404 after redeploy; unavoidable, and do NOT `Disallow: /_next/` — blocking CSS hurts rendering |
+| `/topics/<slug>` | 5 | Sept | genuine 404, correct — see below |
+| retired routes (`/lip-sync` ×3, `/creator` ×2, `/gallery`, `/subtitle-generator`, `/video-translator`, `/nano-template`) | 9 | Mar–Jun | intentionally removed |
+| junk / parse artifacts (`/$`, `/nano-banana-pro-`, `/de/blog/चाइनीज-…`, `…jpg54:T9bf,`, an `.m3u8`) | 5 | mixed | not real URLs |
+
+**GSC "Validate Fix" is the only lever that moves the *report*** — it clears 426 of 491 (87%) in
+one click, and no code change touches that bucket. Do not submit the permanently-dead buckets
+(`/i/<uuid>`, retired routes): they will fail validation, correctly. But validation does **not**
+touch defect 1 below — those URLs are still 404 today and come straight back on recrawl.
+
+*Two real defects — one of them bigger than the 404 report shows:*
+
+1. **OPEN — 11 live example pages self-canonical to a 404** (`middleware.ts:169` dot matcher).
+   *Not fixed as of 2026-09-07; documented and deferred, no code change made.* 12 of 3,936 ids in
+   `nano_inspiration.json` contain a `.` — the four `mbti-siliconvalley`/`mbti-breakingbad` CEO
+   portraits, the `…high-speed-rail.JPG` MBTI trio, `template-battle-hanxin-baiqi.jpg 1/2`,
+   `template-fat-loss-plan-female-standard-1.5kg`, `…music-lover.jp`,
+   `template-mbti-generic-marvel-blackwidow.jp`. The matcher
+   `/((?!api|trpc|_next|_vercel|.*\..*).*)` skips **any path containing a dot**, so the bare
+   (locale-less) path never gets the next-intl locale rewrite. `generateStaticParams` only
+   prerenders `en`/`zh` **with the prefix**, so the bare path exists *only* via that rewrite.
+
+   Measured live 2026-09-07, all 12 ids, bare vs `/en`:
+
+   ```
+   bare=404  en=200   x 11
+   bare=308  en=200   x  1   <- ...marvel-blackwidow.jp, and only by accident: an unrelated
+                                mbti-generic -> mbti-marvel slug-retirement redirect catches it
+                                and lands on /zh/, not on the bare EN canonical
+   ```
+
+   **The 404 report understates this.** The `/en/…` page returns 200 and (since `3fb7b42f`)
+   self-canonicals to the absolute *bare* path — which 404s:
+
+   ```
+   /en/nano-template/fat-loss-plan/example/...-1.5kg  -> 200
+     <link rel="canonical" href="https://www.curify-ai.com/nano-template/fat-loss-plan/example/...-1.5kg">
+   /nano-template/fat-loss-plan/example/...-1.5kg     -> 404
+   ```
+
+   So **11 live pages cannot be indexed at all** — Google follows the canonical to a 404. Only 6 of
+   them ever surfaced in the 404 export (the ones Google happened to crawl); the rest are silent.
+   `sitemap-examples.xml` also advertises 1 of the bare 404s directly.
+
+   **Fix when picked up:** add a second matcher entry `"/nano-template/:slug/example/:exampleId"`.
+   Do **not** loosen the dot rule — it is what keeps `/robots.txt`, `/sitemap.xml`, `/favicon.ico`
+   and everything in `public/` out of the locale rewrite. Renaming the 12 ids also works but is
+   more invasive (changes URLs, needs redirects, touches `example_visibility_whitelist.json`).
+   Do **not** "fix" it by dropping dotted ids from the sitemap — that hides the broken canonical
+   instead of repairing it. **GSC "Validate Fix" does nothing for this bucket**: the URLs are still
+   404 today, so they come straight back on recrawl.
+
+2. **8 phantom `:0` / `:1`-suffixed example URLs** (`…conan-edogawa:0`, `…travel-seoul:1`, …), all
+   crawled 09-02→09-05. The base ids all return 200. The suffix appears **nowhere** — not in
+   `nano_inspiration.json`, not in either sitemap (`grep` for `%3A[0-9]` returns 0), not in the
+   live HTML of the template page, the example page, or their fr/ko variants. Same class as the
+   confirmed flight-payload mis-parse in this very export
+   (`/9024e63…_image_1766072095903.jpg54:T9bf,` — `54:T9bf,` is an RSC chunk marker). **Leave them
+   404**; a 404 is the truthful answer for a URL that was never emitted.
+
+*And one non-finding worth writing down so it isn't re-litigated:* the 5 `/topics/*` 404s
+(`celebrity`, `poetry`, `scientist`, `/fr/…/serene`, `/ru/…/pastel`) are **correct 404s and not a
+content gap**. All 5 exist in `taxonomy.json` as vocabulary but have no `messages/en/topics.json`
+entry, so `isLocalizedTopic()` → `notFound()` (page.tsx:216). Content behind them:
+poetry **0** inspirations, serene 2, celebrity 4, scientist 5, pastel 11. None is in the sitemap and
+none is linked from `/search` (checked all three query pages — the chips route to `posters`, `ink`,
+`history`, `digital-canvas`). Google reached them by URL guessing, not by a link leak. Authoring
+topic pages at 0–5 items would manufacture exactly the thin pages the B1 crawl-budget cull removed.
+
 **GSC "Duplicate without user-selected canonical" — P0 FIXED (2026-07-11):** GSC Page Indexing
 showed **9,882 "Duplicate without user-selected canonical"** + **10,579 "Crawled - currently not
 indexed"** (the "87% invisible" made concrete). Drilled in via the **URL Inspection API**
@@ -2153,7 +2233,7 @@ someone else's decision.
 Both P0s below are **unblocked, unstarted, and not waiting on a readout.** Everything else on
 this page is now either a scheduled read or gated behind one.
 
-### P0-1 — Publish to Pinterest  ✅ COMPLETE 2026-09-05 (all 20 live — see the progress section at the end of this doc)
+### P0-1 — Publish to Pinterest  ✅ COMPLETE (30 campaign Pins live — batch 1 on 09-04, batch 2 on 09-05; see the 2026-09-06 section at the end of this doc)
 
 The only genuinely new distribution channel, and it is ready today: OAuth solved with a
 long-lived refresh token (no consent round-trip), `scripts/pinterest_publish.cjs` written,
@@ -2172,7 +2252,8 @@ then batch.
 **Constraints that are already known and must not be relearned** (see
 [[project_pinterest_publishing]]): never link a Pin to an example page — they are `noindex` and
 canonical to the template; persist returned pin ids immediately (the 27 legacy `mbti-curify` pins
-have no recorded ids and no recoverable analytics); pick portrait examples rather than building a
+have no recorded ids — though see 2026-09-06: that does NOT make them unmeasurable); pick
+portrait examples rather than building a
 canvas pipeline (61% of 3,269 images are already portrait at a 0.67 median); and **check the page
 for third-party IP before any submission** — only `/nano-template/custom-character-card` is
 verified original throughout.
@@ -2218,8 +2299,11 @@ placeholder in `.client-key.json`. Both decay to unrecoverable.
 
 ## 2026-09-04 — P0-1 SHIPPED: Pinterest is live
 
-**COMPLETE 2026-09-05: all 20 Pins published, 20/20 verified.** Account **29 → 49**. Commits
+**Batch 1 COMPLETE 2026-09-05: 20 Pins published, 20/20 verified.** Account **29 → 49**. Commits
 `ffb91370` (publisher rebuild + smoke test), `4130aa3e` (5 more), `39dfc8fe` (final 14).
+Registry timestamps put all 20 on **09-04**; 09-05 is when the batch was verified and declared
+complete. Batch 2 (`f2e02d96`) added 10 more on **09-05** — **30 campaign Pins, account 59**.
+See the 2026-09-06 section for the combined numbers and why there is no batch 3 yet.
 
 Final distribution — brand 2 · packaging 3 · merch 4 · ecommerce 5 · edtech 6 — 20 distinct
 templates, 20 distinct pin ids, zero errors across the whole campaign. The 24h abort gate was run
@@ -2289,9 +2373,10 @@ dead in the web report are image-native (fashion 206×, education 173×, AI-self
 ### Measurement
 
 Registry at **`data/pinterest/pins.jsonl`** — append-only, one row per attempt. Pin-level
-analytics is keyed on the id, so this is the prerequisite for measuring anything; the 29
-pre-existing pins have no recorded ids and are permanently unmeasurable. Baseline captured
-2026-09-04: 29 pins, 53 followers, 89 monthly views.
+analytics is keyed on the id, so this is the prerequisite for measuring anything. ⚠️ The claim
+that the 29 pre-existing pins are "permanently unmeasurable" is **wrong** — corrected 2026-09-05,
+see the 2026-09-06 section. Baseline
+captured 2026-09-04: 29 pins, 53 followers, 89 monthly views.
 
 Attribution is deferred and the limitation is known: `utm_source=pinterest` catches the direct
 click, but view → search → landing attributes to organic, so Pinterest will be **systematically
@@ -2547,6 +2632,283 @@ Eliminated on the way — do not re-test these:
 
 ---
 
+## 2026-09-06 — Pinterest: batch 2 shipped, and a publishing cadence is the wrong lever
+
+**Batch 2 landed 09-05 (`f2e02d96`): 30 campaign Pins, account 29 → 59.** Registry
+`data/pinterest/pins.jsonl` holds 32 `ok` rows — the 30 campaign Pins plus the two 08-29
+access-demo Pins backfilled on 09-04. All 32 ids re-verified live with `GET /v5/pins/{id}`.
+
+| board | campaign Pins | board total |
+|---|---:|---:|
+| edtech | 9 | 9 |
+| ecommerce | 8 | 8 |
+| merch | 6 | 6 |
+| packaging | 4 | 4 |
+| brand | 3 | 3 |
+| demo (not a target) | — | 2 |
+| mbti (legacy) | — | 27 |
+
+All six boards are `PUBLIC`, and every board's `pin_count` matches the registry exactly — so
+nothing has been silently removed by Pinterest since publishing.
+
+### The question that came up: do we need a constant publishing schedule? No.
+
+That instinct is imported from Facebook and YouTube, where a feed decays without fresh posts.
+Pinterest is an evergreen **search** surface, and this account is the proof:
+
+> Nothing was published between 2026-04 and 2026-09. Of the **196 impressions in the last 30
+> days, 194 came from the 24 Pins created 2026-03-11** — six months earlier. The other 2 came
+> from the August demo Pins. The September batch has produced 0 so far.
+
+Five dormant months still produced steady daily impressions. There is no recency decay to
+outrun, so cadence buys nothing that content quality does not already buy.
+
+### The actual bottleneck is save rate, and it is zero
+
+All 57 API-listable Pins, 2026-08-07 → 09-06:
+
+| metric | 30d total | per Pin |
+|---|---:|---:|
+| IMPRESSION | 196 | ~3.4 |
+| PIN_CLICK | 12 | 0.21 |
+| OUTBOUND_CLICK | **1** | 0.02 |
+| **SAVE** | **0** | **0** |
+
+**31 of 57 Pins had zero impressions in 30 days.** Save is Pinterest's distribution signal — a
+saved Pin gets fed out for months, which is exactly the evergreen behaviour the March Pins are
+still showing. At a 0% save rate, a publishing schedule multiplies zero. Volume is the right
+lever only *after* a batch demonstrates a non-zero save rate.
+
+Also worth noting what the top performers are: the highest-impression Pins are all
+`Big Bang Theory × MBTI` and `Breaking Bad × MBTI` — i.e. the surface rewards exactly the
+third-party IP that the 08-21 doc rules out for a commercial account. Whatever earns saves here
+has to earn them without that crutch.
+
+### The inventory could not support a schedule anyway
+
+Remaining `--propose` candidates, **before** the mandatory visual IP review (which historically
+rejects ~27%, 6 of 22):
+
+| board | remaining candidates | after ~27% IP rejection |
+|---|---:|---:|
+| edtech | 50+ | 36+ |
+| ecommerce | 8 | ~6 |
+| merch | 5 | ~4 |
+| packaging | 3 | ~2 |
+| brand | 2 | ~1 |
+
+Four of five boards are down to roughly **13 reviewed Pins combined**. A daily cadence exhausts
+them inside two weeks and then puts pressure on the one filter that must not be loosened. This
+sharpens the earlier "packaging and brand are content gaps" note: it is now four boards, not two,
+and edtech is the only one with depth.
+
+### So the gate is the readout, not a cron
+
+The 30 new Pins currently read **0 impressions with `data_status: PROCESSING`** — that is
+Pinterest's reporting latency, not failure. The **T+7d readout ~2026-09-12** is the decision
+point, and it is already a clean A/B: the new Pins have alt text, search-phrase titles and
+topic-hub links; the legacy 27 had none of those and earned **zero** saves in 90 days.
+
+- **Saves > 0 on the new batch** → the copy/link changes are what did it. Scale the board that
+  earned them, from its own inventory.
+- **Saves still 0** → more Pins is the wrong move; the creative or the surface is wrong, and a
+  schedule would spend the thin remaining inventory before we knew which.
+
+No schedule until that readout resolves. This is the traffic × conversion split from
+`project_growth_drivers`: cadence is a traffic dial, and the measured failure is conversion.
+
+### Correction carried in from 09-05 — the legacy Pins are NOT unmeasurable
+
+Two places in this doc said the 27 legacy `mbti-curify` Pins have "no recoverable analytics"
+because their ids were never recorded. The premise is true; the conclusion does not follow, and
+both lines are now corrected in place.
+
+- **Ids are listable after the fact** — `GET /v5/pins?page_size=100` and
+  `GET /v5/boards/{id}/pins` return all of them with `created_at` and `link`. Nothing had to be
+  recorded in advance.
+- **Pin analytics works** under Standard for 25 of 27. The other two (`570831321548691578`,
+  `570831321548619499`, both `link: none`) 403 — almost certainly saves of other people's Pins.
+- **What IS lost is anything older than 90 days.** `GET /v5/pins/{id}/analytics` refuses a
+  window starting before T-90 (`code 1`). These Pins are from 2026-03/04, so their launch period
+  is gone. The original `BEFORE_BUSINESS_CREATED` finding was **account-level** — a different
+  endpoint, and it never implied pin-level data was unavailable.
+
+**Method note, and it generalises past Pinterest:** before declaring historical data lost, check
+the item-level endpoint and list the ids from their container. "We did not record it" is not the
+same as "it is not retrievable."
+
+### Open
+
+- **~09-12 — T+7d readout.** Per-Pin `IMPRESSION / SAVE / PIN_CLICK / OUTBOUND_CLICK` joined
+  `pin_id → template_id → board`. The registry carries `ratio`, `bytes` and `image_variant`, so
+  it answers which board, which template, which shape. Not scheduled as a cron — run it manually.
+- **Attribution has exactly two usable sources, and UTM is not one of them.** Measured 09-05: of
+  341,209 `user_interactions` rows in 30 days, **0** contain a query string — the tracker strips
+  it, so `utm_source=pinterest` never reaches the DB. Use `GET /v5/pins/{id}/analytics` per Pin
+  and `user_interactions.referrer ILIKE '%pinterest%'` for total inbound. Fixing UTM capture is a
+  frontend tracker change, not a reporting one.
+- **Content gap is now the binding constraint on this channel**, ahead of anything about
+  publishing mechanics. brand/packaging/merch/ecommerce need new 2:3 examples that survive visual
+  IP review before a batch 3 is even possible.
+
+---
+
+## 2026-09-08 — Pinterest batch 3: the boards were the problem, and search already said so
+
+Batch 2 closed with "content gap is the binding constraint." It is not. There are **1,046
+mechanically eligible unpublished examples** site-wide — right ratio, clean unwatermarked
+source, IP screen passed. The 13-candidate figure in the 09-06 section counted only what fell
+inside the five board topic maps (`product`, `packaging`, `learning`, `merch`, `branding`).
+Everything tagged `lifestyle`, `fashion`, `beauty`, `travel`, `language` or `culture` never
+entered the funnel.
+
+That is the same finding as the zero save rate, seen from the other end.
+
+### What the 29 September Pins actually did: nothing, and not because of latency
+
+Re-pulled per-Pin analytics 2026-09-08 (T+3d / T+4d), all 57 API-listable Pins:
+
+| cohort | n | impressions | saves | pin clicks |
+|---|---:|---:|---:|---:|
+| Sept campaign (batches 1+2) | 29 | **0** | 0 | 0 |
+| Aug access-demo | 2 | 2 | 0 | 0 |
+| Mar legacy (`mbti-curify`) | 26 | 199 | 0 | 12 |
+
+Not one impression across 29 Pins in three to four days.
+
+> **Gotcha worth keeping: `GET /v5/pins` is not a complete inventory.** The registry holds 30
+> batch-1+2 campaign Pins; the listing returned 29. The missing one
+> (`570831321549618861`, edtech) answers a direct `GET /v5/pins/{id}` with 200, alive, media
+> present. Reconcile analytics against `data/pinterest/pins.jsonl`, never against the listing —
+> same lesson as the 09-05 correction about the legacy Pins, from the other direction. The 09-06 read attributed the zeroes
+to `data_status: PROCESSING`; four days on, the number has not moved. Their titles say why:
+*"Ceramic Lake-View Mug Price Tag & Product Label"*, *"Saving Vs Investing Finance Comparison
+Infographic"*, *"Eyemask Fashion E-commerce Details"*. Those describe a design tool. Nobody
+searches Pinterest for a price tag.
+
+### The demand signal was sitting in GSC image search the whole time
+
+Pulled 90 days (2026-06-10 → 09-05) by `searchType`, both `query` and `page`+`query`:
+
+| | queries | impressions | clicks | CTR |
+|---|---:|---:|---:|---:|
+| web | 6,229 | 103,162 | 1,106 | 1.07% |
+| **image** | **10,960** | **186,921** | 112 | **0.06%** |
+
+Strip World Cup and MBTI/anime — dead event, and third-party IP a commercial account cannot
+use — and **9,624 image impressions across 762 pages earn 20 clicks**. That residue is the
+brief. It is demand we already rank for, on a surface we cannot convert, in categories that
+happen to be Pinterest's biggest:
+
+| cluster | template | image impr | clicks |
+|---|---|---:|---:|
+| fashion illustration | `fashion-inspired-gown-design-sheet` | 668 | 0 |
+| fruit nutrition | `fruit` | 498 | 0 |
+| traditional costume | `costume` | 439 | 1 |
+| skincare routines | `beauty-step-by-step-guide` | 197 | 0 |
+| travel journals | `watercolor-travel-journal-collage` | 167 | 0 |
+| nail art | `fashion-nail-art-design` | 164 | 0 |
+| weather for kids | `weather-education-infographic` | 155 | 0 |
+| pet-safe food charts | `pet-safe-human-food-infographic` | 150 | 1 |
+
+`template-fruit` earns 498 image impressions against **1** web impression. The web report calls
+this cluster dead. It is not dead; it is image-native, and we were reading the wrong surface.
+
+### What shipped
+
+**Four new boards**, named for what a searcher types rather than for our taxonomy — boards
+themselves rank in Pinterest search:
+
+| key | id | board | landing |
+|---|---|---|---|
+| beauty | 570831390209281053 | Nail Art, Hairstyles & Skincare Routines | `/topics/beauty` |
+| fashion | 570831390209281054 | Fashion Illustration & Outfit Ideas | `/topics/fashion` |
+| food | 570831390209281055 | Food Infographics & Nutrition Charts | `/topics/food` |
+| travel | 570831390209281056 | Travel Journals, Maps & Trip Planning | `/topics/travel` |
+
+All four landing pages verified 200 with no redirect before the boards were created.
+
+**`scripts/pinterest_demand.cjs`** — pulls GSC by search type into
+`data/pinterest/demand-<from>_<to>.json` and exposes a per-template score and a copy phrase.
+`pull_gsc_performance.cjs` only queries web, which is why this cluster was invisible.
+
+**Selection now ranks on measured demand.** `propose()` sorted by proximity to 2:3 inside a
+band (0.55–0.80) that is already a hard filter — an ordering carrying no information about
+whether anyone wants the image. It now sorts on image impressions + clicks, ratio breaking ties.
+
+**Copy is anchored on a real search phrase.** Titles were `<subject> <category>`, where category
+is our product noun. They are now the subject merged with the highest-impression English query
+GSC measures for that page, de-duplicated:
+
+- `Blueberry` + `Fruit Science Popularization Illustrated Guide` → **Blueberries Antioxidants**
+- `Cherry Blossom` + `Themed Nail Art` → **Cherry Blossom Nail Art Designs**
+- `Countryside Tour` + `Watercolor Travel Journals` → **Travel Journal Collage**
+
+Descriptions end on an explicit *"Save it for later"*. SAVE is the distribution signal on this
+surface and the measured rate across 57 Pins is 0.
+
+**30 Pins published** — edtech 8, food 6, travel 6, beauty 5, fashion 5.
+
+### Four selection bugs the demand ranking exposed
+
+Ranking by demand pulls in templates the topic filter never reached, and each one broke a
+different assumption. All four are fixed with a guard and a comment, not a special case:
+
+1. **The IP screen scanned `search_aliases`.** Aliases are the phrases people *type*;
+   "celebrity fashion" is an alias on every gown in `fashion-inspired-gown-design-sheet`, and
+   the gowns are butterflies and ocean waves. All 7 blocked — the highest-demand non-IP image
+   page on the site. Named entities still disqualify anywhere they appear (an alias of "hello
+   kitty" means the image is Hello Kitty); the *category* words no longer read aliases.
+2. **A template-page query is not always about the template.** The template page renders its
+   examples, so `anatomy-cut-guide` ranks for "coffee bean anatomy diagram" — which then titled
+   the beef diagram *"Beef Cuts Coffee Bean Anatomy Diagram"*. A phrase naming a sibling's
+   subject is now rejected, and three per-item templates opt out of template phrases entirely.
+3. **Example ids lie about what is drawn.** `-island-vacation` renders an autumn forest;
+   `-countryside-tour` renders a jungle. Caught at visual review, corrected by hand in the plan.
+4. **`titleCase` capitalised after apostrophes** — "Men'S Korean Short Hair".
+
+### Visual review: 9 rejected of 39, and only one was visible in metadata
+
+The layer-3 human pass remains the one filter that cannot be automated. 23% rejected, in line
+with the 27% of batch 2:
+
+- **"the little shine" watermark** baked into the guinea-pig chart's onion photo — a third-party
+  mark inside the pixels; food labels also garbled ("Pumpoil", "Chartots", "Ceams").
+- **"Nikon"** rendered on the camera in 3 of the 4 `watercolor-travel-journal-collage` examples.
+  All four were inspected; the one clean render was kept rather than cutting the template.
+- **Yankees "NY" + a New Era side mark** on the cap in the 3-day hiking packing guide.
+- **Gabriel García Márquez** credited on the *One Hundred Years of Solitude* cover.
+- **Kyoto Animation / ufotable** logos in the studio-comparison infographic — caught from
+  metadata after the studio names were added to `IP_NAMES`; the only one of the nine that was.
+
+**Photoreal AI faces** (hairstyle guides, ASL tutorial, academia outfit breakdown) were escalated
+rather than decided by the proposer. All are `image_input: "none"`, so no reference photo is
+involved and `project_fashion_model_pose_ref_likeness` does not apply. **Approved 2026-09-08**;
+`PHOTOREAL_FACE_TEMPLATES` + `PINTEREST_ALLOW_FACES=0` make it one line to reverse.
+
+### What this batch is, and what it is not
+
+It is **not** the "more Pins" move the 09-06 section ruled out. That section said volume
+multiplies zero and it was right. This changes the variable: different categories, different
+boards, keyword copy, explicit save CTA. Batches 1+2 are now the control arm and this is the
+treatment, on the same account, a day apart.
+
+### Open
+
+- **~09-15 — T+7d read on batch 3, against batches 1+2 as control.** The question is saves, not
+  impressions. Non-zero saves on the new boards → scale that board from its own inventory.
+  Zero again across both arms → the creative or the surface is wrong, and no board taxonomy
+  fixes it.
+- **The 1,046-example pool means inventory is not a constraint for a long time.** What binds is
+  the ~25% visual-review rejection rate, and that is human minutes per Pin, not supply.
+- `template-fruit`, `costume`, `beauty-step-by-step-guide` and `fashion-nail-art-design` have
+  more eligible examples than this batch used. They are the first place to go if batch 3 saves.
+- **Not touched: the Google side of the same finding.** 762 non-IP pages earn 9,624 image
+  impressions and 20 clicks. Pinterest is a second surface for that demand, not a fix for it —
+  no image sitemap and tag-slug alt text are still unaddressed (`project_image_search_surface`).
+
+---
+
 ## Related docs / threads
 - `docs/search-and-content.md` — Search & Content workstream (companion A)
 - `~/curify-studio/docs/workstream-tooling-and-engineering.md` — Tools workstream (companion B)
@@ -2557,6 +2919,8 @@ Eliminated on the way — do not re-test these:
 - `~/curify-studio/curify_background/app/crud/admin.py` — growth analytics queries
 - `~/curify-studio/curify_background/app/utils/autopost_utils.py` — SMM autopost
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
+- `docs/pinterest-publishing-2026-08-21.md` — Pinterest channel writeup; registry at `data/pinterest/pins.jsonl`
+- `scripts/pinterest_demand.cjs` — GSC-by-search-type → per-template demand score + copy phrase; snapshots in `data/pinterest/demand-*.json`
 - `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
 - `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
 - `raw/agent-skills-08-31/design-skills.txt` — the TypeUI read: upgrade the prompt/template library along Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill rather than extending it. (Replaces a citation to `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md`, which was never written — verified absent 2026-09-01.)
