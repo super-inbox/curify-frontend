@@ -110,7 +110,11 @@ and Van Gogh/MFA Boston — worth weighing before using it as a demo or landing 
 5. Claim the domain and enable Rich Pins — one-time, and it makes the title/meta work already
    done on topic pages pay off automatically.
 
-## Demo video (submitted)
+## Demo video (submitted — DENIED, see take 2)
+
+> **2026-08-29.** This cut was denied as "an incomplete demo video". Take 2 and the
+> reason take 1 could not have passed are in
+> `pinterest-standard-access-demo-v2-2026-08-29.md`.
 
 `raw/pinterest-api-08-03/pinterest-standard-access-demo.mp4` — 1920x1080, 65s, narrated.
 Built with Remotion (`curify-studio/dev/jayw/cultural_shorts`, composition `PinterestDemo`),
