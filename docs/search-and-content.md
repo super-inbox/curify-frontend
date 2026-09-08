@@ -351,6 +351,60 @@ Each adapter produces proposal entries in a unified schema (slug, title, evidenc
 
 ---
 
+## 2026-09-08 — image search is a content-routing signal, and it disagrees with the web report
+
+Threads a–d have been steered off GSC's **web** report throughout. `pull_gsc_performance.cjs`
+queries web only, and the whole "SEARCH_NORESULT → content gap" loop in thread c reads from it.
+Pulled 90 days by `searchType` for the first time (2026-06-10 → 09-05):
+
+| | queries | impressions | clicks | CTR |
+|---|---:|---:|---:|---:|
+| web | 6,229 | 103,162 | 1,106 | 1.07% |
+| **image** | **10,960** | **186,921** | 112 | **0.06%** |
+
+Image search carries **1.8× web's impressions on 1.8× the distinct queries**, and converts at
+one-eighteenth the rate. Two consequences for this workstream:
+
+**1. The web report calls image-native clusters dead, and it is wrong about them.**
+`template-fruit` has **498 image impressions against 1 web impression**. `template-costume`:
+439 vs 8. `template-fashion-inspired-gown-design-sheet`: 668 vs 8. Any gap analysis run on web
+numbers scores those at zero demand. They are among the strongest visual demand on the site.
+
+**2. The non-IP residue is the content brief.** Strip World Cup (dead event) and MBTI/anime
+(third-party IP) and **762 pages earn 9,624 image impressions and 20 clicks** — near-total
+non-conversion on demand we already rank for. Clusters, largest first: fashion illustration,
+fruit/nutrition infographics, traditional costume, skincare routines, travel journals, nail art,
+weather-for-kids, pet-safe food charts, phonics flashcards, stoichiometry cheat sheets.
+
+Every one of those is a **creation-intent** template with an existing catalog entry. This is not
+a content gap; it is a routing and surface problem, which is why it belongs in this doc and not
+in `docs/batch-generation.md`.
+
+### Where it went first: Pinterest
+
+The immediate use is distribution, not new pages — the full writeup, the 30-Pin batch and the
+board changes are in `docs/workstream-seo-smm-growth.md` (2026-09-08). Mechanism worth reusing
+here: `scripts/pinterest_demand.cjs` maps GSC `page`+`query` to a template id, splits queries
+measured on the **template** page (they generalise to any example) from those measured on an
+**example** page (they do not), and exposes both a demand score and a usable English copy
+phrase. That template/example split is the same distinction thread b keeps hitting when a
+template-level tag gets applied to an individual inspiration — see
+[[feedback_template_topics_should_be_boilerplate]].
+
+### Open follow-ups for this workstream
+
+- **Re-run the thread-c content-gap review on image search.** The weekly NORESULT/LOWRESULT
+  loop and the 3D coverage matrix have only ever seen web data.
+- **The alias/IP-screen lesson generalises.** `search_aliases` holds phrases people *type*, not
+  a description of what is drawn. Anything filtering on record text has to keep those apart —
+  the Pinterest IP screen read aliases and blocked all 7 gown examples on "celebrity fashion".
+- **`pull_gsc_performance.cjs` should learn `--type=image`** so every future pull carries both
+  surfaces. Until it does, `pinterest_demand.cjs --pull` is the only image-aware puller.
+- Related and still unworked on the Google side: no image sitemap, tag-slug alt text
+  (`project_image_search_surface`).
+
+---
+
 ## 2026-09-02 — scene enhancement: the one image-in/image-out job the catalog could not do
 
 Source: a 儿童摄影 **场景增强 试稿** (trial brief) dropped into `raw/context-enrichment-08-31/`

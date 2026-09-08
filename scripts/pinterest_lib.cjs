@@ -12,6 +12,7 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 const { applyCornerWatermark } = require("./lib/watermark.cjs");
+const demand = require("./pinterest_demand.cjs");
 
 const ROOT = path.join(__dirname, "..");
 const CDN = "https://cdn.curify-ai.com";
@@ -42,15 +43,83 @@ const BOARDS = {
   edtech:    { id: "570831390209279196", landing: "/topics/learning" },
   mbti:      { id: "570831390209262804", landing: "/topics/mbti" },
   demo:      { id: "570831390209280001", landing: "/nano-template/custom-character-card" },
+
+  // Batch 3, 2026-09-08. The first five boards are our product taxonomy —
+  // packaging, brand identity, ecommerce listings — and after 29 Pins they had
+  // earned 0 impressions and 0 saves. They describe a design tool. Pinterest's
+  // audience searches for an outcome: "nail art designs", "simple skincare
+  // routine steps", "travel journal collage", "blueberries antioxidants". Every
+  // one of those is a phrase GSC already measures against a template of ours,
+  // on image search, at 0% CTR — demand we are visible for and cannot convert
+  // on Google. These four boards are those clusters.
+  beauty:    { id: "570831390209281053", landing: "/topics/beauty" },
+  fashion:   { id: "570831390209281054", landing: "/topics/fashion" },
+  food:      { id: "570831390209281055", landing: "/topics/food" },
+  travel:    { id: "570831390209281056", landing: "/topics/travel" },
 };
 
 /** Topics feeding each board, matched against the topic-membership rule below. */
 const BOARD_TOPICS = {
   ecommerce: ["product", "ecommerce", "e-commerce"],
   packaging: ["packaging"],
-  edtech:    ["learning", "education", "edtech"],
+  edtech:    ["learning", "education", "edtech", "language", "vocabulary", "science", "study-sheets", "flashcards"],
   merch:     ["merch", "merchandise", "sticker", "keychain"],
   brand:     ["branding", "brand", "logo"],
+  beauty:    ["beauty", "hairstyle", "nails", "skincare"],
+  fashion:   ["fashion", "outfit", "lookbook", "costumes"],
+  food:      ["food", "recipes", "drinks"],
+  travel:    ["travel", "city", "map"],
+};
+
+/**
+ * Templates pulled onto a board regardless of their topic tags.
+ *
+ * BOARD_TOPICS is the general rule and it stays the general rule, but topic
+ * tagging was built for the site's own navigation and does not always agree
+ * with a Pinterest category. template-beauty-step-by-step-guide carries
+ * lifestyle/fashion/cartoon/guides and no `beauty`, which left the beauty board
+ * with three candidates while GSC measures 197 image impressions on exactly
+ * that template ("simple skincare routine steps"). Listing it here is honest
+ * about the exception; retagging the template would change site navigation to
+ * fix a Pinterest problem.
+ */
+const BOARD_TEMPLATES = {
+  beauty: [
+    "template-beauty-step-by-step-guide",
+    "template-hairstyle-guide-infographic",
+    "template-fashion-nail-art-design",
+    "template-hairstyle-color-recommendation",
+  ],
+  food: [
+    "template-fruit",
+    "template-fruit-commercial-lifestyle-infographic-poster",
+    "template-varieties-food-poster",
+    "template-recipe",
+    "template-wine-variety-intro-infographic",
+  ],
+  travel: [
+    "template-watercolor-travel-journal-collage",
+    "template-city-miniature",
+    "template-historical-event-map-illustration",
+  ],
+  fashion: [
+    "template-fashion-inspired-gown-design-sheet",
+    "template-fashion-style-outfit-breakdown-infographic",
+    "template-costume",
+  ],
+};
+
+/**
+ * Templates a board must NOT take, even though its topics match.
+ *
+ * Nail art carries `fashion` as well as `beauty`, so once the beauty board hit
+ * its quota the leftover nail-art example spilled onto the fashion board ahead
+ * of a dark-academia outfit breakdown. Higher demand, wrong board: a Pinterest
+ * board is a topic promise, and mixing manicures into a fashion board weakens
+ * both. The rule is one line per genuine cross-tag, not a second taxonomy.
+ */
+const BOARD_EXCLUDE = {
+  fashion: ["template-fashion-nail-art-design", "template-beauty-step-by-step-guide"],
 };
 
 const REGISTRY = path.join(ROOT, "data/pinterest/pins.jsonl");
@@ -117,7 +186,10 @@ function templateTopics() {
   return _tplTopics;
 }
 
-function inTopics(rec, wanted) {
+function inTopics(rec, wanted, boardKey = null) {
+  const tid = String(rec.template_id).trim();
+  if (boardKey && (BOARD_EXCLUDE[boardKey] || []).includes(tid)) return false;
+  if (boardKey && (BOARD_TEMPLATES[boardKey] || []).includes(tid)) return true;
   const own = (rec.topics || []).map((s) => String(s).toLowerCase());
   const tpl = templateTopics().get(String(rec.template_id).trim()) || [];
   return wanted.some((w) => own.includes(w) || tpl.includes(w));
@@ -265,7 +337,9 @@ function subjectOf(rec) {
   throw new Error(`${rec.id}: cannot resolve a subject`);
 }
 
-const titleCase = (s) => s.replace(/\b[a-z]/g, (c) => c.toUpperCase());
+// Anchored on word STARTS, not \b: \b matches between the apostrophe and the s
+// in "men's", and the proposer emitted "Men'S Korean Short Hair Guide".
+const titleCase = (s) => s.replace(/(^|[\s\-–—(/])([a-z])/g, (_, p, c) => p + c.toUpperCase());
 
 /** Truncate on a word boundary — mid-word cuts read as broken copy. */
 function clip(s, max) {
@@ -273,6 +347,94 @@ function clip(s, max) {
   const cut = s.slice(0, max);
   const sp = cut.lastIndexOf(" ");
   return (sp > max * 0.6 ? cut.slice(0, sp) : cut).trimEnd();
+}
+
+/**
+ * Strip the artefacts of an id-derived subject.
+ *
+ * Example ids carry enumeration suffixes and quoted category names that read as
+ * broken copy on a Pin: "Western2", "Cover 1", "Kyotoani Vs Ufotable 2",
+ * `"Doodle Overlay" Photo Example`. None of them is part of what is drawn.
+ */
+function cleanSubject(s) {
+  return String(s)
+    .replace(/["“”]/g, "")
+    .replace(/\s+\d{1,2}$/, "")
+    .replace(/([a-z])\d{1,2}$/i, "$1")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
+/**
+ * Normalised subject tokens of a template's OTHER examples.
+ *
+ * A query measured on a TEMPLATE page still describes one example a lot of the
+ * time — the template page renders its examples, so template-food-anatomy-diagram
+ * ranks for "coffee bean anatomy diagram" and that phrase then titled the beef
+ * cuts example "Beef Cuts Coffee Bean Anatomy Diagram". If a phrase names a
+ * sibling's subject and not this one's, it belongs to the sibling.
+ */
+/**
+ * Templates whose examples are per-ITEM, so a template-page query never
+ * generalises to a different example.
+ *
+ * The ASL tutorial has one example per sign, and its template page ranks for
+ * "big in asl" and "nose asl" — each true of exactly one example. Applied to
+ * another, they produce "Five Parameters Of Asl Nose Asl". Unlike the sibling
+ * guard, which needs the offending word to be some sibling's subject, this just
+ * says: for these templates, title from the example's own queries or from the
+ * category, never from the template's.
+ */
+const NO_TEMPLATE_PHRASE = new Set([
+  "template-asl-sign-language-tutorial-infographic",
+  "template-chinese-idiom-learning-card",
+  "template-anatomy-cut-guide",
+]);
+
+const SUBJECT_STOP = new Set(["the", "and", "for", "with", "a", "an", "of", "in", "on",
+  "guide", "card", "chart", "poster", "infographic", "design", "style", "tutorial", "set"]);
+let _siblings = null;
+function siblingSubjectTokens(templateId, exceptId) {
+  if (!_siblings) {
+    _siblings = new Map();
+    for (const r of inspIndex().values()) {
+      const tid = String(r.template_id).trim();
+      let subj;
+      try { subj = subjectOf(r); } catch { continue; }
+      if (!_siblings.has(tid)) _siblings.set(tid, []);
+      _siblings.get(tid).push([r.id, subj]);
+    }
+  }
+  const out = new Set();
+  for (const [id, subj] of _siblings.get(String(templateId).trim()) || []) {
+    if (id === exceptId) continue;
+    // 3, not 4: the ASL template's examples are distinguished by short words
+    // ("big vs very big"), and at 4 the template-page phrase "big in asl"
+    // titled the FIVE PARAMETERS example "Five Parameters Of Asl Big In Asl".
+    for (const w of subj.toLowerCase().split(/[^a-z0-9]+/)) {
+      if (w.length >= 3 && !SUBJECT_STOP.has(w)) out.add(w);
+    }
+  }
+  return out;
+}
+
+/**
+ * Merge a subject into a measured search phrase without repeating a word.
+ *
+ * "Blueberry" + "blueberries antioxidants" must not become "Blueberry
+ * Blueberries Antioxidants". Tokens are considered the same word when they
+ * share a 5-character prefix, which is crude but only ever decides whether a
+ * word is said twice.
+ */
+function mergePhrase(subject, phrase) {
+  const norm = (w) => w.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const pTokens = phrase.split(/\s+/).map(norm).filter(Boolean);
+  const same = (a, b) => a.slice(0, 4) === b.slice(0, 4) && a.length >= 3 && b.length >= 3;
+  const kept = subject.split(/\s+/).filter((w) => {
+    const n = norm(w);
+    return n && !pTokens.some((t) => same(n, t));
+  });
+  return titleCase(`${kept.join(" ")} ${phrase}`.trim().replace(/\s+/g, " "));
 }
 
 /**
@@ -285,26 +447,64 @@ function clip(s, max) {
  * Uses `category` rather than `title` for the suffix: nano.json titles look like
  * "Nano Banana Prompt: Food Product Packaging Design Generator | Curify AI",
  * and "Generator" is dead weight in a search phrase.
+ *
+ * 2026-09-08 — the title is now anchored on a MEASURED search phrase when GSC
+ * has one for the template (see pinterest_demand.cjs). The category suffix is a
+ * description of our tool: batch 2 shipped "Ceramic Lake-View Mug Price Tag &
+ * Product Label" and "Saving Vs Investing Finance Comparison Infographic", and
+ * those 29 Pins earned 0 impressions in 3 days. Nobody searches Pinterest for a
+ * price tag. They search "simple skincare routine steps" — 197 image
+ * impressions, 0 clicks, already ours on Google and unconvertible there.
+ *
+ * The description now ends on an explicit save CTA. SAVE is the distribution
+ * signal on this surface and the measured rate across 57 Pins is exactly 0.
  */
 function copyFor(rec) {
   const tpl = nanoCopy()[rec.template_id] || {};
-  const category = String(tpl.category || "").replace(/\s+Category$/i, "").replace(/\s+Generator$/i, "").trim();
+  const category = cleanSubject(
+    String(tpl.category || "").replace(/\s+Category$/i, "").replace(/\s+Generator$/i, "").trim());
   // Strip the "Generate a ..." lead, then re-capitalise: the remainder becomes a
   // sentence in the middle of the description, and "…made with Curify AI.
   // complete brand visual identity…" reads as a typo.
   let body = String(tpl.description || "").replace(/^Generate an?\s+/i, "").trim();
+  // Then strip render jargon. 23 of 352 EN descriptions open on the spec we
+  // hand the model — "3:4 vertical ultra-high-definition 8K …", "suitable for
+  // high-quality commercial display". It is instructions to a renderer, and on
+  // a Pin it is the first line a human reads.
+  body = body
+    .replace(/\b(?:ultra[- ]high[- ]definition|high[- ]definition)\b/gi, "")
+    .replace(/\b[48]K\b/g, "")
+    .replace(/\b\d{1,2}:\d{1,2}\b/g, "")
+    .replace(/\bvertical composition\b/gi, "")
+    .replace(/,?\s*suitable for (?:high-quality )?(?:commercial|science communication)[^.,;]*/gi, "")
+    .replace(/\(\s*\)/g, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+([,.;])/g, "$1")
+    .replace(/^[\s,;:-]+/, "")
+    .trim();
   if (body) body = body[0].toUpperCase() + body.slice(1);
   if (!category) throw new Error(`${rec.template_id}: no EN category in nano.json`);
   if (!body) throw new Error(`${rec.template_id}: no EN description in nano.json`);
 
-  const subject = titleCase(subjectOf(rec));
+  const subject = titleCase(cleanSubject(subjectOf(rec)));
+  const phrase = demand.copyPhrase(rec.template_id, rec.id, {
+    templatePhrases: !NO_TEMPLATE_PHRASE.has(String(rec.template_id).trim()),
+    reject: (q) => {
+      const mine = new Set(subjectOf(rec).toLowerCase().split(/[^a-z0-9]+/).filter(Boolean));
+      const sibs = siblingSubjectTokens(rec.template_id, rec.id);
+      return q.toLowerCase().split(/[^a-z0-9]+/).some(
+        (w) => w.length >= 3 && sibs.has(w) && ![...mine].some((m) => m.slice(0, 3) === w.slice(0, 3)));
+    },
+  });
+  const title = clip(mergePhrase(subject, phrase || category.toLowerCase()), 100);
   return {
     subject,
-    title: clip(`${subject} ${category}`, 100),
+    phrase,
+    title,
     alt_text: clip(`${subject} — ${body}`, 500),
     description: clip(
-      `${subject} — ${category} made with Curify AI. ${body} ` +
-      `Browse the full ${category.toLowerCase()} collection and make your own.`, 800),
+      `${title}. ${body} ` +
+      `Save it for later, or make your own — free ${category.toLowerCase()} template on Curify AI.`, 800),
   };
 }
 
@@ -336,8 +536,13 @@ const IP_NAMES = new RegExp([
   "luffy", "pokemon", "pikachu", "potter", "naruto", "itachi", "gaara", "hinata", "minato", "ghibli",
   "conan", "shin.?chan", "snoopy", "sailor.?moon", "yellowstone", "chandler", "durant",
   "nike", "adidas", "coca.?cola", "starbucks", "apple.?inc", "lego", "barbie", "niimbot",
+  // Animation studios are trademarks with distinctive marks, and the
+  // comparison-infographic template renders their logos. Added 2026-09-08 when
+  // demand ranking surfaced "Kyotoani Vs Ufotable" as the top edtech candidate.
+  "ufotable", "kyoto.?ani", "dreamworks", "madhouse", "mappa\\b", "toei", "wit.?studio",
+  "studio.?trigger", "shueisha", "kodansha", "netflix", "warner", "universal.?studios",
   "van.?gogh", "einstein", "steve.?jobs", "musk", "picasso",
-  "character-ip", "celebrity", "fandom", "zhenhuan", "red.?chamber",
+  "zhenhuan", "red.?chamber",
   // Added 2026-09-04 after visual review rejected 4 of 22 candidates that had
   // passed both automated layers. Each is recorded so the same image cannot be
   // re-proposed, but the general lesson is that this list ALWAYS lags — the
@@ -373,18 +578,69 @@ const IP_REJECTED_EXAMPLES = new Set([
   // use in an educational guide, but "Civil Navigator" was rejected on less, and
   // the standard should not move between batches.
   "template-professional-category-guide-infographic-coffee-brewing-guide",
+  // Batch 3, 2026-09-08. 7 of 30 rejected at visual review — the same ~25% the
+  // earlier batches ran, and only one of the seven was visible in metadata.
+  "template-travel-packing-guide-infographic-3day-hiking-adventure",  // Yankees "NY" + New Era mark on the cap
+  "template-watercolor-travel-journal-collage-countryside-tour",      // "Nikon" rendered on the camera body
+  "template-watercolor-travel-journal-collage-coastal-vibe",         // same
+  "template-watercolor-travel-journal-collage-mountain-trip",        // same. 3 of this template's 4 examples render "Nikon" on the camera; all four were
+                                                                     // inspected and only -island-vacation is clean, so the survivor is kept rather
+                                                                     // than the whole template being cut the way template-product-poster was.
+  "template-pet-safe-human-food-infographic-guinea-pig",              // third-party "the little shine" watermark baked into the onion photo; food labels garbled ("Pumpoil", "Chartots", "Ceams")
+  "template-book-series-one-hundred-years-of-solitude-cover-1",       // in-copyright novel, cover art credits "Gabriel García Márquez"
 ]);
 
+/**
+ * Templates that render photorealistic human faces.
+ *
+ * Not an IP finding — all of these are `image_input: "none"`, so the faces are
+ * model-generated and not swapped off a reference photo, which is the case
+ * project_fashion_model_pose_ref_likeness warns about. Publishing a photoreal
+ * face on a commercial account is still a policy call, so it was put to the
+ * operator rather than decided by the proposer: **allowed, 2026-09-08**. The
+ * set is kept, and the flag with it, so the decision is one line to reverse and
+ * so a future reviewer can see which templates it covers.
+ */
+const PHOTOREAL_FACE_TEMPLATES = new Set([
+  "template-hairstyle-guide-infographic",
+  "template-asl-sign-language-tutorial-infographic",
+  "template-hairstyle-color-recommendation",
+  "template-fashion-style-outfit-breakdown-infographic",
+]);
+const ALLOW_PHOTOREAL_FACES = process.env.PINTEREST_ALLOW_FACES !== "0";
+
 const IP_TEMPLATE_SHAPE = /(character|figure|celebrity|portrait|scientist|founder|player|actor|idol|mbti|persona|artist)/i;
+
+/**
+ * Layer 1b — category words that imply a real person or a licensed property.
+ *
+ * Split out of IP_NAMES on 2026-09-08 because these are the only patterns that
+ * are also legitimate SEARCH VOCABULARY, and search_aliases is where we park
+ * the phrases people type. "celebrity fashion" is an alias on every gown in
+ * template-fashion-inspired-gown-design-sheet; the gowns are butterflies,
+ * cherry blossoms and ocean waves. All 7 were blocked, and that template is the
+ * single highest-demand non-IP image page on the site (668 image impressions).
+ *
+ * So these are matched against what the record IS — id, params, locales, tags —
+ * and never against what people SEARCH for. A named entity (IP_NAMES) still
+ * disqualifies wherever it appears, aliases included: an alias of "hello kitty"
+ * means the image really is Hello Kitty.
+ */
+const IP_CATEGORY = /character-ip|celebrity|fandom/i;
 
 function ipFlags(rec) {
   if (IP_REJECTED_EXAMPLES.has(rec.id)) return ["rejected-at-visual-review"];
   if (IP_REJECTED_TEMPLATES.has(String(rec.template_id).trim())) return ["template-rejected-at-visual-review"];
-  const blob = [rec.id, JSON.stringify(rec.params || {}), JSON.stringify(rec.locales || {}),
-    (rec.tags || []).join(" "), (rec.search_aliases || []).join(" ")].join(" ");
+  if (!ALLOW_PHOTOREAL_FACES && PHOTOREAL_FACE_TEMPLATES.has(String(rec.template_id).trim()))
+    return ["photoreal-face:set PINTEREST_ALLOW_FACES=1 to include"];
+  const self = [rec.id, JSON.stringify(rec.params || {}), JSON.stringify(rec.locales || {}),
+    (rec.tags || []).join(" ")].join(" ");
+  const blob = `${self} ${(rec.search_aliases || []).join(" ")}`;
   const flags = [];
   const named = blob.match(IP_NAMES);
   if (named) flags.push(`named:${named[0]}`);
+  const cat = self.match(IP_CATEGORY);
+  if (cat) flags.push(`category:${cat[0]}`);
   if (IP_TEMPLATE_SHAPE.test(rec.template_id)) flags.push("shape:person-like");
   if ((rec.params || {}).character_name) flags.push("param:character_name");
   return flags;
@@ -425,10 +681,10 @@ function publishedIds() {
 }
 
 module.exports = {
-  ROOT, CDN, SITE, BOARDS, BOARD_TOPICS, REGISTRY, CLEAN_SOURCE_DIR, PIN_IMAGE_DIR,
+  ROOT, CDN, SITE, BOARDS, BOARD_TOPICS, BOARD_TEMPLATES, BOARD_EXCLUDE, REGISTRY, CLEAN_SOURCE_DIR, PIN_IMAGE_DIR,
   loadBackendEnv, loadJson, inspIndex, nanoCopy, templateTopics, inTopics,
   inspect, cleanIndex, cleanSourceFor, siteImagePath, preparePinImage, uploadPinImage,
-  subjectOf, titleCase, clip, copyFor, assertCopy,
-  ipFlags, IP_NAMES, IP_TEMPLATE_SHAPE, IP_REJECTED_EXAMPLES, IP_REJECTED_TEMPLATES,
+  subjectOf, cleanSubject, titleCase, clip, mergePhrase, siblingSubjectTokens, copyFor, assertCopy, demand,
+  ipFlags, IP_NAMES, IP_CATEGORY, IP_TEMPLATE_SHAPE, PHOTOREAL_FACE_TEMPLATES, IP_REJECTED_EXAMPLES, IP_REJECTED_TEMPLATES,
   recordPin, publishedIds,
 };

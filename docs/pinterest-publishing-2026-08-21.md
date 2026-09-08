@@ -4,6 +4,14 @@ _2026-08-21. Scope: publishing Curify template examples to Pinterest via the v5 
 Code: `scripts/pinterest_oauth.cjs`, `scripts/pinterest_publish.cjs`.
 Prior context: `raw/pinterest-api-08-03/discussion.txt`._
 
+> **2026-09-08 — superseded in part.** Standard access was granted; 89 Pins are live across
+> eleven boards. This page is still the reference for OAuth, the Trial-vs-Standard measurements and
+> the landing-URL rule. What it says about *selection* is out of date: pin shape is no longer the
+> ranking key and "prefer portrait" is a filter, not an ordering. Selection now ranks on measured
+> GSC image-search demand (`scripts/pinterest_demand.cjs`), and finding 3's board list is missing
+> the four Pinterest-native boards added 2026-09-08 (beauty, fashion, food, travel). See
+> `docs/workstream-seo-smm-growth.md` § 2026-09-06 and § 2026-09-08.
+
 ## Status: BLOCKED on Pinterest Standard access (demo submitted 2026-08-21)
 
 The integration is complete and validated to the last call. Nothing has been published,

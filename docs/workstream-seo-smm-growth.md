@@ -2753,6 +2753,156 @@ same as "it is not retrievable."
 
 ---
 
+## 2026-09-08 — Pinterest batch 3: the boards were the problem, and search already said so
+
+Batch 2 closed with "content gap is the binding constraint." It is not. There are **1,046
+mechanically eligible unpublished examples** site-wide — right ratio, clean unwatermarked
+source, IP screen passed. The 13-candidate figure in the 09-06 section counted only what fell
+inside the five board topic maps (`product`, `packaging`, `learning`, `merch`, `branding`).
+Everything tagged `lifestyle`, `fashion`, `beauty`, `travel`, `language` or `culture` never
+entered the funnel.
+
+That is the same finding as the zero save rate, seen from the other end.
+
+### What the 29 September Pins actually did: nothing, and not because of latency
+
+Re-pulled per-Pin analytics 2026-09-08 (T+3d / T+4d), all 57 API-listable Pins:
+
+| cohort | n | impressions | saves | pin clicks |
+|---|---:|---:|---:|---:|
+| Sept campaign (batches 1+2) | 29 | **0** | 0 | 0 |
+| Aug access-demo | 2 | 2 | 0 | 0 |
+| Mar legacy (`mbti-curify`) | 26 | 199 | 0 | 12 |
+
+Not one impression across 29 Pins in three to four days. The 09-06 read attributed the zeroes
+to `data_status: PROCESSING`; four days on, the number has not moved. Their titles say why:
+*"Ceramic Lake-View Mug Price Tag & Product Label"*, *"Saving Vs Investing Finance Comparison
+Infographic"*, *"Eyemask Fashion E-commerce Details"*. Those describe a design tool. Nobody
+searches Pinterest for a price tag.
+
+### The demand signal was sitting in GSC image search the whole time
+
+Pulled 90 days (2026-06-10 → 09-05) by `searchType`, both `query` and `page`+`query`:
+
+| | queries | impressions | clicks | CTR |
+|---|---:|---:|---:|---:|
+| web | 6,229 | 103,162 | 1,106 | 1.07% |
+| **image** | **10,960** | **186,921** | 112 | **0.06%** |
+
+Strip World Cup and MBTI/anime — dead event, and third-party IP a commercial account cannot
+use — and **9,624 image impressions across 762 pages earn 20 clicks**. That residue is the
+brief. It is demand we already rank for, on a surface we cannot convert, in categories that
+happen to be Pinterest's biggest:
+
+| cluster | template | image impr | clicks |
+|---|---|---:|---:|
+| fashion illustration | `fashion-inspired-gown-design-sheet` | 668 | 0 |
+| fruit nutrition | `fruit` | 498 | 0 |
+| traditional costume | `costume` | 439 | 1 |
+| skincare routines | `beauty-step-by-step-guide` | 197 | 0 |
+| travel journals | `watercolor-travel-journal-collage` | 167 | 0 |
+| nail art | `fashion-nail-art-design` | 164 | 0 |
+| weather for kids | `weather-education-infographic` | 155 | 0 |
+| pet-safe food charts | `pet-safe-human-food-infographic` | 150 | 1 |
+
+`template-fruit` earns 498 image impressions against **1** web impression. The web report calls
+this cluster dead. It is not dead; it is image-native, and we were reading the wrong surface.
+
+### What shipped
+
+**Four new boards**, named for what a searcher types rather than for our taxonomy — boards
+themselves rank in Pinterest search:
+
+| key | id | board | landing |
+|---|---|---|---|
+| beauty | 570831390209281053 | Nail Art, Hairstyles & Skincare Routines | `/topics/beauty` |
+| fashion | 570831390209281054 | Fashion Illustration & Outfit Ideas | `/topics/fashion` |
+| food | 570831390209281055 | Food Infographics & Nutrition Charts | `/topics/food` |
+| travel | 570831390209281056 | Travel Journals, Maps & Trip Planning | `/topics/travel` |
+
+All four landing pages verified 200 with no redirect before the boards were created.
+
+**`scripts/pinterest_demand.cjs`** — pulls GSC by search type into
+`data/pinterest/demand-<from>_<to>.json` and exposes a per-template score and a copy phrase.
+`pull_gsc_performance.cjs` only queries web, which is why this cluster was invisible.
+
+**Selection now ranks on measured demand.** `propose()` sorted by proximity to 2:3 inside a
+band (0.55–0.80) that is already a hard filter — an ordering carrying no information about
+whether anyone wants the image. It now sorts on image impressions + clicks, ratio breaking ties.
+
+**Copy is anchored on a real search phrase.** Titles were `<subject> <category>`, where category
+is our product noun. They are now the subject merged with the highest-impression English query
+GSC measures for that page, de-duplicated:
+
+- `Blueberry` + `Fruit Science Popularization Illustrated Guide` → **Blueberries Antioxidants**
+- `Cherry Blossom` + `Themed Nail Art` → **Cherry Blossom Nail Art Designs**
+- `Countryside Tour` + `Watercolor Travel Journals` → **Travel Journal Collage**
+
+Descriptions end on an explicit *"Save it for later"*. SAVE is the distribution signal on this
+surface and the measured rate across 57 Pins is 0.
+
+**30 Pins published** — edtech 8, food 6, travel 6, beauty 5, fashion 5.
+
+### Four selection bugs the demand ranking exposed
+
+Ranking by demand pulls in templates the topic filter never reached, and each one broke a
+different assumption. All four are fixed with a guard and a comment, not a special case:
+
+1. **The IP screen scanned `search_aliases`.** Aliases are the phrases people *type*;
+   "celebrity fashion" is an alias on every gown in `fashion-inspired-gown-design-sheet`, and
+   the gowns are butterflies and ocean waves. All 7 blocked — the highest-demand non-IP image
+   page on the site. Named entities still disqualify anywhere they appear (an alias of "hello
+   kitty" means the image is Hello Kitty); the *category* words no longer read aliases.
+2. **A template-page query is not always about the template.** The template page renders its
+   examples, so `anatomy-cut-guide` ranks for "coffee bean anatomy diagram" — which then titled
+   the beef diagram *"Beef Cuts Coffee Bean Anatomy Diagram"*. A phrase naming a sibling's
+   subject is now rejected, and three per-item templates opt out of template phrases entirely.
+3. **Example ids lie about what is drawn.** `-island-vacation` renders an autumn forest;
+   `-countryside-tour` renders a jungle. Caught at visual review, corrected by hand in the plan.
+4. **`titleCase` capitalised after apostrophes** — "Men'S Korean Short Hair".
+
+### Visual review: 9 rejected of 39, and only one was visible in metadata
+
+The layer-3 human pass remains the one filter that cannot be automated. 23% rejected, in line
+with the 27% of batch 2:
+
+- **"the little shine" watermark** baked into the guinea-pig chart's onion photo — a third-party
+  mark inside the pixels; food labels also garbled ("Pumpoil", "Chartots", "Ceams").
+- **"Nikon"** rendered on the camera in 3 of the 4 `watercolor-travel-journal-collage` examples.
+  All four were inspected; the one clean render was kept rather than cutting the template.
+- **Yankees "NY" + a New Era side mark** on the cap in the 3-day hiking packing guide.
+- **Gabriel García Márquez** credited on the *One Hundred Years of Solitude* cover.
+- **Kyoto Animation / ufotable** logos in the studio-comparison infographic — caught from
+  metadata after the studio names were added to `IP_NAMES`; the only one of the nine that was.
+
+**Photoreal AI faces** (hairstyle guides, ASL tutorial, academia outfit breakdown) were escalated
+rather than decided by the proposer. All are `image_input: "none"`, so no reference photo is
+involved and `project_fashion_model_pose_ref_likeness` does not apply. **Approved 2026-09-08**;
+`PHOTOREAL_FACE_TEMPLATES` + `PINTEREST_ALLOW_FACES=0` make it one line to reverse.
+
+### What this batch is, and what it is not
+
+It is **not** the "more Pins" move the 09-06 section ruled out. That section said volume
+multiplies zero and it was right. This changes the variable: different categories, different
+boards, keyword copy, explicit save CTA. Batches 1+2 are now the control arm and this is the
+treatment, on the same account, a day apart.
+
+### Open
+
+- **~09-15 — T+7d read on batch 3, against batches 1+2 as control.** The question is saves, not
+  impressions. Non-zero saves on the new boards → scale that board from its own inventory.
+  Zero again across both arms → the creative or the surface is wrong, and no board taxonomy
+  fixes it.
+- **The 1,046-example pool means inventory is not a constraint for a long time.** What binds is
+  the ~25% visual-review rejection rate, and that is human minutes per Pin, not supply.
+- `template-fruit`, `costume`, `beauty-step-by-step-guide` and `fashion-nail-art-design` have
+  more eligible examples than this batch used. They are the first place to go if batch 3 saves.
+- **Not touched: the Google side of the same finding.** 762 non-IP pages earn 9,624 image
+  impressions and 20 clicks. Pinterest is a second surface for that demand, not a fix for it —
+  no image sitemap and tag-slug alt text are still unaddressed (`project_image_search_surface`).
+
+---
+
 ## Related docs / threads
 - `docs/search-and-content.md` — Search & Content workstream (companion A)
 - `~/curify-studio/docs/workstream-tooling-and-engineering.md` — Tools workstream (companion B)
@@ -2764,6 +2914,7 @@ same as "it is not retrievable."
 - `~/curify-studio/curify_background/app/utils/autopost_utils.py` — SMM autopost
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
 - `docs/pinterest-publishing-2026-08-21.md` — Pinterest channel writeup; registry at `data/pinterest/pins.jsonl`
+- `scripts/pinterest_demand.cjs` — GSC-by-search-type → per-template demand score + copy phrase; snapshots in `data/pinterest/demand-*.json`
 - `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
 - `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
 - `raw/agent-skills-08-31/design-skills.txt` — the TypeUI read: upgrade the prompt/template library along Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill rather than extending it. (Replaces a citation to `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md`, which was never written — verified absent 2026-09-01.)
