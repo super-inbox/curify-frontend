@@ -2774,7 +2774,13 @@ Re-pulled per-Pin analytics 2026-09-08 (T+3d / T+4d), all 57 API-listable Pins:
 | Aug access-demo | 2 | 2 | 0 | 0 |
 | Mar legacy (`mbti-curify`) | 26 | 199 | 0 | 12 |
 
-Not one impression across 29 Pins in three to four days. The 09-06 read attributed the zeroes
+Not one impression across 29 Pins in three to four days.
+
+> **Gotcha worth keeping: `GET /v5/pins` is not a complete inventory.** The registry holds 30
+> batch-1+2 campaign Pins; the listing returned 29. The missing one
+> (`570831321549618861`, edtech) answers a direct `GET /v5/pins/{id}` with 200, alive, media
+> present. Reconcile analytics against `data/pinterest/pins.jsonl`, never against the listing —
+> same lesson as the 09-05 correction about the legacy Pins, from the other direction. The 09-06 read attributed the zeroes
 to `data_status: PROCESSING`; four days on, the number has not moved. Their titles say why:
 *"Ceramic Lake-View Mug Price Tag & Product Label"*, *"Saving Vs Investing Finance Comparison
 Infographic"*, *"Eyemask Fashion E-commerce Details"*. Those describe a design tool. Nobody
