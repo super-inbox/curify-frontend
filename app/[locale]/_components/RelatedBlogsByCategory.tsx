@@ -26,6 +26,13 @@ type Props = {
   locale: string;
   max?: number;
   heading?: string;
+  /** Slugs to hoist above the date sort, if they are in `categories`.
+   *  Freshness alone cannot give a specific post an inbound link: `merch-pod`
+   *  holds 12 posts and `max` is 3, so `url-to-product-video` (lastmod
+   *  2026-07-16) sits at rank 7 and never renders. The KD-campaign spokes are
+   *  linked deliberately, not because they happen to be recent — see
+   *  TOOL_PINNED_BLOGS. */
+  pinnedSlugs?: string[];
 };
 
 export default function RelatedBlogsByCategory({
@@ -33,15 +40,21 @@ export default function RelatedBlogsByCategory({
   locale,
   max = 3,
   heading,
+  pinnedSlugs,
 }: Props) {
   const t = useTranslations("blog");
   const set = new Set(categories);
+  const pinned = new Set(pinnedSlugs ?? []);
 
   // Filter then sort by `lastmod ?? date` desc so the freshest in-category
-  // posts surface first — matches the blog sitemap's lastmod signal.
+  // posts surface first — matches the blog sitemap's lastmod signal. Pinned
+  // slugs sort ahead of that, keeping their own relative freshness order.
   const filtered = (blogsData as BlogPost[])
     .filter((b) => b.category && set.has(b.category))
     .sort((a, b) => {
+      const aPin = pinned.has(a.slug) ? 1 : 0;
+      const bPin = pinned.has(b.slug) ? 1 : 0;
+      if (aPin !== bPin) return bPin - aPin;
       const aKey = a.lastmod || a.date || "";
       const bKey = b.lastmod || b.date || "";
       return bKey.localeCompare(aKey);

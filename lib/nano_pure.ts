@@ -409,21 +409,43 @@ export function buildExampleImageAlt(
       ? s.replace(/\b[a-z]/g, (c) => c.toUpperCase())
       : s;
 
+  // Params are the authored description of an example
+  // (`{mbti_topic: "Basketball", character_set: "Kobe Bryant, Stephen Curry,
+  // Kevin Durant, Tim Duncan"}`); the id is a slug that also carries the
+  // template id and, for 108 records, a bare locale token. Every one of the
+  // 3,936 inspiration records has `title: null`, so the id fallback was the
+  // universal path and it produced alt text like
+  //   "Basketball en Kobe Bryant Stephen Curry Kevin Durant Tim Duncan,
+  //    Kobe Bryant, Stephen Curry, Kevin Durant, Tim Duncan — MBTI…"
+  // — the template id and the locale leaked in, and every name appeared twice.
+  // So prefer params for the subject and keep the id as a last resort (403
+  // records have no params).
+  //
+  // The locale token is deliberately NOT regex-stripped: `\b(de|ja|ko|es)\b`
+  // would also eat real names — 103 records carry one, including
+  // "Kevin De Bruyne".
+  const paramValues = Object.values(item.params ?? {})
+    .map((v) => clean(String(v ?? "")))
+    .filter((v) => v.length > 0);
+
   // Last-resort id fallback: drop the "template-" prefix so it does not read
   // as "Template Travel Kyoto".
   const fallback = clean(item.id).replace(/^template\s+/i, "");
-  const subject = titleCaseToken(clean(item.title) || fallback);
+  const titled = clean(item.title);
+  const subject = titleCaseToken(titled || paramValues[0] || fallback);
 
-  // Parameter values, minus any already contained in the subject — an id
-  // fallback of "Travel Kyoto" plus a `{city: "Kyoto"}` param would otherwise
-  // emit "Travel Kyoto, Kyoto".
-  const paramValues = Object.values(item.params ?? {})
-    .map((v) => clean(String(v ?? "")))
-    .filter(
-      (v) => v.length > 0 && !subject.toLowerCase().includes(v.toLowerCase())
-    );
+  // Dedupe on individual names rather than whole values. One param routinely
+  // holds a comma-joined list, which never matches the subject as a single
+  // string, so the old whole-value check let it through intact next to a
+  // subject that already contained every name.
+  const subjectLower = subject.toLowerCase();
+  const rest = paramValues
+    .slice(titled ? 0 : 1)
+    .flatMap((v) => v.split(","))
+    .map((v) => v.trim())
+    .filter((v) => v.length > 0 && !subjectLower.includes(v.toLowerCase()));
 
-  const parts = [subject, ...paramValues.slice(0, 2)].filter(Boolean);
+  const parts = [subject, ...rest.slice(0, 2)].filter(Boolean);
   const descriptor = parts.join(", ");
   const label = clean(context).replace(/\s+Category$/i, "");
 

@@ -43,6 +43,14 @@ const LOCALES = routing.locales;
 
 // The 08-05 fold fix changed the rendered HTML of every template page; the
 // 09-05 payload trim + section reorder changed it again on every one of them.
+// 09-09: buildExampleImageAlt was tightened (params are split on commas and
+// deduped per name, so a comma-joined list is no longer appended whole next to
+// a subject that already contains it). Deliberately NOT bumped: measured
+// against the real title field (locales[locale].title, which
+// getImageViewsForTemplate reads — not the always-null top-level `title`), the
+// alt text changes on **55 of 3,936** images. A group bump for 352 templates ×
+// 10 locales on a 55-record change is the overstatement this file warns about
+// two comments up.
 const NANO_TEMPLATES_LASTMOD = PAYLOAD_TRIM_LASTMOD;
 
 // Base for topic pages: the 08-05 fold fix, which is the last change that hit
@@ -65,12 +73,31 @@ const TOPIC_LASTMOD_OVERRIDES: Record<string, string> = {
 // Their last real change is the 08-05 fold fix; nothing since has altered them.
 const STABLE_LASTMOD = "2026-08-05T00:00:00.000Z";
 
+// Per-route overrides for the static set, same reasoning as
+// TOPIC_LASTMOD_OVERRIDES: only the routes that genuinely changed. Bumping
+// STABLE_LASTMOD itself would overstate freshness for the other eight.
+const STATIC_LASTMOD_OVERRIDES: Record<string, string> = {
+  // 09-09: /contact rendered "Contact Us | Curify Studio | Curify Studio" —
+  // the metadata title carried the brand the layout template already appends.
+  "/contact": "2026-09-09T00:00:00.000Z",
+};
+
 // Tool pages: 08-12 stripped a duplicated "| Curify" from 90 metadata titles,
 // which changes the <title> a crawler sees on every one of them.
 // 08-29 added /tools/impromptu-speech-practice and made tool emission respect
 // a per-tool locale subset, which changes the URL set on this route.
 // 09-05: the related-templates strip on every tool page lost the same payload.
-const TOOLS_LASTMOD = PAYLOAD_TRIM_LASTMOD;
+// 09-09: the 08-12 pass above missed the keys that actually render. It stripped
+// the literal "| Curify" from the `tools.<key>.meta.*` decoys, while the live
+// `<namespace>.metadata.title` keys ended in "| Curify AI" and were left alone —
+// so 9 tool pages still shipped double-branded ("… | Curify AI | Curify Studio",
+// up to 95 chars) four weeks later. Stripped the brand from those 9 namespaces
+// plus /contact across all 10 locales, and trimmed the 6 en titles still past
+// the ~62-char SERP budget. Changes the <title> on every tool page again.
+// 09-09 (same ship): six merch/POD tools gained a "Related reading" section —
+// they had no TOOL_BLOG_CATEGORIES entry, which is why all four KD-campaign
+// spokes measured referringUrls = 0. New rendered markup on those six pages.
+const TOOLS_LASTMOD = "2026-09-09T00:00:00.000Z";
 
 // Use-case pages: 08-12 added the worked-case block and moved the demo cards
 // into the tools grid — a visible change on all of them.
@@ -295,7 +322,7 @@ export async function GET() {
   STATIC_ROUTES.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
-        lastmod: STABLE_LASTMOD,
+        lastmod: STATIC_LASTMOD_OVERRIDES[route] ?? STABLE_LASTMOD,
         changefreq: route === "" ? "daily" : "weekly",
         priority: route === "" && locale === "en" ? "1.0" : "0.8",
       });

@@ -799,4 +799,35 @@ export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
   "image-translation":           ["video-translation-dubbing", "creator-tools"],
   "manga-translation":           ["video-translation-dubbing"],
   "style-transfer":              ["creator-tools", "nano-template"],
+  // 2026-09-09 — the merch/POD tools had no entry at all, so no tool page
+  // surfaced a `merch-pod` post and all four KD-campaign spokes measured
+  // `referringUrls = 0` in GSC ("Referring page: None detected"). These six are
+  // exactly the tools the spokes already link DOWN to, so this closes the loop
+  // into an edge rather than adding arbitrary links:
+  //   ghost-mannequin-ai-guide → acrylic-factory-export, ai-product-photo-generator,
+  //                              die-cut-sticker-file, ecommerce-photo
+  //   dieline-generator-guide  → acrylic-factory-export, die-cut-sticker-file,
+  //                              packaging-mockup
+  //   url-to-product-video     → ai-product-photo-generator, ecommerce-photo,
+  //                              product-video
+  "ecommerce-photo":             ["merch-pod"],
+  "ai-product-photo-generator":  ["merch-pod"],
+  "packaging-mockup":            ["merch-pod"],
+  "die-cut-sticker-file":        ["merch-pod"],
+  "acrylic-factory-export":      ["merch-pod"],
+  "product-video":               ["merch-pod"],
+};
+
+// Tool slug → blog slugs to hoist in "Related reading", ahead of the freshness
+// sort. Category membership alone does not guarantee an inbound link: the
+// component renders `max = 3` and `merch-pod` holds 12 posts, so a spoke that
+// is not among the three freshest never renders and still earns nothing.
+// `url-to-product-video` (lastmod 2026-07-16) is rank 7 in that category, which
+// is precisely the trap the 08-31 interlink pass hit from the other direction —
+// appending to a list that was already full added zero links and still looked
+// correct in the data. Verify against the rendered page, not this map.
+export const TOOL_PINNED_BLOGS: Record<string, string[]> = {
+  "product-video":              ["url-to-product-video"],
+  "ecommerce-photo":            ["url-to-product-video", "ghost-mannequin-ai-guide"],
+  "ai-product-photo-generator": ["url-to-product-video", "ghost-mannequin-ai-guide"],
 };
