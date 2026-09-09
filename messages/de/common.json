@@ -361,10 +361,21 @@
   },
   "magic": {
     "errors": {
-      "NO_SPEECH": "Das Video scheint keine hörbare Sprache zu haben. Wir können Gebärdensprache oder stummes Filmmaterial nicht transkribieren – bitte laden Sie ein Video mit gesprochener Audiospur hoch.",
+      "NO_SPEECH": "Wir haben in diesem Video keine gesprochene Sprache gefunden. Untertitel und Synchronisation brauchen hörbare Sprache.",
       "default": "Ihr Auftrag ist fehlgeschlagen. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support.",
       "INSUFFICIENT_CREDITS": "Sie haben nicht genügend Credits, um diesen Auftrag auszuführen. Laden Sie Ihr Guthaben auf, um fortzufahren.",
-      "topUpCta": "Credits aufladen"
+      "topUpCta": "Credits aufladen",
+      "ASL_SUSPECTED": "Das sieht nach einem Gebärdensprach-Video aus – es gibt also keine gesprochene Sprache zum Transkribieren.",
+      "NO_SIGNING_DETECTED": "Wir konnten in diesem Video keine Gebärden lesen. Achten Sie darauf, dass Hände und Gesicht vollständig im Bild und gut ausgeleuchtet sind.",
+      "GENERATION_QUOTA_EXHAUSTED": "Dieses Werkzeug hat gerade sein Kapazitätslimit erreicht. Es liegt nicht an Ihrer Datei – bitte versuchen Sie es später noch einmal.",
+      "WORKER_TASK_TIMEOUT": "Dieser Auftrag lief zu lange und wurde gestoppt. Es wurde nichts berechnet – bitte erneut versuchen.",
+      "PIPELINE_FAILED": "Bei der Verarbeitung dieses Videos ist etwas schiefgelaufen.",
+      "aslCta": "Stattdessen die Gebärden übersetzen – kostenlos",
+      "aslCtaSuspected": "Die Gebärden übersetzen – kostenlos",
+      "aslCaveat": "Das Lesen von Gebärdensprache ist experimentell und oft ungenau – prüfen Sie die Untertitel, bevor Sie sich darauf verlassen.",
+      "retryCta": "Erneut versuchen",
+      "retryFailed": "Das konnte nicht gestartet werden. Bitte erneut versuchen.",
+      "detailsToggle": "Technische Details"
     }
   },
   "bulkCallout": {

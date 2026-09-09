@@ -9,6 +9,8 @@ import { ProjectStatus } from "@/types/projects";
 
 interface LoadingProps {
   currentStatus?: ProjectStatus; // optional, maps to active step
+  /** The backend's own job_type for this project, from the status poll. */
+  jobType?: string | null;
 }
 
 const stepMap: Record<"translation" | "subtitles" | "reprocessing", string[]> = {
@@ -17,10 +19,25 @@ const stepMap: Record<"translation" | "subtitles" | "reprocessing", string[]> = 
   reprocessing: ["Queueing", "Dubbing", "Finalizing"],
 };
 
-export default function Loading({ currentStatus }: LoadingProps) {
+// The backend's job_type is the truth about what is running. The jotai atom
+// below is only a hint about what the user last clicked, and it defaults to
+// "translation" — so an ASL or subtitle job showed "Step 5/6: Dubbing" while it
+// was doing neither. That was cosmetic until the failure screen started offering
+// a free ASL run and landing people straight back here.
+const BACKEND_JOB_STEPS: Record<string, keyof typeof stepMap> = {
+  full_translation: "translation",
+  subtitle_only: "subtitles",
+  asl_translation: "subtitles",
+  video_transcript: "subtitles",
+  video_summarizer: "subtitles",
+  speech_translator: "subtitles",
+};
+
+export default function Loading({ currentStatus, jobType }: LoadingProps) {
   const { locale } = useParams();
-  const jobType = useAtomValue(jobTypeAtom);
-  const steps = stepMap[jobType] || [];
+  const legacyJobType = useAtomValue(jobTypeAtom);
+  const stepKey = (jobType && BACKEND_JOB_STEPS[jobType]) || legacyJobType;
+  const steps = stepMap[stepKey] || [];
 
   const statusToStepIndex = (status?: ProjectStatus): number => {
     if (!status) return 0;

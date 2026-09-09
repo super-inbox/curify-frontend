@@ -361,10 +361,21 @@
   },
   "magic": {
     "errors": {
-      "NO_SPEECH": "The video appears to have no audible speech. We can't transcribe sign language or silent footage — please upload a video with spoken audio.",
+      "NO_SPEECH": "We couldn't find any spoken audio in this video. Subtitles and dubbing need audible speech.",
       "default": "Your job failed. Please try again or contact support.",
       "INSUFFICIENT_CREDITS": "You don't have enough credits to run this job. Top up to continue.",
-      "topUpCta": "Top up credits"
+      "topUpCta": "Top up credits",
+      "ASL_SUSPECTED": "This looks like a sign-language video, so there's no spoken audio to transcribe.",
+      "NO_SIGNING_DETECTED": "We couldn't read any signing in this video. Make sure the signer's hands and face are fully in frame and well lit.",
+      "GENERATION_QUOTA_EXHAUSTED": "This tool has hit its capacity limit right now. It's not a problem with your file — please try again later.",
+      "WORKER_TASK_TIMEOUT": "This job ran too long and was stopped. Nothing was charged — please try it again.",
+      "PIPELINE_FAILED": "Something went wrong while processing this video.",
+      "aslCta": "Try translating the signing instead — free",
+      "aslCtaSuspected": "Translate the signing instead — free",
+      "aslCaveat": "Sign-language reading is experimental and often inaccurate — please check the captions before you rely on them.",
+      "retryCta": "Try again",
+      "retryFailed": "We couldn't start that. Please try again.",
+      "detailsToggle": "Technical details"
     }
   },
   "bulkCallout": {
