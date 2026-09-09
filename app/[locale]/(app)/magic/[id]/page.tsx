@@ -21,6 +21,7 @@ export default function Magic() {
 
   const [status, setStatus] = useState<ProjectStatus>("QUEUED");
   const [failure, setFailure] = useState<FailureView | null>(null);
+  const [jobType, setJobType] = useState<string | null>(null);
   const [retrying, setRetrying] = useState(false);
   const [retryError, setRetryError] = useState(false);
   const [, setModal] = useAtom(modalAtom);
@@ -85,6 +86,10 @@ export default function Magic() {
           }
 
           return;
+        }
+
+        if (statusRes?.job_type) {
+          setJobType(statusRes.job_type);
         }
 
         if (projectStatus === "FAILED") {
@@ -191,7 +196,7 @@ export default function Magic() {
 
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center text-center">
-      <Loading currentStatus={status} />
+      <Loading currentStatus={status} jobType={jobType} />
     </div>
   );
 }
