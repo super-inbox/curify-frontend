@@ -1,3 +1,5 @@
+import type { AslSuggestion } from "@/lib/failureActions";
+
 
 // Enums to mirror backend choices
 export type SubtitleFormat = 'none' | 'source' | 'target' | 'bilingual';
@@ -73,6 +75,16 @@ export interface ProjectStatusUpdate {
   message?: string;
   failure_code?: string | null;
   failure_reason?: string | null;
+  // Populated by the backend only on FAILED.
+  //
+  // `retryable` is the exception class's own verdict on whether re-running the
+  // identical job could succeed — it is not inferred from the code, so the UI
+  // does not have to keep a list in sync. `asl_suggestion` is the reroute offer;
+  // it is present on any no-speech failure of a video, not only when the ASL
+  // detector fired (it has fired once, ever).
+  retryable?: boolean | null;
+  asl_suggestion?: AslSuggestion | null;
+  job_type?: string | null;
 }
 
 export interface File {

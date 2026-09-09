@@ -361,10 +361,21 @@
   },
   "magic": {
     "errors": {
-      "NO_SPEECH": "视频似乎没有可听的语音。我们无法转录手语或静默画面——请上传带有语音音频的视频。",
+      "NO_SPEECH": "这个视频里没有检测到语音。字幕和配音都需要可听见的说话声。",
       "default": "您的任务失败了。请重试或联系支持。",
       "INSUFFICIENT_CREDITS": "您的积分不足以运行此任务。请充值后继续。",
-      "topUpCta": "充值积分"
+      "topUpCta": "充值积分",
+      "ASL_SUSPECTED": "这看起来是一个手语视频，因此没有可转写的语音。",
+      "NO_SIGNING_DETECTED": "我们无法读出视频中的手语。请确保手部和面部完整入镜且光线充足。",
+      "GENERATION_QUOTA_EXHAUSTED": "该功能当前已达到容量上限。这不是你的文件的问题，请稍后再试。",
+      "WORKER_TASK_TIMEOUT": "该任务运行时间过长已被终止。未扣除任何积分，请重新尝试。",
+      "PIPELINE_FAILED": "处理这个视频时出现了问题。",
+      "aslCta": "改用手语翻译试试——免费",
+      "aslCtaSuspected": "改为翻译手语——免费",
+      "aslCaveat": "手语识别仍在实验阶段，经常出错——使用前请先核对字幕。",
+      "retryCta": "重试",
+      "retryFailed": "无法启动，请再试一次。",
+      "detailsToggle": "技术细节"
     }
   },
   "bulkCallout": {
