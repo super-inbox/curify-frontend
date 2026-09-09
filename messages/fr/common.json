@@ -361,10 +361,21 @@
   },
   "magic": {
     "errors": {
-      "NO_SPEECH": "La vidéo semble ne pas avoir de discours audible. Nous ne pouvons pas transcrire la langue des signes ou les séquences silencieuses - veuillez télécharger une vidéo avec un audio parlé.",
+      "NO_SPEECH": "Nous n'avons trouvé aucune parole dans cette vidéo. Les sous-titres et le doublage nécessitent une voix audible.",
       "default": "Votre tâche a échoué. Veuillez réessayer ou contacter le support.",
       "INSUFFICIENT_CREDITS": "Vous n'avez pas assez de crédits pour exécuter cette tâche. Rechargez pour continuer.",
-      "topUpCta": "Recharger des crédits"
+      "topUpCta": "Recharger des crédits",
+      "ASL_SUSPECTED": "Cette vidéo semble être en langue des signes : il n'y a donc pas de parole à transcrire.",
+      "NO_SIGNING_DETECTED": "Nous n'avons pas pu lire les signes dans cette vidéo. Assurez-vous que les mains et le visage soient entièrement visibles et bien éclairés.",
+      "GENERATION_QUOTA_EXHAUSTED": "Cet outil a atteint sa limite de capacité. Ce n'est pas un problème avec votre fichier : réessayez plus tard.",
+      "WORKER_TASK_TIMEOUT": "Cette tâche a duré trop longtemps et a été arrêtée. Rien n'a été facturé : réessayez.",
+      "PIPELINE_FAILED": "Un problème est survenu lors du traitement de cette vidéo.",
+      "aslCta": "Essayer de traduire les signes — gratuit",
+      "aslCtaSuspected": "Traduire les signes — gratuit",
+      "aslCaveat": "La lecture de la langue des signes est expérimentale et souvent inexacte : vérifiez les sous-titres avant de vous y fier.",
+      "retryCta": "Réessayer",
+      "retryFailed": "Impossible de lancer l'opération. Réessayez.",
+      "detailsToggle": "Détails techniques"
     }
   },
   "bulkCallout": {

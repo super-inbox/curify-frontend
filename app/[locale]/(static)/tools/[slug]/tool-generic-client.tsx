@@ -27,6 +27,7 @@ import {
   getToolBySlug,
   getSiblingTools,
   TOOL_BLOG_CATEGORIES,
+  TOOL_PINNED_BLOGS,
 } from "@/lib/tools-registry";
 import { getPersonasForTool } from "@/lib/use-cases";
 import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVideoDemo";
@@ -83,6 +84,7 @@ export default function ToolGenericClient({
   const siblingTools = getSiblingTools(slug, 3);
   const personas = getPersonasForTool(slug);
   const relatedBlogCategories = TOOL_BLOG_CATEGORIES[slug] ?? [];
+  const pinnedBlogSlugs = TOOL_PINNED_BLOGS[slug] ?? [];
 
   const user = useAtomValue(userAtom);
   const clientMounted = useAtomValue(clientMountedAtom);
@@ -369,6 +371,7 @@ export default function ToolGenericClient({
           categories={relatedBlogCategories}
           locale={locale}
           max={3}
+          pinnedSlugs={pinnedBlogSlugs}
           heading={tGlobal("interconnection.relatedReading", {
             defaultValue: "Related reading",
           })}

@@ -166,5 +166,28 @@ export default function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
+  matcher: [
+    "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
+    // The `.*\..*` clause above is unanchored, so ANY path containing a dot
+    // skips middleware entirely — including the next-intl locale rewrite. With
+    // localePrefix "as-needed" the EN URL is unprefixed, so an unprefixed
+    // dotted path is never rewritten to /en/... , matches no route under
+    // app/[locale]/, and answers a bare 404 — while the /en/ form works. That
+    // asymmetry is what makes it read as a locale bug.
+    //
+    // 12 example ids in nano_inspiration.json contain a dot; 4 of them are in
+    // example_visibility_whitelist.json and are therefore emitted into
+    // sitemap-examples.xml, so those pages are advertised to Google and then
+    // self-canonical to a 404 (GSC "Validate Fix" does nothing for this
+    // bucket). e.g. template-fat-loss-plan-female-standard-1.5kg,
+    // "template-battle-hanxin-baiqi.jpg 1".
+    //
+    // Re-include just that route shape rather than loosening the dot rule —
+    // the rule is what keeps static assets (/*.png, /*.xml, /favicon.ico) out
+    // of middleware, and widening it would put every asset request through the
+    // bot gate. Both the unprefixed and locale-prefixed forms are listed
+    // because the dot exclusion hits both.
+    "/nano-template/:slug/example/:exampleId",
+    "/:locale/nano-template/:slug/example/:exampleId",
+  ],
 };

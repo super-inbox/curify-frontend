@@ -2924,3 +2924,60 @@ treatment, on the same account, a day apart.
 - `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
 - `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
 - `raw/agent-skills-08-31/design-skills.txt` — the TypeUI read: upgrade the prompt/template library along Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill rather than extending it. (Replaces a citation to `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md`, which was never written — verified absent 2026-09-01.)
+
+---
+
+## 2026-09-09 — the 09-09 fold verdict: the fold is REAL, and it is not only the homepage
+
+Ran the checkpoint scheduled at the 09-04 section ("do the 6 re-pinged folds un-fold? Verdict
+on whether the fold is real at all"). Source list `raw/reping-postfix-folds-2026-09-02.txt`,
+via `urlInspection.index.inspect` (same call shape as `scripts/_foldscan.cjs`).
+
+| verdict | coverageState | lastCrawl | googleCanonical | url |
+|---|---|---|---|---|
+| **FOLDED** | Duplicate without user-selected canonical | **2026-09-01** | `/tools/packaging-mockup` | `/blog/ghost-mannequin-ai-guide` |
+| self ok | Submitted and indexed | 2026-09-02 | self | `/blog/dieline-generator-guide` |
+| FOLDED | Duplicate without user-selected canonical | 2026-08-11 | `/` | `/blog/ultimate-directory-of-nano-banana-prompts` |
+| FOLDED | Duplicate without user-selected canonical | 2026-08-10 | `/` | `/blog/10-prompting-tips-nano-banana` |
+| FOLDED | Duplicate without user-selected canonical | 2026-08-10 | `/` | `/blog/ai-collage-digital-wallpaper-guide` |
+| **FOLDED** | Duplicate without user-selected canonical | **2026-09-01** | `/` | `/blog/url-to-product-video` |
+
+### What this settles, and what it does not
+
+**Settles: the fold survives the fix.** The 09-02 correction argued the 34 folds "were crawled
+against HTML with no page-level canonical" and that there was "no evidence of a fold on any
+crawl that saw the fixed HTML." That is now falsified. Two of the six were crawled **2026-09-01**
+— after the 08-31 fix — and are folded anyway. The fold is real and it is current.
+
+**Does not settle: the other three.** `ultimate-directory-of-nano-banana-prompts`,
+`10-prompting-tips-nano-banana` and `ai-collage-digital-wallpaper-guide` were last crawled
+2026-08-10/08-11, before the fix. Their verdict is still pending a recrawl, exactly as the
+wrong-boundary-date correction warned. Do not count them either way.
+
+**One un-folded.** `dieline-generator-guide` now reports "Submitted and indexed" and
+self-canonical, crawled 09-02. So the fix is not inert — it is insufficient.
+
+### The new information: a fold target that is not the homepage
+
+`ghost-mannequin-ai-guide` folds to **`/tools/packaging-mockup`**, not `/`. Every prior fold in
+this doc collapsed to the homepage, which is what made "1.6MB i18n catalog on `layout.tsx`" a
+plausible cause. A blog post folding onto an unrelated *tool* page is a page-to-page duplicate
+verdict and does not fit that story. Whatever Google is deduplicating on, it is content the two
+pages share — not a site-wide payload.
+
+### Consequences
+
+1. **The "hold blog publishing one more week" hold should continue.** 09-09 did not come back
+   clean, so B3 `what is a tech pack` stays gated. Publishing now pays for posts that fold.
+2. **P0-2 (inbound links to the spokes) gets more important, not less** — links are the only
+   lever with evidence behind them here — but expect no ranking from
+   `ghost-mannequin-ai-guide` while it is folded onto a tool page. Score P0-2 on whether the
+   fold clears, not on position.
+3. **The KD-1 low-difficulty thesis cannot be read on 10-13 as planned.** Its test page is
+   folded. Either clear the fold first or pick a different test page, or the 10-13 readout will
+   falsify the thesis on a confound.
+4. `Duplicate without user-selected canonical` on a page that *does* ship a self-canonical is
+   the tell to chase next — Google is not merely ignoring the canonical, it reports not seeing a
+   user-selected one at all. That points back at whether the canonical survives the render
+   Googlebot gets, which the 09-02 rendered-DOM probe checked locally and found clean. The
+   remaining untried step is the GSC Live Test, which needs a human in the UI.

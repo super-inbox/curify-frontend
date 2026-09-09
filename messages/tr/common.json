@@ -361,10 +361,21 @@
   },
   "magic": {
     "errors": {
-      "NO_SPEECH": "Videoda duyulabilir bir konuşma yok gibi görünüyor. İşaret dilini veya sessiz görüntüleri transkribe edemiyoruz — lütfen konuşmalı bir ses içeren bir video yükleyin.",
+      "NO_SPEECH": "Bu videoda konuşma sesi bulamadık. Altyazı ve seslendirme için duyulabilir konuşma gerekir.",
       "default": "İşleminiz başarısız oldu. Lütfen tekrar deneyin veya destekle iletişime geçin.",
       "INSUFFICIENT_CREDITS": "Bu işi çalıştırmak için yeterli krediniz yok. Devam etmek için kredi yükleyin.",
-      "topUpCta": "Kredi yükle"
+      "topUpCta": "Kredi yükle",
+      "ASL_SUSPECTED": "Bu bir işaret dili videosuna benziyor, bu yüzden yazıya dökülecek konuşma yok.",
+      "NO_SIGNING_DETECTED": "Bu videodaki işaretleri okuyamadık. Ellerin ve yüzün kadraja tam girdiğinden ve iyi aydınlatıldığından emin olun.",
+      "GENERATION_QUOTA_EXHAUSTED": "Bu araç şu anda kapasite sınırına ulaştı. Sorun dosyanızda değil — lütfen daha sonra tekrar deneyin.",
+      "WORKER_TASK_TIMEOUT": "Bu iş çok uzun sürdü ve durduruldu. Ücret alınmadı — lütfen tekrar deneyin.",
+      "PIPELINE_FAILED": "Bu video işlenirken bir sorun oluştu.",
+      "aslCta": "Bunun yerine işaretleri çevirmeyi dene — ücretsiz",
+      "aslCtaSuspected": "İşaretleri çevir — ücretsiz",
+      "aslCaveat": "İşaret dili okuma deneyseldir ve sık sık yanılır — altyazılara güvenmeden önce kontrol edin.",
+      "retryCta": "Tekrar dene",
+      "retryFailed": "Başlatamadık. Lütfen tekrar deneyin.",
+      "detailsToggle": "Teknik ayrıntılar"
     }
   },
   "bulkCallout": {

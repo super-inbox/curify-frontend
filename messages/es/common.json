@@ -361,10 +361,21 @@
   },
   "magic": {
     "errors": {
-      "NO_SPEECH": "El video parece no tener audio audible. No podemos transcribir el lenguaje de señas o imágenes en silencio; por favor, sube un video con audio hablado.",
+      "NO_SPEECH": "No encontramos audio hablado en este video. Los subtítulos y el doblaje necesitan voz audible.",
       "default": "Tu trabajo falló. Por favor, inténtalo de nuevo o contacta con soporte.",
       "INSUFFICIENT_CREDITS": "No tienes créditos suficientes para ejecutar este trabajo. Recarga para continuar.",
-      "topUpCta": "Recargar créditos"
+      "topUpCta": "Recargar créditos",
+      "ASL_SUSPECTED": "Esto parece un video en lengua de señas, así que no hay audio hablado que transcribir.",
+      "NO_SIGNING_DETECTED": "No pudimos leer las señas de este video. Asegúrate de que las manos y el rostro estén completos en el encuadre y bien iluminados.",
+      "GENERATION_QUOTA_EXHAUSTED": "Esta herramienta alcanzó su límite de capacidad. No es un problema con tu archivo; inténtalo más tarde.",
+      "WORKER_TASK_TIMEOUT": "Este trabajo tardó demasiado y se detuvo. No se cobró nada: inténtalo de nuevo.",
+      "PIPELINE_FAILED": "Algo salió mal al procesar este video.",
+      "aslCta": "Prueba a traducir las señas — gratis",
+      "aslCtaSuspected": "Traducir las señas — gratis",
+      "aslCaveat": "La lectura de lengua de señas es experimental y suele fallar: revisa los subtítulos antes de confiar en ellos.",
+      "retryCta": "Intentar de nuevo",
+      "retryFailed": "No pudimos iniciarlo. Inténtalo otra vez.",
+      "detailsToggle": "Detalles técnicos"
     }
   },
   "bulkCallout": {

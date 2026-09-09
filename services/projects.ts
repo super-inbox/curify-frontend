@@ -80,6 +80,29 @@ async getProjectStatus(projectId: string): Promise<ProjectStatusUpdate> {
   return response.data;
 },
 
+  // ✅ Re-run a FAILED project on the video it already has.
+  //
+  // The video is the point. The backend recovers the source from blob by
+  // video_id, so switching tools after a failure needs no re-upload — which is
+  // exactly what the two users who rescued themselves had to do by hand.
+  //
+  // Omit `jobType` to re-run the same job (the server refuses when the failure
+  // was terminal). Pass "asl_translation" to reroute; the server keeps its own
+  // allowlist of which failures may switch to what.
+  async retryProject(
+    projectId: string,
+    jobType?: string,
+  ): Promise<{ project_id: string }> {
+    const response = await apiClient.request<{ data: { project_id: string } }>(
+      `/projects/${projectId}/retry`,
+      {
+        method: "POST",
+        body: JSON.stringify({ job_type: jobType ?? null }),
+      },
+    );
+    return response.data;
+  },
+
 
   // ✅ Spend credits to remove a project's watermark (image or video).
   //
