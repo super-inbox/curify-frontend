@@ -115,6 +115,30 @@ none of them measurable:
 - **Docked**: ASL captioning (no viable tech path — memory `project_asl_captioning_demand`)
 
 ### C. SEO + SMM + Growth
+- **2026-09-10** **Image relevance, not image discovery** (`a21cd21b`). A `type: "image"` GSC pull
+  (the default `pull_gsc_performance.cjs` is web-only and never sees this) puts image search at
+  **63% of all impressions — 28,888 vs 16,901 web** — at 0.20% CTR, but **94% of those sit at
+  position 21–60**. Google has the images and ranks them shallowly, so the lever is alt +
+  surrounding text, NOT more sitemap coverage. Two changes: topic pages never passed
+  `imageContext` to `ExampleImagesGrid`, so every topic-page alt was a bare subject
+  ("Cristiano Ronaldo Portugal" → "… — Character IP") — 108 of 108 changed, counted not assumed;
+  and `nail art designs` (49,500/mo, KD 44, already **image pos 10.9**) retargeted by changing
+  `category`, which re-anchors all 23 example alts without touching the H1 (`buildNanoH1` prefers
+  `title`). ⚠️ Contaminates the 09-22 readout on `08092e73` — that was its designated indicator;
+  **re-baseline 41 impr / pos 10.9 / 0 clicks**. `workstream-seo-smm-growth.md` § 2026-09-10
+- **2026-09-09** **Four fixes + the fold verdict** (`2e810283`). (1) `middleware.ts` matcher skipped
+  **any path containing a dot**, so 11 live example pages self-canonicalled to a bare URL that
+  404d — 4 of them sitemap-advertised; fixed by re-including that one route shape, prod 404 → 200.
+  (2) Six merch/POD tools had **no `TOOL_BLOG_CATEGORIES` entry at all** — the actual cause of
+  `referringUrls = 0` on the KD spokes, not a missing link pass; ghost-mannequin 0→6, dieline 0→6,
+  url-to-product-video 0→3 (the last needed `TOOL_PINNED_BLOGS`, since `merch-pod` holds 12 posts
+  against `max = 3`). (3) The 08-12 brand strip had edited the **dead** `tools.<key>.meta.*`
+  decoys, so 9 tool titles still shipped double-branded; fixed across 10 locales. (4) Alt dedupe
+  in `buildExampleImageAlt`. ⚠️ **The 09-09 fold checkpoint came back and the fold is REAL** — two
+  pages crawled 09-01, *after* the 08-31 fix, are still folded, falsifying the 09-02 conclusion;
+  `ghost-mannequin-ai-guide` folds to `/tools/packaging-mockup`, not the homepage, so the
+  layout-payload story does not cover it. Keep the blog-publishing hold; the 10-13 KD-1 readout is
+  confounded. `workstream-seo-smm-growth.md` §§ 2026-09-09 / 09-10
 - **2026-09-08** Pinterest **LIVE — 60 campaign Pins across 9 boards** (batch 1 20 on 09-04,
   batch 2 10 on 09-05, batch 3 30 on 09-08). Batch 3 selects on **measured GSC image-search
   demand** (`pinterest_demand.cjs`) instead of image shape, and added 4 boards named for what
@@ -277,7 +301,10 @@ none of them measurable:
 | `project_blog_canonical_fold` | 43% of blogs folded to the homepage canonical — dominant suppressor |
 | `project_mbti_names_ctr_bleed` | examples folded to homepage canonical (fixed `3fb7b42f`) |
 | `project_wedge1_indexation` | indexation hygiene gate |
-| `reference_gsc_api_pull` | `pull_gsc_performance.cjs` + SA json; two windows → diff. No manual export |
+| `reference_gsc_api_pull` | `pull_gsc_performance.cjs` + SA json; two windows → diff. No manual export. ⚠️ **web-only by default** — pass `type: "image"` or you under-read the site by ~63% |
+| `project_image_search_surface` | image = 63% of impressions; 94% of them at pos 21–60 → relevance (alt + surrounding text), not discovery |
+| `feedback_middleware_dot_matcher_404` | dotted paths skipped middleware → bare 404; FIXED 09-09. **Validate Fix is now the right instrument, not Indexing-API** |
+| `feedback_tool_page_metadata_location` | live tool title = `<namespace>.metadata`; `tools.<key>.meta.*` and `ToolDef.seo` are dead decoys — verify from a rendered `<title>` |
 | `project_weekly_semrush_kd` | weekly KD pull → `blog-quality.md` |
 | `feedback_dedicated_blog_route_metadata` | own route folder bypasses `[slug]` generateMetadata |
 | `project_fb_follower_growth` | FB autopost state (carousels dead) |

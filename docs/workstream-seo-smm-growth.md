@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-09-02.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-09-10.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
