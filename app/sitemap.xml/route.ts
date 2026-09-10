@@ -61,7 +61,14 @@ const NANO_TEMPLATES_LASTMOD = PAYLOAD_TRIM_LASTMOD;
 // 09-05: the sibling card rail on every topic page stopped shipping 30
 // templates' base_prompt + descriptions, so all 109 changed together. This is
 // the "ALL of them" case the paragraph above reserves a group bump for.
-const TOPICS_LASTMOD = PAYLOAD_TRIM_LASTMOD;
+// 09-10: topic pages now pass `imageContext` to ExampleImagesGrid, so every
+// image alt gained a topical anchor ("Cristiano Ronaldo Portugal — Character
+// IP" rather than the bare subject). Counted, not assumed: all 108 topic URLs
+// in this sitemap have at least one image-bearing template and none is
+// niche-style, so 108 of 108 changed — the "ALL of them" case again. This is
+// the lever that matters for these pages: 94% of our image impressions sit at
+// position 21-60, which is a relevance problem, not a discovery one.
+const TOPICS_LASTMOD = "2026-09-10T00:00:00.000Z";
 
 // Per-page overrides, keyed by topic slug. Only pages that genuinely changed.
 const TOPIC_LASTMOD_OVERRIDES: Record<string, string> = {

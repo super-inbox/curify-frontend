@@ -2981,3 +2981,58 @@ pages share — not a site-wide payload.
    user-selected one at all. That points back at whether the canonical survives the render
    Googlebot gets, which the 09-02 rendered-DOM probe checked locally and found clean. The
    remaining untried step is the GSC Live Test, which needs a human in the UI.
+
+---
+
+## 2026-09-10 — image relevance, not image discovery
+
+Two image-side changes, from a 28d image-search pull (`type: "image"`, which the
+`pull_gsc_performance.cjs` default web-only pull never sees).
+
+**The framing that reorders this.** Image search is 63% of all impressions —
+**28,888 image vs 16,901 web** — at 0.20% CTR. But the position histogram says the
+problem is not discovery:
+
+| image position | pages | impressions |
+|---|---:|---:|
+| 1–10 | 58 | 163 |
+| 11–20 | 112 | 1,565 |
+| **21–40** | **335** | **14,547** |
+| 41–60 | 259 | 12,578 |
+| 61+ | 179 | 1,780 |
+
+**94% of image impressions sit at position 21–60.** Google has our images and ranks them
+shallowly. That is a relevance signal problem — alt text and surrounding text — not a sitemap
+problem, which is why extending `<image:image>` to more prefixes was *not* the action taken.
+
+### 1. Topic pages had no image context (108 of 108)
+
+`ExampleImagesGrid` takes an `imageContext` that becomes the alt suffix. Template hubs passed
+their category; **topic pages passed nothing**, so every topic-page image alt was a bare
+subject — `"Cristiano Ronaldo Portugal"` instead of `"Cristiano Ronaldo Portugal — Character
+IP"`. Topic pages carry 1,166 image impressions across 102 pages against 5 web clicks, so image
+search is effectively what they are for.
+
+Counted rather than assumed: all 108 topic URLs in `sitemap.xml` have ≥1 image-bearing template
+and none is niche-style, so 108 of 108 changed — the "ALL of them" case, hence a
+`TOPICS_LASTMOD` group bump.
+
+⚠️ Not to be confused with the sibling-card alt bug fixed on 09-05. That was a page carrying
+*other* templates' identity text. This is a page describing itself.
+
+### 2. `nail art designs` — retargeted, and it costs the 09-22 readout
+
+Same shape as the 09-01 gown retitle: we already held **image position 10.9** on 41
+impressions for a 49,500/mo term whose plural form appeared nowhere on the page. Title was
+"Themed Nail Art Design Generator" and `category` was "Themed Nail Art".
+
+`category` is the real lever and it is not obvious: `buildNanoH1` prefers `title`, so changing
+`category` does not touch the H1 — it re-anchors the alt suffix on all 23 example images to the
+query. Now `"Cherry Blossom — Nail Art Designs"`. Registered in
+`PER_TEMPLATE_RETITLE_LASTMOD` so the recrawl claim stays scoped to one template.
+
+⚠️ **This contaminates the 09-22 readout.** `nail art designs` was its designated single
+sharpest indicator for whether `08092e73` moved image position. Accepted deliberately — the
+operator took the same trade when choosing to ship image work ahead of that readout. **Re-baseline
+from 2026-09-10**: 41 impressions, position 10.9, 0 clicks. The 09-22 read on `08092e73` is now
+directional only.
