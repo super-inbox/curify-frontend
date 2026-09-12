@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-09-10.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-09-12.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -3036,3 +3036,95 @@ sharpest indicator for whether `08092e73` moved image position. Accepted deliber
 operator took the same trade when choosing to ship image work ahead of that readout. **Re-baseline
 from 2026-09-10**: 41 impressions, position 10.9, 0 clicks. The 09-22 read on `08092e73` is now
 directional only.
+
+---
+
+## 2026-09-12 — `curify photo retouching`: one stale result, one live bug, and a missing page
+
+Started from one reported SERP. The brand+intent query **`curify photo retouching`** returns
+two results, and neither is a retouching page:
+
+1. the homepage, titled *"Turn Ideas Into Visual Thinking | AI Infographics, Inspiration &
+   Localization"*, snippeted with product-photo copy;
+2. `/nano-template/template-portrait-retouching-blueprint`, titled *"Nano Banana Prompt: Portrait
+   Retouching Blueprint Generator"*, snippeted with raw prompt text.
+
+Both results look broken. Only one of them is. Checked live as Googlebot before concluding
+anything — this doc has a history of diagnosing from the SERP and being wrong about which layer
+the bug is in (09-05, 09-06).
+
+### Result 2 is stale index, not a live bug — do not "fix" it
+
+| | SERP | live (Googlebot, HTTP 200) |
+|---|---|---|
+| URL | `/nano-template/template-portrait-retouching-blueprint` | 308 → `/nano-template/portrait-retouching-blueprint` |
+| title | `Nano Banana Prompt: Portrait Retouching Blueprint Generator` | `Portrait Retouching Blueprint Generator \| Curify Studio` |
+
+The `Nano Banana Prompt:` strip shipped **2026-08-21** (`stripTitleBoilerplate`,
+`lib/nano_seo_utils.ts:199`) and is working. The indexed URL is the **pre-rename slug**, which is
+absent from `sitemap.xml` (grepped: 0 hits) while the clean slug is present, en + zh.
+
+So Google is holding a pre-rename URL carrying a pre-fix title. **No code change moves this** —
+it needs a recrawl, and per 09-09 the right instrument is now Validate Fix, not the Indexing API.
+
+⚠️ The trap: the SERP is the only place the old title still exists. Anyone starting from the
+SERP will go re-strip a prefix that is already stripped.
+
+**The one real signal in result 2**: the snippet opens with raw prompt body — *"Use the ATTACHED
+PHOTO as the original portrait — the real person to retouch; preserve their exact identity, face,
+and features."* — ahead of the authored meta description, which is clean and correct on the live
+page. Google preferred the rendered prompt because it is the most query-relevant text on the
+page. That is content placement, not metadata. Same family as the 09-05 finding that the snippet
+Google *composes* is evidence about the page body, not about the description.
+
+### Result 1 is live, and it is metadata drift
+
+The homepage matches the SERP byte-for-byte — nothing stale here:
+
+- `<title>` — `curify-ai – Turn Ideas Into Visual Thinking | AI Infographics, Inspiration & Localization`
+- `<meta description>` — *"…transforms trends, ideas, and knowledge into structured, shareable
+  visual content. Create infographics, inspiration cards, subtitles, translated videos, and
+  localized media."*
+- `<h1>` — *"Don't just make an image. Finish the job."*
+
+Three different products. Title and description are the **old** positioning — infographics,
+inspiration cards, subtitles, video localization. Both strings are
+`messages/en/home.json` → `home.metadata.title` / `.description`.
+
+The snippet Google shows is **not the meta description**. It is
+`tools.ai_product_photo_generator.desc` — a tool-card blurb lifted from the body. **Google
+discarding an authored description in favour of body copy is the diagnostic**: it is saying the
+description does not describe the page.
+
+### The root cause of the query mismatch: there is no retouching page
+
+Counted, not assumed: across the whole 4.7 MB `sitemap.xml` there is **exactly one** retouching
+URL — the nano template, en + zh. No `app/**` route matches `*retouch*`. There is no tool page,
+no landing page.
+
+The content exists but is targeted elsewhere — `blog.aiMakeoverTemplates` and
+`blog.fiftyAiMakeoverPrompts` both lead on **`ai makeover`** (210/mo, KD 19, the 08-27 fashion-KD
+pick) and carry portrait retouching as pattern 1 of 4-5. Nothing in a URL, title or H1 says
+"photo retouching."
+
+A brand+intent query with no landing target gets the homepage by default. That is the entire
+mechanism, and it is the same shape as 09-01: the demand is undefended, and we already built the
+capability — the retouching pipeline is live work on `jwang/retouching-pipeline-eval-2026-09-09`
+with a skill behind it, and has **zero public surface**.
+
+### Open
+
+- **P0 — homepage metadata rewrite.** `home.metadata.title` + `.description` in
+  `messages/en/home.json` still sell the pre-pivot product. Cheap, live, and it stops Google
+  rewriting our own snippet. ⚠️ Verify from a rendered `<title>` when done — per 09-09
+  (`feedback_tool_page_metadata_location`) this repo has dead metadata decoys, and the homepage
+  block has not been checked against one. Also reconcile with the `<h1>`; right now title, H1 and
+  description are three different pitches.
+- **Retouching has no page.** Decide targeting before building: `photo retouching` is a head term
+  we have never pulled KD on, and the existing blogs deliberately target `ai makeover` instead.
+  Pull KD first — the 09-01 rule was that this is a targeting and interlinking job, not a build
+  job, and that rule has not been retired.
+- **Request Validate Fix on the old template slug** so the stale title clears. No code change.
+- **Not measured:** no GSC pull was done for `curify photo retouching` itself — impressions and
+  position for the query are unknown. Brand+intent volume is probably negligible; the finding
+  that generalises is the homepage description, not this one query.

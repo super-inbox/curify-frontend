@@ -115,6 +115,20 @@ none of them measurable:
 - **Docked**: ASL captioning (no viable tech path — memory `project_asl_captioning_demand`)
 
 ### C. SEO + SMM + Growth
+- **2026-09-12** **`curify photo retouching` — one stale result, one live bug, no page**. Diagnosis
+  only, no code. Of the two results on that query, the nano-template one is a **stale index entry,
+  not a bug**: the indexed URL is the pre-rename slug (308s to the clean one, absent from
+  `sitemap.xml`) carrying a pre-fix title — `Nano Banana Prompt:` was stripped on 08-21
+  (`lib/nano_seo_utils.ts:199`) and the live title is already clean. ⚠️ The SERP is the only place
+  that old title still exists; do not re-strip it. Needs Validate Fix. The homepage result **is**
+  live: `home.metadata.title` / `.description` in `messages/en/home.json` still sell the pre-pivot
+  product (infographics / inspiration cards / subtitles / localization) while the `<h1>` says
+  "Don't just make an image. Finish the job." — and Google **discarded the description**, snipping
+  `tools.ai_product_photo_generator.desc` out of the body instead, which is the tell that it does
+  not describe the page. Root cause of the mismatch: **exactly one** retouching URL exists in the
+  whole sitemap and no `app/**` route matches `*retouch*` — the blogs deliberately target
+  `ai makeover` (210/mo, KD 19) instead. **P0 = the homepage rewrite**; the retouching page needs a
+  KD pull first, per the 09-01 targeting-not-building rule. `workstream-seo-smm-growth.md` § 2026-09-12
 - **2026-09-10** **Image relevance, not image discovery** (`a21cd21b`). A `type: "image"` GSC pull
   (the default `pull_gsc_performance.cjs` is web-only and never sees this) puts image search at
   **63% of all impressions — 28,888 vs 16,901 web** — at 0.20% CTR, but **94% of those sit at
