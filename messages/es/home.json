@@ -223,26 +223,13 @@
     },
     "free_badge": "GRATIS",
     "groups": {
-      "video": "Herramientas de Video",
+      "video": "Herramientas de vídeo y audio",
       "image": "Herramientas de Imagen",
-      "audio": "Herramientas de Audio",
       "design": "Diseño → Fabricación"
     },
     "video_transcript_generator": {
       "title": "Generador de transcripciones de video",
       "desc": "Convierte video en transcripciones precisas que puedes editar y reutilizar."
-    },
-    "youtube_subtitle_downloader": {
-      "title": "Descargador de subtítulos de YouTube",
-      "desc": "Descarga subtítulos disponibles de YouTube con un clic."
-    },
-    "video_subtitle_extractor": {
-      "title": "Extractor de subtítulos de video",
-      "desc": "Extrae subtítulos incrustados en archivos SRT/VTT editables."
-    },
-    "translate_subtitles": {
-      "title": "Traducir subtítulos",
-      "desc": "Traduce SRT/VTT mientras preservas el tiempo y la estructura."
     },
     "subtitle_converter": {
       "title": "Convertidor de subtítulos",
@@ -256,21 +243,9 @@
       "title": "Resumidor de video",
       "desc": "Genera resúmenes concisos y puntos clave de cualquier video."
     },
-    "storyboard_generator": {
-      "title": "Generador de guiones gráficos",
-      "desc": "Convierte videos en notas y sugerencias de guiones gráficos escena por escena."
-    },
-    "image_translation": {
-      "title": "Traducción de imágenes",
-      "desc": "Traduce texto en imágenes y reconstruye el diseño de manera limpia."
-    },
     "manga_translation": {
       "title": "Traducción de manga",
       "desc": "Traduce paneles de manga manteniendo burbujas y tipografía legibles."
-    },
-    "voice_clone": {
-      "title": "Clon de voz",
-      "desc": "Clona una voz a partir de una muestra corta para una narración consistente."
     },
     "speech_translator": {
       "title": "Traductor de voz",
@@ -551,18 +526,6 @@
         "title": "Generador de transcripciones de video",
         "desc": "Convierte video en transcripciones precisas que puedes editar y reutilizar."
       },
-      "youtube_subtitle_downloader": {
-        "title": "Descargador de subtítulos de YouTube",
-        "desc": "Descarga subtítulos disponibles de YouTube con un clic."
-      },
-      "video_subtitle_extractor": {
-        "title": "Extractor de subtítulos de video",
-        "desc": "Extrae subtítulos incrustados en archivos SRT/VTT editables."
-      },
-      "translate_subtitles": {
-        "title": "Traducir subtítulos",
-        "desc": "Traduce SRT/VTT mientras preservas el tiempo y la estructura."
-      },
       "subtitle_converter": {
         "title": "Convertidor de subtítulos",
         "desc": "Convierte entre SRT, VTT, ASS y más sin romper las marcas de tiempo."
@@ -575,21 +538,9 @@
         "title": "Resumidor de video",
         "desc": "Genera resúmenes concisos y puntos clave de cualquier video."
       },
-      "storyboard_generator": {
-        "title": "Generador de guiones gráficos",
-        "desc": "Convierte videos en notas y sugerencias de guiones gráficos escena por escena."
-      },
-      "image_translation": {
-        "title": "Traducción de imágenes",
-        "desc": "Traduce texto en imágenes y reconstruye el diseño de manera limpia."
-      },
       "manga_translation": {
         "title": "Traducción de manga",
         "desc": "Traduce paneles de manga manteniendo burbujas y tipografía legibles."
-      },
-      "voice_clone": {
-        "title": "Clon de voz",
-        "desc": "Clona una voz a partir de una muestra corta para una narración consistente."
       },
       "speech_translator": {
         "title": "Traductor de voz",

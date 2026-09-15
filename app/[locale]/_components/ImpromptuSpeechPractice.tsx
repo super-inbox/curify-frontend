@@ -940,7 +940,10 @@ export default function ImpromptuSpeechPractice() {
               {[
                 { slug: "video-transcript-generator", label: "Get a transcript" },
                 { slug: "bilingual-subtitles", label: "Add subtitles" },
-                { slug: "translate-subtitles", label: "Translate it" },
+                // was translate-subtitles — a coming_soon tool, so /tools/translate-subtitles
+                // was never prerendered and this chip 404'd. speech-translator is live and
+                // is the right destination for a spoken take anyway.
+                { slug: "speech-translator", label: "Translate it" },
               ].map((c) => (
                 <Link
                   key={c.slug}

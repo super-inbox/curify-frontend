@@ -223,26 +223,13 @@
     },
     "free_badge": "ÜCRETSİZ",
     "groups": {
-      "video": "Video Araçları",
+      "video": "Video ve Ses Araçları",
       "image": "Görüntü Araçları",
-      "audio": "Ses Araçları",
       "design": "Tasarım → Üretim"
     },
     "video_transcript_generator": {
       "title": "Video transkript oluşturucu",
       "desc": "Videoyu düzenleyip yeniden kullanabileceğiniz doğru transkriptlere dönüştürün."
-    },
-    "youtube_subtitle_downloader": {
-      "title": "YouTube altyazı indirici",
-      "desc": "YouTube'dan mevcut altyazıları tek tıkla indirin."
-    },
-    "video_subtitle_extractor": {
-      "title": "Video altyazı çıkarıcı",
-      "desc": "Gömülü altyazıları düzenlenebilir SRT/VTT dosyalarına çıkarın."
-    },
-    "translate_subtitles": {
-      "title": "Altyazıları çevir",
-      "desc": "Zamanlama ve yapıyı koruyarak SRT/VTT'yi çevirin."
     },
     "subtitle_converter": {
       "title": "Altyazı dönüştürücü",
@@ -256,21 +243,9 @@
       "title": "Video özetleyici",
       "desc": "Herhangi bir videodan kısa özetler ve ana noktaları oluşturun."
     },
-    "storyboard_generator": {
-      "title": "Storyboard oluşturucu",
-      "desc": "Videoları sahne sahne storyboard notlarına ve ipuçlarına dönüştürün."
-    },
-    "image_translation": {
-      "title": "Görüntü çevirisi",
-      "desc": "Görüntülerdeki metni çevirin ve düzeni temiz bir şekilde yeniden oluşturun."
-    },
     "manga_translation": {
       "title": "Manga çevirisi",
       "desc": "Manga panellerini baloncukları ve yazım düzenini okunabilir tutarak çevirin."
-    },
-    "voice_clone": {
-      "title": "Ses klonu",
-      "desc": "Kısa bir örnekten bir sesi klonlayarak tutarlı anlatım sağlayın."
     },
     "speech_translator": {
       "title": "Konuşma çevirmeni",
@@ -551,18 +526,6 @@
         "title": "Video transkript oluşturucu",
         "desc": "Videoyu düzenleyip yeniden kullanabileceğiniz doğru transkriptlere dönüştürün."
       },
-      "youtube_subtitle_downloader": {
-        "title": "YouTube altyazı indirici",
-        "desc": "YouTube'dan mevcut altyazıları tek tıklamayla indirin."
-      },
-      "video_subtitle_extractor": {
-        "title": "Video altyazı çıkarıcı",
-        "desc": "Gömülü altyazıları düzenlenebilir SRT/VTT dosyalarına çıkarın."
-      },
-      "translate_subtitles": {
-        "title": "Altyazıları çevir",
-        "desc": "Zamanlamayı ve yapıyı koruyarak SRT/VTT'yi çevirin."
-      },
       "subtitle_converter": {
         "title": "Altyazı dönüştürücü",
         "desc": "Zaman damgalarını bozmadan SRT, VTT, ASS ve daha fazlası arasında dönüştürün."
@@ -575,21 +538,9 @@
         "title": "Video özetleyici",
         "desc": "Herhangi bir videodan özlü özetler ve önemli noktalar oluşturun."
       },
-      "storyboard_generator": {
-        "title": "Storyboard oluşturucu",
-        "desc": "Videoları sahne sahne storyboard notları ve ipuçlarına dönüştürün."
-      },
-      "image_translation": {
-        "title": "Görüntü çevirisi",
-        "desc": "Görüntülerdeki metni çevirin ve düzeni temiz bir şekilde yeniden oluşturun."
-      },
       "manga_translation": {
         "title": "Manga çevirisi",
         "desc": "Manga panellerini baloncukları ve yazı tiplerini okunabilir tutarak çevirin."
-      },
-      "voice_clone": {
-        "title": "Ses klonu",
-        "desc": "Tutarlı anlatım için kısa bir örnekten sesi klonlayın."
       },
       "speech_translator": {
         "title": "Konuşma çevirmeni",

@@ -15,4 +15,8 @@
 export type ToolStatus = "create" | "demo" | "coming_soon";
 export type ToolMode = "translation" | "subtitles";
 
-export type ToolGroupId = "video" | "image" | "design" | "audio";
+// "audio" was removed 2026-09-15. It held exactly two tools: voice-clone
+// (coming_soon, deleted with the other five that had no page) and
+// speech-translator, which moved into "video" — so the group had no members
+// left and the hub would have rendered an empty heading.
+export type ToolGroupId = "video" | "image" | "design";

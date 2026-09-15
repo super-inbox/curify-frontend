@@ -223,26 +223,13 @@
     },
     "free_badge": "kostenlos",
     "groups": {
-      "video": "Video-Tools",
+      "video": "Video- & Audio-Tools",
       "image": "Bild-Tools",
-      "audio": "Audio-Tools",
       "design": "Design → Fertigung"
     },
     "video_transcript_generator": {
       "title": "Video-Transkriptgenerator",
       "desc": "Verwandeln Sie Videos in genaue Transkripte, die Sie bearbeiten und wiederverwenden können."
-    },
-    "youtube_subtitle_downloader": {
-      "title": "YouTube-Untertitel-Downloader",
-      "desc": "Laden Sie verfügbare Untertitel von YouTube mit einem Klick herunter."
-    },
-    "video_subtitle_extractor": {
-      "title": "Video-Untertitel-Extractor",
-      "desc": "Extrahieren Sie eingebettete Untertitel in bearbeitbare SRT/VTT-Dateien."
-    },
-    "translate_subtitles": {
-      "title": "Untertitel übersetzen",
-      "desc": "Übersetzen Sie SRT/VTT und bewahren Sie Timing und Struktur."
     },
     "subtitle_converter": {
       "title": "Untertitel-Konverter",
@@ -256,21 +243,9 @@
       "title": "Video-Zusammenfasser",
       "desc": "Erzeugen Sie prägnante Zusammenfassungen und wichtige Erkenntnisse aus jedem Video."
     },
-    "storyboard_generator": {
-      "title": "Storyboard-Generator",
-      "desc": "Verwandeln Sie Videos in Szenen-für-Szenen-Storyboard-Notizen und -Anweisungen."
-    },
-    "image_translation": {
-      "title": "Bildübersetzung",
-      "desc": "Übersetzen Sie Text in Bildern und stellen Sie das Layout sauber wieder her."
-    },
     "manga_translation": {
       "title": "Manga-Übersetzung",
       "desc": "Übersetzen Sie Manga-Panels und halten Sie Sprechblasen und Satzgestaltung lesbar."
-    },
-    "voice_clone": {
-      "title": "Stimmenklon",
-      "desc": "Klonen Sie eine Stimme aus einer kurzen Probe für konsistente Erzählungen."
     },
     "speech_translator": {
       "title": "Sprachübersetzer",
@@ -551,18 +526,6 @@
         "title": "Video-Transkriptgenerator",
         "desc": "Verwandeln Sie Videos in präzise Transkripte, die Sie bearbeiten und wiederverwenden können."
       },
-      "youtube_subtitle_downloader": {
-        "title": "YouTube-Untertitel-Downloader",
-        "desc": "Laden Sie verfügbare Untertitel von YouTube mit einem Klick herunter."
-      },
-      "video_subtitle_extractor": {
-        "title": "Video-Untertitel-Extractor",
-        "desc": "Extrahieren Sie eingebettete Untertitel in bearbeitbare SRT/VTT-Dateien."
-      },
-      "translate_subtitles": {
-        "title": "Untertitel übersetzen",
-        "desc": "Übersetzen Sie SRT/VTT und bewahren Sie Timing und Struktur."
-      },
       "subtitle_converter": {
         "title": "Untertitel-Konverter",
         "desc": "Konvertieren Sie zwischen SRT, VTT, ASS und mehr, ohne Zeitstempel zu brechen."
@@ -575,21 +538,9 @@
         "title": "Video-Zusammenfasser",
         "desc": "Erstellen Sie prägnante Zusammenfassungen und wichtige Erkenntnisse aus jedem Video."
       },
-      "storyboard_generator": {
-        "title": "Storyboard-Generator",
-        "desc": "Verwandeln Sie Videos in Szenen-für-Szenen-Storyboard-Notizen und -Anweisungen."
-      },
-      "image_translation": {
-        "title": "Bildübersetzung",
-        "desc": "Übersetzen Sie Text in Bildern und stellen Sie das Layout sauber wieder her."
-      },
       "manga_translation": {
         "title": "Manga-Übersetzung",
         "desc": "Übersetzen Sie Manga-Panels und halten Sie Sprechblasen und Satzgestaltung lesbar."
-      },
-      "voice_clone": {
-        "title": "Stimmenklon",
-        "desc": "Klonen Sie eine Stimme aus einer kurzen Probe für konsistente Erzählungen."
       },
       "speech_translator": {
         "title": "Sprachübersetzer",
