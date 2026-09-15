@@ -196,8 +196,9 @@ export default function PhotoRetouchGenerate() {
 
       {isGenerating && (
         <p className="mt-3 text-sm text-gray-600">
-          Retouching runs region by region — flyaways, skin, eyes, garment — so it takes about
-          two to three minutes. You can close this tab; the finished file goes to{" "}
+          Editing runs region by region — flyaways, skin, eyes, garment — and at your file&rsquo;s
+          own resolution, so it takes two to three minutes for a web-sized frame and longer for a
+          full-resolution one. You can close this tab; the finished file goes to{" "}
           <span className="font-medium">{email.trim()}</span>.
         </p>
       )}

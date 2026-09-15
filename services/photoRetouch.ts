@@ -39,11 +39,12 @@ export interface PhotoRetouchStatus {
 
 const POLL_INTERVAL_MS = 4000;
 // The pipeline makes one model call per planned region plus one to plan, so a
-// two-person frame is 6-8 sequential calls: ~3 minutes measured end to end. The
-// ceiling is generous; on timeout the job still finishes server-side and the
-// email delivers it, which is why pollResult signals "pending" rather than
-// throwing.
-const POLL_MAX_MS = 600_000;
+// two-person frame is 6-8 sequential calls. Measured end to end: ~3 min on a
+// 1280px frame, ~7 min on a 3000x4000 one — the crops scale with the input, and
+// the input is now processed at ITS OWN resolution rather than downscaled.
+// On timeout the job still finishes server-side and the email delivers it, which
+// is why pollResult signals "pending" instead of throwing.
+const POLL_MAX_MS = 900_000;
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 export const PENDING = "PENDING_EMAIL";
