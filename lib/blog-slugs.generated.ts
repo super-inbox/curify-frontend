@@ -107,6 +107,7 @@ export const BLOG_SLUGS: ReadonlySet<string> = new Set([
   "visual-search-platform-comparison",
   "vocabulary-flashcards-ai-templates",
   "voice-cloning-tools",
+  "wedding-photo-retouching-cost",
   "weird-science-facts-classroom-engagement",
   "what-is-infographics",
   "what-is-voice-cloning",

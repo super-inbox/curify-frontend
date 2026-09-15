@@ -8,6 +8,10 @@ export interface ProductVideoRequest {
   features: string[];
   price?: string;
   cta?: string;
+  // Omitted => backend default, which is "portrait" (1080x1920). The tool feeds
+  // the social-first e-commerce workflow, so 9:16 is the shape that surface
+  // wants; "landscape" gives the older 1280x720.
+  orientation?: "portrait" | "landscape";
 }
 
 export interface ProductVideoResponse {

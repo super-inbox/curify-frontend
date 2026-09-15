@@ -17,6 +17,12 @@ export type ToolAction =
   // posted straight to /costume-tryon/generate (bypasses the auth-gated
   // /images/upload flow). Rendered by CostumeTryonGenerate.
   | { type: "costume_tryon" }
+  // Anonymous photo-editing surface — upload one portrait/wedding frame →
+  // flyaways removed, skin evened, colour neutralised, framing untouched. Posts
+  // straight to /photo-retouch/generate; the five-stage pipeline behind it is
+  // the one calibrated against 8 studio before/after pairs. Rendered by
+  // PhotoRetouchGenerate.
+  | { type: "photo_retouch" }
   // Brand Direction Explorer — one-line brief → three preset creative
   // directions → generate the chosen visual. Bespoke client, rendered inline
   // on the tool page like the costume_tryon / product_video surfaces.
@@ -473,6 +479,42 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // THE INBOUND SURFACE for the retouching offer. The 2026-09-15 buyer-side
+    // demand pass found there was none: 11 personas and not one photographer, no
+    // /tools page, retouching present only as a nano template. 100% of demand
+    // generation was outbound, into a market whose buyer — when they have the
+    // need — searches and finds ShootDotEdit, PhotoUp and Evoto.
+    //
+    // NAMED "EDITING", NOT "RETOUCHING", and that is the whole point. On Reddit,
+    // 69 of this buyer's 104 posts say "edit" and exactly one says "retouch".
+    // SEMrush (2026-09-15, raw/photo-retouching-seo-09-15) says the same thing
+    // with volume and difficulty attached:
+    //
+    //   photo editing               12,100/mo  KD 100   ← unreachable head
+    //   wedding photo editing          390/mo  KD  19   ← THIS PAGE
+    //   wedding photo retouching        90/mo  KD  20   4x less volume, harder
+    //   portrait photo editing         110/mo  KD  11   spoke, not yet built
+    //   outsource wedding photo edit.   90/mo  KD   7   service intent -> persona page
+    //
+    // The house rule is act only on KD 0-26 (workstream-seo-smm-growth.md); this
+    // term is the highest-volume one that clears it.
+    id: "wedding-photo-editing",
+    slug: "wedding-photo-editing",
+    groupId: "image",
+    // "demo" keeps the card navigating to the tool page (the "create" status is
+    // hard-wired to the video CreateNewModal); the action below renders the real
+    // inline surface and relabels the CTA.
+    status: "demo",
+    // Unused by the photo_retouch action — it has its own anonymous endpoint and
+    // does not go through the nano job path. Required field.
+    job_type: "video_transcript",
+    namespace: "weddingPhotoEditing",
+    action: { type: "photo_retouch" },
+    i18n: toolKeys("wedding_photo_editing"),
+    seo: seoKeys("wedding_photo_editing"),
+  },
+
+  {
     // Viral top-of-funnel toy: upload one selfie → a cinematic Chinese
     // dynasty-costume transformation video ("try on 5,000 years of Chinese
     // fashion"). Deliberately ANONYMOUS (no sign-in) to maximize share-driven
@@ -785,6 +827,12 @@ export function getSiblingTools(slug: string, max = 3): ToolDef[] {
 // tool detail page. Source of truth: docs/interconnection.md (Tool slug
 // → Blog categories table). Keep in sync when adding a new tool.
 export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
+  // Added 2026-09-15 with the retouching-cost post. This tool had NO entry, so
+  // its page surfaced no related reading at all — and a new post needs inbound
+  // edges from real pages more than it needs better copy (all four 08/09 campaign
+  // posts shipped at referringUrls = 0, and that is the recorded cause of their
+  // zero impressions).
+  "wedding-photo-editing": ["creator-tools"],
   "video-dubbing":               ["video-translation-dubbing", "video-dubbing"],
   "bilingual-subtitles":         ["video-translation-dubbing", "creator-tools"],
   "voice-clone":                 ["video-translation-dubbing"],
@@ -827,6 +875,10 @@ export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
 // appending to a list that was already full added zero links and still looked
 // correct in the data. Verify against the rendered page, not this map.
 export const TOOL_PINNED_BLOGS: Record<string, string[]> = {
+  // PINNED, not left to freshness: RelatedBlogsByCategory renders max 3 sorted by
+  // date, and `creator-tools` holds 20 posts — this one would drop out of the slot
+  // within weeks and the inbound edge would silently disappear.
+  "wedding-photo-editing": ["wedding-photo-retouching-cost"],
   "product-video":              ["url-to-product-video"],
   "ecommerce-photo":            ["url-to-product-video", "ghost-mannequin-ai-guide"],
   "ai-product-photo-generator": ["url-to-product-video", "ghost-mannequin-ai-guide"],

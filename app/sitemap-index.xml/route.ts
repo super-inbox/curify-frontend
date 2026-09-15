@@ -15,7 +15,7 @@ const CHILD_SITEMAPS: Array<{ path: string; lastmod: string }> = [
   { path: "/sitemap.xml",          lastmod: "2026-09-01T00:00:00.000Z" },
   // Bumped 2026-09-01 — each post entry now carries its hero <image:image>.
   // Same image-search push as /sitemap.xml above.
-  { path: "/sitemap-blogs.xml",    lastmod: "2026-09-01T00:00:00.000Z" },
+  { path: "/sitemap-blogs.xml",    lastmod: "2026-09-15T00:00:00.000Z" },
   // Bumped 2026-05-14 — 1,275 additional non-MBTI example pages gained
   // per-locale SEO copy in messages/<locale>/example.json (commit
   // 2f43a2e). The child sitemap's per-URL lastmods now flag ~1,540

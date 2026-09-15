@@ -75,6 +75,18 @@ export const PER_TEMPLATE_RETITLE_LASTMOD: ReadonlyMap<string, string> = new Map
   // genuinely a dress design sheet (illustration + technical sketch + notes), so
   // leading with the term does not overclaim.
   ["template-fashion-inspired-gown-design-sheet", "2026-09-01T00:00:00.000Z"],
+  // 2026-09-10 — retargeted onto "nail art designs" (49,500/mo, KD 44). Same
+  // shape as the gown retitle above: we already hold **image** position 10.9
+  // for the exact query on 41 impressions while the plural term appeared
+  // nowhere on the page — title read "Themed Nail Art Design Generator" and
+  // `category` was "Themed Nail Art", which is also the alt-text suffix on all
+  // 23 example images. Changing `category` is the real lever here: it does not
+  // touch the H1 (buildNanoH1 prefers `title`), it re-anchors every image alt
+  // on the page to the query. The template genuinely produces nail art designs,
+  // so leading with the term does not overclaim.
+  // NOTE: this contaminates the 09-22 readout on 08092e73 — `nail art designs`
+  // was its designated indicator. Accepted deliberately; re-baseline from here.
+  ["template-fashion-nail-art-design", "2026-09-10T00:00:00.000Z"],
 ]);
 
 export const SEO_RETITLED_TEMPLATE_IDS: ReadonlySet<string> = new Set([

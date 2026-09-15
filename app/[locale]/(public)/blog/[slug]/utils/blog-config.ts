@@ -74,6 +74,7 @@ export function createBlogPostsConfig() {
       'character-turnaround-sheet-guide': 'characterTurnaroundSheetGuide',
       'dieline-generator-guide': 'dielineGeneratorGuide',
       'ghost-mannequin-ai-guide': 'ghostMannequinAiGuide',
+      'wedding-photo-retouching-cost': 'weddingPhotoRetouchingCost',
       'ai-makeover-templates': 'aiMakeoverTemplates',
       'world-cup-fan-outfit-prompts': 'worldCupFanOutfitPrompts',
       '50-world-cup-2026-ai-prompts': 'fiftyWorldCup2026AiPrompts',
@@ -162,6 +163,11 @@ export const availableKeys: Record<string, string[]> = {
   // `production` is the last free section that still renders before tools/curify,
   // which is where an FAQ belongs. Renaming it would need a component change.
   'ghostMannequinAiGuide': ["title", "metaDescription", "seoKeywords", "date", "readTime", "intro", "whatIsTitle", "whatIsContent", "whyTitle", "whyContent", "howTitle", "howContent", "useCasesTitle", "useCasesContent", "challengesTitle", "challengesContent", "productionTitle", "productionContent", "toolsTitle", "toolsContent", "curifyTitle", "curifyContent", "conclusionTitle", "conclusionContent"],
+  // Same slot set as ghostMannequinAiGuide, including `production*` carrying the
+  // FAQ. Every key listed here must exist in messages/*/blog.json: safeT()
+  // returns the default for anything absent, so an omission renders a BLANK
+  // section rather than failing.
+  'weddingPhotoRetouchingCost': ["title", "metaDescription", "seoKeywords", "date", "readTime", "intro", "whatIsTitle", "whatIsContent", "whyTitle", "whyContent", "howTitle", "howContent", "useCasesTitle", "useCasesContent", "challengesTitle", "challengesContent", "productionTitle", "productionContent", "toolsTitle", "toolsContent", "curifyTitle", "curifyContent", "conclusionTitle", "conclusionContent"],
   'urlToProductVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'videoToLearningPack': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],
   'footballerMbtiTypes': ['intro', 'whatIsTitle', 'whatIsContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'challengesTitle', 'challengesContent', 'curifyTitle', 'curifyContent', 'conclusionTitle', 'conclusionContent', 'metaDescription', 'seoKeywords'],

@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-09-02.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-09-12.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -1370,6 +1370,161 @@ converts at 0.00% too, which an earlier 7-row-per-page ad-hoc query had missed.
 - **2026-09-27 (+28d)** — Bucket B position deltas on the three surviving pages. Judge on
   position, not clicks — at 235 clicks/28d click counts are noise.
 - Do **not** regenerate the sitemap before the locale A/B reads out ~2026-09-23.
+
+---
+
+## 2026-09-15 — retouching-buyer KD, and the word the buyer actually uses
+
+Source: `raw/photo-retouching-seo-09-15/` (SEMrush bulk keyword analysis, one screenshot, 13 terms,
+已更新 1 个月). **Recorded here because the screenshot is the only copy** — same reason as the
+08-27 fashion pull and the 09-01 batch above. The candidate list came from
+`~/curify-studio/docs/reddit-demand-mining-retouching-2026-09-15.md` §H action 6, which is the
+first KD ever pulled for retouching-buyer terms.
+
+### The finding: "editing" is a different, larger and easier market than "retouching"
+
+| | volume | KD | CPC |
+|---|---:|---:|---:|
+| **photo editing** | **12,100** | 100 🔴 | $1.44 |
+| photo retouching | 1,300 | 45 🟠 | $2.31 |
+
+**9.3× the volume, and that is the same ratio the Reddit corpus found in the buyer's own words:
+69 of 104 posts contain "edit", exactly one contains "retouch".** Two independent sources, two
+different methods, the same answer. We had been naming the offer after the word the buyer does
+not use.
+
+It holds inside every pair, and the editing variant is also the *easier* one:
+
+| pair | editing | retouching |
+|---|---|---|
+| wedding | 390/mo, **KD 19** | 90/mo, KD 20 |
+| portrait | 110/mo, **KD 11** | 40/mo, KD 21 |
+
+### Actionable at the house rule (act only on KD 0–26)
+
+| 🟢 | KD | vol | CPC | our asset |
+|---|---:|---:|---:|---|
+| outsource wedding photo editing | **7** | 90 | $0.00 | `/use-cases/for-photographers` ⭐ new 09-15 |
+| portrait photo editing | **11** | 110 | $3.53 | ⚠️ none — spoke not built; nearest is the wedding page |
+| wedding photo editing | **19** | 390 | $3.45 | `/tools/wedding-photo-editing` ⭐ new 09-15 |
+| wedding photo retouching | **20** | 90 | $3.85 | `/blog/wedding-photo-retouching-cost` ⭐ new 09-15 — ⚠️ links still owed |
+| portrait photo retouching | **21** | 40 | **$13.16** | same post — ⚠️ links still owed |
+| real estate photo editing | 27 | 880 | $4.04 | ⛔ **not buildable today** — see below |
+
+| 🔴 out of reach | KD | vol | CPC |
+|---|---:|---:|---:|
+| photo editing | 100 | 12,100 | $1.44 |
+| photo enhancement | 76 | 880 | $0.83 |
+| photo retouching | 45 | 1,300 | $2.31 |
+| virtual staging service | 41 | 90 | **$5.78** |
+
+`photo culling service` (20/mo, $6.80 CPC) returned **no KD and no intent** — SEMrush has no data
+for it, which is itself a reading: nobody is competing for it because almost nobody searches it.
+
+### What shipped against this, same day
+
+- **`/tools/wedding-photo-editing`** — anonymous, no sign-in, upload one frame and get it back
+  edited. Backed by `POST /photo-retouch/generate` (the real five-stage pipeline, not a prompt).
+- **`/use-cases/for-photographers`** — the service/landing surface, which is where the KD 7
+  `outsource wedding photo editing` intent lands. B2B tier, hidden from the consumer chip row.
+
+Both are named "editing". That is the whole point of this pull — and the `<title>` on the tool page
+covers **both** actionable editing terms ("Wedding & Portrait Photo Editing"), not just the wedding
+one. The first version titled it wedding-only while the body said "wedding & portrait", which put
+the narrowest string in the place that carries the most weight. It also ran to 85 characters once
+the layout's " | Curify Studio" suffix is counted; it is 67 now.
+
+### Correction, same day: the two "retouching" terms are NOT covered
+
+This table first recorded `wedding photo retouching` as "same page, secondary term". It is not on
+the page at all. Checked string by string: the exact phrase appears nowhere in
+`weddingPhotoEditing`, and neither does `portrait photo retouching`. The word "retouching" occurs
+three times, all inside the deep-content section describing how the pipeline works.
+
+That is the cost of leading with "editing", and leading with "editing" was still right — but the
+cost is real and should be on the books rather than written up as coverage. **130/mo combined at
+KD 20–21, and the portrait half carries the highest CPC in the whole pull at $13.16.** Whoever is
+bidding $13 a click on 40 searches a month is converting them into something expensive.
+
+### Shipped 2026-09-15: `/blog/wedding-photo-retouching-cost` — and why it is a post, not a tool page
+
+The two retouching terms above now have a target. It is a **blog post**, and the vehicle
+was chosen against this doc's own record rather than by preference:
+
+- **New tool surfaces are Tier 4 gated on today's crawl checkpoint** (`workstream-index.md:92`,
+  which built the scene-enhancement surface as a template page for exactly this reason). That
+  checkpoint is still unread. ⚠️ `/tools/wedding-photo-editing` and `/use-cases/for-photographers`
+  were shipped this morning **ahead of it**, without that gate being known.
+- **Every near-duplicate tool slug this repo has met was consolidated, not spoked** —
+  `sticker-factory-export` 301'd onto `die-cut-sticker-file`; a second `asl-translator` slug
+  refused outright with *"a near-identical second slug would split that signal."* The one
+  hub/spoke pair that exists (`ai-product-photo-generator` / `ecommerce-photo`) has **no measured
+  outcome anywhere in docs/**, and the hub does not rank.
+- **Blog-first is this doc's own stated instrument**, per commit `b4b89a56`: *"blog indexes in
+  ~1 day while tool pages from 08-06 still are not… this costs a post instead of a product if a
+  KD-1 term turns out to be unreachable."*
+
+⚠️ **Blog is the better instrument here, not a good one.** `dieline-generator-guide` targeted
+KD 19 / 170/mo / $2.76 — the near-exact analogue — and has zero impressions because it folded.
+`ghost-mannequin-ai-guide` targeted KD 1 and did the same. The blog-spoke route has a measured
+~33% fold rate.
+
+**The post's second job is links.** `TOOL_BLOG_CATEGORIES` had **no entry for
+`wedding-photo-editing`** — that page surfaced no related reading at all. It now maps to
+`creator-tools` and the post is **pinned** via `TOOL_PINNED_BLOGS` (not left to freshness;
+`creator-tools` holds 20 posts and the component renders only 3). Verified rendering: the post
+appears on both `/tools/wedding-photo-editing` and `/use-cases/for-photographers`.
+
+**⛔ STILL OWED BEFORE THIS CAN RANK — the inbound-link precondition.** The rule is ≥3 links from
+**verified-indexed** sources before publishing, and all four Aug/Sep campaign posts shipped at
+`referringUrls = 0`, which is the recorded cause of their zero impressions. The two links above
+come from pages shipped **today** and therefore almost certainly not indexed — they do not count.
+URL-Inspect these and add links from whichever come back indexed:
+
+| candidate | why |
+|---|---|
+| `/nano-template/portrait-retouching-blueprint` | the only retouching URL in the whole sitemap, and it ranks |
+| `/blog/50-ai-makeover-prompts` | its metaDescription already contains "portrait retouching" |
+| `/blog/ai-makeover-templates` | same |
+| `/blog/preserve-facial-features-ai-generation` | portrait-adjacent, `creator-tools` |
+
+**If fewer than 3 come back indexed, do not treat this post as live** — it is in the same hole as
+the last two.
+
+**Checkpoint 2026-10-27 (+6w):** position for `wedding photo retouching` and `portrait photo
+retouching`, and the post's index state in URL-Inspection. **If it folds like the last two, that is
+the third KD<20 failure in a row and the low-KD thesis should be called dead rather than retried.**
+
+### ⛔ `real estate photo editing` is a capability gap, not a KD gap
+
+This was first recorded as "one point over the KD line". That is true and it is the less important
+half. **The pipeline behind `/tools/wedding-photo-editing` requires a face** — `retouch_pipeline.py`
+raises `NO_FACE` when the plan comes back with no people, which is exactly what an empty room
+returns. A real-estate photographer who found that page today would upload a listing photo and get
+an error.
+
+So this term cannot be served by relaxing a rule; it needs the **locked-subject scene pipeline**,
+which is action #3 of the demand doc and is explicitly untested ("stage one empty room, put it
+beside BoxBrownie's $30 output, and decide from the pixels"). The order is: prove the capability,
+then argue about KD 27.
+
+It is worth arguing about. 880/mo is more than the entire wedding+portrait editing cluster
+combined (500/mo), the CPC is higher at $4.04, and §F1 of the demand doc independently promotes
+real-estate media to the top ICP on price — $1.10–2.25 per image against the wedding studio's
+$0.05–0.50, and $5–30 for generative work. The demand and the difficulty both say go; only the
+pipeline says not yet.
+
+### Two things to decide next, both with the number attached
+
+1. **`real estate photo editing`** — the KD 27 question is downstream of the capability question
+   above. Run demand-doc action #3 (one empty room, beside BoxBrownie's $30 output) before
+   spending anything on the term. If the pixels say we are in that market, then the rule exists
+   for a reason and this is exactly the case that tests it — decide it openly, do not quietly bend
+   it.
+2. **`portrait photo retouching` carries a $13.16 CPC on 40 searches a month.** That is 3.7× the
+   next-highest CPC here. Somebody is paying a lot for very few clicks, which usually means the
+   click converts to a high-ticket job. Worth one look at who is bidding before dismissing it as
+   low volume.
 
 ---
 
@@ -2981,3 +3136,150 @@ pages share — not a site-wide payload.
    user-selected one at all. That points back at whether the canonical survives the render
    Googlebot gets, which the 09-02 rendered-DOM probe checked locally and found clean. The
    remaining untried step is the GSC Live Test, which needs a human in the UI.
+
+---
+
+## 2026-09-10 — image relevance, not image discovery
+
+Two image-side changes, from a 28d image-search pull (`type: "image"`, which the
+`pull_gsc_performance.cjs` default web-only pull never sees).
+
+**The framing that reorders this.** Image search is 63% of all impressions —
+**28,888 image vs 16,901 web** — at 0.20% CTR. But the position histogram says the
+problem is not discovery:
+
+| image position | pages | impressions |
+|---|---:|---:|
+| 1–10 | 58 | 163 |
+| 11–20 | 112 | 1,565 |
+| **21–40** | **335** | **14,547** |
+| 41–60 | 259 | 12,578 |
+| 61+ | 179 | 1,780 |
+
+**94% of image impressions sit at position 21–60.** Google has our images and ranks them
+shallowly. That is a relevance signal problem — alt text and surrounding text — not a sitemap
+problem, which is why extending `<image:image>` to more prefixes was *not* the action taken.
+
+### 1. Topic pages had no image context (108 of 108)
+
+`ExampleImagesGrid` takes an `imageContext` that becomes the alt suffix. Template hubs passed
+their category; **topic pages passed nothing**, so every topic-page image alt was a bare
+subject — `"Cristiano Ronaldo Portugal"` instead of `"Cristiano Ronaldo Portugal — Character
+IP"`. Topic pages carry 1,166 image impressions across 102 pages against 5 web clicks, so image
+search is effectively what they are for.
+
+Counted rather than assumed: all 108 topic URLs in `sitemap.xml` have ≥1 image-bearing template
+and none is niche-style, so 108 of 108 changed — the "ALL of them" case, hence a
+`TOPICS_LASTMOD` group bump.
+
+⚠️ Not to be confused with the sibling-card alt bug fixed on 09-05. That was a page carrying
+*other* templates' identity text. This is a page describing itself.
+
+### 2. `nail art designs` — retargeted, and it costs the 09-22 readout
+
+Same shape as the 09-01 gown retitle: we already held **image position 10.9** on 41
+impressions for a 49,500/mo term whose plural form appeared nowhere on the page. Title was
+"Themed Nail Art Design Generator" and `category` was "Themed Nail Art".
+
+`category` is the real lever and it is not obvious: `buildNanoH1` prefers `title`, so changing
+`category` does not touch the H1 — it re-anchors the alt suffix on all 23 example images to the
+query. Now `"Cherry Blossom — Nail Art Designs"`. Registered in
+`PER_TEMPLATE_RETITLE_LASTMOD` so the recrawl claim stays scoped to one template.
+
+⚠️ **This contaminates the 09-22 readout.** `nail art designs` was its designated single
+sharpest indicator for whether `08092e73` moved image position. Accepted deliberately — the
+operator took the same trade when choosing to ship image work ahead of that readout. **Re-baseline
+from 2026-09-10**: 41 impressions, position 10.9, 0 clicks. The 09-22 read on `08092e73` is now
+directional only.
+
+---
+
+## 2026-09-12 — `curify photo retouching`: one stale result, one live bug, and a missing page
+
+Started from one reported SERP. The brand+intent query **`curify photo retouching`** returns
+two results, and neither is a retouching page:
+
+1. the homepage, titled *"Turn Ideas Into Visual Thinking | AI Infographics, Inspiration &
+   Localization"*, snippeted with product-photo copy;
+2. `/nano-template/template-portrait-retouching-blueprint`, titled *"Nano Banana Prompt: Portrait
+   Retouching Blueprint Generator"*, snippeted with raw prompt text.
+
+Both results look broken. Only one of them is. Checked live as Googlebot before concluding
+anything — this doc has a history of diagnosing from the SERP and being wrong about which layer
+the bug is in (09-05, 09-06).
+
+### Result 2 is stale index, not a live bug — do not "fix" it
+
+| | SERP | live (Googlebot, HTTP 200) |
+|---|---|---|
+| URL | `/nano-template/template-portrait-retouching-blueprint` | 308 → `/nano-template/portrait-retouching-blueprint` |
+| title | `Nano Banana Prompt: Portrait Retouching Blueprint Generator` | `Portrait Retouching Blueprint Generator \| Curify Studio` |
+
+The `Nano Banana Prompt:` strip shipped **2026-08-21** (`stripTitleBoilerplate`,
+`lib/nano_seo_utils.ts:199`) and is working. The indexed URL is the **pre-rename slug**, which is
+absent from `sitemap.xml` (grepped: 0 hits) while the clean slug is present, en + zh.
+
+So Google is holding a pre-rename URL carrying a pre-fix title. **No code change moves this** —
+it needs a recrawl, and per 09-09 the right instrument is now Validate Fix, not the Indexing API.
+
+⚠️ The trap: the SERP is the only place the old title still exists. Anyone starting from the
+SERP will go re-strip a prefix that is already stripped.
+
+**The one real signal in result 2**: the snippet opens with raw prompt body — *"Use the ATTACHED
+PHOTO as the original portrait — the real person to retouch; preserve their exact identity, face,
+and features."* — ahead of the authored meta description, which is clean and correct on the live
+page. Google preferred the rendered prompt because it is the most query-relevant text on the
+page. That is content placement, not metadata. Same family as the 09-05 finding that the snippet
+Google *composes* is evidence about the page body, not about the description.
+
+### Result 1 is live, and it is metadata drift
+
+The homepage matches the SERP byte-for-byte — nothing stale here:
+
+- `<title>` — `curify-ai – Turn Ideas Into Visual Thinking | AI Infographics, Inspiration & Localization`
+- `<meta description>` — *"…transforms trends, ideas, and knowledge into structured, shareable
+  visual content. Create infographics, inspiration cards, subtitles, translated videos, and
+  localized media."*
+- `<h1>` — *"Don't just make an image. Finish the job."*
+
+Three different products. Title and description are the **old** positioning — infographics,
+inspiration cards, subtitles, video localization. Both strings are
+`messages/en/home.json` → `home.metadata.title` / `.description`.
+
+The snippet Google shows is **not the meta description**. It is
+`tools.ai_product_photo_generator.desc` — a tool-card blurb lifted from the body. **Google
+discarding an authored description in favour of body copy is the diagnostic**: it is saying the
+description does not describe the page.
+
+### The root cause of the query mismatch: there is no retouching page
+
+Counted, not assumed: across the whole 4.7 MB `sitemap.xml` there is **exactly one** retouching
+URL — the nano template, en + zh. No `app/**` route matches `*retouch*`. There is no tool page,
+no landing page.
+
+The content exists but is targeted elsewhere — `blog.aiMakeoverTemplates` and
+`blog.fiftyAiMakeoverPrompts` both lead on **`ai makeover`** (210/mo, KD 19, the 08-27 fashion-KD
+pick) and carry portrait retouching as pattern 1 of 4-5. Nothing in a URL, title or H1 says
+"photo retouching."
+
+A brand+intent query with no landing target gets the homepage by default. That is the entire
+mechanism, and it is the same shape as 09-01: the demand is undefended, and we already built the
+capability — the retouching pipeline is live work on `jwang/retouching-pipeline-eval-2026-09-09`
+with a skill behind it, and has **zero public surface**.
+
+### Open
+
+- **P0 — homepage metadata rewrite.** `home.metadata.title` + `.description` in
+  `messages/en/home.json` still sell the pre-pivot product. Cheap, live, and it stops Google
+  rewriting our own snippet. ⚠️ Verify from a rendered `<title>` when done — per 09-09
+  (`feedback_tool_page_metadata_location`) this repo has dead metadata decoys, and the homepage
+  block has not been checked against one. Also reconcile with the `<h1>`; right now title, H1 and
+  description are three different pitches.
+- **Retouching has no page.** Decide targeting before building: `photo retouching` is a head term
+  we have never pulled KD on, and the existing blogs deliberately target `ai makeover` instead.
+  Pull KD first — the 09-01 rule was that this is a targeting and interlinking job, not a build
+  job, and that rule has not been retired.
+- **Request Validate Fix on the old template slug** so the stale title clears. No code change.
+- **Not measured:** no GSC pull was done for `curify photo retouching` itself — impressions and
+  position for the query are unknown. Brand+intent volume is probably negligible; the finding
+  that generalises is the homepage description, not this one query.

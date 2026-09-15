@@ -555,6 +555,16 @@ export default async function Page({ params }: Props) {
             maxRows={3}
             desktopOpensExample
             showCaption
+            // Template hubs pass their category here and topic pages did not,
+            // so every topic-page image alt was a bare subject with no topical
+            // anchor — "Cristiano Ronaldo Portugal" rather than
+            // "Cristiano Ronaldo Portugal — Character IP". Image search is
+            // where these pages actually live (102 topic pages, 1,166 image
+            // impressions in 28d, against 5 web clicks), and 94% of our image
+            // impressions sit at position 21-60 — a relevance problem, not a
+            // discovery one. The topic's own display name is the correct
+            // anchor: unlike the sibling-card alt bug, it describes THIS page.
+            imageContext={topicDisplayName}
           />
         </section>
       ) : null}

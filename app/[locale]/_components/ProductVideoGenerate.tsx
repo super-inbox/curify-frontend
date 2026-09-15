@@ -9,7 +9,11 @@ import { productVideoService } from "@/services/productVideo";
 import { useTracking } from "@/services/useTracking";
 import { PRODUCT_VIDEO_CREDITS } from "@/lib/pricing";
 
-const MIN_PHOTOS = 3;
+// One photo is enough to generate — the backend reuses it across beats with a
+// different crop each time. Three slots still show, because more photos do make
+// a better video; see the hint under the grid.
+const MIN_PHOTOS = 1;
+const SUGGESTED_PHOTOS = 3;
 const MAX_PHOTOS = 6;
 const CREDITS_COST = PRODUCT_VIDEO_CREDITS;
 const POLL_INTERVAL_MS = 3000;
@@ -19,9 +23,14 @@ const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 /**
  * Functional product-video tool surface for /tools/product-video. Structured
- * input: 1–3+ product photos (reuse ReferenceImageUpload, which self-gates the
+ * input: 1+ product photos (reuse ReferenceImageUpload, which self-gates the
  * upload behind sign-in) + title / features / price / CTA. Submits to the
  * backend PRODUCT_VIDEO job and polls /projects/{id}/status for the mp4.
+ *
+ * The gate used to be three photos, matching a backend minimum that has since
+ * dropped to one — which is what the home "Product & e-commerce workflow"
+ * ladder promises ("turn one product photo into…"). The output is 9:16 by
+ * default now, so the result preview is portrait.
  */
 export default function ProductVideoGenerate() {
   const rawUser = useAtomValue(userAtom);
@@ -135,6 +144,12 @@ export default function ProductVideoGenerate() {
           />
         ))}
       </div>
+      {imageUrls.length > 0 && imageUrls.length < SUGGESTED_PHOTOS && (
+        <p className="mt-1.5 text-[11px] text-neutral-500">
+          One photo works. {SUGGESTED_PHOTOS} or more gives each scene its own shot
+          instead of reusing this one.
+        </p>
+      )}
       {photos.length < MAX_PHOTOS && (
         <button
           type="button"
@@ -199,7 +214,7 @@ export default function ProductVideoGenerate() {
       )}
       {user && !canGenerate && !isGenerating && (
         <p className="mt-1.5 text-center text-[11px] text-neutral-500">
-          Add at least {MIN_PHOTOS} photos and a product name to generate.
+          Add at least {MIN_PHOTOS} photo and a product name to generate.
         </p>
       )}
 

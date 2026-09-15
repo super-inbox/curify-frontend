@@ -41,6 +41,7 @@ import EcommercePhotoGenerate, {
 } from "@/app/[locale]/_components/EcommercePhotoGenerate";
 import ProductVideoGenerate from "@/app/[locale]/_components/ProductVideoGenerate";
 import CostumeTryonGenerate from "@/app/[locale]/_components/CostumeTryonGenerate";
+import PhotoRetouchGenerate from "@/app/[locale]/_components/PhotoRetouchGenerate";
 import ImpromptuSpeechPractice from "@/app/[locale]/_components/ImpromptuSpeechPractice";
 import BrandDirectionExplorerClient from "@/app/[locale]/(public)/brand-direction-explorer/BrandDirectionExplorerClient";
 import CreateNewModal from "../CreateNewModal";
@@ -191,6 +192,10 @@ export default function ToolGenericClient({
           // Random topic → 30s prep → 90s webcam take → playback/download.
           // Fully client-side; no job, no credits, no sign-in.
           <ImpromptuSpeechPractice />
+        ) : tool.action?.type === "photo_retouch" ? (
+          // Anonymous photo editing: upload one frame → edited file, no sign-in.
+          // Its own multipart endpoint, like costume_tryon below.
+          <PhotoRetouchGenerate />
         ) : tool.action?.type === "costume_tryon" ? (
           // Anonymous viral costume try-on: upload one photo → dynasty-costume
           // transformation mp4. No sign-in required (own multipart endpoint).

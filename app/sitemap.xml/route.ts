@@ -61,7 +61,14 @@ const NANO_TEMPLATES_LASTMOD = PAYLOAD_TRIM_LASTMOD;
 // 09-05: the sibling card rail on every topic page stopped shipping 30
 // templates' base_prompt + descriptions, so all 109 changed together. This is
 // the "ALL of them" case the paragraph above reserves a group bump for.
-const TOPICS_LASTMOD = PAYLOAD_TRIM_LASTMOD;
+// 09-10: topic pages now pass `imageContext` to ExampleImagesGrid, so every
+// image alt gained a topical anchor ("Cristiano Ronaldo Portugal — Character
+// IP" rather than the bare subject). Counted, not assumed: all 108 topic URLs
+// in this sitemap have at least one image-bearing template and none is
+// niche-style, so 108 of 108 changed — the "ALL of them" case again. This is
+// the lever that matters for these pages: 94% of our image impressions sit at
+// position 21-60, which is a relevance problem, not a discovery one.
+const TOPICS_LASTMOD = "2026-09-10T00:00:00.000Z";
 
 // Per-page overrides, keyed by topic slug. Only pages that genuinely changed.
 const TOPIC_LASTMOD_OVERRIDES: Record<string, string> = {
@@ -102,6 +109,14 @@ const TOOLS_LASTMOD = "2026-09-09T00:00:00.000Z";
 // Use-case pages: 08-12 added the worked-case block and moved the demo cards
 // into the tools grid — a visible change on all of them.
 const USE_CASES_LASTMOD = "2026-08-12T00:00:00.000Z";
+
+// Per-page override for use-case pages that are newer than the shared date
+// above. A page published today must not claim an August lastmod — and bumping
+// the shared constant instead would claim every OTHER use-case page changed
+// today, which is the same lie in the other direction.
+const USE_CASE_LASTMOD_OVERRIDES: Record<string, string> = {
+  "for-photographers": "2026-09-15T00:00:00.000Z",
+};
 
 // Added 2026-07-05 — the 16 /personality/[type] (MBTI) pages were never emitted
 // in the sitemap, leaving them invisible to Google's crawl (MBTI & Character
@@ -363,7 +378,9 @@ export async function GET() {
   useCaseRoutes.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
-        lastmod: USE_CASES_LASTMOD,
+        lastmod:
+          USE_CASE_LASTMOD_OVERRIDES[route.replace("/use-cases/", "")] ??
+          USE_CASES_LASTMOD,
         changefreq: "weekly",
         priority: "0.8",
       });

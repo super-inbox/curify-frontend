@@ -382,6 +382,14 @@
     "acrylic_factory_export": {
       "title": "Acrylic Standee & Keychain Factory Files",
       "desc": "Front, mirrored back, white-ink underbase choked so it cannot halo, a cutline with a computed keychain hole, and a spec sheet."
+    },
+    "wedding_photo_editing": {
+      "title": "ウェディング・ポートレート写真編集",
+      "desc": "1枚アップロードするだけ——後れ毛を除去し、毛穴の質感を残したまま肌を整え、白ドレスの黄カブリを抜きます。構図・背景・衣装は撮影時のまま。",
+      "meta": {
+        "title": "ウェディング・ポートレート写真編集 — 無料・登録不要",
+        "description": "無料のウェディング・ポートレート写真編集。後れ毛、肌、目、衣装のシワを領域ごとに処理し、構図と背景はそのまま。登録不要、1枚から。"
+      }
     }
   },
   "bilingual": {
@@ -1770,6 +1778,65 @@
         "educationBody": "Go from artwork to a printer quote in one step, with CMYK and the cutline already handled.",
         "businessTitle": "DTC & IP brands",
         "businessBody": "Run sticker SKUs at volume without a designer in the loop for every variant."
+      }
+    }
+  },
+  "weddingPhotoEditing": {
+    "metadata": {
+      "title": "ウェディング・ポートレート写真編集 — 無料・登録不要",
+      "description": "無料のウェディング・ポートレート写真編集。後れ毛、肌、目、衣装のシワを領域ごとに処理し、構図と背景はそのまま。登録不要、1枚から。"
+    },
+    "title": "Wedding & portrait photo editing",
+    "description": "Upload one frame. Flyaway hairs come off the forehead, skin evens out without losing its pores, and the amber comes out of the whites — while your crop, your background and the dress stay exactly as you shot them.",
+    "cta": "Talk to us about volume",
+    "example": "Before and after, on a frame from a real shoot.",
+    "demo": {
+      "aria": "Before and after a wedding photo edit",
+      "caption": "One frame in, the edited file out — framing, background and garments unchanged."
+    },
+    "why": {
+      "title": "Why edit with Curify?",
+      "point1": "Region by region, not frame by frame. Every edit happens inside a named area — the strands crossing her forehead, the shine on his nose, the creases in the skirt — and every pixel outside those areas is byte-identical to the file you sent.",
+      "point2": "Skin keeps its pores. Texture is measured before and after; a smoothing pass that flattens it fails the check instead of being delivered to you.",
+      "point3": "Colour is handled numerically, not by eye. An amber reception room comes back neutral and the dress reads white the same way on every frame, which is the part that actually costs you evenings across a whole gallery.",
+      "point4": "You see the checks. Six measurements run on every result and the numbers are shown to you, because \"actually edit the photo, don't recreate it\" is a fair thing to ask us to prove."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "Do I need an account?",
+      "a1": "No. Upload one frame, add an email so we can send the finished file, and that is the whole flow. Nothing to install and nothing to sign.",
+      "q2": "Will it re-crop or change my composition?",
+      "a2": "No, and this is checked rather than promised. The output is returned at your input's exact resolution, and a low-frequency correlation against your original has to stay above 0.60 or the result is rejected. Correct outputs measure 0.98 to 1.00.",
+      "q3": "Is this a filter or a beauty app?",
+      "a3": "Neither. A filter moves every pixel in the frame; a beauty app smooths skin until the pores are gone. Here the model only ever sees the crops that were planned — blemishes, flyaways, eyes, mouth, fabric — and the skin's fine grain is put back over the result by construction.",
+      "q4": "How long does one frame take?",
+      "a4": "About two to three minutes. Each planned region is a separate edit, so a two-person frame is six to eight passes. You can close the tab; the finished file is emailed to you.",
+      "q5": "Can you match my own editing style across a full gallery?",
+      "a5": "That is the interesting version of this problem and it is what we would want to talk about. Consistency across a set — rather than one heroic frame — is where the evenings actually go, and it is the part we handle numerically."
+    },
+    "deep": {
+      "what": {
+        "title": "What this tool actually does",
+        "p1": "It runs a five-stage retouching pass on one photograph: it plans the work, heals the specific patches that need it, applies a light face-contour slim, restores facial modelling, and neutralises the colour cast. The stages run in the order a professional retoucher works them — heal at high zoom first, liquify second, dodge and burn late, colour last.",
+        "p2": "The thresholds are not invented. They were measured against eight real before-and-after pairs from a working studio retoucher: how much yellow comes out of skin, how much chroma, how much texture is allowed to be lost. Those measurements are what every output is scored against.",
+        "p3": "What it is not is a whole-frame regeneration. That approach was tried and measured, and it does not preserve anything — detail correlation against the input came out at 0.007 on a backdrop and 0.016 on a jacket, and one run invented a lily that was never in the photograph. Here the model never sees the whole frame."
+      },
+      "how": {
+        "title": "How it works",
+        "p1": "Upload one frame. JPG or PNG, up to 25MB, at whatever resolution you shot it.",
+        "p2": "The photograph is read and a plan comes back — where each face is, and which specific patches need work. The plan names regions; it never chooses how strongly to change them, because magnitudes belong in one auditable place rather than being re-decided per image.",
+        "p3": "Each planned region is cropped out with a margin, edited on its own, and composited back under a feathered mask. A returned crop that has been re-composed rather than cleaned is rejected and your original is kept — doing nothing is a valid outcome for a region.",
+        "p4": "Then the numeric stages: a light slim that follows the measured contour of the face, a low-opacity dodge-and-burn pass that adds depth back without touching the highlights, and a white balance plus chroma compression that lands the colour on the house target.",
+        "p5": "Six checks run on the result and you get the numbers with the file, at your original resolution."
+      },
+      "usecases": {
+        "title": "Who this is for",
+        "creatorsTitle": "Wedding & portrait photographers",
+        "creatorsBody": "You shot 400 frames and the couple wants 80. The editing is not the hard part of your week — the volume is. Start with one frame here and see whether the result is the one you would have produced.",
+        "educationTitle": "Content creators and personal brands",
+        "educationBody": "Headshots and portrait sets that need to look edited rather than filtered, with the skin still reading as skin.",
+        "businessTitle": "Studios and agencies",
+        "businessBody": "If you are outsourcing editing already, the questions worth asking us are consistency across a set, turnaround, and whether we can match a look from your own reference gallery. Those are the parts this pipeline handles numerically."
       }
     }
   }

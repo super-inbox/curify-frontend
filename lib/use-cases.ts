@@ -159,6 +159,24 @@ export const USE_CASES: UseCaseDef[] = [
   // page — was crawled 08-09. This page is indexed (last crawl 06-06), so it is
   // a real crawl path. See also the merch ladder's new step 6.
   { slug: "for-merch-operators", tier: "b2b", toolSlugs: ["character-sticker-sheet", "die-cut-sticker-file", "acrylic-factory-export"] },
+
+  // Wedding / portrait photographers and the studios they outsource to. Added
+  // 2026-09-15 to close the inbound gap: the buyer-side demand pass found 11
+  // personas and not one photographer, so 100% of demand generation for the
+  // retouching offer was outbound — into a market whose buyer, when the need
+  // hits, types "outsource wedding photo editing" into Google and finds
+  // ShootDotEdit, PhotoUp and Evoto.
+  //
+  // The page deliberately talks about EDITING. 69 of this buyer's 104 Reddit
+  // posts contain "edit"; exactly one contains "retouch". SEMrush agrees —
+  // "photo editing" 12,100/mo against "photo retouching" 1,300/mo — and the
+  // editing variants are also easier (portrait photo editing KD 11 vs portrait
+  // photo retouching KD 21).
+  //
+  // hiddenFromChips: this is a named-account + SEO landing surface, not a
+  // general consumer chip. Same treatment as the other B2B verticals.
+  { slug: "for-photographers", tier: "b2b", hiddenFromChips: true,
+    toolSlugs: ["wedding-photo-editing"] },
 ];
 
 export function getUseCaseBySlug(slug: string): UseCaseDef | undefined {
@@ -195,4 +213,5 @@ export const PERSONA_BLOG_CATEGORIES: Record<string, string[]> = {
   "for-programmatic-seo":  ["programmatic-seo", "ds-ai-engineering"],
   "for-forwarder-back-office": ["ds-ai-engineering", "content-automation"],
   "for-merch-operators":   ["merch-pod"],
+  "for-photographers":     ["creator-tools", "design-branding"],
 };
