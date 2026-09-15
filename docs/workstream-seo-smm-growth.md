@@ -1407,9 +1407,9 @@ It holds inside every pair, and the editing variant is also the *easier* one:
 | outsource wedding photo editing | **7** | 90 | $0.00 | `/use-cases/for-photographers` ⭐ new 09-15 |
 | portrait photo editing | **11** | 110 | $3.53 | ⚠️ none — spoke not built; nearest is the wedding page |
 | wedding photo editing | **19** | 390 | $3.45 | `/tools/wedding-photo-editing` ⭐ new 09-15 |
-| wedding photo retouching | **20** | 90 | $3.85 | same page, secondary term |
-| portrait photo retouching | **21** | 40 | **$13.16** | ⚠️ none — highest CPC in the set on 40/mo |
-| real estate photo editing | 27 | 880 | $4.04 | ⚠️ none — **one point over the line, and the demand doc's PROMOTE ICP** |
+| wedding photo retouching | **20** | 90 | $3.85 | ⚠️ **none** — see the correction below |
+| portrait photo retouching | **21** | 40 | **$13.16** | ⚠️ **none** — highest CPC in the set, on 40/mo |
+| real estate photo editing | 27 | 880 | $4.04 | ⛔ **not buildable today** — see below |
 
 | 🔴 out of reach | KD | vol | CPC |
 |---|---:|---:|---:|
@@ -1428,15 +1428,50 @@ for it, which is itself a reading: nobody is competing for it because almost nob
 - **`/use-cases/for-photographers`** — the service/landing surface, which is where the KD 7
   `outsource wedding photo editing` intent lands. B2B tier, hidden from the consumer chip row.
 
-Both are named "editing". That is the whole point of this pull.
+Both are named "editing". That is the whole point of this pull — and the `<title>` on the tool page
+covers **both** actionable editing terms ("Wedding & Portrait Photo Editing"), not just the wedding
+one. The first version titled it wedding-only while the body said "wedding & portrait", which put
+the narrowest string in the place that carries the most weight. It also ran to 85 characters once
+the layout's " | Curify Studio" suffix is counted; it is 67 now.
+
+### Correction, same day: the two "retouching" terms are NOT covered
+
+This table first recorded `wedding photo retouching` as "same page, secondary term". It is not on
+the page at all. Checked string by string: the exact phrase appears nowhere in
+`weddingPhotoEditing`, and neither does `portrait photo retouching`. The word "retouching" occurs
+three times, all inside the deep-content section describing how the pipeline works.
+
+That is the cost of leading with "editing", and leading with "editing" was still right — but the
+cost is real and should be on the books rather than written up as coverage. **130/mo combined at
+KD 20–21, and the portrait half carries the highest CPC in the whole pull at $13.16.** Whoever is
+bidding $13 a click on 40 searches a month is converting them into something expensive.
+
+### ⛔ `real estate photo editing` is a capability gap, not a KD gap
+
+This was first recorded as "one point over the KD line". That is true and it is the less important
+half. **The pipeline behind `/tools/wedding-photo-editing` requires a face** — `retouch_pipeline.py`
+raises `NO_FACE` when the plan comes back with no people, which is exactly what an empty room
+returns. A real-estate photographer who found that page today would upload a listing photo and get
+an error.
+
+So this term cannot be served by relaxing a rule; it needs the **locked-subject scene pipeline**,
+which is action #3 of the demand doc and is explicitly untested ("stage one empty room, put it
+beside BoxBrownie's $30 output, and decide from the pixels"). The order is: prove the capability,
+then argue about KD 27.
+
+It is worth arguing about. 880/mo is more than the entire wedding+portrait editing cluster
+combined (500/mo), the CPC is higher at $4.04, and §F1 of the demand doc independently promotes
+real-estate media to the top ICP on price — $1.10–2.25 per image against the wedding studio's
+$0.05–0.50, and $5–30 for generative work. The demand and the difficulty both say go; only the
+pipeline says not yet.
 
 ### Two things to decide next, both with the number attached
 
-1. **`real estate photo editing` at KD 27 is one point over the house line on 880/mo and $4.04
-   CPC** — the largest actionable-adjacent term in the set, and the demand doc independently
-   promotes real-estate media to the top ICP on price ($1.10–2.25/image against the wedding
-   studio's $0.05–0.50). The rule exists for a reason and this is exactly the case that tests it.
-   Do not quietly bend it; decide it.
+1. **`real estate photo editing`** — the KD 27 question is downstream of the capability question
+   above. Run demand-doc action #3 (one empty room, beside BoxBrownie's $30 output) before
+   spending anything on the term. If the pixels say we are in that market, then the rule exists
+   for a reason and this is exactly the case that tests it — decide it openly, do not quietly bend
+   it.
 2. **`portrait photo retouching` carries a $13.16 CPC on 40 searches a month.** That is 3.7× the
    next-highest CPC here. Somebody is paying a lot for very few clicks, which usually means the
    click converts to a high-ticket job. Worth one look at who is bidding before dismissing it as
