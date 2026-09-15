@@ -1407,8 +1407,8 @@ It holds inside every pair, and the editing variant is also the *easier* one:
 | outsource wedding photo editing | **7** | 90 | $0.00 | `/use-cases/for-photographers` ⭐ new 09-15 |
 | portrait photo editing | **11** | 110 | $3.53 | ⚠️ none — spoke not built; nearest is the wedding page |
 | wedding photo editing | **19** | 390 | $3.45 | `/tools/wedding-photo-editing` ⭐ new 09-15 |
-| wedding photo retouching | **20** | 90 | $3.85 | ⚠️ **none** — see the correction below |
-| portrait photo retouching | **21** | 40 | **$13.16** | ⚠️ **none** — highest CPC in the set, on 40/mo |
+| wedding photo retouching | **20** | 90 | $3.85 | `/blog/wedding-photo-retouching-cost` ⭐ new 09-15 — ⚠️ links still owed |
+| portrait photo retouching | **21** | 40 | **$13.16** | same post — ⚠️ links still owed |
 | real estate photo editing | 27 | 880 | $4.04 | ⛔ **not buildable today** — see below |
 
 | 🔴 out of reach | KD | vol | CPC |
@@ -1445,6 +1445,55 @@ That is the cost of leading with "editing", and leading with "editing" was still
 cost is real and should be on the books rather than written up as coverage. **130/mo combined at
 KD 20–21, and the portrait half carries the highest CPC in the whole pull at $13.16.** Whoever is
 bidding $13 a click on 40 searches a month is converting them into something expensive.
+
+### Shipped 2026-09-15: `/blog/wedding-photo-retouching-cost` — and why it is a post, not a tool page
+
+The two retouching terms above now have a target. It is a **blog post**, and the vehicle
+was chosen against this doc's own record rather than by preference:
+
+- **New tool surfaces are Tier 4 gated on today's crawl checkpoint** (`workstream-index.md:92`,
+  which built the scene-enhancement surface as a template page for exactly this reason). That
+  checkpoint is still unread. ⚠️ `/tools/wedding-photo-editing` and `/use-cases/for-photographers`
+  were shipped this morning **ahead of it**, without that gate being known.
+- **Every near-duplicate tool slug this repo has met was consolidated, not spoked** —
+  `sticker-factory-export` 301'd onto `die-cut-sticker-file`; a second `asl-translator` slug
+  refused outright with *"a near-identical second slug would split that signal."* The one
+  hub/spoke pair that exists (`ai-product-photo-generator` / `ecommerce-photo`) has **no measured
+  outcome anywhere in docs/**, and the hub does not rank.
+- **Blog-first is this doc's own stated instrument**, per commit `b4b89a56`: *"blog indexes in
+  ~1 day while tool pages from 08-06 still are not… this costs a post instead of a product if a
+  KD-1 term turns out to be unreachable."*
+
+⚠️ **Blog is the better instrument here, not a good one.** `dieline-generator-guide` targeted
+KD 19 / 170/mo / $2.76 — the near-exact analogue — and has zero impressions because it folded.
+`ghost-mannequin-ai-guide` targeted KD 1 and did the same. The blog-spoke route has a measured
+~33% fold rate.
+
+**The post's second job is links.** `TOOL_BLOG_CATEGORIES` had **no entry for
+`wedding-photo-editing`** — that page surfaced no related reading at all. It now maps to
+`creator-tools` and the post is **pinned** via `TOOL_PINNED_BLOGS` (not left to freshness;
+`creator-tools` holds 20 posts and the component renders only 3). Verified rendering: the post
+appears on both `/tools/wedding-photo-editing` and `/use-cases/for-photographers`.
+
+**⛔ STILL OWED BEFORE THIS CAN RANK — the inbound-link precondition.** The rule is ≥3 links from
+**verified-indexed** sources before publishing, and all four Aug/Sep campaign posts shipped at
+`referringUrls = 0`, which is the recorded cause of their zero impressions. The two links above
+come from pages shipped **today** and therefore almost certainly not indexed — they do not count.
+URL-Inspect these and add links from whichever come back indexed:
+
+| candidate | why |
+|---|---|
+| `/nano-template/portrait-retouching-blueprint` | the only retouching URL in the whole sitemap, and it ranks |
+| `/blog/50-ai-makeover-prompts` | its metaDescription already contains "portrait retouching" |
+| `/blog/ai-makeover-templates` | same |
+| `/blog/preserve-facial-features-ai-generation` | portrait-adjacent, `creator-tools` |
+
+**If fewer than 3 come back indexed, do not treat this post as live** — it is in the same hole as
+the last two.
+
+**Checkpoint 2026-10-27 (+6w):** position for `wedding photo retouching` and `portrait photo
+retouching`, and the post's index state in URL-Inspection. **If it folds like the last two, that is
+the third KD<20 failure in a row and the low-KD thesis should be called dead rather than retried.**
 
 ### ⛔ `real estate photo editing` is a capability gap, not a KD gap
 

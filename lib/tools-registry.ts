@@ -827,6 +827,12 @@ export function getSiblingTools(slug: string, max = 3): ToolDef[] {
 // tool detail page. Source of truth: docs/interconnection.md (Tool slug
 // → Blog categories table). Keep in sync when adding a new tool.
 export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
+  // Added 2026-09-15 with the retouching-cost post. This tool had NO entry, so
+  // its page surfaced no related reading at all — and a new post needs inbound
+  // edges from real pages more than it needs better copy (all four 08/09 campaign
+  // posts shipped at referringUrls = 0, and that is the recorded cause of their
+  // zero impressions).
+  "wedding-photo-editing": ["creator-tools"],
   "video-dubbing":               ["video-translation-dubbing", "video-dubbing"],
   "bilingual-subtitles":         ["video-translation-dubbing", "creator-tools"],
   "voice-clone":                 ["video-translation-dubbing"],
@@ -869,6 +875,10 @@ export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
 // appending to a list that was already full added zero links and still looked
 // correct in the data. Verify against the rendered page, not this map.
 export const TOOL_PINNED_BLOGS: Record<string, string[]> = {
+  // PINNED, not left to freshness: RelatedBlogsByCategory renders max 3 sorted by
+  // date, and `creator-tools` holds 20 posts — this one would drop out of the slot
+  // within weeks and the inbound edge would silently disappear.
+  "wedding-photo-editing": ["wedding-photo-retouching-cost"],
   "product-video":              ["url-to-product-video"],
   "ecommerce-photo":            ["url-to-product-video", "ghost-mannequin-ai-guide"],
   "ai-product-photo-generator": ["url-to-product-video", "ghost-mannequin-ai-guide"],

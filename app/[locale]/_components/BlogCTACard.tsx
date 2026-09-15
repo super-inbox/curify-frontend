@@ -84,6 +84,27 @@ const CALENDLY = "https://calendly.com/qqwjq9916/15-minute-meeting";
 // MBTI templates, not a partnership form.
 type OverrideCTA = Omit<CTA, "href"> & { href: string };
 const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
+  // 2026-09-15. Targets `wedding photo retouching` (90/mo, KD 20) and `portrait
+  // photo retouching` (40/mo, KD 21, $13.16 CPC — the highest in the 09-15 pull).
+  // The post deliberately tells the reader the incumbents are cheaper at the
+  // per-frame tier, so the CTA has to offer the two things it argues are
+  // actually scarce: try one frame, or talk about a whole set.
+  "wedding-photo-retouching-cost": [
+    {
+      id: "try-one-frame",
+      label: "Edit one frame free",
+      description: "Upload a single photo — no account. Flyaways, skin, eyes and garment creases, with your framing and background untouched.",
+      href: "/tools/wedding-photo-editing",
+      Icon: Wrench,
+    },
+    {
+      id: "talk-about-a-set",
+      label: "Talk about a whole set",
+      description: "Colour consistency across a gallery, or a look matched to a reference you name — the two jobs per-frame retouching does not cover.",
+      href: "/contact",
+      Icon: MessageCircle,
+    },
+  ],
   // 25+ clicks across locales; readers came for character templates.
   // Default creator-tools CTA sends to /tools (video tools), wrong audience.
   "character-prompt-generator": [
