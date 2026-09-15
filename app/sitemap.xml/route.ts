@@ -110,6 +110,14 @@ const TOOLS_LASTMOD = "2026-09-09T00:00:00.000Z";
 // into the tools grid — a visible change on all of them.
 const USE_CASES_LASTMOD = "2026-08-12T00:00:00.000Z";
 
+// Per-page override for use-case pages that are newer than the shared date
+// above. A page published today must not claim an August lastmod — and bumping
+// the shared constant instead would claim every OTHER use-case page changed
+// today, which is the same lie in the other direction.
+const USE_CASE_LASTMOD_OVERRIDES: Record<string, string> = {
+  "for-photographers": "2026-09-15T00:00:00.000Z",
+};
+
 // Added 2026-07-05 — the 16 /personality/[type] (MBTI) pages were never emitted
 // in the sitemap, leaving them invisible to Google's crawl (MBTI & Character
 // cluster build M1, docs/mbti-character-cluster-build-2026-07-05.md).
@@ -370,7 +378,9 @@ export async function GET() {
   useCaseRoutes.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
-        lastmod: USE_CASES_LASTMOD,
+        lastmod:
+          USE_CASE_LASTMOD_OVERRIDES[route.replace("/use-cases/", "")] ??
+          USE_CASES_LASTMOD,
         changefreq: "weekly",
         priority: "0.8",
       });

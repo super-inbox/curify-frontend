@@ -235,7 +235,8 @@
       "for-dtc-brands": "DTC-бренды",
       "for-programmatic-seo": "Программатик SEO",
       "for-forwarder-back-office": "Грузовые брокеры",
-      "for-merch-operators": "Операторы мерча"
+      "for-merch-operators": "Операторы мерча",
+      "for-photographers": "Фотографы"
     }
   },
   "useCasePage": {
@@ -347,6 +348,15 @@
         "ctaLabel": "Смотрите полное руководство",
         "ctaHref": "/ip-merch-demo"
       }
+    },
+    "for-photographers": {
+      "title": "For Wedding & Portrait Photographers",
+      "subtitle": "Send us the frames you don't want to spend your evening on. Editing, region by region — not a filter, and not a regenerated photo.",
+      "description": "You shot it; we are not going to redraw it. Every edit here happens inside a named region — the flyaways crossing her forehead, the shine on his nose, the creases in the skirt — and every pixel outside those regions is byte-identical to the file you sent. That is a property of how the pipeline is built, not a promise in a prompt: the alternative, regenerating the whole frame, measured 0.007 detail correlation on a backdrop and once invented a lily that was never in the photograph. Colour is handled numerically, so an amber reception room comes back neutral and the dress reads white across the set rather than frame by frame. Every output is scored against the same measurements a studio retoucher works to, and the score is shown to you.",
+      "bullet0": "Region-by-region editing: flyaways, skin, eyes, teeth, garment creases. Your crop and background untouched by construction.",
+      "bullet1": "Skin keeps its pores. Texture is measured before and after, and a smoothing pass that craters it fails the check rather than shipping.",
+      "bullet2": "Colour done in numbers, not by eye — the amber comes out of the whites, and it comes out the same way on every frame in the set.",
+      "bullet3": "Upload one frame free, no sign-in. Volume, turnaround and a look matched to your own reference gallery: talk to us."
     }
   },
   "interconnection": {

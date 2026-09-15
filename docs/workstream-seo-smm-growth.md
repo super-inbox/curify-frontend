@@ -1373,6 +1373,77 @@ converts at 0.00% too, which an earlier 7-row-per-page ad-hoc query had missed.
 
 ---
 
+## 2026-09-15 — retouching-buyer KD, and the word the buyer actually uses
+
+Source: `raw/photo-retouching-seo-09-15/` (SEMrush bulk keyword analysis, one screenshot, 13 terms,
+已更新 1 个月). **Recorded here because the screenshot is the only copy** — same reason as the
+08-27 fashion pull and the 09-01 batch above. The candidate list came from
+`~/curify-studio/docs/reddit-demand-mining-retouching-2026-09-15.md` §H action 6, which is the
+first KD ever pulled for retouching-buyer terms.
+
+### The finding: "editing" is a different, larger and easier market than "retouching"
+
+| | volume | KD | CPC |
+|---|---:|---:|---:|
+| **photo editing** | **12,100** | 100 🔴 | $1.44 |
+| photo retouching | 1,300 | 45 🟠 | $2.31 |
+
+**9.3× the volume, and that is the same ratio the Reddit corpus found in the buyer's own words:
+69 of 104 posts contain "edit", exactly one contains "retouch".** Two independent sources, two
+different methods, the same answer. We had been naming the offer after the word the buyer does
+not use.
+
+It holds inside every pair, and the editing variant is also the *easier* one:
+
+| pair | editing | retouching |
+|---|---|---|
+| wedding | 390/mo, **KD 19** | 90/mo, KD 20 |
+| portrait | 110/mo, **KD 11** | 40/mo, KD 21 |
+
+### Actionable at the house rule (act only on KD 0–26)
+
+| 🟢 | KD | vol | CPC | our asset |
+|---|---:|---:|---:|---|
+| outsource wedding photo editing | **7** | 90 | $0.00 | `/use-cases/for-photographers` ⭐ new 09-15 |
+| portrait photo editing | **11** | 110 | $3.53 | ⚠️ none — spoke not built; nearest is the wedding page |
+| wedding photo editing | **19** | 390 | $3.45 | `/tools/wedding-photo-editing` ⭐ new 09-15 |
+| wedding photo retouching | **20** | 90 | $3.85 | same page, secondary term |
+| portrait photo retouching | **21** | 40 | **$13.16** | ⚠️ none — highest CPC in the set on 40/mo |
+| real estate photo editing | 27 | 880 | $4.04 | ⚠️ none — **one point over the line, and the demand doc's PROMOTE ICP** |
+
+| 🔴 out of reach | KD | vol | CPC |
+|---|---:|---:|---:|
+| photo editing | 100 | 12,100 | $1.44 |
+| photo enhancement | 76 | 880 | $0.83 |
+| photo retouching | 45 | 1,300 | $2.31 |
+| virtual staging service | 41 | 90 | **$5.78** |
+
+`photo culling service` (20/mo, $6.80 CPC) returned **no KD and no intent** — SEMrush has no data
+for it, which is itself a reading: nobody is competing for it because almost nobody searches it.
+
+### What shipped against this, same day
+
+- **`/tools/wedding-photo-editing`** — anonymous, no sign-in, upload one frame and get it back
+  edited. Backed by `POST /photo-retouch/generate` (the real five-stage pipeline, not a prompt).
+- **`/use-cases/for-photographers`** — the service/landing surface, which is where the KD 7
+  `outsource wedding photo editing` intent lands. B2B tier, hidden from the consumer chip row.
+
+Both are named "editing". That is the whole point of this pull.
+
+### Two things to decide next, both with the number attached
+
+1. **`real estate photo editing` at KD 27 is one point over the house line on 880/mo and $4.04
+   CPC** — the largest actionable-adjacent term in the set, and the demand doc independently
+   promotes real-estate media to the top ICP on price ($1.10–2.25/image against the wedding
+   studio's $0.05–0.50). The rule exists for a reason and this is exactly the case that tests it.
+   Do not quietly bend it; decide it.
+2. **`portrait photo retouching` carries a $13.16 CPC on 40 searches a month.** That is 3.7× the
+   next-highest CPC here. Somebody is paying a lot for very few clicks, which usually means the
+   click converts to a high-ticket job. Worth one look at who is bidding before dismissing it as
+   low volume.
+
+---
+
 ## 2026-09-01 — the undefended terms are trade jargon, and we already built the tools
 
 Source: `raw/agent-skills-08-31/` (SEMrush bulk keyword analysis, two screenshots, ~30 terms,
