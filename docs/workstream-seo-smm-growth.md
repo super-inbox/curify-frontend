@@ -3071,6 +3071,7 @@ treatment, on the same account, a day apart.
 - `docs/programmatic-seo-topic-hubs.md` — SEO programmatic framework
 - `docs/interconnection.md` — cross-link layer
 - `docs/blog-quality.md` — blog editorial track
+- `docs/education-cluster-audit-2026-09-16.md` — **education cluster: 22 of 22 target terms at zero.** The 14-week readout on the 06-10 flashcard/learning batch (~14,000 projected vol/mo → 1 click/28d), plus the live analytics, the static-metadata title trap and the five 404 education hubs
 - `~/curify-studio/curify_background/app/crud/admin.py` — growth analytics queries
 - `~/curify-studio/curify_background/app/utils/autopost_utils.py` — SMM autopost
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
@@ -3670,3 +3671,29 @@ target. It needs a link from an indexed page, which is now a demonstrated lever.
   not fixed.
 - Unchanged and still open: homepage `<h1>` vs the new title (now consistent in pitch, not in
   wording); `topics.*` Phase-2 payload trim; cause 2 (117 of 226 template topics 404).
+
+### Education, broken out — `docs/education-cluster-audit-2026-09-16.md`
+
+Pulled from the same two windows, filed separately because it is a cluster verdict rather than a
+site readout. Short version: **education CORE earns ~1,181 impressions and 4 clicks per 28 days**
+(0.6% of site clicks, against ASL's 359), and **all 22 target terms from the 2026-06-10
+flashcard/learning batch return zero impressions** — with the pages indexed and ranking, so it is
+not execution. The image half is 580 impressions at **0.000% CTR**, which is the MBTI shape on a
+cluster without MBTI's volume.
+
+Two findings there are not about education and belong in this doc's line of work:
+
+1. **Six dedicated blog routes carry a hardcoded `export const metadata`, and two have drifted
+   from their i18n title** — `visual-learning-tools` (the 06-10 batch's 4,400/mo head term, logged
+   as retitled 14 weeks ago, still serving the old string) and `character-prompt-generator`. One
+   line each: `dedicatedBlogMetadata("<slug>")`, the helper
+   `weird-science-facts-classroom-engagement` already uses. Held until 09-23 with the rest of the
+   blog-title freeze.
+2. **Five of nine education topic hubs 404** — `education`, `learning-materials`, `bilingual`,
+   `kids-learning`, `teaching`. That is cause 2 from 09-05 (117 of 226 template topics 404), still
+   open, with named victims. Alias onto the live four rather than minting pages.
+
+Also read early there: the **10-01 worksheet retarget** moved `/tools/worksheet-from-video` from
+4 impressions at pos 21.5 to **63 at pos 10.3 with its first 2 clicks** — entirely on the
+video-qualified tail, with the 2,400/mo head term still at zero. The ship note's pre-registered
+conclusion holds: that page needs a text/topic input, not a better title.

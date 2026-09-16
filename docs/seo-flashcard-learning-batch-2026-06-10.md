@@ -85,7 +85,7 @@ Three existing posts roughly align with bleeder queries — retitle to capture h
 
 ### Tier 1 retitles — SHIPPED 2026-06-10 commit `6e73d5e8`
 
-- [x] `/blog/visual-learning-tools` — title now: "Visual Learning: AI Tools, Flashcards, and Infographics for Modern Classrooms"
+- [x] ~~`/blog/visual-learning-tools`~~ — ⚠️ **this tick is wrong.** The i18n title was changed, but the route is a dedicated folder with a static `export const metadata`, so production has served the OLD title ever since. Verified 2026-09-16.
 - [x] `/blog/bilingual-ai-flashcards-early-childhood-education` — title now: "Flashcards for Kids: AI Bilingual Vocabulary Templates for Ages 2-5"
 - [x] `/blog/weird-science-facts-classroom-engagement` — title now: "Science Flashcards: AI Prompt Templates That Spark Classroom Engagement"
 - [x] 9-locale autotranslate fan-out (6 keys × 9 locales = 54 translations)
@@ -107,6 +107,18 @@ Three existing posts roughly align with bleeder queries — retitle to capture h
 - [ ] Add `phonics` tier-3 topic registry entry — not done in this ship; future task.
 
 ### Measurement
+
+> **⛔ READ OUT 2026-09-16 — the thesis is falsified. See
+> [`education-cluster-audit-2026-09-16.md`](education-cluster-audit-2026-09-16.md).**
+> The 06-17 and 06-24 checkpoints below were never collected. Measured 14 weeks late over
+> 2026-08-19 → 09-15: **all 22 target terms in the table above return ZERO impressions** — not low
+> CTR, not bad position, zero. The shipped pages are alive and indexed, so this is not an
+> execution failure; the ~14,000 vol/month projection produced **1 click in 28 days** across the
+> whole education cluster. Two mechanical findings came out of it: the Tier-1 retitle on
+> `visual-learning-tools` (the batch's 4,400/mo head term, ticked below) **never reached the
+> page** — it is a dedicated route with a hardcoded `export const metadata` — and that page has
+> been "Crawled – not indexed" since 2026-05-29. Do not re-pull KD on this cluster without a
+> demand signal that is not KD.
 
 - Check GSC bleeder query CTR + impression movement on 2026-06-17 (7d) and 2026-06-24 (14d):
   - "visual learning" SERP position + impressions on `/blog/visual-learning-tools`
