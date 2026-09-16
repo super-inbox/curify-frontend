@@ -33,7 +33,11 @@ export const USE_CASES: UseCaseDef[] = [
   // --- Consumer / prosumer personas (SEO long-tail demand capture) ---
 
   // Parents play dubbed content for kids; subtitles help with reading.
-  { slug: "for-parents",      tier: "consumer", toolSlugs: ["bilingual-subtitles", "video-dubbing"] },
+  // asl-video-translator added 2026-09-16: TOOL_PERSONAS has claimed this
+  // persona since the tool shipped, but the reverse edge was never added, so
+  // the tool linked out to three use-case pages that never linked back. It is
+  // status="create", so it satisfies the LIVE-ONLY policy above.
+  { slug: "for-parents",      tier: "consumer", toolSlugs: ["bilingual-subtitles", "video-dubbing", "asl-video-translator"] },
 
   // ESL learners practice listening with bilingual subtitles, transcribe
   // for study notes, and use speech-translate for pronunciation help.
@@ -76,7 +80,7 @@ export const USE_CASES: UseCaseDef[] = [
   // 2026-07-07: added ecommerce image tools (ai-product-photo-generator,
   // ecommerce-photo) — agencies shipping DTC/retail clients need product
   // visuals as much as video localization.
-  { slug: "for-marketers",    tier: "b2b",      toolSlugs: ["video-dubbing", "bilingual-subtitles", "ai-product-photo-generator", "ecommerce-photo", "speech-translator", "video-transcript-generator", "video-summarizer"] },
+  { slug: "for-marketers",    tier: "b2b",      toolSlugs: ["video-dubbing", "bilingual-subtitles", "ai-product-photo-generator", "ecommerce-photo", "speech-translator", "video-transcript-generator", "video-summarizer", "asl-video-translator"] },
 
   // Was generic "for-publishers". Now: EdTech & children's publishers —
   // industrial vocab pipeline + format extension + bilingual editions.
@@ -84,7 +88,7 @@ export const USE_CASES: UseCaseDef[] = [
   // titles; video-transcript-generator for converting recorded
   // lectures or read-alouds into print transcripts. voice-clone
   // removed pending tool ship (status=coming_soon).
-  { slug: "for-publishers",   tier: "b2b",      toolSlugs: ["bilingual-subtitles", "video-dubbing", "video-transcript-generator"] },
+  { slug: "for-publishers",   tier: "b2b",      toolSlugs: ["bilingual-subtitles", "video-dubbing", "video-transcript-generator", "asl-video-translator"] },
 
   // NEW. DTC / cross-border ecommerce — style-transfer for 1-photo →
   // many-scenes lifestyle generation; video-dubbing for TikTok/Reels;
