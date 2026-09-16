@@ -3407,3 +3407,264 @@ sticks, members' faces on the photocards.
   expired.
 - **Retouching still has no publishable surface here** — see above. It is the same gap the 09-12
   section names from the SEO side: the capability is built, the public surface is not.
+
+---
+
+## 2026-09-16 — five overdue readouts collected, and the pessimism was mostly wrong
+
+Everything below is measured, from two fresh pulls
+(`raw/curify-ai.com-Performance-on-Search-2026-09-16/`, web, 2026-08-19 → 09-15;
+`data/pinterest/demand-2026-08-19_2026-09-15.json`, image) and a 108-blog URL-Inspection sweep
+(`raw/blog-foldscan-2026-09-16.tsv`) plus a 14-URL crawl check
+(`raw/crawl-check-2026-09-16.txt`). **Nothing on disk was newer than 2026-08-29 before today** —
+every conclusion in the 09-04 → 09-12 sections was drawn on a window that ended two and a half
+weeks earlier.
+
+### First, the number that reframes the rest: the site is up, hard
+
+Week over week, finalized days only, same file:
+
+| window | clicks | impressions | CTR |
+|---|---:|---:|---:|
+| 2026-08-31 → 09-06 | 126 | 5,321 | 2.37% |
+| **2026-09-07 → 09-13** | **330** | **8,480** | **3.89%** |
+| | **+162%** | **+59%** | **+1.5pt** |
+
+Daily position ran 28.6 (08-29) → 11.6 (09-13), and the two unfinalized days (09-14, 09-15) sit
+at 83 and 47 clicks. Per-page against the 08-02 → 08-29 window (⚠️ the windows overlap by 11
+days, so read the direction, not the multiple): 278 → 666 page-attributed clicks, 13,865 →
+26,287 impressions.
+
+**The 09-06 section called the 08-31 expansion "a vanity metric" because impressions rose while
+clicks stayed flat. That was true for two weeks and is not true now** — clicks followed, with a
+lag. The locale-prefixed share did not decay either: 1,450 → 2,247 URLs earning impressions, 32%
+→ 40% of impressions but only 14% of clicks (down from 19%). So locale pages remain dilutive per
+impression and are no longer costing anything in absolute terms.
+
+### 1. Crawl checkpoint (due 09-15) — **PASS.** Tier 4 is unblocked.
+
+| URL | state | last crawl | impressions 28d |
+|---|---|---|---:|
+| `/tools/die-cut-sticker-file` | **Submitted and indexed** | 2026-09-10 | 23 (pos 40.1) |
+| `/tools/acrylic-factory-export` | **Submitted and indexed** | 2026-08-25 | 5 (pos 6.2) |
+
+Both were *never crawled* at the 08-18 submission. The `564ff33c` link fix (die-cut 1 → 4
+inbound, acrylic 1 → 3) and the 08-31 `TOOL_RELATED_TOOLS` pass took them the whole way:
+link → crawl → index → impressions.
+
+**This settles the question the checkpoint was written to answer.** Line 321's inbound-link
+theory is correct; the domain-authority reading it was tested against is not needed. The Tier-4
+gate that has been blocking the on-model surface, the `costume design template` surface and
+every `/tools/*` wrapper since 09-01 is **lifted**.
+
+⚠️ It also retires the reproach at line 1454. `/tools/wedding-photo-editing` and
+`/use-cases/for-photographers` shipped 09-15 ahead of this gate; the gate has now passed, so that
+was lucky rather than wrong — and `/tools/wedding-photo-editing` is already
+**"Submitted and indexed", crawled 09-15**, the same day it shipped.
+
+### 2. The blog fold is FIXED — and the 09-09 verdict was read against two crawls that never saw the fix
+
+Full 108-blog sweep:
+
+| state | n |
+|---|---:|
+| Submitted and indexed | **58** |
+| Duplicate without user-selected canonical | 34 |
+| Crawled – currently not indexed | 14 |
+| Discovered / unknown | 2 |
+
+Of the 34 "Duplicate" rows, **one (`storyboard-to-pipeline`) reports `googleCanonical` == itself**
+— it is the chosen canonical of its own cluster, not folded. So **33 real folds**: 29 → `/`, and
+one each → `/tools/packaging-mockup`, `/nano-banana-pro-prompts`, `/blog/`,
+`/use-cases/for-parents`.
+
+**The decisive split. 31 of the 33 were last crawled before 2026-09-01.** The two that were not:
+
+| post | last crawl | vs the canonical fix (main 2026-09-01 06:37 UTC) |
+|---|---|---|
+| `url-to-product-video` | 2026-09-01 **02:53** | **3h44m BEFORE the merge** |
+| `ghost-mannequin-ai-guide` | 2026-09-01 **06:47** | +10 min — a production build takes ~20 |
+
+**These are the exact two posts the 09-09 section used to declare "the fold survives the fix."
+Neither of them saw the fixed HTML.** The 09-02 correction had already worked out the right
+boundary and the right caveat; the 09-09 read applied the boundary and then ignored the caveat on
+the only page it mattered for.
+
+Now the positive control, which 09-09 did not have. **Twenty blogs have been crawled on or after
+2026-09-02. Nineteen are "Submitted and indexed"; the twentieth is the self-canonical
+`storyboard-to-pipeline`. Zero real folds.** Including:
+
+- `/blog/wedding-photo-retouching-cost` — **published 09-15, crawled 09-15, indexed, self-canonical.**
+  A brand-new post did not fold. That is the cleanest available test and it came back clean.
+- `dieline-generator-guide` — un-folded (indexed 09-02) and **now earning 76 impressions and its
+  first click** (12 web + 64 image). The 09-01 audit's "zero impressions, cannot rank as itself"
+  is no longer true, and B2 is not the write-off it was recorded as.
+- `world-cup-2026-ai-prompt-hub`, `best-ai-tools`, `50-ai-makeover-prompts`, the three soccer
+  poster posts — all recrawled this month, all clean.
+
+**Consequences:**
+
+1. **Lift the blog-publishing hold.** It was justified by a live ~1-in-3 fold rate. The measured
+   post-fix rate is 0 of 19. **B3 `what is a tech pack` (90/mo, KD 1) is unblocked.**
+2. **The 31 stale folds need recrawls, not debugging.** Natural crawl rate is now healthy — 20
+   blogs revisited in a fortnight — so this clears itself. Do not spend Indexing-API quota on it;
+   09-09 already established pings do not force recrawls here.
+3. **The 10-13 low-KD readout is still confounded.** `ghost-mannequin-ai-guide` is folded onto
+   `/tools/packaging-mockup` on a 09-01 crawl and has 0/0 impressions. Request Validate Fix on it
+   now — six days of recrawl latency is the difference between a readable 10-13 and another
+   falsification-on-a-confound.
+
+### 3. Impression decay re-read (due 09-13) — no decay
+
+The 09-06 section flagged 890 → 662 → 557 and asked whether the 08-31 expansion was decaying.
+It was not: daily impressions ran 916 (09-06) → 1,230 → 1,371 → **1,469** (09-13). The three-day
+dip was noise.
+
+### 4. A1/B1 30-day (due 09-17, read a day early) — A1 alive, B1 dead
+
+Counting both surfaces, as the 09-01 audit required:
+
+| post | web i/c | image i/c | total impr | vs 09-01 audit |
+|---|---|---|---:|---|
+| A1 `best-claude-code-design-skills` | 84/1 | 142/1 | **226** | 135 → 226, **+68%** |
+| B1 `character-turnaround-sheet-guide` | 11/0 | 11/0 | **22** | 27 → 22, flat/down |
+
+A1 is still climbing and has cleared the ~100-impression bar the 10-17 gate sets, at 30 days
+rather than 60. **Tier-3 item 7's condition ("write A2 only if the 09-17 re-pull shows A1 still
+climbing") is met.** A1 sits at web position 35.3 with 2 clicks, so this is an impressions
+result, not a traffic one — but it is the condition as written.
+
+B1 is flat on both surfaces after a month. Cluster B's remaining value is B3, not B1's line.
+
+### 5. MBTI creation-intent (due 09-20, read early) — a clean zero, and this one is real
+
+| query | impr (prior → now) | position | clicks |
+|---|---|---:|---:|
+| `random mbti generator` | 103 → **130** | 6.1 | **0** |
+| `mbti character maker` | 3 → **16** | 6.3 | **0** |
+| `mbti randomizer` | 11 → 12 | 7.2 | **0** |
+| `mbti avatar maker` | 2 → 9 | 6.4 | **0** |
+
+Impressions up, position holding at ~6, **zero clicks across all four, both windows**. And this
+is not a "the fix has not been crawled yet" excuse: `/blog/mbti-character-generator` was
+**crawled 2026-09-15**, and prod serves the rewritten title
+*"Random MBTI Generator — Spin Any of the 16 Types"* with `MbtiRandomizer` on the page.
+
+So both attempts have now failed: the in-page widget (`MbtiUniversePicker`, 08-21) and the
+SERP-listing rewrite (08-30). The 08-30 diagnosis was that the listing promised a catalogue while
+the SERP wanted a one-press widget. The listing now promises the widget, the widget exists, and
+the CTR is still 0.00% at position 6. **Stop spending on this cluster.** Whatever is taking the
+click at position 1–5 is not addressable by anything on our page or in our snippet.
+
+### 6. ASL is now the site, and it is a cluster, not a query
+
+| page | clicks | impr | CTR | pos |
+|---|---:|---:|---:|---:|
+| `/tools/asl-video-translator` | **314** | 2,178 | **14.42%** | 8.5 |
+| `/es/blog/asl-video-translator` | 31 | 287 | 10.80% | 6.9 |
+| `/blog/asl-video-translator` | 8 | 271 | 2.95% | 28.3 |
+| `/ru/`, `/es/` tool variants | 6 | 21 | — | — |
+
+**359 of 666 page-attributed clicks (54%), or 46% of the 786 site total.** Up from 96 clicks in
+the 08-02 → 08-29 window. The tool page alone went 79 → 314 clicks and 13.6 → 8.5 position with
+no ASL-specific SEO work since 09-09.
+
+It is not one query. Fifteen-plus distinct variants rank at position 4–14, several converting far
+above curve: `free asl video translator` **30.3% at pos 4.1**, `asl video to text translator`
+26.1% at 6.3, `translate sign language video to english` 20.8% at 6.6.
+
+**Two things to record:**
+
+1. **The blog cannibalizes the tool on the head term.** `asl video translator`:
+   `/tools/asl-video-translator` at pos 13.9 (33 clicks) *and* `/blog/asl-video-translator` at
+   pos 38.8 (1 click from 70 impressions) — two of our URLs, one SERP, on the site's single
+   biggest query. The tool↔blog links shipped today are the consolidation move; read it at the
+   next pull.
+2. **We rank for the reverse direction we cannot serve.** `text to sign language video` and
+   `text to sign language video ai` land on the tool, which only goes video → text.
+
+⚠️ **Two claims in this doc about ASL were stale and are corrected in place below.** And the
+conversation this changes: the "hold the cluster" decision taken this morning rests on
+`asl-translation-mvp-spec.md:523` — 7 users, 8 jobs, 0 repeats — which was measured
+**2026-08-17 → 08-23, before the tool went free and before the unverified notice shipped on
+08-29**. That evidence is now a month old and predates two material changes. It should be
+re-measured before it is used to justify holding anything.
+
+### What shipped today
+
+Two commits, neither of which creates a URL, so neither collides with 09-17 / 09-20 / 09-22 /
+09-23.
+
+- **`fix(seo): the homepage sold the old product, and the top page linked nowhere`** — homepage
+  `title`/`description` in 10 locales (Google was discarding the authored description and
+  composing the snippet from `tools.ai_product_photo_generator.desc`, the diagnostic that it did
+  not describe the page); `TOOL_BLOG_CATEGORIES` + `TOOL_PINNED_BLOGS` entries for
+  `asl-video-translator`, which had none and rendered no related reading at all; the reverse
+  `USE_CASES[].toolSlugs` edge that `TOOL_PERSONAS` has claimed since the tool shipped; a
+  `BlogCTACard` override so the ASL post stops sending its readers to `/tools/video-dubbing`
+  (**a deliberate reversal of `docs/interconnection.md:102,233`** — that call was made when the
+  ASL tool was a paid demo over a placeholder `job_type`); and inbound links to
+  `/blog/wedding-photo-retouching-cost` from the two candidates that came back indexed, inserted
+  at index 1 because only the first three `relatedLinks` render.
+- **`fix(asl): the page described a model we do not have`** — `deep.how.p1/p2/p3` and
+  `why.point2` in 10 locales. `asl-translation-mvp-spec.md` §9.4 has carried this since 08-29:
+  the copy claimed "a vision encoder … sign-aware embeddings" and "a translation head … trained
+  on parallel ASL-English video corpora". Neither exists; it is a general VLM over sampled
+  stills. It now says that, states the consequence, and cites the frame-reversal control.
+
+`scripts/_foldscan.cjs` gained `--urls-file`. It hardcoded `blogs.json`, which is why the 09-15
+crawl checkpoint could not be run for three of the four times this doc has needed an arbitrary
+URL list.
+
+### ⚠️ The inbound-link rule was NOT met, and the post is fine anyway
+
+`/blog/wedding-photo-retouching-cost` needed ≥3 links from verified-indexed sources. URL
+Inspection today:
+
+| candidate | verdict |
+|---|---|
+| `/blog/50-ai-makeover-prompts` | Submitted and indexed ✅ |
+| `/blog/ai-makeover-templates` | Submitted and indexed ✅ |
+| `/nano-template/portrait-retouching-blueprint` | **folded to `/`** ❌ |
+| `/blog/preserve-facial-features-ai-generation` | **folded to `/`** ❌ |
+
+Two, not three — except `/tools/wedding-photo-editing` came back indexed on its 09-15 crawl, so
+the same-day link that was written off actually counts, and that makes three. Note what this
+does to the rule itself: **the precondition existed to stop new posts folding, and the post
+indexed clean on day one with zero qualifying links.** The rule should be re-derived from the
+fold being fixed, not carried forward unexamined.
+
+`/use-cases/for-photographers` is **"URL is unknown to Google" — never crawled.** It is the only
+09-15 ship that has not been picked up, and it is the KD-7 `outsource wedding photo editing`
+target. It needs a link from an indexed page, which is now a demonstrated lever.
+
+### Corrections to the record
+
+- **Line 1336 — "the product was closed 2026-08-18 and still charges 8 credits/min" is wrong.**
+  ASL has been **free since 2026-08-29** (`JOB_CREDIT_COST.ASL_TRANSLATION = 0`, tripwired in
+  `lib/__tests__/pricing.test.ts`), with `AslUnverifiedNotice` rendering on every result. Memory
+  `project_asl_closed` carries the same stale claim.
+- **The site-wide soft-404 (09-02) is fixed.** `/blog/<nonexistent>` now returns a real HTTP 404;
+  `/blog/how-to-translate-asl-video` 308s to the live post. Memory `project_sitewide_soft_404`
+  says all 404s return 200 — no longer true. Verified with curl today.
+- **`dieline-generator-guide` is not "invisible with zero impressions."** Un-folded 09-02, 76
+  impressions, 1 click.
+
+### Open
+
+- **Request Validate Fix on `/blog/ghost-mannequin-ai-guide`** before 10-13, or that readout
+  falsifies the low-KD thesis on a fold rather than on difficulty.
+- **Give `/use-cases/for-photographers` an inbound link from an indexed page.** Never crawled.
+- **Re-measure the ASL funnel.** The 0-repeat number predates free + the unverified notice by a
+  month, and it is the only thing arguing against working the site's largest cluster.
+- **Consolidation read on the ASL tool↔blog links** at the next pull: does the blog stop
+  surfacing at pos 38.8 for `asl video translator`?
+- **`itachi mbti` now puts three of our URLs on one SERP** — `/de/` and `/es/` itachi examples
+  (79 + 17 impr) plus `/nano-template/mbti-naruto` (27), all at position 4–6, all zero clicks.
+  The 09-05 fix did surface the specific example, as designed; it surfaced the *localized* ones.
+  Feed this into the 10-03 readout rather than acting on it now.
+- **`nano.template-ecommerce-product-photography.category`/`.description` are MISSING_MESSAGE in
+  `en`** — found in the dev log while verifying today's ships. Pre-existing and unrelated; filed,
+  not fixed.
+- Unchanged and still open: homepage `<h1>` vs the new title (now consistent in pitch, not in
+  wording); `topics.*` Phase-2 payload trim; cause 2 (117 of 226 template topics 404).
