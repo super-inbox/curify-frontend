@@ -953,7 +953,7 @@
     "why": {
       "title": "¿Por qué usar Curify para la traducción de video ASL?",
       "point1": "Automático — sin paso manual de intérprete. Sube un video firmado, obtén subtítulos en inglés.",
-      "point2": "Diseñado para contenido, no para demostraciones de laboratorio — maneja ángulos de cámara del mundo real, estilos de firma variados y ritmo conversacional.",
+      "point2": "Útil como primera pasada — una idea aproximada de qué trata un clip cuando la alternativa es no tener nada. No sustituye a un intérprete y no debería publicarse sin que alguien que sepa señas lo revise.",
       "point3": "Formatos de salida diseñados para distribución: subtítulos incrustados, SRT para YouTube, o texto de transcripción simple.",
       "point4": "Gratuito y experimental. La traducción de lengua de signos es un problema difícil y sin resolver: el resultado es traducción automática sin verificar y a menudo se equivoca, así que compruébelo con lo que se signa antes de publicarlo."
     },
@@ -973,9 +973,9 @@
       },
       "how": {
         "title": "¿Cómo traduce Curify el video ASL?",
-        "p1": "La pipeline funciona en cuatro etapas. Primero, el video fuente se procesa cuadro por cuadro para localizar al signatario, aislar la parte superior del cuerpo y segmentar el espacio de firma — descartando el movimiento de fondo que no forma parte de la señal.",
-        "p2": "En segundo lugar, un codificador de visión lee el flujo visual y produce una secuencia de incrustaciones conscientes de la señal: forma de la mano, vectores de movimiento y los marcadores no manuales (expresión facial, inclinación de cabeza, mirada) que cambian una señal de una afirmación a una pregunta.",
-        "p3": "En tercer lugar, una cabeza de traducción decodifica esas incrustaciones en texto en inglés. El decodificador está entrenado en corpus de video ASL-inglés paralelos, por lo que reestructura la gramática ASL en inglés natural en lugar de producir un glosario literal.",
+        "p1": "El proceso tiene cuatro etapas. Primero, se extraen fotogramas del vídeo de origen a intervalos: el sistema no ve el vídeo de forma continua, y ese solo hecho explica casi todo lo que sigue.",
+        "p2": "En segundo lugar, esos fotogramas los lee un modelo de visión y lenguaje de propósito general. Conviene ser precisos: aquí no hay ningún componente específico de lengua de señas — ni seguimiento de la forma de la mano, ni modelo de vectores de movimiento, ni nada entrenado en ASL. El modelo describe lo que ve en imágenes fijas.",
+        "p3": "En tercer lugar, esa descripción se convierte en frases en inglés. Como el modelo lee fotogramas sueltos y no movimiento continuo, no recupera de forma fiable lo que el ASL transmite mediante el movimiento y los marcadores no manuales: dirección, aspecto y la gramática facial que convierte una afirmación en una pregunta. En una prueba de control le dimos el mismo clip reproducido al revés y no lo notó. Trate el resultado como una suposición aproximada del tema, no como una traducción.",
         "p4": "En cuarto lugar, el texto traducido se alinea de nuevo al tiempo original: cada oración en inglés está anclada a los segundos de video que la produjeron. Eso te proporciona subtítulos que puedes insertar directamente en un editor de video, además de una exportación SRT que se carga sin problemas en YouTube.",
         "p5": "La demostración de esta página es la línea de procesamiento real ejecutándose sobre un clip conversacional de ASL. Sus propios vídeos pasan por el mismo proceso, con las mismas limitaciones."
       },

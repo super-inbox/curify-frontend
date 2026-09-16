@@ -953,7 +953,7 @@
     "why": {
       "title": "Warum Curify für die ASL-Videoübersetzung verwenden?",
       "point1": "Automatisch – kein manueller Dolmetscher-Schritt. Laden Sie ein gebärdetes Video hoch, erhalten Sie englische Untertitel.",
-      "point2": "Für Inhalte entwickelt, nicht für Labordemos – bewältigt reale Kamerawinkel, unterschiedliche Gebärdenstile und konversationelles Tempo.",
+      "point2": "Nützlich als erster Überblick — eine grobe Vorstellung davon, worum es in einem Clip geht, wenn die Alternative gar nichts ist. Es ersetzt keine Dolmetschung und sollte nicht veröffentlicht werden, ohne dass eine gebärdende Person es geprüft hat.",
       "point3": "Ausgabeformate, die für die Verbreitung konzipiert sind: eingebettete Untertitel, SRT für YouTube oder einfacher Transkriptionstext.",
       "point4": "Kostenlos und experimentell. Die Übersetzung von Gebärdensprache ist ein schwieriges, ungelöstes Problem: Die Ausgabe ist ungeprüfte maschinelle Übersetzung und häufig falsch. Prüfen Sie sie anhand der Gebärden, bevor Sie sie veröffentlichen."
     },
@@ -973,9 +973,9 @@
       },
       "how": {
         "title": "Wie übersetzt Curify ASL-Videos?",
-        "p1": "Die Pipeline läuft in vier Phasen. Zuerst wird das Quellvideo frameweise verarbeitet, um den Gebärder zu lokalisieren, den Oberkörper zu isolieren und den Gebärdenraum zu segmentieren – Hintergrundbewegungen, die nicht Teil der Gebärde sind, werden verworfen.",
-        "p2": "Zweitens liest ein Vision-Encoder den visuellen Stream und produziert eine Sequenz von gebärdenbewussten Einbettungen: Handform, Bewegungsvektoren und die nicht-manualen Marker (Gesichtsausdruck, Kopfneigung, Augenblick), die eine Gebärde von einer Aussage in eine Frage verwandeln.",
-        "p3": "Drittens dekodiert ein Übersetzungskopf diese Einbettungen in englischen Text. Der Decoder ist auf parallelen ASL-Englisch-Video-Korpora trainiert, sodass er die ASL-Grammatik in natürliches Englisch umstrukturiert, anstatt eine wörtliche Übersetzung zu produzieren.",
+        "p1": "Die Pipeline läuft in vier Stufen. Zuerst werden in Intervallen Einzelbilder aus dem Quellvideo entnommen — das System sieht das Video nicht durchgehend, und allein diese Tatsache erklärt das meiste, was folgt.",
+        "p2": "Zweitens werden diese Einzelbilder von einem allgemeinen Vision-Language-Modell gelesen. Hier lohnt sich Genauigkeit: Es gibt keine gebärdensprachspezifische Komponente — kein Handform-Tracking, kein Bewegungsvektor-Modell, nichts, das auf ASL trainiert wurde. Das Modell beschreibt, was es auf Standbildern sieht.",
+        "p3": "Drittens wird diese Beschreibung in englische Sätze umgesetzt. Da das Modell Einzelbilder statt kontinuierlicher Bewegung liest, erfasst es nicht zuverlässig, was ASL über Bewegung und nichtmanuelle Marker transportiert: Richtung, Aspekt und die Mimik-Grammatik, die aus einer Aussage eine Frage macht. In einem Kontrolltest haben wir denselben Clip rückwärts abgespielt — das Modell hat es nicht bemerkt. Behandeln Sie die Ausgabe als groben Themenhinweis, nicht als Übersetzung.",
         "p4": "Viertens wird der übersetzte Text wieder an das Quell-Zeitmaß angepasst – jeder englische Satz wird an die Sekunden des Videos verankert, die ihn erzeugt haben. Das gibt Ihnen Untertitel, die Sie direkt in einen Video-Editor einfügen können, plus einen SRT-Export, der sauber in YouTube geladen wird.",
         "p5": "Die Demo auf dieser Seite ist die reale Pipeline, angewendet auf einen echten ASL-Gesprächsclip. Ihre eigenen Uploads durchlaufen dieselbe Pipeline – mit denselben Einschränkungen."
       },

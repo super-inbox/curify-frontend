@@ -1038,7 +1038,7 @@
     "why": {
       "title": "Neden Curify'i ASL video çevirisi için kullanmalısınız?",
       "point1": "Otomatik — manuel tercüman adımı yok. İşaretli bir video yükleyin, İngilizce altyazılar alın.",
-      "point2": "İçerik için tasarlandı, laboratuvar demoları için değil — gerçek dünya kamera açılarını, çeşitli işaret stillerini ve konuşma temposunu yönetir.",
+      "point2": "İlk bakış için işe yarar — hiç bilgi olmamasına kıyasla klibin kabaca neyle ilgili olduğunu verir. Bir tercümanın yerini tutmaz ve işaret dili bilen biri kontrol etmeden yayımlanmamalıdır.",
       "point3": "Dağıtım için tasarlanmış çıktı formatları: gömülü altyazılar, YouTube için SRT veya düz transkript metni.",
       "point4": "Ücretsiz ve deneysel. İşaret dili çevirisi zor ve henüz çözülmemiş bir problemdir: çıktı doğrulanmamış makine çevirisidir ve sık sık hatalıdır; yayımlamadan önce videodaki işaretlerle karşılaştırın."
     },
@@ -1058,9 +1058,9 @@
       },
       "how": {
         "title": "Curify ASL videosunu nasıl çeviriyor?",
-        "p1": "Boru hattı dört aşamada çalışır. İlk olarak, kaynak video, işaretçiyi yerelleştirmek, üst vücut izole etmek ve işaretleme alanını segmentlere ayırmak için kare kare işlenir — işaretin bir parçası olmayan arka plan hareketini atarak.",
-        "p2": "İkinci olarak, bir görsel kodlayıcı görsel akışı okur ve işaret bilincine sahip gömme dizileri üretir: el şekli, hareket vektörleri ve bir işareti bir cümleden bir soru haline getiren el dışı işaretler (yüz ifadesi, baş eğimi, göz bakışı).",
-        "p3": "Üçüncüsü, bir çeviri başlığı bu gömme verileri İngilizce metne çözümler. Çözücü, paralel ASL-İngilizce video derlemeleri üzerinde eğitildiği için, ASL dilbilgisini doğal İngilizceye yeniden yapılandırır, kelime kelime bir çeviri üretmek yerine.",
+        "p1": "İşlem dört aşamada çalışır. Önce kaynak videodan belirli aralıklarla kareler alınır — sistem videoyu kesintisiz izlemez ve sonrasında gelen kısıtların çoğu yalnızca bu tek gerçekten doğar.",
+        "p2": "İkinci olarak, bu kareler genel amaçlı bir görsel-dil modeli tarafından okunur. Burada net olmakta fayda var: işaret diline özgü hiçbir bileşen yok — el şekli takibi yok, hareket vektörü modeli yok, ASL üzerinde eğitilmiş hiçbir parça yok. Model yalnızca durağan karelerde gördüğünü betimler.",
+        "p3": "Üçüncü olarak, bu betimleme İngilizce cümlelere dönüştürülür. Model sürekli hareketi değil örneklenmiş kareleri okuduğu için, ASL'nin hareketle ve el dışı işaretleyicilerle taşıdığı şeyleri — yön, görünüş ve bir cümleyi soruya çeviren yüz dilbilgisini — güvenilir biçimde geri getiremez. Bir kontrol testinde aynı klibi ters oynatıp verdik ve model fark etmedi. Çıktıyı bir çeviri değil, konuya dair kaba bir tahmin olarak değerlendirin.",
         "p4": "Dördüncüsü, çevrilen metin kaynak zamanlamasına geri hizalanır — her İngilizce cümle, onu üreten video saniyelerine bağlıdır. Bu, doğrudan bir video düzenleyicisine yerleştirebileceğiniz altyazılar ve YouTube'a temiz bir şekilde yüklenen bir SRT dışa aktarımı sağlar.",
         "p5": "Bu sayfadaki demo, gerçek işlem hattının gerçek bir ASL sohbet klibi üzerinde çalıştırılmasıdır. Kendi yüklemeleriniz de aynı hattan geçer — aynı sınırlarla birlikte."
       },
