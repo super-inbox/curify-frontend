@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-09-12.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-09-16.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -3076,6 +3076,7 @@ treatment, on the same account, a day apart.
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
 - `docs/pinterest-publishing-2026-08-21.md` — Pinterest channel writeup; registry at `data/pinterest/pins.jsonl`
 - `scripts/pinterest_demand.cjs` — GSC-by-search-type → per-template demand score + copy phrase; snapshots in `data/pinterest/demand-*.json`
+- `scripts/pinterest_lookalike.cjs` — selection by similarity to the Pins that measurably earned (batch 4 onward, 2026-09-16); supersedes demand ranking as the default, which it demotes to the tie-break
 - `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
 - `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
 - `raw/agent-skills-08-31/design-skills.txt` — the TypeUI read: upgrade the prompt/template library along Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill rather than extending it. (Replaces a citation to `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md`, which was never written — verified absent 2026-09-01.)
@@ -3283,3 +3284,126 @@ with a skill behind it, and has **zero public surface**.
 - **Not measured:** no GSC pull was done for `curify photo retouching` itself — impressions and
   position for the query are unknown. Brand+intent volume is probably negligible; the finding
   that generalises is the homepage description, not this one query.
+
+---
+
+## 2026-09-16 — Pinterest readout: the winners are a SHAPE, the headline number is a coin flip
+
+The ~09-15 readout the 09-08 section scheduled. First non-zero numbers on the channel, and they
+overturn both of the rankings that produced them. Per-Pin `GET /v5/pins/{id}/analytics` across
+all 62 live Pins, window 08-25 → 09-16, campaign Pins only.
+
+| cohort | Pins | impressions | saves | pin clicks | outbound |
+|---|---:|---:|---:|---:|---:|
+| batch 1 (09-04, ratio-ranked) | 20 | 11 | 0 | 1 | 0 |
+| batch 2 (09-05, ratio-ranked) | 10 | **607** | **6** | 9 | 0 |
+| batch 3 (09-08, demand-ranked) | 30 | **2** | **0** | 0 | 0 |
+| legacy `mbti-curify` (03-11) | 27 | 199 | 0 | 12 | 1 |
+
+### Three findings, in descending order of how much they should change behaviour
+
+**1. Batch 3 failed, and it was the treatment arm.** 30 Pins, 2 impressions, 0 saves — the worst
+cohort on the account, worse than the control it was built to beat. The 09-08 hypothesis was that
+product-taxonomy board names were suppressing distribution and that Pinterest-native boards plus
+GSC-demand-ranked selection would fix it. Measured: no. **GSC image-search demand does not
+transfer to Pinterest.** It was the right instinct — rank on evidence of wanting, not on canvas
+shape — applied to evidence from a different surface. `pinterest_demand.cjs` stays in the repo
+and stays out of the default path.
+
+**2. The 586 is not a creative verdict. It is the surface's coin flip.**
+`…fridge-magnet-collection-nanjing-landmarks` earned 586 impressions. Its sibling
+`…-yangzhou-landmarks` — same template, same layout, same merch board, published one day
+earlier — earned **0**. Two near-identical Pins, 586 and 0. On n=1, impressions measure which
+Pin Pinterest decided to feed, not which Pin is better.
+
+⚠️ **This invalidates reading impressions as a creative signal at this volume, and it applies
+retroactively to every judgement made on this channel so far, including the 09-06 conclusion
+that batches 1+2 had "failed".** 30 Pins is not enough to average out a distribution lottery.
+
+**Save rate is the signal, and it reorders the winners:**
+
+| example | imp | saves | save rate |
+|---|---:|---:|---:|
+| `…category-guide-infographic-interior-design-styles` | 21 | 3 | **14.3%** |
+| `…fridge-magnet-collection-nanjing-landmarks` | 586 | 3 | 0.5% |
+
+The thing worth copying is the one almost nobody saw, where nearly one in seven who did saved it.
+
+**3. What the three earners share is SHAPE, not subject.** All three are **collection grids** —
+many small repeated items in one frame: a 2x2 of souvenir magnets, a 4x3 labelled photo grid of
+interior styles, a 4x4 sticker sheet. Neither ranking could see this. Ratio measures the canvas;
+GSC measures the subject. Nothing measured the composition.
+
+### What shipped — batch 4, 15 Pins
+
+`scripts/pinterest_lookalike.cjs`, a third selection basis: IDF-weighted cosine over tags and
+topics against the three measured earners, same-template siblings scored as exact matches,
+demand demoted to the tie-break. Same plan-row output, so `--plan` and its `ip_review` gate
+consume it unchanged.
+
+- **interior 5 · merch 4 · edtech 2 · food 2 · travel 1 · fashion 1.** 15/15 published 201 and
+  verified by direct `GET /v5/pins/{id}`.
+- **New board: `interior` — "Interior Design Mood Boards & Material Palettes"**
+  (`570831390209281897` → `/topics/interior`, verified 200 no-redirect). The best-saving Pin on
+  the account is an interior style guide and there was **no board for it**: the interior
+  mood-board templates match no `BOARD_TOPICS` entry, so the proposer had never been able to
+  offer one. Home decor is also Pinterest's largest native category. This is the first board
+  created from a measured result rather than a taxonomy argument.
+- **Service-oriented inventory is now on the channel.** Five of the 15 are interior mood boards —
+  a photoreal room over its real material and colour palette, which is the artifact an interior
+  service delivers, not a poster about one.
+
+### Two things the batch could not do
+
+- **Portrait retouching (`template-portrait-retouching-blueprint`) is not publishable as-is.**
+  Its five examples are **ratio 1.79** — landscape before/after pairs — against a hard 0.55–0.80
+  filter, so they fail on shape before any other question. And the template is
+  `image_input: "required"`: the faces come from a real reference photo, which makes a public
+  commercial Pin a right-of-publicity question, not the model-generated-face policy call settled
+  on 09-08. **Both would have to be answered separately; a portrait-canvas re-render alone does
+  not clear the second.**
+- **`…global-city-walkability-…-second-group-8cities` was dropped after approval.** The image is
+  clean, but the only subject its metadata can produce is the enumeration phrase "Second Group
+  8cities" — an id artifact, not a subject, and the standing rule is that a Pin whose subject we
+  cannot name is not published. New artifact class, not covered by `cleanSubject`.
+
+### Two code fixes the batch forced
+
+- `titleCase` sentence-cased acronyms — "Curi **Ai** Robot Mood **Ip** Emoji Sticker Sheet" — on
+  3 of 15 rows. Fixed with an explicit `ACRONYMS` set (`ai`, `ip`, `hsk`, `asl`, `mbti`, …)
+  rather than a general rule, so no word is invented out of a coincidence.
+- Six examples added to `IP_REJECTED_EXAMPLES`; `bts`, `blackpink`, `michelin`, `lotte`,
+  `chamisul` added to `IP_NAMES`.
+
+### Visual review: 5 rejected of 20, and NOT ONE was visible in metadata
+
+25%, in line with 27% and 23% on the previous batches. The new failure mode is the serious one:
+
+**Our own render carried someone else's watermark, twice.** `LEN'S decor 0908901489` — a rival
+studio's mark *and phone number* — across the hero photograph of a soft-decoration guide, and a
+grey CJK watermark box in the corner of a brand-VI board. The generation model reproduced the
+watermark from its source material. Same class as batch 3's "the little shine", so it is
+recurring, not a one-off: **check all four corners and the lower third of every hero photograph
+at full resolution.** Publishing either would have put another business's phone number on our
+commercial account.
+
+The other three: `MICHELIN STAR` + the red Michelin flower drawn into a France culture poster
+(with garbled labels — "KINGOFR", "EUROVAL CULURY"); `#9 Lotte Tower` in a South Korea top-10;
+and a Korea souvenir poster whose **item #10 is "BTS Merchandise"** — wordmark on the light
+sticks, members' faces on the photocards.
+
+### Open
+
+- **Next read ~2026-09-30, on save rate, not impressions.** Batch 4's question: does save rate
+  hold when the selection is grid-shaped by construction, and does the interior board beat the
+  nine that preceded it? ⚠️ Read it as save-per-impression. Given Yangzhou vs Nanjing, a single
+  large impression number means nothing at this volume.
+- **Impressions are now known to be an unreliable signal below ~n=50/cohort.** Any future
+  conclusion drawn from them on this channel needs that caveat attached, including revisiting
+  whether batches 1+2 ever actually "failed".
+- **Still open, unchanged:** claim the domain and enable Rich Pins (cheapest thing left, nothing
+  blocks it); backfill the 27 legacy `mbti-curify` Pins with deep links and alt text — the
+  09-15 readout they were being held for has now happened, so the control-arm objection has
+  expired.
+- **Retouching still has no publishable surface here** — see above. It is the same gap the 09-12
+  section names from the SEO side: the capability is built, the public surface is not.

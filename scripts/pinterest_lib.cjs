@@ -56,6 +56,16 @@ const BOARDS = {
   fashion:   { id: "570831390209281054", landing: "/topics/fashion" },
   food:      { id: "570831390209281055", landing: "/topics/food" },
   travel:    { id: "570831390209281056", landing: "/topics/travel" },
+
+  // Batch 4, 2026-09-16. Created because the 09-16 readout named interior
+  // design as the best-SAVING thing on the account —
+  // template-professional-category-guide-infographic-interior-design-styles
+  // took 3 saves on 21 impressions (14%), against 3 saves on 586 impressions
+  // (0.5%) for the most-SEEN Pin. There was no board for it: the interior
+  // mood-board templates match no BOARD_TOPICS entry at all, so they had never
+  // been proposable. /topics/interior verified 200 with no redirect on
+  // 2026-09-16; /topics/interior-design and /topics/decor are 404.
+  interior:  { id: "570831390209281897", landing: "/topics/interior" },
 };
 
 /** Topics feeding each board, matched against the topic-membership rule below. */
@@ -69,6 +79,10 @@ const BOARD_TOPICS = {
   fashion:   ["fashion", "outfit", "lookbook", "costumes"],
   food:      ["food", "recipes", "drinks"],
   travel:    ["travel", "city", "map"],
+  // Deliberately narrow. "design" and "lifestyle" sit on thousands of records
+  // and would make this board a catch-all; every word here is specific to a
+  // room or a material palette.
+  interior:  ["interior", "interior-design", "moodboard", "mood-board", "decor", "home-textiles"],
 };
 
 /**
@@ -106,6 +120,10 @@ const BOARD_TEMPLATES = {
     "template-fashion-inspired-gown-design-sheet",
     "template-fashion-style-outfit-breakdown-infographic",
     "template-costume",
+  ],
+  interior: [
+    "template-interior-design-mood-board-generator",
+    "template-interior-design-moodboard",
   ],
 };
 
@@ -337,9 +355,22 @@ function subjectOf(rec) {
   throw new Error(`${rec.id}: cannot resolve a subject`);
 }
 
+/**
+ * Acronyms title-casing must not sentence-case.
+ *
+ * titleCase uppercases the first letter and leaves the rest, which turns "ip
+ * emoji sticker sheet" into "Ip Emoji Sticker Sheet" and "curi ai robot" into
+ * "Curi Ai Robot". Three of the 15 rows in the 2026-09-16 batch read that way.
+ * Restricted to tokens we actually ship, so a word like "Hsktest" is never
+ * invented out of a coincidence.
+ */
+const ACRONYMS = new Set(["ai", "ip", "diy", "hsk", "asl", "mbti", "vi", "3d", "2d", "esl", "uk", "usa", "dna", "bbq"]);
+
 // Anchored on word STARTS, not \b: \b matches between the apostrophe and the s
 // in "men's", and the proposer emitted "Men'S Korean Short Hair Guide".
-const titleCase = (s) => s.replace(/(^|[\s\-–—(/])([a-z])/g, (_, p, c) => p + c.toUpperCase());
+const titleCase = (s) =>
+  s.replace(/(^|[\s\-–—(/])([a-z])/g, (_, p, c) => p + c.toUpperCase())
+   .replace(/\b([A-Za-z0-9]+)\b/g, (w) => (ACRONYMS.has(w.toLowerCase()) ? w.toUpperCase() : w));
 
 /** Truncate on a word boundary — mid-word cuts read as broken copy. */
 function clip(s, max) {
@@ -550,6 +581,13 @@ const IP_NAMES = new RegExp([
   // mascot, a poster crediting "Civil Navigator", and Stella McCartney set in
   // the artwork. Only the first was catchable from metadata.
   "stella.?mccartney", "boogi", "busan.communication", "civil.?navigator",
+  // Added 2026-09-16 (batch 4). Each was drawn in the pixels of a candidate
+  // that passed both automated layers, and each is a live trademark: BTS
+  // wordmark on light sticks and photocards, Chamisul on a soju bottle,
+  // Michelin's red flower next to "MICHELIN STAR", "Lotte Tower" captioned as
+  // destination #9. K-pop group names sit next to real people's faces on
+  // merchandise, so they are named-entity hits, not category words.
+  "\\bbts\\b", "blackpink", "\\bexo\\b", "twice.?jyp", "michelin", "lotte", "chamisul", "\\bsoju.?brand",
 ].join("|"), "i");
 
 /**
@@ -588,6 +626,17 @@ const IP_REJECTED_EXAMPLES = new Set([
                                                                      // than the whole template being cut the way template-product-poster was.
   "template-pet-safe-human-food-infographic-guinea-pig",              // third-party "the little shine" watermark baked into the onion photo; food labels garbled ("Pumpoil", "Chartots", "Ceams")
   "template-book-series-one-hundred-years-of-solitude-cover-1",       // in-copyright novel, cover art credits "Gabriel García Márquez"
+  // Batch 4, 2026-09-16. 5 rejected of 20 at visual review (25%, in line with
+  // the 23-27% the first three batches ran), and NONE of the five was visible
+  // in metadata. Two were other people's watermarks baked into our own render,
+  // which is the failure mode worth remembering: the generation model
+  // reproduced the source photograph's watermark.
+  "template-soft-decoration-design-guide-bohemian-wabi-sabi-bedroom", // "LEN'S decor 0908901489" — another studio's watermark AND phone number, bottom-left of the hero render
+  "template-brand-vi-full-visual-pack-mockup-mika-cat-bakery",        // grey CJK source watermark baked into the bottom-right corner
+  "template-country-souvenirs-watercolor-japan",                      // "Japanese Statonery" misspelled and applied to two different rows (one of them sweets); "Inspire Goals" printed twice
+  "template-country-top10-travel-destinations-south-korea",           // "#9 Lotte Tower" names a corporate trademark; also renders armed soldiers at the DMZ
+  "template-national-culture-history-infographic-france",             // "MICHELIN STAR" + the red Michelin flower drawn in; plus garbled labels ("KINGOFR", "EUROVAL CULURY", "Eiclrcms")
+  "template-country-souvenirs-watercolor-korea",                      // item #10 IS "BTS Merchandise" — wordmark on light sticks and members' faces on photocards; Chamisul soju bottle at #6
 ]);
 
 /**
