@@ -3644,9 +3644,11 @@ target. It needs a link from an indexed page, which is now a demonstrated lever.
   ASL has been **free since 2026-08-29** (`JOB_CREDIT_COST.ASL_TRANSLATION = 0`, tripwired in
   `lib/__tests__/pricing.test.ts`), with `AslUnverifiedNotice` rendering on every result. Memory
   `project_asl_closed` carries the same stale claim.
-- **The site-wide soft-404 (09-02) is fixed.** `/blog/<nonexistent>` now returns a real HTTP 404;
-  `/blog/how-to-translate-asl-video` 308s to the live post. Memory `project_sitewide_soft_404`
-  says all 404s return 200 — no longer true. Verified with curl today.
+- **The site-wide soft-404 (09-02) is confirmed fixed on prod.** `/blog/<nonexistent>` returns a
+  real HTTP 404; `/blog/how-to-translate-asl-video` 308s to the live post. ⚠️ Correcting my own
+  overstatement here: memory `project_sitewide_soft_404` already recorded the middleware fix in
+  its body — only its one-line description still asserted the site-wide 200, which is what recall
+  surfaces first. The description is fixed; the memory was not wrong.
 - **`dieline-generator-guide` is not "invisible with zero impressions."** Un-folded 09-02, 76
   impressions, 1 click.
 
