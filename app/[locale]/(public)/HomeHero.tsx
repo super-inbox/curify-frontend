@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
+import { useClickTracking } from "@/services/useTracking";
 
 /**
  * Storytelling hero: a strong workflow-led message on the left, a gentle
@@ -15,6 +16,21 @@ export default function HomeHero({ montageImages = [] }: { montageImages?: strin
   const t = useTranslations("home.hero");
   const imgs = montageImages.filter(Boolean).slice(0, 18);
   const cols = [0, 1, 2].map((m) => imgs.filter((_, i) => i % 3 === m));
+
+  // Added 2026-09-16. These two were the only untracked clickables on the
+  // homepage, and they are the most prominent ones on it — so the 90-day click
+  // ranking that reordered the sections below had a hole exactly where the
+  // primary CTA sits, and the ranking could not see it.
+  //
+  // `home-hero:primary` scrolls to #solutions rather than navigating, so it is
+  // the one homepage click with no destination page view behind it: without
+  // this event there is no trace of it anywhere.
+  //
+  // content_type "topic_capsule" matches the other non-tool homepage CTAs
+  // (home-solution:*, use-case:*) so these rows aggregate alongside them; the
+  // enum has no "cta" member and adding one needs a migration.
+  const trackPrimary = useClickTracking("home-hero:primary", "topic_capsule", "cards");
+  const trackSecondary = useClickTracking("home-hero:secondary", "topic_capsule", "cards");
 
   return (
     <section className="relative overflow-hidden">
@@ -32,12 +48,14 @@ export default function HomeHero({ montageImages = [] }: { montageImages?: strin
           <div className="mt-7 flex flex-wrap gap-3">
             <a
               href="#solutions"
+              onClick={trackPrimary}
               className="inline-flex items-center justify-center rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-purple-700"
             >
               {t("ctaPrimary")}
             </a>
             <Link
               href="/nano-banana-pro-prompts"
+              onClick={trackSecondary}
               className="inline-flex items-center justify-center rounded-xl border border-neutral-300 bg-white px-5 py-3 text-sm font-bold text-neutral-800 transition-colors hover:bg-neutral-50"
             >
               {t("ctaSecondary")}
