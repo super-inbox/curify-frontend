@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-09-16.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-09-17.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -2671,6 +2671,10 @@ cause 1 as dominant and promotes Phase 2.
   safe to trim: the only client readers of `topics.*` are `TopicNavRow:124`, `SearchBar:141` and
   `SearchResultsClient:115`, and **all three read only `<slug>.displayName`**. Sequence and the
   6-blog regression check are in the plan file.
+  > **2026-09-17 — a second, independent reason, and it changes what Phase 2 is for.** The payload
+  > is not only a near-duplicate-bytes problem, it is a **URL-discovery surface**: Google is
+  > crawling `/topics/*` paths that appear *only* in the flight payload and in no anchor. Fold the
+  > topic-path filter into this pass. See §2026-09-17.
 - **Cause 2 (topic hubs) is not fixed.** Prefer aliasing dead content topics onto live hubs over
   minting thin new pages (`project_new_page_crawl_collapse`).
 - **`guides` and `comparison` sit in `CONTENT_SIGNAL_TOPICS` but behave like style tags.** The
@@ -3072,6 +3076,7 @@ treatment, on the same account, a day apart.
 - `docs/interconnection.md` — cross-link layer
 - `docs/blog-quality.md` — blog editorial track
 - `docs/education-cluster-audit-2026-09-16.md` — **education cluster: 22 of 22 target terms at zero.** The 14-week readout on the 06-10 flashcard/learning batch (~14,000 projected vol/mo → 1 click/28d), plus the live analytics, the static-metadata title trap and the five 404 education hubs
+- `raw/curify-ai.com-Coverage-Drilldown-2026-09-17/` — the 539-URL GSC 404 export behind §2026-09-17 (RSC payload as a URL-discovery surface)
 - `~/curify-studio/curify_background/app/crud/admin.py` — growth analytics queries
 - `~/curify-studio/curify_background/app/utils/autopost_utils.py` — SMM autopost
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
@@ -3697,3 +3702,125 @@ Also read early there: the **10-01 worksheet retarget** moved `/tools/worksheet-
 4 impressions at pos 21.5 to **63 at pos 10.3 with its first 2 clicks** — entirely on the
 video-qualified tail, with the 2,400/mo head term still at zero. The ship note's pre-registered
 conclusion holds: that page needs a text/topic input, not a better title.
+
+---
+
+## 2026-09-17 — the 539 "Not found (404)" URLs: Google is reading the RSC payload
+
+Source: `raw/curify-ai.com-Coverage-Drilldown-2026-09-17/` (GSC Coverage, *Not found (404)*,
+539 affected pages), diffed against `raw/seo-fix-09-05/curify-ai.com-Coverage-Drilldown-2026-09-07/`
+and re-requested live as a stratified sample.
+
+**Headline: 64% of the report is already fixed and merely stale, and the one cohort that is
+actually growing is not reached by a link at all — it is parsed out of the inline RSC flight
+payload.**
+
+### What the 539 are
+
+| shape | n | share | live status today |
+|---|---:|---:|---|
+| `/nano-template/<slug>/carousel/<id>` | 346 | 64% | **308 → 200**, 15 of 16 sampled |
+| `/i/<uuid>` | 75 | 14% | 404 — real, **fixed 2026-09-17** |
+| `/topics/<slug>` | 46 | 9% | 404 — real, **the only growing cohort** |
+| `/_next/static/*.css?dpl=…` | 21 | 4% | 404 — deploy churn, leave alone |
+| `/nano-template/<slug>/example/<id>` | 21 | 4% | mixed (200 / 307 / 404) |
+| `/images/*`, misc, malformed | 30 | 5% | 404 — legacy |
+
+**Trend.** Flat at 479–491 from July through 09-04, then a step to **539 on 2026-09-05**. Diffed
+against the 09-07 export: **62 added, 41 of them `/topics/*`**. Every topic 404 was last crawled
+2026-09-02 → 09-15; every carousel 404 was last crawled **2026-05-16 → 06-01** and has not been
+revisited since.
+
+### The finding: URLs are being mined from the flight payload, not from links
+
+Measured on `/nano-template/poetry-ink-wash-illustration`:
+
+| | count | of which dead |
+|---|---:|---:|
+| rendered `<a href>` topic links | 25 | **0** |
+| `/topics/*` paths in the RSC payload | 60 | **35** |
+
+**The markup guards work.** `TopicNavRow` intersects against the registry
+(`lib/topicRegistry.ts:83-101`) and `TopicStrip` filters rendering by the thumbnail manifest, so
+zero dead topic anchors are emitted. But the unfiltered slug list crosses the server→client
+boundary *first*, and every entry is serialized as
+`{"slug":"serene","path":"/topics/serene","label":"Serene"}`.
+
+The dead slugs in that payload are exactly the ones in the GSC report — `serene`, `abstract`,
+`pastel`, `miniature`, `ultra-realistic`, `vibrant-colors`, `vintage`. They are **style
+adjectives**, not subjects (`modern` 263 templates, `playful` 262, `bold` 161), and they must not
+become pages.
+
+Two further 404s corroborate the mechanism, and neither is a link anywhere on the site:
+
+- `/9024e63…_image_1766072095903.jpg54:T9bf,` — a filename glued to `54:T9bf,`, a literal Next.js
+  flight-chunk marker. Google parsed straight across a payload boundary.
+- `/tr/blog/infografia-sobre-la-historia-del-vestuario-chino` (Spanish slug, **Turkish** prefix)
+  and `/de/blog/चाइनीज-हर्बल-मेडिसिन-विशुअल-गाइड` (Hindi slug, **German** prefix).
+  `messages/*/blog.json` carries a per-locale **translated `slug`** field that **nothing reads** —
+  `sitemap-blogs.xml:41-43` uses `blogs.json`, and the route only accepts the English slug. Another
+  dead decoy, same family as `ToolDef.seo` and `tools.<key>.meta.*`
+  ([[feedback_tool_page_metadata_location]]). Absent from the payload today, so this leaked during
+  the 1.6MB-catalog era and the trim already closed it.
+
+**Why the 09-05 step:** `b6fcd265` bumped `lastmod` on four route classes that day → recrawl of
+template/example pages → payloads re-parsed.
+
+⚠️ **This is a second, independent reason to do Phase 2**, and it reframes it: the payload is not
+only a near-duplicate-bytes problem, it is a **URL-discovery surface**. Anything URL-shaped in it
+is a crawl candidate.
+
+### Carousel — fixed since May, and the report is a four-month-old snapshot
+
+`/nano-template/<slug>/carousel/<id>` existed 2026-04-30 → deleted **`016f8a14`, 2026-05-13**. The
+301 was added in **`f52d67bd`, 2026-05-31** (`next.config.ts:188-202`) and has never been touched.
+Followed 16 of them: **15 resolve 308 → 200**, one timed out. They are not broken; Google last
+crawled them at or before the redirect shipped and has no reason to revisit.
+
+⚠️ Recorded because it was the working hypothesis and it is wrong for this cohort: the redirect
+*target* can 404 when a template slug no longer exists
+(`carousel/template-example/[slug]/[exampleId]/page.tsx:96`). Real, but not what these are.
+
+**Action: GSC Validate Fix on the issue.** Per 09-09 that is the instrument here, not the Indexing
+API. It drains 64% of the report and costs nothing.
+
+### `/i/<uuid>` — SHIPPED 2026-09-17
+
+`app/[locale]/(public)/i/[id]/page.tsx` (`InspirationPermalinkPage`) was deleted in **`ae151a6a`,
+2026-03-26** ("major revamp."), with no redirect, while `services/inspirationMapper.ts` kept
+handing out `/i/<uuid>` as the Share URL. `/i/:id` and `/:locale/i/:id` now 301 to the hub; the
+share target is `/inspiration-hub?card=<id>`; `getShareUrl()` builds an absolute URL through
+`lib/canonical`.
+
+⚠️ **Correction to the first read: this was not a live user-facing bug.** `mapDTOToUICard`,
+`inspirationService` and `InspirationHubClient` all have **zero callers** — the surface is
+unreachable. The 301 is the live half (those 75 links were really shared and really dead-end); the
+code fix is a disarmed landmine so a revival does not re-emit dead URLs.
+
+### Explicitly not doing
+
+- **Not blocking `/_next/static/` in robots.txt.** Blocking CSS/JS from Googlebot breaks rendering.
+  21 noisy rows are far cheaper than a render regression.
+- **Not minting `/topics/` pages for the dead slugs.** 118 of 226 template topics have no page and
+  most are style adjectives. [[project_new_page_crawl_collapse]] — page age predicts indexation;
+  118 thin hubs is the exact failure mode.
+- **Not touching the translated blog slugs.** Nothing reads them; deleting the decoy keys is
+  Phase-2 cleanup, not a 404 fix.
+
+### Open
+
+- **The topic-payload filter ships with Phase 2, after the 10-03 readout.** One
+  `isLocalizedTopic()` call (`lib/topicRegistry_pure.ts:17-22` — the same guard the sitemap,
+  `HomeDiscoveryStrip` and `ExampleRelatedTopics` already use) before the `items` map at
+  `nano-template/[slug]/page.tsx:428-432`, `example/[exampleId]/page.tsx:622` and
+  `topics/[slug]/page.tsx:510`. **Zero rendered links change** — 0 dead anchors today — so there
+  is no UX or internal-linking risk. Held because it is payload-only, i.e. exactly the C6 variable
+  Phase 2 was held back to isolate; shipping it early would make 10-03 directional only, for the
+  second time in a month.
+- **Validate Fix on the carousel cohort** — UI action, not scriptable.
+- **The 46 topics are the discovered tip.** 118 of 226 distinct template topics have no page and
+  349 of 352 templates reference at least one — **1,682 template→dead-topic instances**, ~16,800
+  across 10 locales. Expect the count to keep climbing until the filter ships. **That is the number
+  to watch in the next drilldown; the carousel bulk is a distraction.**
+- Re-export the drilldown ~2 weeks after Validate Fix. Success = carousel draining and `/topics/*`
+  not past 46.
