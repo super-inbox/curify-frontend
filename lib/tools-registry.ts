@@ -166,41 +166,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     seo: seoKeys("video_transcript_generator"),
   },
 
-  {
-    id: "youtube-subtitle-downloader",
-    slug: "youtube-subtitle-downloader",
-    groupId: "video",
-    status: "coming_soon",
-    job_type: "youtube_subtitles",
-    namespace: "youtubeSubtitleDownloader",
-    action: { type: "none" },
-    i18n: toolKeys("youtube_subtitle_downloader"),
-    seo: seoKeys("youtube_subtitle_downloader"),
-  },
 
-  {
-    id: "video-subtitle-extractor",
-    slug: "video-subtitle-extractor",
-    groupId: "video",
-    status: "coming_soon",
-    job_type: "subtitle_only",
-    namespace: "videoSubtitleExtractor",
-    action: { type: "none" },
-    i18n: toolKeys("video_subtitle_extractor"),
-    seo: seoKeys("video_subtitle_extractor"),
-  },
 
-  {
-    id: "translate-subtitles",
-    slug: "translate-subtitles",
-    groupId: "video",
-    status: "coming_soon",
-    job_type: "srt_translator",
-    namespace: "translateSubtitles",
-    action: { type: "none" },
-    i18n: toolKeys("translate_subtitles"),
-    seo: seoKeys("translate_subtitles"),
-  },
 
   {
     id: "video-summarizer",
@@ -551,33 +518,11 @@ export const TOOL_REGISTRY: ToolDef[] = [
     seo: seoKeys("brand_direction_explorer"),
   },
 
-  {
-    id: "storyboard-generator",
-    slug: "storyboard-generator",
-    groupId: "video",
-    status: "coming_soon",
-    job_type: "video_transcript",
-    namespace: "storyboardGenerator",
-    action: { type: "none" },
-    i18n: toolKeys("storyboard_generator"),
-    seo: seoKeys("storyboard_generator"),
-  },
 
   // =======================
   // IMAGE
   // =======================
 
-  {
-    id: "image-translation",
-    slug: "image-translation",
-    groupId: "image",
-    status: "coming_soon",
-    job_type: "srt_translator",
-    namespace: "imageTranslation",
-    action: { type: "none" },
-    i18n: toolKeys("image_translation"),
-    seo: seoKeys("image_translation"),
-  },
 
   {
     // Demo-only SEO landing — no backend pipeline yet. Pre-built demo
@@ -619,22 +564,11 @@ export const TOOL_REGISTRY: ToolDef[] = [
   // AUDIO
   // =======================
 
-  {
-    id: "voice-clone",
-    slug: "voice-clone",
-    groupId: "audio",
-    status: "coming_soon",
-    job_type: "video_transcript",
-    namespace: "voiceClone",
-    action: { type: "none" },
-    i18n: toolKeys("voice_clone"),
-    seo: seoKeys("voice_clone"),
-  },
 
   {
     id: "speech-translator",
     slug: "speech-translator",
-    groupId: "audio",
+    groupId: "video",
     status: "create",
     job_type: "speech_translator",
     namespace: "speechTranslator",
@@ -738,7 +672,7 @@ export function groupTools(): Record<ToolGroupId, ToolDef[]> {
       acc[tool.groupId].push(tool);
       return acc;
     },
-    { video: [], image: [], design: [], audio: [] } as Record<ToolGroupId, ToolDef[]>
+    { video: [], image: [], design: [] } as Record<ToolGroupId, ToolDef[]>
   );
 }
 
@@ -833,18 +767,18 @@ export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
   // posts shipped at referringUrls = 0, and that is the recorded cause of their
   // zero impressions).
   "wedding-photo-editing": ["creator-tools"],
+  // Added 2026-09-16. This is the site's LARGEST click source — 314 of 786 site
+  // clicks in the 28d to 09-15, position 8.5, 14.4% CTR — and it had no entry,
+  // so it rendered no related reading and never linked to its own blog post.
+  // The 09-09 pass added six merch tools for exactly this reason and the one
+  // page that is definitely indexed and definitely ranks was missed.
+  "asl-video-translator": ["video-translation-dubbing"],
   "video-dubbing":               ["video-translation-dubbing", "video-dubbing"],
   "bilingual-subtitles":         ["video-translation-dubbing", "creator-tools"],
-  "voice-clone":                 ["video-translation-dubbing"],
   "speech-translator":           ["video-translation-dubbing"],
   "video-transcript-generator":  ["creator-tools", "video-translation-dubbing"],
-  "youtube-subtitle-downloader": ["creator-tools", "video-translation-dubbing"],
-  "video-subtitle-extractor":    ["creator-tools", "video-translation-dubbing"],
-  "translate-subtitles":         ["video-translation-dubbing"],
   "video-summarizer":            ["creator-tools"],
   "video-enhance":               ["creator-tools", "video-translation-dubbing"],
-  "storyboard-generator":        ["creator-tools"],
-  "image-translation":           ["video-translation-dubbing", "creator-tools"],
   "manga-translation":           ["video-translation-dubbing"],
   "style-transfer":              ["creator-tools", "nano-template"],
   // 2026-09-09 — the merch/POD tools had no entry at all, so no tool page
@@ -879,6 +813,10 @@ export const TOOL_PINNED_BLOGS: Record<string, string[]> = {
   // date, and `creator-tools` holds 20 posts — this one would drop out of the slot
   // within weeks and the inbound edge would silently disappear.
   "wedding-photo-editing": ["wedding-photo-retouching-cost"],
+  // PINNED for the same reason: `video-translation-dubbing` is a deep category
+  // and `asl-video-translator` carries lastmod 2026-06-05, so the freshness sort
+  // would never surface it in the 3 slots the component renders.
+  "asl-video-translator": ["asl-video-translator"],
   "product-video":              ["url-to-product-video"],
   "ecommerce-photo":            ["url-to-product-video", "ghost-mannequin-ai-guide"],
   "ai-product-photo-generator": ["url-to-product-video", "ghost-mannequin-ai-guide"],

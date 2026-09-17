@@ -131,13 +131,40 @@ export default function HomeClient({
           )}
         </section>
 
-        {designWorkflows}
+        {/* Order changed 2026-09-16 from click data, not taste. Measured over 90
+            days on `/` (bot-filtered, test users 155/1117/1267 excluded,
+            VIEW+VIDEO_PLAY not counted as intent) — clicks / distinct people:
 
-        {nicheTopics}
+              sidebar nav ............ 200 / 138
+              search bar ............. 152 / 112
+              solutions grid ......... 146 /  77
+              trending + niche tiles . 172 / 118
+              top-bar topic strip .... 107 /  72
+              tool cards ............. 126 /  21
+              DESIGN WORKFLOWS ......... 7 /   4   <- was slot 3
 
+            Design workflows was the third section on the page and the least
+            clicked thing on it: seven step-tile clicks from four people in a
+            quarter, against 146 from 77 for the solutions grid that sat below
+            it. So the surfaces that earn clicks move up, and it moves down.
+
+            Demoted, not deleted. The section is server-rendered body copy and
+            it carries internal links to /topics/*, which this site is short of
+            (see the crawl findings in workstream-seo-smm-growth.md). The same
+            TopicWorkflow component also renders on /topics/[slug] and
+            /use-cases/[slug], so nothing here is its only home.
+
+            WARNING: this does NOT establish that workflows are unwanted. Their
+            "Run the whole workflow" button opens a coming-soon panel and runs
+            nothing, so the low count may be measuring a visible dead end rather
+            than absent demand. Re-read this after it does something. */}
         <HomeSolutionsGrid />
 
         <HomeToolsStrip />
+
+        {nicheTopics}
+
+        {designWorkflows}
 
         {discoveryStrip}
       </div>

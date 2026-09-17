@@ -84,6 +84,37 @@ const CALENDLY = "https://calendly.com/qqwjq9916/15-minute-meeting";
 // MBTI templates, not a partnership form.
 type OverrideCTA = Omit<CTA, "href"> & { href: string };
 const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
+  // 2026-09-16. REVERSAL, recorded on purpose. docs/interconnection.md:102,233
+  // deliberately gave this post NO override, so it fell through to the
+  // `video-translation-dubbing` default and sent readers to /tools/video-dubbing.
+  // That call was made when /tools/asl-video-translator was a paid demo landing
+  // over a placeholder job_type. It is now a live tool, free since 2026-08-29,
+  // and it is the site's largest single click source — 314 of 786 site clicks in
+  // the 28d to 09-15, at 14.4% CTR and position 8.5. Sending its own readers to a
+  // different tool is no longer defensible.
+  //
+  // The second CTA is deliberately NOT a partnership pitch. The recogniser scored
+  // WER 0.92 against human ground truth and every job ships stamped "unverified"
+  // (AslUnverifiedNotice); the honest second door is the one for people who need
+  // a translation they can actually rely on.
+  "asl-video-translator": [
+    {
+      id: "asl-translate-video",
+      label: "Translate an ASL video",
+      description:
+        "Free, no credits, no sign-in gate on the read. Output is AI-generated and labelled unverified — check it before you rely on it.",
+      href: "/tools/asl-video-translator",
+      Icon: Wrench,
+    },
+    {
+      id: "asl-verified-work",
+      label: "Need a verified translation?",
+      description:
+        "Human-checked sign language work is outside what this pipeline promises. Tell us what you need and we will say whether we can help.",
+      href: "/contact",
+      Icon: MessageCircle,
+    },
+  ],
   // 2026-09-15. Targets `wedding photo retouching` (90/mo, KD 20) and `portrait
   // photo retouching` (40/mo, KD 21, $13.16 CPC — the highest in the 09-15 pull).
   // The post deliberately tells the reader the incumbents are cheaper at the

@@ -18,10 +18,10 @@
       }
     },
     "metadata": {
-      "title": "Curify – Transformez les idées en pensée visuelle | IA & Localisation",
-      "description": "Curify est une plateforme de pensée visuelle alimentée par l’IA qui transforme tendances, idées et connaissances en contenus visuels structurés et partageables. Créez des infographies, cartes d’inspiration, sous-titres et vidéos traduites facilement.",
-      "ogTitle": "Curify – Transformez les idées en pensée visuelle",
-      "ogDescription": "Transformez tendances et idées en contenu visuel structuré. Cartes d’inspiration, infographies IA, traduction vidéo et outils de localisation — tout-en-un."
+      "title": "Curify AI — De l'idée au fichier finalisé | Curify Studio",
+      "description": "Curify AI transforme une idée en fichier de design finalisé : photos produit, maquettes d'emballage, retouche, tracés de découpe prêts à imprimer et traduction ASL.",
+      "ogTitle": "Curify AI — De l'idée au fichier finalisé",
+      "ogDescription": "D'une idée brute à un fichier prêt pour la production : photos produit, maquettes, retouche, tracés de découpe, sous-titres et traduction en langue des signes."
     },
     "hero": {
       "title1": "Ne faites pas qu'une image.",
@@ -223,26 +223,13 @@
     },
     "free_badge": "GRATUIT",
     "groups": {
-      "video": "Outils vidéo",
+      "video": "Outils vidéo et audio",
       "image": "Outils image",
-      "audio": "Outils audio",
       "design": "Design → Fabrication"
     },
     "video_transcript_generator": {
       "title": "Générateur de transcription vidéo",
       "desc": "Transformez la vidéo en transcriptions précises que vous pouvez éditer et réutiliser."
-    },
-    "youtube_subtitle_downloader": {
-      "title": "Téléchargeur de sous-titres YouTube",
-      "desc": "Téléchargez les sous-titres disponibles de YouTube en un clic."
-    },
-    "video_subtitle_extractor": {
-      "title": "Extracteur de sous-titres vidéo",
-      "desc": "Extraire les sous-titres intégrés en fichiers SRT/VTT éditables."
-    },
-    "translate_subtitles": {
-      "title": "Traduire les sous-titres",
-      "desc": "Traduisez SRT/VTT tout en préservant le timing et la structure."
     },
     "subtitle_converter": {
       "title": "Convertisseur de sous-titres",
@@ -256,21 +243,9 @@
       "title": "Résumé vidéo",
       "desc": "Générez des résumés concis et des points clés à partir de n'importe quelle vidéo."
     },
-    "storyboard_generator": {
-      "title": "Générateur de storyboard",
-      "desc": "Transformez les vidéos en notes et invites de storyboard scène par scène."
-    },
-    "image_translation": {
-      "title": "Traduction d'image",
-      "desc": "Traduisez le texte dans les images et reconstruisez la mise en page proprement."
-    },
     "manga_translation": {
       "title": "Traduction de manga",
       "desc": "Traduisez les panneaux de manga tout en gardant les bulles et la typographie lisibles."
-    },
-    "voice_clone": {
-      "title": "Clone de voix",
-      "desc": "Clonez une voix à partir d'un court extrait pour une narration cohérente."
     },
     "speech_translator": {
       "title": "Traducteur de discours",
@@ -551,18 +526,6 @@
         "title": "Générateur de transcriptions vidéo",
         "desc": "Transformez la vidéo en transcriptions précises que vous pouvez éditer et réutiliser."
       },
-      "youtube_subtitle_downloader": {
-        "title": "Téléchargeur de sous-titres YouTube",
-        "desc": "Téléchargez les sous-titres disponibles de YouTube en un clic."
-      },
-      "video_subtitle_extractor": {
-        "title": "Extracteur de sous-titres vidéo",
-        "desc": "Extraire les sous-titres intégrés en fichiers SRT/VTT modifiables."
-      },
-      "translate_subtitles": {
-        "title": "Traduire les sous-titres",
-        "desc": "Traduisez SRT/VTT tout en préservant le timing et la structure."
-      },
       "subtitle_converter": {
         "title": "Convertisseur de sous-titres",
         "desc": "Convertissez entre SRT, VTT, ASS et plus sans casser les horodatages."
@@ -575,21 +538,9 @@
         "title": "Résumé vidéo",
         "desc": "Générez des résumés concis et des points clés à partir de n'importe quelle vidéo."
       },
-      "storyboard_generator": {
-        "title": "Générateur de storyboard",
-        "desc": "Transformez les vidéos en notes et prompts de storyboard scène par scène."
-      },
-      "image_translation": {
-        "title": "Traduction d'images",
-        "desc": "Traduisez le texte dans les images et reconstruisez la mise en page proprement."
-      },
       "manga_translation": {
         "title": "Traduction de manga",
         "desc": "Traduisez les panneaux de manga tout en gardant les bulles et la typographie lisibles."
-      },
-      "voice_clone": {
-        "title": "Clone de voix",
-        "desc": "Clonez une voix à partir d'un court extrait pour une narration cohérente."
       },
       "speech_translator": {
         "title": "Traducteur de discours",
@@ -1002,7 +953,7 @@
     "why": {
       "title": "Pourquoi utiliser Curify pour la traduction vidéo ASL ?",
       "point1": "Automatique — pas d'étape d'interprète manuelle. Téléchargez une vidéo signée, obtenez des sous-titres en anglais.",
-      "point2": "Conçu pour le contenu, pas pour des démonstrations en laboratoire — gère les angles de caméra du monde réel, les styles de signature variés et le rythme conversationnel.",
+      "point2": "Utile pour un premier survol — une idée approximative du sujet d'un clip quand l'alternative est de n'avoir rien du tout. Cela ne remplace pas un interprète et ne devrait pas être publié sans relecture par une personne signante.",
       "point3": "Formats de sortie conçus pour la distribution : sous-titres intégrés, SRT pour YouTube, ou texte de transcription simple.",
       "point4": "Gratuit et expérimental. La traduction de la langue des signes est un problème difficile et non résolu : la sortie est une traduction automatique non vérifiée, souvent erronée. Vérifiez-la avec ce qui est signé avant de la publier."
     },
@@ -1022,9 +973,9 @@
       },
       "how": {
         "title": "Comment Curify traduit-il la vidéo ASL ?",
-        "p1": "Le processus se déroule en quatre étapes. Tout d'abord, la vidéo source est traitée image par image pour localiser le signataire, isoler le haut du corps et segmenter l'espace de signature — en éliminant le mouvement de fond qui ne fait pas partie du signe.",
-        "p2": "Deuxièmement, un encodeur visuel lit le flux visuel et produit une séquence d'embeddings sensibles aux signes : forme de la main, vecteurs de mouvement et les marqueurs non manuels (expression faciale, inclinaison de la tête, regard) qui changent un signe d'une déclaration en une question.",
-        "p3": "Troisièmement, une tête de traduction décode ces embeddings en texte anglais. Le décodeur est entraîné sur des corpus vidéo ASL-Anglais parallèles, il restructure donc la grammaire ASL en anglais naturel plutôt que de produire un glossaire littéral.",
+        "p1": "Le traitement comporte quatre étapes. D'abord, des images sont échantillonnées dans la vidéo source à intervalles réguliers : le système ne regarde pas la vidéo en continu, et ce seul fait explique l'essentiel de ce qui suit.",
+        "p2": "Deuxièmement, ces images échantillonnées sont lues par un modèle vision-langage généraliste. Autant être précis : il n'y a ici aucun composant spécifique à la langue des signes — pas de suivi de la forme des mains, pas de modèle de vecteurs de mouvement, rien qui ait été entraîné sur l'ASL. Le modèle décrit ce qu'il voit sur des images fixes.",
+        "p3": "Troisièmement, cette description est convertie en phrases anglaises. Comme le modèle lit des images échantillonnées plutôt que du mouvement continu, il ne restitue pas de manière fiable ce que l'ASL porte par le mouvement et par les marqueurs non manuels : direction, aspect, et la grammaire faciale qui transforme une affirmation en question. Lors d'un test de contrôle, nous lui avons donné le même clip lu à l'envers et il n'a rien remarqué. Considérez le résultat comme une supposition approximative du sujet, pas comme une traduction.",
         "p4": "Quatrièmement, le texte traduit est réajusté au timing source — chaque phrase anglaise est ancrée aux secondes de vidéo qui l'ont produite. Cela vous donne des sous-titres que vous pouvez directement intégrer dans un éditeur vidéo, ainsi qu'une exportation SRT qui se charge proprement dans YouTube.",
         "p5": "La démonstration de cette page est le pipeline réel appliqué à un clip conversationnel en ASL. Vos propres téléversements passent par le même pipeline, avec les mêmes limites."
       },

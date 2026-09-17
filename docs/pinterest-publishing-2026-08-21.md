@@ -1,19 +1,20 @@
 # Pinterest publishing — channel status, ledger, and runbook
 
-_Opened 2026-08-21, last updated 2026-09-08. Scope: publishing Curify template examples to
+_Opened 2026-08-21, last updated 2026-09-16. Scope: publishing Curify template examples to
 Pinterest via the v5 API.
 Code: `scripts/pinterest_oauth.cjs` (auth) · `scripts/pinterest_lib.cjs` (data, images, copy,
 IP screen, registry) · `scripts/pinterest_publish.cjs` (propose / plan / boards) ·
-`scripts/pinterest_demand.cjs` (GSC image-search demand → selection + copy).
+`scripts/pinterest_demand.cjs` (GSC image-search demand → selection + copy) ·
+`scripts/pinterest_lookalike.cjs` (similarity to what measurably earned → selection).
 Registry: `data/pinterest/pins.jsonl`. Plans: `data/pinterest/plan-<date>.json`.
 Prior context: `raw/pinterest-api-08-03/discussion.txt`._
 
 _Living status page for the channel. The dated strategic reasoning — why a batch was selected
 the way it was, and what its readout means — lives in `docs/workstream-seo-smm-growth.md`
-(§ 2026-09-04, § 2026-09-06, § 2026-09-08). This page answers "what is live right now, and how
-do I publish the next one."_
+(§ 2026-09-04, § 2026-09-06, § 2026-09-08, § 2026-09-16). This page answers "what is live right
+now, and how do I publish the next one."_
 
-## Status: LIVE. 60 campaign Pins across 9 boards (last updated 2026-09-08)
+## Status: LIVE. 75 campaign Pins across 10 boards (last updated 2026-09-16)
 
 Standard access was granted 2026-09-04, and the section below on Trial-tier limits is kept as
 historical measurement, not current constraint. Everything since is in the publishing ledger.
@@ -36,42 +37,74 @@ console.log(JSON.stringify(d,null,1), "total", r.length)'
 | 2026-09-04 | batch 1 | 20 | edtech 6 · ecommerce 5 · merch 4 · packaging 3 · brand 2 | board topic map, ranked by proximity to 2:3 |
 | 2026-09-05 | batch 2 | 10 | edtech 3 · ecommerce 3 · merch 2 · packaging 1 · brand 1 | same, `--per-template 2` to keep boards from going silent |
 | 2026-09-08 | batch 3 | 30 | edtech 8 · food 6 · travel 6 · beauty 5 · fashion 5 | **measured GSC image-search demand** (`pinterest_demand.cjs`) |
+| 2026-09-16 | batch 4 | 15 | interior 5 · merch 4 · edtech 2 · food 2 · travel 1 · fashion 1 | **visual similarity to the three Pins that measurably earned** (`pinterest_lookalike.cjs`) |
 
-**62 `ok` rows in the registry** = 60 campaign Pins + 2 demo Pins, across **40 distinct
-templates**. Account total is 89 including the 27 legacy `mbti-curify` Pins from 2026-03.
+**77 `ok` rows in the registry** = 75 campaign Pins + 2 demo Pins, across **44 distinct
+templates**. Account total is 104 including the 27 legacy `mbti-curify` Pins from 2026-03.
 
 Every batch was verified after publishing with a direct `GET /v5/pins/{id}` per row — media
 present, and `link` / `title` / `alt_text` byte-identical to the registry. Batch 3: 30/30.
+Batch 4: 15/15.
 
 > **`GET /v5/pins` is NOT a complete inventory.** The 2026-09-08 analytics pull listed 29 of the
 > 30 batch-1+2 campaign Pins; the missing one (`570831321549618861`, edtech) answers a direct
 > `GET /v5/pins/{id}` with 200, alive, media present. Reconcile against the registry, never
 > against the account listing.
 
-### Results so far — the number that matters is SAVE, and it is 0
+### Results — the 2026-09-16 readout. Saves are no longer 0, and the distribution is one Pin
 
-| cohort | Pins | 30d impressions | saves | pin clicks | outbound |
+Per-Pin `GET /v5/pins/{id}/analytics`, window 2026-08-25 → 2026-09-16, campaign Pins only
+(the two demo Pins earned 1 impression each and are excluded):
+
+| cohort | Pins | impressions | saves | pin clicks | outbound |
 |---|---:|---:|---:|---:|---:|
-| batch 3 (09-08) | 30 | — | — | — | — |
-| batches 1+2 (09-04/05) | 30 | **0** at T+4d | 0 | 0 | 0 |
-| legacy `mbti-curify` (03-11) | 27 | 199 | **0** | 12 | 1 |
+| batch 1 (09-04) | 20 | 11 | 0 | 1 | 0 |
+| batch 2 (09-05) | 10 | **607** | **6** | 9 | 0 |
+| batch 3 (09-08) | 30 | 2 | 0 | 0 | 0 |
+| batch 4 (09-16) | 15 | — | — | — | — |
+| legacy `mbti-curify` (03-11) | 27 | 199 | 0 | 12 | 1 |
 
-Zero impressions on batches 1+2 four days in is **not** reporting latency — that was the 09-06
-reading, and the number has not moved since. Batch 3 changed the variable (Pinterest-native
-boards, demand-ranked selection, search-phrase copy, explicit save CTA), so batches 1+2 are now
-the control arm and batch 3 the treatment, on one account a day apart.
+**Three Pins hold everything.** 620 of the 622 impressions and 6 of the 6 saves:
 
-**Next read ~2026-09-15**, on saves, not impressions. Save is the distribution signal here: a
-saved Pin gets fed out for months, which is exactly what the March Pins are still doing six
-months after the account last published. Non-zero saves on a new board → scale that board from
-its own inventory. Still zero on both arms → the creative or the surface is wrong, and no board
-taxonomy fixes it.
+| example | board | imp | saves | clicks |
+|---|---|---:|---:|---:|
+| `…fridge-magnet-collection-nanjing-landmarks` | merch | 586 | 3 | 5 |
+| `…category-guide-infographic-interior-design-styles` | edtech | 21 | 3 | 4 |
+| `…emoji-sticker-sheet-poster-empress-cow-cat` | merch | 11 | 0 | 1 |
+
+**Batch 3 — the demand-ranked treatment arm — is the worst cohort on the account: 2 impressions
+across 30 Pins.** The 09-08 hypothesis was that product-taxonomy boards were the problem and
+Pinterest-native boards named for search phrases would fix it. Measured, that is false, or at
+least far too weak to see. GSC image-search demand is not a proxy for Pinterest demand.
+
+> ⚠️ **The 586 is a coin flip, not a creative verdict.**
+> `…fridge-magnet-collection-yangzhou-landmarks` is the SAME template, the same layout and the
+> same board, published one day EARLIER, and it has **0 impressions**. Two near-identical Pins,
+> 586 and 0. Pinterest picked one and fed it. Impressions on n=1 measure the surface's choice.
+>
+> **Save RATE is the creative signal, and it reorders the winners.** Interior design styles took
+> 3 saves on 21 impressions — **14%**. Nanjing took 3 on 586 — **0.5%**. The thing worth copying
+> is the one almost nobody saw and that nearly one in seven of those who did saved.
+
+**What the three winners have in common is SHAPE, not subject: they are all collection grids** —
+many small repeated items in one frame (2x2 magnets, a 4x3 labelled photo grid, a 4x4 sticker
+sheet). No ranking tried so far could see this, because ratio measures the canvas and GSC
+measures the subject. Batch 4 selects on it directly.
+
+**Next read ~2026-09-30**, on saves. Batch 4's own question: does save rate hold up when the
+selection is grid-shaped by construction, and does a home-decor board — Pinterest's largest
+native category, and where the 14% save rate came from — beat the nine boards that preceded it.
 
 ### How to publish the next batch
 
 ```bash
-node scripts/pinterest_demand.cjs --pull                    # refresh the GSC demand snapshot
+# look-alike selection (batch 4 onward) — rank by similarity to what measurably earned
+node scripts/pinterest_lookalike.cjs --n 40 --per-template 2 > plan.json
+
+# or demand selection (batch 3) — kept, but it produced the worst cohort on the account
+node scripts/pinterest_demand.cjs --pull
 node scripts/pinterest_publish.cjs --propose --board <key> --n 40 > plan.json
+
 #   -> open every local_path and LOOK at the image; replace each ip_review: PENDING
 node scripts/pinterest_publish.cjs --plan plan.json --limit 1 --max 30   # smoke test, expect 201
 node scripts/pinterest_publish.cjs --plan plan.json --max 30 --delay 20
@@ -138,17 +171,24 @@ ticked, and it looks perfectly healthy (`GET /v5/boards` 200) right up until the
 
 | key | board name | id | Pins | links to |
 |---|---|---|---:|---|
-| edtech | Educational Posters & Study Infographics | 570831390209279196 | 17 | `/topics/learning` |
+| edtech | Educational Posters & Study Infographics | 570831390209279196 | 19 | `/topics/learning` |
 | ecommerce | Product Photography & Ecommerce Listing Templates | 570831390209279199 | 8 | **`/topics/product`** |
-| merch | Merch & Print-on-Demand Design Templates | 570831390209279192 | 6 | `/topics/merch` |
-| food | Food Infographics & Nutrition Charts | 570831390209281055 | 6 | `/topics/food` |
-| travel | Travel Journals, Maps & Trip Planning | 570831390209281056 | 6 | `/topics/travel` |
+| merch | Merch & Print-on-Demand Design Templates | 570831390209279192 | 10 | `/topics/merch` |
+| food | Food Infographics & Nutrition Charts | 570831390209281055 | 8 | `/topics/food` |
+| travel | Travel Journals, Maps & Trip Planning | 570831390209281056 | 7 | `/topics/travel` |
+| fashion | Fashion Illustration & Outfit Ideas | 570831390209281054 | 6 | `/topics/fashion` |
 | beauty | Nail Art, Hairstyles & Skincare Routines | 570831390209281053 | 5 | `/topics/beauty` |
-| fashion | Fashion Illustration & Outfit Ideas | 570831390209281054 | 5 | `/topics/fashion` |
+| **interior** | **Interior Design Mood Boards & Material Palettes** | **570831390209281897** | **5** | **`/topics/interior`** |
 | packaging | Packaging Design Mockups & Label Templates | 570831390209279197 | 4 | `/topics/packaging` |
 | brand | Brand Identity & Logo Design Boards | 570831390209279198 | 3 | `/topics/branding` |
 | mbti | mbti-curify *(legacy, 2026-03)* | 570831390209262804 | 27 | `/topics/mbti` |
 | demo | Curify AI Design Templates 2026-08-29 *(not a target)* | 570831390209280001 | 2 | `/nano-template/custom-character-card` |
+
+`interior` was created 2026-09-16. It exists because the highest SAVE RATE on the account —
+3 saves on 21 impressions — belongs to an interior-design style guide, and there was no board
+for it: the interior mood-board templates match no `BOARD_TOPICS` entry at all, so the proposer
+had never been able to offer one. `/topics/interior` was verified 200 with no redirect before
+the board was created (`/topics/interior-design` and `/topics/decor` are 404).
 
 All PUBLIC. The bottom four keys — beauty, fashion, food, travel — were created 2026-09-08
 because the first five are our *product taxonomy* ("Packaging Design Mockups & Label Templates")
@@ -210,15 +250,36 @@ trademark / right-of-publicity exposure on a commercial account linking to our p
 original subjects. Note `/topics/merch` itself currently renders Messi, Andrew Tate, Coca-Cola
 and Van Gogh/MFA Boston — worth weighing before using it as a demo or landing shot.
 
-> **Confirmed the hard way across three batches. The human visual pass is mandatory and is the
+> **Confirmed the hard way across four batches. The human visual pass is mandatory and is the
 > binding constraint on this channel.** Rejection rate 27% (6/22) on batch 1–2, 23% (9/39) on
-> batch 3, and **only 1 of those 9 was visible in metadata**. What the automated layers missed:
+> batch 3, 25% (5/20) on batch 4, and **not one of batch 4's five was visible in metadata**.
+> What the automated layers missed:
 > `NIIMBOT B21` on a diffuser · Busan's `BOOGI` mascot · a poster crediting "Civil Navigator" ·
 > Stella McCartney set in artwork · Canva placeholder text · a third-party "the little shine"
 > watermark inside a chart's stock photo · **"Nikon" on the camera in 3 of 4 travel-journal
 > renders** · a Yankees "NY" + New Era cap · García Márquez credited on a book cover.
 > Rejections are recorded permanently in `IP_REJECTED_EXAMPLES` / `IP_REJECTED_TEMPLATES` so the
 > same image cannot be re-proposed.
+>
+> **Batch 4, 2026-09-16 — a new failure mode, and it is the worst one yet: OUR RENDER CARRIES
+> SOMEONE ELSE'S WATERMARK.** Two of the five rejections were third-party watermarks reproduced
+> by the generation model from its source material, sitting inside an image we would otherwise
+> have published as our own work: **"LEN'S decor 0908901489"** — another studio's mark *and phone
+> number* — across the hero render of `…soft-decoration-design-guide-bohemian-wabi-sabi-bedroom`,
+> and a grey CJK watermark box in the corner of `…brand-vi-full-visual-pack-mockup-mika-cat-bakery`.
+> Neither appears anywhere in metadata. This is the same class as batch 3's "the little shine",
+> and it is now clearly recurring rather than a one-off: **check all four corners and the lower
+> third of every hero photograph at full resolution.** The other three were `MICHELIN STAR` with
+> the red Michelin flower drawn into a France culture poster (plus garbled labels — "KINGOFR",
+> "EUROVAL CULURY"), `#9 Lotte Tower` captioned in a South Korea top-10, and — the one to
+> remember — a Korea souvenir poster whose **item #10 is literally "BTS Merchandise"**, wordmark
+> on the light sticks and members' faces on the photocards. `bts`, `blackpink`, `michelin`,
+> `lotte` and `chamisul` are now in `IP_NAMES`, but the list always lags; that is the point.
+>
+> **Typos are a rejection too.** `…country-souvenirs-watercolor-japan` misspells "Stationery" as
+> "Statonery" and applies it to two different rows — one of them sweets — and prints "Inspire
+> Goals" twice. Same standard as the Canva placeholder text: on a Pin whose entire premise is a
+> clean readable list, broken copy reads as an unfinished template.
 >
 > **Two related screen rules learned 2026-09-08.** (a) The IP screen must **not** read
 > `search_aliases` for its *category* words — aliases are phrases people type, and

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { useRequireAuth } from "@/services/useRequireAuth";
 
@@ -83,6 +83,22 @@ export default function InspirationHubClient({
   const handleOpenModal = useCallback((card: InspirationCardType) => {
     setModalState({ isOpen: true, card });
   }, []);
+
+  // Deep link from a shared card: /inspiration-hub?card=<id> opens that card.
+  // Share used to hand out /i/<id>, a route deleted 2026-03-26 with no redirect
+  // (75 of them turned up in the 2026-09-17 GSC 404 report), so the share URL
+  // now points here and this is what makes it land on the right card rather
+  // than the top of the grid. Runs once: if the id is unknown the hub just
+  // renders normally, which is the correct fallback for an aged-out card.
+  const deepLinked = useRef(false);
+  useEffect(() => {
+    if (deepLinked.current) return;
+    deepLinked.current = true;
+    const id = new URLSearchParams(window.location.search).get("card");
+    if (!id) return;
+    const match = cards.find((c) => String(c.id) === id);
+    if (match) setModalState({ isOpen: true, card: match });
+  }, [cards]);
 
   const handleCloseModal = useCallback(() => {
     setModalState((prev) => ({ ...prev, isOpen: false }));

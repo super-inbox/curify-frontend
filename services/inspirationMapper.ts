@@ -51,9 +51,24 @@ export function mapDTOToUICard(row: InspirationCardDTO): InspirationCardUI {
   const preview = row.preview_image_url?.trim();
   const copyPayload = buildCopyPayload(row);
 
-  // ✅ choose one canonical share url (permalink best)
-  // If you have /[locale]/i/[id], use that. Otherwise fallback to hash.
-  const shareUrl = `/i/${row.id}`;
+  // Share target. This used to be `/i/${row.id}`, pointing at
+  // InspirationPermalinkPage — a route DELETED in ae151a6a (2026-03-26) with no
+  // redirect. The comment here ("if you have /[locale]/i/[id], use that") was a
+  // conditional nobody resolved afterwards, so while this path was live the
+  // Share button handed out a link to a page that does not exist. 75 of those
+  // URLs are in the 2026-09-17 GSC "Not found (404)" report.
+  //
+  // ⚠️ This whole chain is UNREACHABLE today: mapDTOToUICard has no callers,
+  // nor does inspirationService, nor does InspirationHubClient. So this is not
+  // a live bug — it is a disarmed landmine, fixed so that reviving the surface
+  // does not re-emit dead URLs. The live half of the fix is the /i/:id 301 in
+  // next.config.ts, which is what the already-shared links need.
+  //
+  // The hub is the right destination — these cards are backend inspiration
+  // rows, not templates, so there is nothing else to point at. `?card=<id>`
+  // keeps the share specific: InspirationHubClient opens that card on load.
+  // Path-only; InspirationCard.getShareUrl() makes it absolute + locale-correct.
+  const shareUrl = `/inspiration-hub?card=${encodeURIComponent(row.id)}`;
 
   return {
     id: row.id,

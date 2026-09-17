@@ -280,6 +280,11 @@ const BOARD_COPY = {
     description: "Fruit nutrition infographics, coffee and dessert variety charts, wine guides and illustrated recipes — the visual kind you actually keep." },
   travel:    { name: "Travel Journals, Maps & Trip Planning",
     description: "Watercolor travel journal spreads, 3D landmark maps, city miniatures and packing guides for planning and scrapbooking a trip." },
+
+  // Batch 4, 2026-09-16 — see the comment on BOARDS.interior in
+  // pinterest_lib.cjs for why this board exists.
+  interior:  { name: "Interior Design Mood Boards & Material Palettes",
+    description: "Room-by-room interior design mood boards — bedroom, kitchen, bathroom, home office and nursery — with the real material and colour palette behind each look: marble, oak, brass, terrazzo, velvet and linen." },
 };
 
 async function patchBoards({ dry }) {

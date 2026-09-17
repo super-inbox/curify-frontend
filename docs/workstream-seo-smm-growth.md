@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-09-12.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-09-17.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -2671,6 +2671,10 @@ cause 1 as dominant and promotes Phase 2.
   safe to trim: the only client readers of `topics.*` are `TopicNavRow:124`, `SearchBar:141` and
   `SearchResultsClient:115`, and **all three read only `<slug>.displayName`**. Sequence and the
   6-blog regression check are in the plan file.
+  > **2026-09-17 — a second, independent reason, and it changes what Phase 2 is for.** The payload
+  > is not only a near-duplicate-bytes problem, it is a **URL-discovery surface**: Google is
+  > crawling `/topics/*` paths that appear *only* in the flight payload and in no anchor. Fold the
+  > topic-path filter into this pass. See §2026-09-17.
 - **Cause 2 (topic hubs) is not fixed.** Prefer aliasing dead content topics onto live hubs over
   minting thin new pages (`project_new_page_crawl_collapse`).
 - **`guides` and `comparison` sit in `CONTENT_SIGNAL_TOPICS` but behave like style tags.** The
@@ -3071,11 +3075,14 @@ treatment, on the same account, a day apart.
 - `docs/programmatic-seo-topic-hubs.md` — SEO programmatic framework
 - `docs/interconnection.md` — cross-link layer
 - `docs/blog-quality.md` — blog editorial track
+- `docs/education-cluster-audit-2026-09-16.md` — **education cluster: 22 of 22 target terms at zero.** The 14-week readout on the 06-10 flashcard/learning batch (~14,000 projected vol/mo → 1 click/28d), plus the live analytics, the static-metadata title trap and the five 404 education hubs
+- `raw/curify-ai.com-Coverage-Drilldown-2026-09-17/` — the 539-URL GSC 404 export behind §2026-09-17 (RSC payload as a URL-discovery surface)
 - `~/curify-studio/curify_background/app/crud/admin.py` — growth analytics queries
 - `~/curify-studio/curify_background/app/utils/autopost_utils.py` — SMM autopost
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
 - `docs/pinterest-publishing-2026-08-21.md` — Pinterest channel writeup; registry at `data/pinterest/pins.jsonl`
 - `scripts/pinterest_demand.cjs` — GSC-by-search-type → per-template demand score + copy phrase; snapshots in `data/pinterest/demand-*.json`
+- `scripts/pinterest_lookalike.cjs` — selection by similarity to the Pins that measurably earned (batch 4 onward, 2026-09-16); supersedes demand ranking as the default, which it demotes to the tie-break
 - `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
 - `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
 - `raw/agent-skills-08-31/design-skills.txt` — the TypeUI read: upgrade the prompt/template library along Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill rather than extending it. (Replaces a citation to `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md`, which was never written — verified absent 2026-09-01.)
@@ -3283,3 +3290,537 @@ with a skill behind it, and has **zero public surface**.
 - **Not measured:** no GSC pull was done for `curify photo retouching` itself — impressions and
   position for the query are unknown. Brand+intent volume is probably negligible; the finding
   that generalises is the homepage description, not this one query.
+
+---
+
+## 2026-09-16 — Pinterest readout: the winners are a SHAPE, the headline number is a coin flip
+
+The ~09-15 readout the 09-08 section scheduled. First non-zero numbers on the channel, and they
+overturn both of the rankings that produced them. Per-Pin `GET /v5/pins/{id}/analytics` across
+all 62 live Pins, window 08-25 → 09-16, campaign Pins only.
+
+| cohort | Pins | impressions | saves | pin clicks | outbound |
+|---|---:|---:|---:|---:|---:|
+| batch 1 (09-04, ratio-ranked) | 20 | 11 | 0 | 1 | 0 |
+| batch 2 (09-05, ratio-ranked) | 10 | **607** | **6** | 9 | 0 |
+| batch 3 (09-08, demand-ranked) | 30 | **2** | **0** | 0 | 0 |
+| legacy `mbti-curify` (03-11) | 27 | 199 | 0 | 12 | 1 |
+
+### Three findings, in descending order of how much they should change behaviour
+
+**1. Batch 3 failed, and it was the treatment arm.** 30 Pins, 2 impressions, 0 saves — the worst
+cohort on the account, worse than the control it was built to beat. The 09-08 hypothesis was that
+product-taxonomy board names were suppressing distribution and that Pinterest-native boards plus
+GSC-demand-ranked selection would fix it. Measured: no. **GSC image-search demand does not
+transfer to Pinterest.** It was the right instinct — rank on evidence of wanting, not on canvas
+shape — applied to evidence from a different surface. `pinterest_demand.cjs` stays in the repo
+and stays out of the default path.
+
+**2. The 586 is not a creative verdict. It is the surface's coin flip.**
+`…fridge-magnet-collection-nanjing-landmarks` earned 586 impressions. Its sibling
+`…-yangzhou-landmarks` — same template, same layout, same merch board, published one day
+earlier — earned **0**. Two near-identical Pins, 586 and 0. On n=1, impressions measure which
+Pin Pinterest decided to feed, not which Pin is better.
+
+⚠️ **This invalidates reading impressions as a creative signal at this volume, and it applies
+retroactively to every judgement made on this channel so far, including the 09-06 conclusion
+that batches 1+2 had "failed".** 30 Pins is not enough to average out a distribution lottery.
+
+**Save rate is the signal, and it reorders the winners:**
+
+| example | imp | saves | save rate |
+|---|---:|---:|---:|
+| `…category-guide-infographic-interior-design-styles` | 21 | 3 | **14.3%** |
+| `…fridge-magnet-collection-nanjing-landmarks` | 586 | 3 | 0.5% |
+
+The thing worth copying is the one almost nobody saw, where nearly one in seven who did saved it.
+
+**3. What the three earners share is SHAPE, not subject.** All three are **collection grids** —
+many small repeated items in one frame: a 2x2 of souvenir magnets, a 4x3 labelled photo grid of
+interior styles, a 4x4 sticker sheet. Neither ranking could see this. Ratio measures the canvas;
+GSC measures the subject. Nothing measured the composition.
+
+### What shipped — batch 4, 15 Pins
+
+`scripts/pinterest_lookalike.cjs`, a third selection basis: IDF-weighted cosine over tags and
+topics against the three measured earners, same-template siblings scored as exact matches,
+demand demoted to the tie-break. Same plan-row output, so `--plan` and its `ip_review` gate
+consume it unchanged.
+
+- **interior 5 · merch 4 · edtech 2 · food 2 · travel 1 · fashion 1.** 15/15 published 201 and
+  verified by direct `GET /v5/pins/{id}`.
+- **New board: `interior` — "Interior Design Mood Boards & Material Palettes"**
+  (`570831390209281897` → `/topics/interior`, verified 200 no-redirect). The best-saving Pin on
+  the account is an interior style guide and there was **no board for it**: the interior
+  mood-board templates match no `BOARD_TOPICS` entry, so the proposer had never been able to
+  offer one. Home decor is also Pinterest's largest native category. This is the first board
+  created from a measured result rather than a taxonomy argument.
+- **Service-oriented inventory is now on the channel.** Five of the 15 are interior mood boards —
+  a photoreal room over its real material and colour palette, which is the artifact an interior
+  service delivers, not a poster about one.
+
+### Two things the batch could not do
+
+- **Portrait retouching (`template-portrait-retouching-blueprint`) is not publishable as-is.**
+  Its five examples are **ratio 1.79** — landscape before/after pairs — against a hard 0.55–0.80
+  filter, so they fail on shape before any other question. And the template is
+  `image_input: "required"`: the faces come from a real reference photo, which makes a public
+  commercial Pin a right-of-publicity question, not the model-generated-face policy call settled
+  on 09-08. **Both would have to be answered separately; a portrait-canvas re-render alone does
+  not clear the second.**
+- **`…global-city-walkability-…-second-group-8cities` was dropped after approval.** The image is
+  clean, but the only subject its metadata can produce is the enumeration phrase "Second Group
+  8cities" — an id artifact, not a subject, and the standing rule is that a Pin whose subject we
+  cannot name is not published. New artifact class, not covered by `cleanSubject`.
+
+### Two code fixes the batch forced
+
+- `titleCase` sentence-cased acronyms — "Curi **Ai** Robot Mood **Ip** Emoji Sticker Sheet" — on
+  3 of 15 rows. Fixed with an explicit `ACRONYMS` set (`ai`, `ip`, `hsk`, `asl`, `mbti`, …)
+  rather than a general rule, so no word is invented out of a coincidence.
+- Six examples added to `IP_REJECTED_EXAMPLES`; `bts`, `blackpink`, `michelin`, `lotte`,
+  `chamisul` added to `IP_NAMES`.
+
+### Visual review: 5 rejected of 20, and NOT ONE was visible in metadata
+
+25%, in line with 27% and 23% on the previous batches. The new failure mode is the serious one:
+
+**Our own render carried someone else's watermark, twice.** `LEN'S decor 0908901489` — a rival
+studio's mark *and phone number* — across the hero photograph of a soft-decoration guide, and a
+grey CJK watermark box in the corner of a brand-VI board. The generation model reproduced the
+watermark from its source material. Same class as batch 3's "the little shine", so it is
+recurring, not a one-off: **check all four corners and the lower third of every hero photograph
+at full resolution.** Publishing either would have put another business's phone number on our
+commercial account.
+
+The other three: `MICHELIN STAR` + the red Michelin flower drawn into a France culture poster
+(with garbled labels — "KINGOFR", "EUROVAL CULURY"); `#9 Lotte Tower` in a South Korea top-10;
+and a Korea souvenir poster whose **item #10 is "BTS Merchandise"** — wordmark on the light
+sticks, members' faces on the photocards.
+
+### Open
+
+- **Next read ~2026-09-30, on save rate, not impressions.** Batch 4's question: does save rate
+  hold when the selection is grid-shaped by construction, and does the interior board beat the
+  nine that preceded it? ⚠️ Read it as save-per-impression. Given Yangzhou vs Nanjing, a single
+  large impression number means nothing at this volume.
+- **Impressions are now known to be an unreliable signal below ~n=50/cohort.** Any future
+  conclusion drawn from them on this channel needs that caveat attached, including revisiting
+  whether batches 1+2 ever actually "failed".
+- **Still open, unchanged:** claim the domain and enable Rich Pins (cheapest thing left, nothing
+  blocks it); backfill the 27 legacy `mbti-curify` Pins with deep links and alt text — the
+  09-15 readout they were being held for has now happened, so the control-arm objection has
+  expired.
+- **Retouching still has no publishable surface here** — see above. It is the same gap the 09-12
+  section names from the SEO side: the capability is built, the public surface is not.
+
+---
+
+## 2026-09-16 — five overdue readouts collected, and the pessimism was mostly wrong
+
+Everything below is measured, from two fresh pulls
+(`raw/curify-ai.com-Performance-on-Search-2026-09-16/`, web, 2026-08-19 → 09-15;
+`data/pinterest/demand-2026-08-19_2026-09-15.json`, image) and a 108-blog URL-Inspection sweep
+(`raw/blog-foldscan-2026-09-16.tsv`) plus a 14-URL crawl check
+(`raw/crawl-check-2026-09-16.txt`). **Nothing on disk was newer than 2026-08-29 before today** —
+every conclusion in the 09-04 → 09-12 sections was drawn on a window that ended two and a half
+weeks earlier.
+
+### First, the number that reframes the rest: the site is up, hard
+
+Week over week, finalized days only, same file:
+
+| window | clicks | impressions | CTR |
+|---|---:|---:|---:|
+| 2026-08-31 → 09-06 | 126 | 5,321 | 2.37% |
+| **2026-09-07 → 09-13** | **330** | **8,480** | **3.89%** |
+| | **+162%** | **+59%** | **+1.5pt** |
+
+Daily position ran 28.6 (08-29) → 11.6 (09-13), and the two unfinalized days (09-14, 09-15) sit
+at 83 and 47 clicks. Per-page against the 08-02 → 08-29 window (⚠️ the windows overlap by 11
+days, so read the direction, not the multiple): 278 → 666 page-attributed clicks, 13,865 →
+26,287 impressions.
+
+**The 09-06 section called the 08-31 expansion "a vanity metric" because impressions rose while
+clicks stayed flat. That was true for two weeks and is not true now** — clicks followed, with a
+lag. The locale-prefixed share did not decay either: 1,450 → 2,247 URLs earning impressions, 32%
+→ 40% of impressions but only 14% of clicks (down from 19%). So locale pages remain dilutive per
+impression and are no longer costing anything in absolute terms.
+
+### 1. Crawl checkpoint (due 09-15) — **PASS.** Tier 4 is unblocked.
+
+| URL | state | last crawl | impressions 28d |
+|---|---|---|---:|
+| `/tools/die-cut-sticker-file` | **Submitted and indexed** | 2026-09-10 | 23 (pos 40.1) |
+| `/tools/acrylic-factory-export` | **Submitted and indexed** | 2026-08-25 | 5 (pos 6.2) |
+
+Both were *never crawled* at the 08-18 submission. The `564ff33c` link fix (die-cut 1 → 4
+inbound, acrylic 1 → 3) and the 08-31 `TOOL_RELATED_TOOLS` pass took them the whole way:
+link → crawl → index → impressions.
+
+**This settles the question the checkpoint was written to answer.** Line 321's inbound-link
+theory is correct; the domain-authority reading it was tested against is not needed. The Tier-4
+gate that has been blocking the on-model surface, the `costume design template` surface and
+every `/tools/*` wrapper since 09-01 is **lifted**.
+
+⚠️ It also retires the reproach at line 1454. `/tools/wedding-photo-editing` and
+`/use-cases/for-photographers` shipped 09-15 ahead of this gate; the gate has now passed, so that
+was lucky rather than wrong — and `/tools/wedding-photo-editing` is already
+**"Submitted and indexed", crawled 09-15**, the same day it shipped.
+
+### 2. The blog fold is FIXED — and the 09-09 verdict was read against two crawls that never saw the fix
+
+Full 108-blog sweep:
+
+| state | n |
+|---|---:|
+| Submitted and indexed | **58** |
+| Duplicate without user-selected canonical | 34 |
+| Crawled – currently not indexed | 14 |
+| Discovered / unknown | 2 |
+
+Of the 34 "Duplicate" rows, **one (`storyboard-to-pipeline`) reports `googleCanonical` == itself**
+— it is the chosen canonical of its own cluster, not folded. So **33 real folds**: 29 → `/`, and
+one each → `/tools/packaging-mockup`, `/nano-banana-pro-prompts`, `/blog/`,
+`/use-cases/for-parents`.
+
+**The decisive split. 31 of the 33 were last crawled before 2026-09-01.** The two that were not:
+
+| post | last crawl | vs the canonical fix (main 2026-09-01 06:37 UTC) |
+|---|---|---|
+| `url-to-product-video` | 2026-09-01 **02:53** | **3h44m BEFORE the merge** |
+| `ghost-mannequin-ai-guide` | 2026-09-01 **06:47** | +10 min — a production build takes ~20 |
+
+**These are the exact two posts the 09-09 section used to declare "the fold survives the fix."
+Neither of them saw the fixed HTML.** The 09-02 correction had already worked out the right
+boundary and the right caveat; the 09-09 read applied the boundary and then ignored the caveat on
+the only page it mattered for.
+
+Now the positive control, which 09-09 did not have. **Twenty blogs have been crawled on or after
+2026-09-02. Nineteen are "Submitted and indexed"; the twentieth is the self-canonical
+`storyboard-to-pipeline`. Zero real folds.** Including:
+
+- `/blog/wedding-photo-retouching-cost` — **published 09-15, crawled 09-15, indexed, self-canonical.**
+  A brand-new post did not fold. That is the cleanest available test and it came back clean.
+- `dieline-generator-guide` — un-folded (indexed 09-02) and **now earning 76 impressions and its
+  first click** (12 web + 64 image). The 09-01 audit's "zero impressions, cannot rank as itself"
+  is no longer true, and B2 is not the write-off it was recorded as.
+- `world-cup-2026-ai-prompt-hub`, `best-ai-tools`, `50-ai-makeover-prompts`, the three soccer
+  poster posts — all recrawled this month, all clean.
+
+**Consequences:**
+
+1. **Lift the blog-publishing hold.** It was justified by a live ~1-in-3 fold rate. The measured
+   post-fix rate is 0 of 19. **B3 `what is a tech pack` (90/mo, KD 1) is unblocked.**
+2. **The 31 stale folds need recrawls, not debugging.** Natural crawl rate is now healthy — 20
+   blogs revisited in a fortnight — so this clears itself. Do not spend Indexing-API quota on it;
+   09-09 already established pings do not force recrawls here.
+3. **The 10-13 low-KD readout is still confounded.** `ghost-mannequin-ai-guide` is folded onto
+   `/tools/packaging-mockup` on a 09-01 crawl and has 0/0 impressions. Request Validate Fix on it
+   now — six days of recrawl latency is the difference between a readable 10-13 and another
+   falsification-on-a-confound.
+
+### 3. Impression decay re-read (due 09-13) — no decay
+
+The 09-06 section flagged 890 → 662 → 557 and asked whether the 08-31 expansion was decaying.
+It was not: daily impressions ran 916 (09-06) → 1,230 → 1,371 → **1,469** (09-13). The three-day
+dip was noise.
+
+### 4. A1/B1 30-day (due 09-17, read a day early) — A1 alive, B1 dead
+
+Counting both surfaces, as the 09-01 audit required:
+
+| post | web i/c | image i/c | total impr | vs 09-01 audit |
+|---|---|---|---:|---|
+| A1 `best-claude-code-design-skills` | 84/1 | 142/1 | **226** | 135 → 226, **+68%** |
+| B1 `character-turnaround-sheet-guide` | 11/0 | 11/0 | **22** | 27 → 22, flat/down |
+
+A1 is still climbing and has cleared the ~100-impression bar the 10-17 gate sets, at 30 days
+rather than 60. **Tier-3 item 7's condition ("write A2 only if the 09-17 re-pull shows A1 still
+climbing") is met.** A1 sits at web position 35.3 with 2 clicks, so this is an impressions
+result, not a traffic one — but it is the condition as written.
+
+B1 is flat on both surfaces after a month. Cluster B's remaining value is B3, not B1's line.
+
+### 5. MBTI creation-intent (due 09-20, read early) — a clean zero, and this one is real
+
+| query | impr (prior → now) | position | clicks |
+|---|---|---:|---:|
+| `random mbti generator` | 103 → **130** | 6.1 | **0** |
+| `mbti character maker` | 3 → **16** | 6.3 | **0** |
+| `mbti randomizer` | 11 → 12 | 7.2 | **0** |
+| `mbti avatar maker` | 2 → 9 | 6.4 | **0** |
+
+Impressions up, position holding at ~6, **zero clicks across all four, both windows**. And this
+is not a "the fix has not been crawled yet" excuse: `/blog/mbti-character-generator` was
+**crawled 2026-09-15**, and prod serves the rewritten title
+*"Random MBTI Generator — Spin Any of the 16 Types"* with `MbtiRandomizer` on the page.
+
+So both attempts have now failed: the in-page widget (`MbtiUniversePicker`, 08-21) and the
+SERP-listing rewrite (08-30). The 08-30 diagnosis was that the listing promised a catalogue while
+the SERP wanted a one-press widget. The listing now promises the widget, the widget exists, and
+the CTR is still 0.00% at position 6. **Stop spending on this cluster.** Whatever is taking the
+click at position 1–5 is not addressable by anything on our page or in our snippet.
+
+### 6. ASL is now the site, and it is a cluster, not a query
+
+| page | clicks | impr | CTR | pos |
+|---|---:|---:|---:|---:|
+| `/tools/asl-video-translator` | **314** | 2,178 | **14.42%** | 8.5 |
+| `/es/blog/asl-video-translator` | 31 | 287 | 10.80% | 6.9 |
+| `/blog/asl-video-translator` | 8 | 271 | 2.95% | 28.3 |
+| `/ru/`, `/es/` tool variants | 6 | 21 | — | — |
+
+**359 of 666 page-attributed clicks (54%), or 46% of the 786 site total.** Up from 96 clicks in
+the 08-02 → 08-29 window. The tool page alone went 79 → 314 clicks and 13.6 → 8.5 position with
+no ASL-specific SEO work since 09-09.
+
+It is not one query. Fifteen-plus distinct variants rank at position 4–14, several converting far
+above curve: `free asl video translator` **30.3% at pos 4.1**, `asl video to text translator`
+26.1% at 6.3, `translate sign language video to english` 20.8% at 6.6.
+
+**Two things to record:**
+
+1. **The blog cannibalizes the tool on the head term.** `asl video translator`:
+   `/tools/asl-video-translator` at pos 13.9 (33 clicks) *and* `/blog/asl-video-translator` at
+   pos 38.8 (1 click from 70 impressions) — two of our URLs, one SERP, on the site's single
+   biggest query. The tool↔blog links shipped today are the consolidation move; read it at the
+   next pull.
+2. **We rank for the reverse direction we cannot serve.** `text to sign language video` and
+   `text to sign language video ai` land on the tool, which only goes video → text.
+
+⚠️ **Two claims in this doc about ASL were stale and are corrected in place below.** And the
+conversation this changes: the "hold the cluster" decision taken this morning rests on
+`asl-translation-mvp-spec.md:523` — 7 users, 8 jobs, 0 repeats — which was measured
+**2026-08-17 → 08-23, before the tool went free and before the unverified notice shipped on
+08-29**. That evidence is now a month old and predates two material changes. It should be
+re-measured before it is used to justify holding anything.
+
+### What shipped today
+
+Two commits, neither of which creates a URL, so neither collides with 09-17 / 09-20 / 09-22 /
+09-23.
+
+- **`fix(seo): the homepage sold the old product, and the top page linked nowhere`** — homepage
+  `title`/`description` in 10 locales (Google was discarding the authored description and
+  composing the snippet from `tools.ai_product_photo_generator.desc`, the diagnostic that it did
+  not describe the page); `TOOL_BLOG_CATEGORIES` + `TOOL_PINNED_BLOGS` entries for
+  `asl-video-translator`, which had none and rendered no related reading at all; the reverse
+  `USE_CASES[].toolSlugs` edge that `TOOL_PERSONAS` has claimed since the tool shipped; a
+  `BlogCTACard` override so the ASL post stops sending its readers to `/tools/video-dubbing`
+  (**a deliberate reversal of `docs/interconnection.md:102,233`** — that call was made when the
+  ASL tool was a paid demo over a placeholder `job_type`); and inbound links to
+  `/blog/wedding-photo-retouching-cost` from the two candidates that came back indexed, inserted
+  at index 1 because only the first three `relatedLinks` render.
+- **`fix(asl): the page described a model we do not have`** — `deep.how.p1/p2/p3` and
+  `why.point2` in 10 locales. `asl-translation-mvp-spec.md` §9.4 has carried this since 08-29:
+  the copy claimed "a vision encoder … sign-aware embeddings" and "a translation head … trained
+  on parallel ASL-English video corpora". Neither exists; it is a general VLM over sampled
+  stills. It now says that, states the consequence, and cites the frame-reversal control.
+
+`scripts/_foldscan.cjs` gained `--urls-file`. It hardcoded `blogs.json`, which is why the 09-15
+crawl checkpoint could not be run for three of the four times this doc has needed an arbitrary
+URL list.
+
+### ⚠️ The inbound-link rule was NOT met, and the post is fine anyway
+
+`/blog/wedding-photo-retouching-cost` needed ≥3 links from verified-indexed sources. URL
+Inspection today:
+
+| candidate | verdict |
+|---|---|
+| `/blog/50-ai-makeover-prompts` | Submitted and indexed ✅ |
+| `/blog/ai-makeover-templates` | Submitted and indexed ✅ |
+| `/nano-template/portrait-retouching-blueprint` | **folded to `/`** ❌ |
+| `/blog/preserve-facial-features-ai-generation` | **folded to `/`** ❌ |
+
+Two, not three — except `/tools/wedding-photo-editing` came back indexed on its 09-15 crawl, so
+the same-day link that was written off actually counts, and that makes three. Note what this
+does to the rule itself: **the precondition existed to stop new posts folding, and the post
+indexed clean on day one with zero qualifying links.** The rule should be re-derived from the
+fold being fixed, not carried forward unexamined.
+
+`/use-cases/for-photographers` is **"URL is unknown to Google" — never crawled.** It is the only
+09-15 ship that has not been picked up, and it is the KD-7 `outsource wedding photo editing`
+target. It needs a link from an indexed page, which is now a demonstrated lever.
+
+### Corrections to the record
+
+- **Line 1336 — "the product was closed 2026-08-18 and still charges 8 credits/min" is wrong.**
+  ASL has been **free since 2026-08-29** (`JOB_CREDIT_COST.ASL_TRANSLATION = 0`, tripwired in
+  `lib/__tests__/pricing.test.ts`), with `AslUnverifiedNotice` rendering on every result. Memory
+  `project_asl_closed` carries the same stale claim.
+- **The site-wide soft-404 (09-02) is confirmed fixed on prod.** `/blog/<nonexistent>` returns a
+  real HTTP 404; `/blog/how-to-translate-asl-video` 308s to the live post. ⚠️ Correcting my own
+  overstatement here: memory `project_sitewide_soft_404` already recorded the middleware fix in
+  its body — only its one-line description still asserted the site-wide 200, which is what recall
+  surfaces first. The description is fixed; the memory was not wrong.
+- **`dieline-generator-guide` is not "invisible with zero impressions."** Un-folded 09-02, 76
+  impressions, 1 click.
+
+### Open
+
+- **Request Validate Fix on `/blog/ghost-mannequin-ai-guide`** before 10-13, or that readout
+  falsifies the low-KD thesis on a fold rather than on difficulty.
+- **Give `/use-cases/for-photographers` an inbound link from an indexed page.** Never crawled.
+- **Re-measure the ASL funnel.** The 0-repeat number predates free + the unverified notice by a
+  month, and it is the only thing arguing against working the site's largest cluster.
+- **Consolidation read on the ASL tool↔blog links** at the next pull: does the blog stop
+  surfacing at pos 38.8 for `asl video translator`?
+- **`itachi mbti` now puts three of our URLs on one SERP** — `/de/` and `/es/` itachi examples
+  (79 + 17 impr) plus `/nano-template/mbti-naruto` (27), all at position 4–6, all zero clicks.
+  The 09-05 fix did surface the specific example, as designed; it surfaced the *localized* ones.
+  Feed this into the 10-03 readout rather than acting on it now.
+- **`nano.template-ecommerce-product-photography.category`/`.description` are MISSING_MESSAGE in
+  `en`** — found in the dev log while verifying today's ships. Pre-existing and unrelated; filed,
+  not fixed.
+- Unchanged and still open: homepage `<h1>` vs the new title (now consistent in pitch, not in
+  wording); `topics.*` Phase-2 payload trim; cause 2 (117 of 226 template topics 404).
+
+### Education, broken out — `docs/education-cluster-audit-2026-09-16.md`
+
+Pulled from the same two windows, filed separately because it is a cluster verdict rather than a
+site readout. Short version: **education CORE earns ~1,181 impressions and 4 clicks per 28 days**
+(0.6% of site clicks, against ASL's 359), and **all 22 target terms from the 2026-06-10
+flashcard/learning batch return zero impressions** — with the pages indexed and ranking, so it is
+not execution. The image half is 580 impressions at **0.000% CTR**, which is the MBTI shape on a
+cluster without MBTI's volume.
+
+Two findings there are not about education and belong in this doc's line of work:
+
+1. **Six dedicated blog routes carry a hardcoded `export const metadata`, and two have drifted
+   from their i18n title** — `visual-learning-tools` (the 06-10 batch's 4,400/mo head term, logged
+   as retitled 14 weeks ago, still serving the old string) and `character-prompt-generator`. One
+   line each: `dedicatedBlogMetadata("<slug>")`, the helper
+   `weird-science-facts-classroom-engagement` already uses. Held until 09-23 with the rest of the
+   blog-title freeze.
+2. **Five of nine education topic hubs 404** — `education`, `learning-materials`, `bilingual`,
+   `kids-learning`, `teaching`. That is cause 2 from 09-05 (117 of 226 template topics 404), still
+   open, with named victims. Alias onto the live four rather than minting pages.
+
+Also read early there: the **10-01 worksheet retarget** moved `/tools/worksheet-from-video` from
+4 impressions at pos 21.5 to **63 at pos 10.3 with its first 2 clicks** — entirely on the
+video-qualified tail, with the 2,400/mo head term still at zero. The ship note's pre-registered
+conclusion holds: that page needs a text/topic input, not a better title.
+
+---
+
+## 2026-09-17 — the 539 "Not found (404)" URLs: Google is reading the RSC payload
+
+Source: `raw/curify-ai.com-Coverage-Drilldown-2026-09-17/` (GSC Coverage, *Not found (404)*,
+539 affected pages), diffed against `raw/seo-fix-09-05/curify-ai.com-Coverage-Drilldown-2026-09-07/`
+and re-requested live as a stratified sample.
+
+**Headline: 64% of the report is already fixed and merely stale, and the one cohort that is
+actually growing is not reached by a link at all — it is parsed out of the inline RSC flight
+payload.**
+
+### What the 539 are
+
+| shape | n | share | live status today |
+|---|---:|---:|---|
+| `/nano-template/<slug>/carousel/<id>` | 346 | 64% | **308 → 200**, 15 of 16 sampled |
+| `/i/<uuid>` | 75 | 14% | 404 — real, **fixed 2026-09-17** |
+| `/topics/<slug>` | 46 | 9% | 404 — real, **the only growing cohort** |
+| `/_next/static/*.css?dpl=…` | 21 | 4% | 404 — deploy churn, leave alone |
+| `/nano-template/<slug>/example/<id>` | 21 | 4% | mixed (200 / 307 / 404) |
+| `/images/*`, misc, malformed | 30 | 5% | 404 — legacy |
+
+**Trend.** Flat at 479–491 from July through 09-04, then a step to **539 on 2026-09-05**. Diffed
+against the 09-07 export: **62 added, 41 of them `/topics/*`**. Every topic 404 was last crawled
+2026-09-02 → 09-15; every carousel 404 was last crawled **2026-05-16 → 06-01** and has not been
+revisited since.
+
+### The finding: URLs are being mined from the flight payload, not from links
+
+Measured on `/nano-template/poetry-ink-wash-illustration`:
+
+| | count | of which dead |
+|---|---:|---:|
+| rendered `<a href>` topic links | 25 | **0** |
+| `/topics/*` paths in the RSC payload | 60 | **35** |
+
+**The markup guards work.** `TopicNavRow` intersects against the registry
+(`lib/topicRegistry.ts:83-101`) and `TopicStrip` filters rendering by the thumbnail manifest, so
+zero dead topic anchors are emitted. But the unfiltered slug list crosses the server→client
+boundary *first*, and every entry is serialized as
+`{"slug":"serene","path":"/topics/serene","label":"Serene"}`.
+
+The dead slugs in that payload are exactly the ones in the GSC report — `serene`, `abstract`,
+`pastel`, `miniature`, `ultra-realistic`, `vibrant-colors`, `vintage`. They are **style
+adjectives**, not subjects (`modern` 263 templates, `playful` 262, `bold` 161), and they must not
+become pages.
+
+Two further 404s corroborate the mechanism, and neither is a link anywhere on the site:
+
+- `/9024e63…_image_1766072095903.jpg54:T9bf,` — a filename glued to `54:T9bf,`, a literal Next.js
+  flight-chunk marker. Google parsed straight across a payload boundary.
+- `/tr/blog/infografia-sobre-la-historia-del-vestuario-chino` (Spanish slug, **Turkish** prefix)
+  and `/de/blog/चाइनीज-हर्बल-मेडिसिन-विशुअल-गाइड` (Hindi slug, **German** prefix).
+  `messages/*/blog.json` carries a per-locale **translated `slug`** field that **nothing reads** —
+  `sitemap-blogs.xml:41-43` uses `blogs.json`, and the route only accepts the English slug. Another
+  dead decoy, same family as `ToolDef.seo` and `tools.<key>.meta.*`
+  ([[feedback_tool_page_metadata_location]]). Absent from the payload today, so this leaked during
+  the 1.6MB-catalog era and the trim already closed it.
+
+**Why the 09-05 step:** `b6fcd265` bumped `lastmod` on four route classes that day → recrawl of
+template/example pages → payloads re-parsed.
+
+⚠️ **This is a second, independent reason to do Phase 2**, and it reframes it: the payload is not
+only a near-duplicate-bytes problem, it is a **URL-discovery surface**. Anything URL-shaped in it
+is a crawl candidate.
+
+### Carousel — fixed since May, and the report is a four-month-old snapshot
+
+`/nano-template/<slug>/carousel/<id>` existed 2026-04-30 → deleted **`016f8a14`, 2026-05-13**. The
+301 was added in **`f52d67bd`, 2026-05-31** (`next.config.ts:188-202`) and has never been touched.
+Followed 16 of them: **15 resolve 308 → 200**, one timed out. They are not broken; Google last
+crawled them at or before the redirect shipped and has no reason to revisit.
+
+⚠️ Recorded because it was the working hypothesis and it is wrong for this cohort: the redirect
+*target* can 404 when a template slug no longer exists
+(`carousel/template-example/[slug]/[exampleId]/page.tsx:96`). Real, but not what these are.
+
+**Action: GSC Validate Fix on the issue.** Per 09-09 that is the instrument here, not the Indexing
+API. It drains 64% of the report and costs nothing.
+
+### `/i/<uuid>` — SHIPPED 2026-09-17
+
+`app/[locale]/(public)/i/[id]/page.tsx` (`InspirationPermalinkPage`) was deleted in **`ae151a6a`,
+2026-03-26** ("major revamp."), with no redirect, while `services/inspirationMapper.ts` kept
+handing out `/i/<uuid>` as the Share URL. `/i/:id` and `/:locale/i/:id` now 301 to the hub; the
+share target is `/inspiration-hub?card=<id>`; `getShareUrl()` builds an absolute URL through
+`lib/canonical`.
+
+⚠️ **Correction to the first read: this was not a live user-facing bug.** `mapDTOToUICard`,
+`inspirationService` and `InspirationHubClient` all have **zero callers** — the surface is
+unreachable. The 301 is the live half (those 75 links were really shared and really dead-end); the
+code fix is a disarmed landmine so a revival does not re-emit dead URLs.
+
+### Explicitly not doing
+
+- **Not blocking `/_next/static/` in robots.txt.** Blocking CSS/JS from Googlebot breaks rendering.
+  21 noisy rows are far cheaper than a render regression.
+- **Not minting `/topics/` pages for the dead slugs.** 118 of 226 template topics have no page and
+  most are style adjectives. [[project_new_page_crawl_collapse]] — page age predicts indexation;
+  118 thin hubs is the exact failure mode.
+- **Not touching the translated blog slugs.** Nothing reads them; deleting the decoy keys is
+  Phase-2 cleanup, not a 404 fix.
+
+### Open
+
+- **The topic-payload filter ships with Phase 2, after the 10-03 readout.** One
+  `isLocalizedTopic()` call (`lib/topicRegistry_pure.ts:17-22` — the same guard the sitemap,
+  `HomeDiscoveryStrip` and `ExampleRelatedTopics` already use) before the `items` map at
+  `nano-template/[slug]/page.tsx:428-432`, `example/[exampleId]/page.tsx:622` and
+  `topics/[slug]/page.tsx:510`. **Zero rendered links change** — 0 dead anchors today — so there
+  is no UX or internal-linking risk. Held because it is payload-only, i.e. exactly the C6 variable
+  Phase 2 was held back to isolate; shipping it early would make 10-03 directional only, for the
+  second time in a month.
+- **Validate Fix on the carousel cohort** — UI action, not scriptable.
+- **The 46 topics are the discovered tip.** 118 of 226 distinct template topics have no page and
+  349 of 352 templates reference at least one — **1,682 template→dead-topic instances**, ~16,800
+  across 10 locales. Expect the count to keep climbing until the filter ships. **That is the number
+  to watch in the next drilldown; the carousel bulk is a distraction.**
+- Re-export the drilldown ~2 weeks after Validate Fix. Success = carousel draining and `/topics/*`
+  not past 46.

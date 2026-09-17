@@ -14,7 +14,7 @@ import CreateNewModal from "./CreateNewModal";
 
 // Group order on the hub. "design" sits after "image" because it consumes what
 // the image tools produce.
-const GROUP_ORDER: ToolGroupId[] = ["video", "image", "design", "audio"];
+const GROUP_ORDER: ToolGroupId[] = ["video", "image", "design"];
 
 export default function ToolsClient() {
   const t = useTranslations();
