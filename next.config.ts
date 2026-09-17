@@ -201,6 +201,25 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // Inspiration permalinks. `app/[locale]/(public)/i/[id]/page.tsx`
+      // (InspirationPermalinkPage) was deleted in ae151a6a (2026-03-26, "major
+      // revamp.") with no redirect, while services/inspirationMapper.ts kept
+      // handing out `/i/<uuid>` as the Share URL for another six months — 75 of
+      // them are in the 2026-09-17 Coverage Drilldown as "Not found (404)".
+      // Both halves are fixed now; this one catches the links already shared.
+      // The hub cannot restore the specific card for an aged-out id, so this
+      // deliberately lands on the hub rather than 404ing.
+      {
+        source: "/i/:id",
+        destination: "/inspiration-hub",
+        permanent: true,
+      },
+      {
+        source: `/:locale(${LOCALE_RE})/i/:id`,
+        destination: "/:locale/inspiration-hub",
+        permanent: true,
+      },
+
       // Legacy marketing routes that surfaced in the GSC 404 report.
       // Each maps to the closest current equivalent so the SEO signal
       // moves forward instead of dead-ending or soft-404'ing.

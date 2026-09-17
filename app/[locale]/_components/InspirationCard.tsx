@@ -9,6 +9,8 @@ import {
   useSaveTracking,
 } from "@/services/useTracking";
 import { stableHashToInt } from "@/lib/hash_utils";
+import { getCanonicalUrl as buildCanonicalUrl } from "@/lib/canonical";
+import { routing } from "@/i18n/routing";
 import { ActionButtons } from "@/app/[locale]/_components/button/ActionButtons";
 
 type Source = { label: string; url?: string };
@@ -197,17 +199,26 @@ function ListItemActions({
   const trackShare = useShareTracking(card.id, "inspiration", viewMode);
   const trackSave = useSaveTracking(card.id, "inspiration", viewMode);
 
-  const getCanonicalUrl = () => {
-    if (card?.actions?.share?.url) return card.actions.share.url;
-    const pathname = typeof window !== "undefined" ? window.location.pathname : "";
-    const baseUrl =
-      typeof window !== "undefined"
-        ? window.location.origin
-        : process.env.NEXT_PUBLIC_BASE_URL || "";
-    const locale = pathname.startsWith("/en") ? "en" : "zh";
-    return `${baseUrl}/${locale}/i/${card.id}`;
+  // ⚠️ Dead surface: nothing imports InspirationCard except CardViewModal (for
+  // its type) and InspirationHubClient, which itself has no caller. Fixed
+  // anyway so a revival does not re-emit dead URLs.
+  // Two bugs lived here until 2026-09-17, both on the Share button:
+  //   1. it returned `card.actions.share.url` verbatim, which is a PATH — so
+  //      handleShare copied the literal string "/i/<uuid>" to the clipboard,
+  //      not a URL anyone could open;
+  //   2. the fallback built `/{locale}/i/<id>`, a route deleted in ae151a6a
+  //      (2026-03-26), and only ever guessed between "en" and "zh" although the
+  //      site ships ten locales.
+  // Now: always absolute, via the same lib/canonical helper the pages use (it
+  // knows EN is unprefixed), and the path comes from the mapper.
+  const getShareUrl = () => {
+    const path = card?.actions?.share?.url || `/inspiration-hub?card=${encodeURIComponent(card.id)}`;
+    if (/^https?:\/\//i.test(path)) return path;
+    const seg = typeof window !== "undefined" ? window.location.pathname.split("/")[1] : "";
+    const locale = (routing.locales as readonly string[]).includes(seg) ? seg : routing.defaultLocale;
+    return buildCanonicalUrl(locale, path);
   };
-  const canonicalUrl = getCanonicalUrl();
+  const canonicalUrl = getShareUrl();
 
   async function handleSave(e: React.MouseEvent) {
     e.stopPropagation();
