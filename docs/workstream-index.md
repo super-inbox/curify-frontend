@@ -115,6 +115,25 @@ none of them measurable:
 - **Docked**: ASL captioning (no viable tech path — memory `project_asl_captioning_demand`)
 
 ### C. SEO + SMM + Growth
+- **2026-09-18** Pinterest **batch 5 — 33 Pins, 33/33 verified; account at 108 campaign Pins /
+  60 templates** (`c6fa8bb4`). Two corrections, both to earlier entries here. (1) ⚠️ **T+8 is too
+  early to grade a cohort** — batch 3, called "the worst cohort on the account" at 2 impressions
+  on 09-16, reads **31 impressions and 2 saves** on 09-18 with nothing republished. Batch 3 was
+  graded at T+8 and batch 4 at T+0 while batch 2's 747 is 13 days of accrual, so **every
+  cross-cohort comparison on this channel has been confounded by cohort age**. Grade at T+14.
+  Readout is now a command: `scripts/pinterest_analytics.cjs`. (2) ⚠️ **Every Pin through batch 4
+  described the TOOL, not the image** — the 09-08 section diagnosed exactly this and batch 3 fixed
+  only selection and titles; the descriptions come from `nano.json` (written for the template
+  gallery) and the strip rule was `/^Generate an?\s+/`, i.e. literally only "Generate a". Batch 5
+  proposed the title "Summer Pink Resort **Curi Templates**" before the fix; `assertCopy` now
+  throws if a title names the tool. (3) ⚠️ **The IP review found a SITE liability** — five whole
+  templates reproduce a specific copyrighted work in *every* example, including
+  `template-fruit-…`, **the site's top image-search page** (498 image impr vs 1 web), which
+  carries the **THE STRAITS TIMES** masthead and its "GOING \<FRUIT\>!" series title. Blocking it
+  for Pins does not fix the site — **open**. Selection is batch 4's look-alike basis with seeds
+  weighted by save rate. **Do not grade batch 5 before ~10-02.**
+  `workstream-seo-smm-growth.md` § 2026-09-18; ledger in
+  [`pinterest-publishing-2026-08-21.md`](pinterest-publishing-2026-08-21.md)
 - **2026-09-12** **`curify photo retouching` — one stale result, one live bug, no page**. Diagnosis
   only, no code. Of the two results on that query, the nano-template one is a **stale index entry,
   not a bug**: the indexed URL is the pre-rename slug (308s to the clean one, absent from
@@ -153,7 +172,7 @@ none of them measurable:
   `ghost-mannequin-ai-guide` folds to `/tools/packaging-mockup`, not the homepage, so the
   layout-payload story does not cover it. Keep the blog-publishing hold; the 10-13 KD-1 readout is
   confounded. `workstream-seo-smm-growth.md` §§ 2026-09-09 / 09-10
-- **2026-09-08** Pinterest **LIVE — 60 campaign Pins across 9 boards** (batch 1 20 on 09-04,
+- **2026-09-08** Pinterest **LIVE — 60 campaign Pins across 9 boards** *(superseded: see 2026-09-18 — the account is at 108 Pins / 10 boards, and this entry's "read saves ~09-15" produced a verdict that was re-pulled and corrected)* (batch 1 20 on 09-04,
   batch 2 10 on 09-05, batch 3 30 on 09-08). Batch 3 selects on **measured GSC image-search
   demand** (`pinterest_demand.cjs`) instead of image shape, and added 4 boards named for what
   people search (beauty / fashion / food / travel) — the original 5 were our product taxonomy and
