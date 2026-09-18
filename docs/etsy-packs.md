@@ -26,8 +26,38 @@ The doc is **not** GTM strategy — that lives in `docs/interconnection.md`. Thi
 | `cuisine-cards` | World Cuisine Bilingual Food Vocabulary Cards (30 posters) | `https://www.curify-ai.com/pack/cuisine-cards` | 30 | 26 MB | `packs/sku/cuisine-cards/pack-v1.zip` | 1 |
 | `zhenhuan-mbti` | Empresses in the Palace MBTI Character Posters (16 guofeng prints) | `https://www.curify-ai.com/pack/zhenhuan-mbti` | 16 | 27 MB | `packs/sku/zhenhuan-mbti/pack-v1.zip` | 1 |
 | `confused-chinese-words` | Easily Confused Chinese Characters Study Posters (24 cards) | `https://www.curify-ai.com/pack/confused-chinese-words` | 24 | 12 MB | `packs/sku/confused-chinese-words/pack-v1.zip` | 1 |
+| `character-breakdown` | Chinese Classic Character Design Sheets (10 Panoramic Breakdown Posters) | `https://www.curify-ai.com/pack/character-breakdown` | 10 | 9.2 MB | `packs/sku/character-breakdown/pack-v1.zip` | 1 |
+| `travel-scrapbook` | Vintage Travel Scrapbook Posters (10 Hand-Drawn Journal Pages) | `https://www.curify-ai.com/pack/travel-scrapbook` | 10 | 9.5 MB | `packs/sku/travel-scrapbook/pack-v1.zip` | 1 |
+| `landmark-posters` | Vintage World Landmark Info Posters (10 Illustrated Guides) | `https://www.curify-ai.com/pack/landmark-posters` | 10 | 11.3 MB | `packs/sku/landmark-posters/pack-v1.zip` | 1 |
+| `travel-journal` | Watercolour Travel Journal Collages (10 Expedition Pages) | `https://www.curify-ai.com/pack/travel-journal` | 10 | 11.1 MB | `packs/sku/travel-journal/pack-v1.zip` | 1 |
+| `world-drinks` | Traditional Drinks of the World Infographics (9 Illustrated Posters) | `https://www.curify-ai.com/pack/world-drinks` | 9 | 7.8 MB | `packs/sku/world-drinks/pack-v1.zip` | 1 |
+| `artist-bios` | Artist Biography Infographic Posters (10 Art-History Prints) | `https://www.curify-ai.com/pack/artist-bios` | 10 | 10.7 MB | `packs/sku/artist-bios/pack-v1.zip` | 1 |
+| `fashion-collage` | Vintage Collage Fashion Lookbook Posters (10 Collection Boards) | `https://www.curify-ai.com/pack/fashion-collage` | 10 | 9.0 MB | `packs/sku/fashion-collage/pack-v1.zip` | 1 |
+| `clothing-evolution` | Evolution of World Clothing Posters (10 Fashion-History Prints) | `https://www.curify-ai.com/pack/clothing-evolution` | 10 | 7.1 MB | `packs/sku/clothing-evolution/pack-v1.zip` | 1 |
 
 All packs are `active: true`, `secret: null` (anonymous redemption), no `etsy_listing_url` set yet.
+
+**2026-09-04 batch (8 SKUs, 79 cards).** Registered in both registries, ZIPs uploaded, `active: true`
+— but NOT yet live: the frontend registry ships on `jwang/vercel` and the backend needs its own
+deploy, so `/pack/<sku>` 404s and the download endpoint 404s until both go out. Verify against the
+LIVE backend after deploying, not localhost.
+
+Two things this batch learned the hard way:
+
+- ⚠️ **Never run `generate_template_examples.cjs --pack=…` concurrently before 2026-09-04.** It staged
+  into `os.tmpdir()/curify_template_examples_${Date.now()}` and then copied *every* file in that
+  directory into `packs/<sku>/`. Four processes launched from one shell line hit the same millisecond,
+  shared a staging dir, and each pack ended up holding all four packs' images (34–39 files instead of
+  10) — silently, exit code 0. The staging path now carries pid + a random suffix, so parallel runs are
+  safe. Concurrency still races `nano_inspiration.json` though (each process reads it whole at start
+  and writes it whole at the end, last writer wins), so gallery records from all but the last
+  concurrent run are lost. Run sequentially, or accept that only the ZIPs are trustworthy and
+  re-sync the gallery afterwards.
+- **Check for pre-existing ids before choosing subjects.** A `Skip (exists)` writes no
+  `packs/<sku>/` file, so a pack silently comes up short; and the gallery copy it skipped to is
+  watermarked, which a paid pack must never ship. 18 of this batch's first-choice subjects were
+  already in `nano_inspiration.json`. `--dry-run` reports the skips for free — always dry-run first
+  and confirm `Skipped: 0`.
 **Backend-registry status (2026-07-29):** all 12 SKUs now present in BOTH registries; `cuisine-cards` +
 `zhenhuan-mbti` + `confused-chinese-words` added on backend branch `jwang/etsy-packs-batch3`
 (**backend deploy required to go live** — until deployed their `/etsy_packs/<sku>/download` will 404).
