@@ -390,6 +390,9 @@ function clip(s, max) {
 function cleanSubject(s) {
   return String(s)
     .replace(/["“”]/g, "")
+    // Ids compress durations: "7day-coastal-vacation" titled a Pin "7day
+    // Coastal Vacation", which reads as a typo in a search result.
+    .replace(/\b(\d{1,2})\s?day\b/gi, "$1-day")
     .replace(/\s+\d{1,2}$/, "")
     .replace(/([a-z])\d{1,2}$/i, "$1")
     .replace(/\s{2,}/g, " ")
@@ -461,10 +464,16 @@ function mergePhrase(subject, phrase) {
   const norm = (w) => w.toLowerCase().replace(/[^a-z0-9]/g, "");
   const pTokens = phrase.split(/\s+/).map(norm).filter(Boolean);
   const same = (a, b) => a.slice(0, 4) === b.slice(0, 4) && a.length >= 3 && b.length >= 3;
-  const kept = subject.split(/\s+/).filter((w) => {
-    const n = norm(w);
-    return n && !pTokens.some((t) => same(n, t));
-  });
+  // ⚠️ Only trim from the ENDS. Dropping a duplicate wherever it appears deletes
+  // interior words that carry the subject's meaning: subject "how to sign great"
+  // against category "asl sign language tutorial infographic" lost its middle
+  // word and titled the Pin "How To Great ASL Sign Language Tutorial". Peeling
+  // from the front and back still fixes the case this exists for ("Blueberry" +
+  // "blueberries antioxidants") and cannot punch a hole in a phrase.
+  let kept = subject.split(/\s+/).filter((w) => norm(w));
+  const dup = (w) => { const n = norm(w); return n && pTokens.some((t) => same(n, t)); };
+  while (kept.length && dup(kept[0])) kept.shift();
+  while (kept.length && dup(kept[kept.length - 1])) kept.pop();
   return titleCase(`${kept.join(" ")} ${phrase}`.trim().replace(/\s+/g, " "));
 }
 
@@ -497,7 +506,21 @@ function copyFor(rec) {
   // Strip the "Generate a ..." lead, then re-capitalise: the remainder becomes a
   // sentence in the middle of the description, and "…made with Curify AI.
   // complete brand visual identity…" reads as a typo.
-  let body = String(tpl.description || "").replace(/^Generate an?\s+/i, "").trim();
+  // ⚠️ These descriptions are written for the TEMPLATE GALLERY, where the reader
+  // is about to generate something. On a Pin the reader is looking at a finished
+  // image, so every imperative lead has to go — "Generate a ...", "Create a ...",
+  // "Turn an input topic into ...", "Map a journey as ...". The old rule only
+  // matched "Generate a/an", which let "Generate soft pastel ... posters",
+  // "Create a structured ...", "Turn an input topic into ..." and "Map a journey
+  // ..." through verbatim. The 2026-09-08 readout named exactly this as why the
+  // Pins earn nothing: they describe our tool, and Pinterest users search for an
+  // outcome.
+  let body = String(tpl.description || "")
+    .replace(/^(?:generate|create|make|design|build|produce|turn|map|craft)\b\s*/i, "")
+    .replace(/^an?\s+/i, "")
+    .replace(/^(?:input|your|the)\s+topic\s+into\s+an?\s+/i, "")
+    .replace(/^(?:a\s+)?journey\s+or\s+progression\s+as\s+an?\s+/i, "journey mapped as a ")
+    .trim();
   // Then strip render jargon. 23 of 352 EN descriptions open on the spec we
   // hand the model — "3:4 vertical ultra-high-definition 8K …", "suitable for
   // high-quality commercial display". It is instructions to a renderer, and on
@@ -507,12 +530,25 @@ function copyFor(rec) {
     .replace(/\b[48]K\b/g, "")
     .replace(/\b\d{1,2}:\d{1,2}\b/g, "")
     .replace(/\bvertical composition\b/gi, "")
-    .replace(/,?\s*suitable for (?:high-quality )?(?:commercial|science communication)[^.,;]*/gi, "")
+    .replace(/,?\s*suitable for [^.;]*/gi, "")
     .replace(/\(\s*\)/g, "")
+    // Stripping only the LEAD is not enough: several descriptions put the tool
+    // instruction in a later sentence — "Find the best hairstyle for your face
+    // shape. Generate a hairstyle analysis poster from a photo …", "Use the AI
+    // prompt to generate your own cultural heritage poster." Drop any sentence
+    // that addresses the reader as someone about to generate something.
+    .split(/(?<=[.!?])\s+/)
+    .filter((sent) => !/\b(?:use the (?:ai )?prompt|generate your own|make your own|create your own|try (?:it|this) (?:free|now))\b/i.test(sent))
+    .filter((sent) => !/^(?:generate|create|design|build|produce)\b/i.test(sent.trim()))
+    .join(" ")
+    .replace(/,\s*,+/g, ",")
+    .replace(/,\s*([.!?])/g, "$1")
     .replace(/\s{2,}/g, " ")
     .replace(/\s+([,.;])/g, "$1")
     .replace(/^[\s,;:-]+/, "")
+    .replace(/[\s,;:-]+$/, "")
     .trim();
+  if (body && !/[.!?]$/.test(body)) body += ".";
   if (body) body = body[0].toUpperCase() + body.slice(1);
   if (!category) throw new Error(`${rec.template_id}: no EN category in nano.json`);
   if (!body) throw new Error(`${rec.template_id}: no EN description in nano.json`);
@@ -527,10 +563,25 @@ function copyFor(rec) {
         (w) => w.length >= 3 && sibs.has(w) && ![...mine].some((m) => m.slice(0, 3) === w.slice(0, 3)));
     },
   });
-  const title = clip(mergePhrase(subject, phrase || category.toLowerCase()), 100);
+  // ⚠️ A GSC query is what someone typed into GOOGLE, and some of them are
+  // navigational or tool-seeking. "curi templates" is people looking for US, and
+  // it produced the title "Summer Pink Resort Curi Templates"; "mood board
+  // creator" is someone shopping for software, not saving a mood board. Neither
+  // belongs on a Pin of a finished image. Strip the tool nouns, drop the phrase
+  // entirely if it is our own brand, and fall back to the category.
+  const cleanPhrase = (q) => {
+    if (!q) return null;
+    if (/\bcuri(fy)?\b|\bnano.?banana\b/i.test(q)) return null;
+    const t = String(q)
+      .replace(/\b(?:generator|creator|maker|builder|template|templates|app|apps|online|free|ai|tool|tools|software|website|generate|download)\b/gi, "")
+      .replace(/\s{2,}/g, " ").trim();
+    return t.length >= 4 ? t : null;
+  };
+  const shown = cleanPhrase(phrase);
+  const title = clip(mergePhrase(subject, shown || category.toLowerCase()), 100);
   return {
     subject,
-    phrase,
+    phrase: shown,
     title,
     alt_text: clip(`${subject} — ${body}`, 500),
     description: clip(
@@ -548,6 +599,13 @@ function assertCopy(rec, copy) {
     throw new Error(`${rec.id}: alt_text says "expression sheet" for a non-expression template`);
   for (const [k, max] of [["title", 100], ["description", 800], ["alt_text", 500]])
     if (copy[k].length > max) throw new Error(`${rec.id}: ${k} exceeds ${max}`);
+  // The title is the line Pinterest matches a search against, so nothing that
+  // names the tool may survive into it. The description ends on a deliberate
+  // "free <category> template on Curify AI" CTA, so only the title is checked.
+  if (/\bcuri(fy)?\b|\bgenerator\b|\bcreator\b|\bnano.?banana\b/i.test(copy.title))
+    throw new Error(`${rec.id}: title names the tool — "${copy.title}"`);
+  if (/^(?:generate|create|turn|map|make|design|build)\b/i.test(copy.alt_text.replace(/^[^—]*—\s*/, "")))
+    throw new Error(`${rec.id}: description still opens in tool voice — "${copy.alt_text.slice(0, 80)}"`);
 }
 
 // ---------------------------------------------------------------- IP screen
@@ -601,6 +659,45 @@ const IP_REJECTED_TEMPLATES = new Set([
   // real brand into the pixels. With 10 examples under it and no way to tell
   // from data which carry the mark, the whole template is out for Pinterest.
   "template-product-poster",
+  // Batch 5, 2026-09-18. All five examples inspected (banana, grapes, orange,
+  // pineapple, strawberry, watermelon) carry the masthead "WEDNESDAY, APRIL 17,
+  // 2024 | THE STRAITS TIMES | living well | life | C3", the paper's own
+  // "GOING <FRUIT>!" series title, and the footer "PHOTOS: SHUTTERSTOCK
+  // STRAITS TIMES GRAPHICS" — two of them even credit the staff artist by name.
+  // This is not a stray watermark, it is a reproduction of a copyrighted
+  // newspaper infographic series, page furniture included.
+  // ⚠️ This template is the site's top image-search page (498 image impressions
+  // against 1 web impression, see the demand snapshots) — the liability is on
+  // the site, not just on Pinterest. Raised separately.
+  "template-fruit-commercial-lifestyle-infographic-poster",
+  // Batch 5, 2026-09-18. Every example carries the Art of Manliness roundel top
+  // right and "© Art of Manliness and Ted Slampyak. All Rights Reserved." along
+  // the bottom — the illustrator's real credit line on a real published series.
+  // -tango-walk and -waltz-box-step are additionally the SAME image, both
+  // titled "THE WALTZ BOX STEP", so the tango example renders no tango.
+  "template-ballroom-dance-step-vintage-tutorial-infographic",
+  // Batch 5, 2026-09-18. -france was rejected in batch 4 (MICHELIN STAR drawn
+  // in) and -united-kingdom now renders the Beatles drop-T logotype over an
+  // Abbey Road cover recreation, the real NHS logo, "KEEP CALM AND CARRY ON"
+  // and a portrait of Elizabeth II. Two of five, neither visible in metadata,
+  // and reaching for national brand marks is what this template is FOR — so it
+  // goes wholesale rather than example by example.
+  "template-national-culture-history-infographic",
+  // Batch 5, 2026-09-18. Both examples fail. -fender-stratocaster-guitar names
+  // and draws the Fender script logo and the Strat's registered body shape, and
+  // credits "Jimmy Hendrix, Eric Clapton, Jeff Beck" over their portraits;
+  // -jazz-saxophone runs a "Grandes maestros" row of photographic portraits
+  // captioned Sonny Rollins, Gerry Mulligan, Kenny G, Arno Bornkamp. Naming the
+  // make and the famous players is what an instrument poster DOES.
+  "template-musical-instrument-technical-infographic-poster",
+  // Batch 5, 2026-09-18. Every example is a shelf of real in-copyright book
+  // covers with the real authors set on them — Atomic Habits/James Clear, The
+  // Power of Now/Eckhart Tolle, Mindset/Carol S. Dweck, Why We Sleep/Matthew
+  // Walker, Big Magic/Elizabeth Gilbert. Same class as the García Márquez cover
+  // cut in batch 3, but it is the template's whole premise, not one example.
+  // (-plant-lovers also invents authors, crediting "Jane Doe" and "Mary Smith"
+  // beside the real ones.)
+  "template-book-minimalist",
 ]);
 
 const IP_REJECTED_EXAMPLES = new Set([
@@ -637,6 +734,13 @@ const IP_REJECTED_EXAMPLES = new Set([
   "template-country-top10-travel-destinations-south-korea",           // "#9 Lotte Tower" names a corporate trademark; also renders armed soldiers at the DMZ
   "template-national-culture-history-infographic-france",             // "MICHELIN STAR" + the red Michelin flower drawn in; plus garbled labels ("KINGOFR", "EUROVAL CULURY", "Eiclrcms")
   "template-country-souvenirs-watercolor-korea",                      // item #10 IS "BTS Merchandise" — wordmark on light sticks and members' faces on photocards; Chamisul soju bottle at #6
+  // Batch 5, 2026-09-18. 7 of 26 rejected (27%). Three were whole templates
+  // (above); these four are example-level. Note that only one of the seven was
+  // an IP mark the metadata could ever have caught.
+  "template-word-scene-house-structure",              // vocabulary poster where the glosses are scrambled: "Bedroom /ˈwɪn.doʊ/ chuāng hu", "Show" and "Asset" where Roof and Foundation belong, and the Show leader line points at a window. A language poster that teaches the wrong word is worse than no pin.
+  "template-regional-names-old-money-style-western-female", // the Spanish row is clipped by the canvas edge mid-list ("Isabella, Sofía, Gabriela,") — reads as an unfinished render
+  "template-educational-career-field-infographic-industrial-engineering", // names SolidWorks, Arena and MS Project. Nominative use in a skills list and weaker than the marks above, but the coffee-brewing guide was cut on exactly this and the standard should not move between batches.
+  "template-herbal-houzao-monkey-bezoar",             // macaque-derived TCM ("Calculus Macacae") presented as a remedy — wildlife-product policy risk on a commercial account, for a pin with no measured demand behind it
 ]);
 
 /**

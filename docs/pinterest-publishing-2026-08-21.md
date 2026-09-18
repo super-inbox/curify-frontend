@@ -14,7 +14,7 @@ the way it was, and what its readout means — lives in `docs/workstream-seo-smm
 (§ 2026-09-04, § 2026-09-06, § 2026-09-08, § 2026-09-16). This page answers "what is live right
 now, and how do I publish the next one."_
 
-## Status: LIVE. 75 campaign Pins across 10 boards (last updated 2026-09-16)
+## Status: LIVE. 108 campaign Pins across 10 boards (last updated 2026-09-18)
 
 Standard access was granted 2026-09-04, and the section below on Trial-tier limits is kept as
 historical measurement, not current constraint. Everything since is in the publishing ledger.
@@ -38,6 +38,7 @@ console.log(JSON.stringify(d,null,1), "total", r.length)'
 | 2026-09-05 | batch 2 | 10 | edtech 3 · ecommerce 3 · merch 2 · packaging 1 · brand 1 | same, `--per-template 2` to keep boards from going silent |
 | 2026-09-08 | batch 3 | 30 | edtech 8 · food 6 · travel 6 · beauty 5 · fashion 5 | **measured GSC image-search demand** (`pinterest_demand.cjs`) |
 | 2026-09-16 | batch 4 | 15 | interior 5 · merch 4 · edtech 2 · food 2 · travel 1 · fashion 1 | **visual similarity to the three Pins that measurably earned** (`pinterest_lookalike.cjs`) |
+| 2026-09-18 | batch 5 | 33 | edtech 12 · beauty 8 · fashion 4 · interior 4 · food 3 · travel 1 · ecommerce 1 | same, re-seeded on the 09-18 readout and **weighted by save rate** |
 
 **77 `ok` rows in the registry** = 75 campaign Pins + 2 demo Pins, across **44 distinct
 templates**. Account total is 104 including the 27 legacy `mbti-curify` Pins from 2026-03.
@@ -50,6 +51,54 @@ Batch 4: 15/15.
 > 30 batch-1+2 campaign Pins; the missing one (`570831321549618861`, edtech) answers a direct
 > `GET /v5/pins/{id}` with 200, alive, media present. Reconcile against the registry, never
 > against the account listing.
+
+### Results — the 2026-09-18 re-pull. Batch 3 was not dead, it was slow
+
+`node scripts/pinterest_analytics.cjs --days 30` (new — the readout is a command now, not an
+ad-hoc script rewritten each time). 77 Pins, window 2026-08-19 → 2026-09-18:
+
+| cohort | Pins | impressions | saves |
+|---|---:|---:|---:|
+| batch 1 (09-04) | 22 | 13 | 0 |
+| batch 2 (09-05) | 10 | 747 | 6 |
+| batch 3 (09-08) | 30 | **31** | **2** |
+| batch 4 (09-16) | 15 | 0 | 0 |
+
+⚠️ **The batch-4 commit called batch 3 "the worst cohort on the account" at 2 impressions and
+0 saves. Two days later the same Pins read 31 impressions and 2 saves.** Nothing was
+republished; the numbers simply arrived. Batch 3 was read at T+8 and batch 4 at T+0.
+
+**So T+8 is too early to grade a cohort on this surface, and any comparison between cohorts of
+different ages is confounded by age.** Batch 2's 747 is 13 days of accrual, batch 4's 0 is two.
+The 09-16 conclusion — "GSC image-search demand does not transfer to Pinterest" — is still the
+better read of batch 3 (31 impressions across 30 Pins is weak against batch 2's 747 across 10),
+but it was asserted on a number that was not yet real. **Grade a batch at T+14 or later.**
+
+**The save-rate ordering is stable, and it is what batch 5 is seeded on:**
+
+| example | board | imp | saves | raw rate | seed weight |
+|---|---|---:|---:|---:|---:|
+| `…category-guide-infographic-interior-design-styles` | edtech | 34 | 3 | 8.8% | 1.00 |
+| `…beauty-step-by-step-guide-nail-art` | beauty | 2 | 1 | 50% | 0.70 |
+| `…costume-khmer-sampot-chong-kben` | fashion | 2 | 1 | 50% | 0.70 |
+| `…fridge-magnet-collection-nanjing-landmarks` | merch | 713 | 3 | 0.4% | 0.11 |
+| `…emoji-sticker-sheet-poster-empress-cow-cat` | merch | 11 | 0 | 0% | 0.10 |
+
+Weights are the raw rate shrunk toward the account mean (8/791 = 1.0%) with a 50-impression
+pseudo-count, normalised to the leader — so 1 save on 2 impressions cannot outrank 3 saves on
+34. `pinterest_lookalike.cjs` multiplies similarity by the weight, so "looks like the Pin that
+SAVES" now outranks "looks like the Pin that got impressions". Seeds are overridable:
+`--like <id>:<weight>,<id>`.
+
+**The literal look-alike well is dry.** Every sibling of all three original seed templates is
+now either published or IP-rejected, so batch 5 is entirely tag-neighbours rather than
+same-template re-renders. That is a weaker signal than batch 4 had.
+
+**Inventory is not evenly distributed, and the best board is the thinnest.** Mechanically
+eligible unpublished examples per board after every filter: edtech 605 · food 65 · travel 58 ·
+fashion 55 · ecommerce 38 · merch 17 · beauty 11 · **interior 8**. Interior holds the best save
+rate on the account and cannot support more than one more batch. 182 further eligible examples
+match no board at all.
 
 ### Results — the 2026-09-16 readout. Saves are no longer 0, and the distribution is one Pin
 
@@ -288,6 +337,80 @@ and Van Gogh/MFA Boston — worth weighing before using it as a demo or landing 
 > aliases included. (b) Photorealistic AI faces are a **policy** call, not an IP finding — the
 > templates involved are `image_input: "none"`, so no reference photo. Allowed 2026-09-08;
 > `PHOTOREAL_FACE_TEMPLATES` + `PINTEREST_ALLOW_FACES=0` reverses it.
+
+## ⚠️ Every Pin through batch 4 described our TOOL, not the image — fixed in batch 5
+
+The 09-08 readout already named this as the reason the Pins earn nothing ("those titles name our
+design tool; Pinterest users search for an outcome"), and batch 3 responded by changing how Pins
+are SELECTED and how they are TITLED. **Nobody re-read the descriptions.** They are built from
+`nano.json`, which is written for the template gallery, where the reader is about to generate
+something. Batch 5's proposed copy, before the fix:
+
+- `Summer Pink Resort **Curi Templates**` — "curi templates" is a GSC query, i.e. people
+  searching for *us*, promoted into a Pin title as if it were a subject.
+- `Dining Bar Interior Design Mood Board **Creator**` — "mood board creator" is someone shopping
+  for software, not someone saving a mood board.
+- `**Generate** soft pastel step-by-step beauty tutorial posters…`, `**Create** a structured
+  educational infographic explaining **any** career…`, `**Turn an input topic into** a Chinese
+  educational infographic…`, `**Use the AI prompt to generate your own** travel packing poster.`
+
+The old strip rule was `/^Generate an?\s+/` — it matched "Generate a" and nothing else, so every
+imperative that did not open exactly that way shipped verbatim. Fixed in `copyFor`:
+
+- imperative leads stripped across the full verb set, and **whole sentences** dropped when they
+  address the reader as someone about to generate ("Use the AI prompt to…", "Generate your own…")
+  — stripping only the lead left "Find the best hairstyle for your face shape. **Generate a
+  hairstyle analysis poster from a photo** …";
+- GSC phrases sanitised before they reach a title: our own brand (`curi`/`curify`/`nano banana`)
+  drops the phrase entirely, and tool nouns (`generator`, `creator`, `maker`, `template`, `app`,
+  `free`, `ai`, …) are stripped from it;
+- `assertCopy` now **throws** if a title names the tool or a description still opens in tool
+  voice, so this cannot silently come back.
+
+Two adjacent bugs fell out of the same review: `mergePhrase` de-duplicated subject words
+*anywhere* in the phrase, so subject "how to sign great" against category "asl sign language
+tutorial infographic" lost its middle word and titled the Pin **"How To Great ASL Sign Language
+Tutorial"** — it now only peels duplicates from the ends; and id-derived durations titled a Pin
+**"7day Coastal Vacation"**.
+
+> The description still ends on the deliberate `Save it for later, or make your own — free
+> <category> template on Curify AI.` CTA. That is the one place the tool belongs, and the guard
+> checks the title only.
+
+## ⚠️ Batch 5's IP review found a SITE problem, not just a Pinterest problem
+
+9 of 42 candidates were rejected (21%, in line with the 23-27% of every prior batch), and as
+always almost none was visible in metadata. What is new is that **five of the rejections were
+whole templates whose every example reproduces a specific copyrighted work** — not a stray
+watermark the model happened to bake in, but the source the template was evidently built from:
+
+| template | what every example carries |
+|---|---|
+| `template-fruit-commercial-lifestyle-infographic-poster` | the masthead `WEDNESDAY, APRIL 17, 2024 \| THE STRAITS TIMES \| living well \| life \| C3`, the paper's own "GOING \<FRUIT\>!" series title, and the footer `PHOTOS: SHUTTERSTOCK   STRAITS TIMES GRAPHICS`. Two examples credit the staff artist by name. |
+| `template-ballroom-dance-step-vintage-tutorial-infographic` | the Art of Manliness roundel and `© Art of Manliness and Ted Slampyak. All Rights Reserved.` `-tango-walk` and `-waltz-box-step` are additionally the SAME image, both titled "THE WALTZ BOX STEP". |
+| `template-book-minimalist` | shelves of real in-copyright book covers with the real authors set on them (Atomic Habits/James Clear, The Power of Now/Eckhart Tolle, Mindset/Carol S. Dweck). `-plant-lovers` also invents authors, crediting "Jane Doe" beside the real ones. |
+| `template-musical-instrument-technical-infographic-poster` | the Fender script logo and the Strat body shape, captioned "Jimmy Hendrix, Eric Clapton, Jeff Beck"; the saxophone example runs photographic portraits captioned Sonny Rollins, Gerry Mulligan, Kenny G. |
+| `template-national-culture-history-infographic` | `-united-kingdom` renders the Beatles drop-T logotype over an Abbey Road cover recreation, the real NHS logo, "KEEP CALM AND CARRY ON" and a portrait of Elizabeth II. `-france` was already cut in batch 4 for MICHELIN STAR. |
+
+**`template-fruit-…` is the site's single highest image-search demand page** — 498 image
+impressions against 1 web impression, the finding that motivated the whole 09-08 demand-ranking
+experiment (see `project_image_search_surface`). It is a reproduction of a Straits Times
+infographic series, page furniture included. **This is a liability on the site itself, not only
+on Pinterest**, and blocking it for Pins does not address it. Filed as a follow-up.
+
+Four further example-level rejections: `template-word-scene-house-structure` (a bilingual
+vocabulary poster where the glosses are scrambled — "Bedroom /ˈwɪn.doʊ/ chuāng hu", "Show" and
+"Asset" where Roof and Foundation belong); `…regional-names-old-money-style-western-female`
+(the last row is clipped by the canvas edge mid-list); `…career-field-infographic-industrial-engineering`
+(names SolidWorks, Arena and MS Project — nominative and weaker than the rest, but the
+coffee-brewing guide was cut on exactly this); `template-herbal-houzao-monkey-bezoar`
+(macaque-derived TCM presented as a remedy — wildlife-product policy risk).
+
+> **Method note.** The cheapest high-yield check is a montage of the bottom ~11% of every
+> candidate, stacked and read in one pass — baked credit lines live at the bottom edge, and that
+> one sheet caught the Straits Times footer and the Art of Manliness copyright. It does not
+> replace looking at the whole image (the Beatles logotype is mid-frame), but it is where to
+> start.
 
 ## The pre-access checklist, and what happened to it
 

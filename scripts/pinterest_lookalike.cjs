@@ -32,7 +32,7 @@
  *
  * Usage:
  *   node scripts/pinterest_lookalike.cjs --n 40 > plan.json
- *   node scripts/pinterest_lookalike.cjs --like <example_id>,<example_id> --n 40
+ *   node scripts/pinterest_lookalike.cjs --like <example_id>:<weight>,<example_id> --n 40
  *   node scripts/pinterest_lookalike.cjs --n 40 --per-template 2
  *
  * Output is plan-row shaped, so scripts/pinterest_publish.cjs --plan consumes
@@ -43,17 +43,36 @@
 const L = require("./pinterest_lib.cjs");
 
 /**
- * The three Pins that earned anything measurable, 2026-09-16.
+ * The Pins that have earned anything measurable, with the weight each one gets
+ * as a look-alike target. Re-pulled 2026-09-18 via scripts/pinterest_analytics.cjs
+ * (30d window, 77 Pins): 791 impressions, 8 saves, 0 outbound clicks.
  *
- * Not a guess and not a hand-pick: this is every example id in
- * data/pinterest/pins.jsonl whose per-Pin analytics came back non-zero on
- * IMPRESSION or SAVE, minus the two demo Pins (1 impression each, published to
- * a board that is not a publishing target).
+ *   imp  sav   raw    weight
+ *    34    3   8.8%   1.00  interior-design-styles      4x3 photo grid
+ *     2    1  50.0%   0.70  beauty-step-by-step nail-art  step panels
+ *     2    1  50.0%   0.70  costume-khmer-sampot          garment sheet
+ *   713    3   0.4%   0.11  nanjing-landmarks           2x2 magnets
+ *    11    0   0.0%   0.10  ip-emoji-sticker-sheet      4x4 stickers
+ *
+ * ⚠️ WEIGHT IS NOT THE RAW RATE. 1 save on 2 impressions is not a 50% pin, it
+ * is one save. Weights are the raw rate shrunk toward the account mean
+ * (8/791 = 1.0%) with a 50-impression pseudo-count — (saves + 50*p0)/(imp + 50),
+ * normalised to the leader — so a rate has to survive volume to rank. That
+ * ordering is the point: it puts the 34-impression pin above the 713-impression
+ * one, which raw impressions invert.
+ *
+ * ⚠️ Nanjing is kept at a floor weight, not dropped. Its own sibling
+ * -yangzhou-landmarks is the same template, layout and board, published a day
+ * earlier, and has 0 — so its 713 impressions are the surface's coin flip
+ * rather than a property of the creative, and copying it hard would be copying
+ * a coin flip.
  */
 const DEFAULT_SEEDS = [
-  "template-city-landmark-fridge-magnet-collection-nanjing-landmarks",
-  "template-professional-category-guide-infographic-interior-design-styles",
-  "template-ip-emoji-sticker-sheet-poster-empress-cow-cat",
+  { id: "template-professional-category-guide-infographic-interior-design-styles", weight: 1.0 },
+  { id: "template-beauty-step-by-step-guide-nail-art", weight: 0.7 },
+  { id: "template-costume-khmer-sampot-chong-kben", weight: 0.7 },
+  { id: "template-city-landmark-fridge-magnet-collection-nanjing-landmarks", weight: 0.11 },
+  { id: "template-ip-emoji-sticker-sheet-poster-empress-cow-cat", weight: 0.10 },
 ];
 
 const arg = (name, def = null) => {
@@ -127,10 +146,11 @@ function mechanical(rec, already) {
 function lookalike(seedIds, n, perTemplate = 1) {
   const recs = [...L.inspIndex().values()];
   const idf = buildIdf(recs);
-  const seeds = seedIds.map((id) => {
+  const seeds = seedIds.map((sd) => {
+    const { id, weight } = typeof sd === "string" ? { id: sd, weight: 1 } : sd;
     const r = L.inspIndex().get(id);
     if (!r) throw new Error(`seed example not found: ${id}`);
-    return { id, template: String(r.template_id).trim(), v: vectorOf(r) };
+    return { id, weight, template: String(r.template_id).trim(), v: vectorOf(r) };
   });
   const already = L.publishedIds();
 
@@ -147,7 +167,10 @@ function lookalike(seedIds, n, perTemplate = 1) {
       // A different example of a seed's own template is the most literal
       // look-alike there is — same layout, same render, different subject — and
       // tag cosine does not always say so, because tags describe the subject.
-      const score = String(rec.template_id).trim() === s.template ? 1 : cosine(v, s.v, idf);
+      const raw = String(rec.template_id).trim() === s.template ? 1 : cosine(v, s.v, idf);
+      // Weighted, so "looks like the pin that saves" outranks "looks like the
+      // pin that got impressions" rather than the two being interchangeable.
+      const score = raw * s.weight;
       if (score > sim) { sim = score; nearest = s.id; }
     }
 
@@ -196,7 +219,12 @@ function lookalike(seedIds, n, perTemplate = 1) {
 }
 
 if (require.main === module) {
-  const seeds = arg("like") && arg("like") !== true ? String(arg("like")).split(",") : DEFAULT_SEEDS;
+  const seeds = arg("like") && arg("like") !== true
+    ? String(arg("like")).split(",").map((t) => {
+        const [id, w] = t.split(":");
+        return { id, weight: w === undefined ? 1 : Number(w) };
+      })
+    : DEFAULT_SEEDS;
   const n = Number(arg("n", 20)) || 20;
   const perTemplate = Number(arg("per-template", 1)) || 1;
   process.stdout.write(JSON.stringify(lookalike(seeds, n, perTemplate), null, 2) + "\n");
