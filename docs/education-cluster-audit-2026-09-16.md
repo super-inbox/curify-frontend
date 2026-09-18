@@ -5,9 +5,9 @@ whose own measurement checkpoints (2026-06-17, 2026-06-24) were never collected,
 state of every education surface. Owner: jay._
 
 **Sources.** `raw/curify-ai.com-Performance-on-Search-2026-09-16/` (web, 2026-08-19 → 09-15),
-`data/pinterest/demand-2026-08-19_2026-09-15.json` (image, same window),
+`~/curify-gtm/data/pinterest/demand-2026-08-19_2026-09-15.json` (image, same window; moved 2026-09-18),
 `raw/gsc-cluster-audit-2026-08-31/` (prior window, 2026-08-02 → 08-29),
-`raw/edu-check-2026-09-16.txt` → URL-Inspection, `data/pinterest/pins.jsonl`.
+`raw/edu-check-2026-09-16.txt` → URL-Inspection, `~/curify-gtm/data/pinterest/pins.jsonl`.
 ⚠️ The two windows **overlap by 11 days** — read direction, not multiples.
 
 ---

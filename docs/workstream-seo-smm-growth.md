@@ -867,7 +867,7 @@ no `/images/upload` anon gate). Full phased plan in `docs/mbti-character-cluster
 ## 2. SMM — Social Media Marketing / autopost
 
 > **Operating frame (2026-07-05): Account Positioning, not Content Strategy.** Full playbook:
-> `docs/smm-account-positioning-playbook-2026-07-05.md` (from `raw/seo-drop-07-05/smm-discussion.txt`).
+> `~/curify-gtm/docs/smm-account-positioning-playbook-2026-07-05.md` (from `raw/seo-drop-07-05/smm-discussion.txt`; moved out of this repo 2026-09-18).
 > Each account has an algo-assigned identity; posting off-identity ("Position Drift") tanks the
 > account — proven by Jay's X account (400 impr → dead after AI-art posts relabeled it Tech→AI Art).
 > The playbook's 账号定位表 (allow/ban per account) + named weekly Series (固定栏目) are the
@@ -3080,9 +3080,11 @@ treatment, on the same account, a day apart.
 - `~/curify-studio/curify_background/app/crud/admin.py` — growth analytics queries
 - `~/curify-studio/curify_background/app/utils/autopost_utils.py` — SMM autopost
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
-- `docs/pinterest-publishing-2026-08-21.md` — Pinterest channel writeup; registry at `data/pinterest/pins.jsonl`
-- `scripts/pinterest_demand.cjs` — GSC-by-search-type → per-template demand score + copy phrase; snapshots in `data/pinterest/demand-*.json`
-- `scripts/pinterest_lookalike.cjs` — selection by similarity to the Pins that measurably earned (batch 4 onward, 2026-09-16); supersedes demand ranking as the default, which it demotes to the tie-break
+- `~/curify-gtm/docs/smm-account-positioning-playbook-2026-07-05.md` — per-account SMM positioning **(moved 2026-09-18)**
+- `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` — Pinterest channel writeup; registry at `~/curify-gtm/data/pinterest/pins.jsonl` **(moved out of this repo 2026-09-18 — see the migration note in § 2026-09-18)**
+- `~/curify-gtm/scripts/pinterest_demand.cjs` — GSC-by-search-type → per-template demand score + copy phrase; snapshots in `data/pinterest/demand-*.json`
+- `~/curify-gtm/scripts/pinterest_lookalike.cjs` — selection by similarity to the Pins that measurably earned (batch 4 onward, 2026-09-16); supersedes demand ranking as the default, which it demotes to the tie-break. Seeds are **weighted by save rate** from 2026-09-18; override with `--like <example_id>:<weight>`
+- `~/curify-gtm/scripts/pinterest_analytics.cjs` — per-Pin `GET /v5/pins/{id}/analytics` for every id in the registry, joined to template/board, earners sorted by save, cohort split by publish date. **The readout is this command**; every readout before 2026-09-18 was an ad-hoc script
 - `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
 - `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
 - `raw/agent-skills-08-31/design-skills.txt` — the TypeUI read: upgrade the prompt/template library along Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill rather than extending it. (Replaces a citation to `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md`, which was never written — verified absent 2026-09-01.)
@@ -3824,3 +3826,138 @@ code fix is a disarmed landmine so a revival does not re-emit dead URLs.
   to watch in the next drilldown; the carousel bulk is a distraction.**
 - Re-export the drilldown ~2 weeks after Validate Fix. Success = carousel draining and `/topics/*`
   not past 46.
+
+## 2026-09-18 — Pinterest batch 5: the 09-16 verdict was premature, and the copy was never fixed
+
+Batch 5 is 33 Pins, published and verified 33/33. But the two findings that matter are
+corrections to the 09-16 section above, not to the batch.
+
+### 1. ⚠️ T+8 is too early to grade a cohort. Batch 3 was not dead, it was slow
+
+The 09-16 section calls batch 3 "the worst cohort on the account — 2 impressions across 30 Pins",
+and the batch-4 commit message repeats it. Re-pulled 2026-09-18, nothing republished:
+
+| cohort | Pins | impressions 09-16 | impressions 09-18 | saves 09-18 |
+|---|---:|---:|---:|---:|
+| batch 1 (09-04) | 22 | 11 | 13 | 0 |
+| batch 2 (09-05) | 10 | 607 | 747 | 6 |
+| batch 3 (09-08) | 30 | **2** | **31** | **2** |
+| batch 4 (09-16) | 15 | — | 0 | 0 |
+
+**Batch 3 went from 2 impressions to 31, and from 0 saves to 2, in 48 hours.** The numbers had
+simply not arrived. Batch 3 was graded at T+8 and batch 4 at T+0, while batch 2's 747 is 13 days
+of accrual — **every cross-cohort comparison on this channel so far has been confounded by
+cohort age**, including the 09-06 "batches 1+2 failed" call that the 09-16 section already
+retracted once for a different reason.
+
+The directional conclusion still stands — 31 impressions across 30 Pins is weak against batch 2's
+747 across 10, so GSC image demand still looks like a poor proxy for Pinterest demand — but it
+was asserted on a number that was not yet real. **Grade a Pinterest cohort at T+14 or later.**
+
+> This generalises past Pinterest. It is the same failure as the 09-06 "0 impressions = data
+> latency" call, inverted: that time latency was invoked to explain away a zero and was wrong;
+> this time it was ignored and was right. The fix is not a better prior, it is not grading at T+8.
+
+**The readout is a command now** — `node scripts/pinterest_analytics.cjs --days 30 [--json out]`,
+run from `~/curify-gtm`. Per-Pin analytics for every id in `~/curify-gtm/data/pinterest/pins.jsonl`, joined to template/board, earners
+sorted by save, cohort split by publish date. Every prior readout was an ad-hoc script.
+
+### 2. ⚠️ Every Pin through batch 4 described the TOOL, not the image
+
+The 09-08 section already identified this as the reason Pins earn nothing — *"those titles name
+our design tool; Pinterest users search for an outcome"* — and batch 3 responded by changing
+selection and titles. **Nobody re-read the descriptions.** They are built from `nano.json`, which
+is written for the template gallery, where the reader is about to generate something. What batch
+5 proposed, before the fix:
+
+- `Summer Pink Resort **Curi Templates**` — "curi templates" is a GSC query, i.e. people
+  searching for *us*, promoted into a Pin title as though it were a subject.
+- `Dining Bar Interior Design Mood Board **Creator**` — someone shopping for software, not
+  someone saving a mood board.
+- `**Generate** soft pastel …posters`, `**Create** a structured …infographic explaining **any**
+  career`, `**Turn an input topic into** a Chinese educational infographic`, `**Use the AI prompt
+  to generate your own** travel packing poster.`
+
+The strip rule was `/^Generate an?\s+/` — it matched "Generate a" and nothing else, so every
+imperative phrased any other way shipped verbatim through four batches. `copyFor` now strips the
+full imperative verb set, drops whole tool-voice *sentences*, and sanitises brand and tool nouns
+out of GSC phrases before they reach a title; `assertCopy` **throws** if a title names the tool,
+so it cannot silently return. Two adjacent bugs fell out of the same read: `mergePhrase`
+de-duplicated subject words anywhere in the phrase and titled a Pin **"How To Great ASL Sign
+Language Tutorial"**, and id-derived durations produced **"7day Coastal Vacation"**.
+
+> The `Save it for later, or make your own — free <category> template on Curify AI.` tail stays.
+> That is the one place the tool belongs, and the guard checks the title only.
+
+### 3. ⚠️ The IP review found a SITE liability, not a Pinterest one
+
+9 of 42 candidates rejected (21%, in line with every prior batch), and **five rejections were
+whole templates that reproduce a specific copyrighted work in every example** — not a stray
+watermark the model baked in, but the source the template was evidently built from:
+
+| template | what every example carries |
+|---|---|
+| `template-fruit-commercial-lifestyle-infographic-poster` | `WEDNESDAY, APRIL 17, 2024 \| THE STRAITS TIMES \| living well \| life \| C3`, the paper's own "GOING \<FRUIT\>!" series title, `PHOTOS: SHUTTERSTOCK   STRAITS TIMES GRAPHICS`; two credit the staff artist by name |
+| `template-ballroom-dance-step-vintage-tutorial-infographic` | the Art of Manliness roundel and `© Art of Manliness and Ted Slampyak. All Rights Reserved.`; `-tango-walk` and `-waltz-box-step` are the SAME image, both titled "THE WALTZ BOX STEP" |
+| `template-book-minimalist` | real in-copyright covers with real authors set on them (Atomic Habits/James Clear, The Power of Now/Eckhart Tolle, Mindset/Carol S. Dweck) |
+| `template-musical-instrument-technical-infographic-poster` | the Fender script logo and Strat body shape over "Jimmy Hendrix, Eric Clapton, Jeff Beck"; the sax example runs portraits captioned Sonny Rollins, Gerry Mulligan, Kenny G |
+| `template-national-culture-history-infographic` | `-united-kingdom`: the Beatles drop-T logotype over an Abbey Road recreation, the real NHS logo, "KEEP CALM AND CARRY ON", Elizabeth II. `-france` was cut in batch 4 for MICHELIN STAR |
+
+**`template-fruit-…` is the site's highest image-search-demand page — 498 image impressions
+against 1 web impression.** That single ratio is the observation the 09-08 demand-ranking
+experiment was built on, and the page is a reproduction of a Straits Times infographic series,
+page furniture included. **Blocking it for Pins does not fix the site.** See the 09-10 section on
+image relevance and `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` for the full table.
+
+> **Cheapest high-yield check:** `magick montage` of the **bottom ~11% strip** of every candidate,
+> stacked into one tall sheet. Baked credit lines live at the bottom edge; that one sheet caught
+> both the Straits Times footer and the Art of Manliness copyright. It does **not** replace
+> looking at the whole image — the Beatles logotype is mid-frame.
+
+### What shipped
+
+33 Pins — edtech 12 · beauty 8 · fashion 4 · interior 4 · food 3 · travel 1 · ecommerce 1. All
+201; **33/33 verified** by direct `GET /v5/pins/{id}` (media present, `title`/`alt_text`/`link`/
+`board_id` byte-identical to the registry). Account: 108 campaign Pins, 60 distinct templates.
+Plan at `~/curify-gtm/data/pinterest/plan-2026-09-18.json`.
+
+Selection is the batch-4 look-alike basis with seeds **weighted by save rate** — raw rate shrunk
+toward the account mean (8/791 = 1.0%) with a 50-impression pseudo-count — so 1 save on 2
+impressions cannot outrank 3 on 34, and Nanjing's 713 impressions (whose identical sibling has 0)
+stop dominating. `--like <id>:<weight>`.
+
+### Open
+
+- **Do not grade batch 5 before ~2026-10-02** (T+14). Batches 4 and 5 are the same arm and pool
+  to 48 Pins on the look-alike basis; read them together, on **save rate**. Batch 4's current 0 is
+  not a result.
+- **`template-fruit-…` and the four other reproducing templates are live on the site.** Decide
+  regenerate vs de-index. This is the open item with the most downside and it is not a Pinterest
+  task.
+- **The look-alike well is dry.** Every sibling of all three original seed templates is now
+  published or IP-rejected, so batch 5 is entirely tag-neighbours — a weaker signal than batch 4
+  had. A sixth batch on this basis needs new earners first.
+- **Inventory is lopsided and the best board is the thinnest.** Eligible unpublished after all
+  filters: edtech 605 · food 65 · travel 58 · fashion 55 · ecommerce 38 · merch 17 · beauty 11 ·
+  **interior 8**. Interior holds the account's best save rate and cannot support two more batches.
+  **182 further eligible examples match no board at all** — the 09-08 "boards were the constraint"
+  finding still has room left in it.
+- **Claim the domain / enable Rich Pins** — still open, still the cheapest thing left.
+
+### ⚠️ Migration: the Pinterest/SMM toolchain moved to `curify-gtm` on 2026-09-18
+
+`scripts/pinterest_*.cjs`, `data/pinterest/**`, `pinterest-publishing-2026-08-21.md`,
+`pinterest-standard-access-demo-v2-2026-08-29.md` and
+`smm-account-positioning-playbook-2026-07-05.md` now live in **`~/curify-gtm`**
+(`super-inbox/curify-gtm`). **Paths in the dated sections above are historical and were correct
+when written — do not follow them.** This section's own paths are updated.
+
+The scripts still READ curify-frontend, because this repo owns the content they describe:
+`public/data/nano_inspiration.json`, `public/data/nano_templates.json`, `messages/en/nano.json`,
+`public/images/nano_insp/*`, and `scripts/lib/watermark.cjs` (shared with 10 other scripts here,
+so it stayed). Resolution is `CURIFY_FRONTEND`, defaulting to `~/curify-frontend`; the lib throws
+with an explanatory message if it is absent. **A rename or restructure of those four paths breaks
+Pinterest publishing from another repo — that coupling is the thing to remember.**
+
+What stayed here: this doc, `workstream-index.md`, and `taxonomy-gap-canva-pinterest-2026-06-14.md`
+(a taxonomy audit, not a channel doc).

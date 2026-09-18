@@ -384,7 +384,7 @@ in `docs/batch-generation.md`.
 
 The immediate use is distribution, not new pages — the full writeup, the 30-Pin batch and the
 board changes are in `docs/workstream-seo-smm-growth.md` (2026-09-08). Mechanism worth reusing
-here: `scripts/pinterest_demand.cjs` maps GSC `page`+`query` to a template id, splits queries
+here: `~/curify-gtm/scripts/pinterest_demand.cjs` (moved out of this repo 2026-09-18) maps GSC `page`+`query` to a template id, splits queries
 measured on the **template** page (they generalise to any example) from those measured on an
 **example** page (they do not), and exposes both a demand score and a usable English copy
 phrase. That template/example split is the same distinction thread b keeps hitting when a
@@ -399,7 +399,7 @@ template-level tag gets applied to an individual inspiration — see
   a description of what is drawn. Anything filtering on record text has to keep those apart —
   the Pinterest IP screen read aliases and blocked all 7 gown examples on "celebrity fashion".
 - **`pull_gsc_performance.cjs` should learn `--type=image`** so every future pull carries both
-  surfaces. Until it does, `pinterest_demand.cjs --pull` is the only image-aware puller.
+  surfaces. Until it does, `~/curify-gtm/scripts/pinterest_demand.cjs --pull` is the only image-aware puller.
 - Related and still unworked on the Google side: no image sitemap, tag-slug alt text
   (`project_image_search_surface`).
 
