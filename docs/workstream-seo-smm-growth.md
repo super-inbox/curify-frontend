@@ -867,7 +867,7 @@ no `/images/upload` anon gate). Full phased plan in `docs/mbti-character-cluster
 ## 2. SMM — Social Media Marketing / autopost
 
 > **Operating frame (2026-07-05): Account Positioning, not Content Strategy.** Full playbook:
-> `docs/smm-account-positioning-playbook-2026-07-05.md` (from `raw/seo-drop-07-05/smm-discussion.txt`).
+> `~/curify-gtm/docs/smm-account-positioning-playbook-2026-07-05.md` (from `raw/seo-drop-07-05/smm-discussion.txt`; moved out of this repo 2026-09-18).
 > Each account has an algo-assigned identity; posting off-identity ("Position Drift") tanks the
 > account — proven by Jay's X account (400 impr → dead after AI-art posts relabeled it Tech→AI Art).
 > The playbook's 账号定位表 (allow/ban per account) + named weekly Series (固定栏目) are the
@@ -3080,10 +3080,11 @@ treatment, on the same account, a day apart.
 - `~/curify-studio/curify_background/app/crud/admin.py` — growth analytics queries
 - `~/curify-studio/curify_background/app/utils/autopost_utils.py` — SMM autopost
 - `~/curify-studio/gtm_tools/pinterest_lead_discovery_keywords.md` — Pinterest playbook
-- `docs/pinterest-publishing-2026-08-21.md` — Pinterest channel writeup; registry at `data/pinterest/pins.jsonl`
-- `scripts/pinterest_demand.cjs` — GSC-by-search-type → per-template demand score + copy phrase; snapshots in `data/pinterest/demand-*.json`
-- `scripts/pinterest_lookalike.cjs` — selection by similarity to the Pins that measurably earned (batch 4 onward, 2026-09-16); supersedes demand ranking as the default, which it demotes to the tie-break. Seeds are **weighted by save rate** from 2026-09-18; override with `--like <example_id>:<weight>`
-- `scripts/pinterest_analytics.cjs` — per-Pin `GET /v5/pins/{id}/analytics` for every id in the registry, joined to template/board, earners sorted by save, cohort split by publish date. **The readout is this command**; every readout before 2026-09-18 was an ad-hoc script
+- `~/curify-gtm/docs/smm-account-positioning-playbook-2026-07-05.md` — per-account SMM positioning **(moved 2026-09-18)**
+- `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` — Pinterest channel writeup; registry at `~/curify-gtm/data/pinterest/pins.jsonl` **(moved out of this repo 2026-09-18 — see the migration note in § 2026-09-18)**
+- `~/curify-gtm/scripts/pinterest_demand.cjs` — GSC-by-search-type → per-template demand score + copy phrase; snapshots in `data/pinterest/demand-*.json`
+- `~/curify-gtm/scripts/pinterest_lookalike.cjs` — selection by similarity to the Pins that measurably earned (batch 4 onward, 2026-09-16); supersedes demand ranking as the default, which it demotes to the tie-break. Seeds are **weighted by save rate** from 2026-09-18; override with `--like <example_id>:<weight>`
+- `~/curify-gtm/scripts/pinterest_analytics.cjs` — per-Pin `GET /v5/pins/{id}/analytics` for every id in the registry, joined to template/board, earners sorted by save, cohort split by publish date. **The readout is this command**; every readout before 2026-09-18 was an ad-hoc script
 - `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
 - `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
 - `raw/agent-skills-08-31/design-skills.txt` — the TypeUI read: upgrade the prompt/template library along Prompt → Example → Problem → Method → Skill → Eval → Agent-ready Skill rather than extending it. (Replaces a citation to `~/curify-studio/docs/design-skills-asset-migration-2026-09-01.md`, which was never written — verified absent 2026-09-01.)
@@ -3857,8 +3858,8 @@ was asserted on a number that was not yet real. **Grade a Pinterest cohort at T+
 > latency" call, inverted: that time latency was invoked to explain away a zero and was wrong;
 > this time it was ignored and was right. The fix is not a better prior, it is not grading at T+8.
 
-**The readout is a command now** — `node scripts/pinterest_analytics.cjs --days 30 [--json out]`.
-Per-Pin analytics for every id in `data/pinterest/pins.jsonl`, joined to template/board, earners
+**The readout is a command now** — `node scripts/pinterest_analytics.cjs --days 30 [--json out]`,
+run from `~/curify-gtm`. Per-Pin analytics for every id in `~/curify-gtm/data/pinterest/pins.jsonl`, joined to template/board, earners
 sorted by save, cohort split by publish date. Every prior readout was an ad-hoc script.
 
 ### 2. ⚠️ Every Pin through batch 4 described the TOOL, not the image
@@ -3906,7 +3907,7 @@ watermark the model baked in, but the source the template was evidently built fr
 against 1 web impression.** That single ratio is the observation the 09-08 demand-ranking
 experiment was built on, and the page is a reproduction of a Straits Times infographic series,
 page furniture included. **Blocking it for Pins does not fix the site.** See the 09-10 section on
-image relevance and `pinterest-publishing-2026-08-21.md` for the full table.
+image relevance and `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` for the full table.
 
 > **Cheapest high-yield check:** `magick montage` of the **bottom ~11% strip** of every candidate,
 > stacked into one tall sheet. Baked credit lines live at the bottom edge; that one sheet caught
@@ -3918,7 +3919,7 @@ image relevance and `pinterest-publishing-2026-08-21.md` for the full table.
 33 Pins — edtech 12 · beauty 8 · fashion 4 · interior 4 · food 3 · travel 1 · ecommerce 1. All
 201; **33/33 verified** by direct `GET /v5/pins/{id}` (media present, `title`/`alt_text`/`link`/
 `board_id` byte-identical to the registry). Account: 108 campaign Pins, 60 distinct templates.
-Plan at `data/pinterest/plan-2026-09-18.json`.
+Plan at `~/curify-gtm/data/pinterest/plan-2026-09-18.json`.
 
 Selection is the batch-4 look-alike basis with seeds **weighted by save rate** — raw rate shrunk
 toward the account mean (8/791 = 1.0%) with a 50-impression pseudo-count — so 1 save on 2
@@ -3942,3 +3943,21 @@ stop dominating. `--like <id>:<weight>`.
   **182 further eligible examples match no board at all** — the 09-08 "boards were the constraint"
   finding still has room left in it.
 - **Claim the domain / enable Rich Pins** — still open, still the cheapest thing left.
+
+### ⚠️ Migration: the Pinterest/SMM toolchain moved to `curify-gtm` on 2026-09-18
+
+`scripts/pinterest_*.cjs`, `data/pinterest/**`, `pinterest-publishing-2026-08-21.md`,
+`pinterest-standard-access-demo-v2-2026-08-29.md` and
+`smm-account-positioning-playbook-2026-07-05.md` now live in **`~/curify-gtm`**
+(`super-inbox/curify-gtm`). **Paths in the dated sections above are historical and were correct
+when written — do not follow them.** This section's own paths are updated.
+
+The scripts still READ curify-frontend, because this repo owns the content they describe:
+`public/data/nano_inspiration.json`, `public/data/nano_templates.json`, `messages/en/nano.json`,
+`public/images/nano_insp/*`, and `scripts/lib/watermark.cjs` (shared with 10 other scripts here,
+so it stayed). Resolution is `CURIFY_FRONTEND`, defaulting to `~/curify-frontend`; the lib throws
+with an explanatory message if it is absent. **A rename or restructure of those four paths breaks
+Pinterest publishing from another repo — that coupling is the thing to remember.**
+
+What stayed here: this doc, `workstream-index.md`, and `taxonomy-gap-canva-pinterest-2026-06-14.md`
+(a taxonomy audit, not a channel doc).

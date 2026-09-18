@@ -50,7 +50,7 @@ none of them measurable:
 | Motion | Owner doc | Lands on |
 |---|---|---|
 | **Outbound email** (817 sent, 475 leads) | `gtm_tools/INDEX.md` | `/tools/*` for the POD voices (259 of 475 leads); 4 legacy persona pages for the rest |
-| **Thought leadership** — LinkedIn · RedNote · FB · Medium | `docs/smm-account-positioning-playbook-2026-07-05.md` | **no countable landing path** — these channels strip or forbid referrers, so referrer-based attribution structurally cannot work (UC-P0-1) |
+| **Thought leadership** — LinkedIn · RedNote · FB · Medium | `~/curify-gtm/docs/smm-account-positioning-playbook-2026-07-05.md` *(moved 2026-09-18)* | **no countable landing path** — these channels strip or forbid referrers, so referrer-based attribution structurally cannot work (UC-P0-1) |
 | **RedNote need-based DM outreach** | *(no doc / no tracker — UC-P0-3)* | WeChat reply channel; nothing logged |
 | **Crawling** (Pinterest / Apollo / shop harvests) | `gtm_tools/INDEX.md` | list-building only — **produced leads, never traffic**; do not count as a growth channel |
 | **Enterprise AI B2B** (2nd B2B line, from 2026-07-25) | `~/curify-studio/docs/workstream-enterprise-ai-b2b.md` | **`/enterprise` — shipped 2026-08-12** (UC-P0-2). English-only, EN-only in the sitemap, footer-linked, per-CTA click tracking |
@@ -121,7 +121,7 @@ none of them measurable:
   on 09-16, reads **31 impressions and 2 saves** on 09-18 with nothing republished. Batch 3 was
   graded at T+8 and batch 4 at T+0 while batch 2's 747 is 13 days of accrual, so **every
   cross-cohort comparison on this channel has been confounded by cohort age**. Grade at T+14.
-  Readout is now a command: `scripts/pinterest_analytics.cjs`. (2) ⚠️ **Every Pin through batch 4
+  Readout is now a command: `~/curify-gtm/scripts/pinterest_analytics.cjs`. (2) ⚠️ **Every Pin through batch 4
   described the TOOL, not the image** — the 09-08 section diagnosed exactly this and batch 3 fixed
   only selection and titles; the descriptions come from `nano.json` (written for the template
   gallery) and the strip rule was `/^Generate an?\s+/`, i.e. literally only "Generate a". Batch 5
@@ -132,8 +132,12 @@ none of them measurable:
   carries the **THE STRAITS TIMES** masthead and its "GOING \<FRUIT\>!" series title. Blocking it
   for Pins does not fix the site — **open**. Selection is batch 4's look-alike basis with seeds
   weighted by save rate. **Do not grade batch 5 before ~10-02.**
-  `workstream-seo-smm-growth.md` § 2026-09-18; ledger in
-  [`pinterest-publishing-2026-08-21.md`](pinterest-publishing-2026-08-21.md)
+  **⚠️ Also 09-18: the Pinterest/SMM toolchain moved to `curify-gtm`** — `scripts/pinterest_*.cjs`,
+  `data/pinterest/**` and the Pinterest/SMM docs. It still reads this repo's content
+  (`public/data/nano_*.json`, `messages/en/nano.json`, `public/images/nano_insp/*`,
+  `scripts/lib/watermark.cjs`) via `CURIFY_FRONTEND`. Paths in entries dated before 09-18 are
+  historical. `workstream-seo-smm-growth.md` § 2026-09-18; ledger in
+  `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md`
 - **2026-09-12** **`curify photo retouching` — one stale result, one live bug, no page**. Diagnosis
   only, no code. Of the two results on that query, the nano-template one is a **stale index entry,
   not a bug**: the indexed URL is the pre-rename slug (308s to the clean one, absent from
@@ -177,7 +181,7 @@ none of them measurable:
   demand** (`pinterest_demand.cjs`) instead of image shape, and added 4 boards named for what
   people search (beauty / fashion / food / travel) — the original 5 were our product taxonomy and
   earned 0 impressions on 30 Pins. Batches 1+2 are now the control arm. **Read saves ~09-15.**
-  Ledger + runbook in [`pinterest-publishing-2026-08-21.md`](pinterest-publishing-2026-08-21.md);
+  Ledger + runbook in `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` (moved 2026-09-18);
   reasoning in `workstream-seo-smm-growth.md` §§ 2026-09-04 / 09-06 / 09-08
 - **2026-08-07** State-of-play catch-up + GSC pull — non-WC impressions **1,716 → 359/day** over 2
   months (the "non-WC floor" framing is dead); canonical fold **not yet cleared** (only 1 of 13
@@ -275,7 +279,7 @@ none of them measurable:
 | [`blogs-hub-and-spoke-architecture.md`](blogs-hub-and-spoke-architecture.md) | C | Hub/spoke blog architecture |
 | [`onboarding-runbook.md`](onboarding-runbook.md) | D, C | Onboarding flow runbook |
 | [`key-actions-strategy.md`](key-actions-strategy.md) | C, D | Conversion key-actions framework |
-| [`pinterest-publishing-2026-08-21.md`](pinterest-publishing-2026-08-21.md) | C | **Pinterest channel status page** — publishing ledger, board→landing map, publish runbook, IP-review rules |
+| `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` *(moved out of this repo 2026-09-18)* | C | **Pinterest channel status page** — publishing ledger, board→landing map, publish runbook, IP-review rules |
 | [`gallery-tag-taxonomy.md`](gallery-tag-taxonomy.md) | A | Gallery tag → topic registry mapping |
 | [`gap-classifier-phase1.md`](gap-classifier-phase1.md) | A | Content-gap classification |
 | [`home-discoverability-ideas-2026-06-14.md`](home-discoverability-ideas-2026-06-14.md) | C | Homepage discoverability options |

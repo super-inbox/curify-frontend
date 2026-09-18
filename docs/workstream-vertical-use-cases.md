@@ -92,7 +92,7 @@ they are internal vocabulary.
 | Motion | State | Does it reach the persona pages? |
 |---|---|---|
 | **Outbound email** (`gtm_tools/`) | 817 rows in `sent_log.txt`, 475 leads in `b2b_clients.json` | Partly, and backwards. Only 4 of 10 pages are wired as CTAs (`for-marketers`, `for-publishers`, `for-programmatic-seo`, `for-dtc-brands` — the *legacy* personas). The POD voices covering **259 of 475 leads** point at `/tools/character-sticker-sheet` + `/tools/mockup`. **`for-merch-operators`, the flagship POD page, receives no outbound traffic by design.** |
-| **Thought leadership** (LinkedIn · RedNote · FB · Medium) | Running; positioning per `docs/smm-account-positioning-playbook-2026-07-05.md` + memory `feedback_smm_account_positioning` | **Unmeasurable, and measured at ~zero.** Real referrers into `/use-cases/*` over 60d: Facebook 14 users, curify-internal 5, google.com 3, t.co 2, 1point3acres 1 — **no LinkedIn, no Medium, no RedNote**. RedNote does not pass links and LinkedIn/Medium strip referrers, so referrer-based attribution can never work here; the gap is that no channel has a distinct landing path to count instead. |
+| **Thought leadership** (LinkedIn · RedNote · FB · Medium) | Running; positioning per `~/curify-gtm/docs/smm-account-positioning-playbook-2026-07-05.md` + memory `feedback_smm_account_positioning` | **Unmeasurable, and measured at ~zero.** Real referrers into `/use-cases/*` over 60d: Facebook 14 users, curify-internal 5, google.com 3, t.co 2, 1point3acres 1 — **no LinkedIn, no Medium, no RedNote**. RedNote does not pass links and LinkedIn/Medium strip referrers, so referrer-based attribution can never work here; the gap is that no channel has a distinct landing path to count instead. |
 | **RedNote direct outreach + WeChat / offline warm intros** (people who state a need) | Running; **tracker shipped 2026-08-12** | Was untracked; now `gtm_tools/relationship_leads.json` captures channel, `need_verbatim`, buyer-vs-connector, and which product line the need lands on. First batch (`client-profile-08-12`, 6 named CN leads) is digested. Reply channel is WeChat, not email — these must stay out of the email send engine. |
 | **Crawling** (Pinterest source-HTML, Apollo domain crawls, football-shop harvests) | Ran repeatedly through 06→07 | **Produced leads, not traffic.** Confirmed dead end as an audience channel — it is a *list-building* tool, not a distribution one. Stop counting it as growth. |
 
@@ -469,7 +469,7 @@ corpus behind them at all.
 - `~/curify-studio/docs/workstream-enterprise-ai-b2b.md` — Enterprise AI B2B line (owns the `/enterprise` surface spec, UC-P0-2)
 - `~/curify-studio/docs/enterprise-ai-capability-one-pager.md` — drafted copy source for `/enterprise`
 - `~/curify-studio/gtm_tools/INDEX.md` — outbound engine (voices, CTAs, trackers)
-- `docs/smm-account-positioning-playbook-2026-07-05.md` — per-account positioning for the thought-leadership motion
+- `~/curify-gtm/docs/smm-account-positioning-playbook-2026-07-05.md` — per-account positioning for the thought-leadership motion
 - `docs/interconnection.md` — blog ↔ use-case ↔ tool cross-link layer
 - `docs/vip-clients.md` — VIP roster (POD-D10 input)
 - `lib/use-cases.ts` — persona registry (POD-D5 / D6 target)
