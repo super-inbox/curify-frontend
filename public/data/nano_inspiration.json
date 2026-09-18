@@ -239838,5 +239838,332 @@
       "bilingual reading card"
     ],
     "allow_i18n": true
+  },
+  {
+    "id": "template-vocabulary-en-zh-grape-ripeness",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-en-zh-grape-ripeness-zh-wm.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-en-zh-grape-ripeness-zh-prev.jpg"
+    },
+    "params": {
+      "topic_name": "grape Ripeness",
+      "language_pair": "en-zh"
+    },
+    "locales": {
+      "zh": {
+        "title": "葡萄成熟度 Grape Ripeness"
+      },
+      "en": {
+        "title": "Grape Ripeness 葡萄成熟度"
+      }
+    },
+    "topics": [
+      "language",
+      "vocabulary",
+      "english-chinese",
+      "food-and-drink",
+      "kawaii"
+    ],
+    "search_aliases": [
+      "葡萄成熟度",
+      "Grape Ripeness",
+      "grape vocabulary",
+      "水果词汇",
+      "中英双语词卡",
+      "ripeness adjectives",
+      "形容词词卡",
+      "bilingual vocabulary card",
+      "en-zh vocabulary",
+      "fruit vocabulary poster"
+    ],
+    "updated_at": "2026-09-18T00:00:00.000Z"
+  },
+  {
+    "id": "template-hsk-bilingual-reading-text-lesson-poster-hsk-reading-practice-search-mtbcj3na-z9vbk0-1",
+    "template_id": "template-hsk-bilingual-reading-text-lesson-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-hsk-bilingual-reading-text-lesson-poster-hsk-reading-practice-search-mtbcj3na-z9vbk0-1-wm.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-hsk-bilingual-reading-text-lesson-poster-hsk-reading-practice-search-mtbcj3na-z9vbk0-1-prev.jpg"
+    },
+    "params": {
+      "hsk_article_title": "HSK1 小猫钓鱼 Little Cat Goes Fishing"
+    },
+    "locales": {
+      "en": {
+        "title": "HSK1 小猫钓鱼 Little Cat Goes Fishing"
+      }
+    },
+    "search_aliases": [
+      "HSK1 小猫钓鱼",
+      "Little Cat Goes Fishing",
+      "HSK 1 reading",
+      "小猫钓鱼 课文",
+      "HSK1 阅读练习",
+      "双语阅读",
+      "拼音课文",
+      "beginner Chinese reading",
+      "Chinese reading practice",
+      "生词表"
+    ],
+    "topics": [
+      "study-sheets",
+      "education",
+      "bilingual",
+      "kids",
+      "hsk1"
+    ],
+    "updated_at": "2026-09-18T00:00:00.000Z"
+  },
+  {
+    "id": "template-ip-creative-cultural-goods-mockup-set",
+    "template_id": "template-ip-creative-cultural-goods-mockup-set",
+    "asset": {
+      "image_url": "/images/nano_insp/75ac1e00-2a1b-4c31-822a-600db5dbedd3-wm.jpg",
+      "preview_image_url": "/images/nano_insp_preview/75ac1e00-2a1b-4c31-822a-600db5dbedd3-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "POD Merch Mockup",
+        "title": "Kitsune Girl Merch Set"
+      },
+      "zh": {
+        "category": "POD 周边定制类",
+        "title": "狐娘少女 文创周边套装"
+      }
+    },
+    "topics": [
+      "mockups",
+      "merch",
+      "pod",
+      "character-ip",
+      "kawaii"
+    ],
+    "search_aliases": [
+      "狐娘",
+      "kitsune girl",
+      "文创周边",
+      "IP周边套装",
+      "cultural merchandise",
+      "tote bag mockup",
+      "mug mockup",
+      "phone case mockup",
+      "sticker sheet",
+      "original character merch",
+      "二次元周边"
+    ],
+    "updated_at": "2026-09-18T00:00:00.000Z"
+  },
+  {
+    "id": "template-character-1eka8tc-003xffi",
+    "template_id": "template-character",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-1eka8tc-003xffi-wm.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-1eka8tc-003xffi-prev.jpg"
+    },
+    "params": {
+      "character_name": "唐三",
+      "character_source": "斗罗大陆"
+    },
+    "locales": {
+      "en": {
+        "title": "唐三 Tang San Character Sheet"
+      }
+    },
+    "topics": [
+      "character",
+      "anime",
+      "character-ip"
+    ],
+    "search_aliases": [
+      "唐三",
+      "Tang San",
+      "斗罗大陆",
+      "Douluo Dalu",
+      "Soul Land",
+      "character design sheet",
+      "角色设定图",
+      "昊天锤",
+      "expression sheet",
+      "武魂"
+    ],
+    "updated_at": "2026-09-18T00:00:00.000Z"
+  },
+  {
+    "id": "template-travel-0047iuv-1-19-1-25",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-0047iuv-1-19-1-25-zh-wm.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-0047iuv-1-19-1-25-zh-prev.jpg"
+    },
+    "params": {
+      "date_range": "1/19-1/25",
+      "destination": "象山"
+    },
+    "locales": {
+      "zh": {
+        "title": "象山暖冬之旅 1/19-1/25"
+      }
+    },
+    "topics": [
+      "travel",
+      "china",
+      "map",
+      "itinerary"
+    ],
+    "search_aliases": [
+      "象山",
+      "Xiangshan",
+      "宁波象山",
+      "手绘旅行地图",
+      "travel map",
+      "旅行路书",
+      "浙江旅游",
+      "石浦渔港古城",
+      "东门渔村",
+      "winter trip itinerary"
+    ],
+    "updated_at": "2026-09-18T00:00:00.000Z"
+  },
+  {
+    "id": "template-science-education-infographic-1eu59rn",
+    "template_id": "template-science-education-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-science-education-infographic-1eu59rn-zh-wm.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-science-education-infographic-1eu59rn-zh-prev.jpg"
+    },
+    "params": {
+      "topic": "七上地理知识"
+    },
+    "locales": {
+      "zh": {
+        "title": "七上地理：地球结构与大气层"
+      }
+    },
+    "search_aliases": [
+      "七年级上册地理",
+      "地球结构",
+      "大气层分层",
+      "对流层 平流层",
+      "初中地理",
+      "地理知识点",
+      "earth structure",
+      "atmosphere layers",
+      "7th grade geography",
+      "中学复习资料"
+    ],
+    "topics": [
+      "learning",
+      "science",
+      "school",
+      "education"
+    ],
+    "updated_at": "2026-09-18T00:00:00.000Z"
+  },
+  {
+    "id": "template-education-17x9b64",
+    "template_id": "template-education",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-17x9b64-zh-wm.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-17x9b64-zh-prev.jpg"
+    },
+    "params": {
+      "topic": "七上地理知识点"
+    },
+    "locales": {
+      "zh": {
+        "title": "七上地理知识点思维导图"
+      }
+    },
+    "search_aliases": [
+      "七上地理知识点",
+      "七年级地理",
+      "地理思维导图",
+      "知识点总结",
+      "初中地理复习",
+      "陆地与海洋",
+      "天气与气候",
+      "居民与聚落",
+      "geography mind map",
+      "study notes"
+    ],
+    "topics": [
+      "learning",
+      "cartoon",
+      "school",
+      "education"
+    ],
+    "updated_at": "2026-09-18T00:00:00.000Z"
+  },
+  {
+    "id": "template-training-muscle-equipment-core",
+    "template_id": "template-training-muscle-equipment",
+    "asset": {
+      "image_url": "/images/nano_insp/e9590a79-480c-4ad7-af02-3620c9cb57df-wm.jpg",
+      "preview_image_url": "/images/nano_insp_preview/e9590a79-480c-4ad7-af02-3620c9cb57df-prev.jpg"
+    },
+    "params": {
+      "muscle_group": "Core"
+    },
+    "locales": {
+      "en": {
+        "title": "Ultimate Core Training 核心训练"
+      }
+    },
+    "topics": [
+      "fitness",
+      "body",
+      "guides",
+      "sports"
+    ],
+    "search_aliases": [
+      "核心训练",
+      "core workout",
+      "腹肌训练",
+      "ab exercises",
+      "健身房器械",
+      "plank with plate",
+      "russian twist",
+      "hanging leg raises",
+      "健身计划",
+      "gym poster"
+    ],
+    "updated_at": "2026-09-18T00:00:00.000Z"
+  },
+  {
+    "id": "template-sports-technique-guide-mma",
+    "template_id": "template-sports-technique-guide",
+    "asset": {
+      "image_url": "/images/nano_insp/template-sports-technique-guide-mma-wm.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-sports-technique-guide-mma-prev.jpg"
+    },
+    "params": {
+      "sport_type": "MMA"
+    },
+    "locales": {
+      "en": {
+        "title": "MMA Knowledge 综合格斗技巧图解"
+      }
+    },
+    "search_aliases": [
+      "MMA",
+      "综合格斗",
+      "mixed martial arts",
+      "巴西柔术",
+      "muay thai clinch",
+      "拳击刺拳",
+      "摔跤抱腿",
+      "jiu-jitsu armbar",
+      "格斗技巧图解",
+      "martial arts poster"
+    ],
+    "topics": [
+      "sports",
+      "fitness",
+      "guides",
+      "vintage"
+    ],
+    "updated_at": "2026-09-18T00:00:00.000Z"
   }
 ]
