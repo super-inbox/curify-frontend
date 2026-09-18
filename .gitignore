@@ -109,7 +109,12 @@ raw/retouching-09-01/
 # transcribed into docs/workstream-seo-smm-growth.md § 2026-09-15 — same handling
 # as raw/agent-skills-08-31/ and raw/retouching-09-01/ above.
 raw/photo-retouching-seo-09-15/
-raw/model-video-09-05/
+# OOTD video client material: a real woman's reference video (no release) + the client's
+# lookbook photo. Was listed as `raw/model-video-09-05/` from 2026-09-07 — a path that does
+# not exist on disk, so the line matched nothing and the real folder sat unignored in this
+# public repo for 8 days (never committed). Corrected 2026-09-15; verify any new line here
+# with `git check-ignore -v <path>`. §7z record: client-006 ootd-video, round 7.
+raw/fashion-model-09-05/
 
 # Head-swap source and output — a third party's identifiable face (a screenshot of a
 # men's-styling short-video account) plus renders that place that likeness on other
