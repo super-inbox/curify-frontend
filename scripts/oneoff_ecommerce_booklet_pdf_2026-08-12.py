@@ -1,5 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Build the 6-page 电商视觉 小册子 (A4 portrait) — sibling of curify_merch.pdf.
+"""Build the 8-page 电商视觉 小册子 (A4 portrait) — sibling of curify_merch.pdf.
+
+Page 5 (案例四 · 服饰模特图) was added 2026-09-02: apparel is the highest-shoot-cost
+category and the generic cases page had no on-model proof, so it gets a dedicated
+INPUT/OUTPUT page. Adding or removing a page here shifts the numbered footers —
+they are config values (`fm_page_no`, `pc_page_no`, `part_page_no`), not literals.
+
+Page 6 (案例五 · 手机链) was added 2026-09-03: accessories are the volume end of the
+book — dozens of low-price SKUs a month, five listing shots each — and the apparel
+page argues cost, not count. Its five outputs are 1:1, the marketplace main-image
+ratio.
 
 Design DNA is lifted from ~/curify-gallery/client_VC_portfolio/curify_merch.pdf
 (the merch/IP booklet): cream base, deep-navy header blocks and side panels with
@@ -39,7 +49,10 @@ Usage:
 alongside this file, or regenerate with the crop block in the session notes).
 """
 import argparse
+import json
 import os
+import subprocess
+import tempfile
 from PIL import Image, ImageDraw, ImageFont
 
 # ── canvas ────────────────────────────────────────────────────────────────
@@ -148,6 +161,82 @@ def new_page(bg):
     """An S× page plus a logical-unit drawing surface for it."""
     page = Image.new("RGB", (W * S, H * S), bg)
     return page, ScaledDraw(ImageDraw.Draw(page))
+
+
+# ── watermark ─────────────────────────────────────────────────────────────
+# Slanted tiled Curify mark, applied to every page before the PDF is written.
+#
+# Geometry constants are READ OUT of the house helper (scripts/lib/watermark.cjs)
+# via node rather than copied, so this booklet cannot drift from the other
+# watermarked Curify assets — same logo, same -30°, same 0.22 width, same 1.8
+# spacing that watermark_template_images.cjs and the company-intro deck's
+# make_watermark_tile.cjs use.
+#
+# Opacity is the one thing that is NOT taken from the helper — its 0.15 is tuned
+# for photographs, and this is paper.
+#
+# ⚠️ The 2026-09-03 build shipped at the company-intro deck's 0.08/0.11 and the
+# mark was invisible in a normal PDF viewer — present in the bytes, useless as a
+# watermark. That deck is mostly bare ground so a whisper reads; these pages are
+# dense with photography and body copy, which swamps it. Raised to the values
+# below, which are legible at fit-to-window without fighting the text. If you
+# retune, judge it in a viewer at page-fit zoom, NOT on a full-resolution crop —
+# that is what hid the problem the first time.
+#
+# Pages are light cream but carry navy header bands, so a single ink-coloured
+# tile would vanish across the top of every page. Two tiles are built — the logo
+# as-is, and a forced-white copy — and chosen per pixel off the page's own
+# luminance, so the mark runs unbroken over both.
+WM_HELPER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib", "watermark.cjs")
+WM_OPACITY = {"light": 0.20, "dark": 0.26}
+_wm_layer = {}
+
+
+def _wm_defaults():
+    """logoPct / rotate / spacingFactor / logo path, straight from the JS helper."""
+    js = ("const w = require(process.argv[1]); "
+          "console.log(JSON.stringify({...w.TILE_DEFAULTS, logo: w.DEFAULT_LOGO_PATH}))")
+    out = subprocess.run(["node", "-e", js, WM_HELPER],
+                         capture_output=True, text=True, check=True)
+    return json.loads(out.stdout)
+
+
+def _wm_build_layer():
+    """One full-page RGBA layer per tint, tiled edge to edge."""
+    cfg = _wm_defaults()
+    pw_page = W * S
+    logo_px = round(pw_page * cfg["logoPct"])
+    with tempfile.TemporaryDirectory() as td:
+        for tint, opacity in WM_OPACITY.items():
+            t = os.path.join(td, f"{tint}.png")
+            white = "-fill white -colorize 100 " if tint == "dark" else ""
+            subprocess.run(
+                f'magick -background none "{cfg["logo"]}" -resize {logo_px}x '
+                f'-rotate {cfg["rotate"]} {white}'
+                f'-alpha set -channel A -evaluate multiply {opacity} +channel "{t}"',
+                shell=True, check=True, capture_output=True)
+            tile = Image.open(t).convert("RGBA")
+            tw = round(tile.width * cfg["spacingFactor"])
+            th = round(tile.height * cfg["spacingFactor"])
+            spaced = Image.new("RGBA", (tw, th), (0, 0, 0, 0))
+            spaced.paste(tile, ((tw - tile.width) // 2, (th - tile.height) // 2), tile)
+
+            layer = Image.new("RGBA", (pw_page, H * S), (0, 0, 0, 0))
+            for yy in range(0, H * S, th):
+                for xx in range(0, pw_page, tw):
+                    layer.alpha_composite(spaced, (xx, yy))
+            _wm_layer[tint] = layer
+
+
+def watermark(page):
+    """Composite the tiled mark onto a finished page, in place."""
+    if not _wm_layer:
+        _wm_build_layer()
+    # dark tile wherever the page under it is dark (the navy bands), light elsewhere
+    on_dark = page.convert("L").point(lambda v: 255 if v < 128 else 0)
+    mark = Image.composite(_wm_layer["dark"], _wm_layer["light"], on_dark)
+    page.paste(mark, (0, 0), mark)
+    return page
 
 
 def paste(page, im, xy):
@@ -340,7 +429,8 @@ def page_cover(A, cfg):
     d.rectangle((0, 96, W, 101), fill=GOLD)
 
     y = 235
-    text(d, (W // 2, y), "AI E-COMMERCE VISUAL STUDIO", en_b(21), GOLD, anchor="ma", spacing=7)
+    text(d, (W // 2, y), cfg.get("eyebrow", "AI E-COMMERCE VISUAL STUDIO"),
+         en_b(21), GOLD, anchor="ma", spacing=7)
 
     y += 62
     d.text((W // 2, y), cfg["slogan_cn"], font=cjk_b(78), fill=NAVY, anchor="ma")
@@ -564,7 +654,183 @@ def page_cases(A, cfg):
 
 
 # ══════════════════════════════════════════════════════════════════════════
-#  PAGE 5 — 合作模式 PARTNERSHIP
+#  PAGE 5 — 案例四 · 服饰模特图 AI FASHION MODEL
+# ══════════════════════════════════════════════════════════════════════════
+def page_fashion_model(A, cfg):
+    """One in-store flat/mannequin snap → a set of on-model e-commerce shots.
+
+    Apparel is the category where the generic cases page (page 4) is weakest and
+    where the shoot cost is highest — a model + photographer + location booking is
+    four figures before a single SKU goes live. So this gets its own page, laid out
+    as INPUT (one photo) / OUTPUT (four looks) so the 一→多 claim is read, not asserted.
+
+    ⚠️ FIDELITY COPY — the checklist prints only details that actually survive in ALL
+    four rendered outputs (covered-button placket, contrast ribbed cuffs, pointed
+    buttoned hem tab, relaxed straight fit, single clean layer). Do NOT re-add an
+    exact button COUNT: the source prompt specifies 7 on the placket and fm_out_d
+    renders ~8. A buyer checking a printed number against the picture is exactly the
+    reader this page is for. Re-verify the checklist against the images after ANY
+    asset swap.
+    """
+    page, d = new_page(CREAM_W)
+    header_block(page, cfg["fm_title"], "AI FASHION MODEL",
+                 kicker=cfg["fm_kicker"], h=180)
+
+    x, maxw = 78, W - 156
+    y = 212
+    y = para(d, (x, y), cfg["fm_lead"], cjk_l(22), INK, maxw, 36)
+
+    # ── INPUT ────────────────────────────────────────────────────────────
+    y = 330
+    d.text((x, y), "输入 · INPUT", font=cjk_b(26), fill=NAVY)
+    text(d, (x + 2, y + 36), cfg["fm_input_en"], en_r(15), MUTED, spacing=3)
+
+    # Card and spec box share a top edge and a height, so the two columns read as
+    # one band. 3:4 card (the source snap's ratio) → no crop inside paste_card.
+    iy0, iw, ih = 404, 318, 424
+    paste_card(page, os.path.join(A, cfg["fm_input"]), (x, iy0, x + iw, iy0 + ih),
+               radius=10, border=(226, 216, 188))
+    d.text((x + iw // 2, iy0 + ih + 16), cfg["fm_input_cap"], font=cjk_b(20),
+           fill=NAVY, anchor="ma")
+
+    # locked-spec checklist — the actual differentiator vs. a generic try-on
+    sx, sw = x + iw + 32, maxw - iw - 32
+    rounded(d, (sx, iy0, sx + sw, iy0 + ih), 10, fill=CREAM_Y, outline=(230, 222, 200))
+    d.text((sx + 28, iy0 + 22), "锁定的商品细节", font=cjk_b(25), fill=GOLD)
+    text(d, (sx + 30, iy0 + 58), "LOCKED PRODUCT DETAILS", en_r(14), MUTED, spacing=3)
+
+    yy = iy0 + 96
+    for cn, en in cfg["fm_specs"]:
+        # gold tick
+        d.line((sx + 30, yy + 13, sx + 37, yy + 20), fill=GOLD, width=3)
+        d.line((sx + 37, yy + 20, sx + 50, yy + 5), fill=GOLD, width=3)
+        d.text((sx + 66, yy), cn, font=cjk_b(20), fill=NAVY)
+        d.text((sx + 66, yy + 30), en, font=en_r(14), fill=(96, 94, 90))
+        yy += 56
+
+    # Rule + closing note are pinned to the BOX, not to the item cursor, so an
+    # added spec line can never push them out through the bottom border.
+    d.line((sx + 30, iy0 + 382, sx + sw - 30, iy0 + 382), fill=(226, 216, 188), width=1)
+    para(d, (sx + 30, iy0 + 394), cfg["fm_spec_note"], cjk_l(18), MUTED, sw - 60, 26)
+
+    # ── OUTPUT ───────────────────────────────────────────────────────────
+    y = 884
+    d.text((x, y), cfg["fm_output_title"], font=cjk_b(26), fill=NAVY)
+    text(d, (x + 2, y + 36), cfg["fm_output_en"], en_r(15), MUTED, spacing=3)
+
+    oy0 = 946
+    gap = 18
+    n = len(cfg["fm_outputs"])
+    cw = (maxw - gap * (n - 1)) / n
+    ch = cw * 4 / 3
+    for i, (p, cn, en) in enumerate(cfg["fm_outputs"]):
+        cx = x + i * (cw + gap)
+        paste_card(page, os.path.join(A, p), (cx, oy0, cx + cw, oy0 + ch), radius=10)
+        d.text((cx + cw / 2, oy0 + ch + 16), cn, font=cjk_b(19), fill=NAVY, anchor="ma")
+        d.text((cx + cw / 2, oy0 + ch + 44), en, font=en_r(13), fill=MUTED, anchor="ma")
+
+    # ── 项目解析 ──────────────────────────────────────────────────────────
+    y = oy0 + ch + 92
+    bh = cfg.get("fm_bh", 166)
+    rounded(d, (x, y, x + maxw, y + bh), 10, fill=CREAM_Y, outline=(230, 222, 200))
+    d.text((x + 24, y + 20), "项目解析", font=cjk_b(22), fill=GOLD)
+    para(d, (x + 24, y + 58), cfg["fm_body"], cjk_l(21), (46, 48, 60), maxw - 48, 33)
+
+    footer(page, dark=False, page_no=cfg.get("fm_page_no", "05"))
+    return page
+
+
+# ══════════════════════════════════════════════════════════════════════════
+#  PAGE 6 — 案例五 · 手机链（饰品配件）
+# ══════════════════════════════════════════════════════════════════════════
+def page_phone_charm(A, cfg):
+    """One WeChat snap of a phone charm → the whole five-shot listing set.
+
+    Apparel (page 5) argues the 一→多 case on shoot COST. Accessories argue it on
+    shoot COUNT: a 手机链 is a few tens of RMB and a shop lists dozens a month, but
+    each SKU still needs main / on-phone / lifestyle / macro / spec before it can go
+    live. So this page is laid out as INPUT (one snap) → the five named shots in the
+    order a listing uses them, rather than as four interchangeable looks.
+
+    OUTPUT cards are 1:1 — Chinese marketplace main images are square, so that is the
+    native delivery ratio here, not a crop.
+
+    ⚠️ FIDELITY COPY — as on page 5, the checklist prints only details that survive in
+    ALL FIVE renders. Shot 4 is a macro, so the closed-loop silhouette is NOT among
+    them; do not re-add it. No bead COUNT either — the renders do not agree on one.
+    The spec figures printed inside pc_out_5.jpg are ESTIMATES read off the client's
+    snap, not measured stock data (see scripts note in callouts.py); swap them for the
+    client's real spec sheet before this page is shown as finished work.
+    """
+    page, d = new_page(CREAM_W)
+    header_block(page, cfg["pc_title"], "AI PRODUCT SET",
+                 kicker=cfg["pc_kicker"], h=180)
+
+    x, maxw = 78, W - 156
+    y = para(d, (x, 212), cfg["pc_lead"], cjk_l(22), INK, maxw, 36)
+
+    # ── INPUT ────────────────────────────────────────────────────────────
+    y = 330
+    d.text((x, y), "输入 · INPUT", font=cjk_b(26), fill=NAVY)
+    text(d, (x + 2, y + 36), cfg["pc_input_en"], en_r(15), MUTED, spacing=3)
+
+    # Card and spec box share a top edge and a height (as on page 5) so the two
+    # columns read as one band. 3:4 card — the snap's own ratio, so no crop.
+    iy0, iw, ih = 404, 345, 460
+    paste_card(page, os.path.join(A, cfg["pc_input"]), (x, iy0, x + iw, iy0 + ih),
+               radius=10, border=(226, 216, 188))
+    d.text((x + iw // 2, iy0 + ih + 16), cfg["pc_input_cap"], font=cjk_b(20),
+           fill=NAVY, anchor="ma")
+
+    sx, sw = x + iw + 32, maxw - iw - 32
+    rounded(d, (sx, iy0, sx + sw, iy0 + ih), 10, fill=CREAM_Y, outline=(230, 222, 200))
+    d.text((sx + 28, iy0 + 22), "锁定的商品细节", font=cjk_b(25), fill=GOLD)
+    text(d, (sx + 30, iy0 + 58), "LOCKED PRODUCT DETAILS", en_r(14), MUTED, spacing=3)
+
+    yy = iy0 + 96
+    for cn, en in cfg["pc_specs"]:
+        d.line((sx + 30, yy + 13, sx + 37, yy + 20), fill=GOLD, width=3)
+        d.line((sx + 37, yy + 20, sx + 50, yy + 5), fill=GOLD, width=3)
+        d.text((sx + 66, yy), cn, font=cjk_b(20), fill=NAVY)
+        d.text((sx + 66, yy + 30), en, font=en_r(14), fill=(96, 94, 90))
+        yy += 56
+
+    # Rule + note pinned to the BOX, not the item cursor — an added spec line can
+    # never push them through the bottom border.
+    d.line((sx + 30, iy0 + ih - 62, sx + sw - 30, iy0 + ih - 62),
+           fill=(226, 216, 188), width=1)
+    para(d, (sx + 30, iy0 + ih - 50), cfg["pc_spec_note"], cjk_l(18), MUTED, sw - 60, 26)
+
+    # ── OUTPUT — the five shots, in listing order ────────────────────────
+    y = 920
+    d.text((x, y), cfg["pc_output_title"], font=cjk_b(26), fill=NAVY)
+    text(d, (x + 2, y + 36), cfg["pc_output_en"], en_r(15), MUTED, spacing=3)
+
+    oy0, gap = 982, 16
+    n = len(cfg["pc_outputs"])
+    cw = (maxw - gap * (n - 1)) / n
+    ch = cw                                   # 1:1 — marketplace main-image ratio
+    for i, (p, cn, en) in enumerate(cfg["pc_outputs"]):
+        cx = x + i * (cw + gap)
+        paste_card(page, os.path.join(A, p), (cx, oy0, cx + cw, oy0 + ch), radius=10,
+                   border=(230, 224, 210))
+        d.text((cx + cw / 2, oy0 + ch + 14), f"{i+1}", font=en_b(17), fill=GOLD, anchor="ma")
+        d.text((cx + cw / 2, oy0 + ch + 40), cn, font=cjk_b(19), fill=NAVY, anchor="ma")
+        d.text((cx + cw / 2, oy0 + ch + 68), en, font=en_r(13), fill=MUTED, anchor="ma")
+
+    # ── 项目解析 ──────────────────────────────────────────────────────────
+    y = oy0 + ch + 104
+    bh = cfg.get("pc_bh", 196)
+    rounded(d, (x, y, x + maxw, y + bh), 10, fill=CREAM_Y, outline=(230, 222, 200))
+    d.text((x + 24, y + 20), "项目解析", font=cjk_b(22), fill=GOLD)
+    para(d, (x + 24, y + 58), cfg["pc_body"], cjk_l(21), (46, 48, 60), maxw - 48, 33)
+
+    footer(page, dark=False, page_no=cfg.get("pc_page_no", "06"))
+    return page
+
+
+# ══════════════════════════════════════════════════════════════════════════
+#  PAGE 7 — 合作模式 PARTNERSHIP
 # ══════════════════════════════════════════════════════════════════════════
 def page_partnership(A, cfg):
     page, d = new_page(CREAM_W)
@@ -592,7 +858,7 @@ def page_partnership(A, cfg):
             yy += 58
         y += bh + 26
 
-    footer(page, dark=False, page_no="05")
+    footer(page, dark=False, page_no=cfg.get("part_page_no", "05"))
     return page
 
 
@@ -755,6 +1021,79 @@ CONFIG = {
         },
     ],
 
+    # ── FASHION MODEL (案例四 · 服饰) ─────────────────────────────────────
+    # Assets: scripts/_ecommerce_booklet_assets/fm_*.png, cut from
+    # ~/curify-gallery/client_VC_portfolio/fashion-model-08-28/ (2026-08-28 run).
+    #   fm_input  = clothing-test.jpeg, left 13% cropped off (mirror + rack) and
+    #               the bottom 12% dropped, so the mannequin reads as the subject.
+    #   fm_out_*  = model-swap-04 / -05 / -03 / -06 — the four visually DISTINCT
+    #               looks. -01 and -02 are near-duplicates of -03, and -01 also
+    #               renders a contrast camisole at the neckline that the garment
+    #               spec explicitly forbids, so neither ships.
+    "fm_kicker": "CASE 04 · APPAREL",
+    "fm_title": "一张平铺图，一组模特图",
+    "fm_lead": "服饰是最吃模特图的类目，也是拍摄成本最高的类目——约模特、约摄影、约场地，"
+               "一个 SKU 起拍就是四位数，而版型微调、补色号、换季上新还要再来一轮。"
+               "这一页的输入，只有店里随手拍的一张平铺图。",
+    "fm_input": "fm_input.png",
+    "fm_input_en": "ONE IN-STORE PHONE PHOTO",
+    "fm_input_cap": "店内实拍 · 单张",
+    "fm_specs": [
+        ("包扣门襟", "Fabric-covered button placket"),
+        ("撞色罗纹袖口", "Contrast ribbed cuffs"),
+        ("尖角下摆门襟（本款签名细节）", "Pointed buttoned hem tab — the signature detail"),
+        ("宽松直筒版型，不收腰", "Relaxed straight fit — never slimmed to the model"),
+        ("单层穿着，不串内搭", "Worn as one clean layer — no carried-over camisole"),
+    ],
+    "fm_spec_note": "模特可换、场景可换，商品本体不能变——买家是拿着尺码表在核对这几处细节的。",
+    "fm_output_title": "输出 · OUTPUT — 同一件商品，四套模特场景",
+    "fm_output_en": "FOUR ON-MODEL LOOKS FROM THAT ONE PHOTO",
+    "fm_outputs": [
+        ("fm_out_a.png", "棚拍 · 净色背景", "Studio · neutral"),
+        ("fm_out_b.png", "棚拍 · 深色下装", "Studio · dark bottom"),
+        ("fm_out_c.png", "户外 · 生活场景", "Outdoor · lifestyle"),
+        ("fm_out_d.png", "室内 · 通勤场景", "Interior · commute"),
+    ],
+    "fm_body": "同一件针织开衫，四套模特、四种场景、四种下装搭配，全部从上面那一张平铺图生成——"
+               "不用约模特、不用租场地、不用等档期。包扣门襟、撞色袖口与尖角下摆这些"
+               "「是不是这一件」的细节被逐条锁定，版型按商品本身的宽松直筒呈现，"
+               "不会被模特身形带成收腰款。同一批次可继续延展主图六宫格与 9:16 短视频。",
+    "fm_page_no": "05",
+
+    # ── CASE 05 · 手机链（饰品配件） ─────────────────────────────────────
+    "pc_kicker": "CASE 05 · ACCESSORIES",
+    "pc_title": "一张随手拍，一套完整主图",
+    "pc_lead": "饰品配件是典型的「低客单、高 SKU、上新快」类目——一条手机链几十块钱，"
+               "一个月上几十款，每一款却都要主图、佩戴图、场景图、细节图、尺寸图五张起。"
+               "按传统方式一款一拍，拍摄成本比货值还高。这一页的输入，"
+               "只有客户在微信里随手拍的一张实物照。",
+    "pc_input": "pc_input.jpg",
+    "pc_input_en": "ONE WECHAT SNAP FROM THE CLIENT",
+    "pc_input_cap": "客户微信实拍 · 单张",
+    "pc_specs": [
+        ("AB 镀彩珠面与裂纹肌理", "AB-coated pearl, crackle texture"),
+        ("大小珠交替的排列顺序", "Alternating large / small bead order"),
+        ("大珠之间的透明玻璃隔珠", "Clear glass spacers between beads"),
+        ("手工玻璃吊坠：白糖霜 + 彩色糖粒", "Lampwork charm — icing and sprinkles"),
+        ("银色开口圈与锥形珠帽", "Silver spring-gate ring and bead caps"),
+    ],
+    "pc_spec_note": "场景可以换，商品本体不能变——买家放大看的就是这几处。",
+    "pc_output_title": "输出 · OUTPUT — 一套五图，当天出稿",
+    "pc_output_en": "THE FULL FIVE-SHOT LISTING SET",
+    "pc_outputs": [
+        ("pc_out_1.jpg", "商品主图", "Main · white"),
+        ("pc_out_2.jpg", "手机佩戴图", "On-phone"),
+        ("pc_out_3.jpg", "生活场景图", "Lifestyle"),
+        ("pc_out_4.jpg", "细节特写图", "Macro detail"),
+        ("pc_out_5.jpg", "尺寸卖点图", "Size & features"),
+    ],
+    "pc_body": "五张图，覆盖一条手机链在详情页里的完整说服链路：主图看全貌、佩戴图看装上手机是什么样、"
+               "场景图看氛围、细节图看做工、尺寸图看合不合适。全部来自上面那一张微信实拍——"
+               "不用寄样、不用棚拍、不用等档期。镀彩珠面、隔珠排列、吊坠糖粒这些"
+               "「是不是同一条」的细节被逐条锁定；尺寸与卖点为可编辑文字图层，换 SKU 只改数字，"
+               "不必重出整张图。同一批次可继续延展详情页长图与 9:16 短视频。",
+    "pc_page_no": "06",
+
     # ── PARTNERSHIP ──────────────────────────────────────────────────────
     "part_vertical": "按节奏合作",
     "part_lead": "为了匹配不同规模商家的上新节奏，我们提供三种合作方式：",
@@ -777,6 +1116,8 @@ CONFIG = {
     ],
 
     # ── CONTACT ──────────────────────────────────────────────────────────
+    "part_page_no": "07",
+
     "contact_lines": ["让每一次上新，", "都有一套配得上它的视觉"],
     "contact_en": "Every Launch Deserves Better Visuals",
     "contact_qr": [("qr_web.png", "官网二维码", "Website"),
@@ -789,6 +1130,8 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     ap.add_argument("--assets", default=os.path.join(here, "_ecommerce_booklet_assets"))
     ap.add_argument("--out", default=os.path.join(here, "..", "curify_ecommerce.pdf"))
+    ap.add_argument("--wm-opacity", type=float, default=None,
+                    help="override the watermark's light-ground opacity (dark scales with it)")
     a = ap.parse_args()
 
     A = a.assets
@@ -797,9 +1140,18 @@ def main():
         page_insight(A, CONFIG),
         page_solutions(A, CONFIG),
         page_cases(A, CONFIG),
+        page_fashion_model(A, CONFIG),
+        page_phone_charm(A, CONFIG),
         page_partnership(A, CONFIG),
         page_contact(A, CONFIG),
     ]
+    if a.wm_opacity is not None:
+        k = a.wm_opacity / WM_OPACITY["light"]
+        WM_OPACITY["light"], WM_OPACITY["dark"] = a.wm_opacity, WM_OPACITY["dark"] * k
+
+    for p in pages:
+        watermark(p)
+
     out = os.path.abspath(a.out)
     # Pillow encodes PDF pages as JPEG at quality=75 by default, which rings around
     # every glyph edge — a real part of why the first build read as soft, on top of
