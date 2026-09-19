@@ -3961,3 +3961,48 @@ Pinterest publishing from another repo — that coupling is the thing to remembe
 
 What stayed here: this doc, `workstream-index.md`, and `taxonomy-gap-canva-pinterest-2026-06-14.md`
 (a taxonomy audit, not a channel doc).
+
+---
+
+## 2026-09-19 — the image readout is a negative, and two P0s died on live verification
+
+Full write-up: [`seo-cluster-strategy-2026-09-19.md`](seo-cluster-strategy-2026-09-19.md). Filed
+separately because it is a set of cluster verdicts rather than a site readout. Short version:
+
+1. **The 09-01 image ship bought discovery, not ranking.** Per-day impressions 680 → 2,678 (+294%)
+   and clicks 1.4 → 5.1, but **position 41.2 → 40.2 and CTR 0.205% → 0.191%** — and the criterion
+   this was pre-registered against was explicitly *position and CTR, not raw impressions*. The
+   indicator went backwards (`nail art designs` pos 11.7 → 21.8, still zero clicks). **The image
+   sitemap / alt lever is spent.** Sizing rule that falls out: image is 2.5× web's impressions and
+   13% of its clicks — **~1/29th the value per impression.**
+2. **The fashion-template cluster is CLOSED, on a format verdict, before KD was pulled.** It looked
+   like the find of the audit — 18× growth, the only cluster whose position improved (43.5 → 25.9),
+   eight queries at pos 4–14 with zero clicks, and a **279:1 image-to-web** impression ratio. Live
+   SERP inspection says the artifact wanted is a blank **croquis**, a **sewing pattern** or a
+   **downloadable vector** — a production *input* — while we emit a finished AI gown sheet, a
+   production *output*. Page 1 is Canva / Adobe Stock / Figma / Pinterest asset libraries. We rank
+   in the grid because our sketches *look like* croquis. ⭐ **But the ads on that SERP point
+   somewhere real**: Futuriza and LOOK AI are bidding on *flatlay → on-model photos* and *flat
+   sketch tool* — the capability we already built. **That query set has never had KD pulled and is
+   the strongest lead this audit produced.**
+3. **Two planned P0 builds were falsified by curl, both by same-day commits.**
+   `portrait photo editing` (110/mo, KD 11) was scoped as an unbuilt spoke from the 09-15 table —
+   but `f03cdc68`, 09-15 20:08, already put it in the live `<title>`, where it now appears **19
+   times in the rendered HTML**. A second slug would have split the signal exactly as the refused
+   second `asl-translator` slug would have. And `/use-cases/for-photographers` does not lack links:
+   it has five, **four of them verified indexed**, and **every inspected crawl predates the link**
+   (`256e3bb4` shipped the edge 09-16). ⚠️ **The ≥3-indexed-links rule is stated as a property of
+   the target but is actually a property of the linking pages' crawl dates** — a page can satisfy
+   it perfectly and still never be crawled. A sixth link would have changed nothing.
+4. **Correction — the ASL position→CTR premise fails its own test.** Generic ASL queries at pos <9
+   convert at **7.2%**; at pos ≥9, **9.5%**. Confounded and small, so the honest reading is that
+   this data cannot carry position→click arithmetic here, not that it is inverted. Discard any ASL
+   lift estimate built on a CTR curve. The head-term cannibalization is undisputed and unread:
+   `asl video translator` splits 321 impressions between the tool (251, 33 clicks, pos 13.9) and
+   the blog (70, **1 click**, pos 38.8); the Spanish equivalent splits **136 impressions across
+   seven `#anchor` fragments for zero clicks**. Consolidation shipped 09-16 — **read it, don't ship
+   on top of it.**
+
+**Net: this audit cancelled more work than it created.** Of four planned P0 items, three resolved
+to verdicts or operator actions and one closed a cluster. That is the verification rules working,
+and it is recorded rather than quietly deleted.
