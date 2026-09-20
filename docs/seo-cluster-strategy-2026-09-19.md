@@ -375,9 +375,20 @@ editors"* is a direct quote). Lead with the constraint: *nothing moves but what 
   `Discovered – currently not indexed` → `Submitted and indexed`. Per §5c this page is the
   correct page type for the KD-7 `outsource wedding photo editing` intent, on a SERP held by
   solo freelancers, so getting it crawled is the single highest-value unblock in the cluster.
-- **Validate Fix on `/nano-template/portrait-retouching-blueprint`** — folded to `/` on a
-  **2026-07-08** crawl, i.e. pre-dating the 09-01 canonical fix. It is the only retouching URL
-  that ranks (pos 2.3) and it cannot rank as itself. Last remaining Phase-0 item.
+- ✅ **`/nano-template/portrait-retouching-blueprint` live-tested and submitted for indexing
+  2026-09-20 (operator).** **Phase 0 is now complete.** Verified live before submitting, which
+  is the step the 09-09 fold verdict skipped: the page returns 200 with an **absolute
+  self-canonical**, `index, follow`, and a `<title>` matching its `<h1>`. Nothing on the page
+  is wrong.
+  The fold is purely stale state, and the dates are three days apart: it was last crawled
+  **2026-07-08**, and the relative→absolute canonical fix for this route family shipped
+  **2026-07-11** (`3fb7b42f`). Google has been holding a pre-fix snapshot for ten weeks on the
+  only retouching URL that ranks (pos 2.3). A recrawl should clear it outright.
+  **Verify ~09-27** with `scripts/_foldscan.cjs`: `Duplicate without user-selected canonical`
+  → `Submitted and indexed`, and `googleCanonical` moving off `/`.
+  ⚠️ Minor, filed not fixed: the page emits **zero hreflang tags**. Expected if the template is
+  EN-only — nano-template hubs emit only their authored locales — but unverified, and it does
+  not block the fold clearing.
 - **Pull KD on the on-model / flatlay query set** that Futuriza and LOOK AI are bidding on. This is
   §2's forward pointer and the only new lead this audit produced.
 - **Real-estate editing stays gated on the capability probe.** `retouch_pipeline.py:326` raises
