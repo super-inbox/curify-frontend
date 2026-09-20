@@ -128,11 +128,32 @@ const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
       href: "/tools/wedding-photo-editing",
       Icon: Wrench,
     },
+    // 2026-09-20. Repointed /contact -> /use-cases/for-photographers. Two reasons,
+    // and the SEO one is the weaker of the two.
+    //
+    // Semantics first: "talk about a whole set" IS the persona page. It is the
+    // landing surface built for `outsource wedding photo editing` (90/mo, KD 7),
+    // and it carries both /contact and /tools/wedding-photo-editing itself, so
+    // the conversion path is preserved at the cost of one hop rather than cut.
+    //
+    // The crawl reason: /use-cases/for-photographers is "Discovered - currently
+    // not indexed". It already has five inbound links, four from pages verified
+    // indexed — but EVERY inspected crawl predates the link, because the page
+    // shipped 09-15 and the reverse USE_CASES[].toolSlugs edge shipped 09-16
+    // (256e3bb4). So the >=3-indexed-links precondition is satisfied in markup
+    // and invisible to Google. A sixth link off a stale linker would change
+    // nothing; this one is different because its host (/blog/wedding-photo-
+    // retouching-cost) was crawled 09-15, is three weeks old, and is still in
+    // the active-crawl window for a new post.
+    //
+    // ⚠️ The rule itself needs restating: >=3-indexed-links is written as a
+    // property of the TARGET, but it is really a property of the LINKERS' crawl
+    // dates. See docs/seo-cluster-strategy-2026-09-19.md §3b.
     {
       id: "talk-about-a-set",
       label: "Talk about a whole set",
       description: "Colour consistency across a gallery, or a look matched to a reference you name — the two jobs per-frame retouching does not cover.",
-      href: "/contact",
+      href: "/use-cases/for-photographers",
       Icon: MessageCircle,
     },
   ],

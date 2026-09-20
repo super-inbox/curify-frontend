@@ -115,6 +115,20 @@ none of them measurable:
 - **Docked**: ASL captioning (no viable tech path — memory `project_asl_captioning_demand`)
 
 ### C. SEO + SMM + Growth
+- **2026-09-19** **Image readout is a NEGATIVE; fashion cluster CLOSED; two P0 builds falsified by
+  curl** — [`seo-cluster-strategy-2026-09-19.md`](seo-cluster-strategy-2026-09-19.md). The 09-01
+  image ship moved per-day impressions 680 → 2,678 but **position 41.2 → 40.2 and CTR 0.205% →
+  0.191%**, against a criterion pre-registered as *position and CTR, not impressions* — the
+  sitemap/alt lever is **spent**, and image is worth **~1/29th of web per impression**. The
+  fashion-template cluster (279:1 image-to-web, 8 queries at pos 4–14) is **closed on a SERP format
+  verdict before KD was pulled**: the artifact wanted is a blank croquis / sewing pattern / vector
+  (a production *input*); we emit a finished AI gown sheet. ⭐ Its ads point at **flatlay →
+  on-model**, a capability we already have and have **never pulled KD on**. Two planned builds
+  died on live verification: `portrait photo editing` is already in the live `<title>` 19× (`f03cdc68`,
+  same day as the table that called it unbuilt), and `/use-cases/for-photographers` has **five inbound
+  links, four verified indexed, whose crawls all predate the link** — ⚠️ **the ≥3-links rule is a property
+  of the linkers' crawl dates, not of the target**. Also corrects the ASL position→CTR premise
+  (pos <9 converts *worse*: 7.2% vs 9.5%) — discard CTR-curve lift estimates.
 - **2026-09-18** Pinterest **batch 5 — 33 Pins, 33/33 verified; account at 108 campaign Pins /
   60 templates** (`c6fa8bb4`). Two corrections, both to earlier entries here. (1) ⚠️ **T+8 is too
   early to grade a cohort** — batch 3, called "the worst cohort on the account" at 2 impressions
