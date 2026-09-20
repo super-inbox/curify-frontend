@@ -4006,3 +4006,114 @@ separately because it is a set of cluster verdicts rather than a site readout. S
 **Net: this audit cancelled more work than it created.** Of four planned P0 items, three resolved
 to verdicts or operator actions and one closed a cluster. That is the verification rules working,
 and it is recorded rather than quietly deleted.
+
+---
+
+## 2026-09-20 — the ASL 28 → 540, decomposed: title work compounds a position, it does not create one
+
+The 09-16 readout recorded ASL going 79 → 314 clicks "with no ASL-specific SEO work" and left it
+there. It is the largest single movement this site has produced, so it is worth knowing whether it
+was a mechanism or a gift. Measured today against two non-overlapping 28d windows
+(PRIOR 07-24→08-20, NOW 08-21→09-17), page-filtered to `asl-video-translator`.
+
+### The 19× is two multipliers, and CTR contributed more than impressions
+
+| | PRIOR | NOW | |
+|---|---:|---:|---|
+| impressions | 563 | 4,354 | ×7.7 |
+| CTR | 4.97% | 12.40% | ×2.5 |
+| position | 14.0 | **8.3** | −5.7 |
+| **clicks** | **28** | **540** | **×19.3** |
+
+Attributing the click gain: **189 from more impressions at the old CTR, 323 from the higher CTR.**
+
+### It is not the site-wide lift — the rest of the site moved the other way
+
+The site grew in this period, so the rest of the site is the control. It does not behave the same:
+
+| | PRIOR | NOW |
+|---|---|---|
+| ASL position | 14.0 | **8.3** |
+| rest-of-site position | 14.3 | **15.9** — *worse* |
+| ASL CTR | 4.97% | **12.40%** |
+| rest-of-site CTR | 1.15% | 1.34% |
+
+### It is a ranking event, not a demand event
+
+Query set went 23 → 70, but **86% of the visible click gain came from the 21 queries we already
+ranked for**, ranking better. Only 14% came from queries new to the set.
+
+| query | position | impressions | clicks |
+|---|---|---|---|
+| `asl video translator` | 28.1 → 14.8 | 69 → 433 | 2 → 57 |
+| `free asl video translator` | 11.0 → **3.0** | 5 → 52 | 0 → 16 |
+| `sign language video translator` | 21.0 → 9.6 | 13 → 111 | 1 → 13 |
+| `asl video to text translator` | 24.0 → **5.5** | 3 → 31 | 0 → 10 |
+
+⚠️ Query-level data is ~30% visible after anonymisation (169 of 540 clicks). The pattern is
+directional, the split is not exact.
+
+### The step localises to one week and one commit
+
+Weekly, position ran 10.1 → **5.9** and CTR 6.39% → **14.54%** in the week beginning **09-08**.
+`2e810283` shipped **09-09**:
+
+```
+- AI ASL Video Translator | Sign Language to English Subtitles | Curify AI
++ AI ASL Video Translator — Sign Language to Text
+```
+
+Double-branded (the layout appends ` | Curify Studio`) and truncating at ~85 chars, cut to 62.
+**Note the noun swap — "Subtitles" → "Text"** — and the two biggest movers are
+`asl video to text translator` and `sign language translator video to text`. URL Inspection reports
+the page **last crawled 2026-09-09**, the day the fix shipped. Separately `5d3c4cc9` (08-29, the
+day the tool went free) put *"Free and experimental"* into the meta description, and every
+`free`-modifier query improved.
+
+### ⭐ The natural experiment, which falsifies the simple version
+
+`2e810283` fixed **nine** tool titles in the same commit, the same way, on the same day. Comparing
+21 days before the fix with the 10 days after, per-day:
+
+| | impressions/day | position |
+|---|---|---|
+| **`asl-video-translator`** | **58.2 → 194.9** | **11.5 → 5.0** |
+| the other eight combined | 55.8 → **54.9** | 63.6 → 50.5 |
+
+**Same intervention, nine pages, one moved.** The eight siblings —
+`video-enhance`, `video-dubbing`, `video-transcript-generator`, `video-summarizer`,
+`speech-translator`, `product-video`, `style-transfer`, `manga-translation` — were flat on
+impressions.
+
+The distinguishing variable is **where each page started**. ASL sat at position 11.5, the bottom of
+page 1 / top of page 2. The other eight sit at 63.6. A better title moved ASL across the
+**page-2 → page-1 boundary**, which is precisely the threshold where impressions multiply; it could
+not move a page-6 result anywhere that matters.
+
+> **The rule: title work compounds an existing position. It does not create one.**
+> Retitling a page at position 60 is not a growth lever, and this is now measured, not argued.
+> ⚠️ It also means the 09-01 and 09-05 retarget/retitle batches should be re-read against the
+> starting position of each page, not scored as a single cohort.
+
+### What is NOT explained, and it is the important half
+
+ASL went from ~0 to 236 impressions/week around **2026-08-10**, and *that* is what put it at
+position 11.5 for the title fix to compound. **No ASL code shipped 08-01 → 08-14.** The best
+candidate is `7b002321` (2026-08-10, same day) — a homepage change adding "uniform tool cards",
+i.e. the link → crawl → index mechanism this doc has demonstrated, firing from the most-crawled
+page on the site.
+
+**Unproven, and it cannot be proven from here**: URL Inspection reports only the *latest* crawl
+(09-09), so the crawl that would confirm an early-August discovery is not observable. Anyone
+wanting to close this needs crawl-log or a prospective test, not another GSC pull.
+
+### The transfer to the retouching cluster is worse than it looks
+
+ASL's 19× was **amplification of a page already at position 11.5 with ~58 impressions/day**. The
+retouching cluster has **11 web impressions in 28 days** (`seo-cluster-strategy-2026-09-19.md` §5b).
+There is nothing to amplify. **The ASL lesson for retouching is not "fix the title" — it is "get
+onto page 2 first,"** and the mechanism that did that for ASL is the half that is unproven.
+
+Given §5c of that doc — `outsource wedding photo editing` is held by solo freelancers, so the
+authority bar is low — the binding constraint there really is crawl and discovery, which is what
+Phase 0 submitted.
