@@ -1839,18 +1839,18 @@
       "point1": "Fidelity outranks attractiveness, and it is not close. Asked to list what gets an apparel image rejected, a womenswear buyer put “the garment is not the garment” first and marked it the overriding concern. Stiff posing came second. Beauty did not appear.",
       "point2": "A generator redraws the garment instead of moving it. That is the failure mode that matters: a model reference imposes its own fit on a boxy product and quietly moves the two dimensions a buyer measures.",
       "point3": "A single frame can pass every aesthetic judgement and still fail the set. The two defect classes that survive the most revisions are colour consistency across frames and one structural garment detail — both are consistency failures, not beauty failures.",
-      "point4": "So the checks are the product. Measure by ratio against pose landmarks, never by pixels and never against your source photo. Count discrete details. Require them to survive zoom, at delivery resolution."
+      "point4": "So the checks are the product, not the generator. Anyone can produce a plausible image; what a volume buyer pays for is a repeatable way to show the garment survived — which is why the full list is on this page rather than behind a sales call."
     },
     "faq": {
       "title": "Frequently asked questions about AI fashion model generation",
       "q1": "What is an AI fashion model generator?",
-      "a1": "It turns a photograph of a garment — usually a flat lay — into an image of that garment worn by a model, without a photoshoot. The garment should come from your photograph; the model, pose and lighting are generated.",
+      "a1": "You supply the garment photograph; the model, the pose and the lighting are generated. That split is worth holding onto — it also decides which failures are yours to catch and which are the model's to get right.",
       "q2": "Flat lay, on-model, or ghost mannequin — which does my listing need?",
-      "a2": "Usually more than one. A ghost mannequin shows construction with no body in the way. An on-model image shows fit, drape and scale. A flat lay shows the garment undistorted. They answer different buyer questions, which is why a listing set is a set.",
+      "a2": "Most listings need more than one, because they answer different buyer questions. If you can only afford one, on-model sells and flat lay informs — but a size-sensitive category will generate returns without a frame that shows length honestly.",
       "q3": "Can I use one reference photo for a whole set?",
       "a3": "No, and this is the most common mistake. One reference gives you one look. A set has to vary pose, framing and background deliberately while holding the garment, the model identity and the colour constant — and “images too similar” is itself a named rejection reason.",
       "q4": "Why does the garment change when it goes on the model?",
-      "a4": "Because the model reference is contributing more than it should. If it carries a fitted silhouette and your product is boxy, the output tends to split the difference. Keep the garment reference authoritative: where the two disagree, the flat lay wins.",
+      "a4": "Because the model reference is contributing more than it should. The rule that prevents it is below: the garment reference owns the clothing, the model reference owns only pose, light and background.",
       "q5": "What is inner-layer bleed?",
       "a5": "An inner garment visible in the model reference — a camisole, a tee under a jacket — surviving into the output even though it is not part of your product. Nobody asked for it; it is simply still there. Check the neckline and cuffs first, where it usually shows.",
       "q6": "What is silhouette drift, and why does it matter more than it looks?",
@@ -1860,7 +1860,7 @@
       "q8": "Does the model have to be the same person across a set?",
       "a8": "Yes, if the frames sit in one listing. A changing face reads as a changing product. Hold identity and hair constant, and vary pose, framing and background instead.",
       "q9": "What breaks a set that does not break a single image?",
-      "a9": "Consistency. Colour temperature drifting between frames, a garment hue shifting under changed lighting, a detail present in one frame and absent in the next. Each frame can pass review on its own and the set can still fail.",
+      "a9": "Consistency — colour temperature between frames, a hue that moves under changed light, a detail present in one frame and gone in the next. None of it shows when you review one image at a time, which is exactly why a set has to be reviewed as a set.",
       "q10": "Can I use these images on Amazon, Shopify or TikTok Shop?",
       "a10": "The image is yours to use, but every marketplace sets its own rules on main-image background, framing and whether generated imagery must be disclosed. Check the policy for the specific marketplace before you list — they differ, and they change.",
       "q11": "What resolution and aspect ratio do marketplace listings need?",
@@ -1885,7 +1885,7 @@
         "p2": "Separate what each reference owns. The garment reference contributes everything about the clothing — cut, colour, print, closures, hem. The model reference contributes only pose, framing, lighting, background and body type. When the two disagree about the garment, the flat lay wins. Most fidelity failures are a violation of this one rule.",
         "p3": "Generate the anchor first, then the scene. Settle the garment on the body in a plain, well-lit frame before asking for a location, a mood or a season. A scene generated at the same time as the garment tends to renegotiate the garment.",
         "p4": "Repair locally, not globally. Re-rendering a whole frame to fix one button changes the model, the light and often the location too. Crop, regenerate the crop, and composite it back with a feathered edge — then check that colour and texture are continuous across the seam.",
-        "p5": "Check before you list, using the rubric below. Ratios against pose landmarks, counted details, and a zoom test at delivery resolution. If it only reads correctly as a thumbnail, it is not finished."
+        "p5": "Check before you list, against the rubric on this page — and check at delivery resolution. A detail that only reads correctly as a thumbnail is not finished, and the zoom is what a buyer will actually use."
       },
       "usecases": {
         "title": "Who this is for",

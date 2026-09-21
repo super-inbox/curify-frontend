@@ -1813,18 +1813,18 @@
       "point1": "La fidélité prime sur l'esthétique, et de loin. Invitée à énumérer ce qui fait rejeter une image mode, une acheteuse de prêt-à-porter féminin a placé « le vêtement n'est pas le vêtement » en premier et l'a marqué comme l'essentiel. La pose figée venait ensuite. La beauté n'apparaissait pas.",
       "point2": "Un générateur redessine le vêtement au lieu de le déplacer. C'est le mode d'échec qui compte : une référence mannequin impose sa propre coupe à un produit ample et déplace en silence les deux mesures qu'une acheteuse vérifie.",
       "point3": "Une image seule peut passer tous les jugements esthétiques et faire malgré tout échouer la série. Les deux familles de défauts qui survivent au plus grand nombre de retours sont la constance colorimétrique entre les prises et un détail structurel du vêtement — deux défauts de cohérence, pas de beauté.",
-      "point4": "Le produit, ce sont donc les contrôles. Mesurez en proportion par rapport aux points de pose, jamais en pixels et jamais contre votre photo source. Comptez les détails dénombrables. Exigez qu'ils tiennent au zoom, à la résolution de livraison."
+      "point4": "Le produit, ce sont donc les contrôles, pas le générateur. N'importe qui peut produire une image plausible ; ce qu'un acheteur en volume paie, c'est une manière reproductible de montrer que le vêtement a survécu — d'où la liste complète sur cette page plutôt que derrière un rendez-vous commercial."
     },
     "faq": {
       "title": "Questions fréquentes sur la génération de mannequins mode par IA",
       "q1": "Qu'est-ce qu'un générateur de mannequins mode IA ?",
-      "a1": "Il transforme la photo d'un vêtement — généralement un à-plat — en image de ce vêtement porté par un mannequin, sans séance photo. Le vêtement doit venir de votre photo ; le mannequin, la pose et la lumière sont générés.",
+      "a1": "Vous fournissez la photo du vêtement ; le mannequin, la pose et la lumière sont générés. Ce partage mérite d'être retenu : il décide aussi quels défauts vous reviennent et lesquels le modèle doit réussir.",
       "q2": "À-plat, porté ou mannequin invisible : que faut-il à ma fiche ?",
-      "a2": "Généralement plus d'un. Le mannequin invisible montre la construction sans corps qui gêne. L'image portée montre la coupe, le tombé et l'échelle. L'à-plat montre le vêtement sans déformation. Ils répondent à des questions différentes de l'acheteur : c'est pourquoi une fiche est une série.",
+      "a2": "La plupart des fiches en demandent plusieurs, car elles répondent à des questions différentes. Si vous ne pouvez en financer qu'une, le porté vend et l'à-plat informe — mais une catégorie sensible à la taille générera des retours sans une prise qui montre honnêtement la longueur.",
       "q3": "Puis-je utiliser une seule photo de référence pour toute une série ?",
       "a3": "Non, et c'est l'erreur la plus courante. Une référence donne une prise. Une série doit faire varier délibérément pose, cadrage et fond tout en gardant constants le vêtement, l'identité du mannequin et la couleur — et « images trop semblables » est en soi un motif de rejet cité.",
       "q4": "Pourquoi le vêtement change-t-il une fois porté ?",
-      "a4": "Parce que la référence mannequin apporte plus qu'elle ne le devrait. Si elle porte une silhouette ajustée et que votre produit est ample, le résultat a tendance à couper la poire en deux. Laissez la référence vêtement faire autorité : en cas de désaccord, l'à-plat l'emporte.",
+      "a4": "Parce que la référence mannequin apporte plus qu'elle ne le devrait. La règle qui l'empêche est plus bas : la référence vêtement possède l'habit, la référence mannequin seulement la pose, la lumière et le fond.",
       "q5": "Qu'est-ce que la remontée de sous-couche ?",
       "a5": "Un vêtement porté dessous, visible sur la référence mannequin — un tee-shirt sous une veste — qui survit dans le résultat alors qu'il ne fait pas partie de votre produit. Vérifiez d'abord l'encolure et les poignets, là où il apparaît d'ordinaire.",
       "q6": "Qu'est-ce que la dérive de silhouette, et pourquoi est-ce plus grave qu'il n'y paraît ?",
@@ -1834,7 +1834,7 @@
       "q8": "Le mannequin doit-il être le même sur toute la série ?",
       "a8": "Oui, si les prises figurent dans une même fiche. Un visage qui change se lit comme un produit qui change. Gardez identité et coiffure constantes, et faites varier pose, cadrage et fond.",
       "q9": "Qu'est-ce qui casse une série sans casser une image isolée ?",
-      "a9": "La cohérence. Une température de couleur qui dérive d'une prise à l'autre, une teinte de vêtement qui bouge sous une lumière différente, un détail présent sur une prise et absent sur la suivante. Chaque prise peut passer isolément et la série échouer quand même.",
+      "a9": "La cohérence : température de couleur d'une prise à l'autre, teinte qui bouge sous une autre lumière, détail présent sur une prise et absent sur la suivante. Rien de tout cela n'apparaît quand on relit image par image, et c'est précisément pourquoi une série doit être relue comme une série.",
       "q10": "Puis-je utiliser ces images sur Amazon, Shopify ou TikTok Shop ?",
       "a10": "L'image vous appartient, mais chaque marketplace fixe ses propres règles sur le fond de l'image principale, le cadrage et l'obligation éventuelle de déclarer une image générée. Vérifiez la politique de la marketplace concernée avant publication : elles diffèrent et elles évoluent.",
       "q11": "Quelle résolution et quel format demandent les fiches ?",
@@ -1859,7 +1859,7 @@
         "p2": "Séparez ce que possède chaque référence. La référence vêtement apporte tout ce qui concerne l'habit : coupe, couleur, imprimé, fermetures, ourlet. La référence mannequin n'apporte que la pose, le cadrage, la lumière, le fond et la morphologie. Quand les deux divergent sur le vêtement, l'à-plat l'emporte. La plupart des défauts de fidélité sont une violation de cette seule règle.",
         "p3": "Générez d'abord l'ancrage, ensuite la scène. Posez le vêtement sur le corps dans une prise simple et bien éclairée avant de demander un lieu, une ambiance ou une saison. Une scène générée en même temps que le vêtement a tendance à renégocier le vêtement.",
         "p4": "Réparez en local, pas en global. Régénérer une image entière pour corriger un bouton change le mannequin, la lumière et souvent le lieu. Recadrez, régénérez le recadrage et recomposez avec un bord adouci — puis vérifiez que couleur et texture restent continues de part et d'autre de la jonction.",
-        "p5": "Vérifiez avant de publier, avec la liste ci-dessous. Proportions contre points de pose, détails comptés et un test de zoom à la résolution de livraison. Si cela ne tient qu'en vignette, ce n'est pas terminé."
+        "p5": "Vérifiez avant de publier, avec la liste de cette page — et à la résolution de livraison. Un détail qui ne se lit correctement qu'en vignette n'est pas terminé, et le zoom est précisément ce dont l'acheteur se servira."
       },
       "usecases": {
         "title": "À qui cela s'adresse",
