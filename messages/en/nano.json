@@ -8480,5 +8480,45 @@
         ]
       }
     }
+  },
+  "template-ecommerce-product-photography": {
+    "category": "E-commerce Product Photography",
+    "description": "Marketplace-ready product shots from a written description — hero, detail macro, lifestyle scene or colourway lineup, on a clean studio look.",
+    "title": "E-commerce Product Photography Generator",
+    "content": {
+      "sections": {
+        "what": "Generates a photorealistic product photograph built for a marketplace listing: sharp focus, soft even lighting, a premium studio finish, and a composition chosen to suit the shot you need — hero, detail macro, lifestyle scene or colourway lineup. The product stays the unmistakable subject, with no text and no watermark baked in.",
+        "who": "Suitable for e-commerce sellers and marketplace listers, DTC brands without a studio budget, sourcing teams checking how a style photographs, and anyone testing a listing before committing to a shoot.",
+        "how": [
+          "Describe the product — the more specific the noun, the closer the result (for example 'acetate sunglasses', not 'glasses').",
+          "Generate a clean listing-ready shot, then re-run for the other angles a listing needs."
+        ],
+        "prompts": [
+          "A gold pendant necklace as a clean studio hero shot on a seamless background.",
+          "A minimalist LED desk lamp in a warm lifestyle scene, soft even lighting.",
+          "A smart insulated water bottle as a colourway lineup, four finishes side by side."
+        ]
+      }
+    }
+  },
+  "template-brand-font-specimen-set": {
+    "category": "Brand Font Specimen",
+    "description": "Six typeface directions for one brand name on a single numbered specimen board — a type-exploration sheet you can choose from.",
+    "title": "Brand Font Specimen Sheet Generator",
+    "content": {
+      "sections": {
+        "what": "Generates a typography specimen board: six distinct typeface treatments of the same brand name, laid out in a 2×3 grid on a pure white background and numbered one to six. Every cell sets the brand name as large, legible display lettering so the directions can be compared like for like.",
+        "who": "Suitable for brand and identity designers exploring type directions, founders naming a company, studios presenting options to a client, and anyone who needs to see a name set six ways before committing.",
+        "how": [
+          "Enter the brand name exactly as it should be set, including any accents or CJK characters.",
+          "Describe the type personality you are after, then generate the six-direction board."
+        ],
+        "prompts": [
+          "A specimen board for 'Bloom Botanicals' — warm, friendly, organic sans directions.",
+          "Six typeface directions for '北岳茶事', restrained and traditional.",
+          "A specimen sheet for 'Nimbus Studio' — precise modern grotesques with one editorial serif."
+        ]
+      }
+    }
   }
 }

@@ -8481,5 +8481,45 @@
         ]
       }
     }
+  },
+  "template-ecommerce-product-photography": {
+    "category": "E-ticaret ürün fotoğrafçılığı",
+    "description": "Bir açıklamadan listelemeye hazır ürün görselleri — hero, detay makro, yaşam tarzı sahnesi ya da renk dizisi; temiz stüdyo görünümüyle.",
+    "title": "E-ticaret ürün fotoğrafı üreteci",
+    "content": {
+      "sections": {
+        "what": "Pazaryeri listesi için tasarlanmış fotogerçekçi bir ürün fotoğrafı üretir: net odak, yumuşak ve eşit ışık, üst düzey stüdyo bitişi ve ihtiyacınız olan çekime göre seçilmiş bir kompozisyon — hero, detay makro, yaşam tarzı sahnesi veya renk dizisi. Ürün tartışmasız özne olarak kalır; görsele metin de filigran da gömülmez.",
+        "who": "E-ticaret satıcıları ve listeleme ekipleri, stüdyo bütçesi olmayan DTC markaları, bir modelin nasıl fotoğraf verdiğini kontrol eden satın alma ekipleri ve çekime girmeden önce listeyi denemek isteyenler için.",
+        "how": [
+          "Ürünü tarif edin — isim ne kadar belirginse sonuç o kadar yakın olur («gözlük» değil, «asetat güneş gözlüğü» gibi).",
+          "Listelemeye hazır bir kare üretin, ardından listenin istediği diğer açılar için tekrar çalıştırın."
+        ],
+        "prompts": [
+          "Altın kolye ucu, dikişsiz fon üzerinde temiz bir stüdyo hero karesi olarak.",
+          "Minimal bir LED masa lambası, sıcak bir yaşam tarzı sahnesinde, yumuşak ve eşit ışıkla.",
+          "Akıllı termos için renk dizisi, dört bitiş yan yana."
+        ]
+      }
+    }
+  },
+  "template-brand-font-specimen-set": {
+    "category": "Marka yazı karakteri numunesi",
+    "description": "Tek bir marka adı için altı yazı karakteri yönü, numaralı tek bir panoda — içinden seçilecek bir keşif sayfası.",
+    "title": "Marka yazı karakteri numune panosu üreteci",
+    "content": {
+      "sections": {
+        "what": "Bir tipografi numune panosu üretir: aynı marka adının altı farklı yazı karakteri işlemesi, saf beyaz zemin üzerinde 2×3 ızgarada dizilir ve birden altıya numaralanır. Her hücre adı büyük ve okunaklı display harflerle dizer, böylece yönler eşit koşullarda karşılaştırılabilir.",
+        "who": "Yazı karakteri yönlerini araştıran marka ve kimlik tasarımcıları, şirketine ad koyan kurucular, müşteriye seçenek sunan stüdyolar ve karar vermeden önce bir adı altı biçimde görmek isteyenler için.",
+        "how": [
+          "Marka adını dizilmesi gereken biçimde yazın — aksanlar veya CJK karakterleri dahil.",
+          "Aradığınız yazı karakteri kişiliğini tarif edin, sonra altı yönlü panoyu üretin."
+        ],
+        "prompts": [
+          "«Bloom Botanicals» için bir numune panosu — sıcak, samimi, organik sans yönleri.",
+          "«北岳茶事» için altı yazı karakteri yönü, ölçülü ve geleneksel.",
+          "«Nimbus Studio» için bir sayfa — hassas modern grotesklerle bir editoryal serif."
+        ]
+      }
+    }
   }
 }

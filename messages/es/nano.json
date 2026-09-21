@@ -8481,5 +8481,45 @@
         ]
       }
     }
+  },
+  "template-ecommerce-product-photography": {
+    "category": "Fotografía de producto para e-commerce",
+    "description": "Fotos de producto listas para publicar a partir de una descripción: hero, macro de detalle, escena de estilo de vida o gama de colores, con acabado de estudio.",
+    "title": "Generador de fotografía de producto para e-commerce",
+    "content": {
+      "sections": {
+        "what": "Genera una fotografía de producto fotorrealista pensada para una ficha de marketplace: enfoque nítido, luz suave y uniforme, acabado de estudio premium y una composición elegida según la toma que necesites — hero, macro de detalle, escena de estilo de vida o gama de colores. El producto sigue siendo el sujeto inequívoco, sin texto ni marca de agua incrustados.",
+        "who": "Indicado para vendedores de e-commerce y equipos de publicación, marcas DTC sin presupuesto de estudio, equipos de compras que comprueban cómo fotografía un modelo, y para probar una ficha antes de comprometerse con una sesión.",
+        "how": [
+          "Describe el producto — cuanto más específico el sustantivo, más se acerca el resultado (por ejemplo «gafas de sol de acetato», no «gafas»).",
+          "Genera una toma lista para publicar y repite para los demás ángulos que pide la ficha."
+        ],
+        "prompts": [
+          "Un colgante de oro como toma hero de estudio sobre fondo continuo.",
+          "Una lámpara de escritorio LED minimalista en una escena cálida, con luz suave y uniforme.",
+          "Una botella térmica inteligente como gama de colores, cuatro acabados en fila."
+        ]
+      }
+    }
+  },
+  "template-brand-font-specimen-set": {
+    "category": "Muestrario tipográfico de marca",
+    "description": "Seis direcciones tipográficas para un mismo nombre de marca en un tablero numerado — una hoja de exploración de la que elegir.",
+    "title": "Generador de muestrario tipográfico de marca",
+    "content": {
+      "sections": {
+        "what": "Genera un tablero de muestras tipográficas: seis tratamientos distintos del mismo nombre de marca, dispuestos en una cuadrícula de 2×3 sobre fondo blanco puro y numerados del uno al seis. Cada celda compone el nombre en letras de gran tamaño y legibles, para comparar las direcciones en igualdad de condiciones.",
+        "who": "Indicado para diseñadores de marca e identidad que exploran direcciones tipográficas, fundadores que están nombrando una empresa, estudios que presentan opciones a un cliente, y para quien necesite ver un nombre compuesto de seis maneras antes de decidir.",
+        "how": [
+          "Introduce el nombre de marca tal y como debe componerse, incluidos acentos o caracteres CJK.",
+          "Describe la personalidad tipográfica que buscas y genera el tablero de seis direcciones."
+        ],
+        "prompts": [
+          "Un muestrario para «Bloom Botanicals» — direcciones sans cálidas, cercanas y orgánicas.",
+          "Seis direcciones tipográficas para «北岳茶事», contenidas y tradicionales.",
+          "Una hoja para «Nimbus Studio» — grotescas modernas y precisas con una serif editorial."
+        ]
+      }
+    }
   }
 }

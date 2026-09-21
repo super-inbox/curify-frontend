@@ -8481,5 +8481,45 @@
         ]
       }
     }
+  },
+  "template-ecommerce-product-photography": {
+    "category": "Photographie produit e-commerce",
+    "description": "Des visuels produit prêts à publier à partir d'une description : plan hero, macro de détail, scène lifestyle ou gamme de coloris, avec un rendu studio.",
+    "title": "Générateur de photographie produit e-commerce",
+    "content": {
+      "sections": {
+        "what": "Génère une photographie produit photoréaliste pensée pour une fiche marketplace : mise au point nette, lumière douce et homogène, finition studio haut de gamme et une composition choisie selon la prise dont vous avez besoin — hero, macro de détail, scène lifestyle ou gamme de coloris. Le produit reste le sujet incontestable, sans texte ni filigrane incrustés.",
+        "who": "Convient aux vendeurs e-commerce et aux équipes de mise en ligne, aux marques DTC sans budget studio, aux équipes achat qui vérifient comment un modèle photographie, et à qui veut tester une fiche avant d'engager une séance.",
+        "how": [
+          "Décrivez le produit — plus le nom est précis, plus le résultat s'en approche (par exemple « lunettes de soleil en acétate », pas « lunettes »).",
+          "Générez une prise prête à publier, puis relancez pour les autres angles qu'exige la fiche."
+        ],
+        "prompts": [
+          "Un pendentif en or en plan hero studio sur fond continu.",
+          "Une lampe de bureau LED minimaliste dans une scène chaleureuse, lumière douce et homogène.",
+          "Une gourde isotherme connectée en gamme de coloris, quatre finitions alignées."
+        ]
+      }
+    }
+  },
+  "template-brand-font-specimen-set": {
+    "category": "Spécimen typographique de marque",
+    "description": "Six directions typographiques pour un même nom de marque sur une planche numérotée — une feuille d'exploration dans laquelle choisir.",
+    "title": "Générateur de planche de spécimens typographiques",
+    "content": {
+      "sections": {
+        "what": "Génère une planche de spécimens : six traitements typographiques distincts du même nom de marque, disposés en grille 2×3 sur fond blanc pur et numérotés de un à six. Chaque case compose le nom en lettrage d'affichage grand et lisible, pour comparer les directions à conditions égales.",
+        "who": "Convient aux designers de marque et d'identité explorant des pistes typographiques, aux fondateurs qui nomment une entreprise, aux studios présentant des options à un client, et à qui doit voir un nom composé de six façons avant de trancher.",
+        "how": [
+          "Saisissez le nom de marque tel qu'il doit être composé, accents ou caractères CJK compris.",
+          "Décrivez la personnalité typographique visée, puis générez la planche à six directions."
+        ],
+        "prompts": [
+          "Une planche pour « Bloom Botanicals » — des sans chaleureuses, avenantes, organiques.",
+          "Six directions typographiques pour « 北岳茶事 », sobres et traditionnelles.",
+          "Une feuille pour « Nimbus Studio » — des grotesques modernes précises avec une serif éditoriale."
+        ]
+      }
+    }
   }
 }

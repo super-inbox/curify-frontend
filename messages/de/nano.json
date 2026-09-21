@@ -8481,5 +8481,45 @@
         ]
       }
     }
+  },
+  "template-ecommerce-product-photography": {
+    "category": "E-Commerce-Produktfotografie",
+    "description": "Listing-fertige Produktaufnahmen aus einer Beschreibung — Hero, Detail-Makro, Lifestyle-Szene oder Farbreihe, mit sauberem Studio-Look.",
+    "title": "Generator für E-Commerce-Produktfotografie",
+    "content": {
+      "sections": {
+        "what": "Erzeugt eine fotorealistische Produktaufnahme für ein Marktplatz-Listing: scharfer Fokus, weiches gleichmäßiges Licht, hochwertiges Studio-Finish und eine Komposition passend zur gewünschten Aufnahme — Hero, Detail-Makro, Lifestyle-Szene oder Farbreihe. Das Produkt bleibt das unverkennbare Motiv, ohne eingebrannten Text und ohne Wasserzeichen.",
+        "who": "Geeignet für E-Commerce-Verkäufer und Listing-Teams, DTC-Marken ohne Studiobudget, Einkaufsteams, die prüfen wie sich ein Modell fotografiert, und für alle, die ein Listing vor dem Shooting testen wollen.",
+        "how": [
+          "Beschreibe das Produkt — je konkreter das Substantiv, desto näher das Ergebnis (etwa „Sonnenbrille aus Acetat“ statt „Brille“).",
+          "Erzeuge eine listing-fertige Aufnahme und wiederhole es für die weiteren Winkel, die ein Listing braucht."
+        ],
+        "prompts": [
+          "Eine goldene Anhängerkette als saubere Studio-Hero-Aufnahme vor nahtlosem Hintergrund.",
+          "Eine minimalistische LED-Schreibtischlampe in einer warmen Lifestyle-Szene, weiches gleichmäßiges Licht.",
+          "Eine smarte Isolierflasche als Farbreihe, vier Ausführungen nebeneinander."
+        ]
+      }
+    }
+  },
+  "template-brand-font-specimen-set": {
+    "category": "Marken-Schriftmuster",
+    "description": "Sechs Schriftrichtungen für einen Markennamen auf einer nummerierten Mustertafel — ein Auswahlblatt.",
+    "title": "Generator für Marken-Schriftmustertafeln",
+    "content": {
+      "sections": {
+        "what": "Erzeugt eine Schriftmustertafel: sechs unterschiedliche typografische Behandlungen desselben Markennamens, als 2×3-Raster auf reinweißem Grund angeordnet und von eins bis sechs nummeriert. Jede Zelle setzt den Namen als große, gut lesbare Display-Schrift, damit die Richtungen unter gleichen Bedingungen vergleichbar sind.",
+        "who": "Geeignet für Marken- und Identity-Designer auf der Suche nach Schriftrichtungen, Gründer bei der Namensfindung, Studios, die einem Kunden Optionen vorlegen, und alle, die einen Namen erst in sechs Fassungen sehen wollen.",
+        "how": [
+          "Gib den Markennamen genau so ein, wie er gesetzt werden soll — samt Akzenten oder CJK-Zeichen.",
+          "Beschreibe die gewünschte Schriftpersönlichkeit und erzeuge die Tafel mit sechs Richtungen."
+        ],
+        "prompts": [
+          "Eine Mustertafel für „Bloom Botanicals“ — warme, freundliche, organische Sans-Richtungen.",
+          "Sechs Schriftrichtungen für „北岳茶事“, zurückhaltend und traditionell.",
+          "Ein Blatt für „Nimbus Studio“ — präzise moderne Grotesk mit einer redaktionellen Serif."
+        ]
+      }
+    }
   }
 }
