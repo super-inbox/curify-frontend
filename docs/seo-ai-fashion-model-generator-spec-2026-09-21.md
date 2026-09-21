@@ -66,7 +66,7 @@ Mirrors the teardown block-for-block. Target ~1,800 visible words.
 | 5 | **The rubric** ⭐ | *The 27-Check Fashion E-commerce Visual QA* → four tables: garment fidelity (11) · model (5) · photography (5) · commerce (6) |
 | 6 | **Long-tail harvest** | *Frequently Asked Questions* — **14 questions**, §5 below |
 | 7 | **Internal links** | *More Product Photo Tools* → `/tools/ecommerce-photo` · `/tools/ai-product-photo-generator` · `/tools/packaging-mockup` · `/blog/ghost-mannequin-ai-guide` |
-| 8 | **Close** | *Try It Free — One Flat Lay, No Sign-Up* |
+| 8 | **Close** | *Upload a flat lay* — ⚠️ **NOT "free, no sign-up"**: the `generate` action bills `IMAGE_GENERATION_CREDITS = 5` and `/images/upload` 401s for anon users. That copy is true of `/tools/wedding-photo-editing` (anonymous `photo_retouch` endpoint) and false here. `pricing.ts:8` records the same bug shipping once before — a FREE badge over a 696-credit call. **The rubric is the free thing; say that instead.** |
 
 **Block 3 is the whole differentiator.** It is first-hand, it is specific, and it cannot be
 assembled by an LLM from other people's pages.

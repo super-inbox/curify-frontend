@@ -446,6 +446,53 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Targets `ai fashion model generator` — 260/mo, KD 16, CPC $2.11 (SEMrush
+    // 2026-09-21, raw/fashion-retouching-09-21). Flagged first in the 09-01 batch
+    // as priority #6, gated on the 09-15 crawl checkpoint; that gate passed and
+    // the surface was never built. One page also covers `ghost mannequin ai`
+    // (110/mo, KD 1, $4.11) and `ai ghost mannequin` (30/mo, KD 0) — 400/mo at
+    // KD 0-16. SERP checked live 2026-09-21: tool landing pages (Botika, The New
+    // Black AI, PicLumen), no AI Overview, competitors are startups.
+    //
+    // ⚠️ NOT a retarget of /tools/ecommerce-photo. That namespace contains zero
+    // occurrences of model, garment, apparel, fit or mannequin — the 09-01 note
+    // refused the retarget on exactly that ground and it still holds.
+    //
+    // ⛔ DELIBERATELY DOES NOT PROMISE BATCH. Botika's pitch is bulk; ours cannot
+    // be. tool-inventory.md: "the METHOD is proven and written down, the PIPELINE
+    // is not built", and no fashion template is batch-enabled. The self-serve
+    // offer is the single-image try-on that template-ai-outfit-try-on-poster
+    // already runs; volume goes to /contact.
+    //
+    // The differentiator is the QA rubric, not the generator — 27 checks from
+    // agentic-adhoc/resources/fashion-materials/axes.json. Copy follows its
+    // provenance_rules: no client imagery, nothing pasted from a source record,
+    // and no success-rate or delivered-outcome claim.
+    id: "ai-fashion-model-generator",
+    slug: "ai-fashion-model-generator",
+    groupId: "image",
+    status: "demo",
+    // Required field; there is no image BackendJobType.
+    job_type: "video_transcript",
+    namespace: "aiFashionModelGenerator",
+    action: { type: "generate", templateId: "template-ai-outfit-try-on-poster" },
+    i18n: toolKeys("ai_fashion_model_generator"),
+    seo: seoKeys("ai_fashion_model_generator"),
+    // EN-only on purpose: the SERP this targets is English, and shipping the
+    // namespace in one locale beats shipping literal key paths in nine.
+    locales: ["en"],
+    demo: {
+      type: "single_image",
+      // Script-drawn card, zero clearance risk — every mark is drawn by
+      // curify-gallery/smm_daily/2026-09-01-ecommerce/make_en_fashion_qa_cards.py.
+      // ⚠️ public/images is gitignored (CDN-synced): run sync_large_assets.sh
+      // before this deploys or the image 404s in production.
+      src: "/images/fashion_qa/en-02-qa-rubric-27.jpg",
+      alt: "Fashion E-commerce Visual QA v1 — 27 checks across garment fidelity, model, photography and commerce",
+    },
+  },
+
+  {
     // THE INBOUND SURFACE for the retouching offer. The 2026-09-15 buyer-side
     // demand pass found there was none: 11 personas and not one photographer, no
     // /tools page, retouching present only as a nano template. 100% of demand
@@ -697,6 +744,7 @@ export function groupTools(): Record<ToolGroupId, ToolDef[]> {
 // Google counts. Slugs must exist in TOOL_REGISTRY — getSiblingTools drops
 // unknown or coming_soon entries rather than rendering a dead card.
 export const TOOL_RELATED_TOOLS: Record<string, string[]> = {
+  "ai-fashion-model-generator": ["ecommerce-photo", "ai-product-photo-generator", "packaging-mockup"],
   // Product-photo intent → the production-file tools a seller needs next.
   "ecommerce-photo": ["die-cut-sticker-file", "packaging-mockup", "mockup"],
   "ai-product-photo-generator": [
@@ -761,6 +809,7 @@ export function getSiblingTools(slug: string, max = 3): ToolDef[] {
 // tool detail page. Source of truth: docs/interconnection.md (Tool slug
 // → Blog categories table). Keep in sync when adding a new tool.
 export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
+  "ai-fashion-model-generator": ["merch-pod", "creator-tools"],
   // Added 2026-09-15 with the retouching-cost post. This tool had NO entry, so
   // its page surfaced no related reading at all — and a new post needs inbound
   // edges from real pages more than it needs better copy (all four 08/09 campaign
@@ -809,6 +858,8 @@ export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
 // appending to a list that was already full added zero links and still looked
 // correct in the data. Verify against the rendered page, not this map.
 export const TOOL_PINNED_BLOGS: Record<string, string[]> = {
+  // The one indexed asset already sitting on apparel-imaging intent.
+  "ai-fashion-model-generator": ["ghost-mannequin-ai-guide"],
   // PINNED, not left to freshness: RelatedBlogsByCategory renders max 3 sorted by
   // date, and `creator-tools` holds 20 posts — this one would drop out of the slot
   // within weeks and the inbound edge would silently disappear.
