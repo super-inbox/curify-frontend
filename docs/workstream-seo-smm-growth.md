@@ -4117,3 +4117,92 @@ onto page 2 first,"** and the mechanism that did that for ASL is the half that i
 Given §5c of that doc — `outsource wedding photo editing` is held by solo freelancers, so the
 authority bar is low — the binding constraint there really is crawl and discovery, which is what
 Phase 0 submitted.
+
+---
+
+## 2026-09-21 — fashion/ecommerce KD: three greens, and the SERP splits them apart
+
+Source: `raw/fashion-retouching-09-21/Screenshot 2026-09-21 at 3.35.51 PM.png`, SEMrush bulk
+keyword analysis, 20 terms, 已更新 1 个月. **Recorded here because the screenshot is the only copy.**
+⚠️ The export shows **6 of 10 columns and CPC is not one of them** — CPC below is backfilled from
+the 09-01 batch where the terms overlap, marked ‡. Per the standing two-axis rule, a green with no
+CPC is not yet actionable.
+
+| keyword | intent | volume | KD | CPC |
+|---|---|---:|---:|---:|
+| ai product video generator | I | 480 | 54 🔴 | — |
+| ai product photography | I | 390 | 39 🔴 | $4.72 ‡ |
+| **ai fashion model generator** | I | **260** | **16 🟢** | **$2.11 ‡** |
+| **ecommerce photo editing** | I | **210** | **17 🟢** | — |
+| ai virtual try on | I | 170 | 45 🔴 | — |
+| ai product background generator | C | 70 | 54 🔴 | — |
+| ai product photo generator | C | 70 | 45 🔴 | $3.29 ‡ |
+| **product photo retouching** | I | **50** | **16 🟢** | — |
+| product image to video · put clothes on model ai | — | 20 each | 不可用 | — |
+| amazon listing image generator | — | 10 | 不可用 | — |
+| ecommerce product image generator · product image automation · product lifestyle image generator · ai model generator for clothing | — | 0 | 不可用 | — |
+
+**Seven of twenty came back 不可用** — below SEMrush's measurement floor. That is a reading, not a
+gap: `put clothes on model ai` and `ai model generator for clothing` are how the buyer actually
+talks, and they are too small to measure. **The volume sits on the generic phrasing, not the
+natural one.**
+
+### The two 🟢 terms with real volume are opposite opportunities, and only the SERP says so
+
+Both checked live 2026-09-21. KD 16 vs 17, 260/mo vs 210/mo — indistinguishable on the numbers.
+
+| | `ai fashion model generator` | `ecommerce photo editing` |
+|---|---|---|
+| page 1 | **tool landing pages** — Botika #1 (*"Turn Flat Lays into On-Model"*), The New Black AI, PicLumen, one listicle | **AI Overview answering definitionally**, then Claid.ai, Fiverr (293K reviews), heavy ad load |
+| AI Overview | none | **yes, above the fold** |
+| competitors | startups | marketplaces + an AIO |
+| verdict | ⭐ **our shape — take it** | ⛔ **the MBTI shape — leave it** |
+
+**`ecommerce photo editing` is the trap of this batch.** KD 17 and 210/mo would have passed every
+numeric filter we have. It is an informational query that Google now answers itself. Had we
+retargeted a page onto it without looking, it would have been the fourth KD-led failure.
+
+### And all ten terms are ABSENT from GSC — web and image, zero impressions
+
+Which invokes the 09-20 rule directly: **title work compounds an existing position, it does not
+create one.** There is no position here to compound. This cluster needs a surface, not a retitle.
+
+### This was already decided on 2026-09-01, and the gate has since passed
+
+`ai fashion model generator` was flagged in the 09-01 batch at the same KD 16 / 260 / $2.11, and
+the note **explicitly refused** to retarget `/tools/ecommerce-photo` onto it:
+
+> *"That tool makes product photos; it does not put a garment on a model. Pointing the title at a
+> query the page cannot satisfy earns a bounce."*
+
+That reasoning is still right — verified today: the `ecommercePhoto` namespace contains **zero**
+occurrences of model, garment, apparel, fit or mannequin. The 09-01 answer was priority **#6, the
+on-model surface**, gated on the **09-15 crawl checkpoint**. **That gate passed on 09-15** and the
+surface was never built. Six days idle on the highest-conviction item on the board.
+
+### Build spec written: `seo-ai-fashion-model-generator-spec-2026-09-21.md`
+
+One surface covering `ai fashion model generator` + `ghost mannequin ai` (110/mo KD 1 $4.11) +
+`ai ghost mannequin` (30/mo KD 0) = **400/mo at KD 0–16**, structured on the `adworker.ai`
+teardown. Three findings that shaped it:
+
+1. **We cannot claim what Botika claims.** `tool-inventory.md`: *"the METHOD is proven and written
+   down, the PIPELINE is not built."* **No fashion template is batch-enabled**, and Botika's whole
+   pitch is bulk. The honest offer is the single-shot flat-lay → on-model that
+   `template-ai-outfit-try-on-poster` already runs.
+2. ⭐ **The differentiator is the QA standard, not the generator.** `axes.json` (written 09-21)
+   holds **27 checks across garment fidelity / model / photography / commerce**, each recording how
+   many revision rounds it survived, plus a womenswear buyer's own **seven-class rejection
+   taxonomy supplied before any work was shown**. Its ordering is the finding: **fidelity outranks
+   attractiveness and it is not close.** Nobody on that SERP publishes anything comparable, and the
+   body copy is already written twice over (`axes.json` + the A1–A9 posts in
+   `curify-gallery/smm_daily/2026-09-01-ecommerce/`).
+3. ⛔ **Imagery is the blocker.** `clearance.md`: *"Two for two. Both images inspected closely enough
+   to reject have failed on a third-party mark"* — a CAMEL logo, and sneakers reading as Adidas
+   Samba trade dress. 20 of 40 `template-fashion-ecommerce` variants have never been checked, and
+   the repo holds **zero on-model garment frames** (the five on-model images are all accessories).
+   The clearance pass gates the build.
+
+⚠️ **Sequencing note:** the **10-13** `ghost-mannequin-ai-guide` readout is now unconfounded (the
+post un-folded and went indexed 09-19) and is the cheaper test of whether KD 0–1 apparel terms
+convert at all. **If 10-13 returns zero, reconsider this build before starting it.**
