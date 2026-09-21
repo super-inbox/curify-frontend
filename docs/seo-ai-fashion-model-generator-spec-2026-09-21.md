@@ -147,9 +147,31 @@ blocks 3–5, not by markup.
 **And the repo has zero on-model garment frames.** The only five on-model / flat-lay images are
 accessories: handbag ×2, jewelry ×2, eyewear ×1.
 
-**Consequence: this page cannot ship its own hero imagery today.** Either commission cleared
-garment renders, or open with the accessory on-model frames and carry the rubric as the body. The
-clearance pass gates the build; it is not a post-launch tidy-up.
+**Consequence: this page cannot ship a photoreal on-model hero today.**
+
+### ✅ Resolved 2026-09-21 — the body imagery is done, at zero clearance risk
+
+Checked `curify-gallery/smm_daily/2026-09-01-ecommerce/` and built the gap. Four assets, none of
+which contains a person, a third-party mark, or anything traced from a client file:
+
+| asset | what it carries | spec block |
+|---|---|---|
+| `a4-two-ratio-check.jpg` | the two ratios, and *do not measure output against your source photo* — **usable as-is**, already branded to `/blog/ghost-mannequin-ai-guide` | 4 |
+| `en-01-seven-rejection-classes.jpg` ⭐ new | the buyer's seven classes **in their order**, #1 pilled TOP PRIORITY | 4 |
+| `en-02-qa-rubric-27.jpg` ⭐ new | all 27 checks by section, plus the acceptance rules | 5 |
+| `en-03-three-failures.jpg` ⭐ new | silhouette drift · inner-layer bleed · colour drift | 3 |
+
+Generator: `make_en_fashion_qa_cards.py` (gallery repo, commit `7cd54af`), 1200×1200, house palette
+and typography from `make_a4_ratio_card.py`. **Every mark is drawn by the script** — no brand name,
+style number, counterparty name or source filename appears, and no success-rate claim is made.
+Regenerating is one command, so copy edits are cheap.
+
+⚠️ **Still open — the photoreal hero.** `a1`, `a3` and `a6` are good apparel comparisons with
+unbranded garments and a Curify watermark, but **each shows a photoreal face.** That is the same
+unresolved likeness question recorded against `model_standing`: if a real model's photograph was
+the reference, the output carries that person. **Answerable in one sentence by whoever generated
+them** — confirm the reference was synthetic, or re-render. Until then the page opens on the
+rubric cards, which is the honest posture anyway: we are selling the standard, not the render.
 
 ## 8. Files to touch
 
