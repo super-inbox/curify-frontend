@@ -23,6 +23,13 @@ import {
 } from "@/app/atoms/atoms";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+
+// FAQ slots. Widened 5 -> 14 on 2026-09-21: the page that owns `ghost mannequin
+// ai` carries 14 questions and uses the block as a long-tail harvester, not a
+// support section. Both consumers .filter() on t.has(), so tools authored with
+// fewer questions are unaffected.
+const FAQ_SLOTS = Array.from({ length: 14 }, (_, i) => i + 1);
+const HOWTO_SLOTS = [1, 2, 3, 4, 5, 6, 7, 8];
 import {
   getToolBySlug,
   getSiblingTools,
@@ -253,7 +260,7 @@ export default function ToolGenericClient({
       <section className="mt-16">
         <h2 className="text-2xl font-semibold mb-4 text-[var(--c1)]">{t("faq.title")}</h2>
 
-        {[1, 2, 3, 4, 5]
+        {FAQ_SLOTS
           .filter((i) => (t as any).has(`faq.q${i}`) && (t as any).has(`faq.a${i}`))
           .map((i) => (
             <div key={i}>
@@ -269,13 +276,51 @@ export default function ToolGenericClient({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              mainEntity: [1, 2, 3, 4, 5]
+              mainEntity: FAQ_SLOTS
                 .filter((i) => (t as any).has(`faq.q${i}`) && (t as any).has(`faq.a${i}`))
                 .map((i) => ({
                   "@type": "Question",
                   name: t(`faq.q${i}` as never),
                   acceptedAnswer: { "@type": "Answer", text: t(`faq.a${i}` as never) },
                 })),
+            }),
+          }}
+        />
+
+        {/* HowTo — sourced from the deep.how block every tool namespace already
+            carries, so this costs no new copy. Emitted only when the steps exist. */}
+        {(t as any).has("deep.how.p1") && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                name: t("deep.how.title"),
+                step: HOWTO_SLOTS
+                  .filter((i) => (t as any).has(`deep.how.p${i}`))
+                  .map((i, idx) => ({
+                    "@type": "HowToStep",
+                    position: idx + 1,
+                    text: t(`deep.how.p${i}` as never),
+                  })),
+              }),
+            }}
+          />
+        )}
+
+        {/* WebApplication + Offer. Honest: these tools are genuinely free. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              name: t("title"),
+              description: t("description"),
+              applicationCategory: "MultimediaApplication",
+              operatingSystem: "Any",
+              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
             }),
           }}
         />

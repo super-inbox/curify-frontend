@@ -253,13 +253,142 @@ ship on top of an unread experiment** — that is precisely how the 09-09 fold v
 
 ---
 
+## 5. Photo editing / retouching — cluster state, and the SERP says the authority bar is LOW
+
+_Added 2026-09-20, answering the FixThePhoto teardown directly._
+
+### 5a. What exists
+
+| surface | index state |
+|---|---|
+| `/tools/wedding-photo-editing` — `action: photo_retouch`, anonymous, no sign-in, no credits | **indexed 09-15** |
+| `/blog/wedding-photo-retouching-cost` | **indexed 09-15** |
+| `/nano-template/studio-digital-backdrop-scene` — the locked-subject background rebuild | indexed 09-09 |
+| `/blog/50-ai-makeover-prompts` | indexed 09-10 |
+| `/topics/portrait` | indexed 06-19 |
+| `/use-cases/for-photographers` | ⛔ **Discovered – never crawled** |
+| `/nano-template/portrait-retouching-blueprint` | ⛔ **folded to `/`** on a **2026-07-08** crawl |
+
+Plus three more templates (`fashion-before-after-outfit-annotation-card`,
+`figure-to-abstract-portrait-series`, `home-organization-before-after`) and three adjacent tools
+(`ai-product-photo-generator`, `ecommerce-photo`, `style-transfer`).
+
+**2 of 7 pages are broken, and neither needs a new page to fix.** Backend is
+`POST /photo-retouch/generate`; ⚠️ `retouch_pipeline.py:326` raises `NO_FACE`, and the endpoint
+takes exactly **one `File`** — no batch, no gallery, no LUT match.
+
+### 5b. ⚠️ Correction: the "retouch cluster is the best CTR after ASL" claim was a regex artifact
+
+An earlier cut of this workstream reported the cluster at 10 clicks / 4.63% CTR / pos 10.5. That
+was wrong. `portrait` matched `cristiano ronaldo portugal 2026 portrait` (277 image impressions,
+World Cup) and `skin` matched `night skincare routine` (~90). **The clicks belonged to AI-makeover
+and portrait-*generation* pages, not to retouching.**
+
+**Real cluster demand, 28d to 2026-09-17, web: 7 queries / 11 impressions / 0 clicks** — and they
+are not demand: `ai video restoration online`, the quoted `"ai retouching"` and
+`"aftershoot" "culling"` (competitor research, plausibly ours), a literal prompt-injection string
+at position 2.0, `ai bio makeover`, `prompt makeovers`.
+
+| page | impr | clicks | pos |
+|---|---:|---:|---:|
+| `/tools/wedding-photo-editing` | **6** | 0 | **5.7** |
+| `/blog/wedding-photo-retouching-cost` | 18 | 0 | 11.1 |
+
+**Both shipped 09-15; the window ends 09-17 — three days in-window.** Six impressions over three
+days is a ~60/month run-rate at position 5.7. Too early to call either way.
+**Anyone re-running this must filter by PAGE, not by a query regex.**
+
+### 5c. ⭐ The SERP verdict: the authority bar on service-intent terms is low
+
+This is the finding that changes the roadmap, and it is the opposite of the fashion result.
+
+**`wedding photo editing` (390/mo, KD 19)** — a genuinely mixed SERP. Ads from all-in-one AI photo
+editors and Bazaart; organic holds an Imagen listicle, a **Google Play app**, Pinterest,
+**ON1's tool landing page** (`on1.com/wedding-photo-editor`), a photographer's workflow blog
+(Miranda Gates), **and `amyellisphotography.com/editing-page` — "Private Wedding Photo Editor," a
+solo freelancer's service page.** Image and video packs both present.
+
+**`outsource wedding photo editing` (90/mo, KD 7)** — dominated end to end by **small independent
+editing services**: Katie Rivera Private Photo Editor, Photosmoothie, SunTec India, DIGI-TEXX,
+kasaneedits.com.
+
+**A solo photographer's editing page ranks page 1 on a 390/mo term.** That is a completely
+different competitive picture from the two SERPs that closed clusters this week:
+
+| query | page 1 is | verdict |
+|---|---|---|
+| `fashion design template` | Canva · Adobe Stock · Figma · Pinterest | **closed** — asset libraries, wrong artifact |
+| `portrait photo editing` | Canva · Google Photos · Fotor · Photoroom | free-editor SERP, entrenched |
+| **`wedding photo editing`** | **ON1 · solo freelancers · listicles · Pinterest** | **winnable** |
+| **`outsource wedding photo editing`** | **small independent editing services** | **winnable** |
+
+**So the constraint here is not authority — it is that our service page has never been crawled.**
+`/use-cases/for-photographers` is the correct page type for the KD-7 outsource intent, and it is
+invisible. That reframes the whole FixThePhoto question below.
+
+### 5d. What the FixThePhoto comparison actually licenses
+
+| | FixThePhoto | Curify |
+|---|---:|---:|
+| organic keywords | 286,700 | — |
+| organic traffic | ~344,000 | ~938 clicks/28d **site-wide, all clusters** |
+| referring domains | **27,800** | small; the 07-29 audit analysed 68, of which 58 were a PBN |
+| articles | **19,000+** | 108 |
+| operating since | **2003** | — |
+
+**Their 344K does not come from retouching terms** — `shutterfly` 1.5M, `walmart photo` 301K,
+`premiere pro tutorial` 673K, `webcam toy` 49.5K. The service pages sit on twenty years of
+unrelated photography media. Copying that is the 19,000-article play, and rejecting it was right.
+
+What survives is their **layer-2 job pages** — pages named for the job the trade names. And §5c
+says we do not need their authority to win the service-intent terms anyway.
+
+**⭐ The better precedent is internal.** ASL went **28 → 540 clicks in one window** on this same
+domain with this same authority, and nobody has explained why. That is worth more than further
+FixThePhoto analysis.
+
+### 5e. The 10-27 gate, pre-registered
+
+Measured on `/tools/wedding-photo-editing`, 28d, web:
+
+| | criterion | consequence |
+|---|---|---|
+| **PASS** | ≥150 impressions **and** position <15 on `wedding photo editing` | job-page layer opens |
+| **MARGINAL** | 50–150 impressions | extend one window, do not build |
+| **FAIL** | <50 impressions after six weeks indexed | ⚠️ given §5c, a FAIL is **not** an authority verdict — re-check crawl state first |
+
+Grade at T+14 minimum.
+
+**Copy rules if the layer opens** — write **"editing"**, never "retouching" (69 of 104 buyer posts
+say "edit", exactly one says "retouch"), and never **"AI-powered"** (*"I don't want to use any AI
+editors"* is a direct quote). Lead with the constraint: *nothing moves but what you asked for.*
+
 ## Open
 
 - **Verify the `/blog/ghost-mannequin-ai-guide` recrawl landed** (operator requested 2026-09-19).
   Check `lastCrawl` at ~09-26 with `scripts/_foldscan.cjs`; if still pre-09-01 by **10-06**, fall
   back to Validate Fix while there is latency budget before the **10-13** low-KD readout.
 - **Validate Fix on the carousel 404 cohort** — 346 of 539, 15/16 sampled already 308 → 200.
-- **Request indexing on `/use-cases/for-photographers`** — links exist, linkers are stale.
+- ✅ **`/use-cases/for-photographers` submitted to GSC for crawling 2026-09-20 (operator).**
+  Links exist (five, four from pages verified indexed) but every inspected linker crawl predated
+  the link. **Verify at ~09-27** with `scripts/_foldscan.cjs` — the state to look for is
+  `Discovered – currently not indexed` → `Submitted and indexed`. Per §5c this page is the
+  correct page type for the KD-7 `outsource wedding photo editing` intent, on a SERP held by
+  solo freelancers, so getting it crawled is the single highest-value unblock in the cluster.
+- ✅ **`/nano-template/portrait-retouching-blueprint` live-tested and submitted for indexing
+  2026-09-20 (operator).** **Phase 0 is now complete.** Verified live before submitting, which
+  is the step the 09-09 fold verdict skipped: the page returns 200 with an **absolute
+  self-canonical**, `index, follow`, and a `<title>` matching its `<h1>`. Nothing on the page
+  is wrong.
+  The fold is purely stale state, and the dates are three days apart: it was last crawled
+  **2026-07-08**, and the relative→absolute canonical fix for this route family shipped
+  **2026-07-11** (`3fb7b42f`). Google has been holding a pre-fix snapshot for ten weeks on the
+  only retouching URL that ranks (pos 2.3). A recrawl should clear it outright.
+  **Verify ~09-27** with `scripts/_foldscan.cjs`: `Duplicate without user-selected canonical`
+  → `Submitted and indexed`, and `googleCanonical` moving off `/`.
+  ⚠️ Minor, filed not fixed: the page emits **zero hreflang tags**. Expected if the template is
+  EN-only — nano-template hubs emit only their authored locales — but unverified, and it does
+  not block the fold clearing.
 - **Pull KD on the on-model / flatlay query set** that Futuriza and LOOK AI are bidding on. This is
   §2's forward pointer and the only new lead this audit produced.
 - **Real-estate editing stays gated on the capability probe.** `retouch_pipeline.py:326` raises

@@ -104,7 +104,7 @@ const STATIC_LASTMOD_OVERRIDES: Record<string, string> = {
 // 09-09 (same ship): six merch/POD tools gained a "Related reading" section —
 // they had no TOOL_BLOG_CATEGORIES entry, which is why all four KD-campaign
 // spokes measured referringUrls = 0. New rendered markup on those six pages.
-const TOOLS_LASTMOD = "2026-09-09T00:00:00.000Z";
+const TOOLS_LASTMOD = "2026-09-21T00:00:00.000Z";
 
 // Use-case pages: 08-12 added the worked-case block and moved the demo cards
 // into the tools grid — a visible change on all of them.

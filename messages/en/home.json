@@ -410,6 +410,10 @@
         "title": "Wedding & Portrait Photo Editing — Free, No Sign-In",
         "description": "Free wedding and portrait photo editing. Flyaways, skin, eyes and garment creases, region by region — your framing and background untouched. No sign-in."
       }
+    },
+    "ai_fashion_model_generator": {
+      "title": "AI Fashion Model Generator",
+      "desc": "One flat lay in, the garment on a model out — plus the 27 checks that decide if it is listable."
     }
   },
   "bilingual": {
@@ -1814,6 +1818,83 @@
         "educationBody": "Headshots and portrait sets that need to look edited rather than filtered, with the skin still reading as skin.",
         "businessTitle": "Studios and agencies",
         "businessBody": "If you are outsourcing editing already, the questions worth asking us are consistency across a set, turnaround, and whether we can match a look from your own reference gallery. Those are the parts this pipeline handles numerically."
+      }
+    }
+  },
+  "aiFashionModelGenerator": {
+    "metadata": {
+      "title": "AI Fashion Model Generator — Flat Lay to On-Model",
+      "description": "Turn one flat lay into an on-model try-on image — and read the 27-check QA rubric a womenswear buyer taught us over seven rounds of revisions, published here in full."
+    },
+    "title": "AI Fashion Model Generator",
+    "description": "Upload one flat lay and see the garment on a model. The hard part is not generating the image, it is proving the garment survived it — so the 27 checks we use are published on this page, free to read.",
+    "cta": "Upload a flat lay",
+    "example": "A flat lay, the same garment worn, and the checks that decide whether it is listable.",
+    "demo": {
+      "aria": "Flat lay to on-model: the outfit laid out flat, and the same outfit worn",
+      "caption": "One flat lay in, the garment worn out. The 27 checks below are what decide whether it is listable."
+    },
+    "why": {
+      "title": "Why this page is mostly a checklist",
+      "point1": "Fidelity outranks attractiveness, and it is not close. Asked to list what gets an apparel image rejected, a womenswear buyer put “the garment is not the garment” first and marked it the overriding concern. Stiff posing came second. Beauty did not appear.",
+      "point2": "A generator redraws the garment instead of moving it. That is the failure mode that matters: a model reference imposes its own fit on a boxy product and quietly moves the two dimensions a buyer measures.",
+      "point3": "A single frame can pass every aesthetic judgement and still fail the set. The two defect classes that survive the most revisions are colour consistency across frames and one structural garment detail — both are consistency failures, not beauty failures.",
+      "point4": "So the checks are the product, not the generator. Anyone can produce a plausible image; what a volume buyer pays for is a repeatable way to show the garment survived — which is why the full list is on this page rather than behind a sales call."
+    },
+    "faq": {
+      "title": "Frequently asked questions about AI fashion model generation",
+      "q1": "What is an AI fashion model generator?",
+      "a1": "You supply the garment photograph; the model, the pose and the lighting are generated. That split is worth holding onto — it also decides which failures are yours to catch and which are the model's to get right.",
+      "q2": "Flat lay, on-model, or ghost mannequin — which does my listing need?",
+      "a2": "Most listings need more than one, because they answer different buyer questions. If you can only afford one, on-model sells and flat lay informs — but a size-sensitive category will generate returns without a frame that shows length honestly.",
+      "q3": "Can I use one reference photo for a whole set?",
+      "a3": "No, and this is the most common mistake. One reference gives you one look. A set has to vary pose, framing and background deliberately while holding the garment, the model identity and the colour constant — and “images too similar” is itself a named rejection reason.",
+      "q4": "Why does the garment change when it goes on the model?",
+      "a4": "Because the model reference is contributing more than it should. The rule that prevents it is below: the garment reference owns the clothing, the model reference owns only pose, light and background.",
+      "q5": "What is inner-layer bleed?",
+      "a5": "An inner garment visible in the model reference — a camisole, a tee under a jacket — surviving into the output even though it is not part of your product. Nobody asked for it; it is simply still there. Check the neckline and cuffs first, where it usually shows.",
+      "q6": "What is silhouette drift, and why does it matter more than it looks?",
+      "a6": "The generated fit drifts toward the reference model's fit rather than the product's. It matters because it moves the two dimensions a buyer actually measures — length and width at the bust — so the image stops matching the size chart even though it still looks good.",
+      "q7": "How do I check garment length without a measurement?",
+      "a7": "Use a ratio against pose landmarks: hem minus shoulder, over hip minus shoulder. Ratios survive crop and camera distance; pixel measurements do not. Never compute a ratio between the output and your flat lay — a garment on a dress form and a garment on a person share no landmark, no scale and no pose.",
+      "q8": "Does the model have to be the same person across a set?",
+      "a8": "Yes, if the frames sit in one listing. A changing face reads as a changing product. Hold identity and hair constant, and vary pose, framing and background instead.",
+      "q9": "What breaks a set that does not break a single image?",
+      "a9": "Consistency — colour temperature between frames, a hue that moves under changed light, a detail present in one frame and gone in the next. None of it shows when you review one image at a time, which is exactly why a set has to be reviewed as a set.",
+      "q10": "Can I use these images on Amazon, Shopify or TikTok Shop?",
+      "a10": "The image is yours to use, but every marketplace sets its own rules on main-image background, framing and whether generated imagery must be disclosed. Check the policy for the specific marketplace before you list — they differ, and they change.",
+      "q11": "What resolution and aspect ratio do marketplace listings need?",
+      "a11": "It varies by marketplace and it is worth confirming against current policy rather than a general answer. What is constant: decide the delivery size first and verify detail at that size, because a detail that only holds at preview scale will not survive a zoom.",
+      "q12": "How many frames does an apparel listing actually need?",
+      "a12": "Enough to answer the questions a buyer would otherwise ask: front, back, a full-length frame for length and ease, a three-quarter view for side-visible structure, and one worn-in-context frame. Fewer than that and the questions come back as returns.",
+      "q13": "Which clothing categories work, and which do not?",
+      "a13": "Structured, opaque garments with clear edges are the most reliable. The harder cases are the ones where fabric behaviour is the product — sheer layers, heavy drape, fine knit texture — because how cloth falls and creases is what generation is worst at.",
+      "q14": "Is it free, and do I need an account?",
+      "a14": "The rubric on this page is free to read and reuse. Generating an image costs 5 credits and needs an account, because it runs a real image model on your upload. Volume work is a conversation rather than a button — the rubric here is the standard we would hold it to."
+    },
+    "deep": {
+      "what": {
+        "title": "What is an AI fashion model generator?",
+        "p1": "An AI fashion model generator takes a garment you already photographed — usually a flat lay, sometimes a mannequin or dress-form shot — and produces an image of that garment worn by a model, without a photoshoot. It is also called flat lay to on-model, on-model generation, or virtual model photography.",
+        "p2": "It is not the same as a ghost mannequin, and the two solve different listing problems. A ghost mannequin (also called invisible mannequin or the hollow man effect) removes the body and leaves the garment holding its own shape — good for showing construction. An on-model image shows fit, drape and scale on a person — good for showing how it will look worn. Most apparel listings need both, answering different questions.",
+        "p3": "Virtual try-on is a third thing again: it puts a product onto a photo of a customer, preserving that person. On-model generation does the reverse — it keeps the garment fixed and supplies the person."
+      },
+      "how": {
+        "title": "How flat lay to on-model actually works",
+        "p1": "Start from the flattest, most complete garment photograph you have. A flat lay with the whole garment visible beats a styled shot, because every fold the camera hides is a detail the model has to invent.",
+        "p2": "Separate what each reference owns. The garment reference contributes everything about the clothing — cut, colour, print, closures, hem. The model reference contributes only pose, framing, lighting, background and body type. When the two disagree about the garment, the flat lay wins. Most fidelity failures are a violation of this one rule.",
+        "p3": "Generate the anchor first, then the scene. Settle the garment on the body in a plain, well-lit frame before asking for a location, a mood or a season. A scene generated at the same time as the garment tends to renegotiate the garment.",
+        "p4": "Repair locally, not globally. Re-rendering a whole frame to fix one button changes the model, the light and often the location too. Crop, regenerate the crop, and composite it back with a feathered edge — then check that colour and texture are continuous across the seam.",
+        "p5": "Check before you list, against the rubric on this page — and check at delivery resolution. A detail that only reads correctly as a thumbnail is not finished, and the zoom is what a buyer will actually use."
+      },
+      "usecases": {
+        "title": "Who this is for",
+        "creatorsTitle": "Independent sellers and small labels",
+        "creatorsBody": "You have the garment and a phone, and a photoshoot costs more than the style will earn. One flat lay gets you a worn image to test the listing before committing to production photography.",
+        "educationTitle": "Sourcing and supply-chain review",
+        "educationBody": "Before a style is bought, a worn image answers questions a flat lay cannot: where the hem falls, how the shoulder sits, whether the length reads as advertised. Check it by ratio against the size chart, never by eye against the flat lay.",
+        "businessTitle": "Catalogue and marketplace teams",
+        "businessBody": "Frequent drops, many SKUs, fixed frame requirements. The constraint is rarely one good image — it is one garment reading as one garment across every frame and every variant. That is what the commerce section of the rubric is for. For volume work, talk to us rather than generating one image at a time."
       }
     }
   }

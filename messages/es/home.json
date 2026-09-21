@@ -365,6 +365,10 @@
         "title": "Edición de fotos de boda y retrato — gratis",
         "description": "Edición gratuita de fotos de boda y retrato. Pelos sueltos, piel, ojos y arrugas de tela por regiones; encuadre y fondo intactos. Sin registro."
       }
+    },
+    "ai_fashion_model_generator": {
+      "title": "Generador de modelos de moda con IA",
+      "desc": "Entra un plano, sale la prenda sobre modelo — con las 27 comprobaciones que deciden si es publicable."
     }
   },
   "bilingual": {
@@ -1788,6 +1792,83 @@
         "educationBody": "Headshots and portrait sets that need to look edited rather than filtered, with the skin still reading as skin.",
         "businessTitle": "Studios and agencies",
         "businessBody": "If you are outsourcing editing already, the questions worth asking us are consistency across a set, turnaround, and whether we can match a look from your own reference gallery. Those are the parts this pipeline handles numerically."
+      }
+    }
+  },
+  "aiFashionModelGenerator": {
+    "metadata": {
+      "title": "Generador de modelos de moda con IA — de plano a modelo",
+      "description": "Convierte un plano de prenda en una imagen sobre modelo, y consulta la lista de 27 comprobaciones que una compradora de moda femenina nos enseñó a lo largo de siete rondas de revisiones."
+    },
+    "title": "Generador de modelos de moda con IA",
+    "description": "Sube un plano de la prenda y verla puesta sobre una modelo. Lo difícil no es generar la imagen, sino demostrar que la prenda sobrevivió al proceso: por eso publicamos aquí las 27 comprobaciones que usamos, de lectura libre.",
+    "cta": "Subir un plano de prenda",
+    "example": "Un plano de prenda, la misma prenda puesta, y las comprobaciones que deciden si es publicable.",
+    "demo": {
+      "aria": "De plano a modelo: la prenda extendida en plano y el mismo conjunto puesto",
+      "caption": "Entra un plano, sale la prenda puesta. Las 27 comprobaciones de abajo son las que deciden si se puede publicar."
+    },
+    "why": {
+      "title": "Por qué esta página es sobre todo una lista de comprobación",
+      "point1": "La fidelidad pesa más que el atractivo, y no está reñido. Al enumerar qué hace que se rechace una imagen de moda, una compradora de moda femenina puso primero «la prenda no es la prenda» y la marcó como lo más importante. La pose rígida fue la segunda. La belleza no apareció.",
+      "point2": "Un generador vuelve a dibujar la prenda en lugar de moverla. Ese es el fallo que importa: una referencia de modelo impone su propio ajuste a un producto holgado y desplaza en silencio las dos medidas que una compradora comprueba.",
+      "point3": "Una sola imagen puede superar todo juicio estético y aun así hacer fracasar el conjunto. Las dos clases de defecto que sobreviven a más rondas son la consistencia de color entre tomas y un detalle estructural de la prenda: ambas son fallos de consistencia, no de belleza.",
+      "point4": "Así que el producto son las comprobaciones, no el generador. Cualquiera puede producir una imagen verosímil; lo que paga un comprador de volumen es una forma repetible de demostrar que la prenda sobrevivió, y por eso la lista completa está en esta página y no detrás de una llamada comercial."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre la generación de modelos de moda con IA",
+      "q1": "¿Qué es un generador de modelos de moda con IA?",
+      "a1": "Tú aportas la fotografía de la prenda; la modelo, la pose y la luz se generan. Vale la pena retener esa división: también decide qué fallos te toca detectar a ti y cuáles debe acertar el modelo.",
+      "q2": "Plano, sobre modelo o maniquí invisible: ¿cuál necesita mi ficha?",
+      "a2": "La mayoría de las fichas necesitan más de uno, porque responden a preguntas distintas del comprador. Si solo puedes permitirte uno, el de modelo vende y el plano informa; pero una categoría sensible a la talla generará devoluciones sin una toma que muestre el largo con honestidad.",
+      "q3": "¿Puedo usar una sola foto de referencia para todo un conjunto?",
+      "a3": "No, y es el error más común. Una referencia da una sola toma. Un conjunto tiene que variar pose, encuadre y fondo deliberadamente mientras mantiene la prenda, la identidad de la modelo y el color constantes; además, «imágenes demasiado parecidas» es en sí un motivo de rechazo citado.",
+      "q4": "¿Por qué cambia la prenda al pasar a la modelo?",
+      "a4": "Porque la referencia de modelo está aportando más de lo que debería. La regla que lo evita está más abajo: la referencia de prenda es dueña de la ropa, la de modelo solo de pose, luz y fondo.",
+      "q5": "¿Qué es el sangrado de capa interior?",
+      "a5": "Una prenda interior visible en la referencia de modelo —una camiseta bajo una chaqueta— que sobrevive al resultado aunque no forme parte de tu producto. Revisa primero el escote y los puños, que es donde suele asomar.",
+      "q6": "¿Qué es la deriva de silueta y por qué importa más de lo que parece?",
+      "a6": "El ajuste generado se desvía hacia el de la modelo de referencia en lugar del del producto. Importa porque desplaza las dos medidas que una compradora sí comprueba —largo y ancho de pecho—, de modo que la imagen deja de coincidir con la tabla de tallas aunque siga viéndose bien.",
+      "q7": "¿Cómo compruebo el largo sin una medida?",
+      "a7": "Usa una proporción contra puntos de la pose: bajo menos hombro, dividido por cadera menos hombro. Las proporciones sobreviven al recorte y a la distancia de cámara; las medidas en píxeles no. Nunca calcules una proporción entre el resultado y tu plano: una prenda sobre maniquí y una prenda sobre una persona no comparten punto de referencia, escala ni pose.",
+      "q8": "¿La modelo tiene que ser la misma en todo el conjunto?",
+      "a8": "Sí, si las tomas van en una misma ficha. Una cara que cambia se lee como un producto que cambia. Mantén constantes identidad y peinado, y varía pose, encuadre y fondo.",
+      "q9": "¿Qué rompe un conjunto sin romper una sola imagen?",
+      "a9": "La consistencia: temperatura de color entre tomas, un tono que se mueve con otra luz, un detalle presente en una toma y ausente en la siguiente. Nada de eso se ve revisando imagen por imagen, y por eso un conjunto hay que revisarlo como conjunto.",
+      "q10": "¿Puedo usar estas imágenes en Amazon, Shopify o TikTok Shop?",
+      "a10": "La imagen es tuya, pero cada marketplace fija sus propias reglas sobre fondo de la imagen principal, encuadre y si hay que declarar el uso de imágenes generadas. Consulta la política del marketplace concreto antes de publicar: difieren y cambian.",
+      "q11": "¿Qué resolución y proporción piden las fichas?",
+      "a11": "Varía según el marketplace y conviene confirmarlo con su política actual en lugar de con una respuesta general. Lo que no cambia: decide primero el tamaño de entrega y verifica el detalle a ese tamaño, porque un detalle que solo aguanta en vista previa no sobrevive a un zoom.",
+      "q12": "¿Cuántas tomas necesita de verdad una ficha de moda?",
+      "a12": "Las suficientes para responder a lo que si no preguntaría el comprador: frente, espalda, un cuerpo entero para largo y holgura, un tres cuartos para la estructura visible de lado, y una toma en contexto. Con menos, las preguntas vuelven en forma de devoluciones.",
+      "q13": "¿Qué categorías funcionan y cuáles no?",
+      "a13": "Las prendas estructuradas, opacas y de bordes claros son las más fiables. Los casos difíciles son aquellos en los que el comportamiento del tejido es el producto —capas transparentes, caída pesada, textura de punto fino—, porque cómo cae y se arruga la tela es justo lo que peor hace la generación.",
+      "q14": "¿Es gratis? ¿Hace falta cuenta?",
+      "a14": "La lista de esta página es gratuita de leer y de reutilizar. Generar una imagen cuesta 5 créditos y requiere cuenta, porque ejecuta un modelo de imagen real sobre tu archivo. El trabajo por volumen es una conversación, no un botón, y la lista de esta página es el estándar al que lo someteríamos."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué es un generador de modelos de moda con IA?",
+        "p1": "Un generador de modelos de moda con IA toma una prenda que ya has fotografiado —normalmente un plano, a veces sobre maniquí o busto— y produce una imagen de esa prenda puesta por una modelo, sin sesión de fotos. También se le llama de plano a modelo, generación sobre modelo o fotografía con modelo virtual.",
+        "p2": "No es lo mismo que un maniquí invisible, y resuelven problemas distintos de la ficha. El maniquí invisible (también llamado efecto hombre hueco) elimina el cuerpo y deja la prenda sosteniendo su propia forma: sirve para mostrar la confección. La imagen sobre modelo muestra ajuste, caída y escala sobre una persona: sirve para mostrar cómo quedará puesta. La mayoría de fichas de moda necesitan ambas, porque responden a preguntas distintas.",
+        "p3": "La prueba virtual es una tercera cosa: coloca el producto sobre la foto de un cliente y preserva a esa persona. La generación sobre modelo hace lo contrario: mantiene fija la prenda y aporta la persona."
+      },
+      "how": {
+        "title": "Cómo funciona de verdad el paso de plano a modelo",
+        "p1": "Parte de la fotografía de prenda más plana y completa que tengas. Un plano con toda la prenda visible gana a una toma estilizada, porque cada pliegue que la cámara oculta es un detalle que la modelo tendrá que inventar.",
+        "p2": "Separa lo que aporta cada referencia. La referencia de prenda aporta todo lo relativo a la ropa: corte, color, estampado, cierres, bajo. La referencia de modelo aporta solo pose, encuadre, luz, fondo y tipo de cuerpo. Cuando ambas discrepan sobre la prenda, gana el plano. La mayoría de los fallos de fidelidad son una violación de esta única regla.",
+        "p3": "Genera primero el ancla y luego la escena. Asienta la prenda sobre el cuerpo en una toma sencilla y bien iluminada antes de pedir localización, ambiente o temporada. Una escena generada a la vez que la prenda tiende a renegociar la prenda.",
+        "p4": "Repara en local, no en global. Volver a generar un fotograma entero para corregir un botón cambia la modelo, la luz y a menudo también la localización. Recorta, regenera el recorte y recomponlo con un borde difuminado; después comprueba que el color y la textura sean continuos a través de la costura.",
+        "p5": "Comprueba antes de publicar, contra la lista de esta página, y hazlo a la resolución de entrega. Un detalle que solo se lee bien como miniatura no está terminado, y el zoom es justo lo que usará el comprador."
+      },
+      "usecases": {
+        "title": "Para quién es",
+        "creatorsTitle": "Vendedores independientes y marcas pequeñas",
+        "creatorsBody": "Tienes la prenda y un móvil, y una sesión de fotos cuesta más de lo que va a dejar el modelo. Un plano te da una imagen puesta para probar la ficha antes de comprometerte con fotografía de producto.",
+        "educationTitle": "Compra y control de cadena de suministro",
+        "educationBody": "Antes de comprar un modelo, una imagen puesta responde a lo que un plano no puede: dónde cae el bajo, cómo se asienta el hombro, si el largo se lee como se anuncia. Compruébalo por proporción contra la tabla de tallas, nunca a ojo contra el plano.",
+        "businessTitle": "Equipos de catálogo y marketplace",
+        "businessBody": "Lanzamientos frecuentes, muchos SKU, requisitos de toma fijos. El cuello de botella rara vez es una buena imagen: es que una prenda se lea como la misma prenda en cada toma y cada variante. Para eso está la sección de comercio de la lista. Para volumen, habla con nosotros en lugar de generar de una en una."
       }
     }
   }

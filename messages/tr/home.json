@@ -365,6 +365,10 @@
         "title": "Düğün & Portre Fotoğraf Düzenleme — ücretsiz",
         "description": "Ücretsiz düğün ve portre fotoğraf düzenleme. Saç telleri, cilt, gözler ve kumaş kırışıkları bölge bölge; kadraj ve arka plan el değmeden. Üyeliksiz."
       }
+    },
+    "ai_fashion_model_generator": {
+      "title": "AI Moda Manken Üreteci",
+      "desc": "Bir düz çekim girer, ürün manken üzerinde çıkar — listelenebilirliğe karar veren 27 kontrolle birlikte."
     }
   },
   "bilingual": {
@@ -1873,6 +1877,83 @@
         "educationBody": "Headshots and portrait sets that need to look edited rather than filtered, with the skin still reading as skin.",
         "businessTitle": "Studios and agencies",
         "businessBody": "If you are outsourcing editing already, the questions worth asking us are consistency across a set, turnaround, and whether we can match a look from your own reference gallery. Those are the parts this pipeline handles numerically."
+      }
+    }
+  },
+  "aiFashionModelGenerator": {
+    "metadata": {
+      "title": "AI Moda Manken Üreteci — düz çekimden manken üzerine",
+      "description": "Tek bir düz çekimi manken üzerinde görüntüye çevirin; ayrıca bir kadın giyim alıcısının yedi revizyon turunda bize öğrettiği 27 maddelik kontrol listesini burada tam olarak okuyun."
+    },
+    "title": "AI Moda Manken Üreteci",
+    "description": "Bir düz çekim yükleyin ve ürünü manken üzerinde görün. Zor olan görüntüyü üretmek değil, ürünün bozulmadan kaldığını kanıtlamak — bu yüzden kullandığımız 27 kontrolü bu sayfada ücretsiz yayımlıyoruz.",
+    "cta": "Düz çekim yükleyin",
+    "example": "Bir düz çekim, aynı ürünün giyilmiş hali ve listelenebilir olup olmadığına karar veren kontroller.",
+    "demo": {
+      "aria": "Düz çekimden manken üzerine: düz serilmiş kombin ve aynı kombinin giyilmiş hali",
+      "caption": "Bir düz çekim girer, giyilmiş ürün çıkar. Listelenebilirliğe karar veren, aşağıdaki 27 kontroldür."
+    },
+    "why": {
+      "title": "Bu sayfa neden büyük ölçüde bir kontrol listesi",
+      "point1": "Sadakat çekicilikten önce gelir ve arada ciddi fark var. Bir moda görselinin neden geri çevrildiği sorulduğunda, bir kadın giyim alıcısı «ürün o ürün değil» maddesini en başa koydu ve en kritik olarak işaretledi. Sonra donuk poz geldi. Güzellik listede hiç yer almadı.",
+      "point2": "Üretken model ürünü taşımaz, yeniden çizer. Asıl hata biçimi budur: manken referansı, bol kesim bir üründe kendi kalıbını dayatır ve alıcının ölçtüğü iki ölçüyü sessizce kaydırır.",
+      "point3": "Tek bir kare bütün estetik değerlendirmeleri geçip yine de seti düşürebilir. En çok revizyon turunu atlatan iki kusur sınıfı, kareler arası renk tutarlılığı ve üründeki tek bir yapısal detaydır — ikisi de tutarlılık hatasıdır, güzellik hatası değil.",
+      "point4": "Yani ürün, üreteç değil kontrollerdir. İnandırıcı bir görseli herkes çıkarır; hacimli alıcının ödediği şey, ürünün bozulmadan kaldığını tekrarlanabilir biçimde gösterebilmektir — listenin tamamının bir satış görüşmesinin ardında değil, bu sayfada olmasının nedeni budur."
+    },
+    "faq": {
+      "title": "AI ile moda manken üretimi hakkında sık sorulanlar",
+      "q1": "AI moda manken üreteci nedir?",
+      "a1": "Ürün fotoğrafını siz verirsiniz; manken, poz ve ışık üretilir. Bu ayrımı akılda tutmakta fayda var — hangi hataların sizin yakalamanız, hangilerinin modelin doğru yapması gerektiğini de bu belirler.",
+      "q2": "Düz çekim, manken üzeri ya da hayalet manken — listemin hangisine ihtiyacı var?",
+      "a2": "Çoğu liste birden fazlasını ister, çünkü alıcının farklı sorularını yanıtlarlar. Yalnızca birine bütçeniz varsa: manken üzeri satar, düz çekim anlatır — ama bedenin belirleyici olduğu bir kategoride, boyu dürüstçe gösteren bir kare olmadan iade gelir.",
+      "q3": "Tek bir referans fotoğrafla bütün bir set üretebilir miyim?",
+      "a3": "Hayır ve bu en yaygın hata. Bir referans bir kare verir. Bir set; ürünü, manken kimliğini ve rengi sabit tutarken pozu, kadrajı ve fonu bilinçli olarak değiştirmek zorundadır — üstelik «görseller birbirine fazla benziyor» başlı başına sayılan bir ret gerekçesidir.",
+      "q4": "Ürün mankene geçince neden değişiyor?",
+      "a4": "Çünkü manken referansı katması gerekenden fazlasını katıyor. Bunu önleyen kural aşağıda: ürün referansı giysinin tamamının sahibidir, manken referansı yalnızca pozun, ışığın ve fonun.",
+      "q5": "İç katman sızması nedir?",
+      "a5": "Manken referansında görünen bir iç parçanın — ceketin altındaki tişört gibi — ürününüzün parçası olmadığı halde çıktıya taşınmasıdır. Önce yaka ve kol ağızlarına bakın, genellikle orada görünür.",
+      "q6": "Siluet kayması nedir ve neden göründüğünden ağırdır?",
+      "a6": "Üretilen kalıp, ürünün değil referans mankenin kalıbına doğru kayar. Ağırdır çünkü alıcının gerçekten ölçtüğü iki ölçüyü — boy ve göğüs genişliği — kaydırır; görsel hâlâ iyi görünürken beden tablosuyla örtüşmeyi bırakır.",
+      "q7": "Ölçü olmadan boyu nasıl kontrol ederim?",
+      "a7": "Poz referans noktalarına göre oran kullanın: (etek ucu − omuz) ÷ (kalça − omuz). Oranlar kırpmaya ve kamera mesafesine dayanır, piksel ölçüleri dayanmaz. Çıktı ile düz çekim arasında asla oran hesaplamayın — manken üzerindeki ürünle insan üzerindeki ürünün ortak referans noktası, ölçeği ya da pozu yoktur.",
+      "q8": "Set boyunca manken aynı kişi olmalı mı?",
+      "a8": "Kareler aynı listede yer alıyorsa evet. Değişen bir yüz, değişen bir ürün olarak okunur. Kimliği ve saçı sabit tutun; pozu, kadrajı ve fonu değiştirin.",
+      "q9": "Tek kareyi bozmadan seti bozan şey nedir?",
+      "a9": "Tutarlılık — kareler arası renk sıcaklığı, ışık değişince kayan bir ton, bir karede olup diğerinde kaybolan bir detay. Tek tek bakarken bunların hiçbiri görünmez; seti set olarak incelemek tam da bu yüzden gerekir.",
+      "q10": "Bu görselleri Amazon, Shopify veya TikTok Shop'ta kullanabilir miyim?",
+      "a10": "Görsel sizindir, ancak her pazaryeri ana görsel fonu, kadraj ve üretilmiş görselin beyan edilmesi konusunda kendi kurallarını koyar. Listelemeden önce ilgili pazaryerinin güncel politikasını kontrol edin — farklılar ve değişiyorlar.",
+      "q11": "Listelemeler hangi çözünürlük ve en-boy oranını istiyor?",
+      "a11": "Pazaryerine göre değişir; genel bir cevaptan çok güncel politikaya bakmak daha doğru. Değişmeyen şu: önce teslim boyutunu belirleyin ve detayı o boyutta doğrulayın, çünkü yalnızca ön izlemede tutan bir detay yakınlaştırmayı kaldırmaz.",
+      "q12": "Bir moda listesi gerçekte kaç kare ister?",
+      "a12": "Alıcının aksi halde soracağı soruları yanıtlayacak kadar: ön, arka, boy ve rahatlık için bir boy kare, yandan görünen yapı için bir dörtte üç açı ve bağlam içinde bir kare. Daha azı, aynı soruların iade olarak geri dönmesi demektir.",
+      "q13": "Hangi kategoriler iyi çalışır, hangileri çalışmaz?",
+      "a13": "Yapılı, ışık geçirmeyen ve kenarları net ürünler en güvenilirleri. Zor olanlar, kumaşın davranışının ürünün kendisi olduğu haller — şeffaf katmanlar, ağır döküm, ince örgü dokusu — çünkü kumaşın nasıl döküldüğü ve kırıştığı, üretimin en kötü yaptığı şeydir.",
+      "q14": "Ücretsiz mi? Hesap gerekiyor mu?",
+      "a14": "Bu sayfadaki kontrol listesi okunmak ve yeniden kullanılmak üzere ücretsizdir. Görsel üretmek 5 kredi ve bir hesap gerektirir, çünkü dosyanız üzerinde gerçek bir görsel modeli çalıştırır. Hacimli iş bir düğme değil bir görüşmedir — ve bu sayfadaki liste, onu tutacağımız standarttır."
+    },
+    "deep": {
+      "what": {
+        "title": "AI moda manken üreteci nedir",
+        "p1": "AI moda manken üreteci, zaten fotoğraflamış olduğunuz bir ürünü — genellikle düz çekim, bazen manken ya da büst çekimi — alır ve o ürünün bir manken tarafından giyildiği görüntüyü çekim yapmadan üretir. Düz çekimden manken üzerine, manken üzeri üretim veya sanal manken fotoğrafçılığı olarak da anılır.",
+        "p2": "Hayalet manken ile aynı şey değildir ve ikisi listenin farklı sorunlarını çözer. Hayalet manken (içi boş adam etkisi de denir) vücudu kaldırır ve ürünü kendi formunu koruyarak bırakır — dikişi göstermek için iyidir. Manken üzeri görsel, bir insan üzerinde kalıbı, dökümü ve ölçeği gösterir — giyildiğinde nasıl duracağını göstermek için iyidir. Çoğu moda listesi ikisine de ihtiyaç duyar, çünkü farklı soruları yanıtlarlar.",
+        "p3": "Sanal deneme ise üçüncü bir şeydir: ürünü müşterinin kendi fotoğrafına yerleştirir ve o kişiyi korur. Manken üzeri üretim tersini yapar — ürünü sabit tutar ve kişiyi sağlar."
+      },
+      "how": {
+        "title": "Düz çekimden manken üzerine gerçekte nasıl işler",
+        "p1": "Elinizdeki en düz, en eksiksiz ürün fotoğrafından başlayın. Ürünün tamamının göründüğü bir düz çekim, stilize bir kareden iyidir; çünkü kameranın sakladığı her kıvrım, mankenin uydurmak zorunda kalacağı bir detaydır.",
+        "p2": "Her referansın neyin sahibi olduğunu ayırın. Ürün referansı giysiye dair her şeyi verir — kesim, renk, baskı, kapamalar, etek ucu. Manken referansı yalnızca pozu, kadrajı, ışığı, fonu ve beden tipini verir. Ürün konusunda ikisi çelişirse düz çekim kazanır. Sadakat hatalarının çoğu bu tek kuralın ihlalidir.",
+        "p3": "Önce çapa, sonra sahne. Mekân, atmosfer veya mevsim istemeden önce ürünü sade ve iyi aydınlatılmış bir karede beden üzerine oturtun. Ürünle aynı anda üretilen bir sahne, ürünü yeniden pazarlık etmeye meyleder.",
+        "p4": "Onarımı yerel yapın, genel değil. Tek bir düğmeyi düzeltmek için tüm kareyi yeniden üretmek mankeni, ışığı ve çoğu zaman mekânı da değiştirir. Kırpın, yalnızca o kırpımı yeniden üretin ve yumuşak kenarla geri yerleştirin — ardından dikiş boyunca rengin ve dokunun sürekliliğini kontrol edin.",
+        "p5": "Listelemeden önce bu sayfadaki listeye göre kontrol edin — ve teslim çözünürlüğünde kontrol edin. Yalnızca küçük görselde doğru okunan bir detay bitmemiştir; alıcının kullanacağı şey zaten yakınlaştırmadır."
+      },
+      "usecases": {
+        "title": "Kimin için",
+        "creatorsTitle": "Bağımsız satıcılar ve küçük markalar",
+        "creatorsBody": "Ürün ve telefon elinizde, ama bir çekim o modelin kazandıracağından pahalı. Bir düz çekim size giyilmiş bir görsel verir; böylece ürün fotoğrafçılığına girmeden önce listeyi test edebilirsiniz.",
+        "educationTitle": "Satın alma ve tedarik zinciri kontrolü",
+        "educationBody": "Bir model satın alınmadan önce, giyilmiş görsel düz çekimin yanıtlayamadığını yanıtlar: etek ucu nereye düşüyor, omuz nasıl oturuyor, boy ilan edildiği gibi okunuyor mu. Beden tablosuna karşı oranla kontrol edin, düz çekime bakarak gözle değil.",
+        "businessTitle": "Katalog ve pazaryeri ekipleri",
+        "businessBody": "Sık çıkışlar, çok sayıda SKU, sabit kare gereksinimleri. Darboğaz nadiren tek bir iyi görseldir — asıl mesele bir ürünün her karede ve her varyantta aynı ürün olarak okunmasıdır. Listenin ticaret bölümü tam da bunun içindir. Hacim için tek tek üretmek yerine bizimle konuşun."
       }
     }
   }
