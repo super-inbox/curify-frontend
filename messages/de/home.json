@@ -365,6 +365,10 @@
         "title": "Hochzeits- & Porträt-Bildbearbeitung — gratis",
         "description": "Kostenlose Hochzeits- und Porträtbearbeitung. Haare, Haut, Augen und Stofffalten regionsweise — Ausschnitt und Hintergrund bleiben unberührt. Ohne Konto."
       }
+    },
+    "ai_fashion_model_generator": {
+      "title": "KI-Fashion-Model-Generator",
+      "desc": "Ein Flatlay rein, das Kleidungsstück am Model raus — mit den 27 Prüfpunkten, die über die Listungsfähigkeit entscheiden."
     }
   },
   "bilingual": {
@@ -1788,6 +1792,83 @@
         "educationBody": "Headshots and portrait sets that need to look edited rather than filtered, with the skin still reading as skin.",
         "businessTitle": "Studios and agencies",
         "businessBody": "If you are outsourcing editing already, the questions worth asking us are consistency across a set, turnaround, and whether we can match a look from your own reference gallery. Those are the parts this pipeline handles numerically."
+      }
+    }
+  },
+  "aiFashionModelGenerator": {
+    "metadata": {
+      "title": "KI-Fashion-Model-Generator — vom Flatlay zum Model",
+      "description": "Aus einem Flatlay wird ein Bild am Model — dazu die 27 Prüfpunkte, die uns eine Damenmode-Einkäuferin über sieben Korrekturrunden beigebracht hat, hier vollständig veröffentlicht."
+    },
+    "title": "KI-Fashion-Model-Generator",
+    "description": "Lade ein Flatlay hoch und sieh das Kleidungsstück am Model. Schwierig ist nicht, das Bild zu erzeugen, sondern zu belegen, dass das Kleidungsstück es überstanden hat — deshalb stehen die 27 Prüfpunkte, die wir verwenden, frei lesbar auf dieser Seite.",
+    "cta": "Flatlay hochladen",
+    "example": "Ein Flatlay, dasselbe Kleidungsstück getragen, und die Prüfpunkte, die über die Listungsfähigkeit entscheiden.",
+    "demo": {
+      "aria": "Vom Flatlay zum Model: das Outfit flach ausgelegt und dasselbe Outfit getragen",
+      "caption": "Ein Flatlay rein, das Kleidungsstück getragen raus. Die 27 Prüfpunkte unten entscheiden, ob es listbar ist."
+    },
+    "why": {
+      "title": "Warum diese Seite vor allem eine Checkliste ist",
+      "point1": "Originaltreue schlägt Attraktivität, und zwar deutlich. Auf die Frage, was ein Modebild durchfallen lässt, setzte eine Damenmode-Einkäuferin „das Kleidungsstück ist nicht das Kleidungsstück“ an die erste Stelle und markierte es als das Entscheidende. Steife Posen kamen danach. Schönheit tauchte nicht auf.",
+      "point2": "Ein Generator zeichnet das Kleidungsstück neu, statt es zu versetzen. Das ist der Fehlermodus, auf den es ankommt: eine Model-Referenz drängt einem kastigen Produkt ihre eigene Passform auf und verschiebt still die beiden Maße, die eine Einkäuferin nachmisst.",
+      "point3": "Ein einzelnes Bild kann jedes ästhetische Urteil bestehen und die Serie trotzdem scheitern lassen. Die beiden Fehlerklassen, die die meisten Runden überleben, sind Farbkonsistenz zwischen den Aufnahmen und ein strukturelles Detail am Kleidungsstück — beides Konsistenz-, keine Schönheitsfehler.",
+      "point4": "Deshalb sind die Prüfpunkte das Produkt. Miss über Verhältnisse zu Pose-Landmarken, nie in Pixeln und nie gegen dein Ausgangsfoto. Zähle abzählbare Details. Verlange, dass sie den Zoom aushalten, in der Auslieferungsauflösung."
+    },
+    "faq": {
+      "title": "Häufige Fragen zur KI-Generierung von Fashion-Models",
+      "q1": "Was ist ein KI-Fashion-Model-Generator?",
+      "a1": "Er verwandelt das Foto eines Kleidungsstücks — meist ein Flatlay — in ein Bild dieses Stücks am Model, ohne Shooting. Das Kleidungsstück sollte aus deinem Foto stammen; Model, Pose und Licht werden generiert.",
+      "q2": "Flatlay, am Model oder Geistermannequin — was braucht mein Listing?",
+      "a2": "Meist mehr als eines. Das Geistermannequin zeigt die Verarbeitung ohne störenden Körper. Das Bild am Model zeigt Passform, Fall und Größenverhältnis. Das Flatlay zeigt das Stück unverzerrt. Sie beantworten unterschiedliche Käuferfragen — deshalb ist ein Listing eine Serie.",
+      "q3": "Reicht ein Referenzfoto für eine ganze Serie?",
+      "a3": "Nein, und das ist der häufigste Fehler. Eine Referenz ergibt eine Aufnahme. Eine Serie muss Pose, Bildausschnitt und Hintergrund bewusst variieren und dabei Kleidungsstück, Model-Identität und Farbe konstant halten — und „Bilder zu ähnlich“ ist selbst ein genannter Ablehnungsgrund.",
+      "q4": "Warum verändert sich das Kleidungsstück am Model?",
+      "a4": "Weil die Model-Referenz mehr beiträgt, als sie sollte. Trägt sie eine körpernahe Silhouette und dein Produkt ist kastig, trifft das Ergebnis oft die Mitte. Lass die Kleidungs-Referenz maßgeblich sein: bei Widerspruch gewinnt das Flatlay.",
+      "q5": "Was ist Unterschicht-Durchschlag?",
+      "a5": "Ein in der Model-Referenz sichtbares Unterteil — ein Shirt unter einer Jacke —, das ins Ergebnis überlebt, obwohl es nicht zu deinem Produkt gehört. Prüfe zuerst Halsausschnitt und Ärmelbündchen, dort zeigt es sich meist.",
+      "q6": "Was ist Silhouetten-Drift, und warum wiegt er schwerer, als er aussieht?",
+      "a6": "Die erzeugte Passform driftet zur Passform des Referenz-Models statt zu der des Produkts. Es wiegt schwer, weil es die beiden Maße verschiebt, die eine Einkäuferin tatsächlich nachmisst — Länge und Brustweite —, sodass das Bild nicht mehr zur Größentabelle passt, obwohl es weiter gut aussieht.",
+      "q7": "Wie prüfe ich die Länge ohne Maßangabe?",
+      "a7": "Über ein Verhältnis zu Pose-Landmarken: Saum minus Schulter, geteilt durch Hüfte minus Schulter. Verhältnisse überstehen Zuschnitt und Kameraabstand, Pixelmaße nicht. Berechne nie ein Verhältnis zwischen Ergebnis und Flatlay — ein Kleidungsstück auf der Büste und eines an einer Person teilen weder Landmarke noch Maßstab noch Pose.",
+      "q8": "Muss das Model in der ganzen Serie dasselbe sein?",
+      "a8": "Ja, wenn die Aufnahmen in einem Listing stehen. Ein wechselndes Gesicht liest sich als wechselndes Produkt. Halte Identität und Frisur konstant und variiere Pose, Ausschnitt und Hintergrund.",
+      "q9": "Was ruiniert eine Serie, ohne ein Einzelbild zu ruinieren?",
+      "a9": "Konsistenz. Farbtemperatur, die zwischen Aufnahmen driftet, ein Farbton, der sich bei anderem Licht verschiebt, ein Detail, das in einer Aufnahme da ist und in der nächsten fehlt. Jede Aufnahme kann für sich bestehen — und die Serie trotzdem durchfallen.",
+      "q10": "Darf ich diese Bilder bei Amazon, Shopify oder TikTok Shop verwenden?",
+      "a10": "Das Bild gehört dir, aber jeder Marktplatz setzt eigene Regeln zu Hauptbild-Hintergrund, Bildausschnitt und dazu, ob generierte Bilder gekennzeichnet werden müssen. Prüfe vor dem Listen die Richtlinie des konkreten Marktplatzes — sie unterscheiden sich und ändern sich.",
+      "q11": "Welche Auflösung und welches Seitenverhältnis verlangen Listings?",
+      "a11": "Das hängt vom Marktplatz ab und sollte an dessen aktueller Richtlinie geprüft werden statt an einer allgemeinen Antwort. Konstant bleibt: lege zuerst die Auslieferungsgröße fest und prüfe die Details in dieser Größe, denn ein Detail, das nur in der Vorschau hält, übersteht keinen Zoom.",
+      "q12": "Wie viele Aufnahmen braucht ein Mode-Listing wirklich?",
+      "a12": "Genug, um die Fragen zu beantworten, die der Käufer sonst stellt: Vorderseite, Rückseite, eine Ganzkörperaufnahme für Länge und Weite, eine Dreiviertelansicht für die seitlich sichtbare Struktur und eine Aufnahme im Kontext. Weniger, und die Fragen kommen als Retouren zurück.",
+      "q13": "Welche Warengruppen funktionieren, welche nicht?",
+      "a13": "Strukturierte, blickdichte Stücke mit klaren Kanten sind am verlässlichsten. Schwierig wird es dort, wo das Materialverhalten das Produkt ist — transparente Lagen, schwerer Fall, feine Strickstruktur —, denn wie Stoff fällt und knittert, ist genau das, was Generierung am schlechtesten kann.",
+      "q14": "Ist es kostenlos? Brauche ich ein Konto?",
+      "a14": "Die Checkliste auf dieser Seite ist frei lesbar und frei verwendbar. Ein Bild zu generieren kostet 5 Credits und erfordert ein Konto, weil dabei ein echtes Bildmodell auf deiner Datei läuft. Mengenarbeit ist ein Gespräch, kein Knopf — und die Liste auf dieser Seite ist der Maßstab, an dem wir sie messen würden."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist ein KI-Fashion-Model-Generator?",
+        "p1": "Ein KI-Fashion-Model-Generator nimmt ein bereits fotografiertes Kleidungsstück — meist ein Flatlay, manchmal eine Büsten- oder Puppenaufnahme — und erzeugt daraus ein Bild dieses Stücks an einem Model, ohne Shooting. Man spricht auch von Flatlay-zu-Model, On-Model-Generierung oder virtueller Model-Fotografie.",
+        "p2": "Es ist nicht dasselbe wie ein Geistermannequin, und beide lösen unterschiedliche Listing-Probleme. Das Geistermannequin (auch Hollow-Man-Effekt) entfernt den Körper und lässt das Stück seine eigene Form halten — gut, um die Verarbeitung zu zeigen. Das Bild am Model zeigt Passform, Fall und Größenverhältnis an einer Person — gut, um den Trageeindruck zu zeigen. Die meisten Mode-Listings brauchen beides, weil sie unterschiedliche Fragen beantworten.",
+        "p3": "Virtuelles Anprobieren ist wieder etwas Drittes: Es setzt das Produkt auf das Foto eines Kunden und bewahrt diese Person. Die On-Model-Generierung macht das Gegenteil — sie hält das Kleidungsstück fest und liefert die Person."
+      },
+      "how": {
+        "title": "Wie Flatlay-zu-Model tatsächlich funktioniert",
+        "p1": "Beginne mit dem flachsten, vollständigsten Kleidungsfoto, das du hast. Ein Flatlay mit vollständig sichtbarem Stück schlägt eine gestylte Aufnahme, denn jede Falte, die die Kamera verdeckt, ist ein Detail, das das Model erfinden muss.",
+        "p2": "Trenne, was jede Referenz besitzt. Die Kleidungs-Referenz liefert alles zum Stück: Schnitt, Farbe, Druck, Verschlüsse, Saum. Die Model-Referenz liefert nur Pose, Ausschnitt, Licht, Hintergrund und Körpertyp. Widersprechen sich beide beim Kleidungsstück, gewinnt das Flatlay. Die meisten Treuefehler verletzen genau diese eine Regel.",
+        "p3": "Erzeuge zuerst den Anker, dann die Szene. Setze das Stück in einer schlichten, gut ausgeleuchteten Aufnahme auf den Körper, bevor du Ort, Stimmung oder Saison verlangst. Eine gleichzeitig mit dem Kleidungsstück erzeugte Szene neigt dazu, das Kleidungsstück neu zu verhandeln.",
+        "p4": "Repariere lokal, nicht global. Ein ganzes Bild neu zu rendern, um einen Knopf zu korrigieren, ändert Model, Licht und oft auch den Ort. Schneide aus, regeneriere den Ausschnitt und setze ihn mit weicher Kante wieder ein — prüfe dann, ob Farbe und Textur über die Naht hinweg durchlaufen.",
+        "p5": "Prüfe vor dem Listen, mit der Liste unten. Verhältnisse zu Pose-Landmarken, gezählte Details und ein Zoom-Test in der Auslieferungsauflösung. Wenn es nur als Thumbnail stimmt, ist es nicht fertig."
+      },
+      "usecases": {
+        "title": "Für wen das ist",
+        "creatorsTitle": "Einzelverkäufer und kleine Labels",
+        "creatorsBody": "Du hast das Kleidungsstück und ein Telefon, und ein Shooting kostet mehr, als das Modell einbringt. Ein Flatlay liefert dir ein Trage-Bild, um das Listing zu testen, bevor du dich auf Produktfotografie festlegst.",
+        "educationTitle": "Einkauf und Lieferketten-Prüfung",
+        "educationBody": "Bevor ein Modell gekauft wird, beantwortet ein Trage-Bild, was ein Flatlay nicht kann: wo der Saum fällt, wie die Schulter sitzt, ob die Länge so liest wie angegeben. Prüfe es über Verhältnisse gegen die Größentabelle, nie nach Augenmaß gegen das Flatlay.",
+        "businessTitle": "Katalog- und Marktplatz-Teams",
+        "businessBody": "Häufige Drops, viele SKUs, feste Aufnahme-Vorgaben. Der Engpass ist selten ein gutes Bild — es ist, dass ein Kleidungsstück über jede Aufnahme und jede Variante hinweg als dasselbe Kleidungsstück liest. Dafür ist der Commerce-Abschnitt der Liste da. Für Mengen sprich mit uns, statt Bild für Bild zu generieren."
       }
     }
   }

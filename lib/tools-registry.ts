@@ -478,9 +478,6 @@ export const TOOL_REGISTRY: ToolDef[] = [
     action: { type: "generate", templateId: "template-ai-outfit-try-on-poster" },
     i18n: toolKeys("ai_fashion_model_generator"),
     seo: seoKeys("ai_fashion_model_generator"),
-    // EN-only on purpose: the SERP this targets is English, and shipping the
-    // namespace in one locale beats shipping literal key paths in nine.
-    locales: ["en"],
     demo: {
       type: "single_image",
       // The template's own output, showing the exact promise: flat lay -> worn.

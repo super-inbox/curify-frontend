@@ -365,6 +365,10 @@
         "title": "Retouche photo mariage & portrait — gratuit",
         "description": "Retouche gratuite de photos de mariage et de portrait. Mèches, peau, yeux et plis du tissu par zones ; cadrage et arrière-plan intacts. Sans compte."
       }
+    },
+    "ai_fashion_model_generator": {
+      "title": "Générateur de mannequins mode IA",
+      "desc": "Un à-plat entre, le vêtement porté sort — avec les 27 contrôles qui décident s'il est publiable."
     }
   },
   "bilingual": {
@@ -1788,6 +1792,83 @@
         "educationBody": "Headshots and portrait sets that need to look edited rather than filtered, with the skin still reading as skin.",
         "businessTitle": "Studios and agencies",
         "businessBody": "If you are outsourcing editing already, the questions worth asking us are consistency across a set, turnaround, and whether we can match a look from your own reference gallery. Those are the parts this pipeline handles numerically."
+      }
+    }
+  },
+  "aiFashionModelGenerator": {
+    "metadata": {
+      "title": "Générateur de mannequins mode IA — du à-plat au porté",
+      "description": "Transformez un à-plat en photo portée, et consultez les 27 points de contrôle qu'une acheteuse de prêt-à-porter féminin nous a appris au fil de sept séries de retours."
+    },
+    "title": "Générateur de mannequins mode IA",
+    "description": "Importez un à-plat et voyez le vêtement porté par un mannequin. Le difficile n'est pas de générer l'image, c'est de prouver que le vêtement y a survécu : c'est pourquoi les 27 contrôles que nous utilisons sont publiés ici, en libre accès.",
+    "cta": "Importer un à-plat",
+    "example": "Un à-plat, le même vêtement porté, et les contrôles qui décident s'il est publiable.",
+    "demo": {
+      "aria": "De l'à-plat au porté : le vêtement à plat, et la même tenue portée",
+      "caption": "Un à-plat entre, le vêtement porté sort. Les 27 contrôles ci-dessous décident s'il est publiable."
+    },
+    "why": {
+      "title": "Pourquoi cette page est surtout une liste de contrôle",
+      "point1": "La fidélité prime sur l'esthétique, et de loin. Invitée à énumérer ce qui fait rejeter une image mode, une acheteuse de prêt-à-porter féminin a placé « le vêtement n'est pas le vêtement » en premier et l'a marqué comme l'essentiel. La pose figée venait ensuite. La beauté n'apparaissait pas.",
+      "point2": "Un générateur redessine le vêtement au lieu de le déplacer. C'est le mode d'échec qui compte : une référence mannequin impose sa propre coupe à un produit ample et déplace en silence les deux mesures qu'une acheteuse vérifie.",
+      "point3": "Une image seule peut passer tous les jugements esthétiques et faire malgré tout échouer la série. Les deux familles de défauts qui survivent au plus grand nombre de retours sont la constance colorimétrique entre les prises et un détail structurel du vêtement — deux défauts de cohérence, pas de beauté.",
+      "point4": "Le produit, ce sont donc les contrôles. Mesurez en proportion par rapport aux points de pose, jamais en pixels et jamais contre votre photo source. Comptez les détails dénombrables. Exigez qu'ils tiennent au zoom, à la résolution de livraison."
+    },
+    "faq": {
+      "title": "Questions fréquentes sur la génération de mannequins mode par IA",
+      "q1": "Qu'est-ce qu'un générateur de mannequins mode IA ?",
+      "a1": "Il transforme la photo d'un vêtement — généralement un à-plat — en image de ce vêtement porté par un mannequin, sans séance photo. Le vêtement doit venir de votre photo ; le mannequin, la pose et la lumière sont générés.",
+      "q2": "À-plat, porté ou mannequin invisible : que faut-il à ma fiche ?",
+      "a2": "Généralement plus d'un. Le mannequin invisible montre la construction sans corps qui gêne. L'image portée montre la coupe, le tombé et l'échelle. L'à-plat montre le vêtement sans déformation. Ils répondent à des questions différentes de l'acheteur : c'est pourquoi une fiche est une série.",
+      "q3": "Puis-je utiliser une seule photo de référence pour toute une série ?",
+      "a3": "Non, et c'est l'erreur la plus courante. Une référence donne une prise. Une série doit faire varier délibérément pose, cadrage et fond tout en gardant constants le vêtement, l'identité du mannequin et la couleur — et « images trop semblables » est en soi un motif de rejet cité.",
+      "q4": "Pourquoi le vêtement change-t-il une fois porté ?",
+      "a4": "Parce que la référence mannequin apporte plus qu'elle ne le devrait. Si elle porte une silhouette ajustée et que votre produit est ample, le résultat a tendance à couper la poire en deux. Laissez la référence vêtement faire autorité : en cas de désaccord, l'à-plat l'emporte.",
+      "q5": "Qu'est-ce que la remontée de sous-couche ?",
+      "a5": "Un vêtement porté dessous, visible sur la référence mannequin — un tee-shirt sous une veste — qui survit dans le résultat alors qu'il ne fait pas partie de votre produit. Vérifiez d'abord l'encolure et les poignets, là où il apparaît d'ordinaire.",
+      "q6": "Qu'est-ce que la dérive de silhouette, et pourquoi est-ce plus grave qu'il n'y paraît ?",
+      "a6": "La coupe générée dérive vers celle du mannequin de référence plutôt que vers celle du produit. C'est grave parce que cela déplace les deux mesures qu'une acheteuse vérifie vraiment — longueur et largeur de poitrine — si bien que l'image cesse de correspondre au tableau des tailles tout en restant belle.",
+      "q7": "Comment vérifier la longueur sans mesure ?",
+      "a7": "Utilisez une proportion par rapport aux points de pose : ourlet moins épaule, divisé par hanche moins épaule. Les proportions survivent au recadrage et à la distance de prise de vue ; les mesures en pixels non. Ne calculez jamais de proportion entre le résultat et votre à-plat : un vêtement sur buste et un vêtement sur une personne ne partagent ni point de repère, ni échelle, ni pose.",
+      "q8": "Le mannequin doit-il être le même sur toute la série ?",
+      "a8": "Oui, si les prises figurent dans une même fiche. Un visage qui change se lit comme un produit qui change. Gardez identité et coiffure constantes, et faites varier pose, cadrage et fond.",
+      "q9": "Qu'est-ce qui casse une série sans casser une image isolée ?",
+      "a9": "La cohérence. Une température de couleur qui dérive d'une prise à l'autre, une teinte de vêtement qui bouge sous une lumière différente, un détail présent sur une prise et absent sur la suivante. Chaque prise peut passer isolément et la série échouer quand même.",
+      "q10": "Puis-je utiliser ces images sur Amazon, Shopify ou TikTok Shop ?",
+      "a10": "L'image vous appartient, mais chaque marketplace fixe ses propres règles sur le fond de l'image principale, le cadrage et l'obligation éventuelle de déclarer une image générée. Vérifiez la politique de la marketplace concernée avant publication : elles diffèrent et elles évoluent.",
+      "q11": "Quelle résolution et quel format demandent les fiches ?",
+      "a11": "Cela varie selon la marketplace et mérite d'être confirmé auprès de sa politique en vigueur plutôt que par une réponse générale. Ce qui ne change pas : fixez d'abord la taille de livraison et vérifiez le détail à cette taille, car un détail qui ne tient qu'en aperçu ne survit pas à un zoom.",
+      "q12": "Combien de prises faut-il vraiment à une fiche mode ?",
+      "a12": "Assez pour répondre aux questions que l'acheteur poserait sinon : face, dos, un plan pied pour la longueur et l'aisance, un trois-quarts pour la structure visible de côté, et une prise en situation. En dessous, les questions reviennent sous forme de retours produit.",
+      "q13": "Quelles catégories fonctionnent, lesquelles non ?",
+      "a13": "Les vêtements structurés, opaques et aux bords nets sont les plus fiables. Les cas difficiles sont ceux où le comportement de la matière est le produit — voiles, tombé lourd, texture de maille fine — car la façon dont le tissu tombe et se froisse est précisément ce que la génération réussit le moins bien.",
+      "q14": "Est-ce gratuit ? Faut-il un compte ?",
+      "a14": "La liste de contrôle de cette page est gratuite à lire et à réutiliser. Générer une image coûte 5 crédits et nécessite un compte, car elle exécute un vrai modèle d'image sur votre fichier. Le volume est une conversation plutôt qu'un bouton — et la liste de cette page est la norme à laquelle nous le soumettrions."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce qu'un générateur de mannequins mode IA ?",
+        "p1": "Un générateur de mannequins mode IA prend un vêtement que vous avez déjà photographié — généralement un à-plat, parfois sur buste ou mannequin — et produit une image de ce vêtement porté, sans séance photo. On parle aussi d'à-plat vers porté, de génération sur mannequin ou de photographie à mannequin virtuel.",
+        "p2": "Ce n'est pas la même chose qu'un mannequin invisible, et les deux résolvent des problèmes de fiche différents. Le mannequin invisible (aussi appelé effet homme creux) retire le corps et laisse le vêtement tenir sa propre forme : utile pour montrer la construction. L'image portée montre la coupe, le tombé et l'échelle sur une personne : utile pour montrer le rendu porté. La plupart des fiches mode ont besoin des deux, car elles répondent à des questions différentes.",
+        "p3": "L'essayage virtuel est encore autre chose : il place le produit sur la photo d'un client en préservant cette personne. La génération sur mannequin fait l'inverse — elle fige le vêtement et fournit la personne."
+      },
+      "how": {
+        "title": "Comment fonctionne réellement le passage de l'à-plat au porté",
+        "p1": "Partez de la photo de vêtement la plus à plat et la plus complète dont vous disposez. Un à-plat où tout le vêtement est visible vaut mieux qu'une prise stylisée, car chaque pli que l'appareil cache est un détail que le mannequin devra inventer.",
+        "p2": "Séparez ce que possède chaque référence. La référence vêtement apporte tout ce qui concerne l'habit : coupe, couleur, imprimé, fermetures, ourlet. La référence mannequin n'apporte que la pose, le cadrage, la lumière, le fond et la morphologie. Quand les deux divergent sur le vêtement, l'à-plat l'emporte. La plupart des défauts de fidélité sont une violation de cette seule règle.",
+        "p3": "Générez d'abord l'ancrage, ensuite la scène. Posez le vêtement sur le corps dans une prise simple et bien éclairée avant de demander un lieu, une ambiance ou une saison. Une scène générée en même temps que le vêtement a tendance à renégocier le vêtement.",
+        "p4": "Réparez en local, pas en global. Régénérer une image entière pour corriger un bouton change le mannequin, la lumière et souvent le lieu. Recadrez, régénérez le recadrage et recomposez avec un bord adouci — puis vérifiez que couleur et texture restent continues de part et d'autre de la jonction.",
+        "p5": "Vérifiez avant de publier, avec la liste ci-dessous. Proportions contre points de pose, détails comptés et un test de zoom à la résolution de livraison. Si cela ne tient qu'en vignette, ce n'est pas terminé."
+      },
+      "usecases": {
+        "title": "À qui cela s'adresse",
+        "creatorsTitle": "Vendeurs indépendants et petites marques",
+        "creatorsBody": "Vous avez le vêtement et un téléphone, et une séance photo coûte plus que ce que le modèle rapportera. Un à-plat vous donne une image portée pour tester la fiche avant d'engager de la photographie produit.",
+        "educationTitle": "Achat et contrôle chaîne d'approvisionnement",
+        "educationBody": "Avant d'acheter un modèle, une image portée répond à ce qu'un à-plat ne peut pas : où tombe l'ourlet, comment l'épaule se place, si la longueur se lit comme annoncée. Vérifiez-le en proportion contre le tableau des tailles, jamais à l'œil contre l'à-plat.",
+        "businessTitle": "Équipes catalogue et marketplace",
+        "businessBody": "Sorties fréquentes, nombreux SKU, exigences de prises fixes. Le goulot d'étranglement est rarement une bonne image : c'est qu'un vêtement se lise comme le même vêtement sur chaque prise et chaque déclinaison. C'est l'objet de la section commerce de la liste. Pour du volume, parlez-nous plutôt que de générer une image à la fois."
       }
     }
   }
