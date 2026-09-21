@@ -204,8 +204,19 @@ export const TOOL_REGISTRY: ToolDef[] = [
     seo: seoKeys("ai_product_photo_generator"),
     demo: {
       type: "single_image",
-      src: "/images/nano_insp/template-lifestyle-photo-grid-met-gala-red-carpet.jpg",
-      alt: "AI product photo generator: 9-image grid generated from one template prompt",
+      // Swapped 2026-09-21 to a 9-grid from template-9-grid-ecommerce-product-
+      // lifestyle-moodboard. Two reasons. It is on-message — nine lifestyle
+      // scenes of ONE product, which is what this page actually promises, where
+      // the red-carpet grid showed nine different looks. And it is the lowest
+      // clearance risk in the fashion/product library: pure fabric, no hardware,
+      // no legible mark, no person. Inspected at 2x on two cells before use;
+      // eight of eight images checked this way elsewhere have failed.
+      //
+      // ⚠️ The outgoing file is named for the MET GALA, a real trademarked
+      // event, and deep.how.p2 still lists it as a scene preset. Not touched
+      // here, but it is the same class of problem and it is live.
+      src: "/images/nano_insp/template-9-grid-ecommerce-product-lifestyle-moodboard-silk-scarf.jpg",
+      alt: "AI product photo generator: nine lifestyle scenes of a single silk scarf, generated from one template prompt",
     },
   },
 
