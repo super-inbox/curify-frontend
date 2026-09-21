@@ -483,12 +483,28 @@ export const TOOL_REGISTRY: ToolDef[] = [
     locales: ["en"],
     demo: {
       type: "single_image",
-      // Script-drawn card, zero clearance risk — every mark is drawn by
-      // curify-gallery/smm_daily/2026-09-01-ecommerce/make_en_fashion_qa_cards.py.
-      // ⚠️ public/images is gitignored (CDN-synced): run sync_large_assets.sh
-      // before this deploys or the image 404s in production.
-      src: "/images/fashion_qa/en-02-qa-rubric-27.jpg",
-      alt: "Fashion E-commerce Visual QA v1 — 27 checks across garment fidelity, model, photography and commerce",
+      // The template's own output, showing the exact promise: flat lay -> worn.
+      //
+      // ⚠️ CHOSEN AND CROPPED ON A CLEARANCE PASS, not picked by looks. All five
+      // template-ai-outfit-try-on-poster examples carry third-party marks and all
+      // are already live on /nano-template/ai-outfit-try-on-poster:
+      //   casual-streetwear-male   Adidas Samba (Outfit AND Result) + a Matisse tote
+      //   cozy-summer-male         Calvin Klein ck one, Birkenstock Arizona, Cartier
+      //   dark-academia-male       Vivienne Westwood orb on the beret, in both panels
+      //   preppy-academia-female   a "DEATH NOTE" book in the Outfit panel
+      //   classic-prep-female      three-stripe socks — Character panel ONLY  <-- this one
+      // classic-prep is the only one whose flagged item sits in the "before"
+      // panel, so cropping to Outfit+Result drops it entirely. The two panels
+      // kept were inspected at 3x: no legible mark on the beret, blouse, vest,
+      // skirt, belt, boots or satchel (its flap embossing is illegible AI noise).
+      // Operator decision 2026-09-21: the library images are already public, so
+      // reusing one here adds no exposure. The library sweep is still owed —
+      // 8 of 8 images inspected closely have failed.
+      //
+      // ⚠️ public/images is gitignored (CDN-synced). Already uploaded to
+      // gs://curify-static/images/fashion_qa/ and verified 200.
+      src: "/images/fashion_qa/tryon-flatlay-to-on-model.jpg",
+      alt: "Flat lay to on-model: a garment laid out flat beside the same outfit worn by a model",
     },
   },
 
