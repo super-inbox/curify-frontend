@@ -419,16 +419,13 @@ export default function UseCaseClient({
           <div className="mt-5 text-left">
             <p className="mb-2.5 text-sm font-medium text-neutral-700">
               <span aria-hidden="true" className="mr-1.5">⚡</span>
-              {tGlobal("interconnection.apiAvailable")}
+              {tGlobal("interconnection.leadCaptureLead")}
             </p>
             <InlineContactCapture
               className="max-w-xl"
               source={`use-case:${slug}`}
               subject={title}
-              // The shared string ends with its own "→" because it was written
-              // as an inline prose link; the button supplies the arrow icon, so
-              // strip it or the label reads "Let's talk scope → →".
-              cta={tGlobal("interconnection.apiContactCTA").replace(/\s*→\s*$/, "")}
+              cta={tGlobal("interconnection.leadCaptureCta")}
               trackingId={`${slug}::contact-scope`}
             />
           </div>

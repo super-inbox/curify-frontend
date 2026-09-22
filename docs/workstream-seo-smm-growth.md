@@ -4306,6 +4306,15 @@ already is:
   helper text, so the instruction is in the field that wants it rather than said twice.
 - **The use-case lead capture moved above the bullets**, out of the foot of the hero where it was a
   bare inline text link styled like prose. It is now the first thing under the pitch.
+- ⚠️ **And its copy was wrong.** The lead-in read *"APIs available on request."* — which worked when
+  the whole thing was one prose sentence ending in a link, and stopped working the moment it became
+  the headline over a lead-capture form. It advertised API access above a box asking for an email
+  about a production run. Replaced with `interconnection.leadCaptureLead` / `leadCaptureCta`:
+  *"Doing this at volume? Tell us the scope and we'll come back with a sample and a price."* /
+  *"Let's talk scope"*. The two `api*` keys were used nowhere else and were deleted.
+  Both new keys are **actually translated in all ten locales** — the old `apiAvailable` and
+  `apiContactCTA` were English in nine of ten, which was survivable inside a sentence and is not
+  survivable on a primary button.
 - `/contact` survives as the **secondary** action ("Schedule a Call") — it is where the Calendly
   embed lives and some buyers want the call, not the form.
 - A **honeypot** was added: `/contact` was one public form on one page, and this component puts the
