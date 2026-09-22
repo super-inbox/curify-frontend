@@ -4337,3 +4337,79 @@ a closed tool, and whether anything commercial can be put in front of them that 
 
 Also still open from the audit: **4 of 11 personas have no contact path at all** — the capture is
 gated on `tier === "b2b"`, so the consumer pages dead-end. Now a one-line change if it is wanted.
+
+---
+
+## 2026-09-22 (b) — Batch/bulk KD came back. The cluster does not justify a page.
+
+Source: `raw/smb-batch-09-22/Screenshot 2026-09-22 at 2.51.42 PM.png` — the 12 terms requested in
+the 09-22 plan addendum, with the CPC column this time.
+
+| keyword | intent | volume | KD | CPC | comp. |
+|---|---|---:|---:|---:|---:|
+| `product photo editing service` | **Informational** | **140** | **19** | **$0.00** | 0.02 |
+| `batch photo editing` | Informational | **90** | **27** | **$2.43** | 0.42 |
+| `outsource product photo editing` | — | 30 | n/a | $0.00 | 0.33 |
+| `bulk photo editing software` | — | 20 | n/a | **$4.32** | **0.74** |
+| `bulk image editing` | — | 10 | n/a | $1.85 | 0.27 |
+| `bulk background removal` | — | **0** | n/a | $2.18 | 0.29 |
+| `on model photos` | — | **0** | n/a | $0.00 | 0.00 |
+| *(5 rows below the fold — all 0)* | | | | | |
+
+The export is sorted by volume descending and row 7 is already 0, so the five cut off are all 0.
+By elimination those are `bulk product photo editing`, `batch product photos`, `flat lay to on
+model`, `ai model photos for clothing`, `flat sketch tool`.
+
+### ⛔ The term the P1 page was designed around has zero volume
+
+The 09-22 addendum proposed `/solutions/ecommerce-visuals` on the strength of the
+**`bulk product photo editing`** SERP — Photoroom's `/batch` page at #1, `imagen-ai.com/solution/`
+ranking, an AI Overview that is a vendor list with an explicit outsourcing category. All of that is
+still true and **none of it matters: the query has no search volume.** A good SERP for a query
+nobody types is not an opportunity. This is the same trap the house rule was written for; the rule
+says act on KD 0–26, and it silently assumes volume, which is the assumption that failed here.
+
+### ⛔ And we have no position to compound
+
+GSC, 90 days to 2026-09-21: **0 impressions on all 12 terms, and 0 on any query containing
+"bulk", "batch" or "on model" at all.** Per [[project_serp_format_match]], title and content work
+*compounds an existing position — it does not create one*. Every one of these would be a cold
+start on a site where page age predicts indexation.
+
+### ⚠️ The one term that clears the house rule fails three commercial checks
+
+`product photo editing service` is 140/mo at KD 19 — comfortably inside the 0–26 band, bigger than
+`ghost mannequin ai` (110/mo) which we did build for. But:
+
+1. **CPC $0.00** and **competition 0.02** — not one advertiser bids on it. On a query with obvious
+   commercial surface area, that is a verdict, not an oversight.
+2. **Intent: Informational.** People searching it want to read about services, not buy one.
+3. Contrast `bulk photo editing software`: 20/mo but **CPC $4.32, competition 0.74**. Advertisers
+   pay four dollars a click for one-seventh the volume. That is where the money in this cluster
+   actually is, and 20/mo cannot carry a page.
+
+Whole-cluster volume is **~290/mo**. `/tools/asl-video-translator` alone takes **555 search clicks
+a month**. We would be building a page family for half the traffic one already-closed tool brings
+in by itself.
+
+### P0 — what to do instead
+
+**P0-1 · Retire `/solutions/ecommerce-visuals` as an SEO page.** It stays killed unless the
+Demand-Radar motion asks for a URL to paste into a conversation. If it gets built for that, build it
+as *sales collateral*: no cluster, no keyword targeting, no 6-week readout, no ≥3-inbound-link
+requirement. Judge it on whether a 小红书 conversation converts better with it than without.
+
+**P0-2 · The lead capture is already shipped and is the right asset — it just cannot be fed by this
+cluster.** `InlineContactCapture` now renders on tool, use-case, template, topic and blog surfaces.
+Nothing more is needed on the site side. What feeds it is the one acquisition motion with a proven
+conversation (小红书 demand interception, per `raw/fashion-retouching-09-21/discussion.txt`), not
+batch search.
+
+**P0-3 · Do not use "batch" as a public product word.** `BulkDesignCallout`'s own header documents
+why: `batch: true` already means the pre-generated Download-Packs ZIP on 43 templates. Targeting
+`batch photo editing` would put the site's copy and its data model in direct disagreement — and it
+is KD 27, above the house ceiling, for 90 searches.
+
+**What would change this verdict:** a paid test on `bulk photo editing software` / `batch photo
+editing` (the only two terms with CPC) returning cost-per-qualified-conversation better than the
+小红书 motion. That is a ~$100 experiment and a far cheaper way to price this cluster than a page.
