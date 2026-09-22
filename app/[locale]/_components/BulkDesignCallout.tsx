@@ -52,6 +52,28 @@ export default function BulkDesignCallout({ source, subject, className }: Props)
 
   return (
     <section
+      // ⭐ data-nosnippet — Google's own directive for "index this, but never
+      // quote it in a search result". It is the fix for a real, measured
+      // problem: this block's body is byte-identical on 1,406 template and
+      // example pages, and Google HAD been choosing it as the SERP snippet
+      // because it was the largest contiguous prose block near the top of a
+      // page whose visible text is only ~4.6KB (see commit b4684112,
+      // 2026-09-05, which fixed it by ordering the unique prose above this).
+      //
+      // On 2026-09-22 the callout moved back above "About this template" for
+      // conversion reasons, which recreates that condition. Those pages carry
+      // 48% of the site's impressions at 0.68% CTR against a 2.90% site
+      // average, so re-exposing them to a boilerplate snippet is not a
+      // four-week experiment worth running. This makes the ordering safe
+      // instead of merely watched.
+      //
+      // Applied at the component so every surface gets it — topics, blog,
+      // /tools, template detail, template example. The copy is identical
+      // everywhere, so it is never a snippet we would want anywhere.
+      //
+      // ⚠️ Affects SNIPPET SELECTION ONLY. It does not deindex the block, does
+      // not affect ranking, and does not hide anything from users.
+      data-nosnippet
       className={`rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 via-white to-blue-50 p-6 shadow-sm sm:p-8 ${className ?? ""}`}
     >
       <div className="flex items-center gap-2 text-purple-700">

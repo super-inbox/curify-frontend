@@ -287,18 +287,22 @@ export default async function NanoTemplatePage({ params }: Props) {
       {/* Bulk callout — moved ABOVE "About this template" on 2026-09-22 at the
           operator's request, so the commercial ask lands before the prose.
 
-          ⚠️ IT WAS BELOW ON PURPOSE, and the reason has not gone away. This
-          callout's body is byte-identical on all 352 template pages, and it was
-          previously chosen by Google as the SERP snippet precisely because it
-          was the largest contiguous prose block near the top of a page whose
-          visible text is only ~4.6KB. Putting it first restores that exposure.
-          The About block below is the page's only substantial UNIQUE prose and
-          is what we want in the snippet.
+          It WAS below on purpose: this callout's body is byte-identical across
+          1,406 template and example pages, and Google had previously chosen it
+          as the SERP snippet because it was the largest contiguous prose block
+          near the top of a page whose visible text is only ~4.6KB (fixed by
+          b4684112 on 2026-09-05, by ordering the unique prose above it).
 
-          CHECK BY 2026-10-20: spot-check the SERP snippet for a handful of
-          /nano-template/* pages. If it has reverted to the bulk copy, this
-          ordering is the cause — move it back below the About block rather
-          than rewriting the callout. */}
+          ✅ That constraint is now handled at the component instead of by
+          ordering: BulkDesignCallout carries `data-nosnippet`, so Google will
+          not quote it whatever position it sits in. See the note there.
+          The About block below is still the page's only substantial UNIQUE
+          prose and is still what we want in the snippet — it is simply no
+          longer competing with this one.
+
+          CHECK BY 2026-10-20 anyway: spot-check SERP snippets on a few
+          /nano-template/* pages. Today they correctly show each template's own
+          description. */}
       <section className="mt-10">
         <BulkDesignCallout
           source={`nano-template/${slug}`}
