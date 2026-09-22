@@ -55,33 +55,45 @@
       "useCasesSubtitle": "Find templates that match what you're working on."
     },
     "solutions": {
-      "heading": "One platform. Six ways to use it.",
-      "subheading": "Pick the job you're here to do.",
+      "heading": "Six jobs we run at production volume.",
+      "subheading": "Pick yours — we come back with a sample and a price.",
       "explore": "Explore →",
       "items": {
+        "ecommerce": {
+          "label": "E-commerce",
+          "message": "Product photos and listing images for a whole catalogue."
+        },
+        "photographers": {
+          "label": "Photographers & Studios",
+          "message": "Send a gallery, get it edited to one consistent look."
+        },
+        "marketing": {
+          "label": "Marketing & SEO",
+          "message": "Original images for every page — we ran 5,500 of our own."
+        },
+        "publishers": {
+          "label": "EdTech & Publishers",
+          "message": "A 500-card vocabulary set in hours, not a quarter."
+        },
         "merch": {
           "label": "Merch & POD",
           "message": "Turn one character into 100 products."
         },
-        "design": {
-          "label": "Designers",
-          "message": "Find better design inspiration in seconds."
+        "video": {
+          "label": "Video Creators",
+          "message": "One upload, subtitles and dubbing in 170+ languages."
         },
         "education": {
           "label": "Education",
           "message": "Create bilingual learning content at scale."
         },
-        "video": {
-          "label": "Video Creators",
-          "message": "Translate and subtitle videos for global audiences."
-        },
-        "marketing": {
-          "label": "Marketing & SEO",
-          "message": "Build multilingual visual content that ranks."
-        },
         "developers": {
           "label": "Developers",
           "message": "Integrate visual AI into your own product."
+        },
+        "design": {
+          "label": "Designers",
+          "message": "Find better design inspiration in seconds."
         }
       }
     },

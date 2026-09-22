@@ -42,33 +42,45 @@
       "useCasesSubtitle": "Encuentra plantillas que se adapten a lo que estás trabajando."
     },
     "solutions": {
-      "heading": "Una plataforma. Seis formas de usarla.",
-      "subheading": "Elige el trabajo que vienes a hacer.",
+      "heading": "Seis trabajos que hacemos a volumen de producción.",
+      "subheading": "Elige el tuyo: volvemos con una muestra y un precio.",
       "explore": "Explorar →",
       "items": {
+        "ecommerce": {
+          "label": "E-commerce",
+          "message": "Fotos de producto e imágenes de ficha para todo un catálogo."
+        },
+        "photographers": {
+          "label": "Fotógrafos y estudios",
+          "message": "Envía una galería y te la editamos con un acabado uniforme."
+        },
+        "marketing": {
+          "label": "Marketing y SEO",
+          "message": "Imágenes originales para cada página: hicimos 5.500 propias."
+        },
+        "publishers": {
+          "label": "EdTech y editoriales",
+          "message": "Un set de 500 tarjetas de vocabulario en horas, no en un trimestre."
+        },
         "merch": {
           "label": "Merch y POD",
           "message": "Convierte una idea en 100 productos."
         },
-        "design": {
-          "label": "Diseñadores",
-          "message": "Encuentra inspiración de diseño reutilizable en segundos."
+        "video": {
+          "label": "Creadores de video",
+          "message": "Una subida: subtítulos y doblaje en más de 170 idiomas."
         },
         "education": {
           "label": "Educación",
           "message": "Crea contenido educativo bilingüe a escala."
         },
-        "video": {
-          "label": "Creadores de video",
-          "message": "Traduce y subtitula videos para audiencias globales."
-        },
-        "marketing": {
-          "label": "Marketing y SEO",
-          "message": "Crea contenido visual multilingüe que posiciona."
-        },
         "developers": {
           "label": "Desarrolladores",
           "message": "Integra IA visual en tu producto en días, no meses."
+        },
+        "design": {
+          "label": "Diseñadores",
+          "message": "Encuentra inspiración de diseño reutilizable en segundos."
         }
       }
     },

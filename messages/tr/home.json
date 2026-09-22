@@ -42,33 +42,45 @@
       "useCasesSubtitle": "Üzerinde çalıştığınız şeye uygun şablonları bulun."
     },
     "solutions": {
-      "heading": "Tek platform. Altı kullanım şekli.",
-      "subheading": "Yapmak istediğin işi seç.",
+      "heading": "Üretim hacminde yürüttüğümüz altı iş.",
+      "subheading": "Kendinizinkini seçin — size bir örnek ve fiyat ile dönelim.",
       "explore": "Keşfet →",
       "items": {
+        "ecommerce": {
+          "label": "E-ticaret",
+          "message": "Tüm kataloğunuz için ürün fotoğrafları ve liste görselleri."
+        },
+        "photographers": {
+          "label": "Fotoğrafçılar ve Stüdyolar",
+          "message": "Bir galeriyi gönderin, tek bir tutarlı görünümde düzenleyelim."
+        },
+        "marketing": {
+          "label": "Pazarlama ve SEO",
+          "message": "Her sayfa için özgün görseller — kendimiz için 5.500 tane ürettik."
+        },
+        "publishers": {
+          "label": "EdTech ve yayıncılar",
+          "message": "500 kelime kartlık bir set, bir çeyrekte değil saatler içinde."
+        },
         "merch": {
           "label": "Merch ve POD",
           "message": "Tek bir fikri 100 ürüne dönüştür."
         },
-        "design": {
-          "label": "Tasarımcılar",
-          "message": "Yeniden kullanılabilir tasarım ilhamını saniyeler içinde bul."
+        "video": {
+          "label": "Video Üreticileri",
+          "message": "Tek yükleme; 170'ten fazla dilde altyazı ve seslendirme."
         },
         "education": {
           "label": "Eğitim",
           "message": "İki dilli eğitim içeriğini ölçekli üret."
         },
-        "video": {
-          "label": "Video Üreticileri",
-          "message": "Videolarını küresel izleyiciler için çevir ve altyazıla."
-        },
-        "marketing": {
-          "label": "Pazarlama ve SEO",
-          "message": "Üst sıralara çıkan çok dilli görsel içerik oluştur."
-        },
         "developers": {
           "label": "Geliştiriciler",
           "message": "Görsel yapay zekâyı ürününe aylar değil günler içinde ekle."
+        },
+        "design": {
+          "label": "Tasarımcılar",
+          "message": "Yeniden kullanılabilir tasarım ilhamını saniyeler içinde bul."
         }
       }
     },

@@ -10,6 +10,7 @@ import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import BulkDesignCallout from "@/app/[locale]/_components/BulkDesignCallout";
 import CreateNewModal from "./CreateNewModal";
 
 // Group order on the hub. "design" sits after "image" because it consumes what
@@ -57,6 +58,16 @@ export default function ToolsClient() {
               ) : null,
             )}
           </div>
+        </section>
+
+        {/* Bulk-production CTA. Directly under the tool grid, because the
+            reader has just seen twenty-three single-shot tools and "I need
+            four hundred of these" is exactly the thought the grid provokes.
+            /tools is the hub every tool page links back to, and it was the
+            one high-traffic surface the callout still did not render on after
+            the 09-22 pass added it to /tools/[slug]. */}
+        <section className="w-full mb-20">
+          <BulkDesignCallout source="tools-index" />
         </section>
 
         {/* Products & Services */}

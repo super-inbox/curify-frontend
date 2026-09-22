@@ -42,33 +42,45 @@
       "useCasesSubtitle": "Trouvez des modèles qui correspondent à ce sur quoi vous travaillez."
     },
     "solutions": {
-      "heading": "Une plateforme. Six façons de l'utiliser.",
-      "subheading": "Choisissez le travail que vous venez accomplir.",
+      "heading": "Six métiers que nous traitons en volume de production.",
+      "subheading": "Choisissez le vôtre : nous revenons avec un échantillon et un prix.",
       "explore": "Explorer →",
       "items": {
+        "ecommerce": {
+          "label": "E-commerce",
+          "message": "Photos produit et visuels de fiche pour tout un catalogue."
+        },
+        "photographers": {
+          "label": "Photographes et studios",
+          "message": "Envoyez une galerie, recevez-la retouchée avec un rendu homogène."
+        },
+        "marketing": {
+          "label": "Marketing & SEO",
+          "message": "Des images originales pour chaque page — nous en avons produit 5 500 pour nous."
+        },
+        "publishers": {
+          "label": "EdTech et éditeurs",
+          "message": "Un jeu de 500 cartes de vocabulaire en quelques heures, pas en un trimestre."
+        },
         "merch": {
           "label": "Merch & POD",
           "message": "Transformez une idée en 100 produits."
         },
-        "design": {
-          "label": "Designers",
-          "message": "Trouvez une inspiration design réutilisable en quelques secondes."
+        "video": {
+          "label": "Créateurs vidéo",
+          "message": "Un seul envoi : sous-titres et doublage dans plus de 170 langues."
         },
         "education": {
           "label": "Éducation",
           "message": "Créez du contenu pédagogique bilingue à grande échelle."
         },
-        "video": {
-          "label": "Créateurs vidéo",
-          "message": "Traduisez et sous-titrez vos vidéos pour un public mondial."
-        },
-        "marketing": {
-          "label": "Marketing & SEO",
-          "message": "Créez du contenu visuel multilingue qui se positionne."
-        },
         "developers": {
           "label": "Développeurs",
           "message": "Intégrez l'IA visuelle à votre produit en jours, pas en mois."
+        },
+        "design": {
+          "label": "Designers",
+          "message": "Trouvez une inspiration design réutilisable en quelques secondes."
         }
       }
     },
