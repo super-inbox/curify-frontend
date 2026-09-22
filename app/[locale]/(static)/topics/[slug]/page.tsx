@@ -569,6 +569,21 @@ export default async function Page({ params }: Props) {
         </section>
       ) : null}
 
+      {/* Bulk callout — moved up from the foot of the page on 2026-09-22, to sit
+          directly under the template grid and above both the workflow starter
+          and the Gallery. The reader has just scanned a grid of examples, which
+          is the moment "I need the whole set" lands; at the bottom it was
+          arriving after they had already decided to leave.
+          Deliberately OUTSIDE the `!isNicheStyleTopic && gridItems.length` test
+          above, so niche-style topics (which render a fused row instead of the
+          example grid) still get it. */}
+      <section className="mx-auto max-w-[1600px] px-4 pb-8 sm:px-6 lg:px-8">
+        <BulkDesignCallout
+          source={`topics/${slug}`}
+          subject={topicDisplayName || undefined}
+        />
+      </section>
+
       {/* "Start a workflow" — for most workbench topics (merch / product /
           ecommerce / branding) this sits BELOW the example grid: scan examples
           first, then do-it-yourself. The selfie surface leads with it instead
@@ -617,13 +632,6 @@ export default async function Page({ params }: Props) {
           showReproduce={false}
           showOtherTemplates={true}
           showOtherTemplateTitle={false}
-        />
-      </section>
-
-      <section className="mx-auto max-w-[1600px] px-4 pb-12 sm:px-6 lg:px-8">
-        <BulkDesignCallout
-          source={`topics/${slug}`}
-          subject={topicDisplayName || undefined}
         />
       </section>
 

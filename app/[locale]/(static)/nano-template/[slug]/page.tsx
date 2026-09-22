@@ -284,11 +284,32 @@ export default async function NanoTemplatePage({ params }: Props) {
   />
 </section>
 
-      {/* The page's only substantial UNIQUE prose. It sits above the bulk
-          callout on purpose: that callout's body is byte-identical on all 352
-          template pages, and Google was picking it as the SERP snippet because
-          it was the largest contiguous prose block near the top of a page
-          whose visible text is only ~4.6KB. */}
+      {/* Bulk callout — moved ABOVE "About this template" on 2026-09-22 at the
+          operator's request, so the commercial ask lands before the prose.
+
+          ⚠️ IT WAS BELOW ON PURPOSE, and the reason has not gone away. This
+          callout's body is byte-identical on all 352 template pages, and it was
+          previously chosen by Google as the SERP snippet precisely because it
+          was the largest contiguous prose block near the top of a page whose
+          visible text is only ~4.6KB. Putting it first restores that exposure.
+          The About block below is the page's only substantial UNIQUE prose and
+          is what we want in the snippet.
+
+          CHECK BY 2026-10-20: spot-check the SERP snippet for a handful of
+          /nano-template/* pages. If it has reverted to the bulk copy, this
+          ordering is the cause — move it back below the About block rather
+          than rewriting the callout. */}
+      <section className="mt-10">
+        <BulkDesignCallout
+          source={`nano-template/${slug}`}
+          subject={categoryLabel || undefined}
+        />
+      </section>
+
+      {/* The page's only substantial UNIQUE prose, and what we want Google to
+          pick as the SERP snippet. It used to sit ABOVE the bulk callout to
+          guarantee that; see the warning on the callout for what changed and
+          what to re-check. */}
       {h2What || h2Who || h2How.length > 0 || h2Prompts.length > 0 ? (
         <section className="mt-10">
                     <h2 className="text-lg font-bold text-neutral-900">About this template</h2>
@@ -343,12 +364,6 @@ export default async function NanoTemplatePage({ params }: Props) {
         </section>
       ) : null}
 
-      <section className="mt-10">
-        <BulkDesignCallout
-          source={`nano-template/${slug}`}
-          subject={categoryLabel || undefined}
-        />
-      </section>
 
       <section className="mt-8">
        

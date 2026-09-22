@@ -16,6 +16,7 @@ import WcTravelRail from "@/app/[locale]/_components/WcTravelRail";
 import { getWcTravelRecommendations } from "@/lib/wcTravelRail";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import BulkDesignCallout from "@/app/[locale]/_components/BulkDesignCallout";
 import TopicStrip from "@/app/[locale]/_components/TopicStrip";
 import { resolveTopicPath } from "@/lib/topic_path_overrides";
 import { titleCaseFromSlug } from "@/lib/locale_utils";
@@ -508,6 +509,17 @@ export default async function NanoExampleDetailPage({
           )
         }
       />
+
+      {/* Bulk callout, directly under the reproduce workbench. This page is the
+          one surface where the reader has just seen a single finished image AND
+          the panel that makes one more — which is exactly where "I need forty
+          of these" occurs to them. It was the last template surface without it
+          (template detail, topics and blog all had it since 08-27).
+          No `subject`: the example title is a full sentence on many templates
+          and reads badly inside "Need the whole {subject} set". */}
+      <section className="mt-8">
+        <BulkDesignCallout source={`template-example/${slug}`} />
+      </section>
 
       {/* Prev / next within the template's examples — kept for crawl +
           navigation now that the hero's overlay arrows are gone. */}
