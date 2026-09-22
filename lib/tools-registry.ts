@@ -72,11 +72,19 @@ export type ToolDef = {
 
   action?: ToolAction;
 
-  // Optional CTA override. "contact" renders a "Contact us" button linking to
-  // /contact instead of the create/coming-soon states — for tools we offer as a
-  // done-for-you / bulk service rather than a self-serve generate (e.g. the
-  // die-cut sticker factory-file service).
-  cta?: "contact";
+  // NOTE — there was a `cta?: "contact"` override here, meant to swap the
+  // create/coming-soon button for a "Contact us" link on done-for-you tools.
+  // Removed 2026-09-22: it was declared and never assigned by any tool, and it
+  // could not have fired anyway — every tool it was written for (die-cut
+  // sticker, acrylic, packaging mockup) has since grown a real self-serve
+  // form, and those action branches are matched earlier in the same chain.
+  // It survived as a decoy long enough to be read as shipped during an audit.
+  // The done-for-you ask is now carried by BulkDesignCallout, which is gated
+  // by BULK_CALLOUT_TOOLS in tool-generic-client.tsx and — unlike this — passes
+  // ?source= so the lead is attributable.
+  // Several namespaces still carry a stale `cta` string in messages/*/home.json
+  // ("Contact us for a file or bulk order"); they render nowhere and are left
+  // alone rather than churning 10 locale files to delete inert keys.
 
   i18n: {
     titleKey: string;
@@ -204,8 +212,19 @@ export const TOOL_REGISTRY: ToolDef[] = [
     seo: seoKeys("ai_product_photo_generator"),
     demo: {
       type: "single_image",
-      src: "/images/nano_insp/template-lifestyle-photo-grid-met-gala-red-carpet.jpg",
-      alt: "AI product photo generator: 9-image grid generated from one template prompt",
+      // Swapped 2026-09-21 to a 9-grid from template-9-grid-ecommerce-product-
+      // lifestyle-moodboard. Two reasons. It is on-message — nine lifestyle
+      // scenes of ONE product, which is what this page actually promises, where
+      // the red-carpet grid showed nine different looks. And it is the lowest
+      // clearance risk in the fashion/product library: pure fabric, no hardware,
+      // no legible mark, no person. Inspected at 2x on two cells before use;
+      // eight of eight images checked this way elsewhere have failed.
+      //
+      // ⚠️ The outgoing file is named for the MET GALA, a real trademarked
+      // event, and deep.how.p2 still lists it as a scene preset. Not touched
+      // here, but it is the same class of problem and it is live.
+      src: "/images/nano_insp/template-9-grid-ecommerce-product-lifestyle-moodboard-silk-scarf.jpg",
+      alt: "AI product photo generator: nine lifestyle scenes of a single silk scarf, generated from one template prompt",
     },
   },
 

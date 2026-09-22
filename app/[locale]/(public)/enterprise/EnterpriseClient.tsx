@@ -35,6 +35,20 @@ export default function EnterpriseClient() {
     [trackAction]
   );
 
+  // Every /contact link on this page carries its own attribution. Before this,
+  // all four CTAs pointed at a bare /contact, so an enterprise POC request and
+  // a support question arrived indistinguishable -- the click was tracked here
+  // but the lead that came out the other end was not. ContactClient reads
+  // ?source= and ?subject=; the backend stores `source` on the lead and puts it
+  // in the team notification.
+  //
+  // The CTA's own label is the subject, so the notification says which of the
+  // four asks it was in the reader's own language (copy.ts is en/zh).
+  const contactHref = (id: string, subject: string) => ({
+    pathname: "/contact" as const,
+    query: { subject, source: `enterprise:${id}` },
+  });
+
   return (
     <main className="mx-auto max-w-[1100px] px-6 py-16 sm:px-10">
       {/* Hero */}
@@ -52,7 +66,7 @@ export default function EnterpriseClient() {
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <IntlLink
-            href="/contact"
+            href={contactHref("cta-hero-poc", c.ctaPrimary)}
             onClick={() => trackCta("cta-hero-poc")}
             className="inline-flex items-center gap-2 rounded-full bg-purple-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-purple-800"
           >
@@ -152,7 +166,7 @@ export default function EnterpriseClient() {
             <h3 className="mt-2 text-lg font-bold text-neutral-900">{c.pocTitle}</h3>
             <p className="mt-3 text-sm text-neutral-700">{c.pocBody}</p>
             <IntlLink
-              href="/contact"
+              href={contactHref("cta-enterprise-poc", c.pocCta)}
               onClick={() => trackCta("cta-enterprise-poc")}
               className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-purple-700 underline-offset-4 hover:underline"
             >
@@ -168,7 +182,7 @@ export default function EnterpriseClient() {
             <h3 className="mt-2 text-lg font-bold text-neutral-900">{c.siTitle}</h3>
             <p className="mt-3 text-sm text-neutral-700">{c.siBody}</p>
             <IntlLink
-              href="/contact"
+              href={contactHref("cta-si-partner", c.siCta)}
               onClick={() => trackCta("cta-si-partner")}
               className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-purple-700 underline-offset-4 hover:underline"
             >
@@ -200,7 +214,7 @@ export default function EnterpriseClient() {
         <h2 className="text-2xl font-bold text-white sm:text-3xl">{c.closeTitle}</h2>
         <p className="mx-auto mt-3 max-w-xl text-base text-neutral-300">{c.closeBody}</p>
         <IntlLink
-          href="/contact"
+          href={contactHref("cta-footer", c.closeCta)}
           onClick={() => trackCta("cta-footer")}
           className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-100"
         >

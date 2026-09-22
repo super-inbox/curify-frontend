@@ -11,6 +11,7 @@ import { useRequireAuth } from "@/services/useRequireAuth";
 import { templatePacksService } from "@/services/templatePacks";
 import { useTracking, useVideoTracking } from "@/services/useTracking";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
+import InlineContactCapture from "@/app/[locale]/_components/InlineContactCapture";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
@@ -407,6 +408,29 @@ export default function UseCaseClient({
           {t(`${slug}.description` as never)}
         </p>
 
+        {/* Lead capture, above the bullets rather than below them. This used to
+            be a bare inline text link at the FOOT of the hero — the only route
+            from a persona page to a human, placed after everything else and
+            styled like prose. Now it is the first thing under the pitch, and it
+            takes the address here instead of sending the reader to /contact.
+            text-left because the hero centres on mobile and centred form fields
+            read badly. */}
+        {isB2B && (
+          <div className="mt-5 text-left">
+            <p className="mb-2.5 text-sm font-medium text-neutral-700">
+              <span aria-hidden="true" className="mr-1.5">⚡</span>
+              {tGlobal("interconnection.leadCaptureLead")}
+            </p>
+            <InlineContactCapture
+              className="max-w-xl"
+              source={`use-case:${slug}`}
+              subject={title}
+              cta={tGlobal("interconnection.leadCaptureCta")}
+              trackingId={`${slug}::contact-scope`}
+            />
+          </div>
+        )}
+
         <ul className="mt-5 space-y-2">
           {BULLET_KEYS.filter((key) => t.has(`${slug}.${key}` as never)).map((key) => (
             <li key={key} className="flex items-start gap-2 text-sm text-neutral-700">
@@ -416,18 +440,6 @@ export default function UseCaseClient({
           ))}
         </ul>
 
-        {isB2B && (
-          <p className="mt-5 text-sm font-medium text-neutral-700">
-            <span aria-hidden="true" className="mr-1.5">⚡</span>
-            {tGlobal("interconnection.apiAvailable")}{" "}
-            <IntlLink
-              href="/contact"
-              className="font-semibold text-purple-700 underline-offset-2 hover:underline"
-            >
-              {tGlobal("interconnection.apiContactCTA")}
-            </IntlLink>
-          </p>
-        )}
       </section>
 
         {videoKey && (

@@ -116,7 +116,16 @@ export default function HomeClient({
               galleryPrompts={topRemixPrompts}
               searchQueries={searchQueries}
               locale={locale}
-              maxRows={3}
+              // Raised from 3 on 2026-09-21, now that the grid leads with
+              // templates people actually generated with — more of that
+              // ordering shows before the rank_score tail begins.
+              //
+              // 6 because HomeFusedRow computes `limit = 5 * maxRows`, so this
+              // is really a request for 30 TILES, and 30 is divisible by every
+              // column count the grid uses (2 / sm:3 / lg:5 / xl:6). 25 would
+              // have left a one-tile orphan row at xl. The expand control still
+              // handles everything past the default window.
+              maxRows={6}
             />
           ) : (
             // Fallback when the gallery snapshot is empty — render the

@@ -99,8 +99,15 @@ export default async function PackPage({ params, searchParams }: Props) {
                 free to remix any of them — change the topic, swap the language
                 pair, or generate brand-new packs of your own.
               </p>
+              {/* /signup has never existed — sign-up is a drawer opened from
+                  any page (SignDrawer), not a route — so this link returned a
+                  hard 404 for every Etsy buyer who clicked it. Points at the
+                  home grid instead, which is where "remix any of them" actually
+                  happens and where the sign-in drawer is one click away.
+                  ?ref=etsy is preserved: `ref` is on the CAMPAIGN_PARAMS
+                  allowlist in useTracking, so the attribution still lands. */}
               <a
-                href="/signup?ref=etsy"
+                href="/?ref=etsy"
                 className="mt-3 inline-flex items-center text-sm font-semibold text-indigo-700 hover:text-indigo-900"
               >
                 Try Curify free →

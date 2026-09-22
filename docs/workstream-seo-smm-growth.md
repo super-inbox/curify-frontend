@@ -4206,3 +4206,279 @@ teardown. Three findings that shaped it:
 ⚠️ **Sequencing note:** the **10-13** `ghost-mannequin-ai-guide` readout is now unconfounded (the
 post un-folded and went indexed 09-19) and is the cheaper test of whether KD 0–1 apparel terms
 convert at all. **If 10-13 returns zero, reconsider this build before starting it.**
+
+---
+
+## 2026-09-22 — SMB/enterprise funnel: instrument it, and where the traffic actually is
+
+Four questions were asked (`raw/smb-batch-09-22/discussion.txt`); the full measured answers live in
+`~/.claude/plans/dropped-some-seo-retouching-greedy-puzzle.md`. What follows is only what changed
+after shipping, plus the one number that reframes the whole exercise.
+
+### ⭐ The site's biggest tool page sells a product we closed
+
+Per-slug, 30d to 2026-09-22, refined-DAU cohort, route `/tools/[slug]`:
+
+| slug | people | acting | actions |
+|---|---:|---:|---:|
+| **asl-video-translator** | **993** | 991 | 1,947 |
+| bilingual-subtitles | 79 | 79 | 102 |
+| video-dubbing | 72 | 72 | 158 |
+| packaging-mockup | 17 | 13 | 18 |
+| impromptu-speech-practice | 11 | 11 | 91 |
+| character-sticker-sheet | 9 | 9 | 25 |
+| ai-product-photo-generator · ecommerce-photo · ai-fashion-model-generator · wedding-photo-editing · die-cut-sticker-file · product-video | **1 each** | 1 | 1–4 |
+
+GSC agrees on the shape: 555 of 659 search clicks to `/tools/*` (84%) land on
+`asl-video-translator`.
+
+**861 people a month click the ASL tool's own CTA and none of them generate** (`asl-video-translator`
+CLICK ×1,464 / 861 people; ASL was closed 2026-08-18 as below shippable quality). The commercial
+tool pages — the ones an SMB bulk offer is actually for — draw **one person each**.
+
+This does not contradict "`/tools/*` is the highest-traffic route family." It qualifies it, and the
+qualification matters more than the headline: **the traffic on `/tools/*` is not on the tools the
+offer serves.** Any plan that reasons from the family total is reasoning from ASL.
+
+The one genuinely useful thing the ASL page does today is hand people off: 73 click through to
+`subtitle-captioner`, 63 to `video-transcript-generator`, 53 to `video-dubbing`.
+
+### The auth wall is not the bottleneck either — it converts at 39%
+
+Sessions that hit an `auth-modal:*` event, 90d, refined cohort:
+
+| | |
+|---|---:|
+| sessions that hit the wall | **277** |
+| signed in afterwards, same session | **109 · 39%** |
+| went on to generate | **32 · 12%** |
+
+~92 sessions/month reach the wall at all, and a 39% sign-in rate is high, not obstructive. Removing
+it could recover at most the ~56/month who bounce. Combined with the credit finding (2 of 649 recent
+signups ever reach a zero balance), **neither gate is what is limiting leads.** Both hypotheses were
+worth testing and both are small. The constraint is upstream: the commercial surfaces have no
+traffic, and the surface with traffic sells nothing.
+
+⚠️ Per-reason breakdown, 30d: `tool-launch:subtitle-captioner` 50 people · `generate-attempt` 41 ·
+`tool-launch:video-transcript-generator` 36 · `tool-launch:video-dubbing` 30. Everything else is
+single digits.
+
+### Shipped
+
+1. **`/contact` now fires an event on successful submit** — `contact:submit:<source>`, content_type
+   `menu_link` to match the CTA that sends people there. This is the site's first lead event; before
+   it, every commercial CTA was measurable up to the click and dark after.
+   ⚠️ **No view event was added on `/contact`, deliberately.** ~963 of its ~970 monthly visitors take
+   no action and are correctly excluded from refined DAU; firing a view there would promote all of
+   them into the acting cohort and inflate site-wide refined DAU by ~40%, exactly as carousel
+   autoplay `VIDEO_PLAY` once did. The funnel's denominator belongs at the CTA, which is tracked.
+2. **All four `/enterprise` CTAs carry `?source=enterprise:<cta-id>`**, with the CTA's own label as
+   the subject, so the team notification says which of the four asks it was.
+3. **The b2b use-case link is tracked and attributed** (`use-case:<slug>`). It was a bare untracked
+   `<a>` — the only route from a persona page to a human.
+4. **`BulkDesignCallout` now renders on 13 tool pages** (`BULK_CALLOUT_TOOLS`). It was the only CTA
+   on the site passing `?source=`, and it was absent from `/tools/*` entirely. Structural fix; per
+   the table above, expect no lead volume from it at current traffic.
+5. **Removed the dead `ToolDef.cta = "contact"` branch.** Declared, never assigned, and unreachable
+   anyway — every tool it was written for has since grown a self-serve form matched earlier in the
+   same chain. It had already been misread as shipped during one audit.
+6. **`/pack/[sku]` no longer 404s its own upsell.** It linked `/signup?ref=etsy`; there is no
+   `/signup` route (sign-up is a drawer). Now `/?ref=etsy`, and `ref` is on the tracking
+   `CAMPAIGN_PARAMS` allowlist so attribution survives.
+
+### ⚠️ Backend bug — filed, not fixed
+
+`/auth/login` (email+password) **assigns** a FREE user's balance to 50 on cycle rollover
+(`routers/auth.py:104` → `update_user_credits` with `SUBSCRIPTION_PAYMENT`). This contradicts the
+documented `one_time_at_signup` grant in both `lib/pricing.ts` and `subscription_constants.py`, and
+because it assigns rather than increments it can silently **reduce** a balance above 50.
+`/auth/google-login` and `/auth/verify-otp` have no such block.
+
+### Same day — the CTA became the form
+
+⭐ Sending someone to `/contact` to say "I want forty of these" was itself the leak. Two page loads
+and a four-field form stand between intent and a reachable address, and `/contact` measures ~7
+people a month in the refined cohort. `InlineContactCapture` now takes the email where the reader
+already is:
+
+- **`BulkDesignCallout`'s button is no longer a link** — email + an optional note, posted straight
+  to `/user/contact-team`. The note placeholder is the copy that used to sit beside the button as
+  helper text, so the instruction is in the field that wants it rather than said twice.
+- **The use-case lead capture moved above the bullets**, out of the foot of the hero where it was a
+  bare inline text link styled like prose. It is now the first thing under the pitch.
+- ⚠️ **And its copy was wrong.** The lead-in read *"APIs available on request."* — which worked when
+  the whole thing was one prose sentence ending in a link, and stopped working the moment it became
+  the headline over a lead-capture form. It advertised API access above a box asking for an email
+  about a production run. Replaced with `interconnection.leadCaptureLead` / `leadCaptureCta`:
+  *"Doing this at volume? Tell us the scope and we'll come back with a sample and a price."* /
+  *"Let's talk scope"*. The two `api*` keys were used nowhere else and were deleted.
+  Both new keys are **actually translated in all ten locales** — the old `apiAvailable` and
+  `apiContactCTA` were English in nine of ten, which was survivable inside a sentence and is not
+  survivable on a primary button.
+- `/contact` survives as the **secondary** action ("Schedule a Call") — it is where the Calendly
+  embed lives and some buyers want the call, not the form.
+- A **honeypot** was added: `/contact` was one public form on one page, and this component puts the
+  same email-sending endpoint on several thousand template, topic and blog pages.
+
+⚠️ **`bulk-callout:<source>` changed meaning on 2026-09-22** — it was "clicked through to
+`/contact`", it is now "attempted to send". Same funnel position, so the series stays comparable,
+but do not read pre-09-22 rows as form submissions. Success fires
+`contact:submit:<source>`, **the same id `ContactClient` fires**, so a lead counts once regardless
+of which path produced it.
+
+⚠️ Still unverified end to end: nothing has submitted this form yet, because doing so emails the
+team. One real submission confirms the row in `user_interactions` and the `source` on the lead.
+
+### Next
+
+The readout is `qualified visits → sample requests → samples delivered`, 2 weeks out. But the
+honest next question is not about this funnel: it is what to do with 993 people a month arriving at
+a closed tool, and whether anything commercial can be put in front of them that is true.
+
+Also still open from the audit: **4 of 11 personas have no contact path at all** — the capture is
+gated on `tier === "b2b"`, so the consumer pages dead-end. Now a one-line change if it is wanted.
+
+---
+
+## 2026-09-22 (b) — Batch/bulk KD came back. The cluster does not justify a page.
+
+Source: `raw/smb-batch-09-22/Screenshot 2026-09-22 at 2.51.42 PM.png` — the 12 terms requested in
+the 09-22 plan addendum, with the CPC column this time.
+
+| keyword | intent | volume | KD | CPC | comp. |
+|---|---|---:|---:|---:|---:|
+| `product photo editing service` | **Informational** | **140** | **19** | **$0.00** | 0.02 |
+| `batch photo editing` | Informational | **90** | **27** | **$2.43** | 0.42 |
+| `outsource product photo editing` | — | 30 | n/a | $0.00 | 0.33 |
+| `bulk photo editing software` | — | 20 | n/a | **$4.32** | **0.74** |
+| `bulk image editing` | — | 10 | n/a | $1.85 | 0.27 |
+| `bulk background removal` | — | **0** | n/a | $2.18 | 0.29 |
+| `on model photos` | — | **0** | n/a | $0.00 | 0.00 |
+| *(5 rows below the fold — all 0)* | | | | | |
+
+The export is sorted by volume descending and row 7 is already 0, so the five cut off are all 0.
+By elimination those are `bulk product photo editing`, `batch product photos`, `flat lay to on
+model`, `ai model photos for clothing`, `flat sketch tool`.
+
+### ⛔ The term the P1 page was designed around has zero volume
+
+The 09-22 addendum proposed `/solutions/ecommerce-visuals` on the strength of the
+**`bulk product photo editing`** SERP — Photoroom's `/batch` page at #1, `imagen-ai.com/solution/`
+ranking, an AI Overview that is a vendor list with an explicit outsourcing category. All of that is
+still true and **none of it matters: the query has no search volume.** A good SERP for a query
+nobody types is not an opportunity. This is the same trap the house rule was written for; the rule
+says act on KD 0–26, and it silently assumes volume, which is the assumption that failed here.
+
+### ⛔ And we have no position to compound
+
+GSC, 90 days to 2026-09-21: **0 impressions on all 12 terms, and 0 on any query containing
+"bulk", "batch" or "on model" at all.** Per [[project_serp_format_match]], title and content work
+*compounds an existing position — it does not create one*. Every one of these would be a cold
+start on a site where page age predicts indexation.
+
+### ⚠️ The one term that clears the house rule fails three commercial checks
+
+`product photo editing service` is 140/mo at KD 19 — comfortably inside the 0–26 band, bigger than
+`ghost mannequin ai` (110/mo) which we did build for. But:
+
+1. **CPC $0.00** and **competition 0.02** — not one advertiser bids on it. On a query with obvious
+   commercial surface area, that is a verdict, not an oversight.
+2. **Intent: Informational.** People searching it want to read about services, not buy one.
+3. Contrast `bulk photo editing software`: 20/mo but **CPC $4.32, competition 0.74**. Advertisers
+   pay four dollars a click for one-seventh the volume. That is where the money in this cluster
+   actually is, and 20/mo cannot carry a page.
+
+Whole-cluster volume is **~290/mo**. `/tools/asl-video-translator` alone takes **555 search clicks
+a month**. We would be building a page family for half the traffic one already-closed tool brings
+in by itself.
+
+### P0 — what to do instead
+
+**P0-1 · Retire `/solutions/ecommerce-visuals` as an SEO page.** It stays killed unless the
+Demand-Radar motion asks for a URL to paste into a conversation. If it gets built for that, build it
+as *sales collateral*: no cluster, no keyword targeting, no 6-week readout, no ≥3-inbound-link
+requirement. Judge it on whether a 小红书 conversation converts better with it than without.
+
+**P0-2 · The lead capture is already shipped and is the right asset — it just cannot be fed by this
+cluster.** `InlineContactCapture` now renders on tool, use-case, template, topic and blog surfaces.
+Nothing more is needed on the site side. What feeds it is the one acquisition motion with a proven
+conversation (小红书 demand interception, per `raw/fashion-retouching-09-21/discussion.txt`), not
+batch search.
+
+**P0-3 · Do not use "batch" as a public product word.** `BulkDesignCallout`'s own header documents
+why: `batch: true` already means the pre-generated Download-Packs ZIP on 43 templates. Targeting
+`batch photo editing` would put the site's copy and its data model in direct disagreement — and it
+is KD 27, above the house ceiling, for 90 searches.
+
+**What would change this verdict:** a paid test on `bulk photo editing software` / `batch photo
+editing` (the only two terms with CPC) returning cost-per-qualified-conversation better than the
+小红书 motion. That is a ~$100 experiment and a far cheaper way to price this cluster than a page.
+
+---
+
+## 2026-09-22 (c) — Which existing pages can actually be positioned better
+
+`/solutions/ecommerce-visuals` was never built — no route, no reference in code, 404 live. It was a
+proposal in the 09-22 plan, and it is now withdrawn.
+
+The right question is which of the **2,615 pages with impressions** (35,779 impressions → 1,039
+clicks, 2.90% CTR, 30d to 09-21) can be moved. Answer: far fewer than the raw gap suggests, because
+most of the wasted impressions are **structurally unfixable by positioning work**.
+
+### ⛔ Big impression pools that are NOT positioning problems
+
+| pages | impr | clicks | why re-titling will not help |
+|---|---:|---:|---|
+| **MBTI family** (13 pages, pos ≤8) | **4,459** | **19** | `random mbti generator` sits at **pos 5.5 with 0 of 146** impressions clicked. The AI Overview answers it inline. Already diagnosed 2026-08-30 — [[project_mbti_names_ctr_bleed]]. |
+| `/tools/bilingual-subtitles` | 234 | 9 | ⭐ Checked the live SERP: we are **organic #2** and get **0 clicks on 34 impressions** for the head term. Positions 1, 3, 4, 6, 7 are all **browser extensions** for watching Netflix/YouTube with dual subtitle tracks, plus a Reddit thread recommending extensions. The searcher wants an extension to *watch* with; we *generate* subtitle files. Textbook [[project_serp_format_match]] — page 1 + zero clicks = wrong PAGE TYPE. A better title would promise something we do not do. |
+| `/blog/f5-tts-voice-cloning` | 556 | 1 | Branded navigational traffic for **someone else's open-source project** (`f5-tts`, pos 40.7). Those searchers want the GitHub repo. |
+
+That is **5,249 impressions — 15% of the site's total — that should be written off rather than
+optimised.** Naming them is the useful part; each has been picked up as an "opportunity" before.
+
+### ⭐ The one real positioning gap, and it already got its fix today
+
+**`/tools/video-dubbing`** — 840 impressions, 53 clicks, **average position 69.4**.
+
+103 queries, and **102 of them sit past position 30**: `ai video dubbing` (68 impr) at **pos 77**,
+`video dubbing` (45) at **pos 79.7**, `video dubbing service`, `free ai video dubbing tool`,
+`dubbing video`. Perfectly on-intent head terms, all on page 7–8.
+
+Position 77 is not a title problem — per [[project_serp_format_match]], title work compounds an
+existing position and never creates one.
+
+⚠️ **CORRECTION, same day.** This section first said the page "had no inbound link from anywhere on
+the site." That was wrong, and the error was not checking beyond the component I had just edited.
+`/tools/video-dubbing` was already linked from several **indexed** blog posts —
+`/blog/ai-video-dubbing-tutorial` (143 impressions, pos 61.3), `/blog/best-ai-tools` (40 impr,
+pos 37), `/blog/f5-tts-voice-cloning` via `VoiceCloningToolsContent` (556 impr, pos 14.4) — plus the
+`BlogCTACard` default for the `video-translation-dubbing` category. It already cleared the
+≥3-indexed-linkers rule in [[project_new_page_crawl_collapse]] before 2026-09-22.
+
+What was genuinely missing was links from the **ToolsGrid surfaces**: the homepage strip and
+`/tools`, which are the two strongest internal pages on the site, plus use-case pages and tool-page
+footers. Live `/tools` linked 17 of 23 tool pages and `video-dubbing` was one of the six missing.
+That shipped today (commit `adf75103`) and is verified in served HTML on `/`, `/tools`, two
+use-case pages and three tool-page footers.
+
+⭐ **But the correction changes the reading.** A page that already had indexed blog links and still
+sits at position 77 is not primarily suffering from a link deficit. `ai video dubbing` is a crowded
+commercial head term and **domain authority is the more likely constraint.** Upgrading the linkers
+from a position-61 blog post to the homepage is a real improvement and worth having; it is not a
+fix with an expected outcome.
+
+⚠️ **Checkpoint 2026-10-20** — re-pull `/tools/video-dubbing` position for `ai video dubbing` and
+`video dubbing`. Treat this as a cheap test of a weak hypothesis, not a prediction. If homepage and
+hub links do not move it, linking is settled as the non-constraint and this cluster should be parked
+rather than iterated.
+
+### Striking distance, minus the write-offs
+
+22 pages sit at position 8–25 with ≥80 impressions — 4,602 impressions yielding 96 clicks. Strip
+the MBTI and f5-tts rows above and what remains worth looking at is small:
+`/nano-banana-pro-prompts/tag/woman` (271 impr, **11.1% CTR**, pos 19.8 — already converting well,
+just ranked low), `/tools/packaging-mockup` (214, 6.5%, pos 9.5), `/zh/nano-template/character`
+(259, 2.7%, pos 19.2), `/tools/worksheet-from-video` (106, 3.8%, pos 9.1).
+
+`tag/woman` is the standout: an 11.1% CTR at position 19.8 means the listing works and only the rank
+is holding it back — the opposite of every row in the write-off table.

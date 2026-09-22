@@ -22,6 +22,12 @@ import nanoInspiration from "@/public/data/nano_inspiration.json";
 // time → no per-render DB/API hit; refreshes when the snapshot is
 // committed (run the script when refresh is wanted).
 import topRemixSnapshot from "@/public/data/top_remix_prompts.json";
+// Templates people actually GENERATED with (90d, >=2 distinct users, used in
+// the last 60d), snapshotted by scripts/snapshot_recent_templates.cjs. Pinned
+// to the front of the home grid so the first row reflects behaviour instead of
+// the editorial rank_score. Re-run the script to refresh; an empty/stale file
+// degrades to pure rank_score order, which is the previous behaviour.
+import recentTemplatesSnapshot from "@/public/data/recent_templates.json";
 import { POPULAR_PREFILL_QUERIES } from "@/lib/popularPrefillQueries";
 
 // Nano cards on the home page are intentionally locale-agnostic for now —
@@ -133,7 +139,21 @@ function buildHomeExamples(): HomeExampleTile[] {
     else byTemplate.set(r.template_id, [r]);
   }
 
+  // Usage first, rank_score for the tail. `recent_templates.json` is already
+  // ordered most-used first and already filtered — see the script for the
+  // thresholds and for the IP denylist, which exists so that raw popularity
+  // cannot promote a template that reproduces someone else's work.
+  const pinnedOrder = new Map(
+    (recentTemplatesSnapshot.templates ?? []).map((t, i) => [t.id, i])
+  );
   const sortedTplIds = [...byTemplate.keys()].sort((a, b) => {
+    const ap = pinnedOrder.get(a);
+    const bp = pinnedOrder.get(b);
+    if (ap !== undefined || bp !== undefined) {
+      if (ap === undefined) return 1;
+      if (bp === undefined) return -1;
+      return ap - bp;
+    }
     const ar = tplById.get(a)?.rank_score ?? 0;
     const br = tplById.get(b)?.rank_score ?? 0;
     return br - ar;
