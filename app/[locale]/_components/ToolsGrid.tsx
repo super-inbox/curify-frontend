@@ -13,9 +13,25 @@
 // space spent saying what the card already implied. Now one card = one action,
 // by status:
 //
-//   create       → click opens the creation dialogue directly (no /tools/<slug> hop)
+//   create       → card navigates to /tools/<slug>; the footer "Create →" button
+//                  is what opens the dialogue
 //   demo         → click goes to the tool page / demo
 //   coming_soon  → click saves it as a demand signal (login required)
+//
+// 2026-09-22 — `create` CARDS NOW LINK TO THE TOOL PAGE. They used to be a
+// bare <button> that opened the dialogue and never navigated, which meant the
+// six create-status tools (video-dubbing, bilingual-subtitles,
+// video-transcript-generator, video-summarizer, asl-video-translator,
+// speech-translator) had NO link to their own /tools/<slug> page from anywhere
+// this grid renders — /tools, the home strip, use-case pages, tool-page
+// footers. Measured on the live site: /tools linked 17 of 23 tool pages, and
+// the six missing ones include four of the five highest-traffic tool pages in
+// GSC. Those pages carry the long-form copy and the bulk/batch callout, so the
+// links are worth having for crawlers as much as for readers.
+//
+// The card is a "stretched link": an absolutely-positioned <Link> covering the
+// card, with the Create button layered above it. A <button> nested inside an
+// <a> would be invalid HTML, so the two controls are siblings, not nested.
 //
 // Each card keeps a small text affordance in the footer so the action is still
 // legible before you click — it is a hint, not a second hit target.
@@ -111,6 +127,8 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
     <div className={gridClassName ?? DEFAULT_GRID}>
       {tools.map((tool) => {
         const showFreeBadge = !!tool.i18n.showFreeBadge;
+        // `title` can be JSX (free badge), so keep a plain string for aria.
+        const plainTitle = t(tool.i18n.titleKey);
         const title = showFreeBadge ? (
           <span>
             {t(tool.i18n.titleKey)}{" "}
@@ -146,9 +164,30 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
               : "text-blue-500"
             : "text-purple-700";
 
+        // Footer affordance content, shared by all three card kinds. On
+        // `create` cards it becomes the label of a real button; elsewhere it is
+        // inert text inside the surrounding link.
+        const hintContent = (
+          <>
+            {isComingSoon && (
+              <span className="mr-1 font-normal italic text-blue-500">
+                {t("tools.coming_soon")}
+              </span>
+            )}
+            <span className="group-hover:underline">
+              {isComingSoon && isSaved ? `✓ ${hint}` : hint}
+            </span>
+            {!isComingSoon && <span aria-hidden="true">→</span>}
+            {/* Lock only where signing in is actually required to proceed. */}
+            {clientMounted && !user && (canCreate || isComingSoon) && !isSaved && (
+              <span className="ml-1 opacity-70" aria-hidden="true">🔒</span>
+            )}
+          </>
+        );
+
         const card = (
           <div
-            className={`group flex h-full flex-col rounded-xl border border-gray-100 bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] p-4 text-left shadow-md transition-shadow hover:shadow-lg ${
+            className={`group relative flex h-full flex-col rounded-xl border border-gray-100 bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] p-4 text-left shadow-md transition-shadow hover:shadow-lg ${
               isComingSoon && isSaved ? "ring-1 ring-green-300" : ""
             }`}
           >
@@ -159,36 +198,46 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
               {desc}
             </p>
 
-            <div className={`mt-3 flex items-center gap-1 text-xs font-semibold ${hintClass}`}>
-              {isComingSoon && (
-                <span className="mr-1 font-normal italic text-blue-500">
-                  {t("tools.coming_soon")}
-                </span>
-              )}
-              <span className="group-hover:underline">
-                {isComingSoon && isSaved ? `✓ ${hint}` : hint}
-              </span>
-              {!isComingSoon && <span aria-hidden="true">→</span>}
-              {/* Lock only where signing in is actually required to proceed. */}
-              {clientMounted && !user && (canCreate || isComingSoon) && !isSaved && (
-                <span className="ml-1 opacity-70" aria-hidden="true">🔒</span>
+            {/* The card-wide hit target for `create` tools. Covers the card so
+                anywhere outside the Create button navigates to the tool page,
+                and is a real <a> so crawlers follow it too — which is the point
+                of the change. The other two kinds are wrapped by their own
+                outer element below, so they do not need it. */}
+            {canCreate && (
+              <Link
+                href={`/tools/${tool.slug}`}
+                onClick={() => trackToolClick(tool.id)}
+                aria-label={plainTitle}
+                className="absolute inset-0 rounded-xl"
+              />
+            )}
+
+            <div
+              className={`mt-3 flex items-center gap-1 text-xs font-semibold ${hintClass} ${
+                // Let clicks in the footer's empty space fall through to the
+                // stretched link; only the button itself takes them back.
+                canCreate ? "pointer-events-none relative" : ""
+              }`}
+            >
+              {canCreate ? (
+                <button
+                  type="button"
+                  onClick={() => openToolModal(tool)}
+                  className="pointer-events-auto inline-flex cursor-pointer items-center gap-1 hover:underline"
+                >
+                  {hintContent}
+                </button>
+              ) : (
+                hintContent
               )}
             </div>
           </div>
         );
 
-        // (a) live tools — the card IS the create button.
+        // (a) live tools — the card links to the tool page, the footer button
+        // opens the dialogue. No outer wrapper: both controls live inside.
         if (canCreate) {
-          return (
-            <button
-              key={tool.id}
-              type="button"
-              onClick={() => openToolModal(tool)}
-              className="block h-full w-full cursor-pointer text-left"
-            >
-              {card}
-            </button>
-          );
+          return <div key={tool.id}>{card}</div>;
         }
 
         // (c) coming soon — the card IS the save/interest control.
