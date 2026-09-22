@@ -4206,3 +4206,96 @@ teardown. Three findings that shaped it:
 ⚠️ **Sequencing note:** the **10-13** `ghost-mannequin-ai-guide` readout is now unconfounded (the
 post un-folded and went indexed 09-19) and is the cheaper test of whether KD 0–1 apparel terms
 convert at all. **If 10-13 returns zero, reconsider this build before starting it.**
+
+---
+
+## 2026-09-22 — SMB/enterprise funnel: instrument it, and where the traffic actually is
+
+Four questions were asked (`raw/smb-batch-09-22/discussion.txt`); the full measured answers live in
+`~/.claude/plans/dropped-some-seo-retouching-greedy-puzzle.md`. What follows is only what changed
+after shipping, plus the one number that reframes the whole exercise.
+
+### ⭐ The site's biggest tool page sells a product we closed
+
+Per-slug, 30d to 2026-09-22, refined-DAU cohort, route `/tools/[slug]`:
+
+| slug | people | acting | actions |
+|---|---:|---:|---:|
+| **asl-video-translator** | **993** | 991 | 1,947 |
+| bilingual-subtitles | 79 | 79 | 102 |
+| video-dubbing | 72 | 72 | 158 |
+| packaging-mockup | 17 | 13 | 18 |
+| impromptu-speech-practice | 11 | 11 | 91 |
+| character-sticker-sheet | 9 | 9 | 25 |
+| ai-product-photo-generator · ecommerce-photo · ai-fashion-model-generator · wedding-photo-editing · die-cut-sticker-file · product-video | **1 each** | 1 | 1–4 |
+
+GSC agrees on the shape: 555 of 659 search clicks to `/tools/*` (84%) land on
+`asl-video-translator`.
+
+**861 people a month click the ASL tool's own CTA and none of them generate** (`asl-video-translator`
+CLICK ×1,464 / 861 people; ASL was closed 2026-08-18 as below shippable quality). The commercial
+tool pages — the ones an SMB bulk offer is actually for — draw **one person each**.
+
+This does not contradict "`/tools/*` is the highest-traffic route family." It qualifies it, and the
+qualification matters more than the headline: **the traffic on `/tools/*` is not on the tools the
+offer serves.** Any plan that reasons from the family total is reasoning from ASL.
+
+The one genuinely useful thing the ASL page does today is hand people off: 73 click through to
+`subtitle-captioner`, 63 to `video-transcript-generator`, 53 to `video-dubbing`.
+
+### The auth wall is not the bottleneck either — it converts at 39%
+
+Sessions that hit an `auth-modal:*` event, 90d, refined cohort:
+
+| | |
+|---|---:|
+| sessions that hit the wall | **277** |
+| signed in afterwards, same session | **109 · 39%** |
+| went on to generate | **32 · 12%** |
+
+~92 sessions/month reach the wall at all, and a 39% sign-in rate is high, not obstructive. Removing
+it could recover at most the ~56/month who bounce. Combined with the credit finding (2 of 649 recent
+signups ever reach a zero balance), **neither gate is what is limiting leads.** Both hypotheses were
+worth testing and both are small. The constraint is upstream: the commercial surfaces have no
+traffic, and the surface with traffic sells nothing.
+
+⚠️ Per-reason breakdown, 30d: `tool-launch:subtitle-captioner` 50 people · `generate-attempt` 41 ·
+`tool-launch:video-transcript-generator` 36 · `tool-launch:video-dubbing` 30. Everything else is
+single digits.
+
+### Shipped
+
+1. **`/contact` now fires an event on successful submit** — `contact:submit:<source>`, content_type
+   `menu_link` to match the CTA that sends people there. This is the site's first lead event; before
+   it, every commercial CTA was measurable up to the click and dark after.
+   ⚠️ **No view event was added on `/contact`, deliberately.** ~963 of its ~970 monthly visitors take
+   no action and are correctly excluded from refined DAU; firing a view there would promote all of
+   them into the acting cohort and inflate site-wide refined DAU by ~40%, exactly as carousel
+   autoplay `VIDEO_PLAY` once did. The funnel's denominator belongs at the CTA, which is tracked.
+2. **All four `/enterprise` CTAs carry `?source=enterprise:<cta-id>`**, with the CTA's own label as
+   the subject, so the team notification says which of the four asks it was.
+3. **The b2b use-case link is tracked and attributed** (`use-case:<slug>`). It was a bare untracked
+   `<a>` — the only route from a persona page to a human.
+4. **`BulkDesignCallout` now renders on 13 tool pages** (`BULK_CALLOUT_TOOLS`). It was the only CTA
+   on the site passing `?source=`, and it was absent from `/tools/*` entirely. Structural fix; per
+   the table above, expect no lead volume from it at current traffic.
+5. **Removed the dead `ToolDef.cta = "contact"` branch.** Declared, never assigned, and unreachable
+   anyway — every tool it was written for has since grown a self-serve form matched earlier in the
+   same chain. It had already been misread as shipped during one audit.
+6. **`/pack/[sku]` no longer 404s its own upsell.** It linked `/signup?ref=etsy`; there is no
+   `/signup` route (sign-up is a drawer). Now `/?ref=etsy`, and `ref` is on the tracking
+   `CAMPAIGN_PARAMS` allowlist so attribution survives.
+
+### ⚠️ Backend bug — filed, not fixed
+
+`/auth/login` (email+password) **assigns** a FREE user's balance to 50 on cycle rollover
+(`routers/auth.py:104` → `update_user_credits` with `SUBSCRIPTION_PAYMENT`). This contradicts the
+documented `one_time_at_signup` grant in both `lib/pricing.ts` and `subscription_constants.py`, and
+because it assigns rather than increments it can silently **reduce** a balance above 50.
+`/auth/google-login` and `/auth/verify-otp` have no such block.
+
+### Next
+
+The readout is `qualified visits → sample requests → samples delivered`, 2 weeks out. But the
+honest next question is not about this funnel: it is what to do with 993 people a month arriving at
+a closed tool, and whether anything commercial can be put in front of them that is true.

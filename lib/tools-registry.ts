@@ -72,11 +72,19 @@ export type ToolDef = {
 
   action?: ToolAction;
 
-  // Optional CTA override. "contact" renders a "Contact us" button linking to
-  // /contact instead of the create/coming-soon states — for tools we offer as a
-  // done-for-you / bulk service rather than a self-serve generate (e.g. the
-  // die-cut sticker factory-file service).
-  cta?: "contact";
+  // NOTE — there was a `cta?: "contact"` override here, meant to swap the
+  // create/coming-soon button for a "Contact us" link on done-for-you tools.
+  // Removed 2026-09-22: it was declared and never assigned by any tool, and it
+  // could not have fired anyway — every tool it was written for (die-cut
+  // sticker, acrylic, packaging mockup) has since grown a real self-serve
+  // form, and those action branches are matched earlier in the same chain.
+  // It survived as a decoy long enough to be read as shipped during an audit.
+  // The done-for-you ask is now carried by BulkDesignCallout, which is gated
+  // by BULK_CALLOUT_TOOLS in tool-generic-client.tsx and — unlike this — passes
+  // ?source= so the lead is attributable.
+  // Several namespaces still carry a stale `cta` string in messages/*/home.json
+  // ("Contact us for a file or bulk order"); they render nowhere and are left
+  // alone rather than churning 10 locale files to delete inert keys.
 
   i18n: {
     titleKey: string;

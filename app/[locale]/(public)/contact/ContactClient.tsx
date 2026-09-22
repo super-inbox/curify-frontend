@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { contactService } from "@/services/contact";
+import { useTracking } from "@/services/useTracking";
 
 const CALENDLY = "https://calendly.com/qqwjq9916/15-minute-meeting";
 
@@ -21,6 +22,7 @@ function clamp(value: string | null, max: number): string {
 function ContactForm() {
   const t = useTranslations("contact");
   const params = useSearchParams();
+  const { trackAction } = useTracking();
 
   // Prefill from the referring surface. The bulk CTAs on template, topic and
   // blog pages link here with ?subject=&source=, so an inbound lead arrives
@@ -46,6 +48,30 @@ function ContactForm() {
         content,
         ...(source ? { source } : {}),
       });
+      // The only lead event on the site. Until this existed no submit rate
+      // could be computed, so every commercial CTA was measurable up to the
+      // click and dark from there on.
+      //
+      // WHY content_type "menu_link" and not something lead-shaped: the backend
+      // enum silently rejects unknown values (see feedback_tracking_enums), and
+      // "menu_link" is what BulkDesignCallout already stamps on the click that
+      // sends people here. Same type on both ends means the funnel
+      // bulk-callout:<source> -> contact:submit:<source> is one filter.
+      //
+      // WHY NO matching view event on this page: /contact draws ~970 raw
+      // visitors a month of which ~7 pass the refined-DAU rule, because the
+      // other 963 take no action. Firing a view here would promote all of them
+      // into the "acting" cohort and inflate site-wide refined DAU by ~40% --
+      // the same way carousel autoplay VIDEO_PLAY once did. The denominator
+      // belongs at the CTA that sent them, which is already tracked.
+      trackAction(
+        {
+          // 255 is the column limit; `source` is already clamped to 200.
+          contentId: `contact:submit:${source || "direct"}`.slice(0, 255),
+          contentType: "menu_link",
+        },
+        "click",
+      );
       setStatus("ok");
       setEmail("");
       setSubject("");

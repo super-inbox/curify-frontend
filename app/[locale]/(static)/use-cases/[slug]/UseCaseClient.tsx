@@ -365,6 +365,19 @@ export default function UseCaseClient({
       trackAction({ contentId: `${slug}::${demoKey}`, contentType: "page" as const }, "click"),
     [trackAction, slug],
   );
+  // The b2b "let's talk scope" link is the ONLY route from a persona page to a
+  // human, and until now it was a bare untracked <a> to /contact: the click was
+  // invisible and the lead arrived unattributed. Tracked as `page` (matching
+  // share/demo above) and carrying ?source= so /contact stamps the persona onto
+  // the lead. See BulkDesignCallout for the same attribution convention.
+  const handleContactClick = useCallback(
+    () =>
+      trackAction(
+        { contentId: `${slug}::contact-scope`, contentType: "page" as const },
+        "click",
+      ),
+    [trackAction, slug],
+  );
 
   return (
     <main className="mx-auto max-w-[1600px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">
@@ -421,7 +434,11 @@ export default function UseCaseClient({
             <span aria-hidden="true" className="mr-1.5">⚡</span>
             {tGlobal("interconnection.apiAvailable")}{" "}
             <IntlLink
-              href="/contact"
+              href={{
+                pathname: "/contact",
+                query: { subject: title, source: `use-case:${slug}` },
+              }}
+              onClick={handleContactClick}
               className="font-semibold text-purple-700 underline-offset-2 hover:underline"
             >
               {tGlobal("interconnection.apiContactCTA")}

@@ -29,6 +29,37 @@ import CdnImage from "@/app/[locale]/_components/CdnImage";
 // support section. Both consumers .filter() on t.has(), so tools authored with
 // fewer questions are unaffected.
 const FAQ_SLOTS = Array.from({ length: 14 }, (_, i) => i + 1);
+
+// Tools that get the bulk-production callout ("send the list, we return the
+// whole set"). Explicit slugs rather than a groupId test, because the copy in
+// common.json:bulkCallout is specific — SKUs, characters, locked visual
+// direction, die-cut paths and dielines — and is simply untrue for the
+// transcript / summarizer / speech tools. The same reasoning picks
+// BULK_CALLOUT_CATEGORIES in BlogCTACard.
+//
+// ⚠️ Read this before expecting leads from it. Measured 2026-09-22, 30d,
+// refined cohort: /tools/* draws ~1,200 people, but 993 of them are on
+// /tools/asl-video-translator — a tool we CLOSED — and every slug below draws
+// between 1 and 17. So this is a structural fix (the site's only attributed
+// commercial CTA was missing from its highest-traffic route family) and not a
+// lead source at current volumes. The lead volume problem is upstream: the
+// commercial tool pages have no traffic, and the page that does have traffic
+// sells nothing.
+const BULK_CALLOUT_TOOLS = new Set([
+  "ai-product-photo-generator",
+  "ecommerce-photo",
+  "ai-fashion-model-generator",
+  "wedding-photo-editing",
+  "character-sticker-sheet",
+  "mockup",
+  "die-cut-sticker-file",
+  "acrylic-factory-export",
+  "sticker-factory-export",
+  "packaging-mockup",
+  "style-transfer",
+  "brand-direction-explorer",
+  "product-video",
+]);
 const HOWTO_SLOTS = [1, 2, 3, 4, 5, 6, 7, 8];
 import {
   getToolBySlug,
@@ -40,6 +71,7 @@ import { getPersonasForTool } from "@/lib/use-cases";
 import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVideoDemo";
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import BulkDesignCallout from "@/app/[locale]/_components/BulkDesignCallout";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import TemplateStrip from "@/app/[locale]/_components/TemplateStrip";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
@@ -207,13 +239,6 @@ export default function ToolGenericClient({
           // Anonymous viral costume try-on: upload one photo → dynasty-costume
           // transformation mp4. No sign-in required (own multipart endpoint).
           <CostumeTryonGenerate />
-        ) : tool.cta === "contact" ? (
-          <Link
-            href="/contact"
-            className="inline-block mt-4 text-white px-6 py-3 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg text-lg"
-          >
-            {t("cta")}
-          </Link>
         ) : tool.status === "create" && tool.action?.type === "modal" ? (
           <button
             onClick={handleTryItClick}
@@ -244,6 +269,20 @@ export default function ToolGenericClient({
             trackPrefix="tool-related-templates"
             maxRows={8}
           />
+        </section>
+      )}
+
+      {/* Bulk-production CTA. Sits directly under the tool (and its related
+          templates) because that is the moment "I need forty of these, not
+          one" lands, and because it is the only CTA on the site that carries
+          ?source= into /contact -- so a lead from here arrives naming the tool
+          that produced it instead of as an anonymous Trial Request.
+          No `subject`: the tool title ("AI Fashion Model Generator") reads
+          badly inside "Need the whole {subject} set", and the generic headline
+          is already correct in all ten locales. */}
+      {BULK_CALLOUT_TOOLS.has(slug) && (
+        <section className="mt-16">
+          <BulkDesignCallout source={`tool/${slug}`} />
         </section>
       )}
 
