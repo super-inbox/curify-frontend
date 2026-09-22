@@ -4445,19 +4445,31 @@ optimised.** Naming them is the useful part; each has been picked up as an "oppo
 `dubbing video`. Perfectly on-intent head terms, all on page 7–8.
 
 Position 77 is not a title problem — per [[project_serp_format_match]], title work compounds an
-existing position and never creates one. What this page had was an **internal-link deficit**: until
-2026-09-22 the six `create`-status tools rendered as bare `<button>`s in ToolsGrid and had **no link
-to their own `/tools/<slug>` page from anywhere on the site**. Live `/tools` linked 17 of 23 tool
-pages; `video-dubbing` was one of the six missing.
+existing position and never creates one.
 
-That shipped today (commit `adf75103`): the cards are stretched links now, so `/tools/video-dubbing`
-gains inbound edges from `/tools`, the home strip, use-case pages and tool-page footers at once.
-Per [[project_new_page_crawl_collapse]] the rule of thumb is ≥3 links from already-indexed sources,
-which this clears.
+⚠️ **CORRECTION, same day.** This section first said the page "had no inbound link from anywhere on
+the site." That was wrong, and the error was not checking beyond the component I had just edited.
+`/tools/video-dubbing` was already linked from several **indexed** blog posts —
+`/blog/ai-video-dubbing-tutorial` (143 impressions, pos 61.3), `/blog/best-ai-tools` (40 impr,
+pos 37), `/blog/f5-tts-voice-cloning` via `VoiceCloningToolsContent` (556 impr, pos 14.4) — plus the
+`BlogCTACard` default for the `video-translation-dubbing` category. It already cleared the
+≥3-indexed-linkers rule in [[project_new_page_crawl_collapse]] before 2026-09-22.
+
+What was genuinely missing was links from the **ToolsGrid surfaces**: the homepage strip and
+`/tools`, which are the two strongest internal pages on the site, plus use-case pages and tool-page
+footers. Live `/tools` linked 17 of 23 tool pages and `video-dubbing` was one of the six missing.
+That shipped today (commit `adf75103`) and is verified in served HTML on `/`, `/tools`, two
+use-case pages and three tool-page footers.
+
+⭐ **But the correction changes the reading.** A page that already had indexed blog links and still
+sits at position 77 is not primarily suffering from a link deficit. `ai video dubbing` is a crowded
+commercial head term and **domain authority is the more likely constraint.** Upgrading the linkers
+from a position-61 blog post to the homepage is a real improvement and worth having; it is not a
+fix with an expected outcome.
 
 ⚠️ **Checkpoint 2026-10-20** — re-pull `/tools/video-dubbing` position for `ai video dubbing` and
-`video dubbing`. If four weeks of fresh internal links from indexed pages does not move a page off
-position 77, the constraint is domain authority, not linking, and this cluster should be parked
+`video dubbing`. Treat this as a cheap test of a weak hypothesis, not a prediction. If homepage and
+hub links do not move it, linking is settled as the non-constraint and this cluster should be parked
 rather than iterated.
 
 ### Striking distance, minus the write-offs
