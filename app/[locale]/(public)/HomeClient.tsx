@@ -96,6 +96,13 @@ export default function HomeClient({
             the existing content rail (kept below for discovery + indexation). */}
         <HomeHero montageImages={montageImages} />
 
+        {/* Moved above the template grid on 2026-09-22. It is the audience
+            router — "pick the job you're here to do" — and it only works if it
+            is read before the tiles rather than after thirty of them. It was
+            already the best-converting non-nav surface on the page (146 clicks
+            from 77 people over 90 days) from BELOW the fold. */}
+        <HomeSolutionsGrid />
+
         <section className="mt-8 w-full max-w-[1600px]">
           <div className="mb-4 pl-1">
             <h2 className="text-xl font-bold tracking-tight text-neutral-900 md:text-2xl">
@@ -166,9 +173,11 @@ export default function HomeClient({
             WARNING: this does NOT establish that workflows are unwanted. Their
             "Run the whole workflow" button opens a coming-soon panel and runs
             nothing, so the low count may be measuring a visible dead end rather
-            than absent demand. Re-read this after it does something. */}
-        <HomeSolutionsGrid />
+            than absent demand. Re-read this after it does something.
 
+            2026-09-22: the solutions grid referenced above has since moved ABOVE
+            the template grid, so its click counts here were all measured from
+            the old position below the tiles. Treat them as a floor. */}
         <HomeToolsStrip />
 
         {nicheTopics}

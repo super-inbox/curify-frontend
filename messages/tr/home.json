@@ -46,13 +46,17 @@
       "subheading": "Yapmak istediğin işi seç.",
       "explore": "Keşfet →",
       "items": {
-        "merch": {
-          "label": "Merch ve POD",
-          "message": "Tek bir fikri 100 ürüne dönüştür."
+        "ecommerce": {
+          "label": "E-ticaret",
+          "message": "Tüm kataloğunuz için ürün fotoğrafları ve liste görselleri."
         },
-        "design": {
-          "label": "Tasarımcılar",
-          "message": "Yeniden kullanılabilir tasarım ilhamını saniyeler içinde bul."
+        "photographers": {
+          "label": "Fotoğrafçılar ve Stüdyolar",
+          "message": "Bir galeriyi gönderin, tek bir tutarlı görünümde düzenleyelim."
+        },
+        "marketing": {
+          "label": "Pazarlama ve SEO",
+          "message": "Üst sıralara çıkan çok dilli görsel içerik oluştur."
         },
         "education": {
           "label": "Eğitim",
@@ -62,13 +66,17 @@
           "label": "Video Üreticileri",
           "message": "Videolarını küresel izleyiciler için çevir ve altyazıla."
         },
-        "marketing": {
-          "label": "Pazarlama ve SEO",
-          "message": "Üst sıralara çıkan çok dilli görsel içerik oluştur."
-        },
         "developers": {
           "label": "Geliştiriciler",
           "message": "Görsel yapay zekâyı ürününe aylar değil günler içinde ekle."
+        },
+        "merch": {
+          "label": "Merch ve POD",
+          "message": "Tek bir fikri 100 ürüne dönüştür."
+        },
+        "design": {
+          "label": "Tasarımcılar",
+          "message": "Yeniden kullanılabilir tasarım ilhamını saniyeler içinde bul."
         }
       }
     },

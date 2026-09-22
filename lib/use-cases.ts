@@ -177,9 +177,14 @@ export const USE_CASES: UseCaseDef[] = [
   // editing variants are also easier (portrait photo editing KD 11 vs portrait
   // photo retouching KD 21).
   //
-  // hiddenFromChips: this is a named-account + SEO landing surface, not a
-  // general consumer chip. Same treatment as the other B2B verticals.
-  { slug: "for-photographers", tier: "b2b", hiddenFromChips: true,
+  // 2026-09-22: hiddenFromChips REMOVED. It was set on the reasoning that this
+  // is a named-account + SEO landing surface rather than a general consumer
+  // chip — but the chip label is already authored in all ten locales
+  // (entryBar.useCases.for-photographers), the persona is one of the two the
+  // retouching offer actually sells to, and hiding it meant the only surface
+  // carrying the editing pitch had no entry point from /tools, tool pages or
+  // sibling persona pages.
+  { slug: "for-photographers", tier: "b2b",
     toolSlugs: ["wedding-photo-editing"] },
 ];
 

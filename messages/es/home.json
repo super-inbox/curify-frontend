@@ -46,13 +46,17 @@
       "subheading": "Elige el trabajo que vienes a hacer.",
       "explore": "Explorar →",
       "items": {
-        "merch": {
-          "label": "Merch y POD",
-          "message": "Convierte una idea en 100 productos."
+        "ecommerce": {
+          "label": "E-commerce",
+          "message": "Fotos de producto e imágenes de ficha para todo un catálogo."
         },
-        "design": {
-          "label": "Diseñadores",
-          "message": "Encuentra inspiración de diseño reutilizable en segundos."
+        "photographers": {
+          "label": "Fotógrafos y estudios",
+          "message": "Envía una galería y te la editamos con un acabado uniforme."
+        },
+        "marketing": {
+          "label": "Marketing y SEO",
+          "message": "Crea contenido visual multilingüe que posiciona."
         },
         "education": {
           "label": "Educación",
@@ -62,13 +66,17 @@
           "label": "Creadores de video",
           "message": "Traduce y subtitula videos para audiencias globales."
         },
-        "marketing": {
-          "label": "Marketing y SEO",
-          "message": "Crea contenido visual multilingüe que posiciona."
-        },
         "developers": {
           "label": "Desarrolladores",
           "message": "Integra IA visual en tu producto en días, no meses."
+        },
+        "merch": {
+          "label": "Merch y POD",
+          "message": "Convierte una idea en 100 productos."
+        },
+        "design": {
+          "label": "Diseñadores",
+          "message": "Encuentra inspiración de diseño reutilizable en segundos."
         }
       }
     },

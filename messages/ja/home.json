@@ -46,13 +46,17 @@
       "subheading": "あなたがやりたい仕事を選んでください。",
       "explore": "詳しく見る →",
       "items": {
-        "merch": {
-          "label": "グッズデザイン & POD",
-          "message": "1つのアイデアを100の製品に。"
+        "ecommerce": {
+          "label": "EC・ネット販売",
+          "message": "カタログ全体の商品画像とリスティング画像をまとめて。"
         },
-        "design": {
-          "label": "デザイナー",
-          "message": "再利用できるデザインのヒントを数秒で。"
+        "photographers": {
+          "label": "フォトグラファー・スタジオ",
+          "message": "ギャラリーを丸ごと送れば、統一した仕上がりでレタッチします。"
+        },
+        "marketing": {
+          "label": "マーケティング & SEO",
+          "message": "検索で上位に入る多言語ビジュアルを作成。"
         },
         "education": {
           "label": "教育",
@@ -62,13 +66,17 @@
           "label": "動画クリエイター",
           "message": "世界中の視聴者向けに翻訳・字幕付け。"
         },
-        "marketing": {
-          "label": "マーケティング & SEO",
-          "message": "検索で上位に入る多言語ビジュアルを作成。"
-        },
         "developers": {
           "label": "開発者",
           "message": "ビジュアルAIを数日で自社プロダクトに組み込む。"
+        },
+        "merch": {
+          "label": "グッズデザイン & POD",
+          "message": "1つのアイデアを100の製品に。"
+        },
+        "design": {
+          "label": "デザイナー",
+          "message": "再利用できるデザインのヒントを数秒で。"
         }
       }
     },

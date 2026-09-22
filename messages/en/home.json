@@ -59,13 +59,17 @@
       "subheading": "Pick the job you're here to do.",
       "explore": "Explore →",
       "items": {
-        "merch": {
-          "label": "Merch & POD",
-          "message": "Turn one character into 100 products."
+        "ecommerce": {
+          "label": "E-commerce",
+          "message": "Product photos and listing images for a whole catalogue."
         },
-        "design": {
-          "label": "Designers",
-          "message": "Find better design inspiration in seconds."
+        "photographers": {
+          "label": "Photographers & Studios",
+          "message": "Send a gallery, get it edited to one consistent look."
+        },
+        "marketing": {
+          "label": "Marketing & SEO",
+          "message": "Build multilingual visual content that ranks."
         },
         "education": {
           "label": "Education",
@@ -75,13 +79,17 @@
           "label": "Video Creators",
           "message": "Translate and subtitle videos for global audiences."
         },
-        "marketing": {
-          "label": "Marketing & SEO",
-          "message": "Build multilingual visual content that ranks."
-        },
         "developers": {
           "label": "Developers",
           "message": "Integrate visual AI into your own product."
+        },
+        "merch": {
+          "label": "Merch & POD",
+          "message": "Turn one character into 100 products."
+        },
+        "design": {
+          "label": "Designers",
+          "message": "Find better design inspiration in seconds."
         }
       }
     },

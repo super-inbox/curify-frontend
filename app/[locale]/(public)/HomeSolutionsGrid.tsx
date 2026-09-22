@@ -11,15 +11,39 @@ import { useClickTracking } from "@/services/useTracking";
  * (home-solution:<key>) so we can see which solution entry converts. Copy in
  * messages/<locale>/home.json under home.solutions.
  */
-type Solution = { key: string; emoji: string; href: string };
+type Solution = {
+  key: string;
+  emoji: string;
+  /** Object form is used where the link needs to carry query params. */
+  href: string | { pathname: "/contact"; query: Record<string, string> };
+};
 
+// Order set 2026-09-22: commercial ICPs first, consumer/creator entry points
+// after. E-commerce and photographers lead because they are the two audiences
+// the production offer actually sells to today.
+//
+// `merch` and `design` came out of the grid in the same pass. Their copy is
+// deliberately LEFT in messages/*/home.json under solutions.items so either can
+// be restored without re-translating ten locales — they are not dead keys by
+// accident, and lib/use-cases.ts still carries both personas.
 const SOLUTIONS: Solution[] = [
-  { key: "merch", emoji: "🎁", href: "/use-cases/for-merch-operators" },
-  { key: "design", emoji: "🎨", href: "/use-cases/for-designers" },
+  { key: "ecommerce", emoji: "🛒", href: "/use-cases/for-dtc-brands" },
+  { key: "photographers", emoji: "📷", href: "/use-cases/for-photographers" },
+  { key: "marketing", emoji: "🌍", href: "/use-cases/for-programmatic-seo" },
+  // ⚠️ `education`'s copy says "at scale" but for-parents is a CONSUMER page
+  // ("support your child's learning"). Left pointing there because no
+  // education-at-scale persona page exists to point at — the mismatch is in the
+  // destination, not the ordering, and inventing a page was explicitly not the
+  // ask. Worth revisiting together.
   { key: "education", emoji: "📚", href: "/use-cases/for-parents" },
   { key: "video", emoji: "🎬", href: "/tools" },
-  { key: "marketing", emoji: "🌍", href: "/use-cases/for-programmatic-seo" },
-  { key: "developers", emoji: "⚙️", href: "/contact" },
+  // Carries ?source= like every other commercial /contact link on the site, so
+  // a developer enquiry is attributable instead of arriving anonymous.
+  {
+    key: "developers",
+    emoji: "⚙️",
+    href: { pathname: "/contact", query: { source: "home-solution:developers" } },
+  },
 ];
 
 function SolutionCard({ s }: { s: Solution }) {

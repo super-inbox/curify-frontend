@@ -59,13 +59,17 @@
       "subheading": "选择你要完成的工作。",
       "explore": "了解更多 →",
       "items": {
-        "merch": {
-          "label": "商品设计与 POD",
-          "message": "一个创意，变成 100 款产品。"
+        "ecommerce": {
+          "label": "电商",
+          "message": "整个商品目录的产品图和主图，一次做完。"
         },
-        "design": {
-          "label": "设计师",
-          "message": "几秒钟找到可复用的设计灵感。"
+        "photographers": {
+          "label": "摄影师与影楼",
+          "message": "把一整组片子发来，按同一套标准统一修好。"
+        },
+        "marketing": {
+          "label": "营销与 SEO",
+          "message": "打造能带来排名的多语种视觉内容。"
         },
         "education": {
           "label": "教育",
@@ -75,13 +79,17 @@
           "label": "视频创作者",
           "message": "为全球观众翻译并加字幕。"
         },
-        "marketing": {
-          "label": "营销与 SEO",
-          "message": "打造能带来排名的多语种视觉内容。"
-        },
         "developers": {
           "label": "开发者",
           "message": "几天内把视觉 AI 接入你的产品。"
+        },
+        "merch": {
+          "label": "商品设计与 POD",
+          "message": "一个创意，变成 100 款产品。"
+        },
+        "design": {
+          "label": "设计师",
+          "message": "几秒钟找到可复用的设计灵感。"
         }
       }
     },
