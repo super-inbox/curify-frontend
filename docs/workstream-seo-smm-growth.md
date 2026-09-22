@@ -3297,6 +3297,11 @@ with a skill behind it, and has **zero public surface**.
 
 ## 2026-09-16 — Pinterest readout: the winners are a SHAPE, the headline number is a coin flip
 
+> **⚠️ Read § 2026-09-18 and § 2026-09-22 (d) before acting on this section.** Its cohort numbers
+> were taken at T+8 and are obsolete by ~370x (batch 3: 2 impressions here, 11,391 on 09-22), and
+> the seed weights derived below were fitted to 791 impressions and 8 saves. **The SHAPE finding
+> survives** — every earner is still a multi-panel grid, sheet, or step sequence.
+
 The ~09-15 readout the 09-08 section scheduled. First non-zero numbers on the channel, and they
 overturn both of the rankings that produced them. Per-Pin `GET /v5/pins/{id}/analytics` across
 all 62 live Pins, window 08-25 → 09-16, campaign Pins only.
@@ -3854,6 +3859,12 @@ The directional conclusion still stands — 31 impressions across 30 Pins is wea
 747 across 10, so GSC image demand still looks like a poor proxy for Pinterest demand — but it
 was asserted on a number that was not yet real. **Grade a Pinterest cohort at T+14 or later.**
 
+> **⚠️ SUPERSEDED 2026-09-22 — T+14 IS ALSO TOO EARLY, AND THE "still stands" ABOVE IS WRONG.**
+> Batch 3 went on to **11,391 impressions and 50 saves** and is now the best cohort on the
+> account, so GSC image demand was not the poor Pinterest proxy this paragraph concludes it was.
+> Its climb happened between day 10 and day 14, so even a T+14 read catches it mid-flight.
+> **Grade at T+21.** See § 2026-09-22 (d).
+
 > This generalises past Pinterest. It is the same failure as the 09-06 "0 impressions = data
 > latency" call, inverted: that time latency was invoked to explain away a zero and was wrong;
 > this time it was ignored and was right. The fix is not a better prior, it is not grading at T+8.
@@ -3928,7 +3939,7 @@ stop dominating. `--like <id>:<weight>`.
 
 ### Open
 
-- **Do not grade batch 5 before ~2026-10-02** (T+14). Batches 4 and 5 are the same arm and pool
+- **Do not grade batch 5 before ~2026-10-02** (T+14 — ⚠️ revised to ~2026-10-09, T+21, on 09-22). Batches 4 and 5 are the same arm and pool
   to 48 Pins on the look-alike basis; read them together, on **save rate**. Batch 4's current 0 is
   not a result.
 - **`template-fruit-…` and the four other reproducing templates are live on the site.** Decide
@@ -4482,3 +4493,153 @@ just ranked low), `/tools/packaging-mockup` (214, 6.5%, pos 9.5), `/zh/nano-temp
 
 `tag/woman` is the standout: an 11.1% CTR at position 19.8 means the listing works and only the rank
 is holding it back — the opposite of every row in the write-off table.
+
+## 2026-09-22 (d) — Pinterest batch 6: T+14 was also too early, and the last two batches were seeded on noise
+
+Batch 6 is **35 Pins, published and verified 35/35** (media present, title/alt/link/board
+byte-identical to the plan). Account is now **145 Pins across 10 boards**. But as with batch 5,
+the finding is a correction to the section above it, not the batch.
+
+### 1. ⚠️ The account grew 17x in four days with nothing published
+
+Same command (`pinterest_analytics.cjs --days 30`), same 110 Pins, nothing added since 09-18:
+
+| | 09-18 | 09-22 |
+|---|---:|---:|
+| IMPRESSION | 791 | **13,842** |
+| SAVE | 8 | **69** |
+| PIN_CLICK | 15 | **811** |
+| OUTBOUND | 0 | **8** |
+
+Every contributing Pin is from **09-08 or earlier**, so this is accrual, not new distribution.
+By cohort:
+
+| cohort | Pins | imp 09-16 | imp 09-18 | imp 09-22 | saves 09-22 |
+|---|---:|---:|---:|---:|---:|
+| batch 1 (09-04) | 22 | 11 | 13 | 35 | 0 |
+| batch 2 (09-05) | 10 | 607 | 747 | 2,401 | 19 |
+| **batch 3 (09-08)** | 30 | **2** | **31** | **11,391** | **50** |
+| batch 4 (09-16) | 15 | — | 0 | 15 | 0 |
+| batch 5 (09-18) | 33 | — | — | 0 | 0 |
+
+**Batch 3 is now comfortably the best cohort on the account.** The 09-16 section called it "the
+worst — 2 impressions across 30 Pins"; the 09-18 section corrected that to 31 and kept the
+directional verdict ("GSC image demand is a poor proxy for Pinterest demand"). **That verdict is
+now falsified too.** It was wrong twice, both times on numbers that had not arrived.
+
+**The T+14 rule the 09-18 section introduced was itself too early — batch 3 was still climbing
+hard between day 10 and day 14. Grade at T+21.** Do not write a cohort verdict into this doc
+from a reading younger than that.
+
+The flip side is the good news this channel had been waiting for: the account save rate is
+**0.50%**, against a legacy baseline of **0 saves across 27 Pins in 90 days**. The alt-text +
+search-phrase + topic-hub work did land. It just took three weeks to say so, and every readout
+before then measured an unfinished number.
+
+### 2. ⚠️ Batches 4 and 5 were selected against noise
+
+`pinterest_lookalike.cjs` seeds are weighted by measured save rate. Those weights were fitted on
+09-18 to **791 impressions and 8 saves**. Against 17x the data:
+
+- two of the five seeds were **single events** — `costume-khmer-sampot` (1 save on 2 impressions)
+  and `ip-emoji-sticker-sheet` (0 on 11);
+- the current **#1 was not a seed at all** — `asl-five-parameters`, 798 imp / 10 saves / 1.25%;
+- `nanjing-landmarks`, the 09-16 headline, holds its floor weight and nothing more (0.36%).
+
+So the 48 Pins in batches 4+5 are a look-alike arm built on the wrong look. They are not wasted —
+they are just not evidence for the seeds they were drawn from.
+
+**Seeds re-derived 09-22, and admission now requires volume before rate:**
+
+| example | board | imp | sav | raw | weight |
+|---|---|---:|---:|---:|---:|
+| `…asl-sign-language-tutorial-infographic-five-parameters-of-asl` | edtech | 798 | 10 | 1.25% | 1.00 |
+| `…varieties-food-poster-custard-tart` | food | 454 | 5 | 1.10% | 0.86 |
+| `…category-guide-infographic-interior-design-styles` | edtech | 1,544 | 16 | 1.04% | 0.84 |
+| `…beauty-step-by-step-guide-nail-art` | beauty | 2,161 | 18 | 0.83% | 0.68 |
+| `…fashion-inspired-gown-design-sheet-phoenix` | fashion | 1,165 | 7 | 0.60% | 0.49 |
+| `…fridge-magnet-collection-nanjing-landmarks` | merch | 842 | 3 | 0.36% | 0.30 |
+| `…varieties-food-poster-coffee` | food | 576 | 2 | 0.35% | 0.30 |
+| `…sport-rules-handdrawn-infographic-basketball` | edtech | 598 | 2 | 0.33% | 0.29 |
+
+> **⚠️ Shrinkage does not fix a tiny denominator — a floor does.** `template-fruit-kiwi`
+> (1 save on 29 impressions) ranks **first** under the documented `(saves + 50*p0)/(imp + 50)`
+> and **third** under a Wilson 95% lower bound. At the account mean a 29-impression Pin throws a
+> save 13% of the time; that is not a signal, it is a coin. Admission is now **≥300 impressions
+> AND ≥2 saves**, applied *before* the shrinkage — 300 impressions expects 1.5 saves, so 2+ there
+> can actually differ from the mean. This generalises to every "top performer" list we rank:
+> a rate needs a denominator that could have shown the difference.
+
+**The shape reading from 09-16 survives the 17x revision.** Every earner is a **multi-panel
+frame** — a grid, a design sheet, or a step sequence. **No single-subject hero image has ever
+earned a save on this account.** That is the most portable finding the channel has produced, and
+it is a brief for the image pipeline, not just for Pin selection.
+
+### 3. ⚠️ "The literal look-alike well is dry" was false — a CLI default was hiding it
+
+The 09-18 section retired same-template re-renders as exhausted. They were not: the 09-22 seed
+templates had **10 eligible unpublished siblings** (gown 5, varieties-food 2, sport-rules 2,
+ASL 1), and `--per-template 2` was silently cutting gown from 5 to 2 before anyone saw them.
+A literal sibling — same template, same layout, different subject — is categorically stronger
+evidence than a tag neighbour, so batch 6 takes **all** literal siblings plus tag neighbours
+capped at 2/template, deduplicated on title. **beauty and interior are now genuinely empty**, and
+they are the two best boards. Board mix: edtech 17 · food 12 · fashion 6.
+
+### 4. Copy: batch 5 fixed tool VERBS and left tool GENERALITY
+
+The same defect one level down. **12 of 40 candidates described the template class, not the
+image**: "hand-drawn infographic **for any sport**" on the volleyball Pin, "anatomy labeling
+poster **of any object**" on strawberry cake, "different types **of a chosen food theme**" on
+pizza. A reader looking at a picture of volleyball does not want to be told it works for any
+sport — that is a listing, not a caption.
+
+Fixed in `copyFor`: `bindSlot()` binds the slot to the subject ("for volleyball") using the
+**authored** casing from `subjectOf` — params carry "Korean Cuisine", slugs give "volleyball", so
+lowercasing everything produced "posters for korean cuisine" and title-casing everything produced
+"types of Pizza" mid-sentence. Also removed: non-sentence-initial build instructions ("— pick a
+nature subject … and get a fashion illustration"), the bare noun "template" in the body and alt
+text, and marketing speed claims ("Instagram-ready food content **in seconds**"). `assertCopy`
+now **throws** on generality and on reader-instruction, so this cannot ship silently a third
+time. `ACRONYMS` gained ielts/toefl/gre/sat/cefr — the proposer emitted "Ielts Synonym".
+
+### 5. Visual IP review: 5 of 40 rejected, and 4 were invisible in metadata
+
+| candidate | why |
+|---|---|
+| `sport-rules-…-futsal` | **Adidas three-stripe mark** on the football boot |
+| `food-recipe-tip-…-comfort-food-trap` | **KFC striped chicken bucket** + **Coca-Cola contour bottle** with the dynamic ribbon |
+| `regional-alcoholic-drinks-…-korean` | real brands in correct trade dress — 참이슬 (HiteJinro), 청하 (Lotte), 백세주/百歲酒 (Kooksoondang) |
+| `wine-variety-intro-…-sake` | **"Eden Dave"** signed into the artwork as author |
+| `exam-vocabulary-…-ielts-synonym-vocab` | illegible at feed width (see below) |
+
+**⚠️ "adidas" and "coca-cola" are both already in `IP_NAMES`.** They did not fire because the
+screen reads text and the brands are in the pixels. Adding names to that list does not reduce the
+need to look — it is the NIIMBOT lesson from 09-04, recurring with brands we had already named.
+
+**⚠️ The brand comes from the SUBJECT, not the template.** The same drinks template is entirely
+generic for **Japanese** (米酒/焼酎/梅酒/泡盛/日本酒) and wall-to-wall real brands for **Korean**.
+The same sport-rules template drew an Adidas boot for **futsal**, nothing branded for
+**volleyball**, and the already-published **basketball** Pin is clean (checked — no live
+liability). **A template cleared once is not cleared for its next subject.** Where a category is
+brand-dominated in real life, the model reaches for the brand.
+
+**New gate — review at FEED WIDTH.** A third contact sheet at `magick -resize 236x`, alongside
+the full-image sheet and the bottom-11% credit-line strip. The IELTS vocabulary poster is legible
+zoomed and a grey block at 236px: ~100 rows of body text on a 1200px canvas. **Saves happen in
+the feed**, and every earner on this account reads at thumbnail size. Cheap pass, and it is a
+creative gate the previous five batches never had.
+
+Rejection rate **13% (5/40)**, below the historical 23-27% — batch 6 is mostly literal siblings of
+already-reviewed templates plus edtech/food infographics, which carry less brand surface than the
+product mockups and merch that dominated batches 1-3.
+
+### What to do next
+
+- **Read batch 6 ~2026-10-13 (T+21)**: `cd ~/curify-gtm && node scripts/pinterest_analytics.cjs --days 30`.
+- **Do not pool batch 6 with batches 4+5** — different selection basis. Re-grade 4+5 ~2026-10-09.
+- Plan `~/curify-gtm/data/pinterest/plan-2026-09-22.json`; rejects with reasons in
+  `rejected-2026-09-22.json`. Commit `dc19522` on `jwang/ai-fashion-outreach-2026-09-21`
+  (**local only — not pushed**).
+- Standing: `utm_source=chatgpt.com` was 501 events in 30d against Pinterest's 3. Pinterest is a
+  long-accrual bet and should be resourced like one; the AI-referral channel is the larger,
+  unworked one. See [[project_geo_crawler_policy]].
