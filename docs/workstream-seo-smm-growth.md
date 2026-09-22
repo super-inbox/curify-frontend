@@ -4413,3 +4413,60 @@ is KD 27, above the house ceiling, for 90 searches.
 **What would change this verdict:** a paid test on `bulk photo editing software` / `batch photo
 editing` (the only two terms with CPC) returning cost-per-qualified-conversation better than the
 小红书 motion. That is a ~$100 experiment and a far cheaper way to price this cluster than a page.
+
+---
+
+## 2026-09-22 (c) — Which existing pages can actually be positioned better
+
+`/solutions/ecommerce-visuals` was never built — no route, no reference in code, 404 live. It was a
+proposal in the 09-22 plan, and it is now withdrawn.
+
+The right question is which of the **2,615 pages with impressions** (35,779 impressions → 1,039
+clicks, 2.90% CTR, 30d to 09-21) can be moved. Answer: far fewer than the raw gap suggests, because
+most of the wasted impressions are **structurally unfixable by positioning work**.
+
+### ⛔ Big impression pools that are NOT positioning problems
+
+| pages | impr | clicks | why re-titling will not help |
+|---|---:|---:|---|
+| **MBTI family** (13 pages, pos ≤8) | **4,459** | **19** | `random mbti generator` sits at **pos 5.5 with 0 of 146** impressions clicked. The AI Overview answers it inline. Already diagnosed 2026-08-30 — [[project_mbti_names_ctr_bleed]]. |
+| `/tools/bilingual-subtitles` | 234 | 9 | ⭐ Checked the live SERP: we are **organic #2** and get **0 clicks on 34 impressions** for the head term. Positions 1, 3, 4, 6, 7 are all **browser extensions** for watching Netflix/YouTube with dual subtitle tracks, plus a Reddit thread recommending extensions. The searcher wants an extension to *watch* with; we *generate* subtitle files. Textbook [[project_serp_format_match]] — page 1 + zero clicks = wrong PAGE TYPE. A better title would promise something we do not do. |
+| `/blog/f5-tts-voice-cloning` | 556 | 1 | Branded navigational traffic for **someone else's open-source project** (`f5-tts`, pos 40.7). Those searchers want the GitHub repo. |
+
+That is **5,249 impressions — 15% of the site's total — that should be written off rather than
+optimised.** Naming them is the useful part; each has been picked up as an "opportunity" before.
+
+### ⭐ The one real positioning gap, and it already got its fix today
+
+**`/tools/video-dubbing`** — 840 impressions, 53 clicks, **average position 69.4**.
+
+103 queries, and **102 of them sit past position 30**: `ai video dubbing` (68 impr) at **pos 77**,
+`video dubbing` (45) at **pos 79.7**, `video dubbing service`, `free ai video dubbing tool`,
+`dubbing video`. Perfectly on-intent head terms, all on page 7–8.
+
+Position 77 is not a title problem — per [[project_serp_format_match]], title work compounds an
+existing position and never creates one. What this page had was an **internal-link deficit**: until
+2026-09-22 the six `create`-status tools rendered as bare `<button>`s in ToolsGrid and had **no link
+to their own `/tools/<slug>` page from anywhere on the site**. Live `/tools` linked 17 of 23 tool
+pages; `video-dubbing` was one of the six missing.
+
+That shipped today (commit `adf75103`): the cards are stretched links now, so `/tools/video-dubbing`
+gains inbound edges from `/tools`, the home strip, use-case pages and tool-page footers at once.
+Per [[project_new_page_crawl_collapse]] the rule of thumb is ≥3 links from already-indexed sources,
+which this clears.
+
+⚠️ **Checkpoint 2026-10-20** — re-pull `/tools/video-dubbing` position for `ai video dubbing` and
+`video dubbing`. If four weeks of fresh internal links from indexed pages does not move a page off
+position 77, the constraint is domain authority, not linking, and this cluster should be parked
+rather than iterated.
+
+### Striking distance, minus the write-offs
+
+22 pages sit at position 8–25 with ≥80 impressions — 4,602 impressions yielding 96 clicks. Strip
+the MBTI and f5-tts rows above and what remains worth looking at is small:
+`/nano-banana-pro-prompts/tag/woman` (271 impr, **11.1% CTR**, pos 19.8 — already converting well,
+just ranked low), `/tools/packaging-mockup` (214, 6.5%, pos 9.5), `/zh/nano-template/character`
+(259, 2.7%, pos 19.2), `/tools/worksheet-from-video` (106, 3.8%, pos 9.1).
+
+`tag/woman` is the standout: an 11.1% CTR at position 19.8 means the listing works and only the rank
+is holding it back — the opposite of every row in the write-off table.
