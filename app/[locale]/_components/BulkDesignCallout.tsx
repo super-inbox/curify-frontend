@@ -12,13 +12,19 @@
 //
 // The CTA carries its context into /contact via query params, so an inbound
 // lead arrives saying which template or topic produced it rather than as an
-// anonymous "Trial Request". ContactClient reads them; the backend stores
-// `source` on the lead and puts it in the team notification.
+// anonymous "Trial Request". The backend stores `source` on the lead and puts
+// it in the team notification.
+//
+// 2026-09-22: the CTA is no longer a link to /contact. It is the form. Sending
+// someone to a second page and a four-field form to say "I want forty of
+// these" lost most of them — /contact measures ~7 people a month in the
+// refined cohort. InlineContactCapture posts to the same endpoint from here,
+// and still offers /contact as the secondary route for people who want the
+// Calendly rather than the form.
 
-import { Layers, ArrowRight } from "lucide-react";
-import { Link as IntlLink } from "@/i18n/navigation";
+import { Layers } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useClickTracking } from "@/services/useTracking";
+import InlineContactCapture from "./InlineContactCapture";
 
 type Props = {
   /**
@@ -38,20 +44,11 @@ type Props = {
 
 export default function BulkDesignCallout({ source, subject, className }: Props) {
   const t = useTranslations("bulkCallout");
-  // content_id is greppable in admin: bulk-callout:<source>
-  const trackClick = useClickTracking(`bulk-callout:${source}`, "menu_link", "cards");
 
   const title = subject ? t("titleWithSubject", { subject }) : t("title");
-
-  const contactHref = {
-    pathname: "/contact" as const,
-    query: {
-      subject: subject
-        ? t("contactSubjectWith", { subject })
-        : t("contactSubject"),
-      source: `bulk-cta:${source}`,
-    },
-  };
+  const leadSubject = subject
+    ? t("contactSubjectWith", { subject })
+    : t("contactSubject");
 
   return (
     <section
@@ -86,17 +83,22 @@ export default function BulkDesignCallout({ source, subject, className }: Props)
         ))}
       </ul>
 
-      <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-        <IntlLink
-          href={contactHref}
-          onClick={trackClick}
-          className="inline-flex items-center gap-1.5 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-purple-700"
-        >
-          {t("cta")}
-          <ArrowRight className="h-4 w-4" />
-        </IntlLink>
-        <p className="text-xs leading-5 text-neutral-500">{t("note")}</p>
-      </div>
+      {/* t("note") — "Tell us roughly how many designs and what they're for" —
+          used to sit beside the button as helper text. It is the instruction
+          this field wants, so it is the placeholder now rather than a second
+          line of copy saying the same thing.
+          ⚠️ content_id `bulk-callout:<source>` is unchanged but its meaning
+          shifted on 2026-09-22: it was "clicked through to /contact", it is now
+          "attempted to send". Same funnel position, so the series is
+          comparable, but do not read pre-09-22 rows as form submissions. */}
+      <InlineContactCapture
+        className="mt-6 max-w-2xl"
+        source={`bulk-cta:${source}`}
+        subject={leadSubject}
+        cta={t("cta")}
+        note={t("note")}
+        trackingId={`bulk-callout:${source}`}
+      />
     </section>
   );
 }

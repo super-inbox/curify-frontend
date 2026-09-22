@@ -4294,8 +4294,37 @@ documented `one_time_at_signup` grant in both `lib/pricing.ts` and `subscription
 because it assigns rather than increments it can silently **reduce** a balance above 50.
 `/auth/google-login` and `/auth/verify-otp` have no such block.
 
+### Same day — the CTA became the form
+
+⭐ Sending someone to `/contact` to say "I want forty of these" was itself the leak. Two page loads
+and a four-field form stand between intent and a reachable address, and `/contact` measures ~7
+people a month in the refined cohort. `InlineContactCapture` now takes the email where the reader
+already is:
+
+- **`BulkDesignCallout`'s button is no longer a link** — email + an optional note, posted straight
+  to `/user/contact-team`. The note placeholder is the copy that used to sit beside the button as
+  helper text, so the instruction is in the field that wants it rather than said twice.
+- **The use-case lead capture moved above the bullets**, out of the foot of the hero where it was a
+  bare inline text link styled like prose. It is now the first thing under the pitch.
+- `/contact` survives as the **secondary** action ("Schedule a Call") — it is where the Calendly
+  embed lives and some buyers want the call, not the form.
+- A **honeypot** was added: `/contact` was one public form on one page, and this component puts the
+  same email-sending endpoint on several thousand template, topic and blog pages.
+
+⚠️ **`bulk-callout:<source>` changed meaning on 2026-09-22** — it was "clicked through to
+`/contact`", it is now "attempted to send". Same funnel position, so the series stays comparable,
+but do not read pre-09-22 rows as form submissions. Success fires
+`contact:submit:<source>`, **the same id `ContactClient` fires**, so a lead counts once regardless
+of which path produced it.
+
+⚠️ Still unverified end to end: nothing has submitted this form yet, because doing so emails the
+team. One real submission confirms the row in `user_interactions` and the `source` on the lead.
+
 ### Next
 
 The readout is `qualified visits → sample requests → samples delivered`, 2 weeks out. But the
 honest next question is not about this funnel: it is what to do with 993 people a month arriving at
 a closed tool, and whether anything commercial can be put in front of them that is true.
+
+Also still open from the audit: **4 of 11 personas have no contact path at all** — the capture is
+gated on `tier === "b2b"`, so the consumer pages dead-end. Now a one-line change if it is wanted.

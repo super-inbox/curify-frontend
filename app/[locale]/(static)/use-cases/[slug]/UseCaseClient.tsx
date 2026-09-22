@@ -11,6 +11,7 @@ import { useRequireAuth } from "@/services/useRequireAuth";
 import { templatePacksService } from "@/services/templatePacks";
 import { useTracking, useVideoTracking } from "@/services/useTracking";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
+import InlineContactCapture from "@/app/[locale]/_components/InlineContactCapture";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
@@ -365,19 +366,6 @@ export default function UseCaseClient({
       trackAction({ contentId: `${slug}::${demoKey}`, contentType: "page" as const }, "click"),
     [trackAction, slug],
   );
-  // The b2b "let's talk scope" link is the ONLY route from a persona page to a
-  // human, and until now it was a bare untracked <a> to /contact: the click was
-  // invisible and the lead arrived unattributed. Tracked as `page` (matching
-  // share/demo above) and carrying ?source= so /contact stamps the persona onto
-  // the lead. See BulkDesignCallout for the same attribution convention.
-  const handleContactClick = useCallback(
-    () =>
-      trackAction(
-        { contentId: `${slug}::contact-scope`, contentType: "page" as const },
-        "click",
-      ),
-    [trackAction, slug],
-  );
 
   return (
     <main className="mx-auto max-w-[1600px] px-4 pt-3 pb-8 sm:px-6 lg:px-8">
@@ -420,6 +408,32 @@ export default function UseCaseClient({
           {t(`${slug}.description` as never)}
         </p>
 
+        {/* Lead capture, above the bullets rather than below them. This used to
+            be a bare inline text link at the FOOT of the hero — the only route
+            from a persona page to a human, placed after everything else and
+            styled like prose. Now it is the first thing under the pitch, and it
+            takes the address here instead of sending the reader to /contact.
+            text-left because the hero centres on mobile and centred form fields
+            read badly. */}
+        {isB2B && (
+          <div className="mt-5 text-left">
+            <p className="mb-2.5 text-sm font-medium text-neutral-700">
+              <span aria-hidden="true" className="mr-1.5">⚡</span>
+              {tGlobal("interconnection.apiAvailable")}
+            </p>
+            <InlineContactCapture
+              className="max-w-xl"
+              source={`use-case:${slug}`}
+              subject={title}
+              // The shared string ends with its own "→" because it was written
+              // as an inline prose link; the button supplies the arrow icon, so
+              // strip it or the label reads "Let's talk scope → →".
+              cta={tGlobal("interconnection.apiContactCTA").replace(/\s*→\s*$/, "")}
+              trackingId={`${slug}::contact-scope`}
+            />
+          </div>
+        )}
+
         <ul className="mt-5 space-y-2">
           {BULLET_KEYS.filter((key) => t.has(`${slug}.${key}` as never)).map((key) => (
             <li key={key} className="flex items-start gap-2 text-sm text-neutral-700">
@@ -429,22 +443,6 @@ export default function UseCaseClient({
           ))}
         </ul>
 
-        {isB2B && (
-          <p className="mt-5 text-sm font-medium text-neutral-700">
-            <span aria-hidden="true" className="mr-1.5">⚡</span>
-            {tGlobal("interconnection.apiAvailable")}{" "}
-            <IntlLink
-              href={{
-                pathname: "/contact",
-                query: { subject: title, source: `use-case:${slug}` },
-              }}
-              onClick={handleContactClick}
-              className="font-semibold text-purple-700 underline-offset-2 hover:underline"
-            >
-              {tGlobal("interconnection.apiContactCTA")}
-            </IntlLink>
-          </p>
-        )}
       </section>
 
         {videoKey && (
