@@ -324,7 +324,7 @@
       "desc": "Sign language video translator: translate ASL signed footage into English text and subtitles, automatically. Working demo on real video.",
       "meta": {
         "title": "Sign Language Video Translator: ASL to English Subtitles & Text | Curify",
-        "description": "Sign language video translator (ASL → English). Translate signed footage into English text and subtitles. Free and experimental — upload your own ASL video."
+        "description": "Sign language video translator (ASL → English). Translate signed footage into English text and subtitles. Experimental — upload your own ASL video."
       }
     },
     "ai_product_photo_generator": {
@@ -926,12 +926,12 @@
   "aslVideoTranslator": {
     "metadata": {
       "title": "AI ASL Video Translator — Sign Language to Text",
-      "description": "Translate ASL sign language video into English text or subtitles automatically. Free and experimental — upload your own signed footage and see what it reads."
+      "description": "Translate ASL sign language video into English text or subtitles automatically. Experimental — upload your own signed footage and see what it reads."
     },
     "title": "AI ASL Video Translator",
-    "description": "Translate American Sign Language video into English text or subtitles, automatically. Free while experimental: upload your clip and check the result yourself — machine translation of sign language is unreliable and the output needs review.",
+    "description": "Translate American Sign Language video into English text or subtitles, automatically. {credits} credits per minute, and still experimental: upload your clip and check the result yourself — machine translation of sign language is unreliable and the output needs review.",
     "example": "Example: a short conversational ASL clip translated into English subtitles in one pass. No interpreter, no manual transcription.",
-    "cta": "Try It Free",
+    "cta": "Try It",
     "demo": {
       "aria": "ASL sign language video translation demo",
       "caption": "Watch the demo clip to see ASL translated into English subtitles.",
@@ -942,12 +942,12 @@
       "point1": "Automatic — no manual interpreter step. Upload a signed video, get English subtitles.",
       "point2": "Useful as a first pass — a rough sense of what a clip is about when the alternative is nothing at all. It is not a substitute for an interpreter, and it should not be published without someone who signs checking it.",
       "point3": "Output formats designed for distribution: burned-in subtitles, SRT for YouTube, or plain transcript text.",
-      "point4": "Free and experimental. ASL translation is a hard, unsolved problem — the output is unverified machine translation and is often wrong, so check it against the signing before you publish it."
+      "point4": "{credits} credits per minute, and still experimental. ASL translation is a hard, unsolved problem — the output is unverified machine translation and is often wrong, so check it against the signing before you publish it."
     },
     "faq": {
       "title": "Frequently Asked Questions",
       "q1": "Is the ASL video translator available today?",
-      "a1": "Yes, and it is free. It is also experimental: the translation is produced by a general-purpose vision model, not a model trained on sign language, and it is frequently wrong — sometimes in ways that read as fluent and confident. Treat the output as a draft to check, not a finished translation, and never publish it as an accessibility caption without review.",
+      "a1": "Yes. It costs {credits} credits per minute, and it is experimental: the translation is produced by a general-purpose vision model, not a model trained on sign language, and it is frequently wrong — sometimes in ways that read as fluent and confident. Treat the output as a draft to check, not a finished translation, and never publish it as an accessibility caption without review.",
       "q2": "Does it work on languages other than ASL?",
       "a2": "The current demo targets American Sign Language specifically. Sign languages are not mutually intelligible — BSL (British), Auslan (Australian), and LSF (French) have different grammars and vocabularies. We are scoping additional sign languages based on demand from early-access signups."
     },

@@ -50,7 +50,7 @@ describe("paywall routing", () => {
     // The other half of the same failure. `useFreeformGenerate.ts` kept its own
     // `= 10` from the 10-credit era and was missed when generation was cut to 5
     // on 2026-08-16, so for two weeks anyone holding 5-9 credits was refused a
-    // generation they could afford — the tail of the 50-credit signup grant, to
+    // generation they could afford — the tail of the then-50-credit signup grant, to
     // the cohort closest to converting. Every other surface already reads the
     // shared constant; this pins that down so the price can only move in one
     // place. `lib/pricing.ts` is the source of truth.

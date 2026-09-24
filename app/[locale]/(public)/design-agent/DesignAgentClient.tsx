@@ -119,7 +119,9 @@ export default function DesignAgentClient({
   const [dirError, setDirError] = useState<string | null>(null);
   // Arriving from a workflow entry shows a BRIEF, not a running job. The button
   // on the topic page is navigation; turning a navigation click into a 50-credit
-  // spend (5 steps x 10) with no confirmation was the worst defect in the audit.
+  // spend (5 steps x 10, when an image cost 10) with no confirmation was the worst
+  // defect in the audit. Unrelated to the signup grant, which also happened to be 50
+  // at the time and is 25 as of 2026-09-23.
   const [showBrief, setShowBrief] = useState(true);
   const ladder = workflowDomain ? WORKFLOWS_BY_DOMAIN[workflowDomain] : undefined;
   const [selected, setSelected] = useState<Set<number>>(

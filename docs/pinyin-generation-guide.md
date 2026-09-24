@@ -23,6 +23,7 @@ Measured on the 2026-07-18 HSK2 reading deck (50 cards). The model, left to comp
 | **wrong tone mark** | right syllable, wrong diacritic | `xiū bū` → **xiū bǔ** (补 is 3rd tone) |
 | **dropped / added syllable** | pinyin doesn't align with the characters | `zhī hóu zi` (dropped 一) → **yì zhī hóu zi**; `jǐng jǐn lǐ` → **jǐng lǐ** |
 | **garbled syllable** | a syllable renders as noise | `dàjiā dàjiā á` → **dàjiā dōu** (都 = dōu) |
+| **er-hua orphan** (点儿 only) | an extra syllable is typeset after 儿, or `diǎnr` is pulled onto 点 alone and a invented syllable sits over 儿 | `yì diǎnr r yě` / `yì diǎnr rī yě` / `yì diǎn  r  ba` → **yì diǎnr yě** |
 
 ### The rules the model breaks most
 
@@ -33,6 +34,7 @@ Measured on the 2026-07-18 HSK2 reading deck (50 cards). The model, left to comp
   - In verb reduplication 一 is neutral: 看一看 kàn yi kàn.
 - **不 sandhi:** `bù` normally; `bú` **only** before a 4th tone — 不是 bú shì, but 不舒服 bù shūfu, 不多 bù duō.
 - **只:** measure word = **zhī** (1st); 只有/只是 (only) = **zhǐ** (3rd).
+- **Do not author 点儿 at all.** This is the construct the model is worst at: **3 of 8** instances failed across the 2026-09-23 batch (dentist 一点儿, market 一点儿, gym 有点儿; the other five rendered fine), and a straight re-roll of a failed card reproduced it in mutated form (`r` → `rī`). A ~38% per-instance failure rate is not worth re-rolling against when the reword is free. Write **一点 / 有点 / 喝点 / 早点** instead — ordinary written Chinese, and the defect disappears. Other er-hua is fine and has never failed: 这儿 zhèr, 画儿 huàr, 女孩儿 háir, 玩儿 wánr all render correctly. The lesson generalizes: when a construct fails QA, reword it; do not re-roll it.
 - **Neutral tones:** 妈妈 māma, 眼睛 yǎnjing, 姐姐 jiějie, 孩子 háizi, 朋友 péngyou, 喜欢 xǐhuan, 舒服 shūfu, 東西/东西 dōngxi, 头发 tóufa, 咳嗽 késou, 行李 xíngli, 时候 shíhou, 故事 gùshi, 月亮 yuèliang, 认识 rènshi, 休息 xiūxi, 窗户 chuānghu, 精神 jīngshen, 客气 kèqi.
 
 ### 多音字 seen in kids' stories (extend this table when new ones appear)
@@ -59,13 +61,22 @@ The machine-readable version lives in [`scripts/configs/pinyin_overrides.json`](
 | 好 | **hǎo / hào** | 好看 hǎo kàn; 爱好 ài hào | — |
 | 系 | **jì** | 系安全带 fasten a seat belt | xì (relation) |
 | 盛 | **chéng / shèng** | 盛饭 chéng; 盛大 shèng | — |
+| 便 | **biàn / pián** | 方便 fāng biàn; 便宜 pián yi | the two collide on one line in 又方便又便宜 |
+| 假 | **jià** | 病假/请假 sick leave | jiǎ (fake) |
+| 量 | **liáng** | 量体温 take a temperature | liàng (quantity) |
+| 结 | **jié** | 结账 settle the bill | jiē |
+| 数 | **shù** | 数字 digit; 钱数 amount | shǔ (to count) |
+| 干 | **gān** | 衣服干了 dry | gàn (to do) |
+| 重 | **zhòng** | 重要 important | chóng (again) |
+| 号 | **hào** | 手机号; 大号 size | — |
+| 卡 | **kǎ** | 手机卡, 借书卡 | qiǎ (to wedge) |
 
 ## The generation method that holds up: **authored-verbatim typeset**
 
 Do **not** let the model write the passage. Author it, then make the model a typesetter.
 
 1. **Author the content by hand** as structured data per card: `title_zh`, `title_en`, illustration `scene`, 8 `lines` of `[pinyin, hanzi]`, and 8 `vocab` rows of `[hanzi, pinyin, en]`. Keep sentences short and HSK-level; apply every rule above.
-2. **Prompt the model to TYPESET IT VERBATIM** — render every character and every pinyin syllable *with tone marks* exactly as given; do not change, add, remove, reorder, or "correct" anything; each pinyin line sits directly above its own characters; no repeats. State that the tone marks are deliberate (incl. 一/不 sandhi and readings like 圈=juàn) so the model doesn't "helpfully" normalize them.
+2. **Prompt the model to TYPESET IT VERBATIM** — render every character and every pinyin syllable *with tone marks* exactly as given; do not change, add, remove, reorder, or "correct" anything; each pinyin line sits directly above its own characters; no repeats. State that the tone marks are deliberate (incl. 一/不 sandhi and readings like 圈=juàn) so the model doesn't "helpfully" normalize them. The hint list is built **per card** from that card's own authored pinyin (`polyphoneHints()` in the generator) — a fixed list eventually asserts a reading the card contradicts (`只=zhī` is right for the measure word but wrong for a card using 只有 zhǐ yǒu), and a prompt that argues with its own passage is worse than no hint.
 3. **Layout instructions still matter:** fixed `适合水平 HSK N` badge, `阅读课文 | Reading Lesson` ribbon, left = passage, right = illustrations only, bottom = `生词 | New Words` 2×4 grid numbered in reading order.
 
 **Runnable implementation: [`scripts/generate_hsk_reading_cards.cjs`](../scripts/generate_hsk_reading_cards.cjs)** — reads an authored card config (`scripts/configs/hsk_*.json`), builds the verbatim-typeset prompt, generates, watermarks, previews, and writes the `nano_inspiration` records. Use `--review-dir=` to also drop unwatermarked copies for the 声调 QA pass below. (Its ancestors are the 2026-07-18 one-offs under `raw/hsk2-reading-deliverable/generators/`.) Optionally seed pinyin with `pypinyin` (Style.TONE + `tone_sandhi`) as a first pass, then hand-fix against the tables above — but **the model still needs the finished pinyin verbatim**; pypinyin alone does not fix the image model.

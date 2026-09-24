@@ -1,5 +1,6 @@
 // lib/create-job-ui.ts
 import type { AudioOption, BackendJobType } from "@/types/projects";
+import { FREE_SUBTITLE_SECONDS } from "@/lib/pricing";
 
 export type UiConfig = {
   title: string;
@@ -35,8 +36,16 @@ export type UiConfig = {
   // Override audio_option regardless of voiceover toggle
   forceAudioOption?: AudioOption;
 
-  // pricing (per minute)
+  // pricing (per minute). Must equal JOB_CREDIT_COST[...] in curify_background —
+  // this is a hand-maintained SECOND copy of the backend's rate, and it is what the
+  // modal quotes AND gates on. Four of the six entries had drifted by 2026-09-24.
   ratePerMinute: number;
+
+  // Seconds that are free on EVERY video before ratePerMinute starts applying.
+  // Only subtitle captioning has one; omitted means the whole duration bills.
+  // Mirrors the SUBTITLE_ONLY branch of compute_processing_fee, which charges on
+  // `duration - FREE_SUBTITLE_SECONDS` and returns 0 when that is <= 0.
+  freeSecondsPerVideo?: number;
 
   // CTA label
   ctaLabel: string;
@@ -68,16 +77,19 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     allowVoiceover: false,
     allowSubtitles: true,
     subtitleOptions: ["Target", "Bilingual"],
-    // FREE — must stay in sync with JOB_CREDIT_COST["ASL_TRANSLATION"] in
-    // curify_background, which went to 0 on 2026-08-29. It was 8/min on the
-    // reasoning that vision inference costs more per minute than STT. True, and
-    // beside the point: scored against verified human ground truth the recogniser
+    // 8/min — must stay in sync with JOB_CREDIT_COST["ASL_TRANSLATION"] in
+    // curify_background. Priced on vision inference costing more per minute than
+    // STT. It was zeroed on 2026-08-29 and restored on 2026-09-24.
+    //
+    // ⚠️ The zero was a correctness decision, not a discount, and nothing has
+    // invalidated it: scored against verified human ground truth the recogniser
     // returned WER 0.92 on the one real user video we can score, and two runs of
-    // the same video disagreed with each other at WER 0.97. We were charging for
-    // output documented in writing as untrustworthy. Zero rather than removed —
-    // the tool stays live because it is the only demand signal and corpus source
-    // we have. Covered by lib/__tests__/pricing.test.ts.
-    ratePerMinute: 0,
+    // the same video disagreed with each other at WER 0.97. We are billing again
+    // for output documented in writing as untrustworthy, so the unverified notice
+    // the pipeline stamps on every job is now the only disclosure a paying user
+    // gets — a deaf viewer cannot check the captions against the source.
+    // Covered by lib/__tests__/pricing.test.ts.
+    ratePerMinute: 8,
     ctaLabel: "Translate Signing",
   },
   subtitle_only: {
@@ -90,7 +102,8 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     allowSubtitles: true,
     subtitleOptions: ["Target", "Bilingual"],
     allowRequireTranslationToggle: true,
-    ratePerMinute: 0,
+    ratePerMinute: 2,
+    freeSecondsPerVideo: FREE_SUBTITLE_SECONDS,
     ctaLabel: "Add Subtitles",
   },
   srt_translator: {
@@ -116,7 +129,7 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     allowVoiceover: false,
     allowSubtitles: false,
     subtitleOptions: ["None"],
-    ratePerMinute: 0,
+    ratePerMinute: 2,
     ctaLabel: "Start",
   },
   youtube_subtitles: {
@@ -142,7 +155,7 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     allowVoiceover: false,
     allowSubtitles: false,
     subtitleOptions: ["None"],
-    ratePerMinute: 0,
+    ratePerMinute: 2,
     ctaLabel: "Start",
   },
   speech_translator: {
@@ -157,7 +170,7 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     allowSubtitles: false,
     subtitleOptions: ["None"],
     forceAudioOption: "dubbed",
-    ratePerMinute: 5,
+    ratePerMinute: 3,
     ctaLabel: "Start Translation",
   },
   nano_template_generation: {
@@ -176,4 +189,24 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
 
 export function getJobUiConfig(jobType: BackendJobType): UiConfig {
   return JOB_UI_CONFIG[jobType];
+}
+
+/** Credits a job of this duration will cost, as quoted to the user before submit.
+ *
+ *  Mirrors `compute_processing_fee` in curify_background/app/utils/credit_utils.py
+ *  exactly, and must keep mirroring it: this number is both the "Credits Required"
+ *  figure and the client-side affordability gate, so an estimate below the real
+ *  charge lets a job through that the backend then rejects, and one above it blocks
+ *  a job the user can afford. Both have happened.
+ *
+ *  The two shapes that matter, and that the inline version got wrong:
+ *    - Minutes round UP, then multiply — `max(1, ceil(sec/60)) * rate`. Multiplying
+ *      first and rounding the product under-quotes every part-minute.
+ *    - A job type with a free allowance bills only the excess, and bills NOTHING
+ *      when the whole video fits inside it. */
+export function estimateJobCost(seconds: number, ui: UiConfig): number {
+  if (!Number.isFinite(seconds) || seconds <= 0) return 0;
+  const billableSeconds = Math.max(0, seconds - (ui.freeSecondsPerVideo ?? 0));
+  if (billableSeconds <= 0) return 0;
+  return Math.max(1, Math.ceil(billableSeconds / 60)) * ui.ratePerMinute;
 }

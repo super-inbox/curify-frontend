@@ -285,7 +285,7 @@
     "asl_video_translator": {
       "meta": {
         "title": "Gebärdensprache Video Übersetzer: ASL zu Englisch Untertitel & Text | Curify",
-        "description": "Videoübersetzer für Gebärdensprache (ASL → Englisch). Wandeln Sie gebärdete Videos in englischen Text und Untertitel um. Kostenlos und experimentell – laden Sie Ihr eigenes ASL-Video hoch."
+        "description": "Videoübersetzer für Gebärdensprache (ASL → Englisch). Wandeln Sie gebärdete Videos in englischen Text und Untertitel um. Experimentell – laden Sie Ihr eigenes ASL-Video hoch."
       },
       "title": "Gebärdensprache Video Übersetzer (ASL)",
       "desc": "Gebärdensprache Video Übersetzer: übersetze ASL-unterzeichnetes Filmmaterial automatisch in englischen Text und Untertitel. Funktionierende Demo mit echtem Video."
@@ -955,12 +955,12 @@
   "aslVideoTranslator": {
     "metadata": {
       "title": "AI ASL Video Übersetzer | Gebärdensprache in englische Untertitel",
-      "description": "Übersetzen Sie ASL-Gebärdensprachvideos automatisch in englischen Text oder Untertitel. Kostenlos und experimentell – laden Sie Ihr eigenes gebärdetes Video hoch und sehen Sie, was gelesen wird."
+      "description": "Übersetzen Sie ASL-Gebärdensprachvideos automatisch in englischen Text oder Untertitel. Experimentell – laden Sie Ihr eigenes gebärdetes Video hoch und sehen Sie, was gelesen wird."
     },
     "title": "AI ASL Video Übersetzer",
-    "description": "Übersetzen Sie Videos in Amerikanischer Gebärdensprache automatisch in englischen Text oder Untertitel. Kostenlos, solange es experimentell ist: Laden Sie Ihren Clip hoch und prüfen Sie das Ergebnis selbst – die maschinelle Übersetzung von Gebärdensprache ist unzuverlässig und muss kontrolliert werden.",
+    "description": "Übersetzen Sie Videos in Amerikanischer Gebärdensprache automatisch in englischen Text oder Untertitel. {credits} Credits pro Minute, und weiterhin experimentell: Laden Sie Ihren Clip hoch und prüfen Sie das Ergebnis selbst – die maschinelle Übersetzung von Gebärdensprache ist unzuverlässig und muss kontrolliert werden.",
     "example": "Beispiel: ein kurzer konversationeller ASL-Clip, der in einem Durchgang in englische Untertitel übersetzt wird. Kein Dolmetscher, keine manuelle Transkription.",
-    "cta": "Kostenlos testen",
+    "cta": "Jetzt testen",
     "demo": {
       "aria": "Demo zur Übersetzung von ASL-Gebärdensprache-Videos",
       "caption": "Sehen Sie sich den Democlip an, um ASL in englische Untertitel übersetzt zu sehen.",
@@ -971,12 +971,12 @@
       "point1": "Automatisch – kein manueller Dolmetscher-Schritt. Laden Sie ein gebärdetes Video hoch, erhalten Sie englische Untertitel.",
       "point2": "Nützlich als erster Überblick — eine grobe Vorstellung davon, worum es in einem Clip geht, wenn die Alternative gar nichts ist. Es ersetzt keine Dolmetschung und sollte nicht veröffentlicht werden, ohne dass eine gebärdende Person es geprüft hat.",
       "point3": "Ausgabeformate, die für die Verbreitung konzipiert sind: eingebettete Untertitel, SRT für YouTube oder einfacher Transkriptionstext.",
-      "point4": "Kostenlos und experimentell. Die Übersetzung von Gebärdensprache ist ein schwieriges, ungelöstes Problem: Die Ausgabe ist ungeprüfte maschinelle Übersetzung und häufig falsch. Prüfen Sie sie anhand der Gebärden, bevor Sie sie veröffentlichen."
+      "point4": "{credits} Credits pro Minute, und weiterhin experimentell. Die Übersetzung von Gebärdensprache ist ein schwieriges, ungelöstes Problem: Die Ausgabe ist ungeprüfte maschinelle Übersetzung und häufig falsch. Prüfen Sie sie anhand der Gebärden, bevor Sie sie veröffentlichen."
     },
     "faq": {
       "title": "Häufig gestellte Fragen",
       "q1": "Ist der ASL-Videoübersetzer heute verfügbar?",
-      "a1": "Ja, und er ist kostenlos. Er ist außerdem experimentell: Die Übersetzung stammt von einem allgemeinen Bildmodell, nicht von einem auf Gebärdensprache trainierten Modell, und sie ist häufig falsch – teils auf eine Weise, die flüssig und selbstsicher klingt. Behandeln Sie die Ausgabe als zu prüfenden Entwurf, nicht als fertige Übersetzung, und veröffentlichen Sie sie niemals ungeprüft als barrierefreien Untertitel.",
+      "a1": "Ja. Er kostet {credits} Credits pro Minute und ist experimentell: Die Übersetzung stammt von einem allgemeinen Bildmodell, nicht von einem auf Gebärdensprache trainierten Modell, und sie ist häufig falsch – teils auf eine Weise, die flüssig und selbstsicher klingt. Behandeln Sie die Ausgabe als zu prüfenden Entwurf, nicht als fertige Übersetzung, und veröffentlichen Sie sie niemals ungeprüft als barrierefreien Untertitel.",
       "q2": "Funktioniert es auch mit anderen Sprachen als ASL?",
       "a2": "Die aktuelle Demo richtet sich speziell an American Sign Language. Gebärdensprachen sind nicht gegenseitig verständlich – BSL (Britisch), Auslan (Australisch) und LSF (Französisch) haben unterschiedliche Grammatiken und Wortschätze. Wir prüfen zusätzliche Gebärdensprachen basierend auf der Nachfrage von Anmeldungen für den frühen Zugang."
     },

@@ -24,8 +24,9 @@
  *  OpenAI image API sit at $0.04–0.20 for the user — we were charging 5–20× the
  *  market on the thing most people come here to do. 5 credits still holds a
  *  52–74% margin at the top of the cost range, and doubles what the 50-credit
- *  signup grant buys (5 images → 10), which is the number that decides whether a
- *  new user ever reaches a second generation.
+ *  signup grant bought (5 images → 10), which is the number that decides whether a
+ *  new user ever reaches a second generation. (The grant went back to 50's worth of
+ *  5 images when it was cut to 25 on 2026-09-23 — see PLAN_CREDITS.)
  *
  *  Not 3: at $0.30 the margin collapses to ~20% if the real invoice lands near
  *  the top of the vendor's range, and that range is list price we have not yet
@@ -54,11 +55,15 @@ export const IMAGE_GENERATION_CREDITS = 5;
  *  local rembg/u2net), so margin is ~100% at $2, $4, $9 and $19 alike, and the only
  *  real cost is worker occupancy on a single worker.
  *
- *  ⚠️ 40 is BELOW the 50-credit signup grant, which the previous prices were
- *  deliberately kept above. The price no longer guards this on its own —
- *  `design_tool_pipelines.FREE_GRANT_EXCLUDED_JOBS` is now the ONLY thing stopping
- *  a free grant from buying a factory file. Do not remove that carve-out without
- *  deciding, separately and on purpose, that a free account should get one. */
+ *  ⚠️ `design_tool_pipelines.FREE_GRANT_EXCLUDED_JOBS` is what stops a free grant
+ *  from buying a factory file. Do not remove that carve-out without deciding,
+ *  separately and on purpose, that a free account should get one.
+ *
+ *  40 sat BELOW the 50-credit signup grant from 2026-08-30, leaving the carve-out as
+ *  the only guard; the 2026-09-23 cut to 25 put price back above it. Do not start
+ *  relying on that again — it is a coincidence of two numbers that each moved twice
+ *  in a quarter, and price has never protected the case the carve-out exists for on
+ *  a paid or topped-up account. */
 export const STICKER_EXPORT_CREDITS = 40;
 
 /** Credits for a print-ready acrylic standee / keychain package.
@@ -84,13 +89,30 @@ export const ACRYLIC_EXPORT_CREDITS = 50;
  *  IMAGE_GENERATION_CREDITS because it is that same call plus dieline
  *  rasterization and geometry enforcement.
  *
- *  Stays OUT of FREE_GRANT_EXCLUDED_JOBS. It is a model-rendered picture of a box,
- *  not a manufacturable file — the commodity side of the line the carve-out draws. */
+ *  2026-09-24 — moved INTO `design_tool_pipelines.FREE_GRANT_EXCLUDED_JOBS`, so the
+ *  price is unchanged but it is now payable from PURCHASED credits only, like the
+ *  two factory exports. It had been argued out of that set as "a model-rendered
+ *  picture of a box, not a manufacturable file" — the commodity side of the line.
+ *  What that missed is the vendor bill above: this is the only D2M tool where a
+ *  free grant spends cash rather than idle CPU. */
 export const PACKAGING_MOCKUP_CREDITS = 10;
 
 /** Credits for a URL → product video generation.
  *  Mirrors `product_video_pipeline.PRODUCT_VIDEO_CREDITS` (30.0). */
 export const PRODUCT_VIDEO_CREDITS = 30;
+
+/** Seconds of subtitle captioning that are free on EVERY video, before
+ *  SUBTITLE_CAPTIONING is charged on the excess.
+ *
+ *  Mirrors `settings.FREE_SUBTITLE_SECONDS` (900 = 15 min) and, critically, the
+ *  shape of `compute_processing_fee`'s SUBTITLE_ONLY branch: the allowance is
+ *  per VIDEO, not per account or per month, and it resets every job.
+ *
+ *  It lives here because the cost estimate is the only place a user learns what a
+ *  job will cost. Quoting a flat per-minute rate for this job type over-charges
+ *  every clip under 15 minutes on screen — which is most of them — and quoting
+ *  zero (what the modal did until 2026-09-24) under-charges every one above it. */
+export const FREE_SUBTITLE_SECONDS = 900;
 
 /** USD value of one credit — `extra_minute_price` on the backend. Used to render
  *  approximate dollar equivalents; never used to compute an actual charge. */
@@ -99,14 +121,21 @@ export const USD_PER_CREDIT = 0.1;
 /** Credit allowance per plan. Mirrors `monthly_credits` in
  *  `subscription_constants.SUBSCRIPTION_PLANS`.
  *
- *  ⚠️ FREE's 50 is granted ONCE at signup, not monthly — the backend key is named
+ *  ⚠️ FREE's 25 is granted ONCE at signup, not monthly — the backend key is named
  *  `monthly_credits` but carries `grant_type: "one_time_at_signup"`, and nothing
  *  refreshes it. Do not render it as a monthly allowance.
+ *
+ *  2026-09-23 — FREE cut 50 → 25. The grant, not the paywall, was why nobody ever
+ *  paid: 60 days of it granted ~33,750 credits against 3,228 consumed, 5 of 431
+ *  active users held a zero balance, and the credit paywall had fired 7 times in the
+ *  product's lifetime. 25 still buys 5 image generations; the backend pins it at
+ *  >= 3x IMAGE_GENERATION_CREDITS so a later cut cannot quietly make the product
+ *  untryable. One thing it no longer buys is a product video (30) — deliberate.
  *
  *  Lived as a local const in PricingClient.tsx until 2026-08-30, which is how that
  *  page came to print 5,000 for PRO in the comparison table while the plan card
  *  above it printed 1,200 from this same source. */
-export const PLAN_CREDITS = { FREE: 50, CREATOR: 200, PRO: 1200 } as const;
+export const PLAN_CREDITS = { FREE: 25, CREATOR: 200, PRO: 1200 } as const;
 
 /** Credits to remove the watermark from one generated file (image or video).
  *

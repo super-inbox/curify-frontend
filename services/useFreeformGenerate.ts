@@ -19,7 +19,7 @@ import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
  *  charges: this file declared its own `= 10` from the 10-credit era and was
  *  missed when generation was cut to 5 on 2026-08-16, so from then until
  *  2026-08-30 anyone holding 5-9 credits was told they could not afford a
- *  generation they could afford — i.e. the last image of the 50-credit signup
+ *  generation they could afford — i.e. the last image of the then-50-credit signup
  *  grant was refused, to the cohort closest to converting. This is a fast path
  *  only; the backend pre-flight is the real gate. */
 const CREDITS_COST = IMAGE_GENERATION_CREDITS;

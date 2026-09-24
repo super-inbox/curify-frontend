@@ -284,11 +284,36 @@ export default async function NanoTemplatePage({ params }: Props) {
   />
 </section>
 
-      {/* The page's only substantial UNIQUE prose. It sits above the bulk
-          callout on purpose: that callout's body is byte-identical on all 352
-          template pages, and Google was picking it as the SERP snippet because
-          it was the largest contiguous prose block near the top of a page
-          whose visible text is only ~4.6KB. */}
+      {/* Bulk callout — moved ABOVE "About this template" on 2026-09-22 at the
+          operator's request, so the commercial ask lands before the prose.
+
+          It WAS below on purpose: this callout's body is byte-identical across
+          1,406 template and example pages, and Google had previously chosen it
+          as the SERP snippet because it was the largest contiguous prose block
+          near the top of a page whose visible text is only ~4.6KB (fixed by
+          b4684112 on 2026-09-05, by ordering the unique prose above it).
+
+          ✅ That constraint is now handled at the component instead of by
+          ordering: BulkDesignCallout carries `data-nosnippet`, so Google will
+          not quote it whatever position it sits in. See the note there.
+          The About block below is still the page's only substantial UNIQUE
+          prose and is still what we want in the snippet — it is simply no
+          longer competing with this one.
+
+          CHECK BY 2026-10-20 anyway: spot-check SERP snippets on a few
+          /nano-template/* pages. Today they correctly show each template's own
+          description. */}
+      <section className="mt-10">
+        <BulkDesignCallout
+          source={`nano-template/${slug}`}
+          subject={categoryLabel || undefined}
+        />
+      </section>
+
+      {/* The page's only substantial UNIQUE prose, and what we want Google to
+          pick as the SERP snippet. It used to sit ABOVE the bulk callout to
+          guarantee that; see the warning on the callout for what changed and
+          what to re-check. */}
       {h2What || h2Who || h2How.length > 0 || h2Prompts.length > 0 ? (
         <section className="mt-10">
                     <h2 className="text-lg font-bold text-neutral-900">About this template</h2>
@@ -343,12 +368,6 @@ export default async function NanoTemplatePage({ params }: Props) {
         </section>
       ) : null}
 
-      <section className="mt-10">
-        <BulkDesignCallout
-          source={`nano-template/${slug}`}
-          subject={categoryLabel || undefined}
-        />
-      </section>
 
       <section className="mt-8">
        

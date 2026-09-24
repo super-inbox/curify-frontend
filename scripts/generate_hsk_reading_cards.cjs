@@ -104,6 +104,50 @@ const writeJson = (p, v) => fs.writeFileSync(p, JSON.stringify(v, null, 2) + "\n
 // bearing. The "tone marks are deliberate" sentence in particular stops it
 // from "correcting" 一 sandhi back to the citation tone yī.
 
+// 多音字 whose reading the model most often "normalizes" to the common one.
+// The prompt names only the ones THIS card actually uses, with the reading the
+// card actually wants — a fixed list eventually asserts a reading the card
+// contradicts (只=zhī is right for the measure word but wrong for 只有 zhǐ yǒu),
+// and a prompt that argues with its own passage is worse than no hint at all.
+const POLYPHONES = {
+  "还": ["hai", "huan"], "便": ["bian", "pian"], "只": ["zhi"], "觉": ["jue", "jiao"],
+  "行": ["hang", "xing"], "发": ["fa"], "好": ["hao"], "系": ["ji", "xi"],
+  "长": ["zhang", "chang"], "得": ["de", "dei"], "地": ["de", "di"],
+  "着": ["zhe", "zhao", "zhuo"], "大": ["da", "dai"], "假": ["jia"], "空": ["kong"],
+  "少": ["shao"], "教": ["jiao"], "干": ["gan"], "重": ["zhong", "chong"],
+  "结": ["jie"], "数": ["shu"], "量": ["liang"], "种": ["zhong"], "差": ["cha"],
+  "乐": ["le", "yue"], "为": ["wei"], "都": ["dou", "du"], "号": ["hao"],
+  "卡": ["ka", "qia"], "盛": ["cheng", "sheng"], "圈": ["quan", "juan"],
+};
+
+// Strip tone diacritics so a syllable can be matched to a character's reading.
+const TONELESS = (s) =>
+  s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+// Walk the authored pinyin against the authored characters and report the
+// reading each 多音字 is actually given on this card, e.g. "还=huán, 便=pián".
+function polyphoneHints(c) {
+  const seen = new Map();
+  for (const [py, hz] of c.lines) {
+    const chars = [...hz].filter((ch) => ch >= "\u4e00" && ch <= "\u9fff");
+    const syls = py.trim().split(/[\s，。：？！、]+/).filter(Boolean)
+      .map((x) => x.replace(/[.,:?!"']/g, "")).filter(Boolean);
+    // 儿 in 这儿/点儿/玩儿 rides on the previous syllable, so it has none of its own.
+    const eff = chars.filter((ch, i) => !(ch === "儿" && i > 0 && "这那点画玩孩会".includes(chars[i - 1])));
+    if (eff.length !== syls.length) continue; // misaligned — the validator's problem, not the prompt's
+    eff.forEach((ch, i) => {
+      if (!POLYPHONES[ch]) return;
+      const bare = TONELESS(syls[i]).replace(/r$/, "");
+      if (!seen.has(ch)) seen.set(ch, new Set());
+      seen.get(ch).add(syls[i].replace(/[.,:?!"']/g, "").toLowerCase());
+      void bare;
+    });
+  }
+  const parts = [];
+  for (const [ch, rs] of seen) parts.push(`${ch}=${[...rs].join("/")}`);
+  return parts;
+}
+
 function buildPrompt(c) {
   const passage = c.lines
     .map(([p, h], i) => `  Line ${i + 1}: pinyin "${p}"  /  characters "${h}"`)
@@ -112,6 +156,8 @@ function buildPrompt(c) {
     .map(([h, p, e], i) => `  ${i + 1}. ${h} — ${p} — ${e}`)
     .join("\n");
   const lvl = c.hsk_level;
+  const poly = polyphoneHints(c);
+  const hints = poly.length ? `, and this card's 多音字 readings ${poly.join(", ")}` : "";
 
   return `Create a single vertical (portrait) children's Chinese reading-lesson poster, clean soft off-white paper background, warm gentle watercolor children's illustration style.
 
@@ -124,7 +170,7 @@ FIXED LAYOUT:
 - The ONLY words printed anywhere on the poster are: "适合水平 HSK ${lvl}", "阅读课文 | Reading Lesson", "生词 | New Words", the title, the English subtitle, and the passage + vocabulary text given below. Never print a layout instruction as a heading (no "LEFT COLUMN", "RIGHT COLUMN", "PASSAGE", "NEW WORDS"), and put no readable text inside any illustration.
 - Decorative star & heart divider lines, pastel muted natural palette, cute rounded sans-serif font, printable A4 classroom worksheet feel.
 
-TYPESET THIS EXACT TEXT — render every Chinese character and every pinyin syllable with tone marks EXACTLY as written here. The tone marks are correct and deliberate (including 一 as yì/yí sandhi, 不 as bù/bú, and readings like 觉=jiào, 只=zhī, 行=háng, 发=fà, 好=hào, 系=jì); do NOT change, add, remove, reorder, or "correct" any character, pinyin syllable, or tone mark. Each pinyin line sits directly above its own matching characters. Do not repeat any line.
+TYPESET THIS EXACT TEXT — render every Chinese character and every pinyin syllable with tone marks EXACTLY as written here. The tone marks are correct and deliberate (including 一 as yì/yí sandhi, 不 as bù/bú${hints}); do NOT change, add, remove, reorder, or "correct" any character, pinyin syllable, or tone mark. Each pinyin line sits directly above its own matching characters. Do not repeat any line.
 
 PASSAGE (${c.lines.length} lines):
 ${passage}

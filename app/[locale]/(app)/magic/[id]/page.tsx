@@ -1,6 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import { JOB_UI_CONFIG } from "@/lib/create-job-ui";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -148,7 +149,15 @@ export default function Magic() {
               disabled={retrying}
               className="px-5 py-2.5 rounded-full bg-[var(--p-blue)] text-white font-medium hover:opacity-90 transition disabled:opacity-60"
             >
-              {t(failure.aslStrength === "suspected" ? "aslCtaSuspected" : "aslCta")}
+              {t(
+                failure.aslStrength === "suspected" ? "aslCtaSuspected" : "aslCta",
+                // These buttons read "— free" until 2026-09-24, when ASL went back
+                // to a per-minute charge. Offering the most expensive per-minute
+                // tool we sell as the free consolation for a failed job is the
+                // worst possible place to be wrong about a price, so the rate is
+                // passed in rather than written into ten locale files.
+                { credits: JOB_UI_CONFIG.asl_translation.ratePerMinute },
+              )}
             </button>
             {/* Always directly beneath the button, never optional. The
                 recogniser scores WER 0.92 against the one real user video with

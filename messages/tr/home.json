@@ -285,7 +285,7 @@
     "asl_video_translator": {
       "meta": {
         "title": "İşaret Dili Video Çevirmeni: ASL'den İngilizce Altyazılar & Metin | Curify",
-        "description": "İşaret dili video çevirmeni (ASL → İngilizce). İşaret dili videolarını İngilizce metne ve altyazıya dönüştürün. Ücretsiz ve deneysel — kendi ASL videonuzu yükleyin."
+        "description": "İşaret dili video çevirmeni (ASL → İngilizce). İşaret dili videolarını İngilizce metne ve altyazıya dönüştürün. Deneysel — kendi ASL videonuzu yükleyin."
       },
       "title": "İşaret Dili Video Çevirmeni (ASL)",
       "desc": "İşaret dili video çevirmeni: ASL ile işaretlenmiş görüntüleri otomatik olarak İngilizce metin ve altyazıya çevirin. Gerçek videoda çalışan demo."
@@ -1040,12 +1040,12 @@
   "aslVideoTranslator": {
     "metadata": {
       "title": "AI ASL Video Çevirmeni | İşaret Dili'nden İngilizce Altyazılara",
-      "description": "ASL işaret dili videolarını otomatik olarak İngilizce metne veya altyazıya çevirin. Ücretsiz ve deneysel — kendi işaret dili videonuzu yükleyin ve neyi okuduğunu görün."
+      "description": "ASL işaret dili videolarını otomatik olarak İngilizce metne veya altyazıya çevirin. Deneysel — kendi işaret dili videonuzu yükleyin ve neyi okuduğunu görün."
     },
     "title": "AI ASL Video Çevirmeni",
-    "description": "Amerikan İşaret Dili videolarını otomatik olarak İngilizce metne veya altyazıya çevirin. Deneysel olduğu sürece ücretsiz: videonuzu yükleyin ve sonucu kendiniz kontrol edin — işaret dilinin makine çevirisi güvenilir değildir ve çıktının denetlenmesi gerekir.",
+    "description": "Amerikan İşaret Dili videolarını otomatik olarak İngilizce metne veya altyazıya çevirin. Dakika başına {credits} kredi ve hâlâ deneysel: videonuzu yükleyin ve sonucu kendiniz kontrol edin — işaret dilinin makine çevirisi güvenilir değildir ve çıktının denetlenmesi gerekir.",
     "example": "Örnek: bir geçişte İngilizce altyazılara çevrilen kısa bir konuşma ASL klibi. Hiçbir tercüman yok, manuel transkripsiyon yok.",
-    "cta": "Ücretsiz deneyin",
+    "cta": "Deneyin",
     "demo": {
       "aria": "ASL işaret dili video çeviri demosu",
       "caption": "ASL'nin İngilizce altyazılara çevrildiğini görmek için demo klibi izleyin.",
@@ -1056,12 +1056,12 @@
       "point1": "Otomatik — manuel tercüman adımı yok. İşaretli bir video yükleyin, İngilizce altyazılar alın.",
       "point2": "İlk bakış için işe yarar — hiç bilgi olmamasına kıyasla klibin kabaca neyle ilgili olduğunu verir. Bir tercümanın yerini tutmaz ve işaret dili bilen biri kontrol etmeden yayımlanmamalıdır.",
       "point3": "Dağıtım için tasarlanmış çıktı formatları: gömülü altyazılar, YouTube için SRT veya düz transkript metni.",
-      "point4": "Ücretsiz ve deneysel. İşaret dili çevirisi zor ve henüz çözülmemiş bir problemdir: çıktı doğrulanmamış makine çevirisidir ve sık sık hatalıdır; yayımlamadan önce videodaki işaretlerle karşılaştırın."
+      "point4": "Dakika başına {credits} kredi ve hâlâ deneysel. İşaret dili çevirisi zor ve henüz çözülmemiş bir problemdir: çıktı doğrulanmamış makine çevirisidir ve sık sık hatalıdır; yayımlamadan önce videodaki işaretlerle karşılaştırın."
     },
     "faq": {
       "title": "Sıkça Sorulan Sorular",
       "q1": "ASL video çevirmeni bugün mevcut mu?",
-      "a1": "Evet, kullanılabilir ve ücretsizdir. Aynı zamanda deneyseldir: çeviriyi işaret dili üzerinde eğitilmiş bir model değil, genel amaçlı bir görü modeli üretir ve sık sık yanılır — üstelik bazen akıcı ve kendinden emin görünen bir biçimde. Çıktıyı bitmiş bir çeviri değil, kontrol edilmesi gereken bir taslak olarak görün ve gözden geçirmeden erişilebilirlik altyazısı olarak asla yayımlamayın.",
+      "a1": "Evet, kullanılabilir. Dakika başına {credits} kredidir ve aynı zamanda deneyseldir: çeviriyi işaret dili üzerinde eğitilmiş bir model değil, genel amaçlı bir görü modeli üretir ve sık sık yanılır — üstelik bazen akıcı ve kendinden emin görünen bir biçimde. Çıktıyı bitmiş bir çeviri değil, kontrol edilmesi gereken bir taslak olarak görün ve gözden geçirmeden erişilebilirlik altyazısı olarak asla yayımlamayın.",
       "q2": "ASL dışındaki dillerde çalışıyor mu?",
       "a2": "Mevcut demo özellikle Amerikan İşaret Dili'ni hedefliyor. İşaret dilleri karşılıklı anlaşılabilir değildir — BSL (İngiliz), Auslan (Avustralya) ve LSF (Fransız) farklı dilbilgileri ve kelime dağarcıkları vardır. Erken erişim kayıtlarından gelen talebe göre ek işaret dillerini değerlendirmekteyiz."
     },

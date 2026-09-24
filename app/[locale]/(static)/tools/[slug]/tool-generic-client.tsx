@@ -12,6 +12,7 @@ import { PRESET_IMAGE_PARAM } from "@/lib/physical_product_offer";
 import PackagingMockupForm from "@/app/[locale]/_components/PackagingMockupForm";
 import { personasForTool } from "@/lib/tool-personas";
 import { useTranslations, useLocale } from "next-intl";
+import { JOB_UI_CONFIG } from "@/lib/create-job-ui";
 import { useTracking } from "@/services/useTracking";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
 import {
@@ -114,6 +115,15 @@ export default function ToolGenericClient({
   // re-upload artwork they just made here.
   const presetImageUrl = useClientSearchParams()?.get(PRESET_IMAGE_PARAM) ?? null;
   const t = useTranslations(tool.namespace);
+  // Every tool's prose gets `{credits}` — the per-minute rate this tool actually
+  // bills, from the same JOB_UI_CONFIG entry the create modal quotes and gates on.
+  // A string that does not use the placeholder is unaffected.
+  //
+  // This exists because ASL copy said "Free and experimental" in ten locales while
+  // the tool billed 8 credits/min, and the only alternative was writing the digit
+  // into forty translated strings that nothing would ever re-check. Prices in prose
+  // are ICU parameters here — see the policy at the top of lib/pricing.ts.
+  const toolCredits = { credits: JOB_UI_CONFIG[tool.job_type]?.ratePerMinute ?? 0 };
   const tGlobal = useTranslations();
   // Locale string needed by RelatedBlogsByCategory and (less directly) for
   // future per-locale routing inside the linked use-case headers.
@@ -166,7 +176,7 @@ export default function ToolGenericClient({
       className={`${wideMain ? "max-w-[1600px]" : "max-w-5xl"} mx-auto pt-20 px-6 py-12 text-[var(--c2)]`}
     >
       <h1 className="text-4xl font-bold mb-4 text-[var(--c1)]">{t("title")}</h1>
-      <p className="text-lg mb-6">{t("description")}</p>
+      <p className="text-lg mb-6">{t("description", toolCredits)}</p>
 
       {demo?.type === "language_switch" ? (
         <LanguageSwitchVideoDemo
@@ -289,10 +299,10 @@ export default function ToolGenericClient({
       <section className="mt-16">
         <h2 className="text-2xl font-semibold mb-4 text-[var(--c1)]">{t("why.title")}</h2>
         <ul className="list-disc list-inside space-y-2 text-base">
-          <li>{t("why.point1")}</li>
-          <li>{t("why.point2")}</li>
-          <li>{t("why.point3")}</li>
-          <li>{t("why.point4")}</li>
+          <li>{t("why.point1", toolCredits)}</li>
+          <li>{t("why.point2", toolCredits)}</li>
+          <li>{t("why.point3", toolCredits)}</li>
+          <li>{t("why.point4", toolCredits)}</li>
         </ul>
       </section>
 
@@ -304,7 +314,7 @@ export default function ToolGenericClient({
           .map((i) => (
             <div key={i}>
               <p className="text-base mb-2 font-medium">{t(`faq.q${i}` as never)}</p>
-              <p className="text-sm text-gray-600 mb-4">{t(`faq.a${i}` as never)}</p>
+              <p className="text-sm text-gray-600 mb-4">{(t as any)(`faq.a${i}`, toolCredits)}</p>
             </div>
           ))}
 
@@ -320,7 +330,7 @@ export default function ToolGenericClient({
                 .map((i) => ({
                   "@type": "Question",
                   name: t(`faq.q${i}` as never),
-                  acceptedAnswer: { "@type": "Answer", text: t(`faq.a${i}` as never) },
+                  acceptedAnswer: { "@type": "Answer", text: (t as any)(`faq.a${i}`, toolCredits) },
                 })),
             }),
           }}
@@ -356,7 +366,7 @@ export default function ToolGenericClient({
               "@context": "https://schema.org",
               "@type": "WebApplication",
               name: t("title"),
-              description: t("description"),
+              description: t("description", toolCredits),
               applicationCategory: "MultimediaApplication",
               operatingSystem: "Any",
               offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

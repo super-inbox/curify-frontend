@@ -21,7 +21,7 @@ import { authService } from "@/services/auth";
 import { getLangCode, languages } from "@/lib/language_utils";
 import type { SubtitleFormat, AudioOption } from "@/types/projects";
 import type { BackendJobType } from "@/types/projects";
-import { getJobUiConfig } from "@/lib/create-job-ui";
+import { getJobUiConfig, estimateJobCost } from "@/lib/create-job-ui";
 import toast from "react-hot-toast";
 import { useTracking } from "@/services/useTracking";
 
@@ -73,11 +73,15 @@ export default function CreateNewModal() {
   // Compute + display the credit cost from a duration in seconds. Shared by
   // the uploaded-file preview (<video onLoadedMetadata>) and the YouTube
   // metadata probe so both show the same upfront "Credits Required" prompt.
+  //
+  // The arithmetic lives in estimateJobCost (lib/create-job-ui.ts) so it can be
+  // tested against the backend formula. This used to be inline and rounded the
+  // wrong way — `ceil(max(min,1) * rate)` instead of `max(1, ceil(min)) * rate`,
+  // which under-quoted every duration with a part-minute (a 90s translation
+  // showed 8 credits and billed 10).
   const applyDuration = (seconds: number) => {
     if (!Number.isFinite(seconds) || seconds <= 0) return;
-    const minutes = seconds / 60;
-    const billableMinutes = Math.max(minutes, 1);
-    setCost(Math.ceil(billableMinutes * ui.ratePerMinute));
+    setCost(estimateJobCost(seconds, ui));
 
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
