@@ -37,6 +37,13 @@ export default function PackagingMockupForm() {
         Upload the flat dieline and give the real box size. The proportions come from your
         numbers, not from a guess — that is the difference between your box and a generic cube.
       </p>
+      {/* Same rule and same wording as StickerExportForm: as of 2026-09-24 this job
+          is in FREE_GRANT_EXCLUDED_JOBS, so the backend refuses it with
+          NEEDS_PURCHASED_CREDITS when the only balance is signup credits. Saying so
+          up front is cheaper than letting the user fill the form and be bounced. */}
+      <p className="mt-1 text-xs text-neutral-500">
+        Mockups aren&apos;t covered by free signup credits.
+      </p>
 
       <div className="mt-4">
         <ReferenceImageUpload

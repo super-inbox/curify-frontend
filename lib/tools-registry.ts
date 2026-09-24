@@ -385,10 +385,12 @@ export const TOOL_REGISTRY: ToolDef[] = [
     // one already ranks for the tool-intent queries and already has i18n copy in
     // all 10 locales. A near-identical second slug would split that signal.
     //
-    // FREE as of 2026-08-29 (JOB_CREDIT_COST.ASL_TRANSLATION = 0, mirrored in
-    // create-job-ui ratePerMinute and tripwired in lib/__tests__/pricing.test.ts).
-    // It was 8 credits/min from 2026-08-16 and 5 users paid 120 credits for output
-    // we had already documented as untrustworthy. Kept live rather than demoted:
+    // 8 credits/min again as of 2026-09-24 (JOB_CREDIT_COST.ASL_TRANSLATION = 8,
+    // mirrored in create-job-ui ratePerMinute and tripwired in
+    // lib/__tests__/pricing.test.ts). It charged 8/min from 2026-08-16, was zeroed
+    // on 2026-08-29 because 5 users had paid 120 credits for output we had already
+    // documented as untrustworthy, and is now billed again on instruction — see the
+    // warning on JOB_CREDIT_COST. Kept live rather than demoted:
     // `demo` status has no waitlist in this codebase — it falls through to the
     // "Coming Soon" paragraph in tool-generic-client — and the live tool is the
     // only demand signal and evaluation corpus we have.
