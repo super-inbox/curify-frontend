@@ -276,9 +276,15 @@ async function main() {
   // entire batch succeeds (or completes) do we copy into public/images/
   // and update nano_inspiration.json — keeps a half-failed run from
   // leaving partial files in the repo.
+  // ⚠️ Date.now() ALONE IS NOT UNIQUE. Two of these launched from the same shell
+  // line land in the same millisecond, share this directory, and then each copies
+  // EVERY file it finds here into its own packs/<sku>/ — so concurrent --pack runs
+  // silently cross-contaminate. Measured 2026-09-04: four parallel packs each ended
+  // up holding all four packs' images (34-39 files instead of 10). pid + random
+  // makes the path per-process.
   const stagingRoot = path.join(
     os.tmpdir(),
-    `curify_template_examples_${Date.now()}`
+    `curify_template_examples_${Date.now()}_${process.pid}_${Math.random().toString(36).slice(2, 8)}`
   );
   const stagingImageDir = path.join(stagingRoot, "nano_insp");
   const stagingPreviewDir = path.join(stagingRoot, "nano_insp_preview");

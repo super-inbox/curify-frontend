@@ -97,9 +97,18 @@ const QUALITY_STEP = 8;
 
 // CDN sync (optional)
 const DEFAULT_BUCKET = process.env.CDN_BUCKET || "gs://curify-static";
+// Read-side origin for objects the generation pipeline already uploaded.
+const CDN_READ_BASE = (process.env.CDN_READ_BASE || "https://cdn.curify-ai.com").replace(/\/+$/, "");
 // ==================================================
 
 const LOCALE_RE = /^[a-z]{2}$/;
+
+// Drop timestamp stamped onto every record this run creates. sitemap-examples.xml
+// only emits an example that is GSC-visible, belongs to an SEO-retitled template,
+// or is FRESH — and freshness reads `updated_at`. Without this the drop's own
+// pages are invisible to the sitemap until Google finds them some other way,
+// which is the chicken-and-egg that gate was written to break.
+const DROP_TIMESTAMP = new Date().toISOString();
 
 function normalizeDashes(str) {
   return String(str)
@@ -418,27 +427,63 @@ async function fetchSupabaseJobs(pgUrl, opts) {
     conditions.push(`created_at >= $${params.length}`);
   }
 
-  const sql = `SELECT project_id, runtime_config FROM project WHERE ${conditions.join(" AND ")}`;
+  const sql = `SELECT project_id, created_at, runtime_config FROM project WHERE ${conditions.join(" AND ")} ORDER BY created_at`;
   const res = await client.query(sql, params);
   await client.end();
   return res.rows;
 }
 
+// Returns { record, previewJob } — previewJob is non-null when the generation
+// pipeline never produced a preview and this script has to build one.
 function buildSupabaseRecord(job, templatesById) {
   const cfg = job.runtime_config;
-  if (!cfg || !cfg.example_id || !cfg.gcs_object_path || !cfg.preview_gcs_object_path || !cfg.template_id) {
-    console.warn(`  ⚠️ Skipping project ${job.project_id}: missing required runtime_config fields`);
-    return null;
+  const missing = [];
+  if (!cfg) {
+    missing.push("runtime_config");
+  } else {
+    if (!cfg.example_id) missing.push("example_id");
+    if (!cfg.template_id) missing.push("template_id");
+    // Older jobs watermarked in place (gcs_object_path); newer ones keep that
+    // copy clean and write the watermarked one to delivery_object_path.
+    if (!cfg.gcs_object_path && !cfg.delivery_object_path) {
+      missing.push("gcs_object_path|delivery_object_path");
+    }
+  }
+  if (missing.length) {
+    console.warn(
+      `  ⚠️ Skipping project ${job.project_id}: missing runtime_config field(s) ${missing.join(", ")}`
+    );
+    return { record: null, previewJob: null };
   }
 
-  const { example_id, gcs_object_path, preview_gcs_object_path, template_id, locale, params } = cfg;
+  const {
+    example_id,
+    gcs_object_path,
+    preview_gcs_object_path,
+    delivery_object_path,
+    template_id,
+    locale,
+    params,
+  } = cfg;
   const tpl = templatesById.get(template_id);
   if (!tpl) {
     console.warn(`  ⚠️ Skipping ${example_id}: unknown template_id "${template_id}"`);
-    return null;
+    return { record: null, previewJob: null };
   }
 
-  const imageStem = path.posix.basename(gcs_object_path, path.posix.extname(gcs_object_path));
+  // The gallery only ever shows watermarked assets — the same slanted "Curify"
+  // tiling copyFileIfNeeded() applies on the file-based path. When the pipeline
+  // published a separate watermarked copy, that is the one we publish.
+  const fullObjectPath = delivery_object_path || gcs_object_path;
+  const sourceStem = path.posix.basename(
+    gcs_object_path || delivery_object_path,
+    path.posix.extname(gcs_object_path || delivery_object_path)
+  ).replace(/-wm$/, "");
+
+  const previewObjectPath =
+    preview_gcs_object_path || `images/nano_insp_preview/${sourceStem}-prev.jpg`;
+
+  const imageStem = path.posix.basename(fullObjectPath, path.posix.extname(fullObjectPath));
   const title = pickTitle(params || {}, null, imageStem);
   const localesOut = {};
   if (locale) {
@@ -448,16 +493,48 @@ function buildSupabaseRecord(job, templatesById) {
     localesOut[locale].title = title;
   }
 
-  return {
+  const record = {
     id: example_id,
     template_id,
     asset: {
-      image_url: `/${gcs_object_path}`,
-      preview_image_url: `/${preview_gcs_object_path}`,
+      image_url: `/${fullObjectPath}`,
+      preview_image_url: `/${previewObjectPath}`,
     },
     params: params || {},
     ...(locale ? { locales: localesOut } : {}),
+    updated_at: DROP_TIMESTAMP,
   };
+
+  const previewJob = preview_gcs_object_path
+    ? null
+    : { id: example_id, srcObjectPath: fullObjectPath, previewObjectPath };
+
+  return { record, previewJob };
+}
+
+// Pull a full image the pipeline already uploaded back down from the CDN and
+// build the missing preview from it, so the record lands with both assets live.
+async function generateMissingPreviews(previewJobs, previewDir) {
+  const ok = new Set();
+  for (const job of previewJobs) {
+    const url = `${CDN_READ_BASE}/${job.srcObjectPath}`;
+    const outPath = path.join(previewDir, path.posix.basename(job.previewObjectPath));
+    const tmpPath = path.join(os.tmpdir(), `nano-insp-src-${Date.now()}-${path.posix.basename(job.srcObjectPath)}`);
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      await fsp.writeFile(tmpPath, Buffer.from(await res.arrayBuffer()));
+      await generatePreviewWithSizeCap(tmpPath, outPath, false);
+      const kb = ((await fsp.stat(outPath)).size / 1024).toFixed(0);
+      console.log(`  🖼️  preview ${path.basename(outPath)} (${kb} KB)`);
+      ok.add(job.id);
+    } catch (e) {
+      console.warn(`  ⚠️ Preview failed for ${job.id} from ${url}: ${e.message}`);
+    } finally {
+      await fsp.rm(tmpPath, { force: true });
+    }
+  }
+  return ok;
 }
 
 // ===========================================================
@@ -553,6 +630,7 @@ async function main() {
       },
       params,
       locales: localesOut,
+      updated_at: DROP_TIMESTAMP,
     };
 
     addedRecords.push(record);
@@ -560,6 +638,7 @@ async function main() {
 
   // ---- Supabase source ----
   const supabaseRecords = [];
+  const previewJobs = [];
   if (args.supabase) {
     console.log("\n=== Supabase source ===");
     const existingIds = new Set(existingItems.map((it) => it.id).filter(Boolean));
@@ -597,11 +676,31 @@ async function main() {
         continue;
       }
 
-      const record = buildSupabaseRecord(job, templatesById);
+      const { record, previewJob } = buildSupabaseRecord(job, templatesById);
       if (record) {
+        const created = job.created_at instanceof Date ? job.created_at.toISOString().slice(0, 10) : "";
+        console.log(`  + ${record.id}${created ? ` (created ${created})` : ""}`);
         supabaseRecords.push(record);
         existingIds.add(record.id);
+        if (previewJob) previewJobs.push(previewJob);
       }
+    }
+
+    if (previewJobs.length && !args.dryRun) {
+      console.log(`\n🖼️  Generating ${previewJobs.length} missing preview(s) from the published full images ...`);
+      const built = await generateMissingPreviews(previewJobs, PREVIEW_DIR);
+      const dropped = supabaseRecords.filter((r) => previewJobs.some((p) => p.id === r.id) && !built.has(r.id));
+      for (const r of dropped) {
+        console.warn(`  ⚠️ Dropping ${r.id}: no preview could be produced`);
+      }
+      if (dropped.length) {
+        const droppedIds = new Set(dropped.map((r) => r.id));
+        for (let i = supabaseRecords.length - 1; i >= 0; i -= 1) {
+          if (droppedIds.has(supabaseRecords[i].id)) supabaseRecords.splice(i, 1);
+        }
+      }
+    } else if (previewJobs.length) {
+      console.log(`(dry-run) ${previewJobs.length} record(s) would need a generated preview.`);
     }
 
     console.log(`✅ ${supabaseRecords.length} new records from Supabase`);
