@@ -4653,8 +4653,9 @@ Full readout: **`~/curify-gtm/docs/pinterest-site-referrals-2026-09-27.md`**.
   The rise tracks the growing Pin impressions and is real: every visitor carries a Pinterest
   referrer, so the ~09-06 UTM-capture fix did not create it. It is about 0.1% of site traffic, and
   visits are one page deep. Since Aug 1 there have been no signups and one generation.
-- Landing pages: `/` 14, `/topics/beauty` 12, `/topics/learning` 8, `/topics/food` 6. Send Pins
-  to topic pages, not the homepage.
+- Landing pages: `/` 14, `/topics/beauty` 12, `/topics/learning` 8, `/topics/food` 6. The `/`
+  landings are pre-09-17 legacy traffic. Current Pins already link to their board's topic hub with
+  UTM (all 145 in `pins.jsonl`): 29 of 31 visitors since 09-17 arrived that way.
 - **Bot-filter fix.** The admin `_BOT_UA_REGEX` token `pinterest` also matched the in-app
   browser UA (`… Pinterest/iOS`) and dropped 17 of 42 real Pinterest visitors. It is now
   `pinterestbot`, in code and in the rebuilt `bot_free_30d` matview (new `--rebuild` flag on
