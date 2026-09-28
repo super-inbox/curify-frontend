@@ -4664,3 +4664,18 @@ Full readout: **`~/curify-gtm/docs/pinterest-site-referrals-2026-09-27.md`**.
 - Corrects § 2026-09-06 (UTM "never reaches the DB": true only until ~09-06) and the 09-22 (d)
   "Pinterest's 3" UTM events (now 12 and 25 per week). The AI-referral channel is still far larger.
 
+
+## 2026-09-27 (b) — Pinterest batch 7: 34 Pins seeded on 46k impressions
+
+Full notes: `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` § Batch 7.
+
+- The account is at **46,061 impressions and 234 saves (0.51%)** over 30 days, 3.3x the 09-22 figures,
+  and still mostly accrual on batch 3. Seeds were re-derived under the ≥300-impression, ≥2-save
+  floor. New earners: the men's hairstyle guides, pet-safe food, the Khmer costume, the Egypt map.
+- **34 published, 34/34 ok**: 18 literal siblings of seed templates (9 dynasty/regional costumes,
+  7 landmark maps, a pixie cut, a duck food guide) plus 16 tag neighbours. Visual review rejected
+  9 of 55 (childhood snacks, a Chartreuse bottle, a baked "little shine" logo, garbled sari text,
+  two feed-illegible cheat sheets, two single-scene photos, a placeholder brand).
+- The copy guard missed "the specified costume design". It is fixed in `assertCopy`, and all 34
+  captions were rewritten from the images. One Pin (`570831321549788290`) is live with the old copy.
+- Grade ~2026-10-18 (T+21). Do not pool with batch 6.
