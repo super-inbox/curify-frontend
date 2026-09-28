@@ -2903,7 +2903,7 @@ same as "it is not retrievable."
   it answers which board, which template, which shape. Not scheduled as a cron — run it manually.
 - **Attribution has exactly two usable sources, and UTM is not one of them.** Measured 09-05: of
   341,209 `user_interactions` rows in 30 days, **0** contain a query string — the tracker strips
-  it, so `utm_source=pinterest` never reaches the DB. Use `GET /v5/pins/{id}/analytics` per Pin
+  it, so `utm_source=pinterest` never reaches the DB. _(Fixed ~09-06 by `20546ad4`; UTM is usable from then — see § 2026-09-27.)_ Use `GET /v5/pins/{id}/analytics` per Pin
   and `user_interactions.referrer ILIKE '%pinterest%'` for total inbound. Fixing UTM capture is a
   frontend tracker change, not a reporting one.
 - **Content gap is now the binding constraint on this channel**, ahead of anything about
@@ -3084,6 +3084,7 @@ treatment, on the same account, a day apart.
 - `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` — Pinterest channel writeup; registry at `~/curify-gtm/data/pinterest/pins.jsonl` **(moved out of this repo 2026-09-18 — see the migration note in § 2026-09-18)**
 - `~/curify-gtm/scripts/pinterest_demand.cjs` — GSC-by-search-type → per-template demand score + copy phrase; snapshots in `data/pinterest/demand-*.json`
 - `~/curify-gtm/scripts/pinterest_lookalike.cjs` — selection by similarity to the Pins that measurably earned (batch 4 onward, 2026-09-16); supersedes demand ranking as the default, which it demotes to the tie-break. Seeds are **weighted by save rate** from 2026-09-18; override with `--like <example_id>:<weight>`
+- `~/curify-gtm/docs/pinterest-site-referrals-2026-09-27.md` — **on-site** Pinterest referrals (what happens after the click): weekly visitors, landing pages, actions. Rerun with `~/curify-studio/dev/jayw/admin_analysis/pinterest_weekly_referrals.py`. Pairs with `pinterest_analytics.cjs`, which covers the Pin side
 - `~/curify-gtm/scripts/pinterest_analytics.cjs` — per-Pin `GET /v5/pins/{id}/analytics` for every id in the registry, joined to template/board, earners sorted by save, cohort split by publish date. **The readout is this command**; every readout before 2026-09-18 was an ad-hoc script
 - `~/curify-studio/gtm_tools/semrush_kd_2026-06-05_merchandise_design.md` — first KD batch (the `AI product photography` KD 23 reading that has since drifted to 39)
 - `~/curify-studio/docs/design-agent-v0-spec.md` §7ab — why the low-KD trade terms are also the product bets (strategy side of the 2026-09-01 section)
@@ -4640,6 +4641,41 @@ product mockups and merch that dominated batches 1-3.
 - Plan `~/curify-gtm/data/pinterest/plan-2026-09-22.json`; rejects with reasons in
   `rejected-2026-09-22.json`. Commit `dc19522` on `jwang/ai-fashion-outreach-2026-09-21`
   (**local only — not pushed**).
-- Standing: `utm_source=chatgpt.com` was 501 events in 30d against Pinterest's 3. Pinterest is a
+- Standing: `utm_source=chatgpt.com` was 501 events in 30d against Pinterest's 3. _(Pinterest side stale — see § 2026-09-27.)_ Pinterest is a
   long-accrual bet and should be resourced like one; the AI-referral channel is the larger,
   unworked one. See [[project_geo_crawler_policy]].
+
+## 2026-09-27 — Pinterest on-site referrals: rising, still tiny, and the panel was hiding 40% of them
+
+Full readout: **`~/curify-gtm/docs/pinterest-site-referrals-2026-09-27.md`**.
+
+- Pinterest-sourced visitors per week: 7 · 2 · 1 · 0 · 1 · **11 · 19** (weeks of 08-10 → 09-21).
+  The rise tracks the growing Pin impressions and is real: every visitor carries a Pinterest
+  referrer, so the ~09-06 UTM-capture fix did not create it. It is about 0.1% of site traffic, and
+  visits are one page deep. Since Aug 1 there have been no signups and one generation.
+- Landing pages: `/` 14, `/topics/beauty` 12, `/topics/learning` 8, `/topics/food` 6. The `/`
+  landings are pre-09-17 legacy traffic. Current Pins already link to their board's topic hub with
+  UTM (all 145 in `pins.jsonl`): 29 of 31 visitors since 09-17 arrived that way.
+- **Bot-filter fix.** The admin `_BOT_UA_REGEX` token `pinterest` also matched the in-app
+  browser UA (`… Pinterest/iOS`) and dropped 17 of 42 real Pinterest visitors. It is now
+  `pinterestbot`, in code and in the rebuilt `bot_free_30d` matview (new `--rebuild` flag on
+  `migrate_bot_free_matview_and_indexes.py`). Admin-panel Pinterest numbers from before 09-27
+  are about 40% low.
+- Corrects § 2026-09-06 (UTM "never reaches the DB": true only until ~09-06) and the 09-22 (d)
+  "Pinterest's 3" UTM events (now 12 and 25 per week). The AI-referral channel is still far larger.
+
+
+## 2026-09-27 (b) — Pinterest batch 7: 34 Pins seeded on 46k impressions
+
+Full notes: `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` § Batch 7.
+
+- The account is at **46,061 impressions and 234 saves (0.51%)** over 30 days, 3.3x the 09-22 figures,
+  and still mostly accrual on batch 3. Seeds were re-derived under the ≥300-impression, ≥2-save
+  floor. New earners: the men's hairstyle guides, pet-safe food, the Khmer costume, the Egypt map.
+- **34 published, 34/34 ok**: 18 literal siblings of seed templates (9 dynasty/regional costumes,
+  7 landmark maps, a pixie cut, a duck food guide) plus 16 tag neighbours. Visual review rejected
+  9 of 55 (childhood snacks, a Chartreuse bottle, a baked "little shine" logo, garbled sari text,
+  two feed-illegible cheat sheets, two single-scene photos, a placeholder brand).
+- The copy guard missed "the specified costume design". It is fixed in `assertCopy`, and all 34
+  captions were rewritten from the images. One Pin (`570831321549788290`) is live with the old copy.
+- Grade ~2026-10-18 (T+21). Do not pool with batch 6.
