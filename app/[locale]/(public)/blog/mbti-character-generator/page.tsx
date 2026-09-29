@@ -18,6 +18,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import { getCanonicalPath } from '@/lib/canonical';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import BlogCTACard from "@/app/[locale]/_components/BlogCTACard";
@@ -118,6 +119,23 @@ export default function MBTICharacterGeneratorPage() {
 
           <p className="text-lg text-gray-600">
             {t('hero.subtitle')}
+          </p>
+
+          {/* Split-intent fix (GSC 08-29→09-25): "mbti generator" was ranking
+              BOTH this post (pos 6.2) and /nano-template/mbti-generic (pos 7.2).
+              The template is the tool, so it owns "MBTI generator"; this post
+              keeps "random mbti generator" (pos 5.0) and the character ideas.
+              This link tells Google which page is the generator. Do not add a
+              cross-page canonical instead — the two pages are not duplicates. */}
+          <p className="mt-3 text-base text-gray-700">
+            {t('toolLink.lead')}{' '}
+            <Link
+              href={getCanonicalPath(locale, '/nano-template/mbti-generic')}
+              className="font-semibold text-purple-700 underline underline-offset-2 hover:text-purple-900"
+            >
+              {t('toolLink.anchor')}
+            </Link>{' '}
+            {t('toolLink.tail')}
           </p>
           <div className="mt-4">
             <BlogCategoryLabel slug="mbti-character-generator" />
