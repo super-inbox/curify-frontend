@@ -84,6 +84,10 @@ describe('getUseCaseTemplateOrder', () => {
     expect(ids).not.toContain('template-ip-creative-cultural-goods-mockup-set');
   });
 
+  it('for-publishers excludes the ASL tutorial', () => {
+    expect(order('for-publishers')).not.toContain('template-asl-sign-language-tutorial-infographic');
+  });
+
   it.each(['for-dtc-brands', 'for-marketers'])(
     '%s excludes the WC knockout poster (topic-fallback only)',
     (slug) => {

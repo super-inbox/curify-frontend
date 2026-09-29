@@ -34,6 +34,8 @@ type PoolSpec = {
   templateIds?: Iterable<string>;
   /** Only admit topic-matched templates with `batch: true`. */
   batchOnly?: boolean;
+  /** Template ids never shown on this page, even if tagged. */
+  excludeIds?: Iterable<string>;
 };
 
 // Topic groups the user called out as well curated (2026-09-29): merch,
@@ -93,7 +95,12 @@ export const USE_CASE_POOLS: Record<string, PoolSpec> = {
       "marketing",
     ],
   },
-  "for-publishers": { topics: TOPICS_EDU_LANGUAGE },
+  "for-publishers": {
+    topics: TOPICS_EDU_LANGUAGE,
+    // ASL has its own tool funnel; it is off-message for publishers
+    // (user review 2026-09-29).
+    excludeIds: ["template-asl-sign-language-tutorial-infographic"],
+  },
 };
 
 export const USE_CASE_MODE: Record<string, UseCaseCurationMode> = {
@@ -244,9 +251,11 @@ export function getUseCaseTemplateOrder(
 
   const topicSet = new Set(spec.topics);
   const extraIds = new Set(spec.templateIds ?? []);
+  const excludedIds = new Set(spec.excludeIds ?? []);
 
   const pool = registry.templates.filter((t) => {
     if (USE_CASE_IP_DENYLIST.has(t.id)) return false;
+    if (excludedIds.has(t.id)) return false;
     if (!(registry.imagesByTemplateId.get(t.id)?.length)) return false;
     if (t.use_cases?.includes(slug)) return true;
     if (extraIds.has(t.id)) return true;
