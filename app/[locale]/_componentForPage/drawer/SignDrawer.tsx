@@ -13,6 +13,7 @@ import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { authService } from "@/services/auth";
 import { resetAnonymousCopyCount } from "@/lib/copyGating";
+import { trackAuthSuccess } from "@/services/funnelEvents";
 
 const OTP_LENGTH = 6;
 
@@ -139,6 +140,7 @@ export default function SignDrawer() {
       localStorage.setItem("access_token", result.data.access_token);
       localStorage.setItem("refresh_token", result.data.refresh_token);
       setUser(result.data.user);
+      trackAuthSuccess("email_otp", result.data.user);
       resetAnonymousCopyCount();
       setDrawerState(null);
     } catch (err: any) {

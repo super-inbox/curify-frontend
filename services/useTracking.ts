@@ -19,8 +19,7 @@ export type ContentType =
   | "mbti_quiz"
   | "page"
   | "etsy_pack"
-  | "tool_card"
-  | "use_case_video";
+  | "tool_card";
 
 export type ActionType =
   | "view"
@@ -89,7 +88,7 @@ function normalizeRoute(pathname: string): string {
   return stripped;
 }
 
-function getSessionId(): string {
+export function getSessionId(): string {
   if (typeof window === "undefined") return "";
 
   let sessionId = sessionStorage.getItem(SESSION_KEY);
@@ -205,6 +204,14 @@ function trackWithBeacon(payload: Record<string, unknown>) {
   } catch {
     return false;
   }
+}
+
+/**
+ * Fire-and-forget event outside a React component (auth handlers, generation
+ * hooks). Same payload and endpoint as useTracking().track.
+ */
+export function trackEvent(options: TrackingOptions) {
+  void trackInteraction(options);
 }
 
 async function trackInteraction(options: TrackingOptions) {
@@ -355,11 +362,82 @@ export function useSaveTracking(
 const SESSION_VIEW_FLAG = "_curify_session_view_fired";
 const BOT_UA_RE_TRACK = /bot|spider|crawl|slurp|screenshot/i;
 
+// First-touch attribution: where this session ENTERED the site. Captured once
+// per session (the first page that mounts SessionStartTracker, or the first
+// getFirstTouch() call, whichever is earlier) and attached to contact-form
+// leads, so a lead row says which landing page / campaign produced it even
+// when the form was submitted three pages later.
+//
+// sessionStorage, not localStorage: this mirrors SESSION_KEY, so session_id on
+// the lead and on user_interactions describe the same visit. Every access is
+// wrapped — Safari private mode and blocked storage throw on access.
+const FIRST_TOUCH_KEY = "_curify_first_touch";
+
+export interface FirstTouch {
+  /** Entry path plus whitelisted campaign params (see pathWithCampaign). */
+  landing_page?: string;
+  /** Whitelisted campaign params only (CAMPAIGN_PARAMS). */
+  utm?: Record<string, string>;
+  /** document.referrer at entry, origin + path only (query/hash dropped). */
+  referrer?: string;
+}
+
+function readCampaignParams(): Record<string, string> | undefined {
+  try {
+    const src = new URLSearchParams(window.location.search);
+    const out: Record<string, string> = {};
+    for (const key of CAMPAIGN_PARAMS) {
+      const v = src.get(key);
+      if (v) out[key] = v.slice(0, 200);
+    }
+    return Object.keys(out).length ? out : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+function cleanReferrer(): string | undefined {
+  if (typeof document === "undefined" || !document.referrer) return undefined;
+  try {
+    const u = new URL(document.referrer);
+    return `${u.origin}${u.pathname}`.slice(0, 500);
+  } catch {
+    return undefined;
+  }
+}
+
+function captureFirstTouch(): FirstTouch {
+  if (typeof window === "undefined") return {};
+  try {
+    const stored = sessionStorage.getItem(FIRST_TOUCH_KEY);
+    if (stored) return JSON.parse(stored) as FirstTouch;
+  } catch {}
+  const touch: FirstTouch = {
+    landing_page: pathWithCampaign()?.slice(0, 500),
+    utm: readCampaignParams(),
+    referrer: cleanReferrer(),
+  };
+  try {
+    sessionStorage.setItem(FIRST_TOUCH_KEY, JSON.stringify(touch));
+  } catch {}
+  return touch;
+}
+
+/** First-touch attribution for the current session (captures it if missing). */
+export function getFirstTouch(): FirstTouch {
+  try {
+    return captureFirstTouch();
+  } catch {
+    return {};
+  }
+}
+
 export function useSessionStartTracker() {
   const { track } = useTracking();
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (BOT_UA_RE_TRACK.test(navigator.userAgent || "")) return;
+    captureFirstTouch();
     if (sessionStorage.getItem(SESSION_VIEW_FLAG)) return;
     sessionStorage.setItem(SESSION_VIEW_FLAG, "1");
     track({

@@ -6,6 +6,7 @@ import { userAtom, authLoadingAtom, drawerAtom } from "@/app/atoms/atoms";
 import Icon from "../Icon";
 import { authService } from "@/services/auth";
 import { jwtDecode } from "jwt-decode";
+import { trackAuthSuccess } from "@/services/funnelEvents";
 
 declare global {
   interface Window {
@@ -102,6 +103,7 @@ export default function GoogleLoginButton({ variant = "home" }: GoogleLoginButto
       // ✅ Setting userAtom also persists to localStorage via atomWithStorage
       // and automatically flips headerAtom to "in" — no manual setHeaderState needed
       setUser(userWithAvatar);
+      trackAuthSuccess("google", result.data.user);
       setDrawerState(null);
 
       console.log("Google login successful");

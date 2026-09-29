@@ -520,7 +520,20 @@
     },
     "call": {
       "title": "Ein Gespräch planen",
-      "description": "Ideal für Großaufträge, Partnerschaften, Vertrieb oder technische Diskussionen. Buchen Sie ein 15-minütiges Meeting nach Ihrem Belieben — wir kommen vorbereitet."
+      "description": "Ideal für Großaufträge, Partnerschaften, Vertrieb oder technische Diskussionen. Buchen Sie ein 15-minütiges Meeting nach Ihrem Belieben — wir kommen vorbereitet.",
+      "bookLink": "15-Minuten-Gespräch buchen"
+    },
+    "role": {
+      "label": "Ihre Rolle",
+      "placeholder": "Ich bin … (optional)",
+      "options": {
+        "brand_dtc": "Marke / DTC",
+        "agency_marketer": "Agentur / Marketing",
+        "publisher": "Verlag",
+        "photographer": "Fotograf",
+        "merch_pod": "Merch- / POD-Verkäufer",
+        "other": "Sonstiges"
+      }
     }
   },
   "nanoGallery": {

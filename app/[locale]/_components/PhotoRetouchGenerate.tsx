@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Loader2, Upload as UploadIcon, Wand2, Download, X, Check } from "lucide-react";
 import { photoRetouchService, PENDING, type RetouchGate } from "@/services/photoRetouch";
 import { useTracking } from "@/services/useTracking";
+import { trackFirstGeneration } from "@/services/funnelEvents";
 
 const MAX_FILE_BYTES = 25 * 1024 * 1024;
 
@@ -96,6 +97,7 @@ export default function PhotoRetouchGenerate() {
       });
       if (!project_id) throw new Error("Could not start the edit. Please try again.");
       const done = await photoRetouchService.pollResult(project_id);
+      if (done.result_url) trackFirstGeneration("photo-retouch");
       setResultUrl(done.result_url ?? null);
       setGates(done.gates ?? null);
       if (done.regions_applied != null && done.regions_planned != null) {

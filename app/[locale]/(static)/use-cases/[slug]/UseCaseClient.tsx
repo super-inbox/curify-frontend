@@ -159,7 +159,9 @@ function UseCaseVideo({
   // route rollup despite being the primary engagement on these pages.
   const { trackVideoPlay } = useVideoTracking(
     `use-case-${slug}`,
-    "use_case_video",
+    // "page": the backend ContentType enum has no use_case_video value and
+    // silently drops unknown types; content_id keeps these distinguishable.
+    "page",
     "cards",
   );
   // CdnVideo rewrites the /video/... path to the GCS bucket

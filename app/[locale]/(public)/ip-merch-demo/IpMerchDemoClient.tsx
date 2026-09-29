@@ -4,6 +4,7 @@ import { useState } from "react";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 import type { IpMerchDemoSeed, IpMerchStage } from "@/lib/ip_merch_demo";
 import MerchWorkflowBurst from "./MerchWorkflowBurst";
+import { trackCalendlyClick } from "@/services/funnelEvents";
 
 function StageDotNav({
   stages,
@@ -156,6 +157,9 @@ export default function IpMerchDemoClient({ seed }: { seed: IpMerchDemoSeed }) {
             href={seed.cta.primary_href}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (seed.cta.primary_href.includes("calendly.com")) trackCalendlyClick("ip-merch-demo");
+            }}
             className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
           >
             {seed.cta.primary_label}
