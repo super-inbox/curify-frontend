@@ -4303,22 +4303,24 @@
     }
   },
   "template-fashion-inspired-gown-design-sheet": {
-    "category": "Fashion Design Sheet",
-    "description": "Dress design template for couture gowns — pick a nature subject (orchid, butterfly wing, ocean wave) and get a fashion illustration with technical sketch and handwritten design notes.",
-    "title": "Dress Design Template — Nature-Inspired Couture Gown Sheet",
+    "category": "Fashion Design Template",
+    "description": "Fashion design template for gowns: pick an inspiration (orchid, butterfly, waves) and get a dress template sheet with fashion sketch, technical flat and notes.",
+    "title": "Fashion Design Template — Dress Sketch & Technical Flat",
     "content": {
       "sections": {
-        "what": "This template generates a professional fashion design sheet featuring a couture gown inspired by a chosen subject. The layout centers a full-body model illustration in the gown, with the inspiration subject (leaves, petals, butterfly wings) sketched at the top left, a black-and-white technical silhouette on the right with handwritten-style design notes, and subtle scribbles on a clean white background — a soft watercolor / digital illustration hybrid.",
-        "who": "Suitable for fashion design students, costume designers, atelier brands, design educators, fashion-illustrator portfolios, and creators building inspiration mood boards for couture concepts.",
+        "what": "This fashion design template generates a professional design sheet for a couture gown inspired by a chosen subject. The layout centers a full-body fashion sketch of the gown on a croquis figure, with the inspiration subject (leaves, petals, butterfly wings) drawn at the top left, a black-and-white technical flat of the silhouette on the right with handwritten-style design notes, and subtle scribbles on a clean white background. The default look is a soft watercolor / digital illustration hybrid; describe a drawing style in the subject (pencil croquis sketch, ink-line sketch, black-and-white technical flats) to use it as a fashion sketch template or fashion drawing template instead.",
+        "who": "Suitable for fashion design students who want a dress template or fashion sketch template to start from, costume designers, atelier brands, design educators, fashion-illustrator portfolios, and creators building inspiration mood boards for couture concepts.",
         "how": [
           "Enter an inspiration subject (e.g., Purple Orchid, Rainbow Butterfly, Cherry Blossom, Peacock Feather, Ocean Waves).",
+          "Optionally add a drawing style to the subject — \"magnolia, drawn as a black-and-white pencil fashion croquis sketch\" — for a monochrome sketch or technical-flat sheet.",
           "The sheet auto-lays out a full-body gown illustration, inspiration sketch, technical silhouette, and design notes.",
-          "Generate a 4K watercolor-and-digital fashion design sheet with handwritten annotations."
+          "Generate a 4K fashion design sheet with handwritten annotations."
         ],
         "prompts": [
           "Generate a Cherry Blossom couture gown design sheet with pink layered tulle.",
           "Create a Peacock Feather fashion design sheet with iridescent technical sketches.",
-          "Generate an Ocean Waves gown design sheet with flowing blue organza panels."
+          "Generate an Ocean Waves gown design sheet with flowing blue organza panels.",
+          "Generate a Magnolia gown design sheet drawn as a black-and-white pencil fashion croquis sketch with front and back technical flats."
         ]
       }
     }
@@ -4366,12 +4368,12 @@
     }
   },
   "template-fashion-nail-art-design": {
-    "category": "Nail Art Designs",
-    "description": "Generate nail art designs in any theme — sunflower, cherry blossom, ocean waves — as photorealistic close-ups with a glossy gel finish and soft natural lighting.",
-    "title": "Nail Art Designs — Themed Gel Manicure Generator",
+    "category": "Nail Art Design Template",
+    "description": "Nail art design template: pick a theme (sunflower, cherry blossom, ocean waves) and generate nail art designs as glossy, photorealistic gel manicure close-ups.",
+    "title": "Nail Art Design Template — Themed Gel Nail Art Designs",
     "content": {
       "sections": {
-        "what": "This template generates a glossy gel-finish photorealistic nail art close-up. Each nail alternates between a hand-painted thematic motif and a solid color with glitter or foil tip. Soft natural light with shallow depth of field foregrounds the nail detail; a subtly blurred background ties to the theme.",
+        "what": "This nail art design template generates a glossy gel-finish photorealistic nail art close-up. Each nail alternates between a hand-painted thematic motif and a solid color with glitter or foil tip. Soft natural light with shallow depth of field foregrounds the nail detail; a subtly blurred background ties to the theme.",
         "who": "Suitable for nail-art studios, beauty bloggers, ecommerce nail-polish brands, nail-tech educators making moodboards, and TikTok/Reels creators showcasing seasonal nail trends.",
         "how": [
           "Pick a theme (Sunflower, Cherry Blossom, Ocean Waves, Lavender Fields, Vintage Roses, Butterfly Wings…).",
