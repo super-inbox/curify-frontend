@@ -7,10 +7,10 @@ import {
   type RawTemplate,
   type RawNanoImageRecord,
 } from '../nano_utils';
+import { buildNanoFeedCards } from '../nano_page_data';
 import {
-  diversifyTemplates,
   getUseCaseTemplateOrder,
-  templateGroupKey,
+  interleaveRoundRobin,
   USE_CASE_CURATED_TEMPLATES,
   USE_CASE_IP_DENYLIST,
 } from '../use_case_curation';
@@ -23,20 +23,35 @@ const byId = new Map(reg.templates.map((t) => [t.id, t] as const));
 const order = (slug: string) =>
   getUseCaseTemplateOrder(slug, reg, recentTemplates) ?? [];
 
-// First screen of the grid is ~18 tiles; with the round-robin interleave each
-// of the first 18 tiles comes from a distinct template in this order. The
-// diverse head is bounded by 2 x (distinct groups in the pool): for-publishers
-// is mostly `language`, so its head is 16 long and deferred templates follow.
-const DIVERSE_HEAD = 16;
+const SLUGS = [
+  'for-photographers',
+  'for-programmatic-seo',
+  'for-merch-operators',
+  'for-marketers',
+  'for-publishers',
+  'for-dtc-brands',
+];
 
-describe('diversifyTemplates', () => {
-  it('caps each group in the head and appends deferred items in order', () => {
-    const items = ['a1', 'a2', 'a3', 'b1', 'a4', 'b2', 'b3', 'c1'];
-    const out = diversifyTemplates(items, {
-      maxPerGroup: 2,
-      groupOf: (x) => x[0],
-    });
-    expect(out).toEqual(['a1', 'a2', 'b1', 'b2', 'c1', 'a3', 'a4', 'b3']);
+/** Template id per grid tile, mirroring the use-case page's wiring. */
+function tileTemplateIds(slug: string): string[] {
+  const cards = buildNanoFeedCards(reg, 'en', {
+    perTemplateMaxImages: 4,
+    strictLocale: false,
+    templateIds: order(slug),
+  });
+  return interleaveRoundRobin(
+    cards.map((c) => (c.example_ids ?? []).map(() => c.template_id))
+  );
+}
+
+// First screen of the grid is ~18 tiles.
+const FIRST_SCREEN = 18;
+
+describe('interleaveRoundRobin', () => {
+  it('takes one item per group per round, preserving group order', () => {
+    expect(interleaveRoundRobin([['a1', 'a2', 'a3'], ['b1'], ['c1', 'c2']])).toEqual([
+      'a1', 'b1', 'c1', 'a2', 'c2', 'a3',
+    ]);
   });
 });
 
@@ -46,7 +61,7 @@ describe('getUseCaseTemplateOrder', () => {
   });
 
   it.each(['for-photographers', 'for-programmatic-seo'])(
-    '%s has a full first screen led by the curated picks',
+    '%s is non-empty and led by the curated picks',
     (slug) => {
       const ids = order(slug);
       expect(ids.length).toBeGreaterThanOrEqual(12);
@@ -63,6 +78,12 @@ describe('getUseCaseTemplateOrder', () => {
     }
   });
 
+  it('for-photographers drops the character/merch selfie templates', () => {
+    const ids = order('for-photographers');
+    expect(ids).not.toContain('template-ip-character-expression-sheet');
+    expect(ids).not.toContain('template-ip-creative-cultural-goods-mockup-set');
+  });
+
   it.each(['for-dtc-brands', 'for-marketers'])(
     '%s excludes the WC knockout poster (topic-fallback only)',
     (slug) => {
@@ -70,28 +91,26 @@ describe('getUseCaseTemplateOrder', () => {
     }
   );
 
-  it.each([
-    'for-photographers',
-    'for-programmatic-seo',
-    'for-merch-operators',
-    'for-marketers',
-    'for-publishers',
-    'for-dtc-brands',
-  ])('%s never includes IP-denylisted templates', (slug) => {
+  it.each(SLUGS)('%s never includes IP-denylisted templates', (slug) => {
     expect(order(slug).filter((id) => USE_CASE_IP_DENYLIST.has(id))).toEqual([]);
   });
+});
 
-  it.each(['for-marketers', 'for-publishers', 'for-dtc-brands'])(
-    '%s keeps at most 2 per family / tier-1 group in the diverse head',
-    (slug) => {
-      const head = order(slug).slice(0, DIVERSE_HEAD);
-      expect(head.length).toBe(DIVERSE_HEAD);
-      const counts = new Map<string, number>();
-      for (const id of head) {
-        const key = templateGroupKey(byId.get(id)!);
-        counts.set(key, (counts.get(key) ?? 0) + 1);
-      }
-      for (const [key, n] of counts) expect(n, key).toBeLessThanOrEqual(2);
+describe('use-case grid tiles', () => {
+  it.each(SLUGS)('%s: adjacent first-screen tiles are different templates', (slug) => {
+    const head = tileTemplateIds(slug).slice(0, FIRST_SCREEN);
+    expect(head.length).toBe(FIRST_SCREEN);
+    for (let i = 1; i < head.length; i++) {
+      expect(head[i], `tile ${i}`).not.toBe(head[i - 1]);
     }
-  );
+  });
+
+  it.each(SLUGS)('%s: shows up to 4 examples per template (all when fewer)', (slug) => {
+    const counts = new Map<string, number>();
+    for (const id of tileTemplateIds(slug)) counts.set(id, (counts.get(id) ?? 0) + 1);
+    for (const [id, n] of counts) {
+      const available = reg.imagesByTemplateId.get(id)?.length ?? 0;
+      expect(n, id).toBe(Math.min(4, available));
+    }
+  });
 });

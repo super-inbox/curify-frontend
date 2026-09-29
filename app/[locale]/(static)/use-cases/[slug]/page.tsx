@@ -17,7 +17,10 @@ import { resolveContentLocale } from "@/lib/locale_utils";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import recentTemplatesSnapshot from "@/public/data/recent_templates.json";
-import { getUseCaseTemplateOrder } from "@/lib/use_case_curation";
+import {
+  getUseCaseTemplateOrder,
+  interleaveRoundRobin,
+} from "@/lib/use_case_curation";
 
 import UseCaseClient from "./UseCaseClient";
 import TopicWorkflow from "@/app/[locale]/_components/TopicWorkflow";
@@ -113,7 +116,7 @@ export default async function UseCasePage({ params }: Props) {
     recentTemplatesSnapshot
   );
   const nanoCards = buildNanoFeedCards(reg, contentLocale, {
-    perTemplateMaxImages: 2,
+    perTemplateMaxImages: 4,
     strictLocale: false,
     translate: translateNano,
     ...(curatedOrder
@@ -123,8 +126,8 @@ export default async function UseCasePage({ params }: Props) {
 
   // Flatten the template-grouped nanoCards into individual examples for the
   // ExampleImagesGrid, interleaved round-robin across templates (same idea as
-  // buildOrderedTemplateImageGridItems) so the first screen (~18 tiles) shows
-  // many distinct templates in the curated order instead of 2 per template.
+  // buildOrderedTemplateImageGridItems): up to 4 examples per template, and
+  // adjacent tiles come from different templates, in curated order.
   const perCard = nanoCards.map((card) => {
     const previews =
       card.preview_image_urls?.length
@@ -138,13 +141,7 @@ export default async function UseCasePage({ params }: Props) {
       templateId: card.template_id,
     }));
   });
-  const exampleItems: (typeof perCard)[number] = [];
-  const maxPerCard = Math.max(0, ...perCard.map((items) => items.length));
-  for (let i = 0; i < maxPerCard; i++) {
-    for (const items of perCard) {
-      if (i < items.length) exampleItems.push(items[i]);
-    }
-  }
+  const exampleItems = interleaveRoundRobin(perCard);
 
   const t = await getTranslations({ locale: localeStr });
   const safeT = (key: string) => {

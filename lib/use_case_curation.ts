@@ -18,14 +18,11 @@
 //              ∪ an explicit id allowlist (e.g. SELFIE_TEMPLATE_IDS).
 //              Topic-FALLBACK-only matches are deliberately excluded.
 //   relevant = hand-ordered USE_CASE_CURATED_TEMPLATES first, rest by rank.
-//   popular  = recent usage (recent_templates.json) first, then rank, then
-//              diversified so no family / tier-1 group takes more than 2 slots
-//              in the head; deferred templates are appended, not dropped.
+//   popular  = recent usage (recent_templates.json) first, then rank.
+// The page interleaves each template's examples round-robin, so adjacent
+// tiles are different templates (no per-group cap).
 
-import {
-  getTier1Ancestor,
-  normalizeTopicValues,
-} from "@/lib/topicRegistry_pure";
+import { normalizeTopicValues } from "@/lib/topicRegistry_pure";
 import { SELFIE_TEMPLATE_IDS } from "@/lib/topic_workbench";
 
 export type UseCaseCurationMode = "relevant" | "popular";
@@ -67,8 +64,20 @@ const TOPICS_PHOTO = [
   "studio",
 ];
 
+// Selfie-allowlist templates that are character/merch deliverables rather
+// than photography (user review 2026-09-29).
+const PHOTOGRAPHER_EXCLUDED_SELFIE_IDS: ReadonlySet<string> = new Set([
+  "template-ip-character-expression-sheet",
+  "template-ip-creative-cultural-goods-mockup-set",
+]);
+
 export const USE_CASE_POOLS: Record<string, PoolSpec> = {
-  "for-photographers": { topics: TOPICS_PHOTO, templateIds: SELFIE_TEMPLATE_IDS },
+  "for-photographers": {
+    topics: TOPICS_PHOTO,
+    templateIds: [...SELFIE_TEMPLATE_IDS].filter(
+      (id) => !PHOTOGRAPHER_EXCLUDED_SELFIE_IDS.has(id)
+    ),
+  },
   "for-programmatic-seo": {
     topics: [...TOPICS_EDU_LANGUAGE, ...TOPICS_PRODUCT, ...TOPICS_BRANDING_PACKAGING],
     batchOnly: true,
@@ -167,114 +176,6 @@ export const USE_CASE_CURATED_TEMPLATES: Record<string, readonly string[]> = {
 };
 
 /**
- * Manual near-duplicate families. The diversity key is TEMPLATE_FAMILY[id]
- * when set, otherwise the template's tier-1 topic. Tier-1 alone is too coarse
- * on the product pages (almost everything is `product` or `design`) and too
- * fine for the World Cup set (split across `design` / `character` / `sports`).
- */
-const FAMILY_MEMBERS: Record<string, readonly string[]> = {
-  "world-cup": [
-    "template-wc-knockout-matchup-poster",
-    "template-wc-fan-outfit-poster",
-    "template-wc-daily-recap-poster",
-    "template-football-star-chibi-sticker-set",
-    "template-world-cup-team-sticker-poster",
-    "template-world-cup-premium-gold-text-poster",
-    "template-soccer-star-comic-retro-poster-card",
-    "template-all-sports-tournament-schedule-infographic",
-    "template-universal-event-split-schedule-flyer-poster",
-  ],
-  mbti: [
-    "template-mbti-ghibli",
-    "template-harry-potter-mbti-infographic",
-    "template-mbti-marvel",
-    "template-mbti-stereotype-vs-reality-infographic",
-  ],
-  "food-guide": [
-    "template-cuisine-food-vocab-poster",
-    "template-varieties-food-poster",
-    "template-wine-variety-intro-infographic",
-    "template-regional-alcoholic-drinks-infographic",
-  ],
-  "brand-identity": [
-    "template-brand-identity-moodboard-visual-system-poster",
-    "template-brand-vi-full-visual-pack-mockup",
-    "template-brand-logo-variant-set",
-    "template-brand-font-specimen-set",
-    "template-brand-ip-mascot-design-board",
-    "template-brand-ip-full-design-board",
-  ],
-  packaging: [
-    "template-food-product-packaging-design",
-    "template-chocolate-giftbox-packaging",
-    "template-perfume-cosmetic-bottle-mockup",
-    "template-price-tag-product-label",
-    "template-eco-farm-food-uniform-product-label",
-  ],
-  "product-photo": [
-    "template-ecommerce-product-photography",
-    "template-fruit-drink-scene-photography",
-    "template-home-textiles-ecommerce",
-    "template-9-grid-ecommerce-product-lifestyle-moodboard",
-    "template-surreal-macro-product-commercial-ad-poster",
-  ],
-  "product-board": [
-    "template-industrial-design-product-presentation-board",
-    "template-minimalist-product-design-presentation-board",
-    "template-industrial-design-concept-sketch",
-    "template-luxury-vintage-gem-necklace-design-sheet",
-  ],
-  "listing-infographic": [
-    "template-amazon-long-scroll-product-infographic-template",
-    "template-amazon-product-six-grid-infographic-listing-poster",
-  ],
-  "promo-poster": [
-    "template-product-poster",
-    "template-product-theme-promotional-poster",
-    "template-promotional-flyer",
-    "template-discount-coupon-voucher",
-    "template-einstein-character-russian-product-ad-poster",
-  ],
-  "fashion-tryon": [
-    "template-ai-outfit-try-on-poster",
-    "template-personal-fashion-outfit-style-variations",
-    "template-fashion-ecommerce",
-    "template-fashion-before-after-outfit-annotation-card",
-  ],
-  "ip-sticker": [
-    "template-ip-character-expression-sheet",
-    "template-original-character-sticker-pack",
-    "template-ip-emoji-sticker-sheet-poster",
-    "template-ip-character-sprite-emoji-sheet",
-    "template-celebrity-meme-sticker-merchandise-collection-poster",
-  ],
-  "ip-merch-mockup": [
-    "template-ip-creative-cultural-goods-mockup-set",
-    "template-ip-gift-box-stationery-set-mockup",
-    "template-museum-gift-themed-merchandise-collection-display",
-    "template-fridge-magnet-merch",
-    "template-city-landmark-fridge-magnet-collection",
-  ],
-};
-
-export const TEMPLATE_FAMILY: Record<string, string> = Object.fromEntries(
-  Object.entries(FAMILY_MEMBERS).flatMap(([family, ids]) =>
-    ids.map((id) => [id, family] as const)
-  )
-);
-
-/**
- * Topic-level families: big franchises spread across many templates (mbti,
- * world-cup), and the `education` printables (learning cards, worksheets,
- * reading lessons) whose topic lists carry no tier-1 id of their own.
- */
-const TOPIC_FAMILY: Record<string, string> = {
-  mbti: "mbti",
-  "world-cup": "world-cup",
-  education: "edu-printables",
-};
-
-/**
  * Mirror of IP_DENYLIST in scripts/snapshot_recent_templates.cjs: templates
  * that reproduce someone else's work (mastheads, logos, real covers). The
  * snapshot already drops them from usage; this keeps rank_score from
@@ -306,49 +207,18 @@ export type RecentTemplatesSnapshot = {
 };
 
 /**
- * Diversity key: manual id family, then topic family (mbti / world-cup), then
- * the template's tier-1 topic — preferring a topic that IS a tier-1 id over
- * the ancestor of a style tag listed earlier.
+ * Round-robin interleave of per-template example lists, so adjacent grid
+ * tiles come from different templates while template order is preserved.
  */
-export function templateGroupKey(t: CurationTemplate): string {
-  const family = TEMPLATE_FAMILY[t.id];
-  if (family) return family;
-  const topics = normalizeTopicValues(t.topics);
-  for (const tp of topics) {
-    if (TOPIC_FAMILY[tp]) return TOPIC_FAMILY[tp];
-  }
-  const direct = topics.find((tp) => getTier1Ancestor(tp) === tp);
-  if (direct) return direct;
-  for (const tp of topics) {
-    const tier1 = getTier1Ancestor(tp);
-    if (tier1) return tier1;
-  }
-  return "other";
-}
-
-/**
- * Stable diversity pass: walk `items` in order, keeping at most `maxPerGroup`
- * per group in the head; over-quota items are deferred and appended after the
- * head in their original order (never dropped).
- */
-export function diversifyTemplates<T>(
-  items: readonly T[],
-  opts: { maxPerGroup: number; groupOf: (item: T) => string }
-): T[] {
-  const counts = new Map<string, number>();
-  const head: T[] = [];
-  const deferred: T[] = [];
-  for (const item of items) {
-    const key = opts.groupOf(item);
-    const n = counts.get(key) ?? 0;
-    if (n < opts.maxPerGroup) {
-      counts.set(key, n + 1);
-      head.push(item);
-    } else {
-      deferred.push(item);
+export function interleaveRoundRobin<T>(groups: readonly (readonly T[])[]): T[] {
+  const out: T[] = [];
+  const maxLen = Math.max(0, ...groups.map((g) => g.length));
+  for (let i = 0; i < maxLen; i++) {
+    for (const g of groups) {
+      if (i < g.length) out.push(g[i]);
     }
   }
-  return [...head, ...deferred];
+  return out;
 }
 
 export function isCuratedUseCase(slug: string): boolean {
@@ -398,17 +268,16 @@ export function getUseCaseTemplateOrder(
   }
 
   // popular: usage order first (unavailable / denylisted ids are simply not
-  // in the pool), then rank_score, then the diversity pass.
+  // in the pool), then rank_score.
   const usageIds = (recentTemplates?.templates ?? [])
     .map((r) => r.id)
     .filter((id, i, arr) => poolById.has(id) && arr.indexOf(id) === i);
   const usageSet = new Set(usageIds);
-  const ordered = [
-    ...usageIds.map((id) => poolById.get(id)!),
-    ...pool.filter((t) => !usageSet.has(t.id)).sort(byRankDesc),
+  return [
+    ...usageIds,
+    ...pool
+      .filter((t) => !usageSet.has(t.id))
+      .sort(byRankDesc)
+      .map((t) => t.id),
   ];
-  return diversifyTemplates(ordered, {
-    maxPerGroup: 2,
-    groupOf: templateGroupKey,
-  }).map((t) => t.id);
 }
