@@ -24,7 +24,8 @@ import { ArrowRight } from "lucide-react";
 import { Link as IntlLink } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useTracking } from "@/services/useTracking";
-import { contactService } from "@/services/contact";
+import { contactService, type ContactRole } from "@/services/contact";
+import ContactRoleSelect from "./ContactRoleSelect";
 
 // Backend caps `source` at 200 chars and 422s the whole submission otherwise;
 // content_id is a varchar(255).
@@ -68,6 +69,7 @@ export default function InlineContactCapture({
   // pages, so the cheap naive-bot filter is worth the five lines. A real
   // browser never fills a field it cannot see or tab to.
   const [hp, setHp] = useState("");
+  const [role, setRole] = useState<ContactRole | "">("");
   const [status, setStatus] = useState<"idle" | "ok" | "error">("idle");
   const [loading, setLoading] = useState(false);
 
@@ -93,6 +95,7 @@ export default function InlineContactCapture({
         // the backend appends "Submitted from: <source>" to whatever is here.
         content: body.trim() || subject,
         source: clampedSource,
+        ...(role ? { role } : {}),
       });
       trackAction(
         {
@@ -104,6 +107,7 @@ export default function InlineContactCapture({
       setStatus("ok");
       setEmail("");
       setBody("");
+      setRole("");
     } catch {
       setStatus("error");
     } finally {
@@ -163,6 +167,12 @@ export default function InlineContactCapture({
           {!loading && <ArrowRight className="h-4 w-4" aria-hidden="true" />}
         </button>
       </div>
+
+      <ContactRoleSelect
+        value={role}
+        onChange={setRole}
+        className="mt-2.5 w-full rounded-full border border-neutral-300 bg-white px-4 py-2 text-xs text-neutral-700 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200 sm:w-auto"
+      />
 
       {status === "error" && (
         <p role="status" className="mt-2 text-xs leading-5 text-red-600">
