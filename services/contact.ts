@@ -2,8 +2,8 @@ import { apiClient } from "./api";
 import { getFirstTouch, getSessionId } from "./useTracking";
 
 /**
- * Self-reported role on the contact forms. Must match CONTACT_ROLES in the
- * backend (app/schemas/user.py) — anything else is stored as NULL.
+ * Self-reported role on the contact forms. The backend has no role column,
+ * so the role travels in the message footer (see withLeadContext).
  */
 export const CONTACT_ROLES = [
   "brand_dtc",
@@ -30,29 +30,35 @@ export interface SendMailRequest {
   role?: ContactRole;
 }
 
-function withAttribution(data: SendMailRequest) {
+/**
+ * Frontend-only lead context: role and first-touch attribution are appended
+ * to the message as a plain-text footer, so they land in email_contacts.body
+ * and the team notification without a backend schema change. The backend
+ * appends its own "Submitted from:" line after this.
+ */
+function withLeadContext(data: SendMailRequest) {
+  const { role, ...rest } = data;
   let sessionId: string | undefined;
   try {
     sessionId = getSessionId() || undefined;
   } catch {}
   const touch = getFirstTouch();
-  return {
-    ...data,
-    ...(sessionId ? { session_id: sessionId } : {}),
-    ...(touch.landing_page ? { landing_page: touch.landing_page } : {}),
-    ...(touch.utm ? { utm: touch.utm } : {}),
-    ...(touch.referrer ? { referrer: touch.referrer } : {}),
-  };
+  const lines = [
+    role ? `Role: ${role}` : null,
+    touch.landing_page ? `Landing page: ${touch.landing_page}` : null,
+    touch.utm ? `UTM: ${new URLSearchParams(touch.utm).toString()}` : null,
+    touch.referrer ? `Referrer: ${touch.referrer}` : null,
+    sessionId ? `Session: ${sessionId}` : null,
+  ].filter(Boolean);
+  if (!lines.length) return rest;
+  return { ...rest, content: `${rest.content}\n\n---\n${lines.join("\n")}` };
 }
 
 export const contactService = {
   async sendMail(data: SendMailRequest): Promise<string> {
     const res = await apiClient.request<{ data: string }>("/user/contact-team", {
       method: "POST",
-      // Attribution rides along on every submission: the session this lead
-      // belongs to (joins to user_interactions.session_id) and where the
-      // session entered the site. Each is best-effort and optional server-side.
-      body: JSON.stringify(withAttribution(data)),
+      body: JSON.stringify(withLeadContext(data)),
       headers: {
         "Content-Type": "application/json",
       },
