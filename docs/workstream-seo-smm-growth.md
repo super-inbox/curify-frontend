@@ -4679,3 +4679,154 @@ Full notes: `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` § Batch 7.
 - The copy guard missed "the specified costume design". It is fixed in `assertCopy`, and all 34
   captions were rewritten from the images. One Pin (`570831321549788290`) is live with the old copy.
 - Grade ~2026-10-18 (T+21). Do not pool with batch 6.
+
+## 2026-10-07 — fashion + retouching: every surface is indexed, none has traffic, and Photoroom confirms the job-page shape
+
+Sources: `raw/fashion-retouching-10-07/` (Photoroom domain overview + top organic positions, three
+screenshots), `raw/semrush-pull-09-29/` (unrecorded until now), `_foldscan.cjs` run today, and
+`raw/curify-ai.com-Performance-on-Search-2026-10-07/` (web, 2026-09-08 → 10-05). Plan:
+`~/.claude/plans/i-m-most-interested-in-golden-zebra.md`.
+
+### 1. Index state: every blocker from 09-19 has cleared
+
+| URL | coverage | last crawl |
+|---|---|---|
+| `/tools/ai-fashion-model-generator` | Submitted and indexed | 09-30 |
+| `/tools/wedding-photo-editing` | Submitted and indexed | 09-15 |
+| `/use-cases/for-photographers` | ✅ Submitted and indexed — **the 09-20 recrawl request landed** | 09-29 |
+| `/nano-template/portrait-retouching-blueprint` | ✅ Submitted and indexed — **fold cleared**, self-canonical | 10-03 |
+| `/blog/wedding-photo-retouching-cost` | Submitted and indexed | 09-15 |
+| `/blog/ghost-mannequin-ai-guide` | Submitted and indexed | 09-19 |
+| `/tools/ecommerce-photo` · `/tools/ai-product-photo-generator` | Submitted and indexed | 10-05 · 09-22 |
+
+Indexation is no longer what holds this cluster back.
+
+### 2. Traffic, per PAGE (28d, all locales)
+
+| surface | impr | clicks | pos (EN) | target query |
+|---|---:|---:|---:|---|
+| `ai-fashion-model-generator` | 41 | 0 | **43.8** | `ai fashion model generator` 5 impr at **pos 74.4** |
+| `ghost-mannequin-ai-guide` | 53 | 2 | 10.3 | `ai ghost mannequin generator` pos 7.1 · `ghost mannequin` pos 24.3 · `ghost mannequin ai` pos 19.6 |
+| `wedding-photo-editing` | 19 | 2 | 5.9 | `wedding photo editing` **does not appear** |
+| `wedding-photo-retouching-cost` | 79 | 2 | 9.2 | ranks on competitor names (`evoto ai`, `imagen ai`, `aftershoot culling`), not on its targets |
+| `for-photographers` | 3 | 0 | 4.0 | — |
+| `portrait-retouching-blueprint` | 12 | 1 | 6.8 | — |
+
+Read against the pre-registered gates:
+- **10-13 ghost-mannequin:** heading toward a weak non-zero result, not zero. The KD 0–1 apparel terms do
+  rank on page 1–2 (pos 7–24), and the clicks are coming from the es/ja copies.
+- **11-02 fashion-model-generator:** at pos 74 it is well short of the "<20" PASS line, so the
+  authority-constraint reading is the live hypothesis. Do not build the second fashion surface ahead of it.
+- **10-27 wedding:** 19 impressions against a ≥150 PASS. Heading for FAIL or MARGINAL. Per §5e, a FAIL on an
+  indexed page is now an authority verdict, because crawl state has been ruled out.
+
+### 3. Photoroom (4.5M organic, −7.3%; AS 68; 13.1K AI-answer mentions)
+
+- Its traffic is background removal at KD 94–100. That is out of reach and does not change.
+- **The structure is the useful part.** Photoroom runs one `/tools/<job>` page per job, named after
+  the job (`remove-wrinkles-clothes`, `remove-object-from-photo`, `white-background`, `black-background`),
+  plus a `background-library/` for asset intent. That is the job-page layer, and it stays gated on 10-27.
+- ⛔ **`clothes remover` (22.2K, KD 38) is nudify intent.** Photoroom ranks #2 for it by accident, with
+  its wrinkle page. Never target it. Keep the phrase out of any future wrinkle page.
+- `remove background from photo` is KD 26 / 40.5K, but an AI Overview holds the top slot. It is KD-only
+  bait. `black background` (KD 39) and `christmas background` (KD 32, asset-library SERP) are above the line.
+
+### 4. The 09-29 pull (screenshot was the only copy)
+
+| keyword | vol | KD | CPC |
+|---|---:|---:|---:|
+| fashion design template | 1,000 | 29 | $1.90 |
+| fashion sketch template | 720 | 31 | $0.93 |
+| dress template | 390 | 23 | $0.33 |
+| mood board generator | 260 | 33 | $1.46 |
+| fashion drawing template | 210 | 29 | $0.56 |
+| nail art design template | 210 | 24 | $0.30 |
+| mbti generator | 90 | 13 | $0.00 |
+
+None of this changes the 09-19 closure. The fashion-template cluster was closed for **page type**,
+not KD. MBTI and nail are zero-click on both surfaces.
+
+### 5. The bottleneck is `NO_FACE`, now verified in code
+
+`curify_background/app/pipelines/retouch_pipeline.py:326` → `raise ValueError("NO_FACE")`. It
+blocks real estate (880/mo, KD 27, $4.04 — the largest term in the retouching set), hotel/OTA rooms
+and wrinkle removal on flat-lay garments. **One probe tests all three:** an empty room, a hotel
+room and a wrinkled flat-lay shirt through the locked-subject scene path, with the room judged
+against BoxBrownie's $30 output.
+
+### P0
+
+1. **Capability probe** (§5). Nothing in real estate, hotel or wrinkle removal ships before it passes.
+2. **One KD pull with the CPC column visible**: hotel/OTA (`hotel photo editing`, `hotel photo
+   retouching`, `airbnb photo editing`, `vacation rental photo editing`), real estate widened
+   (`real estate photo editing service`, `sky replacement real estate`, `hdr real estate photo
+   editing`, `virtual twilight`), fashion retouch jobs (`remove wrinkles from clothes photo`, `clothing
+   photo editing`, `apparel photo retouching`, `flat lay photo editing`, `jewelry photo retouching`,
+   `ghost mannequin service`). Filter in this order: volume → KD ≤ 26 → CPC > 0 → live SERP shape → GSC presence.
+3. **Grade 10-13 and 10-27 as pre-registered.** Don't add pages in either lane before then.
+
+### 2026-10-07 (b) — the KD pull came back: real estate and jewelry stay, hotel/OTA closes
+
+Source: `raw/fashion-retouching-10-07/semrush-kd.png`, 17 terms, CPC visible. ⚠️ The **refresh quota
+ran out (1,000/1,000)** partway through, so six terms came back with no metrics. They are listed
+under the table and still need a pull. These are not zeros.
+
+| keyword | intent | vol | KD | CPC |
+|---|---|---:|---:|---:|
+| real estate photo editing | I | **880** | 27 | $4.04 |
+| **jewelry photo retouching** | I, C | **210** | **19** 🟢 | **$7.00** |
+| ghost mannequin service. | — | 210 | n/a | $4.23 |
+| real estate photo editing service | I | 210 | 43 🔴 | $5.19 |
+| **virtual twilight** | I | **140** | **0** 🟢 | $3.49 |
+| **hdr real estate photo editing** | I | 50 | **0** 🟢 | $3.26 |
+| apparel photo retouching · booking.com photos · hotel photo editing | — | 10 each | n/a | $0–0 |
+| clothing photo editing | — | 10 | n/a | $1.45 |
+| airbnb photo editing · hotel photography editing | — | **0** | n/a | — |
+| *no metrics:* hotel photo retouching · vacation rental photo editing · sky replacement real estate · remove wrinkles from clothes photo · flat lay photo editing | | | | |
+
+⚠️ `ghost mannequin service.` was entered with a **trailing period**, which is why SEMrush returned no KD.
+Re-pull it as `ghost mannequin service`.
+
+**Readings:**
+1. **Hotel/OTA closes.** Every term measured is at 10/mo or less. It was a plausible market on paper, and
+   the search data doesn't support it. If it is pursued at all, pursue it as outbound, not SEO.
+2. **Real estate is the largest cluster we have KD for:** 880 + 140 + 50 = **1,070/mo**, with CPC of $3.26–4.04
+   on every term. Twilight and HDR are KD 0. The head term is KD 27, one point over the house line.
+   Decide that openly, as 09-15 said, and only after the probe.
+3. ⭐ **`jewelry photo retouching` is the best green in any retouching pull:** KD 19, $7.00 CPC (second
+   only to `portrait photo retouching`'s $13.16), and commercial intent. We have no asset for it.
+   `ai-product-photo-generator` generates images; it does not retouch them.
+4. ⚠️ All four green terms show **AI Overview** in SERP features. Check each SERP live before committing a
+   page. `ecommerce photo editing` was the AIO trap on 09-21.
+
+### The probe is built: `curify-studio/dev/jayw/retouch_probe/probe.py`
+
+It imports the production heal helpers and gate thresholds (`MIN_STRUCTURE`, `MAX_EXPOSURE_SHIFT`,
+`_feather`, `_lowfreq`) and leaves `retouch_pipeline.py` untouched. There are four modes, each set
+by filename prefix:
+`room` (real estate/hotel interiors: clutter, scuff, cord, window, then global white balance),
+`twilight` (whole-frame relight, gated on high-pass edge structure),
+`jewelry` (dust, scratch, fingerprint, reflection), and `garment` (wrinkle, lint, thread).
+Put a competitor's delivered output beside an input as `<mode>__<name>.ref.jpg` and it lands in the side-by-side.
+
+Smoke-tested on one AI-generated jewelry preview: the pipeline ran end to end, and 1 of 4 regions was
+applied, at structure 0.97. Three were skipped because the 382px input makes the boxes too small. **This
+proves the wiring only. It says nothing about quality.** A real probe needs real full-resolution inputs:
+a cluttered interior, a daytime exterior, a dusty ring and a wrinkled flat lay, each with a reference
+if one exists.
+
+### Build verdict: no new blogs. One link now. Tools only behind the probe.
+
+| | verdict | why |
+|---|---|---|
+| **Link: `ghost-mannequin-ai-guide` → `/tools/ai-fashion-model-generator`** | ⭐ **do now** | Spec §8/§9 asked for this link and it never shipped. Verified live: the post links ecommerce-photo, ai-product-photo-generator, die-cut and acrylic, but **not the fashion page**. That post is the fashion page's closest indexed neighbour: it was crawled 09-19 and ranks at pos 7–24 on ghost-mannequin terms, and its es/ja copies earn the clicks. The fashion page sits at **pos 74**, and its only links are `/tools` and the tool footers. Add the bullet in all locales. The cost is one line of copy. |
+| New blog posts | ⛔ no | The blog-spoke fold rate is ~33%. `wedding-photo-retouching-cost` ranks for competitor names, not its targets. Every target in this pull is a tool or service intent. |
+| New fashion tool/page | ⛔ not before 11-02 | The fashion page has had six weeks to rank. A second fashion surface would compete with it. |
+| `/tools/real-estate-photo-editing` | ⏸ **only if `room` + `twilight` pass** | One page, not three: twilight and HDR go into its FAQ, following the consolidation precedent. It must not reuse the `photo_retouch` action until NO_FACE is lifted. |
+| `/tools/jewelry-photo-retouching` | ⏸ **only if `jewelry` passes** | It is a different job from product-photo generation, which is what justifies its own slug (same argument as the fashion spec §1). |
+| More links to wedding / photographers pages | ⛔ no | Both are indexed, and their linkers are crawled. The 10-27 readout decides the next step. |
+
+### Also found: `app/config.py:284` prints a YouTube cookie preview on import
+
+Any script that imports `app.*` writes live `APISID`/`HSID` cookie values to stdout, including this
+probe, CI logs and anything else. Filed, not fixed.
