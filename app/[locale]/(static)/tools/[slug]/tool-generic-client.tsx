@@ -73,6 +73,7 @@ import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVi
 import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import BulkDesignCallout from "@/app/[locale]/_components/BulkDesignCallout";
+import InlineContactCapture from "@/app/[locale]/_components/InlineContactCapture";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import TemplateStrip from "@/app/[locale]/_components/TemplateStrip";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
@@ -245,6 +246,21 @@ export default function ToolGenericClient({
           // Anonymous photo editing: upload one frame → edited file, no sign-in.
           // Its own multipart endpoint, like costume_tryon below.
           <PhotoRetouchGenerate />
+        ) : tool.action?.type === "sample_request" ? (
+          // Done-for-you: no self-serve surface exists, so the CTA is the lead
+          // form itself, headed by what the visitor gets back. Same submit path
+          // and contact:submit:<source> event as every other lead on the site.
+          <div className="max-w-xl mx-auto text-left">
+            <h2 className="text-2xl font-semibold mb-2 text-[var(--c1)]">{t("sample.title")}</h2>
+            <p className="mb-4">{t("sample.body")}</p>
+            <InlineContactCapture
+              source={`sample:tool/${slug}`}
+              subject={t("sample.subject")}
+              cta={t("sample.cta")}
+              note={t("sample.note")}
+              trackingId={`sample-request:tool/${slug}`}
+            />
+          </div>
         ) : tool.action?.type === "costume_tryon" ? (
           // Anonymous viral costume try-on: upload one photo → dynasty-costume
           // transformation mp4. No sign-in required (own multipart endpoint).

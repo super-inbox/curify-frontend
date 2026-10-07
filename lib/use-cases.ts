@@ -185,7 +185,7 @@ export const USE_CASES: UseCaseDef[] = [
   // carrying the editing pitch had no entry point from /tools, tool pages or
   // sibling persona pages.
   { slug: "for-photographers", tier: "b2b",
-    toolSlugs: ["wedding-photo-editing"] },
+    toolSlugs: ["wedding-photo-editing", "real-estate-photo-editing"] },
 ];
 
 export function getUseCaseBySlug(slug: string): UseCaseDef | undefined {

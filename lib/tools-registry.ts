@@ -23,6 +23,11 @@ export type ToolAction =
   // the one calibrated against 8 studio before/after pairs. Rendered by
   // PhotoRetouchGenerate.
   | { type: "photo_retouch" }
+  // Done-for-you sample request — no self-serve surface yet, so the honest CTA
+  // is "send us photos, we send samples back". Renders InlineContactCapture with
+  // the tool's own `sample.*` copy and `source=sample:tool/<slug>`. Deliberately
+  // NOT in INLINE_TOOL_ACTIONS: the card must not say "Create" for a form.
+  | { type: "sample_request" }
   // Brand Direction Explorer — one-line brief → three preset creative
   // directions → generate the chosen visual. Bespoke client, rendered inline
   // on the tool page like the costume_tryon / product_video surfaces.
@@ -563,6 +568,48 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    // Real-estate editing, LED BY VIRTUAL TWILIGHT. SEMrush 2026-10-07:
+    //
+    //   real estate photo editing      880/mo  KD 27  $4.04  ← one over the house line, taken openly
+    //   virtual twilight               140/mo  KD  0  $3.49  ← SERP = tool/service pages: our shape
+    //   hdr real estate photo editing   50/mo  KD  0  $3.26  ← NOT offered; FAQ says so
+    //
+    // The head-term SERP is long guides from one incumbent (imagen-ai.com), so the
+    // title leads with the KD-0 term whose SERP we can actually match.
+    //
+    // WHAT WE MAY CLAIM, from the 10-07 NO_FACE probe (curify-studio
+    // dev/jayw/retouch_probe): day→dusk passed; room cleanup did NOT (it invented
+    // an object, scuffs only faded). So this page sells twilight and says plainly
+    // that clutter removal and HDR blending are not offered. The production
+    // /photo-retouch endpoint still raises NO_FACE on an empty room, so there is
+    // no self-serve surface: the CTA is a sample request, run by hand.
+    //
+    // EN only: the buyer vocabulary (MLS, listing photos) is US-market.
+    id: "real-estate-photo-editing",
+    slug: "real-estate-photo-editing",
+    groupId: "image",
+    status: "demo",
+    // Unused by sample_request. Required field.
+    job_type: "video_transcript",
+    namespace: "realEstatePhotoEditing",
+    action: { type: "sample_request" },
+    locales: ["en"],
+    i18n: toolKeys("real_estate_photo_editing"),
+    seo: seoKeys("real_estate_photo_editing"),
+    demo: {
+      type: "single_image",
+      // ⚠️ Illustrative: the daytime frame is itself generated (no real
+      // property, no people, no marks), and the twilight is the probe's own
+      // output on it. Swap for a real listing pair once a sample request
+      // produces one we may publish.
+      // public/images is gitignored; uploaded to
+      // gs://curify-static/images/real_estate/ and verified 200.
+      src: "/images/real_estate/virtual-twilight-before-after.jpg",
+      alt: "Virtual twilight example: the same house as a flat daytime photo and as a dusk shot with lit windows",
+    },
+  },
+
+  {
     // Viral top-of-funnel toy: upload one selfie → a cinematic Chinese
     // dynasty-costume transformation video ("try on 5,000 years of Chinese
     // fashion"). Deliberately ANONYMOUS (no sign-in) to maximize share-driven
@@ -778,6 +825,10 @@ export function groupTools(): Record<ToolGroupId, ToolDef[]> {
 // Google counts. Slugs must exist in TOOL_REGISTRY — getSiblingTools drops
 // unknown or coming_soon entries rather than rendering a dead card.
 export const TOOL_RELATED_TOOLS: Record<string, string[]> = {
+  // Photographer intent both ways: the wedding page is the only other editing
+  // tool, and it is indexed (09-15), so it is also this page's first linker.
+  "real-estate-photo-editing": ["wedding-photo-editing", "ai-product-photo-generator", "style-transfer"],
+  "wedding-photo-editing": ["real-estate-photo-editing", "ai-fashion-model-generator", "style-transfer"],
   "ai-fashion-model-generator": ["ecommerce-photo", "ai-product-photo-generator", "packaging-mockup"],
   // Product-photo intent → the production-file tools a seller needs next.
   "ecommerce-photo": ["die-cut-sticker-file", "packaging-mockup", "mockup"],
@@ -850,6 +901,7 @@ export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
   // posts shipped at referringUrls = 0, and that is the recorded cause of their
   // zero impressions).
   "wedding-photo-editing": ["creator-tools"],
+  "real-estate-photo-editing": ["creator-tools"],
   // Added 2026-09-16. This is the site's LARGEST click source — 314 of 786 site
   // clicks in the 28d to 09-15, position 8.5, 14.4% CTR — and it had no entry,
   // so it rendered no related reading and never linked to its own blog post.
@@ -898,6 +950,9 @@ export const TOOL_PINNED_BLOGS: Record<string, string[]> = {
   // date, and `creator-tools` holds 20 posts — this one would drop out of the slot
   // within weeks and the inbound edge would silently disappear.
   "wedding-photo-editing": ["wedding-photo-retouching-cost"],
+  // The closest post on editing-service pricing; a photographer weighing
+  // outsourced twilight edits is weighing the same per-image cost.
+  "real-estate-photo-editing": ["wedding-photo-retouching-cost"],
   // PINNED for the same reason: `video-translation-dubbing` is a deep category
   // and `asl-video-translator` carries lastmod 2026-06-05, so the freshness sort
   // would never surface it in the 3 slots the component renders.

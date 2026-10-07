@@ -423,6 +423,14 @@
         "description": "Free wedding and portrait photo editing. Flyaways, skin, eyes and garment creases, region by region — your framing and background untouched. No sign-in."
       }
     },
+    "real_estate_photo_editing": {
+      "title": "Virtual Twilight & Real Estate Photo Editing",
+      "desc": "Turn a daytime exterior into a dusk listing photo — same house, lit windows, twilight sky. Free samples on request.",
+      "meta": {
+        "title": "Virtual Twilight — Real Estate Photo Editing",
+        "description": "Turn a daytime exterior into a dusk listing photo: same house, lit windows, twilight sky. Send a few listing photos and get free virtual twilight samples back."
+      }
+    },
     "ai_fashion_model_generator": {
       "title": "AI Fashion Model Generator",
       "desc": "One flat lay in, the garment on a model out — plus the 27 checks that decide if it is listable."
@@ -1830,6 +1838,76 @@
         "educationBody": "Headshots and portrait sets that need to look edited rather than filtered, with the skin still reading as skin.",
         "businessTitle": "Studios and agencies",
         "businessBody": "If you are outsourcing editing already, the questions worth asking us are consistency across a set, turnaround, and whether we can match a look from your own reference gallery. Those are the parts this pipeline handles numerically."
+      }
+    }
+  },
+  "realEstatePhotoEditing": {
+    "metadata": {
+      "title": "Virtual Twilight — Real Estate Photo Editing",
+      "description": "Turn a daytime exterior into a dusk listing photo: same house, lit windows, twilight sky. Send a few listing photos and get free virtual twilight samples back."
+    },
+    "title": "Virtual twilight for real estate photos",
+    "description": "Day to dusk: the same house and the same framing, with the windows lit and the sky at twilight. Send us a few daytime exteriors and we'll send twilight samples back, free.",
+    "cta": "Request samples",
+    "example": "Illustrative example: the daytime photo was generated for this demo, and the twilight is our edit of it.",
+    "sample": {
+      "title": "Get free virtual twilight samples",
+      "body": "Leave your email and a line about the listing. We'll reply with where to send two or three daytime exteriors, and send them back as twilight shots. No account, no card.",
+      "subject": "Virtual twilight samples",
+      "cta": "Request samples",
+      "note": "Optional: how many listings a month, and anything about the photos (e.g. two-storey, shot straight-on, overcast day)"
+    },
+    "why": {
+      "title": "Why a twilight shot helps a listing",
+      "point1": "It stops the scroll. A dusk exterior with lit windows reads as warm and lived-in; a flat overcast daytime shot reads as a thumbnail to skip.",
+      "point2": "No second visit. The edit is made from the photo you already took at the daytime appointment, not a return trip for a short window after sunset.",
+      "point3": "The house does not move. Rooflines, windows, landscaping and the camera position stay as shot; only the light and the sky change. That is the line between an edit and a misrepresentation.",
+      "point4": "One hero image, not the whole listing. Twilight is for the lead exterior; the interiors stay as they are."
+    },
+    "faq": {
+      "title": "Virtual twilight FAQ",
+      "q1": "What is virtual twilight?",
+      "a1": "Also called day to dusk: a daytime exterior photo converted into a dusk shot, with a twilight sky, warm light in the windows and the exterior lights on. It is made from the photo you already have, so there is no second shoot.",
+      "q2": "Is virtual twilight allowed on MLS listings?",
+      "a2": "Generally yes, as an enhancement. The rules are about truthfulness and disclosure rather than prohibition: an edited photo must still show the property as it is. Check your MLS's rules on enhanced photos and label the image where they require it.",
+      "q3": "Does the edit change the house?",
+      "a3": "No. The architecture, windows, landscaping, driveway and camera position stay as shot. We check every edit against your original by its edges, and an edit that moves a window or adds a tree is thrown away, not delivered.",
+      "q4": "Which photos work best?",
+      "a4": "A daylight exterior, shot straight-on or at a slight angle, with the whole facade visible. Heavy tree cover across the house, or very low sun with long shadows, makes the result harder to get right.",
+      "q5": "Do you do HDR real estate photo editing?",
+      "a5": "Not yet. HDR blending merges several bracketed exposures into one frame. It is a different job and we have not built it. If that is what you need, a dedicated editing service will serve you better today.",
+      "q6": "Can you remove clutter or stage empty rooms?",
+      "a6": "Not yet. We tested clutter removal on interiors and it was not good enough to sell: marks only faded, and in one test an object appeared that was never there. So we only offer the edit that passed.",
+      "q7": "How much does it cost?",
+      "a7": "Samples are free. If they work for you, tell us your monthly volume and we'll come back with a per-photo price.",
+      "q8": "What resolution do I get back?",
+      "a8": "Samples come back at web-listing size, which suits listing portals and social posts. If you need print resolution, say so in the request and we'll tell you honestly whether we can deliver it.",
+      "q9": "How is this different from a real twilight shoot?",
+      "a9": "A real twilight shoot needs the photographer back on site in a short window after sunset, and the result depends on the weather that evening. A virtual twilight is made from the daytime frame, so it costs one edit and you can choose the look."
+    },
+    "deep": {
+      "what": {
+        "title": "What is virtual twilight?",
+        "p1": "Virtual twilight, also called day to dusk, converts a daytime exterior photograph into a dusk shot: a deep blue-to-amber sky, warm light in every window, exterior and landscape lights on.",
+        "p2": "A real twilight shoot needs the photographer back on site after sunset. A virtual twilight is made from the daytime frame, so it costs one edit rather than a second appointment.",
+        "p3": "It is an edit, and buyers' agents know it. Most MLS rules treat it like any enhancement: allowed, as long as the photo still shows the property truthfully. Check your own MLS and disclose it where required."
+      },
+      "how": {
+        "title": "How we make the edit",
+        "p1": "We relight the whole frame in one pass: the sky, the facade and the windows. Twilight changes the light everywhere, so it cannot be done patch by patch.",
+        "p2": "Then we check the edit against your original by its edges. Rooflines, window frames, the driveway and the fence line have to line up with the photo you sent.",
+        "p3": "Light only goes where light can be: windows, porch and wall lights, path and landscape lights. We do not add lamps, people, cars or furniture.",
+        "p4": "What works best is a straight-on or slightly angled exterior, shot in daylight, with the whole facade visible.",
+        "p5": "What we do not do yet: HDR bracket blending, interior clutter removal and virtual staging. Our tests on rooms were not good enough to sell, so we are not selling them."
+      },
+      "usecases": {
+        "title": "Who it is for",
+        "creatorsTitle": "Real estate photographers",
+        "creatorsBody": "Offer twilight as an add-on without booking a second shoot: send the daytime exterior you already delivered.",
+        "educationTitle": "Listing agents",
+        "educationBody": "A hero image for the listing portal and the open-house flyer, made from the photos you already have.",
+        "businessTitle": "Short-term rental hosts",
+        "businessBody": "A dusk exterior for the first photo on your listing. The same rule applies: the property has to look the way it does."
       }
     }
   },
