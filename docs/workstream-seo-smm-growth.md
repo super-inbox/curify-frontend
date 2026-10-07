@@ -4830,3 +4830,62 @@ if one exists.
 
 Any script that imports `app.*` writes live `APISID`/`HSID` cookie values to stdout, including this
 probe, CI logs and anything else. Filed, not fixed.
+
+### 2026-10-07 (c) — probe results, and the five follow-ups
+
+**1. Duplicate portrait-retouching URL: no bleed.** `/nano-template/template-portrait-retouching-blueprint`
+returns **308** to `/nano-template/portrait-retouching-blueprint`, which is 200 with an absolute
+self-canonical. Search Console is reporting a redirected address, and that clears on its own. Nothing to fix.
+
+**3. Fashion page long-tail FAQ: already live.** All 14 `faq.q*` render on the live page, and the
+`FAQPage` JSON-LD carries 14 `Question` items. The `[1..5]` cap from the spec is gone. Nothing to ship.
+
+**2. NO_FACE probe on synthetic inputs** (`gen_inputs.py`: five Gemini-generated frames with planted
+defects, no people or marks; outputs in the session scratchpad, not committed). ⚠️ **Synthetic inputs
+test the method, not the market.** A planted defect is cleaner than a real one.
+
+| mode | gate | pixels | verdict |
+|---|---|---|---|
+| **twilight** (house exterior) | edge structure 0.684 | Same house, same rooflines and windows, lit interiors, dusk sky. Reads as a deliverable virtual twilight. | ✅ **method works** |
+| **jewelry** (ring) | 3/4 applied | The fingerprint and scratches on the band are gone, and the polish survives. One scratch box was rejected, and a stray fibre by the prong remains. | ✅ **near-deliverable** |
+| **room** (living, hotel) | 4/5, 3/5 applied | Cables were removed, but a phantom white object was invented where the phone was. Scuffs and the carpet stain were only faded. Tray, window and laundry basket were all rejected by the structure gate. | ⚠️ **partial: would not pass a client** |
+| **garment** (wrinkled flat lay) | 4/7 applied | **The wrinkles were untouched.** Rerun with frequency separation off for `wrinkle`: the structure gate rejects most regions (0.53, 0.15 < 0.60), and the one applied region leaves a visibly smoothed rectangle. | ❌ **method does not fit** |
+
+**Readings:**
+- **Twilight and jewelry clear the capability gate.** That unblocks `/tools/real-estate-photo-editing`
+  (twilight and HDR in the FAQ) and `/tools/jewelry-photo-retouching` *as scoped pages*. Each still needs
+  one run on a real photo and a live SERP check before building, and the production endpoint still raises
+  NO_FACE, so the page needs the scene path wired first.
+- **Room cleanup is the weak half of real estate.** Clutter removal invents objects, and wall and stain
+  repair is faint. The real-estate page should **lead with twilight and HDR**, and should not promise
+  clutter removal.
+- **Wrinkle removal is the wrong shape for crop-local editing.** Flattening a crease changes exactly the
+  low-frequency structure the gate protects, so the gate rejects most regions and the rest leave a seam.
+  It needs whole-garment regeneration with a silhouette/colour gate, like twilight. ⚠️ **Production
+  implication, unverified:** `retouch_pipeline` handles `garment` creases with the same frequency
+  separation (`TONE_KINDS = ("skin", "garment")`), and run 1 showed that restores the creases at this
+  scale. The wedding page's meta promises *"garment creases"*. **Test one real wedding frame with a
+  creased dress before trusting that copy.** At 6000px, creases may be wide enough to fall in the low
+  band and survive; at 1264px they are not.
+
+**4. Authority: directory submission kit** (operator submits, since these need accounts under the
+founder's name). Submit the **tool URLs, not the homepage**. Verify each directory's terms (free vs
+paid listing) at submission.
+
+| page | listing copy (from live meta; keep it honest) |
+|---|---|
+| `/tools/ai-fashion-model-generator` | *Turn one flat lay into an on-model try-on image, plus a published 27-check apparel QA rubric.* ⚠️ Do **not** say "free" or "no sign-up": generation costs credits and upload requires sign-in. |
+| `/tools/wedding-photo-editing` | *Free wedding and portrait photo editing: flyaways, skin and eyes, region by region, framing untouched. No sign-in.* Leave out "garment creases" until the check above passes. |
+
+Targets: the AI-tool directories (There's An AI For That, Futurepedia, Toolify and similar) plus a
+Product Hunt launch for the fashion page. Product Hunt is already one of the ~10 real referring
+domains. Track referring domains, and position on `ai fashion model generator` (74 today) and
+`wedding photo editing` (not ranking).
+
+**5. Next SEMrush pull** (operator). Competitor-alternative terms, surfaced by the wedding-cost post
+ranking for competitor names: `evoto alternative` · `imagen ai alternative` · `aftershoot alternative` ·
+`botika alternative` · `photoroom alternative` · `boxbrownie alternative`. Plus the six cut off by quota:
+`hotel photo retouching` · `vacation rental photo editing` · `sky replacement real estate` ·
+`remove wrinkles from clothes photo` · `flat lay photo editing` · `ghost mannequin service` (no trailing
+period). Plus `jewelry photo editing` / `jewelry retouching service` to size the cluster the probe just
+unblocked.
