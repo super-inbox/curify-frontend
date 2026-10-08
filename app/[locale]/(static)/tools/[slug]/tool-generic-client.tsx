@@ -215,6 +215,19 @@ export default function ToolGenericClient({
           />
           <p className="text-sm text-gray-500 mb-8 text-center">{t("example")}</p>
         </>
+      ) : demo?.type === "image_pairs" ? (
+        // One before/after per job, each explained in its own words. Wider than
+        // single_image (max-w-3xl) because each image is two panels side by side.
+        <div className="space-y-10 mb-8">
+          {demo.items.map((item) => (
+            <figure key={item.src} className="max-w-3xl mx-auto">
+              <CdnImage className="w-full rounded-xl shadow" src={item.src} alt={item.alt} />
+              <figcaption className="text-sm text-gray-600 mt-3 leading-relaxed">
+                {t(item.captionKey as never)}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       ) : null}
 
       <div id="reproduce" className="mt-8 scroll-mt-24 text-center">

@@ -68,7 +68,14 @@ export default function RelatedBlogsByCategory({
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
         {heading ?? t("relatedArticles", { defaultValue: "Related Articles" })}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Columns follow the card count. Tool pages and /tools pass max=3, and a
+          fixed lg:grid-cols-4 squeezed those three into quarter-width cards
+          beside an empty slot. Literal class strings so Tailwind keeps both. */}
+      <div
+        className={`grid grid-cols-1 md:grid-cols-2 ${
+          filtered.length > 3 ? "lg:grid-cols-4" : "lg:grid-cols-3"
+        } gap-6`}
+      >
         {filtered.map((blog) => (
           <RelatedBlogCard
             key={blog.slug}

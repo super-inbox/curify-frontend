@@ -61,6 +61,14 @@ export type ToolDemo =
       type: "single_image";
       src: string;
       alt?: string;
+    }
+  | {
+      // Several before/after images, each with its own explanation beneath —
+      // for pages whose examples are different jobs (a hotel interior and a
+      // twilight exterior) that one shared caption cannot describe honestly.
+      // `captionKey` is a key inside the tool's namespace.
+      type: "image_pairs";
+      items: { src: string; alt: string; captionKey: string }[];
     };
 
 export type ToolDef = {
@@ -568,23 +576,28 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
-    // Real-estate editing, LED BY VIRTUAL TWILIGHT. SEMrush 2026-10-07:
+    // Real-estate + hotel editing: interiors and virtual twilight. SEMrush 2026-10-07:
     //
-    //   real estate photo editing      880/mo  KD 27  $4.04  ← one over the house line, taken openly
-    //   virtual twilight               140/mo  KD  0  $3.49  ← SERP = tool/service pages: our shape
-    //   hdr real estate photo editing   50/mo  KD  0  $3.26  ← NOT offered; FAQ says so
+    //   real estate photo editing      880/mo  KD 27  $4.04  ← title term, one over the house line, taken openly
+    //   virtual twilight               140/mo  KD  0  $3.49  ← SERP = tool/service pages; carried in title + FAQ
+    //   hdr real estate photo editing   50/mo  KD  0  $3.26  ← no bracket merge; FAQ says what we do instead
+    //   hotel / OTA photo editing      ≤10/mo               ← no search demand; a use-case section, not the title
     //
-    // The head-term SERP is long guides from one incumbent (imagen-ai.com), so the
-    // title leads with the KD-0 term whose SERP we can actually match.
+    // Broadened 10-08 from twilight-only once a real interior edit existed: the
+    // lead-010 hotel trial (FZH_8528, v4) edits the WHOLE FRAME — exposure, colour,
+    // window recovered from the photographer's own darker frame, bedding tidied.
+    // What failed in the 10-07 NO_FACE probe was crop-local object removal, a
+    // different method, so object removal and staging stay "not offered".
     //
-    // WHAT WE MAY CLAIM, from the 10-07 NO_FACE probe (curify-studio
-    // dev/jayw/retouch_probe): day→dusk passed; room cleanup did NOT (it invented
-    // an object, scuffs only faded). So this page sells twilight and says plainly
-    // that clutter removal and HDR blending are not offered. The production
-    // /photo-retouch endpoint still raises NO_FACE on an empty room, so there is
-    // no self-serve surface: the CTA is a sample request, run by hand.
+    // The v4 edit also put a picture on the room's TV screen. The copy therefore
+    // does NOT promise "nothing is added": it says additions are only ones the
+    // customer asks for, and the demo caption discloses the TV picture.
+    // Output is ~1,500px on the long edge (generative edit of the embedded JPEG),
+    // and the FAQ says so rather than "web size".
     //
-    // EN only: the buyer vocabulary (MLS, listing photos) is US-market.
+    // The production /photo-retouch endpoint still raises NO_FACE on an empty
+    // room, so there is no self-serve surface: the CTA is a sample request, run by
+    // hand.
     id: "real-estate-photo-editing",
     slug: "real-estate-photo-editing",
     groupId: "image",
@@ -593,19 +606,32 @@ export const TOOL_REGISTRY: ToolDef[] = [
     job_type: "video_transcript",
     namespace: "realEstatePhotoEditing",
     action: { type: "sample_request" },
-    locales: ["en"],
+    // en + zh: zh added 10-08 because the hotel side of this page is a Chinese
+    // market (lead-010 and the 小红书 motion). Other locales stay noindexed.
+    locales: ["en", "zh"],
     i18n: toolKeys("real_estate_photo_editing"),
     seo: seoKeys("real_estate_photo_editing"),
+    // public/images is gitignored; both files uploaded to
+    // gs://curify-static/images/real_estate/ and verified 200.
     demo: {
-      type: "single_image",
-      // ⚠️ Illustrative: the daytime frame is itself generated (no real
-      // property, no people, no marks), and the twilight is the probe's own
-      // output on it. Swap for a real listing pair once a sample request
-      // produces one we may publish.
-      // public/images is gitignored; uploaded to
-      // gs://curify-static/images/real_estate/ and verified 200.
-      src: "/images/real_estate/virtual-twilight-before-after.jpg",
-      alt: "Virtual twilight example: the same house as a flat daytime photo and as a dusk shot with lit windows",
+      type: "image_pairs",
+      items: [
+        {
+          // Illustrative: the daytime house is itself generated, and the
+          // twilight is the 10-07 probe's output on it. The caption says both.
+          src: "/images/real_estate/virtual-twilight-before-after.jpg",
+          alt: "Virtual twilight: the same house as a flat daytime photo and as a dusk shot with lit windows",
+          captionKey: "demoCaptions.twilight",
+        },
+        {
+          // A real hotel room — lead-010 FZH_8528 as shot (embedded JPEG) and
+          // edited (v4-bedding) — published with the property's authorization
+          // (operator, 2026-10-08). Never name the property anywhere on the site.
+          src: "/images/real_estate/hotel-room-before-after.jpg",
+          alt: "Hotel room before and after editing: a dim, amber room brightened, the window view recovered and the beds smoothed",
+          captionKey: "demoCaptions.hotel",
+        },
+      ],
     },
   },
 
