@@ -378,6 +378,14 @@
         "description": "無料のウェディング・ポートレート写真編集。後れ毛、肌、目、衣装のシワを領域ごとに処理し、構図と背景はそのまま。登録不要、1枚から。"
       }
     },
+    "real_estate_photo_editing": {
+      "title": "不動産・ホテル写真編集",
+      "desc": "部屋を明るく、窓の外を本物の景色に、ベッドを整え、外観を夕景に。無料サンプルを申し込めます。",
+      "meta": {
+        "title": "不動産・ホテル写真編集",
+        "description": "部屋を明るく、窓の外を本物の景色に、ベッドを整え、外観を夕景に。無料サンプルを申し込めます。"
+      }
+    },
     "ai_fashion_model_generator": {
       "title": "AIファッションモデル生成",
       "desc": "平置きが1枚入り、着用画像が出てくる——出品できるかを決める27項目付き。"
@@ -1818,6 +1826,9 @@
         "businessTitle": "Studios and agencies",
         "businessBody": "If you are outsourcing editing already, the questions worth asking us are consistency across a set, turnaround, and whether we can match a look from your own reference gallery. Those are the parts this pipeline handles numerically."
       }
+    },
+    "demoCaptions": {
+      "plan": "ポートレートレタッチ設計図テンプレートより：まず変更する部分（おくれ毛、テカリ、くま、肌のきめ）を一つずつ示し、その横に仕上がりの目標を並べています。これは計画の図解です。このページのツールは示した部分の中だけを編集し、構図と背景は撮影時のままにします。"
     }
   },
   "aiFashionModelGenerator": {

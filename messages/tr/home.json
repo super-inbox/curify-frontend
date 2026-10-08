@@ -378,6 +378,14 @@
         "description": "Ücretsiz düğün ve portre fotoğraf düzenleme. Saç telleri, cilt, gözler ve kumaş kırışıkları bölge bölge; kadraj ve arka plan el değmeden. Üyeliksiz."
       }
     },
+    "real_estate_photo_editing": {
+      "title": "Emlak ve Otel Fotoğrafı Düzenleme",
+      "desc": "Daha aydınlık odalar, gerçek pencere manzarası, düzgün yataklar ve alacakaranlık dış cepheler. İstek üzerine ücretsiz örnekler.",
+      "meta": {
+        "title": "Emlak ve Otel Fotoğrafı Düzenleme",
+        "description": "Daha aydınlık odalar, gerçek pencere manzarası, düzgün yataklar ve alacakaranlık dış cepheler. İstek üzerine ücretsiz örnekler."
+      }
+    },
     "ai_fashion_model_generator": {
       "title": "AI Moda Manken Üreteci",
       "desc": "Bir düz çekim girer, ürün manken üzerinde çıkar — listelenebilirliğe karar veren 27 kontrolle birlikte."
@@ -1903,6 +1911,9 @@
         "businessTitle": "Studios and agencies",
         "businessBody": "If you are outsourcing editing already, the questions worth asking us are consistency across a set, turnaround, and whether we can match a look from your own reference gallery. Those are the parts this pipeline handles numerically."
       }
+    },
+    "demoCaptions": {
+      "plan": "Portre rötuş planı şablonumuzdan: Önce değiştirilecek her bölge işaretlenir (uçuşan saçlar, parlama, göz altı halkaları, cilt dokusu), yanında hedef sonuç yer alır. Planı gösterir. Bu sayfadaki araç yalnızca adını koyduğu bölgelerde düzenleme yapar; kadrajı ve arka planı çekildiği gibi bırakır."
     }
   },
   "aiFashionModelGenerator": {

@@ -35,6 +35,7 @@ export const TOOL_PERSONAS: Record<string, ToolPersonas> = {
   // The photo-editing surface points at photographers first; the other two slots
   // are the nearest real fits in the catalogue, not filler.
   "wedding-photo-editing": p("for-photographers", "for-creators", "for-designers"),
+  "real-estate-photo-editing": p("for-photographers", "for-marketers", "for-creators"),
   // ---- video / audio ----
   "video-dubbing": p("for-creators", "for-publishers", "for-marketers"),
   "bilingual-subtitles": p("for-creators", "for-esl-learners", "for-marketers"),
