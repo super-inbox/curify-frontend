@@ -132,6 +132,43 @@ const USE_CASE_DEMO: Record<string, DemoDef[]> = {
   "for-designers": [ILLUSTRATOR_DEMO],
 };
 
+// Before/after example images per persona. Each caption is authored at
+// `useCasePage.<slug>.examples.<key>` and the block renders only where its
+// title exists, so a locale without the copy shows nothing rather than keys.
+// Provenance is part of the caption, not a footnote: every example says
+// whether it is a real photo (with permission) or a generated illustration.
+type UseCaseExample = { key: string; src: string; alt: string };
+const USE_CASE_EXAMPLES: Record<string, UseCaseExample[]> = {
+  "for-photographers": [
+    {
+      key: "plan",
+      // Our portrait-retouching-blueprint template example (public on its page).
+      src: "/images/retouching/portrait-retouching-plan.jpg",
+      alt: "Portrait retouching plan marked region by region beside the retouched result",
+    },
+    {
+      // curify-gallery smm_daily/2026-09-01-retouching/demos/retouch-portrait-demo-09-10:
+      // synthetic subject from our own prompt, rebuilt as the clean replacement
+      // for the client-spec render that /nano-template/studio-digital-backdrop-scene
+      // examples were cut from. Do NOT swap in those template examples.
+      key: "backdrops",
+      src: "/images/retouching/locked-subject-backdrops.jpg",
+      alt: "The same person, clothes and pose on three backdrops: grey studio, white sweep and a city street at golden hour",
+    },
+    {
+      key: "twilight",
+      src: "/images/real_estate/virtual-twilight-before-after.jpg",
+      alt: "Virtual twilight: a house as a flat daytime photo and as a dusk shot with lit windows",
+    },
+    {
+      // lead-010 FZH_8528, published with the property's authorization (2026-10-08).
+      key: "hotel",
+      src: "/images/real_estate/hotel-room-before-after.jpg",
+      alt: "Hotel room before and after editing: brightened, window view recovered, beds smoothed",
+    },
+  ],
+};
+
 function UseCaseVideo({
   slug,
   videoKey,
@@ -462,6 +499,27 @@ export default function UseCaseClient({
           </div>
         )}
       </div>
+
+      {(USE_CASE_EXAMPLES[slug]?.length ?? 0) > 0 &&
+        t.has(`${slug}.examples.title` as never) && (
+          <section className="mb-10">
+            <h2 className="mb-4 text-xl font-bold text-neutral-900">
+              {t(`${slug}.examples.title` as never)}
+            </h2>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              {USE_CASE_EXAMPLES[slug]
+                .filter((ex) => t.has(`${slug}.examples.${ex.key}` as never))
+                .map((ex) => (
+                  <figure key={ex.key}>
+                    <CdnImage className="w-full rounded-xl shadow" src={ex.src} alt={ex.alt} />
+                    <figcaption className="mt-2 text-sm leading-relaxed text-neutral-600">
+                      {t(`${slug}.examples.${ex.key}` as never)}
+                    </figcaption>
+                  </figure>
+                ))}
+            </div>
+          </section>
+        )}
 
       {t.has(`${slug}.case.title` as never) && (
         <section className="mb-10 rounded-2xl border border-neutral-200 bg-neutral-50/70 p-6 sm:p-8">

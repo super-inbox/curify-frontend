@@ -573,6 +573,24 @@ export const TOOL_REGISTRY: ToolDef[] = [
     action: { type: "photo_retouch" },
     i18n: toolKeys("wedding_photo_editing"),
     seo: seoKeys("wedding_photo_editing"),
+    demo: {
+      type: "image_pairs",
+      items: [
+        {
+          // Our own portrait-retouching-blueprint template example (already
+          // public on its template page; used as FB post P1). The caption says
+          // it illustrates the plan, not a run of this tool.
+          // ⚠️ Deliberately NOT a run of /photo-retouch: a synthetic bride put
+          // through the production pipeline on 2026-10-08 fixed the amber cast
+          // but left the flyaways and most blemishes, so it was not published.
+          // Swap in a pipeline pair once one is good enough to stand on its own.
+          // Resized copy at gs://curify-static/images/retouching/ (verified 200).
+          src: "/images/retouching/portrait-retouching-plan.jpg",
+          alt: "Portrait retouching plan: a face marked region by region for flyaways, shine, dark circles and skin texture, beside the retouched result",
+          captionKey: "demoCaptions.plan",
+        },
+      ],
+    },
   },
 
   {
