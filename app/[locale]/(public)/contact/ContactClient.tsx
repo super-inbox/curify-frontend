@@ -3,7 +3,9 @@
 import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { contactService } from "@/services/contact";
+import { contactService, type ContactRole } from "@/services/contact";
+import ContactRoleSelect from "@/app/[locale]/_components/ContactRoleSelect";
+import { trackCalendlyClick } from "@/services/funnelEvents";
 import { useTracking } from "@/services/useTracking";
 
 const CALENDLY = "https://calendly.com/qqwjq9916/15-minute-meeting";
@@ -33,6 +35,7 @@ function ContactForm() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState(prefilledSubject);
   const [content, setContent] = useState("");
+  const [role, setRole] = useState<ContactRole | "">("");
   const [status, setStatus] = useState<"idle" | "ok" | "error">("idle");
   const [loading, setLoading] = useState(false);
 
@@ -47,6 +50,7 @@ function ContactForm() {
         subject,
         content,
         ...(source ? { source } : {}),
+        ...(role ? { role } : {}),
       });
       // The only lead event on the site. Until this existed no submit rate
       // could be computed, so every commercial CTA was measurable up to the
@@ -76,6 +80,7 @@ function ContactForm() {
       setEmail("");
       setSubject("");
       setContent("");
+      setRole("");
     } catch {
       setStatus("error");
     } finally {
@@ -110,6 +115,12 @@ function ContactForm() {
         className="w-full border rounded px-3 py-2 mb-3"
       />
 
+      <ContactRoleSelect
+        value={role}
+        onChange={setRole}
+        className="w-full border rounded px-3 py-2 mb-3 bg-white text-gray-700"
+      />
+
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
@@ -138,6 +149,25 @@ function ContactForm() {
         </p>
       )}
     </form>
+  );
+}
+
+// Calendly's booking UI lives in a cross-origin iframe, so clicks inside it
+// are unobservable. This link is the measurable path to the same calendar:
+// it opens Calendly in a new tab and fires calendly:click:contact. The iframe
+// stays for people who book inline (visible only in Calendly's own reports).
+function CalendlyLink({ source }: { source: string }) {
+  const t = useTranslations("contact");
+  return (
+    <a
+      href={CALENDLY}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => trackCalendlyClick(source)}
+      className="inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700 mb-4"
+    >
+      {t("call.bookLink")}
+    </a>
   );
 }
 
@@ -176,6 +206,8 @@ export default function ContactClient() {
               <h2 className="text-lg font-semibold mb-2">📅 {t("call.title")}</h2>
               <p className="text-sm text-gray-600 mb-3">{t("call.description")}</p>
             </div>
+
+            <CalendlyLink source="contact" />
 
             <iframe
               src={CALENDLY}

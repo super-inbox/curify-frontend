@@ -16,6 +16,11 @@ import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import { resolveContentLocale } from "@/lib/locale_utils";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
+import recentTemplatesSnapshot from "@/public/data/recent_templates.json";
+import {
+  getUseCaseTemplateOrder,
+  interleaveRoundRobin,
+} from "@/lib/use_case_curation";
 
 import UseCaseClient from "./UseCaseClient";
 import TopicWorkflow from "@/app/[locale]/_components/TopicWorkflow";
@@ -102,20 +107,28 @@ export default async function UseCasePage({ params }: Props) {
   );
 
   const contentLocale = resolveContentLocale(localeStr);
+  // Curated personas (lib/use_case_curation.ts) get an explicit, ordered
+  // template list: explicit use_cases tag ∪ the persona's mapped topics, with
+  // topic-fallback-only matches dropped. Other slugs keep the use_cases filter.
+  const curatedOrder = getUseCaseTemplateOrder(
+    useCase.slug,
+    reg,
+    recentTemplatesSnapshot
+  );
   const nanoCards = buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 4,
     strictLocale: false,
     translate: translateNano,
-    useCaseSlugs: [useCase.slug],
+    ...(curatedOrder
+      ? { templateIds: curatedOrder }
+      : { useCaseSlugs: [useCase.slug] }),
   });
 
-  // Flatten the template-grouped nanoCards into individual examples
-  // for the ExampleImagesGrid (per the 2026-06-29 swap from template-
-  // list UI to example-grid UI). Each card carries up to 4 examples
-  // already filtered+ordered by use-case + parent rank_score — flatten
-  // 1:1 here so the grid shows individual creations the user can
-  // click straight into the example detail page.
-  const exampleItems = nanoCards.flatMap((card) => {
+  // Flatten the template-grouped nanoCards into individual examples for the
+  // ExampleImagesGrid, interleaved round-robin across templates (same idea as
+  // buildOrderedTemplateImageGridItems): up to 4 examples per template, and
+  // adjacent tiles come from different templates, in curated order.
+  const perCard = nanoCards.map((card) => {
     const previews =
       card.preview_image_urls?.length
         ? card.preview_image_urls
@@ -128,6 +141,7 @@ export default async function UseCasePage({ params }: Props) {
       templateId: card.template_id,
     }));
   });
+  const exampleItems = interleaveRoundRobin(perCard);
 
   const t = await getTranslations({ locale: localeStr });
   const safeT = (key: string) => {

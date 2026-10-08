@@ -573,7 +573,20 @@
     },
     "call": {
       "title": "Schedule a Call",
-      "description": "Ideal for bulk runs, partnership, sales, or technical discussions. Book a 15-minute meeting at your convenience — we'll come prepared."
+      "description": "Ideal for bulk runs, partnership, sales, or technical discussions. Book a 15-minute meeting at your convenience — we'll come prepared.",
+      "bookLink": "Book a 15-min call"
+    },
+    "role": {
+      "label": "Your role",
+      "placeholder": "I am a… (optional)",
+      "options": {
+        "brand_dtc": "Brand / DTC",
+        "agency_marketer": "Agency / marketer",
+        "publisher": "Publisher",
+        "photographer": "Photographer",
+        "merch_pod": "Merch / POD seller",
+        "other": "Other"
+      }
     }
   },
   "topicPage": {

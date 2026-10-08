@@ -5,6 +5,7 @@ import { Loader2, Upload as UploadIcon, Wand2, Download, Share2, X } from "lucid
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import { costumeTryonService } from "@/services/costumeTryon";
 import { useTracking } from "@/services/useTracking";
+import { trackFirstGeneration } from "@/services/funnelEvents";
 
 // 3 pre-rendered demo clips (9:16). CdnVideo rewrites these relative /video
 // paths to the CDN host. Muted + loop so the row auto-plays as an eye-catcher.
@@ -93,6 +94,7 @@ export default function CostumeTryonGenerate() {
         throw new Error(res.message || "Couldn't start your costume video.");
       }
       const url = await costumeTryonService.pollResult(res.project_id);
+      trackFirstGeneration("costume-tryon");
       setResultUrl(url);
     } catch (e) {
       if ((e as { pending?: boolean } | undefined)?.pending) {

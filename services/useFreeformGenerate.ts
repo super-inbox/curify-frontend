@@ -14,6 +14,7 @@ import {
   topUpContextAtom,
 } from "@/app/atoms/atoms";
 import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
+import { trackFirstGeneration } from "@/services/funnelEvents";
 
 /** The client-side affordability check. Must equal what the backend actually
  *  charges: this file declared its own `= 10` from the 10-credit era and was
@@ -185,6 +186,7 @@ export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, o
         throw userError(res?.message || "Generation failed");
       }
       const imageUrl = await pollFreeformResult(res.project_id);
+      trackFirstGeneration("freeform");
       onSuccess?.(imageUrl, args);
       return imageUrl;
     } catch (err) {

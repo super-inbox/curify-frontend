@@ -528,7 +528,20 @@
     },
     "call": {
       "title": "전화 예약",
-      "description": "대량 실행, 파트너십, 판매 또는 기술 논의에 적합합니다. 편하신 시간에 15분 미팅을 예약하세요 — 저희가 준비해 가겠습니다."
+      "description": "대량 실행, 파트너십, 판매 또는 기술 논의에 적합합니다. 편하신 시간에 15분 미팅을 예약하세요 — 저희가 준비해 가겠습니다.",
+      "bookLink": "15분 통화 예약하기"
+    },
+    "role": {
+      "label": "역할",
+      "placeholder": "저는…(선택)",
+      "options": {
+        "brand_dtc": "브랜드 / DTC",
+        "agency_marketer": "대행사 / 마케터",
+        "publisher": "출판사",
+        "photographer": "사진작가",
+        "merch_pod": "굿즈 / POD 판매자",
+        "other": "기타"
+      }
     }
   },
   "nanoGallery": {

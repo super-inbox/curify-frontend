@@ -528,7 +528,20 @@
     },
     "call": {
       "title": "Bir Görüşme Planlayın",
-      "description": "Toplu çalışmalara, ortaklıklara, satışlara veya teknik tartışmalara idealdir. Rahatınıza göre 15 dakikalık bir toplantı ayarlayın — biz hazırlıklı geleceğiz."
+      "description": "Toplu çalışmalara, ortaklıklara, satışlara veya teknik tartışmalara idealdir. Rahatınıza göre 15 dakikalık bir toplantı ayarlayın — biz hazırlıklı geleceğiz.",
+      "bookLink": "15 dakikalık görüşme planla"
+    },
+    "role": {
+      "label": "Rolünüz",
+      "placeholder": "Ben… (isteğe bağlı)",
+      "options": {
+        "brand_dtc": "Marka / DTC",
+        "agency_marketer": "Ajans / pazarlamacı",
+        "publisher": "Yayıncı",
+        "photographer": "Fotoğrafçı",
+        "merch_pod": "Merch / POD satıcısı",
+        "other": "Diğer"
+      }
     }
   },
   "nanoGallery": {

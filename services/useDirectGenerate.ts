@@ -23,6 +23,7 @@ import {
   topUpContextAtom,
 } from "@/app/atoms/atoms";
 import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
+import { trackFirstGeneration } from "@/services/funnelEvents";
 
 /** The client-side affordability check. Must equal what the backend actually
  *  charges: this file declared its own `= 10` from the 10-credit era and was
@@ -204,6 +205,7 @@ export function useDirectGenerate({
         });
       }
       lastGeneratedExIdRef.current = exId;
+      trackFirstGeneration("nano-template");
       onSuccess(imageUrl, exId, { projectId: res.project_id, watermarked });
     } catch (err) {
       // Surface clean user-facing messages (content-blocked, timeout, etc.);

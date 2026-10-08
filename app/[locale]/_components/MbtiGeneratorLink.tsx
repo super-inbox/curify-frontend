@@ -54,7 +54,7 @@ export default function MbtiGeneratorLink({
             Not sure which type to make?
           </div>
           <div className="mt-0.5 text-sm text-gray-600">
-            Spin the random MBTI generator — get one of the 16 types, then turn it into a card.
+            Spin the random MBTI generator or browse MBTI character ideas by universe — then turn one into a card.
           </div>
         </div>
         <span className="flex-none rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white transition-colors group-hover:bg-purple-700">

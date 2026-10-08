@@ -8,6 +8,7 @@ import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUploa
 import { productVideoService } from "@/services/productVideo";
 import { useTracking } from "@/services/useTracking";
 import { PRODUCT_VIDEO_CREDITS } from "@/lib/pricing";
+import { trackFirstGeneration } from "@/services/funnelEvents";
 
 // One photo is enough to generate — the backend reuses it across beats with a
 // different crop each time. Three slots still show, because more photos do make
@@ -108,6 +109,7 @@ export default function ProductVideoGenerate() {
       }
       setProgress("Rendering your video — this usually takes 30–60 seconds…");
       const url = await poll(res.project_id);
+      trackFirstGeneration("product-video");
       setResultUrl(url);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Video generation failed. Please try again.");

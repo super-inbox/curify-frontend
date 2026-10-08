@@ -528,7 +528,20 @@
     },
     "call": {
       "title": "Planifier un appel",
-      "description": "Idéal pour des exécutions en gros, des partenariats, des ventes ou des discussions techniques. Réservez une réunion de 15 minutes à votre convenance — nous viendrons préparés."
+      "description": "Idéal pour des exécutions en gros, des partenariats, des ventes ou des discussions techniques. Réservez une réunion de 15 minutes à votre convenance — nous viendrons préparés.",
+      "bookLink": "Réserver un appel de 15 min"
+    },
+    "role": {
+      "label": "Votre rôle",
+      "placeholder": "Je suis… (facultatif)",
+      "options": {
+        "brand_dtc": "Marque / DTC",
+        "agency_marketer": "Agence / marketing",
+        "publisher": "Éditeur",
+        "photographer": "Photographe",
+        "merch_pod": "Vendeur merch / POD",
+        "other": "Autre"
+      }
     }
   },
   "nanoGallery": {

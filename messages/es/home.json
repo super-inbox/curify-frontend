@@ -528,7 +528,20 @@
     },
     "call": {
       "title": "Programar una llamada",
-      "description": "Ideal para ejecuciones en masa, asociaciones, ventas o discusiones técnicas. Reserva una reunión de 15 minutos a tu conveniencia — estaremos preparados."
+      "description": "Ideal para ejecuciones en masa, asociaciones, ventas o discusiones técnicas. Reserva una reunión de 15 minutos a tu conveniencia — estaremos preparados.",
+      "bookLink": "Reservar una llamada de 15 min"
+    },
+    "role": {
+      "label": "Tu rol",
+      "placeholder": "Soy… (opcional)",
+      "options": {
+        "brand_dtc": "Marca / DTC",
+        "agency_marketer": "Agencia / marketing",
+        "publisher": "Editorial",
+        "photographer": "Fotógrafo",
+        "merch_pod": "Vendedor de merch / POD",
+        "other": "Otro"
+      }
     }
   },
   "nanoGallery": {

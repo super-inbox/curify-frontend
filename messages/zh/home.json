@@ -528,7 +528,20 @@
     },
     "call": {
       "title": "预约通话",
-      "description": "适合批量需求、合作、商务或技术沟通。选一个方便的时间约 15 分钟，我们会提前做好准备。"
+      "description": "适合批量需求、合作、商务或技术沟通。选一个方便的时间约 15 分钟，我们会提前做好准备。",
+      "bookLink": "预约 15 分钟通话"
+    },
+    "role": {
+      "label": "你的身份",
+      "placeholder": "我是……（选填）",
+      "options": {
+        "brand_dtc": "品牌 / DTC",
+        "agency_marketer": "代理商 / 营销人员",
+        "publisher": "出版方",
+        "photographer": "摄影师",
+        "merch_pod": "周边 / POD 卖家",
+        "other": "其他"
+      }
     }
   },
   "nanoGallery": {
