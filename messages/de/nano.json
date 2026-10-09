@@ -8521,5 +8521,28 @@
         ]
       }
     }
+  },
+  "template-country-tourism-collage-poster": {
+    "category": "Länder-Tourismus-Collage-Poster",
+    "description": "Verwandle jeden Ländernamen in ein Tourismusposter im Magazin-Cover-Stil: 3D-Marmortitel in Flaggenfarben, das Wahrzeichen im Zentrum, ein nahtloses Panorama und ein Stillleben mit lokaler Küche.",
+    "title": "Nano Banana Prompt: Länder-Tourismus-Collage-Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein fotorealistisches Hochformat-Tourismusposter für jedes Land. Ein riesiger Marmortitel trägt die Flaggenfarben; das bekannteste Wahrzeichen steht im Zentrum; Monumente, Skyline und Landschaften fließen zu einem durchgehenden Panorama zusammen; Menschen in Tracht, ein heimisches Tier und ein Stillleben typischer Gerichte runden die Szene ab.",
+        "who": "Für Tourismusverbände, Destinationsmarketing, Hotel- und Reisemarken, Reise-Creator und Lehrkräfte, die ein starkes Länderposter oder eine ganze einheitliche Serie für Kampagnen, Social Media, Unterricht oder Wandkunst brauchen.",
+        "how": [
+          "Gib einen Ländernamen ein (z. B. Japan, Italien, Brasilien).",
+          "Die Vorlage rendert ein 4:5-Poster mit 3D-Titel in den Flaggenfarben.",
+          "Das Wahrzeichen steht im Zentrum, umgeben von einem nahtlosen Panorama.",
+          "Tracht, heimische Tiere und ein Essens-Stillleben sorgen für Kultur und Tiefe.",
+          "Tausche den Ländernamen und erhalte eine passende Serie für jedes Reiseziel."
+        ],
+        "prompts": [
+          "Erstelle ein Tourismus-Collage-Poster für Japan: Fuji, Tempel in Kyoto, Kirschblüten und Sushi.",
+          "Gestalte ein Magazin-Cover-Poster für Italien mit dem Kolosseum im Zentrum und Pasta und Espresso im Vordergrund.",
+          "Generiere ein Tourismus-Collage-Poster für Ägypten: Pyramiden, Nil, Kamelkarawane und Koshari."
+        ]
+      }
+    }
   }
 }
