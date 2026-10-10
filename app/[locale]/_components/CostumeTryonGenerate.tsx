@@ -1,5 +1,8 @@
 "use client";
 
+import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
+
+
 import { useRef, useState } from "react";
 import { Loader2, Upload as UploadIcon, Wand2, Download, Share2, X } from "lucide-react";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
@@ -97,6 +100,7 @@ export default function CostumeTryonGenerate() {
       trackFirstGeneration("costume-tryon");
       setResultUrl(url);
     } catch (e) {
+      if (navigateToAwaitingCredits(e)) return;
       if ((e as { pending?: boolean } | undefined)?.pending) {
         // Render is still running server-side; it will be emailed. Reassure, don't error.
         setPending(

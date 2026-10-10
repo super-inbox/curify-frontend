@@ -84,7 +84,8 @@
     "creditRate": "1 credit ≈ ${amount}",
     "blockedLine": "{jobLabel} costs {required} credits — you have {available}.",
     "buysImages": "≈ {count} images",
-    "unlocksCleanDownloads": "Any top-up also removes the Curify badge from your downloads."
+    "unlocksCleanDownloads": "Any top-up also removes the Curify badge from your downloads.",
+    "shortfallMinimum": "Choose at least {credits} credits to cover this top-up."
   },
   "transactionHistory": {
     "title": "Credits History",
@@ -429,5 +430,16 @@
     "title": "Checkout cancelled",
     "body": "No payment was taken. You can top up any time.",
     "back": "Back to workspace"
+  },
+  "awaitingCredits": {
+    "title": "Awaiting credits",
+    "saved": "Your upload and settings are saved. Top up to continue this project.",
+    "required": "Project price: {credits} credits (${price} USD)",
+    "available": "Available: {credits} credits",
+    "shortfall": "Shortfall: {credits} credits (${price} USD)",
+    "topUp": "Top up and continue",
+    "resume": "Continue project",
+    "jobLabel": "this project",
+    "resumeFailed": "The project could not resume. Please check its status and try continuing again."
   }
 }

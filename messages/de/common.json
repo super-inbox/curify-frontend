@@ -84,7 +84,8 @@
     "creditRate": "1 Credit ≈ ${amount}",
     "blockedLine": "{jobLabel} kostet {required} Credits – du hast {available}.",
     "buysImages": "≈ {count} Bilder",
-    "unlocksCleanDownloads": "Jede Aufladung entfernt außerdem das Curify-Wasserzeichen aus deinen Downloads."
+    "unlocksCleanDownloads": "Jede Aufladung entfernt außerdem das Curify-Wasserzeichen aus deinen Downloads.",
+    "shortfallMinimum": "Wähle mindestens {credits} Credits für diese Aufladung."
   },
   "transactionHistory": {
     "title": "Credits-Geschichte",
@@ -429,5 +430,16 @@
     "title": "Bezahlvorgang abgebrochen",
     "body": "Es wurde nichts abgebucht. Du kannst jederzeit aufladen.",
     "back": "Zurück zum Workspace"
+  },
+  "awaitingCredits": {
+    "title": "Warten auf Credits",
+    "saved": "Deine Datei und Einstellungen sind gespeichert. Lade Credits auf, um dieses Projekt fortzusetzen.",
+    "required": "Projektpreis: {credits} Credits ({price} USD)",
+    "available": "Verfügbar: {credits} Credits",
+    "shortfall": "Es fehlen: {credits} Credits ({price} USD)",
+    "topUp": "Aufladen und fortfahren",
+    "resume": "Projekt fortsetzen",
+    "jobLabel": "dieses Projekt",
+    "resumeFailed": "Das Projekt konnte nicht fortgesetzt werden. Prüfe seinen Status und versuche es erneut."
   }
 }

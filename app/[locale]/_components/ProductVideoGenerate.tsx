@@ -1,5 +1,11 @@
 "use client";
 
+import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
+
+
+import { isAwaitingCredits, AwaitingCreditsError } from "@/lib/awaitingCredits";
+
+
 import { useState } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
 import { Loader2, Plus, Wand2, Download } from "lucide-react";
@@ -77,6 +83,7 @@ export default function ProductVideoGenerate() {
         await sleep(POLL_INTERVAL_MS);
         continue;
       }
+      if (isAwaitingCredits(st)) throw new AwaitingCreditsError(projectId);
       const s = (st.status || "").toUpperCase();
       if (s === "COMPLETED" && st.result_url) return st.result_url;
       if (s === "FAILED") throw new Error(st.failure_reason || "Video generation failed. Please try again.");
@@ -112,6 +119,7 @@ export default function ProductVideoGenerate() {
       trackFirstGeneration("product-video");
       setResultUrl(url);
     } catch (e) {
+      if (navigateToAwaitingCredits(e)) return;
       setError(e instanceof Error ? e.message : "Video generation failed. Please try again.");
     } finally {
       setIsGenerating(false);

@@ -80,6 +80,13 @@ async getProjectStatus(projectId: string): Promise<ProjectStatusUpdate> {
   return response.data;
 },
 
+  async resumeProject(projectId: string): Promise<ProjectStatusUpdate> {
+    const response = await apiClient.request<{ data: ProjectStatusUpdate }>(
+      `/projects/${encodeURIComponent(projectId)}/resume`, { method: "POST" },
+    );
+    return response.data;
+  },
+
   // ✅ Re-run a FAILED project on the video it already has.
   //
   // The video is the point. The backend recovers the source from blob by

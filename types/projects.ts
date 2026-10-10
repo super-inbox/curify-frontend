@@ -6,6 +6,7 @@ export type SubtitleFormat = 'none' | 'source' | 'target' | 'bilingual';
 export type AudioOption = "dubbed" | "original" | "premium";
 
 export type ProjectStatus =
+  | "AWAITING_CREDITS"
   | "QUEUED"
   | "STARTED"
   | "PREPROCESSING"
@@ -39,7 +40,14 @@ export interface JobSettings {
   target_language?: string;
 }
 
-export interface Project {
+export interface CreditRequirement {
+  required_credits?: number | null;
+  available_credits?: number | null;
+  shortfall_credits?: number | null;
+}
+
+export interface Project extends CreditRequirement {
+  failure_code?: string | null;
   project_id: string;
   project_name: string;
   status: ProjectStatus;
@@ -67,7 +75,7 @@ export interface CreateProjectRequest {
   is_production?: boolean;
 }
 
-export interface ProjectStatusUpdate {
+export interface ProjectStatusUpdate extends CreditRequirement {
   project_id: string;
   status: ProjectStatus;
   updated_at?: string;

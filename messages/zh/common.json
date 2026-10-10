@@ -84,7 +84,8 @@
     "creditRate": "1 积分 ≈ ${amount}",
     "blockedLine": "{jobLabel} 需要 {required} 积分，你目前有 {available} 积分。",
     "buysImages": "≈ {count} 张图",
-    "unlocksCleanDownloads": "任意充值后，下载的文件不再带 Curify 水印。"
+    "unlocksCleanDownloads": "任意充值后，下载的文件不再带 Curify 水印。",
+    "shortfallMinimum": "请至少充值 {credits} 积分，以满足本次所需额度。"
   },
   "transactionHistory": {
     "title": "积分历史",
@@ -429,5 +430,16 @@
     "title": "已取消支付",
     "body": "未产生任何扣款，你可以随时再来充值。",
     "back": "返回工作台"
+  },
+  "awaitingCredits": {
+    "title": "等待充值",
+    "saved": "您的上传文件和设置已保存。充值后可继续此项目。",
+    "required": "项目费用：{credits} 积分（{price} 美元）",
+    "available": "可用：{credits} 积分",
+    "shortfall": "还差：{credits} 积分（{price} 美元）",
+    "topUp": "充值并继续",
+    "resume": "继续项目",
+    "jobLabel": "此项目",
+    "resumeFailed": "项目未能恢复。请查看状态后再次继续。"
   }
 }

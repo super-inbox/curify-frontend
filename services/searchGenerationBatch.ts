@@ -1,3 +1,4 @@
+import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
 import { buildExampleId } from "@/lib/nano_pure";
 import type { SearchGenerationDirection } from "@/lib/searchGenerationPlan";
 import {
@@ -117,6 +118,7 @@ export async function runSearchGenerationBatch(
         resultUrl,
       });
     } catch (error) {
+      if (navigateToAwaitingCredits(error)) return items;
       update(index, { status: "failed", error: errorMessage(error) });
       if (!isFatalSearchGenerationError(error)) continue;
       for (let remaining = index + 1; remaining < items.length; remaining += 1) {

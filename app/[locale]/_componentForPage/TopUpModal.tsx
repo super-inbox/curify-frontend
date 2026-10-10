@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAtom, useAtomValue } from "jotai";
 import { modalAtom, topUpContextAtom, userAtom } from "@/app/atoms/atoms";
 import {
@@ -14,18 +14,7 @@ import { redirectToCheckout } from "@/services/stripe";
 import { useTranslations, useLocale } from "next-intl";
 import { useTracking } from "@/services/useTracking";
 
-/** Preset top-ups, in credits.
- *
- *  Deliberately four points on a flat $0.10/credit line — there is no volume
- *  break, because the backend grants `ceil(usd / 0.10)` regardless of size and a
- *  discount shown here that the webhook does not honour would short the buyer.
- *  If a volume break is ever wanted it has to land in
- *  `calculate_credits_from_amount` first. */
-const PRESETS = [50, 100, 200, 500] as const;
-
-/** Stripe's floor for a card charge. Below this the session creation fails
- *  server-side, so catch it here where we can say why. */
-const MIN_TOPUP_USD = 0.5;
+import { TOP_UP_PRESETS as PRESETS, minimumTopUp, validTopUp, suggestedTopUp, safeReturnPath } from "@/lib/topUpPolicy";
 
 export default function TopUpModal() {
   const [modal, setModal] = useAtom(modalAtom);
@@ -35,6 +24,7 @@ export default function TopUpModal() {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const isOpen = modal === "topup";
+  const busyRef = useRef(false);
   const t = useTranslations("topUpModal");
   const locale = useLocale();
   const { trackAction } = useTracking();
@@ -58,19 +48,23 @@ export default function TopUpModal() {
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
 
-  /** Credits shortest-path to unblocking the pending job, rounded up to the next
-   *  preset so the user is never left one credit short of the thing they came
-   *  here to do. */
-  const suggested = context
-    ? PRESETS.find((p) => p >= context.required - context.available) ?? PRESETS[PRESETS.length - 1]
-    : null;
+  const minimum = minimumTopUp(context);
+  const suggested = context ? suggestedTopUp(minimum) : null;
+
+  useEffect(() => {
+    if (!isOpen) return;
+    setError(null);
+    setCustomCredits(minimum > PRESETS[PRESETS.length - 1] ? minimum : "");
+  }, [isOpen, minimum]);
 
   const handleTopUp = async (credits: number) => {
-    const amount = creditsToDollars(credits);
-    if (amount < MIN_TOPUP_USD) {
-      setError(t("minimumTopupError"));
+    if (busyRef.current) return;
+    if (!validTopUp(credits, minimum)) {
+      setError(t("shortfallMinimum", { credits: minimum }));
       return;
     }
+    const amount = creditsToDollars(credits);
+    busyRef.current = true;
 
     trackAction(
       { contentType: "page", contentId: `topup-credits-${credits}` },
@@ -91,33 +85,27 @@ export default function TopUpModal() {
             // Stripe's return URLs are built server-side and were unlocalized,
             // so anyone paying in a non-English locale came back to English.
             locale: locale ?? undefined,
+            ...(context?.projectId && context.resumeAfterPayment === true
+              ? { project_id: context.projectId, resume_after_payment: true }
+              : { resume_after_payment: false }),
           }),
         },
       );
-      // Stash where to return to. Checkout unloads this page, so nothing in
-      // memory survives; the success route reads this back to resume the job the
-      // user was blocked on instead of dumping them on /workspace.
-      if (context) {
-        try {
-          sessionStorage.setItem(
-            "topup_return",
-            JSON.stringify({
-              ...context,
-              // The success page needs somewhere to send them back to, and the
-              // surface name alone is not a URL.
-              returnUrl: window.location.pathname + window.location.search,
-            }),
-          );
-        } catch {
-          // Private mode / blocked storage. The purchase still works; the user
-          // just lands on the generic success view.
-        }
-      }
+      try {
+        sessionStorage.removeItem("topup_return");
+        const returnUrl = safeReturnPath(window.location.pathname + window.location.search);
+        if (returnUrl) sessionStorage.setItem("topup_return", JSON.stringify({
+          sessionId: res.data.id, returnUrl, surface: context?.surface ?? "header",
+        }));
+      } catch { /* Checkout works even when storage is unavailable. */ }
       await redirectToCheckout(res.data.id);
     } catch (err) {
       console.error("Top-up failed:", err);
       setBusy(false);
       setError(t("paymentStartFailed"));
+    } finally {
+      busyRef.current = false;
+      setBusy(false);
     }
   };
 
@@ -136,7 +124,7 @@ export default function TopUpModal() {
         {/* Why they are here. Without this the modal opens with no memory of the
             action that triggered it, and the user has to work out for themselves
             how many credits to buy. */}
-        {context ? (
+        {context && (!context.projectId || context.required > 0) ? (
           <div className="mb-4 rounded-lg bg-amber-50 border border-amber-200 px-4 py-3">
             <p className="text-sm text-amber-900">
               {t("blockedLine", {
@@ -162,6 +150,8 @@ export default function TopUpModal() {
           </p>
         )}
 
+        {context && <p className="mb-4 text-center text-sm text-amber-900">{t("shortfallMinimum", { credits: minimum })}</p>}
+
         {error && (
           <p className="text-red-500 text-center text-sm mb-4">{error}</p>
         )}
@@ -171,7 +161,7 @@ export default function TopUpModal() {
             <button
               key={credits}
               onClick={() => handleTopUp(credits)}
-              disabled={busy}
+              disabled={busy || !validTopUp(credits, minimum)}
               className={`flex flex-col items-center justify-center rounded-lg py-3 text-sm font-medium cursor-pointer transition disabled:opacity-50 disabled:cursor-not-allowed ${
                 credits === suggested
                   ? "border-2 border-blue-600 bg-blue-50 text-blue-700"
@@ -198,7 +188,8 @@ export default function TopUpModal() {
           <div className="grid grid-cols-2 gap-3">
             <input
               type="number"
-              min={Math.ceil(MIN_TOPUP_USD / USD_PER_CREDIT)}
+              min={minimum}
+              step={1}
               value={customCredits}
               onChange={(e) =>
                 setCustomCredits(
@@ -215,7 +206,7 @@ export default function TopUpModal() {
                   : "border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white"
               }`}
               onClick={() => customCredits && handleTopUp(Number(customCredits))}
-              disabled={!customCredits || busy}
+              disabled={busy || !validTopUp(Number(customCredits), minimum)}
             >
               {customCredits || 0} 🐚 ($
               {customCredits

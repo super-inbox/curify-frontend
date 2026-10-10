@@ -84,7 +84,8 @@
     "creditRate": "1 kredi ≈ ${amount}",
     "blockedLine": "{jobLabel} {required} kredi tutuyor, sizde {available} var.",
     "buysImages": "≈ {count} görsel",
-    "unlocksCleanDownloads": "Herhangi bir yükleme, indirmelerinizden Curify filigranını da kaldırır."
+    "unlocksCleanDownloads": "Herhangi bir yükleme, indirmelerinizden Curify filigranını da kaldırır.",
+    "shortfallMinimum": "Bu yükleme için en az {credits} kredi seçin."
   },
   "transactionHistory": {
     "title": "Kredi Geçmişi",
@@ -429,5 +430,16 @@
     "title": "Ödeme iptal edildi",
     "body": "Herhangi bir tahsilat yapılmadı. İstediğiniz zaman yükleme yapabilirsiniz.",
     "back": "Çalışma alanına dön"
+  },
+  "awaitingCredits": {
+    "title": "Kredi bekleniyor",
+    "saved": "Yüklediğiniz dosya ve ayarlar kaydedildi. Bu projeye devam etmek için kredi yükleyin.",
+    "required": "Proje ücreti: {credits} kredi ({price} USD)",
+    "available": "Kullanılabilir: {credits} kredi",
+    "shortfall": "Eksik: {credits} kredi ({price} USD)",
+    "topUp": "Yükle ve devam et",
+    "resume": "Projeye devam et",
+    "jobLabel": "bu proje",
+    "resumeFailed": "Proje devam ettirilemedi. Durumunu kontrol edip tekrar devam etmeyi deneyin."
   }
 }

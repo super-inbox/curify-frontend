@@ -84,7 +84,8 @@
     "creditRate": "1 crédit ≈ ${amount}",
     "blockedLine": "{jobLabel} coûte {required} crédits, vous en avez {available}.",
     "buysImages": "≈ {count} images",
-    "unlocksCleanDownloads": "Toute recharge supprime aussi le filigrane Curify de vos téléchargements."
+    "unlocksCleanDownloads": "Toute recharge supprime aussi le filigrane Curify de vos téléchargements.",
+    "shortfallMinimum": "Choisissez au moins {credits} crédits pour couvrir ce rechargement."
   },
   "transactionHistory": {
     "title": "Historique des crédits",
@@ -429,5 +430,16 @@
     "title": "Paiement annulé",
     "body": "Aucun montant n'a été prélevé. Vous pouvez recharger quand vous le souhaitez.",
     "back": "Retour à l'espace de travail"
+  },
+  "awaitingCredits": {
+    "title": "En attente de crédits",
+    "saved": "Votre fichier et vos réglages sont enregistrés. Rechargez pour poursuivre ce projet.",
+    "required": "Prix du projet : {credits} crédits ({price} USD)",
+    "available": "Disponibles : {credits} crédits",
+    "shortfall": "Il manque : {credits} crédits ({price} USD)",
+    "topUp": "Recharger et continuer",
+    "resume": "Continuer le projet",
+    "jobLabel": "ce projet",
+    "resumeFailed": "Le projet n’a pas pu reprendre. Vérifiez son état et réessayez de continuer."
   }
 }

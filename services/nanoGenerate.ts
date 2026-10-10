@@ -1,3 +1,4 @@
+import type { CreditRequirement } from "@/types/projects";
 import { apiClient } from "./api";
 
 export interface NanoGenerateRequest {
@@ -18,7 +19,7 @@ export interface NanoGenerateResponse {
   message?: string;
 }
 
-export interface NanoProjectStatus {
+export interface NanoProjectStatus extends CreditRequirement {
   project_id: string;
   status: string; // STARTED | COMPLETED | FAILED | ...
   result_url?: string | null;

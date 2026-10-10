@@ -112,6 +112,9 @@ export const modalAtom = atom<ModalType>(null);
  *  when the modal closes — a stale context would tell the next visitor they were
  *  blocked on something they never attempted. */
 export type TopUpContext = {
+  projectId?: string;
+  resumeAfterPayment?: boolean;
+  shortfall?: number;
   /** Credits the blocked action needed. */
   required: number;
   /** Credits the user held at the moment they were blocked. */

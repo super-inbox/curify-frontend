@@ -84,7 +84,8 @@
     "creditRate": "1 クレジット ≈ ${amount}",
     "blockedLine": "{jobLabel} には {required} クレジットが必要です（現在 {available}）。",
     "buysImages": "≈ {count} 枚",
-    "unlocksCleanDownloads": "チャージすると、ダウンロードから Curify のウォーターマークが外れます。"
+    "unlocksCleanDownloads": "チャージすると、ダウンロードから Curify のウォーターマークが外れます。",
+    "shortfallMinimum": "今回のチャージには {credits} クレジット以上を選択してください。"
   },
   "transactionHistory": {
     "title": "クレジット履歴",
@@ -429,5 +430,16 @@
     "title": "支払いをキャンセルしました",
     "body": "請求は発生していません。いつでもチャージできます。",
     "back": "ワークスペースに戻る"
+  },
+  "awaitingCredits": {
+    "title": "クレジット待ち",
+    "saved": "アップロードしたファイルと設定は保存されています。チャージしてこのプロジェクトを続行できます。",
+    "required": "プロジェクト料金：{credits} クレジット（{price} 米ドル）",
+    "available": "利用可能：{credits} クレジット",
+    "shortfall": "不足分：{credits} クレジット（{price} 米ドル）",
+    "topUp": "チャージして続行",
+    "resume": "プロジェクトを続行",
+    "jobLabel": "このプロジェクト",
+    "resumeFailed": "プロジェクトを再開できませんでした。状態を確認して、もう一度続行してください。"
   }
 }

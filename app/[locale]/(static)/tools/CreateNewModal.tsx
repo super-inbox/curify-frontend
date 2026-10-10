@@ -7,7 +7,6 @@ import {
   userAtom,
   drawerAtom,
   createJobContextAtom,
-  topUpContextAtom,
 } from "@/app/atoms/atoms";
 import Modal from "../../_components/Modal";
 import Upload from "../../_components/Upload";
@@ -23,7 +22,6 @@ import type { SubtitleFormat, AudioOption } from "@/types/projects";
 import type { BackendJobType } from "@/types/projects";
 import { getJobUiConfig, estimateJobCost } from "@/lib/create-job-ui";
 import toast from "react-hot-toast";
-import { useTracking } from "@/services/useTracking";
 
 export default function CreateNewModal() {
   const router = useRouter();
@@ -32,8 +30,6 @@ export default function CreateNewModal() {
   const [, setDrawerState] = useAtom(drawerAtom);
 
   const [jobCtx] = useAtom(createJobContextAtom);
-  const [, setTopUpContext] = useAtom(topUpContextAtom);
-  const { trackAction } = useTracking();
   const job_type: BackendJobType = (jobCtx?.job_type as BackendJobType) ?? "subtitle_only";
   const ui = getJobUiConfig(job_type);
 
@@ -183,38 +179,19 @@ export default function CreateNewModal() {
     if (isStartingRef.current) return;
     isStartingRef.current = true;
 
-    if (job_type === "youtube_subtitles") {
-      if (!videoId) return;
-    } else {
-      if (!uploadedFile || !videoId) return;
-    }
-
-    if (requiresTargetLang() && transto === "Select Language") {
-      setShowMissingTargetWarning(true);
-      return;
-    }
-
-    if (cost > remainingCredits) {
-      // Was an untranslated browser alert with no path to pay, on the surface
-      // that carries every video job — 13% of project volume and the segment
-      // with the clearest repeat-usage shape we have.
-      trackAction(
-        { contentType: "topic_capsule", contentId: `paywall:create-video-job:${job_type}` },
-        "click",
-      );
-      setTopUpContext({
-        required: cost,
-        available: remainingCredits,
-        jobLabel: ui.title,
-        surface: `create-video-job:${job_type}`,
-      });
-      setModalState("topup");
-      return;
-    }
-
     try {
+      if (job_type === "youtube_subtitles") {
+        if (!videoId) return;
+      } else {
+        if (!uploadedFile || !videoId) return;
+      }
+
+      if (requiresTargetLang() && transto === "Select Language") {
+        setShowMissingTargetWarning(true);
+        return;
+      }
+
       setIsStarting(true);
-      isStartingRef.current = true;
 
       const isRemoveSubtitle = subtitle === "Source" && job_type === "subtitle_only";
 
@@ -282,8 +259,6 @@ export default function CreateNewModal() {
           "Your job was submitted, but your session has expired. Please sign in again to track progress."
         );
         setDrawerState("signin");
-        setIsStarting(false);
-        isStartingRef.current = false;
         return;
       }
 
@@ -292,6 +267,7 @@ export default function CreateNewModal() {
     } catch (error) {
       alert("Failed to create project.");
       console.error(error);
+    } finally {
       setIsStarting(false);
       isStartingRef.current = false;
     }
@@ -363,7 +339,7 @@ export default function CreateNewModal() {
                 </div>
 
                 {/* Upfront cost confirmation — parity with the uploaded-file
-                    flow. Gates the (expensive) download on available credits. */}
+                    flow. The server saves the project before deciding whether credits are needed. */}
                 {youtubeMeta ? (
                   <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-4">
                     <div className="flex gap-3">
@@ -399,7 +375,7 @@ export default function CreateNewModal() {
                     <button
                       type="button"
                       onClick={handleYoutubeDownload}
-                      disabled={isUploading || cost > remainingCredits}
+                      disabled={isUploading}
                       className="mt-3 w-full px-4 py-2.5 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Continue

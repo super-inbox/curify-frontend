@@ -1,5 +1,8 @@
 "use client";
 
+import { isAwaitingCredits, AwaitingCreditsError, navigateToAwaitingCredits } from "@/lib/awaitingCredits";
+
+
 /**
  * Self-serve die-cut sticker factory export.
  *
@@ -81,7 +84,12 @@ export default function StickerExportForm({ presetImageUrl }: Props = {}) {
       pollRef.current += 1;
       try {
         const st = await factoryExportService.getProjectStatus(projectId!);
-        if (st.status === "COMPLETED") {
+        if (isAwaitingCredits(st)) {
+            setPhase("idle");
+            navigateToAwaitingCredits(new AwaitingCreditsError(projectId!));
+            return;
+          }
+          if (st.status === "COMPLETED") {
           setZipUrl(st.result_url ?? null);
           setPhase("done");
           return;
