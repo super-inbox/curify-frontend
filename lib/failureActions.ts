@@ -67,7 +67,7 @@ export function buildFailureView(
   // button.
   const alreadyAsl = status?.job_type === "asl_translation";
   const showAslOffer = Boolean(
-    suggestion &&
+    code !== "INSUFFICIENT_CREDITS" && suggestion &&
       suggestion.suggested_job_type &&
       !alreadyAsl,
   );
@@ -78,7 +78,7 @@ export function buildFailureView(
     // Default true only when the server said nothing: rows written before
     // `retryable` existed carry no opinion, and refusing those would strand
     // them. Anything the server marked terminal stays terminal.
-    showRetry: status?.retryable !== false,
+    showRetry: code !== "INSUFFICIENT_CREDITS" && status?.retryable !== false,
     showAslOffer,
     showTopUp: code === "INSUFFICIENT_CREDITS",
     aslStrength: showAslOffer ? (suggestion?.strength ?? null) : null,

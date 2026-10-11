@@ -1,4 +1,7 @@
 "use client";
+
+import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
+
 import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 
 /**
@@ -345,6 +348,7 @@ export default function DesignAgentClient({
         });
         return;
       } catch (e) {
+      if (navigateToAwaitingCredits(e)) return;
         // Fall through to the ladder rather than dead-ending the user; the
         // client path is weaker but it does produce something.
         console.error("agent runtime failed, falling back to the ladder", e);
@@ -446,6 +450,7 @@ export default function DesignAgentClient({
           verify_ok: verify.ok,
         });
       } catch (e) {
+      if (navigateToAwaitingCredits(e)) return;
         const msg = e instanceof Error ? e.message : "generation failed";
         // Distinguish what the caller can act on. A backend failure_reason is
         // passed through verbatim, with the usual culprits named — credit

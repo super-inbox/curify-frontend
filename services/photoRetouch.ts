@@ -1,3 +1,4 @@
+import { isAwaitingCredits, AwaitingCreditsError } from "@/lib/awaitingCredits";
 import { apiClient } from "./api";
 
 // Anonymous photo editing. Mirrors services/costumeTryon.ts: generate() returns a
@@ -79,6 +80,7 @@ export const photoRetouchService = {
       } catch {
         continue; // a transient 5xx should not end the wait
       }
+      if (isAwaitingCredits(s)) throw new AwaitingCreditsError(projectId);
       if (s.status === "COMPLETED" && s.result_url) return s;
       if (s.status === "FAILED") {
         throw new Error(s.failure_reason || "Editing failed. Please try another photo.");

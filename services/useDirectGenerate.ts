@@ -1,5 +1,8 @@
 "use client";
 
+import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
+
+
 import { useEffect, useRef, useState } from "react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
@@ -208,6 +211,7 @@ export function useDirectGenerate({
       trackFirstGeneration("nano-template");
       onSuccess(imageUrl, exId, { projectId: res.project_id, watermarked });
     } catch (err) {
+      if (navigateToAwaitingCredits(err)) return;
       // Surface clean user-facing messages (content-blocked, timeout, etc.);
       // fall back to the generic alert for network/unknown errors.
       const e = err as (Error & { userFacing?: boolean }) | undefined;

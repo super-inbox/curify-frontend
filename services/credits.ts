@@ -12,7 +12,20 @@ export interface CreditUsageResponse {
   remaining_credits?: number;
 }
 
+export interface CheckoutStatus {
+  fulfilled: boolean;
+  project_id?: string;
+  resume_after_payment: boolean;
+}
+
 export const creditsService = {
+  async getCheckoutStatus(sessionId: string): Promise<CheckoutStatus> {
+    const response = await apiClient.request<{ data: CheckoutStatus }>(
+      `/credits/checkout-status?session_id=${encodeURIComponent(sessionId)}`,
+      { cache: "no-store" },
+    );
+    return response.data;
+  },
   async recordUsage(data: CreditUsageRequest): Promise<CreditUsageResponse> {
     return apiClient.request<CreditUsageResponse>('/credits/usage', {
       method: 'POST',

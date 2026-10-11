@@ -21,7 +21,7 @@ const PAYWALL_SURFACES = [
   "services/useDirectGenerate.ts",
   "services/useFreeformGenerate.ts",
   "app/[locale]/(static)/nano-template/[slug]/example/[exampleId]/ExampleGeneratePanel.tsx",
-  "app/[locale]/(static)/tools/CreateNewModal.tsx",
+  "app/[locale]/(app)/magic/[id]/page.tsx",
   "app/[locale]/(public)/search/GenerableTemplatesSection.tsx",
   "app/[locale]/_components/UnifiedActionBar.tsx",
   "app/[locale]/_components/ReproduceWorkbench.tsx",
@@ -29,6 +29,16 @@ const PAYWALL_SURFACES = [
 ] as const;
 
 describe("paywall routing", () => {
+  it("creates a persisted video project before the server credit gate", () => {
+    const source = read("app/[locale]/(static)/tools/CreateNewModal.tsx");
+    const start = source.slice(source.indexOf("const handleStart"), source.indexOf("const title = ui.title"));
+    expect(start).toContain("await projectService.createProject(payload)");
+    expect(start).toContain("/magic/${newProject.project_id}");
+    expect(start).not.toContain("cost > remainingCredits");
+    expect(start).not.toContain('setModalState("topup")');
+    expect(start.indexOf("try {")).toBeLessThan(start.indexOf('if (job_type === "youtube_subtitles")'));
+    expect(start).toMatch(/finally\s*\{\s*setIsStarting\(false\);\s*isStartingRef.current = false/);
+  });
   it("every credit-gated surface opens the top-up modal", () => {
     const offenders = PAYWALL_SURFACES.filter(
       (rel) => !/setModal(?:State)?\(\s*["']topup["']\s*\)/.test(read(rel)),
