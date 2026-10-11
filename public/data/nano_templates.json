@@ -21459,5 +21459,67 @@
     "use_cases": [
       "for-photographers"
     ]
+  },
+  {
+    "id": "template-country-tourism-collage-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Country Tourism Collage Poster Designer) Create a vertical 4:5 premium national-tourism poster for {country_name}, in the style of a luxury travel-magazine cover: one hyper-detailed, photorealistic digital collage where every element blends seamlessly into a single continuous panorama — no boxes, no grid, no hard borders between scenes.\n\n【Title】Across the top third, the country name \"{country_name}\" in giant, bold, three-dimensional classical serif capitals carved from polished stone or marble with bright gold bevelled edges and soft cast shadows. Fill the letter faces with the colours and motifs of the national flag (one colour per group of letters, or flag imagery and heritage textures inside the letters); where the country has an iconic national emblem or symbol, it may replace or sit between letters. Directly under the title, one short elegant tagline in a thin spaced serif, written in the country's main language. A very small uppercase line of three short phrases separated by dots sits above the title.\n\n【Hero and panorama】At the centre, the single most iconic landmark of {country_name} rises vertically as the hero. Around it, compose 5–7 of the country's other signature places as one landscape that flows from the background into the midground: historic monuments, the capital's skyline or old town, and its defining nature (mountains, coastline, desert, rainforest, rivers or lakes — whichever is true of this country). Add one modern touch such as a high-speed train, a bridge or a contemporary skyline, and the national flag waving prominently on a pole.\n\n【People and wildlife】One or two people in authentic traditional dress, shown respectfully in profile, from behind or mid-dance — never staring at the camera. One iconic native animal (e.g. a big cat, eagle, falcon, peacock or other emblematic species) placed in the midground or foreground.\n\n【Foreground still life】Along the bottom, a rich close-up still life of the country's signature food, drink and crafts on a table, ledge or textile: two or three famous dishes, a national drink, and a handcrafted object, with flowers native to the country.\n\n【Typography frame】Down the left and right margins, small stacked uppercase serif text blocks (2–4 short words each, in the country's language or English) with thin flag-coloured accent bars, and optionally a vertical column of five minimal gold line icons with one-word labels (heritage, nature, culture, cuisine, people). Across the bottom, a slim dark or flag-coloured band with the country name and a single row of five short keywords separated by dots. Keep every piece of text short, legible and correctly spelled; the collage must dominate, not the text.\n\n【Look】Golden-hour sunlight, luminous blue sky with soft white clouds, warm cinematic grading, rich saturated colours that echo the flag, crisp micro-detail, depth and atmospheric haze, high-end commercial poster finish. Do NOT include any real government, tourism-board or brand logos, trademarks or watermarks. Subject: {country_name} tourism collage poster.",
+        "parameters": [
+          {
+            "name": "country_name",
+            "label": "Country",
+            "type": "text",
+            "placeholder": [
+              "Japan",
+              "Italy",
+              "Brazil",
+              "Egypt",
+              "Greece",
+              "Thailand"
+            ]
+          }
+        ]
+      },
+      "zh": {
+        "base_prompt": "（国家旅游拼贴海报设计师）为 {country_name} 创作一张竖版 4:5 高端国家旅游海报，风格是奢华旅行杂志封面：一幅超精细、照片级写实的数字拼贴，所有元素无缝融合成一整幅连续全景——不要方框、不要网格、场景之间没有硬边界。\n\n【标题】顶部三分之一处，用巨大的、粗体、立体的古典衬线大写字母写出国家名「{country_name}」（使用该国通用的拉丁字母拼写），字体如抛光石材或大理石雕刻，带明亮的金色倒角边和柔和投影。字母表面填充国旗的颜色与图案（每组字母一种颜色，或在字母内嵌入国旗与文化遗产纹理）；如果该国有标志性的国徽或象征物，可以替代某个字母或置于字母之间。标题正下方，用纤细、字距宽松的衬线字体写一句简短优雅的标语，使用该国主要语言。标题上方有一行很小的大写文字，由三个短语组成，用圆点分隔。\n\n【主体与全景】画面中央，{country_name} 最具代表性的地标作为主体垂直耸立。周围把该国另外 5–7 个标志性地点组成一整片从远景流向中景的风景：历史古迹、首都天际线或老城区，以及最能代表这个国家的自然风光（山脉、海岸、沙漠、雨林、河流或湖泊——以该国真实地貌为准）。加入一个现代元素，如高铁、大桥或现代天际线，并让国旗在旗杆上醒目地飘扬。\n\n【人物与动物】一到两位身穿正宗传统服饰的人物，以侧面、背影或舞蹈中的姿态出现，表现得体尊重——不要直视镜头。一只该国标志性的本土动物（如大型猫科动物、鹰、隼、孔雀或其他代表性物种），放在中景或前景。\n\n【前景静物】画面底部是一组丰富的近景静物，摆在桌面、栏杆或织物上：两三道该国名菜、一种国民饮品、一件手工艺品，再配上该国本土花卉。\n\n【文字框架】左右两侧边缘，放置小号的大写衬线文字块（每块 2–4 个短词，使用该国语言或英文），配细细的国旗色装饰线；可以在一侧加一列五个极简金色线条图标，每个配一个单词标签（遗产、自然、文化、美食、人民）。底部是一条细长的深色或国旗色横带，写国家名和一行由圆点分隔的五个短关键词。所有文字都要简短、清晰、拼写正确；画面以拼贴为主，文字为辅。\n\n【质感】黄金时刻阳光，明亮的蓝天配柔软白云，温暖的电影感调色，与国旗呼应的饱和色彩，清晰的微观细节，有层次感和空气透视，高端商业海报质感。不要出现任何真实的政府、旅游局或品牌标志、商标或水印。主题：{country_name} 国家旅游拼贴海报。",
+        "parameters": [
+          {
+            "name": "country_name",
+            "label": "国家",
+            "type": "text",
+            "placeholder": [
+              "日本",
+              "意大利",
+              "巴西",
+              "埃及",
+              "希腊",
+              "泰国"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-country-tourism-collage-poster-japan-prev.jpg",
+    "topics": [
+      "travel",
+      "culture",
+      "posters",
+      "design",
+      "photorealistic",
+      "art-prints",
+      "wall-art",
+      "vibrant-colors",
+      "dramatic",
+      "modern",
+      "composition",
+      "social-media-posts",
+      "promotional-poster"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "creation_date": "2026-10-09",
+    "batch": true
   }
 ]

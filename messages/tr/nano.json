@@ -8521,5 +8521,28 @@
         ]
       }
     }
+  },
+  "template-country-tourism-collage-poster": {
+    "category": "Ulke Turizm Kolaj Posteri",
+    "description": "Herhangi bir ulke adini dergi kapagi tarzinda bir turizm posterine donusturun: bayrak renklerinde 3D mermer baslik, merkezde ikonik simge yapi, kesintisiz bir panorama ve yerel yemeklerden bir naturmort.",
+    "title": "Nano Banana Prompt: Ulke Turizm Kolaj Posteri Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon her ulke icin dikey, fotogercekci bir ulusal turizm posteri olusturur. Dev oyma mermer baslik bayrak renklerini tasir; en ikonik simge yapi merkezde yukselir; anitlar, sehir silueti ve dogal manzaralar tek bir kesintisiz panoramada birlesir; geleneksel kiyafetli insanlar, yerli bir hayvan ve meshur yemeklerden bir naturmort sahneyi tamamlar.",
+        "who": "Kampanyalar, sosyal medya, ders veya duvar sanati icin etkileyici bir ulke posterine ya da tutarli bir seriye ihtiyac duyan turizm ofisleri, destinasyon pazarlamacilari, otel ve seyahat markalari, seyahat icerik ureticileri ve ogretmenler icin.",
+        "how": [
+          "Bir ulke adi girin (orn. Japonya, Italya, Brezilya).",
+          "Sablon, bayrak renklerinde 3D baslikli 4:5 bir poster olusturur.",
+          "Ana simge yapi merkezde, etrafinda kesintisiz bir panorama yer alir.",
+          "Geleneksel kiyafetler, yerli yaban hayati ve yemek naturmortu kultur ve derinlik katar.",
+          "Ulke adini degistirin, her destinasyon icin uyumlu bir seri elde edin."
+        ],
+        "prompts": [
+          "Japonya icin turizm kolaj posteri olustur: Fuji Dagi, Kyoto tapinaklari, kiraz cicekleri ve sushi.",
+          "Italya icin merkezde Kolezyum, on planda makarna ve espresso olan dergi kapagi tarzi bir poster tasarla.",
+          "Misir icin turizm kolaj posteri uret: piramitler, Nil, deve kervani ve koshari."
+        ]
+      }
+    }
   }
 }

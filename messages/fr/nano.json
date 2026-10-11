@@ -8521,5 +8521,28 @@
         ]
       }
     }
+  },
+  "template-country-tourism-collage-poster": {
+    "category": "Affiche collage touristique de pays",
+    "description": "Transformez n'importe quel nom de pays en affiche touristique façon couverture de magazine : titre 3D en marbre aux couleurs du drapeau, monument emblématique, panorama continu et nature morte gastronomique.",
+    "title": "Nano Banana Prompt : Générateur d'affiches collage touristiques de pays | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche touristique verticale et photoréaliste pour n'importe quel pays. Un immense titre en marbre sculpté reprend les couleurs du drapeau ; le monument le plus emblématique s'élève au centre ; monuments, skyline et paysages s'enchaînent en un seul panorama continu ; personnages en costume traditionnel, animal emblématique et nature morte de spécialités complètent la scène.",
+        "who": "Pour les offices de tourisme, le marketing de destination, les marques d'hôtellerie et de voyage, les créateurs de contenu voyage et les enseignants qui ont besoin d'une affiche de pays percutante, ou d'une série cohérente, pour des campagnes, les réseaux sociaux, la classe ou la décoration.",
+        "how": [
+          "Saisissez un nom de pays (ex. Japon, Italie, Brésil).",
+          "Le modèle génère une affiche 4:5 avec un titre 3D aux couleurs du drapeau.",
+          "Le monument phare trône au centre, entouré d'un panorama continu.",
+          "Costumes traditionnels, faune locale et nature morte gourmande apportent culture et profondeur.",
+          "Changez de pays pour obtenir une série assortie pour chaque destination."
+        ],
+        "prompts": [
+          "Crée une affiche collage touristique pour le Japon : mont Fuji, temples de Kyoto, cerisiers en fleurs et sushis.",
+          "Conçois une affiche façon couverture de magazine pour l'Italie, le Colisée au centre, pâtes et espresso au premier plan.",
+          "Génère une affiche collage touristique pour l'Égypte : pyramides, Nil, caravane de chameaux et koshari."
+        ]
+      }
+    }
   }
 }

@@ -8521,5 +8521,28 @@
         ]
       }
     }
+  },
+  "template-country-tourism-collage-poster": {
+    "category": "Póster collage turístico de país",
+    "description": "Convierte el nombre de cualquier país en un póster turístico tipo portada de revista: título 3D de mármol con los colores de la bandera, el monumento icónico, un panorama continuo y un bodegón de comida local.",
+    "title": "Nano Banana Prompt: Generador de pósters collage turísticos de países | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un póster turístico vertical y fotorrealista para cualquier país. Un enorme título de mármol tallado lleva los colores de la bandera; el monumento más icónico se alza en el centro; monumentos, skyline y paisajes fluyen en un único panorama continuo; personas con trajes tradicionales, un animal autóctono y un bodegón de platos típicos completan la escena.",
+        "who": "Ideal para oficinas de turismo, marketing de destinos, marcas de hoteles y viajes, creadores de viajes y docentes que necesitan un póster de país impactante, o una serie coherente, para campañas, redes sociales, clases o decoración.",
+        "how": [
+          "Escribe el nombre de un país (p. ej. Japón, Italia, Brasil).",
+          "La plantilla genera un póster 4:5 con un título 3D en los colores de la bandera.",
+          "El monumento principal ocupa el centro, rodeado de un panorama continuo.",
+          "Trajes tradicionales, fauna autóctona y un bodegón gastronómico aportan cultura y profundidad.",
+          "Cambia el país y obtén una serie a juego para cada destino."
+        ],
+        "prompts": [
+          "Crea un póster collage turístico de Japón: el monte Fuji, templos de Kioto, cerezos y sushi.",
+          "Diseña un póster tipo portada de revista de Italia con el Coliseo en el centro y pasta y espresso en primer plano.",
+          "Genera un póster collage turístico de Egipto: pirámides, el Nilo, una caravana de camellos y koshari."
+        ]
+      }
+    }
   }
 }
