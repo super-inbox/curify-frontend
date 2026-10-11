@@ -8462,11 +8462,11 @@
   },
   "template-studio-digital-backdrop-scene": {
     "category": "Studio Scene Enhancement",
-    "description": "Upload a studio portrait and only the set behind the person is rebuilt — seamless backdrop sweep, reflective floor, LED seam, styled props and one series-wide colour grade. Pose, face, clothing and skin are left untouched.",
+    "description": "Sube un retrato y describe un decorado de estudio o un entorno: selva de dinosaurios, escuela de magia, palacio de hielo o ciudad fantástica dorada. La edición se centra en el fondo y conserva la identidad, la pose y la ropa.",
     "title": "Studio Digital Backdrop — Scene Enhancement, Subject Locked",
     "content": {
       "sections": {
-        "what": "This template performs a strict local edit on an uploaded studio photograph: the person is a locked subject whose pixels, pose, expression, garments and skin tone are preserved, and the only region rewritten is the background outside their silhouette. It builds a unified two-layer set — a seamless photographic paper sweep in your colour ramp joined to a lightly reflective floor with a recessed LED strip along the seam — then adds a styled prop arrangement, commercial studio lighting with a cool rim and a warm face fill, and one restrained colour grade. Because the scene direction, the prop set and the shot type are supplied as three short fields, the same three lines can be re-run across full-body, half-body and close-up frames so an entire batch reads as one shoot rather than a set of unrelated composites.",
+        "what": "Ambos modos usan los mismos campos: dirección de escena, accesorios y encuadre. El modo estudio mantiene el fondo continuo; un entorno explícito permite arquitectura y paisajes. La iluminación del fondo se adapta al retrato original. Revisa rostro, pelo, manos, textura de la ropa y bordes frente a la imagen fuente.",
         "who": "Built for photography studios and the retouching desks that serve them — children's and family portrait studios, newborn and milestone shoots, school and senior portraits, and lookbook teams who shoot on plain seamless paper and need a themed set added afterwards. It is also the shape of the job when a studio outsources scene enhancement in batches of dozens of pairs against a written style spec.",
         "how": [
           "Upload one studio photograph shot against a plain or simple backdrop.",

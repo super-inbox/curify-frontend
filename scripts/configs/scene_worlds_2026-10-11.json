@@ -1,0 +1,54 @@
+[
+  {
+    "template_id": "template-studio-digital-backdrop-scene",
+    "id_suffix": "jurassic-rainforest-child-scene",
+    "params": {
+      "scene_theme": "immersive Jurassic dinosaur rainforest with tree ferns, misty morning light and peaceful herbivorous dinosaurs well behind the subject",
+      "prop_set": "mossy rocks and tree ferns outside the subject silhouette; distant Brachiosaurus and Triceratops",
+      "framing": "half body; preserve the original thigh-level crop and landscape aspect ratio"
+    },
+    "source": "00-source.png",
+    "edit": "01-jurassic.png",
+    "card": "01-jurassic-before-after-en.jpg",
+    "generation_mode": "reference-image edit; use the source photograph, not text-only generation"
+  },
+  {
+    "template_id": "template-studio-digital-backdrop-scene",
+    "id_suffix": "hogwarts-candlelit-hall-child-scene",
+    "params": {
+      "scene_theme": "immersive Harry Potter / Hogwarts inspired gothic wizard-school hall with floating candles, stone arches and a starry ceiling",
+      "prop_set": "stone columns, books and lanterns in the background; no glasses, costumes or wands added to the person",
+      "framing": "half body; preserve the original thigh-level crop and landscape aspect ratio"
+    },
+    "source": "00-source.png",
+    "edit": "02-hogwarts.png",
+    "card": "02-hogwarts-before-after-en.jpg",
+    "generation_mode": "reference-image edit; use the source photograph, not text-only generation"
+  },
+  {
+    "template_id": "template-studio-digital-backdrop-scene",
+    "id_suffix": "frozen-ice-palace-child-scene",
+    "params": {
+      "scene_theme": "immersive Frozen / Elsa inspired ice palace with crystal columns, frost arches, pale blue light and snowy mountains",
+      "prop_set": "translucent ice columns and a crystalline staircase behind the person; no crown, dress or costume changes",
+      "framing": "half body; preserve the original thigh-level crop and landscape aspect ratio"
+    },
+    "source": "00-source.png",
+    "edit": "03-frozen.png",
+    "card": "03-frozen-before-after-en.jpg",
+    "generation_mode": "reference-image edit; use the source photograph, not text-only generation"
+  },
+  {
+    "template_id": "template-studio-digital-backdrop-scene",
+    "id_suffix": "asgard-golden-city-child-scene",
+    "params": {
+      "scene_theme": "immersive Asgard inspired Norse golden city viewed from a broad palace terrace, cloud valleys, distant rainbow bridge and soft dawn",
+      "prop_set": "golden palace columns and a parapet behind the person; no armour, helmet or weapon added to the subject",
+      "framing": "half body; preserve the original thigh-level crop and landscape aspect ratio"
+    },
+    "source": "00-source.png",
+    "edit": "04-asgard.png",
+    "card": "04-asgard-before-after-en.jpg",
+    "generation_mode": "reference-image edit; use the source photograph, not text-only generation"
+  }
+]
