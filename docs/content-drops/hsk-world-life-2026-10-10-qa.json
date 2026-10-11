@@ -1,273 +1,1167 @@
 {
+  "revision": "approved-watercolor-v2",
+  "approved_sample": "Beijing, confirmed by user on 2026-10-11",
   "videos": [
     {
+      "motion_frames_differ": true,
       "id": "hsk2-my-first-weekend-in-beijing",
-      "duration_seconds": 39.376,
-      "mean_audio_dbfs": -19.94,
-      "dimensions": [
-        1080,
-        1920
-      ],
+      "width": 960,
+      "height": 1280,
+      "duration": 35.866667,
+      "audio_duration": 33.363,
+      "mean_volume_db": -19.9,
+      "full_decode": "pass",
       "video_codec": "h264",
       "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "7310b3d458e872fdd71b114933c4e17df341c1f2e1bcb1d7bee2e8126f3bed20"
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "1ed30229fa7f2ee192d2c4694c5af7552cd42731fbcb2f6ca4c30f21a5036440"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk3-an-evening-in-shanghai",
+      "width": 960,
+      "height": 1280,
+      "duration": 36.5,
+      "audio_duration": 34.013,
+      "mean_volume_db": -20.4,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "56b6f54f8e6a5f3db218c78bfeb2c596b9332d2a263cf29b688e86c8b831ca20"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk3-my-first-dragon-boat-festival",
+      "width": 960,
+      "height": 1280,
+      "duration": 38.2,
+      "audio_duration": 35.703,
+      "mean_volume_db": -20.3,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "4f63c06dce133b5daa257b8e7e20f36ed056c6f0cd1d13da04cc9cbf10c957c2"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-lantern-festival-with-classmates",
+      "width": 960,
+      "height": 1280,
+      "duration": 35.9,
+      "audio_duration": 33.411,
+      "mean_volume_db": -20.7,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "0452be7abd6f6be305c2b658d5293d778d2139529a29a1360e3ec63ddc6ee6e4"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-spring-picnic-after-class",
+      "width": 960,
+      "height": 1280,
+      "duration": 36.566667,
+      "audio_duration": 34.053,
+      "mean_volume_db": -20.7,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "eda0679078b526609945b286ca7dc27a06c742a142363bc1c6f0acbee08c1f3a"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-summer-rain-on-the-way-home",
+      "width": 960,
+      "height": 1280,
+      "duration": 37.266667,
+      "audio_duration": 34.764,
+      "mean_volume_db": -20.9,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "bfbe38c7b84715d5896aae0d4ef1b6888b06f7c0d0da990f2f4f80adb0d32a61"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk3-autumn-letter-to-home",
+      "width": 960,
+      "height": 1280,
+      "duration": 38.666667,
+      "audio_duration": 36.163,
+      "mean_volume_db": -20.3,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "5793009274e43582db06a64b20f653ee36a655a352156fd31b80e116d98062b9"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-my-first-snowy-morning",
+      "width": 960,
+      "height": 1280,
+      "duration": 37.3,
+      "audio_duration": 34.794,
+      "mean_volume_db": -20.7,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "0f2045357d32ad306640f503c33a1c1742cba70980a8bb9eb0e03e572fb92276"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-my-japanese-classmate",
+      "width": 960,
+      "height": 1280,
+      "duration": 34.833333,
+      "audio_duration": 32.349,
+      "mean_volume_db": -20.5,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "4f6165c195a78544ca60b08091f0afd444a37b884194ceb9d8439f3f627a550c"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-a-friend-from-france",
+      "width": 960,
+      "height": 1280,
+      "duration": 35.7,
+      "audio_duration": 33.213,
+      "mean_volume_db": -20.2,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "2e70750e2a842e3193a0c76beaee1a2200156173de29ac9d828a8cca144bf755"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk3-my-kenyan-roommate",
+      "width": 960,
+      "height": 1280,
+      "duration": 38.966667,
+      "audio_duration": 36.478,
+      "mean_volume_db": -20.1,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "696e14316615d41d19451a3076d6dedf32279c535af2a493cf9a76b6249a966f"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-a-postcard-from-canada",
+      "width": 960,
+      "height": 1280,
+      "duration": 37.2,
+      "audio_duration": 34.716,
+      "mean_volume_db": -20.3,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "cdafbbe766f5d344d1dcb9fa01cbdd35daf87ab0d09d3e127eba89c09091a3d7"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk3-my-brazilian-language-partner",
+      "width": 960,
+      "height": 1280,
+      "duration": 38.466667,
+      "audio_duration": 35.963,
+      "mean_volume_db": -20.3,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "3d2ed129e2c981dfb8986e7241820cb9d21c1e9e5ea74a7b9c20d775e274c5a5"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk3-december-in-australia",
+      "width": 960,
+      "height": 1280,
+      "duration": 39.033333,
+      "audio_duration": 36.517,
+      "mean_volume_db": -20.9,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "bbadf60f0afba6b575d61161d937e35d20e39990f7db74da6d256c37ff98a223"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-please-speak-more-slowly",
+      "width": 960,
+      "height": 1280,
+      "duration": 36.866667,
+      "audio_duration": 34.381,
+      "mean_volume_db": -20.8,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "b452778debc26f2e2dc79bbfa112e46aedc606db46a3722911cfe5f2518f53e5"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-a-video-call-with-home",
+      "width": 960,
+      "height": 1280,
+      "duration": 36.066667,
+      "audio_duration": 33.576,
+      "mean_volume_db": -20.5,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "c73fc70109eb50cb9ea846d1870c3cfb3b3c68145c23f2e7df7dd2dc4640a422"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk3-my-roommates-quiet-hours",
+      "width": 960,
+      "height": 1280,
+      "duration": 41.966667,
+      "audio_duration": 39.464,
+      "mean_volume_db": -21.0,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "a7e55bde56938272e15eb89a9de3a64d34c5de48f8f85f100a3e9ebd97c3a80e"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-less-spicy-please",
+      "width": 960,
+      "height": 1280,
+      "duration": 36.866667,
+      "audio_duration": 34.364,
+      "mean_volume_db": -20.9,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "7d56778fb83d2ccdc6351548ed3f897d096cb2dd2156fc812a200f97b56fcac7"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk3-picking-up-my-first-parcel",
+      "width": 960,
+      "height": 1280,
+      "duration": 36.733333,
+      "audio_duration": 34.231,
+      "mean_volume_db": -20.8,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "72e7cfd30a0108dec45d7ab67e479f882b4a7eaaeba2227b8d21a4b6a4331932"
+    },
+    {
+      "motion_frames_differ": true,
+      "id": "hsk2-helping-friends-say-my-name",
+      "width": 960,
+      "height": 1280,
+      "duration": 38.033333,
+      "audio_duration": 35.533,
+      "mean_volume_db": -19.8,
+      "full_decode": "pass",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "motion": "slow upward scroll",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-25%",
+      "card_sha256": "aa5b22c85da9e45430f6d7a7556f2ec09fa7f8b97c9476afd02717f6e20ac312"
+    }
+  ],
+  "source_text": {
+    "cards": 20,
+    "sentences": 160,
+    "glossary_entries": 160,
+    "alignment_or_reading_errors": [],
+    "tone_exceptions_to_review": [
+      [
+        "hsk2-my-first-weekend-in-beijing",
+        3,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-my-first-weekend-in-beijing",
+        3,
+        "爷",
+        "ye"
+      ],
+      [
+        "hsk2-my-first-weekend-in-beijing",
+        4,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-my-first-weekend-in-beijing",
+        7,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk3-an-evening-in-shanghai",
+        0,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk3-an-evening-in-shanghai",
+        1,
+        "友",
+        "you"
+      ],
+      [
+        "hsk3-an-evening-in-shanghai",
+        6,
+        "友",
+        "you"
+      ],
+      [
+        "hsk3-an-evening-in-shanghai",
+        7,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk3-an-evening-in-shanghai",
+        7,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk3-an-evening-in-shanghai",
+        12,
+        "友",
+        "you"
+      ],
+      [
+        "hsk3-my-first-dragon-boat-festival",
+        1,
+        "友",
+        "you"
+      ],
+      [
+        "hsk3-my-first-dragon-boat-festival",
+        2,
+        "妈",
+        "ma"
+      ],
+      [
+        "hsk3-my-first-dragon-boat-festival",
+        7,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk3-my-first-dragon-boat-festival",
+        13,
+        "妈",
+        "ma"
+      ],
+      [
+        "hsk2-lantern-festival-with-classmates",
+        1,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-lantern-festival-with-classmates",
+        2,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-lantern-festival-with-classmates",
+        2,
+        "亮",
+        "liang"
+      ],
+      [
+        "hsk2-lantern-festival-with-classmates",
+        3,
+        "欢",
+        "huan"
+      ],
+      [
+        "hsk2-lantern-festival-with-classmates",
+        4,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-lantern-festival-with-classmates",
+        6,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-lantern-festival-with-classmates",
+        7,
+        "诉",
+        "su"
+      ],
+      [
+        "hsk2-lantern-festival-with-classmates",
+        13,
+        "亮",
+        "liang"
+      ],
+      [
+        "hsk2-spring-picnic-after-class",
+        2,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-spring-picnic-after-class",
+        3,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-spring-picnic-after-class",
+        3,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-spring-picnic-after-class",
+        4,
+        "西",
+        "xi"
+      ],
+      [
+        "hsk2-spring-picnic-after-class",
+        6,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-spring-picnic-after-class",
+        7,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-spring-picnic-after-class",
+        14,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-summer-rain-on-the-way-home",
+        7,
+        "识",
+        "shi"
+      ],
+      [
+        "hsk2-summer-rain-on-the-way-home",
+        7,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-summer-rain-on-the-way-home",
+        15,
+        "识",
+        "shi"
+      ],
+      [
+        "hsk3-autumn-letter-to-home",
+        1,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk3-autumn-letter-to-home",
+        3,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk3-autumn-letter-to-home",
+        5,
+        "候",
+        "hou"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        0,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        0,
+        "户",
+        "hu"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        1,
+        "面",
+        "mian"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        2,
+        "过",
+        "guo"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        3,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        4,
+        "服",
+        "fu"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        5,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        7,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        7,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        12,
+        "户",
+        "hu"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        13,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-my-first-snowy-morning",
+        14,
+        "服",
+        "fu"
+      ],
+      [
+        "hsk2-my-japanese-classmate",
+        4,
+        "候",
+        "hou"
+      ],
+      [
+        "hsk2-a-friend-from-france",
+        0,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-a-friend-from-france",
+        0,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-a-friend-from-france",
+        2,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-a-friend-from-france",
+        2,
+        "识",
+        "shi"
+      ],
+      [
+        "hsk2-a-friend-from-france",
+        3,
+        "欢",
+        "huan"
+      ],
+      [
+        "hsk2-a-friend-from-france",
+        3,
+        "欢",
+        "huan"
+      ],
+      [
+        "hsk2-a-friend-from-france",
+        6,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-a-friend-from-france",
+        7,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-a-friend-from-france",
+        12,
+        "友",
+        "you"
+      ],
+      [
+        "hsk3-my-kenyan-roommate",
+        5,
+        "妹",
+        "mei"
+      ],
+      [
+        "hsk3-my-kenyan-roommate",
+        6,
+        "欢",
+        "huan"
+      ],
+      [
+        "hsk3-my-kenyan-roommate",
+        6,
+        "情",
+        "qing"
+      ],
+      [
+        "hsk3-my-kenyan-roommate",
+        7,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk3-my-kenyan-roommate",
+        7,
+        "友",
+        "you"
+      ],
+      [
+        "hsk3-my-kenyan-roommate",
+        13,
+        "妹",
+        "mei"
+      ],
+      [
+        "hsk2-a-postcard-from-canada",
+        1,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-a-postcard-from-canada",
+        3,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-a-postcard-from-canada",
+        3,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-a-postcard-from-canada",
+        4,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-a-postcard-from-canada",
+        5,
+        "字",
+        "zi"
+      ],
+      [
+        "hsk2-a-postcard-from-canada",
+        6,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-a-postcard-from-canada",
+        12,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-a-postcard-from-canada",
+        14,
+        "字",
+        "zi"
+      ],
+      [
+        "hsk3-my-brazilian-language-partner",
+        4,
+        "欢",
+        "huan"
+      ],
+      [
+        "hsk3-my-brazilian-language-partner",
+        5,
+        "欢",
+        "huan"
+      ],
+      [
+        "hsk3-my-brazilian-language-partner",
+        5,
+        "欢",
+        "huan"
+      ],
+      [
+        "hsk3-my-brazilian-language-partner",
+        7,
+        "系",
+        "xi"
+      ],
+      [
+        "hsk3-december-in-australia",
+        0,
+        "友",
+        "you"
+      ],
+      [
+        "hsk3-december-in-australia",
+        7,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-please-speak-more-slowly",
+        1,
+        "诉",
+        "su"
+      ],
+      [
+        "hsk2-please-speak-more-slowly",
+        3,
+        "不",
+        "bu"
+      ],
+      [
+        "hsk2-please-speak-more-slowly",
+        6,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-please-speak-more-slowly",
+        7,
+        "候",
+        "hou"
+      ],
+      [
+        "hsk2-a-video-call-with-home",
+        0,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-a-video-call-with-home",
+        1,
+        "妈",
+        "ma"
+      ],
+      [
+        "hsk2-a-video-call-with-home",
+        5,
+        "不",
+        "bu"
+      ],
+      [
+        "hsk2-a-video-call-with-home",
+        6,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-a-video-call-with-home",
+        10,
+        "友",
+        "you"
+      ],
+      [
+        "hsk3-my-roommates-quiet-hours",
+        1,
+        "欢",
+        "huan"
+      ],
+      [
+        "hsk3-my-roommates-quiet-hours",
+        2,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk3-my-roommates-quiet-hours",
+        3,
+        "量",
+        "liang"
+      ],
+      [
+        "hsk3-my-roommates-quiet-hours",
+        5,
+        "不",
+        "bu"
+      ],
+      [
+        "hsk3-my-roommates-quiet-hours",
+        7,
+        "楚",
+        "chu"
+      ],
+      [
+        "hsk3-my-roommates-quiet-hours",
+        7,
+        "服",
+        "fu"
+      ],
+      [
+        "hsk3-my-roommates-quiet-hours",
+        10,
+        "量",
+        "liang"
+      ],
+      [
+        "hsk3-my-roommates-quiet-hours",
+        15,
+        "服",
+        "fu"
+      ],
+      [
+        "hsk2-less-spicy-please",
+        0,
+        "友",
+        "you"
+      ],
+      [
+        "hsk2-less-spicy-please",
+        1,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-less-spicy-please",
+        3,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk3-picking-up-my-first-parcel",
+        0,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk3-picking-up-my-first-parcel",
+        0,
+        "息",
+        "xi"
+      ],
+      [
+        "hsk3-picking-up-my-first-parcel",
+        2,
+        "息",
+        "xi"
+      ],
+      [
+        "hsk3-picking-up-my-first-parcel",
+        4,
+        "少",
+        "shao"
+      ],
+      [
+        "hsk3-picking-up-my-first-parcel",
+        5,
+        "息",
+        "xi"
+      ],
+      [
+        "hsk3-picking-up-my-first-parcel",
+        11,
+        "息",
+        "xi"
+      ],
+      [
+        "hsk2-helping-friends-say-my-name",
+        0,
+        "个",
+        "ge"
+      ],
+      [
+        "hsk2-helping-friends-say-my-name",
+        1,
+        "字",
+        "zi"
+      ],
+      [
+        "hsk2-helping-friends-say-my-name",
+        4,
+        "字",
+        "zi"
+      ],
+      [
+        "hsk2-helping-friends-say-my-name",
+        5,
+        "字",
+        "zi"
+      ],
+      [
+        "hsk2-helping-friends-say-my-name",
+        5,
+        "上",
+        "shang"
+      ],
+      [
+        "hsk2-helping-friends-say-my-name",
+        6,
+        "字",
+        "zi"
+      ],
+      [
+        "hsk2-helping-friends-say-my-name",
+        8,
+        "字",
+        "zi"
+      ]
+    ],
+    "level_note": "HSK2–3 practice targets; proper names and thematic extension vocabulary are glossed. Not an official vocabulary-only syllabus.",
+    "passages_unchanged": true,
+    "original_vocabulary_preserved": true,
+    "tone_exception_review": "Listed per-character dictionary exceptions are contextually neutral syllables (for example 朋友 péng you, 妈妈 mā ma, 认识 rèn shi and 谢谢-style reduplication). Authored readings retained."
+  },
+  "visual_review": [
+    {
+      "id": "hsk2-my-first-weekend-in-beijing",
+      "sha256": "1ed30229fa7f2ee192d2c4694c5af7552cd42731fbcb2f6ca4c30f21a5036440",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk3-an-evening-in-shanghai",
-      "duration_seconds": 40.024,
-      "mean_audio_dbfs": -20.4,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "cf5ea29c2b478988244a5f84ef5b18b6c7e47dc58697938699dbed3e8c531bf1"
+      "sha256": "56b6f54f8e6a5f3db218c78bfeb2c596b9332d2a263cf29b688e86c8b831ca20",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk3-my-first-dragon-boat-festival",
-      "duration_seconds": 41.703,
-      "mean_audio_dbfs": -20.25,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "3a1c627b3fb0443133f39808c58a8018bb3cd31d4cc6a6561157d487e9e35233"
-    },
-    {
-      "id": "hsk2-lantern-festival-with-classmates",
-      "duration_seconds": 39.454,
-      "mean_audio_dbfs": -20.64,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "f7312b5876eb8e94e9f4a7c919c3a554fddc8a26428c7caccdf5bdfca7332038"
+      "sha256": "4f63c06dce133b5daa257b8e7e20f36ed056c6f0cd1d13da04cc9cbf10c957c2",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk2-spring-picnic-after-class",
-      "duration_seconds": 40.059,
-      "mean_audio_dbfs": -20.65,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "5b95259be1f24187fabae4e4e0eebebba6b7a712955dcd97c3640b4dead29f85"
+      "sha256": "eda0679078b526609945b286ca7dc27a06c742a142363bc1c6f0acbee08c1f3a",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk2-summer-rain-on-the-way-home",
-      "duration_seconds": 40.806,
-      "mean_audio_dbfs": -20.89,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "462e327539a597706f45b72761bb7eaa1a5bcd6077412a8e131dc4905a7c7539"
+      "sha256": "bfbe38c7b84715d5896aae0d4ef1b6888b06f7c0d0da990f2f4f80adb0d32a61",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk3-autumn-letter-to-home",
-      "duration_seconds": 42.195,
-      "mean_audio_dbfs": -20.27,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "0dca107f909633ef1f0523100a601c427bbed00fe75bfd22c1c4784ef423e6f6"
+      "sha256": "5793009274e43582db06a64b20f653ee36a655a352156fd31b80e116d98062b9",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
+    },
+    {
+      "id": "hsk2-lantern-festival-with-classmates",
+      "sha256": "0452be7abd6f6be305c2b658d5293d778d2139529a29a1360e3ec63ddc6ee6e4",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk2-my-first-snowy-morning",
-      "duration_seconds": 40.795,
-      "mean_audio_dbfs": -20.72,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "188085b1b45cdfc30272cbc928b5f51f02271b55432bd5eda71331aa5f936588"
+      "sha256": "0f2045357d32ad306640f503c33a1c1742cba70980a8bb9eb0e03e572fb92276",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk2-my-japanese-classmate",
-      "duration_seconds": 38.4,
-      "mean_audio_dbfs": -20.52,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "c5dfff4806bcd9154f092548512022915f68ad79740f587dde4145de68fed8cb"
-    },
-    {
-      "id": "hsk2-a-friend-from-france",
-      "duration_seconds": 39.213,
-      "mean_audio_dbfs": -20.19,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "d25a0972a3379439c2f4ff1fd0693c21d2202b9a46b22232e542f6dd1f0e211d"
+      "sha256": "4f6165c195a78544ca60b08091f0afd444a37b884194ceb9d8439f3f627a550c",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk3-my-kenyan-roommate",
-      "duration_seconds": 42.501,
-      "mean_audio_dbfs": -20.12,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "2c6d65f6c11f3ab32317eed09a22ea864f430c9d73c8ba5e2c0dd74bdca7552e"
+      "sha256": "696e14316615d41d19451a3076d6dedf32279c535af2a493cf9a76b6249a966f",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
+    },
+    {
+      "id": "hsk2-a-friend-from-france",
+      "sha256": "2e70750e2a842e3193a0c76beaee1a2200156173de29ac9d828a8cca144bf755",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk2-a-postcard-from-canada",
-      "duration_seconds": 40.741,
-      "mean_audio_dbfs": -20.32,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "1f6b0518cc36f25096f15904232664b8d99300ae411b76b6c1bd7a54ba7ced38"
+      "sha256": "cdafbbe766f5d344d1dcb9fa01cbdd35daf87ab0d09d3e127eba89c09091a3d7",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk3-my-brazilian-language-partner",
-      "duration_seconds": 41.99,
-      "mean_audio_dbfs": -20.3,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "b71cf47710793e67e3e005df0b32ac29caac1fa66a51f89a4eb126672a01c0ae"
+      "sha256": "3d2ed129e2c981dfb8986e7241820cb9d21c1e9e5ea74a7b9c20d775e274c5a5",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk3-december-in-australia",
-      "duration_seconds": 42.55,
-      "mean_audio_dbfs": -20.91,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "2f1654c80c5e306184cd22a8d565ae6c9dd0e1108adb7d1f00a28d65f8c68b67"
-    },
-    {
-      "id": "hsk2-please-speak-more-slowly",
-      "duration_seconds": 40.391,
-      "mean_audio_dbfs": -20.78,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "e381af078bd76245f380fa54b6a494e52e3a83245c7566539ce1a0931c891731"
-    },
-    {
-      "id": "hsk2-a-video-call-with-home",
-      "duration_seconds": 39.593,
-      "mean_audio_dbfs": -20.49,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "057a0e0288421eb54b9b8fa6ff2b01471c6c8724298f71059c3c3168caa6b9c4"
+      "sha256": "bbadf60f0afba6b575d61161d937e35d20e39990f7db74da6d256c37ff98a223",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk3-my-roommates-quiet-hours",
-      "duration_seconds": 45.464,
-      "mean_audio_dbfs": -20.95,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "8d70358caba6b4878534b0bfaa5f2887bb5ddbbfc151407138bdeaebc10e2169"
+      "sha256": "a7e55bde56938272e15eb89a9de3a64d34c5de48f8f85f100a3e9ebd97c3a80e",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
-      "id": "hsk2-less-spicy-please",
-      "duration_seconds": 40.403,
-      "mean_audio_dbfs": -20.87,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "3a4f27d33b865747c264fbcf8a9bfb86317e35ea03266227dcee6db63a2a048e"
+      "id": "hsk2-please-speak-more-slowly",
+      "sha256": "b452778debc26f2e2dc79bbfa112e46aedc606db46a3722911cfe5f2518f53e5",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
+    },
+    {
+      "id": "hsk2-a-video-call-with-home",
+      "sha256": "c73fc70109eb50cb9ea846d1870c3cfb3b3c68145c23f2e7df7dd2dc4640a422",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk3-picking-up-my-first-parcel",
-      "duration_seconds": 40.258,
-      "mean_audio_dbfs": -20.8,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "a021ec9430d2c9ca917e9746cff391ff0fd3bb532785a0a9524edc7d3858e3b3"
+      "sha256": "72e7cfd30a0108dec45d7ab67e479f882b4a7eaaeba2227b8d21a4b6a4331932",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
+    },
+    {
+      "id": "hsk2-less-spicy-please",
+      "sha256": "7d56778fb83d2ccdc6351548ed3f897d096cb2dd2156fc812a200f97b56fcac7",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     },
     {
       "id": "hsk2-helping-friends-say-my-name",
-      "duration_seconds": 41.547,
-      "mean_audio_dbfs": -19.79,
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "decode": "pass",
-      "sha256": "ab986a08abef9c10d6f62173d7f8d3ce4bb2bb653e235be5774321a83cb5052a"
+      "sha256": "aa5b22c85da9e45430f6d7a7556f2ec09fa7f8b97c9476afd02717f6e20ac312",
+      "layout": "approved watercolor template",
+      "passage": "eight lines checked",
+      "vocabulary": "eight entries with Chinese, pinyin and English",
+      "status": "pass"
     }
   ],
-  "count": 20,
-  "status": "pass",
-  "pinyin_check": "240 passage/glossary rows aligned; all character readings cross-checked; neutral-tone and context readings reviewed",
-  "visual_check": "100 reading/glossary pages passed deterministic layout bounds. Overview and full-size samples inspected; generated typography is literal source text.",
-  "voice": "zh-CN-XiaoxiaoNeural",
-  "style": "gentle",
-  "rate": "-25%",
-  "sentence_break_ms": 600,
-  "glossary_hold_seconds": 6
+  "cdn_assets_verified": 60,
+  "i18n_check": "exit 0; pre-existing missing-key warnings outside this batch",
+  "search_evaluation": {
+    "PASS": 95,
+    "WARN": 42,
+    "FAIL": 0
+  }
 }

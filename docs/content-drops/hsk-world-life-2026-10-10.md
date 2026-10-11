@@ -1,77 +1,87 @@
-# HSK reading content drop — 2026-10-10
+# HSK reading content drop — 2026-10-10, watercolor revision
 
-Twenty original readings for foreign learners: 12 targeting HSK2 practice and 8
-HSK3, with supported place names and topic vocabulary. These labels indicate
-practice difficulty, not an official exam-vocabulary-only claim.
+Twenty readings for foreign learners: 12 targeting HSK2 practice and eight HSK3.
+The subjects are Beijing, Shanghai, two festivals, four seasonal stories, six
+countries across six continents, and six everyday interactions. These labels
+indicate practice difficulty; place names and thematic vocabulary are supported
+extensions, not an official exam-vocabulary-only claim.
 
-- Chinese cities: a first weekend in Beijing; an evening in Shanghai.
-- Festivals: a first Dragon Boat Festival; Lantern Festival with classmates.
-- Seasons: a spring picnic; summer rain; an autumn letter home; first snow.
-- Countries: Japan, France, Kenya, Canada, Brazil, Australia. Each is told through
-  a personal connection and names its continent; Australia uses Oceania.
-- Daily life: asking someone to speak slowly; calling home; roommate quiet hours;
-  requesting less chili; collecting a parcel; helping friends pronounce a name.
+## Approved presentation
 
-## Assets and presentation
+The October 11 revision replaces the rejected minimalist cards and page-based
+videos with the established HSK watercolor template. The Beijing card and its
+slow scrolling video were approved by the user before the rest of the batch.
+All 160 Chinese sentences and their existing narration are unchanged.
 
-Each story has eight authored Chinese sentences with pinyin and English support,
-four glossary entries, a complete reading poster, a preview, and a 1080×1920
-MP4. Videos show two sentences at a time across four pages, followed by six
-seconds of vocabulary review. Azure `zh-CN-XiaoxiaoNeural`, gentle style, −25%
-rate, 600 ms between sentences, and a subtle 1% camera movement provide the
-read-along pace. Narration is synthesized in page-aligned chunks so page changes
-follow the actual audio duration. No music competes with the speech.
+Each poster has a cream background, an HSK cloud badge, a reading-lesson ribbon,
+a Chinese title with English subtitle, eight Chinese sentences with pinyin above
+each line, watercolor story scenes, and a two-by-four vocabulary grid. Each of
+the eight vocabulary cards includes Chinese, pinyin, an English meaning and an
+illustration. The four original vocabulary entries are retained; four relevant
+words from each story complete the established grid.
 
-Chinese and pinyin are rendered as literal font glyphs, with aligned baselines;
-the illustrations are original code-drawn vector-style scenes. This avoids the
-image-model diacritic substitutions seen in September. Clean learning assets
-are retained; CDN posters and previews use the existing tiled watermark helper.
+Images are generated with the built-in image tool using the approved Beijing
+poster as the visual reference. Authored text and saved generation prompts are
+retained with the gallery assets. Clean originals are retained; CDN posters and
+previews use the existing watermark helper.
+
+Videos slowly scroll upward across the same full poster, followed by the Curify
+closing card. Output is 960×1280 H.264/AAC at 30 fps. Narration reuses the original
+Azure `zh-CN-XiaoxiaoNeural` audio: gentle style, −25% speech rate and pauses
+between sentences. No music competes with the voice. Branding appears on the
+closing card so it does not obscure the reading text or the HSK badge.
+
+## Asset organization
 
 Durable gallery location:
 `~/curify-gallery/edtech_videos/hsk-reading/2026-10-10-world-and-daily-life/`
 
-- `index.html`: playable batch catalogue.
-- `video/`, `cards/`, `posters/`, `frames/`: finished videos and reading visuals.
-- `narration/`: authored text and assembled WAV narration.
-- `subtitles/`: Chinese page-aligned SRT captions, including the glossary hold.
-- `source/`, `batch.json`: production scripts and source text.
+- `index.html`: current playable catalogue.
+- `cards/`, `posters/`, `video/`: approved watercolor assets.
+- `narration/`: unchanged WAV files and authored narration text.
+- `source/`, `batch.json`: renderer, generation prompts and source text.
 - `asset-qa.json`, `text-qa.json`, `cdn-verification.json`: validation evidence.
+- `template-style-sample/`: the originally approved Beijing sample.
+
+Obsolete two-sentence frames and glossary-page subtitles are removed from the
+current deliverable. The revised assets use `-watercolor-v2` CDN filenames,
+preventing cached rejected images from appearing on the updated example pages.
 
 ## Content integration
 
-The twenty records extend the existing
-`template-hsk-bilingual-reading-text-lesson-poster` family. Each has an image,
-preview, video URL, relevant topics, bilingual search aliases, `allow_i18n`, and
-`updated_at` for the sitemap discovery window. Existing template rank is 90.
-No existing records or templates are replaced. Page metadata includes all ten
-existing locales: en, zh, de, es, fr, hi, ja, ko, ru, tr.
+The same twenty record IDs remain in the existing
+`template-hsk-bilingual-reading-text-lesson-poster` family. Their image, preview
+and video URLs point to the watercolor replacements. Metadata in all ten locales
+(en, zh, de, es, fr, hi, ja, ko, ru, tr) describes the revised presentation.
+Existing unrelated records, templates and translations remain unchanged.
 
 Authored source: `scripts/configs/hsk_world_life_2026-10-10.json`.
-The reusable renderer supports:
+Render the approved cards with their existing narration:
 
 ```sh
-python scripts/render_hsk_readalong.py all \
+python scripts/render_hsk_readalong.py \
   --config scripts/configs/hsk_world_life_2026-10-10.json \
-  --output /path/to/batch
+  --cards /path/to/batch/cards \
+  --narration /path/to/batch/narration \
+  --output /path/to/batch/video
 ```
 
-It needs Pillow, python-dotenv, ffmpeg, the existing Azure configuration in
-`~/curify-studio/curify_background/.env`, and the installed macOS CJK/Latin fonts.
-Use `pages`, `audio`, or `video` instead of `all` to resume one phase; `--only`
-filters IDs, and `--overwrite` refreshes video renders. Keep the generated
-narration with the batch so retries do not resynthesize unchanged speech.
+The renderer needs Pillow, ffmpeg, the existing Curify logo and the installed
+macOS fonts. `--only ID ...` selects stories; `--overwrite` refreshes renders;
+`--jobs` controls concurrent rendering. Image generation is separate and uses
+the saved prompts and approved reference; this command does not redraw cards.
 
 ## Validation and release boundary
 
-All 240 passage/glossary rows pass syllable alignment and character-reading
-checks. Context readings, 一/不 changes and neutral syllables were reviewed in
-source. All 100 presentation pages pass layout-bound checks; the overview,
-full-size reading screens, glossary and published poster were visually checked.
-Every MP4 is fully decoded, checked for audible speech and matching duration,
-and checked for H.264/AAC compatibility. Final duration range is 38.4–45.5 s.
-Search evaluation remains PASS=95, WARN=42, FAIL=0 before and after the addition.
+All 60 CDN assets match their local SHA-256 hashes. All 20 videos decode fully,
+have audible narration and differing reading frames, and run for 34.8–42.0 seconds.
+Search evaluation remains PASS=95, WARN=42, FAIL=0. The i18n checker exits
+successfully; existing missing-key warnings are outside this batch.
 
-CDN uploads are scoped to these sixty assets, and each public response is
-compared with the local SHA-256 checksum. CDN availability alone is not a claim
-that production example pages have deployed: the content and translations must
-also be merged/deployed through the frontend's active content-drop branch.
+The release manifests record exact local and CDN hashes. Video QA checks every
+MP4's dimensions, codecs, duration and full decoding. Source text checks cover
+all 160 passage sentences and 160 vocabulary entries; rendered cards are also
+visually reviewed for layout, text completeness and English meanings.
+
+CDN availability alone does not establish production deployment. The frontend
+content commit must pass the existing pull-request checks and review policy.
