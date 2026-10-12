@@ -11,6 +11,7 @@
  * ⚠️ Depth is the one people get wrong: it is the narrow END panel's short
  * side, not half the box. The hint says so rather than assuming.
  */
+import { trackEvent } from "@/services/useTracking";
 import { useState } from "react";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { useFactoryExport } from "@/services/useFactoryExport";
@@ -23,7 +24,7 @@ export default function PackagingMockupForm() {
   const [h, setH] = useState(114);
   const [d, setD] = useState(39);
   const [angle, setAngle] = useState<"45" | "front">("45");
-  const { phase, error, resultUrl, busy, start } = useFactoryExport();
+  const { phase, error, resultUrl, busy, start } = useFactoryExport({ trackingSurface: "packaging-mockup" });
 
   const ok = [w, h, d].every((v) => v > 0 && v <= 2000);
 
@@ -54,7 +55,10 @@ export default function PackagingMockupForm() {
           hint="Rasterized dieline (PNG/JPG) for now — .ai and PDF upload is not supported yet."
           replaceLabel="Replace"
           signInLabel="Sign in to upload a dieline"
-          onChange={(blobUrl: string | null) => setImageUrl(blobUrl)}
+          onChange={(blobUrl: string | null) => {
+            setImageUrl(blobUrl);
+            if (blobUrl) trackEvent({ contentId: "upload:ready:packaging-mockup", contentType: "menu_link", actionType: "click" });
+          }}
           onUploadingChange={setUploading}
         />
       </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import { trackEvent } from "@/services/useTracking";
+import { trackFirstGeneration } from "@/services/funnelEvents";
 import { isAwaitingCredits, AwaitingCreditsError, navigateToAwaitingCredits } from "@/lib/awaitingCredits";
 
 
@@ -22,7 +24,8 @@ const POLL_MS = 4000;
 /** ~5 min. Tracing, CMYK conversion and (for mockups) a Gemini call are slow. */
 const MAX_POLLS = 75;
 
-export function useFactoryExport(opts: { runningNote?: string } = {}) {
+export function useFactoryExport(opts: { runningNote?: string; trackingSurface?: string } = {}) {
+  const { trackingSurface } = opts;
   const user = useAtomValue(userAtom);
   const setDrawer = useSetAtom(drawerAtom);
 
@@ -33,6 +36,10 @@ export function useFactoryExport(opts: { runningNote?: string } = {}) {
 
   const start = useCallback(
     async (submit: () => Promise<FactoryExportResponse>) => {
+      const milestone = (stage: string) => {
+        if (trackingSurface) trackEvent({ contentId: `generate:${stage}:${trackingSurface}`, contentType: "menu_link", actionType: "click" });
+      };
+      milestone("attempt");
       if (!user) {
         // Gate here rather than at the endpoint: a 401 after a filled-in form
         // reads as a broken tool, not as "you need an account".
@@ -51,6 +58,7 @@ export function useFactoryExport(opts: { runningNote?: string } = {}) {
         if (!res.success || !projectId) {
           throw new Error(res.message || "Could not start the job.");
         }
+        milestone("accepted");
       } catch (e) {
         // Insufficient credits and out-of-range inputs are rejected BEFORE a
         // project row exists, so this message is actionable.
@@ -71,6 +79,8 @@ export function useFactoryExport(opts: { runningNote?: string } = {}) {
           if (st.status === "COMPLETED") {
             setResultUrl(st.result_url ?? null);
             setPhase("done");
+            milestone("complete");
+            if (trackingSurface) trackFirstGeneration(trackingSurface);
             return;
           }
           if (st.status === "FAILED") {
@@ -92,7 +102,7 @@ export function useFactoryExport(opts: { runningNote?: string } = {}) {
       };
       window.setTimeout(tick, POLL_MS);
     },
-    [user, setDrawer],
+    [user, setDrawer, trackingSurface],
   );
 
   return {

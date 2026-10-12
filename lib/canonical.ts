@@ -18,14 +18,14 @@ export function getCanonicalUrl(locale: string, path: string = ""): string {
   return `${SITE_URL}${buildCanonicalPath(locale, path)}`;
 }
 
-export function getLanguagesMap(path: string = ""): Record<string, string> {  
+export function getLanguagesMap(path: string = "", locales: readonly string[] = routing.locales): Record<string, string> {
   const normalizedPath = path && !path.startsWith("/") ? `/${path}` : path;
   
   const languages: Record<string, string> = {};
-  routing.locales.forEach((lang: string) => {
+  locales.forEach((lang: string) => {
     languages[lang] = getCanonicalUrl(lang, normalizedPath);
   });
-  languages["x-default"] = getCanonicalUrl("en", normalizedPath);
+  if (locales.length) languages["x-default"] = getCanonicalUrl(locales.includes("en") ? "en" : locales[0], normalizedPath);
   
   return languages;
 }

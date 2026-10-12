@@ -1,5 +1,7 @@
 "use client";
 
+import { withSearchAttribution } from "@/lib/search-attribution";
+
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useClientSearchParams } from "@/lib/useClientSearchParams";
 import { Search, X } from "lucide-react";
@@ -193,14 +195,14 @@ export default function SearchBar({ locale }: Props) {
     track({ contentId: label || q, contentType: "topic_capsule", actionType: "search" });
     setOpen(false);
     setQuery("");
-    if (href) router.push(`/${locale}${href}`);
+    if (href) router.push(withSearchAttribution(`/${locale}${href}`, label || q));
     else if (searchFallback) {
       router.push(`/${locale}/search?q=${encodeURIComponent(queryStr ?? slug)}`);
       // Bypass Next.js Router Cache so a stale empty-result RSC payload
       // from a pre-deploy attempt doesn't get served on the same query.
       router.refresh();
     }
-    else router.push(`/${locale}/topics/${q}`);
+    else router.push(withSearchAttribution(`/${locale}/topics/${q}`, label || q));
   }, [locale, query, router, track]);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -249,10 +251,10 @@ export default function SearchBar({ locale }: Props) {
         router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
         router.refresh();
       } else {
-        router.push(exact.href ? `/${locale}${exact.href}` : `/${locale}/topics/${exact.slug}`);
+        router.push(withSearchAttribution(exact.href ? `/${locale}${exact.href}` : `/${locale}/topics/${exact.slug}`, q));
       }
     } else if (toolIntent?.href) {
-      router.push(`/${locale}${toolIntent.href}`);
+      router.push(withSearchAttribution(`/${locale}${toolIntent.href}`, q));
     } else {
       router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
       router.refresh();

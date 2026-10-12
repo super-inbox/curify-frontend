@@ -21,9 +21,9 @@ import { useTracking } from "@/services/useTracking";
  * still in the SEARCH event already logged before the redirect, and the
  * 5-min session-window join in the cycle SQL stitches them together.
  *
- * Only mounts on the topic page (where the redirect lands).
+ * Mounts on topic and tool landing pages.
  */
-export default function SearchRedirectTracker() {
+export default function SearchRedirectTracker({ surface = "topic" }: { surface?: "topic" | "tool" }) {
   const searchParams = useClientSearchParams();
   const fromSearch = searchParams?.get("from_search");
   const { track } = useTracking();
@@ -35,10 +35,10 @@ export default function SearchRedirectTracker() {
     firedRef.current = true;
     track({
       contentId: "search-redirect",
-      contentType: "topic_capsule",
+      contentType: surface === "tool" ? "tool_card" : "topic_capsule",
       actionType: "click",
     });
-  }, [fromSearch, track]);
+  }, [fromSearch, track, surface]);
 
   return null;
 }

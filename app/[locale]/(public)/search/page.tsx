@@ -1,3 +1,4 @@
+import { withSearchAttribution } from "@/lib/search-attribution";
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
@@ -577,7 +578,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // a richer experience than the static topic page.  This ensures "cat" and
   // "cats" (which normalizes to "cat") follow the same routing policy.
   if (target && !target.searchFallback && !shouldSkipTopicRedirect(q)) {
-    redirect(target.href ? `/${locale}${target.href}` : `/${locale}/topics/${target.slug}`);
+    redirect(withSearchAttribution(target.href ? `/${locale}${target.href}` : `/${locale}/topics/${target.slug}`, query));
   }
 
   // Tool intent — parity with the SearchBar submit handler, which has called
@@ -592,7 +593,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // rule are what keep generic words ("video") from hijacking navigation.
   const toolIntent = matchToolIntent(query);
   if (toolIntent?.href) {
-    redirect(`/${locale}${toolIntent.href}`);
+    redirect(withSearchAttribution(`/${locale}${toolIntent.href}`, query));
   }
 
   type InspRecord = {

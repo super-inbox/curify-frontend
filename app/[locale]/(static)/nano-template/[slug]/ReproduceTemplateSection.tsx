@@ -42,6 +42,7 @@ export default function ReproduceTemplateSection(props: {
   template: NanoTemplateForDetail;
   sampleImage?: SampleImage;
   initialParams?: Record<string, string>;
+  parameterOverrides?: Record<string, string>;
 }) {
   // Reference-input mode is an explicit per-template field (nano_templates.json
   // `image_input`), with the legacy `requires_image_upload` flag as fallback.
@@ -50,7 +51,7 @@ export default function ReproduceTemplateSection(props: {
     (props.template.requires_image_upload ? "required" : "none");
   if (mode === "required") {
     return (
-      <ImageWorkbenchSection template={props.template} initialParams={props.initialParams} />
+      <ImageWorkbenchSection template={props.template} initialParams={props.initialParams} parameterOverrides={props.parameterOverrides} />
     );
   }
   // "optional" → same 3-column workbench, col-1 upload offered but not required:
@@ -61,6 +62,7 @@ export default function ReproduceTemplateSection(props: {
       <ImageWorkbenchSection
         template={props.template}
         initialParams={props.initialParams}
+        parameterOverrides={props.parameterOverrides}
         optionalUpload
       />
     );
@@ -75,9 +77,11 @@ function ImageWorkbenchSection({
   template,
   initialParams,
   optionalUpload = false,
+  parameterOverrides,
 }: {
   template: NanoTemplateForDetail;
   initialParams?: Record<string, string>;
+  parameterOverrides?: Record<string, string>;
   optionalUpload?: boolean;
 }) {
   const searchParams = useClientSearchParams();
@@ -101,6 +105,7 @@ function ImageWorkbenchSection({
         templateId={template.template_id}
         parameters={template.parameters ?? []}
         initialParams={seeded}
+        parameterOverrides={parameterOverrides}
         basePrompt={template.base_prompt || ""}
         // Offering an upload implies this is a generation template; force it on
         // for the optional case so a clobbered allow_generation flag can't leave
