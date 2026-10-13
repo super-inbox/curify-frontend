@@ -5087,3 +5087,20 @@ Only two of sixteen have reported KD, and both meet the existing ≤26 preferenc
 Current provider-page spot checks (October 13; not a location-controlled Google ranking snapshot): [Kasane workflow](https://www.kasaneedits.com/how-it-works) and [Photodotedit outsourcing guide](https://photodotedit.com/outsource-wedding-photo-editing-step-by-step-guide-to-working-with-photodotedit/) support a practical outsourcing/service journey; [PixelPhant product retouching](https://pixelphant.com/product-photo-retouching-services) supports a service destination for the product term. These establish examples of intent, not competitor capability verification or expected Curify rank.
 
 This pass documents KD and queues the next service-content work; it does not claim those follow-up edits have been implemented. Article and preceding SEO implementation are included in the requested commit/push. Production publication still depends on deployment of the target branch; a Git push alone is not proof of deployment.
+
+### October 13 handoff — committed findings and next actions
+
+Implementation and detailed findings above are committed and pushed as `2b715931` on `content-drop/product-visuals-2026-09-28`. This includes the ASL engineering article, guide corrections, localized CTA, internal links, authored-locale sitemap support, backlink audit, all 16 KD observations and publisher drafts. Production deployment of this commit remains unverified. The article's intended public URL is `/blog/building-asl-video-translator`; verify it returns the new article before distributing it.
+
+| Priority | Next action | Owner / dependency | Completion evidence |
+|---|---|---|---|
+| P0 | Confirm deployment and crawlability of the ASL article and corrected guide | Deployment owner; implementation complete | Live article HTTP 200, self-canonical, indexable EN, sitemap entry and working tool links |
+| P0 | Publish a personal engineering summary and run a small relevant publisher pilot | Operator; article live first | Published summary, outreach log, independent replies/citations and referral usage; no guaranteed link count |
+| P0 | Improve wedding outsourcing content on the existing photographer service page | Frontend/content follow-up; KD 11, volume 90 | Clear sample-review process, scope and batch inquiry path, cost-guide/example links; track qualified inquiries |
+| P0 follow-up | Check real-estate Google-selected canonical and index status after resubmission | GSC; operator submission already reported | EN self-canonical selection and separate ZH crawl/index verdict; submission alone is not recovery |
+| Next bounded opportunity | Audit destination and proof for product photo retouching service | Content/product review; KD 16, volume 40 | Existing-page ownership resolved and sample workflow verified before deciding on a new lead page |
+| Continue measuring | Existing ASL, fashion and packaging journeys | Complete post-deployment windows | Query-specific clicks, completed outputs, payments/returns, picker-to-generation and qualified leads |
+
+Optional next SEMrush action: refresh unavailable KD for `mannequin to model ai`, `flat lay to model ai`, and `asl to text translator`, confirming country/database. Do not block the article or existing-page improvements on these missing values. Defer standalone hotel pages, duplicate ASL keyword pages, mass blog/localization work and lost-link recovery for the five links verified still present. No disavow is justified by the supplied sample alone.
+
+Expected outcome remains better intent match, credible evidence for editorial coverage, useful referrals and more qualified conversion from existing rankings. The data does not support a numerical traffic-lift promise. Recheck complete seven-day windows for early signals and a 28-day post-deployment window for a more useful assessment, with longer observation for sparse queries. Compare named query/page cohorts rather than interpreting blended average position as a causal effect.
