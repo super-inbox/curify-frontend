@@ -18,6 +18,7 @@ type BlogRecord = {
   // to date (publish) if absent. Either ISO-8601 (preferred) or the
   // human "Month D, YYYY" form used by date — both are normalized.
   lastmod?: string;
+  locales?: string[];
   readTime?: string;
   tag?: string;
   image?: string;
@@ -34,6 +35,7 @@ function getBlogEntries(): {
   route: string;
   lastmod: string;
   images: string[];
+  locales: readonly string[];
 }[] {
   const records = blogs as BlogRecord[];
 
@@ -41,6 +43,7 @@ function getBlogEntries(): {
     .filter((b) => b?.slug)
     .map((b) => ({
       route: `/blog/${encodeURIComponent(b.slug)}`,
+      locales: b.locales ?? LOCALES,
       lastmod: normalizeDate(b.lastmod ?? b.date),
       // Every one of the 106 records carries a hero `image`; it is the only
       // image we can attribute to a post from data alone (in-body images live
@@ -51,8 +54,8 @@ function getBlogEntries(): {
 }
 
 // hreflang block
-function generateHreflangLinks(route: string) {
-  const links = LOCALES.map((lng) => {
+function generateHreflangLinks(route: string, locales: readonly string[]) {
+  const links = locales.map((lng) => {
     const pathPrefix = lng === "en" ? "" : `/${lng}`;
     return `<xhtml:link rel="alternate" hreflang="${lng}" href="${BASE_URL}${pathPrefix}${route}" />`;
   }).join("");
@@ -68,7 +71,8 @@ function generateUrlEntry(
   locale: string,
   route: string,
   lastmod: string,
-  images: readonly string[] = []
+  images: readonly string[] = [],
+  locales: readonly string[] = LOCALES
 ) {
   const pathPrefix = locale === "en" ? "" : `/${locale}`;
   const loc = `${BASE_URL}${pathPrefix}${route}`;
@@ -79,7 +83,7 @@ function generateUrlEntry(
       <lastmod>${lastmod}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.7</priority>
-      ${generateHreflangLinks(route)}${imageEntries(images)}
+      ${generateHreflangLinks(route, locales)}${imageEntries(images)}
     </url>
   `;
 }
@@ -89,9 +93,9 @@ export async function GET() {
 
   let urls = "";
 
-  entries.forEach(({ route, lastmod, images }) => {
-    LOCALES.forEach((locale) => {
-      urls += generateUrlEntry(locale, route, lastmod, images);
+  entries.forEach(({ route, lastmod, images, locales }) => {
+    locales.forEach((locale) => {
+      urls += generateUrlEntry(locale, route, lastmod, images, locales);
     });
   });
 

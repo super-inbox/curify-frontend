@@ -4980,3 +4980,110 @@ Also request a recrawl of `https://www.curify-ai.com/blog/ghost-mannequin-ai-gui
 Prepared outreach offer (draft, not sent): “We’ve published a before/after workflow with the source image, changes made and limitations. If it would help your photography/apparel audience, here is the relevant example page. We can review a small sample set with its photo count and deadline before discussing a full batch.” Match the destination to the recipient: `/tools/real-estate-photo-editing` for property photography, `/tools/ai-fashion-model-generator` for garment-to-model workflow, `/use-cases/for-photographers` for wedding/gallery editing. Avoid generic backlink swaps or claims of delivered client outcomes.
 
 Deferred: broader packaging locale-copy alignment beyond EN/ZH; a real-photo jewelry quality test before a service-page build; any automatic ASL quality claim or backend switch; and external outreach pending actual prospect evidence. Evaluate the new picker and contact paths after confirmed deployment using separate complete measurement windows.
+
+
+## 2026-10-13 — backlink evidence and revised authority P0
+
+Operator reports real-estate photo-editing resubmitted to Google. Treat submission as done, index recovery as pending; the message does not establish whether both EN/ZH were submitted. Next inspection should check crawl date, Google-selected canonical and EN/ZH index verdict. Do not repeatedly request the same URL without a new finding.
+
+Evidence: `raw/seo-backlink-2026-10-13/backlinks.txt` and the October 13 19:27 lost-link screenshot. This is a partial UI copy (header says 1–100 of 1,685), not a full referring-domain export. Parsing blank-line/source-score boundaries yields 70 identifiable source-page entries, not 70 independent endorsements or a representative full-profile distribution:
+
+- 32 source pages on sitedata.dev, mostly translated/category variants, marked nofollow.
+- Nine source pages on the operator's qqwjq9916.substack.com publication, chiefly general AI/engineering topics pointing at the homepage. These establish authored experience/distribution, not nine independent publisher endorsements.
+- 22 source pages sharing `/dir/seo-visibility-links-48578` or `/all/742/9.html`, with repeated link-selling/PBN wording and 1,000–3,000 external links. This is evidence of repeated low-value network patterns in the sample, not proof the operator bought them, a Google penalty, or the composition of all 1.2K referring domains.
+- Other sources include MentorCruise/Hugging Face profiles (marked nofollow), Product Hunt redirect, Bing image results, an AI directory and a third-party image-comparison citation. No ASL target URL is visible in the supplied text.
+
+### Lost-link verification
+
+All five screenshot source pages returned HTTP 200 during direct fetches on October 13. The DeepSeek Substack article still contains a direct `https://curify-ai.com/` anchor, with no rel attribute. SheepNav, Prori, LibraryOfApps and AI Hunt still contain the same Product Hunt referral link (some with tracking parameters). The bare Product Hunt referral resolves to `https://www.curify-ai.com/?ref=producthunt` with final HTTP 200. Thus none of these five sampled losses is confirmed currently missing. This establishes live link presence, not Google indexing or link weight; SEMrush may have stale/intermittent crawl findings. Recovery outreach for these five is not P0.
+
+Sources checked: `https://qqwjq9916.substack.com/p/deepseek-harness-makes-agents-easier`, `https://www.sheepnav.com/tools/curify-studio`, `https://prori.ai/products/curify-studio--75b3bc10-7edc-4edc-be05-04160feee8cd`, `https://libraryofapps.com/app/curify-studio`, `https://ai-hunt.tech/date/2026/5/24?page=3`.
+
+### Revised work order
+
+1. **Original ASL development article is now the first content P0.** Operator can supply first-hand building experience more readily than a broad outreach campaign. Recommended angle: “Building an ASL video translator: what worked, what failed, and how we evaluate it.” Prefer the full technical account on Curify with a byline and links to the existing ASL tool and tutorial; use a distinct personal summary on the established Substack linking to the evidence. If Substack is the practical first publication, include a useful evidence section on Curify and link directly to it/the ASL tool. Preserve the tool's winning head-term intent; the engineering article answers a different question.
+2. **Evidence and product handoff accompany the article.** Include actual architecture/model versions and dates, approaches tested, authorized inputs, output/correction examples, evaluation method/sample size, cost/latency measurements when available, and unresolved limitations. Clearly distinguish deployed behavior from adapter/model research. Do not imply a proprietary trained model, fluent review or accuracy percentage unless supported. Engineering lessons can publish before a formal benchmark; claims about signing correctness require a fluent ASL reviewer. Add one template-generated pipeline/failure-analysis infographic alongside accessible HTML; no standalone infographic-page batch.
+3. **Small publisher pilot after the evidence is ready.** Operator can contact five well-matched ASL educators/Deaf creators, captioning-workflow publishers, or multimodal-AI engineering writers, with a tailored angle for each. Ask for independent feedback/citation if useful; no reciprocal-link or paid-ranking-link requirement. Prefer links to the useful article or tool, rather than default homepage links. Track replies, independent live source URLs, referral visits and completed projects; links/ranking lifts are not guaranteed. No outreach sent by the assistant.
+4. **ASL conversion and existing localized guide refresh remain P0.** Add the reviewed example to the tool, preserve the winning URL/title, and measure organic arrival → upload → completed output → payment → return. Keep Spanish blog-to-tool handoff. This is distinct from claiming that conversion events directly improve ranking.
+5. **Non-ASL: index recovery follow-up, then current experiments.** Real estate moves from submission work to verification. Retain packaging completion, fashion picker-to-generation and qualified retouching inquiries as bounded priorities. No extra broad tool/blog/locale batch from this backlink evidence.
+
+Success ladder: publish a credible resource → relevant publisher engagement and independent citations → qualified referral/organic users and completed projects. Review early acquisition/conversion over complete post-launch weeks and query movement over a longer window. Do not use raw backlink count or Authority Score as the success target. A fuller domain-level export is useful later, but no longer blocks this plan.
+
+No disavow or bulk removal recommended from this sample alone. Google's guidance says most sites do not need disavow and reserves it for substantial artificial links with an actual or likely manual action: https://support.google.com/webmasters/answer/2648487?hl=en . Original reporting, identifiable authorship and first-hand expertise align with https://developers.google.com/search/docs/fundamentals/creating-helpful-content .
+
+### October 13 execution — ASL evidence article and long-tail ownership
+
+Implemented locally, not yet deployed: `/blog/building-asl-video-translator`, an English engineering article from the current ASL index (`curify-studio/docs/asl-translation-mvp-spec.md`, especially §1.0, §12 and §17) and `dev/asl_mvp/inspector/README.md`. Includes caption leakage, provenance-matched frame inspection, temporal controls, October same-init scaling and representation results, preprocessing gaps, and research/production separation. An accessible HTML inspection schematic and an original SVG card explain the method without publishing private signer frames. Aggregate scores are internally reported, not independently reproduced public benchmarks. References point to public How2Sign/Uni-Sign sources; private corpus paths and customer IDs are not exposed.
+
+EN/ZH ASL tools link to the English engineering article. English practical guide refreshed around input → draft → fluent review → export. The shared guide CTA now uses localized copy and stays in the reader's locale in all ten languages. Stale high-accuracy, real-time and automatic-compliance claims in the guide's product/comparison paragraphs replaced in all ten locales; this is not a full review of every remaining localized guide paragraph. Existing winning tool title/URL preserved. New article is EN-only in sitemap/hreflang; other locale routes render English with noindex and canonical to EN. Blog sitemap now supports optional per-record authored locales without changing existing records' defaults.
+
+**Long-tail decision:** yes, pursue long tails through existing relevant pages first. October 12 aggregate query export (requested through October 12 and includes incomplete days, unlike the finalized comparison) already records `translate asl video to english` 34 clicks/121 impressions, `asl translator video to text` 18/63, and `asl video to text translator` 10/23. These validate the query family; do not sum near-synonyms into a new demand estimate. `asl to text translator` has 0/12 at position 9.3, too little evidence for a forecast. No fresh GSC pull was performed for this content pass.
+
+| Intent | Owning destination | Next decision |
+|---|---|---|
+| ASL video to English/text; ASL-to-text translator | Existing ASL tool | Measure query-specific clicks and completed outputs; no synonym slugs |
+| ASL video to subtitles/SRT | Existing tool + practical guide | KD/intent check; describe only actual project export options |
+| How to translate an ASL video | Existing ASL guide | Refreshed workflow and localized tool CTA |
+| ASL translation accuracy/evaluation; engineering lessons | New engineering article | Linkable evidence; publication value does not depend on high search volume |
+| Flat lay/mannequin to model | Existing fashion-model tool | Check KD and preserve garment-to-model intent |
+| Ghost mannequin editing service | Ghost guide → appropriate service/tool | Check whether searchers want editing service versus model generation before promising coverage |
+| Outsource/batch wedding photo editing | Photographer service page; portrait/editor intent stays on wedding tool | Service intent and qualified batch inquiries |
+| Hotel/property editing | Existing real-estate page | Index recovery before a separate hotel page |
+| Product photo retouching service | Existing relevant service entry | Check results/product fit before allocating a new page |
+
+Operator bulk-check file: `docs/seo/semrush-kd-candidates-2026-10-13.txt` (16 terms). Request US English KD, volume, intent and top result URLs in one snapshot; unavailable KD is not zero. For subtitles/SRT, inspect whether results mean translating signing or captioning spoken audio. Keep the existing KD≤26 preference for new search-led work, while prioritizing demonstrated users and commercial fit. Do not wait for KD to publish original engineering findings. Exclude free, real-time, English-to-ASL and BSL promises unsupported by this product. Virtual twilight and jewelry retouching already have recorded KD; no need to re-buy that decision.
+
+### Publisher kit — drafts for operator use, not sent
+
+Primary link after deployment: `https://www.curify-ai.com/blog/building-asl-video-translator`. Contextual product link: `https://www.curify-ai.com/tools/asl-video-translator`. Confirm the article is live before sending either an announcement or pitch.
+
+- **Own Substack:** publish a personal account/excerpt pointing to the detailed Curify write-up. Suggested opening: “We built an ASL video translator, then had to retract one of our most convincing demos: the model could read captions already in the image. Our subsequent work focused on inspection sheets and controlled comparisons. Here are the lessons that changed what we measure.” Distribution, not an independent endorsement.
+- **Hugging Face community blog:** developer audience fits representation/preprocessing work. Verified authoring entry point `https://huggingface.co/new-blog` via `https://huggingface.co/blog-explorers`. Adapt into an engineering note with upstream credit. This is self-publishing, not earned editorial coverage; no suggestion that publication proves endorsement.
+- **Towards Data Science / The New Stack contributions:** `https://thenewstack.io/contributions/` directs technical contributions toward TDS. Angle: why falling training loss and fluent output were weak evidence, and how controls changed the conclusion. Search-indexed official guidance checked October 13; direct fetch was 403, so recheck submission terms/exclusivity before uploading a full manuscript. Do not promise that previously published text will be accepted.
+- **Slator editorial:** translation-industry angle: evaluating ASL-to-English beyond fluent output, and why a research baseline is not a deployed product. Official `https://slator.com/thank-you-for-your-submission/` lists editor@slator.com. This is an editorial inquiry draft, not authorization for paid partner content or an assumed acceptance.
+- **ASL educator / Deaf creator known to the operator:** select a person with relevant review expertise; identity not yet supplied/verified. Request feedback on the review checklist rather than a product endorsement. Do not describe them as a reviewer until they actually review it; any paid review is for expertise, not a required backlink.
+
+Engineering pitch draft: “We documented our ASL-to-English development work, including a caption-leakage correction, a frame-level inspection method, and controlled data/representation experiments. We separate the internal research results from the current product and report the limits alongside the numbers. Would the evaluation lessons be useful for your readers? The write-up is [article URL]. Happy to discuss an original contribution focused on your audience.”
+
+Translation/education pitch draft: “We have written up where our experimental ASL-to-English workflow fails and how we inspect output before treating it as a translation. We would value your feedback on the review checklist and the limits we explain to users. If the resource is useful to your audience, you are welcome to reference it. [article URL]”
+
+Track one row per contact: prospect, relevant prior coverage, chosen angle, date sent by operator, reply, live citation URL/target, referral visits and completed projects. Goal for first batch: five well-matched conversations, not five guaranteed links. No outreach, publication to third-party accounts, or payment performed.
+
+Validation for this implementation: TypeScript `--noEmit --incremental false` passed; five tests passed with `vitest.unit.config.ts` (including authored blog locale sitemap coverage); generated slug/namespace checks and `git diff --check` passed. Browser smoke: engineering EN/ZH fallback, guide EN/ES and ASL tool all HTTP 200; EN article indexable/self-canonical, ZH fallback noindex/canonical-to-EN; Spanish tool CTA stays localized; tool-to-engineering link present; sitemap contains one engineering article URL; no page errors. Desktop/mobile screenshots captured; mobile article width and scrollWidth both 358px, screenshot inspected. Default Vitest command initially hit the repository's missing Storybook config; the supported unit config passed. No live deployment, paid job, GSC submission or external outreach performed in this implementation pass.
+
+### October 13 KD results — follow-up after operator bulk check
+
+Source: `raw/seo-backlink-2026-10-13/kd.png`, a 16-keyword SEMrush bulk-analysis screenshot. The crop does not show the country/database selector, so US English was requested but is not independently confirmed here. The two populated KD rows were last updated “1 month” ago. Most other rows explicitly request a metric refresh. Preserve the distinction between numeric zero, unavailable KD and entirely blank metrics.
+
+| Keyword | Monthly volume shown | KD shown | Follow-up |
+|---|---:|---:|---|
+| outsource wedding photo editing | 90 | 11 | Highest-priority new commercial long tail: strengthen existing photographer service page |
+| mannequin to model ai | 40 | Unavailable | Existing fashion-model tool; refresh metric, no duplicate page |
+| product photo retouching service | 40 | 16 | Next service-page candidate, subject to supported workflow/proof and existing-page ownership audit |
+| asl to text translator | 20 | Unavailable | Existing ASL tool; GSC evidence takes precedence over missing KD |
+| flat lay to model ai | 20 | Unavailable | Existing fashion-model tool; retain exact task wording and examples |
+| ghost mannequin photo editing service | 20 | Unavailable | Service-intent check; ghost construction is not mannequin-to-model generation |
+| asl video to text | 0 | Unavailable | Keep existing tool coverage; zero estimate is not proof of no demand |
+| hotel room photo retouching | 0 | Unavailable | Existing real-estate/hotel examples; no separate hotel build justified |
+| how to translate asl video | 0 | Unavailable | Existing practical guide; no new synonym page |
+| asl video to subtitles | Blank | Blank | Refresh if useful; do not interpret as zero |
+| asl video to srt | Blank | Blank | Refresh if useful; validate export intent |
+| how accurate are asl translators | Blank | Blank | Engineering article already addresses this; no demand claim |
+| asl translation accuracy | Blank | Blank | Engineering article; authority/education value independent of measured volume |
+| sign language translation evaluation | Blank | Blank | Engineering article; no new SEO page |
+| batch wedding photo editing | Blank | Blank | Useful inquiry CTA wording, not established search demand |
+| hotel photo editing service | Blank | Blank | Keep existing page; no demand-based new-page decision |
+
+Only two of sixteen have reported KD, and both meet the existing ≤26 preference. This is not a completed low-KD validation for the other fourteen. Do not sum these synonym volumes or promise traffic from them. SEMrush labels the two scored terms informational; observed provider pages indicate service/comparison overlap, so classify intent from actual results and the visitor's task rather than the label alone.
+
+**Updated execution order after this KD:**
+
+1. Publish the prepared ASL engineering article and corrected guide, then use the outreach kit. The article is an evidence asset; missing accuracy/evaluation volumes do not invalidate it. Existing ASL traffic, payment and return usage remain stronger prioritization evidence than the new estimates.
+2. Next copy/conversion pass: `/use-cases/for-photographers` should explicitly answer how to outsource a wedding-photo batch: sample images, desired finish/reference, photo count, deadline, review process and delivery scope agreed after inspection. Link to the existing wedding cost guide and portrait/wedding examples. Preserve a distinct role for `/tools/wedding-photo-editing`; do not launch another overlapping wedding slug. No invented per-image price, turnaround guarantee, bulk culling/RAW capability or delivered-client claim.
+3. Queue `product photo retouching service` as the next bounded non-ASL service opportunity. Review the existing product/ecommerce entry points first; use the authorized/generated shoe before/after as clearly labeled proof if relevant. A new dedicated lead page is conditional on no adequate existing owner and a verified sample workflow; KD 16 alone does not authorize promises of a self-serve product-retouching tool.
+4. Continue garment-to-model coverage on the existing fashion tool. If refreshing SEMrush metrics, prioritize mannequin-to-model, flat-lay-to-model and ASL-to-text; the article launch need not wait. Consider ghost-mannequin service only if we can actually supply that distinct edit.
+5. Real-estate submission remains completed/pending Google processing. Hotel zero/blank metrics do not justify a separate page. No blanket blog, tool or locale expansion from this screenshot.
+
+Current provider-page spot checks (October 13; not a location-controlled Google ranking snapshot): [Kasane workflow](https://www.kasaneedits.com/how-it-works) and [Photodotedit outsourcing guide](https://photodotedit.com/outsource-wedding-photo-editing-step-by-step-guide-to-working-with-photodotedit/) support a practical outsourcing/service journey; [PixelPhant product retouching](https://pixelphant.com/product-photo-retouching-services) supports a service destination for the product term. These establish examples of intent, not competitor capability verification or expected Curify rank.
+
+This pass documents KD and queues the next service-content work; it does not claim those follow-up edits have been implemented. Article and preceding SEO implementation are included in the requested commit/push. Production publication still depends on deployment of the target branch; a Git push alone is not proof of deployment.
