@@ -4889,3 +4889,94 @@ ranking for competitor names: `evoto alternative` · `imagen ai alternative` · 
 `remove wrinkles from clothes photo` · `flat lay photo editing` · `ghost mannequin service` (no trailing
 period). Plus `jewelry photo editing` / `jewelry retouching service` to size the cluster the probe just
 unblocked.
+
+## 2026-10-12 — refreshed P0: real-estate fold, ASL intent, and selective non-ASL growth
+
+Evidence: `raw/seo-p0-2026-10-12/` contains today's three operator SEMrush screenshots, fresh GSC export, and `comparison.json` (finalized seven-day comparisons plus nine URL inspections). Export request September 14–October 12; **finalized analysis covers September 14–October 10, 27 days**, not 28. October 11–12 are incomplete. Query exports omit anonymized queries; the standard page×query export also excludes pages below 25 impressions. Absence of a named query is not proof of zero demand. Weekly JSON uses unfiltered page×query rows (25,000 row limit, fewer than 1,500 returned). Page groups below omit fragment URLs to avoid treating jump links as independent pages.
+
+### The decline was reporting incompleteness; no rollback P0
+
+October 8 has finalized at **100 clicks / 2,382 impressions**, versus the first incomplete 14 clicks and next refresh's 25. October 9 finalized at 76 clicks; October 10 at 70. October 4–10 totals **605 clicks / 13,833 impressions**, versus **595 / 11,318** September 27–October 3: clicks +1.7%, impressions +22.2%, CTR 5.26% → 4.37%, position 8.31 → 7.99. This is not the apparent sitewide collapse. Aggregate position and CTR mix changing queries; they do not alone diagnose snippet quality.
+
+ASL tool/blog pages across locales: **444 → 452 clicks** in those same weeks. Over 27 finalized days, these pages account for **1,534 of 2,146 site clicks (~71.5%)**. The English tool alone has 1,401 clicks. Protect this existing entry point while diversifying.
+
+### What the SEMrush screenshots add
+
+October 12 desktop snapshot: global overview Authority Score 7, estimated organic traffic 107 (+133%), 483 keywords (+34%), 1.2K referring domains and 1.6K backlinks. The US panel is a different scope: 150 keywords, with 162 organic-position rows in the detailed view (SERP-feature rows can repeat a keyword). These estimates are not actual GSC visits and should not be substituted for first-party counts. The referring-domain count is neither 1,200 endorsements nor evidence that all links are bad; the old 68-domain audit is stale for this snapshot. Export and sample sources before deciding authority quality or any remediation.
+
+Notable US keyword observations:
+
+| Keyword | SEMrush position | Monthly volume | KD | Implication |
+|---|---:|---:|---:|---|
+| sign language video translator | 2 | 140 | 14 | Defend existing ASL tool |
+| asl video translation | 5 | 260 | 17 | Existing ranking, investigate low CTR |
+| asl translator video | 6 | 140 | 10 | Existing tool, no duplicate slug |
+| translate asl video to english | 2 | 90 | 26 | Existing tool; feature row is not extra demand |
+| free asl video translator | 2 | 90 | 27 | Ranking exists, but live product costs 8 credits/minute |
+| visual mockups | 6 | 140 | 9 | Small existing-page experiment, not a new build |
+| ai merch | 4 | 110 | 36 | Existing blog, above house KD ceiling for new targeting |
+| weather visuals | 2 | 40 | 21 | Low volume, weak commercial fit |
+| fashion genre generator | 40 | 4,400 | 7 | New discovery worth a bounded intent-matched test |
+
+GSC does not yet corroborate large traffic for the last four: `visual mockups` 2 impressions, `ai merch` 1, `weather visuals` 1, `fashion genre generator` 2 at position 41. Do not extrapolate SEMrush estimated traffic or volume into guaranteed visits.
+
+### Recent work: completed versus still waiting
+
+Production deployment list still names `ea0a032e` (October 8 23:21 UTC) as the latest Production deployment. The October 10–11 content additions appear as Preview deployments; the current integration branch is not proof of production shipping. Existing production work includes the real-estate EN/ZH lead page and image pairs; wedding/photographer examples; Related reading layout repair; ghost-mannequin guide across ten locales; and its link to the fashion model tool. Do not queue these again.
+
+Today's inspections:
+
+- ASL EN tool: indexed, self-canonical, crawled October 12. Spanish blog: indexed/self-canonical, crawled October 12. Spanish tool: indexed/self-canonical, last crawl September 22.
+- Fashion tool: indexed/self-canonical, crawl September 30. Ghost-mannequin EN guide: indexed/self-canonical, crawl September 19. These crawl snapshots predate October 8 changes; the guide readout cannot isolate the new links/locales yet.
+- Wedding tool: indexed/self-canonical, crawl October 9. Photographer service page: indexed/self-canonical, crawl October 8. Old discovery/fold blockers for these are closed.
+- **Real estate EN: Duplicate without user-selected canonical; Google canonical is `/tools`; crawl October 8 06:43 UTC, no user canonical in the inspected snapshot. ZH: discovered, not indexed, never crawled.** Live EN now returns its own absolute canonical and renders the real-estate H1 and examples. This discrepancy is actionable, but the cause is not yet proven.
+
+### Ranked P0 work
+
+**1. Recover real-estate indexation on the existing URL.** Compare rendered HTML/canonicals for browser and crawler paths, verify the sitemap and crawled internal links, and rule out cached tool-index/fallback content. Keep the real-estate self-canonical and distinct sample-request content; request indexing in GSC once live rendering is verified. Success: Google selects the EN real-estate URL itself, ZH is crawled/indexed with its own canonical, and target impressions begin. Own `virtual twilight` (140/mo, KD 0) and real-estate editing here; hotel examples support the service without a separate hotel SEO page. Do not target HDR merge promises: current copy explicitly says no HDR brackets, and twilight did not validate HDR capability. No new page or rollback is justified by this inspection alone.
+
+**2. Improve ASL query-to-result experience without disturbing its winning title/URL.** `asl video translator` already earns 196 clicks / 747 page-query impressions at position 2.9. The specific opportunity is `asl video translation`: 0 / 83 at position 4.8 on the tool (SEMrush 260/mo, KD 17). Add or sharpen one useful section demonstrating uploaded ASL → English text/SRT, with actual limits, supported input, pricing and reviewed example output; inspect the result presentation before a targeted snippet experiment. Do not claim a projected CTR lift from 83 impressions. Live copy correctly renders 8 credits/minute but still says the pipeline handles “ADA-compliant captioning,” contradicting its own unverified-output limitation; remove the automatic compliance promise. Do not add a “free” title/page because a free query ranks. Preserve the current title, canonical, and language-specific blog-to-tool path. Measure organic arrival → CTA → upload → completed output → repeat, including the missing search redirect attribution documented October 11. The October 12 backend adapter research does not establish a deployed quality improvement; preserve honest production claims.
+
+**3. Make fashion/retouching proof and outreach serve one page per job.** Fashion tool across locales: 190 impressions / 0 clicks over 27 days, latest week 159 versus 16, but named head keyword is still position 61 on only 7 latest-week impressions. Its improved blended position is not proof of page-one target ranking. Ghost guide: 88 impressions / 1 click; wedding tool: 57 / 3; photographer page: 8 / 0. Use authorized real examples, garment-preservation checks, input/output detail and batch sample CTAs on the existing appropriate pages. Keep `flat lay to model ai` and `mannequin to model ai` on the fashion tool, `outsource wedding photo editing` on the photographer service page, and portrait/wedding editor intent on the wedding tool. Audit the new referring domains, then run a small relevant outreach pilot using these assets (photography/apparel partners and genuinely relevant tool listings); record live source/target URLs, referral leads and query movement. A directory kit or FB post is not itself a verified editorial backlink. Old text concluding that low traffic on an indexed page proves an authority constraint was too strong: intent, product fit and evidence remain alternatives.
+
+**4. Run one bounded fashion discovery experiment.** `fashion genre generator` is the strongest new low-KD opportunity in the screenshots, but its intent differs from garment-to-model photography. Current results include a [style spinner](https://yourspinner.com/tools/fashion-genre-generator) and [clothing aesthetics picker](https://www.minimizemymess.com/aesthetics-generator). Recommend an immediate random-style result (style, palette, outfit ingredients), followed by a relevant outfit-generation action. Prefer adding this useful interaction to the existing `/nano-template/personal-fashion-outfit-style-variations` surface, which already ranks, rather than creating a competing URL. Its adjacent `outfit style generator` query has 12 impressions at position 11.5. Validate the experience and conversion path first; this is a small consumer-fashion test, not evidence of ecommerce-retouching demand. No blog listicle or broad locale rollout is needed for the test.
+
+**5. Optimize one demonstrated non-ASL utility before expanding generic content.** Packaging mockup is the strongest product-adjacent candidate: 38 clicks / 626 impressions across locales, including EN 21/361 at position 6.7 and ZH 11/141 at 7.6. Clarify the existing input → rendered packaging result and the link from `/topics/mockups`; check whether `dieline to mockup generator` (7 impressions, position 9.6) actually matches supported input before using the phrase. Bilingual subtitles is the second candidate (EN 13 clicks / 281 impressions; exact query 2/48 at 8.1). Prioritize a usable example and tracked generation completion. This is bounded optimization of existing pages, not a mandate for two new tools. `ai merch`, weather and celebrity-MBTI rankings do not currently justify P0 content expansion.
+
+### Blogs, tools, links and cannibalization
+
+- **Blogs:** no broad publishing batch. Refresh existing ASL guidance and the ghost guide where evidence or product facts need updating. A documented case study belongs on the relevant service/tool page first. Competitor-alternative blogs remain gated on missing KD/intent data and a truthful comparison.
+- **Tools:** the fashion-style picker is a small new interaction worth testing. Jewelry remains the next conditional service-page candidate (`jewelry photo retouching`, 210/mo, KD 19 in October 7 data), after a real-input quality check and a usable sample-request workflow. Today's [jewelry service results](https://clippoutline.com/services/jewelry-photo-retouching/) support service-page intent; they do not prove our output quality. Do not promise a self-serve jewelry editor from the synthetic probe.
+- **Links:** yes to relevant earned links pointing to proof-bearing pages. No bulk directory campaign or disavow action from the Authority Score alone. Ask for/export the backlink source list before grading quality.
+- **ASL overlap:** the EN blog is weak on the head term (1 click / 31 impressions, position 39.5) while the tool dominates. The Spanish blog itself earns 80 clicks versus 16 for the Spanish tool over 27 days. Preserve it and strengthen the localized handoff; do not blanket-redirect it. `#anchor` rows are fragments of one document, not seven competing pages. Distinct tutorial/tool pages can coexist; use canonicalization for duplicate or very similar content, consistent with [Google's guidance](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls).
+- **Fashion overlap:** ghost-mannequin construction, garment-to-model imagery, and consumer outfit inspiration are different tasks. Cross-link by task; do not merge them or create near-identical keyword variants. The real-estate fold is the confirmed current consolidation problem.
+- **Locales:** ghost guide is already authored in ten locales. First resolve indexing and existing localized conversion paths. No blanket ten-locale expansion is a P0 today.
+
+Review dates remain October 13 (ghost guide, explicitly caveated by stale crawl and short post-translation window), October 27 (wedding), and November 2 (fashion model). Grade named target queries and conversions, not only blended page position. New experiments should get their own complete pre/post windows after confirmed production deployment and recrawl. This review changes the roadmap only; no production code, outreach, indexing submission or deployment was performed.
+
+### P0 implementation — October 12
+
+Implemented on `content-drop/product-visuals-2026-09-28`:
+
+- Authored-locale hreflang maps: real estate now advertises EN, ZH and the EN x-default, not ten unauthored translations. Existing self-canonicals are preserved. Live Googlebot-user-agent fetches of EN/ZH already render the correct H1/content and self-canonical; no current fallback-to-tools response was reproduced. Google’s stored fold is still unresolved until recrawl.
+- ASL EN/ZH now explains upload → English draft → fluent review near the CTA/demo, with the existing price source. The unsupported automatic accessibility-compliance claim is removed in all ten tool locales. Winning title and URL remain unchanged.
+- Ordinary server search redirects and SearchBar destinations retain `from_search`, preserving existing query parameters/fragments. Tool pages now record the existing `search-redirect` event with `tool_card`; topics retain `topic_capsule`. This closes arrival attribution, not end-to-end ASL quality measurement. Existing tool/topic intent precedence is unchanged.
+- EN/ZH fashion and wedding tools have direct, attributed batch inquiry forms. Real-estate sample copy asks for photo count and deadline. These are inquiries, not automatic paid generation or a promise of completed delivery.
+- EN/ZH outfit-style template has a free six-style picker with a palette and outfit ingredients. “Use this style” merges the choice into the existing generation form without resetting an uploaded reference image or generated results. It does not create a duplicate SEO URL or trigger generation/charges.
+- EN/ZH packaging copy now matches PNG/JPG upload, manually supplied W×H×D, and front/45° output. It no longer promises automatic .ai/PDF extraction or a self-serve editable mesh. `/topics/mockups` links directly to the tool in EN/ZH. Packaging records upload-ready, generation attempt, accepted job, and backend-confirmed completion; first-generation tracking uses the existing guard.
+- Sitemap lastmod advances only for the five changed tool slugs.
+
+Validation: TypeScript `--noEmit --incremental false` passes. Thirty-two targeted tests pass (authored canonicals, encoded attribution, search intent, pricing, and packaging milestones including rejected/auth-gated submissions). Browser smoke checks: six tool routes return 200 with expected canonical/hreflang; picker changes style and fills the workbench; the mockups topic links to the tool; no browser page errors. Desktop/mobile picker screenshots inspected. The broader mobile page reports 36px overflow; diagnostic output includes the existing offscreen sign-in drawer, while the new picker fits within 390px. No blanket overflow clipping was added. The existing i18n checker exits successfully but reports pre-existing key differences plus intentionally optional EN/ZH-only workflow/batch blocks; it is not a zero-warning locale audit. No paid generation or lead form was submitted in validation.
+
+**Operator GSC action:** once this branch is deployed, URL Inspection → Test live URL → Request indexing for:
+
+1. `https://www.curify-ai.com/tools/real-estate-photo-editing`
+2. `https://www.curify-ai.com/zh/tools/real-estate-photo-editing`
+
+Also request a recrawl of `https://www.curify-ai.com/blog/ghost-mannequin-ai-guide` if it still shows the September 19 crawl, so Google can see the already-shipped fashion-tool link. Reindexing is a request, not a guarantee. Success means the EN real-estate Google canonical becomes itself, ZH receives a crawl/index verdict, and target impressions start. A branch push is not production deployment; the last verified Production deployment remains October 8.
+
+**Remaining authority work:** needs a SEMrush referring-domain/backlink export; the three screenshots contain totals but no source URLs to audit. Sample source relevance, live link presence, target, rel attributes and obvious network duplication before grading the 1.2K count. Use a small relevant outreach pilot after deployment; no messages were sent.
+
+Prepared outreach offer (draft, not sent): “We’ve published a before/after workflow with the source image, changes made and limitations. If it would help your photography/apparel audience, here is the relevant example page. We can review a small sample set with its photo count and deadline before discussing a full batch.” Match the destination to the recipient: `/tools/real-estate-photo-editing` for property photography, `/tools/ai-fashion-model-generator` for garment-to-model workflow, `/use-cases/for-photographers` for wedding/gallery editing. Avoid generic backlink swaps or claims of delivered client outcomes.
+
+Deferred: broader packaging locale-copy alignment beyond EN/ZH; a real-photo jewelry quality test before a service-page build; any automatic ASL quality claim or backend switch; and external outreach pending actual prospect evidence. Evaluate the new picker and contact paths after confirmed deployment using separate complete measurement windows.

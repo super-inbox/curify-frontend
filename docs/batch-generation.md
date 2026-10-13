@@ -92,6 +92,7 @@ Existing example configs:
 | Earlier | `subject_tier3_examples.json` | Tier-3 topic anchor seeds. | varies |
 | Earlier | `portugal_examples.json` | Geo travel examples. | varies |
 | 2026-05-18 | `low_languages_2026-05-18.json` | **75 entries** for `template-vocabulary` (35) + `template-word-scene` (40) across en-ko (19) / en-ja (18) / en-es (19) / en-fr (19). Curated 10 universal vocabulary themes + 10 universal scenes, drawn from the existing en-zh set so each one pairs with a known-good base prompt. **Not yet generated** — config landed, pipeline ready to run. | 75 |
+| 2026-10-09 | `country_tourism_collage_2026-10-09.json` | New template `template-country-tourism-collage-poster`, a prompt reverse-engineered from four high-engagement country posters (France / Mexico / India / Saudi, kept in curify-gallery `smm_daily/2026-10-08-visual-design/`). 6 examples: Japan, Italy, Brazil, Egypt, Greece, Thailand. Output 928×1152 (4:5) with no aspect flag. The prompt asks for 4:5 and the model honoured it. Titles, bilingual aliases and `updated_at` hand-curated; i18n in all 10 locales via `scripts/add_country_tourism_collage_2026-10-09_i18n.py`. | 6 |
 
 ---
 

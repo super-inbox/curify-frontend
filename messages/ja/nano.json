@@ -8462,11 +8462,11 @@
   },
   "template-studio-digital-backdrop-scene": {
     "category": "Studio Scene Enhancement",
-    "description": "Upload a studio portrait and only the set behind the person is rebuilt — seamless backdrop sweep, reflective floor, LED seam, styled props and one series-wide colour grade. Pose, face, clothing and skin are left untouched.",
+    "description": "ポートレートをアップロードし、スタジオセットや恐竜の森、魔法学校、氷の宮殿、黄金の幻想都市などの環境を指定します。人物の顔立ち・ポーズ・服装を保ちながら背景を編集します。",
     "title": "Studio Digital Backdrop — Scene Enhancement, Subject Locked",
     "content": {
       "sections": {
-        "what": "This template performs a strict local edit on an uploaded studio photograph: the person is a locked subject whose pixels, pose, expression, garments and skin tone are preserved, and the only region rewritten is the background outside their silhouette. It builds a unified two-layer set — a seamless photographic paper sweep in your colour ramp joined to a lightly reflective floor with a recessed LED strip along the seam — then adds a styled prop arrangement, commercial studio lighting with a cool rim and a warm face fill, and one restrained colour grade. Because the scene direction, the prop set and the shot type are supplied as three short fields, the same three lines can be re-run across full-body, half-body and close-up frames so an entire batch reads as one shoot rather than a set of unrelated composites.",
+        "what": "どちらのモードも場面の方向、小道具、構図の3項目を使います。スタジオ指定ではシームレス背景を維持し、環境を明示した場合は建築や風景を生成します。背景照明を元の人物に合わせ、顔・髪・手・服の質感・輪郭を元画像と比較して確認してください。",
         "who": "Built for photography studios and the retouching desks that serve them — children's and family portrait studios, newborn and milestone shoots, school and senior portraits, and lookbook teams who shoot on plain seamless paper and need a themed set added afterwards. It is also the shape of the job when a studio outsources scene enhancement in batches of dozens of pairs against a written style spec.",
         "how": [
           "Upload one studio photograph shot against a plain or simple backdrop.",
@@ -8518,6 +8518,29 @@
           "「Bloom Botanicals」の見本ボード——温かく親しみやすい、オーガニックなサンセリフ方向で。",
           "「北岳茶事」の 6 つの書体方向、抑制的で伝統寄りに。",
           "「Nimbus Studio」のシート——精緻なモダングロテスクに、編集的なセリフを 1 つ。"
+        ]
+      }
+    }
+  },
+  "template-country-tourism-collage-poster": {
+    "category": "国別観光コラージュポスター",
+    "description": "国名を入れるだけで雑誌の表紙のような観光ポスターに。国旗カラーの立体大理石タイトル、中央のランドマーク、シームレスなパノラマ、手前には郷土料理のスティルライフ。",
+    "title": "Nano Banana Prompt: 国別観光コラージュポスター ジェネレーター | Curify AI",
+    "content": {
+      "sections": {
+        "what": "このテンプレートは、あらゆる国の縦長・フォトリアルな観光ポスターを作成します。巨大な大理石彫刻風タイトルは国旗の色をまとい、最も象徴的なランドマークが中央にそびえ、名所・都市景観・自然風景がひと続きのパノラマとして周囲に広がります。伝統衣装の人物、固有の動物、名物料理のスティルライフが画面を完成させます。",
+        "who": "観光局、デスティネーションマーケター、ホテル・旅行ブランド、旅行クリエイター、教師など、キャンペーンやSNS、授業、ウォールアート用にインパクトのある国別ポスター、または統一感のあるシリーズが必要な方に。",
+        "how": [
+          "国名を入力します（例：日本、イタリア、ブラジル）。",
+          "国旗カラーの立体タイトル付き4:5ポスターが生成されます。",
+          "中央にランドマーク、その周囲にシームレスなパノラマが広がります。",
+          "伝統衣装、固有の動物、料理のスティルライフが文化と奥行きを加えます。",
+          "国名を変えるだけで、すべての目的地で統一されたシリーズが作れます。"
+        ],
+        "prompts": [
+          "日本の観光コラージュポスターを作成：富士山、京都の寺院、桜、寿司。",
+          "コロッセオを中央に、手前にパスタとエスプレッソを配したイタリアの雑誌表紙風ポスターをデザイン。",
+          "エジプトの観光コラージュポスターを生成：ピラミッド、ナイル川、ラクダのキャラバン、コシャリ。"
         ]
       }
     }

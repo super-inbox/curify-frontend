@@ -2,6 +2,7 @@
 "use client";
 
 
+import SearchRedirectTracker from "../../topics/[slug]/SearchRedirectTracker";
 import { toTemplateStripCard } from "@/lib/nano_pure";
 import { Link } from "@/i18n/navigation";
 import { useClientSearchParams } from "@/lib/useClientSearchParams";
@@ -176,8 +177,23 @@ export default function ToolGenericClient({
     <main
       className={`${wideMain ? "max-w-[1600px]" : "max-w-5xl"} mx-auto pt-20 px-6 py-12 text-[var(--c2)]`}
     >
+      <SearchRedirectTracker surface="tool" />
       <h1 className="text-4xl font-bold mb-4 text-[var(--c1)]">{t("title")}</h1>
       <p className="text-lg mb-6">{t("description", toolCredits)}</p>
+
+      {t.has("workflow.title") && (
+        <section className="my-8 rounded-2xl border border-neutral-200 p-6">
+          <h2 className="text-2xl font-semibold">{t("workflow.title")}</h2>
+          <div className="mt-5 grid gap-6 md:grid-cols-3">
+            {(["input", "output", "review"] as const).map((step) => (
+              <div key={step}>
+                <h3 className="font-semibold">{t(`workflow.${step}Title` as never)}</h3>
+                <p className="mt-2 text-sm leading-relaxed">{t(`workflow.${step}`, toolCredits)}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {demo?.type === "language_switch" ? (
         <LanguageSwitchVideoDemo
@@ -295,6 +311,15 @@ export default function ToolGenericClient({
           </p>
         )}
       </div>
+
+      {t.has("batch.title") && (
+        <section className="mx-auto mt-10 max-w-2xl rounded-2xl border border-neutral-200 p-6">
+          <h2 className="text-2xl font-semibold">{t("batch.title")}</h2>
+          <p className="my-3">{t("batch.body")}</p>
+          <InlineContactCapture source={`batch:tool/${slug}`} subject={t("batch.subject")}
+            cta={t("batch.cta")} note={t("batch.note")} trackingId={`batch-request:tool/${slug}`} />
+        </section>
+      )}
 
       {/* Related templates — 1-2 rows of on-intent template cards directly below
           the inline workflow, to give visitors more to try and lift conversion. */}

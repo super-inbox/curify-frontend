@@ -451,6 +451,15 @@ export default async function Page({ params }: Props) {
           redirect from /search). Lets search_cycle5_pull.py attribute
           bare-country redirects as a distinct "had-redirect" bucket. */}
       <SearchRedirectTracker />
+      {slug === "mockups" && ["en", "zh"].includes(localeStr) && (
+        <aside className="mx-auto my-4 max-w-3xl rounded-xl border border-purple-200 bg-purple-50 p-5">
+          <h2 className="font-semibold">{localeStr === "zh" ? "已经有包装刀版图？" : "Already have a packaging dieline?"}</h2>
+          <p className="mt-2 text-sm">{localeStr === "zh" ? "上传 PNG/JPG，填写成品盒宽、高、深，生成正面或 45° 包装样机。" : "Upload PNG/JPG artwork, enter your box dimensions, and generate a front or 45° mockup."}</p>
+          <a className="mt-3 inline-block font-semibold text-purple-800 underline" href={localeStr === "en" ? "/tools/packaging-mockup" : "/zh/tools/packaging-mockup"}>
+            {localeStr === "zh" ? "打开包装样机工具 →" : "Open the packaging mockup tool →"}
+          </a>
+        </aside>
+      )}
       <section className="mx-auto max-w-[1600px] px-4 pt-2 pb-4 sm:px-6 lg:px-8">
 
         <div>

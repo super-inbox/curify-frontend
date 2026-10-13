@@ -24,6 +24,7 @@ function toSummary(prompt) {
     prompt: safeString(prompt.promptText),
     imageURL: safeString(prompt.imageUrl),
     tags: safeArray(prompt.tags),
+    aliases: safeArray(prompt.aliases),
   };
 }
 
@@ -128,6 +129,7 @@ async function main() {
       prompt: safeString(prompt.promptText),
       imageURL: safeString(prompt.imageUrl),
       tags: safeArray(prompt.tags),
+      aliases: safeArray(prompt.aliases),
       sourceUrl: safeString(prompt.sourceUrl),
       sourceType: safeString(prompt.sourceType),
       category: safeString(prompt.category),

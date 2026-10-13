@@ -1,3 +1,4 @@
+import { isAwaitingCredits, AwaitingCreditsError } from "@/lib/awaitingCredits";
 import {
   nanoGenerateService,
   type NanoProjectStatus,
@@ -51,6 +52,7 @@ export async function pollNanoResult(
       await sleep(intervalMs);
       continue;
     }
+    if (isAwaitingCredits(project)) throw new AwaitingCreditsError(projectId);
     const status = (project.status || "").toUpperCase();
     if (status === "COMPLETED") {
       if (project.result_url) {

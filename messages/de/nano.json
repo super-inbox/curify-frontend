@@ -8462,11 +8462,11 @@
   },
   "template-studio-digital-backdrop-scene": {
     "category": "Studio Scene Enhancement",
-    "description": "Upload a studio portrait and only the set behind the person is rebuilt — seamless backdrop sweep, reflective floor, LED seam, styled props and one series-wide colour grade. Pose, face, clothing and skin are left untouched.",
+    "description": "Lade ein Porträt hoch und beschreibe ein Studioset oder eine Umgebung: Dinosaurierwald, Zauberschule, Eispalast oder goldene Fantasiestadt. Die Bearbeitung zielt auf den Hintergrund und bewahrt Identität, Pose und Kleidung.",
     "title": "Studio Digital Backdrop — Scene Enhancement, Subject Locked",
     "content": {
       "sections": {
-        "what": "This template performs a strict local edit on an uploaded studio photograph: the person is a locked subject whose pixels, pose, expression, garments and skin tone are preserved, and the only region rewritten is the background outside their silhouette. It builds a unified two-layer set — a seamless photographic paper sweep in your colour ramp joined to a lightly reflective floor with a recessed LED strip along the seam — then adds a styled prop arrangement, commercial studio lighting with a cool rim and a warm face fill, and one restrained colour grade. Because the scene direction, the prop set and the shot type are supplied as three short fields, the same three lines can be re-run across full-body, half-body and close-up frames so an entire batch reads as one shoot rather than a set of unrelated composites.",
+        "what": "Beide Modi verwenden Szenenrichtung, Requisiten und Bildausschnitt. Studioangaben behalten den nahtlosen Hintergrund; ausdrücklich gewünschte Umgebungen erlauben Architektur und Landschaften. Das Hintergrundlicht folgt dem Originalporträt. Vergleiche Gesicht, Haare, Hände, Stoffstruktur und Konturen mit der Vorlage.",
         "who": "Built for photography studios and the retouching desks that serve them — children's and family portrait studios, newborn and milestone shoots, school and senior portraits, and lookbook teams who shoot on plain seamless paper and need a themed set added afterwards. It is also the shape of the job when a studio outsources scene enhancement in batches of dozens of pairs against a written style spec.",
         "how": [
           "Upload one studio photograph shot against a plain or simple backdrop.",
@@ -8518,6 +8518,29 @@
           "Eine Mustertafel für „Bloom Botanicals“ — warme, freundliche, organische Sans-Richtungen.",
           "Sechs Schriftrichtungen für „北岳茶事“, zurückhaltend und traditionell.",
           "Ein Blatt für „Nimbus Studio“ — präzise moderne Grotesk mit einer redaktionellen Serif."
+        ]
+      }
+    }
+  },
+  "template-country-tourism-collage-poster": {
+    "category": "Länder-Tourismus-Collage-Poster",
+    "description": "Verwandle jeden Ländernamen in ein Tourismusposter im Magazin-Cover-Stil: 3D-Marmortitel in Flaggenfarben, das Wahrzeichen im Zentrum, ein nahtloses Panorama und ein Stillleben mit lokaler Küche.",
+    "title": "Nano Banana Prompt: Länder-Tourismus-Collage-Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein fotorealistisches Hochformat-Tourismusposter für jedes Land. Ein riesiger Marmortitel trägt die Flaggenfarben; das bekannteste Wahrzeichen steht im Zentrum; Monumente, Skyline und Landschaften fließen zu einem durchgehenden Panorama zusammen; Menschen in Tracht, ein heimisches Tier und ein Stillleben typischer Gerichte runden die Szene ab.",
+        "who": "Für Tourismusverbände, Destinationsmarketing, Hotel- und Reisemarken, Reise-Creator und Lehrkräfte, die ein starkes Länderposter oder eine ganze einheitliche Serie für Kampagnen, Social Media, Unterricht oder Wandkunst brauchen.",
+        "how": [
+          "Gib einen Ländernamen ein (z. B. Japan, Italien, Brasilien).",
+          "Die Vorlage rendert ein 4:5-Poster mit 3D-Titel in den Flaggenfarben.",
+          "Das Wahrzeichen steht im Zentrum, umgeben von einem nahtlosen Panorama.",
+          "Tracht, heimische Tiere und ein Essens-Stillleben sorgen für Kultur und Tiefe.",
+          "Tausche den Ländernamen und erhalte eine passende Serie für jedes Reiseziel."
+        ],
+        "prompts": [
+          "Erstelle ein Tourismus-Collage-Poster für Japan: Fuji, Tempel in Kyoto, Kirschblüten und Sushi.",
+          "Gestalte ein Magazin-Cover-Poster für Italien mit dem Kolosseum im Zentrum und Pasta und Espresso im Vordergrund.",
+          "Generiere ein Tourismus-Collage-Poster für Ägypten: Pyramiden, Nil, Kamelkarawane und Koshari."
         ]
       }
     }

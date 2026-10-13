@@ -105,6 +105,10 @@ const STATIC_LASTMOD_OVERRIDES: Record<string, string> = {
 // they had no TOOL_BLOG_CATEGORIES entry, which is why all four KD-campaign
 // spokes measured referringUrls = 0. New rendered markup on those six pages.
 const TOOLS_LASTMOD = "2026-10-07T00:00:00.000Z";
+const TOOL_LASTMOD_OVERRIDES: Record<string, string> = Object.fromEntries(
+  ["asl-video-translator", "real-estate-photo-editing", "wedding-photo-editing", "ai-fashion-model-generator", "packaging-mockup"]
+    .map((slug) => [`/tools/${slug}`, "2026-10-12T00:00:00.000Z"]),
+);
 
 // Use-case pages: 08-12 added the worked-case block and moved the demo cards
 // into the tools grid — a visible change on all of them.
@@ -391,7 +395,7 @@ export async function GET() {
   toolRoutes.forEach(({ route, locales }) => {
     locales.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
-        lastmod: TOOLS_LASTMOD,
+        lastmod: TOOL_LASTMOD_OVERRIDES[route] ?? TOOLS_LASTMOD,
         changefreq: "weekly",
         priority: "0.8",
         // Only narrow the hreflang set when the tool actually declares one;

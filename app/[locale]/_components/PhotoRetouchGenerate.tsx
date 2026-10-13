@@ -1,5 +1,8 @@
 "use client";
 
+import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
+
+
 import { useEffect, useRef, useState } from "react";
 import { Loader2, Upload as UploadIcon, Wand2, Download, X, Check } from "lucide-react";
 import { photoRetouchService, PENDING, type RetouchGate } from "@/services/photoRetouch";
@@ -104,6 +107,7 @@ export default function PhotoRetouchGenerate() {
         setApplied([done.regions_applied, done.regions_planned]);
       }
     } catch (e) {
+      if (navigateToAwaitingCredits(e)) return;
       const msg = e instanceof Error ? e.message : "Something went wrong.";
       if (msg === PENDING) setPending(true);
       else setError(msg);

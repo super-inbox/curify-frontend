@@ -1,5 +1,11 @@
 "use client";
 
+import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
+
+
+import { isAwaitingCredits, AwaitingCreditsError } from "@/lib/awaitingCredits";
+
+
 import { useEffect, useRef, useState } from "react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
@@ -49,6 +55,7 @@ async function pollFreeformResult(projectId: string): Promise<string> {
       await sleep(POLL_INTERVAL_MS);
       continue;
     }
+    if (isAwaitingCredits(st)) throw new AwaitingCreditsError(projectId);
     const status = (st?.status || "").toUpperCase();
     if (status === "COMPLETED") {
       if (st.result_url) return st.result_url;
@@ -190,6 +197,7 @@ export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, o
       onSuccess?.(imageUrl, args);
       return imageUrl;
     } catch (err) {
+      if (navigateToAwaitingCredits(err)) return null;
       const e = err as (Error & { userFacing?: boolean }) | undefined;
       alert(e?.userFacing && e.message ? e.message : t("generateFailed"));
       return null;

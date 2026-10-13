@@ -8462,11 +8462,11 @@
   },
   "template-studio-digital-backdrop-scene": {
     "category": "Studio Scene Enhancement",
-    "description": "Upload a studio portrait and only the set behind the person is rebuilt — seamless backdrop sweep, reflective floor, LED seam, styled props and one series-wide colour grade. Pose, face, clothing and skin are left untouched.",
+    "description": "पोर्ट्रेट अपलोड करें और स्टूडियो सेट या परिवेश बताएं: डायनासोर का जंगल, जादुई विद्यालय, बर्फ का महल या सुनहरा काल्पनिक शहर। संपादन पृष्ठभूमि पर केंद्रित है और व्यक्ति की पहचान, मुद्रा व कपड़े बनाए रखने का लक्ष्य रखता है।",
     "title": "Studio Digital Backdrop — Scene Enhancement, Subject Locked",
     "content": {
       "sections": {
-        "what": "This template performs a strict local edit on an uploaded studio photograph: the person is a locked subject whose pixels, pose, expression, garments and skin tone are preserved, and the only region rewritten is the background outside their silhouette. It builds a unified two-layer set — a seamless photographic paper sweep in your colour ramp joined to a lightly reflective floor with a recessed LED strip along the seam — then adds a styled prop arrangement, commercial studio lighting with a cool rim and a warm face fill, and one restrained colour grade. Because the scene direction, the prop set and the shot type are supplied as three short fields, the same three lines can be re-run across full-body, half-body and close-up frames so an entire batch reads as one shoot rather than a set of unrelated composites.",
+        "what": "दोनों मोड में दृश्य की दिशा, सजावटी वस्तुएं और फ्रेमिंग इस्तेमाल होती हैं। स्टूडियो निर्देश साधारण बैकड्रॉप रखते हैं; स्पष्ट परिवेश निर्देश इमारतें और प्राकृतिक दृश्य जोड़ सकते हैं। पृष्ठभूमि की रोशनी मूल पोर्ट्रेट से मिलाएं। चेहरा, बाल, हाथ, कपड़े की बनावट और किनारे मूल चित्र से जांचें।",
         "who": "Built for photography studios and the retouching desks that serve them — children's and family portrait studios, newborn and milestone shoots, school and senior portraits, and lookbook teams who shoot on plain seamless paper and need a themed set added afterwards. It is also the shape of the job when a studio outsources scene enhancement in batches of dozens of pairs against a written style spec.",
         "how": [
           "Upload one studio photograph shot against a plain or simple backdrop.",
@@ -8518,6 +8518,29 @@
           "«Bloom Botanicals» के लिए नमूना बोर्ड — गर्म, सहज, ऑर्गेनिक सैन्स दिशाएँ।",
           "«北岳茶事» की छह टाइपफ़ेस दिशाएँ, संयत और पारंपरिक।",
           "«Nimbus Studio» के लिए शीट — सटीक आधुनिक ग्रोटेस्क, साथ में एक एडिटोरियल सेरिफ़।"
+        ]
+      }
+    }
+  },
+  "template-country-tourism-collage-poster": {
+    "category": "देश पर्यटन कोलाज पोस्टर",
+    "description": "किसी भी देश के नाम से मैगज़ीन-कवर जैसा पर्यटन पोस्टर बनाएं: झंडे के रंगों में 3D संगमरमर शीर्षक, बीच में प्रमुख स्मारक, निर्बाध पैनोरमा और स्थानीय व्यंजनों का स्टिल लाइफ।",
+    "title": "Nano Banana Prompt: देश पर्यटन कोलाज पोस्टर जनरेटर | Curify AI",
+    "content": {
+      "sections": {
+        "what": "यह टेम्पलेट किसी भी देश के लिए एक लंबवत, फोटोरियलिस्टिक राष्ट्रीय पर्यटन पोस्टर बनाता है। विशाल नक्काशीदार संगमरमर शीर्षक झंडे के रंगों में होता है; सबसे प्रसिद्ध स्मारक बीच में खड़ा होता है; स्मारक, शहर का क्षितिज और प्राकृतिक दृश्य एक निरंतर पैनोरमा में घुल-मिल जाते हैं; पारंपरिक वेशभूषा में लोग, एक स्थानीय जानवर और प्रसिद्ध व्यंजनों का स्टिल लाइफ दृश्य को पूरा करते हैं।",
+        "who": "पर्यटन बोर्ड, डेस्टिनेशन मार्केटर्स, होटल और ट्रैवल ब्रांड, ट्रैवल क्रिएटर्स और शिक्षकों के लिए, जिन्हें अभियानों, सोशल पोस्ट, कक्षा या दीवार कला के लिए एक आकर्षक देश पोस्टर या पूरी एकरूप श्रृंखला चाहिए।",
+        "how": [
+          "किसी देश का नाम दर्ज करें (जैसे जापान, इटली, ब्राज़ील)।",
+          "टेम्पलेट झंडे के रंगों वाले 3D शीर्षक के साथ 4:5 पोस्टर बनाता है।",
+          "मुख्य स्मारक बीच में होता है, चारों ओर निर्बाध पैनोरमा।",
+          "पारंपरिक वेशभूषा, स्थानीय वन्यजीव और व्यंजन स्टिल लाइफ संस्कृति और गहराई जोड़ते हैं।",
+          "देश का नाम बदलें और हर गंतव्य के लिए मेल खाती श्रृंखला पाएं।"
+        ],
+        "prompts": [
+          "जापान के लिए पर्यटन कोलाज पोस्टर बनाएं: माउंट फ़ूजी, क्योटो के मंदिर, चेरी ब्लॉसम और सुशी।",
+          "इटली के लिए मैगज़ीन-कवर पोस्टर डिज़ाइन करें, बीच में कोलोसियम और आगे पास्ता व एस्प्रेसो।",
+          "मिस्र के लिए पर्यटन कोलाज पोस्टर बनाएं: पिरामिड, नील नदी, ऊंटों का कारवां और कोशरी।"
         ]
       }
     }

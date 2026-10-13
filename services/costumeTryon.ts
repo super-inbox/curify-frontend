@@ -1,3 +1,4 @@
+import { isAwaitingCredits, AwaitingCreditsError } from "@/lib/awaitingCredits";
 import { apiClient } from "./api";
 
 // Anonymous "Chinese costume try-on" video generation. Mirrors
@@ -67,6 +68,7 @@ export const costumeTryonService = {
         await sleep(POLL_INTERVAL_MS); // transient network / 429 — retry
         continue;
       }
+      if (isAwaitingCredits(st)) throw new AwaitingCreditsError(projectId);
       const s = (st.status || "").toUpperCase();
       if (s === "COMPLETED") {
         if (st.result_url) return st.result_url;

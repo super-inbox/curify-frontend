@@ -8462,11 +8462,11 @@
   },
   "template-studio-digital-backdrop-scene": {
     "category": "Studio Scene Enhancement",
-    "description": "Upload a studio portrait and only the set behind the person is rebuilt — seamless backdrop sweep, reflective floor, LED seam, styled props and one series-wide colour grade. Pose, face, clothing and skin are left untouched.",
+    "description": "Importez un portrait et décrivez un décor de studio ou un environnement : forêt de dinosaures, école de magie, palais de glace ou cité fantastique dorée. La retouche cible le fond en préservant identité, pose et vêtements.",
     "title": "Studio Digital Backdrop — Scene Enhancement, Subject Locked",
     "content": {
       "sections": {
-        "what": "This template performs a strict local edit on an uploaded studio photograph: the person is a locked subject whose pixels, pose, expression, garments and skin tone are preserved, and the only region rewritten is the background outside their silhouette. It builds a unified two-layer set — a seamless photographic paper sweep in your colour ramp joined to a lightly reflective floor with a recessed LED strip along the seam — then adds a styled prop arrangement, commercial studio lighting with a cool rim and a warm face fill, and one restrained colour grade. Because the scene direction, the prop set and the shot type are supplied as three short fields, the same three lines can be re-run across full-body, half-body and close-up frames so an entire batch reads as one shoot rather than a set of unrelated composites.",
+        "what": "Les deux modes utilisent la direction de scène, les accessoires et le cadrage. Le studio conserve le fond continu ; un environnement explicite autorise architecture et paysages. La lumière du fond suit le portrait original. Comparez visage, cheveux, mains, texture des vêtements et contours avec la source.",
         "who": "Built for photography studios and the retouching desks that serve them — children's and family portrait studios, newborn and milestone shoots, school and senior portraits, and lookbook teams who shoot on plain seamless paper and need a themed set added afterwards. It is also the shape of the job when a studio outsources scene enhancement in batches of dozens of pairs against a written style spec.",
         "how": [
           "Upload one studio photograph shot against a plain or simple backdrop.",
@@ -8518,6 +8518,29 @@
           "Une planche pour « Bloom Botanicals » — des sans chaleureuses, avenantes, organiques.",
           "Six directions typographiques pour « 北岳茶事 », sobres et traditionnelles.",
           "Une feuille pour « Nimbus Studio » — des grotesques modernes précises avec une serif éditoriale."
+        ]
+      }
+    }
+  },
+  "template-country-tourism-collage-poster": {
+    "category": "Affiche collage touristique de pays",
+    "description": "Transformez n'importe quel nom de pays en affiche touristique façon couverture de magazine : titre 3D en marbre aux couleurs du drapeau, monument emblématique, panorama continu et nature morte gastronomique.",
+    "title": "Nano Banana Prompt : Générateur d'affiches collage touristiques de pays | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche touristique verticale et photoréaliste pour n'importe quel pays. Un immense titre en marbre sculpté reprend les couleurs du drapeau ; le monument le plus emblématique s'élève au centre ; monuments, skyline et paysages s'enchaînent en un seul panorama continu ; personnages en costume traditionnel, animal emblématique et nature morte de spécialités complètent la scène.",
+        "who": "Pour les offices de tourisme, le marketing de destination, les marques d'hôtellerie et de voyage, les créateurs de contenu voyage et les enseignants qui ont besoin d'une affiche de pays percutante, ou d'une série cohérente, pour des campagnes, les réseaux sociaux, la classe ou la décoration.",
+        "how": [
+          "Saisissez un nom de pays (ex. Japon, Italie, Brésil).",
+          "Le modèle génère une affiche 4:5 avec un titre 3D aux couleurs du drapeau.",
+          "Le monument phare trône au centre, entouré d'un panorama continu.",
+          "Costumes traditionnels, faune locale et nature morte gourmande apportent culture et profondeur.",
+          "Changez de pays pour obtenir une série assortie pour chaque destination."
+        ],
+        "prompts": [
+          "Crée une affiche collage touristique pour le Japon : mont Fuji, temples de Kyoto, cerisiers en fleurs et sushis.",
+          "Conçois une affiche façon couverture de magazine pour l'Italie, le Colisée au centre, pâtes et espresso au premier plan.",
+          "Génère une affiche collage touristique pour l'Égypte : pyramides, Nil, caravane de chameaux et koshari."
         ]
       }
     }

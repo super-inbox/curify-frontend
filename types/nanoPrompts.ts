@@ -1,4 +1,5 @@
 export interface NanoPromptBase {
+  aliases?: string[];
   id: number;
   title: string;
   description: string;

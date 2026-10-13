@@ -992,10 +992,19 @@
         "creatorsTitle": "For deaf and hard-of-hearing creators",
         "creatorsBody": "Sign language is your primary language for video content; English subtitles unlock the hearing audience without forcing you to record twice. Upload the signed take, get the English subtitle track.",
         "educationTitle": "For educators and accessibility teams",
-        "educationBody": "Course videos signed by a deaf instructor — or interpreted in ASL for a mixed classroom — get English transcripts automatically. The same pipeline handles ADA-compliant captioning for institutional video libraries.",
+        "educationBody": "Signed course videos can be drafted into English text for a fluent ASL reviewer to check. Machine output is unverified; this tool does not certify accessibility compliance.",
         "businessTitle": "For internal comms and product teams",
         "businessBody": "Customer-support videos, onboarding clips, and internal town halls recorded in ASL stay searchable across your stack — the English transcript is what your search index actually reads."
       }
+    },
+    "workflow": {
+      "title": "ASL video translation: from upload to reviewed text",
+      "inputTitle": "1. Upload an ASL video",
+      "input": "Use footage with the signer’s hands and face clearly visible. This reads American Sign Language; it is not audio transcription or English-to-sign generation.",
+      "outputTitle": "2. Get an English draft",
+      "output": "Review the English text or subtitles and use the export options available in your project. Translation costs {credits} credits per minute and remains experimental.",
+      "reviewTitle": "3. Check against the signing",
+      "review": "Fluent text can still misread the signing. Have a fluent ASL reviewer check meaning and timing before publishing or sharing. The demo is not an accuracy guarantee."
     }
   },
   "aiProductPhotoGenerator": {
@@ -1383,17 +1392,17 @@
   "packagingMockup": {
     "metadata": {
       "title": "AI Packaging Mockup Generator — Dieline to 3D Box",
-      "description": "Turn your dieline (.ai/PDF) into realistic 3D packaging mockups — folded box, front / 45° / e-commerce white-bg. True box proportions from your file. For brand, 文创, gift & POD packaging."
+      "description": "Upload a PNG/JPG dieline, enter box width, height and depth, and generate a front or 45° packaging mockup. Export AI/PDF artwork to an image first."
     },
     "title": "Your Dieline → A Realistic 3D Box Mockup",
-    "description": "Send a flat dieline (刀版展开图, .ai or PDF) and get a realistic folded 3D packaging mockup — front, 45° three-quarter, or e-commerce white-background — with your artwork mapped onto the box faces and the true proportions read from the file, so a flat carton stays flat instead of becoming a generic cube. Perfect for client sign-off, boss reports, and product pages.",
+    "description": "Turn a flat dieline image into a folded-box mockup. The self-serve tool accepts PNG/JPG and requires your finished box width, height and depth in millimetres. It does not upload .ai/PDF files or extract dimensions automatically. Choose a front or 45° view and review the credit price below before generating.",
     "example": "Example: a 仁寿 gift-carton dieline folded into a 45° 3D mockup — a flat 117×114×39 mm box, not a cube.",
     "cta": "Contact us for a mockup or bulk order",
     "why": {
       "title": "Why make packaging mockups through Curify?",
-      "point1": "Dieline in, realistic 3D box out. Your flat artwork is folded and mapped onto the box faces — a finished product photo you can hand a client or drop on an e-commerce page.",
-      "point2": "True proportions, from your file. We read the real Width × Height × Depth from your dieline, so a flat/shallow carton stays flat — not the generic cube most AI tools spit out.",
-      "point3": "Any angle you need. Front elevation, 45° three-quarter, or a clean e-commerce white-background — same design, mapped correctly.",
+      "point1": "Upload a PNG/JPG dieline to visualize the artwork on a folded box.",
+      "point2": "Your width, height and depth guide the proportions. Check the rendered dimensions, artwork placement and details before sign-off.",
+      "point3": "The self-serve form offers front and 45° views. Discuss other views through the contact form.",
       "point4": "It scales up. One dieline or a batch of SKUs — we offer it as a done-for-you / bulk service."
     },
     "faq": {
@@ -1401,13 +1410,13 @@
       "q1": "What do I get?",
       "a1": "A high-resolution 3D mockup image (JPG/PNG) of your folded box — front, 45°, or e-commerce white-background, on a clean studio background with a soft shadow. Ready for client confirmation, decks, or product pages.",
       "q2": "Are the box proportions accurate to my dieline?",
-      "a2": "Yes — that's the whole point. We read the real Width × Height × Depth from your file (the .ai/PDF is drawn 1:1) and enforce those proportions, so a flat/shallow carton renders flat instead of becoming a generic cube. Send the dimensions if you have them and we'll pin them exactly.",
+      "a2": "Enter the finished box width, height and depth in millimetres. These values guide generation, but inspect the result: a mockup is not a guarantee of manufacturing accuracy or print registration.",
       "q3": "Can I get an editable 3D model, or other angles?",
-      "a3": "Yes. Beyond the mockup image, we can build an editable 3D model (.glb/.obj) — a box mesh at your exact millimetres with each dieline panel UV-mapped — so you can re-angle, re-light, or animate it. And we render any angle you need (front / 45° / white-bg).",
+      "a3": "The self-serve tool produces an image, not an editable 3D mesh. Contact us to discuss feasibility and scope if you need .glb/.obj files or additional views.",
       "q4": "Is this a factory / production file?",
       "a4": "No — a 3D mockup is for showing the design, not for the print shop. A packaging factory needs the dieline (AI/CDR/PDF) with CMYK, bleed, print areas and process notes — that's a separate factory-file deliverable we can also do.",
       "q5": "What format should I send?",
-      "a5": "A dieline as .ai or PDF is ideal (we read the real dimensions from it); a high-resolution flat artwork (PNG/JPG) also works if you give us the box W×H×D. Tell us the angle you want (front / 45° / white-bg)."
+      "a5": "Upload PNG/JPG. Export your .ai/PDF dieline as a clear image first, then enter the finished box width, height and depth in millimetres. Contact us for source-file handling or multiple SKUs."
     },
     "deep": {
       "what": {
@@ -1418,11 +1427,11 @@
       },
       "how": {
         "title": "How it works",
-        "p1": "Send your dieline — a .ai or PDF (drawn 1:1) is ideal; a high-res flat artwork also works with the box dimensions.",
-        "p2": "We read the real box Width × Height × Depth from the file (or your spec).",
-        "p3": "Your artwork is folded and mapped onto the box faces at those true proportions — a flat box stays flat.",
-        "p4": "We render the angle you want — front, 45° three-quarter, or clean e-commerce white-background — with soft studio lighting and shadow.",
-        "p5": "Need it editable? We can also deliver a 3D model (.glb/.obj) you can re-angle, re-light, or animate."
+        "p1": "Export the dieline to a clear PNG/JPG and upload it.",
+        "p2": "Enter finished-box width, height and depth in millimetres. Depth is the box thickness, not half its width.",
+        "p3": "Choose front or 45°, review the price, and generate the mockup.",
+        "p4": "Check proportions, artwork on each face and orientation. The visual mockup does not replace a production dieline.",
+        "p5": "Use the contact form to discuss other views, source-file handling or a batch of SKUs."
       },
       "usecases": {
         "title": "Who it's for",
@@ -1855,6 +1864,13 @@
     },
     "demoCaptions": {
       "plan": "From our portrait retouching blueprint template: each region to change is marked first (flyaways, shine, dark circles, skin texture), with the target beside it. It illustrates the plan. The tool on this page edits only inside the regions it names and leaves your framing and background as shot."
+    },
+    "batch": {
+      "title": "Need batch wedding photo editing?",
+      "body": "Send the photo count, deadline and reference look. We’ll reply with where to send sample images and agree on the editing scope before discussing the full gallery.",
+      "subject": "Batch wedding photo editing samples",
+      "cta": "Discuss a batch",
+      "note": "Include the count, deadline and main requirements. This form does not start a generation or charge credits."
     }
   },
   "realEstatePhotoEditing": {
@@ -1871,7 +1887,7 @@
     },
     "sample": {
       "title": "Get free editing samples",
-      "body": "Leave your email and a line about the property. We'll reply with where to send two or three photos (interiors, exteriors or both) and send them back edited. No account, no card.",
+      "body": "Leave your email, photo count, deadline and property type. We’ll reply with where to send two or three interior or exterior photos and discuss samples and the full batch. No account or card.",
       "subject": "Real estate photo editing samples",
       "cta": "Request samples",
       "note": "Optional: hotel, rental or sale listing; how many photos a month; and whether you shot a darker exposure for the windows"
@@ -2007,6 +2023,13 @@
         "businessTitle": "Catalogue and marketplace teams",
         "businessBody": "Frequent drops, many SKUs, fixed frame requirements. The constraint is rarely one good image — it is one garment reading as one garment across every frame and every variant. That is what the commerce section of the rubric is for. For volume work, talk to us rather than generating one image at a time."
       }
+    },
+    "batch": {
+      "title": "Need a batch of garment images?",
+      "body": "Send the garment count, desired views and deadline. We’ll reply with where to send source photos and references, then agree on samples and garment-fidelity checks.",
+      "subject": "Batch garment image samples",
+      "cta": "Discuss a batch",
+      "note": "Include the count, deadline and main requirements. This form does not start a generation or charge credits."
     }
   }
 }

@@ -101,16 +101,15 @@ export async function generateMetadata({
   const canonical = getCanonicalUrl(canonicalLocale, path);
 
   // ✅ hreflang map for SEO (includes x-default)
-  const languages = getLanguagesMap(path);
+  const languages = getLanguagesMap(path, authored ?? routing.locales);
 
   return {
     title,
     description,
     alternates: {
       canonical,
-      // Advertising ten alternates for a page that exists in one is a claim we
-      // cannot back, so a locale-restricted tool omits the map entirely.
-      ...(authored ? {} : { languages }),
+      // Only advertise authored translations (e.g. real estate EN + ZH).
+      ...(isAuthored ? { languages } : {}),
     },
     ...(isAuthored ? {} : { robots: { index: false, follow: true } }),
     openGraph: {

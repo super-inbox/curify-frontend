@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import FashionStylePicker from "@/app/[locale]/_components/FashionStylePicker";
 import { useTranslations } from "next-intl";
 
 import TemplateStrip from "@/app/[locale]/_components/TemplateStrip";
@@ -32,6 +34,7 @@ export default function NanoTemplateDetailClient(props: {
   sampleImage?: SampleImage;
 }) {
   const t = useTranslations("nanoTemplate");
+  const [parameterOverrides, setParameterOverrides] = useState<Record<string, string>>();
 
   const {
     template,
@@ -51,7 +54,10 @@ export default function NanoTemplateDetailClient(props: {
 
   return (
     <>
-      {shouldShowReproduce && <ReproduceTemplateSection template={template} sampleImage={sampleImage} />}
+      {shouldShowReproduce && template.template_id === "template-personal-fashion-outfit-style-variations" && ["en", "zh"].includes(props.locale) && (
+        <FashionStylePicker locale={props.locale} onChoose={setParameterOverrides} />
+      )}
+      {shouldShowReproduce && <ReproduceTemplateSection template={template} sampleImage={sampleImage} parameterOverrides={parameterOverrides} />}
 
       {showOtherTemplates && (
         <section className={shouldShowReproduce ? "mt-10" : ""}>

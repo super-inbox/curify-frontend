@@ -18,6 +18,9 @@ import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { CDN_BASE } from "@/lib/constants";
 import { resolveNanoIds, type ResolvedCard } from "./actions";
 
+import { isAwaitingCredits } from "@/lib/awaitingCredits";
+import { useTranslations } from "next-intl";
+
 type Tab = "generated" | "saved";
 
 function ImageCard({ card, locale }: { card: ResolvedCard; locale: string }) {
@@ -65,6 +68,7 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
 
   const router = useRouter();
+  const waitingT = useTranslations("awaitingCredits");
 
   const savedIds: string[] = (user as any)?.saved_content_ids ?? [];
   const copiedIds: string[] = (user as any)?.copied_content_ids ?? [];
@@ -217,7 +221,7 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
                   return (
                     <div
                       key={project.project_id}
-                      onClick={() => router.push(`/image-project/${project.project_id}`)}
+                      onClick={() => router.push(project.status === "COMPLETED" ? `/image-project/${project.project_id}` : `/magic/${project.project_id}`)}
                       className="group relative overflow-hidden rounded-xl border border-neutral-100 bg-white shadow-sm cursor-pointer hover:shadow-md transition"
                     >
                       <div className="relative aspect-square bg-neutral-100">
@@ -236,6 +240,7 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
                       </div>
                       <div className="px-3 py-2">
                         <p className="truncate text-xs font-medium text-neutral-700">{project.project_name}</p>
+                        {isAwaitingCredits(project) && <p className="text-xs text-amber-700">{waitingT("title")}</p>}
                         <p className="text-[11px] text-neutral-400">
                           {format(new Date(project.created_at), "yyyy/MM/dd")}
                         </p>
@@ -278,7 +283,7 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
                           className="object-cover"
                         />
                         <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
-                          {project.job_settings.target_language?.toUpperCase() ?? ""} · {formatStatus(project.status)}
+                          {project.job_settings.target_language?.toUpperCase() ?? ""} · {isAwaitingCredits(project) ? waitingT("title") : formatStatus(project.status)}
                         </div>
                         <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
                           {duration}

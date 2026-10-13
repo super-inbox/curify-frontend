@@ -6,19 +6,28 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useAtom } from "jotai";
-import { modalAtom } from "@/app/atoms/atoms";
+import { modalAtom, topUpContextAtom } from "@/app/atoms/atoms";
 import Loading from "../Loading";
 import { projectService } from "@/services/projects";
-import { ProjectStatus } from "@/types/projects";
+import { ProjectStatus, ProjectStatusUpdate } from "@/types/projects";
 import { buildFailureView, type FailureView } from "@/lib/failureActions";
+
+import { isAwaitingCredits, creditShortfall } from "@/lib/awaitingCredits";
+import { useTracking } from "@/services/useTracking";
+import { creditsToDollars } from "@/lib/pricing";
 
 export default function Magic() {
   const router = useRouter();
-  const { id, locale } = useParams();
+  const { id } = useParams();
   const t = useTranslations("magic.errors");
 
+  const waitingT = useTranslations("awaitingCredits");
+  const { trackAction } = useTracking();
+  const trackedWaiting = useRef<string | null>(null);
+  const [waiting, setWaiting] = useState<ProjectStatusUpdate | null>(null);
+  const [pollVersion, setPollVersion] = useState(0);
+  const [, setTopUpContext] = useAtom(topUpContextAtom);
   const projectId = id as string;
-  const localeStr = Array.isArray(locale) ? locale[0] : locale;
 
   const [status, setStatus] = useState<ProjectStatus>("QUEUED");
   const [failure, setFailure] = useState<FailureView | null>(null);
@@ -33,6 +42,9 @@ export default function Magic() {
   useEffect(() => {
     if (!projectId) return;
 
+    setWaiting(null);
+    setFailure(null);
+    isRedirectingRef.current = false;
     let isCancelled = false;
     const startTime = Date.now();
     const maxDuration = 4 * 60 * 60 * 1000;
@@ -63,6 +75,17 @@ export default function Magic() {
         }
 
         setStatus(projectStatus);
+        if (isAwaitingCredits(statusRes)) {
+          if (trackedWaiting.current !== projectId) {
+            trackedWaiting.current = projectId;
+            trackAction({ contentType: "topic_capsule", contentId: `paywall:awaiting-credits:${statusRes.job_type ?? "project"}` }, "click");
+          }
+          setWaiting(statusRes);
+          setFailure(null);
+          timeoutRef.current = setTimeout(pollStatus, 20000);
+          return;
+        }
+        setWaiting(null);
 
         if (projectStatus === "COMPLETED") {
           console.log("Project completed → redirecting");
@@ -83,7 +106,7 @@ export default function Magic() {
           }
 
           if (!isCancelled) {
-            router.replace(`/project_details/${projectId}`);
+            router.replace(statusRes.job_type === "nano_template_generation" ? `/image-project/${projectId}` : `/project_details/${projectId}`);
           }
 
           return;
@@ -119,7 +142,7 @@ export default function Magic() {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [projectId, router]);
+  }, [projectId, router, pollVersion]);
 
   const runRetry = async (jobType?: string) => {
     setRetrying(true);
@@ -134,6 +157,40 @@ export default function Magic() {
       setRetryError(true);
     }
   };
+
+  if (waiting) {
+    const shortfall = creditShortfall(waiting);
+    return (
+      <div className="w-full min-h-screen flex flex-col items-center justify-center gap-4 text-center px-6">
+        <h1 className="text-2xl font-semibold">{waitingT("title")}</h1>
+        <p>{waitingT("saved")}</p>
+        {waiting.required_credits != null && <p>{waitingT("required", { credits: waiting.required_credits, price: creditsToDollars(waiting.required_credits).toFixed(2) })}</p>}
+        {waiting.available_credits != null && <p>{waitingT("available", { credits: waiting.available_credits })}</p>}
+        {shortfall != null && <p>{waitingT("shortfall", { credits: shortfall, price: creditsToDollars(shortfall).toFixed(2) })}</p>}
+        <button disabled={retrying} className="px-5 py-2.5 rounded-full bg-blue-600 text-white disabled:opacity-60" onClick={async () => {
+          if (shortfall !== 0) {
+            setTopUpContext({
+              projectId, resumeAfterPayment: true,
+              required: waiting.required_credits ?? 0, available: waiting.available_credits ?? 0,
+              shortfall: shortfall ?? undefined,
+              jobLabel: waitingT("jobLabel"), surface: "awaiting-credits",
+            });
+            setModal("topup");
+            return;
+          }
+          setRetrying(true);
+          setRetryError(false);
+          try {
+            const resumed = await projectService.resumeProject(projectId);
+            if (isAwaitingCredits(resumed)) setWaiting(resumed);
+            else { setWaiting(null); setStatus(resumed.status); setPollVersion(v => v + 1); }
+          } catch { setRetryError(true); }
+          finally { setRetrying(false); }
+        }}>{waitingT(shortfall === 0 ? "resume" : "topUp")}</button>
+        {retryError && <p role="alert">{waitingT("resumeFailed")}</p>}
+      </div>
+    );
+  }
 
   if (failure) {
     return (

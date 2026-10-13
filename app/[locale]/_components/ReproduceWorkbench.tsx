@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { Wand2, Loader2, Download, ArrowUpRight, ChevronDown, Copy } from "lucide-react";
 import { useAtom } from "jotai";
@@ -77,6 +77,8 @@ type Props = {
   description?: string;
   parameters: TemplateParameter[];
   initialParams: Record<string, string>;
+  /** Explicit user-selected presets; merge without resetting uploads or results. */
+  parameterOverrides?: Record<string, string>;
   basePrompt: string;
   allowGeneration: boolean;
   requiresImageUpload?: boolean;
@@ -128,6 +130,7 @@ export default function ReproduceWorkbench({
   description,
   parameters,
   initialParams,
+  parameterOverrides,
   basePrompt,
   allowGeneration,
   requiresImageUpload = false,
@@ -156,6 +159,9 @@ export default function ReproduceWorkbench({
     }
     return seeded;
   });
+  useEffect(() => {
+    if (parameterOverrides) setForm((current) => ({ ...current, ...parameterOverrides }));
+  }, [parameterOverrides]);
   const [results, setResults] = useState<ResultItem[]>([]);
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);

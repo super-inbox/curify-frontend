@@ -84,7 +84,8 @@
     "creditRate": "1 crédito ≈ ${amount}",
     "blockedLine": "{jobLabel} cuesta {required} créditos y tienes {available}.",
     "buysImages": "≈ {count} imágenes",
-    "unlocksCleanDownloads": "Cualquier recarga elimina también el sello de Curify de tus descargas."
+    "unlocksCleanDownloads": "Cualquier recarga elimina también el sello de Curify de tus descargas.",
+    "shortfallMinimum": "Elige al menos {credits} créditos para cubrir esta recarga."
   },
   "transactionHistory": {
     "title": "Historial de créditos",
@@ -429,5 +430,16 @@
     "title": "Pago cancelado",
     "body": "No se ha cobrado nada. Puedes recargar cuando quieras.",
     "back": "Volver al espacio de trabajo"
+  },
+  "awaitingCredits": {
+    "title": "Esperando créditos",
+    "saved": "Tu archivo y ajustes están guardados. Recarga para continuar este proyecto.",
+    "required": "Precio del proyecto: {credits} créditos ({price} USD)",
+    "available": "Disponibles: {credits} créditos",
+    "shortfall": "Faltan: {credits} créditos ({price} USD)",
+    "topUp": "Recargar y continuar",
+    "resume": "Continuar proyecto",
+    "jobLabel": "este proyecto",
+    "resumeFailed": "No se pudo reanudar el proyecto. Consulta su estado e intenta continuar de nuevo."
   }
 }
