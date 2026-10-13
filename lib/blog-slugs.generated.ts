@@ -46,6 +46,7 @@ export const BLOG_SLUGS: ReadonlySet<string> = new Set([
   "best-programmatic-seo-tools",
   "bilingual-ai-flashcards-early-childhood-education",
   "brazil-argentina-soccer-poster-prompts",
+  "building-asl-video-translator",
   "character-prompt-generator",
   "character-turnaround-sheet-guide",
   "chinese-costume-history-infographic",

@@ -14,7 +14,7 @@ export default function AslTranslationContent({ slug, t, tEn, locale }: AslTrans
   
   // Define which keys exist for ASL blog post type
   const availableKeys: Record<string, string[]> = {
-    'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
+    'aslVideoTranslator': ['toolCtaTitle', 'toolCtaBody', 'toolCtaButton', 'intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
   };
 
   const currentKeys = availableKeys[namespace] || [];
@@ -65,15 +65,15 @@ export default function AslTranslationContent({ slug, t, tEn, locale }: AslTrans
       </p>
 
       <div className="border-l-4 border-indigo-500 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 p-6 rounded-lg my-2 not-prose">
-        <p className="font-semibold mb-2">Looking for the tool, not the guide?</p>
+        <p className="font-semibold mb-2">{safeT("toolCtaTitle")}</p>
         <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-          See a working ASL → English subtitle demo on a real signed clip, then join early access for your own uploads.
+          {safeT("toolCtaBody")}
         </p>
         <a
-          href="/tools/asl-video-translator"
+          href={`${locale === "en" ? "" : `/${locale}`}/tools/asl-video-translator`}
           className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2 rounded-lg transition"
         >
-          Try the ASL Video Translator →
+          {safeT("toolCtaButton")} →
         </a>
       </div>
 
