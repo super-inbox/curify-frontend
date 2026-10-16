@@ -594,6 +594,20 @@ export const TOOL_REGISTRY: ToolDef[] = [
   },
 
   {
+    id: "product-photo-retouching-service", slug: "product-photo-retouching-service",
+    groupId: "image", status: "demo",
+    job_type: "video_transcript", // Unused: service inquiries, not generation.
+    namespace: "productPhotoRetouchingService",
+    action: { type: "sample_request" }, locales: ["en", "zh"],
+    i18n: toolKeys("product_photo_retouching_service"), seo: seoKeys("product_photo_retouching_service"),
+    demo: { type: "image_pairs", items: [
+      { src: "/service-examples/sandals-before-after.jpg", alt: "Supplied sandal comparison: grey setting and brighter white presentation", captionKey: "demoCaptions.sandals" },
+      { src: "/service-examples/jewelry-before-after.jpg", alt: "Supplied ring comparison: brighter metal and stones against a lighter background", captionKey: "demoCaptions.jewelry" },
+      { src: "/service-examples/womens-shoe-restoration-en.jpg", alt: "Six generated footwear editing examples, labeled as illustrative demos", captionKey: "demoCaptions.collection" },
+    ] },
+  },
+
+  {
     // Real-estate + hotel editing: interiors and virtual twilight. SEMrush 2026-10-07:
     //
     //   real estate photo editing      880/mo  KD 27  $4.04  ← title term, one over the house line, taken openly
@@ -871,7 +885,8 @@ export function groupTools(): Record<ToolGroupId, ToolDef[]> {
 export const TOOL_RELATED_TOOLS: Record<string, string[]> = {
   // Photographer intent both ways: the wedding page is the only other editing
   // tool, and it is indexed (09-15), so it is also this page's first linker.
-  "real-estate-photo-editing": ["wedding-photo-editing", "ai-product-photo-generator", "style-transfer"],
+  "product-photo-retouching-service": ["ai-product-photo-generator", "ai-fashion-model-generator", "real-estate-photo-editing"],
+  "real-estate-photo-editing": ["product-photo-retouching-service", "wedding-photo-editing", "ai-product-photo-generator", "style-transfer"],
   "wedding-photo-editing": ["real-estate-photo-editing", "ai-fashion-model-generator", "style-transfer"],
   "ai-fashion-model-generator": ["ecommerce-photo", "ai-product-photo-generator", "packaging-mockup"],
   // Product-photo intent → the production-file tools a seller needs next.
@@ -945,6 +960,7 @@ export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
   // posts shipped at referringUrls = 0, and that is the recorded cause of their
   // zero impressions).
   "wedding-photo-editing": ["creator-tools"],
+  "product-photo-retouching-service": ["creator-tools", "design-branding"],
   "real-estate-photo-editing": ["creator-tools"],
   // Added 2026-09-16. This is the site's LARGEST click source — 314 of 786 site
   // clicks in the 28d to 09-15, position 8.5, 14.4% CTR — and it had no entry,

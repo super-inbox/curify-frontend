@@ -181,6 +181,10 @@ export default function ToolGenericClient({
       <h1 className="text-4xl font-bold mb-4 text-[var(--c1)]">{t("title")}</h1>
       <p className="text-lg mb-6">{t("description", toolCredits)}</p>
 
+      {tool.action?.type === "sample_request" && (
+        <a href="#request-samples" className="mb-8 inline-block rounded-xl bg-purple-700 px-5 py-3 font-semibold text-white">{t("sample.cta")}</a>
+      )}
+
       {t.has("workflow.title") && (
         <section className="my-8 rounded-2xl border border-neutral-200 p-6">
           <h2 className="text-2xl font-semibold">{t("workflow.title")}</h2>
@@ -242,7 +246,7 @@ export default function ToolGenericClient({
         <div className="space-y-10 mb-8">
           {demo.items.map((item) => (
             <figure key={item.src} className="max-w-3xl mx-auto">
-              <CdnImage className="w-full rounded-xl shadow" src={item.src} alt={item.alt} />
+              <CdnImage className="w-full rounded-xl shadow" src={locale === "zh" && item.src === "/service-examples/womens-shoe-restoration-en.jpg" ? "/service-examples/womens-shoe-restoration-zh.jpg" : item.src} alt={item.alt} />
               <figcaption className="text-sm text-gray-600 mt-3 leading-relaxed">
                 {t(item.captionKey as never)}
               </figcaption>
@@ -284,7 +288,7 @@ export default function ToolGenericClient({
           // Done-for-you: no self-serve surface exists, so the CTA is the lead
           // form itself, headed by what the visitor gets back. Same submit path
           // and contact:submit:<source> event as every other lead on the site.
-          <div className="max-w-xl mx-auto text-left">
+          <div id="request-samples" className="max-w-xl mx-auto text-left scroll-mt-24">
             <h2 className="text-2xl font-semibold mb-2 text-[var(--c1)]">{t("sample.title")}</h2>
             <p className="mb-4">{t("sample.body")}</p>
             <InlineContactCapture
@@ -423,12 +427,15 @@ export default function ToolGenericClient({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebApplication",
+              "@type": tool.action?.type === "sample_request" ? "Service" : "WebApplication",
               name: t("title"),
               description: t("description", toolCredits),
-              applicationCategory: "MultimediaApplication",
-              operatingSystem: "Any",
-              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+              ...(tool.action?.type === "sample_request" ? {
+                serviceType: t("title"), provider: { "@type": "Organization", name: "Curify" },
+              } : {
+                applicationCategory: "MultimediaApplication", operatingSystem: "Any",
+                offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+              }),
             }),
           }}
         />

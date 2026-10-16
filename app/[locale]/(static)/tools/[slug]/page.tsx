@@ -1,6 +1,7 @@
+import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import ToolGenericClient from "./tool-generic-client";
 import { resolveToolNamespaceOr404 } from "@/lib/tool-page-guard";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
@@ -58,8 +59,7 @@ const TOOL_RELATED_TEMPLATE_IDS: Record<string, string[]> = {
 // Prerender every tool page at deploy time so crawlers get pre-baked HTML.
 // Mirrors the sitemap's `getToolRoutes()` exactly (app/sitemap.xml/route.ts):
 // skip coming_soon, and emit only the locales a tool is actually authored in —
-// on any other locale the page renders literal i18n key paths and is a broken
-// duplicate, which is why generateMetadata already noindexes it.
+// other locales use the authored fallback copy and remain noindex.
 export function generateStaticParams() {
   return TOOL_REGISTRY.filter((t) => t.status !== "coming_soon").flatMap((t) =>
     (t.locales ?? routing.locales).map((locale) => ({ locale, slug: t.slug }))
@@ -80,7 +80,8 @@ export async function generateMetadata({
   const { tool, hasNamespace } = await resolveToolNamespaceOr404(slug);
   if (!tool || !hasNamespace) return {}; // no metadata for non-existent pages
 
-  const t = await getTranslations({ locale, namespace: tool.namespace });
+  const contentLocale = tool.locales && !tool.locales.includes(locale) ? tool.locales[0] : locale;
+  const t = await getTranslations({ locale: contentLocale, namespace: tool.namespace });
 
   const title = t("metadata.title");
   const description = t("metadata.description");
@@ -88,9 +89,8 @@ export async function generateMetadata({
   const path = `/tools/${slug}`;
 
   // A tool may declare the locales it is actually authored in
-  // (lib/tools-registry.ts). On any other locale next-intl falls back to the
-  // literal key path ("impromptuSpeech.title"), so the page is a broken
-  // duplicate rather than a translation: point its canonical at the authored
+  // (lib/tools-registry.ts). Other locales use the authored fallback copy
+  // rather than a translation: point their canonical at the authored
   // locale and keep it out of the index. follow stays true so the outbound
   // links are still crawled. Tools that omit `locales` are unaffected.
   const authored = tool.locales;
@@ -178,11 +178,18 @@ export default async function ToolPage({
     });
   }
 
-  return (
+  const client = (
     <ToolGenericClient
       slug={slug}
       generateData={generateData}
       relatedTemplateCards={relatedTemplateCards}
     />
   );
+  if (tool.locales && !tool.locales.includes(locale)) {
+    const [messages, fallback] = await Promise.all([
+      getMessages({ locale }), getMessages({ locale: tool.locales[0] }),
+    ]);
+    return <NextIntlClientProvider messages={{ ...messages, [tool.namespace]: fallback[tool.namespace] }}>{client}</NextIntlClientProvider>;
+  }
+  return client;
 }
