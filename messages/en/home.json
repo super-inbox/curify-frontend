@@ -434,6 +434,14 @@
     "ai_fashion_model_generator": {
       "title": "AI Fashion Model Generator",
       "desc": "One flat lay in, the garment on a model out — plus the 27 checks that decide if it is listable."
+    },
+    "product_photo_retouching_service": {
+      "title": "Product photo retouching service",
+      "desc": "Have product photos that need a cleaner, more consistent finish? Send a brief for footwear, jewelry or a mixed product batch. We review representative images and agree the editing scope before quoting.",
+      "meta": {
+        "title": "Product photo retouching service",
+        "description": "Product photo retouching service for footwear, jewelry and ecommerce batches. Review before/after examples and request a sample review with your photo count and deadline."
+      }
     }
   },
   "bilingual": {
@@ -2030,6 +2038,78 @@
       "subject": "Batch garment image samples",
       "cta": "Discuss a batch",
       "note": "Include the count, deadline and main requirements. This form does not start a generation or charge credits."
+    }
+  },
+  "productPhotoRetouchingService": {
+    "title": "Product photo retouching service",
+    "description": "Have product photos that need a cleaner, more consistent finish? Send a brief for footwear, jewelry or a mixed product batch. We review representative images and agree the editing scope before quoting.",
+    "metadata": {
+      "title": "Product photo retouching service",
+      "description": "Product photo retouching service for footwear, jewelry and ecommerce batches. Review before/after examples and request a sample review with your photo count and deadline."
+    },
+    "cta": "Request a batch review",
+    "demoCaptions": {
+      "sandals": "Sandal presentation example supplied for this page: the grey setting becomes a brighter white scene, with lighter shoe surfaces and softer-looking shadows. Use it as a finish reference; the comparison is not a measured guarantee of exact colour or product geometry.",
+      "jewelry": "Jewelry presentation example supplied for this page: the band and stones appear brighter, with stronger highlights and a lighter background. For an actual product listing, check engraving, prongs, stone shape and colour against the original; enhanced sparkle is not a claim about gemstone quality.",
+      "collection": "Six women’s-shoe examples from our generated demonstration collection: lighting, colour, texture, background and detail changes across different materials. These are illustrative generated examples, not delivered client work."
+    },
+    "sample": {
+      "title": "Discuss a product-photo batch",
+      "body": "Leave your email, product category, photo count and deadline. We will reply with how to send representative images and a finish reference, then discuss a sample review and quote. This form does not upload or edit images.",
+      "subject": "Product photo retouching batch inquiry",
+      "cta": "Request a batch review",
+      "note": "Product type; number of images/SKUs; deadline; background/colour/detail changes; required dimensions"
+    },
+    "why": {
+      "title": "What to include in your editing brief",
+      "point1": "Background and shadow: specify a clean white, transparent or contextual finish for review, including the shadow you want to keep.",
+      "point2": "Colour and material: supply a trusted reference for leather, satin, suede, metal or stones. A brighter image is not necessarily a more accurate product image.",
+      "point3": "Surface detail: mark dust, scuffs or distracting reflections. Identify stitching, engraving, logos and other details that must remain readable.",
+      "point4": "Batch consistency: choose representative products and angles so a sample can establish the look before a larger batch is agreed."
+    },
+    "faq": {
+      "title": "Product photo retouching FAQ",
+      "q1": "Is this a self-serve product photo editor?",
+      "a1": "No. This page collects service inquiries. We review your images and requirements before agreeing a sample, price and delivery scope.",
+      "q2": "Can I send footwear and jewelry in the same batch?",
+      "a2": "Yes, include both in your brief. Different materials need different treatment, so send representative images from each category for a feasibility review.",
+      "q3": "How much does product retouching cost?",
+      "a3": "We quote after reviewing sample images, edit complexity, image count and deadline. There is no fixed per-image price or turnaround promise on this page.",
+      "q4": "Will you preserve the exact product?",
+      "a4": "The original is the reference for product shape, colour, branding and construction. Identify critical details in the brief and check them in the sample. Generative edits can alter details, so pixel-exact preservation is not promised.",
+      "q5": "Can you remove backgrounds or polish jewelry reflections?",
+      "a5": "Describe the finish you want and send representative files. We assess the requested background, shadow and reflective-surface changes before committing to the batch.",
+      "q6": "What files and resolution should I request?",
+      "a6": "Tell us your source format, required pixel dimensions, background and intended use. Available output format and resolution are agreed after sample review; print-size or editable layered files are not assumed.",
+      "q7": "Are the examples customer deliveries?",
+      "a7": "The sandal and ring comparisons were supplied for this page. The six-shoe sheet is explicitly a generated demonstration collection. None is presented as proof of a delivered customer order.",
+      "q8": "How is retouching different from product-photo generation?",
+      "a8": "Retouching starts with a supplied photograph and an agreed editing brief. Product-photo generation creates new scenes or compositions. If you need a new scene, the related product-photo generator is a different workflow."
+    },
+    "deep": {
+      "what": {
+        "title": "Editing an existing product photograph",
+        "p1": "A product listing needs a clear view of the item, not just an attractive image. Set the intended finish before changing the background, lighting or surface detail.",
+        "p2": "Our examples help describe the look you want. They do not replace a sample on your own product, especially for reflective jewelry, delicate stitching or colour-critical materials.",
+        "p3": "This is a lead-based service workflow. The batch is scoped with you after image review, rather than started automatically when you fill in the form."
+      },
+      "how": {
+        "title": "How to request batch product photo retouching",
+        "p1": "1. Tell us the product category, image and SKU counts, and the deadline.",
+        "p2": "2. We reply with how to send representative images, including difficult materials and angles.",
+        "p3": "3. Specify your finish reference and the details that must not change.",
+        "p4": "4. Review the proposed sample, output dimensions, scope and quote before agreeing the batch.",
+        "p5": "5. Check the agreed deliverables against the original product and flag any details needing revision."
+      },
+      "usecases": {
+        "title": "Who this service is for",
+        "creatorsTitle": "Product photographers",
+        "creatorsBody": "Prepare a consistent finish across a shoot while keeping a clear original-to-output review process.",
+        "educationTitle": "Ecommerce brands",
+        "educationBody": "Discuss a listing-photo batch, colour references and required dimensions for your storefront.",
+        "businessTitle": "Agencies and marketing teams",
+        "businessBody": "Include the campaign brief, SKU list and delivery requirements so the work can be scoped before production."
+      }
     }
   }
 }

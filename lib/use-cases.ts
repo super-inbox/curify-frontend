@@ -95,7 +95,7 @@ export const USE_CASES: UseCaseDef[] = [
   // manga-translation for cross-border manga/comic merch SKUs.
   // image-translation removed pending tool ship (status=coming_soon)
   // — was the original headline tool, plan to restore once live.
-  { slug: "for-dtc-brands",   tier: "b2b",      toolSlugs: ["brand-direction-explorer", "style-transfer", "video-dubbing", "manga-translation"] },
+  { slug: "for-dtc-brands",   tier: "b2b",      toolSlugs: ["product-photo-retouching-service", "brand-direction-explorer", "style-transfer", "video-dubbing", "manga-translation"] },
 
   // NEW. Programmatic SEO builders — hub-and-spoke generator with original
   // imagery. Horizontal engine play (page leads with the meta angle:
@@ -185,7 +185,7 @@ export const USE_CASES: UseCaseDef[] = [
   // carrying the editing pitch had no entry point from /tools, tool pages or
   // sibling persona pages.
   { slug: "for-photographers", tier: "b2b",
-    toolSlugs: ["wedding-photo-editing", "real-estate-photo-editing"] },
+    toolSlugs: ["wedding-photo-editing", "product-photo-retouching-service", "real-estate-photo-editing"] },
 ];
 
 export function getUseCaseBySlug(slug: string): UseCaseDef | undefined {
