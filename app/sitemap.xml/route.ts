@@ -1,3 +1,4 @@
+import { GENERATION_DESTINATIONS } from "@/lib/generation-destinations";
 import { NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
@@ -110,6 +111,8 @@ const TOOL_LASTMOD_OVERRIDES: Record<string, string> = Object.fromEntries(
     .map((slug) => [`/tools/${slug}`, "2026-10-12T00:00:00.000Z"]),
 );
 
+TOOL_LASTMOD_OVERRIDES["/tools/ai-wedding-photo-generator"] = "2026-10-18T00:00:00.000Z";
+TOOL_LASTMOD_OVERRIDES["/tools/ai-pet-portrait-generator"] = "2026-10-18T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/product-photo-retouching-service"] = "2026-10-15T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/real-estate-photo-editing"] = "2026-10-15T00:00:00.000Z";
 
@@ -193,7 +196,7 @@ function getNanoTemplateRoutes(): Array<{
   const withImages = getTemplateImageMap();
 
   return raws
-    .filter((t) => t?.id && typeof t.id === "string")
+    .filter((t) => t?.id && typeof t.id === "string" && !GENERATION_DESTINATIONS[t.id])
     .filter((t) => (withImages.get(t.id.trim())?.length ?? 0) > 0)
     .map((t) => {
       // Only emit URLs for locales the template actually has content

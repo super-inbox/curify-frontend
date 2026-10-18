@@ -133,6 +133,23 @@ const seoKeys = (k: string) => ({
 
 // ---- single source of truth ----
 export const TOOL_REGISTRY: ToolDef[] = [
+  {
+    id: "ai-wedding-photo-generator", slug: "ai-wedding-photo-generator", groupId: "image", status: "demo",
+    job_type: "video_transcript", namespace: "aiWeddingPhotoGenerator", locales: ["en"],
+    action: { type: "generate", templateId: "template-wedding-portrait-styles" },
+    i18n: toolKeys("ai_wedding_photo_generator"), seo: seoKeys("ai_wedding_photo_generator"),
+    demo: { type: "single_image", src: "/generation-examples/ai-wedding-photo-generator.jpg", alt: "Illustrative fictional portrait style board; not a production output" },
+  },
+
+  {
+    id: "ai-pet-portrait-generator", slug: "ai-pet-portrait-generator", groupId: "image", status: "demo",
+    job_type: "video_transcript", namespace: "aiPetPortraitGenerator", locales: ["en"],
+    action: { type: "generate", templateId: "template-pet-portrait-styles" },
+    i18n: toolKeys("ai_pet_portrait_generator"), seo: seoKeys("ai_pet_portrait_generator"),
+    demo: { type: "single_image", src: "/generation-examples/ai-pet-portrait-generator.jpg", alt: "Illustrative fictional portrait style board; not a production output" },
+  },
+
+
   // =======================
   // VIDEO
   // =======================
@@ -883,11 +900,13 @@ export function groupTools(): Record<ToolGroupId, ToolDef[]> {
 // Google counts. Slugs must exist in TOOL_REGISTRY — getSiblingTools drops
 // unknown or coming_soon entries rather than rendering a dead card.
 export const TOOL_RELATED_TOOLS: Record<string, string[]> = {
+  "ai-wedding-photo-generator": ["wedding-photo-editing", "ai-pet-portrait-generator"],
+  "ai-pet-portrait-generator": ["style-transfer", "character-sticker-sheet", "ai-wedding-photo-generator"],
   // Photographer intent both ways: the wedding page is the only other editing
   // tool, and it is indexed (09-15), so it is also this page's first linker.
   "product-photo-retouching-service": ["ai-product-photo-generator", "ai-fashion-model-generator", "real-estate-photo-editing"],
   "real-estate-photo-editing": ["product-photo-retouching-service", "wedding-photo-editing", "ai-product-photo-generator", "style-transfer"],
-  "wedding-photo-editing": ["real-estate-photo-editing", "ai-fashion-model-generator", "style-transfer"],
+  "wedding-photo-editing": ["ai-wedding-photo-generator", "real-estate-photo-editing", "ai-fashion-model-generator", "style-transfer"],
   "ai-fashion-model-generator": ["ecommerce-photo", "ai-product-photo-generator", "packaging-mockup"],
   // Product-photo intent → the production-file tools a seller needs next.
   "ecommerce-photo": ["die-cut-sticker-file", "packaging-mockup", "mockup"],

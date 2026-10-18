@@ -23,9 +23,15 @@ export type EcommercePhotoData = {
 export default function EcommercePhotoGenerate({
   locale,
   data,
+  uploadLabel,
+  uploadHint,
+  trackingContentId,
 }: {
   locale: string;
   data: EcommercePhotoData;
+  uploadLabel?: string;
+  uploadHint?: string;
+  trackingContentId?: string;
 }) {
   return (
     <ReproduceWorkbench
@@ -36,11 +42,11 @@ export default function EcommercePhotoGenerate({
       basePrompt={data.basePrompt}
       allowGeneration={data.allowGeneration}
       requiresImageUpload
-      trackingContentId={data.templateId}
+      trackingContentId={trackingContentId ?? data.templateId}
       col1={{
         mode: "upload",
-        label: "Your product photo",
-        hint: "Drop or select a product photo — JPEG, PNG, or WebP.",
+        label: uploadLabel ?? "Your product photo",
+        hint: uploadHint ?? "Drop or select a product photo — JPEG, PNG, or WebP.",
       }}
     />
   );

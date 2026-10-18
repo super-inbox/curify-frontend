@@ -21521,5 +21521,95 @@
     "allow_generation": true,
     "creation_date": "2026-10-09",
     "batch": true
+  },
+  {
+    "id": "template-wedding-portrait-styles",
+    "locales": {
+      "en": {
+        "base_prompt": "Create one realistic wedding-inspired portrait using the attached photo of two adults as the identity reference. Keep both people recognizable: preserve facial structure, skin tone, age and distinctive features. Do not exchange, merge or replace their identities. Style: {style}. Requested details: {details}. Use natural expressions, anatomically plausible hands, coherent attire and flattering natural light. Output one image, not a collage, comparison, text or logo. This is a newly generated scene, not documentation of an actual ceremony.",
+        "parameters": [
+          {
+            "name": "style",
+            "label": "Portrait style",
+            "type": "select",
+            "options": [
+              "Studio wedding portrait",
+              "Garden wedding portrait",
+              "Traditional Chinese wedding portrait"
+            ],
+            "placeholder": "Studio wedding portrait",
+            "default": "Studio wedding portrait"
+          },
+          {
+            "name": "details",
+            "label": "Details to keep or change",
+            "type": "textarea",
+            "placeholder": "Natural pose, soft light, understated wedding attire",
+            "default": "Natural pose, soft light, understated wedding attire"
+          }
+        ]
+      }
+    },
+    "topics": [
+      "portrait",
+      "fashion",
+      "lifestyle"
+    ],
+    "use_cases": [
+      "for-photographers",
+      "for-creators"
+    ],
+    "requires_image_upload": true,
+    "image_input": "required",
+    "allow_generation": true,
+    "index_examples": false,
+    "creation_date": "2026-10-18",
+    "rank_score": 90,
+    "og_image": "/generation-examples/ai-wedding-photo-generator.jpg"
+  },
+  {
+    "id": "template-pet-portrait-styles",
+    "locales": {
+      "en": {
+        "base_prompt": "Create one portrait of the single cat or dog in the attached reference photo. Preserve its recognizable coat pattern, colouring, eye colour, ear shape, muzzle, proportions and distinctive markings. Style: {style}. Requested details: {details}. Keep natural animal anatomy and a comfortable pose. Royal styling may add a costume but must not replace or humanize the face. Output one image, not a collage, comparison, text or logo. Do not introduce another animal.",
+        "parameters": [
+          {
+            "name": "style",
+            "label": "Portrait style",
+            "type": "select",
+            "options": [
+              "Studio pet portrait",
+              "Painted pet portrait",
+              "Royal pet portrait"
+            ],
+            "placeholder": "Studio pet portrait",
+            "default": "Studio pet portrait"
+          },
+          {
+            "name": "details",
+            "label": "Details to keep or change",
+            "type": "textarea",
+            "placeholder": "Keep the coat markings clear, simple background",
+            "default": "Keep the coat markings clear, simple background"
+          }
+        ]
+      }
+    },
+    "topics": [
+      "animal",
+      "portrait",
+      "art-prints"
+    ],
+    "use_cases": [
+      "for-photographers",
+      "for-creators"
+    ],
+    "requires_image_upload": true,
+    "image_input": "required",
+    "allow_generation": true,
+    "index_examples": false,
+    "creation_date": "2026-10-18",
+    "rank_score": 90,
+    "og_image": "/generation-examples/ai-pet-portrait-generator.jpg"
   }
 ]

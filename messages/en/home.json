@@ -442,6 +442,22 @@
         "title": "Product photo retouching service",
         "description": "Product photo retouching service for footwear, jewelry and ecommerce batches. Review before/after examples and request a sample review with your photo count and deadline."
       }
+    },
+    "ai_wedding_photo_generator": {
+      "title": "AI wedding photo generator",
+      "desc": "Create AI wedding photos from a photo of you together. Choose a studio, garden or traditional wedding look, then review the generated portrait before downloading.",
+      "meta": {
+        "title": "AI wedding photo generator",
+        "description": "Create AI wedding photos from a photo of you together. Choose a studio, garden or traditional wedding look, then review the generated portrait before downloading."
+      }
+    },
+    "ai_pet_portrait_generator": {
+      "title": "AI pet portrait generator",
+      "desc": "Turn a photo of your cat or dog into a studio portrait, painted keepsake or royal-style portrait. Choose a style and review your pet’s distinctive markings in the result.",
+      "meta": {
+        "title": "AI pet portrait generator",
+        "description": "Turn a photo of your cat or dog into a studio portrait, painted keepsake or royal-style portrait. Choose a style and review your pet’s distinctive markings in the result."
+      }
     }
   },
   "bilingual": {
@@ -2111,5 +2127,141 @@
         "businessBody": "Include the campaign brief, SKU list and delivery requirements so the work can be scoped before production."
       }
     }
+  },
+  "aiWeddingPhotoGenerator": {
+    "title": "AI wedding photo generator",
+    "description": "Create AI wedding photos from a photo of you together. Choose a studio, garden or traditional wedding look, then review the generated portrait before downloading.",
+    "metadata": {
+      "title": "AI wedding photo generator",
+      "description": "Create AI wedding photos from a photo of you together. Choose a studio, garden or traditional wedding look, then review the generated portrait before downloading."
+    },
+    "cta": "Create a portrait",
+    "upload": {
+      "label": "Your couple photo",
+      "hint": "Upload one JPEG, PNG or WebP with both adults clearly visible. A single photo of you together works best."
+    },
+    "why": {
+      "title": "Create a portrait from your photo",
+      "point1": "Start with your own reference photo, then choose a style.",
+      "point2": "Use the brief to describe the details you want to keep.",
+      "point3": "Image generation uses {credits} credits per completed image. Sign in to generate.",
+      "point4": "Generated scenes can change faces, hands, clothing and details. Review both people carefully; this does not replace documentary wedding photography."
+    },
+    "faq": {
+      "title": "Questions before you generate",
+      "q1": "What should I upload?",
+      "a1": "Upload one JPEG, PNG or WebP with both adults clearly visible. A single photo of you together works best.",
+      "q2": "Will the result look exactly like my photo?",
+      "a2": "Generated scenes can change faces, hands, clothing and details. Review both people carefully; this does not replace documentary wedding photography.",
+      "q3": "How much does it cost?",
+      "a3": "Generation uses {credits} credits per completed image. The workbench shows your generation cost; removing a watermark is a separate optional purchase shown with the result.",
+      "q4": "Can I choose a different style?",
+      "a4": "Choose a style in the workbench and describe the setting or details in your brief. Each new generation is a separate image.",
+      "q5": "Are the illustrations examples of this tool’s output?",
+      "a5": "The style board is an illustrative ImageGen concept using fictional subjects. It is not a production benchmark, a client delivery or a guarantee of identity preservation.",
+      "q6": "Does this make a video?",
+      "a6": "No. This page generates a still portrait. Video animation is a different workflow."
+    },
+    "deep": {
+      "what": {
+        "title": "A new portrait inspired by your reference",
+        "p1": "Create AI wedding photos from a photo of you together. Choose a studio, garden or traditional wedding look, then review the generated portrait before downloading.",
+        "p2": "Generated scenes can change faces, hands, clothing and details. Review both people carefully; this does not replace documentary wedding photography.",
+        "p3": "Use the result as a creative concept. Review it before sharing or ordering any physical print."
+      },
+      "how": {
+        "title": "How to create your portrait",
+        "p1": "Upload a clear reference image.",
+        "p2": "Choose a style and describe your preferred finish.",
+        "p3": "Generate and compare important details with your source.",
+        "p4": "Download the result you want to keep.",
+        "p5": "For a coordinated collection, use the custom collection form to discuss scope and a quote."
+      },
+      "usecases": {
+        "title": "Ways to use your portrait",
+        "creatorsTitle": "Personal keepsakes",
+        "creatorsBody": "Explore a new style from your own reference photo.",
+        "educationTitle": "Creative exploration",
+        "educationBody": "Compare settings, lighting and portrait styles.",
+        "businessTitle": "Custom collections",
+        "businessBody": "Discuss a coordinated collection and agree on the scope before production."
+      }
+    },
+    "sample": {
+      "title": "Need a custom collection?",
+      "body": "Share the number of images, your reference style and deadline. We will review the scope before quoting.",
+      "subject": "AI wedding photo generator custom collection",
+      "cta": "Discuss my collection",
+      "note": "Image count, desired styles, source photos and deadline"
+    },
+    "example": "Illustrative AI-generated style board made with ImageGen. These are fictional subjects, not customer images or verified outputs from this generator."
+  },
+  "aiPetPortraitGenerator": {
+    "title": "AI pet portrait generator",
+    "description": "Turn a photo of your cat or dog into a studio portrait, painted keepsake or royal-style portrait. Choose a style and review your pet’s distinctive markings in the result.",
+    "metadata": {
+      "title": "AI pet portrait generator",
+      "description": "Turn a photo of your cat or dog into a studio portrait, painted keepsake or royal-style portrait. Choose a style and review your pet’s distinctive markings in the result."
+    },
+    "cta": "Create a portrait",
+    "upload": {
+      "label": "Your pet photo",
+      "hint": "Upload one JPEG, PNG or WebP showing one cat or dog clearly, including the face and distinctive coat markings."
+    },
+    "why": {
+      "title": "Create a portrait from your photo",
+      "point1": "Start with your own reference photo, then choose a style.",
+      "point2": "Use the brief to describe the details you want to keep.",
+      "point3": "Image generation uses {credits} credits per completed image. Sign in to generate.",
+      "point4": "AI may change markings, eye colour or anatomy. Compare the result with your source photo before using it. This produces a still image, not a talking or dancing video."
+    },
+    "faq": {
+      "title": "Questions before you generate",
+      "q1": "What should I upload?",
+      "a1": "Upload one JPEG, PNG or WebP showing one cat or dog clearly, including the face and distinctive coat markings.",
+      "q2": "Will the result look exactly like my photo?",
+      "a2": "AI may change markings, eye colour or anatomy. Compare the result with your source photo before using it. This produces a still image, not a talking or dancing video.",
+      "q3": "How much does it cost?",
+      "a3": "Generation uses {credits} credits per completed image. The workbench shows your generation cost; removing a watermark is a separate optional purchase shown with the result.",
+      "q4": "Can I choose a different style?",
+      "a4": "Choose a style in the workbench and describe the setting or details in your brief. Each new generation is a separate image.",
+      "q5": "Are the illustrations examples of this tool’s output?",
+      "a5": "The style board is an illustrative ImageGen concept using fictional subjects. It is not a production benchmark, a client delivery or a guarantee of identity preservation.",
+      "q6": "Does this make a video?",
+      "a6": "No. This page generates a still portrait. Video animation is a different workflow."
+    },
+    "deep": {
+      "what": {
+        "title": "A new portrait inspired by your reference",
+        "p1": "Turn a photo of your cat or dog into a studio portrait, painted keepsake or royal-style portrait. Choose a style and review your pet’s distinctive markings in the result.",
+        "p2": "AI may change markings, eye colour or anatomy. Compare the result with your source photo before using it. This produces a still image, not a talking or dancing video.",
+        "p3": "Use the result as a creative concept. Review it before sharing or ordering any physical print."
+      },
+      "how": {
+        "title": "How to create your portrait",
+        "p1": "Upload a clear reference image.",
+        "p2": "Choose a style and describe your preferred finish.",
+        "p3": "Generate and compare important details with your source.",
+        "p4": "Download the result you want to keep.",
+        "p5": "For a coordinated collection, use the custom collection form to discuss scope and a quote."
+      },
+      "usecases": {
+        "title": "Ways to use your portrait",
+        "creatorsTitle": "Personal keepsakes",
+        "creatorsBody": "Explore a new style from your own reference photo.",
+        "educationTitle": "Creative exploration",
+        "educationBody": "Compare settings, lighting and portrait styles.",
+        "businessTitle": "Custom collections",
+        "businessBody": "Discuss a coordinated collection and agree on the scope before production."
+      }
+    },
+    "sample": {
+      "title": "Need a custom collection?",
+      "body": "Share the number of images, your reference style and deadline. We will review the scope before quoting.",
+      "subject": "AI pet portrait generator custom collection",
+      "cta": "Discuss my collection",
+      "note": "Image count, desired styles, source photos and deadline"
+    },
+    "example": "Illustrative AI-generated style board made with ImageGen. These are fictional subjects, not customer images or verified outputs from this generator."
   }
 }

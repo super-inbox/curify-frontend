@@ -5104,3 +5104,126 @@ Implementation and detailed findings above are committed and pushed as `2b715931
 Optional next SEMrush action: refresh unavailable KD for `mannequin to model ai`, `flat lay to model ai`, and `asl to text translator`, confirming country/database. Do not block the article or existing-page improvements on these missing values. Defer standalone hotel pages, duplicate ASL keyword pages, mass blog/localization work and lost-link recovery for the five links verified still present. No disavow is justified by the supplied sample alone.
 
 Expected outcome remains better intent match, credible evidence for editorial coverage, useful referrals and more qualified conversion from existing rankings. The data does not support a numerical traffic-lift promise. Recheck complete seven-day windows for early signals and a 28-day post-deployment window for a more useful assessment, with longer observation for sparse queries. Compare named query/page cohorts rather than interpreting blended average position as a causal effect.
+
+## 2026-10-15 — wedding outsourcing and product-retouching service implementation
+
+Operator supplied two product before/after images and requested the two KD-backed service follow-ups. Existing `/tools/ai-product-photo-generator` and `/tools/ecommerce-photo` cover generated scenes/compositions; they are not the destination for a scoped editing service. Implemented `/tools/product-photo-retouching-service` in EN/ZH as a sample-request lead page, not a self-serve generator. Includes footwear/jewelry briefs, material/colour/detail checks, sample-first batch process, pricing/scope FAQ and attributed contact capture. No unverified turnaround, print resolution, layered-file, pixel-preservation or delivered-client promises. Other locales remain noindex/canonical to EN under the existing tool policy.
+
+Assets copied unchanged to versioned `public/service-examples/` (served from origin, rather than requiring an unperformed CDN upload):
+
+- `sandals-before-after.jpg`: operator attachment `846671120_122178840410639674_4071613799736656844_n.jpg`, October 15. Caption describes visible presentation changes without asserting our pipeline produced them.
+- `jewelry-before-after.jpg`: operator attachment `jewelry-retouch.jpg`, October 15. Caption distinguishes brighter presentation from gemstone quality and calls out engraving/prong/colour review.
+- `womens-shoe-restoration-en.jpg` / `-zh.jpg`: existing `curify-gallery/smm_daily/2026-09-01-retouching/` collection, explicitly labeled generated demos, not client deliveries; Chinese page uses the Chinese sheet. New supplied image labels remain as supplied.
+
+`/use-cases/for-photographers` now owns “outsource wedding photo editing” explicitly in EN/ZH: updated title/description, representative-sample process, scope and quote discussion, review FAQ, and a batch brief field in the existing attributed contact form. Removed blanket pixel-identical guarantees from these two authored descriptions. Linked the existing wedding cost guide, wedding/portrait editor and product-retouching service. Other locale copy is unchanged. Product service is linked from photographer and DTC tool lists and real-estate related tools, with relevant persona mapping. Sitemap includes only EN/ZH for the new service and targeted lastmod updates.
+
+Corrected generic sample-request structured data: service pages now emit `Service` with no invented zero-price offer, rather than a free `WebApplication`. Added a hero jump link to the inquiry form so visitors do not have to traverse every comparison image first. This also improves the existing real-estate request page.
+
+### Medium and Substack decision
+
+Use the existing ASL engineering article as the detailed on-site source. A personal Substack account of the lessons and a technical Medium adaptation can bring interested readers and expose the work to independent publishers. Self-published links are not independent endorsements, and platform authority is not automatically transferred to Curify. For a substantially duplicated Medium version, use Medium's canonical-link option pointing to the Curify original (official documentation: https://help.medium.com/hc/en-us/articles/360033930293-Set-a-canonical-link). For a genuinely different article, use a normal contextual link to the supporting experiments; a distinct article should not be canonicalized as a duplicate just to seek ranking credit. Recommend a short Substack narrative/excerpt with a clear link to the full experiments rather than another full identical copy. No third-party publication or outreach performed.
+
+Suggested angles: Substack — “The ASL demo we had to retract, and what it taught us about evaluation”; Medium — “Why more training data did not fix our ASL translation baseline.” Keep experiment caveats, upstream credit and research/production distinction in both. Measure qualified referrals, article-to-tool visits and independent citations; do not promise a rankings lift from republishing.
+
+Validation: TypeScript passed; existing SEO P0 unit suite passed (4 tests); `git diff --check` passed. Local Chromium checks returned HTTP 200 for product EN/ZH/ES, photographer EN/ZH and real-estate EN; verified service schema without a free offer, self-canonicals on authored pages, EN canonical/noindex on ES, and only EN/ZH product sitemap entries. Both batch forms successfully submitted to an intercepted mock endpoint with the correct source attribution; no real contact messages were sent. All three product images decoded successfully and mobile screenshots were reviewed. Browser checks exposed literal-key output on unauthored tool locales; tool rendering/metadata now use the declared first authored locale for that namespace while retaining noindex and the authored canonical. Shared mobile header overlap on the photographer page and off-screen auth-drawer overflow remain existing layout follow-ups outside this service-content pass. These changes are local, not yet committed or deployed; no GSC submission is needed until deployment is verified.
+
+
+## 2026-10-18 — wedding/pet KD, asset audit and revised P0
+
+### Evidence and limits
+
+Operator supplied two screenshots in `raw/wedding-pet-seo-2026-10-18/`: A = `Screenshot 2026-10-18 at 2.39.26 PM.png`; B = `Screenshot 2026-10-18 at 2.39.51 PM.png`. Each UI says 17 keywords, but only 11 rows in A and 16 in B are visible: **27 of the 34 requested terms are observable**. Five have numerical KD, all below the existing ≤26 preference. The five scored rows say updated one month ago; others request a metric refresh. Country/database is not visible. Do not assume US, current-day freshness, or that these numbers are directly comparable to a different country. CPC is USD, not SEO acquisition cost. I = informational, C = commercial (SEMrush labels, not a definitive intent classification).
+
+Blank = keyword row visible but cells blank. Unavailable = explicitly marked unavailable. Not visible = absent from these cropped screenshots, not proof it was unmeasured or had zero volume. Only `ai pet portrait prompts` visibly reports volume 0. Do not sum synonym volumes or treat missing KD as KD 0. All volumes below are SEMrush estimates, not Curify traffic.
+
+| Keyword | Monthly volume | KD % | Intent | CPC USD | Screenshot |
+|---|---:|---:|---|---:|---|
+| ai wedding photo generator | 170 | 7 | I/C | 1.17 | A |
+| ai wedding photos | 260 | 8 | I | 1.58 | A |
+| ai pre wedding photoshoot | 10 | Unavailable | Unavailable | 0.00 | A |
+| ai wedding photo generator from photo | Blank | Blank | Blank | Blank | A |
+| ai couple wedding photo generator | 20 | Unavailable | Unavailable | 1.25 | A |
+| ai bridal portrait generator | Not visible | Not visible | Not visible | Not visible | — |
+| ai wedding video generator | 20 | Unavailable | Unavailable | 1.55 | A |
+| wedding photo to video | Not visible | Not visible | Not visible | Not visible | — |
+| ai wedding invitation video | 50 | Unavailable | Unavailable | 3.01 | A |
+| animate wedding photo | Not visible | Not visible | Not visible | Not visible | — |
+| ai wedding video from photos | Not visible | Not visible | Not visible | Not visible | — |
+| ai wedding invitation video maker | 20 | Unavailable | Unavailable | 0.00 | A |
+| ai pet video generator | 10 | Unavailable | Unavailable | 1.25 | A |
+| ai dog video generator | 30 | Unavailable | Unavailable | 1.15 | A |
+| ai cat video generator | 110 | 11 | I | 1.33 | A |
+| animate pet photo | Not visible | Not visible | Not visible | Not visible | — |
+| talking pet video maker | Not visible | Not visible | Not visible | Not visible | — |
+| ai pet dancing video | 10 | Unavailable | Unavailable | 0.00 | B |
+| ai pet portrait generator | 320 | 16 | I | 1.67 | B |
+| ai pet photo generator | 40 | 19 | I | 1.06 | B |
+| ai dog portrait generator | 30 | Unavailable | Unavailable | 1.28 | B |
+| custom ai pet portraits | 10 | Unavailable | Unavailable | 1.15 | B |
+| ai pet photoshoot | Blank | Blank | Blank | Blank | B |
+| pet royal portrait generator | Blank | Blank | Blank | Blank | B |
+| custom ai wedding photos | Blank | Blank | Blank | Blank | B |
+| custom ai wedding video | Blank | Blank | Blank | Blank | B |
+| ai pre wedding video | Blank | Blank | Blank | Blank | B |
+| ai wedding photo prompts | 20 | Unavailable | Unavailable | 0.00 | B |
+| ai pre wedding photoshoot prompts | Blank | Blank | Blank | Blank | B |
+| custom ai pet video | Blank | Blank | Blank | Blank | B |
+| pet memorial video maker | 20 | Unavailable | Unavailable | 2.49 | B |
+| dog birthday video maker | Blank | Blank | Blank | Blank | B |
+| ai pet portrait prompts | 0 | Unavailable | Unavailable | 0.00 | B |
+| how to animate a pet photo | Not visible | Not visible | Not visible | Not visible | — |
+
+### Existing asset audit
+
+Scope: current frontend registry/data (353 template records, 4,010 inspiration records and 109 blog records), topic copy, tool registry, workflow mappings, and selected gallery files. Metadata matches are discovery candidates, not proof of a working output, ownership, uniqueness or live generation quality. No paid generation was run.
+
+| Surface | What exists | SEO/product implication |
+|---|---|---|
+| Wedding images | `template-lifestyle-photo-grid-wedding-day-ceremony` under `template-lifestyle-photo-grid`; theme-based 3×3 lifestyle collage prompt. Two bridal hairstyle/wedding-dress examples under `template-fashion-before-after-outfit-annotation-card`; 11 wedding-costume inspiration records. | Adjacent visuals exist, but no dedicated uploaded-couple wedding generation template was found. A themed collage/costume illustration is not proof of preserving both customers' identities. |
+| Wedding editing | `/tools/wedding-photo-editing`, `/use-cases/for-photographers`, `/blog/wedding-photo-retouching-cost`, plus portrait examples. EN/ZH outsourcing copy is still uncommitted locally. | Preserve editing/service ownership; do not retitle these as wedding-photo generators. Generated scenes and editing a captured wedding are separate tasks. |
+| Pet templates | `template-dog-breed-retro-infographic` (5 inspiration records), `template-pet-care-guide` (4), `template-pet-safe-human-food-infographic` (5), `template-pet-life-journey-infographic` (6), all enabled in registry. Their parameters are breed/species/name/age, not a specialized portrait workflow. | These 20 records support educational/pet-themed content, not demonstrated same-pet portrait generation. Life-journey is a species infographic, not an existing memorial video maker. |
+| Animal topics | `/topics/animal` (Pets & Animals) and `/topics/animals` (Animals) both live, HTTP 200 and self-canonical. Both descriptions mention pet portraits. `/topics/portrait` is primarily human selfie/restyling. | Potential semantic overlap, not proven GSC cannibalization. Keep animal as pet/animal discovery, animals as nature/wildlife/education if content supports it, and give the portrait generator a distinct transactional role. Compare actual URL/query overlap before any redirect/canonical consolidation. |
+| Pet-adjacent examples | Character stickers, IP expressions, merch mockups and animal educational cards. Broad metadata searches found 96 pet-related records, including false positives such as hot-dog vocabulary and fictional characters. | Do not count these as 96 usable pet portraits. Curate actual input/output proof for a customer's cat/dog. |
+| Wedding-adjacent examples | Broad metadata search found 45 wedding-related records, including cultural/relationship cards and false-positive metadata. Visually reviewed Tang wedding-attire gallery image: illustrated costume explainer. | Do not claim 45 wedding portraits or reuse costume educational art as a couple-photo demo. |
+| Pet visual inspected | Gallery cat food infographic contact sheet, `template_text_overlays/template-pet-safe-human-food-infographic-cat-overlay-contact.jpg`. | Confirms educational asset format; this audit does not validate its nutritional claims. |
+| Tools/video | No dedicated wedding-photo-generation, pet-portrait, cat-video or pet-video tool entry found in `lib/tools-registry.ts`. No verified matching cat/wedding motion demo was established by this audit. | Generic model access, static examples and topic pages do not establish a working intent-specific video journey. Build/test one before promising video generation. |
+| Blogs | Wedding retouching-cost guide plus adjacent makeover/sticker/merch guides; no dedicated wedding-generation or pet-portrait/video guide found in the 109-blog registry. | A blog is supporting content after an output workflow exists; avoid creating head-keyword blog/tool duplicates. |
+
+Representative gallery wedding-costume and pet-food images were visually inspected; other example counts above are registry inspection, not an exhaustive visual review. The studio-digital-backdrop template is editing-adjacent and is not wedding-generation proof; previously restricted client-spec examples remain excluded. Earlier authorization of W1 does not establish that Curify generated it or justify misattributing its provenance.
+
+### Current shipping/indexing state
+
+October 18 live HTTP checks confirmed `/tools/product-photo-retouching-service` (200, self-canonical, matching title) and `/blog/building-asl-video-translator` (200, self-canonical, matching engineering title). Product service was committed/pushed October 16 as `28d4ab94`; this supersedes the October 15 local-only status for that work. These checks establish public availability, not Google indexation or a full production-form test. The wedding-outsourcing copy and October 15 roadmap edits remain local. No new GSC data or URL-inspection results were obtained in this pass; the latest reviewed finalized GSC window remains October 12's analysis through October 10.
+
+That historical window showed ASL at 1,534/2,146 site clicks (~71.5%) over 27 finalized days; packaging mockup at 38 clicks/626 impressions, versus wedding tool 3/57 and photographer page 0/8. These are historical prioritization evidence, not October 18 traffic counts. The previous apparent traffic crash was resolved as incomplete reporting; this KD does not reopen a rollback requirement.
+
+### Revised P0 execution order
+
+1. **Close existing launch/indexing/conversion gaps.** Product-retouching and ASL engineering are live: inspect Google index/canonical status and submit the new product URL if not already done; the October 13 real-estate resubmission still needs a Google-selected canonical verdict. Finish shipping the already-validated wedding-outsourcing copy separately. Keep ASL arrival → upload → completion → repeat measurement and the existing packaging utility ahead of speculative content volume. Do not wait for new wedding/pet pages to finish these small tasks.
+2. **First new acquisition build: one wedding-photo generation owner.** `ai wedding photo generator` 170/KD7 and `ai wedding photos` 260/KD8 form one cluster; do not add their volumes. Proposed owner `/tools/ai-wedding-photo-generator` backed by a dedicated photo-reference template, not another retouching page. Show source couple photos and 3–4 generated styles; test both identities, faces/hands and clothing, clarify generated rather than event-documentary output. A single URL can cover couple/from-photo/pre-wedding variants. Make upload → style → generation → download measurable; offer an accurately labeled custom-production CTA if self-serve is not ready. Link from relevant portrait/fashion templates and photographer page using task-specific copy. No need for ten locales or a second head-keyword blog at launch.
+3. **Second new acquisition build: one pet-portrait owner.** `ai pet portrait generator` 320/KD16 and `ai pet photo generator` 40/KD19 are stronger validated image targets than broad pet-video (10, KD unavailable). Proposed owner `/tools/ai-pet-portrait-generator`, with one upload-based template and a small style set (studio, painted/royal, playful). Validate distinctive coat markings, ears/eyes and recognizable identity on cats and dogs; show input/output pairs, supported output size, credits and download path. Link from `/topics/animal`, relevant pet templates and suitable sticker/merch guides. Keep educational topic copy distinct. Dog/royal/photo variants belong within this page initially, not separate competing tools.
+4. **Cat video: bounded validation now; page only after proof.** `ai cat video generator` 110/KD11 is promising, but needs a working video-specific flow. Prepare/test 2–3 clips (source photo, motion brief, resulting playable video); check identity, motion artifacts, duration, cost, latency and failed-job handling. Distinguish animate-my-cat from fictional cat-story generation in the actual requests and content. If ready, one cat-video owner can cover those supported modes; do not launch separate dog/pet/dancing/talking pages from missing KD. Wedding invitation video (50, KD unavailable) and wedding video generation (20, KD unavailable) stay behind the image opportunities unless paid requests justify a service-led pilot.
+5. **Authority work stays targeted to original evidence.** Use the now-live ASL engineering article for the planned personal summary and relevant publisher pilot. For wedding/pet, make a reproducible input/output case study on the owning page and approach relevant photography/pet creators for genuine use/review; measure referrals and independent citations. Our self-published Medium/Substack links are distribution, not independent endorsements. No bulk directories, purchased links, mass blog expansion or disavow action from this KD batch.
+
+New-build order is a prioritization judgment combining scored demand, reported inquiries and readiness—not a ranking forecast. Pet portraits have the largest individual estimated volume; wedding goes first because of lower scored difficulty, direct wedding-image requests and adjacent photographer/service assets. Neither currently has verified production-quality proof from this audit. A paid pet request or stronger working pet demo could reverse that order.
+
+### Blogs, long tails and follow-up data
+
+- **Launch two focused image workflows, not a large blog batch.** Add useful prompts, source-photo requirements, limitations and examples on each owner. One supporting wedding tutorial/case study can follow: `ai wedding photo prompts` has volume 20 but unavailable KD. `ai pet portrait prompts` explicitly shows 0; a useful customer tutorial can still exist, but is not a demand-backed P0 acquisition page.
+- **Do not force generation intent onto service pages.** Wedding outsourcing remains `/use-cases/for-photographers`; existing-photo editing remains `/tools/wedding-photo-editing`; product retouching stays its service URL. Pet portraits, animal education, wedding generation and wedding editing need distinct copy and cross-links. Potential overlap is not proof of ranking cannibalization.
+- **Next SEMrush check:** confirm country/database, then refresh `ai wedding invitation video`, `ai wedding video generator`, `ai dog video generator`, `ai dog portrait generator` and `ai wedding photo prompts` if allocation depends on them. Missing screenshot rows are identified in the table; an export or bottom-of-first-batch screenshot can fill them, but should not block the five scored opportunities.
+- **GSC:** inspect the live product service and ASL article; follow up on real-estate canonical selection. Newly proposed wedding/pet pages do not exist yet, so there is nothing to submit for them. After shipping, verify public 200, authored-locale canonicals, sitemap inclusion and functioning workflow before requesting indexing. Compare complete query/page windows and completed outputs/leads; do not infer causal lift from aggregate position or two days of data.
+
+Current provider-page spot checks support generator intent: [MagicShot wedding photos](https://magicshot.ai/ai-photoshoot/wedding-photos), [Wink pet portrait generator](https://wink.ai/ai-pet-portrait-generator), and [FlexClip cat video](https://www.flexclip.com/create/ai-cat-video.html). These are market/format examples, not location-controlled Google rank checks or verified competitor-quality claims. No new pages, generations, outreach, GSC submissions, commits or pushes were performed in this documentation pass.
+
+### October 18 implementation — tools own discovery, templates power generation
+
+Decision: use `/tools/ai-wedding-photo-generator` and `/tools/ai-pet-portrait-generator` as the two English search/conversion destinations. The query intent is upload-and-generate; the tool page contains a photo upload, style selector, editable brief, credit price, result/download workbench, limitations and custom-collection inquiry. Reusable templates `template-wedding-portrait-styles` and `template-pet-portrait-styles` supply prompts/parameters to the existing generation engine. Their library routes redirect to the owning tool and are excluded from the template sitemap, avoiding a second competing destination for the same workflow. No new backend engine or blog batch.
+
+Implemented three wedding styles (studio, garden, traditional Chinese) and three pet styles (studio, painting, royal). Wedding input is one photo containing both adults; separate-reference uploads are not promised. Pet input is one cat/dog photo. Prompts request recognizable identities/markings, while visible copy explains generation can alter them. English-only authored tool pages have English canonical/noindex fallback elsewhere. Added topic links from animal and portrait, photographer tool-list links, related tools and persona mappings. Tool upload labels now accept subject-specific copy rather than saying “Your product photo.” Image-generation credit copy uses the shared pricing constant; generated-image tools no longer emit a false free-price structured-data offer.
+
+Assets: `public/generation-examples/ai-wedding-photo-generator.jpg` and `ai-pet-portrait-generator.jpg`, created with ImageGen and encoded to JPEG for page weight. Both were visually inspected. Each is explicitly labeled a fictional illustrative style board, not a customer image or verified output of Curify's generator. They do not replace a production input/output quality test. Raw ImageGen originals remain under the session's generated_images folder.
+
+Release dependency verified in local backend source: `curify_background/app/routers/nano_templates.py` reads the frontend template registry from GitHub **main** and caches it for four hours. These templates must reach main and the backend cache must refresh before a production generation test can succeed. A feature-branch preview alone is insufficient. Do not submit these new tool URLs to GSC until this dependency and the production generation/download check pass. No main merge, production deployment, live paid generation or GSC submission was performed in this pass. Cat-video work remains a later bounded validation task; no video-generator claims were added to these image pages.
+
+Validation: TypeScript passed; six unit tests passed (four existing SEO tests plus two template/tool contracts verifying ownership, upload requirement, prompt defaults and credit/provenance copy). Browser smoke passed both pages' HTTP 200, self-canonicals, image loading, subject-specific upload labels, style selection, mocked upload/generation request payloads and result rendering. Template library routes redirected to their owning tools; Spanish tool fallback was noindex; the sitemap listed one English URL per new tool and no duplicate backing-template URL. No browser page errors. Mobile screenshots were inspected. Test uploads/results were intercepted mocks (not real generation quality evidence); no credits were spent or external contact messages sent. Initial browser checks caught and fixed missing tool-card translation keys and empty prompt defaults. `git diff --check` passed. Changes remain local and uncommitted; the temporary preview server was stopped after verification.
