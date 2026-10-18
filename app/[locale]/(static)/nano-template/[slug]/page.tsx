@@ -1,3 +1,5 @@
+import { GENERATION_DESTINATIONS } from "@/lib/generation-destinations";
+import { redirect as redirectToTool } from "next/navigation";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -124,6 +126,8 @@ export async function generateStaticParams() {
 
 export default async function NanoTemplatePage({ params }: Props) {
   const { locale: localeStr, slug } = await params;
+  const destination = GENERATION_DESTINATIONS[`template-${slug}`];
+  if (destination) redirectToTool(destination);
   setRequestLocale(localeStr);
 
   const {

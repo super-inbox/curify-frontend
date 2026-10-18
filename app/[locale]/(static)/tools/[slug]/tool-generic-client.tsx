@@ -2,6 +2,7 @@
 "use client";
 
 
+import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
 import SearchRedirectTracker from "../../topics/[slug]/SearchRedirectTracker";
 import { toTemplateStripCard } from "@/lib/nano_pure";
 import { Link } from "@/i18n/navigation";
@@ -125,7 +126,7 @@ export default function ToolGenericClient({
   // the tool billed 8 credits/min, and the only alternative was writing the digit
   // into forty translated strings that nothing would ever re-check. Prices in prose
   // are ICU parameters here — see the policy at the top of lib/pricing.ts.
-  const toolCredits = { credits: JOB_UI_CONFIG[tool.job_type]?.ratePerMinute ?? 0 };
+  const toolCredits = { credits: tool.action?.type === "generate" ? IMAGE_GENERATION_CREDITS : JOB_UI_CONFIG[tool.job_type]?.ratePerMinute ?? 0 };
   const tGlobal = useTranslations();
   // Locale string needed by RelatedBlogsByCategory and (less directly) for
   // future per-locale routing inside the linked use-case headers.
@@ -259,7 +260,10 @@ export default function ToolGenericClient({
         {tool.action?.type === "generate" && generateData ? (
           // Real inline image2image tool: 3-column workbench (upload → generate
           // → designer pack), same as the image2image template-detail pages.
-          <EcommercePhotoGenerate locale={locale} data={generateData} />
+          <EcommercePhotoGenerate locale={locale} data={generateData}
+            uploadLabel={t.has("upload.label") ? t("upload.label") : undefined}
+            uploadHint={t.has("upload.hint") ? t("upload.hint") : undefined}
+            trackingContentId={`tool:${slug}`} />
         ) : tool.action?.type === "product_video" ? (
           // Real inline product-video tool: structured input → PRODUCT_VIDEO job.
           <ProductVideoGenerate />
@@ -353,6 +357,13 @@ export default function ToolGenericClient({
           No `subject`: the tool title ("AI Fashion Model Generator") reads
           badly inside "Need the whole {subject} set", and the generic headline
           is already correct in all ten locales. */}
+      {tool.action?.type === "generate" && t.has("sample.title") && (
+        <section className="mt-12 max-w-xl mx-auto">
+          <h2 className="text-2xl font-semibold">{t("sample.title")}</h2>
+          <p className="my-3">{t("sample.body")}</p>
+          <InlineContactCapture source={`custom:tool/${slug}`} subject={t("sample.subject")} cta={t("sample.cta")} note={t("sample.note")} trackingId={`custom-request:tool/${slug}`} />
+        </section>
+      )}
       {BULK_CALLOUT_TOOLS.has(slug) && (
         <section className="mt-16">
           <BulkDesignCallout source={`tool/${slug}`} />
@@ -434,7 +445,7 @@ export default function ToolGenericClient({
                 serviceType: t("title"), provider: { "@type": "Organization", name: "Curify" },
               } : {
                 applicationCategory: "MultimediaApplication", operatingSystem: "Any",
-                offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+                ...(tool.action?.type === "generate" ? {} : { offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }),
               }),
             }),
           }}

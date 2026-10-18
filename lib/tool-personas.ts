@@ -32,6 +32,8 @@ const p = (creators: string, education: string, business: string): ToolPersonas 
 });
 
 export const TOOL_PERSONAS: Record<string, ToolPersonas> = {
+  "ai-wedding-photo-generator": p("for-photographers", "for-creators", "for-designers"),
+  "ai-pet-portrait-generator": p("for-creators", "for-photographers", "for-merch-operators"),
   // The photo-editing surface points at photographers first; the other two slots
   // are the nearest real fits in the catalogue, not filler.
   "wedding-photo-editing": p("for-photographers", "for-creators", "for-designers"),
