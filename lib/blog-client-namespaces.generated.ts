@@ -221,6 +221,7 @@ export const KNOWN_BLOG_SLUGS: string[] = [
   "character-turnaround-sheet-guide",
   "chinese-costume-history-infographic",
   "chinese-herbal-medicine-visual-guide",
+  "choose-photo-for-ai-wedding-portraits",
   "competitor-comparison-infographics-ai",
   "content-multiplication-system",
   "content-tagging-system",

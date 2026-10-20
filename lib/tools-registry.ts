@@ -972,6 +972,7 @@ export function getSiblingTools(slug: string, max = 3): ToolDef[] {
 // tool detail page. Source of truth: docs/interconnection.md (Tool slug
 // → Blog categories table). Keep in sync when adding a new tool.
 export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
+  "ai-wedding-photo-generator": ["creator-tools"],
   "ai-fashion-model-generator": ["merch-pod", "creator-tools"],
   // Added 2026-09-15 with the retouching-cost post. This tool had NO entry, so
   // its page surfaced no related reading at all — and a new post needs inbound
@@ -1023,6 +1024,7 @@ export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
 // appending to a list that was already full added zero links and still looked
 // correct in the data. Verify against the rendered page, not this map.
 export const TOOL_PINNED_BLOGS: Record<string, string[]> = {
+  "ai-wedding-photo-generator": ["choose-photo-for-ai-wedding-portraits"],
   // The one indexed asset already sitting on apparel-imaging intent.
   "ai-fashion-model-generator": ["ghost-mannequin-ai-guide"],
   // PINNED, not left to freshness: RelatedBlogsByCategory renders max 3 sorted by

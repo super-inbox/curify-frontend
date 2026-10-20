@@ -330,19 +330,58 @@
     },
     "learningMaterialsHeading": "Learning Materials",
     "for-photographers": {
-      "title": "For Wedding & Portrait Photographers",
-      "subtitle": "Send us the frames you don't want to spend your evening on. Editing, region by region — not a filter, and not a regenerated photo.",
-      "description": "You shot it; we are not going to redraw it. Every edit here happens inside a named region — the flyaways crossing her forehead, the shine on his nose, the creases in the skirt — and every pixel outside those regions is byte-identical to the file you sent. That is a property of how the pipeline is built, not a promise in a prompt: the alternative, regenerating the whole frame, measured 0.007 detail correlation on a backdrop and once invented a lily that was never in the photograph. Colour is handled numerically, so an amber reception room comes back neutral and the dress reads white across the set rather than frame by frame. Every output is scored against the same measurements a studio retoucher works to, and the score is shown to you.",
-      "bullet0": "Region-by-region editing: flyaways, skin, eyes, teeth, garment creases. Your crop and background untouched by construction.",
-      "bullet1": "Skin keeps its pores. Texture is measured before and after, and a smoothing pass that craters it fails the check rather than shipping.",
-      "bullet2": "Colour done in numbers, not by eye — the amber comes out of the whites, and it comes out the same way on every frame in the set.",
-      "bullet3": "Upload one frame free, no sign-in. Volume, turnaround and a look matched to your own reference gallery: talk to us.",
+      "title": "Outsource wedding photo editing",
+      "subtitle": "A sample-first editing service for wedding and portrait photographers. Share your reference look, photo count and deadline before committing a full gallery.",
+      "description": "Keep control of the look while getting help with the editing workload. Send representative frames from different lighting conditions, mark the adjustments you want, and tell us which details must remain unchanged. We review the images and agree a sample, scope and quote before a batch begins.",
+      "bullet0": "Start with representative ceremony, reception and portrait frames, including difficult mixed lighting.",
+      "bullet1": "Agree the finish for colour, skin and local distractions against your own reference gallery.",
+      "bullet2": "Review faces, dress detail, crop and background in the sample before approving the batch.",
+      "bullet3": "Price, turnaround, formats and output dimensions are agreed after image review.",
       "examples": {
         "title": "What the edits look like",
         "plan": "Portrait retouching, planned region by region: flyaways, shine, dark circles and texture are marked before anything changes. From our portrait retouching blueprint template.",
         "backdrops": "Scene enhancement: the same person, clothes and pose, with only the backdrop rebuilt. An AI-generated concept from our own prompt; no real person and no client photo.",
         "twilight": "Virtual twilight on an illustrative, AI-generated house: the whole frame relit as dusk, with the rooflines and windows checked against the original.",
         "hotel": "A real hotel room, published with the property's permission: brightened, the window view recovered from the photographer's own darker exposure, and the bedding smoothed. The TV picture was added in the edit."
+      },
+      "inquiry": {
+        "lead": "Need a wedding-photo batch edited? Tell us the scope first.",
+        "cta": "Discuss my wedding batch",
+        "note": "Photo count; deadline; desired look/reference; adjustments; source format and required dimensions"
+      },
+      "outsourcing": {
+        "title": "How outsourcing your wedding photo editing works",
+        "steps": [
+          [
+            "Share a representative sample",
+            "Leave your contact details and brief. We reply with how to send a few representative images and a reference gallery. This form does not upload photos."
+          ],
+          [
+            "Agree the look and scope",
+            "Discuss colour, skin and local edits. Mark must-preserve details; confirm source formats and output dimensions. Culling, RAW development and layered-file delivery are not assumed."
+          ],
+          [
+            "Review before scaling",
+            "Check a sample against the originals. Confirm the quote, deadline and scope before agreeing the full batch; there is no fixed turnaround promise here."
+          ]
+        ],
+        "faq": [
+          [
+            "What does wedding outsourcing cost?",
+            "It depends on the files, number of images, edit complexity and deadline. The cost guide explains the variables; your quote follows sample review."
+          ],
+          [
+            "Can I match an existing gallery?",
+            "Provide a reference look and examples from the different lighting conditions in the new gallery. Review consistency and critical details in the sample before a larger batch."
+          ],
+          [
+            "Do you guarantee that every pixel stays unchanged?",
+            "No universal pixel-preservation promise applies to all edits. Tell us which areas must stay unchanged, and compare faces, clothing, crop and background with the original. The agreed method and scope depend on the sample."
+          ]
+        ],
+        "cost": "Read the wedding photo editing cost guide",
+        "editor": "See portrait and wedding editing examples",
+        "product": "Need product-photo retouching instead?"
       }
     }
   },

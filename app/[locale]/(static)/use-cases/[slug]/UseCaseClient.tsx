@@ -458,13 +458,14 @@ export default function UseCaseClient({
           <div className="mt-5 text-left">
             <p className="mb-2.5 text-sm font-medium text-neutral-700">
               <span aria-hidden="true" className="mr-1.5">⚡</span>
-              {tGlobal("interconnection.leadCaptureLead")}
+              {t.has(`${slug}.inquiry.lead` as never) ? t(`${slug}.inquiry.lead` as never) : tGlobal("interconnection.leadCaptureLead")}
             </p>
             <InlineContactCapture
               className="max-w-xl"
               source={`use-case:${slug}`}
               subject={title}
-              cta={tGlobal("interconnection.leadCaptureCta")}
+              cta={t.has(`${slug}.inquiry.cta` as never) ? t(`${slug}.inquiry.cta` as never) : tGlobal("interconnection.leadCaptureCta")}
+              note={t.has(`${slug}.inquiry.note` as never) ? t(`${slug}.inquiry.note` as never) : undefined}
               trackingId={`${slug}::contact-scope`}
             />
           </div>
@@ -501,6 +502,31 @@ export default function UseCaseClient({
           </div>
         )}
       </div>
+
+      {slug === "for-photographers" && t.has(`${slug}.outsourcing.title` as never) && (
+        <section className="mb-12 space-y-6" aria-labelledby="outsourcing-title">
+          <h2 id="outsourcing-title" className="text-2xl font-bold">{t(`${slug}.outsourcing.title` as never)}</h2>
+          <ol className="grid gap-4 md:grid-cols-3">
+            {[0, 1, 2].map((i) => (
+              <li key={i} className="rounded-xl border border-neutral-200 p-5">
+                <h3 className="font-semibold">{i + 1}. {t(`${slug}.outsourcing.steps.${i}.0` as never)}</h3>
+                <p className="mt-2 text-sm leading-6">{t(`${slug}.outsourcing.steps.${i}.1` as never)}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="space-y-5">
+            {[0, 1, 2].map((i) => <div key={i}>
+              <h3 className="font-semibold">{t(`${slug}.outsourcing.faq.${i}.0` as never)}</h3>
+              <p className="mt-2 text-sm leading-6">{t(`${slug}.outsourcing.faq.${i}.1` as never)}</p>
+            </div>)}
+          </div>
+          <nav className="flex flex-wrap gap-4 text-purple-700 underline" aria-label={t(`${slug}.outsourcing.title` as never)}>
+            <IntlLink href="/blog/wedding-photo-retouching-cost">{t(`${slug}.outsourcing.cost` as never)}</IntlLink>
+            <IntlLink href="/tools/wedding-photo-editing">{t(`${slug}.outsourcing.editor` as never)}</IntlLink>
+            <IntlLink href="/tools/product-photo-retouching-service">{t(`${slug}.outsourcing.product` as never)}</IntlLink>
+          </nav>
+        </section>
+      )}
 
       {(USE_CASE_EXAMPLES[slug]?.length ?? 0) > 0 &&
         t.has(`${slug}.examples.title` as never) && (

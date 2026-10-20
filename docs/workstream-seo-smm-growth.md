@@ -1,6 +1,6 @@
 # Workstream: SEO + SMM + Growth Analytics — Scope
 
-> Defined 2026-06-26. **Last updated 2026-09-17.** This is the scope/definition of the "SEO + SMM +
+> Defined 2026-06-26. **Last updated 2026-10-20.** This is the scope/definition of the "SEO + SMM +
 > Growth Analytics" workstream. Living doc. Per memory `feedback_workstream_scope_growth_seo_blogs.md`,
 > this workstream's scope = growth / SEO / blogs only (the daily-content-drop
 > hongjie-patch workflow is a SEPARATE workstream).
@@ -5227,3 +5227,173 @@ Assets: `public/generation-examples/ai-wedding-photo-generator.jpg` and `ai-pet-
 Release dependency verified in local backend source: `curify_background/app/routers/nano_templates.py` reads the frontend template registry from GitHub **main** and caches it for four hours. These templates must reach main and the backend cache must refresh before a production generation test can succeed. A feature-branch preview alone is insufficient. Do not submit these new tool URLs to GSC until this dependency and the production generation/download check pass. No main merge, production deployment, live paid generation or GSC submission was performed in this pass. Cat-video work remains a later bounded validation task; no video-generator claims were added to these image pages.
 
 Validation: TypeScript passed; six unit tests passed (four existing SEO tests plus two template/tool contracts verifying ownership, upload requirement, prompt defaults and credit/provenance copy). Browser smoke passed both pages' HTTP 200, self-canonicals, image loading, subject-specific upload labels, style selection, mocked upload/generation request payloads and result rendering. Template library routes redirected to their owning tools; Spanish tool fallback was noindex; the sitemap listed one English URL per new tool and no duplicate backing-template URL. No browser page errors. Mobile screenshots were inspected. Test uploads/results were intercepted mocks (not real generation quality evidence); no credits were spent or external contact messages sent. Initial browser checks caught and fixed missing tool-card translation keys and empty prompt defaults. `git diff --check` passed. Changes remain local and uncommitted; the temporary preview server was stopped after verification.
+
+
+<a id="consumer-seo-targets-2026-10-20"></a>
+## 2026-10-20 — C 端首页目标与新一轮 KD 清单
+
+来源：[ICP Growth Strategy](https://github.com/super-inbox/curify-gtm/blob/main/icp-growth/strategy.md)，GitHub main 与本地 10-18 版本核对一致。此节是消费者 SEO 子计划，不把整个商业批量交付策略改为 C 端。个人／微型经营者的规模标签不是消费属性：摄影师外包、卖家商品图、酒店／房产采购仍属商业需求。
+
+### 目标及页面归属
+
+| 顺序 | 方向 | 目标词 | 已有证据 | 页面／实施状态 |
+|---|---|---|---|---|
+| P0 维护 | ASL 自助 | asl video translator; asl video translation | 10-12 历史 GSC 前者位置2.9，后者位置4.8；后者此前 SEMrush 260/月、KD17。这不是10-20新排名 | `/tools/asl-video-translator`；保留 URL，关注有效输出、付费和回访 |
+| P0 新增 | AI 婚纱照片 | ai wedding photo generator; ai wedding photos | 10-18 截图：170/KD7；260/KD8 | `/tools/ai-wedding-photo-generator`；`b30668ab` 已推送，生产生成及 Google 收录未在本次验证 |
+| P0 新增 | 宠物肖像 | ai pet portrait generator; ai pet photo generator | 10-18：320/KD16；40/KD19 | `/tools/ai-pet-portrait-generator`；同上 |
+| P1 验证 | 宠物纪念／故事视频 | pet memorial video maker；本轮新增 custom/personalized/通用词 | maker 已查：20/月，KD不可用 | 自助工具与人工定制是两种意图；先核词、样片、范围与付费意愿，不先造多个页 |
+| P1 验证 | 猫视频娱乐／创作 | ai cat video generator | 110/月、KD11 | 有界视频流程验证；不能拿宠物肖像静图代替视频证明，不默认这些访客购买纪念片 |
+| P1 验证 | 婚纱／婚礼视频 | ai wedding video generator; ai wedding invitation video; ai wedding invitation video maker | 分别20、50、20/月，KD均不可用 | 先分清照片动画、故事片、邀请视频；各自验收，暂不批量建页 |
+| P2 发现 | 旅行纪念 | travel video from photos; custom travel video | 本轮新查词，未找到既有 KD 记录 | 核对真实素材剪辑与 AI 新场景生成意图；旅拍商家可作为 B2B2C 渠道 |
+| P2 发现 | 纹身故事 | tattoo story video; animate tattoo | 本轮新查词，未找到既有 KD 记录 | 前者故事套餐、后者图片动画；用结果验证是否同一需求，不因后者有量就改变故事定位 |
+| P2 发现 | 个人经历／纪念故事 | 暂不指定宽泛主词 | 策略只给出方向，缺具体消费场景与 KD | 先收集真实询盘用语，再选故事／周年／成长等有明确交付的子任务 |
+| 延续原有自助 | 图片升清等 | 不新增宽泛主词 | 策略允许继续 self-serve；本次无新数据 | 不因 ICP 提及便升级为 SEO P0 |
+
+“首页”是投入目标，不是排名保证或当前状态。10-18 截图国家数据库不可见、数值为估计；同义词量不相加。婚纱生成与婚礼实拍后期／外包分开；宠物肖像与动物教育主题分开；既有页面有相邻关键词不自动构成 cannibalization。
+
+婚纱同页长尾：`ai couple wedding photo generator`（20、KD不可用）、`ai pre wedding photoshoot`（10、KD不可用）、`ai wedding photo generator from photo`（可见空白行）。宠物同页长尾：`ai dog portrait generator`（30、KD不可用）、`custom ai pet portraits`（10、KD不可用）、`pet royal portrait generator`（可见空白行）。不重复索取这批词作为“从未查过”。
+
+### 本轮只新增 8 个 KD 查询
+
+去重范围：SEO 文档及 raw 内可搜索的 md/txt/json/csv 记录、6-10 travel KD 文档、10-13 KD 候选清单、10-18 原34词清单及其截图转录。下列词未找到既有 KD 查询／结果记录，且不在10-18原清单；不声称已对历史所有图片做完 OCR。6月旅行批次主要是行程、海报、地图，不等于本轮视频词已查。
+
+| 新词 | 查询目的／待验证意图 |
+|---|---|
+| pet memorial video | 比较通用交付词与已查 maker 的需求 |
+| custom pet memorial video | 定制服务购买入口 |
+| personalized pet memorial video | 定制服务近义词；与 custom 比较，不预设独立页 |
+| pet memorial slideshow | 检查传统照片剪辑是否比 AI 故事更符合搜索预期 |
+| travel video from photos | 明确照片输入的视频自助用途 |
+| custom travel video | 检查人工交付／定制需求 |
+| tattoo story video | 检查策略中故事套餐是否有可搜索需求 |
+| animate tattoo | 对照图片动画需求，与故事片区分 |
+
+[逐行查询文件](seo/semrush-kd-new-consumer-2026-10-20.txt)。请保持国家数据库一致并记录国家、查询日期、Volume、KD、Intent、CPC；其他国家单独一批。没有 KD 的词仍然是未知，不记成0；maker 已查但不可用属于可选刷新项，不列入这份新词文件。
+
+### 下一步及完成门槛
+
+1. 优先把已实现的婚纱／宠物工具跑通真实生成：注册表必须进入 main，并等待或刷新后端四小时缓存；验证实际输入→输出→下载后再检查／提交 GSC。工具是搜索目的地，两个 backing-template 路由转向工具，不另建竞争页。
+2. 用完整窗口衡量目标 query/page 的排名、点击、生成完成、付费／定制咨询；ASL 历史贡献仍优先保护。本次未刷新 GSC，不能把历史位置当作当天名次。
+3. 新 KD 用来决定下一个视频工作流，而非自动触发八个新页面。宠物纪念优先核验；旅行和纹身在有明确交付样本／询盘后再升级。
+4. 暂不扩一般介绍博客或全语言版本。样例、说明与限制先集中到拥有该任务的工具／服务页；独立 case study 可服务后续相关创作者／商家引用。
+
+状态更正：10-18 实现已于此前请求提交并推送为 `b30668ab`（产品修图为 `28d4ab94`）；当时“local/uncommitted”描述是验证时点记录。此节只更新策略索引及新词文件，没有执行新的部署、GSC 提交或外联。
+
+
+<a id="consumer-kd-results-2026-10-20"></a>
+### 2026-10-20 — 8 词 KD 回填与优先级调整
+
+用户提供截图，已保存至 `raw/consumer-seo-2026-10-20/semrush-kd-8-keywords.png`。8词均可见，国家／数据库未显示。唯一有 KD 的行显示更新于1个月前；其他行提示刷新指标。下表“空白”表示可见行的指标单元格空白，“不可用”表示明确显示不可用；二者都不等于0。原 `docs/seo/semrush-kd-new-consumer-2026-10-20.txt` 现为已查询历史清单，不再是未查任务。
+
+| 关键词 | 月搜索量 | KD | Intent | CPC USD | 广告竞争指标 |
+|---|---:|---:|---|---:|---:|
+| animate tattoo | 90 | 21 | I（信息型） | 0.00 | 0.33 |
+| pet memorial video | 20 | 不可用 | 不可用 | 0.00 | 0.54 |
+| pet memorial slideshow | 0 | 不可用 | 不可用 | 0.00 | 0.00 |
+| custom pet memorial video | 空白 | 空白 | 空白 | 空白 | 空白 |
+| personalized pet memorial video | 空白 | 空白 | 空白 | 空白 | 空白 |
+| travel video from photos | 空白 | 空白 | 空白 | 空白 | 空白 |
+| custom travel video | 空白 | 空白 | 空白 | 空白 | 空白 |
+| tattoo story video | 空白 | 空白 | 空白 | 空白 | 空白 |
+
+解读：只有 `animate tattoo` 本轮完成数值 KD 验证，符合既定≤26偏好。CPC=0不是无人付费或无商业价值的证明；“信息型”标签也不能单独决定做博客还是工具。`pet memorial video` 与此前 `pet memorial video maker` 均显示20/月，但可能同义覆盖，不相加为40。slideshow的0是本次工具估计；不推断没人需要这类交付。五个空白词尚无可用指标，不据此否定业务。
+
+当前页面抽样：[Ink-N-Motion](https://inkinmotionstudio.com/)展示上传纹身照片→5–10秒短片，也提供故事表达；[Tattoo AI Design](https://tattooai.design/ai-tattoo-video-generator/)强调纹身设计／皮肤运动预览。因此 `animate tattoo` 的工作假设为照片／设计动画的工具意图，兼有教程和专业创作者需求，不是纯 C 端、也不是本人纹身寓意微电影的等价词。这是页面类型核查，不是按指定国家完整抓取的 Google 前十结果或竞争难度重新测算。
+
+优先级更新（覆盖本节之前“宠物纪念优先核验”的宽泛搜索扩展建议）：
+
+1. **现有 P0 不变**：保护 ASL；优先完成婚纱照片与宠物肖像的生产生成、下载、收录及转化验证。新截图没有理由打断已实现工作。
+2. **下一轮视频 SEO 验证**：`ai cat video generator`（之前110/KD11）和 `animate tattoo`（本轮90/KD21）是已有数值依据的候选；按可用样片、真实询盘和成本选择一个先验证，不同时扩建。纹身动画从仅发现提升为 P1 有界验证，不直接承诺 P0 上线。
+3. **纹身最低验证项**：用获准或合成的纹身输入做2–3条短片，检查线条／主体保留、皮肤与肢体失真、动作、成本和下载。流畅的动画不等于故事套餐验证。若通过，再建一个明确“上传纹身→短片”的生成目的地；个人故事作为可选定制咨询，不以低价动画代替故事报价。当前未创建该工具或运行视频生成。
+4. **宠物纪念仍可做业务验证**：已有20/月信号与 ICP 场景，适合主动询盘／合作商家试单和一条完整故事样片；本批数据不支持立即扩建 custom/personalized/slideshow 三个SEO页，也不证明该服务不值得卖。
+5. **旅行、纹身故事词保持发现阶段**：没有新指标，不为其批量写博客或新增泛服务页。先用客户实际语言、样片和订单验证。暂不再扩新 KD 清单；如需补数据，优先刷新 pet memorial video/maker，并注明国家数据库。
+
+本次只归档截图、回填结果并更新索引。未刷新 GSC、发布页面、提交索引、commit 或 push。
+
+
+<a id="seo-execution-roadmap-2026-10-20"></a>
+## 2026-10-20 — KD 当前决策表与两周执行路线图
+
+本节合并用户10-18、10-20截图及已记录的商业词数据，是已有证据的更新，不是重新向 SEMrush 查询。完整34词与8词转录保留在前两节；未显示、空白、不可用继续保留原义，不当作 KD0。国家数据库未确认，跨批次不做精确比较，同义词搜索量不相加。首页是方向，不是两周内的承诺。
+
+### 当前 KD 决策表
+
+| 词／词组 | 月量 / KD | 证据日期 | 当前行动 |
+|---|---|---|---|
+| ai wedding photo generator | 170 / 7 | 10-18 | P0：现有婚纱生成工具，补真实输入输出证据 |
+| ai wedding photos | 260 / 8 | 10-18 | 同一婚纱工具覆盖，不另建页 |
+| ai pet portrait generator | 320 / 16 | 10-18 | P0：现有宠物肖像工具，补猫狗实际样例 |
+| ai pet photo generator | 40 / 19 | 10-18 | 同一宠物工具覆盖 |
+| ai cat video generator | 110 / 11 | 10-18 | P1：视频流程验证候选，暂不建页 |
+| animate tattoo | 90 / 21 | 10-20 | P1：照片动画验证候选，不等同于纹身故事服务 |
+| ai couple wedding photo generator | 20 / 不可用 | 10-18 | 婚纱工具内自然覆盖 |
+| ai pre wedding photoshoot | 10 / 不可用 | 10-18 | 同上，说明生成场景并非现场拍摄 |
+| ai dog portrait generator | 30 / 不可用 | 10-18 | 宠物工具内狗肖像样例与说明 |
+| custom ai pet portraits | 10 / 不可用 | 10-18 | 区分自助生成与人工定制联系入口 |
+| ai wedding invitation video | 50 / 不可用 | 10-18 | 邀请函视频需求待验证 |
+| ai wedding invitation video maker; ai wedding video generator | 各20 / 不可用 | 10-18 | 不合计、不先拆多个页 |
+| ai dog video generator | 30 / 不可用 | 10-18 | 不从猫视频数据外推需求 |
+| ai pet video generator; ai pet dancing video | 各10 / 不可用 | 10-18 | 暂留待验证池 |
+| pet memorial video maker; pet memorial video | 各20 / 不可用 | 10-18 / 10-20 | 先样片与交付验证，不能当成40/月 |
+| pet memorial slideshow; ai pet portrait prompts | 各0 / 不可用 | 10-20 / 10-18 | 低量证据，不是零难度 |
+| ai wedding photo prompts | 20 / 不可用 | 10-18 | 可作为实测指南的辅助意图 |
+| custom/personalized pet memorial video; travel video from photos; custom travel video; tattoo story video | 空白 / 空白 | 10-20 | 尚无量化依据，暂不升级 P0 |
+| outsource wedding photo editing | 90 / 11 | 10-13 | 商业维护线：完成摄影师服务页已有改动 |
+| product photo retouching service | 40 / 16 | 10-13 | 商业维护线：现有服务页验收询盘 |
+| jewelry photo retouching | 210 / 19 | 10-07 | 先在商品修图页完善首饰样例；独立页仍需意图与交付验证 |
+| virtual twilight | 140 / 0 | 10-07 | 房产页收录／Google canonical 回查 |
+| asl video translation | 260 / 17 | 10-12 | 保护已有 ASL 入口及转化，不新建同义词页 |
+
+10-18其余可见空白及7个未显示关键词见原转录，不从缺失行补数。无需立刻再查一大批词：目前足够决定先完成婚纱与宠物肖像。若补查，先保持同一国家数据库、刷新 memorial video/maker；仍缺数据时以真实询盘验证，而非反复扩词。
+
+### 10-20 生产状态复核
+
+公开 HTTP 检查：婚纱生成、宠物肖像、商品修图、房产修图、ASL 工具均200、self-canonical，标题与页面任务一致。GitHub main 的 nano_templates.json 已包含 template-wedding-portrait-styles 与 template-pet-portrait-styles，移除旧计划中“尚未进入 main”的阻塞。后端实际加载版本、真实生成与 Google 收录仍未验收；HTTP200不能证明这三项。
+
+婚纱现有 description 已说明从双人照生成、studio/garden/traditional风格；宠物已说明猫狗输入、三种风格及特征核对。因此没有依据把重写所有 description 当作第一项。两页已有插图是概念展示，不是 Curify 实际生成证据。本轮未刷新 GSC；历史流量数字仍只代表此前完整窗口，不能用于声称今天排名提升。
+
+### 执行安排（计划交付量，不是已完成量）
+
+| 时间 / 优先级 | 要交付什么 | 页面与抓手 | 验收／下一步 |
+|---|---|---|---|
+| 10-20～10-23 / P0 | 两个工具各跑通一次完整真实生成、下载、积分扣费；核对后端模板版本与失败提示 | 婚纱与宠物现有工具，模板负责执行 | 记录输入、参数、输出及实际费用；不能只用 mock 测试替代。失败先修流程 |
+| 10-20～10-23 / P0 | 7组可复现输入→输出样例：婚纱3组、猫2组、狗2组 | 直接补在两工具页，保留样例风格与对应生成入口 | 检查双人身份、手脸、宠物花纹、背景；说明授权／生成输入来源、局限和失败案例。用真实流水线，不能把外部 ImageGen 概念图标成产品输出 |
+| 10-20～10-23 / P0 | 检查两新工具及商品修图的 Google 索引状态；回查房产 Google canonical；补转化基线 | GSC inspection + 搜索落地→上传→成功→下载→付费；服务页记录样例请求 | 若新页未收录且流程验收通过，请用户提交一次。房产已提交过，先读诊断，不盲目重复。分析排除内部测试 |
+| 10-20～10-23 / P0维护 | 完成摄影师外包页现有 EN/ZH 改动的检查与发布；核验商品页 batch CTA；ASL入口回归 | 保留生成／婚礼实拍后期／商品服务各自页面归属 | 无交叉承诺；表单记录来源；不因新 C 端方向中断商业维护 |
+| 10-24～10-27 / P0 | 两页首屏、title/H1、FAQ及图片 alt/caption 一轮定向优化；检查并补上下文内链 | portrait/animal主题与相关现有文章→对应工具；工具→具体风格 | 每个搜索任务只有一个主要工具URL；已有链接不重复堆砌。覆盖 from photo、couple、cat/dog 等自然长尾 |
+| 10-24～10-27 / P0 | 2篇实测支持博客，各一篇婚纱输入指南、猫狗特征保留指南 | 文章回答输入、结果与修正问题，链接到生成工具 | 每篇至少使用2组上述样例，明确参数、限制与下一步；不复制工具页争抢同一主词；样例未通过则延后发布 |
+| 10-24～10-27 / P1 | 准备1份可引用案例包、5个相关发布者／合作方名单 | 真实对照图、方法、失败边界、原始工具／案例URL；ASL可用既有工程文章 | 先形成可审阅材料；联系由用户执行或另行授权。记录实际发布URL、指向页面与引荐访问，不把自发帖计为独立背书 |
+| 10-28～11-03 / P0复盘 | 拉取完整窗口 GSC + 站内转化，按 query/page/country/device 看变化 | 两个新工具与ASL／商业页分开评估 | 未收录→查技术／重复内容；有展示无点击→检查意图与snippet；有点击无生成→改流程；生成无付费→查输出价值、价格与下载路径 |
+| 10-28～11-03 / P1条件项 | 在猫视频与 animate tattoo 中仅选一个，做2～3个短片探针 | 用户询盘匹配度、实际质量、成本决定顺序；不能只比较KD | 有可重复的输入→输出流程、可接受成本和明确CTA才排新工具。未过关不建页；纪念视频继续服务样片验证 |
+
+### 标题、描述与博客的具体取舍
+
+- 婚纱工具候选标题：`AI Wedding Photo Generator from Your Photo | Curify`；宠物候选：`AI Pet Portrait Generator for Cats & Dogs | Curify`。这是待验收的文案建议，本次未改线上 metadata。现有 description 已较准确，先与实际流程核对，再补缺失信息，不为“做SEO”反复换写法。
+- 婚纱博客工作题：`How to Choose a Couple Photo for AI Wedding Portraits`；宠物博客工作题：`How to Create an AI Pet Portrait That Keeps Your Pet’s Markings`。后者应展示能与不能保留的特征，不能作绝对保真承诺。不是两个新的主词工具页，也不为每种风格新建一页。
+- 网页 title、H1、正文和 meta description 是可控项，搜索结果展示由 Google 决定；Google 主要依据页面内容、也可能采用 meta description。参见 [Google snippets](https://developers.google.com/search/docs/appearance/snippet) 与 [title links](https://developers.google.com/search/docs/appearance/title-link)。目前没有新 GSC 证据支持全站标题改造。
+- 新页重点是任务匹配、证据、可用性与发现路径；有足够同国家／设备曝光且排名相对稳定的现有页，再做有记录的标题/description调整。不要把两周短窗波动解释为某次文案改动的因果效果。
+- 权威建设用原创材料换相关引用。Medium/Substack可改写分发并链接原工程内容，但发布在大平台本身不证明获得独立推荐或排名提升。先准备材料与小规模相关合作，不买量式铺链接。
+
+### 两周的成功标准与投入边界
+
+目标产出：2个真实可用的生成入口、7组实测样例、2篇支持指南、1份引用材料包、可追踪的生成／询盘漏斗，以及明确的收录状态。ASL与商业页维护并行。执行上建议约60%用于生成流程与样例、20%用于页面/博客/内链、20%用于测量与分发准备，按实际阻塞调整。
+
+第7天先评估流程与发现问题，第14天观察是否出现相关搜索曝光、非内部用户启动／完成／咨询；不因新页两周没上首页就判断失败。第28天再用完整周期审视关键词与转化趋势。暂无基线时先采集，不写虚构的增长百分比承诺。若质量或转化未过关，暂停新工具、多语言铺量和更多博客，把下一周期投入用于现有流程。
+
+本次完成：KD决策表、生产状态复核、两周路线图与索引更新；没有运行付费生成、发布新文章、外联、提交GSC或commit/push。仓库旧 `data/seo/kd_terms.csv` 尚未同步本轮截图，当前KD依据以上来源表；后续用该CSV自动关联GSC前需先同步，不能把旧机器表当成最新总表。
+
+
+<a id="seo-fast-follow-2026-10-20"></a>
+### 2026-10-20 — 执行调整与收录验收
+
+用户确认优先收尾已有页面、内链和长尾内容，再复用样例写一篇指南。此节取代前面的固定7组样例、首周必须2篇博客的交付数量；数量不是上线门槛。每个生成工具一次代表性真实验收即可，新增素材按缺口补。
+
+**GSC inspection（10-20）已完成。** 七个URL均为 Submitted and indexed，Google canonical 与自身URL一致：婚纱生成（最后抓取10-19）、宠物肖像（10-18）、商品修图（10-17）、英文房产（10-19）、中文房产（10-13）、ASL（10-19）、摄影师页（10-17）。原始结果：`raw/seo-acceptance-2026-10-20/inspection.tsv`。房产canonical问题已恢复；这些现有页不需要再提交。本次不是搜索排名或转化数据刷新。
+
+**本地实施：** 摄影师服务页EN/ZH完成批量询盘、样例审核流程、范围与报价说明；保留编辑与生成的意图区分。婚纱工具补couple/from-photo/pre-wedding问答及指南入口，宠物工具补猫狗参考照片、花纹保留检查与定制询盘说明。新英文指南 `/blog/choose-photo-for-ai-wedding-portraits` 复用获授权的完整W1概念图，保留页脚；不称为新工具实测或客户交付。新增工具→指南、portrait主题→指南、指南→生成/编辑/摄影师服务的上下文链接，保留已有animal→宠物工具链接。注册博客列表、英文sitemap、canonical、非英文noindex与路由白名单，按实际修改更新工具和摄影师页lastmod。
+
+**素材来源：** `curify-gallery/smm_daily/2026-09-01-retouching/w1-wedding-portrait-retouch.jpg`；用户10-08已解除使用限制。本次原样复制到 `public/generation-examples/wedding-retouching-concepts.jpg`，不裁切页脚。文章把三行概念图用于说明需要检查的细节，不声称为当前生成器输出。
+
+**验收边界：** 公开页面可读与登录前生成门禁已确认；当前浏览器未登录，真实上传→生成→下载→扣费仍待测试账号登录，不以静态/模拟检查冒充完成。商品服务表单的实际邮件/数据库入库尚未测试。本次不提交虚假客户询盘。ASL代码未修改，保留其已有索引与入口。
+
+验证结果：TypeScript无错误，5个相关测试文件共14项通过，git diff --check通过。新增表单测试使用模拟传输，覆盖商品／摄影师brief与source传递、成功事件、失败保留内容及重试，不发送真实邮件。浏览器确认商品表单空邮箱会被拦截；指南桌面渲染与图片展示正常。六条本地页面检查均200，包含摄影师EN/ZH、两生成工具、ASL及指南ZH fallback；后者noindex且canonical指向EN。新指南和页面改动当前为本地工作区版本，尚未commit/push或部署；新指南上线后再做GSC检查，不能用现有七页已收录状态代替它。

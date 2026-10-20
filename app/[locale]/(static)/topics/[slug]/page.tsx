@@ -456,6 +456,7 @@ export default async function Page({ params }: Props) {
           <h2 className="font-semibold">{slug === "animal" ? "Create a portrait of your pet" : "Create a wedding-inspired portrait"}</h2>
           <p className="mt-2 text-sm">Upload your reference photo and choose a portrait style.</p>
           <a className="mt-3 inline-block font-semibold text-purple-800 underline" href={slug === "animal" ? "/tools/ai-pet-portrait-generator" : "/tools/ai-wedding-photo-generator"}>Open the portrait generator →</a>
+          {slug === "portrait" && <p className="mt-3 text-sm"><a className="text-purple-800 underline" href="/blog/choose-photo-for-ai-wedding-portraits">How to choose a couple photo and review the result</a></p>}
         </aside>
       )}
       {slug === "mockups" && ["en", "zh"].includes(localeStr) && (

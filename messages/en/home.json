@@ -2160,7 +2160,11 @@
       "q5": "Are the illustrations examples of this tool’s output?",
       "a5": "The style board is an illustrative ImageGen concept using fictional subjects. It is not a production benchmark, a client delivery or a guarantee of identity preservation.",
       "q6": "Does this make a video?",
-      "a6": "No. This page generates a still portrait. Video animation is a different workflow."
+      "a6": "No. This page generates a still portrait. Video animation is a different workflow.",
+      "q7": "Can I make a couple or pre-wedding portrait from one photo?",
+      "a7": "Yes. Start with one clear photo showing both adults. Choose a studio, garden or traditional Chinese wedding style. The result is a newly generated scene, not a record of a real ceremony.",
+      "q8": "Which couple photo should I choose?",
+      "a8": "Use a sharp photo with both faces visible and a simple pose. Avoid sunglasses, deep facial shadows and contact sheets. Check each face, hands and clothing against your source after generation."
     },
     "deep": {
       "what": {
@@ -2194,7 +2198,12 @@
       "cta": "Discuss my collection",
       "note": "Image count, desired styles, source photos and deadline"
     },
-    "example": "Illustrative AI-generated style board made with ImageGen. These are fictional subjects, not customer images or verified outputs from this generator."
+    "example": "Illustrative AI-generated style board made with ImageGen. These are fictional subjects, not customer images or verified outputs from this generator.",
+    "preparation": {
+      "title": "Choose your photo before choosing the scene",
+      "body": "Use one clear photo of both adults. Our guide explains the input, a focused style brief and the details to compare before keeping a result.",
+      "cta": "Read the couple-photo preparation guide"
+    }
   },
   "aiPetPortraitGenerator": {
     "title": "AI pet portrait generator",
@@ -2228,7 +2237,13 @@
       "q5": "Are the illustrations examples of this tool’s output?",
       "a5": "The style board is an illustrative ImageGen concept using fictional subjects. It is not a production benchmark, a client delivery or a guarantee of identity preservation.",
       "q6": "Does this make a video?",
-      "a6": "No. This page generates a still portrait. Video animation is a different workflow."
+      "a6": "No. This page generates a still portrait. Video animation is a different workflow.",
+      "q7": "Can I create both cat and dog portraits?",
+      "a7": "Upload one photo of one cat or dog. Choose a studio, painted or royal-style portrait and describe distinctive features such as a white chest patch or different-coloured eyes. Compare those details after generation.",
+      "q8": "What makes a useful pet reference photo?",
+      "a8": "Choose a sharp image with the eyes, ears and coat markings visible. Avoid a distant subject, motion blur or several animals in one frame. Use a wider photo if the body or tail matters; features outside the source crop have to be invented.",
+      "q9": "Can I request a custom pet portrait collection?",
+      "a9": "Use the custom collection form to share your image count, styles and deadline. We review the scope before quoting. The self-service generator makes one still image per generation; it does not create a memorial, talking or dancing video."
     },
     "deep": {
       "what": {
