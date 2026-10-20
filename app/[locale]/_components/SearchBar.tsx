@@ -1,5 +1,6 @@
 "use client";
 
+import { sourceVideoUrl } from "@/lib/searchQuality";
 import { withSearchAttribution } from "@/lib/search-attribution";
 
 import { useState, useRef, useEffect, useCallback } from "react";
@@ -214,7 +215,7 @@ export default function SearchBar({ locale }: Props) {
     // we'd submit a query different from what the user clicked on.
     // No fallback on /search (refine-mode placeholder is "Refine your
     // search…", not a real query).
-    let q = query.trim().toLowerCase();
+    let q = sourceVideoUrl(query) ?? query.trim().toLowerCase();
     if (!q && !isSearchPage) {
       // Priority: focus-time snapshot → live DOM placeholder → closure idx.
       // The DOM read is the single source of truth for what the user sees
@@ -239,6 +240,11 @@ export default function SearchBar({ locale }: Props) {
     track({ contentId: q, contentType: "topic_capsule", actionType: "search" });
     setOpen(false);
     setQuery("");
+    if (sourceVideoUrl(q)) {
+      router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
+      router.refresh();
+      return;
+    }
     // Try to match a known topic/tool entry; fall back to search results page
     const exact = filterSuggestions(q, 1, localize)[0];
     const exactLocalized = exact ? localize(exact.slug)?.toLowerCase() : undefined;

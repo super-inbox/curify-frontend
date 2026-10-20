@@ -1,6 +1,7 @@
 // CreateNewModal.tsx
 "use client";
 
+import { youtubeSource } from "@/lib/searchQuality";
 import { useAtom } from "jotai";
 import {
   modalAtom,
@@ -119,7 +120,7 @@ export default function CreateNewModal() {
     setRequireTranslation("No");
 
     // Clear any YouTube URL / cost preview carried over from another tool.
-    setYoutubeUrl("");
+    setYoutubeUrl(youtubeSource(new URLSearchParams(window.location.search).get("source_url") ?? "") ?? "");
     setYoutubeMeta(null);
     setProbingYoutube(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps

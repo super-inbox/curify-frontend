@@ -308,7 +308,7 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
     aliases: [
       "subtitle", "subtitles", "captions", "captioner", "srt",
       "bilingual subtitles", "subtitle captioner",
-      "字幕", "双语字幕", "subtítulos", "subtítulos bilingües",
+      "字幕", "字幕翻译", "翻译字幕", "双语字幕", "subtítulos", "subtítulos bilingües",
     ],
   },
   {
@@ -570,12 +570,12 @@ function fuzzyMatch(target: string, query: string, maxEdits = 1): boolean {
  * ASCII phrases are matched on word boundaries so "dub" does NOT fire on
  * "dublin travel" and "srt" does NOT fire on "dessert". Non-ASCII phrases
  * (CJK etc. — no word chars to bound) use plain containment, which is safe
- * because CJK has no intra-word splitting. Phrases shorter than 3 chars are
+ * because CJK has no intra-word splitting. ASCII phrases shorter than 3 chars and CJK phrases shorter than 2 are
  * ignored — too generic to be a reliable intent signal inside a longer query.
  */
 const PHRASE_IN_QUERY_MIN = 3;
 function phraseInQuery(phrase: string, q: string): boolean {
-  if (phrase.length < PHRASE_IN_QUERY_MIN) return false;
+  if (phrase.length < (/^[\x00-\x7F]+$/.test(phrase) ? PHRASE_IN_QUERY_MIN : 2)) return false;
   if (/^[\x00-\x7F]+$/.test(phrase)) {
     const esc = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     return new RegExp(`(?:^|\\W)${esc}(?:\\W|$)`).test(q);

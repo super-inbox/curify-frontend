@@ -1,3 +1,4 @@
+import curatedGallery from "@/lib/generated/search-curated-gallery.json";
 import { apiClient } from "./api";
 import {
   NanoPrompt,
@@ -18,6 +19,9 @@ const REVALIDATE_LIST_SEC = 60 * 60 * 24;         // 24 hours
 
 export const nanoPromptsService = {
   async getNanoPrompt(id: string | number): Promise<NanoPrompt> {
+    // Reviewed static records remain usable in previews before Redis sync on main.
+    const curated = curatedGallery.find(p => String(p.id) === String(id));
+    if (curated) return { ...curated, related: [] };
     const response = await apiClient.request<NanoPromptDetailResponse>(
       `/nano_prompts/${id}`,
       {

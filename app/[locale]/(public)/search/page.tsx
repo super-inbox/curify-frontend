@@ -1,3 +1,6 @@
+import { retrievalQuery, createSubjectMatcher, subjectGroups, sourceVideoUrl, matchesCuratedGallery } from "@/lib/searchQuality";
+import VideoSourceChooser from "./VideoSourceChooser";
+import curatedGallery from "@/lib/generated/search-curated-gallery.json";
 import { withSearchAttribution } from "@/lib/search-attribution";
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
@@ -347,6 +350,11 @@ export default async function SearchPage({ params, searchParams }: Props) {
   const { locale } = await params;
   const { q = "", within = "", intent = "" } = await searchParams;
   const query = q.trim().toLowerCase();
+  const sourceUrl = sourceVideoUrl(q);
+  if (sourceUrl) return <VideoSourceChooser sourceUrl={sourceUrl} locale={locale} />;
+  const matchQuery = retrievalQuery(query);
+  const hasSubjectConstraint = subjectGroups(query).length > 0;
+  const acceptsSubject = createSubjectMatcher(query);
   const normalizedQuery = normalizeSearchQuery(q);
   const withinSlug = within.trim().toLowerCase();
 
@@ -388,7 +396,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
     redirect(`/${locale}/topics/${wcCountrySlug}-world-cup${redirectMarker}`);
   }
 
-  const tokens = buildSearchTokens(query);
+  const tokens = buildSearchTokens(matchQuery);
   // Stage 7/9 scorer: protected phrases / subject are evaluated against
   // the USER'S ORIGINAL QUERY, computed once here — not re-derived per
   // retrieval path. A narrow decomposition slot (e.g. output="banner")
@@ -741,6 +749,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
     const strictTpl = new Set<string>();
     const relaxedTpl = new Set<string>();
     for (const [tid, blob] of templateSearchBlob) {
+      if (hasSubjectConstraint && !acceptsSubject(blob)) continue;
       const s = scoreBlob(blob, tokens);
       if (s.allPrimary || s.bigramHits >= bigramThr) {
         strictTpl.add(tid);
@@ -772,6 +781,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
     // able to satisfy "black friday"'s protected-phrase/subject check
     // just because it has no phrase concept of its own).
     for (const r of nanoInspiration as InspRecord[]) {
+      if (hasSubjectConstraint && !acceptsSubject(JSON.stringify([r.locales, r.search_aliases, r.params, r.tags]))) continue;
       // Per-inspiration blobs, computed unconditionally (both the
       // template-promoted and standard branches below need them --
       // V2-R3 mechanism A requires the template-promoted branch to be
@@ -1315,9 +1325,10 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // query doesn't match a tag but one of the LLM rewrites does (e.g.
   // user typed `唯美春天`, rewrite produced `watercolor` which IS a
   // known tag), fetch for the first matching rewrite.
-  let galleryPrompts: NanoPromptBase[] = [];
-  const galleryTagCandidates = [query, ...usedRewrites.map((r) => r.toLowerCase().trim())];
+  let galleryPrompts: NanoPromptBase[] = curatedGallery.filter(p => matchesCuratedGallery(query, p));
+  const galleryTagCandidates = subjectGroups(query).length ? [] : [query, ...usedRewrites.map((r) => r.toLowerCase().trim())];
   for (const candidate of galleryTagCandidates) {
+    if (galleryPrompts.length > 0) break;
     if (!NANO_PROMPT_TAG_SET.has(candidate)) continue;
     try {
       // Fetch 3x the visible cap so the post-filter has room to drop
