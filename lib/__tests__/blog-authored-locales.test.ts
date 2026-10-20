@@ -11,6 +11,10 @@ describe('blog sitemap authored locales', () => {
     expect(article[0]).toContain('hreflang="en"');
     expect(article[0]).toContain('hreflang="x-default"');
     expect(article[0]).not.toContain('hreflang="zh"');
+    const weddingGuide = entries.filter(entry => /<loc>[^<]*\/choose-photo-for-ai-wedding-portraits<\/loc>/.test(entry));
+    expect(weddingGuide).toHaveLength(1);
+    expect(weddingGuide[0]).toContain('<loc>https://www.curify-ai.com/blog/choose-photo-for-ai-wedding-portraits</loc>');
+    expect(weddingGuide[0]).not.toContain('hreflang="zh"');
     expect(entries.filter(entry => /<loc>[^<]*\/asl-video-translator<\/loc>/.test(entry))).toHaveLength(10);
   });
 });

@@ -111,8 +111,8 @@ const TOOL_LASTMOD_OVERRIDES: Record<string, string> = Object.fromEntries(
     .map((slug) => [`/tools/${slug}`, "2026-10-12T00:00:00.000Z"]),
 );
 
-TOOL_LASTMOD_OVERRIDES["/tools/ai-wedding-photo-generator"] = "2026-10-18T00:00:00.000Z";
-TOOL_LASTMOD_OVERRIDES["/tools/ai-pet-portrait-generator"] = "2026-10-18T00:00:00.000Z";
+TOOL_LASTMOD_OVERRIDES["/tools/ai-wedding-photo-generator"] = "2026-10-20T00:00:00.000Z";
+TOOL_LASTMOD_OVERRIDES["/tools/ai-pet-portrait-generator"] = "2026-10-20T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/product-photo-retouching-service"] = "2026-10-15T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/real-estate-photo-editing"] = "2026-10-15T00:00:00.000Z";
 
@@ -125,7 +125,7 @@ const USE_CASES_LASTMOD = "2026-08-12T00:00:00.000Z";
 // the shared constant instead would claim every OTHER use-case page changed
 // today, which is the same lie in the other direction.
 const USE_CASE_LASTMOD_OVERRIDES: Record<string, string> = {
-  "for-photographers": "2026-10-15T00:00:00.000Z",
+  "for-photographers": "2026-10-20T00:00:00.000Z",
   "for-dtc-brands": "2026-10-15T00:00:00.000Z",
 };
 

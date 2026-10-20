@@ -370,6 +370,16 @@ export default function ToolGenericClient({
         </section>
       )}
 
+      {slug === "ai-wedding-photo-generator" && t.has("preparation.title" as never) && (
+        <aside className="mt-10 rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+          <h2 className="text-xl font-semibold">{t("preparation.title" as never)}</h2>
+          <p className="my-3 text-sm leading-6">{t("preparation.body" as never)}</p>
+          <Link href="/blog/choose-photo-for-ai-wedding-portraits" locale="en" className="text-purple-700 underline">
+            {t("preparation.cta" as never)}
+          </Link>
+        </aside>
+      )}
+
       <section className="mt-16">
         <h2 className="text-2xl font-semibold mb-4 text-[var(--c1)]">{t("why.title")}</h2>
         <ul className="list-disc list-inside space-y-2 text-base">

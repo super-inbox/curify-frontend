@@ -1,8 +1,31 @@
 # Curify product workstreams — index
 
-_Last updated: 2026-09-02 (workstream A — scene-enhancement template shipped; see the A list below). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
+_Last updated: 2026-10-20 (consumer SEO target index added; earlier workstream snapshots retain their original dates). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
 
 The canonical pointer for the four **product** workstreams (search, tools, growth, vertical use-cases). Companion outbound/GTM workstreams index lives separately at `~/curify-studio/gtm_tools/INDEX.md`.
+
+
+## 2026-10-20 — C 端 SEO 目标索引
+
+依据 [ICP Growth Strategy](https://github.com/super-inbox/curify-gtm/blob/main/icp-growth/strategy.md)（10-18 版本）拆分终端消费者与经营者采购；S 层个人摄影师／店主为经营采购时仍属于 B 端。以下是争取首页的目标，不是现有排名或流量承诺，也不替代 B 端增长策略。
+
+| 优先级 | C 端方向／目标词组 | 目标页面／下一步 |
+|---|---|---|
+| P0 维护 | ASL：`asl video translator`、`asl video translation` | 现有 ASL 工具；保护入口、验证完成与复用，不另建同义词页 |
+| P0 新增 | 婚纱图片：`ai wedding photo generator`、`ai wedding photos` | `/tools/ai-wedding-photo-generator`；已上线、模板已进 main、GSC已收录且canonical正确；真实生成待登录验收 |
+| P0 新增 | 宠物肖像：`ai pet portrait generator`、`ai pet photo generator` | `/tools/ai-pet-portrait-generator`；已上线并收录、canonical正确；模板为生成后端，工具为唯一搜索目的地 |
+| P1 验证 | 宠物纪念视频：自助 maker 与 custom/personalized 服务需求 | 已查：video/maker各20，KD不可用；先故事样片与付费验证，再决定服务页或工具页 |
+| P1 验证 | 猫视频、婚纱视频／邀请视频 | 猫视频有 KD11，但不等于宠物纪念需求；先验证对应视频交付 |
+| P1 视频验证候选 | `animate tattoo`：90/月、KD21 | 先测试纹身照片→短片；不等同于定制纹身故事套餐 |
+| P2 发现 | 旅行纪念、纹身故事、个人经历短片 | 验证消费者用词和具体交付；不将动画特效与故事套餐混为一谈 |
+| 保留现有自助 | 图片升清等通用实用功能 | 未因本次 ICP 文件获得新 KD／转化证据，不追加泛词 P0 |
+
+- [完整目标、已有 KD、状态与决策门槛](workstream-seo-smm-growth.md#consumer-seo-targets-2026-10-20)
+- [当前执行状态：收录已通过、取消固定样例数量、优先页面与指南](workstream-seo-smm-growth.md#seo-fast-follow-2026-10-20)
+- [当前 KD 决策表与两周执行路线图（10-20～11-03）](workstream-seo-smm-growth.md#seo-execution-roadmap-2026-10-20)
+- [本轮 8 词结果与优先级调整](workstream-seo-smm-growth.md#consumer-kd-results-2026-10-20)
+- [本轮已查询的 8 词，保留作记录](seo/semrush-kd-new-consumer-2026-10-20.txt)
+
 
 ## Scope
 
