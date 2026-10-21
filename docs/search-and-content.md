@@ -1,6 +1,19 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-09-02 (scene-enhancement template shipped — `template-studio-digital-backdrop-scene`, the first locked-subject background-only retouch in the catalog; see the dated section below). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-10-21 (registry-backed tool navigation and persisted tool-query evaluation). Owner: jay. Update after any push that touches the threads below or changes priority order._
+
+## 2026-10-21 — tool navigation audit
+
+`dieline to 3d box` now routes to `/tools/packaging-mockup`. The tool already existed, but the hand-maintained search list covered only 7 of the 27 registry tools. The October 20 change made a gallery example discoverable without fixing this missing route; that content remains useful for explicit example queries.
+
+- Tool membership now comes from `lib/tools-registry.ts`, including inline tools whose status is `demo`. Task aliases are maintained in `lib/toolSearchAliases.ts` and the existing curated entries in `lib/searchIndex.ts`.
+- SearchBar Enter and server `/search` use the same `resolveToolDestination`. Explicit topic names retain topic routing. Example/tutorial/poster requests stay in content search. Dropdown tool clicks and automatic navigation honor the tool's authored locales.
+- **Saved evaluation:** [`scripts/configs/tool_search_eval_set.json`](../scripts/configs/tool_search_eval_set.json), 105 cases covering all 27 tools, ambiguity/content negatives, and authored-locale fallbacks. Run `npm run eval:tools`.
+- **Verification:** 231 tests pass, including each saved query against the real server page with external services mocked. The suite checks destinations, dropdown discovery, registry coverage and `from_search` attribution. These are local navigation tests, not live tool-execution or production-deployment checks.
+- **Representative queries:** dieline to 3d box → packaging mockup; export sticker cutline → die-cut sticker file; acrylic standee print file → acrylic export; retouch wedding photos → wedding editing; generate a product video → product video; 字幕翻译 → subtitles.
+- **Boundaries:** magnetic box mockup, packaging inspiration, book summary, video transcript infographic, and dieline to 3d box examples do not auto-route to tools. Bare ASL/sign-language concepts retain their topic destination. Demo-only and sample-request pages keep their actual capabilities; search routing does not turn them into automated tools.
+
+**When adding a tool:** add its registry entry and useful task aliases, add positive and content-confusion cases to the saved evaluation set, then run the tool eval. Coverage fails when a registry tool has no expected destination in the set. Do not use `status === "create"` as a discoverability filter.
 
 ## Why this doc exists
 

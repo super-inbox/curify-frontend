@@ -10,7 +10,8 @@ import { useRouter, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   filterSuggestions,
-  matchToolIntent,
+  resolveToolDestination,
+  toolDestination,
   DEFAULT_FOCUS_SUGGESTIONS,
   TIER1_CHIP_SETS,
   ALL_SUGGESTIONS,
@@ -196,7 +197,7 @@ export default function SearchBar({ locale }: Props) {
     track({ contentId: label || q, contentType: "topic_capsule", actionType: "search" });
     setOpen(false);
     setQuery("");
-    if (href) router.push(withSearchAttribution(`/${locale}${href}`, label || q));
+    if (href) router.push(withSearchAttribution(toolDestination(href, locale), label || q));
     else if (searchFallback) {
       router.push(`/${locale}/search?q=${encodeURIComponent(queryStr ?? slug)}`);
       // Bypass Next.js Router Cache so a stale empty-result RSC payload
@@ -251,16 +252,16 @@ export default function SearchBar({ locale }: Props) {
     // Confident tool-intent match for natural-language queries the results page
     // can't serve (it only indexes image templates/inspirations), e.g.
     // "add subtitles to a video" → /tools/bilingual-subtitles.
-    const toolIntent = matchToolIntent(q);
-    if (exact && (exact.slug === q || exact.label.toLowerCase() === q || exactLocalized === q)) {
+    const toolHref = resolveToolDestination(q, locale);
+    if (toolHref) { router.push(withSearchAttribution(toolHref, q)); return; }
+    if (exact && !exact.href?.startsWith("/tools") && (exact.slug === q || exact.label.toLowerCase() === q || exactLocalized === q)) {
       if (exact.searchFallback) {
         router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
         router.refresh();
       } else {
         router.push(withSearchAttribution(exact.href ? `/${locale}${exact.href}` : `/${locale}/topics/${exact.slug}`, q));
       }
-    } else if (toolIntent?.href) {
-      router.push(withSearchAttribution(`/${locale}${toolIntent.href}`, q));
+
     } else {
       router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
       router.refresh();

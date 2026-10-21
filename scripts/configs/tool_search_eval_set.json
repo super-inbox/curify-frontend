@@ -1,0 +1,637 @@
+{
+  "version": 1,
+  "date": "2026-10-21",
+  "description": "Expected navigation, not a claim of tool capability; null means no automatic tool redirect.",
+  "cases": [
+    {
+      "query": "dieline to 3d box",
+      "locale": "en",
+      "expected": "/en/tools/packaging-mockup",
+      "kind": "task"
+    },
+    {
+      "query": "turn my dieline into a 3D box",
+      "locale": "en",
+      "expected": "/en/tools/packaging-mockup",
+      "kind": "task"
+    },
+    {
+      "query": "包装刀版转立体",
+      "locale": "zh",
+      "expected": "/zh/tools/packaging-mockup",
+      "kind": "task"
+    },
+    {
+      "query": "3d packaging mockup",
+      "locale": "en",
+      "expected": "/en/tools/packaging-mockup",
+      "kind": "task"
+    },
+    {
+      "query": "packaging-mockup",
+      "locale": "en",
+      "expected": "/en/tools/packaging-mockup",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "export sticker cutline",
+      "locale": "en",
+      "expected": "/en/tools/die-cut-sticker-file",
+      "kind": "task"
+    },
+    {
+      "query": "贴纸刀线文件",
+      "locale": "zh",
+      "expected": "/zh/tools/die-cut-sticker-file",
+      "kind": "task"
+    },
+    {
+      "query": "die-cut-sticker-file",
+      "locale": "en",
+      "expected": "/en/tools/die-cut-sticker-file",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "acrylic standee print file",
+      "locale": "en",
+      "expected": "/en/tools/acrylic-factory-export",
+      "kind": "task"
+    },
+    {
+      "query": "亚克力生产文件",
+      "locale": "zh",
+      "expected": "/zh/tools/acrylic-factory-export",
+      "kind": "task"
+    },
+    {
+      "query": "acrylic-factory-export",
+      "locale": "en",
+      "expected": "/en/tools/acrylic-factory-export",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "generate product photos",
+      "locale": "en",
+      "expected": "/en/tools/ai-product-photo-generator",
+      "kind": "task"
+    },
+    {
+      "query": "生成产品照片",
+      "locale": "zh",
+      "expected": "/zh/tools/ai-product-photo-generator",
+      "kind": "task"
+    },
+    {
+      "query": "ai-product-photo-generator",
+      "locale": "en",
+      "expected": "/en/tools/ai-product-photo-generator",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "ecommerce photo generator",
+      "locale": "en",
+      "expected": "/en/tools/ecommerce-photo",
+      "kind": "task"
+    },
+    {
+      "query": "电商产品图生成",
+      "locale": "zh",
+      "expected": "/zh/tools/ecommerce-photo",
+      "kind": "task"
+    },
+    {
+      "query": "ecommerce-photo",
+      "locale": "en",
+      "expected": "/en/tools/ecommerce-photo",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "character sticker sheet generator",
+      "locale": "en",
+      "expected": "/en/tools/character-sticker-sheet",
+      "kind": "task"
+    },
+    {
+      "query": "生成角色表情包",
+      "locale": "zh",
+      "expected": "/zh/tools/character-sticker-sheet",
+      "kind": "task"
+    },
+    {
+      "query": "character-sticker-sheet",
+      "locale": "en",
+      "expected": "/en/tools/character-sticker-sheet",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "generate merch mockup",
+      "locale": "en",
+      "expected": "/en/tools/mockup",
+      "kind": "task"
+    },
+    {
+      "query": "生成周边效果图",
+      "locale": "zh",
+      "expected": "/zh/tools/mockup",
+      "kind": "task"
+    },
+    {
+      "query": "mockup",
+      "locale": "en",
+      "expected": null,
+      "kind": "ambiguous-topic-name"
+    },
+    {
+      "query": "generate a product video",
+      "locale": "en",
+      "expected": "/en/tools/product-video",
+      "kind": "task"
+    },
+    {
+      "query": "产品视频生成",
+      "locale": "zh",
+      "expected": "/zh/tools/product-video",
+      "kind": "task"
+    },
+    {
+      "query": "product-video",
+      "locale": "en",
+      "expected": "/en/tools/product-video",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "virtual fashion model",
+      "locale": "en",
+      "expected": "/en/tools/ai-fashion-model-generator",
+      "kind": "task"
+    },
+    {
+      "query": "虚拟服装模特生成",
+      "locale": "zh",
+      "expected": "/zh/tools/ai-fashion-model-generator",
+      "kind": "task"
+    },
+    {
+      "query": "ai-fashion-model-generator",
+      "locale": "en",
+      "expected": "/en/tools/ai-fashion-model-generator",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "retouch wedding photos",
+      "locale": "en",
+      "expected": "/en/tools/wedding-photo-editing",
+      "kind": "task"
+    },
+    {
+      "query": "婚纱照精修",
+      "locale": "zh",
+      "expected": "/zh/tools/wedding-photo-editing",
+      "kind": "task"
+    },
+    {
+      "query": "wedding-photo-editing",
+      "locale": "en",
+      "expected": "/en/tools/wedding-photo-editing",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "bulk product retouching",
+      "locale": "en",
+      "expected": "/en/tools/product-photo-retouching-service",
+      "kind": "task"
+    },
+    {
+      "query": "产品照片精修服务",
+      "locale": "zh",
+      "expected": "/zh/tools/product-photo-retouching-service",
+      "kind": "task"
+    },
+    {
+      "query": "product-photo-retouching-service",
+      "locale": "en",
+      "expected": "/en/tools/product-photo-retouching-service",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "edit real estate photos",
+      "locale": "en",
+      "expected": "/en/tools/real-estate-photo-editing",
+      "kind": "task"
+    },
+    {
+      "query": "房产照片精修",
+      "locale": "zh",
+      "expected": "/zh/tools/real-estate-photo-editing",
+      "kind": "task"
+    },
+    {
+      "query": "real-estate-photo-editing",
+      "locale": "en",
+      "expected": "/en/tools/real-estate-photo-editing",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "hanfu virtual try on",
+      "locale": "en",
+      "expected": "/en/tools/chinese-costume-tryon",
+      "kind": "task"
+    },
+    {
+      "query": "汉服虚拟试穿",
+      "locale": "zh",
+      "expected": "/zh/tools/chinese-costume-tryon",
+      "kind": "task"
+    },
+    {
+      "query": "chinese-costume-tryon",
+      "locale": "en",
+      "expected": "/en/tools/chinese-costume-tryon",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "explore brand directions",
+      "locale": "en",
+      "expected": "/en/tools/brand-direction-explorer",
+      "kind": "task"
+    },
+    {
+      "query": "品牌视觉方向探索",
+      "locale": "zh",
+      "expected": "/zh/tools/brand-direction-explorer",
+      "kind": "task"
+    },
+    {
+      "query": "brand-direction-explorer",
+      "locale": "en",
+      "expected": "/en/tools/brand-direction-explorer",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "generate wedding portraits",
+      "locale": "en",
+      "expected": "/en/tools/ai-wedding-photo-generator",
+      "kind": "task"
+    },
+    {
+      "query": "ai-wedding-photo-generator",
+      "locale": "en",
+      "expected": "/en/tools/ai-wedding-photo-generator",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "generate pet portraits",
+      "locale": "en",
+      "expected": "/en/tools/ai-pet-portrait-generator",
+      "kind": "task"
+    },
+    {
+      "query": "ai-pet-portrait-generator",
+      "locale": "en",
+      "expected": "/en/tools/ai-pet-portrait-generator",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "enhance video quality",
+      "locale": "en",
+      "expected": "/en/tools/video-enhance",
+      "kind": "task"
+    },
+    {
+      "query": "视频画质增强",
+      "locale": "zh",
+      "expected": "/zh/tools/video-enhance",
+      "kind": "task"
+    },
+    {
+      "query": "video-enhance",
+      "locale": "en",
+      "expected": "/en/tools/video-enhance",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "translate manga",
+      "locale": "en",
+      "expected": "/en/tools/manga-translation",
+      "kind": "task"
+    },
+    {
+      "query": "漫画翻译",
+      "locale": "zh",
+      "expected": "/zh/tools/manga-translation",
+      "kind": "task"
+    },
+    {
+      "query": "manga-translation",
+      "locale": "en",
+      "expected": "/en/tools/manga-translation",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "image style transfer",
+      "locale": "en",
+      "expected": "/en/tools/style-transfer",
+      "kind": "task"
+    },
+    {
+      "query": "图片风格迁移",
+      "locale": "zh",
+      "expected": "/zh/tools/style-transfer",
+      "kind": "task"
+    },
+    {
+      "query": "style-transfer",
+      "locale": "en",
+      "expected": "/en/tools/style-transfer",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "worksheet from video",
+      "locale": "en",
+      "expected": "/en/tools/worksheet-from-video",
+      "kind": "task"
+    },
+    {
+      "query": "视频生成练习题",
+      "locale": "zh",
+      "expected": "/zh/tools/worksheet-from-video",
+      "kind": "task"
+    },
+    {
+      "query": "worksheet-from-video",
+      "locale": "en",
+      "expected": "/en/tools/worksheet-from-video",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "translate youtube video",
+      "locale": "en",
+      "expected": "/en/tools/video-dubbing",
+      "kind": "task"
+    },
+    {
+      "query": "给 youtube 视频配音",
+      "locale": "zh",
+      "expected": "/zh/tools/video-dubbing",
+      "kind": "task"
+    },
+    {
+      "query": "video-dubbing",
+      "locale": "en",
+      "expected": "/en/tools/video-dubbing",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "add subtitles to a video",
+      "locale": "en",
+      "expected": "/en/tools/bilingual-subtitles",
+      "kind": "task"
+    },
+    {
+      "query": "字幕翻译",
+      "locale": "zh",
+      "expected": "/zh/tools/bilingual-subtitles",
+      "kind": "task"
+    },
+    {
+      "query": "bilingual-subtitles",
+      "locale": "en",
+      "expected": "/en/tools/bilingual-subtitles",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "convert video to text",
+      "locale": "en",
+      "expected": "/en/tools/video-transcript-generator",
+      "kind": "task"
+    },
+    {
+      "query": "视频转文字",
+      "locale": "zh",
+      "expected": "/zh/tools/video-transcript-generator",
+      "kind": "task"
+    },
+    {
+      "query": "video-transcript-generator",
+      "locale": "en",
+      "expected": "/en/tools/video-transcript-generator",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "summarize this youtube video",
+      "locale": "en",
+      "expected": "/en/tools/video-summarizer",
+      "kind": "task"
+    },
+    {
+      "query": "视频总结",
+      "locale": "zh",
+      "expected": "/zh/tools/video-summarizer",
+      "kind": "task"
+    },
+    {
+      "query": "video-summarizer",
+      "locale": "en",
+      "expected": "/en/tools/video-summarizer",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "translate audio",
+      "locale": "en",
+      "expected": "/en/tools/speech-translator",
+      "kind": "task"
+    },
+    {
+      "query": "语音翻译",
+      "locale": "zh",
+      "expected": "/zh/tools/speech-translator",
+      "kind": "task"
+    },
+    {
+      "query": "speech-translator",
+      "locale": "en",
+      "expected": "/en/tools/speech-translator",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "sign language video translation",
+      "locale": "en",
+      "expected": "/en/tools/asl-video-translator",
+      "kind": "task"
+    },
+    {
+      "query": "美式手语翻译",
+      "locale": "zh",
+      "expected": "/zh/tools/asl-video-translator",
+      "kind": "task"
+    },
+    {
+      "query": "asl-video-translator",
+      "locale": "en",
+      "expected": "/en/tools/asl-video-translator",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "public speaking practice",
+      "locale": "en",
+      "expected": "/en/tools/impromptu-speech-practice",
+      "kind": "task"
+    },
+    {
+      "query": "1 minute speech topics",
+      "locale": "en",
+      "expected": "/en/tools/impromptu-speech-practice",
+      "kind": "task"
+    },
+    {
+      "query": "impromptu-speech-practice",
+      "locale": "en",
+      "expected": "/en/tools/impromptu-speech-practice",
+      "kind": "canonical-tool-name"
+    },
+    {
+      "query": "impromptu-speech-practice",
+      "locale": "zh",
+      "expected": "/en/tools/impromptu-speech-practice",
+      "kind": "authored-locale-fallback"
+    },
+    {
+      "query": "ai-pet-portrait-generator",
+      "locale": "ja",
+      "expected": "/en/tools/ai-pet-portrait-generator",
+      "kind": "authored-locale-fallback"
+    },
+    {
+      "query": "ai-wedding-photo-generator",
+      "locale": "zh",
+      "expected": "/en/tools/ai-wedding-photo-generator",
+      "kind": "authored-locale-fallback"
+    },
+    {
+      "query": "real-estate-photo-editing",
+      "locale": "de",
+      "expected": "/en/tools/real-estate-photo-editing",
+      "kind": "authored-locale-fallback"
+    },
+    {
+      "query": "dieline to 3d box examples",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "packaging inspiration",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "magnetic box mockup",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "peacock dress",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "art movements",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "book summary",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "industrial design presentation board",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "video transcript infographic",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "subtitle template",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "manga translation tutorial",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "wedding photo editing examples",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "dublin travel itinerary",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "dessert poster",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "make a video of my dog",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "asl",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "american sign language",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "sign language",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "photo retouching ideas",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "亚克力生产文件教程",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "婚纱照精修示例",
+      "locale": "en",
+      "expected": null,
+      "kind": "content-or-topic-not-tool"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Search Evaluation Query Set
 
+Tool navigation has a separate executable set: [`tool_search_eval_set.json`](../scripts/configs/tool_search_eval_set.json). Run `npm run eval:tools` for tool destinations, non-tool controls, locale fallbacks, dropdown discovery, and actual server redirects. The inspiration-richness set below does not evaluate tool routing.
+
 _Auto-generated from `scripts/configs/search_eval_set.json` (2026-05-19, last recalibrated 2026-05-30 (weekly cycle 1: appended 3 user-weekly-2026-05-30 queries — chiikawa, samurai, genshin — surfaced as under-served fandoms by the 14d admin /interaction-analytics pull and shipped a content topup the same cycle. Net set: 57 queries — 54 prior + 3 weekly. Prior recalibration 2026-05-29 appended 8 Pinterest discovery keywords.)). Re-run `python3 scripts/render_eval_set_md.py` after editing the JSON._
 
 54-query regression + coverage set for /search, now scoring TWO surfaces: (a) inspiration richness via the strict/relaxed matcher (existing `expected` field), and (b) template richness via the LLM matcher (`expected_templates` — # templates with matcher confidence >= 0.4, mirroring the production GenerableTemplatesSection threshold).
