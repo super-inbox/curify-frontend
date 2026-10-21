@@ -2,7 +2,7 @@ import { isAwaitingCredits, AwaitingCreditsError } from "@/lib/awaitingCredits";
 import { apiClient } from "./api";
 
 // Anonymous photo editing. Mirrors services/costumeTryon.ts: generate() returns a
-// project_id; poll /photo-retouch/status/{id} for the signed JPEG.
+// project_id; poll /photo-retouch/status/{id} for the approved download.
 //
 // ANONYMOUS on purpose. The 2026-09-15 buyer-side demand pass found this offer had
 // no inbound surface at all — a photographer who needs editing searches for it,
@@ -12,6 +12,7 @@ import { apiClient } from "./api";
 export interface PhotoRetouchRequest {
   file: File;
   email?: string;
+  job?: "portrait" | "wedding";
 }
 
 export interface PhotoRetouchResponse {
@@ -26,7 +27,8 @@ export interface RetouchGate {
 }
 
 export interface PhotoRetouchStatus {
-  status: string; // STARTED | COMPLETED | FAILED
+  status: string; // STARTED | REVIEW_REQUIRED | QA_FAILED | COMPLETED | FAILED
+  review_required?: boolean;
   result_url?: string | null;
   regions_applied?: number | null;
   regions_planned?: number | null;
@@ -43,18 +45,18 @@ const POLL_INTERVAL_MS = 4000;
 // two-person frame is 6-8 sequential calls. Measured end to end: ~3 min on a
 // 1280px frame, ~7 min on a 3000x4000 one — the crops scale with the input, and
 // the input is now processed at ITS OWN resolution rather than downscaled.
-// On timeout the job still finishes server-side and the email delivers it, which
-// is why pollResult signals "pending" instead of throwing.
+// On timeout the job continues server-side; release requires review.
 const POLL_MAX_MS = 900_000;
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
-export const PENDING = "PENDING_EMAIL";
+export const PENDING = "PENDING_RETOUCH";
 
 export const photoRetouchService = {
   async generate(data: PhotoRetouchRequest): Promise<PhotoRetouchResponse> {
     const form = new FormData();
     form.append("file", data.file);
     if (data.email) form.append("email", data.email);
+    if (data.job) form.append("job", data.job);
     return apiClient.request<PhotoRetouchResponse>("/photo-retouch/generate", {
       method: "POST",
       body: form,
@@ -82,6 +84,7 @@ export const photoRetouchService = {
       }
       if (isAwaitingCredits(s)) throw new AwaitingCreditsError(projectId);
       if (s.status === "COMPLETED" && s.result_url) return s;
+      if (s.status === "REVIEW_REQUIRED" || s.status === "QA_FAILED") return s;
       if (s.status === "FAILED") {
         throw new Error(s.failure_reason || "Editing failed. Please try another photo.");
       }
