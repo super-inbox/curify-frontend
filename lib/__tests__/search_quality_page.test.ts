@@ -32,9 +32,29 @@ it('keeps original subjects despite irrelevant rewrite paths',async()=>{
  expect(tulip.props.inspirations).toHaveLength(0);expect(tulip.props.matchedTemplates).toHaveLength(0);
 });
 it('surfaces exact packaging and language-specific content',async()=>{
- const dieline=await page('dieline to 3d box');expect(dieline.props.galleryPrompts[0].title).toContain('Dieline');
+ await expect(page('dieline to 3d box')).rejects.toThrow('REDIRECT /en/tools/packaging-mockup');
  const box=await page('magnetic box mockup');expect(box.props.galleryPrompts[0].id).toBe(2026102001);
  const poem=await page('infographic poem in filipino');expect(poem.props.galleryPrompts[0].id).toBe(2026102002);
  const bilingual=await page('infographic poem in filipino and korea');expect(bilingual.props.galleryPrompts).toHaveLength(0);
  const gown=await page('peacock dress');expect(gown.props.inspirations[0].id).toContain('peacock-couture');
 });
+
+// Exercise the actual server redirect ordering, not only the shared matcher.
+import toolEval from '@/scripts/configs/tool_search_eval_set.json';
+for (const row of toolEval.cases) {
+ it(`server tool eval: ${row.locale} / ${row.query}`, async () => {
+   try {
+     await Page({params:Promise.resolve({locale:row.locale}),searchParams:Promise.resolve({q:row.query})});
+     expect(row.expected).toBeNull();
+   } catch (error) {
+     const message=String(error);
+     if (!message.includes('REDIRECT ')) throw error;
+     const href=message.split('REDIRECT ')[1];
+     const url=new URL(href, 'https://example.test');
+     if (row.expected) {
+       expect(url.pathname).toBe(row.expected);
+       expect(url.searchParams.get('from_search')).toBe(row.query);
+     } else expect(url.pathname).not.toContain('/tools');
+   }
+ });
+}

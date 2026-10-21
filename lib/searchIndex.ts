@@ -3,6 +3,8 @@
 
 import nanoMetadata from "@/lib/generated/nanobanana_prompts_metadata.json";
 import taxonomy from "./taxonomy.json";
+import { TOOL_REGISTRY } from "./tools-registry";
+import { TOOL_SEARCH_ALIASES, isToolReferenceQuery } from "./toolSearchAliases";
 
 export type SuggestionEntry = {
   slug: string;
@@ -213,10 +215,9 @@ export const TIER1_CHIP_SETS: Array<{ tier1: string; chips: string[] }> = [
   { tier1: "product",     chips: ["packaging", "branding", "hero-banner", "mood-board"] },
 ];
 
-// Tools — overall /tools page + each tool with status === "create" in
-// lib/tools-registry.ts. Use `href` so navigation goes to the tool route
-// instead of /topics/<slug>. Keep slugs in sync with tools-registry.
-export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
+// Legacy curated aliases, retained for established video/tool phrasings.
+// Actual tool membership is derived from TOOL_REGISTRY below.
+const CURATED_TOOL_SUGGESTIONS: SuggestionEntry[] = [
   {
     slug: "tools",
     href: "/tools",
@@ -407,6 +408,38 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
   },
 ];
 
+// Registry membership, not status="create", controls discoverability. Inline
+// tools often use status="demo" while still having a working action.
+export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
+  CURATED_TOOL_SUGGESTIONS[0],
+  ...TOOL_REGISTRY.map(tool => {
+    const curated = CURATED_TOOL_SUGGESTIONS.find(s => s.slug === tool.slug);
+    return {
+      slug: tool.slug, href: `/tools/${tool.slug}`,
+      label: curated?.label ?? tool.slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+      emoji: curated?.emoji ?? '🛠️', tier: 3 as const,
+      aliases: [...new Set([...(curated?.aliases ?? []), ...(TOOL_SEARCH_ALIASES[tool.slug] ?? [])])],
+    };
+  }),
+];
+
+export function toolDestination(href: string, locale: string): string {
+  const tool = TOOL_REGISTRY.find(t => `/tools/${t.slug}` === href);
+  const supported = tool?.locales;
+  return `/${supported?.length && !supported.includes(locale) ? supported[0] : locale}${href}`;
+}
+
+/** Shared by Enter submission and server navigation; exact topics keep priority. */
+export function resolveToolDestination(query: string, locale: string): string | null {
+  const q = query.trim().toLowerCase().replace(/\s+/g, ' ');
+  if (isToolReferenceQuery(q)) return null;
+  const topic = [...TIER2_SUGGESTIONS, ...TIER1_SUGGESTIONS, ...TIER3_GEO, ...TIER3_STYLE, ...TIER3_MBTI, ...TIER3_SUBJECT]
+    .find(s => s.slug === q || s.label.toLowerCase() === q || s.aliases?.some(a => a.toLowerCase() === q));
+  if (topic) return null;
+  const tool = matchToolIntent(q);
+  return tool?.href ? toolDestination(tool.href, locale) : null;
+}
+
 const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
 // ── Topic-mapping destinations ─────────────────────────────────────────────
@@ -595,15 +628,21 @@ function phraseInQuery(phrase: string, q: string): boolean {
 const TOOL_INTENT_MIN_ASCII = 6;
 export function matchToolIntent(query: string): SuggestionEntry | null {
   const q = query.toLowerCase().trim();
-  if (!q) return null;
+  if (!q || isToolReferenceQuery(q)) return null;
   let best: SuggestionEntry | null = null;
   let bestLen = 0;
   for (const t of TOOL_SUGGESTIONS) {
     if (!t.href || t.searchFallback) continue;
-    const phrases = [t.label.toLowerCase(), ...(t.aliases ?? []).map((a) => a.toLowerCase())];
+    if (t.slug === "tools" && !["tools", "ai tools", "studio tools", "utilities", "工具", "ai 工具", "herramientas"].includes(q)) continue;
+    const phrases = [t.slug, t.label.toLowerCase(), ...(t.aliases ?? []).map((a) => a.toLowerCase())];
     for (const p of phrases) {
       const specific = /^[\x00-\x7F]+$/.test(p) ? p.length >= TOOL_INTENT_MIN_ASCII : p.length >= 2;
-      if (specific && p.length > bestLen && phraseInQuery(p, q)) {
+      // "summary" alone must not hijack a book/content query.
+      const contextRequired = ['summary', 'summarize', 'resumen', 'tldr'];
+      if (contextRequired.includes(p) && !/\b(video|youtube|clip)\b|视频/.test(q)) continue;
+      const exact = p === q;
+      if (p === 'mockup' && !exact) continue;
+      if ((exact || specific) && p.length > bestLen && (exact || phraseInQuery(p, q))) {
         best = t;
         bestLen = p.length;
       }
