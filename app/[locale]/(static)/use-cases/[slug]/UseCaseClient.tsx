@@ -524,6 +524,7 @@ export default function UseCaseClient({
             <IntlLink href="/blog/wedding-photo-retouching-cost">{t(`${slug}.outsourcing.cost` as never)}</IntlLink>
             <IntlLink href="/tools/wedding-photo-editing">{t(`${slug}.outsourcing.editor` as never)}</IntlLink>
             <IntlLink href="/tools/product-photo-retouching-service">{t(`${slug}.outsourcing.product` as never)}</IntlLink>
+            {t.has(`${slug}.outsourcing.checklist` as never) && <IntlLink href="/resources/ai-photo-retouching-quality-checklist" locale="en">{t(`${slug}.outsourcing.checklist` as never)}</IntlLink>}
           </nav>
         </section>
       )}

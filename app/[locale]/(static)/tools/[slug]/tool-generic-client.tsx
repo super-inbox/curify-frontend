@@ -370,6 +370,14 @@ export default function ToolGenericClient({
         </section>
       )}
 
+      {t.has("qualityResource.title" as never) && (
+        <aside className="mt-10 rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+          <h2 className="text-xl font-semibold">{t("qualityResource.title" as never)}</h2>
+          <p className="my-3 text-sm leading-6">{t("qualityResource.body" as never)}</p>
+          <Link href="/resources/ai-photo-retouching-quality-checklist" locale="en" className="text-purple-700 underline">{t("qualityResource.cta" as never)}</Link>
+        </aside>
+      )}
+
       {slug === "ai-wedding-photo-generator" && t.has("preparation.title" as never) && (
         <aside className="mt-10 rounded-xl border border-neutral-200 bg-neutral-50 p-5">
           <h2 className="text-xl font-semibold">{t("preparation.title" as never)}</h2>

@@ -5397,3 +5397,66 @@ Validation: TypeScript passed; six unit tests passed (four existing SEO tests pl
 **验收边界：** 公开页面可读与登录前生成门禁已确认；当前浏览器未登录，真实上传→生成→下载→扣费仍待测试账号登录，不以静态/模拟检查冒充完成。商品服务表单的实际邮件/数据库入库尚未测试。本次不提交虚假客户询盘。ASL代码未修改，保留其已有索引与入口。
 
 验证结果：TypeScript无错误，5个相关测试文件共14项通过，git diff --check通过。新增表单测试使用模拟传输，覆盖商品／摄影师brief与source传递、成功事件、失败保留内容及重试，不发送真实邮件。浏览器确认商品表单空邮箱会被拦截；指南桌面渲染与图片展示正常。六条本地页面检查均200，包含摄影师EN/ZH、两生成工具、ASL及指南ZH fallback；后者noindex且canonical指向EN。新指南和页面改动当前为本地工作区版本，尚未commit/push或部署；新指南上线后再做GSC检查，不能用现有七页已收录状态代替它。
+
+
+<a id="seo-authority-2026-10-21"></a>
+## 2026-10-21 — Authority execution: research outreach and reusable photo QA
+
+Source: user-supplied `raw/seo-authority-2026-10-21/planning.txt`. Adopt its central direction: earn relevant independent editorial references to useful tools, original research and practical resources. Owned GitHub/HF/Medium/Substack links are distribution, not separate independent endorsements. The source's Authority Score 6 is a supplied snapshot, not a fresh Semrush reading or a Google score. Link counts, ranking gains and leads remain outcomes to measure, not promises.
+
+### User decisions and scope
+
+| Item | Decision / implementation | Acceptance |
+|---|---|---|
+| Repository identity | Add the frontend README's About Curify section to public visual-search-adhoc and fashion-tryon-benchmark | Published README-only commits; preserve all research and asset content |
+| P0-2 Research outreach | Proceed with external team/contact research and email using existing Zoho infrastructure; no benchmark rework | Verified public evidence, tailored messages, dedup and exact send outcomes; mailbox pause currently prevents sending |
+| P0-4 Open commercial resource | Build AI Photo Retouching Quality Checklist now | Public page, editable TXT + structured JSON, review decisions, batch plan and service links |
+| P0-3 Competitor gap | User will obtain Semrush exports | Agent waits for page-level referring-domain/backlink evidence, then qualifies and deduplicates |
+| P0-1 Existing relationships | Keep as a future high-fit lane, not this batch's send list | User identifies publishable relationship/case and permission; no inferred customer endorsement |
+
+Do not require 30 contacts, 15 sends or seven examples simply because they appeared in a planning table. Start with evidence-backed candidates and a bounded pilot; expand based on replies and resource usefulness. Retain ASL and commercial service SEO maintenance alongside this authority work.
+
+### Published repository introductions
+
+- visual-search-adhoc: [f519d3a8](https://github.com/super-inbox/visual-search-adhoc/commit/f519d3a8f6d9755370fc115db2d2e7f581a387b0).
+- fashion-tryon-benchmark: [a6226949](https://github.com/super-inbox/fashion-tryon-benchmark/commit/a6226949821b88e4f4a43a46e05f0e7d88900329).
+
+Both README updates copy the existing frontend About section and official website/founder links. No benchmark scripts, data or methods changed. Local research checkouts were not reset or overwritten.
+
+### Correct benchmark evidence for outreach
+
+The local visual-search-benchmark checkout was stale (scaffold). GitHub main checked on10-21 is v1.2.0, revision `4d3093f9cb4f52c3a3e8150af1a358bd434bd9ba`: 68-query set, cross-platform screenshot evidence for12 of68; 326-query internal pipeline comparison, with Google/Curify screenshots described as unscored evidence. Labels are LLM-generated; completed human review is not claimed. Cite the [public version](https://github.com/super-inbox/visual-search-benchmark/tree/4d3093f9cb4f52c3a3e8150af1a358bd434bd9ba), methodology and worked cases, not a comprehensive platform leaderboard or an invented win rate.
+
+The source's proposed research landing page and HF mirrors are not treated as verified destinations in this pass. The public GitHub dataset is the current outreach target; its Curify attribution connects the research to the brand. Do not force research readers onto unrelated commercial pages merely to acquire a link.
+
+### P0-2 contact and message preparation
+
+Ten team prospects: Jina AI, Voxel51, Pixyle AI, Weaviate, Marqo, Qdrant, Vespa, Sentence Transformers maintainers, Latent Space editors, Hugging Face community editors. Four tailored drafts use published team inboxes (Jina/Voxel51/Pixyle/Weaviate); six remain contact-verification candidates. This is a researched shortlist, not ten verified personal contacts or opted-in recipients.
+
+Public evidence: [Jina contact](https://github.com/jina-ai/press-kit), [Voxel51 contact](https://github.com/voxel51), [Pixyle contact](https://www.pixyle.ai/book-a-call), [Weaviate email reference](https://weaviate.io/privacy), [Marqo](https://marqo.ai/), [Qdrant](https://qdrant.tech/contact-us/), [Vespa](https://vespa.ai/), [Sentence Transformers](https://www.sbert.net/README.html), [Latent Space editorial route](https://www.latent.space/about), [HF community](https://huggingface.co/blog). Do not guess addresses or use privacy/support-only mailboxes for a pitch. Public team inboxes are source-verified, not SMTP-deliverability verified.
+
+Private CRM, exact messages and provenance are in `~/curify-gtm/gtm_tools/campaigns/seo-authority-2026-10-21/` (prospects.json, reviewed_batch.json, review.md, README.md, sending-policy.json), linked from the existing GTM index. Keep recipient-level history there, not in this public frontend repository. Fields include organization, role, public evidence, email source, relationship, target URL, dedup hits, status, next action, sent time, reply and citation URL. Sent/reply/citation remain empty, not zero conversions.
+
+**Sending status: 0 sent.** Existing expansion campaign records contain three Zoho `550 5.4.6 Unusual sending activity` failures and a 10-21 user-requested cooldown. Its sending-policy.json says no more sends today and review10-22, with no automatic restart. The research batch inherits this hold; no SMTP connection or resend was attempted. Reuse current locks, suppression/bounce/sent/uncertain ledgers, write-ahead DATA records and acceptance reconciliation when a supported route is available. Do not bypass the hold through another campaign or assume slower pacing fixes provider restrictions.
+
+Dedup snapshot checked email/domain matches across sent_log, sent_messages, suppression, bounces, unresolved sends, and campaign attempts/reviewed batches; no matches for the four inboxes. Repeat before actual sending and review existing replies manually. Do not add drafts to the sent denominator or treat SMTP250 as inbox delivery.
+
+### P0-4 resource deliverable
+
+Route: `/resources/ai-photo-retouching-quality-checklist` (authored English; other locales noindex, canonical EN). Downloads: `/resources/photo-retouching-quality-checklist-v1.txt` and `.json`.
+
+18 checks cover scope/permissions, identity, skin, hair, anatomy, garment construction, branding, materials, jewelry, colour, scene changes, shadows, geometry, local boundaries, export, batches, revisions and sign-off. Includes practical Hold/Rework decisions, all-image critical review plus a separately agreed finish sample, defect log and explicit release approval. No arbitrary universal sample rate, customer acceptance statistic or unverified metric threshold. Original checklist text/blank forms may be adapted commercially; permission explicitly excludes example images and third-party assets.
+
+Uses the existing supplied sandal/ring comparisons with accurate captions; no new client photos published, no claim these are approved deliveries. Link to the wedding guide for skin/hair/veil concepts. Inbound links from product service, wedding editing and photographer service, outbound contextual batch CTAs. TXT/JSON are ungated; success is useful reuse and qualified referrals, not email capture volume.
+
+### Next two weeks and measurement
+
+1. Finish resource rendering, download and canonical/sitemap checks; publish through normal frontend release. Confirm HTTP200 and indexability before recommending its URL to external editors.
+2. Resolve shared mailbox hold through the established outreach workflow; review the four tailored messages and refresh dedup. No automatic send is scheduled. Record accepted/failed/uncertain separately.
+3. User supplies competitor exports: exact referring URL, target competitor URL, anchor, link status/type, first/last seen and domain. Use 5–10 same-intent competitor pages, not whole-domain totals; exclude paid-link placements, unrelated directories and duplicates.
+4. Qualify replies and pursue one useful research discussion or resource inclusion at a time. For a resource citation, record the actual source page, destination, context, link attributes and date; count one referring domain once.
+5. Review target-page non-brand impressions/clicks and referral→signup/use/qualified lead separately. Owned repo changes are recorded as distribution improvements. The proposed6-week5–10 relevant new domains is a stretch goal, not a forecast or completion criterion.
+
+Existing7 URLs passed GSC inspection on10-20, including recovered real-estate canonicals. That finding does not establish indexing of the new QA resource; inspect it after deployment. No current traffic/ranking gains are attributed to today's edits.
+
+Verification on10-21: TypeScript passed; 8 relevant tests across3 files passed; git diff --check passed. Browser desktop layout reviewed. Local resource EN/ZH, both downloads and both example images returned HTTP200; JSON contains18 checks. EN is index/follow, ZH fallback noindex/follow with EN canonical. XML sitemap contains exactly one English resource URL. These checks validate local code, not production deployment or GSC indexing. Frontend changes prepared for the existing content-drop branch; production release and live inspection remain pending.

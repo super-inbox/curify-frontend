@@ -1,9 +1,13 @@
 # Curify product workstreams — index
 
-_Last updated: 2026-10-20 (consumer SEO target index added; earlier workstream snapshots retain their original dates). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
+_Last updated: 2026-10-21 (consumer SEO target index added; earlier workstream snapshots retain their original dates). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
 
 The canonical pointer for the four **product** workstreams (search, tools, growth, vertical use-cases). Companion outbound/GTM workstreams index lives separately at `~/curify-studio/gtm_tools/INDEX.md`.
 
+
+## 2026-10-21 — SEO Authority
+
+[Authority计划、执行状态与依赖](workstream-seo-smm-growth.md#seo-authority-2026-10-21)：两个公开repo已补Curify介绍；P0-2准备研究外联，沿用Zoho现有CRM，当前因共享邮箱暂停而0发送；P0-4开放修图QA资源；P0-3等用户Semrush竞争页面外链数据。暂不改benchmark内容，不把自有平台发布计为独立背书。
 
 ## 2026-10-20 — C 端 SEO 目标索引
 
