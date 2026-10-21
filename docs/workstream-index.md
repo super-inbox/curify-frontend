@@ -2,34 +2,12 @@
 
 _Last updated: 2026-10-21 (consumer SEO target index added; earlier workstream snapshots retain their original dates). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
 
-The canonical pointer for the four **product** workstreams (search, tools, growth, vertical use-cases). Companion outbound/GTM workstreams index lives separately at `~/curify-studio/gtm_tools/INDEX.md`.
+The canonical pointer for the four **product** workstreams (search, tools, growth, vertical use-cases). Companion outbound/GTM workstreams index lives separately at `~/curify-gtm/gtm_tools/INDEX.md`.
 
 
-## 2026-10-21 — SEO Authority
+## SEO research and GTM execution
 
-[Authority计划、执行状态与依赖](workstream-seo-smm-growth.md#seo-authority-2026-10-21)：两个公开repo已补Curify介绍；P0-2准备研究外联，沿用Zoho现有CRM，当前因共享邮箱暂停而0发送；P0-4开放修图QA资源；P0-3等用户Semrush竞争页面外链数据。暂不改benchmark内容，不把自有平台发布计为独立背书。
-
-## 2026-10-20 — C 端 SEO 目标索引
-
-依据 [ICP Growth Strategy](https://github.com/super-inbox/curify-gtm/blob/main/icp-growth/strategy.md)（10-18 版本）拆分终端消费者与经营者采购；S 层个人摄影师／店主为经营采购时仍属于 B 端。以下是争取首页的目标，不是现有排名或流量承诺，也不替代 B 端增长策略。
-
-| 优先级 | C 端方向／目标词组 | 目标页面／下一步 |
-|---|---|---|
-| P0 维护 | ASL：`asl video translator`、`asl video translation` | 现有 ASL 工具；保护入口、验证完成与复用，不另建同义词页 |
-| P0 新增 | 婚纱图片：`ai wedding photo generator`、`ai wedding photos` | `/tools/ai-wedding-photo-generator`；已上线、模板已进 main、GSC已收录且canonical正确；真实生成待登录验收 |
-| P0 新增 | 宠物肖像：`ai pet portrait generator`、`ai pet photo generator` | `/tools/ai-pet-portrait-generator`；已上线并收录、canonical正确；模板为生成后端，工具为唯一搜索目的地 |
-| P1 验证 | 宠物纪念视频：自助 maker 与 custom/personalized 服务需求 | 已查：video/maker各20，KD不可用；先故事样片与付费验证，再决定服务页或工具页 |
-| P1 验证 | 猫视频、婚纱视频／邀请视频 | 猫视频有 KD11，但不等于宠物纪念需求；先验证对应视频交付 |
-| P1 视频验证候选 | `animate tattoo`：90/月、KD21 | 先测试纹身照片→短片；不等同于定制纹身故事套餐 |
-| P2 发现 | 旅行纪念、纹身故事、个人经历短片 | 验证消费者用词和具体交付；不将动画特效与故事套餐混为一谈 |
-| 保留现有自助 | 图片升清等通用实用功能 | 未因本次 ICP 文件获得新 KD／转化证据，不追加泛词 P0 |
-
-- [完整目标、已有 KD、状态与决策门槛](workstream-seo-smm-growth.md#consumer-seo-targets-2026-10-20)
-- [当前执行状态：收录已通过、取消固定样例数量、优先页面与指南](workstream-seo-smm-growth.md#seo-fast-follow-2026-10-20)
-- [当前 KD 决策表与两周执行路线图（10-20～11-03）](workstream-seo-smm-growth.md#seo-execution-roadmap-2026-10-20)
-- [本轮 8 词结果与优先级调整](workstream-seo-smm-growth.md#consumer-kd-results-2026-10-20)
-- [本轮已查询的 8 词，保留作记录](seo/semrush-kd-new-consumer-2026-10-20.txt)
-
+Canonical strategy, KD, analytics and outreach records moved to [curify-gtm SEO index](https://github.com/super-inbox/curify-gtm/blob/codex/seo-authority-2026-10-21/docs/seo/README.md). Production pages, resources, metadata and technical implementation remain here.
 
 ## Scope
 
@@ -57,7 +35,7 @@ Funnel under POD: *A finds demand → B produces design → C distributes & rank
 |---|---|---|---|
 | A | Search & Content | [`search-and-content.md`](search-and-content.md) | curify-frontend |
 | B | Tools & Engineering | [`workstream-tooling-and-engineering.md`](../../curify-studio/docs/workstream-tooling-and-engineering.md) | curify-studio |
-| C | SEO + SMM + Growth | [`workstream-seo-smm-growth.md`](workstream-seo-smm-growth.md) | curify-frontend |
+| C | SEO + SMM + Growth | [GTM SEO index](https://github.com/super-inbox/curify-gtm/blob/codex/seo-authority-2026-10-21/docs/seo/README.md) | curify-gtm |
 | D | Vertical Use Cases | [`workstream-vertical-use-cases.md`](workstream-vertical-use-cases.md) | curify-frontend |
 
 Other product workstream docs (single-track, not part of the four):
@@ -70,7 +48,7 @@ Other product workstream docs (single-track, not part of the four):
 
 ### GTM motions that feed (or bypass) these workstreams
 
-Outbound/GTM execution lives in `~/curify-studio/gtm_tools/INDEX.md`, but **which surface each
+Outbound/GTM execution lives in `~/curify-gtm/gtm_tools/INDEX.md`, but **which surface each
 motion lands on is a D-workstream concern** — recorded here because the 2026-08-12 review found
 none of them measurable:
 
@@ -415,6 +393,6 @@ none of them measurable:
 2. If the task touches a specific workstream, **open that workstream's doc** and read the section closest in time to the task (most recent dated section at top).
 3. If the task is POD-tagged or touches merch/POD framing, **read the POD reframe section of `workstream-vertical-use-cases.md` first** (including its 2026-08-12 gating status), then check the POD reframe section in the relevant workstream doc.
 4. **Cross-workstream dependencies** — check the "Critical cross-workstream dependencies" table above before scoping. If your task is gated on a POD-B4 / POD-C5 / POD-A2 / POD-A6 / POD-D5 ship, surface that gating in the response.
-5. **Outbound/GTM *execution*** is NOT in scope of these 4 product workstreams — it lives in `~/curify-studio/gtm_tools/INDEX.md` (plus `~/curify-studio/docs/workstream-enterprise-ai-b2b.md` for the 2nd B2B line). **But which surface a motion lands on IS in scope** — see the "GTM motions" table above; as of 2026-08-12 none of the four motions is measurable, which is UC-P0-1.
+5. **Outbound/GTM *execution*** is NOT in scope of these 4 product workstreams — it lives in `~/curify-gtm/gtm_tools/INDEX.md` (plus `~/curify-studio/docs/workstream-enterprise-ai-b2b.md` for the 2nd B2B line). **But which surface a motion lands on IS in scope** — see the "GTM motions" table above; as of 2026-08-12 none of the four motions is measurable, which is UC-P0-1.
 6. **Out-of-scope reminders:** the daily-content-drop hongjie-patch workflow is a SEPARATE workstream (scope rule stated in the `workstream-seo-smm-growth.md` header); the customer delivery pipeline + education content supply workstreams are HELD pending triggers.
 7. **Before quoting any number from this index**, check its date. Traffic figures decay fast (the non-WC base fell 79% in two months) and this index has previously carried a persona list that was wrong for weeks. Re-derive from `lib/use-cases.ts`, a fresh GSC pull, or a `user_interactions` query rather than trusting a table.
