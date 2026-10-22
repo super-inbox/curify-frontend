@@ -1,0 +1,27 @@
+name: Tool search evaluation
+on:
+  pull_request:
+    paths:
+      - 'lib/search*'
+      - 'lib/toolSearchAliases.ts'
+      - 'lib/tools-registry.ts'
+      - 'lib/__tests__/*search*'
+      - 'lib/__tests__/searchIndex_tool_intent.test.ts'
+      - 'app/**/search/**'
+      - 'app/**/SearchBar.tsx'
+      - 'scripts/configs/tool_search_eval_set.json'
+      - 'scripts/vitest.tools.config.mts'
+      - 'package*.json'
+      - '.github/workflows/tool-search-eval.yml'
+  workflow_dispatch:
+jobs:
+  tool-search-eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run eval:tools

@@ -111,9 +111,10 @@ const TOOL_LASTMOD_OVERRIDES: Record<string, string> = Object.fromEntries(
     .map((slug) => [`/tools/${slug}`, "2026-10-12T00:00:00.000Z"]),
 );
 
+TOOL_LASTMOD_OVERRIDES["/tools/wedding-photo-editing"] = "2026-10-21T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/ai-wedding-photo-generator"] = "2026-10-20T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/ai-pet-portrait-generator"] = "2026-10-20T00:00:00.000Z";
-TOOL_LASTMOD_OVERRIDES["/tools/product-photo-retouching-service"] = "2026-10-15T00:00:00.000Z";
+TOOL_LASTMOD_OVERRIDES["/tools/product-photo-retouching-service"] = "2026-10-21T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/real-estate-photo-editing"] = "2026-10-15T00:00:00.000Z";
 
 // Use-case pages: 08-12 added the worked-case block and moved the demo cards
@@ -125,7 +126,7 @@ const USE_CASES_LASTMOD = "2026-08-12T00:00:00.000Z";
 // the shared constant instead would claim every OTHER use-case page changed
 // today, which is the same lie in the other direction.
 const USE_CASE_LASTMOD_OVERRIDES: Record<string, string> = {
-  "for-photographers": "2026-10-20T00:00:00.000Z",
+  "for-photographers": "2026-10-21T00:00:00.000Z",
   "for-dtc-brands": "2026-10-15T00:00:00.000Z",
 };
 
@@ -343,6 +344,24 @@ export async function GET() {
   const personalityRoutes = getPersonalityRoutes();
 
   let urls = "";
+
+  urls += generateUrlEntry("en", "/resources/ai-photo-retouching-quality-checklist", {
+    lastmod: "2026-10-21T00:00:00.000Z",
+    changefreq: "monthly",
+    priority: "0.7",
+    availableLocales: ["en"],
+  });
+
+  // Only the two translated business pages belong in the sitemap.
+  // Other locales render English and canonicalize to the English URL.
+  ["en", "zh"].forEach((locale) => {
+    urls += generateUrlEntry(locale, "/business", {
+      lastmod: "2026-10-22T00:00:00.000Z",
+      changefreq: "monthly",
+      priority: "0.8",
+      availableLocales: ["en", "zh"],
+    });
+  });
 
   // Static routes
   STATIC_ROUTES.forEach((route) => {

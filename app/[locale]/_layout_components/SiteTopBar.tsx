@@ -47,7 +47,7 @@ export default function SiteTopBar({ locale }: { locale: string }) {
     // or SI partnerships lead evaluating whether we're a credible vendor. A
     // consumer template rail ("Merch & Stickers", "World Cup") directly under
     // the hero undercuts exactly the signal the page exists to send.
-    /\/enterprise(?:\/|$|\?)/.test(pathname);
+    /\/(?:enterprise|business)(?:\/|$|\?)/.test(pathname);
 
   // Build TopicStrip items from the curated ENTRY_BAR_ITEMS so the
   // top-bar surface keeps showing the same hand-picked tier-1 topics

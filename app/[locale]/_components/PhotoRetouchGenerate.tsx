@@ -38,6 +38,8 @@ export default function PhotoRetouchGenerate() {
   const [applied, setApplied] = useState<[number, number] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
+  const [reviewMessage, setReviewMessage] = useState<string | null>(null);
+  const [activeProject, setActiveProject] = useState<string | null>(null);
   const [dragging, setDragging] = useState(false);
   const [showingOriginal, setShowingOriginal] = useState(false);
   const [elapsed, setElapsed] = useState(0);
@@ -51,7 +53,7 @@ export default function PhotoRetouchGenerate() {
   useEffect(() => () => { if (previewUrl) URL.revokeObjectURL(previewUrl); }, [previewUrl]);
 
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-  const canGenerate = !!file && emailValid && !isGenerating;
+  const canGenerate = !!file && (!email.trim() || emailValid) && !isGenerating;
 
   const onPickFile = (f: File | null) => {
     setError(null);
@@ -65,6 +67,7 @@ export default function PhotoRetouchGenerate() {
       return;
     }
     if (previewUrl) URL.revokeObjectURL(previewUrl);
+    setActiveProject(null); setReviewMessage(null); setPending(false);
     setFile(f);
     setPreviewUrl(URL.createObjectURL(f));
     setResultUrl(null);
@@ -74,6 +77,7 @@ export default function PhotoRetouchGenerate() {
 
   const clearFile = () => {
     if (previewUrl) URL.revokeObjectURL(previewUrl);
+    setActiveProject(null); setReviewMessage(null); setPending(false);
     setFile(null);
     setPreviewUrl(null);
     setResultUrl(null);
@@ -85,6 +89,8 @@ export default function PhotoRetouchGenerate() {
     if (!canGenerate || !file) return;
     setError(null);
     setPending(false);
+    setReviewMessage(null);
+    setActiveProject(null);
     setResultUrl(null);
     setElapsed(0);
     setIsGenerating(true);
@@ -97,9 +103,15 @@ export default function PhotoRetouchGenerate() {
       const { project_id } = await photoRetouchService.generate({
         file,
         email: email.trim(),
+        job: "wedding",
       });
       if (!project_id) throw new Error("Could not start the edit. Please try again.");
+      setActiveProject(project_id);
       const done = await photoRetouchService.pollResult(project_id);
+      if (done.status === "REVIEW_REQUIRED" || done.status === "QA_FAILED") {
+        setReviewMessage(done.status === "QA_FAILED" ? "This edit needs correction before it can be released." : "Your edit is ready for quality review. Download will be available after approval.");
+        return;
+      }
       if (done.result_url) trackFirstGeneration("photo-retouch");
       setResultUrl(done.result_url ?? null);
       setGates(done.gates ?? null);
@@ -186,7 +198,7 @@ export default function PhotoRetouchGenerate() {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="your@email.com — we'll send the edited file"
+          placeholder="Contact email (optional)"
           className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#5a50e5]/40"
         />
         <button
@@ -204,18 +216,32 @@ export default function PhotoRetouchGenerate() {
         <p className="mt-3 text-sm text-gray-600">
           Editing runs region by region — flyaways, skin, eyes, garment — and at your file&rsquo;s
           own resolution, so it takes two to three minutes for a web-sized frame and longer for a
-          full-resolution one. You can close this tab; the finished file goes to{" "}
-          <span className="font-medium">{email.trim()}</span>.
+          full-resolution one. The edited photo is checked before a download is released.
         </p>
       )}
 
       {pending && (
         <p className="mt-3 text-sm text-amber-700">
-          Still working. It is taking longer than usual, but the edit will finish and land in your
-          inbox — you can close this tab.
+          Still working. Keep this page open to check the processing and review status.
         </p>
       )}
 
+      {reviewMessage && <p className="mt-3 text-sm text-amber-700">{reviewMessage}</p>}
+      {activeProject && !resultUrl && !isGenerating && (
+        <button type="button" className="mt-3 text-sm underline" onClick={async () => {
+          try {
+            const status = await photoRetouchService.getStatus(activeProject);
+            if (status.result_url && status.status === "COMPLETED") {
+              setResultUrl(status.result_url); setReviewMessage(null); setPending(false);
+              setGates(status.gates ?? null);
+            } else if (status.status === "FAILED") {
+              setError(status.failure_reason || "The edit could not be completed.");
+            } else {
+              setReviewMessage(status.status === "QA_FAILED" ? "This edit needs correction before release." : "Processing or quality review is still in progress.");
+            }
+          } catch { setError("Could not check status. Please try again."); }
+        }}>Check status</button>
+      )}
       {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
 
       {/* what was actually done — the buyer's acceptance test is "edit it, don't recreate it" */}
