@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = businessCopy[lang];
   const url = pageUrl(lang);
   return {
-    title: c.title, description: c.description,
+    title: { absolute: c.seoTitle }, description: c.description,
     alternates: { canonical: url, languages: { en: pageUrl('en'), zh: pageUrl('zh'), 'x-default': pageUrl('en') } },
     openGraph: { title: c.title, description: c.description, url, type: 'website', siteName: 'Curify', locale: lang === 'zh' ? 'zh_CN' : 'en_US', images: [{ url: `${SITE_URL}/business/fabric-poster.jpg`, alt: c.samples[0][1] }] },
     twitter: { card: 'summary_large_image', title: c.title, description: c.description, images: [`${SITE_URL}/business/fabric-poster.jpg`] },
@@ -54,7 +54,8 @@ export default async function BusinessPage({ params }: Props) {
       <section className="grid items-center gap-10 rounded-3xl border border-purple-100 bg-gradient-to-br from-purple-50 via-white to-amber-50 p-6 sm:p-10 lg:grid-cols-[1.3fr_1fr]">
         <div>
           <p className="text-xs font-bold tracking-widest text-purple-700">{c.eyebrow}</p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">{c.heading}</h1>
+          <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">{c.title}</h1>
+          <p className="mt-5 text-xl font-semibold text-neutral-800">{c.heading}</p>
           <p className="mt-5 text-lg leading-relaxed text-neutral-600">{c.intro}</p>
           {capture('hero')}
           <a data-business-event="examples" href="#examples" className="mt-5 inline-block text-sm font-semibold text-purple-700 underline underline-offset-4">{c.examplesCta} ↓</a>

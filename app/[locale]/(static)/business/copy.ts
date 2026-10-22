@@ -3,7 +3,8 @@ export const businessLang = (locale: string): BusinessLang => locale === 'zh' ? 
 
 export const businessCopy = {
   en: {
-    title: 'AI Content Production for Businesses & Partners',
+    title: 'AI Visual Production & Partnerships',
+    seoTitle: 'AI Image & Video Production for Businesses | Curify',
     description: 'AI product images, photography post-production and short videos for brands, agencies, studios, tourism and education businesses. Explore white-label production and channel partnerships.',
     eyebrow: 'CURIFY FOR BUSINESS',
     heading: 'Your clients. Your vision. Our production team.',
@@ -48,7 +49,8 @@ export const businessCopy = {
     enterprise: 'Need document intelligence, RAG or enterprise AI implementation?', enterpriseCta: 'Explore Enterprise AI',
   },
   zh: {
-    title: '企业与渠道合作｜AI 图片、视频与批量内容制作',
+    title: 'AI 视觉内容制作与合作',
+    seoTitle: '企业 AI 图片与视频制作｜Curify',
     description: '为品牌、电商代运营、摄影工作室、广告公司、文旅及教育机构提供 AI 图片、批量精修和短视频制作，支持白标交付、项目承制及渠道合作。',
     eyebrow: 'CURIFY 企业与渠道合作',
     heading: '你负责客户与创意，我们负责制作与交付。',

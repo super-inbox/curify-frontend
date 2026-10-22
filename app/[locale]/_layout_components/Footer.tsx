@@ -48,7 +48,7 @@ export default function Footer() {
             than going through the 10-locale `footer` namespace: a localized
             label in ja/ko/tr would promise copy that doesn't exist. */}
         <Link href="/business" onClick={trackBusiness} className="hover:underline">
-          {locale === "zh" ? "企业与渠道合作" : "Business & partnerships"}
+          {locale === "zh" ? "企业与渠道合作" : "For Business"}
         </Link>
         <span className="text-gray-400">|</span>
         <Link href="/enterprise" className="hover:underline">
