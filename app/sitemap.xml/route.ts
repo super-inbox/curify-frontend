@@ -352,6 +352,17 @@ export async function GET() {
     availableLocales: ["en"],
   });
 
+  // Only the two translated business pages belong in the sitemap.
+  // Other locales render English and canonicalize to the English URL.
+  ["en", "zh"].forEach((locale) => {
+    urls += generateUrlEntry(locale, "/business", {
+      lastmod: "2026-10-22T00:00:00.000Z",
+      changefreq: "monthly",
+      priority: "0.8",
+      availableLocales: ["en", "zh"],
+    });
+  });
+
   // Static routes
   STATIC_ROUTES.forEach((route) => {
     LOCALES.forEach((locale) => {

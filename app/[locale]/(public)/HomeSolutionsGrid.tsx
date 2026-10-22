@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useClickTracking } from "@/services/useTracking";
 
@@ -68,6 +68,8 @@ function SolutionCard({ s }: { s: Solution }) {
 }
 
 export default function HomeSolutionsGrid() {
+  const locale = useLocale();
+  const trackBusiness = useClickTracking("home-solution:business", "menu_link", "cards");
   const t = useTranslations("home.solutions");
   return (
     /* The section sits in its own tinted, bordered band. White cards on the
@@ -90,6 +92,11 @@ export default function HomeSolutionsGrid() {
           <SolutionCard key={s.key} s={s} />
         ))}
       </div>
+      <Link href="/business" onClick={trackBusiness} className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-purple-900 px-6 py-5 text-white transition hover:bg-purple-800">
+        <span><span className="block font-bold">{locale === "zh" ? "企业与渠道合作" : "Business & partnerships"}</span>
+        <span className="mt-1 block text-sm text-purple-100">{locale === "zh" ? "批量内容制作 · 白标交付 · 渠道合作" : "Batch content production · White-label delivery · Channel partnerships"}</span></span>
+        <span className="text-sm font-semibold">{locale === "zh" ? "了解合作方式 →" : "Explore partnerships →"}</span>
+      </Link>
     </section>
   );
 }

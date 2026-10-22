@@ -83,6 +83,13 @@ export default function EnterpriseClient() {
         </div>
       </section>
 
+      <aside className="mb-12 rounded-2xl border border-purple-100 bg-purple-50 p-5 text-sm text-neutral-700">
+        {lang === "zh" ? "需要 AI 图片、视频制作或渠道合作？" : "Looking for AI images, video production or channel partnerships?"}{" "}
+        <IntlLink href="/business" onClick={() => trackCta("business")} className="font-semibold text-purple-700 hover:underline">
+          {lang === "zh" ? "了解企业内容制作合作 →" : "Explore business partnerships →"}
+        </IntlLink>
+      </aside>
+
       {/* Pillars */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold text-neutral-900">{c.pillarsTitle}</h2>

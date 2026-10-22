@@ -2,16 +2,18 @@
 
 import { DiscordLogo, XLogo } from "@phosphor-icons/react";
 import { Link } from "@/i18n/navigation";
+import { useClickTracking } from "@/services/useTracking";
 import { useLocale, useTranslations } from "next-intl";
 
 export default function Footer() {
   const t = useTranslations("footer");
   const locale = useLocale();
+  const trackBusiness = useClickTracking("footer:business", "menu_link");
 
   return (
     <footer className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-16 py-6 w-full text-sm text-gray-500">
       {/* Left: Social Media Icons and Copyright */}
-      <div className="flex items-center space-x-4 mb-4 sm:mb-0">
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-4 sm:mb-0">
         <p>{t("copyright")}</p>
         <div className="flex space-x-2">
           <Link href="https://discord.com" target="_blank" rel="noopener noreferrer">
@@ -24,7 +26,7 @@ export default function Footer() {
       </div>
 
       {/* Center: Privacy, Terms, About, Contact */}
-      <div className="flex items-center space-x-4 mb-4 sm:mb-0">
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-4 sm:mb-0">
         <Link href="/privacy" className="hover:underline">
           {t("privacyPolicy")}
         </Link>
@@ -45,6 +47,10 @@ export default function Footer() {
             only — see its copy.ts), so the label follows the same rule rather
             than going through the 10-locale `footer` namespace: a localized
             label in ja/ko/tr would promise copy that doesn't exist. */}
+        <Link href="/business" onClick={trackBusiness} className="hover:underline">
+          {locale === "zh" ? "企业与渠道合作" : "Business & partnerships"}
+        </Link>
+        <span className="text-gray-400">|</span>
         <Link href="/enterprise" className="hover:underline">
           {locale === "zh" ? "企业 AI" : "Enterprise AI"}
         </Link>
